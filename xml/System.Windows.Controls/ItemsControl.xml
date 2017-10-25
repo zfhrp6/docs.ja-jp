@@ -1,0 +1,2323 @@
+<Type Name="ItemsControl" FullName="System.Windows.Controls.ItemsControl">
+  <TypeSignature Language="C#" Value="public class ItemsControl : System.Windows.Controls.Control, System.Windows.Controls.Primitives.IContainItemStorage, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ItemsControl extends System.Windows.Controls.Control implements class System.Windows.Controls.Primitives.IContainItemStorage, class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ItemsControl" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Controls.Primitives.IContainItemStorage</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("OnItemsChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Items")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Items")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.StyleTypedProperty(Property="ItemContainerStyle", StyleTargetType=typeof(System.Windows.FrameworkElement))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>項目のコレクションを表示するために使用するコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ItemsControl>の種類は、<xref:System.Windows.Controls.Control>文字列、オブジェクト、またはその他の要素など、複数の項目を含めることができます。 次の図は、<xref:System.Windows.Controls.ListBox>を次のさまざまな種類の項目を含むコントロール。  
+  
+-   文字列。  
+  
+-   <xref:System.DateTime> オブジェクト。  
+  
+-   <xref:System.Windows.UIElement> オブジェクト。  
+  
+-   A<xref:System.Windows.Controls.Panel>が含まれるコントロール、<xref:System.Windows.Shapes.Ellipse>と<xref:System.Windows.Controls.TextBlock>です。  
+  
+ ![次の 4 つの種類のコンテンツを含む ListBox](~/add/media/controlcontentmodellistbox2.PNG "4 種類のコンテンツを含む ListBox")  
+複数の種類のオブジェクトを含む ListBox  
+  
+ いずれかを使用して、<xref:System.Windows.Controls.ItemsControl.Items%2A>または<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のコンテンツの生成に使用するコレクションを指定するプロパティ、<xref:System.Windows.Controls.ItemsControl>です。 設定することができます、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティを実装する任意の型を<xref:System.Collections.IEnumerable>です。 <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>通常は、データ コレクションを表示するか、バインドを使用、<xref:System.Windows.Controls.ItemsControl>をコレクション オブジェクト。  
+  
+ 実装するオブジェクトを使用しないかどうかは<xref:System.Collections.IEnumerable>を設定する、<xref:System.Windows.Controls.ItemsControl>を使用して項目を追加することができます、<xref:System.Windows.Controls.ItemsControl.Items%2A>プロパティです。 内の項目、<xref:System.Windows.Controls.ItemsControl>さまざまな種類を持つことができます。 たとえば、<xref:System.Windows.Controls.ListBox>文字列は、1 つの項目とは別の項目に含めることができます、<xref:System.Windows.Controls.Image>です。  
+  
+ ときに、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティが設定されて、<xref:System.Windows.Controls.ItemsControl.Items%2A>に読み取り専用であり、固定サイズ コレクションが設定されています。 これは、することはできません直接追加する項目をコレクションには意味します。 ときに<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティを設定して、使用中は`null`コレクションを削除し、使用状況を復元<xref:System.Windows.Controls.ItemsControl.Items%2A>、空になる予定<xref:System.Windows.Controls.ItemCollection>です。  
+  
+ 各<xref:System.Windows.Controls.ItemsControl>型に対応する項目コンテナーの型。 それぞれの対応する項目コンテナー<xref:System.Windows.Controls.ItemsControl>追加`Item`の名前にします。 たとえば、 <xref:System.Windows.Controls.ListBox>、項目コンテナーは<xref:System.Windows.Controls.ListBoxItem>が制御の<xref:System.Windows.Controls.ComboBox>は<xref:System.Windows.Controls.ComboBoxItem>コントロール。 内の各項目のコンテナーの種類を明示的に作成することができます、<xref:System.Windows.Controls.ItemsControl>が必要ではありません。 コンテナーの型を明示的に作成しないと、アイテム コレクション内のデータ項目を含むが 1 つ生成されます。 たとえば、文字列オブジェクトのコレクションをバインドする場合、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のプロパティ、 <xref:System.Windows.Controls.ListBox>、明示的に作成しない<xref:System.Windows.Controls.ListBoxItem>オブジェクトですが、<xref:System.Windows.Controls.ListBox>文字列ごとに 1 つ生成されます。 使用して生成された項目コンテナーにアクセスすることができます、<xref:System.Windows.Controls.ItemsControl.ItemContainerGenerator%2A>プロパティです。  
+  
+> [!NOTE]
+>  UI オートメーションの特定の機能が正常に動作しないときに、<xref:System.Windows.Controls.ItemsControl>重複するオブジェクトが含まれています。   オブジェクトが複数回表示された場合、オートメーション ツリーに最初のインスタンスのみが表示されます。   (2 つのオブジェクト**x**と**y**は重複と見なさ場合`Object.Equals(x, y)`返します`true`)。  
+>   
+>  オブジェクトを while **x**によって使用されて、<xref:System.Windows.Controls.ItemsControl>によって返される値**x。**`GetHashCode()` 変更はできません。  この値に対する変更は、サポートされていない、原因となる、予期しない動作がします。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。 プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。 詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+   
+  
+## Examples  
+ 次の例では、データをバインドする、<xref:System.Windows.Controls.ItemsControl>です。 最初の例と呼ばれるクラスを作成する`MyData`単純な文字列コレクションであります。  
+  
+ [!code-csharp[ControlContentOverviewSnippets#8](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml.cs#8)]
+ [!code-vb[ControlContentOverviewSnippets#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlContentOverviewSnippets/VisualBasic/Window1.xaml.vb#8)]  
+  
+ 次の例ではバインド、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のオブジェクト、<xref:System.Windows.Controls.ItemsControl>に`MyData`です。  
+  
+ [!code-xaml[ControlContentOverviewSnippets#7](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml#7)]  
+[!code-xaml[ControlContentOverviewSnippets#6](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml#6)]  
+  
+ [!code-csharp[ControlContentOverviewSnippets#9](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml.cs#9)]
+ [!code-vb[ControlContentOverviewSnippets#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlContentOverviewSnippets/VisualBasic/Window1.xaml.vb#9)]  
+  
+ 次の図は、<xref:System.Windows.Controls.ListBox>前の例で作成されたコントロール。  
+  
+ ![ListBox](~/add/media/controlcontentmodellistbox1.PNG "ListBox")  
+  
+ 次の例では、設定する方法について、<xref:System.Windows.Controls.ItemsControl>を使用して、<xref:System.Windows.Controls.ItemsControl.Items%2A>プロパティです。 この例で追加する項目の次のさまざまな種類、 <xref:System.Windows.Controls.ListBox>:  
+  
+-   文字列。  
+  
+-   <xref:System.DateTime> オブジェクト。  
+  
+-   <xref:System.Windows.UIElement> オブジェクト。  
+  
+-   A<xref:System.Windows.Controls.Panel>を含むその他のコントロール<xref:System.Windows.UIElement>オブジェクト。  
+  
+ [!code-xaml[ControlContentOverviewSnippets#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml#3)]  
+  
+ [!code-csharp[ControlContentOverviewSnippets#4](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml.cs#4)]
+ [!code-vb[ControlContentOverviewSnippets#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlContentOverviewSnippets/VisualBasic/Window1.xaml.vb#4)]  
+  
+ 次の図は、<xref:System.Windows.Controls.ListBox>前の例で作成します。  
+  
+ ![次の 4 つの種類のコンテンツを含む ListBox](~/add/media/controlcontentmodellistbox2.PNG "4 種類のコンテンツを含む ListBox")  
+  
+ 次の例は、さまざまなスタイルとによって提供されるテンプレートに関連するプロパティを使用する方法を示しています、<xref:System.Windows.Controls.ItemsControl>です。 <xref:System.Windows.Controls.ItemsControl>この例では、コレクションにバインドされている`Task`オブジェクト。 わかりやすいように、この例のスタイルとテンプレートはすべてインラインで宣言されています。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#ItemsControlProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#itemscontrolproperties)]  
+  
+ 次の図は、例のスクリーン ショットが表示される場合です。  
+  
+ ![ItemsControl の例のスクリーン ショット](~/add/media/databinding-itemscontrolproperties.png "ItemsControl の例のスクリーン ショット")  
+  
+ 2 つの他のスタイル関連プロパティ、<xref:System.Windows.Controls.ItemsControl>ここでは、表示されていない<xref:System.Windows.Controls.ItemsControl.GroupStyle%2A>と<xref:System.Windows.Controls.ItemsControl.GroupStyleSelector%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ItemsControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ItemsControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="protected virtual void AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>子として指定したオブジェクトを追加、<see cref="T:System.Windows.Controls.ItemsControl" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddText">
+      <MemberSignature Language="C#" Value="protected virtual void AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">追加する文字列。</param>
+        <summary>指定されたテキスト文字列を追加、<see cref="T:System.Windows.Controls.ItemsControl" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternationCount">
+      <MemberSignature Language="C#" Value="public int AlternationCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AlternationCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.AlternationCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>代替コンテナーに独自の外観を与える <see cref="T:System.Windows.Controls.ItemsControl" /> 内にある、代替項目コンテナーの数を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Controls.ItemsControl" /> 内の代替項目コンテナーの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ItemsControl.AlternationCount%2A>と<xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A?displayProperty=nameWithType>プロパティが有効にすると、2 つ以上の代替項目コンテナーの表示方法を指定します。 たとえば、各 3 番目の項目の背景色を交互を指定できます、<xref:System.Windows.Controls.ItemsControl>です。  <xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A?displayProperty=nameWithType>で各項目のコンテナーに割り当てられている、<xref:System.Windows.Controls.ItemsControl>です。  <xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A?displayProperty=nameWithType>0 から始まる、インクリメントを実行するまで<xref:System.Windows.Controls.ItemsControl.AlternationCount%2A>マイナス 1、および 0 にし、再起動します。 たとえば場合、<xref:System.Windows.Controls.ItemsControl.AlternationCount%2A>に 3、7 つのアイテムでは、 <xref:System.Windows.Controls.ItemsControl>、次の表、<xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A?displayProperty=nameWithType>項目ごとにします。  
+  
+|内の項目の位置、<xref:System.Windows.Controls.ItemsControl>|<xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A?displayProperty=nameWithType>|  
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|1|0|  
+|2|1|  
+|3|2|  
+|4|0|  
+|5|1|  
+|6|2|  
+|7|0|  
+  
+ 代替項目コンテナーの異なる外観を指定に使用できるいくつかの方法があります。 1 つのメソッドは、項目コンテナーのプロパティをバインドする、<xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A?displayProperty=nameWithType>です。 使用してできます、<xref:System.Windows.Controls.AlternationConverter>を指定する値を持つ特定の項目コンテナーに適用される<xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A?displayProperty=nameWithType>値。 値に応じて、項目コンテナーのプロパティの値を変更するトリガーを使用することができますもその<xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例を指定する、 <xref:System.Windows.Controls.ListBox> (から継承される<xref:System.Windows.Controls.ItemsControl>) 代替項目コンテナーが (型のある<xref:System.Windows.Controls.ListBoxItem>) 別の背景とそれぞれの前景色を指定します。  例では、バインド、<xref:System.Windows.Controls.Control.Background%2A>と<xref:System.Windows.Controls.Control.Foreground%2A>プロパティを<xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A?displayProperty=nameWithType>を提供し、<xref:System.Windows.Controls.AlternationConverter>プロパティごとにします。  
+  
+ [!code-xaml[AlternationIndexSnippets#2](~/samples/snippets/csharp/VS_Snippets_Wpf/AlternationIndexSnippets/CS/Window1.xaml#2)]  
+  
+ 次の例は、前の例と同じを使用して<xref:System.Windows.Trigger>オブジェクト。  
+  
+ [!code-xaml[AlternationIndexSnippets#1](~/samples/snippets/csharp/VS_Snippets_Wpf/AlternationIndexSnippets/CS/Window1.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternationCountProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AlternationCountProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AlternationCountProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.AlternationCountProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.AlternationCount" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternationIndexProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AlternationIndexProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AlternationIndexProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.AlternationIndexProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.AlternationIndex" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public override void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示しますの初期化、<see cref="T:System.Windows.Controls.ItemsControl" />オブジェクトが開始されようとしています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected virtual void ClearContainerForItemOverride (System.Windows.DependencyObject element, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ClearContainerForItemOverride(class System.Windows.DependencyObject element, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.ClearContainerForItemOverride(System.Windows.DependencyObject,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="element">コンテナー要素。</param>
+        <param name="item">項目。</param>
+        <summary>派生クラスの中でオーバーライドした場合、<see cref="M:System.Windows.Controls.ItemsControl.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)" /> メソッドの効果を元に戻します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基底の実装では、何も行われません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainerFromElement">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyObject ContainerFromElement (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.DependencyObject ContainerFromElement(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.ContainerFromElement(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">コンテナーを返す要素。</param>
+        <summary>現在属しているコンテナーを返します<see cref="T:System.Windows.Controls.ItemsControl" />指定された要素を所有しています。</summary>
+        <returns>現在属しているコンテナー <see cref="T:System.Windows.Controls.ItemsControl" /> 、指定された要素を所有しているか、<see langword="null" />このようなコンテナーが存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainerFromElement">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyObject ContainerFromElement (System.Windows.Controls.ItemsControl itemsControl, System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyObject ContainerFromElement(class System.Windows.Controls.ItemsControl itemsControl, class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.ContainerFromElement(System.Windows.Controls.ItemsControl,System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemsControl" Type="System.Windows.Controls.ItemsControl" />
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="itemsControl"><see cref="T:System.Windows.Controls.ItemsControl" />のコンテナーを返します。</param>
+        <param name="element">コンテナーを返す要素。</param>
+        <summary>特定のコンテナー要素を所有する、指定された <see cref="T:System.Windows.Controls.ItemsControl" /> に属しているコンテナーを返します。</summary>
+        <returns><paramref name="itemsControl" /> が <see langword="null" /> でない場合、指定された要素を所有する、指定された <see cref="T:System.Windows.Controls.ItemsControl" /> に属するコンテナー。 <paramref name="itemsControl" /> が <see langword="null" /> の場合、いずれかの <see cref="T:System.Windows.Controls.ItemsControl" /> に属するコンテナーのうち最も近いものを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayMemberPath">
+      <MemberSignature Language="C#" Value="public string DisplayMemberPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayMemberPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.DisplayMemberPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトを視覚的に表現するために使用される、ソース オブジェクト上の値へのパスを取得または設定します。</summary>
+        <value>ソース オブジェクトでの値へのパス。 これは、できる任意のパスか、または XPath など"@Name"です。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、データ オブジェクトを表示する方法について説明する既定のテンプレートを定義する簡単な方法です。  
+  
+<a name="dependencyPropertyInfo_DisplayMemberPath"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ItemsControl.DisplayMemberPathProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、静的リソース名前`places`のコレクションとして定義されて`Place`各内のオブジェクト`Place`オブジェクトには、`CityName`プロパティおよび`State`プロパティです。 プレフィックス`src`名前空間にマップされているデータ ソース`Places`が定義されています。 プレフィックス`scm`と`dat`にマップされて、<xref:System.ComponentModel>と<xref:System.Windows.Data>名前空間には、それぞれします。  
+  
+ 次の例では、市区町村名によって並べ替えられ、状態別にグループ化するデータ コレクションのビューを作成します。  
+  
+ [!code-xaml[CollectionViewSource#1](~/samples/snippets/csharp/VS_Snippets_Wpf/CollectionViewSource/CS/window1.xaml#1)]  
+  
+ ビューには、次の例のように、バインディング ソースを指定できます。 指定したため<xref:System.Windows.Controls.ItemsControl.DisplayMemberPath%2A>、各`Place`でオブジェクトが示すようにその`CityName`値。 場合<xref:System.Windows.Controls.ItemsControl.DisplayMemberPath%2A>が指定されていないがない<xref:System.Windows.DataTemplate>、 <xref:System.Windows.Controls.ListBox> (この場合は"SDKSample.Place") を基になるコレクションで各オブジェクトの文字列表現を表示します。  
+  
+ [!code-xaml[CollectionViewSource#2](~/samples/snippets/csharp/VS_Snippets_Wpf/CollectionViewSource/CS/window1.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayMemberPathProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DisplayMemberPathProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DisplayMemberPathProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.DisplayMemberPathProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.DisplayMemberPath" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public override void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ItemsControl" /> オブジェクトの初期化が完了したことを示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAlternationIndex">
+      <MemberSignature Language="C#" Value="public static int GetAlternationIndex (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetAlternationIndex(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.GetAlternationIndex(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">取得する対象のオブジェクト、<see cref="P:System.Windows.Controls.ItemsControl.AlternationIndex" />です。</param>
+        <summary>取得、<see cref="P:System.Windows.Controls.ItemsControl.AlternationIndex" />指定したオブジェクト。</summary>
+        <returns><see cref="P:System.Windows.Controls.ItemsControl.AlternationIndex" /> の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.DependencyObject GetContainerForItemOverride ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Windows.DependencyObject GetContainerForItemOverride() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.GetContainerForItemOverride" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定した項目の表示に使用される要素を作成または識別します。</summary>
+        <returns>指定した項目の表示に使用される要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemsOwner">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.ItemsControl GetItemsOwner (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Controls.ItemsControl GetItemsOwner(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.GetItemsOwner(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ItemsControl</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">ホストの要素。</param>
+        <summary>返します、<see cref="T:System.Windows.Controls.ItemsControl" />指定した要素が項目をホストします。</summary>
+        <returns><see cref="T:System.Windows.Controls.ItemsControl" />指定した要素が、項目をホストするまたは<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Controls.Panel.IsItemsHost%2A>に設定されている`true`で`element`スタイルの場合、または`element`によって作成されたパネルには、<xref:System.Windows.Controls.ItemsPresenter>の<xref:System.Windows.Controls.ItemsControl>では、<xref:System.Windows.Controls.ItemsControl>を返します。 それ以外の場合、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupStyle">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ObservableCollection&lt;System.Windows.Controls.GroupStyle&gt; GroupStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ObservableCollection`1&lt;class System.Windows.Controls.GroupStyle&gt; GroupStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.GroupStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ObservableCollection&lt;System.Windows.Controls.GroupStyle&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Controls.GroupStyle" />グループの各レベルの外観を定義するオブジェクト。</summary>
+        <value>コレクション<see cref="T:System.Windows.Controls.GroupStyle" />グループの各レベルの外観を定義するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックス 0 にあるエントリには、最上位レベルのグループがについて説明します、レベル、インデックス 1 のエントリは、次について説明します。 コレクション内のエントリよりも、複数レベルのグループ化がある場合は、最後のエントリは、余分なレベルで使用されます。  
+  
+<a name="xamlPropertyElementUsage_GroupStyle"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.GroupStyle>  
+    OneOrMoreGroupStyleObjects  
+  </object.GroupStyle>  
+</object>  
+  
+```  
+  
+<a name="xamlValues_GroupStyle"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *OneOrMoreGroupStyleObjects*  
+ 1 つまたは複数<xref:System.Windows.Controls.GroupStyle>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例、<xref:System.Windows.Controls.ItemsControl>にバインドされている、<xref:System.Windows.Data.XmlDataProvider>と分離コードの内容を追加し、グループ化を解除するためのロジックを含むです。 チェック ボックスをオンすると、コンテンツの<xref:System.Windows.Controls.ItemsControl>によってグループ化、`Type`属性。  
+  
+ 各グループのタイプは<xref:System.Windows.Data.CollectionViewGroup>します。 <xref:System.Windows.Controls.GroupStyle> <xref:System.Windows.Controls.GroupStyle.HeaderTemplate%2A>として表示されるように設定されて、<xref:System.Windows.Controls.TextBlock>を表示する、<xref:System.Windows.Data.CollectionViewGroup.Name%2A>それぞれのグループです。 ここで、<xref:System.Windows.Data.CollectionViewGroup.Name%2A>か`Work`または`Home`です。  
+  
+ [!code-xaml[GroupingSample#XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/GroupingSample/CSharp/Window1.xaml#xaml)]  
+  
+ [!code-csharp[GroupingSample#Code](~/samples/snippets/csharp/VS_Snippets_Wpf/GroupingSample/CSharp/Window1.xaml.cs#code)]
+ [!code-vb[GroupingSample#Code](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GroupingSample/visualbasic/window1.xaml.vb#code)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupStyleSelector">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.GroupStyleSelector GroupStyleSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.GroupStyleSelector GroupStyleSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.GroupStyleSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.GroupStyleSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するカスタム選択ロジックを用意するようにするメソッドを<see cref="T:System.Windows.Controls.GroupStyle" />コレクション内の各グループに適用します。</summary>
+        <value>カスタム選択ロジックを提供できるようにするメソッド、<see cref="T:System.Windows.Controls.GroupStyle" />コレクション内の各グループに適用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_GroupStyleSelector"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ItemsControl.GroupStyleSelectorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupStyleSelectorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty GroupStyleSelectorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty GroupStyleSelectorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.GroupStyleSelectorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.GroupStyleSelector" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasItems">
+      <MemberSignature Language="C#" Value="public bool HasItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.HasItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ItemsControl" /> に項目が含まれているかどうかを示す値を取得します。</summary>
+        <value>
+          項目数が 0 より大きい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_HasItems"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ItemsControl.HasItemsProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasItemsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HasItemsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HasItemsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.HasItemsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.HasItems" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGrouping">
+      <MemberSignature Language="C#" Value="public bool IsGrouping { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsGrouping" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.IsGrouping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがグループ化を使用しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コントロールがグループ化を使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsGrouping"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ItemsControl.IsGroupingProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGroupingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsGroupingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsGroupingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.IsGroupingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.IsGrouping" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItemItsOwnContainer">
+      <MemberSignature Language="C#" Value="public bool IsItemItsOwnContainer (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsItemItsOwnContainer(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.IsItemItsOwnContainer(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">確認する項目。</param>
+        <summary>指定された項目が独自のコンテナーであるか (または独自のコンテナーとすることが可能か) どうかを判断します。</summary>
+        <returns>
+          <see langword="true" />アイテムを (や対象である) 独自のコンテナーです。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Controls.ItemsControl.IsItemItsOwnContainerOverride%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItemItsOwnContainerOverride">
+      <MemberSignature Language="C#" Value="protected virtual bool IsItemItsOwnContainerOverride (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsItemItsOwnContainerOverride(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.IsItemItsOwnContainerOverride(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">確認する項目。</param>
+        <summary>指定された項目が独自のコンテナーであるか (または独自のコンテナーとすることが可能か) どうかを判断します。</summary>
+        <returns>
+          <see langword="true" />アイテムを (や対象である) 独自のコンテナーです。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTextSearchCaseSensitive">
+      <MemberSignature Language="C#" Value="public bool IsTextSearchCaseSensitive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTextSearchCaseSensitive" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.IsTextSearchCaseSensitive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目を検索するときに、大文字/小文字の区別が条件かどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />テキスト検索は大文字小文字を区別します。 場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.ItemsControl.IsTextSearchEnabled%2A>プロパティに設定されている`true`、<xref:System.Windows.Controls.ItemsControl.IsTextSearchCaseSensitive%2A>プロパティは、大文字と小文字がの項目を選択するかどうかを決定するかどうかを指定、<xref:System.Windows.Controls.ItemsControl>です。 など場合、<xref:System.Windows.Controls.ItemsControl>大文字小文字のみ、"ITEM"、"item"など、最初の文字列が常に選択されます、入力の大文字と小文字に関係なくが異なる 2 つの文字列が含まれています。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.ComboBox>文字列、"および DOG"、"CAT"、および"dog"および"cat"を格納しています。 例では、バインド、<xref:System.Windows.Controls.ItemsControl.IsTextSearchCaseSensitive%2A>プロパティを<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A>のプロパティ、<xref:System.Windows.Controls.CheckBox>です。 チェック ボックスが選択され、ユーザーの種類"dog"、3 番目のアイテム、<xref:System.Windows.Controls.ItemsControl>が選択されています。 チェック ボックスおよび"dog"の種類の選択を解除するユーザーの場合は、検索の条件ではないため、最初の項目が選択されます。  
+  
+ [!code-xaml[ComboBoxProps_snip#4](~/samples/snippets/csharp/VS_Snippets_Wpf/ComboBoxProps_snip/CS/pane1.xaml#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTextSearchCaseSensitiveProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsTextSearchCaseSensitiveProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsTextSearchCaseSensitiveProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.IsTextSearchCaseSensitiveProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.IsTextSearchCaseSensitive" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTextSearchEnabled">
+      <MemberSignature Language="C#" Value="public bool IsTextSearchEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTextSearchEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.IsTextSearchEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか<see cref="T:System.Windows.Controls.TextSearch" />で有効になっているが、<see cref="T:System.Windows.Controls.ItemsControl" />インスタンス。</summary>
+        <value>
+          <see langword="true" /> が有効な場合は <see cref="T:System.Windows.Controls.TextSearch" />、それ以外の場合は <see langword="false" /> を指定します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsTextSearchEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ItemsControl.IsTextSearchEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTextSearchEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsTextSearchEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsTextSearchEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.IsTextSearchEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.IsTextSearchEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemBindingGroup">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.BindingGroup ItemBindingGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Data.BindingGroup ItemBindingGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.ItemBindingGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingGroup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Data.BindingGroup" />内の各項目にコピーされる、<see cref="T:System.Windows.Controls.ItemsControl" />です。</summary>
+        <value><see cref="T:System.Windows.Data.BindingGroup" />内の各項目にコピーされる、<see cref="T:System.Windows.Controls.ItemsControl" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、<xref:System.Windows.Controls.ItemsControl.ItemBindingGroup%2A>プロパティ、各アイテムのコンテナーを取得、<xref:System.Windows.Data.BindingGroup>を持つ同じ<xref:System.Windows.Controls.ValidationRule>としてオブジェクトの<xref:System.Windows.Controls.ItemsControl.ItemBindingGroup%2A>など、バインド内のデータを記述するプロパティが、<xref:System.Windows.Data.BindingGroup.Items%2A>と<xref:System.Windows.Data.BindingGroup.BindingExpressions%2A>、内の各項目のデータに固有の<xref:System.Windows.Controls.ItemsControl>します。  項目コンテナーのアクセスする必要があります<xref:System.Windows.FrameworkContentElement.BindingGroup%2A>を実行する操作など、データと検証の項目でエラーを確認します。  
+  
+   
+  
+## Examples  
+ 次の例を複数の顧客を入力し、各顧客に販売担当者を割り当てるユーザーの入力を求める、アプリケーションの一部であり、営業担当者とお客様が同じリージョンに属していることを確認します。 例のセット、<xref:System.Windows.Controls.ItemsControl.ItemBindingGroup%2A>の<xref:System.Windows.Controls.ItemsControl>ため、 <xref:System.Windows.Controls.ValidationRule>、 `AreasMatch`、各項目を検証します。 例でも作成、<xref:System.Windows.Controls.Label>妥当性確認エラーを表示します。 注意して、<xref:System.Windows.Controls.ContentControl.Content%2A>の<xref:System.Windows.Controls.Label>にバインドされて、<xref:System.Windows.Controls.ValidationError>から取得した、<xref:System.Windows.Controls.Validation.ValidationAdornerSiteForProperty?displayProperty=nameWithType>プロパティです。 値<xref:System.Windows.Controls.Validation.ValidationAdornerSiteForProperty?displayProperty=nameWithType>エラーのあるアイテムのコンテナーです。  
+  
+ [!code-xaml[BindingGroupSnippets#ItemBindingGroup](~/samples/snippets/csharp/VS_Snippets_Wpf/BindingGroupSnippets/CSharp/Window2.xaml#itembindinggroup)]  
+[!code-xaml[BindingGroupSnippets#ValidationAdornerSiteFor](~/samples/snippets/csharp/VS_Snippets_Wpf/BindingGroupSnippets/CSharp/Window2.xaml#validationadornersitefor)]  
+  
+ 次の例は、項目コンテナーと呼び出しを取得<xref:System.Windows.Data.BindingGroup.UpdateSources%2A>コンテナーの <xref:System.Windows.Data.BindingGroup>データを検証します。 項目コンテナーのメソッドを呼び出すことにより、データを検証する必要があります<xref:System.Windows.FrameworkContentElement.BindingGroup%2A>ではありません、<xref:System.Windows.Controls.ItemsControl.ItemBindingGroup%2A>の<xref:System.Windows.Controls.ItemsControl>です。  
+  
+ [!code-csharp[BindingGroupSnippets#UpdateSources](~/samples/snippets/csharp/VS_Snippets_Wpf/BindingGroupSnippets/CSharp/Window2.xaml.cs#updatesources)]
+ [!code-vb[BindingGroupSnippets#UpdateSources](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindingGroupSnippets/visualbasic/window2.xaml.vb#updatesources)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemBindingGroupProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ItemBindingGroupProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ItemBindingGroupProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.ItemBindingGroupProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.ItemBindingGroup" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemContainerGenerator">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ItemContainerGenerator ItemContainerGenerator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.ItemContainerGenerator ItemContainerGenerator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.ItemContainerGenerator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ItemContainerGenerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.ItemContainerGenerator" />コントロールに関連付けられています。</summary>
+        <value><see cref="T:System.Windows.Controls.ItemContainerGenerator" />コントロールに関連付けられています。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ItemsControl.ItemContainerGenerator%2A>を生成する役割が、 [!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)] 、そのホストのように、<xref:System.Windows.Controls.ItemsControl>です。 コントロールのデータ ビューの項目と、対応する間の関連付けを維持<xref:System.Windows.UIElement>オブジェクト。 すべて<xref:System.Windows.Controls.ItemsControl>が関連付けられている項目コンテナー アイテム コレクション内のデータ項目が含まれています。 使用することができます、<xref:System.Windows.Controls.ItemsControl.ItemContainerGenerator%2A>プロパティに関連付けられているアイテムのコンテナーへのアクセスを<xref:System.Windows.Controls.ItemsControl>です。 たとえば、データ バインドがある場合<xref:System.Windows.Controls.TreeView>制御を取得する、 <xref:System.Windows.Controls.TreeViewItem> 、インデックスまたはその関連するデータ項目に基づき、行うこともできます、<xref:System.Windows.Controls.ItemContainerGenerator.ContainerFromIndex%2A?displayProperty=nameWithType>または<xref:System.Windows.Controls.ItemContainerGenerator.ContainerFromItem%2A?displayProperty=nameWithType>メソッドです。 また、使用することができます、<xref:System.Windows.Controls.ItemContainerGenerator.IndexFromContainer%2A?displayProperty=nameWithType>または<xref:System.Windows.Controls.ItemContainerGenerator.ItemFromContainer%2A?displayProperty=nameWithType>生成された特定のコンテナー要素に関連付けられているインデックスまたはデータ項目を取得します。  
+  
+ <xref:System.Windows.Controls.Primitives.IItemContainerGenerator>インターフェイスは高度なシナリオにも使用します。 通常、仮想化のパネルの独自の実装を持つ高度なアプリケーションは、インターフェイスのメンバーを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemContainerStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style ItemContainerStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style ItemContainerStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.ItemContainerStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Content")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Style" />の各項目に対して生成されるコンテナー要素に適用されています。</summary>
+        <value><see cref="T:System.Windows.Style" />の各項目に対して生成されるコンテナー要素に適用されています。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用する、または<xref:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector%2A>データ項目が含まれる要素の外観に影響するスタイルを設定するプロパティです。 たとえば、 <xref:System.Windows.Controls.ListBox>、生成されたコンテナーは<xref:System.Windows.Controls.ListBoxItem>が制御の<xref:System.Windows.Controls.ComboBox>は<xref:System.Windows.Controls.ComboBoxItem>コントロール。  
+  
+ <xref:System.Windows.Controls.ItemsControl>視覚的なカスタマイズの優れた柔軟性を提供し、多くのスタイルとテンプレートのプロパティを提供します。 アイテムのレイアウトに影響を与えるを使用して、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>プロパティです。 使用することができます、コントロールをグループ化を使用している場合、<xref:System.Windows.Controls.ItemsControl.GroupStyle%2A>または<xref:System.Windows.Controls.ItemsControl.GroupStyleSelector%2A>プロパティです。 データ オブジェクトの視覚エフェクトを指定するには、使用、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>または<xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>プロパティです。 指定するタイミングの詳細については、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>を参照してください[データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)です。  
+  
+<a name="xamlAttributeUsage_ItemContainerStyle"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ItemContainerStyle="ResourceExtension StyleResourceKey"/>  
+```  
+  
+<a name="xamlValues_ItemContainerStyle"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ResourceExtension*  
+ 次のいずれかの: `StaticResource`、または`DynamicResource`です。 スタイル自体には、システム リソースまたはユーザーの設定などの潜在的なランタイム参照への参照が含まれていない限り`StaticResource`スタイルへの参照は通常、パフォーマンスを推奨します。  
+  
+ *StyleResourceKey*  
+ `x:Key`リソースとして要求されているスタイルを参照する文字列値です。  
+  
+<a name="dependencyPropertyInfo_ItemContainerStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ItemsControl.ItemContainerStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用する方法を示します。 次のデータ バインドを検討してください<xref:System.Windows.Controls.ListBox>:  
+  
+ [!code-xaml[StylingIntroSnippet#UIListBox](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSnippet/CS/window1.xaml#uilistbox)]   
+  
+ データ項目が含まれる要素のスタイルを作成するには、作成、<xref:System.Windows.Controls.ListBoxItem>スタイルを次の例に示すようにします。 スタイルをすべて適用<xref:System.Windows.Controls.ListBoxItem>でスタイルが定義されているスコープ内の要素。  
+  
+ [!code-xaml[StylingIntroSnippet#ListBoxItemStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSnippet/CS/window1.xaml#listboxitemstyle)]   
+  
+ <xref:System.Windows.Controls.ListBoxItem>のコンテナー要素には、<xref:System.Windows.Controls.ListBox>コントロール。 したがって、先行する代わりを設定、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>のプロパティ、<xref:System.Windows.Controls.ListBox>定義済みのスタイル。 実行するには、付与、<xref:System.Windows.Controls.ListBoxItem>スタイル、`x:Key`リソースとして使用可能になるため。  
+  
+ [!code-xaml[StylingIntroSample_snippet#ContainerStyle1](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSample_snippet/CSharp/Window1.xaml#containerstyle1)]   
+  
+ 次に、設定、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>に次の例のように、リソースのプロパティ。  
+  
+ [!code-xaml[StylingIntroSample_snippet#ListBox](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSample_snippet/CSharp/Window1.xaml#listbox)]   
+  
+ 両方の前のシナリオは、同じ結果を生成します。 ただし、スタイルをリソースとして使用できるようにする利点の 1 つは、スタイルを再利用することができます。 設定、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>プロパティに明示的にも提供できます読みやすくします。  
+  
+ 完了の例では、次を参照してください。[スタイルとテンプレート サンプルの概要](http://go.microsoft.com/fwlink/?LinkID=160010)です。  
+  
+ 次の例は、別の関数を説明するために設計されていますスタイルとテンプレートに関連するプロパティによって提供される、<xref:System.Windows.Controls.ItemsControl>です。 <xref:System.Windows.Controls.ItemsControl>この例では、コレクションにバインドされている`Task`オブジェクト。 わかりやすいように、この例のスタイルとテンプレートはすべてインラインで宣言されています。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#ItemsControlProperties](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#itemscontrolproperties)]  
+  
+ 次に示すのは、この例がレンダリングされたときのスクリーンショットです。  
+  
+ ![ItemsControl の例のスクリーン ショット](~/add/media/databinding-itemscontrolproperties.png "ItemsControl の例のスクリーン ショット")  
+  
+ 2 つの他のスタイル関連プロパティ、<xref:System.Windows.Controls.ItemsControl>ここでは、表示されていない<xref:System.Windows.Controls.ItemsControl.GroupStyle%2A>と<xref:System.Windows.Controls.ItemsControl.GroupStyleSelector%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemContainerStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ItemContainerStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ItemContainerStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.ItemContainerStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemContainerStyleSelector">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.StyleSelector ItemContainerStyleSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.StyleSelector ItemContainerStyleSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Content")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.StyleSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成された各コンテナー要素に適用可能なスタイルのカスタム スタイル選択ロジックを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Controls.StyleSelector" />として使用するスタイルを選択するロジックを格納しているオブジェクト、<see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyle" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>データ項目が含まれる要素の外観に影響するスタイルを設定するプロパティです。 たとえば、 <xref:System.Windows.Controls.ListBox>、生成されたコンテナーは<xref:System.Windows.Controls.ListBoxItem>が制御の<xref:System.Windows.Controls.ComboBox>は<xref:System.Windows.Controls.ComboBoxItem>コントロール。 使用するかどうかは、複数のスタイルを定義して適用するには、どちらを選択するロジックを指定する必要があります、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector%2A>プロパティの代わりに、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>プロパティです。 場合、このプロパティは無視されることに注意してください、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>プロパティを設定します。  
+  
+ <xref:System.Windows.Controls.ItemsControl>視覚的なカスタマイズの優れた柔軟性を提供し、多くのスタイルとテンプレートのプロパティを提供します。 アイテムのレイアウトに影響を与えるを使用して、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>プロパティです。 使用することができます、コントロールをグループ化を使用している場合、<xref:System.Windows.Controls.ItemsControl.GroupStyle%2A>または<xref:System.Windows.Controls.ItemsControl.GroupStyleSelector%2A>プロパティです。 データ オブジェクトの視覚エフェクトを指定するには、使用、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>または<xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>プロパティです。 指定するタイミングの詳細については、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>を参照してください[データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)です。  
+  
+<a name="dependencyPropertyInfo_ItemContainerStyleSelector"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ItemsControl.ItemContainerStyleSelectorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemContainerStyleSelectorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ItemContainerStyleSelectorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ItemContainerStyleSelectorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.ItemContainerStyleSelectorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ItemCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.ItemCollection Items" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツの生成に使用するコレクションを取得、<see cref="T:System.Windows.Controls.ItemsControl" />です。</summary>
+        <value>コレクションのコンテンツの生成に使用される、<see cref="T:System.Windows.Controls.ItemsControl" />です。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが項目を追加するため、<xref:System.Windows.Controls.ItemsControl>です。 子要素の追加、<xref:System.Windows.Controls.ItemsControl>オブジェクトが暗黙的に追加して、<xref:System.Windows.Controls.ItemCollection>の<xref:System.Windows.Controls.ItemsControl>オブジェクト。  
+  
+> [!NOTE]
+>  このプロパティのみ設定できます[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]に示すコレクション構文を使用して、またはコレクション オブジェクトへのアクセスなど、さまざまなメソッドを使用して`Add`です。 コレクション オブジェクト自体にアクセスするプロパティは読み取り専用、およびコレクション自体は読み取り/書き込みです。  
+  
+ いずれかを使用すること、<xref:System.Windows.Controls.ItemsControl.Items%2A>または<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のコンテンツの生成に使用するコレクションを指定するプロパティ、<xref:System.Windows.Controls.ItemsControl>です。 ときに、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティが設定されて、<xref:System.Windows.Controls.ItemsControl.Items%2A>読み取り専用であり、固定サイズ コレクションが行われます。  
+  
+ ときに<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>使用の設定では、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティを`null`コレクションを削除し、使用状況を復元<xref:System.Windows.Controls.ItemsControl.Items%2A>、空になる予定<xref:System.Windows.Controls.ItemCollection>です。  
+  
+<a name="xamlPropertyElementUsage_Items"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  OneOrMoreElements  
+</object>  
+```  
+  
+<a name="xamlValues_Items"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *OneOrMoreElements*  
+ 1 つまたは複数<xref:System.Windows.UIElement>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、データをバインドする、<xref:System.Windows.Controls.ItemsControl>です。 最初の例と呼ばれるクラスを作成する`MyData`単純な文字列コレクションであります。  
+  
+ [!code-csharp[ControlContentOverviewSnippets#8](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml.cs#8)]
+ [!code-vb[ControlContentOverviewSnippets#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlContentOverviewSnippets/VisualBasic/Window1.xaml.vb#8)]  
+  
+ 次の例ではバインド、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のオブジェクト、<xref:System.Windows.Controls.ItemsControl>に`MyData`です。  
+  
+ [!code-xaml[ControlContentOverviewSnippets#7](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml#7)]  
+[!code-xaml[ControlContentOverviewSnippets#6](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml#6)]  
+  
+ [!code-csharp[ControlContentOverviewSnippets#9](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml.cs#9)]
+ [!code-vb[ControlContentOverviewSnippets#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlContentOverviewSnippets/VisualBasic/Window1.xaml.vb#9)]  
+  
+ 次の図は、<xref:System.Windows.Controls.ListBox>前の例で作成されたコントロール。  
+  
+ ![ListBox](~/add/media/controlcontentmodellistbox1.PNG "ListBox")  
+  
+ 次の例では、設定する方法について、<xref:System.Windows.Controls.ItemsControl>を使用して、<xref:System.Windows.Controls.ItemsControl.Items%2A>プロパティです。 この例で追加する項目の次のさまざまな種類、 <xref:System.Windows.Controls.ListBox>:  
+  
+-   文字列。  
+  
+-   <xref:System.DateTime> オブジェクト。  
+  
+-   <xref:System.Windows.UIElement> オブジェクト。  
+  
+-   A<xref:System.Windows.Controls.Panel>を含むその他のコントロール<xref:System.Windows.UIElement>オブジェクト。  
+  
+ [!code-xaml[ControlContentOverviewSnippets#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml#3)]  
+  
+ [!code-csharp[ControlContentOverviewSnippets#4](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml.cs#4)]
+ [!code-vb[ControlContentOverviewSnippets#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlContentOverviewSnippets/VisualBasic/Window1.xaml.vb#4)]  
+  
+ 次の図は、<xref:System.Windows.Controls.ListBox>前の例で作成します。  
+  
+ ![次の 4 つの種類のコンテンツを含む ListBox](~/add/media/controlcontentmodellistbox2.PNG "4 種類のコンテンツを含む ListBox")  
+  
+ なお、<xref:System.Windows.Controls.ItemCollection>など、並べ替え、フィルター、およびグループ化ビューに関連する機能を使用できるように、ビューは、します。  
+  
+ インスタンスが存在する場合など、 <xref:System.Windows.Controls.ListBox>、`myListBox`の内容を並べ替えるには、次を行うことができます、<xref:System.Windows.Controls.ListBox>です。 この例では`Content`によって並べ替えするプロパティの名前を指定します。  
+  
+ [!code-csharp[ListBoxSort_snip#Sort](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxSort_snip/CSharp/Window1.xaml.cs#sort)]
+ [!code-vb[ListBoxSort_snip#Sort](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListBoxSort_snip/visualbasic/window1.xaml.vb#sort)]  
+  
+ この場合、コントロールがコレクションに直接バインドされている場合、既定のコレクション ビューは使用されている、および並べ替えの条件は、同じコレクションに直接バインドされているその他のすべてのコントロールに適用されます。 場合、ビューは、既定のビューをされません、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティにバインドする<xref:System.Windows.Data.CollectionViewSource>です。  
+  
+ 場合、<xref:System.Windows.Controls.ItemsControl>は、コレクションに直接バインドされている既定のビューを取得するには、次を行うことができます。  
+  
+ [!code-csharp[GroupingSample#MyView](~/samples/snippets/csharp/VS_Snippets_Wpf/GroupingSample/CSharp/Window1.xaml.cs#myview)]
+ [!code-vb[GroupingSample#MyView](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GroupingSample/visualbasic/window1.xaml.vb#myview)]  
+[!code-csharp[GroupingSample#GetView](~/samples/snippets/csharp/VS_Snippets_Wpf/GroupingSample/CSharp/Window1.xaml.cs#getview)]
+[!code-vb[GroupingSample#GetView](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GroupingSample/visualbasic/window1.xaml.vb#getview)]  
+  
+ 代わりに、フィルター処理、並べ替え、およびグループ化の条件を指定できます[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]またはコードを使用して、<xref:System.Windows.Data.CollectionViewSource>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemsControlFromItemContainer">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.ItemsControl ItemsControlFromItemContainer (System.Windows.DependencyObject container);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Controls.ItemsControl ItemsControlFromItemContainer(class System.Windows.DependencyObject container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.ItemsControlFromItemContainer(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ItemsControl</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="container">コンテナー要素を返す、<see cref="T:System.Windows.Controls.ItemsControl" />用です。</param>
+        <summary>返します、<see cref="T:System.Windows.Controls.ItemsControl" />指定されたコンテナー要素を所有しています。</summary>
+        <returns><see cref="T:System.Windows.Controls.ItemsControl" />指定されたコンテナー要素を所有しています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemsPanel">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ItemsPanelTemplate ItemsPanel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.ItemsPanelTemplate ItemsPanel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.ItemsPanel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ItemsPanelTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目のレイアウトを制御するパネルを定義するテンプレートを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Controls.ItemsPanelTemplate" />アイテムのレイアウトに使用するパネルを定義します。 既定値、<see cref="T:System.Windows.Controls.ItemsControl" />は、<see cref="T:System.Windows.Controls.ItemsPanelTemplate" />を指定する、<see cref="T:System.Windows.Controls.StackPanel" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ListBox>、既定値<xref:System.Windows.Controls.ItemsPanelTemplate>を指定します、<xref:System.Windows.Controls.VirtualizingStackPanel>です。 <xref:System.Windows.Controls.MenuItem>、既定値を使用して<xref:System.Windows.Controls.WrapPanel>です。 <xref:System.Windows.Controls.Primitives.StatusBar>、既定値を使用して<xref:System.Windows.Controls.DockPanel>です。  
+  
+ 内の項目のレイアウトに影響を与える、 <xref:System.Windows.Controls.ItemsControl>、このプロパティを使用して、<xref:System.Windows.Controls.ItemsPanelTemplate>です。  
+  
+ <xref:System.Windows.Controls.ItemsControl>視覚的なカスタマイズの優れた柔軟性を提供し、多くのスタイルとテンプレートのプロパティを提供します。 使用する、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>プロパティまたは<xref:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector%2A>データ項目が含まれる要素の外観に影響するスタイルを設定するプロパティです。 たとえば、 <xref:System.Windows.Controls.ListBox>、生成されたコンテナーは<xref:System.Windows.Controls.ListBoxItem>が制御の<xref:System.Windows.Controls.ComboBox>は<xref:System.Windows.Controls.ComboBoxItem>コントロール。 使用することができます、コントロールをグループ化を使用している場合、<xref:System.Windows.Controls.ItemsControl.GroupStyle%2A>または<xref:System.Windows.Controls.ItemsControl.GroupStyleSelector%2A>プロパティです。 データ オブジェクトの視覚エフェクトを指定するには、使用、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>または<xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>プロパティです。 詳しくは「 [データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)」をご覧ください。  
+  
+<a name="dependencyPropertyInfo_ItemsPanel"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ItemsControl.ItemsPanelProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 水平方向を作成する<xref:System.Windows.Controls.ListBox>、水平方向を指定するテンプレートを作成する<xref:System.Windows.Controls.StackPanel>として設定し、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>プロパティです。 次の例は、 <xref:System.Windows.Controls.ListBox> <xref:System.Windows.Style>水平を作成する<xref:System.Windows.Controls.ListBox>です。  
+  
+ [!code-xaml[StylingIntroSample_snippet#ItemsPanel](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSample_snippet/CSharp/Window1.xaml#itemspanel)] 
+  
+ 次の例では、<xref:System.Windows.Controls.ControlTemplate>を水平方向を作成する<xref:System.Windows.Controls.ListBox>角が丸いです。 設定ではなく、この例では、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>プロパティ前の例のように、水平<xref:System.Windows.Controls.StackPanel>内に指定されて、<xref:System.Windows.Controls.ControlTemplate>です。 <xref:System.Windows.Controls.Panel.IsItemsHost%2A>プロパティに設定されている`true`上、<xref:System.Windows.Controls.StackPanel>パネルで、生成された項目が移動する必要があることを示します。 この方法を指定すると、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>を使用せず、コントロールのユーザーによって置き換えることができません、<xref:System.Windows.Controls.ControlTemplate>です。 そのため、のみはこのテンプレートを使用せずに置き換えられるパネルしたくないとわかっている場合。  
+  
+ [!code-xaml[StylingIntroSnippet#ListBoxCT](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSnippet/CS/window1.xaml#listboxct)]   
+  
+ また、同じ結果を得るには、次を行うことができます。 ここで、<xref:System.Windows.Controls.ItemsPresenter>に基づいてどのような項目のレイアウトを指定のパネルを作成、<xref:System.Windows.Controls.ItemsPanelTemplate>です。  
+  
+ [!code-xaml[StyleOvw01#ItemsPanelTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#itemspaneltemplate)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemsPanelProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ItemsPanelProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ItemsPanelProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.ItemsPanelProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.ItemsPanel" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemsSource">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable ItemsSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable ItemsSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.ItemsSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のコンテンツの生成に使用するコレクション、<see cref="T:System.Windows.Controls.ItemsControl" />です。</summary>
+        <value>コレクションのコンテンツの生成に使用される、<see cref="T:System.Windows.Controls.ItemsControl" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **コンテンツ モデル:**このプロパティが項目を追加するため、<xref:System.Windows.Controls.ItemsControl>です。  
+  
+ 一般的なシナリオは、<xref:System.Windows.Controls.ItemsControl>など、 <xref:System.Windows.Controls.ListBox>、 <xref:System.Windows.Controls.ListView>、または<xref:System.Windows.Controls.TreeView>データ コレクションを表示するか、バインド、<xref:System.Windows.Controls.ItemsControl>をコレクション オブジェクト。 バインドする、<xref:System.Windows.Controls.ItemsControl>コレクション オブジェクトを使用して、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティです。 なお、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティがサポート<xref:System.Windows.Data.BindingMode.OneWay>デフォルトをバインドします。  
+  
+ ときに、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティが設定されて、<xref:System.Windows.Controls.ItemsControl.Items%2A>読み取り専用であり、固定サイズ コレクションが行われます。  
+  
+ ときに<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティを設定して、使用中は`null`コレクションを削除し、使用状況を復元<xref:System.Windows.Controls.ItemsControl.Items%2A>、空になる予定<xref:System.Windows.Controls.ItemCollection>です。 ときに<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>はこのプロパティの値には、使用されていない`null`に設定して`null`も何も起こりません。  
+  
+> [!NOTE]
+>  ほとんどの場合は、独自のコレクションを実装する必要はありません。 代わりに、<xref:System.Collections.ObjectModel.ObservableCollection%601>またはその他の既存のコレクション。 詳細についてを参照してください「コレクション オブジェクトを使用としてバインド ソース」[バインディング ソースの概要](~/docs/framework/wpf/data/binding-sources-overview.md)です。  
+  
+<a name="xamlAttributeUsage_ItemsSource"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ItemsSource="bindingDeclaration"/>  
+```  
+  
+<a name="xamlValues_ItemsSource"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *bindingDeclaration*  
+ A<xref:System.Windows.Data.Binding>宣言します。 参照してください[マークアップ拡張機能のバインド](~/docs/framework/wpf/advanced/binding-markup-extension.md)詳細についてはします。  
+  
+<a name="dependencyPropertyInfo_ItemsSource"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ItemsControl.ItemsSourceProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemsSourceProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ItemsSourceProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ItemsSourceProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.ItemsSourceProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemStringFormat">
+      <MemberSignature Language="C#" Value="public string ItemStringFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ItemStringFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.ItemStringFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のアイテムの書式を設定する方法を指定する複合文字列、<see cref="T:System.Windows.Controls.ItemsControl" />文字列として表示される場合。</summary>
+        <value>内のアイテムの書式を設定する方法を指定する複合文字列、<see cref="T:System.Windows.Controls.ItemsControl" />文字列として表示される場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ItemsControl.ItemStringFormat%2A>定義済み、複合、またはカスタムの文字列形式にすることができます。 文字列形式の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。 設定した場合、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>または<xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>の<xref:System.Windows.Controls.ItemsControl>、<xref:System.Windows.Controls.ItemsControl.ItemStringFormat%2A>プロパティは無視されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Controls.ItemsControl.ItemStringFormat%2A>の一覧の形式を指定する<xref:System.DateTime>オブジェクト。  
+  
+ [!code-xaml[ContentStringSnippets#ItemsControl](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentStringSnippets/CSharp/Window1.xaml#itemscontrol)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemStringFormatProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ItemStringFormatProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ItemStringFormatProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.ItemStringFormatProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.ItemStringFormat" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate ItemTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate ItemTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.ItemTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.DataTemplate" />各項目を表示するために使用します。</summary>
+        <value>A<see cref="T:System.Windows.DataTemplate" />データ オブジェクトの視覚エフェクトを指定します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>データ オブジェクトの視覚エフェクトを指定します。 場合、<xref:System.Windows.Controls.ItemsControl>がバインドされて、コレクションにオブジェクトとする指示は示されません特定のディスプレイを使用して、 <xref:System.Windows.DataTemplate>、結果として得られる[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]各項目の基になるコレクション内の各オブジェクトの文字列表現であります。  
+  
+ 設定すると、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>上、 <xref:System.Windows.Controls.ItemsControl>、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]は次のように生成 (を使用して、<xref:System.Windows.Controls.ListBox>例として)。  
+  
+1.  コンテンツの生成中に、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>に対する要求を開始、<xref:System.Windows.Controls.ItemsControl.ItemContainerGenerator%2A>各データ項目のコンテナーを作成します。 <xref:System.Windows.Controls.ListBox>、コンテナーが、<xref:System.Windows.Controls.ListBoxItem>です。 呼び出し、ジェネレーター、<xref:System.Windows.Controls.ItemsControl>コンテナーを準備します。  
+  
+2.  準備の一部のコピーするために、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>の<xref:System.Windows.Controls.ListBox>する、<xref:System.Windows.Controls.ContentControl.ContentTemplate%2A>の<xref:System.Windows.Controls.ListBoxItem>です。  
+  
+3.  すべてのような<xref:System.Windows.Controls.ContentControl>の種類、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.ListBoxItem>が含まれています、<xref:System.Windows.Controls.ContentPresenter>です。 作成、テンプレートを適用すると、<xref:System.Windows.Controls.ContentPresenter>が<xref:System.Windows.Controls.ContentPresenter.ContentTemplate%2A>にバインドされて、<xref:System.Windows.Controls.ContentControl.ContentTemplate%2A>の<xref:System.Windows.Controls.ListBoxItem>です。  
+  
+4.  最後に、<xref:System.Windows.Controls.ContentPresenter>適用される<xref:System.Windows.Controls.ContentControl.ContentTemplate%2A>、それ自体を作成して、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。  
+  
+ 複数ある場合<xref:System.Windows.DataTemplate>定義され、プログラムでを選択し、適用するためのロジックを指定する、<xref:System.Windows.DataTemplate>を使用して、<xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>プロパティです。  
+  
+ <xref:System.Windows.Controls.ItemsControl>視覚的なカスタマイズの優れた柔軟性を提供し、多くのスタイルとテンプレートのプロパティを提供します。 使用して、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>プロパティまたは<xref:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector%2A>データ項目が含まれる要素の外観に影響するスタイルを設定するプロパティです。 たとえば、 <xref:System.Windows.Controls.ListBox>、生成されたコンテナーは<xref:System.Windows.Controls.ListBoxItem>が制御の<xref:System.Windows.Controls.ComboBox>は<xref:System.Windows.Controls.ComboBoxItem>コントロール。 アイテムのレイアウトに影響を与えるを使用して、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>プロパティです。 使用することができます、コントロールをグループ化を使用している場合、<xref:System.Windows.Controls.ItemsControl.GroupStyle%2A>または<xref:System.Windows.Controls.ItemsControl.GroupStyleSelector%2A>プロパティです。  
+  
+ 詳しくは「 [データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)」をご覧ください。  
+  
+<a name="xamlAttributeUsage_ItemTemplate"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ItemTemplate=" ResourceExtension TemplateResourceKey"/>  
+```  
+  
+<a name="xamlValues_ItemTemplate"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ResourceExtension*  
+ 次のいずれかの: [StaticResource マークアップ拡張機能](~/docs/framework/wpf/advanced/staticresource-markup-extension.md)、または[DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)します。 スタイル自体には、システム リソースまたはユーザーの設定などの潜在的なランタイム参照への参照が含まれていない限り[StaticResource マークアップ拡張機能](~/docs/framework/wpf/advanced/staticresource-markup-extension.md)スタイルへの参照は通常、パフォーマンスを推奨します。  
+  
+ *TemplateResourceKey*  
+ [X:key ディレクティブ](~/docs/framework/xaml-services/x-key-directive.md)リソースとして要求されているテンプレートを参照する文字列値です。  
+  
+<a name="dependencyPropertyInfo_ItemTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ItemsControl.ItemTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.DataTemplate>インラインです。 <xref:System.Windows.DataTemplate> 3 つの各データ項目が表示されるように指定<xref:System.Windows.Controls.TextBlock>内の要素、<xref:System.Windows.Controls.StackPanel>です。 この例では、データ オブジェクトと呼ばれるクラス`Task`です。 <xref:System.Windows.Controls.TextBlock>のプロパティにこのテンプレート内の要素がバインドされている、`Task`クラスです。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#Inline](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#inline)]  
+  
+ 定義する方が一般的な<xref:System.Windows.DataTemplate>で次の例のように、再利用可能なオブジェクトにするためのリソース セクション。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#R1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r1)]  
+[!code-xaml[DataTemplatingIntro_snip#AsResource](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#asresource)]  
+[!code-xaml[DataTemplatingIntro_snip#R2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r2)]  
+  
+ これで、次の例のように、`myTaskTemplate` をリソースとして使用できるようになります。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#MyTaskTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#mytasktemplate)]  
+  
+ 完全なサンプルについては、「[Introduction to Data Templating Sample](http://go.microsoft.com/fwlink/?LinkID=160009)」(データ テンプレート サンプルの概要) をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ItemTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ItemTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.ItemTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.ItemTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemTemplateSelector">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataTemplateSelector ItemTemplateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataTemplateSelector ItemTemplateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.ItemTemplateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataTemplateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各項目を表示するために使用されるテンプレートを選択するためのカスタム ロジックを取得または設定します。</summary>
+        <value>カスタム<see cref="T:System.Windows.Controls.DataTemplateSelector" />ロジックを提供し、返しますオブジェクト、<see cref="T:System.Windows.DataTemplate" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>データ オブジェクトの視覚エフェクトを指定します。 複数のテンプレートを定義して使用するテンプレートを返すロジックを提供するために、、このプロパティを使用します。 場合、このプロパティは無視されることに注意してください<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>が設定されています。  
+  
+ <xref:System.Windows.Controls.ItemsControl>視覚的なカスタマイズの優れた柔軟性を提供し、多くのスタイルとテンプレートのプロパティを提供します。 使用して、<xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>プロパティまたは<xref:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector%2A>データ項目が含まれる要素の外観に影響するスタイルを設定するプロパティです。 たとえば、 <xref:System.Windows.Controls.ListBox>、生成されたコンテナーは<xref:System.Windows.Controls.ListBoxItem>が制御の<xref:System.Windows.Controls.ComboBox>は<xref:System.Windows.Controls.ComboBoxItem>コントロール。 アイテムのレイアウトに影響を与えるを使用して、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>プロパティです。 使用することができます、コントロールをグループ化を使用している場合、<xref:System.Windows.Controls.ItemsControl.GroupStyle%2A>または<xref:System.Windows.Controls.ItemsControl.GroupStyleSelector%2A>プロパティです。  
+  
+ 詳しくは「 [データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)」をご覧ください。  
+  
+<a name="xamlAttributeUsage_ItemTemplateSelector"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ItemTemplateSelector="ResourceExtension SelectorResourceKey"/>  
+```  
+  
+<a name="xamlValues_ItemTemplateSelector"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ResourceExtension*  
+ 次のいずれかの: `StaticResource`、または`DynamicResource`です。 スタイル自体には、システム リソースまたはユーザーの設定などの潜在的なランタイム参照への参照が含まれていない限り`StaticResource`スタイルへの参照は通常、パフォーマンスを推奨します。  
+  
+ *SelectorResourceKey*  
+ `x:Key`リソースとして要求されているセレクターを参照する文字列値です。  
+  
+<a name="dependencyPropertyInfo_ItemTemplateSelector"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ItemsControl.ItemTemplateSelectorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例で、`auctionItemDataTemplateSelector`リソース名 (に対応する、`AuctionItemDataTemplateSelector`クラス) に割り当てられている、<xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>のプロパティ、<xref:System.Windows.Controls.ItemsControl>です。  
+  
+ [!code-xaml[DataTemplateSelector#ItemTemplateSelector](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplateSelector/CSharp/Window1.xaml#itemtemplateselector)]  
+  
+ 次の例の実装を示しています、`AuctionItemDataTemplateSelector`クラスのオーバーライドを含む、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッド。  
+  
+ [!code-csharp[DataTemplateSelector#DataTemplateSelector](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplateSelector/CSharp/AuctionItemDataTemplateSelector.cs#datatemplateselector)]
+ [!code-vb[DataTemplateSelector#DataTemplateSelector](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataTemplateSelector/visualbasic/auctionitemdatatemplateselector.vb#datatemplateselector)]  
+  
+ 内でこのケースでは、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッド、クラスの値に基づいて適切なテンプレートを返すためのロジックが、`SpecialFeatures`のプロパティ、`item`渡されたオブジェクト。 エンベロープのリソースに返されるテンプレートが見つかった<xref:System.Windows.Window>要素。  
+  
+ 設定すると、<xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>プロパティ、<xref:System.Windows.Controls.ItemsControl>は自動的に呼び出しに送られます、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>のメソッド`AuctionItemDataTemplateSelector`先コレクション内の項目の各、<xref:System.Windows.Controls.ItemsControl>がバインドされています。 この呼び出しは、オブジェクトとしてデータ項目を渡します。 <xref:System.Windows.DataTemplate>によって返されるデータ項目を表示する、メソッドを使用し、します。  
+  
+ 別の例では、次を参照してください。[データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemTemplateSelectorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ItemTemplateSelectorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ItemTemplateSelectorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ItemsControl.ItemTemplateSelectorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ItemsControl.ItemTemplateSelector" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemsControl.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>論理子オブジェクトの列挙子を取得、<see cref="T:System.Windows.Controls.ItemsControl" />オブジェクト。</summary>
+        <value>論理子オブジェクトの列挙子、<see cref="T:System.Windows.Controls.ItemsControl" />オブジェクト。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAlternationCountChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnAlternationCountChanged (int oldAlternationCount, int newAlternationCount);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAlternationCountChanged(int32 oldAlternationCount, int32 newAlternationCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnAlternationCountChanged(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldAlternationCount" Type="System.Int32" />
+        <Parameter Name="newAlternationCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="oldAlternationCount">古い値<see cref="P:System.Windows.Controls.ItemsControl.AlternationCount" />です。</param>
+        <param name="newAlternationCount"><see cref="P:System.Windows.Controls.ItemsControl.AlternationCount" /> の新しい値。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.AlternationCount" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDisplayMemberPathChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDisplayMemberPathChanged (string oldDisplayMemberPath, string newDisplayMemberPath);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDisplayMemberPathChanged(string oldDisplayMemberPath, string newDisplayMemberPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnDisplayMemberPathChanged(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldDisplayMemberPath" Type="System.String" />
+        <Parameter Name="newDisplayMemberPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="oldDisplayMemberPath"><see cref="P:System.Windows.Controls.ItemsControl.DisplayMemberPath" /> プロパティの変更前の値。</param>
+        <param name="newDisplayMemberPath">新しい値、<see cref="P:System.Windows.Controls.ItemsControl.DisplayMemberPath" />プロパティです。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.DisplayMemberPath" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGroupStyleSelectorChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnGroupStyleSelectorChanged (System.Windows.Controls.GroupStyleSelector oldGroupStyleSelector, System.Windows.Controls.GroupStyleSelector newGroupStyleSelector);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnGroupStyleSelectorChanged(class System.Windows.Controls.GroupStyleSelector oldGroupStyleSelector, class System.Windows.Controls.GroupStyleSelector newGroupStyleSelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnGroupStyleSelectorChanged(System.Windows.Controls.GroupStyleSelector,System.Windows.Controls.GroupStyleSelector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldGroupStyleSelector" Type="System.Windows.Controls.GroupStyleSelector" />
+        <Parameter Name="newGroupStyleSelector" Type="System.Windows.Controls.GroupStyleSelector" />
+      </Parameters>
+      <Docs>
+        <param name="oldGroupStyleSelector">前の値、<see cref="P:System.Windows.Controls.ItemsControl.GroupStyleSelector" />プロパティです。</param>
+        <param name="newGroupStyleSelector">新しい値、<see cref="P:System.Windows.Controls.ItemsControl.GroupStyleSelector" />プロパティです。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.GroupStyleSelector" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemBindingGroupChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemBindingGroupChanged (System.Windows.Data.BindingGroup oldItemBindingGroup, System.Windows.Data.BindingGroup newItemBindingGroup);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemBindingGroupChanged(class System.Windows.Data.BindingGroup oldItemBindingGroup, class System.Windows.Data.BindingGroup newItemBindingGroup) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnItemBindingGroupChanged(System.Windows.Data.BindingGroup,System.Windows.Data.BindingGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldItemBindingGroup" Type="System.Windows.Data.BindingGroup" />
+        <Parameter Name="newItemBindingGroup" Type="System.Windows.Data.BindingGroup" />
+      </Parameters>
+      <Docs>
+        <param name="oldItemBindingGroup">元の値、<see cref="P:System.Windows.Controls.ItemsControl.ItemBindingGroup" />です。</param>
+        <param name="newItemBindingGroup">新しい値、<see cref="P:System.Windows.Controls.ItemsControl.ItemBindingGroup" />です。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.ItemBindingGroup" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemContainerStyleChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemContainerStyleChanged (System.Windows.Style oldItemContainerStyle, System.Windows.Style newItemContainerStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemContainerStyleChanged(class System.Windows.Style oldItemContainerStyle, class System.Windows.Style newItemContainerStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnItemContainerStyleChanged(System.Windows.Style,System.Windows.Style)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldItemContainerStyle" Type="System.Windows.Style" />
+        <Parameter Name="newItemContainerStyle" Type="System.Windows.Style" />
+      </Parameters>
+      <Docs>
+        <param name="oldItemContainerStyle">前の値、<see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyle" />プロパティです。</param>
+        <param name="newItemContainerStyle">新しい値、<see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyle" />プロパティです。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyle" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemContainerStyleSelectorChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemContainerStyleSelectorChanged (System.Windows.Controls.StyleSelector oldItemContainerStyleSelector, System.Windows.Controls.StyleSelector newItemContainerStyleSelector);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemContainerStyleSelectorChanged(class System.Windows.Controls.StyleSelector oldItemContainerStyleSelector, class System.Windows.Controls.StyleSelector newItemContainerStyleSelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnItemContainerStyleSelectorChanged(System.Windows.Controls.StyleSelector,System.Windows.Controls.StyleSelector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldItemContainerStyleSelector" Type="System.Windows.Controls.StyleSelector" />
+        <Parameter Name="newItemContainerStyleSelector" Type="System.Windows.Controls.StyleSelector" />
+      </Parameters>
+      <Docs>
+        <param name="oldItemContainerStyleSelector">前の値、<see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector" />プロパティです。</param>
+        <param name="newItemContainerStyleSelector">新しい値、<see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector" />プロパティです。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemsChanged (System.Collections.Specialized.NotifyCollectionChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemsChanged(class System.Collections.Specialized.NotifyCollectionChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Collections.Specialized.NotifyCollectionChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">変更に関する情報。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.Items" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsPanelChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemsPanelChanged (System.Windows.Controls.ItemsPanelTemplate oldItemsPanel, System.Windows.Controls.ItemsPanelTemplate newItemsPanel);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemsPanelChanged(class System.Windows.Controls.ItemsPanelTemplate oldItemsPanel, class System.Windows.Controls.ItemsPanelTemplate newItemsPanel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnItemsPanelChanged(System.Windows.Controls.ItemsPanelTemplate,System.Windows.Controls.ItemsPanelTemplate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldItemsPanel" Type="System.Windows.Controls.ItemsPanelTemplate" />
+        <Parameter Name="newItemsPanel" Type="System.Windows.Controls.ItemsPanelTemplate" />
+      </Parameters>
+      <Docs>
+        <param name="oldItemsPanel">前の値、<see cref="P:System.Windows.Controls.ItemsControl.ItemsPanel" />プロパティです。</param>
+        <param name="newItemsPanel">新しい値、<see cref="P:System.Windows.Controls.ItemsControl.ItemsPanel" />プロパティです。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.ItemsPanel" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsSourceChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemsSourceChanged (System.Collections.IEnumerable oldValue, System.Collections.IEnumerable newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemsSourceChanged(class System.Collections.IEnumerable oldValue, class System.Collections.IEnumerable newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnItemsSourceChanged(System.Collections.IEnumerable,System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldValue" Type="System.Collections.IEnumerable" />
+        <Parameter Name="newValue" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="oldValue">前の値、<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />プロパティです。</param>
+        <param name="newValue">新しい値、<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />プロパティです。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemStringFormatChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemStringFormatChanged (string oldItemStringFormat, string newItemStringFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemStringFormatChanged(string oldItemStringFormat, string newItemStringFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnItemStringFormatChanged(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldItemStringFormat" Type="System.String" />
+        <Parameter Name="newItemStringFormat" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="oldItemStringFormat"><see cref="P:System.Windows.Controls.ItemsControl.ItemStringFormat" /> プロパティの変更前の値。</param>
+        <param name="newItemStringFormat"><see cref="P:System.Windows.Controls.ItemsControl.ItemStringFormat" /> プロパティの新しい値。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.ItemStringFormat" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemTemplateChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemTemplateChanged (System.Windows.DataTemplate oldItemTemplate, System.Windows.DataTemplate newItemTemplate);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemTemplateChanged(class System.Windows.DataTemplate oldItemTemplate, class System.Windows.DataTemplate newItemTemplate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnItemTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldItemTemplate" Type="System.Windows.DataTemplate" />
+        <Parameter Name="newItemTemplate" Type="System.Windows.DataTemplate" />
+      </Parameters>
+      <Docs>
+        <param name="oldItemTemplate">古い<see cref="P:System.Windows.Controls.ItemsControl.ItemTemplate" />プロパティの値。</param>
+        <param name="newItemTemplate">新しい<see cref="P:System.Windows.Controls.ItemsControl.ItemTemplate" />プロパティの値。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.ItemTemplate" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemTemplateSelectorChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemTemplateSelectorChanged (System.Windows.Controls.DataTemplateSelector oldItemTemplateSelector, System.Windows.Controls.DataTemplateSelector newItemTemplateSelector);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemTemplateSelectorChanged(class System.Windows.Controls.DataTemplateSelector oldItemTemplateSelector, class System.Windows.Controls.DataTemplateSelector newItemTemplateSelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnItemTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldItemTemplateSelector" Type="System.Windows.Controls.DataTemplateSelector" />
+        <Parameter Name="newItemTemplateSelector" Type="System.Windows.Controls.DataTemplateSelector" />
+      </Parameters>
+      <Docs>
+        <param name="oldItemTemplateSelector">前の値、<see cref="P:System.Windows.Controls.ItemsControl.ItemTemplateSelector" />プロパティです。</param>
+        <param name="newItemTemplateSelector">新しい値、<see cref="P:System.Windows.Controls.ItemsControl.ItemTemplateSelector" />プロパティです。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.ItemTemplateSelector" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関する情報。</param>
+        <summary>呼び出されたときに、<see cref="E:System.Windows.UIElement.KeyDown" />イベントを受信します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextInput">
+      <MemberSignature Language="C#" Value="protected override void OnTextInput (System.Windows.Input.TextCompositionEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnTextInput(class System.Windows.Input.TextCompositionEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.OnTextInput(System.Windows.Input.TextCompositionEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.TextCompositionEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関する情報。</param>
+        <summary>呼び出されたときに、<see cref="E:System.Windows.UIElement.TextInput" />イベントを受信します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected virtual void PrepareContainerForItemOverride (System.Windows.DependencyObject element, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void PrepareContainerForItemOverride(class System.Windows.DependencyObject element, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="element">指定した項目を表示するために使用する要素。</param>
+        <param name="item">指定した項目。</param>
+        <summary>指定した要素に指定した項目が表示されるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の準備可能性があります、バインドの設定、スタイルの適用を必要とします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldApplyItemContainerStyle">
+      <MemberSignature Language="C#" Value="protected virtual bool ShouldApplyItemContainerStyle (System.Windows.DependencyObject container, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ShouldApplyItemContainerStyle(class System.Windows.DependencyObject container, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.ShouldApplyItemContainerStyle(System.Windows.DependencyObject,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Windows.DependencyObject" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="container">コンテナー要素。</param>
+        <param name="item">目的の項目。</param>
+        <summary>スタイルを適用するかどうかを示す値を返します、<see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyle" />または<see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector" />プロパティを指定した項目のコンテナー要素。</summary>
+        <returns>常に<see langword="true" />の基底の実装です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeGroupStyle">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeGroupStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeGroupStyle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.ShouldSerializeGroupStyle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル化プロセスが有効な値をシリアル化する必要があるかどうかを示す値を返します、<see cref="P:System.Windows.Controls.ItemsControl.GroupStyle" />プロパティです。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.Windows.Controls.ItemsControl.GroupStyle" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeItems">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.ShouldSerializeItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル化プロセスが有効な値をシリアル化する必要があるかどうかを示す値を返します、<see cref="P:System.Windows.Controls.ItemsControl.Items" />プロパティです。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.Windows.Controls.ItemsControl.Items" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Controls.Primitives.IContainItemStorage.Clear">
+      <MemberSignature Language="C#" Value="void IContainItemStorage.Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Controls.Primitives.IContainItemStorage.Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.System#Windows#Controls#Primitives#IContainItemStorage#Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティの関連付けをすべてクリアします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Controls.Primitives.IContainItemStorage.ClearItemValue">
+      <MemberSignature Language="C#" Value="void IContainItemStorage.ClearItemValue (object item, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Controls.Primitives.IContainItemStorage.ClearItemValue(object item, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.System#Windows#Controls#Primitives#IContainItemStorage#ClearItemValue(System.Object,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="item">関連付けられている項目。</param>
+        <param name="dp">関連付けられているプロパティ。</param>
+        <summary>指定したアイテムとプロパティ間の関連付けを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Controls.Primitives.IContainItemStorage.ClearValue">
+      <MemberSignature Language="C#" Value="void IContainItemStorage.ClearValue (System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Controls.Primitives.IContainItemStorage.ClearValue(class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.System#Windows#Controls#Primitives#IContainItemStorage#ClearValue(System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dp">削除するプロパティ。</param>
+        <summary>指定したプロパティをすべてのプロパティ一覧から削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Controls.Primitives.IContainItemStorage.ReadItemValue">
+      <MemberSignature Language="C#" Value="object IContainItemStorage.ReadItemValue (object item, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Windows.Controls.Primitives.IContainItemStorage.ReadItemValue(object item, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.System#Windows#Controls#Primitives#IContainItemStorage#ReadItemValue(System.Object,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="item">関連付けられている指定したプロパティを持つ項目。</param>
+        <param name="dp">値を返すプロパティ。</param>
+        <summary>指定した項目に関連付けられている指定したプロパティの値を返します。</summary>
+        <returns>指定した項目に関連付けられている指定したプロパティの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Controls.Primitives.IContainItemStorage.StoreItemValue">
+      <MemberSignature Language="C#" Value="void IContainItemStorage.StoreItemValue (object item, System.Windows.DependencyProperty dp, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Controls.Primitives.IContainItemStorage.StoreItemValue(object item, class System.Windows.DependencyProperty dp, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.System#Windows#Controls#Primitives#IContainItemStorage#StoreItemValue(System.Object,System.Windows.DependencyProperty,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">値とプロパティを関連付ける対象となる項目。</param>
+        <param name="dp">指定した項目に関連付けられるプロパティ。</param>
+        <param name="value">関連付けられたプロパティの値。</param>
+        <summary>指定されたプロパティと値を格納して、指定した項目に関連付けます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">追加するテキスト。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemsControl.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列表現を提供、<see cref="T:System.Windows.Controls.ItemsControl" />オブジェクト。</summary>
+        <returns>オブジェクトの文字列表現。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

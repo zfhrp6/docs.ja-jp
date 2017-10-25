@@ -1,0 +1,550 @@
+<Type Name="GridSplitter" FullName="System.Windows.Controls.GridSplitter">
+  <TypeSignature Language="C#" Value="public class GridSplitter : System.Windows.Controls.Primitives.Thumb" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi GridSplitter extends System.Windows.Controls.Primitives.Thumb" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.GridSplitter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Primitives.Thumb</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.StyleTypedProperty(Property="PreviewStyle", StyleTargetType=typeof(System.Windows.Controls.Control))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>行または列の間にスペースを再配分するコントロールを表します、<see cref="T:System.Windows.Controls.Grid" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridSplitter>コントロールの行または列の間にスペースを再分配、<xref:System.Windows.Controls.Grid>の寸法を変更することがなく、<xref:System.Windows.Controls.Grid>です。 たとえばときに、 <xref:System.Windows.Controls.GridSplitter> 2 つの列のサイズを変更、 <xref:System.Windows.Controls.ColumnDefinition.ActualWidth%2A> 、同時に、1 つの列のプロパティを増やす、<xref:System.Windows.Controls.ColumnDefinition.ActualWidth%2A>量が、他の列のプロパティが減少します。  
+  
+ 次の表は、水平方向または垂直方向を定義する方法を示します<xref:System.Windows.Controls.GridSplitter>を設定して、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>と<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティを残しておくと、<xref:System.Windows.Controls.GridSplitter.ResizeDirection%2A>と<xref:System.Windows.Controls.GridSplitter.ResizeBehavior%2A>プロパティが既定値に設定します。  
+  
+ **垂直および水平方向の GridSplitter コントロールを作成する方法**  
+  
+|GridSplitter 型|<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> の値|<xref:System.Windows.FrameworkElement.VerticalAlignment%2A> の値|  
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|行のサイズを変更します|<xref:System.Windows.HorizontalAlignment.Stretch>|<xref:System.Windows.VerticalAlignment.Top>、<xref:System.Windows.VerticalAlignment.Bottom>、<xref:System.Windows.VerticalAlignment.Center>|  
+|列のサイズを変更します|<xref:System.Windows.HorizontalAlignment.Left>、<xref:System.Windows.HorizontalAlignment.Right>、<xref:System.Windows.HorizontalAlignment.Center>|<xref:System.Windows.VerticalAlignment.Stretch>|  
+|場合<xref:System.Windows.FrameworkElement.ActualHeight%2A>がより大きいまたは等しい<xref:System.Windows.FrameworkElement.ActualWidth%2A>、この列のサイズを変更します。<br /><br /> 場合<xref:System.Windows.FrameworkElement.ActualHeight%2A>はより小さい<xref:System.Windows.FrameworkElement.ActualWidth%2A>、この行のサイズを変更します。|<xref:System.Windows.HorizontalAlignment.Stretch>|<xref:System.Windows.VerticalAlignment.Stretch>|  
+  
+ A<xref:System.Windows.Controls.GridSplitter>行またはその他のコンテンツを含む列に重複できますまたは単独で行または列にまたがる場合がします。 定義する方法について、<xref:System.Windows.Controls.GridSplitter>を参照してください[する方法: GridSplitter での行のサイズを変更する](~/docs/framework/wpf/controls/how-to-resize-rows-with-a-gridsplitter.md)と[する方法: GridSplitter での列のサイズを変更する](~/docs/framework/wpf/controls/how-to-resize-columns-with-a-gridsplitter.md)です。  
+  
+ 場合、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>と<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティの設定が、必要な行うできません<xref:System.Windows.Controls.GridSplitter>の動作を変更、<xref:System.Windows.Controls.GridSplitter.ResizeDirection%2A>と<xref:System.Windows.Controls.GridSplitter.ResizeBehavior%2A>プロパティの設定。  
+  
+ A<xref:System.Windows.Controls.GridSplitter>に含まれているその他のオブジェクトによって隠される可能性があります、<xref:System.Windows.Controls.Panel.Children%2A>のコレクション、<xref:System.Windows.Controls.Grid>です。 このような状況を回避する方法については、次を参照してください。[する方法: ことは確認](~/docs/framework/wpf/controls/how-to-make-sure-that-a-gridsplitter-is-visible.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+   
+  
+## Examples  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.GridSplitter>内の列のサイズを変更する、<xref:System.Windows.Controls.Grid>を列の端を重ねています。  
+  
+ [!code-csharp[GridSplitterSnips#GridSplitterSimpleExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml.cs#gridsplittersimpleexample)]
+ [!code-vb[GridSplitterSnips#GridSplitterSimpleExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GridSplitterSnips/visualbasic/window1.xaml.vb#gridsplittersimpleexample)]
+ [!code-xaml[GridSplitterSnips#GridSplitterSimpleExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#gridsplittersimpleexample)]  
+  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.GridSplitter>内の列のサイズを変更する、<xref:System.Windows.Controls.Grid>内の列を使用して、<xref:System.Windows.Controls.Grid>です。  
+  
+ [!code-xaml[GridSplitterRowColumn#GridSplitterEntireColumnPart1](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterentirecolumnpart1)]  
+[!code-xaml[GridSplitterRowColumn#GridSplitterEntireColumnPart2](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterentirecolumnpart2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridSplitter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridSplitter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.GridSplitter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragIncrement">
+      <MemberSignature Language="C#" Value="public double DragIncrement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 DragIncrement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridSplitter.DragIncrement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーが持つ行または列のサイズを変更するためにマウスをドラッグする必要がありますの最短距離を設定、<see cref="T:System.Windows.Controls.GridSplitter" />コントロール。</summary>
+        <value>ユーザーがドラッグする、マウスを使用する必要がありますのある最小距離を表す値、<see cref="T:System.Windows.Controls.GridSplitter" />行または列のサイズを変更します。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義されている最小距離<xref:System.Windows.Controls.GridSplitter.DragIncrement%2A>が再初期化される継続的に、ユーザーがマウスをドラッグします。 たとえば、ドラッグ、<xref:System.Windows.Controls.GridSplitter>によって、<xref:System.Windows.Controls.GridSplitter.DragIncrement%2A>量、行または列のサイズが変更されます。 詳細行と列のサイズを変更するには、ドラッグする必要があります、<xref:System.Windows.Controls.GridSplitter>同じ量。 したがって、マウスまたはキーボードを使用して移動することによって行われた列と行のサイズを変更、<xref:System.Windows.Controls.GridSplitter>の倍数で行われる、<xref:System.Windows.Controls.GridSplitter.DragIncrement%2A>です。  
+  
+<a name="dependencyPropertyInfo_DragIncrement"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridSplitter.DragIncrementProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.GridSplitter.DragIncrement%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[GridSplitterSnips#DragIncrement](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml.cs#dragincrement)]
+ [!code-vb[GridSplitterSnips#DragIncrement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GridSplitterSnips/visualbasic/window1.xaml.vb#dragincrement)]
+ [!code-xaml[GridSplitterSnips#DragIncrement](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#dragincrement)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragIncrementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DragIncrementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DragIncrementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridSplitter.DragIncrementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridSplitter.DragIncrement" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyboardIncrement">
+      <MemberSignature Language="C#" Value="public double KeyboardIncrement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 KeyboardIncrement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridSplitter.KeyboardIncrement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または方向キーの各キーを押してを移動する距離を設定、<see cref="T:System.Windows.Controls.GridSplitter" />コントロール。</summary>
+        <value>までの距離を<see cref="T:System.Windows.Controls.GridSplitter" />方向キーの各キーを押してに移動します。 既定値は 10 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_KeyboardIncrement"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridSplitter.KeyboardIncrementProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.GridSplitter.KeyboardIncrement%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[GridSplitterSnips#KeyboardIncrement](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml.cs#keyboardincrement)]
+ [!code-vb[GridSplitterSnips#KeyboardIncrement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GridSplitterSnips/visualbasic/window1.xaml.vb#keyboardincrement)]
+ [!code-xaml[GridSplitterSnips#KeyboardIncrement](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#keyboardincrement)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyboardIncrementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty KeyboardIncrementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty KeyboardIncrementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridSplitter.KeyboardIncrementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridSplitter.KeyboardIncrement" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridSplitter.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装を作成<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />の<see cref="T:System.Windows.Controls.GridSplitter" />コントロール。</summary>
+        <returns>新しい<see cref="T:System.Windows.Automation.Peers.GridSplitterAutomationPeer" />この<see cref="T:System.Windows.Controls.ToolTip" />コントロール。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridSplitter.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Input.KeyEventArgs" />。</param>
+        <summary>キーが押されるときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLostKeyboardFocus">
+      <MemberSignature Language="C#" Value="protected override void OnLostKeyboardFocus (System.Windows.Input.KeyboardFocusChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLostKeyboardFocus(class System.Windows.Input.KeyboardFocusChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridSplitter.OnLostKeyboardFocus(System.Windows.Input.KeyboardFocusChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyboardFocusChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Input.KeyboardFocusChangedEventArgs" />。</param>
+        <summary>ときに呼び出されます、<see cref="T:System.Windows.Controls.GridSplitter" />コントロールがキーボード フォーカスを失った。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderSizeChanged">
+      <MemberSignature Language="C#" Value="protected override void OnRenderSizeChanged (System.Windows.SizeChangedInfo sizeInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnRenderSizeChanged(class System.Windows.SizeChangedInfo sizeInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridSplitter.OnRenderSizeChanged(System.Windows.SizeChangedInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sizeInfo" Type="System.Windows.SizeChangedInfo" />
+      </Parameters>
+      <Docs>
+        <param name="sizeInfo">サイズの変更に関する情報、<see cref="T:System.Windows.Controls.GridSplitter" />です。</param>
+        <summary>寸法の変更に応答、<see cref="T:System.Windows.Controls.GridSplitter" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridSplitter>コントロールの後に表示へのポインターの種類を決定する、<xref:System.Windows.Size>が設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style PreviewStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style PreviewStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridSplitter.PreviewStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外観、効果、またはその他のスタイル特性をカスタマイズするスタイル取得または設定、<see cref="T:System.Windows.Controls.GridSplitter" />コントロール プレビュー インジケーターであるときに表示される、<see cref="P:System.Windows.Controls.GridSplitter.ShowsPreview" />プロパティに設定されている<see langword="true" />です。</summary>
+        <value>返します、<see cref="T:System.Windows.Style" />で変更する可能性を示しています。 プレビューのインジケーターの<see cref="T:System.Windows.Controls.Grid" />ディメンションを移動すると、<see cref="T:System.Windows.Controls.GridSplitter" />コントロール。 既定値は、現在のテーマを提供するスタイルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタイルを設定するときに制限があります。 詳しくは、「 [スタイルとテンプレート](~/docs/framework/wpf/controls/styling-and-templating.md)」をご覧ください。  
+  
+<a name="xamlAttributeUsage_PreviewStyle"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object PreviewStyle="{ResourceExtension StyleResourceKey}"/>  
+```  
+  
+<a name="xamlValues_Style"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `ResourceExtension`  
+ 次のいずれかの:`StaticResource`または`DynamicResource`です。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ `StyleResourceKey`  
+ 要求されているスタイルを識別するキー。 このキーは既存のリソースを<xref:System.Windows.ResourceDictionary>です。  
+  
+> [!NOTE]
+>  プロパティ要素構文は、技術的に可能ですが、推奨されません。 参照してください[インライン スタイルとテンプレート](~/docs/framework/wpf/advanced/inline-styles-and-templates.md)です。 バインドの参照を使用して、または<xref:System.Windows.Data.Binding>も可能ですが、一般的ではないです。  
+  
+<a name="dependencyPropertyInfo_PreviewStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridSplitter.PreviewStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ユーザーのドラッグが中に行または列の境界の変更のプレビューが表示されます、<xref:System.Windows.Controls.GridSplitter>コントロール、および<xref:System.Windows.Controls.GridSplitter.ShowsPreview%2A>プロパティに設定されている`true`です。 列と行の境界は、ユーザーがマウス ボタンを離したときに設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PreviewStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PreviewStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridSplitter.PreviewStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridSplitter.PreviewStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridSplitter.PreviewStyle%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResizeBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.GridResizeBehavior ResizeBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.GridResizeBehavior ResizeBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridSplitter.ResizeBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.GridResizeBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する列または行がサイズ変更される列または行を<see cref="T:System.Windows.Controls.GridSplitter" />コントロールが定義されています。</summary>
+        <value>どの列または行がこのサイズを指定する列挙値のいずれかの<see cref="T:System.Windows.Controls.GridSplitter" />コントロール。 既定値は、<see cref="F:System.Windows.Controls.GridResizeBehavior.BasedOnAlignment" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定する、<xref:System.Windows.Controls.GridSplitter>行または列のサイズを変更する、設定、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>と<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティです。 設定して、目的の動作を実現できない場合、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>と<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティの変更、<xref:System.Windows.Controls.GridSplitter.ResizeDirection%2A>または<xref:System.Windows.Controls.GridSplitter.ResizeBehavior%2A>既定値です。 詳細については、次を参照してください。[する方法: GridSplitter での行のサイズを変更する](~/docs/framework/wpf/controls/how-to-resize-rows-with-a-gridsplitter.md)と[する方法: GridSplitter での列のサイズを変更する](~/docs/framework/wpf/controls/how-to-resize-columns-with-a-gridsplitter.md)です。  
+  
+<a name="dependencyPropertyInfo_ResizeBehavior"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridSplitter.ResizeBehaviorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.GridSplitter.ResizeBehavior%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[GridSplitterSnips#ResizeBehavior](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml.cs#resizebehavior)]
+ [!code-vb[GridSplitterSnips#ResizeBehavior](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GridSplitterSnips/visualbasic/window1.xaml.vb#resizebehavior)]
+ [!code-xaml[GridSplitterSnips#ResizeBehavior](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#resizebehavior)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResizeBehaviorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ResizeBehaviorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ResizeBehaviorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridSplitter.ResizeBehaviorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridSplitter.ResizeBehavior" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GridSplitter.ResizeBehavior%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResizeDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.GridResizeDirection ResizeDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.GridResizeDirection ResizeDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridSplitter.ResizeDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.GridResizeDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Controls.GridSplitter" />コントロールの行または列のサイズを変更します。</summary>
+        <value>行や列のサイズを変更するかどうかを指定する列挙値の 1 つ。 既定値は、<see cref="F:System.Windows.Controls.GridResizeDirection.Auto" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定する、<xref:System.Windows.Controls.GridSplitter>行または列のサイズを変更する、設定、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>と<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティです。 設定して、目的の動作を実現できない場合、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>と<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティの変更、<xref:System.Windows.Controls.GridSplitter.ResizeDirection%2A>または<xref:System.Windows.Controls.GridSplitter.ResizeBehavior%2A>既定値です。 詳細については、次を参照してください。[する方法: GridSplitter での行のサイズを変更する](~/docs/framework/wpf/controls/how-to-resize-rows-with-a-gridsplitter.md)と[する方法: GridSplitter での列のサイズを変更する](~/docs/framework/wpf/controls/how-to-resize-columns-with-a-gridsplitter.md)です。  
+  
+<a name="dependencyPropertyInfo_ResizeDirection"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridSplitter.ResizeDirectionProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.GridSplitter.ResizeDirection%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[GridSplitterSnips#ResizeDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml.cs#resizedirection)]
+ [!code-vb[GridSplitterSnips#ResizeDirection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GridSplitterSnips/visualbasic/window1.xaml.vb#resizedirection)]
+ [!code-xaml[GridSplitterSnips#ResizeDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#resizedirection)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResizeDirectionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ResizeDirectionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ResizeDirectionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridSplitter.ResizeDirectionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridSplitter.ResizeDirection" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowsPreview">
+      <MemberSignature Language="C#" Value="public bool ShowsPreview { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowsPreview" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.GridSplitter.ShowsPreview" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Controls.GridSplitter" />ユーザー コントロールをドラッグすると、コントロールが、列または行のサイズを更新します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.GridSplitter" />プレビューが表示されている、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.GridSplitter>が必要です、<xref:System.Windows.Documents.AdornerDecorator>ドラッグ プレビューのフィードバックを表示するためにその親のツリー内に存在するオブジェクト。 この要件を満たすを通常、<xref:System.Windows.Documents.AdornerDecorator>の既定のスタイルで使用できるオブジェクト、<xref:System.Windows.Window>または、<xref:System.Windows.Documents.AdornerDecorator>によって作成されるオブジェクト、<xref:System.Windows.Controls.ScrollViewer>オブジェクト。 ただし、どちらの場合これらは、使用可能な<xref:System.Windows.Controls.GridSplitter>コントロールを定義する必要があります独自<xref:System.Windows.Documents.AdornerDecorator>オブジェクト。  
+  
+<a name="dependencyPropertyInfo_ShowsPreview"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.GridSplitter.ShowsPreviewProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ときに、<xref:System.Windows.Controls.GridSplitter.ShowsPreview%2A>プロパティに設定されている`true`、行または列のサイズの変更のプレビューが表示されます。 実際のサイズ変更時に、<xref:System.Windows.Controls.GridSplitter>を解放します。 プロパティ設定されている場合`false`、列または行のサイズがユーザーのドラッグがリアルタイムで更新、<xref:System.Windows.Controls.GridSplitter>コントロール。  
+  
+ キーボードを使用して移動する場合、<xref:System.Windows.Controls.GridSplitter>コントロール、列または行のサイズは場合であってもリアルタイムで更新される、<xref:System.Windows.Controls.GridSplitter.ShowsPreview%2A>プロパティに設定されている`true`です。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.GridSplitter.ShowsPreview%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[GridSplitterSnips#ShowsPreview](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml.cs#showspreview)]
+ [!code-vb[GridSplitterSnips#ShowsPreview](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GridSplitterSnips/visualbasic/window1.xaml.vb#showspreview)]
+ [!code-xaml[GridSplitterSnips#ShowsPreview](~/samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterSnips/CSharp/Window1.xaml#showspreview)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowsPreviewProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowsPreviewProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowsPreviewProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridSplitter.ShowsPreviewProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.GridSplitter.ShowsPreview" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

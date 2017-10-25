@@ -1,0 +1,232 @@
+<Type Name="IWindowProvider" FullName="System.Windows.Automation.Provider.IWindowProvider">
+  <TypeSignature Language="C#" Value="public interface IWindowProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWindowProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IWindowProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("987df77b-db06-4d77-8f8a-86a9c3bb90b9")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>従来のグラフィカル ユーザー インターフェイス (GUI) 内で、ウィンドウ ベースの基本的な機能を提供するコントロールへの UI オートメーション クライアント アクセスをサポートするメソッドとプロパティを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする UI オートメーション プロバイダーに実装される、<xref:System.Windows.Automation.WindowPattern>コントロール パターン。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IWindowProvider.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ウィンドウを閉じることを試みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A>ブロックすることがなく直ちにを返す必要があります。  
+  
+ <xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A> は、<xref:System.Windows.Automation.WindowPatternIdentifiers.WindowClosedEvent> イベントを発生させます。 可能であれば、コントロールに関連付けられたアクションが完了した後は、イベントを発生させる必要があります。  
+  
+ 分割ウィンドウ コントロールで呼び出されると、このメソッドは、ウィンドウを閉じるし、関連付けられている分割の削除します。 このメソッドは、実装に応じて、他のすべてのウィンドウを閉じる場合があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コントロールが、要求されたアクションを実行できない場合。</exception>
+        <exception cref="T:System.Windows.Automation.ElementNotAvailableException">ターゲット要素が使用不可になった場合 (ウィンドウが閉じた場合など)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InteractionState">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.WindowInteractionState InteractionState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.WindowInteractionState InteractionState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IWindowProvider.InteractionState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.WindowInteractionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウの操作状態を取得します。</summary>
+        <value>コントロールの <see cref="T:System.Windows.Automation.WindowInteractionState" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsModal">
+      <MemberSignature Language="C#" Value="public bool IsModal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsModal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IWindowProvider.IsModal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウがモーダルかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />ウィンドウがモーダルの場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTopmost">
+      <MemberSignature Language="C#" Value="public bool IsTopmost { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTopmost" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IWindowProvider.IsTopmost" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウが z オーダーの最上位の要素かどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、ウィンドウが最上位です。それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Maximizable">
+      <MemberSignature Language="C#" Value="public bool Maximizable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Maximizable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IWindowProvider.Maximizable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウを最大化できるかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />ウィンドウを最大化できる場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minimizable">
+      <MemberSignature Language="C#" Value="public bool Minimizable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Minimizable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IWindowProvider.Minimizable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウを最小化できるかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />ウィンドウを最小化できる場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetVisualState">
+      <MemberSignature Language="C#" Value="public void SetVisualState (System.Windows.Automation.WindowVisualState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetVisualState(valuetype System.Windows.Automation.WindowVisualState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IWindowProvider.SetVisualState(System.Windows.Automation.WindowVisualState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Windows.Automation.WindowVisualState" />
+      </Parameters>
+      <Docs>
+        <param name="state">ウィンドウの要求の表示状態。</param>
+        <summary>ウィンドウの表示状態を変更します。 たとえばが最小化または最大化したりします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">コントロールが、要求された動作をサポートしない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualState">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.WindowVisualState VisualState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.WindowVisualState VisualState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IWindowProvider.VisualState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.WindowVisualState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウの表示状態を取得します。</summary>
+        <value>ウィンドウの表示状態。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForInputIdle">
+      <MemberSignature Language="C#" Value="public bool WaitForInputIdle (int milliseconds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool WaitForInputIdle(int32 milliseconds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="milliseconds" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="milliseconds">関連付けられたプロセスがアイドル状態になるまで待機する時間。単位はミリ秒です。 最大値は<see cref="F:System.Int32.MaxValue" />します。</param>
+        <summary>呼び出し元のコードは、指定された時間、または関連付けられたプロセスがアイドル状態に入るまでブロックされます。どちらが最初に完了するかは関係ありません。</summary>
+        <returns>
+          <see langword="true" />ウィンドウがアイドル状態に入った場合<see langword="false" />場合は、タイムアウトが発生しました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは通常の処理と組み合わせて使用する<xref:System.Windows.Automation.WindowPatternIdentifiers.WindowOpenedEvent>です。  
+  
+ 実装は基になるアプリケーション フレームワークに依存します。そのためこのメソッドは、ウィンドウがユーザー入力の準備が整ってからしばらくの間を返す可能性があります。 このメソッドから、ウィンドウがアイドル状態になった場合に正確に確認するためには、呼び出し元のコードは保証はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">パラメーターが渡された場合は、有効な数値ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

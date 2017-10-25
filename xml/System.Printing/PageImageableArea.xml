@@ -1,0 +1,147 @@
+<Type Name="PageImageableArea" FullName="System.Printing.PageImageableArea">
+  <TypeSignature Language="C#" Value="public sealed class PageImageableArea" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PageImageableArea extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PageImageableArea" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>印刷できるページの領域を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのレーザー プリンターとインク ジェット プリンターは、用紙をプリンターの部分を取得していますからトナーを防ぐために、ページの端を余白を残す必要があります。 多くの写真プリンター、ページ全体がイメージ可能です。  
+  
+ イメージの領域に関する同じ情報を含むクラスの<xref:System.Printing.PageImageableArea>も、ページ サイズが含まれていますを参照してください<xref:System.Printing.PrintDocumentImageableArea>です。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExtentHeight">
+      <MemberSignature Language="C#" Value="public double ExtentHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ExtentHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageImageableArea.ExtentHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可能領域の高さを取得します。</summary>
+        <value>A <see cref="T:System.Double" /> (ピクセル単位) 可能領域の高さを表す (1/96 インチ)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Printing.PageImageableArea.ExtentHeight%2A>プロパティは、左下隅に (画像領域の「発生元」とも呼ばれます) 可能領域の左上隅からの距離を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtentWidth">
+      <MemberSignature Language="C#" Value="public double ExtentWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ExtentWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageImageableArea.ExtentWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可能領域の幅を取得します。</summary>
+        <value>A <see cref="T:System.Double" /> (ピクセル単位) 可能領域の幅を表す (1/96 インチ)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Printing.PageImageableArea.ExtentWidth%2A>プロパティは、右上隅に (画像領域の「発生元」とも呼ばれます) 可能領域の左上隅からの距離を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginHeight">
+      <MemberSignature Language="C#" Value="public double OriginHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OriginHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageImageableArea.OriginHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの上端に最も近いポイント (画像領域の「発生元」とも呼ばれます) 可能領域の左上隅からの距離は、原点高さを取得します。</summary>
+        <value>A <see cref="T:System.Double" /> (ピクセル単位) のイメージの領域の上部に、ページの上端からの距離を表す (1/96 インチ)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginWidth">
+      <MemberSignature Language="C#" Value="public double OriginWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OriginWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageImageableArea.OriginWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Origin 幅を取得します (可能領域の「発生元」とも呼ばれます) 可能領域の左上隅には、ページ左端からの距離であります。</summary>
+        <value>A <see cref="T:System.Double" /> (ピクセル単位) 可能領域の左端にページの左端からの距離を表す (1/96 インチ)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PageImageableArea.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.String" />の表現<see cref="T:System.Printing.PageImageableArea" />です。</summary>
+        <returns>A<see cref="T:System.String" />のプロパティ値を表す、<see cref="T:System.Printing.PageImageableArea" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される文字列には、次の形式があります。  
+  
+ (<xref:System.Printing.PageImageableArea.OriginWidth%2A>, <xref:System.Printing.PageImageableArea.OriginHeight%2A>), (<xref:System.Printing.PageImageableArea.ExtentWidth%2A>, <xref:System.Printing.PageImageableArea.ExtentHeight%2A>)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

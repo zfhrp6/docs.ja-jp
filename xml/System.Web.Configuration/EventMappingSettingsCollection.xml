@@ -1,0 +1,427 @@
+<Type Name="EventMappingSettingsCollection" FullName="System.Web.Configuration.EventMappingSettingsCollection">
+  <TypeSignature Language="C#" Value="public sealed class EventMappingSettingsCollection : System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EventMappingSettingsCollection extends System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.EventMappingSettingsCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElementCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Configuration.ConfigurationCollection(typeof(System.Web.Configuration.EventMappingSettings))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コレクションを提供<see cref="T:System.Web.Configuration.EventMappingSettings" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.EventMappingSettings>クラスに対応して、`eventMappings`構成ファイルの要素。 `eventMappings`要素にイベント ソースにフレンドリ名を割り当てることができます。 イベント ソースで、プロバイダーと呼ばれる、関連するイベントのコンシューマーに関連付けるにはこれらの名前を使用して、`rules`のサブセクション、`healthMonitoring`構成ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.EventMappingSettingsCollection>型です。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#5)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventMappingSettingsCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.EventMappingSettingsCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.EventMappingSettingsCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HealthMonitoringSection.EventMappings%2A>のプロパティ、<xref:System.Web.Configuration.HealthMonitoringSection>クラスには常のインスタンスが含まれています、<xref:System.Web.Configuration.EventMappingSettingsCollection>です。 クラスのインスタンスを作成するのではなく、このインスタンスを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Configuration.EventMappingSettings eventMappingSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Configuration.EventMappingSettings eventMappingSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.EventMappingSettingsCollection.Add(System.Web.Configuration.EventMappingSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventMappingSettings" Type="System.Web.Configuration.EventMappingSettings" />
+      </Parameters>
+      <Docs>
+        <param name="eventMappingSettings"><see cref="T:System.Web.Configuration.EventMappingSettings" />コレクションに追加するオブジェクト。</param>
+        <summary>コレクションに <see cref="T:System.Web.Configuration.EventMappingSettings" /> オブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションが既に含める必要がありますいないを<xref:System.Web.Configuration.EventMappingSettings>と同じ名前のオブジェクト。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.EventMappingSettingsCollection.Add%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#30](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#30)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#30](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException"><see cref="T:System.Web.Configuration.EventMappingSettings" />コレクションに既に追加するオブジェクトが存在するか、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.EventMappingSettingsCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての <see cref="T:System.Web.Configuration.EventMappingSettings" /> オブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`clear`ディレクティブを適切なファイルのセクションに、構成、上位の構成ファイルで定義されている要素へのすべての参照をクリアします。 現在の構成ファイルの適切なセクションで定義されたすべての要素が削除されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.EventMappingSettingsCollection.Clear%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#40](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#40)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#40](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.EventMappingSettingsCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.EventMappingSettings" />コレクション内のオブジェクト。</param>
+        <summary>コレクションに含まれているかどうかを示す、<see cref="T:System.Web.Configuration.EventMappingSettings" />指定の名前を持つオブジェクト。</summary>
+        <returns>
+          <see langword="true" />コレクションが含まれている場合、<see cref="T:System.Web.Configuration.EventMappingSettings" />指定したオブジェクト名、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る`false`指定した名前が存在しない場合。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.EventMappingSettingsCollection.Contains%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#35](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#35)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#35](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#35)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElement CreateNewElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.EventMappingSettingsCollection.CreateNewElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementKey">
+      <MemberSignature Language="C#" Value="protected override object GetElementKey (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.EventMappingSettingsCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.EventMappingSettingsCollection.IndexOf(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.EventMappingSettings" />コレクション内のオブジェクト。</param>
+        <summary>指定したインデックスを返します<see cref="T:System.Web.Configuration.EventMappingSettings" />オブジェクト。</summary>
+        <returns>指定したインデックス<see cref="T:System.Web.Configuration.EventMappingSettings" />オブジェクト、またはオブジェクトがコレクション内で見つからない場合は-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.EventMappingSettingsCollection.IndexOf%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#36](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#36)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#36](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#36)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.Configuration.EventMappingSettings eventMappingSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.Configuration.EventMappingSettings eventMappingSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.EventMappingSettingsCollection.Insert(System.Int32,System.Web.Configuration.EventMappingSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="eventMappingSettings" Type="System.Web.Configuration.EventMappingSettings" />
+      </Parameters>
+      <Docs>
+        <param name="index">有効なインデックス、<see cref="T:System.Web.Configuration.EventMappingSettings" />コレクション内のオブジェクト。</param>
+        <param name="eventMappingSettings"><see cref="T:System.Web.Configuration.EventMappingSettings" />コレクションに挿入するオブジェクト。</param>
+        <summary>指定した追加<see cref="T:System.Web.Configuration.EventMappingSettings" />オブジェクトをコレクション内の指定したインデックス位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックス パラメーターと等しい場合、コレクション内の項目の数、エントリが、コレクションの末尾に追加されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.EventMappingSettingsCollection.Insert%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#33](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#33)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#33](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException"><see cref="T:System.Web.Configuration.EventMappingSettings" />コレクションに既に追加するオブジェクトが存在、インデックスが無効、またはコレクションが読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.EventMappingSettings this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.EventMappingSettings Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.EventMappingSettingsCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.EventMappingSettings</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">有効なインデックス、<see cref="T:System.Web.Configuration.EventMappingSettings" />コレクション内のオブジェクト。</param>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.EventMappingSettings" />指定したインデックス位置にあるオブジェクト。</summary>
+        <value><see cref="T:System.Web.Configuration.EventMappingSettings" />指定したインデックス位置のオブジェクトまたは<see langword="null" />インデックスにあるオブジェクトが存在しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.EventMappingSettingsCollection.Item%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#45](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#45)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#45](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#45)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.EventMappingSettings this[string key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.EventMappingSettings Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.EventMappingSettingsCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.EventMappingSettings</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">名前、<see cref="T:System.Web.Configuration.EventMappingSettings" />コレクションに含まれるオブジェクト。</param>
+        <summary>取得、<see cref="T:System.Web.Configuration.EventMappingSettings" />オブジェクトがコレクション内の指定したキーに基づいています。</summary>
+        <value><see cref="T:System.Web.Configuration.EventMappingSettings" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.EventMappingSettingsCollection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.EventMappingSettingsCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.EventMappingSettings" />をコレクションから削除します。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.EventMappingSettings" />オブジェクトをコレクションからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`remove`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.EventMappingSettingsCollection.Remove%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#38](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#38)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#38](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#38)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">ない<see cref="T:System.Web.Configuration.EventMappingSettings" />オブジェクト、コレクション内の指定されたキーに、要素は既に削除されて、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.EventMappingSettingsCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.Configuration.EventMappingSettings" />コレクション内のオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.EventMappingSettings" />オブジェクトをコレクションからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`remove`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.EventMappingSettingsCollection.RemoveAt%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#39](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#39)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#39](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#39)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">ない<see cref="T:System.Web.Configuration.EventMappingSettings" />コレクション内の指定のインデックスを持つオブジェクトの要素は既に削除されて、またはコレクションが読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

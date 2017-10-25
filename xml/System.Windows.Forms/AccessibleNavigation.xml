@@ -1,0 +1,168 @@
+<Type Name="AccessibleNavigation" FullName="System.Windows.Forms.AccessibleNavigation">
+  <TypeSignature Language="C#" Value="public enum AccessibleNavigation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AccessibleNavigation extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AccessibleNavigation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ユーザー補助オブジェクト間を移動するための値を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス可能な移動方向は空間 (上、下、左、および右) または論理 (最初の子を次に、および前の最後の子) です。 論理的な方向は、クライアントから 1 つのユーザー インターフェイス要素で、同じコンテナー内の別に移動するときに使用されます。  
+  
+ <xref:System.Windows.Forms.AccessibleObject>この列挙体を使用します。  
+  
+ ユーザー補助アプリケーションの詳細については、MSDN ライブラリで「Microsoft Active Accessibility」トピックを検索してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー補助に対応するグラフの作成を示しますコントロールを使用して、<xref:System.Windows.Forms.AccessibleObject>と<xref:System.Windows.Forms.Control.ControlAccessibleObject>アクセス可能な情報を公開するクラス。 コントロールは、凡例と共に 2 つの曲線がプロットされます。 `ChartControlAccessibleObject`から派生するクラス`ControlAccessibleObject`で使用される、<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>グラフ コントロールのカスタムのアクセス可能な情報を提供するメソッド。 グラフの凡例は、実際はないため<xref:System.Windows.Forms.Control>-ベースの制御が、代わりに描画されるグラフ コントロールでは、組み込みのアクセス可能な情報です。 このため、`ChartControlAccessibleObject`クラスのオーバーライド、<xref:System.Windows.Forms.AccessibleObject.GetChild%2A>を返すメソッドを`CurveLegendAccessibleObject`凡例の各部分にアクセス可能な情報を表すです。 ユーザー補助対応アプリケーションでは、このコントロールを使用すると、コントロールは、必要なアクセス可能な情報を提供できます。  
+  
+ この例では、<xref:System.Windows.Forms.AccessibleNavigation>列挙が、<xref:System.Windows.Forms.AccessibleObject.Navigate%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.AccessibleObject>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CPP/chartcontrol.cpp#4)]
+ [!code-csharp[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CS/chartcontrol.cs#4)]
+ [!code-vb[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/VB/chartcontrol.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Down">
+      <MemberSignature Language="C#" Value="Down" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleNavigation Down = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleNavigation.Down" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleNavigation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開始オブジェクトの下にある兄弟オブジェクトへの移動。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstChild">
+      <MemberSignature Language="C#" Value="FirstChild" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleNavigation FirstChild = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleNavigation.FirstChild" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleNavigation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの最初の子に移動します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LastChild">
+      <MemberSignature Language="C#" Value="LastChild" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleNavigation LastChild = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleNavigation.LastChild" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleNavigation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの最後の子に移動します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="Left" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleNavigation Left = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleNavigation.Left" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleNavigation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開始オブジェクトの左側にある兄弟オブジェクトへの移動。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Next">
+      <MemberSignature Language="C#" Value="Next" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleNavigation Next = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleNavigation.Next" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleNavigation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開始オブジェクトに兄弟オブジェクトの次の論理オブジェクトを移動します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Previous">
+      <MemberSignature Language="C#" Value="Previous" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleNavigation Previous = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleNavigation.Previous" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleNavigation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開始オブジェクトに兄弟オブジェクトの前の論理オブジェクトを移動します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="Right" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleNavigation Right = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleNavigation.Right" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleNavigation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開始オブジェクトの右側にある兄弟オブジェクトへの移動。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Up">
+      <MemberSignature Language="C#" Value="Up" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleNavigation Up = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleNavigation.Up" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleNavigation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開始オブジェクトの上にある兄弟オブジェクトへの移動。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

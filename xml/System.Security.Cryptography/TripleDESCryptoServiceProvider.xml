@@ -1,0 +1,547 @@
+<Type Name="TripleDESCryptoServiceProvider" FullName="System.Security.Cryptography.TripleDESCryptoServiceProvider">
+  <TypeSignature Language="C#" Value="public sealed class TripleDESCryptoServiceProvider : System.Security.Cryptography.TripleDES" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TripleDESCryptoServiceProvider extends System.Security.Cryptography.TripleDES" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.TripleDESCryptoServiceProvider" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.TripleDES</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バージョンにアクセスする、暗号化サービス プロバイダー (CSP) のラッパー オブジェクトの定義、<see cref="T:System.Security.Cryptography.TripleDES" />アルゴリズムです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアルゴリズムには、64 ビット単位での 128 ビットから 192 ビットのキー長がサポートしています。  
+  
+> [!NOTE]
+>  新しい対称暗号化アルゴリズムでは、Advanced Encryption Standard (AES) では、使用可能なです。 使用を検討して、<xref:System.Security.Cryptography.AesCryptoServiceProvider>クラスの代わりに、<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>クラスです。 使用して<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>レガシ アプリケーションとデータとの互換性のみです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>オブジェクトし、の暗号化し、ファイル内のデータを復号化に使用します。  
+  
+ [!code-cpp[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/CPP/fileexample.cpp#1)]
+ [!code-csharp[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/CS/fileexample.cs#1)]
+ [!code-vb[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/VB/fileexample.vb#1)]  
+  
+ 次のコード例を作成、<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>オブジェクトを暗号化して、メモリ内のデータを復号化に使用します。  
+  
+ [!code-cpp[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/CPP/memoryexample.cpp#1)]
+ [!code-csharp[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/CS/memoryexample.cs#1)]
+ [!code-vb[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/VB/memoryexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TripleDESCryptoServiceProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDESCryptoServiceProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.TripleDESCryptoServiceProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>オブジェクトし、の暗号化し、ファイル内のデータを復号化に使用します。  
+  
+ [!code-cpp[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/CPP/fileexample.cpp#1)]
+ [!code-csharp[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/CS/fileexample.cs#1)]
+ [!code-vb[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/VB/fileexample.vb#1)]  
+  
+ 次のコード例を作成、<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>オブジェクトを暗号化して、メモリ内のデータを復号化に使用します。  
+  
+ [!code-cpp[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/CPP/memoryexample.cpp#1)]
+ [!code-csharp[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/CS/memoryexample.cs#1)]
+ [!code-vb[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/VB/memoryexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="T:System.Security.Cryptography.TripleDES" />暗号化サービス プロバイダーは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BlockSize">
+      <MemberSignature Language="C#" Value="public override int BlockSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BlockSize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDESCryptoServiceProvider.BlockSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDecryptor">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.ICryptoTransform CreateDecryptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.ICryptoTransform CreateDecryptor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDESCryptoServiceProvider.CreateDecryptor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ICryptoTransform</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDecryptor">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.ICryptoTransform CreateDecryptor (byte[] rgbKey, byte[] rgbIV);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.ICryptoTransform CreateDecryptor(unsigned int8[] rgbKey, unsigned int8[] rgbIV) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDESCryptoServiceProvider.CreateDecryptor(System.Byte[],System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ICryptoTransform</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rgbKey" Type="System.Byte[]" />
+        <Parameter Name="rgbIV" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgbKey">対称アルゴリズムに使用する共有キー。</param>
+        <param name="rgbIV">対称アルゴリズムに使用する初期化ベクター。</param>
+        <summary>作成、対称<see cref="T:System.Security.Cryptography.TripleDES" />指定したキーを復号化オブジェクト (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />) および初期化ベクター (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />)。</summary>
+        <returns>対称<see cref="T:System.Security.Cryptography.TripleDES" />復号化オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して作成された、暗号化されたメッセージを復号化、<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider.CreateEncryptor%2A>同じパラメーターを持つオーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>オブジェクトし、の暗号化し、ファイル内のデータを復号化に使用します。  
+  
+ [!code-cpp[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/CPP/fileexample.cpp#1)]
+ [!code-csharp[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/CS/fileexample.cs#1)]
+ [!code-vb[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/VB/fileexample.vb#1)]  
+  
+ 次のコード例を作成、<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>オブジェクトを暗号化して、メモリ内のデータを復号化に使用します。  
+  
+ [!code-cpp[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/CPP/memoryexample.cpp#1)]
+ [!code-csharp[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/CS/memoryexample.cs#1)]
+ [!code-vb[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/VB/memoryexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" /> プロパティの値が <see cref="F:System.Security.Cryptography.CipherMode.OFB" /> です。  
+  
+ または  
+  
+ 値、<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" />プロパティは<see cref="F:System.Security.Cryptography.CipherMode.CFB" />の値、<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.FeedbackSize" />プロパティは 8 ではありません。  
+  
+ または  
+  
+ 無効なキー サイズが使用されました。  
+  
+ または  
+  
+ アルゴリズムのキーのサイズは使用できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEncryptor">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.ICryptoTransform CreateEncryptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.ICryptoTransform CreateEncryptor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDESCryptoServiceProvider.CreateEncryptor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ICryptoTransform</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEncryptor">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.ICryptoTransform CreateEncryptor (byte[] rgbKey, byte[] rgbIV);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Cryptography.ICryptoTransform CreateEncryptor(unsigned int8[] rgbKey, unsigned int8[] rgbIV) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDESCryptoServiceProvider.CreateEncryptor(System.Byte[],System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ICryptoTransform</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rgbKey" Type="System.Byte[]" />
+        <Parameter Name="rgbIV" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgbKey">対称アルゴリズムに使用する共有キー。</param>
+        <param name="rgbIV">対称アルゴリズムに使用する初期化ベクター。  
+  
+ <block subset="none" type="note"><para>  
+ 初期化ベクトルは、8 バイト長である必要があります。 8 バイトより長い場合が切り捨てられるし、例外はスローされません。 呼び出す前に<see cref="M:System.Security.Cryptography.TripleDESCryptoServiceProvider.CreateEncryptor(System.Byte[],System.Byte[])" />初期化ベクトルの長さを確認、および長すぎる場合に例外をスローします。  
+  
+</para></block></param>
+        <summary>作成、対称<see cref="T:System.Security.Cryptography.TripleDES" />指定されたキーに暗号化オブジェクト (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />) および初期化ベクター (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />)。</summary>
+        <returns>対称<see cref="T:System.Security.Cryptography.TripleDES" />暗号化オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider.CreateDecryptor%2A>このメソッドの結果を復号化に同じパラメーターを持つオーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>オブジェクトし、の暗号化し、ファイル内のデータを復号化に使用します。  
+  
+ [!code-cpp[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/CPP/fileexample.cpp#1)]
+ [!code-csharp[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/CS/fileexample.cs#1)]
+ [!code-vb[Cryptography.3DESCSP.CreateEncryptor.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.File/VB/fileexample.vb#1)]  
+  
+ 次のコード例を作成、<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>オブジェクトを暗号化して、メモリ内のデータを復号化に使用します。  
+  
+ [!code-cpp[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/CPP/memoryexample.cpp#1)]
+ [!code-csharp[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/CS/memoryexample.cs#1)]
+ [!code-vb[Cryptography.3DESCSP.CreateEncryptor.Memory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DESCSP.CreateEncryptor.Memory/VB/memoryexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" /> プロパティの値が <see cref="F:System.Security.Cryptography.CipherMode.OFB" /> です。  
+  
+ または  
+  
+ 値、<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Mode" />プロパティは<see cref="F:System.Security.Cryptography.CipherMode.CFB" />の値、<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.FeedbackSize" />プロパティは 8 ではありません。  
+  
+ または  
+  
+ 無効なキー サイズが使用されました。  
+  
+ または  
+  
+ アルゴリズムのキーのサイズは使用できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDESCryptoServiceProvider.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FeedbackSize">
+      <MemberSignature Language="C#" Value="public override int FeedbackSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FeedbackSize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDESCryptoServiceProvider.FeedbackSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateIV">
+      <MemberSignature Language="C#" Value="public override void GenerateIV ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GenerateIV() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDESCryptoServiceProvider.GenerateIV" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ランダムな初期化ベクトルが生成されます (<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.IV" />) アルゴリズムを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、指定されていないときに、ランダムな初期化ベクトルを生成できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateKey">
+      <MemberSignature Language="C#" Value="public override void GenerateKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GenerateKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDESCryptoServiceProvider.GenerateKey" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>乱数生成<see cref="P:System.Security.Cryptography.SymmetricAlgorithm.Key" />アルゴリズムに使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、指定されていないときに、ランダムなキーを生成できます。 このメソッドは、弱いキーなのでを返すことはありません (を参照してください<xref:System.Security.Cryptography.TripleDES.IsWeakKey%2A>)。  
+  
+ このアルゴリズムには、64 ビット単位での 128 ビットから 192 ビットのキー長がサポートしています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IV">
+      <MemberSignature Language="C#" Value="public override byte[] IV { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] IV" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDESCryptoServiceProvider.IV" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public override byte[] Key { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Key" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDESCryptoServiceProvider.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySize">
+      <MemberSignature Language="C#" Value="public override int KeySize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeySize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDESCryptoServiceProvider.KeySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegalBlockSizes">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.KeySizes[] LegalBlockSizes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.KeySizes[] LegalBlockSizes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDESCryptoServiceProvider.LegalBlockSizes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegalKeySizes">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.KeySizes[] LegalKeySizes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.KeySizes[] LegalKeySizes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDESCryptoServiceProvider.LegalKeySizes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.CipherMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.CipherMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDESCryptoServiceProvider.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CipherMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.PaddingMode Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.PaddingMode Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDESCryptoServiceProvider.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.PaddingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

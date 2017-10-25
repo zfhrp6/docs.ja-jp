@@ -1,0 +1,44 @@
+<Type Name="DataObjectPastingEventHandler" FullName="System.Windows.DataObjectPastingEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataObjectPastingEventHandler(object sender, DataObjectPastingEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataObjectPastingEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DataObjectPastingEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.DataObjectPastingEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Windows.DataObject.Pasting" />イベントをアタッチします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DataObject.Pasting>添付イベントが貼り付け操作が貼り付けるには、データ形式を選択すると前に発生データが実際に貼り付けられます。  
+  
+ 通常によって実行されるアクション、<xref:System.Windows.DataObject.Pasting>添付イベントのハンドラーが含まれます。  
+  
+-   新しい値を設定して、選択した貼り付け形式を変更、<xref:System.Windows.DataObjectPastingEventArgs.FormatToApply%2A>プロパティです。  
+  
+-   選択項目を貼り付けするカスタム データ形式を適用します。  
+  
+-   新規作成<xref:System.Windows.DataObject>、それを割り当てると、<xref:System.Windows.DataObjectPastingEventArgs.DataObject%2A>プロパティ`e`です。  元のデータ オブジェクトの読み取り専用のコピーが格納されている<xref:System.Windows.DataObjectPastingEventArgs.SourceDataObject%2A>です。  
+  
+-   呼び出して、貼り付け操作を取り消す<xref:System.Windows.DataObjectEventArgs.CancelCommand%2A>です。  
+  
+ **重要な**貼り付け形式が変更された場合、ハンドラー メソッドは、新しく選択した貼り付けの形式が貼り付け先で使用できることを保証するためです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

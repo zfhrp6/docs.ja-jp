@@ -1,0 +1,95 @@
+<Type Name="XmlDsigExcC14NWithCommentsTransform" FullName="System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform">
+  <TypeSignature Language="C#" Value="public class XmlDsigExcC14NWithCommentsTransform : System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlDsigExcC14NWithCommentsTransform extends System.Security.Cryptography.Xml.XmlDsigExcC14NTransform" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.Xml.XmlDsigExcC14NTransform</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>World Wide Web Consortium (W3C) で定義されているコメントと共にデジタル署名の排他 C14N XML 正規化変換を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform>クラスは、排他 C14N XML 正規化変換のコメントを表します。  このクラスがに似ていますが、<xref:System.Security.Cryptography.Xml.XmlDsigExcC14NTransform>クラスは、により、署名者、XML ドキュメントの正規の形式を使用してダイジェストを作成します。  ただし、<xref:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform>クラスが正規化されたサブドキュメントから先祖コンテキストを除外します。  
+  
+ 使用して、 <xref:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform> XML を正規化する必要がある場合にクラス サブドキュメントの XML コンテキストから独立したことができるようにします。  たとえば、アプリケーションを使用する Web サービスの XML から複雑な通信プロトコル内での多くの場合、署名などする必要がありますこの方法で XML を正規化します。  このようなアプリケーションは、大幅に変更するドキュメントと XML 署名の検証に失敗するさまざまな種類の動的に構築された要素を使用して、内で XML を多くの場合、エンベロープします。  <xref:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform>クラスは、正規のサブドキュメントからこのような先祖コンテキストを除外することでこの問題を解決します。  
+  
+ 標準化変換クラスの新しいインスタンスを直接作成できないことに注意してください。  標準化変換を指定するに渡す、Uniform Resource Identifier () に変換を表す、<xref:System.Security.Cryptography.Xml.SignedInfo.CanonicalizationMethod%2A>からアクセス可能なプロパティ、<xref:System.Security.Cryptography.Xml.SignedXml.SignedInfo%2A>プロパティです。  標準化変換への参照を取得する、<xref:System.Security.Cryptography.Xml.SignedInfo.CanonicalizationMethodObject%2A>からアクセス可能なプロパティ、<xref:System.Security.Cryptography.Xml.SignedXml.SignedInfo%2A>プロパティです。  
+  
+ 記述する URI、<xref:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform>によってクラスが定義されている、<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigExcC14NWithCommentsTransformUrl>フィールドです。  
+  
+ 排他 C14N 変換に関する詳細については、www.w3.org/TR/xmldsig-core/ に World Wide Web Consortium (W3C) から利用できる XMLDSIG の仕様を参照してください。 標準化アルゴリズムは、www.w3.org/2001/10/xml-exc-c14n で使用される W3C 正規 XML 仕様で定義されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、サインインして使用して XML ドキュメントを検証する方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform>クラスです。  この例では、エンベロープ署名を作成します。  
+  
+ [!code-cpp[Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XmlDsigExcC14NWithCommentsTransform/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XmlDsigExcC14NWithCommentsTransform/CS/sample.cs#1)]
+ [!code-vb[Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XmlDsigExcC14NWithCommentsTransform/VB/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlDsigExcC14NWithCommentsTransform ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlDsigExcC14NWithCommentsTransform (string inclusiveNamespacesPrefixList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string inclusiveNamespacesPrefixList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="inclusiveNamespacesPrefixList" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inclusiveNamespacesPrefixList">標準の正規化アルゴリズムを使用して標準化する名前空間プレフィックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform" />クラスが標準の正規化アルゴリズムを使用して標準化する名前空間プレフィックスのリストを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `inclusiveNamespacesPrefixList`パラメーターには、排他的正規化アルゴリズムではなく、標準の正規化アルゴリズムを使用して標準化する名前空間プレフィックスの空白で区切られた一覧が含まれています。  既定値を指定するのには、プレフィックスはない、名前空間は、特別なプレフィックス"#default"を渡します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

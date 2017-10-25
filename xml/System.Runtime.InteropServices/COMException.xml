@@ -1,0 +1,317 @@
+<Type Name="COMException" FullName="System.Runtime.InteropServices.COMException">
+  <TypeSignature Language="C#" Value="public class COMException : System.Runtime.InteropServices.ExternalException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit COMException extends System.Runtime.InteropServices.ExternalException" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.COMException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.Runtime.InteropServices.ExternalException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>COM メソッドの呼び出しによって、認識されない HRESULT が返された場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通言語ランタイムは、わかりやすいエラー情報をクライアントに返すマネージ COM オブジェクトを有効にすると、既知の Hresult を .NET Framework の例外を変換します。 HRESULT と例外の割り当ては、の特定の Hresult をアンマネージ クライアントに返すことによって逆方向にでも動作します。 マッピングの詳細については、次を参照してください。[する方法: マップの Hresult と例外](~/docs/framework/interop/how-to-map-hresults-and-exceptions.md)です。  
+  
+ インスタンス、実行時に、(対応する、特定の例外が欠落している HRESULT) 特異な HRESULT が検出されると、スロー、<xref:System.Runtime.InteropServices.COMException>クラスです。 この汎用例外は、任意の例外と同じメンバーを公開し、パブリック継承<xref:System.Runtime.InteropServices.ExternalException.ErrorCode%2A>呼び出し先によって返される HRESULT を含むプロパティです。 エラー メッセージが、実行時に使用可能な場合 (から取得した、 [IErrorInfo](https://msdn.microsoft.com/library/windows/desktop/ms723041\(v=vs.85\).aspx)インターフェイスまたは`Err`Visual Basic、または場合によっては、オペレーティング システムからのオブジェクト)、呼び出し元に、メッセージが返されます。 ただし、COM コンポーネントの開発者がエラー メッセージを含めなかった場合、ランタイムは、メッセージ文字列の代わりに 8 桁の HRESULT を返します。 Hresult を返すと、汎用例外の原因を特定する、呼び出し元ができます。  
+  
+## <a name="handling-a-comexception-exception"></a>COMException 例外を処理します。  
+ トラブルシューティングの考慮事項は、次のとおり、<xref:System.Runtime.InteropServices.COMException>例外。  
+  
+ チェック、<xref:System.Runtime.InteropServices.ExternalException.ErrorCode%2A>プロパティ  
+ ランタイムで特異な HRESULT が発生した、スローした場合、<xref:System.Runtime.InteropServices.COMException>例外、<xref:System.Runtime.InteropServices.ExternalException.ErrorCode%2A>プロパティには、エラー メッセージが含まれています。 または、エラー メッセージが使用できない場合、8 桁の HRESULT 値。  エラー メッセージと HRESULT 値を例外の原因を特定することができます。  
+  
+ HRESULT 値の一覧は、次を参照してください。[の共通 HRESULT 値](https://msdn.microsoft.com/library/windows/desktop/aa378137\(v=vs.85\).aspx)です。  
+  
+ 遅延バインディング引数と Microsoft Office オブジェクト  
+ Microsoft Office オブジェクトのメソッドに遅延バインディング引数を渡すときに、<xref:System.Runtime.InteropServices.COMException>オブジェクトが COM オブジェクトの場合、例外がスローされる可能性がします。 遅延バインダーは、そのようなメソッド呼び出しには `ByRef` パラメーターが関連し、受け渡すプロパティに `set` アクセサーがあるものと想定します。 以外の場合、プロパティは、.NET Framework を生成、<xref:System.MissingMethodException>例外 (で、 `CORE_E_MISSINGMETHOD` HRESULT) です。 このような動作に対処するには、事前バインディングされたオブジェクトを使用するか、またはオブジェクトのプロパティの代わりに変数を渡します。  
+  
+ Visual Studio とホスト プロセス  
+ Visual Studio の間で通信するために、COM が使用され、[ホスティング プロセス](https://msdn.microsoft.com/library/ms185331.aspx)です。 呼び出すコードを実行する前に使用されているため[CoInitializeSecurity](https://msdn.microsoft.com/library/windows/desktop/ms693736\(v=vs.85\).aspx)をスローするには、この例外が発生します。  
+  
+ 場合によっては、管理者として Visual Studio を実行すると、問題が解決する可能性があります。 こともできます[ホスト プロセスを無効](https://msdn.microsoft.com/library/ms185330.aspx)です。  
+  
+## <a name="throwing-a-comexception-exception"></a>COMException 例外をスロー  
+ 使用できますが、<xref:System.Runtime.InteropServices.COMException>アンマネージ クライアントは、.NET Framework の特定の例外をスローする特定の Hresult を返すためには汎用的な例外を使用するよりも向上します。 マネージ クライアントとアンマネージ クライアントは、.NET Framework オブジェクトを使用できます例外をスローするよりも小さいわかりやすくは HRESULT をマネージ呼び出し元にスローされることを検討してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public COMException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.COMException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.InteropServices.COMException" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.COMException> は <xref:System.Runtime.InteropServices.ExternalException> を継承します。 次の表は、このコンス トラクターでのプロパティを設定する方法を示しています、<xref:System.Exception>オブジェクト。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public COMException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.COMException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を示すメッセージ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.COMException" />メッセージが指定されたクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.COMException> は <xref:System.Runtime.InteropServices.ExternalException> を継承します。 次の表は、このコンス トラクターでのプロパティを設定する方法を示しています、<xref:System.Exception>オブジェクト。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`|  
+|<xref:System.Exception.Message%2A>|`message`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected COMException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.COMException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" />シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" />ソースまたは転送先に関するコンテキスト情報を提供するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.COMException" />シリアル化データからのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+ <xref:System.Runtime.InteropServices.COMException> は <xref:System.Runtime.InteropServices.ExternalException> を継承します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public COMException (string message, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.COMException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="inner">現在の例外の原因となった例外。 場合、<c>内部</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.Runtime.InteropServices.COMException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`null` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、<xref:System.Exception.InnerException%2A> を返します。  
+  
+ 次の表は、このコンス トラクターでのプロパティを設定する方法を示しています、<xref:System.Exception>オブジェクト。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public COMException (string message, int errorCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, int32 errorCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.COMException.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="errorCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の理由を示すメッセージが発生しました。</param>
+        <param name="errorCode">この例外に関連付けられているエラー コード (HRESULT) 値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.COMException" />クラスを指定したメッセージとエラー コード。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Runtime.InteropServices.COMException>コンス トラクターは、基本メッセージと、エラー コードを設定します。  
+  
+ <xref:System.Runtime.InteropServices.COMException> は <xref:System.Runtime.InteropServices.ExternalException> を継承します。 次の表は、このコンス トラクターでのプロパティを設定する方法を示しています、<xref:System.Exception>オブジェクト。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`null`|  
+|<xref:System.Exception.Message%2A>|`message`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.COMException.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>例外の内容を文字列に変換します。</summary>
+        <returns>含む文字列、 <see cref="P:System.Exception.HResult" />、 <see cref="P:System.Exception.Message" />、 <see cref="P:System.Exception.InnerException" />、および<see cref="P:System.Exception.StackTrace" />例外のプロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

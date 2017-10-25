@@ -1,0 +1,352 @@
+<Type Name="ProjectElementContainer" FullName="Microsoft.Build.Construction.ProjectElementContainer">
+  <TypeSignature Language="C#" Value="public abstract class ProjectElementContainer : Microsoft.Build.Construction.ProjectElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ProjectElementContainer extends Microsoft.Build.Construction.ProjectElement" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Construction.ProjectElementContainer" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Construction.ProjectElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロジェクトの要素の抽象コンテナー クラスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllChildren">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Construction.ProjectElement&gt; AllChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Construction.ProjectElement&gt; AllChildren" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElementContainer.AllChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Construction.ProjectElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての子要素に対する再帰の深さ優先の列挙子を取得します。</summary>
+        <value>すべての子要素に対する再帰の深さ優先の列挙子を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再帰は、プロジェクト要素のコンテナーが含まれているため、それ自体の子プロジェクト要素のコンテナーにに可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendChild">
+      <MemberSignature Language="C#" Value="public void AppendChild (Microsoft.Build.Construction.ProjectElement child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendChild(class Microsoft.Build.Construction.ProjectElement child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Construction.ProjectElementContainer.AppendChild(Microsoft.Build.Construction.ProjectElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="Microsoft.Build.Construction.ProjectElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">追加するプロジェクトの要素。</param>
+        <summary>追加、<paramref name="child" />このプロジェクトのコンテナーの最後の子として要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクト コンテナーに親がない場合、または例外をスロー、`child`要素に親が既に場合や、 `child` 、さまざまな要素が作成された<xref:Microsoft.Build.Construction.ProjectRootElement>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Children">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Construction.ProjectElement&gt; Children { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Construction.ProjectElement&gt; Children" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElementContainer.Children" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Construction.ProjectElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての子要素を取得します。</summary>
+        <value>すべての子要素を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildrenReversed">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Construction.ProjectElement&gt; ChildrenReversed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Construction.ProjectElement&gt; ChildrenReversed" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElementContainer.ChildrenReversed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Construction.ProjectElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後の子からのすべての子要素を取得します。</summary>
+        <value>最後の子からのすべての子要素を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElementContainer.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子要素の数を取得します。</summary>
+        <value>子要素の数を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstChild">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectElement FirstChild { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ProjectElement FirstChild" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElementContainer.FirstChild" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の子要素を取得します。</summary>
+        <value>最初の子要素を返します。 子要素が存在しない場合は null を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:Microsoft.Build.Construction.ProjectElementContainer.PrependChild%2A>をこのプロパティを初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertAfterChild">
+      <MemberSignature Language="C#" Value="public void InsertAfterChild (Microsoft.Build.Construction.ProjectElement child, Microsoft.Build.Construction.ProjectElement reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertAfterChild(class Microsoft.Build.Construction.ProjectElement child, class Microsoft.Build.Construction.ProjectElement reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Construction.ProjectElementContainer.InsertAfterChild(Microsoft.Build.Construction.ProjectElement,Microsoft.Build.Construction.ProjectElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="Microsoft.Build.Construction.ProjectElement" />
+        <Parameter Name="reference" Type="Microsoft.Build.Construction.ProjectElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">挿入するプロジェクトの要素。</param>
+        <param name="reference">後に挿入されるプロジェクトの要素。</param>
+        <summary>挿入、<paramref name="child" />要素の後に、<paramref name="reference" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`reference`要素は、このメソッドは、null<xref:Microsoft.Build.Construction.ProjectElementContainer.PrependChild%2A>です。  
+  
+ このプロジェクト コンテナーに親がない場合、または例外をスロー、`child`要素に親が既に場合、または、 `child` 、さまざまな要素が作成された<xref:Microsoft.Build.Construction.ProjectRootElement>、または、`reference`要素は、このプロジェクトのコンテナーの子ではないです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertBeforeChild">
+      <MemberSignature Language="C#" Value="public void InsertBeforeChild (Microsoft.Build.Construction.ProjectElement child, Microsoft.Build.Construction.ProjectElement reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertBeforeChild(class Microsoft.Build.Construction.ProjectElement child, class Microsoft.Build.Construction.ProjectElement reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Construction.ProjectElementContainer.InsertBeforeChild(Microsoft.Build.Construction.ProjectElement,Microsoft.Build.Construction.ProjectElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="Microsoft.Build.Construction.ProjectElement" />
+        <Parameter Name="reference" Type="Microsoft.Build.Construction.ProjectElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">挿入するプロジェクトの要素。</param>
+        <param name="reference">前に挿入するプロジェクトの要素。</param>
+        <summary>挿入、<paramref name="child" />要素の前に、<paramref name="reference" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`reference`要素は、このメソッドは、null<xref:Microsoft.Build.Construction.ProjectElementContainer.AppendChild%2A>です。  
+  
+ このプロジェクト コンテナーに親がない場合、または例外をスロー、`child`要素に親が既に場合、または、 `child` 、さまざまな要素が作成された<xref:Microsoft.Build.Construction.ProjectRootElement>、または、`reference`要素は、このプロジェクトのコンテナーの子ではないです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastChild">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectElement LastChild { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ProjectElement LastChild" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectElementContainer.LastChild" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後の子要素を取得します。</summary>
+        <value>最後の子要素を返します。 子要素が存在しない場合は null を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:Microsoft.Build.Construction.ProjectElementContainer.AppendChild%2A>をこのプロパティを初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrependChild">
+      <MemberSignature Language="C#" Value="public void PrependChild (Microsoft.Build.Construction.ProjectElement child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PrependChild(class Microsoft.Build.Construction.ProjectElement child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Construction.ProjectElementContainer.PrependChild(Microsoft.Build.Construction.ProjectElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="Microsoft.Build.Construction.ProjectElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">前に付加するプロジェクトの要素。</param>
+        <summary>前に付加、<paramref name="child" />このプロジェクトのコンテナーの最初の子として要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロジェクト コンテナーに親がない場合、または例外をスロー、`child`要素に親が既に場合や、 `child` 、さまざまな要素が作成された<xref:Microsoft.Build.Construction.ProjectRootElement>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAllChildren">
+      <MemberSignature Language="C#" Value="public void RemoveAllChildren ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAllChildren() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Construction.ProjectElementContainer.RemoveAllChildren" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このプロジェクト コンテナーに存在する場合は、すべての子を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この方法で子を列挙中に変更するのには安全です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveChild">
+      <MemberSignature Language="C#" Value="public void RemoveChild (Microsoft.Build.Construction.ProjectElement child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveChild(class Microsoft.Build.Construction.ProjectElement child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Construction.ProjectElementContainer.RemoveChild(Microsoft.Build.Construction.ProjectElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="Microsoft.Build.Construction.ProjectElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">削除するプロジェクトの要素。</param>
+        <summary>削除、<paramref name="child" />このプロジェクトのコンテナーから要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子要素が現在このプロジェクトのコンテナーを親として持たない場合は、例外をスローします。 列挙中にこの方法の子を削除しても安全であります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

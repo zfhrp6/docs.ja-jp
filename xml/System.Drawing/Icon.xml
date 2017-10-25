@@ -1,0 +1,696 @@
+<Type Name="Icon" FullName="System.Drawing.Icon">
+  <TypeSignature Language="C#" Value="public sealed class Icon : MarshalByRefObject, ICloneable, IDisposable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit Icon extends System.MarshalByRefObject implements class System.ICloneable, class System.IDisposable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Icon" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("System.Drawing.Design.IconEditor, System.Drawing.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.IconConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows アイコンを表します。これはオブジェクトを表すために使用される小さなビットマップ イメージです。 アイコンは透明なビットマップと考えることもできますが、そのサイズはシステムによって決定されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構築できます<xref:System.Drawing.Icon>ファイル、ストリーム、または埋め込みリソースからのオブジェクト。 コンス トラクターの一覧は、次を参照してください。<xref:System.Drawing.Icon.%23ctor%2A>です。 変換することも、<xref:System.Drawing.Icon>ビットマップを使用して、<xref:System.Drawing.Icon.ToBitmap%2A>メソッドです。  
+  
+ アイコン リソースは、複数のアイコン イメージを含めることができます。 1 つのアイコン ファイルのサイズと色深度をいくつかのイメージがあります。 アプリケーションで使用されるイメージは、オペレーティング システムと設定によって異なります。 アイコンの一般的なサイズの詳細を次に示します。  
+  
+-   16 ピクセル x 16 ピクセル  
+  
+-   32 ピクセル x 32 ピクセル  
+  
+-   48 ピクセル x 48 ピクセル  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Drawing.Icon.ToBitmap%2A> メソッドの使用方法を示します。 この例は、Windows フォームで使用するよう設計されています。 フォームを作成し、次のコードを貼り付けます。 呼び出す、`IconToBitmap`メソッドで、フォームの<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#9)]
+ [!code-csharp[System.Drawing.MiscExamples#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#9)]
+ [!code-vb[System.Drawing.MiscExamples#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Icon (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.Drawing.Icon" /> の読み込み元のデータ ストリーム。</param>
+        <summary>指定したデータ ストリームで <see cref="T:System.Drawing.Icon" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アイコン リソースは、複数のアイコン イメージを含めることができます。 1 つのアイコン ファイルのサイズと色深度をいくつかのイメージがあります。 アプリケーションで使用されるイメージは、オペレーティング システムと設定によって異なります。 アイコンの一般的なサイズの詳細を次に示します。  
+  
+-   16 ピクセル x 16 ピクセル  
+  
+-   32 ピクセル x 32 ピクセル  
+  
+-   48 ピクセル x 48 ピクセル  
+  
+ このコンス トラクターでは、指定したストリームに含まれる最小のイメージを返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="stream" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Icon (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName"><see cref="T:System.Drawing.Icon" /> の読み込み元のファイル。</param>
+        <summary>指定したファイル名から、<see cref="T:System.Drawing.Icon" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アイコン リソースは、複数のアイコン イメージを含めることができます。 1 つのアイコン ファイルのサイズと色深度をいくつかのイメージがあります。 アプリケーションで使用されるイメージは、オペレーティング システムと設定によって異なります。 アイコンの一般的なサイズの詳細を次に示します。  
+  
+-   16 ピクセル x 16 ピクセル  
+  
+-   32 ピクセル x 32 ピクセル  
+  
+-   48 ピクセル x 48 ピクセル  
+  
+ このコンス トラクターでは、指定したファイルに含まれる最小のイメージを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Icon (System.Drawing.Icon original, System.Drawing.Size size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Icon original, valuetype System.Drawing.Size size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.#ctor(System.Drawing.Icon,System.Drawing.Size)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="original" Type="System.Drawing.Icon" />
+        <Parameter Name="size" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="original">サイズが変更されたアイコンの読み込み元の <see cref="T:System.Drawing.Icon" />。</param>
+        <param name="size">新しい <see cref="T:System.Drawing.Size" /> の高さと幅を指定する <see cref="T:System.Drawing.Icon" /> 構造体。</param>
+        <summary><see cref="T:System.Drawing.Icon" /> クラスの新しいインスタンスを初期化し、要求されたサイズに一致するアイコンを検索します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイズを正確に一致するバージョンが見つからない場合、最も近い一致が使用されます。 場合、`original`パラメーターは、 <xref:System.Drawing.Icon> 1 つの大きさを持つ、このメソッドは、重複するアイコンをのみを作成します。 伸縮機能を使用して、<xref:System.Drawing.Graphics.DrawImage%2A>アイコンのサイズを変更するメソッド。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="original" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Icon (System.IO.Stream stream, System.Drawing.Size size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, valuetype System.Drawing.Size size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.#ctor(System.IO.Stream,System.Drawing.Size)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="size" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="stream">アイコン データを格納しているストリーム。</param>
+        <param name="size">アイコンのサイズ。</param>
+        <summary>指定したストリームから指定したサイズで <see cref="T:System.Drawing.Icon" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="stream" />は<see langword="null" />またはイメージ データは含まれません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Icon (string fileName, System.Drawing.Size size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, valuetype System.Drawing.Size size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.#ctor(System.String,System.Drawing.Size)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="size" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">アイコンのデータを格納するファイルのパスと名前。</param>
+        <param name="size">アイコンのサイズ。</param>
+        <summary>指定したファイルから指定したサイズで <see cref="T:System.Drawing.Icon" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したファイルに必要なサイズに合ったイメージが含まれていない場合に最も近いサイズのアイコンが返されます。  
+  
+ `fileName`が現在のアプリケーション ディレクトリにない場合、完全なパスを含める必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="string" />は<see langword="null" />またはイメージ データは含まれません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Icon (Type type, string resource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, string resource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.#ctor(System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="resource" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">リソースを検索するアセンブリを指定する <see cref="T:System.Type" />。</param>
+        <param name="resource">読み込むリソース名。</param>
+        <summary>指定のアセンブリのリソースで <see cref="T:System.Drawing.Icon" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Drawing.Icon>で指定された名前のリソースから、`resource`パラメーターで指定された型を含むアセンブリに、`type`パラメーター。  
+  
+ このコンス トラクターは、リソースの文字列名と共に指定された型の名前空間を結合し、アセンブリ マニフェスト内の一致を検索します。 たとえばに渡すことができます、<xref:System.Windows.Forms.Control>型および`Error.ico`をこのコンス トラクター、およびそのリソースを検索という`System.Windows.Forms.Error.ico`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Icon.%23ctor%2A>コンス トラクターです。 この例を実行する、コードを Windows フォームに貼り付け、フォームの処理<xref:System.Windows.Forms.Control.Paint>イベント。 呼び出す、`ConstructAnIconFromAType`メソッドから、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.EventArgs>です。  
+  
+ [!code-csharp[System.Drawing.Misc3#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc3/CS/Form1.cs#3)]
+ [!code-vb[System.Drawing.Misc3#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc3/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたアイコン<paramref name="resource" />を含む、指定されたアセンブリで見つからない<paramref name="type" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Icon (System.Drawing.Icon original, int width, int height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Icon original, int32 width, int32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.#ctor(System.Drawing.Icon,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="original" Type="System.Drawing.Icon" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="original">別のサイズの読み込み元のアイコン。</param>
+        <param name="width">新しいアイコンの幅。</param>
+        <param name="height">新しいアイコンの高さ。</param>
+        <summary><see cref="T:System.Drawing.Icon" /> クラスの新しいインスタンスを初期化し、要求されたサイズに一致するアイコンを検索します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイズを正確に一致するバージョンが見つからない場合、最も近い一致が使用されます。 場合、`original`パラメーターは、 <xref:System.Drawing.Icon> 1 つの大きさを持つ、このメソッドは、重複するアイコンをのみを作成します。 伸縮機能を使用して、<xref:System.Drawing.Graphics.DrawImage%2A>アイコンのサイズを変更するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Drawing.Icon.ToBitmap%2A> メソッドの使用方法を示します。 この例は、Windows フォームで使用するよう設計されています。 フォームを作成し、次のコードを貼り付けます。 呼び出す、`IconToBitmap`メソッドで、フォームの<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#9)]
+ [!code-csharp[System.Drawing.MiscExamples#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#9)]
+ [!code-vb[System.Drawing.MiscExamples#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="original" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Icon (System.IO.Stream stream, int width, int height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, int32 width, int32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.#ctor(System.IO.Stream,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="stream">アイコンの読み込み元のデータ ストリーム。</param>
+        <param name="width">アイコンの幅 (ピクセル単位)。</param>
+        <param name="height">アイコンの高さ (ピクセル単位)。</param>
+        <summary>指定のデータ ストリームから指定の幅と高さで、<see cref="T:System.Drawing.Icon" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="stream" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Icon (string fileName, int width, int height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, int32 width, int32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.#ctor(System.String,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="fileName"><see cref="T:System.Drawing.Icon" /> のデータを格納するファイルのパスと名前。</param>
+        <param name="width"><see cref="T:System.Drawing.Icon" /> の幅。</param>
+        <param name="height"><see cref="T:System.Drawing.Icon" /> の高さ。</param>
+        <summary>指定したファイルから幅と高さを指定して、<see cref="T:System.Drawing.Icon" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したファイルに必要な高さと幅に一致するイメージが含まれていない場合に最も近いサイズのアイコンが返されます。  
+  
+ `fileName`が現在のアプリケーション ディレクトリにない場合、完全なパスを含める必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="string" />は<see langword="null" />またはイメージ データは含まれません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Icon" /> のクローンを作成して、イメージを複製します。</summary>
+        <returns><see cref="T:System.Drawing.Icon" /> にキャスト可能なオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Icon" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`Dispose`により、これによって使用されているリソース<xref:System.Drawing.Icon>を他の目的に再割り当てされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractAssociatedIcon">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Icon ExtractAssociatedIcon (string filePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Icon ExtractAssociatedIcon(string filePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.ExtractAssociatedIcon(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Icon</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filePath">イメージを含むファイルのパス。</param>
+        <summary>指定したファイルに含まれているイメージのアイコン表現を返します。</summary>
+        <returns>指定したファイルに含まれているイメージの <see cref="T:System.Drawing.Icon" /> 表現。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 相対パスは、現在の作業ディレクトリに対して相対的であると見なされます。  
+  
+ ときに<xref:System.Drawing.Icon.ExtractAssociatedIcon%2A>使用は、ビットマップのサムネイル画像返される可能性がアイコンではなく、アプリケーションを実行しているシステムにサムネイル画像として表示するビットマップ ファイルの原因となるレジストリ設定がある場合。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Drawing.Icon.ExtractAssociatedIcon%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`ExtractAssociatedIconEx`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。  
+  
+ [!code-csharp[System.Drawing.Misc3#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc3/CS/Form1.cs#2)]
+ [!code-vb[System.Drawing.Misc3#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc3/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="filePath" />は有効なファイルを示しません。  
+  
+ または  
+  
+ <paramref name="filePath" />汎用名前付け規則 (UNC) パスを示します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~Icon ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromHandle">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Icon FromHandle (IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Icon FromHandle(native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.FromHandle(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Icon</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="handle">アイコンを識別する Windows ハンドル。</param>
+        <summary>アイコン (<see langword="HICON" />) を識別する指定の Windows ハンドルから GDI+ <see cref="T:System.Drawing.Icon" /> を作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.Icon" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して元のアイコンを破棄する必要がありますをこのメソッドを使用する場合、`DestroyIcon`リソースが解放されることを確認する Win32 API のメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.Bitmap> を作成します。  
+  
+-   画面にそのオブジェクトを描画します。  
+  
+-   アイコンのハンドルを取得、<xref:System.Drawing.Bitmap>です。  
+  
+-   セット、<xref:System.Windows.Forms.Form.Icon%2A?displayProperty=nameWithType>ハンドルから作成されたアイコンをフォームの属性です。  
+  
+-   Win32 API 関数を呼び出す`DestroyIcon`リソースを解放します。  
+  
+ [!code-cpp[System.Drawing.ClassicBitmapExamples#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicBitmapExamples/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.ClassicBitmapExamples#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicBitmapExamples/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.ClassicBitmapExamples#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicBitmapExamples/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 列挙体を関連<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Icon.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Icon" /> の Windows ハンドルを取得します。 これはハンドルのコピーではありません。解放しないでください。</summary>
+        <value>アイコンの Windows ハンドル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例からビットマップを読み込み、<xref:System.Drawing.Icon>処理を使用して、<xref:System.Drawing.GraphicsUnit>列挙体を使用する方法、<xref:System.Drawing.Rectangle.Round%2A>ビットマップの長方形の境界を描画するメソッド。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 という名前のボタンを含むフォームを作成する`Button2`です。 フォームにコードを貼り付け、ボタンにこのメソッドを関連付ける<xref:System.Windows.Forms.Control.Click>イベント。  
+  
+ [!code-cpp[System.Drawing.BitmapMembers#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.BitmapMembers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.BitmapMembers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.BitmapMembers/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public int Height { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Icon.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Icon" /> の高さを取得します。</summary>
+        <value>この <see cref="T:System.Drawing.Icon" /> の高さ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.IO.Stream outputStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.Stream outputStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.Save(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="outputStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="outputStream">保存先の <see cref="T:System.IO.Stream" />。</param>
+        <summary>この <see cref="T:System.Drawing.Icon" /> を指定の出力 <see cref="T:System.IO.Stream" /> に保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size Size { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size Size" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Icon.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Icon" /> のサイズを取得します。</summary>
+        <value>この <see cref="T:System.Drawing.Icon" /> の幅と高さを指定する <see cref="T:System.Drawing.Size" /> 構造体。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo si, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="si" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="si">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化のシリアル化先 (<see cref="T:System.Runtime.Serialization.StreamingContext" /> を参照)。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、対象オブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化します。 列挙体を関連<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ToBitmap">
+      <MemberSignature Language="C#" Value="public System.Drawing.Bitmap ToBitmap ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Bitmap ToBitmap() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.ToBitmap" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Bitmap</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Icon" /> を GDI+ の <see cref="T:System.Drawing.Bitmap" /> に変換します。</summary>
+        <returns>変換された<see cref="T:System.Drawing.Icon" /> を表す <see cref="T:System.Drawing.Bitmap" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビットマップに変換され、結果のビットマップの透明色に設定されているアイコンの透明な領域は失われます`RGB(13,11,12)`です。 返されるビットマップは、元のアイコンと同じ高さと幅がします。  
+  
+> [!NOTE]
+>  .Ico ファイルの PNG フレームの先頭に framework バージョン 4.6 のサポートが追加されました。 次の行を追加することで、新しい動作を 4.6 ビットで実行されているは以前のバージョンの framework を対象するアプリケーションで選択できます、 `<runtime>` app.config ファイルのセクション。`<AppContextSwitchOverrides value="Switch.System.Drawing.DontSupportPngFramesInIcons=false" />`  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Drawing.Icon.ToBitmap%2A> メソッドの使用方法を示します。 この例は、Windows フォームで使用するよう設計されています。 フォームを作成し、次のコードを貼り付けます。 呼び出す、`IconToBitmap`フォームのメソッド。<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#9)]
+ [!code-csharp[System.Drawing.MiscExamples#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#9)]
+ [!code-vb[System.Drawing.MiscExamples#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Icon.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Icon" /> を説明する文字列をユーザーが判読できる形式で取得します。</summary>
+        <returns><see cref="T:System.Drawing.Icon" /> を説明する文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public int Width { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Icon.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Icon" /> の幅を取得します。</summary>
+        <value>この <see cref="T:System.Drawing.Icon" /> の幅。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

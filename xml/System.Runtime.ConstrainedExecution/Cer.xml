@@ -1,0 +1,134 @@
+<Type Name="Cer" FullName="System.Runtime.ConstrainedExecution.Cer">
+  <TypeSignature Language="C#" Value="public enum Cer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed Cer extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.ConstrainedExecution.Cer" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>制約された実行領域内で呼び出されたときに、メソッドの動作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.ConstrainedExecution.Cer>列挙体は、メソッド、型、または制約された実行領域 (CER) 内にあるアセンブリの動作を指定します。 エンティティが成功になっていることを示すために使用できる 3 つの値のいずれかの使用は、CER の知識がないかを成功または失敗をレポートできなくなる可能性があります (確定的に)。  
+  
+ CER コード領域に実行される保証は、中断のない中止されたスレッドのメモリ不足の例外、またはスタック オーバーフローなど、非同期例外が発生した場合でもです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.ConstrainedExecution.Cer>列挙メソッドの制約された実行領域を指定する場合。 このコード例に示されている例の一部である、<xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-csharp[System.Runtime.ConstrainedExecution#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Runtime.ConstrainedExecution/cs/program.cs#3)]
+ [!code-vb[System.Runtime.ConstrainedExecution#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Runtime.ConstrainedExecution/vb/program.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MayFail">
+      <MemberSignature Language="C#" Value="MayFail" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.ConstrainedExecution.Cer MayFail = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.ConstrainedExecution.Cer.MayFail" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.ConstrainedExecution.Cer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外条件は、メソッドが失敗する可能性があります。 この場合、メソッドに報告呼び出し元のメソッドが成功したか失敗しました。 メソッドには、戻り値を報告できることを確認するには、メソッドの本文の周り CER 必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.ConstrainedExecution.Cer None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.ConstrainedExecution.Cer.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.ConstrainedExecution.Cer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッド、型、またはアセンブリには、CER の概念がありません。 この値では、CER の保証を利用しません。 これは以下を意味します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   例外条件は、メソッドが失敗します。  
+  
+-   メソッドは、可能性がありますか、失敗したレポートしない可能性があります (これは、非決定的です)。  
+  
+-   メソッドを念頭に置いては、最も可能性の高いシナリオ) Cer に書き込まれません。  
+  
+ 暗黙的に設定されているメソッド、型、またはアセンブリが明示的にマークされていない場合は成功、`Cer.None`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Success">
+      <MemberSignature Language="C#" Value="Success" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.ConstrainedExecution.Cer Success = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.ConstrainedExecution.Cer.Success" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.ConstrainedExecution.Cer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外条件は、メソッドが正常に保証されます。 常に CER 以外領域内から呼び出された場合でも、呼び出されるメソッドの周囲の CER を構築する必要があります。 メソッドは、どのようなものでは実行された場合は成功です。 たとえば、マークすること<see cref="P:System.Collections.ArrayList.Count" />で<c>ReliabilityContractAttribute(Cer.Success)</c> 、CER 下で実行されるときに常が返されることにある要素の数を意味、<see cref="T:System.Collections.ArrayList" />離れませんでき、未定の状態で内部フィールドです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

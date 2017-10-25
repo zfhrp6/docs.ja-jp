@@ -1,0 +1,127 @@
+<Type Name="MessageSecurityOverHttpElement" FullName="System.ServiceModel.Configuration.MessageSecurityOverHttpElement">
+  <TypeSignature Language="C#" Value="public class MessageSecurityOverHttpElement : System.ServiceModel.Configuration.ServiceModelConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageSecurityOverHttpElement extends System.ServiceModel.Configuration.ServiceModelConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.MessageSecurityOverHttpElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Configuration.ServiceModelConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>HTTP を使用して送信されたメッセージのセキュリティ構成設定を定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AlgorithmSuite">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityAlgorithmSuite AlgorithmSuite { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecurityAlgorithmSuite AlgorithmSuite" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageSecurityOverHttpElement.AlgorithmSuite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ServiceModel.Configuration.SecurityAlgorithmSuiteConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("algorithmSuite", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP メッセージをセキュリティで保護するために使用されるメッセージ暗号化およびキー ラップ アルゴリズムを取得または設定します。</summary>
+        <value>HTTP メッセージをセキュリティで保護するために使用されるメッセージ暗号化およびキー ラップ アルゴリズムを指定する <see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" /> の有効な値。 既定値は <see cref="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCredentialType">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MessageCredentialType ClientCredentialType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.MessageCredentialType ClientCredentialType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageSecurityOverHttpElement.ClientCredentialType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("clientCredentialType", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageCredentialType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ベースのセキュリティまたは <see langword="TransportWithMessageCredential" /> を使ってクライアント認証を実行するときに使用される資格情報の種類を指定します。</summary>
+        <value>メッセージベースのセキュリティまたは <see cref="T:System.ServiceModel.MessageCredentialType" /> を使用してクライアント認証を実行するときに使用される資格情報の種類を指定する有効な <see langword="TransportWithMessageCredential" /> 値。 既定値は <see cref="F:System.ServiceModel.MessageCredentialType.Windows" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NegotiateServiceCredential">
+      <MemberSignature Language="C#" Value="public bool NegotiateServiceCredential { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NegotiateServiceCredential" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageSecurityOverHttpElement.NegotiateServiceCredential" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("negotiateServiceCredential", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス資格情報がクライアントの帯域外で提供されるか、ネゴシエーションのプロセスによってサービスからクライアントに取得されるかを指定するブール値を取得または設定します。</summary>
+        <value>
+          サービス資格情報がクライアントの帯域外で提供される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、サービス資格情報がクライアントの帯域外で提供されるか、ネゴシエーションのプロセスによってサービスからクライアントに取得されるかを指定します。 そのようなネゴシエーションは、通常のメッセージ交換の準備です。  
+  
+ <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> プロパティが Anonymous、<xref:System.ServiceModel.MessageCredentialType.UserName>、または <xref:System.ServiceModel.MessageCredentialType.Certificate> の場合、このプロパティを `false` に設定すると、サービス証明書がクライアントの帯域外で提供され、クライアントは <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.ServiceCertificate%2A> クラスの <xref:System.ServiceModel.Configuration.ServiceCredentialsElement> プロパティを指定する必要があります。 このモードは、WS-Trust および WS-SecureConversation が実装された SOAP スタックと同時に使用できます。  
+  
+ <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> プロパティが <xref:System.ServiceModel.MessageCredentialType.Windows> に設定されている場合、このプロパティを `false` に設定すると Kerberos ベースの認証が行われます。 このためには、クライアントおよびサービスが Kerberos ドメインの一部であることが必要です。 このモードは、Kerberos トークン プロファイル (OASIS WSS TC で定義) に加えて WS-Trust および WS-SecureConversation が実装された SOAP スタックと同時使用できます。  
+  
+ このプロパティが `true` の場合、SOAP メッセージを介して SPNego 交換をトンネル化する .NET SOAP ネゴシエーションが行われます。  
+  
+ このプロパティは、クライアントとサービスとの間で自動的にサービス資格情報のネゴシエーションが行われるかどうかを示します。 このプロパティが `true` の場合、自動的にネゴシエーションが行われます。 このプロパティが `false` の場合、サービスとの通信が行われる前にサービス資格情報を指定する必要があります。  
+  
+ このプロパティが `false` に設定され、さらにバインディングがクライアント資格情報の種類として Windows を使用するように構成されている場合は、サービス アカウントをサービス プリンシパル名 (SPN) に関連付ける必要があります。 この関連付けを行うには、NETWORK SERVICE アカウントまたは LOCAL SYSTEM アカウントでサービスを実行します。 または、SetSpn.exe ツールを使用して、サービス アカウントの SPN を作成します。 どちらの場合、クライアントがで正しい SPN を使用する必要があります、 [ &lt;servicePrincipalName&gt; ](~/docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md)要素、またはを使用して、<xref:System.ServiceModel.EndpointAddress>コンス トラクターです。 詳細については、次を参照してください。[サービス Id と認証](~/docs/framework/wcf/feature-details/service-identity-and-authentication.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageSecurityOverHttpElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationPropertyCollection" /> オブジェクトのコレクションが格納されている <see cref="T:System.Configuration.ConfigurationProperty" /> インスタンスを取得します。オブジェクトは、この構成要素の属性または <see cref="T:System.Configuration.ConfigurationElement" /> オブジェクトです。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationPropertyCollection" /> オブジェクトのコレクションが格納されている <see cref="T:System.Configuration.ConfigurationProperty" /> インスタンス。このオブジェクトは、この構成要素の属性または <see cref="T:System.Configuration.ConfigurationElement" /> オブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

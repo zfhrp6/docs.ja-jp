@@ -1,0 +1,359 @@
+<Type Name="SerializerDescriptor" FullName="System.Windows.Documents.Serialization.SerializerDescriptor">
+  <TypeSignature Language="C#" Value="public sealed class SerializerDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SerializerDescriptor extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Serialization.SerializerDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インストールされているプラグイン シリアライザーに関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プラグイン シリアライザー クラスから派生し、実装、<xref:System.Windows.Documents.Serialization.ISerializerFactory>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、<xref:System.Windows.Documents.Serialization.SerializerDescriptor>情報を取得するには、プラグイン シリアライザーをインストールします。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializePlugIn](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializeplugin)]  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeFileFilter](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializefilefilter)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AssemblyName">
+      <MemberSignature Language="C#" Value="public string AssemblyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssemblyName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーを格納するアセンブリの名前を取得します。</summary>
+        <value>プラグイン シリアライザーを含むアセンブリ (通常は DLL) の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyPath">
+      <MemberSignature Language="C#" Value="public string AssemblyPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssemblyPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーを格納するアセンブリ ファイルへのパスを取得します。</summary>
+        <value>プラグイン シリアライザーを含むアセンブリ ファイルへのパス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyVersion">
+      <MemberSignature Language="C#" Value="public Version AssemblyVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version AssemblyVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーを格納するアセンブリのバージョンを取得します。</summary>
+        <value>プラグイン シリアライザーを含むアセンブリのバージョン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromFactoryInstance">
+      <MemberSignature Language="C#" Value="public static System.Windows.Documents.Serialization.SerializerDescriptor CreateFromFactoryInstance (System.Windows.Documents.Serialization.ISerializerFactory factoryInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Documents.Serialization.SerializerDescriptor CreateFromFactoryInstance(class System.Windows.Documents.Serialization.ISerializerFactory factoryInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Serialization.SerializerDescriptor.CreateFromFactoryInstance(System.Windows.Documents.Serialization.ISerializerFactory)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Serialization.SerializerDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="factoryInstance" Type="System.Windows.Documents.Serialization.ISerializerFactory" />
+      </Parameters>
+      <Docs>
+        <param name="factoryInstance">新しいデータ ソース<see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />です。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />を介して、指定された<see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" />実装します。</summary>
+        <returns>新しい<see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />とそのプロパティの値で初期化、指定された<see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" />実装します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみ完全に信頼された呼び出しは、このメソッドを使用することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="factoryInstance" /> が null です。</exception>
+        <exception cref="T:System.ArgumentException">1 つ以上の次のプロパティの<paramref name="factoryInstance" />が null です: <see cref="P:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName" />、 <see cref="P:System.Windows.Documents.Serialization.SerializerDescriptor.ManufacturerName" />、 <see cref="P:System.Windows.Documents.Serialization.SerializerDescriptor.ManufacturerWebsite" />、および<see cref="P:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultFileExtension">
+      <MemberSignature Language="C#" Value="public string DefaultFileExtension { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultFileExtension" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーが出力ファイルに関連付けられている既定の拡張子を取得します。</summary>
+        <value>シリアライザーが出力ファイルに関連付けられている既定の拡張子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用して、次の例に示す<xref:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension%2A>をインストールされているプラグイン シリアライザーの既定のファイル拡張子を返します。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializePlugIn](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializeplugin)]  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeFileFilter](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializefilefilter)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public string DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーのパブリックの表示名を取得します。</summary>
+        <value>シリアライザーのパブリックの表示名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して<xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A>を取得し、プラグイン シリアライザーのパブリック名を表示します。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeFileFilter](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializefilefilter)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Serialization.SerializerDescriptor.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">これと比較するオブジェクト<see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />です。</param>
+        <summary>2 つの <see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" /> オブジェクトが等しいかどうかをテストします。</summary>
+        <returns>
+          <see langword="true" />両方が等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Serialization.SerializerDescriptor.Equals%2A>返します`true`2 つのオブジェクトは、次のプロパティの 1 つ以上が異なる場合でも: <xref:System.Windows.Documents.Serialization.SerializerDescriptor.ManufacturerName%2A>、 <xref:System.Windows.Documents.Serialization.SerializerDescriptor.ManufacturerWebsite%2A>、および<xref:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FactoryInterfaceName">
+      <MemberSignature Language="C#" Value="public string FactoryInterfaceName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FactoryInterfaceName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.SerializerDescriptor.FactoryInterfaceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前を取得、<see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" />シリアライザーを実装するクラスを派生します。</summary>
+        <value>名前、<see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" />シリアライザーを実装するクラスを派生します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Serialization.SerializerDescriptor.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアライザーの一意のハッシュ コード値を取得します。</summary>
+        <returns>シリアライザーの一意のハッシュ コード値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一意のハッシュ コード値がに基づいて作成されて、 <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A>、 <xref:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyName%2A>、 <xref:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyPath%2A>、 <xref:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyVersion%2A>、 <xref:System.Windows.Documents.Serialization.SerializerDescriptor.FactoryInterfaceName%2A>、および<xref:System.Windows.Documents.Serialization.SerializerDescriptor.WinFXVersion%2A>シリアライザーのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLoadable">
+      <MemberSignature Language="C#" Value="public bool IsLoadable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLoadable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーが現在インストールされているバージョンので読み込まれたかどうかを示す値を取得[!INCLUDE[TLA#tla_avalonwinfx](~/includes/tlasharptla-avalonwinfx-md.md)]です。</summary>
+        <value>
+          <see langword="true" />シリアライザー アセンブリを読み込むことができる場合それ以外の場合、<see langword="false" />です。  既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable%2A>必要があります**false**しない限り、<xref:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyVersion%2A>と同じ値を持つ<xref:System.Windows.Documents.Serialization.SerializerDescriptor.WinFXVersion%2A>します。  
+  
+   
+  
+## Examples  
+ 使用して、次の例に示す<xref:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable%2A>を関連付けられているプラグイン シリアライザーをロードおよび使用できるかどうかを判断します。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeFileFilter](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializefilefilter)]  
+  
+ [!code-csharp[DocumentSerialize#DocSerializePlugIn](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializeplugin)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManufacturerName">
+      <MemberSignature Language="C#" Value="public string ManufacturerName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ManufacturerName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.SerializerDescriptor.ManufacturerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーを開発した会社の名前を取得します。</summary>
+        <value>プラグイン シリアライザーを開発した会社の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プラグイン シリアライザー クラスから派生し、実装、<xref:System.Windows.Documents.Serialization.ISerializerFactory>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManufacturerWebsite">
+      <MemberSignature Language="C#" Value="public Uri ManufacturerWebsite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ManufacturerWebsite" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.SerializerDescriptor.ManufacturerWebsite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーを開発した会社の web アドレスを取得します。</summary>
+        <value>シリアライザーを開発した会社の web アドレスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WinFXVersion">
+      <MemberSignature Language="C#" Value="public Version WinFXVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version WinFXVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.SerializerDescriptor.WinFXVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バージョンを取得[!INCLUDE[TLA#tla_avalonwinfx](~/includes/tlasharptla-avalonwinfx-md.md)]シリアライザーが必要です。</summary>
+        <value>バージョン[!INCLUDE[TLA#tla_avalonwinfx](~/includes/tlasharptla-avalonwinfx-md.md)]プラグイン シリアライザーが必要です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Serialization.SerializerDescriptor.WinFXVersion%2A>として値が同じである必要があります、<xref:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyVersion%2A>またはシリアライザー アセンブリをアンロードすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

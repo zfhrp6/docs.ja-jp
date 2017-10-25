@@ -1,0 +1,132 @@
+<Type Name="WritingPrintTicketRequiredEventArgs" FullName="System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs">
+  <TypeSignature Language="C#" Value="public class WritingPrintTicketRequiredEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WritingPrintTicketRequiredEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Documents.Serialization.SerializerWriter.WritingPrintTicketRequired" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WritingPrintTicketRequiredEventArgs (System.Windows.Xps.Serialization.PrintTicketLevel printTicketLevel, int sequence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Xps.Serialization.PrintTicketLevel printTicketLevel, int32 sequence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.#ctor(System.Windows.Xps.Serialization.PrintTicketLevel,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="printTicketLevel" Type="System.Windows.Xps.Serialization.PrintTicketLevel" />
+        <Parameter Name="sequence" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="printTicketLevel">スコープを指定する列挙値、<see cref="P:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket" />ページ、ドキュメント、またはドキュメントのシーケンスとして。</param>
+        <param name="sequence">スコープに基づくによって定義された<c>printTicketLevel</c>、ページまたはに関連付けられているドキュメントの数の数、<see cref="P:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket" />です。</param>
+        <summary><see cref="T:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentPrintTicket">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintTicket CurrentPrintTicket { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.PrintTicket CurrentPrintTicket" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintTicket</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはドキュメントが印刷されるときに使用するプリンターの設定を既定値に設定します。</summary>
+        <value>このドキュメントの印刷時に使用する既定のプリンター設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket%2A>プロパティが検証または指定した変更していない<xref:System.Printing.PrintTicket>、特定の<xref:System.Printing.PrintQueue>します。  必要に応じて、使用、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、 <xref:System.Printing.PrintQueue>-特定<xref:System.Printing.PrintTicket>特定のプリンターに対して有効であります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentPrintTicketLevel">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Serialization.PrintTicketLevel CurrentPrintTicketLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Xps.Serialization.PrintTicketLevel CurrentPrintTicketLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicketLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Serialization.PrintTicketLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スコープを示す値を取得、<see cref="E:System.Windows.Documents.Serialization.SerializerWriter.WritingPrintTicketRequired" />イベント。</summary>
+        <value>スコープを示す列挙体、<see cref="E:System.Windows.Documents.Serialization.SerializerWriter.WritingPrintTicketRequired" />ドキュメント、単一のドキュメント、または 1 つのページのシーケンスとイベント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicketLevel%2A>プロパティは<xref:System.Windows.Xps.Serialization.PrintTicketLevel.FixedDocumentSequencePrintTicket>、<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.Sequence%2A>プロパティをドキュメント出力の数を指定する、<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket%2A>です。  その他の<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicketLevel%2A>、値、<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.Sequence%2A>プロパティで出力をページの数を指定する、<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sequence">
+      <MemberSignature Language="C#" Value="public int Sequence { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Sequence" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.Sequence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントやページ出力の数を取得、<see cref="P:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket" />です。</summary>
+        <value>ドキュメントやページ出力の数、<see cref="P:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicketLevel%2A>プロパティは<xref:System.Windows.Xps.Serialization.PrintTicketLevel.FixedDocumentSequencePrintTicket>、<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.Sequence%2A>プロパティをドキュメント出力の数を指定する、<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket%2A>です。  その他の<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicketLevel%2A>、値、<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.Sequence%2A>プロパティで出力をページの数を指定する、<xref:System.Windows.Documents.Serialization.WritingPrintTicketRequiredEventArgs.CurrentPrintTicket%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

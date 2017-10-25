@@ -1,0 +1,444 @@
+<Type Name="AuthenticationManager" FullName="System.Net.AuthenticationManager">
+  <TypeSignature Language="C#" Value="public class AuthenticationManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthenticationManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.AuthenticationManager" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クライアントの認証プロセス中に呼び出された認証モジュールを管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.AuthenticationManager>アプリケーションが使用する認証モジュールを管理する静的クラスです。 リソース、保護されている場合、要求が行われる、<xref:System.Net.AuthenticationManager>呼び出し、<xref:System.Net.AuthenticationManager.Authenticate%2A>取得するメソッド、<xref:System.Net.Authorization>後続の要求で使用するインスタンス。  
+  
+ <xref:System.Net.AuthenticationManager>各登録済みの認証モジュールを呼び出すことによってクエリ、<xref:System.Net.IAuthenticationModule.Authenticate%2A?displayProperty=nameWithType>各モジュールのメソッドです。 1 つ目の認証モジュールを返す、<xref:System.Net.Authorization>のインスタンスが要求の認証に使用します。  
+  
+ 、基本、ダイジェストを提供するモジュールのネゴシエート、NTLM、Kerberos 認証の種類が登録されると、<xref:System.Net.AuthenticationManager>既定です。 実装する追加の認証モジュール、<xref:System.Net.IAuthenticationModule>を使用してインターフェイスを追加することができます、<xref:System.Net.AuthenticationManager.Register%2A>メソッドです。 認証モジュールは、一覧に追加された順序で呼び出されます。  
+  
+> [!NOTE]
+>  Kerberos ネゴシエーションと認証の種類は Windows 95/98 または Windows NT 4.0 ではサポートされていません。  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.Net.Authentication#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Authentication/CPP/custombasicauthentication.cpp#1)]
+ [!code-csharp[System.Net.Authentication#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Authentication/CS/custombasicauthentication.cs#1)]
+ [!code-vb[System.Net.Authentication#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Authentication/VB/custombasicauthentication.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Authenticate">
+      <MemberSignature Language="C#" Value="public static System.Net.Authorization Authenticate (string challenge, System.Net.WebRequest request, System.Net.ICredentials credentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.Authorization Authenticate(string challenge, class System.Net.WebRequest request, class System.Net.ICredentials credentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.AuthenticationManager.Authenticate(System.String,System.Net.WebRequest,System.Net.ICredentials)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Authorization</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="challenge" Type="System.String" />
+        <Parameter Name="request" Type="System.Net.WebRequest" />
+        <Parameter Name="credentials" Type="System.Net.ICredentials" />
+      </Parameters>
+      <Docs>
+        <param name="challenge">インターネット リソースから返されるチャレンジします。</param>
+        <param name="request"><see cref="T:System.Net.WebRequest" />認証チャレンジを開始します。</param>
+        <param name="credentials"><see cref="T:System.Net.ICredentials" />この要求に関連付けられています。</param>
+        <summary>認証要求に応答できる 1 つ目のモジュールを検索するには、各登録済みの認証モジュールが呼び出されます。</summary>
+        <returns>インスタンス、<see cref="T:System.Net.Authorization" />認証試行の結果を含むクラスです。 このメソッドが戻るかどうかは認証モジュールがチャレンジに応答することはありません、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.AuthenticationManager.Authenticate%2A>メソッドの呼び出し、<xref:System.Net.IAuthenticationModule.Authenticate%2A?displayProperty=nameWithType>メソッドで、モジュールのいずれかが応答するまでは、各登録済みの認証モジュールを<xref:System.Net.Authorization>インスタンス。  
+  
+ 最初の<xref:System.Net.Authorization>返されたインスタンスは、要求を認証に使用します。 認証モジュールは、要求を認証できるではない場合、<xref:System.Net.AuthenticationManager.Authenticate%2A>メソッドを返します。`null`です。  
+  
+ 登録されている順序での認証モジュールが呼び出される、<xref:System.Net.AuthenticationManager>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="challenge" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="request" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="credentials" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CredentialPolicy">
+      <MemberSignature Language="C#" Value="public static System.Net.ICredentialPolicy CredentialPolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.ICredentialPolicy CredentialPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Net.AuthenticationManager.CredentialPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ICredentialPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を使用して行われるリソース要求に使用する資格情報のポリシー、<see cref="T:System.Net.HttpWebRequest" />クラスです。</summary>
+        <value>実装するオブジェクト、<see cref="T:System.Net.ICredentialPolicy" />資格情報が要求と共に送信されるかどうかを決定するインターフェイスです。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 資格情報のポリシーでは、Web ページの内容などのネットワーク リソースに対する要求を送信するときに資格情報を送信するかどうかを判断します。 資格情報が送信される場合は、クライアント認証を必要とするサーバーがクライアントの資格情報が必要であることを示す応答を送信する代わりに、要求が受信したときに、クライアントの認証を試行できます。 これによりサーバーへのラウンド トリップを削減できますが、これがネットワーク経由で資格情報を送信する際に固有のセキュリティ リスクに対する分散する必要があります。 移行先サーバーにクライアント認証が必要としない場合は、資格情報を送信することをお勧めします。  
+  
+ 資格情報のポリシーが使用または資格情報を指定した要求に対してのみ呼び出される、<xref:System.Net.WebProxy>資格情報を指定するオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、資格情報のポリシー設定を示しています。  
+  
+ [!code-cpp[NclCredPolicy#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCredPolicy/CPP/NCLCredPolicy.cpp#2)]
+ [!code-csharp[NclCredPolicy#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCredPolicy/CS/websample.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomTargetNameDictionary">
+      <MemberSignature Language="C#" Value="public static System.Collections.Specialized.StringDictionary CustomTargetNameDictionary { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Specialized.StringDictionary CustomTargetNameDictionary" />
+      <MemberSignature Language="DocId" Value="P:System.Net.AuthenticationManager.CustomTargetNameDictionary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Kerberos 認証を使用して行われる要求の中にホストを識別するために使用するサービス プリンシパル名 (Spn) を含んでいるディクショナリを取得<see cref="T:System.Net.WebRequest" />とその派生クラス。</summary>
+        <value>書き込み可能な<see cref="T:System.Collections.Specialized.StringDictionary" />ホスト情報のキーで構成されるは、SPN 値を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SPN は、クライアント一意に識別するサービスまたはアプリケーションの相互認証の目的で、サーバー上のインスタンスの名前です。 既定では、相互認証が要求され、設定することを要求できます<xref:System.Net.WebRequest.AuthenticationLevel%2A?displayProperty=nameWithType>に<xref:System.Net.Security.AuthenticationLevel.MutualAuthRequired>を要求します。  
+  
+ ときに、<xref:System.Net.WebRequest>クライアントが、変換先を指定する必要があります、SPN の相互認証が必要です。 SPN がわかっている場合を追加、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A>要求を送信する前にします。 このディクショナリに SPN の情報を追加していない場合、<xref:System.Net.AuthenticationManager>を使用して、<xref:System.Net.WebRequest.RequestUri%2A>メソッドです。 最も可能性の高い、SPN を作成するただし、これは、計算された値であり適切でない可能性があります。 相互認証が試行され、失敗した場合は、計算の SPN を決定するディクショナリを確認できます。 コンソール アプリケーションは、認証プロトコルが相互認証をサポートしていない場合、ディクショナリに、SPN は入力されません。  
+  
+ このディクショナリには、SPN 値を追加するには、使用、<xref:System.Uri.AbsoluteUri%2A>の<xref:System.Net.WebRequest.RequestUri%2A>キーとして。 キーが含まれるように切り捨ては内部的には、 <xref:System.Uri.Scheme%2A>、 <xref:System.Uri.Host%2A>、および<xref:System.Uri.Port%2A>場合は、既定のポートではありません。  
+  
+> [!NOTE]
+>  メソッドとプロパティにアクセスする、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A>必要があります無制限<xref:System.Net.WebPermission>です。  
+  
+> [!NOTE]
+>  プロキシ経由の Kerberos 認証が実行されると、プロキシと最終的なホスト名の両方を SPN を解決する必要があります。 プロキシの名前解決は、タイムアウトによって保護されます。 SPN を最終的なホスト名の解決 DNS 参照が必要ですし、この操作に直接関連付けられているタイムアウトはありません。 そのため同期操作の時間がかかるタイムアウトにします。 これをなくすためには、に対して要求を行う前に、SPN のキャッシュに最終的なホストの URI のプレフィックスを追加します。  
+  
+ Version 3.5 SP1 の既定では、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> プロパティが設定されていない場合、NTLM (NT LAN マネージャー) 認証交換の SPN の要求 URL で使用されたホスト名を指定します。 要求 URL で使用されたホスト名は、クライアント要求の <xref:System.Net.HttpRequestHeader?displayProperty=nameWithType> に指定された Host ヘッダーとは異なる可能性があります。 要求 URL に使用されているホスト名は、サーバーの実際のホスト名、サーバーのコンピューター名、コンピューターの IP アドレス、またはループバック アドレスとは異なる可能性があります。 このような場合、Windows は認証要求に失敗します。 問題に対処する、ホスト名が使用される Windows に通知する必要があります、クライアントで要求の URL ("contoso"、たとえば) の要求は実際には、ローカル コンピューターの代替名です。  
+  
+   
+  
+## Examples  
+ 内容を表示する次のコード例に示します、<xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A>です。  
+  
+ [!code-cpp[NclCredPolicy#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLCredPolicy/CPP/NCLCredPolicy.cpp#5)]
+ [!code-csharp[NclCredPolicy#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLCredPolicy/CS/websample.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreAuthenticate">
+      <MemberSignature Language="C#" Value="public static System.Net.Authorization PreAuthenticate (System.Net.WebRequest request, System.Net.ICredentials credentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.Authorization PreAuthenticate(class System.Net.WebRequest request, class System.Net.ICredentials credentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.AuthenticationManager.PreAuthenticate(System.Net.WebRequest,System.Net.ICredentials)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Authorization</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Net.WebRequest" />
+        <Parameter Name="credentials" Type="System.Net.ICredentials" />
+      </Parameters>
+      <Docs>
+        <param name="request">A<see cref="T:System.Net.WebRequest" />インターネット リソースにします。</param>
+        <param name="credentials"><see cref="T:System.Net.ICredentials" />要求に関連付けられています。</param>
+        <summary>要求を事前認証を行います。</summary>
+        <returns>インスタンス、<see cref="T:System.Net.Authorization" />到着、それ以外の要求を指定できる場合にクラス<see langword="null" />です。 <paramref name="credentials" /> が <see langword="null" /> の場合、このメソッドは <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証モジュールは、要求を事前認証ことができる場合、<xref:System.Net.AuthenticationManager.PreAuthenticate%2A>メソッドは認証インスタンスを返し、チャレンジを発行するリソースを待機しているのではなく、プリエンプティブ サーバーに認証情報を送信します。 この動作が RFC 2617 のセクション 3.3 で説明されている (HTTP Authentication: Basic and Digest アクセス Authentication)。 事前認証をサポートする認証モジュールを使用すると、クライアント認証チャレンジによる追加のラウンド トリップを回避することで、サーバーの効率性を向上させることです。  
+  
+ セットを要求することができますを事前認証の承認モジュール、<xref:System.Net.IAuthenticationModule.CanPreAuthenticate%2A?displayProperty=nameWithType>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public static void Register (System.Net.IAuthenticationModule authenticationModule);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Register(class System.Net.IAuthenticationModule authenticationModule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.AuthenticationManager.Register(System.Net.IAuthenticationModule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationModule" Type="System.Net.IAuthenticationModule" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationModule"><see cref="T:System.Net.IAuthenticationModule" />認証マネージャーに登録します。</param>
+        <summary>認証マネージャーでの認証モジュールを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.AuthenticationManager.Register%2A>メソッドによって呼び出されるモジュールの一覧の最後に認証モジュールを追加する、<xref:System.Net.AuthenticationManager.Authenticate%2A>メソッドです。 認証モジュールは、一覧に追加された順序で呼び出されます。 場合、同じモジュール<xref:System.Net.IAuthenticationModule.AuthenticationType%2A>は既に登録されている、このメソッドは、登録済みモジュールを削除し、追加`authenticationModule`リストの末尾にします。  
+  
+   
+  
+## Examples  
+ 次の例では、認証マネージャーでの認証モジュールを登録します。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Sockets.Authentication#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.Authentication/CPP/custombasicauthentication.cpp#2)]
+ [!code-csharp[System.Net.Sockets.Authentication#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.Authentication/CS/custombasicauthentication.cs#2)]
+ [!code-vb[System.Net.Sockets.Authentication#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.Authentication/VB/custombasicauthentication.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="authenticationModule" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを実行します。 関連する列挙値:<see cref="T:System.Security.Permissions.SecurityPermissionFlag" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisteredModules">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerator RegisteredModules { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.IEnumerator RegisteredModules" />
+      <MemberSignature Language="DocId" Value="P:System.Net.AuthenticationManager.RegisteredModules" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証マネージャーに登録されている認証モジュールの一覧を取得します。</summary>
+        <value><see cref="T:System.Collections.IEnumerator" />読み取られる登録済みの認証モジュールを有効にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.AuthenticationManager.RegisteredModules%2A>プロパティでは、<xref:System.Collections.IEnumerator>の一覧を有効にするインスタンスが読み込まれる認証モジュールを登録します。 <xref:System.Net.AuthenticationManager.Register%2A>メソッドは、一覧にモジュールを追加し、<xref:System.Net.AuthenticationManager.Unregister%2A>メソッドは、そこからモジュールを削除します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.AuthenticationManager.RegisteredModules%2A>認証マネージャーに登録されている認証モジュールの一覧を取得するプロパティです。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Authentication#8](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Authentication/CPP/custombasicauthentication.cpp#8)]
+ [!code-csharp[System.Net.Authentication#8](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Authentication/CS/custombasicauthentication.cs#8)]
+ [!code-vb[System.Net.Authentication#8](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Authentication/VB/custombasicauthentication.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unregister">
+      <MemberSignature Language="C#" Value="public static void Unregister (System.Net.IAuthenticationModule authenticationModule);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Unregister(class System.Net.IAuthenticationModule authenticationModule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.AuthenticationManager.Unregister(System.Net.IAuthenticationModule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationModule" Type="System.Net.IAuthenticationModule" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationModule"><see cref="T:System.Net.IAuthenticationModule" />する登録済みモジュールの一覧から削除します。</param>
+        <summary>登録されているモジュールの一覧から、指定された認証モジュールを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.AuthenticationManager.Unregister%2A>メソッド呼び出された認証モジュールの一覧から、指定された認証モジュールを削除する、<xref:System.Net.AuthenticationManager.Authenticate%2A>メソッドです。 モジュールを使用して、一覧に追加する必要があります、<xref:System.Net.AuthenticationManager.Register%2A>メソッドの一覧から削除する前にします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.AuthenticationManager.Unregister%2A>登録されているモジュールの一覧から、指定された認証モジュールを削除する方法です。 完全な例を参照してください、<xref:System.Net.AuthenticationManager>クラスです。  
+  
+ [!code-cpp[System.Net.Sockets.Authentication#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.Authentication/CPP/custombasicauthentication.cpp#2)]
+ [!code-csharp[System.Net.Sockets.Authentication#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.Authentication/CS/custombasicauthentication.cs#2)]
+ [!code-vb[System.Net.Sockets.Authentication#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.Authentication/VB/custombasicauthentication.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="authenticationModule" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">指定した<see cref="T:System.Net.IAuthenticationModule" />が登録されていません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを実行します。 関連する列挙値:<see cref="T:System.Security.Permissions.SecurityPermissionFlag" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Unregister">
+      <MemberSignature Language="C#" Value="public static void Unregister (string authenticationScheme);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Unregister(string authenticationScheme) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.AuthenticationManager.Unregister(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authenticationScheme" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationScheme">削除するモジュールの認証方式です。</param>
+        <summary>登録されているモジュールの一覧から、指定された認証方式の認証モジュールを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.AuthenticationManager.Unregister%2A>メソッド呼び出された認証モジュールの一覧から、指定された認証方式の認証モジュールを削除する、<xref:System.Net.AuthenticationManager.Authenticate%2A>メソッドです。 モジュールを使用して、一覧に追加する必要があります、<xref:System.Net.AuthenticationManager.Register%2A>メソッドの一覧から削除する前にします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.AuthenticationManager.Unregister%2A>登録されているモジュールの一覧から指定された認証方式の認証モジュールを削除する方法です。  
+  
+ [!code-cpp[AuthenticationManager_UnRegister2#2](~/samples/snippets/cpp/VS_Snippets_Remoting/AuthenticationManager_UnRegister2/CPP/authenticationmanager_unregister2.cpp#2)]
+ [!code-csharp[AuthenticationManager_UnRegister2#2](~/samples/snippets/csharp/VS_Snippets_Remoting/AuthenticationManager_UnRegister2/CS/authenticationmanager_unregister2.cs#2)]
+ [!code-vb[AuthenticationManager_UnRegister2#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/AuthenticationManager_UnRegister2/VB/authenticationmanager_unregister2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="authenticationScheme" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">この認証スキーム用のモジュールが登録されていません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを実行します。 関連する列挙値:<see cref="T:System.Security.Permissions.SecurityPermissionFlag" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

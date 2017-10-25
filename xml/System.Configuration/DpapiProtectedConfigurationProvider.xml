@@ -1,0 +1,225 @@
+<Type Name="DpapiProtectedConfigurationProvider" FullName="System.Configuration.DpapiProtectedConfigurationProvider">
+  <TypeSignature Language="C#" Value="public sealed class DpapiProtectedConfigurationProvider : System.Configuration.ProtectedConfigurationProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DpapiProtectedConfigurationProvider extends System.Configuration.ProtectedConfigurationProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.DpapiProtectedConfigurationProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ProtectedConfigurationProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows データ保護 API (DPAPI: Data Protection API) を使用して構成データの暗号化と復号化を行う <see cref="T:System.Configuration.ProtectedConfigurationProvider" /> オブジェクトを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.DpapiProtectedConfigurationProvider>不正アクセスから構成ファイルに格納されている機密情報を保護することができます。  
+  
+ 標準を使用する<xref:System.Configuration.DpapiProtectedConfigurationProvider>によってこのクラスのインスタンスを作成するのではなく、プロバイダーと構成ファイルで適切な設定の宣言します。 次の例を参照してください。  
+  
+ 保護された構成の詳細については、次を参照してください。[暗号化の構成情報を使用して保護された構成](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)です。  
+  
+ <xref:System.Configuration.DpapiProtectedConfigurationProvider> Windows の組み込み暗号化サービスを使用し、コンピューター固有またはユーザー アカウント固有のいずれかの保護用に構成できます。 コンピューター固有の保護は匿名サービス便利ですが、以下のセキュリティを提供します。 ユーザー アカウント固有の保護は、特定のユーザー id で実行されるサービスで使用できます。  
+  
+   
+  
+## Examples  
+ 次の例は、標準を使用する方法を示しています。<xref:System.Configuration.DpapiProtectedConfigurationProvider>を保護したりする構成セクションの保護を解除します。  
+  
+  
+ 次の構成の抜粋は前に、と、保護が適用された後に、構成セクションを表示します。  
+  
+```xml  
+<?xml version="1.0" encoding="utf-8" ?>  
+<configuration>  
+  <connectionStrings>  
+    <add name="NorthwindConnectionString"   
+      connectionString="Data Source=webnetue2;Initial Catalog=Northwind;User ID=aspnet_test;Password=test"  
+      providerName="System.Data.SqlClient" />  
+  </connectionStrings>  
+</configuration>  
+```  
+  
+```xml  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+  <connectionStrings>  
+    <EncryptedData>  
+      <CipherData>                <CipherValue>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcAMh0jIC1kigyFfd9AUZfQQAAAACAAAAAAADZgAAqAAAABAAAADQwbQ2DgIgIlqskE1RI9UpAAAAAASAAACgAAAAEAAAAAXlYBxi3jhM6wv4sxLhugsQAgAAgoReHZS2406dc/AyRDd6WuNr4ihHn6fbipd4tzHEmeuyS4o4fS4CmT3jMt/WjsP/kR7TF4ygwr2GG47podK79ECpVCZHAgctCauCYjE2Ls3iphKXy/pHic2o6aaClt/xPm+fb4OfODv6XjrJhJzGK2lqUPXkyJN1w2zwh6OVpDQF9N8vTyxL4eitp35/M5zYbW7e6VVAgYUOxlNxgCV5+jXpUKh/rPovopTD392u8KavqQFW1iu+gBPSPq/xeZNz+qYMKbUl+r4VTzBQg3fPlRxp1lNZmM2yRgUbkYPNaFb9ihS7GAg5/wZn8lLmThvq39eA0Vlp6hDE92iop885umELt0/NBKf5umQCqqz9EXXLbmmGc7qoLqTaYVuOmqx0LsvrJL0wSL1dSySCjmB/dNAtVUYgg02eWQNKyaLqnpMdCbTLLQ/oCKuNkL5OQ7t1yl5wQGjQhieIRzLtrMgpTSyaHbqDsRurp9Bc5mM078IAg1hXquQNKlJC/wiJ9kbHerFCbtuLGy/7nXVrFH91ud4U4ExCJEuhoTdmuql5kbqYd6Ye/bu2CftPni19nDkSJ8w4NoqMNKbK3Mi/Cd0o113HsVYlETMv1vlJWZWYP91PK9trixiY4E0G81c6IKITjHDrOJ9evdw2T1/TrvY6pzre3UXSJbFMDQVX6JoAxFk02SRZDKOZdRojeoX19lgrFAAAABzjlz3Qg2as3vn7MRQVxDfZucgE</CipherValue>  
+      </CipherData>  
+    </EncryptedData>  
+  </connectionStrings>  
+  <configProtectedData defaultProvider="RsaProtectedConfigurationProvider">  
+    <providers>  
+      <clear />  
+      <add keyContainerName="NetFrameworkConfigurationKey" cspProviderName=""  
+        useMachineContainer="true" useOAEP="false" description="Uses RsaCryptoServiceProvider to encrypt and decrypt"  
+        name="RsaProtectedConfigurationProvider" type="System.Configuration.RsaProtectedConfigurationProvider,System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />  
+      <add useMachineProtection="true" description="Uses CryptProtectData and CryptUnProtectData Windows APIs to encrypt and decrypt"  
+        keyEntropy="" name="DataProtectionConfigurationProvider" type="System.Configuration.DpapiProtectedConfigurationProvider,System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />  
+    </providers>  
+  </configProtectedData>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値: <see cref="F:System.Security.Permissions.SecurityAction.Demand" /> [FullTrust](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3)</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DpapiProtectedConfigurationProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Configuration.DpapiProtectedConfigurationProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.DpapiProtectedConfigurationProvider.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrypt">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode Decrypt (System.Xml.XmlNode encrypted_node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode Decrypt(class System.Xml.XmlNode encrypted_node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.Decrypt(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedNode" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="encrypted_node">To be added.</param>
+        <summary>渡されたを復号化<see cref="T:System.Xml.XmlNode" />オブジェクト。</summary>
+        <returns>復号化された<see cref="T:System.Xml.XmlNode" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">
+          <paramref name="encrypted_node" /><see cref="P:System.Xml.XmlNode.Name" /> "EncryptedData"に設定し、 <see cref="T:System.Xml.XmlNodeType" /> 'éý'<see cref="F:System.Xml.XmlNodeType.Element" />です。  
+  
+ \- または  
+  
+ <paramref name="encrypted_node" />ありませんが子ノードという"CipherData""CipherValue"をという名前の子ノードです。  
+  
+ \- または  
+  
+ "CipherData"をという名前の子ノードは、空のノードです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Encrypt">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode Encrypt (System.Xml.XmlNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode Encrypt(class System.Xml.XmlNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.Encrypt(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Xml.XmlNode" />を暗号化するオブジェクト。</param>
+        <summary>渡された暗号化<see cref="T:System.Xml.XmlNode" />オブジェクト。</summary>
+        <returns>暗号化された <see cref="T:System.Xml.XmlNode" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection configurationValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection configurationValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="configurationValues" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">オブジェクトに対して使用するプロバイダー名。</param>
+        <param name="configurationValues">オブジェクトを初期化するときに使用する値の <see cref="T:System.Collections.Specialized.NameValueCollection" /> コレクション。</param>
+        <summary>既定の設定でプロバイダーを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">
+          <paramref name="configurationValues" />認識できない構成設定が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseMachineProtection">
+      <MemberSignature Language="C#" Value="public bool UseMachineProtection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseMachineProtection" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.DpapiProtectedConfigurationProvider.UseMachineProtection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Configuration.DpapiProtectedConfigurationProvider" />オブジェクトには、コンピューター固有またはユーザー アカウント固有の保護が使用します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Configuration.DpapiProtectedConfigurationProvider" />コンピューター固有の保護を使用します。<see langword="false" />ユーザー アカウント固有の保護を使用している場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンピューター固有の保護は匿名サービス便利ですが、以下のセキュリティを提供します。 ユーザー アカウント固有の保護は、特定のユーザー id で実行されるサービスで使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,48 @@
+<Type Name="Utilities" FullName="Microsoft.Build.BuildEngine.Utilities">
+  <TypeSignature Language="C#" Value="public static class Utilities" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Utilities extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.BuildEngine.Utilities" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>MSBuild によって使用されるユーティリティ メソッドが含まれています。 このクラスは継承できません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Escape">
+      <MemberSignature Language="C#" Value="public static string Escape (string unescapedExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Escape(string unescapedExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.Utilities.Escape(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unescapedExpression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="unescapedExpression">変換する文字列。</param>
+        <summary>できるようにするための構文に指定した文字列を変換、[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]エンジンにリテラル文字を解釈します。</summary>
+        <returns>指定した文字列の変換後の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)] プロジェクト ファイルでは、特定の文字が特殊な意味を持ちます。 そのような文字の例として、セミコロン (;) およびアスタリスク (*) があります。 リテラルとしてこれらの特殊文字を使用するために、nn が文字の ASCII 16 進値を表す、構文 %nn とそれらに指定する必要があります。 このメソッドは、その変換を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

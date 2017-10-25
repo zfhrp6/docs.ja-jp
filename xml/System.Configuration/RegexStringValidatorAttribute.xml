@@ -1,0 +1,153 @@
+<Type Name="RegexStringValidatorAttribute" FullName="System.Configuration.RegexStringValidatorAttribute">
+  <TypeSignature Language="C#" Value="public sealed class RegexStringValidatorAttribute : System.Configuration.ConfigurationValidatorAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RegexStringValidatorAttribute extends System.Configuration.ConfigurationValidatorAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.RegexStringValidatorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationValidatorAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>宣言によって、正規表現を使用して configuration プロパティの文字列の検証を実行する .NET Framework に指示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、 <xref:System.Configuration.RegexStringValidatorAttribute> 、.NET Framework を使用してプロパティを検証するように指示する構成プロパティを取得するを装飾する、<xref:System.Configuration.RegexStringValidator>装飾のパラメーターの値を渡す。  
+  
+ 適用することがあります<xref:System.Configuration.RegexStringValidatorAttribute>オブジェクト プロパティの型のみです。  
+  
+   
+  
+## Examples  
+ 次の例は、カスタムのプロパティを装飾する方法を示します<xref:System.Configuration.ConfigurationSection>オブジェクトを使用して、<xref:System.Configuration.RegexStringValidatorAttribute>オブジェクト。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#4)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegexStringValidatorAttribute (string regex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string regex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RegexStringValidatorAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="regex" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="regex">正規表現の検証に使用する文字列。</param>
+        <summary><see cref="T:System.Configuration.RegexStringValidatorAttribute" /> オブジェクトの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `regex`パラメーターには、文字列に一致する必要がある正規表現パターンが含まれています。 前に、装飾された構成要素のプロパティに割り当てることができます。  
+  
+ 属性付きのモデルでこのコンス トラクターを使用すると、関連するプロパティに割り当てられている文字列値が許可されている文字のみが含まれていることを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Configuration.RegexStringValidatorAttribute.%23ctor%2A> コンストラクターを使用する方法を示しています。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#4)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Regex">
+      <MemberSignature Language="C#" Value="public string Regex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Regex" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.RegexStringValidatorAttribute.Regex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>正規表現の検証を実行するための文字列を取得します。</summary>
+        <value>装飾された構成要素のプロパティに割り当てられている文字列をフィルター処理するために使用する正規表現を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.RegexStringValidatorAttribute.Regex%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#16](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#16)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#16](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatorInstance">
+      <MemberSignature Language="C#" Value="public override System.Configuration.ConfigurationValidatorBase ValidatorInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationValidatorBase ValidatorInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.RegexStringValidatorAttribute.ValidatorInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationValidatorBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得、<see cref="T:System.Configuration.RegexStringValidator" />クラスです。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationValidatorBase" />バリデーターのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Configuration.RegexStringValidatorAttribute.ValidatorInstance%2A>プロパティを呼び出すことによって文字列の検証を実行するその<xref:System.Configuration.StringValidator.Validate%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.RegexStringValidatorAttribute.ValidatorInstance%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#15](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#15)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#15](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

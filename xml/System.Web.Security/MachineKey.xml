@@ -1,0 +1,227 @@
+<Type Name="MachineKey" FullName="System.Web.Security.MachineKey">
+  <TypeSignature Language="C#" Value="public static class MachineKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit MachineKey extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.MachineKey" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET フォーム認証とビューステートに使用されるキーの値と同じアルゴリズムを使用して暗号化する方法、またはハッシュ データ (または両方) を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.MachineKey>クラスが ASP.NET には、ハッシュおよび暗号化のロジックを公開するメソッドを提供します。 ASP.NET が使用する暗号化とハッシュ アルゴリズムとそれらに使用されているキーの値については、次を参照してください。 [machineKey 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)です。  
+  
+> [!WARNING]
+>  <xref:System.Web.Security.MachineKey> Api は、ASP.NET アプリケーションでのみ使用する必要があります。 ASP.NET アプリケーションのコンテキスト外 MachineKey Api の動作が定義されていません  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.ArgumentNullException">データ暗号化、ハッシュを復号化、または検証存在しません</exception>
+  </Docs>
+  <Members>
+    <Member MemberName="Decode">
+      <MemberSignature Language="C#" Value="public static byte[] Decode (string encodedData, System.Web.Security.MachineKeyProtection protectionOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] Decode(string encodedData, valuetype System.Web.Security.MachineKeyProtection protectionOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MachineKey.Decode(System.String,System.Web.Security.MachineKeyProtection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This method is obsolete and is only provided for compatibility with existing code. It is recommended that new code use the Protect and Unprotect methods instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encodedData" Type="System.String" />
+        <Parameter Name="protectionOption" Type="System.Web.Security.MachineKeyProtection" />
+      </Parameters>
+      <Docs>
+        <param name="encodedData">暗号化されたデータを復号化したり検証したりします。</param>
+        <param name="protectionOption">示すかどうか、 <c>encodedData</c>パラメーターの暗号化し、ハッシュする必要があります。</param>
+        <summary>デコードおよび暗号化またはハッシュ ベース メッセージ認証コード (HMAC) で提供されたデータを検証します。</summary>
+        <returns>A<see cref="T:System.Byte" />を復号化されたデータを表す配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象の暗号化とハッシュ アルゴリズムの ASP.NET を使用して復号化しに渡されるデータの検証については、次を参照してください。 [machineKey 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)です。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Web.Security.MachineKey>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encode">
+      <MemberSignature Language="C#" Value="public static string Encode (byte[] data, System.Web.Security.MachineKeyProtection protectionOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Encode(unsigned int8[] data, valuetype System.Web.Security.MachineKeyProtection protectionOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MachineKey.Encode(System.Byte[],System.Web.Security.MachineKeyProtection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This method is obsolete and is only provided for compatibility with existing code. It is recommended that new code use the Protect and Unprotect methods instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Byte[]" />
+        <Parameter Name="protectionOption" Type="System.Web.Security.MachineKeyProtection" />
+      </Parameters>
+      <Docs>
+        <param name="data">暗号化するデータ。</param>
+        <param name="protectionOption">示すかどうか、<c>データ</c>パラメーターの暗号化し、ハッシュする必要があります。</param>
+        <summary>データの暗号化や、ハッシュ ベース メッセージ認証コード (HMAC) を追加します。</summary>
+        <returns>暗号化された値、した HMAC 値、追加の入力値または追加 HMAC で入力値を暗号化するための結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象の暗号化とハッシュ アルゴリズムの ASP.NET を使用して復号化しに渡されるデータの検証については、次を参照してください。 [machineKey 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)です。  
+  
+   
+  
+## Examples  
+ コード例は、次を参照してください。、<xref:System.Web.Security.MachineKey>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Protect">
+      <MemberSignature Language="C#" Value="public static byte[] Protect (byte[] userData, params string[] purposes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] Protect(unsigned int8[] userData, string[] purposes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MachineKey.Protect(System.Byte[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userData" Type="System.Byte[]" />
+        <Parameter Name="purposes" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="userData">保護するデータ。 このデータは、プレーン テキストとして渡されます。</param>
+        <param name="purposes">データの目的のリスト。 同じ一覧を渡すことがこの値が指定されている場合、<see cref="M:System.Web.Security.MachineKey.Unprotect(System.Byte[],System.String[])" />メソッドで返された暗号化テキストを復号化するためにします。</param>
+        <summary>暗号化または署名により、指定したデータを保護します。</summary>
+        <returns>暗号化テキスト データです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Web.Security.MachineKey.Encode%2A>または両方の方法を指定するかどうか、プレーン テキスト データを暗号化する、署名済み、呼び出し元が必要です。 <xref:System.Web.Security.MachineKey.Protect%2A>メソッドが適切な操作を実行し、データを確実に保護します。 によって、このメソッドによって作成された暗号化テキスト データを解読だけことができます、<xref:System.Web.Security.MachineKey.Unprotect%2A>メソッドです。  
+  
+ `purposes`パラメーターは、特定の目的に暗号テキストをロックする理由のオプションの一覧です。 このパラメーターを使用して、アプリケーション内で複数のサブシステムによって実行される暗号化の操作を分離できます。 悪意のあるクライアントが 1 つのサブシステムの結果を得るすべき<xref:System.Web.Security.MachineKey.Protect%2A>メソッドと他のサブシステムへの入力としてフィード<xref:System.Web.Security.MachineKey.Unprotect%2A>メソッドで、アプリケーションのセキュリティを損なう可能性があります。 `purposes`パラメーターにより、保護されたデータは生成された、コンポーネントによってのみ使用できます。 アプリケーションが各サブシステムを使用して、一意なことを確認してください`purposes` ボックスの一覧です。  
+  
+ たとえば、保護または認証トークンの保護を解除は、次の例のようなコードを使用して、メソッドを呼び出します。  
+  
+```csharp  
+MachineKey.Protect(..., "Authentication token");  
+MachineKey.Unprotect(..., "Authentication token");  
+```  
+  
+```vb  
+MachineKey.Protect(..., "Authentication token")  
+MachineKey.Unprotect(..., "Authentication token")  
+```  
+  
+ アプリケーションを動的に生成できる、`purposes`パラメーター。 固定値を持つユーザーが指定した値をその場合は、プレフィックス (のように"`Username:` "+ *username*) システムの他の部分で使用されるトークンと一致する入力の作成、悪質なクライアントの危険を最小限にします。 動的に生成された文字列は、固定文字列の後に続く必要があります。 たとえば、保護、または特定のユーザーに関連付けられているプライベート メッセージの保護を解除するには、次の例のようなコードを使用します。  
+  
+```csharp  
+MachineKey.Protect(..., "Private message", "Recipient: " + username);  
+MachineKey.Unprotect(..., "Private message", "Recipient: " + username);  
+```  
+  
+```vb  
+MachineKey.Protect(..., "Private message", "Recipient: " + username)  
+MachineKey.Unprotect(..., "Private message", "Recipient: " + username)  
+```  
+  
+ ときに、<xref:System.Web.Security.MachineKey.Unprotect%2A>メソッドを呼び出すために用意されている値、`purposes`パラメーターが提供されているものと同じ値にする必要があります、<xref:System.Web.Security.MachineKey.Protect%2A>メソッドです。 それ以外の場合、操作は失敗し、<xref:System.Security.Cryptography.CryptographicException>例外。  
+  
+ 必要な構成設定、<xref:System.Web.Configuration.MachineKeyCompatibilityMode?displayProperty=nameWithType>オプションに指定されていなくてもこのメソッドに必要な<xref:System.Web.Configuration.MachineKeySection.CompatibilityMode%2A?displayProperty=nameWithType>プロパティに設定されていない、<xref:System.Web.Configuration.MachineKeyCompatibilityMode.Framework45>オプション。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="userData" />パラメーターが null です。</exception>
+        <exception cref="T:System.ArgumentException">目的の配列には、1 つ以上の空白のみのエントリが含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Unprotect">
+      <MemberSignature Language="C#" Value="public static byte[] Unprotect (byte[] protectedData, params string[] purposes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] Unprotect(unsigned int8[] protectedData, string[] purposes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MachineKey.Unprotect(System.Byte[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="protectedData" Type="System.Byte[]" />
+        <Parameter Name="purposes" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="protectedData">保護を解除する暗号テキスト データ。</param>
+        <param name="purposes">データが意図したものを記述する目的での一覧。 渡されたものと同じ値でなければなりません、<see cref="M:System.Web.Security.MachineKey.Protect(System.Byte[],System.String[])" />メソッドは、データが保護されていたとします。</param>
+        <summary>によって保護された、指定されたデータの保護を解除、<see cref="M:System.Web.Security.MachineKey.Protect(System.Byte[],System.String[])" />メソッドです。</summary>
+        <returns>プレーン テキスト データです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この方法については、次を参照してください。、<xref:System.Web.Security.MachineKey.Protect%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="protectedData" />パラメーターが null です。</exception>
+        <exception cref="T:System.ArgumentException">目的の配列には、1 つ以上の空白のみのエントリが含まれています。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">考えられる原因は次のとおりです。  
+  
+-   保護されたデータが改ざんされています。  
+  
+-   値、<paramref name="purposes" />パラメーターが同じデータが保護されている場合に指定された値。  
+  
+-   アプリケーションでは、1 つ以上のサーバーに配置し、自動生成された暗号化キーを使用しています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

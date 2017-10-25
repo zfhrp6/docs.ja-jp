@@ -1,0 +1,365 @@
+<Type Name="LogPolicy" FullName="System.IO.Log.LogPolicy">
+  <TypeSignature Language="C#" Value="public sealed class LogPolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LogPolicy extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Log.LogPolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Log</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.IO.Log.LogStore" /> に関連付けられたポリシーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポリシーは、<xref:System.IO.Log.LogStore> インスタンスおよびそのクライアントが従う一連の規則です。 <xref:System.IO.Log.LogPolicy> インスタンスは、特定の <xref:System.IO.Log.LogStore> に関連付けられたポリシーを確認および変更します。 ポリシーには、最小ログ サイズおよび最大ログ サイズや、<xref:System.IO.Log.LogStore> インスタンスのサイズ増加方法を定義できます。 また、<xref:System.IO.Log.LogStore> インスタンスをアーカイブ可能にするかどうかを制御することもできます。  
+  
+ いずれかのプロパティを変更した後は、<xref:System.IO.Log.LogPolicy.Commit%2A> メソッドを使用して、変更を <xref:System.IO.Log.LogStore> に適用する必要があります。 <xref:System.IO.Log.LogPolicy.Refresh%2A> メソッドを呼び出して、変更を破棄したり、最新のポリシーを取得したりできます。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy>クラスを使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AutoGrow">
+      <MemberSignature Language="C#" Value="public bool AutoGrow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoGrow" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogPolicy.AutoGrow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IO.Log.LogStore" /> のサイズの自動拡張を可能にするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> のサイズを自動拡張する場合は <see cref="T:System.IO.Log.LogStore" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy>クラスを使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoShrinkPercentage">
+      <MemberSignature Language="C#" Value="public int AutoShrinkPercentage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AutoShrinkPercentage" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogPolicy.AutoShrinkPercentage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IO.Log.LogStore" /> が縮小可能な空き領域のパーセンテージを取得または設定します。</summary>
+        <value><see cref="T:System.IO.Log.LogStore" /> が縮小可能な空き領域のパーセンテージ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.LogStore> の空き領域がこのプロパティで指定された容量より大きい場合、<xref:System.IO.Log.LogStore> は自動的にサイズを縮小して <xref:System.IO.Log.LogPolicy.MinimumExtentCount%2A> プロパティで指定されたサイズに合わせます。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy>クラスを使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogPolicy.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このポリシーを <see cref="T:System.IO.Log.LogStore" /> の現在のポリシーとして設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更を行った後は、<xref:System.IO.Log.LogPolicy.Commit%2A> を呼び出して変更を記録する必要があります。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy>クラスを使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ログにインストールされた一連のポリシーが無効です。  
+  
+ または  
+  
+ ログのポリシーによりこの操作が回避されました。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">このポリシーの設定は、現在のプラットフォームではサポートされていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">新しいエクステントのプレフィックスが無効であるか、長すぎます。 有効なプレフィックスを指定する必要があります。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GrowthRate">
+      <MemberSignature Language="C#" Value="public System.IO.Log.PolicyUnit GrowthRate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Log.PolicyUnit GrowthRate" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogPolicy.GrowthRate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.PolicyUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IO.Log.LogStore" /> のサイズの自動増加率を取得または設定します。</summary>
+        <value><see cref="T:System.IO.Log.LogStore" /> のサイズの自動増加率。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.LogStore> がいっぱいになると、追加する領域サイズがこのポリシーの値によって決まります。 <xref:System.IO.Log.LogStore> 内のエクステント数が <xref:System.IO.Log.LogPolicy.MaximumExtentCount%2A> を超える場合、領域は追加されません。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy>クラスを使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumExtentCount">
+      <MemberSignature Language="C#" Value="public int MaximumExtentCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumExtentCount" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogPolicy.MaximumExtentCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IO.Log.LogExtent" /> に格納可能な <see cref="T:System.IO.Log.LogStore" /> の最大数を取得または設定します。</summary>
+        <value><see cref="T:System.IO.Log.LogExtent" /> に格納可能な <see cref="T:System.IO.Log.LogStore" /> の最大数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy>クラスを使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumExtentCount">
+      <MemberSignature Language="C#" Value="public int MinimumExtentCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinimumExtentCount" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogPolicy.MinimumExtentCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IO.Log.LogExtent" /> に格納可能な <see cref="T:System.IO.Log.LogStore" /> の最小数を取得または設定します。</summary>
+        <value><see cref="T:System.IO.Log.LogExtent" /> が格納可能な <see cref="T:System.IO.Log.LogStore" /> インスタンスの最小数を指定する整数。 CLFS では最小エクステント数を 2 にする必要があるため、この値は 2 以上にしてください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy>クラスを使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewExtentPrefix">
+      <MemberSignature Language="C#" Value="public string NewExtentPrefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewExtentPrefix" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogPolicy.NewExtentPrefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>自動作成されたエクステントのプレフィックス文字列を取得または設定します。</summary>
+        <value>自動作成されたエクステントのプレフィックス文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この文字列には、新しいエクステントが作成されるディレクトリの完全パスを格納できます。 このエクステントの既定のパスは、基本 <xref:System.IO.Log.LogStore> ファイルが格納されるディレクトリです。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy>クラスを使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextExtentSuffix">
+      <MemberSignature Language="C#" Value="public long NextExtentSuffix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 NextExtentSuffix" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogPolicy.NextExtentSuffix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいエクステントのサフィックス番号を取得または設定します。</summary>
+        <value>新しいエクステントのサフィックス番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy>クラスを使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PinnedTailThreshold">
+      <MemberSignature Language="C#" Value="public System.IO.Log.PolicyUnit PinnedTailThreshold { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Log.PolicyUnit PinnedTailThreshold" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogPolicy.PinnedTailThreshold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.PolicyUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.IO.Log.LogRecordSequence.TailPinned" /> イベントでログのベースを進めるために必要な領域の容量を取得または設定します。</summary>
+        <value><see cref="E:System.IO.Log.LogRecordSequence.TailPinned" /> イベントでログのベースを進めるために必要な領域の容量。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 領域の容量はパーセンテージまたはバイト数で表し、この値は CLFS 内の最も近いコンテナー容量に合わせて丸められます。 既定は 35% です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy>クラスを使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogPolicy.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.Log.LogStore" /> の現在のポリシーを読み取り、変更を破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy>クラスを使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ログにインストールされた一連のポリシーが無効です。  
+  
+ または  
+  
+ ログのポリシーによりこの操作が回避されました。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">このポリシーの設定は、現在のプラットフォームではサポートされていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

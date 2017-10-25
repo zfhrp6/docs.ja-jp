@@ -1,0 +1,489 @@
+<Type Name="OperationInfo" FullName="System.Workflow.Activities.OperationInfo">
+  <TypeSignature Language="C#" Value="public sealed class OperationInfo : System.Workflow.Activities.OperationInfoBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OperationInfo extends System.Workflow.Activities.OperationInfoBase" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.OperationInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.WorkflowServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Activities.OperationInfoBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー サービスで定義されたコントラクト操作の情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Activities.OperationInfo> クラスを使用して、<xref:System.Workflow.Activities.ReceiveActivity> アクティビティのサービス コントラクト情報を定義します。  
+  
+> [!NOTE]
+>  <xref:System.Workflow.Activities.OperationInfo> クラスはワークフロー優先サービスでのみ使用できます。 ワークフロー優先サービスの詳細については、次を参照してください。[ワークフロー サービスの作成スタイル](http://msdn.microsoft.com/en-us/995bf98e-5b51-4c49-802b-c4e6293dd530)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OperationInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.OperationInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.OperationInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティが Xoml から逆シリアル化される場合、関連付けられたプロパティのコンストラクターは自動的に呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Workflow.Activities.OperationInfo> クラスの新しいインスタンスを作成する方法を示しています。  
+  
+ [!code-csharp[OperationInfo#0](~/samples/snippets/csharp/VS_Snippets_CFX/operationinfo/cs/operationinfosnippets.cs#0)]
+ [!code-vb[OperationInfo#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationinfo/vb/operationinfosnippets.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override System.Workflow.Activities.OperationInfoBase Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Workflow.Activities.OperationInfoBase Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.OperationInfo.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.OperationInfoBase</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを作成します。</summary>
+        <returns><see cref="T:System.Workflow.Activities.OperationInfo" /> オブジェクトのコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、同じ <xref:System.Workflow.Activities.OperationInfo>、<xref:System.Workflow.Activities.OperationInfo.ContractName%2A>、<xref:System.Workflow.Activities.OperationInfo.IsOneWay%2A>、および <xref:System.Workflow.Activities.OperationInfo.Parameters%2A> 値を使用して、<xref:System.Workflow.Activities.OperationInfo.ProtectionLevel%2A> オブジェクトの詳細コピーが作成されます。  
+  
+   
+  
+## Examples  
+ `Clone` メソッドの使用方法を次の例に示します。  
+  
+ [!code-csharp[OperationInfo#6](~/samples/snippets/csharp/VS_Snippets_CFX/operationinfo/cs/operationinfosnippets.cs#6)]
+ [!code-vb[OperationInfo#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationinfo/vb/operationinfosnippets.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractName">
+      <MemberSignature Language="C#" Value="public string ContractName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContractName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.OperationInfo.ContractName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この操作を定義するコントラクトの完全名を取得または設定します。</summary>
+        <value>操作を定義しているコントラクトの完全名を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、`ContractName` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[OperationInfo#1](~/samples/snippets/csharp/VS_Snippets_CFX/operationinfo/cs/operationinfosnippets.cs#1)]
+ [!code-vb[OperationInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationinfo/vb/operationinfosnippets.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.OperationInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Workflow.Activities.OperationInfo" /> と比較するオブジェクト。</param>
+        <summary>2 つのオブジェクト インスタンスが等しいかどうかを判断します。</summary>
+        <returns>
+          現在の <see langword="true" /> と <see cref="T:System.Workflow.Activities.OperationInfo" /> が等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作では <xref:System.Workflow.Activities.OperationInfo.ContractName%2A>、<xref:System.Workflow.Activities.OperationInfo.IsOneWay%2A>、<xref:System.Workflow.Activities.OperationInfo.Parameters%2A>、および <xref:System.Workflow.Activities.OperationInfo.ProtectionLevel%2A> の値を比較します。  
+  
+   
+  
+## Examples  
+ `Equals` メソッドの使用方法を次の例に示します。  
+  
+ [!code-csharp[OperationInfo#7](~/samples/snippets/csharp/VS_Snippets_CFX/operationinfo/cs/operationinfosnippets.cs#7)]
+ [!code-vb[OperationInfo#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationinfo/vb/operationinfosnippets.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContractFullName">
+      <MemberSignature Language="C#" Value="protected override string GetContractFullName (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance string GetContractFullName(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.OperationInfo.GetContractFullName(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContractType">
+      <MemberSignature Language="C#" Value="protected override Type GetContractType (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Type GetContractType(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.OperationInfo.GetContractType(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.OperationInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.Activities.OperationInfo" /> のハッシュ コードを返します。</summary>
+        <returns>このインスタンスのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `GetHashCode` メソッドの使用方法を次の例に示します。  
+  
+ [!code-csharp[OperationInfo#8](~/samples/snippets/csharp/VS_Snippets_CFX/operationinfo/cs/operationinfosnippets.cs#8)]
+ [!code-vb[OperationInfo#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationinfo/vb/operationinfosnippets.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsOneWay">
+      <MemberSignature Language="C#" Value="protected override bool GetIsOneWay (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool GetIsOneWay(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.OperationInfo.GetIsOneWay(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodInfo">
+      <MemberSignature Language="C#" Value="protected override System.Reflection.MethodInfo GetMethodInfo (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Reflection.MethodInfo GetMethodInfo(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.OperationInfo.GetMethodInfo(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameters">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.Activities.OperationParameterInfoCollection GetParameters (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Workflow.Activities.OperationParameterInfoCollection GetParameters(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.OperationInfo.GetParameters(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.OperationParameterInfoCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasProtectionLevel">
+      <MemberSignature Language="C#" Value="public bool HasProtectionLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.OperationInfo.HasProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作が定義された <see cref="T:System.Net.Security.ProtectionLevel" /> かどうかの情報を取得します。</summary>
+        <value>操作が関連付けられている <see cref="T:System.Net.Security.ProtectionLevel" /> があるかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、`HasProtectionLevel` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[OperationInfo#2](~/samples/snippets/csharp/VS_Snippets_CFX/operationinfo/cs/operationinfosnippets.cs#2)]
+ [!code-vb[OperationInfo#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationinfo/vb/operationinfosnippets.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOneWay">
+      <MemberSignature Language="C#" Value="public bool IsOneWay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOneWay" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.OperationInfo.IsOneWay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスとクライアント間の通信が一方向であることを指定するための操作に関する情報を取得または設定します。</summary>
+        <value>
+          操作が一方向通信をサポートしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `false` です。  
+  
+   
+  
+## Examples  
+ 次の例は、`IsOneWay` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[OperationInfo#3](~/samples/snippets/csharp/VS_Snippets_CFX/operationinfo/cs/operationinfosnippets.cs#3)]
+ [!code-vb[OperationInfo#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationinfo/vb/operationinfosnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.OperationParameterInfoCollection Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Activities.OperationParameterInfoCollection Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.OperationInfo.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.OperationParameterInfoCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この操作で使用されたパラメーター定義を表す <see cref="T:System.Workflow.Activities.OperationParameterInfo" /> オブジェクトのコレクションを取得します。</summary>
+        <value>クライアントに呼び出された場合にこの操作で使用されたパラメーター定義を表す <see cref="T:System.Workflow.Activities.OperationParameterInfo" /> オブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Parameters` コレクションには操作のメソッド署名にある各パラメーターの 1 つの要素が含まれます。  
+  
+   
+  
+## Examples  
+ 次の例は、`Parameters` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[OperationInfo#4](~/samples/snippets/csharp/VS_Snippets_CFX/operationinfo/cs/operationinfosnippets.cs#4)]
+ [!code-vb[OperationInfo#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationinfo/vb/operationinfosnippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionLevel">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Net.Security.ProtectionLevel&gt; ProtectionLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Net.Security.ProtectionLevel&gt; ProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.OperationInfo.ProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Net.Security.ProtectionLevel&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の <see cref="T:System.Net.Security.ProtectionLevel" /> を取得または設定します。</summary>
+        <value>操作に使用される <see cref="T:System.Net.Security.ProtectionLevel" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `null` です。これは保護レベルが設定されていないことを意味します。  
+  
+   
+  
+## Examples  
+ 次の例は、`ProtectionLevel` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[OperationInfo#5](~/samples/snippets/csharp/VS_Snippets_CFX/operationinfo/cs/operationinfosnippets.cs#5)]
+ [!code-vb[OperationInfo#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationinfo/vb/operationinfosnippets.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.OperationInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスを表す文字列を返します。</summary>
+        <returns>このインスタンスを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既存の場合は <xref:System.Workflow.Activities.OperationInfo.ContractName%2A> 値を返します。それ以外の場合は <xref:System.Workflow.Activities.OperationInfoBase.Name%2A> 値を返します。  
+  
+   
+  
+## Examples  
+ `ToString` メソッドの使用方法を次の例に示します。  
+  
+ [!code-csharp[OperationInfo#9](~/samples/snippets/csharp/VS_Snippets_CFX/operationinfo/cs/operationinfosnippets.cs#9)]
+ [!code-vb[OperationInfo#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationinfo/vb/operationinfosnippets.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

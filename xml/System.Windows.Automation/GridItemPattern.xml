@@ -1,0 +1,275 @@
+<Type Name="GridItemPattern" FullName="System.Windows.Automation.GridItemPattern">
+  <TypeSignature Language="C#" Value="public class GridItemPattern : System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GridItemPattern extends System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.GridItemPattern" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.BasePattern</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サポートするコンテナーの子コントロールを表す<see cref="T:System.Windows.Automation.GridPattern" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートするコントロール<xref:System.Windows.Automation.GridItemPattern>通常走査することができます (つまり、UI オートメーション クライアントが隣接するコントロールに移動ことができます)、キーボードを使用しています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cached">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.GridItemPattern.GridItemPatternInformation Cached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.GridItemPattern/GridItemPatternInformation Cached" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.GridItemPattern.Cached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.GridItemPattern+GridItemPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このキャッシュされたプロパティ値を取得<see cref="T:System.Windows.Automation.GridItemPattern" />です。</summary>
+        <value>キャッシュされたプロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュされたプロパティ値必要がありますが要求されていない以前を使用して、<xref:System.Windows.Automation.CacheRequest>です。 プロパティの現在の値を取得するを使用して、プロパティを取得します。<xref:System.Windows.Automation.GridItemPattern.Current%2A>です。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.GridItemPattern.GridItemPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求されたプロパティがキャッシュ内にありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty ColumnProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty ColumnProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.GridItemPattern.ColumnProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.GridItemPattern.GridItemPatternInformation.Column" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.GridItemPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.GridItemPattern>ターゲット コントロールから取得したオブジェクトが現在を取得する関数に渡される<xref:System.Windows.Automation.GridItemPattern>プロパティの値。  
+  
+ [!code-csharp[UIAGridItemPattern_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#104)]
+ [!code-vb[UIAGridItemPattern_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnSpanProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty ColumnSpanProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty ColumnSpanProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.GridItemPattern.ColumnSpanProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.GridItemPattern.GridItemPatternInformation.ColumnSpan" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.GridItemPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.GridItemPattern>ターゲット コントロールから取得したオブジェクトが現在を取得する関数に渡される<xref:System.Windows.Automation.GridItemPattern>プロパティの値。  
+  
+ [!code-csharp[UIAGridItemPattern_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#104)]
+ [!code-vb[UIAGridItemPattern_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainingGridProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty ContainingGridProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty ContainingGridProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.GridItemPattern.ContainingGridProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.GridItemPattern.GridItemPatternInformation.ContainingGrid" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.GridItemPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素は、ルートの子孫であり、一連のプロパティの条件を満たす要素のコレクションを返す関数に渡されます。  
+  
+ [!code-csharp[UIAGridItemPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#100)]
+ [!code-vb[UIAGridItemPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.GridItemPattern.GridItemPatternInformation Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.GridItemPattern/GridItemPatternInformation Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.GridItemPattern.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.GridItemPattern+GridItemPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この現在のプロパティ値を取得<see cref="T:System.Windows.Automation.GridItemPattern" />です。</summary>
+        <value>現在のプロパティ値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパターンがあります、<xref:System.Windows.Automation.AutomationElement>で、<xref:System.Windows.Automation.AutomationElementMode.Full>の現在の値を取得するために参照します。 場合、<xref:System.Windows.Automation.AutomationElement>を使用して取得された<xref:System.Windows.Automation.AutomationElementMode.None>キャッシュされたデータのみが含まれている、および任意のプロパティの現在の値を取得しようとして例外を発生させます。 使用して<xref:System.Windows.Automation.GridItemPattern.Cached%2A>を使用してあらかじめ指定されているプロパティのキャッシュされた値を取得する、<xref:System.Windows.Automation.CacheRequest>です。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.GridItemPattern.GridItemPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.GridItemPattern.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.GridItemPattern" /> コントロール パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.GridItemPatternIdentifiers>です。  
+  
+ パターン識別子がなどのメソッドに渡された<xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A>から、指定した目的のコントロール パターンを取得する<xref:System.Windows.Automation.AutomationElement>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.GridItemPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ [!code-csharp[UIAGridItemPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#101)]
+ [!code-vb[UIAGridItemPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty RowProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty RowProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.GridItemPattern.RowProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.GridItemPattern.GridItemPatternInformation.Row" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.GridItemPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.GridItemPattern>ターゲット コントロールから取得したオブジェクトが現在を取得する関数に渡される<xref:System.Windows.Automation.GridItemPattern>プロパティの値。  
+  
+ [!code-csharp[UIAGridItemPattern_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#104)]
+ [!code-vb[UIAGridItemPattern_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowSpanProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty RowSpanProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty RowSpanProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.GridItemPattern.RowSpanProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.GridItemPattern.GridItemPatternInformation.RowSpan" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.GridItemPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.GridItemPattern>ターゲット コントロールから取得したオブジェクトが現在を取得する関数に渡される<xref:System.Windows.Automation.GridItemPattern>プロパティの値。  
+  
+ [!code-csharp[UIAGridItemPattern_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#104)]
+ [!code-vb[UIAGridItemPattern_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,456 @@
+<Type Name="HttpEncoder" FullName="System.Web.Util.HttpEncoder">
+  <TypeSignature Language="C#" Value="public class HttpEncoder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi HttpEncoder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Util.HttpEncoder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>エンコードとデコードのロジックを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスには、エンコードとデコードなどのクラスのメソッドで使用されるロジックが含まれています。 <xref:System.Web.HttpUtility>、 <xref:System.Web.HttpServerUtility>、および<xref:System.Net.HttpResponseHeader>です。  
+  
+ 継承することができます、<xref:System.Web.Util.HttpEncoder>クラスし、既定のエンコードとデコード ASP.NET の動作をカスタマイズするには、次のように動作をオーバーライドします。 設定して、<xref:System.Web.Configuration.HttpRuntimeSection.EncoderType%2A>のプロパティ、<xref:System.Web.Configuration.HttpRuntimeSection>カスタム クラスを構成するクラス。  
+  
+ エンコードおよびデコードするためのカスタム クラスから派生<xref:System.Web.Util.HttpEncoder>組み込みの ASP.NET のエンコードとデコードの動作をオーバーライドできますか、選択されたスクリプトのみを変更します。  
+  
+ 次のエンコードの動作を補足するものを置き換えたりするための ASP.NET でのカスタム エンコードの種類を構成できます。  
+  
+-   HTML エンコード  
+  
+-   HTML 属性エンコード  
+  
+-   URL エンコード  
+  
+-   URL パスのエンコード  
+  
+-   HTTP ヘッダー名とヘッダーの値のエンコード  
+  
+ 既定では、ASP.NET アプリケーションを使用するよう構成します。、<xref:System.Web.Security.AntiXss.AntiXssEncoder>すべての出力エンコードを入力します。  
+  
+ 次の例、アプリケーション レベルの Web.config ファイルの表示から方法、 <xref:System.Web.Security.AntiXss.AntiXssEncoder> ASP.NET アプリケーションの型は設定。  
+  
+ `<httpRuntime requestValidationMode="4.5" encoderType="System.Web.Security.AntiXss.AntiXssEncoder, System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>`  
+  
+ 例のセットで構成設定、<xref:System.Web.Security.AntiXss.AntiXssEncoder>すべてを実行するクラスは、アプリケーションでのエンコードを出力します。 詳細については、次を参照してください。、<xref:System.Web.Security.AntiXss.AntiXssEncoder>クラスの概要です。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>カスタム エンコーダーのクラスを作成して、基底クラスの基本メソッドをオーバーライドする派生エンコーダーは、オーバーライドされたメソッドのいずれかから例外をスロー可能性があります。 ただし、次の場合、このような例外をスローする可能性 ASP.NET で予期しない動作。  
+  
+-   ASP.NET では、カスタム エンコーダーからスローされた未処理の例外によって発生したエラー ページのレンダリングする場合 ASP.NET は、カスタム エンコーダーを呼び出すことで、エラー出力のエンコードには試行されません。 再帰的なエラー状況を回避できます。  
+  
+-   ASP.NET が IIS に HTTP ヘッダーを送信するときは、ASP.NET に未処理の例外、用意されていません。 そのため、(構成の設定により、このページを表示する) 場合に、標準の ASP.NET エラー ページが表示されます。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpEncoder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.HttpEncoder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Util.HttpEncoder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.Web.Util.HttpEncoder Current { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Util.HttpEncoder Current" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Util.HttpEncoder.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.HttpEncoder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.Util.HttpEncoder" />アプリケーションで使用される型。</summary>
+        <value>使用されるエンコーダー/デコーダーの種類への参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、派生<xref:System.Web.Util.HttpEncoder>型が、構成ファイルで指定された、<xref:System.Web.Util.HttpEncoder.Current%2A>プロパティは、カスタム型への参照を返します。 ただし、カスタム エンコーダーを使用しない場合、プロパティの参照を返します、既定の ASP.NET に<xref:System.Web.Util.HttpEncoder>インスタンス。  
+  
+ <xref:System.Web.Util.HttpEncoder.Current%2A>プロパティはスレッド セーフではありません。 アプリケーションのでのみこのプロパティを設定`Application_Start`メソッド、ため`Application_Start`1 つのスレッドで実行されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティに割り当てられているエンコーダー インスタンスが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.Web.Util.HttpEncoder Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Util.HttpEncoder Default" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Util.HttpEncoder.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.HttpEncoder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET の既定のエンコーダーへの参照を取得します。</summary>
+        <value>既定のエンコーダーへの参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンコードの一般的な問題は、既定の ASP.NET<xref:System.Web.Util.HttpEncoder.UrlEncode%2A>動作を「+」文字のスペースに変換します。 従来は、「+」文字は、インターネットの規則より人間が判読できるように URL 内の空白文字をエンコードするためにされました。 ただし、標準、に従って、空白文字を想定の代わりに"%20"としてエンコードされる「+」文字として。 ASP.NET では、複数の標準準拠エンコード アルゴリズムを実装することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderNameValueEncode">
+      <MemberSignature Language="C#" Value="protected virtual void HeaderNameValueEncode (string headerName, string headerValue, out string encodedHeaderName, out string encodedHeaderValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void HeaderNameValueEncode(string headerName, string headerValue, [out] string&amp; encodedHeaderName, [out] string&amp; encodedHeaderValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.HttpEncoder.HeaderNameValueEncode(System.String,System.String,System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="headerName" Type="System.String" />
+        <Parameter Name="headerValue" Type="System.String" />
+        <Parameter Name="encodedHeaderName" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="encodedHeaderValue" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="headerName">エンコードする HTTP ヘッダーの名前。</param>
+        <param name="headerValue">エンコードする HTTP ヘッダーの値。</param>
+        <param name="encodedHeaderName">このメソッドが戻るときに、HTTP ヘッダーに使用するエンコードされた名前が含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="encodedHeaderValue">このメソッドが戻るときに、HTTP ヘッダーに使用するエンコードされた値が含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>HTTP ヘッダーとして使用できる文字列には、ヘッダーの名前と値をエンコードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Util.HttpEncoder.HeaderNameValueEncode%2A>メソッドからの入力文字列には、`headerName`と`headerValue`パラメーターし、それらをエンコードします。 エンコードされた値は、出力パラメーターとして返されます。  
+  
+ <xref:System.Web.Util.HttpEncoder.HeaderNameValueEncode%2A>メソッドでは、次のロジックを使用して、ヘッダーの名前と値をエンコードします。  
+  
+-   すべての文字を Unicode 値では、ASCII 文字、9 を除く ASCII 文字、32 より小さいはの形式に URL エンコード`%NN`場所、`N`文字は 16 進値を表します。  
+  
+-   ASCII 文字 9 (水平タブ文字) は、URL エンコードされません。  
+  
+-   ASCII 文字 127 としてエンコード`%7F`です。  
+  
+-   その他のすべての文字がエンコードされていません。  
+  
+    > [!NOTE]
+    >  このメソッドは、Unicode 値を使用できますが、ASCII の範囲で値を通常使用されます。  
+  
+ 既定の実装、<xref:System.Web.Util.HttpEncoder.HeaderNameValueEncode%2A>メソッドの値を返します`headerValue`で`encodedHeaderValue`場合`headerValue`は`null`または空の文字列。 同様に、既定の実装がの値を返します`headerName`で`encodedHeaderName`場合`headerName`は`null`または空の文字列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlAttributeEncode">
+      <MemberSignature Language="C#" Value="protected virtual void HtmlAttributeEncode (string value, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void HtmlAttributeEncode(string value, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.HttpEncoder.HtmlAttributeEncode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="value">エンコードする文字列。</param>
+        <param name="output">エンコードされた値を書き込むテキスト ライター。</param>
+        <summary>一重引用符または二重引用符で区切られた HTML 属性を挿入する文字列に受信した値をエンコードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Util.HttpEncoder.HtmlAttributeEncode%2A>メソッドは、標準の HTML エンティティを使用して文字をエンコードします。 たとえば、 `<` (左山かっこ) としてエンコードされて`&lt;`と`\`(円記号) としてエンコード`&#92;`です。  
+  
+ 使用しても安全である<xref:System.Web.Util.HttpEncoder.HtmlAttributeEncode%2A>単一引用符し、二重引用符で囲まれた属性内で。 値は引用符で囲む必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="output" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlDecode">
+      <MemberSignature Language="C#" Value="protected virtual void HtmlDecode (string value, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void HtmlDecode(string value, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.HttpEncoder.HtmlDecode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="value">デコードする文字列。</param>
+        <param name="output">デコードされた値を書き込むテキスト ライター。</param>
+        <summary>HTML エンコードされた文字列から値をデコードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、ASP.NET のデコード ロジックをデコードできる文字シーケンスを一覧表示します。  
+  
+|文字シーケンス|ルール|  
+|------------------------|----------|  
+|`&#NNN;`(ASCII 文字の 10 進数コード) です。|指定された ASCII 文字とデコードします。 文字シーケンスは、# 文字の後に最初の桁から開始され、セミコロンで終了します。|  
+|`&#xZZ;`(ASCII 文字の 16 進数コード) です。|指定された ASCII 文字とデコードします。 エンコードされた形式では、10 進値ではなく 16 進文字を使用して、文字を指定します。 文字シーケンスは、# 文字の後に最初の桁から開始され、セミコロンで終了します。|  
+|HTML の名前付きエンティティです。|等価の ASCII 文字とデコードします。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="output" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="protected virtual void HtmlEncode (string value, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void HtmlEncode(string value, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.HttpEncoder.HtmlEncode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="value">エンコードする文字列。</param>
+        <param name="output">エンコードされた値を書き込むテキスト ライター。</param>
+        <summary>HTML エンコードされた文字列に文字列をエンコードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、ASP.NET エンコード ロジックをデコードできる文字シーケンスを示します。  
+  
+|文字|としてエンコード|  
+|---------------|----------------|  
+|`<`(左山かっこ)|`&lt;`|  
+|`>`(右の山かっこ)|`&gt;`|  
+|`"`(二重引用符)|`&quot;`|  
+|`&`(アンパサンド)|`&amp;`|  
+|`\`(円記号)|`&#92;`|  
+|160 から 255 までの ASCII 文字|`&#NNN;`、、 `NNN` 3 桁の 10 進文字コードです|  
+  
+ オーバーライドする場合、<xref:System.Web.Util.HttpEncoder.HtmlEncode%2A>メソッド、二重引用符または単一引用符で囲まれた HTML 属性内では安全になっている出力を生成する必要があります。 これに対応、マークアップとコードを組み合わせてなど、Razor エンジンで解析\<attr をタグ ="@value"> です。 さらに、@ 演算子はコンテキストに対応する、Razor エンジンによって処理される、したがって呼び出し<xref:System.Web.Util.HttpEncoder.HtmlEncode%2A>なく<xref:System.Web.Util.HttpEncoder.HtmlAttributeEncode%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="output" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="JavaScriptStringEncode">
+      <MemberSignature Language="C#" Value="protected virtual string JavaScriptStringEncode (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance string JavaScriptStringEncode(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.HttpEncoder.JavaScriptStringEncode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">エンコードする文字列。</param>
+        <summary>文字列をエンコードします。</summary>
+        <returns>エンコードされた文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URL エンコードは、すべてのブラウザーが URL 文字列のテキストを正しく送信されることを確認します。 疑問符 (?)、アンパサンド (&)、スラッシュ (/)、およびスペースなどの文字は切り捨てやブラウザーによっては、破損している可能性があります。 したがって、これらの文字をエンコードする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlEncode">
+      <MemberSignature Language="C#" Value="protected virtual byte[] UrlEncode (byte[] bytes, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance unsigned int8[] UrlEncode(unsigned int8[] bytes, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.HttpEncoder.UrlEncode(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytes" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="bytes">エンコードするバイトの配列。</param>
+        <param name="offset">内の位置、<c>バイト</c>エンコードを開始する配列。</param>
+        <param name="count">内の項目数、<c>バイト</c>エンコードする配列。</param>
+        <summary>16 進数の文字エン ティティと同等に URL で許可されていない文字の配列をエンコードします。</summary>
+        <returns>エンコードされた文字の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Util.HttpEncoder.UrlEncode%2A>メソッドでは、いくつかの URL エンコード メソッドによって呼び出されます、<xref:System.Web.HttpUtility>クラスです。  
+  
+ <xref:System.Web.Util.HttpEncoder.UrlEncode%2A>メソッドを URL エンコードではありません。 一連の ASCII 文字の任意の文字を URL セーフであると見なされます。 スペースは、ASCII としてエンコード"`+"`文字です。 URL セーフな ASCII 文字が、ASCI 文字を含める (A ~ Z と z)、数字 (0 ~ 9)、および一部の区切り記号。 次の表には、URL セーフな ASCII 文字と見なされる区切り記号が一覧表示します。  
+  
+|文字|説明|  
+|---------------|-----------------|  
+|-|ハイフン|  
+|_|アンダー スコア|  
+|」を参照してください。|ピリオド (ドット)|  
+|!|感嘆符|  
+|*|アスタリスク (アスタリスク)|  
+|(|開きかっこを入力|  
+|)|終わりかっこ|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" />0 の長さより大きいか小さい、<paramref name="bytes" />配列。  
+  
+ または  
+  
+ <paramref name="count" />0 未満または<paramref name="count" />plus<paramref name="offset" />がの長さより大きい、<paramref name="bytes" />配列。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bytes" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlPathEncode">
+      <MemberSignature Language="C#" Value="protected virtual string UrlPathEncode (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance string UrlPathEncode(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.HttpEncoder.UrlPathEncode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">エンコードする文字列。</param>
+        <summary>URL のサブセクションをエンコードします。</summary>
+        <returns>URL でエンコードされた文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Util.HttpEncoder.UrlPathEncode%2A> メソッドは、<xref:System.Web.HttpUtility.UrlPathEncode%2A> メソッドによって呼び出されます。 <xref:System.Web.HttpUtility.UrlPathEncode%2A>メソッドは、次の手順を実行します。  
+  
+-   エンコーディングのロジックを適用、<xref:System.Web.Util.HttpEncoder.UrlPathEncode%2A>メソッド、URL (クエリ文字列を除く) のパス部分だけをします。 メソッドは、URL が、utf-8 文字列としてエンコードされていると仮定します。  
+  
+-   最初の 128 個の ASCII 文字のサブセットのみが結果として得られる、エンコードされた文字列で使用されるように、非空白文字をエンコードします。 128 と大きい、または 32 と小さい、Unicode 値で任意の文字では、URL エンコードです。  
+  
+-   20% として空白文字をエンコードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

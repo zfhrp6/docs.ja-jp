@@ -1,0 +1,148 @@
+<Type Name="DynamicResourceExtension" FullName="System.Windows.DynamicResourceExtension">
+  <TypeSignature Language="C#" Value="public class DynamicResourceExtension : System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicResourceExtension extends System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DynamicResourceExtension" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.DynamicResourceExtensionConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.MarkupExtensionReturnType(typeof(System.Object))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装して動的リソース参照をサポートするマークアップ拡張機能は、XAML から行われます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的リソース参照は、実行時に変わる可能性があるコンテンツを参照している場合に必要です。 コンテンツの変更の理由は、アプリケーションによって開始される場合がありますか、外部可能性があります。 1 つの例は、テーマ、フォントの設定などのユーザーに構成された設定をレポートするシステム リソースに依存するスタイルを含めるかどうかです。  
+  
+ このクラスは、マークアップ拡張機能の実装です。 マークアップ拡張機能クラス[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]の一部の側面のインフラストラクチャをサポートするには、主に存在、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロセッサの実装とマークアップ拡張機能クラスによって公開されるメンバーは通常呼び出されません直接ユーザー コードからです。 このクラスは、特にサポート、 [DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)から使用状況[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 動的リソース参照の詳細については、次を参照してください。 [DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)します。  
+  
+<a name="xamlTextUsage_DynamicResourceExtension"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicResourceExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DynamicResourceExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.DynamicResourceExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicResourceExtension (object resourceKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object resourceKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DynamicResourceExtension.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="resourceKey" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="resourceKey">このマークアップ拡張機能を参照するリソースのキー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.DynamicResourceExtension" />クラスは、指定された初期キーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使って[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロセッサの属性の構文を処理するときに、 [DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DynamicResourceExtension.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">マークアップ拡張機能のサービスを提供できるオブジェクト。</param>
+        <summary>この拡張機能を適用するプロパティで設定するオブジェクトを返します。 <see cref="T:System.Windows.DynamicResourceExtension" />、これは、リソース ディクショナリがによってキー指定される現在の親チェーン内で見つかったオブジェクト、<see cref="P:System.Windows.DynamicResourceExtension.ResourceKey" />です。</summary>
+        <returns>拡張機能が適用されているプロパティに設定するオブジェクト。 実際の値ではなく、後で評価される式になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをサポートしている[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)][!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロセッサの実装を直接呼び出すことはありません。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロセッサの実装の適切な処理のこのメソッドを使用して[DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)オブジェクト作成時に値。  
+  
+ 型のプロパティを指定された値を設定する必要があります<xref:System.Windows.DependencyProperty>です。  
+  
+ この実装は、渡されたに基づくすべてのサービスに依存しない`serviceProvider`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">不明な拡張機能の値を指定しようとしています、<paramref name="resourceKey" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceKey">
+      <MemberSignature Language="C#" Value="public object ResourceKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ResourceKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DynamicResourceExtension.ResourceKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.ConstructorArgument("resourceKey")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの動的リソース参照で指定されたキーを設定します。 中間式を使用してリソース ディクショナリでリソースを検索に使用されます。</summary>
+        <value>この動的リソース参照を指定するリソース キー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーがない厳密に型指定は、いずれかの文字列として通常提供される、 <xref:System.Type>、または<xref:System.Windows.ResourceKey>クラスを派生します。  
+  
+<a name="xamlTextUsage_ResourceKey"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

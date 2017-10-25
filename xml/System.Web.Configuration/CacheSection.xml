@@ -1,0 +1,335 @@
+<Type Name="CacheSection" FullName="System.Web.Configuration.CacheSection">
+  <TypeSignature Language="C#" Value="public sealed class CacheSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CacheSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.CacheSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET アプリケーションのグローバルのキャッシュ設定を構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CacheSection>クラスをプログラムでアクセスおよび変更する方法を提供する、`<cache>`構成ファイルのセクションです。  
+  
+ ASP.NET キャッシュ機能の実装によって、<xref:System.Web.Caching.Cache>クラスです。 詳細については、次を参照してください。[キャッシュ](http://msdn.microsoft.com/library/ac11c8ea-df5d-4de8-b315-9ccf1048b0ce)です。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.CacheSection>セクション プロパティによって定義された制限に従って、構成ファイルの関連するセクションに情報を書き込むことが<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.MachineToApplication>です。 階層では許可されませんレベルで構成ファイルに書き込みをしようとすると、パーサーによって生成されたエラー メッセージが発生します。 ただし、このクラスを使用すると、階層内の任意のレベルで構成情報を読み取る。  
+  
+ キャッシュには、アプリケーション固有のハッシュ テーブルのデータの格納が頻繁にアクセスするために使用します。 アプリケーションとセッション状態キャッシュされる、最もと同様に、そのアプリケーション全体のスコープにより、アプリケーションの状態に似ています。 キャッシュとアプリケーション状態機構の最も大きな違いの 1 つは、キャッシュがこれらの依存関係では、特定のイベントが発生したときにキャッシュされた項目を自動的に削除するアプリケーションを構築可能な依存関係をサポートしていることです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ページを表示し、関連するコード ファイルを使用するアクセス、<xref:System.Web.Configuration.CacheSection>セクションの属性です。  
+  
+ [!code-aspx-csharp[System.Web.Configuration.CacheSection#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/CS/readwritecache.aspx#11)]
+ [!code-aspx-vb[System.Web.Configuration.CacheSection#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/VB/readwritecache.aspx#11)]
+  
+ [!code-csharp[System.Web.Configuration.CacheSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/CS/readwritecache.aspx.cs#1)]
+ [!code-vb[System.Web.Configuration.CacheSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/VB/readwritecache.aspx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.CacheSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.CacheSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CacheSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.CacheSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Configuration.CacheSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/CS/readwritecache.aspx.cs#2)]
+ [!code-vb[System.Web.Configuration.CacheSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/VB/readwritecache.aspx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultProvider">
+      <MemberSignature Language="C#" Value="public string DefaultProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CacheSection.DefaultProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("defaultProvider", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のプロバイダーを取得または設定します。</summary>
+        <value>既定のプロバイダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableExpiration">
+      <MemberSignature Language="C#" Value="public bool DisableExpiration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DisableExpiration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CacheSection.DisableExpiration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("disableExpiration", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュ有効期限が無効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、キャッシュ有効期限が無効にします。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.CacheSection.DisableExpiration%2A>プロパティに設定されている`true`、キャッシュされたアイテムの有効期限はありません。 この設定は、アプリケーション コード内のキャッシュ動作をデバッグする際に対象としています。 有効であるよりも長い時間がキャッシュされている項目で発生する可能性がありますはキャッシュの有効期限を無効にする場合の注意を使用します。  
+  
+> [!NOTE]
+>  出力キャッシュにページを追加するには、そのページの有効期限ポリシーを確立する必要があります。 宣言によってこれを行うことができます、 [@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2)ディレクティブまたはプログラムを使用して、<xref:System.Web.HttpCachePolicy.SetExpires%2A>メソッドです。 詳細については、次を参照してください。[する方法: ASP.NET ページのキャッシュの有効期限の値を設定](http://msdn.microsoft.com/library/c8931600-b167-477d-bd5a-0186ac908646)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.CacheSection.DisableExpiration%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.CacheSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/CS/readwritecache.aspx.cs#4)]
+ [!code-vb[System.Web.Configuration.CacheSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/VB/readwritecache.aspx.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableMemoryCollection">
+      <MemberSignature Language="C#" Value="public bool DisableMemoryCollection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DisableMemoryCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CacheSection.DisableMemoryCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("disableMemoryCollection", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュ メモリのコレクションが無効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />キャッシュ メモリのコレクションが無効な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.CacheSection.DisableMemoryCollection%2A>プロパティに設定されている`true`キャッシュに関連する API の呼び出しには影響はありません。  
+  
+ 場合、<xref:System.Web.Configuration.CacheSection.DisableMemoryCollection%2A>プロパティに設定されている`true`、未使用の項目を収集するために、キャッシュが行われません。 メモリ収集を無効にすると発生しやすくなるアプリケーションのメモリ不足の条件としてはこの設定を使用する場合の注意を使用します。  
+  
+ ASP.NET の内部キャッシュと出力キャッシュは、この設定を指定しても効果はありません。 キャッシュのさまざまな種類の詳細については、次を参照してください。[キャッシュ](http://msdn.microsoft.com/library/ac11c8ea-df5d-4de8-b315-9ccf1048b0ce)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.CacheSection.DisableMemoryCollection%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.CacheSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/CS/readwritecache.aspx.cs#3)]
+ [!code-vb[System.Web.Configuration.CacheSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/VB/readwritecache.aspx.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PercentagePhysicalMemoryUsedLimit">
+      <MemberSignature Language="C#" Value="public int PercentagePhysicalMemoryUsedLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PercentagePhysicalMemoryUsedLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CacheSection.PercentagePhysicalMemoryUsedLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("percentagePhysicalMemoryUsedLimit", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MaxValue=100, MinValue=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または仮想メモリ使用量の最大パーセンテージを示す値を設定します。</summary>
+        <value>仮想メモリ使用量の最大のパーセンテージです。 既定値は、90% です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CacheSection.PercentagePhysicalMemoryUsedLimit%2A>プロパティが高負荷状態のしきい値を指定します。 このしきい値に近づくと、として、キャッシュ システムは徐々 により積極的な清掃処理を開始します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Configuration.CacheSection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/CS/readwritecache.aspx.cs#7)]
+ [!code-vb[System.Web.Configuration.CacheSection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/VB/readwritecache.aspx.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivateBytesLimit">
+      <MemberSignature Language="C#" Value="public long PrivateBytesLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 PrivateBytesLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CacheSection.PrivateBytesLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("privateBytesLimit", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.LongValidator(MinValue=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはワーカー プロセスのプライベート領域の最大サイズを示す値を設定します。</summary>
+        <value>ワーカー プロセスに割り当てられたプライベート領域のバイト単位で最大数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CacheSection.PrivateBytesLimit%2A>プロパティが高負荷状態のしきい値を指定します。 このしきい値に近づくと、として、キャッシュ システムは徐々 により積極的な清掃処理を開始します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Configuration.CacheSection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/CS/readwritecache.aspx.cs#6)]
+ [!code-vb[System.Web.Configuration.CacheSection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CacheSection/VB/readwritecache.aspx.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivateBytesPollTime">
+      <MemberSignature Language="C#" Value="public TimeSpan PrivateBytesPollTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan PrivateBytesPollTime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CacheSection.PrivateBytesPollTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("privateBytesPollTime", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または時間のワーカー プロセスのメモリ使用量のポーリング間隔を示す値を設定します。</summary>
+        <value>ワーカー プロセスのメモリ使用量のポーリングの間隔。 既定値は、2 分です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このポーリングは、コストが、キャッシュ トリミング アルゴリズムの応答速度とポーリング呼び出しの数との間で調整する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CacheSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public System.Configuration.ProviderSettingsCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ProviderSettingsCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CacheSection.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("providers")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ProviderSettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーの設定のコレクションを取得します。</summary>
+        <value>プロバイダーの設定のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,153 @@
+<Type Name="HierarchicalDataBoundControlAdapter" FullName="System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter">
+  <TypeSignature Language="C#" Value="public class HierarchicalDataBoundControlAdapter : System.Web.UI.WebControls.Adapters.WebControlAdapter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HierarchicalDataBoundControlAdapter extends System.Web.UI.WebControls.Adapters.WebControlAdapter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Adapters.WebControlAdapter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>動作をカスタマイズ、<see cref="T:System.Web.UI.WebControls.HierarchicalDataBoundControl" />このコントロール アダプターが、特定のブラウザーの要求に関連付けられているオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter>クラスに関連付けられた適応<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>既定マークアップまたは特定のブラウザーの動作を変更するコントロール。 拡張することができます、<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter>のレンダリングをさらにカスタマイズするクラス、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>コントロール。  
+  
+ A<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>コントロールがデータ ソースにバインドされてし、そのユーザーが生成されますインターフェイス (または子コントロール階層、通常)、バインドされているデータ ソース内の項目を列挙することによりします。 階層のデータ バインド コントロールの詳細については、次を参照してください。<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>です。  
+  
+ 特定のブラウザーのコントロールのライフ サイクルの 1 つ以上のステージを管理するコントロールのアダプター.net コンポーネントです。 拡張、<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter>クラスのライフ サイクルの段階へのアクセスを提供、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>コントロール。 詳細については、次を参照してください。[アーキテクチャの概要のアダプティブ動作を制御](http://msdn.microsoft.com/library/4ff05ae9-4109-4352-929e-ad893895dbff)です。  
+  
+ アダプターの最初の要求では、要求元のブラウザーの特性を指定して、コントロールに割り当てられたアダプターを検索する .NET Framework が原因です。 ブラウザー定義ファイルで使用されます、<xref:System.Web.HttpBrowserCapabilities>をクライアントのブラウザーの特性を確認し、アダプターをブラウザーの種類にマッピングするクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例は、拡張する方法を示します、 <xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter> 、階層構造を表示するためにクラス<xref:System.Web.UI.WebControls.TreeView>コントロールにバインドされている、<xref:System.Web.UI.WebControls.XmlDataSource>オブジェクト。  
+  
+ このコード例には、4 つのオブジェクトが含まれています。  
+  
+-   アダプターから派生した、<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter>クラスです。  
+  
+-   .Aspx ファイルが組み込まれた、<xref:System.Web.UI.WebControls.TreeView>コントロールおよびデバイス固有のコンテンツ。  
+  
+-   デバイスの種類にアダプターをリンクするブラウザー ファイルです。  
+  
+-   従業員の階層リストを含む XML ファイルです。  
+  
+ このコード例は、次の 4 つのコード セグメントで構成されます。 最初のコード セグメントを拡張する方法を示しています、<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter/CS/hierarchicaltreeviewadapter.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter/VB/hierarchicaltreeviewadapter.vb#1)]  
+  
+ 2 番目のコード セグメントを宣言する方法を示しています、 <xref:System.Web.UI.WebControls.TreeView> XML データ ソースにバインドします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter/CS/implcs.aspx#4)]
+ [!code-aspx-vb[System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter/VB/implvb.aspx#4)]  
+  
+ 3 番目のコード セグメントにリンクする方法を示しています、 <xref:System.Web.UI.WebControls.TreeView> Windows CE で実行されているブラウザーのカスタム アダプターを制御します。  
+  
+  
+  
+ 最終的なコード セグメントには、XML データを提供する、<xref:System.Web.UI.WebControls.TreeView>コントロールにバインドします。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HierarchicalDataBoundControlAdapter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework のインスタンスを作成する、<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter>クラスです。 アダプターの最初の要求では、要求元のブラウザーの特性を指定して、コントロールに割り当てられたアダプターを検索する .NET Framework が原因です。 コントロールがで割り当てられたアダプター インスタンスへの参照を保持して、アダプターが見つかったら、その<xref:System.Web.UI.Control.Adapter%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.HierarchicalDataBoundControl Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.HierarchicalDataBoundControl Control" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HierarchicalDataBoundControl</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を厳密に型を取得、<see cref="T:System.Web.UI.WebControls.HierarchicalDataBoundControl" />これに関連付けられたコントロール<see cref="T:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.HierarchicalDataBoundControl" />の現在のインスタンスに関連付けられている<see cref="T:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter.Control%2A>プロパティは、そのプロパティおよびメソッドを含む、対応するコントロールへのアクセスを提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter.Control%2A>厳密に型を取得するプロパティを<xref:System.Web.UI.WebControls.TreeView>コントロール。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter/CS/hierarchicaltreeviewadapter.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter/VB/hierarchicaltreeviewadapter.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformDataBinding">
+      <MemberSignature Language="C#" Value="protected virtual void PerformDataBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void PerformDataBinding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter.PerformDataBinding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アダプターに関連付けられている階層のデータ バインド コントロールのデータ ソース内のデータをバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter.PerformDataBinding%2A>メソッドが関連付けられている指定されたデータ ソース内のデータをバインド<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>コントロールを<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter>オブジェクト。 オーバーライドできます<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter.PerformDataBinding%2A>に関連付けられている標準的なデータ バインディング機能を置き換える<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>コントロールまたはその他のデータ バインディング機能を提供する、関連付けられている<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>コントロールが拡張されています。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter.PerformDataBinding%2A>を確認するメソッド、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.DataSourceID%2A>プロパティが親を呼び出す前に設定されている<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter.PerformDataBinding%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter/CS/hierarchicaltreeviewadapter.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HierarchicalDataBoundControlAdapter/VB/hierarchicaltreeviewadapter.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

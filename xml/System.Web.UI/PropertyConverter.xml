@@ -1,0 +1,157 @@
+<Type Name="PropertyConverter" FullName="System.Web.UI.PropertyConverter">
+  <TypeSignature Language="C#" Value="public static class PropertyConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit PropertyConverter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.PropertyConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字列とプロパティの値を変換するヘルパー関数が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PropertyConverter>クラスは、ASP.NET ページ フレームワークによって使用され、コードから直接アクセスするものではありません。 使用することができます、<xref:System.Enum>文字列値に変換して、列挙子から構造または<xref:System.ComponentModel.TypeConverter>オブジェクトに変換します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="EnumFromString">
+      <MemberSignature Language="C#" Value="public static object EnumFromString (Type enumType, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object EnumFromString(class System.Type enumType, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PropertyConverter.EnumFromString(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">A<see cref="T:System.Type" />から作成する列挙型を表す、<c>値</c>パラメーター。</param>
+        <param name="value"><see cref="T:System.String" />列挙子の値を表すです。</param>
+        <summary>文字列形式を指定した列挙型の値に変換します。</summary>
+        <returns>型の列挙体<paramref name="enumType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PropertyConverter.EnumFromString%2A>メソッドを使用して変換する文字列値を等価の列挙の値にします。  
+  
+> [!NOTE]
+>  このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。 文字列値を等価の列挙値に変換するを使用して、<xref:System.Enum.Parse%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。  
+  
+ \- または  
+  
+ <paramref name="value" />空の文字列であるか、("") または空白文字だけが含まれています。  
+  
+ \- または  
+  
+ <paramref name="value" />名前は、列挙型に対して定義された名前付き定数のいずれかのないです。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EnumToString">
+      <MemberSignature Language="C#" Value="public static string EnumToString (Type enumType, object enumValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string EnumToString(class System.Type enumType, object enumValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PropertyConverter.EnumToString(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="enumValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">A<see cref="T:System.Type" />の列挙型を表す<c>enumValue</c>です。</param>
+        <param name="enumValue">変換する値。</param>
+        <summary>指定した列挙型の値を等価の文字列形式に変換します。</summary>
+        <returns><paramref name="enumValue" /> の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PropertyConverter.EnumToString%2A>列挙値を等価の文字列形式に変換するメソッドを使用します。  
+  
+> [!NOTE]
+>  このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。 列挙値を等価の文字列形式に変換するを使用して、<xref:System.Enum.Format%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" /> パラメーターまたは <paramref name="enumValue" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="enumType" />パラメーターではありません、<see cref="T:System.Enum" />型です。  
+  
+ \- または  
+  
+ <paramref name="enumValue" />パラメーターからの型とは異なる列挙の値が含まれる<paramref name="enumType" />です。  
+  
+ \- または  
+  
+ 型<paramref name="enumValue" />の基になる型ではない<paramref name="enumType" />です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectFromString">
+      <MemberSignature Language="C#" Value="public static object ObjectFromString (Type objType, System.Reflection.MemberInfo propertyInfo, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ObjectFromString(class System.Type objType, class System.Reflection.MemberInfo propertyInfo, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PropertyConverter.ObjectFromString(System.Type,System.Reflection.MemberInfo,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objType" Type="System.Type" />
+        <Parameter Name="propertyInfo" Type="System.Reflection.MemberInfo" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="objType"><see cref="T:System.Type" />から作成する<c>値</c>です。</param>
+        <param name="propertyInfo">変換中に使用するプロパティ。</param>
+        <param name="value"><see cref="T:System.String" />オブジェクトに変換します。</param>
+        <summary>文字列値を指定したオブジェクトの種類に変換します。</summary>
+        <returns><paramref name="objType" /> 型のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PropertyConverter.ObjectFromString%2A>文字列値をオブジェクトに変換するメソッドを使用します。  
+  
+> [!NOTE]
+>  このメンバーは .NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。 文字列値をオブジェクトに変換するを使用して、`Parse`オブジェクトを提供する場合は、そのオブジェクトのメソッド、`Parse`メソッドです。 たとえば、<xref:System.Int32>と、文字列からオブジェクトを作成できる、<xref:System.Int32.Parse%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定された型のオブジェクト<paramref name="objType" />から作成することはできません、<paramref name="value" />パラメーター。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

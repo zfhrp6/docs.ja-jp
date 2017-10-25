@@ -1,0 +1,116 @@
+<Type Name="ActivatorLevel" FullName="System.Runtime.Remoting.Activation.ActivatorLevel">
+  <TypeSignature Language="C#" Value="public enum ActivatorLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed ActivatorLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Activation.ActivatorLevel" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>適切な位置を定義、<see cref="T:System.Activator" />アクティベーターのチェーン。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティベーターの設計により、ライセンス認証プロセスに参加する複数のアクティベーター、およびアクティベーターを使用してチェーンに追加することができます<xref:System.Runtime.Remoting.Activation.IActivator.NextActivator%2A?displayProperty=nameWithType>です。 各アクティベーターがチェーン内の次の 1 つの呼び出しを行うため、配置できます自体任意の場所、チェーンにします。 <xref:System.Runtime.Remoting.Activation.ActivatorLevel>列挙子は、チェーン内の適切な位置を検索アクティベーター。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AppDomain">
+      <MemberSignature Language="C#" Value="AppDomain" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Remoting.Activation.ActivatorLevel AppDomain = int32(12)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Activation.ActivatorLevel.AppDomain" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Activation.ActivatorLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索または作成、<see cref="T:System.AppDomain" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Construction">
+      <MemberSignature Language="C#" Value="Construction" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Remoting.Activation.ActivatorLevel Construction = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Activation.ActivatorLevel.Construction" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Activation.ActivatorLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空のオブジェクトを構築し、コンス トラクターを実行します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="Context" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Remoting.Activation.ActivatorLevel Context = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Activation.ActivatorLevel.Context" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Activation.ActivatorLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索または適切なコンテキストを作成します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Machine">
+      <MemberSignature Language="C#" Value="Machine" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Remoting.Activation.ActivatorLevel Machine = int32(20)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Activation.ActivatorLevel.Machine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Activation.ActivatorLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>適切なコンピューターを検索します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Process">
+      <MemberSignature Language="C#" Value="Process" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Remoting.Activation.ActivatorLevel Process = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Remoting.Activation.ActivatorLevel.Process" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Activation.ActivatorLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスを開始します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

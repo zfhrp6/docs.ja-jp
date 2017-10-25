@@ -1,0 +1,100 @@
+<Type Name="CallerMemberNameAttribute" FullName="System.Runtime.CompilerServices.CallerMemberNameAttribute">
+  <TypeSignature Language="C#" Value="public sealed class CallerMemberNameAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CallerMemberNameAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.CallerMemberNameAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Parameter, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドの呼び出し元のメソッド名またはプロパティ名を取得できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用する、`CallerMemberName`属性を既定値を持つオプションのパラメーターです。 省略可能なパラメーターの明示的な既定値を指定する必要があります。 省略可能として指定されていないパラメーターには、この属性を適用することはできません。  
+  
+ 詳細については、次を参照してください。[呼び出し元情報](http://msdn.microsoft.com/library/9cb2b8c0-c4f6-44b8-9c90-38948455b373)です。  
+  
+ `CallerMemberName` 属性を使用して、呼び出されたメソッドにメンバー名を `String` 引数として指定することを回避できます。 この方法を使用すると、**リファクタリングの名前の変更**で `String` 値が変更されないという問題が発生しなくなります。 これは、次のタスクに特に便利です。  
+  
+-   トレース ルーチンと診断ルーチンの使用。  
+  
+-   データ バインディング時の <xref:System.ComponentModel.INotifyPropertyChanged> インターフェイスの実装。 このインターフェイスを使用すると、オブジェクトのプロパティが、プロパティが変更されたことをデータ バインド コントロールに通知できます。これによって、このコントロールは、更新された情報を表示できます。 `CallerMemberName` 属性がない場合は、リテラルとしてプロパティ名を指定する必要があります。  
+  
+ 次のグラフは、`CallerMemberName` 属性の使用時に返されるメンバー名を示します。  
+  
+|内で呼び出しが行われます|メンバー名の結果|  
+|-|-|  
+|メソッド、プロパティ、またはイベント|呼び出しが発生したメソッド、プロパティ、またはイベントの名前。|  
+|コンストラクター|文字列「.ctor」|  
+|静的コンストラクター|文字列「.cctor」|  
+|デストラクターです。|文字列「Finalize」|  
+|ユーザー定義の演算子または変換|生成されたメンバー名 (「op_Addition」など)。|  
+|Attribute コンストラクター|属性が適用されるメンバーの名前。 属性がメンバー内の要素 (パラメーター、戻り値、ジェネリック型パラメーターなど) である場合、この結果は、その要素に関連付けられているメンバーの名前になります。|  
+|含まれるメンバーがありません (たとえば、アセンブリ レベルまたは型に適用される属性)|省略可能なパラメーターの既定値。|  
+  
+   
+  
+## Examples  
+ `CallerMemberName` 属性を使用する方法を次のコード例に示します。 呼び出すたびに、`TraceMessage`メソッドを呼び出し元情報は省略可能なパラメーターに渡す引数として設定します。  
+  
+ [!code-csharp[csProgGuideAttributes#51](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideAttributes/CS/callerinfo.cs#51)]
+ [!code-vb[csProgGuideAttributes#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csProgGuideAttributes/vb/callerinfo.vb#51)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CallerMemberNameAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallerMemberNameAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.CompilerServices.CallerMemberNameAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,666 @@
+<Type Name="ContactManager" FullName="System.Net.PeerToPeer.Collaboration.ContactManager">
+  <TypeSignature Language="C#" Value="public sealed class ContactManager : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContactManager extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.Collaboration.ContactManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />Windows アドレス帳で保持するオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを持たないパブリック コンス トラクターへの参照がによって返されるので、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration>クラスです。  
+  
+ アドレス帳に関連付けられている<xref:System.Net.PeerToPeer.Collaboration.PeerContact>ホスト ピアとリモートのピアに関連付けられている管理も含まれます。  どちらのコンピューターと連携して他のピアです。ピアがリモートのピアがホストのピアではなくローカルの場合に追加できる、<xref:System.Net.PeerToPeer.Collaboration.ContactManager>ホスト ピアのです。 特定の操作、<xref:System.Net.PeerToPeer.Collaboration.ContactManager>クラスなど<xref:System.Net.PeerToPeer.Collaboration.ContactManager.AddContact%2A>と<xref:System.Net.PeerToPeer.Collaboration.ContactManager.DeleteContact%2A>リモート ピアの Windows アドレス帳で実行されている関連する操作を相互に関連付けたり、します。  
+  
+ ホストのピアがのこの永続的ストレージへのアクセスを持つ<xref:System.Net.PeerToPeer.Collaboration.PeerContact>については、参加しているつもりピア アプリケーションと関連付けることができます。 A<xref:System.Net.PeerToPeer.Collaboration.PeerApplication>のユーザーとして自分自身を識別できます、<xref:System.Net.PeerToPeer.Collaboration.ContactManager>コンピューター上の永続的なストアです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、列挙する方法を示しています、<xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>として追加し、<xref:System.Net.PeerToPeer.Collaboration.PeerContact>をローカル<xref:System.Net.PeerToPeer.Collaboration.ContactManager>:  
+  
+ [!code-csharp[NCLPNRPContacts#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPNRPContacts/CS/NCLPNRPContacts.cs#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddContact">
+      <MemberSignature Language="C#" Value="public void AddContact (System.Net.PeerToPeer.Collaboration.PeerContact peerContact);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddContact(class System.Net.PeerToPeer.Collaboration.PeerContact peerContact) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.ContactManager.AddContact(System.Net.PeerToPeer.Collaboration.PeerContact)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerContact" Type="System.Net.PeerToPeer.Collaboration.PeerContact" />
+      </Parameters>
+      <Docs>
+        <param name="peerContact"><see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" /> に追加する <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />インスタンス 。</param>
+        <summary>指定した <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> をローカル ピアの <see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" /> に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、列挙する方法を示しています、<xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>として追加し、<xref:System.Net.PeerToPeer.Collaboration.PeerContact>をローカル<xref:System.Net.PeerToPeer.Collaboration.ContactManager>:  
+  
+ [!code-csharp[NCLPNRPContacts#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPNRPContacts/CS/NCLPNRPContacts.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="peerContact" /> で指定された <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> は既に存在します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="peerContact" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">指定された <paramref name="peerContact" /> は破棄されています。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">-   <paramref name="peerContact" /> によって指定された <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> は、そのシリアル化された XML 形式からは再構成できませんでした。  
+  
+-   構築中の <see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" /> インスタンスに、ローカル ピアを追加できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs&gt; ApplicationChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs&gt; ApplicationChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.Collaboration.ContactManager.ApplicationChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.Collaboration.ApplicationChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生するたびに、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />に関連付けられている、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />で、<see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" />が変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドには、呼び出し元のピアのアドレス帳によって発行されたアプリケーションのみを返します。  
+  
+ このイベントを発生させることができます、リモートのピアの現在のユーザー リモート ピアのコラボレーション イベントにサブスクライブする必要があります。 使用してサブスクリプションには、<xref:System.Net.PeerToPeer.Collaboration.PeerContact.Subscribe%2A>メソッドです。  
+  
+ このイベントが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">呼び出し元のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateContact">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerContact CreateContact (System.Net.PeerToPeer.Collaboration.PeerNearMe peerNearMe);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.PeerToPeer.Collaboration.PeerContact CreateContact(class System.Net.PeerToPeer.Collaboration.PeerNearMe peerNearMe) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContact(System.Net.PeerToPeer.Collaboration.PeerNearMe)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerContact</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerNearMe" Type="System.Net.PeerToPeer.Collaboration.PeerNearMe" />
+      </Parameters>
+      <Docs>
+        <param name="peerNearMe">新しい <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> インスタンスに関連付ける <see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" />。</param>
+        <summary>作成、 <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> 、指定されたインスタンス<see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" />オブジェクト。</summary>
+        <returns>A <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> 、指定されたインスタンス<see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="peerNearMe" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">この <see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" /> オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">-   リモートのピアの連絡先のマネージャーが渡された<paramref name="peerNearMe" />に到達できませんでした、または連絡先がそこから読み取れませんでした。  
+  
+-   <see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" />に渡された<paramref name="peerNearMe" />設定されているエンドポイントがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateContactAsync">
+      <MemberSignature Language="C#" Value="public void CreateContactAsync (System.Net.PeerToPeer.Collaboration.PeerNearMe peerNearMe, object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateContactAsync(class System.Net.PeerToPeer.Collaboration.PeerNearMe peerNearMe, object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContactAsync(System.Net.PeerToPeer.Collaboration.PeerNearMe,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerNearMe" Type="System.Net.PeerToPeer.Collaboration.PeerNearMe" />
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="peerNearMe">新しい <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> インスタンスに関連付ける <see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" />。</param>
+        <param name="userToken"><see cref="M:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContactAsync(System.Net.PeerToPeer.Collaboration.PeerNearMe,System.Object)" /> 操作に関する情報を格納するユーザー定義の <see cref="T:System.Object" />。 識別用の非同期操作のコールバックに渡されます。</param>
+        <summary>指定された <see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" /> オブジェクトのコンタクト インスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="userToken" />既に存在し、使用されています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="peerNearMe" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" />オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">-   指定した <see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" /> インスタンスには、エンドポイントが設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateContactCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Net.PeerToPeer.Collaboration.CreateContactCompletedEventArgs&gt; CreateContactCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.Collaboration.CreateContactCompletedEventArgs&gt; CreateContactCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContactCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.Collaboration.CreateContactCompletedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生するたびに、<see cref="M:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContact(System.Net.PeerToPeer.Collaboration.PeerNearMe)" />メソッドが完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントが発生したときに、<xref:System.Net.PeerToPeer.Collaboration.ContactManager.CreateContactAsync%2A>メソッドが完了しました。 場合にも発生、<xref:System.Net.PeerToPeer.Collaboration.ContactManager>操作がエラーで完了したかが取り消されました。  
+  
+ このイベントが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">呼び出し元のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteContact">
+      <MemberSignature Language="C#" Value="public void DeleteContact (System.Net.PeerToPeer.Collaboration.PeerContact peerContact);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteContact(class System.Net.PeerToPeer.Collaboration.PeerContact peerContact) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.ContactManager.DeleteContact(System.Net.PeerToPeer.Collaboration.PeerContact)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerContact" Type="System.Net.PeerToPeer.Collaboration.PeerContact" />
+      </Parameters>
+      <Docs>
+        <param name="peerContact"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> から削除する <see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" />。</param>
+        <summary>指定した <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> を、ローカル ピアの <see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" /> から削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、削除する方法を示しています、<xref:System.Net.PeerToPeer.Collaboration.PeerContact>ローカルから<xref:System.Net.PeerToPeer.Collaboration.ContactManager>:  
+  
+ [!code-csharp[NCLPNRPContacts#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPNRPContacts/CS/NCLPNRPContacts.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="peerContact" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteContact">
+      <MemberSignature Language="C#" Value="public void DeleteContact (System.Net.PeerToPeer.PeerName peerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteContact(class System.Net.PeerToPeer.PeerName peerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.ContactManager.DeleteContact(System.Net.PeerToPeer.PeerName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerName" Type="System.Net.PeerToPeer.PeerName" />
+      </Parameters>
+      <Docs>
+        <param name="peerName"><see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" /> から削除する <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> に関連付けられた <see cref="P:System.Net.PeerToPeer.Collaboration.PeerContact.PeerName" />。</param>
+        <summary>指定した <see cref="P:System.Net.PeerToPeer.Collaboration.PeerContact.PeerName" /> に関連付けられている <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> をローカル ピアの <see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" /> から削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、削除する方法を示しています、<xref:System.Net.PeerToPeer.Collaboration.PeerContact>ローカルから<xref:System.Net.PeerToPeer.Collaboration.ContactManager>:  
+  
+ [!code-csharp[NCLPNRPContacts#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPNRPContacts/CS/NCLPNRPContacts.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />に関連付けられている<see cref="P:System.Net.PeerToPeer.Collaboration.PeerContact.PeerName" />連絡先のマネージャーで見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="peerName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが既に<see cref="M:System.Net.PeerToPeer.Collaboration.ContactManager.Dispose" />以前の呼び出しし、今後実行されるには使用できません。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException"><see cref="Overload:System.Net.PeerToPeer.Collaboration.ContactManager.DeleteContact" /> 操作を完了できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.ContactManager.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" /> オブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContact">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerContact GetContact (System.Net.PeerToPeer.PeerName peerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.PeerToPeer.Collaboration.PeerContact GetContact(class System.Net.PeerToPeer.PeerName peerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.ContactManager.GetContact(System.Net.PeerToPeer.PeerName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerContact</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerName" Type="System.Net.PeerToPeer.PeerName" />
+      </Parameters>
+      <Docs>
+        <param name="peerName"><see cref="P:System.Net.PeerToPeer.Collaboration.PeerContact.PeerName" />に関連付けられている、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />を取得します。</param>
+        <summary>返します、 <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> 、指定されたオブジェクト<see cref="P:System.Net.PeerToPeer.Collaboration.PeerContact.PeerName" />です。</summary>
+        <returns>
+          <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />指定されたに関連付けられている<see cref="P:System.Net.PeerToPeer.Collaboration.PeerContact.PeerName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="peerName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">この <see cref="P:System.Net.PeerToPeer.Collaboration.PeerContact.PeerName" /> オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">-   連絡先は見つかりません<see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" />です。  
+  
+-   指定された連絡先を取得できません。<see cref="P:System.Net.PeerToPeer.Collaboration.PeerContact.PeerName" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContacts">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerContactCollection GetContacts ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.PeerToPeer.Collaboration.PeerContactCollection GetContacts() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.ContactManager.GetContacts" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerContactCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContactCollection" />内のすべての連絡先を格納している、<see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" />リモート ピアのです。</summary>
+        <returns>
+          <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContactCollection" />内のすべての連絡先を格納している、<see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" />リモート ピアのです。  
+  
+ 連絡先のマネージャーが空の場合、サイズのコレクション ゼロ (0) が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得する方法を示しています、 <xref:System.Net.PeerToPeer.Collaboration.PeerContactCollection> 、ローカルに格納されている連絡先を表す<xref:System.Net.PeerToPeer.Collaboration.ContactManager>:  
+  
+ [!code-csharp[NCLPNRPContacts#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPNRPContacts/CS/NCLPNRPContacts.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">この <see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" /> オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">このメソッドを列挙しようとすると、無効な値が返された、<see cref="T:System.Net.PeerToPeer.Collaboration.Peer" />ピアをこのコレクションに接続します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalContact">
+      <MemberSignature Language="C#" Value="public static System.Net.PeerToPeer.Collaboration.PeerContact LocalContact { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.PeerToPeer.Collaboration.PeerContact LocalContact" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.ContactManager.LocalContact" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerContact</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />ローカル ピアを表すです。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />ローカル ピアを表すインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、指定しない限り、`null`です。  
+  
+ このプロパティを使用する必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Net.PeerToPeer.Collaboration.NameChangedEventArgs&gt; NameChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.Collaboration.NameChangedEventArgs&gt; NameChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.Collaboration.ContactManager.NameChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.Collaboration.NameChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生するたびに、<see cref="P:System.Net.PeerToPeer.Collaboration.PeerContact.PeerName" />に関連付けられている、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />で、<see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" />が変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連付けられたコールバックが、新しいへの参照を提供<xref:System.Net.PeerToPeer.Collaboration.PeerContact.PeerName%2A>です。  
+  
+ このイベントが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">呼び出し元のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs&gt; ObjectChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs&gt; ObjectChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.Collaboration.ContactManager.ObjectChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>連絡先内のオブジェクトの登録されているときに発生<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />オブジェクトが変更されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントを発生させることができます、リモートのピアの現在のユーザー ホスト ピアのコラボレーション イベントにサブスクライブする必要があります。 サブスクリプションは、PeerContact によって実現されます。<xref:System.Net.PeerToPeer.Collaboration.PeerContact.Subscribe%2A>メソッドです。  
+  
+ このイベントが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PresenceChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Net.PeerToPeer.Collaboration.PresenceChangedEventArgs&gt; PresenceChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.Collaboration.PresenceChangedEventArgs&gt; PresenceChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.Collaboration.ContactManager.PresenceChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.Collaboration.PresenceChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ときに発生の状態、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />で、<see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" />が変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントを発生させることができます、リモートのピアの現在のユーザー ホスト ピアのコラボレーション イベントにサブスクライブする必要があります。 使用してサブスクリプションには、<xref:System.Net.PeerToPeer.Collaboration.PeerContact.Subscribe%2A>メソッドです。  
+  
+ このイベントが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SubscriptionListChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Net.PeerToPeer.Collaboration.SubscriptionListChangedEventArgs&gt; SubscriptionListChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Net.PeerToPeer.Collaboration.SubscriptionListChangedEventArgs&gt; SubscriptionListChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.PeerToPeer.Collaboration.ContactManager.SubscriptionListChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Net.PeerToPeer.Collaboration.SubscriptionListChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブスクライブされた連絡先の一覧が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブスクリプションは、プロセスごとではなく、アプリケーション ドメインごとまたはユーザーごとには、ホストで実行されている別のアプリケーションはこのイベントを発生させるで場合もあります。  
+  
+ このイベントが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SynchronizingObject">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISynchronizeInvoke SynchronizingObject" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.ContactManager.SynchronizingObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Description("SynchronizingObject")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISynchronizeInvoke</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのイベントを非同期操作の結果としては起動しませんが、固有の仕様を作成したスレッドでコールバック関連付けられているイベント ハンドラーがこのプロパティの値が設定されている場合<see cref="P:System.Net.PeerToPeer.Collaboration.PeerEndPoint.SynchronizingObject" />です。</summary>
+        <value>実装するオブジェクト、<see cref="T:System.ComponentModel.ISynchronizeInvoke" />インターフェイスし、この型のインスタンスによって作成されたスレッドでイベント ハンドラーの同期に使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定の設定値は`null`システムのスレッド プールのスレッドですべてのイベント ハンドラーを呼び出すことを知らせます。  
+  
+ このプロパティは通常に設定する UI 要素など、<xref:System.Windows.Forms.Form>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">呼び出し元のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateContact">
+      <MemberSignature Language="C#" Value="public void UpdateContact (System.Net.PeerToPeer.Collaboration.PeerContact peerContact);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateContact(class System.Net.PeerToPeer.Collaboration.PeerContact peerContact) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.ContactManager.UpdateContact(System.Net.PeerToPeer.Collaboration.PeerContact)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="peerContact" Type="System.Net.PeerToPeer.Collaboration.PeerContact" />
+      </Parameters>
+      <Docs>
+        <param name="peerContact">更新する <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />。</param>
+        <summary><see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> に関連付けられているデータを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">-   <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />含まれない<see cref="T:System.Net.PeerToPeer.Collaboration.ContactManager" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="peerContact" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">この <see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" /> オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.Net.PeerToPeer.PeerToPeerException"><see cref="M:System.Net.PeerToPeer.Collaboration.ContactManager.UpdateContact(System.Net.PeerToPeer.Collaboration.PeerContact)" /> 操作を完了できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

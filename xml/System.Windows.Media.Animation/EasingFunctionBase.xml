@@ -1,0 +1,170 @@
+<Type Name="EasingFunctionBase" FullName="System.Windows.Media.Animation.EasingFunctionBase">
+  <TypeSignature Language="C#" Value="public abstract class EasingFunctionBase : System.Windows.Freezable, System.Windows.Media.Animation.IEasingFunction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit EasingFunctionBase extends System.Windows.Freezable implements class System.Windows.Media.Animation.IEasingFunction" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.EasingFunctionBase" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Freezable</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Media.Animation.IEasingFunction</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>イージング関数をすべての基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスから継承することで、独自のカスタム イージング関数を作成できます。  
+  
+   
+  
+## Examples  
+ 次の例では、簡単なカスタム イージング関数を作成する方法を示します。 イージング関数をオーバーライドすることで動作する方法を独自の数値演算ロジックを追加することができます、<xref:System.Windows.Media.Animation.EasingFunctionBase.EaseInCore%2A>メソッドです。  
+  
+ [!code-csharp[CustomEasingFunction#CustomEasingFunction](~/samples/snippets/csharp/VS_Snippets_Wpf/customeasingfunction/csharp/customlog10easingfunction.cs#customeasingfunction)]
+ [!code-vb[CustomEasingFunction#CustomEasingFunction](~/samples/snippets/visualbasic/VS_Snippets_Wpf/customeasingfunction/visualbasic/customlog10easingfunction.vb#customeasingfunction)]
+ [!code-xaml[CustomEasingFunction#CustomEasingFunction](~/samples/snippets/csharp/VS_Snippets_Wpf/customeasingfunction/csharp/window1.xaml#customeasingfunction)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected EasingFunctionBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.EasingFunctionBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.EasingFunctionBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ease">
+      <MemberSignature Language="C#" Value="public double Ease (double normalizedTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance float64 Ease(float64 normalizedTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.EasingFunctionBase.Ease(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="normalizedTime" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="normalizedTime">値は、0 ~ 1 のアニメーションの正規化された時間 (実行中)。</param>
+        <summary>変換では、アニメーションの速度を制御する時間を正規化します。</summary>
+        <returns>変換された進行状況を表す double 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>プロパティと組み合わせて、<xref:System.Windows.Media.Animation.EasingFunctionBase.EaseInCore%2A>イージング関数を評価するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EaseInCore">
+      <MemberSignature Language="C#" Value="protected abstract double EaseInCore (double normalizedTime);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance float64 EaseInCore(float64 normalizedTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.EasingFunctionBase.EaseInCore(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="normalizedTime" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="normalizedTime">値は、0 ~ 1 のアニメーションの正規化された時間 (実行中)。</param>
+        <summary>カスタム イージング関数の <see cref="F:System.Windows.Media.Animation.EasingMode.EaseIn" /> モードを生成するためにオーバーライドできるイージング関数のロジック部分を提供します。</summary>
+        <returns>変換された進行状況を表す double 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは変換のアニメーションの速度を制御する正規化された時間、<xref:System.Windows.Media.Animation.EasingMode.EaseIn>の case<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>です。  
+  
+ のみのイージング関数を指定する必要が、<xref:System.Windows.Media.Animation.EasingMode.EaseIn>ためにのケースの実装、<xref:System.Windows.Media.Animation.EasingFunctionBase.Ease%2A>メソッドは変換する処理`normalizedTime`の<xref:System.Windows.Media.Animation.EasingMode.EaseOut>と<xref:System.Windows.Media.Animation.EasingMode.EaseInOut>ケースです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EasingMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.EasingMode EasingMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Animation.EasingMode EasingMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.EasingFunctionBase.EasingMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.EasingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアニメーションの補間方法を指定する値を設定します。</summary>
+        <value>アニメーションの補間方法を指定する列挙値の 1 つ。 既定値は、<see cref="F:System.Windows.Media.Animation.EasingMode.EaseOut" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_easingMode"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<easingFunction EasingMode="easingMode"/>  
+```  
+  
+<a name="xamlValues_easingMode"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *easingFunction*  
+ 派生したクラスのオブジェクト要素<xref:System.Windows.Media.Animation.EasingFunctionBase>です。  
+  
+ *easingMode*  
+ 値、<xref:System.Windows.Media.Animation.EasingMode>イージング関数の補間方法を指定する列挙です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EasingModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty EasingModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty EasingModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.EasingFunctionBase.EasingModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.EasingFunctionBase.EasingMode" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

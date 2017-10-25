@@ -1,0 +1,347 @@
+<Type Name="OleDbEnumerator" FullName="System.Data.OleDb.OleDbEnumerator">
+  <TypeSignature Language="C#" Value="public sealed class OleDbEnumerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbEnumerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbEnumerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ローカル ネットワーク内のすべての利用可能な OLE DB プロバイダーを列挙するためのメカニズムを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OleDbEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbEnumerator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbEnumerator" /> クラスのインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElements">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable GetElements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataTable GetElements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbEnumerator.GetElements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.DataTable" />表示されているすべての OLE DB プロバイダーに関する情報を格納します。</summary>
+        <returns>返します、<see cref="T:System.Data.DataTable" />表示されている OLE DB プロバイダーに関する情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返されるテーブルには、次の列が含まれています。  
+  
+|列の序数|Column|説明|  
+|--------------------|------------|-----------------|  
+|0|SOURCES_NAME|ネイティブの OLEDB データ ソースまたは列挙子の不変名。|  
+|1|SOURCES_PARSENAME|ネイティブの COM インターフェイスためのを使用して、モニカーに変換できる人間が判読できる名前です。 ネイティブ OLE DB ソースの行セットで返される SOURCES_PARSENAME 列に対応します。|  
+|2|SOURCES_DESCRIPTION|ネイティブの OLE DB データ ソースの説明です。 ネイティブ OLE DB ソースの行セットで返される SOURCES_DESCRIPTION 列に対応します。|  
+|3|SOURCES_TYPE|次の列挙メンバーのいずれかの: バインダー (0)、DataSource_MDP (1)、DataSource_TDP (2)、列挙子 (3)。 これらは、ネイティブ OLE DB ソースの行セットの SOURCES_TYPE 列に返される値に対応しています。|  
+|4|SOURCES_ISPARENT|列挙子だけに適用されます。 場合`true`エントリが GetSourcesRowset が呼び出された対象の同じ列挙子に適用されることを示す、サブ列挙型にも含まれていることを意味します。 ネイティブ OLE DB ソースの行セットの SOURCES_ISPARENT 列に対応しています|  
+|5|SOURCES_CLSID|人間が判読できる名前、ため、ネイティブ COM インターフェイスを使用しているモニカーに変換できます。 ネイティブ OLE DB ソースの行セットで返される SOURCES_CLSID 列に対応します。|  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、表示されているすべての OLE DB プロバイダーに関する情報を取得し、コンソール ウィンドウに情報を表示します。  
+  
+```vb  
+Imports System.Data  
+Imports System.Data.OleDb  
+  
+Module Module1  
+  
+Sub Main()  
+  Dim enumerator As New OleDbEnumerator  
+  Dim table As System.Data.DataTable = enumerator.GetElements()  
+  
+  DisplayData(table)  
+  
+   Console.WriteLine("Press any key to continue.")  
+   Console.ReadKey()  
+ End Sub  
+  
+ Private Sub DisplayData(ByVal table As DataTable)  
+   For Each row As DataRow In table.Rows  
+     For Each col As DataColumn In table.Columns  
+       Console.WriteLine("{0} = {1}", col.ColumnName, row(col))  
+     Next  
+     Console.WriteLine("==================================")  
+   Next  
+ End Sub  
+End Module  
+```  
+  
+```csharp  
+using System;  
+using System.Data;  
+using System.Data.OleDb;  
+  
+class Program  
+{  
+ static void Main()  
+ {  
+   OleDbEnumerator enumerator = new OleDbEnumerator();  
+   DataTable table = enumerator.GetElements();  
+  
+   DisplayData(table);  
+  
+   Console.WriteLine("Press any key to continue.");  
+   Console.ReadKey();  
+ }  
+  
+ static void DisplayData(DataTable table)  
+ {  
+   foreach (DataRow row in table.Rows)  
+   {  
+     foreach (DataColumn col in table.Columns)  
+     {  
+       Console.WriteLine("{0} = {1}", col.ColumnName, row[col]);  
+     }  
+     Console.WriteLine("==================================");  
+   }  
+ }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">プロバイダーは ISourcesRowset をサポートしていません。</exception>
+        <exception cref="T:System.Data.OleDb.OleDbException">基になるプロバイダーでは、例外が発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public static System.Data.OleDb.OleDbDataReader GetEnumerator (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.OleDb.OleDbDataReader GetEnumerator(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbEnumerator.GetEnumerator(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />。</param>
+        <summary>特定の OLE DB 列挙子を使用して、返します、<see cref="T:System.Data.OleDb.OleDbDataReader" />のインスタンスを必要とせず、現在インストールされている OLE DB プロバイダーに関する情報を含む、<see cref="T:System.Data.OleDb.OleDbEnumerator" />クラスです。</summary>
+        <returns>返します、<see cref="T:System.Data.OleDb.OleDbDataReader" />指定した OLE DB 列挙子を使用して、要求された OLE DB プロバイダーに関する情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返されるリーダーには、次の列が含まれています。  
+  
+|列の序数|Column|説明|  
+|--------------------|------------|-----------------|  
+|0|SOURCES_NAME|ネイティブの OLE DB データ ソースまたは列挙子の不変名。|  
+|1|SOURCES_PARSENAME|ネイティブの COM インターフェイスを使用して、モニカーに変換できる人間が判読できる名前**ため**です。 ネイティブ OLE DB ソースの行セットで返される SOURCES_PARSENAME 列に対応します。|  
+|2|SOURCES_DESCRIPTION|ネイティブの OLE DB データ ソースの説明です。 ネイティブ OLE DB ソースの行セットで返される SOURCES_DESCRIPTION 列に対応します。|  
+|3|SOURCES_TYPE|次の列挙メンバーのいずれかの: バインダー (0)、DataSource_MDP (1)、DataSource_TDP (2)、列挙子 (3)。 これらは、ネイティブ OLE DB ソースの行セットの SOURCES_TYPE 列に返される値に対応しています。|  
+|4|SOURCES_ISPARENT|列挙子だけに適用されます。 場合`true`、エントリを同じ列挙子に適用されることを示す**GetSourcesRowset**が呼び出されたサブ列挙型にも含まれていることを意味します。 ネイティブ OLE DB ソースの行セットの SOURCES_ISPARENT 列に対応しています|  
+  
+ OLE DB では、MSDAENUM、MSDASQL 列挙子、SQLNCLI 列挙子、SQLOLEDB 列挙子、および他のユーザーを含め、複数のコンポーネントの列挙子を提供します。 列挙子のコンポーネントとその使用方法の詳細については、次を参照してください。、 [OLE DB プログラマーズ リファレンス](http://go.microsoft.com/fwlink/?LinkId=45232)です。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、MSDAENUM コンポーネントを使用して、すべての OLE DB プロバイダーに関する情報を取得して、コンソール ウィンドウに情報が表示されます。  
+  
+```vb  
+Imports System.Data  
+Imports System.Data.OleDb  
+  
+Module Module1  
+  
+  Sub Main()  
+    Dim enumerator As New OleDbEnumerator  
+    Dim reader As OleDbDataReader = _  
+     OleDbEnumerator.GetEnumerator(Type.GetTypeFromProgID("MSDAENUM"))  
+  
+    DisplayData(reader)  
+  
+    Console.WriteLine("Press any key to continue.")  
+    Console.ReadKey()  
+  End Sub  
+  
+  Private Sub DisplayData(ByVal reader As OleDbDataReader)  
+    While reader.Read()  
+      For i As Integer = 0 To reader.FieldCount - 1  
+        Console.WriteLine("{0} = {1}", _  
+         reader.GetName(i), reader.GetValue(i))  
+      Next  
+      Console.WriteLine("==================================")  
+    End While  
+  
+  End Sub  
+End Module  
+```  
+  
+```csharp  
+using System;  
+using System.Data;  
+using System.Data.OleDb;  
+  
+class Program  
+{  
+ static void Main()  
+ {  
+   OleDbDataReader reader =   
+     OleDbEnumerator.GetEnumerator(Type.GetTypeFromProgID("MSDAENUM"));  
+  
+   DisplayData(reader);  
+  
+   Console.WriteLine("Press any key to continue.");  
+   Console.ReadKey();  
+ }  
+  
+ static void DisplayData(OleDbDataReader reader)  
+ {  
+   while (reader.Read())  
+   {  
+     for (int i = 0; i < reader.FieldCount; i++)  
+     {  
+       Console.WriteLine("{0} = {1}",  
+        reader.GetName(i), reader.GetValue(i));  
+     }  
+     Console.WriteLine("==================================");  
+   }  
+ }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">プロバイダーがサポートしていない**ISourcesRowset**です。</exception>
+        <exception cref="T:System.Data.OleDb.OleDbException">基になるプロバイダーで例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRootEnumerator">
+      <MemberSignature Language="C#" Value="public static System.Data.OleDb.OleDbDataReader GetRootEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.OleDb.OleDbDataReader GetRootEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbEnumerator.GetRootEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Data.OleDb.OleDbDataReader" />のインスタンスを必要とせず、現在インストールされている OLE DB プロバイダーに関する情報を含む、<see cref="T:System.Data.OleDb.OleDbEnumerator" />クラスです。</summary>
+        <returns>返します、<see cref="T:System.Data.OleDb.OleDbDataReader" />表示されている OLE DB プロバイダーに関する情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドから返されたリーダーには、次の列が含まれています。  
+  
+|列の序数|Column|説明|  
+|--------------------|------------|-----------------|  
+|0|SOURCES_NAME|ネイティブの OLEDB データ ソースまたは列挙子の不変名。|  
+|1|SOURCES_PARSENAME|ネイティブな COM インターフェイスためのを使用しているモニカーに変換できる人間が判読できる名前です。 ネイティブ OLE DB ソースの行セットで返される SOURCES_PARSENAME 列に対応します。|  
+|2|SOURCES_DESCRIPTION|ネイティブの OLE DB データ ソースの説明です。 ネイティブ OLE DB ソースの行セットで返される SOURCES_DESCRIPTION 列に対応します。|  
+|3|SOURCES_TYPE|次の列挙メンバーのいずれかの: バインダー (0)、DataSource_MDP (1)、DataSource_TDP (2)、列挙子 (3)。 これらは、ネイティブ OLE DB ソースの行セットの SOURCES_TYPE 列に返される値に対応しています。|  
+|4|SOURCES_ISPARENT|列挙子だけに適用されます。 場合`true`エントリが GetSourcesRowset が呼び出された対象の同じ列挙子に適用されることを示す、サブ列挙型にも含まれていることを意味します。 ネイティブ OLE DB ソースの行セットの SOURCES_ISPARENT 列に対応しています|  
+|5|SOURCES_CLSID|人間が判読できる名前、ため、ネイティブ COM インターフェイスを使用しているモニカーに変換できます。 ネイティブ OLE DB ソースの行セットで返される SOURCES_CLSID 列に対応します。|  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、表示されているすべての OLE DB プロバイダーに関する情報を取得し、コンソール ウィンドウに情報を表示します。  
+  
+```vb  
+Imports System.Data  
+Imports System.Data.OleDb  
+  
+Module Module1  
+  
+  Sub Main()  
+    Dim enumerator As New OleDbEnumerator  
+    Dim reader As OleDbDataReader = OleDbEnumerator.GetRootEnumerator()  
+  
+    DisplayData(reader)  
+  
+    Console.WriteLine("Press any key to continue.")  
+    Console.ReadKey()  
+  End Sub  
+  
+  Private Sub DisplayData(ByVal reader As OleDbDataReader)  
+    While reader.Read()  
+      For i As Integer = 0 To reader.FieldCount - 1  
+        Console.WriteLine("{0} = {1}", _  
+         reader.GetName(i), reader.GetValue(i))  
+      Next  
+      Console.WriteLine("==================================")  
+    End While  
+  
+  End Sub  
+End Module  
+```  
+  
+```csharp  
+using System;  
+using System.Data;  
+using System.Data.OleDb;  
+  
+class Program  
+{  
+ static void Main()  
+ {  
+   OleDbDataReader reader = OleDbEnumerator.GetRootEnumerator();  
+  
+   DisplayData(reader);  
+  
+   Console.WriteLine("Press any key to continue.");  
+   Console.ReadKey();  
+ }  
+  
+ static void DisplayData(OleDbDataReader reader)  
+ {  
+   while (reader.Read())  
+   {  
+     for (int i = 0; i < reader.FieldCount; i++)  
+     {  
+       Console.WriteLine("{0} = {1}",  
+        reader.GetName(i), reader.GetValue(i));  
+     }  
+     Console.WriteLine("==================================");  
+   }  
+ }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">プロバイダーは ISourcesRowset をサポートしていません。</exception>
+        <exception cref="T:System.Data.OleDb.OleDbException">基になるプロバイダーでは、例外が発生します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

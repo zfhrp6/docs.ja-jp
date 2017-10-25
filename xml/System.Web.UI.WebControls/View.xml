@@ -1,0 +1,290 @@
+<Type Name="View" FullName="System.Web.UI.WebControls.View">
+  <TypeSignature Language="C#" Value="public class View : System.Web.UI.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit View extends System.Web.UI.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.View" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.ViewDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:View runat="server"&gt;&lt;/{0}:View&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>グループ内のコントロールのコンテナーとして機能するコントロールを表す、<see cref="T:System.Web.UI.WebControls.MultiView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.View>コントロールは、コントロールのグループのコンテナーです。 A<xref:System.Web.UI.WebControls.View>内でコントロールを含めることが常に必要があります、<xref:System.Web.UI.WebControls.MultiView>コントロール。 1 つだけ<xref:System.Web.UI.WebControls.View>内でアクティブなビューとして定義できるコントロールを時、<xref:System.Web.UI.WebControls.MultiView>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティを指定、アクティブな<xref:System.Web.UI.WebControls.View>内の制御、<xref:System.Web.UI.WebControls.MultiView.Views%2A>のコレクション、<xref:System.Web.UI.WebControls.MultiView>コントロール。 アクティブ ビュー コントロールが含まれている限り、クライアントにレンダリングされる<xref:System.Web.UI.WebControls.MultiView>コントロールが表示されます。 使用して、<xref:System.Web.UI.WebControls.View.Visible%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.View>コントロールとその子コントロールはページ上に表示およびレンダリングされたクライアントにします。  
+  
+ A<xref:System.Web.UI.WebControls.View>コントロールは、その他を含む任意の型のコントロールを含めることができます<xref:System.Web.UI.WebControls.MultiView>コントロール。 A<xref:System.Web.UI.WebControls.View>コントロールがスタイル プロパティをサポートしていません。 スタイルを設定し、<xref:System.Web.UI.WebControls.View>コントロールを 1 つ以上追加<xref:System.Web.UI.WebControls.Panel>コントロールを<xref:System.Web.UI.WebControls.View>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.View>クラスを提供、<xref:System.Web.UI.WebControls.View.Activate>と<xref:System.Web.UI.WebControls.View.Deactivate>イベント。 <xref:System.Web.UI.WebControls.View.Activate>イベントが発生したときに、現在<xref:System.Web.UI.WebControls.View>アクティブ ビュー コントロールになります。 これが発生したときの値、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティの変更、または<xref:System.Web.UI.WebControls.MultiView.SetActiveView%2A>メソッドを呼び出して、別の指定を<xref:System.Web.UI.WebControls.View>コントロール。 たとえば場合、`View1`内でアクティブなビューは、<xref:System.Web.UI.WebControls.MultiView>コントロールときに、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>を指定するプロパティが変更された`View2`、<xref:System.Web.UI.WebControls.View.Activate>に対してイベントが生成`View2`と<xref:System.Web.UI.WebControls.View.Deactivate>に対してイベントが生成`View1`です。  
+  
+ 複数間を移動できるようにする<xref:System.Web.UI.WebControls.View>内で制御、<xref:System.Web.UI.WebControls.MultiView>コントロールを追加できます、<xref:System.Web.UI.WebControls.LinkButton>または<xref:System.Web.UI.WebControls.Button>に制御を各<xref:System.Web.UI.WebControls.View>コントロール。 設定、<xref:System.Web.UI.WebControls.LinkButton>または<xref:System.Web.UI.WebControls.Button>コントロールの`CommandName`プロパティの ID を<xref:System.Web.UI.WebControls.View>コントロールに移動します。 コード例については、「<xref:System.Web.UI.WebControls.MultiView.ActiveViewChanged>」を参照してください。  
+  
+ 操作の詳細については<xref:System.Web.UI.WebControls.View>内で制御、<xref:System.Web.UI.WebControls.MultiView>を制御しを参照してください、<xref:System.Web.UI.WebControls.MultiView>トピックです。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:View  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    OnActivate="Activate event handler"  
+    OnDataBinding="DataBinding event handler"  
+    OnDeactivate="Deactivate event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Visible="True|False"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、 <xref:System.Web.UI.WebControls.MultiView> 3 種類を含むコントロール<xref:System.Web.UI.WebControls.View>コントロール。 ページの読み込みが、初めて`DefaultView`アクティブ ビューとして設定されています。 各<xref:System.Web.UI.WebControls.View>リンク ボタン使用するさまざまなビューに移動するユーザーにはがコントロールに含まれています。 <xref:System.Web.UI.WebControls.View>コントロールに含まれる、<xref:System.Web.UI.WebControls.Panel>適用されるスタイルをようにコントロールを使用します。  
+  
+ [!code-aspx-vb[MultiView Class Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView Class Example/VB/multiviewclass1vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public View ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.View.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.View" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate">
+      <MemberSignature Language="C#" Value="public event EventHandler Activate;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Activate" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.View.Activate" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、現在<see cref="T:System.Web.UI.WebControls.View" />アクティブ ビュー コントロールになります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.View.Activate>イベントが発生したときに、現在<xref:System.Web.UI.WebControls.View>アクティブ ビュー コントロールになります。 これが発生したときの値、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティの変更、または<xref:System.Web.UI.WebControls.MultiView.SetActiveView%2A>メソッドを呼び出して、別の指定を<xref:System.Web.UI.WebControls.View>コントロール。 たとえば場合、`View1`内でアクティブなビューは、<xref:System.Web.UI.WebControls.MultiView>コントロールときに、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>を指定するプロパティが変更された`View2`、<xref:System.Web.UI.WebControls.View.Activate>に対してイベントが生成`View2`と<xref:System.Web.UI.WebControls.View.Deactivate>に対してイベントが生成`View1`です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのイベント ハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.View.Activate>のイベント、<xref:System.Web.UI.WebControls.View>コントロール。 アクティブな変更を表示、ユーザーを指定するメッセージが表示されます、<xref:System.Web.UI.WebControls.View>制御を発生させた、<xref:System.Web.UI.WebControls.View.Activate>イベントおよび<xref:System.Web.UI.WebControls.View>制御を発生させた、<xref:System.Web.UI.WebControls.View.Deactivate>イベント。  
+  
+ [!code-aspx-csharp[View.Activate Event Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/View.Activate Event Example/cs/viewactivateeventcs.aspx#1)]
+ [!code-aspx-vb[View.Activate Event Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/View.Activate Event Example/VB/viewactivateeventvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deactivate">
+      <MemberSignature Language="C#" Value="public event EventHandler Deactivate;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Deactivate" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.View.Deactivate" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、現在アクティブな<see cref="T:System.Web.UI.WebControls.View" />コントロールが非アクティブになります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.View.Deactivate>イベントが発生したときに、現在アクティブな<xref:System.Web.UI.WebControls.View>コントロールが非アクティブになります。 A<xref:System.Web.UI.WebControls.View>コントロールがアクティブでない場合の値、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>プロパティの変更、または<xref:System.Web.UI.WebControls.MultiView.SetActiveView%2A>メソッドを呼び出して、別の指定を<xref:System.Web.UI.WebControls.View>コントロール。 たとえば場合、`View1`内でアクティブなビューは、<xref:System.Web.UI.WebControls.MultiView>コントロールときに、<xref:System.Web.UI.WebControls.MultiView.ActiveViewIndex%2A>を指定するプロパティが変更された`View2`、<xref:System.Web.UI.WebControls.View.Deactivate>に対してイベントが生成`View1`と<xref:System.Web.UI.WebControls.View.Activate>に対してイベントが生成`View2`です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのイベント ハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.View.Deactivate>のイベント、<xref:System.Web.UI.WebControls.View>コントロール。 アクティブな変更を表示、ユーザーを指定するメッセージが表示されます、<xref:System.Web.UI.WebControls.View>制御を発生させた、<xref:System.Web.UI.WebControls.View.Activate>イベントおよび<xref:System.Web.UI.WebControls.View>制御を発生させた、<xref:System.Web.UI.WebControls.View.Deactivate>イベント。  
+  
+ [!code-aspx-csharp[View.Activate Event Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/View.Activate Event Example/cs/viewactivateeventcs.aspx#1)]
+ [!code-aspx-vb[View.Activate Event Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/View.Activate Event Example/VB/viewactivateeventvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableTheming">
+      <MemberSignature Language="C#" Value="public override bool EnableTheming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableTheming" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.View.EnableTheming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのコントロールにテーマを適用するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />テーマを使用するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.View.EnableTheming%2A>プロパティは、テーマが有効になっているかどうかを示す、<xref:System.Web.UI.WebControls.View>コントロール。 <xref:System.Web.UI.WebControls.View.EnableTheming%2A>プロパティに含まれるコントロールのテーマが有効になっているかどうかにも影響その<xref:System.Web.UI.Control.Controls%2A?displayProperty=nameWithType>コレクション。 ときに、<xref:System.Web.UI.WebControls.View.EnableTheming%2A>プロパティは`true`、コントロール スキンを適用するテーマのアプリケーションのディレクトリが検索されます。 テーマのディレクトリ内の特定のコントロール スキンが存在しない場合、スキンは適用されません。 ときに、<xref:System.Web.UI.WebControls.View.EnableTheming%2A>プロパティは`false`、テーマのディレクトリは検索されませんの内容と、<xref:System.Web.UI.Control.SkinID%2A>プロパティは使用されません。  
+  
+ オーバーライドする、<xref:System.Web.UI.WebControls.View.EnableTheming%2A>値、親コントロールまたはコントロールを含むページのセット。 などの場合、<xref:System.Web.UI.WebControls.View>コントロールに<xref:System.Web.UI.WebControls.View.EnableTheming%2A>に設定`false`、内に含まれる子コントロールにテーマを選択的に適用することができます、<xref:System.Web.UI.WebControls.View>コントロールを設定して、<xref:System.Web.UI.Control.EnableTheming%2A>プロパティを`true`個々 の子コントロールにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActivate">
+      <MemberSignature Language="C#" Value="protected virtual void OnActivate (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnActivate(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.View.OnActivate(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.View.Activate" />のイベント、<see cref="T:System.Web.UI.WebControls.View" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.View.Activate>イベントが発生したときに、現在<xref:System.Web.UI.WebControls.View>アクティブ ビュー コントロールになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeactivate">
+      <MemberSignature Language="C#" Value="protected virtual void OnDeactivate (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnDeactivate(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.View.OnDeactivate(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.View.Deactivate" />のイベント、<see cref="T:System.Web.UI.WebControls.View" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.View.Deactivate>イベントが発生したときに、現在アクティブな<xref:System.Web.UI.WebControls.View>コントロールが非アクティブになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public override bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.View.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Web.UI.WebControls.View" />コントロールが表示されます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.View" />コントロールが表示されている場合は、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.View.Visible%2A>を決定するプロパティかどうか、現在<xref:System.Web.UI.WebControls.View>コントロールがクライアントに表示および描画します。 <xref:System.Web.UI.WebControls.View> 、レンダリングされるページに表示するコントロールをアクティブなビューを含んでいる必要があります<xref:System.Web.UI.WebControls.MultiView>制御、および含まれている<xref:System.Web.UI.WebControls.MultiView>コントロールを表示する必要があります。 場合を含む、<xref:System.Web.UI.WebControls.MultiView>コントロールがページで、表示されない場合は、<xref:System.Web.UI.WebControls.View>コントロールは、アクティブなビューではありません、<xref:System.Web.UI.WebControls.View>コントロールとその子コントロールはレンダリングされません。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.View.Visible%2A>プロパティ、可視性とコンテナーの親コントロールのアクティブなビューに基づいて内部的に設定します。 実行時に、このプロパティを設定する場合、<xref:System.InvalidOperationException>例外がスローされます。 設定した場合、<xref:System.Web.UI.WebControls.View.Visible%2A>プロパティへの変更、デザイン時にプロパティが無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">実行時にこのプロパティを設定しようとしました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

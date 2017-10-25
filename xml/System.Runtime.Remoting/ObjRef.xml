@@ -1,0 +1,407 @@
+<Type Name="ObjRef" FullName="System.Runtime.Remoting.ObjRef">
+  <TypeSignature Language="C#" Value="public class ObjRef : System.Runtime.Serialization.IObjectReference, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ObjRef extends System.Object implements class System.Runtime.Serialization.IObjectReference, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.ObjRef" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IObjectReference</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リモート オブジェクトと通信するためにプロキシを生成するために必要なすべての関連情報を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Remoting.ObjRef>を拡張するオブジェクトのシリアル化可能な表現である<xref:System.MarshalByRefObject>(MBR)。 A<xref:System.Runtime.Remoting.ObjRef>間でのオブジェクト参照を転送するため、<xref:System.AppDomain>境界です。 作成する、<xref:System.Runtime.Remoting.ObjRef>のオブジェクトはマーシャ リングと呼ばれます。 作成することができます、 <xref:System.Runtime.Remoting.ObjRef> (マーシャ リング、 <xref:System.MarshalByRefObject>) するか、明示的に MBR を登録することによってオブジェクトをリモート処理インフラストラクチャ (を参照してください<xref:System.Runtime.Remoting.RemotingConfiguration>と<xref:System.Runtime.Remoting.RemotingServices.Marshal%2A?displayProperty=nameWithType>)、リモート オブジェクトを呼び出すときは、パラメーターとして MBR オブジェクトを渡すことにより、暗黙的にします。 リモート処理を使用して<xref:System.Runtime.Remoting.ObjRef>格納およびに関するすべての関連情報を送信するオブジェクト、<xref:System.MarshalByRefObject>リモート処理は実行されます。  
+  
+ <xref:System.Runtime.Remoting.ObjRef>を説明する情報が含まれています、<xref:System.Type>と、オブジェクトのクラスのマーシャ リングされる、正確な場所、および通信に関連する方法については、オブジェクトが配置されているリモート処理の下位区分に到達します。  
+  
+ クラスの実装後に<xref:System.MarshalByRefObject>はマーシャ リング、<xref:System.Runtime.Remoting.ObjRef>を表す別のプロセスやコンピューターにある別のアプリケーション ドメインにチャネルを経由で転送します。 ときに、<xref:System.Runtime.Remoting.ObjRef>が逆シリアル化 (を参照してください[XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)) リモート MBR オブジェクトの透過的なプロキシを作成する対象のアプリケーション ドメインに解析されます。 この操作は、マーシャ リング解除と呼ばれます。  
+  
+ 透過プロキシは、クライアントの領域に、実際のオブジェクトが格納されている奥行を提供するオブジェクトです。 これで、リモート処理インフラストラクチャを使用して実際のオブジェクトへの呼び出しを転送することによって、これを実現します。 透過的なプロキシ型のマネージ ランタイム クラスのインスタンスによって自体は<xref:System.Runtime.Remoting.Proxies.RealProxy>します。 <xref:System.Runtime.Remoting.Proxies.RealProxy>透過プロキシから、操作を転送するために必要な機能の一部を実装します。  
+  
+ プロキシ オブジェクトには関係なく使用できます、<xref:System.AppDomain>です。 アプリケーションでは、プロキシの参照とオブジェクト参照が区別する必要があります。 ただし、サービス プロバイダーがアクティブ化などの問題を処理する、有効期間の管理、およびトランザクション行う必要がこのような区別します。  
+  
+ このクラスは、リンク確認要求し、クラス レベルの継承確認要求を使用します。 A<xref:System.Security.SecurityException>直前の呼び出し元または派生クラスのいずれかに、インフラストラクチャのアクセス許可があるない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+   
+  
+## Examples  
+ カスタムの使用を次のコード例に示します<xref:System.Runtime.Remoting.ObjRef>です。 カスタムのテストのアクティブ化コードを表示する<xref:System.Runtime.Remoting.ObjRef>の例を参照して、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterWellKnownServiceType%2A>メソッドです。  
+  
+ [!code-cpp[CreateObjRef2#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CreateObjRef2/CPP/example.cpp#1)]
+ [!code-csharp[CreateObjRef2#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CreateObjRef2/CS/example.cs#1)]
+ [!code-vb[CreateObjRef2#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/CreateObjRef2/VB/example.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjRef ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ObjRef.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.ObjRef" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjRef (MarshalByRefObject o, Type requestedType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.MarshalByRefObject o, class System.Type requestedType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ObjRef.#ctor(System.MarshalByRefObject,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="o" Type="System.MarshalByRefObject" />
+        <Parameter Name="requestedType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="o">オブジェクトを新しい<see cref="T:System.Runtime.Remoting.ObjRef" />インスタンスを参照します。</param>
+        <param name="requestedType"><see cref="T:System.Type" />のオブジェクトを新しい<see cref="T:System.Runtime.Remoting.ObjRef" />インスタンスを参照します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.ObjRef" />を指定された参照クラス<see cref="T:System.MarshalByRefObject" />指定した<see cref="T:System.Type" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[CreateObjRef#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CreateObjRef/CPP/example.cpp#1)]
+ [!code-csharp[CreateObjRef#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CreateObjRef/CS/example.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ObjRef (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ObjRef.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">ソースまたは例外の転送先に関する文脈情報。</param>
+        <summary>シリアル化したデータから、<see cref="T:System.Runtime.Remoting.ObjRef" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、「<xref:System.Runtime.Serialization.ISerializable>」を参照してください。  
+  
+   
+  
+## Examples  
+ [!code-cpp[CreateObjRef#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CreateObjRef/CPP/example.cpp#1)]
+ [!code-csharp[CreateObjRef#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CreateObjRef/CS/example.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelInfo">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.IChannelInfo ChannelInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.IChannelInfo ChannelInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ObjRef.ChannelInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.IChannelInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Runtime.Remoting.IChannelInfo" /> の <see cref="T:System.Runtime.Remoting.ObjRef" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Runtime.Remoting.IChannelInfo" />のためのインターフェイス、<see cref="T:System.Runtime.Remoting.ObjRef" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のプロパティは、プロセスでは、アクティブなチャネルから提供された情報を保持しているときに、<xref:System.Runtime.Remoting.ObjRef>が作成される (を参照してください<xref:System.Runtime.Remoting.RemotingServices.Marshal%2A>のマーシャ リングに関する詳細について)。 この情報は、現在のインスタンスによって表されるオブジェクトと通信するトランスポート シンクを作成するかどうかを決定する他のプロセスやアプリケーション ドメイン内のチャネルで使用できます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[CreateObjRef#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CreateObjRef/CPP/example.cpp#1)]
+ [!code-csharp[CreateObjRef#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CreateObjRef/CS/example.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnvoyInfo">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.IEnvoyInfo EnvoyInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.IEnvoyInfo EnvoyInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ObjRef.EnvoyInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.IEnvoyInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Runtime.Remoting.IEnvoyInfo" /> の <see cref="T:System.Runtime.Remoting.ObjRef" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Runtime.Remoting.IEnvoyInfo" />のためのインターフェイス、<see cref="T:System.Runtime.Remoting.ObjRef" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のプロパティには、オブジェクトを表すためのプロキシが作成されるときに再生成を取得する、シリアル化されたメッセージ シンクのチェーンが含まれています。 これは使用<xref:System.Runtime.Remoting.Contexts.Context>バインドされたオブジェクトがのみ、型し、トランザクションなどのランタイム サービスを提供するオブジェクトのグループを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ObjRef.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">ソースまたはシリアル化の転送先に関する文脈情報。</param>
+        <summary>指定した設定<see cref="T:System.Runtime.Serialization.SerializationInfo" />、現在のシリアル化に必要なデータと<see cref="T:System.Runtime.Remoting.ObjRef" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドが提供されている<xref:System.Runtime.Serialization.SerializationInfo>を再作成するために必要なすべてのデータ、<xref:System.Runtime.Remoting.ObjRef>です。  
+  
+ 現在のメソッドの実装は、<xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[CreateObjRef#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CreateObjRef/CPP/example.cpp#1)]
+ [!code-csharp[CreateObjRef#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CreateObjRef/CS/example.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、シリアル化フォーマッタのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRealObject">
+      <MemberSignature Language="C#" Value="public virtual object GetRealObject (System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetRealObject(valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ObjRef.GetRealObject(System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">現在のオブジェクトが存在するコンテキスト。</param>
+        <summary>リモート オブジェクトへの参照を返します、<see cref="T:System.Runtime.Remoting.ObjRef" />について説明します。</summary>
+        <returns>リモートへの参照がオブジェクトを<see cref="T:System.Runtime.Remoting.ObjRef" />について説明します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドは、逆シリアル化のフィックス アップ ステージ中に呼び出されます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[CreateObjRef#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CreateObjRef/CPP/example.cpp#1)]
+ [!code-csharp[CreateObjRef#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CreateObjRef/CS/example.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、シリアル化フォーマッタのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFromThisAppDomain">
+      <MemberSignature Language="C#" Value="public bool IsFromThisAppDomain ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsFromThisAppDomain() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ObjRef.IsFromThisAppDomain" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示すブール値を返すかどうか、現在<see cref="T:System.Runtime.Remoting.ObjRef" />インスタンスが現在の配置されたオブジェクトを参照<see cref="T:System.AppDomain" />です。</summary>
+        <returns>示すブール値かどうか、現在<see cref="T:System.Runtime.Remoting.ObjRef" />インスタンスが現在の配置されたオブジェクトを参照<see cref="T:System.AppDomain" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[CreateObjRef#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CreateObjRef/CPP/example.cpp#1)]
+ [!code-csharp[CreateObjRef#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CreateObjRef/CS/example.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFromThisProcess">
+      <MemberSignature Language="C#" Value="public bool IsFromThisProcess ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsFromThisProcess() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ObjRef.IsFromThisProcess" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示すブール値を返すかどうか、現在<see cref="T:System.Runtime.Remoting.ObjRef" />インスタンスが現在のプロセス内にあるオブジェクトを参照します。</summary>
+        <returns>ブール値を示すかどうか、現在<see cref="T:System.Runtime.Remoting.ObjRef" />インスタンスが現在のプロセス内にあるオブジェクトを参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[CreateObjRef#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CreateObjRef/CPP/example.cpp#1)]
+ [!code-csharp[CreateObjRef#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CreateObjRef/CS/example.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeInfo">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.IRemotingTypeInfo TypeInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.IRemotingTypeInfo TypeInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ObjRef.TypeInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.IRemotingTypeInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Runtime.Remoting.IRemotingTypeInfo" />オブジェクトを<see cref="T:System.Runtime.Remoting.ObjRef" />について説明します。</summary>
+        <value><see cref="T:System.Runtime.Remoting.IRemotingTypeInfo" />オブジェクトを<see cref="T:System.Runtime.Remoting.ObjRef" />について説明します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.ObjRef.TypeInfo%2A>現在のリモート オブジェクトの種類に関する詳細情報を含む<xref:System.Runtime.Remoting.ObjRef>です。 現在のプロパティには、型階層だけでなく、型が実装するインターフェイスの一覧が含まれています。 この情報は、クライアントのリモート オブジェクトの種類の表示を調整する段階的に、プロキシの調整に使用可能性があります。  
+  
+   
+  
+## Examples  
+ [!code-cpp[CreateObjRef#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CreateObjRef/CPP/example.cpp#1)]
+ [!code-csharp[CreateObjRef#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CreateObjRef/CS/example.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="URI">
+      <MemberSignature Language="C#" Value="public virtual string URI { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string URI" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ObjRef.URI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または特定のオブジェクト インスタンスの URI を設定します。</summary>
+        <value>特定のオブジェクト インスタンスの URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URI は、特定のオブジェクト インスタンスを一意に識別します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[CreateObjRef#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CreateObjRef/CPP/example.cpp#1)]
+ [!code-csharp[CreateObjRef#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CreateObjRef/CS/example.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

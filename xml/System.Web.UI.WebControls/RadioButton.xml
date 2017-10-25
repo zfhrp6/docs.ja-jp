@@ -1,0 +1,325 @@
+<Type Name="RadioButton" FullName="System.Web.UI.WebControls.RadioButton">
+  <TypeSignature Language="C#" Value="public class RadioButton : System.Web.UI.WebControls.CheckBox" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RadioButton extends System.Web.UI.WebControls.CheckBox implements class System.Web.UI.IPostBackDataHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RadioButton" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.CheckBox</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.CheckBoxDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ラジオ ボタン コントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [ユーザー補助](#accessibility)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.RadioButton>サーバー コントロールを使用すると、グループ内の他のページの内容のラジオ ボタンを挿入します。 ボタンは、すべてが同じ場合は、論理的にグループ化。<xref:System.Web.UI.WebControls.RadioButton.GroupName%2A>プロパティです。  
+  
+> [!NOTE]
+>  使用することができます、<xref:System.Web.UI.WebControls.RadioButton>悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示するコントロール。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。 詳細については、次を参照してください。[検証サーバー コントロール構文](http://msdn.microsoft.com/en-us/96d2c59e-693c-4079-9b53-b3ff0d9e9133)です。  
+  
+<a name="accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ このコントロールの既定で表示されるマークアップは、Web コンテンツ ユーザー補助ガイドライン 1.0 (WCAG) 優先度 1 のガイドラインなどのユーザー補助の標準に準拠していません可能性があります。 このコントロールのユーザー補助のサポートに関する詳細については、「 [ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:RadioButton  
+    AccessKey="string"  
+    AutoPostBack="True|False"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CausesValidation="True|False"  
+    Checked="True|False"  
+    CssClass="string"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    GroupName="string"  
+    Height="size"  
+    ID="string"  
+    OnCheckedChanged="CheckedChanged event handler"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    Text="string"  
+    TextAlign="Left|Right"  
+    ToolTip="string"  
+    ValidationGroup="string"  
+    Visible="True|False"  
+    Width="size"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示しています、<xref:System.Web.UI.WebControls.RadioButton>コントロール。  
+  
+ [!code-aspx-csharp[Classic RadioButton Example 2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RadioButton Example 2/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RadioButton Example 2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RadioButton Example 2/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RadioButton ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButton.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButton" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成する方法を示しています、<xref:System.Web.UI.WebControls.RadioButton>クラスを使用して、<xref:System.Web.UI.WebControls.RadioButton.%23ctor%2A>コンス トラクターです。  
+  
+ [!code-csharp[Classic RadioButton Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RadioButton Example/CS/source.cs#1)]
+ [!code-vb[Classic RadioButton Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RadioButton Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupName">
+      <MemberSignature Language="C#" Value="public virtual string GroupName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GroupName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RadioButton.GroupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはラジオ ボタンが属するグループの名前を設定します。</summary>
+        <value>ラジオ ボタンが属するグループの名前。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RadioButton.GroupName%2A>プロパティ、コントロールの相互に排他的なセットを作成するラジオ ボタンのグループ化を指定します。 使用することができます、<xref:System.Web.UI.WebControls.RadioButton.GroupName%2A>プロパティの 1 つだけ選択範囲が使用可能なオプションの一覧から可能な場合です。  
+  
+ このプロパティ設定されている場合、1 つだけ<xref:System.Web.UI.WebControls.RadioButton>指定したグループでは、一度に選択できます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を設定する方法を示しています、<xref:System.Web.UI.WebControls.RadioButton.GroupName%2A>プロパティ プログラムでします。  
+  
+ [!code-aspx-csharp[Classic RadioButton.GroupName Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RadioButton.GroupName Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RadioButton.GroupName Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RadioButton.GroupName Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadPostData">
+      <MemberSignature Language="C#" Value="protected override bool LoadPostData (string postDataKey, System.Collections.Specialized.NameValueCollection postCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool LoadPostData(string postDataKey, class System.Collections.Specialized.NameValueCollection postCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButton.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="postDataKey" Type="System.String" />
+        <Parameter Name="postCollection" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="postDataKey">コントロールのキー識別子。</param>
+        <param name="postCollection">すべての着信名前値のコレクション。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.RadioButton" /> コントロールのポストバック データを処理します。</summary>
+        <returns>
+          <see langword="true" />場合のデータを<see cref="T:System.Web.UI.WebControls.RadioButton" />が変更された、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButton.LoadPostData%2A> メソッドは、<xref:System.Web.UI.IPostBackDataHandler.LoadPostData%2A> メソッドによって呼び出されます。 機能を拡張するコントロールの開発者によって、主に使用されます、<xref:System.Web.UI.WebControls.RadioButton>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButton.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.PreRender" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButton.OnPreRender%2A>メソッドは、通知、<xref:System.Web.UI.WebControls.RadioButton>コントロール ビュー ステートや内容の表示を保存する前に、必要な表示前の手順を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostDataChangedEvent">
+      <MemberSignature Language="C#" Value="protected override void RaisePostDataChangedEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RaisePostDataChangedEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButton.RaisePostDataChangedEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>発生させる、<see cref="E:System.Windows.Forms.RadioButton.CheckedChanged" />イベント場合、<see cref="P:System.Windows.Forms.RadioButton.Checked" />ポストバック時にプロパティが変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RadioButton.RaisePostDataChangedEvent%2A> メソッドは、<xref:System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent%2A> メソッドによって呼び出されます。 機能を拡張するコントロールの開発者によって、主に使用されます、<xref:System.Web.UI.WebControls.RadioButton>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackDataHandler.LoadPostData">
+      <MemberSignature Language="C#" Value="bool IPostBackDataHandler.LoadPostData (string postDataKey, System.Collections.Specialized.NameValueCollection postCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Web.UI.IPostBackDataHandler.LoadPostData(string postDataKey, class System.Collections.Specialized.NameValueCollection postCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButton.System#Web#UI#IPostBackDataHandler#LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="postDataKey" Type="System.String" />
+        <Parameter Name="postCollection" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="postDataKey">文字列。</param>
+        <param name="postCollection">データのポストされたコレクションを表す名前値のコレクション。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.IPostBackDataHandler.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)" />」をご覧ください。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="T:System.Web.UI.WebControls.RadioButton" />、それ以外のチェック<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.RadioButton>にコントロールをキャスト、<xref:System.Web.UI.IPostBackDataHandler>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent">
+      <MemberSignature Language="C#" Value="void IPostBackDataHandler.RaisePostDataChangedEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RadioButton.System#Web#UI#IPostBackDataHandler#RaisePostDataChangedEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.RadioButton>にコントロールをキャスト、<xref:System.Web.UI.IPostBackDataHandler>インターフェイスです。  
+  
+ 場合、<xref:System.Web.UI.WebControls.CheckBox.Checked%2A>ポストバックでプロパティが変更された、<xref:System.Web.UI.WebControls.RadioButton.RaisePostDataChangedEvent%2A>メソッドが発生し、<xref:System.Web.UI.WebControls.CheckBox.CheckedChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

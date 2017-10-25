@@ -1,0 +1,104 @@
+<Type Name="ElementLocalizability" FullName="System.Windows.Markup.Localizer.ElementLocalizability">
+  <TypeSignature Language="C#" Value="public class ElementLocalizability" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ElementLocalizability extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.Localizer.ElementLocalizability" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>BAML 内の要素のローカライズ設定を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ElementLocalizability ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.ElementLocalizability.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.Localizer.ElementLocalizability" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ElementLocalizability (string formattingTag, System.Windows.LocalizabilityAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string formattingTag, class System.Windows.LocalizabilityAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.ElementLocalizability.#ctor(System.String,System.Windows.LocalizabilityAttribute)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="formattingTag" Type="System.String" />
+        <Parameter Name="attribute" Type="System.Windows.LocalizabilityAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="formattingTag">書式設定タグ名。 インラインの書式設定を示すためにこのパラメーターに空でない値を割り当てます。</param>
+        <param name="attribute">関連付けられた要素のローカライズ対象の属性です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.Localizer.ElementLocalizability" />指定の書式設定タグとローカライズ化属性を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attribute">
+      <MemberSignature Language="C#" Value="public System.Windows.LocalizabilityAttribute Attribute { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.LocalizabilityAttribute Attribute" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Localizer.ElementLocalizability.Attribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.LocalizabilityAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連付けられている要素のローカライズ化属性を設定します。</summary>
+        <value>関連付けられた要素のローカライズ対象の属性です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカライズ化属性は、要素がローカライズ可能なにないことを示している場合、<xref:System.Windows.Markup.Localizer.ElementLocalizability.FormattingTag%2A>値は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormattingTag">
+      <MemberSignature Language="C#" Value="public string FormattingTag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FormattingTag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Localizer.ElementLocalizability.FormattingTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連付けられている要素の書式設定タグを設定します。</summary>
+        <value>書式指定のタグ文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が空の文字列の場合は、要素はインラインの書式設定されません。 代わりに、要素は親のコンテンツで子のプレース ホルダーで表されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

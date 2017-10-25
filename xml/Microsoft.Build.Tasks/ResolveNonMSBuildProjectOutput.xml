@@ -1,0 +1,138 @@
+<Type Name="ResolveNonMSBuildProjectOutput" FullName="Microsoft.Build.Tasks.ResolveNonMSBuildProjectOutput">
+  <TypeSignature Language="C#" Value="public class ResolveNonMSBuildProjectOutput : Microsoft.Build.Tasks.ResolveProjectBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResolveNonMSBuildProjectOutput extends Microsoft.Build.Tasks.ResolveProjectBase" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.ResolveNonMSBuildProjectOutput" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Tasks.ResolveProjectBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>MSBuild 以外のプロジェクト参照に対する出力ファイルを確認します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ResolveNonMSBuildProjectOutput`タスクの設定特別なプロパティを検索、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]プロジェクト Guid と、関連付けられている出力の一覧の IDE です。 IDE 事前解決できるだけではない[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]プロジェクトし、この方法で分離[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]以外からの参照をプロジェクト[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]参照します。 IDE のリストを返す[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]UnresolvedProjectReferences としてのプロジェクトです。 これによりより強力なを使用するタスク[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]を操作するメカニズムだけ[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]など、参照をプロジェクトします。 マニフェスト ファイル名を取得するへの参照の特定のターゲットへの呼び出しをすることはできませんの混在の一覧で[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]と非-[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]プロジェクト参照。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResolveNonMSBuildProjectOutput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ResolveNonMSBuildProjectOutput.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.ResolveNonMSBuildProjectOutput" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override bool Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ResolveNonMSBuildProjectOutput.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行、 <c>ResolveNonMSBuildProjectOutput</c>タスク。</summary>
+        <returns>
+          タスクの実行が成功した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PreresolvedProjectOutputs">
+      <MemberSignature Language="C#" Value="public string PreresolvedProjectOutputs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreresolvedProjectOutputs" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveNonMSBuildProjectOutput.PreresolvedProjectOutputs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>解決済みのプロジェクト出力を含む XML 文字列を取得または設定します。</summary>
+        <value>解決済みのプロジェクト出力を含む XML 文字列。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvedOutputPaths">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] ResolvedOutputPaths { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] ResolvedOutputPaths" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveNonMSBuildProjectOutput.ResolvedOutputPaths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のプロジェクト参照属性を保持している解決済みの参照パスを取得または設定します。</summary>
+        <value>元のプロジェクト参照属性を保持している解決済みの参照パス。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UnresolvedProjectReferences">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] UnresolvedProjectReferences { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] UnresolvedProjectReferences" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveNonMSBuildProjectOutput.UnresolvedProjectReferences" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定されているプロジェクト参照項目、[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]形式です。</summary>
+        <value>プロジェクト参照項目に含まれる、[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]形式です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]前解決のみ非[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]でプロジェクトの場合、出力の事前解決リストを使用して解決できなかったプロジェクト参照項目は、[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]形式です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

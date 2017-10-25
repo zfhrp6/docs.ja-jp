@@ -1,0 +1,89 @@
+<Type Name="ISynchronizedInputProvider" FullName="System.Windows.Automation.Provider.ISynchronizedInputProvider">
+  <TypeSignature Language="C#" Value="public interface ISynchronizedInputProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISynchronizedInputProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.ISynchronizedInputProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("29db1a06-02ce-4cf7-9b42-565d4fab20ee")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>同期入力をサポートするコントロールへの UI オートメーション クライアント アクセスを容易にするメソッドを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスがサポートする UI オートメーション プロバイダーに実装、<xref:System.Windows.Automation.SynchronizedInputPattern>コントロール パターン。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public void Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ISynchronizedInputProvider.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入力のリッスンを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダーが入力に対して現在リッスンしている場合は、通常の動作に戻ります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartListening">
+      <MemberSignature Language="C#" Value="public void StartListening (System.Windows.Automation.SynchronizedInputType inputType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StartListening(valuetype System.Windows.Automation.SynchronizedInputType inputType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ISynchronizedInputProvider.StartListening(System.Windows.Automation.SynchronizedInputType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputType" Type="System.Windows.Automation.SynchronizedInputType" />
+      </Parameters>
+      <Docs>
+        <param name="inputType">リッスンするように入力の型。</param>
+        <summary>指定した型の入力をリッスンしているプロバイダーが開始を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WPF では、一致する入力が検出されると、受信イベントのルートが確認されます。 入力が破棄された入力をリッスンしているオートメーション要素がルートにない場合は、および<xref:System.Windows.Automation.SynchronizedInputPattern.InputDiscardedEvent>イベントが発生します。 その型をリッスンしてオートメーション要素が、入力を受信した場合、<xref:System.Windows.Automation.SynchronizedInputPattern.InputReachedTargetEvent>イベントが発生した、それ以外の<xref:System.Windows.Automation.SynchronizedInputPattern.InputReachedOtherElementEvent>イベントが発生します。  
+  
+ 入力を受信した後は、プロバイダーはリッスンを停止し、通常続行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,150 @@
+<Type Name="HelpNavigator" FullName="System.Windows.Forms.HelpNavigator">
+  <TypeSignature Language="C#" Value="public enum HelpNavigator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HelpNavigator extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.HelpNavigator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>表示されるヘルプ ファイルの要素を示す定数を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙は使用、<xref:System.Windows.Forms.Help>と<xref:System.Windows.Forms.HelpProvider>ヘルプ ファイルの特定の要素へのアクセスを提供するクラス。 たとえばを使用すると、 <xref:System.Windows.Forms.HelpProvider> F1 ヘルプ、TopicId またはトピックの値を提供するコンポーネントは、コンテキスト固有のトピックにヘルプを開くように指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ヘルプ ファイルとの対話に使用できる 3 つのボタンを備えたフォームが表示されます。 **ヘルプの表示**ボタンが表示されます、**インデックス**ヘルプ ファイルのタブです。 **ヘルプを表示する**ボタンがで選択されている値に基づいて、ヘルプ ファイルのコンテンツを表示、**ヘルプ ナビゲーター**  ボックスの一覧です。 **表示キーワード**ボタンがで指定したキーワードに基づいて、ヘルプ ファイルのコンテンツを表示、**キーワード**テキスト ボックス。  
+  
+ たとえば、ページを表示楕円のヘルプ インデックス値によって、KeywordIndex の値を選択、**ヘルプ ナビゲーター**ドロップダウン リストで、「**楕円**で、**パラメーター**テキスト ボックスをクリックし、**ヘルプを表示する**ボタンをクリックします。 キーワードを使用して、ブラシで描画します。"するには」のヘルプ トピックを表示するには、入力**mspaint.chm::/paint_brush.htm**で、**キーワード**テキスト ボックスに入力し、**表示キーワード**ボタンをクリックします。  
+  
+ この例では、<xref:System.Windows.Forms.Help.ShowHelp%2A>各種タブのヘルプおよびヘルプ トピックを表示するメソッドと<xref:System.Windows.Forms.Help.ShowHelpIndex%2A>ヘルプを表示するメソッド。  
+  
+ [!code-cpp[System.Windows.Forms.Help#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Help/CPP/helpsnippet.cpp#1)]
+ [!code-csharp[System.Windows.Forms.Help#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Help/CS/helpsnippet.cs#1)]
+ [!code-vb[System.Windows.Forms.Help#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Help/VB/helpsnippet.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AssociateIndex">
+      <MemberSignature Language="C#" Value="AssociateIndex" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.HelpNavigator AssociateIndex = int32(-2147483643)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.HelpNavigator.AssociateIndex" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HelpNavigator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘルプ ファイルは、指定したトピックの最初の文字のインデックス エントリが表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="Find" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.HelpNavigator Find = int32(-2147483644)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.HelpNavigator.Find" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HelpNavigator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘルプ ファイルは、検索ページに表示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Index">
+      <MemberSignature Language="C#" Value="Index" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.HelpNavigator Index = int32(-2147483645)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.HelpNavigator.Index" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HelpNavigator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘルプ ファイルは、インデックスが表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="KeywordIndex">
+      <MemberSignature Language="C#" Value="KeywordIndex" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.HelpNavigator KeywordIndex = int32(-2147483642)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.HelpNavigator.KeywordIndex" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HelpNavigator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つが存在する場合、指定したインデックス エントリを持つトピックにヘルプ ファイルの表示します。それ以外の場合、指定したキーワードに最も近いインデックス エントリが表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TableOfContents">
+      <MemberSignature Language="C#" Value="TableOfContents" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.HelpNavigator TableOfContents = int32(-2147483646)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.HelpNavigator.TableOfContents" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HelpNavigator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘルプ ファイルは、目次が表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Topic">
+      <MemberSignature Language="C#" Value="Topic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.HelpNavigator Topic = int32(-2147483647)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.HelpNavigator.Topic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HelpNavigator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘルプ ファイルは、トピックが存在する場合に、指定したトピックが開きます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TopicId">
+      <MemberSignature Language="C#" Value="TopicId" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.HelpNavigator TopicId = int32(-2147483641)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.HelpNavigator.TopicId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HelpNavigator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘルプ ファイルは、トピックの数値識別子で指定されたトピックが表示されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

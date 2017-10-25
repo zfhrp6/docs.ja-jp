@@ -1,0 +1,471 @@
+<Type Name="FrameworkTemplate" FullName="System.Windows.FrameworkTemplate">
+  <TypeSignature Language="C#" Value="public abstract class FrameworkTemplate : System.Windows.Threading.DispatcherObject, System.Windows.Markup.INameScope, System.Windows.Markup.IQueryAmbient" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit FrameworkTemplate extends System.Windows.Threading.DispatcherObject implements class System.Windows.Markup.INameScope, class System.Windows.Markup.IQueryAmbient" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FrameworkTemplate" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.INameScope</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IQueryAmbient</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("VisualTree")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ツリーのインスタンス化を有効に<see cref="T:System.Windows.FrameworkElement" />や<see cref="T:System.Windows.FrameworkContentElement" />オブジェクト。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FrameworkTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkTemplate.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.FrameworkTemplate" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindName">
+      <MemberSignature Language="C#" Value="public object FindName (string name, System.Windows.FrameworkElement templatedParent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object FindName(string name, class System.Windows.FrameworkElement templatedParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkTemplate.FindName(System.String,System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="templatedParent" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="name">文字列名。</param>
+        <param name="templatedParent">コンテキスト、<see cref="T:System.Windows.FrameworkElement" />このテンプレートが適用されています。</param>
+        <summary>このテンプレート内で定義された、指定した名前に関連付けられている要素を検索します。</summary>
+        <returns>指定した名前に関連付けられた要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細についてを参照してください「XAML 名前スコープのスタイルとテンプレート」 [WPF XAML 名前スコープ](~/docs/framework/wpf/advanced/wpf-xaml-namescopes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasContent">
+      <MemberSignature Language="C#" Value="public bool HasContent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkTemplate.HasContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このテンプレートがコンテンツを最適化するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このテンプレートを使用する最適化されたコンテンツが場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSealed">
+      <MemberSignature Language="C#" Value="public bool IsSealed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSealed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkTemplate.IsSealed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ように変更することはできませんこのオブジェクトが不変の状態であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このオブジェクトが、不変の状態の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadContent">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyObject LoadContent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.DependencyObject LoadContent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkTemplate.LoadContent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのインスタンスとして、テンプレートのコンテンツをロードし、コンテンツのルート要素を返します。</summary>
+        <returns>コンテンツのルート要素です。 これを複数回を呼び出すには、個別のインスタンスが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterName">
+      <MemberSignature Language="C#" Value="public void RegisterName (string name, object scopedElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterName(string name, object scopedElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkTemplate.RegisterName(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="scopedElement" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する名前。</param>
+        <param name="scopedElement">指定された名前にマップするオブジェクト。</param>
+        <summary>現在の名前スコープに新しい名前/オブジェクトのペアを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細についてを参照してください「XAML 名前スコープのスタイルとテンプレート」 [WPF XAML 名前スコープ](~/docs/framework/wpf/advanced/wpf-xaml-namescopes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resources">
+      <MemberSignature Language="C#" Value="public System.Windows.ResourceDictionary Resources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.ResourceDictionary Resources" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkTemplate.Resources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このテンプレートのスコープ内で使用できるリソースのコレクションを設定します。</summary>
+        <value>このテンプレートのスコープ内で使用できるリソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlPropertyElementUsage_Resources"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Resources>  
+    oneOrMoreResourceElements  
+  </object.Resources>  
+</object>  
+- or -   
+<object>  
+  <object.Resources>  
+    <ResourceDictionary Source="externalDictionarySource"/>  
+  </object.Resources>  
+</object>  
+```  
+  
+<a name="xamlValues_Resources"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreResourceElements*  
+ 1 つまたは複数のリソース要素です。 いずれかで後で参照されている[StaticResource マークアップ拡張機能](~/docs/framework/wpf/advanced/staticresource-markup-extension.md)または[DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)XAML で構文、リソース要素があります、`x:Key`属性。  
+  
+ \<ResourceDictionary ソース ="*externalDictionarySource*"/>  
+ 外部ファイルを定義する、<xref:System.Windows.ResourceDictionary>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seal">
+      <MemberSignature Language="C#" Value="public void Seal ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Seal() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkTemplate.Seal" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ように変更することはできません、テンプレートをロックします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeResources">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeResources (System.Windows.Markup.XamlDesignerSerializationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeResources(class System.Windows.Markup.XamlDesignerSerializationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkTemplate.ShouldSerializeResources(System.Windows.Markup.XamlDesignerSerializationManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.Windows.Markup.XamlDesignerSerializationManager" />
+      </Parameters>
+      <Docs>
+        <param name="manager"><see cref="T:System.Windows.Markup.XamlDesignerSerializationManager" />。</param>
+        <summary>シリアル化プロセスがの値をシリアル化する必要があるかどうかを示す値を返します、<see cref="P:System.Windows.FrameworkTemplate.Resources" />このクラスのインスタンスのプロパティです。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.Windows.FrameworkTemplate.Resources" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeVisualTree">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeVisualTree ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeVisualTree() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkTemplate.ShouldSerializeVisualTree" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル化プロセスがの値をシリアル化する必要があるかどうかを示す値を返します、<see cref="P:System.Windows.FrameworkTemplate.VisualTree" />このクラスのインスタンスのプロパティです。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.Windows.FrameworkTemplate.VisualTree" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.INameScope.FindName">
+      <MemberSignature Language="C#" Value="object INameScope.FindName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Windows.Markup.INameScope.FindName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkTemplate.System#Windows#Markup#INameScope#FindName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要求されたオブジェクトの名前の識別子。</param>
+        <summary>指定された識別名を持つオブジェクトを返します。</summary>
+        <returns>見つかった場合はオブジェクト。 返します<see langword="null" />その名前のオブジェクトが見つからなかった場合です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.FrameworkTemplate> のインスタンスが <xref:System.Windows.Markup.INameScope> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable">
+      <MemberSignature Language="C#" Value="bool IQueryAmbient.IsAmbientPropertyAvailable (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkTemplate.System#Windows#Markup#IQueryAmbient#IsAmbientPropertyAvailable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">要求されたアンビエント プロパティの名前。</param>
+        <summary>指定されたアンビエント プロパティは、現在のスコープで使用するかどうかを照会します。</summary>
+        <returns>
+          <see langword="true" />要求されたアンビエント プロパティがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Template">
+      <MemberSignature Language="C#" Value="public System.Windows.TemplateContent Template { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TemplateContent Template" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkTemplate.Template" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.TemplateContent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または記録またはテンプレートを定義またはライターによって適用されるときに、テンプレートの XAML ノードを再生するオブジェクトへの参照を設定します。</summary>
+        <value>記録または再生の XAML ノード テンプレートのオブジェクトへの参照。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterName">
+      <MemberSignature Language="C#" Value="public void UnregisterName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UnregisterName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkTemplate.UnregisterName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除するマッピングの名前。</param>
+        <summary>XAML 名前スコープから名前/オブジェクトのマッピングを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細についてを参照してください「XAML 名前スコープのスタイルとテンプレート」 [WPF XAML 名前スコープ](~/docs/framework/wpf/advanced/wpf-xaml-namescopes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateTemplatedParent">
+      <MemberSignature Language="C#" Value="protected virtual void ValidateTemplatedParent (System.Windows.FrameworkElement templatedParent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ValidateTemplatedParent(class System.Windows.FrameworkElement templatedParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.FrameworkTemplate.ValidateTemplatedParent(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templatedParent" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="templatedParent">要素にこのテンプレートが適用されます。</param>
+        <summary>派生クラスでオーバーライドされると、このテンプレートを適用する要素のルールを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基底の実装では、テンプレートの親は null 以外である必要がありますを指定します<xref:System.Windows.FrameworkElement>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualTree">
+      <MemberSignature Language="C#" Value="public System.Windows.FrameworkElementFactory VisualTree { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.FrameworkElementFactory VisualTree" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkTemplate.VisualTree" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkElementFactory</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテンプレートのルート ノードを設定します。</summary>
+        <value>テンプレートのルート ノードです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlPropertyElementUsage_VisualTree"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <VisualTreeRootNode > VisualTreeNodeContents  
+  </VisualTreeRootNode >  
+</object>  
+```  
+  
+<a name="xamlValues_VisualTree"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *VisualTreeRootNode*  
+ 1 つの XAML 要素のすぐ下の子として、<xref:System.Windows.FrameworkTemplate>サブクラスです。 テンプレートには、単一のルート ノードが必要です。 有効なテンプレートとして選択した要素を生成するために*VisualTreeRootNode*が多くの場合、複数の子要素をサポートするモデルで、独自のコンテンツ モデルをサポートするために必要です。  
+  
+ *VisualTreeNodeContents*  
+ 対象のテンプレートを 1 つまたは複数の要素。 場合として選択された*VisualTreeRootNode*のみサポートしている 1 つの子、ことがありますのみとして宣言されている 1 つの要素*VisualTreeNodeContents*です。 可能です (ただし、一般的ではない) 場合は、テキスト コンテンツを提供する、選択した*VisualTreeRootNode*テキスト コンテンツ プロパティをサポートします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

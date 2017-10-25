@@ -1,0 +1,113 @@
+<Type Name="EventLogPermissionEntry" FullName="System.Diagnostics.EventLogPermissionEntry">
+  <TypeSignature Language="C#" Value="public class EventLogPermissionEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit EventLogPermissionEntry extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventLogPermissionEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>設定されているコード アクセス セキュリティのアクセス許可の最小単位を定義、<see cref="T:System.Diagnostics.EventLog" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード アクセス セキュリティの詳細については、次を参照してください。[コード アクセス セキュリティ](~/docs/framework/misc/code-access-security.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogPermissionEntry (System.Diagnostics.EventLogPermissionAccess permissionAccess, string machineName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Diagnostics.EventLogPermissionAccess permissionAccess, string machineName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogPermissionEntry.#ctor(System.Diagnostics.EventLogPermissionAccess,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAccess" Type="System.Diagnostics.EventLogPermissionAccess" />
+        <Parameter Name="machineName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAccess"><see cref="T:System.Diagnostics.EventLogPermissionAccess" /> 値のビットごとの組み合わせ。 <see cref="P:System.Diagnostics.EventLogPermissionEntry.PermissionAccess" />プロパティがこの値に設定します。</param>
+        <param name="machineName">イベントを読み取ったり書き込んだりするコンピューターの名前です。 <see cref="P:System.Diagnostics.EventLogPermissionEntry.MachineName" />プロパティがこの値に設定します。</param>
+        <summary><see cref="T:System.Diagnostics.EventLogPermissionEntry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカル マシンへのアクセス許可を要求する必要があります COMPUTERNAME としてコンピューター名を参照してください、アプリケーションが高い信頼ゾーンで実行されている場合、または"です。"、フル コンピューター名の代わりにします。 セキュリティ上の理由では、フル コンピューター名は許可されません。 さらに、コンピューター名が、大文字小文字を区別扱う必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コンピューター名が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineName">
+      <MemberSignature Language="C#" Value="public string MachineName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogPermissionEntry.MachineName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取りまたはイベントの書き込みをするコンピューターの名前を取得します。</summary>
+        <value>イベントを読み取ったり書き込んだりするコンピューターの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカル マシンへのアクセス許可を要求する必要があります COMPUTERNAME としてコンピューター名を参照してください、アプリケーションが高い信頼ゾーンで実行されている場合、または"です。"、フル コンピューター名の代わりにします。 セキュリティ上の理由では、フル コンピューター名は許可されません。 さらに、コンピューター名が、大文字小文字を区別扱う必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionAccess">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.EventLogPermissionAccess PermissionAccess { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.EventLogPermissionAccess PermissionAccess" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogPermissionEntry.PermissionAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.EventLogPermissionAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス許可の要求で使用されるアクセス許可のアクセス レベルを取得します。</summary>
+        <value><see cref="T:System.Diagnostics.EventLogPermissionAccess" /> 値のビットごとの組み合わせ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

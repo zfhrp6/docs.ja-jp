@@ -1,0 +1,307 @@
+<Type Name="IRuleExpression" FullName="System.Workflow.Activities.Rules.IRuleExpression">
+  <TypeSignature Language="C#" Value="public interface IRuleExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRuleExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.IRuleExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>独自の式を書き出すクラスが継承しなければならない基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 式を作成するコード例を以下に示します。作成した式は、宣言的な条件やルール セット中で使えます。 式の名前は `TwoOfThree` で、3 つのパラメーターを受け取ります。これらのパラメーターはいずれも Boolean 型に評価される必要があります。 この 3 つのうち 2 つ以上の値が `true` である場合に、式は `true` を返します。  
+  
+ このコードを使用するには、クラス ライブラリ プロジェクトにコードを追加し、ワークフロー プロジェクトからそのライブラリを参照します。  
+  
+```csharp  
+using System.CodeDom;  
+using System.Text;  
+using System.Workflow.Activities.Rules;  
+using System.Workflow.ComponentModel.Compiler;  
+  
+namespace TwoOfThreeRuleExpression  
+{  
+    public class TwoOfThree : CodeExpression, IRuleExpression  
+    {  
+        CodeExpression expression1, expression2, expression3;  
+  
+        public CodeExpression First  
+        {  
+            get { return expression1; }  
+            set { expression1 = value; }  
+        }  
+  
+        public CodeExpression Second  
+        {  
+            get { return expression2; }  
+            set { expression2 = value; }  
+        }  
+  
+        public CodeExpression Third  
+        {  
+            get { return expression3; }  
+            set { expression3 = value; }  
+        }  
+  
+        public TwoOfThree()  
+        {  
+            // constructor required for deserialization  
+        }  
+  
+        public TwoOfThree(CodeExpression first, CodeExpression second, CodeExpression third)  
+        {  
+            // constructor required by parser  
+            expression1 = first;  
+            expression2 = second;  
+            expression3 = third;  
+        }  
+  
+        public void AnalyzeUsage(RuleAnalysis analysis, bool isRead, bool isWritten, RulePathQualifier qualifier)  
+        {  
+            // check what the 3 expressions use  
+            RuleExpressionWalker.AnalyzeUsage(analysis, expression1, true, false, null);  
+            RuleExpressionWalker.AnalyzeUsage(analysis, expression2, true, false, null);  
+            RuleExpressionWalker.AnalyzeUsage(analysis, expression3, true, false, null);  
+        }  
+  
+        public CodeExpression Clone()  
+        {  
+            TwoOfThree result = new TwoOfThree();  
+            result.expression1 = RuleExpressionWalker.Clone(expression1);  
+            result.expression2 = RuleExpressionWalker.Clone(expression2);  
+            result.expression3 = RuleExpressionWalker.Clone(expression3);  
+            return result;  
+        }  
+  
+        public void Decompile(StringBuilder stringBuilder, CodeExpression parentExpression)  
+        {  
+            // what should be displayed by the parser  
+            stringBuilder.Append("TwoOfThree(");  
+            RuleExpressionWalker.Decompile(stringBuilder, expression1, this);  
+            stringBuilder.Append(", ");  
+            RuleExpressionWalker.Decompile(stringBuilder, expression2, this);  
+            stringBuilder.Append(", ");  
+            RuleExpressionWalker.Decompile(stringBuilder, expression3, this);  
+            stringBuilder.Append(")");  
+        }  
+  
+        static RuleLiteralResult resultTrue = new RuleLiteralResult(true);  
+        static RuleLiteralResult resultFalse = new RuleLiteralResult(false);  
+  
+        public RuleExpressionResult Evaluate(RuleExecution execution)  
+        {  
+            // start by doing the first 2 expressions  
+            RuleExpressionResult r1 = RuleExpressionWalker.Evaluate(execution, expression1);  
+            RuleExpressionResult r2 = RuleExpressionWalker.Evaluate(execution, expression2);  
+            bool b1 = (bool)r1.Value;  
+            bool b2 = (bool)r2.Value;  
+            if (b1 && b2)  
+            {  
+                // both are true, so result is true  
+                return resultTrue;  
+            }  
+            else if (b1 || b2)  
+            {  
+                // only one of the first 2 is true, evaluate the third to determine result  
+                return RuleExpressionWalker.Evaluate(execution, expression3);  
+            }  
+            else  
+                // both e1 and e2 are false, so skip e3 and return false;  
+                return resultFalse;  
+        }  
+  
+        public bool Match(CodeExpression expression)  
+        {  
+            TwoOfThree other = expression as TwoOfThree;  
+            return (other != null) &&  
+                RuleExpressionWalker.Match(expression1, other.expression1) &&  
+                RuleExpressionWalker.Match(expression2, other.expression2) &&  
+                RuleExpressionWalker.Match(expression3, other.expression3);  
+        }  
+  
+        public RuleExpressionInfo Validate(RuleValidation validation, bool isWritten)  
+        {  
+            ValidateExpression(validation, expression1, "First");  
+            ValidateExpression(validation, expression2, "Second");  
+            ValidateExpression(validation, expression3, "Third");  
+            return new RuleExpressionInfo(typeof(bool));  
+        }  
+  
+        private void ValidateExpression(RuleValidation validation, CodeExpression expression, string propertyName)  
+        {  
+            ValidationError error;  
+            if (expression == null)  
+            {  
+                error = new ValidationError(propertyName + " cannot be null", 123);  
+                validation.Errors.Add(error);  
+            }  
+            else  
+            {  
+                RuleExpressionInfo result = RuleExpressionWalker.Validate(validation, expression, false);  
+                if ((result == null) || (result.ExpressionType != typeof(bool)))  
+                {  
+                    error = new ValidationError(propertyName + " must return boolean result", 123);  
+                    validation.Errors.Add(error);  
+                }  
+            }  
+        }  
+    }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AnalyzeUsage">
+      <MemberSignature Language="C#" Value="public void AnalyzeUsage (System.Workflow.Activities.Rules.RuleAnalysis analysis, bool isRead, bool isWritten, System.Workflow.Activities.Rules.RulePathQualifier qualifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AnalyzeUsage(class System.Workflow.Activities.Rules.RuleAnalysis analysis, bool isRead, bool isWritten, class System.Workflow.Activities.Rules.RulePathQualifier qualifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.IRuleExpression.AnalyzeUsage(System.Workflow.Activities.Rules.RuleAnalysis,System.Boolean,System.Boolean,System.Workflow.Activities.Rules.RulePathQualifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analysis" Type="System.Workflow.Activities.Rules.RuleAnalysis" />
+        <Parameter Name="isRead" Type="System.Boolean" />
+        <Parameter Name="isWritten" Type="System.Boolean" />
+        <Parameter Name="qualifier" Type="System.Workflow.Activities.Rules.RulePathQualifier" />
+      </Parameters>
+      <Docs>
+        <param name="analysis">条件部またはアクション部で参照するフィールドやプロパティを保存する、<see cref="T:System.Workflow.Activities.Rules.RuleAnalysis" /> メソッド。</param>
+        <param name="isRead">
+          式を読み取る場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</param>
+        <param name="isWritten">
+          式を書き込む場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</param>
+        <param name="qualifier">フィールドまたはプロパティのパス。</param>
+        <summary>コンテキスト型において、オブジェクトがフィールドやプロパティをどのように使うかを報告するメソッドとして、派生クラスでオーバーライドします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.CodeExpression Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.IRuleExpression.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.CodeDom.CodeExpression" /> の詳細コピーを作成するメソッドとして、派生クラスでオーバーライドします。</summary>
+        <returns>現在の <see cref="T:System.CodeDom.CodeExpression" /> の詳細コピー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decompile">
+      <MemberSignature Language="C#" Value="public void Decompile (System.Text.StringBuilder stringBuilder, System.CodeDom.CodeExpression parentExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Decompile(class System.Text.StringBuilder stringBuilder, class System.CodeDom.CodeExpression parentExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.IRuleExpression.Decompile(System.Text.StringBuilder,System.CodeDom.CodeExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1720:AvoidTypeNamesInParameters", MessageId="0#")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stringBuilder" Type="System.Text.StringBuilder" />
+        <Parameter Name="parentExpression" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="stringBuilder">式をデコンパイルした結果を書き込む可変文字列。 部分式をデコンパイルした結果得られる文字列を、ここに追記していきます。</param>
+        <param name="parentExpression">親コード式。 演算子の優先順位を調べ、部分式をかっこで囲む必要があるかどうかを判断するために使用します。</param>
+        <summary>独自の式を文字列としてデコンパイルするメソッドとして、派生クラスでオーバーライドします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evaluate">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.Rules.RuleExpressionResult Evaluate (System.Workflow.Activities.Rules.RuleExecution execution);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Workflow.Activities.Rules.RuleExpressionResult Evaluate(class System.Workflow.Activities.Rules.RuleExecution execution) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.IRuleExpression.Evaluate(System.Workflow.Activities.Rules.RuleExecution)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleExpressionResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="execution" Type="System.Workflow.Activities.Rules.RuleExecution" />
+      </Parameters>
+      <Docs>
+        <param name="execution">式を実行する <see cref="T:System.Workflow.Activities.Rules.RuleExecution" />。</param>
+        <summary>独自の式を評価するメソッドとして、派生クラスでオーバーライドします。</summary>
+        <returns>ルールの実行結果を表す <see cref="T:System.Workflow.Activities.Rules.RuleExpressionResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public bool Match (System.CodeDom.CodeExpression expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Match(class System.CodeDom.CodeExpression expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.IRuleExpression.Match(System.CodeDom.CodeExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="expression">現在の式と比較する式。</param>
+        <summary>ある別の式と等しいかどうか比較します。</summary>
+        <returns>
+          2 つの式が等しい場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.Rules.RuleExpressionInfo Validate (System.Workflow.Activities.Rules.RuleValidation validation, bool isWritten);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Workflow.Activities.Rules.RuleExpressionInfo Validate(class System.Workflow.Activities.Rules.RuleValidation validation, bool isWritten) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.IRuleExpression.Validate(System.Workflow.Activities.Rules.RuleValidation,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleExpressionInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validation" Type="System.Workflow.Activities.Rules.RuleValidation" />
+        <Parameter Name="isWritten" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="validation">検証プロセスを管理する <see cref="T:System.Workflow.Activities.Rules.RuleValidation" />。</param>
+        <param name="isWritten">
+          式を書き込む場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</param>
+        <summary>式の構成が適切でエラーがないことを検証するメソッドとして、派生クラスでオーバーライドします。</summary>
+        <returns>式の <see cref="T:System.Workflow.Activities.Rules.RuleExpressionInfo" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

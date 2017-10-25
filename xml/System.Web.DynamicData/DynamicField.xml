@@ -1,0 +1,821 @@
+<Type Name="DynamicField" FullName="System.Web.DynamicData.DynamicField">
+  <TypeSignature Language="C#" Value="public class DynamicField : System.Web.UI.WebControls.DataControlField, System.Web.DynamicData.IFieldFormattingOptions, System.Web.UI.IAttributeAccessor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicField extends System.Web.UI.WebControls.DataControlField implements class System.Web.DynamicData.IFieldFormattingOptions, class System.Web.UI.IAttributeAccessor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DynamicField" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataControlField</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.DynamicData.IFieldFormattingOptions</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IAttributeAccessor</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.DynamicData.Design.DynamicFieldDesigner, System.Web.DynamicData.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET Dynamic Data 機能を使用するデータ バインド コントロールに表示されるデータ フィールドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.DynamicData.DynamicField>クラスを使用して、データ バインド コントロールなど、<xref:System.Web.UI.WebControls.GridView>と<xref:System.Web.UI.WebControls.DetailsView>、表示するコントロールをカスタム ページの ASP.NET Dynamic Data 機能を使用するフィールドの値。  
+  
+ <xref:System.Web.DynamicData.DynamicField>クラスのような機能を提供、<xref:System.Web.UI.WebControls.BoundField>クラスです。 ただし、ため、<xref:System.Web.DynamicData.DynamicField>オブジェクトを使用して動的なデータ アプリケーションで、次の Dynamic Data 機能を利用することができます。  
+  
+-   データ型に基づく、フィールド テンプレートを使用してのフィールドの適切なコントロールを自動的に表示します。 フィールド テンプレートは、アプリケーション全体でグローバルに変更できます。  
+  
+-   データベース スキーマに基づく組み込みのデータ検証を提供します。 データ モデルをカスタマイズすることで、検証の種類を追加することもできます。  
+  
+-   データ モデル内の属性を使用するかを使用して、個々 のフィールドのデータの表示をカスタマイズする、<xref:System.Web.DynamicData.DynamicField.UIHint%2A>プロパティです。  
+  
+ <xref:System.Web.DynamicData.DynamicField>オブジェクトを使用して各フィールドの表示、`DynamicControl`コントロール。 表示するデータ フィールドを指定する、<xref:System.Web.DynamicData.DynamicField>オブジェクト、設定、<xref:System.Web.DynamicData.DynamicField.DataField%2A>プロパティ フィールドの名前にします。 フィールドの値を設定して、カスタム書式指定文字列を適用することができます、<xref:System.Web.DynamicData.DynamicField.DataFormatString%2A>プロパティです。 既定では、データ バインド コントロールが読み取り専用モードの場合にのみ、書式指定文字列はフィールド値に適用します。 書式指定文字列をデータ バインド コントロールが編集モードの間に表示される値を適用する設定、<xref:System.Web.DynamicData.DynamicField.ApplyFormatInEditMode%2A>プロパティを`true`です。 フィールドの値が場合`null`を設定してカスタムのキャプションを表示することができます、<xref:System.Web.DynamicData.DynamicField.NullDisplayText%2A>プロパティです。 <xref:System.Web.DynamicData.DynamicField>オブジェクトは、空の文字列にも自動的に変換できます ("") を設定して値を null 値をフィールド、<xref:System.Web.DynamicData.DynamicField.ConvertEmptyStringToNull%2A>プロパティを`true`です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:DynamicField   
+    AccessibleHeaderText="string"       
+    ApplyFormatInEditMode="true|false"    
+    ControlStyle-BackColor="color name|#dddddd"   
+    ControlStyle-BorderColor="color name|#dddddd"   
+    ControlStyle-BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|  
+       Ridge|Inset|Outset"    
+    ControlStyle-BorderWidth="size"    
+    ControlStyle-CssClass="string"   
+    ControlStyle-Font-Bold="true|false"   
+    ControlStyle-Font-Italic="true|false"   
+    ControlStyle-Font-Names="string"   
+    ControlStyle-Font-Overline="true|false"    
+    ControlStyle-Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+       Large|X-Large|XX-Large"   
+    ControlStyle-Font-Strikeout="true|false"     
+    ControlStyle-Font-Underline="true|false"     
+    ControlStyle-ForeColor="color name|#dddddd"     
+    ControlStyle-Height="size"   
+    ControlStyle-Width="size"   
+    ConvertEmptyStringToNull="true|false"    
+    DataField="string"   
+    DataFormatString="string"     
+    FooterStyle-BackColor="color name|#dddddd"   
+    FooterStyle-BorderColor="color name|#dddddd"   
+    FooterStyle-BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|  
+       Ridge|Inset|Outset"    
+    FooterStyle-BorderWidth="size"    
+    FooterStyle-CssClass="string"   
+    FooterStyle-Font-Bold="true|false"   
+    FooterStyle-Font-Italic="true|false"   
+    FooterStyle-Font-Names="string"   
+    FooterStyle-Font-Overline="true|false"    
+    FooterStyle-Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+       Large|X-Large|XX-Large"   
+    FooterStyle-Font-Strikeout="true|false"     
+    FooterStyle-Font-Underline="true|false"     
+    FooterStyle-ForeColor="color name|#dddddd"     
+    FooterStyle-Height="size"   
+    FooterStyle-Width="size"   
+    FooterStyle-HorizontalAlign="Center|Justify|Left|NotSet|Right"   
+    FooterStyle-VerticalAlign="Bottom|Middle|NotSet|Top"   
+    FooterStyle-Wrap="true|false"     
+    HeaderImageUrl="uri"  
+    HeaderStyle-BackColor="color name|#dddddd"   
+    HeaderStyle-BorderColor="color name|#dddddd"   
+    HeaderStyle-BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|  
+       Ridge|Inset|Outset"    
+    HeaderStyle-BorderWidth="size"    
+    HeaderStyle-CssClass="string"   
+    HeaderStyle-Font-Bold="true|false"   
+    HeaderStyle-Font-Italic="true|false"   
+    HeaderStyle-Font-Names="string"   
+    HeaderStyle-Font-Overline="true|false"    
+    HeaderStyle-Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+       Large|X-Large|XX-Large"   
+    HeaderStyle-Font-Strikeout="true|false"     
+    HeaderStyle-Font-Underline="true|false"     
+    HeaderStyle-ForeColor="color name|#dddddd"     
+    HeaderStyle-Height="size"   
+    HeaderStyle-Width="size"   
+    HeaderStyle-HorizontalAlign="Center|Justify|Left|NotSet|Right"   
+    HeaderStyle-VerticalAlign="Bottom|Middle|NotSet|Top"   
+    HeaderStyle-Wrap="true|false"     
+    HeaderText="string"  
+    InsertVisible="true|false"      
+    ItemStyle-BackColor="color name|#dddddd"   
+    ItemStyle-BorderColor="color name|#dddddd"   
+    ItemStyle-BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|  
+       Ridge|Inset|Outset"    
+    ItemStyle-BorderWidth="size"    
+    ItemStyle-CssClass="string"   
+    ItemStyle-Font-Bold="true|false"   
+    ItemStyle-Font-Italic="true|false"   
+    ItemStyle-Font-Names="string"   
+    ItemStyle-Font-Overline="true|false"    
+    ItemStyle-Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+       Large|X-Large|XX-Large"   
+    ItemStyle-Font-Strikeout="true|false"     
+    ItemStyle-Font-Underline="true|false"     
+    ItemStyle-ForeColor="color name|#dddddd"     
+    ItemStyle-Height="size"   
+    ItemStyle-Width="size"   
+    ItemStyle-HorizontalAlign="Center|Justify|Left|NotSet|Right"   
+    ItemStyle-VerticalAlign="Bottom|Middle|NotSet|Top"   
+    ItemStyle-Wrap="true|false"     
+    NullDisplayText="string"   
+    ReadOnly="true|false"    
+    ShowHeader="true|false"    
+    SortExpression="string"   
+    UIHint="string"   
+    ValidationGroup="string"   
+    Visible="true|false"   
+    />  
+<asp:DynamicField />  
+```  
+  
+   
+  
+## Examples  
+ この機能の実行時のコード例を参照してください:[実行](http://go.microsoft.com/fwlink/?LinkId=120736&sref=System.Web.DynamicData.DynamicField)です。  
+  
+ 次の例で使用する方法、<xref:System.Web.DynamicData.DynamicField>内のオブジェクト、<xref:System.Web.UI.WebControls.GridView>コントロールを表示し、データベース テーブルから値を編集します。  
+  
+ [!code-aspx-csharp[System.Web.DynamicData.DynamicField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicField/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.DynamicData.DynamicField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.DynamicData.DynamicField/VB/Default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicField ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicField.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.DynamicField" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.DynamicData.DynamicField>クラスです。 このコンス トラクターは、フィールドを動的に作成されたデータ バインド コントロールに追加する際に通常使用されます。  
+  
+ 動的に追加する、<xref:System.Web.DynamicData.DynamicField>データ バインド コントロールにオブジェクトを新規作成<xref:System.Web.DynamicData.DynamicField>オブジェクト、そのプロパティを設定し、データ バインド コントロールのフィールド コレクションに追加します。 たとえば、使用している場合、<xref:System.Web.UI.WebControls.GridView>コントロールを追加、<xref:System.Web.DynamicData.DynamicField>オブジェクトを<xref:System.Web.UI.WebControls.GridView.Columns%2A>コレクション。  
+  
+> [!NOTE]
+>  フィールドは、データ バインド コントロールを動的に追加することができます、強くお勧めことフィールド静的に宣言されていると、表示するか非表示に必要に応じて。 すべてのフィールドを静的に宣言すると、親データ バインド コントロールのビュー ステートのサイズが縮小します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyFormatInEditMode">
+      <MemberSignature Language="C#" Value="public bool ApplyFormatInEditMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ApplyFormatInEditMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.ApplyFormatInEditMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定があるかどうか、書式設定された文字列がある文字列を示す値を指定、<see cref="P:System.Web.DynamicData.DynamicField.DataFormatString" />データ フィールドが編集モードの場合、フィールド値にプロパティが適用されます。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Web.DynamicData.DynamicField" /> 、それ以外の編集モードで書式設定を適用<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロール (など<xref:System.Web.UI.WebControls.DetailsView>、および<xref:System.Web.UI.WebControls.GridView>) ユーザーが読み取り、編集、またはレコードを挿入できるようにするさまざまな表示モードがあります。 既定では、書式指定文字列を指定して、<xref:System.Web.DynamicData.DynamicField.DataFormatString%2A>プロパティがフィールドの値、データ バインド コントロールが読み取り専用モードの場合のみに適用します。 書式指定文字列をデータ バインド コントロールが編集モードの間に表示される値を適用する設定、<xref:System.Web.DynamicData.DynamicField.ApplyFormatInEditMode%2A>プロパティを`true`です。  
+  
+> [!NOTE]
+>  A<xref:System.Web.DynamicData.DynamicField>オブジェクトは自動的に削除されないデータ ソースのフィールドが更新されたときに書式設定します。 格納されている値の一部として書式設定したくない場合は、書式設定をプログラムで削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="protected System.Web.DynamicData.MetaColumn Column { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaColumn Column" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.DynamicData.MetaColumn" />オブジェクトこの<see cref="T:System.Web.DynamicData.DynamicField" />オブジェクトに関連付けられています。</summary>
+        <value>メタ列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigureDynamicControl">
+      <MemberSignature Language="C#" Value="protected virtual void ConfigureDynamicControl (System.Web.DynamicData.DynamicControl control);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ConfigureDynamicControl(class System.Web.DynamicData.DynamicControl control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicField.ConfigureDynamicControl(System.Web.DynamicData.DynamicControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.DynamicData.DynamicControl" />
+      </Parameters>
+      <Docs>
+        <param name="control">変更するコントロール。</param>
+        <summary>変更するメカニズムを提供、<see cref="T:System.Web.DynamicData.DynamicControl" />によって作成されたオブジェクト、<see cref="M:System.Web.DynamicData.DynamicField.InitializeCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlCellType,System.Web.UI.WebControls.DataControlRowState,System.Int32)" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertEmptyStringToNull">
+      <MemberSignature Language="C#" Value="public bool ConvertEmptyStringToNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConvertEmptyStringToNull" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.ConvertEmptyStringToNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースのデータ フィールドを更新するときに、空の文字列値 ("") を null 値に自動的に変換するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />自動的に空の文字列値を null 値に変換するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合がありますユーザーは、フィールドの値を更新またはレコードを挿入するときに、空の文字列を入力する可能性があります。 使用して、<xref:System.Web.DynamicData.DynamicField.ConvertEmptyStringToNull%2A>プロパティをデータ ソースのデータ フィールドが更新されたときに空の文字列値が自動的に null に変換するかどうかを指定します。  
+  
+ 既定では、<xref:System.Web.DynamicData.DynamicField>オブジェクトには、null 値が空の文字列として表示されます。 表示するには、別の値を設定、<xref:System.Web.DynamicData.DynamicField.NullDisplayText%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.Parameter>データ ソースのオブジェクトがコントロールによって、親コントロールの<xref:System.Web.DynamicData.DynamicField>オブジェクトもという名前のプロパティにバインド<xref:System.Web.UI.WebControls.Parameter.ConvertEmptyStringToNull%2A?displayProperty=nameWithType>です。 このプロパティは、同じ関数を実行します。 両方のプロパティを適切に設定することを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyProperties">
+      <MemberSignature Language="C#" Value="protected override void CopyProperties (System.Web.UI.WebControls.DataControlField newField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CopyProperties(class System.Web.UI.WebControls.DataControlField newField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="newField"><see cref="T:System.Web.UI.WebControls.DataControlField" /> 、現在のプロパティをコピーする<see cref="T:System.Web.DynamicData.DynamicField" />にします。</param>
+        <summary>現在のプロパティをコピー<see cref="T:System.Web.DynamicData.DynamicField" />を指定したオブジェクト<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicField.CopyProperties%2A>ヘルパー メソッドです。 によって使用されている、<xref:System.Web.UI.WebControls.DataControlField.CloneField%2A>メソッド、現在のプロパティをコピーする<xref:System.Web.DynamicData.DynamicField>オブジェクトを<xref:System.Web.DynamicData.DynamicField>で渡されるオブジェクト、`newField`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.DynamicData.DynamicField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />メソッドを派生クラスで作成された新しいプロパティをコピーします。 基本クラスの<see cref="M:System.Web.DynamicData.DynamicField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />メソッドようにのプロパティ、<see cref="T:System.Web.DynamicData.DynamicField" />クラスもコピーします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDynamicControl">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.DynamicData.DynamicControl CreateDynamicControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.DynamicData.DynamicControl CreateDynamicControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicField.CreateDynamicControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.DynamicControl</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生するクラスのメカニズムを備えています<see cref="T:System.Web.DynamicData.DynamicField" />をオーバーライドする方法、<see cref="T:System.Web.DynamicData.DynamicControl" />オブジェクトを作成します。</summary>
+        <returns>新しい動的コントロールです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.DataControlField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.DataControlField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicField.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.DynamicField" /> クラスの新しいインスタンスを作成して返します。</summary>
+        <returns><see cref="T:System.Web.DynamicData.DynamicField" /> クラスの新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicField.CreateField%2A>ヘルパー メソッドです。 によって使用されている、 <xref:System.Web.UI.WebControls.DataControlField.CloneField%2A> 、空を作成するメソッド<xref:System.Web.DynamicData.DynamicField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.DynamicData.DynamicField.CreateField" />派生クラスの新しいインスタンスを返すメソッド。 呼び出す必要はありません、<see cref="M:System.Web.DynamicData.DynamicField.CreateField" />基底クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DataField">
+      <MemberSignature Language="C#" Value="public virtual string DataField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.DataField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にバインドするデータ フィールドの名前、<see cref="T:System.Web.DynamicData.DynamicField" />するオブジェクトします。</summary>
+        <value>データの名前フィールドを<see cref="T:System.Web.DynamicData.DynamicField" />オブジェクトにバインドします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.DynamicData.DynamicField.DataField%2A>プロパティをバインドするデータ フィールドを指定する、<xref:System.Web.DynamicData.DynamicField>オブジェクト。 データ フィールドには、列名または、外部キー列、リレーションシップの名前を指定できます。  
+  
+ によって既定では、指定したデータ フィールドが表示される、<xref:System.Web.DynamicData.DynamicField>オブジェクトのフィールドのデータ型に関連付けられているフィールド テンプレートを使用します。 データ フィールドの設定によって表示されるフィールド テンプレートを変更することができます、<xref:System.Web.DynamicData.DynamicField.UIHint%2A>プロパティです。 設定して、表示されるテキストをフォーマットすることも、<xref:System.Web.DynamicData.DynamicField.DataFormatString%2A>プロパティです。 フィールドの値が場合`null`、空の文字列 ("") が既定では、値の表示されます。 別のキャプションを指定するには、設定、<xref:System.Web.DynamicData.DynamicField.NullDisplayText%2A>プロパティです。  
+  
+ **注**表示と、データ フィールドの動作をグローバルに変更する場合は、特定のインスタンスでこれを設定する代わりに、データ モデルへの属性を適用する必要があります、<xref:System.Web.DynamicData.DynamicField>オブジェクト。 詳細については、次を参照してください。 [ASP.NET 動的データ](http://msdn.microsoft.com/library/78c7fcd7-5f38-46a0-a4bc-48eff3c8a512)です。  
+  
+ <xref:System.Web.UI.WebControls.DataControlField.OnFieldChanged%2A>状態変更イベントを発生させるメソッドが呼び出されたときに、<xref:System.Web.DynamicData.DynamicField.DataField%2A>プロパティを設定します。  
+  
+ 値、<xref:System.Web.DynamicData.DynamicField.DataField%2A>プロパティは viewstate に格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataFormatString">
+      <MemberSignature Language="C#" Value="public string DataFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.DataFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ フィールドの値の表示形式を指定する文字列を設定します。</summary>
+        <value>データ フィールドの値の表示形式を指定する書式指定文字列。 既定値は空の文字列 ("")、いる特殊な書式設定には適用されません、値を示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.DynamicData.DynamicField.DataFormatString%2A>に表示される値のカスタム表示形式を指定するプロパティ、<xref:System.Web.DynamicData.DynamicField>オブジェクト。 場合、<xref:System.Web.DynamicData.DynamicField.DataFormatString%2A>プロパティが設定されていないと、特別な書式なしフィールドの値が表示されます。  
+  
+ 既定では、書式指定文字列が適用されるフィールドの値をデータ バインド コントロールを格納している場合にのみ、<xref:System.Web.DynamicData.DynamicField>オブジェクトは読み取り専用モードにします。 書式指定文字列を編集モードでフィールドの値を適用する設定、<xref:System.Web.DynamicData.DynamicField.ApplyFormatInEditMode%2A>プロパティを`true`です。  
+  
+ 使用して指定した表示形式、<xref:System.Web.DynamicData.DynamicField.DataFormatString%2A>プロパティは、のこのインスタンスに固有の<xref:System.Web.DynamicData.DynamicField>クラスです。 適用することにより、アプリケーション全体の間でデータ フィールドの表示形式を変更することも、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute>データ モデルと設定を<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.DataFormatString%2A?displayProperty=nameWithType>コンス トラクターのパラメーターをという名前です。 詳細については、次を参照してください。 [ASP.NET 動的データ](http://msdn.microsoft.com/library/78c7fcd7-5f38-46a0-a4bc-48eff3c8a512)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractValuesFromCell">
+      <MemberSignature Language="C#" Value="public override void ExtractValuesFromCell (System.Collections.Specialized.IOrderedDictionary dictionary, System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ExtractValuesFromCell(class System.Collections.Specialized.IOrderedDictionary dictionary, class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicField.ExtractValuesFromCell(System.Collections.Specialized.IOrderedDictionary,System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlRowState,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Specialized.IOrderedDictionary" />
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="includeReadOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dictionary">セルの値を保持するディクショナリ。</param>
+        <param name="cell">コントロールまたはテキストを含むセル、<see cref="T:System.Web.DynamicData.DynamicField" />オブジェクト。</param>
+        <param name="rowState">行の状態を指定する列挙値の 1 つ。</param>
+        <param name="includeReadOnly">
+          <see langword="true" />読み取り専用のフィールドの値が含まれる<c>ディクショナリ</c>、それ以外の<see langword="false" />します。</param>
+        <summary>現在のテーブル セルからデータ フィールドの値を抽出し、指定されたディクショナリに値を追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAttribute">
+      <MemberSignature Language="C#" Value="public string GetAttribute (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetAttribute(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicField.GetAttribute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得する属性のキー。</param>
+        <summary>指定した属性の値を取得します。</summary>
+        <returns>属性の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderText">
+      <MemberSignature Language="C#" Value="public override string HeaderText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.HeaderText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を含むデータ バインド コントロールのヘッダーに表示されるテキスト、<see cref="T:System.Web.DynamicData.DynamicField" />オブジェクト。</summary>
+        <value>含まれるデータ バインド コントロールのヘッダーに表示されるテキスト、<see cref="T:System.Web.DynamicData.DynamicField" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.DynamicData.DynamicField.HeaderText%2A>フレンドリ名をデータ バインド コントロール内のフィールドを識別するプロパティです。 最も一般的なアプリケーション、<xref:System.Web.DynamicData.DynamicField.HeaderText%2A>プロパティがデータ フィールドにわかりやすい列名を指定するには、<xref:System.Web.UI.WebControls.GridView>または<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ 既定では、<xref:System.Web.DynamicData.DynamicField.HeaderText%2A>プロパティを使用して、データ フィールドの設定の表示名を使用して、<xref:System.ComponentModel.DisplayNameAttribute>属性。 表示名が設定されていない場合、<xref:System.Web.DynamicData.DynamicField.HeaderText%2A>プロパティの値を使用して、<xref:System.Web.DynamicData.DynamicField.DataField%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.DynamicData.DynamicField" />を実装するデータ ソース コントロールにバインドされていないデータ バインド コントロール内のオブジェクトが、<see cref="T:System.Web.DynamicData.IDynamicDataSource" />インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="public bool HtmlEncode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HtmlEncode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.HtmlEncode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ フィールドの値に表示される前に HTML でエンコードされた、かどうかを示す値を設定、<see cref="T:System.Web.DynamicData.DynamicField" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />フィールド値は、HTML でエンコードされたからです。 表示される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.DynamicData.DynamicField.HtmlEncode%2A>プロパティ フィールドの値が、表示される前に、それぞれの文字列表現を HTML エンコードされた、かどうかを指定します。  
+  
+> [!NOTE]
+>  HTML エンコードのフィールドの値クロスサイト スクリプト攻撃や悪意のあるコンテンツが表示されないようにするために役立ちます。 可能な限り、このプロパティを有効にする必要があります。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public override void InitializeCell (System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlCellType cellType, System.Web.UI.WebControls.DataControlRowState rowState, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InitializeCell(class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlCellType cellType, valuetype System.Web.UI.WebControls.DataControlRowState rowState, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicField.InitializeCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlCellType,System.Web.UI.WebControls.DataControlRowState,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="cellType" Type="System.Web.UI.WebControls.DataControlCellType" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="cell">コントロールまたはテキストを格納しているオブジェクト、<see cref="T:System.Web.DynamicData.DynamicField" />オブジェクト。</param>
+        <param name="cellType">関数を指定する列挙値のいずれか、<c>セル</c>オブジェクト。</param>
+        <param name="rowState">行の状態を指定する列挙値の 1 つ。</param>
+        <param name="rowIndex">行のインデックスを<c>セル</c>にオブジェクトが含まれています。</param>
+        <summary>テキストを追加または指定されたセルを制御します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NullDisplayText">
+      <MemberSignature Language="C#" Value="public string NullDisplayText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NullDisplayText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.NullDisplayText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールド値が <see langword="null" /> の場合にデータ フィールドに表示されるキャプションを取得または設定します。</summary>
+        <value>フィールド値が <see langword="null" /> の場合にデータ フィールドに表示されるキャプション。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合によってフィールドの値は、データ ソースの null として格納されます。 設定して、null 値を持つデータ フィールドを表示するカスタムのキャプションを指定することができます、<xref:System.Web.DynamicData.DynamicField.NullDisplayText%2A>プロパティです。 Null フィールドの値が空の文字列として表示されるこのプロパティが設定されていない場合 ("") です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的フィールドの読み取り専用の状態を取得します。</summary>
+        <value>動的フィールドの読み取り専用状態です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.DynamicData.DynamicField.ReadOnly%2A>プロパティは`true`、<xref:System.Web.DynamicData.DynamicField>コントロールが読み取り専用テンプレートを読み込みます。 このプロパティは、ビュー ステートを有効にする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAttribute">
+      <MemberSignature Language="C#" Value="public void SetAttribute (string key, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetAttribute(string key, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicField.SetAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">設定する属性の名前。</param>
+        <param name="value">属性値。</param>
+        <summary>関連付けられている属性を設定して、<see cref="T:System.Web.DynamicData.DynamicField" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortExpression">
+      <MemberSignature Language="C#" Value="public override string SortExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SortExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.SortExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ フィールドを使用するデータ ソースを並べ替える場合に使用される並べ替え式を設定します。</summary>
+        <value>データ フィールドを使用するデータ ソースを並べ替える場合に使用される並べ替え式。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicField.SortExpression%2A>プロパティの値を使用しようとする、<xref:System.Web.DynamicData.MetaColumn.SortExpression%2A?displayProperty=nameWithType>に関連付けられている列オブジェクトのプロパティ、<xref:System.Web.DynamicData.DynamicField>オブジェクトを設定して、<xref:System.Web.DynamicData.DynamicField.DataField%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.DataControlField.OnFieldChanged%2A>状態変更イベントを発生させるメソッドが呼び出されたときに、<xref:System.Web.DynamicData.DynamicField.SortExpression%2A>プロパティを設定します。  
+  
+ 値、<xref:System.Web.DynamicData.DynamicField.SortExpression%2A>プロパティは viewstate に格納されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.DynamicData.DynamicField" />を実装するデータ ソース コントロールにバインドされていないデータ バインド コントロール内のオブジェクトが、<see cref="T:System.Web.DynamicData.IDynamicDataSource" />インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UIHint">
+      <MemberSignature Language="C#" Value="public virtual string UIHint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UIHint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.UIHint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ フィールドを表示するために使用するフィールド テンプレートを設定します。</summary>
+        <value>データ フィールドを表示するために使用するフィールド テンプレートの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.DynamicData.DynamicField.UIHint%2A>プロパティを使用してデータ フィールドの UI を表示するフィールド テンプレートを指定します。 既定ではフィールド テンプレートは、ユーザー コントロールとその名前には、フィールド テンプレート編集操作に使用され、挿入操作を識別するサフィックスが含まれます。 サフィックスは、それぞれ編集 (_e) と維持、です。 値を設定すると、<xref:System.Web.DynamicData.DynamicField.UIHint%2A>サフィックスのない名前を設定するプロパティです。 動的データは、データ フィールドの現在のモードを識別され、正しいフィールド テンプレートが表示されます。  
+  
+ 場合、<xref:System.Web.DynamicData.DynamicField.UIHint%2A>プロパティが設定されていない、既定では動的なデータは、フィールドの種類に基づいたフィールド テンプレートを表示します。 詳細については、次を参照してください。 [ASP.NET 動的データ スキャフォールディング](http://msdn.microsoft.com/library/e0166a58-9178-4660-81a6-175994b11b12)です。  
+  
+ 使用して指定するフィールド テンプレート、<xref:System.Web.DynamicData.DynamicField.UIHint%2A>プロパティは、のこのインスタンスに固有の<xref:System.Web.DynamicData.DynamicField>クラスです。 適用することにより、アプリケーション全体でデータ フィールドによって使用されるフィールド テンプレートを変更することも、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>データ モデルにします。 設定、<xref:System.Web.DynamicData.DynamicField.UIHint%2A>プロパティは、データ モデルに適用されるメタデータをオーバーライドします。 メタデータ属性の詳細については、次を参照してください。 [ASP.NET 動的データ](http://msdn.microsoft.com/library/78c7fcd7-5f38-46a0-a4bc-48eff3c8a512)です。  
+  
+ <xref:System.Web.UI.WebControls.DataControlField.OnFieldChanged%2A>状態変更イベントを発生させるメソッドが呼び出されたときに、<xref:System.Web.DynamicData.DynamicField.UIHint%2A>プロパティを設定します。  
+  
+ 値、<xref:System.Web.DynamicData.DynamicField.UIHint%2A>プロパティは viewstate に格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateRequestMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ValidateRequestMode ValidateRequestMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.ValidateRequestMode ValidateRequestMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.ValidateRequestMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ValidateRequestMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールがクライアントの入力を検証するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールがクライアントの入力を検証する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationGroup">
+      <MemberSignature Language="C#" Value="public virtual string ValidationGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicField.ValidationGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="P:System.Web.DynamicData.DynamicControl.ValidationGroup" />オブジェクトこの<see cref="T:System.Web.DynamicData.DynamicField" />オブジェクトに関連付けられています。</summary>
+        <value>この検証コントロールが属する検証グループの名前。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

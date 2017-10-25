@@ -1,0 +1,57 @@
+<Type Name="CacheItemUpdateReason" FullName="System.Web.Caching.CacheItemUpdateReason">
+  <TypeSignature Language="C#" Value="public enum CacheItemUpdateReason" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CacheItemUpdateReason extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.CacheItemUpdateReason" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>キャッシュされたアイテムを削除する理由を指定、<see cref="T:System.Web.Caching.Cache" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Web.Caching.CacheItemRemovedReason>列挙型では、この列挙体には含まれません、`Removed`または`Underused`値。 更新可能なキャッシュ項目はリムーバブルでありため決して自動的に削除できます ASP.NET によってメモリを解放する必要がある場合でも。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DependencyChanged">
+      <MemberSignature Language="C#" Value="DependencyChanged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Caching.CacheItemUpdateReason DependencyChanged = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Caching.CacheItemUpdateReason.DependencyChanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.CacheItemUpdateReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目がキャッシュから削除されていることを指定します、関連付けられている<see cref="T:System.Web.Caching.CacheDependency" />変更されたオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Expired">
+      <MemberSignature Language="C#" Value="Expired" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Caching.CacheItemUpdateReason Expired = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Caching.CacheItemUpdateReason.Expired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.CacheItemUpdateReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>絶対またはスライド式有効期限間隔が過ぎたために、項目がキャッシュから削除されていることを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

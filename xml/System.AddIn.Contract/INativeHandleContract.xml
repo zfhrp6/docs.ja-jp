@@ -1,0 +1,46 @@
+<Type Name="INativeHandleContract" FullName="System.AddIn.Contract.INativeHandleContract">
+  <TypeSignature Language="C#" Value="public interface INativeHandleContract : System.AddIn.Contract.IContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INativeHandleContract implements class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.INativeHandleContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.IContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ウィンドウのハンドル (Hwnd) にネイティブ コードからのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスにより、ネイティブ ウィンドウ リソースへのハンドルを取得し、それらをアプリケーション ドメイン間で渡すことをアドイン ユーザー インターフェイス機能を追加できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetHandle">
+      <MemberSignature Language="C#" Value="public IntPtr GetHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance native int GetHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.INativeHandleContract.GetHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ウィンドウのハンドル (Hwnd) を取得します。</summary>
+        <returns><see cref="T:System.IntPtr" />ウィンドウのハンドルへのポインターを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

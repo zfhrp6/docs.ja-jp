@@ -1,0 +1,337 @@
+<Type Name="Baml2006Reader" FullName="System.Windows.Baml2006.Baml2006Reader">
+  <TypeSignature Language="C#" Value="public class Baml2006Reader : System.Xaml.XamlReader, System.Xaml.IXamlLineInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Baml2006Reader extends System.Xaml.XamlReader implements class System.Xaml.IXamlLineInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Baml2006.Baml2006Reader" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xaml.XamlReader</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Xaml.IXamlLineInfo</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>最適化された BAML 形式で XAML を処理し、XAML ノード ストリームを生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ BAML 形式は、XAML の WPF XAML 実装によって使用の最適化された形式です。 一般的に使用される型またはメンバーの内部参照とトークンを使用しているという意味で最適です。 最適化とは、XAML を含む WPF アプリケーション シナリオのサイズや読み込み時にパッケージ化に対応する実装の詳細に便利です。 <xref:System.Windows.Baml2006.Baml2006Reader>リーダー クラスは、WPF アプリケーションの開発者によって BAML と対話するために、パブリック API サーフェイスの多くを構成します。  
+  
+ XAML の BAML 形式に最適化は、ローカライズする必要があります。 XAML のローカライズとこれを行うための経路を利用できるツールは、このトピックでは説明しません。 参照してください[WPF のグローバリゼーション](~/docs/framework/wpf/advanced/globalization-for-wpf.md)です。  
+  
+ <xref:System.Windows.Baml2006.Baml2006Reader>内部的に実装済みの XAML スキーマ コンテキストを使用します。 このスキーマ コンテキスト、BAML 形式は、内の型を検索するために必要なロジックを提供する最適化と BAML に固有のトークンの参照を含むです。  
+  
+ 主なシナリオ<xref:System.Windows.Baml2006.Baml2006Reader>として使用するには、<xref:System.Xaml.XamlReader>への呼び出しに渡す実装<xref:System.Windows.Markup.XamlReader.Load%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Baml2006Reader (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Baml2006.Baml2006Reader.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">ソース BAML の入力ストリーム。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Baml2006.Baml2006Reader" />クラスは、入力ストリームに基づいています。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Baml2006Reader (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Baml2006.Baml2006Reader.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">読み取り対象の BAML を格納しているファイルへのファイル パスを表す文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Baml2006.Baml2006Reader" />読み取るローカル ファイルのファイル名に基づいたクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Baml2006Reader (System.IO.Stream stream, System.Xaml.XamlReaderSettings xamlReaderSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, class System.Xaml.XamlReaderSettings xamlReaderSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Baml2006.Baml2006Reader.#ctor(System.IO.Stream,System.Xaml.XamlReaderSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="xamlReaderSettings" Type="System.Xaml.XamlReaderSettings" />
+      </Parameters>
+      <Docs>
+        <param name="stream">ソース BAML の入力ストリーム。</param>
+        <param name="xamlReaderSettings">リーダー設定。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Baml2006.Baml2006Reader" />クラスが、入力のストリームとリーダーの設定に基づきます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Baml2006.Baml2006Reader>クラスの内部設定の上書きを使用します。 は許可されている、情報をやり取りするただし、<xref:System.Xaml.XamlReaderSettings>基本クラス、および、渡された設定は内部的にアップグレードまたは内部の設定にマージします。 渡す`null`の`xamlReaderSettings`このシグネチャの例外をスローします。 レポートに特別な設定がない場合を使用して、<xref:System.Windows.Baml2006.Baml2006Reader.%23ctor%28System.IO.Stream%29>署名します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> または <paramref name="xamlReaderSettings" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Baml2006.Baml2006Reader.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースを解放するには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Baml2006.Baml2006Reader" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEof">
+      <MemberSignature Language="C#" Value="public override bool IsEof { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEof" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Baml2006.Baml2006Reader.IsEof" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーの位置が、ファイルの末尾かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />リーダーの位置が、ファイルの末尾にある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Member">
+      <MemberSignature Language="C#" Value="public override System.Xaml.XamlMember Member { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlMember Member" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Baml2006.Baml2006Reader.Member" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーの位置にある場合、リーダーの位置にある現在のメンバーを取得、<see cref="F:System.Xaml.XamlNodeType.StartMember" />です。</summary>
+        <value>現在のメンバーまたは<see langword="null" />メンバー上に配置されていない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public override System.Xaml.NamespaceDeclaration Namespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.NamespaceDeclaration Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Baml2006.Baml2006Reader.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.NamespaceDeclaration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードから、XAML 名前空間を取得します。</summary>
+        <value>XAML 名前空間をそれ以外の場合<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeType">
+      <MemberSignature Language="C#" Value="public override System.Xaml.XamlNodeType NodeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xaml.XamlNodeType NodeType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Baml2006.Baml2006Reader.NodeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlNodeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードの種類を取得します。</summary>
+        <value>列挙体の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override bool Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Baml2006.Baml2006Reader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ノードがある場合は、元の BAML、次の XAML ノードを提供します。</summary>
+        <returns>
+          <see langword="true" />ノードがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る`false`の場合、リーダーが報告<xref:System.Windows.Baml2006.Baml2006Reader.IsEof%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">リーダーは、トラバース時に破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaContext">
+      <MemberSignature Language="C#" Value="public override System.Xaml.XamlSchemaContext SchemaContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlSchemaContext SchemaContext" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Baml2006.Baml2006Reader.SchemaContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlSchemaContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>情報のセットのスキーマのコンテキスト情報を提供するオブジェクトを取得します。</summary>
+        <value>については、スキーマのコンテキスト情報を提供するオブジェクトを設定します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Xaml.IXamlLineInfo.HasLineInfo">
+      <MemberSignature Language="C#" Value="bool System.Xaml.IXamlLineInfo.HasLineInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Xaml.IXamlLineInfo.HasLineInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Baml2006.Baml2006Reader.System#Xaml#IXamlLineInfo#HasLineInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「<see cref="P:System.Xaml.IXamlLineInfo.HasLineInfo" />」を参照してください。</summary>
+        <value>
+          <see langword="true" />行の情報がある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Xaml.IXamlLineInfo.LineNumber">
+      <MemberSignature Language="C#" Value="int System.Xaml.IXamlLineInfo.LineNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Xaml.IXamlLineInfo.LineNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Baml2006.Baml2006Reader.System#Xaml#IXamlLineInfo#LineNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「<see cref="P:System.Xaml.IXamlLineInfo.LineNumber" />」を参照してください。</summary>
+        <value>レポートに行番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Xaml.IXamlLineInfo.LinePosition">
+      <MemberSignature Language="C#" Value="int System.Xaml.IXamlLineInfo.LinePosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Xaml.IXamlLineInfo.LinePosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Baml2006.Baml2006Reader.System#Xaml#IXamlLineInfo#LinePosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「<see cref="P:System.Xaml.IXamlLineInfo.LinePosition" />」を参照してください。</summary>
+        <value>レポートに行の位置。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public override System.Xaml.XamlType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Baml2006.Baml2006Reader.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />現在のノードです。</summary>
+        <value><see cref="T:System.Xaml.XamlType" />の現在のノードまたは<see langword="null" />オブジェクト上に配置されていない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Baml2006.Baml2006Reader.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードの値を取得します。</summary>
+        <value>現在のノードの値または<see langword="null" />位置に含まれていない場合、<see cref="F:System.Xaml.XamlNodeType.Value" />ノードの種類。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,85 @@
+<Type Name="ErrorPrototype" FullName="Microsoft.JScript.ErrorPrototype">
+  <TypeSignature Language="C#" Value="public class ErrorPrototype : Microsoft.JScript.JSObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ErrorPrototype extends Microsoft.JScript.JSObject" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.ErrorPrototype" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.JSObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>静的メソッドとプロパティを提供<see cref="T:Microsoft.JScript.ErrorObject" />オブジェクト。 このクラスのすべてのメソッドは、メソッドへのアクセスを要求しているオブジェクトへの参照を渡すことによって呼び出されます。 このクラスは、組み込みのオブジェクト モデルのカテゴリに属しています。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="constructor">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.ErrorConstructor constructor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.JScript.ErrorConstructor constructor" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.ErrorPrototype.constructor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.ErrorConstructor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロトタイプを使用しているプロトタイプ ベースのオブジェクトへの参照を取得します。</summary>
+        <value>プロトタイプ ベースのオブジェクトへの参照。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="name">
+      <MemberSignature Language="C#" Value="public readonly string name;" />
+      <MemberSignature Language="ILAsm" Value=".field public initonly string name" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.ErrorPrototype.name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーの種類の名前を指定します。 使用可能な値などのエラー、EvalError、RangeError、ReferenceError、SyntaxError、TypeError、URIError です。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toString">
+      <MemberSignature Language="C#" Value="public static string toString (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toString(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ErrorPrototype.toString(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.Error_toString)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定したオブジェクトの文字列表現を作成します。</summary>
+        <returns>文字列表現<paramref name="thisob" />エラー オブジェクト、およびエラー メッセージの種類の名前を含む 1 つを使用する必要がある場合。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

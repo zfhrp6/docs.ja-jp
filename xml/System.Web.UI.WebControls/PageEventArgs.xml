@@ -1,0 +1,127 @@
+<Type Name="PageEventArgs" FullName="System.Web.UI.WebControls.PageEventArgs">
+  <TypeSignature Language="C#" Value="public class PageEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PageEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.PageEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.IPageableItemContainer.TotalRowCountAvailable" />を実装するクラスのイベント、<see cref="T:System.Web.UI.WebControls.IPageableItemContainer" />インターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView>オブジェクト、<xref:System.Web.UI.WebControls.IPageableItemContainer.TotalRowCountAvailable>コントロールは、基になるデータ ソース オブジェクトのレコードの合計数を取得するときにイベント。 <xref:System.Web.UI.WebControls.DataPager>コントロールは、このイベントをという名前のイベント ハンドラーを提供<xref:System.Web.UI.WebControls.DataPager.OnTotalRowCountAvailable%2A>です。 このイベント ハンドラーがページに関連するプロパティを初期化し、作成、<xref:System.Web.UI.WebControls.DataPagerField>で定義されているオブジェクト、<xref:System.Web.UI.WebControls.DataPager.Fields%2A?displayProperty=nameWithType>コレクション。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.IPageableItemContainer.TotalRowCountAvailable>イベントは、主にコントロールの開発者によって使用されます。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.PageEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.PageEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageEventArgs (int startRowIndex, int maximumRows, int totalRowCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 startRowIndex, int32 maximumRows, int32 totalRowCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PageEventArgs.#ctor(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="startRowIndex" Type="System.Int32" />
+        <Parameter Name="maximumRows" Type="System.Int32" />
+        <Parameter Name="totalRowCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="startRowIndex">データのページの最初のレコードのインデックス。</param>
+        <param name="maximumRows">データの各ページに表示する項目の最大数。</param>
+        <param name="totalRowCount">レコードの合計数。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.PageEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用することができます、<xref:System.Web.UI.WebControls.PageEventArgs>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させるときにコントロールの開発者によって、主に使用します。  
+  
+ <xref:System.Web.UI.WebControls.PageEventArgs> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.PageEventArgs.StartRowIndex%2A>|`startRowIndex` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.PageEventArgs.MaximumRows%2A>|`maximumRows` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.PageEventArgs.TotalRowCount%2A>|`totalRowCount` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumRows">
+      <MemberSignature Language="C#" Value="public int MaximumRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PageEventArgs.MaximumRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各ページに表示するレコードの最大数を取得します。</summary>
+        <value>各ページに表示するレコードの最大数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartRowIndex">
+      <MemberSignature Language="C#" Value="public int StartRowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartRowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PageEventArgs.StartRowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの最初のレコードのインデックスを取得します。</summary>
+        <value>ページの最初のレコードのインデックス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TotalRowCount">
+      <MemberSignature Language="C#" Value="public int TotalRowCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TotalRowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PageEventArgs.TotalRowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるデータ ソースのレコードの合計数を取得します。</summary>
+        <value>基になるデータ ソースのレコードの合計数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

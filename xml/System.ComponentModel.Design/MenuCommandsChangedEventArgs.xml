@@ -1,0 +1,87 @@
+<Type Name="MenuCommandsChangedEventArgs" FullName="System.ComponentModel.Design.MenuCommandsChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class MenuCommandsChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MenuCommandsChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.MenuCommandsChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.ComponentModel.Design.MenuCommandService.MenuCommandsChanged" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuCommandsChangedEventArgs (System.ComponentModel.Design.MenuCommandsChangedType changeType, System.ComponentModel.Design.MenuCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ComponentModel.Design.MenuCommandsChangedType changeType, class System.ComponentModel.Design.MenuCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.MenuCommandsChangedEventArgs.#ctor(System.ComponentModel.Design.MenuCommandsChangedType,System.ComponentModel.Design.MenuCommand)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="changeType" Type="System.ComponentModel.Design.MenuCommandsChangedType" />
+        <Parameter Name="command" Type="System.ComponentModel.Design.MenuCommand" />
+      </Parameters>
+      <Docs>
+        <param name="changeType">変更の種類。</param>
+        <param name="command">メニュー コマンドです。</param>
+        <summary><see cref="T:System.ComponentModel.Design.MenuCommandsChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeType">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.MenuCommandsChangedType ChangeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.Design.MenuCommandsChangedType ChangeType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.MenuCommandsChangedEventArgs.ChangeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.MenuCommandsChangedType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>原因となった変更の種類を取得<see cref="E:System.ComponentModel.Design.MenuCommandService.MenuCommandsChanged" />が発生します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.MenuCommandsChangedType" />の原因となった<see cref="E:System.ComponentModel.Design.MenuCommandService.MenuCommandsChanged" />が発生します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.MenuCommand Command { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.MenuCommand Command" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.MenuCommandsChangedEventArgs.Command" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.MenuCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加、削除、または変更されたコマンドを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.MenuCommand" />追加、削除、または変更されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値を指定できます`null`を一度に 1 つ以上のコマンドが変更された場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,629 @@
+<Type Name="FrameworkName" FullName="System.Runtime.Versioning.FrameworkName">
+  <TypeSignature Language="C#" Value="public sealed class FrameworkName : IEquatable&lt;System.Runtime.Versioning.FrameworkName&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit FrameworkName extends System.Object implements class System.IEquatable`1&lt;class System.Runtime.Versioning.FrameworkName&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Versioning.FrameworkName" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Runtime.Versioning.FrameworkName&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>.NET Framework のバージョンの名前を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkName (string frameworkName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string frameworkName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.FrameworkName.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="frameworkName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="frameworkName">.NET Framework のバージョン情報を含む文字列です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Versioning.FrameworkName" />クラス .NET Framework のバージョンに関する情報を含む文字列から。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Versioning.FrameworkName.%23ctor%28System.String%29>コンス トラクターは、次の形式で文字列を解析します。  
+  
+ *識別子*、バージョン =*versionNumber*[、プロファイル =*profileName*]  
+  
+ 角かっこ内のコンポーネントは省略できます。 次の表では、各コンポーネントについて説明します。  
+  
+|コンポーネント|説明|  
+|---------------|-----------------|  
+|*identifier*|これを識別する任意の文字列<xref:System.Runtime.Versioning.FrameworkName>インスタンス。|  
+|*versionNumber*|フォーム [v] で、.NET Framework のバージョンを表す文字列*メジャー*.*minor*[.*build*.*リビジョン*]"v"は、大文字と小文字の区別のいずれかを指定できます、角かっこがバージョン番号の省略可能な要素を示します。|  
+|*profileName*|.NET Framework のバージョンのプロファイルを表す任意の文字列。 通常、.NET Compact Framework や Silverlight など、.NET Framework の一部のサブセットを表すために使用されます。|  
+  
+ 両方*versionNumber*と*profileName*が存在すると後の任意の順序で表示されることができます*識別子*です。 これらの文字列は、小文字は区別されません「バージョン」と「プロファイル」キーワードによって定義されます。  
+  
+ 値、*識別子*、 *versionNumber*、および*profileName*コンポーネントは、この値を定義<xref:System.Runtime.Versioning.FrameworkName>次のようにオブジェクトのプロパティ。  
+  
+-   内の先頭または末尾にある空白文字、*識別子*コンポーネントを削除し、結果の文字列が割り当てられて、<xref:System.Runtime.Versioning.FrameworkName.Identifier%2A>プロパティです。  
+  
+-   存在する場合をから削除、先頭または末尾の空白文字と初期"v"または"V"、`versionNumber`です。 返される文字列が渡され、<xref:System.Version.%23ctor%28System.String%29?displayProperty=nameWithType>コンス トラクター、および結果<xref:System.Version?displayProperty=nameWithType>にオブジェクトが割り当てられた、<xref:System.Runtime.Versioning.FrameworkName.Version%2A>プロパティです。  
+  
+-   内の先頭または末尾にある空白文字、`profileName`コンポーネントを削除し、結果の文字列が割り当てられて、<xref:System.Runtime.Versioning.FrameworkName.Profile%2A>プロパティです。  
+  
+ 渡すことができる有効な文字列の例を次に、<xref:System.Runtime.Versioning.FrameworkName.%23ctor%2A>コンス トラクター。  
+  
+-   .NET framework, Version 4.0 を =  
+  
+-   .NETFramework、バージョン 4.0 を =  
+  
+-   .NET framework, Version 2.0 では、プロファイルを = = Compact  
+  
+-   .NET framework, Version = v4.0、プロファイル最適化を =  
+  
+-   .NET framework プロファイル = Full、バージョン 2.0.0 を =  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="frameworkName" /> は <see cref="F:System.String.Empty" /> です。  
+  
+ または  
+  
+ <paramref name="frameworkName" />2 つ未満または 4 つ以上のコンポーネントがあります。  
+  
+ または  
+  
+ <paramref name="frameworkName" />メジャーおよびマイナー バージョン番号は含まれません。  
+  
+ または  
+  
+ <paramref name="frameworkName" />有効なバージョン番号は含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="frameworkName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkName (string identifier, Version version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string identifier, class System.Version version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.FrameworkName.#ctor(System.String,System.Version)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.String" />
+        <Parameter Name="version" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">.NET Framework のバージョンを識別する文字列。</param>
+        <param name="version">.NET Framework のバージョン情報を格納するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Versioning.FrameworkName" />文字列からのクラスと<see cref="T:System.Version" />.NET Framework のバージョンを識別するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Versioning.FrameworkName>クラスでは、する必要があります、<xref:System.Runtime.Versioning.FrameworkName.Version%2A>オブジェクトには、少なくともメジャーおよびマイナー バージョン番号が含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="identifier" /> は <see cref="F:System.String.Empty" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identifier" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="version" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FrameworkName (string identifier, Version version, string profile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string identifier, class System.Version version, string profile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.FrameworkName.#ctor(System.String,System.Version,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.String" />
+        <Parameter Name="version" Type="System.Version" />
+        <Parameter Name="profile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">.NET Framework のバージョンを識別する文字列。</param>
+        <param name="version">.NET Framework のバージョン情報を格納するオブジェクト。</param>
+        <param name="profile">プロファイル名。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Runtime.Versioning.FrameworkName" /> 、文字列からのクラス、 <see cref="T:System.Version" /> .NET Framework のバージョンおよびプロファイル名を識別するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Versioning.FrameworkName>クラスでは、する必要があります、<xref:System.Runtime.Versioning.FrameworkName.Version%2A>オブジェクトには、少なくともメジャーおよびマイナー バージョン番号が含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="identifier" /> は <see cref="F:System.String.Empty" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identifier" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="version" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.FrameworkName.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のインスタンスと比較する対象のオブジェクト。</param>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Runtime.Versioning.FrameworkName" />インスタンスは、指定したオブジェクトと同じ .NET Framework バージョンを表します。</summary>
+        <returns>
+          <see langword="true" />場合、現在のすべてのコンポーネント<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクトの対応する要素が一致する<paramref name="obj" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドに変換します`obj`を<xref:System.Runtime.Versioning.FrameworkName>オブジェクトと呼び出し、<xref:System.Runtime.Versioning.FrameworkName.Equals%28System.Runtime.Versioning.FrameworkName%29?displayProperty=nameWithType>等しいかどうかをテストするオーバー ロードします。 変換が成功しなかった場合、または`obj`は`null`、メソッドを返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Runtime.Versioning.FrameworkName other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Runtime.Versioning.FrameworkName other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.FrameworkName.Equals(System.Runtime.Versioning.FrameworkName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Runtime.Versioning.FrameworkName" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在のインスタンスと比較する対象のオブジェクト。</param>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Runtime.Versioning.FrameworkName" />インスタンスが、指定したのと同じ .NET Framework バージョンを表す<see cref="T:System.Runtime.Versioning.FrameworkName" />インスタンス。</summary>
+        <returns>
+          <see langword="true" />場合、現在のすべてのコンポーネント<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクトの対応する要素が一致する<paramref name="other" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、次の比較の結果を返すことによって、等しいかどうかテストします。  
+  
+-   序数に基づく比較、<xref:System.Runtime.Versioning.FrameworkName.Identifier%2A>現在のインスタンスのプロパティの値と`other`です。  
+  
+-   序数に基づく比較、<xref:System.Runtime.Versioning.FrameworkName.Profile%2A>現在のインスタンスのプロパティの値と`other`です。  
+  
+-   呼び出してバージョン プロパティの比較、<xref:System.Version.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullName">
+      <MemberSignature Language="C#" Value="public string FullName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Versioning.FrameworkName.FullName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これの完全な名前を取得<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクト。</summary>
+        <value>これの完全な名前<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される文字列、<xref:System.Runtime.Versioning.FrameworkName.FullName%2A>プロパティには、次の形式。  
+  
+ *識別子*、バージョン =*バージョン*[、プロファイル =*プロファイル*]  
+  
+ ここで*識別子*に対応する、<xref:System.Runtime.Versioning.FrameworkName.Identifier%2A>プロパティ、`version`を呼び出すことと同じです<xref:System.Version.ToString%2A?displayProperty=nameWithType>の値に、<xref:System.Runtime.Versioning.FrameworkName.Version%2A>プロパティ、および`profile`に対応しています、<xref:System.Runtime.Versioning.FrameworkName.Profile%2A>プロパティです。 プロファイルが割り当てられていない場合、<xref:System.Runtime.Versioning.FrameworkName>オブジェクトを文字列には、プロファイルのコンポーネントは含まれていません。  
+  
+ 値、<xref:System.Runtime.Versioning.FrameworkName.FullName%2A>プロパティは、によって返される文字列と同じで、<xref:System.Runtime.Versioning.FrameworkName.ToString%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.FrameworkName.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを返します、<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクト。</summary>
+        <returns>このインスタンスのハッシュ コードを表す 32 ビット符号付き整数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identifier">
+      <MemberSignature Language="C#" Value="public string Identifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Identifier" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Versioning.FrameworkName.Identifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この識別子を取得<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクト。</summary>
+        <value>この識別子<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の値<xref:System.Runtime.Versioning.FrameworkName.Identifier%2A>にプロパティを設定、<xref:System.Runtime.Versioning.FrameworkName.%23ctor%2A>クラスのコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Runtime.Versioning.FrameworkName left, System.Runtime.Versioning.FrameworkName right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Runtime.Versioning.FrameworkName left, class System.Runtime.Versioning.FrameworkName right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.FrameworkName.op_Equality(System.Runtime.Versioning.FrameworkName,System.Runtime.Versioning.FrameworkName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Runtime.Versioning.FrameworkName" />
+        <Parameter Name="right" Type="System.Runtime.Versioning.FrameworkName" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つの <see cref="T:System.Runtime.Versioning.FrameworkName" /> オブジェクトが同じ .NET Framework のバージョンを表しているかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="left" /> パラメーターと <paramref name="right" /> パラメーターが同じ .NET Framework のバージョンを表している場合は <see langword="true" />。そうでない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Versioning.FrameworkName.op_Equality%2A>メソッド定義の等値演算子の動作<xref:System.Runtime.Versioning.FrameworkName>オブジェクト。  
+  
+ カスタム演算子をサポートしない言語を呼び出すことができます、<xref:System.Runtime.Versioning.FrameworkName.Equals%28System.Runtime.Versioning.FrameworkName%29?displayProperty=nameWithType>メソッド代わりにします。  
+  
+   
+  
+## Examples  
+ 次の例を決定する、等値演算子を使用しているかどうか、<xref:System.Runtime.Versioning.FrameworkName>を実行中の .NET Framework のバージョンを表すオブジェクトがサポートされているバージョンの .NET Framework と等しい。 同じバージョン番号があるないためには、2 つのバージョンが等しくないことに注意してください。  
+  
+ [!code-csharp[System.Runtime.Versioning.FrameworkName.Operators#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.versioning.frameworkname.operators/cs/Operators1.cs#1)]
+ [!code-vb[System.Runtime.Versioning.FrameworkName.Operators#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.versioning.frameworkname.operators/vb/Operators1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Runtime.Versioning.FrameworkName left, System.Runtime.Versioning.FrameworkName right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Runtime.Versioning.FrameworkName left, class System.Runtime.Versioning.FrameworkName right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.FrameworkName.op_Inequality(System.Runtime.Versioning.FrameworkName,System.Runtime.Versioning.FrameworkName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Runtime.Versioning.FrameworkName" />
+        <Parameter Name="right" Type="System.Runtime.Versioning.FrameworkName" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>示す値を返します 2 つあるかどうか<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクトが異なる .NET Framework バージョンを表します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="left" />と<paramref name="right" />パラメーターが異なる .NET Framework バージョンを表す、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Versioning.FrameworkName.op_Inequality%2A>メソッドの非等値演算子の動作を定義する<xref:System.Runtime.Versioning.FrameworkName>オブジェクト。  
+  
+ カスタム演算子をサポートしない言語を呼び出すことによって非等値をテストできます、<xref:System.Runtime.Versioning.FrameworkName.Equals%28System.Runtime.Versioning.FrameworkName%29?displayProperty=nameWithType>メソッドとその値を反転します。  
+  
+   
+  
+## Examples  
+ 次の例を決定する、等値演算子を使用しているかどうか、<xref:System.Runtime.Versioning.FrameworkName>を実行中の .NET Framework のバージョンを表すオブジェクトがサポートされているバージョンの .NET Framework と等しい。 同じバージョン番号があるないためには、2 つのバージョンが等しくないことに注意してください。  
+  
+ [!code-csharp[System.Runtime.Versioning.FrameworkName.Operators#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.versioning.frameworkname.operators/cs/Operators1.cs#2)]
+ [!code-vb[System.Runtime.Versioning.FrameworkName.Operators#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.versioning.frameworkname.operators/vb/Operators1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Profile">
+      <MemberSignature Language="C#" Value="public string Profile { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Profile" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Versioning.FrameworkName.Profile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロファイルの名前を取得<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクト。</summary>
+        <value>このプロファイル名<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の値<xref:System.Runtime.Versioning.FrameworkName.Profile%2A>にプロパティを設定、<xref:System.Runtime.Versioning.FrameworkName.%23ctor%2A>クラスのコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.FrameworkName.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Runtime.Versioning.FrameworkName" /> オブジェクトの文字列表現を返します。</summary>
+        <returns>この <see cref="T:System.Runtime.Versioning.FrameworkName" /> オブジェクトを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される文字列、<xref:System.Runtime.Versioning.FrameworkName.ToString%2A>メソッドには、次の形式。  
+  
+ *識別子*、バージョン =*バージョン*[、プロファイル =*プロファイル*]  
+  
+ ここで*識別子*に対応する、<xref:System.Runtime.Versioning.FrameworkName.Identifier%2A>プロパティ、`version`を呼び出すことと同じです<xref:System.Version.ToString%2A?displayProperty=nameWithType>の値に、<xref:System.Runtime.Versioning.FrameworkName.Version%2A>プロパティ、および`profile`に対応しています、<xref:System.Runtime.Versioning.FrameworkName.Profile%2A>プロパティです。 プロファイルが割り当てられていない場合、<xref:System.Runtime.Versioning.FrameworkName>オブジェクト、プロファイルのコンポーネントが返される文字列に含まれていません。  
+  
+ によって返される値、<xref:System.Runtime.Versioning.FrameworkName.ToString%2A>メソッドの値と同一で、<xref:System.Runtime.Versioning.FrameworkName.FullName%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public Version Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version Version" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Versioning.FrameworkName.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバージョンを取得<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクト。</summary>
+        <value>これに関するバージョン情報を格納しているオブジェクト<see cref="T:System.Runtime.Versioning.FrameworkName" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の値<xref:System.Runtime.Versioning.FrameworkName.Version%2A>にプロパティを設定、<xref:System.Runtime.Versioning.FrameworkName.%23ctor%2A>クラスのコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

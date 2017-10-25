@@ -1,0 +1,815 @@
+<Type Name="FileListBox" FullName="Microsoft.VisualBasic.Compatibility.VB6.FileListBox">
+  <TypeSignature Language="C#" Value="public class FileListBox : System.Windows.Forms.ListBox" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi FileListBox extends System.Windows.Forms.ListBox" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ListBox</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(Microsoft.VisualBasic.Compatibility.VB6.CompatibilityListBoxDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定されたディレクトリ内のファイルの一覧を検索し、<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Path" />実行時プロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコントロールを使用して、ファイルの種類が選択したファイルの一覧を表示します。 ダイアログ ボックスの作成、アプリケーションで、たとえば、ファイルまたはファイルのグループを選択するユーザーを有効にできます。  
+  
+ 表示する場合、<xref:Microsoft.VisualBasic.Compatibility.VB6.DriveListBox>と<xref:Microsoft.VisualBasic.Compatibility.VB6.DirListBox>、コントロールでそれらを同期するためにコードを記述することができます、`FileListBox`コントロールと相互にします。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileListBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`FileListBox`実行時に、特定のディレクトリにファイルの一覧を表示します。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Archive">
+      <MemberSignature Language="C#" Value="public bool Archive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Archive" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Archive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を決定する値かどうか、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />コントロールを持つファイルを表示する<see langword="Archive" />属性。</summary>
+        <value>
+          <see langword="true" />かどうかのファイルがある、<see langword="Archive" />属性がそれ以外の表示にする<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに表示するファイルの種類の指定を使用して、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>標準に基づいた制御`Archive`オペレーティング環境で使用されるファイル属性。 実行時のリセットのコードでこのプロパティの設定、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>を指定した属性を持つファイルのみを表示するコントロール。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public object DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のデータ ソース、<see cref="T:System.Windows.Forms.ListControl" />です。</summary>
+        <value>実装するオブジェクト、<see cref="T:System.Collections.IList" />または<see cref="T:System.ComponentModel.IListSource" />ようなインターフェイス、<see cref="T:System.Data.DataSet" />または<see cref="T:System.Array" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定しない必要があります、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>制御; ためにのみ提供されて、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>からコントロールを継承<xref:System.Windows.Forms.ListBox>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayMember">
+      <MemberSignature Language="C#" Value="public string DisplayMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayMember" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.DisplayMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これを表示するプロパティの設定を取得または<see cref="T:System.Windows.Forms.ListControl" />です。</summary>
+        <value>A<see langword="String" />で指定されたコレクションに含まれているオブジェクトのプロパティの名前を表す、<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.DataSource" />プロパティです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定しない必要があります、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>制御; ためにのみ提供されて、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>からコントロールを継承<xref:System.Windows.Forms.ListBox>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileName">
+      <MemberSignature Language="C#" Value="public string FileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.FileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で選択したファイルのファイル名、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />です。</summary>
+        <value>A<see langword="String" />選択したファイルのファイル名を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、`FileName`実行時にプロパティに表示されているそのファイルのみを生成、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hidden">
+      <MemberSignature Language="C#" Value="public bool Hidden { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Hidden" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Hidden" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を決定する値かどうか、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />コントロールを持つファイルを表示する<see langword="Hidden" />属性。</summary>
+        <value>
+          <see langword="true" />かどうかのファイルがある、<see langword="Hidden" />属性がそれ以外の表示にする<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに表示するファイルの種類の指定を使用して、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>標準に基づいた制御`Hidden`オペレーティング環境で使用されるファイル属性。 実行時のリセットのコードでこのプロパティの設定、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>を指定した属性を持つファイルのみを表示するコントロール。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemHeight">
+      <MemberSignature Language="C#" Value="public int ItemHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemHeight" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.ItemHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のアイテムの高さを取得、<see cref="T:System.Windows.Forms.ListBox" />です。</summary>
+        <value>このプロパティは不要なため、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />制御;、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />可変の高さのアイテムはサポートされません。 提供のためにのみ、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />からコントロールを継承<see cref="T:System.Windows.Forms.ListBox" />です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListBox.ObjectCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListBox/ObjectCollection Items" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListBox+ObjectCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれている項目を取得、<see cref="T:System.Windows.Forms.ListBox" />です。</summary>
+        <value><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DirListBox" /> 内の項目を表す <see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは使用できませんが、<xref:Microsoft.VisualBasic.Compatibility.VB6.DirListBox>制御; を追加しようとしています。 または、コレクションから削除ディレクトリ例外が発生する可能性があります。 提供のためにのみ、<xref:Microsoft.VisualBasic.Compatibility.VB6.DirListBox>からコントロールを継承<xref:System.Windows.Forms.ListBox>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public string Items[int Index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Items(int32)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Items(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Index"><see langword="Integer" />項目のインデックスを表すです。</param>
+        <summary>含まれている項目を取得、<see cref="T:System.Windows.Forms.ListBox" />です。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />内の項目を表す、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DirListBox" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは使用できませんが、<xref:Microsoft.VisualBasic.Compatibility.VB6.DirListBox>制御; を追加しようとしています。 または、コレクションから削除ディレクトリ例外が発生する可能性があります。 提供のためにのみ、<xref:Microsoft.VisualBasic.Compatibility.VB6.DirListBox>からコントロールを継承<xref:System.Windows.Forms.ListBox>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="public bool Normal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Normal" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Normal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を決定する値かどうか、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />コントロールを持つファイルを表示する<see langword="Normal" />属性。</summary>
+        <value>
+          <see langword="true" />かどうかのファイルがある、<see langword="Normal" />属性がそれ以外の表示にする<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに表示するファイルの種類の指定を使用して、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>標準に基づいた制御`Normal`オペレーティング環境で使用されるファイル属性。 実行時のリセットでこのプロパティを設定、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>を指定した属性を持つファイルのみを表示するコントロール。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDoubleClick">
+      <MemberSignature Language="C#" Value="protected override void OnDoubleClick (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDoubleClick(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.OnDoubleClick(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.DoubleClick" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ `OnDoubleClick`メソッドでは、派生クラスでデリゲートを結び付けずに、イベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPathChange">
+      <MemberSignature Language="C#" Value="protected virtual void OnPathChange (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnPathChange(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.OnPathChange(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.PathChange" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ `OnPathChange`メソッドでは、派生クラスでデリゲートを結び付けずに、イベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPatternChange">
+      <MemberSignature Language="C#" Value="protected virtual void OnPatternChange (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnPatternChange(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.OnPatternChange(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.PatternChange" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ `OnPatternChange`メソッドでは、派生クラスでデリゲートを結び付けずに、イベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectedIndexChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSelectedIndexChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSelectedIndexChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.OnSelectedIndexChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ListBox.SelectedIndexChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ `OnSelectedIndexChanged`メソッドでは、派生クラスでデリゲートを結び付けずに、イベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の現在のパス、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />です。</summary>
+        <value>A<see langword="String" />ファイル名を含まない、現在のパスを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、`Path`プロパティは、C:\Ob または C:\Windows\System など、パスを示す文字列。 <xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>コントロール、既定値は、現在のパス、コントロールが実行時に作成されたとき。  
+  
+ アプリケーションのファイル参照と操作の機能を作成するときは、このプロパティを使用します。 設定、`Path`プロパティは、MS-DOS のような効果`chdir`コマンドです。 ドライブの指定の有無の相対パスは許可します。 コロン (:) ドライブのみを指定すると、そのドライブの現在のディレクトリが選択されます。  
+  
+ `Path`次の構文を使用してドライブ接続を使用せずプロパティが修飾されたネットワーク パスを設定することもできます。  
+  
+```  
+\\servername\sharename\path  
+```  
+  
+ 値を変更する`Path`の<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>コントロールを生成、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.PathChange>イベント。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathChange">
+      <MemberSignature Language="C#" Value="public event EventHandler PathChange;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PathChange" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.PathChange" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定して、パスが変更されるときに発生、<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.FileName" />または<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Path" />コード内のプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`PathChange`パスの変更に応答するイベント プロシージャ、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>コントロール。 新しいパスを含む文字列を代入するときに、 <xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.FileName%2A> 、プロパティ、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>コントロールを呼び出す、`PathChange`イベント。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public string Pattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Pattern" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Pattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示されるファイル名を示す値、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />実行時に制御します。</summary>
+        <value>ファイルの仕様をなどを示す文字列"* です。\*" or "\*.参照"を返します。 既定値は"\*.\*"、すべてのファイルの一覧を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Pattern`プロパティは、アプリケーションのファイル参照と操作の機能の設計に重要な役割を果たします。 使用して`Pattern`ファイルまたは同様のファイルのグループを表示するユーザーの方法を提供するその他のファイル制御プロパティと組み合わせてです。 たとえば、他のプログラムの起動専用アプリケーションで、ファイルの一覧ボックス (*.exe) で .exe ファイルだけが表示されるを指定できます。  
+  
+ ワイルドカード文字を使用するだけでなく、セミコロン (;) で区切られた複数のパターンも使用できます。 たとえば、"*.exe です。* .bat"すべての実行可能ファイルとすべての MS-DOS バッチ ファイルのリストが返されます。  
+  
+ 値を変更する、`Pattern`プロパティが生成されます、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.PatternChange>イベント。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PatternChange">
+      <MemberSignature Language="C#" Value="public event EventHandler PatternChange;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PatternChange" />
+      <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.PatternChange" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときにファイルの一覧パターンなど、"* です。\*"、設定によって変更された、<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.FileName" />または<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Pattern" />コード内のプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`PatternChange`パターンの変更に応答するイベント プロシージャ、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>コントロール。 文字列を代入するときに、新しいパターンが含まれています、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.FileName%2A>プロパティをファイルのリスト ボックスを呼び出す、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.PathChange>イベント。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を決定する値かどうか、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />コントロールには、読み取り専用の属性を持つファイルが含まれています。</summary>
+        <value>
+          <see langword="true" />かどうかのファイルがある、<see langword="ReadOnly" />属性がそれ以外の表示にする<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`ReadOnly`プロパティを<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>か、読み取り専用の属性を持つファイルが、ファイルの一覧に表示されるかどうかを指定するコントロール。  
+  
+> [!NOTE]
+>  場合、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Normal%2A>プロパティに設定されている`true`(既定値) に関係なく、読み取り専用の属性を持つファイルが表示されます、`ReadOnly`プロパティの設定。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public override void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>強制的に、コントロールがクライアント領域を無効化し、直後にそのコントロール自体を再描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="Refresh" />派生クラスでを呼び出すことを確認、<see langword="Refresh" />コントロールとその子コントロールが無効化され、再描画されるように、基底クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Sorted">
+      <MemberSignature Language="C#" Value="public bool Sorted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Sorted" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.Sorted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかの項目、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />はアルファベット順に並べ替えられます。</summary>
+        <value>
+          <see langword="true" />コントロール内の項目が並べ替えられる場合です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>コントロール、`Sorted`は常に返します`false`です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System">
+      <MemberSignature Language="C#" Value="public bool System { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.System" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を決定する値かどうか、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.FileListBox" />コントロールを持つファイルを表示する<see langword="System" />属性。</summary>
+        <value>
+          <see langword="true" />かどうかのファイルがある、<see langword="System" />属性がそれ以外の表示にする<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに表示するファイルの種類の指定を使用して、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>標準に基づいた制御`System`オペレーティング環境で使用されるファイル属性。 実行時のリセットでこのプロパティを設定、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>を指定した属性を持つファイルのみを表示するコントロール。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueMember">
+      <MemberSignature Language="C#" Value="public string ValueMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValueMember" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.ValueMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の項目の実際の値として使用するプロパティ、<see cref="T:System.Windows.Forms.ListControl" />です。</summary>
+        <value>A<see langword="String" />で指定されたコレクションに含まれているオブジェクトのプロパティの名前を表す、<see cref="P:Microsoft.VisualBasic.Compatibility.VB6.FileListBox.DataSource" />プロパティです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定しない必要があります、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>制御; ためにのみ提供されて、<xref:Microsoft.VisualBasic.Compatibility.VB6.FileListBox>からコントロールを継承<xref:System.Windows.Forms.ListBox>です。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

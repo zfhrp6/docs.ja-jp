@@ -1,0 +1,167 @@
+<Type Name="UnhandledExceptionEventArgs" FullName="System.UnhandledExceptionEventArgs">
+  <TypeSignature Language="C#" Value="public class UnhandledExceptionEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit UnhandledExceptionEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.UnhandledExceptionEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーション ドメインで処理されない例外がある場合に発生するイベントにデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UnhandledExceptionEventArgs>例外オブジェクトと、共通言語ランタイムが終了しているかどうかを示すフラグへのアクセスを提供します。 <xref:System.UnhandledExceptionEventArgs>に渡されたパラメーターの 1 つ<xref:System.UnhandledExceptionEventHandler>の<xref:System.AppDomain.UnhandledException?displayProperty=nameWithType>イベント。  
+  
+ イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UnhandledExceptionEventArgs (object exception, bool isTerminating);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object exception, bool isTerminating) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UnhandledExceptionEventArgs.#ctor(System.Object,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Object" />
+        <Parameter Name="isTerminating" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="exception">この例外は処理されません。</param>
+        <param name="isTerminating">
+          <see langword="true" />場合は、ランタイムが終了中です。それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.UnhandledExceptionEventArgs" />クラス例外オブジェクトと共通言語ランタイムの終了フラグを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionObject">
+      <MemberSignature Language="C#" Value="public object ExceptionObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ExceptionObject" />
+      <MemberSignature Language="DocId" Value="P:System.UnhandledExceptionEventArgs.ExceptionObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>未処理の例外オブジェクトを取得します。</summary>
+        <value>未処理の例外オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、型のオブジェクトを返します<xref:System.Object>から派生した 1 つではなく<xref:System.Exception>です。 共通言語仕様では、すべての例外型はから派生する必要がありますが<xref:System.Exception>、オブジェクトから派生するいないと例外をスローするメソッドに対して可能であれば<xref:System.Exception>です。 この例外を使用するには、次を行うことができます。  
+  
+-   適用、<xref:System.Runtime.CompilerServices.RuntimeCompatibilityAttribute>属性が、<xref:System.Runtime.CompilerServices.RuntimeCompatibilityAttribute.WrapNonExceptionThrows%2A?displayProperty=nameWithType>の値`true`イベント ハンドラーを含むアセンブリにします。 派生していないすべての例外をラップこの、<xref:System.Exception>クラス内で、<xref:System.Runtime.CompilerServices.RuntimeWrappedException>オブジェクト。 できますし、安全にキャスト (c#) または変換する (Visual Basic) のこのプロパティによって返されるオブジェクト、<xref:System.Exception>オブジェクト、およびから元の例外オブジェクトを取得、<xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType>プロパティです。 C# および Visual Basic のコンパイラなど、一部のコンパイラが、この属性を自動的に適用されるに注意してください。  
+  
+-   このプロパティによって返されるオブジェクトをキャスト、<xref:System.Exception>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.AppDomain.UnhandledException>イベント。 イベント ハンドラーを定義`MyHandler`既定のアプリケーション ドメインでハンドルされない例外がスローされるたびに呼び出されます。 2 つの例外をスローします。 最初はによって処理される、 **try ブロックと catch**ブロックします。 2 番目が処理されないと起動、`MyHandle`ルーチン、アプリケーションが終了する前にします。  
+  
+ [!code-cpp[AppDomain_UnhandledException#1](~/samples/snippets/cpp/VS_Snippets_CLR/AppDomain_UnhandledException/CPP/unhandledexception.cpp#1)]
+ [!code-csharp[AppDomain_UnhandledException#1](~/samples/snippets/csharp/VS_Snippets_CLR/AppDomain_UnhandledException/CS/unhandledexception.cs#1)]
+ [!code-vb[AppDomain_UnhandledException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AppDomain_UnhandledException/VB/unhandledexception.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTerminating">
+      <MemberSignature Language="C#" Value="public bool IsTerminating { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTerminating" />
+      <MemberSignature Language="DocId" Value="P:System.UnhandledExceptionEventArgs.IsTerminating" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共通言語ランタイムが終了中かどうかを示します。</summary>
+        <value>
+          <see langword="true" />場合は、ランタイムが終了中です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降、.NET Framework version 2.0 では、このプロパティを返します`true`ほとんどのアプリケーション互換性フラグをバージョン 1.0 および 1.1 の動作に戻すには使用しない場合、ハンドルされない例外です。 理由は、通常はそのアプリケーションの終了結果、続行するか、スレッド プールのスレッドを含め、スレッドでハンドルされない例外最もが許可されていることです。 これで、ランタイムが終了しない、ケースのリストを含む詳細については、次を参照してください。[マネージ スレッドの例外](~/docs/standard/threading/exceptions-in-managed-threads.md)です。  
+  
+## <a name="version-information"></a>バージョン情報  
+ .NET Framework のバージョン 1.0 および 1.1 に、次が適用されます。 このプロパティを返します`true`例外は、受信したものの、アプリケーションのメイン スレッドで処理されないときです。 このプロパティも返します`true`アンマネージ スレッドがマネージ コードの実行、および未処理の例外を受信する場合。 最後に、このプロパティを返します`false`スレッド プールのスレッドとマネージ スレッドがバージョン 1.0 および 1.1 は、このようなスレッドでハンドルされない例外をキャッチし、それらを無視するために、アプリケーションが作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

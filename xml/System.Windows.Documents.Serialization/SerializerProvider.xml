@@ -1,0 +1,221 @@
+<Type Name="SerializerProvider" FullName="System.Windows.Documents.Serialization.SerializerProvider">
+  <TypeSignature Language="C#" Value="public sealed class SerializerProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SerializerProvider extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Serialization.SerializerProvider" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>シリアル化、作成を使用してプラグインを管理する<see cref="T:System.Windows.Documents.Serialization.ISerializerFactory" />と<see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />、自分独自のシリアル化形式を持つの製造元によってです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SerializerProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Serialization.SerializerProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Documents.Serialization.SerializerProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみ完全に信頼される呼び出し元を作成できる、<xref:System.Windows.Documents.Serialization.SerializerProvider>です。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Documents.Serialization.SerializerProvider>コンス トラクターです。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeFileFilter](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializefilefilter)]  
+  
+ [!code-csharp[DocumentSerialize#DocSerializePlugIn](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializeplugin)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSerializerWriter">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.Serialization.SerializerWriter CreateSerializerWriter (System.Windows.Documents.Serialization.SerializerDescriptor serializerDescriptor, System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.Serialization.SerializerWriter CreateSerializerWriter(class System.Windows.Documents.Serialization.SerializerDescriptor serializerDescriptor, class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter(System.Windows.Documents.Serialization.SerializerDescriptor,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.Serialization.SerializerWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializerDescriptor" Type="System.Windows.Documents.Serialization.SerializerDescriptor" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="serializerDescriptor">A<see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />のシリアル化情報を含む、<see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />です。</param>
+        <param name="stream"><see cref="T:System.IO.Stream" />書き込み先となる、返されたオブジェクト。</param>
+        <summary>抽象から派生したオブジェクトを初期化します<see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />、指定されたクラス<see cref="T:System.IO.Stream" />指定された記述子を使用します。</summary>
+        <returns>派生したクラスのオブジェクト<see cref="T:System.Windows.Documents.Serialization.SerializerWriter" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみ完全に信頼されるアプリケーションから呼び出せる<xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を使用して<xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A>をファイルの保存用プラグインのシリアル化のライターを返します。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializePlugIn](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializeplugin)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">パラメーターのいずれかが null です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="serializerDescriptor" />に不適切なバージョンを指定します。  
+  
+ または  
+  
+ 登録されていません。  
+  
+ または  
+  
+ アセンブリ ファイルが見つかりません。  
+  
+ または  
+  
+ アセンブリはアンロードすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InstalledSerializers">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Documents.Serialization.SerializerDescriptor&gt; InstalledSerializers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Documents.Serialization.SerializerDescriptor&gt; InstalledSerializers" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Serialization.SerializerProvider.InstalledSerializers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Documents.Serialization.SerializerDescriptor&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インストールされているプラグイン シリアライザーのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />の<see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />オブジェクトが既に登録されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して<xref:System.Windows.Documents.Serialization.SerializerProvider.InstalledSerializers%2A>ファイルを保存するときに、プラグイン シリアライザーを列挙します。  
+  
+ [!code-csharp[DocumentSerialize#DocSerializePlugIn](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializeplugin)]  
+  
+ [!code-csharp[DocumentSerialize#DocSerializeFileFilter](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializefilefilter)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterSerializer">
+      <MemberSignature Language="C#" Value="public static void RegisterSerializer (System.Windows.Documents.Serialization.SerializerDescriptor serializerDescriptor, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterSerializer(class System.Windows.Documents.Serialization.SerializerDescriptor serializerDescriptor, bool overwrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Serialization.SerializerProvider.RegisterSerializer(System.Windows.Documents.Serialization.SerializerDescriptor,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializerDescriptor" Type="System.Windows.Documents.Serialization.SerializerDescriptor" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serializerDescriptor"><see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />プラグインのです。</param>
+        <param name="overwrite">
+          <see langword="true" />同じプラグイン; の既存の登録を上書きするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>プラグイン シリアライザーを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全に信頼された呼び出し元のだけでは、このメソッドを使用できます。  
+  
+ メソッドは既に登録されている、解釈が同じ場合は、これらすべてのプロパティで同じであるプラグイン: <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A>、 <xref:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyName%2A>、 <xref:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyVersion%2A>、および<xref:System.Windows.Documents.Serialization.SerializerDescriptor.WinFXVersion%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serializerDescriptor" /> が null です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="overwrite" /><see langword="false" />プラグインは既に登録されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterSerializer">
+      <MemberSignature Language="C#" Value="public static void UnregisterSerializer (System.Windows.Documents.Serialization.SerializerDescriptor serializerDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UnregisterSerializer(class System.Windows.Documents.Serialization.SerializerDescriptor serializerDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Serialization.SerializerProvider.UnregisterSerializer(System.Windows.Documents.Serialization.SerializerDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializerDescriptor" Type="System.Windows.Documents.Serialization.SerializerDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="serializerDescriptor"><see cref="T:System.Windows.Documents.Serialization.SerializerDescriptor" />プラグインのです。</param>
+        <summary>レジストリからプラグイン シリアライザーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全に信頼された呼び出し元のだけでは、このメソッドを使用できます。  
+  
+ メソッドは、登録されている、解釈、同じこれらすべてのプロパティで同じである場合にのみ、このメソッドに渡される 1 つとしてプラグイン: <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A>、 <xref:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyName%2A>、 <xref:System.Windows.Documents.Serialization.SerializerDescriptor.AssemblyVersion%2A>、および<xref:System.Windows.Documents.Serialization.SerializerDescriptor.WinFXVersion%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serializerDescriptor" /> が null です。</exception>
+        <exception cref="T:System.ArgumentException">プラグインが登録されていません。 参照してください**解説**です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

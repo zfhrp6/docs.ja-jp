@@ -1,0 +1,113 @@
+<Type Name="IDataBoundControl" FullName="System.Web.UI.WebControls.IDataBoundControl">
+  <TypeSignature Language="C#" Value="public interface IDataBoundControl" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataBoundControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.IDataBoundControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインドされたコントロールによって共有されるプロパティを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスなど、データ バインド コントロールで共有されるプロパティへのアクセスを提供する、 <xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.ListView>、<xref:System.Web.UI.WebControls.FormView>と<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DataKeyNames">
+      <MemberSignature Language="C#" Value="public string[] DataKeyNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] DataKeyNames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IDataBoundControl.DataKeyNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、データ バインド コントロールに表示されるアイテムの主キー フィールドの名前を格納する配列。</summary>
+        <value>データ バインド コントロールに表示されるアイテムの主キー フィールドの名前を格納する配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataMember">
+      <MemberSignature Language="C#" Value="public string DataMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataMember" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IDataBoundControl.DataMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ソースには、データ項目の 1 つ以上の一覧が含まれている場合に、データ バインド コントロールをバインドするデータの一覧の名前を設定します。</summary>
+        <value>データ バインド コントロールがバインドされるデータの一覧の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public object DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IDataBoundControl.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、データ バインド コントロールのデータ項目の一覧の取得元となるオブジェクト。</summary>
+        <value>データ バインド コントロールを取得するデータの一覧を格納するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceID">
+      <MemberSignature Language="C#" Value="public string DataSourceID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSourceID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IDataBoundControl.DataSourceID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、データ バインド コントロールのデータ項目の一覧の取得元となるデータ ソース コントロールの ID。</summary>
+        <value>データ バインド コントロールを取得するデータ項目の一覧を含むデータ ソース コントロールの ID。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceObject">
+      <MemberSignature Language="C#" Value="public System.Web.UI.IDataSource DataSourceObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.IDataSource DataSourceObject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IDataBoundControl.DataSourceObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IDataSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインド コントロールのデータ項目の一覧の取得元となるデータ ソース オブジェクトを取得します。</summary>
+        <value>データ バインド コントロールを取得するデータ項目の一覧を含むデータ ソース オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

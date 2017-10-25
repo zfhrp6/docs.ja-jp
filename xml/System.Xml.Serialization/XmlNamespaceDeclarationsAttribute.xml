@@ -1,0 +1,201 @@
+<Type Name="XmlNamespaceDeclarationsAttribute" FullName="System.Xml.Serialization.XmlNamespaceDeclarationsAttribute">
+  <TypeSignature Language="C#" Value="public class XmlNamespaceDeclarationsAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlNamespaceDeclarationsAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.ReturnValue, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ターゲットのプロパティ、パラメーター、戻り値、またはクラス メンバーに、XML ドキュメント内で使用される名前空間に関連付けられたプレフィックスを含めるように指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute>属性のみに適用できます回クラスで、フィールドまたはプロパティを返す、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクト。  
+  
+ <xref:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute> XML ドキュメントで使用されるプレフィックス、および関連付けられている名前空間を格納することができます。 たとえば、1 つの属性の一般的な使用方法は、World Wide Web Consortium) (www.w3.org) のドキュメントで定義されている XPath のデータの格納には"XML 言語 (XPath) Version 1.0"の名前です。 簡単に言うと、XPath は、多くの名前空間プレフィックスとローカル名、および他の構文を含む文字列です。  
+  
+ XPath 言語の関連付け、プレフィックスなパス、および XML ドキュメント内でプレフィックスを使用できます。 たとえば、"select"という名前の次の XML ドキュメントには、特定の URI (http://www.cohowinery.com/calendar/) に関連付けられているプレフィックス ("cal") が含まれています。 要素には、xpath"path"をという名前の属性が含まれています。  
+  
+```  
+<select xmlns:cal ="http://www.cohowinery.com/calendar/" path="cal:appointments/@startTime" />  
+```  
+  
+ このスキーマは次のようになります。  
+  
+```  
+<element name="select">  
+   <complexType>  
+      <simpleContent>  
+         <attribute name="path" />  
+      </simpleContent>  
+   </complexType>  
+</element>  
+```  
+  
+ なし、<xref:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute>プレフィックスと名前空間の間の関連付けは失われます。  
+  
+ 保持するために、プレフィックスと名前空間 URI 間の関連付けを返すメンバーを追加、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクトし、適用、<xref:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute>次の c# および Visual Basic のコードに示すように、そのメンバーに属性します。  
+  
+```  
+// C#  
+public class Select {  
+  [XmlAttribute] public string path;  
+  [XmlNamespaceDeclarations] public XmlSerializerNamespaces xmlns;  
+}  
+' Visual Basic  
+Public Class Select  
+   <XmlAttribute> Public path As String  
+   <XmlNamespaceDeclarations> Public xmlns As XmlSerializerNamespaces  
+End Class  
+```  
+  
+ 生成された XML ドキュメントのスキーマがという名前の XML スキーマ定義 (XSD) 要素を含むシリアル化されるとき`appinfo`です。 さらに、要素には、という名前のメタデータ要素が含まれています。 `keepNamespaceDeclarations`、名前空間宣言を含むメンバーの名前に設定します。 次の XML フラグメントは、スキーマを示しています。  
+  
+```  
+<xs:element name="select">  
+   <xs:complexType>  
+      <xs:annotation>   
+         <xs:appinfo>  
+          <keepNamespaceDeclarations>xmlns</keepNamespaceDeclarations>  
+         </xs:appinfo>   
+      </xs:annotation>   
+      <xs:simpleContent>  
+         <xs:attribute name="path" />  
+      </xs:simpleContent>  
+   </xs:complexType>  
+</xs:element>  
+```  
+  
+ 逆シリアル化で、`xmlns`フィールドが含まれています、<xref:System.Xml.Serialization.XmlSerializerNamespaces>すべての名前空間プレフィックスの定義を含むオブジェクトです。  
+  
+ シリアル化、ユーザーが名前空間のプレフィックスのペアを追加することができます、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクトを使用して、<xref:System.Xml.Serialization.XmlSerializerNamespaces.Add%2A>メソッドです。 これは、次の c# および Visual Basic コードで示されます。  
+  
+```  
+// C#  
+using System;  
+using System.IO;  
+using System.Xml.Serialization;  
+[XmlRoot("select")]  
+public class Select {  
+   [XmlAttribute]  
+   public string xpath;  
+   [XmlNamespaceDeclarations]  
+   public XmlSerializerNamespaces xmlns;  
+}  
+public class Test {  
+   public static void Main(string[] args) {  
+      Select mySelect = new Select();  
+      mySelect.xpath = "myNS:ref/@common:y";  
+      mySelect.xmlns = new XmlSerializerNamespaces();  
+      mySelect.xmlns.Add("MyNS", "myNS.tempuri.org");  
+      mySelect.xmlns.Add("common", "common.tempuri.org");  
+      XmlSerializer ser = new XmlSerializer(typeof(Select));  
+      ser.Serialize(Console.Out, mySelect);  
+   }  
+}  
+// Output:  
+// <?xml version="1.0" encoding="IBM437"?>  
+// <select xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+// xmlns:common="common.tempuri.org" xmlns:MyNS="myNS.tempuri.org" xpath="myNS:ref/@common:y" />  
+' Visual Basic  
+Imports System  
+Imports System.IO  
+Imports System.Xml.Serialization  
+<XmlRoot("select")> _  
+Public Class SelectPath  
+   <XmlAttribute> _  
+   Public xpath As String   
+   <XmlNamespaceDeclarations> _  
+   public xmlns As XmlSerializerNamespaces   
+End Class  
+Public Class Test   
+   Public Shared Sub Main()   
+      Dim mySelect As SelectPath = New SelectPath()  
+      mySelect.xpath = "myNS:ref/@common:y"  
+      mySelect.xmlns = New XmlSerializerNamespaces()  
+      mySelect.xmlns.Add("MyNS", "myNS.tempuri.org")  
+      mySelect.xmlns.Add("common", "common.tempuri.org")  
+      Dim ser As XmlSerializer = New XmlSerializer(mySelect.GetType)  
+      ser.Serialize(Console.Out, mySelect)  
+   End Sub  
+End Class  
+'Output:  
+' <?xml version="1.0" encoding="IBM437"?>  
+' <select xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+' xmlns:common="common.tempuri.org" xmlns:MyNS="myNS.tempuri.org" xpath="myNS:ref/@common:y" />  
+```  
+  
+ 属性を適用するメンバーがクラスで定義されている XML 要素に属している名前空間のプレフィックスのペアのみが含まれているにも注意してください。 たとえば、次の XML ドキュメントでプレフィックスのペア"cal"のみキャプチャされると、"x"プレフィックスではありませんが、します。 そのデータを取得するを持つメンバーを追加、<xref:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute>を表すクラスに、`root`要素。  
+  
+```  
+<?xml version="1.0"?>  
+<x:root xmlns:x="http://www.cohowinery.com/x/">  
+  <x:select xmlns:cal="http://www.cohowinery.com/calendar/" path="cal:appointments/@cal:startTime" />  
+</x:root>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlNamespaceDeclarationsAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute>を返すターゲットにのみ適用できる、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

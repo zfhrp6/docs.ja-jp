@@ -1,0 +1,285 @@
+<Type Name="Floater" FullName="System.Windows.Documents.Floater">
+  <TypeSignature Language="C#" Value="public class Floater : System.Windows.Documents.AnchoredBlock" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Floater extends System.Windows.Documents.AnchoredBlock" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Floater" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.AnchoredBlock</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>浮遊要素をホストするために使用するインライン レベル フロー コンテンツ要素を提供します。 A*フローター*イメージと並列でメイン コンテンツ フローにその他のコンテンツを表示、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Figure>または<xref:System.Windows.Documents.Floater>要素が強調表示や、イメージまたはメイン コンテンツのフロー内の他のコンテンツをサポートするホストへのコンテンツの一部を強調したりに使用する多くの場合、または疎を挿入する関連するコンテンツの提供情報などです。 浮遊要素には、ブロック クラスから継承するオブジェクトを含めることができます。 詳細については、次を参照してください[TextElement コンテンツ モデルの概要。](~/docs/framework/wpf/advanced/textelement-content-model-overview.md)  
+  
+ <xref:System.Windows.Documents.Figure>および<xref:System.Windows.Documents.Floater>いくつかの方法が異なるし、さまざまなシナリオが使用されます。  
+  
+ **Figure:**  
+  
+-   配置可能です。水平方向および垂直方向のアンカーを設定することによって、ページ、コンテンツ、列、または段落に対して相対的にドッキングできます。 使用することもその<xref:System.Windows.Documents.Figure.HorizontalOffset%2A>と<xref:System.Windows.Documents.Figure.VerticalOffset%2A>プロパティを任意のオフセットを指定します。  
+  
+-   1 つ以上の列にかなりの数: 設定することができます<xref:System.Windows.Documents.Figure>高さと幅のページ、コンテンツまたは列の高さまたは幅の倍数をします。 ページおよびコンテンツの場合は、1 より大きい倍数は指定できない点に注意してください。 たとえばの幅を設定することができます、 <xref:System.Windows.Documents.Figure> 「0.5 ページ」または"0.25 content"または「2 列」を指定します。 高さと幅は、絶対ピクセル値で指定することもできます。  
+  
+-   改ページ調整ではありません: 場合内のコンテンツ、<xref:System.Windows.Documents.Figure>内に一致しない、 <xref:System.Windows.Documents.Figure>、あらゆるコンテンツに合わせて、表示して、残りのコンテンツは失われます  
+  
+ **Floater:**  
+  
+-   配置できません。必要なスペースを確保できる場所に描画されます。 オフセットまたはアンカーを設定することはできません、<xref:System.Windows.Documents.Floater>です。  
+  
+-   複数の列にサイズを変更できません: 既定では、 <xref:System.Windows.Documents.Floater> 1 つの列のサイズ。 <xref:System.Windows.Documents.Floater.Width%2A> 1 つの列のサイズはこの値は 1 つの列の幅は無視され、フローターより大きい場合は、絶対ピクセル値を設定できるプロパティです。 正しいピクセル幅を設定して未満である 1 つの列サイズできますが、サイズ変更はない列の相対のため"はできないの有効な式<xref:System.Windows.Documents.Floater>幅。 <xref:System.Windows.Documents.Floater>高さのプロパティを持たないであり、高さを設定することはできませんの高さは、内容によって異なります。  
+  
+-   <xref:System.Windows.Documents.Floater>改ページも: フローターが中断し、次の列では、次のページなどの改ページも 1 つ以上の列の高さを指定した幅にコンテンツが拡張される場合。  
+  
+ <xref:System.Windows.Documents.Figure>サイズを制御するスタンドアロンのコンテンツを配置する適切な場所と配置、およびコンテンツは、指定されたサイズに収まるかどうかを確信します。 <xref:System.Windows.Documents.Floater>フロー メイン ページのコンテンツに似ていますが、そこからは分離されているより多くの自由なコンテンツを配置する適切な場所です。  
+  
+   
+  
+## Examples  
+ 次の例では定義、<xref:System.Windows.Documents.FlowDocument>両方を含む<xref:System.Windows.Documents.Floater>と<xref:System.Windows.Documents.Figure>要素。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FloaterFigureXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_floaterfigurexaml)]  
+  
+ この例がどのように表示されるかを次の図に示します。  
+  
+ ![スクリーン ショット: Floater と Figure FlowDocument 内](~/add/media/floaterfigure.png "スクリーン ショット: Floater と Figure FlowDocument 内")  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Floater ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Floater.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Documents.Floater" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Floater (System.Windows.Documents.Block childBlock);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.Block childBlock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Floater.#ctor(System.Windows.Documents.Block)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childBlock" Type="System.Windows.Documents.Block" />
+      </Parameters>
+      <Docs>
+        <param name="childBlock">新しいの初期コンテンツ<see cref="T:System.Windows.Documents.Floater" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Documents.Floater" /> 、指定したクラス<see cref="T:System.Windows.Documents.Block" />その初期内容としてオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用する方法を示します。  
+  
+ [!code-csharp[FloaterFigureSnippets#_FloaterConst1](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_floaterconst1)]
+ [!code-vb[FloaterFigureSnippets#_FloaterConst1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_floaterconst1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Floater (System.Windows.Documents.Block childBlock, System.Windows.Documents.TextPointer insertionPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.Block childBlock, class System.Windows.Documents.TextPointer insertionPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Floater.#ctor(System.Windows.Documents.Block,System.Windows.Documents.TextPointer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childBlock" Type="System.Windows.Documents.Block" />
+        <Parameter Name="insertionPosition" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="childBlock">新しいの初期コンテンツ<see cref="T:System.Windows.Documents.Floater" />です。 このパラメーターを指定できます<see langword="null" />、後者ありません<see cref="T:System.Windows.Documents.Block" />を挿入します。</param>
+        <param name="insertionPosition">挿入する位置の<see cref="T:System.Windows.Documents.Floater" />要素が作成された後です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Documents.Floater" /> 、指定したクラス<see cref="T:System.Windows.Documents.Block" />その初期内容としてオブジェクトと<see cref="T:System.Windows.Documents.TextPointer" />新しいの挿入位置を示す<see cref="T:System.Windows.Documents.Floater" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用する方法を示します。  
+  
+ [!code-csharp[FloaterFigureSnippets#_FloaterConst2](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_floaterconst2)]
+ [!code-vb[FloaterFigureSnippets#_FloaterConst2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_floaterconst2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.HorizontalAlignment HorizontalAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.HorizontalAlignment HorizontalAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Floater.HorizontalAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.HorizontalAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはの水平方向の配置を示す値を設定、<see cref="T:System.Windows.Documents.Floater" />オブジェクト。</summary>
+        <value>メンバー、<see cref="T:System.Windows.HorizontalAlignment" />の水平方向の配置を指定する列挙体、<see cref="T:System.Windows.Documents.Floater" />です。 既定値は、<see cref="F:System.Windows.HorizontalAlignment.Stretch" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_HorizontalAlignment"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Floater.HorizontalAlignmentProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>|  
+  
+   
+  
+## Examples  
+ このプロパティを設定する方法を次の例に示します。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FloaterPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_floaterpropsxaml)]  
+  
+ [!code-csharp[FloaterFigureSnippets#_FloaterProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_floaterprops)]
+ [!code-vb[FloaterFigureSnippets#_FloaterProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_floaterprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalAlignmentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalAlignmentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalAlignmentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Floater.HorizontalAlignmentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Floater.HorizontalAlignment" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public double Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Floater.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の幅を示す値、<see cref="T:System.Windows.Documents.Floater" />オブジェクト。</summary>
+        <value>幅、<see cref="T:System.Windows.Documents.Floater" />デバイスに依存しないピクセルでします。 既定値は<see cref="F:System.Double.NaN" />(属性値に相当<c>自動</c>)、行の高さが自動的に決定されるを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_Width"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Width="double"/>  
+- or -  
+<object Width="qualifiedDouble"/>  
+- or -  
+<object Width="Auto"/>  
+```  
+  
+<a name="xamlValues_Width"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity>です。 修飾されていない値の単位で[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A `double` 、上記で説明したように値 (を除く`Auto`) 後に、次の単位指定子の 1 つ: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ 自動  
+ 自動的に決定する幅をによりします。 プロパティの値に相当<xref:System.Double.NaN>です。  
+  
+<a name="dependencyPropertyInfo_Width"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Floater.WidthProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Floater.Width%2A>の属性、<xref:System.Windows.Documents.Floater>要素。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FloaterPropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_floaterpropsxaml)]  
+  
+ [!code-csharp[FloaterFigureSnippets#_FloaterProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_floaterprops)]
+ [!code-vb[FloaterFigureSnippets#_FloaterProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_floaterprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty WidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty WidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Floater.WidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Floater.Width" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

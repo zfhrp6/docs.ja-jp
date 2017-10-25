@@ -1,0 +1,104 @@
+<Type Name="IActivator" FullName="System.Runtime.Remoting.Activation.IActivator">
+  <TypeSignature Language="C#" Value="public interface IActivator" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IActivator" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Activation.IActivator" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リモート処理のアクティベーター クラスの基本機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティベーターを制御し、オブジェクトを参照によってマーシャ リングのアクティブ化に参加します。 アクティベーターは、実際のオブジェクトを作成する他のユーザーが、コンテキストを作成します。  
+  
+ アクティベーターを使用して、<xref:System.Runtime.Remoting.Activation.IActivator.NextActivator%2A>プロパティを確認する必要があります、階層を形成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Activate">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Activation.IConstructionReturnMessage Activate (System.Runtime.Remoting.Activation.IConstructionCallMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Activation.IConstructionReturnMessage Activate(class System.Runtime.Remoting.Activation.IConstructionCallMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Activation.IActivator.Activate(System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Activation.IConstructionReturnMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg">格納されていることをアクティブ化するために必要なオブジェクトについての情報、<see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />です。</param>
+        <summary>指定されたオブジェクトのインスタンスが作成を指定した<see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />です。</summary>
+        <returns>含まれているオブジェクトのアクティブ化の状態、<see cref="T:System.Runtime.Remoting.Activation.IConstructionReturnMessage" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Level">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Activation.ActivatorLevel Level { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Remoting.Activation.ActivatorLevel Level" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Activation.IActivator.Level" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Activation.ActivatorLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Runtime.Remoting.Activation.ActivatorLevel" />このアクティベーターはアクティブです。</summary>
+        <value><see cref="T:System.Runtime.Remoting.Activation.ActivatorLevel" />このアクティベーターはアクティブです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Activation.IActivator.Level%2A>アクティベータを追加するときに、チェーン内の右の位置を検索するために使用します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="NextActivator">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Activation.IActivator NextActivator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Activation.IActivator NextActivator" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Activation.IActivator.NextActivator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Activation.IActivator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはチェーンの次のアクティベーターを設定します。</summary>
+        <value>チェーンの次のアクティベーター。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

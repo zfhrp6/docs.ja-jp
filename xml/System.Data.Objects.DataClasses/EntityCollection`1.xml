@@ -1,0 +1,684 @@
+<Type Name="EntityCollection&lt;TEntity&gt;" FullName="System.Data.Objects.DataClasses.EntityCollection&lt;TEntity&gt;">
+  <TypeSignature Language="C#" Value="public sealed class EntityCollection&lt;TEntity&gt; : System.Data.Objects.DataClasses.RelatedEnd, System.Collections.Generic.ICollection&lt;TEntity&gt;, System.Collections.Generic.IEnumerable&lt;TEntity&gt;, System.ComponentModel.IListSource where TEntity : class" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit EntityCollection`1&lt;class TEntity&gt; extends System.Data.Objects.DataClasses.RelatedEnd implements class System.Collections.Generic.ICollection`1&lt;!TEntity&gt;, class System.Collections.Generic.IEnumerable`1&lt;!TEntity&gt;, class System.Collections.IEnumerable, class System.ComponentModel.IListSource" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.EntityCollection`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TEntity">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Data.Objects.DataClasses.RelatedEnd</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;TEntity&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;TEntity&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IListSource</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TEntity">コレクションのエンティティ型。</typeparam>
+    <summary>リレーションシップの "多" の側のオブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601> は、一対多または多対多のリレーションシップの "多" の側を表す特定のエンティティ型のオブジェクトのコレクションです。  
+  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601> はナビゲーション プロパティによって返されます。 <xref:System.Data.Objects.DataClasses.EntityCollection%601.Load%2A> に関連オブジェクトを読み込むには、<xref:System.Data.Objects.DataClasses.EntityCollection%601> メソッドを使用します。 特定のエンティティ型の、関連のないオブジェクトのコレクション (<xref:System.Data.Objects.ObjectQuery%601> の結果など) を格納するには、<xref:System.Collections.Generic.List%601> クラスのインスタンスを使用します。  
+  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601> には、対応する <xref:System.Data.Objects.DataClasses.EntityReference%601> がある場合があります。 <xref:System.Data.Objects.DataClasses.EntityCollection%601> と <xref:System.Data.Objects.DataClasses.EntityReference%601> が同じリレーションシップの両端をモデル化している場合は、そのリレーションシップの整合性がオブジェクト レベルで維持されて、 その 2 つのクラスが自動的に同期されます。  
+  
+ このクラスは継承できません。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、します。 この例のコードを実行するには、あらかじめプロジェクトに AdventureWorks Sales Model を追加し、Entity Framework を使用するようにプロジェクトを構成しておく必要があります。 これを行うための手順を完了[する方法: Entity Framework プロジェクトを手動で構成](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)と[する方法: モデル ファイルとマッピング ファイルを手動で定義](http://msdn.microsoft.com/en-us/d4fd6864-f2a1-48f0-aa32-1e318775a99a)です。  
+  
+ この例の内容は次のとおりです。  
+  
+1.  2 つの新しい `SalesOrderHeader` エンティティを作成して `Contact` エンティティに追加します。  
+  
+2.  <xref:System.Data.Objects.DataClasses.RelationshipManager> エンティティに関連付けられている `Contact` からすべての関連 End を取得します。  
+  
+3.  <xref:System.Data.Objects.DataClasses.IRelatedEnd> のコレクションを反復処理します。  
+  
+4.  各関連 End の <xref:System.Data.Objects.DataClasses.EntityCollection%601> を取得します。  
+  
+5.  <xref:System.Data.Objects.DataClasses.EntityCollection%601.Remove%2A> メソッドを使用して、コレクションからエンティティを 1 つ削除します。  
+  
+6.  <xref:System.Data.Objects.DataClasses.EntityCollection%601.Contains%2A> メソッドを呼び出して、そのオブジェクトがコレクションから削除されたかどうかを確認します。  
+  
+7.  <xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A> メソッドを使用して、削除したエンティティを再び追加します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#IRelatedEnd_Add](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#irelatedend_add)]
+ [!code-vb[DP ObjectServices Concepts#IRelatedEnd_Add](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#irelatedend_add)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この <xref:System.Data.Objects.DataClasses.EntityCollection%601> のパブリック コンストラクターは、Object Services がオブジェクト グラフをシリアル化解除するときに使用するものです。 <xref:System.Data.Objects.DataClasses.EntityCollection%601> のインスタンスにアクセスするには、このコンストラクターではなくナビゲーション プロパティを使用してください。  
+  
+ 特定のエンティティ型の、関連のないオブジェクトのコレクション (<xref:System.Data.Objects.ObjectQuery%601> の結果など) を格納するには、<xref:System.Collections.Generic.List%601> のインスタンスを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (TEntity entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(!TEntity entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.Add(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <param name="entity">コレクションに追加するオブジェクト。 <c>エンティティ</c>実装する必要があります<see cref="T:System.Data.Objects.DataClasses.IEntityWithRelationships" />です。</param>
+        <summary>コレクションにオブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A> メソッドは、<xref:System.Data.Objects.DataClasses.EntityCollection%601> にオブジェクトを追加して、2 つのオブジェクト間のリレーションシップを作成します。 ソース オブジェクトが <xref:System.Data.Objects.ObjectContext> インスタンスにアタッチされている場合、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A> メソッドは <xref:System.Data.Objects.ObjectContext> にもオブジェクトを追加します。 この操作は、<xref:System.Data.Objects.ObjectContext.SaveChanges%2A> が呼び出されるとデータ ソースの挿入操作に変換されます。 詳細については、次を参照してください。[の作成、追加、変更、およびオブジェクトの削除](http://msdn.microsoft.com/en-us/f76f1fad-c553-4b59-820b-89b3dec2fad1)です。  
+  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A> メソッドは、同じオブジェクト インスタンスで複数回呼び出すことができます。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、します。 この例のコードを実行するには、あらかじめプロジェクトに AdventureWorks Sales Model を追加し、Entity Framework を使用するようにプロジェクトを構成しておく必要があります。 これを行うための手順を完了[する方法: Entity Framework プロジェクトを手動で構成](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)と[する方法: モデル ファイルとマッピング ファイルを手動で定義](http://msdn.microsoft.com/en-us/d4fd6864-f2a1-48f0-aa32-1e318775a99a)です。  
+  
+ この例では、2 つの新しい `SalesOrderHeader` エンティティを作成し、それらを `Contact` エンティティに追加します。次に、オブジェクトを 1 つ削除し、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A> メソッドを使用して、削除したオブジェクトを再びコレクションに追加します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#IRelatedEnd_Add](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#irelatedend_add)]
+ [!code-vb[DP ObjectServices Concepts#IRelatedEnd_Add](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#irelatedend_add)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entity" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="public void Attach (System.Collections.Generic.IEnumerable&lt;TEntity&gt; entities);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Attach(class System.Collections.Generic.IEnumerable`1&lt;!TEntity&gt; entities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.Attach(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entities" Type="System.Collections.Generic.IEnumerable&lt;TEntity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="entities">ソース オブジェクトに関連付けられているオブジェクト コンテキスト内のオブジェクトのコレクション。</param>
+        <summary>オブジェクトと、オブジェクト コンテキスト内の関連オブジェクトのコレクションとのリレーションシップを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext.Attach%2A> メソッドは、ソース オブジェクトと関連オブジェクトのコレクションの両方が既にオブジェクト コンテキストに存在する場合にそれらの間のリレーションシップを定義するために使用されます。 オブジェクトや、リレーションシップが既に定義されているオブジェクト グラフをアタッチするには、<xref:System.Data.Objects.ObjectContext.Attach%2A> の <xref:System.Data.Objects.ObjectContext> メソッドを呼び出します。 ソース オブジェクトに関連付けられている新しいオブジェクトを作成するには、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A> の <xref:System.Data.Objects.DataClasses.EntityCollection%601> メソッドを呼び出します。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
+  
+ コレクションに既にエンティティが含まれている場合は、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Attach%2A> メソッドによって、指定したエンティティと既存のエンティティがマージされます。 この場合、指定したエンティティは、関連エンティティの完全なセットとは見なされません。  
+  
+ このメソッドに渡すエンティティはすべて、状態が <xref:System.Data.EntityState.Unchanged> または <xref:System.Data.EntityState.Modified> である必要があります。 状態が <xref:System.Data.EntityState.Deleted> のオブジェクトは、そのリレーションシップのインスタンスが既に状態マネージャーによって追跡されている場合にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entities" />コレクションが<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">ソース オブジェクトまたは内のオブジェクト、<paramref name="entities" />コレクションが<see langword="null" />に含まれていないか、<see cref="F:System.Data.EntityState.Unchanged" />または<see cref="F:System.Data.EntityState.Modified" />状態です。  
+  
+ または  
+  
+ EDM メタデータに基づいてリレーションシップを定義できません。 これは、概念スキーマのアソシエーションで 2 つの型の間のリレーションシップがサポートされていない場合に発生する可能性があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="public void Attach (TEntity entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Attach(!TEntity entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.Attach(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <param name="entity">アタッチされるオブジェクト。</param>
+        <summary>オブジェクト コンテキスト内の 2 つのアタッチ済みオブジェクトの間のリレーションシップを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601.Attach%2A> メソッドは、2 つのオブジェクトの両方が既にオブジェクト コンテキストに存在する場合にそれらの間のリレーションシップを定義するために使用されます。 オブジェクトや、リレーションシップが既に定義されているオブジェクト グラフをアタッチするには、<xref:System.Data.Objects.ObjectContext.Attach%2A> の <xref:System.Data.Objects.ObjectContext> メソッドを呼び出します。 ソース オブジェクトに関連付けられている新しいオブジェクトを作成するには、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A> の <xref:System.Data.Objects.DataClasses.EntityCollection%601> メソッドを呼び出します。 詳細については、次を参照してください。[のアタッチとデタッチ オブジェクト](http://msdn.microsoft.com/en-us/41d5c1ef-1b78-4502-aa10-7e1438d62d23)です。  
+  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601> に既にオブジェクトが読み込まれている場合、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Attach%2A> メソッドは、オブジェクトを <xref:System.Data.Objects.DataClasses.EntityCollection%601> の既存のオブジェクトとマージします。  
+  
+ この場合、アタッチされるオブジェクトは、関連エンティティ オブジェクトの完全なセットとは見なされません。  
+  
+ この <xref:System.Data.Objects.DataClasses.EntityCollection%601> に関連付けられたオブジェクトおよびそれにアタッチされているすべてのオブジェクトは、状態が <xref:System.Data.EntityState.Unchanged> または <xref:System.Data.EntityState.Modified> である必要があります。  
+  
+ <xref:System.Data.EntityState.Deleted> 状態のオブジェクトは、<xref:System.Data.Objects.ObjectStateManager> で既にリレーションシップ インスタンスが追跡されている場合にのみアタッチできます。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、します。 この例のコードを実行するには、あらかじめプロジェクトに AdventureWorks Sales Model を追加し、Entity Framework を使用するようにプロジェクトを構成しておく必要があります。 これを行うための手順を完了[する方法: Entity Framework プロジェクトを手動で構成](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)と[する方法: モデル ファイルとマッピング ファイルを手動で定義](http://msdn.microsoft.com/en-us/d4fd6864-f2a1-48f0-aa32-1e318775a99a)です。  
+  
+ この例のデタッチされたコレクションのアタッチ`SalesOrderDetail`オブジェクトと、デタッチされた`SalesOrderHeader`、オブジェクト コンテキストにオブジェクトし、の間のリレーションシップを定義、`SalesOrderHeader`オブジェクトとその各`SalesOrderDetail`オブジェクト。  
+  
+ [!code-csharp[DP ObjectServices Concepts#AttachRelatedObjects](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#attachrelatedobjects)]
+ [!code-vb[DP ObjectServices Concepts#AttachRelatedObjects](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#attachrelatedobjects)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに、<paramref name="entity" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">ときに、<paramref name="entity" />ソース オブジェクトに関連することはできません。 これは、概念スキーマのアソシエーションで 2 つの型の間のリレーションシップがサポートされていない場合に発生する可能性があります。  
+  
+ または  
+  
+ いずれかのオブジェクトが場合<see langword="null" />に含まれていないか、<see cref="F:System.Data.EntityState.Unchanged" />または<see cref="F:System.Data.EntityState.Modified" />状態です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのエンティティをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601.Clear%2A> では次の処理が行われます。  
+  
+-   セット、<xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A>フラグを`false`です。  
+  
+-   すべてのエンティティをコレクションから削除します。  
+  
+-   削除したエンティティと <xref:System.Data.Objects.DataClasses.EntityCollection%601> の所有者の間のリレーションシップを <xref:System.Data.Objects.ObjectStateManager> からデタッチします。  
+  
+-   <xref:System.Data.Objects.DataClasses.EntityCollection%601> の所有者を関連エンティティから削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (TEntity entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(!TEntity entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.Contains(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <param name="entity"><see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> 内で検索するオブジェクト。</param>
+        <summary>特定のオブジェクトがコレクション内に存在するかどうかを確認します。</summary>
+        <returns>
+          そのオブジェクトが <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> に存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したオブジェクトをコレクション内の既存のオブジェクトと比較するには <xref:System.Object.Equals%2A?displayProperty=nameWithType> メソッドを使用します。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、します。 この例のコードを実行するには、あらかじめプロジェクトに AdventureWorks Sales Model を追加し、Entity Framework を使用するようにプロジェクトを構成しておく必要があります。 これを行うための手順を完了[する方法: Entity Framework プロジェクトを手動で構成](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)と[する方法: モデル ファイルとマッピング ファイルを手動で定義](http://msdn.microsoft.com/en-us/d4fd6864-f2a1-48f0-aa32-1e318775a99a)です。  
+  
+ この例の内容は次のとおりです。  
+  
+1.  2 つの新しい `SalesOrderHeader` エンティティを作成して `Contact` エンティティに追加します。  
+  
+2.  Contact エンティティに関連付けられている <xref:System.Data.Objects.DataClasses.RelationshipManager> からすべての関連 End を取得します。  
+  
+3.  <xref:System.Data.Objects.DataClasses.IRelatedEnd> のコレクションを反復処理します。  
+  
+4.  各関連 End の <xref:System.Data.Objects.DataClasses.EntityCollection%601> を取得します。  
+  
+5.  <xref:System.Data.Objects.DataClasses.EntityCollection%601.Remove%2A> メソッドを使用して、コレクションからエンティティを 1 つ削除します。  
+  
+6.  <xref:System.Data.Objects.DataClasses.EntityCollection%601.Contains%2A> メソッドを呼び出して、そのオブジェクトがコレクションから削除されたかどうかを確認します。  
+  
+7.  <xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A> メソッドを使用して、削除したエンティティを再び追加します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#IRelatedEnd_Add](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#irelatedend_add)]
+ [!code-vb[DP ObjectServices Concepts#IRelatedEnd_Add](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#irelatedend_add)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (TEntity[] array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(!TEntity[] array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.CopyTo(`0[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="TEntity[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピー先の配列。</param>
+        <param name="arrayIndex">配列内のコピーを開始する位置を示す、0 から始まるインデックスです。</param>
+        <summary>コレクションのすべての内容を配列にコピーします。その際、コピー対象の配列の指定したインデックス位置からコピーを開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EntityCollection`1.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションに含まれるオブジェクトの数を取得します。</summary>
+        <value><see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> に含まれる要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601.Count%2A> プロパティでは、現在ローカル コレクションに含まれているエンティティの数が取得されます。これには、データ ソースのコレクションのサイズは反映されません。 したがって、カウントが 0 であっても、その関連コレクションが空であるとは限りません。 データ ソースのコレクションのサイズを調べるには、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Load%2A> メソッドを呼び出すか、関連オブジェクトをクエリ パスに含めます。 詳細については、次を参照してください。[関連オブジェクトの読み込み](http://msdn.microsoft.com/en-us/452347d2-7b3b-44cd-9001-231299a28cb1)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSourceQuery">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectQuery&lt;TEntity&gt; CreateSourceQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectQuery`1&lt;!TEntity&gt; CreateSourceQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.CreateSourceQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectQuery&lt;TEntity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコレクションに存在するのと同じオブジェクトのセットを実行時に返すオブジェクト クエリを返します。</summary>
+        <returns>エンティティのコレクションを表す <see cref="T:System.Data.Objects.ObjectQuery`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、同じオブジェクトのセットを返す <xref:System.Data.Objects.ObjectQuery%601> の新しいインスタンスを取得するために使用されます。 これは、より複雑な結合クエリ、ユニオン クエリ、またはフィルター選択されたクエリの開始点として使用したり、<xref:System.Data.Objects.MergeOption.NoTracking> オプションを使用してデタッチ済み状態の同じオブジェクトを返す場合に使用できます。  
+  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601.CreateSourceQuery%2A>内のオブジェクトをフィルター処理に使用される、<xref:System.Data.Objects.DataClasses.EntityCollection%601>を有効にすると、特定の種類のオブジェクトのみをバインドします。 詳細については、次を参照してください。[コントロールへのバインド オブジェクト](http://msdn.microsoft.com/en-us/2fd34855-929b-4303-a91e-4bb69d958f2b)です。  
+  
+   
+  
+## Examples  
+ この例はの変更バージョンに基づいて、します。 この変更版では、抽象型として `Course` での table-per-type 継承をサポートします。 このトピックで使用されるテーブルの種類ごとの継承の例をサポートするために、School モデルを変更するチュートリアルを完了します。  
+  
+ この例を使用する方法を示しています<xref:System.Data.Objects.DataClasses.EntityCollection%601.CreateSourceQuery%2A>オブジェクトをフィルター処理で、<xref:System.Data.Objects.DataClasses.EntityCollection%601>し、特定の種類のオブジェクトのみにバインドします。 この例の完全なバージョンは、次を参照してください。[する方法: 派生型へのコントロールのバインド](http://msdn.microsoft.com/en-us/09730c14-3b7b-4563-af4a-7ecfa4e34bd5)です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オブジェクトの状態が <see cref="F:System.Data.EntityState.Added" /> の場合。  
+  
+ または  
+  
+ オブジェクトの状態が <see cref="F:System.Data.EntityState.Detached" /> で、<see cref="T:System.Data.Objects.MergeOption" /> が <see cref="F:System.Data.Objects.MergeOption.NoTracking" /> 以外の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;TEntity&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;!TEntity&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;TEntity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションのオブジェクトを反復処理するために使用される列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> によってキャッシュされている値のセットを反復処理する <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EntityCollection`1.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>常に <see langword="false" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public override void Load (System.Data.Objects.MergeOption mergeOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Load(valuetype System.Data.Objects.MergeOption mergeOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.Load(System.Data.Objects.MergeOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mergeOption" Type="System.Data.Objects.MergeOption" />
+      </Parameters>
+      <Docs>
+        <param name="mergeOption">このコレクション内のオブジェクトを、同じ <see cref="T:System.Data.Objects.ObjectContext" /> に対する以前のクエリから返されたオブジェクトとどのようにマージするかを指定します。</param>
+        <summary>指定されたマージ オプションを使用して、コレクションに関連オブジェクトを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+このメソッドは、内部`RelatedEnd.ValidateLoad`メソッドを呼び出すことを検証すると、コレクションを読み込む前に<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>に正しい条件があります。 `RelatedEnd.ValidateLoad`メソッドでは、ことを確認します。
+
+* 有効な<xref:System.Data.Objects.ObjectContext>が存在します。
+* エンティティはではありません、<xref:System.Data.EntityState.Deleted>状態です。
+* <xref:System.Data.Objects.MergeOption><xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>する必要があります<xref:System.Data.Objects.MergeOption.NoTracking>ソース エンティティが場合にのみ<xref:System.Data.Objects.MergeOption.NoTracking>です。 その他のソース エンティティが取得された場合<xref:System.Data.Objects.MergeOption>、 <xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A> <xref:System.Data.Objects.MergeOption>以外は、 <xref:System.Data.Objects.MergeOption.NoTracking> (など、エンティティが読み込まれていると<xref:System.Data.Objects.MergeOption.OverwriteChanges>と<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>オプションは、<xref:System.Data.Objects.MergeOption.AppendOnly>).
+* 場合`mergeOption`は<xref:System.Data.Objects.MergeOption.NoTracking>、<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>既に読み込まれたエンティティと呼ばれるされていないと<xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A>空でない、not 追跡で呼び出されていない<xref:System.Data.Objects.DataClasses.RelatedEnd>です。
+  
+ コレクション内のオブジェクトは既にに読み込まれる場合、 <xref:System.Data.Objects.ObjectContext>、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Load%2A>メソッドの適用、<xref:System.Data.Objects.MergeOption>によって指定された、`mergeOption`パラメーター。 詳細については、次を参照してください。 [Id 解決、状態管理、および変更の追跡](http://msdn.microsoft.com/en-us/3bd49311-0e72-4ea4-8355-38fe57036ba0)です。  
+  
+ 関連するオブジェクトを明示的に読み込むするには、呼び出す必要があります、`Load`ナビゲーション プロパティによって返される関連 end のメソッドです。 一対多のリレーションシップでは、呼び出し、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Load%2A>メソッド<xref:System.Data.Objects.DataClasses.EntityCollection%601>です。 一対一のリレーションシップを呼び出して、<xref:System.Data.Objects.DataClasses.EntityReference%601.Load%2A>で<xref:System.Data.Objects.DataClasses.EntityReference%601>です。 これにより、関連オブジェクト データがオブジェクト コンテキストに読み込まれます。 使用して返される結果のコレクションを列挙することができます、`foreach`ループ (`For Each...Next` Visual Basic で) 条件付きで呼び出すと、`Load`メソッド<xref:System.Data.Objects.DataClasses.EntityReference%601>と<xref:System.Data.Objects.DataClasses.EntityCollection%601>結果内の各エンティティのプロパティです。  
+  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601.Load%2A>メソッドの関連するオブジェクトからデータ ソースからのかどうか読み込みます<xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A>は`true`します。  
+  
+> [!NOTE]
+>  <xref:System.Data.Objects.DataClasses.EntityCollection%601.Load%2A> (C#) または `foreach` (Visual Basic) 列挙で、`For Each` メソッドを呼び出すと、Object Services は新たにデータ リーダーを開こうとします。 この操作は、接続文字列で `multipleactiveresultsets=true` を指定して複数のアクティブな結果セットを有効にしていない限り失敗します。 クエリの結果は、<xref:System.Collections.Generic.List%601> コレクションに読み込むこともできます。 この場合、データ リーダーが閉じ、コレクションを列挙して参照オブジェクトを読み込むことができます。  
+  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601.Load%2A?displayProperty=nameWithType> メソッドは <xref:System.Data.Objects.DataClasses.EntityReference%601.Load%2A?displayProperty=nameWithType> メソッドと同期しています。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、します。 この例のコードを実行するには、あらかじめプロジェクトに AdventureWorks Sales Model を追加し、Entity Framework を使用するようにプロジェクトを構成しておく必要があります。 これを行うための手順を完了[する方法: Entity Framework プロジェクトを手動で構成](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)と[する方法: モデル ファイルとマッピング ファイルを手動で定義](http://msdn.microsoft.com/en-us/d4fd6864-f2a1-48f0-aa32-1e318775a99a)です。  
+  
+ この例では、`SalesOrderHeader` エンティティに関連付けられている `Contact` オブジェクトを読み込みます。  
+  
+ [!code-csharp[DP ObjectServices Concepts#QueryWithLoad](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#querywithload)]
+ [!code-vb[DP ObjectServices Concepts#QueryWithLoad](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#querywithload)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCollectionDeserialized">
+      <MemberSignature Language="C#" Value="public void OnCollectionDeserialized (System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OnCollectionDeserialized(valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.OnCollectionDeserialized(System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.OnDeserialized</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">ストリーム コンテキスト。</param>
+        <summary>エンティティ オブジェクトを逆シリアル化するには、内部的に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSerializing">
+      <MemberSignature Language="C#" Value="public void OnSerializing (System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OnSerializing(valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.OnSerializing(System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.OnSerializing</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">ストリーム コンテキスト。</param>
+        <summary>エンティティ オブジェクトをシリアル化するには、内部的に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (TEntity entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(!TEntity entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.Remove(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="TEntity" />
+      </Parameters>
+      <Docs>
+        <param name="entity">コレクションから削除するオブジェクト。</param>
+        <summary>オブジェクトをコレクションから削除して、リレーションシップを削除対象としてマークします。</summary>
+        <returns>
+          <see langword="true" />項目が正常に削除された場合です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601.Remove%2A> メソッドでは、コレクションから削除されるオブジェクトとソース オブジェクトの間のリレーションシップも削除されます。 リレーションシップに参照整合性制約がある場合に依存オブジェクトで <xref:System.Data.Objects.DataClasses.EntityCollection%601.Remove%2A> メソッドを呼び出すと、そのリレーションシップと依存オブジェクトの両方が削除対象としてマークされます。 これは、その制約により、依存オブジェクトは親とのリレーションシップがないと存在できないからです。 詳細については、次を参照してください。 [ReferentialConstraint 要素 (CSDL)](http://msdn.microsoft.com/en-us/24f96a80-85b5-4f2e-a14c-0e3eb6796fa0)です。  
+  
+ <xref:System.Data.Objects.DataClasses.EntityCollection%601.Remove%2A>返します`false`コレクション内で指定したオブジェクトがありませんが。  
+  
+   
+  
+## Examples  
+ この例がに基づいて、します。 この例のコードを実行するには、あらかじめプロジェクトに AdventureWorks Sales Model を追加し、Entity Framework を使用するようにプロジェクトを構成しておく必要があります。 これを行うための手順を完了[する方法: Entity Framework プロジェクトを手動で構成](http://msdn.microsoft.com/en-us/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e)と[する方法: モデル ファイルとマッピング ファイルを手動で定義](http://msdn.microsoft.com/en-us/d4fd6864-f2a1-48f0-aa32-1e318775a99a)です。  
+  
+ この例では、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Remove%2A> メソッドを使用してコレクションからエンティティを 1 つ削除し、<xref:System.Data.Objects.DataClasses.EntityCollection%601.Contains%2A> メソッドを使用してそのオブジェクトがコレクションから削除されたかどうかを確認します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#IRelatedEnd_Add](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#irelatedend_add)]
+ [!code-vb[DP ObjectServices Concepts#IRelatedEnd_Add](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#irelatedend_add)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entity" />オブジェクトが<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="entity" />オブジェクトが同じオブジェクト コンテキストにアタッチされていません。  
+  
+ または  
+  
+ <paramref name="entity" />オブジェクトには有効なリレーションシップ マネージャーがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> によってキャッシュされている値のセットを反復処理するために使用される列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> によってキャッシュされている値のセットを反復処理する <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IListSource.ContainsListCollection">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IListSource.ContainsListCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IListSource.ContainsListCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EntityCollection`1.System#ComponentModel#IListSource#ContainsListCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連エンティティのコレクションがコレクション オブジェクトで構成されているかどうかを示す値を取得します。</summary>
+        <value>このプロパティは常に返します<see langword="false" />ため、<see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />オブジェクトおよびコレクションではありませんが含まれています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Objects.DataClasses.EntityCollection%601> のインスタンスが <xref:System.ComponentModel.IListSource> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IListSource.GetList">
+      <MemberSignature Language="C#" Value="System.Collections.IList IListSource.GetList ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IList System.ComponentModel.IListSource.GetList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EntityCollection`1.System#ComponentModel#IListSource#GetList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを、データ バインドで使用される <see cref="T:System.Collections.IList" /> として返します。</summary>
+        <returns>エンティティ オブジェクトの <see cref="T:System.Collections.IList" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Objects.DataClasses.EntityCollection%601> のインスタンスが <xref:System.ComponentModel.IListSource> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメソッドを使用すると、<xref:System.Data.Objects.DataClasses.EntityCollection%601> にデータをバインドできます。 これはコレクションにバインドされたコントロールによって呼び出されます。 詳細については、次を参照してください。[コントロールへのバインド オブジェクト](http://msdn.microsoft.com/en-us/2fd34855-929b-4303-a91e-4bb69d958f2b)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,176 @@
+<Type Name="GetReferenceAssemblyPaths" FullName="Microsoft.Build.Tasks.GetReferenceAssemblyPaths">
+  <TypeSignature Language="C#" Value="public class GetReferenceAssemblyPaths : Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GetReferenceAssemblyPaths extends Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.GetReferenceAssemblyPaths" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Tasks.TaskExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>さまざまなフレームワーク参照アセンブリのパスを返します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GetReferenceAssemblyPaths ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>GetReferenceAssemblyPaths クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BypassFrameworkInstallChecks">
+      <MemberSignature Language="C#" Value="public bool BypassFrameworkInstallChecks { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BypassFrameworkInstallChecks" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.BypassFrameworkInstallChecks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、スイッチ、GetReferenceAssemblyPaths がターゲット フレームワークによって、特定のランタイム フレームワークがインストールされていることを確認する簡単なチェックを実行するかどうかを指定します。</summary>
+        <value>GetReferenceAssemblyPaths 必要があります。 これらの単純なチェックを実行していない場合、true を返しますfalse それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override bool Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ターゲット フレームワーク モニカーが設定されている場合は、正しいパスを生成します。</summary>
+        <returns>パスが生成された場合は true を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullFrameworkReferenceAssemblyPaths">
+      <MemberSignature Language="C#" Value="public string[] FullFrameworkReferenceAssemblyPaths { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] FullFrameworkReferenceAssemblyPaths" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.FullFrameworkReferenceAssemblyPaths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モニカーのプロファイル部分を考慮せずに渡された TargetFrameworkMoniker に基づくパスを取得します。</summary>
+        <value>モニカーのプロファイル部分を考慮せずに渡された TargetFrameworkMoniker に基づくパスを返します。 TargetFrameworkMoniker が null または空の場合は、パスは返されません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferenceAssemblyPaths">
+      <MemberSignature Language="C#" Value="public string[] ReferenceAssemblyPaths { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] ReferenceAssemblyPaths" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.ReferenceAssemblyPaths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>渡された TargetFrameworkMoniker に基づくパスを返します。 TargetFrameworkMoniker が null または空の場合、このパスは、null または空にします。</summary>
+        <value>パスを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootPath">
+      <MemberSignature Language="C#" Value="public string RootPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RootPath" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.RootPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照アセンブリのパスの生成に使用するルート パス</summary>
+        <value>ルート パスを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFrameworkMoniker">
+      <MemberSignature Language="C#" Value="public string TargetFrameworkMoniker { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetFrameworkMoniker" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.TargetFrameworkMoniker" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照アセンブリのパスを取得するターゲット フレームワーク モニカー</summary>
+        <value>フレームワーク モニカーを取得します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFrameworkMonikerDisplayName">
+      <MemberSignature Language="C#" Value="public string TargetFrameworkMonikerDisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetFrameworkMonikerDisplayName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.TargetFrameworkMonikerDisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはターゲット フレームワーク モニカーの表示名を設定します。</summary>
+        <value>ターゲット フレームワーク モニカーの表示名を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

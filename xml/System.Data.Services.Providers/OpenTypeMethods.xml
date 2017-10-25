@@ -1,0 +1,993 @@
+<Type Name="OpenTypeMethods" FullName="System.Data.Services.Providers.OpenTypeMethods">
+  <TypeSignature Language="C#" Value="public static class OpenTypeMethods" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit OpenTypeMethods extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Providers.OpenTypeMethods" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オープン プロパティに対して遅延バインディング操作を実行するために使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] のカスタム データ サービス プロバイダーを実装するときに使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static object Add (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Add(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Add(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">加算する 1 番目の値。</param>
+        <param name="right">加算する 2 番目の値。</param>
+        <summary>2 つの値を加算します。</summary>
+        <returns>算術演算の結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.OpenTypeMethods.Add%2A> メソッドは、オーバーフローをチェックせずに、2 つの値を加算します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AndAlso">
+      <MemberSignature Language="C#" Value="public static object AndAlso (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object AndAlso(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.AndAlso(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">左辺の値。</param>
+        <param name="right">右辺の値。</param>
+        <summary>論理実行<see langword="and" />2 つの式の操作です。</summary>
+        <returns>論理の結果<see langword="and" />操作します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ceiling">
+      <MemberSignature Language="C#" Value="public static object Ceiling (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Ceiling(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Ceiling(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Decimal" /> または <see cref="T:System.Double" /> オブジェクト。</param>
+        <summary>指定した値の切り上げ値を返します。</summary>
+        <returns>指定した値の切り上げ値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Concat">
+      <MemberSignature Language="C#" Value="public static object Concat (object first, object second);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Concat(object first, object second) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Concat(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="first" Type="System.Object" />
+        <Parameter Name="second" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="first">第 1 文字列。</param>
+        <param name="second">第 2 文字列。</param>
+        <summary>2 つの文字列値を連結します。</summary>
+        <returns>連結された文字列を表す新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public static object Convert (object value, System.Data.Services.Providers.ResourceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Convert(object value, class System.Data.Services.Providers.ResourceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Convert(System.Object,System.Data.Services.Providers.ResourceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Data.Services.Providers.ResourceType" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する値。</param>
+        <param name="type">変換後のリソースの種類。</param>
+        <summary>値を指定した型に変換します。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.OpenTypeMethods.Convert%2A> メソッドは、指定した `value` の型キャストを実行するために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Day">
+      <MemberSignature Language="C#" Value="public static object Day (object dateTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Day(object dateTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Day(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateTime" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dateTime"><see cref="T:System.DateTime" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> インスタンスの日付の値を返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> インスタンスの日付の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Divide">
+      <MemberSignature Language="C#" Value="public static object Divide (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Divide(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Divide(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">1 番目の値 (被除数)。</param>
+        <param name="right">2 番目の値 (除数)。</param>
+        <summary>2 つの値を除算します。</summary>
+        <returns>除算された値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndsWith">
+      <MemberSignature Language="C#" Value="public static object EndsWith (object targetString, object substring);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object EndsWith(object targetString, object substring) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.EndsWith(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetString" Type="System.Object" />
+        <Parameter Name="substring" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetString">比較する文字列。</param>
+        <param name="substring">比較対象の文字列。</param>
+        <summary>一方の文字列の末尾がもう一方の文字列と一致するかどうかを判断します。</summary>
+        <returns>返します<see langword="true" />とき<paramref name="targetString" />で終わる<paramref name="substring" />以外を返しますそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターが文字列でない場合、エラーが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equal">
+      <MemberSignature Language="C#" Value="public static object Equal (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Equal(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Equal(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>指定したオブジェクトが等しいかどうかを判断します。</summary>
+        <returns>A<see cref="T:System.Boolean" />値<see langword="true" />両方のオブジェクトは、それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Floor">
+      <MemberSignature Language="C#" Value="public static object Floor (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Floor(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Floor(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">評価する <see cref="T:System.Decimal" /> オブジェクトまたは <see cref="T:System.Double" /> オブジェクト。</param>
+        <summary>指定した値の切り捨て値を返します。</summary>
+        <returns>指定したオブジェクトの切り捨て値を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public static object GetValue (object value, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetValue(object value, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.GetValue(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">プロパティ値の取得元のオブジェクト。</param>
+        <param name="propertyName">値を取得するプロパティの名前。</param>
+        <summary>指定したオブジェクトの指定したプロパティの値を取得します。</summary>
+        <returns>要求された値です。<see langword="null" />値を特定できない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GreaterThan">
+      <MemberSignature Language="C#" Value="public static object GreaterThan (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GreaterThan(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.GreaterThan(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初の値。</param>
+        <param name="right">2 番目の値。</param>
+        <summary>一方のオブジェクトの値がもう一方のオブジェクトの値より大きいかどうかを判断します。</summary>
+        <returns>返します<see langword="true" />最初のオブジェクトの値が 2 番目のオブジェクトよりも大きく以外を返しますそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public static object GreaterThanOrEqual (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GreaterThanOrEqual(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.GreaterThanOrEqual(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初の値。</param>
+        <param name="right">2 番目の値。</param>
+        <summary>一方のオブジェクトの値がもう一方のオブジェクトの値以上かどうかを判断します。</summary>
+        <returns>返します<see langword="true" />がより大きいか等しい 2 番目のオブジェクトの最初のオブジェクトの値を返しますそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hour">
+      <MemberSignature Language="C#" Value="public static object Hour (object dateTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Hour(object dateTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Hour(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateTime" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dateTime"><see cref="T:System.DateTime" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> インスタンスの時間の値を返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> インスタンスの時間の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public static object IndexOf (object targetString, object substring);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object IndexOf(object targetString, object substring) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.IndexOf(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetString" Type="System.Object" />
+        <Parameter Name="substring" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetString">対象の文字列。</param>
+        <param name="substring">検索する部分文字列。</param>
+        <summary>対象の文字列内の部分文字列のインデックスを返します。</summary>
+        <returns><paramref name="substring" /> 内の <paramref name="targetString" /> の位置のインデックスを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.OpenTypeMethods.IndexOf%2A> が `substring` に見つからない場合、`targetString` メソッドは null 値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public static object Length (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Length(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Length(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">確認する文字列。</param>
+        <summary>指定した文字列オブジェクト内の文字数を取得します。</summary>
+        <returns>文字列値の長さ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された `value` が <xref:System.String> 型でない場合、エラーが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LessThan">
+      <MemberSignature Language="C#" Value="public static object LessThan (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object LessThan(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.LessThan(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初の値。</param>
+        <param name="right">2 番目の値。</param>
+        <summary>一方のオブジェクトの値がもう一方のオブジェクトの値より小さいかどうかを判断します。</summary>
+        <returns>返します<see langword="true" />最初のオブジェクトの値が 2 番目のオブジェクトよりも短くなって以外を返しますそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public static object LessThanOrEqual (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object LessThanOrEqual(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.LessThanOrEqual(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初の値。</param>
+        <param name="right">2 番目の値。</param>
+        <summary>一方のオブジェクトの値がもう一方のオブジェクトの値以下かどうかを判断します。</summary>
+        <returns>返します<see langword="true" />最初のオブジェクトの値が以下の 2 番目のオブジェクトです。 それ以外の場合を返します<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minute">
+      <MemberSignature Language="C#" Value="public static object Minute (object dateTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Minute(object dateTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Minute(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateTime" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dateTime"><see cref="T:System.DateTime" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> インスタンスの分の値を返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> インスタンスの分の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modulo">
+      <MemberSignature Language="C#" Value="public static object Modulo (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Modulo(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Modulo(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">1 番目の値 (被除数)。</param>
+        <param name="right">2 番目の値 (除数)。</param>
+        <summary>一方の値をもう一方の値で除算した算術剰余を計算します。</summary>
+        <returns>剰余の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Month">
+      <MemberSignature Language="C#" Value="public static object Month (object dateTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Month(object dateTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Month(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateTime" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dateTime"><see cref="T:System.DateTime" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> インスタンスの月の値を返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> インスタンスの月の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public static object Multiply (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Multiply(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Multiply(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初の値。</param>
+        <param name="right">2 番目の値。</param>
+        <summary>2 つの値を乗算します。</summary>
+        <returns>2 つの値の積。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.OpenTypeMethods.Multiply%2A> メソッドは、オーバーフローをチェックせずに、2 つの値を乗算します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Negate">
+      <MemberSignature Language="C#" Value="public static object Negate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Negate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Negate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">否定する値。</param>
+        <summary>指定した値に -1 を乗算した結果を返します。</summary>
+        <returns><paramref name="value" /> に -1 を乗算した積。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Not">
+      <MemberSignature Language="C#" Value="public static object Not (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Not(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Not(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">論理的に補数を計算する値。</param>
+        <summary>指定した値に対してビットごとの (論理) 補数演算を実行します。</summary>
+        <returns>指定した値のビットごとの補数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotEqual">
+      <MemberSignature Language="C#" Value="public static object NotEqual (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object NotEqual(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.NotEqual(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初の値。</param>
+        <param name="right">2 番目の値。</param>
+        <summary>2 つの値の論理比較を実行して、それらが等しくないかどうかを確認します。</summary>
+        <returns>A<see cref="T:System.Boolean" />値<see langword="true" />両方のオブジェクトが等しくない場合、それ以外の場合を返します<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OrElse">
+      <MemberSignature Language="C#" Value="public static object OrElse (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object OrElse(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.OrElse(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初の値。</param>
+        <param name="right">2 番目の値。</param>
+        <summary>論理実行<see langword="OR" />2 つの値に対して操作します。</summary>
+        <returns>論理の結果<see langword="OR" />操作します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Replace">
+      <MemberSignature Language="C#" Value="public static object Replace (object targetString, object substring, object newString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Replace(object targetString, object substring, object newString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Replace(System.Object,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetString" Type="System.Object" />
+        <Parameter Name="substring" Type="System.Object" />
+        <Parameter Name="newString" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetString">部分文字列を置き換える文字列。</param>
+        <param name="substring">置き換える対象の部分文字列。</param>
+        <param name="newString">新しい部分文字列。</param>
+        <summary>対象の文字列内の部分文字列を別の部分文字列に置き換えます。</summary>
+        <returns>部分文字列を新しい部分文字列に置き換えた新しい文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Round">
+      <MemberSignature Language="C#" Value="public static object Round (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Round(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Round(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">丸める <see cref="T:System.Decimal" /> または <see cref="T:System.Double" />。</param>
+        <summary>指定した値を丸めます。</summary>
+        <returns>丸められた値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Second">
+      <MemberSignature Language="C#" Value="public static object Second (object dateTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Second(object dateTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Second(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateTime" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dateTime"><see cref="T:System.DateTime" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> インスタンスの秒の値を返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> インスタンスの秒の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartsWith">
+      <MemberSignature Language="C#" Value="public static object StartsWith (object targetString, object substring);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object StartsWith(object targetString, object substring) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.StartsWith(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetString" Type="System.Object" />
+        <Parameter Name="substring" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetString">比較する文字列。</param>
+        <param name="substring">部分文字列を<c>検査</c>始める場合があります。</param>
+        <summary>対象の文字列が部分文字列で始まるかどうかを確認します。</summary>
+        <returns>返します<see langword="true" />返しますそれ以外の場合、ターゲットの文字列は、指定した部分文字列で始まる場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Substring">
+      <MemberSignature Language="C#" Value="public static object Substring (object targetString, object startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Substring(object targetString, object startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Substring(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetString" Type="System.Object" />
+        <Parameter Name="startIndex" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetString">部分文字列を返す文字列。</param>
+        <param name="startIndex">部分文字列の開始インデックス。</param>
+        <summary>指定した開始インデックス位置の後にある部分文字列を返します。</summary>
+        <returns>部分文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.OpenTypeMethods.Substring%2A> メソッドは、`startIndex` の `targetString` から末尾までのすべての文字を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Substring">
+      <MemberSignature Language="C#" Value="public static object Substring (object targetString, object startIndex, object length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Substring(object targetString, object startIndex, object length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Substring(System.Object,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetString" Type="System.Object" />
+        <Parameter Name="startIndex" Type="System.Object" />
+        <Parameter Name="length" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetString">部分文字列を返す文字列。</param>
+        <param name="startIndex">部分文字列の開始インデックス。</param>
+        <param name="length">部分文字列の長さ。</param>
+        <summary>指定した開始インデックス位置の後にある特定の長さの部分文字列を返します。</summary>
+        <returns>部分文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.OpenTypeMethods.Substring%2A> メソッドは、`length` の `startIndex` から末尾までの `targetString` 文字数を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubstringOf">
+      <MemberSignature Language="C#" Value="public static object SubstringOf (object substring, object targetString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object SubstringOf(object substring, object targetString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.SubstringOf(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="substring" Type="System.Object" />
+        <Parameter Name="targetString" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="substring">検索する部分文字列。</param>
+        <param name="targetString">検索対象の文字列。</param>
+        <summary>部分文字列が別の文字列内にあるかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />ときに<paramref name="substring" />で発生した<paramref name="targetString" />それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtract">
+      <MemberSignature Language="C#" Value="public static object Subtract (object left, object right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Subtract(object left, object right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Subtract(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Object" />
+        <Parameter Name="right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="left">減算の最初の値。</param>
+        <param name="right">減算の 2 番目の値。</param>
+        <summary>2 つの値を減算します。</summary>
+        <returns>算術演算の結果。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToLower">
+      <MemberSignature Language="C#" Value="public static object ToLower (object targetString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToLower(object targetString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.ToLower(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetString" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetString">変換する文字列。</param>
+        <summary>文字列を小文字に変換して返します。</summary>
+        <returns>小文字だけで構成された新しい文字列値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToUpper">
+      <MemberSignature Language="C#" Value="public static object ToUpper (object targetString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToUpper(object targetString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.ToUpper(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetString" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetString">変換する文字列。</param>
+        <summary>文字列を大文字に変換して返します。</summary>
+        <returns>大文字だけで構成された新しい文字列値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Trim">
+      <MemberSignature Language="C#" Value="public static object Trim (object targetString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Trim(object targetString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Trim(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetString" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetString">トリムする文字列。</param>
+        <summary>文字列の先頭と末尾にある空白文字をすべて削除します。</summary>
+        <returns>トリムした後の文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeIs">
+      <MemberSignature Language="C#" Value="public static object TypeIs (object value, System.Data.Services.Providers.ResourceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object TypeIs(object value, class System.Data.Services.Providers.ResourceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.TypeIs(System.Object,System.Data.Services.Providers.ResourceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Data.Services.Providers.ResourceType" />
+      </Parameters>
+      <Docs>
+        <param name="value">確認する値。</param>
+        <param name="type">確認するリソースの種類。</param>
+        <summary>指定された値の型を確認します。</summary>
+        <returns>A<see cref="T:System.Boolean" />値が<see langword="true" />値が指定されたリソースの種類以外の場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Year">
+      <MemberSignature Language="C#" Value="public static object Year (object dateTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Year(object dateTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.OpenTypeMethods.Year(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dateTime" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dateTime"><see cref="T:System.DateTime" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> インスタンスの年の値を返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> インスタンスの年の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,750 @@
+<Type Name="SrgsDocument" FullName="System.Speech.Recognition.SrgsGrammar.SrgsDocument">
+  <TypeSignature Language="C#" Value="public class SrgsDocument" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SrgsDocument extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ランタイムの厳密に型指定された文法に準拠しているの構築に使用するデザイン時オブジェクトを定義、[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://www.w3.org/TR/speech-grammar/)です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ことができます、空の構築<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>インスタンスおよびなど SRGS 要素を表すクラスのインスタンスを追加して、文法をビルド<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag>、および<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken>です。 構築することも、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>のインスタンスから、既存の SRGS 準拠の XML 文法ファイルからインスタンス<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>、またはのインスタンスから<xref:System.Speech.Recognition.GrammarBuilder>です。  
+  
+ 後に、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>オブジェクトが作成されると、読み込むことができますに、<xref:System.Speech.Recognition.Grammar>オブジェクトまたはによってコンパイル<xref:System.Speech.Recognition.SrgsGrammar.SrgsGrammarCompiler>、有効にすることによって読み取られる、<xref:System.Speech.Recognition.Grammar>オブジェクト。  
+  
+ 参照してください[文法を使用して SrgsGrammar の作成](http://msdn.microsoft.com/en-us/e4d9f96e-2241-4c39-b9e0-ac9ef4e9a906)で、[システム音声プログラミング ガイド .NET Framework 4.0 用](http://msdn.microsoft.com/en-us/610116c7-3817-40ff-857b-5d41e8511043)詳細と例についてはします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターを使用して、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>クラスのインスタンスを作成することができます<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>から、 <xref:System.Speech.Recognition.GrammarBuilder>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>、または<xref:System.Xml.XmlReader>XML 形式の文法にパスを含む文字列からオブジェクトまたは空のインスタンスを開始することができます<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsDocument.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、空を作成<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>インスタンス。 空の文法をビルドする<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>インスタンス、ように、SRGS 要素を表すクラスのインスタンスを追加<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>、および<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>オブジェクトおよびという名前のパブリック ルールを作成し`winnerRule`です。 これは、後、作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>文字列で構成される"ワールド カップが獲得民族:"、し、この項目を追加、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Elements%2A>ルールのプロパティ。 2 つ以上の規則を作成し (`ruleEurope`と`ruleSAmerica`)、それぞれは、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf> 3 種類を含むオブジェクト<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクト。 その後、もう 1 つ<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>を含むオブジェクトが作成された<xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>を参照するオブジェクト`ruleEurope`と`ruleSAmerica`です。 新しい<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>にオブジェクトが追加し、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Elements%2A>プロパティの`winnerRule`します。 その後、3 つすべてのルール (`winnerRule`、 `ruleEurope`、および`ruleSAmerica`) に追加されます、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Rules%2A>プロパティ<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>です。 最後に、3 つの規則は、文法のバイナリ表現にコンパイルされます。  
+  
+```csharp  
+public void WorldSoccerWinners ()  
+{  
+  
+  // Create an SrgsDocument, create a new rule  
+  // and set its scope to public.  
+  SrgsDocument document = new SrgsDocument();  
+  SrgsRule winnerRule = new SrgsRule("WorldCupWinner");  
+  winnerRule.Scope = SrgsRuleScope.Public;  
+  
+  // Add the introduction.  
+  winnerRule.Elements.Add(new SrgsItem("A nation that has won the world cup is: "));  
+  
+  // Create the rule for the European nations.  
+  SrgsOneOf oneOfEurope = new SrgsOneOf(new SrgsItem[] {new SrgsItem("England"),   
+    new SrgsItem("France"), new SrgsItem("Germany"), new SrgsItem("Italy")});  
+  SrgsRule ruleEurope = (new SrgsRule("EuropeanNations", new SrgsElement[] {oneOfEurope}));  
+  
+  // Create the rule for the South American nations.  
+  SrgsOneOf oneOfSAmerica = new SrgsOneOf(new SrgsItem[] {new SrgsItem("Argentina"),   
+    new SrgsItem("Brazil"), new SrgsItem("Uruguay")});  
+  SrgsRule ruleSAmerica = (new SrgsRule("SouthAmericanNations", new SrgsElement[] {oneOfSAmerica}));  
+  
+  // Add references to winnerRule for ruleEurope and ruleSAmerica.  
+  winnerRule.Elements.Add(new SrgsOneOf(new SrgsItem[] {(new SrgsItem   
+    (new SrgsRuleRef(ruleEurope))), new SrgsItem(new SrgsRuleRef(ruleSAmerica))}));  
+  
+  // Add all the rules to the document and make winnerRule   
+  // the root rule of the document.  
+  document.Rules.Add(new SrgsRule[] {winnerRule, ruleEurope, ruleSAmerica});  
+  document.Root = winnerRule;  
+  
+  String fileName = Path.GetTempFileName();  
+  using (FileStream stream = new FileStream(fileName, FileMode.Create))   
+  {   
+  
+    // Compile the grammar to a binary format.  
+    SrgsGrammarCompiler.Compile(document, stream);   
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsDocument (System.Speech.Recognition.GrammarBuilder builder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.GrammarBuilder builder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsDocument.#ctor(System.Speech.Recognition.GrammarBuilder)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Speech.Recognition.GrammarBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="builder"><see cref="T:System.Speech.Recognition.GrammarBuilder" />作成に使用されるオブジェクト、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />インスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラス、<see cref="T:System.Speech.Recognition.GrammarBuilder" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、文法をビルドする、<xref:System.Speech.Recognition.GrammarBuilder>インスタンスを使用して<xref:System.Speech.Recognition.Choices>オブジェクト。 これは、後、作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>から、<xref:System.Speech.Recognition.GrammarBuilder>オブジェクト。  
+  
+```csharp  
+GrammarBuilder builder = null;  
+  
+// Create new Choices objects and add countries, and create GrammarBuilder objects.  
+Choices choicesEurope = new Choices(new string[] { "England", "France", "Germany", "Italy" });  
+GrammarBuilder europe = new GrammarBuilder(choicesEurope);  
+  
+Choices choicesSAmerica = new Choices(new string[] { "Argentina", "Brazil", "Uruguay" });  
+GrammarBuilder sAmerica = new GrammarBuilder(choicesSAmerica);  
+  
+Choices worldCupWinnerChoices = new Choices(new GrammarBuilder[] {choicesEurope, choicesSAmerica});  
+  
+// Create new GrammarBuilder from a Choices object.  
+builder = new GrammarBuilder(worldCupWinnerChoices);  
+  
+// Create an SrgsDocument object from a GrammarBuilder object.  
+SrgsDocument document = new SrgsDocument(builder);  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="builder" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsDocument (System.Speech.Recognition.SrgsGrammar.SrgsRule grammarRootRule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Recognition.SrgsGrammar.SrgsRule grammarRootRule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsDocument.#ctor(System.Speech.Recognition.SrgsGrammar.SrgsRule)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="grammarRootRule" Type="System.Speech.Recognition.SrgsGrammar.SrgsRule" />
+      </Parameters>
+      <Docs>
+        <param name="grammarRootRule"><see langword="root rule" />で、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラスし、を指定します、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsRule" />文法のルート ルールを使用するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターに指定されたルールの追加、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection>の<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>オブジェクトし、設定として、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Root%2A>文法の規則。  
+  
+   
+  
+## Examples  
+ 次の例は、2 つの規則を作成 (`chooseCities`と`destCities`) フライトの送信元と送信先の都市を選択するためです。 例では、初期化、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>インスタンスを使用して、`chooseCities`を引数としてルール。 例は、規則コレクションの内容とルート ルールの名前をコンソールに書き込みます。  
+  
+```csharp  
+// Create a rule that contains a list of destination cities.  
+SrgsRule destCities = new SrgsRule("Destination");  
+SrgsOneOf toCities = new SrgsOneOf(new string[] { "New York", "Seattle", "Denver" });  
+destCities.Add(toCities);  
+  
+// Create a list of origin cities and supporting phrases.  
+SrgsOneOf fromCities = new SrgsOneOf(new SrgsItem[] {   
+  new SrgsItem("Dallas"), new SrgsItem("Miami"), new SrgsItem("Chicago") });  
+SrgsItem intro = new SrgsItem("I want to fly from");  
+SrgsItem to = new SrgsItem("to");  
+  
+// Create the root rule of the grammar, and assemble the components.  
+SrgsRule chooseCities = new SrgsRule("Trip");  
+chooseCities.Add(intro);  
+chooseCities.Add(fromCities);  
+chooseCities.Add(to);  
+chooseCities.Add(new SrgsRuleRef(destCities));  
+  
+// Create the SrgsDocument and specify the root rule to add.  
+SrgsDocument bookFlight = new SrgsDocument(chooseCities);  
+  
+// Add the rule for the destination cities to the document's rule collection.  
+bookFlight.Rules.Add(new SrgsRule[] { destCities });  
+  
+// Display the contents of the Rules collection and the name of the root rule.  
+foreach (SrgsRule rule in bookFlight.Rules)  
+{  
+  Console.WriteLine("Rule " + rule.Id + " is in the rules collection");  
+}  
+Console.WriteLine("Root Rule " + bookFlight.Root.Id);  
+  
+// Create a Grammar object and load it to the recognizer.  
+Grammar g = new Grammar(bookFlight);  
+g.Name = ("City Chooser");  
+recognizer.LoadGrammarAsync(g);  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="grammarRootRule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsDocument (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsDocument.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">SRGS XML ファイルの場所です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />を埋めるためにドキュメントの XML の場所を指定するクラスが使用される、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>"srgsDocumentFile.xml"という名前のファイルからです。  
+  
+```csharp  
+string srgsDocumentFile = Path.Combine(Path.GetTempPath(), "srgsDocumentFile.xml");  
+SrgsDocument document = null;  
+  
+if (File.Exists(srgsDocumentFile))  
+   document = new SrgsDocument(srgsDocumentFile);  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsDocument (System.Xml.XmlReader srgsGrammar);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader srgsGrammar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsDocument.#ctor(System.Xml.XmlReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="srgsGrammar" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="srgsGrammar"><see cref="T:System.Xml.XmlReader" />で作成されたオブジェクト、 <see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" /> XML インスタンスです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラスのインスタンスから<see cref="T:System.Xml.XmlReader" />XML 形式の文法ファイルを参照します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の新しいインスタンスを作成する<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>のインスタンスから<xref:System.Xml.XmlReader>"srgsDocumentFile.xml"ファイルを参照します。  
+  
+```csharp  
+string srgsDocumentFile = Path.Combine(Path.GetTempPath(), "srgsDocumentFile.xml");  
+SrgsDocument document = null;  
+  
+if (File.Exists(srgsDocumentFile))  
+{  
+  XmlReader reader = XmlReader.Create(srgsDocumentFile);  
+  document = new SrgsDocument(reader);  
+  reader.Close();  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="srgsGrammar" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyReferences">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; AssemblyReferences { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; AssemblyReferences" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.AssemblyReferences" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、アセンブリの参照情報も、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />インスタンス。</summary>
+        <value><see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.AssemblyReferences" />プロパティは、アセンブリ参照の一覧を含む文字列コレクションを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeBehind">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; CodeBehind { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; CodeBehind" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.CodeBehind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離コード情報を取得、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />インスタンス。</summary>
+        <value><see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.CodeBehind" />プロパティのコード ビハインド ドキュメントの一覧を含む文字列コレクションを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャ情報を取得または設定、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />インスタンス。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />の現在のカルチャ情報を格納しているオブジェクト<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Microsoft Windows および System.Speech API は、すべての有効な言語-国コードを受け取ります。 指定された言語を使用する音声認識を実行する、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Culture%2A>プロパティ、言語、国コードをインストールする必要があるをサポートする音声認識エンジンです。 Microsoft Windows 7 に同梱されている音声認識エンジンは、次の言語、国コードで動作します。  
+  
+-   en GB です。 英語 (英国)  
+  
+-   EN-US です。 英語 (米国)  
+  
+-   de DE です。 ドイツ語 (ドイツ)  
+  
+-   ES-ES です。 スペイン語 (スペイン)  
+  
+-   fr-fr などです。 フランス語 (フランス)  
+  
+-   JA-JP です。 日本語 (日本)  
+  
+-   ZH-CN です。 中国語 (中国)  
+  
+-   zh-tw があります。 中国語 (台湾)  
+  
+ "En"、"fr"などの 2 文字の言語コードまたは"es"も許可されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">割り当てられる値<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Culture" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">割り当てられる値<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Culture" />は<see cref="P:System.Globalization.CultureInfo.InvariantCulture" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Debug">
+      <MemberSignature Language="C#" Value="public bool Debug { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Debug" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Debug" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインライン スクリプトに行番号が追加されるかどうかを設定します。</summary>
+        <value><see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Debug" />プロパティから返される<see langword="true" />行番号追加する場合はデバッグのためです。 それ以外の場合、プロパティを返します<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportNamespaces">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; ImportNamespaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; ImportNamespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.ImportNamespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の関連する名前空間を取得<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />インスタンス。</summary>
+        <value><see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.ImportNamespaces" />プロパティに関連する名前空間の一覧を含む文字列コレクションを返します、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Language">
+      <MemberSignature Language="C#" Value="public string Language { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Language" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Language" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のインライン コードを使用するプログラミング言語、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラスです。</summary>
+        <value><see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Language" />プロパティは、これをプログラミング言語を返します<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />設定されています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モードを取得または設定、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラスです。</summary>
+        <value>認識モード、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Mode%2A>プロパティのメンバーを返します、<xref:System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode>入力の型を決定する、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>が必要です。 2 つの指定できる値は`Voice`音声入力と`Dtmf`デュアル トーン マルチ頻度 (DTMF) 音が電話に通常関連付けられている入力します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前空間、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラスです。</summary>
+        <value><see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Namespace" />プロパティは、現在の名前空間を返します<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PhoneticAlphabet">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet PhoneticAlphabet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet PhoneticAlphabet" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.PhoneticAlphabet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の音標文字、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラスです。</summary>
+        <value>カスタムの発音を指定するために使用する必要があります音標文字を返します、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsToken" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Phonetic アルファベット文字、数字、または組み合わせのことがありますの文字で構成された携帯電話で構成されます。 各電話番号には、音声の一意のサウンドがについて説明します。 これは、ラテン語アルファベットと対照的にいずれかの文字が複数の話されたサウンドを表すことがあります。 単語「処理」と「、」で、単語"candy"と「中止」で文字"c"のさまざまな発音または文字の組み合わせのさまざまな発音"th"を検討します。  
+  
+ System.Speech で使用できます phonetic アルファベットの 3 つのカスタム発音を指定する: 国際電話記号 (IPA)、ユニバーサル電話設定 (UPS)、または、SAPI 電話のセット。 指定された発音記号決定のインライン発音の定義に使用される電話セット<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken>オブジェクト。 指定された電話<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation%2A>で指定された発音記号に一致する必要があります<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.PhoneticAlphabet%2A>です。  
+  
+ 参照してください[辞書と音声のアルファベット](http://msdn.microsoft.com/en-us/435e3c6f-6834-4e5a-b0f6-c17b2275dc51)詳細についてはします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Root">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.SrgsGrammar.SrgsRule Root { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.Recognition.SrgsGrammar.SrgsRule Root" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Root" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsRule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のルート ルール、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラスです。</summary>
+        <value>ルート ルールとして指定されているルールを返す、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>オブジェクトは、ドキュメント内でなければなりません既に<xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection>設定する前に、**ルート ルール**です。  
+  
+ に対するルート ルールを設定することも、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>オブジェクトを使用して、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>オブジェクトを引数として、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のルールを作成`winnerRule`、し、作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>という名前のオブジェクト`document`です。 この例では、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection.Add%2A>ドキュメントにルールを追加します。 最後に、ドキュメントの設定例では、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Root%2A>プロパティを`winnerRule`、それによってので、`root rule`によって定義された文法に、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>オブジェクト。  
+  
+```csharp  
+SrgsRule winnerRule = new SrgsRule("WorldCupWinner");  
+winnerRule.Scope = SrgsRuleScope.Public;  
+  
+SrgsDocument document = new SrgsDocument();  
+  
+document.Rules.Add(winnerRule);  
+document.Root = winnerRule;   
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rules">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection Rules { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection Rules" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Rules" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在定義されている規則のコレクションを取得、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラスです。</summary>
+        <value>に対して定義されている規則を返します、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加することができます<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>オブジェクトを<xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection>を使用して、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection.Add%2A>メソッドを<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Rules%2A>プロパティです。 初期化する場合、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>オブジェクトを指定、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>オブジェクトを引数として、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>に自動的に追加されて、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection>の<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>です。  
+  
+   
+  
+## Examples  
+ 次の例では、語句を認識する文法「ワールド カップが勝利した民族が」とそれに続くワールド カップが勝利した国の名前。 例は、作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>オブジェクト、およびという名前のパブリック ルールを作成し`winnerRule`です。 ルールに文字列を追加した後`winnerRule`、例では、次の 2 つ以上の規則の作成 (`ruleEurope`と`ruleSAmerica`)、それぞれの国の一覧を含むです。 使用して、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection.Add%2A>メソッド、例では、3 つすべての規則の追加 (`winnerRule`、 `ruleEurope`、および`ruleSAmerica`) に、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Rules%2A>のプロパティ、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>です。  
+  
+```csharp  
+public void WorldSoccerWinners ()  
+{  
+  
+  // Create an SrgsDocument, create a new rule  
+  // and set its scope to public.  
+  SrgsDocument document = new SrgsDocument();  
+  SrgsRule winnerRule = new SrgsRule("WorldCupWinner");  
+  winnerRule.Scope = SrgsRuleScope.Public;  
+  
+  // Add the introduction.  
+  winnerRule.Elements.Add(new SrgsItem("A nation that has won the world cup is: "));  
+  
+  // Create the rule for the European nations.  
+  SrgsOneOf oneOfEurope = new SrgsOneOf(new SrgsItem[] {new SrgsItem("England"),   
+    new SrgsItem("France"), new SrgsItem("Germany"), new SrgsItem("Italy")});  
+  SrgsRule ruleEurope = (new SrgsRule("EuropeanNations", new SrgsElement[] {oneOfEurope}));  
+  
+  // Create the rule for the South American nations.  
+  SrgsOneOf oneOfSAmerica = new SrgsOneOf(new SrgsItem[] {new SrgsItem("Argentina"),   
+    new SrgsItem("Brazil"), new SrgsItem("Uruguay")});  
+  SrgsRule ruleSAmerica = (new SrgsRule("SouthAmericanNations", new SrgsElement[] {oneOfSAmerica}));  
+  
+  // Add references to winnerRule for ruleEurope and ruleSAmerica.  
+  winnerRule.Elements.Add(new SrgsOneOf(new SrgsItem[] {(new SrgsItem   
+    (new SrgsRuleRef(ruleEurope))), new SrgsItem(new SrgsRuleRef(ruleSAmerica))}));  
+  
+  // Add all the rules to the document and make winnerRule   
+  // the root rule of the document.  
+  document.Rules.Add(new SrgsRule[] {winnerRule, ruleEurope, ruleSAmerica});  
+  document.Root = winnerRule;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Script">
+      <MemberSignature Language="C#" Value="public string Script { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Script" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Script" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のスクリプト言語を .NET、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラスです。</summary>
+        <value><see langword="Script" />プロパティは、.NET スクリプトの現在の言語を返します、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このプロパティは推奨されていません。 使用は推奨されなくなりました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定しようとしましたが、<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Script" />プロパティを null にします。</exception>
+        <exception cref="T:System.ArgumentException">設定しようとしましたが、<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Script" />プロパティを空の文字列にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSrgs">
+      <MemberSignature Language="C#" Value="public void WriteSrgs (System.Xml.XmlWriter srgsGrammar);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteSrgs(class System.Xml.XmlWriter srgsGrammar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsDocument.WriteSrgs(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="srgsGrammar" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="srgsGrammar"><see cref="T:System.Xml.XmlWriter" />書き込みに使用される、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />インスタンス。</param>
+        <summary>内容を書き込みます、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />オブジェクトに準拠した XML 形式の文法ファイルを[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201761)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>オブジェクト、およびという名前のパブリック ルールを作成し`winnerRule`です。 これは、後、作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>文字列で構成される"ワールド カップが獲得民族:"、し、この項目を追加、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Elements%2A>ルールのプロパティ。 2 つ以上の規則を作成し (`ruleEurope`と`ruleSAmerica`)、それぞれは、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf> 3 種類を含むオブジェクト<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクト。 その後、もう 1 つ<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>を含むオブジェクトが作成された<xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>を参照するオブジェクト`ruleEurope`と`ruleSAmerica`です。 新しい<xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>にオブジェクトが追加し、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Elements%2A>プロパティの`winnerRule`します。 その後、3 つすべての規則 (`winnerRule`、 `ruleEurope`、および`ruleSAmerica`) に追加されます、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Rules%2A>のプロパティ、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>です。 最後に、この例は、空の XML ファイルとのインスタンスを作成<xref:System.Xml.XmlWriter>です。  <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.WriteSrgs%2A>メソッドを使用、<xref:System.Xml.XmlWriter>インスタンスの内容の書き込みを<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>を XML ファイルです。  
+  
+```csharp  
+public void WorldSoccerWinners ()  
+{  
+  
+  // Create an SrgsDocument, create a new rule  
+  // and set its scope to public.  
+  SrgsDocument document = new SrgsDocument();  
+  SrgsRule winnerRule = new SrgsRule("WorldCupWinner");  
+  winnerRule.Scope = SrgsRuleScope.Public;  
+  
+  // Add the introduction.  
+  winnerRule.Elements.Add(new SrgsItem("A nation that has won the world cup is: "));  
+  
+  // Create the rule for the European nations.  
+  SrgsOneOf oneOfEurope = new SrgsOneOf(new SrgsItem[] {new SrgsItem("England"),   
+    new SrgsItem("France"), new SrgsItem("Germany"), new SrgsItem("Italy")});  
+  SrgsRule ruleEurope = (new SrgsRule("EuropeanNations", new SrgsElement[] {oneOfEurope}));  
+  
+  // Create the rule for the South American nations.  
+  SrgsOneOf oneOfSAmerica = new SrgsOneOf(new SrgsItem[] {new SrgsItem("Argentina"),   
+    new SrgsItem("Brazil"), new SrgsItem("Uruguay")});  
+  SrgsRule ruleSAmerica = (new SrgsRule("SouthAmericanNations", new SrgsElement[] {oneOfSAmerica}));  
+  
+  // Add references to winnerRule for ruleEurope and ruleSAmerica.  
+  winnerRule.Elements.Add(new SrgsOneOf(new SrgsItem[] {(new SrgsItem   
+    (new SrgsRuleRef(ruleEurope))), new SrgsItem(new SrgsRuleRef(ruleSAmerica))}));  
+  
+  // Add all the rules to the document and make winnerRule   
+  // the root rule of the document.  
+  document.Rules.Add(new SrgsRule[] {winnerRule, ruleEurope, ruleSAmerica});  
+  document.Root = winnerRule;  
+  
+  // Create a string object with the path to the file to use.  
+  string srgsDocumentFile = Path.Combine(Path.GetTempPath(), "srgsDocumentFile.xml");  
+  
+  // Create an XmlWriter object and pass the file path.  
+  XmlWriter writer = XmlWriter.Create(srgsDocumentFile);  
+  
+  // Write the contents of the XmlWriter object to an SRGS-compatible XML file.  
+  document.WriteSrgs(writer);  
+  writer.Close();  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="srgsGrammar" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlBase">
+      <MemberSignature Language="C#" Value="public Uri XmlBase { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri XmlBase" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.XmlBase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のベース URI、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />クラスです。</summary>
+        <value>現在のベース URI<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.XmlBase%2A>プロパティの相対 Uri を解決するために使用する値を取得する、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>オブジェクト。 値があると<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.XmlBase%2A>"http://www.contoso.com/"は、および<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>たとえば別のドキュメントへの相対ルール参照が含まれます`SrgsRuleRef("ExternalGrammar.grxml")`です。 こうと、外部のドキュメントを次の絶対パス:`http://www.contoso.com/ExternalGrammar.grxml`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

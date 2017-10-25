@@ -1,0 +1,65 @@
+<Type Name="DesignerActionListsChangedType" FullName="System.ComponentModel.Design.DesignerActionListsChangedType">
+  <TypeSignature Language="C#" Value="public enum DesignerActionListsChangedType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DesignerActionListsChangedType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerActionListsChangedType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コレクションで発生している変更の種類を指定<see cref="T:System.ComponentModel.Design.DesignerActionList" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionListsChangedType>列挙体は、要素が追加または管理対象のコレクションから削除されていることを示します。<xref:System.ComponentModel.Design.DesignerActionList>オブジェクト。 この列挙体で使用、<xref:System.ComponentModel.Design.DesignerActionListsChangedEventArgs>と関連付けられているクラス、<xref:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged>イベント。  
+  
+> [!NOTE]
+>  ただし、<xref:System.ComponentModel.Design.DesignerActionListCollection>クラスは、コレクションの<xref:System.ComponentModel.Design.DesignerActionList>オブジェクト、イベントを直接発生しません。 代わりに、所有している<xref:System.ComponentModel.Design.DesignerActionService>を発生させます<xref:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged>イベント。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActionListsAdded">
+      <MemberSignature Language="C#" Value="ActionListsAdded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.DesignerActionListsChangedType ActionListsAdded = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.DesignerActionListsChangedType.ActionListsAdded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListsChangedType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つまたは複数<see cref="T:System.ComponentModel.Design.DesignerActionList" />オブジェクトがコレクションに追加します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionListsRemoved">
+      <MemberSignature Language="C#" Value="ActionListsRemoved" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.DesignerActionListsChangedType ActionListsRemoved = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.DesignerActionListsChangedType.ActionListsRemoved" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListsChangedType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つまたは複数<see cref="T:System.ComponentModel.Design.DesignerActionList" />コレクションから削除されたオブジェクト。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

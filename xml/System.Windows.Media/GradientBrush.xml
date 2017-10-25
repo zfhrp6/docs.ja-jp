@@ -1,0 +1,351 @@
+<Type Name="GradientBrush" FullName="System.Windows.Media.GradientBrush">
+  <TypeSignature Language="C#" Value="public abstract class GradientBrush : System.Windows.Media.Brush" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract GradientBrush extends System.Windows.Media.Brush" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.GradientBrush" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Brush</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("GradientStops")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>グラデーションの分岐点で構成されるグラデーションを記述する抽象クラス。 継承するクラス<see cref="T:System.Windows.Media.GradientBrush" />グラデーションの分岐点を解釈するさまざまな方法について説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.GradientBrush>の種類は、<xref:System.Windows.Freezable>オブジェクトし、パフォーマンスを向上させるために固定することができます。 について<xref:System.Windows.Freezable>の凍結と、複製などの機能を参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Windows.Media.GradientBrush" />オーバーライドする必要があります、クラス、<see cref="M:System.Windows.Freezable.CreateInstanceCore" />メソッドです。 クラスの追加の初期化作業を実行する必要がありますかに応じて依存関係のないプロパティのデータ メンバーが含まれています、する必要がありますオーバーライド追加<see cref="T:System.Windows.Freezable" />メソッドです。 継承の詳細については<see cref="T:System.Windows.Freezable" />型を参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected GradientBrush ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GradientBrush.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.GradientBrush" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected GradientBrush (System.Windows.Media.GradientStopCollection gradientStopCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.GradientStopCollection gradientStopCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GradientBrush.#ctor(System.Windows.Media.GradientStopCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="gradientStopCollection" Type="System.Windows.Media.GradientStopCollection" />
+      </Parameters>
+      <Docs>
+        <param name="gradientStopCollection"><see cref="T:System.Windows.Media.GradientStopCollection" />グラデーションの遷移ポイントの色と場所を指定するために使用します。</param>
+        <summary>指定した <see cref="T:System.Windows.Media.GradientBrush" /> を使用して、<see cref="T:System.Windows.Media.GradientStopCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.GradientBrush Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.GradientBrush Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GradientBrush.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GradientBrush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.GradientBrush" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.GradientBrush CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.GradientBrush CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GradientBrush.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GradientBrush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.GradientBrush" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティは<see langword="false" />場合でも、ソースの<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティは<see langword="true" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorInterpolationMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.ColorInterpolationMode ColorInterpolationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.ColorInterpolationMode ColorInterpolationMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GradientBrush.ColorInterpolationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.ColorInterpolationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.ColorInterpolationMode" />グラデーションの色の補間方法を指定する列挙です。</summary>
+        <value>グラデーションの色の補間方法を指定します。 既定値は、<see cref="F:System.Windows.Media.ColorInterpolationMode.SRgbLinearInterpolation" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ColorInterpolationMode"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.GradientBrush.ColorInterpolationModeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、異なる色空間で発生する補間を色の補間のモードが異なる 2 つのようなグラデーションを示します。  
+  
+ [!code-xaml[GradientBrushExamples_snip#ColorInterpolationModeExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/ColorInterpolationModeExample.xaml#colorinterpolationmodeexamplewholepage)]  
+  
+ 次の図は、前の例の生成を示します。  
+  
+ ![異なる補間モードを示す 2 つのグラデーション](~/add/media/graphicscolorinterpolationmode.gif "異なる補間モードを示す 2 つのグラデーション")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorInterpolationModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ColorInterpolationModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ColorInterpolationModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GradientBrush.ColorInterpolationModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.GradientBrush.ColorInterpolationMode" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GradientStops">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.GradientStopCollection GradientStops { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.GradientStopCollection GradientStops" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GradientBrush.GradientStops" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GradientStopCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラシのグラデーションの分岐点を取得または設定します。</summary>
+        <value>コレクション、<see cref="T:System.Windows.Media.GradientStop" />ブラシにそれぞれ指定する色とブラシのグラデーション軸に沿ってオフセットに関連付けられているオブジェクト。 既定値は空の <see cref="T:System.Windows.Media.GradientStopCollection" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_GradientStops"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.GradientBrush.GradientStopsProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GradientStopsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty GradientStopsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty GradientStopsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GradientBrush.GradientStopsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.GradientBrush.GradientStops" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MappingMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.BrushMappingMode MappingMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.BrushMappingMode MappingMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GradientBrush.MappingMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.BrushMappingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.BrushMappingMode" />グラデーション ブラシの配置座標のかどうかを指定する列挙体は、出力領域に絶対的または相対的です。</summary>
+        <value>A<see cref="T:System.Windows.Media.BrushMappingMode" />グラデーション ブラシの座標を配置する方法を指定する値が解釈されます。 既定値は、<see cref="F:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Windows.Media.BrushMappingMode.Absolute>グラデーション ブラシの座標は、デバイス非依存のピクセルを使用して表されますことを示します。  
+  
+<a name="dependencyPropertyInfo_MappingMode"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.GradientBrush.MappingModeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.GradientBrush.MappingMode%2A>に使用するには、どのような座標システムを指定するプロパティ、<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>グラデーションのです。  
+  
+ [!code-xaml[GradientBrushExamples_snip#GradientBrushMappingModeExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/GradientBrushMappingModeExample.xaml#gradientbrushmappingmodeexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MappingModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MappingModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MappingModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GradientBrush.MappingModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.GradientBrush.MappingMode" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpreadMethod">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.GradientSpreadMethod SpreadMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.GradientSpreadMethod SpreadMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GradientBrush.SpreadMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GradientSpreadMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または開始または描画するオブジェクトの境界内に終了するグラデーションの描画方法を指定するスプレッド メソッドの型を設定します。</summary>
+        <value>グラデーションの描画に使用するスプレッド メソッドの型。 既定値は、<see cref="F:System.Windows.Media.GradientSpreadMethod.Pad" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図で利用可能なスプレッド メソッドとその効果を示しています。<xref:System.Windows.Media.LinearGradientBrush>と<xref:System.Windows.Media.RadialGradientBrush>です。 赤色の線では、グラデーションの領域を示します。 A<xref:System.Windows.Media.LinearGradientBrush>グラデーションで領域を定義、<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>プロパティです。 A<xref:System.Windows.Media.RadialGradientBrush>グラデーションで領域を定義、 <xref:System.Windows.Media.RadialGradientBrush.Center%2A>、 <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>、および<xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A>プロパティです。  
+  
+ ![別の GradientSpread 設定](~/add/media/img-mmgraphics-gradientspread.png "の別の GradientSpread 設定")  
+グラデーションの拡散メソッド  
+  
+<a name="dependencyPropertyInfo_SpreadMethod"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.GradientBrush.SpreadMethodProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例に適用される異なる<xref:System.Windows.Media.GradientBrush.SpreadMethod%2A>をいくつか設定<xref:System.Windows.Media.LinearGradientBrush>と<xref:System.Windows.Media.RadialGradientBrush>オブジェクト。  
+  
+ [!code-xaml[BrushesIntroduction_snip#GraphicsmmGradientSpreadExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushesIntroduction_snip/XAML/GradientSpreadExample.xaml#graphicsmmgradientspreadexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpreadMethodProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SpreadMethodProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SpreadMethodProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GradientBrush.SpreadMethodProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.GradientBrush.SpreadMethod" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

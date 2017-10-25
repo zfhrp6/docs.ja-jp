@@ -1,0 +1,124 @@
+<Type Name="KerberosTicketHashKeyIdentifierClause" FullName="System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause">
+  <TypeSignature Language="C#" Value="public sealed class KerberosTicketHashKeyIdentifierClause : System.IdentityModel.Tokens.BinaryKeyIdentifierClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit KerberosTicketHashKeyIdentifierClause extends System.IdentityModel.Tokens.BinaryKeyIdentifierClause" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.BinaryKeyIdentifierClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> または <see cref="T:System.IdentityModel.Tokens.KerberosReceiverSecurityToken" /> セキュリティ トークンを識別するキー識別子句を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause> クラスを使用して、Kerberos チケットの SHA-1 ハッシュを使用する <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken> または <xref:System.IdentityModel.Tokens.KerberosReceiverSecurityToken> セキュリティ トークンを参照します。 Kerberos チケットの SHA-1 ハッシュは、<xref:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause.GetKerberosTicketHash%2A> メソッドを呼び出すことで取得できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KerberosTicketHashKeyIdentifierClause (byte[] ticketHash);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] ticketHash) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ticketHash" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="ticketHash">Kerberos サービス チケットの SHA-1 ハッシュを含む <see cref="T:System.Byte" /> の配列。</param>
+        <summary>指定した Kerberos チケットの SHA-1 ハッシュを使用して、<see cref="T:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ticketHash" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KerberosTicketHashKeyIdentifierClause (byte[] ticketHash, byte[] derivationNonce, int derivationLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] ticketHash, unsigned int8[] derivationNonce, int32 derivationLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause.#ctor(System.Byte[],System.Byte[],System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ticketHash" Type="System.Byte[]" />
+        <Parameter Name="derivationNonce" Type="System.Byte[]" />
+        <Parameter Name="derivationLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ticketHash">Kerberos サービス チケットの SHA-1 ハッシュを含む <see cref="T:System.Byte" /> の配列。</param>
+        <param name="derivationNonce">派生キーの作成に使用された nonce を格納する <see cref="T:System.Byte" /> の配列。</param>
+        <param name="derivationLength">派生キーのサイズ。</param>
+        <summary>指定した Kerberos チケット、nonce、およびキー長を使用して、<see cref="T:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、暗黙的な派生キー識別子の作成をサポートしません。  ただし、[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] が暗黙的な派生キー識別子を含む受信 SOAP メッセージを処理して消費します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ticketHash" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="ticketHash" /> の長さがゼロです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKerberosTicketHash">
+      <MemberSignature Language="C#" Value="public byte[] GetKerberosTicketHash ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetKerberosTicketHash() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause.GetKerberosTicketHash" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Kerberos サービス チケットの SHA-1 ハッシュを取得します。</summary>
+        <returns>Kerberos サービス チケットの SHA-1 ハッシュを含む <see cref="T:System.Byte" /> の配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを返します。</summary>
+        <returns>現在のオブジェクトを表す <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause.ToString%2A> メソッドは、Kerberos サービス チケットの SHA-1 ハッシュを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

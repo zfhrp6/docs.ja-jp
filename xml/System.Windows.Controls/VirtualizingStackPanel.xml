@@ -1,0 +1,1133 @@
+<Type Name="VirtualizingStackPanel" FullName="System.Windows.Controls.VirtualizingStackPanel">
+  <TypeSignature Language="C#" Value="public class VirtualizingStackPanel : System.Windows.Controls.VirtualizingPanel, System.Windows.Controls.Primitives.IScrollInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi VirtualizingStackPanel extends System.Windows.Controls.VirtualizingPanel implements class System.Windows.Controls.Primitives.IScrollInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.VirtualizingStackPanel" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.VirtualizingPanel</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Controls.Primitives.IScrollInfo</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>水平方向または垂直方向の単一行でコンテンツを整列し、仮想化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準的なレイアウト システムは、項目コンテナーを作成し、リスト コントロールに関連付けられている各項目のレイアウトを計算します。 手法を指します「仮想」という単語のサブセット[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]より多くのデータ項目が画面に表示するアイテムに基づいてから要素が生成されます。 多くの生成[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]画面にいくつかの要素がありますと、要素は、アプリケーションのパフォーマンスに悪影響を及ぼすことができます。 <xref:System.Windows.Controls.VirtualizingStackPanel>表示されている項目の数が計算され、使用、<xref:System.Windows.Controls.ItemContainerGenerator>から、 <xref:System.Windows.Controls.ItemsControl> (など<xref:System.Windows.Controls.ListBox>または<xref:System.Windows.Controls.ListView>) を作成する[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]表示される項目に対してのみ要素。  
+  
+ 仮想化、<xref:System.Windows.Controls.StackPanel>パネルに含まれる項目コントロールは、項目コンテナーを作成するときにのみ発生します。 データ バインディングを使用してこの動作を確認することができます。 項目コンテナーが作成され、アイテム コントロールに追加された場所のシナリオで、<xref:System.Windows.Controls.VirtualizingStackPanel>経由でのパフォーマンス上の利点はありません、<xref:System.Windows.Controls.StackPanel>です。  
+  
+ <xref:System.Windows.Controls.VirtualizingStackPanel>既定の項目のホストには、<xref:System.Windows.Controls.ListBox>要素。 既定では、`VirtualizingStackPanel.IsVirtualizing`に添付プロパティを設定`true`です。  
+  
+ ときに、`VirtualizingStackPanel.IsVirtualizing`に添付プロパティを設定`false`、<xref:System.Windows.Controls.VirtualizingStackPanel>動作は通常と同じ<xref:System.Windows.Controls.StackPanel>です。  
+  
+   
+  
+## Examples  
+ 次の例は、XML データ ソースにバインドしに表示される項目を仮想化する方法を示しています、<xref:System.Windows.Controls.ListBox>要素を使用して[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]です。 注意して、`VirtualizingStackPanel.IsVirtualizing`明示的に設定される添付プロパティ`true`です。  
+  
+ [!code-xaml[VirtualizingStackPanel_Intro#2](~/samples/snippets/csharp/VS_Snippets_Wpf/VirtualizingStackPanel_Intro/CS/default.xaml#2)]  
+  
+ 次の例を作成、<xref:System.Windows.Controls.ListBox>設定と、`VirtualizingStackPanel.VirtualizationMode`添付プロパティ<xref:System.Windows.Controls.VirtualizationMode.Recycling>です。  
+  
+ [!code-xaml[RecycleItemContainerShippets#VirtualizationMode](~/samples/snippets/csharp/VS_Snippets_Wpf/RecycleItemContainerShippets/CSharp/Window1.xaml#virtualizationmode)]  
+  
+ 次の例では、前の例で使用されるデータを示します。  
+  
+ [!code-csharp[RecycleItemContainerShippets#ListBoxData](~/samples/snippets/csharp/VS_Snippets_Wpf/RecycleItemContainerShippets/CSharp/Window1.xaml.cs#listboxdata)]
+ [!code-vb[RecycleItemContainerShippets#ListBoxData](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RecycleItemContainerShippets/visualbasic/window1.xaml.vb#listboxdata)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VirtualizingStackPanel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.VirtualizingStackPanel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCleanUpVirtualizedItemHandler">
+      <MemberSignature Language="C#" Value="public static void AddCleanUpVirtualizedItemHandler (System.Windows.DependencyObject element, System.Windows.Controls.CleanUpVirtualizedItemEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddCleanUpVirtualizedItemHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.CleanUpVirtualizedItemEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.AddCleanUpVirtualizedItemHandler(System.Windows.DependencyObject,System.Windows.Controls.CleanUpVirtualizedItemEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.CleanUpVirtualizedItemEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.DependencyObject" />がこのイベントをリッスンします。</param>
+        <param name="handler">イベント ハンドラーを追加します。</param>
+        <summary>イベント ハンドラーを追加、<see langword="VirtualizingStackPanel.CleanUpVirtualizedItem" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準的なレイアウト システムは、項目コンテナーを作成し、リスト コントロールに関連付けられている各項目のレイアウトを計算します。 手法を指します「仮想」という単語のサブセット[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]より多くのデータ項目が画面に表示するアイテムに基づいてから要素が生成されます。 多くの生成[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]画面にいくつかの要素がありますと、要素は、アプリケーションのパフォーマンスに悪影響を及ぼすことができます。 <xref:System.Windows.Controls.VirtualizingStackPanel>表示されている項目の数が計算され、使用、<xref:System.Windows.Controls.ItemContainerGenerator>から、 <xref:System.Windows.Controls.ItemsControl> (など<xref:System.Windows.Controls.ListBox>または<xref:System.Windows.Controls.ListView>) を作成する[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]表示される項目に対してのみ要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeSize"><see cref="T:System.Windows.Size" />をこの要素が使用する子要素を配置します。</param>
+        <summary><see cref="T:System.Windows.Controls.VirtualizingStackPanel" /> 要素のコンテンツを配置します。</summary>
+        <returns><see cref="T:System.Windows.Size" />の配置のサイズを表す<see cref="T:System.Windows.Controls.VirtualizingStackPanel" />要素とその子要素です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドすることができます、<xref:System.Windows.Controls.VirtualizingStackPanel.ArrangeOverride%2A>と<xref:System.Windows.Controls.VirtualizingStackPanel.MeasureOverride%2A>カスタム レイアウトの動作を派生クラスのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BringIndexIntoView">
+      <MemberSignature Language="C#" Value="protected override void BringIndexIntoView (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void BringIndexIntoView(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.BringIndexIntoView(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">生成し、表示されるようにする項目の位置。</param>
+        <summary>指定したインデックス位置にある項目を生成し、それを表示します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />位置が子コレクションに存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanHierarchicallyScrollAndVirtualizeCore">
+      <MemberSignature Language="C#" Value="protected override bool CanHierarchicallyScrollAndVirtualizeCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanHierarchicallyScrollAndVirtualizeCore" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.CanHierarchicallyScrollAndVirtualizeCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.VirtualizingStackPanel" />グループ化または階層に編成されている項目を仮想化できます。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanHorizontallyScroll">
+      <MemberSignature Language="C#" Value="public bool CanHorizontallyScroll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanHorizontallyScroll" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.CanHorizontallyScroll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Controls.VirtualizingStackPanel" />水平方向にスクロールできます。</summary>
+        <value>
+          <see langword="true" />コンテンツを水平方向にスクロールできる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanVerticallyScroll">
+      <MemberSignature Language="C#" Value="public bool CanVerticallyScroll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanVerticallyScroll" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.CanVerticallyScroll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンテンツを垂直方向にスクロールできるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コンテンツを垂直方向にスクロールできる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CleanUpVirtualizedItemEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent CleanUpVirtualizedItemEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent CleanUpVirtualizedItemEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.VirtualizingStackPanel.CleanUpVirtualizedItemEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see langword="VirtualizingStackPanel.CleanUpVirtualizedItem" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtentHeight">
+      <MemberSignature Language="C#" Value="public double ExtentHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ExtentHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.ExtentHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>範囲の縦のサイズを示す値を取得します。</summary>
+        <value>範囲の縦のサイズを表す <see cref="T:System.Double" />。 既定値は 0.0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtentWidth">
+      <MemberSignature Language="C#" Value="public double ExtentWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ExtentWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.ExtentWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>範囲の横のサイズを含む値を取得します。</summary>
+        <value>エクステントの横幅を表す <see cref="T:System.Double" />。 既定値は 0.0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemOffsetCore">
+      <MemberSignature Language="C#" Value="protected override double GetItemOffsetCore (System.Windows.UIElement child);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance float64 GetItemOffsetCore(class System.Windows.UIElement child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.GetItemOffsetCore(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="child">要素の位置を検索します。</param>
+        <summary>基準に指定した項目の位置を返します、<see cref="T:System.Windows.Controls.VirtualizingStackPanel" />です。</summary>
+        <returns>相対的に指定したアイテムの位置、<see cref="T:System.Windows.Controls.VirtualizingStackPanel" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasLogicalOrientation">
+      <MemberSignature Language="C#" Value="protected override bool HasLogicalOrientation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasLogicalOrientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.HasLogicalOrientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得する場合は、この<see cref="T:System.Windows.Controls.VirtualizingStackPanel" />垂直または水平方向です。</summary>
+        <value>このプロパティは常に <see langword="true" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`true`ため、<xref:System.Windows.Controls.VirtualizingStackPanel>垂直または水平方向の方向があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalOffset">
+      <MemberSignature Language="C#" Value="public double HorizontalOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 HorizontalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.HorizontalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクロールしたコンテンツの横方向のオフセットを格納する値を取得します。</summary>
+        <value>
+          <see cref="T:System.Double" />スクロールしたコンテンツの水平方向のオフセットを表します。 既定値は 0.0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVirtualizingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsVirtualizingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsVirtualizingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.VirtualizingStackPanel.IsVirtualizingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="VirtualizingPanel.IsVirtualizing" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineDown">
+      <MemberSignature Language="C#" Value="public virtual void LineDown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LineDown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.LineDown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>1 つの論理ユニットでコンテンツを下へスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタック パネルがコンテンツを下にスクロールする方法を変更する派生クラスでは、このメソッドをオーバーライドすることができます。 たとえば、1 つではなく 2 つの単位で、ダウン コンテンツをスクロールできます。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineLeft">
+      <MemberSignature Language="C#" Value="public virtual void LineLeft ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LineLeft() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.LineLeft" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>1 つの論理単位だけ左にコンテンツをスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタック パネルがコンテンツを下にスクロールする方法を変更する派生クラスでは、このメソッドをオーバーライドすることができます。 たとえば、1 つではなく 2 つの単位で、ダウン コンテンツをスクロールできます。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineRight">
+      <MemberSignature Language="C#" Value="public virtual void LineRight ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LineRight() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.LineRight" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンテンツを 1 つの論理ユニットずつ右にスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタック パネルが右側にコンテンツをスクロールする方法を変更する派生クラスでは、このメソッドをオーバーライドすることができます。 たとえば、コンテンツをスクロールできる 1 つではなく 2 つの単位で右。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineUp">
+      <MemberSignature Language="C#" Value="public virtual void LineUp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LineUp() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.LineUp" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンテンツを 1 つの論理単位に上方向へスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタック パネルがコンテンツをスクロール アップする方法を変更する派生クラスでは、このメソッドをオーバーライドすることができます。 たとえば、1 つではなく 2 つの単位をスクロールできます。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalOrientation">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Controls.Orientation LogicalOrientation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Orientation LogicalOrientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.LogicalOrientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Orientation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see cref="T:System.Windows.Controls.Orientation" />の<see cref="T:System.Windows.Controls.VirtualizingStackPanel" />です。</summary>
+        <value><see cref="T:System.Windows.Controls.Orientation" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeVisible">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect MakeVisible (System.Windows.Media.Visual visual, System.Windows.Rect rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Rect MakeVisible(class System.Windows.Media.Visual visual, valuetype System.Windows.Rect rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.MakeVisible(System.Windows.Media.Visual,System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+        <Parameter Name="rectangle" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="visual"><see cref="T:System.Windows.Media.Visual" />可視になります。</param>
+        <param name="rectangle">A<see cref="T:System.Windows.Rect" />内の座標空間を表す、<see cref="T:System.Windows.Media.Visual" />です。</param>
+        <summary>指定した座標にまでスクロールし、その部分は、<see cref="T:System.Windows.Media.Visual" />表示します。</summary>
+        <returns>A<see cref="T:System.Windows.Rect" />表示されています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">上限<see cref="T:System.Windows.Size" />を超えていない必要があります。</param>
+        <summary>子要素の測定、<see cref="T:System.Windows.Controls.VirtualizingStackPanel" />中の調整に応じるために、<see cref="M:System.Windows.Controls.VirtualizingStackPanel.ArrangeOverride(System.Windows.Size)" />渡します。</summary>
+        <returns><see cref="T:System.Windows.Size" />要素の目的のサイズを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スクロール、 <xref:System.Windows.Controls.VirtualizingStackPanel> 、レイアウトのサイズが大きくならないが、z 平面上、これは通常、親要素によってクリップその子孫を効果的に追加 (通常、 <xref:System.Windows.Controls.ScrollContentPresenter>) スタックのサイズにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseWheelDown">
+      <MemberSignature Language="C#" Value="public virtual void MouseWheelDown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void MouseWheelDown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.MouseWheelDown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>下方向にマウスのホイール ボタンのクリックに応答コンテンツを論理的に下へスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドできます<xref:System.Windows.Controls.VirtualizingStackPanel.MouseWheelDown%2A>スタック パネルが、マウス ホイールをダウン操作に応答する方法を変更する派生クラスでします。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseWheelLeft">
+      <MemberSignature Language="C#" Value="public virtual void MouseWheelLeft ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void MouseWheelLeft() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.MouseWheelLeft" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マウスのホイール ボタンの左への応答での左に論理的にコンテンツをスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドできます<xref:System.Windows.Controls.VirtualizingStackPanel.MouseWheelLeft%2A>スタック パネルが、マウス ホイールを左アクションに応答する方法を変更する派生クラスでします。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseWheelRight">
+      <MemberSignature Language="C#" Value="public virtual void MouseWheelRight ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void MouseWheelRight() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.MouseWheelRight" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マウスのホイール ボタンの右クリックしてへの応答の右側に論理的にコンテンツをスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドできます<xref:System.Windows.Controls.VirtualizingStackPanel.MouseWheelRight%2A>スタック パネルがマウスのホイール右アクションに応答する方法を変更する派生クラスでします。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseWheelUp">
+      <MemberSignature Language="C#" Value="public virtual void MouseWheelUp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void MouseWheelUp() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.MouseWheelUp" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンテンツをスクロール アップ論理的にマウスのホイール ボタンの上方向のクリックに応答します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドできます<xref:System.Windows.Controls.VirtualizingStackPanel.MouseWheelUp%2A>スタック パネルがアクションをマウス ホイールをどのように応答する方法を変更する派生クラスでします。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCleanUpVirtualizedItem">
+      <MemberSignature Language="C#" Value="protected virtual void OnCleanUpVirtualizedItem (System.Windows.Controls.CleanUpVirtualizedItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCleanUpVirtualizedItem(class System.Windows.Controls.CleanUpVirtualizedItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.OnCleanUpVirtualizedItem(System.Windows.Controls.CleanUpVirtualizedItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.CleanUpVirtualizedItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントに関するデータ。</param>
+        <summary>項目によってホストされているときに呼び出されます、<see cref="T:System.Windows.Controls.VirtualizingStackPanel" />再仮想化されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準的なレイアウト システムは、項目コンテナーを作成し、リスト コントロールに関連付けられている各項目のレイアウトを計算します。 手法を指します「仮想」という単語のサブセット[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]より多くのデータ項目が画面に表示するアイテムに基づいてから要素が生成されます。 多くの生成[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]画面にいくつかの要素がありますと、要素は、アプリケーションのパフォーマンスに悪影響を及ぼすことができます。 <xref:System.Windows.Controls.VirtualizingStackPanel>表示されている項目の数が計算され、使用、<xref:System.Windows.Controls.ItemContainerGenerator>から、 <xref:System.Windows.Controls.ItemsControl> (など<xref:System.Windows.Controls.ListBox>または<xref:System.Windows.Controls.ListView>) を作成する[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]表示される項目に対してのみ要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClearChildren">
+      <MemberSignature Language="C#" Value="protected override void OnClearChildren ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClearChildren() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.OnClearChildren" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ベースで子要素のコレクションが消去されるときに呼び出されます<see cref="T:System.Windows.Controls.Panel" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsChanged">
+      <MemberSignature Language="C#" Value="protected override void OnItemsChanged (object sender, System.Windows.Controls.Primitives.ItemsChangedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnItemsChanged(object sender, class System.Windows.Controls.Primitives.ItemsChangedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.OnItemsChanged(System.Object,System.Windows.Controls.Primitives.ItemsChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="args" Type="System.Windows.Controls.Primitives.ItemsChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントの発生元の <see cref="T:System.Object" />。</param>
+        <param name="args"><see cref="E:System.Windows.Controls.ItemContainerGenerator.ItemsChanged" /> イベントのデータを提供します。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.ItemsControl.Items" />に関連付けられているコレクション、<see cref="T:System.Windows.Controls.ItemsControl" />この<see cref="T:System.Windows.Controls.Panel" />変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnViewportOffsetChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnViewportOffsetChanged (System.Windows.Vector oldViewportOffset, System.Windows.Vector newViewportOffset);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnViewportOffsetChanged(valuetype System.Windows.Vector oldViewportOffset, valuetype System.Windows.Vector newViewportOffset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.OnViewportOffsetChanged(System.Windows.Vector,System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldViewportOffset" Type="System.Windows.Vector" />
+        <Parameter Name="newViewportOffset" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="oldViewportOffset">ビューポートの以前のオフセット。</param>
+        <param name="newViewportOffset">ビューポートの新しいオフセット。</param>
+        <summary>ビューポートの変更のユーザーとしてのオフセットのコンテンツがスクロールされたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでこのメソッドを使用して、検出し、ビューポートの位置の変更に応答します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnViewportSizeChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnViewportSizeChanged (System.Windows.Size oldViewportSize, System.Windows.Size newViewportSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnViewportSizeChanged(valuetype System.Windows.Size oldViewportSize, valuetype System.Windows.Size newViewportSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.OnViewportSizeChanged(System.Windows.Size,System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldViewportSize" Type="System.Windows.Size" />
+        <Parameter Name="newViewportSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="oldViewportSize">ビューポートの以前のサイズ。</param>
+        <param name="newViewportSize">ビューポートの新しいサイズ。</param>
+        <summary>ビューポートのサイズが変更されると呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでこのメソッドを使用して、検出し、ビューポートのサイズの変更に応答します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Orientation">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Orientation Orientation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Orientation Orientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.Orientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Orientation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または積み上げられたコンテンツの水平方向または垂直方向を示す値を設定します。</summary>
+        <value><see cref="T:System.Windows.Controls.Orientation" />子コンテンツのです。 既定値は、<see cref="F:System.Windows.Controls.Orientation.Vertical" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Orientation"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.VirtualizingStackPanel.OrientationProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OrientationProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OrientationProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OrientationProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.VirtualizingStackPanel.OrientationProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.VirtualizingStackPanel.Orientation" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageDown">
+      <MemberSignature Language="C#" Value="public virtual void PageDown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PageDown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.PageDown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>1 ページ下へのコンテンツをスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドできます<xref:System.Windows.Controls.VirtualizingStackPanel.PageDown%2A>スタック パネルがダウン操作のページにどのように応答する方法を変更する派生クラスでします。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageLeft">
+      <MemberSignature Language="C#" Value="public virtual void PageLeft ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PageLeft() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.PageLeft" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンテンツを 1 ページずつ左にスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドできます<xref:System.Windows.Controls.VirtualizingStackPanel.PageLeft%2A>スタック パネルがアクションを左のページにどのように応答する方法を変更する派生クラスでします。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageRight">
+      <MemberSignature Language="C#" Value="public virtual void PageRight ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PageRight() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.PageRight" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>1 ページには、右側にコンテンツをスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドできます<xref:System.Windows.Controls.VirtualizingStackPanel.PageRight%2A>スタック パネルをページの右のアクションに応答する方法を変更する派生クラスでします。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageUp">
+      <MemberSignature Language="C#" Value="public virtual void PageUp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PageUp() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.PageUp" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>1 つのページ、コンテンツをスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドできます<xref:System.Windows.Controls.VirtualizingStackPanel.PageUp%2A>スタック パネルがアクションをページにどのように応答する方法を変更する派生クラスでします。  
+  
+ 論理スクロールの代わりにスクロールする必要がある場合のラップ、<xref:System.Windows.Controls.VirtualizingStackPanel>で、<xref:System.Windows.Controls.ScrollViewer>設定とその<xref:System.Windows.Controls.ScrollViewer.CanContentScroll%2A>プロパティを`false`です。 ここで、<xref:System.Windows.Controls.ScrollViewer>スクロール、および仮想化が無効になっているを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCleanUpVirtualizedItemHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveCleanUpVirtualizedItemHandler (System.Windows.DependencyObject element, System.Windows.Controls.CleanUpVirtualizedItemEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveCleanUpVirtualizedItemHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.CleanUpVirtualizedItemEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.RemoveCleanUpVirtualizedItemHandler(System.Windows.DependencyObject,System.Windows.Controls.CleanUpVirtualizedItemEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.CleanUpVirtualizedItemEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.DependencyObject" />ハンドラーを削除することです。</param>
+        <param name="handler">削除するイベント ハンドラーを指定します。</param>
+        <summary>イベント ハンドラーを削除、<see langword="VirtualizingStackPanel.CleanUpVirtualizedItem" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準的なレイアウト システムは、項目コンテナーを作成し、リスト コントロールに関連付けられている各項目のレイアウトを計算します。 手法を指します「仮想」という単語のサブセット[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]より多くのデータ項目が画面に表示するアイテムに基づいてから要素が生成されます。 多くの生成[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]画面にいくつかの要素がありますと、要素は、アプリケーションのパフォーマンスに悪影響を及ぼすことができます。 <xref:System.Windows.Controls.VirtualizingStackPanel>表示されている項目の数が計算され、使用、<xref:System.Windows.Controls.ItemContainerGenerator>から、 <xref:System.Windows.Controls.ItemsControl> (など<xref:System.Windows.Controls.ListBox>または<xref:System.Windows.Controls.ListView>) を作成する[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]表示される項目に対してのみ要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollOwner">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ScrollViewer ScrollOwner { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.ScrollViewer ScrollOwner" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.ScrollOwner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ScrollViewer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このスクロール動作を制御するコンテナーを識別する値の設定を取得または<see cref="T:System.Windows.Controls.VirtualizingStackPanel" />です。</summary>
+        <value><see cref="T:System.Windows.Controls.ScrollViewer" />このスクロールを所有している<see cref="T:System.Windows.Controls.VirtualizingStackPanel" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Controls.ScrollViewer>コントロールは、 <xref:System.Windows.Controls.VirtualizingStackPanel.ScrollOwner%2A>、スクロールを有効にします。 場合、<xref:System.Windows.Controls.VirtualizingStackPanel>は、 <xref:System.Windows.Controls.VirtualizingStackPanel.ScrollOwner%2A>、論理子要素では、スクロールします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHorizontalOffset">
+      <MemberSignature Language="C#" Value="public void SetHorizontalOffset (double offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetHorizontalOffset(float64 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.SetHorizontalOffset(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="offset"><see cref="P:System.Windows.Controls.VirtualizingStackPanel.HorizontalOffset" /> プロパティの値。</param>
+        <summary><see cref="P:System.Windows.Controls.VirtualizingStackPanel.HorizontalOffset" /> プロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetVerticalOffset">
+      <MemberSignature Language="C#" Value="public void SetVerticalOffset (double offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetVerticalOffset(float64 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.SetVerticalOffset(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="offset"><see cref="P:System.Windows.Controls.VirtualizingStackPanel.VerticalOffset" /> プロパティの値。</param>
+        <summary><see cref="P:System.Windows.Controls.VirtualizingStackPanel.VerticalOffset" /> プロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldItemsChangeAffectLayoutCore">
+      <MemberSignature Language="C#" Value="protected override bool ShouldItemsChangeAffectLayoutCore (bool areItemChangesLocal, System.Windows.Controls.Primitives.ItemsChangedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ShouldItemsChangeAffectLayoutCore(bool areItemChangesLocal, class System.Windows.Controls.Primitives.ItemsChangedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizingStackPanel.ShouldItemsChangeAffectLayoutCore(System.Boolean,System.Windows.Controls.Primitives.ItemsChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="areItemChangesLocal" Type="System.Boolean" />
+        <Parameter Name="args" Type="System.Windows.Controls.Primitives.ItemsChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="areItemChangesLocal">
+          <see langword="true" />変更された項目がこの直接の子<see cref="T:System.Windows.Controls.VirtualizingPanel" />です。<see langword="false" />変更された項目がの間接の子である場合、<see cref="T:System.Windows.Controls.VirtualizingPanel" />です。</param>
+        <param name="args">変更された項目に関するデータが含まれています。</param>
+        <summary>示す値を返すかどうかに変更された項目、<see cref="T:System.Windows.Controls.ItemsControl" />このパネルのレイアウトに影響します。</summary>
+        <returns>
+          <see langword="true" />場合に変更された項目、 <see cref="T:System.Windows.Controls.ItemsControl" /> ; このパネルのレイアウトに影響を与えるそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalOffset">
+      <MemberSignature Language="C#" Value="public double VerticalOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 VerticalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.VerticalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクロールしたコンテンツの縦方向のオフセットを含む値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />スクロールしたコンテンツの縦方向のオフセットを表すです。 既定値は 0.0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportHeight">
+      <MemberSignature Language="C#" Value="public double ViewportHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ViewportHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.ViewportHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツのビューポートの縦幅を含む値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />コンテンツのビューポートの縦のサイズを表すです。 既定値は 0.0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportWidth">
+      <MemberSignature Language="C#" Value="public double ViewportWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ViewportWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.VirtualizingStackPanel.ViewportWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツのビューポートの横のサイズを示す値を取得します。</summary>
+        <value>A<see cref="T:System.Double" />コンテンツのビューポートの縦のサイズを表すです。 既定値は 0.0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualizationModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VirtualizationModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VirtualizationModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.VirtualizingStackPanel.VirtualizationModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="VirtualizingStackPanel.VirtualizationMode" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

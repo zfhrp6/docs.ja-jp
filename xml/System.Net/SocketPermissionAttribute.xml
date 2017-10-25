@@ -1,0 +1,232 @@
+<Type Name="SocketPermissionAttribute" FullName="System.Net.SocketPermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SocketPermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SocketPermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Net.SocketPermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロールへのセキュリティ アクションを指定<see cref="T:System.Net.Sockets.Socket" />接続します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性を使用する、<xref:System.Net.Sockets.Socket>接続がで指定されているプロパティに従う必要があります、<xref:System.Net.SocketPermissionAttribute>です。 例については、アクセス許可を適用する、 <xref:System.Net.Sockets.Socket> 、ポート 80、接続の設定、<xref:System.Net.SocketPermissionAttribute.Port%2A>のプロパティ、<xref:System.Net.SocketPermissionAttribute>を「80」です。 指定されているセキュリティ情報<xref:System.Net.SocketPermissionAttribute>するクラスである属性ターゲットのメタデータに格納されて、<xref:System.Net.SocketPermissionAttribute>を適用します。 実行時に情報がシステムにアクセスします。 <xref:System.Security.Permissions.SecurityAction>に渡されるコンス トラクターが使用可能な範囲を決定<xref:System.Net.SocketPermissionAttribute>ターゲットです。  
+  
+> [!NOTE]
+>  プロパティ、<xref:System.Net.SocketPermissionAttribute>以外の値を持つ必要があります`null`です。 また、一度設定するプロパティの値変更できません。  
+  
+> [!NOTE]
+>  属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SocketPermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.SecurityAction" /> 値を使用して、<see cref="T:System.Net.SocketPermissionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.SecurityAction>このコンス トラクターに渡される値が使用可能な範囲を指定します<xref:System.Net.SocketPermissionAttribute>ターゲットです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="action" /> は有効な <see cref="T:System.Security.Permissions.SecurityAction" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Access">
+      <MemberSignature Language="C#" Value="public string Access { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Access" />
+      <MemberSignature Language="DocId" Value="P:System.Net.SocketPermissionAttribute.Access" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって許可されているネットワーク アクセス方法の設定を取得または<see cref="T:System.Net.SocketPermissionAttribute" />です。</summary>
+        <value>このインスタンスで許可されているネットワーク アクセス メソッドを表す文字列<see cref="T:System.Net.SocketPermissionAttribute" />です。 有効な値が"Accept"と「接続」には</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは書き込みの後です。 このプロパティの有効な値に対応して<xref:System.Net.NetworkAccess>列挙値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Net.SocketPermissionAttribute.Access" />プロパティは使用されません<see langword="null" />値を設定しようとします。 1 つ以上のアクセス方法を指定するには、追加の属性の宣言ステートメントを使用します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.SocketPermission" /> クラスの新しいインスタンスを作成して返します。</summary>
+        <returns>インスタンス、<see cref="T:System.Net.SocketPermission" />セキュリティ宣言に対応するクラス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.SocketPermissionAttribute.CreatePermission%2A>メソッドは、アプリケーション コードではなく、セキュリティ システムによって呼び出されます。 によって記述されるセキュリティ情報<xref:System.Net.SocketPermissionAttribute>するクラスである属性ターゲットのメタデータに格納されて、<xref:System.Net.SocketPermissionAttribute>を適用します。 システムが実行時と呼び出しでの情報にアクセスし<xref:System.Net.SocketPermissionAttribute.CreatePermission%2A>です。 システムを使用して、返された<xref:System.Security.IPermission>指定したセキュリティ要件を強制します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の現在のインスタンスの<see cref="P:System.Net.SocketPermissionAttribute.Access" />、 <see cref="P:System.Net.SocketPermissionAttribute.Host" />、 <see cref="P:System.Net.SocketPermissionAttribute.Transport" />、または<see cref="P:System.Net.SocketPermissionAttribute.Port" />プロパティは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Host">
+      <MemberSignature Language="C#" Value="public string Host { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Host" />
+      <MemberSignature Language="DocId" Value="P:System.Net.SocketPermissionAttribute.Host" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、DNS ホスト名または IP アドレスで指定されている<see cref="T:System.Net.SocketPermissionAttribute" />です。</summary>
+        <value>DNS ホスト名またはのこのインスタンスに関連付けられている IP アドレスを含む文字列<see cref="T:System.Net.SocketPermissionAttribute" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは書き込み-とし、このアクセス許可を適用するドメイン ネーム サービス (DNS) ホスト名を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Net.SocketPermissionAttribute.Host" /><see langword="null" />値を設定しようとします。 1 つ以上のホストを指定するには、追加の属性の宣言ステートメントを使用します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public string Port { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Port" />
+      <MemberSignature Language="DocId" Value="P:System.Net.SocketPermissionAttribute.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに関連付けられているポート番号を取得または<see cref="T:System.Net.SocketPermissionAttribute" />です。</summary>
+        <value>このインスタンスに関連付けられているポート番号を表す文字列<see cref="T:System.Net.SocketPermissionAttribute" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは書き込み-したらこのアクセス許可を適用するポート番号を指定します。 有効な値は文字列でエンコードされた整数または文字列"All"です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Net.SocketPermissionAttribute.Port" />プロパティは<see langword="null" />値を設定しようとします。 複数のポートを指定するには、追加の属性の宣言ステートメントを使用します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transport">
+      <MemberSignature Language="C#" Value="public string Transport { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Transport" />
+      <MemberSignature Language="DocId" Value="P:System.Net.SocketPermissionAttribute.Transport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Net.TransportType" />こので指定された<see cref="T:System.Net.SocketPermissionAttribute" />です。</summary>
+        <value>含む文字列、<see cref="T:System.Net.TransportType" />これに関連付けられている<see cref="T:System.Net.SocketPermissionAttribute" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの可能な文字列の値が<xref:System.Net.TransportType.All>、 <xref:System.Net.TransportType.Connectionless>、 <xref:System.Net.TransportType.ConnectionOriented>、 <xref:System.Net.TransportType.Tcp>、および<xref:System.Net.TransportType.Udp>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Net.SocketPermissionAttribute.Transport" /><see langword="null" />値を設定しようとします。 1 つ以上のトランスポートの種類を指定するには、追加の属性の宣言ステートメントを使用します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

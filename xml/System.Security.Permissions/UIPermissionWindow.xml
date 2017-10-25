@@ -1,0 +1,161 @@
+<Type Name="UIPermissionWindow" FullName="System.Security.Permissions.UIPermissionWindow">
+  <TypeSignature Language="C#" Value="public enum UIPermissionWindow" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed UIPermissionWindow extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.UIPermissionWindow" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コードの使用が許可されるウィンドウの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を使って<xref:System.Security.Permissions.UIPermission>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllWindows">
+      <MemberSignature Language="C#" Value="AllWindows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.UIPermissionWindow AllWindows = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.UIPermissionWindow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーは、すべてのウィンドウとユーザー入力イベントを無制限に使用できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoWindows">
+      <MemberSignature Language="C#" Value="NoWindows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.UIPermissionWindow NoWindows = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.UIPermissionWindow.NoWindows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.UIPermissionWindow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーは、ウィンドウおよびユーザー インターフェイス イベントを使用できません。 ユーザー インターフェイスは使用できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SafeSubWindows">
+      <MemberSignature Language="C#" Value="SafeSubWindows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.UIPermissionWindow SafeSubWindows = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.UIPermissionWindow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが使用できるだけ<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />描画にし、ユーザー入力イベントをそのサブウィンドウ内のユーザー インターフェイスに対してのみ使用できます。 例として<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />は、 <see cref="T:System.Windows.Forms.MessageBox" />、共通のダイアログ コントロール、およびブラウザーで表示されるコントロールです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SafeTopLevelWindows">
+      <MemberSignature Language="C#" Value="SafeTopLevelWindows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.UIPermissionWindow SafeTopLevelWindows = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.UIPermissionWindow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが使用できるだけ<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows" />と<see cref="F:System.Security.Permissions.UIPermissionWindow.SafeSubWindows" />描画にそれらの最上位レベルのウィンドウとサブウィンドウ内のユーザー インターフェイスのユーザー入力イベントを使用できるだけです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、アプリケーション、SafeTopLevelWindows アクセス許可で実行されます。  
+  
+-   DNS 名またはアプリケーションの読み込み元の Web サイトの IP アドレスをタイトル バーに表示されます。  
+  
+-   まずを表示するとき、制限付きの信頼レベルで実行されているユーザーに知らせるバルーンのツール ヒントが表示されます。  
+  
+-   常に、タイトル バーを表示する必要があります。  
+  
+-   フォーム上のウィンドウ コントロールを表示する必要があります。  
+  
+-   スタートアップ時にメイン ウィンドウを最小化できません。  
+  
+-   そのウィンドウを画面外に移動できません。  
+  
+-   使用することはできません、<xref:System.Windows.Forms.Form.Opacity%2A>プロパティ<xref:System.Windows.Forms.Form.Opacity%2A>その windows より小さい値 50% を透明にします。  
+  
+-   四角形のウィンドウのみを使用し、ウィンドウ フレームを含める必要があります。 Windows フォームの設定は無視されます<xref:System.Windows.Forms.Form.FormBorderStyle%2A>に`None`です。  
+  
+-   Windows を非表示にすることはできません。 設定するアプリケーションによってしようとすると、<xref:System.Windows.Forms.Control.Visible%2A>プロパティをその<xref:System.Windows.Forms.Form>オブジェクトを`False`は無視されます。  
+  
+-   タスク バー内のエントリが必要です。  
+  
+-   そのコントロールへのアクセスを禁止されていますが、<xref:System.Windows.Forms.Control.Parent%2A>プロパティです。 黙示的、コントロールは兄弟の入れ子の同じレベルに他のコントロールなどへのアクセスから外さもします。  
+  
+-   フォーカスを使用して制御できない、<xref:System.Windows.Forms.Control.Focus%2A>メソッドです。  
+  
+-   制限されているキーボード入力のアクセス、フォームまたはコントロールのみがアクセスできるようにキーボード イベント自体とその子のです。  
+  
+-   アクセスが制限されますマウス座標、フォームまたはコントロールのみを読み取れるようにマウス座標の表示領域上にマウスが場合。  
+  
+-   設定できません、<xref:System.Windows.Forms.Form.TopMost%2A>プロパティです。  
+  
+-   使用して、フォーム上のコントロールの z オーダーを制御することはできません、<xref:System.Windows.Forms.Control.BringToFront%2A>と<xref:System.Windows.Forms.Control.SendToBack%2A>メソッドです。  
+  
+ これらの制限は、有害なコードがスプーフィングの信頼されたシステム ダイアログの偽装などの攻撃するを防ぐのに役立ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

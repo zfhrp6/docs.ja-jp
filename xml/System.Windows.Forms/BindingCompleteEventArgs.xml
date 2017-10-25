@@ -1,0 +1,328 @@
+<Type Name="BindingCompleteEventArgs" FullName="System.Windows.Forms.BindingCompleteEventArgs">
+  <TypeSignature Language="C#" Value="public class BindingCompleteEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BindingCompleteEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.BindingCompleteEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Binding.BindingComplete" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingCompleteEventArgs>例外や、バインディング プロセス中に発生したエラーに関する情報が含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理を示します、<xref:System.Windows.Forms.Binding.BindingComplete>イベント。 このコードを実行するには、空のコード ファイルに貼り付けます。  
+  
+ [!code-cpp[System.Windows.Forms.DataConnectorBindingComplete#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorBindingComplete/CPP/form1.cpp#3)]
+ [!code-csharp[System.Windows.Forms.DataConnectorBindingComplete#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorBindingComplete/CS/form1.cs#3)]
+ [!code-vb[System.Windows.Forms.DataConnectorBindingComplete#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorBindingComplete/VB/form1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingCompleteEventArgs (System.Windows.Forms.Binding binding, System.Windows.Forms.BindingCompleteState state, System.Windows.Forms.BindingCompleteContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Binding binding, valuetype System.Windows.Forms.BindingCompleteState state, valuetype System.Windows.Forms.BindingCompleteContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingCompleteEventArgs.#ctor(System.Windows.Forms.Binding,System.Windows.Forms.BindingCompleteState,System.Windows.Forms.BindingCompleteContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.Windows.Forms.Binding" />
+        <Parameter Name="state" Type="System.Windows.Forms.BindingCompleteState" />
+        <Parameter Name="context" Type="System.Windows.Forms.BindingCompleteContext" />
+      </Parameters>
+      <Docs>
+        <param name="binding">このアイテムに関連付けられているバインディング、<see cref="E:System.Windows.Forms.Binding.BindingComplete" />イベント。</param>
+        <param name="state"><see cref="T:System.Windows.Forms.BindingCompleteState" /> 値のいずれか。</param>
+        <param name="context"><see cref="T:System.Windows.Forms.BindingCompleteContext" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.BindingCompleteEventArgs" />クラスを指定したバインディング、エラーの状態、およびバインディング コンテキストを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `state`バインド プロセスが成功したか、エラーまたは例外が発生したかどうかを示します。 `context`バインドされたコントロールまたはデータ ソースを更新するときにエラーが発生したかどうかを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingCompleteEventArgs (System.Windows.Forms.Binding binding, System.Windows.Forms.BindingCompleteState state, System.Windows.Forms.BindingCompleteContext context, string errorText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Binding binding, valuetype System.Windows.Forms.BindingCompleteState state, valuetype System.Windows.Forms.BindingCompleteContext context, string errorText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingCompleteEventArgs.#ctor(System.Windows.Forms.Binding,System.Windows.Forms.BindingCompleteState,System.Windows.Forms.BindingCompleteContext,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.Windows.Forms.Binding" />
+        <Parameter Name="state" Type="System.Windows.Forms.BindingCompleteState" />
+        <Parameter Name="context" Type="System.Windows.Forms.BindingCompleteContext" />
+        <Parameter Name="errorText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="binding">このアイテムに関連付けられているバインディング、<see cref="E:System.Windows.Forms.Binding.BindingComplete" />イベント。</param>
+        <param name="state"><see cref="T:System.Windows.Forms.BindingCompleteState" /> 値のいずれか。</param>
+        <param name="context"><see cref="T:System.Windows.Forms.BindingCompleteContext" /> 値のいずれか。</param>
+        <param name="errorText">バインディングの中に発生したエラーのエラー テキストや例外メッセージ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.BindingCompleteEventArgs" />指定したバインディング、エラー状態とテキスト、およびバインディング コンテキストを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `state`バインド プロセスが成功したか、エラーまたは例外が発生したかどうかを示します。 `context`バインドされたコントロールまたはデータ ソースを更新するときにエラーが発生したかどうかを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingCompleteEventArgs (System.Windows.Forms.Binding binding, System.Windows.Forms.BindingCompleteState state, System.Windows.Forms.BindingCompleteContext context, string errorText, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Binding binding, valuetype System.Windows.Forms.BindingCompleteState state, valuetype System.Windows.Forms.BindingCompleteContext context, string errorText, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingCompleteEventArgs.#ctor(System.Windows.Forms.Binding,System.Windows.Forms.BindingCompleteState,System.Windows.Forms.BindingCompleteContext,System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.Windows.Forms.Binding" />
+        <Parameter Name="state" Type="System.Windows.Forms.BindingCompleteState" />
+        <Parameter Name="context" Type="System.Windows.Forms.BindingCompleteContext" />
+        <Parameter Name="errorText" Type="System.String" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="binding">このアイテムに関連付けられているバインディング、<see cref="E:System.Windows.Forms.Binding.BindingComplete" />イベント。</param>
+        <param name="state"><see cref="T:System.Windows.Forms.BindingCompleteState" /> 値のいずれか。</param>
+        <param name="context"><see cref="T:System.Windows.Forms.BindingCompleteContext" /> 値のいずれか。</param>
+        <param name="errorText">バインディングの中に発生したエラーのエラー テキストや例外メッセージ。</param>
+        <param name="exception"><see cref="T:System.Exception" />バインド中に発生しました。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.BindingCompleteEventArgs" />で指定したバインディング、エラー状態とテキスト、バインディング コンテキスト、および例外クラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `state`バインド プロセスが成功したか、エラーまたは例外が発生したかどうかを示します。 `context`バインドされたコントロールまたはデータ ソースを更新するときにエラーが発生したかどうかを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingCompleteEventArgs (System.Windows.Forms.Binding binding, System.Windows.Forms.BindingCompleteState state, System.Windows.Forms.BindingCompleteContext context, string errorText, Exception exception, bool cancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Binding binding, valuetype System.Windows.Forms.BindingCompleteState state, valuetype System.Windows.Forms.BindingCompleteContext context, string errorText, class System.Exception exception, bool cancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingCompleteEventArgs.#ctor(System.Windows.Forms.Binding,System.Windows.Forms.BindingCompleteState,System.Windows.Forms.BindingCompleteContext,System.String,System.Exception,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.Windows.Forms.Binding" />
+        <Parameter Name="state" Type="System.Windows.Forms.BindingCompleteState" />
+        <Parameter Name="context" Type="System.Windows.Forms.BindingCompleteContext" />
+        <Parameter Name="errorText" Type="System.String" />
+        <Parameter Name="exception" Type="System.Exception" />
+        <Parameter Name="cancel" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="binding">このアイテムに関連付けられているバインディング、<see cref="E:System.Windows.Forms.Binding.BindingComplete" />イベント。</param>
+        <param name="state"><see cref="T:System.Windows.Forms.BindingCompleteState" /> 値のいずれか。</param>
+        <param name="context"><see cref="T:System.Windows.Forms.BindingCompleteContext" /> 値のいずれか。</param>
+        <param name="errorText">バインディングの中に発生したエラーのエラー テキストや例外メッセージ。</param>
+        <param name="exception"><see cref="T:System.Exception" />バインド中に発生しました。</param>
+        <param name="cancel">
+          <see langword="true" />バインディングをキャンセルし、現在のコントロールにフォーカスを保持するには<see langword="false" />にフォーカスを別のコントロールに移動できるようにします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.BindingCompleteEventArgs" />の指定したバインディング、エラー状態とテキスト、バインディング コンテキスト、例外、バインドを取り消す必要があるかどうかとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `state`バインド プロセスが成功したか、エラーまたは例外が発生したかどうかを示します。 `context`バインドされたコントロールまたはデータ ソースを更新するときにエラーが発生したかどうかを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Binding">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Binding Binding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Binding Binding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingCompleteEventArgs.Binding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Binding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアイテムに関連付けられているバインディングを取得、<see cref="E:System.Windows.Forms.Binding.BindingComplete" />イベント。</summary>
+        <value>この <see cref="T:System.Windows.Forms.Binding" /> に関連付けられている <see cref="T:System.Windows.Forms.BindingCompleteEventArgs" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingCompleteEventArgs.Binding%2A>にも関連付けられている可能性があります、<xref:System.Windows.Forms.BindingSource.BindingComplete>のイベント、<xref:System.Windows.Forms.BindingSource>またはから継承するクラスの<xref:System.Windows.Forms.BindingManagerBase>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.BindingManagerBase.BindingComplete>イベントと使用、<xref:System.Windows.Forms.BindingCompleteEventArgs>同期を保つ複数のコントロールを同じデータ ソースにバインドされたコントロールの値のいずれかが変更されたとき。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます、`InitializeControlsAndData`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.BindingSourceMultipleControls#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceMultipleControls/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.BindingSourceMultipleControls#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceMultipleControls/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingCompleteContext">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BindingCompleteContext BindingCompleteContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.BindingCompleteContext BindingCompleteContext" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingCompleteEventArgs.BindingCompleteContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingCompleteContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディング操作の方向を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.BindingCompleteContext" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.BindingManagerBase.BindingComplete>イベントと使用、<xref:System.Windows.Forms.BindingCompleteEventArgs>同期を保つ複数のコントロールを同じデータ ソースにバインドされたコントロールの値のいずれかが変更されたとき。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます、`InitializeControlsAndData`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.BindingSourceMultipleControls#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceMultipleControls/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.BindingSourceMultipleControls#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceMultipleControls/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingCompleteState">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BindingCompleteState BindingCompleteState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.BindingCompleteState BindingCompleteState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingCompleteEventArgs.BindingCompleteState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingCompleteState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディング操作の完了状態を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.BindingCompleteState" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.BindingCompleteEventArgs.BindingCompleteState%2A>バインディングが成功したか、エラーや例外が発生したかを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Binding.BindingComplete?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Binding>という`Binding1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Binding.BindingComplete?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#77](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#77)]
+ [!code-vb[System.Windows.Forms.EventExamples#77](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#77)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorText">
+      <MemberSignature Language="C#" Value="public string ErrorText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ErrorText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingCompleteEventArgs.ErrorText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインド操作中に発生したエラーの説明テキストを取得します。</summary>
+        <value>バインド操作中に発生したエラーの説明文です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインド操作でエラーが発生しなかった場合、このプロパティは、空の文字列を返します。 値を返します、<xref:System.Exception.Message%2A?displayProperty=nameWithType>プロパティ例外が発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Binding.BindingComplete?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Binding>という`Binding1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Binding.BindingComplete?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#77](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#77)]
+ [!code-vb[System.Windows.Forms.EventExamples#77](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#77)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingCompleteEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインド操作中に発生した例外を取得します。</summary>
+        <value><see cref="T:System.Exception" />バインド操作中に発生しました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します`null`バインド操作中に例外が発生しなかった場合。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.BindingManagerBase.BindingComplete>イベントと使用、<xref:System.Windows.Forms.BindingCompleteEventArgs>同期を保つ複数のコントロールを同じデータ ソースにバインドされたコントロールの値のいずれかが変更されたとき。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます、`InitializeControlsAndData`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.BindingSourceMultipleControls#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceMultipleControls/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.BindingSourceMultipleControls#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceMultipleControls/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

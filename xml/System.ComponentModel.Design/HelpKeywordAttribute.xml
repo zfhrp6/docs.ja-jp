@@ -1,0 +1,330 @@
+<Type Name="HelpKeywordAttribute" FullName="System.ComponentModel.Design.HelpKeywordAttribute">
+  <TypeSignature Language="C#" Value="public sealed class HelpKeywordAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit HelpKeywordAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.HelpKeywordAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスまたはメンバーのコンテキスト キーワードを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、クラスのヘルプ キーワードである、<xref:System.Type.FullName%2A?displayProperty=nameWithType>プロパティの値。 メンバーの場合は、ヘルプ キーワードは、プロパティを宣言する型の完全名とプロパティ名自体によって得られます。  
+  
+ たとえば、<xref:System.Windows.Forms.Control.Text%2A?displayProperty=nameWithType>プロパティを<xref:System.Windows.Forms.Button?displayProperty=nameWithType>コントロール。 Class キーワードは"System.Windows.Forms.Button"ですが、 <xref:System.Windows.Forms.Control.Text%2A?displayProperty=nameWithType> property キーワードには"System.Windows.Forms.Control.Text"があるため、<xref:System.Windows.Forms.Control.Text%2A?displayProperty=nameWithType>でプロパティが宣言されている、<xref:System.Windows.Forms.Control?displayProperty=nameWithType>クラスではなく、<xref:System.Windows.Forms.Button?displayProperty=nameWithType>クラス自体以外の場合は、<xref:System.Windows.Forms.Button?displayProperty=nameWithType>クラスは、プロパティを継承します。  
+  
+ これに対し、<xref:System.Windows.Forms.Button.DialogResult%2A?displayProperty=nameWithType>でプロパティが宣言されている、<xref:System.Windows.Forms.Button?displayProperty=nameWithType>クラス、そのキーワードは"System.Windows.Forms.Button.DialogResult"ようにします。  
+  
+ ヘルプ システムでは、キーワードを取得、最初になりますで<xref:System.ComponentModel.Design.HelpKeywordAttribute>です。 クラス レベルで指定された文字列を返しますが、<xref:System.ComponentModel.Design.HelpKeywordAttribute>です。 これは、宣言する型の実際の完全名とメンバー名を反映する型、対象のメンバーを使用されません。 この属性は、異なるヘルプ Id が、一般的なドキュメントが関連付けられているクラスを厳密に型指定をサポートします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、属性メンバー自体を配置してこのヘルプ システムの動作をオーバーライドする方法を示します。 これらは、次のクラスと呼ばれるキーワード`DemoComponent`:  
+  
+-   Class キーワード:"`System.ComponentModel.Component`"(`DemoNamespace.DemoComponent`)  
+  
+-   Property1 キーワード:"`DemoNamespace.DemoComponent.Property1`"(既定値)  
+  
+-   Property2 キーワード:"`SomeNamespace.SomeOtherClass.Property2`"(`DemoNamespace.DemoComponent.Property2`)  
+  
+```csharp  
+[HelpKeywordAttribute(typeof(Component))]  
+public class DemoComponent : Component  
+{  
+    public string Property1  
+    {  
+        get  
+        {  
+            return "";  
+        }  
+    }  
+  
+    [HelpKeywordAttribute("SomeNamespace.SomeOtherClass.Property2")]  
+    public string Property2  
+    {  
+        get  
+        {  
+            return "";  
+        }  
+    }  
+}  
+```  
+  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.Design.HelpKeywordAttribute>コンテキスト キーワードを指定するクラス。 このコード例の完全な説明については、次を参照してください。[する方法: Windows フォーム コントロールに属性を適用](~/docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md)です。  
+  
+ [!code-csharp[System.ComponentModel.AttributesDemoControl#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AttributesDemoControl/CS/attributesdemocontrol.cs#20)]
+ [!code-vb[System.ComponentModel.AttributesDemoControl#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AttributesDemoControl/VB/attributesdemocontrol.vb#20)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HelpKeywordAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.HelpKeywordAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.HelpKeywordAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HelpKeywordAttribute (string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.HelpKeywordAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">ヘルプ キーワードの値。</param>
+        <summary><see cref="T:System.ComponentModel.Design.HelpKeywordAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HelpKeywordAttribute (Type t);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type t) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.HelpKeywordAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="t" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="t">ヘルプ キーワードの取得元となる型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.HelpKeywordAttribute" />指定された型からのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヘルプ キーワードに設定されます、<xref:System.Type.FullName%2A>プロパティ`t`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="t" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.Design.HelpKeywordAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.Design.HelpKeywordAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.HelpKeywordAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.HelpKeywordAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を表す<see cref="T:System.ComponentModel.Design.HelpKeywordAttribute" />です。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.HelpKeywordAttribute> の既定値は `null` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.HelpKeywordAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.ComponentModel.Design.HelpKeywordAttribute" /> と比較する <see cref="T:System.ComponentModel.Design.HelpKeywordAttribute" />。</param>
+        <summary>2 つの <see cref="T:System.ComponentModel.Design.HelpKeywordAttribute" /> インスタンスが等しいかどうかを判断します。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.ComponentModel.Design.HelpKeywordAttribute" /> と等しい場合は <see cref="T:System.ComponentModel.Design.HelpKeywordAttribute" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのインスタンス、<xref:System.ComponentModel.Design.HelpKeywordAttribute>と等しく、ヘルプ キーワードが等しい場合は。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.HelpKeywordAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.ComponentModel.Design.HelpKeywordAttribute" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpKeyword">
+      <MemberSignature Language="C#" Value="public string HelpKeyword { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpKeyword" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.HelpKeywordAttribute.HelpKeyword" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性で指定されたヘルプ キーワードを取得します。</summary>
+        <value>この属性で指定されたヘルプ キーワード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.HelpKeywordAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ヘルプ キーワードがあるかどうかを判断<see langword="null" />です。</summary>
+        <returns>
+          <see langword="true" />ヘルプ キーワードが場合<see langword="null" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

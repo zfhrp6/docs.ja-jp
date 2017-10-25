@@ -1,0 +1,267 @@
+<Type Name="PingReply" FullName="System.Net.NetworkInformation.PingReply">
+  <TypeSignature Language="C#" Value="public class PingReply" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PingReply extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.PingReply" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Ping</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>結果データと状態に関する情報を提供する<see cref="Overload:System.Net.NetworkInformation.Ping.Send" />または<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />操作します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.Ping>クラスは、リモート コンピューターにインターネット制御メッセージ プロトコル (ICMP) エコー要求の送信し、ICMP エコー応答メッセージを使用してコンピューターから情報を受信を試みます。 <xref:System.Net.NetworkInformation.Ping>クラスのインスタンスを使用して、<xref:System.Net.NetworkInformation.PingReply>クラスの状態と、要求を送信し、応答の受信にかかった時間など、操作に関する情報を返します。  
+  
+ <xref:System.Net.NetworkInformation.Ping.Send%2A>メソッドのインスタンスを返す、<xref:System.Net.NetworkInformation.PingReply>クラスに直接できます。 <xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を返し、<xref:System.Net.NetworkInformation.PingReply>で、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>メソッドの<xref:System.Net.NetworkInformation.PingCompletedEventArgs>パラメーター。 <xref:System.Net.NetworkInformation.PingReply>を通じてアクセス、<xref:System.Net.NetworkInformation.PingCompletedEventArgs.Reply%2A>プロパティです。  
+  
+ 場合の値<xref:System.Net.NetworkInformation.PingReply.Status%2A>は<xref:System.Net.NetworkInformation.IPStatus.Success>、によって返される値を使用しないでください、 <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A>、<xref:System.Net.NetworkInformation.PingReply.Options%2A>または<xref:System.Net.NetworkInformation.PingReply.Buffer%2A>プロパティです。 <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A>プロパティは、0 を返します、<xref:System.Net.NetworkInformation.PingReply.Buffer%2A>プロパティは、空の配列を返しますと<xref:System.Net.NetworkInformation.PingReply.Options%2A>が返される`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します<xref:System.Net.NetworkInformation.Ping>クラスを同期的に ICMP エコー要求を送信および応答を表示します。  
+  
+ [!code-cpp[NCLPingSync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclPingSync/CPP/syncping.cpp#1)]
+ [!code-csharp[NCLPingSync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclPingSync/CS/syncping.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public System.Net.IPAddress Address { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPAddress Address" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.PingReply.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット制御メッセージ プロトコル (ICMP) エコー応答を送信するホストのアドレスを取得します。</summary>
+        <value><see cref="T:System.Net.IPAddress" /> ICMP エコー メッセージの送信先を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.PingReply.Address%2A>のいずれかによって返される、<xref:System.Net.NetworkInformation.Ping.Send%2A>オーバー ロードは、悪意のあるリモート コンピューターから取得できます。 このアドレスを使用してリモート コンピューターに接続できません。 DNS を使用すると、接続するコンピューターの IP アドレスを確認できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、同期的に ICMP エコー要求を送信し、このプロパティの値を表示します。  
+  
+ [!code-cpp[NclPingSampler#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPingSampler/CPP/pingtest.cpp#2)]
+ [!code-csharp[NclPingSampler#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPingSampler/CS/pingtest.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Buffer">
+      <MemberSignature Language="C#" Value="public byte[] Buffer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Buffer" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.PingReply.Buffer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット制御メッセージ プロトコル (ICMP) エコー応答メッセージで受信したデータのバッファーを取得します。</summary>
+        <value>A<see cref="T:System.Byte" />応答が受信されない場合は、ICMP エコー応答メッセージ、または、空の配列で受信したデータを含む配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ICMP エコー要求で送信されるデータ バッファーがエコー応答内の送信者に返されるは、既知のサイズのパケットのラウンド トリップ時間を計算するためです。 データ バッファーと組み合わせて、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>オプションで、元と移行先のコンピューター間のネットワーク パスの最大転送単位を検出するために使用できます。 詳細については、RFC 1574、http://www.ietf.org で利用可能なセクション 3.2 では、"Traceroute"を参照してください。  
+  
+ 使用されるバッファーの既定<xref:System.Net.NetworkInformation.Ping.Send%2A>と<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>32 バイト データにはが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、同期的に ICMP エコー要求を送信し、このプロパティによって返されるバッファーのサイズを表示します。  
+  
+ [!code-cpp[NclPingSampler#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPingSampler/CPP/pingtest.cpp#4)]
+ [!code-csharp[NclPingSampler#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPingSampler/CS/pingtest.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.PingOptions Options { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.NetworkInformation.PingOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.PingReply.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PingOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット制御メッセージ プロトコル (ICMP) エコー要求に応答を送信するために使用するオプションを取得します。</summary>
+        <value>A <see cref="T:System.Net.NetworkInformation.PingOptions" /> Live (TTL) と場合、応答を送信するために使用される断片化ディレクティブにかかる時間を格納しているオブジェクト<see cref="P:System.Net.NetworkInformation.PingReply.Status" />は<see cref="F:System.Net.NetworkInformation.IPStatus.Success" />、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TTL は、ノードは、送信元と移行先の間で送受信されるパケットを転送できる回数を定義します。 ホップとも呼ばれる、転送の数は、指定された TTL 値を超えている場合、パケットが配信不能と見なされる、破棄されます。  
+  
+ <xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A> ICMP エコー要求コントロール パケット断片化で指定された値。 場合<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`パケット サイズが、パケットで使用されるネットワーク パスの最大転送単位を超えると、パケットは破棄されます、<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>エラーが返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、同期的に ICMP エコー要求を送信しに格納されている値を表示、<xref:System.Net.NetworkInformation.PingOptions>このプロパティによって返されるオブジェクト。  
+  
+ [!code-cpp[NclPingSampler#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPingSampler/CPP/pingtest.cpp#3)]
+ [!code-csharp[NclPingSampler#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPingSampler/CS/pingtest.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RoundtripTime">
+      <MemberSignature Language="C#" Value="public long RoundtripTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 RoundtripTime" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.PingReply.RoundtripTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット制御メッセージ プロトコル (ICMP) エコー要求を送信して、対応する ICMP エコー応答メッセージを受信するまでにかかった時間をミリ秒単位で取得します。</summary>
+        <value>往復時間 (ミリ秒単位) を指定する <see cref="T:System.Int64" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エコー要求に失敗した場合、<xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A>時間は、要求が成功したときに有効な値ではまた、0 として報告します。 確認する必要があります、<xref:System.Net.NetworkInformation.PingReply.Status%2A>をこのプロパティによって返される値を無視するかどうかを判断します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、同期的に ICMP エコー要求を送信し、このプロパティによって返されるバッファーのサイズを表示します。  
+  
+ [!code-cpp[NclPingSampler#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPingSampler/CPP/pingtest.cpp#4)]
+ [!code-csharp[NclPingSampler#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPingSampler/CS/pingtest.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Status">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.IPStatus Status { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.NetworkInformation.IPStatus Status" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.PingReply.Status" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット制御メッセージ プロトコル (ICMP) エコー要求を送信し、対応する ICMP エコー応答メッセージを受信しようの状態を取得します。</summary>
+        <value><see cref="T:System.Net.NetworkInformation.IPStatus" />要求の結果を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値<xref:System.Net.NetworkInformation.PingReply.Status%2A>は<xref:System.Net.NetworkInformation.IPStatus.Success>、によって返される値を使用しないでください、 <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A>、<xref:System.Net.NetworkInformation.PingReply.Options%2A>または<xref:System.Net.NetworkInformation.PingReply.Buffer%2A>プロパティです。 <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A>と<xref:System.Net.NetworkInformation.PingReply.Buffer%2A>プロパティは、0 を返しますと<xref:System.Net.NetworkInformation.PingReply.Options%2A>が返される`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します<xref:System.Net.NetworkInformation.Ping>クラスを同期的に ICMP エコー要求を送信および応答を表示します。  
+  
+ [!code-cpp[NCLPingSync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclPingSync/CPP/syncping.cpp#1)]
+ [!code-csharp[NCLPingSync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclPingSync/CS/syncping.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,496 @@
+<Type Name="ResourceType" FullName="System.Data.Services.Providers.ResourceType">
+  <TypeSignature Language="C#" Value="public class ResourceType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResourceType extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Providers.ResourceType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{Name}: {InstanceType}, {ResourceTypeKind}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ サービスのプリミティブ型、複合型、またはエンティティ型を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入れ子にされた型はリソースの種類としてサポートされません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceType (Type instanceType, System.Data.Services.Providers.ResourceTypeKind resourceTypeKind, System.Data.Services.Providers.ResourceType baseType, string namespaceName, string name, bool isAbstract);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type instanceType, valuetype System.Data.Services.Providers.ResourceTypeKind resourceTypeKind, class System.Data.Services.Providers.ResourceType baseType, string namespaceName, string name, bool isAbstract) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.ResourceType.#ctor(System.Type,System.Data.Services.Providers.ResourceTypeKind,System.Data.Services.Providers.ResourceType,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceType" Type="System.Type" />
+        <Parameter Name="resourceTypeKind" Type="System.Data.Services.Providers.ResourceTypeKind" />
+        <Parameter Name="baseType" Type="System.Data.Services.Providers.ResourceType" />
+        <Parameter Name="namespaceName" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="isAbstract" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="instanceType">内部形式を表す CLR 型、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]ランタイム。</param>
+        <param name="resourceTypeKind">
+          リソースの種類の <see cref="T:System.Data.Services.Providers.ResourceTypeKind" />。</param>
+        <param name="baseType">リソースの種類の基本型を示す文字列。</param>
+        <param name="namespaceName">リソースの種類の名前空間の名前を示す文字列。</param>
+        <param name="name">指定したリソースの種類の名前を示す文字列。</param>
+        <param name="isAbstract">リソースの種類が抽象型かどうかを示すブール値。</param>
+        <summary><see cref="T:System.Data.Services.Providers.ResourceType" /> データ サービスのインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEntityPropertyMappingAttribute">
+      <MemberSignature Language="C#" Value="public void AddEntityPropertyMappingAttribute (System.Data.Services.Common.EntityPropertyMappingAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddEntityPropertyMappingAttribute(class System.Data.Services.Common.EntityPropertyMappingAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.ResourceType.AddEntityPropertyMappingAttribute(System.Data.Services.Common.EntityPropertyMappingAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Data.Services.Common.EntityPropertyMappingAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">追加する <see cref="T:System.Data.Services.Common.EntityPropertyMappingAttribute" />。</param>
+        <summary>リソースの種類の <see cref="T:System.Data.Services.Common.EntityPropertyMappingAttribute" /> を追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddProperty">
+      <MemberSignature Language="C#" Value="public void AddProperty (System.Data.Services.Providers.ResourceProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddProperty(class System.Data.Services.Providers.ResourceProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.ResourceType.AddProperty(System.Data.Services.Providers.ResourceProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.Data.Services.Providers.ResourceProperty" />
+      </Parameters>
+      <Docs>
+        <param name="property">
+          追加する <see cref="T:System.Data.Services.Providers.ResourceProperty" /> プロパティ。</param>
+        <summary><paramref name="resourceProperty" /> パラメーターで指定したプロパティを型に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseType">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Providers.ResourceType BaseType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Services.Providers.ResourceType BaseType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.BaseType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Providers.ResourceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本のリソースの種類への参照を取得します (存在する場合)。</summary>
+        <value>
+          基本型の <see cref="T:System.Data.Services.Providers.ResourceType" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReflectOnInstanceType">
+      <MemberSignature Language="C#" Value="public bool CanReflectOnInstanceType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanReflectOnInstanceType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.CanReflectOnInstanceType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対応するインスタンスの型がこのエンティティの CLR 型を表すかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />インスタンスの型を表す CLR 型である場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomState">
+      <MemberSignature Language="C#" Value="public object CustomState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CustomState" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.CustomState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開発者によって定義された、リソースの種類に関するカスタム状態情報を保持するプレースホルダーを取得または設定します。</summary>
+        <value>開発者によって定義されたカスタム状態情報。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ETagProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Providers.ResourceProperty&gt; ETagProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Services.Providers.ResourceProperty&gt; ETagProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.ETagProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Providers.ResourceProperty&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型のプロパティの一覧を取得します。</summary>
+        <value>
+          <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> の <see cref="T:System.Data.Services.Providers.ResourceType" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullName">
+      <MemberSignature Language="C#" Value="public string FullName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.FullName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースの完全名を取得します。</summary>
+        <value>リソースの種類の完全名を示す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrimitiveResourceType">
+      <MemberSignature Language="C#" Value="public static System.Data.Services.Providers.ResourceType GetPrimitiveResourceType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Services.Providers.ResourceType GetPrimitiveResourceType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.ResourceType.GetPrimitiveResourceType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Providers.ResourceType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">
+          プリミティブ型の取得元の <see cref="T:System.Type" /> 型。</param>
+        <summary><see cref="T:System.Type" /> オブジェクトが指定された場合に、プリミティブ型を表すリソースの種類を取得します。</summary>
+        <returns>リソースの種類。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceType">
+      <MemberSignature Language="C#" Value="public Type InstanceType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type InstanceType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.InstanceType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このリソースが表す CLR 型への参照。</summary>
+        <value>インスタンスの型を示す <see cref="T:System.Data.Services.Providers.ResourceType" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAbstract">
+      <MemberSignature Language="C#" Value="public bool IsAbstract { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAbstract" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.IsAbstract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>抽象型かどうかを示すブール値を取得します。</summary>
+        <value><see cref="T:System.Data.Services.Providers.ResourceType" /> が抽象型の場合は true。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMediaLinkEntry">
+      <MemberSignature Language="C#" Value="public bool IsMediaLinkEntry { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMediaLinkEntry" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.IsMediaLinkEntry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースの種類に既定のストリームが含まれている場合に true を返すブール値を取得または設定します。</summary>
+        <value>リソースの種類に既定のストリームが含まれている場合に true を返すブール値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOpenType">
+      <MemberSignature Language="C#" Value="public bool IsOpenType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOpenType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.IsOpenType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースの種類にオープン プロパティが含まれているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />リソースの種類がある定義されているプロパティを開く場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このリソースの種類が読み取り専用に設定されている場合に true を返すブール値を取得します。</summary>
+        <value>このリソースの種類が読み取り専用に設定されている場合は true。それ以外の場合は false。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Providers.ResourceProperty&gt; KeyProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Services.Providers.ResourceProperty&gt; KeyProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.KeyProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Providers.ResourceProperty&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型のキー プロパティの一覧を取得します。</summary>
+        <value>
+          <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> の <see cref="T:System.Data.Services.Providers.ResourceProperty" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadPropertiesDeclaredOnThisType">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IEnumerable&lt;System.Data.Services.Providers.ResourceProperty&gt; LoadPropertiesDeclaredOnThisType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Services.Providers.ResourceProperty&gt; LoadPropertiesDeclaredOnThisType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.ResourceType.LoadPropertiesDeclaredOnThisType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Data.Services.Providers.ResourceProperty&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このリソースの種類で宣言されたプロパティの一覧を返します。</summary>
+        <returns>この型で宣言されたプロパティの一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Providers.ResourceType.LoadPropertiesDeclaredOnThisType%2A> メソッドを使用すると、リソースの種類のプロパティの読み込みを遅らせることができます。 この <xref:System.Data.Services.Providers.ResourceType.LoadPropertiesDeclaredOnThisType%2A> メソッドは、<xref:System.Data.Services.Providers.ResourceType.Properties%2A> または <xref:System.Data.Services.Providers.ResourceType.PropertiesDeclaredOnThisType%2A> プロパティにアクセスするときに 1 回だけ呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースの種類の名前を取得します。</summary>
+        <value>リソースの種類の名前を示す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースの種類の名前空間を取得します。</summary>
+        <value>リソースの種類の名前空間を示す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Providers.ResourceProperty&gt; Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Services.Providers.ResourceProperty&gt; Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Providers.ResourceProperty&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本型ではなく、型で定義されたプロパティのみを含むこの型の宣言されたプロパティの一覧を取得します。</summary>
+        <value>
+          <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> の <see cref="T:System.Data.Services.Providers.ResourceProperty" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertiesDeclaredOnThisType">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Providers.ResourceProperty&gt; PropertiesDeclaredOnThisType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Services.Providers.ResourceProperty&gt; PropertiesDeclaredOnThisType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.PropertiesDeclaredOnThisType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Providers.ResourceProperty&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型で宣言されたプロパティの一覧。</summary>
+        <value>
+          <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> の <see cref="T:System.Data.Services.Providers.ResourceProperty" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceTypeKind">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Providers.ResourceTypeKind ResourceTypeKind { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Services.Providers.ResourceTypeKind ResourceTypeKind" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Providers.ResourceType.ResourceTypeKind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Providers.ResourceTypeKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の <see cref="T:System.Data.Services.Providers.ResourceTypeKind" /> を取得します。</summary>
+        <value>
+          <see cref="T:System.Data.Services.Providers.ResourceTypeKind" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReadOnly">
+      <MemberSignature Language="C#" Value="public void SetReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Providers.ResourceType.SetReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リソースの種類を読み取り専用に設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

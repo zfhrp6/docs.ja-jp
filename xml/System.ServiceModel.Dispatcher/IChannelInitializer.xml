@@ -1,0 +1,54 @@
+<Type Name="IChannelInitializer" FullName="System.ServiceModel.Dispatcher.IChannelInitializer">
+  <TypeSignature Language="C#" Value="public interface IChannelInitializer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannelInitializer" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.IChannelInitializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>チャネルが作成されたときにサービスまたはクライアントに通知するためのインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルが最初に作成されたときに状態を検出してチャネルに追加するために使用されるインターフェイスを定義します。 これを使用すると、たとえば、サービスがそのセッションでメッセージを送信できるよう、すべての保留状態のセッションを追跡することができます。 サービス チャネルの初期化子を、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ChannelInitializers%2A?displayProperty=nameWithType> コレクションに追加します。 クライアント チャネルの初期化子を <xref:System.ServiceModel.Dispatcher.ClientRuntime.ChannelInitializers%2A?displayProperty=nameWithType> コレクションに追加します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize (System.ServiceModel.IClientChannel channel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(class System.ServiceModel.IClientChannel channel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IChannelInitializer.Initialize(System.ServiceModel.IClientChannel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="channel" Type="System.ServiceModel.IClientChannel" />
+      </Parameters>
+      <Docs>
+        <param name="channel"><see cref="T:System.ServiceModel.IClientChannel" /> の初期化に使用される <see cref="T:System.ServiceModel.Dispatcher.IChannelInitializer" />。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Dispatcher.IChannelInitializer" /> を使用して、<see cref="T:System.ServiceModel.IClientChannel" /> クラスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

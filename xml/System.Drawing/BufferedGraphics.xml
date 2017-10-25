@@ -1,0 +1,232 @@
+<Type Name="BufferedGraphics" FullName="System.Drawing.BufferedGraphics">
+  <TypeSignature Language="C#" Value="public sealed class BufferedGraphics : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BufferedGraphics extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.BufferedGraphics" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ダブル バッファリングのためのグラフィックス バッファーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.BufferedGraphics>クラスでは、グラフィックスのカスタムのダブル バッファリングを実装することができます。 バッファーに書き込むし、出力デバイスにコンテンツのレンダリングに使用できるメソッドと、グラフィックス バッファーのラッパーを提供します。  
+  
+ ダブル バッファリングを使用するグラフィックスを軽減または、画面の表面を再描画が原因で発生するちらつきを除去します。 ダブル バッファリングを使用して、更新されたグラフィックスがメモリ内のバッファーを最初に描画され、表示される画面の一部またはすべてをこのバッファーの内容がすぐに書き込まれます。 この比較的簡単な上書き、表示されているグラフィックスの低減またはときどきグラフィックスが更新されたときに発生するちらつきを除去します。  
+  
+> [!NOTE]
+>  ダブル バッファリングを使用する最も簡単な方法が設定するには、<xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer>を使用してコントロールのスタイル フラグを制御、<xref:System.Windows.Forms.Control.SetStyle%2A>メソッドです。 設定、<xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer>コントロールは、追加のコードを必要とせず、既定のグラフィックス バッファーを使用してコントロールのすべての描画をリダイレクトのフラグを設定します。 このフラグに設定されている`true`既定です。  
+  
+ <xref:System.Drawing.BufferedGraphics>クラスのパブリック コンス トラクターを持たないし、によって作成する必要があります、<xref:System.Drawing.BufferedGraphicsContext>のアプリケーション ドメインを使用して、その<xref:System.Drawing.BufferedGraphicsContext.Allocate%2A>メソッドです。 取得することができます、<xref:System.Drawing.BufferedGraphicsContext>静的から現在のアプリケーション ドメインに対する<xref:System.Drawing.BufferedGraphicsManager.Current%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <xref:System.Drawing.BufferedGraphics.Graphics%2A>グラフィックス バッファーに描画には、プロパティを使用することができます。 このプロパティへのアクセスを提供する、<xref:System.Drawing.Graphics>これに割り当てられたグラフィックス バッファーに描画オブジェクト<xref:System.Drawing.BufferedGraphics>オブジェクト。  
+  
+ <xref:System.Drawing.BufferedGraphics.Render%2A>バッファーが割り当てられた画面に、グラフィックスの内容をバッファーなし引数描画を持つメソッドを指定します。 他のオーバー ロード、<xref:System.Drawing.BufferedGraphics.Render%2A>メソッドでは、指定できる、<xref:System.Drawing.Graphics>オブジェクトまたは<xref:System.IntPtr>グラフィックス バッファーの内容を描画するためにデバイス コンテキストを示すオブジェクト。  
+  
+ ダブル バッファリングされたグラフィックスを描画の詳細については、次を参照してください。[ダブル バッファリングされたグラフィックス](~/docs/framework/winforms/advanced/double-buffered-graphics.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Drawing.BufferedGraphics>実装のバッファリングのいくつかの型を使用してグラフィックスを描画するオブジェクト。 フォームをクリックしてまたは開始し、原因が更新を描画するタイマーを停止します。 描画の更新を使用すると、ダブル バッファリングの効果を観察できます。 フォームの次の描画モード順番を右クリックします。  
+  
+-   直接描画、<xref:System.Windows.Forms.Control.Handle%2A>の<xref:System.Windows.Forms.Form>です。  
+  
+-   オーバーライドすることで描画、<xref:System.Windows.Forms.Form.OnPaint%2A>メソッドを使用して、<xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer>スタイルを制御します。  
+  
+-   オーバーライドすることで描画、<xref:System.Windows.Forms.Form.OnPaint%2A>のフォーム メソッドを使用せずにメソッド、<xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer>スタイルを制御します。  
+  
+ 各モードでは、現在のモードを示し、それぞれのマウス ボタンが押されたときに発生する動作について説明するテキストを描画します。  
+  
+ [!code-cpp[BufferedGraphicsExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/BufferedGraphicsExample/CPP/bufferingtest.cpp#1)]
+ [!code-csharp[BufferedGraphicsExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/BufferedGraphicsExample/CS/bufferingtest.cs#1)]
+ [!code-vb[BufferedGraphicsExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BufferedGraphicsExample/VB/bufferingtest.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe><see cref="T:System.Drawing.BufferedGraphics" /> クラスはスレッド セーフではありません。 グラフィックス バッファー個別のスレッドからにアクセスするときに、スレッド アクセス コントロール機構を使用して競合を防ぐ必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphics.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.BufferedGraphics" /> オブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Drawing.BufferedGraphics.Dispose%2A>が終了したらを使用して、<xref:System.Drawing.BufferedGraphics>オブジェクト。 <xref:System.Drawing.BufferedGraphics.Dispose%2A>メソッドによって、<xref:System.Drawing.BufferedGraphics>使用不可の状態オブジェクト。 呼び出した後<xref:System.Drawing.BufferedGraphics.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Drawing.BufferedGraphics>オブジェクトのガベージ コレクターがメモリを再利用できるようにする、<xref:System.Drawing.BufferedGraphics>オブジェクトが占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  常に呼び出す<xref:System.Drawing.BufferedGraphics.Dispose%2A>への参照を解放する前に、<xref:System.Drawing.BufferedGraphics>オブジェクト。 そうしないと、ガベージ コレクターが <xref:System.Drawing.BufferedGraphics> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~BufferedGraphics ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphics.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphics">
+      <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.BufferedGraphics.Graphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラフィックス バッファーに出力する <see cref="T:System.Drawing.Graphics" /> オブジェクトを取得します。</summary>
+        <value>グラフィックス バッファーに出力する <see cref="T:System.Drawing.Graphics" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、<xref:System.Drawing.Graphics>これに割り当てられたグラフィックス バッファーに描画オブジェクト<xref:System.Drawing.BufferedGraphics>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="public void Render ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Render() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphics.Render" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>グラフィックス バッファーの内容を既定のデバイスに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、呼び出すことによって指定されたデバイスにグラフィックス バッファーの内容を書き込みます、<xref:System.Drawing.BufferedGraphicsContext.Allocate%2A>のメソッド、<xref:System.Drawing.BufferedGraphicsContext>これを作成するために使用<xref:System.Drawing.BufferedGraphics>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="public void Render (System.Drawing.Graphics target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Render(class System.Drawing.Graphics target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphics.Render(System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="target">グラフィックス バッファーの内容を書き込む <see cref="T:System.Drawing.Graphics" /> オブジェクト。</param>
+        <summary>グラフィックス バッファーの内容を指定された <see cref="T:System.Drawing.Graphics" /> オブジェクトに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定したグラフィックス バッファーの内容を書き込みます<xref:System.Drawing.Graphics>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定したグラフィックス バッファーの内容の表示を示しています<xref:System.Drawing.Graphics>オブジェクト。 このコードに示されている例の一部である、<xref:System.Drawing.BufferedGraphics>クラスです。  
+  
+ [!code-cpp[BufferingExamples#5](~/samples/snippets/cpp/VS_Snippets_Winforms/BufferingExamples/CPP/bufferingexamples.cpp#5)]
+ [!code-csharp[BufferingExamples#5](~/samples/snippets/csharp/VS_Snippets_Winforms/BufferingExamples/CS/bufferingexamples.cs#5)]
+ [!code-vb[BufferingExamples#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BufferingExamples/VB/bufferingexamples.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="public void Render (IntPtr targetDC);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Render(native int targetDC) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphics.Render(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDC" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="targetDC">グラフィックス バッファーの内容の書き込み先のデバイス コンテキストを指す <see cref="T:System.IntPtr" />。</param>
+        <summary>グラフィックス バッファーの内容を、指定した <see cref="T:System.IntPtr" /> ハンドルに関連付けられているデバイス コンテキストに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定したに関連付けられているデバイス コンテキストにグラフィックス バッファーの内容を書き込みます<xref:System.IntPtr>を処理します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、グラフィックス バッファーの内容を表示する方法を示します`grafx`を指定したデバイス コンテキストにします。 このコードに示されている例の一部である、<xref:System.Drawing.BufferedGraphics>クラスです。  
+  
+ [!code-cpp[BufferingExamples#6](~/samples/snippets/cpp/VS_Snippets_Winforms/BufferingExamples/CPP/bufferingexamples.cpp#6)]
+ [!code-csharp[BufferingExamples#6](~/samples/snippets/csharp/VS_Snippets_Winforms/BufferingExamples/CS/bufferingexamples.cs#6)]
+ [!code-vb[BufferingExamples#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BufferingExamples/VB/bufferingexamples.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙体:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

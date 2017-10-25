@@ -1,0 +1,176 @@
+<Type Name="EnumMemberAttribute" FullName="System.Runtime.Serialization.EnumMemberAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EnumMemberAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EnumMemberAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.EnumMemberAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Field, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フィールドが列挙体メンバーであり、シリアル化される必要があることを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.EnumMemberAttribute> は、列挙体をシリアル化するときに、それらの名前を細かく制御できます。  
+  
+ <xref:System.Runtime.Serialization.EnumMemberAttribute> を使用するには、列挙体を作成し、<xref:System.Runtime.Serialization.DataContractAttribute> 属性を列挙体に適用します。 その後、シリアル化ストリームに含める必要がある各メンバーに対して <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性を適用します。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Serialization.EnumMemberAttribute> を列挙体メンバーに適用する例を次に示します。  
+  
+ [!code-csharp[EnumMemberAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/enummemberattribute/cs/source.cs#1)]
+ [!code-vb[EnumMemberAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/enummemberattribute/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EnumMemberAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.EnumMemberAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Serialization.EnumMemberAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValueSetExplicitly">
+      <MemberSignature Language="C#" Value="public bool IsValueSetExplicitly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsValueSetExplicitly" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.EnumMemberAttribute.IsValueSetExplicitly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか、<see cref="P:System.Runtime.Serialization.EnumMemberAttribute.Value" />が明示的に設定されています。</summary>
+        <value>
+          <see langword="true" />値が明示的に設定されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.EnumMemberAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性を適用する列挙体メンバーに関連付けられた値を取得または設定します。</summary>
+        <value>列挙体メンバーに関連付けられている値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、列挙体の値は、列挙体の名前です。 値を指定した場合は、その値が XML ドキュメントまたはストリームで使用されます。  
+  
+   
+  
+## Examples  
+ コード例を次に示します。  
+  
+ [!code-csharp[EnumMemberAttribute#0](~/samples/snippets/csharp/VS_Snippets_CFX/enummemberattribute/cs/source.cs#0)]  
+  
+ <xref:System.Runtime.Serialization.DataContractSerializer> を使用してシリアル化した場合は、次の XML になります。  
+  
+```  
+<Shapes>Circle</Shapes>  
+```  
+  
+ または  
+  
+```  
+<Shapes>Square</Shapes>  
+```  
+  
+ 値プロパティを設定した次のコードの場合、  
+  
+ [!code-csharp[EnumMemberAttribute#3](~/samples/snippets/csharp/VS_Snippets_CFX/enummemberattribute/cs/source.cs#3)]
+ [!code-vb[EnumMemberAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/enummemberattribute/vb/source.vb#3)]  
+  
+ 結果の XML は次のようになります。  
+  
+```  
+<Shapes>1</Shapes>  
+```  
+  
+ または  
+  
+```  
+<Shapes>2</Shapes>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

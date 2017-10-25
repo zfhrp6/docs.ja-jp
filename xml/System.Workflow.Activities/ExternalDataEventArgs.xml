@@ -1,0 +1,277 @@
+<Type Name="ExternalDataEventArgs" FullName="System.Workflow.Activities.ExternalDataEventArgs">
+  <TypeSignature Language="C#" Value="public class ExternalDataEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ExternalDataEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.ExternalDataEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Activities.HandleExternalEventActivity" /> アクティビティを使用して、イベント発生時に送信されるデータを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Activities.ExternalDataExchangeAttribute> でマークされているローカル通信インターフェイスでは、<xref:System.Workflow.Activities.ExternalDataEventArgs> アクティビティを使用してワークフローで対応するイベントを処理するために、<xref:System.Workflow.Activities.HandleExternalEventActivity> から派生した型をインターフェイス定義で宣言する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Activities.ExternalDataEventArgs> から継承するイベント クラスは、`:base(instanceId)` コンストラクターを使用するコンストラクターを実装する必要があります。 また、新しいイベント クラスは、次のコードに示すように `Serializable` としてマークする必要があります。  
+  
+```csharp  
+[Serializable]  
+public class TaskEventArgs : ExternalDataEventArgs  
+{  
+    private string orderName;  
+  
+    public TaskEventArgs(Guid instanceId, string id)  
+        :base(instanceId)  
+    {  
+        orderName = id;  
+    }  
+  
+    public string Id  
+    {  
+        get { return orderName; }  
+        set { orderName = value; }  
+    }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.ExternalDataEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 派生クラスのコンストラクターから基本 <xref:System.Workflow.Activities.ExternalDataEventArgs> コンストラクターを呼び出す方法を次の例に示します。 この例は、注文処理ステート マシンの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ステート マシンのサンプルを順序付け](http://msdn.microsoft.com/en-us/59272cf4-bc98-439c-bcfa-b66999ebce5c)です。  
+  
+ [!code-csharp[wf_samples#121](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#121)]
+ [!code-vb[wf_samples#121](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#121)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExternalDataEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ExternalDataEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.ExternalDataEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExternalDataEventArgs (Guid instanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ExternalDataEventArgs.#ctor(System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">イベントを処理する <see cref="T:System.Workflow.Activities.HandleExternalEventActivity" /> が含まれるワークフロー インスタンスのワークフロー インスタンス識別子。</param>
+        <summary>ワークフローのインスタンス識別子を使用して、<see cref="T:System.Workflow.Activities.ExternalDataEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExternalDataEventArgs (Guid instanceId, System.Workflow.Runtime.IPendingWork workHandler, object workItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, class System.Workflow.Runtime.IPendingWork workHandler, object workItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ExternalDataEventArgs.#ctor(System.Guid,System.Workflow.Runtime.IPendingWork,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="workHandler" Type="System.Workflow.Runtime.IPendingWork" />
+        <Parameter Name="workItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">イベントを処理する <see cref="T:System.Workflow.Activities.HandleExternalEventActivity" /> が含まれるワークフロー インスタンスのワークフロー インスタンス識別子。</param>
+        <param name="workHandler">イベントを発生させている外部コードがバッチに参加できるようにする <see cref="T:System.Workflow.Runtime.IPendingWork" />。</param>
+        <param name="workItem">イベントを発生させている外部コードを含むオブジェクト。</param>
+        <summary><see cref="T:System.Workflow.Activities.ExternalDataEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExternalDataEventArgs (Guid instanceId, System.Workflow.Runtime.IPendingWork workHandler, object workItem, bool waitForIdle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, class System.Workflow.Runtime.IPendingWork workHandler, object workItem, bool waitForIdle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ExternalDataEventArgs.#ctor(System.Guid,System.Workflow.Runtime.IPendingWork,System.Object,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="workHandler" Type="System.Workflow.Runtime.IPendingWork" />
+        <Parameter Name="workItem" Type="System.Object" />
+        <Parameter Name="waitForIdle" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">イベントを処理する <see cref="T:System.Workflow.Activities.HandleExternalEventActivity" /> が含まれるワークフロー インスタンスのワークフロー インスタンス識別子。</param>
+        <param name="workHandler">イベントを発生させている外部コードがバッチに参加できるようにする <see cref="T:System.Workflow.Runtime.IPendingWork" />。</param>
+        <param name="workItem">イベントを発生させている外部コードを含むオブジェクト。</param>
+        <param name="waitForIdle">値を示すかどうか、ワークフローがアイドル状態になるイベントを発生させる前にそれ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.Workflow.Activities.ExternalDataEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public string Identity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Identity" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ExternalDataEventArgs.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させたユーザーの ID を取得または設定します。</summary>
+        <value>イベントを発生させたユーザーの ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.Workflow.Activities.HandleExternalEventActivity> アクティビティによって評価されます。 このアクティビティの <xref:System.Workflow.Activities.HandleExternalEventActivity.Roles%2A> プロパティに設定されている値が、ユーザー ID に関連付けられたロールに一致しない場合、このアクティビティを実行できません。  
+  
+ イベントを発生させるエンティティは、個人またはコンピューターです。  
+  
+ ID は、この ID がこのワークフローにデータを送信することが許可されていることを確認するために、Roles 機能によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public Guid InstanceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ExternalDataEventArgs.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを処理する <see cref="T:System.Workflow.Activities.HandleExternalEventActivity" /> が含まれるワークフロー インスタンスのワークフロー インスタンス識別子を取得または設定します。</summary>
+        <value>イベントを処理する <see cref="T:System.Workflow.Activities.HandleExternalEventActivity" /> が含まれるワークフロー インスタンスのワークフロー インスタンス識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは必須です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForIdle">
+      <MemberSignature Language="C#" Value="public bool WaitForIdle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WaitForIdle" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ExternalDataEventArgs.WaitForIdle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントをすぐに発生させる必要があるかどうか、つまり、イベントを発生させる前にワークフローをアイドル状態にする必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          イベントを発生させる前にワークフローをアイドル状態にする必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `false` です。  
+  
+ `true` 値は、<xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItemOnIdle%2A> を使用してワークフローにデータが送信されたことを示します。 `false` 値は、<xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem%2A> を使用してワークフローにデータが送信されたことを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkHandler">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.IPendingWork WorkHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.IPendingWork WorkHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ExternalDataEventArgs.WorkHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.IPendingWork</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させている外部コードがバッチに参加できるようにする <see cref="T:System.Workflow.Runtime.IPendingWork" /> を取得または設定します。</summary>
+        <value>イベントを発生させている外部コードがバッチに参加できるようにする <see cref="T:System.Workflow.Runtime.IPendingWork" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkItem">
+      <MemberSignature Language="C#" Value="public object WorkItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object WorkItem" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ExternalDataEventArgs.WorkItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させている外部コードを含むオブジェクトを取得または設定します。</summary>
+        <value>イベントを発生させている外部コードを含むオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

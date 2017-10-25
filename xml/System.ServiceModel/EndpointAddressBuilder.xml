@@ -1,0 +1,381 @@
+<Type Name="EndpointAddressBuilder" FullName="System.ServiceModel.EndpointAddressBuilder">
+  <TypeSignature Language="C#" Value="public class EndpointAddressBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EndpointAddressBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.EndpointAddressBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定したプロパティ値を使用して、新しい (不変の) エンドポイント アドレスを生成するためのファクトリです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいエンドポイント アドレスには、<xref:System.ServiceModel.EndpointAddressBuilder.%23ctor%28System.ServiceModel.EndpointAddress%29> コンストラクターを使用して、既存のエンドポイント アドレスのプロパティ値から初期化されたプロパティ値を設定できます。  
+  
+ 作成されるエンドポイント アドレスには、エンドポイント アドレス ビルダーの <xref:System.ServiceModel.EndpointAddressBuilder.Uri%2A> プロパティと <xref:System.ServiceModel.EndpointAddressBuilder.Identity%2A> プロパティを使用して、URI と ID 値を設定できます。 <xref:System.ServiceModel.EndpointAddress> は不変クラスであることに注意してください。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEndpointAddressBuilder#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueendpointaddressbuilder/cs/program.cs#0)]
+ [!code-vb[S_UEEndpointAddressBuilder#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueendpointaddressbuilder/vb/module1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EndpointAddressBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddressBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.EndpointAddressBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEEndpointAddressBuilder#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueendpointaddressbuilder/cs/program.cs#1)]
+ [!code-vb[S_UEEndpointAddressBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueendpointaddressbuilder/vb/module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EndpointAddressBuilder (System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddressBuilder.#ctor(System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address">このインスタンスのプロパティ値を初期化するためにプロパティ値が使用される <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <summary>既存のエンドポイント アドレスから <see cref="T:System.ServiceModel.EndpointAddressBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンドポイント アドレスからエンドポイント ビルダーのために初期化される値は、エンドポイント アドレス自体、ID、ヘッダー、および URI です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEndpointAddressBuilder#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueendpointaddressbuilder/cs/program.cs#2)]
+ [!code-vb[S_UEEndpointAddressBuilder#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueendpointaddressbuilder/vb/module1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReaderAtExtensions">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDictionaryReader GetReaderAtExtensions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlDictionaryReader GetReaderAtExtensions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddressBuilder.GetReaderAtExtensions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エンドポイント アドレスの拡張を格納する XML ディクショナリ リーダーを返します。</summary>
+        <returns>エンドポイント アドレスの拡張を読み取る <see cref="T:System.Xml.XmlDictionaryReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リーダーは、WS-Addressing により定義されたエンドポイント参照のモデルに含まれない情報へのアクセスを提供します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEndpointAddressBuilder#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueendpointaddressbuilder/cs/program.cs#5)]
+ [!code-vb[S_UEEndpointAddressBuilder#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueendpointaddressbuilder/vb/module1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReaderAtMetadata">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDictionaryReader GetReaderAtMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlDictionaryReader GetReaderAtMetadata() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddressBuilder.GetReaderAtMetadata" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エンドポイント アドレスに関連付けられたメタデータを格納するリーダーを返します。</summary>
+        <returns>エンドポイント アドレスに関連付けられたメタデータがある場合は、それを読み取る <see cref="T:System.Xml.XmlDictionaryReader" />。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEEndpointAddressBuilder#8](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueendpointaddressbuilder/cs/program.cs#8)]
+ [!code-vb[S_UEEndpointAddressBuilder#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueendpointaddressbuilder/vb/module1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Channels.AddressHeader&gt; Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Channels.AddressHeader&gt; Headers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EndpointAddressBuilder.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Channels.AddressHeader&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビルダーが作成できるエンドポイントのアドレス ヘッダーのリストを取得します。</summary>
+        <value>ビルダーが作成できるエンドポイントのアドレス ヘッダーを格納する <see cref="T:System.Collections.Generic.List`1" /> 型の <see cref="T:System.ServiceModel.Channels.AddressHeader" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンドポイントのアドレス ヘッダーは、<xref:System.ServiceModel.EndpointAddressBuilder.%23ctor%28System.ServiceModel.EndpointAddress%29> コンストラクターを使用して設定できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEndpointAddressBuilder#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueendpointaddressbuilder/cs/program.cs#3)]
+ [!code-vb[S_UEEndpointAddressBuilder#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueendpointaddressbuilder/vb/module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointIdentity Identity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointIdentity Identity" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EndpointAddressBuilder.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビルダーが作成できるエンドポイントの ID を取得または設定します。</summary>
+        <value>エンドポイントの <see cref="T:System.ServiceModel.EndpointIdentity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ID は、エンドポイント間でメッセージを交換するときに、エンドポイントが他のエンドポイントを認証するために使用されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEndpointAddressBuilder#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueendpointaddressbuilder/cs/program.cs#4)]
+ [!code-vb[S_UEEndpointAddressBuilder#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueendpointaddressbuilder/vb/module1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetExtensionReader">
+      <MemberSignature Language="C#" Value="public void SetExtensionReader (System.Xml.XmlDictionaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetExtensionReader(class System.Xml.XmlDictionaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddressBuilder.SetExtensionReader(System.Xml.XmlDictionaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">エンドポイントの拡張を読み取る <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <summary>エンドポイント アドレスの拡張を格納する XML ディクショナリ リーダーを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEEndpointAddressBuilder#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueendpointaddressbuilder/cs/program.cs#6)]
+ [!code-vb[S_UEEndpointAddressBuilder#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueendpointaddressbuilder/vb/module1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMetadataReader">
+      <MemberSignature Language="C#" Value="public void SetMetadataReader (System.Xml.XmlDictionaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetMetadataReader(class System.Xml.XmlDictionaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddressBuilder.SetMetadataReader(System.Xml.XmlDictionaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">エンドポイントに関連付けられたメタデータを読み取る <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <summary>エンドポイント アドレスに関連付けられたメタデータを格納する XML ディクショナリ リーダーを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEEndpointAddressBuilder#9](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueendpointaddressbuilder/cs/program.cs#9)]
+ [!code-vb[S_UEEndpointAddressBuilder#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueendpointaddressbuilder/vb/module1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToEndpointAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress ToEndpointAddress ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.EndpointAddress ToEndpointAddress() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.EndpointAddressBuilder.ToEndpointAddress" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のエンドポイント アドレス ビルダーのプロパティ値を使用して初期化された新しいエンドポイントのアドレスを作成します。</summary>
+        <returns>現在のエンドポイント アドレス ビルダーの値を使用してプロパティが初期化された <see cref="T:System.ServiceModel.EndpointAddress" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンドポイント アドレスから初期化される値は、ID、アドレス ヘッダーのコレクション、URI、および拡張バッファーです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEndpointAddressBuilder#7](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueendpointaddressbuilder/cs/program.cs#7)]
+ [!code-vb[S_UEEndpointAddressBuilder#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueendpointaddressbuilder/vb/module1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.EndpointAddressBuilder.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビルダーが作成できるエンドポイントの URI を取得または設定します。</summary>
+        <value>エンドポイントのアドレスを指定する <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プログラマがエンドポイント アドレスに関連付ける URI を設定または取得できるようにします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEEndpointAddressBuilder#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueendpointaddressbuilder/cs/program.cs#3)]
+ [!code-vb[S_UEEndpointAddressBuilder#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueendpointaddressbuilder/vb/module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

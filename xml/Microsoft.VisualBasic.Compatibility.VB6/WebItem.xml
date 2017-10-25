@@ -1,0 +1,182 @@
+<Type Name="WebItem" FullName="Microsoft.VisualBasic.Compatibility.VB6.WebItem">
+  <TypeSignature Language="C#" Value="public class WebItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi WebItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Visual Basic 6.0 にアップグレードできるように<see langword="WebClass" />ASP.NET で実行するプロジェクトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`WebClass`プロジェクトをアップグレード[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]に変換されます、 [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] Web サイト プロジェクト。  
+  
+ 宣言がプロジェクトに追加されます: のいずれか、`WebClass`ごとに 1 つ、`WebItems`と`Templates`で、`WebClass`プロジェクト。 A`Page_Load`イベント プロシージャが最初に作成する、プロジェクトに追加、<xref:Microsoft.VisualBasic.Compatibility.VB6.WebClass>オブジェクトし`WebItem`の各オブジェクト、`WebItems`と`Templates`Visual Basic 6.0 に関連付けられている`WebClass`プロジェクト。 最後に、`Page_Load`イベント プロシージャが表示されますへの呼び出し、`WebClass`互換性ランタイム:<xref:Microsoft.VisualBasic.Compatibility.VB6.WebClass.ProcessEvents%2A>です。 これにより、表示するために、ランタイム、<xref:Microsoft.VisualBasic.Compatibility.VB6.WebItem>要求 URL で指定します。 このコードは、アップグレードされたプロジェクトに追加する唯一の新しいコードであり、Visual Basic 6.0 の基になる動作をエミュレートするために役割を果たす`WebClass`ランタイム。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebItem (string Name, Microsoft.VisualBasic.Compatibility.VB6.WebClass AssociatedWebClass, string HtmlTemplateFilename = &quot;&quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string Name, class Microsoft.VisualBasic.Compatibility.VB6.WebClass AssociatedWebClass, string HtmlTemplateFilename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.WebItem.#ctor(System.String,Microsoft.VisualBasic.Compatibility.VB6.WebClass,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Name" Type="System.String" />
+        <Parameter Name="AssociatedWebClass" Type="Microsoft.VisualBasic.Compatibility.VB6.WebClass" />
+        <Parameter Name="HtmlTemplateFilename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Name">A<see cref="T:System.String" />を格納している、<see langword="Name" />プロパティは、Visual Basic 6.0 の<see langword="WebClass" />オブジェクト。</param>
+        <param name="AssociatedWebClass"><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebClass" />これを含むオブジェクト<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" />です。</param>
+        <param name="HtmlTemplateFilename">省略可能です。 Visual Basic 6.0 のファイル名<see langword="Template" />Visual Basic 6.0 に関連付けられている<see langword="WebItem" />です。</param>
+        <summary><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebItem>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.WebItem.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別するコードで使用される名前を取得、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" />オブジェクト。</summary>
+        <value>A<see cref="T:System.String" />の名を含む、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用です。  
+  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebItem>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReScanReplacements">
+      <MemberSignature Language="C#" Value="public bool ReScanReplacements { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReScanReplacements" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.WebItem.ReScanReplacements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または置換テキスト内に含まれるトークンを再スキャンするかどうかを決定する値を設定します。</summary>
+        <value>
+          <see langword="true" />テキストを再スキャンする場合それ以外の場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebItem>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagPrefix">
+      <MemberSignature Language="C#" Value="public string TagPrefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TagPrefix" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.WebItem.TagPrefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTML テンプレート内の置換タグ名をプレフィックスとして使用する文字列を設定します。</summary>
+        <value>A<see cref="T:System.String" />を識別する、<see langword="TagPrefix" />シーケンス HTML テンプレート内の置換タグを認識するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebItem>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTemplate">
+      <MemberSignature Language="C#" Value="public void WriteTemplate (System.Web.HttpResponse Response, string HtmlTemplateFilename = &quot;&quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void WriteTemplate(class System.Web.HttpResponse Response, string HtmlTemplateFilename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.WebItem.WriteTemplate(System.Web.HttpResponse,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Response" Type="System.Web.HttpResponse" />
+        <Parameter Name="HtmlTemplateFilename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Response"><see cref="T:System.Web.HttpResponse" /> オブジェクト。</param>
+        <param name="HtmlTemplateFilename">省略可能です。 Visual Basic 6.0 のファイル名<see langword="Template" />Visual Basic 6.0 に関連付けられている<see langword="WebItem" />です。</param>
+        <summary>プロセスにアタッチされている HTML テンプレート、<see langword="WebItem" />オブジェクトし、ブラウザーに返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebItem>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

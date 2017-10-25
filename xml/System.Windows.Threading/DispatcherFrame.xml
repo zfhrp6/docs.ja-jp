@@ -1,0 +1,135 @@
+<Type Name="DispatcherFrame" FullName="System.Windows.Threading.DispatcherFrame">
+  <TypeSignature Language="C#" Value="public class DispatcherFrame : System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi DispatcherFrame extends System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Threading.DispatcherFrame" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実行ループを表します、<see cref="T:System.Windows.Threading.Dispatcher" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.DispatcherFrame>オブジェクトは、通常、2 つのカテゴリに分類されます。  
+  
+-   長時間実行される、一般的な目的のフレームに指示があった場合に終了します。  これらのフレームには、要求されたときを終了する必要があります。  
+  
+-   短時間実行され、特定の非常には、重要な条件が満たされたときにその終了をフレームです。  これらのフレームは、独自の終了条件が満たされるを待って優先して要求されたときの終了が検討してください。  これらのフレームには、それらに関連付けられているタイムアウトが必要です。  
+  
+<a name="xamlTextUsage_DispatcherFrame"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このマネージ クラスを使用することはできません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Threading.DispatcherFrame>と同様の結果を実現するために、 [!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.Application.DoEvents%2A>メソッドです。  
+  
+ [!code-csharp[dispatchersnippets#DispatcherDispatcherFrameDoEvents](~/samples/snippets/csharp/VS_Snippets_Wpf/DispatcherSnippets/CSharp/Window1.xaml.cs#dispatcherdispatcherframedoevents)]
+ [!code-vb[dispatchersnippets#DispatcherDispatcherFrameDoEvents](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DispatcherSnippets/visualbasic/window1.xaml.vb#dispatcherdispatcherframedoevents)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DispatcherFrame ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherFrame.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Threading.DispatcherFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DispatcherFrame (bool exitWhenRequested);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool exitWhenRequested) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherFrame.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="exitWhenRequested" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="exitWhenRequested">すべてのフレームが終了するように要求されたときにこのフレームが終了するかどうかを示します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Threading.DispatcherFrame" />クラスを使用して、指定された、要求フラグを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.DispatcherFrame>通常、2 つのカテゴリに分類されます。  
+  
+-   長時間実行される、一般的な目的のフレームに指示があった場合に終了します。  これらのフレームには、要求されたときを終了する必要があります。  
+  
+-   短時間実行され、特定の非常には、重要な条件が満たされたときにその終了をフレームです。  これらのフレームは、独自の終了条件が満たされるを待って優先して要求されたときに終了していないことを検討できます。  これらのフレームには、それらに関連付けられているタイムアウトが必要です。  
+  
+-  
+  
+-   アプリケーションのシャット ダウン、すべてのフレームが終了を要求します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Continue">
+      <MemberSignature Language="C#" Value="public bool Continue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Continue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.DispatcherFrame.Continue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかこの<see cref="T:System.Windows.Threading.DispatcherFrame" />続行する必要があります。</summary>
+        <value>
+          <see langword="true" />場合は、フレームが続行する必要があります。それ以外の場合、<see langword="false" />です。  既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.DispatcherFrame.Continue%2A>各ディスパッチャー ループの上部にあるクエリが実行されます。  
+  
+ アプリケーションのシャット ダウン、すべてのフレームが終了を要求します。  
+  
+<a name="xamlTextUsage_Continue"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスのメンバーは、通常使用されないかの[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]では使用できませんまたは[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Threading.DispatcherFrame>と同様の結果を実現するために、 [!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.Application.DoEvents%2A>メソッドです。  
+  
+ [!code-csharp[dispatchersnippets#DispatcherDispatcherFrameDoEvents](~/samples/snippets/csharp/VS_Snippets_Wpf/DispatcherSnippets/CSharp/Window1.xaml.cs#dispatcherdispatcherframedoevents)]
+ [!code-vb[dispatchersnippets#DispatcherDispatcherFrameDoEvents](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DispatcherSnippets/visualbasic/window1.xaml.vb#dispatcherdispatcherframedoevents)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

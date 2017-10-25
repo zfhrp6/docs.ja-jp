@@ -1,0 +1,91 @@
+<Type Name="JournalOwnership" FullName="System.Windows.Navigation.JournalOwnership">
+  <TypeSignature Language="C#" Value="public enum JournalOwnership" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed JournalOwnership extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.JournalOwnership" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定するかどうか、<see cref="T:System.Windows.Controls.Frame" />独自のジャーナルを使用します。 <see cref="T:System.Windows.Navigation.JournalOwnership" />によって使用される、<see cref="P:System.Windows.Controls.Frame.JournalOwnership" />プロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Navigation.JournalOwnership>自動、次の動作が適用されます。  
+  
+-   ホスト<xref:System.Windows.Controls.Frame>UsesParentJournal がいずれかでホストされている場合に設定されてと同様に動作する<xref:System.Windows.Controls.Frame>または<xref:System.Windows.Navigation.NavigationWindow>です。  
+  
+-   ホスト<xref:System.Windows.Controls.Frame>OwnsJournal が場合に設定されてと同様に動作します。  
+  
+    -   いずれかで直接ホストされていない、<xref:System.Windows.Controls.Frame>または<xref:System.Windows.Navigation.NavigationWindow>です。  
+  
+    -   少なくとも 1 つでホストされている<xref:System.Windows.Controls.Frame>ここで、各を含む<xref:System.Windows.Controls.Frame>がその<xref:System.Windows.Controls.Frame.JournalOwnership%2A>UsesParentJournal にプロパティが設定されています。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Controls.Frame>独自のジャーナルの作成自動への切り替えも何も起こりません。  
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Windows.Controls.Frame>応答してホストに journal 管理<xref:System.Windows.Navigation.NavigationWindow>です。  
+  
+ [!code-xaml[FrameJournalOwnershipSnippetSample#SetJournalOwnershipProperty](~/samples/snippets/csharp/VS_Snippets_Wpf/FrameJournalOwnershipSnippetSample/CS/HomePage.xaml#setjournalownershipproperty)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Automatic">
+      <MemberSignature Language="C#" Value="Automatic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Navigation.JournalOwnership Automatic = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.JournalOwnership.Automatic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.JournalOwnership</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>かどうかこの<see cref="T:System.Windows.Controls.Frame" />が作成され、使用して独自の履歴は、その親によって異なります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnsJournal">
+      <MemberSignature Language="C#" Value="OwnsJournal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Navigation.JournalOwnership OwnsJournal = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.JournalOwnership.OwnsJournal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.JournalOwnership</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Frame" />独自の履歴を保持します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UsesParentJournal">
+      <MemberSignature Language="C#" Value="UsesParentJournal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Navigation.JournalOwnership UsesParentJournal = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.JournalOwnership.UsesParentJournal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.JournalOwnership</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Frame" />使用可能な場合に、コンテンツ ツリーの [次へ] の使用可能なナビゲーション ホストのジャーナルを使用します。 それ以外の場合、ナビゲーション履歴は保持されません、<see cref="T:System.Windows.Controls.Frame" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

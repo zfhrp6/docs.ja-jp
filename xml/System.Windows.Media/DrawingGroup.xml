@@ -1,0 +1,746 @@
+<Type Name="DrawingGroup" FullName="System.Windows.Media.DrawingGroup">
+  <TypeSignature Language="C#" Value="public sealed class DrawingGroup : System.Windows.Media.Drawing" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DrawingGroup extends System.Windows.Media.Drawing" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.DrawingGroup" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Drawing</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Children")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>単一の描画として操作可能な描画のコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.DrawingGroup>を単一の複合図面に複数の描画を結合します。 その他のとは異なり<xref:System.Windows.Media.Drawing>オブジェクト、適用することができます、 <xref:System.Windows.Media.DrawingGroup.Transform%2A>、 <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>、<xref:System.Windows.Media.DrawingGroup.Opacity%2A>設定すると、 <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>、 <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>、または<xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>を<xref:System.Windows.Media.DrawingGroup>です。 このクラスの柔軟性では、複雑なシーンを作成することができます。  
+  
+ <xref:System.Windows.Media.DrawingGroup>も、 <xref:System.Windows.Media.Drawing>、他の含めることができます<xref:System.Windows.Media.DrawingGroup>オブジェクト。  
+  
+ 詳細については<xref:System.Windows.Media.Drawing>、オブジェクトを参照してください[描画オブジェクトの概要](~/docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)です。  
+  
+ **Freezable 機能:**から継承しているため、<xref:System.Windows.Freezable>クラス、<xref:System.Windows.Media.DrawingGroup>クラスには、いくつかの特別な機能が用意されています:<xref:System.Windows.Media.DrawingGroup>オブジェクトを複数のオブジェクト間で共有として宣言された、パフォーマンスを向上させるためには読み取り専用に、複製、およびスレッド セーフです。 によって提供されるさまざまな機能の詳細については<xref:System.Windows.Freezable>、オブジェクトを参照してください[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DrawingGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.DrawingGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DrawingContext Append ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.DrawingContext Append() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingGroup.Append" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DrawingContext</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>開く、<see cref="T:System.Windows.Media.DrawingGroup" />を設定するためにその<see cref="P:System.Windows.Media.DrawingGroup.Children" />です。 このメソッドでは、さらに追加することができます<see cref="P:System.Windows.Media.DrawingGroup.Children" />をこの<see cref="T:System.Windows.Media.DrawingGroup" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.DrawingContext" />この内容の記述に使用できる<see cref="T:System.Windows.Media.DrawingGroup" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 閉じる必要があります、<xref:System.Windows.Media.DrawingContext>これをレンダリングする前に<xref:System.Windows.Media.DrawingGroup>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BitmapEffect">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.BitmapEffect BitmapEffect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Effects.BitmapEffect BitmapEffect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.DrawingGroup.BitmapEffect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.BitmapEffect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Effects.BitmapEffect" />にこれを適用する<see cref="T:System.Windows.Media.DrawingGroup" />です。</summary>
+        <value><see cref="T:System.Windows.Media.Effects.BitmapEffect" />にこれを適用する<see cref="T:System.Windows.Media.DrawingGroup" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビットマップ効果とそのしくみの詳細については、次を参照してください。[ビットマップ効果の概要](~/docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)です。  
+  
+ <xref:System.Windows.Media.DrawingGroup>操作は、次の順序で適用されます。  
+  
+-   <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>  
+  
+-   <xref:System.Windows.Media.DrawingGroup.Opacity%2A>  
+  
+-   <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>  
+  
+-   <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>  
+  
+-   <xref:System.Windows.Media.DrawingGroup.Transform%2A>  
+  
+<a name="dependencyPropertyInfo_BitmapEffect"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.DrawingGroup.BitmapEffectProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ この例では、適用、<xref:System.Windows.Media.Effects.BitmapEffect>図面にします。 使用して、<xref:System.Windows.Media.Effects.BitmapEffect>ぼかしや、エンボス、またはその他の視覚効果を適用には、コンテンツをレンダリングします。  
+  
+ のみ<xref:System.Windows.Media.DrawingGroup>オブジェクトは、ビットマップ効果をサポートします。 別の種類にビットマップ効果を適用する<xref:System.Windows.Media.Drawing>オブジェクトに追加して、<xref:System.Windows.Media.DrawingGroup>設定と、<xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>のプロパティ、<xref:System.Windows.Media.DrawingGroup>オブジェクト。  
+  
+> [!NOTE]
+>  [!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]ソフトウェアでレンダリングされたビットマップ効果とは。 適用される任意のオブジェクト、<xref:System.Windows.Media.Effects.BitmapEffect>はソフトウェアでも表示されます。 使用しないでください、<xref:System.Windows.Media.Effects.BitmapEffect>大規模なビジュアルやアニメーションでこのシナリオでシステムのパフォーマンスが低下する可能性があるためです。  
+  
+ 次の例では、<xref:System.Windows.Media.DrawingGroup>を適用する、<xref:System.Windows.Media.Effects.BlurBitmapEffect>をいくつか<xref:System.Windows.Media.GeometryDrawing>オブジェクト。  
+  
+ 次の図は、この例からの出力を示します。  
+  
+ ![BlurBitmapEffect を持つ DrawingGroup](~/add/media/graphicsmm-bitmap.png "BlurBitmapEffect を持つ DrawingGroup")  
+  
+ [!code-csharp[DrawingMiscSnippets_snip#DrawingGroupBitmapEffectExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/BitmapEffectExample.cs#drawinggroupbitmapeffectexamplewholepage)]
+ [!code-xaml[DrawingMiscSnippets_snip#DrawingGroupBitmapEffectExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/BitmapEffectExample.xaml#drawinggroupbitmapeffectexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BitmapEffectInput">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.BitmapEffectInput BitmapEffectInput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Effects.BitmapEffectInput BitmapEffectInput" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.DrawingGroup.BitmapEffectInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.BitmapEffectInput</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>地域の設定を取得またはここで、<see cref="T:System.Windows.Media.DrawingGroup" />適用その<see cref="P:System.Windows.Media.DrawingGroup.BitmapEffect" />し、必要に応じて、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />の入力として使用するその<see cref="P:System.Windows.Media.DrawingGroup.BitmapEffect" />です。</summary>
+        <value>領域を<see cref="P:System.Windows.Media.DrawingGroup.BitmapEffect" />の<see cref="T:System.Windows.Media.DrawingGroup" />が適用し、必要に応じて、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />の入力として使用するまたは<see langword="null" />場合、<see cref="P:System.Windows.Media.DrawingGroup.BitmapEffect" />全体に適用されます<see cref="T:System.Windows.Media.DrawingGroup" />を使用して、<see cref="T:System.Windows.Media.DrawingGroup" />の入力として。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_BitmapEffectInput"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.DrawingGroup.BitmapEffectInputProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BitmapEffectInputProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BitmapEffectInputProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BitmapEffectInputProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.DrawingGroup.BitmapEffectInputProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.DrawingGroup.BitmapEffectInput" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BitmapEffectProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BitmapEffectProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BitmapEffectProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.DrawingGroup.BitmapEffectProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.DrawingGroup.BitmapEffect" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Children">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DrawingCollection Children { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.DrawingCollection Children" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.DrawingGroup.Children" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DrawingCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Drawing" />これに含まれているオブジェクト<see cref="T:System.Windows.Media.DrawingGroup" />です。</summary>
+        <value>コレクション、<see cref="T:System.Windows.Media.Drawing" />このオブジェクト<see cref="T:System.Windows.Media.DrawingGroup" />です。 既定値は空の <see cref="T:System.Windows.Media.DrawingCollection" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の子アイテムの z オーダー、<xref:System.Windows.Media.DrawingGroup>内の子項目の順序によって決まりますが、<xref:System.Windows.Media.DrawingCollection>の<xref:System.Windows.Media.DrawingGroup>です。 描画それぞれの子はコレクション内の次の子です。  
+  
+<a name="dependencyPropertyInfo_Children"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.DrawingGroup.ChildrenProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildrenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ChildrenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ChildrenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.DrawingGroup.ChildrenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.DrawingGroup.Children" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClipGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry ClipGeometry { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Geometry ClipGeometry" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.DrawingGroup.ClipGeometry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のクリップ領域<see cref="T:System.Windows.Media.DrawingGroup" />です。</summary>
+        <value><see cref="T:System.Windows.Media.Geometry" />クリップします。 これに使用される<see cref="T:System.Windows.Media.DrawingGroup" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 外側のジオメトリの描画がからクリップ、<xref:System.Windows.Media.DrawingGroup>を表示します。 ジオメトリがする; 四角形である必要はありません。たとえば、使用することができます、<xref:System.Windows.Media.EllipseGeometry>楕円形にクリップします。  
+  
+ <xref:System.Windows.Media.DrawingGroup>操作は、次の順序で適用されます。  
+  
+1.  <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>  
+  
+2.  <xref:System.Windows.Media.DrawingGroup.Opacity%2A>  
+  
+3.  <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>  
+  
+4.  <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>  
+  
+5.  <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>  
+  
+6.  <xref:System.Windows.Media.DrawingGroup.Transform%2A>  
+  
+<a name="dependencyPropertyInfo_ClipGeometry"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.DrawingGroup.ClipGeometryProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ この例のクリップ領域を定義する方法を示しています、<xref:System.Windows.Media.Drawing>です。  
+  
+ 使用して、<xref:System.Windows.Media.DrawingGroup>のクリップを定義する、<xref:System.Windows.Media.Drawing>です。 <xref:System.Windows.Media.DrawingGroup>クラスは、タイプののみ<xref:System.Windows.Media.Drawing>オブジェクト、独自のクリップ領域を定義することができます。  
+  
+ 使用して、<xref:System.Windows.Media.Geometry>のクリップを説明し、それを適用する、<xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>のプロパティ、<xref:System.Windows.Media.DrawingGroup>オブジェクト。  
+  
+ 図に示す、<xref:System.Windows.Media.DrawingGroup>楕円のクリップが適用される前後にします。  
+  
+ ![定義済みのクリップ領域を含む DrawingGroup](~/add/media/graphicsmm-clipgeom.png "定義済みのクリップ領域を含む DrawingGroup")  
+  
+ 次の例では、<xref:System.Windows.Media.DrawingGroup>を適用する、<xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>をいくつか<xref:System.Windows.Media.GeometryDrawing>オブジェクト。  
+  
+ [!code-csharp[DrawingMiscSnippets_snip#DrawingGroupClipGeometryExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/ClipExample.cs#drawinggroupclipgeometryexamplewholepage)]
+ [!code-xaml[DrawingMiscSnippets_snip#DrawingGroupClipGeometryExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/ClipExample.xaml#drawinggroupclipgeometryexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClipGeometryProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ClipGeometryProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ClipGeometryProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.DrawingGroup.ClipGeometryProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.DrawingGroup.ClipGeometry" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DrawingGroup Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.DrawingGroup Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingGroup.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DrawingGroup</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.DrawingGroup" /> の変更可能な詳細コピーを作成し、その値を詳細コピーします。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> の場合でも、複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の変更可能なコピーを生成するためにこのメソッドを使用して<xref:System.Windows.Freezable>オブジェクト。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ このメソッドは、依存関係プロパティをコピー、するときは、解決できるか不要になった場合でも、リソース参照とデータ バインディングをコピーします。 アニメーションやその現在の値はコピーされません。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DrawingGroup CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.DrawingGroup CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingGroup.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DrawingGroup</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この場合は、変更可能な詳細コピーを作成<see cref="T:System.Windows.Media.DrawingGroup" />オブジェクトし、現在の値の詳細コピーします。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 <see cref="P:System.Windows.Freezable.IsFrozen" /> 、複製されたオブジェクトのプロパティが<see langword="false" />場合でも、<see cref="P:System.Windows.Freezable.IsFrozen" />ソースのプロパティは<see langword="true" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の変更可能なコピーを生成するためにこのメソッドを使用して<xref:System.Windows.Freezable>オブジェクト。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ このメソッドはコピーされませんリソース参照、データ バインディング、およびアニメーションが、その現在の値はコピーされます。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingGroup.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GuidelineSet">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.GuidelineSet GuidelineSet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.GuidelineSet GuidelineSet" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.DrawingGroup.GuidelineSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GuidelineSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.GuidelineSet" />にこれを適用する<see cref="T:System.Windows.Media.DrawingGroup" />です。</summary>
+        <value><see cref="T:System.Windows.Media.GuidelineSet" />にこれを適用する<see cref="T:System.Windows.Media.DrawingGroup" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.DrawingGroup.Transform%2A>この<xref:System.Windows.Media.DrawingGroup>後に適用される、<xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>です。 その結果、<xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>の内容と一緒に変換、<xref:System.Windows.Media.DrawingGroup>です。  
+  
+<a name="dependencyPropertyInfo_GuidelineSet"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.DrawingGroup.GuidelineSetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GuidelineSetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty GuidelineSetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty GuidelineSetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.DrawingGroup.GuidelineSetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.DrawingGroup.GuidelineSet" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Opacity">
+      <MemberSignature Language="C#" Value="public double Opacity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Opacity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.DrawingGroup.Opacity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これの不透明度の設定を取得または<see cref="T:System.Windows.Media.DrawingGroup" />です。</summary>
+        <value>これの不透明度を示す、0 ~ ~ 1 の値<see cref="T:System.Windows.Media.DrawingGroup" />です。 既定値は<c>1</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`1`ことを指定、<xref:System.Windows.Media.DrawingGroup>が完全に不透明です。 値の`0`が完全に透過的なことを指定します。 0 は 0 として扱われ、1 より大きい値がよりも小さい値は 1 として扱われます。  
+  
+ 不透明度を制御する別の方法、<xref:System.Windows.Media.GeometryDrawing>を指定する、<xref:System.Windows.Media.Brush.Opacity%2A>の<xref:System.Windows.Media.Brush>です。  
+  
+ <xref:System.Windows.Media.DrawingGroup>操作は、次の順序で適用されます。  
+  
+1.  <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>  
+  
+2.  <xref:System.Windows.Media.DrawingGroup.Opacity%2A>  
+  
+3.  <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>  
+  
+4.  <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>  
+  
+5.  <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>  
+  
+6.  <xref:System.Windows.Media.DrawingGroup.Transform%2A>  
+  
+<a name="dependencyPropertyInfo_Opacity"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.DrawingGroup.OpacityProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ この例の不透明度を変更する方法を示しています、<xref:System.Windows.Media.Drawing>です。 <xref:System.Windows.Media.DrawingGroup>クラスは、タイプののみ<xref:System.Windows.Media.Drawing>を持つオブジェクト、<xref:System.Windows.Media.DrawingGroup.Opacity%2A>プロパティです。  
+  
+ 不透明度を変更する、<xref:System.Windows.Media.Drawing>オブジェクトに追加して、<xref:System.Windows.Media.DrawingGroup>設定と、<xref:System.Windows.Media.DrawingGroup.Opacity%2A>のプロパティ、<xref:System.Windows.Media.DrawingGroup>オブジェクト。  
+  
+ <xref:System.Windows.Media.DrawingGroup.Opacity%2A>の設定、<xref:System.Windows.Media.DrawingGroup>オブジェクトがその子図面の不透明度を乗算などの場合、<xref:System.Windows.Media.DrawingGroup>が、 <xref:System.Windows.Media.DrawingGroup.Opacity%2A> 0.5 とそれが含まれている、<xref:System.Windows.Media.GeometryDrawing>不透明な 50% を含む<xref:System.Windows.Media.GeometryDrawing.Brush%2A>ブラシが 25% 不透明 (0.5 * 0.5) です。  
+  
+ 描画の選択部分の不透明度を変更するには、使用、<xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>です。  
+  
+ 次の例では、<xref:System.Windows.Media.DrawingGroup>いくつかを結合する<xref:System.Windows.Media.GeometryDrawing>オブジェクト。 また、この例は、の不透明度を設定、 <xref:System.Windows.Media.DrawingGroup> 0.25 オブジェクトの描画が 25% 不透明ようにします。  
+  
+ この図は、<xref:System.Windows.Media.DrawingGroup>前に、と後その<xref:System.Windows.Media.DrawingGroup.Opacity%2A>0.25 に設定されています。  
+  
+ ![異なる不透明度設定 DrawingGroups](~/add/media/graphicsmm-opacity.png "不透明度が異なる DrawingGroups")  
+  
+ [!code-csharp[DrawingMiscSnippets_snip#DrawingGroupOpacityExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/OpacityExample.cs#drawinggroupopacityexamplewholepage)]
+ [!code-xaml[DrawingMiscSnippets_snip#DrawingGroupOpacityExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/OpacityExample.xaml#drawinggroupopacityexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpacityMask">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush OpacityMask { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush OpacityMask" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.DrawingGroup.OpacityMask" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この選択した領域の不透明度を変更するために使用するブラシを取得または<see cref="T:System.Windows.Media.DrawingGroup" />です。</summary>
+        <value>A<see cref="T:System.Windows.Media.Brush" />これの不透明度を説明する<see cref="T:System.Windows.Media.DrawingGroup" />です。<see langword="null" />不透明度マスクが存在せず、不透明度は uniform を示します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Brush>にマップされて、<xref:System.Windows.Media.DrawingGroup>です。 マップされたは、各ピクセルの不透明度の値<xref:System.Windows.Media.Brush>の対応する各ピクセルの不透明度を決定するために使用、<xref:System.Windows.Media.DrawingGroup>です。 この処理のブラシの各色の不透明度の値のみが使用されます。その他のすべての色の情報は無視されます。  
+  
+ このプロパティを指定する不透明度で乗算、<xref:System.Windows.Media.DrawingGroup.Opacity%2A>の値、<xref:System.Windows.Media.DrawingGroup>オブジェクト。 不透明マスクおよび動作のしくみの詳細については、次を参照してください。[不透明マスクの概要](~/docs/framework/wpf/graphics-multimedia/opacity-masks-overview.md)です。  
+  
+ <xref:System.Windows.Media.DrawingGroup>操作は、次の順序で適用されます。  
+  
+1.  <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>  
+  
+2.  <xref:System.Windows.Media.DrawingGroup.Opacity%2A>  
+  
+3.  <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>  
+  
+4.  <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>  
+  
+5.  <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>  
+  
+6.  <xref:System.Windows.Media.DrawingGroup.Transform%2A>  
+  
+<a name="dependencyPropertyInfo_OpacityMask"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.DrawingGroup.OpacityMaskProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ この例を不透明度マスクを適用する方法を示しています、<xref:System.Windows.Media.Drawing>です。 <xref:System.Windows.Media.DrawingGroup>クラスは、タイプののみ<xref:System.Windows.Media.Drawing>不透明マスクをサポートするオブジェクト。  
+  
+ 不透明度マスクを適用する、<xref:System.Windows.Media.Drawing>オブジェクトに追加して、<xref:System.Windows.Media.DrawingGroup>設定と、<xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>のプロパティ、<xref:System.Windows.Media.DrawingGroup>オブジェクト。  
+  
+ 次の図の 3 つのビュー、 <xref:System.Windows.Media.DrawingGroup>: 図面の不透明度マスクを単独、不透明度マスクと<xref:System.Windows.Media.DrawingGroup>不透明マスクを適用した後です。  
+  
+ ![不透明マスクを持つ DrawingGroup](~/add/media/graphicsmm-opmask.png "不透明マスクを持つ A DrawingGroup")  
+  
+ 次の例では、<xref:System.Windows.Media.RadialGradientBrush>の不透明度マスクとして、<xref:System.Windows.Media.DrawingGroup>です。  
+  
+> [!NOTE]
+>  この例を使用しますが、<xref:System.Windows.Media.RadialGradientBrush>不透明マスクとして<xref:System.Windows.Media.LinearGradientBrush>、 <xref:System.Windows.Media.DrawingBrush>、 <xref:System.Windows.Media.ImageBrush>、および<xref:System.Windows.Media.VisualBrush>オブジェクトは、適切な不透明マスクすることもできます。 不透明マスクおよび動作のしくみの詳細については、次を参照してください。、[不透明マスクの概要](~/docs/framework/wpf/graphics-multimedia/opacity-masks-overview.md)です。  
+  
+ [!code-csharp[DrawingMiscSnippets_snip#DrawingGroupOpacityMaskExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/OpacityMaskExample.cs#drawinggroupopacitymaskexamplewholepage)]
+ [!code-xaml[DrawingMiscSnippets_snip#DrawingGroupOpacityMaskExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/OpacityMaskExample.xaml#drawinggroupopacitymaskexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpacityMaskProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OpacityMaskProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OpacityMaskProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.DrawingGroup.OpacityMaskProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.DrawingGroup.OpacityMask" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpacityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OpacityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OpacityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.DrawingGroup.OpacityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.DrawingGroup.Opacity" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.DrawingContext Open ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.DrawingContext Open() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.DrawingGroup.Open" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DrawingContext</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>開きます、<see cref="T:System.Windows.Media.DrawingGroup" />を設定するためにその<see cref="P:System.Windows.Media.DrawingGroup.Children" />および既存のすべてをクリア<see cref="P:System.Windows.Media.DrawingGroup.Children" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.DrawingContext" />この内容の記述に使用できる<see cref="T:System.Windows.Media.DrawingGroup" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 閉じる必要があります、<xref:System.Windows.Media.DrawingContext>これをレンダリングする前に<xref:System.Windows.Media.DrawingGroup>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Transform Transform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Transform Transform" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.DrawingGroup.Transform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Transform</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Transform" />これに適用されている<see cref="T:System.Windows.Media.DrawingGroup" />です。</summary>
+        <value>これに適用する変換<see cref="T:System.Windows.Media.DrawingGroup" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つに複数の変換を適用する<xref:System.Windows.Media.DrawingGroup>を使用して、<xref:System.Windows.Media.TransformGroup>です。  
+  
+ <xref:System.Windows.Media.DrawingGroup>操作は、次の順序で適用されます。  
+  
+1.  <xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>  
+  
+2.  <xref:System.Windows.Media.DrawingGroup.Opacity%2A>  
+  
+3.  <xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>  
+  
+4.  <xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>  
+  
+5.  <xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>  
+  
+6.  <xref:System.Windows.Media.DrawingGroup.Transform%2A>  
+  
+<a name="dependencyPropertyInfo_Transform"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.DrawingGroup.TransformProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ この例では、適用、<xref:System.Windows.Media.DrawingGroup.Transform%2A>を<xref:System.Windows.Media.Drawing>です。 変換する、<xref:System.Windows.Media.Drawing>オブジェクトを追加することを<xref:System.Windows.Media.DrawingGroup>設定と、<xref:System.Windows.Media.DrawingGroup.Transform%2A>のプロパティ、<xref:System.Windows.Media.DrawingGroup>オブジェクト。  
+  
+ <xref:System.Windows.Media.DrawingGroup>クラスは、タイプののみ<xref:System.Windows.Media.Drawing>変換をサポートするオブジェクト。 1 つに複数の変換を適用する<xref:System.Windows.Media.DrawingGroup>を使用して、<xref:System.Windows.Media.TransformGroup>です。  
+  
+ 次の例では、<xref:System.Windows.Media.DrawingGroup>いくつかを結合する<xref:System.Windows.Media.GeometryDrawing>オブジェクトし、し、それらを使用して変換、<xref:System.Windows.Media.RotateTransform>です。  
+  
+ 図に示す、<xref:System.Windows.Media.DrawingGroup>前に、と後、<xref:System.Windows.Media.RotateTransform>を適用します。  
+  
+ ![A に回転した DrawingGroup](~/add/media/graphicsmm-rotate.png "A に回転した DrawingGroup")  
+  
+ [!code-csharp[DrawingMiscSnippets_snip#DrawingGroupTransformExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/TransformExample.cs#drawinggrouptransformexamplewholepage)]
+ [!code-xaml[DrawingMiscSnippets_snip#DrawingGroupTransformExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/TransformExample.xaml#drawinggrouptransformexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TransformProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TransformProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.DrawingGroup.TransformProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.DrawingGroup.Transform" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

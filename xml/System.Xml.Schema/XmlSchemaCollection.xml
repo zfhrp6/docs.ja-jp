@@ -1,0 +1,1054 @@
+<Type Name="XmlSchemaCollection" FullName="System.Xml.Schema.XmlSchemaCollection">
+  <TypeSignature Language="C#" Value="public sealed class XmlSchemaCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlSchemaCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Use System.Xml.Schema.XmlSchemaSet for schema compilation and validation. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML スキーマ定義言語 (XSD: XML Schema Definition Language) スキーマおよび XDR (XML-Data Reduced) スキーマのキャッシュを格納します。 <see cref="T:System.Xml.Schema.XmlSchemaCollection" />クラスが廃止されています。 代わりに、<see cref="T:System.Xml.Schema.XmlSchemaSet" /> を使用してください。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してスキーマが読み込まれて、<xref:System.Xml.Schema.XmlSchemaCollection.Add%2A>時に、スキーマは名前空間 (Uniform Resource Identifier) に関連付けられたメソッドです。 XML スキーマの場合、これは一般に、`targetNamespace`スキーマのプロパティです。  
+  
+ このクラスは、XML スキーマおよび XDR スキーマの両方を格納が任意のメソッドおよびプロパティを受け取るかを返す、 <xref:System.Xml.Schema.XmlSchema> XML スキーマにのみ適用されます。  
+  
+ このバージョンの製品には、http://www.w3.org/TR/xmlschema-1 と http://www.w3.org/TR/xmlschema-2 にある World Wide Web Consortium (W3C) XML スキーマ勧告がサポートしています。 XML スキーマは、W3C スキーマ名前空間を参照する必要があります`http://www.w3.org/2001/XMLSchema`の schema 要素にします。 参照してください、<xref:System.Xml.Schema.XmlSchemaCollection.Add%2A>例については、メソッドです。  
+  
+ `XmlSchemaCollection`使用できる<xref:System.Xml.XmlValidatingReader>効率的なデータ検証用です。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、Microsoft .NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、使用して XML ドキュメントを検証、`XmlSchemaCollection`です。  
+  
+ [!code-cpp[XmlSchemaCollection.Basic#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlSchemaCollection.Basic/CPP/aa.cpp#1)]
+ [!code-csharp[XmlSchemaCollection.Basic#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaCollection.Basic/CS/aa.cs#1)]
+ [!code-vb[XmlSchemaCollection.Basic#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaCollection.Basic/VB/aa.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see langword="XmlSchemaCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSchemaCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see langword="XmlSchemaCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSchemaCollection (System.Xml.XmlNameTable nametable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNameTable nametable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.#ctor(System.Xml.XmlNameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nametable" Type="System.Xml.XmlNameTable" />
+      </Parameters>
+      <Docs>
+        <param name="nametable">使用する <see langword="XmlNameTable" />。</param>
+        <summary>指定した <see langword="XmlSchemaCollection" /> を使用して、<see cref="T:System.Xml.XmlNameTable" /> クラスの新しいインスタンスを初期化します。 <see langword="XmlNameTable" />スキーマを読み込む場合に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Add">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したスキーマをスキーマ コレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Add (System.Xml.Schema.XmlSchema schema);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchema Add(class System.Xml.Schema.XmlSchema schema) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.Add(System.Xml.Schema.XmlSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema" Type="System.Xml.Schema.XmlSchema" />
+      </Parameters>
+      <Docs>
+        <param name="schema">コレクションに追加する <see langword="XmlSchema" />。</param>
+        <summary>追加、<see cref="T:System.Xml.Schema.XmlSchema" />をコレクションにします。</summary>
+        <returns><see langword="XmlSchema" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `targetNamespace`属性はこのスキーマの識別に使用します。  
+  
+ 他の名前空間への参照が追加されているスキーマに含まれている場合 (を通じて`include`と`import`要素)、アプリケーションの信頼レベルは、これらの名前空間を解決する方法を決定します。 (.NET Framework version 1.0 では、既定で<xref:System.Xml.XmlUrlResolver>常に使用されました)。  
+  
+ `Fully trusted code:`既定の`XmlUrlResolver`任意の外部リソースを解決するのにはないユーザーに資格情報が使用されます。 これらの名前空間のスキーマは、検証の目的でのみ読み込まれます。 元のスキーマとは異なりこれら他のスキーマはいない明示的に、スキーマ コレクションに追加します。 その結果はアクセスできませんコレクション メソッドまたはプロパティのいずれかを使用します。 受け取るオーバー ロードを使用してこれらの外部リソースがある場合、認証が必要なネットワーク リソースには、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、`XmlResolver`必要な資格情報を使用します。  
+  
+ `Semi-trusted code:`外部参照は解決されません。  
+  
+> [!NOTE]
+>  場合、`XmlSchemaCollection`を使用してアクセスしている、 <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType> 、プロパティ、`Add`メソッドを使用、`XmlResolver`によって指定された、<xref:System.Xml.XmlValidatingReader.XmlResolver%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Xml.Schema.XmlSchemaCollection schema);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Xml.Schema.XmlSchemaCollection schema) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.Add(System.Xml.Schema.XmlSchemaCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema" Type="System.Xml.Schema.XmlSchemaCollection" />
+      </Parameters>
+      <Docs>
+        <param name="schema"><see langword="XmlSchemaCollection" />をこのコレクションに追加します。</param>
+        <summary>指定したコレクションで定義されたすべての名前空間 (関連付けられたスキーマを含む) をこのコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他の名前空間への参照が追加されているスキーマに含まれている場合 (を通じて`include`と`import`要素または`x-schema`属性)、アプリケーションの信頼レベルは、これらの名前空間を解決する方法を決定します。 (.NET Framework version 1.0 では、既定で<xref:System.Xml.XmlUrlResolver>常に使用されました)。  
+  
+ `Fully trusted code:`既定の`XmlUrlResolver`任意の外部リソースを解決するのにはないユーザーに資格情報が使用されます。 これらの名前空間のスキーマは、検証の目的でのみ読み込まれます。 元のスキーマとは異なりこれら他のスキーマはいない明示的に、スキーマ コレクションに追加します。 その結果はアクセスできませんコレクション メソッドまたはプロパティのいずれかを使用します。 受け取るオーバー ロードを使用してこれらの外部リソースがある場合、認証が必要なネットワーク リソースには、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、`XmlResolver`必要な資格情報を使用します。  
+  
+ `Semi-trusted code:`外部参照は解決されません。  
+  
+> [!NOTE]
+>  場合、`XmlSchemaCollection`を使用してアクセスしている、 <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType> 、プロパティ、`Add`メソッドを使用、`XmlResolver`によって指定された、<xref:System.Xml.XmlValidatingReader.XmlResolver%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Add (string ns, string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchema Add(string ns, string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ns">スキーマに関連付けられた名前空間 URI。 XML スキーマの場合、これは一般に、<see langword="targetNamespace" />です。</param>
+        <param name="uri">読み込むスキーマを指定する URL。</param>
+        <summary>指定した URL で配置されたスキーマをスキーマ コレクションに追加します。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchema" />スキーマ コレクションに追加<see langword="null" />追加されているスキーマが XDR スキーマである場合、またはスキーマのコンパイル エラーがある場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`ns`関連付けられている、既にコレクション内の別のスキーマに追加されているスキーマがコレクション内の元のスキーマを置き換えます。 たとえば、次の c# コード、authors.xsd がコレクションから削除され、names.xsd が追加されます。  
+  
+```  
+schemaColl.Add("urn:author", "authors.xsd");  
+schemaColl.Add("urn:author", "names.xsd");  
+```  
+  
+ 場合`ns`は`null`追加されているスキーマは XML スキーマ、および、`Add`メソッドを使用、`targetNamespace`コレクション内のスキーマを識別する XML スキーマで定義されています。 他の名前空間への参照が追加されているスキーマに含まれている場合 (を通じて`include`と`import`要素または`x-schema`属性)、アプリケーションの信頼レベルは、これらの名前空間を解決する方法を決定します。 (.NET Framework version 1.0 では、既定で<xref:System.Xml.XmlUrlResolver>常に使用されました)。  
+  
+ `Fully trusted code:`既定の`XmlUrlResolver`任意の外部リソースを解決するのにはないユーザーに資格情報が使用されます。 これらの名前空間のスキーマは、検証の目的でのみ読み込まれます。 元のスキーマとは異なりこれら他のスキーマはいない明示的に、スキーマ コレクションに追加します。 その結果はアクセスできませんコレクション メソッドまたはプロパティのいずれかを使用します。 受け取るオーバー ロードを使用してこれらの外部リソースがある場合、認証が必要なネットワーク リソースには、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、`XmlResolver`必要な資格情報を使用します。  
+  
+ `Semi-trusted code:`外部参照は解決されません。  
+  
+> [!NOTE]
+>  場合、`XmlSchemaCollection`を使用してアクセスしている、 <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType> 、プロパティ、`Add`メソッドを使用、`XmlResolver`によって指定された、<xref:System.Xml.XmlValidatingReader.XmlResolver%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例に格納されているスキーマを使用して 3 つの XML ファイルの検証、`XmlSchemaCollection`です。  
+  
+ [!code-cpp[Classic WebData XmlValidatingReader.Schemas Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlValidatingReader.Schemas Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlValidatingReader.Schemas Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlValidatingReader.Schemas Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlValidatingReader.Schemas Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlValidatingReader.Schemas Example/VB/source.vb#1)]  
+  
+ このサンプルでは、次の 5 つの入力ファイルを使用します。  
+  
+ `booksSchema.xml`  
+  
+ [!code-xml[Classic WebData XmlValidatingReader.Schemas Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlValidatingReader.Schemas Example/XML/source.xml#2)]  
+  
+ `booksSchemaFail.xml`  
+  
+ [!code-xml[Classic WebData XmlValidatingReader.Schemas Example#3](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlValidatingReader.Schemas Example/XML/source.xml#3)]  
+  
+ `newbooks.xml`  
+  
+ [!code-xml[Classic WebData XmlValidatingReader.Schemas Example#4](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlValidatingReader.Schemas Example/XML/source.xml#4)]  
+  
+ `books.xsd`  
+  
+ [!code-xml[Classic WebData XmlValidatingReader.Schemas Example#5](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlValidatingReader.Schemas Example/XML/source.xml#5)]  
+  
+ `schema1.xdr`  
+  
+ [!code-xml[Classic WebData XmlValidatingReader.Schemas Example#6](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlValidatingReader.Schemas Example/XML/source.xml#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">スキーマは、有効なスキーマではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Add (string ns, System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchema Add(string ns, class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.Add(System.String,System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="ns">スキーマに関連付けられた名前空間 URI。 XML スキーマの場合、これは一般に、<see langword="targetNamespace" />です。</param>
+        <param name="reader">
+          <see cref="T:System.Xml.XmlReader" />追加するスキーマを含むです。</param>
+        <summary>含まれるスキーマを追加、<see cref="T:System.Xml.XmlReader" />スキーマ コレクションにします。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchema" />スキーマ コレクションに追加<see langword="null" />追加されているスキーマが XDR スキーマである場合、またはスキーマのコンパイル エラーがある場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`ns`関連付けられている、既にコレクション内の別のスキーマに追加されているスキーマがコレクション内の元のスキーマを置き換えます。  
+  
+ 場合`ns`は`null`追加されているスキーマは XML スキーマ、および、`Add`メソッドを使用、`targetNamespace`コレクション内のスキーマを識別する XML スキーマで定義されています。  
+  
+ 他の名前空間への参照が追加されているスキーマに含まれている場合 (を通じて`include`と`import`要素または`x-schema`属性)、アプリケーションの信頼レベルは、これらの名前空間を解決する方法を決定します。 (.NET Framework version 1.0 では、既定で<xref:System.Xml.XmlUrlResolver>常に使用されました)。  
+  
+ `Fully trusted code:`既定の`XmlUrlResolver`任意の外部リソースを解決するのにはないユーザーに資格情報が使用されます。 これらの名前空間のスキーマは、検証の目的でのみ読み込まれます。 元のスキーマとは異なりこれら他のスキーマはいない明示的に、スキーマ コレクションに追加します。 その結果はアクセスできませんコレクション メソッドまたはプロパティのいずれかを使用します。 受け取るオーバー ロードを使用してこれらの外部リソースがある場合、認証が必要なネットワーク リソースには、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、`XmlResolver`必要な資格情報を使用します。  
+  
+ `Semi-trusted code:`外部参照は解決されません。  
+  
+> [!NOTE]
+>  場合、`XmlSchemaCollection`を使用してアクセスしている、 <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType> 、プロパティ、`Add`メソッドを使用、`XmlResolver`によって指定された、<xref:System.Xml.XmlValidatingReader.XmlResolver%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">スキーマは、有効なスキーマではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Add (System.Xml.Schema.XmlSchema schema, System.Xml.XmlResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchema Add(class System.Xml.Schema.XmlSchema schema, class System.Xml.XmlResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.Add(System.Xml.Schema.XmlSchema,System.Xml.XmlResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema" Type="System.Xml.Schema.XmlSchema" />
+        <Parameter Name="resolver" Type="System.Xml.XmlResolver" />
+      </Parameters>
+      <Docs>
+        <param name="schema">コレクションに追加する <see langword="XmlSchema" />。</param>
+        <param name="resolver"><see cref="T:System.Xml.XmlResolver" />で参照されている名前空間を解決するために使用<see langword="include" />と<see langword="import" />要素。 これは、する場合<see langword="null" />、外部参照は解決されません。</param>
+        <summary>追加、<see cref="T:System.Xml.Schema.XmlSchema" />をコレクションにします。 指定した<see cref="T:System.Xml.XmlResolver" />は外部参照の解決に使用します。</summary>
+        <returns><see langword="XmlSchema" />スキーマ コレクションに追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `targetNamespace`属性はこのスキーマの識別に使用します。  
+  
+ スキーマが含まれている場合`include`と`import`検証目的のみにこれらの名前空間が読み込まれるは、他の名前空間のスキーマを参照する要素。 元のスキーマとは異なりこれら他のスキーマはいない明示的に、スキーマ コレクションに追加します。 その結果はアクセスできませんコレクション メソッドまたはプロパティのいずれかを使用します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、スキーマをコレクションに追加します。 <xref:System.Xml.XmlUrlResolver>に渡される、`Add`スキーマで参照されている任意の外部リソースにアクセスするために必要な資格情報を設定するメソッド。  
+  
+ [!code-cpp[XmlSchemaCollection.Add#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlSchemaCollection.Add/CPP/schemacolladd.cpp#1)]
+ [!code-csharp[XmlSchemaCollection.Add#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaCollection.Add/CS/schemacolladd.cs#1)]
+ [!code-vb[XmlSchemaCollection.Add#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaCollection.Add/VB/schemacolladd.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">スキーマは、有効なスキーマではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema Add (string ns, System.Xml.XmlReader reader, System.Xml.XmlResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchema Add(string ns, class System.Xml.XmlReader reader, class System.Xml.XmlResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.Add(System.String,System.Xml.XmlReader,System.Xml.XmlResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="resolver" Type="System.Xml.XmlResolver" />
+      </Parameters>
+      <Docs>
+        <param name="ns">スキーマに関連付けられた名前空間 URI。 XML スキーマの場合、これは一般に、<see langword="targetNamespace" />です。</param>
+        <param name="reader">
+          <see cref="T:System.Xml.XmlReader" />追加するスキーマを含むです。</param>
+        <param name="resolver"><see cref="T:System.Xml.XmlResolver" />で参照されている名前空間を解決するために使用<see langword="include" />と<see langword="import" />要素または<see langword="x-schema" />属性 (XDR スキーマ)。 これは、する場合<see langword="null" />、外部参照は解決されません。</param>
+        <summary>含まれるスキーマを追加、<see cref="T:System.Xml.XmlReader" />スキーマ コレクションにします。 指定した<see cref="T:System.Xml.XmlResolver" />の外部のリソースを解決するために使用します。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchema" />スキーマ コレクションに追加<see langword="null" />追加されているスキーマが XDR スキーマである場合、またはスキーマのコンパイル エラーがある場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`ns`関連付けられている、既にコレクション内の別のスキーマに追加されているスキーマがコレクション内の元のスキーマを置き換えます。  
+  
+ 場合`ns`は`null`追加されているスキーマは XML スキーマ、および、`Add`メソッドを使用、`targetNamespace`コレクション内のスキーマを識別する XML スキーマで定義されている属性です。  
+  
+ 他の名前空間への参照が追加されているスキーマに含まれている場合 (を通じて`include`と`import`要素または`x-schema`属性)、これらの名前空間のスキーマが検証の目的でのみ読み込まれます。 元のスキーマとは異なりこれら他のスキーマはいない明示的に、スキーマ コレクションに追加します。 その結果はアクセスできませんコレクション メソッドまたはプロパティのいずれかを使用します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">スキーマは、有効なスキーマではありません。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Contains">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した名前空間を持つスキーマがコレクション内に存在するかどうかを示す値を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ns">スキーマに関連付けられた名前空間 URI。 XML スキーマの場合、通常これはターゲット名前空間です。</param>
+        <summary>指定した名前空間を持つスキーマがコレクション内に存在するかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定した名前空間を持つスキーマがコレクションの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、スキーマがコレクション内かどうかを確認します。 場合は、スキーマを表示します。  
+  
+ [!code-cpp[Classic WebData XmlSchemaCollection.this Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlSchemaCollection.this Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlSchemaCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlSchemaCollection.this Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlSchemaCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlSchemaCollection.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Xml.Schema.XmlSchema schema);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Xml.Schema.XmlSchema schema) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.Contains(System.Xml.Schema.XmlSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema" Type="System.Xml.Schema.XmlSchema" />
+      </Parameters>
+      <Docs>
+        <param name="schema"><see langword="XmlSchema" /> オブジェクト。</param>
+        <summary>示す値を取得するかどうか、<see langword="targetNamespace" />の指定した<see cref="T:System.Xml.Schema.XmlSchema" />がコレクション内にします。</summary>
+        <returns>
+          <see langword="true" />コレクション内にあり、同じスキーマがある場合<see langword="targetNamespace" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Xml.Schema.XmlSchema[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Xml.Schema.XmlSchema[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.CopyTo(System.Xml.Schema.XmlSchema[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Xml.Schema.XmlSchema[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">オブジェクトのコピー先の配列。</param>
+        <param name="index">内のインデックス<c>配列</c>コピー開始位置。</param>
+        <summary>すべてをコピー、<see langword="XmlSchema" />指定したインデックスから始まる指定した配列には、このコレクションからオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクションで定義されている名前空間の数を取得します。</summary>
+        <value>このコレクションで定義されている名前空間の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaCollectionEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchemaCollectionEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaCollectionEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スキーマのコレクションに対する "for each" スタイルの反復をサポートします。</summary>
+        <returns>現在のコレクションのすべてのスキーマを反復する列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、スキーマ コレクションの各 XML スキーマを表示します。  
+  
+ [!code-cpp[Classic WebData XmlSchemaCollection.GetEnumerator Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlSchemaCollection.GetEnumerator Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlSchemaCollection.GetEnumerator Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlSchemaCollection.GetEnumerator Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlSchemaCollection.GetEnumerator Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlSchemaCollection.GetEnumerator Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema this[string ns] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchema Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ns">返すスキーマに関連付けられている名前空間 URI。 これは一般に、<see langword="targetNamespace" />のスキーマです。</param>
+        <summary>取得、<see cref="T:System.Xml.Schema.XmlSchema" />指定した名前空間 URI に関連付けられています。</summary>
+        <value><see langword="XmlSchema" />名前空間 URI に関連付けられています。<see langword="null" />読み込まれたスキーマを指定した名前空間に関連付けられているが存在しない場合、または名前空間は、XDR スキーマに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、スキーマがコレクション内かどうかを確認します。 場合は、スキーマを表示します。  
+  
+ [!code-cpp[Classic WebData XmlSchemaCollection.this Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlSchemaCollection.this Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlSchemaCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlSchemaCollection.this Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlSchemaCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlSchemaCollection.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameTable">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNameTable NameTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNameTable NameTable" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaCollection.NameTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNameTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を取得<see langword="XmlNameTable" />によって使用される、<see langword="XmlSchemaCollection" />新しいスキーマを読み込むときにします。</summary>
+        <value><see langword="XmlNameTable" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">オブジェクトのコピー先の配列。</param>
+        <param name="index">内のインデックス<c>配列</c>コピー開始位置。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Xml.Schema.XmlSchemaCollection.CopyTo(System.Xml.Schema.XmlSchema[],System.Int32)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.Schema.XmlSchemaCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaCollection.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Xml.Schema.XmlSchemaCollection.Count" />」をご覧ください。</summary>
+        <value>コレクション内の項目の数を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.Schema.XmlSchemaCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Xml.Schema.XmlSchemaCollection.System#Collections#ICollection#IsSynchronized" />」を参照してください。</summary>
+        <value>返します<see langword="true" />コレクションが同期されている場合、それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.Schema.XmlSchemaCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Xml.Schema.XmlSchemaCollection.System#Collections#ICollection#SyncRoot" />」を参照してください。</summary>
+        <value>返します、<see cref="P:System.Collections.ICollection.SyncRoot" />コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.Schema.XmlSchemaCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Xml.Schema.XmlSchemaCollection.GetEnumerator" />」を参照してください。</summary>
+        <returns>返します、<see cref="T:System.Collections.IEnumerator" />のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.Schema.XmlSchemaCollection> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationEventHandler">
+      <MemberSignature Language="C#" Value="public event System.Xml.Schema.ValidationEventHandler ValidationEventHandler;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Xml.Schema.ValidationEventHandler ValidationEventHandler" />
+      <MemberSignature Language="DocId" Value="E:System.Xml.Schema.XmlSchemaCollection.ValidationEventHandler" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.ValidationEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XDR および XML スキーマ検証エラーに関する情報を受信するためのイベント ハンドラーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのイベントは、スキーマがコレクションに追加されたときに発生します。 イベント ハンドラーが指定されていない場合、<xref:System.Xml.Schema.XmlSchemaException>検証エラーがスローされます場所、<xref:System.Xml.Schema.ValidationEventArgs.Severity%2A>は`XmlSeverityType.Error`します。 イベント ハンドラーを指定するコールバック関数を定義しに追加、`ValidationEventHandler`です。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xml.Schema.XmlSchemaCollection>クラスは、.NET Framework version 2.0 では廃止されておりは置き換えられました、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、無効な XML スキーマを処理するイベント ハンドラーを設定する方法を示します。  
+  
+ [!code-cpp[XmlSchema.ValidationEventHandler#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlSchema.ValidationEventHandler/CPP/schemaevent.cpp#1)]
+ [!code-csharp[XmlSchema.ValidationEventHandler#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchema.ValidationEventHandler/CS/schemaevent.cs#1)]
+ [!code-vb[XmlSchema.ValidationEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchema.ValidationEventHandler/VB/schemaevent.vb#1)]  
+  
+ 上記の例では、ファイル`invalid.xsd`として入力します。  
+  
+ [!code-xml[XmlSchema.ValidationEventHandler#2](~/samples/snippets/xml/VS_Snippets_Data/XmlSchema.ValidationEventHandler/XML/invalid.xsd#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

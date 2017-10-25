@@ -1,0 +1,366 @@
+<Type Name="SiteIdentityPermission" FullName="System.Security.Permissions.SiteIdentityPermission">
+  <TypeSignature Language="C#" Value="public sealed class SiteIdentityPermission : System.Security.CodeAccessPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SiteIdentityPermission extends System.Security.CodeAccessPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.SiteIdentityPermission" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コードの生成元の Web サイトの ID アクセス許可を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用して行うことが呼び出し元が特定の Web サイトであることを確認します。 サイトの id が Url からのコードの HTTP、HTTPS、および FTP プロトコルでのみ定義されます。 サイト間で文字列とは、"//"URL と、次のプロトコルの後に「/」、たとえば、http://www.fourthcoffee.com/process/grind.htm www.fourthcoffee.com 存在する場合。 これには、ポート番号が含まれません。 指定された URL が http://www.fourthcoffee.com:8000/場合、サイトが www.fourthcoffee.com、www.fourthcoffee.com:8000 されません。  
+  
+ サイトはまったく、またはワイルドカードに一致する ("*")、ドット区切り記号をプレフィックスします。 たとえば、サイト名文字列 *. fourthcoffee.com だけでなく www.fourthcoffee.com fourthcoffee.com が一致します。せず、ワイルドカード サイト名に正確に一致することがあります。 サイト名の文字列 * は、任意のサイトに一致が、サイトの証拠を持たないコードは一致しません。  
+  
+> [!IMPORTANT]
+>  以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、id アクセス許可は使用されません。  
+>   
+>  .NET Framework バージョン 1.0 および 1.1 では、呼び出し元のアセンブリが完全に信頼されている場合でも id アクセス許可の要求は効果的です。 呼び出し元のアセンブリが、完全な信頼がありますが、id アクセス許可の確認要求が失敗したアセンブリが要求されている条件を満たしていない場合。 以降、.NET Framework version 2.0 では、id アクセス許可を要求していない呼び出し元のアセンブリに完全な信頼がある場合に効果的なされます。 これには、特殊なケースとして id アクセス許可の処理方法を排除すること、すべての権限の一貫性が保証されします。  
+  
+> [!NOTE]
+>  前に .NET Framework のバージョンでは、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、使用する可能性があります、<xref:System.Security.CodeAccessPermission.Deny%2A?displayProperty=nameWithType>に信頼されたコードによってシステム リソースを不注意によるアクセスを阻止する方法です。 <xref:System.Security.CodeAccessPermission.Deny%2A>現在使用されていません、およびリソースへのアクセスが付与されたアクセス許可がアセンブリのセットによってのみ決定されますようになりました。 ファイルへのアクセスを制限するには、するには、サンド ボックスで部分信頼コードを実行し、コードのアクセスが許可されているリソースにのみアクセス許可を割り当てます。 サンド ボックスで、アプリケーションの実行方法の詳細については、次を参照してください。[する方法: 実行部分信頼コードをサンド ボックスで](~/docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)です。  
+  
+> [!NOTE]
+>  .NET Framework バージョン 1.0 および 1.1 では、id アクセス許可を持つことはできません、<xref:System.Security.Permissions.PermissionState.Unrestricted>アクセス許可の状態の値。 以降、.NET Framework version 2.0 では、id アクセス許可はアクセス許可の状態値を設定できます。 つまり、2.0 以降のバージョンでは、id アクセス許可を実装するためのアクセス許可と同じ動作、<xref:System.Security.Permissions.IUnrestrictedPermission>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteIdentityPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.SiteIdentityPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.SiteIdentityPermission" /> を使用して、<see cref="T:System.Security.Permissions.PermissionState" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全に制限されている状態<xref:System.Security.Permissions.SiteIdentityPermission>サイトが一致することはありません。 このコンス トラクターは、他のアクセス許可の設計との一貫性の含まれていますは実際には役に立ちません。  
+  
+> [!NOTE]
+>  .NET Framework バージョン 1.0 および 1.1 では、id アクセス許可を持つことはできません、<xref:System.Security.Permissions.PermissionState.Unrestricted>アクセス許可の状態の値。 以降、.NET Framework version 2.0 では、id アクセス許可はアクセス許可の状態値を設定できます。 つまり、2.0 以降のバージョンでは、id アクセス許可を実装するためのアクセス許可と同じ動作、<xref:System.Security.Permissions.IUnrestrictedPermission>インターフェイスです。 つまり、id の要求は常に成功すると、アセンブリの id に関係なく、アセンブリに完全な信頼が付与されている場合。  
+  
+ .NET Framework バージョン 1.0 および 1.1 では、呼び出し元のアセンブリが完全に信頼されている場合でも id アクセス許可の要求は効果的です。 呼び出し元のアセンブリが、完全な信頼がありますが、id アクセス許可の確認要求が失敗したアセンブリが要求されている条件を満たしていない場合。 以降、.NET Framework version 2.0 では、id アクセス許可を要求していない呼び出し元のアセンブリに完全な信頼がある場合に効果的なされます。 これには、特殊なケースとして id アクセス許可の処理方法を排除すること、すべての権限の一貫性が保証されします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="state" /> パラメーターが <see cref="T:System.Security.Permissions.PermissionState" /> の正しい値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteIdentityPermission (string site);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.SiteIdentityPermission.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="site" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="site">サイトの名前またはワイルドカード式。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.SiteIdentityPermission" />指定されたサイト id を表すクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイトの id が Url からのコードの HTTP、HTTPS、および FTP プロトコルでのみ定義されます。 サイト間で文字列とは、"//"URL と、次のプロトコルの後に「/」、たとえば、www.fourthcoffee.com URL http://www.fourthcoffee.com/process/grind.htm/ で存在する場合。 これには、ポート番号が含まれません。 指定された URL が http://www.fourthcoffee.com:8000/場合、サイトが www.fourthcoffee.com、www.fourthcoffee.com:8000 されません。  
+  
+ サイトはまったく、またはワイルドカードに一致する ("*")、ドット区切り記号をプレフィックスします。 たとえば、サイト名文字列 *. fourthcoffee.com だけでなく www.fourthcoffee.com fourthcoffee.com が一致します。せず、ワイルドカード サイト名に正確に一致することがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="site" />パラメーターは有効な文字列ではありませんか、有効なワイルドカード サイト名と一致しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.SiteIdentityPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可の同一のコピーを作成して返します。</summary>
+        <returns>現在のアクセス許可のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可のコピーは、リソースまたは元のアクセス許可と同じサイト id へのアクセス権を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement esd);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement esd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.SiteIdentityPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="esd" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="esd">アクセス許可の再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、アクセス許可を再構築します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="esd" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="esd" />パラメーターが有効なアクセス許可要素ではありません。  
+  
+ -または-  
+  
+ <paramref name="esd" />パラメーターのバージョン番号が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.SiteIdentityPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可との共通部分のあるアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定したアクセス許可の積集合であるアクセス許可を作成して返します。</summary>
+        <returns>現在のアクセス許可と指定したアクセス許可の共通部分を表す新しいアクセス許可。 この新しいアクセス許可は<see langword="null" />積集合が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可の積集合は、サイトが、両方に共通するアクセス許可です。 元の両方の権限を通過する要求だけでは、積集合を渡されます。 など、交差する位置へのアクセスを表す権限 www.fourthcoffee.com と 1 つにアクセス権を表す * です。 fourthcoffee.com は www.fourthcoffee.com へのアクセスを表す権限。  
+  
+ 2 つの同一のサイト id アクセス許可の積集合は、同じアクセス許可がします。 積集合の 2 つの異なる (ワイルドカードではない) の式が空のアクセス許可。 ワイルドカードの式と一致するサイトの交差部分は、サイトです。 一致する 2 つのワイルドカードの式の積集合がより長く、2 つの式の詳細。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.SiteIdentityPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセット リレーションシップをテストするアクセス許可。 このアクセス許可は、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可が、指定したアクセス許可のサブセットであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が指定した権限のサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、現在のアクセス許可を指定した権限によって完全に含まれるサイトを指定する場合、指定したアクセス許可のサブセットです。  
+  
+ 次の表の値が表示<xref:System.Security.Permissions.SiteIdentityPermission.IsSubsetOf%2A>の現在のアクセス許可と、指定した権限の値の範囲です。  
+  
+|現在のアクセス許可|指定したアクセス許可|IsSubsetOf|  
+|------------------------|--------------------------|----------------|  
+|www.fourthcoffee.com|www.fourthcoffee.com|`true`|  
+|www.fourthcoffee.com|www.tailspintoys.com|`false`|  
+|www.fourthcoffee.com|*. fourthcoffee.com|`true`|  
+|www.fourthcoffee.com|*.com|`true`|  
+|*. fourthcoffee.com|www.fourthcoffee.com|`false`|  
+|*. fourthcoffee.com|*. fourthcoffee.com|`true`|  
+|*. fourthcoffee.com|*.com|`true`|  
+|以外`None`|*|`true`|  
+|`None`|何か|`true`|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Site">
+      <MemberSignature Language="C#" Value="public string Site { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Site" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.SiteIdentityPermission.Site" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作業中のサイトを取得または設定します。</summary>
+        <value>作業中のサイト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイトの id が Url からのコードの HTTP、HTTPS、および FTP プロトコルでのみ定義されます。 サイト間で文字列とは、"//"URL と、次のプロトコルの後に「/」、たとえば、www.fourthcoffee.com URL http://www.fourthcoffee.com/process/grind.htm/ で存在する場合。 これには、ポート番号が含まれません。 指定された URL が http://www.fourthcoffee.com:8000/場合、サイトが www.fourthcoffee.com、www.fourthcoffee.com:8000 されません。  
+  
+ サイトはまったく、またはワイルドカードに一致する ("*")、ドット区切り記号をプレフィックスします。 たとえば、サイト名文字列 *. fourthcoffee.com だけでなく www.fourthcoffee.com fourthcoffee.com が一致します。せず、ワイルドカード サイト名に正確に一致することがあります。 サイト名の文字列 * は、任意のサイトに一致が、サイトの証拠を持たないコードは一致しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">あいまいな ID があるので、サイト ID を取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.SiteIdentityPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可とその現在の状態の XML エンコードを作成します。</summary>
+        <returns>状態情報を含む、アクセス許可の XML エンコード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.SiteIdentityPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可と結合するアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定されたアクセス許可の和集合であるアクセス許可を作成します。</summary>
+        <returns>現在のアクセス許可と指定されたアクセス許可の和集合を表す新しいアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの結果<xref:System.Security.Permissions.SiteIdentityPermission.Union%2A>は、現在のアクセス許可と、指定した権限の両方で表されるすべてのサイトを表す権限。 いずれかのアクセス許可に適合する要求は、その共用体を渡します。 アクセスを表す www.fourthcoffee.com と 1 つにアクセスを表す権限の和集合など *. fourthcoffee.com へのアクセスを表すアクセス許可は、*. fourthcoffee.com です。  
+  
+ アクセス許可の和集合と`null`ではないアクセス許可は、`null`です。 アクセス許可の和集合とそのアクセス許可のサブセットは、サブセットを含むアクセス許可です。 その他の組み合わせの結果、<xref:System.ArgumentException>がスローされます。 たとえば、サイトの身元 www.fourthcoffee.com とサイトの身元 www.tailspintoys.com の和集合例外が発生がどちらもあるため、他方のサブセットです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。  
+  
+ または  
+  
+ 2 つのアクセス許可は等しくありません。また、その 1 つは他方のサブセットでもありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,329 @@
+<Type Name="XmlSerializerNamespaces" FullName="System.Xml.Serialization.XmlSerializerNamespaces">
+  <TypeSignature Language="C#" Value="public class XmlSerializerNamespaces" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSerializerNamespaces extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlSerializerNamespaces" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML 名前空間が含まれており、プレフィックス、<see cref="T:System.Xml.Serialization.XmlSerializer" />を使用して XML ドキュメント インスタンスの修飾名を生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlSerializerNamespaces>それぞれ関連付けられているプレフィックスが XML 名前空間のコレクションを格納します。 <xref:System.Xml.Serialization.XmlSerializer>のインスタンスを使用して、 <xref:System.Xml.Serialization.XmlSerializerNamespaces> XML ドキュメント内の修飾名を作成するクラス。  
+  
+ XML 名前空間に含まれる、<xref:System.Xml.Serialization.XmlSerializerNamespaces>という www.w3.org 仕様に準拠する必要があります`Namespaces in XML`です。  
+  
+ XML 名前空間は、XML ドキュメントの XML 要素および属性の名前を修飾する方法を提供します。 修飾名は、プレフィックスとローカル名がコロンで区切られた構成になっています。 プレフィックスはプレースホルダーとしてのみ機能し、名前空間を指定する URI に割り当てられます。 URI の汎用的に管理されている名前空間とローカル名の組み合わせには、全体で一意であることが保証される名前が生成されます。  
+  
+ XML ドキュメント内の修飾名を作成します。  
+  
+1.  作成、<xref:System.Xml.Serialization.XmlSerializerNamespaces>インスタンス。  
+  
+2.  <xref:System.Xml.Serialization.XmlSerializerNamespaces.Add%2A>各プレフィックスと名前空間のペアのインスタンスにします。  
+  
+3.  各プロパティに appropriate.NET 属性を適用したりするクラス、 <xref:System.Xml.Serialization.XmlSerializer> XML ドキュメントにシリアル化します。 使用可能な属性は次のとおりです。  
+  
+-   <xref:System.Xml.Serialization.XmlArrayAttribute>  
+  
+-   <xref:System.Xml.Serialization.XmlArrayItemAttribute>  
+  
+-   <xref:System.Xml.Serialization.XmlAttributeAttribute>  
+  
+-   <xref:System.Xml.Serialization.XmlElementAttribute>  
+  
+-   <xref:System.Xml.Serialization.XmlRootAttribute>  
+  
+-   <xref:System.Xml.Serialization.XmlTypeAttribute>  
+  
+1.  設定、`Namespace`から名前空間の値のいずれかに各属性のプロパティ、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクト。  
+  
+2.  <xref:System.Xml.Serialization.XmlSerializerNamespaces> を <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> の <xref:System.Xml.Serialization.XmlSerializer> メソッドに渡します。  
+  
+> [!NOTE]
+>  空の名前空間とプレフィックスのペアの作成がサポートされていません。 次のコードを使用するペアを作成することはできません。  
+  
+```csharp  
+XmlSerializerNamespaces ns = new XmlSerializerNamespaces();   
+ns.Add("", "");  
+```  
+  
+```vb  
+Dim ns As XmlSerializerNamespaces ns = New XmlSerializerNamespaces()  
+ns.Add("", "")  
+```  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクト、および 2 つのプレフィックスと名前空間のペアを追加します。 渡します、<xref:System.Xml.Serialization.XmlSerializerNamespaces>を<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>シリアル化するメソッド、`Books`オブジェクトを XML ドキュメントにします。 使用して、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクト、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドは、各 XML 要素と 2 つの名前空間のいずれかの属性を修飾します。  
+  
+ [!code-cpp[Classic XmlSerializerNamespaces Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializerNamespaces Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializerNamespaces Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializerNamespaces Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializerNamespaces Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializerNamespaces Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializerNamespaces ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のインスタンスを作成する、<xref:System.Xml.Serialization.XmlSerializerNamespaces>クラス、およびオブジェクトに、プレフィックスと名前空間のペアを追加します。  
+  
+ [!code-cpp[XmlSerializerNameSpaces_Constructor#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlSerializerNameSpaces_Constructor/CPP/xmlserializernamespaces_constructor.cpp#1)]
+ [!code-csharp[XmlSerializerNameSpaces_Constructor#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlSerializerNameSpaces_Constructor/CS/xmlserializernamespaces_constructor.cs#1)]
+ [!code-vb[XmlSerializerNameSpaces_Constructor#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XmlSerializerNameSpaces_Constructor/VB/xmlserializernamespaces_constructor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializerNamespaces (System.Xml.Serialization.XmlSerializerNamespaces namespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Serialization.XmlSerializerNamespaces namespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.Serialization.XmlSerializerNamespaces)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
+      </Parameters>
+      <Docs>
+        <param name="namespaces">インスタンス、<see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />名前空間とプレフィックスのペアを含むです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />クラスのインスタンスを指定<see langword="XmlSerializerNamespaces" />プレフィックスと名前空間のペアのコレクションを格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、2 つ作成されます<xref:System.Xml.XmlQualifiedName>オブジェクトし、新たに作成<xref:System.Xml.Serialization.XmlSerializerNamespaces>からそれらのインスタンス。  
+  
+ [!code-cpp[Classic XmlSerializerNamespaces.XmlSerializerNamespaces1 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializerNamespaces.XmlSerializerNamespaces1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializerNamespaces.XmlSerializerNamespaces1 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializerNamespaces.XmlSerializerNamespaces1 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializerNamespaces.XmlSerializerNamespaces1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializerNamespaces.XmlSerializerNamespaces1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializerNamespaces (System.Xml.XmlQualifiedName[] namespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlQualifiedName[] namespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.XmlQualifiedName[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="namespaces" Type="System.Xml.XmlQualifiedName[]" />
+      </Parameters>
+      <Docs>
+        <param name="namespaces"><see cref="T:System.Xml.XmlQualifiedName" /> オブジェクトの配列。</param>
+        <summary><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string prefix, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string prefix, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializerNamespaces.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">XML 名前空間に関連付けられているプレフィックスです。</param>
+        <param name="ns">XML 名前空間。</param>
+        <summary>プレフィックスと名前空間のペアを追加、<see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、<xref:System.Xml.Serialization.XmlSerializer>を XML ドキュメント内の要素と属性名を修飾する必要があります<xref:System.Xml.Serialization.XmlSerializerNamespaces.Add%2A>をプレフィックスと名前空間の組み合わせ、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクト。  
+  
+ 追加する任意の名前空間が www.w3.org 仕様に準拠する必要があります`Namespaces in XML`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクト、しを呼び出して次の 3 つのプレフィックスと名前空間のペアを追加、<xref:System.Xml.Serialization.XmlSerializerNamespaces.Add%2A>メソッドです。  
+  
+ [!code-cpp[Classic XmlSerializerNamespaces.Add Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializerNamespaces.Add Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializerNamespaces.Add Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializerNamespaces.Add Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializerNamespaces.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializerNamespaces.Add Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlSerializerNamespaces.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内には、プレフィックスと名前空間のペアの数を取得します。</summary>
+        <value>コレクション内のプレフィックスと名前空間のペアの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToArray">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName[] ToArray ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlQualifiedName[] ToArray() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializerNamespaces.ToArray" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プレフィックスおよび名前空間のペアの配列を取得、<see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />オブジェクト。</summary>
+        <returns>配列<see cref="T:System.Xml.XmlQualifiedName" />として使用されるオブジェクトが XML ドキュメント内の名前を修飾します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の出力の各<xref:System.Xml.XmlQualifiedName.Name%2A>と<xref:System.Xml.XmlQualifiedName.Namespace%2A>で、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクト。  
+  
+ [!code-cpp[Classic XmlSerializerNamespaces.ToArray Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializerNamespaces.ToArray Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializerNamespaces.ToArray Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializerNamespaces.ToArray Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializerNamespaces.ToArray Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializerNamespaces.ToArray Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

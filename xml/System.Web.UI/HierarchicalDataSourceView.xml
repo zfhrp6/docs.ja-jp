@@ -1,0 +1,90 @@
+<Type Name="HierarchicalDataSourceView" FullName="System.Web.UI.HierarchicalDataSourceView">
+  <TypeSignature Language="C#" Value="public abstract class HierarchicalDataSourceView" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HierarchicalDataSourceView extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HierarchicalDataSourceView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ノードまたはノードの階層データ構造でのコレクション上のデータ ビューを表す、<see cref="T:System.Web.UI.HierarchicalDataSourceControl" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET には、Web サーバー コントロール データにバインドして、一貫した方法で提供できるようにするためのデータ バインディング アーキテクチャがサポートされています。 データにバインドする web サーバー コントロールは、データ バインド コントロールと呼ばれます、そのバインドを促進するクラスは、データ ソース コントロールと呼ばれます。 データ ソース コントロールが任意のデータ ソースを表すことができます。 ファイル、ストリーム、リレーショナル データベース、ビジネス オブジェクト、およびなどです。 データ ソースは、ソースまたは基になるデータの形式に関係なく、データ バインド コントロールに一貫した方法でデータ表示を制御します。  
+  
+ 階層データを表すデータ ソース コントロールが、抽象型から派生<xref:System.Web.UI.HierarchicalDataSourceControl>クラスです。 データ ソース コントロールのデータ ソース コントロール オブジェクトをデータ ソース ビュー オブジェクトによって表される、基になるデータに対するその関連するビューの組み合わせと考えることができます。 階層のデータ ソース コントロールは、それらが表すデータの各階層レベルの階層的なデータ ソース ビューをサポートします。 データ ソース ビュー名を指定しない、like、<xref:System.Web.UI.DataSourceView>オブジェクトに関連付けられている、<xref:System.Web.UI.DataSourceControl>を制御するが、一意の階層パスで識別されます。  
+  
+ データ ソース ビューでは、データ ソース コントロールの機能を定義します。 すべてのデータ ソース ビュー オブジェクトを含む<xref:System.Web.UI.HierarchicalDataSourceView>、基になるデータ ソースを使用して、データの取得をサポートして、<xref:System.Web.UI.HierarchicalDataSourceView.Select%2A>としてデータの階層リストを取得するメソッド、<xref:System.Web.UI.IHierarchicalEnumerable>オブジェクト。 すべてのデータ ソース ビューのオブジェクトなどの操作を含む、機能の基本的なセットをサポート<xref:System.Web.UI.DataSourceView.Insert%2A>、 <xref:System.Web.UI.DataSourceView.Update%2A>、 <xref:System.Web.UI.DataSourceView.Delete%2A>、および並べ替え処理します。 関連付けられたデータ ソースを取得することによってデータ ソース コントロールの機能の表示を使用して、データ バインド コントロールを検出できる、<xref:System.Web.UI.HierarchicalDataSourceControl.GetHierarchicalView%2A>メソッドおよびデザイン時または実行時にビューを照会します。 <xref:System.Web.UI.HierarchicalDataSourceView>サポートされていません<xref:System.Web.UI.DataSourceView.Insert%2A>、<xref:System.Web.UI.DataSourceView.Update%2A>または<xref:System.Web.UI.DataSourceView.Delete%2A>操作します。  
+  
+   
+  
+## Examples  
+ 次のコード例からクラスを派生、<xref:System.Web.UI.HierarchicalDataSourceView>場合、ファイル システムはこれで、階層データのストレージからデータを取得するクラス。 `FileSystemDataSourceView`クラスは厳密に型指定された<xref:System.Web.UI.HierarchicalDataSourceView>をなど、階層的な Web サーバー コントロールを有効にするインスタンス、<xref:System.Web.UI.WebControls.TreeView>コントロールをバインドする、`FileSystemDataSource`制御およびファイル システム情報を表示します。 セキュリティのために、ファイル システム情報は、localhost、データ ソース コントロールが使用されている場合にのみが表示されます、シナリオでは、認証し、のみ、データ ソース コントロールを使用して、Web フォーム ページが存在する仮想ディレクトリから始まります。 それ以外の場合、`viewPath`コンス トラクターに渡されたパラメーターは、現在のファイル システム パスに基づくビューを作成するために使用可能性があります。 このコード例に示されている例の一部である、<xref:System.Web.UI.HierarchicalDataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.FileSystemDataSource_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/CS/filesystemdatasource.cs#3)]
+ [!code-vb[Urtue.Samples.Alexkr.FileSystemDataSource_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/VB/filesystemdatasource.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Web.UI.HierarchicalDataSourceView" /> から継承する場合は、<see cref="M:System.Web.UI.HierarchicalDataSourceView.Select" /> のメンバーをオーバーライドする必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HierarchicalDataSourceView ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HierarchicalDataSourceView.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HierarchicalDataSourceView" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public abstract System.Web.UI.IHierarchicalEnumerable Select ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.IHierarchicalEnumerable Select() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HierarchicalDataSourceView.Select" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchicalEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー内のすべてのデータ項目の一覧を取得します。</summary>
+        <returns><see cref="T:System.Web.UI.IHierarchicalEnumerable" />データ項目のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HierarchicalDataSourceView.Select%2A>メソッドを返します、<xref:System.Web.UI.IHierarchicalEnumerable>現在のビュー内のデータ項目のコレクション。 呼び出すことができます、<xref:System.Collections.IEnumerable.GetEnumerator%2A>取得するメソッド、<xref:System.Collections.IEnumerator>オブジェクトし、データ項目のコレクションを反復処理します。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.HierarchicalDataSourceView.Select%2A>から派生したクラスのメソッド、<xref:System.Web.UI.HierarchicalDataSourceView>クラス階層を取得する<xref:System.IO.FileSystemInfo>ファイル システムからのデータ。 セキュリティのために、ファイル システム情報は、localhost、データ ソース コントロールが使用されている場合にのみが表示されます、シナリオでは、認証し、のみ、データ ソース コントロールを使用して、Web フォーム ページが存在する仮想ディレクトリから始まります。 それ以外の場合、`viewPath`ビュー オブジェクトのコンス トラクターに渡されるパラメーターは、現在のファイル システム パスに基づくビューを作成するために使用可能性があります。 このコード例に示されている例の一部である、<xref:System.Web.UI.HierarchicalDataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.FileSystemDataSource_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/CS/filesystemdatasource.cs#3)]
+ [!code-vb[Urtue.Samples.Alexkr.FileSystemDataSource_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/VB/filesystemdatasource.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

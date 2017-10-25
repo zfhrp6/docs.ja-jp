@@ -1,0 +1,548 @@
+<Type Name="ECDiffieHellman" FullName="System.Security.Cryptography.ECDiffieHellman">
+  <TypeSignature Language="C#" Value="public abstract class ECDiffieHellman : System.Security.Cryptography.AsymmetricAlgorithm" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ECDiffieHellman extends System.Security.Cryptography.AsymmetricAlgorithm" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.ECDiffieHellman" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.AsymmetricAlgorithm</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>その Diffie-hellman ECDH (Elliptic Curve) からアルゴリズムの実装が派生できる抽象基本クラスを提供します。 このクラスは、すべての ECDH 実装がサポートする操作の基本セットを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ECDH の実装のための抽象基本クラスとして機能します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ECDiffieHellman ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.ECDiffieHellman" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターがから派生したクラスによって呼び出される、<xref:System.Security.Cryptography.ECDiffieHellman>クラスです。 <xref:System.Security.Cryptography.ECDiffieHellmanCng>クラスに含まれる現在のみ実装されて、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 Diffie-hellman ECDH (Elliptic Curve) アルゴリズムの新しい実装を作成する方法については、次を参照してください。、<xref:System.Security.Cryptography.ECDiffieHellman.Create%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ECDiffieHellman Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.ECDiffieHellman Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECDiffieHellman</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Diffie-hellman ECDH (Elliptic Curve) アルゴリズムの既定の実装の新しいインスタンスを作成します。</summary>
+        <returns>このクラスの既定の実装の新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ECDiffieHellman Create (System.Security.Cryptography.ECCurve curve);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.ECDiffieHellman Create(valuetype System.Security.Cryptography.ECCurve curve) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.Create(System.Security.Cryptography.ECCurve)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECDiffieHellman</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="curve" Type="System.Security.Cryptography.ECCurve" />
+      </Parameters>
+      <Docs>
+        <param name="curve">新しい公開/秘密キー ペアを生成するために使用する曲線。</param>
+        <summary>指定した曲線に対して生成された新しい公開/秘密キー ペアで ECDH (Elliptic Curve Diffie-Hellman) アルゴリズムの既定の実装の新しいインスタンスを作成します。</summary>
+        <returns>ECDH (Elliptic Curve Diffie-Hellman) アルゴリズムの既定の実装の新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 曲線を検証する必要があります (つまり、true を返さなければなりませんに渡されるときに、<xref:System.Security.Cryptography.ECCurve.Validate%2A?displayProperty=nameWithType>メソッドです。  
+  
+ Windows では、特性 2 曲線はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">
+          <paramref name="curve" /> は検証されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ECDiffieHellman Create (System.Security.Cryptography.ECParameters parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.ECDiffieHellman Create(valuetype System.Security.Cryptography.ECParameters parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.Create(System.Security.Cryptography.ECParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECDiffieHellman</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Security.Cryptography.ECParameters" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">楕円曲線暗号 (ECC) アルゴリズムのパラメーター。</param>
+        <summary>指定した <see cref="T:System.Security.Cryptography.ECParameters" /> オブジェクトによって記述されたキーで Elliptic Curve Diffie-Hellman (ECDH) アルゴリズムの既定の実装の新しいインスタンスを作成します。</summary>
+        <returns>ECDH (Elliptic Curve Diffie-Hellman) アルゴリズムの既定の実装の新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `parameters`検証する必要があります (つまり、返す必要があります`true`) に渡されるときに、<xref:System.Security.Cryptography.ECParameters.Validate%2A?displayProperty=nameWithType>メソッドです。 暗黙的な曲線上のパラメーターはサポートされていません。  
+  
+ Windows では、特性 2 曲線はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">
+          <paramref name="parameters" /> は検証されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ECDiffieHellman Create (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.ECDiffieHellman Create(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.Create(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECDiffieHellman</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">ECDH アルゴリズムの実装の名前。</param>
+        <summary>ECDH (Elliptic Curve Diffie-Hellman) アルゴリズムの指定した実装の新しいインスタンスを作成します。</summary>
+        <returns>このクラスの指定した実装の新しいインスタンス。 指定したアルゴリズム名が ECDH 実装にマップされない場合、このメソッドで <see langword="null" /> が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 独自の実装を開発する場合、<xref:System.Security.Cryptography.ECDiffieHellman>オブジェクトを使用する、<xref:System.Security.Cryptography.ECDiffieHellman.Create%28System.String%29>カスタムを作成するメソッドのオーバー ロード`algorithm`実装を指定する文字列。  
+  
+ `algorithm`パラメーター ECDH アルゴリズムの実装の名前を指定します。 次の文字列をすべて同じの実装は、現在唯一の実装を参照はサポートされて、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]:  
+  
+-   "ECDH"  
+  
+-   "ECDiffieHellman"  
+  
+-   "ECDiffieHellmanCng"  
+  
+-   "System.Security.Cryptography.ECDiffieHellmanCng"  
+  
+ カスタム ECDH 実装の名前を指定できますも、`algorithm`パラメーター。 実行する場合、 <xref:System.Security.Cryptography.CryptoConfig> ECDH オブジェクトを作成できるかどうかを決定する、オブジェクトで使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="algorithm" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeriveKeyFromHash">
+      <MemberSignature Language="C#" Value="public byte[] DeriveKeyFromHash (System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey, System.Security.Cryptography.HashAlgorithmName hashAlgorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] DeriveKeyFromHash(class System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey, valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHash(System.Security.Cryptography.ECDiffieHellmanPublicKey,System.Security.Cryptography.HashAlgorithmName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherPartyPublicKey" Type="System.Security.Cryptography.ECDiffieHellmanPublicKey" />
+        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" />
+      </Parameters>
+      <Docs>
+        <param name="otherPartyPublicKey">もう一方のパーティの公開キー。</param>
+        <param name="hashAlgorithm">キー マテリアルを派生に使用するハッシュ アルゴリズム。</param>
+        <summary>別のパーティの公開キーとハッシュ アルゴリズムの名前を指定し、ハッシュ関数を使用するキーとして使用できるバイトを派生させます。</summary>
+        <returns>他のパーティの公開キーとのキー交換からのキー マテリアル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを呼び出す、<xref:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHash%2A>メソッド`null`prepend として値を追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeriveKeyFromHash">
+      <MemberSignature Language="C#" Value="public virtual byte[] DeriveKeyFromHash (System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey, System.Security.Cryptography.HashAlgorithmName hashAlgorithm, byte[] secretPrepend, byte[] secretAppend);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] DeriveKeyFromHash(class System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey, valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm, unsigned int8[] secretPrepend, unsigned int8[] secretAppend) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHash(System.Security.Cryptography.ECDiffieHellmanPublicKey,System.Security.Cryptography.HashAlgorithmName,System.Byte[],System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherPartyPublicKey" Type="System.Security.Cryptography.ECDiffieHellmanPublicKey" />
+        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" />
+        <Parameter Name="secretPrepend" Type="System.Byte[]" />
+        <Parameter Name="secretAppend" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="otherPartyPublicKey">もう一方のパーティの公開キー。</param>
+        <param name="hashAlgorithm">キー マテリアルを派生に使用するハッシュ アルゴリズム。</param>
+        <param name="secretPrepend">ハッシュする前に、派生のシークレットを先頭に付加する値。</param>
+        <param name="secretAppend">ハッシュする前に、派生のシークレットを追加する値。</param>
+        <summary>派生クラスに実装した場合は、別のパーティの公開キー、ハッシュ アルゴリズムの名前、先頭の値、および追加の値を指定し、ハッシュ関数を使用するキーとして使用できるバイトを派生させます。</summary>
+        <returns>他のパーティの公開キーとのキー交換からのキー マテリアル。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">派生クラスはこのメソッドをオーバーライドする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeriveKeyFromHmac">
+      <MemberSignature Language="C#" Value="public byte[] DeriveKeyFromHmac (System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey, System.Security.Cryptography.HashAlgorithmName hashAlgorithm, byte[] hmacKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] DeriveKeyFromHmac(class System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey, valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm, unsigned int8[] hmacKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHmac(System.Security.Cryptography.ECDiffieHellmanPublicKey,System.Security.Cryptography.HashAlgorithmName,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherPartyPublicKey" Type="System.Security.Cryptography.ECDiffieHellmanPublicKey" />
+        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" />
+        <Parameter Name="hmacKey" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="otherPartyPublicKey">もう一方のパーティの公開キー。</param>
+        <param name="hashAlgorithm">キー マテリアルを派生に使用するハッシュ アルゴリズム。</param>
+        <param name="hmacKey">HMAC キー。</param>
+        <summary>ハッシュ ベース メッセージ認証コード (HMAC) を使用して、キーとして使用できるバイト数を派生しています。</summary>
+        <returns>他のパーティの公開キーとのキー交換からのキー マテリアル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを呼び出す、<xref:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHmac%2A>メソッド`null`prepend として値を追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeriveKeyFromHmac">
+      <MemberSignature Language="C#" Value="public virtual byte[] DeriveKeyFromHmac (System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey, System.Security.Cryptography.HashAlgorithmName hashAlgorithm, byte[] hmacKey, byte[] secretPrepend, byte[] secretAppend);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] DeriveKeyFromHmac(class System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey, valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm, unsigned int8[] hmacKey, unsigned int8[] secretPrepend, unsigned int8[] secretAppend) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.DeriveKeyFromHmac(System.Security.Cryptography.ECDiffieHellmanPublicKey,System.Security.Cryptography.HashAlgorithmName,System.Byte[],System.Byte[],System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherPartyPublicKey" Type="System.Security.Cryptography.ECDiffieHellmanPublicKey" />
+        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" />
+        <Parameter Name="hmacKey" Type="System.Byte[]" />
+        <Parameter Name="secretPrepend" Type="System.Byte[]" />
+        <Parameter Name="secretAppend" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="otherPartyPublicKey">もう一方のパーティの公開キー。</param>
+        <param name="hashAlgorithm">キー マテリアルを派生に使用するハッシュ アルゴリズム。</param>
+        <param name="hmacKey">HMAC キー。</param>
+        <param name="secretPrepend">ハッシュする前に、派生のシークレットを先頭に付加する値。</param>
+        <param name="secretAppend">ハッシュする前に、派生のシークレットを追加する値。</param>
+        <summary>派生クラスに実装された場合、ハッシュ ベース メッセージ認証コード (HMAC) を使用して、キーとして使用できるバイト数を派生します。</summary>
+        <returns>他のパーティの公開キーとのキー交換からのキー マテリアル。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">派生クラスはこのメソッドをオーバーライドする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeriveKeyMaterial">
+      <MemberSignature Language="C#" Value="public virtual byte[] DeriveKeyMaterial (System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] DeriveKeyMaterial(class System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.DeriveKeyMaterial(System.Security.Cryptography.ECDiffieHellmanPublicKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherPartyPublicKey" Type="System.Security.Cryptography.ECDiffieHellmanPublicKey" />
+      </Parameters>
+      <Docs>
+        <param name="otherPartyPublicKey">もう一方のパーティの公開キー。</param>
+        <summary>別のパーティの公開キーをキーとして使用できるバイト数を取得します。</summary>
+        <returns>他のパーティの公開キーとのキー交換からのキー マテリアル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 公開キーの詳細については、次を参照してください。、<xref:System.Security.Cryptography.ECDiffieHellmanPublicKey>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeriveKeyTls">
+      <MemberSignature Language="C#" Value="public virtual byte[] DeriveKeyTls (System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey, byte[] prfLabel, byte[] prfSeed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] DeriveKeyTls(class System.Security.Cryptography.ECDiffieHellmanPublicKey otherPartyPublicKey, unsigned int8[] prfLabel, unsigned int8[] prfSeed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.DeriveKeyTls(System.Security.Cryptography.ECDiffieHellmanPublicKey,System.Byte[],System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherPartyPublicKey" Type="System.Security.Cryptography.ECDiffieHellmanPublicKey" />
+        <Parameter Name="prfLabel" Type="System.Byte[]" />
+        <Parameter Name="prfSeed" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="otherPartyPublicKey">もう一方のパーティの公開キー。</param>
+        <param name="prfLabel">ASCII エンコードの PRF ラベルです。</param>
+        <param name="prfSeed">64 バイトの PRF シードです。</param>
+        <summary>派生クラスで実装された場合、トランスポート層セキュリティ (TLS) 擬似ランダム関数 (PRF) 派生アルゴリズムを使用してキーとして使用できるバイトを派生します。</summary>
+        <returns>他のパーティの公開キーとのキー交換からのキー マテリアル。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">派生クラスはこのメソッドをオーバーライドする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportExplicitParameters">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.ECParameters ExportExplicitParameters (bool includePrivateParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Security.Cryptography.ECParameters ExportExplicitParameters(bool includePrivateParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.ExportExplicitParameters(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECParameters</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includePrivateParameters" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="includePrivateParameters">
+          プライベート パラメーターを含める場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>派生クラスでオーバーライドされると、エクスポート、作業中の明示的な曲線フォームを使用して、パブリックとプライベート キー情報またはパブリックのいずれか<see cref="T:System.Security.Cryptography.ECDiffieHellman" />キーを<see cref="T:System.Security.Cryptography.ECParameters" />構造体を渡すことができるように、<see cref="M:System.Security.Cryptography.ECDiffieHellman.ImportParameters(System.Security.Cryptography.ECParameters)" />メソッドです。</summary>
+        <returns>明示的な曲線形式を使用して、このキーの曲線上のポイントを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">派生クラスはこのメソッドをオーバーライドする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportParameters">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.ECParameters ExportParameters (bool includePrivateParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Security.Cryptography.ECParameters ExportParameters(bool includePrivateParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.ExportParameters(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECParameters</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includePrivateParameters" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="includePrivateParameters">
+          プライベート パラメーターを含める場合は <see langword="true" />。それ以外の場合は、パブリック パラメーターのみを含める場合は <see langword="false" />。</param>
+        <summary>派生クラスでオーバーライドされると、作業中から、パブリックまたはパブリックとプライベート キーの情報をエクスポート<see cref="T:System.Security.Cryptography.ECDiffieHellman" />キーを<see cref="T:System.Security.Cryptography.ECParameters" />構造体を渡すことができるように、<see cref="M:System.Security.Cryptography.ECDiffieHellman.ImportParameters(System.Security.Cryptography.ECParameters)" />メソッドです。</summary>
+        <returns>このキーの曲線上のポイントを表すオブジェクト。 <see cref="M:System.Security.Cryptography.ECDiffieHellman.ImportParameters(System.Security.Cryptography.ECParameters)" /> メソッドに渡すことができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 曲線の名前が、<xref:System.Security.Cryptography.ECParameters.Curve>プロパティには、名前付き曲線パラメーターが含まれます。 それ以外の場合、明示的なパラメーターが含まれます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">派生クラスはこのメソッドをオーバーライドする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateKey">
+      <MemberSignature Language="C#" Value="public virtual void GenerateKey (System.Security.Cryptography.ECCurve curve);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateKey(valuetype System.Security.Cryptography.ECCurve curve) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.GenerateKey(System.Security.Cryptography.ECCurve)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="curve" Type="System.Security.Cryptography.ECCurve" />
+      </Parameters>
+      <Docs>
+        <param name="curve">一時的な公開/秘密キー ペアを生成するために使用される曲線。</param>
+        <summary>派生クラスでオーバーライドされると、指定した曲線の新しい一時的な公開/秘密キー ペアを生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `curve`検証する必要があります (つまり、返す必要があります`true`) に渡されるときに、<xref:System.Security.Cryptography.ECCurve.Validate%2A?displayProperty=nameWithType>メソッド) 暗黙の型にすることです。  
+  
+ Windows では、特性 2 曲線はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">
+          <paramref name="curve" /> は検証されません。</exception>
+        <exception cref="T:System.NotImplementedException">派生クラスはこのメソッドをオーバーライドする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportParameters">
+      <MemberSignature Language="C#" Value="public virtual void ImportParameters (System.Security.Cryptography.ECParameters parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ImportParameters(valuetype System.Security.Cryptography.ECParameters parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECDiffieHellman.ImportParameters(System.Security.Cryptography.ECParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Security.Cryptography.ECParameters" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">インポートする曲線のパラメーター。</param>
+        <summary>派生クラスでオーバーライドされると、現在の <see cref="T:System.Security.Cryptography.ECDiffieHellman" /> オブジェクトへの一時的なキーとして <see cref="T:System.Security.Cryptography.ECCurve" /> の指定されたパラメーターをインポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `parameters`検証する必要があります (つまり、返す必要があります`true`) に渡されるときに、<xref:System.Security.Cryptography.ECParameters.Validate%2A?displayProperty=nameWithType>メソッドです。 暗黙的な曲線上のパラメーターはサポートされていません。  
+  
+ Windows では、特性 2 曲線はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">
+          <paramref name="parameters" /> は検証されません。</exception>
+        <exception cref="T:System.NotImplementedException">派生クラスはこのメソッドをオーバーライドする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyExchangeAlgorithm">
+      <MemberSignature Language="C#" Value="public override string KeyExchangeAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyExchangeAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ECDiffieHellman.KeyExchangeAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー交換アルゴリズムの名前を取得します。</summary>
+        <value>キー交換アルゴリズムの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定の (非オーバーライド) 実装は、文字列"ECDiffieHellman"を返します。  
+  
+ このプロパティは、<xref:System.Security.Cryptography.AsymmetricAlgorithm>基本クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicKey">
+      <MemberSignature Language="C#" Value="public abstract System.Security.Cryptography.ECDiffieHellmanPublicKey PublicKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.ECDiffieHellmanPublicKey PublicKey" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ECDiffieHellman.PublicKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECDiffieHellmanPublicKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Diffie-hellman ECDH (Elliptic Curve) インスタンスによって使用されている公開キーを取得します。</summary>
+        <value>これによって使用されている ECDH キーのペアの公開部分<see cref="T:System.Security.Cryptography.ECDiffieHellman" />インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureAlgorithm">
+      <MemberSignature Language="C#" Value="public override string SignatureAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignatureAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ECDiffieHellman.SignatureAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名アルゴリズムの名前を取得します。</summary>
+        <value>常に <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.Security.Cryptography.AsymmetricAlgorithm>基本クラスです。  
+  
+ キーの派生で、Diffie-hellman ECDH (Elliptic Curve) アルゴリズムが使用されるデジタル署名の生成。 したがって、このプロパティが返されます`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

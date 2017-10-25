@@ -1,0 +1,178 @@
+<Type Name="ConnectionStringEditor" FullName="System.Web.UI.Design.ConnectionStringEditor">
+  <TypeSignature Language="C#" Value="public class ConnectionStringEditor : System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectionStringEditor extends System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ConnectionStringEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Design.UITypeEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>選択してデザイン時に、接続文字列プロパティを編集するユーザー インターフェイスの基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.UI.Design.ConnectionStringEditor>クラスは、<xref:System.Drawing.Design.UITypeEditor>を選択し、接続文字列式を編集し、コントロールのプロパティに式を割り当てるにはデザイン時に使用できるオブジェクト。 たとえば、<xref:System.Web.UI.WebControls.SqlDataSource>コントロール、<xref:System.Web.UI.Design.ConnectionStringEditor>デザイン時の値を設定するクラス、<xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString%2A>プロパティです。  
+  
+ 使用して、<xref:System.ComponentModel.EditorAttribute>属性に関連付けるには、<xref:System.Web.UI.Design.ConnectionStringEditor>プロパティを設定します。 デザイン サーフェイスに関連付けられたプロパティを編集すると、デザイナー ホスト呼び出し、<xref:System.Web.UI.Design.ConnectionStringEditor.EditValue%2A>メソッドです。 <xref:System.Web.UI.Design.ConnectionStringEditor.EditValue%2A>メソッドは、接続文字列式を構築するためのユーザー インターフェイスを表示し、ユーザーが選択されている接続文字列を返します。 <xref:System.Web.UI.Design.ConnectionStringEditor.GetEditStyle%2A>メソッドは、ユーザー インターフェイスの表示スタイルを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスに関連付ける方法を示します、<xref:System.Web.UI.Design.ConnectionStringEditor>カスタム コントロール内に含まれるプロパティを持つクラス。 デザイン画面でコントロールのプロパティを編集する際に、<xref:System.Web.UI.Design.ConnectionStringEditor>クラスを選択し、プロパティ値の接続文字列を編集するユーザー インターフェイスを提供します。  
+  
+ [!code-csharp[System.Web.UI.Design.ConnectionStringEditor#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.design.connectionstringeditor/CS/ConnectionStringEditorSample.cs#2)]
+ [!code-vb[System.Web.UI.Design.ConnectionStringEditor#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.design.connectionstringeditor/VB/ConnectionStringEditorSample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionStringEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ConnectionStringEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.ConnectionStringEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditValue">
+      <MemberSignature Language="C#" Value="public override object EditValue (System.ComponentModel.ITypeDescriptorContext context, IServiceProvider provider, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EditValue(class System.ComponentModel.ITypeDescriptorContext context, class System.IServiceProvider provider, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ConnectionStringEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用します。</param>
+        <param name="provider">編集のサービスを得るために使用するサービス プロバイダー オブジェクト。</param>
+        <param name="value">編集中のオブジェクトのインスタンス。</param>
+        <summary>指定したサービス プロバイダーとコンテキストを使用して、指定したオブジェクトの値を編集します。</summary>
+        <returns>文字列オブジェクトとして、選択した接続式それ以外の場合、接続の式が選択されていない場合、同じ<paramref name="value" />渡されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ConnectionStringEditor.EditValue%2A>メソッドを編集するためのユーザー インターフェイスを開始する、`value`オブジェクト。 デザイナー ホストの呼び出し、<xref:System.Web.UI.Design.ConnectionStringEditor.EditValue%2A>接続ストリング エディターに関連付けられているメソッド、プロパティの値を編集するときにします。 内で必要とされるすべての編集サービスを取得する、入力のサービス プロバイダーが使用される、<xref:System.Web.UI.Design.ConnectionStringEditor.EditValue%2A>メソッドです。  
+  
+ 場合、<xref:System.ComponentModel.Design.Data.IDataEnvironment>サービス実装は、指定されたコンテキストでサポートされて、<xref:System.Web.UI.Design.ConnectionStringEditor.EditValue%2A>メソッドの初期化、<xref:System.Web.UI.WebControls.ListBox>コントロールで、接続の既存の式を選択するか、新しい接続式を作成するように求められます。 場合、<xref:System.ComponentModel.Design.Data.IDataEnvironment>サービス実装は、指定されたコンテキストでサポートされていません、<xref:System.Web.UI.Design.ConnectionStringEditor.EditValue%2A>メソッドの単純なインスタンスの表示、<xref:System.Windows.Forms.Form>クラスは、接続の式の文字列を入力するように求められます。  
+  
+ 式の接続文字列を選択せずに、キャンセルする場合、返されたオブジェクトは、`value`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditStyle">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Drawing.Design.UITypeEditorEditStyle GetEditStyle(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ConnectionStringEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.UITypeEditorEditStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用します。</param>
+        <summary>指定したコンテキストの接続文字列のエディターに関連付けられている編集スタイルを返します。</summary>
+        <returns><see cref="T:System.Drawing.Design.UITypeEditorEditStyle" />編集を示す列挙値の指定されたユーザー インターフェイスのスタイルを設定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Web.UI.Design.ConnectionStringEditor.GetEditStyle%2A>のメソッド、<xref:System.Web.UI.Design.ConnectionStringEditor>クラスを返します、<xref:System.Drawing.Design.UITypeEditorEditStyle.Modal>値。 場合、<xref:System.ComponentModel.Design.Data.IDataEnvironment>サービス実装は、指定されたコンテキストでサポートされて、<xref:System.Web.UI.Design.ConnectionStringEditor.GetEditStyle%2A>メソッドを返します、<xref:System.Drawing.Design.UITypeEditorEditStyle.DropDown>値。  
+  
+ 場合、<xref:System.Web.UI.Design.ConnectionStringEditor.GetEditStyle%2A>メソッドは、指定されたコンテキストではサポートされていません、<xref:System.Web.UI.Design.ConnectionStringEditor.GetEditStyle%2A>メソッドを返します、<xref:System.Drawing.Design.UITypeEditorEditStyle.None>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProviderName">
+      <MemberSignature Language="C#" Value="protected virtual string GetProviderName (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetProviderName(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ConnectionStringEditor.GetProviderName(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">A<see cref="T:System.Web.UI.Design.ConnectionStringEditor" />または派生クラスのインスタンス。</param>
+        <summary>プロバイダー名の指定されたインスタンスを返します、<see cref="T:System.Web.UI.Design.ConnectionStringEditor" />クラスです。</summary>
+        <returns>常に空の文字列 ("") です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ConnectionStringEditor.GetProviderName%2A>メソッドの現在のインスタンスのプロバイダー名を取得、<xref:System.Web.UI.Design.ConnectionStringEditor>クラスです。 たとえば、<xref:System.Web.UI.Design.WebControls.SqlDataSourceConnectionStringEditor>から派生したクラス<xref:System.Web.UI.Design.ConnectionStringEditor>クラス、<xref:System.Web.UI.Design.ConnectionStringEditor.GetProviderName%2A>メソッド プロバイダー名を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetProviderName">
+      <MemberSignature Language="C#" Value="protected virtual void SetProviderName (object instance, System.ComponentModel.Design.Data.DesignerDataConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetProviderName(object instance, class System.ComponentModel.Design.Data.DesignerDataConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ConnectionStringEditor.SetProviderName(System.Object,System.ComponentModel.Design.Data.DesignerDataConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="connection" Type="System.ComponentModel.Design.Data.DesignerDataConnection" />
+      </Parameters>
+      <Docs>
+        <param name="instance">A<see cref="T:System.Web.UI.Design.ConnectionStringEditor" />または派生クラスのインスタンス。</param>
+        <param name="connection"><see cref="T:System.ComponentModel.Design.Data.DesignerDataConnection" />。</param>
+        <summary>指定したインスタンスでプロバイダー名を格納、<see cref="T:System.Web.UI.Design.ConnectionStringEditor" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ConnectionStringEditor.SetProviderName%2A>メソッドでは、プロバイダー名を設定で、`instance`パラメーター。 たとえば、`SqlDataSourceConnectionStringEditor`から派生した、<xref:System.Web.UI.Design.ConnectionStringEditor>クラス、このプロバイダーの名前を設定または追加、<xref:System.Web.UI.ExpressionBinding>オブジェクト、接続が構成されている接続の場合。 この実装では、<xref:System.Web.UI.Design.ConnectionStringEditor.SetProviderName%2A>メソッドは、何も行われません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

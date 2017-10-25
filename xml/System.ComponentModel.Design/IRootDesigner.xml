@@ -1,0 +1,134 @@
+<Type Name="IRootDesigner" FullName="System.ComponentModel.Design.IRootDesigner">
+  <TypeSignature Language="C#" Value="public interface IRootDesigner : IDisposable, System.ComponentModel.Design.IDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRootDesigner implements class System.ComponentModel.Design.IDesigner, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IRootDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Design.IDesigner</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ルート レベルのデザイナー ビュー テクノロジのサポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルート デザイナーは、デザイナーの上端の位置をまたは現在デザイン時にドキュメント オブジェクトの階層のルートです。 ルート デザイナーを実装する必要があります、<xref:System.ComponentModel.Design.IRootDesigner>インターフェイスです。 ルート デザイナーは、通常、バック グラウンド ビュー デザイナーの表示モードを管理し、デザイン時の現在のプロジェクトの基本のコンテナー内にコントロールを表示します。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.ComponentModel.Design.IRootDesigner>サンプル ユーザー コントロールに関連付けられた実装です。 これは、<xref:System.ComponentModel.Design.IRootDesigner>実装デザイナー ビューでオーバーライドすることで、バック グラウンド ビューのコントロールを表示する、<xref:System.ComponentModel.Design.IRootDesigner.GetView%2A>メソッドです。 例をコンパイルする System.Design アセンブリへの参照を追加する必要があります。  
+  
+ この例を使用するソース コードをプロジェクトに追加し、表示、`RootViewSampleComponent`カスタム ルートのデザイナー ビューを表示するデザイナー ビューにします。  
+  
+ [!code-cpp[IRootDesigner Sample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IRootDesigner Sample/CPP/class1.cpp#1)]
+ [!code-csharp[IRootDesigner Sample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IRootDesigner Sample/CS/class1.cs#1)]
+ [!code-vb[IRootDesigner Sample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IRootDesigner Sample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetView">
+      <MemberSignature Language="C#" Value="public object GetView (System.ComponentModel.Design.ViewTechnology technology);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetView(valuetype System.ComponentModel.Design.ViewTechnology technology) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IRootDesigner.GetView(System.ComponentModel.Design.ViewTechnology)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="technology" Type="System.ComponentModel.Design.ViewTechnology" />
+      </Parameters>
+      <Docs>
+        <param name="technology">A<see cref="T:System.ComponentModel.Design.ViewTechnology" />特定のビュー テクノロジを示すです。</param>
+        <summary>指定したビュー技術のビュー オブジェクトを取得します。</summary>
+        <returns>デザイナーのビューを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ユーザーにユーザー インターフェイスを提供するビュー オブジェクトを返します。 返されるデータ型は、<xref:System.Object>さまざまな別のユーザー インターフェイスのテクノロジがあるため、します。 開発環境は、通常 1 つ以上のテクノロジをサポートします。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.ViewTechnology?displayProperty=nameWithType>と<xref:System.ComponentModel.Design.ViewTechnology?displayProperty=nameWithType>フィールドは廃止されました。 使用して<xref:System.ComponentModel.Design.ViewTechnology?displayProperty=nameWithType>の新しいデザイナーの実装です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したビュー技術は、サポートされていないか、存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedTechnologies">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.ViewTechnology[] SupportedTechnologies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.Design.ViewTechnology[] SupportedTechnologies" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.IRootDesigner.SupportedTechnologies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ViewTechnology[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーがサポートできる表示用のテクノロジのセットを取得します。</summary>
+        <value>配列がサポートされている<see cref="T:System.ComponentModel.Design.ViewTechnology" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.ViewTechnology>列挙型がサポートされているビュー テクノロジを示します。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.ViewTechnology?displayProperty=nameWithType>と<xref:System.ComponentModel.Design.ViewTechnology?displayProperty=nameWithType>フィールドは廃止されました。 使用して<xref:System.ComponentModel.Design.ViewTechnology?displayProperty=nameWithType>の新しいデザイナーの実装です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,146 @@
+<Type Name="RowStyle" FullName="System.Windows.Forms.RowStyle">
+  <TypeSignature Language="C#" Value="public class RowStyle : System.Windows.Forms.TableLayoutStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RowStyle extends System.Windows.Forms.TableLayoutStyle" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.RowStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.TableLayoutStyle</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>テーブル レイアウト内の行のルック アンド フィールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RowStyle>クラス内の行のユーザー インターフェイス (UI) の特性を表す、<xref:System.Windows.Forms.TableLayoutPanel>です。 内のすべての行のスタイル、<xref:System.Windows.Forms.TableLayoutPanel>で収集される、<xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A?displayProperty=nameWithType>プロパティです。  
+  
+ この単純なクラスを提供、<xref:System.Windows.Forms.RowStyle.Height%2A>と<xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A>行です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、抽出、<xref:System.Windows.Forms.RowStyle>から、<xref:System.Windows.Forms.TableLayoutRowStyleCollection>です。  
+  
+ このコード例に示されている例の一部である、<xref:System.Windows.Forms.TableLayoutPanel>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.TableLayoutPanel#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel/CS/form1.cs#9)]
+ [!code-vb[System.Windows.Forms.TableLayoutPanel#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel/VB/form1.vb#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RowStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RowStyle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを初期化、<see cref="T:System.Windows.Forms.RowStyle" />クラスを既定の状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A>プロパティを<xref:System.Windows.Forms.SizeType.AutoSize>と<xref:System.Windows.Forms.RowStyle.Height%2A>プロパティを 0 にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RowStyle (System.Windows.Forms.SizeType sizeType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.SizeType sizeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RowStyle.#ctor(System.Windows.Forms.SizeType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sizeType" Type="System.Windows.Forms.SizeType" />
+      </Parameters>
+      <Docs>
+        <param name="sizeType">A<see cref="P:System.Windows.Forms.TableLayoutStyle.SizeType" />行がどのようにするかを示すサイズは、そのを含むテーブルに対応します。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.Windows.Forms.RowStyle" />クラス、指定された使用<see cref="T:System.Windows.Forms.SizeType" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.Windows.Forms.RowStyle.Height%2A>プロパティを 0 にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RowStyle (System.Windows.Forms.SizeType sizeType, float height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.SizeType sizeType, float32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RowStyle.#ctor(System.Windows.Forms.SizeType,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sizeType" Type="System.Windows.Forms.SizeType" />
+        <Parameter Name="height" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="sizeType">A<see cref="P:System.Windows.Forms.TableLayoutStyle.SizeType" />行がどのようにするかを示すサイズは、そのを含むテーブルに対応します。</param>
+        <param name="height">適切な高さをピクセル単位または割合で、<see cref="T:System.Windows.Forms.TableLayoutPanel" />に応じて、<c>サイズ</c>です。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.Windows.Forms.RowStyle" />クラス、指定された使用<see cref="T:System.Windows.Forms.SizeType" />と高さの値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `height`に応じて異なる意味でパラメーターを実行する、`sizeType`パラメーター。 詳細については、<xref:System.Windows.Forms.RowStyle.Height%2A> プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="height" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public float Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RowStyle.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または行の高さを設定します。</summary>
+        <value>適切な高さをピクセル単位または割合の行の<see cref="T:System.Windows.Forms.TableLayoutPanel" />に応じて、<see cref="P:System.Windows.Forms.TableLayoutStyle.SizeType" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RowStyle.Height%2A>に応じて異なる意味でプロパティを実行する、<xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A>プロパティです。 次の表の可能性のある意味<xref:System.Windows.Forms.RowStyle.Height%2A>です。  
+  
+|`SizeType` の値|`Height`解釈|  
+|----------------------|-----------------------------|  
+|<xref:System.Windows.Forms.SizeType.Absolute>|(小数部分は無視されます) をピクセル単位で優先される行の高さ。|  
+|<xref:System.Windows.Forms.SizeType.AutoSize>|該当なし:、<xref:System.Windows.Forms.RowStyle.Height%2A>プロパティは無視されます。|  
+|<xref:System.Windows.Forms.SizeType.Percent>|親テーブルの割合として優先される行の高さ。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値は、このプロパティを設定するときに 0 より小さい値です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

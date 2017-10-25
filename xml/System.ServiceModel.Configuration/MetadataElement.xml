@@ -1,0 +1,152 @@
+<Type Name="MetadataElement" FullName="System.ServiceModel.Configuration.MetadataElement">
+  <TypeSignature Language="C#" Value="public sealed class MetadataElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MetadataElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.MetadataElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サービス メタデータの処理方法を指定する構成要素を表します。 このクラスは継承できません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.MetadataElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.MetadataElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadPolicyImportExtensions">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.IPolicyImportExtension&gt; LoadPolicyImportExtensions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.IPolicyImportExtension&gt; LoadPolicyImportExtensions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.MetadataElement.LoadPolicyImportExtensions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.IPolicyImportExtension&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを読み込みます<see cref="T:System.ServiceModel.Description.IPolicyImportExtension" />バインディングに関するカスタム ポリシー アサーションのインポートに使用されるオブジェクト。</summary>
+        <returns>バインディングに関するカスタム ポリシー アサーションのインポートに使用される <see cref="T:System.ServiceModel.Description.IPolicyImportExtension" /> オブジェクトのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadWsdlImportExtensions">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.IWsdlImportExtension&gt; LoadWsdlImportExtensions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.IWsdlImportExtension&gt; LoadWsdlImportExtensions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.MetadataElement.LoadWsdlImportExtensions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.IWsdlImportExtension&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを読み込みます<see cref="T:System.ServiceModel.Description.IWsdlImportExtension" />カスタム WSDL 情報のインポートに使用されるオブジェクト。</summary>
+        <returns>カスタムの WSDL 情報のインポートに使用される <see cref="T:System.ServiceModel.Description.IWsdlImportExtension" /> オブジェクトのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PolicyImporters">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.PolicyImporterElementCollection PolicyImporters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.PolicyImporterElementCollection PolicyImporters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MetadataElement.PolicyImporters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("policyImporters")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.PolicyImporterElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングに関するカスタム ポリシー アサーションのインポートを指定するポリシー インポーターのコレクションを取得します。</summary>
+        <value>バインディングに関するカスタム ポリシー アサーションのインポートを指定する <see cref="T:System.ServiceModel.Configuration.PolicyImporterElementCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポリシー インポーターは、バインディング機能についてのカスタム ポリシー アサーションの検索、およびアサーションで必要となる機能を実装するカスタム バインディング要素の結び付けに使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MetadataElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WsdlImporters">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.WsdlImporterElementCollection WsdlImporters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.WsdlImporterElementCollection WsdlImporters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MetadataElement.WsdlImporters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("wsdlImporters")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.WsdlImporterElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-Policy が添付された Web サービス記述言語 (WSDL) 1.1 メタデータをインポートする WSDL インポーターのコレクションを取得します。</summary>
+        <value>Web サービス記述言語 (WSDL) 1.1 メタデータを Ws-policy の添付ファイルをインポートする WSDL インポーターのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlImporter> は、メタデータのインポートに使用され、さらにその情報をコントラクトおよびエンドポイント情報を表すさまざまなクラスに変換するためにも使用されます。  
+  
+ コントラクトおよびエンドポイントの情報やプロパティを選択的にインポートできます。これらは、任意のインポート エラーを公開し、インポートおよび変換プロセスに関連する型情報を受け取ります。 また、任意のポリシー ドキュメント、WSDL ドキュメント、WSDL 拡張、および XML スキーマ ドキュメントにアクセスするためのバインディング情報およびプロパティのインポートもサポートします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

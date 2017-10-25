@@ -1,0 +1,161 @@
+<Type Name="DesignerHierarchicalDataSourceView" FullName="System.Web.UI.Design.DesignerHierarchicalDataSourceView">
+  <TypeSignature Language="C#" Value="public abstract class DesignerHierarchicalDataSourceView" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DesignerHierarchicalDataSourceView extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.DesignerHierarchicalDataSourceView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>階層データに基づくデータ ビューのデザイナーの基底クラスを提供します。 このクラスは継承する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerHierarchicalDataSourceView>クラスは、カスタム データ ソース デザイナーの開発者によって使用されます。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>このクラスは XML データなどの階層データの独自のカスタム データ ソース コントロールをサポートするクラスのスイートの一部として継承します。 上書き、<see cref="P:System.Web.UI.Design.DesignerHierarchicalDataSourceView.Schema" />から派生したカスタム オブジェクトを提供するプロパティ、<see cref="T:System.Web.UI.Design.IDataSourceSchema" />クラスです。 上書き、<see cref="M:System.Web.UI.Design.DesignerHierarchicalDataSourceView.GetDesignTimeData(System.Boolean@)" />コントロール デザイナーにデザイン時にサンプル データを提供するメソッド。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DesignerHierarchicalDataSourceView (System.Web.UI.Design.IHierarchicalDataSourceDesigner owner, string viewPath);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.IHierarchicalDataSourceDesigner owner, string viewPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerHierarchicalDataSourceView.#ctor(System.Web.UI.Design.IHierarchicalDataSourceDesigner,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.Design.IHierarchicalDataSourceDesigner" />
+        <Parameter Name="viewPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />関連付けられたコントロールのデザイナーはします。</param>
+        <param name="viewPath">ビューに使用するデータ ブロックに一意のパス。</param>
+        <summary>
+          <see cref="T:System.Web.UI.Design.DesignerHierarchicalDataSourceView" /> クラスの新しいインスタンスを開始します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="owner" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="viewPath" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceDesigner">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.IHierarchicalDataSourceDesigner DataSourceDesigner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.IHierarchicalDataSourceDesigner DataSourceDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerHierarchicalDataSourceView.DataSourceDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IHierarchicalDataSourceDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたデザイナーを取得します。</summary>
+        <value>親 <see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeData">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.IHierarchicalEnumerable GetDesignTimeData (out bool isSampleData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.IHierarchicalEnumerable GetDesignTimeData([out] bool&amp; isSampleData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerHierarchicalDataSourceView.GetDesignTimeData(System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchicalEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isSampleData" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="isSampleData">
+          <see langword="true" />返されるデータを示すためには、サンプル データです。<see langword="false" />返されたデータがライブ データであることを示します。</param>
+        <summary>関連付けられているデータ ソース コントロールのスキーマと一致するデザイン時データを生成し、データがサンプルと実際のデータのどちらであるかを示す値を返します。</summary>
+        <returns>この実装は常に返します<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerHierarchicalDataSourceView.GetDesignTimeData%2A>メソッドは、関連するデータ バインド コントロールのデザイナーで使用するため、デザイン時バージョンのデータを提供する必要があります。  
+  
+ いない予想でもなく、デザイナーがデザイン時に実際のデータ アクセスを実行することをお勧めします。 代わりに、デザイナーでは、データ ソースのスキーマと一致するサンプル データを作成する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerHierarchicalDataSourceView.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューに表示されるデータのブロックへのパスを取得します。</summary>
+        <value>作成するときに指定されたパス、<see cref="T:System.Web.UI.Design.DesignerHierarchicalDataSourceView" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の性質、<xref:System.Web.UI.Design.DesignerHierarchicalDataSourceView.Path%2A>プロパティは、データの性質によって決まります。 、XML データの、XPath クエリになりますが、その他の種類のデータに URL またはいくつか他の一意な識別パス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.Design.IDataSourceSchema Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.IDataSourceSchema Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerHierarchicalDataSourceView.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IDataSourceSchema</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールのデータ ソース ビューを記述するスキーマを取得します。</summary>
+        <value>この実装は常に返します<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerHierarchicalDataSourceView.Schema%2A>プロパティにより、データ バインド コントロールのコントロール デザイナーのデータ バインディングの選択されているデザイン時のデータ ソース ビューに基づくインテリジェントな選択肢を提供します。  
+  
+   
+  
+## Examples  
+ 使用しての完全な例については、<xref:System.Web.UI.Design.DesignerHierarchicalDataSourceView.Schema%2A>ビューとスキーマおよびデータ ソース デザイナーでは、メソッドを参照してください<xref:System.Web.UI.Design.DataSourceDesigner>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

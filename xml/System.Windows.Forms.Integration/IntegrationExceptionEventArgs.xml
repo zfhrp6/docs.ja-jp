@@ -1,0 +1,95 @@
+<Type Name="IntegrationExceptionEventArgs" FullName="System.Windows.Forms.Integration.IntegrationExceptionEventArgs">
+  <TypeSignature Language="C#" Value="public class IntegrationExceptionEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IntegrationExceptionEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Integration.IntegrationExceptionEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsFormsIntegration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>基本クラスを提供<see cref="T:System.EventArgs" />クラスのサポートを必要に応じて例外の発生します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Integration.IntegrationExceptionEventArgs>クラスが発生する前に、例外をプレビューするユーザーを有効にします。  
+  
+ イベント ハンドラー内の値を設定、<xref:System.Windows.Forms.Integration.IntegrationExceptionEventArgs.ThrowException%2A>プロパティを`true`例外を発生させるかを示すためにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IntegrationExceptionEventArgs (bool throwException, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool throwException, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Integration.IntegrationExceptionEventArgs.#ctor(System.Boolean,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="throwException" Type="System.Boolean" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="throwException">
+          <see langword="true" />発生させる、<see cref="T:System.Exception" />によって指定された<c>例外</c>、それ以外の<see langword="false" />します。</param>
+        <param name="exception"><see cref="T:System.Exception" />を発生させます。</param>
+        <summary><see cref="T:System.Windows.Forms.Integration.IntegrationExceptionEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="exception" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.IntegrationExceptionEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Exception" /> に関連付けられている <see cref="T:System.Windows.Forms.Integration.IntegrationExceptionEventArgs" /> を取得します。</summary>
+        <value>この <see cref="T:System.Exception" /> に関連付けられている <see cref="T:System.Windows.Forms.Integration.IntegrationExceptionEventArgs" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowException">
+      <MemberSignature Language="C#" Value="public bool ThrowException { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThrowException" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Integration.IntegrationExceptionEventArgs.ThrowException" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsFormsIntegration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または生成するかどうかを示す値を設定、<see cref="T:System.Exception" />によって指定された、<see cref="P:System.Windows.Forms.Integration.IntegrationExceptionEventArgs.Exception" />プロパティです。</summary>
+        <value>
+          <see langword="true" />場合<see cref="P:System.Windows.Forms.Integration.IntegrationExceptionEventArgs.Exception" />浮き出し、それ以外になる<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラー内の値を設定、<xref:System.Windows.Forms.Integration.IntegrationExceptionEventArgs.ThrowException%2A>プロパティを`true`例外を発生させるかを示すためにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

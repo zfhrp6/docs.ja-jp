@@ -1,0 +1,65 @@
+<Type Name="AutomationEvent" FullName="System.Windows.Automation.AutomationEvent">
+  <TypeSignature Language="C#" Value="public class AutomationEvent : System.Windows.Automation.AutomationIdentifier" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AutomationEvent extends System.Windows.Automation.AutomationIdentifier" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.AutomationEvent" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationTypes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.AutomationIdentifier</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>UI オートメーション イベントを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらの型の識別子内にあるフィールドとして; のイベントを識別するさまざまなクラスたとえば、<xref:System.Windows.Automation.InvokePattern.InvokedEvent>です。 見つかったイベントの UI オートメーション クライアントに渡される引数。  
+  
+ カスタム イベントを作成することはできません。  
+  
+   
+  
+## Examples  
+ 次の例のイベント ハンドラーで、<xref:System.Windows.Automation.AutomationEvent>と引数を比較する、イベント、 <xref:System.Windows.Automation.AutomationEvent> Invoked イベントを識別します。  
+  
+ [!code-csharp[UIAClient_snip#173](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#173)]
+ [!code-vb[UIAClient_snip#173](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#173)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LookupById">
+      <MemberSignature Language="C#" Value="public static System.Windows.Automation.AutomationEvent LookupById (int id);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Automation.AutomationEvent LookupById(int32 id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.AutomationEvent.LookupById(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="id">イベントの識別子。</param>
+        <summary>取得、<see cref="T:System.Windows.Automation.AutomationEvent" />指定した数値識別子をカプセル化します。</summary>
+        <returns><see cref="T:System.Windows.Automation.AutomationEvent" />指定した数値識別子をカプセル化します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを識別する、通常、<xref:System.Windows.Automation.AutomationEvent>オブジェクト。 このメソッドは、ときにのみこのようなオブジェクトを作成する UI オートメーション プロバイダーで使用できます数値識別子 (、<xref:System.Windows.Automation.AutomationIdentifier.Id%2A>から継承<xref:System.Windows.Automation.AutomationIdentifier>) 呼ばれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

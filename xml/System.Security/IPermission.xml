@@ -1,0 +1,319 @@
+<Type Name="IPermission" FullName="System.Security.IPermission">
+  <TypeSignature Language="C#" Value="public interface IPermission : System.Security.ISecurityEncodable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPermission implements class System.Security.ISecurityEncodable" />
+  <TypeSignature Language="DocId" Value="T:System.Security.IPermission" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.ISecurityEncodable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクセス許可の種類によって実装されるメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通言語ランタイムでのアクセス許可は、指定したリソースのセキュリティを設定できる操作のセットを記述するオブジェクトです。 権限オブジェクトには、操作またはセキュリティ制御の対象となるアクセスについて説明します。アクセスまたは操作を実行する権限は表しません。 アクセス許可は、次のようにアプリケーション コードと .NET Framework セキュリティ システムの両方で使用されます。  
+  
+-   コードでは、実行するために必要なアクセス許可を要求します。  
+  
+-   システムのセキュリティ ポリシーは、コードを実行するために権限を付与します。  
+  
+-   コードでは、コードの呼び出しのアクセス許可があることを要求します。  
+  
+-   コードでは、アサート/拒否/許可のみを使用して、セキュリティのスタックをオーバーライドします。  
+  
+> [!NOTE]
+>  新しいアクセス許可を記述する場合は、クラス内でこのインターフェイスを実装する必要があります。  
+  
+> [!IMPORTANT]
+>  アクセス許可は、複数のスレッドによってアクセスできます。 このインターフェイスを実装するときを保証する必要があります、 <xref:System.Security.IPermission.IsSubsetOf%2A>、 <xref:System.Security.IPermission.Intersect%2A>、 <xref:System.Security.IPermission.Union%2A>、および<xref:System.Security.IPermission.Copy%2A>メソッドの実装は、スレッド セーフです。  
+  
+   
+  
+## Examples  
+ この例では、コード アクセス セキュリティを使用するためのアクセス許可クラスを定義する方法を示します。 すべての必要なアクセス許可のインターフェイスが実装されます。  
+  
+ [!code-cpp[Permission#1](~/samples/snippets/cpp/VS_Snippets_CLR/Permission/cpp/Permission.cpp#1)]
+ [!code-csharp[Permission#1](~/samples/snippets/csharp/VS_Snippets_CLR/Permission/CS/Permission.cs#1)]
+ [!code-vb[Permission#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Permission/vb/permission.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.IPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可の同一のコピーを作成して返します。</summary>
+        <returns>現在のアクセス許可のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可のコピーは、元のアクセス許可としてリソースに対して同じアクセス権を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、実装することを示しています、<xref:System.Security.IPermission.Copy%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.IPermission>クラスです。  
+  
+ [!code-cpp[Permission#4](~/samples/snippets/cpp/VS_Snippets_CLR/Permission/cpp/Permission.cpp#4)]
+ [!code-csharp[Permission#4](~/samples/snippets/csharp/VS_Snippets_CLR/Permission/CS/Permission.cs#4)]
+ [!code-vb[Permission#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Permission/vb/permission.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Demand">
+      <MemberSignature Language="C#" Value="public void Demand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Demand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.IPermission.Demand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スロー、<see cref="T:System.Security.SecurityException" />セキュリティ要件が満たされない場合、実行時にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは呼び出し元がリソースにアクセスする権限を持っていることを確認する、セキュリティで保護されたライブラリで通常使用されます。 たとえば、安全なクラス ライブラリ内のファイル クラスを呼び出します<xref:System.Security.CodeAccessPermission.Demand%2A>、必要なの<xref:System.Security.Permissions.FileIOPermission>呼び出し元によって要求されたファイルの操作を実行する前にします。  
+  
+ このインターフェイス メソッドを実装するクラスのほとんどは、完全なスタック ウォークを実行することによってセキュリティ基準を満たす、スタック ウォークは必ずしも行われません。 スタック ウォークを実行しない実装の例は<xref:System.Security.Permissions.PrincipalPermission.Demand%2A?displayProperty=nameWithType>します。  
+  
+ スタック ウォークが実行されると、このメソッドを呼び出すコードのアクセス許可はチェックされません。チェックは、そのコードの直前の呼び出し元から開始され、スタックの上位に進みます。 通常、呼び出し履歴はコール スタックに呼び出し履歴の上位にあるメソッドが下位にあるメソッドを呼び出すようにダウン、成長として表されます。 <xref:System.Security.CodeAccessPermission.Demand%2A>場合にのみ成功ありません<xref:System.Security.SecurityException>が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.IPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可との共通部分のあるアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定したアクセス許可の積集合であるアクセス許可を作成して返します。</summary>
+        <returns>現在のアクセス許可と指定したアクセス許可の共通部分を表す新しいアクセス許可。 この新しいアクセス許可は<see langword="null" />積集合が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可の積集合は、一連の両方に共通する操作を説明する権限です。 元の両方の権限を通過する要求だけでは、積集合を渡されます。  
+  
+ 次のステートメントが true のすべての実装に必要な<xref:System.Security.IPermission.Intersect%2A>メソッドです。 `X`および`Y`表す<xref:System.Security.IPermission>れていないオブジェクト参照`null`です。  
+  
+-   `X`.Intersect (`X`) と等しい値を返します`X`です。  
+  
+-   `X`.Intersect (`Y`) と同じ値を返します`Y`です。Intersect (`X`)。  
+  
+-   `X`.Intersect (`null`) を返します`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、実装することを示しています、<xref:System.Security.IPermission.Intersect%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.IPermission>クラスです。  
+  
+ [!code-cpp[Permission#2](~/samples/snippets/cpp/VS_Snippets_CLR/Permission/cpp/Permission.cpp#2)]
+ [!code-csharp[Permission#2](~/samples/snippets/csharp/VS_Snippets_CLR/Permission/CS/Permission.cs#2)]
+ [!code-vb[Permission#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Permission/vb/permission.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />し、現在のアクセス許可と同じクラスのインスタンスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.IPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセット リレーションシップをテストするアクセス許可。 このアクセス許可は、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可が、指定したアクセス許可のサブセットであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が指定した権限のサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、現在のアクセス許可を指定した権限によって完全に含まれる一連の操作を指定する場合、指定したアクセス許可のサブセットです。 たとえば、C:\example.txt へのアクセスを表すアクセス許可は、c: へのアクセスを表すためのアクセス許可のサブセット\\です。 このメソッドが戻る場合`true`、現在のアクセス許可は、アクセスは保護されたリソースには、指定した権限を表します。  
+  
+ 次のステートメントが true のすべての実装に必要な<xref:System.Security.IPermission.IsSubsetOf%2A>メソッドです。 `X`、 `Y`、および`Z`表す<xref:System.Security.IPermission>れていないオブジェクト`null`です。  
+  
+-   `X`.IsSubsetOf (`X`) を返します`true`です。  
+  
+-   `X`.IsSubsetOf (`Y`) と同じ値を返します`Y`です。IsSubsetOf (`X`) 場合にのみ`X`と`Y`権限のセットは変わりません。  
+  
+-   If `X`.IsSubsetOf (`Y`) および`Y`です。IsSubsetOf (`Z`) 両方を返す`true`、`X`です。IsSubsetOf (`Z`) を返します`true`です。  
+  
+ 場合`X`、空を表す<xref:System.Security.IPermission>のアクセス許可の状態を持つオブジェクト<xref:System.Security.Permissions.PermissionState.None>と`Y`を表す、<xref:System.Security.IPermission>オブジェクトを`null`、`X`です。IsSubsetOf (`Y`) を返します`true`です。 場合`Z`は空のアクセス許可、複合設定操作でも`X`します。Union(Z) です。IsSubsetOf(Y) も返します`true`2 つの空のアクセス許可の和集合が空のアクセス許可であるためです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、実装することを示しています、<xref:System.Security.IPermission.IsSubsetOf%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.IPermission>クラスです。  
+  
+ [!code-cpp[Permission#3](~/samples/snippets/cpp/VS_Snippets_CLR/Permission/cpp/Permission.cpp#3)]
+ [!code-csharp[Permission#3](~/samples/snippets/csharp/VS_Snippets_CLR/Permission/CS/Permission.cs#3)]
+ [!code-vb[Permission#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/Permission/vb/permission.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.IPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可と結合するアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定されたアクセス許可の和集合であるアクセス許可を作成します。</summary>
+        <returns>現在のアクセス許可と指定されたアクセス許可の和集合を表す新しいアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの結果<xref:System.Security.IPermission.Union%2A>は、現在のアクセス許可と、指定した権限の両方で表されるすべての操作を表す権限。 いずれかのアクセス許可に適合する要求は、その共用体を渡します。  
+  
+ 次のステートメントが true のすべての実装に必要な<xref:System.Security.IPermission.Union%2A>メソッドです。 `X`および`Y`表す<xref:System.Security.IPermission>れていないオブジェクト`null`です。  
+  
+-   `X`.共用体 (`X`) と同じ値を持つオブジェクトを返します`X`です。  
+  
+-   `X`.共用体 (`Y`) によって返されるオブジェクトと同じ値を持つオブジェクトを返します`Y`です。共用体 (`X`)。  
+  
+-   `X`.共用体 (`null`) と同じ値を持つオブジェクトを返します`X`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、実装することを示しています、<xref:System.Security.IPermission.Union%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.IPermission>クラスです。  
+  
+ [!code-cpp[Permission#5](~/samples/snippets/cpp/VS_Snippets_CLR/Permission/cpp/Permission.cpp#5)]
+ [!code-csharp[Permission#5](~/samples/snippets/csharp/VS_Snippets_CLR/Permission/CS/Permission.cs#5)]
+ [!code-vb[Permission#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/Permission/vb/permission.vb#5)]  
+  
+-  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

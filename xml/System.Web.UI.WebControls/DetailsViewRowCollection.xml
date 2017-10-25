@@ -1,0 +1,342 @@
+<Type Name="DetailsViewRowCollection" FullName="System.Web.UI.WebControls.DetailsViewRowCollection">
+  <TypeSignature Language="C#" Value="public class DetailsViewRowCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DetailsViewRowCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DetailsViewRowCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.DetailsView" /> コントロールに含まれる <see cref="T:System.Web.UI.WebControls.DetailsViewRow" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsViewRowCollection>を格納および管理のコレクション クラスが使用される<xref:System.Web.UI.WebControls.DetailsViewRow>内のオブジェクト、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 内の行ごと、<xref:System.Web.UI.WebControls.DetailsView>コントロールがによって表される、<xref:System.Web.UI.WebControls.DetailsViewRow>オブジェクト。 <xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>クラスをその<xref:System.Web.UI.WebControls.DetailsView.Rows%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.DetailsView.Rows%2A>プロパティには、データ行のみが含まれています。 ヘッダー行、フッター行、最上位のページャー行、および下のページャー行にアクセスするには、使用、 <xref:System.Web.UI.WebControls.DetailsView.HeaderRow%2A>、 <xref:System.Web.UI.WebControls.DetailsView.FooterRow%2A>、 <xref:System.Web.UI.WebControls.DetailsView.TopPagerRow%2A>、および<xref:System.Web.UI.WebControls.DetailsView.BottomPagerRow%2A>プロパティ、それぞれします。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewRowCollection>クラスは、コレクション内の項目にアクセスするいくつかの方法をサポートします。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.Item%2A>を直接取得するためのインデクサー、<xref:System.Web.UI.WebControls.DetailsViewRow>コレクション内の特定の 0 から始まるインデックス位置からのオブジェクト。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.GetEnumerator%2A>コレクションを反復処理に使用できる列挙子を取得します。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.CopyTo%2A>メソッドをコレクション内の項目にアクセスするために使用する配列にコレクションの項目をコピーします。  
+  
+ コレクション内の項目の合計数を調べるを使用して、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.Count%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を反復処理する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewRow>内のオブジェクト、<xref:System.Web.UI.WebControls.DetailsView.Rows%2A>のコレクション、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 各行の値は ページに表示されます。  
+  
+ [!code-aspx-csharp[DetailsViewRowCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewRowCollection/CS/detailsviewrowcollectioncs.aspx#1)]
+ [!code-aspx-vb[DetailsViewRowCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewRowCollection/VB/detailsviewrowcollectionvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DetailsViewRowCollection (System.Collections.ArrayList rows);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ArrayList rows) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DetailsViewRowCollection.#ctor(System.Collections.ArrayList)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rows" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="rows"><see cref="T:System.Collections.ArrayList" />を格納している、<see cref="T:System.Web.UI.WebControls.DetailsViewRow" />コレクションの初期化に使用するオブジェクト。</param>
+        <summary>指定した <see cref="T:System.Collections.ArrayList" /> オブジェクトを使用して、<see cref="T:System.Web.UI.WebControls.DetailsViewRowCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>クラス<xref:System.Collections.ArrayList>オブジェクト。 <xref:System.Collections.ArrayList>オブジェクトが含まれています、<xref:System.Web.UI.WebControls.DetailsViewRow>オブジェクト コレクションを設定するときに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.DetailsViewRow[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.DetailsViewRow[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DetailsViewRowCollection.CopyTo(System.Web.UI.WebControls.DetailsViewRow[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.DetailsViewRow[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Web.UI.WebControls.DetailsViewRowCollection" /> からコピーされた項目を受け取る、0 から始まる <see cref="T:System.Array" />。</param>
+        <param name="index">指定した最初のインデックス<see cref="T:System.Array" />内容のコピーを受信します。</param>
+        <summary>この <see cref="T:System.Web.UI.WebControls.DetailsViewRowCollection" /> オブジェクトからすべての項目を、指定した <see cref="T:System.Array" /> オブジェクトに、<see cref="T:System.Array" /> 内の指定したインデックス位置からコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッド内の項目のコピーを使用して、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>オブジェクトを指定したインデックスを開始位置を指定した配列にします。 配列は、コレクション内の項目にアクセスし、使用できます。  
+  
+> [!NOTE]
+>  0 から始まる配列を使用する必要があります、`array`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.CopyTo%2A>に内の項目をコピーする方法、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>オブジェクトを配列にします。 配列が反復処理され、ページに各行の値が表示されます。  
+  
+ [!code-aspx-csharp[DetailsViewRowCollectionCopyTo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewRowCollectionCopyTo/CS/detailsviewrowcollectioncopytocs.aspx#1)]
+ [!code-aspx-vb[DetailsViewRowCollectionCopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewRowCollectionCopyTo/VB/detailsviewrowcollectioncopytovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewRowCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目の数を取得、<see cref="T:System.Web.UI.WebControls.DetailsViewRowCollection" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DetailsViewRowCollection" /> 内の項目数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.Count%2A>プロパティ コレクション内の項目数を決定します。 <xref:System.Web.UI.WebControls.DetailsViewRowCollection.Count%2A>プロパティは、バインドの上限を決定するコレクションを反復処理する場合によく使用します。 <xref:System.Web.UI.WebControls.DetailsViewRowCollection.Count%2A>も通常、プロパティはコレクションが空かどうかを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.Count%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>オブジェクトにはコレクションの反復処理する前にすべての項目が含まれています。  
+  
+ [!code-aspx-csharp[DetailsViewRowCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewRowCollection/CS/detailsviewrowcollectioncs.aspx#1)]
+ [!code-aspx-vb[DetailsViewRowCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewRowCollection/VB/detailsviewrowcollectionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DetailsViewRowCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてを含む列挙子を返します<see cref="T:System.Web.UI.WebControls.DetailsViewRow" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.DetailsViewRowCollection" />オブジェクト。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />-すべてを含むオブジェクトを実装する<see cref="T:System.Web.UI.WebControls.DetailsViewRow" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.DetailsViewRowCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用できる反復直線的内の各項目にアクセスする列挙子を取得、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>オブジェクト。 列挙子の現在位置にあるアイテムにアクセスするには、<xref:System.Collections.IEnumerator.Current%2A>プロパティです。 使用して、<xref:System.Collections.IEnumerator.MoveNext%2A>コレクション内の次の項目に移動します。 列挙子を初期位置に移動するには、使用、<xref:System.Collections.IEnumerator.Reset%2A>メソッドです。  
+  
+> [!NOTE]
+>  ときに最初に列挙子を取得または使用する、<xref:System.Collections.IEnumerator.Reset%2A>列挙子をコレクションの最初の項目に移動するメソッドを呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A>メソッドです。 によって表される項目のそれ以外の場合、<xref:System.Collections.IEnumerator.Current%2A>プロパティが定義されていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.GetEnumerator%2A>コレクションから項目を格納する列挙子を取得します。 列挙子が反復処理され、ページに各行の値が表示されます。  
+  
+ [!code-aspx-csharp[DetailsViewRowCollectionGetEnumerator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewRowCollectionGetEnumerator/CS/detailsviewrowcollectiongetenumeratorcs.aspx#1)]
+ [!code-aspx-vb[DetailsViewRowCollectionGetEnumerator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewRowCollectionGetEnumerator/VB/detailsviewrowcollectiongetenumeratorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewRowCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかの行、<see cref="T:System.Web.UI.WebControls.DetailsViewRowCollection" />オブジェクトを変更できます。</summary>
+        <value>常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.IsReadOnly%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.DetailsViewRow>内のオブジェクト、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>オブジェクトを変更できます。  
+  
+> [!NOTE]
+>  このプロパティは常にオーバーライドされて`false`、ことを示す、<xref:System.Web.UI.WebControls.DetailsViewRow>内のオブジェクト、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>常にオブジェクトを変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewRowCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.DetailsViewRowCollection" />オブジェクトが同期されている (スレッド セーフである)。</summary>
+        <value>常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.IsSynchronized%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>オブジェクトはスレッド セーフであります。  
+  
+> [!NOTE]
+>  このプロパティは常にオーバーライドされて`false`ことを示す、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>オブジェクトはスレッド セーフではありません。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A>のプロパティ、<xref:System.Collections.ICollection>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DetailsViewRow this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DetailsViewRow Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewRowCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DetailsViewRow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.UI.WebControls.DetailsViewRow" />をコレクションから取得します。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.DetailsViewRow" />コレクション内の指定したインデックス位置からのオブジェクト。</summary>
+        <value>コレクション内の指定したインデックス位置の <see cref="T:System.Web.UI.WebControls.DetailsViewRow" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーを使用して取得する、<xref:System.Web.UI.WebControls.DetailsViewRow>配列表記を使用して、指定されたインデックスでコレクションからのオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、インデクサーを使用して取得する方法を示します、<xref:System.Web.UI.WebControls.DetailsViewRow>コレクション内の特定のインデックス位置からのオブジェクト。  
+  
+ [!code-aspx-csharp[DetailsViewRowCollectionIndexer#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewRowCollectionIndexer/CS/detailsviewrowcollectionindexercs.aspx#1)]
+ [!code-aspx-vb[DetailsViewRowCollectionIndexer#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewRowCollectionIndexer/VB/detailsviewrowcollectionindexervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewRowCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用するオブジェクトを取得します。</summary>
+        <value>A<see cref="T:System.Object" />コレクションへのアクセスを同期するために使用できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.SyncRoot%2A>コレクションへのアクセスを同期するために使用できるオブジェクトを取得するプロパティです。 この実装で返されるオブジェクトは、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>オブジェクト自体です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A>のプロパティ、<xref:System.Collections.ICollection>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DetailsViewRowCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Web.UI.WebControls.DetailsViewRowCollection" /> からコピーされた項目を受け取る、0 から始まる <see cref="T:System.Array" />。</param>
+        <param name="index">指定した最初のインデックス<see cref="T:System.Array" />内容のコピーを受信します。</param>
+        <summary>この <see cref="T:System.Web.UI.WebControls.DetailsViewRowCollection" /> オブジェクトからすべての項目を、指定した <see cref="T:System.Array" /> オブジェクトに、<see cref="T:System.Array" /> 内の指定したインデックス位置からコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装、<xref:System.Web.UI.WebControls.DetailsViewRowCollection.System%23Collections%23ICollection%23CopyTo%28System.Array%2CSystem.Int32%29>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>クラス内の項目をコピーする、<xref:System.Web.UI.WebControls.DetailsViewRowCollection>オブジェクトを指定した<xref:System.Array>オブジェクト、指定したインデックスから始まります。 <xref:System.Array>オブジェクトは、コレクション内の項目にアクセスし、使用できます。  
+  
+> [!NOTE]
+>  0 から始まるが使用する必要があります<xref:System.Array>オブジェクトに対して、`array`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

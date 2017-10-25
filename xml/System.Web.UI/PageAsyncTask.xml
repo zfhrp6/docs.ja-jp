@@ -1,0 +1,351 @@
+<Type Name="PageAsyncTask" FullName="System.Web.UI.PageAsyncTask">
+  <TypeSignature Language="C#" Value="public sealed class PageAsyncTask" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PageAsyncTask extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.PageAsyncTask" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ページに登録されている非同期タスクについてを説明します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET version 2.0 を使用すると、ページに複数のタスクを登録し、ページを表示する前に非同期的に実行できます。 タスクが、低速な処理は、他のプロセスが実行中に占有するしたくない場合に、非同期でに実行するを指定する場合があります。 並列または順番に、非同期タスクを実行できます。  
+  
+ A<xref:System.Web.UI.PageAsyncTask>をページにオブジェクトを登録する必要があります、<xref:System.Web.UI.Page.RegisterAsyncTask%2A>メソッドです。 ページ自体は、非同期タスクの実行に非同期に処理する必要はありません。 設定することができます、`Async`属性のいずれかに`true`(示すように、次のコード例) または`false`ページ ディレクティブと非同期のタスクは引き続き処理されます非同期的に。  
+  
+ `<%@ Page Async="true" %>`  
+  
+ ときに、`Async`属性に設定されている`false`、すべての非同期タスクが完了するまで、ページを実行するスレッドはブロックされます。  
+  
+ 非同期タスクを登録する前に、<xref:System.Web.UI.Page.PreRenderComplete>イベントによって実行される自動的にページが既に実行されていない場合。 これらの非同期タスクが後に登録されている、<xref:System.Web.UI.Page.PreRenderComplete>を通じて明示的にイベントを実行する必要があります、<xref:System.Web.UI.Page.ExecuteRegisteredAsyncTasks%2A>メソッドです。 <xref:System.Web.UI.Page.ExecuteRegisteredAsyncTasks%2A>メソッドは前に、のタスクを開始するも使用できます、<xref:System.Web.UI.Page.PreRenderComplete>イベント。 <xref:System.Web.UI.Page.ExecuteRegisteredAsyncTasks%2A>メソッドが実行されていないページに登録されているすべての非同期タスクを実行します。  
+  
+ 既定は 45 秒以内に完了していない場合の非同期タスクがタイムアウトします。 Web.config ファイルまたは page ディレクティブでは、別のタイムアウト値を指定できます。 `<pages>` 、Web.config ファイルのセクションが含まれています、`asyncTimeout`属性が次のようにします。  
+  
+ `<system.web>`  
+  
+ `<pages asyncTimeout="30">`  
+  
+ `</pages>`  
+  
+ `</system.web>`  
+  
+ ページ ディレクティブが含まれています、`AsyncTimeout`属性。  
+  
+ `<%@ Page AsyncTimeout="30" %>`  
+  
+   
+  
+## Examples  
+ 次のコード例では、ページに次の 3 つの非同期タスクを登録し、それらを並列で実行します。 各タスクは、単なるスレッドを 5 秒間スリープ状態を原因となるメソッドを呼び出します。  
+  
+ [!code-aspx-csharp[System.Web.UI.PageAsyncTask#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/CS/page_asynctask.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.PageAsyncTask#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/VB/page_asynctask.aspx#1)]  
+  
+ [!code-csharp[System.Web.UI.PageAsyncTask#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/CS/App_Code/SlowTask.cs#2)]
+ [!code-vb[System.Web.UI.PageAsyncTask#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/VB/App_Code/SlowTask.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageAsyncTask (Func&lt;System.Threading.CancellationToken,System.Threading.Tasks.Task&gt; handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Func`2&lt;valuetype System.Threading.CancellationToken, class System.Threading.Tasks.Task&gt; handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageAsyncTask.#ctor(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Func&lt;System.Threading.CancellationToken,System.Threading.Tasks.Task&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PageAsyncTask" />クラスをキャンセル可能タスクを有効にするイベント ハンドラーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターをラップ、<xref:System.Web.TaskEventHandler>を委任できるように、<xref:System.Web.UI.PageAsyncTask>オブジェクトは非同期コードを統合できます (に基づいて<xref:System.Threading.Tasks.Task>オブジェクト) 既存の ASP.NET Web フォーム ページの非同期機能を使用します。 ASP.NET に通知する、<xref:System.Threading.CancellationToken>に渡されるオブジェクト、<xref:System.Web.TaskEventHandler>に基づくキャンセルの委任、<xref:System.Web.UI.Page.AsyncTimeout%2A>属性の設定、 `@ Page` Web ページのディレクティブ。 ときに、<xref:System.Web.UI.Page.AsyncTimeout%2A>値に達している、<xref:System.Threading.CancellationToken>通知されるオブジェクト。 `CancellationToken`の実装によって呼び出される非同期 Api には、パラメーターを渡す必要があります、<xref:System.Web.TaskEventHandler>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageAsyncTask (Func&lt;System.Threading.Tasks.Task&gt; handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Func`1&lt;class System.Threading.Tasks.Task&gt; handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageAsyncTask.#ctor(System.Func{System.Threading.Tasks.Task})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Func&lt;System.Threading.Tasks.Task&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PageAsyncTask" />クラスを処理するタスクを有効にするイベント ハンドラーを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageAsyncTask (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, System.Web.EndEventHandler timeoutHandler, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, class System.Web.EndEventHandler timeoutHandler, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageAsyncTask.#ctor(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Web.EndEventHandler,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="timeoutHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler">非同期タスクの開始時に呼び出すハンドラー。</param>
+        <param name="endHandler">タイムアウト期間内のタスクが正常に完了したときに呼び出すハンドラー。</param>
+        <param name="timeoutHandler">タイムアウト期間内にタスクが正常に完了しなかった場合に呼び出すハンドラー。</param>
+        <param name="state">タスクの状態を表すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PageAsyncTask" />クラス並列で実行するための既定値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターのセットの実装、<xref:System.Web.UI.PageAsyncTask.ExecuteInParallel%2A>プロパティを`false`のため、非同期タスクは、ページ上の他のタスクと並列で処理されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="beginHandler" />パラメーターまたは<paramref name="endHandler" />パラメーターが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageAsyncTask (System.Web.BeginEventHandler beginHandler, System.Web.EndEventHandler endHandler, System.Web.EndEventHandler timeoutHandler, object state, bool executeInParallel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.BeginEventHandler beginHandler, class System.Web.EndEventHandler endHandler, class System.Web.EndEventHandler timeoutHandler, object state, bool executeInParallel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageAsyncTask.#ctor(System.Web.BeginEventHandler,System.Web.EndEventHandler,System.Web.EndEventHandler,System.Object,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beginHandler" Type="System.Web.BeginEventHandler" />
+        <Parameter Name="endHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="timeoutHandler" Type="System.Web.EndEventHandler" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="executeInParallel" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="beginHandler">非同期タスクの開始時に呼び出すハンドラー。</param>
+        <param name="endHandler">タイムアウト期間内のタスクが正常に完了したときに呼び出すハンドラー。</param>
+        <param name="timeoutHandler">タイムアウト期間内にタスクが正常に完了しなかった場合に呼び出すハンドラー。</param>
+        <param name="state">タスクの状態を表すオブジェクト。</param>
+        <param name="executeInParallel">その他のタスクと並列で処理できるかどうかを示す値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PageAsyncTask" />クラス並列で実行するため、指定された値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの実装では、非同期タスクは、ページ上の他のタスクと並列で処理されるかどうかを設定することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、互いに並列的に処理される 3 つの非同期タスクを作成します。 この例は例については、一部、<xref:System.Web.UI.PageAsyncTask>クラスの概要です。  
+  
+ [!code-csharp[System.Web.UI.PageAsyncTask#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/CS/page_asynctask.aspx#3)]
+ [!code-vb[System.Web.UI.PageAsyncTask#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/VB/page_asynctask.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="beginHandler" />パラメーターまたは<paramref name="endHandler" />パラメーターが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginHandler">
+      <MemberSignature Language="C#" Value="public System.Web.BeginEventHandler BeginHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.BeginEventHandler BeginHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageAsyncTask.BeginHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.BeginEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期タスクの開始時に呼び出すメソッドを取得します。</summary>
+        <value>A<see cref="T:System.Web.BeginEventHandler" />非同期タスクを開始したときに呼び出すメソッドを表すデリゲート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageAsyncTask.BeginHandler%2A>デリゲートは、コンス トラクターで設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ページに次の 3 つの非同期タスクを登録し、それらを並列で実行します。 各タスクは、単なるスレッドを 5 秒間スリープ状態を原因となるメソッドを呼び出します。 A<xref:System.Web.UI.PageAsyncTask.BeginHandler%2A>各タスクのデリゲートを指定します。  
+  
+ [!code-aspx-csharp[System.Web.UI.PageAsyncTask#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/CS/page_asynctask.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.PageAsyncTask#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/VB/page_asynctask.aspx#1)]  
+  
+ [!code-csharp[System.Web.UI.PageAsyncTask#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/CS/App_Code/SlowTask.cs#2)]
+ [!code-vb[System.Web.UI.PageAsyncTask#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/VB/App_Code/SlowTask.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndHandler">
+      <MemberSignature Language="C#" Value="public System.Web.EndEventHandler EndHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.EndEventHandler EndHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageAsyncTask.EndHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.EndEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイムアウト期間内のタスクが正常に完了するときに呼び出すメソッドを取得します。</summary>
+        <value><see cref="T:System.Web.EndEventHandler" />タイムアウト期間内のタスクが正常に完了するときに呼び出すメソッドを表すデリゲート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageAsyncTask.EndHandler%2A>デリゲートは、コンス トラクターで設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ページに次の 3 つの非同期タスクを登録し、それらを並列で実行します。 各タスクは、単なるスレッドを 5 秒間スリープ状態を原因となるメソッドを呼び出します。 <xref:System.Web.UI.PageAsyncTask.EndHandler%2A>各タスクのデリゲートを指定します。  
+  
+ [!code-aspx-csharp[System.Web.UI.PageAsyncTask#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/CS/page_asynctask.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.PageAsyncTask#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/VB/page_asynctask.aspx#1)]  
+  
+ [!code-csharp[System.Web.UI.PageAsyncTask#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/CS/App_Code/SlowTask.cs#2)]
+ [!code-vb[System.Web.UI.PageAsyncTask#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/VB/App_Code/SlowTask.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteInParallel">
+      <MemberSignature Language="C#" Value="public bool ExecuteInParallel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExecuteInParallel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageAsyncTask.ExecuteInParallel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その他のタスクと並列で処理できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、タスクは、他のタスクと並列で処理する必要があります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageAsyncTask.ExecuteInParallel%2A>プロパティは、コンス トラクターで設定します。 ページに複数のタスクを登録するときに、<xref:System.Web.UI.PageAsyncTask.ExecuteInParallel%2A>プロパティに設定されている`true`、それらのタスクが同時に処理し、します。 ただし場合、<xref:System.Web.UI.PageAsyncTask.ExecuteInParallel%2A>プロパティに設定されている`false`、それらのタスクは順番に処理し、します。 などの場合、ページが含まれている 2 つの非同期タスクを完了までに 5 秒かかりました各と<xref:System.Web.UI.PageAsyncTask.ExecuteInParallel%2A>に設定されている`true`、両方のタスクは 5 秒以内に完了します。 場合<xref:System.Web.UI.PageAsyncTask.ExecuteInParallel%2A>に設定されている`false`同じこれらの 2 つのタスク、最初のタスクは 5 秒以内に完了し、2 番目のタスクは、最初のタスクの完了後に 5 秒を完了します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、並列で処理される各セットは、次の 3 つの非同期タスクを定義します。 この例は例については、一部、<xref:System.Web.UI.PageAsyncTask>クラスの概要です。  
+  
+ [!code-csharp[System.Web.UI.PageAsyncTask#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/CS/page_asynctask.aspx#3)]
+ [!code-vb[System.Web.UI.PageAsyncTask#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/VB/page_asynctask.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public object State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object State" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageAsyncTask.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タスクの状態を表すオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Object" />を表すタスクの状態。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageAsyncTask.State%2A>プロパティは、コンス トラクターで設定され、非同期タスクの実行中に変更することはできません。 ページ内の非同期タスクを区別するには、それぞれに一意の文字列値を割り当てることによって<xref:System.Web.UI.PageAsyncTask.State%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、3 つの非同期タスクを作成し、によって、一意の値をその<xref:System.Web.UI.PageAsyncTask.State%2A>プロパティです。 この例は例については、一部、<xref:System.Web.UI.PageAsyncTask>クラスの概要です。  
+  
+ [!code-csharp[System.Web.UI.PageAsyncTask#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/CS/page_asynctask.aspx#3)]
+ [!code-vb[System.Web.UI.PageAsyncTask#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/VB/page_asynctask.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeoutHandler">
+      <MemberSignature Language="C#" Value="public System.Web.EndEventHandler TimeoutHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.EndEventHandler TimeoutHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PageAsyncTask.TimeoutHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.EndEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイムアウト期間内で、タスクが正常に完了しないときに呼び出すメソッドを取得します。</summary>
+        <value><see cref="T:System.Web.EndEventHandler" />タイムアウト期間内で、タスクが正常に完了しないときに呼び出すメソッドを表すデリゲート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageAsyncTask.TimeoutHandler%2A>デリゲートは、コンス トラクターで設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ページに次の 3 つの非同期タスクを登録し、それらを並列で実行します。 各タスクは、単なるスレッドを 5 秒間スリープ状態を原因となるメソッドを呼び出します。 A<xref:System.Web.UI.PageAsyncTask.TimeoutHandler%2A>各タスクのデリゲートを指定します。  
+  
+ [!code-aspx-csharp[System.Web.UI.PageAsyncTask#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/CS/page_asynctask.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.PageAsyncTask#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/VB/page_asynctask.aspx#1)]  
+  
+ [!code-csharp[System.Web.UI.PageAsyncTask#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/CS/App_Code/SlowTask.cs#2)]
+ [!code-vb[System.Web.UI.PageAsyncTask#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PageAsyncTask/VB/App_Code/SlowTask.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

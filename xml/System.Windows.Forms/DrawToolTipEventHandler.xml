@@ -1,0 +1,43 @@
+<Type Name="DrawToolTipEventHandler" FullName="System.Windows.Forms.DrawToolTipEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DrawToolTipEventHandler(object sender, DrawToolTipEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DrawToolTipEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DrawToolTipEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.DrawToolTipEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DrawToolTipEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.ToolTip.Draw" /> の <see cref="T:System.Windows.Forms.ToolTip" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolTip.Draw?displayProperty=nameWithType>によってイベントが発生した、<xref:System.Windows.Forms.ToolTip>場合にクラス、<xref:System.Windows.Forms.ToolTip>が描画されると、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A?displayProperty=nameWithType>プロパティの値が`true`です。 <xref:System.Windows.Forms.DrawToolTipEventArgs>クラスには、描画に必要なすべての情報が含まれています、 <xref:System.Windows.Forms.ToolTip>、ツールヒントのテキストを含む、 <xref:System.Drawing.Rectangle>、および<xref:System.Drawing.Graphics>オブジェクト上の描画を実行する必要があります。 ツールヒントの外観をカスタマイズするを使用して、 <xref:System.Drawing.Rectangle> 、ツールヒントの境界を決定して、<xref:System.Drawing.Graphics>カスタマイズされた描画を実行するオブジェクト。 境界を増やすことができます、<xref:System.Windows.Forms.ToolTip>処理によって表示される前に、<xref:System.Windows.Forms.ToolTip.Popup>イベント。  
+  
+ <xref:System.Windows.Forms.DrawToolTipEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例で描画をカスタマイズする方法、<xref:System.Windows.Forms.ToolTip>です。 例は、作成、<xref:System.Windows.Forms.ToolTip>し、3 つに関連付けます<xref:System.Windows.Forms.Button>上にあるコントロール、<xref:System.Windows.Forms.Form>です。 例のセット、<xref:System.Windows.Forms.ToolTip.OwnerDraw%2A>プロパティを true とハンドル、<xref:System.Windows.Forms.ToolTip.Draw>イベント。 <xref:System.Windows.Forms.ToolTip.Draw> 、イベント ハンドラー、<xref:System.Windows.Forms.ToolTip>がカスタムで描画されるボタンの動作によって異なる、<xref:System.Windows.Forms.ToolTip>によって示されるが表示される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedControl%2A?displayProperty=nameWithType>プロパティです。  
+  
+ [!code-cpp[System.Windows.Forms.ToolTip.OwnerDraw#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ToolTip.OwnerDraw#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ToolTip.OwnerDraw#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolTip.OwnerDraw/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

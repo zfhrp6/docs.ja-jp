@@ -1,0 +1,297 @@
+<Type Name="SoapHeaderCollection" FullName="System.Web.Services.Protocols.SoapHeaderCollection">
+  <TypeSignature Language="C#" Value="public class SoapHeaderCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapHeaderCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapHeaderCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンスのコレクションが含まれています、<see cref="T:System.Web.Services.Protocols.SoapHeader" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SoapHeaderCollection#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderCollection/CPP/SoapHeaderCollection.cpp#1)]
+ [!code-csharp[SoapHeaderCollection#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderCollection/CS/soapheadercollection.cs#1)]
+ [!code-vb[SoapHeaderCollection#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderCollection/VB/soapheadercollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapHeaderCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.Services.Protocols.SoapHeader header);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.Services.Protocols.SoapHeader header) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderCollection.Add(System.Web.Services.Protocols.SoapHeader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="header" Type="System.Web.Services.Protocols.SoapHeader" />
+      </Parameters>
+      <Docs>
+        <param name="header"><see cref="T:System.Web.Services.Protocols.SoapHeader" /> に追加する <see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />。</param>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapHeader" /> を <see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" /> に追加します。</summary>
+        <returns>位置、<see cref="T:System.Web.Services.Protocols.SoapHeader" />挿入されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SoapHeaderCollection#3](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderCollection/CPP/SoapHeaderCollection.cpp#3)]
+ [!code-csharp[SoapHeaderCollection#3](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderCollection/CS/soapheadercollection.cs#3)]
+ [!code-vb[SoapHeaderCollection#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderCollection/VB/soapheadercollection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.Services.Protocols.SoapHeader header);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.Services.Protocols.SoapHeader header) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderCollection.Contains(System.Web.Services.Protocols.SoapHeader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="header" Type="System.Web.Services.Protocols.SoapHeader" />
+      </Parameters>
+      <Docs>
+        <param name="header"><see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" /> 内で検索される <see cref="T:System.Web.Services.Protocols.SoapHeader" />。</param>
+        <summary>決定するかどうか、<see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />特定格納<see cref="T:System.Web.Services.Protocols.SoapHeader" />です。</summary>
+        <returns>
+          <see langword="true" />場合の値、<paramref name="header" />でパラメーターが見つかりませんでした、 <see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SoapHeaderCollection_Contains#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderCollection_Contains/CPP/SoapHeaderCollection_Contains.cpp#1)]
+ [!code-csharp[SoapHeaderCollection_Contains#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderCollection_Contains/CS/soapheadercollection_contains.cs#1)]
+ [!code-vb[SoapHeaderCollection_Contains#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderCollection_Contains/VB/soapheadercollection_contains.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.Services.Protocols.SoapHeader[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.Services.Protocols.SoapHeader[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderCollection.CopyTo(System.Web.Services.Protocols.SoapHeader[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.Services.Protocols.SoapHeader[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">内の 0 から始まるインデックス、<c>配列</c>パラメーターはコピーを開始します。</param>
+        <summary>要素をコピー、<see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />を<see cref="T:System.Array" />の特定のインデックスから始まる、<see cref="T:System.Array" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SoapHeaderCollection#5](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderCollection/CPP/SoapHeaderCollection.cpp#5)]
+ [!code-csharp[SoapHeaderCollection#5](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderCollection/CS/soapheadercollection.cs#5)]
+ [!code-vb[SoapHeaderCollection#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderCollection/VB/soapheadercollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="array" /> パラメーターは多次元です。  
+  
+ または  
+  
+ ソース SoapHeaderCollection 内の要素の数がから利用可能な領域より大きく、<paramref name="index" />コピー先の配列の最後のパラメーターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.Services.Protocols.SoapHeader header);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.Services.Protocols.SoapHeader header) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderCollection.IndexOf(System.Web.Services.Protocols.SoapHeader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="header" Type="System.Web.Services.Protocols.SoapHeader" />
+      </Parameters>
+      <Docs>
+        <param name="header"><see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" /> 内で検索される <see cref="T:System.Web.Services.Protocols.SoapHeader" />。</param>
+        <summary>インデックス番号、<see cref="T:System.Web.Services.Protocols.SoapHeader" />で、<see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />です。</summary>
+        <returns>インデックス、<paramref name="header" />パラメーター場合、に、<see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />以外の場合、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SoapHeaderCollection_Contains#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderCollection_Contains/CPP/SoapHeaderCollection_Contains.cpp#1)]
+ [!code-csharp[SoapHeaderCollection_Contains#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderCollection_Contains/CS/soapheadercollection_contains.cs#1)]
+ [!code-vb[SoapHeaderCollection_Contains#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderCollection_Contains/VB/soapheadercollection_contains.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.Services.Protocols.SoapHeader header);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.Services.Protocols.SoapHeader header) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderCollection.Insert(System.Int32,System.Web.Services.Protocols.SoapHeader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="header" Type="System.Web.Services.Protocols.SoapHeader" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス、<see cref="T:System.Web.Services.Protocols.SoapHeader" />に、<see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />です。</param>
+        <param name="header"><see cref="T:System.Web.Services.Protocols.SoapHeader" />に挿入する、<see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />です。</param>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapHeader" /> を <see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" /> 内の指定されたインデックス位置に挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`index`パラメーター、コレクション内の項目数に等しければ、<xref:System.Web.Services.Protocols.SoapHeader>がコレクションの末尾に追加されます。  
+  
+ <xref:System.Web.Services.Protocols.SoapHeader>要素が新しい要素のため下にカーソルを移動後します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapHeaderCollection#4](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderCollection/CPP/SoapHeaderCollection.cpp#4)]
+ [!code-csharp[SoapHeaderCollection#4](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderCollection/CS/soapheadercollection.cs#4)]
+ [!code-vb[SoapHeaderCollection#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderCollection/VB/soapheadercollection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />指していない有効なインデックスで、<see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapHeader this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Protocols.SoapHeader Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeaderCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する <see cref="T:System.Web.Services.Protocols.SoapHeader" /> の、0 から始まるインデックス番号。</param>
+        <summary>取得または設定、<see cref="T:System.Web.Services.Protocols.SoapHeader" />の指定したインデックスにある、<see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />です。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.Web.Services.Protocols.SoapHeader" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、`myCollection[index]` という構文を使用して、コレクション内の特定の要素にアクセスできます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapHeaderCollection_Contains#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderCollection_Contains/CPP/SoapHeaderCollection_Contains.cpp#1)]
+ [!code-csharp[SoapHeaderCollection_Contains#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderCollection_Contains/CS/soapheadercollection_contains.cs#1)]
+ [!code-vb[SoapHeaderCollection_Contains#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderCollection_Contains/VB/soapheadercollection_contains.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />指していない有効なインデックスで、<see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.Services.Protocols.SoapHeader header);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Services.Protocols.SoapHeader header) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeaderCollection.Remove(System.Web.Services.Protocols.SoapHeader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="header" Type="System.Web.Services.Protocols.SoapHeader" />
+      </Parameters>
+      <Docs>
+        <param name="header"><see cref="T:System.Web.Services.Protocols.SoapHeader" /> から削除する <see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" />。</param>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapHeader" /> 内で最初に見つかった特定の <see cref="T:System.Web.Services.Protocols.SoapHeaderCollection" /> を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapHeader> 、削除された後にある要素<xref:System.Web.Services.Protocols.SoapHeader>繰りを上へ移動します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapHeaderCollection_Contains#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeaderCollection_Contains/CPP/SoapHeaderCollection_Contains.cpp#1)]
+ [!code-csharp[SoapHeaderCollection_Contains#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeaderCollection_Contains/CS/soapheadercollection_contains.cs#1)]
+ [!code-vb[SoapHeaderCollection_Contains#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeaderCollection_Contains/VB/soapheadercollection_contains.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

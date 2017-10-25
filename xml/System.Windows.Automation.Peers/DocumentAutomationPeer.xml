@@ -1,0 +1,228 @@
+<Type Name="DocumentAutomationPeer" FullName="System.Windows.Automation.Peers.DocumentAutomationPeer">
+  <TypeSignature Language="C#" Value="public class DocumentAutomationPeer : System.Windows.Automation.Peers.ContentTextAutomationPeer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DocumentAutomationPeer extends System.Windows.Automation.Peers.ContentTextAutomationPeer" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Peers.DocumentAutomationPeer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.Peers.ContentTextAutomationPeer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>公開<see cref="F:System.Windows.Automation.ControlType.Document" />UI オートメーションを使用する種類を制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Peers.DocumentAutomationPeer>ドキュメントを表し、サポート、<xref:System.Windows.Automation.TextPattern>です。  などのオブジェクト、<xref:System.Windows.Documents.FixedDocument>または<xref:System.Windows.Documents.FlowDocument>イメージとハイパーリンクなど、埋め込みオブジェクトを含めることができます。  最初に、しようとすると、ドキュメントの要素の子を取得する<xref:System.Windows.Automation.Peers.DocumentAutomationPeer.GetChildrenCore%2A?displayProperty=nameWithType>埋め込みオブジェクトは返しません。  埋め込まれた要素を取得するには、取得、<xref:System.Windows.Automation.Text.TextPatternRange>から、<xref:System.Windows.Automation.TextPattern>を呼び出すと<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A?displayProperty=nameWithType>です。  後に<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A?displayProperty=nameWithType>が呼び出されると、その要素があれば<xref:System.Windows.Automation.Text.TextPatternRange>によって返される<xref:System.Windows.Automation.Peers.DocumentAutomationPeer.GetChildrenCore%2A?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  ドキュメントがわかっていない場合は、 <xref:System.Windows.Documents.FlowDocument>、呼び出す必要はありません<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>上、<xref:System.Windows.Automation.TextPattern.DocumentRange%2A?displayProperty=nameWithType>プロパティです。 ドキュメントがネットワークの場所から読み込まれている場合は、呼び出す<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>ドキュメント全体のリソースではない負荷がかかります。  代わりに、する必要がありますを使用してメソッドのいずれかで<xref:System.Windows.Automation.TextPattern>を返す、<xref:System.Windows.Automation.Text.TextPatternRange>ドキュメントの一部を表すです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DocumentAutomationPeer (System.Windows.FrameworkContentElement owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.FrameworkContentElement owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DocumentAutomationPeer.#ctor(System.Windows.FrameworkContentElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="owner">この <see cref="T:System.Windows.Automation.Peers.DocumentAutomationPeer" /> に関連付けられた <see cref="T:System.Windows.FrameworkContentElement" />。</param>
+        <summary><see cref="T:System.Windows.Automation.Peers.DocumentAutomationPeer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAutomationControlTypeCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationControlType GetAutomationControlTypeCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Automation.Peers.AutomationControlType GetAutomationControlTypeCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DocumentAutomationPeer.GetAutomationControlTypeCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationControlType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに関連付けられているコントロールのコントロールの種類を取得<see cref="T:System.Windows.Automation.Peers.DocumentAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType" /> によって呼び出されます。</summary>
+        <returns>
+          常に <see cref="F:System.Windows.Automation.Peers.AutomationControlType.Text" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoundingRectangleCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Rect GetBoundingRectangleCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Rect GetBoundingRectangleCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DocumentAutomationPeer.GetBoundingRectangleCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Rect" />これに関連付けられている要素の画面座標を表す<see cref="T:System.Windows.Automation.Peers.DocumentAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetBoundingRectangle" /> によって呼び出されます。</summary>
+        <returns>外接する四角形。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildrenCore">
+      <MemberSignature Language="C#" Value="protected override System.Collections.Generic.List&lt;System.Windows.Automation.Peers.AutomationPeer&gt; GetChildrenCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.Generic.List`1&lt;class System.Windows.Automation.Peers.AutomationPeer&gt; GetChildrenCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DocumentAutomationPeer.GetChildrenCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.Windows.Automation.Peers.AutomationPeer&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>子要素のコレクションを取得、<see cref="T:System.Windows.FrameworkContentElement" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.DocumentAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetChildren" /> によって呼び出されます。</summary>
+        <returns><see cref="T:System.Windows.Automation.Peers.DocumentAutomationPeer" />によってコンテンツへのアクセスを提供<see cref="T:System.Windows.Automation.TextPattern" />、このメソッドは常に返します<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClassNameCore">
+      <MemberSignature Language="C#" Value="protected override string GetClassNameCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetClassNameCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DocumentAutomationPeer.GetClassNameCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>名前を取得、<see cref="T:System.Windows.FrameworkContentElement" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.DocumentAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName" /> によって呼び出されます。</summary>
+        <returns>"Document"を含む文字列です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClickablePointCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Point GetClickablePointCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Point GetClickablePointCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DocumentAutomationPeer.GetClickablePointCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Automation.Peers.ContentElementAutomationPeer" /> に関連付けられた <see cref="T:System.Windows.FrameworkContentElement" /> 上にあるクリック可能なスペースを表す <see cref="T:System.Windows.Point" /> を取得します。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClickablePoint" /> によって呼び出されます。</summary>
+        <returns>要素上のクリックできる領域を表すポイント。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPattern">
+      <MemberSignature Language="C#" Value="public override object GetPattern (System.Windows.Automation.Peers.PatternInterface patternInterface);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetPattern(valuetype System.Windows.Automation.Peers.PatternInterface patternInterface) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DocumentAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="patternInterface" Type="System.Windows.Automation.Peers.PatternInterface" />
+      </Parameters>
+      <Docs>
+        <param name="patternInterface">列挙値の 1 つ。</param>
+        <summary>コントロール パターンを取得、<see cref="T:System.Windows.FrameworkContentElement" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.DocumentAutomationPeer" />です。</summary>
+        <returns>場合<paramref name="patternInterface" />は<see cref="F:System.Windows.Automation.Peers.PatternInterface.Text" />、このメソッドが戻る、<see cref="T:System.Windows.Automation.Provider.ITextProvider" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsControlElementCore">
+      <MemberSignature Language="C#" Value="protected override bool IsControlElementCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsControlElementCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DocumentAutomationPeer.IsControlElementCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.FrameworkContentElement" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.DocumentAutomationPeer" />対話的なものとしてエンドユーザーで認識されて、ユーザーが認識するか、<see cref="T:System.Windows.FrameworkContentElement" />内のコントロールの論理構造に利用できるものとして、[!INCLUDE[TLA2#tla_gui](~/includes/tla2sharptla-gui-md.md)]です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsControlElement" /> によって呼び出されます。</summary>
+        <returns>
+          常に <see langword="true" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOffscreenCore">
+      <MemberSignature Language="C#" Value="protected override bool IsOffscreenCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsOffscreenCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DocumentAutomationPeer.IsOffscreenCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.FrameworkContentElement" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.DocumentAutomationPeer" />画面から外れています。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.IsOffscreen" /> によって呼び出されます。</summary>
+        <returns>
+          <see langword="true" />要素が画面上にない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、要素が表示されているかどうかを示すものではありません。 状況によっては、要素は、画面には表示されていないです。 たとえば、要素が他の要素によって隠されている場合に表示されません。 この場合、メソッドを返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

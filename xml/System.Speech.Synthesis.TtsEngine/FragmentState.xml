@@ -1,0 +1,403 @@
+<Type Name="FragmentState" FullName="System.Speech.Synthesis.TtsEngine.FragmentState">
+  <TypeSignature Language="C#" Value="public struct FragmentState : IEquatable&lt;System.Speech.Synthesis.TtsEngine.FragmentState&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit FragmentState extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Speech.Synthesis.TtsEngine.FragmentState&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.TtsEngine.FragmentState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Speech.Synthesis.TtsEngine.FragmentState&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ImmutableObject(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="TextFragment" /> についての詳細情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.TtsEngine.FragmentState>インスタンスがから取得した、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>で<xref:System.Speech.Synthesis.TtsEngine.TextFragment>オブジェクト。  
+  
+ 情報は、<xref:System.Speech.Synthesis.TtsEngine.FragmentState>音声テキストで合成音声マークアップ言語 () 使用される SSML が、合成エンジンへの入力としての装飾の属性を解析して取得されます。  
+  
+ A<xref:System.Speech.Synthesis.TtsEngine.FragmentState>すべてシンセサイザー アクションの要求で指定されたオブジェクトが存在できる、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>プロパティです。 ただし、そのメンバーの意味は、さまざまな操作を変更できます。 詳細については、合成の操作を参照してください<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>詳細については、シンセサイザー アクションを指定します。  
+  
+-   仕様音声出力の品質のコントロールは多くによっておよび処理される、 <xref:System.Speech.Synthesis.TtsEngine.FragmentState.Prosody%2A>、 <xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>、および<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Duration%2A>  
+  
+-   経由 Phonetic、言語、および翻訳者の構造情報がある<xref:System.Speech.Synthesis.TtsEngine.FragmentState.LangId%2A>、 <xref:System.Speech.Synthesis.TtsEngine.FragmentState.Phoneme%2A>、および<xref:System.Speech.Synthesis.TtsEngine.FragmentState.SayAs%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FragmentState (System.Speech.Synthesis.TtsEngine.TtsEngineAction action, int langId, int emphasis, int duration, System.Speech.Synthesis.TtsEngine.SayAs sayAs, System.Speech.Synthesis.TtsEngine.Prosody prosody, char[] phonemes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Speech.Synthesis.TtsEngine.TtsEngineAction action, int32 langId, int32 emphasis, int32 duration, class System.Speech.Synthesis.TtsEngine.SayAs sayAs, class System.Speech.Synthesis.TtsEngine.Prosody prosody, char[] phonemes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.FragmentState.#ctor(System.Speech.Synthesis.TtsEngine.TtsEngineAction,System.Int32,System.Int32,System.Int32,System.Speech.Synthesis.TtsEngine.SayAs,System.Speech.Synthesis.TtsEngine.Prosody,System.Char[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Speech.Synthesis.TtsEngine.TtsEngineAction" />
+        <Parameter Name="langId" Type="System.Int32" />
+        <Parameter Name="emphasis" Type="System.Int32" />
+        <Parameter Name="duration" Type="System.Int32" />
+        <Parameter Name="sayAs" Type="System.Speech.Synthesis.TtsEngine.SayAs" />
+        <Parameter Name="prosody" Type="System.Speech.Synthesis.TtsEngine.Prosody" />
+        <Parameter Name="phonemes" Type="System.Char[]" />
+      </Parameters>
+      <Docs>
+        <param name="action">メンバー、<see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineAction" />音声合成の操作を指定する列挙です。</param>
+        <param name="langId">使用されている言語の ID。 XML に対応する<c>xml:lang</c>属性。</param>
+        <param name="emphasis">音声出力や一時停止に適用される強調。</param>
+        <param name="duration"><see langword="TextFragment" /> のテキストを読み上げるために割り当てられた時間。</param>
+        <param name="sayAs"><see langword="TextFragment" /> のテキストの種類および含まれているテキストの正確なレンダリングに必要な詳細レベルを示す <see cref="T:System.Speech.Synthesis.TtsEngine.SayAs" /> クラスのメンバー。  
+  
+ 対応する、 <c>&lt;言う-として&gt;</c> SSML の仕様内の XML タグ  
+  
+ 引数には <see langword="null." /> を指定できます。</param>
+        <param name="prosody">声の高さ、話す速度、ボリュームなどの音声出力の特性を示す <see cref="T:System.Speech.Synthesis.TtsEngine.Prosody" /> オブジェクト。  
+  
+ 対応する、 <c> &lt;prosody&gt; </c> SSML の仕様内の XML タグ</param>
+        <param name="phonemes">国際音声記号 (IPA) の仕様で <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> に格納されているテキストに音声発音を提供する <see langword="char" /> オブジェクトの配列。  
+  
+ 対応する、 <c>&lt;音素&gt;</c> SSML の仕様内の XML タグ。  
+  
+ この引数は <see langword="null" /> にできます。</param>
+        <summary><see langword="FragmentState" /> の新しいインスタンスを構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、アプリケーション直接構築しないで<xref:System.Speech.Synthesis.TtsEngine.FragmentState>オブジェクト。 代わりに、<xref:System.Speech.Synthesis.TtsEngine.FragmentState>インスタンスのメンバーを使用してアプリケーションによって作成されます、<xref:System.Speech.Synthesis>領域の名前を付けます。  
+  
+ 場合、<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>によって指定された値、`action`引数は<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction.Silence>、によって提供される値、`emphasis`引数は、いずれか。  
+  
+-   場合は、正の値を一時停止するミリ秒単位の時間  
+  
+-   場合のメンバーを負、<xref:System.Speech.Synthesis.TtsEngine.EmphasisBreak>列挙型  
+  
+ 場合、<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>によって指定された値、`action`引数ではありません<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction.Silence>`emphasis`引数が型である必要があります<xref:System.Speech.Synthesis.TtsEngine.EmphasisWord>です。  
+  
+ 場合の値、`duration`引数および<xref:System.Speech.Synthesis.TtsEngine.Prosody.Duration%2A>プロパティまたは<xref:System.Speech.Synthesis.TtsEngine.Prosody>で指定されたオブジェクト、`prosody`引数では異なる、値、<xref:System.Speech.Synthesis.TtsEngine.Prosody>オブジェクトを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.TtsEngine.TtsEngineAction Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Synthesis.TtsEngine.TtsEngineAction Action" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.FragmentState.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.TtsEngineAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求された音声シンセサイザー アクションを返します。</summary>
+        <value>SSML 入力で要求された音声合成の操作を示す <see cref="T:System.Speech.Synthesis.TtsEngine.TtsEngineAction" /> のメンバー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public int Duration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Duration" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.FragmentState.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> を表示するために適した時間を返します。</summary>
+        <value><see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> を表示するのに適した時間について、ミリ秒単位の値を含む <see langword="int" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Emphasis">
+      <MemberSignature Language="C#" Value="public int Emphasis { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Emphasis" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> を強調する方法に関する指示を返します。</summary>
+        <value><see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> を強調する方法を示す <see langword="int" /> 値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値の解釈<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>によって異なります、<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>によって返される値、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>現在プロパティ<xref:System.Speech.Synthesis.TtsEngine.FragmentState>です。  
+  
+1.  場合の値<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>は<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction.Silence>  
+  
+    -   場合<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>が正の値であり、返される値はミリ秒単位でサイレント状態の長さとして解釈する必要があります。  
+  
+    -   場合<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>は負の場合、返される値のメンバーとして解釈するか、<xref:System.Speech.Synthesis.TtsEngine.EmphasisBreak>です。  
+  
+     によって返される情報を強調<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>ときに、プロパティ<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>は<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction.Silence>の属性に対応する、 `<break>` SSML 入力音声シンセサイザー エンジンへの要素。  
+  
+2.  その他のすべての値について<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>として値を解釈する必要があります<xref:System.Speech.Synthesis.TtsEngine.EmphasisWord>です。  
+  
+     によって返される情報を強調<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>読み上げられる単語の属性に対応、 `<emphasis>` SSML 入力音声シンセサイザー エンジンへの要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.FragmentState.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> のインスタンスにキャスト可能なオブジェクト。</param>
+        <summary>指定されたオブジェクトが <see cref="T:System.Speech.Synthesis.TtsEngine.FragmentState" /> のインスタンスで、現在の <see cref="T:System.Speech.Synthesis.TtsEngine.FragmentState" /> のインスタンスと等しいかどうかを判定します。</summary>
+        <returns>返します<see langword="true" />場合は、現在のインスタンス<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />から取得したものと、[オブジェクト](http://msdn.microsoft.com/library/vstudio/system.object\(v=vs.110\).aspx)によって提供される、<paramref name="obj" />引数では、同じについて説明する<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />状態です。 現在の <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> と <paramref name="obj" /> 引数が同じ <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> 状態をサポートしない場合、<see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドの戻り値の false 場合、[オブジェクト](http://msdn.microsoft.com/library/vstudio/system.object\(v=vs.110\).aspx)によって提供される、`obj`に引数をキャストできません<xref:System.Speech.Synthesis.TtsEngine.TextFragment>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Speech.Synthesis.TtsEngine.FragmentState other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Speech.Synthesis.TtsEngine.FragmentState other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.FragmentState.Equals(System.Speech.Synthesis.TtsEngine.FragmentState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Speech.Synthesis.TtsEngine.FragmentState" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> のインスタンス。</param>
+        <summary>指定した <see cref="T:System.Speech.Synthesis.TtsEngine.FragmentState" /> のインスタンスが、現在の <see cref="T:System.Speech.Synthesis.TtsEngine.FragmentState" /> インスタンスと等しいかどうかを判定します。</summary>
+        <returns><see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> の現在のインスタンスと、<paramref name="other" /> 引数を介して提供されたインスタンスが、同じ <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> 状態を示している場合、<see langword="true" /> を返します。 現在の <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> と <paramref name="other" /> 引数が同じ <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> 状態をサポートしない場合、<see langword="false" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.FragmentState.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>このインスタンスのハッシュ コードである 32 ビット符号付き整数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LangId">
+      <MemberSignature Language="C#" Value="public int LangId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LangId" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.FragmentState.LangId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Speech.Synthesis.TtsEngine.FragmentState" /> によってサポートされる言語を返します。</summary>
+        <value>現在の <see cref="T:System.Speech.Synthesis.TtsEngine.FragmentState" /> が使用する言語の識別子を含む <see langword="int" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Speech.Synthesis.TtsEngine.FragmentState.LangId%2A>Windows Speech API (SAPI) で使用されているから生成されると、"`xml:lang`"音声シンセサイザー エンジンへの SSML 入力の属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Speech.Synthesis.TtsEngine.FragmentState state1, System.Speech.Synthesis.TtsEngine.FragmentState state2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Speech.Synthesis.TtsEngine.FragmentState state1, valuetype System.Speech.Synthesis.TtsEngine.FragmentState state2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.FragmentState.op_Equality(System.Speech.Synthesis.TtsEngine.FragmentState,System.Speech.Synthesis.TtsEngine.FragmentState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state1" Type="System.Speech.Synthesis.TtsEngine.FragmentState" />
+        <Parameter Name="state2" Type="System.Speech.Synthesis.TtsEngine.FragmentState" />
+      </Parameters>
+      <Docs>
+        <param name="state1">インスタンス<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />詳細な状態が比較のインスタンスに対して<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />によって提供される、 <c>state2</c>引数。</param>
+        <param name="state2">インスタンス<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />詳細な状態が比較のインスタンスに対して<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />によって提供される、 <c>state1</c>引数。</param>
+        <summary><see cref="T:System.Speech.Synthesis.TtsEngine.FragmentState" /> の 2 つのインスタンスが同じ <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> の状態を示すかどうかを判定します。</summary>
+        <returns><see cref="T:System.Speech.Synthesis.TtsEngine.FragmentState" />、<paramref name="state1" />、<paramref name="state2" /> のすべてのインスタンスが同じ <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> 状態を記述する場合、<see langword="true" /> を返します。それ以外の場合は、<see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Equals%28System.Speech.Synthesis.TtsEngine.FragmentState%29?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Speech.Synthesis.TtsEngine.FragmentState state1, System.Speech.Synthesis.TtsEngine.FragmentState state2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Speech.Synthesis.TtsEngine.FragmentState state1, valuetype System.Speech.Synthesis.TtsEngine.FragmentState state2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.TtsEngine.FragmentState.op_Inequality(System.Speech.Synthesis.TtsEngine.FragmentState,System.Speech.Synthesis.TtsEngine.FragmentState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state1" Type="System.Speech.Synthesis.TtsEngine.FragmentState" />
+        <Parameter Name="state2" Type="System.Speech.Synthesis.TtsEngine.FragmentState" />
+      </Parameters>
+      <Docs>
+        <param name="state1">インスタンス<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />詳細な状態が比較のインスタンスに対して<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />によって提供される、 <c>state2</c>引数。</param>
+        <param name="state2">インスタンス<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />詳細な状態が比較のインスタンスに対して<see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" />によって提供される、 <c>state1</c>引数。</param>
+        <summary><see cref="T:System.Speech.Synthesis.TtsEngine.FragmentState" /> の 2 つのインスタンスが異なる <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> の状態を示すかどうかを判定します。</summary>
+        <returns><see cref="T:System.Speech.Synthesis.TtsEngine.FragmentState" />、<paramref name="state1" />、<paramref name="state2" /> のすべてのインスタンスが同じ <see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> 状態を記述しない場合、<see langword="true" /> を返します。それ以外の場合は、<see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Equals%28System.Speech.Synthesis.TtsEngine.FragmentState%29?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Phoneme">
+      <MemberSignature Language="C#" Value="public char[] Phoneme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance char[] Phoneme" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.FragmentState.Phoneme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.TtsEngine.TextFragment" /> の音声情報を返します。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される情報、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Phoneme%2A>プロパティに対応して、 `<phoneme>` SSML 入力合成エンジンへの XML タグ。  
+  
+ 配列`char`によって返されるオブジェクト<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Phoneme%2A>プロパティは国際音声記号 (IPA) を使用して発音を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prosody">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.TtsEngine.Prosody Prosody { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.Synthesis.TtsEngine.Prosody Prosody" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.FragmentState.Prosody" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.Prosody</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声出力の音の高さ、読み上げ速度、音量についての詳細な情報を返します。</summary>
+        <value>音声出力に関して、声の高さ、読み上げ速度、音量の設定、およびこうした設定への変更を含む <see cref="T:System.Speech.Synthesis.TtsEngine.Prosody" /> の有効なインスタンスを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される情報<xref:System.Speech.Synthesis.TtsEngine.Prosody>に対応する、 `<prosody>` SSML の仕様内の XML タグ  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SayAs">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.TtsEngine.SayAs SayAs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.Synthesis.TtsEngine.SayAs SayAs" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.TtsEngine.FragmentState.SayAs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.SayAs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストから音声を生成するコンテキストに関する情報を返します。</summary>
+        <value>音声複合エンジンで使用される SSML が、音声の生成に使用されるコンテキストに関する詳細な情報を含んでいる場合は値 <see cref="T:System.Speech.Synthesis.TtsEngine.SayAs" /> のインスタンスを返します。そうでない場合は <see langword="null" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される情報<xref:System.Speech.Synthesis.TtsEngine.FragmentState.SayAs%2A>に対応する、`<say-as>`タグと SSML の仕様ではその属性を指定します。  
+  
+-   通貨、日付、またはアドレス) などのコンテンツの種類やによって表される言語コンストラクト<xref:System.Speech.Synthesis.TtsEngine.TextFragment.TextToSpeak%2A>のプロパティ、<xref:System.Speech.Synthesis.TtsEngine.TextFragment>です。  
+  
+-   によって表されるコンテンツの種類を処理する情報を書式設定オプション<xref:System.Speech.Synthesis.TtsEngine.TextFragment.TextToSpeak%2A>のプロパティ、<xref:System.Speech.Synthesis.TtsEngine.TextFragment>など、日付の構文。  
+  
+-   音声の生成に使用する詳細情報、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.TextToSpeak%2A>のプロパティ、<xref:System.Speech.Synthesis.TtsEngine.TextFragment>など、区切り記号を明示的にレンダリングするかどうか。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

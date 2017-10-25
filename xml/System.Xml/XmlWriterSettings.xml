@@ -1,0 +1,960 @@
+<Type Name="XmlWriterSettings" FullName="System.Xml.XmlWriterSettings">
+  <TypeSignature Language="C#" Value="public sealed class XmlWriterSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlWriterSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XmlWriterSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サポートする機能のセットを示す、<see cref="T:System.Xml.XmlWriter" />によって作成されたオブジェクト、<see cref="Overload:System.Xml.XmlWriter.Create" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlWriter.Create%2A>メソッドを取得するための推奨メカニズムは、<xref:System.Xml.XmlWriter>インスタンス。 <xref:System.Xml.XmlWriter.Create%2A>メソッドを使用、<xref:System.Xml.XmlWriterSettings>クラスで実装する機能を指定する、<xref:System.Xml.XmlWriter>作成されるオブジェクトです。  
+  
+> [!NOTE]
+>  使用する場合、<xref:System.Xml.XmlWriter>オブジェクトを<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドを使用してください、<xref:System.Xml.Xsl.XslCompiledTransform.OutputSettings%2A>を取得するプロパティ、<xref:System.Xml.XmlWriterSettings>正しい設定を持つオブジェクト。 これにより、作成された<xref:System.Xml.XmlWriter>オブジェクトには、正しい出力設定します。  
+  
+ <xref:System.Xml.XmlWriterSettings>クラスはそのコントロールのデータへの準拠と出力形式のプロパティを提供します。  
+  
+ データの一致チェックと自動修正では、これらのプロパティを使用します。  
+  
+|プロパティ|指定内容|値|既定値|  
+|--------------|---------------|-----------|-------------|  
+|<xref:System.Xml.XmlWriterSettings.CheckCharacters%2A>|セットは、W3C で定義されている文字が有効な XML のことを確認するかどうか文字です。|`true` または `false`|`true`|  
+|<xref:System.Xml.XmlWriterSettings.ConformanceLevel%2A>|出力が整形式 XML 1.0 ドキュメントやフラグメントことを確認するかどうか。|<xref:System.Xml.ConformanceLevel?displayProperty=nameWithType>(ドキュメント レベルの)、 <xref:System.Xml.ConformanceLevel.Fragment> (フラグメント レベル)、または<xref:System.Xml.ConformanceLevel.Auto>(自動検出)|<xref:System.Xml.ConformanceLevel?displayProperty=nameWithType>(ドキュメント レベルの一致)|  
+|<xref:System.Xml.XmlWriterSettings.WriteEndDocumentOnClose%2A>|閉じられていないすべての要素に終了タグを追加するかどうかと、<xref:System.Xml.XmlWriter.Close%2A>メソッドが呼び出されます。|`true` または `false`|`true`|  
+  
+ 出力の書式設定を指定するには、これらのプロパティを使用します。  
+  
+|プロパティ|指定内容|値|既定値|  
+|--------------|---------------|-----------|-------------|  
+|<xref:System.Xml.XmlWriterSettings.Encoding%2A>|使用するテキスト エンコーディングします。|<xref:System.Text.Encoding?displayProperty=nameWithType> の値|<xref:System.Text.Encoding.UTF8?displayProperty=nameWithType>|  
+|<xref:System.Xml.XmlWriterSettings.Indent%2A>|要素をインデントするかどうか|`true` または `false`|`false`(インデントなし)|  
+|<xref:System.Xml.XmlWriterSettings.IndentChars%2A>|インデントするときに使用する文字列の文字 (ときに使用<xref:System.Xml.XmlWriterSettings.Indent%2A>に設定されている`true`)。|String|2 つのスペース|  
+|<xref:System.Xml.XmlWriterSettings.NewLineChars%2A>|改行に使用する文字列。|String|`\r\n`(キャリッジ リターン、ライン フィード)|  
+|<xref:System.Xml.XmlWriterSettings.NewLineHandling%2A>|改行文字を処理する方法です。|<xref:System.Xml.NewLineHandling?displayProperty=nameWithType>値: <xref:System.Xml.NewLineHandling.Entitize> (正規化)、 <xref:System.Xml.NewLineHandling.Replace> (置換)、または<xref:System.Xml.NewLineHandling.None>(変更なしのままになっている)|<xref:System.Xml.NewLineHandling.Replace>(で指定された文字に置き換える<xref:System.Xml.XmlWriterSettings.NewLineChars%2A>)|  
+|<xref:System.Xml.XmlWriterSettings.NewLineOnAttributes%2A>|個々 の行に属性を書き込むかどうか (持たないされるときに有効<xref:System.Xml.XmlWriterSettings.Indent%2A>は`false`)。|`true` または `false`|`false`|  
+|<xref:System.Xml.XmlWriterSettings.OmitXmlDeclaration%2A>|XML 宣言を書き込むかどうか。|`true` または `false`|`false`|  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlWriter>を XML ファイルに書き込み、新しい行に各属性を書き込みます。  
+  
+ [!code-csharp[XmlWriterSettings.NewLineOnAttributes#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlWriterSettings.NewLineOnAttributes/CS/writenewlineattrs.cs#1)]
+ [!code-vb[XmlWriterSettings.NewLineOnAttributes#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlWriterSettings.NewLineOnAttributes/VB/writenewlineattrs.vb#1)]  
+  
+ このサンプルでは、次の出力が生成されます。  
+  
+```  
+<order  
+  orderID="367A54"  
+  date="2001-05-03">  
+  <price>19.95</price>  
+</order>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlWriterSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlWriterSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlWriterSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Xml.XmlWriterSettings>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Xml.XmlWriterSettings.Async%2A>|`false`。|  
+|<xref:System.Xml.XmlWriterSettings.CheckCharacters%2A>|`true`。|  
+|<xref:System.Xml.XmlWriterSettings.CloseOutput%2A>|`false`。|  
+|<xref:System.Xml.XmlWriterSettings.ConformanceLevel%2A>|<xref:System.Xml.ConformanceLevel.Document>。|  
+|<xref:System.Xml.XmlWriterSettings.Encoding%2A>|`Encoding.UTF8`。|  
+|<xref:System.Xml.XmlWriterSettings.Indent%2A>|`false`。|  
+|<xref:System.Xml.XmlWriterSettings.IndentChars%2A>|2 つのスペースです。|  
+|<xref:System.Xml.XmlWriterSettings.NewLineChars%2A>|`\r\n`(キャリッジ リターン、改行)。|  
+|<xref:System.Xml.XmlWriterSettings.NewLineHandling%2A>|<xref:System.Xml.NewLineHandling.Replace>。|  
+|<xref:System.Xml.XmlWriterSettings.NewLineOnAttributes%2A>|`false`。|  
+|<xref:System.Xml.XmlWriterSettings.OmitXmlDeclaration%2A>|`false`。|  
+|<xref:System.Xml.XmlWriterSettings.WriteEndDocumentOnClose%2A>|`true`。|  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlWriter>インデントのタブ文字を使用するオブジェクト。  
+  
+ [!code-csharp[XmlWriterSettings.Indent#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlWriterSettings.Indent/CS/writeindent.cs#1)]
+ [!code-vb[XmlWriterSettings.Indent#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlWriterSettings.Indent/VB/writeindent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Async">
+      <MemberSignature Language="C#" Value="public bool Async { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Async" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.Async" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を示す値を取得または非同期かどうか<see cref="T:System.Xml.XmlWriter" />特定のメソッドを使用できます<see cref="T:System.Xml.XmlWriter" />インスタンス。</summary>
+        <value>
+          <see langword="true" />非同期メソッドを使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を設定する必要があります`true`新規に作成するときに<xref:System.Xml.XmlWriter>非同期を使用する場合をインスタンス化<xref:System.Xml.XmlWriter>そのインスタンス上のメソッドです。 後に、<xref:System.Xml.XmlWriter>インスタンスが作成される、<xref:System.Xml.XmlWriterSettings.Async%2A>プロパティは読み取り専用です。 このプロパティの既定値は `false` です。  
+  
+ このフラグは無視されます、<xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType>オーバー ロードします。 つまり、新規に作成する場合<xref:System.Xml.XmlWriter>既存に基づいて<xref:System.Xml.XmlWriter>、非同期動作は、入力に依存<xref:System.Xml.XmlWriter>、使用することはできませんし、<xref:System.Xml.XmlWriterSettings.Async%2A>非同期動作を変更するフラグ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckCharacters">
+      <MemberSignature Language="C#" Value="public bool CheckCharacters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CheckCharacters" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.CheckCharacters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>W3C の「2.2 文字」セクションに、ドキュメント内のすべての文字が準拠していることを確認する XML ライターをチェックする必要があるかどうかを示す値を取得または[XML 1.0 勧告](http://www.w3.org/TR/REC-xml/#charsets)です。</summary>
+        <value>
+          <see langword="true" />文字をチェックします。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Xml.XmlWriter>オブジェクトは、文字のチェックをサポートしている、任意の文字が、W3C の「2.2 文字」セクションで指定された有効な XML 文字の範囲外にある場合、例外をスロー [XML 1.0 勧告](http://www.w3.org/TR/REC-xml/#charsets)です。  
+  
+ 文字チェックは、XML 名に無効な文字に関するチェックまたはすべての XML 名が有効であるかをチェックは含まれません。 これらのチェックは、一致チェックの一部であるし、常に実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlWriterSettings Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlWriterSettings Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlWriterSettings.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlWriterSettings</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlWriterSettings" /> インスタンスのコピーを作成します。</summary>
+        <returns>複製された<see cref="T:System.Xml.XmlWriterSettings" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複製された<xref:System.Xml.XmlWriterSettings>オブジェクトを元のオブジェクトの設定の影響を与えずに変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseOutput">
+      <MemberSignature Language="C#" Value="public bool CloseOutput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CloseOutput" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.CloseOutput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Xml.XmlWriter" />基になるストリームを閉じる必要がありますもまたは<see cref="T:System.IO.TextWriter" />ときに、<see cref="M:System.Xml.XmlWriter.Close" />メソッドが呼び出されます。</summary>
+        <value>
+          <see langword="true" />基になるストリームを閉じないまたは<see cref="T:System.IO.TextWriter" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定は、XML ストリームに書き込む、し、後にストリームの末尾に余分な情報を追加するときに便利です、<xref:System.Xml.XmlWriter>書き込みが完了します。  
+  
+ このプロパティにのみ適用されます<xref:System.Xml.XmlWriter>をストリームに XML を出力インスタンスのコンテンツまたは<xref:System.IO.TextWriter>以外の場合、この設定は無視されます。  
+  
+   
+  
+## Examples  
+ 次の例は、XML フラグメントをメモリ ストリームに書き込みます。  
+  
+ [!code-csharp[XmlWriterSettings.CloseOutput#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlWriterSettings.CloseOutput/CS/writestream2.cs#1)]
+ [!code-vb[XmlWriterSettings.CloseOutput#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlWriterSettings.CloseOutput/VB/writestream2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConformanceLevel">
+      <MemberSignature Language="C#" Value="public System.Xml.ConformanceLevel ConformanceLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.ConformanceLevel ConformanceLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.ConformanceLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.ConformanceLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML ライターが XML 出力をチェックする準拠のレベルを取得または設定します。</summary>
+        <value>準拠のレベル (ドキュメント、フラグメント、自動検出) を指定する列挙値のいずれか。 既定値は、<see cref="F:System.Xml.ConformanceLevel.Document" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlWriterSettings.ConformanceLevel%2A?displayProperty=nameWithType>プロパティを確認して、書き込まれるストリームが一連の規則に準拠していることを保証する XML ライターを構成します。 XML データは、整形式 XML 1.0 のドキュメントまたはドキュメント フラグメントの規則に準拠していることを確認することができます。 次の表では、3 つの設定について説明します。 既定ではドキュメント レベルの一致です。  
+  
+|設定|説明|  
+|-------------|-----------------|  
+|<xref:System.Xml.ConformanceLevel.Document>|XML 出力が準拠していることを確認、[整形式 XML 1.0 ドキュメント用のルール](http://www.w3.org/TR/REC-xml/#sec-well-formed)準拠のいずれかのプロセッサで処理できるとします。<br /><br /> ドキュメントの一致チェックは、フラグメント レベルのチェックのほとんどを含めるし、また、次のことを確認します。<br /><br /> 最上位の項目は、XML 宣言、DTD、要素、コメント、空白文字、または処理命令以外のノードにありません。<br />XML データには、1 つだけの最上位の要素ノードがあります。<br /><br /> XML ライターは、書き込まれる DTD 情報を解析しません。 ユーザーが、DTD が整形式であることを保証します。|  
+|<xref:System.Xml.ConformanceLevel.Fragment>|XML 出力が準拠していることを確認、[整形式 XML 1.0 ドキュメント フラグメントのルール](http://www.w3.org/TR/REC-xml/#wf-entities)です。<br /><br /> この設定は、最上位レベルの複数のルート要素またはテキスト ノードを持つ XML データを受け入れます。 このレベルのチェックでは、すべてのプロセッサで、読み込むストリームが XML 1.0 の外部解析対象エンティティとして処理できることが保証されます。<br /><br /> ドキュメント フラグメントで DTD 情報は許可されません。|  
+|<xref:System.Xml.ConformanceLevel.Auto>|XML ライターでの一致チェックが、受信データに基づくレベルかを調べることを指定します。 この設定は、生成された XML は整形式 XML ドキュメントまたはフラグメントになるかどうかがわからない場合に役に立ちます。<br /><br /> ドキュメントの一致チェックは、次の場合に適用されます。<br /><br /> 場合、<xref:System.Xml.XmlWriter.WriteStartDocument%2A>メソッドが呼び出されます。<br />場合、DTD 情報が書き込まれます。<br /><br /> フラグメント一致チェックは、XML データには、次のいずれかが含まれている場合に適用されます。<br /><br /> ルート レベルでのテキスト、CDATA、または EntityReference ノード。<br />のルート レベルで複数の要素。<br />でルート レベルの要素がないです。<br /><br /> テキスト ノードを書き出そうとしてルート レベルに DTD があるなどの矛盾がある場合には <xref:System.Xml.XmlException> がスローされます。<br /><br /> 別、ラップする場合<xref:System.Xml.XmlWriter>オブジェクト、外部のオブジェクトが、追加の適合性チェックを行わないです。 これは、左から基になるオブジェクト。|  
+  
+ XML ライターには、準拠の指定したレベルに違反するすべての情報が検出され、例外をスローします。 場合によっては、XML ライターは、準拠エラーを自動的に修正されます。 たとえば、ライターは、例外をスローせずに閉じられていない属性を閉じます。 次の表は、さまざまな準拠違反は、各設定で処理されます。  
+  
+|状態|<xref:System.Xml.ConformanceLevel.Document>|<xref:System.Xml.ConformanceLevel.Fragment>|<xref:System.Xml.ConformanceLevel.Auto>|  
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|  
+|DTD 情報が見つかりました。|この設定の違反されません。 ただし、XML ライターは、DTD をチェックしませんユーザーは、DTD が整形式であることを確認する必要があります。|<xref:System.Xml.XmlException>スローされます。|ドキュメントの一致チェックが適用されます。|  
+|<xref:System.Xml.XmlWriter.WriteStartDocument%2A> が呼ばれたとき。|この設定に違反とは見なされません。|<xref:System.Xml.XmlException>スローされます。|ドキュメントの一致チェックが適用されます。|  
+|<xref:System.Xml.XmlWriter.WriteStartDocument%2A> は複数回呼び出されます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|最上位レベル (いない要素または属性ノード) の下にテキスト値が表示されます。|<xref:System.Xml.XmlException>スローされます。|違反とは見なされません。|フラグメント一致チェックが適用されます。|  
+|複数の要素または要素はありませんは、最上位レベルに表示されます。|<xref:System.Xml.XmlException>スローされます。|違反とは見なされません。|フラグメント一致チェックが適用されます。|  
+|最上位の項目は空白です。|違反とは見なされません。|違反とは見なされません。|違反とは見なされません。|  
+|<xref:System.Xml.XmlWriter.WriteEndAttribute%2A>されていない属性ノードを終了すると呼ばれます。|XML ライターで修正します。|XML ライターで修正します。|XML ライターで修正します。|  
+|XML ライターが正しく入れ子になった状態である (たとえば、<xref:System.Xml.XmlWriter.WriteStartElement%2A>呼び出しを続けて、 <xref:System.Xml.XmlWriter.WriteEndAttribute%2A>)。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|最上位の項目は、属性です。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|複数の連続したテキスト ノードがある。|違反とは見なされませんが、テキスト ノードを連結するユーザーの役割です。|違反とは見なされませんが、テキスト ノードを連結するユーザーの役割です。|違反とは見なされませんが、テキスト ノードを連結するユーザーの役割です。|  
+|同じ名前空間プレフィックスが要素内で 2 回宣言されている。|XML ライターは、新しい 2 つ目の名前空間のプレフィックスを生成します。|XML ライターは、新しい 2 つ目の名前空間のプレフィックスを生成します。|XML ライターは、新しい 2 つ目の名前空間のプレフィックスを生成します。|  
+|<xref:System.Xml.XmlWriter.WriteStartElement%2A>プレフィックスとそのスコープ内で宣言されていない名前空間を指定またはプレフィックスを別の名前空間を関連付けるか。|必要な名前空間ノードを XML ライターに書き込みます。|必要な名前空間ノードを XML ライターに書き込みます。|必要な名前空間ノードを XML ライターに書き込みます。|  
+|<xref:System.Xml.XmlWriter.WriteStartAttribute%2A>プレフィックスとそのスコープ内で宣言されていない名前空間を指定します。|必要な名前空間ノードを XML ライターに書き込みます。|必要な名前空間ノードを XML ライターに書き込みます。|必要な名前空間ノードを XML ライターに書き込みます。|  
+|<xref:System.Xml.XmlWriter.WriteStartAttribute%2A>プレフィックスと名前空間プレフィックスに関連付けられて別のスコープに名前空間を指定します。|XML ライターは、指定したプレフィックスを無視しは正しいプレフィックスを検索または新しいプレフィックスを生成します。|XML ライターは、指定したプレフィックスを無視しは正しいプレフィックスを検索または新しいプレフィックスを生成します。|XML ライターは、指定したプレフィックスを無視しは正しいプレフィックスを検索または新しいプレフィックスを生成します。|  
+|<xref:System.Xml.XmlWriter.WriteQualifiedName%2A>スコープ内で存在しない名前空間を使用して、要素のコンテンツの書き込みに使用します。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|<xref:System.Xml.XmlWriter.WriteQualifiedName%2A>スコープ内で存在しない名前空間を使用して、属性のコンテンツの書き込みに使用します。|XML ライターは、必要な名前空間宣言を書き込みます。|XML ライターは、必要な名前空間宣言を書き込みます。|XML ライターは、必要な名前空間宣言を書き込みます。|  
+|`xml:space`属性が有効な値が含まれていません。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|無効な名前が検出される。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|`xml`プレフィックスない URI に一致します。|XML ライターは、この種の違反の確認が行われません。|XML ライターは、この種の違反の確認が行われません。|XML ライターは、この種の違反の確認が行われません。|  
+|`xml` URI http://www.w3.org/XML/1998/namespace にプレフィックスが一致はありません。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+|`xmlns`プレフィックスまたはローカルの名前を URI に一致はありません。|XML ライターは、この種の違反の確認が行われません。|XML ライターは、この種の違反の確認が行われません。|XML ライターは、この種の違反の確認が行われません。|  
+|`xmlns` Http://www.w3.org/2000/xmlns URI にプレフィックスまたはローカル名が一致はありません。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|<xref:System.Xml.XmlException>スローされます。|  
+  
+   
+  
+## Examples  
+ 次の例は、XML フラグメントをメモリ ストリームに書き込みます。  
+  
+ [!code-csharp[XmlWriterSettings.CloseOutput#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlWriterSettings.CloseOutput/CS/writestream2.cs#1)]
+ [!code-vb[XmlWriterSettings.CloseOutput#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlWriterSettings.CloseOutput/VB/writestream2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoNotEscapeUriAttributes">
+      <MemberSignature Language="C#" Value="public bool DoNotEscapeUriAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DoNotEscapeUriAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.DoNotEscapeUriAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、 <see cref="T:System.Xml.XmlWriter" /> URI 属性をエスケープしません。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Xml.XmlWriter" /> URI 属性をエスケープしない、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding Encoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding Encoding" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用するテキスト エンコーディングの種類を取得または設定します。</summary>
+        <value>使用するテキスト エンコーディング。 既定値は、<see langword="Encoding.UTF8" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlWriter>一度にすべてではなく 1 文字ずつ文字のバッファーをエンコードします。 例外がスローされた、<xref:System.Xml.XmlWriter.Flush%2A>エンコード エラーが発生した場合、メソッドが呼び出されます。  
+  
+ <xref:System.Xml.XmlWriterSettings.Encoding%2A>プロパティにのみ適用されます、<xref:System.Xml.XmlWriter>作成するか、指定したインスタンス<xref:System.IO.Stream>または指定されたファイル名を使用します。 場合、<xref:System.Xml.XmlWriter>インスタンスが作成される、指定した<xref:System.IO.TextWriter>、<xref:System.Xml.XmlWriterSettings.Encoding%2A>プロパティは、基になるのエンコードによってオーバーライド<xref:System.IO.TextWriter>です。 たとえば、このプロパティは、特定の Unicode (utf-16) に設定<xref:System.Xml.XmlWriter>が基になるライターは、 <xref:System.IO.StreamWriter> (から派生した<xref:System.IO.TextWriter>) そのエンコード付き UTF8 に設定、出力は utf-8 でエンコードされたになります。  
+  
+ 場合、<xref:System.Xml.XmlWriter>インスタンスが他の出力パラメーターを使用して作成された、<xref:System.Xml.XmlWriterSettings.Encoding%2A>プロパティは無視されます。  
+  
+ 次に例を示します。  
+  
+-   <xref:System.Xml.XmlWriterSettings.Encoding%2A> の既定値は `Encoding.UTF8` です。  
+  
+-   <xref:System.IO.StreamWriter>に設定されている`Encoding.Unicode`と<xref:System.IO.StreamWriter>上書きのエンコード、<xref:System.Xml.XmlWriterSettings.Encoding%2A>設定します。  
+  
+-   出力になります`Encoding.Unicode`です。  
+  
+```csharp  
+using (StreamWriter output =  
+    new StreamWriter(new FileStream("Xml01.xml", FileMode.Create), Encoding.Unicode))  
+{  
+    using (XmlWriter xmlWriter =  
+        XmlWriter.Create(output, new XmlWriterSettings()))  
+    {  
+        xmlWriter.WriteStartDocument();  
+        xmlWriter.WriteStartElement("Root");  
+        xmlWriter.WriteEndElement();  
+        xmlWriter.WriteEndDocument();  
+    }  
+}  
+```  
+  
+> [!IMPORTANT]
+>  同意しない、<xref:System.Text.Encoding>信頼できないソースからのオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、XML フラグメントをメモリ ストリームに書き込みます。  
+  
+ [!code-csharp[XmlWriterSettings.CloseOutput#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlWriterSettings.CloseOutput/CS/writestream2.cs#1)]
+ [!code-vb[XmlWriterSettings.CloseOutput#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlWriterSettings.CloseOutput/VB/writestream2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Indent">
+      <MemberSignature Language="C#" Value="public bool Indent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Indent" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.Indent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素にインデントを設定するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />個々 の要素を書き込むを新しい行にインデントされます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ適用されます<xref:System.Xml.XmlWriter>インスタンスのテキストの内容を出力する以外、それ以外の場合、この設定は無視されます。  
+  
+ 要素に混合コンテンツが含まれていない限り、要素がインデントされます。 1 回、<xref:System.Xml.XmlWriter.WriteString%2A>または<xref:System.Xml.XmlWriter.WriteWhitespace%2A>メソッドが混合要素コンテンツを書き込むために呼び出される、<xref:System.Xml.XmlWriter>インデントを停止します。 インデントには、混合コンテンツ要素が閉じられた後に行うことが再開されます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlWriter>インデントのタブ文字を使用するオブジェクト。  
+  
+ [!code-csharp[XmlWriterSettings.Indent#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlWriterSettings.Indent/CS/writeindent.cs#1)]
+ [!code-vb[XmlWriterSettings.Indent#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlWriterSettings.Indent/VB/writeindent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndentChars">
+      <MemberSignature Language="C#" Value="public string IndentChars { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IndentChars" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.IndentChars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデント処理を行うときに使用する文字列を取得または設定します。 この設定が使用されるときに、<see cref="P:System.Xml.XmlWriterSettings.Indent" />プロパティに設定されている<see langword="true" />です。</summary>
+        <value>インデント処理を行うときに使用する文字列。 これには任意の文字列値を設定できます。 ただし、有効な XML にするには、空白、タブ、復帰、ライン フィードなどの有効な空白文字だけを指定する必要があります。 既定値は 2 つのスペースです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ適用されます<xref:System.Xml.XmlWriter>インスタンスのテキストの内容を出力する以外、それ以外の場合、この設定は無視されます。 <xref:System.Xml.XmlWriter>インデント文字が無効な XML になる場合、例外をスローします。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlWriter>インデントのタブ文字を使用するオブジェクト。  
+  
+ [!code-csharp[XmlWriterSettings.Indent#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlWriterSettings.Indent/CS/writeindent.cs#1)]
+ [!code-vb[XmlWriterSettings.Indent#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlWriterSettings.Indent/VB/writeindent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">割り当てられた値、<see cref="P:System.Xml.XmlWriterSettings.IndentChars" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceHandling">
+      <MemberSignature Language="C#" Value="public System.Xml.NamespaceHandling NamespaceHandling { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.NamespaceHandling NamespaceHandling" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.NamespaceHandling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.NamespaceHandling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、 <see cref="T:System.Xml.XmlWriter" /> XML コンテンツを書き込むときに、重複する名前空間宣言を削除する必要があります。 既定の動作では、ライターの名前空間リゾルバーに存在するすべての名前空間宣言がライターによって出力されます。</summary>
+        <value><see cref="T:System.Xml.NamespaceHandling" />で重複する名前空間宣言を削除するかどうかを指定するための列挙、<see cref="T:System.Xml.XmlWriter" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewLineChars">
+      <MemberSignature Language="C#" Value="public string NewLineChars { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewLineChars" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.NewLineChars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>改行に使用する文字列を取得または設定します。</summary>
+        <value>改行に使用する文字列。 これには任意の文字列値を設定できます。 ただし、有効な XML にするには、空白、タブ、復帰、ライン フィードなどの有効な空白文字だけを指定する必要があります。 既定値は<c>\r\n</c> (キャリッジ リターン、改行)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ適用されます<xref:System.Xml.XmlWriter>インスタンスのテキストの内容を出力する以外、それ以外の場合、この設定は無視されます。 <xref:System.Xml.XmlWriter>改行文字が無効な XML になる場合、例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">割り当てられた値、<see cref="P:System.Xml.XmlWriterSettings.NewLineChars" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NewLineHandling">
+      <MemberSignature Language="C#" Value="public System.Xml.NewLineHandling NewLineHandling { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.NewLineHandling NewLineHandling" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.NewLineHandling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.NewLineHandling</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力内の改行を正規化するかどうかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Xml.NewLineHandling" /> 値のいずれか。 既定値は、<see cref="F:System.Xml.NewLineHandling.Replace" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定は、テキストの内容または属性の値を書き込むときに適用されます。 各、<xref:System.Xml.NewLineHandling>値次のとおりです。  
+  
+-   <xref:System.Xml.NewLineHandling.Entitize>設定は、<xref:System.Xml.XmlWriter>をそれ以外の場合は保持されません、正規化を改行文字を置き換える<xref:System.Xml.XmlReader>文字エン ティティにします。 これは、正規化の出力の読み取り、ラウンド トリップのシナリオで役立ちます<xref:System.Xml.XmlReader>です。 属性値の場合にラウンド トリップ以降の追加の正規化規則が適用されます`\t`、`\n`と`\r`で正規化されたときに属性値にスペースが置き換えられます、<xref:System.Xml.XmlReader>です。  
+  
+-   <xref:System.Xml.NewLineHandling.Replace>設定は、<xref:System.Xml.XmlWriter>と改行文字を置換する`\r\n`、Microsoft Windows オペレーティング システムで使用される新しい行形式であります。 これにより、メモ帳や Microsoft Word のアプリケーションでファイルを正しく表示されるようにします。 この設定によりもに、属性内の改行文字を保持するために文字エンティティに置き換えます。 これが既定値です。  
+  
+-   <xref:System.Xml.NewLineHandling.None>設定は、<xref:System.Xml.XmlWriter>変更されていない入力のままにします。 この設定は場合、新しい行の処理に使用されます。 出力がによって読み取られた場合に便利ですが、<xref:System.Xml.XmlReader>はどのような正規化を行わない (たとえば、<xref:System.Xml.XmlTextReader>既定の設定でします)。  
+  
+ 次の表の出力を表示する、<xref:System.Xml.XmlWriter.WriteString%2A>メソッドによって入力値に指定すると、<xref:System.Xml.XmlWriterSettings.NewLineHandling%2A>プロパティの設定。 テーブルは、テキストの内容を作成するときに出力を表示および属性値を書き込むときにします。  
+  
+ `Text Node Value:`  
+  
+||\r\n|\n|\r|\t|  
+|-|------------|---------|---------|---------|  
+|含ま|(& a) #D; \n|\n|(& A) #D です。|\t|  
+|置換|\r\n|\r\n|\r\n|\t|  
+|なし|\r\n|\n|\r|\t|  
+  
+ `Attribute Value:`  
+  
+||\r\n|\n|\r|\t|  
+|-|------------|---------|---------|---------|  
+|含ま|(& M); #D & #A です。|(& A) #A です。|(& A) #D です。|&\#9;|  
+|置換|(& M); #D & #A です。|(& A) #A です。|(& A) #D です。|&\#9;|  
+|なし|\r\n|\n|\r|\t|  
+  
+> [!NOTE]
+>  <xref:System.Xml.XmlWriter> CDATA セクション、コメント、または処理命令の内容を書き込むときに、次の動作がします。 新しい行は、文字エンティティに置き換えられますしない場合でも、<xref:System.Xml.XmlWriterSettings.NewLineHandling%2A>プロパティに設定されている<xref:System.Xml.NewLineHandling.Entitize>です。 文字エン ティティは CDATA セクション、コメントまたは処理命令で認識されないためにです。 場合、<xref:System.Xml.XmlWriterSettings.NewLineHandling%2A>プロパティに設定されている<xref:System.Xml.NewLineHandling.None>または<xref:System.Xml.NewLineHandling.Replace>、テキスト ノードの値を作成するときと同じ動作です。  
+  
+ 次の表は、どのような正規化を示して<xref:System.Xml.XmlReader>各入力の空白を返します。 詳細についてを参照してください 2.11 および W3C の 3.3.3 [XML 1.0 勧告](http://www.w3.org/TR/REC-xml/)です。  
+  
+> [!NOTE]
+>  正規化のリーダーは any<xref:System.Xml.XmlReader>によって作成されたオブジェクト、<xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType>メソッドです。 これらのオブジェクトは、常に、改行の正規化と属性の完全な正規化を実行します。 <xref:System.Xml.XmlTextReader>オブジェクトすることもできます正規化リーダーである場合<xref:System.Xml.XmlTextReader.Normalization%2A>プロパティに設定されている`true`です。  
+  
+||\r\n|\n|\r|\t|  
+|-|------------|---------|---------|---------|  
+|テキスト ノードの値|\n|\n|\n|\t|  
+|属性の値|1 つのスペース|1 つのスペース|1 つのスペース|1 つのスペース|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewLineOnAttributes">
+      <MemberSignature Language="C#" Value="public bool NewLineOnAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NewLineOnAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.NewLineOnAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい行に属性を書き込むかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />個々 の行に属性を書き込むそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。  
+  
+ <block subset="none" type="note"><para>  
+ この設定は、no されるときに有効、<see cref="P:System.Xml.XmlWriterSettings.Indent" />プロパティの値が<see langword="false" />です。  
+  
+</para></block>  
+  
+ ときに<see cref="P:System.Xml.XmlWriterSettings.NewLineOnAttributes" />に設定されている<see langword="true" />、各属性は、新しい行と 1 つの余分なレベルのインデントの前に付加されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ適用されます<xref:System.Xml.XmlWriter>インスタンスのテキストの内容を出力する以外、それ以外の場合、この設定は無視されます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Xml.XmlWriter>を XML ファイルに書き込み、新しい行に各属性を書き込みます。  
+  
+ [!code-csharp[XmlWriterSettings.NewLineOnAttributes#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlWriterSettings.NewLineOnAttributes/CS/writenewlineattrs.cs#1)]
+ [!code-vb[XmlWriterSettings.NewLineOnAttributes#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlWriterSettings.NewLineOnAttributes/VB/writenewlineattrs.vb#1)]  
+  
+ このサンプルでは、次の出力が生成されます。  
+  
+```  
+<order  
+  orderID="367A54"  
+  date="2001-05-03">  
+  <price>19.95</price>  
+</order>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OmitXmlDeclaration">
+      <MemberSignature Language="C#" Value="public bool OmitXmlDeclaration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OmitXmlDeclaration" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.OmitXmlDeclaration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML 宣言を省略するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />XML 宣言を省略する場合それ以外の場合、<see langword="false" />です。 既定値は<see langword="false" />、XML 宣言が書き込まれます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ適用されます<xref:System.Xml.XmlWriter>インスタンスのテキストの内容を出力する以外、それ以外の場合、この設定は無視されます。  
+  
+ 場合<xref:System.Xml.XmlWriterSettings.OmitXmlDeclaration%2A>に設定されている`false`、XML 宣言が自動的に書き込まれます  
+  
+ XML 宣言は、常に書き込まれます<xref:System.Xml.XmlWriterSettings.ConformanceLevel%2A>に設定されている<xref:System.Xml.ConformanceLevel.Document>場合でも、<xref:System.Xml.XmlWriterSettings.OmitXmlDeclaration%2A>に設定されている`true`です。  
+  
+ 場合、XML 宣言が書き込まれていない<xref:System.Xml.XmlWriterSettings.ConformanceLevel%2A>に設定されている<xref:System.Xml.ConformanceLevel.Fragment>です。 呼び出すことができます<xref:System.Xml.XmlWriter.WriteProcessingInstruction%2A>XML 宣言を明示的に記述します。  
+  
+   
+  
+## Examples  
+ 次の例は、XML フラグメントをメモリ ストリームに書き込みます。  
+  
+ [!code-csharp[XmlWriterSettings.CloseOutput#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlWriterSettings.CloseOutput/CS/writestream2.cs#1)]
+ [!code-vb[XmlWriterSettings.CloseOutput#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlWriterSettings.CloseOutput/VB/writestream2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputMethod">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlOutputMethod OutputMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlOutputMethod OutputMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.OutputMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlOutputMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化に使用する方法を取得、<see cref="T:System.Xml.XmlWriter" />出力します。</summary>
+        <value><see cref="T:System.Xml.XmlOutputMethod" /> 値のいずれか。 既定値は、<see cref="F:System.Xml.XmlOutputMethod.Xml" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、出力をシリアル化に使用する方法を指定します。 出力は、HTML のルールでは、XML 1.0 規則およびなどを使用してシリアル化できます。 この設定は、XSLT プロセッサによって設定されているし、Visual Studio によって内部的に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XmlWriterSettings.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>設定クラスのメンバーを既定値にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、既定のインスタンスのプロパティ値<xref:System.Xml.XmlWriterSettings>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Xml.XmlWriterSettings.Async%2A>|`false`。|  
+|<xref:System.Xml.XmlWriterSettings.CheckCharacters%2A>|`true`。|  
+|<xref:System.Xml.XmlWriterSettings.CloseOutput%2A>|`false`。|  
+|<xref:System.Xml.XmlWriterSettings.ConformanceLevel%2A>|<xref:System.Xml.ConformanceLevel.Document>。|  
+|<xref:System.Xml.XmlWriterSettings.Encoding%2A>|`Encoding.UTF8`。|  
+|<xref:System.Xml.XmlWriterSettings.Indent%2A>|`false`。|  
+|<xref:System.Xml.XmlWriterSettings.IndentChars%2A>|2 つのスペースです。|  
+|<xref:System.Xml.XmlWriterSettings.NewLineChars%2A>|`\r\n`。|  
+|<xref:System.Xml.XmlWriterSettings.NewLineHandling%2A>|<xref:System.Xml.NewLineHandling.Replace>。|  
+|<xref:System.Xml.XmlWriterSettings.NewLineOnAttributes%2A>|`false`。|  
+|<xref:System.Xml.XmlWriterSettings.OmitXmlDeclaration%2A>|`false`。|  
+|<xref:System.Xml.XmlWriterSettings.WriteEndDocumentOnClose%2A>|`true`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEndDocumentOnClose">
+      <MemberSignature Language="C#" Value="public bool WriteEndDocumentOnClose { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WriteEndDocumentOnClose" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XmlWriterSettings.WriteEndDocumentOnClose" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Xml.XmlWriter" />は追加タグを終了タグをすべて閉じられていない要素に、<see cref="M:System.Xml.XmlWriter.Close" />メソッドが呼び出されます。</summary>
+        <value>
+          <see langword="true" />アウトしてください。 すべての要素が閉じられていないタグが閉じられる場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフラグを設定した場合`false`、出力 XML ファイルを適切な形式にすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

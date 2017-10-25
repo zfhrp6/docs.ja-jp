@@ -1,0 +1,76 @@
+<Type Name="DbAggregate" FullName="System.Data.Common.CommandTrees.DbAggregate">
+  <TypeSignature Language="C#" Value="public abstract class DbAggregate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DbAggregate extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.CommandTrees.DbAggregate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>集計に必要な基本的な機能を実装して、<see langword="GroupBy" />句。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 集計は擬似式であり、使用できる場所が厳しく制限されています。 集計の集計句にのみ表示できます、`GroupBy`式。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Arguments">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Data.Common.CommandTrees.DbExpression&gt; Arguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Data.Common.CommandTrees.DbExpression&gt; Arguments" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.CommandTrees.DbAggregate.Arguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Data.Common.CommandTrees.DbExpression&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Common.CommandTrees.DbAggregate" /> に対する引数を定義する式の一覧を取得します。</summary>
+        <value>この <see cref="T:System.Data.Common.CommandTrees.DbAggregate" /> に対する引数を定義する式の一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.CommandTrees.DbAggregate.Arguments%2A> の <xref:System.Data.Common.CommandTrees.DbAggregate> プロパティは、集計に対する引数を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResultType">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.TypeUsage ResultType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.TypeUsage ResultType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.CommandTrees.DbAggregate.ResultType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Common.CommandTrees.DbAggregate" /> の結果型を取得します。</summary>
+        <value>この <see cref="T:System.Data.Common.CommandTrees.DbAggregate" /> の結果型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.CommandTrees.DbAggregate.ResultType%2A> プロパティは、集計の結果型を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

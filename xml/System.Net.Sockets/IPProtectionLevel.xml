@@ -1,0 +1,139 @@
+<Type Name="IPProtectionLevel" FullName="System.Net.Sockets.IPProtectionLevel">
+  <TypeSignature Language="C#" Value="public enum IPProtectionLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed IPProtectionLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.IPProtectionLevel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>サイト ローカル プレフィックスまたは同じリンク ローカル アドレスなどの指定したスコープ、IPv6 ソケットの制限を有効にする値。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオプションにより、IPv6 ソケットに対するアクセス制限を設定できます。 この制限により、プライベート LAN で実行されるアプリケーションを外部からの攻撃に対して簡単かつ堅牢に強化できます。 このソケット オプションで待機中のソケットのスコープを変更して、適切な場合はパブリック ユーザーおよびプライベート ユーザーからの無制限のアクセスを許可したり、必要に応じて同じサイトへのアクセスのみに制限したりできます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EdgeRestricted">
+      <MemberSignature Language="C#" Value="EdgeRestricted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IPProtectionLevel EdgeRestricted = int32(20)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IPProtectionLevel.EdgeRestricted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IPProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IP 保護レベルは、エッジ制限付きです。 この値が、インターネット経由で動作するアプリケーションで使用されます。 この設定は、Windows Teredo の実装を使用したネットワーク アドレス変換 (NAT) トラバーサルを許可されません。 これらのアプリケーションは、開かれたポートに送信するインターネット攻撃からアプリケーションを強化する必要がありますので、IPv4 のファイアウォールをバイパスする可能性があります。 Windows Server 2003 および Windows XP の場合は、ソケットで IP 保護レベルの既定値はエッジ制限付きです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Restricted">
+      <MemberSignature Language="C#" Value="Restricted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IPProtectionLevel Restricted = int32(30)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IPProtectionLevel.Restricted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IPProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IP 保護レベルは制限されます。 この値は、イントラネットのシナリオを実装していないイントラネット アプリケーションで使用されます。 これらのアプリケーションは通常、テストもインターネット スタイルの攻撃に対して強化します。 この設定では、リンク ローカルのみを受信したトラフィックを制限します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unrestricted">
+      <MemberSignature Language="C#" Value="Unrestricted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IPProtectionLevel Unrestricted = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IPProtectionLevel.Unrestricted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IPProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IP 保護レベルは制限されません。 この値は組み込まれている IPv6 NAT トラバーサル機能を活用するアプリケーションなど、インターネット経由で動作するよう設計されています。 アプリケーションによって使用されます (たとえば Teredo) を Windows にします。 これらのアプリケーションは、開かれたポートに送信するインターネット攻撃からアプリケーションを強化する必要がありますので、IPv4 のファイアウォールをバイパスする可能性があります。 Windows Server 2008 R2 および Windows Vista では、ソケットで IP 保護レベルの既定値は制限されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unspecified">
+      <MemberSignature Language="C#" Value="Unspecified" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IPProtectionLevel Unspecified = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IPProtectionLevel.Unspecified" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IPProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IP 保護レベルが指定されていません。 Windows 7 および Windows Server 2008 R2 でのソケットで IP 保護レベルの既定値は指定されません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

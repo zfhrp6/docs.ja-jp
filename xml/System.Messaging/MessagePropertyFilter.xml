@@ -1,0 +1,2112 @@
+<Type Name="MessagePropertyFilter" FullName="System.Messaging.MessagePropertyFilter">
+  <TypeSignature Language="C#" Value="public class MessagePropertyFilter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessagePropertyFilter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessagePropertyFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>制御し、メッセージ キューからメッセージをピークまたは受信時に取得されるプロパティを選択します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Messaging.MessagePropertyFilter>上、<xref:System.Messaging.MessageQueue>インスタンスはピークまたはメッセージの受信時に取得されるプロパティのセットを制御します。 インスタンスにフィルターが設定<xref:System.Messaging.MessageQueue>メッセージの情報を取得します。 設定すると、<xref:System.Messaging.MessagePropertyFilter>メンバーをブール値`false`、関連する情報を防止する<xref:System.Messaging.Message>プロパティを取得してから、<xref:System.Messaging.MessageQueue>です。  
+  
+ ブール値ではないいくつかのフィルター プロパティがあります。 整数値を取得または設定の既定のサイズは、 <xref:System.Messaging.Message.Body%2A?displayProperty=nameWithType>、 <xref:System.Messaging.Message.Extension%2A?displayProperty=nameWithType>、または<xref:System.Messaging.Message.Label%2A?displayProperty=nameWithType>です。  
+  
+ 限られたプロパティ セットを取得するキューから少量のデータが転送されるため、パフォーマンスを向上させるのに役立ちます。  
+  
+ プロパティを設定するときに<xref:System.Messaging.MessagePropertyFilter>メッセージが受信または取得するときに、そのプロパティを取得するかどうかを示しているだけです。 関連付けられているプロパティ値を変更しない、<xref:System.Messaging.Message>です。  
+  
+ <xref:System.Messaging.MessagePropertyFilter.%23ctor%2A>コンス トラクターはブール値であるが既定値にすべてのフィルターのプロパティを設定`false`です。 整数の値のプロパティに割り当てられている既定のコンス トラクターのトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、キューに優先度が異なる 2 つのメッセージを送信し、順番に取得します。  
+  
+ [!code-cpp[Message.DefaultPropertiesToSend#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Message.DefaultPropertiesToSend/CPP/message_defaultandpriority.cpp#1)]
+ [!code-csharp[Message.DefaultPropertiesToSend#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Message.DefaultPropertiesToSend/CS/message_defaultandpriority.cs#1)]
+ [!code-vb[Message.DefaultPropertiesToSend#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Message.DefaultPropertiesToSend/VB/message_defaultandpriority.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessagePropertyFilter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessagePropertyFilter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.MessagePropertyFilter" />クラスし、すべてのプロパティの既定値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessagePropertyFilter.%23ctor%2A>コンス トラクターでは、すべてのブール値を設定`false`し、次の表に示すように既定値に整数の値のプロパティを設定します。  
+  
+|プロパティ|既定値|  
+|--------------|-------------------|  
+|<xref:System.Messaging.MessagePropertyFilter.DefaultBodySize%2A>|1024|  
+|<xref:System.Messaging.MessagePropertyFilter.DefaultExtensionSize%2A>|255|  
+|<xref:System.Messaging.MessagePropertyFilter.DefaultLabelSize%2A>|255|  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter>コンス トラクターです。  
+  
+ [!code-cpp[MessagePropertyFilter#40](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#40)]
+ [!code-csharp[MessagePropertyFilter#40](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#40)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcknowledgeType">
+      <MemberSignature Language="C#" Value="public bool AcknowledgeType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AcknowledgeType" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.AcknowledgeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAcknowledgeType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.AcknowledgeType" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.AcknowledgeType" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.AcknowledgeType%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、送信元アプリケーションによって要求された受信確認メッセージの種類を指定します。 受信確認の種類は、受信確認が返される場合を定義します。 設定、<xref:System.Messaging.Message.AcknowledgeType%2A?displayProperty=nameWithType>特定の種類の受信確認を要求するメッセージを送信する前にプロパティです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.AcknowledgeType%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#1)]
+ [!code-csharp[MessagePropertyFilter#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Acknowledgment">
+      <MemberSignature Language="C#" Value="public bool Acknowledgment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Acknowledgment" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.Acknowledgment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAcknowledgement")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.Acknowledgment" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.Acknowledgment" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.Acknowledgment%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージ受信確認が生成される場合を決定する管理キュー内のシステム投稿の受信確認の種類を指定します。  
+  
+ 受信確認の送信先キューから返され、ポストにメッセージとして、<xref:System.Messaging.Message.AdministrationQueue%2A>元のメッセージで指定します。 生成される受信確認の種類は、要求されたに依存します。  
+  
+ 読み取り、<xref:System.Messaging.Message.Acknowledgment%2A?displayProperty=nameWithType>プロパティを最初にメッセージ キューに送信されたメッセージの状態を確認する管理キューからメッセージを受信するときにします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、キューから注文を含むメッセージを送受信します。 元のメッセージが達した場合または具体的には、肯定受信確認の要求がキューから取得します。  
+  
+ [!code-cpp[Message.Acknowledgment#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Message.Acknowledgment/CPP/message_acknowledgment.cpp#1)]
+ [!code-csharp[Message.Acknowledgment#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Message.Acknowledgment/CS/message_acknowledgment.cs#1)]
+ [!code-vb[Message.Acknowledgment#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Message.Acknowledgment/VB/message_acknowledgment.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdministrationQueue">
+      <MemberSignature Language="C#" Value="public bool AdministrationQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AdministrationQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.AdministrationQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAdministrationQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.AdministrationQueue" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.AdministrationQueue" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.AdministrationQueue%2A>のプロパティ、<xref:System.Messaging.Message>クラスがシステムによって生成された受信確認を受信するキューの名前を指定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.AdministrationQueue%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#2](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#2)]
+ [!code-csharp[MessagePropertyFilter#2](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppSpecific">
+      <MemberSignature Language="C#" Value="public bool AppSpecific { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AppSpecific" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.AppSpecific" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAppSpecific")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.AppSpecific" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.AppSpecific" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.AppSpecific%2A>のプロパティ、<xref:System.Messaging.Message>クラスには、アプリケーション固有の追加情報が含まれています。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.AppSpecific%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#3](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#3)]
+ [!code-csharp[MessagePropertyFilter#3](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrivedTime">
+      <MemberSignature Language="C#" Value="public bool ArrivedTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ArrivedTime" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.ArrivedTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgArrivedTime")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.ArrivedTime" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.ArrivedTime" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.ArrivedTime%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージが送信先キューに到着したときを示します。 これは、現地時刻、メッセージが取得されて、コンピューターの GMT から調整です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.ArrivedTime%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#4](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#4)]
+ [!code-csharp[MessagePropertyFilter#4](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachSenderId">
+      <MemberSignature Language="C#" Value="public bool AttachSenderId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AttachSenderId" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.AttachSenderId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAttachSenderId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.AttachSenderId" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.AttachSenderId" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.AttachSenderId%2A>のプロパティ、<xref:System.Messaging.Message>クラスを指定するかどうか、<xref:System.Messaging.Message.SenderId%2A?displayProperty=nameWithType>を指定するか、メッセージに関連付けられています。 <xref:System.Messaging.Message.SenderId%2A?displayProperty=nameWithType>メッセージ キューによって設定されており、送信者が、キューへのアクセス権を持つかどうかを確認する受信側キュー マネージャーを使用します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.AttachSenderId%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#5](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#5)]
+ [!code-csharp[MessagePropertyFilter#5](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authenticated">
+      <MemberSignature Language="C#" Value="public bool Authenticated { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Authenticated" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.Authenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAuthenticated")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.Authenticated" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.Authenticated" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.Authenticated%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、認証が要求されたかどうかを判断する受信側アプリケーションで使用します。 認証が要求されてから、キューのメッセージでは、メッセージは認証されます。  
+  
+ メッセージのプロパティを調べて、メッセージが認証に失敗したかどうかを判断することはできません。 認証に失敗したメッセージは破棄され、キューに配信されません。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.Authenticated%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#6](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#6)]
+ [!code-csharp[MessagePropertyFilter#6](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationProviderName">
+      <MemberSignature Language="C#" Value="public bool AuthenticationProviderName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AuthenticationProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.AuthenticationProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAuthenticationProviderName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.AuthenticationProviderName" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.AuthenticationProviderName" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.AuthenticationProviderName%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージのデジタル署名を生成するために使用する暗号化サービス プロバイダーの名前を指定します。 <xref:System.Messaging.Message.AuthenticationProviderName%2A?displayProperty=nameWithType>外部のキューを使用するときに通常使用されます。  
+  
+ 外部のキューは、Microsoft メッセージ キュー以外のキュー システムに存在します。 Microsoft メッセージ キューは、コネクタ アプリケーションを使用してこのようなキューと通信します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.AuthenticationProviderName%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#7](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#7)]
+ [!code-csharp[MessagePropertyFilter#7](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationProviderType">
+      <MemberSignature Language="C#" Value="public bool AuthenticationProviderType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AuthenticationProviderType" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.AuthenticationProviderType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgAuthenticationProviderType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.AuthenticationProviderType" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.AuthenticationProviderType" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.AuthenticationProviderType%2A>のプロパティ、<xref:System.Messaging.Message>クラスがメッセージのデジタル署名の生成に使われる暗号プロバイダーの種類を指定します。 <xref:System.Messaging.Message.AuthenticationProviderType%2A>外部のキューを使用するときに通常使用されます。  
+  
+ 外部のキューは、Microsoft メッセージ キュー以外のキュー システムに存在します。 Microsoft メッセージ キューは、コネクタ アプリケーションを使用してこのようなキューと通信します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.AuthenticationProviderType%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#8](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#8)]
+ [!code-csharp[MessagePropertyFilter#8](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public bool Body { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Body" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgBody")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.Body" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.Body" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.Body%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージのシリアル化された内容を表します。 本文は、最大 4 MB のデータを含めることができます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.Body%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#9](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#9)]
+ [!code-csharp[MessagePropertyFilter#9](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearAll">
+      <MemberSignature Language="C#" Value="public void ClearAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessagePropertyFilter.ClearAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのブール型フィルター値に設定<see langword="false" />メッセージの受信時にメッセージ プロパティが取得されないようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Messaging.MessagePropertyFilter.ClearAll%2A>すべてを設定する<xref:System.Messaging.MessagePropertyFilter>ブール型プロパティを`false`です。 これは、メッセージの受信時に取得するメッセージのプロパティをられません。 <xref:System.Messaging.MessagePropertyFilter.ClearAll%2A>値には影響しません<xref:System.Messaging.MessagePropertyFilter.DefaultBodySize%2A>、 <xref:System.Messaging.MessagePropertyFilter.DefaultExtensionSize%2A>、または<xref:System.Messaging.MessagePropertyFilter.DefaultLabelSize%2A>です。  
+  
+ 呼び出した後<xref:System.Messaging.MessagePropertyFilter.ClearAll%2A>に少なくとも 1 つのフィルター プロパティを設定する必要がある`true`メッセージに関連するデータを受信するためにします。 いずれかに個々 のプロパティを設定することができます`true`、呼び出すか、または<xref:System.Messaging.MessagePropertyFilter.SetDefaults%2A>または<xref:System.Messaging.MessagePropertyFilter.SetAll%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Messaging.MessagePropertyFilter.ClearAll%2A>メソッドです。  
+  
+ [!code-cpp[MessagePropertyFilter#37](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#37)]
+ [!code-csharp[MessagePropertyFilter#37](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#37)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessagePropertyFilter.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのシャロー コピーを作成します。</summary>
+        <returns>A<see cref="T:System.Object" />のインスタンスを表す、<see cref="T:System.Messaging.MessagePropertyFilter" />クラスです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectorType">
+      <MemberSignature Language="C#" Value="public bool ConnectorType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConnectorType" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.ConnectorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgConnectorType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.ConnectorType" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.ConnectorType" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.ConnectorType%2A>のプロパティ、<xref:System.Messaging.Message>アプリケーションは、通常はメッセージ キューによって設定されるメッセージ プロパティを設定すると、クラスが必要です。 これは、次の 2 つのインスタンスで使用されます。  
+  
+-   メッセージがコネクタ アプリケーションによって渡されるときに、<xref:System.Messaging.Message.ConnectorType%2A?displayProperty=nameWithType>のメッセージのセキュリティおよび受信確認プロパティを解釈する送信側と受信側アプリケーションが必要です。  
+  
+-   アプリケーションで暗号化されたメッセージを送信するときに、<xref:System.Messaging.Message.ConnectorType%2A?displayProperty=nameWithType>プロパティは、対称キーを使用するメッセージがキューに通知します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.ConnectorType%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#10](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#10)]
+ [!code-csharp[MessagePropertyFilter#10](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CorrelationId">
+      <MemberSignature Language="C#" Value="public bool CorrelationId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CorrelationId" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.CorrelationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgCorrelationId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.CorrelationId" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.CorrelationId" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.CorrelationId%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、元のメッセージを参照するメッセージの受信確認メッセージやレポートで使用されるメッセージの識別子を指定します。 受信側のアプリケーションがメッセージの並べ替えに使用できるアプリケーション定義の識別子を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、キューから注文を含むメッセージを送受信します。 元のメッセージが達した場合または具体的には、肯定受信確認の要求がキューから取得します。  
+  
+ [!code-cpp[Message.Acknowledgment#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Message.Acknowledgment/CPP/message_acknowledgment.cpp#1)]
+ [!code-csharp[Message.Acknowledgment#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Message.Acknowledgment/CS/message_acknowledgment.cs#1)]
+ [!code-vb[Message.Acknowledgment#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Message.Acknowledgment/VB/message_acknowledgment.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultBodySize">
+      <MemberSignature Language="C#" Value="public int DefaultBodySize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultBodySize" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.DefaultBodySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1024)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgDefaultBodySize")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定の本文のバッファーのバイト単位のサイズを設定します。</summary>
+        <value>メッセージが受信したときに作成する既定の本体バッファー サイズ。 既定値は、1024 バイトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の本文のサイズは、メッセージの本文の内容を割り当てることのバイト数を指定します。 <xref:System.Messaging.Message.Body%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージのシリアル化された内容を表します。 本文は、最大 4 MB のデータを含めることができます。 本文のサイズを制限すると、パフォーマンスを向上させることができます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.DefaultBodySize%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#11](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#11)]
+ [!code-csharp[MessagePropertyFilter#11](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられた値が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultExtensionSize">
+      <MemberSignature Language="C#" Value="public int DefaultExtensionSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultExtensionSize" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.DefaultExtensionSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(255)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgDefaultExtensionSize")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定の拡張機能のバッファーのバイト単位のサイズを設定します。</summary>
+        <value>メッセージが受信したときに作成する既定の拡張バッファー サイズ。 既定値は、255 バイトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の拡張サイズは、メッセージの拡張機能に割り当てるバイト数を指定します。 <xref:System.Messaging.Message.Extension%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、バイナリ ラージ オブジェクトなど、メッセージに関連付けられた、アプリケーション定義の追加情報を表します。 内容を解釈するアプリケーションの役割です、<xref:System.Messaging.Message.Extension%2A>です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.DefaultExtensionSize%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#12](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#12)]
+ [!code-csharp[MessagePropertyFilter#12](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられた値が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultLabelSize">
+      <MemberSignature Language="C#" Value="public int DefaultLabelSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultLabelSize" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.DefaultLabelSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(255)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgDefaultLabelSize")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定のラベルのバッファーのバイト単位のサイズを設定します。</summary>
+        <value>メッセージが受信したときに作成する既定のラベル バッファー サイズ。 既定値は、255 バイトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のラベルのサイズは、メッセージのラベルを割り当てることのバイト数を指定します。 <xref:System.Messaging.Message.Label%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージのラベルを指定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.DefaultLabelSize%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#13](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#13)]
+ [!code-csharp[MessagePropertyFilter#13](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられた値が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationQueue">
+      <MemberSignature Language="C#" Value="public bool DestinationQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DestinationQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.DestinationQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgDestinationQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.DestinationQueue" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.DestinationQueue" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.DestinationQueue%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージの元の送信先キューを識別します。 ジャーナルや配信不能キュー内にあるメッセージの元の送信先を決定することは通常使用されます。 また、応答メッセージをキューを応答に送信するときも使用できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.DestinationQueue%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#14](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#14)]
+ [!code-csharp[MessagePropertyFilter#14](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationSymmetricKey">
+      <MemberSignature Language="C#" Value="public bool DestinationSymmetricKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DestinationSymmetricKey" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.DestinationSymmetricKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgDestinationSymmetricKey")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.DestinationSymmetricKey" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.DestinationSymmetricKey" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.DestinationSymmetricKey%2A>のプロパティ、<xref:System.Messaging.Message>クラスがメッセージの暗号化に使用する対称キーを指定します。 アプリケーションで暗号化されたメッセージを送信するとき、または外部のキューに暗号化されたメッセージを送信するときに必要です。  
+  
+ 外部のキューは、Microsoft メッセージ キュー以外のキュー システムに存在します。 Microsoft メッセージ キューは、コネクタ アプリケーションを使用してこのようなキューと通信します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.DestinationSymmetricKey%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#15](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#15)]
+ [!code-csharp[MessagePropertyFilter#15](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DigitalSignature">
+      <MemberSignature Language="C#" Value="public bool DigitalSignature { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DigitalSignature" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.DigitalSignature" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgDigitalSignature")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.DigitalSignature" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.DigitalSignature" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.DigitalSignature%2A>のプロパティ、<xref:System.Messaging.Message>クラスがメッセージの認証に使用するデジタル署名を指定します。 ほとんどの場合、生成および送信側のアプリケーションが認証を要求するときに、メッセージ キューによって設定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.DigitalSignature%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#16](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#16)]
+ [!code-csharp[MessagePropertyFilter#16](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptionAlgorithm">
+      <MemberSignature Language="C#" Value="public bool EncryptionAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EncryptionAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.EncryptionAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgEncryptionAlgorithm")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.EncryptionAlgorithm" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.EncryptionAlgorithm" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージがプライベートの場合は、送信および受信したときに暗号化を解除する前に暗号化されます。 <xref:System.Messaging.Message.EncryptionAlgorithm%2A>のプロパティ、<xref:System.Messaging.Message>クラスはプライベート メッセージのメッセージ本文を暗号化するためのアルゴリズムを指定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.EncryptionAlgorithm%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#17](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#17)]
+ [!code-csharp[MessagePropertyFilter#17](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extension">
+      <MemberSignature Language="C#" Value="public bool Extension { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Extension" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.Extension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgExtension")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.Extension" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.Extension" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.Extension%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、ラージ バイナリ オブジェクトと同様に、メッセージに関連付けられているアプリケーション定義の追加情報を提供します。 受信側アプリケーションの内容を解釈するの機能により、<xref:System.Messaging.Message.Extension%2A>です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.Extension%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#18](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#18)]
+ [!code-csharp[MessagePropertyFilter#18](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HashAlgorithm">
+      <MemberSignature Language="C#" Value="public bool HashAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HashAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.HashAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgHashAlgorithm")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.HashAlgorithm" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.HashAlgorithm" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.HashAlgorithm%2A>のプロパティ、<xref:System.Messaging.Message>クラスはメッセージ キューがメッセージを認証するときに使用するハッシュ アルゴリズムを識別します。 ハッシュ アルゴリズムは、メッセージのデジタル署名を作成するときにも使用されます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.HashAlgorithm%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#19](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#19)]
+ [!code-csharp[MessagePropertyFilter#19](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public bool Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Id" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.Id" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.Id" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.Id%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージのメッセージ キューによって生成される一意の識別子を示します。 この識別子は、メッセージが送信されるときに生成されます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.Id%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#20](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#20)]
+ [!code-csharp[MessagePropertyFilter#20](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFirstInTransaction">
+      <MemberSignature Language="C#" Value="public bool IsFirstInTransaction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFirstInTransaction" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.IsFirstInTransaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgIsFirstInTransaction")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.IsFirstInTransaction" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.IsFirstInTransaction" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.IsFirstInTransaction%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージは、1 つのキューに 1 つのトランザクションで送信される最初のメッセージかどうかを確認する受信側アプリケーションで使用します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.IsFirstInTransaction%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#50](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#50)]
+ [!code-csharp[MessagePropertyFilter#50](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#50)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLastInTransaction">
+      <MemberSignature Language="C#" Value="public bool IsLastInTransaction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLastInTransaction" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.IsLastInTransaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgIsLastInTransaction")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.IsLastInTransaction" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.IsLastInTransaction" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.IsLastInTransaction%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージは、1 つのトランザクションから 1 つのキューに送信された最後のメッセージかどうかを確認する受信側アプリケーションで使用します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.IsLastInTransaction%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#51](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#51)]
+ [!code-csharp[MessagePropertyFilter#51](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#51)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public bool Label { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Label" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgLabel")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.Label" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.Label" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.Label%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージのラベルを指定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.Label%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#21](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#21)]
+ [!code-csharp[MessagePropertyFilter#21](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupId">
+      <MemberSignature Language="C#" Value="public bool LookupId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LookupId" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.LookupId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgLookupId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.LookupId" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.LookupId" />プロパティ情報です。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.LookupId%2A>のプロパティ、<xref:System.Messaging.Message>クラスがメッセージの参照 id を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageType">
+      <MemberSignature Language="C#" Value="public bool MessageType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MessageType" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.MessageType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgMessageType")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.MessageType" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.MessageType" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.MessageType%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージの種類を識別します。 メッセージには、通常のメッセージ、正または負の受信確認メッセージまたはレポート メッセージを指定できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.MessageType%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#22](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#22)]
+ [!code-csharp[MessagePropertyFilter#22](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public bool Priority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgPriority")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.Priority" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.Priority" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.Priority%2A>のプロパティ、<xref:System.Messaging.Message>クラスに影響を与えますが途中でメッセージを処理するメッセージ キュー方法だけでなく、先に着いたときに、メッセージがキューに配置されます。  
+  
+ メッセージの優先度は、非トランザクション メッセージの意味のみ設定できます。 トランザクション メッセージの優先順位は自動的に無視するように、トランザクション メッセージの優先度が 0 に設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、キューに優先度が異なる 2 つのメッセージを送信し、順番に取得します。  
+  
+ [!code-cpp[Message.DefaultPropertiesToSend#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Message.DefaultPropertiesToSend/CPP/message_defaultandpriority.cpp#1)]
+ [!code-csharp[Message.DefaultPropertiesToSend#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Message.DefaultPropertiesToSend/CS/message_defaultandpriority.cs#1)]
+ [!code-vb[Message.DefaultPropertiesToSend#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Message.DefaultPropertiesToSend/VB/message_defaultandpriority.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Recoverable">
+      <MemberSignature Language="C#" Value="public bool Recoverable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Recoverable" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.Recoverable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgRecoverable")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.Recoverable" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.Recoverable" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.Recoverable%2A>のプロパティ、<xref:System.Messaging.Message>クラスが、メッセージが送信先キューへ向かっている間も、コンピューターがクラッシュした場合でもメッセージの配信が保証されているかどうかを示します。  
+  
+ メッセージの配信が保証される場合メッセージは格納ローカルでのすべてのステップで、メッセージは次のコンピューターに正常に転送されるまでです。 設定<xref:System.Messaging.Message.Recoverable%2A?displayProperty=nameWithType>に`true`メッセージでしたスループットに影響します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.Recoverable%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#23](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#23)]
+ [!code-csharp[MessagePropertyFilter#23](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseQueue">
+      <MemberSignature Language="C#" Value="public bool ResponseQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ResponseQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.ResponseQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgResponseQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.ResponseQueue" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.ResponseQueue" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.ResponseQueue%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、受信側アプリケーションで、送信元アプリケーションに送信されるアプリケーションによって生成される応答メッセージを受信するキューを識別します。 応答キューは、アプリケーションがそのメッセージを送信するときに、送信元アプリケーションによって指定されます。 使用できる任意のキューを応答キューとして指定できます。  
+  
+ 応答キューに対して返されるメッセージは、アプリケーション固有です。 アプリケーションがメッセージには、新機能を定義する必要がありますの内容と、メッセージが受信したときに実行します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.ResponseQueue%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#24](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#24)]
+ [!code-csharp[MessagePropertyFilter#24](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SenderCertificate">
+      <MemberSignature Language="C#" Value="public bool SenderCertificate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SenderCertificate" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.SenderCertificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgSenderCertificate")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.SenderCertificate" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.SenderCertificate" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.SenderCertificate%2A>のプロパティ、<xref:System.Messaging.Message>クラスがメッセージの認証に使用するセキュリティ証明書を指定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.SenderCertificate%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#25](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#25)]
+ [!code-csharp[MessagePropertyFilter#25](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SenderId">
+      <MemberSignature Language="C#" Value="public bool SenderId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SenderId" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.SenderId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgSenderId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.SenderId" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.SenderId" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.SenderId%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージを認証するときに、受信側キュー マネージャーによって、主に使用します。 プロパティは、メッセージ キューによって設定されているし、キュー マネージャーによって、メッセージを送信したユーザーと、送信側が受信キューにアクセス権を持っていることを確認するために使用します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.SenderId%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#26](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#26)]
+ [!code-csharp[MessagePropertyFilter#26](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#26)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SenderVersion">
+      <MemberSignature Language="C#" Value="public bool SenderVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SenderVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.SenderVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgSenderVersion")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.SenderVersion" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.SenderVersion" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.SenderVersion%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージ キュー メッセージを送信するために使用のバージョンを指定します。 プロパティは、メッセージ キュー 2.0 でのみサポートされているトランザクション処理、およびバージョン 1.0 から送信されたメッセージの認証に使用されるその後、またはデジタル署名などの機能を使用する場合の注意する必要があります。  
+  
+ <xref:System.Messaging.Message.SenderVersion%2A?displayProperty=nameWithType>メッセージが送信されるときに、送信側キュー マネージャーによって設定されます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.SenderVersion%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#27](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#27)]
+ [!code-csharp[MessagePropertyFilter#27](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#27)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SentTime">
+      <MemberSignature Language="C#" Value="public bool SentTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SentTime" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.SentTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgSentTime")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.SentTime" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.SentTime" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.SentTime%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、送信側のコンピューターの日付と、メッセージが送信元キュー マネージャーによって送信された時刻を示します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.SentTime%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#28](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#28)]
+ [!code-csharp[MessagePropertyFilter#28](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#28)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAll">
+      <MemberSignature Language="C#" Value="public void SetAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessagePropertyFilter.SetAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メッセージを受信するときに、すべてのメッセージ プロパティを取得するを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Messaging.MessagePropertyFilter.SetAll%2A>すべてブール値を設定する<xref:System.Messaging.MessagePropertyFilter>プロパティ`true`です。 これにより、すべてのメッセージ プロパティをメッセージの受信時に取得します。 <xref:System.Messaging.MessagePropertyFilter.SetAll%2A>値には影響しません<xref:System.Messaging.MessagePropertyFilter.DefaultBodySize%2A>、 <xref:System.Messaging.MessagePropertyFilter.DefaultExtensionSize%2A>、または<xref:System.Messaging.MessagePropertyFilter.DefaultLabelSize%2A>です。  
+  
+ 呼び出した後<xref:System.Messaging.MessagePropertyFilter.SetAll%2A>個別のフィルター値を設定することができます`false`メッセージが受信したときに取得されるプロパティを制限するためにします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Messaging.MessagePropertyFilter.SetAll%2A>メソッドです。  
+  
+ [!code-cpp[MessagePropertyFilter#39](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#39)]
+ [!code-csharp[MessagePropertyFilter#39](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#39)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDefaults">
+      <MemberSignature Language="C#" Value="public void SetDefaults ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetDefaults() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessagePropertyFilter.SetDefaults" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一般的なメッセージ キュー プロパティのフィルターの値を設定<see langword="true" />と既定値に整数の値を持つプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Messaging.MessagePropertyFilter.SetDefaults%2A>を次を設定する<xref:System.Messaging.MessagePropertyFilter>ブール値のプロパティを`true`です。 以下は、最も一般的なプロパティ、<xref:System.Messaging.MessageQueue>は通常、次を操作します。  
+  
+-   <xref:System.Messaging.MessagePropertyFilter.AcknowledgeType%2A>  
+  
+-   <xref:System.Messaging.MessagePropertyFilter.Acknowledgment%2A>  
+  
+-   <xref:System.Messaging.MessagePropertyFilter.AdministrationQueue%2A>  
+  
+-   <xref:System.Messaging.MessagePropertyFilter.Body%2A>  
+  
+-   <xref:System.Messaging.MessagePropertyFilter.Id%2A>  
+  
+-   <xref:System.Messaging.MessagePropertyFilter.Label%2A>  
+  
+-   <xref:System.Messaging.MessagePropertyFilter.LookupId%2A>  
+  
+-   <xref:System.Messaging.MessagePropertyFilter.MessageType%2A>  
+  
+-   <xref:System.Messaging.MessagePropertyFilter.ResponseQueue%2A>  
+  
+-   <xref:System.Messaging.MessagePropertyFilter.UseDeadLetterQueue%2A>  
+  
+-   <xref:System.Messaging.MessagePropertyFilter.UseJournalQueue%2A>  
+  
+ <xref:System.Messaging.MessagePropertyFilter.SetDefaults%2A>既定値には、次の表に、プロパティを設定します。  
+  
+|プロパティ|既定値|  
+|--------------|-------------------|  
+|<xref:System.Messaging.MessagePropertyFilter.DefaultBodySize%2A>|1024|  
+|<xref:System.Messaging.MessagePropertyFilter.DefaultExtensionSize%2A>|255|  
+|<xref:System.Messaging.MessagePropertyFilter.DefaultLabelSize%2A>|255|  
+  
+ <xref:System.Messaging.MessageQueue.MessageReadPropertyFilter%2A?displayProperty=nameWithType>プロパティを表す、<xref:System.Messaging.MessagePropertyFilter>を<xref:System.Messaging.MessagePropertyFilter.SetDefaults%2A>呼び出されました。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Messaging.MessagePropertyFilter.SetDefaults%2A>メソッドです。  
+  
+ [!code-cpp[MessagePropertyFilter#38](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#38)]
+ [!code-csharp[MessagePropertyFilter#38](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#38)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceMachine">
+      <MemberSignature Language="C#" Value="public bool SourceMachine { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SourceMachine" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.SourceMachine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgSourceMachine")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.SourceMachine" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.SourceMachine" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.SourceMachine%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージが送信元のコンピューターを指定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.SourceMachine%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#29](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#29)]
+ [!code-csharp[MessagePropertyFilter#29](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#29)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeToBeReceived">
+      <MemberSignature Language="C#" Value="public bool TimeToBeReceived { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TimeToBeReceived" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.TimeToBeReceived" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgTimeToBeReceived")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.TimeToBeReceived" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.TimeToBeReceived" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.TimeToBeReceived%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、送信されたメッセージが送信先キューから受信されるまでの秒単位で時間の合計を指定します。 ターゲット キューから取得するメッセージの制限時間には、送信先キューに費やされた時間が含まれています。 さらに、メッセージがアプリケーションによって取得される前に、キューで待機しているが費やした時間。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.TimeToBeReceived%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#30](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#30)]
+ [!code-csharp[MessagePropertyFilter#30](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#30)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeToReachQueue">
+      <MemberSignature Language="C#" Value="public bool TimeToReachQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TimeToReachQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.TimeToReachQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgTimeToReachQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.TimeToReachQueue" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.TimeToReachQueue" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.TimeToReachQueue%2A>のプロパティ、<xref:System.Messaging.Message>クラスが送信先キューに到達するため、メッセージの送信時からの秒単位で時間制限を指定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.TimeToReachQueue%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#31](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#31)]
+ [!code-csharp[MessagePropertyFilter#31](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#31)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionId">
+      <MemberSignature Language="C#" Value="public bool TransactionId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TransactionId" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.TransactionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgTransactionId")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.TransactionId" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.TransactionId" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.TransactionId%2A>のプロパティ、<xref:System.Messaging.Message>クラスがメッセージを送信したトランザクションを識別します。 受信側のアプリケーション内でこのプロパティを使用すると、特定のトランザクションの一部としてメッセージが送信されたことを確認します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.TransactionId%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#52](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#52)]
+ [!code-csharp[MessagePropertyFilter#52](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#52)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionStatusQueue">
+      <MemberSignature Language="C#" Value="public bool TransactionStatusQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TransactionStatusQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.TransactionStatusQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgTransactionStatusQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.TransactionStatusQueue" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.TransactionStatusQueue" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.TransactionStatusQueue%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、移行元コンピューターのトランザクション状態キューを識別します。 プロパティは、送信元アプリケーションに戻る受信確認メッセージを送信するために使用されます。 外部のキューに送信されるトランザクション メッセージを受信するときに、トランザクション状態キューをコネクタ アプリケーションによって使用されます。  
+  
+ 外部のキューは、Microsoft メッセージ キュー以外のキュー システムに存在します。 Microsoft メッセージ キューは、コネクタ アプリケーションを使用してこのようなキューと通信します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.TransactionStatusQueue%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#53](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#53)]
+ [!code-csharp[MessagePropertyFilter#53](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#53)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAuthentication">
+      <MemberSignature Language="C#" Value="public bool UseAuthentication { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseAuthentication" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.UseAuthentication" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgUseAuthentication")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.UseAuthentication" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.UseAuthentication" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.UseAuthentication%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、メッセージを認証する必要があるかどうかを指定します。  
+  
+ メッセージのプロパティを調べて、メッセージが認証に失敗したかどうかを判断することはできません。 認証に失敗したメッセージは破棄され、キューに配信されません。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.UseAuthentication%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#32](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#32)]
+ [!code-csharp[MessagePropertyFilter#32](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#32)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDeadLetterQueue">
+      <MemberSignature Language="C#" Value="public bool UseDeadLetterQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDeadLetterQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.UseDeadLetterQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgUseDeadLetterQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.UseDeadLetterQueue" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.UseDeadLetterQueue" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.UseDeadLetterQueue%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、配信不能キューに配信できなかったメッセージのコピーを送信するかどうかを指定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.UseDeadLetterQueue%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#33](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#33)]
+ [!code-csharp[MessagePropertyFilter#33](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseEncryption">
+      <MemberSignature Language="C#" Value="public bool UseEncryption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseEncryption" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.UseEncryption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgUseEncryption")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.UseEncryption" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.UseEncryption" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.UseEncryption%2A>のプロパティ、<xref:System.Messaging.Message>クラスでは、メッセージを暗号化するかどうかを指定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.UseEncryption%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#34](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#34)]
+ [!code-csharp[MessagePropertyFilter#34](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#34)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseJournalQueue">
+      <MemberSignature Language="C#" Value="public bool UseJournalQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseJournalQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.UseJournalQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgUseJournalQueue")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.UseJournalQueue" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.UseJournalQueue" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.UseJournalQueue%2A>のプロパティ、<xref:System.Messaging.Message>クラスは、元のコンピューターのジャーナル メッセージのコピーを保持する必要があるかどうかを指定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.UseJournalQueue%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#35](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#35)]
+ [!code-csharp[MessagePropertyFilter#35](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#35)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseTracing">
+      <MemberSignature Language="C#" Value="public bool UseTracing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseTracing" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessagePropertyFilter.UseTracing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Messaging.MessagingDescription("MsgUseTracing")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得するかどうかを示す値を取得または<see cref="P:System.Messaging.Message.UseTracing" />プロパティ情報を受信またはメッセージをピーク時にします。</summary>
+        <value>
+          <see langword="true" />受信する<see cref="P:System.Messaging.Message.UseTracing" />については、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.Message.UseTracing%2A>のプロパティ、<xref:System.Messaging.Message>クラスでは、送信先キューに移動するときに、メッセージの経路を追跡するかどうかを指定します。 場合`true`たびに、元のメッセージがメッセージ キューのルーティング サーバーを通過、システム レポート キューにメッセージ キューによって生成されるレポート メッセージを送信します。  
+  
+ トレースを使用するには、Active Directory を設定して、メッセージ キュー エンタープライズ レポート キューを指定することが含まれます。 これらの設定は、管理者によって構成されます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Messaging.MessagePropertyFilter.UseTracing%2A>プロパティです。  
+  
+ [!code-cpp[MessagePropertyFilter#36](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePropertyFilter/CPP/class1.cpp#36)]
+ [!code-csharp[MessagePropertyFilter#36](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePropertyFilter/CS/class1.cs#36)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

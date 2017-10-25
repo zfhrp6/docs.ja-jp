@@ -1,0 +1,86 @@
+<Type Name="InvalidateEventArgs" FullName="System.Windows.Forms.InvalidateEventArgs">
+  <TypeSignature Language="C#" Value="public class InvalidateEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InvalidateEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.InvalidateEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Control.Invalidated" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.Invalidated>イベント コントロールの表示が更新されるときに発生します。 <xref:System.Windows.Forms.InvalidateEventArgs>を無効化されたウィンドウ領域を含む四角形を指定します。  
+  
+ イベント モデルについては、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Control.Invalidated>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Control>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.ComboBox>です。 インスタンスを名前`Control1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Control.Invalidated>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#40)]
+ [!code-vb[System.Windows.Forms.EventExamples#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#40)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvalidateEventArgs (System.Drawing.Rectangle invalidRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Rectangle invalidRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.InvalidateEventArgs.#ctor(System.Drawing.Rectangle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="invalidRect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="invalidRect"><see cref="T:System.Drawing.Rectangle" />無効化されたウィンドウ領域を格納します。</param>
+        <summary><see cref="T:System.Windows.Forms.InvalidateEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidRect">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle InvalidRect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle InvalidRect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.InvalidateEventArgs.InvalidRect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Rectangle" />無効化されたウィンドウ領域を格納します。</summary>
+        <value>無効化されたウィンドウ領域。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Control.Invalidated?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Control>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.ComboBox>です。 インスタンスを名前`Control1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Control.Invalidated?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#40)]
+ [!code-vb[System.Windows.Forms.EventExamples#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

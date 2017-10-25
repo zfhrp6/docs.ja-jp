@@ -1,0 +1,111 @@
+<Type Name="IRawElementProviderAdviseEvents" FullName="System.Windows.Automation.Provider.IRawElementProviderAdviseEvents">
+  <TypeSignature Language="C#" Value="public interface IRawElementProviderAdviseEvents : System.Windows.Automation.Provider.IRawElementProviderSimple" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRawElementProviderAdviseEvents implements class System.Windows.Automation.Provider.IRawElementProviderSimple" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Automation.Provider.IRawElementProviderSimple</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("a407b27b-0f6d-4427-9292-473c7bf93258")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>UI オートメーション クライアント アプリケーションがイベントのリッスンを開始または停止するときに、フラグメントのルート要素を通知するために呼び出されるメソッドを公開します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AdviseEventAdded">
+      <MemberSignature Language="C#" Value="public void AdviseEventAdded (int eventId, int[] properties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AdviseEventAdded(int32 eventId, int32[] properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents.AdviseEventAdded(System.Int32,System.Int32[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventId" Type="System.Int32" />
+        <Parameter Name="properties" Type="System.Int32[]" />
+      </Parameters>
+      <Docs>
+        <param name="eventId">追加されるイベントの識別子。</param>
+        <param name="properties">追加されるプロパティの識別子。または、追加されるイベント リスナーがプロパティ イベントをリッスンしない場合は <see langword="null" />。</param>
+        <summary>UI オートメーション クライアントが、プロパティ変更イベントなど特定のイベントのリッスンを開始するときに、UI オートメーション プロバイダに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、リッスンされているイベントのみを発生させることによってオーバーヘッドを低減するプロバイダーを使用します。  
+  
+ `eventId`と比較することができます、<xref:System.Windows.Automation.AutomationIdentifier.Id%2A>の<xref:System.Windows.Automation.AutomationEvent>など<xref:System.Windows.Automation.WindowPatternIdentifiers.WindowClosedEvent>です。 取得することも、<xref:System.Windows.Automation.AutomationEvent>を使用して<xref:System.Windows.Automation.AutomationEvent.LookupById%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例は、サブスクライブしているプロパティの変更の一覧に追加します。  
+  
+ [!code-csharp[UIAFragmentProvider_snip#124](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFragmentProvider_snip/CSharp/ListFragment.cs#124)]
+ [!code-vb[UIAFragmentProvider_snip#124](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListFragment.vb#124)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdviseEventRemoved">
+      <MemberSignature Language="C#" Value="public void AdviseEventRemoved (int eventId, int[] properties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AdviseEventRemoved(int32 eventId, int32[] properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents.AdviseEventRemoved(System.Int32,System.Int32[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventId" Type="System.Int32" />
+        <Parameter Name="properties" Type="System.Int32[]" />
+      </Parameters>
+      <Docs>
+        <param name="eventId">削除されるイベントの識別子。</param>
+        <param name="properties">削除されると、プロパティの識別子または<see langword="null" />削除されるイベント リスナーがプロパティ イベントをリッスンしていない場合。</param>
+        <summary>UI オートメーション クライアントが、プロパティ変更イベントなど特定のイベントのリッスンを停止するときに、UI オートメーション プロバイダに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、オーバーヘッドを軽減いない不要になったリッスンされているイベントを発生させて、UI オートメーション プロバイダーを使用します。  
+  
+ `eventId`と比較することができます、<xref:System.Windows.Automation.AutomationIdentifier.Id%2A>の<xref:System.Windows.Automation.AutomationEvent>など<xref:System.Windows.Automation.WindowPatternIdentifiers.WindowClosedEvent>です。 取得することも、<xref:System.Windows.Automation.AutomationEvent>を使用して<xref:System.Windows.Automation.AutomationEvent.LookupById%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、サブスクライブしているものの一覧からプロパティの変更を削除します。  
+  
+ [!code-csharp[UIAFragmentProvider_snip#125](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFragmentProvider_snip/CSharp/ListFragment.cs#125)]
+ [!code-vb[UIAFragmentProvider_snip#125](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListFragment.vb#125)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

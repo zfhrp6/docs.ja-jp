@@ -1,0 +1,632 @@
+<Type Name="WebBaseEvent" FullName="System.Web.Management.WebBaseEvent">
+  <TypeSignature Language="C#" Value="public class WebBaseEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi WebBaseEvent extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebBaseEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET の稼働状況の監視イベントの基本クラスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ <xref:System.Web.Management.WebBaseEvent>クラスはすべて、ASP.NET 稼働状況の監視イベントの型の継承ツリーのルートです。 使用して、<xref:System.Web.Management.WebApplicationInformation>クラスを派生クラスに使用されるアプリケーション情報を取得します。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`<healthMonitoring>`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 派生する例については、<xref:System.Web.Management.WebBaseEvent>クラスのこのトピックで例を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例から派生する方法を示しています、<xref:System.Web.Management.WebBaseEvent>カスタムの稼働状況の監視イベントを作成するクラス。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#1)]
+ [!code-vb[System.Web.Management.WebBaseEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#1)]  
+  
+ 次の例は、ASP.NET カスタム イベントを使用できるようにする構成ファイルの抜粋です。  
+  
+```  
+<healthMonitoring enabled="true" heartBeatInterval="0">  
+  <eventMappings>  
+    <add  name="SampleWebBaseEvent"   
+      type="SamplesAspNet.SampleWebBaseEvent,   
+      webbaseevent, Version=1.0.1573.24438, Culture=neutral,   
+      PublicKeyToken=2f5f337ae5c9bdaa,   
+      processorArchitecture=MSIL" />  
+  </eventMappings>  
+  
+  <rules>  
+    <add   
+      name="CustomWebBaseEvent"  
+      eventName="SampleWebBaseEvent"   
+      provider="EventLogProvider"   
+      profile="Critical"/>      
+  </rules>  
+</healthMonitoring>  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>表示するため、カスタム イベントの情報をフォーマットするときに上書き、<see cref="M:System.Web.Management.WebBaseEvent.FormatCustomEventDetails(System.Web.Management.WebEventFormatter)" />メソッドではなく、<see cref="Overload:System.Web.Management.WebBaseEvent.ToString" />メソッドです。 これには、上書きまたは機密性の高いシステム情報の改ざんが回避されます。  
+  
+ イベントのコードを指定する、カスタム イベントをよりも大きい値にする必要があります<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebBaseEvent (string message, object eventSource, int eventCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseEvent.#ctor(System.String,System.Object,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明です。</param>
+        <param name="eventSource">イベントを発生させたオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Management.WebBaseEvent" />クラス、指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 インスタンスの作成に使用しないが、<xref:System.Web.Management.WebBaseEvent>が、クラスは、このクラスから継承する独自のイベントの種類を実装する場合に、このコンス トラクターに呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを使用する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#2)]
+ [!code-vb[System.Web.Management.WebBaseEvent#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebBaseEvent (string message, object eventSource, int eventCode, int eventDetailCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, int32 eventDetailCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseEvent.#ctor(System.String,System.Object,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="eventDetailCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">発生したイベントの説明です。</param>
+        <param name="eventSource">イベントを発生させたオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <param name="eventDetailCode"><see cref="T:System.Web.Management.WebEventCodes" />イベントの詳細な識別子を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Management.WebBaseEvent" />クラス、指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 インスタンスの作成に使用しないが、<xref:System.Web.Management.WebBaseEvent>が、クラスは、このクラスから継承する独自のイベントの種類を実装する場合に、このコンス トラクターに呼び出すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを使用する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#3)]
+ [!code-vb[System.Web.Management.WebBaseEvent#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationInformation">
+      <MemberSignature Language="C#" Value="public static System.Web.Management.WebApplicationInformation ApplicationInformation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Management.WebApplicationInformation ApplicationInformation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseEvent.ApplicationInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.WebApplicationInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Management.WebApplicationInformation" />監視されている現在のアプリケーションに関する情報を含むオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.Management.WebApplicationInformation" />監視対象のアプリケーションに関する情報を含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、アプリケーションの情報を取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#13)]
+ [!code-vb[System.Web.Management.WebBaseEvent#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventCode">
+      <MemberSignature Language="C#" Value="public int EventCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EventCode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseEvent.EventCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントに関連付けられているコードの値を取得します。</summary>
+        <value><see cref="T:System.Web.Management.WebEventCodes" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、イベントが含まれている、関連<xref:System.Web.Management.WebBaseEvent.Message%2A>値。  
+  
+> [!NOTE]
+>  継承する場合、<xref:System.Web.Management.WebBaseEvent>クラス、カスタム イベントをよりも大きい値にする必要がありますを指定したイベント コード<xref:System.Web.Management.WebEventCodes.WebExtendedBase>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、イベントのコードを取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#6)]
+ [!code-vb[System.Web.Management.WebBaseEvent#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventDetailCode">
+      <MemberSignature Language="C#" Value="public int EventDetailCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EventDetailCode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseEvent.EventDetailCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント詳細コードを取得します。</summary>
+        <value><see cref="T:System.Web.Management.WebEventCodes" />イベントの詳細な識別子を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、イベント詳細コードを取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#7)]
+ [!code-vb[System.Web.Management.WebBaseEvent#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventID">
+      <MemberSignature Language="C#" Value="public Guid EventID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid EventID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseEvent.EventID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントに関連付けられた識別子を取得します。</summary>
+        <value>イベントに関連付けられた識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventOccurrence">
+      <MemberSignature Language="C#" Value="public long EventOccurrence { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 EventOccurrence" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseEvent.EventOccurrence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生した回数を表すカウンターを取得します。</summary>
+        <value>イベントが発生した回数を表すカウンターです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用と、内部メソッドを呼び出した結果としては、インクリメントされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventSequence">
+      <MemberSignature Language="C#" Value="public long EventSequence { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 EventSequence" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseEvent.EventSequence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションによって、イベントが発生した回数を取得します。</summary>
+        <value>イベントが発生した回数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、アプリケーションが発生させたイベントのインスタンスの数を示すカウンターです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Management.WebBaseEvent.EventSequence%2A>値。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#8)]
+ [!code-vb[System.Web.Management.WebBaseEvent#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventSource">
+      <MemberSignature Language="C#" Value="public object EventSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object EventSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseEvent.EventSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させるオブジェクトを取得します。</summary>
+        <value>イベントを発生させたオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Management.WebBaseEvent.EventSource%2A>値。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#9)]
+ [!code-vb[System.Web.Management.WebBaseEvent#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventTime">
+      <MemberSignature Language="C#" Value="public DateTime EventTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime EventTime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseEvent.EventTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生した時刻を取得します。</summary>
+        <value>イベントが発生した時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Management.WebBaseEvent.EventTime%2A>値。  
+  
+ System.Web.Management.WebBaseEvent#10  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventTimeUtc">
+      <MemberSignature Language="C#" Value="public DateTime EventTimeUtc { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime EventTimeUtc" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseEvent.EventTimeUtc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生した時刻を取得します。</summary>
+        <value>世界協定時刻 (UTC) 形式でイベントの時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Management.WebBaseEvent.EventTimeUtc%2A>値。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#11)]
+ [!code-vb[System.Web.Management.WebBaseEvent#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatCustomEventDetails">
+      <MemberSignature Language="C#" Value="public virtual void FormatCustomEventDetails (System.Web.Management.WebEventFormatter formatter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void FormatCustomEventDetails(class System.Web.Management.WebEventFormatter formatter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseEvent.FormatCustomEventDetails(System.Web.Management.WebEventFormatter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatter" Type="System.Web.Management.WebEventFormatter" />
+      </Parameters>
+      <Docs>
+        <param name="formatter">A<see cref="T:System.Web.Management.WebEventFormatter" />書式設定されたイベント情報を含むオブジェクト。</param>
+        <summary>イベント情報の標準書式を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebBaseEvent.FormatCustomEventDetails%2A>メソッドでは、同一の形式を提供イベントについては、イベント データをログに記録され後で、ユーザーに提示する必要がある場合に便利です。 プロバイダーは、のいずれかを呼び出したときに内部的に呼び出されます、<xref:System.Web.Management.WebBaseEvent.ToString%2A>メソッドです。  
+  
+> [!NOTE]
+>  表示するため、カスタム イベントの情報をフォーマットするときに上書き、<xref:System.Web.Management.WebBaseEvent.FormatCustomEventDetails%2A>メソッドではなく、<xref:System.Web.Management.WebBaseEvent.ToString%2A>メソッドです。 これには、上書きまたは機密性の高いシステム情報の改ざんが回避されます。  
+  
+   
+  
+## Examples  
+ 次のコード例をカスタマイズする方法を示しています、<xref:System.Web.Management.WebBaseEvent.FormatCustomEventDetails%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#17](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#17)]
+ [!code-vb[System.Web.Management.WebBaseEvent#17](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncrementPerfCounters">
+      <MemberSignature Language="C#" Value="protected virtual void IncrementPerfCounters ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void IncrementPerfCounters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseEvent.IncrementPerfCounters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パフォーマンス カウンターをインクリメントするには、内部的に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseEvent.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを説明するメッセージを取得します。</summary>
+        <value>イベントの説明です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの意味を説明します、<xref:System.Web.Management.WebEventCodes>コード発生したイベントに関連付けられている値。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Management.WebBaseEvent.Message%2A>値。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#8)]
+ [!code-vb[System.Web.Management.WebBaseEvent#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Raise">
+      <MemberSignature Language="C#" Value="public virtual void Raise ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Raise() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseEvent.Raise" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントを発生させ、構成されているプロバイダー、イベントが発生したことを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドする場合に発生するイベントは、カスタム イベントがします。  
+  
+> [!NOTE]
+>  中程度の信頼イベントを発生させる以降が必要です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Management.WebBaseEvent.Raise%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#4)]
+ [!code-vb[System.Web.Management.WebBaseEvent#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Raise">
+      <MemberSignature Language="C#" Value="public static void Raise (System.Web.Management.WebBaseEvent eventRaised);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Raise(class System.Web.Management.WebBaseEvent eventRaised) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseEvent.Raise(System.Web.Management.WebBaseEvent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventRaised" Type="System.Web.Management.WebBaseEvent" />
+      </Parameters>
+      <Docs>
+        <param name="eventRaised"><see cref="T:System.Web.Management.WebBaseEvent" /> オブジェクト。</param>
+        <summary>指定したイベントを発生させ、構成されているプロバイダー、イベントが発生したことを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定したイベントを発生させ、構成されているプロバイダー、イベントが発生したことを通知します。  
+  
+> [!NOTE]
+>  中程度の信頼イベントを発生させる以降が必要です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Management.WebBaseEvent.Raise%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#5)]
+ [!code-vb[System.Web.Management.WebBaseEvent#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.Management.WebBaseEvent.EventCode" />プロパティの<paramref name="eventRaised" />ASP.NET 用に予約されて値が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseEvent.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表示のためのイベント情報を書式設定します。</summary>
+        <returns>イベント情報</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebBaseEvent.ToString%2A>通常メソッドは、イベントを処理するプロバイダー。 メソッドにより、標準<xref:System.Web.Management.WebApplicationInformation>オブジェクトはイベントに固有のデータを提供します。 呼び出して、イベント固有のイベント情報を書式<xref:System.Web.Management.WebBaseEvent.FormatCustomEventDetails%2A>メソッドです。  
+  
+> [!NOTE]
+>  表示するため、カスタム イベントの情報をフォーマットするときに上書き、<xref:System.Web.Management.WebBaseEvent.FormatCustomEventDetails%2A>メソッドではなく、<xref:System.Web.Management.WebBaseEvent.ToString%2A>メソッドです。 これには、上書きまたは機密性の高いシステム情報の改ざんが回避されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.WebBaseEvent.ToString%2A>メソッド  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#14](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#14)]
+ [!code-vb[System.Web.Management.WebBaseEvent#14](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public virtual string ToString (bool includeAppInfo, bool includeCustomEventDetails);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(bool includeAppInfo, bool includeCustomEventDetails) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseEvent.ToString(System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeAppInfo" Type="System.Boolean" />
+        <Parameter Name="includeCustomEventDetails" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="includeAppInfo">
+          <see langword="true" />場合は標準的なアプリケーションの情報は、イベント情報の一部として表示する必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <param name="includeCustomEventDetails">
+          <see langword="true" />場合は、イベント情報の一部としてカスタム情報を表示する必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <summary>表示のためのイベント情報を書式設定します。</summary>
+        <returns>イベント情報</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebBaseEvent.ToString%2A>通常メソッドは、イベントを処理するプロバイダー。 呼び出して、イベント固有のイベント情報を書式<xref:System.Web.Management.WebBaseEvent.FormatCustomEventDetails%2A>メソッドです。 場合`includeAppInfo`は`true`、標準<xref:System.Web.Management.WebApplicationInformation>オブジェクトはイベントに固有のデータを提供します。  
+  
+> [!NOTE]
+>  表示するため、カスタム イベントの情報をフォーマットするときに上書き、<xref:System.Web.Management.WebBaseEvent.FormatCustomEventDetails%2A>メソッドではなく、<xref:System.Web.Management.WebBaseEvent.ToString%2A>メソッドです。 これには、上書きまたは機密性の高いシステム情報の改ざんが回避されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

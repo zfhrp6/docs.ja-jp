@@ -1,0 +1,848 @@
+<Type Name="CurrencyManager" FullName="System.Windows.Forms.CurrencyManager">
+  <TypeSignature Language="C#" Value="public class CurrencyManager : System.Windows.Forms.BindingManagerBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CurrencyManager extends System.Windows.Forms.BindingManagerBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.CurrencyManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.BindingManagerBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一覧が管理<see cref="T:System.Windows.Forms.Binding" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CurrencyManager>から派生した、<xref:System.Windows.Forms.BindingManagerBase>クラスです。 使用して、<xref:System.Windows.Forms.BindingContext>をいずれかを返す、<xref:System.Windows.Forms.CurrencyManager>または<xref:System.Windows.Forms.PropertyManager>です。 データ ソースに返される実際のオブジェクトが依存していて、データ メンバーに渡されます、<xref:System.Windows.Forms.BindingContext.Item%2A>のプロパティ、<xref:System.Windows.Forms.BindingContext>です。 データ ソースが (オブジェクトの一覧) ではなく 1 つのプロパティのみを返すことができるオブジェクトの場合は、型がなります、<xref:System.Windows.Forms.PropertyManager>です。 たとえば、指定した場合、<xref:System.Windows.Forms.TextBox>データ ソースとして、<xref:System.Windows.Forms.PropertyManager>が返されます。 場合、その一方で、データ ソースを実装するオブジェクト、 <xref:System.Collections.IList>、 <xref:System.ComponentModel.IListSource>、または<xref:System.ComponentModel.IBindingList>、インターフェイス、<xref:System.Windows.Forms.CurrencyManager>が返されます。  
+  
+ <xref:System.Windows.Forms.BindingManagerBase.Current%2A>プロパティは、現在のアイテムを基になるリストを返します。 現在の項目を変更するには、設定、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>プロパティを新しい値。 値が 0 より大きくなければなりませんし、値よりも小さい必要があります、<xref:System.Windows.Forms.BindingManagerBase.Count%2A>プロパティです。  
+  
+ 基になるデータ ソースを実装する場合、<xref:System.ComponentModel.IBindingList>インターフェイス、および<xref:System.ComponentModel.IBindingList.AllowNew%2A>プロパティに設定されている`true`、使用することができます、<xref:System.Windows.Forms.CurrencyManager.AddNew%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例のバインド、<xref:System.Windows.Forms.TextBox>コントロール内の列を<xref:System.Data.DataTable>、取得、<xref:System.Windows.Forms.CurrencyManager>バインディングのための位置を設定するとします。  
+  
+ [!code-cpp[Classic CurrencyManager Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CurrencyManager Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CurrencyManager Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CurrencyManager Example/CS/source.cs#1)]
+ [!code-vb[Classic CurrencyManager Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CurrencyManager Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddNew">
+      <MemberSignature Language="C#" Value="public override void AddNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.AddNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になるリストに新しい項目を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースを実装する場合にのみ、このメソッドがサポートされて、<xref:System.ComponentModel.IBindingList>インターフェイスと、データ ソースにより、行の追加 (<xref:System.ComponentModel.IBindingList.AllowNew%2A>は`true`)。  
+  
+> [!NOTE]
+>  このプロパティなど、複雑なバインド コントロールを許可するように設計されました、<xref:System.Windows.Forms.DataGrid>ボックスの一覧に新しい項目を追加する、制御します。  
+  
+ 組み込まれており、独自のコントロールを作成する場合にのみ通常このプロパティを使用する、<xref:System.Windows.Forms.CurrencyManager>です。 それ以外の場合、項目を追加する場合は、データ ソース、<xref:System.Data.DataView>を使用して、<xref:System.Data.DataView.AddNew%2A?displayProperty=nameWithType>のメソッド、<xref:System.Data.DataView>クラスです。 データ ソースがある場合、<xref:System.Data.DataTable>を使用して、<xref:System.Data.DataTable.NewRow%2A>メソッドには、行を追加し、<xref:System.Data.DataRowCollection>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用して、リストに新しい項目を追加、<xref:System.Windows.Forms.CurrencyManager.AddNew%2A>メソッドです。  
+  
+ [!code-cpp[Classic CurrencyManager.AddNew Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CurrencyManager.AddNew Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CurrencyManager.AddNew Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CurrencyManager.AddNew Example/CS/source.cs#1)]
+ [!code-vb[Classic CurrencyManager.AddNew Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CurrencyManager.AddNew Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">基になるデータ ソースを実装しません<see cref="T:System.ComponentModel.IBindingList" />、またはデータ ソースで例外がスローされた場合、読み取り専用か、固定サイズの行を追加しようとしましたが、ユーザーのため<see cref="T:System.Data.DataView" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelCurrentEdit">
+      <MemberSignature Language="C#" Value="public override void CancelCurrentEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CancelCurrentEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.CancelCurrentEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の編集操作をキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースに含まれるオブジェクトが実装する場合にのみ、このメソッドがサポートされて、<xref:System.ComponentModel.IEditableObject>インターフェイスです。 データ ソースに含まれるオブジェクトを実装していないかどうか、<xref:System.ComponentModel.IEditableObject>インターフェイス、データに加えられた変更は破棄されません。  
+  
+> [!NOTE]
+>  このプロパティがなど、複雑なデータ バインド コントロールを使用するために設計された、<xref:System.Windows.Forms.DataGrid>コントロールが編集をキャンセルします。 たとえば、ユーザーが ESC キーを押したとき、<xref:System.Windows.Forms.CurrencyManager.CancelCurrentEdit%2A>メソッドが、<xref:System.Windows.Forms.CurrencyManager>の<xref:System.Windows.Forms.DataGrid>です。 これと同じ機能を必要とするコントロールを作成する場合は、しない限り、このメソッドは使用する必要があります。 代わりに、使用、<xref:System.Data.DataRowView.CancelEdit%2A>のメソッド、<xref:System.Data.DataRowView>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.CurrencyManager.CancelCurrentEdit%2A>ユーザーが ESC キーを押したときにします。  
+  
+ [!code-cpp[Classic CurrencyManager.CancelCurrentEdit Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CurrencyManager.CancelCurrentEdit Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CurrencyManager.CancelCurrentEdit Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CurrencyManager.CancelCurrentEdit Example/CS/source.cs#1)]
+ [!code-vb[Classic CurrencyManager.CancelCurrentEdit Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CurrencyManager.CancelCurrentEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckEmpty">
+      <MemberSignature Language="C#" Value="protected void CheckEmpty ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void CheckEmpty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.CheckEmpty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リストが存在しないか、リストが空である場合に、例外をスローします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Exception">リストが空か、ボックスの一覧はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public override int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CurrencyManager.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト内の項目数を取得します。</summary>
+        <value>リストの項目数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Count プロパティを使用して、ときに、リストの末尾に達しているかを判断します。 <xref:System.Windows.Forms.CurrencyManager>項目、リストの末尾の 0 から始まる配列は常に維持<xref:System.Windows.Forms.CurrencyManager.Count%2A>1 を減算します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、によって決定されます、最後の項目まで、リストを反復処理、<xref:System.Windows.Forms.CurrencyManager.Count%2A>プロパティに達しました。  
+  
+ [!code-cpp[Classic CurrencyManager.Count Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CurrencyManager.Count Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CurrencyManager.Count Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CurrencyManager.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic CurrencyManager.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CurrencyManager.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public override object Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CurrencyManager.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト内の現在の項目を取得します。</summary>
+        <value>型のリスト項目<see cref="T:System.Object" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の項目を取得するために正しくキャストするためにそのデータ型が必要です。 たとえば、データ ソースが、<xref:System.Data.DataView>または<xref:System.Data.DataTable>、として現在の項目をキャストする必要があります、<xref:System.Data.DataRowView>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.CurrencyManager.Current%2A>を印刷する、`ContactName`リストの現在の項目に対応するフィールドです。  
+  
+ [!code-cpp[Classic CurrencyManager.Current Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CurrencyManager.Current Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CurrencyManager.Current Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CurrencyManager.Current Example/CS/source.cs#1)]
+ [!code-vb[Classic CurrencyManager.Current Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CurrencyManager.Current Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndCurrentEdit">
+      <MemberSignature Language="C#" Value="public override void EndCurrentEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndCurrentEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.EndCurrentEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の編集操作を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースに含まれるオブジェクトが実装する場合にのみ、このメソッドがサポートされて、<xref:System.ComponentModel.IEditableObject>または<xref:System.ComponentModel.ICancelAddNew>インターフェイスです。  
+  
+> [!NOTE]
+>  このプロパティがなど、複雑なデータ バインド コントロールを使用するために設計された、<xref:System.Windows.Forms.DataGridView>コントロール。 これと同じ機能を必要とするコントロールを作成する場合は、しない限り、このメソッドは使用する必要があります。 代わりに、データ ソースのいずれかの場合、<xref:System.Data.DataView>または<xref:System.Data.DataTable>を使用して、<xref:System.Data.DataRowView.EndEdit%2A>のメソッド、<xref:System.Data.DataRowView>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.CurrencyManager.EndCurrentEdit%2A> メソッドの使用方法を示します。  
+  
+ [!code-cpp[Classic CurrencyManager.EndCurrentEdit Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CurrencyManager.EndCurrentEdit Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CurrencyManager.EndCurrentEdit Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CurrencyManager.EndCurrentEdit Example/CS/source.cs#1)]
+ [!code-vb[Classic CurrencyManager.EndCurrentEdit Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CurrencyManager.EndCurrentEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="finalType">
+      <MemberSignature Language="C#" Value="protected Type finalType;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Type finalType" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.CurrencyManager.finalType" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストのデータ型を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemProperties">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.PropertyDescriptorCollection GetItemProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.PropertyDescriptorCollection GetItemProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.GetItemProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になるリストのプロパティ記述子のコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />一覧については、します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.PropertyDescriptorCollection>の<xref:System.Windows.Forms.CurrencyManager>一覧で列を指定するために使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.CurrencyManager.GetItemProperties%2A>を返すメソッドを<xref:System.ComponentModel.PropertyDescriptorCollection>の<xref:System.Windows.Forms.BindingManagerBase>です。 例を印刷し、<xref:System.ComponentModel.MemberDescriptor.Name%2A>と<xref:System.ComponentModel.PropertyDescriptor.PropertyType%2A>それぞれの<xref:System.ComponentModel.PropertyDescriptor>コレクション内で。  
+  
+ [!code-cpp[Classic CurrencyManager.GetItemProperties Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CurrencyManager.GetItemProperties Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CurrencyManager.GetItemProperties Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CurrencyManager.GetItemProperties Example/CS/source.cs#1)]
+ [!code-vb[Classic CurrencyManager.GetItemProperties Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CurrencyManager.GetItemProperties Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListName">
+      <MemberSignature Language="C#" Value="protected override string GetListName (System.Collections.ArrayList listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance string GetListName(class System.Collections.ArrayList listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.GetListName(System.Collections.ArrayList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listAccessors" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="listAccessors"><see cref="T:System.Collections.ArrayList" />のプロパティをデータ ソースに見つかりません。</param>
+        <summary>バインドされたプロパティのセットを指定して、バインディングに関するデータを示すリストの名前を取得します。</summary>
+        <returns>成功した場合、 <see cref="T:System.String" /> 、それ以外のバインディングのデータを提供するリストの名前を含む、<see cref="F:System.String.Empty" />文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CurrencyManager.GetListName%2A>に成功すると、メソッド型の基になるリストがある必要があります<xref:System.ComponentModel.ITypedList>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ItemChangedEventHandler ItemChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ItemChangedEventHandler ItemChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CurrencyManager.ItemChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ItemChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の項目が変更されている場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CurrencyManager.ItemChanged>イベントが発生するは、ユーザーが呼び出すときに、<xref:System.Windows.Forms.BindingManagerBase.ResumeBinding%2A>または<xref:System.Windows.Forms.BindingManagerBase.SuspendBinding%2A>メソッドです。  
+  
+ <xref:System.Windows.Forms.CurrencyManager.ItemChanged>だけ、項目自体が変更されたときの何らかの方法でイベントが発生しました。 たとえば、42 10 からの項目の値が変更される、イベントが発生します。 これがないと混同しないでください、<xref:System.Windows.Forms.BindingManagerBase.PositionChanged>イベントを新しい項目に、項目が変更された場所。  
+  
+ 基になるデータが変更された場合にも、イベントが発生します。 値を変更する場合など、 <xref:System.Data.DataRowView>、<xref:System.Windows.Forms.CurrencyManager.ItemChanged>イベントが発生します。  
+  
+> [!NOTE]
+>  使用する独自のコントロールを作成する場合は、 <xref:System.Windows.Forms.CurrencyManager>、使用する必要があります、<xref:System.ComponentModel.IBindingList.ListChanged?displayProperty=nameWithType>の代わりに、<xref:System.Windows.Forms.CurrencyManager.ItemChanged?displayProperty=nameWithType>イベント。 <xref:System.ComponentModel.ListChangedEventArgs.ListChangedType%2A>のプロパティ、<xref:System.ComponentModel.ListChangedEventArgs>が発生したアクションの種類を決定することができます。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、イベント ハンドラーを追加、<xref:System.Windows.Forms.CurrencyManager.ItemChanged>と<xref:System.Windows.Forms.BindingManagerBase.PositionChanged>イベント。  
+  
+ [!code-cpp[Classic CurrencyManager.ItemChanged Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CurrencyManager.ItemChanged Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CurrencyManager.ItemChanged Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CurrencyManager.ItemChanged Example/CS/source.cs#1)]
+ [!code-vb[Classic CurrencyManager.ItemChanged Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CurrencyManager.ItemChanged Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="List">
+      <MemberSignature Language="C#" Value="public System.Collections.IList List { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList List" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CurrencyManager.List" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この一覧を取得<see cref="T:System.Windows.Forms.CurrencyManager" />です。</summary>
+        <value><see cref="T:System.Collections.IList" />一覧を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるオブジェクト、<xref:System.Windows.Forms.CurrencyManager.List%2A>プロパティを実装する任意の型にキャストすることができます、<xref:System.Collections.IList>インターフェイスです。 これはよく使用されます基になるリストの種類がわかっている場合。 データ バインドする場合、など、 <xref:System.Data.DataSet>、基になる一覧は、 <xref:System.Data.DataView> (を実装する<xref:System.Collections.IList>)。 (これは完全な一覧) インターフェイスを実装するその他のクラスに含まれる<xref:System.Array>、 <xref:System.Collections.ArrayList>、および<xref:System.Collections.CollectionBase>です。  
+  
+ 使用する方法、<xref:System.Windows.Forms.CurrencyManager.List%2A>プロパティを実装するクラスに依存、<xref:System.Collections.IList>インターフェイスです。 たとえば、使用することができます、<xref:System.Windows.Forms.CurrencyManager.List%2A>プロパティ リストの名前を決定します。 データ ソースを実装する場合、<xref:System.ComponentModel.ITypedList>インターフェイスで行うこともできます、<xref:System.ComponentModel.ITypedList.GetListName%2A>を現在のテーブルの名前を返すメソッド。 これは、次の c# コードで示されます。  
+  
+```csharp  
+private void PrintCurrentListName(DataGrid myDataGrid){   
+   CurrencyManager myCM = (CurrencyManager)   
+   BindingContext[myDataGrid.DataSource, myDataGrid.DataMember];   
+   IList myList = myCM.List;   
+   ITypedList thisList = (ITypedList) myList;   
+   Console.WriteLine(thisList.GetListName(null));   
+}  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例では、レコードのセットを編集できても、新たに追加することができます。 <xref:System.Windows.Forms.DataGrid.Navigate>のイベント、<xref:System.Windows.Forms.DataGrid>コントロール、<xref:System.Collections.IList>によって返される、<xref:System.Windows.Forms.CurrencyManager.List%2A>プロパティにキャスト、<xref:System.Data.DataView>変数。 <xref:System.Data.DataView.AllowNew%2A> の <xref:System.Data.DataView> プロパティが `false` に設定されます。  
+  
+ [!code-cpp[CurrencyManager.List Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/CurrencyManager.List Example/CPP/list.cpp#1)]
+ [!code-csharp[CurrencyManager.List Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/CurrencyManager.List Example/CS/list.cs#1)]
+ [!code-vb[CurrencyManager.List Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CurrencyManager.List Example/VB/list.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.ListChangedEventHandler ListChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.ListChangedEventHandler ListChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CurrencyManager.ListChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ListChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストまたはリスト内の項目が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CurrencyManager.ListChanged>によってイベントがスローされた、<xref:System.Windows.Forms.CurrencyManager>クラスなどのメソッドを使用して、項目に対する変更が加えられたとき<xref:System.Windows.Forms.CurrencyManager.EndCurrentEdit%2A>、 <xref:System.Windows.Forms.CurrencyManager.CancelCurrentEdit%2A>、および<xref:System.Windows.Forms.CurrencyManager.Refresh%2A>です。 このイベントは、実装している場合、データ ソースを直接編集するときにも発生することができます、<xref:System.ComponentModel.IBindingListView>インターフェイスです。  
+  
+ 関連付けられた`OnListChanged`メソッドは、このクラスにプライベート メソッド。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.CurrencyManager.ListChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.CurrencyManager>という`CurrencyManager1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.CurrencyManager.ListChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#192](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#192)]
+ [!code-vb[System.Windows.Forms.EventExamples#192](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#192)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="listposition">
+      <MemberSignature Language="C#" Value="protected int listposition;" />
+      <MemberSignature Language="ILAsm" Value=".field family int32 listposition" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.CurrencyManager.listposition" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在位置を示す、<see cref="T:System.Windows.Forms.CurrencyManager" />一覧にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、<xref:System.Windows.Forms.CurrencyManager.Count%2A>プロパティは、0 より大きい、<xref:System.Windows.Forms.CurrencyManager.listposition>フィールドが 0 までの数値と<xref:System.Windows.Forms.CurrencyManager.Count%2A>-1。 場合<xref:System.Windows.Forms.CurrencyManager.Count%2A>0 の場合は、 <xref:System.Windows.Forms.CurrencyManager.listposition> -1 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MetaDataChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler MetaDataChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MetaDataChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.CurrencyManager.MetaDataChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときのメタデータ、<see cref="P:System.Windows.Forms.CurrencyManager.List" />が変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータ、 <xref:System.Windows.Forms.CurrencyManager.List%2A> 、基になるスキーマから成る<xref:System.Windows.Forms.Binding.DataSource%2A?displayProperty=nameWithType>です。 <xref:System.Windows.Forms.CurrencyManager.MetaDataChanged>イベントは、そのスキーマが変更されたときに発生します。 たとえば、<xref:System.Windows.Forms.CurrencyManager.MetaDataChanged>イベントが発生したときに、<xref:System.Data.DataColumn>にプログラムで追加、<xref:System.Data.DataTable>です。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.CurrencyManager.MetaDataChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.CurrencyManager>という`CurrencyManager1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.CurrencyManager.MetaDataChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#193](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#193)]
+ [!code-vb[System.Windows.Forms.EventExamples#193](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#193)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCurrentChanged">
+      <MemberSignature Language="C#" Value="protected override void OnCurrentChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnCurrentChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.OnCurrentChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.BindingManagerBase.CurrentChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCurrentItemChanged">
+      <MemberSignature Language="C#" Value="protected override void OnCurrentItemChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnCurrentItemChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.OnCurrentItemChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.BindingManagerBase.CurrentItemChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnItemChanged (System.Windows.Forms.ItemChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnItemChanged(class System.Windows.Forms.ItemChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.OnItemChanged(System.Windows.Forms.ItemChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ItemChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ItemChangedEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.CurrencyManager.ItemChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.CurrencyManager.OnItemChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.CurrencyManager.OnItemChanged(System.Windows.Forms.ItemChangedEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.CurrencyManager.OnItemChanged(System.Windows.Forms.ItemChangedEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMetaDataChanged">
+      <MemberSignature Language="C#" Value="protected void OnMetaDataChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void OnMetaDataChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.OnMetaDataChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.CurrencyManager.MetaDataChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.CurrencyManager.OnMetaDataChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.CurrencyManager.OnMetaDataChanged(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.CurrencyManager.OnMetaDataChanged(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPositionChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnPositionChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPositionChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.OnPositionChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.BindingManagerBase.PositionChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.CurrencyManager.OnPositionChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.CurrencyManager.OnPositionChanged(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.CurrencyManager.OnPositionChanged(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public override int Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Position" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.CurrencyManager.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト内の現在の位置を取得または設定します。</summary>
+        <value>0 の間の数値と<see cref="P:System.Windows.Forms.CurrencyManager.Count" />から 1 を減算します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 重要なプロパティ、<xref:System.Windows.Forms.CurrencyManager>クラスは、<xref:System.Windows.Forms.CurrencyManager.Position%2A>プロパティです。 項目の一覧では、リスト全体から 1 つの項目を表示できます。 判断するアイテムの表示、設定、 <xref:System.Windows.Forms.CurrencyManager.Position%2A> 0 (リストの先頭) までの数値を<xref:System.Windows.Forms.CurrencyManager.Count%2A>マイナス 1 (リストの末尾)。  
+  
+ したがって、<xref:System.Windows.Forms.CurrencyManager.Position%2A>通貨、または一覧で、同じにバインドされているすべてのコントロールの場所を決定<xref:System.Windows.Forms.CurrencyManager>です。 たとえば、"FirstName"と"LastName"と呼ばれる 2 つの列から成る一覧があるとします。 2 つ<xref:System.Windows.Forms.TextBox>コントロールが、同じ一覧にバインドされている以外の場合は、最初のコントロールが最初の列にバインドされているし、2 つ目のコントロールが 2 番目の列にバインドされています。 ときに、<xref:System.Windows.Forms.CurrencyManager.Position%2A>共通の<xref:System.Windows.Forms.CurrencyManager>設定されている 3 番目の位置に両方のコントロールが一覧内の位置に対して適切な値を表示します。 つまり、3 番目の位置にある項目は、"John"名、姓と名"Smith"で構成され場合、バインドされたコントロールは"John"と"Smith"が表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例、<xref:System.Windows.Forms.CurrencyManager.Position%2A>一覧内の移動を有効にするプロパティです。  
+  
+ [!code-cpp[Classic CurrencyManager.Position Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CurrencyManager.Position Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CurrencyManager.Position Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CurrencyManager.Position Example/CS/source.cs#1)]
+ [!code-vb[Classic CurrencyManager.Position Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CurrencyManager.Position Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ バインド リストを強制的に再作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.CurrencyManager.Refresh%2A>メソッドが変更されるときに、データ ソースが通知をサポートしない場合 (である場合など、 <xref:System.Array>)。  
+  
+   
+  
+## Examples  
+ 次のコード例は、配列を作成しにバインドする<xref:System.Windows.Forms.TextBox>制御、および 1 つの値を変更し、します。 <xref:System.Windows.Forms.CurrencyManager.Refresh%2A>によって表示される値を更新するメソッドを呼び出すことができます、<xref:System.Windows.Forms.TextBox>コントロール。  
+  
+ [!code-cpp[Classic CurrencyManager.Refresh Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CurrencyManager.Refresh Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CurrencyManager.Refresh Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CurrencyManager.Refresh Example/CS/source.cs#1)]
+ [!code-vb[Classic CurrencyManager.Refresh Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CurrencyManager.Refresh Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public override void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">リストから削除する項目のインデックス。</param>
+        <summary>指定したインデックスにある項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CurrencyManager.RemoveAt%2A>メソッドがなど、複雑なコントロールを許可するように設計されました、<xref:System.Windows.Forms.DataGrid>コントロール、一覧から項目を削除します。 このメソッドを使用して、実際に項目を削除する必要がありますされません。 代わりに、使用、<xref:System.Data.DataView.Delete%2A>のメソッド、<xref:System.Data.DataView>項目を削除するクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.CurrencyManager.RemoveAt%2A>一覧で位置 0 にある項目を削除する方法です。  
+  
+ [!code-cpp[Classic CurrencyManager.RemoveAt Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic CurrencyManager.RemoveAt Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CurrencyManager.RemoveAt Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic CurrencyManager.RemoveAt Example/CS/source.cs#1)]
+ [!code-vb[Classic CurrencyManager.RemoveAt Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic CurrencyManager.RemoveAt Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定した位置に行がない<paramref name="index" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResumeBinding">
+      <MemberSignature Language="C#" Value="public override void ResumeBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ResumeBinding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.ResumeBinding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ バインディングを再開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CurrencyManager.SuspendBinding%2A>および<xref:System.Windows.Forms.CurrencyManager.ResumeBinding%2A>単純データ バインディング シナリオでは一時中断と再開を許可する方法は 2 つです。 通常、いくつかの編集を行えないをデータ フィールドに検証が行われる前にユーザーを許可する必要がある場合は、データ バインディングを中断します。 たとえば、に従ってを 2 回、1 つのフィールドを変更する必要がありますが、検証された時点最初のフィールドにエラーが発生する 2 番目のフィールドとが発生します。  
+  
+> [!NOTE]
+>  使用して<xref:System.Windows.Forms.CurrencyManager.SuspendBinding%2A>ことを防止するまで、データ ソースにプッシュされる<xref:System.Windows.Forms.CurrencyManager.ResumeBinding%2A>が呼び出されたが、バインドされたコントロールには影響しません、データ ソースの変更ができません。 など、複合データ バインディングを使用するコントロール、<xref:System.Windows.Forms.DataGridView>などの変更イベントに基づくの値を更新、制御、<xref:System.Windows.Forms.CurrencyManager.ListChanged>イベント。 このメソッドを呼び出すことは防止しませんこれらのイベント発生しています。 このため、<xref:System.Windows.Forms.CurrencyManager.SuspendBinding%2A>と<xref:System.Windows.Forms.CurrencyManager.ResumeBinding%2A>単純バインド コントロールで使用するように設計されていますが、<xref:System.Windows.Forms.TextBox>です。 代わりに、これらのメソッドで使える複合バインディング シナリオを抑制する場合<xref:System.Windows.Forms.BindingSource.ListChanged>イベントを設定して、<xref:System.Windows.Forms.BindingSource.RaiseListChangedEvents%2A>プロパティを`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.CurrencyManager.ResumeBinding%2A> メソッドの使用方法を示します。  
+  
+ [!code-cpp[BindingManagerBase_Suspend_Resume_Binding#2](~/samples/snippets/cpp/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/CPP/bindingmanagerbase_suspend_resume_binding.cpp#2)]
+ [!code-csharp[BindingManagerBase_Suspend_Resume_Binding#2](~/samples/snippets/csharp/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/CS/bindingmanagerbase_suspend_resume_binding.cs#2)]
+ [!code-vb[BindingManagerBase_Suspend_Resume_Binding#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/VB/bindingmanagerbase_suspend_resume_binding.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuspendBinding">
+      <MemberSignature Language="C#" Value="public override void SuspendBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SuspendBinding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.SuspendBinding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ バインディングに伴う変更によるバインド データ ソースの更新を中断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.CurrencyManager.SuspendBinding%2A>と<xref:System.Windows.Forms.BindingSource.ResumeBinding%2A>メソッド単純バインディング シナリオでは、中断されているとデータ バインディングの再開を許可します。 通常、ユーザー必要がある場合の編集をデータ フィールドに検証が行われる前に、データ バインディングを中断します。 たとえば、に従ってを 2 回、1 つのフィールドを変更する必要がありますが、検証された時点最初のフィールドにエラーが発生する 2 番目のフィールドとが発生します。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.BindingSource.SuspendBinding%2A>変更を防止するまで、データ ソースに適用されている<xref:System.Windows.Forms.BindingSource.ResumeBinding%2A>が呼び出されるしますが、実際には、イベントが発生します。 など、複合データ バインディングを使用するコントロール、<xref:System.Windows.Forms.DataGridView>など変更イベントに基づくの値を更新、制御、<xref:System.Windows.Forms.CurrencyManager.ListChanged>イベント。 そのため、<xref:System.Windows.Forms.BindingSource.SuspendBinding%2A>複雑なバインド コントロールをデータ ソースを更新するイベントを受信できなくなります。 このため、<xref:System.Windows.Forms.BindingSource.SuspendBinding%2A>と<xref:System.Windows.Forms.BindingSource.ResumeBinding%2A>単純バインド コントロールで使用するように設計されていますが、<xref:System.Windows.Forms.TextBox>コントロール。 代わりに、これらのメソッドで使える複合バインディング シナリオを抑制する場合<xref:System.Windows.Forms.BindingSource.ListChanged>イベントを設定して、<xref:System.Windows.Forms.BindingSource.RaiseListChangedEvents%2A>プロパティを`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.CurrencyManager.SuspendBinding%2A> メソッドの使用方法を示します。  
+  
+ [!code-cpp[BindingManagerBase_Suspend_Resume_Binding#1](~/samples/snippets/cpp/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/CPP/bindingmanagerbase_suspend_resume_binding.cpp#1)]
+ [!code-csharp[BindingManagerBase_Suspend_Resume_Binding#1](~/samples/snippets/csharp/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/CS/bindingmanagerbase_suspend_resume_binding.cs#1)]
+ [!code-vb[BindingManagerBase_Suspend_Resume_Binding#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/VB/bindingmanagerbase_suspend_resume_binding.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateIsBinding">
+      <MemberSignature Language="C#" Value="protected override void UpdateIsBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void UpdateIsBinding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CurrencyManager.UpdateIsBinding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインディングのステータスを更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

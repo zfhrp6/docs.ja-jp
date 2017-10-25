@@ -1,0 +1,1066 @@
+<Type Name="ControlType" FullName="System.Windows.Automation.ControlType">
+  <TypeSignature Language="C#" Value="public class ControlType : System.Windows.Automation.AutomationIdentifier" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlType extends System.Windows.Automation.AutomationIdentifier" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ControlType" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationTypes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.AutomationIdentifier</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザー インターフェイス (UI) コントロールの種類を識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.ControlType>継承<xref:System.Windows.Automation.AutomationIdentifier>によって表されるコントロールの種類を識別するために使用して、<xref:System.Windows.Automation.AutomationElement>です。 コントロールの種類は、UI オートメーション プロバイダーの開発者が決定します。  
+  
+ このクラスには、静的フィールドには、それ自体が含まれています。<xref:System.Windows.Automation.ControlType>オブジェクト、コントロールの標準型を識別します。 <xref:System.Windows.Automation.ControlType.Custom>に定義された型のいずれかと一致しないコントロールの型。  
+  
+ コントロールがサポートしている場合は、実行時にコントロールのコントロール型を変更可能性がある場合だけ<xref:System.Windows.Automation.MultipleViewPattern>です。 例としては、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]リスト ビューを指定できます、<xref:System.Windows.Automation.ControlType.DataGrid>または<xref:System.Windows.Automation.ControlType.List>に現在のビューに依存します。  
+  
+ コントロール型には、コントロール パターンを一対一の等価性はありません。 1 つだけの型のコントロールができますに可能性があります複数のパターンまたはパターンをまったくサポート、その特定の機能によって。  
+  
+ 詳細については、さまざまな種類の制御を参照してください[UI オートメーション コントロール型](~/docs/framework/ui-automation/ui-automation-control-types.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Button">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Button;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Button" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Button" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタン コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ボタンは、クリックされたときに 1 つのアクションを実行します。  
+  
+ ボタンは、スタンドアロンのコントロール、または別のコントロール型のサブコントロールとして使用できます。 たとえば、コンボ ボックス コントロールのドロップダウン矢印は、ボタンです。 ボタンがのコントロール ビューには、サブコントロールとして使用されるときに、 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] (コンテンツ ビュー) ではなくツリー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Calendar">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Calendar;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Calendar" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Calendar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>日付選択カレンダーなど、カレンダー コントロールを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckBox">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType CheckBox;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType CheckBox" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.CheckBox" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チェック ボックス コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタンドアロンのコントロール、または別のコントロール型のサブコントロールとして、チェック ボックスを使用できます。  たとえば、(、コンテンツを操作するために使用)、行の選択に使用されるグリッド コントロールで行の先頭にあるチェック ボックスは、コンテンツ ビューではなく、コントロール ビューに表示されます。 ただし、データを表すフォームのラベル付きのチェック ボックスは、コンテンツおよびコントロールのビューにです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComboBox">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType ComboBox;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType ComboBox" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.ComboBox" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックス コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンボ ボックス コントロールの 2 つのバリエーションがあります。 単純なコンボ ボックスは、ユーザーが選択できる一覧を表示します。 編集可能なコンボ ボックスは、選択肢の一覧が表示およびにとらわれることがなく、一覧の項目から選択する選択、ユーザーが入力する場所の編集可能なテキスト領域があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Custom;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Custom" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Custom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義済みのコントロール型のいずれでもないコントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.ControlType.Custom>コントロール型を定義済みのコントロールの種類のいずれかとして指定されていないコントロールを示します (など<xref:System.Windows.Automation.ControlType.Button>または<xref:System.Windows.Automation.ControlType.Calendar>)。  
+  
+ コントロールの開発者は、コントロールとして指定する前に他の種類のコントロールを確認する必要があります、<xref:System.Windows.Automation.ControlType.Custom>コントロール、コントロールが定義済みのコントロール型の 1 つと同じ機能を提供していないことを確認する型。  
+  
+ A<xref:System.Windows.Automation.ControlType.Custom>コントロール型には、実装するプロバイダーの余分な作業が必要です。[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]です。 また、UI オートメーション クライアント製品をコントロールの構造、キーボード操作、およびコントロールのコントロール型に基づく可能なコントロール パターンを予測することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataGrid">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType DataGrid;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType DataGrid" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.DataGrid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ グリッド コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール型にする必要があります、セルには、テキストのみが含まれて、<xref:System.Windows.Automation.ControlType.Table>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataItem">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType DataItem;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType DataItem" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.DataItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ項目コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.DataItem>は、その他の多くのコントロールを含めることができる複雑な項目です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Document;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Document" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Document" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメント コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドキュメントには、複数の行のテキスト コンテンツが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Edit">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Edit;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Edit" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Edit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ボックスなどのエディット コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.ControlType.Edit>スタンドアロン コントロールとして、または別のコントロール型のサブコントロールとしてコントロールを使用できます。  たとえば、コンボ ボックス コントロール内の値に、ユーザーが入力する場所、領域は、<xref:System.Windows.Automation.ControlType.Edit>コントロール、ここでは、コントロールがコンテンツ ビューの一部とします。  
+  
+ <xref:System.Windows.Automation.ControlType.Edit>コントロールでは、パスワードを格納しているコントロールを表すこともできます。 <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsPassword%2A>プロパティ、内容を表示するかどうかを知るスクリーン リーダーなどの製品を有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNeverSupportedPatterns">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationPattern[] GetNeverSupportedPatterns ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationPattern[] GetNeverSupportedPatterns() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ControlType.GetNeverSupportedPatterns" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの種類でサポートされていないパターン識別子を取得します。</summary>
+        <returns>配列[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]パターン識別子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、このコントロール型に許可されていないすべてのコントロール パターンを検索する必要のあるプロバイダーの実装のテスト フレームワークなどの UI オートメーション クライアントに便利です。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Windows.Automation.ControlType.GetNeverSupportedPatterns%2A>ですべての種類の<xref:System.Windows.Automation.ControlType>に静的フィールドとして含まれている、<xref:System.Windows.Automation.ControlType>クラスです。  
+  
+ [!code-csharp[UIAControlTypePatterns_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAControlTypePatterns_snip/CSharp/GetPatternsForm.cs#101)]
+ [!code-vb[UIAControlTypePatterns_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAControlTypePatterns_snip/visualbasic/getpatternsform.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequiredPatternSets">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationPattern[][] GetRequiredPatternSets ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationPattern[][] GetRequiredPatternSets() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ControlType.GetRequiredPatternSets" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern[][]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一連の必要なパターンの配列を取得します。</summary>
+        <returns>一連の必要なパターンの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列の各要素には、パターンの配列が含まれています。 およびをこの種類のコントロールを持つ各要素は、これらの配列の少なくとも 1 つをサポートする必要があります。  
+  
+ このメソッドは、UI オートメーション クライアント、プロバイダーの実装のテスト フレームワークなど、すべての可能なパターンを検索する必要があるに便利です。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Windows.Automation.ControlType.GetRequiredPatternSets%2A>ですべての種類の<xref:System.Windows.Automation.ControlType>に静的フィールドとして含まれている、<xref:System.Windows.Automation.ControlType>クラスです。  
+  
+ [!code-csharp[UIAControlTypePatterns_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAControlTypePatterns_snip/CSharp/GetPatternsForm.cs#101)]
+ [!code-vb[UIAControlTypePatterns_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAControlTypePatterns_snip/visualbasic/getpatternsform.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequiredProperties">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationProperty[] GetRequiredProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationProperty[] GetRequiredProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ControlType.GetRequiredProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>必要なプロパティの配列を取得[!INCLUDE[TLA#tla_id#plural](~/includes/tlasharptla-idsharpplural-md.md)]このコントロールの種類。</summary>
+        <returns>プロパティの配列[!INCLUDE[TLA2#tla_id#plural](~/includes/tla2sharptla-idsharpplural-md.md)]です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、UI オートメーション クライアント、プロバイダーの実装のテスト フレームワークなど、すべての可能なプロパティを検索する必要があるに便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Group;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Group" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Group" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その他のコントロールのコンテナーとして機能するグループ コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グループは、さまざまなコントロール型が含まれており、それらのコントロールを論理的に関連付けるために使用するコンテナー コントロールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Header">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Header;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Header" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Header" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行のラベルや列の情報のコンテナーにあるヘッダー コントロールを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderItem">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType HeaderItem;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType HeaderItem" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.HeaderItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行または情報の列のラベルとなる、ヘッダーの項目を識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hyperlink">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Hyperlink;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Hyperlink" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Hyperlink" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハイパーリンク コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハイパーリンク コントロールは、指定された移動[!INCLUDE[TLA#tla_url](~/includes/tlasharptla-url-md.md)]ときに、ユーザーがコントロールをクリックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Image;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Image" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Image" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージ コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.ControlType.Image>または別のコントロール型のサブコントロール スタンドアロン コントロールとして、コントロールの種類を使用できます。  たとえば、ボタンことができますを使用してテキストではなく、イメージをユーザーにその機能を示します。  
+  
+ イメージがのコントロール ビューに表示される装飾の目的にのみ使用する場合、 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] (コンテンツ ビュー) ではなくツリー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="List">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType List;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType List" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.List" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト ボックスなどのリスト コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.List>を含むコントロールの種類は、 <xref:System.Windows.Automation.ControlType.ListItem> (おそらく) と<xref:System.Windows.Automation.ControlType.Group>種類を制御します。  
+  
+ A<xref:System.Windows.Automation.ControlType.List>スタンドアロン コントロールとして、または別のコントロール型のサブコントロールとしてコントロールを使用できます。 たとえば、コンボ ボックスには、<xref:System.Windows.Automation.ControlType.List>ドロップダウン ボタンがクリックされたときに表示される選択肢を格納しているコントロール。 サブコントロールで使用する場合、<xref:System.Windows.Automation.ControlType.List>はのコントロール ビュー内でのみ、 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] (コンテンツ ビュー) ではなくツリー。  
+  
+ サブコントロールで使用する場合、<xref:System.Windows.Automation.ControlType.List>はありません、`Name`割り当てられるプロパティ。  
+  
+ A<xref:System.Windows.Automation.ControlType.List>含めることができる<xref:System.Windows.Automation.ControlType.DataItem>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListItem">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType ListItem;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType ListItem" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.ListItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト コントロールの子項目である、リスト項目コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.Header>リスト コントロールの子をすることもできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalizedControlType">
+      <MemberSignature Language="C#" Value="public string LocalizedControlType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalizedControlType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ControlType.LocalizedControlType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール型の説明を取得します。</summary>
+        <value>"ボタン" など、コントロール型のローカライズされた説明。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、すべてのコントロール型がリフレクションで見つかったされ、その<xref:System.Windows.Automation.ControlType.LocalizedControlType%2A>プロパティは、他の情報と共に出力します。  
+  
+ [!code-csharp[UIAControlTypePatterns_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAControlTypePatterns_snip/CSharp/GetPatternsForm.cs#101)]
+ [!code-vb[UIAControlTypePatterns_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAControlTypePatterns_snip/visualbasic/getpatternsform.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupById">
+      <MemberSignature Language="C#" Value="public static System.Windows.Automation.ControlType LookupById (int id);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Automation.ControlType LookupById(int32 id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ControlType.LookupById(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="id">コントロールの種類の識別子。</param>
+        <summary>取得、<see cref="T:System.Windows.Automation.ControlType" />指定した数値識別子をカプセル化します。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、コントロールの種類は、によって識別される、<xref:System.Windows.Automation.ControlType>オブジェクト。 このメソッドでは、数値識別子のみがわかっている場合は、このようなオブジェクトを構築することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Menu">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Menu;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Menu" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Menu" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ウィンドウのトップレベル メニューなどのメニュー コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メニューがメニュー項目のコレクションのコンテナー下に表示されるコントロールのインスタンス**ファイル**ときにそれをクリックしてを格納している**新規**、**開く**のようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuBar">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType MenuBar;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType MenuBar" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.MenuBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通常は、一連のトップレベル メニューのメニュー バーのコントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.MenuBar>コントロール型は、一連のアプリケーションのトップレベル メニューのコンテナーを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuItem">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType MenuItem;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType MenuItem" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.MenuItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー項目のコントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.MenuItem>の子である、<xref:System.Windows.Automation.ControlType.Menu>または<xref:System.Windows.Automation.ControlType.MenuBar>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pane">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Pane;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Pane" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Pane" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウ コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.Pane>内のコンテンツを視覚的に分離するために使用する<xref:System.Windows.Automation.ControlType.Window>です。 通常、ユーザーは タブ、F6、または ctrl キーを押しながら TAB を押すと、コンテキストに応じて、ペイン間を移動します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgressBar">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType ProgressBar;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType ProgressBar" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.ProgressBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時間のかかる操作の進行状況を視覚的に示す、進行状況バー コントロールを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RadioButton">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType RadioButton;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType RadioButton" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.RadioButton" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラジオ ボタン コントロールを選択メカニズムできるようにする 1 つだけで選択したアイテム グループを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollBar">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType ScrollBar;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType ScrollBar" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.ScrollBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ウィンドウのスクロール バーなどのスクロール バー コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.ScrollBar>コントロール型には、一連ボタンと、ユーザーがマウスを使用して、ウィンドウまたはアイテムのコンテナーの内容をスクロールを有効にする thumb コントロールにはが含まれています。  
+  
+ 使用して、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AutomationId%2A>プロパティを区別する、<xref:System.Windows.Automation.ControlType.Button>大きなインクリメント、デクリメント大きな、小さなインクリメント、および小さなデクリメント ボタンに対応する要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Separator">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Separator;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Separator" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Separator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニューとツールバーなどのコントロールで視覚的に区切る区切り記号を識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Slider">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Slider;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Slider" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Slider" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スライダー コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.Slider>コントロール型に関連付けられたボタンのセットから成る、<xref:System.Windows.Automation.ControlType.Edit>一連の項目から選択するか、範囲内での数値を設定するユーザーを有効にするコントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Spinner">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Spinner;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Spinner" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Spinner" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボタン コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.Spinner>コントロール型は、一連の項目から選択するか、範囲内での数値を設定するユーザーを有効にするボタンのセットで構成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SplitButton">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType SplitButton;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType SplitButton" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.SplitButton" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のアクションを実行し、その他のアクションの一覧にも拡張できますボタンは、分割 ボタンを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusBar">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType StatusBar;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType StatusBar" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.StatusBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ステータス バー コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.ControlType.StatusBar>コントロールの種類は、通常はの subcontrols<xref:System.Windows.Automation.ControlType.Window>コントロール型[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tab">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Tab;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Tab" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Tab" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タブ コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.Tab>は、コントロールの種類を少なくとも 1 つ含む<xref:System.Windows.Automation.ControlType.TabItem>子コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabItem">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType TabItem;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType TabItem" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.TabItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タブ コントロールのページを表す、タブ項目コントロールを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Table;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Table" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Table" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.Table>コントロールの種類がに似ていますが、<xref:System.Windows.Automation.ControlType.DataGrid>がテキストのみが含まれています。 テーブルを含めることも<xref:System.Windows.Automation.ControlType.Header>種類を制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Text;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Text" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Text" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リッチ テキスト ボックス、テキスト ボックスなどのエディット コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.Text>コントロールをなどスタンドアロン コントロールとして使用できる、<xref:System.Windows.Automation.ControlType.Edit>コントロール、またはの領域などのサブコンポーネントとして、<xref:System.Windows.Automation.ControlType.ComboBox>ユーザーが値を入力できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thumb">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Thumb;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Thumb" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Thumb" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の位置にドラッグできる scrollbar コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.Thumb>のサブコントロールとしてコントロールを使用、<xref:System.Windows.Automation.ControlType.ScrollBar>の種類を制御します。 サブコントロールで、<xref:System.Windows.Automation.ControlType.Thumb>はありません、<xref:System.Windows.Automation.AutomationElement.NameProperty>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleBar">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType TitleBar;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType TitleBar" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.TitleBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウのキャプション バーを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolBar">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType ToolBar;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType ToolBar" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.ToolBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ウィンドウでコマンド ボタンのセットを含むコントロールなどのツールバーを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType ToolTip;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType ToolTip" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.ToolTip" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツール ヒント コントロールをポインターを移動、コントロールの上またはタブ移動ときに、キーボードを使用して、コントロールへの結果として表示される情報ウィンドウを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tree">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Tree;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Tree" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Tree" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー コントロールを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.Tree>コントロール型の階層構造のコンテナーとは<xref:System.Windows.Automation.ControlType.TreeItem>または<xref:System.Windows.Automation.ControlType.DataItem>種類を制御します。  
+  
+ ツリーの各ノードには、他のノードを含めることができます。  子ノードとして表示できますが含まれるノードを展開または折りたたみます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TreeItem">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType TreeItem;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType TreeItem" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.TreeItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のノードを識別、<see cref="F:System.Windows.Automation.ControlType.TreeItem" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.ControlType.TreeItem>のサブコントロールとしてのみコントロール型を使用することができます、<xref:System.Windows.Automation.ControlType.Tree>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Window">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.ControlType Window;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.ControlType Window" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ControlType.Window" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子オブジェクトを含むウィンドウ フレームを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この種類のコントロールが常にサポート<xref:System.Windows.Automation.WindowPattern>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

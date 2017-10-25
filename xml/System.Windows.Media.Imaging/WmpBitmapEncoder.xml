@@ -1,0 +1,648 @@
+<Type Name="WmpBitmapEncoder" FullName="System.Windows.Media.Imaging.WmpBitmapEncoder">
+  <TypeSignature Language="C#" Value="public sealed class WmpBitmapEncoder : System.Windows.Media.Imaging.BitmapEncoder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WmpBitmapEncoder extends System.Windows.Media.Imaging.BitmapEncoder" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.WmpBitmapEncoder" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Imaging.BitmapEncoder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Microsoft Windows Media の写真イメージのエンコードに使用されるエンコーダーを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_wdp](~/includes/tla2sharptla-wdp-md.md)]イメージ再現性を向上を提供する新しいコーデック[!INCLUDE[TLA2#tla_jpegorg](~/includes/tla2sharptla-jpegorg-md.md)]ファイルサイズとより多くの機能を使用します。 [!INCLUDE[TLA2#tla_wdp](~/includes/tla2sharptla-wdp-md.md)]イメージでは、1 つのアルゴリズムを使用して非可逆および無損失圧縮が実現します。 [!INCLUDE[TLA2#tla_wdp](~/includes/tla2sharptla-wdp-md.md)]イメージは、既存のメタデータの標準をサポートします。 この形式の詳細については、次を参照してください。 [Windows メディア フォト仕様](http://www.microsoft.com/whdc/xps/wmphoto.mspx)です。  
+  
+ [!INCLUDE[TLA2#tla_wdp](~/includes/tla2sharptla-wdp-md.md)]ファイルでは、プレビュー、グローバルな縮小表示、フレーム レベル サムネイル、または複数のフレームをサポートしていません。  
+  
+ エンコーディングは、部分信頼では機能しません。 参照してください[WPF 部分信頼セキュリティ](~/docs/framework/wpf/wpf-partial-trust-security.md)については部分的に信頼します。  
+  
+<a name="xamlTextUsage_No"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WmpBitmapEncoder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.WmpBitmapEncoder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Imaging.WmpBitmapEncoder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、初期化、<xref:System.Windows.Media.Imaging.WmpBitmapEncoder>新しいビットマップ イメージのエンコードにします。  
+  
+ [!code-cpp[wdpbitmapdecoderencoder#3](~/samples/snippets/cpp/VS_Snippets_Wpf/WdpBitmapDecoderEncoder/CPP/WDPEncoderDecoder.cpp#3)]
+ [!code-csharp[wdpbitmapdecoderencoder#3](~/samples/snippets/csharp/VS_Snippets_Wpf/WdpBitmapDecoderEncoder/CSharp/WDPEncoderDecoder.cs#3)]
+ [!code-vb[wdpbitmapdecoderencoder#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WdpBitmapDecoderEncoder/VB/WDPEncoderDecoder.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlphaDataDiscardLevel">
+      <MemberSignature Language="C#" Value="public byte AlphaDataDiscardLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 AlphaDataDiscardLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.AlphaDataDiscardLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または圧縮ドメイン トランス コードの間に破棄するアルファ周波数データのレベルを設定します。</summary>
+        <value>イメージのエンコードを破棄するアルファ データのレベル。 値の範囲は 0 (データは破棄されます) を使用する 4 (アルファ チャネルを完全に破棄されます) です。 既定値は 1 です。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term> 0  
+  
+ </term><description>イメージの周波数データは破棄されません。  
+  
+ </description></item><item><term> 1  
+  
+ </term><description>FlexBits は破棄されます。 イメージの効果的な解像度を変更することがなく、イメージのイメージ品質が低下します。  
+  
+ </description></item><item><term> 2  
+  
+ </term><description>ハイパス周波数データ バンドは破棄されます。 4 インチの寸法の両方の画像の解像度が減少します。  
+  
+ </description></item><item><term> 3  
+  
+ </term><description>ハイパスとローパス頻度データ バンドは破棄されます。 両方の次元の 16 の画像の解像度が減少します。  
+  
+ </description></item><item><term> 4  
+  
+ </term><description>アルファ チャネルが完全に破棄されます。 ピクセル形式はアルファ チャネルの削除を反映するように変更されます。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、場合のみ有効<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.CompressedDomainTranscode%2A>に設定されている`true`と、イメージには、平面またはインターリーブのアルファ チャネルが含まれている以外の場合はそれ以外の場合は無視されます。  
+  
+<a name="XAMLTextUsage_1"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値は、0 ~ 4 ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AlphaQualityLevel">
+      <MemberSignature Language="C#" Value="public byte AlphaQualityLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 AlphaQualityLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.AlphaQualityLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または平面のアルファ チャネルの圧縮の品質を設定します。</summary>
+        <value>平面のアルファ チャネル イメージの圧縮の品質。 1 の値は、ロスレス、増大している値と、高い圧縮比率とイメージ品質の低下と見なされます。 値の範囲は、1 ~ 255 です。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、場合のみ有効<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.InterleavedAlpha%2A>は`false`します。  
+  
+<a name="XAMLTextUsage_2"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompressedDomainTranscode">
+      <MemberSignature Language="C#" Value="public bool CompressedDomainTranscode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CompressedDomainTranscode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.CompressedDomainTranscode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または圧縮されたドメインの操作を使用するかどうかを示す値を設定します。 圧縮されたドメイン操作は、イメージ データをデコードすることがなく行われる変換操作です。</summary>
+        <value>
+          <see langword="true" />圧縮されたドメインの操作を使用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_3"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlipHorizontal">
+      <MemberSignature Language="C#" Value="public bool FlipHorizontal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FlipHorizontal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.FlipHorizontal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージを水平方向に反転するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />画像が水平方向に反転させる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_4"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlipVertical">
+      <MemberSignature Language="C#" Value="public bool FlipVertical { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FlipVertical" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.FlipVertical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージを垂直方向に反転するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />画像が垂直方向に反転させる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_5"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FrequencyOrder">
+      <MemberSignature Language="C#" Value="public bool FrequencyOrder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FrequencyOrder" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.FrequencyOrder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値の頻度の順序でエンコードするかどうか。</summary>
+        <value>
+          <see langword="true" />頻度の順序でイメージをエンコードするには<see langword="false" />空間の向きでイメージをエンコードします。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_6"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalTileSlices">
+      <MemberSignature Language="C#" Value="public short HorizontalTileSlices { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int16 HorizontalTileSlices" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.HorizontalTileSlices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または圧縮のエンコード中に使用する水平分割の数を設定します。 1 つの分割では、2 つの水平方向の領域を作成します。</summary>
+        <value>圧縮のエンコード中に使用する水平分割の数。 値の範囲は、0 ~ 4095 です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.CompressedDomainTranscode%2A>は`true`、<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.HorizontalTileSlices%2A>を 0 に設定する必要があります。  
+  
+ 部門によって作成されたタイルは 16 ピクセルより小さくすることはできません。 値が最小のタイルのサイズを維持するために調整します。  
+  
+ 組み合わせて使用すると<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.VerticalTileSlices%2A>グリッドのタイルを形成します。 たとえば、両方のプロパティが 1 に設定されている場合は、イメージが 4 つのタイルに分割されます。  
+  
+<a name="XAMLTextUsage_7"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreOverlap">
+      <MemberSignature Language="C#" Value="public bool IgnoreOverlap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreOverlap" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.IgnoreOverlap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または圧縮かどうかをサブ地域内の領域が重なっているピクセルを無視するドメインのエンコードを示す値を設定します。 この機能は現在実装されていません。</summary>
+        <value>
+          <see langword="true" />重複は無視されます。 場合、それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は有効な場合にのみ<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.CompressedDomainTranscode%2A>は`true`サブ領域をエンコードおよびを要求します。  
+  
+<a name="XAMLTextUsage_8"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageDataDiscardLevel">
+      <MemberSignature Language="C#" Value="public byte ImageDataDiscardLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 ImageDataDiscardLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.ImageDataDiscardLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または圧縮ドメイン トランス コードの間に破棄するイメージ データのレベルを設定します。</summary>
+        <value>イメージの圧縮されたドメインのエンコード中に破棄するイメージ データのレベル。 値の範囲は 0 (データは破棄されます) を使用 (ハイパスおよびローパス破棄) は 3 です。 既定値は 1 です。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term> 0  
+  
+ </term><description>イメージの周波数データは破棄されません。  
+  
+ </description></item><item><term> 1  
+  
+ </term><description>FlexBits は破棄されます。 イメージの効果的な解像度を変更することがなく、イメージのイメージ品質が低下します。  
+  
+ </description></item><item><term> 2  
+  
+ </term><description>ハイパス周波数データ バンドは破棄されます。 4 インチの寸法の両方の画像の解像度が減少します。  
+  
+ </description></item><item><term> 3  
+  
+ </term><description>ハイパスとローパス頻度データ バンドは破棄されます。 両方の次元の 16 の画像の解像度が減少します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、場合のみ有効<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.CompressedDomainTranscode%2A>に設定されている`true`です。 それ以外の場合は無視されます。  
+  
+<a name="XAMLTextUsage_9"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値は、0 ~ 3 の範囲がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageQualityLevel">
+      <MemberSignature Language="C#" Value="public float ImageQualityLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 ImageQualityLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.ImageQualityLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージの品質レベルを設定します。</summary>
+        <value>イメージの品質レベル。 範囲は、0 ~ 1.0 (無損失のイメージ品質) です。 既定値は 0.9 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_10"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterleavedAlpha">
+      <MemberSignature Language="C#" Value="public bool InterleavedAlpha { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InterleavedAlpha" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.InterleavedAlpha" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または別のインターリーブされたチャネルとしてアルファ チャネルのデータをエンコードするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />イメージが; 追加の interleaved アルファ チャネルでエンコードされた場合<see langword="false" />平面のアルファ チャネルを使用する場合。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターリーブのアルファ チャネルは、特定のピクセル形式でのみサポートされます。  
+  
+<a name="XAMLTextUsage_11"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lossless">
+      <MemberSignature Language="C#" Value="public bool Lossless { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Lossless" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.Lossless" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または無損失圧縮を使用してエンコードするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />無損失圧縮を使用するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_12"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverlapLevel">
+      <MemberSignature Language="C#" Value="public byte OverlapLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 OverlapLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.OverlapLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオーバー ラップ処理のレベルを設定します。</summary>
+        <value>オーバー ラップ処理のレベルです。 既定値は 1 です。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term> 0  
+  
+ </term><description>オーバー ラップ処理が有効なことはありません。  
+  
+ </description></item><item><term> 1  
+  
+ </term><description>オーバー ラップ処理の 1 つのレベルを有効にします。 隣接するブロックの値に基づいて 4 x 4 ブロックのエンコード値が変更されます。  
+  
+ </description></item><item><term> 2  
+  
+ </term><description>オーバー ラップ処理の 2 つのレベルが有効になります。 処理の最初のレベルに加え、隣接するマクロ ブロックの値に基づいて 16 x 16 のマクロ ブロックのエンコード値が変更されます。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_13"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QualityLevel">
+      <MemberSignature Language="C#" Value="public byte QualityLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 QualityLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.QualityLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメイン イメージの圧縮の品質を設定します。</summary>
+        <value>メインのイメージの圧縮の品質。 1 の値は、無損失と見なさ値が大きいほど、高い圧縮比率とイメージ品質の低下を示します。 範囲は、1 ~ 255 です。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_14"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotation">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Imaging.Rotation Rotation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Imaging.Rotation Rotation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.Rotation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.Rotation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Imaging.Rotation" />イメージのです。</summary>
+        <value>イメージの回転が異なります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_15"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubsamplingLevel">
+      <MemberSignature Language="C#" Value="public byte SubsamplingLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 SubsamplingLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.SubsamplingLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または RGB イメージのエンコードのサブ サンプリング レベルを設定します。</summary>
+        <value>RGB イメージのエンコードのサブ サンプリング レベルです。 範囲は、0 ~ 3 です。 既定値は 3 です。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term> 0  
+  
+ </term><description>4:0:0 エンコードします。 彩度コンテンツは破棄されます。輝度は保持されます。  
+  
+ </description></item><item><term> 1  
+  
+ </term><description>4:2:0 エンコードします。 彩度の解像度が 1/4 輝度解像度によって低下します。  
+  
+ </description></item><item><term> 2  
+  
+ </term><description>4:2:2 エンコードします。 彩度の解像度は、1/2 の輝度解像度に短縮されます。  
+  
+ </description></item><item><term> 3  
+  
+ </term><description>4:4:4 エンコードします。 彩度の解像度が保持されます。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_16"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値は、0 ~ 3 の範囲がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseCodecOptions">
+      <MemberSignature Language="C#" Value="public bool UseCodecOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseCodecOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.UseCodecOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコーデックのオプションが使用されるかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コーデックのオプションが使用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.UseCodecOptions%2A>は`true`、 <xref:System.Windows.Media.Imaging.WmpBitmapEncoder.QualityLevel%2A>、 <xref:System.Windows.Media.Imaging.WmpBitmapEncoder.OverlapLevel%2A>、および<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.SubsamplingLevel%2A>の代わりに使用される、<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.ImageQualityLevel%2A>です。  
+  
+ ときに<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.UseCodecOptions%2A>は`false`、 <xref:System.Windows.Media.Imaging.WmpBitmapEncoder.QualityLevel%2A>、 <xref:System.Windows.Media.Imaging.WmpBitmapEncoder.OverlapLevel%2A>、および<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.SubsamplingLevel%2A>はに基づいて設定<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.ImageQualityLevel%2A>です。  
+  
+<a name="XAMLTextUsage_17"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalTileSlices">
+      <MemberSignature Language="C#" Value="public short VerticalTileSlices { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int16 VerticalTileSlices" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.WmpBitmapEncoder.VerticalTileSlices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または圧縮のエンコード中に使用する垂直分割の数を設定します。 1 つの分割では、2 つの垂直方向の領域を作成します。</summary>
+        <value>圧縮のエンコード中に使用する垂直分割の数。 値の範囲は、0 ~ 4095 です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.CompressedDomainTranscode%2A>は`true`、<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.VerticalTileSlices%2A>を 0 に設定する必要があります。  
+  
+ 部門によって作成されたタイルは 16 ピクセルより小さくすることはできません。 値が最小のタイルのサイズを維持するために調整します。  
+  
+ 組み合わせて使用すると<xref:System.Windows.Media.Imaging.WmpBitmapEncoder.HorizontalTileSlices%2A>グリッドのタイルを形成します。 たとえば、両方のプロパティが 1 に設定されている場合は、イメージが 4 つのタイルに分割されます。  
+  
+<a name="XAMLTextUsage_18"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,215 @@
+<Type Name="NumberPrototype" FullName="Microsoft.JScript.NumberPrototype">
+  <TypeSignature Language="C#" Value="public class NumberPrototype : Microsoft.JScript.NumberObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NumberPrototype extends Microsoft.JScript.NumberObject" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.NumberPrototype" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.NumberObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>静的メソッドとプロパティを提供<see cref="T:Microsoft.JScript.NumberObject" />オブジェクト。 このクラスのすべてのメソッドは、メソッドへのアクセスを要求しているオブジェクトへの参照を渡すことによって呼び出されます。 このクラスは、組み込みのオブジェクト モデルのカテゴリに属しています。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="constructor">
+      <MemberSignature Language="C#" Value="public static Microsoft.JScript.NumberConstructor constructor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.JScript.NumberConstructor constructor" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.NumberPrototype.constructor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.NumberConstructor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロトタイプを使用しているプロトタイプ ベースのオブジェクトへの参照を取得します。</summary>
+        <value>プロトタイプ ベースのオブジェクトへの参照。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toExponential">
+      <MemberSignature Language="C#" Value="public static string toExponential (object thisob, object fractionDigits);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toExponential(object thisob, object fractionDigits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.NumberPrototype.toExponential(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.Number_toExponential)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="fractionDigits" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="fractionDigits">表示する小数点以下桁数を表す 0 ~ 20 の数値。 既定値は 16 です。</param>
+        <summary>指定した文字列形式を作成<see cref="T:Microsoft.JScript.NumberObject" />指数 (E) 表記を使用します。</summary>
+        <returns>文字列表現<paramref name="thisob" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toFixed">
+      <MemberSignature Language="C#" Value="public static string toFixed (object thisob, double fractionDigits);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toFixed(object thisob, float64 fractionDigits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.NumberPrototype.toFixed(System.Object,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.Number_toFixed)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="fractionDigits" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="fractionDigits">表示する小数点以下桁数を表す 0 ~ 20 の数値。 既定値は 0 です。</param>
+        <summary>指定した文字列形式を作成<see cref="T:Microsoft.JScript.NumberObject" />小数点以下桁数の指定した数を表示します。</summary>
+        <returns>文字列表現<paramref name="thisob" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toLocaleString">
+      <MemberSignature Language="C#" Value="public static string toLocaleString (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toLocaleString(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.NumberPrototype.toLocaleString(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.Number_toLocaleString)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>基になっている指定したオブジェクトの文字列表現を作成<see cref="P:System.Globalization.NumberFormatInfo.CurrentInfo" />と<see cref="T:System.Globalization.CultureInfo" />です。</summary>
+        <returns>文字列表現<paramref name="thisob" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toPrecision">
+      <MemberSignature Language="C#" Value="public static string toPrecision (object thisob, object precision);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toPrecision(object thisob, object precision) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.NumberPrototype.toPrecision(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.Number_toPrecision)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="precision" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="precision">表示する桁数の有効桁数の数を表す 0 ~ 21 数値。 <c>有効桁数の数字</c>小数点と組み合わせて、指数部の桁数します。</param>
+        <summary>指定した文字列形式を作成<see cref="T:Microsoft.JScript.NumberObject" />有効桁数の指定した数を表示します。</summary>
+        <returns>文字列表現<paramref name="thisob" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="toString">
+      <MemberSignature Language="C#" Value="public static string toString (object thisob, object radix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string toString(object thisob, object radix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.NumberPrototype.toString(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.Number_toString)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="radix" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="radix">A 番号を表す 2 と 36 の間で数値の底<c>thisob</c>で表されます。 既定値は 10 です。</param>
+        <summary>指定したオブジェクトの文字列表現を作成します。</summary>
+        <returns>文字列表現<paramref name="thisob" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="valueOf">
+      <MemberSignature Language="C#" Value="public static object valueOf (object thisob);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object valueOf(object thisob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.NumberPrototype.valueOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject, Microsoft.JScript.JSBuiltin.Number_valueOf)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <summary>指定した値を返します<see cref="T:Microsoft.JScript.NumberObject" />です。</summary>
+        <returns><paramref name="thisob" /> の値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,88 @@
+<Type Name="RegexWorker" FullName="System.Web.Configuration.RegexWorker">
+  <TypeSignature Language="C#" Value="public class RegexWorker" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RegexWorker extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.RegexWorker" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によって実行時に内部的に使用される<see cref="T:System.Web.Configuration.BrowserCapabilitiesFactory" />と<see cref="T:System.Web.Configuration.BrowserCapabilitiesCodeGenerator" />を要求データを解析し、ブラウザーを識別します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegexWorker (System.Web.HttpBrowserCapabilities browserCaps);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.HttpBrowserCapabilities browserCaps) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RegexWorker.#ctor(System.Web.HttpBrowserCapabilities)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="browserCaps" Type="System.Web.HttpBrowserCapabilities" />
+      </Parameters>
+      <Docs>
+        <param name="browserCaps"><see cref="T:System.Web.Configuration.HttpCapabilitiesBase" />を構成するオブジェクト。</param>
+        <summary><see cref="T:System.Web.Configuration.RegexWorker" /> の新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[string key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RegexWorker.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">指定されたキー。</param>
+        <summary>このクラスのアクセサー。</summary>
+        <value>指定された関連付けられた内部値<paramref name="key" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRegex">
+      <MemberSignature Language="C#" Value="public bool ProcessRegex (string target, string regexExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ProcessRegex(string target, string regexExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RegexWorker.ProcessRegex(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.String" />
+        <Parameter Name="regexExpression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="target">ブラウザーの内部コレクションの機能の値。</param>
+        <param name="regexExpression">指定された要求ヘッダー値。</param>
+        <summary>指定された要求ヘッダーの値がブラウザーの内部コレクションの機能のいずれかと一致するかどうかを決定する、実行時に内部的に使用します。</summary>
+        <returns>
+          <see langword="true" />指定された要求ヘッダーの値では、ブラウザーの内部コレクションの機能のいずれかと一致する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,118 @@
+<Type Name="FilterFactory" FullName="System.Web.DynamicData.FilterFactory">
+  <TypeSignature Language="C#" Value="public class FilterFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FilterFactory extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.FilterFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フィルターのテンプレートを作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.FilterFactory>クラスは使用実行時に動的なデータが特定の列型のフィルターのテンプレートのインスタンスを取得します。  
+  
+ フィルターのテンプレートが読み込まれるしくみをカスタマイズするには、このクラスで定義されているメソッドをオーバーライドすることができます。 たとえば、カスタム実装は ~/DynamicData/Filters の既定のフォルダーとは異なる場所からフィルター テンプレートを読み込むでした。  
+  
+ 動的なデータ テンプレートが用意されてフィルター外部キー、ブール値、および列挙型の列の型し、を使用してそれらを表示、<xref:System.Web.UI.WebControls.DropDownList>コントロール。 カスタム フィルターのテンプレートを作成することもできます。  
+  
+   
+  
+## Examples  
+ テーブルの行のフィルター処理の例は、既定のフィルターのテンプレートを使用して、参照してください、<xref:System.Web.DynamicData.QueryableFilterRepeater>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FilterFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FilterFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.FilterFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFilterControl">
+      <MemberSignature Language="C#" Value="public virtual System.Web.DynamicData.QueryableFilterUserControl CreateFilterControl (System.Web.DynamicData.MetaColumn column, string filterUIHint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.DynamicData.QueryableFilterUserControl CreateFilterControl(class System.Web.DynamicData.MetaColumn column, string filterUIHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FilterFactory.CreateFilterControl(System.Web.DynamicData.MetaColumn,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.QueryableFilterUserControl</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn" />
+        <Parameter Name="filterUIHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="column">フィルターのテンプレートを適用するデータ列です。</param>
+        <param name="filterUIHint">使用するフィルターのテンプレートの名前。</param>
+        <summary>フィルターのテンプレートのインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Web.DynamicData.QueryableFilterUserControl" /> クラスのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは動的なデータのフィルターのテンプレートのインスタンスを取得します。 派生クラスでは、フィルターのテンプレートのインスタンスを作成する方法をカスタマイズするには、このメソッドをオーバーライドできます。 たとえば、カスタム実装は ~/DynamicData/Filters の既定のフォルダーからの代わりにコンパイルされたアセンブリからテンプレートを読み込むでした。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="column" />is **null**.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFilterVirtualPath">
+      <MemberSignature Language="C#" Value="public virtual string GetFilterVirtualPath (System.Web.DynamicData.MetaColumn column, string filterUIHint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetFilterVirtualPath(class System.Web.DynamicData.MetaColumn column, string filterUIHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.FilterFactory.GetFilterVirtualPath(System.Web.DynamicData.MetaColumn,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn" />
+        <Parameter Name="filterUIHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="column">フィルターのテンプレートを適用するデータ列です。</param>
+        <param name="filterUIHint">使用するフィルターのテンプレートです。</param>
+        <summary>フィルターのテンプレートの仮想パスを取得します。</summary>
+        <returns>フィルターのテンプレートの仮想パス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、フィルターのテンプレートは ~/DynamicData/Filers フォルダーにあります。  
+  
+ このメソッドは、フィールド テンプレートが含まれているフォルダーの仮想パスを決定します。 派生クラスでは、別の仮想パスからのフィルターのテンプレートを提供するには、このメソッドをオーバーライドできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="column" />is **null**.</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,114 @@
+<Type Name="CatalogPartDesigner" FullName="System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner">
+  <TypeSignature Language="C#" Value="public class CatalogPartDesigner : System.Web.UI.Design.WebControls.WebParts.PartDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CatalogPartDesigner extends System.Web.UI.Design.WebControls.WebParts.PartDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.WebParts.PartDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />、<see cref="T:System.Web.UI.WebControls.WebParts.ImportCatalogPart" />、および <see cref="T:System.Web.UI.WebControls.WebParts.PageCatalogPart" /> コントロールをデザイン時に使用できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner>デザイン時に提供する多目的デザイナーへのレンダリングを<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>と<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>両方から継承されるコントロール、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>基本クラスです。 <xref:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner>どのようなカスタマイズが関連付けられたコントロールを検証して、デザイン時の表示に、デザイン モードの状態を適用するために必要なだけ追加する、標準のコントロール デザイナーとして機能します。  
+  
+ カスタムがあれば<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>コントロール、派生のデザイナーをなど、作成することができます<xref:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner>デザイン時のレンダリングを提供します。 安全にオーバーライドできますの任意のメンバーです。 必要に応じてただし、オーバーライドする場合、<xref:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner.CreateViewControl%2A>メソッド、デザイン モードの状態情報が失われないようにする基本実装を呼び出してください。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner>および<xref:System.Web.UI.Design.WebControls.WebParts.EditorPartDesigner>同一インターフェイスと機能を共有します。 該当するコード例は、次を参照してください。、<xref:System.Web.UI.Design.WebControls.WebParts.EditorPartDesigner>クラスの概要です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CatalogPartDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateViewControl">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.Control CreateViewControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.Control CreateViewControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner.CreateViewControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたのコピーを作成<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロールをデザイン時にレンダリングします。</summary>
+        <returns>関連付けられたのコピー<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドして、ビュー コントロールにゾーンの情報をコピーします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>型のゾーンにコントロールが格納されていることを確認<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />、し、デザイン時にコントロールを表すために使用するマークアップを取得します。</summary>
+        <returns>デザイン時にコントロールを表すために使用するマークアップまたはエラー マークアップのコントロールが存在しない場合、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />-デザイナーに関連付けられたコントロールを派生します。</param>
+        <summary>デザイナーに関連付けられたバインド<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />-コントロールを派生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

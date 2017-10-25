@@ -1,0 +1,181 @@
+<Type Name="ConfigurationValidatorAttribute" FullName="System.Configuration.ConfigurationValidatorAttribute">
+  <TypeSignature Language="C#" Value="public class ConfigurationValidatorAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConfigurationValidatorAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationValidatorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>基本クラスとして機能、<see cref="N:System.Configuration" />バリデーター属性の型。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生して、ASP.NET 構成標準検証属性の種類すべて<xref:System.Configuration.ConfigurationValidatorAttribute>です。 この型を使用して、独自のカスタム検証属性を作成することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して 2 つのカスタム検証コントロールを作成する方法を示す、<xref:System.Configuration.ConfigurationValidatorAttribute>型です。 最初の例は、ハード コーディングされたパラメーターを使用して検証を実行します。2 番目の例では、関連するセクションのプロパティに適用された時点でそれに割り当てられているパラメーターを使用して検証を実行します。 このコード例には、次の 3 つのサポート ファイルも含まれています。 最初のファイルには、前述の検証コントロールを使用するカスタムのセクションが含まれています。 2 番目のファイルには、カスタムのコンバーターの型が含まれています、3 番目のファイルには構築およびカスタムの検証コントロール、およびそれらを含むセクションを使用するコンソール アプリケーションが含まれています。  
+  
+ 次のコード例では、ハード コーディングされたパラメーターを持つ固定検証コントロールを作成する方法を示します。  
+  
+ [!code-csharp[System.Configuration.ConfigValidatorAttribute#21](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigValidatorAttribute/CS/FixedValidatorAttribute.cs#21)]
+ [!code-vb[System.Configuration.ConfigValidatorAttribute#21](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigValidatorAttribute/VB/FixedValidatorAttribute.vb#21)]  
+  
+ 次のコード例では、プログラミング可能なバリデーターを作成する方法を示します。  
+  
+ [!code-csharp[System.Configuration.ConfigValidatorAttribute#31](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigValidatorAttribute/CS/ProgrammableValidatorAttribute.cs#31)]
+ [!code-vb[System.Configuration.ConfigValidatorAttribute#31](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigValidatorAttribute/VB/ProgrammableValidatorAttribute.vb#31)]  
+  
+ 次のコード例では、前述の検証コントロールを使用してカスタム セクションを作成する方法を示します。  
+  
+ [!code-csharp[System.Configuration.ConfigValidatorAttribute#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigValidatorAttribute/CS/AutomobileSection.cs#11)]
+ [!code-vb[System.Configuration.ConfigValidatorAttribute#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigValidatorAttribute/VB/AutomobileSection.vb#11)]  
+  
+ 次のコード例では、カスタムのコンバーターを作成する方法を示します。  
+  
+ [!code-csharp[System.Configuration.ConfigValidatorAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigValidatorAttribute/CS/AutomobileConverter.cs#1)]
+ [!code-vb[System.Configuration.ConfigValidatorAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigValidatorAttribute/VB/AutomobileConverter.vb#1)]  
+  
+ 次のコード例では、構築およびカスタムの検証コントロールとその格納するセクションを使用するコンソール アプリケーションを作成する方法を示します。  
+  
+ [!code-csharp[System.Configuration.ConfigValidatorAttribute#41](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigValidatorAttribute/CS/TestingConfigValidatorAttribute.cs#41)]
+ [!code-vb[System.Configuration.ConfigValidatorAttribute#41](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigValidatorAttribute/VB/TestingConfigValidatorAttribute.vb#41)]  
+  
+ 次のコード例は、前の例で使用される構成の抜粋です。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+    <configSections>  
+        <section name="Cars" type="Samples.AspNet.SelectCar, ConfigValidatorAttribute, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" allowLocation="false" allowDefinition="Everywhere" allowExeDefinition="MachineToApplication" restartOnExternalChanges="true" requirePermission="true" />  
+    </configSections>  
+    <Cars commute="Make:AlfaRomeo Color:Blue Miles:10000 Year:2002"  
+        dream="Make:Ferrari Color:Red Miles:10 Year:2005" />  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ConfigurationValidatorAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationValidatorAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationValidatorAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性付きのモデルでこのコンス トラクターを使用すると、関連するプロパティに割り当てられた値が整数であることを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationValidatorAttribute (Type validator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type validator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationValidatorAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="validator" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="validator">バリデーターの型のインスタンスを作成するときに使用する<see cref="T:System.Configuration.ConfigurationValidatorAttribute" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.ConfigurationValidatorAttribute" />クラスの指定した検証コントロールの種類を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、指定したインスタンスから検証インスタンスを作成できるかどうかを判断`validator`型です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="validator" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="validator" />派生していない<see cref="T:System.Configuration.ConfigurationValidatorBase" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatorInstance">
+      <MemberSignature Language="C#" Value="public virtual System.Configuration.ConfigurationValidatorBase ValidatorInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationValidatorBase ValidatorInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationValidatorAttribute.ValidatorInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationValidatorBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性のインスタンスの検証コントロールを取得します。</summary>
+        <value>現在の <see cref="T:System.Configuration.ConfigurationValidatorBase" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatorType">
+      <MemberSignature Language="C#" Value="public Type ValidatorType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValidatorType" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationValidatorAttribute.ValidatorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証属性の型を取得します。</summary>
+        <value><see cref="T:System.Type" />の検証属性の現在のインスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

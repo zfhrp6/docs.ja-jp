@@ -1,0 +1,235 @@
+<Type Name="ContentUser" FullName="System.Security.RightsManagement.ContentUser">
+  <TypeSignature Language="C#" Value="public class ContentUser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContentUser extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.RightsManagement.ContentUser" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical(System.Security.SecurityCriticalScope.Everything)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>権限が管理されたコンテンツへのアクセス権を付与するユーザーまたはユーザー グループを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ その他の同様<xref:System.Security.RightsManagement>型、<xref:System.Security.RightsManagement.ContentUser>は完全信頼アプリケーションで使用できるのみです。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Security.RightsManagement.UnsignedPublishLicense.Owner%2A>プロパティをこの型の変数を割り当てます。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubUnPubLic](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubunpublic)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubUnPubLic](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubunpublic)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentUser (string name, System.Security.RightsManagement.AuthenticationType authenticationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Security.RightsManagement.AuthenticationType authenticationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.ContentUser.#ctor(System.String,System.Security.RightsManagement.AuthenticationType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="authenticationType" Type="System.Security.RightsManagement.AuthenticationType" />
+      </Parameters>
+      <Docs>
+        <param name="name">ユーザーまたはグループの名前。</param>
+        <param name="authenticationType">認証方法です。</param>
+        <summary><see cref="T:System.Security.RightsManagement.ContentUser" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーまたはグループ`name`個別の電子メール アドレスの形式では、多くの場合 (などjohndoe@contoso.com) または電子メール配布リスト (などmarketing@contoso.com)。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して、安全な環境を作成する方法を示します。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubSecEnv](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubsecenv)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubSecEnv](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubsecenv)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnyoneUser">
+      <MemberSignature Language="C#" Value="public static System.Security.RightsManagement.ContentUser AnyoneUser { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.RightsManagement.ContentUser AnyoneUser" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.ContentUser.AnyoneUser" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.RightsManagement.ContentUser</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「ユーザー」のインスタンスを取得<see cref="T:System.Security.RightsManagement.ContentUser" />ペルソナです。</summary>
+        <value>「ユーザー」のインスタンス<see cref="T:System.Security.RightsManagement.ContentUser" />ペルソナです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.RightsManagement.ContentUser.AnyoneUser%2A><xref:System.Security.RightsManagement.ContentUser.AuthenticationType%2A> "Internal"および<xref:System.Security.RightsManagement.ContentUser.Name%2A>「人」です。  
+  
+ 場合<xref:System.Security.RightsManagement.ContentUser.AuthenticationType%2A>で「内部」<xref:System.Security.RightsManagement.ContentUser.Name%2A>発行時に権限が与えられます"すべてのユーザー"、認証サーバーから発行されます、<xref:System.Security.RightsManagement.UseLicense>に要求し、要求元のユーザーにライセンスをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationType">
+      <MemberSignature Language="C#" Value="public System.Security.RightsManagement.AuthenticationType AuthenticationType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.RightsManagement.AuthenticationType AuthenticationType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.ContentUser.AuthenticationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.RightsManagement.AuthenticationType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Security.RightsManagement.AuthenticationType" />に指定された、<see cref="M:System.Security.RightsManagement.ContentUser.#ctor(System.String,System.Security.RightsManagement.AuthenticationType)" />コンス トラクターです。</summary>
+        <value><see cref="T:System.Security.RightsManagement.AuthenticationType" />に指定された、<see cref="M:System.Security.RightsManagement.ContentUser.#ctor(System.String,System.Security.RightsManagement.AuthenticationType)" />コンス トラクターです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.ContentUser.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">等しいかどうかを比較するユーザー インスタンス。</param>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Security.RightsManagement.ContentUser" />は別に相当する機能の特定インスタンス。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="P:System.Security.RightsManagement.ContentUser.Name" />と<see cref="P:System.Security.RightsManagement.ContentUser.AuthenticationType" />このユーザーと指定したユーザーの両方で同じは、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.ContentUser.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザーに基づいて計算されたハッシュ コードを返します<see cref="P:System.Security.RightsManagement.ContentUser.Name" />と<see cref="P:System.Security.RightsManagement.ContentUser.AuthenticationType" />です。</summary>
+        <returns>ユーザーから計算されたハッシュ コード<see cref="P:System.Security.RightsManagement.ContentUser.Name" />と<see cref="P:System.Security.RightsManagement.ContentUser.AuthenticationType" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAuthenticated">
+      <MemberSignature Language="C#" Value="public bool IsAuthenticated ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsAuthenticated() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.ContentUser.IsAuthenticated" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザーが現在認証されているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />ユーザーが現在認証されている場合それ以外の場合、<see langword="false" />です。  既定値は<see langword="false" />認証されるまでです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のユーザー<xref:System.Security.RightsManagement.ContentUser.Name%2A>に基づいて認証は、指定された<xref:System.Security.RightsManagement.ContentUser.AuthenticationType%2A>です。  
+  
+ ユーザーが認証された後、<xref:System.Security.RightsManagement.ContentUser.IsAuthenticated%2A>は`true`、ユーザー ダイアログ ボックスと認証が作成するときに表示されなくを確認するメッセージ、<xref:System.Security.RightsManagement.SecureEnvironment>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.ContentUser.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたユーザーまたはグループの名前を取得、<see cref="M:System.Security.RightsManagement.ContentUser.#ctor(System.String,System.Security.RightsManagement.AuthenticationType)" />コンス トラクターです。</summary>
+        <value>指定されたユーザーまたはグループの名前、<see cref="M:System.Security.RightsManagement.ContentUser.#ctor(System.String,System.Security.RightsManagement.AuthenticationType)" />コンス トラクターです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerUser">
+      <MemberSignature Language="C#" Value="public static System.Security.RightsManagement.ContentUser OwnerUser { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.RightsManagement.ContentUser OwnerUser" />
+      <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.ContentUser.OwnerUser" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.RightsManagement.ContentUser</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「所有者」のインスタンスを取得<see cref="T:System.Security.RightsManagement.ContentUser" />ペルソナです。</summary>
+        <value>「所有者」のインスタンス<see cref="T:System.Security.RightsManagement.ContentUser" />ペルソナです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.RightsManagement.ContentUser.OwnerUser%2A><xref:System.Security.RightsManagement.ContentUser.AuthenticationType%2A> "Internal"および<xref:System.Security.RightsManagement.ContentUser.Name%2A>"Owner"です。  
+  
+ <xref:System.Security.RightsManagement.ContentUser.OwnerUser%2A>保護されたドキュメントが作成されるときに、コンテンツの作成者または発行元の特別な権限を与えるにサーバー側のテンプレートで使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

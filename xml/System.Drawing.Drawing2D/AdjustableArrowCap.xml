@@ -1,0 +1,182 @@
+<Type Name="AdjustableArrowCap" FullName="System.Drawing.Drawing2D.AdjustableArrowCap">
+  <TypeSignature Language="C#" Value="public sealed class AdjustableArrowCap : System.Drawing.Drawing2D.CustomLineCap" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AdjustableArrowCap extends System.Drawing.Drawing2D.CustomLineCap" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.AdjustableArrowCap" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Drawing2D.CustomLineCap</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>矢印の線を調整できるキャップを表します。 このクラスは継承できません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AdjustableArrowCap (float width, float height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float32 width, float32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.AdjustableArrowCap.#ctor(System.Single,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="width" Type="System.Single" />
+        <Parameter Name="height" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="width">矢印の幅。</param>
+        <param name="height">矢印の高さ。</param>
+        <summary>指定した幅および高さを使用して <see cref="T:System.Drawing.Drawing2D.AdjustableArrowCap" /> クラスの新しいインスタンスを初期化します。 このコンス トラクターで作成された矢印端点キャップは常に埋められます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Control.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   作成、<xref:System.Drawing.Drawing2D.AdjustableArrowCap>という名前のオブジェクト`myArrow`です。  
+  
+-   作成、<xref:System.Drawing.Pen>という名前のオブジェクト`capPen`、設定とその<xref:System.Drawing.Pen.CustomStartCap%2A>と<xref:System.Drawing.Pen.CustomEndCap%2A>プロパティと等しい`myArrow`です。  
+  
+-   使用して、 <xref:System.Drawing.Graphics.DrawLine%2A> 2 つの矢印によって制限されます、行を画面に描画するメソッド。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMisc#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMisc#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMisc#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AdjustableArrowCap (float width, float height, bool isFilled);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float32 width, float32 height, bool isFilled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.AdjustableArrowCap.#ctor(System.Single,System.Single,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="width" Type="System.Single" />
+        <Parameter Name="height" Type="System.Single" />
+        <Parameter Name="isFilled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="width">矢印の幅。</param>
+        <param name="height">矢印の高さ。</param>
+        <param name="isFilled">
+          <see langword="true" />矢印のキャップの塗りつぶしをそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Drawing2D.AdjustableArrowCap" />指定した幅、高さ、および塗りつぶしプロパティを持つクラス。 渡される引数依存の矢印端点キャップを入力するかどうか、<paramref name="isFilled" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Control.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   作成、<xref:System.Drawing.Drawing2D.AdjustableArrowCap>という名前のオブジェクト`myArrow`です。  
+  
+-   作成、<xref:System.Drawing.Pen>という名前のオブジェクト`capPen`、設定とその<xref:System.Drawing.Pen.CustomStartCap%2A>と<xref:System.Drawing.Pen.CustomEndCap%2A>プロパティと等しい`myArrow`です。  
+  
+-   使用して、 <xref:System.Drawing.Graphics.DrawLine%2A> 2 つの矢印によって制限されます、行を画面に描画するメソッド。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMisc#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMisc#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMisc#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filled">
+      <MemberSignature Language="C#" Value="public bool Filled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Filled" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.AdjustableArrowCap.Filled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または矢印のキャップを入力するかどうかを設定します。</summary>
+        <value>このプロパティは<see langword="true" />矢印のキャップの塗りつぶし、それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public float Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.AdjustableArrowCap.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または矢印のキャップの高さを設定します。</summary>
+        <value>矢印のキャップの高さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 矢印のキャップの高さがの幅を拡大/縮小、<xref:System.Drawing.Pen>されている上限の直線を描画するために使用します。 たとえば、ペンを使用して、上限が定義された行を描画する場合を持つ 5 (ピクセル単位) の幅と<xref:System.Drawing.Drawing2D.AdjustableArrowCap>オブジェクトが 3 の高さは、実際の矢印のキャップ高さ 15 ピクセルが描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MiddleInset">
+      <MemberSignature Language="C#" Value="public float MiddleInset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 MiddleInset" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.AdjustableArrowCap.MiddleInset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または矢印のキャップの輪郭と塗りつぶし間の単位の数を設定します。</summary>
+        <value>矢印のキャップの輪郭と矢印のキャップの塗りつぶしの間の単位の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public float Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.AdjustableArrowCap.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または矢印のキャップの幅を設定します。</summary>
+        <value>単位、矢印のキャップの幅。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 矢印のキャップの幅がの幅を拡大/縮小、<xref:System.Drawing.Pen>されている上限の直線を描画するために使用します。 たとえば、ペンを使用して、上限が定義された行を描画する場合を持つ 5 (ピクセル単位) の幅と<xref:System.Drawing.Drawing2D.AdjustableArrowCap>オブジェクトには、3 の幅は、実際の矢印のキャップ描画 15 ピクセルです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

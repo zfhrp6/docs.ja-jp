@@ -1,0 +1,171 @@
+<Type Name="ClerkMonitor" FullName="System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor">
+  <TypeSignature Language="C#" Value="public sealed class ClerkMonitor : System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ClerkMonitor extends System.Object implements class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>プロセスのアクティブなすべてのクラークのスナップショットが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のプロセスでトランザクションの復旧を実行するアクティブなクラークの一覧を確認するコンペンセート リソース マネージャー (CRM) モニターを使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClerkMonitor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マネージャー CRM (Compensating Resource) 監視コレクション内のクラーク モニターの数を取得します。</summary>
+        <value>CRM のクラーク モニターの数は、コレクションを監視します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~ClerkMonitor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のリソースを解放<see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor" />ガベージ コレクターによって収集される前にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マネージャー CRM (Compensating Resource) 監視コレクションでクラークの列挙を返します。</summary>
+        <returns>コレクション内でクラークを記述する列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Item">
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>取得、<see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkInfo" />オブジェクトの<see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor" />します。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.CompensatingResourceManager.ClerkInfo this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EnterpriseServices.CompensatingResourceManager.ClerkInfo Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.CompensatingResourceManager.ClerkInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">識別する整数のインデックス、<see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor" />です。</param>
+        <summary>取得、<see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkInfo" />オブジェクトの<see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor" />します。</summary>
+        <value><see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkInfo" />オブジェクトの<see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.CompensatingResourceManager.ClerkInfo this[string index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EnterpriseServices.CompensatingResourceManager.ClerkInfo Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.CompensatingResourceManager.ClerkInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index">識別する数値インデックス、<see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor" />です。</param>
+        <summary>取得、<see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkInfo" />オブジェクトの<see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor" />します。</summary>
+        <value><see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkInfo" />オブジェクトの<see cref="T:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Populate">
+      <MemberSignature Language="C#" Value="public void Populate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Populate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.CompensatingResourceManager.ClerkMonitor.Populate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラークの現在の状態のスナップショットであるクラーク コレクション オブジェクトを取得します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

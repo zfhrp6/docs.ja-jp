@@ -1,0 +1,106 @@
+<Type Name="SerializationSectionGroup" FullName="System.Runtime.Serialization.Configuration.SerializationSectionGroup">
+  <TypeSignature Language="C#" Value="public sealed class SerializationSectionGroup : System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SerializationSectionGroup extends System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.Configuration.SerializationSectionGroup" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSectionGroup</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Runtime.Serialization.DataContractSerializer" /> によるシリアル化の構成に使用する XML 要素を処理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用して処理を[ &lt;dataContractSerializer&gt; ](~/docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)を含むグループ、 [ &lt;dataContractSerializer&gt; ](~/docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)要素具体的には、既知の型のコレクションに型を追加できるようにします。 データ コントラクトと既知の型の詳細については、次を参照してください。[データ コントラクトの既知の型](~/docs/framework/wcf/feature-details/data-contract-known-types.md)です。  
+  
+ 既知の型のコレクションに追加する要素を使用しての例は、次を参照してください。 [ &lt;declaredTypes&gt;](~/docs/framework/configure-apps/file-schema/wcf/declaredtypes.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SerializationSectionGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Configuration.SerializationSectionGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Serialization.Configuration.SerializationSectionGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DataContractSerializer">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Configuration.DataContractSerializerSection DataContractSerializer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.Configuration.DataContractSerializerSection DataContractSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Configuration.SerializationSectionGroup.DataContractSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Configuration.DataContractSerializerSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の型のコレクションを設定するために使用される <see cref="T:System.Runtime.Serialization.Configuration.DataContractSerializerSection" /> を取得します。</summary>
+        <value>シリアル化構成セクションに使用される <see cref="T:System.Runtime.Serialization.Configuration.DataContractSerializerSection" />。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetSectionGroup">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Serialization.Configuration.SerializationSectionGroup GetSectionGroup (System.Configuration.Configuration config);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Serialization.Configuration.SerializationSectionGroup GetSectionGroup(class System.Configuration.Configuration config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Configuration.SerializationSectionGroup.GetSectionGroup(System.Configuration.Configuration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Configuration.SerializationSectionGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="config" Type="System.Configuration.Configuration" />
+      </Parameters>
+      <Docs>
+        <param name="config">取得する構成を表す <see cref="T:System.Configuration.Configuration" />。</param>
+        <summary>指定した構成に対するシリアル化構成セクションを取得します。</summary>
+        <returns>構成セクションを表す <see cref="T:System.Runtime.Serialization.Configuration.SerializationSectionGroup" />。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NetDataContractSerializer">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Configuration.NetDataContractSerializerSection NetDataContractSerializer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.Configuration.NetDataContractSerializerSection NetDataContractSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Configuration.SerializationSectionGroup.NetDataContractSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Configuration.NetDataContractSerializerSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の型のコレクションを設定するために使用される <see cref="T:System.Runtime.Serialization.Configuration.NetDataContractSerializerSection" /> を取得します。</summary>
+        <value><see cref="T:System.Runtime.Serialization.Configuration.NetDataContractSerializerSection" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

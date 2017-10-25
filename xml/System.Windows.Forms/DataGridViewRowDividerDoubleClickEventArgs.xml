@@ -1,0 +1,100 @@
+<Type Name="DataGridViewRowDividerDoubleClickEventArgs" FullName="System.Windows.Forms.DataGridViewRowDividerDoubleClickEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridViewRowDividerDoubleClickEventArgs : System.Windows.Forms.HandledMouseEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewRowDividerDoubleClickEventArgs extends System.Windows.Forms.HandledMouseEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewRowDividerDoubleClickEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.HandledMouseEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.DataGridView.RowDividerDoubleClick" />のイベント、<see cref="T:System.Windows.Forms.DataGridView" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.RowDividerDoubleClick>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.RowDividerDoubleClick>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#342](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#342)]
+ [!code-vb[System.Windows.Forms.EventExamples#342](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#342)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewRowDividerDoubleClickEventArgs (int rowIndex, System.Windows.Forms.HandledMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 rowIndex, class System.Windows.Forms.HandledMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowDividerDoubleClickEventArgs.#ctor(System.Int32,System.Windows.Forms.HandledMouseEventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="e" Type="System.Windows.Forms.HandledMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">ダブルクリックされた行の区分線の上の行のインデックス。</param>
+        <param name="e">新しい<see cref="T:System.Windows.Forms.HandledMouseEventArgs" />継承されたイベント データを格納します。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewRowDividerDoubleClickEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの初期化の値、<xref:System.Windows.Forms.DataGridViewRowDividerDoubleClickEventArgs.RowIndex%2A>プロパティを使用して、`rowIndex`値。 プロパティの値から継承<xref:System.Windows.Forms.HandledMouseEventArgs>で指定された値に初期化されます`e`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="rowIndex" />-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowDividerDoubleClickEventArgs.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダブルクリックされた行の区分線の上の行のインデックス。</summary>
+        <value>区分線の上の行のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックスが内の行の 0 から始まるインデックス、<xref:System.Windows.Forms.DataGridView.Rows%2A?displayProperty=nameWithType>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.RowDividerDoubleClick?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.RowDividerDoubleClick?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#342](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#342)]
+ [!code-vb[System.Windows.Forms.EventExamples#342](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#342)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

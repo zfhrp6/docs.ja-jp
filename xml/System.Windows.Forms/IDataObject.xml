@@ -1,0 +1,582 @@
+<Type Name="IDataObject" FullName="System.Windows.Forms.IDataObject">
+  <TypeSignature Language="C#" Value="public interface IDataObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.IDataObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データを転送するための形式に依存しないメカニズムを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IDataObject`インターフェイスを使用して、<xref:System.Windows.Forms.Clipboard>クラスおよびドラッグ アンド ドロップ操作でします。  
+  
+ クラスで実装された場合、<xref:System.Windows.Forms.IDataObject>メソッドがクラスのインスタンスで複数の形式でデータを格納するユーザーを許可します。 複数の形式でデータを格納するがわからない場合があります、形式の要件の対象アプリケーションが格納されたデータを取得できる可能性が高くなります。 インスタンスにデータを格納する<xref:System.Windows.Forms.IDataObject>、呼び出し、<xref:System.Windows.Forms.IDataObject.SetData%2A>メソッドでデータ形式を指定して、`format`パラメーター。 設定、`autoConvert`パラメーターを`false`かどうかしないようにする格納されたデータを取得するときに、別の形式に変換します。 呼び出す<xref:System.Windows.Forms.IDataObject.SetData%2A>の 1 つのインスタンスで複数回<xref:System.Windows.Forms.IDataObject>複数の形式にデータを保存します。  
+  
+ 保存されたデータを取得する、<xref:System.Windows.Forms.IDataObject>を呼び出して、<xref:System.Windows.Forms.IDataObject.GetData%2A>で書式設定方法と、データを指定する、`format`パラメーター。 設定、`autoConvert`パラメーターを`false`指定された形式で格納されたデータのみを取得します。 指定された形式に格納されたデータを変換する次のように設定します。`autoConvert`に`true`、使用しない、または`autoConvert`です。  
+  
+ 格納されたデータの形式を決定する、 <xref:System.Windows.Forms.IDataObject>、次を使用して<xref:System.Windows.Forms.IDataObject>メソッドです。  
+  
+-   呼び出す、<xref:System.Windows.Forms.IDataObject.GetFormats%2A>をすべての形式のデータが使用可能な配列を取得する方法です。 設定、`autoConvert`パラメーターを`false`データが格納されている形式のみを取得します。 データが使用可能なすべての形式を取得するには、次のように設定します。`autoConvert`に`true`、またはこのパラメーターを使用しないでください。  
+  
+-   呼び出す、<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A>格納されたデータが特定の形式で使用できるかどうかを調べます。 指定された形式に変換する格納されたデータしたくない場合は、設定、`autoConvert`パラメーターを`false`です。  
+  
+ 参照してください、<xref:System.Windows.Forms.DataObject>のこのインターフェイスを実装するためのクラスです。 参照してください、 <xref:System.Windows.Forms.DataFormats> 、定義済みのクラス<xref:System.Windows.Forms.Clipboard>データ形式。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public object GetData (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetData(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.GetData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">取得するデータの形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <summary>指定したデータ形式に関連付けられているデータを取得します。</summary>
+        <returns>指定された形式に関連付けられているデータまたは<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された形式でデータを見つけることはできません、データ形式に変換しようとします。 このメソッドが戻るかどうかは、指定された形式にデータを変換できません、`null`です。  
+  
+ データが関連付けられてまたは形式に変換できるかどうかを判断するのには、呼び出す<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A>呼び出す前に<xref:System.Windows.Forms.IDataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.IDataObject.GetFormats%2A>このインスタンスに格納されたデータの有効な形式の一覧についてはします。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject,`の使用をデモ、`GetData`メソッドです。 格納されているデータを取得するメソッドが使用される`myDataObject`に関連付けられているが、`Text`形式です。 この例では、既に作成している、<xref:System.Windows.Forms.Form>という名前`Form1`と<xref:System.Windows.Forms.TextBox>という名前`textBox1`です。  
+  
+ [!code-cpp[GetData1#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GetData1/CPP/getdata1.cpp#1)]
+ [!code-csharp[GetData1#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GetData1/CS/getdata1.cs#1)]
+ [!code-vb[GetData1#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GetData1/VB/getdata1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public object GetData (Type format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetData(class System.Type format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.GetData(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="format">A<see cref="T:System.Type" />取得するデータの形式を表すです。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <summary>指定されたクラス型の形式に関連付けられているデータを取得します。</summary>
+        <returns>指定された形式に関連付けられているデータまたは<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された形式でデータを見つけることはできません、データ形式に変換しようとします。 このメソッドが戻るかどうかは、指定された形式にデータを変換できません、`null`です。  
+  
+ データが関連付けられてまたは形式に変換できるかどうかを判断するのには、呼び出す<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A>呼び出す前に<xref:System.Windows.Forms.IDataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.IDataObject.GetFormats%2A>このインスタンスに格納されたデータの有効な形式の一覧についてはします。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject`の使用をデモ、`GetData`メソッドです。 格納されているデータを取得するメソッドが使用される`myObject`、特定の種類に関連付けられている`myType`です。 取得したデータの種類は、メッセージ ボックスに表示されます。 この例では、既に作成している、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[GetData2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GetData2/CPP/getdata2.cpp#1)]
+ [!code-csharp[GetData2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GetData2/CS/getdata2.cs#1)]
+ [!code-vb[GetData2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GetData2/VB/getdata2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public object GetData (string format, bool autoConvert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetData(string format, bool autoConvert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.GetData(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="format">取得するデータの形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <param name="autoConvert">
+          <see langword="true" />指定された形式にデータを変換するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>データ形式に変換するかどうかを決定するブール値を使用して、指定したデータ形式に関連付けられているデータを取得します。</summary>
+        <returns>指定された形式に関連付けられているデータまたは<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`autoConvert`パラメーターは`true`形式にデータを変換しようと、このメソッドは、指定された形式でデータを見つけることができません。 データは、指定された形式に変換できない場合、またはデータに保存された場合、`autoConvert`パラメーターに設定`false`、このメソッドが戻る`null`です。  
+  
+ 場合、`autoConvert`パラメーターは`false`、このメソッドは、指定された形式でデータを返しますまたは`null`形式でデータが見つからない場合。  
+  
+ データが関連付けられてまたは形式に変換できるかどうかを判断するのには、呼び出す<xref:System.Windows.Forms.IDataObject.GetDataPresent%2A>呼び出す前に<xref:System.Windows.Forms.IDataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.IDataObject.GetFormats%2A>このインスタンスに格納されたデータの有効な形式の一覧についてはします。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject`の使用をデモ、`GetData`メソッドです。 例に格納されたデータの取得、`DataObject`を使用して、`autoConvert`パラメーターをデータ形式に変換するかどうかを指定します。 最初に、`myDataObject`テキスト データで作成されます。 次の例は、データを取得するには、2 回試行します。 最初の試用版でという文字列とセットの形式を指定、`autoConvert`パラメーターを`false`です。 この試用版が失敗し、「メッセージ 1」というラベルの付いたメッセージ ボックスに、結果が表示されます。 使用して同じデータを取得する例では、2 番目の試用版で、`autoConvert`パラメーターに設定`true`です。 この試用版が成功し、結果は「メッセージ 2」というラベルの付いたメッセージ ボックスに表示されます。 この例では、作成した、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[GetData3#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GetData3/CPP/getdata3.cpp#1)]
+ [!code-csharp[GetData3#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GetData3/CS/getdata3.cs#1)]
+ [!code-vb[GetData3#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GetData3/VB/getdata3.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataPresent">
+      <MemberSignature Language="C#" Value="public bool GetDataPresent (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetDataPresent(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.GetDataPresent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">確認対象の形式です。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <summary>このインスタンスに格納されたデータには、関連付けられているか、指定された形式に変換できるかどうかが決まります。</summary>
+        <returns>
+          <see langword="true" />このインスタンスが関連付けられてまたは指定された形式に変換できるにデータが格納されている場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この形式が存在するかどうかを調べるには、このメソッドを呼び出す<xref:System.Windows.Forms.DataObject>呼び出す前に<xref:System.Windows.Forms.IDataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.IDataObject.GetFormats%2A>のこのインスタンスで使用可能な形式です。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject`の使用をデモ、`GetDataPresent`メソッドです。 最初に、文字列を使用してデータ オブジェクトを作成し、`Text`形式です。 データが存在することを確認してから、`Text`書式を設定し、メッセージ ボックスに、結果を表示します。 この例では、作成した、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[GetDataPresent1#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GetDataPresent1/CPP/getdatapresent1.cpp#1)]
+ [!code-csharp[GetDataPresent1#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GetDataPresent1/CS/getdatapresent1.cs#1)]
+ [!code-vb[GetDataPresent1#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GetDataPresent1/VB/getdatapresent1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataPresent">
+      <MemberSignature Language="C#" Value="public bool GetDataPresent (Type format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetDataPresent(class System.Type format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.GetDataPresent(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="format">A<see cref="T:System.Type" />チェックする形式を表すです。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <summary>このインスタンスに格納されたデータには、関連付けられているか、指定された形式に変換できるかどうかが決まります。</summary>
+        <returns>
+          <see langword="true" />このインスタンスが関連付けられてまたは指定された形式に変換できるにデータが格納されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この形式が存在するかどうかを調べるには、このメソッドを呼び出す<xref:System.Windows.Forms.DataObject>呼び出す前に<xref:System.Windows.Forms.IDataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.IDataObject.GetFormats%2A>のこのインスタンスで使用可能な形式です。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject`の使用をデモ、`GetDataPresent`メソッドです。 最初に、コンポーネントが作成されます (`myComponent`) し、データ オブジェクトに格納 (`myDataObject`)。 指定されたデータが格納されているかどうかを確認し、`myDataObject`です。 テストが評価された場合に`true`、メッセージ ボックスに、結果を表示し、テキスト ボックス内のデータ型を表示します。 この例を既に作成した、<xref:System.Windows.Forms.Form>という名前`Form1`と<xref:System.Windows.Forms.TextBox>という`textBox1`です。  
+  
+ [!code-cpp[GetDataPresent2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GetDataPresent2/CPP/getdatapresent2.cpp#1)]
+ [!code-csharp[GetDataPresent2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GetDataPresent2/CS/getdatapresent2.cs#1)]
+ [!code-vb[GetDataPresent2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GetDataPresent2/VB/getdatapresent2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataPresent">
+      <MemberSignature Language="C#" Value="public bool GetDataPresent (string format, bool autoConvert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetDataPresent(string format, bool autoConvert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.GetDataPresent(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="format">確認対象の形式です。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <param name="autoConvert">
+          <see langword="true" />指定された形式に変換できるデータがこのインスタンスに格納されているかどうかを決定するには<see langword="false" />データが指定の形式であるかどうかを確認します。</param>
+        <summary>このインスタンスに格納されたデータがデータ形式に変換するかどうかを決定するブール値を使用して、指定した形式に関連付けられているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />データ、または指定された形式に変換できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この形式が存在するかどうかを調べるには、このメソッドを呼び出す<xref:System.Windows.Forms.DataObject>呼び出す前に<xref:System.Windows.Forms.IDataObject.GetData%2A>です。 呼び出す<xref:System.Windows.Forms.IDataObject.GetFormats%2A>のこのインスタンスで使用可能な形式です。  
+  
+ このメソッドが戻る`true`とき。  
+  
+-   `autoConvert`パラメーターは`true`データが適切な形式に変換できる形式とします。  
+  
+-   `autoConvert`パラメーターは`false`データが適切な形式です。  
+  
+ このメソッドが戻る`false`とき。  
+  
+-   `autoConvert`パラメーターは`true`このメソッドは、指定された形式でデータを見つけることができませんし、指定された形式に変換できないデータやデータに保存された`autoConvert`'éý'`false`です。  
+  
+-   `autoConvert`パラメーターは`false`、し、指定された形式では、このインスタンスにデータが存在しません。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.GetDataPresent%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject`の使用をデモ、`GetDataPresent`メソッドです。 最初に、データ オブジェクトを作成 (`myDataObject`) 文字列を使用して、`Text`形式です。 オブジェクトに関連付けられたデータを照会し、`Text`形式で、`autoConvert`パラメーターに設定`false`です。 この試用版が失敗し、「メッセージ 1」というラベルの付いたメッセージ ボックスに、結果が表示されます。 2 つ目の試行で設定、`autoConvert`パラメーターを`true`です。 この試用版が成功し、結果は「メッセージ 2」というラベルの付いたメッセージ ボックスに表示されます。 この例では、作成した、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[GetDataPresent3#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GetDataPresent3/CPP/getdatapresent3.cpp#1)]
+ [!code-csharp[GetDataPresent3#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GetDataPresent3/CS/getdatapresent3.cs#1)]
+ [!code-vb[GetDataPresent3#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GetDataPresent3/VB/getdatapresent3.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormats">
+      <MemberSignature Language="C#" Value="public string[] GetFormats ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetFormats() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.GetFormats" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスに格納されたデータに関連付けられているかに変換できるすべての形式の一覧を返します。</summary>
+        <returns>このオブジェクトに格納されたデータでサポートされているすべての形式の一覧を表す名前の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す前に、サポートされているデータ形式を取得するには、このメソッドを呼び出して、<xref:System.Windows.Forms.IDataObject.GetData%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.DataFormats>定義済み書式のクラスです。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.GetFormats%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject`の使用をデモ、`GetFormats`メソッドです。 最初に、データ オブジェクトを作成 (`myDataObject`) 文字列を使用して、`Text`形式です。 すべてのデータ形式と、データ オブジェクト内のデータ変換形式を取得し、メッセージ ボックスに結果の一覧を表示します。 この例では、作成した、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[GetFormats1#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GetFormats1/CPP/getformats1.cpp#1)]
+ [!code-csharp[GetFormats1#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GetFormats1/CS/getformats1.cs#1)]
+ [!code-vb[GetFormats1#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GetFormats1/VB/getformats1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormats">
+      <MemberSignature Language="C#" Value="public string[] GetFormats (bool autoConvert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetFormats(bool autoConvert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.GetFormats(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="autoConvert">
+          <see langword="true" />すべての形式を取得するこのインスタンスに格納されるデータに関連付けられているまたは; に変換できます。<see langword="false" />ネイティブ データ形式のみを取得します。</param>
+        <summary>このインスタンスに格納されたデータに関連付けられているかに変換できる、ブール値を使用しているかどうかをすべてのデータに変換できる形式やネイティブ データのみを取得する形式を決定するすべての形式の一覧を取得します。</summary>
+        <returns>このオブジェクトに格納されたデータでサポートされているすべての形式の一覧を表す名前の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す前に、サポートされているデータ形式を取得するには、このメソッドを呼び出して、<xref:System.Windows.Forms.IDataObject.GetData%2A>メソッドです。 参照してください、<xref:System.Windows.Forms.DataFormats>定義済み書式のクラスです。  
+  
+> [!NOTE]
+>  データは、格納されている変換が許可されている場合、要求の形式が格納されている形式に互換性がある場合、別の形式に変換できます。 テキストに変換できる Unicode として格納されているデータなどです。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.GetFormats%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject`の使用をデモ、`GetFormats`メソッドです。 最初に、データ オブジェクトを作成 (`myDataObject`) 文字列を使用して、`UnicodeText`形式です。 データに関連付けられている形式を取得する 2 つのクエリを使用します。 最初のクエリでは、設定、`autoConvert`パラメーターを`false`: ここでは、データのネイティブ形式のみが返されます。 2 番目のクエリでは、設定、`autoConvert`パラメーターを`true`形式に変換できるデータを含む形式の一覧を取得するようにします。 各ケースでは、メッセージ ボックスに、結果の一覧が表示されます。 この例では、作成した、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[GetFormats2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GetFormats2/CPP/getformats2.cpp#1)]
+ [!code-csharp[GetFormats2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GetFormats2/CS/getformats2.cs#1)]
+ [!code-vb[GetFormats2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GetFormats2/VB/getformats2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.SetData(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">格納するデータ。</param>
+        <summary>形式のデータのクラスを使用して、このインスタンスに指定されたデータを格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 形式は、データ クラスから派生します。  
+  
+ このメソッドを使用して格納されているデータは、取得されるときに、互換性のある形式に変換できます。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject`の使用をデモ、`SetData`メソッドです。 最初に、コンポーネントが作成されます (`myComponent`) し、データ オブジェクトに格納 (`myDataObject`)。 指定されたデータがデータ オブジェクトに格納され、メッセージ ボックスに、結果を表示するかどうかを確認します。 この例では、作成した、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[SetData1#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SetData1/CPP/setdata1.cpp#1)]
+ [!code-csharp[SetData1#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SetData1/CS/setdata1.cs#1)]
+ [!code-vb[SetData1#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SetData1/VB/setdata1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (string format, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(string format, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.SetData(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">データに関連付けられている形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <param name="data">格納するデータ。</param>
+        <summary>このインスタンスに指定されたデータとその関連する形式を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット アプリケーションの形式がわからない場合は、このメソッドを使用して複数の形式でデータを格納できます。  
+  
+ このメソッドを使用して格納されているデータは、取得されるときに、互換性のある形式に変換できます。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject`の使用をデモ、`SetData`メソッドです。 最初に、データ オブジェクトを作成 (`myDataObject`) は、オブジェクトを指定する文字列を格納し、`UnicodeText`形式です。 指定するオブジェクトに格納されるデータを取得し、 `Text` 、データに変換されるように、書式設定、`Text`形式です。 結果は、メッセージ ボックスに表示されます。 この例では、作成した、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[SetData2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SetData2/CPP/setdata2.cpp#1)]
+ [!code-csharp[SetData2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SetData2/CS/setdata2.cs#1)]
+ [!code-vb[SetData2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SetData2/VB/setdata2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (Type format, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(class System.Type format, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.SetData(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Type" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">A<see cref="T:System.Type" />データに関連付けられている形式を表すです。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <param name="data">格納するデータ。</param>
+        <summary>このインスタンスに指定されたデータと関連付けられているクラス型を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット アプリケーションの形式がわからない場合は、このメソッドを使用して複数の形式でデータを格納できます。  
+  
+ このメソッドを使用して格納されているデータは、取得されるときに、互換性のある形式に変換できます。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject`の使用をデモ、`SetData`メソッドです。 最初に、コンポーネントが作成されます (`myComponent`) し、データ オブジェクトに格納 (`myDataObject`) を使用して、`myType`データ形式を指定します。 指定した型のデータが、オブジェクトに格納され、メッセージ ボックスに、結果を表示するかどうかを確認します。 この例では、作成した、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[SetData3#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SetData3/CPP/setdata3.cpp#1)]
+ [!code-csharp[SetData3#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SetData3/CS/setdata3.cs#1)]
+ [!code-vb[SetData3#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SetData3/VB/setdata3.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (string format, bool autoConvert, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(string format, bool autoConvert, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IDataObject.SetData(System.String,System.Boolean,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="autoConvert" Type="System.Boolean" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">データに関連付けられている形式。 参照してください<see cref="T:System.Windows.Forms.DataFormats" />定義済みの形式です。</param>
+        <param name="autoConvert">
+          <see langword="true" />別の形式に変換するデータを許可するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="data">格納するデータ。</param>
+        <summary>データを別の形式に変換できるかどうかを指定するブール値を使用して、このインスタンスに指定されたデータとその関連する形式を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット アプリケーションの形式がわからない場合は、このメソッドを使用して複数の形式でデータを格納できます。  
+  
+ このメソッドの実装は、次を参照してください。<xref:System.Windows.Forms.DataObject.SetData%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.Windows.Forms.DataObject>クラスを実装する`IDataObject`の使用をデモ、`SetData`メソッドです。 最初に、データ オブジェクトを作成 (`myDataObject`) を格納し、 `UnicodeText` 、文字列、`autoConvert`パラメーターに設定`false`です。 オブジェクトに格納されたデータに関連付けられている形式を取得し、メッセージ ボックスに、結果を表示します。 データに関連付けられている唯一の形式は、`UnicodeText`形式です。 この例では、作成した、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[SetData4#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SetData4/CPP/form1.cpp#1)]
+ [!code-csharp[SetData4#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SetData4/CS/form1.cs#1)]
+ [!code-vb[SetData4#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SetData4/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

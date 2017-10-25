@@ -1,0 +1,101 @@
+<Type Name="ContentPlaceHolder" FullName="System.Web.UI.WebControls.ContentPlaceHolder">
+  <TypeSignature Language="C#" Value="public class ContentPlaceHolder : System.Web.UI.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContentPlaceHolder extends System.Web.UI.Control implements class System.Web.UI.INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ContentPlaceHolder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.ContentPlaceHolderDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Web.UI")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("Microsoft.VisualStudio.Web.WebForms.MasterPageWebFormDesigner", System.ComponentModel.ToolboxItemFilterType.Require)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.WebControls.ContentPlaceHolderBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:ContentPlaceHolder runat="server"&gt;&lt;/{0}:ContentPlaceHolder&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET マスター ページ内のコンテンツ用の領域を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.ContentPlaceHolder>コントロールがマスター ページでコンテンツの相対的な領域を定義しから、関連するすべてのテキスト、マークアップ、およびサーバー コントロールをレンダリング<xref:System.Web.UI.WebControls.Content>コントロールがコンテンツ ページに存在します。  
+  
+ A<xref:System.Web.UI.WebControls.Content>コントロールに関連付けられている、<xref:System.Web.UI.WebControls.ContentPlaceHolder>を使用してその<xref:System.Web.UI.WebControls.Content.ContentPlaceHolderID%2A>プロパティです。 設定、<xref:System.Web.UI.WebControls.Content.ContentPlaceHolderID%2A>プロパティの値を<xref:System.Web.UI.Control.ID%2A>の関連するプロパティ<xref:System.Web.UI.WebControls.ContentPlaceHolder>マスター ページで制御します。 1 つ以上<xref:System.Web.UI.WebControls.ContentPlaceHolder>マスター ページで宣言することができます。  
+  
+ コンテンツ ページで、1 つだけ<xref:System.Web.UI.WebControls.Content>コントロールのコンテンツを指定できます、<xref:System.Web.UI.WebControls.ContentPlaceHolder>マスター ページにします。 ただし、各コンテンツ ページで、マスター ページを使用することが個別<xref:System.Web.UI.WebControls.Content>コントロールに関連付けられている、<xref:System.Web.UI.WebControls.ContentPlaceHolder>です。 たとえば、定義することができます、<xref:System.Web.UI.WebControls.ContentPlaceHolder>をマスター ページでページのタイトル。 マスター ページを使用する各コンテンツ ページを追加することができます、<xref:System.Web.UI.WebControls.Content>テキストとマークアップ ページ タイトルを提供するコントロール。  
+  
+> [!NOTE]
+>  XHTML に準拠する場合は、タイトルが定義されていないか、見つかりませんに空のタイトル要素が作成されます。  
+  
+ 既定のコンテンツ内に配置を指定することができます、<xref:System.Web.UI.WebControls.ContentPlaceHolder>コントロールのタグが、このコンテンツは、関連するコンテンツ ページで任意のコンテンツで置き換えられます。  
+  
+ マスター ページとコンテンツ ページの詳細については、次を参照してください。 [DEL: ASP.NET マスター ページ](http://msdn.microsoft.com/en-us/0852291d-6f62-4e9f-a809-45cc81e78d6b)です。  
+  
+<a name="DeclarativeSyntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp: ContentPlaceHolder  
+    EnableViewState="True|False"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    Visible="True|False"  
+>  
+        <!-- child controls -->  
+</asp:ContentPlaceHolder>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法、<xref:System.Web.UI.WebControls.ContentPlaceHolder>マスター ページのコンテンツ領域を定義するコントロールを使用します。 最初の Web ページが、マスター ページを使用して、コンテンツ領域を定義、<xref:System.Web.UI.WebControls.ContentPlaceHolder>コントロール。  
+  
+ [!code-xml[System.Web.UI.MasterPage_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.MasterPage_1/CS/MasterPageSample_1cs.master#1)]   
+  
+ 次のコード例では、上記のマスター ページのコンテンツ ページを示します。 内で定義されたテキスト、マークアップ、および任意のサーバー コントロール、<xref:System.Web.UI.WebControls.Content>にコントロール テンプレートを表示、<xref:System.Web.UI.WebControls.ContentPlaceHolder>マスター ページ。  
+  
+ [!code-csharp[System.Web.UI.MasterPage_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.MasterPage_1/CS/samplemasterclass.cs#3)]
+ [!code-vb[System.Web.UI.MasterPage_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.MasterPage_1/VB/samplemasterclass.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentPlaceHolder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ContentPlaceHolder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ContentPlaceHolder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

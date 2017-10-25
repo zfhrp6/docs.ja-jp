@@ -1,0 +1,302 @@
+<Type Name="RootDesignerSerializerAttribute" FullName="System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute">
+  <TypeSignature Language="C#" Value="public sealed class RootDesignerSerializerAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RootDesignerSerializerAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Interface, AllowMultiple=true, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("This attribute has been deprecated. Use DesignerSerializerAttribute instead.  For example, to specify a root designer for CodeDom, use DesignerSerializerAttribute(...,typeof(TypeCodeDomSerializer)).  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ルート デザイナーのオブジェクトを使用する基本のシリアライザーを示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute>シリアル化マネージャーは、デザイン ドキュメントをシリアル化と指定したシリアライザーは、最初にデザイン ドキュメントの自動再読み込みをサポートしているかどうかを使用するシリアライザーを示す、ドキュメントの完全に破棄します。  
+  
+ この属性には、次の重要なメンバーが含まれています。  
+  
+-   <xref:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.SerializerTypeName%2A>デザイン時に、クラスをシリアル化に使用するには、どのようなシリアル化オブジェクトを示します。  
+  
+-   <xref:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.SerializerBaseTypeName%2A>シリアル化オブジェクトの基本データ型の完全修飾名を示します。  
+  
+-   <xref:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.Reloadable%2A>シリアライザーが新しいデザイナー ビューを開く操作がなくてもデザイン ドキュメントを再読み込みをサポートするかどうかを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例に適用されます、<xref:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute>コンポーネントにします。  
+  
+ [!code-cpp[IDesignerSerializationManagerSample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/IDesignerSerializationManagerSample/CPP/idesignerserializationmanagersample.cpp#2)]
+ [!code-csharp[IDesignerSerializationManagerSample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/IDesignerSerializationManagerSample/CS/idesignerserializationmanagersample.cs#2)]
+ [!code-vb[IDesignerSerializationManagerSample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IDesignerSerializationManagerSample/VB/idesignerserializationmanagersample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RootDesignerSerializerAttribute (string serializerTypeName, string baseSerializerTypeName, bool reloadable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string serializerTypeName, string baseSerializerTypeName, bool reloadable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.#ctor(System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serializerTypeName" Type="System.String" />
+        <Parameter Name="baseSerializerTypeName" Type="System.String" />
+        <Parameter Name="reloadable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serializerTypeName">シリアライザーのデータ型の完全修飾名。</param>
+        <param name="baseSerializerTypeName">シリアライザーの基本型の名前。 クラスは、異なる基本型を持って、複数のシリアライザーを含めることができます。</param>
+        <param name="reloadable">
+          <see langword="true" />このシリアライザーは、ドキュメントの動的な再読み込みをサポートしている場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute" />クラス、指定された属性を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいデザイナーのシリアル化属性を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RootDesignerSerializerAttribute (string serializerTypeName, Type baseSerializerType, bool reloadable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string serializerTypeName, class System.Type baseSerializerType, bool reloadable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.#ctor(System.String,System.Type,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serializerTypeName" Type="System.String" />
+        <Parameter Name="baseSerializerType" Type="System.Type" />
+        <Parameter Name="reloadable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serializerTypeName">シリアライザーのデータ型の完全修飾名。</param>
+        <param name="baseSerializerType">シリアライザーの基本型の名前。 クラスは、異なる基本型を持って、複数のシリアライザーを含めることができます。</param>
+        <param name="reloadable">
+          <see langword="true" />このシリアライザーは、ドキュメントの動的な再読み込みをサポートしている場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute" />クラス、指定された属性を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいデザイナーのシリアル化属性を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RootDesignerSerializerAttribute (Type serializerType, Type baseSerializerType, bool reloadable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type serializerType, class System.Type baseSerializerType, bool reloadable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.#ctor(System.Type,System.Type,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serializerType" Type="System.Type" />
+        <Parameter Name="baseSerializerType" Type="System.Type" />
+        <Parameter Name="reloadable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serializerType">シリアライザーのデータ型。</param>
+        <param name="baseSerializerType">シリアライザーの基本データ型。 クラスは、異なる基本型を持って、複数のシリアライザーを含めることができます。</param>
+        <param name="reloadable">
+          <see langword="true" />このシリアライザーは、ドキュメントの動的な再読み込みをサポートしている場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute" />クラス、指定された属性を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいデザイナーのシリアル化属性を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reloadable">
+      <MemberSignature Language="C#" Value="public bool Reloadable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Reloadable" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.Reloadable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートのシリアライザーがデザイナーのホストを解放することがなくデザイン ドキュメントの再読み込みをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ルートのシリアライザーは、再読み込みをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合`false`、設計ドキュメントがユーザーの代理としての再読み込みを自動的に実行しません。 このプロパティ設定されている場合`false`はデザイン ドキュメントは、デザイナー ビュー ウィンドウを再度開くには、ユーザーの責任である場合、更新、または再読み込みが必要です。  
+  
+ シリアライザーによっては、読み込みプロセスをデザイン ドキュメントを再構築するために、デザイナーの外部コンポーネントの相互作用を必要とします。 これらのシリアライザーも、設計ドキュメントが読み込まれるたびに新しいデザイナー ホストを作成する必要があります。 これは、状況場合<xref:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.Reloadable%2A>に設定されます`false`、デザイナー ホストで再作成する必要があります設計後にユーザーの操作 (ドキュメントのデザイナーを起動する) によってドキュメントが破棄されます。 イベントおよびサービスに接続されていた、デザイナー ホストを除く、逆シリアル化を通じてしたままにしないと、もう一度設定する必要があります。 場合<xref:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.Reloadable%2A>は`true`、デザイナー ウィンドウを閉じ、それを再び開くことがなく、コードに、デザイナーの外部で変更を行った後は、設計ドキュメントを再読み込みされることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializerBaseTypeName">
+      <MemberSignature Language="C#" Value="public string SerializerBaseTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SerializerBaseTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.SerializerBaseTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーの基本型の完全修飾型名を取得します。</summary>
+        <value>シリアライザーの基本型の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializerTypeName">
+      <MemberSignature Language="C#" Value="public string SerializerTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SerializerTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.SerializerTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーの完全修飾型名を取得します。</summary>
+        <value>シリアライザーの型の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public override object TypeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TypeId" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.RootDesignerSerializerAttribute.TypeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性の型の一意の ID を取得します。</summary>
+        <value>この属性の型の一意の ID を格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、同じ型である 2 つの属性を識別するアルゴリズムをフィルター処理で使用します。 ほとんどの属性だけが返されます、<xref:System.Type>属性のインスタンス。 <xref:System.ComponentModel.EditorAttribute>このエディターの基本型の型を含めるメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

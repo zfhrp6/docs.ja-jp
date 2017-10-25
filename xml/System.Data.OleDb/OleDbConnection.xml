@@ -1,0 +1,1047 @@
+<Type Name="OleDbConnection" FullName="System.Data.OleDb.OleDbConnection">
+  <TypeSignature Language="C#" Value="public sealed class OleDbConnection : System.Data.Common.DbConnection, ICloneable, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbConnection extends System.Data.Common.DbConnection implements class System.Data.IDbConnection, class System.ICloneable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbConnection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbConnection</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("InfoMessage")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ ソースへの接続を開くを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbConnection>オブジェクトは、データ ソースに一意の接続を表します。 クライアント/サーバー データベース システムでは、サーバーへのネットワーク接続と同じです。 ネイティブの OLE DB プロバイダー、いくつかのメソッドまたはプロパティがサポートする機能によって、<xref:System.Data.OleDb.OleDbConnection>オブジェクトを使用できない可能性があります。  
+  
+ インスタンスを作成する場合<xref:System.Data.OleDb.OleDbConnection>、すべてのプロパティは、初期値に設定します。 これらの値の一覧は、次を参照してください。、<xref:System.Data.OleDb.OleDbConnection>コンス トラクターです。  
+  
+ 1 つで 1 つ以上の DataReader を開くことができます<xref:System.Data.OleDb.OleDbConnection>です。 使用する OLE DB プロバイダーは、単一の接続で 1 つ以上の DataReader をサポートしていません、各追加の接続は、プロバイダーによって暗黙的が開きます。  
+  
+ 場合、<xref:System.Data.OleDb.OleDbConnection>スコープの移動のうち、終了していません。 したがって、する必要があります明示的に接続を呼び出して終了する<xref:System.Data.OleDb.OleDbConnection.Close%2A>または**Dispose**、またはを使用して、<xref:System.Data.OleDb.OleDbConnection>オブジェクト内の`Using`ステートメントです。  
+  
+> [!NOTE]
+>  高パフォーマンス アプリケーションを配置するには、接続プールを使用する必要があります。 .NET Framework Data Provider for OLE DB を使用するときにありません接続プールを管理するため、プロバイダーに自動的に有効にします。 接続を使用する方法の詳細と .NET Framework Data Provider for OLE DB では、プールを参照してください[OLE DB、ODBC、および Oracle 接続プール](~/docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)です。  
+  
+ 致命的なエラー場合<xref:System.Data.OleDb.OleDbException>(たとえば、SQL Server 重大度レベル以上 20 の) メソッドの実行によって生成される、 <xref:System.Data.OleDb.OleDbCommand>、<xref:System.Data.OleDb.OleDbConnection>が閉じています。 ただし、ユーザーは接続を再び開き、続行できます。  
+  
+ インスタンスを作成するアプリケーション、<xref:System.Data.OleDb.OleDbConnection>オブジェクトを宣言的または強制的のセキュリティ確認要求を設定して、コードに十分なアクセス許可を持つすべての直接的および間接的な呼び出し元を要求できます。 <xref:System.Data.OleDb.OleDbConnection>により、セキュリティ要求を使用して、<xref:System.Data.OleDb.OleDbPermission>オブジェクト。 ユーザーが、コードが使用して、十分なアクセス許可を持っているを確認することができます、<xref:System.Data.OleDb.OleDbPermissionAttribute>オブジェクト。 ユーザーと管理者を使っても、 [Caspol.exe (コード アクセス セキュリティ ポリシー ツール)](~/docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)コンピューター、ユーザー、およびエンタープライズ レベルのセキュリティ ポリシーを変更します。 詳細については、「[コード アクセス セキュリティと ADO.NET](~/docs/framework/data/adonet/code-access-security.md)」を参照してください。  
+  
+ データ サーバーからの警告および情報メッセージを処理の詳細については、次を参照してください。[接続イベント](~/docs/framework/data/adonet/connection-events.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Data.OleDb.OleDbConnection>オブジェクトは設定または OLE DB プロバイダーに固有の動的プロパティの取得をサポートしていません。 OLE DB プロバイダーに接続文字列で渡すことができるプロパティだけがサポートされています。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbCommand>と<xref:System.Data.OleDb.OleDbConnection>です。 <xref:System.Data.OleDb.OleDbConnection>が開いたときおよびとして設定、<xref:System.Data.OleDb.OleDbCommand.Connection%2A>の<xref:System.Data.OleDb.OleDbCommand>です。 この例では、<xref:System.Data.OleDb.OleDbCommand.ExecuteNonQuery%2A>し、接続を閉じます。 このため、<xref:System.Data.OleDb.OleDbCommand.ExecuteNonQuery%2A>接続文字列とは、SQL の INSERT ステートメントのクエリ文字列が渡されます。  
+  
+ [!code-csharp[Classic WebData OleDbConnection Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OleDbConnection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbConnection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスをときに<xref:System.Data.OleDb.OleDbConnection>が作成、読み取り/書き込みプロパティは、関連付けられているキーワードを使用して明示的に設定されている場合を除き、次の初期値に設定されます、<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>プロパティです。  
+  
+|プロパティ|初期値|  
+|----------------|-------------------|  
+|<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>|空の文字列 ("")|  
+|<xref:System.Data.OleDb.OleDbConnection.ConnectionTimeout%2A>|15|  
+|<xref:System.Data.OleDb.OleDbConnection.Database%2A>|空の文字列 ("")|  
+|<xref:System.Data.OleDb.OleDbConnection.DataSource%2A>|空の文字列 ("")|  
+  
+ のみを使用してこれらのプロパティの値を変更することができます、<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成して開きます、<xref:System.Data.OleDb.OleDbConnection>です。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.OleDbConnection Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.OleDbConnection Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.OleDbConnection Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.OleDbConnection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OleDbConnection (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">データベースを開くために使用される接続。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.OleDb.OleDbConnection" />指定された接続文字列を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスをときに<xref:System.Data.OleDb.OleDbConnection>が作成、読み取り/書き込みプロパティは、関連付けられているキーワードを使用して明示的に設定されている場合を除き、次の初期値に設定されます、<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>プロパティです。  
+  
+|プロパティ|初期値|  
+|----------------|-------------------|  
+|<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>|`connectionString`|  
+|<xref:System.Data.OleDb.OleDbConnection.ConnectionTimeout%2A>|15|  
+|<xref:System.Data.OleDb.OleDbConnection.Database%2A>|空の文字列 ("")|  
+|<xref:System.Data.OleDb.OleDbConnection.DataSource%2A>|空の文字列 ("")|  
+  
+ のみを使用してこれらのプロパティの値を変更することができます、<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成して開きます、<xref:System.Data.OleDb.OleDbConnection>です。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.OleDbConnection1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.OleDbConnection1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.OleDbConnection1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.OleDbConnection1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginDbTransaction">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbTransaction BeginDbTransaction (System.Data.IsolationLevel isolationLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbTransaction BeginDbTransaction(valuetype System.Data.IsolationLevel isolationLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.BeginDbTransaction(System.Data.IsolationLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isolationLevel" Type="System.Data.IsolationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="isolationLevel">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTransaction">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbTransaction BeginTransaction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbTransaction BeginTransaction() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.BeginTransaction" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のデータベース トランザクションを開始<see cref="T:System.Data.IsolationLevel" />値。</summary>
+        <returns>新しいトランザクションを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的にコミットまたはを使用してトランザクションをロールバックする必要があります、<xref:System.Data.OleDb.OleDbTransaction.Commit%2A>または<xref:System.Data.OleDb.OleDbTransaction.Rollback%2A>メソッドです。 .NET Framework Data Provider for OLE DB のトランザクション管理モデルが正しく実行するようにするには、データ ソースによって提供されるものなど、他のトランザクション管理モデルを使用しないでください。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnection>と<xref:System.Data.OleDb.OleDbTransaction>です。 使用する方法も示します、 <xref:System.Data.OleDb.OleDbConnection.BeginTransaction%2A>、 <xref:System.Data.OleDb.OleDbTransaction.Commit%2A>、および<xref:System.Data.OleDb.OleDbTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.BeginTransaction Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.BeginTransaction Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.BeginTransaction Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.BeginTransaction Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">並列トランザクションはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTransaction">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbTransaction BeginTransaction (System.Data.IsolationLevel isolationLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbTransaction BeginTransaction(valuetype System.Data.IsolationLevel isolationLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.BeginTransaction(System.Data.IsolationLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isolationLevel" Type="System.Data.IsolationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="isolationLevel">トランザクションを実行する分離レベル。</param>
+        <summary>分離レベルを指定して、データベース トランザクションを開始します。</summary>
+        <returns>新しいトランザクションを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的にコミットまたはを使用してトランザクションをロールバックする必要があります、<xref:System.Data.OleDb.OleDbTransaction.Commit%2A>または<xref:System.Data.OleDb.OleDbTransaction.Rollback%2A>メソッドです。 .NET Framework Data Provider for OLE DB のトランザクション管理モデルが正しく実行するようにするには、データ ソースによって提供されるものなど、他のトランザクション管理モデルを使用しないでください。  
+  
+> [!NOTE]
+>  分離レベルを指定しないと、基になるプロバイダーの既定の分離レベルが使用されます。 分離レベルを指定する、<xref:System.Data.OleDb.OleDbConnection.BeginTransaction%2A>メソッドを使用するオーバー ロードを使用して、`isolationLevel`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnection>と<xref:System.Data.OleDb.OleDbTransaction>です。 使用する方法も示します、 <xref:System.Data.OleDb.OleDbConnection.BeginTransaction%2A>、 <xref:System.Data.OleDb.OleDbTransaction.Commit%2A>、および<xref:System.Data.OleDb.OleDbTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.BeginTransaction1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.BeginTransaction1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.BeginTransaction1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.BeginTransaction1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">並列トランザクションはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeDatabase">
+      <MemberSignature Language="C#" Value="public override void ChangeDatabase (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ChangeDatabase(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.ChangeDatabase(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">データベース名。</param>
+        <summary>開いている <see cref="T:System.Data.OleDb.OleDbConnection" /> の現在のデータベースを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値、`database`パラメーターは、有効なデータベース名を指定する必要があります。 `database`パラメーターは、null 値、空の文字列または空白だけの文字の文字列を含めることはできません。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnection>し、一部の読み取り専用プロパティを表示します。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.Database Example#2](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.Database Example/CS/source.cs#2)]
+ [!code-vb[Classic WebData OleDbConnection.Database Example#2](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.Database Example/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">データベース名が正しくありません。</exception>
+        <exception cref="T:System.InvalidOperationException">接続が開かれていません。</exception>
+        <exception cref="T:System.Data.OleDb.OleDbException">データベースを変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースへの接続を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbConnection.Close%2A>メソッドが保留中のトランザクションをロールバックします。 接続プールへの接続を解放し、または接続プールが無効になっている場合、接続を閉じます。 場合<xref:System.Data.OleDb.OleDbConnection.Close%2A>処理中に呼び出されますが、<xref:System.Data.Common.DbConnection.StateChange>イベント、これ以上の<xref:System.Data.Common.DbConnection.StateChange>イベントは発生しません。  
+  
+ アプリケーションが呼び出すことができます<xref:System.Data.OleDb.OleDbConnection.Close%2A>1 つ以上の時間。 例外は生成されません。  
+  
+> [!CAUTION]
+>  呼び出す必要はありません<xref:System.Data.OleDb.OleDbConnection.Close%2A>または**Dispose**上、 <xref:System.Data.OleDb.OleDbConnection>、 <xref:System.Data.OleDb.OleDbDataReader>、またはその他のマネージ オブジェクトで、`Finalize`クラスのメソッドです。 ファイナライザーで、クラスが直接所有されているアンマネージ リソースだけを解放する必要があります。 クラスがアンマネージ リソースを所有していない場合は、クラス定義に `Finalize` メソッドを含めないでください。 詳細については、次を参照してください。[ガベージ コレクション](http://msdn.microsoft.com/library/22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public override string ConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnection.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.ADO.Design.OleDbConnectionStringEditor, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RecommendedAsConfigurable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.SettingsBindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データベースを開くために使用する文字列を取得または設定します。</summary>
+        <value>データ ソース名と最初の接続を確立するために必要なその他のパラメーターを含む OLE DB プロバイダー接続文字列。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>は OLE DB 接続文字列の形式を次の例外とできるだけ一致するように設計されています。  
+  
+-   "プロバイダー = `value` "句が必要です。 ただし、使用することはできません"プロバイダー MSDASQL =".NET Framework Data Provider for OLE DB サポートしていないため、OLE DB Provider for ODBC (MSDASQL)。 ODBC データ ソースにアクセスするには、使用、<xref:System.Data.Odbc.OdbcConnection>内のオブジェクト、<xref:System.Data.Odbc>名前空間。  
+  
+-   返される接続文字列では ODBC または ADO の場合とは異なり、ユーザー設定と同じ<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>、セキュリティ情報を引いた場合`Persist Security Info`に設定されている`false`(既定値)。 .NET Framework Data Provider for OLE DB が永続化または設定しない限り、接続文字列にパスワードを返すしていない、`Persist Security Info`キーワードを`true`(推奨しません)。 高レベルのセキュリティを維持するために強くお勧めを使用すること、`Integrated Security`キーワード`Persist Security Info`'éý'`false`です。  
+  
+ 使用することができます、<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>さまざまなデータ ソースに接続するプロパティです。 次の例は、いくつかの可能な接続文字列を示しています。  
+  
+```  
+"Provider=MSDAORA; Data Source=ORACLE8i7;Persist Security Info=False;Integrated Security=Yes"  
+  
+"Provider=Microsoft.Jet.OLEDB.4.0; Data Source=c:\bin\LocalAccess40.mdb"  
+  
+"Provider=SQLOLEDB;Data Source=(local);Integrated Security=SSPI"  
+```  
+  
+ 場合、`Data Source`キーワードは、接続文字列に指定しない場合、プロバイダーは、1 つが利用可能な場合、ローカル サーバーに接続しようとしています。  
+  
+ 接続文字列の詳細については、次を参照してください。[使用した Connection String Keywords with SQL Server Native Client を使用して](http://go.microsoft.com/fwlink/?LinkId=126696)です。  
+  
+ <xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>接続が閉じられたときにのみ、プロパティを設定することができます。 多くの接続文字列の値はある対応する読み取り専用プロパティです。 接続文字列を設定すると、エラーが検出された場合を除いて、これらのプロパティが更新します。 ここで、プロパティのいずれも更新されます。 <xref:System.Data.OleDb.OleDbConnection>プロパティに含まれている設定のみを返す、<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>です。  
+  
+ リセット、<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>閉じた接続に対してすべての接続文字列の値と関連するプロパティをリセットします。 これには、パスワードが含まれます。 含む接続文字列を設定する場合など、"Initial Catalog = AdventureWorks"への接続文字列をリセットして"プロバイダー = SQLOLEDB; データ ソース = MySQLServer; IntegratedSecurity = SSPI"では、<xref:System.Data.OleDb.OleDbConnection.Database%2A>プロパティが不要になった AdventureWorks に設定されています。 (接続文字列の初期カタログ値に対応、`Database`プロパティです)。  
+  
+ プロパティが設定されている場合、接続文字列の予備検証は実行されます。 場合の値を`Provider`、 `Connect Timeout`、 `Persist Security Info`、または`OLE DB Services`が含まれる文字列で、これらの値がチェックされます。 アプリケーションを呼び出すと、<xref:System.Data.OleDb.OleDbConnection.Open%2A>メソッド、接続文字列が完全に検証します。 など、接続文字列に無効なまたはサポートされていないプロパティで、実行時に例外が含まれている場合<xref:System.ArgumentException>が生成されます。  
+  
+> [!CAUTION]
+>  接続情報を指定することは、 <xref:System.Data.OleDb.OleDbConnection> Universal Data Link (UDL) ファイルです。 ただししないでそうです。 UDL ファイルは、暗号化されていないと、クリア テキストで接続文字列情報を公開します。 UDL ファイルは、アプリケーションにとって外部ファイルをベースにしたリソースであるため、.NET Framework でセキュリティ保護できません。  
+  
+ 接続文字列の基本形式には、一連セミコロンで区切られたキーワード/値ペアにはが含まれています。 それぞれのキーワードと値の関連付けには、等号 (=) が使用されます。 セミコロン、単一引用符または二重引用符文字を含む値を含めるには、値を二重引用符で囲む必要があります。 セミコロンと二重引用符の両方が、値が含まれる場合、値は単一引用符で囲むことができます。 単一引用符も値が二重引用符文字で始まる場合に役立ちます。 逆に、値が単一引用符で始まる場合は、二重引用符を使用できます。 値に、一重引用符と二重引用符の両方の文字が含まれている場合は、値内で発生するたびに値を囲むために使用する引用符文字を二重にする必要があります。  
+  
+ 文字列値の先頭または末尾のスペースを含めるには、単一引用符または二重引用符のいずれかの値を囲む必要があります。 引用符で囲まれている場合でも、整数、ブール値、列挙値の先頭または末尾の空白は無視されます。 ただし、文字列リテラル キーワードまたは値内にスペースが保持されます。 一重引用符または二重引用符は、区切り記号を使用せず、接続文字列内使用可能性があります (たとえば、`Data Source= my'Server`または`Data Source= my"Server`) 引用符の文字が値の最初と最後の文字でない限り、します。  
+  
+ 含めるには等号 (=) キーワードまたは値で、もう 1 つの等号 (=) によって前しなければなりません。 たとえば、仮想的な接続文字列で  
+  
+```  
+"key==word=value"  
+```  
+  
+ キーワードが"キー = word"の値は"value"です。  
+  
+ 場合、キーワードで特定のキーワードの組み合わせが発生した複数回接続文字列で最後の出現が設定されている値で使用される値を =。  
+  
+ キーワードは、大文字と小文字が区別されません。  
+  
+> [!CAUTION]
+>  ダイアログ ボックスと、接続文字列に追加のユーザー ID とパスワード情報を取得するときに、ユーザー入力に基づいて接続文字列を構築するときに、警告を使用してください。 アプリケーションをユーザー埋め込むことでこれらの値、たとえば、追加の接続文字列パラメーターとしてパスワードを入力することを確認してください"なデータベース = somedb"で、別のデータベースをアタッチするためにします。 OLE DB 接続プロパティの拡張接続文字列パラメーターを使用する場合は、そのユーザー Id と、可能な場合、クリア テキストでパスワードを保存するべきでないために、ユーザー Id とパスワードを渡すしないでください。 既定の設定の`Persist Security Info= false`には影響しません、`Extended Properties`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnection>し、接続文字列の一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.DataSource Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.DataSource Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.DataSource Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.DataSource Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">無効な接続文字列引数が指定されているか、必要な接続文字列の引数が指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionTimeout">
+      <MemberSignature Language="C#" Value="public override int ConnectionTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectionTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnection.ConnectionTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>試行を中断してエラーを生成する前に、接続の確立時に待機する時間を取得します。</summary>
+        <value>接続を開くを待機する秒単位の時間。 既定値は 15 秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が 0 の制限がないことを示します。 とでは避ける必要があります、<xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A>ため、接続の試行は無期限に待機します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnection>し、接続文字列の一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.ConnectionTimeout Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.ConnectionTimeout Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.ConnectionTimeout Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.ConnectionTimeout Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">0 より小さい値が設定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbCommand CreateCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbCommand CreateCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.CreateCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Data.OleDb.OleDbCommand" />オブジェクトに関連付けられている、<see cref="T:System.Data.OleDb.OleDbConnection" />です。</summary>
+        <returns><see cref="T:System.Data.OleDb.OleDbCommand" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDbCommand">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbCommand CreateDbCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbCommand CreateDbCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.CreateDbCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Database">
+      <MemberSignature Language="C#" Value="public override string Database { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Database" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnection.Database" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のデータベース、または接続が開いてから使用するデータベースの名前を取得します。</summary>
+        <value>現在のデータベース、または接続が開いてから使用するデータベースの名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbConnection.Database%2A>プロパティを動的に更新します。 SQL ステートメントを使用して、現在のデータベースを変更するかどうか、または<xref:System.Data.OleDb.OleDbConnection.ChangeDatabase%2A>メソッドが、情報メッセージが送信され、プロパティが自動的に更新します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnection>し、一部の読み取り専用プロパティを表示します。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.Database Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.Database Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.Database Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.Database Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public override string DataSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnection.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー名またはデータ ソースのファイル名を取得します。</summary>
+        <value>サーバー名またはデータ ソースのファイル名。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データベースへの接続が閉じている場合、`DataSource`プロパティに含まれるものを返します`ConnectionString`for データ ソースのキーワードです。 接続が開いている場合、`ConnectionString`データ ソースのキーワードの値で始まる"&#124; datadirectory &#124;"に含まれるものを返します`ConnectionString`データ ソースのキーワードのみを。 データベースへの接続が開いている場合は、このプロパティはネイティブ プロバイダーを返しますを返します、`DBPROP_INIT_DATASOURCE,`が、空の場合と、ネイティブ プロバイダーの`DBPROP_DATASOURCENAME`が返されます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnection>し、一部の読み取り専用プロパティを表示します。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.DataSource Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.DataSource Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.DataSource Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.DataSource Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnlistDistributedTransaction">
+      <MemberSignature Language="C#" Value="public void EnlistDistributedTransaction (System.EnterpriseServices.ITransaction transaction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnlistDistributedTransaction(class System.EnterpriseServices.ITransaction transaction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.EnlistDistributedTransaction(System.EnterpriseServices.ITransaction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transaction" Type="System.EnterpriseServices.ITransaction" />
+      </Parameters>
+      <Docs>
+        <param name="transaction">登録先の既存の <see cref="T:System.EnterpriseServices.ITransaction" /> への参照。</param>
+        <summary>分散トランザクションとして指定したトランザクションに参加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい ADO.NET 2.0 ではサポートを使用するため、<xref:System.Data.Common.DbConnection.EnlistTransaction%2A>分散トランザクションに参加させる方法です。 これにより、接続するため、<xref:System.Transactions.Transaction>インスタンス、 **EnlistTransaction**で利用できる機能を活用、<xref:System.Transactions>を管理するための名前空間は分散トランザクションを置き換えることが**どちら**この目的のためです。 詳細については、次を参照してください。[分散トランザクション](~/docs/framework/data/adonet/distributed-transactions.md)です。  
+  
+ 既存の分散トランザクションを使用して、参加を継続できます、<xref:System.Data.OleDb.OleDbConnection.EnlistDistributedTransaction%2A>メソッドへの自動参加が無効になっている場合。 既存の分散トランザクションに参加させることにより、トランザクションがコミットまたはロールバックされた場合、データ ソース コードで行った変更もコミットまたはロールバックします。 分散トランザクションの詳細については、次を参照してください。[分散トランザクション](~/docs/framework/data/adonet/distributed-transactions.md)です。  
+  
+ <xref:System.Data.OleDb.OleDbConnection.EnlistDistributedTransaction%2A>例外を返します、<xref:System.Data.OleDb.OleDbConnection>がトランザクションを使用して、既に開始<xref:System.Data.OleDb.OleDbConnection.BeginTransaction%2A>です。 ただし、トランザクションは、データ ソースで開始されたローカル トランザクション (たとえば、明示的に実行することによって、BEGIN TRANSACTION ステートメントを使用して、<xref:System.Data.OleDb.OleDbCommand>オブジェクト)、<xref:System.Data.OleDb.OleDbConnection.EnlistDistributedTransaction%2A>ローカル トランザクションをロールバックし、要求されるとおり、既存の分散トランザクションに参加します。 注意してください、ローカル トランザクションがロールバックされていないローカル トランザクションの管理を担当の使用を開始も取得されません<xref:System.Data.OleDb.OleDbConnection.BeginTransaction%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnlistTransaction">
+      <MemberSignature Language="C#" Value="public override void EnlistTransaction (System.Transactions.Transaction transaction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EnlistTransaction(class System.Transactions.Transaction transaction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.EnlistTransaction(System.Transactions.Transaction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transaction" Type="System.Transactions.Transaction" />
+      </Parameters>
+      <Docs>
+        <param name="transaction">登録先の既存の <see cref="T:System.Transactions.Transaction" /> への参照。</param>
+        <summary>分散トランザクションとして指定したトランザクションに参加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい ADO.NET 2.0 ではサポートを使用するため、<xref:System.Data.Common.DbConnection.EnlistTransaction%2A>分散トランザクションに参加させる方法です。 これにより、接続するため、<xref:System.Transactions.Transaction>インスタンス、 **EnlistTransaction**で利用できる機能を活用、<xref:System.Transactions>を管理するための名前空間は分散トランザクションを置き換えることが**どちら**が使用される、<xref:System.EnterpriseServices.ITransaction>オブジェクト。 さらに、若干異なるセマンティクス: 接続は明示的にトランザクションに参加させる、一度参加解除されてまたはできない最初のトランザクションが終了するまで、別のトランザクションに参加しています。 分散トランザクションの詳細については、次を参照してください。[分散トランザクション](~/docs/framework/data/adonet/distributed-transactions.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOleDbSchemaTable">
+      <MemberSignature Language="C#" Value="public System.Data.DataTable GetOleDbSchemaTable (Guid schema, object[] restrictions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataTable GetOleDbSchemaTable(valuetype System.Guid schema, object[] restrictions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.GetOleDbSchemaTable(System.Guid,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schema" Type="System.Guid" />
+        <Parameter Name="restrictions" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="schema">1 つ、<see cref="T:System.Data.OleDb.OleDbSchemaGuid" />を返すスキーマ テーブルを指定する値。</param>
+        <param name="restrictions"><see cref="T:System.Object" />制限値の配列。 これらの制限列の順序で適用されます。 つまり、最初の制限列に適用される最初の制限値、2 番目の制限値と 2 番目の制限列に適用されます。</param>
+        <summary>指定された制限を適用した後、GUID によって示されると、データ ソースからスキーマ情報を返します。</summary>
+        <returns>A<see cref="T:System.Data.DataTable" />要求されたスキーマ情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキーマ テーブルとして返されます、<xref:System.Data.DataTable>で指定された OLE DB スキーマ行セットと同じ形式を持つ、`schema`パラメーター。 使用して、`restrictions`パラメーターで返される行をフィルター選択、 <xref:System.Data.DataTable> (たとえば、テーブル名、型、所有者、またはスキーマの制限の指定) をします。 配列内の値を渡す際に、空の文字列または null 値を含まない配列要素が含まれます。 空の配列を渡す場合`restrictions`、(テーブルごとに 1 つ) のすべての行が既定の順序で返されます。 配列内の値がソース テーブル内の列順序に対応し、<xref:System.Data.DataTable>です。 制限の配列内の各要素は、対応する列は、スキーマ行セットの内容と比較されます。 たとえば、制限の配列の最初の要素は、行セット内の最初の列に比較されます。 スキーマ行セットから制限の値を正確に一致する行のみが結果に追加されます制限要素が null の場合、<xref:System.Data.DataTable>です。  
+  
+ <xref:System.Data.OleDb.OleDbConnection>メソッドを呼び出す、基になる OLE DB **idbschemarowset::getrowset**メソッドの標準的な共通言語ランタイムの変換規則を使用します。 詳細については、次を参照してください。 [COM のデータ型](http://msdn.microsoft.com/en-us/f93ae35d-a416-4218-8700-c8218cc90061)です。  
+  
+ 使用してリテラルに関する情報を取得することができます<xref:System.Data.OleDb.OleDbSchemaGuid.DbInfoLiterals>です。 これにより、情報、OLE DB の呼び出しに相当**IDBInfo::GetLiteralInfo**インターフェイス、または ADO **Connection.OpenSchema**メソッドを`adSchemaDBInfoLiterals`定数。  
+  
+   
+  
+## Examples  
+ 次の例では、データベースのテーブルの一覧を返します。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.GetOleDbSchemaTable Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.GetOleDbSchemaTable Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.GetOleDbSchemaTable Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.GetOleDbSchemaTable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.OleDb.OleDbException">指定した制限のセットが正しくありません。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.OleDb.OleDbConnection" /> が閉じています。</exception>
+        <exception cref="T:System.ArgumentException">OLE DB プロバイダーでは、指定されたスキーマ行セットはサポートされていません。  
+  
+ または  
+  
+ <paramref name="schema" />パラメーターの値が含まれる<see cref="F:System.Data.OleDb.OleDbSchemaGuid.DbInfoLiterals" />と<paramref name="restrictions" />パラメーターには、1 つまたは複数の制限が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable GetSchema ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable GetSchema() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.GetSchema" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このデータ ソースのスキーマ情報を返します<see cref="T:System.Data.OleDb.OleDbConnection" />です。</summary>
+        <returns>A<see cref="T:System.Data.DataTable" />スキーマ情報を格納します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable GetSchema (string collectionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable GetSchema(string collectionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.GetSchema(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collectionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="collectionName">返すスキーマの名前を指定します。</param>
+        <summary>このデータ ソースのスキーマ情報を返します<see cref="T:System.Data.OleDb.OleDbConnection" />スキーマ名を指定した文字列を使用します。</summary>
+        <returns>A<see cref="T:System.Data.DataTable" />スキーマ情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`collectionName`が null の場合、として指定されて、 <xref:System.Data.DataTable> 、利用可能なすべてのメタデータとその制限に関する情報が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable GetSchema (string collectionName, string[] restrictionValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable GetSchema(string collectionName, string[] restrictionValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.GetSchema(System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collectionName" Type="System.String" />
+        <Parameter Name="restrictionValues" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="collectionName">返すスキーマの名前を指定します。</param>
+        <param name="restrictionValues">要求されたスキーマの制限値のセットを指定します。</param>
+        <summary>このデータ ソースのスキーマ情報を返します<see cref="T:System.Data.OleDb.OleDbConnection" />スキーマ名と制限値に指定した文字列配列の指定した文字列を使用します。</summary>
+        <returns>A<see cref="T:System.Data.DataTable" />スキーマ情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`collectionName`が null の場合、として指定されて、 <xref:System.Data.DataTable> 、利用可能なすべてのメタデータとその制限に関する情報が含まれます。  
+  
+ `restrictionValues`パラメーターを指定できます* n *特定のコレクションの制限のコレクションで指定されている値の深さ。 指定された制限の値を設定して、他の制限値を設定しない、null に設定し、値を指定するには、制限用に適切な値を格納する、前述の制限を設定する必要があります。  
+  
+ この例では、"Tables"コレクションです。 "Tables"コレクションでは、3 つの制限 (データベース、所有者、およびテーブル名)、"Carl"の所有者に関連付けられているテーブルのみを取得する場合は、(最低)、次の値で渡す必要があります: null、"Carl"です。 制限値が渡されない場合、既定値は、その制限に使用されます。 これは、null を渡すことと同じマッピングこれとは異なるパラメーター値に空の文字列に渡すことができます。 その場合、空の文字列 ("") は、指定されたパラメーターの値であると見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InfoMessage">
+      <MemberSignature Language="C#" Value="public event System.Data.OleDb.OleDbInfoMessageEventHandler InfoMessage;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Data.OleDb.OleDbInfoMessageEventHandler InfoMessage" />
+      <MemberSignature Language="DocId" Value="E:System.Data.OleDb.OleDbConnection.InfoMessage" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbInfoMessageEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーが警告または情報メッセージを送信したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 警告またはサーバーによって送信される情報のメッセージを処理するクライアントを作成する必要があります、<xref:System.Data.OleDb.OleDbInfoMessageEventHandler>このイベントを待機するデリゲート。  
+  
+ <xref:System.Data.OleDb.OleDbConnection.InfoMessage>イベント、データ ソースから重要度が低いと、メッセージが返されるときに発生します。 重要度が低いメッセージは、例外が発生しません。 この Microsoft SQL Server の重大度レベルが 10 以下のエラー メッセージが含まれています  
+  
+ 例および詳細については、次を参照してください。[接続イベント](~/docs/framework/data/adonet/connection-events.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public override void Open ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Open() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.Open" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Data.OleDb.OleDbConnection.ConnectionString" /> で指定したプロパティ設定を使用して、データベース接続を開きます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbConnection>がある場合、接続プールから、開いている接続を描画します。 それ以外の場合、データ ソースへの新しい接続を確立します。 1 つで 1 つ以上の DataReader を開くことができます<xref:System.Data.OleDb.OleDbConnection>です。 使用する ole DB プロバイダーは、単一の接続で 1 つ以上のアクティブな DataReader をサポートしていません、各追加の接続は、ole DB プロバイダーによって暗黙的が開きます。  
+  
+> [!NOTE]
+>  場合、<xref:System.Data.OleDb.OleDbConnection>スコープの移動のうち、終了していません。 したがって、する必要があります明示的に接続を呼び出して終了する<xref:System.Data.OleDb.OleDbConnection.Close%2A>または**Dispose**、または内で接続を使用して、`Using`ステートメントです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続は既に開かれています。</exception>
+        <exception cref="T:System.Data.OleDb.OleDbException">接続を開くときに発生した接続レベルのエラー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public string Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnection.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された OLE DB プロバイダーの名前を取得、"プロバイダー ="接続文字列の句。</summary>
+        <value>指定されているプロバイダーの名前、"プロバイダー ="接続文字列の句。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnection>し、一部の読み取り専用プロパティを表示します。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.Provider Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.Provider Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.Provider Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.Provider Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseObjectPool">
+      <MemberSignature Language="C#" Value="public static void ReleaseObjectPool ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ReleaseObjectPool() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.ReleaseObjectPool" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示します、<see cref="T:System.Data.OleDb.OleDbConnection" />オブジェクト プールは、最後の基になる接続がリリースされたときに解放できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ReleaseObjectPool`予約されているプールの無料リソースを呼び出すことができる<xref:System.Data.OleDb.OleDbConnection>オブジェクト。 たとえば、接続オブジェクトは使用されませんしばらくの間 OLE DB サービス通常プールされた接続のアクティブなまま維持する場合は、このメソッドを呼び出す可能性があります。 メソッドを呼び出すだけでは解放されないこと実際には、プール内に存在するアクティブな接続に注意してください。  
+  
+ プールが最後に破棄される前に、次の処理を行われます必要があります。  
+  
+1.  呼び出す<xref:System.Data.OleDb.OleDbConnection.Close%2A>をプールに接続オブジェクトを返します。  
+  
+2.  各接続オブジェクトをプールのタイムアウトを許可します。  
+  
+3.  <xref:System.Data.OleDb.OleDbConnection.ReleaseObjectPool%2A> を呼び出す。  
+  
+4.  ガベージ コレクションを起動します。  
+  
+ 逆を呼び出す場合<xref:System.Data.OleDb.OleDbConnection.Close%2A>すべてのアクティブな接続でと、ガベージ コレクションを呼び出すが、呼び出すことはありません<xref:System.Data.OleDb.OleDbConnection.ReleaseObjectPool%2A>、リソース プール内のオブジェクトを引き続き利用できます用に予約されています。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.OleDb.OleDbConnection>、開かれます、いくつかのプロパティの表示、接続を閉じ、リソースを節約するために、オブジェクト プールを解放します。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.ReleaseObjectPool Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.ReleaseObjectPool Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.ReleaseObjectPool Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.ReleaseObjectPool Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetState">
+      <MemberSignature Language="C#" Value="public void ResetState ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.ResetState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>更新プログラム、<see cref="P:System.Data.OleDb.OleDbConnection.State" />のプロパティ、<see cref="T:System.Data.OleDb.OleDbConnection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ OLE DB プロバイダーによっては、接続の現在の状態を確認できます。 たとえば、以降、データベース サーバーが再利用される場合を開いた、 <xref:System.Data.OleDb.OleDbConnection>、<xref:System.Data.OleDb.OleDbConnection.State%2A>プロパティが返す引き続き`Open`します。 OLE DB プロバイダーとライブ接続でこの情報のポーリングをサポートする作業している場合は、呼び出し、<xref:System.Data.OleDb.OleDbConnection.ResetState%2A>メソッドし、チェック、<xref:System.Data.OleDb.OleDbConnection.State%2A>プロパティは、接続が不要になったかをします。 <xref:System.Data.OleDb.OleDbConnection.ResetState%2A>メソッドは、接続の現在の状態を確認する OLE DB プロバイダーの機能に依存しています。 調べるには、OLE DB プロバイダーがこの機能をサポートしているかどうか、DBPROP_CONNECTIONSTATUS についてプロバイダーのマニュアルを確認してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerVersion">
+      <MemberSignature Language="C#" Value="public override string ServerVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServerVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnection.ServerVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが接続されているサーバーのバージョンを表す文字列を取得します。</summary>
+        <value>接続先のサーバーのバージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbConnection.ServerVersion%2A>プロパティは OLE DB dbprop_dbmsver とプロパティにマップします。 場合<xref:System.Data.OleDb.OleDbConnection.ServerVersion%2A>はサポートされていない、基になる OLE DB プロバイダーで、空の文字列が返されます。  
+  
+ 形式は、バージョン*##. ##. ###*、ここで最初の 2 桁はメジャー バージョン、次の 2 桁はマイナーのバージョンであり、最後の 4 桁の数字は、リリース バージョン。 プロバイダーは、このフォームで製品のバージョンをレンダリングする必要がありますが、製品に固有のバージョンを追加することも、たとえば、"04.01.0000 Rdb 4.1"です。 文字列の形式は、 *major.minor.build*主な場所、ビルドが 4 桁の数字とマイナーは正確に 2 桁の数字です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OleDb.OleDbConnection>し、一部の読み取り専用プロパティを表示します。  
+  
+ [!code-csharp[Classic WebData OleDbConnection.ServerVersion Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.ServerVersion Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbConnection.ServerVersion Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbConnection.ServerVersion Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public override System.Data.ConnectionState State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.ConnectionState State" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbConnection.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.ConnectionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の接続の状態を取得します。</summary>
+        <value><see cref="T:System.Data.ConnectionState" /> 値のビットごとの組み合わせ。 既定値は閉じられます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の状態の変更は許可します。  
+  
+-   `Closed`に`Open`を使用して、<xref:System.Data.OleDb.OleDbConnection.Open%2A>のメソッド、<xref:System.Data.OleDb.OleDbConnection>オブジェクト。  
+  
+-   `Open`に`Closed`、いずれかを使用して、<xref:System.Data.OleDb.OleDbConnection.Close%2A>メソッドまたは**Dispose**のメソッド、<xref:System.Data.OleDb.OleDbConnection>オブジェクト。  
+  
+> [!NOTE]
+>  .NET Framework の以前のバージョンで呼び出して、<xref:System.Data.OleDb.OleDbConnection.State%2A>呼び出しごとに、開いている接続の OLE DB DBPROP_CONNECTIONSTATUS プロパティへの呼び出しが原因となったために、プロパティによってアプリケーションのオーバーヘッドが増加します。 .NET Framework 2.0 のリリースでは、これが不要の問題です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbConnection.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ICloneable.Clone" />」をご覧ください。</summary>
+        <returns>新しい<see cref="T:System.Object" />のこのインスタンスのコピーであります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.OleDb.OleDbConnection> のインスタンスが <xref:System.ICloneable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

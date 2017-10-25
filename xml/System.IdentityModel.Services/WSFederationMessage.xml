@@ -1,0 +1,290 @@
+<Type Name="WSFederationMessage" FullName="System.IdentityModel.Services.WSFederationMessage">
+  <TypeSignature Language="C#" Value="public abstract class WSFederationMessage : System.IdentityModel.Services.FederationMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WSFederationMessage extends System.IdentityModel.Services.FederationMessage" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.WSFederationMessage" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Services.FederationMessage</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Ws-federation メッセージを表し、特別な Ws-federation メッセージ クラスの派生元となる基本クラスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.WSFederationMessage>クラスは、Ws-federation 要求であるか、Ws-federation 応答を表します。 特定の Ws-federation メッセージを表すより特化されたクラスから派生<xref:System.IdentityModel.Services.WSFederationMessage>。 たとえば、、<xref:System.IdentityModel.Services.SignInRequestMessage>クラスで、Ws-federation サインイン要求メッセージを表します。  
+  
+ <xref:System.IdentityModel.Services.WSFederationMessage>クラスを設定または個々 のメッセージ パラメーターへのアクセスに使用できるいくつかのプロパティを公開します。 これらのパラメーターも設定またはできる経由でアクセス、<xref:System.IdentityModel.Services.FederationMessage.Parameters%2A>ディクショナリ。 たとえば、するを通してメッセージ内の wencoding パラメーターか、<xref:System.IdentityModel.Services.WSFederationMessage.Encoding%2A>プロパティまたはキーとして"wencoding"を指定することによって、<xref:System.IdentityModel.Services.FederationMessage.Parameters%2A>ディクショナリ。  
+  
+ <xref:System.IdentityModel.Services.WSFederationMessage>から適切な Ws-federation メッセージの作成に呼び出すことのできる静的メソッドが含まれています。 クエリ文字列を含む URL です。 ベース URL と Ws-federation パラメーターの名前と値またはフォームのコレクションは、HTTP 要求にデータを投稿します。  
+  
+ [!INCLUDE[wif_wsfed_ref](~/includes/wif-wsfed-ref-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSFederationMessage (Uri baseUrl, string action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUrl, string action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationMessage.#ctor(System.Uri,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseUrl" Type="System.Uri" />
+        <Parameter Name="action" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUrl">Ws-federation メッセージを適用するベース URL。 これは、クエリ パラメーターを使用せず、URL です。 <see cref="P:System.IdentityModel.Services.FederationMessage.BaseUri" /> プロパティを設定します。</param>
+        <param name="action">メッセージの wa パラメーター。 を実行するアクションを指定します。たとえば、Ws-federation サインイン要求の"wsignin1.0"です。 <see cref="P:System.IdentityModel.Services.WSFederationMessage.Action" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.WSFederationMessage" />クラスに、ベース URL からメッセージを適用して、アクション (wa メッセージ パラメーター) を実行します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="baseUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="action" /> が <see langword="null" /> または空の文字列です。</exception>
+        <exception cref="T:System.IdentityModel.Services.WSFederationMessageException">
+          <paramref name="baseUri" />有効な絶対 URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public string Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationMessage.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wa パラメーターを設定します。</summary>
+        <value>Wa パラメーターの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wa パラメーターでは、実行するアクションを指定します。 サインイン シナリオの場合など、<xref:System.IdentityModel.Services.WSFederationMessage.Action%2A>サインアウト シナリオと、"wsignin1.0"をプロパティが設定されて、"wsignout1.0"に設定されます。 このプロパティに設定することはできませんので、wa パラメーターが必要ですが、`null`または空の文字列。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ある値を設定しようとすると、<see langword="null" />または空が発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public string Context { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Context" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationMessage.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの wctx パラメーターを設定します。</summary>
+        <value>Wctx パラメーターの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求で渡される場合に、発行されたトークンを返す必要があるコンテキストの値を指定します。 値は不透明では、自身のセマンティクスは、既知のメッセージ (通常、証明書利用者 – RP); の作成者によってのみメッセージまたは任意の中継ぎ局の受信側では解釈されません。 Wctx パラメーターは省略できます。 設定、<xref:System.IdentityModel.Services.WSFederationMessage.Context%2A>プロパティを`null`またはメッセージから wctx パラメーターを削除する空の文字列。  
+  
+> [!IMPORTANT]
+>  アプリケーションでは、wctx パラメーター セットで Ws-federation メッセージを受信した場合、同じ値が、送信者にすべての応答で返されるか、別のパーティ メッセージが渡された場合に転送されることを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromFormPost">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Services.WSFederationMessage CreateFromFormPost (System.Web.HttpRequestBase request);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Services.WSFederationMessage CreateFromFormPost(class System.Web.HttpRequestBase request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationMessage.CreateFromFormPost(System.Web.HttpRequestBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.WSFederationMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequestBase" />
+      </Parameters>
+      <Docs>
+        <param name="request">フォーム ポストを含む要求。</param>
+        <summary>指定された要求で受信したフォーム ポストから Ws-federation メッセージを作成します。</summary>
+        <returns>作成されたメッセージまたは<see langword="null" />場合は、メッセージを作成することはできません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージを作成する場合、このメソッドは、適切に実装を返します<xref:System.IdentityModel.Services.WSFederationMessage>wa パラメーターが"wsignout1.0"である場合は、post。 たとえば、フォームの送信 wa パラメーターに基づいて、<xref:System.IdentityModel.Services.SignOutRequestMessage>オブジェクトが返されます。  
+  
+ ベース URL と要求のクライアントから送信されたフォーム変数のコレクションを取得し、起動、<xref:System.IdentityModel.Services.WSFederationMessage.CreateFromNameValueCollection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromNameValueCollection">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Services.WSFederationMessage CreateFromNameValueCollection (Uri baseUrl, System.Collections.Specialized.NameValueCollection collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Services.WSFederationMessage CreateFromNameValueCollection(class System.Uri baseUrl, class System.Collections.Specialized.NameValueCollection collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationMessage.CreateFromNameValueCollection(System.Uri,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.WSFederationMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUrl" Type="System.Uri" />
+        <Parameter Name="collection" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="baseUrl">メッセージの送信先をベース URL。</param>
+        <param name="collection"><see cref="T:System.Collections.Specialized.NameValueCollection" />メッセージのパラメーターを格納しています。</param>
+        <summary>Ws-federation メッセージを作成、<see cref="T:System.Collections.Specialized.NameValueCollection" />のパラメーターです。</summary>
+        <returns>作成されたメッセージまたは<see langword="null" />場合は、メッセージを作成することはできません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター コレクションには、wa パラメーターには、実行するアクションを指定するエントリを含める必要があります。 Wa エントリが、認識可能なアクションでない場合は、例外がスローされます。 パラメーター コレクションには、コレクション内の wa パラメーターで指定されたメッセージの種類に対して適切なパラメーターを含める必要があります。 メソッドは、適切な実装の<xref:System.IdentityModel.Services.WSFederationMessage>wa パラメーターに基づきます。 次の表、<xref:System.IdentityModel.Services.WSFederationMessage>さまざまなパラメーターの組み合わせの実装が返されます。  
+  
+|返される型|指定された wa クエリ パラメーター|コメント|  
+|-------------------|----------------------------------|--------------|  
+|<xref:System.IdentityModel.Services.AttributeRequestMessage>|wattr1.0|--|  
+|<xref:System.IdentityModel.Services.PseudonymRequestMessage>|wpseudo1.0|--|  
+|<xref:System.IdentityModel.Services.SignInRequestMessage>|wsignin1.0|`collection`wtrealm または wreply パラメーターを含める必要があります。 場合`collection`wresult または wresultptr パラメーターが含まれています (次の行を参照してください)、サインイン応答メッセージが返されます。|  
+|<xref:System.IdentityModel.Services.SignInResponseMessage>|wsignin1.0|場合に返される`collection`wresult または wresultptr パラメーターが含まれています。 1 つだけは、存在する可能性があります。 両方が存在する場合、例外がスローされます。|  
+|<xref:System.IdentityModel.Services.SignOutRequestMessage>|wsignout1.0|--|  
+|<xref:System.IdentityModel.Services.SignOutCleanupRequestMessage>|wsignoutcleanup1.0|--|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="baseUrl" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="collection" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Services.WSFederationMessageException">パラメーター コレクション内の wa パラメーターは認識されません。</exception>
+        <exception cref="T:System.ArgumentException">サインイン応答メッセージでは、パラメーターのコレクションに wresult と wresultptr の両方のパラメーターがあります。 (有効なサインイン応答メッセージに、wa パラメーターと等しい"wsignin1.0"とするか、wresult または wresultptr パラメーターが、両方は使用できません。)</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromUri">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Services.WSFederationMessage CreateFromUri (Uri requestUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Services.WSFederationMessage CreateFromUri(class System.Uri requestUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationMessage.CreateFromUri(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.WSFederationMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="requestUri">メッセージの作成元の URI。 メッセージのパラメーターは、クエリ文字列で指定されます。 Wa パラメーターは、存在する必要があります。</param>
+        <summary>指定した URI から Ws-federation メッセージを作成します。 パラメーターは、クエリ文字列で指定すると見なされます。</summary>
+        <returns>作成されたメッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適切な実装を返します<xref:System.IdentityModel.Services.WSFederationMessage>クエリ文字列に wa パラメーターに基づく wa パラメーターが"wsignout1.0"である場合など、<xref:System.IdentityModel.Services.SignOutRequestMessage>オブジェクトが返されます。  
+  
+ 他の例外とクエリ文字列内に存在パラメーターの値の組み合わせによってスローされる可能性があります。  
+  
+ 呼び出す、<xref:System.IdentityModel.Services.WSFederationMessage.TryCreateFromUri%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="requestUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Services.WSFederationMessageException">指定した URI からメッセージを作成できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public string Encoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Encoding" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationMessage.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの wencoding パラメーターを取得または設定します。</summary>
+        <value>wencoding パラメーターの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージに埋め込まれている任意の XML に使用するエンコード スタイルを指定します。 Wencoding パラメーターは省略できます。 設定、<xref:System.IdentityModel.Services.WSFederationMessage.Encoding%2A>プロパティを`null`またはメッセージから wencoding パラメーターを削除する空の文字列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryCreateFromUri">
+      <MemberSignature Language="C#" Value="public static bool TryCreateFromUri (Uri requestUri, out System.IdentityModel.Services.WSFederationMessage fedMsg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryCreateFromUri(class System.Uri requestUri, [out] class System.IdentityModel.Services.WSFederationMessage&amp; fedMsg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationMessage.TryCreateFromUri(System.Uri,System.IdentityModel.Services.WSFederationMessage@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestUri" Type="System.Uri" />
+        <Parameter Name="fedMsg" Type="System.IdentityModel.Services.WSFederationMessage&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="requestUri">メッセージの作成元の URI。 メッセージのパラメーターは、クエリ文字列で指定されます。 Wa パラメーターは、存在する必要があります。</param>
+        <param name="fedMsg">このメソッドが戻るときに作成されたメッセージを含むまたは<see langword="null" />場合は、メッセージを作成できませんでした。 このパラメーターは初期化前として処理されます。</param>
+        <summary>指定した URI から Ws-federation メッセージを作成しようとしています。 パラメーターは、クエリ文字列として指定すると見なされます。</summary>
+        <returns>
+          <see langword="true" />場合は、メッセージが正常に作成されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージを作成する場合、このメソッドは、適切に実装を返します<xref:System.IdentityModel.Services.WSFederationMessage>クエリ文字列に wa パラメーターに基づく wa パラメーターが"wsignout1.0"である場合など、<xref:System.IdentityModel.Services.SignOutRequestMessage>オブジェクトが返されます。  
+  
+ 呼び出す、<xref:System.IdentityModel.Services.WSFederationMessage.CreateFromNameValueCollection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="requestUri" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

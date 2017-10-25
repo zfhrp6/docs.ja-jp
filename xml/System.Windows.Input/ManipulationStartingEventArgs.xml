@@ -1,0 +1,253 @@
+<Type Name="ManipulationStartingEventArgs" FullName="System.Windows.Input.ManipulationStartingEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class ManipulationStartingEventArgs : System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManipulationStartingEventArgs extends System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ManipulationStartingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.InputEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.UIElement.ManipulationStarting" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.ManipulationStartingEventArgs>を使用して操作の動作を指定します。  使用して、<xref:System.Windows.Input.ManipulationStartingEventArgs>を次を行うには。  
+  
+-   位置に指定する要素に相対的なを設定して、<xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A>プロパティです。  
+  
+-   1 本指の操作が設定して有効にするかどうかを指定して、<xref:System.Windows.Input.ManipulationStartingEventArgs.IsSingleTouchEnabled%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   設定操作の種類が有効になっているを指定して、<xref:System.Windows.Input.ManipulationStartingEventArgs.Mode%2A?displayProperty=nameWithType>プロパティを<xref:System.Windows.Input.ManipulationModes>列挙します。  
+  
+-   1 本指の回転の中心を設定して指定、<xref:System.Windows.Input.ManipulationStartingEventArgs.Pivot%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   設定して、操作をキャンセル、<xref:System.Windows.Input.ManipulationStartingEventArgs.Cancel%2A?displayProperty=nameWithType>プロパティを`true`です。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationStartingEventArgs.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>操作をキャンセルし、タッチをマウス イベントを昇格させます。</summary>
+        <returns>
+          <see langword="true" />マウス イベント、それ以外の場合にタッチを正常に昇格される場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドが成功すると、既定値<xref:System.Windows.Input.TouchDevice>イベント マウス ダウン イベントとして接地送信前と将来の操作イベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationStartingEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">To be added.</param>
+        <param name="genericTarget">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSingleTouchEnabled">
+      <MemberSignature Language="C#" Value="public bool IsSingleTouchEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSingleTouchEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationStartingEventArgs.IsSingleTouchEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 本の指で操作を開始できるかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />1 本の指で; 操作を開始できます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManipulationContainer">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement ManipulationContainer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement ManipulationContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはすべての操作イベントおよび計算の基準になるコンテナーを設定します。</summary>
+        <value>すべての操作イベントおよび計算の基準になるコンテナーです。 既定値は、イベントが発生した要素です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定して別の要素に相対的な位置をする必要がありますを指定することができます、<xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A>プロパティです。 たとえば、イベントを受け取らなく要素の親を基準とした操作の位置を行うことができます。 <xref:System.Windows.UIElement.ManipulationStarting>イベント ハンドラーは、唯一の場所を設定することができます、<xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A>です。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Manipulators">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Windows.Input.IManipulator&gt; Manipulators { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Input.IManipulator&gt; Manipulators" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationStartingEventArgs.Manipulators" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Input.IManipulator&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作のタッチの連絡先を表すオブジェクトのコレクションを取得します。</summary>
+        <value>操作のタッチの連絡先を表すオブジェクトのコレクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ManipulationModes Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.ManipulationModes Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationStartingEventArgs.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ManipulationModes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定可能な操作の種類。</summary>
+        <value>列挙値の 1 つ。 既定値は、<see cref="F:System.Windows.Input.ManipulationModes.All" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">1 つ以上の以外の値に設定されます、<see cref="T:System.Windows.Input.ManipulationModes" />列挙体の値</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pivot">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ManipulationPivot Pivot { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ManipulationPivot Pivot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationStartingEventArgs.Pivot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ManipulationPivot</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 つのポイント操作のピボットを記述するオブジェクトを設定します。</summary>
+        <value>1 つのポイント操作のピボットを記述するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、<xref:System.Windows.Input.ManipulationStartingEventArgs.Pivot%2A>プロパティ、操作データを含む回転、ユーザーが操作中に 1 本の指を使用する場合。  これは、1 つのテーブルでのペーパーなど、オブジェクトの回転を 1 本の指を使用できる実際の状況をシミュレートします。  場合、<xref:System.Windows.Input.ManipulationStartingEventArgs.Pivot%2A>は`null`ユーザーは、2 本の指を使用して回転させる必要があります。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.UIElement.ManipulationStarting>イベントとセット、<xref:System.Windows.Input.ManipulationStartingEventArgs.Pivot%2A?displayProperty=nameWithType>プロパティです。 この例をテストする手順を[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)し、手順 4. でコードをコードに置き換えます。  
+  
+ [!code-csharp[BasicManipulation#ManipulationPivot](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/reportboundaryfeedbackexample.xaml.cs#manipulationpivot)]
+ [!code-vb[BasicManipulation#ManipulationPivot](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/reportboundaryfeedbackexample.xaml.vb#manipulationpivot)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetManipulationParameter">
+      <MemberSignature Language="C#" Value="public void SetManipulationParameter (System.Windows.Input.Manipulations.ManipulationParameters2D parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetManipulationParameter(class System.Windows.Input.Manipulations.ManipulationParameters2D parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationStartingEventArgs.SetManipulationParameter(System.Windows.Input.Manipulations.ManipulationParameters2D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Windows.Input.Manipulations.ManipulationParameters2D" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">追加するパラメーター。</param>
+        <summary>指定した要素の現在の操作にパラメーターを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドを呼び出す必要はありません。  プロパティを使用して、<xref:System.Windows.Input.ManipulationStartingEventArgs>代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

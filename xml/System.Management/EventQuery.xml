@@ -1,0 +1,161 @@
+<Type Name="EventQuery" FullName="System.Management.EventQuery">
+  <TypeSignature Language="C#" Value="public class EventQuery : System.Management.ManagementQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventQuery extends System.Management.ManagementQuery" />
+  <TypeSignature Language="DocId" Value="T:System.Management.EventQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.ManagementQuery</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WMI を表す*イベント クエリ*です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_EventQuery#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EventQuery/cs/EventQuery.cs#1)]
+ [!code-vb[wminet_EventQuery#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EventQuery/vb/EventQuery.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.EventQuery.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.EventQuery" /> クラスの新しいインスタンスを初期化します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_EventQuery#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EventQuery/cs/EventQuery.cs#1)]
+ [!code-vb[wminet_EventQuery#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EventQuery/vb/EventQuery.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventQuery (string query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.EventQuery.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="query" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="query">テキスト表現、<c>イベント クエリ</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.EventQuery" />指定されたクエリのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_EventQuery-1#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EventQuery-1/cs/EventQuery-1.cs#1)]
+ [!code-vb[wminet_EventQuery-1#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EventQuery-1/vb/EventQuery-1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventQuery (string language, string query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string language, string query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.EventQuery.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="language" Type="System.String" />
+        <Parameter Name="query" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="language">クエリ文字列が指定されている言語です。</param>
+        <param name="query">クエリの文字列形式。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.EventQuery" />指定した言語とクエリのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_EventQuery-2#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EventQuery-2/cs/EventQuery-2.cs#1)]
+ [!code-vb[wminet_EventQuery-2#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EventQuery-2/vb/EventQuery-2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.EventQuery.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを返します。</summary>
+        <returns>複製されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

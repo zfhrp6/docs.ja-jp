@@ -1,0 +1,555 @@
+<Type Name="MessageBox" FullName="System.Windows.MessageBox">
+  <TypeSignature Language="C#" Value="public sealed class MessageBox" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MessageBox extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.MessageBox" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージ ボックスを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ボックスは、テキスト メッセージをユーザーに表示を作成済みのモーダル ダイアログ ボックスです。 静的なを呼び出すことによって、メッセージ ボックスを表示する<xref:System.Windows.MessageBox.Show%2A>のメソッド、<xref:System.Windows.MessageBox>クラスです。 表示されるテキスト メッセージが渡された文字列引数<xref:System.Windows.MessageBox.Show%2A>です。 複数のオーバー ロード、<xref:System.Windows.MessageBox.Show%2A>メソッドでは、タイトル バーのキャプションを指定することもできます。  
+  
+ メッセージ ボックスを閉じ、ユーザーを有効にする<xref:System.Windows.MessageBox.Show%2A>がメッセージ ボックスが表示されます、 **[ok]**ボタンと**閉じる**タイトル バーのボタンをクリックします。  
+  
+ また、ユーザーの質問を投稿するのにメッセージ ボックスを使用することができます。 ユーザーの回答を使用して、表示するように指定するいくつかのボタンのいずれかをクリックして、<xref:System.Windows.MessageBoxButton>列挙します。 この列挙体をいくつかのオーバー ロードに渡すことができます、<xref:System.Windows.MessageBox.Show%2A>メソッドです。 既定値、<xref:System.Windows.MessageBoxButton>列挙体は<xref:System.Windows.MessageBoxButton.OK>します。  
+  
+ 値を確認するには、ユーザーには、どのボタンをクリックするかを判断できますを<xref:System.Windows.MessageBox.Show%2A>を返します。 戻り値は、値は、<xref:System.Windows.MessageBoxResult>列挙型、各値がメッセージ ボックスが表示されるボタンのいずれかには相当します。 メッセージ ボックスの既定値は<xref:System.Windows.MessageBoxResult.OK>ため**OK**既定のメッセージ ボックス ボタンです。 ただし、一部のオーバー ロードが、<xref:System.Windows.MessageBox.Show%2A>メソッドを使用すると、別の提供<xref:System.Windows.MessageBoxResult>既定値です。  
+  
+ メッセージ ボックスは、情報を通信できるし、重大度の異なる質問を尋ねることができます。 メッセージ ボックスでは、アイコンを使用して、重要度を指定します。 たとえば、アイコンには、かどうかメッセージは情報、警告、またはが重要ですがわかります。 <xref:System.Windows.MessageBoxImage>列挙可能なメッセージ ボックスのアイコンのセットをカプセル化します。 既定では、メッセージ ボックスで、アイコンが表示されることはできません。 ただし、渡すことができます、<xref:System.Windows.MessageBoxImage>値をいくつかのいずれか<xref:System.Windows.MessageBox.Show%2A>メッセージ ボックスにアイコンが含まれているを指定するためにメソッドのオーバー ロードします。  
+  
+ メッセージ ボックスには、右から左への読み取りなどの特別な機能も提供します。 1 つまたは複数を使用してメッセージ ボックスの動作をカスタマイズできます<xref:System.Windows.MessageBoxOptions>列挙値の一部のオーバー ロードによって受け入れられる、<xref:System.Windows.MessageBox.Show%2A>メソッドです。  
+  
+ メッセージ ボックスでは、オーナー ウィンドウが常に存在します。 既定では、メッセージ ボックスの所有者は、メッセージ ボックスが開かれている時に、アプリケーションで現在アクティブなウィンドウです。 ただしの別の所有者を指定することができます、<xref:System.Windows.Window>いくつかのいずれかを使用して<xref:System.Windows.MessageBox.Show%2A>オーバー ロードします。 オーナー ウィンドウの詳細については、次を参照してください。<xref:System.Windows.Window.Owner%2A?displayProperty=nameWithType>です。  
+  
+ 詳細については、次を参照してください。 [MessageBox サンプル](http://go.microsoft.com/fwlink/?LinkID=160023)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="Show">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>メッセージ ボックスを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロードを使用して、<xref:System.Windows.MessageBox.Show%2A>メソッドで、オーナー ウィンドウを指定することができます。 それ以外の場合、メッセージ ボックスが現在アクティブなウィンドウが所有します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (string messageBoxText);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(string messageBoxText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBoxText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <summary>結果を返す、メッセージを含むメッセージ ボックスが表示されます。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のこのオーバー ロードを使用する方法を示しています、<xref:System.Windows.MessageBox.Show%2A>メソッドです。  
+  
+ [!code-csharp[MessageBoxSnippets#MessageBoxShow1CODE](~/samples/snippets/csharp/VS_Snippets_Wpf/MessageBoxSnippets/CSharp/Show1Window.xaml.cs#messageboxshow1code)]
+ [!code-vb[MessageBoxSnippets#MessageBoxShow1CODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MessageBoxSnippets/visualbasic/show1window.xaml.vb#messageboxshow1code)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (string messageBoxText, string caption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(string messageBoxText, string caption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBoxText" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <param name="caption">A<see cref="T:System.String" />を表示するタイトル バーのキャプションを指定します。</param>
+        <summary>キャプションがあり、メッセージとタイトル バーです。 メッセージ ボックスが表示されます。結果を返します。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のこのオーバー ロードを使用する方法を示しています、<xref:System.Windows.MessageBox.Show%2A>メソッドです。  
+  
+ [!code-csharp[MessageBoxSnippets#MessageBoxShow2CODE](~/samples/snippets/csharp/VS_Snippets_Wpf/MessageBoxSnippets/CSharp/Show2Window.xaml.cs#messageboxshow2code)]
+ [!code-vb[MessageBoxSnippets#MessageBoxShow2CODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MessageBoxSnippets/visualbasic/show2window.xaml.vb#messageboxshow2code)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (System.Windows.Window owner, string messageBoxText);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(class System.Windows.Window owner, string messageBoxText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.Windows.Window,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Window" />
+        <Parameter Name="messageBoxText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Windows.Window" />メッセージ ボックスのオーナー ウィンドウを表すです。</param>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <summary>指定されたウィンドウの前面にメッセージ ボックスが表示されます。 メッセージ ボックスは、メッセージが表示され、結果が返されます。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、現在アクティブなウィンドウの前に、メッセージ ボックスが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (string messageBoxText, string caption, System.Windows.MessageBoxButton button);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(string messageBoxText, string caption, valuetype System.Windows.MessageBoxButton button) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.String,System.String,System.Windows.MessageBoxButton)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBoxText" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="button" Type="System.Windows.MessageBoxButton" />
+      </Parameters>
+      <Docs>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <param name="caption">A<see cref="T:System.String" />を表示するタイトル バーのキャプションを指定します。</param>
+        <param name="button">A<see cref="T:System.Windows.MessageBoxButton" />どのボタンまたは表示するボタンを指定する値。</param>
+        <summary>メッセージ ボックスは、メッセージ、タイトル バーのキャプション、およびボタンを表示します。結果を返します。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のこのオーバー ロードを使用する方法を示しています、<xref:System.Windows.MessageBox.Show%2A>メソッドです。  
+  
+ [!code-csharp[MessageBoxSnippets#MessageBoxShow3CODE](~/samples/snippets/csharp/VS_Snippets_Wpf/MessageBoxSnippets/CSharp/Show3Window.xaml.cs#messageboxshow3code)]
+ [!code-vb[MessageBoxSnippets#MessageBoxShow3CODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MessageBoxSnippets/visualbasic/show3window.xaml.vb#messageboxshow3code)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (System.Windows.Window owner, string messageBoxText, string caption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(class System.Windows.Window owner, string messageBoxText, string caption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.Windows.Window,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Window" />
+        <Parameter Name="messageBoxText" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Windows.Window" />メッセージ ボックスのオーナー ウィンドウを表すです。</param>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <param name="caption">A<see cref="T:System.String" />を表示するタイトル バーのキャプションを指定します。</param>
+        <summary>指定されたウィンドウの前面にメッセージ ボックスが表示されます。 メッセージ ボックスには、メッセージとタイトル バー キャプションが表示されます。結果が返されます。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、現在アクティブなウィンドウの前に、メッセージ ボックスが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (string messageBoxText, string caption, System.Windows.MessageBoxButton button, System.Windows.MessageBoxImage icon);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(string messageBoxText, string caption, valuetype System.Windows.MessageBoxButton button, valuetype System.Windows.MessageBoxImage icon) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBoxText" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="button" Type="System.Windows.MessageBoxButton" />
+        <Parameter Name="icon" Type="System.Windows.MessageBoxImage" />
+      </Parameters>
+      <Docs>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <param name="caption">A<see cref="T:System.String" />を表示するタイトル バーのキャプションを指定します。</param>
+        <param name="button">A<see cref="T:System.Windows.MessageBoxButton" />どのボタンまたは表示するボタンを指定する値。</param>
+        <param name="icon">A<see cref="T:System.Windows.MessageBoxImage" />表示するアイコンを指定する値。</param>
+        <summary>メッセージ、タイトル バーのキャプション、ボタン、およびアイコンがメッセージ ボックスが表示されます。結果を返します。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のこのオーバー ロードを使用する方法を示しています、<xref:System.Windows.MessageBox.Show%2A>メソッドです。  
+  
+ [!code-csharp[MessageBoxSnippets#MessageBoxShow4CODE](~/samples/snippets/csharp/VS_Snippets_Wpf/MessageBoxSnippets/CSharp/Show4Window.xaml.cs#messageboxshow4code)]
+ [!code-vb[MessageBoxSnippets#MessageBoxShow4CODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MessageBoxSnippets/visualbasic/show4window.xaml.vb#messageboxshow4code)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (System.Windows.Window owner, string messageBoxText, string caption, System.Windows.MessageBoxButton button);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(class System.Windows.Window owner, string messageBoxText, string caption, valuetype System.Windows.MessageBoxButton button) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.Windows.Window,System.String,System.String,System.Windows.MessageBoxButton)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Window" />
+        <Parameter Name="messageBoxText" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="button" Type="System.Windows.MessageBoxButton" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Windows.Window" />メッセージ ボックスのオーナー ウィンドウを表すです。</param>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <param name="caption">A<see cref="T:System.String" />を表示するタイトル バーのキャプションを指定します。</param>
+        <param name="button">A<see cref="T:System.Windows.MessageBoxButton" />どのボタンまたは表示するボタンを指定する値。</param>
+        <summary>指定されたウィンドウの前面にメッセージ ボックスが表示されます。 メッセージ ボックスは、メッセージ、タイトル バーのキャプション、およびボタンが表示されます。これも、結果を返します。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、現在アクティブなウィンドウの前に、メッセージ ボックスが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (string messageBoxText, string caption, System.Windows.MessageBoxButton button, System.Windows.MessageBoxImage icon, System.Windows.MessageBoxResult defaultResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(string messageBoxText, string caption, valuetype System.Windows.MessageBoxButton button, valuetype System.Windows.MessageBoxImage icon, valuetype System.Windows.MessageBoxResult defaultResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage,System.Windows.MessageBoxResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBoxText" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="button" Type="System.Windows.MessageBoxButton" />
+        <Parameter Name="icon" Type="System.Windows.MessageBoxImage" />
+        <Parameter Name="defaultResult" Type="System.Windows.MessageBoxResult" />
+      </Parameters>
+      <Docs>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <param name="caption">A<see cref="T:System.String" />を表示するタイトル バーのキャプションを指定します。</param>
+        <param name="button">A<see cref="T:System.Windows.MessageBoxButton" />どのボタンまたは表示するボタンを指定する値。</param>
+        <param name="icon">A<see cref="T:System.Windows.MessageBoxImage" />表示するアイコンを指定する値。</param>
+        <param name="defaultResult">A<see cref="T:System.Windows.MessageBoxResult" />メッセージ ボックスの既定の結果を指定する値。</param>
+        <summary>メッセージ、タイトル バーのキャプション、ボタン、およびアイコンがメッセージ ボックスが表示されます。既定のメッセージ ボックスの結果を受け取り、結果を返します。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のこのオーバー ロードを使用する方法を示しています、<xref:System.Windows.MessageBox.Show%2A>メソッドです。  
+  
+ [!code-csharp[MessageBoxSnippets#MessageBoxShow5CODE](~/samples/snippets/csharp/VS_Snippets_Wpf/MessageBoxSnippets/CSharp/Show5Window.xaml.cs#messageboxshow5code)]
+ [!code-vb[MessageBoxSnippets#MessageBoxShow5CODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MessageBoxSnippets/visualbasic/show5window.xaml.vb#messageboxshow5code)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (System.Windows.Window owner, string messageBoxText, string caption, System.Windows.MessageBoxButton button, System.Windows.MessageBoxImage icon);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(class System.Windows.Window owner, string messageBoxText, string caption, valuetype System.Windows.MessageBoxButton button, valuetype System.Windows.MessageBoxImage icon) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.Windows.Window,System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Window" />
+        <Parameter Name="messageBoxText" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="button" Type="System.Windows.MessageBoxButton" />
+        <Parameter Name="icon" Type="System.Windows.MessageBoxImage" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Windows.Window" />メッセージ ボックスのオーナー ウィンドウを表すです。</param>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <param name="caption">A<see cref="T:System.String" />を表示するタイトル バーのキャプションを指定します。</param>
+        <param name="button">A<see cref="T:System.Windows.MessageBoxButton" />どのボタンまたは表示するボタンを指定する値。</param>
+        <param name="icon">A<see cref="T:System.Windows.MessageBoxImage" />表示するアイコンを指定する値。</param>
+        <summary>指定されたウィンドウの前面にメッセージ ボックスが表示されます。 メッセージ ボックスは、メッセージ、タイトル バーのキャプション、ボタン、およびアイコンが表示されます。これも、結果を返します。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、現在アクティブなウィンドウの前に、メッセージ ボックスが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (string messageBoxText, string caption, System.Windows.MessageBoxButton button, System.Windows.MessageBoxImage icon, System.Windows.MessageBoxResult defaultResult, System.Windows.MessageBoxOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(string messageBoxText, string caption, valuetype System.Windows.MessageBoxButton button, valuetype System.Windows.MessageBoxImage icon, valuetype System.Windows.MessageBoxResult defaultResult, valuetype System.Windows.MessageBoxOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage,System.Windows.MessageBoxResult,System.Windows.MessageBoxOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBoxText" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="button" Type="System.Windows.MessageBoxButton" />
+        <Parameter Name="icon" Type="System.Windows.MessageBoxImage" />
+        <Parameter Name="defaultResult" Type="System.Windows.MessageBoxResult" />
+        <Parameter Name="options" Type="System.Windows.MessageBoxOptions" />
+      </Parameters>
+      <Docs>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <param name="caption">A<see cref="T:System.String" />を表示するタイトル バーのキャプションを指定します。</param>
+        <param name="button">A<see cref="T:System.Windows.MessageBoxButton" />どのボタンまたは表示するボタンを指定する値。</param>
+        <param name="icon">A<see cref="T:System.Windows.MessageBoxImage" />表示するアイコンを指定する値。</param>
+        <param name="defaultResult">A<see cref="T:System.Windows.MessageBoxResult" />メッセージ ボックスの既定の結果を指定する値。</param>
+        <param name="options">A<see cref="T:System.Windows.MessageBoxOptions" />オプションを指定する値オブジェクトです。</param>
+        <summary>メッセージ、タイトル バーのキャプション、ボタン、およびアイコンがメッセージ ボックスが表示されます。およびを既定のメッセージ ボックスの結果を受け入れる、指定したオプションに準拠しているし、結果を返します。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のこのオーバー ロードを使用する方法を示しています、<xref:System.Windows.MessageBox.Show%2A>メソッドです。  
+  
+ [!code-csharp[MessageBoxSnippets#MessageBoxShow6CODE](~/samples/snippets/csharp/VS_Snippets_Wpf/MessageBoxSnippets/CSharp/Show6Window.xaml.cs#messageboxshow6code)]
+ [!code-vb[MessageBoxSnippets#MessageBoxShow6CODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MessageBoxSnippets/visualbasic/show6window.xaml.vb#messageboxshow6code)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (System.Windows.Window owner, string messageBoxText, string caption, System.Windows.MessageBoxButton button, System.Windows.MessageBoxImage icon, System.Windows.MessageBoxResult defaultResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(class System.Windows.Window owner, string messageBoxText, string caption, valuetype System.Windows.MessageBoxButton button, valuetype System.Windows.MessageBoxImage icon, valuetype System.Windows.MessageBoxResult defaultResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.Windows.Window,System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage,System.Windows.MessageBoxResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Window" />
+        <Parameter Name="messageBoxText" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="button" Type="System.Windows.MessageBoxButton" />
+        <Parameter Name="icon" Type="System.Windows.MessageBoxImage" />
+        <Parameter Name="defaultResult" Type="System.Windows.MessageBoxResult" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Windows.Window" />メッセージ ボックスのオーナー ウィンドウを表すです。</param>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <param name="caption">A<see cref="T:System.String" />を表示するタイトル バーのキャプションを指定します。</param>
+        <param name="button">A<see cref="T:System.Windows.MessageBoxButton" />どのボタンまたは表示するボタンを指定する値。</param>
+        <param name="icon">A<see cref="T:System.Windows.MessageBoxImage" />表示するアイコンを指定する値。</param>
+        <param name="defaultResult">A<see cref="T:System.Windows.MessageBoxResult" />メッセージ ボックスの既定の結果を指定する値。</param>
+        <summary>指定されたウィンドウの前面にメッセージ ボックスが表示されます。 メッセージ ボックスは、メッセージ、タイトル バーのキャプション、ボタン、およびアイコンが表示されます。既定のメッセージ ボックスの結果を受け取り、結果を返します。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、現在アクティブなウィンドウの前に、メッセージ ボックスが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public static System.Windows.MessageBoxResult Show (System.Windows.Window owner, string messageBoxText, string caption, System.Windows.MessageBoxButton button, System.Windows.MessageBoxImage icon, System.Windows.MessageBoxResult defaultResult, System.Windows.MessageBoxOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.MessageBoxResult Show(class System.Windows.Window owner, string messageBoxText, string caption, valuetype System.Windows.MessageBoxButton button, valuetype System.Windows.MessageBoxImage icon, valuetype System.Windows.MessageBoxResult defaultResult, valuetype System.Windows.MessageBoxOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MessageBox.Show(System.Windows.Window,System.String,System.String,System.Windows.MessageBoxButton,System.Windows.MessageBoxImage,System.Windows.MessageBoxResult,System.Windows.MessageBoxOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.MessageBoxResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Window" />
+        <Parameter Name="messageBoxText" Type="System.String" />
+        <Parameter Name="caption" Type="System.String" />
+        <Parameter Name="button" Type="System.Windows.MessageBoxButton" />
+        <Parameter Name="icon" Type="System.Windows.MessageBoxImage" />
+        <Parameter Name="defaultResult" Type="System.Windows.MessageBoxResult" />
+        <Parameter Name="options" Type="System.Windows.MessageBoxOptions" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Windows.Window" />メッセージ ボックスのオーナー ウィンドウを表すです。</param>
+        <param name="messageBoxText">A<see cref="T:System.String" />に表示されるテキストを指定します。</param>
+        <param name="caption">A<see cref="T:System.String" />を表示するタイトル バーのキャプションを指定します。</param>
+        <param name="button">A<see cref="T:System.Windows.MessageBoxButton" />どのボタンまたは表示するボタンを指定する値。</param>
+        <param name="icon">A<see cref="T:System.Windows.MessageBoxImage" />表示するアイコンを指定する値。</param>
+        <param name="defaultResult">A<see cref="T:System.Windows.MessageBoxResult" />メッセージ ボックスの既定の結果を指定する値。</param>
+        <param name="options">A<see cref="T:System.Windows.MessageBoxOptions" />オプションを指定する値オブジェクトです。</param>
+        <summary>指定されたウィンドウの前面にメッセージ ボックスが表示されます。 メッセージ ボックスは、メッセージ、タイトル バーのキャプション、ボタン、およびアイコンが表示されます。既定のメッセージ ボックスの結果を受け取り、指定したオプションに準拠している、結果を返します。</summary>
+        <returns>A<see cref="T:System.Windows.MessageBoxResult" />ユーザーがメッセージ ボックス ボタンがクリックされたを指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、現在アクティブなウィンドウの前に、メッセージ ボックスが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

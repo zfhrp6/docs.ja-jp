@@ -1,0 +1,130 @@
+<Type Name="ScriptingScriptResourceHandlerSection" FullName="System.Web.Configuration.ScriptingScriptResourceHandlerSection">
+  <TypeSignature Language="C#" Value="public sealed class ScriptingScriptResourceHandlerSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ScriptingScriptResourceHandlerSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ScriptingScriptResourceHandlerSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see langword="ScriptingScriptResourceHandler" />構成セクションで、<see langword="&lt;scripting&gt;" />構成ファイルの要素。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得またはリソースとしてアセンブリに埋め込まれているように ECMAScript (JavaScript) ファイルでキャッシュまたは圧縮が有効になっているかどうかを設定するには、この型を使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptingScriptResourceHandlerSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ScriptingScriptResourceHandlerSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.ScriptingScriptResourceHandlerSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableCaching">
+      <MemberSignature Language="C#" Value="public bool EnableCaching { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableCaching" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ScriptingScriptResourceHandlerSection.EnableCaching" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableCaching", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリソースとしてアセンブリに埋め込まれているスクリプト ファイルのキャッシュが有効かどうかを設定します。</summary>
+        <value>
+          <see langword="true" />リソースとしてアセンブリに埋め込まれているスクリプト ファイルのキャッシュが有効になっている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ScriptingScriptResourceHandlerSection.EnableCaching%2A>プロパティを取得または埋め込みのスクリプト ファイルの結果をキャッシュ、ローカリゼーション、潜在的なあらゆるオブジェクトをキャッシュおよびスクリプトをキャッシュ用の値を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableCompression">
+      <MemberSignature Language="C#" Value="public bool EnableCompression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableCompression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ScriptingScriptResourceHandlerSection.EnableCompression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableCompression", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリソースとしてアセンブリに埋め込まれているスクリプト ファイルの圧縮が有効にするかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />リソースとしてアセンブリに埋め込まれているスクリプト ファイルの圧縮が有効になっている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ScriptingScriptResourceHandlerSection.EnableCompression%2A>プロパティを取得または、次が圧縮されるかどうかを示す値を設定します。  
+  
+-   リソースとしてアセンブリに埋め込まれているスクリプト ファイル。  
+  
+-   リソース ファイル (.resx) に含まれている文字列リソースなどのローカリゼーション オブジェクト。  
+  
+-   スクリプト リソース ハンドラーによって提供されるスクリプトを作成します。  
+  
+> [!NOTE]
+>  要求元のブラウザーが圧縮をサポートしていない場合は、このプロパティは影響を与えません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ScriptingScriptResourceHandlerSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

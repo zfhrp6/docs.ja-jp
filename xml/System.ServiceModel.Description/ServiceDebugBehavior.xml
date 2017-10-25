@@ -1,0 +1,448 @@
+<Type Name="ServiceDebugBehavior" FullName="System.ServiceModel.Description.ServiceDebugBehavior">
+  <TypeSignature Language="C#" Value="public class ServiceDebugBehavior : System.ServiceModel.Description.IServiceBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceDebugBehavior extends System.Object implements class System.ServiceModel.Description.IServiceBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.ServiceDebugBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IServiceBehavior</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Windows Communication Foundation (WCF) サービスのデバッグおよびヘルプ情報機能を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成ファイルまたはプログラムから <xref:System.ServiceModel.Description.ServiceDebugBehavior> プロパティを使用すると、デバッグ目的でクライアントへのマネージ例外情報のフロー、および Web ブラウザーでサービスをブラウズするユーザー向けの HTML 情報ファイルの公開を有効にできます。  
+  
+ <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> に、デバッグのために SOAP エラーのマネージ例外情報をクライアントに返すように指示するには、`true` プロパティを [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に設定します。  
+  
+> [!CAUTION]
+>  マネージ例外情報をクライアントに戻すことは、セキュリティ リスクになり得ます。これは、例外の詳細が、非承認のクライアントで使用可能な内部サービスの実装についての情報を公開するからです。 さらに、<xref:System.ServiceModel.Description.ServiceDebugBehavior> プロパティをプログラムで設定することはできますが、配置するときに <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> を無効にすることを忘れがちになります。  
+  
+ セキュリティの問題にかかわるので、以下を強くお勧めします。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> プロパティの値を `true` に設定するには、アプリケーション構成ファイルを使用します。  
+  
+-   これは、制御されたデバッグ シナリオの場合に限って行います。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]マネージ例外情報に関連するセキュリティの問題を参照してください[を指定して処理のエラー コントラクトおよびサービスの](~/docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
+  
+ <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageEnabled%2A> プロパティおよび <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageEnabled%2A> プロパティにより、サービスが HTML ブラウザーを使用して表示されるときに HTML ヘルプ ファイルを公開できます。  
+  
+ <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageUrl%2A> プロパティおよび <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageUrl%2A> プロパティは、表示される HTML ヘルプ ページの位置を制御します。  
+  
+ 構成ファイルを使用していずれかの <xref:System.ServiceModel.Description.ServiceDebugBehavior> 機能を有効または無効にするには、以下を行う必要があります。  
+  
+1.  追加、`behaviorConfiguration`属性を[&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)要素を[!INCLUDE[indigo2](~/includes/indigo2-md.md)]サービス。 エンドポイントの動作が構成されている[\<エンドポイント >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素; 上のサービス動作[&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)要素。  
+  
+2.  追加または作成し、 [ &lt;serviceBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)セクションし、追加、 [&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)要素をに一致する名前を持つ`behaviorConfiguration`手順 1. から属性の値。 使用してエンドポイントの動作は、構成、 [ &lt;endpointBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)要素以外のサービスを使用して動作が構成されて、 [ &lt;serviceBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)要素。  
+  
+3.  追加、 [ &lt;serviceDebug&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicedebug.md)要素を[&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)手順 2 から要素を有効または無効にするさまざまなプロパティが適切なシナリオです。  
+  
+ 個々の例については、「使用例」のセクションを参照してください。  
+  
+   
+  
+## Examples  
+ 構成ファイルを使用して、HTML ヘルプ ページ機能を有効にし、メタデータのサポートを有効にすると共に、デバッグのために SOAP エラー内の例外情報をクライアントに返す方法を次のコード例に示します。 この構成ファイルは、<xref:System.ServiceModel.Description.ServiceDebugBehavior> 機能のサポートを追加するための次の基本手順を示します。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior>型は、<xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>実装では、 [&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)サービスの種類を表す要素が、動作構成識別子が`behaviorConfiguration="metadataAndDebug"`です。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior>型は、<xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>実装、 [&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)に要素を追加、 [ &lt;serviceBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)セクションです。 設定、`name`の属性、 [&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)要素の値の識別子、`behaviorConfiguration`の属性、 [&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)要素。 この場合、値は `metadataAndDebug` です。  
+  
+-   追加、 [ &lt;serviceDebug&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicedebug.md)さまざまな属性を持つ要素が必要な構成に設定します。 この場合、`httpHelpPageEnabled` 属性および `includeExceptionDetailInFaults` 属性の値が `true` に設定されます。  
+  
+ [!code-xml[ServiceDebugBehaviorConfig#1](~/samples/snippets/csharp/VS_Snippets_CFX/servicedebugbehaviorconfig/cs/hostapplication.exe.config#1)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceDebugBehavior ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceDebugBehavior.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.ServiceDebugBehavior" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、次の既定値を使って <xref:System.ServiceModel.Description.ServiceDebugBehavior> オブジェクトを作成します。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> プロパティが `false` です。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageEnabled%2A> プロパティが `true` です。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageEnabled%2A> プロパティが `true` です。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageUrl%2A> プロパティは、HTTP 要求をサポートするサービスのベース アドレスです。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageUrl%2A> は、HTTPS 要求をサポートするサービスのベース アドレスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpHelpPageBinding">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Binding HttpHelpPageBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.Binding HttpHelpPageBinding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Binding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングの定義への高レベルのアクセスを取得または設定します。</summary>
+        <value>チャネル バインディング。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpHelpPageEnabled">
+      <MemberSignature Language="C#" Value="public bool HttpHelpPageEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HttpHelpPageEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo1](~/includes/indigo1-md.md)] が、<see cref="P:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageUrl" /> プロパティで制御されるアドレスに HTML ヘルプ ページを公開するかどうかを制御する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> が HTML ヘルプ ページを公開する場合は [!INCLUDE[indigo2](~/includes/indigo2-md.md)]。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageEnabled%2A> プロパティを `false` に設定して、HTML ブラウザーに表示される HTML ヘルプ ページの公開を無効にします。  
+  
+ <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageUrl%2A> プロパティで制御される場所で HTML ヘルプ ページを確実に公開するには、このプロパティを `true` に設定し、次のいずれかの条件も true である必要があります。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageUrl%2A> プロパティは、HTTP プロトコル スキームをサポートする絶対アドレスです。  
+  
+-   HTTP プロトコル スキームをサポートするサービスのベース アドレスがあります。  
+  
+ HTTP プロトコル スキームをサポートしない絶対アドレスが <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageUrl%2A> プロパティに割り当てられている場合は例外がスローされますが、前の基準をどれも満たさないその他のシナリオでは、例外も HTML ヘルプ ページも表示されません。  
+  
+   
+  
+## Examples  
+ 構成ファイルを使用して、HTML ヘルプ ページ機能を有効にし、デバッグのために SOAP エラー内の例外情報をクライアントに返す方法を次のコード例に示します。 この構成ファイルは、<xref:System.ServiceModel.Description.ServiceDebugBehavior> 機能のサポートを追加するための次の基本手順を示します。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior>型は、<xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>実装では、 [&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)サービスの種類を表す要素が、動作構成識別子が`behaviorConfiguration="metadataAndDebug"`です。  
+  
+-   もう一度、ため、<xref:System.ServiceModel.Description.ServiceDebugBehavior>型は、<xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>実装、 [&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)に要素を追加、 [ &lt;serviceBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)セクションです。 `name`の属性、 [&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)要素の値の識別子、`behaviorConfiguration`の属性、 [&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)要素。 この場合、値は `metadataAndDebug` です。  
+  
+-   追加、 [ &lt;serviceDebug&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicedebug.md)さまざまな属性を持つ要素が必要な構成に設定します。 この場合、`httpHelpPageEnabled` 属性および `includeExceptionDetailInFaults` 属性の値が `true` に設定されます。  
+  
+ [!code-xml[ServiceDebugBehaviorConfig#1](~/samples/snippets/csharp/VS_Snippets_CFX/servicedebugbehaviorconfig/cs/hostapplication.exe.config#1)]
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpHelpPageUrl">
+      <MemberSignature Language="C#" Value="public Uri HttpHelpPageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HttpHelpPageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.UriTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTML ヘルプ ファイルが公開される場所を取得または設定します。</summary>
+        <value>HTML ブラウザーを使用してエンドポイントを表示するときにユーザーが参照する、カスタム HTML ヘルプ ファイルの相対的または絶対的な HTTP ベースの URL。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageUrl%2A> プロパティを使用して、HTML ブラウザーなどの HTTP/Get 要求から返されるカスタム HTML ヘルプ ファイルを利用できます。 HTML ヘルプ ファイルの場所は、次のように解決されます。  
+  
+-   このプロパティの値が相対アドレスの場合、HTML ヘルプ ファイルの位置は、HTTP 要求をサポートするサービスのベース アドレスにこのプロパティの値を加えた値になります。  
+  
+-   このプロパティが絶対アドレスであり、HTTP 要求をサポートする場合は、HTML ヘルプ ファイルの位置はこのプロパティの値になります。  
+  
+-   このプロパティの値が絶対値であっても HTTP 要求をサポートしていない場合は、例外がスローされます。  
+  
+ このプロパティは、<xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpHelpPageEnabled%2A> プロパティが `true` の場合のみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpsHelpPageBinding">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Binding HttpsHelpPageBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.Binding HttpsHelpPageBinding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Binding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングの定義への高レベルのアクセスを取得または設定します。</summary>
+        <value>チャネル バインディング。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpsHelpPageEnabled">
+      <MemberSignature Language="C#" Value="public bool HttpsHelpPageEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HttpsHelpPageEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo1](~/includes/indigo1-md.md)] が、<see cref="P:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageUrl" /> プロパティで制御されるアドレスに HTTPS を介して HTML ヘルプ ファイルを返すかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          HTML ヘルプ ファイルが、HTML ブラウザーなどの HTTPS/GET 要求を行うクライアントに返される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageEnabled%2A> プロパティを `false` に設定して、HTML ブラウザーに表示される HTML ヘルプ ページの公開を無効にします。  
+  
+ <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageUrl%2A> プロパティで制御される場所で HTML ヘルプ ページを確実に公開するには、このプロパティを `true` に設定し、次のいずれかの条件も true である必要があります。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageUrl%2A> プロパティは、HTTPS プロトコル スキームをサポートする絶対アドレスです。  
+  
+-   HTTPS プロトコル スキームをサポートするサービスのベース アドレスがあります。  
+  
+ HTTPS プロトコル スキームをサポートしない絶対アドレスが <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageUrl%2A> プロパティに割り当てられている場合は例外がスローされますが、前の基準をどれも満たさないその他のシナリオでは、例外も HTML ヘルプ ページも表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpsHelpPageUrl">
+      <MemberSignature Language="C#" Value="public Uri HttpsHelpPageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HttpsHelpPageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.UriTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTPS を使用した取得のために、HTML ファイルが公開される場所を取得または設定します。</summary>
+        <value>HTML ブラウザーを使用してエンドポイントを表示するときにユーザーが参照する、カスタム HTML ヘルプ ファイルの相対的または絶対的な HTTPS ベースの URL。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageUrl%2A> プロパティを使用して、HTML ブラウザーなどの HTTPS/Get 要求から返されるカスタム HTML ヘルプ ファイルを利用できます。  
+  
+ HTML ヘルプ ファイルの場所は、次のように解決されます。  
+  
+-   このプロパティの値が相対アドレスの場合、HTML ヘルプ ファイルの位置は、HTTPS 要求をサポートするサービスのベース アドレスにこのプロパティの値を加えた値になります。  
+  
+-   このプロパティが絶対アドレスであり、HTTPS 要求をサポートする場合は、HTML ヘルプ ファイルの位置はこのプロパティの値になります。  
+  
+-   このプロパティの値が絶対値であっても HTTPS 要求をサポートしていない場合は、例外がスローされます。  
+  
+ このプロパティは、<xref:System.ServiceModel.Description.ServiceDebugBehavior.HttpsHelpPageEnabled%2A> プロパティが `true` の場合のみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeExceptionDetailInFaults">
+      <MemberSignature Language="C#" Value="public bool IncludeExceptionDetailInFaults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeExceptionDetailInFaults" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デバッグの目的でクライアントに返される SOAP エラーの詳細に、マネージ例外情報を含めるかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> がデバッグのために SOAP エラーのマネージ例外情報をクライアントに返す場合は [!INCLUDE[indigo1](~/includes/indigo1-md.md)]。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> に、デバッグを容易にするために SOAP エラーのマネージ例外情報をクライアントに返すように指示するには、`true` プロパティを [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に設定します。  
+  
+> [!CAUTION]
+>  マネージ例外情報をクライアントに戻すことは、セキュリティ リスクになり得ます。これは、例外の詳細が、非承認のクライアントで使用可能な内部サービスの実装についての情報を公開するからです。 さらに、<xref:System.ServiceModel.Description.ServiceDebugBehavior> プロパティをプログラムで設定することはできますが、配置するときに <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> を無効にすることを忘れがちになります。  
+  
+ セキュリティの問題にかかわるので、以下を強くお勧めします。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> プロパティの値を `true` に設定するには、アプリケーション構成ファイルを使用します。  
+  
+-   これは、制御されたデバッグ シナリオの場合に限って行います。  
+  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)][コントラクトおよびサービスでエラー指定と処理](~/docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)です。  
+  
+   
+  
+## Examples  
+ 構成ファイルを使用して、HTML ヘルプ ページ機能を有効にし、デバッグのために SOAP エラー内の例外情報をクライアントに返す方法を次のコード例に示します。 この構成ファイルは、<xref:System.ServiceModel.Description.ServiceDebugBehavior> 機能のサポートを追加するための次の基本手順を示します。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDebugBehavior>型は、<xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>実装では、 [&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)サービスの種類を表す要素が、動作構成識別子が`behaviorConfiguration="metadataAndDebug"`です。  
+  
+-   もう一度、ため、<xref:System.ServiceModel.Description.ServiceDebugBehavior>型は、<xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>実装、 [&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)に要素を追加、 [ &lt;serviceBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)セクションです。 設定、`name`の属性、 [&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)要素の値の識別子、`behaviorConfiguration`の属性、 [&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)要素。 この場合、値は `metadataAndDebug` です。  
+  
+-   追加、 [ &lt;serviceDebug&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicedebug.md)さまざまな属性を持つ要素が必要な構成に設定します。 この場合、`httpHelpPageEnabled` 属性および `includeExceptionDetailInFaults` 属性の値が `true` に設定されます。  
+  
+ [!code-xml[ServiceDebugBehaviorConfig#1](~/samples/snippets/csharp/VS_Snippets_CFX/servicedebugbehaviorconfig/cs/hostapplication.exe.config#1)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.AddBindingParameters">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.AddBindingParameters (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase, System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.AddBindingParameters(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase, class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceDebugBehavior.System#ServiceModel#Description#IServiceBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+        <Parameter Name="endpoints" Type="System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt;" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="description">サービスの説明。</param>
+        <param name="serviceHostBase">サービス ホスト。</param>
+        <param name="endpoints">サービスのエンドポイント。</param>
+        <param name="parameters">バインディングの変更をサポートするバインディング パラメーター。</param>
+        <summary><see cref="M:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)" /> メソッドを実装して動作をサポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動作をサポートするようにバインディングを変更します。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> メソッド」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.ApplyDispatchBehavior (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceDebugBehavior.System#ServiceModel#Description#IServiceBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="description">サービスの説明。</param>
+        <param name="serviceHostBase">サービス ホスト。</param>
+        <summary><see cref="M:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" /> メソッドを実装して動作をサポートします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.Validate">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.Validate (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.Validate(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceDebugBehavior.System#ServiceModel#Description#IServiceBehavior#Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="description">サービスの説明。</param>
+        <param name="serviceHostBase">サービス ホスト。</param>
+        <summary><see cref="M:System.ServiceModel.Description.IServiceBehavior.Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" /> メソッドを実装して動作をサポートします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

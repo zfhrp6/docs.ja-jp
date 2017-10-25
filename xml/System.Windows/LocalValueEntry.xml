@@ -1,0 +1,187 @@
+<Type Name="LocalValueEntry" FullName="System.Windows.LocalValueEntry">
+  <TypeSignature Language="C#" Value="public struct LocalValueEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit LocalValueEntry extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.LocalValueEntry" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ローカルで設定された依存関係プロパティのプロパティ識別子とプロパティ値を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を取得するときに、このクラスのインスタンスが返されます、<xref:System.Windows.LocalValueEnumerator.Current%2A>のプロパティ、<xref:System.Windows.LocalValueEnumerator>です。 すべて<xref:System.Windows.LocalValueEntry>プロパティは読み取り専用です。  
+  
+ このクラスには、パブリック コンス トラクターがありません。 このクラスを呼び出す必要がありますのインスタンスを取得するために<xref:System.Windows.DependencyObject.GetLocalValueEnumerator%2A>の値を取得および<xref:System.Windows.LocalValueEnumerator.Current%2A>から返された<xref:System.Windows.LocalValueEnumerator>です。  
+  
+   
+  
+## Examples  
+ 次の例でローカルに反復処理の設定値、<xref:System.Windows.DependencyObject>とクエリ<xref:System.Windows.LocalValueEntry>プロパティです。  
+  
+ [!code-csharp[DPClearValue#IterateLocalValuesAndClear](~/samples/snippets/csharp/VS_Snippets_Wpf/DPClearValue/CSharp/default.xaml.cs#iteratelocalvaluesandclear)]
+ [!code-vb[DPClearValue#IterateLocalValuesAndClear](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DPClearValue/VisualBasic/default.xaml.vb#iteratelocalvaluesandclear)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LocalValueEntry.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Windows.LocalValueEntry" /> と比較する <see cref="T:System.Windows.LocalValueEntry" />。</param>
+        <summary>2 つの <see cref="T:System.Windows.LocalValueEntry" /> インスタンスが等しいかどうかを判断します。</summary>
+        <returns>これは、<see cref="M:System.Windows.LocalValueEntry.op_Equality(System.Windows.LocalValueEntry,System.Windows.LocalValueEntry)" />実装の値を比較し、 <see cref="P:System.Windows.LocalValueEntry.Property" />、可能性のある値を比較し、<see cref="P:System.Windows.LocalValueEntry.Value" />です。 <see cref="P:System.Windows.LocalValueEntry.Property" />コンポーネント、<see cref="T:System.Windows.LocalValueEntry" />はビットごとの比較が必ずように値の型。 <see cref="P:System.Windows.LocalValueEntry.Value" />コンポーネント、この実装はビットごとの比較値の型である場合。 ローカルで設定されたプロパティが参照型を持つ、動作は遅延その型の等価性の判定機構を使用しているため、2 つの値の演算子を内部的に = = です。 既定では、なります値の参照の等価性であるため、全体の等価性<see cref="T:System.Windows.LocalValueEntry" />参照の等価性になります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LocalValueEntry.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.LocalValueEntry" /> のハッシュ コードを返します。</summary>
+        <returns>符号付き 32 ビット整数値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.LocalValueEntry obj1, System.Windows.LocalValueEntry obj2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.LocalValueEntry obj1, valuetype System.Windows.LocalValueEntry obj2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LocalValueEntry.op_Equality(System.Windows.LocalValueEntry,System.Windows.LocalValueEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj1" Type="System.Windows.LocalValueEntry" />
+        <Parameter Name="obj2" Type="System.Windows.LocalValueEntry" />
+      </Parameters>
+      <Docs>
+        <param name="obj1">比較する 1 番目のインスタンス。</param>
+        <param name="obj2">比較する 2 番目のインスタンス。</param>
+        <summary>指定した比較<see cref="T:System.Windows.LocalValueEntry" />インスタンスをそれらが同じであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、 <paramref name="obj1" /> <see cref="T:System.Windows.LocalValueEntry" />と等しい、 <paramref name="obj2" /> <see cref="T:System.Windows.LocalValueEntry" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Windows.LocalValueEntry.op_Equality%2A>実装の値を比較し、 <xref:System.Windows.LocalValueEntry.Property%2A>、可能性のある値を比較し、<xref:System.Windows.LocalValueEntry.Value%2A>です。 <xref:System.Windows.LocalValueEntry.Property%2A>コンポーネント、<xref:System.Windows.LocalValueEntry>は、常に値型では、この比較されるため、常に、ビットごとの値を比較します。 <xref:System.Windows.LocalValueEntry.Value%2A>コンポーネント、この実装はビットごとの比較値の型である場合。  
+  
+ ローカルで設定されたプロパティが参照型を持つ、動作は遅延その型の等価性の判定機構を使用しているため、`==`演算子で 2 つの値は内部的にします。 既定では、これは、値の参照の等価性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.LocalValueEntry obj1, System.Windows.LocalValueEntry obj2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.LocalValueEntry obj1, valuetype System.Windows.LocalValueEntry obj2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.LocalValueEntry.op_Inequality(System.Windows.LocalValueEntry,System.Windows.LocalValueEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj1" Type="System.Windows.LocalValueEntry" />
+        <Parameter Name="obj2" Type="System.Windows.LocalValueEntry" />
+      </Parameters>
+      <Docs>
+        <param name="obj1">比較する 1 番目のインスタンス。</param>
+        <param name="obj2">比較する 2 番目のインスタンス。</param>
+        <summary>指定した比較<see cref="T:System.Windows.LocalValueEnumerator" />インスタンスが異なるかどうかを決定します。</summary>
+        <returns>この実装の値を比較し、<see cref="P:System.Windows.LocalValueEntry.Property" />と<see cref="P:System.Windows.LocalValueEntry.Value" />のコンポーネント、<see cref="T:System.Windows.LocalValueEntry" />です。 <see cref="P:System.Windows.LocalValueEntry.Property" />コンポーネント、<see cref="T:System.Windows.LocalValueEntry" />は、常に値型では、この比較されるため、常にビットごとの比較できます。 <see cref="P:System.Windows.LocalValueEntry.Value" />コンポーネント、この実装はビットごとの比較値の型である場合。  
+  
+ ローカルで設定されたプロパティが参照型を持つ、動作は遅延その型の等価性の判定機構を使用しているため、<see langword="==" />演算子で 2 つの値は内部的にします。 既定では、これは、値の参照の等価性です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Property">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyProperty Property { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyProperty Property" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.LocalValueEntry.Property" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このエントリで表されるローカルに設定される依存関係プロパティの識別子を取得します。</summary>
+        <value>ローカルに設定される依存関係プロパティの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用してローカルに設定の識別子を照会する依存関係プロパティとそのメタデータを取得します。 この取得したメタデータは、プロパティとプロパティがプロパティ値の継承をサポートするかどうかの既定の初期値を含めることがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.LocalValueEntry.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカルに設定される依存関係プロパティの値を取得します。</summary>
+        <value>オブジェクトとしてローカルに設定される依存関係プロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値のより具体的な種類を確認するに、<xref:System.Windows.LocalValueEntry.Property%2A>現在の<xref:System.Windows.LocalValueEntry>取得とその<xref:System.Windows.DependencyProperty.PropertyType%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

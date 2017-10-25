@@ -1,0 +1,143 @@
+<Type Name="DataProviderNameConverter" FullName="System.Web.UI.Design.WebControls.DataProviderNameConverter">
+  <TypeSignature Language="C#" Value="public class DataProviderNameConverter : System.ComponentModel.StringConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataProviderNameConverter extends System.ComponentModel.StringConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.DataProviderNameConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.StringConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>.NET Framework (ADO.NET) プロバイダー名のユーザーが選択できるリスト ActiveX® Data オブジェクト (ADO) の作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataProviderNameConverter>クラスは、<xref:System.ComponentModel.TypeConverter>オブジェクトによって参照される通常の<xref:System.ComponentModel.TypeConverterAttribute>属性。  
+  
+ によって返される名、<xref:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValues%2A>メソッドは、ADO.NET プロバイダーから、<xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A>データ オブジェクトを作成するメソッド。  
+  
+ <xref:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValuesExclusive%2A>メソッドが返されるプロバイダー名が使用可能な値の排他的なリストかどうかを示す値を取得します。 <xref:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValuesSupported%2A>メソッドが返されるプロバイダー名は、一覧から選択できる値の標準セットかどうかを示す値を取得します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataProviderNameConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataProviderNameConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.DataProviderNameConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.DataProviderNameConverter>クラスによってクラスが参照されている場合、<xref:System.ComponentModel.TypeConverterAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">実装するオブジェクト、<see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターが変換を実行できるようにする型コンバーターにコンテキストに関する情報を提供します。</param>
+        <summary>使用可能な ActiveX® データ オブジェクト (ADO)、.NET Framework (ADO.NET) プロバイダー名の一覧を返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />利用可能な ADO.NET プロバイダーの名前を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValues%2A>メソッドを使用、<xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A>を返すメソッドを<xref:System.Data.DataTable>ADO.NET プロバイダーの名前を含むオブジェクト。 この変換<xref:System.Data.DataTable>を文字列配列に変換し、し、この配列を<xref:System.ComponentModel.TypeConverter.StandardValuesCollection>オブジェクト。  
+  
+ `context`でパラメーターを使用しない、<xref:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValues%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">実装するオブジェクト、<see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターが変換を実行できるようにする型コンバーターにコンテキストに関する情報を提供します。</param>
+        <summary>返された ActiveX® データ オブジェクト (ADO) の .NET Framework (ADO.NET) プロバイダー名が使用可能な値の排他的なリストかどうかを示す値を取得します。</summary>
+        <returns>常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスを派生する場合、<xref:System.Web.UI.Design.WebControls.DataProviderNameConverter>クラスし、オーバーライド、 <xref:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValues%2A> ADO.NET プロバイダーの名前の排他的なリストを返すメソッドをオーバーライドも、<xref:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValuesExclusive%2A>を返すメソッドを`true`プロバイダー名リストが排他的な場合です。  
+  
+ `context`でパラメーターを使用しない、<xref:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValuesExclusive%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">実装するオブジェクト、<see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターが変換を実行できるようにする型コンバーターにコンテキストに関する情報を提供します。</param>
+        <summary>このオブジェクトが一覧から選択できる、.NET Framework (ADO.NET) プロバイダー名の ActiveX® Data オブジェクト (ADO) の標準セットを返すかどうかを示す値を取得します。</summary>
+        <returns>常に <see langword="true" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `context`でパラメーターを使用しない、<xref:System.Web.UI.Design.WebControls.DataProviderNameConverter.GetStandardValuesSupported%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

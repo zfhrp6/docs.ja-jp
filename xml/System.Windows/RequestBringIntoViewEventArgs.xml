@@ -1,0 +1,110 @@
+<Type Name="RequestBringIntoViewEventArgs" FullName="System.Windows.RequestBringIntoViewEventArgs">
+  <TypeSignature Language="C#" Value="public class RequestBringIntoViewEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RequestBringIntoViewEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.RequestBringIntoViewEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.FrameworkElement.RequestBringIntoView" />ルーティングされたイベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FrameworkElement.RequestBringIntoView?displayProperty=nameWithType>を呼び出すと、要素によってイベントが生成<xref:System.Windows.FrameworkElement.BringIntoView%2A>その要素から。 一般に、このルーティングされたイベントは、ソースでは処理されません。 スクロール可能な領域を実装していない中間クラスまたはコンテンツをクリップする類似する概念は、イベントを処理する必要があります。  イベントは、スクロール可能な領域を実装するか、それ以外の場合を指定する親要素を許可する必要があります<xref:System.Windows.UIElement.ClipToBounds%2A>`false`です。 このような親要素は、通常のクラス処理を提供、<xref:System.Windows.FrameworkElement.RequestBringIntoView>は、必要なレンダリング ロジックが指定された要素は、それに表示可能なクリップ領域内を要求したときに発生するイベントです。  
+  
+ コンテンツの要素には、イベントがそのコンテンツ ホストにより発生する可能性があります (呼び出しを介して<xref:System.Windows.FrameworkContentElement.BringIntoView%2A>と発生<xref:System.Windows.FrameworkElement.RequestBringIntoView?displayProperty=nameWithType>コンテンツ ホストから)。 同様に、要求内に収めるビュー、ヘルパー メソッドを使用する論理ツリー要素<xref:System.Windows.LogicalTreeHelper.BringIntoView%2A?displayProperty=nameWithType>です。  
+  
+ A<xref:System.Windows.Controls.ListBox>関連ですが異なるメソッドを実装する<xref:System.Windows.Controls.ListBox.ScrollIntoView%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.RequestBringIntoViewEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">型固有の方法で呼び出すジェネリック ハンドラー。</param>
+        <param name="genericTarget">ハンドラーを呼び出すターゲット。</param>
+        <summary>イベントのシステムの効率を高めることができます、型固有の方法でイベント ハンドラーを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、ジェネリック ハンドラーをキャスト、<xref:System.Windows.RequestBringIntoViewEventHandler>してそれを呼び出します。 この実装パターンとその理由の詳細については、次を参照してください。<xref:System.Windows.RoutedEventArgs.InvokeEventHandler%2A>と[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetObject">
+      <MemberSignature Language="C#" Value="public System.Windows.DependencyObject TargetObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyObject TargetObject" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.RequestBringIntoViewEventArgs.TargetObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示、イベントに応答できるようにするオブジェクトを取得します。</summary>
+        <value>呼び出したオブジェクト<see cref="M:System.Windows.FrameworkElement.BringIntoView" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオブジェクトは通常、同じオブジェクトによって返される<xref:System.Windows.RoutedEventArgs.Source%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetRect">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect TargetRect { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect TargetRect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.RequestBringIntoViewEventArgs.TargetRect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示できるようにするオブジェクトの座標空間内の四角形の領域を取得します。</summary>
+        <value>要求された四角形領域です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の署名<xref:System.Windows.FrameworkElement.BringIntoView%2A>が呼び出されたイベントを発生させる対象の四角形を指定して、このプロパティがあります、<xref:System.Windows.Rect.Empty%2A>の値、<xref:System.Windows.Rect>構造体。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

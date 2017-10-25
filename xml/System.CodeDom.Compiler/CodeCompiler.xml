@@ -1,0 +1,658 @@
+<Type Name="CodeCompiler" FullName="System.CodeDom.Compiler.CodeCompiler">
+  <TypeSignature Language="C#" Value="public abstract class CodeCompiler : System.CodeDom.Compiler.CodeGenerator, System.CodeDom.Compiler.ICodeCompiler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CodeCompiler extends System.CodeDom.Compiler.CodeGenerator implements class System.CodeDom.Compiler.ICodeCompiler" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.CodeCompiler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.Compiler.CodeGenerator</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.CodeDom.Compiler.ICodeCompiler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>実装例を提供、<see cref="T:System.CodeDom.Compiler.ICodeCompiler" />インターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.CodeCompiler>コード ジェネレーターをコードにコンパイル関数を提供するためにから派生させるための便利なユーティリティの基本クラスです。  
+  
+> [!NOTE]
+>  このクラスには、リンク確認要求し、すべてのメンバーに適用されるクラス レベルの継承確認要求が含まれています。 A<xref:System.Security.SecurityException>直前の呼び出し元または派生クラスのいずれかに完全信頼アクセス許可がない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CodeCompiler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.Compiler.CodeCompiler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CmdArgsFromParameters">
+      <MemberSignature Language="C#" Value="protected abstract string CmdArgsFromParameters (System.CodeDom.Compiler.CompilerParameters options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string CmdArgsFromParameters(class System.CodeDom.Compiler.CompilerParameters options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.CmdArgsFromParameters(System.CodeDom.Compiler.CompilerParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すです。</param>
+        <summary>指定された対象から、コンパイラに渡されるコマンドの引数を取得<see cref="T:System.CodeDom.Compiler.CompilerParameters" />です。</summary>
+        <returns>コマンドの引数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompilerName">
+      <MemberSignature Language="C#" Value="protected abstract string CompilerName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CompilerName" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeCompiler.CompilerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行可能ファイル、コンパイラの名前を取得します。</summary>
+        <value>コンパイラの実行可能ファイルの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コンパイラを呼び出す実行可能ファイルの名前を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileExtension">
+      <MemberSignature Language="C#" Value="protected abstract string FileExtension { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileExtension" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeCompiler.FileExtension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース ファイルを使用するファイル名拡張子を取得します。</summary>
+        <value>ソース ファイルを使用するファイル名拡張子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コンパイルされているソース ファイルのファイル名拡張子を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromDom">
+      <MemberSignature Language="C#" Value="protected virtual System.CodeDom.Compiler.CompilerResults FromDom (System.CodeDom.Compiler.CompilerParameters options, System.CodeDom.CodeCompileUnit e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults FromDom(class System.CodeDom.Compiler.CompilerParameters options, class System.CodeDom.CodeCompileUnit e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.FromDom(System.CodeDom.Compiler.CompilerParameters,System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="e" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="e">A<see cref="T:System.CodeDom.CodeCompileUnit" />をコンパイルするソースを示すオブジェクト。</param>
+        <summary>指定されたオプションを使用して指定したコンパイル単位をコンパイルし、コンパイルから結果を返します。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FromDomBatch">
+      <MemberSignature Language="C#" Value="protected virtual System.CodeDom.Compiler.CompilerResults FromDomBatch (System.CodeDom.Compiler.CompilerParameters options, System.CodeDom.CodeCompileUnit[] ea);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults FromDomBatch(class System.CodeDom.Compiler.CompilerParameters options, class System.CodeDom.CodeCompileUnit[] ea) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.FromDomBatch(System.CodeDom.Compiler.CompilerParameters,System.CodeDom.CodeCompileUnit[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="ea" Type="System.CodeDom.CodeCompileUnit[]" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="ea">配列<see cref="T:System.CodeDom.CodeCompileUnit" />をコンパイルするソースを示すオブジェクト。</param>
+        <summary>指定されたオプションを使用して指定したコンパイル単位をコンパイルし、コンパイルから結果を返します。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="ea" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連付けられた列挙体は、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFile">
+      <MemberSignature Language="C#" Value="protected virtual System.CodeDom.Compiler.CompilerResults FromFile (System.CodeDom.Compiler.CompilerParameters options, string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults FromFile(class System.CodeDom.Compiler.CompilerParameters options, string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.FromFile(System.CodeDom.Compiler.CompilerParameters,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="fileName">コンパイルするファイルの名前。</param>
+        <summary>指定されたオプションを使用して指定されたファイルをコンパイルし、コンパイルの結果を返します。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="fileName" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FromFileBatch">
+      <MemberSignature Language="C#" Value="protected virtual System.CodeDom.Compiler.CompilerResults FromFileBatch (System.CodeDom.Compiler.CompilerParameters options, string[] fileNames);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults FromFileBatch(class System.CodeDom.Compiler.CompilerParameters options, string[] fileNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.FromFileBatch(System.CodeDom.Compiler.CompilerParameters,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="fileNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="fileNames">コンパイルするファイルのファイル名を示す文字列の配列。</param>
+        <summary>指定されたオプションを使用して、指定されたファイルをコンパイルし、コンパイルから結果を返します。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="fileNames" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FromSource">
+      <MemberSignature Language="C#" Value="protected virtual System.CodeDom.Compiler.CompilerResults FromSource (System.CodeDom.Compiler.CompilerParameters options, string source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults FromSource(class System.CodeDom.Compiler.CompilerParameters options, string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.FromSource(System.CodeDom.Compiler.CompilerParameters,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="source">コンパイルするソース コードの文字列。</param>
+        <summary>指定されたオプションを使用して、指定されたソース コード文字列をコンパイルし、コンパイルすることで、結果を返します。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FromSourceBatch">
+      <MemberSignature Language="C#" Value="protected virtual System.CodeDom.Compiler.CompilerResults FromSourceBatch (System.CodeDom.Compiler.CompilerParameters options, string[] sources);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults FromSourceBatch(class System.CodeDom.Compiler.CompilerParameters options, string[] sources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.FromSourceBatch(System.CodeDom.Compiler.CompilerParameters,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="sources" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="sources">コンパイルするソース コードを含む文字列の配列。</param>
+        <summary>指定されたオプションを使用して指定されたソース コードの文字列をコンパイルし、コンパイルから結果を返します。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="sources" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponseFileCmdArgs">
+      <MemberSignature Language="C#" Value="protected virtual string GetResponseFileCmdArgs (System.CodeDom.Compiler.CompilerParameters options, string cmdArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetResponseFileCmdArgs(class System.CodeDom.Compiler.CompilerParameters options, string cmdArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.GetResponseFileCmdArgs(System.CodeDom.Compiler.CompilerParameters,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="cmdArgs" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="cmdArgs">コマンド引数文字列。</param>
+        <summary>応答ファイルを生成するコンパイラを呼び出すときに使用するコマンド引数を取得します。</summary>
+        <returns>応答ファイルの生成に使用するコマンドの引数または<see langword="null" />応答ファイルの引数がない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JoinStringArray">
+      <MemberSignature Language="C#" Value="protected static string JoinStringArray (string[] sa, string separator);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string JoinStringArray(string[] sa, string separator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.JoinStringArray(System.String[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sa" Type="System.String[]" />
+        <Parameter Name="separator" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sa">結合する文字列の配列。</param>
+        <param name="separator">使用する区切り記号。</param>
+        <summary>指定した文字列配列を結合します。</summary>
+        <returns>連結された文字列。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessCompilerOutputLine">
+      <MemberSignature Language="C#" Value="protected abstract void ProcessCompilerOutputLine (System.CodeDom.Compiler.CompilerResults results, string line);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ProcessCompilerOutputLine(class System.CodeDom.Compiler.CompilerResults results, string line) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.ProcessCompilerOutputLine(System.CodeDom.Compiler.CompilerResults,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="results" Type="System.CodeDom.Compiler.CompilerResults" />
+        <Parameter Name="line" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="results">A<see cref="T:System.CodeDom.Compiler.CompilerResults" />コンパイルの結果を示すです。</param>
+        <param name="line">処理対象の行。</param>
+        <summary>指定された対象から指定した行を処理<see cref="T:System.CodeDom.Compiler.CompilerResults" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromDom">
+      <MemberSignature Language="C#" Value="System.CodeDom.Compiler.CompilerResults ICodeCompiler.CompileAssemblyFromDom (System.CodeDom.Compiler.CompilerParameters options, System.CodeDom.CodeCompileUnit e);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromDom(class System.CodeDom.Compiler.CompilerParameters options, class System.CodeDom.CodeCompileUnit e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.System#CodeDom#Compiler#ICodeCompiler#CompileAssemblyFromDom(System.CodeDom.Compiler.CompilerParameters,System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="e" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="e">A<see cref="T:System.CodeDom.CodeCompileUnit" />をコンパイルするソースを示すです。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromDom(System.CodeDom.Compiler.CompilerParameters,System.CodeDom.CodeCompileUnit)" />」をご覧ください。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.CodeCompiler> のインスタンスが <xref:System.CodeDom.Compiler.ICodeCompiler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連付けられた列挙体は、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromDomBatch">
+      <MemberSignature Language="C#" Value="System.CodeDom.Compiler.CompilerResults ICodeCompiler.CompileAssemblyFromDomBatch (System.CodeDom.Compiler.CompilerParameters options, System.CodeDom.CodeCompileUnit[] ea);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromDomBatch(class System.CodeDom.Compiler.CompilerParameters options, class System.CodeDom.CodeCompileUnit[] ea) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.System#CodeDom#Compiler#ICodeCompiler#CompileAssemblyFromDomBatch(System.CodeDom.Compiler.CompilerParameters,System.CodeDom.CodeCompileUnit[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="ea" Type="System.CodeDom.CodeCompileUnit[]" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="ea">配列<see cref="T:System.CodeDom.CodeCompileUnit" />をコンパイルするソースを示すオブジェクト。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromDomBatch(System.CodeDom.Compiler.CompilerParameters,System.CodeDom.CodeCompileUnit[])" />」をご覧ください。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.CodeCompiler> のインスタンスが <xref:System.CodeDom.Compiler.ICodeCompiler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連付けられた列挙体は、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFile">
+      <MemberSignature Language="C#" Value="System.CodeDom.Compiler.CompilerResults ICodeCompiler.CompileAssemblyFromFile (System.CodeDom.Compiler.CompilerParameters options, string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFile(class System.CodeDom.Compiler.CompilerParameters options, string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.System#CodeDom#Compiler#ICodeCompiler#CompileAssemblyFromFile(System.CodeDom.Compiler.CompilerParameters,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="fileName">コンパイルするファイルの名前。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFile(System.CodeDom.Compiler.CompilerParameters,System.String)" />」をご覧ください。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.CodeCompiler> のインスタンスが <xref:System.CodeDom.Compiler.ICodeCompiler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch">
+      <MemberSignature Language="C#" Value="System.CodeDom.Compiler.CompilerResults ICodeCompiler.CompileAssemblyFromFileBatch (System.CodeDom.Compiler.CompilerParameters options, string[] fileNames);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(class System.CodeDom.Compiler.CompilerParameters options, string[] fileNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.System#CodeDom#Compiler#ICodeCompiler#CompileAssemblyFromFileBatch(System.CodeDom.Compiler.CompilerParameters,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="fileNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="fileNames">コンパイルするファイルの名前を示す文字列の配列。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromFileBatch(System.CodeDom.Compiler.CompilerParameters,System.String[])" />」をご覧ください。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.CodeCompiler> のインスタンスが <xref:System.CodeDom.Compiler.ICodeCompiler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromSource">
+      <MemberSignature Language="C#" Value="System.CodeDom.Compiler.CompilerResults ICodeCompiler.CompileAssemblyFromSource (System.CodeDom.Compiler.CompilerParameters options, string source);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromSource(class System.CodeDom.Compiler.CompilerParameters options, string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.System#CodeDom#Compiler#ICodeCompiler#CompileAssemblyFromSource(System.CodeDom.Compiler.CompilerParameters,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="source">コンパイルするソース コードを示す文字列です。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromSource(System.CodeDom.Compiler.CompilerParameters,System.String)" />」をご覧ください。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.CodeCompiler> のインスタンスが <xref:System.CodeDom.Compiler.ICodeCompiler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromSourceBatch">
+      <MemberSignature Language="C#" Value="System.CodeDom.Compiler.CompilerResults ICodeCompiler.CompileAssemblyFromSourceBatch (System.CodeDom.Compiler.CompilerParameters options, string[] sources);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromSourceBatch(class System.CodeDom.Compiler.CompilerParameters options, string[] sources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeCompiler.System#CodeDom#Compiler#ICodeCompiler#CompileAssemblyFromSourceBatch(System.CodeDom.Compiler.CompilerParameters,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.CodeDom.Compiler.CompilerParameters" />
+        <Parameter Name="sources" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラ オプションを示すオブジェクト。</param>
+        <param name="sources">コンパイルするソース コードを示す文字列の配列。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.CodeDom.Compiler.ICodeCompiler.CompileAssemblyFromSourceBatch(System.CodeDom.Compiler.CompilerParameters,System.String[])" />」をご覧ください。</summary>
+        <returns>コンパイルの結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.CodeDom.Compiler.CodeCompiler> のインスタンスが <xref:System.CodeDom.Compiler.ICodeCompiler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="options" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コンパイルします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

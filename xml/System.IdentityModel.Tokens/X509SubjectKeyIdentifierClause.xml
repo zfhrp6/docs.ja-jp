@@ -1,0 +1,199 @@
+<Type Name="X509SubjectKeyIdentifierClause" FullName="System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause">
+  <TypeSignature Language="C#" Value="public class X509SubjectKeyIdentifierClause : System.IdentityModel.Tokens.BinaryKeyIdentifierClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509SubjectKeyIdentifierClause extends System.IdentityModel.Tokens.BinaryKeyIdentifierClause" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.BinaryKeyIdentifierClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>X.509 証明書のサブジェクト キー識別子の拡張を使用する <see cref="T:System.IdentityModel.Tokens.X509SecurityToken" /> セキュリティ トークンを識別するキー識別子句を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、カスタム セキュリティ トークン サービスが作成される場合を除いて、<xref:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause> を使用する必要はありません。 セキュリティ トークン サービスがセキュリティ トークンを返した場合、発行されたセキュリティ トークンには、結び付けられているセキュリティ トークンまたは結び付けられていないセキュリティ トークンへの参照が含まれます。 結び付けられている参照は、SOAP メッセージのセキュリティ ヘッダーに含まれるセキュリティ トークンを参照し、結び付けられていない参照は、SOAP メッセージのセキュリティ ヘッダーに含まれていないセキュリティ トークンを参照します。 これらの参照は、通常、発行されたセキュリティ トークンの信頼性を確認します。 <xref:System.IdentityModel.Tokens.X509ThumbprintKeyIdentifierClause> クラスを使用して、X.509 証明書のサブジェクト キー識別子の拡張を使用する <xref:System.IdentityModel.Tokens.X509SecurityToken> セキュリティ トークンを参照します。 <xref:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause.GetX509SubjectKeyIdentifier%2A> メソッドは、サブジェクト キー識別子の拡張を返します。  
+  
+ [!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、<xref:System.IdentityModel.Tokens.X509SecurityToken> セキュリティ トークンの次の種類のセキュリティ トークンの参照をサポートします。  
+  
+-   <xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause>  
+  
+-   <xref:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause>  
+  
+-   <xref:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause>  
+  
+ <xref:System.IdentityModel.Tokens.X509ThumbprintKeyIdentifierClause>  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509SubjectKeyIdentifierClause (byte[] certificateSubject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] certificateSubject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ski" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="certificateSubject">To be added.</param>
+        <summary>指定したサブジェクト キー識別句を使用して、<see cref="T:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificateSubject" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanCreateFrom">
+      <MemberSignature Language="C#" Value="public static bool CanCreateFrom (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool CanCreateFrom(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause.CanCreateFrom(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">X.509 証明書を含む <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。</param>
+        <summary>指定した X.509 証明書に対してキー識別句を作成できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" /> に対してキー識別句を作成できる場合は <paramref name="certificate" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キー識別句は、`certificate` パラメーターに <xref:System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension> 拡張が含まれている場合に作成できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetX509SubjectKeyIdentifier">
+      <MemberSignature Language="C#" Value="public byte[] GetX509SubjectKeyIdentifier ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetX509SubjectKeyIdentifier() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause.GetX509SubjectKeyIdentifier" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サブジェクト キー識別子を取得します。</summary>
+        <returns>サブジェクト キー識別子を含む <see cref="T:System.Byte" /> の配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public bool Matches (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Matches(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause.Matches(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">比較する X.509 証明書を含む <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。</param>
+        <summary>このインスタンスのキー識別子が、指定された X.509 証明書のキー識別子に等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が現在のインスタンスと同じサブジェクト キー識別子を保持している場合は <paramref name="certificate" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause.Matches%2A> メソッドは、2 つの X.509 証明書の <xref:System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension> 拡張を比較します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause.ToString%2A> メソッドは、サブジェクト キー識別子を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryCreateFrom">
+      <MemberSignature Language="C#" Value="public static bool TryCreateFrom (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, out System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause clause);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryCreateFrom(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, [out] class System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause&amp; clause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause.TryCreateFrom(System.Security.Cryptography.X509Certificates.X509Certificate2,System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">キー識別子句を作成する <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。</param>
+        <param name="clause">To be added.</param>
+        <summary>指定した X.509 証明書を使用して、キー識別子句を作成します。</summary>
+        <returns>
+          指定した X.509 証明書に対してキー識別句を作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause> キー識別句は、X.509 証明書にサブジェクト キー識別句が含まれている場合に作成できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

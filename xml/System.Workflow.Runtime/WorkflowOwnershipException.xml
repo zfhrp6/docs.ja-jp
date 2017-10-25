@@ -1,0 +1,324 @@
+<Type Name="WorkflowOwnershipException" FullName="System.Workflow.Runtime.WorkflowOwnershipException">
+  <TypeSignature Language="C#" Value="public class WorkflowOwnershipException : Exception" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit WorkflowOwnershipException extends System.Exception" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.WorkflowOwnershipException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー ランタイム エンジンが、ワークフロー ランタイム エンジンの別のインスタンスによって現在読み込まれているワークフロー インスタンスを読み込もうとしたときにスローされる例外。 さらに、ワークフローの読み込み時に指定された所有権タイムアウトが期限切れになった後にワークフロー ランタイム エンジンがワークフローを保存しようとしたときも、この例外がスローされます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.WorkflowOwnershipException> は、複数のアプリケーションが同一データベースにアクセスできることをサポートする永続性サービスによって使用されます。 こうした環境では、ワークフロー ランタイムのインスタンスが読み込もうとするワークフローが、ワークフロー ランタイム エンジンの別のインスタンスによって既に読み込まれている場合があります。 たとえば <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> クラスは、この状況になると <xref:System.Workflow.Runtime.WorkflowOwnershipException> をスローします。  
+  
+ <xref:System.Workflow.Runtime.WorkflowOwnershipException> をスローする永続性サービスを実装する場合は、例外をスローする前に、クラスの適切なコンストラクターを使用するか <xref:System.Guid> プロパティを設定することによって、例外が発生したワークフロー インスタンスの <xref:System.Workflow.Runtime.WorkflowOwnershipException.InstanceId%2A> を指定する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowOwnershipException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowOwnershipException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.WorkflowOwnershipException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、新しいインスタンスの <xref:System.Exception.Message%2A> プロパティを初期化して、その値として、現在のシステムのカルチャを反映した、エラーを説明するシステム提供のメッセージを指定します。  
+  
+ <xref:System.Workflow.Runtime.WorkflowOwnershipException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|システム提供のローカライズされた説明。|  
+|<xref:System.Workflow.Runtime.WorkflowOwnershipException.InstanceId%2A>|空の <xref:System.Guid>。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowOwnershipException (Guid instanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowOwnershipException.#ctor(System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">この例外が発生したワークフロー インスタンスの <see cref="T:System.Guid" />。</param>
+        <summary>指定したワークフロー インスタンスの <see cref="T:System.Workflow.Runtime.WorkflowOwnershipException" /> を使用して、<see cref="T:System.Guid" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `instanceId` は、ワークフロー インスタンスの <xref:System.Workflow.Runtime.WorkflowInstance.InstanceId%2A?displayProperty=nameWithType> プロパティに相当します。 新しいインスタンスの <xref:System.Exception.Message%2A> プロパティが初期化され、その値として、現在のシステムのカルチャを反映した、エラーを説明するシステム提供のメッセージが指定されます。  
+  
+ <xref:System.Workflow.Runtime.WorkflowOwnershipException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|システム提供のローカライズされた説明。|  
+|<xref:System.Workflow.Runtime.WorkflowOwnershipException.InstanceId%2A>|<xref:System.Guid> で指定された、この例外が発生したワークフロー インスタンスの `instanceId`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowOwnershipException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowOwnershipException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.Workflow.Runtime.WorkflowOwnershipException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `message` パラメーターの内容は、ユーザーが理解できる内容にします。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。 このコンストラクターを使用する場合は、例外をスローする前に <xref:System.Workflow.Runtime.WorkflowOwnershipException.InstanceId%2A> を明示的に設定する必要があります。  
+  
+ <xref:System.Workflow.Runtime.WorkflowOwnershipException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+|<xref:System.Workflow.Runtime.WorkflowOwnershipException.InstanceId%2A>|空の <xref:System.Guid>。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowOwnershipException (Guid instanceId, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowOwnershipException.#ctor(System.Guid,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">この例外が発生したワークフロー インスタンスの <see cref="T:System.Guid" />。</param>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>指定したワークフロー インスタンスの <see cref="T:System.Workflow.Runtime.WorkflowOwnershipException" /> および指定したエラー メッセージを使用して、<see cref="T:System.Guid" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `instanceId` は、ワークフロー インスタンスの <xref:System.Workflow.Runtime.WorkflowInstance.InstanceId%2A?displayProperty=nameWithType> プロパティに相当します。 `message` パラメーターの内容は、ユーザーが理解できる内容にします。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ <xref:System.Workflow.Runtime.WorkflowOwnershipException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+|<xref:System.Workflow.Runtime.WorkflowOwnershipException.InstanceId%2A>|<xref:System.Guid> で指定された、この例外が発生したワークフロー インスタンスの `instanceId`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WorkflowOwnershipException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowOwnershipException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされる例外に関するシリアル化されたオブジェクト データを保持する <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先に関するコンテキスト情報を含んでいる <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary>シリアル化されたデータを使用して WorkflowOwnershipException クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。  
+  
+ 詳細については、「XML シリアル化および SOAP シリアル化」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowOwnershipException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowOwnershipException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターが null 参照ではありません (<see langword="Nothing" /> Visual Basic で)、内部例外を処理する catch ブロックで現在の例外が発生します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.Workflow.Runtime.WorkflowOwnershipException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`innerException` パラメーターによって内部例外値がコンストラクターに渡されなかった場合は、null 参照 (Visual Basic では Nothing) を返します。 `message` パラメーターの内容は、ユーザーが理解できる内容にします。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。 このコンストラクターを使用する場合は、例外をスローする前に <xref:System.Workflow.Runtime.WorkflowOwnershipException.InstanceId%2A> を明示的に設定する必要があります。  
+  
+ <xref:System.Workflow.Runtime.WorkflowOwnershipException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+|<xref:System.Workflow.Runtime.WorkflowOwnershipException.InstanceId%2A>|空の <xref:System.Guid>。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowOwnershipException (Guid instanceId, string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowOwnershipException.#ctor(System.Guid,System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">この例外が発生したワークフロー インスタンスの <see cref="T:System.Guid" />。</param>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターが null 参照ではありません (<see langword="Nothing" /> Visual Basic で)、内部例外を処理する catch ブロックで現在の例外が発生します。</param>
+        <summary>指定したワークフロー インスタンスの <see cref="T:System.Workflow.Runtime.WorkflowOwnershipException" />、指定したエラー メッセージ、およびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.Guid" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`innerException` パラメーターによって内部例外値がコンストラクターに渡されなかった場合は、null 参照 (Visual Basic では Nothing) を返します。  
+  
+ `instanceId` は、ワークフロー インスタンスの <xref:System.Workflow.Runtime.WorkflowInstance.InstanceId%2A?displayProperty=nameWithType> プロパティに相当します。 `message` パラメーターの内容は、ユーザーが理解できる内容にします。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ <xref:System.Workflow.Runtime.WorkflowOwnershipException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+|<xref:System.Workflow.Runtime.WorkflowOwnershipException.InstanceId%2A>|<xref:System.Guid> で指定された、この例外が発生したワークフロー インスタンスの `instanceId`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowOwnershipException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされる例外に関するシリアル化されたオブジェクト データを保持する <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先に関するコンテキスト情報を含んでいる <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary>この例外に関連したワークフロー インスタンスの <see cref="T:System.Runtime.Serialization.SerializationInfo" />、および例外に関する他の追加情報を使用して、<see cref="T:System.Guid" /> オブジェクトを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowOwnershipException.GetObjectData%2A> は、シリアル化する対象のすべての例外オブジェクト データを使用して、<xref:System.Runtime.Serialization.SerializationInfo> を設定します。 逆シリアル化中に、ストリームで転送された <xref:System.Runtime.Serialization.SerializationInfo> から例外オブジェクトが再構成されます。  
+  
+ 詳細については、「XML シリアル化および SOAP シリアル化」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public Guid InstanceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.WorkflowOwnershipException.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外がスローされたワークフロー インスタンスの <see cref="T:System.Guid" /> を取得します。</summary>
+        <value>
+          <see cref="P:System.Workflow.Runtime.WorkflowOwnershipException.InstanceId" /> は、ワークフロー インスタンスの <see cref="P:System.Workflow.Runtime.WorkflowInstance.InstanceId" /> プロパティに相当します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

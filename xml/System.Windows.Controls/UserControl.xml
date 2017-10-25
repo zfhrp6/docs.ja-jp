@@ -1,0 +1,80 @@
+<Type Name="UserControl" FullName="System.Windows.Controls.UserControl">
+  <TypeSignature Language="C#" Value="public class UserControl : System.Windows.Controls.ContentControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi UserControl extends System.Windows.Controls.ContentControl" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.UserControl" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.ContentControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールを作成する簡単な方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールの[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]豊富なコンテンツ、スタイル、トリガー、およびテンプレートをサポートします。 これらの機能では、多くの場合、新しいコントロールを作成することがなくカスタム一貫性のあるエクスペリエンスを作成できます。 詳しくは、「 [スタイルとテンプレート](~/docs/framework/wpf/controls/styling-and-templating.md)」をご覧ください。  
+  
+ 派生するクラスを作成する最も簡単な方法は、新しいコントロールを作成する必要がある場合<xref:System.Windows.Controls.UserControl>です。 これを行う前に、コントロールがテンプレートをサポートしないと、そのため、複雑なカスタマイズはサポートされていませんを検討してください。 ただしから派生する<xref:System.Windows.Controls.UserControl>は適切なモデル場合は、そのアプリケーションを構築する方法のような既存の要素を追加することで、コントロールをビルドする場合に複雑なカスタマイズをサポートする必要はありません。 (から派生して、コントロールでテンプレートを使用する場合は、<xref:System.Windows.Controls.Control>代わりにします)。コントロールを作成するための異なるモデルの詳細については、次を参照してください。[コントロールの作成の概要](~/docs/framework/wpf/controls/control-authoring-overview.md)です。  
+  
+ A<xref:System.Windows.Controls.UserControl>は、 <xref:System.Windows.Controls.ContentControl>、任意の型 (文字列、画像、パネルなど) の 1 つのオブジェクトに含めることを意味します。 詳細については、<xref:System.Windows.Controls.ContentControl> クラスを参照してください。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+   
+  
+## Examples  
+ 次の例は、単純なを作成する方法を示します`NumericUpDown`<xref:System.Windows.Controls.UserControl>です。  
+  
+ [!code-xaml[UserControlNumericUpDown#Markup](~/samples/snippets/csharp/VS_Snippets_Wpf/UserControlNumericUpDown/CSharp/NumericUpDown.xaml#markup)]  
+  
+ このロジックを次に示します<xref:System.Windows.Controls.UserControl>:  
+  
+ [!code-csharp[UserControlNumericUpDown#CodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/UserControlNumericUpDown/CSharp/NumericUpDown.xaml.cs#codebehind)]
+ [!code-vb[UserControlNumericUpDown#CodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UserControlNumericUpDown/visualbasic/numericupdown.xaml.vb#codebehind)]  
+  
+ 詳しくは、「[コントロールの作成の概要](~/docs/framework/wpf/controls/control-authoring-overview.md)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.UserControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.UserControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.UserControl.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />この<see cref="T:System.Windows.Controls.UserControl" />です。</summary>
+        <returns>新しい<see cref="T:System.Windows.Automation.Peers.UserControlAutomationPeer" />この<see cref="T:System.Windows.Controls.UserControl" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

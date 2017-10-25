@@ -1,0 +1,411 @@
+<Type Name="Viewport2DVisual3D" FullName="System.Windows.Media.Media3D.Viewport2DVisual3D">
+  <TypeSignature Language="C#" Value="public sealed class Viewport2DVisual3D : System.Windows.Media.Media3D.Visual3D" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Viewport2DVisual3D extends System.Windows.Media.Media3D.Visual3D" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Media3D.Viewport2DVisual3D" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Media3D.Visual3D</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Visual")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定された 3-D ビューポートの境界内で 2 次元子を表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D>3-D オブジェクトに対話型の 2 次元のコンテンツを配置できます。 対応する、 <xref:System.Windows.Media.Media3D.Viewport3DVisual> 3-D 子を伴う 2 D visual であるクラスです。  
+  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D>.NET Framework version 3.5 で導入されました。  
+  
+   
+  
+## Examples  
+ 次の例では、3-D オブジェクトにボタン、2 次元のオブジェクトを配置する方法を示します。 設定する必要がある注意、<xref:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterial%2A>添付、マテリアルを配置している 2 D visual にするプロパティです。  
+  
+ [!code-xaml[Viewport2DVisual3DExample#Viewport3D](~/samples/snippets/csharp/VS_Snippets_Wpf/Viewport2DVisual3DExample/CS/window1.xaml#viewport3d)]  
+  
+ サンプル全体については、次を参照してください。 [3-D サンプル インタラクティブ 2-d](http://go.microsoft.com/fwlink/?LinkID=160007)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Viewport2DVisual3D ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Viewport2DVisual3D.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Media3D.Viewport2DVisual3D" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D.%23ctor%2A>.NET Framework version 3.5 で導入されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.CacheMode CacheMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.CacheMode CacheMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Viewport2DVisual3D.CacheMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.CacheMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のキャッシュされた表現、<see cref="T:System.Windows.Media.Media3D.Viewport2DVisual3D" />です。</summary>
+        <value>A<see cref="T:System.Windows.Media.CacheMode" />のキャッシュされた表現を保持する、<see cref="T:System.Windows.Media.Media3D.Viewport2DVisual3D" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Media.Media3D.Viewport2DVisual3D.CacheMode%2A>プロパティを表示するために時間がかかる場合がコンテンツのパフォーマンスを向上させる必要がある場合。 詳細については、「<xref:System.Windows.Media.BitmapCache>」を参照してください。  
+  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D>クラスが正しく 3-D 要素の 2-d コンテンツのサイズを変更するには、2-d に 3-D コンテンツを射影します。  
+  
+ キャッシュは常に設定するときに、適用される変換ではなく、要素のサイズに依存しているため、<xref:System.Windows.Media.CacheMode>プロパティ、最初に、コンテンツが表示される解像度で保存します。 これは、容量より大きなサイズには、キャッシュされた時点よりもアップ サンプルなっているためです。 このような状況を修正するには、ローカルのサイズ拡大は、2 D visual を設定して、<xref:System.Windows.FrameworkElement.Height%2A>または<xref:System.Windows.FrameworkElement.Width%2A>プロパティです。 また、増やすことができます、<xref:System.Windows.Media.BitmapCache.RenderAtScale%2A>で、<xref:System.Windows.Media.Media3D.Viewport2DVisual3D.CacheMode%2A>内容がわかりやすくするための許容レベルに達するまでします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CacheModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CacheModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.Viewport2DVisual3D.CacheModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.CacheMode" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Geometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Geometry3D Geometry { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Media3D.Geometry3D Geometry" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Geometry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Geometry3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定 3-D geometry この<see cref="T:System.Windows.Media.Media3D.Viewport2DVisual3D" />です。</summary>
+        <value>この 3 次元の geometry<see cref="T:System.Windows.Media.Media3D.Viewport2DVisual3D" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D.Geometry%2A>.NET Framework version 3.5 で導入されました。  
+  
+   
+  
+## Examples  
+ 次の例では、3-D オブジェクトの 2 次元のオブジェクトでは、ボタンを配置する方法を示します。  
+  
+ [!code-xaml[Viewport2DVisual3DExample#Viewport3D](~/samples/snippets/csharp/VS_Snippets_Wpf/Viewport2DVisual3DExample/CS/window1.xaml#viewport3d)]  
+  
+ サンプル全体については、次を参照してください。 [3-D サンプル インタラクティブ 2-d](http://go.microsoft.com/fwlink/?LinkID=160007)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeometryProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty GeometryProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty GeometryProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.Viewport2DVisual3D.GeometryProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Geometry" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D.GeometryProperty>.NET Framework version 3.5 で導入されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsVisualHostMaterial">
+      <MemberSignature Language="C#" Value="public static bool GetIsVisualHostMaterial (System.Windows.Media.Media3D.Material element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsVisualHostMaterial(class System.Windows.Media.Media3D.Material element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Viewport2DVisual3D.GetIsVisualHostMaterial(System.Windows.Media.Media3D.Material)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Media.Media3D.Material" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterial" />添付プロパティを指定した<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns><see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterial" />要素のプロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D.GetIsVisualHostMaterial%2A>.NET Framework version 3.5 で導入されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVisual3DChild">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Media3D.Visual3D GetVisual3DChild (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.Media3D.Visual3D GetVisual3DChild(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Viewport2DVisual3D.GetVisual3DChild(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Visual3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisualHostMaterialProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsVisualHostMaterialProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsVisualHostMaterialProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterialProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterial" /> 添付プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterialProperty>.NET Framework version 3.5 で導入されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Material">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Material Material { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Media3D.Material Material" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Material" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Material</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3d オブジェクトの外観を説明する資料を設定します。</summary>
+        <value>3d オブジェクトに対するマテリアル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する必要があります、<xref:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterial%2A>添付、マテリアルを配置している 2 D visual にするプロパティです。  
+  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D.Material%2A>.NET Framework version 3.5 で導入されました。  
+  
+   
+  
+## Examples  
+ 次の例はこのプロパティを設定し、また設定によって、2-d ビジュアル (ボタン) を格納する場所、マテリアルを指定する方法を示します、<xref:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterial%2A>添付プロパティ`true`:  
+  
+ [!code-xaml[Viewport2DVisual3DExample#Viewport3D](~/samples/snippets/csharp/VS_Snippets_Wpf/Viewport2DVisual3DExample/CS/window1.xaml#viewport3d)]  
+  
+ サンプル全体については、次を参照してください。 [3-D サンプル インタラクティブ 2-d](http://go.microsoft.com/fwlink/?LinkID=160007)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaterialProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaterialProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaterialProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.Viewport2DVisual3D.MaterialProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Material" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D.MaterialProperty>.NET Framework version 3.5 で導入されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsVisualHostMaterial">
+      <MemberSignature Language="C#" Value="public static void SetIsVisualHostMaterial (System.Windows.Media.Media3D.Material element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIsVisualHostMaterial(class System.Windows.Media.Media3D.Material element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.Viewport2DVisual3D.SetIsVisualHostMaterial(System.Windows.Media.Media3D.Material,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Media.Media3D.Material" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先となる要素。</param>
+        <param name="value">必要な<see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterial" />値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.IsVisualHostMaterial" />プロパティを指定した要素にアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D.SetIsVisualHostMaterial%2A>.NET Framework version 3.5 で導入されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visual">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Visual Visual { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Visual Visual" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Visual" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3d オブジェクトに配置される 2-d visual を設定します。</summary>
+        <value>3-D オブジェクトに配置されるビジュアル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアルが最初に適用され、 <xref:System.Windows.Media.VisualBrush>、3-D オブジェクトでこれを使用しています。  
+  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D.Visual%2A>.NET Framework version 3.5 で導入されました。  
+  
+   
+  
+## Examples  
+ 次の例では、3-D オブジェクトの 2 次元のオブジェクトでは、ボタンを配置する方法を示します。  
+  
+ [!code-xaml[Viewport2DVisual3DExample#Viewport3D](~/samples/snippets/csharp/VS_Snippets_Wpf/Viewport2DVisual3DExample/CS/window1.xaml#viewport3d)]  
+  
+ サンプル全体については、次を参照してください。 [3-D サンプル インタラクティブ 2-d](http://go.microsoft.com/fwlink/?LinkID=160007)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visual3DChildrenCount">
+      <MemberSignature Language="C#" Value="protected override int Visual3DChildrenCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Visual3DChildrenCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Visual3DChildrenCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VisualProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VisualProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.Viewport2DVisual3D.VisualProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.Viewport2DVisual3D.Visual" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.Viewport2DVisual3D.VisualProperty>.NET Framework version 3.5 で導入されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

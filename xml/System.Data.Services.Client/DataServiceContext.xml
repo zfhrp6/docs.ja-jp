@@ -1,0 +1,2436 @@
+<Type Name="DataServiceContext" FullName="System.Data.Services.Client.DataServiceContext">
+  <TypeSignature Language="C#" Value="public class DataServiceContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataServiceContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.DataServiceContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> は、データ サービスのランタイム コンテキストを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] はステートレスですが、<xref:System.Data.Services.Client.DataServiceContext> はステートレスではありません。 更新管理などの機能をサポートするために、クライアントでの状態は対話間で維持されます。 このクラスと、データ サービスへの特定の HTTP 要求を表す <xref:System.Data.Services.Client.DataServiceQuery> クラスが、クライアント ライブラリにおける 2 つの主要なクラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、サービス参照の追加ツールによって生成される <xref:System.Data.Services.Client.DataServiceContext> を使用して、すべての顧客を返すクエリを Northwind データ サービスに対して暗黙的に実行する方法を示します。 要求された `Customers` エンティティ セットの URI は、コンテキストによって自動的に決定されます。 クエリは、列挙が行われるときに暗黙的に実行されます。 完了したときに、Northwind データ サービスが作成された、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]です。  
+  
+ [!code-csharp[Astoria Northwind Client#GetAllCustomers](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getallcustomers)]
+ [!code-vb[Astoria Northwind Client#GetAllCustomers](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getallcustomers)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataServiceContext (Uri serviceRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri serviceRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceRoot" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="serviceRoot">データ サービスのルートを識別する絶対 URI。</param>
+        <summary>指定した <see cref="T:System.Data.Services.Client.DataServiceContext" /> を使用して、<paramref name="serviceRoot" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント ライブラリでは、`baseURI` がデータ サービスのルートを指す必要がありますが、その検証要求は発行しません。 `baseURI` がサービスのルートを特定しない場合、クライアント ライブラリの動作は未定義になります。  
+  
+ 末尾がスラッシュの URI は、末尾文字のない URI と同等です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serviceRoot" /> が null の場合。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="serviceRoot" /> が絶対 URI ではない場合。  
+  
+ または  
+  
+ <paramref name="serviceRoot" /> がクエリまたはクエリ フラグメントのない整形式 URI の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLink">
+      <MemberSignature Language="C#" Value="public void AddLink (object source, string sourceProperty, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddLink(object source, string sourceProperty, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.AddLink(System.Object,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="sourceProperty" Type="System.String" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">新しいリンクのソース オブジェクト。</param>
+        <param name="sourceProperty">関連オブジェクトを返すソース オブジェクトのナビゲーション プロパティの名前。</param>
+        <param name="target">新しいリンクによってソース オブジェクトに関連付けられたオブジェクト。</param>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> が追跡しているオブジェクトのセットに、指定されたリンクを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連するソース オブジェクトとターゲット オブジェクトの間に新しいリンクが存在することと、そのリンクが指定したソース プロパティで表されることを <xref:System.Data.Services.Client.DataServiceContext> に通知します。 <xref:System.Data.Services.Client.DataServiceContext> は、次に <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> を呼び出したときにデータ サービスに送信される新しく作成されたリンクのセットにこのリンクを追加します。  
+  
+ リンクは、一方向の関係があります。 アソシエーションは双方向であるため、一対一の関連付けに呼び出す必要がありますか<xref:System.Data.Services.Client.DataServiceContext.AddLink%2A>逆方向のリンクを作成するには、もう一度呼び出す必要があります、多対一の関連付けで<xref:System.Data.Services.Client.DataServiceContext.SetLink%2A>アソシエーションの「一」側への参照リンクを作成します。  
+  
+ ターゲット オブジェクトは、`sourceProperty` パラメーターで識別される型かその型のサブタイプである必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.Services.Client.DataServiceContext.AddLink%2A> メソッドおよび <xref:System.Data.Services.Client.DataServiceContext.SetLink%2A> メソッドを使用して、リレーションシップを定義するリンクを作成する方法を示します。 この例では、`Order_Details` オブジェクトのナビゲーション プロパティも明示的に設定されます。 この例では、<xref:System.Data.Services.Client.DataServiceContext>完了したときに作成される Northwind データ サービスに基づいて、サービス参照の追加ツールによって生成された、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]です。  
+  
+ [!code-csharp[Astoria Northwind Client#AddOrderDetailToOrder](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#addorderdetailtoorder)]
+ [!code-vb[Astoria Northwind Client#AddOrderDetailToOrder](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#addorderdetailtoorder)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" />、<paramref name="sourceProperty" />、または <paramref name="target" /> が null の場合。</exception>
+        <exception cref="T:System.InvalidOperationException">リンクが既に存在する場合。  
+  
+ または  
+  
+ <paramref name="source" /> または <paramref name="target" /> オブジェクトの状態が <see cref="F:System.Data.Services.Client.EntityStates.Detached" /> または <see cref="F:System.Data.Services.Client.EntityStates.Deleted" /> の場合。  
+  
+ または  
+  
+ <paramref name="sourceProperty" /> がコレクションではない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddObject">
+      <MemberSignature Language="C#" Value="public void AddObject (string entitySetName, object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddObject(string entitySetName, object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.AddObject(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entitySetName">リソースが追加されるエンティティ セットの名前。</param>
+        <param name="entity"><see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されるオブジェクト。</param>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> が追跡しているオブジェクトのセットに、指定されたオブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトは、<xref:System.Data.Services.Client.DataServiceContext> 状態で、<xref:System.Data.Services.Client.EntityStates.Added> の追跡セットに追加されます。 <xref:System.Data.Services.Client.DataServiceContext> は、次に <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> を呼び出したときに HTTP POST によってオブジェクトを挿入しようとします。 このメソッドは、指定されたエンティティに関連するオブジェクトを <xref:System.Data.Services.Client.DataServiceContext> に追加しません。 各オブジェクトは、<xref:System.Data.Services.Client.DataServiceContext.AddObject%2A> の別個の呼び出しで追加する必要があります。  
+  
+ メソッドでは、指定されたエンティティ セットが、データ サービスに関連付けられている検証されません、<xref:System.Data.Services.Client.DataServiceContext>を追加するために必要な追加のオブジェクトに必要なプロパティが含まれているかを指定した`entity set`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="entitySetName" /> または <paramref name="entity" /> が null の場合。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entitySetName" /> が空の場合。  
+  
+ または  
+  
+ <paramref name="entity" /> にキー プロパティが定義されていない場合。</exception>
+        <exception cref="T:System.InvalidOperationException">エンティティがコンテキストによって既に追跡されている場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRelatedObject">
+      <MemberSignature Language="C#" Value="public void AddRelatedObject (object source, string sourceProperty, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRelatedObject(object source, string sourceProperty, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.AddRelatedObject(System.Object,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="sourceProperty" Type="System.String" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">コンテキストによって追跡される親オブジェクト。</param>
+        <param name="sourceProperty">2 つのエンティティ間の関連付けに基づいて関連オブジェクトを返すナビゲーション プロパティの名前。</param>
+        <param name="target">追加される関連オブジェクト。</param>
+        <summary>関連オブジェクトをコンテキストに追加し、1 つの要求の 2 つのオブジェクト間のリレーションシップを定義するリンクを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.AddRelatedObject%2A>、<xref:System.Data.Services.Client.DataServiceContext.AddObject%2A>、<xref:System.Data.Services.Client.DataServiceContext.AddLink%2A> の 3 つのメソッドを呼び出す代わりに、<xref:System.Data.Services.Client.DataServiceContext.SetLink%2A> メソッドを呼び出して関連オブジェクトを追加できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyingChanges">
+      <MemberSignature Language="C#" Value="public bool ApplyingChanges { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ApplyingChanges" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.ApplyingChanges" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> が追跡対象オブジェクトに現在変更を適用しているかどうかを示す値を取得します。</summary>
+        <value>返します<see langword="true" />変更が適用されている; ときに、それ以外の場合を返します<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachLink">
+      <MemberSignature Language="C#" Value="public void AttachLink (object source, string sourceProperty, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AttachLink(object source, string sourceProperty, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.AttachLink(System.Object,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="sourceProperty" Type="System.String" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">新しいリンクのソース オブジェクト。</param>
+        <param name="sourceProperty">ソース オブジェクトとターゲット オブジェクト間のリンクを表す、ソース オブジェクトのプロパティの名前。</param>
+        <param name="target">この呼び出しで指定されたソース オブジェクトにバインドされるリンク内のターゲット オブジェクト。 ターゲット オブジェクトは、ソース プロパティで識別される型かサブタイプである必要があります。</param>
+        <summary>エンティティ オブジェクト間のリレーションシップを定義する指定されたリンクの追跡を開始するように <see cref="T:System.Data.Services.Client.DataServiceContext" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" />、<paramref name="sourceProperty" />、または <paramref name="target" /> が null の場合。</exception>
+        <exception cref="T:System.InvalidOperationException">2 つのエンティティ間のリンクが既に存在する場合。  
+  
+ または  
+  
+ <paramref name="source" /> または <paramref name="target" /> の状態が <see cref="F:System.Data.Services.Client.EntityStates.Added" /> または <see cref="F:System.Data.Services.Client.EntityStates.Deleted" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachTo">
+      <MemberSignature Language="C#" Value="public void AttachTo (string entitySetName, object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AttachTo(string entitySetName, object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.AttachTo(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entitySetName">リソースを含むセットの名前。</param>
+        <param name="entity"><see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されるリソース。 このリソースは、変更なしの状態でアタッチされます。</param>
+        <summary>指定されたリソースの追跡を開始するように <see cref="T:System.Data.Services.Client.DataServiceContext" /> に通知し、指定されたリソース セット内のそのリソースの場所を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンティティがオブジェクト グラフの一部である場合、この操作ではグラフを走査して関連オブジェクトを追加することはしません。 これは簡易操作です。  
+  
+ このメソッドは、<xref:System.Data.Services.Client.DataServiceContext> に関連付けられたデータ サービスで、指定されたエンティティ セットが発生するかどうかを検証しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="entity" />または<paramref name="entitySetName" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entitySetName" /> が空の文字列である場合。  
+  
+ または  
+  
+ <paramref name="entity" /> にキー プロパティが定義されていない場合。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="entity" /> がコンテキストによって既に追跡されている場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachTo">
+      <MemberSignature Language="C#" Value="public void AttachTo (string entitySetName, object entity, string etag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AttachTo(string entitySetName, object entity, string etag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.AttachTo(System.String,System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="etag" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="entitySetName">エンティティがアタッチされるエンティティ セットの名前を含む文字列値。</param>
+        <param name="entity">追加するエンティティ。</param>
+        <param name="etag">最後にデータ サービスから受信されたときのエンティティの状態を表す etag 値。 この値は不透明な文字列として扱われ、クライアント ライブラリはこの値を検証しません。</param>
+        <summary>指定されたリソースの追跡を開始するように <see cref="T:System.Data.Services.Client.DataServiceContext" /> に通知し、指定されたリソース セット内のそのリソースの場所を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すと、指定されたエンティティの追跡を開始するように <xref:System.Data.Services.Client.DataServiceContext> に通知され、エンティティが属するエンティティ セットを識別します。  
+  
+ エンティティがオブジェクト グラフの一部である場合、この操作ではグラフを走査して関連オブジェクトを追加することはしません。 オブジェクトは未変更の状態で <xref:System.Data.Services.Client.DataServiceContext> に追加されます。 このメソッドは、<xref:System.Data.Services.Client.DataServiceContext> に関連付けられたデータ サービスで、指定されたエンティティ セットが発生するかどうかを検証しません。  
+  
+ etag とのオーバー ロードが使用される場合、指定された etag は、新しくアタッチされたエンティティに関連付けられます。 その後、この etag は、HTTP セマンティクスに従って、エンティティに対する後続のすべての更新操作またはクエリ操作と共に、データ サービスに送信されます。 etag 値を手動で生成することはお勧めできませんが、このオーバーロードは、シリアル化および格納されているエンティティを、関連する同時実行メタデータと共に再アタッチできるように提供されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="entitySetName" />は<see langword="null" />します。  
+  
+ または  
+  
+ ときに<paramref name="entity" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entitySetName" /> が空の文字列である場合。  
+  
+ または  
+  
+ 指定されたオブジェクトにキー プロパティがない場合。</exception>
+        <exception cref="T:System.InvalidOperationException">指定されたオブジェクトがコンテキストによって既に追跡されている場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseUri">
+      <MemberSignature Language="C#" Value="public Uri BaseUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象データ サービスのルートを識別する絶対 URI を取得します。</summary>
+        <value>T データ サービスのルートを識別する絶対 URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 末尾がスラッシュの URI は、末尾文字のない URI と同等です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginExecute&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginExecute&lt;T&gt; (System.Data.Services.Client.DataServiceQueryContinuation&lt;T&gt; continuation, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginExecute&lt;T&gt;(class System.Data.Services.Client.DataServiceQueryContinuation`1&lt;!!T&gt; continuation, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.BeginExecute``1(System.Data.Services.Client.DataServiceQueryContinuation{``0},System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="continuation" Type="System.Data.Services.Client.DataServiceQueryContinuation&lt;T&gt;" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">クエリによって返される型。</typeparam>
+        <param name="continuation">データ サービスから返すデータの次のページを表す <see cref="T:System.Data.Services.Client.DataServiceQueryContinuation`1" /> オブジェクト。</param>
+        <param name="callback">クライアントが結果を利用できるようになったときに呼び出すデリゲート。</param>
+        <param name="state">コールバックに渡されるユーザー定義の状態オブジェクト。</param>
+        <summary>要求をデータ サービスに非同期的に送信して、ページングされたクエリ結果のデータの次のページを取得します。</summary>
+        <returns>操作の状態を表す <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された <xref:System.Data.Services.Client.DataServiceQueryContinuation%601> オブジェクトには URI が含まれており、実行すると、クエリ結果のデータの次のページが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginExecute&lt;TElement&gt;">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginExecute&lt;TElement&gt; (Uri requestUri, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginExecute&lt;TElement&gt;(class System.Uri requestUri, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.BeginExecute``1(System.Uri,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TElement" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="requestUri" Type="System.Uri" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TElement">クエリによって返される型。</typeparam>
+        <param name="requestUri">クエリ要求が送信される URI。 URI の有効なデータ サービス URI; 可能性があります。含めることができます<c> $ </c>クエリ パラメーター。</param>
+        <param name="callback">クライアントが結果を利用できるようになったときに呼び出すデリゲート。</param>
+        <param name="state">コールバックに渡されるユーザー定義の状態オブジェクト。</param>
+        <summary>サービスからの結果の待機中にこの呼び出しによって処理がブロックされないように、要求を非同期的に送信します。</summary>
+        <returns>非同期操作の状態を追跡するために使用されるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.IAsyncResult> オブジェクトは、非同期操作が完了したタイミングを判断するために使用されます。 詳細については、次を参照してください。[非同期操作](~/docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)です。  
+  
+ <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A> メソッドは <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> メソッドと同じセマンティクスを使用しますが、サービスからの結果の待機中にこの呼び出しによって処理がブロックされないように、要求を非同期的に送信します。 標準の Begin/End 非同期パターンに従って、クエリ結果が取得されたときに、指定されたコールバックが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> メソッドを呼び出してクエリを開始することで、非同期クエリを実行する方法を示します。 インライン デリゲートは、<xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> メソッドを呼び出してクエリ結果を表示します。 この例では、<xref:System.Data.Services.Client.DataServiceContext>完了したときに作成される Northwind データ サービスに基づいて、サービス参照の追加ツールによって生成された、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]です。  
+  
+ [!code-csharp[Astoria Northwind Client#ExecuteQueryAsync](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#executequeryasync)]
+ [!code-vb[Astoria Northwind Client#ExecuteQueryAsync](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#executequeryasync)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginExecuteBatch">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginExecuteBatch (AsyncCallback callback, object state, params System.Data.Services.Client.DataServiceRequest[] queries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginExecuteBatch(class System.AsyncCallback callback, object state, class System.Data.Services.Client.DataServiceRequest[] queries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.BeginExecuteBatch(System.AsyncCallback,System.Object,System.Data.Services.Client.DataServiceRequest[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="queries" Type="System.Data.Services.Client.DataServiceRequest[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="callback">バッチ要求への応答を受信したときに呼び出されるデリゲート。</param>
+        <param name="state">コンテキスト データをコールバック メソッドに渡すために使用される、ユーザー定義の状態オブジェクト。</param>
+        <param name="queries">バッチ要求に含めるクエリ要求の配列。</param>
+        <summary>クエリのグループをデータ サービスにバッチとして非同期的に送信します。</summary>
+        <returns>非同期操作の状態を追跡するために使用される <see cref="T:System.IAsyncResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.IAsyncResult> オブジェクトは、非同期操作が完了したタイミングを判断するために使用されます。 詳細については、次を参照してください。[非同期操作](~/docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)です。  
+  
+ クエリは <xref:System.Data.Services.Client.DataServiceRequest%601> インスタンスとして指定されます。 バッチ要求全体の応答を表す <xref:System.Data.Services.Client.DataServiceResponse> を返します。 個々のクエリの応答は、<xref:System.Data.Services.Client.DataServiceResponse> インスタンスを列挙してアクセスできる <xref:System.Data.Services.Client.DataServiceResponse> オブジェクトとして表されます。  
+  
+ このメソッドから制御が戻った時点で、バッチ要求に対するすべての HTTP 応答がネットワーク ストリームから読み取られていますが、応答は処理されていません。 列挙されるまで、応答内の特定のエンティティに対する ID 解決やオブジェクトの具体化は行われません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetReadStream">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginGetReadStream (object entity, System.Data.Services.Client.DataServiceRequestArgs args, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginGetReadStream(object entity, class System.Data.Services.Client.DataServiceRequestArgs args, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.BeginGetReadStream(System.Object,System.Data.Services.Client.DataServiceRequestArgs,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="args" Type="System.Data.Services.Client.DataServiceRequestArgs" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">取得するバイナリ プロパティを持つエンティティ。</param>
+        <param name="args">HTTP 要求メッセージの設定が含まれている <see cref="T:System.Data.Services.Client.DataServiceRequestArgs" /> クラスのインスタンス。</param>
+        <param name="callback">クライアントが結果を利用できるようになったときに呼び出すデリゲート。</param>
+        <param name="state">コールバックに渡されるユーザー定義の状態オブジェクト。</param>
+        <summary>非同期的に指定されたエンティティのバイナリ プロパティ データを指定したメッセージ ヘッダーと共にデータ ストリームとして取得します。</summary>
+        <returns>非同期操作の状態を追跡するために使用される <see cref="T:System.IAsyncResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.GetReadStream%2A>メソッドが要求されたのバイナリ プロパティが含まれるデータ ストリームを非同期的に要求`entity`です。  
+  
+ AtomPub プロトコルで、`entity`はメディア リンク エントリであり、バイナリ プロパティは、関連付けられたメディア リソース。  
+  
+ `args` で設定されているヘッダーの検証は実行されません。 そのため、要求の意味を変更する方法で HTTP ヘッダーを変更しないでください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">メソッドに渡されるパラメーターのいずれかが<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entity" /> はこの <see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されません。  
+  
+ または  
+  
+ <paramref name="entity" /> の状態が <see cref="F:System.Data.Services.Client.EntityStates.Added" /> です。  
+  
+ または  
+  
+ <paramref name="entity" />メディア リンク エントリではないと、バイナリ プロパティがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginLoadProperty">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginLoadProperty (object entity, string propertyName, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginLoadProperty(object entity, string propertyName, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.BeginLoadProperty(System.Object,System.String,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">読み込むプロパティを含むエンティティ。</param>
+        <param name="propertyName">読み込みに指定されたエンティティのプロパティの名前。</param>
+        <param name="callback">要求への応答を受信したときに呼び出されるデリゲート。</param>
+        <param name="state">コンテキスト データをコールバック メソッドに渡すために使用される、ユーザー定義の状態オブジェクト。</param>
+        <summary>指定されたプロパティの値をデータ サービスから非同期的に読み込みます。</summary>
+        <returns>非同期操作の状態を表す <see langword="IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すと、プロパティ値を取得するネットワーク操作が呼び出されます。 関連付けやリンクを表すプロパティを含め、エンティティのどのプロパティでも指定できます。 プロパティが関連付け、リンク、または遅延プロパティを表す場合、このメソッドを呼び出すと、関連リソースを遅延読み込みする方法がクライアントに提供されます。 エンティティが変更状態にある場合は、プロパティ値は関連エンティティを読み込み、それらのエンティティとリンクを変更なしとマークします。  
+  
+ プロパティが既に読み込まれている場合は、このメソッドを呼び出すことによって、そのプロパティの値を更新できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginLoadProperty">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginLoadProperty (object entity, string propertyName, System.Data.Services.Client.DataServiceQueryContinuation continuation, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginLoadProperty(object entity, string propertyName, class System.Data.Services.Client.DataServiceQueryContinuation continuation, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.BeginLoadProperty(System.Object,System.String,System.Data.Services.Client.DataServiceQueryContinuation,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="continuation" Type="System.Data.Services.Client.DataServiceQueryContinuation" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">読み込むプロパティを含むエンティティ。</param>
+        <param name="propertyName">読み込みに指定されたエンティティのプロパティの名前。</param>
+        <param name="continuation">データ サービスから返す関連エンティティ データの次のページを表す <see cref="T:System.Data.Services.Client.DataServiceQueryContinuation`1" /> オブジェクト。</param>
+        <param name="callback">クライアントが結果を利用できるようになったときに呼び出すデリゲート。</param>
+        <param name="state">コールバックに渡されるユーザー定義の状態オブジェクト。</param>
+        <summary>関連エンティティの次のページを、指定されたクエリ連結オブジェクトを使用してデータ サービスから非同期的に読み込みます。</summary>
+        <returns>操作の状態を表す <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された <xref:System.Data.Services.Client.DataServiceQueryContinuation%601> オブジェクトには URI が含まれており、実行すると、クエリ結果のデータの次のページが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginLoadProperty">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginLoadProperty (object entity, string propertyName, Uri nextLinkUri, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginLoadProperty(object entity, string propertyName, class System.Uri nextLinkUri, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.BeginLoadProperty(System.Object,System.String,System.Uri,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="nextLinkUri" Type="System.Uri" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">読み込むプロパティを含むエンティティ。</param>
+        <param name="propertyName">読み込みに指定されたエンティティのプロパティの名前。</param>
+        <param name="nextLinkUri">次の結果ページを読み込むために使用する URI。</param>
+        <param name="callback">クライアントが結果を利用できるようになったときに呼び出すデリゲート。</param>
+        <param name="state">コールバックに渡されるユーザー定義の状態オブジェクト。</param>
+        <summary>関連エンティティのページを、指定された次のリンク URI を使用してデータ サービスから非同期的に読み込みます。</summary>
+        <returns>非同期操作の状態を追跡するために使用される <see cref="T:System.IAsyncResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `entity` の状態が <xref:System.Data.Services.Client.EntityStates.Unchanged> または <xref:System.Data.Services.Client.EntityStates.Modified> の場合、関連エンティティは <xref:System.Data.Services.Client.EntityStates.Unchanged> 状態で読み込まれ、エンティティ間のリンクも <xref:System.Data.Services.Client.EntityStates.Unchanged> 状態で作成されます。  
+  
+ `entity` の状態が <xref:System.Data.Services.Client.EntityStates.Deleted> の場合、関連エンティティは <xref:System.Data.Services.Client.EntityStates.Unchanged> 状態で読み込まれ、エンティティ間のリンクは <xref:System.Data.Services.Client.EntityStates.Deleted> 状態で作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginSaveChanges">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginSaveChanges (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginSaveChanges(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.BeginSaveChanges(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">操作が完了したときに呼び出すデリゲート。</param>
+        <param name="state">コンテキスト データをコールバック メソッドに渡すために使用される、ユーザー定義の状態オブジェクト。</param>
+        <summary>変更が最後に保存された後に <see cref="T:System.Data.Services.Client.DataServiceContext" /> によって収集された保留中の変更をデータ サービスに非同期的に送信します。</summary>
+        <returns>非同期操作の状態を表す <see langword="IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更は、<xref:System.Data.Services.Client.DataServiceContext>、<xref:System.Data.Services.Client.DataServiceContext.AddObject%2A>、<xref:System.Data.Services.Client.DataServiceContext.AddLink%2A>、<xref:System.Data.Services.Client.DataServiceContext.AttachTo%2A>、<xref:System.Data.Services.Client.DataServiceContext.AttachLink%2A>、<xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A>、<xref:System.Data.Services.Client.DataServiceContext.DeleteLink%2A>、または <xref:System.Data.Services.Client.DataServiceContext.Detach%2A> を呼び出すことで <xref:System.Data.Services.Client.DataServiceContext.DetachLink%2A> に追加されます。  
+  
+ 変更は、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> メソッドと同様、HTTP 要求あたり 1 回の変更操作でデータ サービスに送信されます。  
+  
+ 操作の処理中にエラーが発生した場合は、追加の操作はデータ サービスによって処理されません。 代わりに、実行された操作、その結果、およびエラーが発生したために試行されなかった操作をクライアントに通知する応答が生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginSaveChanges">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginSaveChanges (System.Data.Services.Client.SaveChangesOptions options, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginSaveChanges(valuetype System.Data.Services.Client.SaveChangesOptions options, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.BeginSaveChanges(System.Data.Services.Client.SaveChangesOptions,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.Data.Services.Client.SaveChangesOptions" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="options">クライアントが保留中の変更のセットを保存する方法のオプション。</param>
+        <param name="callback">操作が完了したときに呼び出すデリゲート。</param>
+        <param name="state">コンテキスト データをコールバック メソッドに渡すために使用される、ユーザー定義の状態オブジェクト。</param>
+        <summary>変更が最後に保存された後に <see cref="T:System.Data.Services.Client.DataServiceContext" /> によって収集された保留中の変更をデータ サービスに非同期的に送信します。</summary>
+        <returns>非同期操作の状態を表す <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更は、<xref:System.Data.Services.Client.DataServiceContext>、<xref:System.Data.Services.Client.DataServiceContext.AddObject%2A>、<xref:System.Data.Services.Client.DataServiceContext.AddLink%2A>、<xref:System.Data.Services.Client.DataServiceContext.AttachTo%2A>、<xref:System.Data.Services.Client.DataServiceContext.AttachLink%2A>、<xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A>、<xref:System.Data.Services.Client.DataServiceContext.DeleteLink%2A>、または <xref:System.Data.Services.Client.DataServiceContext.Detach%2A> を呼び出すことで <xref:System.Data.Services.Client.DataServiceContext.DetachLink%2A> に追加されます。  
+  
+ <xref:System.Data.Services.Client.SaveChangesOptions.Batch> が設定されている場合は、保留中のすべての変更がバッチ内の 1 つの変更セットに含まれ、1 つの HTTP 要求でデータ サービスに送信されます。 この場合は、ターゲット サービスがバッチ処理をサポートしている必要があります。  
+  
+ <xref:System.Data.Services.Client.SaveChangesOptions.Batch> が設定されていない場合:  
+  
+-   変更は、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges> メソッドと同様、HTTP 要求あたり 1 回の操作でデータ サービスに送信されます。  
+  
+-   <xref:System.Data.Services.Client.OperationResponse.StatusCode%2A> は常に 200 です。  
+  
+-   <xref:System.Data.Services.Client.OperationResponse.Headers%2A> プロパティは空のコレクションを返します。  
+  
+ <xref:System.Data.Services.Client.SaveChangesOptions.ContinueOnError> が設定されている場合:  
+  
+-   変更セットの操作の処理でエラーが発生した場合、変更セット内の後続の操作は試行されません。ただし、データ サービスにより、バッチ内の次の変更セットは引き続き処理されます。  
+  
+-   このオプションは、<xref:System.Data.Services.Client.SaveChangesOptions.Batch> が設定されている場合には設定できません。バッチ処理が有効になっている場合は、すべての操作が 1 つの変更セットに配置されるためです。  
+  
+ <xref:System.Data.Services.Client.SaveChangesOptions.ContinueOnError> が設定されていない場合:  
+  
+-   操作の処理中にエラーが発生した場合は、追加の操作はデータ サービスによって処理されません。  
+  
+ 実行された操作、その結果、およびエラーが発生したために試行されなかった操作をクライアントに通知する応答が生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelRequest">
+      <MemberSignature Language="C#" Value="public void CancelRequest (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelRequest(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.CancelRequest(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">取り消す操作の <see cref="T:System.IAsyncResult" /> オブジェクト。</param>
+        <summary>指定された <see cref="T:System.IAsyncResult" /> オブジェクトに関連付けられている操作を取り消そうとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IAsyncResult> パラメーターに渡される `asyncResult` オブジェクトは、操作を非同期的に実行したときに返されるオブジェクトです。 詳細については、次を参照してください。[非同期操作](~/docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)です。この要求が処理されるまで、<xref:System.Data.Services.Client.DataServiceContext>インスタンス予測可能な状態ではありません。 <xref:System.Data.Services.Client.DataServiceContext>ときに安全に使用できる、<xref:System.IAsyncResult.IsCompleted%2A>のプロパティ、`asyncResult`の値を返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateQuery&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceQuery&lt;T&gt; CreateQuery&lt;T&gt; (string entitySetName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceQuery`1&lt;!!T&gt; CreateQuery&lt;T&gt;(string entitySetName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.CreateQuery``1(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceQuery&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="entitySetName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">クエリによって返される型。</typeparam>
+        <param name="entitySetName">URI に解決される文字列。</param>
+        <summary>指定されたジェネリック型のデータについてのデータ サービス クエリを作成します。</summary>
+        <returns>データ サービス クエリを表す新しい <see cref="T:System.Data.Services.Client.DataServiceQuery`1" /> インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public System.Net.ICredentials Credentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials Credentials" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ICredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> オブジェクトを使用して作成された各クエリで使用される認証情報を取得または設定します。</summary>
+        <value>Web クライアント認証の資格情報を取得するための基本認証インターフェイス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataNamespace">
+      <MemberSignature Language="C#" Value="public string DataNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.DataNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Atom ペイロードのデータ項目 (メタデータ項目ではない) の XML 名前空間を取得または設定します。</summary>
+        <value>Atom 形式のペイロードのデータ項目の XML 名前空間を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、既定の [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] 名前空間 `http://schemas.microsoft.com/ado/2007/08/dataservices` です。  
+  
+ このプロパティは、データ サービスのコンテンツを解析するために使用される名前空間と、データ サービスに送信するコンテンツを生成するために使用される名前空間の両方に影響します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteLink">
+      <MemberSignature Language="C#" Value="public void DeleteLink (object source, string sourceProperty, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteLink(object source, string sourceProperty, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.DeleteLink(System.Object,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="sourceProperty" Type="System.String" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">削除用にマークされるリンク内のソース オブジェクト。</param>
+        <param name="sourceProperty">ターゲット オブジェクトにアクセスするために使用されるソース オブジェクトのナビゲーション プロパティの名前。</param>
+        <param name="target">ソース オブジェクトにバインドされるリンクに関係するターゲット オブジェクト。 ターゲット オブジェクトは、ソース プロパティで識別される型かサブタイプである必要があります。</param>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されているリンクの一覧でリンクの状態を削除済みに変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext> よって追跡されているすべてのリンクは、現在の状態に関係なく、デタッチできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" />、<paramref name="sourceProperty" />、または <paramref name="target" /> が null の場合。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="source" /> または <paramref name="target" /> の状態が <see cref="F:System.Data.Services.Client.EntityStates.Detached" /> または <see cref="F:System.Data.Services.Client.EntityStates.Added" /> の場合。  
+  
+ または  
+  
+ <paramref name="sourceProperty" /> がコレクションではない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteObject">
+      <MemberSignature Language="C#" Value="public void DeleteObject (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteObject(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.DeleteObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">削除状態に変更する追跡対象エンティティ。</param>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> で削除されるように、指定されたオブジェクトの状態を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたエンティティへのすべてのリンクも削除済みとマークされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="entity" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">オブジェクトが <see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されていない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Detach">
+      <MemberSignature Language="C#" Value="public bool Detach (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Detach(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.Detach(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity"><see cref="T:System.Data.Services.Client.DataServiceContext" /> からデタッチする追跡対象エンティティ。</param>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> が追跡しているエンティティの一覧からエンティティを削除します。</summary>
+        <returns>返します<see langword="true" />指定されたエンティティがデタッチされたそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトはデタッチされると、<xref:System.Data.Services.Client.DataServiceContext> によって追跡されなくなります。  
+  
+ <xref:System.Data.Services.Client.DataServiceContext.Detach%2A> メソッドは、その <xref:System.Data.Services.Client.EntityStates> に関係なく、任意のオブジェクトをデタッチするために呼び出すことができます。  
+  
+ このメソッドは、指定されたエンティティをデタッチした後、そのエンティティに関連するすべてのリンクもデタッチします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="entity" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DetachLink">
+      <MemberSignature Language="C#" Value="public bool DetachLink (object source, string sourceProperty, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool DetachLink(object source, string sourceProperty, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.DetachLink(System.Object,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="sourceProperty" Type="System.String" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">削除用にマークされるリンクに関与しているソース オブジェクト。</param>
+        <param name="sourceProperty">ソースとターゲットの間のリンクに含まれるソースを表す、ソース オブジェクトのプロパティの名前。</param>
+        <param name="target">ソース オブジェクトにバインドされるリンクに関係するターゲット オブジェクト。 ターゲット オブジェクトは、ソース プロパティで識別される型かサブタイプである必要があります。</param>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されているリンクの一覧から、指定されたリンクを削除します。</summary>
+        <returns>指定されたエンティティがデタッチされた場合は true、それ以外の場合は false を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext> よって追跡されているすべてのリンクは、現在の状態に関係なく、デタッチできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="source" />または<paramref name="sourceProperty" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="sourceProperty" /> が空の文字列である場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndExecute&lt;TElement&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;TElement&gt; EndExecute&lt;TElement&gt; (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;!!TElement&gt; EndExecute&lt;TElement&gt;(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.EndExecute``1(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TElement" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TElement">クエリによって返される型。</typeparam>
+        <param name="asyncResult">
+          <see cref="T:System.IAsyncResult" /> オブジェクト。</param>
+        <summary><see cref="M:System.Data.Services.Client.DataServiceContext.BeginExecute``1(System.Uri,System.AsyncCallback,System.Object)" /> を完了するために呼び出されます。</summary>
+        <returns>クエリ操作によって返される結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準の Begin/End 非同期パターンに従って、クエリ結果が取得されたときに、指定されたコールバックが呼び出されます。 詳細については、次を参照してください。[非同期操作](~/docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)です。  
+  
+ コールバックが呼び出された時点で、すべての結果が HTTP ストリームから読み取られていますが、処理されていません。つまり、ローカル ユーザーが扱うオブジェクトは具体化も変更もされておらず、ID 解決も行われていません。 <xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A> が呼び出されると、<xref:System.Data.Services.Client.DataServiceResponse> が作成されて返されますが、結果はまだ処理されていません。 ID 解決、オブジェクトの具体化、および操作は、ユーザーが結果を列挙したときにのみ行われます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> メソッドを呼び出してクエリを開始することで、非同期クエリを実行する方法を示します。 インライン デリゲートは、<xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> メソッドを呼び出してクエリ結果を表示します。 この例では、<xref:System.Data.Services.Client.DataServiceContext>完了したときに作成される Northwind データ サービスに基づいて、サービス参照の追加ツールによって生成された、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]です。  
+  
+ [!code-csharp[Astoria Northwind Client#ExecuteQueryAsync](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#executequeryasync)]
+ [!code-vb[Astoria Northwind Client#ExecuteQueryAsync](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#executequeryasync)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="asyncResult" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">ときに<paramref name="asyncResult" />これから取得されませんでした<see cref="T:System.Data.Services.Client.DataServiceContext" />インスタンス。  
+  
+ または  
+  
+ <see cref="M:System.Data.Services.Client.DataServiceContext.EndExecute``1(System.IAsyncResult)" /> メソッドが前に呼び出された場合。</exception>
+        <exception cref="T:System.InvalidOperationException">要求の実行中か、応答メッセージの内容をオブジェクトに変換するときにエラーが発生した場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndExecuteBatch">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceResponse EndExecuteBatch (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceResponse EndExecuteBatch(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.EndExecuteBatch(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">非同期操作の状態を表す <see cref="T:System.IAsyncResult" />。</param>
+        <summary><see cref="M:System.Data.Services.Client.DataServiceContext.BeginExecuteBatch(System.AsyncCallback,System.Object,System.Data.Services.Client.DataServiceRequest[])" /> を完了するために呼び出されます。</summary>
+        <returns><see langword="DataServiceResult" />バッチ操作の結果を示すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリのグループをデータ サービスにバッチとして送信します。 個々のクエリの応答は、<xref:System.Data.Services.Client.DataServiceResponse> インスタンスからアクセスできる、<xref:System.Data.Services.Client.OperationResponse> から派生した <xref:System.Data.Services.Client.DataServiceResponse> オブジェクトとして表されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGetReadStream">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceStreamResponse EndGetReadStream (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceStreamResponse EndGetReadStream(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.EndGetReadStream(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceStreamResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">バイナリ データ ストリームが格納されている <see cref="M:System.Data.Services.Client.DataServiceContext.BeginGetReadStream(System.Object,System.Data.Services.Client.DataServiceRequestArgs,System.AsyncCallback,System.Object)" /> 操作の結果。</param>
+        <summary>ストリームとしてバイナリ プロパティを取得する非同期操作を完了すると呼ばれます。</summary>
+        <returns>メタデータと共に応答ストリームが含まれている <see cref="T:System.Data.Services.Client.DataServiceStreamResponse" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.EndGetReadStream%2A> メソッドは、<xref:System.Data.Services.Client.DataServiceContext.BeginGetReadStream%2A> メソッドから結果を受信するために呼び出されます。  
+  
+ <xref:System.Data.Services.Client.DataServiceContext.EndGetReadStream%2A> メソッドは、<xref:System.Data.Services.Client.DataServiceContext.BeginGetReadStream%2A> メソッドから応答を受信するまで完了しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndLoadProperty">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.QueryOperationResponse EndLoadProperty (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.QueryOperationResponse EndLoadProperty(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.EndLoadProperty(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.QueryOperationResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">非同期操作の状態を表す <see cref="T:System.IAsyncResult" />。</param>
+        <summary><see cref="M:System.Data.Services.Client.DataServiceContext.BeginLoadProperty(System.Object,System.String,System.AsyncCallback,System.Object)" /> 操作を完了するために呼び出されます。</summary>
+        <returns>読み込み操作への応答。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求中またはデータ サービスからの応答の処理中にエラーが発生した場合は、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndSaveChanges">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceResponse EndSaveChanges (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceResponse EndSaveChanges(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.EndSaveChanges(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">非同期操作の状態を表す <see cref="T:System.IAsyncResult" />。</param>
+        <summary><see cref="M:System.Data.Services.Client.DataServiceContext.BeginSaveChanges(System.AsyncCallback,System.Object)" /> 操作を完了するために呼び出されます。</summary>
+        <returns>バッチ操作の結果を示す <see cref="T:System.Data.Services.Client.DataServiceResponse" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチ操作の結果を確認するには、<xref:System.Data.Services.Client.DataServiceResponse.BatchStatusCode%2A> を調べる必要があります。 個々の操作結果は、<xref:System.Data.Services.Client.DataServiceResponse> 列挙子によって返される操作オブジェクトで取得できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Entities">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Client.EntityDescriptor&gt; Entities { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Services.Client.EntityDescriptor&gt; Entities" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.Entities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Client.EntityDescriptor&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在 <see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されているすべてのリソースの一覧を取得します。</summary>
+        <value>現在 <see cref="T:System.Data.Services.Client.EntityDescriptor" /> によって追跡されているすべてのリソースを表す <see cref="T:System.Data.Services.Client.DataServiceContext" /> オブジェクトの一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡されているリソースがない場合は、要素がゼロの一覧が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.QueryOperationResponse&lt;T&gt; Execute&lt;T&gt; (System.Data.Services.Client.DataServiceQueryContinuation&lt;T&gt; continuation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.QueryOperationResponse`1&lt;!!T&gt; Execute&lt;T&gt;(class System.Data.Services.Client.DataServiceQueryContinuation`1&lt;!!T&gt; continuation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.Execute``1(System.Data.Services.Client.DataServiceQueryContinuation{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.QueryOperationResponse&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="continuation" Type="System.Data.Services.Client.DataServiceQueryContinuation&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">クエリによって返される型。</typeparam>
+        <param name="continuation">データ サービスから返すデータの次のページを表す <see cref="T:System.Data.Services.Client.DataServiceQueryContinuation`1" /> オブジェクト。</param>
+        <summary>要求をデータ サービスに送信して、ページングされたクエリ結果のデータの次のページを取得します。</summary>
+        <returns>クエリ結果内のデータの次のページを含む応答。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された <xref:System.Data.Services.Client.DataServiceQueryContinuation%601> オブジェクトには URI が含まれており、実行すると、クエリ結果のデータの次のページが返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求の実行中か、応答メッセージの内容をオブジェクトに変換するときにエラーが発生した場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute&lt;TElement&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;TElement&gt; Execute&lt;TElement&gt; (Uri requestUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;!!TElement&gt; Execute&lt;TElement&gt;(class System.Uri requestUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.Execute``1(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TElement" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="requestUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TElement">クエリが返す型。</typeparam>
+        <param name="requestUri">クエリ要求が送信される URI。 この URI には有効なデータ サービス URI を指定できます。 $ クエリ パラメーターを含めることができます。</param>
+        <summary>要求をデータ サービスに送信して特定の URI を実行します。</summary>
+        <returns>クエリ操作の結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> メソッドを使用して URI でデータ サービスをクエリします。このメソッドにより、データ サービスに対して HTTP GET 要求が発行されます。 指定される要求 URI は、絶対 URI にも相対 URI にもすることができます。  
+  
+ `requestUri` が絶対 URI の場合、このメソッドは、その URI が <xref:System.Data.Services.Client.DataServiceContext> の作成時に指定されたのと同じデータ サービスを指すかどうかを検証します。 `requestUri` が相対 URI である場合、このメソッドは、先頭のスラッシュを削除し、`requestUri` の作成時に指定された文字列に <xref:System.Data.Services.Client.DataServiceContext> を追加します。 スラッシュは、<xref:System.Data.Services.Client.DataServiceContext> コンストラクターに渡された URI の後に追加されます (スラッシュがない場合)。  
+  
+ このメソッドから制御が戻った時点で、要求に対するすべての HTTP 応答がネットワーク ストリームから読み取られていますが、応答は処理されていません。また、ID 解決やオブジェクトの具体化も行われません。 列挙されるまで、応答内の特定のエンティティに対する ID 解決や完全なオブジェクトの具体化は行われません。  
+  
+   
+  
+## Examples  
+ 次の例は、`do…while` ループを使用して、データ サービスからのページングされた結果の `Customers` エンティティを読み込みます。 <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> メソッドは、次のページのデータを受信するために次のリンク URI を使用して呼び出さます。  
+  
+ [!code-csharp[Astoria Northwind Client#GetCustomersPaged](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getcustomerspaged)]
+ [!code-vb[Astoria Northwind Client#GetCustomersPaged](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getcustomerspaged)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException"><paramref name="requestUri" /> への要求から応答が受信されなかった場合。</exception>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="requestUri" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="requestUri" /> がデータ サービスに有効な URI ではない場合。</exception>
+        <exception cref="T:System.InvalidOperationException">要求の実行中か、応答メッセージの内容をオブジェクトに変換するときにエラーが発生した場合。</exception>
+        <exception cref="T:System.Data.Services.Client.DataServiceQueryException">データ サービスが HTTP 404 (リソースが見つからないエラー) を返す場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteBatch">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceResponse ExecuteBatch (params System.Data.Services.Client.DataServiceRequest[] queries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceResponse ExecuteBatch(class System.Data.Services.Client.DataServiceRequest[] queries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.ExecuteBatch(System.Data.Services.Client.DataServiceRequest[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queries" Type="System.Data.Services.Client.DataServiceRequest[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="queries">クエリを構成する <see cref="T:System.Data.Services.Client.DataServiceRequest[]" /> オブジェクトの配列。</param>
+        <summary>クエリのグループをデータ サービスにバッチとして送信します。</summary>
+        <returns>バッチ操作への応答。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリは <xref:System.Data.Services.Client.DataServiceRequest%601> インスタンスとして指定されます。 バッチ要求全体の応答を表す <xref:System.Data.Services.Client.DataServiceResponse> を返します。 個々のクエリの応答は、<xref:System.Data.Services.Client.OperationResponse> インスタンスを列挙してアクセスできる個々の <xref:System.Data.Services.Client.DataServiceResponse> オブジェクトとして表されます。  
+  
+ このメソッドから制御が戻った時点で、バッチ要求に対する HTTP 応答全体がネットワーク ストリームから読み取られていますが、応答は処理されていません。 列挙されるまで、応答内の特定のエンティティに対する ID 解決やオブジェクトの具体化は行われません。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Data.Services.Client.DataServiceContext.ExecuteBatch*> メソッドを呼び出して、<xref:System.Data.Services.Client.DataServiceRequest%601> オブジェクトと `Customers` オブジェクトの両方を Northwind データ サービスから返すクエリを含む `Products` オブジェクトの配列を実行する方法を示します。 返された <xref:System.Data.Services.Client.QueryOperationResponse%601> 内の <xref:System.Data.Services.Client.DataServiceResponse> オブジェクトのコレクションが列挙され、各 <xref:System.Data.Services.Client.QueryOperationResponse%601> に含まれているオブジェクトのコレクションも列挙されます。 この例では、<xref:System.Data.Services.Client.DataServiceContext>完了したときに作成される Northwind データ サービスに基づいて、サービス参照の追加ツールによって生成された、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]です。  
+  
+ [!code-csharp[Astoria Northwind Client#BatchQuery](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#batchquery)]
+ [!code-vb[Astoria Northwind Client#BatchQuery](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#batchquery)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntityDescriptor">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.EntityDescriptor GetEntityDescriptor (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.EntityDescriptor GetEntityDescriptor(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.GetEntityDescriptor(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.EntityDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">エンティティ記述子を返す対象のオブジェクト。</param>
+        <summary>指定されたエンティティ オブジェクトの <see cref="T:System.Data.Services.Client.EntityDescriptor" /> を取得します。</summary>
+        <returns><see cref="T:System.Data.Services.Client.EntityDescriptor" />インスタンスの場合、 <paramref name="entity" />、または<see langword="null" />場合、<see cref="T:System.Data.Services.Client.EntityDescriptor" />オブジェクトに対して存在しません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLinkDescriptor">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.LinkDescriptor GetLinkDescriptor (object source, string sourceProperty, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.LinkDescriptor GetLinkDescriptor(object source, string sourceProperty, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.GetLinkDescriptor(System.Object,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.LinkDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="sourceProperty" Type="System.String" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">リンクのソース オブジェクト。</param>
+        <param name="sourceProperty">ナビゲーション プロパティの名前、<c>ソース</c>関連オブジェクトを表すオブジェクト。</param>
+        <param name="target">関連エンティティ。</param>
+        <summary>2 つのエンティティ間のリレーションシップを定義する特定のリンクの <see cref="T:System.Data.Services.Client.LinkDescriptor" /> を取得します。</summary>
+        <returns><see cref="T:System.Data.Services.Client.LinkDescriptor" /> 、指定されたリレーションシップのインスタンスまたは<see langword="null" />場合、<see cref="T:System.Data.Services.Client.LinkDescriptor" />リレーションシップは存在しません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadataUri">
+      <MemberSignature Language="C#" Value="public Uri GetMetadataUri ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Uri GetMetadataUri() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.GetMetadataUri" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>.edmx メタデータの場所の URI を取得します。</summary>
+        <returns>コンストラクターに渡されるベース URI によって識別されるデータ サービスのメタデータの説明 (.edmx 形式) の場所を識別する URI。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンストラクターに渡された URI を、単一のパス セグメント (`/$metadata`) を追加して返します。 このメソッドを呼び出すと、メタデータ URI を動的に検出するためのネットワーク操作が生成される場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReadStream">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceStreamResponse GetReadStream (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceStreamResponse GetReadStream(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.GetReadStream(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceStreamResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">取得するバイナリ プロパティを持つエンティティ。</param>
+        <summary>指定されたエンティティのデータ ストリームとしてバイナリ プロパティ データを取得します。</summary>
+        <returns>応答を表す <see cref="T:System.Data.Services.Client.DataServiceStreamResponse" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.GetReadStream%2A>メソッドは同期的に、要求されたのバイナリ プロパティを格納しているデータ ストリームを要求`entity`です。  
+  
+ AtomPub プロトコルで、`entity`はメディア リンク エントリであり、バイナリ プロパティは、関連付けられたメディア リソース。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="entity" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entity" /> はこの <see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されません。  
+  
+ または  
+  
+ <paramref name="entity" /> の状態が <see cref="F:System.Data.Services.Client.EntityStates.Added" /> です。  
+  
+ または  
+  
+ <paramref name="entity" />メディア リンク エントリではないと、バイナリ プロパティがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReadStream">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceStreamResponse GetReadStream (object entity, System.Data.Services.Client.DataServiceRequestArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceStreamResponse GetReadStream(object entity, class System.Data.Services.Client.DataServiceRequestArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.GetReadStream(System.Object,System.Data.Services.Client.DataServiceRequestArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceStreamResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="args" Type="System.Data.Services.Client.DataServiceRequestArgs" />
+      </Parameters>
+      <Docs>
+        <param name="entity">取得するバイナリ プロパティを持つエンティティ。</param>
+        <param name="args">HTTP 要求メッセージの設定が含まれている <see cref="T:System.Data.Services.Client.DataServiceRequestArgs" /> クラスのインスタンス。</param>
+        <summary>指定したエンティティのバイナリ プロパティ データを指定したメッセージ ヘッダーと共に、データ ストリームとして取得します。</summary>
+        <returns>応答を表す <see cref="T:System.Data.Services.Client.DataServiceStreamResponse" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.GetReadStream%2A>メソッドは同期的に、要求されたのバイナリ プロパティを格納しているデータ ストリームを要求`entity`です。  
+  
+ AtomPub プロトコルで、`entity`はメディア リンク エントリであり、バイナリ プロパティは、関連付けられたメディア リソース。  
+  
+ `args` で設定されているヘッダーの検証は実行されません。 そのため、要求の意味を変更する方法で HTTP ヘッダーを変更しないでください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entity" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="args" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entity" /> はこの <see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されません。  
+  
+ または  
+  
+ <paramref name="entity" /> の状態が <see cref="F:System.Data.Services.Client.EntityStates.Added" /> です。  
+  
+ または  
+  
+ <paramref name="entity" />メディア リンク エントリではないと、バイナリ プロパティがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReadStream">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceStreamResponse GetReadStream (object entity, string acceptContentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceStreamResponse GetReadStream(object entity, string acceptContentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.GetReadStream(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceStreamResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="acceptContentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="entity">取得するバイナリ プロパティを持つエンティティ。</param>
+        <param name="acceptContentType">Accept ヘッダーで指定された、データ サービスから要求されたデータのコンテンツの種類。</param>
+        <summary>指定した Accept メッセージ ヘッダーでのデータ ストリームとして指定されたエンティティのバイナリ プロパティ データを取得します。</summary>
+        <returns>応答を表す <see cref="T:System.Data.Services.Client.DataServiceStreamResponse" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `acceptContentType`パラメーターが Accept HTTP ヘッダーの有効な値にする必要があります。  
+  
+ <xref:System.Data.Services.Client.DataServiceContext.GetReadStream%2A>メソッドは同期的に、要求されたのバイナリ プロパティを格納しているデータ ストリームを要求`entity`です。  
+  
+ AtomPub プロトコルで、`entity`はメディア リンク エントリであり、バイナリ プロパティは、関連付けられたメディア リソース。  
+  
+ `acceptContentType` で設定されているヘッダーの検証は実行されません。 そのため、要求の意味を変更する方法でこの HTTP ヘッダーを変更しないでください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entity" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="acceptContentType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entity" /> はこの <see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されません。  
+  
+ または  
+  
+ <paramref name="entity" /> の状態が <see cref="F:System.Data.Services.Client.EntityStates.Added" /> です。  
+  
+ または  
+  
+ <paramref name="entity" />メディア リンク エントリではないと、バイナリ プロパティがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReadStreamUri">
+      <MemberSignature Language="C#" Value="public Uri GetReadStreamUri (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Uri GetReadStreamUri(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.GetReadStreamUri(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">取得するバイナリ プロパティを持つエンティティ。</param>
+        <summary>データ ストリームとしてバイナリ プロパティ データを返すために使用する URI を取得します。</summary>
+        <returns>バイナリ データ ストリームの読み取り URI。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された `entity` がメディア リンク エントリの場合、<xref:System.Data.Services.Client.DataServiceContext.GetReadStreamUri%2A> メソッドは、メディア リソースのコンテンツへのアクセスに使用される URI を返します。  
+  
+ この URI は、GET 要求でメディア リソースの内容を読み取るためだけに使用されます。 POST、PUT、または DELETE 要求には応答しないことがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定されたエンティティが場合<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entity" /> はこの <see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreMissingProperties">
+      <MemberSignature Language="C#" Value="public bool IgnoreMissingProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreMissingProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型から読み取られたプロパティをクライアント側の型のプロパティにマップする必要があるかどうかを取得または設定します。</summary>
+        <value>型から読み取られたプロパティをクライアント側の型のプロパティにマップする必要があるかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`具体化型からプロパティをクライアントの種類のプロパティにマップできない場合でもは成功します。 場合`false`プロパティの不一致がオブジェクトの具体化中に例外を発生させます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreResourceNotFoundException">
+      <MemberSignature Language="C#" Value="public bool IgnoreResourceNotFoundException { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreResourceNotFoundException" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.IgnoreResourceNotFoundException" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ サービスから 404 エラー (リソースが見つかりません) が返された場合に例外を発生させるかどうかを取得または設定します。</summary>
+        <value>設定すると<see langword="true" />、クライアント ライブラリを生成する代わりに空のセットを返します、<see cref="T:System.Data.Services.Client.DataServiceQueryException" />データ サービスに HTTP 404 が返されるときに: エラーのリソースが見つかりません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Links">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Client.LinkDescriptor&gt; Links { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Services.Client.LinkDescriptor&gt; Links" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.Links" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Services.Client.LinkDescriptor&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在 <see cref="T:System.Data.Services.Client.DataServiceContext" /> オブジェクトによって追跡されているすべての関連付けまたはリンクのコレクションを取得します。</summary>
+        <value>現在 <see cref="T:System.Data.Services.Client.LinkDescriptor" /> オブジェクトによって追跡されているすべての関連付けまたはリンクを表す <see cref="T:System.Data.Services.Client.DataServiceContext" /> オブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在追跡されているリンクがない場合は、要素がゼロの一覧が返されます。 コレクションは読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadProperty">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.QueryOperationResponse LoadProperty (object entity, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.QueryOperationResponse LoadProperty(object entity, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.LoadProperty(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.QueryOperationResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="entity">読み込むプロパティを含むエンティティ。</param>
+        <param name="propertyName">読み込みに指定されたエンティティのプロパティの名前。</param>
+        <summary>指定されたプロパティの遅延コンテンツをデータ サービスから読み込みます。</summary>
+        <returns>読み込み操作への応答。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すと、プロパティ値を取得するネットワーク操作が呼び出されます。 関連付けやリンクを表すプロパティを含め、エンティティのどのプロパティでも指定できます。  
+  
+ プロパティが関連付け、リンク、または遅延プロパティを表す場合、このメソッドを呼び出すと、関連リソースを遅延読み込みする方法がクライアントに提供されます。  
+  
+ エンティティが未変更状態または変更状態にある場合は、プロパティ値は関連エンティティを読み込み、それらのエンティティを未変更のリンクと共に変更なしとマークします。  
+  
+ プロパティが既に読み込まれている場合は、このメソッドを呼び出すことによって、そのプロパティの値を更新できます。  
+  
+   
+  
+## Examples  
+ 次の例では、返される各 `Customers` インスタンスに関連付けられた `Orders` オブジェクトを明示的に読み込む方法を示します。 この例では、<xref:System.Data.Services.Client.DataServiceContext>完了したときに作成される Northwind データ サービスに基づいて、サービス参照の追加ツールによって生成された、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]です。  
+  
+ [!code-csharp[Astoria Northwind Client#LoadRelatedOrderCustomer](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#loadrelatedordercustomer)]
+ [!code-vb[Astoria Northwind Client#LoadRelatedOrderCustomer](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#loadrelatedordercustomer)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadProperty">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.QueryOperationResponse LoadProperty (object entity, string propertyName, System.Data.Services.Client.DataServiceQueryContinuation continuation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.QueryOperationResponse LoadProperty(object entity, string propertyName, class System.Data.Services.Client.DataServiceQueryContinuation continuation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.LoadProperty(System.Object,System.String,System.Data.Services.Client.DataServiceQueryContinuation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.QueryOperationResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="continuation" Type="System.Data.Services.Client.DataServiceQueryContinuation" />
+      </Parameters>
+      <Docs>
+        <param name="entity">読み込むプロパティを含むエンティティ。</param>
+        <param name="propertyName">読み込みに指定されたエンティティのプロパティの名前。</param>
+        <param name="continuation">データ サービスから読み込む関連エンティティの次のページを表す <see cref="T:System.Data.Services.Client.DataServiceQueryContinuation`1" /> オブジェクト。</param>
+        <summary>関連エンティティの次のページを、指定されたクエリ連結オブジェクトを使用してデータ サービスから読み込みます。</summary>
+        <returns>関連エンティティ データの次のページを含む応答。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `entity` の状態が <xref:System.Data.Services.Client.EntityStates.Unchanged> または <xref:System.Data.Services.Client.EntityStates.Modified> の場合、関連エンティティは、<xref:System.Data.Services.Client.EntityStates.Unchanged> 状態のリンクと共に、<xref:System.Data.Services.Client.EntityStates.Unchanged> 状態でオブジェクトとして読み込まれます。  
+  
+ `entity` の状態が <xref:System.Data.Services.Client.EntityStates.Deleted> の場合、関連エンティティは、<xref:System.Data.Services.Client.EntityStates.Unchanged> 状態のリンクと共に、<xref:System.Data.Services.Client.EntityStates.Deleted> 状態でオブジェクトとして読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="entity" /> の状態が <see cref="F:System.Data.Services.Client.EntityStates.Detached" /> または <see cref="F:System.Data.Services.Client.EntityStates.Added" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadProperty">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.QueryOperationResponse LoadProperty (object entity, string propertyName, Uri nextLinkUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.QueryOperationResponse LoadProperty(object entity, string propertyName, class System.Uri nextLinkUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.LoadProperty(System.Object,System.String,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.QueryOperationResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="nextLinkUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="entity">読み込むプロパティを含むエンティティ。</param>
+        <param name="propertyName">読み込みに指定されたエンティティのプロパティの名前。</param>
+        <param name="nextLinkUri">次の結果ページを読み込むために使用する URI。</param>
+        <summary>関連エンティティのページを、指定された次のリンク URI を使用して読み込みます。</summary>
+        <returns>要求の結果が格納されている <see cref="T:System.Data.Services.Client.QueryOperationResponse`1" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `entity` の状態が <xref:System.Data.Services.Client.EntityStates.Unchanged> または <xref:System.Data.Services.Client.EntityStates.Modified> の場合、関連エンティティは <xref:System.Data.Services.Client.EntityStates.Unchanged> 状態で読み込まれ、エンティティ間のリンクも <xref:System.Data.Services.Client.EntityStates.Unchanged> 状態で作成されます。  
+  
+ `entity` の状態が <xref:System.Data.Services.Client.EntityStates.Deleted> の場合、関連エンティティは <xref:System.Data.Services.Client.EntityStates.Unchanged> 状態で読み込まれ、エンティティ間のリンクは <xref:System.Data.Services.Client.EntityStates.Deleted> 状態で作成されます。  
+  
+   
+  
+## Examples  
+ 次の例は、関連する `Orders` エンティティと各 `Customers` エンティティを返し、`do…while` ループを使用して `Customers` エンティティ ページおよび入れ子になった `while` ループを読み込んで、データ サービスから関連する `Orders` エンティティのページを読み込みます。 <xref:System.Data.Services.Client.DataServiceContext.LoadProperty%2A> メソッドは、関連する `Orders` エンティティのページを読み込むために使用されます。  
+  
+ [!code-csharp[Astoria Northwind Client#GetCustomersPagedNested](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getcustomerspagednested)]
+ [!code-vb[Astoria Northwind Client#GetCustomersPagedNested](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getcustomerspagednested)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="entity" /> の状態が <see cref="F:System.Data.Services.Client.EntityStates.Detached" /> または <see cref="F:System.Data.Services.Client.EntityStates.Added" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.QueryOperationResponse&lt;T&gt; LoadProperty&lt;T&gt; (object entity, string propertyName, System.Data.Services.Client.DataServiceQueryContinuation&lt;T&gt; continuation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.QueryOperationResponse`1&lt;!!T&gt; LoadProperty&lt;T&gt;(object entity, string propertyName, class System.Data.Services.Client.DataServiceQueryContinuation`1&lt;!!T&gt; continuation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.LoadProperty``1(System.Object,System.String,System.Data.Services.Client.DataServiceQueryContinuation{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.QueryOperationResponse&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="continuation" Type="System.Data.Services.Client.DataServiceQueryContinuation&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">読み込むコレクションの要素型。</typeparam>
+        <param name="entity">読み込むプロパティを含むエンティティ。</param>
+        <param name="propertyName">読み込みに指定されたエンティティのプロパティの名前。</param>
+        <param name="continuation">データ サービスから読み込む関連エンティティの次のページを表す <see cref="T:System.Data.Services.Client.DataServiceQueryContinuation`1" /> オブジェクト。</param>
+        <summary>関連エンティティの次のページを、指定された汎用クエリ連結オブジェクトを使用してデータ サービスから読み込みます。</summary>
+        <returns>関連エンティティ データの次のページを含む応答。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `entity` の状態が <xref:System.Data.Services.Client.EntityStates.Unchanged> または <xref:System.Data.Services.Client.EntityStates.Modified> の場合、関連エンティティは、<xref:System.Data.Services.Client.EntityStates.Unchanged> 状態のリンクと共に、<xref:System.Data.Services.Client.EntityStates.Unchanged> 状態でオブジェクトとして読み込まれます。  
+  
+ `entity` の状態が <xref:System.Data.Services.Client.EntityStates.Deleted> の場合、関連エンティティは、<xref:System.Data.Services.Client.EntityStates.Unchanged> 状態のリンクと共に、<xref:System.Data.Services.Client.EntityStates.Deleted> 状態でオブジェクトとして読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="entity" /> の状態が <see cref="F:System.Data.Services.Client.EntityStates.Detached" /> または <see cref="F:System.Data.Services.Client.EntityStates.Added" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeOption">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.MergeOption MergeOption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Services.Client.MergeOption MergeOption" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.MergeOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.MergeOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ サービスからエンティティを受け取るための同期オプションを取得または設定します。</summary>
+        <value><see cref="T:System.Data.Services.Client.MergeOption" /> 列挙体のメンバーの 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値はオブジェクトを具体化する前に、クライアントの逆シリアル化コンポーネントによって読み取られます。 データ サービスに対するクエリや更新を実行する前に、このプロパティを適切な具体化オプションに設定します。 既定値は <xref:System.Data.Services.Client.MergeOption.AppendOnly> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadingEntity">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Data.Services.Client.ReadingWritingEntityEventArgs&gt; ReadingEntity;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Data.Services.Client.ReadingWritingEntityEventArgs&gt; ReadingEntity" />
+      <MemberSignature Language="DocId" Value="E:System.Data.Services.Client.DataServiceContext.ReadingEntity" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Data.Services.Client.ReadingWritingEntityEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティ データがエンティティ オブジェクトに完全に読み取られた後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.ReadingEntity> イベントは、エンティティ データが入れ子になったすべてのエンティティと共にターゲット オブジェクトに完全に読み取られた後に発生します。 追跡は、何も以外の場合<xref:System.Data.Services.Client.MergeOption.NoTracking>イベントが発生する前に、オブジェクトはアタッチされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveName">
+      <MemberSignature Language="C#" Value="public Func&lt;Type,string&gt; ResolveName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;class System.Type, string&gt; ResolveName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.ResolveName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Type,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティをデータ サービスに送信するときにクライアント ライブラリによって使用される、既定の型解決方法をオーバーライドする関数を取得または設定します。</summary>
+        <value><see cref="T:System.Data.Services.Client.DataServiceContext" /> の名前を含む文字列を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント ライブラリによって使用される既定の型解決のオーバーライドを有効にします。 このプロパティを、クライアント アプリケーション内の型を名前空間で修飾された型名に解決するために使用する関数を識別するデリゲートに設定します。 これにより、クライアントは、サーバーからの応答で返される型名とクライアントの型とのカスタム マッピングを実行できます。  
+  
+> [!NOTE]
+>  このメソッドは、指定された型のターゲット形式 (Atom や JSON など) にシリアル化されるエンティティ名のオーバーライドを可能にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveType">
+      <MemberSignature Language="C#" Value="public Func&lt;string,Type&gt; ResolveType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;string, class System.Type&gt; ResolveType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.ResolveType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.String,System.Type&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティをデータ サービスから受信するときにクライアント ライブラリによって使用される、既定の型解決オプションをオーバーライドする関数を取得または設定します。</summary>
+        <value>クライアント ライブラリによって使用される既定の型解決オプションのオーバーライドに使用するオーバーライド関数を識別する関数デリゲート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント ライブラリによって使用される既定の型解決方法をオーバーライドできるようにします。 このプロパティを、名前空間で修飾された型名をクライアント アプリケーション内の型に解決する関数を識別するデリゲートに設定します。 これにより、クライアントは、サーバーからの応答で返される型名とクライアントの型とのカスタム マッピングを実行できます。  
+  
+ 型解決をオーバーライドすると、型名と型とのカスタム マッピング方法を挿入することも可能になります。 これは、識別された型に応答を具体化する方法には影響しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SaveChanges">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> が追跡している変更をストレージに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceResponse> の呼び出しから返された状態、ヘッダー、およびエラーが含まれている <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A>。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SaveChanges">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceResponse SaveChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceResponse SaveChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.SaveChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceResponse</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> が追跡している変更をストレージに保存します。</summary>
+        <returns><see cref="T:System.Data.Services.Client.DataServiceResponse" /> の呼び出しから返された状態、ヘッダー、およびエラーが含まれている <see cref="M:System.Data.Services.Client.DataServiceContext.SaveChanges.Remarks" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveChanges">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceResponse SaveChanges (System.Data.Services.Client.SaveChangesOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceResponse SaveChanges(valuetype System.Data.Services.Client.SaveChangesOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.SaveChanges(System.Data.Services.Client.SaveChangesOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.Data.Services.Client.SaveChangesOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options">具体化オプションを指定する <see cref="T:System.Data.Services.Client.MergeOption" /> 列挙体のメンバー。</param>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> が追跡している変更をストレージに保存します。</summary>
+        <returns><see cref="T:System.Data.Services.Client.DataServiceResponse" /> の呼び出しから返された状態、ヘッダー、およびエラーが含まれている <see cref="M:System.Data.Services.Client.DataServiceContext.SaveChanges" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作は、次の順序でデータ サービスに送信されます。  
+  
+1.  <xref:System.Data.Services.Client.DataServiceContext.DeleteLink%2A>  
+  
+2.  <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A>  
+  
+3.  <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A>  
+  
+4.  <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A>  
+  
+5.  <xref:System.Data.Services.Client.DataServiceContext.SetLink%2A> および <xref:System.Data.Services.Client.DataServiceContext.AddLink%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveChangesDefaultOptions">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.SaveChangesOptions SaveChangesDefaultOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Services.Client.SaveChangesOptions SaveChangesDefaultOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.SaveChangesDefaultOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.SaveChangesOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.SaveChangesOptions" /> メソッドによって使用される <see cref="M:System.Data.Services.Client.DataServiceContext.SaveChanges" /> 値を取得または設定します。</summary>
+        <value>変更の保存操作に対する現在のオプション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、結合セマンティクスや置換セマンティクスなどのオプションを <xref:System.Data.Services.Client.DataServiceContext> に対して一度設定してから、必要に応じて <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> オーバーロードのいずれかを呼び出してオーバーライドできるように、提供されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendingRequest">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Data.Services.Client.SendingRequestEventArgs&gt; SendingRequest;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Data.Services.Client.SendingRequestEventArgs&gt; SendingRequest" />
+      <MemberSignature Language="DocId" Value="E:System.Data.Services.Client.DataServiceContext.SendingRequest" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Data.Services.Client.SendingRequestEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい <see cref="T:System.Net.HttpWebRequest" /> が作成されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> イベントは、必要なプロパティ値がオブジェクトに設定される前に発生します。 保証  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLink">
+      <MemberSignature Language="C#" Value="public void SetLink (object source, string sourceProperty, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLink(object source, string sourceProperty, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.SetLink(System.Object,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="sourceProperty" Type="System.String" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">新しいリンクのソース オブジェクト。</param>
+        <param name="sourceProperty">新しいリンクのターゲット オブジェクトを識別する、ソース オブジェクトのプロパティ。</param>
+        <param name="target">このメソッドを呼び出すことによって初期化される新しいリンクに含まれる子オブジェクト。 ターゲット オブジェクトで識別される型のサブタイプである必要があります、 <c>sourceProperty</c>パラメーター。 場合<c>ターゲット</c>に設定されている null、リンクの削除操作は、呼び出しを表します。</param>
+        <summary>指定されたオブジェクト間に新しいリンクが存在することと、そのリンクが <see cref="T:System.Data.Services.Client.DataServiceContext" /> パラメーターで指定されたプロパティによって表されることを <paramref name="sourceProperty" /> に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいリンクは <xref:System.Data.Services.Client.EntityStates.Added> 状態で作成されます。 <xref:System.Data.Services.Client.DataServiceContext> は、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> への次の呼び出しでデータ サービスに送信される新しく作成されたリンクのセットにこの新しいリンクを追加します。  
+  
+ ターゲット引数が null の場合は、sourceProperty で表されるリンクを削除する必要があります (このリンクは <xref:System.Data.Services.Client.EntityStates.Deleted> 状態に変更されます)。  
+  
+ リンクは、一方向の関係があります。 通知するこのメソッドをもう一度呼び出す必要が双方向の関連付けを示すバック ポインターが存在する場合、<xref:System.Data.Services.Client.DataServiceContext>の 2 番目のリンク  
+  
+ このメソッドは、複数要素の接続性が 1 のリレーションシップへのリンクの追加のみをサポートします (ソース プロパティはオブジェクト参照です)。 たとえば、`Person` クラスが `Person` プロパティによって別の `Friend` に関連付けられている場合、この呼び出しを使用して `Person` を `Person` に関連付けることができます。 表される `sourceProperty` が 2 以上の基数のリレーションシップを持つ場合、このメソッドは例外をスローします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.Services.Client.DataServiceContext.AddLink%2A> メソッドおよび <xref:System.Data.Services.Client.DataServiceContext.SetLink%2A> メソッドを使用して、リレーションシップを定義するリンクを作成する方法を示します。 この例では、`Order_Details` オブジェクトのナビゲーション プロパティも明示的に設定されます。  
+  
+ [!code-csharp[Astoria Northwind Client#AddOrderDetailToOrder](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#addorderdetailtoorder)]
+ [!code-vb[Astoria Northwind Client#AddOrderDetailToOrder](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#addorderdetailtoorder)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="source" />、<paramref name="sourceProperty" />、または <paramref name="target" /> が null の場合。</exception>
+        <exception cref="T:System.InvalidOperationException">指定したリンクが既に存在する場合。  
+  
+ または  
+  
+ <paramref name="source" /> または <paramref name="target" /> として指定されたオブジェクトの状態が <see cref="F:System.Data.Services.Client.EntityStates.Detached" /> または <see cref="F:System.Data.Services.Client.EntityStates.Deleted" /> の場合。  
+  
+ または  
+  
+ <paramref name="sourceProperty" /> が 1 つの関連オブジェクトへの参照を定義するナビゲーション プロパティではない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSaveStream">
+      <MemberSignature Language="C#" Value="public void SetSaveStream (object entity, System.IO.Stream stream, bool closeStream, System.Data.Services.Client.DataServiceRequestArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSaveStream(object entity, class System.IO.Stream stream, bool closeStream, class System.Data.Services.Client.DataServiceRequestArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.SetSaveStream(System.Object,System.IO.Stream,System.Boolean,System.Data.Services.Client.DataServiceRequestArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="closeStream" Type="System.Boolean" />
+        <Parameter Name="args" Type="System.Data.Services.Client.DataServiceRequestArgs" />
+      </Parameters>
+      <Docs>
+        <param name="entity">バイナリ データ ストリームを割り当てるプロパティを持つエンティティ。</param>
+        <param name="stream">バイナリ データの読み取り元である <see cref="T:System.IO.Stream" />。</param>
+        <param name="closeStream"><see cref="T:System.Boolean" /> メソッドの完了時にデータ ストリームを閉じるかどうかを決定する <see cref="M:System.Data.Services.Client.DataServiceContext.SaveChanges" /> 値。</param>
+        <param name="args">HTTP 要求メッセージの設定が含まれている <see cref="T:System.Data.Services.Client.DataServiceRequestArgs" /> クラスのインスタンス。</param>
+        <summary>新しいデータ ストリームを要求メッセージで指定された設定で、エンティティのバイナリ プロパティとして設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A>メソッドに関連付けられているメディア リソースであるバイナリ ストリームを設定、 `entity`、メディア リンク エントリと呼ばれます。  
+  
+ <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> メソッドを呼び出すと、エンティティがメディア リンク エントリとしてマークされます。 次に <xref:System.Data.Services.Client.EntityStates.Modified> メソッドが呼び出されたときにストリームがデータ サービスに送信されるように、エンティティの状態も <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> に設定されます。  
+  
+ <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> メソッドは <xref:System.IO.Stream> を最後まで読み取ります。 <xref:System.IO.Stream.Seek%2A> 操作は <xref:System.IO.Stream> では試行されません。  
+  
+ ときに`closeStream`は`true`、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A>メソッドが戻る前に、ストリームを閉じます。 エラーが発生し、ストリームが読み取られなかった場合も、このストリームは閉じられます。  
+  
+ `entity` に <xref:System.Data.Services.Client.MediaEntryAttribute> が適用されている場合、メディア リソースをデータ ストリームにすることはできません。 `entity` のデータ ストリームを設定する前に、この属性を削除してください。  
+  
+ `args` で設定されているヘッダーの検証は実行されません。 そのため、要求の意味を変更する方法で HTTP ヘッダーを変更しないでください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">メソッドに渡されるパラメーターのいずれかが<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entity" /> はこの <see cref="T:System.Data.Services.Client.DataServiceContext" /> インスタンスによって追跡されていません。  
+  
+ または  
+  
+ <paramref name="entity" /> に <see cref="T:System.Data.Services.Client.MediaEntryAttribute" /> が適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSaveStream">
+      <MemberSignature Language="C#" Value="public void SetSaveStream (object entity, System.IO.Stream stream, bool closeStream, string contentType, string slug);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSaveStream(object entity, class System.IO.Stream stream, bool closeStream, string contentType, string slug) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.SetSaveStream(System.Object,System.IO.Stream,System.Boolean,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="closeStream" Type="System.Boolean" />
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="slug" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="entity">バイナリ データ ストリームを割り当てるプロパティを持つエンティティ。</param>
+        <param name="stream">バイナリ データの読み取り元である <see cref="T:System.IO.Stream" />。</param>
+        <param name="closeStream"><see cref="T:System.Boolean" /> メソッドの完了時にデータ ストリームを閉じるかどうかを決定する <see cref="M:System.Data.Services.Client.DataServiceContext.SaveChanges" /> 値。</param>
+        <param name="contentType">要求メッセージの Content-Type ヘッダー値。</param>
+        <param name="slug">要求メッセージの Slug ヘッダー値。</param>
+        <summary>エンティティのバイナリ プロパティとして、新しいデータ ストリームを設定します。 要求メッセージでは、指定された Content-type および Slug ヘッダーが含まれています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A>メソッドに関連付けられているメディア リソースであるバイナリ ストリームを設定、 `entity`、メディア リンク エントリと呼ばれます。  
+  
+ <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> メソッドを呼び出すと、エンティティがメディア リンク エントリとしてマークされます。 次に <xref:System.Data.Services.Client.EntityStates.Modified> メソッドが呼び出されたときにストリームがデータ サービスに送信されるように、エンティティの状態も <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> に設定されます。  
+  
+ <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> メソッドは <xref:System.IO.Stream> を最後まで読み取ります。 <xref:System.IO.Stream.Seek%2A> 操作は <xref:System.IO.Stream> では試行されません。  
+  
+ ときに`closeStream`は`true`、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A>メソッドが戻る前に、ストリームを閉じます。 エラーが発生し、ストリームが読み取られなかった場合も、このストリームは閉じられます。  
+  
+ `entity` に <xref:System.Data.Services.Client.MediaEntryAttribute> が適用されている場合、メディア リソースをデータ ストリームにすることはできません。 `entity` のデータ ストリームを設定する前に、この属性を削除してください。  
+  
+ `contentType` と `slug` で設定されているヘッダーの検証は実行されません。 そのため、要求の意味を変更する方法でこれらの HTTP ヘッダーを変更しないでください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">メソッドに渡されるパラメーターのいずれかが<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entity" /> はこの <see cref="T:System.Data.Services.Client.DataServiceContext" /> インスタンスによって追跡されていません。  
+  
+ または  
+  
+ <see langword="entity" /> に <see cref="T:System.Data.Services.Client.MediaEntryAttribute" /> が適用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public int Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ サービスへの基になる HTTP 要求に使用されるタイムアウト オプションを設定します。</summary>
+        <value>サービス要求がタイムアウトするまでの時間間隔を示す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、 <xref:System.Net.HttpWebRequest.Timeout> 、基になるプロパティ<xref:System.Net.HttpWebRequest>オブジェクト。 この値は、要求に影響する可能性のある対象データ サービスに対するクエリや更新操作を実行する前に設定する必要があります。 値はデータ サービスへの要求ごとに変わることがあり、新しい値は次のデータ サービス要求によって検出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetEntity&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public bool TryGetEntity&lt;TEntity&gt; (Uri identity, out TEntity entity) where TEntity : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetEntity&lt;class TEntity&gt;(class System.Uri identity, [out] !!TEntity&amp; entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.TryGetEntity``1(System.Uri,``0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Uri" />
+        <Parameter Name="entity" Type="TEntity&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEntity">エンティティの型。</typeparam>
+        <param name="identity">取得する追跡対象エンティティの URI。</param>
+        <param name="entity">取得するエンティティ。</param>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されているエンティティの取得を、そのエンティティの URI への参照によってテストします。</summary>
+        <returns>エンティティが <paramref name="resourceUri" /> で見つかった場合、そのエンティティは out パラメーター <paramref name="entity" /> で返され、true が返されます。 エンティティが見つからなかった場合は、false が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンティティの状態が <xref:System.Data.Services.Client.EntityStates.Detached> または <xref:System.Data.Services.Client.EntityStates.Added> の場合は、このエンティティは URI がないため、このメソッドを使用して取得することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="identity" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetUri">
+      <MemberSignature Language="C#" Value="public bool TryGetUri (object entity, out Uri identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetUri(object entity, [out] class System.Uri&amp; identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.TryGetUri(System.Object,System.Uri@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="identity" Type="System.Uri&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="entity">によって識別されるエンティティ、 <c>identity</c>です。</param>
+        <param name="identity">エンティティの URI。</param>
+        <summary>指定されたエンティティに関連付けられた正規 URI がある場合は、それを取得します。</summary>
+        <returns>out パラメーターで正規 URI が返される場合は true を返します。 指定されたエンティティが <see cref="T:System.Data.Services.Client.DataServiceContext" /> によって追跡されないか、追加済み状態である場合、使用可能な URI は存在せず、false が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.EntityStates.Added> 状態のオブジェクトには URI はまだありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="entity" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeScheme">
+      <MemberSignature Language="C#" Value="public Uri TypeScheme { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri TypeScheme" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.TypeScheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが使用する型スキームを示すために使用される URI を取得または設定します。</summary>
+        <value>型スキームを含む <see cref="T:System.Uri" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ATOM ペイロードでは、戻り値は、エンティティの型を識別するために使用されたカテゴリ要素のスキーム属性になります。 既定値は `http://schemas.microsoft.com/ado/2007/08/dataservices/scheme` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateObject">
+      <MemberSignature Language="C#" Value="public void UpdateObject (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateObject(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceContext.UpdateObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity"><see cref="F:System.Data.Services.Client.EntityStates.Modified" /> 状態に割り当てる追跡対象エンティティ。</param>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceContext" /> 内で指定されたオブジェクトの状態を <see cref="F:System.Data.Services.Client.EntityStates.Modified" /> に変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、既存のオブジェクトを取得および変更してから、<xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> で <xref:System.Data.Services.Client.DataServiceContext> メソッドを呼び出してコンテキスト内の項目を更新済みとしてマークします。 <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> が呼び出されると、HTTP MERGE メッセージがデータ サービスに送信されます。 この例では、<xref:System.Data.Services.Client.DataServiceContext>完了したときに作成される Northwind データ サービスに基づいて、サービス参照の追加ツールによって生成された、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)]です。  
+  
+ [!code-csharp[Astoria Northwind Client#ModifyCustomer](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#modifycustomer)]
+ [!code-vb[Astoria Northwind Client#ModifyCustomer](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#modifycustomer)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="entity" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="entity" /> の状態が <see cref="F:System.Data.Services.Client.EntityStates.Detached" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePostTunneling">
+      <MemberSignature Language="C#" Value="public bool UsePostTunneling { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePostTunneling" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceContext.UsePostTunneling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポスト トンネルを使用するかどうかを示すブール値を取得または設定します。</summary>
+        <value>ポスト トンネルを使用するかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、データ サービスに送信される作成、更新、および削除要求でプロトコルのポスト トンネル機能を使用するかどうかを制御します。 true に設定すると、トンネルが使用されます。 false に設定すると、標準の HTTP メソッドが使用されます。  
+  
+ このプロパティの既定値は false です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WritingEntity">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Data.Services.Client.ReadingWritingEntityEventArgs&gt; WritingEntity;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Data.Services.Client.ReadingWritingEntityEventArgs&gt; WritingEntity" />
+      <MemberSignature Language="DocId" Value="E:System.Data.Services.Client.DataServiceContext.WritingEntity" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Data.Services.Client.ReadingWritingEntityEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティが要求メッセージで XML に完全にシリアル化された後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.WritingEntity> イベントを処理すると、要求内の XML を送信前に変更することができます。  
+  
+ <xref:System.Data.Services.Client.DataServiceContext.WritingEntity> イベントは、指定された <xref:System.Data.Services.Client.DataServiceContext.BeginSaveChanges%28System.Data.Services.Client.SaveChangesOptions%2CSystem.AsyncCallback%2CSystem.Object%29> 値に <xref:System.Data.Services.Client.SaveChangesOptions.Batch> を含めずに <xref:System.Data.Services.Client.SaveChangesOptions> を呼び出すと、別のスレッドで発生することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,895 @@
+<Type Name="ButtonBase" FullName="System.Windows.Controls.Primitives.ButtonBase">
+  <TypeSignature Language="C#" Value="public abstract class ButtonBase : System.Windows.Controls.ContentControl, System.Windows.Input.ICommandSource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract ButtonBase extends System.Windows.Controls.ContentControl implements class System.Windows.Input.ICommandSource" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.ButtonBase" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.ContentControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Input.ICommandSource</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Click")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Button)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての基本クラスを表します<see cref="T:System.Windows.Controls.Button" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、 <xref:System.Windows.Controls.Primitives.ButtonBase.Click> 、ユーザーがクリックしたときに応答するイベント、<xref:System.Windows.Controls.Primitives.ButtonBase>です。 ユーザーを発生させることができます、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベントを使用して、<xref:System.Windows.Controls.AccessText>またはコントロールにフォーカスがあるときに、ENTER キーまたは space キーを押して、します。  ユーザーがコントロールのセット、space キーを押したとき<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>に`true`し、マウスをキャプチャします。  その結果、コントロール イベントを発生させるマウスなど<xref:System.Windows.UIElement.MouseEnter>と<xref:System.Windows.UIElement.IsMouseDirectlyOverChanged>です。 使用して、 <xref:System.Windows.Controls.AccessText> ENTER が変わらないまたは<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>または、マウスをキャプチャが大きく、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
+  
+ <xref:System.Windows.Controls.Primitives.ButtonBase>設定、<xref:System.Windows.Input.KeyboardNavigation.AcceptsReturn%2A>添付プロパティ`true`です。  
+  
+ <xref:System.Windows.Controls.Primitives.ButtonBase>設定、<xref:System.Windows.UIElement.IsInputMethodEnabled%2A>プロパティを`false`です。  
+  
+ A<xref:System.Windows.Controls.Primitives.ButtonBase>は、 <xref:System.Windows.Controls.ContentControl>、任意の型 (文字列、画像、パネルなど) の 1 つのオブジェクトに含めることを意味します。 詳細については、<xref:System.Windows.Controls.ContentControl> クラスを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ButtonBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.ButtonBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Primitives.ButtonBase.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Controls.Button" />をクリックします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーを発生させることができます、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベントを使用して、<xref:System.Windows.Controls.AccessText>またはコントロールにフォーカスがあるときに、ENTER キーまたは space キーを押して、します。  ユーザーがコントロールのセット、space キーを押したとき<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>に`true`し、マウスをキャプチャします。  その結果、コントロール イベントを発生させるマウスなど<xref:System.Windows.UIElement.MouseEnter>と<xref:System.Windows.UIElement.IsMouseDirectlyOverChanged>です。 使用して、 <xref:System.Windows.Controls.AccessText> ENTER が変わらないまたは<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>または、マウスをキャプチャが大きく、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
+  
+ <xref:System.Windows.Controls.Primitives.ButtonBase>マーク、<xref:System.Windows.UIElement.MouseLeftButtonDown>イベントの処理済みとして、<xref:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonDown%2A>メソッドとが発生し、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。 したがって、<xref:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonDown%2A>から継承されるコントロールのイベントが発生することはありません<xref:System.Windows.Controls.Primitives.ButtonBase>です。 代わりに、イベント ハンドラーをアタッチ、<xref:System.Windows.ContentElement.PreviewMouseLeftButtonDown>イベント、または呼び出し<xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29>で`handledEventsToo`'éý'`true`です。  
+  
+<a name="routedEventInfo_Click"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.ButtonBase.ClickEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+   
+  
+## Examples  
+ 次の例では、次の 3 つの異なる方法でクリックに応答する 3 つのボタンを示します。  
+  
+-   ホバー時の最初のボタンの色に変更を置いたときにマウス ボタンの上  
+  
+-   キーを押して、2 番目のボタンは、ボタンにマウス ポインターが、マウスを押すことが必要です。  
+  
+-   Release の 3 番目がリセット ボタンの背景色、マウスが押され、ボタンにリリースされるまでです。  
+  
+ [!code-xaml[ClickModes_snip#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ClickModes_snip/CSharp/Pane1.xaml#1)]  
+  
+ [!code-csharp[ClickModes_snip#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ClickModes_snip/CSharp/Pane1.xaml.cs#2)]
+ [!code-vb[ClickModes_snip#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClickModes_snip/VisualBasic/Window1.xaml.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClickEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ClickEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ClickEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ButtonBase.ClickEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Primitives.ButtonBase.Click" /> ルーティング イベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、マウスの左ボタン クリックに対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClickMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ClickMode ClickMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.ClickMode ClickMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ButtonBase.ClickMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ClickMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するときに、<see cref="E:System.Windows.Controls.Primitives.ButtonBase.Click" />イベントが発生します。</summary>
+        <value>ときに、<see cref="E:System.Windows.Controls.Primitives.ButtonBase.Click" />イベントが発生します。 既定値は <see cref="F:System.Windows.Controls.ClickMode.Release" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ClickMode"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.ButtonBase.ClickModeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClickModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ClickModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ClickModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ButtonBase.ClickModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.ButtonBase.ClickMode" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ICommand Command { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ICommand Command" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ButtonBase.Command" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定は、このボタンが押されたときに呼び出されるコマンド。</summary>
+        <value>このボタンが押されたときに呼び出されるコマンド。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、インスタンスに関連付けるコマンド、特定のボタンは使用されます。  
+  
+ [!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]など、既存のコマンドのライブラリのいずれかの静的なコマンド値にするのにはこのプロパティが設定よく<xref:System.Windows.Input.ApplicationCommands>または<xref:System.Windows.Input.NavigationCommands>です。 詳細については、「[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)または<xref:System.Windows.Input.ICommand>です。  
+  
+<a name="xamlAttributeUsage_Command"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Command="commandName"/>  
+```  
+  
+<a name="xamlValues_Command"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *commandName*  
+ このボタンが押されたときに呼び出されるコマンド。  
+  
+<a name="dependencyPropertyInfo_Command"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.ButtonBase.CommandProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandParameter">
+      <MemberSignature Language="C#" Value="public object CommandParameter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandParameter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ButtonBase.CommandParameter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に渡すパラメーター、<see cref="P:System.Windows.Controls.Primitives.ButtonBase.Command" />プロパティです。</summary>
+        <value>渡すパラメーターを<see cref="P:System.Windows.Controls.Primitives.ButtonBase.Command" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドのライブラリから既存のほとんどのコマンドは、コマンド パラメーターを使用できません。 コマンド パラメーターを使用して、コマンドは、これらのほとんどは、整数や文字列などの何らかのプリミティブ型の値がパラメーターを受け取ります。 ただし、これはカスタム コマンドを作成することを想定するコマンド パラメーターとしてプリミティブ型です。 この設定のような場合はカスタム コマンドの<xref:System.Windows.Controls.Primitives.ButtonBase.CommandParameter%2A>コードが必要です。 新規または既存のオブジェクト インスタンス。 設定<xref:System.Windows.Controls.Primitives.ButtonBase.CommandParameter%2A>マークアップでそのコマンドが予期される型の新しい要素をプロパティ要素構文を入力オブジェクトの要素がここでは、プロパティ要素構文を必要があります。 代わりに、マークアップで設定がマークアップ拡張機能によって、既存のオブジェクトへの参照を必要可能性があります (これらの参照が通常で行われます[マークアップ拡張機能のバインド](~/docs/framework/wpf/advanced/binding-markup-extension.md)または[StaticResource マークアップ拡張機能](~/docs/framework/wpf/advanced/staticresource-markup-extension.md))。  
+  
+<a name="xamlAttributeUsage_CommandParameter"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object CommandParameter="commandParameter" />  
+```  
+  
+<a name="xamlValues_CommandParameter"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *commandParameter*  
+ 指定された特定のコマンドと同じ型の値、<xref:System.Windows.Controls.Primitives.ButtonBase.Command%2A>プロパティが必要です。 既存のコマンド ライブラリ コマンドを使用する場合は、そのコマンドのライブラリのドキュメントを参照して[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用法については、どの種類の含む<xref:System.Windows.Controls.Primitives.ButtonBase.CommandParameter%2A>コマンドが必要です。 カスタム コマンドを使用する場合は、「解説」を参照してください。  
+  
+<a name="dependencyPropertyInfo_CommandParameter"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.ButtonBase.CommandParameterProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandParameterProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandParameterProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandParameterProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ButtonBase.CommandParameterProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.ButtonBase.CommandParameter" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ButtonBase.CommandProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルーティングされた識別<see cref="P:System.Windows.Controls.Primitives.ButtonBase.Command" />依存関係プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTarget">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement CommandTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement CommandTarget" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ButtonBase.CommandTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定されたコマンドが実行される上にある要素を設定します。</summary>
+        <value>コマンドが実行する対象の要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.ButtonBase.CommandTarget%2A>を定義するプロパティを使用することはできません、<xref:System.Windows.UIElement>です。 <xref:System.Windows.Controls.Primitives.ButtonBase.CommandTarget%2A>プロパティは既に定義されている場所に、アプリケーションの要素への参照を提供します。  
+  
+<a name="xamlAttributeUsage_Target"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<ButtonBase CommandTarget="{Binding ElementName= elementName }"/>  
+```  
+  
+<a name="xamlValues_CommandTarget"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *elementName*  
+ 名前<xref:System.Windows.IInputElement>するコマンドを受信します。  
+  
+<a name="dependencyPropertyInfo_CommandTarget"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.ButtonBase.CommandTargetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTargetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandTargetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandTargetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ButtonBase.CommandTargetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.ButtonBase.CommandTarget" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabledCore">
+      <MemberSignature Language="C#" Value="protected override bool IsEnabledCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabledCore" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ButtonBase.IsEnabledCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得、<see cref="P:System.Windows.ContentElement.IsEnabled" />プロパティです。</summary>
+        <value>
+          <see langword="true" />コントロールが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装をオーバーライドすることを確認する場合は、基本メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPressed">
+      <MemberSignature Language="C#" Value="public bool IsPressed { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPressed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ButtonBase.IsPressed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.Primitives.ButtonBase" />現在アクティブになっています。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.Primitives.ButtonBase" />それ以外のアクティブ化された<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>マウスの左ボタンを示すボタンの状態、または space キーが押されたボタンの上です。 ときに<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>は`true`コントロールがマウスをキャプチャします。  その結果、コントロール イベントを発生させるマウスなど<xref:System.Windows.UIElement.MouseEnter>と<xref:System.Windows.UIElement.IsMouseDirectlyOverChanged>です。 使用して、<xref:System.Windows.Controls.AccessText>または ENTER は変化しません<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>またはマウスのキャプチャは raise、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
+  
+ .NET Framework のバージョン 3.0 Service Pack 1 以降<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>保護されている set アクセス操作子を持ちます。 この機能を使用するのには、アプリケーションが .NET Framework version 3.5 を対象する必要があります。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_IsPressed"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressedProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ この例を使用する方法を示しています、<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>トリガー スタイルのプロパティです。  
+  
+ [!code-xaml[BtnColor#9](~/samples/snippets/csharp/VS_Snippets_Wpf/BtnColor/CSharp/Pane1.xaml#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPressedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsPressedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsPressedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ButtonBase.IsPressedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.ButtonBase.IsPressed" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAccessKey">
+      <MemberSignature Language="C#" Value="protected override void OnAccessKey (System.Windows.Input.AccessKeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnAccessKey(class System.Windows.Input.AccessKeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnAccessKey(System.Windows.Input.AccessKeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.AccessKeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.Input.AccessKeyManager.AccessKeyPressed" />イベント。</param>
+        <summary>応答するときに、<see cref="P:System.Windows.Controls.AccessText.AccessKey" />のこのコントロールが呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Input.AccessKeyEventArgs.IsMultiple%2A>は`true`、このメソッドは基底の実装は、このコントロールにフォーカスが移動します。  それ以外の場合、このメソッドを発生させる、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClick">
+      <MemberSignature Language="C#" Value="protected virtual void OnClick ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClick() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnClick" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>発生させる、<see cref="E:System.Windows.Controls.Primitives.ButtonBase.Click" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールで発生し、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>を呼び出してイベント<xref:System.Windows.UIElement.RaiseEvent%2A>です。 詳細については、次を参照してください。[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnClick" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnClick" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnIsPressedChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnIsPressedChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnIsPressedChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnIsPressedChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">データを<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />です。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.Primitives.ButtonBase.IsPressed" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>クラス処理を提供、<see cref="E:System.Windows.UIElement.KeyDown" />このコントロールにフォーカスがあるときに、ユーザーが、キーを押したときに発生するイベントをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を示します、<xref:System.Windows.UIElement.KeyDown>イベントを処理するには、<xref:System.Windows.RoutedEventArgs.Handled%2A>にイベント データのプロパティ`true`とき<xref:System.Windows.Controls.Primitives.ButtonBase.ClickMode%2A>に設定されていない<xref:System.Windows.Controls.ClickMode.Hover>ケースの次のいずれかが true の場合。  
+  
+-   Space キーを押します。  
+  
+-   ENTER を押すと<xref:System.Windows.Input.KeyboardNavigation.AcceptsReturn%2A>は`true`このコントロール。  
+  
+ その他の場合は、この実装は変わりません処理済みの状態 (、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティ) の<xref:System.Windows.UIElement.KeyDown>イベント データ。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnKeyDown(System.Windows.Input.KeyEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnKeyDown(System.Windows.Input.KeyEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性があります、クラスのハンドラーでイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyUp">
+      <MemberSignature Language="C#" Value="protected override void OnKeyUp (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyUp(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnKeyUp(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.UIElement.KeyUp" />イベント。</param>
+        <summary>クラス処理を提供、<see cref="E:System.Windows.UIElement.KeyUp" />このコントロールにフォーカスがあるときにキーを離したときに発生するイベントをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を示します、<xref:System.Windows.UIElement.KeyUp>イベントを処理するには、<xref:System.Windows.RoutedEventArgs.Handled%2A>にイベント データのプロパティ`true`space キーを離したときにします。 それ以外の場合、この実装には、処理済みの状態は変わりません (、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティ) の<xref:System.Windows.UIElement.KeyUp>イベント データ。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnKeyUp(System.Windows.Input.KeyEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnKeyUp(System.Windows.Input.KeyEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性があります、クラスのハンドラーでイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLostKeyboardFocus">
+      <MemberSignature Language="C#" Value="protected override void OnLostKeyboardFocus (System.Windows.Input.KeyboardFocusChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLostKeyboardFocus(class System.Windows.Input.KeyboardFocusChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnLostKeyboardFocus(System.Windows.Input.KeyboardFocusChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyboardFocusChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.IInputElement.LostKeyboardFocus" />イベント。</param>
+        <summary>要素がキーボード フォーカスを失ったときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLostMouseCapture">
+      <MemberSignature Language="C#" Value="protected override void OnLostMouseCapture (System.Windows.Input.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLostMouseCapture(class System.Windows.Input.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnLostMouseCapture(System.Windows.Input.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.Input.Mouse.LostMouseCapture" />イベント。</param>
+        <summary>クラスの処理を提供、<see cref="E:System.Windows.UIElement.LostMouseCapture" />このコントロールがマウスのイベント メッセージを受信して不要になったときに発生するイベントをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、処理済みの状態は変更されません (、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティ) の<xref:System.Windows.UIElement.LostMouseCapture>イベント データ。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnLostMouseCapture(System.Windows.Input.MouseEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnLostMouseCapture(System.Windows.Input.MouseEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性があります、クラスのハンドラーでイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseEnter">
+      <MemberSignature Language="C#" Value="protected override void OnMouseEnter (System.Windows.Input.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseEnter(class System.Windows.Input.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseEnter(System.Windows.Input.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.Input.Mouse.MouseEnter" />イベント。</param>
+        <summary>クラス処理を提供、<see cref="P:System.Windows.Controls.Primitives.ButtonBase.ClickMode" />マウスがこのコントロールに入ったときに発生するイベントをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Controls.Primitives.ButtonBase.ClickMode%2A>に設定されている<xref:System.Windows.Controls.ClickMode.Hover>、この実装を示します、<xref:System.Windows.UIElement.MouseEnter>イベントを処理するには、<xref:System.Windows.RoutedEventArgs.Handled%2A>にイベント データのプロパティ`true`を発生させると、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseEnter(System.Windows.Input.MouseEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseEnter(System.Windows.Input.MouseEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性があります、クラスのハンドラーでイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeave">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeave (System.Windows.Input.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeave(class System.Windows.Input.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeave(System.Windows.Input.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.Input.Mouse.MouseLeave" />イベント。</param>
+        <summary>クラス処理を提供、<see cref="E:System.Windows.UIElement.MouseLeave" />要素からマウスを移動するときに発生するイベントをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を示します、<xref:System.Windows.UIElement.MouseLeave>イベントを処理するには、<xref:System.Windows.RoutedEventArgs.Handled%2A>にイベント データのプロパティ`true`とき<xref:System.Windows.Controls.Primitives.ButtonBase.ClickMode%2A>に設定されている<xref:System.Windows.Controls.ClickMode.Hover>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeave(System.Windows.Input.MouseEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeave(System.Windows.Input.MouseEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性があります、クラスのハンドラーでイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeftButtonDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeftButtonDown (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeftButtonDown(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>クラス処理を提供、<see cref="E:System.Windows.UIElement.MouseLeftButtonDown" />このコントロールの上にマウス ポインターがマウスの左ボタンが押されたときに発生するイベントをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を示します、<xref:System.Windows.UIElement.MouseLeftButtonDown>イベントを処理するには、<xref:System.Windows.RoutedEventArgs.Handled%2A>にイベント データのプロパティ`true`とき<xref:System.Windows.Controls.Primitives.ButtonBase.ClickMode%2A>に設定されていない<xref:System.Windows.Controls.ClickMode.Hover>です。 応答する、<xref:System.Windows.UIElement.MouseLeftButtonDown>イベント、イベント ハンドラーをアタッチ、<xref:System.Windows.ContentElement.PreviewMouseLeftButtonDown>イベント、または呼び出し<xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29>で`handledEventsToo`'éý'`true`です。  
+  
+ ときに<xref:System.Windows.Controls.Primitives.ButtonBase.ClickMode%2A>に設定されている<xref:System.Windows.Controls.ClickMode.Press>、このメソッドを発生させる、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性があります、クラスのハンドラーでイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeftButtonUp">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeftButtonUp (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeftButtonUp(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>クラスの処理を提供、<see cref="E:System.Windows.UIElement.MouseLeftButtonUp" />ルーティング イベントにこのコントロールの上にマウス ポインターがマウスの左ボタンが離されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を示します、<xref:System.Windows.UIElement.MouseLeftButtonUp>イベントを処理するには、<xref:System.Windows.RoutedEventArgs.Handled%2A>にイベント データのプロパティ`true`とき<xref:System.Windows.Controls.Primitives.ButtonBase.ClickMode%2A>に設定されていない<xref:System.Windows.Controls.ClickMode.Hover>です。 応答する、<xref:System.Windows.UIElement.MouseLeftButtonUp>イベント、イベント ハンドラーをアタッチ、<xref:System.Windows.ContentElement.PreviewMouseLeftButtonUp>イベント、または呼び出し<xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29>で`handledEventsToo`'éý'`true`です。  
+  
+ ときに<xref:System.Windows.Controls.Primitives.ButtonBase.ClickMode%2A>に設定されている<xref:System.Windows.Controls.ClickMode.Release>は<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>は`true`、このメソッドを発生させる、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性があります、クラスのハンドラーでイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseMove">
+      <MemberSignature Language="C#" Value="protected override void OnMouseMove (System.Windows.Input.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseMove(class System.Windows.Input.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseMove(System.Windows.Input.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>クラスの処理を提供、<see cref="E:System.Windows.UIElement.MouseMove" />この要素上でマウス ポインターを動かしたときに発生するイベントをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を示します、<xref:System.Windows.UIElement.MouseMove>イベントを処理するには、<xref:System.Windows.RoutedEventArgs.Handled%2A>にイベント データのプロパティ`true`とき<xref:System.Windows.Controls.Primitives.ButtonBase.ClickMode%2A>に設定されていない<xref:System.Windows.Controls.ClickMode.Hover>と<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>は`true`します。 応答する、<xref:System.Windows.UIElement.MouseMove>イベント、イベント ハンドラーをアタッチ、<xref:System.Windows.ContentElement.PreviewMouseMove>イベント、または呼び出し<xref:System.Windows.UIElement.AddHandler%28System.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29>で`handledEventsToo`'éý'`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseMove(System.Windows.Input.MouseEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Controls.Primitives.ButtonBase.OnMouseMove(System.Windows.Input.MouseEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性があります、クラスのハンドラーでイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenderSizeChanged">
+      <MemberSignature Language="C#" Value="protected override void OnRenderSizeChanged (System.Windows.SizeChangedInfo sizeInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnRenderSizeChanged(class System.Windows.SizeChangedInfo sizeInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ButtonBase.OnRenderSizeChanged(System.Windows.SizeChangedInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sizeInfo" Type="System.Windows.SizeChangedInfo" />
+      </Parameters>
+      <Docs>
+        <param name="sizeInfo">サイズの変更を指定します。</param>
+        <summary>コントロールの描画のサイズが変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Windows.Controls.Primitives.ButtonBase.OnRenderSizeChanged%2A>のメソッド、<xref:System.Windows.UIElement>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

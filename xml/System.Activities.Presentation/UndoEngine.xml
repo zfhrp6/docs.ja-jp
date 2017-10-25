@@ -1,0 +1,257 @@
+<Type Name="UndoEngine" FullName="System.Activities.Presentation.UndoEngine">
+  <TypeSignature Language="C#" Value="public class UndoEngine" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UndoEngine extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.UndoEngine" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイナーに元に戻す操作またはやり直し操作の実装を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UndoEngine (System.Activities.Presentation.EditingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Activities.Presentation.EditingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.UndoEngine.#ctor(System.Activities.Presentation.EditingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.Presentation.EditingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">編集コンテキスト。</param>
+        <summary><see cref="T:System.Activities.Presentation.UndoEngine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddUndoUnit">
+      <MemberSignature Language="C#" Value="public void AddUndoUnit (System.Activities.Presentation.UndoUnit unit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddUndoUnit(class System.Activities.Presentation.UndoUnit unit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.UndoEngine.AddUndoUnit(System.Activities.Presentation.UndoUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unit" Type="System.Activities.Presentation.UndoUnit" />
+      </Parameters>
+      <Docs>
+        <param name="unit">追加する元に戻す単位。</param>
+        <summary>指定した単位を元に戻すスタックに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRedoActions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;string&gt; GetRedoActions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; GetRedoActions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.UndoEngine.GetRedoActions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>やり直し操作の <see cref="T:System.Collections.Generic.IEnumerable`1" /> コレクションを取得します。</summary>
+        <returns>やり直し操作のコレクションに対する単純反復子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUndoActions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;string&gt; GetUndoActions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; GetUndoActions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.UndoEngine.GetUndoActions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>元に戻す操作の <see cref="T:System.Collections.Generic.IEnumerable`1" /> コレクションを取得します。</summary>
+        <returns>元に戻す操作のコレクションに対する単純反復子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUndoRedoInProgress">
+      <MemberSignature Language="C#" Value="public bool IsUndoRedoInProgress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUndoRedoInProgress" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.UndoEngine.IsUndoRedoInProgress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />元に戻すかやり直す操作が進行中かどうかを示す値。</summary>
+        <value>
+          <see langword="true" />場合は、元に戻すまたはやり直す操作が進行中です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Redo">
+      <MemberSignature Language="C#" Value="public bool Redo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Redo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.UndoEngine.Redo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>やり直しスタックから最後の <see cref="T:System.Activities.Presentation.UndoUnit" /> インスタンスを削除し、その単位でやり直し操作を実行します。 続けて <see cref="T:System.Activities.Presentation.UndoUnit" /> インスタンスが元に戻すスタックに配置されます。</summary>
+        <returns>
+          <see langword="true" />このメソッドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedoCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Activities.Presentation.UndoUnitEventArgs&gt; RedoCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Activities.Presentation.UndoUnitEventArgs&gt; RedoCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.UndoEngine.RedoCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Activities.Presentation.UndoUnitEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>やり直し操作が完了したときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Undo">
+      <MemberSignature Language="C#" Value="public bool Undo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Undo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.UndoEngine.Undo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>元に戻すスタックから最後の <see cref="T:System.Activities.Presentation.UndoUnit" /> インスタンスを削除し、その単位で元に戻す操作を実行します。 続けて <see cref="T:System.Activities.Presentation.UndoUnit" /> インスタンスがやり直しスタックに配置されます。</summary>
+        <returns>
+          <see langword="true" />このメソッドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndoCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Activities.Presentation.UndoUnitEventArgs&gt; UndoCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Activities.Presentation.UndoUnitEventArgs&gt; UndoCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.UndoEngine.UndoCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Activities.Presentation.UndoUnitEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元に戻す操作が完了したときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndoRedoBufferChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler UndoRedoBufferChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler UndoRedoBufferChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.UndoEngine.UndoRedoBufferChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッファーを保持元に戻すおよびやり直す操作を変更するときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndoUnitAdded">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Activities.Presentation.UndoUnitEventArgs&gt; UndoUnitAdded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Activities.Presentation.UndoUnitEventArgs&gt; UndoUnitAdded" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.UndoEngine.UndoUnitAdded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Activities.Presentation.UndoUnitEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元に戻す単位が元に戻すスタックに追加されたとき発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndoUnitCancelled">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Activities.Presentation.UndoUnitEventArgs&gt; UndoUnitCancelled;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Activities.Presentation.UndoUnitEventArgs&gt; UndoUnitCancelled" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.UndoEngine.UndoUnitCancelled" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Activities.Presentation.UndoUnitEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元に戻す単位が元に戻すスタックから取り消されると発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndoUnitDiscarded">
+      <MemberSignature Language="C#" Value="public event EventHandler UndoUnitDiscarded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler UndoUnitDiscarded" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.UndoEngine.UndoUnitDiscarded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初に元に戻す操作を実行せずに、元に戻す単位が元に戻すスタックから削除されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

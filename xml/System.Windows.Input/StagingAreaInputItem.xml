@@ -1,0 +1,110 @@
+<Type Name="StagingAreaInputItem" FullName="System.Windows.Input.StagingAreaInputItem">
+  <TypeSignature Language="C#" Value="public class StagingAreaInputItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StagingAreaInputItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.StagingAreaInputItem" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>入力マネージャーによって処理されると、入力イベントをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.StagingAreaInputItem>クラスは、入力のマネージャーのイベントのリスナーのディクショナリ ベースの記憶域を提供します。  
+  
+ 入力のステージング領域に生の入力を処理する[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]イベント。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public object GetData (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetData(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StagingAreaInputItem.GetData(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">データの任意のキー。 これは、ことはできません<see langword="null" />です。</param>
+        <summary>指定したキーに関連付けられている入力のデータを取得します。</summary>
+        <returns>このキーのデータまたは<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出す。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Input">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.InputEventArgs Input { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.InputEventArgs Input" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StagingAreaInputItem.Input" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputEventArgs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに関連付けられている入力イベントのデータを取得<see cref="T:System.Windows.Input.StagingAreaInputItem" />オブジェクト</summary>
+        <value>イベントです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (object key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetData(object key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StagingAreaInputItem.SetData(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">データの任意のキー。 これは、ことはできません<see langword="null" />です。</param>
+        <param name="value">このキーに設定するデータ。 これは、<see langword="null" />です。</param>
+        <summary>指定したキーと指定されたデータを使用してディクショナリ エントリを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデータは、この入力イベントの処理中に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出す。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

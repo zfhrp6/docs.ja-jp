@@ -1,0 +1,103 @@
+<Type Name="StreamSecurityUpgradeProvider" FullName="System.ServiceModel.Channels.StreamSecurityUpgradeProvider">
+  <TypeSignature Language="C#" Value="public abstract class StreamSecurityUpgradeProvider : System.ServiceModel.Channels.StreamUpgradeProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StreamSecurityUpgradeProvider extends System.ServiceModel.Channels.StreamUpgradeProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.StreamSecurityUpgradeProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.StreamUpgradeProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>この <see langword="abstract" /> 基本クラスを継承するカスタム セキュリティ アップグレード プロバイダーを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ アップグレードを追加するには、<xref:System.ServiceModel.Channels.StreamSecurityUpgradeProvider> から派生するクラスを実装します。  
+  
+ アップグレード プロセスは、次の手順で行います。  
+  
+1.  <xref:System.ServiceModel.Channels.StreamSecurityUpgradeProvider> から派生するクラスを実装します。  
+  
+2.  それを登録します。 このためには、そのバインド要素を作成して、プロバイダーをカスタム バインドに登録します。  
+  
+3.  実装する派生クラスは、<xref:System.ServiceModel.Channels.StreamSecurityUpgradeInitiator> のインスタンスを作成します。これは、実行時に接続先に対して、チャネル トランスポート層をアップグレードする要求を開始します。  
+  
+4.  実装する派生クラスは、<xref:System.ServiceModel.Channels.StreamSecurityUpgradeAcceptor> のインスタンスを作成します。これは、実行時に、前の手順のアップグレード要求を受信し、可能な場合はアップグレードを受け入れ、アップグレード済みストリームをその接続先に返します。  
+  
+ セキュリティ アップグレード要求は、類似した多くの要求の 1 つである場合があります。 その場合、要求は一定の順序で処理されます。 詳細については、「<xref:System.ServiceModel.Channels.StreamUpgradeProvider>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StreamSecurityUpgradeProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamSecurityUpgradeProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.StreamSecurityUpgradeProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StreamSecurityUpgradeProvider (System.ServiceModel.IDefaultCommunicationTimeouts timeouts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.IDefaultCommunicationTimeouts timeouts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamSecurityUpgradeProvider.#ctor(System.ServiceModel.IDefaultCommunicationTimeouts)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="timeouts" Type="System.ServiceModel.IDefaultCommunicationTimeouts" />
+      </Parameters>
+      <Docs>
+        <param name="timeouts">既定の通信タイムアウト。</param>
+        <summary><see cref="T:System.ServiceModel.Channels.StreamSecurityUpgradeProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのタイムアウトは、カスタム セキュリティ アップグレード プロバイダーを使用するときの、クローズとオープンの既定のタイムアウトを制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.EndpointIdentity Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointIdentity Identity" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.StreamSecurityUpgradeProvider.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ アップグレードに使用される ID を取得します。</summary>
+        <value>セキュリティ アップグレードを要求するクライアントの <see cref="T:System.ServiceModel.EndpointIdentity" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この ID を使用すると、アップグレード プロバイダー クラスからの継承を通して、ストリーム レベルのカスタム認証スキームを作成できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

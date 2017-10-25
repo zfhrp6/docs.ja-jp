@@ -1,0 +1,1096 @@
+<Type Name="AccessibleRole" FullName="System.Windows.Forms.AccessibleRole">
+  <TypeSignature Language="C#" Value="public enum AccessibleRole" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AccessibleRole extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AccessibleRole" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ユーザー補助オブジェクトの可能なロールを表す値を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトの役割は、オブジェクトの機能を説明され、ユーザー補助アプリケーションによって使用されます。  
+  
+ この列挙体を使って<xref:System.Windows.Forms.AccessibleObject>と<xref:System.Windows.Forms.Control.AccessibleRole%2A?displayProperty=nameWithType>  
+  
+ ユーザー補助アプリケーションに関する詳細については、"Microsoft Active Accessibility"、Microsoft Developer Network (MSDN) ライブラリを検索します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー補助に対応するグラフの作成を示しますコントロールを使用して、<xref:System.Windows.Forms.AccessibleObject>と<xref:System.Windows.Forms.Control.ControlAccessibleObject>アクセス可能な情報を公開するクラス。 コントロールは、凡例と共に 2 つの曲線がプロットされます。 `ChartControlAccessibleObject`から派生するクラス`ControlAccessibleObject`で使用される、<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>グラフ コントロールのカスタムのアクセス可能な情報を提供するメソッド。 グラフの凡例が、実際はないため<xref:System.Windows.Forms.Control>-ベースの制御が、代わりに描画されるグラフ コントロールでは、組み込みのアクセス可能な情報です。 このため、`ChartControlAccessibleObject`クラスのオーバーライド、<xref:System.Windows.Forms.AccessibleObject.GetChild%2A>を返すメソッドを`CurveLegendAccessibleObject`凡例の各部分にアクセス可能な情報を表すです。 ユーザー補助対応アプリケーションでは、このコントロールを使用すると、コントロールは、必要なアクセス可能な情報を提供できます。  
+  
+ この例では、<xref:System.Windows.Forms.AccessibleRole>列挙が、<xref:System.Windows.Forms.AccessibleObject.Role%2A>プロパティです。 参照してください、<xref:System.Windows.Forms.AccessibleObject>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CPP/chartcontrol.cpp#4)]
+ [!code-csharp[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CS/chartcontrol.cs#4)]
+ [!code-vb[System.Windows.Forms.AccessibleObject#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/VB/chartcontrol.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Alert">
+      <MemberSignature Language="C#" Value="Alert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Alert = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Alert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>警告または条件をユーザーに通知することができます。 警告を表しているがメッセージ ボックス、画像、テキスト、またはサウンドなどの別のユーザー インターフェイス要素に関連付けられていないオブジェクトに対してのみ、このロールを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Animation">
+      <MemberSignature Language="C#" Value="Animation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Animation = int32(54)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Animation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーション コントロールを一連の写真のように、ビットマップ フレームを表示するコントロールなどの時間の経過と共に変更内容が含まれています。 アニメーション コントロールは、ファイルがコピーされているとき、または他の時間のかかるタスクが実行されているときに通常表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Application">
+      <MemberSignature Language="C#" Value="Application" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Application = int32(14)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Application" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのメイン ウィンドウです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Border">
+      <MemberSignature Language="C#" Value="Border" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Border = int32(19)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Border" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウの境界線。 全体の枠線は、それぞれの側の個別のオブジェクトではなく 1 つのオブジェクトで表されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonDropDown">
+      <MemberSignature Language="C#" Value="ButtonDropDown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole ButtonDropDown = int32(56)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.ButtonDropDown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目の一覧がドロップダウン ボタンです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonDropDownGrid">
+      <MemberSignature Language="C#" Value="ButtonDropDownGrid" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole ButtonDropDownGrid = int32(58)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.ButtonDropDownGrid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グリッドをドロップダウン ボタンです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonMenu">
+      <MemberSignature Language="C#" Value="ButtonMenu" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole ButtonMenu = int32(57)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.ButtonMenu" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドロップ ダウン メニュー ボタンです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Caret">
+      <MemberSignature Language="C#" Value="Caret" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Caret = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Caret" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>点滅の行、ブロック、またはウィンドウのクライアント領域内のカーソルの位置を示すビットマップであるカーソル。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Cell">
+      <MemberSignature Language="C#" Value="Cell" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Cell = int32(29)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Cell" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブル内のセル。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Character">
+      <MemberSignature Language="C#" Value="Character" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Character = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Character" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメのようなグラフィック オブジェクト、Microsoft Office アシスタント、アプリケーションのユーザーにヘルプを提供する通常表示されるなどです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Chart">
+      <MemberSignature Language="C#" Value="Chart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Chart = int32(17)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Chart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データを表すために使用するグラフィック イメージ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckButton">
+      <MemberSignature Language="C#" Value="CheckButton" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole CheckButton = int32(44)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.CheckButton" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チェック ボックス コントロールは、オプションをオンまたはその他のオプションに関係なくオフになっていることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Client">
+      <MemberSignature Language="C#" Value="Client" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Client = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Client" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウのユーザー領域。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Clock">
+      <MemberSignature Language="C#" Value="Clock" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Clock = int32(61)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Clock" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時刻を表示するコントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="Column" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Column = int32(27)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Column" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブル内のセルの列です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnHeader">
+      <MemberSignature Language="C#" Value="ColumnHeader" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole ColumnHeader = int32(25)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.ColumnHeader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列ヘッダー、テーブル内の列のビジュアル ラベルを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ComboBox">
+      <MemberSignature Language="C#" Value="ComboBox" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole ComboBox = int32(46)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.ComboBox" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義済みの選択肢を提供する関連付けられたリスト ボックスを使用して、編集コントロールは、コンボ ボックス。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Cursor">
+      <MemberSignature Language="C#" Value="Cursor" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Cursor = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Cursor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスのポインター。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Default = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム指定のロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Diagram">
+      <MemberSignature Language="C#" Value="Diagram" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Diagram = int32(53)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Diagram" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データを図示するために使用するグラフィック イメージ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Dial">
+      <MemberSignature Language="C#" Value="Dial" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Dial = int32(49)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Dial" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイヤルまたはノブの場合は。 読み取り専用オブジェクト、速度計のようなことができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Dialog">
+      <MemberSignature Language="C#" Value="Dialog" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Dialog = int32(18)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Dialog" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスまたはメッセージ ボックス。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="Document" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Document = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Document" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ウィンドウ内で常に含まれているドキュメント ウィンドウです。 この役割は、マルチ ドキュメント インターフェイス (MDI) ウィンドウのみに適用され、MDI のタイトル バーを格納するオブジェクトを参照します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DropList">
+      <MemberSignature Language="C#" Value="DropList" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole DropList = int32(47)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.DropList" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドロップダウン リスト ボックスです。 このコントロールは、1 つの項目を示し、ユーザーを表示し、別の代替の選択肢の一覧から選択できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Equation">
+      <MemberSignature Language="C#" Value="Equation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Equation = int32(55)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Equation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数式。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphic">
+      <MemberSignature Language="C#" Value="Graphic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Graphic = int32(40)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Graphic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>画像。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Grip">
+      <MemberSignature Language="C#" Value="Grip" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Grip = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Grip" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>により、ユーザーは、ウィンドウなどのユーザー インターフェイス要素を操作する特殊なマウス ポインター。 たとえば、ユーザーは、クリックし、サイズを変更するウィンドウの右下隅にあるサイズ変更グリップをドラッグします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Grouping">
+      <MemberSignature Language="C#" Value="Grouping" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Grouping = int32(20)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Grouping" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトは、論理的にグループ化されます。 Grouping オブジェクトとが含まれているオブジェクト間の親子リレーションシップがあります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpBalloon">
+      <MemberSignature Language="C#" Value="HelpBalloon" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole HelpBalloon = int32(31)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.HelpBalloon" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘルプの表示で、ボタンが含まれているラベルをユーザーが、ツール ヒントまたはヘルプ バルーンの形式を開くには独自のヘルプ トピックをクリックできます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HotkeyField">
+      <MemberSignature Language="C#" Value="HotkeyField" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole HotkeyField = int32(50)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.HotkeyField" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが、組み合わせまたは一連のアクションをすばやく実行することができます、ホット キーとして使用するキーストロークを入力できるホット キー フィールドです。 ホット キー コントロールは、ユーザーが入力したキーを表示し、ユーザーが有効なキーの組み合わせを選択できることを確認します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Indicator">
+      <MemberSignature Language="C#" Value="Indicator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Indicator = int32(39)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Indicator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアイテムを指すポインター グラフィックなどのインジケーター。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IpAddress">
+      <MemberSignature Language="C#" Value="IpAddress" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole IpAddress = int32(63)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.IpAddress" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット プロトコル (IP) アドレスを入力するために設計されたコントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Link">
+      <MemberSignature Language="C#" Value="Link" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Link = int32(30)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Link" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは、ソース ドキュメントと移行先ドキュメント間の接続リンクします。 このオブジェクトはテキストまたは画像のようになりますが、ボタンのように動作します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="List">
+      <MemberSignature Language="C#" Value="List" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole List = int32(33)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.List" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト ボックスにより、ユーザーが 1 つまたは複数の項目を選択します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ListItem">
+      <MemberSignature Language="C#" Value="ListItem" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole ListItem = int32(34)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.ListItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト ボックスまたはコンボ ボックス、ドロップダウン リスト ボックスまたはドロップダウン コンボ ボックスの一覧の一部のアイテム。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuBar">
+      <MemberSignature Language="C#" Value="MenuBar" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole MenuBar = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.MenuBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがメニューを選択できる、ウィンドウのタイトル バーの下に通常のメニュー バー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuItem">
+      <MemberSignature Language="C#" Value="MenuItem" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole MenuItem = int32(12)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.MenuItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドを実行するために、ユーザーが選択できるメニュー内のエントリである、メニュー項目は、オプションを選択したり、別のメニューを表示します。 機能的には、メニュー項目は、プッシュ ボタン、オプション ボタン、チェック ボックスまたはメニューに同等でことができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuPopup">
+      <MemberSignature Language="C#" Value="MenuPopup" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole MenuPopup = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.MenuPopup" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが操作を実行する選択をするオプションの一覧が表示されるメニュー。 すべての種類のメニュー、メニュー バーで選択した項目によって表示されるドロップダウン メニューおよびマウスの右ボタンがクリックされたときに表示されるショートカット メニューを含む、この役割が必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>役割なし。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Outline">
+      <MemberSignature Language="C#" Value="Outline" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Outline = int32(35)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Outline" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アウトラインまたはツリー構造、階層リストを表示でき、通常ユーザーを展開して折りたたむブランチ ツリー ビュー コントロールなどです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OutlineButton">
+      <MemberSignature Language="C#" Value="OutlineButton" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole OutlineButton = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.OutlineButton" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アウトラインの項目と同様にナビゲートするコントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OutlineItem">
+      <MemberSignature Language="C#" Value="OutlineItem" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole OutlineItem = int32(36)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.OutlineItem" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アウトラインまたはツリー構造内の項目。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PageTab">
+      <MemberSignature Language="C#" Value="PageTab" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole PageTab = int32(37)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.PageTab" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページのタイトル、かどうかは、ホーム ページ、ページが変更されたかどうかなど、ページの属性を表示するユーザーができるプロパティ ページです。 通常、このコントロールの唯一の子は、関連付けられているページの内容を含むグループ化されたオブジェクトです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PageTabList">
+      <MemberSignature Language="C#" Value="PageTabList" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole PageTabList = int32(60)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.PageTabList" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページのタブ コントロールのコンテナーです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Pane">
+      <MemberSignature Language="C#" Value="Pane" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Pane = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Pane" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フレーム、分割されたドキュメント ウィンドウ、または情報を表示するために使用できるステータス バーの四角形領域内の別の領域。 ユーザーは、ペイン間や現在のウィンドウの内容の中を移動することができますが、異なるペインの項目間を移動することはできません。 つまり、ウィンドウは、フレーム ウィンドウまたはドキュメントより下位にあり、個々 のコントロールの上にグループ化レベルを表します。 通常、ユーザーは、タブ、F6、または ctrl キーを押しながら TAB を押すと、コンテキストに応じて、ペイン間を移動します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgressBar">
+      <MemberSignature Language="C#" Value="ProgressBar" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole ProgressBar = int32(48)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.ProgressBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平方向の四角形の内側の色付きの線を表示することによって時間のかかる操作の進行状況を示す進行状況バーです。 四角形の長さに関連して行の長さは、操作が完了した割合に対応します。 このコントロールには、ユーザー入力は取りません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyPage">
+      <MemberSignature Language="C#" Value="PropertyPage" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole PropertyPage = int32(38)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.PropertyPage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ ページ ダイアログ ボックスを表示し、ファイルまたはリソースなどのオブジェクトの動作を制御します。 プロパティ ページの外観は、その目的によって異なります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PushButton">
+      <MemberSignature Language="C#" Value="PushButton" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole PushButton = int32(43)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.PushButton" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プッシュ ボタン コントロールは、小さな四角形コントロールをユーザーがオンまたはオフにできます。 コマンド ボタンとも呼ばれる、プッシュ ボタンでは、既定の状態および浮き彫り外観オフ発生の外観を出力するがオンです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RadioButton">
+      <MemberSignature Language="C#" Value="RadioButton" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole RadioButton = int32(45)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.RadioButton" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オプション ボタンで、オプション ボタンとも呼ばれます。 この属性を持つ、1 つの親を共有するすべてのオブジェクトは、1 つの相互に排他的なグループの一部と見なされます。 グループ化されたオブジェクトを使用して、オプション ボタンを必要に応じて個別のグループに分割することができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Row">
+      <MemberSignature Language="C#" Value="Row" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Row = int32(28)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Row" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブル内のセルの行。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RowHeader">
+      <MemberSignature Language="C#" Value="RowHeader" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole RowHeader = int32(26)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.RowHeader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行ヘッダー、テーブルの行のビジュアル ラベルを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollBar">
+      <MemberSignature Language="C#" Value="ScrollBar" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole ScrollBar = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.ScrollBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント領域の一部またはコントロールで使用できる、垂直または水平スクロール バー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Separator">
+      <MemberSignature Language="C#" Value="Separator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Separator = int32(21)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Separator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スペースは、区切り記号のメニュー項目や、ウィンドウ内での分割ペインに分割する区切り記号など、2 つの領域に視覚的に分割されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Slider">
+      <MemberSignature Language="C#" Value="Slider" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Slider = int32(51)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Slider" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トラックに設定を調整するユーザーを有効にするとも呼ばれる、コントロールには、スライダーを移動することによって、最小値と最大値の間のインクリメントが与えられます。 Windows オペレーティング システムのボリューム コントロールは、スライダー コントロールです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Sound">
+      <MemberSignature Language="C#" Value="Sound" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Sound = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Sound" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>さまざまなシステム イベントに関連付けられているシステム サウンド</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SpinButton">
+      <MemberSignature Language="C#" Value="SpinButton" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole SpinButton = int32(52)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.SpinButton" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックスとも呼ばれる、アップダウン コントロール、矢印ボタンのペアを格納します。 ユーザーは、値を増減するマウスを使用して、矢印ボタンをクリックします。 スピン ボタン コントロールは、現在の値を表示する場所、友人のウィンドウと呼ばれる、コンパニオン コントロールで最もよく使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SplitButton">
+      <MemberSignature Language="C#" Value="SplitButton" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole SplitButton = int32(62)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.SplitButton" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドロップダウン リストのアイコンをボタンに隣接しているツールバー ボタンをクリックします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StaticText">
+      <MemberSignature Language="C#" Value="StaticText" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole StaticText = int32(41)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.StaticText" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り専用テキスト、ラベル、その他のコントロールまたはダイアログ ボックスの指示など。 静的なテキストを変更または選択できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusBar">
+      <MemberSignature Language="C#" Value="StatusBar" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole StatusBar = int32(23)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.StatusBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の操作では、アプリケーション、または選択したオブジェクトの状態に関する情報を表示するアプリケーション ウィンドウの下部に通常領域は、ステータス バー ステータス バーには、さまざまな種類のステータス バーに現在選択されているメニュー コマンドの説明などの情報を表示する複数のフィールドを持つことができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="Table" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Table = int32(24)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Table" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行とセルと、必要に応じて、行の列を含むテーブルのヘッダーおよび列ヘッダー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="Text" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Text = int32(42)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Text" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択可能なテキストが編集可能または読み取り専用です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleBar">
+      <MemberSignature Language="C#" Value="TitleBar" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole TitleBar = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.TitleBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウのタイトルまたはキャプション バー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolBar">
+      <MemberSignature Language="C#" Value="ToolBar" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole ToolBar = int32(22)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.ToolBar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールバー、よく使われる機能に簡単にアクセスを提供するコントロールのグループです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="ToolTip" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole ToolTip = int32(13)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.ToolTip" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツール ヒントは、ボタンの目的の簡単な説明を表示する、小さい四角形のポップアップ ウィンドウ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WhiteSpace">
+      <MemberSignature Language="C#" Value="WhiteSpace" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole WhiteSpace = int32(59)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.WhiteSpace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その他のオブジェクト間に空白です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Window">
+      <MemberSignature Language="C#" Value="Window" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AccessibleRole Window = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AccessibleRole.Window" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通常、タイトル バー、クライアント、およびウィンドウに通常格納されているその他のオブジェクトなどの子オブジェクトを含むウィンドウ フレーム。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

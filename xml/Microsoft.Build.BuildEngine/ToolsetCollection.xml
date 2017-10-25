@@ -1,0 +1,312 @@
+<Type Name="ToolsetCollection" FullName="Microsoft.Build.BuildEngine.ToolsetCollection">
+  <TypeSignature Language="C#" Value="public class ToolsetCollection : System.Collections.Generic.ICollection&lt;Microsoft.Build.BuildEngine.Toolset&gt;, System.Collections.Generic.IEnumerable&lt;Microsoft.Build.BuildEngine.Toolset&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolsetCollection extends System.Object implements class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.BuildEngine.Toolset&gt;, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.BuildEngine.Toolset&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.BuildEngine.ToolsetCollection" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;Microsoft.Build.BuildEngine.Toolset&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;Microsoft.Build.BuildEngine.Toolset&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>1 つまたは複数を表す<see cref="T:Microsoft.Build.BuildEngine.Toolset" />オブジェクト。 ツールセットは、ツールセットのバージョン (「2.0」) など、ツールのパス、およびオプションに関連付けられたプロパティのセットの組み合わせです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Build.BuildEngine.ToolsetCollection>取得できるように各<xref:Microsoft.Build.BuildEngine.Toolset>目的に対応するツール バージョンの文字列値を渡すことによってオブジェクト<xref:Microsoft.Build.BuildEngine.Toolset>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (Microsoft.Build.BuildEngine.Toolset item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(class Microsoft.Build.BuildEngine.Toolset item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.ToolsetCollection.Add(Microsoft.Build.BuildEngine.Toolset)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="Microsoft.Build.BuildEngine.Toolset" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:Microsoft.Build.BuildEngine.Toolset" />コレクションに追加するツールセットを表すオブジェクト。</param>
+        <summary>指定した <see cref="T:Microsoft.Build.BuildEngine.Toolset" /> をこのコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Build.BuildEngine.ToolsetCollection.Add%2A>同じツール バージョンが、以前の値を置換します。 親に通知も<xref:Microsoft.Build.BuildEngine.Engine>変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.ToolsetCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドはサポートされていません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (Microsoft.Build.BuildEngine.Toolset item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(class Microsoft.Build.BuildEngine.Toolset item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.ToolsetCollection.Contains(Microsoft.Build.BuildEngine.Toolset)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="Microsoft.Build.BuildEngine.Toolset" />
+      </Parameters>
+      <Docs>
+        <param name="item">必須です。 名前を表す文字列値、<see cref="T:Microsoft.Build.BuildEngine.Toolset" />です。</param>
+        <summary>コレクションに含まれているかどうかを取得、 <see cref="T:Microsoft.Build.BuildEngine.Toolset" /> 、指定した<see cref="T:Microsoft.Build.BuildEngine.ToolsetCollection" />名。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:Microsoft.Build.BuildEngine.Toolset" /> 、それ以外のコレクションに含まれている<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string toolsVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string toolsVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.ToolsetCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolsVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="toolsVersion">必須です。 関連付けられているツール バージョンを表す文字列値、<see cref="T:Microsoft.Build.BuildEngine.Toolset" />です。</param>
+        <summary>コレクションに含まれているかどうかを取得、<see cref="T:Microsoft.Build.BuildEngine.Toolset" />指定したツール バージョンを使用します。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:Microsoft.Build.BuildEngine.Toolset" /> 、それ以外のコレクションに含まれている<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Microsoft.Build.BuildEngine.Toolset[] array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class Microsoft.Build.BuildEngine.Toolset[] array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.ToolsetCollection.CopyTo(Microsoft.Build.BuildEngine.Toolset[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="Microsoft.Build.BuildEngine.Toolset[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:Microsoft.Build.BuildEngine.ToolsetCollection" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="arrayIndex">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>内容をコピー、<see cref="T:Microsoft.Build.BuildEngine.ToolsetCollection" />を互換性のある 1 次元<see cref="T:System.Array" />対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.ToolsetCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を示す値を取得<see cref="T:Microsoft.Build.BuildEngine.Toolset" />内のオブジェクト、<see cref="T:Microsoft.Build.BuildEngine.ToolsetCollection" />です。</summary>
+        <value>数を表す整数値<see cref="T:Microsoft.Build.BuildEngine.Toolset" />コレクション内のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:Microsoft.Build.BuildEngine.Toolset>コレクション内の要素を表す、<xref:Microsoft.Build.BuildEngine.Toolset>プロジェクト内です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;Microsoft.Build.BuildEngine.Toolset&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class Microsoft.Build.BuildEngine.Toolset&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.ToolsetCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;Microsoft.Build.BuildEngine.Toolset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.ToolsetCollection" /> を反復処理する列挙子を取得します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />全体の<see cref="T:Microsoft.Build.BuildEngine.ToolsetCollection" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、呼び出し元を使用する、 `foreach` c# 言語のステートメント (`for each`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)])、個人を反復処理する<xref:Microsoft.Build.BuildEngine.Toolset>内のオブジェクト、<xref:Microsoft.Build.BuildEngine.ToolsetCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.ToolsetCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか、<see cref="T:Microsoft.Build.BuildEngine.ToolsetCollection" />は読み取り専用です。 <see cref="P:Microsoft.Build.BuildEngine.ToolsetCollection.IsReadOnly" />常に返します<see langword="false" />ツールセットは、常に書き込み可能なためです。</summary>
+        <value>示すブール値かどうか、<see cref="T:Microsoft.Build.BuildEngine.ToolsetCollection" />は読み取り専用です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Build.BuildEngine.ToolsetCollection.IsReadOnly%2A>常に返します`false`ツールセットは、常に書き込み可能なためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.Toolset this[string toolsVersion] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.BuildEngine.Toolset Item(string)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.ToolsetCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.Toolset</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolsVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="toolsVersion">必須です。 目的に関連付けられているツール バージョンを表す文字列値<see cref="T:Microsoft.Build.BuildEngine.Toolset" />です。</param>
+        <summary>取得、<see cref="T:Microsoft.Build.BuildEngine.Toolset" />指定したツール バージョンに関連付けられています。</summary>
+        <value>A <see cref="T:Microsoft.Build.BuildEngine.Toolset" /> 、指定された一致するツールセットを表すオブジェクトを<paramref name="toolsVersion" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (Microsoft.Build.BuildEngine.Toolset item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(class Microsoft.Build.BuildEngine.Toolset item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.ToolsetCollection.Remove(Microsoft.Build.BuildEngine.Toolset)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="Microsoft.Build.BuildEngine.Toolset" />
+      </Parameters>
+      <Docs>
+        <param name="item">サポートされていません。</param>
+        <summary>このメソッドはサポートされていません。</summary>
+        <returns>サポートされていません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.ToolsetCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコレクションのツールセットの非ジェネリック列挙子。</summary>
+        <returns>ツールセットの列挙子を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolsVersions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;string&gt; ToolsVersions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;string&gt; ToolsVersions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.ToolsetCollection.ToolsVersions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前を取得、 <see cref="T:Microsoft.Build.BuildEngine.Toolset" />s をこのコレクションに格納します。</summary>
+        <value>要素が表す個別列挙<see cref="T:Microsoft.Build.BuildEngine.Toolset" />このコレクション内のオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

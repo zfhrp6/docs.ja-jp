@@ -1,0 +1,394 @@
+<Type Name="OperatingSystem" FullName="System.OperatingSystem">
+  <TypeSignature Language="C#" Value="public sealed class OperatingSystem : ICloneable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit OperatingSystem extends System.Object implements class System.ICloneable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.OperatingSystem" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バージョンやプラットフォーム ID など、オペレーティング システムについての情報を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.OperatingSystem>クラスには、オペレーティング システムに関する情報が含まれています。  
+  
+ 現在のランタイム オペレーティング システムについては、取得、<xref:System.OperatingSystem>によって返されるオブジェクト、<xref:System.Environment.OSVersion%2A?displayProperty=nameWithType>プロパティです。 Windows の一覧についてはオペレーティング システムのバージョンと対応するバージョン番号によって返される、<xref:System.OperatingSystem.Version%2A>と<xref:System.OperatingSystem.VersionString%2A>プロパティおよび<xref:System.OperatingSystem.ToString%2A>メソッドを参照してください[オペレーティング システムのバージョン](https://msdn.microsoft.com/library/windows/desktop/ms724832.aspx)Windows デベロッパー センターにします。  
+  
+ 仕様では、<xref:System.OperatingSystem>クラスは、オペレーティング システムを記述する一般的な手段ではありませんしをより包括的な型を派生させることはできません、<xref:System.OperatingSystem>クラスです。 オペレーティング システムに関するその他の情報が含まれる型を必要がある場合に、独自の型を作成し、型のフィールドを含める<xref:System.OperatingSystem>と、追加のフィールド、プロパティ、または必要な方法です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.OperatingSystem>ランタイム オペレーティング システムに関する情報を表示するオブジェクト。  
+  
+ [!code-csharp[System.Environment.OSVersion#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.environment.osversion/cs/osinfo1.cs#1)]
+ [!code-vb[System.Environment.OSVersion#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.environment.osversion/vb/osinfo1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OperatingSystem (PlatformID platform, Version version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.PlatformID platform, class System.Version version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.OperatingSystem.#ctor(System.PlatformID,System.Version)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="platform" Type="System.PlatformID" />
+        <Parameter Name="version" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="platform">オペレーティング システム プラットフォームを示す <see cref="T:System.PlatformID" /> 値のいずれか。</param>
+        <param name="version">オペレーティング システムのバージョンを示す <see cref="T:System.Version" /> オブジェクト。</param>
+        <summary>指定したプラットフォーム ID 値とバージョン オブジェクトを使用し、<see cref="T:System.OperatingSystem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="version" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="platform" /><see cref="T:System.PlatformID" />列挙値。</exception>
+        <block subset="none" type="usage">
+          <para>使用している場合、<see cref="T:System.OperatingSystem" />ランタイム オペレーティング システムに関する情報を取得するクラス、インスタンスを作成するこのコンス トラクターを呼び出す必要はありません、<see cref="T:System.OperatingSystem" />オブジェクト。 代わりに、取得、<see cref="T:System.OperatingSystem" />からオペレーティング システムを記述するオブジェクト、<see cref="P:System.Environment.OSVersion" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.OperatingSystem.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスと同一の <see cref="T:System.OperatingSystem" /> オブジェクトを作成します。</summary>
+        <returns>インスタンスのコピーである <see cref="T:System.OperatingSystem" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.OperatingSystem.Clone%2A>のコピーを作成する方法、<xref:System.OperatingSystem>オブジェクト。 複製は、同じオブジェクトではないというを表示する元のオブジェクトと比較されます。  
+  
+ [!code-cpp[System.OperatingSystem.Clone#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.OperatingSystem.Clone/CPP/clone.cpp#1)]
+ [!code-csharp[System.OperatingSystem.Clone#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.OperatingSystem.Clone/CS/clone.cs#1)]
+ [!code-vb[System.OperatingSystem.Clone#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.OperatingSystem.Clone/VB/clone.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.OperatingSystem.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化情報が設定されるオブジェクト。</param>
+        <param name="context">シリアル化データを格納および取得する場所。 将来使用するために予約されています。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクトに、このインスタンスを逆シリアル化するために必要なデータを格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `context`パラメーターは将来の使用に備えて予約されています。 以外の場合は、現在実装されていないで、<xref:System.OperatingSystem.GetObjectData%2A>メソッドです。  
+  
+ 詳細については、<xref:System.Runtime.Serialization.SerializationInfo.AddValue%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Platform">
+      <MemberSignature Language="C#" Value="public PlatformID Platform { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.PlatformID Platform" />
+      <MemberSignature Language="DocId" Value="P:System.OperatingSystem.Platform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.PlatformID</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システム プラットフォームを識別する <see cref="T:System.PlatformID" /> 列挙値を取得します。</summary>
+        <value><see cref="T:System.PlatformID" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をいくつか作成<xref:System.OperatingSystem>オブジェクトし、表示、<xref:System.OperatingSystem.Platform%2A>それぞれのプロパティです。  
+  
+ [!code-cpp[System.OperatingSystem.Platform_Version#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.OperatingSystem.Platform_Version/CPP/plat_ver.cpp#1)]
+ [!code-csharp[System.OperatingSystem.Platform_Version#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.OperatingSystem.Platform_Version/CS/plat_ver.cs#1)]
+ [!code-vb[System.OperatingSystem.Platform_Version#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.OperatingSystem.Platform_Version/VB/plat_ver.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServicePack">
+      <MemberSignature Language="C#" Value="public string ServicePack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServicePack" />
+      <MemberSignature Language="DocId" Value="P:System.OperatingSystem.ServicePack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この<see cref="T:System.OperatingSystem" /> オブジェクトが表す Service Pack のバージョンを取得します。</summary>
+        <value>複数の Service Pack がサポートされており、少なくとも 1 つがインストールされている場合は、その Service Pack のバージョン。それ以外の場合は空の文字列 ("")。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス パックを使用して、ソフトウェア更新プログラムがインストールされているオペレーティング システムを配布できます。 ただし、すべてのオペレーティング システムは、サービス パックを使用します。  
+  
+ サービス パック バージョン場合は、既に形式が正しく表示するためです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.OperatingSystem.ServicePack%2A>プロパティです。  
+  
+ [!code-cpp[OperatingSystem.ServicePack#1](~/samples/snippets/cpp/VS_Snippets_CLR/OperatingSystem.ServicePack/CPP/sp.cpp#1)]
+ [!code-csharp[OperatingSystem.ServicePack#1](~/samples/snippets/csharp/VS_Snippets_CLR/OperatingSystem.ServicePack/CS/sp.cs#1)]
+ [!code-vb[OperatingSystem.ServicePack#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/OperatingSystem.ServicePack/VB/sp.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.OperatingSystem.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.OperatingSystem" /> オブジェクトの値を等価の文字列形式に変換します。</summary>
+        <returns><see cref="P:System.OperatingSystem.Platform" />、<see cref="P:System.OperatingSystem.Version" />、<see cref="P:System.OperatingSystem.ServicePack" /> の各プロパティによって返される値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[オペレーティング システムのバージョン](http://msdn.microsoft.com/library/windows/desktop/ms724832.aspx)Windows オペレーティング システムのバージョンと対応するバージョン番号の一覧については、Windows デベロッパー センターにします。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.OperatingSystem.ToString%2A>メソッドを表示する<xref:System.OperatingSystem>オブジェクト。  
+  
+ [!code-cpp[System.OperatingSystem.Ctor_ToString#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.OperatingSystem.Ctor_ToString/CPP/ctor_tostr.cpp#1)]
+ [!code-csharp[System.OperatingSystem.Ctor_ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.OperatingSystem.Ctor_ToString/CS/ctor_tostr.cs#1)]
+ [!code-vb[System.OperatingSystem.Ctor_ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.OperatingSystem.Ctor_ToString/VB/ctor_tostr.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public Version Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version Version" />
+      <MemberSignature Language="DocId" Value="P:System.OperatingSystem.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムを識別する <see cref="T:System.Version" /> オブジェクトを取得します。</summary>
+        <value>オペレーティング システムのメジャー バージョン番号、マイナー バージョン番号、ビルド番号、およびリビジョン番号を記述する <see cref="T:System.Version" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください[オペレーティング システムのバージョン](http://msdn.microsoft.com/library/windows/desktop/ms724832.aspx)Windows オペレーティング システムのバージョンと対応するバージョン番号の一覧については、Windows デベロッパー センターにします。  
+  
+   
+  
+## Examples  
+ 次のコード例をいくつか作成<xref:System.OperatingSystem>オブジェクトし、表示、<xref:System.OperatingSystem.Version%2A>それぞれのプロパティです。  
+  
+ [!code-cpp[System.OperatingSystem.Platform_Version#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.OperatingSystem.Platform_Version/CPP/plat_ver.cpp#1)]
+ [!code-csharp[System.OperatingSystem.Platform_Version#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.OperatingSystem.Platform_Version/CS/plat_ver.cs#1)]
+ [!code-vb[System.OperatingSystem.Platform_Version#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.OperatingSystem.Platform_Version/VB/plat_ver.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VersionString">
+      <MemberSignature Language="C#" Value="public string VersionString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VersionString" />
+      <MemberSignature Language="DocId" Value="P:System.OperatingSystem.VersionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プラットフォーム ID、バージョン、およびオペレーティング システムに現在インストールされている Service Pack の連結された文字列形式を取得します。</summary>
+        <value><see cref="P:System.OperatingSystem.Platform" />、<see cref="P:System.OperatingSystem.Version" />、<see cref="P:System.OperatingSystem.ServicePack" /> の各プロパティによって返される値の文字列形式。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、によって返される値<xref:System.OperatingSystem.VersionString%2A>によって返される値と同じでは、<xref:System.OperatingSystem.ToString%2A>メソッドです。 ただし、別のプラットフォームの .NET Framework の実装では、そのプラットフォームの適切な文字列を返す場合があります。  
+  
+ 参照してください[オペレーティング システムのバージョン](http://msdn.microsoft.com/library/windows/desktop/ms724832.aspx)Windows オペレーティング システムのバージョンと対応するバージョン番号の一覧については、Windows デベロッパー センターにします。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.OperatingSystem.VersionString%2A>プロパティです。  
+  
+ [!code-cpp[OperatingSystem.VersionString#1](~/samples/snippets/cpp/VS_Snippets_CLR/OperatingSystem.VersionString/CPP/osvs.cpp#1)]
+ [!code-csharp[OperatingSystem.VersionString#1](~/samples/snippets/csharp/VS_Snippets_CLR/OperatingSystem.VersionString/CS/osvs.cs#1)]
+ [!code-vb[OperatingSystem.VersionString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/OperatingSystem.VersionString/VB/osvs.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

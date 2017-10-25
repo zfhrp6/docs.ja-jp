@@ -1,0 +1,371 @@
+<Type Name="FilterableAttribute" FullName="System.Web.UI.FilterableAttribute">
+  <TypeSignature Language="C#" Value="public sealed class FilterableAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FilterableAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.FilterableAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>属性を適用するプロパティがデバイスのフィルター処理をサポートしているかどうかを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.FilterableAttribute>属性は、プロパティがデバイスのフィルター処理をサポートしているかどうかを指定するプロパティに適用します。 プロパティは、デバイスのフィルター処理をサポートするときは、デバイス フィルターを指定して、特定のデバイスのプロパティの値をオーバーライドできます。 既定では、プロパティはフィルター処理、コントロールの開発者がデバイスを設定して、プロパティにフィルターを防ぐでしたので、<xref:System.Web.UI.FilterableAttribute>属性を`false`です。 詳細については、次を参照してください。[特定のデバイス用のカスタマイズ](http://msdn.microsoft.com/en-us/a7f55dfa-290b-45f8-bf8f-d5a4540bae61)です。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ <xref:System.Web.UI.FilterableAttribute> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.FilterableAttribute.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を適用する方法を示しています、<xref:System.Web.UI.FilterableAttribute>属性をプロパティがサポートしないデバイス フィルター処理を示すためにカスタム コントロールのプロパティをします。  
+  
+ [!code-csharp[FilterableAttribute_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FilterableAttribute_2/CS/simplecustomcontrol.cs#1)]
+ [!code-vb[FilterableAttribute_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FilterableAttribute_2/VB/simplecustomcontrol.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FilterableAttribute (bool filterable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool filterable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FilterableAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filterable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="filterable">
+          <see langword="true" />属性を適用するプロパティがデバイスのフィルター処理をサポートしていることを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.Web.UI.FilterableAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.FilterableAttribute>クラスです。 次の表のインスタンスの初期プロパティ値、<xref:System.Web.UI.FilterableAttribute>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.FilterableAttribute.Filterable%2A>|`filterable` パラメーターの値。|  
+  
+   
+  
+## Examples  
+ 次のコード例を適用する方法を示しています、<xref:System.Web.UI.FilterableAttribute>属性をカスタム コントロールのプロパティです。 このコンス トラクターは、作成する ASP.NET によって内部的に呼び出されます、<xref:System.Web.UI.FilterableAttribute>属性を表すオブジェクト。  
+  
+ [!code-csharp[FilterableAttribute_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FilterableAttribute_2/CS/simplecustomcontrol.cs#1)]
+ [!code-vb[FilterableAttribute_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FilterableAttribute_2/VB/simplecustomcontrol.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.FilterableAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.FilterableAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.FilterableAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.FilterableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>事前に定義を表す<see cref="T:System.Web.UI.FilterableAttribute" />既定のプロパティ設定を持つオブジェクト。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.FilterableAttribute.Default>フィールドは、定義済み<xref:System.Web.UI.FilterableAttribute>既定のプロパティ設定を持つオブジェクト。 比較するときに、このフィールドは多くの場合、使用、<xref:System.Web.UI.FilterableAttribute>オブジェクトを定義済みのオブジェクト。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.FilterableAttribute.Default>フィールドと同じ、<xref:System.Web.UI.FilterableAttribute>によって表されるオブジェクト、<xref:System.Web.UI.FilterableAttribute.Yes>フィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FilterableAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較する <see cref="T:System.Object" />。</param>
+        <summary>指定するかどうかの現在のインスタンス、<see cref="T:System.Web.UI.FilterableAttribute" />クラスは、指定したオブジェクトと等しい。</summary>
+        <returns>
+          <see langword="true" />オブジェクトが含まれている場合、<paramref name="obj" />パラメーターがの現在のインスタンスと等しい、<see cref="T:System.Web.UI.FilterableAttribute" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.FilterableAttribute.Equals%2A>メソッドを呼び出せば確認するかどうかの現在のインスタンス、<xref:System.Web.UI.FilterableAttribute>クラスは、指定したオブジェクトと等しい。 オブジェクトが等しい場合、次の要件を満たしているする必要があります。  
+  
+1.  含まれているオブジェクト、`obj`パラメーターである必要があります、<xref:System.Web.UI.FilterableAttribute>オブジェクト。  
+  
+2.  <xref:System.Web.UI.FilterableAttribute.Filterable%2A>両方のオブジェクトのプロパティを等しくする必要があります。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filterable">
+      <MemberSignature Language="C#" Value="public bool Filterable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Filterable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.FilterableAttribute.Filterable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかをプロパティ、<see cref="T:System.Web.UI.FilterableAttribute" />属性が適用されるデバイス フィルター処理をサポートしています。</summary>
+        <value>
+          <see langword="true" />属性を適用するプロパティがデバイスのフィルター処理をサポートしていることを示すためにそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.FilterableAttribute.Filterable%2A>を決定するプロパティかどうかをプロパティ、<xref:System.Web.UI.FilterableAttribute>属性が適用されるデバイス フィルター処理をサポートしています。 プロパティは、デバイスのフィルター処理をサポートするときは、デバイス フィルターを指定して、特定のデバイスのプロパティの値をオーバーライドできます。 詳細については、次を参照してください。[特定のデバイス用のカスタマイズ](http://msdn.microsoft.com/en-us/a7f55dfa-290b-45f8-bf8f-d5a4540bae61)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を適用する方法を示しています、<xref:System.Web.UI.FilterableAttribute>属性をプロパティがサポートしないデバイス フィルター処理を示すためにカスタム コントロールのプロパティをします。  
+  
+ [!code-csharp[FilterableAttribute_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FilterableAttribute_2/CS/simplecustomcontrol.cs#1)]
+ [!code-vb[FilterableAttribute_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FilterableAttribute_2/VB/simplecustomcontrol.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FilterableAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FilterableAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定するかどうかの現在のインスタンス、<see cref="T:System.Web.UI.FilterableAttribute" />クラスと等しい、<see cref="F:System.Web.UI.FilterableAttribute.Default" />属性。</summary>
+        <returns>
+          <see langword="true" />場合の現在のインスタンス<see cref="T:System.Web.UI.FilterableAttribute" />と等しい<see cref="F:System.Web.UI.FilterableAttribute.Default" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.FilterableAttribute.IsDefaultAttribute%2A>メソッドは、ヘルパー メソッドを決定する ASP.NET で使用されるかどうかの現在のインスタンス、<xref:System.Web.UI.FilterableAttribute>クラスと等しい、<xref:System.Web.UI.FilterableAttribute>に含まれているオブジェクト、<xref:System.Web.UI.FilterableAttribute.Default>フィールドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsObjectFilterable">
+      <MemberSignature Language="C#" Value="public static bool IsObjectFilterable (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsObjectFilterable(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FilterableAttribute.IsObjectFilterable(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">テスト対象の <see cref="T:System.Object" />。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Object" />デバイス フィルター処理をサポートしています。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Object" />に含まれている、<paramref name="instance" />パラメーターは、デバイスのフィルター処理をサポートする。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.FilterableAttribute.IsObjectFilterable%2A>メソッドを呼び出せば確認するかどうか、指定した<xref:System.Object>デバイス フィルター処理をサポートしています。  
+  
+> [!NOTE]
+>  オブジェクトは、そのデータ型は、デバイスのフィルター処理をサポートしている場合、デバイスがフィルター処理をサポートします。 詳細については、<xref:System.Web.UI.FilterableAttribute.IsTypeFilterable%2A> プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="instance" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPropertyFilterable">
+      <MemberSignature Language="C#" Value="public static bool IsPropertyFilterable (System.ComponentModel.PropertyDescriptor propertyDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsPropertyFilterable(class System.ComponentModel.PropertyDescriptor propertyDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FilterableAttribute.IsPropertyFilterable(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyDescriptor" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="propertyDescriptor">A<see cref="T:System.ComponentModel.PropertyDescriptor" />をテストするプロパティのプロパティを格納します。</param>
+        <summary>プロパティがデバイスのフィルター処理をサポートしているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />によって表されるプロパティの場合、<see cref="T:System.ComponentModel.PropertyDescriptor" />に含まれているオブジェクト、<paramref name="propertyDescriptor" />パラメーターは、デバイスのフィルター処理をサポートするそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.FilterableAttribute.IsPropertyFilterable%2A>プロパティがデバイスのフィルター処理をサポートしているかどうかを調べます。 このメソッドを使用するので渡す必要があります、<xref:System.ComponentModel.PropertyDescriptor>をテストするプロパティのプロパティを含むオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTypeFilterable">
+      <MemberSignature Language="C#" Value="public static bool IsTypeFilterable (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsTypeFilterable(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FilterableAttribute.IsTypeFilterable(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />をテストするデータ型を表すです。</param>
+        <summary>指定したデータ型がデバイスのフィルター処理をサポートしているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />データ型に含まれる場合、<paramref name="type" />パラメーターは、デバイスのフィルター処理をサポートする。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.FilterableAttribute.IsTypeFilterable%2A>メソッドを指定した型がデバイスのフィルター処理をサポートしているかどうかを判断します。 型がある場合、デバイスがフィルター処理をサポートしている、<xref:System.Web.UI.FilterableAttribute>属性を適用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.FilterableAttribute No;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.FilterableAttribute No" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.FilterableAttribute.No" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.FilterableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>事前に定義を表す<see cref="T:System.Web.UI.FilterableAttribute" />こと、プロパティがサポートしないデバイス フィルター処理を示すオブジェクト。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.FilterableAttribute.No>フィールドは、定義済み<xref:System.Web.UI.FilterableAttribute>こと、プロパティがサポートしないデバイス フィルター処理を示すオブジェクト。 比較するときに、このフィールドは多くの場合、使用、<xref:System.Web.UI.FilterableAttribute>オブジェクトを定義済み<xref:System.Web.UI.FilterableAttribute>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yes">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.FilterableAttribute Yes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.FilterableAttribute Yes" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.FilterableAttribute.Yes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.FilterableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>事前に定義を表す<see cref="T:System.Web.UI.FilterableAttribute" />プロパティがデバイスのフィルター処理をサポートしていることを示すオブジェクト。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.FilterableAttribute.Yes>フィールドは、定義済み<xref:System.Web.UI.FilterableAttribute>プロパティがデバイスのフィルター処理をサポートしていることを示すオブジェクト。 比較するときに、このフィールドは多くの場合、使用、<xref:System.Web.UI.FilterableAttribute>オブジェクトを定義済み<xref:System.Web.UI.FilterableAttribute>オブジェクト。  
+  
+> [!NOTE]
+>  これは、既定値<xref:System.Web.UI.FilterableAttribute>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

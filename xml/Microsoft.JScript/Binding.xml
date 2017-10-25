@@ -1,0 +1,255 @@
+<Type Name="Binding" FullName="Microsoft.JScript.Binding">
+  <TypeSignature Language="C#" Value="public abstract class Binding : Microsoft.JScript.AST" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Binding extends Microsoft.JScript.AST" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.Binding" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.AST</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クラスのメンバー、呼び出し可能な式は、または変数名への参照を表します。 このクラスは、コンパイル時に適切な値に参照を解決しようとします。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="defaultMember">
+      <MemberSignature Language="C#" Value="protected System.Reflection.MemberInfo defaultMember;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Reflection.MemberInfo defaultMember" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.Binding.defaultMember" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックス付きプロパティを既定値への参照を格納します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject">
+      <MemberSignature Language="C#" Value="protected abstract object GetObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Binding.GetObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、バインドの参照がで定義されているオブジェクトを取得します。</summary>
+        <returns>バインドの参照が定義されているオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HandleNoSuchMemberError">
+      <MemberSignature Language="C#" Value="protected abstract void HandleNoSuchMemberError ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void HandleNoSuchMemberError() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Binding.HandleNoSuchMemberError" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、バインドの参照は、することはできませんをメンバーに存在する状況を処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは何もしないことができ、参照を解決するのには遅延バインディングを許可または例外をスローすることができます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="isAssignmentToDefaultIndexedProperty">
+      <MemberSignature Language="C#" Value="protected bool isAssignmentToDefaultIndexedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field family bool isAssignmentToDefaultIndexedProperty" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.Binding.isAssignmentToDefaultIndexedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックス付きプロパティをバインド参照が、既定値にするかどうかを示す値を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインド参照を角かっこを格納していると、既定値を参照していませんには、配列要素のプロパティの参照がインデックス付けられます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="isFullyResolved">
+      <MemberSignature Language="C#" Value="protected bool isFullyResolved;" />
+      <MemberSignature Language="ILAsm" Value=".field family bool isFullyResolved" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.Binding.isFullyResolved" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインドの参照が完全に解決されたかどうかを示す値を格納します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsMissing">
+      <MemberSignature Language="C#" Value="public static bool IsMissing (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsMissing(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Binding.IsMissing(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較対象のオブジェクト。</param>
+        <summary>指定したオブジェクトが等価かどうかを判断<see cref="T:Microsoft.JScript.Missing" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="value" />は等価<see cref="T:Microsoft.JScript.Missing" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="isNonVirtual">
+      <MemberSignature Language="C#" Value="protected bool isNonVirtual;" />
+      <MemberSignature Language="ILAsm" Value=".field family bool isNonVirtual" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.Binding.isNonVirtual" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインド参照が、基底クラスのメンバーをオーバーライドするメンバーにするかどうかを示す値を格納します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="name">
+      <MemberSignature Language="C#" Value="protected string name;" />
+      <MemberSignature Language="ILAsm" Value=".field family string name" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.Binding.name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインドの参照を識別する文字列を格納します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveRHValue">
+      <MemberSignature Language="C#" Value="protected void ResolveRHValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ResolveRHValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Binding.ResolveRHValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインド参照の右側にあるを解決します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateToILObject">
+      <MemberSignature Language="C#" Value="protected abstract void TranslateToILObject (System.Reflection.Emit.ILGenerator il, Type obtype, bool noValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void TranslateToILObject(class System.Reflection.Emit.ILGenerator il, class System.Type obtype, bool noValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Binding.TranslateToILObject(System.Reflection.Emit.ILGenerator,System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="il" Type="System.Reflection.Emit.ILGenerator" />
+        <Parameter Name="obtype" Type="System.Type" />
+        <Parameter Name="noValue" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="il">Microsoft intermediate language (MSIL) の命令を生成するオブジェクト。</param>
+        <param name="obtype">オブジェクトの型。</param>
+        <param name="noValue">
+          <see langword="true" />オブジェクトに値があるない場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>派生クラスでオーバーライドされると、バインドの参照がで定義されているオブジェクトの Microsoft intermediate language (MSIL) コードを生成します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateToILWithDupOfThisOb">
+      <MemberSignature Language="C#" Value="protected abstract void TranslateToILWithDupOfThisOb (System.Reflection.Emit.ILGenerator il);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void TranslateToILWithDupOfThisOb(class System.Reflection.Emit.ILGenerator il) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Binding.TranslateToILWithDupOfThisOb(System.Reflection.Emit.ILGenerator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="il" Type="System.Reflection.Emit.ILGenerator" />
+      </Parameters>
+      <Docs>
+        <param name="il">Microsoft intermediate language (MSIL) の命令を生成するオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、バインド参照の Microsoft intermediate language (MSIL) コードを生成します。 必要に応じて、評価スタックに現在の最上面の値をコピーし、評価スタックにコピーをプッシュします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

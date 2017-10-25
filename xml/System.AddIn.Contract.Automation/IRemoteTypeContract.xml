@@ -1,0 +1,416 @@
+<Type Name="IRemoteTypeContract" FullName="System.AddIn.Contract.Automation.IRemoteTypeContract">
+  <TypeSignature Language="C#" Value="public interface IRemoteTypeContract : System.AddIn.Contract.IContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRemoteTypeContract implements class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.IContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コンポーネントの種類の情報にアクセスし、アプリケーション ドメインとプロセス境界を越えてメンバーを起動する際に使用するコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、 <xref:System.AddIn.Contract.Automation.IRemoteTypeContract>、コンポーネントを呼び出すことができます、<xref:System.AddIn.Contract.Automation.IRemoteObjectContract.GetRemoteType%2A>を実装するオブジェクトのメソッド、<xref:System.AddIn.Contract.Automation.IRemoteObjectContract>インターフェイスです。  
+  
+ オブジェクトの型に関する情報を取得するコンポーネントを呼び出す、<xref:System.AddIn.Contract.Automation.IRemoteTypeContract.GetTypeData%2A>メソッドです。  
+  
+ オブジェクトのメンバーに関する情報を取得するには、コンポーネントは、メンバーの特定の種類に関する情報を返すメソッドのいずれかを呼び出します。 たとえば、オブジェクトのイベントに関する情報を取得するコンポーネント際に使用、<xref:System.AddIn.Contract.Automation.IRemoteTypeContract.GetEvent%2A>または<xref:System.AddIn.Contract.Automation.IRemoteTypeContract.GetEvents%2A>メソッドです。  
+  
+ オブジェクトのメンバーの呼び出し、コンポーネントを使用して、<xref:System.AddIn.Contract.Automation.IRemoteTypeContract.InvokeMember%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetCanonicalName">
+      <MemberSignature Language="C#" Value="public string GetCanonicalName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetCanonicalName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetCanonicalName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の正規名を返します<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns>現在の正規名<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正規の名前は、完全修飾型名など、グローバルに一意の名前です。 形式の文字列\<*アセンブリ名*>、 \<*完全修飾型名*> マネージ型のことをお勧めします。 形式の文字列\<*タイプ ライブラリ名*>、 \<*型名*> COM 型のことをお勧めします。  
+  
+ 型がパブリッシュされた後は、型の正規の名前は変わりません。 既に型を使用しているクライアントとの間のコンポーネント区切り互換性の将来のバージョンにある種類の正規名を変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvent">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.IRemoteEventInfoContract GetEvent (string name, System.Reflection.BindingFlags bindingFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Automation.IRemoteEventInfoContract GetEvent(string name, valuetype System.Reflection.BindingFlags bindingFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetEvent(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.IRemoteEventInfoContract</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">現在のイベントの名前<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</param>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />イベントを検索する方法を指定する値。</param>
+        <summary>返します、 <see cref="T:System.AddIn.Contract.Automation.IRemoteEventInfoContract" /> 、現在の指定されたイベントへのアクセスを提供する<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Automation.IRemoteEventInfoContract" /> 、それ以外の場合、指定したイベントにアクセスを提供する<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvents">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteEventInfoContract&gt; GetEvents (System.Reflection.BindingFlags bindingFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Collections.IArrayContract`1&lt;class System.AddIn.Contract.Automation.IRemoteEventInfoContract&gt; GetEvents(valuetype System.Reflection.BindingFlags bindingFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetEvents(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteEventInfoContract&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />イベントを検索する方法を指定する値。</param>
+        <summary>コレクションを返します<see cref="T:System.AddIn.Contract.Automation.IRemoteEventInfoContract" />、現在の指定したイベントにアクセスを提供するオブジェクト<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Collections.IArrayContract`1" />の<see cref="T:System.AddIn.Contract.Automation.IRemoteEventInfoContract" />; 指定したバインディング制約に一致するイベントへのアクセスを提供するオブジェクト、それ以外の場合、空<see cref="T:System.AddIn.Contract.Collections.IArrayContract`1" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetField">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.IRemoteFieldInfoContract GetField (string name, System.Reflection.BindingFlags bindingFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Automation.IRemoteFieldInfoContract GetField(string name, valuetype System.Reflection.BindingFlags bindingFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetField(System.String,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.IRemoteFieldInfoContract</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">現在のフィールドの名前<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</param>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />フィールドを検索する方法を指定する値。</param>
+        <summary>返します、 <see cref="T:System.AddIn.Contract.Automation.IRemoteFieldInfoContract" /> 、現在の指定したフィールドへのアクセスを提供する<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Automation.IRemoteFieldInfoContract" /> 、それ以外の場合、指定したフィールドにアクセスを提供する<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFields">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteFieldInfoContract&gt; GetFields (System.Reflection.BindingFlags bindingFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Collections.IArrayContract`1&lt;class System.AddIn.Contract.Automation.IRemoteFieldInfoContract&gt; GetFields(valuetype System.Reflection.BindingFlags bindingFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetFields(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteFieldInfoContract&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />フィールドを検索する方法を指定する値。</param>
+        <summary>コレクションを返します<see cref="T:System.AddIn.Contract.Automation.IRemoteFieldInfoContract" />、現在の指定したフィールドへのアクセスを提供するオブジェクト<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Collections.IArrayContract`1" />の<see cref="T:System.AddIn.Contract.Automation.IRemoteFieldInfoContract" />; 指定したバインディング制約に一致するフィールドへのアクセスを提供するオブジェクト、それ以外の場合、空<see cref="T:System.AddIn.Contract.Collections.IArrayContract`1" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInterface">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.IRemoteTypeContract GetInterface (string canonicalName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Automation.IRemoteTypeContract GetInterface(string canonicalName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetInterface(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.IRemoteTypeContract</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="canonicalName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="canonicalName">現在の実装されるインターフェイスの正規名<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</param>
+        <summary>現在の実装されているインターフェイスを返します<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />ことを表しますインターフェイス、指定された正規名はこの<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />を実装します。 <see langword="null" />この場合<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />指定された正規名を持つインターフェイスを実装しません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正規の名前は、GUID などのグローバルに一意の名前です。 形式の文字列\<*アセンブリ名*>、 \<*完全修飾型名*> マネージ型のことをお勧めします。 形式の文字列\<*タイプ ライブラリ名*>、 \<*型名*> COM 型のことをお勧めします。  
+  
+ 型がパブリッシュされた後は、型の正規の名前は変わりません。 既に型を使用しているクライアントとの間のコンポーネント区切り互換性の将来のバージョンにある種類の正規名を変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInterfaces">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteTypeContract&gt; GetInterfaces ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Collections.IArrayContract`1&lt;class System.AddIn.Contract.Automation.IRemoteTypeContract&gt; GetInterfaces() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetInterfaces" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteTypeContract&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の実装されるインターフェイスを返します<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Collections.IArrayContract`1" />の<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />し、現在実装されているすべてのインターフェイスを表すオブジェクト<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMember">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.IContract&gt; GetMember (string name, System.Reflection.MemberTypes memberTypes, System.Reflection.BindingFlags bindingFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Collections.IArrayContract`1&lt;class System.AddIn.Contract.IContract&gt; GetMember(string name, valuetype System.Reflection.MemberTypes memberTypes, valuetype System.Reflection.BindingFlags bindingFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetMember(System.String,System.Reflection.MemberTypes,System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.IContract&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="memberTypes" Type="System.Reflection.MemberTypes" />
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="name">現在のメンバーの名前<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。 名前は、同じ名前を持つ複数のメンバーを表すことができます。</param>
+        <param name="memberTypes">ビットごとの組み合わせ、<see cref="T:System.Reflection.MemberTypes" />を検索するメンバーを指定する値。</param>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />メンバーを検索する方法を指定する値。</param>
+        <summary>コレクションを返します<see cref="T:System.AddIn.Contract.IContract" />、現在の指定したメンバー型の指定されたすべてのメンバーへのアクセスを提供するオブジェクト<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />、指定したバインディング制約を使用します。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Collections.IArrayContract`1" />の<see cref="T:System.AddIn.Contract.IContract" />を現在のメンバーを表すオブジェクト<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />指定の名前を持ちで指定された条件を満たす、<paramref name="memberTypes" />と<paramref name="bindingFlags" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのメンバーを取得するか、コンス トラクターまたはメソッドのオーバー ロードなど、同じ名前を持つ複数のメンバーを取得する、このメソッドを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMembers">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.IContract&gt; GetMembers (System.Reflection.BindingFlags bindingFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Collections.IArrayContract`1&lt;class System.AddIn.Contract.IContract&gt; GetMembers(valuetype System.Reflection.BindingFlags bindingFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetMembers(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.IContract&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />メンバーを検索する方法を指定する値。</param>
+        <summary>コレクションを返します<see cref="T:System.AddIn.Contract.IContract" />、現在のすべてのメンバーにアクセスを提供するオブジェクト<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />指定したバインディング制約に一致します。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Collections.IArrayContract`1" />の<see cref="T:System.AddIn.Contract.IContract" />、現在のメンバーにアクセスを提供するオブジェクト<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />指定したバインディング制約に一致します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethod">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.IRemoteMethodInfoContract GetMethod (string name, System.Reflection.BindingFlags bindingFlags, System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteTypeContract&gt; remoteTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Automation.IRemoteMethodInfoContract GetMethod(string name, valuetype System.Reflection.BindingFlags bindingFlags, class System.AddIn.Contract.Collections.IArrayContract`1&lt;class System.AddIn.Contract.Automation.IRemoteTypeContract&gt; remoteTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetMethod(System.String,System.Reflection.BindingFlags,System.AddIn.Contract.Collections.IArrayContract{System.AddIn.Contract.Automation.IRemoteTypeContract})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.IRemoteMethodInfoContract</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="remoteTypes" Type="System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteTypeContract&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="name">現在のメソッドの名前<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</param>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />メソッドを検索する方法を指定する値。</param>
+        <param name="remoteTypes"><see cref="T:System.AddIn.Contract.Collections.IArrayContract`1" />の<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />を取得するには、数、順序、およびメソッドのパラメーターの型を表すオブジェクト。</param>
+        <summary>返します、 <see cref="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" /> 、現在の指定したメソッドへのアクセスを提供する<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" /> 、それ以外の場合、指定したメソッドへのアクセスを提供する<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethods">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteMethodInfoContract&gt; GetMethods (System.Reflection.BindingFlags bindingFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Collections.IArrayContract`1&lt;class System.AddIn.Contract.Automation.IRemoteMethodInfoContract&gt; GetMethods(valuetype System.Reflection.BindingFlags bindingFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetMethods(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteMethodInfoContract&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />メソッドを検索する方法を指定する値。</param>
+        <summary>コレクションを返します<see cref="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" />、現在の指定したメソッドへのアクセスを提供するオブジェクト<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Collections.IArrayContract`1" />の<see cref="T:System.AddIn.Contract.Automation.IRemoteMethodInfoContract" />指定したバインディング制約に一致するメソッドへのアクセスを提供するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemotePropertyInfoContract&gt; GetProperties (System.Reflection.BindingFlags bindingFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Collections.IArrayContract`1&lt;class System.AddIn.Contract.Automation.IRemotePropertyInfoContract&gt; GetProperties(valuetype System.Reflection.BindingFlags bindingFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetProperties(System.Reflection.BindingFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemotePropertyInfoContract&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+      </Parameters>
+      <Docs>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />プロパティを検索する方法を指定する値。</param>
+        <summary>コレクションを返します<see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" />、現在の指定されたプロパティへのアクセスを提供するオブジェクト<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Collections.IArrayContract`1" />の<see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" />指定したバインディング制約に一致するプロパティへのアクセスを提供するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.IRemotePropertyInfoContract GetProperty (string name, System.Reflection.BindingFlags bindingFlags, System.AddIn.Contract.Automation.IRemoteTypeContract remoteReturnType, System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteTypeContract&gt; remoteTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Automation.IRemotePropertyInfoContract GetProperty(string name, valuetype System.Reflection.BindingFlags bindingFlags, class System.AddIn.Contract.Automation.IRemoteTypeContract remoteReturnType, class System.AddIn.Contract.Collections.IArrayContract`1&lt;class System.AddIn.Contract.Automation.IRemoteTypeContract&gt; remoteTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetProperty(System.String,System.Reflection.BindingFlags,System.AddIn.Contract.Automation.IRemoteTypeContract,System.AddIn.Contract.Collections.IArrayContract{System.AddIn.Contract.Automation.IRemoteTypeContract})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.IRemotePropertyInfoContract</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="remoteReturnType" Type="System.AddIn.Contract.Automation.IRemoteTypeContract" />
+        <Parameter Name="remoteTypes" Type="System.AddIn.Contract.Collections.IArrayContract&lt;System.AddIn.Contract.Automation.IRemoteTypeContract&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="name">現在のプロパティの名前<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</param>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />メソッドを検索する方法を指定する値。</param>
+        <param name="remoteReturnType"><see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />プロパティの戻り値の型を指定します。</param>
+        <param name="remoteTypes"><see cref="T:System.AddIn.Contract.Collections.IArrayContract`1" />の<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />を指定したプロパティのパラメーターを表すオブジェクト。</param>
+        <summary>返します、 <see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" /> 、現在の指定されたプロパティへのアクセスを提供する<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Automation.IRemotePropertyInfoContract" /> 、それ以外の場合、指定したプロパティにアクセスを提供する<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeData">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Automation.RemoteTypeData GetTypeData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.Automation.RemoteTypeData GetTypeData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.GetTypeData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Automation.RemoteTypeData</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトに関する型情報を返す現在<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />を識別します。</summary>
+        <returns>A<see cref="T:System.AddIn.Contract.Automation.RemoteTypeData" />オブジェクトに関する情報を格納する、現在<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />を識別します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeMember">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.RemoteArgument InvokeMember (string name, System.Reflection.BindingFlags bindingFlags, System.AddIn.Contract.Automation.IRemoteObjectContract target, System.AddIn.Contract.Collections.IRemoteArgumentArrayContract remoteArgs, bool[] remoteArgModifiers, int localeId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.RemoteArgument InvokeMember(string name, valuetype System.Reflection.BindingFlags bindingFlags, class System.AddIn.Contract.Automation.IRemoteObjectContract target, class System.AddIn.Contract.Collections.IRemoteArgumentArrayContract remoteArgs, bool[] remoteArgModifiers, int32 localeId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Automation.IRemoteTypeContract.InvokeMember(System.String,System.Reflection.BindingFlags,System.AddIn.Contract.Automation.IRemoteObjectContract,System.AddIn.Contract.Collections.IRemoteArgumentArrayContract,System.Boolean[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.RemoteArgument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="bindingFlags" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="target" Type="System.AddIn.Contract.Automation.IRemoteObjectContract" />
+        <Parameter Name="remoteArgs" Type="System.AddIn.Contract.Collections.IRemoteArgumentArrayContract" />
+        <Parameter Name="remoteArgModifiers" Type="System.Boolean[]" />
+        <Parameter Name="localeId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">呼び出すメンバーの名前。</param>
+        <param name="bindingFlags">ビットごとの組み合わせ、<see cref="T:System.Reflection.BindingFlags" />メンバーを検索する方法を指定する値。</param>
+        <param name="target"><see cref="T:System.AddIn.Contract.Automation.IRemoteObjectContract" />を指定されたメンバーを呼び出します。</param>
+        <param name="remoteArgs"><see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentArrayContract" />呼び出すメンバーに渡す引数を格納しています。</param>
+        <param name="remoteArgModifiers">示すブール値の配列かどうかの各、 <c>remoteArgs</c>値が参照によって渡されます。</param>
+        <param name="localeId">呼び出されるメンバーが実行することがロケールに固有の変換に使用するロケール ID。</param>
+        <summary>現在の指定されたメンバーを呼び出す<see cref="T:System.AddIn.Contract.Automation.IRemoteTypeContract" />です。</summary>
+        <returns>A<see cref="T:System.AddIn.Contract.RemoteArgument" />呼び出されるメンバーの戻り値を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `remoteArgModifiers`のみが書き込まれる、COM を使用するコンポーネントのパラメーターを使用 内の各値、`remoteArgModifiers`パラメーターが示すかどうかの値で、対応する、`remoteArgs`パラメーターは参照によって渡されます。 長さ`remoteArgModifiers`の長さと同じである必要があります`remoteArgs`です。  
+  
+ 渡す場合`null`の`remoteArgModifiers`、このメソッドでは、既定のロジックを使用して、引数が参照によって渡されるかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

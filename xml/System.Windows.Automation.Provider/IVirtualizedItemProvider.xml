@@ -1,0 +1,59 @@
+<Type Name="IVirtualizedItemProvider" FullName="System.Windows.Automation.Provider.IVirtualizedItemProvider">
+  <TypeSignature Language="C#" Value="public interface IVirtualizedItemProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IVirtualizedItemProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IVirtualizedItemProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("cb98b665-2d35-4fac-ad35-f3c60d0c0b8b")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>仮想化された項目のコントロール パターンをサポートするメソッドを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Provider.IVirtualizedItemProvider.Realize%2A>メソッドにより、仮想アイテムの UI オートメーション要素として完全にアクセスできるようにします。 仮想化された項目は、通常、仮想一覧にある項目です。つまりが、独自のデータを管理していないをリストします。 アプリケーションを使用して、仮想化された項目のオートメーション要素を取得した場合、<xref:System.Windows.Automation.ItemContainerPattern.FindItemByProperty%2A>メソッド、プロバイダーを実装するプレース ホルダーの要素を返すことがあります、<xref:System.Windows.Automation.Provider.IVirtualizedItemProvider>インターフェイスです。 実装、<xref:System.Windows.Automation.Provider.IVirtualizedItemProvider.Realize%2A>完全 UI オートメーション要素の参照を返します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Realize">
+      <MemberSignature Language="C#" Value="public void Realize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Realize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IVirtualizedItemProvider.Realize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>仮想項目は、UI オートメーション要素として完全にアクセスできるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目は、仮想の一覧から取得したときに、プレース ホルダーにすぎません。 UI オートメーション要素の参照を完全に変換するのにには、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

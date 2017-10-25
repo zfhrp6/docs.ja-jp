@@ -1,0 +1,150 @@
+<Type Name="TrackingRecord" FullName="System.Workflow.Runtime.Tracking.TrackingRecord">
+  <TypeSignature Language="C#" Value="public abstract class TrackingRecord" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TrackingRecord extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.TrackingRecord" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="abstract" />、<see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" />、および <see cref="T:System.Workflow.Runtime.Tracking.UserTrackingRecord" /> の派生元となる <see cref="T:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord" /> 基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ワークフロー インスタンスは、実行時にアクティビティ ステータス イベント、ユーザー イベント、およびワークフロー ステータス イベントの 3 種類の追跡イベントをランタイム追跡インフラストラクチャに送出します。 ランタイム追跡インフラストラクチャは、これらのイベントを <xref:System.Workflow.Runtime.Tracking.TrackingProfile> 内の追跡ポイントと照合しようとします。 いずれかの追跡ポイントが一致するたびに、ランタイム追跡インフラストラクチャは、追跡ポイントと追跡イベントの両方に関連したデータを格納した追跡レコードを追跡サービスに送ります。 ランタイム追跡インフラストラクチャは、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord>、<xref:System.Workflow.Runtime.Tracking.UserTrackingRecord>、および <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> の 3 種類の追跡レコードを送ることができます。 これらの追跡レコードは <xref:System.Workflow.Runtime.Tracking.TrackingRecord> クラスから派生します。それぞれの種類は、ランタイム追跡インフラストラクチャによって照合される 3 種類の追跡ポイント (<xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint>、<xref:System.Workflow.Runtime.Tracking.UserTrackPoint>、または <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint>) に対応します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TrackingRecord ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingRecord.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.Runtime.Tracking.TrackingRecord" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Annotations">
+      <MemberSignature Language="C#" Value="public abstract System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingRecord.Annotations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingAnnotationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラス内でオーバーライドされると、追跡ポイントに関連した注釈のコレクションを取得します。</summary>
+        <value>この <see cref="T:System.Workflow.Runtime.Tracking.TrackingAnnotationCollection" /> に対応する追跡ポイントに関連した注釈を格納する <see cref="T:System.Workflow.Runtime.Tracking.TrackingRecord" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint>、<xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint>、または <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> に関連付けられる注釈を、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> の中で指定することができます。 ランタイム追跡インフラストラクチャはこれらの注釈を保存して、追跡ポイントの照合時にこれらを <xref:System.Workflow.Runtime.Tracking.TrackingRecord.Annotations%2A> で返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventArgs">
+      <MemberSignature Language="C#" Value="public abstract EventArgs EventArgs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EventArgs EventArgs" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingRecord.EventArgs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventArgs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラス内でオーバーライドされた場合、追跡レコード送出の原因となった追跡イベントに関連するイベント データ (存在する場合) を取得または設定します。</summary>
+        <value>追跡レコード送出の原因となった追跡イベントに関連するイベント データ (存在する場合) を表す <see cref="T:System.EventArgs" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスによって出されるいくつかの種類の追跡イベントには、関連したイベント データが存在します。 追跡イベントに関連したイベント データがある場合、ランタイム追跡インフラストラクチャは派生クラスの <xref:System.Workflow.Runtime.Tracking.TrackingRecord.EventArgs%2A> プロパティにイベント データを格納します。 たとえば、ワークフロー インスタンスが終了した場合、ランタイム追跡インフラストラクチャは、<xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> を、終了の理由に関する情報を含む <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord.EventArgs%2A?displayProperty=nameWithType> に設定して <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs> を送信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventDateTime">
+      <MemberSignature Language="C#" Value="public abstract DateTime EventDateTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime EventDateTime" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingRecord.EventDateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラス内でオーバーライドされた場合、追跡レコードに関連した追跡イベントの日時を取得または設定します。</summary>
+        <value>追跡イベントが発生した日時を示す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DateTime> は協定世界時刻 (UTC) です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventOrder">
+      <MemberSignature Language="C#" Value="public abstract int EventOrder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EventOrder" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingRecord.EventOrder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラス内でオーバーライドされた場合、追跡レコードに関連した追跡イベントの、ワークフロー インスタンスによって出された他の追跡イベントと比較した相対的順序を示す値を取得または設定します。</summary>
+        <value>ワークフロー インスタンスによって出された他の追跡イベントと比較した、追跡イベントの相対的順序を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.TrackingRecord.EventOrder%2A> は、ワークフロー インスタンスにおける追跡イベントの相対的順序を示します。 <xref:System.Workflow.Runtime.Tracking.TrackingRecord.EventOrder%2A> はワークフロー インスタンス内で一意ですが、必ずしも連続しているとは限りません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

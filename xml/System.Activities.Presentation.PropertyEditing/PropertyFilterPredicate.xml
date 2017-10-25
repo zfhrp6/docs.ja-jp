@@ -1,0 +1,78 @@
+<Type Name="PropertyFilterPredicate" FullName="System.Activities.Presentation.PropertyEditing.PropertyFilterPredicate">
+  <TypeSignature Language="C#" Value="public class PropertyFilterPredicate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PropertyFilterPredicate extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.PropertyEditing.PropertyFilterPredicate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティ検索をフィルター処理するために使用される述語テキスト文字列を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyFilterPredicate (string matchText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string matchText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyFilterPredicate.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="matchText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="matchText">照合処理に使用される述語文字列。</param>
+        <summary>指定した検索文字列を使用して、<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyFilterPredicate" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public virtual bool Match (string target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Match(string target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyFilterPredicate.Match(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="target">文字列フィルター。</param>
+        <summary>対象文字列内に、述語文字列と一致する文字列が含まれているかどうかを示します (大文字と小文字は区別されません)。</summary>
+        <returns>
+          <see langword="true" />対象の文字列内で述語文字列の大文字と小文字が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchText">
+      <MemberSignature Language="C#" Value="protected string MatchText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MatchText" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyFilterPredicate.MatchText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ フィルター述語文字列と対象文字列を照合するために使用される <see cref="T:System.String" /> を取得します。</summary>
+        <value>照合用のテキストを格納する述語文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,96 @@
+<Type Name="ThreadStaticAttribute" FullName="System.ThreadStaticAttribute">
+  <TypeSignature Language="C#" Value="public class ThreadStaticAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ThreadStaticAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ThreadStaticAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Field, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>静的フィールドの値がスレッドごとに一意であることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`static`でマークされたフィールド<xref:System.ThreadStaticAttribute>スレッド間で共有されていません。 各実行中のスレッドは、フィールドの個別のインスタンスがおよびとは独立して設定し、そのフィールドの値を取得します。 フィールドに別のスレッドにアクセスした場合、別の値が格納されます。  
+  
+ 適用するだけでなくことに注意してください、<xref:System.ThreadStaticAttribute>属性、フィールドにする必要がありますも定義として、`static`フィールド (c#) または`Shared`(Visual Basic) のフィールドです。  
+  
+> [!NOTE]
+>  マークされたフィールドの初期値を指定しない`ThreadStaticAttribute`このような初期化は、1 回だけで、クラス コンス トラクターを実行して、スレッド 1 つだけをそのために影響が発生したため、します。 値の型である場合またはその既定値に初期化されているフィールドを使用する場合は、初期値を指定しないと、`null`参照型である場合。  
+  
+ これは、この属性を使用し、そこから派生していません。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、乱数ジェネレーターのインスタンスを作成、10 個のスレッドだけでなく、メイン スレッドを作成し、各スレッドで 200万乱数を生成します。 使用して、<xref:System.ThreadStaticAttribute>乱数スレッドあたりの数と合計を計算する属性。 2 つのスレッドあたりの追加フィールドも定義`previous`と`abnormal`、乱数ジェネレーターの破損を検出することができます。  
+  
+ [!code-csharp[System.ThreadStaticAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threadstaticattribute/cs/threadsafe2a.cs#1)]
+ [!code-vb[System.ThreadStaticAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threadstaticattribute/vb/threadsafe2a.vb#1)]  
+  
+ この例では、 `lock` (C#) ステートメント、および`SyncLock`乱数ジェネレーターへのアクセスを同期するために Visual Basic で作成します。 これは、乱数ジェネレーター、通常すべての後続の呼び出しにゼロの値が返される、結果の破損を防止します。  
+  
+ また、例では、<xref:System.Threading.CountdownEvent>クラスを各スレッドの呼び出しの合計数を表示する前に乱数の生成が完了したことを確認してください。 それ以外の場合、メイン スレッドには、追加のスレッドを生成する前に実行が完了すると、メソッド呼び出しの合計数が不正確な値が表示されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ThreadStaticAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ThreadStaticAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ThreadStaticAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

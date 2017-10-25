@@ -1,0 +1,56 @@
+<Type Name="HasRunnableWorkflowEvent" FullName="System.Activities.DurableInstancing.HasRunnableWorkflowEvent">
+  <TypeSignature Language="C#" Value="public sealed class HasRunnableWorkflowEvent : System.Runtime.DurableInstancing.InstancePersistenceEvent&lt;System.Activities.DurableInstancing.HasRunnableWorkflowEvent&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HasRunnableWorkflowEvent extends System.Runtime.DurableInstancing.InstancePersistenceEvent`1&lt;class System.Activities.DurableInstancing.HasRunnableWorkflowEvent&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DurableInstancing.HasRunnableWorkflowEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.DurableInstancing.InstancePersistenceEvent&lt;System.Activities.DurableInstancing.HasRunnableWorkflowEvent&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Activities.DurableInstancing.HasRunnableWorkflowEvent</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>永続性データベースに実行可能インスタンスが存在するかどうかをワークフロー ホストに通知するため、SQL Workflow Instance Store が発生させるイベントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスが*runnable*を場合、その中断状態または完了状態ではなく、次の条件を満たします。  
+  
+-   インスタンスがロック解除されていて、保留タイマーの期限が切れている。  
+  
+-   インスタンスのロックが解除されていると、その状態が**Executing**です。  
+  
+-   インスタンスに無効なロックがある。  
+  
+ インスタンス ストアは、そのストアを使用するワークフロー ホストに属している実行可能インスタンスを定期的に検索します。 ワークフロー ホスト型に一致する永続化ストアに実行可能インスタンスが見つかると、<xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> を発生させます。 永続化ストアに実行可能インスタンスが見つからない場合は、永続化ストアでの実行可能インスタンスの監視を続行します。  
+  
+ HasRunnableWorkflowEvent を発生させた場合は、<xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> を受け取って実行するまで、永続化ストアでの実行可能インスタンスの監視を停止します。 TryLoadRunnableWorkflowCommand を実行しても実行可能インスタンスが返されない場合のみ、監視を続行します。  
+  
+ HasRunnableWorkflowEvent を受け取ったワークフロー ホストは、インスタンス ストアに対して <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> を実行し、対象インスタンスをメモリに読み込みます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HasRunnableWorkflowEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DurableInstancing.HasRunnableWorkflowEvent.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.DurableInstancing.HasRunnableWorkflowEvent" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

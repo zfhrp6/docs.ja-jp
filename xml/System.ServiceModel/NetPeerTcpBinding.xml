@@ -1,0 +1,408 @@
+<Type Name="NetPeerTcpBinding" FullName="System.ServiceModel.NetPeerTcpBinding">
+  <TypeSignature Language="C#" Value="public class NetPeerTcpBinding : System.ServiceModel.Channels.Binding, System.ServiceModel.Channels.IBindingRuntimePreferences" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NetPeerTcpBinding extends System.ServiceModel.Channels.Binding implements class System.ServiceModel.Channels.IBindingRuntimePreferences" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.NetPeerTcpBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.Binding</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IBindingRuntimePreferences</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("PeerChannel feature is obsolete and will be removed in the future.", false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ピア ツー ピア ネットワーク アプリケーション用のセキュリティで保護されたバインドを用意します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.NetPeerTcpBinding> バインドは、TCP レベルのピア ツー ピア メッシュ インフラストラクチャを使用するピア ネットワーキング アプリケーションの作成をサポートします。  
+  
+ 各 <xref:System.ServiceModel.PeerNode> インスタンスは、この種類のバイディングを使用して定義された複数のピア チャネルをホストできます。 この種類の構成済みのインスタンスで作成されたチャネル ファクトリを使用すると、ピア チャネルを生成できます。 ピア チャネル ファクトリは、入力のみ (<xref:System.ServiceModel.Channels.IInputChannel> を実装)、出力のみ (<xref:System.ServiceModel.Channels.IOutputChannel> を実装)、および二重 (<xref:System.ServiceModel.Channels.IDuplexChannel> を実装) であるピア チャネルを生成できます。  
+  
+ これは、Windows Communication Framework (WCF) が提供する標準バインドの 1 つです。 このバインドは、強制コード内で使用するか、アプリケーションの対応する XML 構成ファイルの中に指定できます。 手順としては、構成値を使用するバインディングを定義し、コードベースの方法を使用しないことをお勧めします。ただし、サービスの初期化時に構成値を設定する必要がある特定の高度なシナリオの場合は除きます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NetPeerTcpBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.NetPeerTcpBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.NetPeerTcpBinding" /> クラスの新しい既定のインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NetPeerTcpBinding (string configurationName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string configurationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.NetPeerTcpBinding.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="configurationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configurationName">バインディングを初期化するために設定が使用されるバインディング要素を識別する <see langword="configurationName" /> 属性の値。</param>
+        <summary>構成名を指定して、<see cref="T:System.ServiceModel.NetPeerTcpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、指定された名前で新しい <xref:System.ServiceModel.NetPeerTcpBinding> を作成します。 指定された名前の構成が既に存在する場合は、その名前を含む構成ファイルの設定が使用されます。 指定された名前が存在しない場合は、既定の構成設定が使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">構成が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBindingElements">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElementCollection CreateBindingElements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElementCollection CreateBindingElements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.NetPeerTcpBinding.CreateBindingElements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインド用のバインド要素でコレクションを作成します。</summary>
+        <returns>バインドを構成する <see cref="T:System.Collections.Generic.ICollection`1" /> 型の <see cref="T:System.ServiceModel.Channels.BindingElement" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnvelopeVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EnvelopeVersion EnvelopeVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EnvelopeVersion EnvelopeVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetPeerTcpBinding.EnvelopeVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EnvelopeVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドで使用される SOAP のバージョンを取得します。</summary>
+        <value>
+          このバイディングで使用される SOAP のバージョンを指定する <see cref="T:System.ServiceModel.EnvelopeVersion" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPnrpAvailable">
+      <MemberSignature Language="C#" Value="public static bool IsPnrpAvailable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsPnrpAvailable" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetPeerTcpBinding.IsPnrpAvailable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターに PNRP サービスがインストールされ、使用可能であるかどうかを取得します。</summary>
+        <value>PNRP がインストールされて構成されている場合は true。それ以外の場合は false。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListenIPAddress">
+      <MemberSignature Language="C#" Value="public System.Net.IPAddress ListenIPAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPAddress ListenIPAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetPeerTcpBinding.ListenIPAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ServiceModel.Configuration.PeerTransportListenAddressConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル ピア ノードによるリッスンで使用される IP アドレスを取得または設定します。</summary>
+        <value>ローカル ピア ノードがリッスンする、正しい形式の IPv4 または IPv6 アドレスを格納する <see cref="T:System.String" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが設定されていない、あるいは `null` または <xref:System.String.Empty> に設定されている場合は、関連付けられた <xref:System.ServiceModel.PeerNode> は、ローカル マシンに対して構成されたすべてのグローバル アドレス (IPv4 と IPv6 の両方) 上でリッスンします。  
+  
+ このプロパティで有効なユニキャスト IP アドレスを指定した場合、関連する <xref:System.ServiceModel.PeerNode> オブジェクトがそのアドレス上で待機します。 IPv4 および IPv6 のワイルドカード アドレスは、有効なアドレスとは見なされません。  
+  
+ `null` と組み合わせてこのプロパティに <xref:System.ServiceModel.Channels.PnrpPeerResolverBindingElement> 以外の IP アドレス文字列を指定する場合は、IP アドレスを仮想インターフェイスではなく物理インターフェイスに関連付ける必要があります。  
+  
+ 既定のピア リゾルバー (PNRP) で登録するには、アドホック ネットワーク用の ListenIPAddress を設定する必要があります。 このプロパティを <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement> (既定のピア リゾルバー) と組み合わせて指定する場合、IP アドレスは、仮想ネットワーク インターフェイス (トンネル インターフェイスなど) ではなく、物理ネットワーク インターフェイスに属している必要があります。 PNRP は物理インターフェイスに対応する PNRP クラウド内で公開するだけであるためにです。 このプロパティを null に設定すると、すべてのグローバル アドレスがグローバルな PNRP 集団内に公開されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">提供されたアドレスが無効である、または形式が間違っています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxBufferPoolSize">
+      <MemberSignature Language="C#" Value="public long MaxBufferPoolSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxBufferPoolSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetPeerTcpBinding.MaxBufferPoolSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(524288)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア TCP バッファーで使用されるメモリ プールの最大サイズ (バイト単位) を取得または設定します。</summary>
+        <value>入力メッセージをメモリ内にバッファーするために使用される最大バイト数を指定する <see cref="T:System.Int32" /> 値。 既定値は 65,536 バイトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.NetPeerTcpBinding.MaxBufferPoolSize%2A> の値は、<xref:System.ServiceModel.NetPeerTcpBinding.MaxReceivedMessageSize%2A> の値 (既定値は 65536 バイト (64 KB)) よりも小さくすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxReceivedMessageSize">
+      <MemberSignature Language="C#" Value="public long MaxReceivedMessageSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxReceivedMessageSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetPeerTcpBinding.MaxReceivedMessageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(65536)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングによって作成されるピア チャネルで処理される TCP メッセージの最大サイズ (バイト単位) を取得または設定します。</summary>
+        <value>
+          このバインドによって作成されるピア チャネル上で送信される TCP メッセージのバイト単位の最大サイズを格納する <see cref="T:System.Int32" />。 既定値は 65,536 (64 KB) です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public int Port { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Port" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetPeerTcpBinding.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインドするネットワーク ポートを取得または設定します。</summary>
+        <value>このバインド インスタンスがピア固有の TCP メッセージを処理するネットワーク ポートを表す <see cref="T:System.Int32" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポートが無効な場合は、<xref:System.ArgumentException> が発生します。 このプロパティの既定値は 0 です。これは、予約されていないすべてのポートからランダムにリスナー ポートが選択されることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReaderQuotas">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDictionaryReaderQuotas ReaderQuotas { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlDictionaryReaderQuotas ReaderQuotas" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetPeerTcpBinding.ReaderQuotas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReaderQuotas</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドに関連付けられる <see cref="T:System.Xml.XmlDictionaryReaderQuotas" /> を取得または設定します。</summary>
+        <value>このバインドに関連付けられている <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">アプリケーションがこのプロパティを null に設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolver">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.PeerResolvers.PeerResolverSettings Resolver { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.PeerResolvers.PeerResolverSettings Resolver" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetPeerTcpBinding.Resolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.PeerResolverSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインド インスタンスがピア メッシュ ID をピア メッシュ内のノードのエンドポイント IP アドレスに解決するために使用する <see cref="T:System.ServiceModel.PeerResolver" /> を取得します。</summary>
+        <value>ピア メッシュ ID を、メッシュに参加する複数のノードを表す <see cref="T:System.ServiceModel.PeerResolver" /> インスタンスのセットに解決するために使用される <see cref="T:System.ServiceModel.PeerNodeAddress" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public override string Scheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetPeerTcpBinding.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドに関連付けられるトランスポート プロトコルで使用される URI スキームを取得します。</summary>
+        <value>このバインドで使用される特定のトランスポート プロトコルの URI スキームを指定する <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は "net.p2p" である必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Security">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.PeerSecuritySettings Security { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.PeerSecuritySettings Security" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetPeerTcpBinding.Security" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerSecuritySettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドによって作成されるピア チャネルのセキュリティ設定を取得または設定します。</summary>
+        <value>
+          このバインドによって作成されるピア チャネルに対して設定するセキュリティを示す <see cref="T:System.ServiceModel.PeerSecuritySettings" /> 列挙値。 セキュリティは、メッセージ固有にすることも、トランスポート固有にすることもできます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeReaderQuotas">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeReaderQuotas ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeReaderQuotas() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.NetPeerTcpBinding.ShouldSerializeReaderQuotas" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインドのリーダー クォータ データをシリアル化する必要があるかどうかを指定する値を取得します。</summary>
+        <returns>リーダー クォータ データをシリアル化する必要がある場合は <see langword="true" /> を示し、シリアル化が必要ない場合は <see langword="false" /> を示す <see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeSecurity">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeSecurity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.NetPeerTcpBinding.ShouldSerializeSecurity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインドのセキュリティ情報をシリアル化する必要があるかどうかを指定する値を取得します。</summary>
+        <returns>バインディングのセキュリティ情報をシリアル化する必要がある場合は <see langword="true" /> を示し、シリアル化が必要ない場合は <see langword="false" /> を示す <see cref="T:System.Boolean" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously">
+      <MemberSignature Language="C#" Value="bool System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetPeerTcpBinding.System#ServiceModel#Channels#IBindingRuntimePreferences#ReceiveSynchronously" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドによって作成されるピア チャネル上の受信要求を、同期または非同期のどちらで処理するかを取得します。</summary>
+        <value>true の場合は受信要求が同期処理され、false の場合は非同期処理されます。 既定値は false であり、要求は非同期処理されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,306 @@
+<Type Name="DisplayClaim" FullName="System.IdentityModel.Metadata.DisplayClaim">
+  <TypeSignature Language="C#" Value="public class DisplayClaim" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DisplayClaim extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Metadata.DisplayClaim" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表示可能な要求オブジェクトを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示タグでは通常、(、<xref:System.IdentityModel.Metadata.DisplayClaim.DisplayTag%2A>プロパティ) および description (説明のプロパティ) がローカライズされます。 <xref:System.IdentityModel.Metadata.DisplayClaim.ClaimType%2A>プロパティは、さまざまなクレームの種類を識別します。 表示値 (、<xref:System.IdentityModel.Metadata.DisplayClaim.DisplayValue%2A>プロパティ) の要求の文字列表現です。リソースです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DisplayClaim (string claimType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string claimType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.DisplayClaim.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="claimType">表示の要求の種類を要求します。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.ClaimType" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Metadata.DisplayClaim" />を指定したクレームの種類を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimType" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DisplayClaim (string claimType, string displayTag, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string claimType, string displayTag, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.DisplayClaim.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimType" Type="System.String" />
+        <Parameter Name="displayTag" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="claimType">表示の要求の種類を要求します。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.ClaimType" />プロパティです。</param>
+        <param name="displayTag">表示の表示名 (またはフレンドリ名) を要求します。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.DisplayTag" />プロパティです。</param>
+        <param name="description">表示の要求について説明します。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.Description" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Metadata.DisplayClaim" />指定した要求の種類、名前と説明を表示します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimType" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DisplayClaim (string claimType, string displayTag, string description, string displayValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string claimType, string displayTag, string description, string displayValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.DisplayClaim.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimType" Type="System.String" />
+        <Parameter Name="displayTag" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="displayValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="claimType">表示の要求の種類を要求します。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.ClaimType" />プロパティです。</param>
+        <param name="displayTag">表示の表示名 (またはフレンドリ名) を要求します。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.DisplayTag" />プロパティです。</param>
+        <param name="description">表示の要求について説明します。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.Description" />プロパティです。</param>
+        <param name="displayValue">表示要求の表示値。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.DisplayValue" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Metadata.DisplayClaim" />クラスを持つ、指定された要求の種類、表示名、値、および説明を表示します。 クレームが必要です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Metadata.DisplayClaim.Optional%2A>プロパティに初期化`true`新しいインスタンス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimType" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DisplayClaim (string claimType, string displayTag, string description, string displayValue, bool optional);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string claimType, string displayTag, string description, string displayValue, bool optional) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.DisplayClaim.#ctor(System.String,System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimType" Type="System.String" />
+        <Parameter Name="displayTag" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="displayValue" Type="System.String" />
+        <Parameter Name="optional" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="claimType">表示の要求の種類を要求します。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.ClaimType" />プロパティです。</param>
+        <param name="displayTag">表示の表示名 (またはフレンドリ名) を要求します。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.DisplayTag" />プロパティです。</param>
+        <param name="description">表示の要求について説明します。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.Description" />プロパティです。</param>
+        <param name="displayValue">表示要求の表示値。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.DisplayValue" />プロパティです。</param>
+        <param name="optional">
+          クレームが省略可能な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 初期化、<see cref="P:System.IdentityModel.Metadata.DisplayClaim.Optional" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Metadata.DisplayClaim" />クラスを持つ、指定された要求の種類、表示名、値、説明、および省略可能な属性を表示します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimType" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimType">
+      <MemberSignature Language="C#" Value="public string ClaimType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClaimType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.DisplayClaim.ClaimType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示要求に関連付けられているクレームの種類を取得します。</summary>
+        <value>要求の種類を表す URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、必須属性は、一意の識別子 (URI)、個々 の要求のセキュリティ トークンで返される  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDisplayClaimFromClaimType">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Metadata.DisplayClaim CreateDisplayClaimFromClaimType (string claimType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Metadata.DisplayClaim CreateDisplayClaimFromClaimType(string claimType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.DisplayClaim.CreateDisplayClaimFromClaimType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.DisplayClaim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="claimType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="claimType">要求の種類を表す URI。</param>
+        <summary>指定したクレームの種類から、表示クレームを作成します。</summary>
+        <returns><see cref="T:System.IdentityModel.Metadata.DisplayClaim" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Metadata.DisplayClaim.DisplayTag%2A>と<xref:System.IdentityModel.Metadata.DisplayClaim.Description%2A>プロパティは、指定したクレームの種類に基づいて既定値に設定されます。 設定されている場合は、プロパティの既定値が存在しない、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.DisplayClaim.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の表示の要求について説明します。</summary>
+        <value>表示の要求について説明します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素は、セキュリティ トークンで返されるクレームのセマンティクスの説明を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayTag">
+      <MemberSignature Language="C#" Value="public string DisplayTag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayTag" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.DisplayClaim.DisplayTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示要求のフレンドリ名を設定します。</summary>
+        <value>表示要求のフレンドリ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素は、セキュリティ トークンで返される要求のフレンドリ名を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayValue">
+      <MemberSignature Language="C#" Value="public string DisplayValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayValue" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.DisplayClaim.DisplayValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示要求の表示可能な値を設定します。</summary>
+        <value>表示要求の表示可能な値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素は、1 つまたはセキュリティ トークンの要求の詳細表示可能な値が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Optional">
+      <MemberSignature Language="C#" Value="public bool Optional { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Optional" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.DisplayClaim.Optional" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の表示要求の省略可能な属性</summary>
+        <value>
+          <see langword="true" />場合、表示クレームが省略可能です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 省略可能な属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteOptionalAttribute">
+      <MemberSignature Language="C#" Value="public bool WriteOptionalAttribute { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WriteOptionalAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.DisplayClaim.WriteOptionalAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または省略可能な属性がシリアル化するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />省略可能な属性です。 シリアル化するにはそれ以外の場合は false です。 既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

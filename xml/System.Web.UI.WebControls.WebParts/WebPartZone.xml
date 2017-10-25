@@ -1,0 +1,205 @@
+<Type Name="WebPartZone" FullName="System.Web.UI.WebControls.WebParts.WebPartZone">
+  <TypeSignature Language="C#" Value="public class WebPartZone : System.Web.UI.WebControls.WebParts.WebPartZoneBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartZone extends System.Web.UI.WebControls.WebParts.WebPartZoneBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartZone" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.WebPartZoneBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.WebParts.WebPartZoneDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web ページ上の <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> コントロールをホストするための、Web パーツ コントロール セットの主なコントロールとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツの機能では、ゾーンは、Web パーツ コントロールを含む Web ページに定義済みの領域です。 ゾーンの主な機能は、それに含まれるコントロールのレイアウトにこれらのコントロールの一般的なユーザー インターフェイス (UI) を提供します。 ゾーンと Web パーツ アプリケーションでその使用方法の詳細については、ベースのリファレンス ドキュメントを参照してください。<xref:System.Web.UI.WebControls.WebParts.WebZone>と<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>クラス、およびトピック[Web パーツ コントロール セットの概要](http://msdn.microsoft.com/library/ff0149e4-695a-401a-8cda-53df6d7d2668)です。  
+  
+ 特別な関数、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>を含めるには、コントロール<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールで、メインの Web パーツの UI アプリケーションを形成します。 A<xref:System.Web.UI.WebControls.WebParts.WebPartZone>をテンプレートとして使用して、内の他のサーバー コントロールを追加する開発者を有効にすると、Web ページに永続化の形式でコントロールを宣言することができます、`<asp:webpartzone>`要素。 任意の型に追加された場合、サーバー コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーン、として機能する、<xref:System.Web.UI.WebControls.WebParts.WebPart>実行時に制御します。 これは、追加されたコントロールがかどうかに関係なく当てはまります、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、ユーザー コントロール、カスタム コントロールまたは ASP.NET コントロール。 詳細については、のトピックを参照して、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>クラスです。  
+  
+ 含むだけでなく<xref:System.Web.UI.WebControls.WebParts.WebPart>、コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>が含まれているコントロールのコントロールが共通の UI にも用意されています。 この一般的な UI、chrome と総称は、すべてのコントロール、境界線、タイトル、ヘッダーとフッター、スタイルの特性、および動詞 (ユーザー コントロールの実行などを閉じるしたりできるを最小限に抑える UI 操作) などの周辺の UI 要素で構成されます。  
+  
+> [!NOTE]
+>  Internet Explorer の高さをレンダリング可能性があります、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>またはゾーンの向きに応じて、予期しない方法で格納されているコントロール。 詳細については、ドキュメントを参照して、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.LayoutOrientation%2A>または<xref:System.Web.UI.WebControls.WebParts.WebPart.Height%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZone>クラス ベースからの動作のほとんどの派生元<xref:System.Web.UI.WebControls.WebParts.WebZone>と<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>クラスです。 1 つだけの一意のメンバーを追加、<xref:System.Web.UI.WebControls.WebParts.WebPartZone.ZoneTemplate%2A>プロパティです。 このプロパティが参照、<xref:System.Web.UI.ITemplate>ページを使用して静的にゾーンにコントロールを定義できるように、テンプレートでは、オブジェクト、 `<zonetemplate>` .aspx ページのマークアップ宣言内の要素。  
+  
+## <a name="accessibility"></a>ユーザー補助  
+ このコントロールの既定で表示されるマークアップは、Web コンテンツ ユーザー補助ガイドライン 1.0 (WCAG) 優先度 1 のガイドラインなどのユーザー補助の標準に準拠していません可能性があります。 このコントロールのユーザー補助のサポートに関する詳細については、「 [ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、 <xref:System.Web.UI.WebControls.WebParts.WebPartZone> Web パーツ ページにコントロールできます。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ この例の最初の部分から継承するカスタム クラスを示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>クラス、および、コンス トラクターで 2 つのゾーンの基本プロパティを設定します。  
+  
+ [!code-csharp[WebParts_WebPartZone_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartZone_Overview/CS/mywebpartzone.cs#3)]
+ [!code-vb[WebParts_WebPartZone_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartZone_Overview/VB/mywebpartzone.vb#3)]  
+  
+ 例の 2 番目の部分を含むカスタム ページを示しています。<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール。 ページ必要特殊なであることに注意してください`Register`ディレクティブをカスタム ゾーンを含むアセンブリを参照するページの上部にあります。 ページにも含まれています、`<asp:webpartmanager>`はすべての Web パーツ ページに必要な要素です。 `<cc1:MyWebPartZone>`を表すカスタム要素は、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロールを標準の ASP.NET を含む<xref:System.Web.UI.WebControls.Calendar>コントロール。 含まれているため、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーン、<xref:System.Web.UI.WebControls.Calendar>でコントロールをラップするが、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>として機能できるように、実行時にコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_WebPartZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartZone_Overview/CS/webpartzonecs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartZone_Overview/VB/webpartzonevb.aspx#1)]  
+  
+ ユーザー設定の宣言型マークアップを調べて<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール。 次のコード例に示すようには、マークアップでは、さまざまなゾーン レベルのプロパティを設定することができますに注意してください。  
+  
+> [!NOTE]
+>  使用することが重要である、`<zonetemplate>`要素。 この要素は、「解説」セクションで説明したは、内で必要な<xref:System.Web.UI.WebControls.WebParts.WebPartZone>、静的なをラップするゾーン<xref:System.Web.UI.WebControls.WebParts.WebPart>ページで宣言されているコントロール。  
+  
+ [!code-aspx-csharp[WebParts_WebPartZone_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartZone_Overview/CS/webpartzonecs.aspx#2)]
+ [!code-aspx-vb[WebParts_WebPartZone_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartZone_Overview/VB/webpartzonevb.aspx#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartZone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartZone.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartZone" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZone.%23ctor%2A>メソッドは既定のコンス トラクターで、任意の値を設定しません。 ただし、派生クラスでは、標準的な動作とカスタムのゾーン コントロールの外観を作成するのに、ゾーンの基本プロパティを設定するのにコンス トラクターを使用することができます。  
+  
+   
+  
+## Examples  
+ カスタム コンス トラクターの使用を次のコード例に示します<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーンに対していくつかの基本プロパティを設定するクラス。 この方法は、カスタムを作成する場合に役立ちます。 ことがあります<xref:System.Web.UI.WebControls.WebParts.WebPartZone>固有の動作と外観を持つコントロール。 使用例」の例については、カスタムのクラスと、コントロールをホストする .aspx ページの両方を含む完全なコードが検出された、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>クラスの概要に関するトピック。  
+  
+ [!code-csharp[WebParts_WebPartZone_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartZone_Overview/CS/mywebpartzone.cs#3)]
+ [!code-vb[WebParts_WebPartZone_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartZone_Overview/VB/mywebpartzone.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitialWebParts">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.WebParts.WebPartCollection GetInitialWebParts ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Web.UI.WebControls.WebParts.WebPartCollection GetInitialWebParts() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartZone.GetInitialWebParts" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>抽象基本メソッドをオーバーライドし、静的の初期セットを取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />ゾーンのテンプレートに含まれるコントロール。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartCollection" />すべてを格納している、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはゾーンのテンプレートに含まれるその他のサーバー コントロールです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZone.GetInitialWebParts%2A>メソッドは、抽象基本の実装を提供<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.GetInitialWebParts%2A>メソッドです。 基本メソッドの実装が用意されていませんが、メソッドを宣言できるように、派生クラスがどのように取得することが属しているコントロールの初期セット ゾーンで、アカウントに個人的な変更を考慮せずをカスタマイズすることができます。  
+  
+ ゾーンでは、検出された各サーバー コントロールに対して、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart%2A>メソッドが呼び出されます。 コントロールから直接継承している場合、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラス、ゾーンに追加されるだけで<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.WebParts%2A>コレクション (とのようなコレクションに、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール)。 場合は、コントロールがから直接継承されません<xref:System.Web.UI.WebControls.WebParts.WebPart>、Web パーツ コントロール セットを持つコントロールをラップする、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>として動作する制御を有効にするオブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPart>実行時に制御します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZone>クラスを実装する基本メソッド (存在する場合) は、コントロールのセットを返すことによってのセット内で静的に宣言されている`<zonetemplate>`Web パーツ ページのマークアップ内のタグ。 場合、<xref:System.Web.UI.WebControls.PlaceHolder>コントロールがゾーンで宣言されている、子コントロールのコントロールが追加される、コントロール自体ではなくです。 この実装では、たとえば、作成することができます、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーンのマスター ページで、宣言し、各<xref:System.Web.UI.WebControls.WebParts.WebPart>またはサーバー コントロール コンテンツ ページにします。 宣言する場合<xref:System.Web.UI.WebControls.Literal>コントロールで、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>ゾーンは無視されます。  
+  
+> [!NOTE]
+>  によって返されるコントロールの初期のコレクション、<xref:System.Web.UI.WebControls.WebParts.WebPartZone.GetInitialWebParts%2A>パーソナル化が行われた後、メソッドが、ゾーン内のコントロールの実際の実行時コレクションとは異なる可能性があります。 たとえば、2 つの Web ページがある<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール、および 1 つ目は、名前付きユーザー コントロールを含む`User1`内で静的に宣言されている、`<zonetemplate>`タグ。 ページおよびドラッグが、ユーザーが読み込まれる場合`User1`し、2 番目ゾーンに`User1`が呼び出しによって返されるコレクションの一部である、<xref:System.Web.UI.WebControls.WebParts.WebPartZone.GetInitialWebParts%2A>メソッドの最初のゾーンのゾーンで宣言されているためです。 実行時に、ときに、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールは、パーソナル化データを読み込む`User1`実際には、ユーザーをドラッグして、2 番目のゾーンで表示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartZone.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>ゾーンが正常に登録されたことを示すために基本メソッドをオーバーライドして、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoneTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate ZoneTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate ZoneTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartZone.ZoneTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateInstance(System.Web.UI.TemplateInstance.Single)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の参照、 <see cref="T:System.Web.UI.ITemplate" /> Web ページのマークアップで宣言されているコントロールを格納するインスタンス。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />を格納している、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />ゾーン内のコントロールです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartZone.ZoneTemplate%2A>プロパティを指す、<xref:System.Web.UI.ITemplate>内インスタンス、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール。 テンプレートには内で宣言する静的サーバー コントロールが含まれています、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロールを含む<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、ユーザー コントロール、カスタム コントロール、および ASP.NET コントロール。  
+  
+ 静的なを追加すると<xref:System.Web.UI.WebControls.WebParts.WebPart>または他のサーバー コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>では、Web ページの宣言型のマークアップ内のコントロールのタグを配置する必要があります`<zonetemplate>`タグ。 内のコントロールを宣言していない場合`<zonetemplate>`タグ、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、 <xref:System.Web.UI.WebControls.WebParts.WebPartZone.ZoneTemplate%2A> Web パーツ ページの宣言型マークアップ内のプロパティです。 使用例」の例については、カスタム クラスと、コントロールをホストする .aspx ページを含む完全なコードが検出された、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>クラスの概要に関するトピック。  
+  
+ マークアップにいることを確認、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>が、制御、`<zonetemplate>`予定表コントロールへの参照を格納する要素。 さらに追加したい場合<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールまたはその他のサーバー コントロールをゾーンに、追加することも内で、これらの`<zonetemplate>`タグ。  
+  
+ [!code-aspx-csharp[WebParts_WebPartZone_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartZone_Overview/CS/webpartzonecs.aspx#2)]
+ [!code-aspx-vb[WebParts_WebPartZone_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartZone_Overview/VB/webpartzonevb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">登録、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />ゾーン内のコントロールは既に完了しました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

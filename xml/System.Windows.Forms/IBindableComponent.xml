@@ -1,0 +1,68 @@
+<Type Name="IBindableComponent" FullName="System.Windows.Forms.IBindableComponent">
+  <TypeSignature Language="C#" Value="public interface IBindableComponent : IDisposable, System.ComponentModel.IComponent" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBindableComponent implements class System.ComponentModel.IComponent, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.IBindableComponent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IComponent</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Windows フォーム コントロールのデータ バインディングの動作をエミュレートするために非コントロールのコンポーネントを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.Binding>への参照が含まれています、<xref:System.Windows.Forms.IBindableComponent>を通じて所有者、<xref:System.Windows.Forms.Binding.BindableComponent%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.Control>クラスは、このインターフェイスを実装します。 そのため、バインド可能なコンポーネントから継承している場合<xref:System.Windows.Forms.Control>、このインターフェイスを実装する必要はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BindingContext">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BindingContext BindingContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.BindingContext BindingContext" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.IBindableComponent.BindingContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定用の通貨マネージャーのコレクション、<see cref="T:System.Windows.Forms.IBindableComponent" />です。</summary>
+        <value>この <see cref="T:System.Windows.Forms.BindingManagerBase" /> の <see cref="T:System.Windows.Forms.IBindableComponent" /> オブジェクトのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindings">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ControlBindingsCollection DataBindings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ControlBindingsCollection DataBindings" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.IBindableComponent.DataBindings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ControlBindingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデータ バインド オブジェクトのコレクションを取得<see cref="T:System.Windows.Forms.IBindableComponent" />です。</summary>
+        <value>この <see cref="T:System.Windows.Forms.ControlBindingsCollection" /> の <see cref="T:System.Windows.Forms.IBindableComponent" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

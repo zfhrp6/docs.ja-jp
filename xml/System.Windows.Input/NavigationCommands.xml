@@ -1,0 +1,942 @@
+<Type Name="NavigationCommands" FullName="System.Windows.Input.NavigationCommands">
+  <TypeSignature Language="C#" Value="public static class NavigationCommands" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit NavigationCommands extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.NavigationCommands" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ナビゲーション関連コマンドの標準セットを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.NavigationCommands>クラスは、ブラウザーとドキュメントのナビゲーションを含むナビゲーション関連コマンドの標準セットを公開します。  
+  
+ コマンドとコマンド実行の詳細については、次を参照してください。[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BrowseBack">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand BrowseBack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand BrowseBack" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.BrowseBack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Browse Back" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ALT + 左  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>戻る  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、履歴に前のページに戻るにことを示します。  
+  
+ <xref:System.Windows.Controls.Frame>および<xref:System.Windows.Navigation.NavigationWindow>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.BrowseBack%2A>ですが、それを使用する必要はありません; 多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_BrowseBack"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.BrowseBack"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.NavigationCommands.BrowseBack%2A>と組み合わせて、<xref:System.Windows.Controls.Frame>です。 <xref:System.Windows.Controls.Frame>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.BrowseBack%2A>コマンドを移動して、<xref:System.Windows.Controls.Frame>バック スタックにジャーナル エントリがある場合は、バックアップします。  
+  
+ [!code-xaml[NavigationCommandsSnippets#BrowseBackMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseBack.xaml#browsebackmarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseBackMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseBack.xaml#browsebackmarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseBackMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseBack.xaml#browsebackmarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseBackMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseBack.xaml#browsebackmarkup4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BrowseForward">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand BrowseForward { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand BrowseForward" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.BrowseForward" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Browse Forward" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ALT + RIGHT  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>順方向  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、journal では、次のページのページに進むを設定することを示します。  
+  
+ <xref:System.Windows.Controls.Frame>および<xref:System.Windows.Navigation.NavigationWindow>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.BrowseForward%2A>コマンドを使用する必要はありませんが以外の多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_BrowseForward"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.BrowseForward"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.NavigationCommands.BrowseForward%2A>と組み合わせて、<xref:System.Windows.Controls.Frame>です。 <xref:System.Windows.Controls.Frame>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.BrowseForward%2A>コマンドを移動して、 <xref:System.Windows.Controls.Frame> forward スタックに履歴項目がある場合に、転送します。  
+  
+ [!code-xaml[NavigationCommandsSnippets#BrowseForwardMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseForward.xaml#browseforwardmarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseForwardMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseForward.xaml#browseforwardmarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseForwardMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseForward.xaml#browseforwardmarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseForwardMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseForward.xaml#browseforwardmarkup4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BrowseHome">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand BrowseHome { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand BrowseHome" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.BrowseHome" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Browse Home" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ALT + ホーム  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ホーム  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、ホームに移動することを示します。  
+  
+ 対応するための実装はありません、<xref:System.Windows.Input.NavigationCommands.BrowseHome%2A>コマンドを与えられた[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]クラスです。 そのため、例に示されている、適切な実装を提供する必要があります。  
+  
+<a name="xamlAttributeUsage_BrowseHome"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.BrowseHome"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例に対応するコードを実装する方法を示しています、<xref:System.Windows.Input.NavigationCommands.BrowseHome%2A>コマンドと組み合わせて、<xref:System.Windows.Controls.Frame>です。  
+  
+ [!code-xaml[NavigationCommandsSnippets#BrowseHomeMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseHome.xaml#browsehomemarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseHomeMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseHome.xaml#browsehomemarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseHomeMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseHome.xaml#browsehomemarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseHomeMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseHome.xaml#browsehomemarkup4)]  
+  
+ [!code-csharp[NavigationCommandsSnippets#BrowseHomeCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseHome.xaml.cs#browsehomecodebehind)]
+ [!code-vb[NavigationCommandsSnippets#BrowseHomeCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationCommandsSnippets/visualbasic/browsehome.xaml.vb#browsehomecodebehind)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BrowseStop">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand BrowseStop { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand BrowseStop" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.BrowseStop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Browse Stop" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ALT キーを押しながら ESC  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>停止  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、ブラウザーの読み込みを停止することを示します。  
+  
+ <xref:System.Windows.Controls.Frame>および<xref:System.Windows.Navigation.NavigationWindow>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.BrowseStop%2A>コマンドを使用する必要はありませんが以外の多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_BrowseStop"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.BrowseStop"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.NavigationCommands.BrowseStop%2A>と組み合わせて、<xref:System.Windows.Controls.Frame>です。 <xref:System.Windows.Controls.Frame>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.BrowseStop%2A>現在を停止することによってコマンド<xref:System.Windows.Controls.Frame>ナビゲーション。  
+  
+ [!code-xaml[NavigationCommandsSnippets#BrowseStopMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseStop.xaml#browsestopmarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseStopMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseStop.xaml#browsestopmarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseStopMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseStop.xaml#browsestopmarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#BrowseStopMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/BrowseStop.xaml#browsestopmarkup4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecreaseZoom">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand DecreaseZoom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand DecreaseZoom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.DecreaseZoom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Decrease Zoom" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>該当なし  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ズームを縮小します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、ズームを縮小することを示します。  
+  
+ <xref:System.Windows.Controls.DocumentViewer>、 <xref:System.Windows.Controls.FlowDocumentReader>、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、および<xref:System.Windows.Controls.FlowDocumentPageViewer>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.DecreaseZoom%2A>コマンドを使用する必要はありませんが以外の多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_DecreaseZoom"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.DecreaseZoom"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.NavigationCommands.DecreaseZoom%2A>と組み合わせて、<xref:System.Windows.Controls.FlowDocumentPageViewer>です。 <xref:System.Windows.Controls.FlowDocumentPageViewer>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.DecreaseZoom%2A>ズームのパーセンテージを減らすことによってコマンド。  
+  
+ [!code-xaml[NavigationCommandsSnippets#DecreaseZoomMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/DecreaseZoom.xaml#decreasezoommarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#DecreaseZoomMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/DecreaseZoom.xaml#decreasezoommarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#DecreaseZoomMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/DecreaseZoom.xaml#decreasezoommarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#DecreaseZoomMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/DecreaseZoom.xaml#decreasezoommarkup4)]  
+[!code-xaml[NavigationCommandsSnippets#DecreaseZoomMARKUP5](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/DecreaseZoom.xaml#decreasezoommarkup5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Favorites">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Favorites { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Favorites" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.Favorites" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Favorites" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>CTRL + I  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>[お気に入り]  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、管理し、[お気に入り] に移動することを示します。  
+  
+ 対応するための実装はありません、<xref:System.Windows.Input.NavigationCommands.Favorites%2A>コマンドを与えられた[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]クラスです。 そのため、例に示されている、適切な実装を提供する必要があります。  
+  
+<a name="xamlAttributeUsage_Favorites"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.Favorites"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例に対応するコードを実装する方法を示しています、<xref:System.Windows.Input.NavigationCommands.Favorites%2A>コマンドと組み合わせて、<xref:System.Windows.Controls.Frame>です。  
+  
+ [!code-xaml[NavigationCommandsSnippets#FavoritesMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Favorites.xaml#favoritesmarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#FavoritesMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Favorites.xaml#favoritesmarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#FavoritesMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Favorites.xaml#favoritesmarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#FavoritesMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Favorites.xaml#favoritesmarkup4)]  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstPage">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand FirstPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand FirstPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.FirstPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="First Page" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>該当なし  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>最初のページ  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、最初のページに移動することを示します。  
+  
+ <xref:System.Windows.Controls.DocumentViewer>、 <xref:System.Windows.Controls.FlowDocumentReader>、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、および<xref:System.Windows.Controls.FlowDocumentPageViewer>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.FirstPage%2A>コマンドを使用する必要はありませんが以外の多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_FirstPage"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.FirstPage"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.NavigationCommands.FirstPage%2A>と組み合わせて、<xref:System.Windows.Controls.FlowDocumentPageViewer>です。 <xref:System.Windows.Controls.FlowDocumentPageViewer>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.FirstPage%2A>最初のページに移動してコマンド。  
+  
+ [!code-xaml[NavigationCommandsSnippets#FirstPageMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/FirstPage.xaml#firstpagemarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#FirstPageMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/FirstPage.xaml#firstpagemarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#FirstPageMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/FirstPage.xaml#firstpagemarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#FirstPageMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/FirstPage.xaml#firstpagemarkup4)]  
+[!code-xaml[NavigationCommandsSnippets#FirstPageMARKUP5](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/FirstPage.xaml#firstpagemarkup5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GoToPage">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand GoToPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand GoToPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.GoToPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Go To Page" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>該当なし  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ページに移動します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、ズームを変更することを示します。  
+  
+ <xref:System.Windows.Controls.DocumentViewer>および<xref:System.Windows.Controls.FlowDocumentPageViewer>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.GoToPage%2A>コマンドを使用する必要はありませんが以外の多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_GoToPage"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.GoToPage"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Input.NavigationCommands.GoToPage%2A>コマンドと組み合わせて、<xref:System.Windows.Controls.FlowDocumentPageViewer>です。 <xref:System.Windows.Controls.FlowDocumentPageViewer>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.GoToPage%2A>コマンドのテキスト値で指定されたページに移動して、<xref:System.Windows.Controls.TextBox>コントロール。  
+  
+ [!code-xaml[NavigationCommandsSnippets#GoToPageMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/GoToPage.xaml#gotopagemarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#GoToPageMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/GoToPage.xaml#gotopagemarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#GoToPageMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/GoToPage.xaml#gotopagemarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#GoToPageMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/GoToPage.xaml#gotopagemarkup4)]  
+[!code-xaml[NavigationCommandsSnippets#GoToPageMARKUP5](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/GoToPage.xaml#gotopagemarkup5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncreaseZoom">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand IncreaseZoom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand IncreaseZoom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.IncreaseZoom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Increase Zoom" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>該当なし  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ズームを拡大します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、ズームを拡大することを示します。  
+  
+ <xref:System.Windows.Controls.DocumentViewer>、 <xref:System.Windows.Controls.FlowDocumentReader>、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、および<xref:System.Windows.Controls.FlowDocumentPageViewer>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.IncreaseZoom%2A>コマンドを使用する必要はありませんが以外の多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_IncreaseZoom"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.IncreaseZoom"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.NavigationCommands.IncreaseZoom%2A>と組み合わせて、<xref:System.Windows.Controls.FlowDocumentPageViewer>です。 <xref:System.Windows.Controls.FlowDocumentPageViewer>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.IncreaseZoom%2A>ズームのパーセンテージを減らすことによってコマンド。  
+  
+ [!code-xaml[NavigationCommandsSnippets#IncreaseZoomMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/IncreaseZoom.xaml#increasezoommarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#IncreaseZoomMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/IncreaseZoom.xaml#increasezoommarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#IncreaseZoomMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/IncreaseZoom.xaml#increasezoommarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#IncreaseZoomMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/IncreaseZoom.xaml#increasezoommarkup4)]  
+[!code-xaml[NavigationCommandsSnippets#IncreaseZoomMARKUP5](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/IncreaseZoom.xaml#increasezoommarkup5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastPage">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand LastPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand LastPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.LastPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Last Page" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>該当なし  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>最後のページ  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、最後のページに移動することを示します。  
+  
+ <xref:System.Windows.Controls.DocumentViewer>、 <xref:System.Windows.Controls.FlowDocumentReader>、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、および<xref:System.Windows.Controls.FlowDocumentPageViewer>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.LastPage%2A>コマンドを使用する必要はありませんが以外の多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_LastPage"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.LastPage"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.NavigationCommands.LastPage%2A>と組み合わせて、<xref:System.Windows.Controls.FlowDocumentPageViewer>です。 <xref:System.Windows.Controls.FlowDocumentPageViewer>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.LastPage%2A>コマンドを使用して最後のページです。  
+  
+ [!code-xaml[NavigationCommandsSnippets#LastPageMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/LastPage.xaml#lastpagemarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#LastPageMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/LastPage.xaml#lastpagemarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#LastPageMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/LastPage.xaml#lastpagemarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#LastPageMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/LastPage.xaml#lastpagemarkup4)]  
+[!code-xaml[NavigationCommandsSnippets#LastPageMARKUP5](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/LastPage.xaml#lastpagemarkup5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateJournal">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand NavigateJournal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand NavigateJournal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.NavigateJournal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Navigate Journal" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>該当なし  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ナビゲーション履歴  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、履歴に移動することを示します。  
+  
+ <xref:System.Windows.Controls.Frame>および<xref:System.Windows.Navigation.NavigationWindow>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.NavigateJournal%2A>コマンドを使用する必要はありませんが以外の多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_NavigateJournal"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.NavigateJournal"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.NavigationCommands.NavigateJournal%2A>と組み合わせて、<xref:System.Windows.Controls.Frame>です。 <xref:System.Windows.Controls.Frame>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.NavigateJournal%2A>コマンドの前後のスタックで指定した履歴項目に移動することで、<xref:System.Windows.Controls.Frame>です。 ジャーナル エントリは、によって提供される、<xref:System.Windows.Navigation.JournalEntryUnifiedViewConverter>トップレベル`Navigate Journal`<xref:System.Windows.Controls.MenuItem>です。 各履歴項目が子にバインドされた<xref:System.Windows.Controls.MenuItem>を使用して、<xref:System.Windows.Input.NavigationCommands.NavigateJournal%2A>コマンド。  
+  
+ [!code-xaml[NavigationCommandsSnippets#NavigateJournalMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/NavigateJournal.xaml#navigatejournalmarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#NavigateJournalMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/NavigateJournal.xaml#navigatejournalmarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#NavigateJournalMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/NavigateJournal.xaml#navigatejournalmarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#NavigateJournalMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/NavigateJournal.xaml#navigatejournalmarkup4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextPage">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand NextPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand NextPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.NextPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Next Page" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>該当なし  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>次のページ  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、次のページに移動することを示します。  
+  
+ <xref:System.Windows.Controls.DocumentViewer>、 <xref:System.Windows.Controls.FlowDocumentReader>、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、および<xref:System.Windows.Controls.FlowDocumentPageViewer>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.NextPage%2A>コマンドを使用する必要はありませんが以外の多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_NextPage"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.NextPage"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.NavigationCommands.NextPage%2A>と組み合わせて、<xref:System.Windows.Controls.FlowDocumentPageViewer>です。 <xref:System.Windows.Controls.FlowDocumentPageViewer>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.NextPage%2A>コマンドを次のページに移動しています。  
+  
+ [!code-xaml[NavigationCommandsSnippets#NextPageMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/NextPage.xaml#nextpagemarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#NextPageMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/NextPage.xaml#nextpagemarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#NextPageMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/NextPage.xaml#nextpagemarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#NextPageMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/NextPage.xaml#nextpagemarkup4)]  
+[!code-xaml[NavigationCommandsSnippets#NextPageMARKUP5](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/NextPage.xaml#nextpagemarkup5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousPage">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand PreviousPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand PreviousPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.PreviousPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Previous Page" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>該当なし  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>前のページ  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、前のページに移動することを示します。  
+  
+ <xref:System.Windows.Controls.DocumentViewer>、 <xref:System.Windows.Controls.FlowDocumentReader>、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、および<xref:System.Windows.Controls.FlowDocumentPageViewer>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.PreviousPage%2A>コマンドを使用する必要はありませんが以外の多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_PreviousPage"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.PreviousPage"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.NavigationCommands.PreviousPage%2A>と組み合わせて、<xref:System.Windows.Controls.FlowDocumentPageViewer>です。 <xref:System.Windows.Controls.FlowDocumentPageViewer>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.PreviousPage%2A>前のページに移動してコマンド。  
+  
+ [!code-xaml[NavigationCommandsSnippets#PreviousPageMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/PreviousPage.xaml#previouspagemarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#PreviousPageMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/PreviousPage.xaml#previouspagemarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#PreviousPageMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/PreviousPage.xaml#previouspagemarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#PreviousPageMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/PreviousPage.xaml#previouspagemarkup4)]  
+[!code-xaml[NavigationCommandsSnippets#PreviousPageMARKUP5](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/PreviousPage.xaml#previouspagemarkup5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Refresh { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Refresh" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.Refresh" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Refresh" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>F5 キーを押します  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>更新  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、現在のページを更新することを示します。  
+  
+ <xref:System.Windows.Controls.Frame>および<xref:System.Windows.Navigation.NavigationWindow>への応答のサポートを実装、<xref:System.Windows.Input.NavigationCommands.Refresh%2A>コマンドを使用する必要はありませんが以外の多くの場合そのコマンドに応答の実装は、アプリケーション作成者の責任において、します。  
+  
+<a name="xamlAttributeUsage_Refresh"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.Refresh"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.NavigationCommands.Refresh%2A>と組み合わせて、<xref:System.Windows.Controls.Frame>です。 <xref:System.Windows.Controls.Frame>に応答する実装を提供、<xref:System.Windows.Input.NavigationCommands.Refresh%2A>コマンドで、現在の再読み込み<xref:System.Windows.Controls.Frame>コンテンツ。  
+  
+ [!code-xaml[NavigationCommandsSnippets#RefreshMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Refresh.xaml#refreshmarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#RefreshMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Refresh.xaml#refreshmarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#RefreshMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Refresh.xaml#refreshmarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#RefreshMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Refresh.xaml#refreshmarkup4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Search">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Search { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Search" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.Search" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Search" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>F3  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>検索  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、検索を設定することを示します。  
+  
+ 対応するための実装はありません、<xref:System.Windows.Input.NavigationCommands.Search%2A>コマンドを与えられた[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]クラスです。 そのため、例に示されている、適切な実装を提供する必要があります。  
+  
+<a name="xamlAttributeUsage_Search"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.Search"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例に対応するコードを実装する方法を示しています、<xref:System.Windows.Input.NavigationCommands.Search%2A>コマンドと組み合わせて、<xref:System.Windows.Controls.FlowDocumentPageViewer>です。  
+  
+ [!code-xaml[NavigationCommandsSnippets#SearchMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Search.xaml#searchmarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#SearchMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Search.xaml#searchmarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#SearchMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Search.xaml#searchmarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#SearchMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Search.xaml#searchmarkup4)]  
+[!code-xaml[NavigationCommandsSnippets#SearchMARKUP5](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Search.xaml#searchmarkup5)]  
+  
+ [!code-csharp[NavigationCommandsSnippets#SearchCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Search.xaml.cs#searchcodebehind)]
+ [!code-vb[NavigationCommandsSnippets#SearchCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationCommandsSnippets/visualbasic/search.xaml.vb#searchcodebehind)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Zoom">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Zoom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Zoom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NavigationCommands.Zoom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す値を取得、<see langword="Zoom" />コマンド。</summary>
+        <value>ルーティングされた[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>該当なし  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>ズーム  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、ズーム レベルを設定することを示します。  
+  
+ 対応するための実装はありません、<xref:System.Windows.Input.NavigationCommands.Zoom%2A>コマンドを与えられた[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]クラスです。 そのため、例に示されている、適切な実装を提供する必要があります。  
+  
+<a name="xamlAttributeUsage_Zoom"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NavigationCommands.Zoom"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例に対応するコードを実装する方法を示しています、<xref:System.Windows.Input.NavigationCommands.Zoom%2A>コマンドと組み合わせて、<xref:System.Windows.Controls.FlowDocumentPageViewer>です。  
+  
+ [!code-xaml[NavigationCommandsSnippets#ZoomMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Zoom.xaml#zoommarkup1)]  
+[!code-xaml[NavigationCommandsSnippets#ZoomMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Zoom.xaml#zoommarkup2)]  
+[!code-xaml[NavigationCommandsSnippets#ZoomMARKUP3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Zoom.xaml#zoommarkup3)]  
+[!code-xaml[NavigationCommandsSnippets#ZoomMARKUP4](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationCommandsSnippets/CSharp/Zoom.xaml#zoommarkup4)]  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

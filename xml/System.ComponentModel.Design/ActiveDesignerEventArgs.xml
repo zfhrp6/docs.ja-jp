@@ -1,0 +1,129 @@
+<Type Name="ActiveDesignerEventArgs" FullName="System.ComponentModel.Design.ActiveDesignerEventArgs">
+  <TypeSignature Language="C#" Value="public class ActiveDesignerEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActiveDesignerEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ActiveDesignerEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="P:System.ComponentModel.Design.IDesignerEventService.ActiveDesigner" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.IDesignerEventService.ActiveDesigner%2A>イベント現在アクティブなドキュメントが変更されたときに発生します。 アクティブなドキュメントは、新しいドキュメントを作成、既存のドキュメントを開くと、またはドキュメントが閉じられたときに変更します。  
+  
+ <xref:System.ComponentModel.Design.ActiveDesignerEventArgs> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例のメソッドを返します、<xref:System.ComponentModel.Design.ActiveDesignerEventArgs>指定への参照を格納している、<xref:System.ComponentModel.Design.IDesignerHost>フォーカスと指定への参照が失われるデザイナーの<xref:System.ComponentModel.Design.IDesignerHost>フォーカスを得たデザイナー。  
+  
+ [!code-cpp[ActiveDesignerEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ActiveDesignerEventArgs/CPP/class1.cpp#1)]
+ [!code-csharp[ActiveDesignerEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ActiveDesignerEventArgs/CS/class1.cs#1)]
+ [!code-vb[ActiveDesignerEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ActiveDesignerEventArgs/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveDesignerEventArgs (System.ComponentModel.Design.IDesignerHost oldDesigner, System.ComponentModel.Design.IDesignerHost newDesigner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.Design.IDesignerHost oldDesigner, class System.ComponentModel.Design.IDesignerHost newDesigner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ActiveDesignerEventArgs.#ctor(System.ComponentModel.Design.IDesignerHost,System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="oldDesigner" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="newDesigner" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="oldDesigner">アクティブでなくなるドキュメントです。</param>
+        <param name="newDesigner">アクティブになるドキュメント。</param>
+        <summary><see cref="T:System.ComponentModel.Design.ActiveDesignerEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewDesigner">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.IDesignerHost NewDesigner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.IDesignerHost NewDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.ActiveDesignerEventArgs.NewDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.IDesignerHost</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブになるドキュメントを取得します。</summary>
+        <value><see cref="T:System.ComponentModel.Design.IDesignerHost" />からアクティブ ドキュメントを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldDesigner">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.IDesignerHost OldDesigner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.IDesignerHost OldDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.ActiveDesignerEventArgs.OldDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.IDesignerHost</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブでなくなるドキュメントを取得します。</summary>
+        <value><see cref="T:System.ComponentModel.Design.IDesignerHost" />アクティブでなくなるのドキュメントを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

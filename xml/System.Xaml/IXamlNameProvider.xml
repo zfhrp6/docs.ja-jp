@@ -1,0 +1,56 @@
+<Type Name="IXamlNameProvider" FullName="System.Xaml.IXamlNameProvider">
+  <TypeSignature Language="C#" Value="public interface IXamlNameProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXamlNameProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.IXamlNameProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>中で使用されるサービス提供を保存し、書き込み操作にオブジェクトを入力し、XAML の名前を返します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このサービスにのみ関連に保存します。 場合など、パスの操作、 <xref:System.Xaml.XamlXmlWriter> 、属性付きの値コンバーターの使用法、および実行する型コンバーターまたは値シリアライザーのサポートのシリアル化をシリアル化します。 A<xref:System.Xaml.XamlObjectWriter>のサービス コンテキストにサービスを提供しません。  
+  
+ 型コンバーターまたは値シリアライザー サービス プロバイダーとして使用可能なスキーマ コンテキストを使用して取得し、このサービスにアクセスできる、<xref:System.Xaml.IXamlNameProvider>そのコンテキストで実装されているサービスです。 詳細については、次を参照してください。[型コンバーターと XAML のマークアップ拡張機能](~/docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)と[サービスで使用できるコンテキスト型コンバーターおよびマークアップ拡張機能](~/docs/framework/xaml-services/service-contexts-available-to-type-converters-and-markup-extensions.md)します。  
+  
+ XAML で定義された名前を正しく使用する必要がありますも機能している情報を入手する XAML 名前スコープと<xref:System.Windows.Markup.INameScope>を表す値です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetName">
+      <MemberSignature Language="C#" Value="public string GetName (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetName(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IXamlNameProvider.GetName(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">名前を取得するオブジェクト。</param>
+        <summary>指定したオブジェクトの XAML の名前を取得します。</summary>
+        <returns>要求されたオブジェクトの XAML 名前値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の .NET Framework XAML サービス実装は、ランタイム オブジェクト グラフで使用されているオブジェクト名をレポートできる XAML スキーマ コンテキストに依存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

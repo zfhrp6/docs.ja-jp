@@ -1,0 +1,181 @@
+<Type Name="CacheEntryUpdateArguments" FullName="System.Runtime.Caching.CacheEntryUpdateArguments">
+  <TypeSignature Language="C#" Value="public class CacheEntryUpdateArguments" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CacheEntryUpdateArguments extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.CacheEntryUpdateArguments" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キャッシュから削除されるキャッシュ エントリに関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 引数、<xref:System.Runtime.Caching.CacheEntryUpdateArguments>クラスには削除するキャッシュの実装であるエントリに関する詳細情報が含まれています。 引数には、キャッシュ エントリへの参照へのキーが含まれて、<xref:System.Runtime.Caching.ObjectCache>エントリから削除されるインスタンス、削除、およびエントリが含まれているキャッシュ内の領域名の理由。 コンス トラクター、<xref:System.Runtime.Caching.CacheEntryUpdateArguments>クラスでは、これらの引数を使用して、クラスの新しいインスタンスを作成します。  
+  
+ A<xref:System.Runtime.Caching.CacheEntryUpdateArguments>にオブジェクトが渡される、<xref:System.Runtime.Caching.CacheEntryUpdateCallback>ハンドラーで、削除するエントリはキャッシュに通知します。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>コールバック ハンドラー必要がありますキャッシュ実装に通知を削除するキャッシュ エントリの代わりにキャッシュに置換項目を挿入するかどうか。 キャッシュ エントリを交換する場合は、割り当てる必要があります値以外の<see langword="null" />を<see cref="P:System.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItem" />プロパティです。 キャッシュの実装が解釈されます、<see langword="null" />値を<see cref="P:System.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItem" />プロパティとして現在のキャッシュ エントリは削除する必要がありますが、ものに置き換えないことに注意します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheEntryUpdateArguments (System.Runtime.Caching.ObjectCache source, System.Runtime.Caching.CacheEntryRemovedReason reason, string key, string regionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Caching.ObjectCache source, valuetype System.Runtime.Caching.CacheEntryRemovedReason reason, string key, string regionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.CacheEntryUpdateArguments.#ctor(System.Runtime.Caching.ObjectCache,System.Runtime.Caching.CacheEntryRemovedReason,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.Runtime.Caching.ObjectCache" />
+        <Parameter Name="reason" Type="System.Runtime.Caching.CacheEntryRemovedReason" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="regionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Runtime.Caching.ObjectCache" />によって元のキャッシュ エントリが参照されているインスタンス<c>キー</c>は削除されます。</param>
+        <param name="reason">キャッシュ エントリを削除する理由を示す列挙値のいずれか。</param>
+        <param name="key">削除される予定されているキャッシュ エントリのキー。</param>
+        <param name="regionName">キャッシュ エントリを削除するキャッシュ内の領域の名前。 このパラメーターは省略できます。 キャッシュ領域が定義されていない場合<c>regionName</c>する必要があります<see langword="null" />です。</param>
+        <summary><see cref="T:System.Runtime.Caching.CacheEntryUpdateArguments" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public string Key { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Key" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheEntryUpdateArguments.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除するキャッシュ エントリの一意の識別子を取得します。</summary>
+        <value>キャッシュ エントリの一意の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegionName">
+      <MemberSignature Language="C#" Value="public string RegionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RegionName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheEntryUpdateArguments.RegionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ エントリが含まれているキャッシュ内の領域の名前を取得します。</summary>
+        <value>キャッシュ内の領域の名前。 この値は、地域、使用しない場合、<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovedReason">
+      <MemberSignature Language="C#" Value="public System.Runtime.Caching.CacheEntryRemovedReason RemovedReason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Caching.CacheEntryRemovedReason RemovedReason" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheEntryUpdateArguments.RemovedReason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheEntryRemovedReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ エントリをキャッシュから削除する理由を取得します。</summary>
+        <value>キャッシュ エントリが削除されている理由を説明する列挙値の 1 つ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public System.Runtime.Caching.ObjectCache Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Caching.ObjectCache Source" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheEntryUpdateArguments.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.ObjectCache</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Runtime.Caching.ObjectCache" />を削除するキャッシュ エントリが含まれているインスタンス。</summary>
+        <value>キャッシュ インスタンスへの参照。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdatedCacheItem">
+      <MemberSignature Language="C#" Value="public System.Runtime.Caching.CacheItem UpdatedCacheItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Caching.CacheItem UpdatedCacheItem" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値の設定を取得または<see cref="T:System.Runtime.Caching.CacheItem" />エントリをキャッシュ オブジェクトを更新するために使用します。</summary>
+        <value>キャッシュ オブジェクトを更新するキャッシュ エントリ。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 更新されたキャッシュ エントリの削除される直前には、そのキャッシュ エントリを交換する場合は、割り当てる必要があります、<xref:System.Runtime.Caching.CacheItem>オブジェクトを<xref:System.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItem%2A>プロパティと割り当て、<xref:System.Runtime.Caching.CacheItemPolicy>オブジェクトを<xref:System.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItemPolicy%2A>プロパティです。 <xref:System.Runtime.Caching.CacheItem>値以外の場合は値を指定`null`です。 キャッシュの実装が解釈されます、`null`値を<xref:System.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItem%2A>プロパティとして現在のキャッシュ エントリは削除する必要がありますが、ものに置き換えないことに注意します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdatedCacheItemPolicy">
+      <MemberSignature Language="C#" Value="public System.Runtime.Caching.CacheItemPolicy UpdatedCacheItemPolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Caching.CacheItemPolicy UpdatedCacheItemPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItemPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheItemPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュの削除または有効期限ポリシーの取得または設定、<see cref="T:System.Runtime.Caching.CacheItem" />エントリが更新されます。</summary>
+        <value>更新されたキャッシュ アイテムのキャッシュ削除または有効期限ポリシーです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 更新されたキャッシュ エントリに削除される直前には、そのキャッシュ エントリを置き換える場合は、割り当てることができます必要に応じて、<xref:System.Runtime.Caching.CacheItemPolicy>オブジェクトを<xref:System.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItemPolicy%2A>プロパティです。 <xref:System.Runtime.Caching.CacheItemPolicy>更新されたキャッシュ エントリのオブジェクトを使用すると、(有効期限の詳細) などのキャッシュ ポリシーを指定します。  
+  
+ 1 つずつ更新を使用して、削除されたキャッシュ エントリを交換する方法の詳細については、次を参照してください。、<xref:System.Runtime.Caching.CacheEntryUpdateArguments>クラスの概要および<xref:System.Runtime.Caching.CacheEntryUpdateArguments.UpdatedCacheItem%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

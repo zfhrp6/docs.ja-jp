@@ -1,0 +1,2118 @@
+<Type Name="TreeNode" FullName="System.Windows.Forms.TreeNode">
+  <TypeSignature Language="C#" Value="public class TreeNode : MarshalByRefObject, ICloneable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TreeNode extends System.MarshalByRefObject implements class System.ICloneable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TreeNode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.TreeNodeConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ノードを表す、<see cref="T:System.Windows.Forms.TreeView" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.Nodes%2A>コレクションには、すべての子が含まれる<xref:System.Windows.Forms.TreeNode>現在に割り当てられたオブジェクト<xref:System.Windows.Forms.TreeNode>です。 追加、削除、または複製することができます、 <xref:System.Windows.Forms.TreeNode>。 こうすると、すべての子ツリー ノードの追加、削除、または複製されるとします。 各<xref:System.Windows.Forms.TreeNode>他のコレクションを含めることができます<xref:System.Windows.Forms.TreeNode>オブジェクト。 これは、ことが困難であるかを決定する、<xref:System.Windows.Forms.TreeView>コレクションを反復処理するときにします。 ツリー構造内の場所を特定するのには、使用、<xref:System.Windows.Forms.TreeNode.FullPath%2A>プロパティです。 <xref:System.Windows.Forms.TreeNode.FullPath%2A>を使用して文字列を解析することができます、<xref:System.Windows.Forms.TreeView.PathSeparator%2A>文字列の場所を決定する値、<xref:System.Windows.Forms.TreeNode>ラベルの開始し、終了します。  
+  
+ <xref:System.Windows.Forms.TreeNode>を設定してラベルを設定、<xref:System.Windows.Forms.TreeNode.Text%2A>プロパティに明示的にします。 代替手段は、のいずれかを使用してツリー ノードを作成するのには、<xref:System.Windows.Forms.TreeNode.%23ctor%2A>コンス トラクターを表す文字列パラメーターを持つ、<xref:System.Windows.Forms.TreeNode.Text%2A>プロパティです。 ラベルは横に表示されて、<xref:System.Windows.Forms.TreeNode>画像のいずれかが表示される場合。  
+  
+ 画像を表示するツリー ノードの横に、割り当て、<xref:System.Windows.Forms.ImageList>を<xref:System.Windows.Forms.TreeView.ImageList%2A>親のプロパティ<xref:System.Windows.Forms.TreeView>制御し、割り当てます、<xref:System.Drawing.Image>でインデックス値を参照することによって、<xref:System.Windows.Forms.ImageList>プロパティです。 設定、<xref:System.Windows.Forms.TreeNode.ImageIndex%2A>プロパティのインデックス値を<xref:System.Drawing.Image>ときに表示する、<xref:System.Windows.Forms.TreeNode>が選択されていない状態です。 同様に、設定、<xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A>プロパティのインデックス値を<xref:System.Drawing.Image>ときに表示する、<xref:System.Windows.Forms.TreeNode>が選択されています。  
+  
+ 特定のツリー ノードを選択して、反復処理に使用、<xref:System.Windows.Forms.TreeView.Nodes%2A>コレクションは、次のプロパティ値を使用して実現できます: <xref:System.Windows.Forms.TreeNode.FirstNode%2A>、 <xref:System.Windows.Forms.TreeNode.LastNode%2A>、 <xref:System.Windows.Forms.TreeNode.NextNode%2A>、 <xref:System.Windows.Forms.TreeNode.PrevNode%2A>、 <xref:System.Windows.Forms.TreeNode.NextVisibleNode%2A>、<xref:System.Windows.Forms.TreeNode.PrevVisibleNode%2A>です。 割り当てる、<xref:System.Windows.Forms.TreeNode>にこれらのプロパティのいずれかによって返される、<xref:System.Windows.Forms.TreeView.SelectedNode%2A?displayProperty=nameWithType>内のツリー ノードを選択するプロパティを<xref:System.Windows.Forms.TreeView>コントロール。  
+  
+ 子ツリー ノードの [次へ] レベルを表示するツリー ノードを展開することができます。 ユーザーを展開できます、<xref:System.Windows.Forms.TreeNode>キーを押して、プラス (+) ボタンを<xref:System.Windows.Forms.TreeNode>が表示されていることができますを展開する場合は、<xref:System.Windows.Forms.TreeNode>を呼び出して、<xref:System.Windows.Forms.TreeNode.Expand%2A>メソッドです。 内のすべての子ツリー ノード レベルを展開する、<xref:System.Windows.Forms.TreeNode.Nodes%2A>コレクション、呼び出し、<xref:System.Windows.Forms.TreeNode.ExpandAll%2A>メソッドです。 子を折りたたむことができます<xref:System.Windows.Forms.TreeNode>を呼び出してレベル、<xref:System.Windows.Forms.TreeNode.Collapse%2A>メソッド、またはユーザーにはマイナス記号を押して (-) ボタンを横、<xref:System.Windows.Forms.TreeNode>が表示されている場合は、します。 呼び出すことも、<xref:System.Windows.Forms.TreeNode.Toggle%2A>代替メソッド、<xref:System.Windows.Forms.TreeNode>展開と折りたたまれた状態の間でします。  
+  
+ ツリー ノードは、チェック ボックスを必要に応じて表示できます。 チェック ボックスを表示する設定、<xref:System.Windows.Forms.TreeView.CheckBoxes%2A>のプロパティ、<xref:System.Windows.Forms.TreeView>に`true`です。 <xref:System.Windows.Forms.TreeNode.Checked%2A>プロパティに設定されている`true`チェックされた状態であるツリー ノードにします。  
+  
+   
+  
+## Examples  
+ 次のコード例にある顧客情報が表示されます、<xref:System.Windows.Forms.TreeView>コントロール。 ツリーのルート ノードは、顧客名を表示し、子ツリー ノードは、各顧客に割り当てられている注文番号を表示します。 この例では、1,000 人の顧客が 15 の注文に表示されます。 再描画する、<xref:System.Windows.Forms.TreeView>を使用して抑制、<xref:System.Windows.Forms.TreeView.BeginUpdate%2A>と<xref:System.Windows.Forms.TreeView.EndUpdate%2A>メソッド、および待機<xref:System.Windows.Forms.Cursor>が表示されます中に、<xref:System.Windows.Forms.TreeView>を作成し、描画、<xref:System.Windows.Forms.TreeNode>オブジェクト。 この例では、ある必要があります、`Customer`オブジェクトのコレクションが保持できる`Order`オブジェクト。 インスタンスを作成することも必要です、<xref:System.Windows.Forms.TreeView>の control 権限、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[TreeView#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeView/CPP/treeview.cpp#1)]
+ [!code-csharp[TreeView#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeView/CS/treeview.cs#1)]
+ [!code-vb[TreeView#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeView/VB/treeview.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.TreeNode" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ツリー ノードの子の割り当てをルート ツリー ノードを作成します。 各子ツリー ノード`Customer`内のオブジェクト、<xref:System.Collections.ArrayList>の各ルート ツリー ノードと子ツリー ノードに追加された`Order`に割り当てられているオブジェクト、`Customer`オブジェクト。 `Customer`にオブジェクトが割り当てられた、<xref:System.Windows.Forms.TreeNode.Tag%2A>プロパティ、および、ツリー ノードを表す`Customer`でオブジェクトが表示されます<xref:System.Drawing.Color.Orange%2A>テキスト。 この例では、ある必要があります、`Customer`と`Order`定義、オブジェクト、<xref:System.Windows.Forms.TreeView>の control 権限、 <xref:System.Windows.Forms.Form>、および<xref:System.Collections.ArrayList>という名前`customerArray`を格納している`Customer`オブジェクト。  
+  
+ [!code-cpp[TreeNode_Bounds#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Bounds/CPP/treenode_bounds.cpp#1)]
+ [!code-csharp[TreeNode_Bounds#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Bounds/CS/treenode_bounds.cs#1)]
+ [!code-vb[TreeNode_Bounds#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Bounds/VB/treenode_bounds.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNode (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">ラベル<see cref="P:System.Windows.Forms.TreeNode.Text" />新しいツリー ノードのです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.TreeNode" />指定されたラベルのテキストを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `text`パラメーター値は、そのノードの<xref:System.Windows.Forms.TreeNode.Text%2A>プロパティになり、ツリー ノードのラベル。  
+  
+   
+  
+## Examples  
+ 次のコード例にある顧客情報が表示されます、<xref:System.Windows.Forms.TreeView>コントロール。 ツリーのルート ノードは、顧客名を表示し、子ツリー ノードは、各顧客に割り当てられている注文番号を表示します。 この例では、1,000 人の顧客が 15 の注文に表示されます。 再描画する、<xref:System.Windows.Forms.TreeView>を使用して抑制、<xref:System.Windows.Forms.TreeView.BeginUpdate%2A>と<xref:System.Windows.Forms.TreeView.EndUpdate%2A>メソッド、および待機<xref:System.Windows.Forms.Cursor>が表示されます中に、<xref:System.Windows.Forms.TreeView>を作成し、描画、<xref:System.Windows.Forms.TreeNode>オブジェクト。 この例では、ある必要があります、`Customer`オブジェクトのコレクションが保持できる`Order`オブジェクト。 インスタンスを作成することも必要です、<xref:System.Windows.Forms.TreeView>の control 権限、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[TreeView#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeView/CPP/treeview.cpp#1)]
+ [!code-csharp[TreeView#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeView/CS/treeview.cs#1)]
+ [!code-vb[TreeView#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeView/VB/treeview.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TreeNode (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo"><see cref="T:System.Runtime.Serialization.SerializationInfo" />クラスを逆シリアル化するデータを格納します。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" />ソースとシリアル化ストリームの送信先を格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.TreeNode" />クラス、指定したシリアル化情報とコンテキストを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNode (string text, System.Windows.Forms.TreeNode[] children);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, class System.Windows.Forms.TreeNode[] children) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.#ctor(System.String,System.Windows.Forms.TreeNode[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="children" Type="System.Windows.Forms.TreeNode[]" />
+      </Parameters>
+      <Docs>
+        <param name="text">ラベル<see cref="P:System.Windows.Forms.TreeNode.Text" />新しいツリー ノードのです。</param>
+        <param name="children">子の配列<see cref="T:System.Windows.Forms.TreeNode" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.TreeNode" />指定されたラベルのテキストと子ツリー ノードを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `text`パラメーター値は、そのノードの<xref:System.Windows.Forms.TreeNode.Text%2A>プロパティになり、ツリー ノードのラベル。 含まれているツリー ノード、`children`に配列を追加、<xref:System.Windows.Forms.TreeNodeCollection>に格納されている、<xref:System.Windows.Forms.TreeNode.Nodes%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ツリー ノードの子の割り当てをルート ツリー ノードを作成します。 各子ツリー ノード`Customer`内のオブジェクト、<xref:System.Collections.ArrayList>の各ルート ツリー ノードと子ツリー ノードに追加された`Order`に割り当てられているオブジェクト、`Customer`オブジェクト。 `Customer`にオブジェクトが割り当てられた、<xref:System.Windows.Forms.TreeNode.Tag%2A>プロパティ、および、ツリー ノードを表す`Customer`でオブジェクトが表示されます<xref:System.Drawing.Color.Orange%2A>テキスト。 この例では、ある必要があります、`Customer`と`Order`定義、オブジェクト、<xref:System.Windows.Forms.TreeView>の control 権限、 <xref:System.Windows.Forms.Form>、および<xref:System.Collections.ArrayList>という名前`customerArray`を格納している`Customer`オブジェクト。  
+  
+ [!code-cpp[TreeNode_Bounds#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Bounds/CPP/treenode_bounds.cpp#1)]
+ [!code-csharp[TreeNode_Bounds#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Bounds/CS/treenode_bounds.cs#1)]
+ [!code-vb[TreeNode_Bounds#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Bounds/VB/treenode_bounds.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNode (string text, int imageIndex, int selectedImageIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, int32 imageIndex, int32 selectedImageIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.#ctor(System.String,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+        <Parameter Name="selectedImageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="text">ラベル<see cref="P:System.Windows.Forms.TreeNode.Text" />新しいツリー ノードのです。</param>
+        <param name="imageIndex">インデックス値<see cref="T:System.Drawing.Image" />ツリー ノードが選択されているときに表示します。</param>
+        <param name="selectedImageIndex">インデックス値<see cref="T:System.Drawing.Image" />ツリー ノードが選択されているときに表示します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.TreeNode" />ラベル テキストを指定し、ツリー ノードが選択され、選択されていない状態を表示するイメージを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `text`パラメーター値は、そのノードの<xref:System.Windows.Forms.TreeNode.Text%2A>プロパティになり、ツリー ノードのラベル。 `imageIndex`と`selectedImageIndex`値は、のインデックス値、<xref:System.Drawing.Image>に格納されている、<xref:System.Windows.Forms.ImageList>に割り当てられている、<xref:System.Windows.Forms.TreeView.ImageList%2A?displayProperty=nameWithType>プロパティです。 参照されている画像、`imageIndex`ツリー ノードが選択されていないときにプロパティが表示されます。 同様で参照されている画像、`selectedImageIndex`ツリー ノードが選択されている状態でとプロパティが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成し、割り当てます、<xref:System.Windows.Forms.ImageList>を<xref:System.Windows.Forms.TreeView>コントロールおよび塗りつぶし、<xref:System.Windows.Forms.TreeView>で制御<xref:System.Windows.Forms.TreeNode>オブジェクト。 ツリー ノードからイメージを割り当てられた、<xref:System.Windows.Forms.ImageList>ツリー ノードが選択されているか、選択されていない状態で表示されます。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>を格納している、 <xref:System.Windows.Forms.TreeView>、および<xref:System.Collections.ArrayList>を格納している`Customer`オブジェクトが含まれる`Order`オブジェクト。 必要、`Customer`と`Order`オブジェクトを定義します。  
+  
+ [!code-cpp[TreeNode_TreeNode#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_TreeNode/CPP/treenode_treenode.cpp#1)]
+ [!code-csharp[TreeNode_TreeNode#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_TreeNode/CS/treenode_treenode.cs#1)]
+ [!code-vb[TreeNode_TreeNode#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_TreeNode/VB/treenode_treenode.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNode (string text, int imageIndex, int selectedImageIndex, System.Windows.Forms.TreeNode[] children);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, int32 imageIndex, int32 selectedImageIndex, class System.Windows.Forms.TreeNode[] children) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.#ctor(System.String,System.Int32,System.Int32,System.Windows.Forms.TreeNode[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+        <Parameter Name="selectedImageIndex" Type="System.Int32" />
+        <Parameter Name="children" Type="System.Windows.Forms.TreeNode[]" />
+      </Parameters>
+      <Docs>
+        <param name="text">ラベル<see cref="P:System.Windows.Forms.TreeNode.Text" />新しいツリー ノードのです。</param>
+        <param name="imageIndex">インデックス値<see cref="T:System.Drawing.Image" />ツリー ノードが選択されているときに表示します。</param>
+        <param name="selectedImageIndex">インデックス値<see cref="T:System.Drawing.Image" />ツリー ノードが選択されているときに表示します。</param>
+        <param name="children">子の配列<see cref="T:System.Windows.Forms.TreeNode" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.TreeNode" />クラス ラベル テキストを指定、ツリーの子ノード、およびツリー ノードが選択され、選択されていない状態を表示するイメージを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `text`パラメーター値は、そのノードの<xref:System.Windows.Forms.TreeNode.Text%2A>プロパティになり、ツリー ノードのラベル。 `imageIndex`と`selectedImageIndex`値は、のインデックス値、<xref:System.Drawing.Image>に格納されている、<xref:System.Windows.Forms.ImageList>に割り当てられている、<xref:System.Windows.Forms.TreeView.ImageList%2A?displayProperty=nameWithType>プロパティです。 参照されている画像、`imageIndex`ツリー ノードが選択されていないときにパラメーターが表示されます。 同様で参照されている画像、`selectedImageIndex`ツリー ノードが選択された状態の場合、パラメーターが表示されます。 含まれているツリー ノード、`children`に配列を追加、<xref:System.Windows.Forms.TreeNodeCollection>に格納されている、<xref:System.Windows.Forms.TreeNode.Nodes%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成し、割り当てます、<xref:System.Windows.Forms.ImageList>を<xref:System.Windows.Forms.TreeView>コントロールおよび塗りつぶし、<xref:System.Windows.Forms.TreeView>で制御<xref:System.Windows.Forms.TreeNode>オブジェクト。 ツリー ノードからイメージを割り当てられた、<xref:System.Windows.Forms.ImageList>ツリー ノードが選択されているか、選択されていない状態で表示されます。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>を格納している、 <xref:System.Windows.Forms.TreeView>、および<xref:System.Collections.ArrayList>を格納している`Customer`オブジェクトが含まれる`Order`オブジェクト。 必要、`Customer`と`Order`オブジェクトを定義します。  
+  
+ [!code-cpp[TreeNode_TreeNode#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_TreeNode/CPP/treenode_treenode.cpp#1)]
+ [!code-csharp[TreeNode_TreeNode#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_TreeNode/CS/treenode_treenode.cs#1)]
+ [!code-vb[TreeNode_TreeNode#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_TreeNode/VB/treenode_treenode.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツリー ノードの背景色を設定します。</summary>
+        <value>バック グラウンド<see cref="T:System.Drawing.Color" />ツリー ノードのです。 既定値は、<see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.TreeNode.BackColor%2A>プロパティに設定されている<xref:System.Drawing.Color?displayProperty=nameWithType>、<xref:System.Drawing.Color>が使用される、<xref:System.Windows.Forms.Control.BackColor%2A>のプロパティの値、<xref:System.Windows.Forms.TreeView>にツリー ノードが割り当てられているコントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例には、いずれかが強調表示<xref:System.Windows.Forms.TreeNode>オブジェクト、<xref:System.Windows.Forms.TreeView>を持つコントロールをその<xref:System.Windows.Forms.TreeNode.Checked%2A>プロパティに設定`true`を設定してその<xref:System.Windows.Forms.TreeNode.BackColor%2A>プロパティを<xref:System.Drawing.Color.Yellow%2A>です。 このコードが必要です、<xref:System.Windows.Forms.TreeView>の control 権限、<xref:System.Windows.Forms.Form>の一連の<xref:System.Windows.Forms.TreeNode>オブジェクト。  
+  
+ [!code-cpp[TreeNode_Checked#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Checked/CPP/treenode_checked.cpp#1)]
+ [!code-csharp[TreeNode_Checked#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Checked/CS/treenode_checked.cs#1)]
+ [!code-vb[TreeNode_Checked#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Checked/VB/treenode_checked.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginEdit">
+      <MemberSignature Language="C#" Value="public void BeginEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.BeginEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツリー ノードのラベルの編集を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する一般的なシナリオは、それを呼び出すことで、<xref:System.Windows.Forms.MenuItem.Click>のイベント、<xref:System.Windows.Forms.MenuItem>または<xref:System.Windows.Forms.ContextMenu>です。  
+  
+> [!NOTE]
+>  このメソッドは、場合にのみ機能、<xref:System.Windows.Forms.TreeView.LabelEdit%2A>のプロパティ、<xref:System.Windows.Forms.TreeView>に設定されている`true`です。 場合<xref:System.Windows.Forms.TreeView.LabelEdit%2A>に設定されている`false`、例外がスローされ、ツリー ノードは編集可能な状態には格納できません。  
+  
+   
+  
+## Examples  
+ 次のコード例には、ユーザーを使用してルート ツリー ノードの編集ができるように、<xref:System.Windows.Forms.ContextMenu>です。 ユーザーがマウスを右クリックすると、<xref:System.Windows.Forms.TreeNode>位置の決定し、という名前の変数に格納されているその`mySelectedNode`です。 ツリーのルート ノードを選択した場合そこに格納されます編集可能な状態をノードのラベルを編集するユーザーを許可します。 ユーザーは、ツリー ノードのラベルの編集を停止する、新しいラベル テキストが評価され、保存します。 この例では、いくつかの文字と見なされましていないラベルのテキストでは有効。 ラベル文字列が、無効な文字のいずれかの文字列か、または空の場合は、ユーザーに通知するエラーのされ、その前のテキストにラベルが返されます。  
+  
+ [!code-cpp[classic treenode.beginedit example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CPP/source.cpp#1)]
+ [!code-csharp[classic treenode.beginedit example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CS/source.cs#1)]
+ [!code-vb[classic treenode.beginedit example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Forms.TreeView.LabelEdit" /> が <see langword="false" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノードの範囲を取得します。</summary>
+        <value><see cref="T:System.Drawing.Rectangle" />ツリー ノードの境界を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 左上隅に対する相対座標は、<xref:System.Windows.Forms.TreeView>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、サイズを変更<xref:System.Windows.Forms.TreeNode.NodeFont%2A>を指定したサイズを調整し、<xref:System.Windows.Forms.TreeView.ItemHeight%2A>ツリー ノードの親の<xref:System.Windows.Forms.TreeView>コントロール。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.TreeView>コントロールのコレクションが<xref:System.Windows.Forms.TreeNode>オブジェクト、および<xref:System.Windows.Forms.ComboBox>フォント サイズを格納しています。  
+  
+ [!code-cpp[TreeNode_Bounds#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Bounds/CPP/treenode_bounds.cpp#2)]
+ [!code-csharp[TreeNode_Bounds#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Bounds/CS/treenode_bounds.cs#2)]
+ [!code-vb[TreeNode_Bounds#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Bounds/VB/treenode_bounds.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Checked">
+      <MemberSignature Language="C#" Value="public bool Checked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Checked" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.Checked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツリー ノードが選択された状態であるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ツリー ノードがチェック状態以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例には、いずれかが強調表示<xref:System.Windows.Forms.TreeNode>オブジェクト、<xref:System.Windows.Forms.TreeView>を持つコントロールをその<xref:System.Windows.Forms.TreeNode.Checked%2A>プロパティに設定`true`を設定してその<xref:System.Windows.Forms.TreeNode.BackColor%2A>プロパティを<xref:System.Drawing.Color.Yellow%2A>です。 このコードが必要です、<xref:System.Windows.Forms.TreeView>の control 権限、<xref:System.Windows.Forms.Form>の一連の<xref:System.Windows.Forms.TreeNode>オブジェクト。  
+  
+ [!code-cpp[TreeNode_Checked#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Checked/CPP/treenode_checked.cpp#1)]
+ [!code-csharp[TreeNode_Checked#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Checked/CS/treenode_checked.cs#1)]
+ [!code-vb[TreeNode_Checked#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Checked/VB/treenode_checked.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツリー ノードおよびそのツリー ノードをルートとするサブツリー全体をコピーします。</summary>
+        <returns><see cref="T:System.Object" />を表す、複製された<see cref="T:System.Windows.Forms.TreeNode" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複製されているツリー ノードから、下のツリー構造がコピーされます。 子ツリー ノードに割り当てられている、<xref:System.Windows.Forms.TreeNode>新しいツリー ノードおよびサブツリーに含まれるのクローンを作成します。  
+  
+ <xref:System.Windows.Forms.TreeNode.Clone%2A>メソッドは、ノードの簡易コピーを実行します。 場合の値、<xref:System.Windows.Forms.TreeNode.Tag%2A>プロパティは、参照型で、元と複製されたコピーの両方が、同じ 1 つのインスタンスを指す、<xref:System.Windows.Forms.TreeNode.Tag%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例は最後のルート ツリー ノードの最後の子ツリー ノードのクローンを作成しの最初のルート ツリー ノードとして、複製を挿入、`TreeNodeCollection`です。 この例では、ある必要があります、<xref:System.Windows.Forms.TreeView>の control 権限、<xref:System.Windows.Forms.Form>のコレクションを含む<xref:System.Windows.Forms.TreeNode>オブジェクトおよび<xref:System.Windows.Forms.Button>です。  
+  
+ [!code-cpp[TreeNode_EnsureVisible_4#3](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CPP/treenode_ensurevisible_4.cpp#3)]
+ [!code-csharp[TreeNode_EnsureVisible_4#3](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CS/treenode_ensurevisible_4.cs#3)]
+ [!code-vb[TreeNode_EnsureVisible_4#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/VB/treenode_ensurevisible_4.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collapse">
+      <MemberSignature Language="C#" Value="public void Collapse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Collapse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.Collapse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツリー ノードを折りたたみます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.Collapse%2A>メソッドは現在、折りたたみます<xref:System.Windows.Forms.TreeNode>とその子ノードです。 現在のみを折りたたむ場合<xref:System.Windows.Forms.TreeNode>を使用して、<xref:System.Windows.Forms.TreeNode.Collapse%28System.Boolean%29?displayProperty=nameWithType>オーバー ロードを渡すこと`true`をその子ノードを無視します。  
+  
+> [!NOTE]
+>  状態、<xref:System.Windows.Forms.TreeNode>が永続化されます。 たとえば、次のレベルの子ノードが折りたたまれていない以前は、ときに、<xref:System.Windows.Forms.TreeNode.Expand%2A>メソッドが呼び出されると、以前に展開された状態で子ノードが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ボタンがクリックされたときに、選択したノードを切り替えます。 選択したノードが折りたたまれている場合、展開すると、呼び出すことによって展開されている場合、<xref:System.Windows.Forms.TreeNode.Expand%2A>メソッドを呼び出すことで折りたたまれている、<xref:System.Windows.Forms.TreeNode.Collapse%2A>メソッドです。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>を少なくとも 1 つを持つコントロール<xref:System.Windows.Forms.TreeNode>には、少なくとも 1 つの子で<xref:System.Windows.Forms.TreeNode>です。  
+  
+ [!code-cpp[TreeNode_EnsureVisible_4#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CPP/treenode_ensurevisible_4.cpp#1)]
+ [!code-csharp[TreeNode_EnsureVisible_4#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CS/treenode_ensurevisible_4.cs#1)]
+ [!code-vb[TreeNode_EnsureVisible_4#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/VB/treenode_ensurevisible_4.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collapse">
+      <MemberSignature Language="C#" Value="public void Collapse (bool ignoreChildren);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Collapse(bool ignoreChildren) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.Collapse(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ignoreChildren" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="ignoreChildren">
+          <see langword="true" />現在の状態で、子ノードのままにするには<see langword="false" />子ノードを折りたたみます。</param>
+        <summary>縮小、<see cref="T:System.Windows.Forms.TreeNode" />し、必要に応じてその子を折りたたみます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.TreeNode.Collapse%2A>渡してメソッド`true`ノードを折りたたむには、展開された状態でその子ノードのままにする場合に、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenu">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ContextMenu ContextMenu { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ContextMenu ContextMenu" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.ContextMenu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenu</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このツリー ノードに関連付けられているショートカット メニューを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.ContextMenu" />ツリー ノードに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツリー ノードにショートカット メニューを関連付けることをお勧め、<xref:System.Windows.Forms.TreeNode.ContextMenuStrip%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuStrip">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ContextMenuStrip ContextMenuStrip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ContextMenuStrip ContextMenuStrip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.ContextMenuStrip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenuStrip</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このツリー ノードに関連付けられているショートカット メニューを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ContextMenuStrip" />ツリー ノードに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがツリー ノードを右クリックすると、ショートカット メニューが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="protected virtual void Deserialize (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Deserialize(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.Deserialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> を説明する <see cref="T:System.Windows.Forms.TreeNode" />。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" />逆シリアル化中に、ストリームの状態を示すです。</param>
+        <summary>状態を読み込み、<see cref="T:System.Windows.Forms.TreeNode" />から、指定した<see cref="T:System.Runtime.Serialization.SerializationInfo" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndEdit">
+      <MemberSignature Language="C#" Value="public void EndEdit (bool cancel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndEdit(bool cancel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.EndEdit(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancel" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="cancel">
+          <see langword="true" />ツリー ノードのラベル テキストの編集が保存されずに取り消された場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>ツリー ノードのラベルの編集を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例には、ユーザーを使用してルート ツリー ノードの編集ができるように、<xref:System.Windows.Forms.ContextMenu>です。 ユーザーには、マウスを右クリックしたときに、<xref:System.Windows.Forms.TreeNode>位置の決定し、という名前の変数に格納されているその`mySelectedNode`です。 ツリーのルート ノードを選択した場合そこに格納されます編集可能な状態をノードのラベルを編集するユーザーを許可します。 ユーザーは、ツリー ノードのラベルの編集を停止する、新しいラベル テキストが評価され、保存します。 この例では、いくつかの文字と見なされましていないラベルのテキストでは有効。 ラベル文字列が、無効な文字のいずれかの文字列か、または空の場合は、ユーザーに通知するエラーのされ、その前のテキストにラベルが返されます。  
+  
+ [!code-cpp[classic treenode.beginedit example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CPP/source.cpp#1)]
+ [!code-csharp[classic treenode.beginedit example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CS/source.cs#1)]
+ [!code-vb[classic treenode.beginedit example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureVisible">
+      <MemberSignature Language="C#" Value="public void EnsureVisible ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnsureVisible() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.EnsureVisible" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、ツリー ノードがツリー ノードを展開して、必要に応じてツリー ビュー コントロールのスクロール、表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.TreeNode.EnsureVisible%2A>メソッドが呼び出されると、ツリーが展開され、現在のツリー ノードがで表示されていることを確認するスクロール、<xref:System.Windows.Forms.TreeView>です。 このメソッドは、特定の条件に基づいたコード内のツリー ノードを選択する場合に便利です。 このメソッドを呼び出して、ノードを選択した後、ユーザーを表示し、選択したノードとの対話します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Windows.Forms.TreeView.ItemHeight%2A?displayProperty=nameWithType>プロパティは、このメソッドを呼び出すと、ツリー ビュー コントロールの高さがあるよりも大きい値に設定が予期しない結果。  
+  
+   
+  
+## Examples  
+ 次のコード例、最後の子ツリー ノードに表示させる最後のルート ツリー ノードのツリー ビューで、ボタンがクリックされたときにします。 この例では、ある必要があります、<xref:System.Windows.Forms.TreeView>の control 権限、<xref:System.Windows.Forms.Form>のコレクションを含む<xref:System.Windows.Forms.TreeNode>オブジェクト、および<xref:System.Windows.Forms.Button>です。 すべてのツリー ビュー コントロールに表示されないように十分な数のツリー ノードがかかることがあります。  
+  
+ [!code-cpp[TreeNode_EnsureVisible_4#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CPP/treenode_ensurevisible_4.cpp#2)]
+ [!code-csharp[TreeNode_EnsureVisible_4#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CS/treenode_ensurevisible_4.cs#2)]
+ [!code-vb[TreeNode_EnsureVisible_4#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/VB/treenode_ensurevisible_4.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expand">
+      <MemberSignature Language="C#" Value="public void Expand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Expand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.Expand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツリー ノードを展開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.Expand%2A>現在が展開されます<xref:System.Windows.Forms.TreeNode>ノードの次のレベルまでです。  
+  
+> [!NOTE]
+>  状態、<xref:System.Windows.Forms.TreeNode>が永続化されます。 たとえば、次のレベルの子ノードが折りたたまれていない以前は、ときに、<xref:System.Windows.Forms.TreeNode.Expand%2A>メソッドが呼び出されると、以前に展開された状態で子ノードが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ボタンがクリックされたときに、選択したノードを切り替えます。 選択したノードが折りたたまれている場合、展開すると、呼び出すことによって展開されている場合、<xref:System.Windows.Forms.TreeNode.Expand%2A>メソッドを呼び出すことで折りたたまれている、<xref:System.Windows.Forms.TreeNode.Collapse%2A>メソッドです。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>を少なくとも 1 つを持つコントロール<xref:System.Windows.Forms.TreeNode>には、少なくとも 1 つの子で<xref:System.Windows.Forms.TreeNode>です。  
+  
+ [!code-cpp[TreeNode_EnsureVisible_4#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CPP/treenode_ensurevisible_4.cpp#1)]
+ [!code-csharp[TreeNode_EnsureVisible_4#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CS/treenode_ensurevisible_4.cs#1)]
+ [!code-vb[TreeNode_EnsureVisible_4#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/VB/treenode_ensurevisible_4.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandAll">
+      <MemberSignature Language="C#" Value="public void ExpandAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExpandAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.ExpandAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての子ツリー ノードを展開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.ExpandAll%2A>メソッドに割り当てられているすべての子ツリー ノードを展開する、<xref:System.Windows.Forms.TreeNode.Nodes%2A>コレクション。  
+  
+> [!NOTE]
+>  状態、<xref:System.Windows.Forms.TreeNode>が永続化されます。 たとえば、次のレベルの子ノードが折りたたまれていない以前は、ときに、<xref:System.Windows.Forms.TreeNode.Expand%2A>メソッドが呼び出されると、以前に展開された状態で子ノードが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、内のすべてのツリー ノードを展開、<xref:System.Windows.Forms.TreeView>タイミングを制御、<xref:System.Windows.Forms.CheckBox>が確認され、折りたたまれます、<xref:System.Windows.Forms.TreeNode.FirstNode%2A>ときに、<xref:System.Windows.Forms.CheckBox>がオフになっています。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.TreeView>コントロールを<xref:System.Windows.Forms.TreeNodeCollection>を含むいくつか<xref:System.Windows.Forms.TreeNode>(可能であれば、次の 3 つ以上のレベル) のオブジェクト。  
+  
+ [!code-cpp[TreeNode_ForeColor#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_ForeColor/CPP/treenode_forecolor.cpp#1)]
+ [!code-csharp[TreeNode_ForeColor#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_ForeColor/CS/treenode_forecolor.cs#1)]
+ [!code-vb[TreeNode_ForeColor#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_ForeColor/VB/treenode_forecolor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstNode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode FirstNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode FirstNode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.FirstNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノード コレクション内の最初の子ツリー ノードを取得します。</summary>
+        <value>最初の子<see cref="T:System.Windows.Forms.TreeNode" />で、<see cref="P:System.Windows.Forms.TreeNode.Nodes" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.FirstNode%2A>最初の子は、<xref:System.Windows.Forms.TreeNode>で、<xref:System.Windows.Forms.TreeNodeCollection>に格納されている、<xref:System.Windows.Forms.TreeNode.Nodes%2A>現在のツリー ノードのプロパティです。 場合、<xref:System.Windows.Forms.TreeNode>子ツリー ノードを持たない、<xref:System.Windows.Forms.TreeNode.FirstNode%2A>プロパティから返される`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、適切な選択<xref:System.Windows.Forms.TreeNode>場合を決定した後、<xref:System.Windows.Forms.TreeNode>渡されるが選択された状態と<xref:System.Windows.Forms.TreeNode>を選択します。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>を持つコントロールを<xref:System.Windows.Forms.TreeNodeCollection>を含むいくつか<xref:System.Windows.Forms.TreeNode>オブジェクト。 あることも必要です、<xref:System.Windows.Forms.ComboBox>次の項目を含む:「前」、"PreviousVisible"、「次へ」、"NextVisible"、"First"および"Last"です。  
+  
+ [!code-cpp[TreeNode_Parent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Parent/CPP/treenode_parent.cpp#1)]
+ [!code-csharp[TreeNode_Parent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Parent/CS/treenode_parent.cs#1)]
+ [!code-vb[TreeNode_Parent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Parent/VB/treenode_parent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツリー ノードの前景色を設定します。</summary>
+        <value>フォア グラウンド<see cref="T:System.Drawing.Color" />ツリー ノードのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`null`、<xref:System.Drawing.Color>が使用される、<xref:System.Windows.Forms.Control.ForeColor%2A>のプロパティの値、<xref:System.Windows.Forms.TreeView>にツリー ノードが割り当てられているコントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ツリー ノードの子の割り当てをルート ツリー ノードを作成します。 各子ツリー ノード`Customer`内のオブジェクト、<xref:System.Collections.ArrayList>の各ルート ツリー ノードと子ツリー ノードに追加された`Order`に割り当てられているオブジェクト、`Customer`オブジェクト。 `Customer`にオブジェクトが割り当てられた、<xref:System.Windows.Forms.TreeNode.Tag%2A>プロパティ、および、ツリー ノードを表す`Customer`でオブジェクトが表示されます<xref:System.Drawing.Color.Orange%2A>テキスト。 この例では、ある必要があります、`Customer`と`Order`定義、オブジェクト、<xref:System.Windows.Forms.TreeView>の control 権限、 <xref:System.Windows.Forms.Form>、および<xref:System.Collections.ArrayList>という名前`customerArray`を格納している`Customer`オブジェクト。  
+  
+ [!code-cpp[TreeNode_Bounds#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Bounds/CPP/treenode_bounds.cpp#1)]
+ [!code-csharp[TreeNode_Bounds#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Bounds/CS/treenode_bounds.cs#1)]
+ [!code-vb[TreeNode_Bounds#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Bounds/VB/treenode_bounds.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromHandle">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.TreeNode FromHandle (System.Windows.Forms.TreeView tree, IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.TreeNode FromHandle(class System.Windows.Forms.TreeView tree, native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.FromHandle(System.Windows.Forms.TreeView,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tree" Type="System.Windows.Forms.TreeView" />
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="tree"><see cref="T:System.Windows.Forms.TreeView" />ツリー ノードを格納しています。</param>
+        <param name="handle">ツリー ノードのハンドルです。</param>
+        <summary>返します、指定されたツリー ノードを処理し、指定されたツリーに割り当てられているコントロールを表示します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.TreeNode" />を指定された割り当てられているツリー ノードを表す<see cref="T:System.Windows.Forms.TreeView" />指定のハンドルを持つコントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ノードを追加するときに、 <xref:System.Windows.Forms.TreeView.Nodes%2A?displayProperty=nameWithType> 、コレクション、<xref:System.Windows.Forms.TreeView>ノード ハンドルが使用する前に、コントロールが NM_CUSTOMDRAW 通知を送信します。 オーバーライドする場合、<xref:System.Windows.Forms.Control.WndProc%2A>のメソッド、<xref:System.Windows.Forms.TreeView>この通知に応答をカスタム描画を提供する必要があります常に確認するには、このメソッドの戻り値`null`ノードにアクセスしようとする前にします。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Windows.Forms.TreeNode>が折りたたまれましたし、を使用してそのコピーを作成するその<xref:System.Windows.Forms.TreeNode.Handle%2A>プロパティです。 元の<xref:System.Windows.Forms.TreeNode>から削除、 <xref:System.Windows.Forms.TreeNodeCollection>、され、コピーがコレクションに追加します。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>コントロール。 <xref:System.Windows.Forms.TreeView>コントロールがある 2 つ以上のルート ノードには、少なくとも 1 つの子ノードそれぞれします。  
+  
+ [!code-cpp[Windows.Forms.TreeNode#3](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CPP/treenode.cpp#3)]
+ [!code-csharp[Windows.Forms.TreeNode#3](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CS/treenode.cs#3)]
+ [!code-vb[Windows.Forms.TreeNode#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.TreeNode/VB/treenode.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullPath">
+      <MemberSignature Language="C#" Value="public string FullPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.FullPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のツリー ノードにルート ツリー ノードからのパスを取得します。</summary>
+        <value>ルートのツリー ノードから現在のツリー ノードへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パスは、ルート ツリー ノードから始まる、このツリー ノードに到達するまでの間にあるすべてのツリー ノードのラベルで構成されます。 ノード ラベルがで指定された区切り記号で区切られた、<xref:System.Windows.Forms.TreeView.PathSeparator%2A>のプロパティ、<xref:System.Windows.Forms.TreeView>コントロールをこのノードが含まれています。 円記号を場合は、ツリー ビュー コントロールの区切り文字が"Location"という名前を設定するなど、(\\) では、<xref:System.Windows.Forms.TreeNode.FullPath%2A>プロパティの値が"Country\Region\State"です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Windows.Forms.TreeView.PathSeparator%2A>のプロパティ、<xref:System.Windows.Forms.TreeView>に含まれる子ツリー ノードの数を表示し、<xref:System.Windows.Forms.TreeNodeCollection>の<xref:System.Windows.Forms.TreeView.SelectedNode%2A>です。 ツリー ビュー コントロール内のすべてのツリー ノードに子ツリー ノードの割合が表示されます。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、 <xref:System.Windows.Forms.Button>、および<xref:System.Windows.Forms.TreeView>コントロールを<xref:System.Windows.Forms.TreeNodeCollection>を含むいくつか<xref:System.Windows.Forms.TreeNode>(可能であれば、次の 3 つ以上のレベル) のオブジェクト。  
+  
+ [!code-cpp[TreeNode_ForeColor#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_ForeColor/CPP/treenode_forecolor.cpp#2)]
+ [!code-csharp[TreeNode_ForeColor#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_ForeColor/CS/treenode_forecolor.cs#2)]
+ [!code-vb[TreeNode_ForeColor#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_ForeColor/VB/treenode_forecolor.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">内のノードが含まれていない、<see cref="T:System.Windows.Forms.TreeView" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNodeCount">
+      <MemberSignature Language="C#" Value="public int GetNodeCount (bool includeSubTrees);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetNodeCount(bool includeSubTrees) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.GetNodeCount(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeSubTrees" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="includeSubTrees">
+          <see langword="true" />結果のカウントには、このツリー ノードを直接ルートとすべてのツリー ノードが含まれている場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>子ツリー ノードの数を返します。</summary>
+        <returns>割り当てられている子ツリー ノードの数、<see cref="P:System.Windows.Forms.TreeNode.Nodes" />コレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Windows.Forms.TreeView.PathSeparator%2A>のプロパティ、<xref:System.Windows.Forms.TreeView>に含まれる子ツリー ノードの数を表示し、<xref:System.Windows.Forms.TreeNodeCollection>の<xref:System.Windows.Forms.TreeView.SelectedNode%2A>です。 ツリー ビュー コントロール内のすべてのツリー ノードに子ツリー ノードの割合が表示されます。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、 <xref:System.Windows.Forms.Button>、および<xref:System.Windows.Forms.TreeView>コントロールを<xref:System.Windows.Forms.TreeNodeCollection>を含むいくつか<xref:System.Windows.Forms.TreeNode>(可能であれば、次の 3 つ以上のレベル) のオブジェクト。  
+  
+ [!code-cpp[TreeNode_ForeColor#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_ForeColor/CPP/treenode_forecolor.cpp#2)]
+ [!code-csharp[TreeNode_ForeColor#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_ForeColor/CS/treenode_forecolor.cs#2)]
+ [!code-vb[TreeNode_ForeColor#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_ForeColor/VB/treenode_forecolor.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノードのハンドルを取得します。</summary>
+        <value>ツリー ノードのハンドル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、ハンドルが既に作成されていない場合に、<xref:System.Windows.Forms.TreeNode.Handle%2A>プロパティは、参照である場合は、作成します。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Windows.Forms.TreeNode>が折りたたまれましたし、を使用してそのコピーを作成するその<xref:System.Windows.Forms.TreeNode.Handle%2A>プロパティです。 元の<xref:System.Windows.Forms.TreeNode>から削除、 <xref:System.Windows.Forms.TreeNodeCollection>、され、コピーがコレクションに追加します。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>コントロール。 <xref:System.Windows.Forms.TreeView>コントロールがある 2 つ以上のルート ノードには、少なくとも 1 つの子ノードそれぞれします。  
+  
+ [!code-cpp[Windows.Forms.TreeNode#3](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CPP/treenode.cpp#3)]
+ [!code-csharp[Windows.Forms.TreeNode#3](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CS/treenode.cs#3)]
+ [!code-vb[Windows.Forms.TreeNode#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.TreeNode/VB/treenode.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageIndex">
+      <MemberSignature Language="C#" Value="public int ImageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ImageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.ImageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.TreeViewImageIndexConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Forms.RelatedImageList("TreeView.ImageList")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツリー ノードが選択されていない状態を表示するイメージのイメージ リスト インデックス値を設定します。</summary>
+        <value>割り当てられているイメージの位置を表す 0 から始まるインデックス値<see cref="T:System.Windows.Forms.ImageList" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.ImageIndex%2A>のインデックス値が値、<xref:System.Drawing.Image>に格納されている、<xref:System.Windows.Forms.ImageList>に割り当てられている、<xref:System.Windows.Forms.TreeView.ImageList%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!NOTE]
+>  既定値、<xref:System.Windows.Forms.TreeNode.ImageIndex%2A>プロパティと同じ、<xref:System.Windows.Forms.TreeView.ImageIndex%2A>のプロパティ、<xref:System.Windows.Forms.TreeView>コントロールによって、<xref:System.Windows.Forms.TreeNode>に割り当てられます。  
+  
+ <xref:System.Windows.Forms.TreeNode.ImageKey%2A>と<xref:System.Windows.Forms.TreeNode.ImageIndex%2A>プロパティは相互に排他的です。 したがって、1 つのプロパティが設定されている場合、その他は無視されます。 設定した場合、 <xref:System.Windows.Forms.TreeNode.ImageKey%2A> 、プロパティ、<xref:System.Windows.Forms.TreeNode.ImageIndex%2A>プロパティが-1 に自動的に設定します。 または、設定した場合<xref:System.Windows.Forms.TreeNode.ImageIndex%2A>、<xref:System.Windows.Forms.TreeNode.ImageKey%2A>空の文字列に自動的に設定されている ("") です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成し、割り当てます、<xref:System.Windows.Forms.ImageList>を<xref:System.Windows.Forms.TreeView>コントロールおよび塗りつぶし、<xref:System.Windows.Forms.TreeView>で制御<xref:System.Windows.Forms.TreeNode>オブジェクト。 ツリー ノードからイメージを割り当てられた、<xref:System.Windows.Forms.ImageList>ツリー ノードが選択されているか、選択されていない状態で表示されます。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>を格納している、 <xref:System.Windows.Forms.TreeView>、および<xref:System.Collections.ArrayList>を格納している`Customer`オブジェクトが含まれる`Order`オブジェクト。 必要、`Customer`と`Order`オブジェクトを定義します。  
+  
+ [!code-cpp[TreeNode_TreeNode#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_TreeNode/CPP/treenode_treenode.cpp#1)]
+ [!code-csharp[TreeNode_TreeNode#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_TreeNode/CS/treenode_treenode.cs#1)]
+ [!code-vb[TreeNode_TreeNode#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_TreeNode/VB/treenode_treenode.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageKey">
+      <MemberSignature Language="C#" Value="public string ImageKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.ImageKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.TreeViewImageKeyConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Forms.RelatedImageList("TreeView.ImageList")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードが選択されていない状態のときに、このツリー ノードに関連付けられているイメージのキーを設定します。</summary>
+        <value>ノードが選択されていない状態のときに、このツリー ノードに関連付けられているイメージのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるイメージのキーに含まれている、<xref:System.Windows.Forms.TreeView.ImageList%2A>プロパティを含むの<xref:System.Windows.Forms.TreeView>コントロール。  
+  
+ <xref:System.Windows.Forms.TreeNode.ImageKey%2A>小文字は区別されません。  
+  
+ <xref:System.Windows.Forms.TreeNode.ImageKey%2A>と<xref:System.Windows.Forms.TreeNode.ImageIndex%2A>プロパティは相互に排他的です。 1 つのプロパティが設定されている場合、その他は無視されます。 設定した場合、 <xref:System.Windows.Forms.TreeNode.ImageKey%2A> 、プロパティ、<xref:System.Windows.Forms.TreeNode.ImageIndex%2A>プロパティが-1 に自動的に設定します。 または、設定した場合<xref:System.Windows.Forms.TreeNode.ImageIndex%2A>、<xref:System.Windows.Forms.TreeNode.ImageKey%2A>空の文字列に自動的に設定されている ("") です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Index">
+      <MemberSignature Language="C#" Value="public int Index { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Index" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.Index" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノードのツリー ノード コレクション内の位置を取得します。</summary>
+        <value>内のツリー ノードの位置を表す 0 から始まるインデックス値、<see cref="P:System.Windows.Forms.TreeNode.Nodes" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では表示、<xref:System.Windows.Forms.TreeNode.Text%2A>と<xref:System.Windows.Forms.TreeNode.Index%2A>プロパティの値を<xref:System.Windows.Forms.TreeNode>によって表される、<xref:System.Windows.Forms.TreeNode.Parent%2A>のプロパティ、<xref:System.Windows.Forms.TreeView.SelectedNode%2A?displayProperty=nameWithType>です。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>コントロール。 <xref:System.Windows.Forms.TreeView>は 2 つ以上のルート ノードが、それぞれ少なくとも 1 つの子ノードです。  
+  
+ [!code-cpp[Windows.Forms.TreeNode#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CPP/treenode.cpp#2)]
+ [!code-csharp[Windows.Forms.TreeNode#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CS/treenode.cs#2)]
+ [!code-vb[Windows.Forms.TreeNode#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.TreeNode/VB/treenode.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEditing">
+      <MemberSignature Language="C#" Value="public bool IsEditing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEditing" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.IsEditing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノードが編集可能な状態であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ツリー ノードが編集可能な状態である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例には、ユーザーを使用してルート ツリー ノードの編集ができるように、<xref:System.Windows.Forms.ContextMenu>です。 ユーザーには、マウスを右クリックしたときに、<xref:System.Windows.Forms.TreeNode>位置の決定し、という名前の変数に格納されているその`mySelectedNode`です。 ツリーのルート ノードを選択した場合、編集可能な状態に格納は、ユーザーがノードのラベルを編集できます。 ユーザーは、ツリー ノードのラベルの編集を停止する、新しいラベル テキストが評価され、保存します。 この例では、いくつかの文字と見なされましていないラベルのテキストでは有効。 ラベル文字列が、無効な文字のいずれかの文字列か、または空の場合は、ユーザーに通知するエラーのされ、その前のテキストにラベルが返されます。  
+  
+ [!code-cpp[classic treenode.beginedit example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CPP/source.cpp#1)]
+ [!code-csharp[classic treenode.beginedit example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CS/source.cs#1)]
+ [!code-vb[classic treenode.beginedit example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsExpanded">
+      <MemberSignature Language="C#" Value="public bool IsExpanded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsExpanded" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.IsExpanded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノードが展開された状態であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ツリー ノードが展開された状態である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ボタンがクリックされたときに、選択したノードを切り替えます。 選択したノードが折りたたまれている場合、展開すると、呼び出すことによって展開されている場合、<xref:System.Windows.Forms.TreeNode.Expand%2A>メソッドを呼び出すことで折りたたまれている、<xref:System.Windows.Forms.TreeNode.Collapse%2A>メソッドです。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>を少なくとも 1 つを持つコントロール<xref:System.Windows.Forms.TreeNode>には、少なくとも 1 つの子で<xref:System.Windows.Forms.TreeNode>です。  
+  
+ [!code-cpp[TreeNode_EnsureVisible_4#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CPP/treenode_ensurevisible_4.cpp#1)]
+ [!code-csharp[TreeNode_EnsureVisible_4#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CS/treenode_ensurevisible_4.cs#1)]
+ [!code-vb[TreeNode_EnsureVisible_4#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/VB/treenode_ensurevisible_4.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelected">
+      <MemberSignature Language="C#" Value="public bool IsSelected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSelected" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.IsSelected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノードが選択された状態であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ツリー ノードが選択された状態の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、適切な選択<xref:System.Windows.Forms.TreeNode>場合を決定した後、<xref:System.Windows.Forms.TreeNode>渡されるが選択された状態と<xref:System.Windows.Forms.TreeNode>を選択します。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>を持つコントロールを<xref:System.Windows.Forms.TreeNodeCollection>いくつか含む<xref:System.Windows.Forms.TreeNode>オブジェクト。 あることも必要です、<xref:System.Windows.Forms.ComboBox>次の項目を含む:「前」、"PreviousVisible"、「次へ」、"NextVisible"、"First"および"Last"です。  
+  
+ [!code-cpp[TreeNode_Parent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Parent/CPP/treenode_parent.cpp#1)]
+ [!code-csharp[TreeNode_Parent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Parent/CS/treenode_parent.cs#1)]
+ [!code-vb[TreeNode_Parent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Parent/VB/treenode_parent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsVisible" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.IsVisible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノードが表示されているか、部分的に表示されるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ツリー ノードが表示されるか部分的に表示されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例、最後の子ツリー ノードに表示させる最後のルート ツリー ノードのツリー ビューで、ボタンがクリックされたときにします。 この例では、ある必要があります、<xref:System.Windows.Forms.TreeView>の control 権限、<xref:System.Windows.Forms.Form>のコレクションを含む<xref:System.Windows.Forms.TreeNode>オブジェクト、および<xref:System.Windows.Forms.Button>です。 すべてのツリー ビュー コントロールに表示されないように十分な数のツリー ノードがかかることがあります。  
+  
+ [!code-cpp[TreeNode_EnsureVisible_4#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CPP/treenode_ensurevisible_4.cpp#2)]
+ [!code-csharp[TreeNode_EnsureVisible_4#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/CS/treenode_ensurevisible_4.cs#2)]
+ [!code-vb[TreeNode_EnsureVisible_4#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_EnsureVisible_4/VB/treenode_ensurevisible_4.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastNode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode LastNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode LastNode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.LastNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノードの最後の子を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.TreeNode" />最後の子ツリー ノードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.LastNode%2A>最後の子は、<xref:System.Windows.Forms.TreeNode>で、<xref:System.Windows.Forms.TreeNodeCollection>に格納されている、<xref:System.Windows.Forms.TreeNode.Nodes%2A>現在のツリー ノードのプロパティです。 場合、<xref:System.Windows.Forms.TreeNode>子ツリー ノードを持たない、<xref:System.Windows.Forms.TreeNode.LastNode%2A>プロパティから返される`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、適切な選択<xref:System.Windows.Forms.TreeNode>場合を決定した後、<xref:System.Windows.Forms.TreeNode>渡されるが選択された状態と<xref:System.Windows.Forms.TreeNode>を選択します。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>を持つコントロールを<xref:System.Windows.Forms.TreeNodeCollection>を含むいくつか<xref:System.Windows.Forms.TreeNode>オブジェクト。 あることも必要です、<xref:System.Windows.Forms.ComboBox>次の項目を含む:「前」、"PreviousVisible"、「次へ」、"NextVisible"、"First"および"Last"です。  
+  
+ [!code-cpp[TreeNode_Parent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Parent/CPP/treenode_parent.cpp#1)]
+ [!code-csharp[TreeNode_Parent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Parent/CS/treenode_parent.cs#1)]
+ [!code-vb[TreeNode_Parent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Parent/VB/treenode_parent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Level">
+      <MemberSignature Language="C#" Value="public int Level { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Level" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.Level" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノードの 0 から始まる深さを取得、<see cref="T:System.Windows.Forms.TreeView" />コントロール。</summary>
+        <value>内のツリー ノードの 0 から始まる深さ、<see cref="T:System.Windows.Forms.TreeView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.Level%2A>プロパティ、ルート ノードの入れ子の最初のレベルと見なされます、および 0 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツリー ノードの名前を設定します。</summary>
+        <value>A<see cref="T:System.String" />ツリー ノードの名前を表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.Name%2A>の<xref:System.Windows.Forms.TreeNode>がノードのキーでも、ノードがの一部であるとき、<xref:System.Windows.Forms.TreeNodeCollection>です。 ノードが、名前を持たない場合<xref:System.Windows.Forms.TreeNode.Name%2A>空の文字列を返します ("") です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextNode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode NextNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode NextNode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.NextNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次の兄弟のツリー ノードを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.TreeNode" />次の兄弟のツリー ノードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.NextNode%2A>は、次の兄弟<xref:System.Windows.Forms.TreeNode>で、<xref:System.Windows.Forms.TreeNodeCollection>に格納されている、<xref:System.Windows.Forms.TreeNode.Nodes%2A>ツリー ノードの親のプロパティ<xref:System.Windows.Forms.TreeNode>です。 次のツリー ノードが存在しない場合、<xref:System.Windows.Forms.TreeNode.NextNode%2A>プロパティから返される`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、適切な選択<xref:System.Windows.Forms.TreeNode>場合を決定した後、<xref:System.Windows.Forms.TreeNode>渡されるが選択された状態と<xref:System.Windows.Forms.TreeNode>を選択します。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>を持つコントロールを<xref:System.Windows.Forms.TreeNodeCollection>を含むいくつか<xref:System.Windows.Forms.TreeNode>オブジェクト。 あることも必要です、<xref:System.Windows.Forms.ComboBox>次の項目を含む:「前」、"PreviousVisible"、「次へ」、"NextVisible"、"First"および"Last"です。  
+  
+ [!code-cpp[TreeNode_Parent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Parent/CPP/treenode_parent.cpp#1)]
+ [!code-csharp[TreeNode_Parent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Parent/CS/treenode_parent.cs#1)]
+ [!code-vb[TreeNode_Parent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Parent/VB/treenode_parent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextVisibleNode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode NextVisibleNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode NextVisibleNode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.NextVisibleNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次の表示されているツリー ノードを取得します。</summary>
+        <value>A <see cref="T:System.Windows.Forms.TreeNode" /> [次へ] の表示されているツリー ノードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.NextVisibleNode%2A>子、兄弟、または別の分岐からのツリー ノードを指定できます。 次のツリー ノードが存在しない場合、<xref:System.Windows.Forms.TreeNode.NextVisibleNode%2A>プロパティから返される`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、適切な選択<xref:System.Windows.Forms.TreeNode>場合を決定した後、<xref:System.Windows.Forms.TreeNode>渡されるが選択された状態と<xref:System.Windows.Forms.TreeNode>を選択します。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>を持つコントロールを<xref:System.Windows.Forms.TreeNodeCollection>を含むいくつか<xref:System.Windows.Forms.TreeNode>オブジェクト。 あることも必要です、<xref:System.Windows.Forms.ComboBox>次の項目を含む:「前」、"PreviousVisible"、「次へ」、"NextVisible"、"First"および"Last"です。  
+  
+ [!code-cpp[TreeNode_Parent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Parent/CPP/treenode_parent.cpp#1)]
+ [!code-csharp[TreeNode_Parent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Parent/CS/treenode_parent.cs#1)]
+ [!code-vb[TreeNode_Parent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Parent/VB/treenode_parent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeFont">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font NodeFont { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font NodeFont" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.NodeFont" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツリー ノードのラベルのテキストを表示するために使用するフォントを設定します。</summary>
+        <value><see cref="T:System.Drawing.Font" />ツリー ノードのラベルのテキストの表示に使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`null`、<xref:System.Drawing.Font>が使用される、<xref:System.Windows.Forms.Control.Font%2A>のプロパティの値、<xref:System.Windows.Forms.TreeView>にこのノードが関連付けられているコントロール。  
+  
+> [!NOTE]
+>  ノードのフォントがより大きい場合、<xref:System.Windows.Forms.Control.Font%2A>プロパティの値に設定されている、<xref:System.Windows.Forms.TreeView>コントロール、ツリー ノードのラベル テキストはクリップされます。  
+  
+   
+  
+## Examples  
+ 次のコード例のサイズを変更する<xref:System.Windows.Forms.TreeNode.NodeFont%2A>を指定したサイズを調整し、<xref:System.Windows.Forms.TreeView.ItemHeight%2A>ツリー ノードの親の<xref:System.Windows.Forms.TreeView>コントロール。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>コントロールのコレクションを含む<xref:System.Windows.Forms.TreeNode>オブジェクト、および<xref:System.Windows.Forms.ComboBox>フォント サイズを格納しています。  
+  
+ [!code-cpp[TreeNode_Bounds#2](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Bounds/CPP/treenode_bounds.cpp#2)]
+ [!code-csharp[TreeNode_Bounds#2](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Bounds/CS/treenode_bounds.cs#2)]
+ [!code-vb[TreeNode_Bounds#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Bounds/VB/treenode_bounds.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Nodes">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNodeCollection Nodes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNodeCollection Nodes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.Nodes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNodeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Forms.TreeNode" />現在のツリー ノードに割り当てられたオブジェクト。</summary>
+        <value>A<see cref="T:System.Windows.Forms.TreeNodeCollection" />を現在のツリー ノードに割り当てられているツリー ノードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.Nodes%2A>プロパティは、他のコレクションを保持できる<xref:System.Windows.Forms.TreeNode>オブジェクト。 各コレクション内のツリー ノードには、<xref:System.Windows.Forms.TreeNode.Nodes%2A>プロパティを含めることができます独自<xref:System.Windows.Forms.TreeNodeCollection>です。 このツリー ノードの入れ子になったことができますしづらくなるツリー構造を移動します。 <xref:System.Windows.Forms.TreeNode.FullPath%2A>プロパティより簡単に、ツリー内の場所を判断します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、1 つから選択したツリー ノードを削除<xref:System.Windows.Forms.TreeView>し、両方のツリー ノード コレクションは読み取り専用ではない場合は別に追加します。 ときに、<xref:System.Windows.Forms.Button>がクリックされると、<xref:System.Windows.Forms.TreeView.SelectedNode%2A?displayProperty=nameWithType>が 1 つから削除<xref:System.Windows.Forms.TreeView>を使用して、<xref:System.Windows.Forms.TreeNodeCollection.Remove%2A>メソッドに他の追加と<xref:System.Windows.Forms.TreeView>を使用して、<xref:System.Windows.Forms.TreeNodeCollection.Insert%2A>メソッドです。 この例では、2 つある必要があります<xref:System.Windows.Forms.TreeView>という名前のコントロール`treeView1`と`treeView2`、および<xref:System.Windows.Forms.Button>上、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[TreeNodeCollection#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNodeCollection/CPP/treenodecollection.cpp#1)]
+ [!code-csharp[TreeNodeCollection#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNodeCollection/CS/treenodecollection.cs#1)]
+ [!code-vb[TreeNodeCollection#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNodeCollection/VB/treenodecollection.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のツリー ノードのツリー ノードの親を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.TreeNode" />現在のツリー ノードの親を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツリー ノードが、ルート レベルにある場合、<xref:System.Windows.Forms.TreeNode.Parent%2A>プロパティから返される`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.Windows.Forms.TreeNode.Text%2A>と<xref:System.Windows.Forms.TreeNode.Index%2A>プロパティの値を<xref:System.Windows.Forms.TreeNode>によって表される、<xref:System.Windows.Forms.TreeNode.Parent%2A>のプロパティ、<xref:System.Windows.Forms.TreeView.SelectedNode%2A?displayProperty=nameWithType>です。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>コントロール。 <xref:System.Windows.Forms.TreeView>は 2 つ以上のルート ノードが、それぞれ少なくとも 1 つの子ノードです。  
+  
+ [!code-cpp[Windows.Forms.TreeNode#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CPP/treenode.cpp#2)]
+ [!code-csharp[Windows.Forms.TreeNode#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CS/treenode.cs#2)]
+ [!code-vb[Windows.Forms.TreeNode#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.TreeNode/VB/treenode.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrevNode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode PrevNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode PrevNode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.PrevNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノードの前の兄弟を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.TreeNode" />前の兄弟のツリー ノードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.PrevNode%2A>は、前の兄弟<xref:System.Windows.Forms.TreeNode>で、<xref:System.Windows.Forms.TreeNodeCollection>に格納されている、<xref:System.Windows.Forms.TreeNode.Nodes%2A>ツリー ノードの親のプロパティ<xref:System.Windows.Forms.TreeNode>です。 前のツリー ノードが存在しない場合、<xref:System.Windows.Forms.TreeNode.PrevNode%2A>プロパティから返される`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、適切な選択<xref:System.Windows.Forms.TreeNode>場合を決定した後、<xref:System.Windows.Forms.TreeNode>渡されるが選択された状態と<xref:System.Windows.Forms.TreeNode>を選択します。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>を持つコントロールを<xref:System.Windows.Forms.TreeNodeCollection>を含むいくつか<xref:System.Windows.Forms.TreeNode>オブジェクト。 あることも必要です、<xref:System.Windows.Forms.ComboBox>次の項目を含む:「前」、"PreviousVisible"、「次へ」、"NextVisible"、"First"および"Last"です。  
+  
+ [!code-cpp[TreeNode_Parent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Parent/CPP/treenode_parent.cpp#1)]
+ [!code-csharp[TreeNode_Parent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Parent/CS/treenode_parent.cs#1)]
+ [!code-vb[TreeNode_Parent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Parent/VB/treenode_parent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrevVisibleNode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode PrevVisibleNode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode PrevVisibleNode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.PrevVisibleNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前の表示されているツリー ノードを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.TreeNode" />以前表示されているツリー ノードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.PrevVisibleNode%2A>子、兄弟、または別の分岐からのツリー ノードを指定できます。 前のツリー ノードが存在しない場合、<xref:System.Windows.Forms.TreeNode.PrevVisibleNode%2A>プロパティから返される`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、適切な選択<xref:System.Windows.Forms.TreeNode>場合を決定した後、<xref:System.Windows.Forms.TreeNode>渡されるが選択された状態と<xref:System.Windows.Forms.TreeNode>を選択します。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>を持つコントロールを<xref:System.Windows.Forms.TreeNodeCollection>を含むいくつか<xref:System.Windows.Forms.TreeNode>オブジェクト。 あることも必要です、<xref:System.Windows.Forms.ComboBox>次の項目を含む:「前」、"PreviousVisible"、「次へ」、"NextVisible"、"First"および"Last"です。  
+  
+ [!code-cpp[TreeNode_Parent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Parent/CPP/treenode_parent.cpp#1)]
+ [!code-csharp[TreeNode_Parent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Parent/CS/treenode_parent.cs#1)]
+ [!code-vb[TreeNode_Parent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Parent/VB/treenode_parent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.Remove" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツリー ビュー コントロールから現在のツリー ノードを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.TreeNode.Remove%2A>メソッドは、ツリーのノード、および子ツリー ノードに割り当てられている、<xref:System.Windows.Forms.TreeNode>から削除されます、<xref:System.Windows.Forms.TreeView>です。 削除した子ノードから削除されます、<xref:System.Windows.Forms.TreeView>が、このツリー ノードにまだアタッチされています。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Windows.Forms.TreeNode>ユーザーが上にマウスを右クリックしからを切り替えます展開に折りたたまれた、ユーザーは、上にマウスのホイールをクリックするとします。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>コントロール。 <xref:System.Windows.Forms.TreeView>は 2 つ以上ルート ツリー ノードが、それぞれが少なくとも 1 つの子ノードです。  
+  
+ [!code-cpp[Windows.Forms.TreeNode#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CPP/treenode.cpp#1)]
+ [!code-csharp[Windows.Forms.TreeNode#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CS/treenode.cs#1)]
+ [!code-vb[Windows.Forms.TreeNode#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.TreeNode/VB/treenode.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedImageIndex">
+      <MemberSignature Language="C#" Value="public int SelectedImageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectedImageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.SelectedImageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.TreeViewImageIndexConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Forms.RelatedImageList("TreeView.ImageList")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツリー ノードが選択された状態の場合に表示されるイメージのイメージ リスト インデックス値を設定します。</summary>
+        <value>イメージの位置を表す 0 から始まるインデックス値、<see cref="T:System.Windows.Forms.ImageList" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A>のインデックス値が値、<xref:System.Drawing.Image>に格納されている、<xref:System.Windows.Forms.ImageList>に割り当てられている、<xref:System.Windows.Forms.TreeView.ImageList%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!NOTE]
+>  既定値、<xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A>プロパティと同じ、<xref:System.Windows.Forms.TreeView.SelectedImageIndex%2A>のプロパティ、<xref:System.Windows.Forms.TreeView>コントロールによって、<xref:System.Windows.Forms.TreeNode>に割り当てられます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成し、割り当てます、<xref:System.Windows.Forms.ImageList>を<xref:System.Windows.Forms.TreeView>コントロールおよび塗りつぶし、<xref:System.Windows.Forms.TreeView>で制御<xref:System.Windows.Forms.TreeNode>オブジェクト。 ツリー ノードからイメージを割り当てられた、<xref:System.Windows.Forms.ImageList>ツリー ノードが選択されているか、選択されていない状態で表示されます。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>を含む、 <xref:System.Windows.Forms.TreeView>、および<xref:System.Collections.ArrayList>を含む`Customer`オブジェクトが含まれる`Order`オブジェクト。 必要、`Customer`と`Order`オブジェクトを定義します。  
+  
+ [!code-cpp[TreeNode_TreeNode#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_TreeNode/CPP/treenode_treenode.cpp#1)]
+ [!code-csharp[TreeNode_TreeNode#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_TreeNode/CS/treenode_treenode.cs#1)]
+ [!code-vb[TreeNode_TreeNode#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_TreeNode/VB/treenode_treenode.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedImageKey">
+      <MemberSignature Language="C#" Value="public string SelectedImageKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedImageKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.SelectedImageKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.TreeViewImageKeyConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Forms.RelatedImageList("TreeView.ImageList")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または選択した状態にあるときにツリー ノードに表示されるイメージのキーを設定します。</summary>
+        <value>ツリー ノードが選択されている状態を表示するイメージのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるイメージのキーが含まれている、 <xref:System.Windows.Forms.TreeView.ImageList%2A> 、親<xref:System.Windows.Forms.TreeView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="protected virtual void Serialize (System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Serialize(class System.Runtime.Serialization.SerializationInfo si, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.Serialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="si" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="si"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> を説明する <see cref="T:System.Windows.Forms.TreeNode" />。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" />シリアル化中に、ストリームの状態を示す</param>
+        <summary>状態を保存、<see cref="T:System.Windows.Forms.TreeNode" />を指定した<see cref="T:System.Runtime.Serialization.SerializationInfo" />です。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービス。 関連する列挙。<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="StateImageIndex">
+      <MemberSignature Language="C#" Value="public int StateImageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StateImageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.StateImageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.NoneExcludedImageIndexConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Forms.RelatedImageList("TreeView.StateImageList")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の状態を示すために使用されるイメージのインデックス、<see cref="T:System.Windows.Forms.TreeNode" />ときに、親<see cref="T:System.Windows.Forms.TreeView" />がその<see cref="P:System.Windows.Forms.TreeView.CheckBoxes" />プロパティに設定<see langword="false" />です。</summary>
+        <value>状態を示すために使用されるイメージのインデックス、<see cref="T:System.Windows.Forms.TreeNode" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるイメージのインデックスが含まれている、 <xref:System.Windows.Forms.TreeView.StateImageList%2A> 、親<xref:System.Windows.Forms.TreeView>コントロール。  
+  
+ 場合、親<xref:System.Windows.Forms.TreeView>が有効な場合、チェック ボックス、<xref:System.Windows.Forms.TreeNode.StateImageIndex%2A>は無視されますされ、ノードの最初または 2 番目の画像が表示されます、 <xref:System.Windows.Forms.TreeView.StateImageList%2A> 、親で設定<xref:System.Windows.Forms.TreeView>をそれぞれオフまたはオンの状態を示します。 切り替え、<xref:System.Windows.Forms.TreeNode.Checked%2A>プロパティの値は影響しません、<xref:System.Windows.Forms.TreeNode.StateImageIndex%2A>です。  
+  
+ <xref:System.Windows.Forms.TreeNode.StateImageIndex%2A> -1 を返します設定されていない場合。 <xref:System.Windows.Forms.TreeNode.StateImageKey%2A>と<xref:System.Windows.Forms.TreeNode.StateImageIndex%2A>プロパティが相互に排他的で、もう一方は無視が設定されている場合を意味します。 設定した場合、 <xref:System.Windows.Forms.TreeNode.StateImageKey%2A> 、プロパティ、<xref:System.Windows.Forms.TreeNode.StateImageIndex%2A>プロパティが-1 に自動的に設定します。 または、設定した場合<xref:System.Windows.Forms.TreeNode.StateImageIndex%2A>、<xref:System.Windows.Forms.TreeNode.StateImageKey%2A>空の文字列に自動的に設定されている ("") です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定されたインデックスは、-1 未満か 14 より大きいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StateImageKey">
+      <MemberSignature Language="C#" Value="public string StateImageKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StateImageKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.StateImageKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ImageKeyConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Forms.RelatedImageList("TreeView.StateImageList")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の状態を示すために使用されるイメージのキー、<see cref="T:System.Windows.Forms.TreeNode" />ときに、親<see cref="T:System.Windows.Forms.TreeView" />がその<see cref="P:System.Windows.Forms.TreeView.CheckBoxes" />プロパティに設定<see langword="false" />です。</summary>
+        <value>状態を示すために使用されるイメージのキー、<see cref="T:System.Windows.Forms.TreeNode" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるイメージのキーが含まれている、 <xref:System.Windows.Forms.TreeView.StateImageList%2A> 、親<xref:System.Windows.Forms.TreeView>コントロール。  
+  
+ 場合、親<xref:System.Windows.Forms.TreeView>が有効な場合、チェック ボックス、<xref:System.Windows.Forms.TreeNode.StateImageKey%2A>は無視されますされ、ノードの最初または 2 番目の画像が表示されます、 <xref:System.Windows.Forms.TreeView.StateImageList%2A> 、親で設定<xref:System.Windows.Forms.TreeView>をそれぞれオフまたはオンの状態を示します。 切り替え、<xref:System.Windows.Forms.TreeNode.Checked%2A>プロパティの値は影響しません、<xref:System.Windows.Forms.TreeNode.StateImageKey%2A>です。  
+  
+ <xref:System.Windows.Forms.TreeNode.StateImageKey%2A>と<xref:System.Windows.Forms.TreeNode.StateImageIndex%2A>プロパティが相互に排他的で、もう一方は無視が設定されている場合を意味します。 設定した場合、 <xref:System.Windows.Forms.TreeNode.StateImageKey%2A> 、プロパティ、<xref:System.Windows.Forms.TreeNode.StateImageIndex%2A>プロパティが-1 に自動的に設定します。 または、設定した場合<xref:System.Windows.Forms.TreeNode.StateImageIndex%2A>、<xref:System.Windows.Forms.TreeNode.StateImageKey%2A>空の文字列に自動的に設定されている ("") です。 設定する必要があります、 <xref:System.Windows.Forms.TreeNode.StateImageKey%2A> 0 ~ 14 の範囲に対応するインデックスを持つイメージにします。 設定することができます、<xref:System.Windows.Forms.TreeNode.StateImageKey%2A>インデックスを含むイメージ (、例外はスローされません) 14 では、イメージより大きい値が表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo si, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="si" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="si">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />をシリアル化するデータを含む、<see cref="T:System.Windows.Forms.TreeNode" />です。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />このシリアル化の変換先の情報を格納します。</param>
+        <summary>シリアル化情報オブジェクトを、<see cref="T:System.Windows.Forms.TreeNode" /> のシリアル化に必要なデータで事前設定します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービス。 関連する列挙。<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツリー ノードに関するデータを格納するオブジェクトを設定します。</summary>
+        <value><see cref="T:System.Object" />ツリー ノードに関するデータを格納します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どの<xref:System.Object>派生型は、このプロパティに割り当てることができます。 このプロパティは、Windows フォーム デザイナーで設定されていますが、テキストのみが指定できます。  
+  
+> [!CAUTION]
+>  <xref:System.Windows.Forms.TreeNode.Clone%2A>メソッドは、ノードの簡易コピーを実行します。 場合の値、<xref:System.Windows.Forms.TreeNode.Tag%2A>プロパティは、参照型で、元と複製されたコピーの両方が、同じ 1 つのインスタンスを指す、<xref:System.Windows.Forms.TreeNode.Tag%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ツリー ノードの子の割り当てをルート ツリー ノードを作成します。 各子ツリー ノード`Customer`内のオブジェクト、<xref:System.Collections.ArrayList>の各ルート ツリー ノードと子ツリー ノードに追加された`Order`に割り当てられているオブジェクト、`Customer`オブジェクト。 `Customer`にオブジェクトが割り当てられた、<xref:System.Windows.Forms.TreeNode.Tag%2A>プロパティ、および、ツリー ノードを表す`Customer`でオブジェクトが表示されます<xref:System.Drawing.Color.Orange%2A>テキスト。 この例では、ある必要があります、`Customer`と`Order`定義、オブジェクト、<xref:System.Windows.Forms.TreeView>の control 権限、 <xref:System.Windows.Forms.Form>、および<xref:System.Collections.ArrayList>という名前`customerArray`を格納している`Customer`オブジェクト。  
+  
+ [!code-cpp[TreeNode_Bounds#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Bounds/CPP/treenode_bounds.cpp#1)]
+ [!code-csharp[TreeNode_Bounds#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Bounds/CS/treenode_bounds.cs#1)]
+ [!code-vb[TreeNode_Bounds#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Bounds/VB/treenode_bounds.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツリー ノードのラベルに表示されるテキストを設定します。</summary>
+        <value>ツリー ノードのラベルに表示されるテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字の最大数、<xref:System.Windows.Forms.TreeNode>できます表示は 259 です。 場合、<xref:System.String>を持つ複数の 259 文字がこのプロパティに割り当てられている、最初の 259 文字のみが表示されます。  
+  
+ 場合、ユーザーがこのプロパティを設定できません、 <xref:System.Windows.Forms.TreeView.LabelEdit%2A> 、親<xref:System.Windows.Forms.TreeView>に設定されている`false`です。 このプロパティを明示的に設定する代替手段は、のいずれかを使用して、ツリー ノードを作成するのには、<xref:System.Windows.Forms.TreeNode.%23ctor%2A>コンス トラクターを表す文字列パラメーターを持つ、<xref:System.Windows.Forms.TreeNode.Text%2A>プロパティです。 ラベルは横に表示されて、<xref:System.Windows.Forms.TreeNode>画像のいずれかが表示される場合。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ツリー ノードの子の割り当てをルート ツリー ノードを作成します。 各子ツリー ノード`Customer`内のオブジェクト、<xref:System.Collections.ArrayList>の各ルート ツリー ノードと子ツリー ノードに追加された`Order`に割り当てられているオブジェクト、`Customer`オブジェクト。 `Customer`にオブジェクトが割り当てられた、<xref:System.Windows.Forms.TreeNode.Tag%2A>プロパティ、および、ツリー ノードを表す`Customer`でオブジェクトが表示されます<xref:System.Drawing.Color.Orange%2A>テキスト。 この例では、ある必要があります、`Customer`と`Order`定義、オブジェクト、<xref:System.Windows.Forms.TreeView>の control 権限、 <xref:System.Windows.Forms.Form>、および<xref:System.Collections.ArrayList>という名前`customerArray`を格納している`Customer`オブジェクト。  
+  
+ [!code-cpp[TreeNode_Bounds#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Bounds/CPP/treenode_bounds.cpp#1)]
+ [!code-csharp[TreeNode_Bounds#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Bounds/CS/treenode_bounds.cs#1)]
+ [!code-vb[TreeNode_Bounds#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Bounds/VB/treenode_bounds.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Toggle">
+      <MemberSignature Language="C#" Value="public void Toggle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Toggle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.Toggle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ツリー ノードを展開または折りたたみの状態を切り替えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツリー ノードが展開されるか、折りたたまれている、現在の状態の反対側の状態に切り替えられます。  
+  
+> [!NOTE]
+>  状態、<xref:System.Windows.Forms.TreeNode>が永続化されます。 たとえば、次のレベルの子ノードが折りたたまれていない以前は、ときに、<xref:System.Windows.Forms.TreeNode.Expand%2A>メソッドが呼び出されると、以前に展開された状態で子ノードが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Windows.Forms.TreeNode>ユーザーが上にマウスを右クリックしからを切り替えます展開に折りたたまれた、ユーザーは、上にマウスのホイールをクリックするとします。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>コントロール。 <xref:System.Windows.Forms.TreeView>は 2 つ以上ルート ツリー ノードが、それぞれが少なくとも 1 つの子ノードです。  
+  
+ [!code-cpp[Windows.Forms.TreeNode#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CPP/treenode.cpp#1)]
+ [!code-csharp[Windows.Forms.TreeNode#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.TreeNode/CS/treenode.cs#1)]
+ [!code-vb[Windows.Forms.TreeNode#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.TreeNode/VB/treenode.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipText">
+      <MemberSignature Language="C#" Value="public string ToolTipText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTipText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.ToolTipText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ポインターを置くと表示されるテキストを設定、<see cref="T:System.Windows.Forms.TreeNode" />です。</summary>
+        <value>マウス ポインターを置くと表示されるテキストを取得、<see cref="T:System.Windows.Forms.TreeNode" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する必要があります、 <xref:System.Windows.Forms.TreeView.ShowNodeToolTips%2A> 、親<xref:System.Windows.Forms.TreeView>に`true`の<xref:System.Windows.Forms.TreeNode.ToolTipText%2A>実行時に表示します。  
+  
+ 場合、<xref:System.Windows.Forms.TreeView>コントロールがツールヒントに持ちも含まれています、<xref:System.Windows.Forms.TreeNode>を持つ、 <xref:System.Windows.Forms.ToolTip>、のみ、<xref:System.Windows.Forms.ToolTip>のノードが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.TreeNode.ToolTipText%2A>と<xref:System.Windows.Forms.TreeView.ShowNodeToolTips%2A>プロパティです。 この例を実行するには、Windows フォームと呼び出しに、次のコードを貼り付けます`InitializeTreeViewWithToolTips`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。  
+  
+ [!code-csharp[System.Windows.Forms.TreeViewWhidbeyMembers#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TreeViewWhidbeyMembers/CS/Form1.cs#7)]
+ [!code-vb[System.Windows.Forms.TreeViewWhidbeyMembers#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TreeViewWhidbeyMembers/VB/Form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeNode.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TreeView">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeView TreeView { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeView TreeView" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeNode.TreeView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ビューにツリー ノードが割り当てられている親を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.TreeView" />ツリー ノードが、割り当てられている親ツリー ビューを表すまたは<see langword="null" />ノードがツリー ビューに割り当てられていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、適切な選択<xref:System.Windows.Forms.TreeNode>場合を決定した後、<xref:System.Windows.Forms.TreeNode>渡されるが選択された状態と<xref:System.Windows.Forms.TreeNode>を選択します。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>で、<xref:System.Windows.Forms.TreeView>を持つコントロールを<xref:System.Windows.Forms.TreeNodeCollection>を含むいくつか<xref:System.Windows.Forms.TreeNode>オブジェクト。 あることも必要です、<xref:System.Windows.Forms.ComboBox>次の項目を含む:「前」、"PreviousVisible"、「次へ」、"NextVisible"、"First"および"Last"です。  
+  
+ [!code-cpp[TreeNode_Parent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeNode_Parent/CPP/treenode_parent.cpp#1)]
+ [!code-csharp[TreeNode_Parent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeNode_Parent/CS/treenode_parent.cs#1)]
+ [!code-vb[TreeNode_Parent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeNode_Parent/VB/treenode_parent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

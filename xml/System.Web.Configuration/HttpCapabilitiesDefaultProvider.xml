@@ -1,0 +1,191 @@
+<Type Name="HttpCapabilitiesDefaultProvider" FullName="System.Web.Configuration.HttpCapabilitiesDefaultProvider">
+  <TypeSignature Language="C#" Value="public class HttpCapabilitiesDefaultProvider : System.Web.Configuration.HttpCapabilitiesProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpCapabilitiesDefaultProvider extends System.Web.Configuration.HttpCapabilitiesProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HttpCapabilitiesDefaultProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Configuration.HttpCapabilitiesProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>既定の拡張機能、 <see cref="T:System.Web.Configuration.HttpCapabilitiesProvider" /> ASP.NET に含まれているクラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpCapabilitiesDefaultProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesDefaultProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.HttpCapabilitiesDefaultProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpCapabilitiesDefaultProvider (System.Web.Configuration.HttpCapabilitiesDefaultProvider parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.Configuration.HttpCapabilitiesDefaultProvider parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesDefaultProvider.#ctor(System.Web.Configuration.HttpCapabilitiesDefaultProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Web.Configuration.HttpCapabilitiesDefaultProvider" />
+      </Parameters>
+      <Docs>
+        <param name="parent"><see cref="T:System.Web.Configuration.HttpCapabilitiesDefaultProvider" />新しいインスタンスを初期化するために使用するインスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.HttpCapabilitiesDefaultProvider" />指定されたインスタンスの値を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDependency">
+      <MemberSignature Language="C#" Value="public void AddDependency (string variable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddDependency(string variable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesDefaultProvider.AddDependency(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="variable" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="variable">使用してブラウザーの機能の情報を解析する文字列。</param>
+        <summary>HTTP 要求を使用してブラウザーの機能の情報を解析する文字列を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって作成されたコレクションに追加、`use`の子要素、 `browserCaps` Web.config ファイルの要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRuleList">
+      <MemberSignature Language="C#" Value="public virtual void AddRuleList (System.Collections.ArrayList ruleList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddRuleList(class System.Collections.ArrayList ruleList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesDefaultProvider.AddRuleList(System.Collections.ArrayList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ruleList" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="ruleList">ブラウザーの定義を変更する検索文字列。</param>
+        <summary>ブラウザーの定義を変更する検索文字列を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって作成されたコレクションに追加、`filter`の子要素、 `browserCaps` Web.config ファイルの要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheTime">
+      <MemberSignature Language="C#" Value="public TimeSpan CacheTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan CacheTime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesDefaultProvider.CacheTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または保持する秒単位で時間の長さを設定、<see cref="T:System.Web.HttpBrowserCapabilities" />キャッシュ内のオブジェクト。</summary>
+        <value>保持する秒単位で時間の長さ、<see cref="T:System.Web.HttpBrowserCapabilities" />キャッシュ内のオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBrowserCapabilities">
+      <MemberSignature Language="C#" Value="public override System.Web.HttpBrowserCapabilities GetBrowserCapabilities (System.Web.HttpRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.HttpBrowserCapabilities GetBrowserCapabilities(class System.Web.HttpRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesDefaultProvider.GetBrowserCapabilities(System.Web.HttpRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpBrowserCapabilities</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequest" />
+      </Parameters>
+      <Docs>
+        <param name="request"><see cref="T:System.Web.HttpRequest" /> オブジェクト。</param>
+        <summary>取得、 <see cref="T:System.Web.HttpBrowserCapabilities" /> 、指定されたオブジェクト<see cref="T:System.Web.HttpRequest" />オブジェクト。</summary>
+        <returns><see cref="T:System.Web.HttpBrowserCapabilities" />オブジェクトに対して、<see cref="T:System.Web.HttpRequest" />で渡されたオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResultType">
+      <MemberSignature Language="C#" Value="public Type ResultType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ResultType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesDefaultProvider.ResultType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の解析結果を保持するために使用されるクラスの種類、 <see langword="browserCap" /> Web.config ファイルの要素。</summary>
+        <value>解析の結果を保持するために使用されるクラスの種類、 <see langword="browserCaps" /> Web.config ファイルの要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに対応、`result`の子要素、 `browserCaps` Web.config ファイルの要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserAgentCacheKeyLength">
+      <MemberSignature Language="C#" Value="public int UserAgentCacheKeyLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 UserAgentCacheKeyLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesDefaultProvider.UserAgentCacheKeyLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはのキャッシュを使用するユーザー エージェント文字列の文字数を設定、<see cref="T:System.Web.HttpBrowserCapabilities" />オブジェクト。</summary>
+        <value>キャッシュを使用する指定されたユーザー エージェント文字列から文字の数、<see cref="T:System.Web.HttpBrowserCapabilities" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

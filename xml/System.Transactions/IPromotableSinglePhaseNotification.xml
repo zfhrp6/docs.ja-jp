@@ -1,0 +1,157 @@
+<Type Name="IPromotableSinglePhaseNotification" FullName="System.Transactions.IPromotableSinglePhaseNotification">
+  <TypeSignature Language="C#" Value="public interface IPromotableSinglePhaseNotification : System.Transactions.ITransactionPromoter" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPromotableSinglePhaseNotification implements class System.Transactions.ITransactionPromoter" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.IPromotableSinglePhaseNotification" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Transactions.ITransactionPromoter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>リソース マネージャーの内部非分散トランザクションのコミット代理として機能するオブジェクトについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 昇格可能参加リスト (PSPE) は、所有権を取得するトランザクションのトランザクションに参加している唯一のエンティティである場合、データベースなどのリソースを許可します。 その後、必要な場合は、<xref:System.Transactions>インフラストラクチャは、msdtc トランザクションをエスカレートもできます。 詳細については、次を参照してください。[最適化を使用して 1 つのフェーズをコミットし、昇格可能な 1 つのフェーズ通知](http://msdn.microsoft.com/en-us/653d51d1-b4bf-4e34-9a6f-aec073f0f5bb)です。  
+  
+ このインターフェイスを実装するリソース マネージャーで内部の非分散トランザクションに参加リストへのコミットの制御の委任、<xref:System.Transactions>を介してトランザクション、<xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A>メソッドを<xref:System.Transactions.Transaction>クラスです。  
+  
+ 場合、<xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=nameWithType>メソッドが呼び出されると、このインターフェイスの実装が伝達トークンの形式での分散トランザクションを生成しを返す必要があります<xref:System.Transactions>です。  
+  
+ 使用して、トランザクションの参加者としてこのインターフェイスを実装するオブジェクトを登録した後、<xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A>メソッド、トランザクション マネージャー、通知、参加要素、トランザクションの昇格、コミット、またはロールバックを呼び出すことによって、<xref:System.Transactions.ITransactionPromoter.Promote%2A>メソッド、<xref:System.Transactions.IPromotableSinglePhaseNotification.SinglePhaseCommit%2A>メソッド、または<xref:System.Transactions.IPromotableSinglePhaseNotification.Rollback%2A>オブジェクトのメソッドです。  
+  
+ 詳細については、次を参照してください。[最適化を使用して 1 つのフェーズをコミットし、昇格可能な 1 つのフェーズ通知](http://msdn.microsoft.com/en-us/653d51d1-b4bf-4e34-9a6f-aec073f0f5bb)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.IPromotableSinglePhaseNotification.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクション参加要素登録リストが正常に完了したことを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化ロジックのトランザクションに参加する参加しているオブジェクトの準備が必要な場合は、このメソッドの代わりに、コンス トラクター内にロジックを実装することをお勧めします。 この方法では、初期化は、オブジェクトが正常にトランザクションの一部として参加している場合にのみに発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Transactions.TransactionException">参加させる、またはトランザクションをシリアル化しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Rollback">
+      <MemberSignature Language="C#" Value="public void Rollback (System.Transactions.SinglePhaseEnlistment enlistment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Rollback(class System.Transactions.SinglePhaseEnlistment enlistment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.IPromotableSinglePhaseNotification.Rollback(System.Transactions.SinglePhaseEnlistment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="singlePhaseEnlistment" Type="System.Transactions.SinglePhaseEnlistment" />
+      </Parameters>
+      <Docs>
+        <param name="enlistment">To be added.</param>
+        <summary>トランザクションのロールバックを参加しているオブジェクトに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この通知を受け取る、PSPE 必要があります常に内部トランザクションしでし、応答はロールバック、<xref:System.Transactions.SinglePhaseEnlistment.Aborted%2A>コールバック メソッドを`singlePhaseEnlistment`パラメーター。  PSPE で返信する場合<xref:System.Transactions.SinglePhaseEnlistment.Committed%2A>または<xref:System.Transactions.SinglePhaseEnlistment.InDoubt%2A>、<xref:System.InvalidOperationException>コールバックからスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SinglePhaseCommit">
+      <MemberSignature Language="C#" Value="public void SinglePhaseCommit (System.Transactions.SinglePhaseEnlistment enlistment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SinglePhaseCommit(class System.Transactions.SinglePhaseEnlistment enlistment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.IPromotableSinglePhaseNotification.SinglePhaseCommit(System.Transactions.SinglePhaseEnlistment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="singlePhaseEnlistment" Type="System.Transactions.SinglePhaseEnlistment" />
+      </Parameters>
+      <Docs>
+        <param name="enlistment">To be added.</param>
+        <summary>参加していることを通知オブジェクトのトランザクションがコミットされていること。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、トランザクションをコミットする必要が参加しているオブジェクトを通知します。  
+  
+ `singlePhaseEnlistment`パラメーターには、トランザクション マネージャーがトランザクションの制御を委任するために、トランザクションを通知するには、このインターフェイスの実装、トランザクションの結果のマネージャーを許可するコールバックが含まれています。 昇格されたトランザクションの場合は、トランザクション マネージャーは、トランザクションの結果をリッスンし、送信される応答をオーバーライドします。  
+  
+ この通知を受け取ると、リソース マネージャーがトランザクションのコミットの内部 (エスカレートされている場合は、分散トランザクション)、およびに対して呼び出すコールバック メソッドのいずれかを試行、`singlePhaseEnlistment`パラメーターは、トランザクションのコミットの結果に基づきます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

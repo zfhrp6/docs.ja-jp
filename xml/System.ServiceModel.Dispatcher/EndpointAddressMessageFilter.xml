@@ -1,0 +1,257 @@
+<Type Name="EndpointAddressMessageFilter" FullName="System.ServiceModel.Dispatcher.EndpointAddressMessageFilter">
+  <TypeSignature Language="C#" Value="public class EndpointAddressMessageFilter : System.ServiceModel.Dispatcher.MessageFilter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EndpointAddressMessageFilter extends System.ServiceModel.Dispatcher.MessageFilter" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Dispatcher.MessageFilter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定したエンドポイント アドレスの要件をメッセージが満たすかどうかを検査するクエリを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィルターは、メッセージが特定のエンドポイント アドレスを満たすかどうかを検査します。 <xref:System.ServiceModel.EndpointAddress> オブジェクトは、URI とオプションのアドレス指定ヘッダーのコレクションからなります。 アドレス指定ヘッダーとメッセージ ヘッダーは、等価性の比較のために正規化されます。 <xref:System.ServiceModel.EndpointAddress> 内に同じパラメーターが 2 回以上現れる場合は、少なくともそれと同じ回数だけ、対応するヘッダーがメッセージ内に出現する必要があります。  
+  
+ IIS と基になるファイル システム (NTFS または FAT) は大文字と小文字を区別しません。 このクラスによって実行される URI の比較も、大文字と小文字を区別しません。 したがって、たとえば、http://www.microsoft.com と http://WWW.microsoft.com では評価結果が等しくなります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EndpointAddressMessageFilter (System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.#ctor(System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address">メッセージの判定に使用される <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <summary>メッセージを検査する対象のアドレスを指定して、<see cref="T:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EndpointAddressMessageFilter (System.ServiceModel.EndpointAddress address, bool includeHostNameInComparison);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.EndpointAddress address, bool includeHostNameInComparison) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.#ctor(System.ServiceModel.EndpointAddress,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="includeHostNameInComparison" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="address">メッセージの判定に使用される <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <param name="includeHostNameInComparison">
+          エンドポイント アドレスの比較にホスト名が含まれている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービスをローカル コンピューターにインストールしている場合は、次のようなさまざまな参照方法があります。  
+  
+-   http://localhost/foo.svc  
+  
+-   http://192.168.1.100/foo.svc  
+  
+-   http://[コンピューター名]/foo.svc  
+  
+-   http://[コンピューター名].[会社].com/foo.svc  
+  
+ `includeHostNameInComparison` パラメーターの値が `false` の場合、上記の URI はすべて同じエンドポイントに解決されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress Address { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointAddress Address" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter" /> がメッセージを検査する対象のアドレスを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.EndpointAddress" /> がメッセージを比較するとき基準とする <see cref="T:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFilterTable&lt;FilterData&gt;">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Dispatcher.IMessageFilterTable&lt;FilterData&gt; CreateFilterTable&lt;FilterData&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.ServiceModel.Dispatcher.IMessageFilterTable`1&lt;!!FilterData&gt; CreateFilterTable&lt;FilterData&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.CreateFilterTable``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.IMessageFilterTable&lt;FilterData&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="FilterData" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="FilterData">テーブル内のフィルターに関連付けられたデータ。</typeparam>
+        <summary>メッセージを複数のエンドポイント アドレスについて同時に検査する新しいフィルター テーブルを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Dispatcher.IMessageFilterTable`1" /> および対応する <see cref="T:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter" /> を格納できる <paramref name="FilterData" /> インターフェイスを実装するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、特定のメッセージ エンドポイントの判定に最適化された <xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601> のインスタンスを返します。  
+  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.MessageFilterTable%601> によって使用されることを想定しています。 <xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601> コンストラクターを使用してフィルター テーブル インスタンスを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeHostNameInComparison">
+      <MemberSignature Language="C#" Value="public bool IncludeHostNameInComparison { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeHostNameInComparison" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.IncludeHostNameInComparison" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイント アドレスの比較にホスト名が含まれるかどうかを示す値を取得します。</summary>
+        <value>
+          エンドポイント アドレスの比較にホスト名が含まれている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービスをローカル コンピューターにインストールしている場合は、次のようなさまざまな参照方法があります。  
+  
+-   http://localhost/foo.svc  
+  
+-   http://192.168.1.100/foo.svc  
+  
+-   http://[コンピューター名]/foo.svc  
+  
+-   http://[コンピューター名].[会社].com/foo.svc  
+  
+ このプロパティの既定値は `false` であるため、プロパティを変更しない限り、上記の URI はすべて同じエンドポイントに解決されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Match">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>メッセージまたはバッファー内のメッセージがエンドポイント フィルターの基準を満たすかどうかを検査します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.Match%2A> メソッドには 2 つのオーバーロードがあります。<xref:System.ServiceModel.Channels.MessageBuffer> パラメーターを受け取るオーバーロードは、一致しているかどうかを判定するためにメッセージの本文を確認できますが、<xref:System.ServiceModel.Channels.Message> パラメーターを受け取るオーバーロードはメッセージの本文を確認できません。  
+  
+ <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.Match%2A> では、メッセージ本文の内容を判定に使用しないため、これらの 2 つのメソッドは等価です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public override bool Match (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Match(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.Match(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" /> オブジェクト。</param>
+        <summary>メッセージが指定したエンドポイント アドレスを満たすかどうかを検査します。</summary>
+        <returns>
+          <see langword="true" /> オブジェクトがフィルターに指定されたエンドポイント アドレスとの一致条件を満たす場合は <see cref="T:System.ServiceModel.Channels.Message" />、そうでない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの 2 つのオーバーロードは、どちらもメッセージ ヘッダーだけを調べるため、等価です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public override bool Match (System.ServiceModel.Channels.MessageBuffer messageBuffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Match(class System.ServiceModel.Channels.MessageBuffer messageBuffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.Match(System.ServiceModel.Channels.MessageBuffer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+      </Parameters>
+      <Docs>
+        <param name="messageBuffer">テスト対象の <see cref="T:System.ServiceModel.Channels.MessageBuffer" /> オブジェクト。</param>
+        <summary>バッファー内のメッセージが指定したエンドポイント アドレスを満たすかどうかを検査します。</summary>
+        <returns>
+          <see langword="true" /> オブジェクトがエンドポイント アドレスとの一致条件を満たす場合は <see cref="T:System.ServiceModel.Channels.MessageBuffer" />、そうでない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの 2 つのオーバーロードは、どちらもメッセージ ヘッダーだけを調べるため、等価です。 このオーバーロードは、`messageBuffer` をメッセージに変換します。したがって、メッセージは利用できないが、`messageBuffer` は利用可能な場合に使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="messageBuffer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

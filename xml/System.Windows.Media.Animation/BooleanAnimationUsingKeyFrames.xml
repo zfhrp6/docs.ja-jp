@@ -1,0 +1,519 @@
+<Type Name="BooleanAnimationUsingKeyFrames" FullName="System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames">
+  <TypeSignature Language="C#" Value="public class BooleanAnimationUsingKeyFrames : System.Windows.Media.Animation.BooleanAnimationBase, System.Windows.Markup.IAddChild, System.Windows.Media.Animation.IKeyFrameAnimation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BooleanAnimationUsingKeyFrames extends System.Windows.Media.Animation.BooleanAnimationBase implements class System.Windows.Markup.IAddChild, class System.Windows.Media.Animation.IKeyFrameAnimation" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.BooleanAnimationBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Media.Animation.IKeyFrameAnimation</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("KeyFrames")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>受け取るプロパティの値をアニメーション化、 <see cref="T:System.Boolean" /> 、一連のに沿って<see cref="P:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.KeyFrames" />経由で、指定した<see cref="P:System.Windows.Media.Animation.Timeline.Duration" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キー フレーム アニメーションのターゲット値はその<xref:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.KeyFrames%2A>のコレクションを格納するプロパティ<xref:System.Windows.Media.Animation.BooleanKeyFrame>オブジェクト。 各<xref:System.Windows.Media.Animation.BooleanKeyFrame>独自のターゲットでアニメーションのセグメントを定義<xref:System.Windows.Media.Animation.BooleanKeyFrame.Value%2A>と<xref:System.Windows.Media.Animation.BooleanKeyFrame.KeyTime%2A>です。 アニメーションの実行時に進行状況に合わせて 1 つのキー値から指定した位置にキー時刻。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BooleanAnimationUsingKeyFrames ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="protected virtual void AddChild (object child);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddChild(object child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="child">この <see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" /> の子として追加されるオブジェクト。</param>
+        <summary>子 <see cref="T:System.Windows.Media.Animation.BooleanKeyFrame" /> をこの <see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" /> に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、<xref:System.Windows.Media.Animation.BooleanKeyFrame>するオブジェクトの直接の子、<xref:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames>マークアップ内のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パラメーター <paramref name="child" /> が <see cref="T:System.Windows.Media.Animation.BooleanKeyFrame" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddText">
+      <MemberSignature Language="C#" Value="protected virtual void AddText (string childText);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddText(string childText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="childText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="childText">追加するテキスト、<see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />です。</param>
+        <summary>これの子としてテキスト文字列を追加<see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames>受け付けないテキスト、子としてため、このメソッドが発生、`InvalididOperationException`派生クラスが追加されるテキストを許可するこの動作をオーバーライドしない限り、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">A<see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />受け付けないテキスト、子としてため、このメソッドは、派生クラスが追加されるテキストを許可するこの動作をオーバーライドしない限り、この例外が発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.CloneCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する <see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />。</param>
+        <summary>このインスタンスを指定された <see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" /> の詳細なコピーにします。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.Clone%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの変更可能なコピーを作成するには<xref:System.Windows.Freezable.Clone%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValueCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCurrentValueCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCurrentValueCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.CloneCurrentValueCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する <see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />。</param>
+        <summary>現在のプロパティ値を使用して、このインスタンスを、指定した <see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" /> の変更可能な詳細コピーにします。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.CloneCurrentValue%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの変更可能なコピーを作成するには<xref:System.Windows.Freezable.CloneCurrentValue%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValueCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" /> の新しいインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" /> の新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FreezeCore">
+      <MemberSignature Language="C#" Value="protected override bool FreezeCore (bool isChecking);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool FreezeCore(bool isChecking) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.FreezeCore(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isChecking" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isChecking">
+          <see langword="true" />このメソッドは、このインスタンスが固定されるかどうかを簡単に確認する必要がある場合。 <see langword="false" />このメソッドが呼び出されたときに、このインスタンスは自身を固定実際にする必要がある場合。</param>
+        <summary>このインスタンス<see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />不可能な状態のオブジェクトまたは決定するかどうか、変更不可能にできる.</summary>
+        <returns>場合<paramref name="isChecking" />が true の場合、このメソッドが戻る<see langword="true" />場合、このオブジェクトをできる読み取り専用、または<see langword="false" />読み取り専用にできない場合。 場合<paramref name="isChecking" />が false の場合、このメソッドが戻る<see langword="true" />このオブジェクトは読み取り専用では今すぐ場合、または<see langword="false" />かどうかにできない読み取り専用で、このオブジェクトの固定された状態を変更する始めたことの副作用です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetAsFrozenCore (System.Windows.Freezable source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetAsFrozenCore(class System.Windows.Freezable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.GetAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />クローンを作成するオブジェクト。</param>
+        <summary>このインスタンスの指定した<see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。 これらのプロパティには、データ バインディングまたはリソースの参照が含まれている場合ことに注意して<xref:System.Windows.Freezable.GetAsFrozen%2A>に失敗する、オブジェクトを圧縮しようとしているとスローされます、<xref:System.InvalidOperationException>です。  
+  
+ このメソッドは、<xref:System.Windows.Freezable.GetAsFrozen%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの固定コピーを作成するには<xref:System.Windows.Freezable.GetAsFrozen%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.GetAsFrozenCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetCurrentValueAsFrozenCore (System.Windows.Freezable source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetCurrentValueAsFrozenCore(class System.Windows.Freezable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="source">コピーし、固定する <see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />。</param>
+        <summary>このインスタンスの指定された固定された複製<see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />です。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの固定コピーを作成するには<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.GetCurrentValueAsFrozenCore%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueCore">
+      <MemberSignature Language="C#" Value="protected override sealed bool GetCurrentValueCore (bool defaultOriginValue, bool defaultDestinationValue, System.Windows.Media.Animation.AnimationClock animationClock);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool GetCurrentValueCore(bool defaultOriginValue, bool defaultDestinationValue, class System.Windows.Media.Animation.AnimationClock animationClock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.GetCurrentValueCore(System.Boolean,System.Boolean,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultOriginValue" Type="System.Boolean" />
+        <Parameter Name="defaultDestinationValue" Type="System.Boolean" />
+        <Parameter Name="animationClock" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="defaultOriginValue">アニメーションに独自の明示的な開始値が設定されていない場合に使用される、起点の推奨値。</param>
+        <param name="defaultDestinationValue">アニメーションに独自の明示的な終了値が設定されていない場合に使用される、終点の推奨値。</param>
+        <param name="animationClock"><see cref="T:System.Windows.Media.Animation.AnimationClock" />を生成する、<see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" />または<see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />ホスト アニメーションで使用します。</param>
+        <summary>このインスタンスによって決定されたように、アニメーションを付けるプロパティの現在の値を表す値を計算<see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />です。</summary>
+        <returns>現在のインスタンスで決定されたとおりに計算されたプロパティ値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`defaultOriginValue`最初のスナップショット値 (1 つある場合) または基本プロパティ値、複合チェーンでこの値になります。 それ以外の場合この値はチェーンの前のアニメーションによって返される値、<xref:System.Windows.Media.Animation.AnimationClock>外にある<xref:System.Windows.Media.Animation.Clock.Stopped%2A>です。  
+  
+ `defaultDestinationValue`は基本値の場合、プロパティにアニメーションの最初のコンポジション レイヤーには、アニメーションのそれ以外の値はプロパティのアニメーションの前の構成のレイヤーからの出力値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNaturalDurationCore">
+      <MemberSignature Language="C#" Value="protected override sealed System.Windows.Duration GetNaturalDurationCore (System.Windows.Media.Animation.Clock clock);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Duration GetNaturalDurationCore(class System.Windows.Media.Animation.Clock clock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.GetNaturalDurationCore(System.Windows.Media.Animation.Clock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clock" Type="System.Windows.Media.Animation.Clock" />
+      </Parameters>
+      <Docs>
+        <param name="clock"><see cref="T:System.Windows.Media.Animation.Clock" />自然な期間が必要です。</param>
+        <summary>カスタムの自然を提供<see cref="T:System.Windows.Duration" />ときに、<see cref="T:System.Windows.Duration" />プロパティに設定されている<see cref="P:System.Windows.Duration.Automatic" />です。</summary>
+        <returns>このアニメーションの最後のキー フレームの場合、 <see cref="T:System.Windows.Media.Animation.KeyTime" />、この値として使用し、 <see cref="P:System.Windows.Media.Animation.Clock.NaturalDuration" />; 場合 1 秒間に生成されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyFrames">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.BooleanKeyFrameCollection KeyFrames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.BooleanKeyFrameCollection KeyFrames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.KeyFrames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.BooleanKeyFrameCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のコレクション<see cref="T:System.Windows.Media.Animation.BooleanKeyFrame" />アニメーションを定義するオブジェクト。</summary>
+        <value>コレクション<see cref="T:System.Windows.Media.Animation.BooleanKeyFrame" />アニメーションを定義するオブジェクト。 既定値は <see cref="P:System.Windows.Media.Animation.BooleanKeyFrameCollection.Empty" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChanged">
+      <MemberSignature Language="C#" Value="protected override void OnChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.OnChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ときに呼び出されます現在<see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />オブジェクトを変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeKeyFrames">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeKeyFrames ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeKeyFrames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.ShouldSerializeKeyFrames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>場合は true を返しますの値、<see cref="P:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.KeyFrames" />のこのインスタンスのプロパティ<see cref="T:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames" />値をシリアル化する必要があります。</summary>
+        <returns>
+          <see langword="true" />プロパティの値をシリアル化する必要があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object child);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="child">追加する子オブジェクト。</param>
+        <summary>子オブジェクトを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string childText);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string childText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="childText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="childText">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Media.Animation.IKeyFrameAnimation.KeyFrames">
+      <MemberSignature Language="C#" Value="System.Collections.IList System.Windows.Media.Animation.IKeyFrameAnimation.KeyFrames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList System.Windows.Media.Animation.IKeyFrameAnimation.KeyFrames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.BooleanAnimationUsingKeyFrames.System#Windows#Media#Animation#IKeyFrameAnimation#KeyFrames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、この一連のアニメーションに関連付けられている P:System.Windows.Media.Animation.IKeyFrameAnimation.KeyFrames 順序付けられたコレクションを設定します。</summary>
+        <value><see cref="T:System.Collections.IList" /> の <see cref="P:System.Windows.Media.Animation.IKeyFrameAnimation.KeyFrames" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

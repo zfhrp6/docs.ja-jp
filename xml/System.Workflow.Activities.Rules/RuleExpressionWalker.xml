@@ -1,0 +1,198 @@
+<Type Name="RuleExpressionWalker" FullName="System.Workflow.Activities.Rules.RuleExpressionWalker">
+  <TypeSignature Language="C#" Value="public static class RuleExpressionWalker" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit RuleExpressionWalker extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.RuleExpressionWalker" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>式における現在の動作が子ノードにも及ぶようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.Rules.IRuleExpression> のどのメソッドに対しても使えるクラスで、その動作が子ノードにも及ぶようにする働きがあります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AnalyzeUsage">
+      <MemberSignature Language="C#" Value="public static void AnalyzeUsage (System.Workflow.Activities.Rules.RuleAnalysis analysis, System.CodeDom.CodeExpression expression, bool isRead, bool isWritten, System.Workflow.Activities.Rules.RulePathQualifier qualifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AnalyzeUsage(class System.Workflow.Activities.Rules.RuleAnalysis analysis, class System.CodeDom.CodeExpression expression, bool isRead, bool isWritten, class System.Workflow.Activities.Rules.RulePathQualifier qualifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleExpressionWalker.AnalyzeUsage(System.Workflow.Activities.Rules.RuleAnalysis,System.CodeDom.CodeExpression,System.Boolean,System.Boolean,System.Workflow.Activities.Rules.RulePathQualifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="analysis" Type="System.Workflow.Activities.Rules.RuleAnalysis" />
+        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="isRead" Type="System.Boolean" />
+        <Parameter Name="isWritten" Type="System.Boolean" />
+        <Parameter Name="qualifier" Type="System.Workflow.Activities.Rules.RulePathQualifier" />
+      </Parameters>
+      <Docs>
+        <param name="analysis"><see cref="T:System.Workflow.Activities.Rules.RuleAnalysis" /> インスタンス。ここに、ルールの条件やアクションで使われている、プロパティやフィールドを表すシンボルを格納します。</param>
+        <param name="expression">実行する式。</param>
+        <param name="isRead">
+          <see langword="true" /> 中で参照されるフィールドやプロパティを <see cref="T:System.Workflow.Activities.Rules.RuleAction" /> に追加するのであれば <see cref="T:System.Workflow.Activities.Rules.RuleAnalysis" />、それ以外の場合は <see langword="false" />。</param>
+        <param name="isWritten">
+          <see langword="true" /> 中で更新されるフィールドやプロパティを <see cref="T:System.Workflow.Activities.Rules.RuleAction" /> に追加するのであれば <see cref="T:System.Workflow.Activities.Rules.RuleAnalysis" />、それ以外の場合は <see langword="false" />。</param>
+        <param name="qualifier">この時点までに決定されたフィールドやプロパティのパス。</param>
+        <summary>式の中で使われているフィールドやプロパティを、シンボルとして <see cref="T:System.Workflow.Activities.Rules.RuleAnalysis" /> インスタンスに追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="analysis" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public static System.CodeDom.CodeExpression Clone (System.CodeDom.CodeExpression originalExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.CodeExpression Clone(class System.CodeDom.CodeExpression originalExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleExpressionWalker.Clone(System.CodeDom.CodeExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="originalExpression" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="originalExpression">複製の基になる式。</param>
+        <summary>現在の <see cref="T:System.CodeDom.CodeExpression" /> の子ノードの詳細コピーを作成します。</summary>
+        <returns>このインスタンスに一致する <see cref="T:System.CodeDom.CodeExpression" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decompile">
+      <MemberSignature Language="C#" Value="public static void Decompile (System.Text.StringBuilder stringBuilder, System.CodeDom.CodeExpression expression, System.CodeDom.CodeExpression parentExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Decompile(class System.Text.StringBuilder stringBuilder, class System.CodeDom.CodeExpression expression, class System.CodeDom.CodeExpression parentExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleExpressionWalker.Decompile(System.Text.StringBuilder,System.CodeDom.CodeExpression,System.CodeDom.CodeExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1720:AvoidTypeNamesInParameters", MessageId="0#")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stringBuilder" Type="System.Text.StringBuilder" />
+        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="parentExpression" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="stringBuilder">可変文字列を収容する <see cref="T:System.Text.StringBuilder" />。</param>
+        <param name="expression">現在の <see cref="T:System.CodeDom.CodeExpression" /> です。</param>
+        <param name="parentExpression">親 <see cref="T:System.CodeDom.CodeExpression" />。</param>
+        <summary>式の子ノードを文字列形式にデコンパイルします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evaluate">
+      <MemberSignature Language="C#" Value="public static System.Workflow.Activities.Rules.RuleExpressionResult Evaluate (System.Workflow.Activities.Rules.RuleExecution execution, System.CodeDom.CodeExpression expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.Activities.Rules.RuleExpressionResult Evaluate(class System.Workflow.Activities.Rules.RuleExecution execution, class System.CodeDom.CodeExpression expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleExpressionWalker.Evaluate(System.Workflow.Activities.Rules.RuleExecution,System.CodeDom.CodeExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleExpressionResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="execution" Type="System.Workflow.Activities.Rules.RuleExecution" />
+        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="execution">式を実行する <see cref="T:System.Workflow.Activities.Rules.RuleExecution" />。</param>
+        <param name="expression">評価する <see cref="T:System.CodeDom.CodeExpression" />。</param>
+        <summary>式とそのすべての子式を評価します。</summary>
+        <returns>式の評価結果を表す <see cref="T:System.Workflow.Activities.Rules.RuleExpressionResult" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="execution" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public static bool Match (System.CodeDom.CodeExpression firstExpression, System.CodeDom.CodeExpression secondExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Match(class System.CodeDom.CodeExpression firstExpression, class System.CodeDom.CodeExpression secondExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleExpressionWalker.Match(System.CodeDom.CodeExpression,System.CodeDom.CodeExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="firstExpression" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="secondExpression" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="firstExpression">比較対象となる最初の <see cref="T:System.CodeDom.CodeExpression" />。</param>
+        <param name="secondExpression">比較対象となる 2 番目の <see cref="T:System.CodeDom.CodeExpression" />。</param>
+        <summary>現在の式と子ノードと他の式とが一致するかどうか比較します。</summary>
+        <returns>
+          式が等しい場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public static System.Workflow.Activities.Rules.RuleExpressionInfo Validate (System.Workflow.Activities.Rules.RuleValidation validation, System.CodeDom.CodeExpression expression, bool isWritten);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.Activities.Rules.RuleExpressionInfo Validate(class System.Workflow.Activities.Rules.RuleValidation validation, class System.CodeDom.CodeExpression expression, bool isWritten) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleExpressionWalker.Validate(System.Workflow.Activities.Rules.RuleValidation,System.CodeDom.CodeExpression,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleExpressionInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validation" Type="System.Workflow.Activities.Rules.RuleValidation" />
+        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="isWritten" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="validation">検証プロセスを管理する <see cref="T:System.Workflow.Activities.Rules.RuleValidation" />。</param>
+        <param name="expression">評価する <see cref="T:System.CodeDom.CodeExpression" />。</param>
+        <param name="isWritten">
+          <see langword="true" /> 中で更新されるフィールドやプロパティを <see cref="T:System.Workflow.Activities.Rules.RuleAction" /> で格納する場合は <see cref="T:System.Workflow.Activities.Rules.RuleAnalysis" />、それ以外の場合は <see langword="false" />。</param>
+        <summary>式と子ノードの構成が適切でエラーがないことを検証します。</summary>
+        <returns>
+          <see cref="T:System.Workflow.Activities.Rules.RuleExpressionInfo" /> の <see cref="T:System.CodeDom.CodeExpression" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="validation" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="expression" /> が null、<see cref="T:System.Workflow.Activities.Rules.RuleValidation" /> オブジェクトのエラー コレクションが null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

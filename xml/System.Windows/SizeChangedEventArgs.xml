@@ -1,0 +1,141 @@
+<Type Name="SizeChangedEventArgs" FullName="System.Windows.SizeChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class SizeChangedEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SizeChangedEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.SizeChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連するデータを提供、<see cref="E:System.Windows.FrameworkElement.SizeChanged" />イベント。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="HeightChanged">
+      <MemberSignature Language="C#" Value="public bool HeightChanged { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HeightChanged" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SizeChangedEventArgs.HeightChanged" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Windows.FrameworkElement.Height" />サイズのコンポーネントを変更します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.FrameworkElement.Height" />コンポーネントのサイズが変更されました。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double>有効桁数がプロセスを不正確数字、このプロパティの値を返す場合があります`false`場合でも、<xref:System.Windows.SizeChangedEventArgs.PreviousSize%2A>と<xref:System.Windows.SizeChangedEventArgs.NewSize%2A>が等しくないです。  
+  
+ レイアウト システムには、ときどき; は、入力パラメーターの軽微な変動のためには、この状態が発生しました。ただし、視覚的な変化と見なされます同じです。そのため、表示方法の変更は検出されません。 ハンドラーを<xref:System.Windows.FrameworkElement.SizeChanged>イベントは、ディメンションが実際に変更されなかった場合に、レイアウトの無効化を回避するためにこの状態を確認する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SizeChangedEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">型固有の方法で呼び出すジェネリック ハンドラー。</param>
+        <param name="genericTarget">ハンドラーを呼び出すターゲット。</param>
+        <summary>イベントのシステムの効率を高めることができます、型固有の方法でイベント ハンドラーを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、ジェネリック ハンドラーをキャスト、<xref:System.Windows.SizeChangedEventHandler>してそれを呼び出します。 この実装パターンとその理由の詳細については、次を参照してください。<xref:System.Windows.RoutedEventArgs.InvokeEventHandler%2A>と[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSize">
+      <MemberSignature Language="C#" Value="public System.Windows.Size NewSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Size NewSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SizeChangedEventArgs.NewSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい取得<see cref="T:System.Windows.Size" />のオブジェクト。</summary>
+        <value>新しい<see cref="T:System.Windows.Size" />のオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousSize">
+      <MemberSignature Language="C#" Value="public System.Windows.Size PreviousSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Size PreviousSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SizeChangedEventArgs.PreviousSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前の取得<see cref="T:System.Windows.Size" />のオブジェクト。</summary>
+        <value>前の<see cref="T:System.Windows.Size" />のオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WidthChanged">
+      <MemberSignature Language="C#" Value="public bool WidthChanged { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WidthChanged" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SizeChangedEventArgs.WidthChanged" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Windows.FrameworkElement.Width" />サイズのコンポーネントを変更します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.FrameworkElement.Width" />コンポーネントのサイズが変更されました。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Double>有効桁数がプロセスを不正確数字、このプロパティの値を返す場合があります`false`場合でも、<xref:System.Windows.SizeChangedEventArgs.PreviousSize%2A>と<xref:System.Windows.SizeChangedEventArgs.NewSize%2A>が等しくないです。  
+  
+ レイアウト システムには、ときどき; は、入力パラメーターの軽微な変動のためには、この状態が発生しました。ただし、視覚的な変化と見なされます同じです。そのため、表示方法の変更は検出されません。 ハンドラーを<xref:System.Windows.FrameworkElement.SizeChanged>イベントは、ディメンションが実際に変更されなかった場合に、レイアウトの無効化を回避するためにこの状態を確認する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,420 @@
+<Type Name="SoapHeader" FullName="System.Web.Services.Protocols.SoapHeader">
+  <TypeSignature Language="C#" Value="public abstract class SoapHeader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SoapHeader extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapHeader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.SoapType(IncludeInSchema=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlType(IncludeInSchema=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>派生クラスでオーバーライドされると、SOAP ヘッダーの内容を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP ヘッダーは、データは直接関連していない場合、XML Web サービス メソッドの主な機能を XML Web サービス メソッドとの間のデータを渡すためのメソッドを提供します。 たとえば、XML Web サービスには、カスタム認証方式する必要のあるいくつかの XML Web サービス メソッドがあります。 カスタム認証スキームの場合、各 XML Web サービス メソッドにパラメーターを追加する代わりに、<xref:System.Web.Services.Protocols.SoapHeaderAttribute>から派生したクラスを参照する<xref:System.Web.Services.Protocols.SoapHeader>、各 XML Web サービス メソッドに適用できます。 派生したクラスの実装<xref:System.Web.Services.Protocols.SoapHeader>カスタム認証方式を処理します。 この方法では、XML Web サービス メソッドは、固有の機能のみを実装し、SOAP ヘッダーを使用して追加の機能を追加します。  
+  
+ 次の一覧基本手順の概要を受信し、SOAP ヘッダーの処理:  
+  
+1.  派生するクラスを作成する<xref:System.Web.Services.Protocols.SoapHeader>SOAP ヘッダーに渡されるデータを表します。  
+  
+2.  XML Web サービスを実装するクラスまたは XML Web サービス クライアント プロキシ クラス、最初の手順で作成した型のメンバーを追加します。  
+  
+3.  適用、 <xref:System.Web.Services.Protocols.SoapHeaderAttribute> XML Web サービス メソッドまたはプロキシ クラスで対応するメソッドは、2 番目の手順で作成、メンバーを指定する、<xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName%2A>プロパティです。  
+  
+4.  XML Web サービス メソッドまたは XML Web サービス クライアント コードの中でアクセス、 <xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName%2A> SOAP ヘッダーで送信されるデータを処理するプロパティです。  
+  
+   
+  
+## Examples  
+ 次`MyWebService`XML Web サービスを定義、 `MyHeader` SOAP ヘッダーと任意の呼び出しを送信する必要があります、 `MyWebMethod` XML Web サービス メソッドです。 さらに、`MyWebMethod`以外の任意の SOAP ヘッダーを受信、 `MyHeader` SOAP ヘッダー。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SoapHeader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHeader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapHeader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Actor">
+      <MemberSignature Language="C#" Value="public string Actor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Actor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeader.Actor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.SoapAttribute("actor", Namespace="http://schemas.xmlsoap.org/soap/envelope/")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("actor", Namespace="http://schemas.xmlsoap.org/soap/envelope/")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SOAP ヘッダーの受信者を設定します。</summary>
+        <value>SOAP ヘッダーの受信者。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP ヘッダーの受信者を設定するには、設定、<xref:System.Web.Services.Protocols.SoapHeader.Actor%2A>プロパティです。 、XML Web サービスとの通信に使用する SOAP プロトコルのバージョンに関係なく、.NET Framework では、SOAP プロトコルのバージョンに固有の SOAP メッセージが自動的に生成されます。 具体的には、XML 要素、および受信者を表す XML 名前空間は、2 つのバージョンが異なります。  
+  
+ SOAP ヘッダーを受信する XML Web サービスは、いずれかを取得することによって目的の受信者を取得できます、<xref:System.Web.Services.Protocols.SoapHeader.Role%2A>または<xref:System.Web.Services.Protocols.SoapHeader.Actor%2A>プロパティです。  
+  
+ 受信者、`Body`要素と、SOAP ヘッダー内の各、 `Header` SOAP メッセージの要素が必要、同じにできません。 場合、 `Header` SOAP メッセージに要素が存在し、XML Web サービス メソッドまたは中間層との間に送信できる追加のデータを表します。 SOAP と呼ばれる、そのデータの受信者`Actor`バージョン 1.1 では、XML Web サービス メソッドの URI よりも別の URI を指定できます。  
+  
+ 詳細については、SOAP`actor`属性 http://www.w3.org/TR/SOAP/ では、SOAP 仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次の XML Web サービス クライアントの呼び出し、`MyWebMethod`型のカスタム SOAP ヘッダーを作成した後の XML Web サービス メソッド`MyHeader`と設定、<xref:System.Web.Services.Protocols.SoapHeader.Actor%2A>プロパティを`http://www.contoso.com/MySoapHeaderHandler`です。  
+  
+ [!code-cpp[Classic SoapHeader.Actor Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapHeader.Actor Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapHeader.Actor Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapHeader.Actor Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapHeader.Actor Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapHeader.Actor Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DidUnderstand">
+      <MemberSignature Language="C#" Value="public bool DidUnderstand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DidUnderstand" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeader.DidUnderstand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.SoapIgnore</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML Web サービス メソッドが、SOAP ヘッダーを正しく処理されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />SOAP ヘッダーが正しく処理された場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP ヘッダーの XML Web サービスで定義されている場合は、ASP.NET は、XML Web サービス メソッドでは、初期値の設定で、SOAP ヘッダーを正しく処理を想定しています<xref:System.Web.Services.Protocols.SoapHeader.DidUnderstand%2A>に`true`です。 初期値は、SOAP ヘッダーの XML Web サービスで定義されていない場合`false`です。 ASP.NET には、SOAP が検出された場合に XML Web サービス メソッドに渡されるヘッダー<xref:System.Web.Services.Protocols.SoapHeader.DidUnderstand%2A>に設定`false`メソッドから制御が戻た後、<xref:System.Web.Services.Protocols.SoapHeaderException>が元は、XML Web サービス メソッドから、結果の代わりに XML Web サービス クライアントにスローされます。  
+  
+   
+  
+## Examples  
+ 次`MyWebService`XML Web サービスを定義、 `MyHeader` SOAP ヘッダーと任意の呼び出しを送信する必要があります、 `MyWebMethod` XML Web サービス メソッドです。 さらに、`MyWebMethod`以外の任意の SOAP ヘッダーを受信、 `MyHeader` SOAP ヘッダー。 SOAP ヘッダーを`MyWebMethod`処理できますが、<xref:System.Web.Services.Protocols.SoapHeader.DidUnderstand%2A>に設定されている`true`です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodedMustUnderstand">
+      <MemberSignature Language="C#" Value="public string EncodedMustUnderstand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EncodedMustUnderstand" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeader.EncodedMustUnderstand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.SoapAttribute("mustUnderstand", Namespace="http://schemas.xmlsoap.org/soap/envelope/")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("mustUnderstand", Namespace="http://schemas.xmlsoap.org/soap/envelope/")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値、 <see langword="mustUnderstand" /> SOAP プロトコル バージョン 1.1 と通信するときの SOAP ヘッダーの XML 属性です。</summary>
+        <value>値、<see langword="mustUnderstand" />属性。 既定値は、「0」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは使用しないでください。 代わりに使用して、<xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[SoapHeader_EncodedMustUnderstand#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHeader_EncodedMustUnderstand/CPP/soapheader_encodedmustunderstand.cpp#1)]
+ [!code-csharp[SoapHeader_EncodedMustUnderstand#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHeader_EncodedMustUnderstand/CS/soapheader_encodedmustunderstand.cs#1)]
+ [!code-vb[SoapHeader_EncodedMustUnderstand#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHeader_EncodedMustUnderstand/VB/soapheader_encodedmustunderstand.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">以外のプロパティが値に設定します。"0"、"1"、"true"または"false"です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodedMustUnderstand12">
+      <MemberSignature Language="C#" Value="public string EncodedMustUnderstand12 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EncodedMustUnderstand12" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeader.EncodedMustUnderstand12" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.SoapAttribute("mustUnderstand", Namespace="http://www.w3.org/2003/05/soap-envelope")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("mustUnderstand", Namespace="http://www.w3.org/2003/05/soap-envelope")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値、 <see langword="mustUnderstand" /> SOAP プロトコル バージョン 1.2 と通信するときの SOAP ヘッダーの XML 属性です。</summary>
+        <value>値、 <see langword="mustUnderstand" /> SOAP ヘッダーの XML 属性です。 既定値は、「0」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは使用しないでください。 代わりに使用して、<xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">以外のプロパティが値に設定します。"0"、"1"、"true"または"false"です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodedRelay">
+      <MemberSignature Language="C#" Value="public string EncodedRelay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EncodedRelay" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeader.EncodedRelay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.SoapAttribute("relay", Namespace="http://www.w3.org/2003/05/soap-envelope")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("relay", Namespace="http://www.w3.org/2003/05/soap-envelope")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SOAP 1.2 ヘッダーのリレー属性を設定します。</summary>
+        <value>「0」、"false"、「1」または"true"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapHeader.EncodedRelay%2A>プロパティは、SOAP 1.2 にのみ適用され、次のダウン ストリーム ノードにメッセージを転送するときに、メッセージの受信者がこのヘッダーを転送するかどうかを示します。 .NET Framework では、SOAP 中継ぎ局はサポートされていません、このプロパティはシリアル化し逆シリアル化は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MustUnderstand">
+      <MemberSignature Language="C#" Value="public bool MustUnderstand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MustUnderstand" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeader.MustUnderstand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.SoapIgnore</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Web.Services.Protocols.SoapHeader" />理解する必要があります。</summary>
+        <value>
+          <see langword="true" />XML Web サービスの解釈および処理する必要があります正しくかどうか、 <see cref="T:System.Web.Services.Protocols.SoapHeader" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス メソッド呼び出しに XML Web サービス クライアントが SOAP ヘッダーを追加するときに、<xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand%2A>プロパティに設定`true`、XML Web サービス メソッドを設定する必要があります、<xref:System.Web.Services.Protocols.SoapHeader.DidUnderstand%2A>プロパティを`true`です。 それ以外の場合、<xref:System.Web.Services.Protocols.SoapHeaderException>が元は、ASP.NET によって XML Web サービス クライアントにスローされます。  
+  
+ 両方、<xref:System.Web.Services.Protocols.SoapHeader.EncodedMustUnderstand%2A>と<xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand%2A>の値を設定するプロパティを使用することができます、 `mustUnderstand` SOAP ヘッダー内の属性、<xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand%2A>プロパティでは、ブール値を使用して属性を設定することができます。  
+  
+ SOAP ヘッダーをクライアントに追加する方法の詳細については、「 [&#91;\<topic://cpconusingsoapheaders > & #93 です。](http://msdn.microsoft.com/en-us/7bd961f2-b492-48d0-bafe-09d5d5fec3ba).  
+  
+   
+  
+## Examples  
+ 次の XML Web サービス クライアントの種類のカスタム SOAP ヘッダーを定義する`MyHeader`、設定、<xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand%2A>プロパティを`true`を呼び出すと、 `MyWebMethod` XML Web サービス メソッドです。 XML Web サービス メソッドが設定されていない場合、<xref:System.Web.Services.Protocols.SoapHeader.DidUnderstand%2A>のプロパティ、 `MyHeader` SOAP ヘッダーを`true`、<xref:System.Web.Services.Protocols.SoapHeaderException>がスローされます。  
+  
+ [!code-cpp[Classic SoapHeader.MustUnderstand Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapHeader.MustUnderstand Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapHeader.MustUnderstand Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapHeader.MustUnderstand Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapHeader.MustUnderstand Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapHeader.MustUnderstand Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Relay">
+      <MemberSignature Language="C#" Value="public bool Relay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Relay" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeader.Relay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.SoapIgnore</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SOAP ヘッダーが、現在のノードがヘッダーを認識していない場合、次の SOAP ノードに中継するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />SOAP ヘッダーが「リレー」属性が"true"に設定それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の SOAP 1.2 の処理規則では、次のノードにメッセージを渡す前に SOAP 処理ノードによって認識されないヘッダーを削除する SOAP ノードが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Role">
+      <MemberSignature Language="C#" Value="public string Role { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Role" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHeader.Role" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.SoapAttribute("role", Namespace="http://www.w3.org/2003/05/soap-envelope")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("role", Namespace="http://www.w3.org/2003/05/soap-envelope")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SOAP ヘッダーの受信者を設定します。</summary>
+        <value>SOAP ヘッダーの受信者を表す URI。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP ヘッダーの受信者を設定するには、設定、<xref:System.Web.Services.Protocols.SoapHeader.Actor%2A>プロパティです。 、XML Web サービスとの通信に使用する SOAP プロトコルのバージョンに関係なく、.NET Framework では、SOAP プロトコルのバージョンに固有の SOAP メッセージが自動的に生成されます。 具体的には、XML 要素、および受信者を表す XML 名前空間は、2 つのバージョンが異なります。  
+  
+ SOAP ヘッダーを受信する XML Web サービスは、いずれかを取得することによって目的の受信者を取得できます、<xref:System.Web.Services.Protocols.SoapHeader.Role%2A>または<xref:System.Web.Services.Protocols.SoapHeader.Actor%2A>プロパティです。  
+  
+ 受信者、`Body`要素と、SOAP ヘッダー内の各、 `Header` SOAP メッセージの要素が必要、同じにできません。 場合、 `Header` SOAP メッセージに要素が存在し、XML Web サービス メソッドまたは中間層との間に送信できる追加のデータを表します。 SOAP と呼ばれる、そのデータの受信者`Role`バージョンの SOAP 仕様と SOAP 1.2`Actor`バージョン 1.1 では、XML Web サービス メソッドの URI よりも別の URI を指定できます。  
+  
+ 詳細については、SOAP`actor`属性 http://www.w3.org/TR/SOAP/ では、SOAP 仕様を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

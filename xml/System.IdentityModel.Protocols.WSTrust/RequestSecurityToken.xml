@@ -1,0 +1,554 @@
+<Type Name="RequestSecurityToken" FullName="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken">
+  <TypeSignature Language="C#" Value="public class RequestSecurityToken : System.IdentityModel.Protocols.WSTrust.WSTrustMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RequestSecurityToken extends System.IdentityModel.Protocols.WSTrust.WSTrustMessage" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Protocols.WSTrust.WSTrustMessage</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セキュリティ トークンを要求に使用される wst:RequestSecurityToken 要素 (RST) を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:RequestSecurityToken 要素 (メッセージ) には、パラメーターとセキュリティ トークン サービス (STS) からセキュリティ トークンを要求するためのプロパティが含まれています。 メッセージ (または要素) は、RST として省略されています。 <xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken>クラスには、RST の要素を表すプロパティが含まれています。 RST は Ws-trust; によって定義された要求のバインディングのいずれかに対応する要求を形成できます。たとえば、発行バインド、Renewal バインディング、Validate バインド、または Cancel バインディング。 プロパティの多くは、<xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken>クラスは、これらのバインディングで定義されている要求の特定の種類にのみ存在する要素に対応します。 特定の要求の種類に応じて<xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken>オブジェクトを表しますまたはそれが表す特定の要求に、パラメーター オブジェクトの一部のプロパティがあります`null`です。  
+  
+ STS は、wst:RequestSecurityTokenResponse 要素 (RSTR) を含むメッセージの要求に応答を返します。 このメッセージで表される、<xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse>クラスです。  
+  
+ [!INCLUDE[wif_wstrust_ref](~/includes/wif-wstrust-ref-md.md)]  
+  
+   
+  
+## Examples  
+ このトピックで使用されているコード例がから取得した、`Custom Token`サンプルです。 このサンプルは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供し、SWT トークンを提供できる、パッシブ STS の実装が含まれています。 STS がから派生したクラスによって実装される<xref:System.IdentityModel.SecurityTokenService>です。 メソッドの多くは、<xref:System.IdentityModel.SecurityTokenService>そのトークンの発行パイプラインの実行から呼び出されるクラス、<xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken>オブジェクトとして 1 つのパラメーターです。 WIF およびそれらをダウンロードする場所についてこのサンプルと使用可能なその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+ <xref:System.IdentityModel.SecurityTokenService.GetScope%2A?displayProperty=nameWithType> メソッドを実装する方法を次のコード例に示します。 メソッドは、<xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken>としてこのパラメーターのプロパティとそのパラメーターのいずれかの使用プロパティを設定する、<xref:System.IdentityModel.Scope>メソッドによって返されるオブジェクト。  
+  
+ [!code-csharp[WIFCustomTokenSTS#4](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/customsecuritytokenservice.cs#4)]  
+[!code-csharp[WIFCustomTokenSTS#5](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/customsecuritytokenservice.cs#5)]  
+[!code-csharp[WIFCustomTokenSTS#7](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/customsecuritytokenservice.cs#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestSecurityToken ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.RequestType%2A>プロパティおよび<xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.KeyType%2A>にプロパティが初期化された`null`です。  
+  
+ このコンス トラクターは通常、受信側で使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestSecurityToken (string requestType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string requestType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="requestType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="requestType">要求の URI の種類を表す文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />指定された要求の種類を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.KeyType%2A> プロパティは `null` に初期化されます。  
+  
+ このコンス トラクターは通常、送信者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestSecurityToken (string requestType, string keyType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string requestType, string keyType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="requestType" Type="System.String" />
+        <Parameter Name="keyType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="requestType">要求の URI の種類を表す文字列。</param>
+        <param name="keyType">URI のキーの種類を表す文字列。 これはによって定義された定数のいずれかをする必要があります、<see cref="T:System.IdentityModel.Protocols.WSTrust.KeyTypes" />クラスです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />指定された要求の種類を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表の初期値、<xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.KeySizeInBits%2A>プロパティの特定の値を`keyType`パラメーター。  
+  
+|`keyType`パラメーター|<xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.KeySizeInBits%2A> プロパティ|  
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.IdentityModel.Protocols.WSTrust.KeyTypes.Asymmetric>|1024|  
+|<xref:System.IdentityModel.Protocols.WSTrust.KeyTypes.Bearer>|0|  
+|<xref:System.IdentityModel.Protocols.WSTrust.KeyTypes.Symmetric>|256|  
+  
+ このコンス トラクターは通常、送信者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActAs">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenElement ActAs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenElement ActAs" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.ActAs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはとして機能する、要求元がしようとしている id のセキュリティ トークンを設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SecurityTokenElement" />として使用しようとして、要求元の id を表すです。 指定できます<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:ActAs 要素の内容を表します。 この省略可能な要素は、委任シナリオをサポートし、要求元が別の id としての役割要求を行っていることを示します。 この要素は、Ws-trust 1.4 で導入されました。 このプロパティは`null`委任が関係しない要求でします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdditionalContext">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.AdditionalContext AdditionalContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.AdditionalContext AdditionalContext" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.AdditionalContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.AdditionalContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求の追加のコンテキスト情報を設定します。</summary>
+        <value><see cref="T:System.IdentityModel.Protocols.WSTrust.AdditionalContext" />要求の追加のコンテキスト情報を格納します。 指定できます<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Auth:AdditionalContext 要素の内容を表します。 この省略可能な要素は、セキュリティ トークン サービス (STS) が、トークンの発行プロセスで使用できる追加の情報を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelTarget">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenElement CancelTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenElement CancelTarget" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.CancelTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-trust キャンセル要求のキャンセル トークンを設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SecurityTokenElement" />をキャンセルできるトークンを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:CancelTarget 要素の内容を表します。 この要素は、Ws-trust でキャンセル要求をキャンセルするトークンに関する情報を保持します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Claims">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.RequestClaimCollection Claims { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.RequestClaimCollection Claims" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.Claims" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.RequestClaimCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント (リクエスター) によって要求されるクレームの種類を取得します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestClaimCollection" />要求されたクレームを格納します。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:Claims 要素の内容を表します。 この省略可能な要素は、クライアントによって要求された特定のクレームの種類のセットを要求します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputedKeyAlgorithm">
+      <MemberSignature Language="C#" Value="public string ComputedKeyAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ComputedKeyAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.ComputedKeyAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>計算されたキーは、発行済みトークンの使用時に使用する適切なアルゴリズムを表す URI を取得します。</summary>
+        <value>計算されたキー アルゴリズムを表す URI を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:ComputedKeyAlgorithm 要素を表します。 この省略可能な要素は、計算されたキーは、発行済みトークンの使用時に使用する適切なアルゴリズムを表す URI を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delegatable">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; Delegatable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; Delegatable" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.Delegatable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行されたトークンを delegatable としてマークする必要があるかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />発行されたトークンが delegatable 以外の場合それ以外の場合、<see langword="false" />です。 指定できます<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst の内容を表す: Delegatable 要素。 この省略可能な要素では、返されたトークンを別のパーティに delegatable する可能性があることを示します。 この要素は、Ws-trust 1.4 で導入されました。 このプロパティと組み合わせて使用、<xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.DelegateTo%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DelegateTo">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenElement DelegateTo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenElement DelegateTo" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.DelegateTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行されたトークンを委任する id を設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SecurityTokenElement" />発行されたトークンを委任する id を表すです。 指定できます<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:DelegateTo 要素の内容を表します。 この省略可能な要素は、発行されたトークンが指定された id を委任することを示します。 この要素は、Ws-trust 1.4 で導入されました。 このプロパティは`null`委任が関係しない要求でします。 組み合わせてこのプロパティは使用、<xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.DelegateTo%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encryption">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenElement Encryption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenElement Encryption" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.Encryption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または暗号化するときに使用するキー、トークンに情報を設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SecurityTokenElement" />暗号化情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:Encryption 要素の内容を表します。 この省略可能な要素は、指定したトークンの発行されたセキュリティ トークンにも返される、機密データを暗号化することを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Forwardable">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; Forwardable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; Forwardable" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.Forwardable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行されたトークンを転送可能設定されなければなりませんかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、発行されたトークンが転送可能です。それ以外の場合、<see langword="false" />です。 指定できます<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst の内容を表す: 転送可能な要素です。 この省略可能な要素は、返されたトークンは、要求元のコンピューターまたはサービスにバインドされているかどうかを示します (によって示される、`false`値)。 この要素は、Ws-trust 1.4 で導入されました。 このプロパティと組み合わせて使用、<xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.DelegateTo%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Issuer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.EndpointReference Issuer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.EndpointReference Issuer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.Issuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.EndpointReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または wst:OnBehalfOf トークンの発行者を設定します。</summary>
+        <value>A<see cref="T:System.ServiceModel.EndpointAddress" />発行者のアドレスを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:Issuer 要素の内容を表します。 この省略可能な要素は、wst:OnBehalfOf 要素で指定されているトークンの発行者を識別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBehalfOf">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenElement OnBehalfOf { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenElement OnBehalfOf" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.OnBehalfOf" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、要求が作成されているため、id のトークンを設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SecurityTokenElement" />要求が作成されている id のトークンを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:OnBehalfOf 要素の内容を表します。 この省略可能な要素は、要求元が別のユーザーに代わって要求を行っていることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Participants">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.Participants Participants { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.Participants Participants" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.Participants" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.Participants</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行されたトークンを使用するが承認されている参加要素を設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Protocols.WSTrust.Participants" />が発行されたトークンを使用する承認されている参加要素を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:Participants 要素の内容を表します。 この省略可能な要素は、トークンを使用するが承認されているその他の参加者を識別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProofEncryption">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenElement ProofEncryption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenElement ProofEncryption" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.ProofEncryption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または証明トークンの暗号化に使用するトークンを設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SecurityTokenElement" />トークンを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:ProofEncryption 要素の内容を表します。 この省略可能な要素には、証明キーの暗号化に使用されるトークンが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Renewing">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.Renewing Renewing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.Renewing Renewing" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.Renewing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.Renewing</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-trust 書き換え要求の更新のセマンティクスを設定します。</summary>
+        <value>返します<see cref="T:System.IdentityModel.Protocols.WSTrust.Renewing" />書き換えセマンティクスを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst の内容を表す: 要素を更新します。 この省略可能な要素は、Ws-trust 書き換え要求の更新のセマンティクスを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenewTarget">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenElement RenewTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenElement RenewTarget" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.RenewTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を Ws-trust で更新できるトークンの更新を要求します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SecurityTokenElement" />更新トークンを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:RenewTarget 要素の内容を表します。 この要素が、Ws-trust で更新するトークンに関する情報を含む要求を更新します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecondaryParameters">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.RequestSecurityToken SecondaryParameters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken SecondaryParameters" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.SecondaryParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.RequestSecurityToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパラメーターを要求元は、発信元を設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />の要求時にセカンダリのパラメーターを格納している、要求元のない発信元のパラメーターは、します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:SecondaryParameters 要素の内容を表します。 この省略可能な要素には、パラメーター、要求元は、発信元にはが含まれています。 STS は、そのポリシーに基づくこの要素に値を使用することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateTarget">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenElement ValidateTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenElement ValidateTarget" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.ValidateTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の検証に使用する、Ws-trust でトークン検証を要求します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SecurityTokenElement" />検証に使用するトークンを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:ValidateTarget 要素の内容を表します。 この要素が、Ws-trust で検証するトークンに関する情報を含む要求を検証します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

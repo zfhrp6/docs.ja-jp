@@ -1,0 +1,553 @@
+<Type Name="ComponentSerializationService" FullName="System.ComponentModel.Design.Serialization.ComponentSerializationService">
+  <TypeSignature Language="C#" Value="public abstract class ComponentSerializationService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ComponentSerializationService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.ComponentSerializationService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>シリアル化ストアに、一連のコンポーネントまたはシリアル化可能なオブジェクトをシリアル化するためには、基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService>シリアル化ストアに、一連のコンポーネントまたはシリアル化可能なオブジェクトをシリアル化します。 ストアは、後で、逆シリアル化が。 <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService>クラスは、シリアル化の形式は、不透明なされ、これにより、オブジェクトのシリアル化の部分を他のスキームのシリアル化とは異なります。 します。 たとえば、オブジェクトの選択したプロパティのみをシリアル化することができます。  
+  
+ このクラスは、`abstract`です。 通常、<xref:System.ComponentModel.Design.Serialization.DesignerLoader>はこのクラスの具象実装を提供し、サービスとして追加その<xref:System.ComponentModel.Design.DesignSurface>です。 これにより、それらに最適な形式でシリアル化するオブジェクトです。  
+  
+ <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService>置き換えます、<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService>旧バージョンとの互換性のため、後者が保持されますが、.NET Framework version 1.0 からインターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.ComponentModel.Design.Serialization.ComponentSerializationService" />クラスでは、このクラスのすべてのメソッドをオーバーライドする必要があります。 これらのメソッドのいくつかようデザインされている例外をスローするように対応する各トピックに記載されていますクラスの次の操作の一貫性を維持するために次のガイドラインを派生することを強くお勧めします。 詳細については、<see cref="T:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService" /> クラスを参照してください。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ComponentSerializationService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.ComponentSerializationService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateStore">
+      <MemberSignature Language="C#" Value="public abstract System.ComponentModel.Design.Serialization.SerializationStore CreateStore ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.Serialization.SerializationStore CreateStore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.CreateStore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Serialization.SerializationStore</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" /> を作成します。</summary>
+        <returns>新規に作成されたシリアル化ストアです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のオブジェクトは、同じシリアル化ストアにシリアル化できます。 呼び出すことができます、ストアが終了したら、その<xref:System.ComponentModel.Design.Serialization.SerializationStore.System%23IDisposable%23Dispose%2A>または<xref:System.ComponentModel.Design.Serialization.SerializationStore.Close%2A>メソッドです。 逆シリアル化のシリアル化ストアを使用できますを閉じた後またはストリームに保存することができます。  
+  
+ シリアル化ストアは、一連のオブジェクトのシリアル化状態を構築するさまざまなシリアル化する方法のいずれかに渡すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ICollection Deserialize (System.ComponentModel.Design.Serialization.SerializationStore store);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection Deserialize(class System.ComponentModel.Design.Serialization.SerializationStore store) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Deserialize(System.ComponentModel.Design.Serialization.SerializationStore)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="store" Type="System.ComponentModel.Design.Serialization.SerializationStore" />
+      </Parameters>
+      <Docs>
+        <param name="store"><see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />を逆シリアル化します。</param>
+        <summary>オブジェクトのコレクションを生成するために特定の店舗を逆シリアル化します。</summary>
+        <returns>格納されている状態に従って作成されたオブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを逆シリアル化`store`内に含まれるオブジェクトのコレクションを生成します。 オブジェクトは、シリアル化された同じ順序で逆シリアル化します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="store" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="store" />シリアル化のコンテナーが処理できる形式でのデータは含まれません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ICollection Deserialize (System.ComponentModel.Design.Serialization.SerializationStore store, System.ComponentModel.IContainer container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection Deserialize(class System.ComponentModel.Design.Serialization.SerializationStore store, class System.ComponentModel.IContainer container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Deserialize(System.ComponentModel.Design.Serialization.SerializationStore,System.ComponentModel.IContainer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="store" Type="System.ComponentModel.Design.Serialization.SerializationStore" />
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+      </Parameters>
+      <Docs>
+        <param name="store"><see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />を逆シリアル化します。</param>
+        <param name="container"><see cref="T:System.ComponentModel.IContainer" />する<see cref="T:System.ComponentModel.IComponent" />オブジェクトが追加されます。</param>
+        <summary>特定の店舗を逆シリアル化取り込んで、指定された<see cref="T:System.ComponentModel.IContainer" />と逆シリアル化<see cref="T:System.ComponentModel.IComponent" />オブジェクト。</summary>
+        <returns>格納されている状態に従って作成されたオブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを逆シリアル化`store`内に含まれるオブジェクトのコレクションを生成します。 オブジェクトは、シリアル化された同じ順序で逆シリアル化します。  
+  
+ 実装するオブジェクトを作成した<xref:System.ComponentModel.IComponent>に追加されます`container`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="store" /> または <paramref name="container" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="store" />シリアル化のコンテナーが処理できる形式でのデータは含まれません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeserializeTo">
+      <MemberSignature Language="C#" Value="public void DeserializeTo (System.ComponentModel.Design.Serialization.SerializationStore store, System.ComponentModel.IContainer container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeserializeTo(class System.ComponentModel.Design.Serialization.SerializationStore store, class System.ComponentModel.IContainer container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.DeserializeTo(System.ComponentModel.Design.Serialization.SerializationStore,System.ComponentModel.IContainer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="store" Type="System.ComponentModel.Design.Serialization.SerializationStore" />
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+      </Parameters>
+      <Docs>
+        <param name="store"><see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />を逆シリアル化します。</param>
+        <param name="container"><see cref="T:System.ComponentModel.IComponent" />オブジェクトが追加されます。</param>
+        <summary>逆シリアル化し、指定された<see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />指定したコンテナーにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService.DeserializeTo%2A>メソッドを逆シリアル化`store`が新しいオブジェクトを生成するには、代わりに適用されます、ストア内のデータは、指定されたコンテナーから取得するオブジェクトの既存のセットにします。 その結果、呼び出し元オブジェクトを作成できますを事前に、適切です。 オブジェクトに逆シリアル化の状態があり、オブジェクトが既存のオブジェクトのセットに指定されていない場合は、新しいオブジェクトが作成されます。 そのオブジェクトにも実装されている場合<xref:System.ComponentModel.IComponent>に追加されます`container`です。 コンテナー内のオブジェクトは、名前と使用する既存のオブジェクトの順序でシリアル化ストア内のオブジェクトに一致する型が必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="store" /> または <paramref name="container" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="store" />シリアル化のコンテナーが処理できる形式でのデータは含まれません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeserializeTo">
+      <MemberSignature Language="C#" Value="public void DeserializeTo (System.ComponentModel.Design.Serialization.SerializationStore store, System.ComponentModel.IContainer container, bool validateRecycledTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeserializeTo(class System.ComponentModel.Design.Serialization.SerializationStore store, class System.ComponentModel.IContainer container, bool validateRecycledTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.DeserializeTo(System.ComponentModel.Design.Serialization.SerializationStore,System.ComponentModel.IContainer,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="store" Type="System.ComponentModel.Design.Serialization.SerializationStore" />
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+        <Parameter Name="validateRecycledTypes" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="store"><see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />を逆シリアル化します。</param>
+        <param name="container"><see cref="T:System.ComponentModel.IComponent" />オブジェクトが追加されます。</param>
+        <param name="validateRecycledTypes">
+          <see langword="true" />逆シリアル化を確実には、同じ型のオブジェクトに適用した場合機能のみです。</param>
+        <summary>逆シリアル化し、指定された<see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />再利用される型を必要に応じてを検証する、指定したコンテナーにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService.DeserializeTo%2A>メソッドを逆シリアル化`store`が新しいオブジェクトを生成するには、代わりに適用されます、ストア内のデータは、指定されたコンテナーから取得するオブジェクトの既存のセットにします。 その結果、呼び出し元オブジェクトを作成できますを事前に、適切です。 オブジェクトに逆シリアル化の状態があり、オブジェクトが既存のオブジェクトのセットに指定されていない場合は、新しいオブジェクトが作成されます。 そのオブジェクトにも実装されている場合<xref:System.ComponentModel.IComponent>に追加されます`container`です。 コンテナー内のオブジェクトは、名前と使用する既存のオブジェクトの順序でシリアル化ストア内のオブジェクトに一致する型が必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="store" /> または <paramref name="container" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="store" />シリアル化のコンテナーが処理できる形式でのデータは含まれません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeserializeTo">
+      <MemberSignature Language="C#" Value="public abstract void DeserializeTo (System.ComponentModel.Design.Serialization.SerializationStore store, System.ComponentModel.IContainer container, bool validateRecycledTypes, bool applyDefaults);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DeserializeTo(class System.ComponentModel.Design.Serialization.SerializationStore store, class System.ComponentModel.IContainer container, bool validateRecycledTypes, bool applyDefaults) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.DeserializeTo(System.ComponentModel.Design.Serialization.SerializationStore,System.ComponentModel.IContainer,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="store" Type="System.ComponentModel.Design.Serialization.SerializationStore" />
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+        <Parameter Name="validateRecycledTypes" Type="System.Boolean" />
+        <Parameter Name="applyDefaults" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="store"><see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />を逆シリアル化します。</param>
+        <param name="container"><see cref="T:System.ComponentModel.IComponent" />オブジェクトが追加されます。</param>
+        <param name="validateRecycledTypes">
+          <see langword="true" />逆シリアル化を確実には、同じ型のオブジェクトに適用した場合機能のみです。</param>
+        <param name="applyDefaults">
+          <see langword="true" />既定のプロパティ値が適用されることを示しています。</param>
+        <summary>逆シリアル化、指定された<see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />既定のプロパティ値を必要に応じて、指定したコンテナーに適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService.DeserializeTo%2A>メソッドを逆シリアル化`store`が新しいオブジェクトを生成するには、代わりに適用されます、ストア内のデータは、指定されたコンテナーから取得するオブジェクトの既存のセットにします。 その結果、呼び出し元オブジェクトを作成できますを事前に、適切です。 オブジェクトに逆シリアル化の状態があり、オブジェクトが既存のオブジェクトのセットに指定されていない場合は、新しいオブジェクトが作成されます。 そのオブジェクトにも実装されている場合<xref:System.ComponentModel.IComponent>に追加されます`container`です。 コンテナー内のオブジェクトは、名前と使用する既存のオブジェクトの順序でシリアル化ストア内のオブジェクトに一致する型が必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="store" /> または <paramref name="container" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="store" />シリアル化のコンテナーが処理できる形式でのデータは含まれません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadStore">
+      <MemberSignature Language="C#" Value="public abstract System.ComponentModel.Design.Serialization.SerializationStore LoadStore (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.Serialization.SerializationStore LoadStore(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.LoadStore(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Serialization.SerializationStore</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" />ストアを読み込まれるからです。</param>
+        <summary>読み込み、<see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />ストリームからです。</summary>
+        <returns>新しい <see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかに渡すことによってオブジェクトを逆シリアル化に返されたストアを使用することができます、<xref:System.ComponentModel.Design.Serialization.ComponentSerializationService.Deserialize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="stream" />以前の呼び出しによって保存されたデータを含まない<see cref="M:System.ComponentModel.Design.Serialization.SerializationStore.Save(System.IO.Stream)" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public abstract void Serialize (System.ComponentModel.Design.Serialization.SerializationStore store, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Serialize(class System.ComponentModel.Design.Serialization.SerializationStore store, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Serialize(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="store" Type="System.ComponentModel.Design.Serialization.SerializationStore" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="store"><see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />先の状態<c>値</c>が書き込まれます。</param>
+        <param name="value">シリアル化するオブジェクト。</param>
+        <summary>指定したオブジェクトをシリアル化、指定された<see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを複数回呼び出すことによって複数のオブジェクトをシリアル化するストアを使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="store" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="store" />閉じている場合または<paramref name="store" />はサポートされている型のシリアル化ストアではありません。 によって返されたストアを使用して<see cref="M:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService.CreateStore" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeAbsolute">
+      <MemberSignature Language="C#" Value="public abstract void SerializeAbsolute (System.ComponentModel.Design.Serialization.SerializationStore store, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SerializeAbsolute(class System.ComponentModel.Design.Serialization.SerializationStore store, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeAbsolute(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="store" Type="System.ComponentModel.Design.Serialization.SerializationStore" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="store"><see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />先の状態<c>値</c>シリアル化されます。</param>
+        <param name="value">シリアル化するオブジェクト。</param>
+        <summary>既定のプロパティの値を特定のオブジェクトをシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ を介して実装として、標準のシリアル化、<xref:System.ComponentModel.Design.Serialization.ComponentSerializationService.Serialize%2A>メソッド、のみ、コンポーネントの既定の状態とは異なる値をシリアル化します。 これは、コンパクトなシリアル化機構を提供が新しく作成されたオブジェクトが逆シリアル化中に使用されることを前提としています。 既存のオブジェクトを使用する場合、結果の逆シリアル化されたオブジェクトは、オブジェクトのシリアル化の元の状態を複製するは保証されません。シリアル化中に既定値を格納しているプロパティは、逆シリアル化中に、既定値にリセットされません。  
+  
+ <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeAbsolute%2A>メソッドでは、このショートカットは使用しません。 逆シリアル化は、既定の状態に関係なく、すべてのオブジェクトのプロパティを復元できるように、ソース オブジェクトのすべてのプロパティがシリアル化します。  
+  
+ このメソッドは、コレクション内の構成項目の順序を変更できるため、コレクションをシリアル化するために特に便利です。 この状況では、コレクション全体の元の状態を復元する最も安全なプロセスは、その元のすべてのプロパティの値を持つすべてのアイテムを上書きします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="store" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="store" />閉じている場合または<paramref name="store" />はサポートされている型のシリアル化ストアではありません。 によって返されたストアを使用して<see cref="M:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService.CreateStore" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeMember">
+      <MemberSignature Language="C#" Value="public abstract void SerializeMember (System.ComponentModel.Design.Serialization.SerializationStore store, object owningObject, System.ComponentModel.MemberDescriptor member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SerializeMember(class System.ComponentModel.Design.Serialization.SerializationStore store, object owningObject, class System.ComponentModel.MemberDescriptor member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMember(System.ComponentModel.Design.Serialization.SerializationStore,System.Object,System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="store" Type="System.ComponentModel.Design.Serialization.SerializationStore" />
+        <Parameter Name="owningObject" Type="System.Object" />
+        <Parameter Name="member" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="store"><see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />先の状態<c>メンバー</c>シリアル化されます。</param>
+        <param name="owningObject">オブジェクトを<c>メンバー</c>がアタッチされています。</param>
+        <param name="member">A<see cref="T:System.ComponentModel.MemberDescriptor" />シリアル化するメンバーを指定します。</param>
+        <summary>指定されたオブジェクトの指定されたメンバーをシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMember%2A>メソッドは、シリアル化ストア内でシリアル化されたメンバーの一覧を構築する同じオブジェクトに対して複数回呼び出すことができます。 一般に、メンバーは、プロパティまたはイベントをする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="store" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="store" />閉じている場合または<paramref name="store" />はサポートされている型のシリアル化ストアではありません。 によって返されたストアを使用して<see cref="M:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService.CreateStore" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeMemberAbsolute">
+      <MemberSignature Language="C#" Value="public abstract void SerializeMemberAbsolute (System.ComponentModel.Design.Serialization.SerializationStore store, object owningObject, System.ComponentModel.MemberDescriptor member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SerializeMemberAbsolute(class System.ComponentModel.Design.Serialization.SerializationStore store, object owningObject, class System.ComponentModel.MemberDescriptor member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMemberAbsolute(System.ComponentModel.Design.Serialization.SerializationStore,System.Object,System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="store" Type="System.ComponentModel.Design.Serialization.SerializationStore" />
+        <Parameter Name="owningObject" Type="System.Object" />
+        <Parameter Name="member" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="store"><see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />先の状態<c>メンバー</c>シリアル化されます。</param>
+        <param name="owningObject">オブジェクトを<c>メンバー</c>がアタッチされています。</param>
+        <param name="member">シリアル化するメンバー。</param>
+        <summary>指定されたメンバーを特定のオブジェクトのプロパティの既定値をシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMemberAbsolute%2A>メソッドはシリアル化、`member`で`owningObject`場合でも、`member`プロパティの既定値が含まれています。  
+  
+ 一部のメンバーの既定値を含むとメンバーに同じ値の設定の復元がある異なる概念に注意してください。 たとえば、プロパティでは、ローカルの値が設定されていないときに、親オブジェクトからその値が継承している場合、値をプロパティに設定可能性がありますできませんが希望どおりの結果。 <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMemberAbsolute%2A>メソッドはこれを考慮して、ここでは、プロパティの状態をオフします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="store" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="store" />閉じている場合または<paramref name="store" />はサポートされている型のシリアル化ストアではありません。 によって返されたストアを使用して<see cref="M:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService.CreateStore" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

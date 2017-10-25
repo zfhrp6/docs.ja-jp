@@ -1,0 +1,1265 @@
+<Type Name="PersianCalendar" FullName="System.Globalization.PersianCalendar">
+  <TypeSignature Language="C#" Value="public class PersianCalendar : System.Globalization.Calendar" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit PersianCalendar extends System.Globalization.Calendar" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.PersianCalendar" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization.Calendars</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Globalization.Calendar</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ペルシャ暦を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ペルシャ暦は、一部の地域が異なる月の名前を使用して、ペルシア語の音声は、多くの国で使用されます。 ペルシャ暦はイランとアフガニスタンの正式なカレンダーであり、カザフスタンやタジキスタンなどの領域にある代替の予定表のいずれか。  
+  
+> [!NOTE]
+>  使用方法について、<xref:System.Globalization.PersianCalendar>クラスと、その他の .NET Framework のクラスを予定表を参照してください[カレンダーの使用](~/docs/standard/datetime/working-with-calendars.md)です。  
+  
+ ペルシャ暦の日付の開始、ヒジュラ、622 の年から西暦 ときにムハマッド (PBUH) からに移行したふもとメディナ年です。 たとえば、西暦 2002 年 3 月 21 日までの日付 1381 Anno Persico Farvardeen の年の月の最初の日に対応しています。  
+  
+ ペルシャ暦は太陽年に基づく、約 365 日です。 年が 4 つの季節を循環参照し、新しい年が地球の中心から見たとき北半球を南半球から赤道と交差するが表示されたら、sun を開始します。 新しい年は、北半球で spring の最初の日である Farvardeen の月の最初の日をマークします。  
+  
+ ペルシャ暦の最初の 6 か月の各 31 日間、30 日間には、[次へ] 5 か月間の各持ち最後の月 29 日、30 日とうるう年にします。 うるう年が年、33 で割ったときに剰余が 1、5、9、13、17、22、26、または 30 です。 たとえば、1370 年が閏年である 17 の残りの部分を生成 33 で割ったときです。 33 年周期には、約 8 のうるう年があります。  
+  
+## <a name="the-persiancalendar-class-and-net-framework-versions"></a>PersianCalendar クラスおよび .NET Framework のバージョン  
+ 以降で、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、<xref:System.Globalization.PersianCalendar>クラス監視アルゴリズムではなく、イスラム暦の太陽天体アルゴリズムを使用して日付を計算します。 これにより、<xref:System.Globalization.PersianCalendar>実装イランとアフガニスタン ペルシャ暦が最も普及している使用中の 2 つの国で使用されてペルシャ暦と一致します。 変更は、.NET Framework 4 またはそれ以上で実行されているすべてのアプリに影響、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]がインストールされています。  
+  
+ : 変更された、アルゴリズムの結果として  
+  
+-   1800 ~ 2123 はグレゴリオ暦の日付を変換するときに、2 つのアルゴリズムでは同一の結果を返す必要があります。  
+  
+-   1800 前に、と後 2123 はグレゴリオ暦の日付を変換するときに、2 つのアルゴリズムは異なる結果を返す可能性があります。  
+  
+-   <xref:System.Globalization.PersianCalendar.MinSupportedDateTime%2A>プロパティ値が変更された 0622 年 3 月 21 日から構成のグレゴリオ暦カレンダーにおける 0622 年 3 月 22 日にグレゴリオ暦でします。  
+  
+-   <xref:System.Globalization.PersianCalendar.MaxSupportedDateTime%2A>プロパティ値が 9378 ペルシャ暦の年の 10 番目の月の 10 日から 9378 ペルシャ暦の年の 10 番目の月 13 日に変更します。  
+  
+-   <xref:System.Globalization.PersianCalendar.IsLeapYear%2A>メソッドは以前よりも異なる結果を返す可能性があります。  
+  
+## <a name="using-the-persiancalendar-class"></a>PersianCalendar クラスを使用します。  
+ アプリケーションを使用して、<xref:System.Globalization.PersianCalendar>ペルシャ暦の日付の計算またはグレゴリオ暦の日付とペルシャ日付に変換するオブジェクト。  
+  
+ 使用することはできません、<xref:System.Globalization.PersianCalendar>オブジェクトのカルチャの既定の暦として。 既定の暦がで指定された、<xref:System.Globalization.CultureInfo.Calendar%2A?displayProperty=nameWithType>プロパティによって返される予定表のいずれかを指定する必要があります、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType>プロパティです。 現時点では、<xref:System.Globalization.PersianCalendar>クラスは、省略可能なカレンダーでサポートされている任意のカルチャのではありません、<xref:System.Globalization.CultureInfo>クラスし、その結果、既定の暦にすることはできません。  
+  
+   
+  
+## Examples  
+ 次の例をインスタンス化<xref:System.DateTime>オブジェクトを使用して、 <xref:System.DateTime.Now%2A?displayProperty=nameWithType> 、プロパティ、<xref:System.DateTime>コンス トラクター、およびペルシャ暦の<xref:System.Globalization.Calendar.ToDateTime%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29>メソッドです。 グレゴリオ暦とペルシャ暦でこれらの日付が表示されます。 ペルシャ暦の日付の範囲も表示されます。  
+  
+ [!code-csharp[sys.glob.PersianCal#3](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/calendar2.cs#3)]
+ [!code-vb[sys.glob.PersianCal#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/calendar2.vb#3)]  
+  
+ 次の例では、フィールド、プロパティ、およびメソッドのメンバー、<xref:System.Globalization.PersianCalendar>クラスです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersianCalendar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Globalization.PersianCalendar" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ コンス トラクターの使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar>クラスです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMonths">
+      <MemberSignature Language="C#" Value="public override DateTime AddMonths (DateTime time, int months);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime AddMonths(valuetype System.DateTime time, int32 months) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.AddMonths(System.DateTime,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="months" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="time">月数を加算する対象の <see cref="T:System.DateTime" />。</param>
+        <param name="months">正または負の、加算する月数。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> オブジェクトから指定した月数がオフセットされた <see cref="T:System.DateTime" /> オブジェクトを返します。</summary>
+        <returns><paramref name="months" /> パラメーターで指定した月数を <paramref name="time" /> パラメーターで指定した日付に加算することで得られる日付を表す <see cref="T:System.DateTime" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DateTime.Kind%2A> 、返されたプロパティ<xref:System.DateTime>常に equals を値<xref:System.DateTimeKind?displayProperty=nameWithType>です。 保持する、<xref:System.DateTime.Kind%2A>のプロパティ、`time`を呼び出してパラメーター、<xref:System.DateTime.SpecifyKind%2A?displayProperty=nameWithType>メソッドを次の例のようにします。  
+  
+ [!code-csharp[System.Globalization.Calendar.AddMethods#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/cs/add1.cs#5)]
+ [!code-vb[System.Globalization.Calendar.AddMethods#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/vb/add1.vb#5)]  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.AddMonths%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">その結果<see cref="T:System.DateTime" />はサポートされている範囲外です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="months" /> が -120,000 未満であるか、120,000 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddYears">
+      <MemberSignature Language="C#" Value="public override DateTime AddYears (DateTime time, int years);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime AddYears(valuetype System.DateTime time, int32 years) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.AddYears(System.DateTime,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="years" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="time">年数を加算する対象の <see cref="T:System.DateTime" />。</param>
+        <param name="years">正または負の、加算する年数。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> オブジェクトから指定した年数がオフセットされた <see cref="T:System.DateTime" /> オブジェクトを返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> オブジェクトに指定した年数を加算した結果の <see cref="T:System.DateTime" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DateTime.Kind%2A> 、返されたプロパティ<xref:System.DateTime>常に equals を値<xref:System.DateTimeKind?displayProperty=nameWithType>です。 保持する、<xref:System.DateTime.Kind%2A>のプロパティ、`time`を呼び出してパラメーター、<xref:System.DateTime.SpecifyKind%2A?displayProperty=nameWithType>メソッドを次の例のようにします。  
+  
+ [!code-csharp[System.Globalization.Calendar.AddMethods#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/cs/add1.cs#8)]
+ [!code-vb[System.Globalization.Calendar.AddMethods#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/vb/add1.vb#8)]  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.AddYears%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">その結果<see cref="T:System.DateTime" />はサポートされている範囲外です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="years" />-10,000 10,000 より大きいか小さいがします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AlgorithmType">
+      <MemberSignature Language="C#" Value="public override System.Globalization.CalendarAlgorithmType AlgorithmType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Globalization.CalendarAlgorithmType AlgorithmType" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.PersianCalendar.AlgorithmType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CalendarAlgorithmType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のカレンダーの暦法 (太陽暦、太陰暦、または太陰太陽暦) を示す値を取得します。</summary>
+        <value>常に <see cref="F:System.Globalization.CalendarAlgorithmType.SolarCalendar" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のカレンダーの日付の計算は、予定表が太陽暦、太陰暦、または太陰太陽暦がかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次の例では、リフレクションを使用して、各インスタンス化<xref:System.Globalization.Calendar>型と .NET Framework は、の値を表示、<xref:System.Globalization.Calendar.AlgorithmType%2A>プロパティです。  
+  
+ [!code-csharp[System.Globalization.Calendar.AlgorithmType#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.calendar.algorithmtype/cs/algorithmtype1.cs#1)]
+ [!code-vb[System.Globalization.Calendar.AlgorithmType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.calendar.algorithmtype/vb/algorithmtype1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Eras">
+      <MemberSignature Language="C#" Value="public override int[] Eras { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32[] Eras" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.PersianCalendar.Eras" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Globalization.PersianCalendar" /> オブジェクト内の時代 (年号) のリストを取得します。</summary>
+        <value><see cref="T:System.Globalization.PersianCalendar" /> オブジェクト内の時代 (年号) を表す整数の配列。 配列は、値が <see cref="F:System.Globalization.PersianCalendar.PersianEra" /> である単独の要素から構成されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.Eras%2A>プロパティです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDayOfMonth">
+      <MemberSignature Language="C#" Value="public override int GetDayOfMonth (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDayOfMonth(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.GetDayOfMonth(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> オブジェクトの日付を返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> オブジェクトの日付を表す 1 ～ 31 の整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.GetDayOfMonth%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="time" />パラメーターが日付を表すより小さい<see cref="P:System.Globalization.PersianCalendar.MinSupportedDateTime" />以上<see cref="P:System.Globalization.PersianCalendar.MaxSupportedDateTime" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDayOfWeek">
+      <MemberSignature Language="C#" Value="public override DayOfWeek GetDayOfWeek (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DayOfWeek GetDayOfWeek(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.GetDayOfWeek(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DayOfWeek</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> オブジェクトの曜日を返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> オブジェクトの曜日を表す <see cref="T:System.DayOfWeek" /> 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.GetDayOfWeek%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDayOfYear">
+      <MemberSignature Language="C#" Value="public override int GetDayOfYear (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDayOfYear(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.GetDayOfYear(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> オブジェクトの年間積算日を返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> オブジェクトの年間積算日を表す 1 ～ 366 の整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.GetDayOfYear%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="time" />パラメーターが日付を表すより小さい<see cref="P:System.Globalization.PersianCalendar.MinSupportedDateTime" />以上<see cref="P:System.Globalization.PersianCalendar.MaxSupportedDateTime" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDaysInMonth">
+      <MemberSignature Language="C#" Value="public override int GetDaysInMonth (int year, int month, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDaysInMonth(int32 year, int32 month, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.GetDaysInMonth(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す 1 ～ 9378 の整数。</param>
+        <param name="month">月を表し、範囲は 1 ~ 12 場合整数<c>年</c>場合、9378 の場合、1 ~ 10 ではありません<c>年</c>9378 がします。</param>
+        <param name="era">時代 (年号) を表す 0 ～ 1 の整数。</param>
+        <summary>指定した年と時代 (年号) の指定した月の日数を返します。</summary>
+        <returns>指定した年と時代 (年号) の指定した月の日数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.GetDaysInMonth%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />、 <paramref name="month" />、または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDaysInYear">
+      <MemberSignature Language="C#" Value="public override int GetDaysInYear (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDaysInYear(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.GetDaysInYear(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す 1 ～ 9378 の整数。</param>
+        <param name="era">時代 (年号) を表す 0 ～ 1 の整数。</param>
+        <summary>指定した時代 (年号) の指定した年の日数を返します。</summary>
+        <returns>指定した年と時代 (年号) の日数。 日数は、平年の場合は 365、閏年の場合は 366 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例に示しますの使用、<xref:System.Globalization.PersianCalendar.GetDaysInYear%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEra">
+      <MemberSignature Language="C#" Value="public override int GetEra (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetEra(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.GetEra(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> オブジェクトの時代 (年号) を返します。</summary>
+        <returns>常に <see cref="F:System.Globalization.PersianCalendar.PersianEra" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.GetEra%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="time" />パラメーターが日付を表すより小さい<see cref="P:System.Globalization.PersianCalendar.MinSupportedDateTime" />以上<see cref="P:System.Globalization.PersianCalendar.MaxSupportedDateTime" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLeapMonth">
+      <MemberSignature Language="C#" Value="public override int GetLeapMonth (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetLeapMonth(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.GetLeapMonth(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">変換する年を表す 1 ～ 9378 の整数。</param>
+        <param name="era">時代 (年号) を表す 0 ～ 1 の整数。</param>
+        <summary>指定された年と時代 (年号) の閏月を返します。</summary>
+        <returns>戻り値は、常に 0 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.GetLeapMonth%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMonth">
+      <MemberSignature Language="C#" Value="public override int GetMonth (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetMonth(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.GetMonth(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> オブジェクトの月を返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> オブジェクトの月を表す 1 ～ 12 の整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.GetMonth%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="time" />パラメーターが日付を表すより小さい<see cref="P:System.Globalization.PersianCalendar.MinSupportedDateTime" />以上<see cref="P:System.Globalization.PersianCalendar.MaxSupportedDateTime" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMonthsInYear">
+      <MemberSignature Language="C#" Value="public override int GetMonthsInYear (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetMonthsInYear(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.GetMonthsInYear(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す 1 ～ 9378 の整数。</param>
+        <param name="era">時代 (年号) を表す 0 ～ 1 の整数。</param>
+        <summary>指定した時代 (年号) の指定した年の月数を返します。</summary>
+        <returns><paramref name="year" /> パラメーターが 9378 の場合は 10 を返します。それ以外の場合は、常に 12 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.GetMonthsInYear%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetYear">
+      <MemberSignature Language="C#" Value="public override int GetYear (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetYear(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.GetYear(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> オブジェクトの年を返します。</summary>
+        <returns>指定した <see cref="T:System.DateTime" /> の年を表す 1 ～ 9378 の整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.GetYear%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="time" />パラメーターが日付を表すより小さい<see cref="P:System.Globalization.PersianCalendar.MinSupportedDateTime" />以上<see cref="P:System.Globalization.PersianCalendar.MaxSupportedDateTime" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLeapDay">
+      <MemberSignature Language="C#" Value="public override bool IsLeapDay (int year, int month, int day, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsLeapDay(int32 year, int32 month, int32 day, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.IsLeapDay(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="day" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す 1 ～ 9378 の整数。</param>
+        <param name="month">1 ~ 12 の場合、月と範囲を表す整数<c>年</c>場合、9378 の場合、1 ~ 10 ではありません<c>年</c>9378 がします。</param>
+        <param name="day">日を表す 1 ～ 31 の整数。</param>
+        <param name="era">時代 (年号) を表す 0 ～ 1 の整数。</param>
+        <summary>指定した日付が閏日かどうかを確認します。</summary>
+        <returns>
+          指定した日が閏日である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 閏日は、閏年であるだけで発生する日です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.IsLeapDay%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />、 <paramref name="month" />、 <paramref name="day" />、または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLeapMonth">
+      <MemberSignature Language="C#" Value="public override bool IsLeapMonth (int year, int month, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsLeapMonth(int32 year, int32 month, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.IsLeapMonth(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す 1 ～ 9378 の整数。</param>
+        <param name="month">1 ~ 12 の場合、月と範囲を表す整数<c>年</c>場合、9378 の場合、1 ~ 10 ではありません<c>年</c>9378 がします。</param>
+        <param name="era">時代 (年号) を表す 0 ～ 1 の整数。</param>
+        <summary>指定した年と時代 (年号) の指定した月が閏月かどうかを確認します。</summary>
+        <returns><see cref="T:System.Globalization.PersianCalendar" /> クラスは閏月の概念をサポートしないため、常に <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.IsLeapMonth%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />、 <paramref name="month" />、または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLeapYear">
+      <MemberSignature Language="C#" Value="public override bool IsLeapYear (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsLeapYear(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.IsLeapYear(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す 1 ～ 9378 の整数。</param>
+        <param name="era">時代 (年号) を表す 0 ～ 1 の整数。</param>
+        <summary>指定した時代 (年号) の指定した年が閏年かどうかを確認します。</summary>
+        <returns>
+          指定した年が閏年である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降で、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]の実装、<xref:System.Globalization.PersianCalendar>クラスは、監視のアルゴリズムからイスラム暦の太陽アルゴリズムに変更されました。 その結果、<xref:System.Globalization.PersianCalendar.IsLeapYear%2A>メソッドで実行すると、異なる値を返す可能性があります[!INCLUDE[net_v46](~/includes/net-v46-md.md)]よりときに、.NET Framework の以前のバージョンで実行します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.IsLeapYear%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxSupportedDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime MaxSupportedDateTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime MaxSupportedDateTime" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.PersianCalendar.MaxSupportedDateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Globalization.PersianCalendar" /> クラスでサポートされている最も新しい日付と時刻を取得します。</summary>
+        <value><see cref="T:System.Globalization.PersianCalendar" /> クラスでサポートされている最も新しい日付と時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Globalization.PersianCalendar.MaxSupportedDateTime%2A>プロパティは紀元 9999 年 12 月 31 日の最終時 グレゴリオ暦です。 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、この値は 9378 ペルシャ暦の年の 10 番目の月 13 日に相当します。 .NET Framework の以前のバージョンでは、9378 ペルシャ暦の年の 10 番目の月の 10 日と同じです。 詳細についてを参照してください「PersianCalendar クラスと .NET Framework のバージョン」、<xref:System.Globalization.PersianCalendar>トピックです。  
+  
+ 紀元 9999 ペルシャ暦の 9378 年と同じです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.MaxSupportedDateTime%2A>プロパティです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinSupportedDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime MinSupportedDateTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime MinSupportedDateTime" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.PersianCalendar.MinSupportedDateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Globalization.PersianCalendar" /> クラスでサポートされている最も古い日付と時刻を取得します。</summary>
+        <value><see cref="T:System.Globalization.PersianCalendar" /> クラスでサポートされている最も古い日付と時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降で、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]の値、<xref:System.Globalization.PersianCalendar.MinSupportedDateTime%2A>プロパティは、西暦 622 年 3 月 22日の最初の瞬間に相当 グレゴリオ暦です。 以前のバージョンのでは、NET Framework は西暦 622 年 3 月 21 日の最初の瞬間に相当 グレゴリオ暦です。 詳細についてを参照してください「PersianCalendar クラスと .NET Framework のバージョン」、<xref:System.Globalization.PersianCalendar>トピックです。  
+  
+ 622 西暦 ペルシャ暦の 0001 年と同じです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.MinSupportedDateTime%2A>プロパティです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersianEra">
+      <MemberSignature Language="C#" Value="public static readonly int PersianEra;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly int32 PersianEra" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.PersianCalendar.PersianEra" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の時代 (年号) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Globalization.PersianCalendar.PersianEra>は 1 です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.PersianEra>プロパティです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime ToDateTime (int year, int month, int day, int hour, int minute, int second, int millisecond, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime ToDateTime(int32 year, int32 month, int32 day, int32 hour, int32 minute, int32 second, int32 millisecond, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="day" Type="System.Int32" />
+        <Parameter Name="hour" Type="System.Int32" />
+        <Parameter Name="minute" Type="System.Int32" />
+        <Parameter Name="second" Type="System.Int32" />
+        <Parameter Name="millisecond" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す 1 ～ 9378 の整数。</param>
+        <param name="month">月を表す 1 ～ 12 の整数。</param>
+        <param name="day">日を表す 1 ～ 31 の整数。</param>
+        <param name="hour">時間を表す 0 ～ 23 の整数。</param>
+        <param name="minute">分を表す 0 ～ 59 の整数。</param>
+        <param name="second">秒を表す 0 ～ 59 の整数。</param>
+        <param name="millisecond">ミリ秒を表す 0 ～ 999 の整数。</param>
+        <param name="era">時代 (年号) を表す 0 ～ 1 の整数。</param>
+        <summary>指定した日付、時刻、および時代 (年号) に設定された <see cref="T:System.DateTime" /> オブジェクトを返します。</summary>
+        <returns>現在の時代 (年号) の指定した日付と時刻に設定された <see cref="T:System.DateTime" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.PersianCalendar.ToDateTime%2A>メソッドは、現在の暦で日付グレゴリオ暦の日付に変換できるため便利です。 グレゴリオ暦の日付、後で使用できます、たとえば、さまざまなカレンダーの日付を比較または等価の日付を特定の暦で作成します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.ToDateTime%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />、 <paramref name="month" />、 <paramref name="day" />、 <paramref name="hour" />、 <paramref name="minute" />、 <paramref name="second" />、 <paramref name="millisecond" />、または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToFourDigitYear">
+      <MemberSignature Language="C#" Value="public override int ToFourDigitYear (int year);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ToFourDigitYear(int32 year) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.PersianCalendar.ToFourDigitYear(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">変換する年を表す 1 ～ 9378 の整数。</param>
+        <summary>指定した年を 4 桁表記の年に変換します。</summary>
+        <returns><paramref name="year" /> の 4 桁表記を保持する整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、変換、 `year` 4 桁の年の形式を使用するパラメーター、<xref:System.Globalization.PersianCalendar.TwoDigitYearMax%2A>プロパティです。 戻り値は、4 桁の年に正しく変換する 2 桁の年ができる 100 年の範囲の上限の境界です。 たとえば、2029年 1998年から 100 年の範囲の場合は、し、2 桁の値は 30 が 1930年解釈され、2029 2 桁の値は 29 と解釈されます。  
+  
+ <xref:System.Globalization.PersianCalendar.ToFourDigitYear%2A>2 桁または 4 桁の年のいずれかをサポートしています。 値によると 4 桁の値に変換するメソッドを 2 桁の年の値 (100 よりも小さい) を渡すと、<xref:System.Globalization.PersianCalendar.TwoDigitYearMax%2A>適切な 4 桁の年を表す値です。 アプリケーションがサポートされているカレンダーの範囲内にある 4 桁の年の値が指定した場合<xref:System.Globalization.PersianCalendar.ToFourDigitYear%2A>、実際の入力値を返します。 アプリケーションはサポートされているカレンダー範囲では、4 桁の値が指定した場合、または負の値が渡された場合は、メソッドは例外をスローします。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.ToFourDigitYear%2A>メソッドです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />0 未満か、9378 より大きい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TwoDigitYearMax">
+      <MemberSignature Language="C#" Value="public override int TwoDigitYearMax { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TwoDigitYearMax" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.PersianCalendar.TwoDigitYearMax" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>年の 2 桁表記で表すことができる 100 年間の範囲内で最後に当たる年を取得または設定します。</summary>
+        <value>年の 2 桁表記で表すことができる 100 年間の範囲内で最後に当たる年。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、2 桁の年を 4 桁の年に適切に変換を使用します。 たとえば、このプロパティが 2029年に設定されている場合、100 年範囲は 1930年 2029 です。 そのため、30 の 2 桁の値は 2029 29 の 2 桁の値を解釈中に、1930、として解釈されます。  
+  
+ このプロパティの初期値は、コントロール パネルの 地域と言語のオプションの設定から取得されます。 ただし、その情報を変更できますの有効期間中に、<xref:System.AppDomain>です。 <xref:System.Globalization.PersianCalendar>クラスには、システム設定の変更は検出されません自動的にします。 予定表は、地域と言語のオプションではサポートされていません、このプロパティの初期値が calendar クラスで定義された既定値です。  
+  
+ アプリケーションは、この値を 2 桁の年をそのまま使用することを示す 99 を設定する必要があります。 たとえば、このプロパティが 99 に設定されている場合 100 年の範囲は 0 (ほとんどのカレンダーの有効な値されません) 99 です。 そのため、30 の 2 桁の値は 30 として解釈されます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Globalization.PersianCalendar.TwoDigitYearMax%2A>プロパティです。  
+  
+ [!code-csharp[sys.glob.PersianCal#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.persianCal/cs/pcal.cs#1)]
+ [!code-vb[sys.glob.PersianCal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.persianCal/vb/pcal.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このカレンダーは、読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">セット操作の値は、100 より小さいか、9378 よりも大きい値です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

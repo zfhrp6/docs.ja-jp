@@ -1,0 +1,289 @@
+<Type Name="WorkflowRuntimeService" FullName="System.Workflow.Runtime.Hosting.WorkflowRuntimeService">
+  <TypeSignature Language="C#" Value="public abstract class WorkflowRuntimeService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WorkflowRuntimeService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー ランタイム エンジンのコア サービスの派生元となる抽象基本クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスから派生したサービスは、ワークフロー ランタイム エンジンによって開始および停止します。 ただし、サービスが開始される順序も停止する順序も不定です。また、サービスは、開始時に自身を適切に初期化するために他のサービスのサポートを必要とする場合があります。また、停止時に適切にシャットダウンするために他のサービスのサポートを必要とする場合があります。 この問題に対処するために、ワークフロー ランタイム エンジンには、サービスの開始と停止に 2 フェーズ機構が用意されています。 <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A> が呼び出されると、ワークフロー ランタイム エンジンは、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> クラスから派生したそのサービスごとに <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> メソッドを呼び出します。  これらのサービスがすべて開始されると、ワークフロー ランタイム エンジンは <xref:System.Workflow.Runtime.WorkflowRuntime.Started?displayProperty=nameWithType> イベントを発生させます。このイベントが基になって、ワークフロー ランタイム エンジンのサービスごとに <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStarted%2A> メソッドが呼び出されます。 サービスは、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStarted%2A> メソッドをオーバーライドしてこの 2 フェーズ プロセスに参加できます。 同様に、<xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime%2A> が呼び出されたときも、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> メソッド、<xref:System.Workflow.Runtime.WorkflowRuntime.Stopped?displayProperty=nameWithType> イベント、および <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped%2A> メソッドが、この 2 フェーズ機構を使用します。  State プロパティは、サービスが開始または停止しようとしているか、あるいは完全に開始または停止したかを示す <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState> 値を格納します。  
+  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスから派生したサービスは、未処理の例外の原因となる状態を検出すると、<xref:System.Workflow.Runtime.WorkflowRuntime.ServicesExceptionNotHandled?displayProperty=nameWithType> を呼び出すことにより、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.RaiseServicesExceptionNotHandledEvent%2A> イベントを発生させることができます。  
+  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> クラス、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> クラス、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> クラス、および <xref:System.Workflow.Runtime.Tracking.TrackingService> クラスから派生したサービスは、結局は <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスから派生しています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WorkflowRuntimeService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.Runtime.Hosting.WorkflowRuntimeService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.State%2A> は <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState.Stopped> に初期化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStarted">
+      <MemberSignature Language="C#" Value="protected virtual void OnStarted ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStarted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStarted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされるときに、ワークフロー ランタイム エンジンが <see cref="E:System.Workflow.Runtime.WorkflowRuntime.Started" /> イベントを発生させると呼び出されるメソッドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスは、2 フェーズ開始機構を実装しています。この機構により、ワークフロー ランタイム エンジンのサービスは、ワークフロー ランタイム エンジンがそのすべてのサービスの <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> メソッドを呼び出した後に、他のサービスに依存する初期化を実行することができます。 ワークフロー ランタイム エンジンは、そのすべてのサービスの <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> メソッドを呼び出した後で <xref:System.Workflow.Runtime.WorkflowRuntime.Started?displayProperty=nameWithType> イベントを発生させます。 <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStarted%2A> メソッドをオーバーライドして、<xref:System.Workflow.Runtime.WorkflowRuntime.Started?displayProperty=nameWithType> イベントが発生したときにサービスが必要とする最終的な開始機能を持たせることができます。 <xref:System.Workflow.Runtime.WorkflowRuntime.Started?displayProperty=nameWithType> イベントのサブスクリプションとサブスクリプションの解除は、内部で処理されます。  
+  
+> [!NOTE]
+>  ワークフロー ランタイム エンジンを起動した後、<xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A> を呼び出してサービスをワークフロー ランタイム エンジンに追加した場合、ワークフロー ランタイム エンジンはそのサービスに対して <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> を呼び出します。 ただし、このような場合は、<xref:System.Workflow.Runtime.WorkflowRuntime.Started> イベントが既に発生しているため、サービスは、通常であれば <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStarted%2A> で実行される初期化を、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> メソッド内から実行することが必要な場合があります。 <xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A> をテストすると、ワークフロー ランタイム エンジンが起動されているかどうかを確認できます。  
+  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.State%2A> は、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState.Started> が呼び出される前に <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStarted%2A> に設定されます。  <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStarted%2A> の既定の実装では、アクションは実行されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStopped">
+      <MemberSignature Language="C#" Value="protected virtual void OnStopped ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStopped() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされるときに、ワークフロー ランタイム エンジンが <see cref="E:System.Workflow.Runtime.WorkflowRuntime.Stopped" /> イベントを発生させると呼び出されるメソッドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスは、2 フェーズ停止機構を実装しています。この機構により、ワークフロー ランタイム エンジンのサービスは、必要であれば、その <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> メソッドがワークフロー ランタイム エンジンによって呼び出された後も、他のサービスのシャットダウンをサポートするための機能を保持できます。 ワークフロー ランタイム エンジンは、そのすべてのサービスの <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> メソッドを呼び出した後で <xref:System.Workflow.Runtime.WorkflowRuntime.Stopped?displayProperty=nameWithType> イベントを発生させます。 <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped%2A> メソッドをオーバーライドして、<xref:System.Workflow.Runtime.WorkflowRuntime.Stopped?displayProperty=nameWithType> イベントが発生したときにサービスが必要とする最終的なシャットダウン機能を持たせることができます。 <xref:System.Workflow.Runtime.WorkflowRuntime.Stopped?displayProperty=nameWithType> イベントのサブスクリプションとサブスクリプションの解除は、内部で処理されます。  
+  
+> [!NOTE]
+>  ワークフロー ランタイム エンジンの実行中に <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> を呼び出して <xref:System.Workflow.Runtime.WorkflowRuntime.RemoveService%2A> をワークフロー ランタイム エンジンから削除すると、ワークフロー ランタイム エンジンはそのサービスに対して <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> を呼び出します。 ただし、このような場合は、そのサービスに対して <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped%2A> メソッドが呼び出されません。 したがってサービスは、通常であれば <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped%2A> で実行する最終的なシャットダウンを、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> メソッド内から実行することが必要な場合があります。 <xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A> をテストすると、ワークフロー ランタイム エンジンが実行されているかどうかを確認できます。  
+  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.State%2A> は、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState.Stopped> が呼び出される前に <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped%2A> に設定されます。  <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped%2A> の既定の実装では、アクションは実行されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseServicesExceptionNotHandledEvent">
+      <MemberSignature Language="C#" Value="protected void RaiseServicesExceptionNotHandledEvent (Exception exception, Guid instanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseServicesExceptionNotHandledEvent(class System.Exception exception, valuetype System.Guid instanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.RaiseServicesExceptionNotHandledEvent(System.Exception,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Exception" />
+        <Parameter Name="instanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="exception">処理できなかった例外。</param>
+        <param name="instanceId">未処理の例外に関連付けられているワークフロー インスタンスの <see cref="T:System.Guid" />。</param>
+        <summary><see cref="E:System.Workflow.Runtime.WorkflowRuntime.ServicesExceptionNotHandled" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスは、実行中に処理できない例外を検出すると、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.RaiseServicesExceptionNotHandledEvent%2A> を呼び出して <xref:System.Workflow.Runtime.WorkflowRuntime.ServicesExceptionNotHandled?displayProperty=nameWithType> イベントを発生させることができます。 未処理の例外に関連付けられているワークフロー インスタンスの <xref:System.Guid> を渡す必要があります。 たとえば、タイマー サービスは、例外が発生したタイマーに関連付けられている <xref:System.Guid> を渡します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Runtime">
+      <MemberSignature Language="C#" Value="protected System.Workflow.Runtime.WorkflowRuntime Runtime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.WorkflowRuntime Runtime" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Runtime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowRuntime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このサービスの <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> を取得します。</summary>
+        <value><see cref="T:System.Workflow.Runtime.Hosting.WorkflowRuntimeService" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジンは、サービスに対する <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> を呼び出す前に、このプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="protected virtual void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、サービスを開始して、<see cref="P:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.State" /> を <see cref="F:System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState.Starting" /> に変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> が呼び出されると、ワークフロー ランタイム エンジンは、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスから派生したそのすべてのサービスについて <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A> を呼び出します。  
+  
+ ワークフロー ランタイム エンジンを開始した後、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> を呼び出してワークフロー ランタイム エンジンにワークフロー ランタイム エンジン サービスを追加したときも、<xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A> がワークフロー ランタイム エンジンによって呼び出されます。 <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> の既定の実装は、サービスが開始されたかどうかを追跡し、この情報を使用することによって、既に実行されているサービスが開始された場合は適切な例外をスローします。  
+  
+ このメソッドをオーバーライドすることにより、サービスをワークフロー ランタイム エンジンで開始するために必要な追加機能を持たせることができます。 ワークフロー ランタイム エンジンがサービスに対する <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> を呼び出したときに、存在するどのサービスが実行されているかについての保証はありません。 したがって、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> メソッドでは、他のサービスが提供する機能に依存しない初期化のみを実行する必要があります。 これには、スケジューラ サービスなどのコア サービスが提供する機能が含まれます。 ワークフロー ランタイム エンジンは、そのすべてのサービスの <xref:System.Workflow.Runtime.WorkflowRuntime.Started?displayProperty=nameWithType> メソッドを呼び出した後で <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> イベントを発生させます。 ワークフロー ランタイム エンジンのすべてのサービスを開始した後で、サービスをさらに初期化する必要がある場合は、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStarted%2A> イベントが発生した時点でその初期化を実行するように <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> メソッドをオーバーライドできます。  
+  
+> [!NOTE]
+>  ワークフロー ランタイム エンジンを起動した後、<xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A> を呼び出してサービスをワークフロー ランタイム エンジンに追加した場合、ワークフロー ランタイム エンジンはそのサービスに対して <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> を呼び出します。 ただし、このような場合は、<xref:System.Workflow.Runtime.WorkflowRuntime.Started> イベントが既に発生しているため、サービスは、通常であれば <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStarted%2A> で実行される初期化を、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> メソッド内から実行することが必要な場合があります。 <xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A> をテストすると、ワークフロー ランタイム エンジンが起動されているかどうかを確認できます。  
+  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> は、ワークフロー ランタイム エンジンでのみ呼び出す必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> から派生したオブジェクト (TerminationTrackingService) に対する Start メソッドを呼び出す方法を次の例に示します。  この例は、終了追跡サービスの SDK サンプルです。  詳細については、次を参照してください。[終了追跡サービスのサンプル](http://msdn.microsoft.com/en-us/29b7c0d7-cece-4bb9-96d0-c5b6c6e14439)です。  
+  
+ [!code-csharp[WF_Samples#112](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#112)]
+ [!code-vb[WF_Samples#112](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#112)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Runtime" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。  
+  
+ または  
+  
+ サービスが既に開始されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="protected System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState State" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Hosting.WorkflowRuntimeService" /> の状態を取得します。</summary>
+        <value><see cref="T:System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスは、ワークフロー ランタイム エンジンのサービスの開始と停止の両方について、2 フェーズ機構を実装しています。 開始機構の最初のフェーズは、ワークフロー ランタイム エンジンがサービスの <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> メソッドの実装を呼び出すと始まります。 このメソッドは、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> を <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.State%2A> に設定する <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState.Starting> の基本実装を呼び出す必要があります。 2 番目のフェーズは、ワークフロー ランタイム エンジンがそのすべてのサービスを開始した後に起こり、ワークフロー ランタイム エンジンが <xref:System.Workflow.Runtime.WorkflowRuntime.Started> イベントを発生させます。 <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> はこのイベントのサブスクリプションを内部で管理し、そのハンドラーは <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.State%2A> を <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState.Started> に設定します。  
+  
+ ワークフロー ランタイム エンジンのサービスを停止する場合の 2 フェーズ機構は、ワークフロー ランタイム エンジンがサービスの <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> メソッドの実装を呼び出すと始まります。 このメソッドは、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> を <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.State%2A> に設定する <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState.Stopping> の基本実装を呼び出す必要があります。 ワークフロー ランタイム エンジンは、そのすべてのサービスを停止した後に、<xref:System.Workflow.Runtime.WorkflowRuntime.Stopped> イベントを発生させます。 <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> はこのイベントのサブスクリプションを内部で管理し、そのハンドラーは <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.State%2A> を <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState.Stopped> に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="protected virtual void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、サービスを停止して <see cref="P:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.State" /> を <see cref="F:System.Workflow.Runtime.Hosting.WorkflowRuntimeServiceState.Stopping" /> に変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> が呼び出されると、ワークフロー ランタイム エンジンは、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスから派生したそのすべてのサービスについて <xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime%2A> を呼び出します。  <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> の呼び出しによってワークフロー ランタイム エンジンからワークフロー ランタイム エンジンのサービスが削除されるときも、<xref:System.Workflow.Runtime.WorkflowRuntime.RemoveService%2A> がワークフロー ランタイム エンジンによって呼び出されます。 <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> の既定の実装は、サービスが開始されたかどうかを追跡し、この情報を使用することによって、開始前のサービスが停止させられる場合は適切な例外をスローします。  
+  
+ このメソッドをオーバーライドすることにより、サービスをワークフロー ランタイム エンジンで停止させるために必要な追加機能を持たせることができます。 サービスに対する <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> が呼び出されたときに、存在するどのサービスが停止しているかまたは実行されているかについての保証はありません。 ワークフロー ランタイム エンジンは、そのすべてのサービスの <xref:System.Workflow.Runtime.WorkflowRuntime.Stopped?displayProperty=nameWithType> メソッドを呼び出した後で <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> イベントを発生させます。 サービスは、ワークフロー ランタイム エンジンがワークフロー ランタイム エンジンのすべてのサービスについて停止メソッドを呼び出し終えるまで、他のサービスをサポートするための残留機能を保持しておくことが必要な場合があります。 サービスがこうした機能を保持する必要がある場合は、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped%2A> イベントが発生したときにサービスの停止を完了するために必要な追加アクションを実行するように <xref:System.Workflow.Runtime.WorkflowRuntime.Stopped?displayProperty=nameWithType> メソッドをオーバーライドできます。  
+  
+> [!NOTE]
+>  ワークフロー ランタイム エンジンの実行中に <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> を呼び出して <xref:System.Workflow.Runtime.WorkflowRuntime.RemoveService%2A> をワークフロー ランタイム エンジンから削除すると、ワークフロー ランタイム エンジンはそのサービスに対して <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> を呼び出します。 ただし、このような場合は、そのサービスに対して <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped%2A> メソッドが呼び出されません。 したがって、通常サービスは <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped%2A> でシャットダウン機能を実行しますが、ここでは <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> メソッド内からシャットダウンする必要があります。 <xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A> をテストすると、ワークフロー ランタイム エンジンが実行されているかどうかを確認できます。  
+  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> は、ワークフロー ランタイム エンジンでのみ呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Runtime" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。  
+  
+ または  
+  
+ サービスがまだ開始されていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

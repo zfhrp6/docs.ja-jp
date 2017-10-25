@@ -1,0 +1,103 @@
+<Type Name="GetPageCompletedEventArgs" FullName="System.Windows.Documents.GetPageCompletedEventArgs">
+  <TypeSignature Language="C#" Value="public class GetPageCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GetPageCompletedEventArgs extends System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.GetPageCompletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.AsyncCompletedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Documents.DocumentPaginator.GetPageCompleted" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GetPageCompletedEventArgs (System.Windows.Documents.DocumentPage page, int pageNumber, Exception error, bool cancelled, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.DocumentPage page, int32 pageNumber, class System.Exception error, bool cancelled, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.GetPageCompletedEventArgs.#ctor(System.Windows.Documents.DocumentPage,System.Int32,System.Exception,System.Boolean,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="page" Type="System.Windows.Documents.DocumentPage" />
+        <Parameter Name="pageNumber" Type="System.Int32" />
+        <Parameter Name="error" Type="System.Exception" />
+        <Parameter Name="cancelled" Type="System.Boolean" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="page"><see cref="T:System.Windows.Documents.DocumentPage" /> 、要求されたの<c>pageNumber</c>です。</param>
+        <param name="pageNumber"><c>PageNumber</c>に渡されたパラメーター<see cref="M:System.Windows.Documents.DocumentPaginator.GetPageAsync(System.Int32,System.Object)" />です。</param>
+        <param name="error">非同期の操作中に発生した例外または、エラーがない場合は NULL です。</param>
+        <param name="cancelled">
+          <see langword="true" />非同期操作がキャンセルされた場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="userState">一意な<c>userState</c>に渡されたパラメーター<see cref="M:System.Windows.Documents.DocumentPaginator.GetPageAsync(System.Int32,System.Object)" />です。</param>
+        <summary><see cref="T:System.Windows.Documents.GetPageCompletedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期操作を呼び出すことによってキャンセル<xref:System.Windows.Documents.DocumentPaginator.CancelAsync%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentPage">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.DocumentPage DocumentPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.DocumentPage DocumentPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.GetPageCompletedEventArgs.DocumentPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.DocumentPage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.DocumentPage" />への呼び出しで指定されたページの<see cref="M:System.Windows.Documents.DocumentPaginator.GetPageAsync(System.Int32,System.Object)" />します。</summary>
+        <value>呼び出しで指定されたページのドキュメント ページ<see cref="M:System.Windows.Documents.DocumentPaginator.GetPageAsync(System.Int32,System.Object)" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.GetPageCompletedEventArgs.PageNumber%2A>プロパティが要求されたページ番号を識別<xref:System.Windows.Documents.GetPageCompletedEventArgs.DocumentPage%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageNumber">
+      <MemberSignature Language="C#" Value="public int PageNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.GetPageCompletedEventArgs.PageNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>渡されるページ数を取得<see cref="M:System.Windows.Documents.DocumentPaginator.GetPageAsync(System.Int32,System.Object)" />です。</summary>
+        <value>渡されるページ数<see cref="M:System.Windows.Documents.DocumentPaginator.GetPageAsync(System.Int32,System.Object)" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.GetPageCompletedEventArgs.DocumentPage%2A>プロパティには、要求されたドキュメントのページが含まれています。<xref:System.Windows.Documents.GetPageCompletedEventArgs.PageNumber%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

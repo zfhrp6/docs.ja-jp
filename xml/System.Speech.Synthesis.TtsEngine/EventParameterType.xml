@@ -1,0 +1,203 @@
+<Type Name="EventParameterType" FullName="System.Speech.Synthesis.TtsEngine.EventParameterType">
+  <TypeSignature Language="C#" Value="public enum EventParameterType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EventParameterType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.TtsEngine.EventParameterType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>音声合成イベントに渡されるデータのポインターの種類を列挙します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.TtsEngine.EventParameterType>構築するときに使用する<xref:System.Speech.Synthesis.TtsEngine.SpeechEventInfo>オブジェクト。 インスタンス<xref:System.Speech.Synthesis.TtsEngine.EventParameterType>として渡される、`parameterType`のコンス トラクターに渡す引数<xref:System.Speech.Synthesis.TtsEngine.SpeechEventInfo>を指定方法、`param2`コンス トラクターの引数 (する必要があります、 `System.IntPtr`) は解釈されます。  
+  
+ 選択<xref:System.Speech.Synthesis.TtsEngine.EventParameterType>要求されているイベントの種類によって決まりますがのメンバーの指定に従って<xref:System.Speech.Synthesis.TtsEngine.TtsEventId>です。  
+  
+ 方法の詳細については、使用<xref:System.Speech.Synthesis.TtsEngine.EventParameterType>ドキュメントをご覧ください<xref:System.Speech.Synthesis.TtsEngine.SpeechEventInfo.EventId%2A>  
+  
+   
+  
+## Examples  
+ 次の例から継承するカスタム音声合成の実装の一部である<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml>の使用を使用して<xref:System.Speech.Synthesis.TtsEngine.TextFragment>、 <xref:System.Speech.Synthesis.TtsEngine.SpeechEventInfo>、 <xref:System.Speech.Synthesis.TtsEngine.FragmentState>、および<xref:System.Speech.Synthesis.TtsEngine.TtsEventId>です。  
+  
+ 実装<xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak%2A>  
+  
+1.  配列を受け取る<xref:System.Speech.Synthesis.TtsEngine.TextFragment>インスタンスし、新しい配列を作成<xref:System.Speech.Synthesis.TtsEngine.TextFragment>に渡されるインスタンス、`Speak`基になる合成エンジンでのメソッドです。  
+  
+2.  場合、<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>から列挙値がによって検出された、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.FragmentState>によって返される、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>の各プロパティ<xref:System.Speech.Synthesis.TtsEngine.TextFragment>インスタンスが<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction.Speak>実装では、  
+  
+    -   読み上げるテキストで Britishisms に Americanism を変換します。  
+  
+    -   場合、<xref:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.EventInterest%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.ITtsEngineSite>実装サポートを提供するインターフェイス、<xref:System.Speech.Synthesis.TtsEngine.TtsEventId.WordBoundary>イベントの種類、<xref:System.Speech.Synthesis.TtsEngine.SpeechEventInfo>シンセサイザー進行状況インジケーターが作成されるドライブにイベントを作成するインスタンスを使用します。  
+  
+         パラメーターは、<xref:System.Speech.Synthesis.TtsEngine.SpeechEventInfo>など、<xref:System.Speech.Synthesis.TtsEngine.EventParameterType>メンバーの値によって返される<xref:System.Speech.Synthesis.TtsEngine.SpeechEventInfo.ParameterType%2A>で生成されたイベント ログに記録するために使用、`LogSpeechEvent`メソッドです。  
+  
+3.  音声認識のレンダリング エンジンが呼び出されます、変更されたと<xref:System.Speech.Synthesis.TtsEngine.TextFragment>配列。  
+  
+```  
+private const int WordBoundaryFlag = 1 << (int)TtsEventId.WordBoundary;  
+private readonly char[] spaces = new char[] { ' ', '\t', '\r', '\n' };  
+internal struct UsVsUk  
+{  
+  internal string UK;  
+  internal string US;  
+}  
+  
+override public void Speak (TextFragment [] frags, IntPtr wfx, ITtsEngineSite site)  
+{  
+  TextFragment [] newFrags=new TextFragment[frags.Length];  
+  
+  for (int i=0;i<frags.Length;i++){  
+    newFrags[i].State=frags[i].State;  
+    //truncate  
+    newFrags[i].TextToSpeak = frags[i].TextToSpeak.Substring(frags[i].TextOffset,  
+                               frags[i].TextLength);  
+    newFrags[i].TextLength = newFrags[i].TextToSpeak.Length;  
+    newFrags[i].TextOffset = 0;  
+    if (newFrags[i].State.Action == TtsEngineAction.Speak) {  
+      //Us to UK conversion  
+      foreach (UsVsUk term in TransList) {  
+      newFrags[i].TextToSpeak.Replace(term.US, term.UK);  
+      }  
+      //Generate progress meter events if supported  
+      if ((site.EventInterest & WordBoundaryFlag) != 0) {  
+      string[] subs = newFrags[i].TextToSpeak.Split(spaces);  
+  
+      foreach (string s in subs) {  
+        int offset = newFrags[i].TextOffset;  
+        SpeechEventInfo spEvent = new SpeechEventInfo((Int16)TtsEventId.WordBoundary,   
+                (Int16)EventParameterType.Undefined,   
+                 s.Length, new IntPtr(offset));  
+         LogSpeechEvent(spEvent.EventId,   
+                        spEvent.ParameterType,   
+                        spEvent.Param1,  
+                        spEvent.Param2);  
+        offset += s.Length;  
+        if (s.Trim().Length > 0) {  
+          SpeechEventInfo[] events = new SpeechEventInfo[1];  
+          events[0] = spEvent;  
+          site.AddEvents(events, 1);  
+        }  
+      }  
+      }  
+    }  
+  }  
+  
+  _baseSynthesize.Speak(newFrags, wfx, site);  
+  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Object">
+      <MemberSignature Language="C#" Value="Object" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EventParameterType Object = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EventParameterType.Object" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EventParameterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在はサポートされていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Pointer">
+      <MemberSignature Language="C#" Value="Pointer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EventParameterType Pointer = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EventParameterType.Pointer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EventParameterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在はサポートされていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="String">
+      <MemberSignature Language="C#" Value="String" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EventParameterType String = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EventParameterType.String" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EventParameterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<paramref name="param2" />への引数、<see cref="T:System.Speech.Synthesis.TtsEngine.SpeechEventInfo" />は、<see langword="System.IntPtr" />を使用して作成<see langword="System.Runtime.InteropServices.Marshal.StringToCoTaskMemUni" />を参照する、<see langword="System.String" />オブジェクトです。<paramref name="param1" />任意の値にかかる場合があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Token">
+      <MemberSignature Language="C#" Value="Token" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EventParameterType Token = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EventParameterType.Token" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EventParameterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<paramref name="param2" />への引数、<see cref="T:System.Speech.Synthesis.TtsEngine.SpeechEventInfo" />は、</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `System.IntPtr`を使用して作成`System.Runtime.InteropServices.Marshal.PtrToStructure`  
+  
+ オブジェクトを参照する、Windows デスクトップ音声テクノロジ トークン--Windows デスクトップ音声テクノロジ、音声などのリソースを表す (<xref:System.Speech.Synthesis.VoiceInfo>) です。`param1`任意の値にかかる場合があります。  
+  
+> [!NOTE]
+>  メンバーを使用して作成された、管理対象の合成音声認識エンジンのインスタンスでは現在、<xref:System.Speech.Synthesis>領域の名前、作成した後のリソースを変更することはできません  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Undefined">
+      <MemberSignature Language="C#" Value="Undefined" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EventParameterType Undefined = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EventParameterType.Undefined" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EventParameterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、<paramref name="param2" />への引数、<see cref="T:System.Speech.Synthesis.TtsEngine.SpeechEventInfo" />が定義されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、`param1`と`param2`は無視されます。 ただし場合、<xref:System.Speech.Synthesis.TtsEngine.TtsEventId>は<xref:System.Speech.Synthesis.TtsEngine.TtsEventId.WordBoundary>、進行状況の測定イベントを生成できる`param1`、現在の単語の長さを表す整数を指定する必要がありますと`param2`、`System.IntPtr`現在のオフセットを表す整数を参照します。単語。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

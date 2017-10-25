@@ -1,0 +1,84 @@
+<Type Name="SrgsGrammarMode" FullName="System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode">
+  <TypeSignature Language="C#" Value="public enum SrgsGrammarMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SrgsGrammarMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>文法が定義されている入力の種類を示す、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />は一致します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力モード、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>によって決定されます、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Mode%2A>プロパティです。 既定値入力モードは、音声では、文法がによって定義されていることを示します、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>は音声入力に一致します。  
+  
+ Dtmf モードでは、文法が音声認識ではなくデュアル トーン マルチ頻度 (DTMF) トーンを一致することを示します。 12 するは、ほとんどの電話で一般的に見られる 16 の DTMF トーンがあります。  
+  
+ 作成するとき、<xref:System.Speech.Recognition.Grammar>オブジェクトから、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>、<xref:System.Speech.Recognition.Grammar>オブジェクトで指定された入力の型を一致は、<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Mode%2A>のインスタンスを取得するプロパティ<xref:System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode>です。  
+  
+   
+  
+## Examples  
+  
+```csharp  
+string srgsDocumentFile = Path.Combine(Path.GetTempPath(), "srgsDocumentFile.xml");  
+SrgsDocument document = null;  
+GrammarBuilder builder = null;  
+Grammar grammar = null;  
+  
+Choices firstThree = new Choices(new string[] {"1", "2", "3"});  
+Choices nextThree = new Choices(new string[] {"4", "5", "6"});  
+Choices lastThree = new Choices(new string[] {"7", "8", "9"});  
+  
+Choices keyPadChoices = new Choices(new GrammarBuilder[] {firstThree, nextThree, lastThree, new Choices("0")});  
+  
+builder = new GrammarBuilder(keyPadChoices);  
+document = new SrgsDocument(builder);  
+  
+document.Mode = SrgsGrammarMode.Dtmf;  
+grammar = new Grammar(document);   
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dtmf">
+      <MemberSignature Language="C#" Value="Dtmf" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode Dtmf = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode.Dtmf" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />オブジェクトが、電話、音声認識ではなくとほぼ同じ DTMF トーンと一致します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Voice">
+      <MemberSignature Language="C#" Value="Voice" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode Voice = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode.Voice" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsGrammarMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsDocument" />オブジェクトは音声入力に一致します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

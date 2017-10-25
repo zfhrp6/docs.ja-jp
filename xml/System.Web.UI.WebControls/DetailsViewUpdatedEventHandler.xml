@@ -1,0 +1,47 @@
+<Type Name="DetailsViewUpdatedEventHandler" FullName="System.Web.UI.WebControls.DetailsViewUpdatedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DetailsViewUpdatedEventHandler(object sender, DetailsViewUpdatedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DetailsViewUpdatedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DetailsViewUpdatedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.DetailsViewUpdatedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.DetailsViewUpdatedEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.DetailsView.ItemUpdated" />のイベント、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsView>制御を発生させます、<xref:System.Web.UI.WebControls.DetailsView.ItemUpdated>更新ボタンをクリックしたときにイベント (ボタンをその`CommandName`プロパティが「更新」に設定) コントロール内でをクリックした後は、<xref:System.Web.UI.WebControls.DetailsView>コントロールは、レコードを更新します。 これにより、このイベントが発生するたびに、更新操作の結果のチェックなどのカスタムのルーチンを実行するイベント ハンドラーを提供できます。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewUpdatedEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで追加する方法を示します、<xref:System.Web.UI.WebControls.DetailsViewUpdatedEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.DetailsView.ItemUpdated>のイベント、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ [!code-aspx-csharp[DetailsViewUpdatedEventHandlerDynamic#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewUpdatedEventHandlerDynamic/CS/detailsviewupdatedeventhandlerdynamiccs.aspx#1)]
+ [!code-aspx-vb[DetailsViewUpdatedEventHandlerDynamic#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewUpdatedEventHandlerDynamic/VB/detailsviewupdatedeventhandlerdynamicvb.aspx#1)]  
+  
+ 次のコード例は、宣言によって追加する方法を示します、<xref:System.Web.UI.WebControls.DetailsViewUpdatedEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.DetailsView.ItemUpdated>のイベント、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ [!code-aspx-csharp[DetailsViewUpdatedEventHandlerDeclarative#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewUpdatedEventHandlerDeclarative/CS/detailsviewupdatedeventhandlerdeclarativecs.aspx#1)]
+ [!code-aspx-vb[DetailsViewUpdatedEventHandlerDeclarative#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewUpdatedEventHandlerDeclarative/VB/detailsviewupdatedeventhandlerdeclarativevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

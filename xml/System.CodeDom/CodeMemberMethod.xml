@@ -1,0 +1,340 @@
+<Type Name="CodeMemberMethod" FullName="System.CodeDom.CodeMemberMethod">
+  <TypeSignature Language="C#" Value="public class CodeMemberMethod : System.CodeDom.CodeTypeMember" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeMemberMethod extends System.CodeDom.CodeTypeMember" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeMemberMethod" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeTypeMember</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型のメソッドの宣言を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeMemberMethod>メソッドの宣言を表すために使用できます。  
+  
+ <xref:System.CodeDom.CodeMemberMethod.ReturnType%2A>プロパティは、メソッドの戻り値のデータ型を指定します。 <xref:System.CodeDom.CodeMemberMethod.Parameters%2A>プロパティには、メソッドのパラメーターが含まれています。 <xref:System.CodeDom.CodeMemberMethod.Statements%2A>プロパティには、メソッド内のステートメントが含まれています。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.CodeDom.CodeMemberMethod>にパラメーター値を返すメソッドを宣言します。  
+  
+ [!code-cpp[CodeMemberMethodExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeMemberMethodExample/CPP/codemembermethodexample.cpp#2)]
+ [!code-csharp[CodeMemberMethodExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeMemberMethodExample/CS/codemembermethodexample.cs#2)]
+ [!code-vb[CodeMemberMethodExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeMemberMethodExample/VB/codemembermethodexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeMemberMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeMemberMethod.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeMemberMethod" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、空を作成<xref:System.CodeDom.CodeMemberMethod>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.CodeDom.CodeMemberMethod.%23ctor%2A>コンス トラクターを作成する、<xref:System.CodeDom.CodeMemberMethod>インスタンス。 この例に示されている例の一部である、<xref:System.CodeDom.Compiler.CodeGenerator.GenerateCodeFromMember%2A>メソッドです。  
+  
+ [!code-csharp[CodeDom_GenerateCodeFromMember#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_GenerateCodeFromMember/cs/program.cs#3)]
+ [!code-vb[CodeDom_GenerateCodeFromMember#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDom_GenerateCodeFromMember/vb/module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImplementationTypes">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReferenceCollection ImplementationTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeReferenceCollection ImplementationTypes" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMemberMethod.ImplementationTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReferenceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって示されますが、プライベート メソッドの実装である場合を除き、このメソッドによって実装されたインターフェイスのデータ型を取得、<see cref="P:System.CodeDom.CodeMemberMethod.PrivateImplementationType" />プロパティです。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeReferenceCollection" />を示す、このメソッドによって実装されるインターフェイス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションによって参照される型は、インターフェイスで構成されます必要があります。  
+  
+ この場合<xref:System.CodeDom.CodeMemberMethod>パブリック メソッド、およびインターフェイス、インターフェイス、またはこのメソッドのメソッドを実装するインターフェイスのメソッドは、このコレクション内で参照する必要がこのメソッドを実装の宣言を表します。  
+  
+ メソッドには、このメソッドによって実装されるインターフェイスのメソッドと同じ名前が引き続き必要です。 C# などの一部の言語では、これには影響しません、構文です。 他のユーザーが、Visual Basic などがあるインターフェイスを実装するための特別な構文です。 場合は、メソッドが 1 つのインターフェイスを実装して個別に、<xref:System.CodeDom.CodeMemberMethod.PrivateImplementationType%2A>プロパティを使用してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeParameterDeclarationExpressionCollection Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeParameterDeclarationExpressionCollection Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMemberMethod.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeParameterDeclarationExpressionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドのパラメーター宣言を取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" />メソッドのパラメーターを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateImplementationTypes">
+      <MemberSignature Language="C#" Value="public event EventHandler PopulateImplementationTypes;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PopulateImplementationTypes" />
+      <MemberSignature Language="DocId" Value="E:System.CodeDom.CodeMemberMethod.PopulateImplementationTypes" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の時間が発生するイベント、<see cref="P:System.CodeDom.CodeMemberMethod.ImplementationTypes" />コレクションにアクセスします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateParameters">
+      <MemberSignature Language="C#" Value="public event EventHandler PopulateParameters;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PopulateParameters" />
+      <MemberSignature Language="DocId" Value="E:System.CodeDom.CodeMemberMethod.PopulateParameters" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の時間が発生するイベント、<see cref="P:System.CodeDom.CodeMemberMethod.Parameters" />コレクションにアクセスします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateStatements">
+      <MemberSignature Language="C#" Value="public event EventHandler PopulateStatements;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PopulateStatements" />
+      <MemberSignature Language="DocId" Value="E:System.CodeDom.CodeMemberMethod.PopulateStatements" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の時間が発生するイベント、<see cref="P:System.CodeDom.CodeMemberMethod.Statements" />コレクションにアクセスします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivateImplementationType">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReference PrivateImplementationType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeReference PrivateImplementationType" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMemberMethod.PrivateImplementationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプライベート、存在する場合に、メソッドを実装する場合は、このメソッドをインターフェイスのデータ型を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeReference" />メソッドを使用して、インターフェイスのデータ型を示すをプライベート メソッドの宣言は、これによって表される<see cref="T:System.CodeDom.CodeMemberMethod" />を実装します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この場合<xref:System.CodeDom.CodeMemberMethod>表すプライベート メソッドとメソッドの宣言インターフェイスのメソッドを実装して、このプロパティは、メソッドのメソッドが実装するインターフェイスの型を示す必要があります。  
+  
+ このプロパティによって参照される型はインターフェイスである必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnType">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReference ReturnType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeReference ReturnType" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMemberMethod.ReturnType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメソッドの戻り値のデータ型を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeReference" />メソッドによって返される値のデータ型を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnTypeCustomAttributes">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeAttributeDeclarationCollection ReturnTypeCustomAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeAttributeDeclarationCollection ReturnTypeCustomAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMemberMethod.ReturnTypeCustomAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeAttributeDeclarationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの戻り値の型のカスタム属性を取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeAttributeDeclarationCollection" />カスタム属性を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Statements">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeStatementCollection Statements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeStatementCollection Statements" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMemberMethod.Statements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeStatementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッド内のステートメントを取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeStatementCollection" />メソッド内のステートメントを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeParameters">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeParameterCollection TypeParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeParameterCollection TypeParameters" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeMemberMethod.TypeParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のジェネリック メソッドの型パラメーターを取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeParameterCollection" />ジェネリック メソッドの型パラメーターを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジェネリック メソッドを 1 つまたは型パラメーターと呼ばれる型指定されていません。 型パラメーター名は、ジェネリック宣言の本体の種類を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.CodeDom.CodeMemberMethod.TypeParameters%2A>に 2 つの型パラメーターを追加するプロパティ、 <xref:System.CodeDom.CodeMemberMethod> `printMethod`です。 この例に示されている例の一部である、<xref:System.CodeDom.CodeTypeParameter>クラスです。  
+  
+ [!code-csharp[System.CodeDOM.Generics.1#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CodeDOM.Generics.1/CS/codedomgenerics.cs#6)]
+ [!code-vb[System.CodeDOM.Generics.1#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.CodeDOM.Generics.1/VB/codedomgenerics.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

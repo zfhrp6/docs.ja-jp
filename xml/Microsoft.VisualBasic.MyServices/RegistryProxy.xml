@@ -1,0 +1,617 @@
+<Type Name="RegistryProxy" FullName="Microsoft.VisualBasic.MyServices.RegistryProxy">
+  <TypeSignature Language="C#" Value="public class RegistryProxy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi RegistryProxy extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.MyServices.RegistryProxy" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>レジストリを操作するためのプロパティとメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのプロパティを使用するのにはからの読み取りと書き込みのアクセス許可が必要、<xref:System.Security.Permissions.RegistryPermissionAccess>列挙します。 完全な信頼で実行されるコード (既定のセキュリティ ポリシーは、ユーザーのローカル ハード ドライブにインストールされている任意のコード)、レジストリにアクセスするために必要なアクセス許可を持っています。 詳細については、<xref:System.Security.Permissions.RegistryPermission> クラスを参照してください。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Registry`オブジェクト。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|レジストリ キーを作成し、その値を設定|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+|レジストリ キーを削除します。|[方法: レジストリ キーを削除する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-delete-a-registry-key.md)|  
+|レジストリからデータを読み取る|[方法 : レジストリ キーから値を読み取る](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)|  
+  
+   
+  
+## Examples  
+ この例は、値を読み取って`Name`から`HKEY_CURRENT_USER\Software\MyApp`し、それをメッセージ ボックスに表示します。  
+  
+ [!code-vb[VbVbalrMyRegistry#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClassesRoot">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.RegistryKey ClassesRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.RegistryKey ClassesRoot" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.MyServices.RegistryProxy.ClassesRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:Microsoft.Win32.RegistryKey" />へのアクセスを提供する型<see langword="HKEY_CLASSES_ROOT" />です。</summary>
+        <value>
+          <see cref="T:Microsoft.Win32.RegistryKey" />
+        </value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HKEY_CLASSES_ROOT`Windows でファイルの関連付けに関する情報を格納する、主に使用します。  
+  
+ <xref:System.Security.Permissions.RegistryPermission>では、クラス、<xref:System.Security.Permissions>名前空間は、レジストリ変数へのアクセスを制御します。 レジストリ変数は、<xref:System.Security.Permissions.RegistryPermission> を持たないコードがアクセスできるメモリの場所には格納しないようにする必要があります。 同様に、アクセス許可を付与する場合は、ジョブの実行に必要な権限のみを付与します。  
+  
+ レジストリ アクセス許可のアクセス値は <xref:System.Security.Permissions.RegistryPermissionAccess> 列挙型により定義されます。 次の表はそのメンバーの詳細です。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|AllAccess|作成、読み取り、およびレジストリ変数への書き込みアクセス。|  
+|生成|レジストリ変数へのアクセスを作成します。|  
+|NoAccess|レジストリ変数へのアクセスがありません。|  
+|読み取り|レジストリ変数への読み取りアクセス。|  
+|Write|レジストリ変数への書き込みアクセス。|  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Registry`オブジェクト。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|レジストリ キーを作成し、その値を設定|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+|レジストリ キーを削除します。|[方法: レジストリ キーを削除する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-delete-a-registry-key.md)|  
+|レジストリ キーから値を読み取る|[方法 : レジストリ キーから値を読み取る](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)|  
+  
+   
+  
+## Examples  
+ この例のサブキーの名前を取得する、`ClassesRoot`レジストリ キーを追加して`ListBox1`です。  
+  
+ [!code-vb[VbVbalrMyRegistry#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#10)]  
+  
+ この例では、ある必要があります、`ListBox`という`ListBox1`プロジェクト内です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentConfig">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.RegistryKey CurrentConfig { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.RegistryKey CurrentConfig" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.MyServices.RegistryProxy.CurrentConfig" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:Microsoft.Win32.RegistryKey" />へのアクセスを提供する型<see langword="HKEY_CURRENT_CONFIG" />です。</summary>
+        <value>
+          <see cref="T:Microsoft.Win32.RegistryKey" />
+        </value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HKEY_CURRENT_CONFIG`コンピューターのデバイスの設定を格納する、主に使用します。  
+  
+ <xref:System.Security.Permissions.RegistryPermission>では、クラス、<xref:System.Security.Permissions>名前空間は、レジストリ変数へのアクセスを制御します。 レジストリ変数は、<xref:System.Security.Permissions.RegistryPermission> を持たないコードがアクセスできるメモリの場所には格納しないようにする必要があります。 同様に、アクセス許可を付与する場合は、ジョブの実行に必要な権限のみを付与します。  
+  
+ レジストリ アクセス許可のアクセス値は <xref:System.Security.Permissions.RegistryPermissionAccess> 列挙型により定義されます。 次の表はそのメンバーの詳細です。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|AllAccess|作成、読み取り、およびレジストリ変数への書き込みアクセス。|  
+|生成|レジストリ変数へのアクセスを作成します。|  
+|NoAccess|レジストリ変数へのアクセスがありません。|  
+|読み取り|レジストリ変数への読み取りアクセス。|  
+|Write|レジストリ変数への書き込みアクセス。|  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Registry`オブジェクト。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|レジストリ キーを作成し、その値を設定|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+|レジストリ キーを削除します。|[方法: レジストリ キーを削除する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-delete-a-registry-key.md)|  
+|レジストリ キーから値を読み取る|[方法 : レジストリ キーから値を読み取る](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)|  
+  
+   
+  
+## Examples  
+ この例で作成、サブキー`MyDeviceSettings`です。  
+  
+ [!code-vb[VbVbalrMyRegistry#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentUser">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.RegistryKey CurrentUser { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.RegistryKey CurrentUser" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.MyServices.RegistryProxy.CurrentUser" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:Microsoft.Win32.RegistryKey" />へのアクセスを提供する型<see langword="HKEY_CURRENT_USER" />です。</summary>
+        <value>
+          <see cref="T:Microsoft.Win32.RegistryKey" />
+        </value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HKEY_CURRENT_USER`Windows で、色やフォントなどのユーザーごとの設定を格納する、主に使用します。 キーは、ユーザーによって異なります。  
+  
+ <xref:System.Security.Permissions.RegistryPermission>では、クラス、<xref:System.Security.Permissions>名前空間は、レジストリ変数へのアクセスを制御します。 レジストリ変数は、<xref:System.Security.Permissions.RegistryPermission> を持たないコードがアクセスできるメモリの場所には格納しないようにする必要があります。 同様に、アクセス許可を付与する場合は、ジョブの実行に必要な最小限の権限を付与します。  
+  
+ レジストリ アクセス許可のアクセス値は <xref:System.Security.Permissions.RegistryPermissionAccess> 列挙型により定義されます。 次の表はそのメンバーの詳細です。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|AllAccess|作成、読み取り、およびレジストリ変数への書き込みアクセス。|  
+|生成|レジストリ変数へのアクセスを作成します。|  
+|NoAccess|レジストリ変数へのアクセスがありません。|  
+|読み取り|レジストリ変数への読み取りアクセス。|  
+|Write|レジストリ変数への書き込みアクセス。|  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Registry`オブジェクト。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|レジストリ キーを作成し、その値を設定|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+|レジストリ キーを削除します。|[方法: レジストリ キーを削除する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-delete-a-registry-key.md)|  
+|レジストリ キーから値を読み取る|[方法 : レジストリ キーから値を読み取る](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)|  
+  
+   
+  
+## Examples  
+ この例は、サブキーを削除`Software\MyCompany\Preferences\UserData`です。  
+  
+ [!code-vb[VbVbalrMyRegistry#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DynData">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.RegistryKey DynData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.RegistryKey DynData" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.MyServices.RegistryProxy.DynData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The DynData registry key works only on Win9x, which is not supported by this version of the .NET Framework.  Use the PerformanceData registry key instead.  This property will be removed from a future version of the framework.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:Microsoft.Win32.RegistryKey" />へのアクセスを提供する型<see langword="HKEY_DYNDATA" />です。</summary>
+        <value>
+          <see cref="T:Microsoft.Win32.RegistryKey" />
+        </value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HKEY_DYNDATA`仮想デバイス ドライバーが使用するなどの動的なレジストリ データを格納するために使用し、Windows 95/98 システムでのみサポートされます。 Windows 95/98 システムから返されたキーの任意のメソッドを呼び出して`Registry.DynData`など`CreateSubKey`、 `DeleteSubKey`、 `GetSubKeyCount`、`GetValueCount`がスローされます、<xref:System.IO.IOException>です。  
+  
+ <xref:System.Security.Permissions.RegistryPermission>では、クラス、<xref:System.Security.Permissions>名前空間は、レジストリ変数へのアクセスを制御します。 レジストリ変数は、<xref:System.Security.Permissions.RegistryPermission> を持たないコードがアクセスできるメモリの場所には格納しないようにする必要があります。 同様に、アクセス許可を付与する場合は、ジョブの実行に必要な最小限の権限を付与します。  
+  
+ レジストリ アクセス許可のアクセス値は <xref:System.Security.Permissions.RegistryPermissionAccess> 列挙型により定義されます。 次の表はそのメンバーの詳細です。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|AllAccess|作成、読み取り、およびレジストリ変数への書き込みアクセス。|  
+|生成|レジストリ変数へのアクセスを作成します。|  
+|NoAccess|レジストリ変数へのアクセスがありません。|  
+|読み取り|レジストリ変数への読み取りアクセス。|  
+|Write|レジストリ変数への書き込みアクセス。|  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Registry`オブジェクト。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|レジストリ キーを作成し、その値を設定|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+|レジストリ キーを削除します。|[方法: レジストリ キーを削除する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-delete-a-registry-key.md)|  
+|レジストリ キーから値を読み取る|[方法 : レジストリ キーから値を読み取る](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)|  
+  
+   
+  
+## Examples  
+ この例は、サブキー ツリーを削除`Software\MyCompany\Preferences`です。  
+  
+ [!code-vb[VbVbalrMyRegistry#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (string keyName, string valueName, object defaultValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance object GetValue(string keyName, string valueName, object defaultValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.RegistryProxy.GetValue(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="valueName" Type="System.String" />
+        <Parameter Name="defaultValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">
+          <see langword="String" />。 元の値を取得するキー。 必須です。</param>
+        <param name="valueName">
+          <see langword="String" />。 取得する値。 必須です。</param>
+        <param name="defaultValue">
+          <see langword="Object" />。 既定値を値が存在しない場合に指定します。 必須です。</param>
+        <summary>レジストリ キーから値を取得します。</summary>
+        <returns>レジストリ キーから値を取得します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `valueName` では、大文字と小文字は区別されません。  
+  
+ レジストリ キーには、任意の名前に関連付けられていない 1 つの値を含めることができます。 レジストリ エディターでこの無名の値が表示されたら、名の代わりに、文字列「(既定値)」が表示されます。 この無名の値を取得するには、null または空の文字列のいずれかを指定します ("") の`valueName`します。  
+  
+ 次の表に、関連するタスクの例については、`GetValue`メソッドです。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|レジストリ キーから値を読み取る|[方法 : レジストリ キーから値を読み取る](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)|  
+  
+   
+  
+## Examples  
+ この例は、値を読み取って`Name`から`HKEY_CURRENT_USER\Software\MyApp`で表示、`MessageBox`です。  
+  
+ [!code-vb[VbVbalrMyRegistry#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、レジストリ キーからの読み取りに必要な権限がありません。</exception>
+        <exception cref="T:System.IO.IOException"><see cref="T:Microsoft.Win32.RegistryKey" />を含む、指定された値が削除対象としてマークされています。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="keyName" />有効なレジストリ ルートで始まらないです。</exception>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">レジストリから読み取れません。 関連する列挙。<see cref="F:System.Security.Permissions.RegistryPermissionAccess.Read" /></permission>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">REG_EXPAND_SZ の種類のレジストリ キーを読み取れません。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalMachine">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.RegistryKey LocalMachine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.RegistryKey LocalMachine" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.MyServices.RegistryProxy.LocalMachine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:Microsoft.Win32.RegistryKey" />へのアクセスを提供する型<see langword="HKEY_LOCAL_MACHINE" />です。</summary>
+        <value>
+          <see cref="T:Microsoft.Win32.RegistryKey" />
+        </value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HKEY_LOCAL_MACHINE`通常 Windows ユーザーを変化しない設定の格納に使用されます。 コンピューターのすべてのユーザーは、このキーを共有します。 5 つサブキー (`Hardware`、 `SAM`、 `Security`、 `Software`、および`System`)、ローカル コンピューターの構成データを保持します。  
+  
+ <xref:System.Security.Permissions.RegistryPermission>では、クラス、<xref:System.Security.Permissions>名前空間は、レジストリ変数へのアクセスを制御します。 レジストリ変数は、<xref:System.Security.Permissions.RegistryPermission> を持たないコードがアクセスできるメモリの場所には格納しないようにする必要があります。 同様に、アクセス許可を付与する場合は、ジョブの実行に必要な最小限の権限を付与します。  
+  
+ レジストリ アクセス許可のアクセス値は <xref:System.Security.Permissions.RegistryPermissionAccess> 列挙型により定義されます。 次の表はそのメンバーの詳細です。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|AllAccess|作成、読み取り、およびレジストリ変数への書き込みアクセス。|  
+|生成|レジストリ変数へのアクセスを作成します。|  
+|NoAccess|レジストリ変数へのアクセスがありません。|  
+|読み取り|レジストリ変数への読み取りアクセス。|  
+|Write|レジストリ変数への書き込みアクセス。|  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Registry`オブジェクト。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|レジストリ キーを作成し、その値を設定|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+|レジストリ キーを削除します。|[方法: レジストリ キーを削除する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-delete-a-registry-key.md)|  
+|レジストリ キーから値を読み取る|[方法 : レジストリ キーから値を読み取る](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)|  
+  
+   
+  
+## Examples  
+ この例は、サブキーを開きます`Software\MyCompany\Preferences`値を設定および`FontColor`に`"red"`です。  
+  
+ [!code-vb[VbVbalrMyRegistry#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformanceData">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.RegistryKey PerformanceData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.RegistryKey PerformanceData" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.MyServices.RegistryProxy.PerformanceData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:Microsoft.Win32.RegistryKey" />へのアクセスを提供する型<see langword="HKEY_PERFORMANCE_DATA" />です。</summary>
+        <value>
+          <see cref="T:Microsoft.Win32.RegistryKey" />
+        </value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HKEY_PERFORMANCE_DATA`ソフトウェア コンポーネントに関するパフォーマンス情報へのアクセスに使用されます。 各ソフトウェア コンポーネントがインストールされているが実行中に、カウンター データを書き込むときに、そのオブジェクトとカウンターのキーが作成されます。 レジストリがへのアクセスに使用されますが、このデータはレジストリで、格納されません。 使用してレジストリ関数を呼び出す代わりに、`HKEY_PERFORMANCE_DATA`により、システムが適切なシステム オブジェクト マネージャーからデータを収集します。  
+  
+ このキーは Windows 98 システム; に存在しません呼び出し元以外の使用を`Name`メソッドがスローされます、<xref:System.IO.IOException>です。  
+  
+ このキー通常書き込むことができません。スローしようとしてのサブキーを作成するには、<xref:System.IO.IOException>です。  
+  
+ <xref:System.Security.Permissions.RegistryPermission>では、クラス、<xref:System.Security.Permissions>名前空間は、レジストリ変数へのアクセスを制御します。 レジストリ変数は、<xref:System.Security.Permissions.RegistryPermission> を持たないコードがアクセスできるメモリの場所には格納しないようにする必要があります。 同様に、アクセス許可を付与する場合は、ジョブの実行に必要な最小限の権限を付与します。  
+  
+ レジストリ アクセス許可のアクセス値は <xref:System.Security.Permissions.RegistryPermissionAccess> 列挙型により定義されます。 次の表はそのメンバーの詳細です。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|AllAccess|作成、読み取り、およびレジストリ変数への書き込みアクセス。|  
+|生成|レジストリ変数へのアクセスを作成します。|  
+|NoAccess|レジストリ変数へのアクセスがありません。|  
+|読み取り|レジストリ変数への読み取りアクセス。|  
+|Write|レジストリ変数への書き込みアクセス。|  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Registry`オブジェクト。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|レジストリ キーを作成し、その値を設定|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+|レジストリ キーを削除します。|[方法: レジストリ キーを削除する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-delete-a-registry-key.md)|  
+|レジストリ キーから値を読み取る|[方法 : レジストリ キーから値を読み取る](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)|  
+  
+   
+  
+## Examples  
+ この例は、値を取得`ThisSoftware`から、`MyCompany`サブキー。  
+  
+ [!code-vb[VbVbalrMyRegistry#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (string keyName, string valueName, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SetValue(string keyName, string valueName, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.RegistryProxy.SetValue(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="valueName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">
+          <see langword="String" />。 書き込まれるキーの名前。 必須です。</param>
+        <param name="valueName">
+          <see langword="String" />。 書き込まれる値の名前です。 必須です。</param>
+        <param name="value">
+          <see langword="Object" />。 書き込む値。 必須です。</param>
+        <summary>レジストリ キーに値を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたキーまたは値が存在しない場合は作成されます。  
+  
+ 関連するタスクの例をここでは、`My.Computer.Registry.SetValue`メソッドです。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|レジストリ キーの値を設定します。|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+  
+   
+  
+## Examples  
+ この例の値を設定`FontColor`キーに"red"に`HKEY_LOCAL_MACHINE\Software\MyCompany\Preferences`です。  
+  
+ [!code-vb[VbVbalrMyRegistry#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="keyName" />有効なレジストリ ルートで始まらないです。  
+  
+ または  
+  
+ <paramref name="valueName" />最大長を超えては許可されて (255 文字)。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><see cref="T:Microsoft.Win32.RegistryKey" />は読み取り専用と、したがってできません書き込みができませんたとえば、ルート レベル ノード、または書き込みアクセスで開かれていません.。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、作成またはレジストリ キーを変更するために必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">、存在する場合は、指定されたレジストリ キーを変更するのにまたはが既に存在しない場合に、レジストリ キーを作成します。 関連する列挙: <see cref="F:System.Security.Permissions.RegistryPermissionAccess.Write" />、<see cref="F:System.Security.Permissions.RegistryPermissionAccess.Create" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (string keyName, string valueName, object value, Microsoft.Win32.RegistryValueKind valueKind);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SetValue(string keyName, string valueName, object value, valuetype Microsoft.Win32.RegistryValueKind valueKind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.RegistryProxy.SetValue(System.String,System.String,System.Object,Microsoft.Win32.RegistryValueKind)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="valueName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="valueKind" Type="Microsoft.Win32.RegistryValueKind" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">
+          <see langword="String" />。 書き込まれるキーの名前。 必須です。</param>
+        <param name="valueName">
+          <see langword="String" />。 書き込まれる値の名前です。 必須です。</param>
+        <param name="value">
+          <see langword="Object" />。 書き込む値。 必須です。</param>
+        <param name="valueKind">
+          <see cref="T:Microsoft.Win32.RegistryValueKind" />。 必須です。</param>
+        <summary>レジストリ キーに値を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたキーまたは値が存在しない場合は作成されます。  
+  
+ 関連するタスクの例をここでは、`My.Computer.Registry.SetValue`メソッドです。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|レジストリ キーの値を設定します。|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+  
+   
+  
+## Examples  
+ この例の値を設定`FontColor`キーに"red"に`HKEY_LOCAL_MACHINE\Software\MyCompany\Preferences`です。  
+  
+ [!code-vb[VbVbalrMyRegistry#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="keyName" />有効なレジストリ ルートで始まらないです。  
+  
+ または  
+  
+ <paramref name="keyName" />最大長を超えては許可されて (255 文字)。  
+  
+ または  
+  
+ 型<paramref name="value" />で指定されたレジストリ データ型と一致しません<paramref name="valueKind" />データが正しく変換できないためです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><see cref="T:Microsoft.Win32.RegistryKey" />は読み取り専用、および、したがってできません書き込みができません。 たとえば、ルート レベル ノード、または書き込みアクセスで開かれていません。</exception>
+        <exception cref="T:System.Security.SecurityException">ユーザーには、作成またはレジストリ キーを変更するために必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.RegistryPermission">、存在する場合は、指定されたレジストリ キーを変更するのにまたはが既に存在しない場合に、レジストリ キーを作成します。 関連する列挙: <see cref="F:System.Security.Permissions.RegistryPermissionAccess.Write" />、<see cref="F:System.Security.Permissions.RegistryPermissionAccess.Create" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Users">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.RegistryKey Users { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.RegistryKey Users" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.MyServices.RegistryProxy.Users" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see cref="T:Microsoft.Win32.RegistryKey" />へのアクセスを提供する型<see langword="HKEY_USERS" />です。</summary>
+        <value>
+          <see cref="T:Microsoft.Win32.RegistryKey" />
+        </value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HKEY_USERS`初めてユーザーの既定の設定を格納する、主に使用します。  
+  
+ <xref:System.Security.Permissions.RegistryPermission>では、クラス、<xref:System.Security.Permissions>名前空間は、レジストリ変数へのアクセスを制御します。 レジストリ変数は、<xref:System.Security.Permissions.RegistryPermission> を持たないコードがアクセスできるメモリの場所には格納しないようにする必要があります。 同様に、アクセス許可を付与する場合は、ジョブの実行に必要な最小限の権限を付与します。  
+  
+ レジストリ アクセス許可のアクセス値は <xref:System.Security.Permissions.RegistryPermissionAccess> 列挙型により定義されます。 次の表はそのメンバーの詳細です。  
+  
+|値|レジストリ変数へのアクセス|  
+|-----------|----------------------------------|  
+|AllAccess|作成、読み取り、書き込み|  
+|生成|生成|  
+|NoAccess|アクセスがありません。|  
+|読み取り|読み取り|  
+|Write|Write|  
+  
+ 次の表に、関連するタスクの例については、`My.Computer.Registry`オブジェクト。  
+  
+|**目的**|**「**|  
+|------------|-------------|  
+|レジストリ キーを作成し、その値を設定|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+|レジストリ キーを削除します。|[方法: レジストリ キーを削除する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-delete-a-registry-key.md)|  
+|レジストリ キーから値を読み取る|[方法 : レジストリ キーから値を読み取る](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)|  
+  
+   
+  
+## Examples  
+ この例をカウントし、レジストリ キーの値の数を表示します。  
+  
+ [!code-vb[VbVbalrMyRegistry#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

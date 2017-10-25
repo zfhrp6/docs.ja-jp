@@ -1,0 +1,170 @@
+<Type Name="DisplayAttributes" FullName="System.Speech.Recognition.DisplayAttributes">
+  <TypeSignature Language="C#" Value="public enum DisplayAttributes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DisplayAttributes extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.DisplayAttributes" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オプションの一覧を<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />オブジェクトを使用して、単語や区切り記号の表示の空白文字を指定できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows デスクトップの音声認識のコレクションとして認識された語句が返されます<xref:System.Speech.Recognition.RecognizedWordUnit>または<xref:System.Speech.Recognition.ReplacementText>オブジェクト。 各オブジェクトは、1 つの単語または区切り記号に対応します。 `DisplayAttributes`のプロパティ、<xref:System.Speech.Recognition.RecognizedWordUnit>または<xref:System.Speech.Recognition.ReplacementText>のメンバーを使用して、<xref:System.Speech.Recognition.DisplayAttributes>特定のワード区切り記号の周囲をどのように印刷の間隔を表す列挙体を処理します。  
+  
+ 2 つ以上のメンバー、`DisplayAttributes`列挙体をビット単位で組み合わせることができます`OR`を特定の単語の表示方法を指定します。  
+  
+> [!NOTE]
+>  音声認識を使用する書式設定の表示は、特定の言語です。  
+  
+ たとえば、によって提供される既定のシステム文法を使用する認識エンジンに入力語句<xref:System.Speech.Recognition.DictationGrammar>「こんにちはコンマ彼は言って期間」です。 認識エンジンから返されます、 <xref:System.Speech.Recognition.RecognizedPhrase> 5 つ含む<xref:System.Speech.Recognition.RecognizedWordUnit>次のように、次を含むオブジェクトが文字列`DisplayAttributes`値。  
+  
+|アイテム|`DisplayAttributes`|  
+|----------|-------------------------|  
+|こんにちは|OneTrailingSpace|  
+|,|OneTrailingSpace & #124 です。ConsumeLeadingSpaces|  
+|he|OneTrailingSpace|  
+|言われます|OneTrailingSpace|  
+|。|OneTrailingSpace & #124 です。ConsumeLeadingSpaces|  
+  
+ この認識された語句として出力のテキストが返された:「こんにちは, 彼は言っています」。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Speech.Recognition.RecognizedWordUnit.DisplayAttributes%2A>プロパティの一覧の<xref:System.Speech.Recognition.RecognizedWordUnit>句として、単語を書式設定するオブジェクト。  
+  
+```csharp  
+  
+// Use the DisplayAttributes property to format speech as text.   
+  
+static string GetDisplayText(List<RecognizedWordUnit> words)  
+{  
+  StringBuilder sb = new StringBuilder();  
+  
+  // Concatenate the word units together. Use the DisplayAttributes  
+  // property of each word unit to add or remove white space around  
+  // the word unit.  
+  foreach (RecognizedWordUnit word in words)  
+  {  
+    if ((word.DisplayAttributes  
+      & DisplayAttributes.ConsumeLeadingSpaces) != 0))  
+    {  
+      sb = new StringBuilder(sb.ToString().TrimEnd());  
+    }  
+  
+    sb.Append(word.Text);  
+  
+    if ((word.DisplayAttributes  
+      & DisplayAttributes.OneTrailingSpace) != 0)  
+    {  
+      sb.Append(" ");  
+    }  
+    else if ((word.DisplayAttributes  
+      & DisplayAttributes.TwoTrailingSpaces) != 0)  
+    {  
+      sb.Append("  ");  
+    }  
+  }  
+  
+  return sb.ToString();  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ConsumeLeadingSpaces">
+      <MemberSignature Language="C#" Value="ConsumeLeadingSpaces" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.DisplayAttributes ConsumeLeadingSpaces = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.DisplayAttributes.ConsumeLeadingSpaces" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.DisplayAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイテムには、その前にスペースがありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.DisplayAttributes None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.DisplayAttributes.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.DisplayAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目では、空白の処理方法が指定されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OneTrailingSpace">
+      <MemberSignature Language="C#" Value="OneTrailingSpace" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.DisplayAttributes OneTrailingSpace = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.DisplayAttributes.OneTrailingSpace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.DisplayAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目は、それに続く 1 つのスペースがします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TwoTrailingSpaces">
+      <MemberSignature Language="C#" Value="TwoTrailingSpaces" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.DisplayAttributes TwoTrailingSpaces = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.DisplayAttributes.TwoTrailingSpaces" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.DisplayAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目は、それに続く 2 つのスペースがします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ZeroTrailingSpaces">
+      <MemberSignature Language="C#" Value="ZeroTrailingSpaces" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.DisplayAttributes ZeroTrailingSpaces = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.DisplayAttributes.ZeroTrailingSpaces" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.DisplayAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイテムには、その後ろにスペースがありません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

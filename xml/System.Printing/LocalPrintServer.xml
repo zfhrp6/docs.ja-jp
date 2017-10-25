@@ -1,0 +1,405 @@
+<Type Name="LocalPrintServer" FullName="System.Printing.LocalPrintServer">
+  <TypeSignature Language="C#" Value="public sealed class LocalPrintServer : System.Printing.PrintServer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LocalPrintServer extends System.Printing.PrintServer" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.LocalPrintServer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Printing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Printing.PrintServer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ローカルのプリント サーバーを表します (アプリケーションを実行しているコンピューター) の印刷キューの管理を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションがのプロパティに値を書き込むときに、<xref:System.Printing.LocalPrintServer>オブジェクトを変更も何も起こりませんで表されるコンピューターに渡される値になるまで、<xref:System.Printing.LocalPrintServer>オブジェクト。 値の変更は有効にするためを使用して、<xref:System.Printing.LocalPrintServer.Commit%2A>メソッドです。  
+  
+ さらに、他のアプリケーションでは、コンピューターの印刷サービスのプロパティが変更も可能性があります。 いることを確認する、<xref:System.Printing.LocalPrintServer>アプリケーションによって使用されるオブジェクトが最新の実際の値を使用して、<xref:System.Printing.LocalPrintServer.Refresh%2A>メソッドです。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+   
+  
+## Examples  
+ <xref:System.Printing.LocalPrintServer> クラスのインスタンスを作成する方法の例を次に示します。  
+  
+ [!code-csharp[XpsPrint#PrintQueueSnip](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsPrint/CSharp/XpsPrintHelper.cs#printqueuesnip)]
+ [!code-vb[XpsPrint#PrintQueueSnip](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsPrint/visualbasic/xpsprinthelper.vb#printqueuesnip)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalPrintServer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Printing.LocalPrintServer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、プリンターの機能をテストし、それらを活用するために、印刷ジョブを構成するコードでこのコンス トラクターを使用する方法を示します。  
+  
+ [!code-cpp[XpsCreate#PrinterCapabilities](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#printercapabilities)]
+ [!code-csharp[XpsCreate#PrinterCapabilities](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#printercapabilities)]
+ [!code-vb[XpsCreate#PrinterCapabilities](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#printercapabilities)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalPrintServer (System.Printing.LocalPrintServerIndexedProperty[] propertiesFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Printing.LocalPrintServerIndexedProperty[] propertiesFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.#ctor(System.Printing.LocalPrintServerIndexedProperty[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertiesFilter" Type="System.Printing.LocalPrintServerIndexedProperty[]" />
+      </Parameters>
+      <Docs>
+        <param name="propertiesFilter">コンス トラクターによって初期化されるプロパティの配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.LocalPrintServer" />を持つ、指定されたクラス<see cref="T:System.Printing.LocalPrintServerIndexedProperty" />配列。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalPrintServer (System.Printing.PrintSystemDesiredAccess desiredAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Printing.PrintSystemDesiredAccess desiredAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.#ctor(System.Printing.PrintSystemDesiredAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="desiredAccess" Type="System.Printing.PrintSystemDesiredAccess" />
+      </Parameters>
+      <Docs>
+        <param name="desiredAccess">アプリケーションで必要なプリント サーバーへのアクセスの種類を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.LocalPrintServer" />を持つ、指定されたクラス<see cref="T:System.Printing.PrintSystemDesiredAccess" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、場所、ポート、および共有の状態のみで既存のプリンターとそのプロパティに異なる 2 つ目のプリンターをインストールするコードでこのコンス トラクターを使用する方法を示します。  
+  
+ [!code-csharp[ClonePrinter#ClonePrinter](~/samples/snippets/csharp/VS_Snippets_Wpf/ClonePrinter/CSharp/Program.cs#cloneprinter)]
+ [!code-vb[ClonePrinter#ClonePrinter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClonePrinter/visualbasic/program.vb#cloneprinter)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Printing.PrintServerException">
+          <paramref name="desiredAccess" />値にのみ適用できるは、<see cref="T:System.Printing.PrintQueue" />オブジェクトは、<see cref="T:System.Printing.LocalPrintServer" />オブジェクト。 たとえば、<see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" /> のようにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalPrintServer (string[] propertiesFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] propertiesFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertiesFilter" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="propertiesFilter">コンス トラクターは、プロパティ名の配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.LocalPrintServer" />を指定されたプロパティを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalPrintServer (System.Printing.LocalPrintServerIndexedProperty[] propertiesFilter, System.Printing.PrintSystemDesiredAccess desiredAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Printing.LocalPrintServerIndexedProperty[] propertiesFilter, valuetype System.Printing.PrintSystemDesiredAccess desiredAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.#ctor(System.Printing.LocalPrintServerIndexedProperty[],System.Printing.PrintSystemDesiredAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertiesFilter" Type="System.Printing.LocalPrintServerIndexedProperty[]" />
+        <Parameter Name="desiredAccess" Type="System.Printing.PrintSystemDesiredAccess" />
+      </Parameters>
+      <Docs>
+        <param name="propertiesFilter">コンス トラクターによって初期化されるプロパティの配列。</param>
+        <param name="desiredAccess">プログラムのニーズのプリント サーバーへのアクセスの種類を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.LocalPrintServer" />を持つ、指定されたクラス<see cref="T:System.Printing.LocalPrintServerIndexedProperty" />配列と、指定した<see cref="T:System.Printing.PrintSystemDesiredAccess" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Printing.PrintServerException">
+          <paramref name="desiredAccess" />値にのみ適用できるは、<see cref="T:System.Printing.PrintQueue" />オブジェクトは、<see cref="T:System.Printing.LocalPrintServer" />オブジェクト。 たとえば、<see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" /> のようにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalPrintServer (string[] propertiesFilter, System.Printing.PrintSystemDesiredAccess desiredAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] propertiesFilter, valuetype System.Printing.PrintSystemDesiredAccess desiredAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.#ctor(System.String[],System.Printing.PrintSystemDesiredAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertiesFilter" Type="System.String[]" />
+        <Parameter Name="desiredAccess" Type="System.Printing.PrintSystemDesiredAccess" />
+      </Parameters>
+      <Docs>
+        <param name="propertiesFilter">コンス トラクターは、プロパティ名の配列。</param>
+        <param name="desiredAccess">アプリケーションで必要なプリント サーバーへのアクセスの種類を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.LocalPrintServer" />を指定されたプロパティを持つクラスと<see cref="T:System.Printing.PrintSystemDesiredAccess" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Printing.PrintServerException">
+          <paramref name="desiredAccess" />値にのみ適用できるは、<see cref="T:System.Printing.PrintQueue" />オブジェクトは、<see cref="T:System.Printing.LocalPrintServer" />オブジェクト。 たとえば、<see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" /> のようにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public override sealed void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションのプロパティに対する変更を書き込みます、<see cref="T:System.Printing.LocalPrintServer" />オブジェクトが表す実際のプリント サーバーにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドでは、する必要があります、<xref:System.Printing.LocalPrintServer>でオブジェクトは作成<xref:System.Printing.PrintSystemDesiredAccess.AdministrateServer>権限です。  
+  
+   
+  
+## Examples  
+ 次の例では、場所、ポート、および共有の状態のみで既存のプリンターとそのプロパティに異なる 2 つ目のプリンターをインストールするコードでこのメソッドを使用する方法を示します。  
+  
+ [!code-csharp[ClonePrinter#ClonePrinter](~/samples/snippets/csharp/VS_Snippets_Wpf/ClonePrinter/CSharp/Program.cs#cloneprinter)]
+ [!code-vb[ClonePrinter#ClonePrinter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClonePrinter/visualbasic/program.vb#cloneprinter)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Printing.PrintServerException">一部のプロパティはコミットされません。</exception>
+        <exception cref="T:System.Printing.PrintCommitAttributesException">一部のプロパティをコミットできませんでした。  
+  
+ \- または  
+  
+ <see cref="T:System.Printing.LocalPrintServer" />のための十分な権限を持つオブジェクトが作成されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectToPrintQueue">
+      <MemberSignature Language="C#" Value="public bool ConnectToPrintQueue (System.Printing.PrintQueue printer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ConnectToPrintQueue(class System.Printing.PrintQueue printer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.ConnectToPrintQueue(System.Printing.PrintQueue)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printer" Type="System.Printing.PrintQueue" />
+      </Parameters>
+      <Docs>
+        <param name="printer">接続する印刷キューです。</param>
+        <summary>指定したローカル プリント サーバーに接続して<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <returns>
+          <see langword="true" />場合は、接続が行われます。それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Printing.PrintServerException">一致する印刷キュー、<see cref="P:System.Printing.PrintQueue.FullName" />のプロパティ、<paramref name="printer" />が見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectToPrintQueue">
+      <MemberSignature Language="C#" Value="public bool ConnectToPrintQueue (string printQueuePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ConnectToPrintQueue(string printQueuePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.ConnectToPrintQueue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printQueuePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="printQueuePath">接続されている印刷キューの完全パス。</param>
+        <summary>使用して指定されている印刷キューに接続する、<see cref="T:System.String" />です。</summary>
+        <returns>
+          <see langword="true" />場合は、接続が行われます。それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Printing.PrintServerException">指定したパスに印刷キューが見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPrintQueue">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueue DefaultPrintQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.PrintQueue DefaultPrintQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.LocalPrintServer.DefaultPrintQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定の印刷キューを設定します。</summary>
+        <value><see cref="T:System.Printing.PrintQueue" />ローカル コンピューターの既定のキューとして指定されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションにのみ与え<xref:System.Printing.PrintSystemDesiredAccess.UsePrinter>がある場合でも、既定のキューへのアクセス<xref:System.Printing.PrintSystemDesiredAccess.AdministrateServer>プリント サーバーに対する権限。 開くには、キューのアクセスのいずれかの操作を使用して、<xref:System.Printing.PrintQueue.%23ctor%2A>コンス トラクターを必要なアクセス レベルを指定することができます。  
+  
+   
+  
+## Examples  
+ 次の例では、場所、ポート、および共有の状態のみで既存のプリンターとそのプロパティに異なる 2 つ目のプリンターをインストールするコードでこのプロパティを使用する方法を示します。  
+  
+ [!code-csharp[ClonePrinter#ClonePrinter](~/samples/snippets/csharp/VS_Snippets_Wpf/ClonePrinter/CSharp/Program.cs#cloneprinter)]
+ [!code-vb[ClonePrinter#ClonePrinter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClonePrinter/visualbasic/program.vb#cloneprinter)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisconnectFromPrintQueue">
+      <MemberSignature Language="C#" Value="public bool DisconnectFromPrintQueue (System.Printing.PrintQueue printer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool DisconnectFromPrintQueue(class System.Printing.PrintQueue printer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.DisconnectFromPrintQueue(System.Printing.PrintQueue)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printer" Type="System.Printing.PrintQueue" />
+      </Parameters>
+      <Docs>
+        <param name="printer">印刷キューは、接続が切断されます。</param>
+        <summary>指定された対象からローカル プリント サーバーの接続が切断<see cref="T:System.Printing.PrintQueue" />です。</summary>
+        <returns>
+          <see langword="true" />切断が成功した場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Printing.PrintServerException">一致する印刷キュー、<see cref="P:System.Printing.PrintQueue.FullName" />のプロパティ、<paramref name="printer" />が見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisconnectFromPrintQueue">
+      <MemberSignature Language="C#" Value="public bool DisconnectFromPrintQueue (string printQueuePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool DisconnectFromPrintQueue(string printQueuePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.DisconnectFromPrintQueue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printQueuePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="printQueuePath">切断されている印刷キューの完全パスです。</param>
+        <summary>指定されている印刷キューからの接続が切断、<see cref="T:System.String" />です。</summary>
+        <returns>
+          <see langword="true" />切断が成功した場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Printing.PrintServerException">指定したパスに印刷キューが見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultPrintQueue">
+      <MemberSignature Language="C#" Value="public static System.Printing.PrintQueue GetDefaultPrintQueue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Printing.PrintQueue GetDefaultPrintQueue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.GetDefaultPrintQueue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueue</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定の印刷キューへの参照を返します、<see cref="T:System.Printing.LocalPrintServer" />です。</summary>
+        <returns>既定の <see cref="T:System.Printing.PrintQueue" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションにのみ与え<xref:System.Printing.PrintSystemDesiredAccess.UsePrinter>がある場合でも、既定のキューへのアクセス<xref:System.Printing.PrintSystemDesiredAccess.AdministrateServer>プリント サーバーに対する権限。 開くには、キューのアクセスのいずれかの操作を使用して、<xref:System.Printing.PrintQueue.%23ctor%2A>コンス トラクターを必要なアクセス レベルを指定することができます。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、リフレクションを使用せず、プロパティ、および印刷キューでは、これらのプロパティの種類を実行時に検出する方法を示します。  
+  
+ [!code-csharp[GetPrintObjectPropertyTypesWithoutReflection#ShowPropertyTypesWithoutReflection](~/samples/snippets/csharp/VS_Snippets_Wpf/GetPrintObjectPropertyTypesWithoutReflection/CSharp/Program.cs#showpropertytypeswithoutreflection)]
+ [!code-vb[GetPrintObjectPropertyTypesWithoutReflection#ShowPropertyTypesWithoutReflection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GetPrintObjectPropertyTypesWithoutReflection/visualbasic/program.vb#showpropertytypeswithoutreflection)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public override sealed void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.LocalPrintServer.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティを更新、<see cref="T:System.Printing.LocalPrintServer" />オブジェクトの値、オブジェクトが表すプリント サーバーの値と一致します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対して行った変更を加えた<xref:System.Printing.LocalPrintServer>プロパティを使用してプリント サーバーに書き込まれていない、<xref:System.Printing.LocalPrintServer.Commit%2A>メソッドが失われたときに<xref:System.Printing.LocalPrintServer.Refresh%2A>を実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Printing.PrintServerException">一部のプロパティを更新できませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

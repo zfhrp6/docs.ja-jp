@@ -1,0 +1,350 @@
+<Type Name="SoapSchemaImporter" FullName="System.Xml.Serialization.SoapSchemaImporter">
+  <TypeSignature Language="C#" Value="public class SoapSchemaImporter : System.Xml.Serialization.SchemaImporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapSchemaImporter extends System.Xml.Serialization.SchemaImporter" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.SoapSchemaImporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.Serialization.SchemaImporter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>.NET Framework 内で使用すると、WSDL ドキュメントで SOAP でエンコードされたメッセージ部分の .NET Framework の型への内部のマッピングを生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapSchemaImporter>クラスによって使用、 [Web サービス記述言語ツール (Wsdl.exe)](http://msdn.microsoft.com/en-us/b9210348-8bc2-4367-8c91-d1a04b403e88)、および<xref:System.Web.Services.Description.ServiceDescriptionImporter>クラス、Web サービス記述言語 (WSDL) ドキュメントからクライアント プロキシ クラスまたは抽象 server クラスを生成するときにします。 このクラスを直接使用する代わりに、Wsdl.exe を使用します。  
+  
+ <xref:System.Xml.Serialization.SoapSchemaImporter>クラス内部要素の WSDL ドキュメントで定義の .NET Framework の型マッピングを生成するメソッドがあります。 クラスは WSDL ドキュメントが、SOAP 1.1 仕様のセクション 5 に記述されている SOAP エンコーディングを指定する場合にのみ使用されます。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapSchemaImporter (System.Xml.Serialization.XmlSchemas schemas);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Serialization.XmlSchemas schemas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapSchemaImporter.#ctor(System.Xml.Serialization.XmlSchemas)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Serialization.XmlSchemas" />
+      </Parameters>
+      <Docs>
+        <param name="schemas"><see cref="T:System.Xml.Schema.XmlSchema" /> オブジェクトのコレクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapSchemaImporter" />クラスを指定する<see cref="T:System.Xml.Schema.XmlSchema" />WSDL ドキュメントで定義されているエンコードされた SOAP メッセージで使用される XML スキーマを表すオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP エンコーディング、SOAP 1.1 仕様のセクション 5 で定義されているが指定されて、WSDL ドキュメントにします。  
+  
+ インスタンスを作成する代わりに、<xref:System.Xml.Serialization.SoapSchemaImporter>クラスに直接、Wsdl.exe を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapSchemaImporter (System.Xml.Serialization.XmlSchemas schemas, System.Xml.Serialization.CodeIdentifiers typeIdentifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Serialization.XmlSchemas schemas, class System.Xml.Serialization.CodeIdentifiers typeIdentifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapSchemaImporter.#ctor(System.Xml.Serialization.XmlSchemas,System.Xml.Serialization.CodeIdentifiers)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Serialization.XmlSchemas" />
+        <Parameter Name="typeIdentifiers" Type="System.Xml.Serialization.CodeIdentifiers" />
+      </Parameters>
+      <Docs>
+        <param name="schemas"><see cref="T:System.Xml.Schema.XmlSchema" /> オブジェクトのコレクション。</param>
+        <param name="typeIdentifiers">A <see cref="T:System.Xml.Serialization.CodeIdentifiers" /> WSDL ドキュメントで定義されているバインディングに対して生成されるクラスのコレクションを指定するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapSchemaImporter" />クラスを指定する<see cref="T:System.Xml.Schema.XmlSchema" />でエンコードされた SOAP メッセージで使用される XML スキーマを表すオブジェクトをクラスとバインディングの生成中で定義されている WSDL ドキュメント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP エンコーディング、SOAP 1.1 仕様のセクション 5 で定義されているが指定されて、WSDL ドキュメントにします。  
+  
+ インスタンスを作成する代わりに、<xref:System.Xml.Serialization.SoapSchemaImporter>クラスに直接、Wsdl.exe を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapSchemaImporter (System.Xml.Serialization.XmlSchemas schemas, System.Xml.Serialization.CodeGenerationOptions options, System.Xml.Serialization.ImportContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Serialization.XmlSchemas schemas, valuetype System.Xml.Serialization.CodeGenerationOptions options, class System.Xml.Serialization.ImportContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapSchemaImporter.#ctor(System.Xml.Serialization.XmlSchemas,System.Xml.Serialization.CodeGenerationOptions,System.Xml.Serialization.ImportContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Serialization.XmlSchemas" />
+        <Parameter Name="options" Type="System.Xml.Serialization.CodeGenerationOptions" />
+        <Parameter Name="context" Type="System.Xml.Serialization.ImportContext" />
+      </Parameters>
+      <Docs>
+        <param name="schemas"><see cref="T:System.Xml.Schema.XmlSchema" /> オブジェクトのコレクション。</param>
+        <param name="options">1 つ、<see cref="T:System.Xml.Serialization.CodeGenerationOptions" />が .NET Framework の型を生成するためのさまざまなオプションを指定します。</param>
+        <param name="context"><see cref="T:System.Xml.Serialization.ImportContext" />スキーマのセットが .NET Framework コードのエンティティにバインドされたコンテキストを記述します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapSchemaImporter" />スキーマ、コンパイラ オプション、およびスキーマのコンテキストを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapSchemaImporter (System.Xml.Serialization.XmlSchemas schemas, System.Xml.Serialization.CodeIdentifiers typeIdentifiers, System.Xml.Serialization.CodeGenerationOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Serialization.XmlSchemas schemas, class System.Xml.Serialization.CodeIdentifiers typeIdentifiers, valuetype System.Xml.Serialization.CodeGenerationOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapSchemaImporter.#ctor(System.Xml.Serialization.XmlSchemas,System.Xml.Serialization.CodeIdentifiers,System.Xml.Serialization.CodeGenerationOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Serialization.XmlSchemas" />
+        <Parameter Name="typeIdentifiers" Type="System.Xml.Serialization.CodeIdentifiers" />
+        <Parameter Name="options" Type="System.Xml.Serialization.CodeGenerationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="schemas"><see cref="T:System.Xml.Schema.XmlSchema" /> オブジェクトのコレクション。</param>
+        <param name="typeIdentifiers">A<see cref="T:System.Xml.Serialization.CodeIdentifiers" />関連するコードのエンティティまたは .NET Framework の XML シリアル化インフラストラクチャによって生成される型のマッピングの名前のグループを保持します。</param>
+        <param name="options">1 つ、<see cref="T:System.Xml.Serialization.CodeGenerationOptions" />が .NET Framework の型を生成するためのさまざまなオプションを指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapSchemaImporter" />スキーマ、コンパイラ オプション、および関連するコードのエンティティの名前を指定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapSchemaImporter (System.Xml.Serialization.XmlSchemas schemas, System.Xml.Serialization.CodeGenerationOptions options, System.CodeDom.Compiler.CodeDomProvider codeProvider, System.Xml.Serialization.ImportContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Serialization.XmlSchemas schemas, valuetype System.Xml.Serialization.CodeGenerationOptions options, class System.CodeDom.Compiler.CodeDomProvider codeProvider, class System.Xml.Serialization.ImportContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapSchemaImporter.#ctor(System.Xml.Serialization.XmlSchemas,System.Xml.Serialization.CodeGenerationOptions,System.CodeDom.Compiler.CodeDomProvider,System.Xml.Serialization.ImportContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Serialization.XmlSchemas" />
+        <Parameter Name="options" Type="System.Xml.Serialization.CodeGenerationOptions" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="context" Type="System.Xml.Serialization.ImportContext" />
+      </Parameters>
+      <Docs>
+        <param name="schemas"><see cref="T:System.Xml.Serialization.XmlSchemas" />のコレクションを含む<see cref="T:System.Xml.Schema.XmlSchema" />オブジェクト。</param>
+        <param name="options">1 つ、<see cref="T:System.Xml.Serialization.CodeGenerationOptions" />が .NET Framework の型を生成するためのさまざまなオプションを指定します。</param>
+        <param name="codeProvider">A<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />シリアル化コードを生成するために使用します。</param>
+        <param name="context"><see cref="T:System.Xml.Serialization.ImportContext" />スキーマのセットが .NET Framework コードのエンティティにバインドされたコンテキストを記述します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapSchemaImporter" />スキーマ、コンパイラ オプション、および関連するコードのエンティティの名前を指定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ImportDerivedTypeMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlTypeMapping ImportDerivedTypeMapping (System.Xml.XmlQualifiedName name, Type baseType, bool baseTypeCanBeIndirect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Serialization.XmlTypeMapping ImportDerivedTypeMapping(class System.Xml.XmlQualifiedName name, class System.Type baseType, bool baseTypeCanBeIndirect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapSchemaImporter.ImportDerivedTypeMapping(System.Xml.XmlQualifiedName,System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlTypeMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="baseType" Type="System.Type" />
+        <Parameter Name="baseTypeCanBeIndirect" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Xml.XmlQualifiedName" />が .NET Framework の型が生成されている要素の型の名前を指定します。</param>
+        <param name="baseType">生成される、.NET Framework の型の基本データ型。</param>
+        <param name="baseTypeCanBeIndirect">
+          <see langword="true" />生成される型を示す可能性がありますを間接的に継承が基本型それ以外の場合、<see langword="false" />です。</param>
+        <summary>基本型が指定されている WSDL ドキュメントで定義されている SOAP エンコード要素部分の型の内部型マッピングの情報を生成します。</summary>
+        <returns>WSDL のメッセージ部分に対応する派生型の .NET Framework 型のマッピング情報です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapSchemaImporter.ImportDerivedTypeMapping%2A>のメソッド、<xref:System.Xml.Serialization.SoapSchemaImporter>クラスによって使用、 [Web サービス記述言語ツール (Wsdl.exe)](http://msdn.microsoft.com/en-us/b9210348-8bc2-4367-8c91-d1a04b403e88) Web サービス記述言語 (WSDL) ドキュメントからクライアント プロキシ クラスまたは抽象 server クラスを生成するときにします。 このメソッドを直接呼び出す代わりに、Wsdl.exe を使用します。  
+  
+ <xref:System.Xml.Serialization.SoapSchemaImporter>クラスは、WSDL ドキュメントが、SOAP 1.1 仕様のセクション 5 に記述されている SOAP エンコーディングを指定する場合にのみ使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ImportMembersMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlMembersMapping ImportMembersMapping (string name, string ns, System.Xml.Serialization.SoapSchemaMember member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Serialization.XmlMembersMapping ImportMembersMapping(string name, string ns, class System.Xml.Serialization.SoapSchemaMember member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.SoapSchemaMember)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlMembersMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="member" Type="System.Xml.Serialization.SoapSchemaMember" />
+      </Parameters>
+      <Docs>
+        <param name="name">メッセージの名前。</param>
+        <param name="ns">メッセージの名前空間。</param>
+        <param name="member">A<see cref="T:System.Xml.Serialization.SoapSchemaMember" />一部の要素に関する情報を提供するオブジェクト。</param>
+        <summary>WSDL ドキュメントで定義されている 1 つの SOAP エンコード要素部品の内部型マッピングの情報を生成します。</summary>
+        <returns>メッセージの WSDL 定義の 1 つの要素の一部の .NET Framework 型のマッピング。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping%2A>のメソッド、<xref:System.Xml.Serialization.SoapSchemaImporter>クラスは、Web サービス記述言語 (WSDL) ドキュメントからクライアント プロキシ クラスまたは抽象 server クラスを生成するときに、Wsdl.exe ツールを使用します。 このメソッドを直接呼び出す代わりに、Wsdl.exe を使用します。  
+  
+ <xref:System.Xml.Serialization.SoapSchemaImporter>クラスは、WSDL ドキュメントが、SOAP 1.1 仕様のセクション 5 に記述されている SOAP エンコーディングを指定する場合にのみ使用します。 この署名、<xref:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping%2A>メソッドは、WSDL のメッセージが 1 部構成要素内でラップされたときに使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ImportMembersMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlMembersMapping ImportMembersMapping (string name, string ns, System.Xml.Serialization.SoapSchemaMember[] members);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Serialization.XmlMembersMapping ImportMembersMapping(string name, string ns, class System.Xml.Serialization.SoapSchemaMember[] members) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.SoapSchemaMember[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlMembersMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="members" Type="System.Xml.Serialization.SoapSchemaMember[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">メッセージの名前。</param>
+        <param name="ns">メッセージの名前空間。</param>
+        <param name="members">型の配列<see cref="T:System.Xml.Serialization.SoapSchemaMember" />部分要素に関する情報を提供します。</param>
+        <summary>WSDL ドキュメントで定義された SOAP でエンコードされたメッセージの要素の部分の内部型マッピングの情報を生成します。</summary>
+        <returns>メッセージの WSDL 定義の要素の一部の .NET Framework 型のマッピング。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping%2A>のメソッド、<xref:System.Xml.Serialization.SoapSchemaImporter>クラスは、Web サービス記述言語 (WSDL) ドキュメントからクライアント プロキシ クラスまたは抽象 server クラスを生成するときに、Wsdl.exe ツールを使用します。 このメソッドを直接呼び出す代わりに、Wsdl.exe を使用します。  
+  
+ <xref:System.Xml.Serialization.SoapSchemaImporter>クラスは、WSDL ドキュメントが、SOAP 1.1 仕様のセクション 5 に記述されている SOAP エンコーディングを指定する場合にのみ使用します。 パラメーターの値を<xref:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping%2A>メソッドは、メッセージ定義のメッセージ要素に含まれる一部の要素を含む、WSDL ドキュメントから取得されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ImportMembersMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlMembersMapping ImportMembersMapping (string name, string ns, System.Xml.Serialization.SoapSchemaMember[] members, bool hasWrapperElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Serialization.XmlMembersMapping ImportMembersMapping(string name, string ns, class System.Xml.Serialization.SoapSchemaMember[] members, bool hasWrapperElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.SoapSchemaMember[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlMembersMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="members" Type="System.Xml.Serialization.SoapSchemaMember[]" />
+        <Parameter Name="hasWrapperElement" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">メッセージの名前。</param>
+        <param name="ns">メッセージの名前空間。</param>
+        <param name="members">型の配列<see cref="T:System.Xml.Serialization.SoapSchemaMember" />部分要素に関する情報を提供します。</param>
+        <param name="hasWrapperElement">
+          <see langword="true" />余分な SOAP メッセージのラッパー要素で囲まれた部分によって定義された要素が存在するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>WSDL ドキュメントで定義された SOAP でエンコードされたメッセージの要素の部分の内部型マッピングの情報を生成します。</summary>
+        <returns>メッセージの WSDL 定義の要素の一部の .NET Framework 型のマッピング。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping%2A>のメソッド、<xref:System.Xml.Serialization.SoapSchemaImporter>クラスは、Web サービス記述言語 (WSDL) ドキュメントからクライアント プロキシ クラスまたは抽象 server クラスを生成するときに、Wsdl.exe ツールを使用します。 このメソッドを直接呼び出す代わりに、Wsdl.exe を使用します。  
+  
+ <xref:System.Xml.Serialization.SoapSchemaImporter>クラスは、WSDL ドキュメントが、SOAP 1.1 仕様のセクション 5 に記述されている SOAP エンコーディングを指定する場合にのみ使用します。 パラメーターの値を<xref:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping%2A>メソッドは、メッセージ定義のメッセージ要素に含まれる一部の要素を含む、WSDL ドキュメントから取得されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ImportMembersMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlMembersMapping ImportMembersMapping (string name, string ns, System.Xml.Serialization.SoapSchemaMember[] members, bool hasWrapperElement, Type baseType, bool baseTypeCanBeIndirect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Serialization.XmlMembersMapping ImportMembersMapping(string name, string ns, class System.Xml.Serialization.SoapSchemaMember[] members, bool hasWrapperElement, class System.Type baseType, bool baseTypeCanBeIndirect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.SoapSchemaMember[],System.Boolean,System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlMembersMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="members" Type="System.Xml.Serialization.SoapSchemaMember[]" />
+        <Parameter Name="hasWrapperElement" Type="System.Boolean" />
+        <Parameter Name="baseType" Type="System.Type" />
+        <Parameter Name="baseTypeCanBeIndirect" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">メッセージの名前。</param>
+        <param name="ns">メッセージの名前空間。</param>
+        <param name="members">型の配列<see cref="T:System.Xml.Serialization.SoapSchemaMember" />部分要素に関する情報を提供します。</param>
+        <param name="hasWrapperElement">
+          <see langword="true" />余分な SOAP メッセージのラッパー要素で囲まれた部分によって定義された要素が存在するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="baseType">メッセージ部分に対応して生成されるすべての .NET Framework 型の基本データ型。</param>
+        <param name="baseTypeCanBeIndirect">
+          <see langword="true" />メッセージ部分に対応する型が基本型から間接的に継承できることを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>WSDL ドキュメントで定義された SOAP でエンコードされたメッセージの要素の部分の内部型マッピングの情報を生成します。</summary>
+        <returns>メッセージの WSDL 定義の要素の一部の .NET Framework 型のマッピング。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping%2A>のメソッド、<xref:System.Xml.Serialization.SoapSchemaImporter>クラスは、Web サービス記述言語 (WSDL) ドキュメントからクライアント プロキシ クラスまたは抽象 server クラスを生成するときに、Wsdl.exe ツールを使用します。 このメソッドを直接呼び出す代わりに、Wsdl.exe を使用します。  
+  
+ <xref:System.Xml.Serialization.SoapSchemaImporter>クラスは、WSDL ドキュメントが、SOAP 1.1 仕様のセクション 5 に記述されている SOAP エンコーディングを指定する場合にのみ使用します。 パラメーターの値を<xref:System.Xml.Serialization.SoapSchemaImporter.ImportMembersMapping%2A>メソッドは、メッセージ定義のメッセージ要素に含まれる一部の要素を含む、WSDL ドキュメントから取得されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

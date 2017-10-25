@@ -1,0 +1,969 @@
+<Type Name="CompilationSection" FullName="System.Web.Configuration.CompilationSection">
+  <TypeSignature Language="C#" Value="public sealed class CompilationSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CompilationSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.CompilationSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションのコンパイルのインフラストラクチャをサポートするために使用される構成設定を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CompilationSection>クラスは、プログラムからアクセスしの内容を変更する方法を提供、`compilation`構成ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ この例は、宣言の複数の属性の値を指定する方法を示します、`compilation`セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ 次の構成ファイルの例は、宣言によっての値を指定する方法を示しています、`compilation`セクションです。  
+  
+```  
+<system.web>  
+  <compilation   
+    tempDirectory=""   
+    debug="False"   
+    strict="False"   
+    explicit="True"   
+    batch="True"   
+    batchTimeout="900"   
+    maxBatchSize="1000"   
+    maxBatchGeneratedFileSize="1000"   
+    numRecompilesBeforeAppRestart="15"   
+    defaultLanguage="vb"   
+    targetFramework="4.0"   
+    urlLinePragmas="False"   
+    assemblyPostProcessorType="">  
+    <assemblies>  
+      <clear />  
+    </assemblies>  
+    <buildProviders>  
+      <clear />  
+    </buildProviders>  
+    <expressionBuilders>  
+      <clear />  
+    </expressionBuilders>  
+  </compilation>   
+</system.web>  
+```  
+  
+ 次のコード例では、メンバーを使用して、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#1)]
+ [!code-vb[System.Web.Configuration.CompilationSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompilationSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.CompilationSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Web.Configuration.CompilationSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CompilationSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得することができます、<xref:System.Web.Configuration.CompilationSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assemblies">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.AssemblyCollection Assemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.AssemblyCollection Assemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.Assemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("assemblies")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.AssemblyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.AssemblyCollection" /> の <see cref="T:System.Web.Configuration.CompilationSection" /> を取得します。</summary>
+        <value>A <see cref="T:System.Web.Configuration.AssemblyCollection" /> ASP.NET リソースのコンパイル時に使用されるアセンブリ オブジェクトを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、動的な ASP.NET リソースのコンパイル時に使用するアセンブリ参照が含まれています。 ASP.NET は、各コード モジュールをコンパイルするときに自動的にこれらのアセンブリと、リソースにリンクします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyPostProcessorType">
+      <MemberSignature Language="C#" Value="public string AssemblyPostProcessorType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssemblyPostProcessorType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.AssemblyPostProcessorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("assemblyPostProcessorType", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアセンブリのコンパイルの後処理のステップを指定する値を設定します。</summary>
+        <value>アセンブリのコンパイルの後処理のステップを指定する文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Batch">
+      <MemberSignature Language="C#" Value="public bool Batch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Batch" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.Batch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("batch", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはバッチ コンパイルを行うかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />バッチ コンパイルしようとするとします。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性を設定`true`にコンパイルされていないファイルにアクセスするときに必要なコンパイルによる遅延時間を変更します。 この属性を設定する`true`をバッチ モードでコンパイルされていないすべてのファイルをプリコンパイルする ASP.NET に指示します。 ファイルは、コンパイルは、まず; とき、遅延が発生します。ただし、ファイルをコンパイルした後、遅延が排除されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CompilationSection.Batch%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#4)]
+ [!code-vb[System.Web.Configuration.CompilationSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BatchTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan BatchTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan BatchTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.BatchTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.TimeSpanSecondsOrInfiniteConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("batchTimeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:00:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタイムアウト期間を秒単位のバッチ コンパイルに設定します。</summary>
+        <value>(秒単位) のバッチ コンパイルが発生する時間を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチ コンパイルの秒単位で、タイムアウト期間を示します。 コンパイルは、タイムアウト期間内に完了できない、コンパイラは、現在のページに対して単一コンパイル モードに戻ります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CompilationSection.BatchTimeout%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#5)]
+ [!code-vb[System.Web.Configuration.CompilationSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProviders">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.BuildProviderCollection BuildProviders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.BuildProviderCollection BuildProviders" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.BuildProviders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("buildProviders")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.BuildProviderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.BuildProviderCollection" />のコレクション、<see cref="T:System.Web.Configuration.CompilationSection" />クラスです。</summary>
+        <value>A<see cref="T:System.Web.Configuration.BuildProviderCollection" />コンパイル時に使用するビルド プロバイダーを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Compilation.BuildProvider>オブジェクトは、特定のファイルの種類を解析し、そのファイルからコードを生成する機能を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeSubDirectories">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.CodeSubDirectoriesCollection CodeSubDirectories { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.CodeSubDirectoriesCollection CodeSubDirectories" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.CodeSubDirectories" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("codeSubDirectories")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.CodeSubDirectoriesCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.CodeSubDirectoriesCollection" /> の <see cref="T:System.Web.Configuration.CompilationSection" /> を取得します。</summary>
+        <value>A<see cref="T:System.Web.Configuration.CodeSubDirectoriesCollection" />実行時にコンパイルされたファイルを含むサブディレクトリの順序付けられたコレクションを格納しているコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、実行時にコンパイルされたファイルを含むサブディレクトリの順序付けられたコレクションを定義します。 任意の数のサブディレクトリがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compilers">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.CompilerCollection Compilers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.CompilerCollection Compilers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.Compilers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("compilers")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.CompilerCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.CompilerCollection" />のコレクション、<see cref="T:System.Web.Configuration.CompilationSection" />クラスです。</summary>
+        <value>A<see cref="T:System.Web.Configuration.CompilerCollection" />のコレクションを格納するコレクション<see cref="T:System.Web.Configuration.Compiler" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CompilationSection.Compilers%2A>プロパティは、基になる構成ファイル内の実際の要素を参照していません。 簡単にアクセスできるようにするコンス トラクターは、<xref:System.Web.Configuration.Compiler>オブジェクトが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlBuilderInterceptorType">
+      <MemberSignature Language="C#" Value="public string ControlBuilderInterceptorType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ControlBuilderInterceptorType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.ControlBuilderInterceptorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("controlBuilderInterceptorType", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を先に使用されるオブジェクトの種類を表す文字列、<see cref="T:System.Web.UI.ControlBuilder" />オブジェクトおよびコンテナーを構成します。</summary>
+        <value>途中受信するために使用するオブジェクトの種類を表す文字列、<see cref="T:System.Web.UI.ControlBuilder" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Debug">
+      <MemberSignature Language="C#" Value="public bool Debug { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Debug" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.Debug" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("debug", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリリース バイナリのコンパイルまたはバイナリをデバッグするかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />コンパイル デバッグ バイナリが使用される場合それ以外の場合、<see langword="false" />です。 <see langword="false" />リリースのバイナリがコンパイルに使用されることを指定します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CompilationSection.Debug%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#9)]
+ [!code-vb[System.Web.Configuration.CompilationSection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultLanguage">
+      <MemberSignature Language="C#" Value="public string DefaultLanguage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.DefaultLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("defaultLanguage", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定の動的コンパイル ファイルで使用する言語を設定します。</summary>
+        <value>既定の動的コンパイル ファイルで使用する言語を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動的コンパイル ファイルで使用する c#、VB.NET などの言語を指定します。 使用して言語の名前を定義、`system.codedom`セクションです。 既定のプログラミング言語は`vb`既定のプログラミング言語として VB.NET を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CompilationSection.DefaultLanguage%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#10)]
+ [!code-vb[System.Web.Configuration.CompilationSection#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableObsoleteWarnings">
+      <MemberSignature Language="C#" Value="public bool DisableObsoleteWarnings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DisableObsoleteWarnings" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.DisableObsoleteWarnings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("disableObsoleteWarnings", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Compilation セクションの"disableObsoleteWarnings"構成値が設定されているかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />Compilation セクションの"disableObsoleteWarnings"構成値が設定されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnablePrefetchOptimization">
+      <MemberSignature Language="C#" Value="public bool EnablePrefetchOptimization { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnablePrefetchOptimization" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.EnablePrefetchOptimization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enablePrefetchOptimization", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET アプリケーションが [!INCLUDE[win8](~/includes/win8-md.md)] プリフェッチ機能を活用できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ASP.NET アプリケーションが [!INCLUDE[win8](~/includes/win8-md.md)] プリフェッチ機能を利用できる場合は、<see langword="true" />。そうでない場合は、<see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリフェッチは、それが要求する前に、アプリケーション データをメモリに読み込み、アプリケーションの起動時のパフォーマンスを向上させるために使用できるユーティリティです。  
+  
+> [!NOTE]
+>  [!INCLUDE[win8](~/includes/win8-md.md)]プリフェッチ サービスが構成され有効にするには、この設定を実行する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Explicit">
+      <MemberSignature Language="C#" Value="public bool Explicit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Explicit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.Explicit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("explicit", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Microsoft Visual Basic を使用するかどうかを示す値を取得または<see langword="explicit" />コンパイル オプション。</summary>
+        <value>
+          <see langword="true" />場合、Visual Basic<see langword="explicit" />コンパイル オプションが有効である、それ以外の場合、<see langword="false" />です。 <see langword="false" />指定する、Visual Basic<see langword="explicit" />コンパイル オプションが無効になっています。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、Microsoft Visual Basic の設定を指定`explicit`コンパイル オプション。 設定すると`true`、Visual Basic`explicit`コンパイル オプションが有効にします。 オプションを有効にすると、すべての変数必要があります明示的に宣言するを使用して、 `Dim`、 `Private`、 `Public`、または`ReDim`ステートメントです。 既定値は、`true` です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CompilationSection.Explicit%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#11)]
+ [!code-vb[System.Web.Configuration.CompilationSection#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpressionBuilders">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ExpressionBuilderCollection ExpressionBuilders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ExpressionBuilderCollection ExpressionBuilders" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.ExpressionBuilders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("expressionBuilders")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ExpressionBuilderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.ExpressionBuilderCollection" /> の <see cref="T:System.Web.Configuration.CompilationSection" /> を取得します。</summary>
+        <value><see cref="T:System.Web.Configuration.ExpressionBuilderCollection" /> オブジェクトを含む <see cref="T:System.Web.Configuration.ExpressionBuilder" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FolderLevelBuildProviders">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.FolderLevelBuildProviderCollection FolderLevelBuildProviders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.FolderLevelBuildProviderCollection FolderLevelBuildProviders" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.FolderLevelBuildProviders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("folderLevelBuildProviders")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FolderLevelBuildProviderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.FolderLevelBuildProviderCollection" />のコレクション、<see cref="T:System.Web.Configuration.CompilationSection" />クラスで、コンパイル時に使用されるビルド プロバイダーを表します。</summary>
+        <value>コンパイル時に使用されるビルド プロバイダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Configuration.FolderLevelBuildProvider>オブジェクトは、特定のファイルの種類を解析し、そのファイルからコードを生成する機能を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeObject">
+      <MemberSignature Language="C#" Value="protected override object GetRuntimeObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetRuntimeObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.CompilationSection.GetRuntimeObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxBatchGeneratedFileSize">
+      <MemberSignature Language="C#" Value="public int MaxBatchGeneratedFileSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxBatchGeneratedFileSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.MaxBatchGeneratedFileSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxBatchGeneratedFileSize", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはバッチ処理されたコンパイルごとに、生成されたソース ファイルの最大合計サイズを設定します。</summary>
+        <value>バッチ処理されたコンパイルごとに、生成されたソース ファイルの最大合計サイズを示す整数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチ処理されたコンパイルごとに、生成されたソース ファイルの最大サイズ (単位: キロバイト) を指定します。 既定値は、1,000 KB です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CompilationSection.MaxBatchGeneratedFileSize%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#13)]
+ [!code-vb[System.Web.Configuration.CompilationSection#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxBatchSize">
+      <MemberSignature Language="C#" Value="public int MaxBatchSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxBatchSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.MaxBatchSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxBatchSize", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはバッチ処理されたコンパイルごとのページの最大数を設定します。</summary>
+        <value>1 つのバッチにコンパイルされるページの最大数を示す整数値。 既定のページ数は 1000 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CompilationSection.MaxBatchSize%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#14](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#14)]
+ [!code-vb[System.Web.Configuration.CompilationSection#14](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxConcurrentCompilations">
+      <MemberSignature Language="C#" Value="public int MaxConcurrentCompilations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConcurrentCompilations" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.MaxConcurrentCompilations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxConcurrentCompilations", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Compilation セクションの"maxConcurrentCompilations"構成値が設定されているかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />Compilation セクションの"maxConcurrentCompilations"構成値が設定されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumRecompilesBeforeAppRestart">
+      <MemberSignature Language="C#" Value="public int NumRecompilesBeforeAppRestart { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumRecompilesBeforeAppRestart" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.NumRecompilesBeforeAppRestart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("numRecompilesBeforeAppRestart", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションが再起動する前に発生する可能性があるリソースの動的再コンパイルの数を設定します。</summary>
+        <value>アプリケーションが再起動する前に発生する可能性があるリソースの動的再コンパイルの数を示す値です。 既定値は、15 の再コンパイルします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションが再起動する前に発生する可能性があるリソースの動的再コンパイルの数を示します。 この属性には、ディレクトリの構成レベルではなくグローバルおよびアプリケーションの構成レベルにはサポートされています。  
+  
+> [!NOTE]
+>  ASP.NET の増加、<xref:System.Web.Configuration.CompilationSection.NumRecompilesBeforeAppRestart%2A>アセンブリが無効になるし、削除に失敗するたびに、プロパティ値。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CompilationSection.NumRecompilesBeforeAppRestart%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#15](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#15)]
+ [!code-vb[System.Web.Configuration.CompilationSection#15](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OptimizeCompilations">
+      <MemberSignature Language="C#" Value="public bool OptimizeCompilations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OptimizeCompilations" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.OptimizeCompilations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("optimizeCompilations", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイルを最適化する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、コンパイルを最適化する必要があります。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostDeserialize">
+      <MemberSignature Language="C#" Value="protected override void PostDeserialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PostDeserialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.CompilationSection.PostDeserialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProfileGuidedOptimizations">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ProfileGuidedOptimizationsFlags ProfileGuidedOptimizations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.ProfileGuidedOptimizationsFlags ProfileGuidedOptimizations" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.ProfileGuidedOptimizations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("profileGuidedOptimizations", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ProfileGuidedOptimizationsFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配置されている環境用にアプリケーションが最適化されているかどうかを示す値を取得または設定します。</summary>
+        <value>配置されている環境用にアプリケーションが最適化されているかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定するときに<xref:System.Web.Configuration.ProfileGuidedOptimizationsFlags.All>、ASP.NET コンパイル システム CPU 使用率の向上を犠牲にして ASP.NET 起動時のパフォーマンスを向上させるためのものでは、最適化を有効にします。 このプロパティは、の既定の設定<xref:System.Web.Configuration.ProfileGuidedOptimizationsFlags.All>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReadOnly">
+      <MemberSignature Language="C#" Value="protected override void SetReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.CompilationSection.SetReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Strict">
+      <MemberSignature Language="C#" Value="public bool Strict { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Strict" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.Strict" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("strict", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、Visual Basic<see langword="strict" />コンパイル オプション。</summary>
+        <value>
+          <see langword="true" />場合、Visual Basic<see langword="strict" />コンパイル オプションが使用されます。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`true`コンパイルは、データ損失が発生すると、すべてのデータ型変換と数値型と文字列間の変換に明示的に禁止されています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CompilationSection.Strict%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#16](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#16)]
+ [!code-vb[System.Web.Configuration.CompilationSection#16](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFramework">
+      <MemberSignature Language="C#" Value="public string TargetFramework { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetFramework" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.TargetFramework" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("targetFramework", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または .NET Framework のバージョンを設定、Web サイトのターゲットです。</summary>
+        <value>.NET Framework のバージョンを Web サイトのターゲットです。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework の特定のバージョンを対象にする方法については、次を参照してください。 [ASP.NET Web プロジェクト用の .NET Framework のマルチ ターゲット](http://msdn.microsoft.com/library/8b8145a9-62f6-4fc4-8a83-47b0487cbe76)です。  
+  
+   
+  
+## Examples  
+ [compilation 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/7c319582-074a-4d2a-a787-03b9d4541c12)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TempDirectory">
+      <MemberSignature Language="C#" Value="public string TempDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TempDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.TempDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("tempDirectory", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイル時に一時ファイル記憶域として使用するディレクトリを指定する値を設定します。</summary>
+        <value>コンパイル中に一時ファイル記憶域として使用するディレクトリを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CompilationSection.TempDirectory%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#17](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#17)]
+ [!code-vb[System.Web.Configuration.CompilationSection#17](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlLinePragmas">
+      <MemberSignature Language="C#" Value="public bool UrlLinePragmas { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UrlLinePragmas" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CompilationSection.UrlLinePragmas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("urlLinePragmas", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイラに指示が物理パスまたは Url を使用するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コンパイラに指示; の物理パスではなく、Url を使用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ としてこのプロパティが指定されている場合`true`物理パスの代わりにコンパイラ手順については、構成では、Url が使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CompilationSection.UrlLinePragmas%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.CompilationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CompilationSection#18](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/CS/CompilationSection.cs#18)]
+ [!code-vb[System.Web.Configuration.CompilationSection#18](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CompilationSection/VB/CompilationSection.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

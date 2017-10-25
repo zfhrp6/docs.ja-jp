@@ -1,0 +1,257 @@
+<Type Name="InstanceDataCollection" FullName="System.Diagnostics.InstanceDataCollection">
+  <TypeSignature Language="C#" Value="public class InstanceDataCollection : System.Collections.DictionaryBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InstanceDataCollection extends System.Collections.DictionaryBase" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.InstanceDataCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.DictionaryBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>厳密に型指定された <see cref="T:System.Diagnostics.InstanceData" /> オブジェクトのコレクションを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.InstanceDataCollection>クラスは、カウンターのすべてのインスタンス データを含むコレクションを表します。 このコレクションは、<xref:System.Diagnostics.InstanceDataCollectionCollection>を使用する場合、<xref:System.Diagnostics.PerformanceCounterCategory.ReadCategory%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例には、特定のインスタンス データが表示されます。 <xref:System.Diagnostics.PerformanceCounterCategory> 、ローカル コンピューター上です。 最初の番号付きリストが表示されます<xref:System.Diagnostics.PerformanceCounterCategory>名。 例では取得、カテゴリの 1 つの番号を入力すると後、<xref:System.Diagnostics.InstanceDataCollectionCollection>を<xref:System.Diagnostics.PerformanceCounterCategory>です。 によって返されるコレクションに変換し、<xref:System.Diagnostics.InstanceDataCollectionCollection.Values%2A>の配列を<xref:System.Diagnostics.InstanceDataCollection>オブジェクト。 また、それぞれに関連付けられているインスタンス データを表示<xref:System.Diagnostics.InstanceData>各<xref:System.Diagnostics.InstanceDataCollection>です。  
+  
+ [!code-csharp[System.Diagnostics.InstanceData.KeysValues#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.KeysValues/CS/instdatakeysvalues.cs#1)]
+ [!code-vb[System.Diagnostics.InstanceData.KeysValues#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.KeysValues/VB/instdatakeysvalues.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstanceDataCollection (string counterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string counterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.InstanceDataCollection.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use InstanceDataCollectionCollection indexer instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="counterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="counterName">多くの場合がカウントされている数量を記述すると、カウンターの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.InstanceDataCollection" />クラス、指定されたパフォーマンス カウンターを定義するパフォーマンスのインスタンス) を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="counterName" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string instanceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string instanceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.InstanceDataCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="instanceName">このコレクション内で検索するインスタンスの名前です。</param>
+        <summary>指定した名前を付けてパフォーマンス インスタンスかどうかを判断 (、インデックス付きのいずれかで識別される<see cref="T:System.Diagnostics.InstanceData" />オブジェクト)、コレクション内に存在します。</summary>
+        <returns>
+          <see langword="true" />コレクション内のインスタンスが存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `instanceName`パラメーター小文字は区別されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を受け入れる、<xref:System.Diagnostics.PerformanceCounter>カテゴリ名、カウンター名、およびコマンド ラインからインスタンス名。 取得、<xref:System.Diagnostics.InstanceDataCollectionCollection>の集合であるカテゴリに属している<xref:System.Diagnostics.InstanceDataCollection>オブジェクト。 特定を取得した<xref:System.Diagnostics.InstanceDataCollection>カウンターの指定。 次を使用して、<xref:System.Diagnostics.InstanceDataCollection.Contains%2A>メソッドを指定したインスタンスが存在するかどうか、[なし] が入力された場合、既定の単一インスタンスの名前を使用して決定します。  
+  
+ [!code-csharp[System.Diagnostics.InstanceDataCollection.ItemContains#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceDataCollection.ItemContains/CS/instdatacolitemcontains.cs#2)]
+ [!code-vb[System.Diagnostics.InstanceDataCollection.ItemContains#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceDataCollection.ItemContains/VB/instdatacolitemcontains.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="instanceName" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Diagnostics.InstanceData[] instances, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Diagnostics.InstanceData[] instances, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.InstanceDataCollection.CopyTo(System.Diagnostics.InstanceData[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instances" Type="System.Diagnostics.InstanceData[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="instances">1 次元<see cref="T:System.Array" />の値がコレクションからコピー先であること。</param>
+        <param name="index">新しいインスタンスを追加する位置を示す 0 から始まるインデックス値。</param>
+        <summary>指定したインデックス位置の指定した 1 次元配列にコレクション内の項目をコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Diagnostics.InstanceDataCollection.CopyTo%2A>に変換する方法、<xref:System.Diagnostics.InstanceDataCollection>の配列を<xref:System.Diagnostics.InstanceData>オブジェクト。 値、<xref:System.Diagnostics.InstanceData.InstanceName%2A>と<xref:System.Diagnostics.InstanceData.Sample%2A>配列の各要素のプロパティは、さらに処理関数に渡されます。  
+  
+ [!code-csharp[System.Diagnostics.InstanceData.CopyTo#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/CS/instdatacopyto.cs#4)]
+ [!code-vb[System.Diagnostics.InstanceData.CopyTo#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/VB/instdatacopyto.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterName">
+      <MemberSignature Language="C#" Value="public string CounterName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CounterName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.InstanceDataCollection.CounterName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンス データを取得するパフォーマンス カウンターの名前を取得します。</summary>
+        <value>パフォーマンス カウンターの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では表示、<xref:System.Diagnostics.InstanceDataCollection.CounterName%2A>のプロパティ、<xref:System.Diagnostics.InstanceDataCollection>です。  
+  
+ [!code-csharp[System.Diagnostics.InstanceData.CopyTo#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/CS/instdatacopyto.cs#4)]
+ [!code-vb[System.Diagnostics.InstanceData.CopyTo#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.CopyTo/VB/instdatacopyto.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.InstanceData this[string instanceName] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.InstanceData Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.InstanceDataCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.InstanceData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="instanceName">パフォーマンス カウンターのカテゴリ インスタンスまたは空の文字列の名前 ("")、カテゴリには、1 つのインスタンスが含まれている場合。</param>
+        <summary>このカウンターに関連付けられているインスタンス データを取得します。 これは、通常、生のカウンター値のセットです。</summary>
+        <value><see cref="T:System.Diagnostics.InstanceData" />これによって、項目を<see cref="T:System.Diagnostics.InstanceDataCollection" />オブジェクトのインデックスを作成します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `instanceName`パラメーター小文字は区別されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を受け入れる、<xref:System.Diagnostics.PerformanceCounter>カテゴリ名、カウンター名、およびコマンド ラインからインスタンス名。 取得、<xref:System.Diagnostics.InstanceDataCollectionCollection>の集合であるカテゴリに属している<xref:System.Diagnostics.InstanceDataCollection>オブジェクト。 特定を取得した<xref:System.Diagnostics.InstanceDataCollection>カウンターの指定。 次のインスタンスが存在する場合の例を使用して、<xref:System.Diagnostics.InstanceDataCollection.Item%2A>プロパティ (インデクサーとして参照される) を取得、関連付けられている<xref:System.Diagnostics.InstanceData>オブジェクト。  
+  
+ [!code-csharp[System.Diagnostics.InstanceDataCollection.ItemContains#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceDataCollection.ItemContains/CS/instdatacolitemcontains.cs#2)]
+ [!code-vb[System.Diagnostics.InstanceDataCollection.ItemContains#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceDataCollection.ItemContains/VB/instdatacolitemcontains.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="instanceName" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.InstanceDataCollection.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスのデータに関連付けられているオブジェクトのオブジェクトおよびカウンターのレジストリ キーを取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" />オブジェクト固有のレジストリ キーのセットを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各ソフトウェア コンポーネントがインストールされているが実行中に、カウンター データを書き込むときに、そのオブジェクトとカウンターのキーが作成されます。 その他のレジストリ データにアクセスする、このデータにアクセスすることができます。 ただし、パフォーマンス データを収集するレジストリを使用すると、データはレジストリ データベースに格納されません。 代わりに、システムは、適切なシステム オブジェクト マネージャーからデータを収集します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Diagnostics.InstanceDataCollection.Keys%2A>のプロパティ、<xref:System.Diagnostics.InstanceDataCollection>の配列に変換する、インスタンス名のコレクションを返す<xref:System.String>です。 配列を生成<xref:System.Diagnostics.InstanceData>オブジェクトを使用して、<xref:System.Diagnostics.InstanceDataCollection.Values%2A>プロパティです。 インスタンス名の配列内の各要素の名前を表示し、関連付けられている処理する関数を呼び出す<xref:System.Diagnostics.InstanceData>オブジェクト。  
+  
+ [!code-csharp[System.Diagnostics.InstanceData.KeysValues#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.KeysValues/CS/instdatakeysvalues.cs#3)]
+ [!code-vb[System.Diagnostics.InstanceData.KeysValues#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.KeysValues/VB/instdatakeysvalues.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.InstanceDataCollection.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カウンターのインスタンス データを構成する生のカウンター値を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" />カウンターの生データの値を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Diagnostics.InstanceDataCollection.Values%2A>のプロパティ、<xref:System.Diagnostics.InstanceDataCollection>のコレクションを返す<xref:System.Diagnostics.InstanceData>オブジェクトで、配列に変換します。 使用してインスタンス名の配列を生成、<xref:System.Diagnostics.InstanceDataCollection.Keys%2A>プロパティです。 配列の各要素に対して<xref:System.Diagnostics.InstanceData>オブジェクトを処理する関数を呼び出すし、関連付けられているインスタンス名を表示、<xref:System.Diagnostics.InstanceData>オブジェクト。  
+  
+ [!code-csharp[System.Diagnostics.InstanceData.KeysValues#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.KeysValues/CS/instdatakeysvalues.cs#3)]
+ [!code-vb[System.Diagnostics.InstanceData.KeysValues#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.InstanceData.KeysValues/VB/instdatakeysvalues.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,382 @@
+<Type Name="StoryFragment" FullName="System.Windows.Documents.DocumentStructures.StoryFragment">
+  <TypeSignature Language="C#" Value="public class StoryFragment : System.Collections.Generic.IEnumerable&lt;System.Windows.Documents.DocumentStructures.BlockElement&gt;, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StoryFragment extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Documents.DocumentStructures.BlockElement&gt;, class System.Collections.IEnumerable, class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.DocumentStructures.StoryFragment" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Windows.Documents.DocumentStructures.BlockElement&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("BlockElementList")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XPS ドキュメント内の 1 つのストーリーの全部または一部を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XPS ストーリー、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメントは、新聞や雑誌のストーリーにおおよそ類似しています。 テキストおよび内の 1 つの 1 つのトピックでは通常、グラフィックのコンテンツの関する[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。 通常、複数のページにまたがることが、サイドバーのようなページよりも短いを指定できます — 囲み記事、雑誌の。 ストーリーは、4 ページ目に続く最初のページ新聞の記事のように連続していないことができます。 その結果、特定のページでは、1 つ以上のストーリーと 1 つ以上のストーリーの部分を持つことができます。 ヘッダーまたはページ フッターは、特殊なすべてが 1 ページに含まれるストーリーではもです。  
+  
+ A<xref:System.Windows.Documents.DocumentStructures.StoryFragment>ストーリーの一部またはすべて表します。 複数のページをまたがるできることはありませんが、ページ全体を占有することも別のフラグメントとページを共有します。 ストーリーが複数のページにある場合は、各ページ上の各部分は、独立したフラグメントです。 ストーリーには、フラグメントの不連続を設定できますが、フラグメント自体することは連続していません。  
+  
+ のみ、<xref:System.Windows.Documents.DocumentStructures.StoryFragments>要素の親になることができます、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>です。  場所、<xref:System.Windows.Documents.DocumentStructures.StoryBreak>内の要素、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>ストーリーが複数のフラグメントに含まれている場合、追加フラグメントまたはいずれかの前に次の現在のフラグメントを示します。  
+  
+ ときに、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>いくつかの構造体の要素の途中で終了です。 たとえば、 `<TableRowGroupStructure>`、し[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]- ドキュメントを生成したアプリケーションは、要素の適切な終了タグを挿入する必要があります (ここでは`</TableRowGroupStructure>`) する前に、`</StoryFragment>`タグ、構造体の後のフラグメントに継続する場合でもです。 (これは、要素ツリー内でいることを確認するために必要な<xref:System.Windows.Documents.DocumentStructures.StoryFragment>有効な xml です)。ストーリーの続きフラグメントは、中断された構造体の開始タグで始めなければなりません。 中断された構造体のツリー全体に (1 つの例外後で説明) と同じ方法を扱う必要があります。 中断された時点の上のすべての一致しない開始タグの終了タグを追加する必要があります。  
+  
+ 後すぐに中断時間のストーリーに来る場合に例外が適用されます、`</TableCellStructure>`タグを生成のアプリケーションは、空のテーブル セルの構造体を挿入する必要があります (`<TableCellStructure></TableCellStructure>`)、ストーリーを継続するフラグメント内の対応する位置。 これは、機能は、使用するアプリケーションは特定のストーリーのすべてのフラグメントをマージする必要があるが、単純なアルゴリズムを使用してこれを行うように必要です。  
+  
+ たとえばには、次の資料を追加するアプリケーションを求めている、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。  
+  
+```  
+<SectionStructure>  
+   <TableStructure>  
+      <TableRowGroupStructure>  
+         <TableRowStructure>  
+            <TableCellStructure>  
+               <ParagraphStructure>  
+                  <NamedElement NameReference="SomeContent" />  
+               </ParagraphStructure>  
+            </TableCellStructure>  
+            <TableCellStructure>  
+               <ParagraphStructure>  
+                  <NamedElement NameReference="MoreContent" />  
+               </ParagraphStructure>  
+            </TableCellStructure>  
+         </TableRowStructure>  
+         <TableRowStructure>  
+            <TableCellStructure>  
+               <ParagraphStructure>  
+                  <NamedElement NameReference="EvenMoreContent" />  
+               </ParagraphStructure>  
+            </TableCellStructure>  
+            <TableCellStructure>  
+               <ParagraphStructure>  
+                  <NamedElement NameReference="LastContent" />  
+               </ParagraphStructure>  
+            </TableCellStructure>  
+         </TableRowStructure>  
+      </TableRowGroupStructure>  
+   </TableStructure>  
+</SectionStructure>  
+```  
+  
+ 改ページをフラグメントに強制的に終了場合、した直後、 `</TableCellStructure>` "SomeContent"アプリケーション作成する必要があります、分割、次の例に示すように。  
+  
+```  
+<StoryFragment StoryName="MyStory" FragmentType="Content">  
+ <SectionStructure>  
+    <TableStructure>  
+       <TableRowGroupStructure>  
+          <TableRowStructure>  
+             <TableCellStructure>  
+                <ParagraphStructure>  
+                   <NamedElement NameReference="SomeContent" />  
+                </ParagraphStructure>   
+             </TableCellStructure>  
+<!-- lines from here to end of fragment added by producer-->  
+          </TableRowStructure>  
+       </TableRowGroupStructure>  
+    </TableStructure>  
+ </SectionStructure>  
+</StoryFragment>  
+  
+<StoryFragment StoryName="MyStory" FragmentType="Content">  
+ <SectionStructure>  
+    <TableStructure>  
+       <TableRowGroupStructure>  
+          <TableRowStructure>  
+             <TableCellStructure>   
+              <!-- extra cell added by producer-->  
+             </TableCellStructure>  
+<!-- lines from here to start of fragment added by producer-->  
+             <TableCellStructure>  
+                <ParagraphStructure>  
+                   <NamedElement NameReference="MoreContent" />  
+                </ParagraphStructure>  
+             </TableCellStructure>  
+          </TableRowStructure>  
+          <TableRowStructure>  
+             <TableCellStructure>  
+                <ParagraphStructure>  
+                   <NamedElement NameReference="EvenMoreContent" />  
+                </ParagraphStructure>  
+             </TableCellStructure>  
+             <TableCellStructure>  
+                <ParagraphStructure>  
+                   <NamedElement NameReference="LastContent" />  
+                </ParagraphStructure>  
+             </TableCellStructure>  
+          </TableRowStructure>  
+       </TableRowGroupStructure>  
+    </TableStructure>  
+ </SectionStructure>  
+</StoryFragment>  
+```  
+  
+ ドキュメントを読み取るアプリケーションは、このコンテンツをマージする必要があります。 、たとえば、XPS ビューアーを検討してください、**をクリップボードにコピー全体のストーリー**ボタンをクリックします。 または、 **、ブラインドの XPS**ストーリーを音声シンセサイザーに渡されるアプリケーション。  ドキュメントを読み取るアプリケーションによっては、ストーリーのフラグメントのサブセットをマージする必要があります。 たとえば、3 回クリックして、段落全体をクリップボードにコピーする機能必要がありますので、このような段落は 2 つの間で分割され、段落、改ページのスパンするたびに印刷を実行する<xref:System.Windows.Documents.DocumentStructures.StoryFragment>s。  
+  
+ **マージするこのアルゴリズムを使用します。**  
+  
+1.  削除、`</StoryFragment>`最初のフラグメントをマージしたり、削除の末尾から、 `<StoryFragment>` 2 番目の先頭からです。  
+  
+2.  最初のフラグメントの最後の終了タグが 2 番目のフラグメントの最初の開始タグと同じ型の場合 (されない`<NamedElement>`タグ)、その両方を削除します。  
+  
+3.  手順 2 を 2 つのフラグメントになるまで繰り返します*か*これらの状態。  
+  
+    -   前のフラグメントの末尾のフラグメントの最初の開始タグの最後の終了タグの間で型が一致することはありません。  
+  
+    -   先頭の最後の終了タグ フラグメントの末尾のフラグメントの最初の開始タグが両方とも`<NamedElement>`タグ。  
+  
+ 上記の例で生成のアプリケーションによって空のセルが追加されていなかった場合、フラグメントをマージは表を生成の最初の行がそれぞれ 1 つの参照を含む 2 つのセルを元の最初の行ではなく"SomeContent"と"MoreContent"の参照を含む 1 つだけのセル  
+  
+ ストーリー全体がマージされるときに、ストーリーの一部である後続フラグメントごとに、アルゴリズムを繰り返す必要があります。 ストーリーに属しているフラグメントのインデックスが作成、`<Story>`要素。 9.1.15」セクションを参照してください、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]仕様で入手可能[XPS: 仕様とライセンス ダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。 特定のストーリーの最後のフラグメントには、<xref:System.Windows.Documents.DocumentStructures.StoryBreak>最後の子として要素。  
+  
+   
+  
+## Examples  
+ 次の例は、`<StoryFragment>`の一部、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-xaml[DocumentStructure#DocStructStoryFragContent1](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentStructure/CSharp/Content/FixedPage1_structure.xaml#docstructstoryfragcontent1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StoryFragment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentStructures.StoryFragment.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Documents.DocumentStructures.StoryFragment" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Windows.Documents.DocumentStructures.BlockElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Windows.Documents.DocumentStructures.BlockElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentStructures.StoryFragment.Add(System.Windows.Documents.DocumentStructures.BlockElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Documents.DocumentStructures.BlockElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">追加するブロック。</param>
+        <summary>ストーリー フラグメントに、ブロックを追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">渡されるブロックは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FragmentName">
+      <MemberSignature Language="C#" Value="public string FragmentName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FragmentName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.DocumentStructures.StoryFragment.FragmentName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストーリー フラグメントの名前を設定します。</summary>
+        <value>A<see cref="T:System.String" />このフラグメントの名前を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、`FragmentName`の属性、`</StoryFragment>`の一部、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメントで、9 の章を参照してください、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]仕様で入手可能[XPS: 仕様とライセンスのダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FragmentType">
+      <MemberSignature Language="C#" Value="public string FragmentType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FragmentType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.DocumentStructures.StoryFragment.FragmentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフラグメントの種類を設定します。</summary>
+        <value>A<see cref="T:System.String" />のフラグメントの種類を表示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定できる値は"Header"、「フッター、」および"Content"  
+  
+ 詳細については、`FragmentType`の属性、`</StoryFragment>`の一部、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメントで、9 の章を参照してください、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]仕様で入手可能[XPS: 仕様とライセンスのダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+   
+  
+## Examples  
+ 次の例は、`FragmentType`の属性、`<StoryFragment>`の一部、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-xaml[DocumentStructure#DocStructStoryFragContent1](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentStructure/CSharp/Content/FixedPage1_structure.xaml#docstructstoryfragcontent1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoryName">
+      <MemberSignature Language="C#" Value="public string StoryName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StoryName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.DocumentStructures.StoryFragment.StoryName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストーリーの名前を設定します。</summary>
+        <value>A<see cref="T:System.String" />ストーリーの名前を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のストーリーのすべてのフラグメントには、このプロパティの同じ値が必要です。 一致している必要があります、`StoryName`の属性、`<Story>`要素。 9.1.15」セクションを参照してください、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]仕様で入手可能[XPS: 仕様とライセンス ダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+ このプロパティがあります指定<xref:System.Windows.Documents.DocumentStructures.StoryFragment.FragmentType%2A>がヘッダーまたはフッターです。  
+  
+   
+  
+## Examples  
+ 次の例は、`StoryName`の属性、`<StoryFragment>`の一部、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-xaml[DocumentStructure#DocStructStoryFragContent1](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentStructure/CSharp/Content/FixedPage1_structure.xaml#docstructstoryfragcontent1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;System.Windows.Documents.DocumentStructures.BlockElement&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;System.Windows.Documents.DocumentStructures.BlockElement&gt; IEnumerable&lt;BlockElement&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.Windows.Documents.DocumentStructures.BlockElement&gt; System.Collections.Generic.IEnumerable&lt;System.Windows.Documents.DocumentStructures.BlockElement&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentStructures.StoryFragment.System#Collections#Generic#IEnumerable&lt;System#Windows#Documents#DocumentStructures#BlockElement&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Windows.Documents.DocumentStructures.BlockElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドは実装されていません。</summary>
+        <returns>常に発生させる<see cref="T:System.NotSupportedException" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentStructures.StoryFragment.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドは実装されていません。</summary>
+        <returns>常に発生させる<see cref="T:System.NotSupportedException" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentStructures.StoryFragment.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子<see cref="T:System.Object" />を追加します。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winfx](~/includes/tlasharptla-winfx-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子オブジェクトを追加、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>です。  
+  
+ 少なくとも 1 つの子が存在する必要があります、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>これらの型の子を指定できますのみ: <xref:System.Windows.Documents.DocumentStructures.ParagraphStructure>、 <xref:System.Windows.Documents.DocumentStructures.FigureStructure>、 <xref:System.Windows.Documents.DocumentStructures.ListStructure>、 <xref:System.Windows.Documents.DocumentStructures.TableStructure>、 <xref:System.Windows.Documents.DocumentStructures.SectionStructure>、および<xref:System.Windows.Documents.DocumentStructures.StoryBreak>です。  
+  
+ A<xref:System.Windows.Documents.DocumentStructures.StoryBreak>の最初と最後の子は、必ず、<xref:System.Windows.Documents.DocumentStructures.StoryFragment>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />このクラスの子を指定できる型のいずれかがありません。 参照してください**解説**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.DocumentStructures.StoryFragment.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

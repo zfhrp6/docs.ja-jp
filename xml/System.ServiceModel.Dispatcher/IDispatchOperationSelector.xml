@@ -1,0 +1,69 @@
+<Type Name="IDispatchOperationSelector" FullName="System.ServiceModel.Dispatcher.IDispatchOperationSelector">
+  <TypeSignature Language="C#" Value="public interface IDispatchOperationSelector" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDispatchOperationSelector" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.IDispatchOperationSelector" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>受信メッセージとローカル操作を関連付けてサービス実行動作をカスタマイズするコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス アプリケーションでの受信メッセージのディスパッチ先操作の選択をカスタマイズするための、カスタム操作セレクターを実装および挿入します。 <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> オブジェクトを <xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector%2A> プロパティに割り当てて、カスタム セレクターを挿入します。  
+  
+   
+  
+## Examples  
+  
+```csharp  
+  
+public class QueryStringDispatcherBehavior : IDispatchOperationSelector  
+{  
+//Define the mapping from the Actions of the message to the operations.  
+NameValueCollection actionMap; { … }  
+  
+//Implement the SelectOperation method.  
+public string SelectOperation( ref Message message )  
+        {  
+            Uri uri = new Uri(message.Headers.Action);  
+            string query = uri.Query;  
+  
+            string methodName = actionMap[message.Headers.Action.ToString()];  
+  
+            return methodName;  
+        }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="SelectOperation">
+      <MemberSignature Language="C#" Value="public string SelectOperation (ref System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string SelectOperation(class System.ServiceModel.Channels.Message&amp; message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation(System.ServiceModel.Channels.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="message">操作に関連付けられる受信 <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <summary>ローカル操作と受信メソッドを関連付けます。</summary>
+        <returns><paramref name="message" /> に関連付けられる操作の名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

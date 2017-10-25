@@ -1,0 +1,173 @@
+<Type Name="MouseAction" FullName="System.Windows.Input.MouseAction">
+  <TypeSignature Language="C#" Value="public enum MouseAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MouseAction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.MouseAction" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Input.MouseActionConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Input.MouseActionValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マウスで実行されるアクションを定義する定数を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.MouseAction>列挙体は、マウスを右クリックし、RightDoubleClick などによって実行されるアクションに対応する定数を指定します。  
+  
+ <xref:System.Windows.Input.MouseAction.RightClick>使用できる、<xref:System.Windows.Input.MouseGesture>コマンドを使用して、バインド可能な入力ジェスチャを作成する、<xref:System.Windows.Input.MouseBinding>です。  コマンド実行の詳細については、次を参照してください。、[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Input.MouseGesture>を使用して、<xref:System.Windows.Input.MouseAction>するジェスチャをバインドする方法と、<xref:System.Windows.Input.RoutedCommand>を使用して、<xref:System.Windows.Input.MouseBinding>です。  
+  
+ [!code-xaml[commandlibrarysnippets#MouseBindingMouseActionXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml#mousebindingmouseactionxaml)]  
+  
+ [!code-csharp[commandlibrarysnippets#MouseBindingMouseAction](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#mousebindingmouseaction)]
+ [!code-vb[commandlibrarysnippets#MouseBindingMouseAction](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#mousebindingmouseaction)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LeftClick">
+      <MemberSignature Language="C#" Value="LeftClick" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.MouseAction LeftClick = unsigned int8(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.MouseAction.LeftClick" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの左ボタンをクリックします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LeftDoubleClick">
+      <MemberSignature Language="C#" Value="LeftDoubleClick" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.MouseAction LeftDoubleClick = unsigned int8(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.MouseAction.LeftDoubleClick" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの左ボタンをダブルクリックします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MiddleClick">
+      <MemberSignature Language="C#" Value="MiddleClick" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.MouseAction MiddleClick = unsigned int8(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.MouseAction.MiddleClick" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの中央ボタンをクリックします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MiddleDoubleClick">
+      <MemberSignature Language="C#" Value="MiddleDoubleClick" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.MouseAction MiddleDoubleClick = unsigned int8(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.MouseAction.MiddleDoubleClick" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの中央ボタンをダブルクリックします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.MouseAction None = unsigned int8(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.MouseAction.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクションなし。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RightClick">
+      <MemberSignature Language="C#" Value="RightClick" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.MouseAction RightClick = unsigned int8(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.MouseAction.RightClick" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの右ボタンをクリックします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RightDoubleClick">
+      <MemberSignature Language="C#" Value="RightDoubleClick" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.MouseAction RightDoubleClick = unsigned int8(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.MouseAction.RightDoubleClick" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの右ボタンをダブルクリックします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WheelClick">
+      <MemberSignature Language="C#" Value="WheelClick" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.MouseAction WheelClick = unsigned int8(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.MouseAction.WheelClick" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ホイールを回転します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

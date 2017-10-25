@@ -1,0 +1,903 @@
+<Type Name="UriBuilder" FullName="System.UriBuilder">
+  <TypeSignature Language="C#" Value="public class UriBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UriBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.UriBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Uniform resource identifier (Uri) をカスタム コンス トラクターを提供し、Uri を変更、<see cref="T:System.Uri" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriBuilder>クラスの内容を変更する便利な手段を提供する、<xref:System.Uri>新しいを作成しなくてもインスタンス<xref:System.Uri>の各変更のインスタンス。  
+  
+ <xref:System.UriBuilder>プロパティが読み取り専用への読み取り/書き込みアクセスを提供<xref:System.Uri>プロパティが変更できるようにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.UriBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターの新しいインスタンスを作成する、<xref:System.UriBuilder>クラスとそのプロパティを次のように初期化します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|Fragment|<xref:System.String.Empty>|  
+|ホスト|「ループバック」|  
+|パスワード|<xref:System.String.Empty>|  
+|パス|"/"|  
+|ポート|-1|  
+|クエリ|<xref:System.String.Empty>|  
+|Scheme|"http"|  
+|UserName|<xref:System.String.Empty>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriBuilder (string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriBuilder.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">URI 文字列。</param>
+        <summary>指定した URI を使用して、<see cref="T:System.UriBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、の新しいインスタンスを初期化します、<xref:System.UriBuilder>クラス、 <xref:System.UriBuilder.Fragment%2A>、 <xref:System.UriBuilder.Host%2A>、 <xref:System.UriBuilder.Path%2A>、 <xref:System.UriBuilder.Port%2A>、 <xref:System.UriBuilder.Query%2A>、 <xref:System.UriBuilder.Scheme%2A>、および<xref:System.UriBuilder.Uri%2A>として設定のプロパティで指定`uri`です。  
+  
+ 場合`uri`スキーム、スキームの既定値が指定されていません"http:"です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.UriFormatException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.FormatException" />、代わりにします。  
+  
+</para>
+          </block>
+          <paramref name="uri" />長さ 0 の文字列か、空白のみが含まれています。  
+  
+ または  
+  
+ 解析ルーチンでは、無効な形式で、スキームが検出されました。  
+  
+ または  
+  
+ パーサーでは、"file"スキームを使用しない URI で複数の 2 つの連続するスラッシュが検出されました。  
+  
+ または  
+  
+ <paramref name="uri" /> は有効な URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriBuilder (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriBuilder.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri"><see cref="T:System.Uri" /> クラスのインスタンス。</param>
+        <summary>指定された <see cref="T:System.UriBuilder" /> インスタンスを使用して、<see cref="T:System.Uri" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、の新しいインスタンスを初期化します、<xref:System.UriBuilder>クラス、 <xref:System.UriBuilder.Fragment%2A>、 <xref:System.UriBuilder.Host%2A>、 <xref:System.UriBuilder.Path%2A>、 <xref:System.UriBuilder.Port%2A>、 <xref:System.UriBuilder.Query%2A>、 <xref:System.UriBuilder.Scheme%2A>、および<xref:System.UriBuilder.Uri%2A>として設定のプロパティで指定`uri`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriBuilder (string schemeName, string hostName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string schemeName, string hostName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriBuilder.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemeName" Type="System.String" />
+        <Parameter Name="hostName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="schemeName">インターネット アクセス プロトコル。</param>
+        <param name="hostName">DNS 形式のドメイン名または IP アドレス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.UriBuilder" />指定されたスキーム、ホストを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriBuilder>でインスタンスを初期化、<xref:System.UriBuilder.Scheme%2A>プロパティに設定`schemeName`と<xref:System.UriBuilder.Host%2A>プロパティに設定`hostName`です。 <xref:System.UriBuilder.Port%2A>場合、-1 を使用するか、スキームの既定のポートを値に初期化され、<xref:System.UriBuilder.Path%2A>プロパティはスラッシュ (/) に設定します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.UriBuilder> URI http://www.contoso.com/ を格納しているインスタンス。  
+  
+ [!code-cpp[Classic UriBuilder.UriBuilder3 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder3 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UriBuilder.UriBuilder3 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder3 Example/CS/source.cs#1)]
+ [!code-vb[Classic UriBuilder.UriBuilder3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriBuilder (string scheme, string host, int portNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string scheme, string host, int32 portNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriBuilder.#ctor(System.String,System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scheme" Type="System.String" />
+        <Parameter Name="host" Type="System.String" />
+        <Parameter Name="portNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="scheme">インターネット アクセス プロトコル。</param>
+        <param name="host">DNS 形式のドメイン名または IP アドレス。</param>
+        <param name="portNumber">サービスの IP ポート番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.UriBuilder" />指定されたスキーム、ホスト、およびポートを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriBuilder>でインスタンスを初期化、<xref:System.UriBuilder.Scheme%2A>プロパティに設定`schemeName`、<xref:System.UriBuilder.Host%2A>プロパティに設定`hostName`、および<xref:System.UriBuilder.Port%2A>プロパティに設定`portNumber`です。 <xref:System.UriBuilder.Path%2A>プロパティはスラッシュ (/) に設定します。  
+  
+ 場合、`portNumber`に設定されている値の-1 を示しますこの既定のポートの値、`scheme`への接続に使用される、`host`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.UriBuilder> http://www.contoso.com:8080 URI を格納しているインスタンス/です。  
+  
+ [!code-cpp[Classic UriBuilder.UriBuilder4 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder4 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UriBuilder.UriBuilder4 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder4 Example/CS/source.cs#1)]
+ [!code-vb[Classic UriBuilder.UriBuilder4 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder4 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="portNumber" />-1 よりか 65,535 より大きい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriBuilder (string scheme, string host, int port, string pathValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string scheme, string host, int32 port, string pathValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriBuilder.#ctor(System.String,System.String,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scheme" Type="System.String" />
+        <Parameter Name="host" Type="System.String" />
+        <Parameter Name="port" Type="System.Int32" />
+        <Parameter Name="pathValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="scheme">インターネット アクセス プロトコル。</param>
+        <param name="host">DNS 形式のドメイン名または IP アドレス。</param>
+        <param name="port">サービスの IP ポート番号。</param>
+        <param name="pathValue">インターネット リソースへのパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.UriBuilder" />指定されたスキーム、ホスト、ポート番号、およびパスを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriBuilder>でインスタンスを初期化、<xref:System.UriBuilder.Scheme%2A>プロパティに設定`schemeName`、<xref:System.UriBuilder.Host%2A>プロパティに設定`hostName`、<xref:System.UriBuilder.Port%2A>プロパティに設定`portNumber`と<xref:System.UriBuilder.Path%2A>プロパティに設定`pathValue`です。  
+  
+ 場合、`portNumber`に設定されている値の-1 を示しますこの既定のポートの値、`scheme`への接続に使用される、`host`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.UriBuilder> http://www.contoso.com:8080/index.htm URI を格納しているインスタンス。  
+  
+ [!code-cpp[Classic UriBuilder.UriBuilder5 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder5 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UriBuilder.UriBuilder5 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder5 Example/CS/source.cs#1)]
+ [!code-vb[Classic UriBuilder.UriBuilder5 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder5 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="port" />-1 よりか 65,535 より大きい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriBuilder (string scheme, string host, int port, string path, string extraValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string scheme, string host, int32 port, string path, string extraValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriBuilder.#ctor(System.String,System.String,System.Int32,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scheme" Type="System.String" />
+        <Parameter Name="host" Type="System.String" />
+        <Parameter Name="port" Type="System.Int32" />
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="extraValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="scheme">インターネット アクセス プロトコル。</param>
+        <param name="host">DNS 形式のドメイン名または IP アドレス。</param>
+        <param name="port">サービスの IP ポート番号。</param>
+        <param name="path">インターネット リソースへのパス。</param>
+        <param name="extraValue">クエリ文字列またはフラグメント識別子です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.UriBuilder" />指定されたスキーム、ホスト、ポート番号、パス、およびクエリ文字列を持つクラスまたはフラグメント識別子。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriBuilder>でインスタンスを初期化、<xref:System.UriBuilder.Scheme%2A>プロパティに設定`schemeName`、<xref:System.UriBuilder.Host%2A>プロパティに設定`hostName`、<xref:System.UriBuilder.Port%2A>プロパティに設定`portNumber`、および<xref:System.UriBuilder.Path%2A>プロパティに設定されている`pathValue`です。 場合`extraValue`番号記号で始まる (#)、し<xref:System.UriBuilder.Fragment%2A>に設定されている`extraValue`です。 場合`extraValue`、疑問符 (?) で始まる<xref:System.UriBuilder.Query%2A>に設定されている`extraValue`です。  
+  
+ 場合、`portNumber`に設定されている値の-1 を示しますこの既定のポートの値、`scheme`への接続に使用される、`host`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.UriBuilder> http://www.contoso.com:8080/index.htm#top URI を格納しているインスタンス。  
+  
+ [!code-cpp[Classic UriBuilder.UriBuilder6 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder6 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UriBuilder.UriBuilder6 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder6 Example/CS/source.cs#1)]
+ [!code-vb[Classic UriBuilder.UriBuilder6 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic UriBuilder.UriBuilder6 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="extraValue" />どちらも<see langword="null" />も<see cref="F:System.String.Empty" />、有効なフラグメント識別子の先頭に番号記号ではも (#)、有効なクエリ文字列が疑問符 (?) で始まるもします。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="port" />-1 よりか 65,535 より大きい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object rparam);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object rparam) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriBuilder.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rparam" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="rparam">現在のインスタンスと比較するオブジェクト。</param>
+        <summary>既存の比較<see cref="T:System.Uri" />の内容をインスタンス、<see cref="T:System.UriBuilder" />等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="rparam" />同じを表す<see cref="T:System.Uri" />として、<see cref="T:System.Uri" />これによって構築された<see cref="T:System.UriBuilder" />インスタンス。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriBuilder.Equals%2A>メソッドは、指定した比較<xref:System.Uri>インスタンス、<xref:System.Uri>によって作成されたインスタンス、<xref:System.UriBuilder>インスタンス。 2 つが同じである場合、<xref:System.UriBuilder.Equals%2A>メソッドを返します。`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fragment">
+      <MemberSignature Language="C#" Value="public string Fragment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Fragment" />
+      <MemberSignature Language="DocId" Value="P:System.UriBuilder.Fragment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または URI のフラグメントの部分を設定します。</summary>
+        <value>URI のフラグメント部分。 フラグメント識別子 (「#」) は、フラグメントの先頭に追加されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriBuilder.Fragment%2A>プロパティにはマーカー自体を含め、URI にフラグメント マーカー (#) が続くすべてのテキストが含まれています。 設定するときに、<xref:System.UriBuilder.Fragment%2A>プロパティ、フラグメント マーカーがその値に追加します。 **注**1.0 および 1.1 の設定、.NET Framework のバージョンでは、<xref:System.UriBuilder.Fragment%2A>プロパティを任意の値を含む`null`、オフになって、<xref:System.UriBuilder.Query%2A>プロパティ、および設定、<xref:System.UriBuilder.Fragment%2A>プロパティを`null`または<xref:System.String.Empty?displayProperty=nameWithType>プロパティをクリアします。 バージョン 2.0、ただしで、<xref:System.UriBuilder.Fragment%2A>と<xref:System.UriBuilder.Query%2A>プロパティは独立しています。  
+  
+ **注**このプロパティに直接文字列を追加しません。 場合の長さ<xref:System.UriBuilder.Fragment%2A>が 1 より大きい文字列としてプロパティ値を取得、先頭にシャープ記号を削除、新規のクエリ文字列の追加、および結合された文字列を使用してプロパティを設定します。  
+  
+   
+  
+## Examples  
+ 次の例では、URI"http://www.contoso.com/index.htm#main"を作成します。  
+  
+ [!code-cpp[Classic UriBuilder.Fragment Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic UriBuilder.Fragment Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UriBuilder.Fragment Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic UriBuilder.Fragment Example/CS/source.cs#1)]
+ [!code-vb[Classic UriBuilder.Fragment Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic UriBuilder.Fragment Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriBuilder.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>URI のハッシュ コードを返します。</summary>
+        <returns>URI に対して生成されたハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ コードは、任意のフラグメントを含めずに生成されます。 Uri http://www.contoso.com/index.htm#search および http://www.contoso.com/index.htm は、同じハッシュ コードを生成します。  
+  
+ ハッシュ コード<xref:System.Uri>A と B A.Equals(B) が同じであることが保証されます`true`です。  
+  
+ このメソッドは、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType> を実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Host">
+      <MemberSignature Language="C#" Value="public string Host { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Host" />
+      <MemberSignature Language="DocId" Value="P:System.UriBuilder.Host" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはドメイン ネーム システム (DNS) ホスト名またはサーバーの IP アドレスを設定します。</summary>
+        <value>DNS ホスト名またはサーバーの IP アドレス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriBuilder.Host%2A>プロパティには、完全修飾 DNS ホスト名またはサーバーの IP アドレスが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Password">
+      <MemberSignature Language="C#" Value="public string Password { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Password" />
+      <MemberSignature Language="DocId" Value="P:System.UriBuilder.Password" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または URI にアクセスするユーザーに関連付けられているパスワードを設定します。</summary>
+        <value>URI にアクセスするユーザーのパスワードです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.UriBuilder.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または URI で参照されているリソースへのパスを設定します。</summary>
+        <value>URI で参照されているリソースへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriBuilder.Path%2A>プロパティ情報の要求を解決するのには、サーバーを使用するパス情報を格納します。 通常、これは、サーバーのファイル システムに必要な情報へのパスアプリケーションを指定したり、スクリプトを示すが、情報を提供する、サーバーが実行する必要があります。  
+  
+ パス情報は、スキーム、ホスト名、または URI のクエリ部分には含まれません。 <xref:System.UriBuilder.Path%2A>プロパティは常に、少なくとも、スラッシュ (/) を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public int Port { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Port" />
+      <MemberSignature Language="DocId" Value="P:System.UriBuilder.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または URI のポート番号を設定します。</summary>
+        <value>URI のポート番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポート番号は、URI で参照されているホストにアクセスするためのプロトコルのポートを定義します。 ポートは、URI の一部として指定されていない場合、<xref:System.Uri.Port%2A>プロパティを使用するプロトコル スキームの既定のポート値がホストへの接続に使用されることを示す-1 の値を返します。 場合、<xref:System.Uri.Port%2A>プロパティが-1 の値に設定が、これは、プロトコル スキームの既定のポート値が、ホストへの接続に使用されることを示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">ポートは、-1 未満の値に設定することはできませんか 65,535 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Query">
+      <MemberSignature Language="C#" Value="public string Query { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Query" />
+      <MemberSignature Language="DocId" Value="P:System.UriBuilder.Query" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または URI に含まれているクエリ情報を設定します。</summary>
+        <value>URI に含まれているクエリ情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Uri.Query%2A>プロパティには、URI に含まれているクエリ情報が含まれています。 クエリの情報はパス情報、疑問符 (?) で区切られ、URI の末尾まで続きます。 返される情報照会にはには、先頭に疑問符が含まれています。  
+  
+ クエリの情報は、RFC 2396 に従ってエスケープされます。  
+  
+ **注**1.0 および 1.1 の設定、.NET Framework のバージョンでは、<xref:System.UriBuilder.Fragment%2A>プロパティを任意の値を含む`null`、オフになって、<xref:System.UriBuilder.Query%2A>プロパティ、および設定、<xref:System.UriBuilder.Fragment%2A>プロパティを`null`または<xref:System.String.Empty?displayProperty=nameWithType>プロパティをクリアします。 バージョン 2.0、ただしで、<xref:System.UriBuilder.Fragment%2A>と<xref:System.UriBuilder.Query%2A>プロパティは独立しています。  
+  
+ **注**このプロパティに直接文字列を追加しません。 場合の長さ<xref:System.UriBuilder.Query%2A>、1 より大きい数値を文字列としてプロパティ値を取得、先頭に疑問符を削除、新規のクエリ文字列を追加、および結合された文字列を使用してプロパティを設定します。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.UriBuilder.Query%2A>プロパティです。  
+  
+ [!code-cpp[UriBuilderSample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/UriBuilderSample/cpp/main.cpp#1)]
+ [!code-csharp[UriBuilderSample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/UriBuilderSample/cs/main.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public string Scheme { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.UriBuilder.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または URI のスキーム名を設定します。</summary>
+        <value>URI のスキーム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、有効なスキーマ名、<xref:System.UriBuilder.Scheme%2A>プロパティです。  
+  
+|Scheme|説明|  
+|------------|-----------------|  
+|ファイル|リソースは、ローカル コンピューターのファイルです。|  
+|ftp|FTP 経由でリソースにアクセスします。|  
+|Gopher|Gopher プロトコル経由でリソースにアクセスします。|  
+|http|HTTP 経由でリソースにアクセスします。|  
+|https|SSL で暗号化された HTTP 経由でリソースにアクセスします。|  
+|mailto|リソースは、電子メール アドレス、SMTP を通じてアクセスされます。|  
+|news|NNTP 経由でリソースにアクセスします。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">スキームは、無効なスキーム名を設定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriBuilder.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定した <see cref="T:System.UriBuilder" /> インスタンスの表示文字列を返します。</summary>
+        <returns><see cref="T:System.UriBuilder" /> のエスケープ解除された表示文字列が含まれている文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示文字列が含まれています、<xref:System.UriBuilder.Port%2A>プロパティ値の場合、<xref:System.UriBuilder.Port%2A>プロパティが設定されたか、ポートが指定されたときに、<xref:System.UriBuilder>を使用して構築された、<xref:System.UriBuilder.%23ctor%2A>場合を除き、ポート番号パラメーターを受け取るメソッドときに、 <xref:System.UriBuilder.Port%2A>.property 値が既定のポートを示すために、値は-1 に設定します。  
+  
+ 表示文字列を含まない、<xref:System.UriBuilder.Port%2A>プロパティ値の場合、<xref:System.UriBuilder.Port%2A>プロパティが設定されていないと、ポートがなかったときに指定された、<xref:System.UriBuilder>を構築しました。 表示文字列も含まない、<xref:System.UriBuilder.Port%2A>プロパティ値の場合、<xref:System.UriBuilder.Port%2A>コンス トラクターのプロパティまたはポートの番号が-1 の値に設定されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UriFormatException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.FormatException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ <see cref="T:System.UriBuilder" /> インスタンスのパスワードが不適切です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.UriBuilder.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された <see cref="T:System.UriBuilder" /> インスタンスによって構築された <see cref="T:System.Uri" /> インスタンスを取得します。</summary>
+        <value><see cref="T:System.UriBuilder" /> によって構築された URI を含む <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriBuilder.Uri%2A>プロパティが含まれています、<xref:System.Uri>によって作成された、<xref:System.UriBuilder>です。 加えられた変更、<xref:System.UriBuilder>プロパティに反映されます、<xref:System.UriBuilder.Uri%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UriFormatException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.FormatException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ <see cref="T:System.UriBuilder" /> プロパティによって構築された URI が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public string UserName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.UriBuilder.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URI にアクセスするユーザーに関連付けられているユーザー名。</summary>
+        <value>URI にアクセスするユーザーのユーザー名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

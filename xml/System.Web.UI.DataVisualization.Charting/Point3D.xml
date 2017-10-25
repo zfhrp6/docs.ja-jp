@@ -1,0 +1,219 @@
+<Type Name="Point3D" FullName="System.Web.UI.DataVisualization.Charting.Point3D">
+  <TypeSignature Language="C#" Value="public class Point3D" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Point3D extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.Point3D" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>3 次元 (3 D) のデータ ポイントの座標を表します。 このクラスは、3 D グラフを含むカスタム描画を実行するときに使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.Point3D>クラスは、3 D のデータ ポイントの座標を表します。  
+  
+ カスタム 3D の描画に使用される任意の時点 — GDI + を使用するためには、X、Y、Z (3 D) 座標相対的な X および Y (2 D) の相対パスの変換する必要があります座標を使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>メソッドです。 呼び出して<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>、X と Y 値の<xref:System.Web.UI.DataVisualization.Charting.Point3D>オブジェクトが変更され、3 次元の領域を反映しています。 新しい X および Y ポイント GDI + メソッドの呼び出しに対して使用できます: Z 値は無視し、— を絶対ピクセル座標を使用して変更した後、<xref:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetAbsolutePoint%2A>メソッドです。  
+  
+ (グラフ領域の内側にある) 0 より小さい、Z 座標がなることに注意してください (グラフ領域の前にある) 100 より大きいか。  
+  
+ 3D グラフを有効にして、スタイルの操作の両方でを使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.Area3DStyle%2A>プロパティです。 <xref:System.Web.UI.DataVisualization.Charting.Point3D> 3D スタイルのクラスは使用されません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Point3D ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Point3D.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.Point3D" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Point3D (float x, float y, float z);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float32 x, float32 y, float32 z) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Point3D.#ctor(System.Single,System.Single,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+        <Parameter Name="z" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x">3D の X 座標をポイントします。</param>
+        <param name="y">3D の Y 座標をポイントします。</param>
+        <param name="z">ポイントの 3D の深さを表す Z 座標。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.DataVisualization.Charting.AnnotationPathPoint" />クラスに、指定した X、Y、Z 座標。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PointF">
+      <MemberSignature Language="C#" Value="public System.Drawing.PointF PointF { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.PointF PointF" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Point3D.PointF" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.PointF</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.Drawing.PointF" /> 3D ポイントの X および Y 座標を格納する構造体。</summary>
+        <value>A <see cref="T:System.Drawing.PointF" /> 3D ポイントの X および Y 座標を表す構造です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタムの 3D の描画に使用される任意の時点: GDI + を使用するためには、変換する必要がありますから X、Y、Z (3 D) 座標を x および Y (2 D) 座標を使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>メソッドです。 このメソッドの配列を受け取る<xref:System.Web.UI.DataVisualization.Charting.Point3D>唯一のパラメーターとしてオブジェクト。 呼び出して<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>、X および Y プロパティの値が 3 次元の領域を反映するように変更されます。  
+  
+ この新しい X 座標と Y 座標は、絶対に変換された座標などのメソッドを使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetAbsolutePoint%2A>メソッドです。 した座標に変換した後、<xref:System.Web.UI.DataVisualization.Charting.Point3D.PointF%2A>を受け取る GDI + メソッドの各 Point3D オブジェクトのプロパティを使用できる、<xref:System.Drawing.PointF>オブジェクトをパラメーターとして。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public float X { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 X" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Point3D.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3D のポイントの X 座標を設定します。</summary>
+        <value>A <see langword="float" /> 3D ポイントの X 座標を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタムの 3D の描画に使用される任意の時点: GDI + を使用するためには、変換する必要がありますから X、Y、Z (3 D) 座標を x および Y (2 D) 座標を使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>メソッドです。 このメソッドは、唯一のパラメーターとして Point3D オブジェクトの配列を受け取ります。 呼び出して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>メソッド、X および Y プロパティの値が 3 次元の領域を反映するように変更されます。  
+  
+ この新しい X 座標と Y 座標を使用して絶対に変換された座標、<xref:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetAbsolutePoint%2A>メソッドです。 GDI + メソッドの呼び出しのため、使用されます。  
+  
+ 相対的な X 座標は、軸の値から呼び出すことによって取得できます、<xref:System.Web.UI.DataVisualization.Charting.Axis.ValueToPosition%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public float Y { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Point3D.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3D のポイントの Y 座標を設定します。</summary>
+        <value>A <see langword="float" /> 3D ポイントの Y 座標を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタムの 3D の描画に使用される任意の時点: GDI + を使用するためには、変換する必要がありますから X、Y、Z (3 D) 座標を x および Y (2 D) 座標を使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>メソッドです。 このメソッドは、唯一のパラメーターとして Point3D オブジェクトの配列を受け取ります。 呼び出して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>メソッド、X および Y プロパティの値が 3 次元の領域を反映するように変更されます。  
+  
+ この新しい X 座標と Y 座標は、絶対に変換された座標を使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetAbsolutePoint%2A>メソッドです。 GDI + メソッドの呼び出しのため、使用されます。  
+  
+ 軸の値を使用して、相対的 Y 座標を取得できます、<xref:System.Web.UI.DataVisualization.Charting.Axis.ValueToPosition%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Z">
+      <MemberSignature Language="C#" Value="public float Z { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Z" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Point3D.Z" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3D の点の Z 座標を設定します。</summary>
+        <value>関連するグラフ領域の深さの比率として計測されます、3 D、ポイントの Z 座標。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この Z プロパティは常に関連するグラフ領域の奥行きの割合として表されます。 3D グラフは、Z 座標が相対であり、これらをグラフ領域のバック コンセントとグラフ領域の前面の壁の 100 の値の 0 の値を持っています。  
+  
+ **注**Z をこのプロパティは、少ない可能性があります (グラフ領域の内側にあります) を 0 よりも (グラフ領域の前にある) 100 より大きいか。  
+  
+ カスタムの 3D の描画に使用される任意の時点: GDI + を使用するためには、変換する必要がありますから X、Y、Z (3 D) 座標を x および Y (2 D) 座標を使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>メソッドです。 このメソッドは、唯一のパラメーターとして Point3D オブジェクトの配列を受け取ります。 呼び出して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.TransformPoints%2A>メソッド、X および Y プロパティの値が 3 次元の領域を反映するように変更されます。  
+  
+ この新しい X 座標と Y 座標は、絶対に変換された座標を使用して、<xref:System.Web.UI.DataVisualization.Charting.ChartGraphics.GetAbsolutePoint%2A>メソッドです。 GDI + メソッドの呼び出しのため、使用されます。  
+  
+ 使用して系列の相対的な Z 座標を取得できます、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.GetSeriesDepth%2A>と<xref:System.Web.UI.DataVisualization.Charting.ChartArea.GetSeriesZPosition%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

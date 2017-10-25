@@ -1,0 +1,1668 @@
+<Type Name="BinaryWriter" FullName="System.IO.BinaryWriter">
+  <TypeSignature Language="C#" Value="public class BinaryWriter : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit BinaryWriter extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.BinaryWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プリミティブ型をバイナリでストリームに書き込みます。特定のエンコーディングの文字列の書き込みをサポートします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.BinaryWriter>クラスは、簡単にストリームをするプリミティブ データ型を記述するメソッドを提供します。 たとえば、使用することができます、<xref:System.IO.BinaryWriter.Write%2A>にブール値を 1 バイト値として、ストリームに書き込みます。 クラスには、さまざまなデータ型をサポートする書き込みメソッドが含まれています。  
+  
+ 新しいインスタンスを作成する場合、<xref:System.IO.BinaryWriter>クラス、書き込み、ストリームを提供し、必要に応じてエンコードの種類を指定して破棄した後に、ストリームのままにするかどうかを開く、<xref:System.IO.BinaryWriter>オブジェクト。 エンコードの種類を指定しない場合は、utf-8 が使用されます。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ 派生クラスでは、一意の文字エン コードを提供するには、このクラスのメソッドをオーバーライドできます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、格納およびファイル内のアプリケーション設定を取得する方法を示します。  
+  
+ [!code-csharp[System.IO.BinaryReaderWriter#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CS/source.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BinaryWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.BinaryWriter" />をストリームに書き込みを行う。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BinaryWriter (System.IO.Stream output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="output" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="output">出力ストリーム。</param>
+        <summary>指定したストリームに基づき、UTF-8 エンコーディングを使用する <see cref="T:System.IO.BinaryWriter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、格納およびファイル内のアプリケーション設定を取得する方法を示します。  
+  
+ [!code-csharp[System.IO.BinaryReaderWriter#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CS/source.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ストリームは書き込みをサポートしませんか、既に閉じられています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="output" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BinaryWriter (System.IO.Stream output, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream output, class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.#ctor(System.IO.Stream,System.Text.Encoding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="output" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="output">出力ストリーム。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <summary>指定したストリームと文字エンコーディングに基づいて、<see cref="T:System.IO.BinaryWriter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ストリームは書き込みをサポートしませんか、既に閉じられています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="output" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BinaryWriter (System.IO.Stream output, System.Text.Encoding encoding, bool leaveOpen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream output, class System.Text.Encoding encoding, bool leaveOpen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.#ctor(System.IO.Stream,System.Text.Encoding,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="output" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="leaveOpen" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="output">出力ストリーム。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <param name="leaveOpen">
+          <see cref="T:System.IO.BinaryWriter" /> オブジェクトを破棄した後にストリームを開いたままにする場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</param>
+        <summary>指定したストリームと文字エンコーディングに基づいて <see cref="T:System.IO.BinaryWriter" /> クラスの新しいインスタンスを初期化し、必要に応じて、ストリームを開いたままにします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">ストリームは書き込みをサポートしませんか、既に閉じられています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="output" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseStream">
+      <MemberSignature Language="C#" Value="public virtual System.IO.Stream BaseStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream BaseStream" />
+      <MemberSignature Language="DocId" Value="P:System.IO.BinaryWriter.BaseStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるストリームを取得、<see cref="T:System.IO.BinaryWriter" />です。</summary>
+        <value><see langword="BinaryWriter" /> に関連付けられた、基になるストリーム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、読み取りし、書き込みをする方法を示しています。`Double`を使用してメモリへのデータ、<xref:System.IO.BinaryReader>と`BinaryWriter`の上位クラス、<xref:System.IO.MemoryStream>クラスです。 `MemoryStream`読み取りし、書き込みのみ`Byte`データ。  
+  
+ [!code-cpp[System.IO.BinaryReaderWriter.RWDouble#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWDouble/CPP/rwdouble.cpp#1)]
+ [!code-csharp[System.IO.BinaryReaderWriter.RWDouble#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWDouble/CS/rwdouble.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter.RWDouble#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWDouble/VB/rwdouble.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public virtual void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の終了<see cref="T:System.IO.BinaryWriter" />と基になるストリーム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装`Close`呼び出し、<xref:System.IO.BinaryWriter.Dispose%2A>メソッド、`true`値。  
+  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません<xref:System.IO.BinaryWriter.Flush%2A>または`Close`です。 設定<xref:System.IO.StreamWriter.AutoFlush%2A>に`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、特定の文字をエンコードするため、エンコーダーは、隣接する文字または文字列を受信した後に影響します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.BinaryWriter" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.BinaryWriter" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public virtual void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のライターのすべてのバッファーをクリアし、バッファー内のデータを基になるデバイスに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての派生クラスでオーバーライドする必要があります`Flush`バッファー内のすべてのデータをストリームに送信されるようにします。  
+  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません`Flush`または<xref:System.IO.BinaryWriter.Close%2A>です。 設定<xref:System.IO.StreamWriter.AutoFlush%2A>に`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、特定の文字をエンコードするため、エンコーダーは、隣接する文字または文字列を受信した後に影響します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.IO.BinaryWriter Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.IO.BinaryWriter Null" />
+      <MemberSignature Language="DocId" Value="F:System.IO.BinaryWriter.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.BinaryWriter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定します、<see cref="T:System.IO.BinaryWriter" />バッキング ストアを持たない。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutStream">
+      <MemberSignature Language="C#" Value="protected System.IO.Stream OutStream;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.IO.Stream OutStream" />
+      <MemberSignature Language="DocId" Value="F:System.IO.BinaryWriter.OutStream" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるストリームを保持します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public virtual long Seek (int offset, System.IO.SeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int64 Seek(int32 offset, valuetype System.IO.SeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Seek(System.Int32,System.IO.SeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="origin" Type="System.IO.SeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="offset">相対バイト オフセット<c>原点</c>です。</param>
+        <param name="origin">フィールド<see cref="T:System.IO.SeekOrigin" />の新しい位置の取得元となる参照ポイントを示すです。</param>
+        <summary>現在のストリーム内の位置を設定します。</summary>
+        <returns>現在のストリームの位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、ファイルを一連のバイト値を書き込みます。 この例では<xref:System.IO.BinaryWriter.Seek%2A>ファイル、および 書き込みのさまざまな場所にマーカーのバイトを使用して移動する、<xref:System.IO.BinaryWriter.Write%2A>メソッドです。  
+  
+ [!code-cpp[System.IO.BinaryReaderWriter#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CPP/source3.cpp#5)]
+ [!code-csharp[System.IO.BinaryReaderWriter#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CS/source3.cs#5)]
+ [!code-vb[System.IO.BinaryReaderWriter#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/VB/source3.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">ファイル ポインターは、無効な場所に移動されました。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.IO.SeekOrigin" />値が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see langword="Boolean" /> (0 または 1) を記述する値。</param>
+        <summary>1 バイトを書き込みます<see langword="Boolean" />値 0 を表す、現在のストリームを<see langword="false" />1 を表すと<see langword="true" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、格納およびファイル内のアプリケーション設定を取得する方法を示します。  
+  
+ [!code-csharp[System.IO.BinaryReaderWriter#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CS/source.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (byte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む符号なしバイト。</param>
+        <summary>現在のストリームに符号なしバイトを書き込み、ストリームの位置を 1 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ形式が競合するため、このメソッドを使用して、次のエンコーディングことはお勧めしません。  
+  
+-   UTF-7  
+  
+-   ISO-2022-JP  
+  
+-   ISCII  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、バッキング ストアとしてメモリを使用してバイナリ データを書き込むし、その後、データが正常に書き込まれたことを確認する方法を示します。  
+  
+ [!code-cpp[System.IO.BinaryReaderWriter.RWByte#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWByte/CPP/rwbyte.cpp#1)]
+ [!code-csharp[System.IO.BinaryReaderWriter.RWByte#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWByte/CS/rwbyte.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter.RWByte#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWByte/VB/rwbyte.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (byte[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int8[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">書き込むデータを含むバイト配列。</param>
+        <summary>バイト配列を基になるストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、バッキング ストアとしてメモリを使用してバイナリ データを書き込むし、その後、データが正常に書き込まれたことを確認する方法を示します。  
+  
+ [!code-cpp[System.IO.BinaryReaderWriter.RWBytes1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWBytes1/CPP/rwbytes.cpp#1)]
+ [!code-csharp[System.IO.BinaryReaderWriter.RWBytes1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWBytes1/CS/rwbytes.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter.RWBytes1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWBytes1/VB/rwbytes.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (char ch);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(char ch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ch" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="ch">書き込むサロゲート以外の場合、Unicode 文字。</param>
+        <summary>現在のストリームに Unicode 文字を書き込み、に従ってストリームの現在位置を進めます、<see langword="Encoding" />使用され、特定の文字をストリームに書き込まれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ形式が競合するため、このメソッドを使用して、次のエンコーディングことはお勧めしません。  
+  
+-   UTF-7  
+  
+-   ISO-2022-JP  
+  
+-   ISCII  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ Unicode サロゲート文字書き込まれなければなりません、同じ呼び出しでのペアとして個別ではなくです。 サロゲート ペアのサポートを必要と、アプリケーションの場合は、文字配列の使用を検討し、<xref:System.IO.BinaryWriter.Write%2A>メソッドのオーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、バッキング ストアとしてメモリを使用してデータを読み書きする方法を示します。  
+  
+ [!code-cpp[System.IO.BinaryReaderWriter.RWChar1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWChar1/CPP/rwchar.cpp#1)]
+ [!code-csharp[System.IO.BinaryReaderWriter.RWChar1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWChar1/CS/rwchar.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter.RWChar1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWChar1/VB/rwchar.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="ch" />単一のサロゲート文字です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (char[] chars);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(char[] chars) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Char[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="chars" Type="System.Char[]" />
+      </Parameters>
+      <Docs>
+        <param name="chars">書き込むデータを格納する文字配列。</param>
+        <summary>現在のストリームに文字配列を書き込み、に従ってストリームの現在位置を進めます、<see langword="Encoding" />使用され、特定の文字をストリームに書き込まれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、その他の一般的なまたは関連する I/O タスクの例を示します。  
+  
+|目的|参照項目|  
+|-------------------|--------------------------------------|  
+|テキスト ファイルを作成します。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルに書き込みます。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルから読み取れません。|[方法: ファイルからテキストを読み取る](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|ファイルにテキストを追加します。|[方法: ログ ファイルを開いて情報を追加する](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|ファイルのサイズを取得します。|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|ファイルの属性を取得します。|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルの属性を設定します。|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルが存在するかどうかを決定します。|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
+|バイナリ ファイルから読み取ります。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|バイナリ ファイルに書き込みます。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+  
+   
+  
+## Examples  
+ 次のコード例では、バッキング ストアとしてメモリを使用してデータを読み書きする方法を示します。  
+  
+ [!code-cpp[System.IO.BinaryReaderWriter.RWChars1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWChars1/CPP/rwchars.cpp#1)]
+ [!code-csharp[System.IO.BinaryReaderWriter.RWChars1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWChars1/CS/rwchars.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter.RWChars1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWChars1/VB/rwchars.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="chars" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (decimal value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(valuetype System.Decimal value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Decimal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Decimal" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 10 進値。</param>
+        <summary>10 進値を現在のストリームに書き込みますを 16 バイト ストリームの位置を進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、その他の一般的なまたは関連する I/O タスクの例を示します。  
+  
+|目的|参照項目|  
+|-------------------|--------------------------------------|  
+|テキスト ファイルを作成します。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルに書き込みます。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルから読み取れません。|[方法: ファイルからテキストを読み取る](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|ファイルにテキストを追加します。|[方法: ログ ファイルを開いて情報を追加する](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|ファイルのサイズを取得します。|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|ファイルの属性を取得します。|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルの属性を設定します。|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルが存在するかどうかを決定します。|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
+|バイナリ ファイルから読み取ります。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|バイナリ ファイルに書き込みます。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 8 バイト浮動小数点値。</param>
+        <summary>現在のストリームに 8 バイト浮動小数点値を書き込み、ストリームの位置を 8 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、読み取りし、書き込みをする方法を示しています。`Double`を使用してメモリへのデータ、<xref:System.IO.BinaryReader>と`BinaryWriter`の上位クラス、<xref:System.IO.MemoryStream>クラスです。 `MemoryStream`読み取りし、書き込みのみ`Byte`データ。  
+  
+ [!code-cpp[System.IO.BinaryReaderWriter.RWDouble#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWDouble/CPP/rwdouble.cpp#1)]
+ [!code-csharp[System.IO.BinaryReaderWriter.RWDouble#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWDouble/CS/rwdouble.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter.RWDouble#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWDouble/VB/rwdouble.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (short value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 2 バイト符号付き整数。</param>
+        <summary>現在のストリームに 2 バイト符号付き整数を書き込み、ストリームの位置を 2 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `BinaryWriter`little endian 形式にこのデータ型を格納します。  
+  
+ 次の表は、その他の一般的なまたは関連する I/O タスクの例を示します。  
+  
+|目的|参照項目|  
+|-------------------|--------------------------------------|  
+|テキスト ファイルを作成します。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルに書き込みます。|[方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
+|テキスト ファイルから読み取れません。|[方法: ファイルからテキストを読み取る](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
+|ファイルにテキストを追加します。|[方法: ログ ファイルを開いて情報を追加する](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|ファイルのサイズを取得します。|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|ファイルの属性を取得します。|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルの属性を設定します。|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|ファイルが存在するかどうかを決定します。|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
+|バイナリ ファイルから読み取ります。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|バイナリ ファイルに書き込みます。|[方法: 新しく作成されたデータ ファイルに対して読み書きする](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 4 バイト符号付き整数。</param>
+        <summary>現在のストリームに 4 バイト符号付き整数を書き込み、ストリームの位置を 4 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `BinaryWriter`little endian 形式にこのデータ型を格納します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、格納およびファイル内のアプリケーション設定を取得する方法を示します。  
+  
+ [!code-csharp[System.IO.BinaryReaderWriter#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CS/source.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 8 バイト符号付き整数。</param>
+        <summary>現在のストリームに 8 バイト符号付き整数を書き込み、ストリームの位置を 8 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `BinaryWriter`little endian 形式にこのデータ型を格納します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (sbyte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.SByte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.SByte" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む符号付きバイト。</param>
+        <summary>現在のストリームに符号付きバイトを書き込み、ストリームの位置を 1 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (float value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(float32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 4 バイト浮動小数点値。</param>
+        <summary>現在のストリームに 4 バイト浮動小数点値を書き込み、ストリームの位置を 4 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `BinaryWriter`little endian 形式にこのデータ型を格納します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、格納およびファイル内のアプリケーション設定を取得する方法を示します。  
+  
+ [!code-csharp[System.IO.BinaryReaderWriter#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CS/source.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む値。</param>
+        <summary>このストリームの現在のエンコーディングで固定長の文字列を書き込みます、<see cref="T:System.IO.BinaryWriter" />ストリームに書き込まれる特定の文字と、使用するエンコードに従ってストリームの現在位置を進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 固定長のことを意味するこのメソッド最初に書き込み、文字列の長さ (バイト単位) でエンコードされたときに、<xref:System.IO.BinaryWriter>ストリームにインスタンスの現在のエンコーディングします。 この値は、符号なし整数として書き込まれます。 このメソッドは、バイト数をストリームに書き込みます。  
+  
+ たとえば、文字列"A"が; utf-16 でエンコードされたときに 1 の長さ長さは 2 バイトのプレフィックスで記述された値は 2、3 バイトがプレフィックスを含めて、ストリームに書き込まれるとします。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、格納およびファイル内のアプリケーション設定を取得する方法を示します。  
+  
+ [!code-csharp[System.IO.BinaryReaderWriter#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CS/source.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (ushort value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.UInt16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt16" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 2 バイト符号なし整数。</param>
+        <summary>現在のストリームに 2 バイトの符号なし整数を書き込み、ストリームの位置を 2 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `BinaryWriter`little endian 形式にこのデータ型を格納します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (uint value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 4 バイト符号なし整数。</param>
+        <summary>現在のストリームに 4 バイト符号なし整数を書き込み、ストリームの位置を 4 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `BinaryWriter`little endian 形式にこのデータ型を格納します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (ulong value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.UInt64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 8 バイト符号なし整数。</param>
+        <summary>現在のストリームに 8 バイト符号なし整数を書き込み、ストリームの位置を 8 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `BinaryWriter`little endian 形式にこのデータ型を格納します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (byte[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int8[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">書き込むデータを含むバイト配列。</param>
+        <param name="index">内の開始点<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="count">書き込むバイト数。</param>
+        <summary>現在のストリームにバイト配列の領域を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、バッキング ストアとしてメモリを使用してバイナリ データを書き込むし、その後、データが正常に書き込まれたことを確認する方法を示します。  
+  
+ [!code-csharp[System.IO.BinaryReaderWriter.RWBytes2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWBytes2/CS/rwreadbytes.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter.RWBytes2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWBytes2/VB/rwreadbytes.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">バッファーの長さマイナス<paramref name="index" />はより小さい<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (char[] chars, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(char[] chars, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="chars" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="chars">書き込むデータを格納する文字配列。</param>
+        <param name="index">内の開始点<c>chars</c>書き込みを開始位置を示すです。</param>
+        <param name="count">書き込む文字数。</param>
+        <summary>現在のストリームに文字配列のセクションを書き込み、に従ってストリームの現在位置を進めます、<see langword="Encoding" />使用され、おそらく、特定の文字をストリームに書き込まれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、バッキング ストアとしてメモリを使用してデータを読み書きする方法を示します。  
+  
+ [!code-cpp[System.IO.BinaryReaderWriter.RWChars2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWChars2/CPP/rwreadchars.cpp#1)]
+ [!code-csharp[System.IO.BinaryReaderWriter.RWChars2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWChars2/CS/rwreadchars.cs#1)]
+ [!code-vb[System.IO.BinaryReaderWriter.RWChars2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter.RWChars2/VB/rwreadchars.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">バッファーの長さマイナス<paramref name="index" />はより小さい<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="chars" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write7BitEncodedInt">
+      <MemberSignature Language="C#" Value="protected void Write7BitEncodedInt (int value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void Write7BitEncodedInt(int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.BinaryWriter.Write7BitEncodedInt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込まれる 32 ビット整数。</param>
+        <summary>圧縮形式では、32 ビット整数を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 整数、`value`パラメーターは書き出さ 7 ビット時、7 つの最下位ビットを開始します。 バイトの上位ビットは、この後に書き込まれるバイト数があるかどうかを示します。  
+  
+ 場合`value`収まる 7 つのビットが領域の 1 バイトだけです。 場合`value`が収まらない上位ビットの最初のバイトに設定および書き出さ 7 つのビット単位で。`value`だけシフトと次の 7 ビットでバイトが書き込まれます。 全体の整数が書き込まれるまで、このプロセスが繰り返されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.EndOfStreamException">ストリームの末尾に到達します。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは閉じられています。</exception>
+        <exception cref="T:System.IO.IOException">ストリームは閉じられています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

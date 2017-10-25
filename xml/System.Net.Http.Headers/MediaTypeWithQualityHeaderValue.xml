@@ -1,0 +1,204 @@
+<Type Name="MediaTypeWithQualityHeaderValue" FullName="System.Net.Http.Headers.MediaTypeWithQualityHeaderValue">
+  <TypeSignature Language="C#" Value="public sealed class MediaTypeWithQualityHeaderValue : System.Net.Http.Headers.MediaTypeHeaderValue" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MediaTypeWithQualityHeaderValue extends System.Net.Http.Headers.MediaTypeHeaderValue" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Http</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.Http.Headers.MediaTypeHeaderValue</BaseTypeName>
+  </Base>
+  <Interfaces>
+  </Interfaces>
+  <Docs>
+    <summary>Content-type ヘッダーに使用される品質に関する追加情報係数と、メディアの種類を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue>で定義されているクラスは、メディアの種類とコンテンツ タイプ ヘッダーの品質のサポートを提供[RFC 2616](http://go.microsoft.com/fwlink/?LinkID=241642) IETF によってです。  
+  
+ 品質要素は、Content-type ヘッダーにメディアの種類の優先順位の相対的な程度を示すためにユーザー エージェントを許可します。 品質は、0 から 1 までのスケールを使用します。 既定値は q = 1 です。  
+  
+ この型から派生して<xref:System.Net.Http.Headers.MediaTypeHeaderValue>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MediaTypeWithQualityHeaderValue (string mediaType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string mediaType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mediaType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="mediaType">A<see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" />の新しいインスタンスを初期化するために文字列として表されます。</param>
+        <summary><see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MediaTypeWithQualityHeaderValue (string mediaType, double quality);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string mediaType, float64 quality) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.#ctor(System.String,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mediaType" Type="System.String" />
+        <Parameter Name="quality" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="mediaType">A<see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" />の新しいインスタンスを初期化するために文字列として表されます。</param>
+        <param name="quality">このヘッダーの値に関連付けられている品質。</param>
+        <summary><see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Net.Http.Headers.MediaTypeWithQualityHeaderValue Parse (string input);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.Http.Headers.MediaTypeWithQualityHeaderValue Parse(string input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Http.Headers.MediaTypeWithQualityHeaderValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="input">品質のヘッダー値の情報を含むメディアの種類を表す文字列。</param>
+        <summary>文字列を <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" /> インスタンスに変換します。</summary>
+        <returns><see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="input" /> は <see langword="null" /> の参照です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="input" /> は、品質のヘッダー値の情報を含む、有効なメディアの種類ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Quality">
+      <MemberSignature Language="C#" Value="public Nullable&lt;double&gt; Quality { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;float64&gt; Quality" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Quality" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" /> の品質の値を取得または設定します。</summary>
+        <value><see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" /> オブジェクトの品質の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" /> インスタンスのコピーである新しいオブジェクトを作成します。</summary>
+        <returns>現在のインスタンスのコピー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (string input, out System.Net.Http.Headers.MediaTypeWithQualityHeaderValue parsedValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(string input, [out] class System.Net.Http.Headers.MediaTypeWithQualityHeaderValue&amp; parsedValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.TryParse(System.String,System.Net.Http.Headers.MediaTypeWithQualityHeaderValue@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.String" />
+        <Parameter Name="parsedValue" Type="System.Net.Http.Headers.MediaTypeWithQualityHeaderValue&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="input">検証対象の文字列。</param>
+        <param name="parsedValue">文字列の <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" /> バージョン。</param>
+        <summary>文字列が有効な <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" /> 情報かどうかを判断します。</summary>
+        <returns>
+          <paramref name="input" /> が有効な <see cref="T:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue" /> 情報の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

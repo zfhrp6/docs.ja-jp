@@ -1,0 +1,627 @@
+<Type Name="TextWriterTraceListener" FullName="System.Diagnostics.TextWriterTraceListener">
+  <TypeSignature Language="C#" Value="public class TextWriterTraceListener : System.Diagnostics.TraceListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextWriterTraceListener extends System.Diagnostics.TraceListener" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.TextWriterTraceListener" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.TraceListener</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トレース出力またはデバッグ出力を転送する<see cref="T:System.IO.TextWriter" />または、<see cref="T:System.IO.Stream" />など<see cref="T:System.IO.FileStream" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.TextWriterTraceListener>クラスを提供、<xref:System.Diagnostics.TextWriterTraceListener.Writer%2A>を取得またはテキスト ライターの設定のプロパティは、トレース出力またはデバッグ出力を受け取ります。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ このクラスは、メソッドも用意されています。 <xref:System.Diagnostics.TextWriterTraceListener.Close%2A> 、<xref:System.Diagnostics.TextWriterTraceListener.Writer%2A>トレース出力またはデバッグ出力、がを受信しないように<xref:System.Diagnostics.TextWriterTraceListener.Flush%2A>の出力バッファーに、 <xref:System.Diagnostics.TextWriterTraceListener.Writer%2A>、および<xref:System.Diagnostics.TextWriterTraceListener.Write%2A>にメッセージを、<xref:System.Diagnostics.TextWriterTraceListener.Writer%2A>です。  
+  
+ トレースまたはトレース リスナーを使用してデバッグを有効にする必要があります。 次の構文は、コンパイラに固有です。 以外は、c# または Visual Basic コンパイラを使用する場合は、コンパイラのドキュメントを参照してください。  
+  
+-   C# でのデバッグを有効にするには追加、`/d:DEBUG`するを追加したり、コードをコンパイルするときに、コンパイラのコマンドラインにフラグ`#define DEBUG`ファイルの先頭にします。 Visual basic では、追加、`/d:DEBUG=True`フラグをコンパイラ コマンドライン。  
+  
+-   C# でのトレースを有効にするには追加、`/d:TRACE`フラグを追加したり、コードをコンパイルすると、コンパイラのコマンドライン`#define TRACE`ファイルの先頭にします。 Visual basic では、追加、`/d:TRACE=True`フラグをコンパイラ コマンドライン。  
+  
+ トレース リスナーを追加するには、アプリケーションの名前に対応する構成ファイルを編集します。 このファイル内でことができます、リスナーを追加、その型およびパラメーターの設定、リスナーの削除またはオフにするアプリケーションで設定したすべてのリスナーです。 構成ファイルは、次の例のようにフォーマットされている必要があります。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace autoflush="false" indentsize="4">  
+      <listeners>  
+        <add name="myListener"   
+          type="System.Diagnostics.TextWriterTraceListener"   
+          initializeData="TextWriterOutput.log" />  
+        <remove name="Default" />  
+      </listeners>  
+    </trace>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+> [!NOTE]
+>  使用されているファイルへの書き込みを試行または使用できない、ファイル名を自動的に付けた GUID。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを実装する、<xref:System.Diagnostics.TextWriterTraceListener>を使用してクラス、<xref:System.IO.StreamWriter>と呼ばれる`myOutputWriter`という名前のファイルに書き込む`TestFile.txt`です。 最初の例では、出力用のファイルを作成します。 これを作成し、<xref:System.IO.StreamWriter>の最初のテキスト ライターの割り当て、出力ファイルとそれを追加、<xref:System.Diagnostics.Trace.Listeners%2A>です。 次に、コードは、1 行のファイルにテキストを出力します。 最後に、例では、出力バッファーをフラッシュします。  
+  
+ このサンプルを実行すると、開くことができます、`TestFile.txt`ファイル出力を確認します。  
+  
+ [!code-cpp[Classic TextWriterTraceListener Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextWriterTraceListener Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener Example/CS/source.cs#1)]
+ [!code-vb[Classic TextWriterTraceListener Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TextWriterTraceListener Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextWriterTraceListener ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.TextWriter" /> を出力宛先として <see cref="T:System.Diagnostics.TextWriterTraceListener" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、<xref:System.IO.TextWriter>トレース出力またはデバッグ出力の受信者としてのストリーム。 その<xref:System.Diagnostics.TraceListener.Name%2A>プロパティは、空の文字列に初期化 (""、または<xref:System.String.Empty?displayProperty=nameWithType>)。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TextWriterTraceListener>を使用して、<xref:System.Diagnostics.TextWriterTraceListener.%23ctor>コンス トラクターです。 設定、<xref:System.Diagnostics.TextWriterTraceListener.Writer%2A>プロパティをコンソールに出力し、追加、<xref:System.Diagnostics.TextWriterTraceListener>を<xref:System.Diagnostics.TraceListenerCollection>です。 2 つのセグメントにメッセージを書き込み、閉じます、<xref:System.Diagnostics.TextWriterTraceListener>です。  
+  
+ [!code-cpp[Classic TextWriterTraceListener.WriteLine Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.WriteLine Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextWriterTraceListener.WriteLine Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.WriteLine Example/CS/source.cs#1)]
+ [!code-vb[Classic TextWriterTraceListener.WriteLine Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.WriteLine Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextWriterTraceListener (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />ストリームを表す、<see cref="T:System.Diagnostics.TextWriterTraceListener" />を書き込みます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.TextWriterTraceListener" />クラス、デバッグ出力およびトレース出力の受信者としてのストリームを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティを空の文字列 ("") です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.TextWriterTraceListener>を使用して、<xref:System.Diagnostics.TextWriterTraceListener.%23ctor%28System.IO.Stream%29>コンス トラクターに追加し、<xref:System.Diagnostics.TraceListenerCollection>です。 例は、この 2 つのメッセージを書き込みます<xref:System.Diagnostics.TextWriterTraceListener>、メッセージをすべてと<xref:System.Diagnostics.TraceListener>内のオブジェクト、<xref:System.Diagnostics.TraceListenerCollection>です。 最後に、フラッシュし、閉じます、<xref:System.Diagnostics.TextWriterTraceListener>です。  
+  
+ [!code-csharp[System.Diagnostics.TextWriterTraceListener.Ctor#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.TextWriterTraceListener.Ctor/CS/twtlconstream.cs#1)]
+ [!code-vb[System.Diagnostics.TextWriterTraceListener.Ctor#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.TextWriterTraceListener.Ctor/VB/twtlconstream.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ストリームが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextWriterTraceListener (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.#ctor(System.IO.TextWriter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.IO.TextWriter" />からの出力を受け取る、<see cref="T:System.Diagnostics.TextWriterTraceListener" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.TextWriterTraceListener" />クラス、トレース出力またはデバッグ出力の受信者として指定したライターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティを空の文字列 ("") です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.TextWriterTraceListener>を使用して、<xref:System.Diagnostics.TextWriterTraceListener.%23ctor%28System.IO.TextWriter%29>コンス トラクターです。 例は、作成、<xref:System.IO.StreamWriter>を参照し、<xref:System.IO.StreamWriter>を作成すると、 <xref:System.Diagnostics.TextWriterTraceListener>、次に、追加する、<xref:System.Diagnostics.TraceListenerCollection>です。 例では、メッセージをすべて<xref:System.Diagnostics.TraceListener>内のオブジェクト、 <xref:System.Diagnostics.TraceListenerCollection>、これを閉じます<xref:System.Diagnostics.TextWriterTraceListener>です。  
+  
+ [!code-cpp[Classic TextWriterTraceListener.Close Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Close Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextWriterTraceListener.Close Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Close Example/CS/source.cs#1)]
+ [!code-vb[Classic TextWriterTraceListener.Close Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Close Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ライターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextWriterTraceListener (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">ファイルの名前、<see cref="T:System.Diagnostics.TextWriterTraceListener" />を書き込みます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.TextWriterTraceListener" />クラス、デバッグ出力およびトレース出力の受信者としてファイルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティを空の文字列 ("") です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.TextWriterTraceListener>を使用して、<xref:System.Diagnostics.TextWriterTraceListener.%23ctor%28System.String%29>コンス トラクターを追加する、<xref:System.Diagnostics.TraceListenerCollection>です。 例では、この 2 つのメッセージを書き込みます<xref:System.Diagnostics.TextWriterTraceListener>、すべてにメッセージを書き込みます<xref:System.Diagnostics.TraceListener>内のオブジェクト、<xref:System.Diagnostics.TraceListenerCollection>です。 最後に、フラッシュし、閉じます、<xref:System.Diagnostics.TextWriterTraceListener>です。  
+  
+ [!code-csharp[System.Diagnostics.TextWriterTraceListener.Ctor#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.TextWriterTraceListener.Ctor/CS/twtlconstring.cs#3)]
+ [!code-vb[System.Diagnostics.TextWriterTraceListener.Ctor#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.TextWriterTraceListener.Ctor/VB/twtlconstring.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ファイルが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextWriterTraceListener (System.IO.Stream stream, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.#ctor(System.IO.Stream,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stream">A<see cref="T:System.IO.Stream" />ストリームを表す、<see cref="T:System.Diagnostics.TextWriterTraceListener" />を書き込みます。</param>
+        <param name="name">新規インスタンスの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.TextWriterTraceListener" />ストリームを使用して、デバッグの受信者として出力およびトレース出力は、指定した名前のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティを`name`パラメーターまたは空の文字列 ("") 場合は、`name`パラメーターは`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.TextWriterTraceListener>を使用して、<xref:System.Diagnostics.TextWriterTraceListener.%23ctor%28System.IO.Stream%2CSystem.String%29>コンス トラクターに追加し、<xref:System.Diagnostics.TraceListenerCollection>です。 例は、この 2 つのメッセージを書き込みます<xref:System.Diagnostics.TextWriterTraceListener>すべてにメッセージを書き込むと<xref:System.Diagnostics.TraceListener>内のオブジェクト、<xref:System.Diagnostics.TraceListenerCollection>です。 最後に、フラッシュし、閉じます、<xref:System.Diagnostics.TextWriterTraceListener>です。  
+  
+ [!code-csharp[System.Diagnostics.TextWriterTraceListener.Ctor#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.TextWriterTraceListener.Ctor/CS/twtlconstreamname.cs#2)]
+ [!code-vb[System.Diagnostics.TextWriterTraceListener.Ctor#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.TextWriterTraceListener.Ctor/VB/twtlconstreamname.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ストリームが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextWriterTraceListener (System.IO.TextWriter writer, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextWriter writer, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.#ctor(System.IO.TextWriter,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.IO.TextWriter" />からの出力を受け取る、<see cref="T:System.Diagnostics.TextWriterTraceListener" />です。</param>
+        <param name="name">新規インスタンスの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.TextWriterTraceListener" />トレーシングの受信者として指定したライターを使用して出力またはデバッグ出力は、指定した名前のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.TextWriterTraceListener>を使用して、<xref:System.Diagnostics.TextWriterTraceListener.%23ctor%28System.IO.TextWriter%2CSystem.String%29>コンス トラクターです。 例は、作成、<xref:System.IO.StreamWriter>を参照し、<xref:System.IO.StreamWriter>を作成すると、 <xref:System.Diagnostics.TextWriterTraceListener>、次に、追加する、<xref:System.Diagnostics.TraceListenerCollection>です。 例では、この 2 つのメッセージを書き込みます<xref:System.Diagnostics.TextWriterTraceListener>、すべてにメッセージを書き込みます<xref:System.Diagnostics.TraceListener>内のオブジェクト、<xref:System.Diagnostics.TraceListenerCollection>です。 最後に、フラッシュし、閉じます、<xref:System.Diagnostics.TextWriterTraceListener>です。  
+  
+ [!code-csharp[System.Diagnostics.TextWriterTraceListener.Ctor#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.TextWriterTraceListener.Ctor/CS/twtlconwritername.cs#5)]
+ [!code-vb[System.Diagnostics.TextWriterTraceListener.Ctor#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.TextWriterTraceListener.Ctor/VB/twtlconwritername.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ライターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextWriterTraceListener (string fileName, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">ファイルの名前、<see cref="T:System.Diagnostics.TextWriterTraceListener" />を書き込みます。</param>
+        <param name="name">新規インスタンスの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.TextWriterTraceListener" />デバッグの受信者としてファイルを使用して出力およびトレース出力は、指定した名前のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.TraceListener.Name%2A>プロパティを`name`パラメーターまたは空の文字列 ("") 場合は、`name`パラメーターは`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Diagnostics.TextWriterTraceListener>を使用して、<xref:System.Diagnostics.TextWriterTraceListener.%23ctor%28System.String%2CSystem.String%29>コンス トラクターを追加する、<xref:System.Diagnostics.TraceListenerCollection>です。 例では、この 2 つのメッセージを書き込みます<xref:System.Diagnostics.TextWriterTraceListener>、すべてにメッセージを書き込みます<xref:System.Diagnostics.TraceListener>内のオブジェクト、<xref:System.Diagnostics.TraceListenerCollection>です。 最後に、フラッシュし、閉じます、<xref:System.Diagnostics.TextWriterTraceListener>です。  
+  
+ [!code-csharp[System.Diagnostics.TextWriterTraceListener.Ctor#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.TextWriterTraceListener.Ctor/CS/twtlconstringname.cs#4)]
+ [!code-vb[System.Diagnostics.TextWriterTraceListener.Ctor#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.TextWriterTraceListener.Ctor/VB/twtlconstringname.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ストリームが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>閉じる、<see cref="P:System.Diagnostics.TextWriterTraceListener.Writer" />トレース出力またはデバッグ出力を受信しないようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Diagnostics.TextWriterTraceListener.Write%2A>または<xref:System.Diagnostics.TextWriterTraceListener.WriteLine%2A>メソッドを呼び出した後<xref:System.Diagnostics.TextWriterTraceListener.Close%2A>ストリームを自動的に再度開きます。  
+  
+   
+  
+## Examples  
+ 次の例では、実装、<xref:System.Diagnostics.TextWriterTraceListener>という名前`myTextListener`が使用される、<xref:System.IO.StreamWriter>と呼ばれる`myOutputWriter`という名前のファイルに書き込む`TestFile.txt`です。 例では、ファイル、ストリーム、およびテキスト ライターを作成、ファイルに 1 行のテキストを書き込みますをフラッシュし、ストリームを閉じます。  
+  
+ [!code-cpp[Classic TextWriterTraceListener.Close Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Close Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextWriterTraceListener.Close Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Close Example/CS/source.cs#1)]
+ [!code-vb[Classic TextWriterTraceListener.Close Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Close Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see langword="true" />マネージ リソースを解放するには場合<see langword="false" />、<see cref="M:System.Diagnostics.TextWriterTraceListener.Dispose(System.Boolean)" />も何も起こりません。</param>
+        <summary>これを破棄する<see cref="T:System.Diagnostics.TextWriterTraceListener" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Diagnostics.TextWriterTraceListener.Close%2A>のメソッド、<xref:System.Diagnostics.TextWriterTraceListener>のマネージ リソースを解放するクラス、<xref:System.Diagnostics.TextWriterTraceListener>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>出力バッファーをフラッシュ、<see cref="P:System.Diagnostics.TextWriterTraceListener.Writer" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、実装、<xref:System.Diagnostics.TextWriterTraceListener>という名前`myTextListener`が使用される、<xref:System.IO.StreamWriter>と呼ばれる`myOutputWriter`という名前のファイルに書き込む`TestFile.txt`です。 例では、ファイル、ストリーム、およびテキスト ライターを作成、ファイルに 1 行のテキストを書き込みますをフラッシュし、ストリームを閉じます。  
+  
+ [!code-cpp[Classic TextWriterTraceListener.Close Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Close Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextWriterTraceListener.Close Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Close Example/CS/source.cs#1)]
+ [!code-vb[Classic TextWriterTraceListener.Close Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Close Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>このインスタンスのメッセージを書き込みます<see cref="P:System.Diagnostics.TextWriterTraceListener.Writer" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、実装、<xref:System.Diagnostics.TextWriterTraceListener>という名前`myWriter`コンソール画面に書き込めません。 例では、コンソール画面に 2 つの行を書き込みます。 注 2 番目の出力は、最初の書き込みと同じ行に表示されます。 例では、フラッシュし、ストリームを閉じます。  
+  
+ [!code-cpp[Classic TextWriterTraceListener.Write Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Write Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextWriterTraceListener.Write Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Write Example/CS/source.cs#1)]
+ [!code-vb[Classic TextWriterTraceListener.Write Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Write Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public override void WriteLine (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteLine(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TextWriterTraceListener.WriteLine(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>このインスタンスのメッセージを書き込みます<see cref="P:System.Diagnostics.TextWriterTraceListener.Writer" />続けて行終端記号です。 既定の行終端記号は、キャリッジ リターンとライン フィード (\r\n) です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、実装、<xref:System.Diagnostics.TextWriterTraceListener>という名前`myWriter`コンソール画面に書き込めません。 例では、コンソール画面に 2 つの行を書き込みます。 注 2 番目の出力は、最初の書き込みと同じ行に表示されます。 例では、フラッシュし、ストリームを閉じます。  
+  
+ [!code-cpp[Classic TextWriterTraceListener.WriteLine Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.WriteLine Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextWriterTraceListener.WriteLine Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.WriteLine Example/CS/source.cs#1)]
+ [!code-vb[Classic TextWriterTraceListener.WriteLine Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.WriteLine Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Writer">
+      <MemberSignature Language="C#" Value="public System.IO.TextWriter Writer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.TextWriter Writer" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TextWriterTraceListener.Writer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TextWriterTraceListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextWriter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定をトレース出力またはデバッグ出力を受け取るテキスト ライター。</summary>
+        <value>A<see cref="T:System.IO.TextWriter" />を表すトレース出力またはデバッグ出力を受信するライター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Diagnostics.TextWriterTraceListener>コンソール画面に書き込まれる。 コードを新しいトレース リスナーに追加してから、 <xref:System.Diagnostics.Trace.Listeners%2A> trace クラスにします。  
+  
+ [!code-cpp[Classic TextWriterTraceListener.Writer Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Writer Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TextWriterTraceListener.Writer Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Writer Example/CS/source.cs#1)]
+ [!code-vb[Classic TextWriterTraceListener.Writer Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TextWriterTraceListener.Writer Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

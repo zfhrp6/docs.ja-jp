@@ -1,0 +1,67 @@
+<Type Name="ITransactionPromoter" FullName="System.Transactions.ITransactionPromoter">
+  <TypeSignature Language="C#" Value="public interface ITransactionPromoter" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITransactionPromoter" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.ITransactionPromoter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>必要なときに、MSDTC によって管理されるエスカレートできる、既存のトランザクションの代理トランザクションを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソース マネージャーを実装するときに実装しないでください、<xref:System.Transactions.ITransactionPromoter>インターフェイスを直接です。 代わりに、実装する必要があります<xref:System.Transactions.ISinglePhaseNotification>、1 つを継承するインターフェイス<xref:System.Transactions.ITransactionPromoter.Promote%2A>このインターフェイスのメソッドです。 リソース マネージャーの実装の詳細については、次を参照してください。 [A リソース マネージャーの実装](http://msdn.microsoft.com/en-us/81509719-d579-4530-831e-42e1acdef63e)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Promote">
+      <MemberSignature Language="C#" Value="public byte[] Promote ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] Promote() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.ITransactionPromoter.Promote" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>参加していることを通知オブジェクトの代理トランザクションのエスカレーションが要求されていること。</summary>
+        <returns>分散トランザクションのマーシャ リングする、トランスミッターまたはレシーバー伝達トークンです。 詳細については、「<see cref="M:System.Transactions.TransactionInterop.GetTransactionFromTransmitterPropagationToken(System.Byte[])" />」を参照してください。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Transactions.TransactionPromotionException>の実装によってスローされる必要があります<xref:System.Transactions.IPromotableSinglePhaseNotification>ことを示すインターフェイスへの呼び出し<xref:System.Transactions.ITransactionPromoter.Promote%2A>に失敗しました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

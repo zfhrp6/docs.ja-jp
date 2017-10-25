@@ -1,0 +1,684 @@
+<Type Name="TcpStatistics" FullName="System.Net.NetworkInformation.TcpStatistics">
+  <TypeSignature Language="C#" Value="public abstract class TcpStatistics" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TcpStatistics extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.TcpStatistics" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>伝送制御プロトコル (TCP) の統計データを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスがによって返される、<xref:System.Net.NetworkInformation.IPGlobalProperties.GetTcpIPv4Statistics%2A>と<xref:System.Net.NetworkInformation.IPGlobalProperties.GetTcpIPv6Statistics%2A>メソッドは、TCP トラフィック情報をアプリケーションのアクセス権を付与します。  
+  
+ 説明されている、管理情報オブジェクトに関連しているこのクラスの情報は、 [http://www.ietf.org/rfc/rfc2012.txt](http://www.ietf.org/rfc/rfc2012.txt)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定されたアドレス ファミリ用の TCP 統計を表示します。  
+  
+ [!code-cpp[NCLNetInfoReport#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfoReport/CPP/netinfo.cpp#2)]
+ [!code-csharp[NCLNetInfoReport#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfoReport/CS/netinfo.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TcpStatistics ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.TcpStatistics.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.NetworkInformation.TcpStatistics" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターはから派生するクラスによってのみ呼び出すことができます、<xref:System.Net.NetworkInformation.TcpStatistics>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionsAccepted">
+      <MemberSignature Language="C#" Value="public abstract long ConnectionsAccepted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ConnectionsAccepted" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.ConnectionsAccepted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>承認済みの伝送制御プロトコル (TCP) 接続要求の数を取得します。</summary>
+        <value><see cref="T:System.Int64" /> TCP 接続要求の合計数を指定する値が受け入れられます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IETF RFC 2012 が正式にこの値を定義として、「TCP 接続に対するが直接遷移 SYN 受信数状態リッスン状態から回数値です」  
+  
+   
+  
+## Examples  
+ 次のコード例では、接続情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#6)]
+ [!code-csharp[NCLNetInfo2#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#6)]
+ [!code-vb[NCLNetInfo2#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionsInitiated">
+      <MemberSignature Language="C#" Value="public abstract long ConnectionsInitiated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ConnectionsInitiated" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.ConnectionsInitiated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントからの伝送制御プロトコル (TCP) 接続要求の数を取得します。</summary>
+        <value><see cref="T:System.Int64" />クライアントによって開始された TCP 接続の合計数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IETF RFC 2012 が正式にこの値を定義として、「TCP 接続直接移行に行った SYN によって送信される状態 CLOSED 状態から回数値です」  
+  
+   
+  
+## Examples  
+ 次のコード例では、接続情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#6)]
+ [!code-csharp[NCLNetInfo2#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#6)]
+ [!code-vb[NCLNetInfo2#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CumulativeConnections">
+      <MemberSignature Language="C#" Value="public abstract long CumulativeConnections { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 CumulativeConnections" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.CumulativeConnections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>伝送制御プロトコル (TCP) 接続の確立の合計数を指定します。</summary>
+        <value><see cref="T:System.Int64" />確立された接続の合計数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、接続情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#6)]
+ [!code-csharp[NCLNetInfo2#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#6)]
+ [!code-vb[NCLNetInfo2#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentConnections">
+      <MemberSignature Language="C#" Value="public abstract long CurrentConnections { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 CurrentConnections" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.CurrentConnections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>伝送制御プロトコル (TCP) の現在の接続の数を取得します。</summary>
+        <value><see cref="T:System.Int64" />現在の TCP 接続の合計数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IETF RFC 2012 が正式にこの値を定義として、「現在の状態が設定されたか閉じる待機対象の TCP 接続の数です」  
+  
+   
+  
+## Examples  
+ 次のコード例では、接続情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#6)]
+ [!code-csharp[NCLNetInfo2#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#6)]
+ [!code-vb[NCLNetInfo2#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorsReceived">
+      <MemberSignature Language="C#" Value="public abstract long ErrorsReceived { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ErrorsReceived" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.ErrorsReceived" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>伝送制御プロトコル (TCP) エラーの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />受信 TCP エラーの合計数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、接続情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#6)]
+ [!code-csharp[NCLNetInfo2#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#6)]
+ [!code-vb[NCLNetInfo2#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FailedConnectionAttempts">
+      <MemberSignature Language="C#" Value="public abstract long FailedConnectionAttempts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 FailedConnectionAttempts" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.FailedConnectionAttempts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>伝送制御プロトコル (TCP) の接続試行の失敗の数を取得します。</summary>
+        <value><see cref="T:System.Int64" /> TCP 接続の試行の失敗の合計数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IETF RFC 2012 は、「TCP 接続直接遷移に加え、SYN 送信状態から CLOSED 状態または SYN 受信数の状態と回数を超える TCP 接続時間の数に対するが直接遷移リッスン状態 SYN 受信数状態から」としては、正式にこの値を定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、接続情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#6)]
+ [!code-csharp[NCLNetInfo2#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#6)]
+ [!code-vb[NCLNetInfo2#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumConnections">
+      <MemberSignature Language="C#" Value="public abstract long MaximumConnections { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaximumConnections" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.MaximumConnections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>伝送制御プロトコル (TCP) のサポートされている接続の最大数を取得します。</summary>
+        <value><see cref="T:System.Int64" />サポート可能な TCP 接続の合計数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 接続の最大数が動的な場合は、このプロパティは、-1 を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、タイムアウトと最大接続情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#5)]
+ [!code-csharp[NCLNetInfo2#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#5)]
+ [!code-vb[NCLNetInfo2#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumTransmissionTimeout">
+      <MemberSignature Language="C#" Value="public abstract long MaximumTransmissionTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaximumTransmissionTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.MaximumTransmissionTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>伝送制御プロトコル (TCP) セグメントの最大の再送信タイムアウト値を取得します。</summary>
+        <value>TCP の実装で許可されている再送信タイムアウト値の最大数 (ミリ秒) を指定する <see cref="T:System.Int64" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TCP は、送信の各セグメントは、ネットワーク レイヤー (IP) に渡されるときに、再送タイマーを開始します。 セグメント内のデータの受信確認が受信されません、タイマーの有効期限が切れる前に、セグメントが再送信されます。 タイマーは、任意の値に設定することができます、<xref:System.Net.NetworkInformation.TcpStatistics.MinimumTransmissionTimeout%2A>値、および<xref:System.Net.NetworkInformation.TcpStatistics.MaximumTransmissionTimeout%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、タイムアウトと最大接続情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#5)]
+ [!code-csharp[NCLNetInfo2#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#5)]
+ [!code-vb[NCLNetInfo2#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumTransmissionTimeout">
+      <MemberSignature Language="C#" Value="public abstract long MinimumTransmissionTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MinimumTransmissionTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.MinimumTransmissionTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>伝送制御プロトコル (TCP) セグメントの最小の再送信タイムアウト値を取得します。</summary>
+        <value>TCP の実装で許可されている再送信タイムアウト値の最小数 (ミリ秒) を指定する <see cref="T:System.Int64" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TCP は、送信の各セグメントは、ネットワーク レイヤー (IP) に渡されるときに、再送タイマーを開始します。 セグメント内のデータの受信確認が受信されません、タイマーの有効期限が切れる前に、セグメントが再送信されます。 タイマーのタイマーは、任意の値に設定することができます、<xref:System.Net.NetworkInformation.TcpStatistics.MinimumTransmissionTimeout%2A>値、および<xref:System.Net.NetworkInformation.TcpStatistics.MaximumTransmissionTimeout%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、タイムアウトと最大接続情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#5)]
+ [!code-csharp[NCLNetInfo2#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#5)]
+ [!code-vb[NCLNetInfo2#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetConnections">
+      <MemberSignature Language="C#" Value="public abstract long ResetConnections { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ResetConnections" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.ResetConnections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>伝送制御プロトコル (TCP) 接続で受信した RST パケットの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />の合計数を指定する値は、TCP 接続をリセットします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IETF RFC 2012 が正式にこの値を定義として、「TCP 接続行った直接遷移クローズド状態に設定された状態または閉じて待機状態のいずれかから回数値です」  
+  
+   
+  
+## Examples  
+ 次のコード例では、接続情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#6)]
+ [!code-csharp[NCLNetInfo2#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#6)]
+ [!code-vb[NCLNetInfo2#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetsSent">
+      <MemberSignature Language="C#" Value="public abstract long ResetsSent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ResetsSent" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.ResetsSent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リセット フラグを設定して送信された伝送制御プロトコル (TCP) セグメントの数を取得します。</summary>
+        <value><see cref="T:System.Int64" />リセット フラグを設定して送信される TCP セグメントの合計数を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TCP のリセットは、TCP ヘッダーのリセット (RST) の制御ビットを使用して指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、セグメント情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#7)]
+ [!code-csharp[NCLNetInfo2#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#7)]
+ [!code-vb[NCLNetInfo2#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SegmentsReceived">
+      <MemberSignature Language="C#" Value="public abstract long SegmentsReceived { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 SegmentsReceived" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.SegmentsReceived" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信した伝送制御プロトコル (TCP) セグメントの数を取得します。</summary>
+        <value><see cref="T:System.Int64" /> TCP セグメントの合計数を示す値を受信します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデータには、セグメントをエラーが発生し現在確立されている接続で受信したセグメントが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、セグメント情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#7)]
+ [!code-csharp[NCLNetInfo2#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#7)]
+ [!code-vb[NCLNetInfo2#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SegmentsResent">
+      <MemberSignature Language="C#" Value="public abstract long SegmentsResent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 SegmentsResent" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.SegmentsResent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>再送信の伝送制御プロトコル (TCP) セグメントの数を取得します。</summary>
+        <value><see cref="T:System.Int64" /> TCP セグメントの合計数を示す値を再送信します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 転送先に受信確認されていない TCP セグメントが再送信されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、セグメント情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#7)]
+ [!code-csharp[NCLNetInfo2#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#7)]
+ [!code-vb[NCLNetInfo2#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SegmentsSent">
+      <MemberSignature Language="C#" Value="public abstract long SegmentsSent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 SegmentsSent" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.TcpStatistics.SegmentsSent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信の伝送制御プロトコル (TCP) セグメントの数を取得します。</summary>
+        <value><see cref="T:System.Int64" /> TCP セグメントの合計数を示す値を送信します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデータは、現在確立されている接続に送信されたセグメントが含まれていますが、再送信されるオクテットのみを格納したセグメントには含まれません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、セグメント情報を表示します。  
+  
+ [!code-cpp[NCLNetInfo2#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#7)]
+ [!code-csharp[NCLNetInfo2#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#7)]
+ [!code-vb[NCLNetInfo2#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

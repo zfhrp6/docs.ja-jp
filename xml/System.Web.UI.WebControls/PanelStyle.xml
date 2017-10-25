@@ -1,0 +1,380 @@
+<Type Name="PanelStyle" FullName="System.Web.UI.WebControls.PanelStyle">
+  <TypeSignature Language="C#" Value="public class PanelStyle : System.Web.UI.WebControls.Style" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PanelStyle extends System.Web.UI.WebControls.Style" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.PanelStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Style</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スタイルを表す、<see cref="T:System.Web.UI.WebControls.Panel" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PanelStyle> Panel コントロールのスタイルの設定を表すクラスを使用します。 パネルの外観を制御し、共通の外観を指定する複数のパネル コントロールに適用できるプロパティをカプセル化します。  
+  
+ パネルの背景に設定して表示するイメージを指定することができます、<xref:System.Web.UI.WebControls.PanelStyle.BackImageUrl%2A>プロパティです。 パネルの内容の水平方向の配置がによって示される、<xref:System.Web.UI.WebControls.PanelStyle.HorizontalAlign%2A>プロパティです。 設定してパネル コントロール内のテキストを格納しているコントロールの方向を指定することができます、<xref:System.Web.UI.WebControls.PanelStyle.Direction%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例で、<xref:System.Web.UI.WebControls.PanelStyle>オブジェクトとそのプロパティを設定します。 この例では、2 つの部分があります。  
+  
+ 部分クラス`PanelStylecs_aspx`、新たに作成する例を示す<xref:System.Web.UI.WebControls.PanelStyle>オブジェクトとそのプロパティを設定します。  
+  
+ 使用する Web フォーム ページ、`PanelStylecs_aspx`その分離コード ファイルとしての使用例です。  
+  
+ この例の最初の部分では、作成方法を示します、<xref:System.Web.UI.WebControls.PanelStyle>オブジェクト、 `myPanelStyle`、し、そのプロパティを設定します。 <xref:System.Web.UI.WebControls.WebControl.ApplyStyle%2A>両方のメソッドが呼び出されます、`Panel1`パネルと`Panel2`パネル、および`myPanelStyle`は、これらの両方に適用します。  
+  
+ [!code-csharp[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/CS/panelstyle.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/VB/panelstyle.vb#2)]  
+  
+ この例の 2 番目の部分では、前の例で使用される .aspx ファイルを示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.PanelStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/CS/panelstylecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.PanelStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/VB/panelstylevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PanelStyle (System.Web.UI.StateBag bag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.StateBag bag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PanelStyle.#ctor(System.Web.UI.StateBag)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bag" Type="System.Web.UI.StateBag" />
+      </Parameters>
+      <Docs>
+        <param name="bag">A<see cref="T:System.Web.UI.StateBag" />スタイル情報を格納する状態バッグを表すオブジェクト。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.PanelStyle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string BackImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BackImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PanelStyle.BackImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または panel コントロールの背景画像の URL を設定します。</summary>
+        <value>Panel コントロールの背景画像の URL です。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PanelStyle.BackImageUrl%2A>プロパティが panel コントロールの背景画像の URL を指定します。 このプロパティが動作するには、イメージ ファイルは、指定の場所に存在する必要があります。 指定されたイメージ ファイルがアクセス可能でない場合は、背景イメージ パネル コントロールが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、次の 2 つのパネル コントロールに同じ背景イメージを適用`Panel1`と`Panel2`です。 正常に動作するこの例では、独自のイメージを指定する必要があります。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.PanelStyle>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/CS/panelstyle.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/VB/panelstyle.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Web.UI.WebControls.PanelStyle.BackImageUrl" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFrom">
+      <MemberSignature Language="C#" Value="public override void CopyFrom (System.Web.UI.WebControls.Style s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyFrom(class System.Web.UI.WebControls.Style s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PanelStyle.CopyFrom(System.Web.UI.WebControls.Style)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.Web.UI.WebControls.Style" />
+      </Parameters>
+      <Docs>
+        <param name="s">A<see cref="T:System.Web.UI.WebControls.Style" />をコピーするスタイルの設定を表すオブジェクト。</param>
+        <summary>指定したスタイルのプロパティを重複<see cref="T:System.Web.UI.WebControls.Style" />オブジェクトの現在のインスタンスを<see cref="T:System.Web.UI.WebControls.PanelStyle" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.WebControls.PanelStyle.CopyFrom%2A>メソッドを指定したスタイルの設定を複製する<xref:System.Web.UI.WebControls.Style>オブジェクトの現在のインスタンスを<xref:System.Web.UI.WebControls.PanelStyle>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.PanelStyle.CopyFrom%2A>メソッドは、指定された対象から空白以外の要素をコピー<xref:System.Web.UI.WebControls.Style>オブジェクト、`s`です。 いずれかの要素で定義されている`s`で定義されている任意の要素を置換、<xref:System.Web.UI.WebControls.PanelStyle>オブジェクト。 空白のままにスタイル設定のみを置き換える、<xref:System.Web.UI.WebControls.PanelStyle>オブジェクトを使用して、<xref:System.Web.UI.WebControls.PanelStyle.MergeWith%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ContentDirection Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ContentDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PanelStyle.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ContentDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロール パネル コントロールにテキストを含めることを表示する方向を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ContentDirection" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.ContentDirection.NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PanelStyle.Direction%2A>プロパティは、コントロール パネル コントロールにテキストを含めることが表示される方向を指定します。  
+  
+ <xref:System.Web.UI.WebControls.PanelStyle.Direction%2A>プロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.ContentDirection>値。 次の表は、使用可能な値を一覧表示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`NotSet`|内容の方向が設定されていません。|  
+|`LeftToRight`|テキストが含まれる子コントロールは、左から右に表示されます。|  
+|`RightToLeft`|テキストが含まれる子コントロールが右から左に表示されます。|  
+  
+ 指定した場合<xref:System.Web.UI.WebControls.ContentDirection.LeftToRight>テキストが含まれる子コントロールが左から右に表示します。 指定した場合<xref:System.Web.UI.WebControls.ContentDirection.RightToLeft>テキストが含まれる子コントロールが右から左へを表示します。 使用して<xref:System.Web.UI.WebControls.ContentDirection.RightToLeft>を右から左、アラビア語やヘブライ語などに記述されている言語のテキストを表示します。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 <xref:System.Web.UI.WebControls.PanelStyle.Direction%2A> 、2 つのパネル コントロールのプロパティ`Panel1`と`Panel2`を`ContentDirection.LeftToRight`列挙値。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.PanelStyle>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/CS/panelstyle.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/VB/panelstyle.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">方向は、のいずれかではない、<see cref="T:System.Web.UI.WebControls.ContentDirection" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalAlign">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.HorizontalAlign HorizontalAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.HorizontalAlign HorizontalAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PanelStyle.HorizontalAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HorizontalAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または panel コントロール内の内容の水平方向の配置を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.HorizontalAlign" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.HorizontalAlign.NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PanelStyle.HorizontalAlign%2A>プロパティが panel コントロール内の内容の水平方向の配置を指定します。  
+  
+ <xref:System.Web.UI.WebControls.PanelStyle.HorizontalAlign%2A>プロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.HorizontalAlign>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`NotSet`|水平方向の配置が設定されていません。|  
+|`Left`|パネルの内容は、左側に配置します。|  
+|`Center`|パネルの内容が中央揃えされます。|  
+|`Right`|パネルの内容が右揃えです。|  
+  
+> [!NOTE]
+>  」を参照してください。 場合、<xref:System.Web.UI.WebControls.PanelStyle.HorizontalAlign%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.HorizontalAlign.NotSet>パネル コントロールを含むコントロールに設定されますが、設定が含まれるコントロールから継承されます。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 <xref:System.Web.UI.WebControls.PanelStyle.HorizontalAlign%2A> 、2 つのパネル コントロールのプロパティ`Panel1`と`Panel2`を`HorizontalAlign.Center`列挙値。 例を実行するために使用する .aspx ファイルを参照してください、<xref:System.Web.UI.WebControls.PanelStyle>トピックです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/CS/panelstyle.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/VB/panelstyle.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">水平方向の配置は、のいずれかではない、<see cref="T:System.Web.UI.WebControls.HorizontalAlign" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeWith">
+      <MemberSignature Language="C#" Value="public override void MergeWith (System.Web.UI.WebControls.Style s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void MergeWith(class System.Web.UI.WebControls.Style s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PanelStyle.MergeWith(System.Web.UI.WebControls.Style)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.Web.UI.WebControls.Style" />
+      </Parameters>
+      <Docs>
+        <param name="s">A<see cref="T:System.Web.UI.WebControls.Style" />と結合するスタイルの設定を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.PanelStyle" />オブジェクト。</param>
+        <summary>指定したスタイルの設定を組み合わせた<see cref="T:System.Web.UI.WebControls.Style" />オブジェクトの現在のインスタンスを<see cref="T:System.Web.UI.WebControls.PanelStyle" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.WebControls.PanelStyle.MergeWith%2A>メソッドを指定したスタイルの設定を組み合わせる<xref:System.Web.UI.WebControls.Style>オブジェクトの現在のインスタンスを<xref:System.Web.UI.WebControls.PanelStyle>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.PanelStyle.MergeWith%2A>メソッドは、指定された対象から空白以外の要素をコピー<xref:System.Web.UI.WebControls.Style>オブジェクト、 `s`、既存のスタイル設定に置換することがなく、<xref:System.Web.UI.WebControls.PanelStyle>オブジェクト。 スタイル設定を上書き、<xref:System.Web.UI.WebControls.PanelStyle>スタイルの設定を持つオブジェクト`s`を使用して、<xref:System.Web.UI.WebControls.PanelStyle.CopyFrom%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PanelStyle.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての定義済みのスタイル設定が削除、<see cref="T:System.Web.UI.WebControls.PanelStyle" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用するには、定義済みのスタイル設定を削除する、<xref:System.Web.UI.WebControls.PanelStyle>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollBars">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ScrollBars ScrollBars { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ScrollBars ScrollBars" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PanelStyle.ScrollBars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ScrollBars</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または panel コントロール内の可視性およびスクロール バーの位置を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ScrollBars" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.ScrollBars.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PanelStyle.ScrollBars%2A>プロパティ パネル コントロールの可視性およびスクロール バーの位置を指定します。  
+  
+ <xref:System.Web.UI.WebControls.PanelStyle.ScrollBars%2A>プロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.ScrollBars>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`None`|スクロール バーは表示されません。|  
+|`Horizontal`|水平スクロール バーのみが表示されます。|  
+|`Vertical`|垂直スクロール バーのみが表示されます。|  
+|`Both`|両方の水平方向および垂直のスクロール バーが表示されます。|  
+|`Auto`|必要に応じて、水平、垂直、または両方のスクロール バーが表示されます。 それ以外の場合、スクロール バーは表示されません。|  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 <xref:System.Web.UI.WebControls.PanelStyle.ScrollBars%2A> 、2 つのパネル コントロールのプロパティ`Panel1`と`Panel2`を`ScrollBars.Both`列挙値。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.PanelStyle>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/CS/panelstyle.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/VB/panelstyle.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.WebControls.PanelStyle.ScrollBars" />プロパティは、のいずれかではない、<see cref="T:System.Web.UI.WebControls.ScrollBars" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wrap">
+      <MemberSignature Language="C#" Value="public virtual bool Wrap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Wrap" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PanelStyle.Wrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパネルの内容をラップするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />パネルのコンテンツをラップする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PanelStyle.Wrap%2A>プロパティは、パネルの内容をラップするかどうかを示します。 ときに、<xref:System.Web.UI.WebControls.PanelStyle.Wrap%2A>プロパティに設定されている`false`と<xref:System.Web.UI.WebControls.PanelStyle.ScrollBars%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ScrollBars.Auto>パネルの内容が収まるパネルで、水平スクロール バーを持つ 1 行上のパネルのコンテンツの表示より長い場合、します。 ときに、<xref:System.Web.UI.WebControls.PanelStyle.Wrap%2A>プロパティに設定されている`false`と<xref:System.Web.UI.WebControls.PanelStyle.ScrollBars%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ScrollBars.None>パネルが拡張して、Web ページが水平スクロール バーを持つ必要な場合、します。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.UI.WebControls.PanelStyle.Wrap%2A>プロパティを`false`パネル、コントロールの 2 つの`Panel1`と`Panel2`です。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.PanelStyle>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/CS/panelstyle.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.PanelStyle#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.PanelStyle/VB/panelstyle.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

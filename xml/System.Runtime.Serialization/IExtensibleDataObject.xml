@@ -1,0 +1,81 @@
+<Type Name="IExtensibleDataObject" FullName="System.Runtime.Serialization.IExtensibleDataObject">
+  <TypeSignature Language="C#" Value="public interface IExtensibleDataObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExtensibleDataObject" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.IExtensibleDataObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+    <AssemblyVersion>4.1.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Runtime.Serialization.XmlObjectSerializer" /> が <see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性でマークされた型の逆シリアル化中に検出した追加データを格納するためのデータ構造体を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.IExtensibleDataObject> インターフェイスには、データ コントラクトの外部データを格納するために使用する構造体を設定または返すための単一のプロパティがあります。 追加データは、<xref:System.Runtime.Serialization.ExtensionDataObject> クラスのインスタンス内に格納され、<xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> プロパティを通してアクセスされます。 データの受信、処理、および送信が行われるラウンドトリップ操作において、追加データは、元の送信側にそのまま送り返されます。 これは、コンタクトの将来のバージョンから受信されるデータを格納する場合に役立ちます。 このインターフェイスを実装しない場合、追加データは無視され、ラウンドトリップ操作の間に破棄されます。  
+  
+### <a name="to-use-this-versioning-feature"></a>バージョン管理機能の使用  
+  
+1.  クラスに <xref:System.Runtime.Serialization.IExtensibleDataObject> インターフェイスを実装します。  
+  
+2.  <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> プロパティを型に追加します。  
+  
+3.  クラスに <xref:System.Runtime.Serialization.ExtensionDataObject> 型のプライベート メンバーを追加します。  
+  
+4.  新しいプライベート メンバーを使用して、get メソッドと set メソッドを実装します。  
+  
+5.  クラスに <xref:System.Runtime.Serialization.DataContractAttribute> 属性を適用します。 必要であれば、<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> プロパティと <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> プロパティに適切な値を設定します。  
+  
+ 型のバージョン管理の詳細については、次を参照してください。[データ コントラクトのバージョン管理](~/docs/framework/wcf/feature-details/data-contract-versioning.md)です。 上位互換性のあるデータ コントラクトを作成する方法の詳細については、次を参照してください。[上位互換性のあるデータ コントラクト](~/docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)です。 データ コントラクトの詳細については、次を参照してください。[を使用してデータ コントラクト](~/docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+  
+   
+  
+## Examples  
+ 次のコードは、シリアル化可能な型 (`PersonVersion2`) の第 2 のバージョンである型 (`Person`) のインスタンスを示しています。 第 2 のバージョンは、第 1 のバージョンにない追加データ (`ID` フィールド) を含みます。  
+  
+ [!code-csharp[IUnknownSerializationData#1](~/samples/snippets/csharp/VS_Snippets_CFX/iunknownserializationdata/cs/iunknownserialization.cs#1)]
+ [!code-vb[IUnknownSerializationData#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/iunknownserializationdata/vb/iunknownserialization.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExtensionData">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.ExtensionDataObject ExtensionData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.ExtensionDataObject ExtensionData" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ExtensionDataObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加データを格納する構造体を取得または設定します。</summary>
+        <value>このデータ コントラクトに属していると認識されないデータを格納する <see cref="T:System.Runtime.Serialization.ExtensionDataObject" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

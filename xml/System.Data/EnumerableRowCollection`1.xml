@@ -1,0 +1,92 @@
+<Type Name="EnumerableRowCollection&lt;TRow&gt;" FullName="System.Data.EnumerableRowCollection&lt;TRow&gt;">
+  <TypeSignature Language="C#" Value="public class EnumerableRowCollection&lt;TRow&gt; : System.Data.EnumerableRowCollection, System.Collections.Generic.IEnumerable&lt;TRow&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EnumerableRowCollection`1&lt;TRow&gt; extends System.Data.EnumerableRowCollection implements class System.Collections.Generic.IEnumerable`1&lt;!TRow&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.EnumerableRowCollection`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TRow" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Data.EnumerableRowCollection</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;TRow&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TRow">ソース シーケンスのオブジェクトの型 (通常は <see cref="T:System.Data.DataRow" />)。</typeparam>
+    <summary>コレクションを表します<see cref="T:System.Data.DataRow" />クエリから返されるオブジェクト。 この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.EnumerableRowCollection%601>使用して、LINQ to DataSet クエリの結果を格納します。  
+  
+ <xref:System.Data.EnumerableRowCollection%601>直接インスタンス化できないため、このクラスのパブリック コンス トラクターはありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;TRow&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;!TRow&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EnumerableRowCollection`1.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;TRow&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>格納されている行オブジェクトのコレクションの列挙子を返します。 この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</summary>
+        <returns>厳密に型指定された<see cref="T:System.Collections.Generic.IEnumerator`1" />のコレクションを走査に使用できる<paramref name="TRow" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると[!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)]クエリ、`Trow`型である<xref:System.Data.DataRow>です。  
+  
+ このメソッドはオーバーライドできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EnumerableRowCollection`1.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションの列挙子を返します<see cref="T:System.Data.DataRow" />オブジェクト。 この API は、.NET Framework インフラストラクチャをサポートします。独自に作成したコードから直接使用するためのものではありません。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />のコレクションを走査に使用できる<see cref="T:System.Data.DataRow" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Data.EnumerableRowCollection%601.GetEnumerator%2A> メソッドを呼び出します。  
+  
+ このメソッドはオーバーライドできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

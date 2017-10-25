@@ -1,0 +1,118 @@
+<Type Name="IAnchorInfo" FullName="System.Windows.Annotations.IAnchorInfo">
+  <TypeSignature Language="C#" Value="public interface IAnchorInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAnchorInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Annotations.IAnchorInfo" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>対応する注釈付きオブジェクトに注釈を照合する機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.IAnchorInfo>導入された、[!INCLUDE[TLA#tla_netframewk](~/includes/tlasharptla-netframewk-md.md)]バージョン 3.5。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ コメント ペインを持つ簡単なドキュメント リーダー アプリケーションを検討してください。 そのコメント ウィンドウにはリスト ボックスがあり、そのリスト ボックスに、ドキュメントに固定されている注釈の一覧からのテキストが表示されます。 リスト ボックスの項目を選択すると、それに対応する注釈オブジェクトが固定されている段落がドキュメントに表示されます。  
+  
+ 次の例では、このようなリスト ボックスのコメント ペインとして機能するイベント ハンドラーを実装する方法を示します。  
+  
+ [!code-csharp[FlowDocumentAnnotatedViewer#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/CSharp/Window1.xaml.cs#handler)]
+ [!code-vb[FlowDocumentAnnotatedViewer#Handler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/visualbasic/window1.xaml.vb#handler)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Anchor">
+      <MemberSignature Language="C#" Value="public System.Windows.Annotations.AnnotationResource Anchor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Annotations.AnnotationResource Anchor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.IAnchorInfo.Anchor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.AnnotationResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>注釈のアンカーを取得します。</summary>
+        <value>アンカーは、解決されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.IAnchorInfo.Anchor%2A>導入された、[!INCLUDE[TLA#tla_netframewk](~/includes/tlasharptla-netframewk-md.md)]バージョン 3.5。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Annotation">
+      <MemberSignature Language="C#" Value="public System.Windows.Annotations.Annotation Annotation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Annotations.Annotation Annotation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.IAnchorInfo.Annotation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Annotation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>注釈オブジェクトを取得します。</summary>
+        <value>注釈オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.IAnchorInfo.Annotation%2A>導入された、[!INCLUDE[TLA#tla_netframewk](~/includes/tlasharptla-netframewk-md.md)]バージョン 3.5。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvedAnchor">
+      <MemberSignature Language="C#" Value="public object ResolvedAnchor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ResolvedAnchor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.IAnchorInfo.ResolvedAnchor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー上の場所を表すオブジェクトを取得場所、<see cref="P:System.Windows.Annotations.IAnchorInfo.Anchor" />は解決します。</summary>
+        <value>ツリー上の場所を表すオブジェクトを<see cref="P:System.Windows.Annotations.IAnchorInfo.Anchor" />は解決します。 種類は、注釈付きオブジェクトの種類によって指定されます。 付箋ノート フローで強調表示やに固定されたドキュメントが常に解決される、<see cref="T:System.Windows.Annotations.TextAnchor" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.IAnchorInfo.ResolvedAnchor%2A>導入された、[!INCLUDE[TLA#tla_netframewk](~/includes/tlasharptla-netframewk-md.md)]バージョン 3.5。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ コメント ペインを持つ簡単なドキュメント リーダー アプリケーションを検討してください。 そのコメント ウィンドウにはリスト ボックスがあり、そのリスト ボックスに、ドキュメントに固定されている注釈の一覧からのテキストが表示されます。 リスト ボックスの項目を選択すると、それに対応する注釈オブジェクトが固定されている段落がドキュメントに表示されます。  
+  
+ 次の例では、このようなリスト ボックスのコメント ペインとして機能するイベント ハンドラーを実装する方法を示します。  
+  
+ [!code-csharp[FlowDocumentAnnotatedViewer#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/CSharp/Window1.xaml.cs#handler)]
+ [!code-vb[FlowDocumentAnnotatedViewer#Handler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/visualbasic/window1.xaml.vb#handler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

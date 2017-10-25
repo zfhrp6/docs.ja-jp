@@ -1,0 +1,220 @@
+<Type Name="EventMetadata" FullName="System.Diagnostics.Eventing.Reader.EventMetadata">
+  <TypeSignature Language="C#" Value="public sealed class EventMetadata" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventMetadata extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Eventing.Reader.EventMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント プロバイダーで定義されているイベントのメタデータ (プロパティと設定) を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスをインスタンス化することはできません。 A<xref:System.Diagnostics.Eventing.Reader.ProviderMetadata>オブジェクトの一覧を定義する<xref:System.Diagnostics.Eventing.Reader.EventMetadata>オブジェクト、プロバイダーによって定義されたイベントごとに 1 つです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventMetadata.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>説明の言語の現在のスレッド ロケールを使用して、イベントに関連付けられた説明のテンプレートを取得します。</summary>
+        <value>イベントに関連付けられた説明のテンプレートを表す文字列を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public long Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Id" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventMetadata.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント プロバイダーで定義されているイベントの識別子を取得します。</summary>
+        <value>返します、<see langword="long" />イベント識別子を指定する値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keywords">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Diagnostics.Eventing.Reader.EventKeyword&gt; Keywords { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Diagnostics.Eventing.Reader.EventKeyword&gt; Keywords" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventMetadata.Keywords" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Diagnostics.Eventing.Reader.EventKeyword&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント プロバイダーで定義されているイベントに関連付けられているキーワードを取得します。</summary>
+        <value><see cref="T:System.Diagnostics.Eventing.Reader.EventKeyword" /> オブジェクトの列挙可能なコレクションを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントのキーワードは、イベントの使用法に基づくその他の類似イベントのイベントをグループ化に使用されます。 各キーワードは、64 ビット マスクのビットです。 マニフェスト 0x0000000000000001 とから 0x0000800000000000 間でビットを使用するように、このマスクの上位 16 位置には、定義済みのビット値と予約済みのビットが使用されます。  
+  
+ 標準的なイベントのキーワードがで定義されている、<xref:System.Diagnostics.Eventing.Reader.StandardEventKeywords>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Level">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.Eventing.Reader.EventLevel Level { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.Eventing.Reader.EventLevel Level" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventMetadata.Level" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.Reader.EventLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント プロバイダーで定義されているイベントに関連付けられているレベルを取得します。 レベルは、イベントの重大度を定義します。</summary>
+        <value>返します、<see cref="T:System.Diagnostics.Eventing.Reader.EventLevel" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準的なイベントのレベルが定義されている、<xref:System.Diagnostics.Eventing.Reader.StandardEventLevel>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogLink">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.Eventing.Reader.EventLogLink LogLink { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.Eventing.Reader.EventLogLink LogLink" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventMetadata.LogLink" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.Reader.EventLogLink</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーは、このイベントを発行したときに、このイベントを受信するイベント ログへのリンクを取得します。</summary>
+        <value><see cref="T:System.Diagnostics.Eventing.Reader.EventLogLink" /> オブジェクトを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Opcode">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.Eventing.Reader.EventOpcode Opcode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.Eventing.Reader.EventOpcode Opcode" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventMetadata.Opcode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.Reader.EventOpcode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベント プロバイダーによって定義されているイベントに関連付けられているオペコードを取得します。 このオペコードは、アクティビティや、アプリケーションは、イベントが発生したときに実行していたアクティビティ内のポイントを識別する数値の値を定義します。</summary>
+        <value><see cref="T:System.Diagnostics.Eventing.Reader.EventOpcode" /> オブジェクトを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントの標準のオペコードがで定義されている、<xref:System.Diagnostics.Eventing.Reader.StandardEventOpcode>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Task">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.Eventing.Reader.EventTask Task { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.Eventing.Reader.EventTask Task" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventMetadata.Task" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.Reader.EventTask</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントに関連付けられているタスクを取得します。 タスクは、アプリケーションまたはイベントを発行するコンポーネントの部分を識別します。</summary>
+        <value><see cref="T:System.Diagnostics.Eventing.Reader.EventTask" /> オブジェクトを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスクは、16 ビット値で予約されている 16 個の値です。 この型は、0x0000 ~ 0 xffef 使用する任意の値を使用します。  
+  
+ 標準的なイベントのタスクが定義されている、<xref:System.Diagnostics.Eventing.Reader.StandardEventTask>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Template">
+      <MemberSignature Language="C#" Value="public string Template { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Template" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventMetadata.Template" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントのテンプレート文字列を取得します。 テンプレートを使用して、イベントが発行されると、プロバイダーによって使用されるデータを記述します。 テンプレートは、必要に応じて、イベントの構造を提供する XML を指定します。 XML では、イベントの表示中に挿入されるイベント発行元が提供する値を許可します。</summary>
+        <value>イベントのテンプレートが含まれる文字列を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public byte Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Version" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventMetadata.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントの識別子を修飾するイベントのバージョンを取得します。</summary>
+        <value>バイト値を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

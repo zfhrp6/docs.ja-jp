@@ -1,0 +1,408 @@
+<Type Name="WebMessageEncodingElement" FullName="System.ServiceModel.Configuration.WebMessageEncodingElement">
+  <TypeSignature Language="C#" Value="public sealed class WebMessageEncodingElement : System.ServiceModel.Configuration.BindingElementExtensionElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebMessageEncodingElement extends System.ServiceModel.Configuration.BindingElementExtensionElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.WebMessageEncodingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Configuration.BindingElementExtensionElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP 以外のメッセージで使用される文字エンコーディングを指定する構成要素を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンコーディングは、Unicode 文字のセットをバイト シーケンスに変換するプロセスです。 SOAP 以外のメッセージのエンコーディングの種類は、Text、JSON、および raw (生) です。  
+  
+ <xref:System.ServiceModel.Configuration.WebMessageEncodingElement> は、構成の <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> を表します。 <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> は、受信メッセージのコンテンツ タイプを [!INCLUDE[indigo1](~/includes/indigo1-md.md)] の提供するさまざまな内部エンコーダー (Text/JSON/生のバイナリ) に割り当てる方法をオーバーライドするのに使用できる、複合エンコーダーをプラグインするための機能拡張ポイントを提供します。 複合メッセージ エンコーダーは SOAP または WS-Addressing をサポートしません。  
+  
+   
+  
+## Examples  
+  
+```csharp  
+using System;  
+using System.Text;  
+using System.ServiceModel;  
+using System.ServiceModel.Web;  
+using System.ServiceModel.Configuration;  
+  
+class Program  
+{  
+  static void Main(string[] args)  
+  {  
+      WebMessageEncodingElement webMEE = new WebMessageEncodingElement();  
+      Console.WriteLine("The BE type is: {0}", webMEE.BindingElementType);  
+  
+      int maxReadPoolSize = webMEE.MaxReadPoolSize;  
+      Console.WriteLine("The MaxReadPoolSize is: {0}", maxReadPoolSize);  
+      maxReadPoolSize = 128;  
+      Console.WriteLine("The MaxReadPoolSize has been changed to: {0}", maxReadPoolSize);  
+  
+      int maxWritePoolSize = webMEE.MaxWritePoolSize;  
+      Console.WriteLine("The MaxWritePoolSize is: {0}", maxWritePoolSize);  
+      maxWritePoolSize = 48;  
+      Console.WriteLine("The MaxWritePoolSize has been changed to: {0}", maxWritePoolSize);  
+  
+      Encoding webMessageEncoding = webMEE.WriteEncoding;  
+      Console.WriteLine("The write encoding is: {0}", webMessageEncoding);  
+      webMessageEncoding = UnicodeEncoding.Unicode;  
+      Console.WriteLine("The write encoding has been changed to: {0}", webMessageEncoding);  
+  
+      XmlDictionaryReaderQuotasElement webMessageReaderQuotasElement = webMEE.ReaderQuotas;  
+      Console.WriteLine("The max depth of the reader Quotas is: {0}", webMessageReaderQuotasElement.MaxDepth);  
+  
+      Console.WriteLine("Press <ENTER> to terminate the program.");  
+      Console.ReadLine();  
+        }  
+    }  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebMessageEncodingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.WebMessageEncodingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.WebMessageEncodingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+  
+```  
+static void Main(string[] args)  
+ {  
+    WebMessageEncodingElement webMEE = new WebMessageEncodingElement();  
+    Console.WriteLine("The BE type is: {0}", webMEE.BindingElementType);  
+  }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyConfiguration">
+      <MemberSignature Language="C#" Value="public override void ApplyConfiguration (System.ServiceModel.Channels.BindingElement bindingElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ApplyConfiguration(class System.ServiceModel.Channels.BindingElement bindingElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.WebMessageEncodingElement.ApplyConfiguration(System.ServiceModel.Channels.BindingElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingElement" Type="System.ServiceModel.Channels.BindingElement" />
+      </Parameters>
+      <Docs>
+        <param name="bindingElement">適用する <see cref="T:System.ServiceModel.Channels.BindingElement" />。</param>
+        <summary>指定されたバインド要素の内容をこのバインド構成セクションに適用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingElementType">
+      <MemberSignature Language="C#" Value="public override Type BindingElementType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type BindingElementType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.WebMessageEncodingElement.BindingElementType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この構成要素で有効にできるバインド要素の種類を取得します。</summary>
+        <value>この構成要素 <see cref="T:System.ServiceModel.Channels.WebMessageEncodingBindingElement" /> で有効にできるバインディング要素の型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+  
+```  
+static void Main(string[] args)  
+{  
+   WebMessageEncodingElement webMEE = new WebMessageEncodingElement();  
+   Console.WriteLine("The BE type is: {0}", webMEE.BindingElementType);  
+ }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFrom">
+      <MemberSignature Language="C#" Value="public override void CopyFrom (System.ServiceModel.Configuration.ServiceModelExtensionElement from);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyFrom(class System.ServiceModel.Configuration.ServiceModelExtensionElement from) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.WebMessageEncodingElement.CopyFrom(System.ServiceModel.Configuration.ServiceModelExtensionElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="from" Type="System.ServiceModel.Configuration.ServiceModelExtensionElement" />
+      </Parameters>
+      <Docs>
+        <param name="from">コピーする <see cref="T:System.ServiceModel.Configuration.ServiceModelExtensionElement" />。</param>
+        <summary>指定された構成セクションの内容を、この要素にコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBindingElement">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Channels.BindingElement CreateBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.ServiceModel.Channels.BindingElement CreateBindingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.WebMessageEncodingElement.CreateBindingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxReadPoolSize">
+      <MemberSignature Language="C#" Value="public int MaxReadPoolSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxReadPoolSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.WebMessageEncodingElement.MaxReadPoolSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxReadPoolSize", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいリーダーを割り当てずに同時に読み取り可能なメッセージの最大数を指定する値を取得または設定します。</summary>
+        <value>新しいリーダーを割り当てずに同時に読み取ることができるメッセージの最大数。 既定値は 64 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プール サイズを大きくすると、システムでは、比較的大きい作業セットで、アクティビティの急増に対する許容度が高まります。 `WebMessageEncodingElement` は、プレーンテキストの XML、JSON、および生のバイナリの読み取りと書き込みができる複合エンコーダーを構成します。 このエンコーダーは、3 つの独立したエンコーダーから構成されます。 この設定は、個々のエンコーダーのリーダーの最大数に影響します。  
+  
+   
+  
+## Examples  
+  
+```  
+static void Main(string[] args)  
+{  
+    WebMessageEncodingElement webMEE = new WebMessageEncodingElement();  
+    int maxReadPoolSize = webMEE.MaxReadPoolSize;  
+    Console.WriteLine("The MaxReadPoolSize is: {0}", maxReadPoolSize);  
+    maxReadPoolSize = 128;  
+    Console.WriteLine("The MaxReadPoolSize has been changed to: {0}", maxReadPoolSize);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxWritePoolSize">
+      <MemberSignature Language="C#" Value="public int MaxWritePoolSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxWritePoolSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.WebMessageEncodingElement.MaxWritePoolSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxWritePoolSize", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいライターを割り当てずに同時に送信可能なメッセージの最大数を指定する値を取得または設定します。</summary>
+        <value>新しいライターを割り当てずに同時に送信できるメッセージの最大数。 既定値は 16 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プール サイズを大きくすると、システムでは、比較的大きい作業セットで、アクティビティの急増に対する許容度が高まります。 `WebMessageEncodingElement` は、プレーンテキストの XML、JSON、および生のバイナリの読み取りと書き込みができる複合エンコーダーを構成します。 このエンコーダーは、3 つの独立したエンコーダーから構成されます。 この設定は、個々のエンコーダーのライターの最大数に影響します。  
+  
+   
+  
+## Examples  
+  
+```  
+static void Main(string[] args)  
+{  
+   int maxWritePoolSize = webMEE.MaxWritePoolSize;  
+   Console.WriteLine("The MaxWritePoolSize is: {0}", maxWritePoolSize);  
+   maxWritePoolSize = 48;  
+   Console.WriteLine("The MaxWritePoolSize has been changed to: {0}", maxWritePoolSize);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReaderQuotas">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement ReaderQuotas { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement ReaderQuotas" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.WebMessageEncodingElement.ReaderQuotas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("readerQuotas")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングを使用して設定されるエンドポイントにより処理可能な、SOAP メッセージの複雑さに対する制約を取得または設定します。</summary>
+        <value>複雑さの制約を指定する <see cref="T:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複雑さの制約には、要素の最大深度、またはメッセージ内の文字列コンテンツの最大長などの項目が含まれます。 制約は、メッセージの複雑さを使用してエンドポイント処理リソースを停滞させるサービス拒否 (DOS) 型の攻撃から保護します。  
+  
+   
+  
+## Examples  
+  
+```  
+XmlDictionaryReaderQuotasElement webMessageReaderQuotasElement = webMEE.ReaderQuotas;  
+Console.WriteLine("The max depth of the reader Quotas is: {0}", webMessageReaderQuotasElement.MaxDepth);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebContentTypeMapperType">
+      <MemberSignature Language="C#" Value="public string WebContentTypeMapperType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string WebContentTypeMapperType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.WebMessageEncodingElement.WebContentTypeMapperType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("webContentTypeMapperType", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信メッセージのコンテンツ タイプのマップ先の形式を指定する <see cref="T:System.ServiceModel.Channels.WebContentTypeMapper" /> の型名を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Channels.WebContentTypeMapper" /> の型名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、形式に対するコンテンツ タイプのマップ方法をオーバーライドするために、Web メッセージ エンコーダーにより使用されるプログラミング モデルの拡張ポイントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding WriteEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding WriteEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.WebMessageEncodingElement.WriteEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ServiceModel.Configuration.EncodingConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("writeEncoding", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングでメッセージの発行に使用される文字セット エンコーディングを取得または設定します。</summary>
+        <value>バインディングでメッセージを送り出すために使用される文字セット エンコーディングを指定する、有効な <see cref="T:System.Text.Encoding" /> 値。 既定値は、<see cref="T:System.Text.UTF8Encoding" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+  
+```  
+using System;  
+using System.Text;  
+using System.ServiceModel;  
+using System.ServiceModel.Web;  
+using System.ServiceModel.Configuration;  
+  
+static void Main()  
+{  
+    Encoding webMessageEncoding = webMEE.WriteEncoding;  
+    Console.WriteLine("The write encoding is: {0}",     webMessageEncoding);  
+    webMessageEncoding = UnicodeEncoding.Unicode;  
+    Console.WriteLine("The write encoding has been changed to: {0}", webMessageEncoding);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

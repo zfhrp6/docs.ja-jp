@@ -1,0 +1,135 @@
+<Type Name="IWebProxyScript" FullName="System.Net.IWebProxyScript">
+  <TypeSignature Language="C#" Value="public interface IWebProxyScript" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebProxyScript" />
+  <TypeSignature Language="DocId" Value="T:System.Net.IWebProxyScript" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.WebProxy</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>自動プロキシ検出用のスクリプトを実行する基本インターフェイスを提供します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IWebProxyScript.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スクリプトを閉じます。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public bool Load (Uri scriptLocation, string script, Type helperType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Load(class System.Uri scriptLocation, string script, class System.Type helperType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IWebProxyScript.Load(System.Uri,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptLocation" Type="System.Uri" />
+        <Parameter Name="script" Type="System.String" />
+        <Parameter Name="helperType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="scriptLocation">内部使用のみ。</param>
+        <param name="script">内部使用のみ。</param>
+        <param name="helperType">内部使用のみ。</param>
+        <summary>スクリプトを読み込みます。</summary>
+        <returns>A<see cref="T:System.Boolean" />スクリプトが正常に読み込まれるかどうかを示すです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public string Run (string url, string host);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Run(string url, string host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IWebProxyScript.Run(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="host" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">内部使用のみ。</param>
+        <param name="host">内部使用のみ。</param>
+        <summary>スクリプトを実行します。</summary>
+        <returns><see cref="T:System.String" />。  
+  
+ 内部専用の値が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Net.HttpWebRequest>オブジェクトの実行、プロキシが送信先 URL に到達するために必要かどうかを検出するために WPAD (Web プロキシ自動検出) プロトコルを実行する必要があります。 このプロセス中にシステムをダウンロードおよびメモリ内 PAC (プロキシ自動構成) スクリプトをコンパイルしようし、PAC 仕様に従って FindProxyForURL 関数を実行します。  
+  
+ これを行うときに、読み取りアクセス許可と最も重要なは、実行に使用する許可しない、UI をこの新しいアプリケーション ドメインに、アプリケーション内の内部のアプリケーション ドメインが作成されます。 プロキシと FindProxyForURL javascript 関数を実行するの評価は、システムは可能性があります、PAC 仕様に従っていくつかのヘルパー関数を実行する必要があります。 この処理中に新しいアプリケーション ドメインのコンテキストで行われます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

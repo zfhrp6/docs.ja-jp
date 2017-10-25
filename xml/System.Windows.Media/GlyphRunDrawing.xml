@@ -1,0 +1,275 @@
+<Type Name="GlyphRunDrawing" FullName="System.Windows.Media.GlyphRunDrawing">
+  <TypeSignature Language="C#" Value="public sealed class GlyphRunDrawing : System.Windows.Media.Drawing" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GlyphRunDrawing extends System.Windows.Media.Drawing" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.GlyphRunDrawing" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Drawing</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see cref="T:System.Windows.Media.Drawing" />を描画するオブジェクト、<see cref="T:System.Windows.Media.GlyphRun" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GlyphRun>オブジェクトは、1 つのサイズで、1 つの描画スタイルを使用して 1 つのフォントの書体を 1 つのグリフのシーケンスを表します。  
+  
+ <xref:System.Windows.Media.GlyphRun>グリフ インデックスと個々 のグリフの位置など、フォントの詳細が含まれています。 さらに、<xref:System.Windows.Media.GlyphRun>実行が生成された、元の Unicode コード ポイントを含むグリフ バッファーに文字がマッピングの情報、および文字単位のグリフのフラグをオフセットします。  
+  
+ 内の各グリフ、<xref:System.Windows.Media.GlyphRun>指定は、他のメトリックを定義<xref:System.Windows.Documents.Glyphs>です。 次の図では、2 つの異なるグリフ文字のさまざまな印刷用品質を定義しています。  
+  
+ ![グリフ単位のダイアグラム](~/add/media/glyph-example.png "グリフ単位のダイアグラム")  
+2 つの種類のグリフの文字のさまざまな文字体裁特性  
+  
+ **Freezable 機能:** A<xref:System.Windows.Media.GlyphRunDrawing>の種類は、<xref:System.Windows.Freezable>オブジェクトし、パフォーマンスを向上させるために固定することができます。 について<xref:System.Windows.Freezable>の凍結と、複製などの機能を参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ **注意:** <xref:System.Windows.Media.GlyphRunDrawing>オブジェクトは部分的な信頼での実行をサポートしていません。 アプリケーションが使用する完全な信頼アクセス許可が必要<xref:System.Windows.Media.GlyphRunDrawing>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.Windows.Media.GlyphRunDrawing> "Hello World"にテキストを描画します。  
+  
+ [!code-csharp[DrawingMiscSnippets_snip#GlyphRunDrawingExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/GlyphRunDrawingExample.cs#glyphrundrawingexampleinline)]
+ [!code-xaml[DrawingMiscSnippets_snip#GlyphRunDrawingExampleInline](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/GlyphRunExample.xaml#glyphrundrawingexampleinline)]  
+  
+ A<xref:System.Windows.Media.GlyphRun>は固定形式のドキュメントの表示と印刷のシナリオで使用するためのもので、低レベルのオブジェクト。 画面にテキストを描画する簡単な方法を使用して、<xref:System.Windows.Controls.Label>または<xref:System.Windows.Controls.TextBlock>です。 詳細については<xref:System.Windows.Media.GlyphRun>を参照してください、 [GlyphRun オブジェクトとグリフ要素の概要を](~/docs/framework/wpf/advanced/introduction-to-the-glyphrun-object-and-glyphs-element.md)の概要です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GlyphRunDrawing ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphRunDrawing.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.GlyphRunDrawing" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GlyphRunDrawing (System.Windows.Media.Brush foregroundBrush, System.Windows.Media.GlyphRun glyphRun);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Brush foregroundBrush, class System.Windows.Media.GlyphRun glyphRun) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphRunDrawing.#ctor(System.Windows.Media.Brush,System.Windows.Media.GlyphRun)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="foregroundBrush" Type="System.Windows.Media.Brush" />
+        <Parameter Name="glyphRun" Type="System.Windows.Media.GlyphRun" />
+      </Parameters>
+      <Docs>
+        <param name="foregroundBrush">前景ブラシを使用する、<see cref="T:System.Windows.Media.GlyphRunDrawing" />です。</param>
+        <param name="glyphRun"><see cref="T:System.Windows.Media.GlyphRun" />でこれを使用する<see cref="T:System.Windows.Media.GlyphRunDrawing" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.GlyphRunDrawing" />前景ブラシを指定することでクラスと<see cref="T:System.Windows.Media.GlyphRun" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.GlyphRunDrawing Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.GlyphRunDrawing Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphRunDrawing.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GlyphRunDrawing</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.GlyphRunDrawing" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.GlyphRunDrawing CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.GlyphRunDrawing CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphRunDrawing.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GlyphRunDrawing</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.GlyphRunDrawing" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphRunDrawing.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundBrush">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush ForegroundBrush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush ForegroundBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphRunDrawing.ForegroundBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の前景ブラシ、<see cref="T:System.Windows.Media.GlyphRunDrawing" />です。</summary>
+        <value>描画するブラシ、<see cref="T:System.Windows.Media.GlyphRun" />です。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ForegroundBrush"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.GlyphRunDrawing.ForegroundBrushProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.Windows.Media.GlyphRunDrawing> "Hello World"にテキストを描画します。  
+  
+ [!code-csharp[DrawingMiscSnippets_snip#GlyphRunDrawingExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/GlyphRunDrawingExample.cs#glyphrundrawingexampleinline)]
+ [!code-xaml[DrawingMiscSnippets_snip#GlyphRunDrawingExampleInline](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/GlyphRunExample.xaml#glyphrundrawingexampleinline)]  
+  
+ A<xref:System.Windows.Media.GlyphRun>は固定形式のドキュメントの表示と印刷のシナリオで使用するためのもので、低レベルのオブジェクト。 画面にテキストを描画する簡単な方法を使用して、<xref:System.Windows.Controls.Label>または<xref:System.Windows.Controls.TextBlock>です。 詳細については<xref:System.Windows.Media.GlyphRun>を参照してください、 [GlyphRun オブジェクトとグリフ要素の概要を](~/docs/framework/wpf/advanced/introduction-to-the-glyphrun-object-and-glyphs-element.md)の概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForegroundBrushProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ForegroundBrushProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ForegroundBrushProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GlyphRunDrawing.ForegroundBrushProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.GlyphRunDrawing.ForegroundBrush" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlyphRun">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.GlyphRun GlyphRun { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.GlyphRun GlyphRun" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphRunDrawing.GlyphRun" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GlyphRun</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.GlyphRun" />描画するテキストを記述します。</summary>
+        <value><see cref="T:System.Windows.Media.GlyphRun" />描画するテキストを記述します。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_GlyphRun"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.GlyphRunDrawing.GlyphRunProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.Windows.Media.GlyphRunDrawing> "Hello World"にテキストを描画します。  
+  
+ [!code-csharp[DrawingMiscSnippets_snip#GlyphRunDrawingExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/GlyphRunDrawingExample.cs#glyphrundrawingexampleinline)]
+ [!code-xaml[DrawingMiscSnippets_snip#GlyphRunDrawingExampleInline](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/GlyphRunExample.xaml#glyphrundrawingexampleinline)]  
+  
+ A<xref:System.Windows.Media.GlyphRun>は固定形式のドキュメントの表示と印刷のシナリオで使用するためのもので、低レベルのオブジェクト。 画面にテキストを描画する簡単な方法を使用して、<xref:System.Windows.Controls.Label>または<xref:System.Windows.Controls.TextBlock>です。 詳細については<xref:System.Windows.Media.GlyphRun>を参照してください、 [GlyphRun オブジェクトとグリフ要素の概要を](~/docs/framework/wpf/advanced/introduction-to-the-glyphrun-object-and-glyphs-element.md)の概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlyphRunProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty GlyphRunProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty GlyphRunProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GlyphRunDrawing.GlyphRunProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.GlyphRunDrawing.GlyphRun" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

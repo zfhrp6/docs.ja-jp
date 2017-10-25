@@ -1,0 +1,116 @@
+<Type Name="SelectedGridItemChangedEventArgs" FullName="System.Windows.Forms.SelectedGridItemChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class SelectedGridItemChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SelectedGridItemChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.SelectedGridItemChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.PropertyGrid.SelectedGridItemChanged" />のイベント、<see cref="T:System.Windows.Forms.PropertyGrid" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.PropertyGrid.SelectedGridItemChanged> 、ユーザーが変更されたときにイベントが発生した、<xref:System.Windows.Forms.GridItem>で選択した、<xref:System.Windows.Forms.PropertyGrid>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.PropertyGrid.SelectedGridItemChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.PropertyGrid>という`PropertyGrid1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.PropertyGrid.SelectedGridItemChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#533](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#533)]
+ [!code-vb[System.Windows.Forms.EventExamples#533](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#533)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SelectedGridItemChangedEventArgs (System.Windows.Forms.GridItem oldSel, System.Windows.Forms.GridItem newSel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.GridItem oldSel, class System.Windows.Forms.GridItem newSel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectedGridItemChangedEventArgs.#ctor(System.Windows.Forms.GridItem,System.Windows.Forms.GridItem)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="oldSel" Type="System.Windows.Forms.GridItem" />
+        <Parameter Name="newSel" Type="System.Windows.Forms.GridItem" />
+      </Parameters>
+      <Docs>
+        <param name="oldSel">以前に選択したグリッド項目。</param>
+        <param name="newSel">新しく選択したグリッド項目。</param>
+        <summary><see cref="T:System.Windows.Forms.SelectedGridItemChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSelection">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.GridItem NewSelection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.GridItem NewSelection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SelectedGridItemChangedEventArgs.NewSelection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.GridItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しく選択した取得<see cref="T:System.Windows.Forms.GridItem" />です。</summary>
+        <value>新しい <see cref="T:System.Windows.Forms.GridItem" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.PropertyGrid.SelectedGridItemChanged?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.PropertyGrid>という`PropertyGrid1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.PropertyGrid.SelectedGridItemChanged?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#533](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#533)]
+ [!code-vb[System.Windows.Forms.EventExamples#533](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#533)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldSelection">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.GridItem OldSelection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.GridItem OldSelection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SelectedGridItemChangedEventArgs.OldSelection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.GridItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>以前に選択した取得<see cref="T:System.Windows.Forms.GridItem" />です。</summary>
+        <value>古い<see cref="T:System.Windows.Forms.GridItem" />です。 これは、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.PropertyGrid.SelectedGridItemChanged?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.PropertyGrid>という`PropertyGrid1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.PropertyGrid.SelectedGridItemChanged?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#533](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#533)]
+ [!code-vb[System.Windows.Forms.EventExamples#533](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#533)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

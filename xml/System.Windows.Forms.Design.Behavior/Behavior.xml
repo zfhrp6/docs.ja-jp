@@ -1,0 +1,613 @@
+<Type Name="Behavior" FullName="System.Windows.Forms.Design.Behavior.Behavior">
+  <TypeSignature Language="C#" Value="public abstract class Behavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Behavior extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.Behavior.Behavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />で管理されているオブジェクト、<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、任意の種類の選択、ドラッグを含む、ユーザー インターフェイスの動作の作成に拡張でき、動作を変更できます。  
+  
+ 詳細については、次を参照してください。[動作サービスの概要](http://msdn.microsoft.com/library/7c60cc41-4324-46b5-b444-b39eda7cb33f)です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Design.Behavior.Behavior>型が関連付けられる必要があります、<xref:System.Windows.Forms.Design.Behavior.Glyph>型です。 グリフに依存しない動作がサポートされていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を基に独自のクラスを作成する方法を示しています、<xref:System.Windows.Forms.Design.Behavior.Behavior>ユーザーのクリックに応答するクラス。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.Design.Behavior.BehaviorService#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/cpp/Form1.cpp#5)]
+ [!code-csharp[System.Windows.Forms.Design.Behavior.BehaviorService#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/CS/Form1.cs#5)]
+ [!code-vb[System.Windows.Forms.Design.Behavior.BehaviorService#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/VB/Form1.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Behavior ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.Design.Behavior.Behavior" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Forms.Design.Behavior.Behavior> クラスの新しいインスタンスを初期化する方法を次のコード例に示します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.Design.Behavior.BehaviorService#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/cpp/Form1.cpp#7)]
+ [!code-csharp[System.Windows.Forms.Design.Behavior.BehaviorService#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/CS/Form1.cs#7)]
+ [!code-vb[System.Windows.Forms.Design.Behavior.BehaviorService#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.BehaviorService/VB/Form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Behavior (bool callParentBehavior, System.Windows.Forms.Design.Behavior.BehaviorService behaviorService);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(bool callParentBehavior, class System.Windows.Forms.Design.Behavior.BehaviorService behaviorService) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.#ctor(System.Boolean,System.Windows.Forms.Design.Behavior.BehaviorService)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callParentBehavior" Type="System.Boolean" />
+        <Parameter Name="behaviorService" Type="System.Windows.Forms.Design.Behavior.BehaviorService" />
+      </Parameters>
+      <Docs>
+        <param name="callParentBehavior">
+          <see langword="true" />場合はそれが存在する場合、親動作を呼び出す必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <param name="behaviorService">使用する <see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />クラスに、指定された<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 管理されている動作スタック上の次の動作の親動作は、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。 場合、`callParentBehavior`パラメーターは`true`、`behaviorService`パラメーターがある必要がありますいない`null`です。  
+  
+ `callParentBehavior`示すかどうか、ベース<xref:System.Windows.Forms.Design.Behavior.Behavior>クラスが親動作を呼び出すし、ようにする必要があります、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>正しい親動作を選択します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="callParentBehavior" />is <see langword="true" />, and <paramref name="behaviorService" /> is <see langword="null" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cursor">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.Cursor Cursor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Cursor Cursor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.Behavior.Behavior.Cursor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この動作を表示するか、カーソルを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Cursor" />この動作を表示するか、カーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableAllCommands">
+      <MemberSignature Language="C#" Value="public virtual bool DisableAllCommands { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DisableAllCommands" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.Behavior.Behavior.DisableAllCommands" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか<see cref="T:System.ComponentModel.Design.MenuCommand" />オブジェクトが無効にする必要があります。</summary>
+        <value>
+          <see langword="true" />すべて<see cref="T:System.ComponentModel.Design.MenuCommand" />、デザイナーを受け取るオブジェクト設定される状態を持つ必要があります<c>有効 = false</c>ときにこの<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />がアクティブであるそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`true`値を<xref:System.Windows.Forms.Design.Behavior.Behavior.DisableAllCommands%2A>にプロパティを示します、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>をすべて<xref:System.ComponentModel.Design.MenuCommand>デザイナーを受け取るオブジェクトはこの動作は、アクティブなときに無効になっている状態である必要があります。  
+  
+ <xref:System.Windows.Forms.Design.Behavior.Behavior.DisableAllCommands%2A>プロパティの動作と組み合わせて、<xref:System.Windows.Forms.Design.Behavior.Behavior.FindCommand%2A>メソッドの動作、グリフ間の相互作用をカスタマイズできます。 次の表への呼び出しの結果を要約<xref:System.Windows.Forms.Design.Behavior.Behavior.FindCommand%2A>、特定の<xref:System.ComponentModel.Design.MenuCommand>します。  
+  
+||<xref:System.Windows.Forms.Design.Behavior.Behavior.DisableAllCommands%2A> は `true` です|<xref:System.Windows.Forms.Design.Behavior.Behavior.DisableAllCommands%2A> は `false` です|  
+|-|-|-|  
+|ヒット テスト グリフが割り当てられている動作|場合、 <xref:System.ComponentModel.Design.MenuCommand> 、指定した`command ID`で見つかった、 <xref:System.ComponentModel.Design.IMenuCommandService>、その<xref:System.ComponentModel.Design.MenuCommand>は無効であるが返されます。 それ以外の場合、`null`が返されます。|<xref:System.ComponentModel.Design.MenuCommandService.FindCommand%2A>動作で呼び出されるとし、見つかった場合は、動作の<xref:System.ComponentModel.Design.MenuCommand>が返されます。 それ以外の場合の結果<xref:System.ComponentModel.Design.IMenuCommandService.FindCommand%2A?displayProperty=nameWithType>、指定した`command ID`が返されます。|  
+|ヒット テストのグリフに割り当てられている動作がありません。|結果<xref:System.ComponentModel.Design.IMenuCommandService.FindCommand%2A?displayProperty=nameWithType>、指定した`command ID`が返されます。|結果<xref:System.ComponentModel.Design.IMenuCommandService.FindCommand%2A?displayProperty=nameWithType>、指定した`command ID`が返されます。|  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>既定の実装を常に返します<see langword="false" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FindCommand">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.Design.MenuCommand FindCommand (System.ComponentModel.Design.CommandID commandId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.MenuCommand FindCommand(class System.ComponentModel.Design.CommandID commandId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.FindCommand(System.ComponentModel.Design.CommandID)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.MenuCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandId" Type="System.ComponentModel.Design.CommandID" />
+      </Parameters>
+      <Docs>
+        <param name="commandId"><see cref="T:System.ComponentModel.Design.CommandID" /> オブジェクト。</param>
+        <summary>コマンドを受け取ります。</summary>
+        <returns><see cref="T:System.ComponentModel.Design.MenuCommand" />。 既定では、<see cref="M:System.Windows.Forms.Design.Behavior.Behavior.FindCommand(System.ComponentModel.Design.CommandID)" />返します<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.Behavior.FindCommand%2A>からメソッドを呼び出した、<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。 機会を提供、<xref:System.Windows.Forms.Design.Behavior.Behavior>を返す独自のカスタム<xref:System.ComponentModel.Design.MenuCommand>これにより、このメッセージを受信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragDrop">
+      <MemberSignature Language="C#" Value="public virtual void OnDragDrop (System.Windows.Forms.Design.Behavior.Glyph g, System.Windows.Forms.DragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnDragDrop(class System.Windows.Forms.Design.Behavior.Glyph g, class System.Windows.Forms.DragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnDragDrop(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.DragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="e" Type="System.Windows.Forms.DragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />をドラッグ アンド ドロップの動作を呼び出す対象となるオブジェクト。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
+        <summary>カスタムのドラッグ アンド ドロップの動作を許可します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="M:System.Windows.Forms.Design.Behavior.Behavior.OnDragDrop(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.DragEventArgs)" />メソッドできるように、<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />独自のドラッグ アンド ドロップの規則を指定できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragEnter">
+      <MemberSignature Language="C#" Value="public virtual void OnDragEnter (System.Windows.Forms.Design.Behavior.Glyph g, System.Windows.Forms.DragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnDragEnter(class System.Windows.Forms.Design.Behavior.Glyph g, class System.Windows.Forms.DragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnDragEnter(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.DragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="e" Type="System.Windows.Forms.DragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />を呼び出す対象ドラッグ動作をします。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
+        <summary>動作を許可カスタム ドラッグします。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="M:System.Windows.Forms.Design.Behavior.Behavior.OnDragEnter(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.DragEventArgs)" />メソッドできるように、<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />独自 drag-enter 規則を指定できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragLeave">
+      <MemberSignature Language="C#" Value="public virtual void OnDragLeave (System.Windows.Forms.Design.Behavior.Glyph g, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnDragLeave(class System.Windows.Forms.Design.Behavior.Glyph g, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnDragLeave(System.Windows.Forms.Design.Behavior.Glyph,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />をドラッグ動作を呼び出します。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
+        <summary>カスタム ドラッグ動作を許可します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="M:System.Windows.Forms.Design.Behavior.Behavior.OnDragLeave(System.Windows.Forms.Design.Behavior.Glyph,System.EventArgs)" />メソッドできるように、<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />独自ドラッグままにしてルールを指定できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragOver">
+      <MemberSignature Language="C#" Value="public virtual void OnDragOver (System.Windows.Forms.Design.Behavior.Glyph g, System.Windows.Forms.DragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnDragOver(class System.Windows.Forms.Design.Behavior.Glyph g, class System.Windows.Forms.DragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnDragOver(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.DragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="e" Type="System.Windows.Forms.DragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />をドラッグ動作を呼び出します。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DragEventArgs" />。</param>
+        <summary>カスタムのドラッグ動作を許可します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="M:System.Windows.Forms.Design.Behavior.Behavior.OnDragOver(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.DragEventArgs)" />メソッドできるように、<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />独自ドラッグ ルールを指定できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGiveFeedback">
+      <MemberSignature Language="C#" Value="public virtual void OnGiveFeedback (System.Windows.Forms.Design.Behavior.Glyph g, System.Windows.Forms.GiveFeedbackEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnGiveFeedback(class System.Windows.Forms.Design.Behavior.Glyph g, class System.Windows.Forms.GiveFeedbackEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnGiveFeedback(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.GiveFeedbackEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="e" Type="System.Windows.Forms.GiveFeedbackEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />をドラッグ アンド ドロップの動作を呼び出します。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.GiveFeedbackEventArgs" />。</param>
+        <summary>ドラッグ アンド ドロップ フィードバックがカスタム動作を許可します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="M:System.Windows.Forms.Design.Behavior.Behavior.OnGiveFeedback(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.GiveFeedbackEventArgs)" />メソッドできるように、<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />独自のドラッグ アンド ドロップの規則を指定できます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoseCapture">
+      <MemberSignature Language="C#" Value="public virtual void OnLoseCapture (System.Windows.Forms.Design.Behavior.Glyph g, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnLoseCapture(class System.Windows.Forms.Design.Behavior.Glyph g, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnLoseCapture(System.Windows.Forms.Design.Behavior.Glyph,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />をドラッグ アンド ドロップの動作を呼び出します。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>マウスのキャプチャを失ったときに、装飾ウィンドウによって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動作は自体の動作のスタックにプッシュして動作サービスを通じてマウスのキャプチャを要求することができます、<xref:System.Windows.Forms.Design.Behavior.BehaviorService.PushCaptureBehavior%2A>メソッドです。 を通じて通知する場合は、<xref:System.Windows.Forms.Design.Behavior.Behavior.OnLoseCapture%2A>メソッド キャプチャが失われるとします。 一般に、動作自体から削除スタックこの時点でします。 キャプチャは、次の操作のいずれかが発生したときに失われます。  
+  
+-   他のユーザーは、キャプチャを要求します。  
+  
+-   別の動作がプッシュされます。  
+  
+-   この動作は削除されます。  
+  
+ このような場合は、の各<xref:System.Windows.Forms.Design.Behavior.Behavior.OnLoseCapture%2A>で動作が呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDoubleClick">
+      <MemberSignature Language="C#" Value="public virtual bool OnMouseDoubleClick (System.Windows.Forms.Design.Behavior.Glyph g, System.Windows.Forms.MouseButtons button, System.Drawing.Point mouseLoc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool OnMouseDoubleClick(class System.Windows.Forms.Design.Behavior.Glyph g, valuetype System.Windows.Forms.MouseButtons button, valuetype System.Drawing.Point mouseLoc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnMouseDoubleClick(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.MouseButtons,System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="button" Type="System.Windows.Forms.MouseButtons" />
+        <Parameter Name="mouseLoc" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />。</param>
+        <param name="button">A<see cref="T:System.Windows.Forms.MouseButtons" />クリックしてされたボタンを示す値。</param>
+        <param name="mouseLoc">クリックが発生した場所です。</param>
+        <summary>ダブルクリックしてメッセージの装飾ウィンドウに入ったときに呼び出されます、<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />です。</summary>
+        <returns>
+          メッセージが処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.Behavior.OnMouseDoubleClick%2A>メソッドをダブルクリックしてメッセージが入ったときに、`WndProc`の装飾ウィンドウの<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。 メッセージがここでは、最上位に渡される最初<xref:System.Windows.Forms.Design.Behavior.Behavior>ビヘイビアー スタックにします。 返す`true`によってメッセージが処理されたことを示しますこのメソッドから、<xref:System.Windows.Forms.Design.Behavior.Behavior>処理を続行できないとします。 ここでは、メッセージは、適切な動作に送信されます。  
+  
+   
+  
+## Examples  
+ 次のコード例をダブルクリックしてメッセージを処理する方法を示します。 完全なコードの一覧については、次を参照してください。[する方法: コントロールのデザイン モードの動作と外観を拡張](http://msdn.microsoft.com/library/68f85054-2253-47f5-a4f2-3f1ac8c9f27b)です。  
+  
+ [!code-csharp[System.Windows.Forms.Design.Behavior.Glyph.MarginBorderAnchorGlyphs#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.Glyph.MarginBorderAnchorGlyphs/CS/DesignerDemoControl.cs#10)]
+ [!code-vb[System.Windows.Forms.Design.Behavior.Glyph.MarginBorderAnchorGlyphs#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Design.Behavior.Glyph.MarginBorderAnchorGlyphs/VB/DesignerDemoControl.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDown">
+      <MemberSignature Language="C#" Value="public virtual bool OnMouseDown (System.Windows.Forms.Design.Behavior.Glyph g, System.Windows.Forms.MouseButtons button, System.Drawing.Point mouseLoc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool OnMouseDown(class System.Windows.Forms.Design.Behavior.Glyph g, valuetype System.Windows.Forms.MouseButtons button, valuetype System.Drawing.Point mouseLoc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnMouseDown(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.MouseButtons,System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="button" Type="System.Windows.Forms.MouseButtons" />
+        <Parameter Name="mouseLoc" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />。</param>
+        <param name="button">A<see cref="T:System.Windows.Forms.MouseButtons" />クリックしてされたボタンを示す値。</param>
+        <param name="mouseLoc">クリックが発生した場所です。</param>
+        <summary>任意のマウス ダウン メッセージの装飾ウィンドウに入ったときに呼び出されます、<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />です。</summary>
+        <returns>
+          メッセージが処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.Behavior.OnMouseDoubleClick%2A>メソッドは任意のマウス ダウン メッセージが入ったときに、`WndProc`の装飾ウィンドウの<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。 メッセージがここでは、最上位に渡される最初<xref:System.Windows.Forms.Design.Behavior.Behavior>ビヘイビアー スタックにします。 返す`true`によってメッセージが処理されたことを示しますこのメソッドから、<xref:System.Windows.Forms.Design.Behavior.Behavior>処理を続行できないとします。 ここでは、メッセージは、適切な動作に送信されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseEnter">
+      <MemberSignature Language="C#" Value="public virtual bool OnMouseEnter (System.Windows.Forms.Design.Behavior.Glyph g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool OnMouseEnter(class System.Windows.Forms.Design.Behavior.Glyph g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnMouseEnter(System.Windows.Forms.Design.Behavior.Glyph)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />。</param>
+        <summary>Mouse-enter メッセージの装飾ウィンドウに入ったときに呼び出されます、<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />です。</summary>
+        <returns>
+          メッセージが処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.Behavior.OnMouseDoubleClick%2A> Mouse-enter メッセージが入ったときに、メソッドが呼び出されます、`WndProc`の装飾ウィンドウの<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。 ここでは、メッセージは、適切な動作に送信されます。  
+  
+ マウス ポインターの場所が別に対し肯定的なヒット テストの場合<xref:System.Windows.Forms.Design.Behavior.Glyph>で以前のヒット テストよりもこのメソッドが呼び出されます、<xref:System.Windows.Forms.Design.Behavior.Behavior>に関連付けられている、<xref:System.Windows.Forms.Design.Behavior.Glyph>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseHover">
+      <MemberSignature Language="C#" Value="public virtual bool OnMouseHover (System.Windows.Forms.Design.Behavior.Glyph g, System.Drawing.Point mouseLoc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool OnMouseHover(class System.Windows.Forms.Design.Behavior.Glyph g, valuetype System.Drawing.Point mouseLoc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnMouseHover(System.Windows.Forms.Design.Behavior.Glyph,System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="mouseLoc" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />。</param>
+        <param name="mouseLoc">ホバーが発生した場所です。</param>
+        <summary>任意のマウス静止メッセージの装飾ウィンドウに入ったときに呼び出されます、<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />です。</summary>
+        <returns>
+          メッセージが処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.Behavior.OnMouseDoubleClick%2A>メソッドは任意のマウス静止メッセージが入ったときに、`WndProc`の装飾ウィンドウの<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。 メッセージがここでは、最上位に渡される最初<xref:System.Windows.Forms.Design.Behavior.Behavior>ビヘイビアー スタックにします。 返す`true`によってメッセージが処理されたことを示しますこのメソッドから、<xref:System.Windows.Forms.Design.Behavior.Behavior>処理を続行できないとします。 ここでは、メッセージは、適切な動作に送信されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeave">
+      <MemberSignature Language="C#" Value="public virtual bool OnMouseLeave (System.Windows.Forms.Design.Behavior.Glyph g);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool OnMouseLeave(class System.Windows.Forms.Design.Behavior.Glyph g) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnMouseLeave(System.Windows.Forms.Design.Behavior.Glyph)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />。</param>
+        <summary>マウスのままにしてメッセージの装飾ウィンドウに入ったときに呼び出されます、<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />です。</summary>
+        <returns>
+          メッセージが処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.Behavior.OnMouseDoubleClick%2A>メソッドは、マウスのままにメッセージが入ったときに、`WndProc`の装飾ウィンドウの<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。 ここでは、メッセージは、適切な動作に送信されます。  
+  
+ マウス ポインターが、対し肯定的なヒット テストを離れるとき<xref:System.Windows.Forms.Design.Behavior.Glyph>、有効な<xref:System.Windows.Forms.Design.Behavior.Behavior>、このメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseMove">
+      <MemberSignature Language="C#" Value="public virtual bool OnMouseMove (System.Windows.Forms.Design.Behavior.Glyph g, System.Windows.Forms.MouseButtons button, System.Drawing.Point mouseLoc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool OnMouseMove(class System.Windows.Forms.Design.Behavior.Glyph g, valuetype System.Windows.Forms.MouseButtons button, valuetype System.Drawing.Point mouseLoc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnMouseMove(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.MouseButtons,System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="button" Type="System.Windows.Forms.MouseButtons" />
+        <Parameter Name="mouseLoc" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />。</param>
+        <param name="button">A<see cref="T:System.Windows.Forms.MouseButtons" />クリックしてされたボタンを示す値。</param>
+        <param name="mouseLoc">移動が発生した場所です。</param>
+        <summary>任意のマウス移動メッセージの装飾ウィンドウに入ったときに呼び出されます、<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />です。</summary>
+        <returns>
+          メッセージが処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.Behavior.OnMouseDoubleClick%2A>メソッドは、任意のマウス移動メッセージに入ったときに呼び出されますが、`WndProc`の装飾ウィンドウの<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。 メッセージがここでは、最上位に渡される最初<xref:System.Windows.Forms.Design.Behavior.Behavior>ビヘイビアー スタックにします。 返す`true`によってメッセージが処理されたことを示しますこのメソッドから、<xref:System.Windows.Forms.Design.Behavior.Behavior>処理を続行できないとします。 ここでは、メッセージは、適切な動作に送信されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseUp">
+      <MemberSignature Language="C#" Value="public virtual bool OnMouseUp (System.Windows.Forms.Design.Behavior.Glyph g, System.Windows.Forms.MouseButtons button);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool OnMouseUp(class System.Windows.Forms.Design.Behavior.Glyph g, valuetype System.Windows.Forms.MouseButtons button) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnMouseUp(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.MouseButtons)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="button" Type="System.Windows.Forms.MouseButtons" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />。</param>
+        <param name="button">A<see cref="T:System.Windows.Forms.MouseButtons" />クリックしてされたボタンを示す値。</param>
+        <summary>マウスをメッセージの装飾ウィンドウに入ったときに呼び出されます、<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />です。</summary>
+        <returns>
+          メッセージが処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.Behavior.OnMouseDoubleClick%2A>メソッドは任意のマウス アップ メッセージが入ったときに、`WndProc`の装飾ウィンドウの<xref:System.Windows.Forms.Design.Behavior.BehaviorService>です。 メッセージがここでは、最上位に渡される最初<xref:System.Windows.Forms.Design.Behavior.Behavior>ビヘイビアー スタックにします。 返す`true`によってメッセージが処理されたことを示しますこのメソッドから、<xref:System.Windows.Forms.Design.Behavior.Behavior>処理を続行できないとします。 ここでは、メッセージは、適切な動作に送信されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnQueryContinueDrag">
+      <MemberSignature Language="C#" Value="public virtual void OnQueryContinueDrag (System.Windows.Forms.Design.Behavior.Glyph g, System.Windows.Forms.QueryContinueDragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnQueryContinueDrag(class System.Windows.Forms.Design.Behavior.Glyph g, class System.Windows.Forms.QueryContinueDragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.Behavior.OnQueryContinueDrag(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.QueryContinueDragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Windows.Forms.Design.Behavior.Glyph" />
+        <Parameter Name="e" Type="System.Windows.Forms.QueryContinueDragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.QueryContinueDragEventArgs" />。</param>
+        <summary>このドラッグ アンド ドロップ イベントを装飾ウィンドウからを適切な送信<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />ヒット テストまたは<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />です。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="M:System.Windows.Forms.Design.Behavior.Behavior.OnQueryContinueDrag(System.Windows.Forms.Design.Behavior.Glyph,System.Windows.Forms.QueryContinueDragEventArgs)" />メソッドできるように、<see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />独自のドラッグ アンド ドロップの規則を指定できます。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

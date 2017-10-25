@@ -1,0 +1,138 @@
+<Type Name="EdmRelationshipNavigationPropertyAttribute" FullName="System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EdmRelationshipNavigationPropertyAttribute : System.Data.Objects.DataClasses.EdmPropertyAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EdmRelationshipNavigationPropertyAttribute extends System.Data.Objects.DataClasses.EdmPropertyAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Objects.DataClasses.EdmPropertyAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティがナビゲーション プロパティを表すことを示す属性です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute> は、クラスのナビゲーション プロパティを、概念モデルに定義されているエンティティ型のナビゲーション プロパティにリンクします。  
+  
+ この属性は、ナビゲーション プロパティの次の型に適用されます。  
+  
+-   プロパティを返す、<xref:System.Data.Objects.DataClasses.EntityCollection%601>関連するオブジェクト。  
+  
+-   プロパティの値を返す、<xref:System.Data.Objects.DataClasses.EntityReference%601>から次の例のように、関連するオブジェクトの`SalesOrderDetail`型です。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EdmRelationshipNavigationPropertyAttribute (string relationshipNamespaceName, string relationshipName, string targetRoleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string relationshipNamespaceName, string relationshipName, string targetRoleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relationshipNamespaceName" Type="System.String" />
+        <Parameter Name="relationshipName" Type="System.String" />
+        <Parameter Name="targetRoleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="relationshipNamespaceName">リレーションシップ プロパティの名前空間の名前。</param>
+        <param name="relationshipName">リレーションシップの名前。 リレーションシップ名は、名前空間で修飾された名前ではありません。</param>
+        <param name="targetRoleName">リレーションシップのもう一方の End のロール名です。</param>
+        <summary><see cref="T:System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リレーションシップ名には、名前空間を含めないでください。 たとえば、リレーションシップ名に、名前空間を追加するかどうかは '*MyNamespace*.*MyRelationship*'、エラーが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipName">
+      <MemberSignature Language="C#" Value="public string RelationshipName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelationshipName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute.RelationshipName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修飾されていないリレーションシップ名を取得します。</summary>
+        <value>リレーションシップ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リレーションシップ名は、名前空間で修飾された名前ではありません。  
+  
+ 指定されたリレーションシップの名前、`Name`の属性、`Association`概念モデルでこのリレーションシップを定義する要素。 詳細については、次を参照してください。 [Association 要素 (CSDL)](http://msdn.microsoft.com/en-us/c305169a-8af7-432f-9ba7-800a163aed41)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipNamespaceName">
+      <MemberSignature Language="C#" Value="public string RelationshipNamespaceName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelationshipNamespaceName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute.RelationshipNamespaceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション プロパティの名前空間の名前。</summary>
+        <value>名前空間の名前を表す <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リレーションシップの名前空間が指定された、`Namespace`の属性、`Schema`概念モデルでこのリレーションシップを定義するアソシエーションを含む要素です。 詳細については、次を参照してください。 [Association 要素 (CSDL)](http://msdn.microsoft.com/en-us/c305169a-8af7-432f-9ba7-800a163aed41)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetRoleName">
+      <MemberSignature Language="C#" Value="public string TargetRoleName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetRoleName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute.TargetRoleName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップのもう一方の End のロール名を取得します。</summary>
+        <value>指定されたターゲット ロールの名前、<see langword="Role" />他の属性<see langword="End" />概念モデルでこのリレーションシップを定義するアソシエーション内の要素。 詳細については、次を参照してください。 [Association 要素 (CSDL)](http://msdn.microsoft.com/en-us/c305169a-8af7-432f-9ba7-800a163aed41)です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,149 @@
+<Type Name="AlternationConverter" FullName="System.Windows.Controls.AlternationConverter">
+  <TypeSignature Language="C#" Value="public class AlternationConverter : System.Windows.Data.IValueConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AlternationConverter extends System.Object implements class System.Windows.Data.IValueConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.AlternationConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Data.IValueConverter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Values")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトのリストをインデックスとして、整数を適用することでオブジェクトとの間の整数を変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Controls.AlternationConverter>プロパティの値を交互にバインドします。 項目を検索する場合など、<xref:System.Windows.Controls.ListBox>青と明るい青色の背景を交互には、以下を実行できます。  
+  
+-   作成、<xref:System.Windows.Controls.AlternationConverter>同じように青の追加と<xref:System.Windows.Media.SolidColorBrush>明るい青<xref:System.Windows.Media.SolidColorBrush>にその<xref:System.Windows.Controls.AlternationConverter.Values%2A>プロパティです。  
+  
+-   <xref:System.Windows.Style>の<xref:System.Windows.Controls.ListBoxItem>、バインド、<xref:System.Windows.Controls.Control.Background%2A>プロパティを<xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A?displayProperty=nameWithType>を作成するコンバーターを割り当てると、<xref:System.Windows.Data.Binding.Converter%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Windows.Controls.ListBox> 2 つを使用して<xref:System.Windows.Controls.AlternationConverter>代替オブジェクト、<xref:System.Windows.Controls.Control.Background%2A>と<xref:System.Windows.Controls.Control.FontStyle%2A>項目の。  
+  
+ [!code-xaml[AlternationIndexSnippets#4](~/samples/snippets/csharp/VS_Snippets_Wpf/AlternationIndexSnippets/CS/Window1.xaml#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AlternationConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.AlternationConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.AlternationConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public object Convert (object o, Type targetType, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Convert(object o, class System.Type targetType, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.AlternationConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="o">内のオブジェクトの検索に使用する整数値、<see cref="P:System.Windows.Controls.AlternationConverter.Values" />プロパティです。</param>
+        <param name="targetType">バインディング ターゲット プロパティの型。</param>
+        <param name="parameter">使用するコンバーター パラメーター。</param>
+        <param name="culture">コンバーターで使用するカルチャ。</param>
+        <summary>内のオブジェクトに整数に変換します、 <see cref="P:System.Windows.Controls.AlternationConverter.Values" />  ボックスの一覧です。</summary>
+        <returns>オブジェクトの位置にある<paramref name="o" />内の項目の数を法<see cref="P:System.Windows.Controls.AlternationConverter.Values" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertBack">
+      <MemberSignature Language="C#" Value="public object ConvertBack (object o, Type targetType, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ConvertBack(object o, class System.Type targetType, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.AlternationConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="o">検索するオブジェクト、<see cref="P:System.Windows.Controls.AlternationConverter.Values" />プロパティです。</param>
+        <param name="targetType">バインディング ターゲット プロパティの型。</param>
+        <param name="parameter">使用するコンバーター パラメーター。</param>
+        <param name="culture">コンバーターで使用するカルチャ。</param>
+        <summary>内のオブジェクトを変換、<see cref="P:System.Windows.Controls.AlternationConverter.Values" />を整数のリスト。</summary>
+        <returns>インデックス<paramref name="o" />内にある場合<see cref="P:System.Windows.Controls.AlternationConverter.Values" />、o に存在しない場合は-1 を返します<see cref="P:System.Windows.Controls.AlternationConverter.Values" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.IList Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList Values" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.AlternationConverter.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの一覧を取得、<see cref="T:System.Windows.Controls.AlternationConverter" />を整数値が渡されるを返します、<see cref="M:System.Windows.Controls.AlternationConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" />メソッドです。</summary>
+        <value>オブジェクトの一覧、<see cref="T:System.Windows.Controls.AlternationConverter" />を整数値が渡されるを返します、<see cref="M:System.Windows.Controls.AlternationConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)" />メソッドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、<xref:System.Windows.Controls.AlternationConverter>プロパティの値を交互にバインドする、<xref:System.Windows.Controls.AlternationConverter.Values%2A>プロパティがプロパティに割り当てられているオブジェクトを格納します。  項目を検索する場合など、<xref:System.Windows.Controls.ListBox>青いを追加するには、青と明るい青色の背景を交互<xref:System.Windows.Media.SolidColorBrush>明るい青<xref:System.Windows.Media.SolidColorBrush>に<xref:System.Windows.Controls.AlternationConverter.Values%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Windows.Controls.ListBox> 2 つを使用して<xref:System.Windows.Controls.AlternationConverter>代替オブジェクト、<xref:System.Windows.Controls.Control.Background%2A>と<xref:System.Windows.Controls.Control.FontStyle%2A>項目の。  
+  
+ [!code-xaml[AlternationIndexSnippets#4](~/samples/snippets/csharp/VS_Snippets_Wpf/AlternationIndexSnippets/CS/Window1.xaml#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

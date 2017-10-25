@@ -1,0 +1,495 @@
+<Type Name="CodeConnectAccess" FullName="System.Security.Policy.CodeConnectAccess">
+  <TypeSignature Language="C#" Value="public class CodeConnectAccess" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeConnectAccess extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.CodeConnectAccess" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コードに付与されているネットワーク リソースへのアクセスを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスと組み合わせて使用、<xref:System.Security.Policy.NetCodeGroup>からダウンロードされたコードを実行する接続方法、サイトにそれを制御するクラス。 これらのクラスのプログラムによる制御を提供する、<xref:System.Net.WebPermission>どのスキームとコードで使用できるポートの配信元サイトへのアクセスを制御するためのコードの実行を許可します。 スキームおよびポートに基づいての組み合わせは許可されているコードの発生源 URL のスキームを指定できます。  
+  
+ 作成する、<xref:System.Security.Policy.CodeConnectAccess>コードの元のスキームに基づいてオブジェクトを使用して、<xref:System.Security.Policy.CodeConnectAccess.CreateOriginSchemeAccess%2A>メソッドです。  
+  
+ 作成する、<xref:System.Security.Policy.CodeConnectAccess>任意のスキームを使用できますが、ポート、使用は制限されているオブジェクト、<xref:System.Security.Policy.CodeConnectAccess.CreateAnySchemeAccess%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Security.Policy.NetCodeGroup>オブジェクトし、ユーザー ポリシー レベルに追加します。  
+  
+ [!code-cpp[NclCodeGroup#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclCodeGroup/cpp/sample.cpp#3)]
+ [!code-csharp[NclCodeGroup#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclCodeGroup/CS/sample.cs#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeConnectAccess (string allowScheme, int allowPort);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string allowScheme, int32 allowPort) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeConnectAccess.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="allowScheme" Type="System.String" />
+        <Parameter Name="allowPort" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="allowScheme">現在のインスタンスによって表される URI スキーム。</param>
+        <param name="allowPort">現在のインスタンスによって表されるポート。</param>
+        <summary><see cref="T:System.Security.Policy.CodeConnectAccess" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.CodeConnectAccess.Scheme%2A>プロパティを使用して、`allowScheme`パラメーター。 スキームは、小文字に変換されます。 値<xref:System.Security.Policy.CodeConnectAccess.Scheme%2A>ネットワーク リソースへの接続に使用できるコードを実行するスキームを制御します。  
+  
+ <xref:System.Security.Policy.CodeConnectAccess.Port%2A>プロパティを使用して、`allowPort`パラメーター。 値<xref:System.Security.Policy.CodeConnectAccess.Port%2A>ネットワーク リソースへの接続に使用できるコードを実行してポートを制御します。  
+  
+   
+  
+## Examples  
+ 作成するコード例を次に示します、<xref:System.Security.Policy.CodeConnectAccess>こと許可は、HTTP プロトコルを使用して、元のサーバーに接続するためのコードをダウンロードし、ポートと同じオブジェクトにダウンロードされています。 使用方法を示す例については<xref:System.Security.Policy.CodeConnectAccess>コード グループをポリシー レベル、コード グループを追加して、作成するオブジェクトを参照してください、<xref:System.Security.Policy.CodeConnectAccess>クラスの概要です。  
+  
+ [!code-cpp[NclCodeGroup#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NclCodeGroup/cpp/sample.cpp#2)]
+ [!code-csharp[NclCodeGroup#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NclCodeGroup/CS/sample.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="allowScheme" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="allowScheme" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="allowScheme" />スキームでは許可されない文字が含まれています。  
+  
+ または  
+  
+ <paramref name="allowPort" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="allowPort" />65,535 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AnyScheme">
+      <MemberSignature Language="C#" Value="public static readonly string AnyScheme;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string AnyScheme" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Policy.CodeConnectAccess.AnyScheme" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スキームのワイルドカードを表す文字列値が含まれています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成する代わりに、<xref:System.Security.Policy.CodeConnectAccess>オブジェクト、この値を使用して呼び出すことができます、<xref:System.Security.Policy.CodeConnectAccess.CreateAnySchemeAccess%2A>を取得するメソッド、<xref:System.Security.Policy.CodeConnectAccess>指定されたポートと任意のスキームを表すオブジェクト。  
+  
+ このフィールドの値は"*"です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このフィールドの値を表示します。  
+  
+ [!code-cpp[NclCodeGroup#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclCodeGroup/cpp/sample.cpp#6)]
+ [!code-csharp[NclCodeGroup#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclCodeGroup/CS/sample.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAnySchemeAccess">
+      <MemberSignature Language="C#" Value="public static System.Security.Policy.CodeConnectAccess CreateAnySchemeAccess (int allowPort);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Policy.CodeConnectAccess CreateAnySchemeAccess(int32 allowPort) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeConnectAccess.CreateAnySchemeAccess(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeConnectAccess</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="allowPort" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="allowPort">返されたインスタンスによって表されるポート。</param>
+        <summary>返します、<see cref="T:System.Security.Policy.CodeConnectAccess" />を任意のスキームを使用して、指定したポートにアクセスを表すインスタンス。</summary>
+        <returns>A<see cref="T:System.Security.Policy.CodeConnectAccess" />指定したポートのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.CodeConnectAccess>このメソッドによって返されるインスタンス、スキームのワイルドカード文字を使用して<xref:System.Security.Policy.CodeConnectAccess.AnyScheme>("*") をスキームを表します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。 使用方法を示す例については<xref:System.Security.Policy.CodeConnectAccess>コード グループをポリシー レベル、コード グループを追加して、作成するオブジェクトを参照してください、<xref:System.Security.Policy.CodeConnectAccess>クラスの概要です。  
+  
+ [!code-cpp[NclCodeGroup#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclCodeGroup/cpp/sample.cpp#5)]
+ [!code-csharp[NclCodeGroup#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclCodeGroup/CS/sample.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="allowPort" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="allowPort" />65,535 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOriginSchemeAccess">
+      <MemberSignature Language="C#" Value="public static System.Security.Policy.CodeConnectAccess CreateOriginSchemeAccess (int allowPort);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Policy.CodeConnectAccess CreateOriginSchemeAccess(int32 allowPort) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeConnectAccess.CreateOriginSchemeAccess(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeConnectAccess</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="allowPort" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="allowPort">返されたインスタンスによって表されるポート。</param>
+        <summary>返します、<see cref="T:System.Security.Policy.CodeConnectAccess" />を元のコードのスキームを使用して、指定したポートにアクセスを表すインスタンス。</summary>
+        <returns>A<see cref="T:System.Security.Policy.CodeConnectAccess" />指定したポートのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.CodeConnectAccess>このメソッドによって返されるインスタンスが構成値を持つ<xref:System.Security.Policy.CodeConnectAccess.OriginScheme>します。 元のスキームは、コードが送信元である URI からスキーム値です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します<xref:System.Security.Policy.CodeConnectAccess>コード グループをポリシー レベルに、コード グループを追加して、作成するオブジェクト。  
+  
+ [!code-cpp[NclCodeGroup#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclCodeGroup/cpp/sample.cpp#3)]
+ [!code-csharp[NclCodeGroup#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclCodeGroup/CS/sample.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="allowPort" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="allowPort" />65,535 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPort">
+      <MemberSignature Language="C#" Value="public static readonly int DefaultPort;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly int32 DefaultPort" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Policy.CodeConnectAccess.DefaultPort" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のポートを表すために使用される値が含まれています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成する、<xref:System.Security.Policy.CodeConnectAccess>を指定されたスキームの既定のポートを持つオブジェクトとしては、このフィールドを使用して、`allowPort`のパラメーター、<xref:System.Security.Policy.CodeConnectAccess.%23ctor%2A>コンス トラクターです。  
+  
+ このフィールドの値は、-3 です。  
+  
+   
+  
+## Examples  
+ 次のコード例で、 <xref:System.Security.Policy.CodeConnectAccess> FTP のスキームと既定のポートに FTP を指定するオブジェクト。  
+  
+ [!code-cpp[NclCodeGroup#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclCodeGroup/cpp/sample.cpp#1)]
+ [!code-csharp[NclCodeGroup#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclCodeGroup/CS/sample.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeConnectAccess.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">現在と比較するオブジェクト<see cref="T:System.Security.Policy.CodeConnectAccess" />オブジェクト。</param>
+        <summary>2 つあるかどうかを示す値を返します<see cref="T:System.Security.Policy.CodeConnectAccess" />オブジェクトは、同じスキームおよびポートを表します。</summary>
+        <returns>
+          <see langword="true" />2 つのオブジェクトが同じスキームおよびポートを表す場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Security.Policy.CodeConnectAccess>オブジェクトが等しい場合は、<xref:System.Security.Policy.CodeConnectAccess.Scheme%2A>と<xref:System.Security.Policy.CodeConnectAccess.Port%2A>プロパティの値が等しい。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeConnectAccess.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定の型のハッシュ関数として機能します。</summary>
+        <returns>現在の <see cref="T:System.Object" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginPort">
+      <MemberSignature Language="C#" Value="public static readonly int OriginPort;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly int32 OriginPort" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Policy.CodeConnectAccess.OriginPort" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コードが送信元である URI のポート値を表すために使用される値が含まれています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成する、<xref:System.Security.Policy.CodeConnectAccess>を実行中のコードの URL 証拠のポートと同じポートを持つオブジェクトとしては、このフィールドを使用して、`allowPort`のパラメーター、<xref:System.Security.Policy.CodeConnectAccess.%23ctor%2A>コンス トラクターです。  
+  
+ このフィールドの値は-4 です。  
+  
+   
+  
+## Examples  
+ 次のコード例で、 <xref:System.Security.Policy.CodeConnectAccess> HTTP スキームと配信元のポートを指定するオブジェクト。  
+  
+ [!code-cpp[NclCodeGroup#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NclCodeGroup/cpp/sample.cpp#2)]
+ [!code-csharp[NclCodeGroup#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NclCodeGroup/CS/sample.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginScheme">
+      <MemberSignature Language="C#" Value="public static readonly string OriginScheme;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string OriginScheme" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Policy.CodeConnectAccess.OriginScheme" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コードが送信元である URL のスキームを表すために使用される値が含まれています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドには使用しないでください、<xref:System.Security.Policy.CodeConnectAccess.%23ctor%2A>コンス トラクターです。 代わりに、使用、<xref:System.Security.Policy.CodeConnectAccess.CreateOriginSchemeAccess%2A>メソッドです。  
+  
+ このフィールドの値は、"$origin"です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このフィールドの値を表示します。  
+  
+ [!code-cpp[NclCodeGroup#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclCodeGroup/cpp/sample.cpp#6)]
+ [!code-csharp[NclCodeGroup#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclCodeGroup/CS/sample.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public int Port { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Port" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.CodeConnectAccess.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスによって表されるポートを取得します。</summary>
+        <value>A<see cref="T:System.Int32" />と組み合わせて使用するコンピューターのポートを識別する値、<see cref="P:System.Security.Policy.CodeConnectAccess.Scheme" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポートの値は、0 ~ 65,535 をします。 インスタンスを作成するときに、ポートの値が指定された<xref:System.Security.Policy.CodeConnectAccess>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclCodeGroup#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclCodeGroup/cpp/sample.cpp#4)]
+ [!code-csharp[NclCodeGroup#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclCodeGroup/CS/sample.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public string Scheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.CodeConnectAccess.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスによって表される URI スキームを取得します。</summary>
+        <value>A<see cref="T:System.String" />小文字に変換して、URI スキームを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成するときにスキームの値が指定された<xref:System.Security.Policy.CodeConnectAccess>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclCodeGroup#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclCodeGroup/cpp/sample.cpp#4)]
+ [!code-csharp[NclCodeGroup#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclCodeGroup/CS/sample.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

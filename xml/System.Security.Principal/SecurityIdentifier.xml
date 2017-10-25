@@ -1,0 +1,676 @@
+<Type Name="SecurityIdentifier" FullName="System.Security.Principal.SecurityIdentifier">
+  <TypeSignature Language="C#" Value="public sealed class SecurityIdentifier : System.Security.Principal.IdentityReference, IComparable&lt;System.Security.Principal.SecurityIdentifier&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SecurityIdentifier extends System.Security.Principal.IdentityReference implements class System.IComparable`1&lt;class System.Security.Principal.SecurityIdentifier&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Principal.SecurityIdentifier" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Principal.IdentityReference</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IComparable&lt;System.Security.Principal.SecurityIdentifier&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>セキュリティ識別子 (SID) を表し、Sid のマーシャ リングと比較の操作を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityIdentifier (IntPtr binaryForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int binaryForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.#ctor(System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binaryForm" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="binaryForm">SID のバイナリ形式を表す整数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Principal.SecurityIdentifier" />セキュリティ識別子 (SID) のバイナリ形式を表す整数を使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityIdentifier (string sddlForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sddlForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sddlForm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sddlForm">SID の SDDL 文字列を作成するために使用、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Principal.SecurityIdentifier" />セキュリティ記述子定義言語 (SDDL) 形式で指定したセキュリティ識別子 (SID) を使用して、クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityIdentifier (byte[] binaryForm, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] binaryForm, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.#ctor(System.Byte[],System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binaryForm" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="binaryForm">SID を表すバイト配列。</param>
+        <param name="offset">バイトの開始インデックスとして使用するオフセット<c>binaryForm</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Principal.SecurityIdentifier" />セキュリティ識別子 (SID) の場合は、指定されたバイナリ表現を使用して、クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityIdentifier (System.Security.Principal.WellKnownSidType sidType, System.Security.Principal.SecurityIdentifier domainSid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Principal.WellKnownSidType sidType, class System.Security.Principal.SecurityIdentifier domainSid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.#ctor(System.Security.Principal.WellKnownSidType,System.Security.Principal.SecurityIdentifier)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sidType" Type="System.Security.Principal.WellKnownSidType" />
+        <Parameter Name="domainSid" Type="System.Security.Principal.SecurityIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="sidType">列挙値の 1 つ。 この値にする必要がありますいない<see cref="F:System.Security.Principal.WellKnownSidType.LogonIdsSid" />です。</param>
+        <param name="domainSid">ドメインの SID。 この値は、次の必須<see cref="T:System.Security.Principal.WellKnownSidType" />値。 このパラメーターは無視されます、他の<see cref="T:System.Security.Principal.WellKnownSidType" />値。  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountAdministratorSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountGuestSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountKrbtgtSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountDomainAdminsSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountDomainUsersSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountDomainGuestsSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountComputersSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountControllersSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountCertAdminsSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountSchemaAdminsSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountEnterpriseAdminsSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountPolicyAdminsSid" />  
+  
+ \- <see cref="F:System.Security.Principal.WellKnownSidType.AccountRasAndIasServersSid" /></param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Principal.SecurityIdentifier" />ドメイン SID と指定した既知のセキュリティ識別子 (SID) の型を使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccountDomainSid">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.SecurityIdentifier AccountDomainSid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.SecurityIdentifier AccountDomainSid" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Principal.SecurityIdentifier.AccountDomainSid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.SecurityIdentifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表される SID からアカウント ドメインのセキュリティ識別子 (SID) の部分を返します、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクトのかどうか、SID は Windows アカウントの SID を表します。 このプロパティを返しますのかどうか、SID は Windows アカウントの SID を表していません、<see cref="T:System.ArgumentNullException" />です。</summary>
+        <value>によって表される SID から、アカウントのドメイン SID が部分、<see cref="T:System.Security.Principal.SecurityIdentifier" />アカウント SID を SID は Windows を表す場合は、オブジェクト以外を返しますそれ以外の場合、<see cref="T:System.ArgumentNullException" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BinaryLength">
+      <MemberSignature Language="C#" Value="public int BinaryLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BinaryLength" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Principal.SecurityIdentifier.BinaryLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(バイト単位) で表されるセキュリティ識別子 (SID) の長さを返します、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</summary>
+        <value>によって表される SID の長さをバイト単位で、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (System.Security.Principal.SecurityIdentifier sid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(class System.Security.Principal.SecurityIdentifier sid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.CompareTo(System.Security.Principal.SecurityIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="sid">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>現在の比較<see cref="T:System.Security.Principal.SecurityIdentifier" />指定したオブジェクト<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</summary>
+        <returns>このインスタンスと <paramref name="sid" /> の相対値を示す符号付き数値。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスより小さい<paramref name="sid" />です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスと等しい<paramref name="sid" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスがより大きい<paramref name="sid" />です。  
+  
+ </description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">これと比較するオブジェクト<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト、または<see langword="null" />です。</param>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクトが、指定されたオブジェクトと等しい。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="o" />は同じオブジェクトの基になる型および値としてこの<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Security.Principal.SecurityIdentifier sid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(class System.Security.Principal.SecurityIdentifier sid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.Equals(System.Security.Principal.SecurityIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="sid">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>示すかどうか、指定した<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクトが現在<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合の値<paramref name="sid" />が現在の値と等しい<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBinaryForm">
+      <MemberSignature Language="C#" Value="public void GetBinaryForm (byte[] binaryForm, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetBinaryForm(unsigned int8[] binaryForm, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.GetBinaryForm(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binaryForm" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="binaryForm">コピーされた SID を受信するバイト配列。</param>
+        <param name="offset">バイトの開始インデックスとして使用するオフセット<c>binaryForm</c>です。</param>
+        <summary>によって表される、指定したセキュリティ識別子 (SID) のバイナリ表現のコピー、<see cref="T:System.Security.Principal.SecurityIdentifier" />バイト配列へのクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のハッシュ関数として機能<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。 <see cref="M:System.Security.Principal.SecurityIdentifier.GetHashCode" />メソッドは、ハッシュ テーブルなどのアルゴリズムとデータの構造体のハッシュに適しています。</summary>
+        <returns>現在のハッシュ値<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAccountSid">
+      <MemberSignature Language="C#" Value="public bool IsAccountSid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsAccountSid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.IsAccountSid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ識別子 (SID) が、これによって表されるかどうかを示す値を返します<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクトが有効な Windows アカウントの SID。</summary>
+        <returns>
+          <see langword="true" />これで、SID が表される場合<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクトが有効な Windows アカウントの SID、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEqualDomainSid">
+      <MemberSignature Language="C#" Value="public bool IsEqualDomainSid (System.Security.Principal.SecurityIdentifier sid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsEqualDomainSid(class System.Security.Principal.SecurityIdentifier sid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.IsEqualDomainSid(System.Security.Principal.SecurityIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="sid">これと比較する SID<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</param>
+        <summary>セキュリティ識別子 (SID) が、これによって表されるかどうかを示す値を返します<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクトが指定された SID と同じドメインからです。</summary>
+        <returns>
+          <see langword="true" />これで、SID が表される場合<see cref="T:System.Security.Principal.SecurityIdentifier" />と同じドメイン内のオブジェクトが、 <paramref name="sid" /> SID 以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidTargetType">
+      <MemberSignature Language="C#" Value="public override bool IsValidTargetType (Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsValidTargetType(class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.IsValidTargetType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="targetType">変換として使用する型の有効性を照会している<see cref="T:System.Security.Principal.SecurityIdentifier" />です。 次の対象の種類は有効です。  
+  
+ \- <see cref="T:System.Security.Principal.NTAccount" />  
+  
+ \- <see cref="T:System.Security.Principal.SecurityIdentifier" /></param>
+        <summary>指定した型が有効な変換の型をするかどうかを示す値を返します、<see cref="T:System.Security.Principal.SecurityIdentifier" />クラスです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="targetType" />は有効な変換の型を<see cref="T:System.Security.Principal.SecurityIdentifier" />クラスです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWellKnown">
+      <MemberSignature Language="C#" Value="public bool IsWellKnown (System.Security.Principal.WellKnownSidType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsWellKnown(valuetype System.Security.Principal.WellKnownSidType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.IsWellKnown(System.Security.Principal.WellKnownSidType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Security.Principal.WellKnownSidType" />
+      </Parameters>
+      <Docs>
+        <param name="type">比較する値、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</param>
+        <summary>示す値を返すかどうか、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクトが指定した既知のセキュリティ識別子 (SID) の型と一致します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="type" />の SID の種類は、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxBinaryLength">
+      <MemberSignature Language="C#" Value="public static readonly int MaxBinaryLength;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly int32 MaxBinaryLength" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.SecurityIdentifier.MaxBinaryLength" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ識別子のバイナリ表現のバイト単位の最大サイズを返します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinBinaryLength">
+      <MemberSignature Language="C#" Value="public static readonly int MinBinaryLength;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly int32 MinBinaryLength" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.SecurityIdentifier.MinBinaryLength" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ識別子のバイナリ表現のバイト数で最小のサイズを返します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Security.Principal.SecurityIdentifier left, System.Security.Principal.SecurityIdentifier right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Security.Principal.SecurityIdentifier left, class System.Security.Principal.SecurityIdentifier right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.op_Equality(System.Security.Principal.SecurityIdentifier,System.Security.Principal.SecurityIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="right" Type="System.Security.Principal.SecurityIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="left">等値比較に使用する左オペランド。 このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <param name="right">等値比較に使用する右側のオペランド。 このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <summary>比較する 2 つ<see cref="T:System.Security.Principal.SecurityIdentifier" />それらが等しいかどうかを判断するオブジェクト。 それらは等しいと見なされるによって返されるものと同じ正規表現している場合、<see cref="P:System.Security.Principal.SecurityIdentifier.Value" />プロパティまたはが両方とも<see langword="null" />です。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="left" /> が等しい場合は <paramref name="right" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Security.Principal.SecurityIdentifier left, System.Security.Principal.SecurityIdentifier right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Security.Principal.SecurityIdentifier left, class System.Security.Principal.SecurityIdentifier right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.op_Inequality(System.Security.Principal.SecurityIdentifier,System.Security.Principal.SecurityIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Security.Principal.SecurityIdentifier" />
+        <Parameter Name="right" Type="System.Security.Principal.SecurityIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="left">非等値比較に使用する左オペランド。 このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <param name="right">非等値比較に使用する右側のオペランド。 このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <summary>比較する 2 つ<see cref="T:System.Security.Principal.SecurityIdentifier" />両者が等しくないかどうかを決定するオブジェクト。 それらが等しくないと見なさによって返される 1 つの異なる正規名表現している場合、<see cref="P:System.Security.Principal.SecurityIdentifier.Value" />プロパティまたはオブジェクトのいずれかが<see langword="null" />もう一方はありません。</summary>
+        <returns>
+          <paramref name="left" /> と <paramref name="right" /> が等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって表されるアカウントのセキュリティ記述子定義言語 (SDDL) 形式でセキュリティ識別子 (SID) を返します、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。 SDDL 形式の例は、S-1-5 ~ 9 です。</summary>
+        <returns>によって表されるアカウント用の SDDL 形式で、SID、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Translate">
+      <MemberSignature Language="C#" Value="public override System.Security.Principal.IdentityReference Translate (Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Principal.IdentityReference Translate(class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Principal.SecurityIdentifier.Translate(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IdentityReference</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="targetType">変換のターゲット型<see cref="T:System.Security.Principal.SecurityIdentifier" />です。 ターゲットの種類により有効と見なされる型でなければなりません、<see cref="M:System.Security.Principal.SecurityIdentifier.IsValidTargetType(System.Type)" />メソッドです。</param>
+        <summary>によって表されるアカウント名を変換、<see cref="T:System.Security.Principal.SecurityIdentifier" />に別のオブジェクト<see cref="T:System.Security.Principal.IdentityReference" />-派生型です。</summary>
+        <returns>変換後の id。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetType" /> が <see cref="T:System.Security.Principal.IdentityReference" /> 型ではありません。</exception>
+        <exception cref="T:System.Security.Principal.IdentityNotMappedException">ID 参照の一部またはすべてを変換できませんでした。</exception>
+        <exception cref="T:System.SystemException">Win32 エラー コードが返されました。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">プリンシパル オブジェクトを操作する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Principal.SecurityIdentifier.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって表されるセキュリティ識別子 (SID) の大文字のセキュリティ記述子定義言語 (SDDL) 文字列を返します<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</summary>
+        <value>大文字の SDDL 文字列によって表される SID に対して、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

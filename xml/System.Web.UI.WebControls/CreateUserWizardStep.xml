@@ -1,0 +1,209 @@
+<Type Name="CreateUserWizardStep" FullName="System.Web.UI.WebControls.CreateUserWizardStep">
+  <TypeSignature Language="C#" Value="public sealed class CreateUserWizardStep : System.Web.UI.WebControls.TemplatedWizardStep" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CreateUserWizardStep extends System.Web.UI.WebControls.TemplatedWizardStep" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CreateUserWizardStep" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.TemplatedWizardStep</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テンプレート化できる手順でユーザーを作成するための基本機能が含まれています。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CreateUserWizard>コントロールは、Web サイトのユーザーのデータ ストアに新しいユーザー アカウントを作成します。 <xref:System.Web.UI.WebControls.CreateUserWizardStep>内で最初の手順を既定では、<xref:System.Web.UI.WebControls.CreateUserWizard>コントロール。 <xref:System.Web.UI.WebControls.CreateUserWizardStep>手順内で必要な手順では、<xref:System.Web.UI.WebControls.CreateUserWizard>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.CreateUserWizardStep>から派生したクラスは、<xref:System.Web.UI.WebControls.TemplatedWizardStep>クラスです。 <xref:System.Web.UI.WebControls.CreateUserWizardStep>に表示される、<xref:System.Web.UI.WebControls.CreateUserWizard>を制御する前に、<xref:System.Web.UI.WebControls.CompleteWizardStep>手順です。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.CreateUserWizardStep>手順では、既定では、ウィザードの最初の手順で別の最初の手順を指定することができます。 そのため、ただし、影響するかどうか、**前**ボタンが表示されます。 たとえば場合、<xref:System.Web.UI.WebControls.CreateUserWizardStep>手順は、カスタム ナビゲーション テンプレートはありませんし、前にする前に表示される別のステップが<xref:System.Web.UI.WebControls.CreateUserWizardStep>、**前**にボタンを表示、<xref:System.Web.UI.WebControls.CreateUserWizardStep>ステップ実行時にします。 場合、<xref:System.Web.UI.WebControls.CreateUserWizardStep>手順が別の「先頭」手順の前に表示される、**前**ボタンは表示されません。 さらに、**前**ボタンがデザイン時に表示されることはありません。 場合は、**前**デザイン時に表示されるボタンをカスタム ナビゲーション テンプレートに追加する必要があります、<xref:System.Web.UI.WebControls.CreateUserWizardStep>手順です。  
+  
+ 変更することができます、 <xref:System.Web.UI.WebControls.CreateUserWizardStep> 、追加のフィールドを格納するステップかに含まれるフィールドの表示順序を変更、<xref:System.Web.UI.WebControls.CreateUserWizardStep>コントロールに関連付けられているテンプレートを編集して、手順です。  
+  
+ ユーザーがクリックしたときに、データ ストアに新しい Web サイトのユーザー アカウントが作成された、**次**ボタンをクリックして、<xref:System.Web.UI.WebControls.CreateUserWizardStep>手順です。 既定では、<xref:System.Web.UI.WebControls.CreateUserWizardStep.AllowReturn%2A>プロパティに設定されている`false`、ユーザーを返すことを防止する、<xref:System.Web.UI.WebControls.CreateUserWizardStep>手順と、誤って同じ資格情報で別のユーザー アカウントを作成しています。 設定した場合、<xref:System.Web.UI.WebControls.CreateUserWizardStep.AllowReturn%2A>プロパティを`true`、この手順をユーザーが返される前に作成されたユーザー アカウントを削除、または本人最初に入力した情報を編集するユーザーを許可する、アプリケーションでロジックを含める必要があります。  
+  
+   
+  
+## Examples  
+ 最初のコード例の短い形式の宣言の構文を使用して、<xref:System.Web.UI.WebControls.CreateUserWizardStep>するその他のコントロールを追加するクラス、<xref:System.Web.UI.WebControls.CreateUserWizard>コントロール。 このコード例では、Web.config ファイルに次のエントリが必要です。  
+  
+ `<configuration>`  
+  
+ `<system.web>`  
+  
+ `<profile>`  
+  
+ `<properties>`  
+  
+ `<add name="lastName" />`  
+  
+ `<add name="firstName" />`  
+  
+ `</properties>`  
+  
+ `</profile>`  
+  
+ `</system.web>`  
+  
+ `</configuration>`  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[CreateUserWizardCreatedUser#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CreateUserWizardCreatedUser/CS/createuserwizardcreatedusercs.aspx#1)]
+ [!code-aspx-vb[CreateUserWizardCreatedUser#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CreateUserWizardCreatedUser/VB/createuserwizardcreateduservb.aspx#1)]  
+  
+> [!IMPORTANT]
+>  このコントロールには、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスがあります。 Web ページのユーザー入力は、悪意のあるクライアント スクリプトを含めることができます可能性があります。 既定では、ASP.NET Web ページは、入力に HTML 要素またはスクリプトが含まれていないことを確認するユーザー入力を検証します。 この検証が有効になっている限り、スクリプトまたはユーザーの入力で HTML 要素を明示的にチェックする必要はありません。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ 2 つ目のコード例は、完全な一覧<xref:System.Web.UI.WebControls.CreateUserWizardStep>コントロール。  
+  
+ [!code-aspx-csharp[CreateUserWizardStep#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CreateUserWizardStep/CS/createuserwizardstepcs.aspx#1)]
+ [!code-aspx-vb[CreateUserWizardStep#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CreateUserWizardStep/VB/createuserwizardstepvb.aspx#1)]  
+  
+> [!IMPORTANT]
+>  このコントロールには、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスがあります。 Web ページのユーザー入力は、悪意のあるクライアント スクリプトを含めることができます可能性があります。 既定では、ASP.NET Web ページは、入力に HTML 要素またはスクリプトが含まれていないことを確認するユーザー入力を検証します。 この検証が有効になっている限り、スクリプトまたはユーザーの入力で HTML 要素を明示的にチェックする必要はありません。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CreateUserWizardStep ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CreateUserWizardStep.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.UI.WebControls.CreateUserWizardStep" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowReturn">
+      <MemberSignature Language="C#" Value="public override bool AllowReturn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowReturn" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CreateUserWizardStep.AllowReturn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはそれ以降のステップから現在の手順に戻るにユーザーが許可されているかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.CreateUserWizard" />コントロール。</summary>
+        <value>
+          <see langword="true" />戻るには、ユーザーが許可された場合、<see cref="T:System.Web.UI.WebControls.CreateUserWizardStep" />ステップです。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CreateUserWizardStep.AllowReturn%2A>プロパティに設定されている`false`ユーザーに返すことを防止する、<xref:System.Web.UI.WebControls.CreateUserWizardStep>手順と同じ資格情報で別のユーザー アカウントを作成しようとして誤ってです。 オーバーライドする場合、<xref:System.Web.UI.WebControls.CreateUserWizardStep.AllowReturn%2A>プロパティに設定し、 `true`、この手順をユーザーが返される前に作成されたユーザー アカウントを削除、または本人最初に入力した情報を編集するユーザーを許可する、アプリケーションでロジックを含める必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">プロパティを設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StepType">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WizardStepType StepType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WizardStepType StepType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CreateUserWizardStep.StepType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Filterable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WizardStepType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のユーザー インターフェイス (UI) の表示の種類、<see cref="T:System.Web.UI.WebControls.CreateUserWizardStep" />のステップ、<see cref="T:System.Web.UI.WebControls.CreateUserWizard" />コントロール。</summary>
+        <value><see cref="F:System.Web.UI.WebControls.WizardStepType.Auto" />の列挙値、<see cref="T:System.Web.UI.WebControls.WizardStepType" />列挙します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CreateUserWizardStep.StepType%2A>プロパティ、ナビゲーションするオプションを指定のユーザー アカウント作成のステップの表示、<xref:System.Web.UI.WebControls.CreateUserWizard>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.CreateUserWizardStep.StepType%2A>プロパティによって異なります、<xref:System.Web.UI.WebControls.Wizard>にコントロールのナビゲーション ボタンが表示される、<xref:System.Web.UI.WebControls.CreateUserWizardStep>コントロール。 詳細については、<xref:System.Web.UI.WebControls.WizardStepBase.StepType%2A?displayProperty=nameWithType> プロパティを参照してください。  
+  
+> [!CAUTION]
+>  変更しようとする場合、<xref:System.Web.UI.WebControls.CreateUserWizardStep.StepType%2A>プロパティ以外の任意の値を<xref:System.Web.UI.WebControls.WizardStepType.Auto>の値、<xref:System.Web.UI.WebControls.WizardStepType>列挙体、<xref:System.InvalidOperationException>がスローされます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">設定しようとしましたが、<see cref="P:System.Web.UI.WebControls.CreateUserWizardStep.StepType" />プロパティ以外の値を<see langword="WizardStepType.Auto" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public override string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CreateUserWizardStep.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のユーザー アカウント作成の手順を使用するタイトルを<see cref="T:System.Web.UI.WebControls.CreateUserWizard" />コントロール。</summary>
+        <value>ユーザー アカウント作成の手順を使用するタイトルを<see cref="T:System.Web.UI.WebControls.CreateUserWizard" />コントロール。 既定値は「サインアップ、新しいアカウントにします」 コントロールの既定のテキストは、サーバーの現在のロケールに基づくローカライズされます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

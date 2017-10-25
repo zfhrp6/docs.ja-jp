@@ -1,0 +1,722 @@
+<Type Name="Rfc2898DeriveBytes" FullName="System.Security.Cryptography.Rfc2898DeriveBytes">
+  <TypeSignature Language="C#" Value="public class Rfc2898DeriveBytes : System.Security.Cryptography.DeriveBytes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Rfc2898DeriveBytes extends System.Security.Cryptography.DeriveBytes" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Rfc2898DeriveBytes" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.DeriveBytes</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Cryptography.HMACSHA1" /> に基づく擬似乱数ジェネレーターを使用して、パスワード ベースのキー派生機能 (PBKDF2) を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Rfc2898DeriveBytes>パスワード、salt、および、反復カウントを呼び出すことでキーを生成、<xref:System.Security.Cryptography.Rfc2898DeriveBytes.GetBytes%2A>メソッドです。  
+  
+ RFC 2898 には、パスワードおよび salt からキーと初期化ベクター (IV) を作成するためのメソッドが含まれています。 擬似乱数関数により、生成される実質的に無制限の長さのキーを使用するキーを派生させる PBKDF2、パスワード ベースのキー派生関数を使用できます。 <xref:System.Security.Cryptography.Rfc2898DeriveBytes>クラスを基本キーおよびその他のパラメーターから派生キーを生成するために使用できます。 関数では、パスワード ベースのキー派生、ベースのキーがパスワードと他のパラメーターは salt 値と、反復カウントします。  
+  
+ PBKDF2 の詳細については、RFC 2898 を参照してください。"PKCS 5: パスワードに基づく暗号化の仕様のバージョン 2.0 では、"で使用できる、[コメント Web サイトの要求](http://go.microsoft.com/fwlink/?LinkID=37119)です。 詳細については、セクション 5.2、"PBKDF2、"を参照してください。  
+  
+> [!IMPORTANT]
+>  ハードコーディングしないでをソース コード内のパスワード。  使用してパスワードをハードコーディング アセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)16 進数のエディターを使用して、または単に Notepad.exe などのテキスト エディターでアセンブリを開いて、します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Security.Cryptography.Rfc2898DeriveBytes>に対するキーの同じ 2 つ作成するクラス、<xref:System.Security.Cryptography.TripleDES>クラスです。  暗号化し、キーを使用して一部のデータを復号化します。  
+  
+ [!code-cpp[rfc28981#1](~/samples/snippets/cpp/VS_Snippets_CLR/rfc28981/CPP/rfc28981.cpp#1)]
+ [!code-csharp[rfc28981#1](~/samples/snippets/csharp/VS_Snippets_CLR/rfc28981/CS/rfc28981.cs#1)]
+ [!code-vb[rfc28981#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/rfc28981/vb/rfc28981.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rfc2898DeriveBytes (string password, byte[] salt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string password, unsigned int8[] salt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.#ctor(System.String,System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="salt" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="password">キーを派生させるために使用するパスワード。</param>
+        <param name="salt">キーを派生させるために使用するキー salt。</param>
+        <summary>キーを派生させるために使用するパスワードおよび salt を指定して、<see cref="T:System.Security.Cryptography.Rfc2898DeriveBytes" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Salt のサイズは 8 バイトである必要がありますか大きいです。  
+  
+ RFC 2898 には、パスワードおよび salt からキーと初期化ベクター (IV) を作成するためのメソッドが含まれています。 擬似乱数関数により、生成される実質的に無制限の長さのキーを使用するキーを派生させる PBKDF2、パスワード ベースのキー派生関数を使用できます。 <xref:System.Security.Cryptography.Rfc2898DeriveBytes>クラスを基本キーおよびその他のパラメーターから派生キーを生成するために使用できます。 関数では、パスワード ベースのキー派生、ベースのキーがパスワードと他のパラメーターは salt 値と、反復カウントします。  
+  
+ PBKDF2 の詳細については、RFC 2898 を参照してください。"PKCS 5: パスワードに基づく暗号化の仕様のバージョン 2.0 では、"で使用できる、[コメント Web サイトの要求](http://go.microsoft.com/fwlink/?LinkID=37119)です。 詳細については、セクション 5.2、"PBKDF2、"を参照してください。  
+  
+> [!IMPORTANT]
+>  ハードコーディングしないでをソース コード内のパスワード。  使用してパスワードをハードコーディング アセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)16 進数のエディターを使用して、または単に Notepad.exe などのテキスト エディターでアセンブリを開いて、します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Security.Cryptography.Rfc2898DeriveBytes>に対するキーの同じ 2 つ作成するクラス、<xref:System.Security.Cryptography.TripleDES>クラスです。  暗号化し、キーを使用して一部のデータを復号化します。  
+  
+ [!code-cpp[rfc28981#1](~/samples/snippets/cpp/VS_Snippets_CLR/rfc28981/CPP/rfc28981.cpp#1)]
+ [!code-csharp[rfc28981#1](~/samples/snippets/csharp/VS_Snippets_CLR/rfc28981/CS/rfc28981.cs#1)]
+ [!code-vb[rfc28981#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/rfc28981/vb/rfc28981.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された salt のサイズが 8 バイトより小さいか、イテレーションのカウントが 1 より小さい。</exception>
+        <exception cref="T:System.ArgumentNullException">パスワード、または salt が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rfc2898DeriveBytes (string password, int saltSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string password, int32 saltSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="saltSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="password">キーを派生させるために使用するパスワード。</param>
+        <param name="saltSize">クラスで生成するランダム salt のサイズ。</param>
+        <summary>キーを派生させるために使用するパスワードおよび salt サイズを指定して、<see cref="T:System.Security.Cryptography.Rfc2898DeriveBytes" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Salt のサイズは 8 バイトである必要がありますか大きいです。  
+  
+ RFC 2898 には、パスワードおよび salt からキーと初期化ベクター (IV) を作成するためのメソッドが含まれています。 擬似乱数関数により、生成される実質的に無制限の長さのキーを使用するキーを派生させる PBKDF2、パスワード ベースのキー派生関数を使用できます。 <xref:System.Security.Cryptography.Rfc2898DeriveBytes>クラスを基本キーおよびその他のパラメーターから派生キーを生成するために使用できます。 関数では、パスワード ベースのキー派生、ベースのキーがパスワードと他のパラメーターは salt 値と、反復カウントします。  
+  
+ PBKDF2 の詳細については、RFC 2898 を参照してください。"PKCS 5: パスワードに基づく暗号化の仕様のバージョン 2.0 では、"で使用できる、[コメント Web サイトの要求](http://go.microsoft.com/fwlink/?LinkID=37119)です。 詳細については、セクション 5.2、"PBKDF2、"を参照してください。  
+  
+> [!IMPORTANT]
+>  ハードコーディングしないでをソース コード内のパスワード。  使用してパスワードをハードコーディング アセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)16 進数のエディターを使用して、または単に Notepad.exe などのテキスト エディターでアセンブリを開いて、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された salt のサイズは 8 バイト未満です。</exception>
+        <exception cref="T:System.ArgumentNullException">パスワード、または salt が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rfc2898DeriveBytes (byte[] password, byte[] salt, int iterations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] password, unsigned int8[] salt, int32 iterations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.#ctor(System.Byte[],System.Byte[],System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="password" Type="System.Byte[]" />
+        <Parameter Name="salt" Type="System.Byte[]" />
+        <Parameter Name="iterations" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="password">キーを派生させるために使用するパスワード。</param>
+        <param name="salt">キーを派生させるために使用するキー salt。</param>
+        <param name="iterations">演算の反復処理回数。</param>
+        <summary>キーを派生させるために使用するパスワード、salt、および反復回数を指定して、<see cref="T:System.Security.Cryptography.Rfc2898DeriveBytes" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Salt のサイズは 8 バイトである必要がありますか、大きい反復回数を 0 より大きい値にする必要があります。 イテレーションの推奨される最小数は 1000 です。  
+  
+ RFC 2898 には、パスワードおよび salt からキーと初期化ベクター (IV) を作成するためのメソッドが含まれています。 擬似乱数関数により、生成される実質的に無制限の長さのキーを使用するキーを派生させる PBKDF2、パスワード ベースのキー派生関数を使用できます。 <xref:System.Security.Cryptography.Rfc2898DeriveBytes>クラスを基本キーおよびその他のパラメーターから派生キーを生成するために使用できます。 関数では、パスワード ベースのキー派生、ベースのキーがパスワードと他のパラメーターは salt 値と、反復カウントします。  
+  
+ PBKDF2 の詳細については、RFC 2898 を参照してください。"PKCS 5: パスワードに基づく暗号化の仕様のバージョン 2.0 では、"で使用できる、[コメント Web サイトの要求](http://go.microsoft.com/fwlink/?LinkID=37119)です。 詳細については、セクション 5.2、"PBKDF2、"を参照してください。  
+  
+> [!IMPORTANT]
+>  ハードコーディングしないでをソース コード内のパスワード。  使用してパスワードをハードコーディング アセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)16 進数のエディターを使用して、または単に Notepad.exe などのテキスト エディターでアセンブリを開いて、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された salt のサイズが 8 バイトより小さいか、イテレーションのカウントが 1 より小さい。</exception>
+        <exception cref="T:System.ArgumentNullException">パスワード、または salt が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rfc2898DeriveBytes (string password, byte[] salt, int iterations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string password, unsigned int8[] salt, int32 iterations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.#ctor(System.String,System.Byte[],System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="salt" Type="System.Byte[]" />
+        <Parameter Name="iterations" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="password">キーを派生させるために使用するパスワード。</param>
+        <param name="salt">キーを派生させるために使用するキー salt。</param>
+        <param name="iterations">演算の反復処理回数。</param>
+        <summary>キーを派生させるために使用するパスワード、salt、および反復回数を指定して、<see cref="T:System.Security.Cryptography.Rfc2898DeriveBytes" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Salt のサイズは 8 バイトである必要がありますか、大きい反復回数を 0 より大きい値にする必要があります。 イテレーションの推奨される最小数は 1000 です。  
+  
+ RFC 2898 には、パスワードおよび salt からキーと初期化ベクター (IV) を作成するためのメソッドが含まれています。 擬似乱数関数により、生成される実質的に無制限の長さのキーを使用するキーを派生させる PBKDF2、パスワード ベースのキー派生関数を使用できます。 <xref:System.Security.Cryptography.Rfc2898DeriveBytes>クラスを基本キーおよびその他のパラメーターから派生キーを生成するために使用できます。 関数では、パスワード ベースのキー派生、ベースのキーがパスワードと他のパラメーターは salt 値と、反復カウントします。  
+  
+ PBKDF2 の詳細については、RFC 2898 を参照してください。"PKCS 5: パスワードに基づく暗号化の仕様のバージョン 2.0 では、"で使用できる、[コメント Web サイトの要求](http://go.microsoft.com/fwlink/?LinkID=37119)です。 詳細については、セクション 5.2、"PBKDF2、"を参照してください。  
+  
+> [!IMPORTANT]
+>  ハードコーディングしないでをソース コード内のパスワード。  使用してパスワードをハードコーディング アセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)16 進数のエディターを使用して、または単に Notepad.exe などのテキスト エディターでアセンブリを開いて、します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Security.Cryptography.Rfc2898DeriveBytes>に対するキーの同じ 2 つ作成するクラス、<xref:System.Security.Cryptography.TripleDES>クラスです。  暗号化し、キーを使用して一部のデータを復号化します。  
+  
+ [!code-cpp[rfc28981#1](~/samples/snippets/cpp/VS_Snippets_CLR/rfc28981/CPP/rfc28981.cpp#1)]
+ [!code-csharp[rfc28981#1](~/samples/snippets/csharp/VS_Snippets_CLR/rfc28981/CS/rfc28981.cs#1)]
+ [!code-vb[rfc28981#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/rfc28981/vb/rfc28981.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された salt のサイズが 8 バイトより小さいか、イテレーションのカウントが 1 より小さい。</exception>
+        <exception cref="T:System.ArgumentNullException">パスワード、または salt が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rfc2898DeriveBytes (string password, int saltSize, int iterations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string password, int32 saltSize, int32 iterations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.#ctor(System.String,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="saltSize" Type="System.Int32" />
+        <Parameter Name="iterations" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="password">キーを派生させるために使用するパスワード。</param>
+        <param name="saltSize">クラスで生成するランダム salt のサイズ。</param>
+        <param name="iterations">演算の反復処理回数。</param>
+        <summary>キーを派生させるために使用するパスワード、salt サイズ、および反復回数を指定して、<see cref="T:System.Security.Cryptography.Rfc2898DeriveBytes" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Salt のサイズは 8 バイトである必要がありますか、大きい反復回数を 0 より大きい値にする必要があります。 イテレーションの推奨される最小数は 1000 です。  
+  
+ RFC 2898 には、パスワードおよび salt からキーと初期化ベクター (IV) を作成するためのメソッドが含まれています。 擬似乱数関数により、生成される実質的に無制限の長さのキーを使用するキーを派生させる PBKDF2、パスワード ベースのキー派生関数を使用できます。 <xref:System.Security.Cryptography.Rfc2898DeriveBytes>クラスを基本キーおよびその他のパラメーターから派生キーを生成するために使用できます。 関数では、パスワード ベースのキー派生、ベースのキーがパスワードと他のパラメーターは salt 値と、反復カウントします。  
+  
+ PBKDF2 の詳細については、RFC 2898 を参照してください。"PKCS #5: パスワードに基づく暗号化の仕様のバージョン 2.0 では、"で使用できる、[コメント Web サイトの要求](http://go.microsoft.com/fwlink/?LinkID=37119)です。 詳細については、セクション 5.2、"PBKDF2、"を参照してください。  
+  
+> [!IMPORTANT]
+>  ハードコーディングしないでをソース コード内のパスワード。  使用してパスワードをハードコーディング アセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)16 進数のエディターを使用して、または単に Notepad.exe などのテキスト エディターでアセンブリを開いて、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された salt のサイズが 8 バイトより小さいか、イテレーションのカウントが 1 より小さい。</exception>
+        <exception cref="T:System.ArgumentNullException">パスワード、または salt が<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="iterations" /> が範囲外です。 このパラメーターには、負でない値が必要です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rfc2898DeriveBytes (byte[] password, byte[] salt, int iterations, System.Security.Cryptography.HashAlgorithmName hashAlgorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] password, unsigned int8[] salt, int32 iterations, valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.#ctor(System.Byte[],System.Byte[],System.Int32,System.Security.Cryptography.HashAlgorithmName)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="password" Type="System.Byte[]" />
+        <Parameter Name="salt" Type="System.Byte[]" />
+        <Parameter Name="iterations" Type="System.Int32" />
+        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" />
+      </Parameters>
+      <Docs>
+        <param name="password">To be added.</param>
+        <param name="salt">To be added.</param>
+        <param name="iterations">To be added.</param>
+        <param name="hashAlgorithm">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rfc2898DeriveBytes (string password, byte[] salt, int iterations, System.Security.Cryptography.HashAlgorithmName hashAlgorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string password, unsigned int8[] salt, int32 iterations, valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.#ctor(System.String,System.Byte[],System.Int32,System.Security.Cryptography.HashAlgorithmName)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="salt" Type="System.Byte[]" />
+        <Parameter Name="iterations" Type="System.Int32" />
+        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" />
+      </Parameters>
+      <Docs>
+        <param name="password">To be added.</param>
+        <param name="salt">To be added.</param>
+        <param name="iterations">To be added.</param>
+        <param name="hashAlgorithm">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Rfc2898DeriveBytes (string password, int saltSize, int iterations, System.Security.Cryptography.HashAlgorithmName hashAlgorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string password, int32 saltSize, int32 iterations, valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.#ctor(System.String,System.Int32,System.Int32,System.Security.Cryptography.HashAlgorithmName)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="saltSize" Type="System.Int32" />
+        <Parameter Name="iterations" Type="System.Int32" />
+        <Parameter Name="hashAlgorithm" Type="System.Security.Cryptography.HashAlgorithmName" />
+      </Parameters>
+      <Docs>
+        <param name="password">To be added.</param>
+        <param name="saltSize">To be added.</param>
+        <param name="iterations">To be added.</param>
+        <param name="hashAlgorithm">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptDeriveKey">
+      <MemberSignature Language="C#" Value="public byte[] CryptDeriveKey (string algname, string alghashname, int keySize, byte[] rgbIV);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] CryptDeriveKey(string algname, string alghashname, int32 keySize, unsigned int8[] rgbIV) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.CryptDeriveKey(System.String,System.String,System.Int32,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algname" Type="System.String" />
+        <Parameter Name="alghashname" Type="System.String" />
+        <Parameter Name="keySize" Type="System.Int32" />
+        <Parameter Name="rgbIV" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="algname">キーを派生させる対象となるアルゴリズム名。</param>
+        <param name="alghashname">キーを派生させるために使用するハッシュ アルゴリズム名。</param>
+        <param name="keySize">派生させるキーのサイズ (ビット単位)。</param>
+        <param name="rgbIV">キーを派生させるために使用する初期化ベクター (IV: Initialization Vector)。</param>
+        <summary><see cref="T:System.Security.Cryptography.Rfc2898DeriveBytes" /> オブジェクトから暗号キーを派生させます。</summary>
+        <returns>派生させたキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数は、CryptDeriveKey() Crypto API 関数のラッパーであり、Crypto API を使用するアプリケーションとの相互運用性を提供するためのものでは、します。  
+  
+ 場合、`keySize`パラメーターが 0 のビットに設定されている、指定したアルゴリズムの既定のキー サイズが使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="keySize" />パラメーターが正しくありません。  
+  
+ または  
+  
+ 暗号化サービス プロバイダー (CSP) を取得できません。  
+  
+ または  
+  
+ <paramref name="algname" />パラメーターが有効なアルゴリズムの名前ではありません。  
+  
+ または  
+  
+ <paramref name="alghashname" />パラメーターが有効なハッシュ アルゴリズムの名前ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Security.Cryptography.Rfc2898DeriveBytes" /> クラスによって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび`Finalize`メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 `Finalize`呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Security.Cryptography.Rfc2898DeriveBytes> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />を以前の呼び出しで既に破棄されているオブジェクトを参照しないように注意、<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see langword="Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public override byte[] GetBytes (int cb);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] GetBytes(int32 cb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.GetBytes(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cb" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="cb">生成する擬似ランダム キー バイトの数。</param>
+        <summary>このオブジェクトの擬似ランダム キーを返します。</summary>
+        <returns>擬似ランダム キー バイトを格納したバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Rfc2898DeriveBytes>クラスに基づく擬似乱数ジェネレーターを使用して、PBKDF2 機能を実装して<xref:System.Security.Cryptography.HMACSHA1>です。 <xref:System.Security.Cryptography.Rfc2898DeriveBytes>クラスは、パスワード、salt、および、反復カウントを受け取るしを呼び出すことでキーを生成、<xref:System.Security.Cryptography.Rfc2898DeriveBytes.GetBytes%2A>メソッドです。 このメソッドを繰り返し呼び出すは同じキーを生成しません代わりに、追加の 2 つの呼び出し、<xref:System.Security.Cryptography.Rfc2898DeriveBytes.GetBytes%2A>メソッドを`cb`パラメーターの値`20`は呼び出すことと同等、<xref:System.Security.Cryptography.Rfc2898DeriveBytes.GetBytes%2A>が 1 回のメソッド、`cb`のパラメーター値`40`です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Security.Cryptography.Rfc2898DeriveBytes.GetBytes%2A>のインスタンスのキーを取得するメソッド<xref:System.Security.Cryptography.Rfc2898DeriveBytes>です。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Rfc2898DeriveBytes>クラスです。  
+  
+ [!code-cpp[rfc28981#2](~/samples/snippets/cpp/VS_Snippets_CLR/rfc28981/CPP/rfc28981.cpp#2)]
+ [!code-csharp[rfc28981#2](~/samples/snippets/csharp/VS_Snippets_CLR/rfc28981/CS/rfc28981.cs#2)]
+ [!code-vb[rfc28981#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/rfc28981/vb/rfc28981.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="cb" /> が範囲外です。 このパラメーターには、負でない値が必要です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HashAlgorithm">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.HashAlgorithmName HashAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.HashAlgorithmName HashAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Rfc2898DeriveBytes.HashAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.HashAlgorithmName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IterationCount">
+      <MemberSignature Language="C#" Value="public int IterationCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 IterationCount" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Rfc2898DeriveBytes.IterationCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>演算の反復処理回数を取得または設定します。</summary>
+        <value>演算の反復処理回数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イテレーションのカウントが何回の操作を実行します。 このメソッドのカウントは 0 より大きい値にする必要があります。 イテレーションの推奨される最小数は 1000 です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Security.Cryptography.Rfc2898DeriveBytes.IterationCount%2A>プロパティをキーの生成に使用するイテレーションの数を表示します。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Rfc2898DeriveBytes>クラスです。  
+  
+ [!code-cpp[rfc28981#3](~/samples/snippets/cpp/VS_Snippets_CLR/rfc28981/CPP/rfc28981.cpp#3)]
+ [!code-csharp[rfc28981#3](~/samples/snippets/csharp/VS_Snippets_CLR/rfc28981/CS/rfc28981.cs#3)]
+ [!code-vb[rfc28981#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/rfc28981/vb/rfc28981.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">イテレーションの数は、1 より小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rfc2898DeriveBytes.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>演算の状態をリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Salt またはイテレーションの数が変更された場合、このメソッドは自動的に呼び出されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Security.Cryptography.Rfc2898DeriveBytes.Reset%2A> メソッドを使用する方法の例を次に示します。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Rfc2898DeriveBytes>クラスです。  
+  
+ [!code-cpp[rfc28981#5](~/samples/snippets/cpp/VS_Snippets_CLR/rfc28981/CPP/rfc28981.cpp#5)]
+ [!code-csharp[rfc28981#5](~/samples/snippets/csharp/VS_Snippets_CLR/rfc28981/CS/rfc28981.cs#5)]
+ [!code-vb[rfc28981#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/rfc28981/vb/rfc28981.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Salt">
+      <MemberSignature Language="C#" Value="public byte[] Salt { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Salt" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Rfc2898DeriveBytes.Salt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>演算で使用するキー salt 値を取得または設定します。</summary>
+        <value>演算で使用するキー salt 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Salt、ランダムなデータセット (バイト単位) より難しいメッセージの承認されていない復号化するために使用されます。 辞書攻撃は、攻撃者が事前に計算された暗号化キーの値を最も可能性の高いで暗号化された値を比較することで、暗号化されたメッセージを復号化しようと攻撃です。 このような攻撃は salt、またはランダム (バイト単位)、キーの派生前に、パスワードの最後の導入によって非常に困難になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された salt のサイズは 8 バイト未満です。</exception>
+        <exception cref="T:System.ArgumentNullException">Salt は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

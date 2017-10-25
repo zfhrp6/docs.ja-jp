@@ -1,0 +1,367 @@
+<Type Name="PropertyItem" FullName="System.Drawing.Imaging.PropertyItem">
+  <TypeSignature Language="C#" Value="public sealed class PropertyItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PropertyItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.PropertyItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イメージ ファイルに含まれるメタデータのプロパティをカプセル化します。 継承はできません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データから成る: 識別子の長さ、バイト単位で、プロパティ、プロパティの型、およびプロパティの値へのポインター。  
+  
+ A<xref:System.Drawing.Imaging.PropertyItem>スタンドアロン オブジェクトとして使用するものではありません。 A<xref:System.Drawing.Imaging.PropertyItem>オブジェクトから派生したクラスで使用するためのものが<xref:System.Drawing.Image>です。 A<xref:System.Drawing.Imaging.PropertyItem>オブジェクトを使用して取得して、メタデータを作成しないように、既存のイメージ ファイルのメタデータを変更します。 したがって、<xref:System.Drawing.Imaging.PropertyItem>クラスに定義されていない`Public`コンス トラクター、およびするがのインスタンスを作成できません、<xref:System.Drawing.Imaging.PropertyItem>オブジェクト。  
+  
+ ない状態を回避する、`Public`コンス トラクターを使用して、既存<xref:System.Drawing.Imaging.PropertyItem>オブジェクトの新しいインスタンスを作成する代わりに、<xref:System.Drawing.Imaging.PropertyItem>クラスです。 詳細については、「<xref:System.Drawing.Image.GetPropertyItem%2A?displayProperty=nameWithType>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、データを使用してイメージ ファイルにメタデータを表示する方法を示します、<xref:System.Drawing.Imaging.PropertyItem>クラスおよび<xref:System.Drawing.Image.PropertyItems%2A?displayProperty=nameWithType>プロパティです。  
+  
+ この例は、インポートする Windows フォームで使用するように設計された、<xref:System.Drawing.Imaging?displayProperty=nameWithType>名前空間。 パスを変更してコードをフォームに貼り付け`fakePhoto.jpg`には、システム上の画像ファイルをポイントします。 呼び出す、`ExtractMetaData`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.ImageExample#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.ImageExample#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.ImageExample#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public int Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Id" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.PropertyItem.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティの ID を設定します。</summary>
+        <value>プロパティの ID を表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、プロパティ タグとその Id を示します。 プロパティのタグの詳細については、次を参照してください。[イメージ プロパティ タグ定数](http://go.microsoft.com/fwlink/?LinkId=145387)です。 各プロパティ タグの説明は、次を参照してください。[プロパティ項目の説明](http://go.microsoft.com/fwlink/?LinkId=145383)です。  
+  
+|ID|プロパティのタグ|  
+|--------|------------------|  
+|0x0000|PropertyTagGpsVer|  
+|0x0001|PropertyTagGpsLatitudeRef|  
+|0x0002|PropertyTagGpsLatitude|  
+|0x0003|PropertyTagGpsLongitudeRef|  
+|0x0004|PropertyTagGpsLongitude|  
+|0x0005|PropertyTagGpsAltitudeRef|  
+|0x0006|PropertyTagGpsAltitude|  
+|0x0007|PropertyTagGpsGpsTime|  
+|0x0008|PropertyTagGpsGpsSatellites|  
+|0x0009|PropertyTagGpsGpsStatus|  
+|0x000A|PropertyTagGpsGpsMeasureMode|  
+|0x000B|PropertyTagGpsGpsDop|  
+|0x000C|PropertyTagGpsSpeedRef|  
+|0x000D|PropertyTagGpsSpeed|  
+|0x000E|PropertyTagGpsTrackRef|  
+|0x000F|PropertyTagGpsTrack|  
+|0x0010|PropertyTagGpsImgDirRef|  
+|0x0011|PropertyTagGpsImgDir|  
+|0x0012|PropertyTagGpsMapDatum|  
+|0x0013|PropertyTagGpsDestLatRef|  
+|0x0014|PropertyTagGpsDestLat|  
+|0x0015|PropertyTagGpsDestLongRef|  
+|0x0016|PropertyTagGpsDestLong|  
+|0x0017|PropertyTagGpsDestBearRef|  
+|0x0018|PropertyTagGpsDestBear|  
+|0x0019|PropertyTagGpsDestDistRef|  
+|0x001A|PropertyTagGpsDestDist|  
+|0x00FE|PropertyTagNewSubfileType|  
+|0x00FF|PropertyTagSubfileType|  
+|0x0100|PropertyTagImageWidth|  
+|0x0101|PropertyTagImageHeight|  
+|0x0102|PropertyTagBitsPerSample|  
+|0x0103|PropertyTagCompression|  
+|0x0106|PropertyTagPhotometricInterp|  
+|0x0107|PropertyTagThreshHolding|  
+|0x0108|PropertyTagCellWidth|  
+|0x0109|PropertyTagCellHeight|  
+|0x010A|PropertyTagFillOrder|  
+|0x010D|PropertyTagDocumentName|  
+|0x010E|PropertyTagImageDescription|  
+|0x010F|PropertyTagEquipMake|  
+|0x0110|PropertyTagEquipModel|  
+|0x0111|PropertyTagStripOffsets|  
+|0x0112|PropertyTagOrientation|  
+|0x0115|PropertyTagSamplesPerPixel|  
+|0x0116|PropertyTagRowsPerStrip|  
+|0x0117|PropertyTagStripBytesCount|  
+|0x0118|PropertyTagMinSampleValue|  
+|0x0119|PropertyTagMaxSampleValue|  
+|0x011A|PropertyTagXResolution|  
+|0x011B|PropertyTagYResolution|  
+|0x011C|PropertyTagPlanarConfig|  
+|0x011D|PropertyTagPageName|  
+|0x011E|PropertyTagXPosition|  
+|0x011F|PropertyTagYPosition|  
+|0x0120|PropertyTagFreeOffset|  
+|0x0121|PropertyTagFreeByteCounts|  
+|0x0122|PropertyTagGrayResponseUnit|  
+|0x0123|PropertyTagGrayResponseCurve|  
+|0x0124|PropertyTagT4Option|  
+|0x0125|PropertyTagT6Option|  
+|0x0128|PropertyTagResolutionUnit|  
+|0x0129|PropertyTagPageNumber|  
+|0x012D|PropertyTagTransferFunction|  
+|0x0131|PropertyTagSoftwareUsed|  
+|0x0132|PropertyTagDateTime|  
+|0x013B|PropertyTagArtist|  
+|0x013C|PropertyTagHostComputer|  
+|0x013D|PropertyTagPredictor|  
+|0x013E|PropertyTagWhitePoint|  
+|0x013F|PropertyTagPrimaryChromaticities|  
+|0x0140|PropertyTagColorMap|  
+|0x0141|PropertyTagHalftoneHints|  
+|0x0142|PropertyTagTileWidth|  
+|0x0143|PropertyTagTileLength|  
+|0x0144|PropertyTagTileOffset|  
+|0x0145|PropertyTagTileByteCounts|  
+|0x014C|PropertyTagInkSet|  
+|0x014D|PropertyTagInkNames|  
+|0x014E|PropertyTagNumberOfInks|  
+|0x0150|PropertyTagDotRange|  
+|0x0151|PropertyTagTargetPrinter|  
+|0x0152|PropertyTagExtraSamples|  
+|0x0153|PropertyTagSampleFormat|  
+|0x0154|PropertyTagSMinSampleValue|  
+|0x0155|PropertyTagSMaxSampleValue|  
+|0x0156|PropertyTagTransferRange|  
+|0x0200|PropertyTagJPEGProc|  
+|0x0201|PropertyTagJPEGInterFormat|  
+|0x0202|PropertyTagJPEGInterLength|  
+|0x0203|PropertyTagJPEGRestartInterval|  
+|0x0205|PropertyTagJPEGLosslessPredictors|  
+|0x0206|PropertyTagJPEGPointTransforms|  
+|0x0207|PropertyTagJPEGQTables|  
+|0x0208|PropertyTagJPEGDCTables|  
+|0x0209|PropertyTagJPEGACTables|  
+|0x0211|PropertyTagYCbCrCoefficients|  
+|0x0212|PropertyTagYCbCrSubsampling|  
+|0x0213|PropertyTagYCbCrPositioning|  
+|0x0214|PropertyTagREFBlackWhite|  
+|0x0301|PropertyTagGamma|  
+|0x0302|PropertyTagICCProfileDescriptor|  
+|0x0303|PropertyTagSRGBRenderingIntent|  
+|0x0320|PropertyTagImageTitle|  
+|0x5001|PropertyTagResolutionXUnit|  
+|0x5002|PropertyTagResolutionYUnit|  
+|0x5003|PropertyTagResolutionXLengthUnit|  
+|0x5004|PropertyTagResolutionYLengthUnit|  
+|0x5005|PropertyTagPrintFlags|  
+|0x5006|PropertyTagPrintFlagsVersion|  
+|0x5007|PropertyTagPrintFlagsCrop|  
+|0x5008|PropertyTagPrintFlagsBleedWidth|  
+|0x5009|PropertyTagPrintFlagsBleedWidthScale|  
+|0x500A|PropertyTagHalftoneLPI|  
+|0x500B|PropertyTagHalftoneLPIUnit|  
+|0x500C|PropertyTagHalftoneDegree|  
+|0x500D|PropertyTagHalftoneShape|  
+|0x500E|PropertyTagHalftoneMisc|  
+|0x500F|PropertyTagHalftoneScreen|  
+|0x5010|PropertyTagJPEGQuality|  
+|0x5011|PropertyTagGridSize|  
+|0x5012|PropertyTagThumbnailFormat|  
+|0x5013|PropertyTagThumbnailWidth|  
+|0x5014|PropertyTagThumbnailHeight|  
+|0x5015|PropertyTagThumbnailColorDepth|  
+|0x5016|PropertyTagThumbnailPlanes|  
+|0x5017|PropertyTagThumbnailRawBytes|  
+|0x5018|PropertyTagThumbnailSize|  
+|0x5019|PropertyTagThumbnailCompressedSize|  
+|0x501A|PropertyTagColorTransferFunction|  
+|0x501B|PropertyTagThumbnailData|  
+|0x5020|PropertyTagThumbnailImageWidth|  
+|0x5021|PropertyTagThumbnailImageHeight|  
+|0x5022|PropertyTagThumbnailBitsPerSample|  
+|0x5023|PropertyTagThumbnailCompression|  
+|0x5024|PropertyTagThumbnailPhotometricInterp|  
+|0x5025|PropertyTagThumbnailImageDescription|  
+|0x5026|PropertyTagThumbnailEquipMake|  
+|0x5027|PropertyTagThumbnailEquipModel|  
+|0x5028|PropertyTagThumbnailStripOffsets|  
+|0x5029|PropertyTagThumbnailOrientation|  
+|0x502A|PropertyTagThumbnailSamplesPerPixel|  
+|0x502B|PropertyTagThumbnailRowsPerStrip|  
+|0x502C|PropertyTagThumbnailStripBytesCount|  
+|0x502D|PropertyTagThumbnailResolutionX|  
+|0x502E|PropertyTagThumbnailResolutionY|  
+|0x502F|PropertyTagThumbnailPlanarConfig|  
+|0x5030|PropertyTagThumbnailResolutionUnit|  
+|0x5031|PropertyTagThumbnailTransferFunction|  
+|0x5032|PropertyTagThumbnailSoftwareUsed|  
+|0x5033|PropertyTagThumbnailDateTime|  
+|0x5034|PropertyTagThumbnailArtist|  
+|0x5035|PropertyTagThumbnailWhitePoint|  
+|0x5036|PropertyTagThumbnailPrimaryChromaticities|  
+|0x5037|PropertyTagThumbnailYCbCrCoefficients|  
+|0x5038|PropertyTagThumbnailYCbCrSubsampling|  
+|0x5039|PropertyTagThumbnailYCbCrPositioning|  
+|0x503A|PropertyTagThumbnailRefBlackWhite|  
+|0x503B|PropertyTagThumbnailCopyRight|  
+|0x5090|PropertyTagLuminanceTable|  
+|0x5091|PropertyTagChrominanceTable|  
+|0x5100|PropertyTagFrameDelay|  
+|0x5101|PropertyTagLoopCount|  
+|0x5102|PropertyTagGlobalPalette|  
+|0x5103|PropertyTagIndexBackground|  
+|0x5104|PropertyTagIndexTransparent|  
+|0x5110|PropertyTagPixelUnit|  
+|0x5111|PropertyTagPixelPerUnitX|  
+|0x5112|PropertyTagPixelPerUnitY|  
+|0x5113|PropertyTagPaletteHistogram|  
+|0x8298|PropertyTagCopyright|  
+|0x829A|PropertyTagExifExposureTime|  
+|0x829D|PropertyTagExifFNumber|  
+|0x8769|PropertyTagExifIFD|  
+|0x8773|PropertyTagICCProfile|  
+|0x8822|PropertyTagExifExposureProg|  
+|0x8824|PropertyTagExifSpectralSense|  
+|0x8825|PropertyTagGpsIFD|  
+|0x8827|PropertyTagExifISOSpeed|  
+|0x8828|PropertyTagExifOECF|  
+|0x9000|PropertyTagExifVer|  
+|0x9003|PropertyTagExifDTOrig|  
+|0x9004|PropertyTagExifDTDigitized|  
+|0x9101|PropertyTagExifCompConfig|  
+|0x9102|PropertyTagExifCompBPP|  
+|0x9201|PropertyTagExifShutterSpeed|  
+|0x9202|PropertyTagExifAperture|  
+|0x9203|PropertyTagExifBrightness|  
+|0x9204|PropertyTagExifExposureBias|  
+|0x9205|PropertyTagExifMaxAperture|  
+|0x9206|PropertyTagExifSubjectDist|  
+|0x9207|PropertyTagExifMeteringMode|  
+|0x9208|PropertyTagExifLightSource|  
+|0x9209|PropertyTagExifFlash|  
+|0x920A|PropertyTagExifFocalLength|  
+|0x927C|PropertyTagExifMakerNote|  
+|0x9286|PropertyTagExifUserComment|  
+|0x9290|PropertyTagExifDTSubsec|  
+|0x9291|PropertyTagExifDTOrigSS|  
+|0x9292|PropertyTagExifDTDigSS|  
+|0xA000|PropertyTagExifFPXVer|  
+|0xA001|PropertyTagExifColorSpace|  
+|0xA002|PropertyTagExifPixXDim|  
+|0xA003|PropertyTagExifPixYDim|  
+|0xA004|PropertyTagExifRelatedWav|  
+|0xA005|PropertyTagExifInterop|  
+|0xA20B|PropertyTagExifFlashEnergy|  
+|0xA20C|PropertyTagExifSpatialFR|  
+|0xA20E|PropertyTagExifFocalXRes|  
+|0xA20F|PropertyTagExifFocalYRes|  
+|0xA210|PropertyTagExifFocalResUnit|  
+|0xA214|PropertyTagExifSubjectLoc|  
+|0xA215|PropertyTagExifExposureIndex|  
+|0xA217|PropertyTagExifSensingMethod|  
+|0xA300|PropertyTagExifFileSource|  
+|0xA301|PropertyTagExifSceneType|  
+|0xA302|PropertyTagExifCfaPattern|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Len">
+      <MemberSignature Language="C#" Value="public int Len { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Len" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.PropertyItem.Len" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定します (バイト単位) の長さ、<see cref="P:System.Drawing.Imaging.PropertyItem.Value" />プロパティです。</summary>
+        <value>(バイト単位) の長さを表す整数、<see cref="P:System.Drawing.Imaging.PropertyItem.Value" />バイト配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public short Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int16 Type" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.PropertyItem.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に含まれるデータの種類を定義する整数、<see cref="P:System.Drawing.Imaging.PropertyItem.Value" />プロパティです。</summary>
+        <value>含まれるデータの種類を定義する整数<see cref="P:System.Drawing.Imaging.PropertyItem.Value" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、整数およびそれらを表す型を示します。  
+  
+|整数|表される型|  
+|-------------|----------------------|  
+|1|指定する<xref:System.Drawing.Imaging.PropertyItem.Value%2A>バイトの配列です。|  
+|2|指定する<xref:System.Drawing.Imaging.PropertyItem.Value%2A>null で終わる ASCII 文字列です。 設定する必要があります ASCII 型に型のデータ メンバーを設定する場合、<xref:System.Drawing.Imaging.PropertyItem.Len%2A>プロパティを null 終端文字を含む文字列の長さ。 たとえば、文字列「こんにちは」では、6 の長さがあります。|  
+|3|指定する<xref:System.Drawing.Imaging.PropertyItem.Value%2A>短い (16 ビット) の符号なし整数の配列です。|  
+|4|指定する<xref:System.Drawing.Imaging.PropertyItem.Value%2A>符号なしの配列の長さは (32 ビット) の整数。|  
+|5|指定する<xref:System.Drawing.Imaging.PropertyItem.Value%2A>データ メンバーは符号なし長整数のペアの配列。 各ペアが; 分数を表します最初の整数が分子で、2 番目の整数は分母です。|  
+|6|指定する<xref:System.Drawing.Imaging.PropertyItem.Value%2A>任意のデータ型の値を格納するバイトの配列です。|  
+|7|指定する<xref:System.Drawing.Imaging.PropertyItem.Value%2A>が配列の署名されている時間 (32 ビット) の整数。|  
+|10|指定する<xref:System.Drawing.Imaging.PropertyItem.Value%2A>符号付きの長整数のペアの配列です。 各ペアが; 分数を表します最初の整数が分子で、2 番目の整数は分母です。|  
+  
+ プロパティのタグの詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で「イメージ プロパティ タグ定数」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public byte[] Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Value" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.PropertyItem.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティ項目の値を設定します。</summary>
+        <value>プロパティ アイテムの値を表すバイト配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるバイト配列、<xref:System.Drawing.Imaging.PropertyItem.Value%2A>プロパティには、いくつかの異なるプリミティブ型のいずれかでデータが含まれています。 データを使用する特定データ型を使用して、<xref:System.Drawing.Imaging.PropertyItem.Type%2A>プロパティは、変換、バイト配列を適宜です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

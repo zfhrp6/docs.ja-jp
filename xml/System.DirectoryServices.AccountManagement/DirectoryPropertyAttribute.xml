@@ -1,0 +1,89 @@
+<Type Name="DirectoryPropertyAttribute" FullName="System.DirectoryServices.AccountManagement.DirectoryPropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DirectoryPropertyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DirectoryPropertyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AccountManagement.DirectoryPropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ストアによってプリンシパルのプロパティをディレクトリ属性にマップするために必要なデータが含まれています。 この属性は、プリンシパルの拡張機能に必要なプロパティにのみ設定できます。 拡張クラスのディレクトリの属性を表すすべてのプロパティで指定する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張メソッドで複数のディレクトリ属性を使用している場合、プロパティ (属性ごとに 1 つ) を複数の属性を追加する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryPropertyAttribute (string schemaAttributeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string schemaAttributeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.DirectoryPropertyAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemaAttributeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="schemaAttributeName">ディレクトリに設定されている属性の名前。 <see cref="P:System.DirectoryServices.AccountManagement.DirectoryPropertyAttribute.SchemaAttributeName" /> プロパティは、この値に初期化されます。 このプロパティは、アプリケーション ディレクトリとドメインのディレクトリの ldapDisplayName を表します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.DirectoryPropertyAttribute" />スキーマ属性名を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.DirectoryServices.AccountManagement.ContextType&gt; Context { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DirectoryServices.AccountManagement.ContextType&gt; Context" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.DirectoryPropertyAttribute.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DirectoryServices.AccountManagement.ContextType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは実装されていませんし常に null を返します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />コンテキストが設定されていない場合は、この属性を適用するストアまたは null の型を指定する列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaAttributeName">
+      <MemberSignature Language="C#" Value="public string SchemaAttributeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SchemaAttributeName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.DirectoryPropertyAttribute.SchemaAttributeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリ内の属性名を表す文字列を返します。</summary>
+        <value>ディレクトリ内の属性名を表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

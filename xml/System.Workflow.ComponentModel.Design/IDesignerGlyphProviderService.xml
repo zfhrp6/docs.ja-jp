@@ -1,0 +1,119 @@
+<Type Name="IDesignerGlyphProviderService" FullName="System.Workflow.ComponentModel.Design.IDesignerGlyphProviderService">
+  <TypeSignature Language="C#" Value="public interface IDesignerGlyphProviderService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignerGlyphProviderService" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.IDesignerGlyphProviderService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクティビティ デザイナーの開発者がアクティビティ デザイナーにカスタム グリフ プロバイダーを追加することが可能になります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider> インターフェイスを実装しているクラスは、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner> クラスのカスタム グリフ プロバイダーを追加または削除できます。  
+  
+   
+  
+## Examples  
+ アクティビティ デザイナーにカスタム グリフ プロバイダーを追加するために <xref:System.Workflow.ComponentModel.Design.IDesignerGlyphProviderService> を取得する方法を、次のコード例に示します。 このコードでは、<xref:System.Workflow.ComponentModel.Design.IDesignerGlyphProviderService.AddGlyphProvider%2A> メソッドを使用して、アクティビティ デザイナーにプロバイダーを追加しています。  
+  
+ このコード例は、ViewHost.cs ファイルから抜粋したワークフロー モニターの SDK サンプルの一部です。 型`WorkflowMonitorDesignerGlyphProvider`サンプル コードで定義されています。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[Wf_samples#136](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#136)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddGlyphProvider">
+      <MemberSignature Language="C#" Value="public void AddGlyphProvider (System.Workflow.ComponentModel.Design.IDesignerGlyphProvider glyphProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddGlyphProvider(class System.Workflow.ComponentModel.Design.IDesignerGlyphProvider glyphProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.IDesignerGlyphProviderService.AddGlyphProvider(System.Workflow.ComponentModel.Design.IDesignerGlyphProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="glyphProvider" Type="System.Workflow.ComponentModel.Design.IDesignerGlyphProvider" />
+      </Parameters>
+      <Docs>
+        <param name="glyphProvider">追加する <see cref="T:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider" /> インターフェイスを実装しているクラスを、アクティビティ デザイナーが使用するグリフ プロバイダーのリストに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.IDesignerGlyphProviderService.AddGlyphProvider%2A> メソッドを使用してアクティビティ デザイナーにプロバイダーを追加する方法を、次のコード例に示します。  
+  
+ このコード例は、ViewHost.cs ファイルから抜粋したワークフロー モニターの SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[Wf_samples#136](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#136)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlyphProviders">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.IDesignerGlyphProvider&gt; GlyphProviders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Design.IDesignerGlyphProvider&gt; GlyphProviders" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.IDesignerGlyphProviderService.GlyphProviders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.IDesignerGlyphProvider&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー グリフ プロバイダーの読み取り専用ジェネリック コレクションを取得します。</summary>
+        <value>読み取り専用の <see cref="T:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider" /> のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.IDesignerGlyphProviderService.GlyphProviders%2A> は、特定の <xref:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider> に関連付けられた <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> コレクションを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveGlyphProvider">
+      <MemberSignature Language="C#" Value="public void RemoveGlyphProvider (System.Workflow.ComponentModel.Design.IDesignerGlyphProvider glyphProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveGlyphProvider(class System.Workflow.ComponentModel.Design.IDesignerGlyphProvider glyphProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.IDesignerGlyphProviderService.RemoveGlyphProvider(System.Workflow.ComponentModel.Design.IDesignerGlyphProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="glyphProvider" Type="System.Workflow.ComponentModel.Design.IDesignerGlyphProvider" />
+      </Parameters>
+      <Docs>
+        <param name="glyphProvider">削除する <see cref="T:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.IDesignerGlyphProvider" /> インターフェイスを実装しているクラスを、アクティビティ デザイナーが使用するグリフ プロバイダーのリストから削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,102 @@
+<Type Name="NonSerializedAttribute" FullName="System.NonSerializedAttribute">
+  <TypeSignature Language="C#" Value="public sealed class NonSerializedAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NonSerializedAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.NonSerializedAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Field, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>シリアル化可能なクラスのフィールドをシリアル化されないことを示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>または<xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>、オブジェクトのシリアル化クラスを使用して、<xref:System.NonSerializedAttribute>フィールドがシリアル化されることを防ぐための属性です。 たとえば、機密データのシリアル化を防ぐために、この属性を使用できます。  
+  
+ ターゲット オブジェクトを<xref:System.NonSerializedAttribute>属性がシリアル化可能なクラスのパブリックおよびプライベート フィールドです。 既定では、クラス、シリアル化できないとマークされていない<xref:System.SerializableAttribute>です。 シリアル化プロセス中には、クラスのすべてのパブリックおよびプライベート フィールドが既定でシリアル化されます。 マークされたフィールド<xref:System.NonSerializedAttribute>シリアル化中に除外されます。 使用している場合、<xref:System.Xml.Serialization.XmlSerializer>クラスにオブジェクトをシリアル化を使用して、<xref:System.Xml.Serialization.XmlIgnoreAttribute>クラスを同じ機能を取得します。 また、実装、<xref:System.Runtime.Serialization.ISerializable>シリアル化プロセスに明示的に制御するインターフェイスです。 実装するクラスを<xref:System.Runtime.Serialization.ISerializable>と共に設定されなければなりませんも<xref:System.SerializableAttribute>します。  
+  
+ 適用する、<xref:System.NonSerializedAttribute>クラス イベントを次の c# コードに示すように、フィールドに属性の位置を設定します。  
+  
+```  
+[field:NonSerializedAttribute()]   
+public event ChangedEventHandler Changed;  
+```  
+  
+ フィールドがシリアル化されていない、既定値は逆シリアル化の後に指定する必要がありますが必要な場合は、値を持つフィールドを提供するメソッドを作成し、適用することができます、<xref:System.Runtime.Serialization.OnDeserializedAttribute>メソッドにします。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例でマークされたオブジェクトのシリアル化、<xref:System.SerializableAttribute>属性、およびでマークされたフィールドの動作、<xref:System.NonSerializedAttribute>でオブジェクトのシリアル化します。  
+  
+> [!NOTE]
+>  コードを使用して、<xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>オブジェクトをシリアル化するクラス。 プロジェクトに読み込まれる既定ではないのクラスに存在します。 コードを実行するには、プロジェクトに DLL への参照を追加する必要があります。  
+  
+ [!code-cpp[SerializationAttributes#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SerializationAttributes/CPP/s.cpp#1)]
+ [!code-csharp[SerializationAttributes#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SerializationAttributes/CS/s.cs#1)]
+ [!code-vb[SerializationAttributes#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SerializationAttributes/VB/s.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NonSerializedAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.NonSerializedAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.NonSerializedAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

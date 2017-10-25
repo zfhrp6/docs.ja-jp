@@ -1,0 +1,53 @@
+<Type Name="DataGridViewCellParsingEventHandler" FullName="System.Windows.Forms.DataGridViewCellParsingEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataGridViewCellParsingEventHandler(object sender, DataGridViewCellParsingEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewCellParsingEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCellParsingEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellParsingEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellParsingEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Windows.Forms.DataGridView.CellParsing" />のイベント、<see cref="T:System.Windows.Forms.DataGridView" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Windows.Forms.DataGridView.CellParsing>ユーザー指定の値からセルで指定された型の値へのカスタム値の変換を提供するイベント<xref:System.Windows.Forms.DataGridViewCell.ValueType%2A>プロパティです。  
+  
+ 処理するときに、<xref:System.Windows.Forms.DataGridView.CellParsing>イベント、自分で値を変換できますまたは既定の変換をカスタマイズすることができます。 たとえば、値変換できます、セルを使用して自分で<xref:System.Windows.Forms.DataGridViewCell.ParseFormattedValue%2A>独自の型コンバーターを持つメソッドです。 または、既定の型コンバーターは、値を解析しますが、変更をさせることができます、 <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>、 <xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>、および<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.InheritedCellStyle%2A?displayProperty=nameWithType>セルを使用して初期化されるプロパティ<xref:System.Windows.Forms.DataGridViewCell.InheritedStyle%2A>プロパティです。  
+  
+ 変換すると、値自分で、置換の初期、書式設定された値、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A?displayProperty=nameWithType>セルで指定された型に変換された値を持つプロパティ<xref:System.Windows.Forms.DataGridViewCell.ValueType%2A>プロパティです。 解析が必要なことを示す、設定、<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.ParsingApplied%2A?displayProperty=nameWithType>プロパティを`true`です。  
+  
+ 完了時のイベント ハンドラー場合、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>は`null`か、適切な型はありません、または<xref:System.Windows.Forms.DataGridViewCellParsingEventArgs.ParsingApplied%2A>プロパティは`false`、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>セルを使用して解析が<xref:System.Windows.Forms.DataGridViewCell.ParseFormattedValue%2A>既定の型コンバーターを持つメソッドです。 このメソッドの既定の実装を使用して値を解析して、 <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>、 <xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>、および<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>に渡されたセルのスタイルのプロパティです。 値と等しくない場合<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>を使用して、値を解析、<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>プロパティと型コンバーターで渡されます。  
+  
+ セルの値の表示の書式設定された値への変換をカスタマイズするには、処理、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Windows.Forms.DataGridViewCellParsingEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します<xref:System.Windows.Forms.DataGridViewCellParsingEventHandler>日付エントリの妥当性をチェックします。  
+  
+ [!code-cpp[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.GridViewUnbound#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/VB/form1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,127 @@
+<Type Name="StreamUpgradeBindingElement" FullName="System.ServiceModel.Channels.StreamUpgradeBindingElement">
+  <TypeSignature Language="C#" Value="public abstract class StreamUpgradeBindingElement : System.ServiceModel.Channels.BindingElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StreamUpgradeBindingElement extends System.ServiceModel.Channels.BindingElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.StreamUpgradeBindingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.BindingElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム バインドにカスタム ストリーム アップグレード プロバイダーを追加します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム ストリーム アップグレード プロバイダーを使用する必要があることを示すには、カスタム バインディング上にこの `abstract` クラスを実装するバインディング要素を実装します。  
+  
+ この `abstract` クラスは、以下のものによって実装されます。  
+  
+-   <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
+  
+-   <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StreamUpgradeBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeBindingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.StreamUpgradeBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StreamUpgradeBindingElement (System.ServiceModel.Channels.StreamUpgradeBindingElement elementToBeCloned);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.StreamUpgradeBindingElement elementToBeCloned) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeBindingElement.#ctor(System.ServiceModel.Channels.StreamUpgradeBindingElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="elementToBeCloned" Type="System.ServiceModel.Channels.StreamUpgradeBindingElement" />
+      </Parameters>
+      <Docs>
+        <param name="elementToBeCloned">複製するこのクラスのインスタンス。</param>
+        <summary>既存のインスタンスを使用して <see cref="T:System.ServiceModel.Channels.StreamUpgradeBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildClientStreamUpgradeProvider">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Channels.StreamUpgradeProvider BuildClientStreamUpgradeProvider (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.StreamUpgradeProvider BuildClientStreamUpgradeProvider(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeBindingElement.BuildClientStreamUpgradeProvider(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.StreamUpgradeProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">チャネル スタック全体の <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>提供するチャネル コンテキストに基づいて、<see cref="T:System.ServiceModel.Channels.StreamUpgradeProvider" /> のクライアント上にインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.StreamUpgradeProvider" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、クライアント チャネル ファクトリを開くときに呼び出され、<xref:System.ServiceModel.Channels.StreamUpgradeProvider>`abstract` クラスのカスタム実装を提供します。  
+  
+ <xref:System.ServiceModel.Channels.BindingContext> パラメーターは、チャネル スタック内の他の要素に対する反応を有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildServerStreamUpgradeProvider">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Channels.StreamUpgradeProvider BuildServerStreamUpgradeProvider (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.StreamUpgradeProvider BuildServerStreamUpgradeProvider(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.StreamUpgradeProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">チャネル スタック全体の <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>提供するチャネル コンテキストに基づいて、<see cref="T:System.ServiceModel.Channels.StreamUpgradeProvider" /> のサーバー上にインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.StreamUpgradeProvider" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、サービスを開くときに呼び出され、<xref:System.ServiceModel.Channels.StreamUpgradeProvider>`abstract` クラスのカスタム実装を提供します。  
+  
+ <xref:System.ServiceModel.Channels.BindingContext> パラメーターは、チャネル スタック内の他の要素に対する反応を有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

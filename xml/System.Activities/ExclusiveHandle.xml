@@ -1,0 +1,136 @@
+<Type Name="ExclusiveHandle" FullName="System.Activities.ExclusiveHandle">
+  <TypeSignature Language="C#" Value="public class ExclusiveHandle : System.Activities.Handle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExclusiveHandle extends System.Activities.Handle" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.ExclusiveHandle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.Handle</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>補足情報をブックマークに追加します。これによりブックマークがスコープ ハンドルのサブセットにアクセスできます。ただし、必須ではないハンドルは除きます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExclusiveHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.ExclusiveHandle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.ExclusiveHandle" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInitialize">
+      <MemberSignature Language="C#" Value="protected override void OnInitialize (System.Activities.HandleInitializationContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInitialize(class System.Activities.HandleInitializationContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.ExclusiveHandle.OnInitialize(System.Activities.HandleInitializationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.HandleInitializationContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">ハンドルが作成される環境。</param>
+        <summary>指定されたハンドル初期化コンテキストでハンドル変数から既定の <see cref="T:System.Activities.BookmarkScopeHandle" /> オブジェクトのリストを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterBookmarkScope">
+      <MemberSignature Language="C#" Value="public void RegisterBookmarkScope (System.Activities.NativeActivityContext context, System.Activities.BookmarkScopeHandle bookmarkScopeHandle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterBookmarkScope(class System.Activities.NativeActivityContext context, class System.Activities.BookmarkScopeHandle bookmarkScopeHandle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.ExclusiveHandle.RegisterBookmarkScope(System.Activities.NativeActivityContext,System.Activities.BookmarkScopeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.NativeActivityContext" />
+        <Parameter Name="bookmarkScopeHandle" Type="System.Activities.BookmarkScopeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="context">ハンドルが作成される環境。</param>
+        <param name="bookmarkScopeHandle">ブックマークのグループの特定とアクセスに使用されるトークン。このブックマークは、ワークフロー アクティビティ操作の同じプロトコルの下で機能します。</param>
+        <summary>指定されたコンテキストを使用して、指定されたブックマーク スコープ ハンドルを <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> オブジェクトの <see cref="T:System.Activities.BookmarkScopeHandle" /> に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この排他的スコープの下でブックマークが作成された後にこのメソッドが呼び出されると、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisteredBookmarkScopes">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Activities.BookmarkScopeHandle&gt; RegisteredBookmarkScopes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Activities.BookmarkScopeHandle&gt; RegisteredBookmarkScopes" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.ExclusiveHandle.RegisteredBookmarkScopes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Activities.BookmarkScopeHandle&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> オブジェクトの新しいまたは既存の <see cref="T:System.Activities.BookmarkScopeHandle" /> を取得します。</summary>
+        <value>ブックマーク スコープ ハンドルの読み取り専用コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reinitialize">
+      <MemberSignature Language="C#" Value="public void Reinitialize (System.Activities.NativeActivityContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reinitialize(class System.Activities.NativeActivityContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.ExclusiveHandle.Reinitialize(System.Activities.NativeActivityContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.NativeActivityContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">ハンドルが作成される環境。</param>
+        <summary>登録済みブックマーク スコープ ハンドルを既定値に戻します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 排他的ハンドルに登録されるブックマークが複数ある場合にこのメソッドが呼び出されると、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

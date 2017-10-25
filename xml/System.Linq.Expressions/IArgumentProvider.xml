@@ -1,0 +1,99 @@
+<Type Name="IArgumentProvider" FullName="System.Linq.Expressions.IArgumentProvider">
+  <TypeSignature Language="C#" Value="public interface IArgumentProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IArgumentProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Linq.Expressions.IArgumentProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Linq.Expressions</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>複数のツリー ノード (DynamicExpression、ElementInit、MethodCallExpression、InvocationExpression、NewExpression および InexExpression) の引数にアクセスするための内部インターフェイスを提供します。  この API を使用しないでください。  これは、DLL リファクタリングのためパブリックでのみ使用でき、内部パフォーマンスの最適化のためだけに存在します。  
+  
+ これにより、2 つの最適化を図り、式ツリーのサイズを縮小できます。  最初の最適化により、ツリー ノードに IList を保持する&lt;T&gt;は ReadOnlyCollection の代わりにします。  IList&lt;T&gt; ReadOnlyCollection の各ノードの割り当てのコストを節約します。  2 つ目の最適化により、特定の数の引数 (Block2、Block3、Block4 など) に保持される特殊なサブクラスを作成します。  そのため、これらのノードは ReadOnlyCollection およびその要素を格納するための配列の両方の割り当てを回避します。その結果、各ノードにつき 32 バイト節約されます。  
+  
+ 式ツリー ノードは引き続き、ReadOnlyCollections のオリジナル LINQ プロパティを公開します。  ノードは、配列または配列に通常格納される要素を格納するフィールドを再利用することにより、これを行います。  
+  
+ 配列の場合は、コレクションは IList に型指定&lt;T&gt; ReadOnlyCollection の代わりに&lt;T&gt;です。  ノードは最初に配列として構築されます。  コンパイラがメンバーにアクセスするときに、このインターフェイスを使用します。  配列要素へアクセスすることにより、配列を ReadOnlyCollection に昇格させます。  
+  
+ オブジェクトの場合、オブジェクトに型指定されたフィールドに最初の引数を格納します。  ノードが最初に構築されるときに、フィールドは式を保持します。  コンパイラは、このインターフェイスから引数にアクセスし、最初の引数のアクセサーはExpression.ReturnObject を使用して、式または ReadOnlyCollection ケースを扱うオブジェクトを返します。  ユーザーが ReadOnlyCollection にアクセスするときに、ReadOnlyCollection に直接格納するためオブジェクト フィールドが更新されます。  
+  
+ 式が一貫して同じ ReadOnlyCollection を返すことが重要です。  そうでなければ、リライター ツリー ウォーカーが解除されます。  LINQ v1 からの互換性に影響する変更点として、異なる ReadOnlyCollections が、同じ Expression ノードを形成します。  現在ユーザーは、オブジェクト ID を使用してノードが変更されたかどうかを確認できます。  ReadOnlyCollection をオーバー ロードされたフィールドに格納すると、メモリ使用を削減し、パブリック API の互換性を維持します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ArgumentCount">
+      <MemberSignature Language="C#" Value="public int ArgumentCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ArgumentCount" />
+      <MemberSignature Language="DocId" Value="P:System.Linq.Expressions.IArgumentProvider.ArgumentCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式ツリー ノードに引数の数を返します。  この型は使用しないでください。  これは、アセンブリ リファクタリングのためパブリックのみで、パフォーマンスの最適化のために内部で使用されます。</summary>
+        <value>式ツリー ノードに引数の数<see cref="T:System.Int32" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetArgument">
+      <MemberSignature Language="C#" Value="public System.Linq.Expressions.Expression GetArgument (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Linq.Expressions.Expression GetArgument(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Expressions.IArgumentProvider.GetArgument(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">引数のインデックス。</param>
+        <summary>インデックスの引数を返し、インデックスが範囲外にある場合にスローします。  この型は使用しないでください。  これは、アセンブリ リファクタリングのためパブリックのみで、パフォーマンスの最適化のために内部で使用されます。</summary>
+        <returns>インデックス、インデックスとしてが範囲外である場合にスロー引数<see cref="T:System.Linq.Expressions.Expression" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

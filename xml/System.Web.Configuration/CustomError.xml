@@ -1,0 +1,227 @@
+<Type Name="CustomError" FullName="System.Web.Configuration.CustomError">
+  <TypeSignature Language="C#" Value="public sealed class CustomError : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CustomError extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.CustomError" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成、 <see cref="T:System.Web.Configuration.CustomError" /> ASP.NET エラー コードをカスタム ページにマップするセクション。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CustomError>クラスをプログラムでアクセスおよび変更する方法を提供する、`error`構成ファイルのセクションです。 この型が所属するグループの一部、 <xref:System.Web.Configuration.CustomErrorCollection>、 <xref:System.Web.Configuration.CustomErrorsMode>、および<xref:System.Web.Configuration.CustomErrorsSection>です。  
+  
+> [!NOTE]
+>  カスタム エラーを定義するときに、ASP.NET にで通常 IIS など、基になるサービスによって発行標準エラーを割り当てます。 たとえば、ステータス コード 404 のカスタム エラーを定義する場合 ASP.NET は、発行いつでも、非既存の .aspx ページを参照してください。 カスタム エラーは、ASP.NET によって処理されるこれらの要素に対してのみ発行します。 たとえば、既存の非 .htm ページを参照する場合、IIS は標準 404 エラーを発行します。  
+  
+   
+  
+## Examples  
+ この例は、宣言の複数の属性の値を指定する方法を示します、`customErrors`セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.CustomError>クラスです。  
+  
+ 次の構成ファイルの例は、宣言によっての値を指定する方法を示しています、`customErrors`セクションです。  
+  
+```  
+<customErrors mode="RemoteOnly"  
+  defaultRedirect="customerror.htm">  
+    <error statusCode="404" redirect="customerror404.htm"/>  
+</customErrors>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.CustomError>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.CustomError#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CustomError/CS/customerror.cs#1)]
+ [!code-vb[System.Web.Configuration.CustomError#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CustomError/VB/customerror.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomError (int statusCode, string redirect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 statusCode, string redirect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.CustomError.#ctor(System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="statusCode" Type="System.Int32" />
+        <Parameter Name="redirect" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="statusCode">エラー ページへのリダイレクトの原因となる HTTP ステータス コード。</param>
+        <param name="redirect">エラー コードにマップされているカスタム ページの URL です。</param>
+        <summary><see cref="T:System.Web.Configuration.CustomError" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CustomError.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.CustomError>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object customError);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object customError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.CustomError.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="customError" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="customError">比較対象とするエラー。</param>
+        <summary>比較<see cref="T:System.Web.Configuration.CustomError" />エラーです。</summary>
+        <returns>
+          <see langword="true" />エラーが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CustomError.Equals%2A>メソッドは、メソッドに渡されるオブジェクトに対してすべてのエラーを比較します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.CustomError.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.CustomError" />オブジェクトのハッシュ コード。</summary>
+        <returns><see cref="T:System.Web.Configuration.CustomError" />オブジェクトのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CustomError.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Redirect">
+      <MemberSignature Language="C#" Value="public string Redirect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Redirect" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CustomError.Redirect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("redirect", IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリダイレクト URL を設定します。</summary>
+        <value>エラーが発生したときに、アプリケーションがリダイレクトされる URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CustomError.Redirect%2A>プロパティは、特定のエラーに関連付けられているカスタム ページの URL を識別します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、リダイレクト URL を使用する方法を示します。 コード例を参照してください、<xref:System.Web.Configuration.CustomError>コレクションを取得する方法についてのクラスに関するトピック。  
+  
+ [!code-csharp[System.Web.Configuration.CustomError#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CustomError/CS/customerror.cs#4)]
+ [!code-vb[System.Web.Configuration.CustomError#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CustomError/VB/customerror.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusCode">
+      <MemberSignature Language="C#" Value="public int StatusCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StatusCode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.CustomError.StatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("statusCode", IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MaxValue=999, MinValue=100)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTTP エラー状態コードを設定します。</summary>
+        <value>カスタム エラー ページへのリダイレクトの原因となる HTTP エラー状態コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP ステータス コードは、特定のエラーが発生したときのエラー ページをアプリケーションにリダイレクトします ASP.NET インフラストラクチャで使用します。  
+  
+> [!NOTE]
+>  カスタム エラーが発行されるは、ASP.NET によって処理される要素がによる場合にのみそれ以外の場合、標準のエラーが発行されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ステータス コードを使用する方法を示します。 コード例を参照してください、<xref:System.Web.Configuration.CustomError>コレクションを取得する方法についてのクラスに関するトピック。  
+  
+ [!code-csharp[System.Web.Configuration.CustomError#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.CustomError/CS/customerror.cs#5)]
+ [!code-vb[System.Web.Configuration.CustomError#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.CustomError/VB/customerror.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

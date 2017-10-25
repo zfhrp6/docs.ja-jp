@@ -1,0 +1,652 @@
+<Type Name="DbParameter" FullName="System.Data.Common.DbParameter">
+  <TypeSignature Language="C#" Value="public abstract class DbParameter : MarshalByRefObject, System.Data.IDbDataParameter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DbParameter extends System.MarshalByRefObject implements class System.Data.IDataParameter, class System.Data.IDbDataParameter" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.DbParameter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Data.IDbDataParameter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>パラメーターを表します、<see cref="T:System.Data.Common.DbCommand" />および必要に応じて、そのへのマッピング、<see cref="T:System.Data.DataSet" />列です。 パラメーターの詳細については、次を参照してください。[構成パラメーターとパラメーターのデータ型](~/docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DbParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbParameter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DbParameter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbType">
+      <MemberSignature Language="C#" Value="public abstract System.Data.DbType DbType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DbType DbType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.DbType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.DbType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターの <see cref="T:System.Data.DbType" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Data.DbType" /> 値のいずれか。 既定値は、<see cref="F:System.Data.DbType.String" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">プロパティが有効に設定されていない<see cref="T:System.Data.DbType" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public abstract System.Data.ParameterDirection Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.ParameterDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.ParameterDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターが入力専用、出力専用、双方向、またはストアド プロシージャの戻り値パラメーターのいずれであるかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Data.ParameterDirection" /> 値のいずれか。 既定値は、<see langword="Input" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.ParameterDirection>は、出力、および関連付けられている実行<xref:System.Data.Common.DbCommand>、値を返さない、 <xref:System.Data.Common.DbParameter> null 値が含まれています。  
+  
+ `Output`、 `InputOut`、および`ReturnValue`呼び出しで返されるパラメーター<xref:System.Data.Common.DbCommand.ExecuteReader%2A>を呼び出すまでアクセスできません<xref:System.Data.Common.DbDataReader.Close%2A>または<xref:System.Data.Common.DbDataReader.Dispose%2A>上、<xref:System.Data.Common.DbDataReader>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティが有効ないずれかに設定されていない<see cref="T:System.Data.ParameterDirection" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public abstract bool IsNullable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターが null 値を受け取るかどうかを示す値を取得または設定します。</summary>
+        <value>
+          null 値を受け取る場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Null 値の処理を使用して、<xref:System.DBNull>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterName">
+      <MemberSignature Language="C#" Value="public abstract string ParameterName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ParameterName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.ParameterName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DbParameter" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Data.Common.DbParameter" /> の名前。 既定値は、空の文字列 ("") です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Precision">
+      <MemberSignature Language="C#" Value="public virtual byte Precision { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Precision" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.Precision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[.NET Framework 4.5.1 以降のバージョンでサポート]  
+  
+ <see cref="P:System.Data.Common.DbParameter.Value" /> プロパティを表すために使用する最大桁数を取得または設定します。</summary>
+        <value><see cref="P:System.Data.Common.DbParameter.Value" /> プロパティを表すために使用する最大桁数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetDbType">
+      <MemberSignature Language="C#" Value="public abstract void ResetDbType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResetDbType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbParameter.ResetDbType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセット、 **DbType**を元の設定のプロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scale">
+      <MemberSignature Language="C#" Value="public virtual byte Scale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Scale" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.Scale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Data.Common.DbParameter.Value" /> が解決される、小数点以下の桁数を取得または設定します。</summary>
+        <value><see cref="P:System.Data.Common.DbParameter.Value" /> が解決される、小数点以下の桁数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public abstract int Size { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Size" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列内のデータの最大サイズをバイト単位で取得または設定します。</summary>
+        <value>列内のデータの最大サイズ (バイト単位)。 既定値はパラメーター値から推論されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.DbParameter.Size%2A> Binary と文字列型のプロパティを使用します。  
+  
+ 文字列以外のデータ型と ANSI の文字列データは、の<xref:System.Data.Common.DbParameter.Size%2A>プロパティのバイト数を示します。 Unicode 文字列データの<xref:System.Data.Common.DbParameter.Size%2A>文字の数を示します。 文字列の数では、終端の文字は含まれません。  
+  
+ 可変長データ型で<xref:System.Data.Common.DbParameter.Size%2A>サーバーに送信するデータの最大量を示します。 たとえば、Unicode 文字列値、 <xref:System.Data.Common.DbParameter.Size%2A> 100 を最初の文字に、サーバーに送信されるデータの量が制限される可能性があります。  
+  
+ 双方向と出力のパラメーターと戻り値は、の値を設定する必要があります<xref:System.Data.Common.DbParameter.Size%2A>です。 入力パラメーターは、必須ではありませんし、パラメーター化されたステートメントを実行すると、値が設定は、指定されたパラメーターの実際のサイズから推測明示されていない場合。  
+  
+ <xref:System.Data.Common.DbParameter.DbType%2A>と<xref:System.Data.Common.DbParameter.Size%2A>設定で、パラメーターのプロパティを推測できなければ<xref:System.Data.Common.DbParameter.Value%2A>です。 そのため、それらを指定する必要はありません。 ただし、これらはで<xref:System.Data.Common.DbParameter>プロパティの設定。 たとえば、パラメーターのサイズが推論されました<xref:System.Data.Common.DbParameter.Size%2A>ステートメントの実行後に推定値が含まれていません。  
+  
+ 固定長データ型の値<xref:System.Data.Common.DbParameter.Size%2A>は無視されます。 サーバーへのパラメーターの値を送信するときに、プロバイダーを使用して、情報として利用できます。  
+  
+ 値のサイズに指定された場合、 <xref:System.Data.Common.DbParameter> 、指定値を超えた<xref:System.Data.Common.DbParameter.Size%2A>、<xref:System.Data.Common.DbParameter.Value%2A>の<xref:System.Data.Common.DbParameter>のサイズに切り捨て、指定した値を格納する、<xref:System.Data.Common.DbParameter>です。  
+  
+ 型のパラメーター `DbType`.`String`の値<xref:System.Data.Common.DbParameter.Size%2A>Unicode 文字の長さです。 型のパラメーター `DbType`.`Xml`、<xref:System.Data.Common.DbParameter.Size%2A>は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceColumn">
+      <MemberSignature Language="C#" Value="public abstract string SourceColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.SourceColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にマップされたソース列の名前、<see cref="T:System.Data.DataSet" />ロードしたり返したりするために使用して、<see cref="P:System.Data.Common.DbParameter.Value" />です。</summary>
+        <value><see cref="T:System.Data.DataSet" /> にマップされるソース列の名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Data.Common.DbParameter.SourceColumn%2A>と列から取得したが、パラメーターの値、空の文字列以外の値に設定されている、<xref:System.Data.Common.DbParameter.SourceColumn%2A>名。 場合<xref:System.Data.Common.DbParameter.Direction%2A>に設定されている`Input`から値を取得、<xref:System.Data.DataSet>です。 場合<xref:System.Data.Common.DbParameter.Direction%2A>に設定されている`Output`、データ ソースから値を取得します。 A<xref:System.Data.Common.DbParameter.Direction%2A>の`InputOutput`両方の組み合わせです。  
+  
+ 使用する方法についての詳細、<xref:System.Data.Common.DbParameter.SourceColumn%2A>プロパティを参照してください[DataAdapter パラメーター](~/docs/framework/data/adonet/dataadapter-parameters.md)と[Dataadapter によるデータ ソースを更新](~/docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceColumnNullMapping">
+      <MemberSignature Language="C#" Value="public abstract bool SourceColumnNullMapping { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SourceColumnNullMapping" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.SourceColumnNullMapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース列が null 許容かどうかを示す値を設定または取得します。 これにより、<see cref="T:System.Data.Common.DbCommandBuilder" /> で null 許容列の Update ステートメントを正しく生成できます。</summary>
+        <value>
+          ソース列が null 許容である場合は <see langword="true" />。null 許容ではない場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.DbParameter.SourceColumnNullMapping%2A>によって使用される、 <xref:System.Data.Common.DbCommandBuilder> null 許容の列を処理するときに、更新コマンドを正しく生成します。 一般に、使用の<xref:System.Data.Common.DbParameter.SourceColumnNullMapping%2A>から継承する開発者に制限されて<xref:System.Data.Common.DbCommandBuilder>です。  
+  
+ <xref:System.Data.Common.DbCommandBuilder>このプロパティを使用して、基になる列が、null 値し、このプロパティを設定するかどうかを判断する`true`、null 許容である場合と`false`されていない場合。 ときに<xref:System.Data.Common.DbCommandBuilder>が調べ、Update ステートメントを生成する、<xref:System.Data.Common.DbParameter.SourceColumnNullMapping%2A>パラメーターごとにします。 プロパティが場合`true`、<xref:System.Data.Common.DbCommandBuilder>次のように WHERE 句が生成されます (このクエリ式内で"FieldName"を表すフィールドの名前)。  
+  
+```  
+((@IsNull_FieldName = 1 AND FieldName IS NULL) OR   
+  (FieldName = @Original_FieldName))  
+```  
+  
+ 場合<xref:System.Data.Common.DbParameter.SourceColumnNullMapping%2A>フィールドは`false`、<xref:System.Data.Common.DbCommandBuilder>次の WHERE 句が生成されます。  
+  
+```  
+FieldName = @OriginalFieldName  
+```  
+  
+ さらに、@IsNull_FieldNameそうでない場合、null と 0 をソース フィールドが存在する場合、1 が含まれています。 このメカニズムでは、SQL Server のパフォーマンスの最適化ではの複数のプロバイダーの間で機能する一般的なコードを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceVersion">
+      <MemberSignature Language="C#" Value="public virtual System.Data.DataRowVersion SourceVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DataRowVersion SourceVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.SourceVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.DataRowVersion" />を読み込むときに使用する<see cref="P:System.Data.Common.DbParameter.Value" />です。</summary>
+        <value><see cref="T:System.Data.DataRowVersion" /> 値のいずれか。 既定値は、<see langword="Current" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって使用される<xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>中に、<xref:System.Data.Common.DbDataAdapter.Update%2A>操作にパラメーター値を設定するかどうかを決定する`Current`または`Original`です。 これにより、プライマリ キーを更新できます。 このプロパティのバージョンに、<xref:System.Data.DataRow>によって使用される、`DataRow.Item`プロパティ、または<xref:System.Data.DataRow.GetChildRows%2A>のメソッド、<xref:System.Data.DataRow>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティは、のいずれかに設定されていない、<see cref="T:System.Data.DataRowVersion" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.IDataParameter.SourceVersion">
+      <MemberSignature Language="C#" Value="System.Data.DataRowVersion System.Data.IDataParameter.SourceVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DataRowVersion System.Data.IDataParameter.SourceVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.System#Data#IDataParameter#SourceVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.IDbDataParameter.Precision">
+      <MemberSignature Language="C#" Value="byte System.Data.IDbDataParameter.Precision { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 System.Data.IDbDataParameter.Precision" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.System#Data#IDbDataParameter#Precision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値パラメーターの精度を示します。</summary>
+        <value>データ プロバイダー <see langword="Parameter" /> オブジェクトの <see langword="Value" /> プロパティを表すために使用する最大桁数。 既定値は 0 で、データ プロバイダーにより <see langword="Value" /> の精度が設定されていることを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbParameter> のインスタンスが <xref:System.Data.IDbDataParameter> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Data.IDbDataParameter.Precision%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.IDbDataParameter.Scale">
+      <MemberSignature Language="C#" Value="byte System.Data.IDbDataParameter.Scale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 System.Data.IDbDataParameter.Scale" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.System#Data#IDbDataParameter#Scale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Data.IDbDataParameter.Scale" />」をご覧ください。</summary>
+        <value><see cref="T:System.Data.OleDb.OleDbParameter.Value" /> が解決される、小数点以下の桁数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbParameter> のインスタンスが <xref:System.Data.IDbDataParameter> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Data.IDbDataParameter.Scale%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public abstract object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbParameter.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターの値を取得または設定します。</summary>
+        <value>パラメーターの値である <see cref="T:System.Object" />。 既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力パラメーターの値がバインドされている、<xref:System.Data.Common.DbCommand>ですが、サーバーに送信します。 完了時に出力パラメーターと戻り値パラメーターの値を設定、<xref:System.Data.Common.DbCommand>後、<xref:System.Data.Common.DbDataReader>が閉じられます。  
+  
+ 指定する必要があります、サーバーに null パラメーター値を送信するときに<xref:System.DBNull>null でないです。 システムの null 値は、値のない空オブジェクトです。 <xref:System.DBNull> は、null 値を表すために使用します。  
+  
+ アプリケーションでは、データベースの種類を指定する場合、プロバイダーがサーバーにデータを送信するとき、バインドされた値がその型に変換されます。 プロバイダーがサポートしている場合は、任意の型の値を変換しようとした場合、<xref:System.IConvertible>インターフェイスです。 指定した型の値と互換性がない場合、変換エラーがあります。  
+  
+ <xref:System.Data.Common.DbParameter.DbType%2A>値を設定してプロパティを推論することができます。  
+  
+ <xref:System.Data.Common.DbParameter.Value%2A>でプロパティを上書き`DbDataAdapter.Update`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

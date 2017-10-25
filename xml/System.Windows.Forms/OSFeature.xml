@@ -1,0 +1,244 @@
+<Type Name="OSFeature" FullName="System.Windows.Forms.OSFeature">
+  <TypeSignature Language="C#" Value="public class OSFeature : System.Windows.Forms.FeatureSupport" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OSFeature extends System.Windows.Forms.FeatureSupport" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.OSFeature" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.FeatureSupport</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オペレーティング システムの特定の機能についてのクエリを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`static`で提供されるこのクラスのインスタンス、<xref:System.Windows.Forms.OSFeature.Feature%2A>オペレーティング システムの機能を照会するプロパティです。 このクラスのインスタンスを作成することはできません。  
+  
+ 機能のバージョンを確認するには、呼び出し、<xref:System.Windows.Forms.OSFeature.GetVersionPresent%2A>メソッドです。 調べるには、機能や、特定のバージョンがあるかどうか、呼び出し、<xref:System.Windows.Forms.FeatureSupport.IsPresent%2A>メソッドし、このクラスで提供される機能の識別子を検索する機能を指定します。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Windows.Forms.OSFeature>かどうかをオペレーティング システムを照会する、<xref:System.Windows.Forms.OSFeature.LayeredWindows>機能がインストールされています。 この例では、2 つの方法を確認する機能が存在するかどうかを参照してくださいを表示します。 最初のメソッドで`myVersion`いずれであるかがチェック`null`です。 バージョンが場合`null`機能がインストールされていません。 2 番目のメソッドでは、例では、基本クラスはメソッドを呼び出し<xref:System.Windows.Forms.FeatureSupport.IsPresent%2A>機能がインストールされているかどうかにします。 結果は、テキスト ボックスに表示されます。  
+  
+ このコード`textBox1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic OSFeature Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OSFeature Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OSFeature Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OSFeature Example/CS/source.cs#1)]
+ [!code-vb[Classic OSFeature Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OSFeature Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected OSFeature ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.OSFeature.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.OSFeature" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスをインスタンス化することはできません。 クエリを実行するオペレーティング システムの機能を使用して、`static`のインスタンス<xref:System.Windows.Forms.OSFeature>このクラスで提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Feature">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.OSFeature Feature { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.OSFeature Feature" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.OSFeature.Feature" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.OSFeature</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="static" />のインスタンス、<see cref="T:System.Windows.Forms.OSFeature" />機能についてのクエリを使用するクラス。 このプロパティは読み取り専用です。</summary>
+        <value><see cref="T:System.Windows.Forms.OSFeature" /> クラスのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これを使用して`static`オペレーティング システムの機能を照会するプロパティです。 このクラスのインスタンスを作成することはできません。  
+  
+ 機能のバージョンを確認するには、呼び出し、<xref:System.Windows.Forms.OSFeature.GetVersionPresent%2A>メソッドです。 調べるには、機能や、特定のバージョンがあるかどうか、呼び出し、<xref:System.Windows.Forms.FeatureSupport.IsPresent%2A>メソッドし、このクラスで提供される機能の識別子を検索する機能を指定します。  
+  
+   
+  
+## Examples  
+ 次の例のクエリ<xref:System.Windows.Forms.OSFeature>の<xref:System.Windows.Forms.OSFeature.LayeredWindows>機能します。 バージョンの確認がかどうかか`null`機能が存在するかどうかを確認します。 結果は、テキスト ボックスに表示されます。 このコード`textBox1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic OSFeature.GetVersionPresent Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OSFeature.GetVersionPresent Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OSFeature.GetVersionPresent Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OSFeature.GetVersionPresent Example/CS/source.cs#1)]
+ [!code-vb[Classic OSFeature.GetVersionPresent Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OSFeature.GetVersionPresent Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVersionPresent">
+      <MemberSignature Language="C#" Value="public override Version GetVersionPresent (object feature);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Version GetVersionPresent(object feature) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.OSFeature.GetVersionPresent(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="feature" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="feature">いずれかのバージョンが要求された機能<see cref="F:System.Windows.Forms.OSFeature.LayeredWindows" />または<see cref="F:System.Windows.Forms.OSFeature.Themes" />です。</param>
+        <summary>現在システムで使用できる、指定した機能のバージョンを取得します。</summary>
+        <returns>A<see cref="T:System.Version" />現在システムで使用できる、指定したオペレーティング システム機能のバージョンを表すまたは<see langword="null" />機能が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.OSFeature.Feature%2A>プロパティ、`static`のインスタンス<xref:System.Windows.Forms.OSFeature>機能のバージョン番号のクエリに、このクラスで提供します。  
+  
+   
+  
+## Examples  
+ 次の例のクエリ<xref:System.Windows.Forms.OSFeature>の<xref:System.Windows.Forms.OSFeature.LayeredWindows>機能します。 バージョンの確認がかどうかか`null`機能が存在するかどうかを確認します。 結果は、テキスト ボックスに表示されます。 このコード`textBox1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic OSFeature.GetVersionPresent Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OSFeature.GetVersionPresent Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OSFeature.GetVersionPresent Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OSFeature.GetVersionPresent Example/CS/source.cs#1)]
+ [!code-vb[Classic OSFeature.GetVersionPresent Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OSFeature.GetVersionPresent Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPresent">
+      <MemberSignature Language="C#" Value="public static bool IsPresent (System.Windows.Forms.SystemParameter enumVal);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsPresent(valuetype System.Windows.Forms.SystemParameter enumVal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.OSFeature.IsPresent(System.Windows.Forms.SystemParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumVal" Type="System.Windows.Forms.SystemParameter" />
+      </Parameters>
+      <Docs>
+        <param name="enumVal">A<see cref="T:System.Windows.Forms.SystemParameter" />を検索する機能を表すです。</param>
+        <summary>指定された機能またはメトリックは、オペレーティング システムをサポートするかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />機能がシステムで使用可能な場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用して、<xref:System.Windows.Forms.OSFeature.IsPresent%2A>オペレーティング システムが特定の機能やによって識別されるメトリックをサポートしているかどうかはメソッド`enumValue`です。 返される値に基づいて<xref:System.Windows.Forms.OSFeature.IsPresent%2A>コードで条件付きのアクションを実行します。 たとえば、パラメーター値は、このメソッドを呼び出す場合<xref:System.Windows.Forms.SystemParameter.FlatMenu>を返します`true`、フラット スタイルのアプリケーションにオーナー描画メニューを作成する可能性があります。  
+  
+ 一部のシステムの機能またはメトリックにアクセスすると、それらが特定のオペレーティング システムのバージョンで利用できない場合に例外が発生することができます。 ここでは、まず使用して、対応する<xref:System.Windows.Forms.SystemParameter>列挙値、およびと<xref:System.Windows.Forms.OSFeature.IsPresent%2A>メトリックがサポートされているかどうかを決定します。 たとえば、呼び出す<xref:System.Windows.Forms.OSFeature.IsPresent%2A>で<xref:System.Windows.Forms.SystemInformation.CaretWidth%2A>取得する前に、<xref:System.Windows.Forms.SystemInformation.CaretWidth%2A?displayProperty=nameWithType>プロパティの値。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.OSFeature.IsPresent%2A>メソッドを<xref:System.Windows.Forms.SystemParameter>列挙します。 例では、オペレーティング システムをサポートしているかどうかを判断、`CaretWidth`メトリック呼び出す前に、<xref:System.Windows.Forms.SystemInformation.CaretWidth%2A?displayProperty=nameWithType>プロパティです。  
+  
+ [!code-cpp[System.Windows.Forms.OSFeature.IsPresent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.OSFeature.IsPresent/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.OSFeature.IsPresent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.OSFeature.IsPresent/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.OSFeature.IsPresent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.OSFeature.IsPresent/VB/form1.vb#1)]  
+[!code-cpp[System.Windows.Forms.OSFeature.IsPresent#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.OSFeature.IsPresent/CPP/form1.cpp#2)]
+[!code-csharp[System.Windows.Forms.OSFeature.IsPresent#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.OSFeature.IsPresent/CS/form1.cs#2)]
+[!code-vb[System.Windows.Forms.OSFeature.IsPresent#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.OSFeature.IsPresent/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LayeredWindows">
+      <MemberSignature Language="C#" Value="public static readonly object LayeredWindows;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly object LayeredWindows" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.OSFeature.LayeredWindows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>階層の最上位の windows 機能を表します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ レイヤード ウィンドウは、オペレーティング システムで透明または半透明作成できます。 レイヤード ウィンドウのサポートは、Windows 2000 で初めて導入されました。 詳細については、アプリケーションを表示"階層化 Windows:: A 新しい方法を使用して透明度と透明度効果で Windows"http://msdn.microsoft.com、プラットフォーム SDK のドキュメントで。  
+  
+ レイヤード ウィンドウの機能がインストールされているかどうかを判断するのには、使用、<xref:System.Windows.Forms.OSFeature.Feature%2A>基底クラス メソッドを呼び出すプロパティ<xref:System.Windows.Forms.FeatureSupport.IsPresent%2A>で<xref:System.Windows.Forms.OSFeature.LayeredWindows>検索する機能として。  
+  
+ 代わりに、呼び出すことによって、機能がインストールされているかどうかに確認することができます、<xref:System.Windows.Forms.OSFeature.GetVersionPresent%2A>メソッドを<xref:System.Windows.Forms.OSFeature.LayeredWindows>機能を検索するとします。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のシステムがレイヤード ウィンドウをサポートしているかどうかを判断します。 基本クラスのメソッド<xref:System.Windows.Forms.FeatureSupport.IsPresent%2A>で呼び出された<xref:System.Windows.Forms.OSFeature.LayeredWindows>として検索する機能。 結果は、テキスト ボックスに表示されます。 このコード`textBox1`はインスタンス化され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic OSFeature.LayeredWindows Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OSFeature.LayeredWindows Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OSFeature.LayeredWindows Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OSFeature.LayeredWindows Example/CS/source.cs#1)]
+ [!code-vb[Classic OSFeature.LayeredWindows Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OSFeature.LayeredWindows Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Themes">
+      <MemberSignature Language="C#" Value="public static readonly object Themes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly object Themes" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.OSFeature.Themes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムのテーマの機能を表します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーマは、Microsoft plus 壁紙、カーソル、フォント、サウンド、およびアイコンが最初に導入されたを含むビジュアル インターフェイス設定のコレクションです。 Windows 95。 .NET Framework によって直接サポートされない操作に使用するテーマは、visual スタイルでに対する広範なサポートが含まれていますが、<xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType>名前空間。 Windows テーマの詳細については、テーマと視覚スタイルと Win32 SDK の Visual スタイル リファレンスのトピックを参照してください。  
+  
+ 調べるには、テーマの機能がインストールされているかどうか、基本クラスのメソッドを呼び出す<xref:System.Windows.Forms.FeatureSupport.IsPresent%2A>で<xref:System.Windows.Forms.OSFeature.Themes>として検索する機能。  
+  
+ 代わりに、呼び出すことによって、機能がインストールされているかどうかに確認することができます、<xref:System.Windows.Forms.OSFeature.GetVersionPresent%2A>メソッドを<xref:System.Windows.Forms.OSFeature.Themes>機能を検索するとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

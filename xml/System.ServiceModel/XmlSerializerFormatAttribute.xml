@@ -1,0 +1,179 @@
+<Type Name="XmlSerializerFormatAttribute" FullName="System.ServiceModel.XmlSerializerFormatAttribute">
+  <TypeSignature Language="C#" Value="public sealed class XmlSerializerFormatAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlSerializerFormatAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.XmlSerializerFormatAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Method | System.AttributeTargets.Interface, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows Communication Foundation (WCF) インフラストラクチャを使用するように指示、<see cref="T:System.Xml.Serialization.XmlSerializer" />の代わりに、<see cref="T:System.Runtime.Serialization.XmlObjectSerializer" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、<xref:System.ServiceModel.DataContractFormatAttribute> 属性に似ています。 どちらの属性も、メソッド、クラス、またはインターフェイスに適用できます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]<xref:System.Xml.Serialization.XmlSerializer>を参照してください[XmlSerializer クラスを使用して](~/docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)です。  
+  
+ メソッドには、2 つの属性のいずれかを適用でき、両方は適用できません。 どちらの属性も適用されていない操作では、格納クラスに適用された属性を使用します。 格納クラスにどちらの属性も適用されていない場合は、<xref:System.Runtime.Serialization.DataContractSerializer> が使用されます。  
+  
+ 属性を適用すると、実行時に <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> が作成されます。 この動作により、シリアライザーの動作を実行時にカスタマイズできるようになります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.XmlSerializerFormatAttribute> をインターフェイスに適用します。  
+  
+ [!code-csharp[XmlSerializerFormatAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/xmlserializerformatattribute/cs/xmlserializerformat_example.cs#1)]
+ [!code-vb[XmlSerializerFormatAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/xmlserializerformatattribute/vb/xmlserializerformat_example.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializerFormatAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.XmlSerializerFormatAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.XmlSerializerFormatAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.OperationFormatStyle Style { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.OperationFormatStyle Style" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.XmlSerializerFormatAttribute.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.OperationFormatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlSerializer" /> の SOAP スタイルを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.OperationFormatStyle" /> 値のいずれか。 既定値は、<see cref="F:System.ServiceModel.OperationFormatStyle.Document" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> プロパティおよび <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> プロパティは、メッセージの書式指定の方法を制御します。  
+  
+   
+  
+## Examples  
+ 完全な例では、次を参照してください。 [Use および Style プロパティを設定](~/docs/framework/wcf/samples/setting-the-use-and-style-properties.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportFaults">
+      <MemberSignature Language="C#" Value="public bool SupportFaults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportFaults" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.XmlSerializerFormatAttribute.SupportFaults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーの読み書きに <see cref="T:System.Xml.Serialization.XmlSerializer" /> を使用する必要があることを示す値を取得または設定します。</summary>
+        <value>
+          エラーの読み書きに <see langword="true" /> を使用する必要がある場合は <see cref="T:System.Xml.Serialization.XmlSerializer" />。<see langword="false" /> を使用する場合は <see cref="T:System.Runtime.Serialization.DataContractSerializer" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エラーのシリアル化のための既定のフォーマッタは <xref:System.Runtime.Serialization.DataContractSerializer> です。 <xref:System.Xml.Serialization.XmlSerializer> を使用するには、このプロパティを `true` に設定します。 .NET 4 以降では、<xref:System.ServiceModel.XmlSerializerFormatAttribute.SupportFaults%2A> の適用先コントラクトでカスタム動作が設定されている場合でも、<xref:System.ServiceModel.XmlSerializerFormatAttribute> プロパティによって設定されたシリアライザーが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Use">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.OperationFormatUse Use { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.OperationFormatUse Use" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.XmlSerializerFormatAttribute.Use" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.OperationFormatUse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用する形式を指定する値を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.OperationFormatUse" /> 値のいずれか。 既定値は、<see cref="F:System.ServiceModel.OperationFormatUse.Literal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> プロパティおよび <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> プロパティは、メッセージの書式指定の方法を制御します。  
+  
+   
+  
+## Examples  
+ 完全な例では、次を参照してください。 [Use および Style プロパティを設定](~/docs/framework/wcf/samples/setting-the-use-and-style-properties.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

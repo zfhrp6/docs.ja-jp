@@ -1,0 +1,146 @@
+<Type Name="BaseValidatorDesigner" FullName="System.Web.UI.Design.WebControls.BaseValidatorDesigner">
+  <TypeSignature Language="C#" Value="public class BaseValidatorDesigner : System.Web.UI.Design.WebControls.PreviewControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BaseValidatorDesigner extends System.Web.UI.Design.WebControls.PreviewControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.BaseValidatorDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.PreviewControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.Design.SupportsPreviewControl(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>派生した Web サーバー コントロールのビジュアル デザイナーでデザイン時サポートを提供、<see cref="T:System.Web.UI.WebControls.BaseValidator" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーでソースからデザイン ビューに切り替えたときに、マークアップのソース コードを説明するから派生したコントロール、<xref:System.Web.UI.WebControls.BaseValidator>抽象クラスは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ソース ビューに切り替えるには、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。 <xref:System.Web.UI.Design.WebControls.BaseValidatorDesigner>オブジェクトから派生したコントロールのデザイン時サポートを提供する、<xref:System.Web.UI.WebControls.BaseValidator>ビジュアル デザイナーでクラスです。  
+  
+ <xref:System.Web.UI.Design.WebControls.BaseValidatorDesigner.GetDesignTimeHtml%2A>メソッドは、デザイン時に関連付けられたコントロールを表示するために使用するマークアップを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では、`SimpleCompareValidator`から制御、<xref:System.Web.UI.WebControls.CompareValidator>クラスです。 `SimpleCompareValidator`コピーである、<xref:System.Web.UI.WebControls.CompareValidator>です。 例も、デザイナーでは`SimpleCompareValidatorDesigner`から、<xref:System.Web.UI.Design.WebControls.BaseValidatorDesigner>クラスと使用、<xref:System.ComponentModel.DesignerAttribute>属性に関連付けるには、`SimpleCompareValidatorDesigner`クラス、`SimpleCompareValidator`コントロール。  
+  
+ `SimpleCompareValidatorDesigner`上書き、<xref:System.Web.UI.Design.WebControls.BaseValidatorDesigner.GetDesignTimeHtml%2A>を囲む実線の境界線を描画する方法、`SimpleCompareValidator`場合は、デザイン時に制御の値、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>コントロールのプロパティは、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>フィールドです。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.BaseValidatorDesigner#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.BaseValidatorDesigner/CS/CustomCompareValidatorDesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.WebControls.BaseValidatorDesigner#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.BaseValidatorDesigner/VB/customcomparevalidatordesigner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BaseValidatorDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseValidatorDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.BaseValidatorDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.BaseValidatorDesigner>クラスから派生した関連付けられたコントロールの作成時に、<xref:System.Web.UI.WebControls.BaseValidator>クラスまたはそのコントロールをデザイン サーフェイス上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateViewControl">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.Control CreateViewControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.Control CreateViewControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseValidatorDesigner.CreateViewControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン サーフェイスに表示するために関連付けられたコントロールのコピーを返します。</summary>
+        <returns>Web サーバー コントロールです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseValidatorDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に関連付けられたコントロールを描画するために使用するマークアップを取得します。</summary>
+        <returns>表示するために使用するマークアップを含む文字列、<see cref="T:System.Web.UI.WebControls.BaseValidator" />デザイン時にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>または<xref:System.Web.UI.WebControls.BaseValidator.Text%2A>から派生した関連付けられたコントロールのプロパティ、<xref:System.Web.UI.WebControls.BaseValidator>クラスは、空の文字列 ("")、または、<xref:System.Web.UI.WebControls.BaseValidator.Display%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.ValidatorDisplay.None>フィールド、<xref:System.Web.UI.Design.WebControls.BaseValidatorDesigner.GetDesignTimeHtml%2A>メソッドのセット、<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>プロパティ角かっこ () とセットで囲まれているコントロール ID を<xref:System.Web.UI.WebControls.BaseValidator.Display%2A>プロパティを<xref:System.Web.UI.WebControls.ValidatorDisplay.Static>フィールドです。 <xref:System.Web.UI.Design.WebControls.BaseValidatorDesigner.GetDesignTimeHtml%2A>を呼び出して、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>に応じてマークアップ、および復元元の値、コントロールのプロパティを生成する方法の基本します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.BaseValidatorDesigner.GetDesignTimeHtml%2A>場合、デザイン時に関連付けられているコントロールを囲む実線の境界線を描画するメソッドの値、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>コントロールのプロパティに設定されて、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>または<xref:System.Web.UI.WebControls.BorderStyle.None>フィールドです。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.BaseValidatorDesigner#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.BaseValidatorDesigner/CS/CustomCompareValidatorDesigner.cs#3)]
+ [!code-vb[System.Web.UI.Design.WebControls.BaseValidatorDesigner#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.BaseValidatorDesigner/VB/customcomparevalidatordesigner.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseValidatorDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">実装するコレクション、<see cref="T:System.Collections.IDictionary" />追加されたプロパティおよびシャドウ プロパティのです。</param>
+        <summary>削除するか、プロパティを追加したり、プロパティ グリッドで、関連付けられたコントロールのプロパティをシャドウするために、デザイナーによって使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール デザイナーのオブジェクトから派生したメソッドを使用して、<xref:System.ComponentModel.Design.ComponentDesigner.PreFilterProperties%2A?displayProperty=nameWithType>デザイナーを実装して、対応するデザイン時のプロパティで、プロパティを追加またはプロパティ グリッドからプロパティを削除するコントロール プロパティをシャドウするメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

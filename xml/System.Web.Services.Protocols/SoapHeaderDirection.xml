@@ -1,0 +1,110 @@
+<Type Name="SoapHeaderDirection" FullName="System.Web.Services.Protocols.SoapHeaderDirection">
+  <TypeSignature Language="C#" Value="public enum SoapHeaderDirection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SoapHeaderDirection extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapHeaderDirection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定するかどうかの受信者、<see cref="T:System.Web.Services.Protocols.SoapHeader" />が XML Web サービス、XML Web サービス クライアント、またはその両方です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Web.Services.Protocols.SoapHeaderAttribute> XML Web サービス メソッドまたは XML Web サービス プロキシ クラスのメソッドのいずれかに適用できます。 どちらの場合、受信者がで指定された、<xref:System.Web.Services.Protocols.SoapHeaderAttribute.Direction%2A>プロパティ<xref:System.Web.Services.Protocols.SoapHeaderAttribute>です。 XML Web サービス メソッドでは、実行中に例外がスローされたときに、SOAP ヘッダーを返すことを指定するには、適用、<xref:System.Web.Services.Protocols.SoapHeaderAttribute>をメソッドに設定し、<xref:System.Web.Services.Protocols.SoapHeaderAttribute.Direction%2A>プロパティ フォールトをします。  
+  
+ .NET Framework version 1.0 では、エラーの値はできません。  
+  
+   
+  
+## Examples  
+ 次の XML Web サービス メソッドを指定する、 `myHeader` <xref:System.Web.Services.Protocols.SoapHeaderDirection.Fault> XML Web サービスに、XML Web サービス クライアントから送信され、XML Web サービス クライアントに XML Web の実行中にスローされる例外に関係なくサービスメソッド。  
+  
+ [!code-cpp[Classic SoapHeaderDirection Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapHeaderDirection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapHeaderDirection Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapHeaderDirection Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapHeaderDirection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapHeaderDirection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Fault">
+      <MemberSignature Language="C#" Value="Fault" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Protocols.SoapHeaderDirection Fault = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.SoapHeaderDirection.Fault" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapHeaderDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定します、 <see cref="T:System.Web.Services.Protocols.SoapHeader" /> XML Web サービス メソッドで例外がスローされたときに、XML Web サービス クライアントに送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="In">
+      <MemberSignature Language="C#" Value="In" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Protocols.SoapHeaderDirection In = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.SoapHeaderDirection.In" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapHeaderDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定します、 <see cref="T:System.Web.Services.Protocols.SoapHeader" /> XML Web サービスに送信されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InOut">
+      <MemberSignature Language="C#" Value="InOut" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Protocols.SoapHeaderDirection InOut = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.SoapHeaderDirection.InOut" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapHeaderDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定します、<see cref="T:System.Web.Services.Protocols.SoapHeader" />が XML Web サービスや XML Web サービス クライアントの両方に送信します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Out">
+      <MemberSignature Language="C#" Value="Out" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Protocols.SoapHeaderDirection Out = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.SoapHeaderDirection.Out" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapHeaderDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定します、 <see cref="T:System.Web.Services.Protocols.SoapHeader" /> XML Web サービス クライアントに送信されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

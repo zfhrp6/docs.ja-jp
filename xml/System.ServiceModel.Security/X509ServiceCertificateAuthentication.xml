@@ -1,0 +1,237 @@
+<Type Name="X509ServiceCertificateAuthentication" FullName="System.ServiceModel.Security.X509ServiceCertificateAuthentication">
+  <TypeSignature Language="C#" Value="public class X509ServiceCertificateAuthentication" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509ServiceCertificateAuthentication extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.X509ServiceCertificateAuthentication" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SSL/TLS ネゴシエーションを使用して取得されたサービス証明書を認証するためにクライアント プロキシが使用する設定を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このクラスを使用する方法を次の例に示します。  
+  
+ [!code-csharp[S_UEX509ServiceCertificateAuthentication#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_uex509servicecertificateauthentication/cs/client.cs#4)]
+ [!code-vb[S_UEX509ServiceCertificateAuthentication#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uex509servicecertificateauthentication/vb/client.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509ServiceCertificateAuthentication ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.X509ServiceCertificateAuthentication.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Security.X509ServiceCertificateAuthentication" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CertificateValidationMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.X509CertificateValidationMode CertificateValidationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Security.X509CertificateValidationMode CertificateValidationMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.X509CertificateValidationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書検証モードを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.X509CertificateValidationMode" /> 内の列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、SSL/TLS ネゴシエーションを使用して取得されたサービス証明書の有効性を確認するためのオプションを示します。 この列挙体のメンバーの一覧については、<xref:System.ServiceModel.Security.X509CertificateValidationMode> を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティを設定する方法を示します。  
+  
+ [!code-csharp[S_UEX509ServiceCertificateAuthentication#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_uex509servicecertificateauthentication/cs/client.cs#0)]
+ [!code-vb[S_UEX509ServiceCertificateAuthentication#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uex509servicecertificateauthentication/vb/client.vb#0)]  
+  
+ プロパティは構成ファイル内でも設定できます。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomCertificateValidator">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.X509CertificateValidator CustomCertificateValidator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.X509CertificateValidator CustomCertificateValidator" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CustomCertificateValidator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム クライアント証明書検証を取得または設定します。</summary>
+        <value>カスタム クライアント証明書検証コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] は既定のクライアント証明書検証を提供します。証明書検証は、信頼されたユーザー ストアに対しクライアント証明書を検証し、証明書が有効なルートに接続するチェーンの一部であることを確認します。 カスタム検証を実装して、別の動作を取得することもできます。 このプロパティを使用すれば、カスタム検証を指定できます。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティを設定する方法を示します。  
+  
+ [!code-csharp[S_UEX509ServiceCertificateAuthentication#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_uex509servicecertificateauthentication/cs/client.cs#1)]
+ [!code-vb[S_UEX509ServiceCertificateAuthentication#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uex509servicecertificateauthentication/vb/client.vb#1)]  
+  
+ プロパティは構成ファイル内でも設定できます。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">資格情報が読み取り専用のときに設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RevocationMode">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509RevocationMode RevocationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.X509Certificates.X509RevocationMode RevocationMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509ServiceCertificateAuthentication.RevocationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509RevocationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ChainTrust および PeerOrChainTrust X.509 証明書検証モードの証明書失効モードを取得または設定します。</summary>
+        <value><see cref="T:System.Security.Cryptography.X509Certificates.X509RevocationMode" /> のいずれかの値。<see langword="NoCheck" />、<see langword="Online" />、または <see langword="Offline" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証明書を使用するとき、システムは、クライアント証明書が証明書失効リスト内にないことを検証して、クライアント証明書が失効していないことを確認します。 このチェックは、オンラインで、またはキャッシュ内の失効リストに対して実行できます。 失効チェックをオフにするには、このプロパティを `NoCheck` に設定します。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティを設定する方法を示します。  
+  
+ [!code-csharp[S_UEX509ServiceCertificateAuthentication#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uex509servicecertificateauthentication/cs/client.cs#2)]
+ [!code-vb[S_UEX509ServiceCertificateAuthentication#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uex509servicecertificateauthentication/vb/client.vb#2)]  
+  
+ プロパティは構成ファイル内でも設定できます。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">資格情報が読み取り専用のときに設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustedStoreLocation">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.StoreLocation TrustedStoreLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.X509Certificates.StoreLocation TrustedStoreLocation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509ServiceCertificateAuthentication.TrustedStoreLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.StoreLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント証明書チェーンを検証するためのコンテキストとなる信頼されたストアの場所を取得または設定します。</summary>
+        <value>信頼されたストアの場所。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、X.509 証明書チェーンの検証にコンピューターのコンテキストを使用するかユーザーのコンテキストを使用するかを指定します。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティを設定する方法を示します。  
+  
+ [!code-csharp[S_UEX509ServiceCertificateAuthentication#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_uex509servicecertificateauthentication/cs/client.cs#3)]
+ [!code-vb[S_UEX509ServiceCertificateAuthentication#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uex509servicecertificateauthentication/vb/client.vb#3)]  
+  
+ プロパティは構成ファイル内でも設定できます。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">資格情報が読み取り専用のときに設定しようとしました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

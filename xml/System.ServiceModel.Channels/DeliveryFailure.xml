@@ -1,0 +1,273 @@
+<Type Name="DeliveryFailure" FullName="System.ServiceModel.Channels.DeliveryFailure">
+  <TypeSignature Language="C#" Value="public enum DeliveryFailure" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DeliveryFailure extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.DeliveryFailure" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>キューから読み取られたメッセージの配信エラーについて、可能性のあるエラーの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryFailure%2A> プロパティを取得することで、メッセージの配信が失敗し、メッセージが配信不能キューに送られた理由を判別できます。 配信不能キューにメッセージ処理に関する詳細については、次を参照してください。[メッセージ転送エラーの処理を配信不能メッセージ キューを使用して](~/docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、サービス操作内のメッセージの <xref:System.ServiceModel.Channels.DeliveryFailure> にアクセスする方法を示します。  
+  
+ [!code-csharp[S_DeadLetter#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_deadletter/cs/dlservice.cs#0)]
+ [!code-vb[S_DeadLetter#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_deadletter/vb/dlservice.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AccessDenied">
+      <MemberSignature Language="C#" Value="AccessDenied" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure AccessDenied = int32(32772)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.AccessDenied" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信元には、送信先キューにメッセージを格納するためのアクセス権がありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BadDestinationQueue">
+      <MemberSignature Language="C#" Value="BadDestinationQueue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure BadDestinationQueue = int32(32768)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.BadDestinationQueue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信先キューが見つかりませんでした。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BadEncryption">
+      <MemberSignature Language="C#" Value="BadEncryption" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure BadEncryption = int32(32775)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.BadEncryption" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信先のキュー マネージャーがメッセージを解読できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BadSignature">
+      <MemberSignature Language="C#" Value="BadSignature" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure BadSignature = int32(32774)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.BadSignature" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>無効な署名が添付されているため、送信先のキュー マネージャーがメッセージを認証できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CouldNotEncrypt">
+      <MemberSignature Language="C#" Value="CouldNotEncrypt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure CouldNotEncrypt = int32(32776)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.CouldNotEncrypt" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信元のキュー マネージャーがメッセージを暗号化できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HopCountExceeded">
+      <MemberSignature Language="C#" Value="HopCountExceeded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure HopCountExceeded = int32(32773)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.HopCountExceeded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージのホップ数が制限を超えました。ホップ数は、中間サーバーの数を示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotTransactionalMessage">
+      <MemberSignature Language="C#" Value="NotTransactionalMessage" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure NotTransactionalMessage = int32(32778)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.NotTransactionalMessage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非トランザクション メッセージが、トランザクション キューに送信されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotTransactionalQueue">
+      <MemberSignature Language="C#" Value="NotTransactionalQueue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure NotTransactionalQueue = int32(32777)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.NotTransactionalQueue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクション メッセージが、非トランザクション キューに送信されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Purged">
+      <MemberSignature Language="C#" Value="Purged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure Purged = int32(32769)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.Purged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信先キューに到達する前に、メッセージが削除されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueDeleted">
+      <MemberSignature Language="C#" Value="QueueDeleted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure QueueDeleted = int32(49152)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.QueueDeleted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージをアプリケーションに配信する前に、送信先のキューが削除されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueExceedMaximumSize">
+      <MemberSignature Language="C#" Value="QueueExceedMaximumSize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure QueueExceedMaximumSize = int32(32771)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.QueueExceedMaximumSize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信先のキューに空きがないため、メッセージは配信されませんでした。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="QueuePurged">
+      <MemberSignature Language="C#" Value="QueuePurged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure QueuePurged = int32(49153)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.QueuePurged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キューが削除され、メッセージは存在しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReachQueueTimeout">
+      <MemberSignature Language="C#" Value="ReachQueueTimeout" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure ReachQueueTimeout = int32(32770)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.ReachQueueTimeout" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージは、タイムアウトする前に送信先キューに到達しませんでした。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveTimeout">
+      <MemberSignature Language="C#" Value="ReceiveTimeout" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure ReceiveTimeout = int32(49154)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.ReceiveTimeout" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージは、時間どおりにはアプリケーションに配信されませんでした。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.DeliveryFailure Unknown = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.DeliveryFailure.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.DeliveryFailure</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不明なエラーが発生しました。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

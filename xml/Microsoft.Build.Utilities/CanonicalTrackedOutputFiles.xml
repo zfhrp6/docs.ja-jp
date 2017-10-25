@@ -1,0 +1,553 @@
+<Type Name="CanonicalTrackedOutputFiles" FullName="Microsoft.Build.Utilities.CanonicalTrackedOutputFiles">
+  <TypeSignature Language="C#" Value="public class CanonicalTrackedOutputFiles" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CanonicalTrackedOutputFiles extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスは、追跡ログ インタープリター .write のファイルです。 追跡は、正規の形式 Canoncial .write を記録します。 ログは、出力は、入力に関連付けする必要があるため、ルート必要があります。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CanonicalTrackedOutputFiles (Microsoft.Build.Framework.ITaskItem[] tlogFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITaskItem[] tlogFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.#ctor(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="tlogFiles">.Write です。 tlog ファイルの解釈</param>
+        <summary>コンストラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CanonicalTrackedOutputFiles (Microsoft.Build.Framework.ITask ownerTask, Microsoft.Build.Framework.ITaskItem[] tlogFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITask ownerTask, class Microsoft.Build.Framework.ITaskItem[] tlogFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.#ctor(Microsoft.Build.Framework.ITask,Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ownerTask" Type="Microsoft.Build.Framework.ITask" />
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="ownerTask">ファイルの追跡ツールを使用しているタスク</param>
+        <param name="tlogFiles">.Write です。 tlog ファイルの解釈</param>
+        <summary>コンストラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CanonicalTrackedOutputFiles (Microsoft.Build.Framework.ITask ownerTask, Microsoft.Build.Framework.ITaskItem[] tlogFiles, bool constructOutputsFromTLogs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ITask ownerTask, class Microsoft.Build.Framework.ITaskItem[] tlogFiles, bool constructOutputsFromTLogs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.#ctor(Microsoft.Build.Framework.ITask,Microsoft.Build.Framework.ITaskItem[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ownerTask" Type="Microsoft.Build.Framework.ITask" />
+        <Parameter Name="tlogFiles" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="constructOutputsFromTLogs" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="ownerTask">ファイルの追跡ツールを使用しているタスク</param>
+        <param name="tlogFiles">.Write です。 tlog ファイルの解釈</param>
+        <param name="constructOutputsFromTLogs">True の場合は、tlog ファイルからの出力を構築します。</param>
+        <summary>コンストラクター</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddComputedOutputForSourceRoot">
+      <MemberSignature Language="C#" Value="public void AddComputedOutputForSourceRoot (string sourceKey, string computedOutput);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddComputedOutputForSourceRoot(string sourceKey, string computedOutput) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.AddComputedOutputForSourceRoot(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceKey" Type="System.String" />
+        <Parameter Name="computedOutput" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceKey">出力を追加するソース</param>
+        <param name="computedOutput">計算の出力をこのソース キーです。</param>
+        <summary>このメソッドは、出力のグラフに、指定したキーの計算された出力を追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddComputedOutputsForSourceRoot">
+      <MemberSignature Language="C#" Value="public void AddComputedOutputsForSourceRoot (string sourceKey, Microsoft.Build.Framework.ITaskItem[] computedOutputs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddComputedOutputsForSourceRoot(string sourceKey, class Microsoft.Build.Framework.ITaskItem[] computedOutputs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.AddComputedOutputsForSourceRoot(System.String,Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceKey" Type="System.String" />
+        <Parameter Name="computedOutputs" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="sourceKey">出力を追加するソース。</param>
+        <param name="computedOutputs">計算の出力をこのソース キーです。</param>
+        <summary>このメソッドは、指定したソース キーの計算された出力を出力グラフに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddComputedOutputsForSourceRoot">
+      <MemberSignature Language="C#" Value="public void AddComputedOutputsForSourceRoot (string sourceKey, string[] computedOutputs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddComputedOutputsForSourceRoot(string sourceKey, string[] computedOutputs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.AddComputedOutputsForSourceRoot(System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceKey" Type="System.String" />
+        <Parameter Name="computedOutputs" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="sourceKey">出力を追加するソース。</param>
+        <param name="computedOutputs">計算の出力をこのソース キーです。</param>
+        <summary>このメソッドは、指定したソース キーの計算された出力を出力グラフに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyTable">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;string,System.Collections.Generic.Dictionary&lt;string,DateTime&gt;&gt; DependencyTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, class System.Collections.Generic.Dictionary`2&lt;string, valuetype System.DateTime&gt;&gt; DependencyTable" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.DependencyTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Collections.Generic.Dictionary&lt;System.String,System.DateTime&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係テーブルを取得します。</summary>
+        <value>依存関係テーブルを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputsForNonCompositeSource">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] OutputsForNonCompositeSource (params Microsoft.Build.Framework.ITaskItem[] sources);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Framework.ITaskItem[] OutputsForNonCompositeSource(class Microsoft.Build.Framework.ITaskItem[] sources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.OutputsForNonCompositeSource(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sources" Type="Microsoft.Build.Framework.ITaskItem[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="sources">出力を検索するソース</param>
+        <summary>このメソッドは、(ルートのマーカーの内容) と同じソース ルートの出力を決定します。</summary>
+        <returns>ソースの出力の配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputsForSource">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] OutputsForSource (params Microsoft.Build.Framework.ITaskItem[] sources);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Framework.ITaskItem[] OutputsForSource(class Microsoft.Build.Framework.ITaskItem[] sources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.OutputsForSource(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sources" Type="Microsoft.Build.Framework.ITaskItem[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="sources">出力を検索するソース。</param>
+        <summary>このメソッドは、(ルートのマーカーの内容) と同じソース ルートの出力を決定します。</summary>
+        <returns>ソースの出力の配列です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputsForSource">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] OutputsForSource (Microsoft.Build.Framework.ITaskItem[] sources, bool searchForSubRootsInCompositeRootingMarkers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Framework.ITaskItem[] OutputsForSource(class Microsoft.Build.Framework.ITaskItem[] sources, bool searchForSubRootsInCompositeRootingMarkers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.OutputsForSource(Microsoft.Build.Framework.ITaskItem[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sources" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="searchForSubRootsInCompositeRootingMarkers" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sources">出力を検索するソース。</param>
+        <param name="searchForSubRootsInCompositeRootingMarkers">True の場合は、subroots の複合ルート マーカーを検索します。</param>
+        <summary>このメソッドは、出力を決定します。 (ルートのマーカーの内容) と同じソース ルートのルートがあるに対するマーカーを必要に応じて検索複合出力ファイル。</summary>
+        <returns>ソースの出力の配列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependenciesFromEntryIfMissing">
+      <MemberSignature Language="C#" Value="public void RemoveDependenciesFromEntryIfMissing (Microsoft.Build.Framework.ITaskItem source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependenciesFromEntryIfMissing(class Microsoft.Build.Framework.ITaskItem source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveDependenciesFromEntryIfMissing(Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependenciesFromEntryIfMissing">
+      <MemberSignature Language="C#" Value="public void RemoveDependenciesFromEntryIfMissing (Microsoft.Build.Framework.ITaskItem[] source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependenciesFromEntryIfMissing(class Microsoft.Build.Framework.ITaskItem[] source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveDependenciesFromEntryIfMissing(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependenciesFromEntryIfMissing">
+      <MemberSignature Language="C#" Value="public void RemoveDependenciesFromEntryIfMissing (Microsoft.Build.Framework.ITaskItem source, Microsoft.Build.Framework.ITaskItem correspondingOutput);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependenciesFromEntryIfMissing(class Microsoft.Build.Framework.ITaskItem source, class Microsoft.Build.Framework.ITaskItem correspondingOutput) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveDependenciesFromEntryIfMissing(Microsoft.Build.Framework.ITaskItem,Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem" />
+        <Parameter Name="correspondingOutput" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <param name="correspondingOutput">(同じファイルの処理に使用)、ソースに対応する出力。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependenciesFromEntryIfMissing">
+      <MemberSignature Language="C#" Value="public void RemoveDependenciesFromEntryIfMissing (Microsoft.Build.Framework.ITaskItem[] source, Microsoft.Build.Framework.ITaskItem[] correspondingOutputs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependenciesFromEntryIfMissing(class Microsoft.Build.Framework.ITaskItem[] source, class Microsoft.Build.Framework.ITaskItem[] correspondingOutputs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveDependenciesFromEntryIfMissing(Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="correspondingOutputs" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <param name="correspondingOutputs">(同じファイルの処理に使用)、ソースに対応する出力。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependencyFromEntry">
+      <MemberSignature Language="C#" Value="public void RemoveDependencyFromEntry (Microsoft.Build.Framework.ITaskItem source, Microsoft.Build.Framework.ITaskItem dependencyToRemove);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependencyFromEntry(class Microsoft.Build.Framework.ITaskItem source, class Microsoft.Build.Framework.ITaskItem dependencyToRemove) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveDependencyFromEntry(Microsoft.Build.Framework.ITaskItem,Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem" />
+        <Parameter Name="dependencyToRemove" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <param name="dependencyToRemove">削除する依存関係です。</param>
+        <summary>指定されたソースと対応する出力の出力グラフ エントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDependencyFromEntry">
+      <MemberSignature Language="C#" Value="public void RemoveDependencyFromEntry (Microsoft.Build.Framework.ITaskItem[] sources, Microsoft.Build.Framework.ITaskItem dependencyToRemove);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveDependencyFromEntry(class Microsoft.Build.Framework.ITaskItem[] sources, class Microsoft.Build.Framework.ITaskItem dependencyToRemove) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveDependencyFromEntry(Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sources" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="dependencyToRemove" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="sources">ソース グラフから削除する必要があります。</param>
+        <param name="dependencyToRemove">削除する依存関係です。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveEntriesForSource">
+      <MemberSignature Language="C#" Value="public void RemoveEntriesForSource (Microsoft.Build.Framework.ITaskItem source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveEntriesForSource(class Microsoft.Build.Framework.ITaskItem source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveEntriesForSource(Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveEntriesForSource">
+      <MemberSignature Language="C#" Value="public void RemoveEntriesForSource (Microsoft.Build.Framework.ITaskItem[] source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveEntriesForSource(class Microsoft.Build.Framework.ITaskItem[] source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveEntriesForSource(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveEntriesForSource">
+      <MemberSignature Language="C#" Value="public void RemoveEntriesForSource (Microsoft.Build.Framework.ITaskItem source, Microsoft.Build.Framework.ITaskItem correspondingOutput);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveEntriesForSource(class Microsoft.Build.Framework.ITaskItem source, class Microsoft.Build.Framework.ITaskItem correspondingOutput) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveEntriesForSource(Microsoft.Build.Framework.ITaskItem,Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem" />
+        <Parameter Name="correspondingOutput" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <param name="correspondingOutput">(同じファイルの処理に使用)、ソースに対応する出力。</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveEntriesForSource">
+      <MemberSignature Language="C#" Value="public void RemoveEntriesForSource (Microsoft.Build.Framework.ITaskItem[] source, Microsoft.Build.Framework.ITaskItem[] correspondingOutputs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveEntriesForSource(class Microsoft.Build.Framework.ITaskItem[] source, class Microsoft.Build.Framework.ITaskItem[] correspondingOutputs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveEntriesForSource(Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="correspondingOutputs" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="source">ソース グラフから削除する必要があります。</param>
+        <param name="correspondingOutputs">(同じファイルの処理に使用) ソースに対応する出力</param>
+        <summary>指定したソースと対応する出力の出力のグラフのエントリを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveOutputForSourceRoot">
+      <MemberSignature Language="C#" Value="public bool RemoveOutputForSourceRoot (string sourceRoot, string outputPathToRemove);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveOutputForSourceRoot(string sourceRoot, string outputPathToRemove) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveOutputForSourceRoot(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceRoot" Type="System.String" />
+        <Parameter Name="outputPathToRemove" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceRoot">ソース ルート。</param>
+        <param name="outputPathToRemove">出力パスを削除します。</param>
+        <summary>指定したソース ファイルの依存関係グラフから、指定された出力を削除します。</summary>
+        <returns>出力パスの true を返しますが削除されました。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRootsWithSharedOutputs">
+      <MemberSignature Language="C#" Value="public string[] RemoveRootsWithSharedOutputs (Microsoft.Build.Framework.ITaskItem[] sources);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] RemoveRootsWithSharedOutputs(class Microsoft.Build.Framework.ITaskItem[] sources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.RemoveRootsWithSharedOutputs(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sources" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="sources">削除するルートのマーカーを形成するソースのセット。</param>
+        <summary>依存関係グラフからのルートと同じ出力を共有するすべてのルートを削除します。</summary>
+        <returns>削除されたルートのマーカーの配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveTlog">
+      <MemberSignature Language="C#" Value="public void SaveTlog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveTlog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.SaveTlog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドでは、現在の出力テーブルから tlog 再書き込みされます。 新しいエントリが追跡されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveTlog">
+      <MemberSignature Language="C#" Value="public void SaveTlog (Microsoft.Build.Utilities.DependencyFilter includeInTLog);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveTlog(class Microsoft.Build.Utilities.DependencyFilter includeInTLog) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles.SaveTlog(Microsoft.Build.Utilities.DependencyFilter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeInTLog" Type="Microsoft.Build.Utilities.DependencyFilter" />
+      </Parameters>
+      <Docs>
+        <param name="includeInTLog">依存関係のフィルター。</param>
+        <summary>このメソッドでは、現在の出力テーブルから tlog 再書き込みされます。 新しいエントリが追跡されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

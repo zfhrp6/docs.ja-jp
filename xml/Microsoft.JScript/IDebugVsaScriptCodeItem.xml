@@ -1,0 +1,85 @@
+<Type Name="IDebugVsaScriptCodeItem" FullName="Microsoft.JScript.IDebugVsaScriptCodeItem">
+  <TypeSignature Language="C#" Value="public interface IDebugVsaScriptCodeItem" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDebugVsaScriptCodeItem" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.IDebugVsaScriptCodeItem" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("6DFE759A-CB8B-4ca0-A973-1D04E0BF0B53")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>式を評価し、文字列を解析するメソッドを定義します。 このインターフェイスは、通常、コード ブロックを表すオブジェクトによって実装されは通常、デバッガーによって呼び出されます。 このインターフェイスは、IActiveScript ホストが必要とする追加の機能を提供します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Evaluate">
+      <MemberSignature Language="C#" Value="public object Evaluate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Evaluate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IDebugVsaScriptCodeItem.Evaluate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、ブロック、式、またはコード項目で表されるステートメントを評価し、値を返します。 通常呼び出されます (たとえば、ウォッチ ウィンドウ) で式を評価する必要があるデバッガーによってです。 式の場合は、値は、式の結果です。 ブロックとステートメントの場合は、結果の式は最後のブロックまたはステートメントによって計算式です。</summary>
+        <returns>ステートメント、式、またはブロックの評価を表す値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ なお、<xref:Microsoft.JScript.IDebugVsaScriptCodeItem.Evaluate%2A>メソッドは機能と同じ、<xref:Microsoft.JScript.IVsaScriptCodeItem.Execute%2A>メソッドです。 マーシャ リング属性のみが異なります。 このバージョンのインターフェイスを使用すると、として戻り値を取得するアンマネージのデバッガー、`IUnknown`ポインターではなく、`VARIANT`です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ParseNamedBreakPoint">
+      <MemberSignature Language="C#" Value="public bool ParseNamedBreakPoint (string input, out string functionName, out int nargs, out string arguments, out string returnType, out ulong offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ParseNamedBreakPoint(string input, [out] string&amp; functionName, [out] int32&amp; nargs, [out] string&amp; arguments, [out] string&amp; returnType, [out] unsigned int64&amp; offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IDebugVsaScriptCodeItem.ParseNamedBreakPoint(System.String,System.String@,System.Int32@,System.String@,System.String@,System.UInt64@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.String" />
+        <Parameter Name="functionName" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="nargs" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="arguments" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="returnType" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="offset" Type="System.UInt64&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="input">整形式では、関数、省略可能な引数リスト、および省略可能な IL オフセットを与えるブレークポイント文字列という名前です。</param>
+        <param name="functionName">Out パラメーター、関数の名前を返す場合に解析、入力文字列または空の文字列から、入力文字列の形式が正しくありません。</param>
+        <param name="nargs">省略可能な引数リストの引数の数を返す出力パラメーター。 引数リストがない場合、または文字列が整形式でない場合は、0 を返します。</param>
+        <param name="arguments">返す出力パラメーターのすべての引数の型の名前をスペースで区切って引数リスト、または空の文字列で引数リストが不足しているか、入力文字列の形式が正しくありません。</param>
+        <param name="returnType">Out パラメーターで、入力をという名前の関数の戻り値の型を含む文字列または戻り値の型が見つからない場合は、空の文字列または入力文字列を取得するもの形式がありません。</param>
+        <param name="offset">IL オフセットがないか、文字列の形式が正しくありませんは、入力文字列、または 0 から IL オフセットを指定する符号なし long 整数。</param>
+        <summary>クラスで実装された場合、文字列を解析し、解析された出力情報を返します。 このメソッドと通常呼ばれるとして表されるブレークポイントに関する情報を解析する必要があるデバッガーによって、<see langword="string" />です。 デバッガーは、フォーム内のユーザーによって入力されたブレークポイントがある可能性があります*functionname 引数-ILoffset*です。 名前付きのブレークポイントの文字列がなど、複雑な形式を持つことができます<c>F.B (C.D、int、arg: 二重): C.Abc + 123。</c> パラメーター リストは IL オフセットは、省略可能です。</summary>
+        <returns>返します<see langword="true" />名前付きのブレークポイントが正常に解析された場合<see langword="false" />それ以外の場合。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

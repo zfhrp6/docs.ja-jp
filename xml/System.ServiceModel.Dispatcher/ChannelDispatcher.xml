@@ -1,0 +1,1143 @@
+<Type Name="ChannelDispatcher" FullName="System.ServiceModel.Dispatcher.ChannelDispatcher">
+  <TypeSignature Language="C#" Value="public class ChannelDispatcher : System.ServiceModel.Dispatcher.ChannelDispatcherBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChannelDispatcher extends System.ServiceModel.Dispatcher.ChannelDispatcherBase" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.ChannelDispatcher" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Dispatcher.ChannelDispatcherBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>チャネルを受け入れ、それをサービスと関連付けるコンポーネント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> オブジェクトは、特定の URI (リッスン URI と呼ばれます) にある <xref:System.ServiceModel.Channels.IChannelListener> をサービスのインスタンスと関連付けます。 各 <xref:System.ServiceModel.ServiceHost> オブジェクトは、そのサービスの異なるリスナーおよびリッスン URI に関連付けられた多数の <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> オブジェクトを持つことができます。  
+  
+ メッセージが到着すると、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> が、関連する各 <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> オブジェクトにエンドポイントがメッセージを受け入れ可能かどうかを問い合わせ、受け入れ可能ならメッセージを渡します。 メッセージの送信先アドレスが <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> プロパティに一致しており、メッセージ アクションが <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> プロパティに一致しているときは、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A> オブジェクトが、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.ContractFilter%2A> から送信されたメッセージの処理を担当します。  
+  
+ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> オブジェクトに定義されているチャネル セッションの有効期間および動作を制御するすべてのプロパティは、検査および変更可能です。 <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> に加えて、これらにはカスタム <xref:System.ServiceModel.Dispatcher.IChannelInitializer> オブジェクト、<xref:System.ServiceModel.Channels.IChannelListener>、<xref:System.ServiceModel.ServiceHost>、および関連付けられた <xref:System.ServiceModel.InstanceContext> が含まれます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/service.cs#0)]
+ [!code-vb[S_UE_ChannelDispatcher#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/service.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelDispatcher (System.ServiceModel.Channels.IChannelListener listener);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.IChannelListener listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.#ctor(System.ServiceModel.Channels.IChannelListener)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="listener" Type="System.ServiceModel.Channels.IChannelListener" />
+      </Parameters>
+      <Docs>
+        <param name="listener">チャネル ディスパッチャーの <see cref="T:System.ServiceModel.Channels.IChannelListener" />。</param>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.ChannelDispatcher" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したリスナーと、システムが提供する既定のタイムアウトから、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> クラスの新しいインスタンスを初期化します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#1)]
+ [!code-vb[S_UE_ChannelDispatcher#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="listener" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelDispatcher (System.ServiceModel.Channels.IChannelListener listener, string bindingName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.IChannelListener listener, string bindingName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.#ctor(System.ServiceModel.Channels.IChannelListener,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="listener" Type="System.ServiceModel.Channels.IChannelListener" />
+        <Parameter Name="bindingName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="listener">チャネル ディスパッチャーの <see cref="T:System.ServiceModel.Channels.IChannelListener" />。</param>
+        <param name="bindingName">サービスの構成に使用するバインディングの名前。</param>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.ChannelDispatcher" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したリスナーとバインディング、およびシステムが提供する既定のタイムアウトから、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> クラスの新しいインスタンスを初期化します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#2)]
+ [!code-vb[S_UE_ChannelDispatcher#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="listener" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelDispatcher (System.ServiceModel.Channels.IChannelListener listener, string bindingName, System.ServiceModel.IDefaultCommunicationTimeouts timeouts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.IChannelListener listener, string bindingName, class System.ServiceModel.IDefaultCommunicationTimeouts timeouts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.#ctor(System.ServiceModel.Channels.IChannelListener,System.String,System.ServiceModel.IDefaultCommunicationTimeouts)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="listener" Type="System.ServiceModel.Channels.IChannelListener" />
+        <Parameter Name="bindingName" Type="System.String" />
+        <Parameter Name="timeouts" Type="System.ServiceModel.IDefaultCommunicationTimeouts" />
+      </Parameters>
+      <Docs>
+        <param name="listener">サービスの <see cref="T:System.ServiceModel.Channels.IChannelListener" />。</param>
+        <param name="bindingName">サービスの構成に使用するバインディングの名前。</param>
+        <param name="timeouts">サービスの <see cref="T:System.ServiceModel.IDefaultCommunicationTimeouts" />。</param>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.ChannelDispatcher" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したリスナーとバインディング、および指定した既定のタイムアウトから、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> クラスの新しいインスタンスを初期化します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#3)]
+ [!code-vb[S_UE_ChannelDispatcher#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="listener" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AsynchronousTransactedAcceptEnabled">
+      <MemberSignature Language="C#" Value="public bool AsynchronousTransactedAcceptEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AsynchronousTransactedAcceptEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.AsynchronousTransactedAcceptEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受け入れるかどうか、トランザクション処理されたリスナーに対するメソッド呼び出しが非同期かを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />トランザクションを受け入れるリスナーに対してメソッドを呼び出す場合は非同期です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="protected override void Attach (System.ServiceModel.ServiceHostBase host);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Attach(class System.ServiceModel.ServiceHostBase host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.Attach(System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="host">サービスの <see cref="T:System.ServiceModel.ServiceHostBase" />。</param>
+        <summary>チャネル ディスパッチャーをホストに結び付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ設定可能です。これは、この状態が変更可能で、かつ破棄されていない唯一の状態であるためです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Opening" /> または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態にあります。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingName">
+      <MemberSignature Language="C#" Value="public string BindingName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BindingName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.BindingName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスの構成に使用するバインディングの名前を取得します。</summary>
+        <value>サービスのバインディング名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このチャネル ディスパッチャーが関連付けられているバインディングのバインディング名を取得するために使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#4)]
+ [!code-vb[S_UE_ChannelDispatcher#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelInitializers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IChannelInitializer&gt; ChannelInitializers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedCollection`1&lt;class System.ServiceModel.Dispatcher.IChannelInitializer&gt; ChannelInitializers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.ChannelInitializers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IChannelInitializer&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネルが最初に作成されるときに状態を検査してチャネルに状態を追加するために使用できる <see cref="T:System.ServiceModel.Dispatcher.IChannelInitializer" /> オブジェクトのセットを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.SynchronizedCollection`1" /> 型オブジェクトの <see cref="T:System.ServiceModel.Dispatcher.IChannelInitializer" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、チャネルの作成時にチャネルの状態を検査または変更するため、カスタムのチャネル初期化子を初期化コレクションに挿入します。 チャネル初期化子は、ディスパッチャーに関連付けられたコントラクトが双方向コントラクトであるとき、送信チャネルの状態を検査または変更する際にも有用です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#5)]
+ [!code-vb[S_UE_ChannelDispatcher#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseInput">
+      <MemberSignature Language="C#" Value="public override void CloseInput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CloseInput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.CloseInput" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リスナーによる新しいチャネルの受け入れを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すと、リスナーはリッスンを停止します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCloseTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultCloseTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultCloseTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.DefaultCloseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル ディスパッチャーを閉じるための既定の時間間隔を取得します。</summary>
+        <value>チャネル ディスパッチャーを閉じるための既定の時間間隔を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この既定のクローズ タイムアウトは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher.%23ctor%28System.ServiceModel.Channels.IChannelListener%2CSystem.String%2CSystem.ServiceModel.IDefaultCommunicationTimeouts%29> を使用して設定できます。 この値を省略すると、サービス モデルの既定値として、1 分が使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultOpenTimeout">
+      <MemberSignature Language="C#" Value="protected override TimeSpan DefaultOpenTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DefaultOpenTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.DefaultOpenTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル ディスパッチャーを開くための既定の時間間隔を取得します。</summary>
+        <value>チャネル ディスパッチャーを閉じるための既定の時間間隔を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この既定のオープン タイムアウトは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher.%23ctor%28System.ServiceModel.Channels.IChannelListener%2CSystem.String%2CSystem.ServiceModel.IDefaultCommunicationTimeouts%29> を使用して設定できます。 この値を省略すると、サービス モデルの既定値として、1 分が使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Detach">
+      <MemberSignature Language="C#" Value="protected override void Detach (System.ServiceModel.ServiceHostBase host);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Detach(class System.ServiceModel.ServiceHostBase host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.Detach(System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="host">サービスの <see cref="T:System.ServiceModel.ServiceHostBase" />。</param>
+        <summary>チャネル ディスパッチャーからサービス ホストの結び付きを解除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceHostBase> は、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ切断可能です。この状態が変更可能で、かつ破棄されていない唯一の状態であるためです  
+  
+ チャネル ディスパッチャーに関連付けられている <xref:System.ServiceModel.ServiceHostBase> を `null` に設定します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#18](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#18)]
+ [!code-vb[S_UE_ChannelDispatcher#18](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="host" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Opening" /> または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態にあります。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Endpoints">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.EndpointDispatcher&gt; Endpoints { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedCollection`1&lt;class System.ServiceModel.Dispatcher.EndpointDispatcher&gt; Endpoints" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.Endpoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.EndpointDispatcher&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル エンドポイントにメッセージを転送するエンドポイント ディスパッチャーを取得します。</summary>
+        <value>メッセージをチャネル エンドポイントに転送する <see cref="T:System.Collections.Generic.SynchronizedCollection`1" /> の <see cref="T:System.ServiceModel.Dispatcher.EndpointDispatcher" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> には、チャネルがサポートできるエンドポイントごとに異なる <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> があります。  
+  
+ エンドポイント全体のランタイムをカスタマイズできるランタイム プロパティにアクセスするには、<xref:System.ServiceModel.Dispatcher.EndpointDispatcher> を使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#6)]
+ [!code-vb[S_UE_ChannelDispatcher#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorHandlers">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Dispatcher.IErrorHandler&gt; ErrorHandlers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Dispatcher.IErrorHandler&gt; ErrorHandlers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Dispatcher.IErrorHandler&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイントに関するカスタム エラー処理機能の挿入に使用できる <see cref="T:System.ServiceModel.Dispatcher.IErrorHandler" /> オブジェクトのセットを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.SynchronizedCollection`1" /> オブジェクトの <see cref="T:System.ServiceModel.Dispatcher.IErrorHandler" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#7](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#7)]
+ [!code-vb[S_UE_ChannelDispatcher#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Host">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.ServiceHostBase Host { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.ServiceHostBase Host" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.Host" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ServiceHostBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスパッチャーに関連付けられたサービスのホストを取得します。</summary>
+        <value>ディスパッチャーと関連付けられたサービスの <see cref="T:System.ServiceModel.ServiceHostBase" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各 <xref:System.ServiceModel.ServiceHost> オブジェクトは、そのサービスの異なる <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> に関連付けられた多数の <xref:System.ServiceModel.Channels.IChannelListener> オブジェクトを持つことができます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#8](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#8)]
+ [!code-vb[S_UE_ChannelDispatcher#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeExceptionDetailInFaults">
+      <MemberSignature Language="C#" Value="public bool IncludeExceptionDetailInFaults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeExceptionDetailInFaults" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外に関する詳細をエラーに含めるかどうかを示す値を、取得または設定します。</summary>
+        <value>
+          例外に関する詳細をエラーに含める場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ設定可能です。これは、この状態が変更可能で、かつ破棄されていない唯一の状態であるためです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#19](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#19)]
+ [!code-vb[S_UE_ChannelDispatcher#19](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Opening" /> または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態にあります。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTransactedAccept">
+      <MemberSignature Language="C#" Value="public bool IsTransactedAccept { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTransactedAccept" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.IsTransactedAccept" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスナーに対する受け入れメソッド呼び出しがトランザクションの下で行われたかどうかを示す値を取得します。</summary>
+        <value>
+          リスナーに対する受け入れメソッド呼び出しがトランザクションの下で行われた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#9](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#9)]
+ [!code-vb[S_UE_ChannelDispatcher#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTransactedReceive">
+      <MemberSignature Language="C#" Value="public bool IsTransactedReceive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTransactedReceive" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.IsTransactedReceive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスナーに対する受信メソッド呼び出しがトランザクションの下で行われたかどうかを示す値を取得します。</summary>
+        <value>
+          リスナーに対する受信メソッド呼び出しがトランザクションの下で行われた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.IsTransactedReceive%2A> プロパティは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ設定可能です。これは、この状態が変更可能で、かつ破棄されていない唯一の状態であるためです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#10](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#10)]
+ [!code-vb[S_UE_ChannelDispatcher#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Opening" /> または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態にあります。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Listener">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelListener Listener { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.IChannelListener Listener" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.Listener" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル ディスパッチャーに関連付けられているリスナーを取得します。</summary>
+        <value>チャネル ディスパッチャーに関連付けられている <see cref="T:System.ServiceModel.Channels.IChannelListener" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher> は、特定の URI における <xref:System.ServiceModel.Channels.IChannelListener> をサービスのインスタンスと関連付けます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#11](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#11)]
+ [!code-vb[S_UE_ChannelDispatcher#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManualAddressing">
+      <MemberSignature Language="C#" Value="public bool ManualAddressing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ManualAddressing" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.ManualAddressing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル ディスパッチャーがアドレス指定ヘッダーを要求/応答メッセージに追加するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          プロキシがアドレス指定ヘッダーを追加しない場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ設定可能です。これは、この状態が変更可能で、かつ破棄されていない唯一の状態であるためです。  
+  
+ クライアントが、メッセージ ID と ReplyTo アドレス指定ヘッダーを要求/応答メッセージに追加するのを禁止して、アプリケーションがこれらのヘッダーを制御できるようにする場合は、<xref:System.ServiceModel.Dispatcher.ClientRuntime.ManualAddressing%2A> プロパティを `true` に設定します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#12](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#12)]
+ [!code-vb[S_UE_ChannelDispatcher#12](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Opening" /> または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態にあります。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPendingReceives">
+      <MemberSignature Language="C#" Value="public int MaxPendingReceives { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxPendingReceives" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.MaxPendingReceives" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネルあたりの保留状態のメッセージの最大数を取得または設定します。</summary>
+        <value>メッセージの最大数を表す整数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxTransactedBatchSize">
+      <MemberSignature Language="C#" Value="public int MaxTransactedBatchSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxTransactedBatchSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.MaxTransactedBatchSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクション バッチの最大サイズを取得または設定します。</summary>
+        <value>トランザクション バッチの最大サイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.MaxTransactedBatchSize%2A> プロパティは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ設定可能です。これは、この状態が変更可能で、かつ破棄されていない唯一の状態であるためです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#13](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#13)]
+ [!code-vb[S_UE_ChannelDispatcher#13](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">0 未満の値が設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Opening" /> または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態にあります。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.MessageVersion MessageVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.MessageVersion MessageVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.MessageVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用または予想される SOAP メッセージおよび WS-Addressing のバージョンを取得または設定します。</summary>
+        <value>使用または要求されている <see cref="T:System.ServiceModel.Channels.MessageVersion" /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージとその交換に関連付けられている SOAP と WS アドレス指定のバージョンを指定します。  
+  
+ このプロパティは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ設定可能です。これは、この状態が変更可能で、かつ破棄されていない唯一の状態であるためです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#20](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#20)]
+ [!code-vb[S_UE_ChannelDispatcher#20](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Opening" /> または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態にあります。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAbort">
+      <MemberSignature Language="C#" Value="protected override void OnAbort ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnAbort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnAbort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ディスパッチャーに関連付けられているリスナーを中止します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginClose">
+      <MemberSignature Language="C#" Value="protected override IAsyncResult OnBeginClose (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IAsyncResult OnBeginClose(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnBeginClose(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">クローズ操作がタイムアウトになるまでの時間を表す <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">非同期のクローズ操作の完了通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期のクローズ操作に関連付けられている状態情報を保持する、アプリケーションで指定されたオブジェクト。</param>
+        <summary>ディスパッチャーのチャネル リスナーを閉じる非同期操作を開始します。この操作は指定した時間内に完了する必要があります。</summary>
+        <returns>ディスパッチャーのチャネル リスナーを閉じるための非同期操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginOpen">
+      <MemberSignature Language="C#" Value="protected override IAsyncResult OnBeginOpen (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IAsyncResult OnBeginOpen(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnBeginOpen(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">オープン操作がタイムアウトになるまでの時間を表す <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">オープン操作の非同期完了の通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期のオープン操作に関連付けられている状態情報を保持する、アプリケーションで指定されたオブジェクト。</param>
+        <summary>ディスパッチャーのチャネル リスナーを開く非同期操作を開始します。この操作は指定した時間内に完了する必要があります。</summary>
+        <returns>ディスパッチャーのチャネル リスナーを開くための非同期操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すときは、チャネル ディスパッチャーが `null` 以外のサービス ホストに関連付けられている必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ホストまたはメッセージのバージョンが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClose">
+      <MemberSignature Language="C#" Value="protected override void OnClose (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClose(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnClose(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">リスナーを閉じるための時間間隔を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>指定した時間内に、ディスパッチャーに関連付けられているチャネル リスナーを閉じます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosed">
+      <MemberSignature Language="C#" Value="protected override void OnClosed ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClosed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnClosed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>チャネル ディスパッチャーに関連付けられたエンドポイント ディスパッチャーを閉じるときのトレースを提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndClose">
+      <MemberSignature Language="C#" Value="protected override void OnEndClose (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnEndClose(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnEndClose(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnBeginClose(System.TimeSpan,System.AsyncCallback,System.Object)" />。</param>
+        <summary>ディスパッチャーのチャネル リスナーを閉じるための非同期操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndOpen">
+      <MemberSignature Language="C#" Value="protected override void OnEndOpen (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnEndOpen(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnEndOpen(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnBeginOpen(System.TimeSpan,System.AsyncCallback,System.Object)" />。</param>
+        <summary>ディスパッチャーのチャネル リスナーを開くための非同期操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnOpen">
+      <MemberSignature Language="C#" Value="protected override void OnOpen (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnOpen(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnOpen(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">リスナーを開くための時間間隔を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>チャネル ディスパッチャーに関連付けられているリスナーを開きます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すときは、チャネル ディスパッチャーが `null` 以外のサービス ホストに関連付けられ、メッセージ バージョンが `null` 以外の値に設定されている必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ホストまたはメッセージのバージョンが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnOpened">
+      <MemberSignature Language="C#" Value="protected override void OnOpened ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnOpened() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnOpened" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エンドポイントへのディスパッチに使用するフィルター テーブルを作成して検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すときは、チャネル ディスパッチャーが `null` 以外のサービス ホストに関連付けられている必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ホストが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnOpening">
+      <MemberSignature Language="C#" Value="protected override void OnOpening ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnOpening() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ChannelDispatcher.OnOpening" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>チャネル ディスパッチャーがホストと結び付けられているかどうかを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開くときに、チャネル ディスパッチャーを `null` 以外のサービス ホストに関連付ける必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ホストが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveContextEnabled">
+      <MemberSignature Language="C#" Value="public bool ReceiveContextEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReceiveContextEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.ReceiveContextEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ReceiveContext を有効にするかどうかを取得または設定します。</summary>
+        <value>
+          <see langword="true" />ReceiveContext が有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ReceiveContext は、必要な間だけメッセージをロックするなど、サービスによるメッセージ処理方法を制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveSynchronously">
+      <MemberSignature Language="C#" Value="public bool ReceiveSynchronously { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReceiveSynchronously" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.ReceiveSynchronously" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスパッチャーが同期呼び出しを使用してチャネルからメッセージを読み取るかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ディスパッチャーが同期メソッドを使用してチャネルからメッセージを読み取る場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインディングが <xref:System.ServiceModel.Channels.IBindingRuntimePreferences> を実装している場合、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] は、<xref:System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously%2A> プロパティの値にこのプロパティを割り当てます。 したがって、この値が `true` の場合、`false` の既定値 <xref:System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously%2A> はオーバーライドされます。  
+  
+ このプロパティは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ設定可能です。これは、この状態が変更可能で、かつ破棄されていない唯一の状態であるためです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#14](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#14)]
+ [!code-vb[S_UE_ChannelDispatcher#14](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Opening" /> または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態にあります。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsynchronously">
+      <MemberSignature Language="C#" Value="public bool SendAsynchronously { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SendAsynchronously" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.SendAsynchronously" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージを非同期で送信するかどうかを取得または設定します。</summary>
+        <value>
+          <see langword="true" />メッセージを非同期的に送信する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceThrottle">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.ServiceThrottle ServiceThrottle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.ServiceThrottle ServiceThrottle" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.ServiceThrottle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.ServiceThrottle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル ディスパッチャーに関連付けられたサービスのサービス スロットルを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Dispatcher.ServiceThrottle" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これにより、サービスの可用性とパフォーマンスを最適化するための各種コントロールにアクセスできます。  
+  
+ このプロパティは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ設定可能です。これは、この状態が変更可能で、かつ破棄されていない唯一の状態であるためです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#15](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#15)]
+ [!code-vb[S_UE_ChannelDispatcher#15](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Opening" /> または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態にあります。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionIsolationLevel">
+      <MemberSignature Language="C#" Value="public System.Transactions.IsolationLevel TransactionIsolationLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Transactions.IsolationLevel TransactionIsolationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.TransactionIsolationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションの既定の分離レベルを取得または設定します。</summary>
+        <value><see cref="T:System.Transactions.IsolationLevel" /> 値のいずれか。 既定値は、<see cref="F:System.Transactions.IsolationLevel.Unspecified" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.TransactionIsolationLevel%2A> プロパティは、このサービスのディスパッチャーによって作成された新しいトランザクションの既定の分離レベルを取得または設定するために使用します。  
+  
+ このプロパティは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ設定可能です。これは、この状態が変更可能で、かつ破棄されていない唯一の状態であるためです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#16](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#16)]
+ [!code-vb[S_UE_ChannelDispatcher#16](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">定義されていない分離レベルを設定しています。</exception>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Opening" /> または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態にあります。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan TransactionTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TransactionTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ChannelDispatcher.TransactionTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスに代わってディスパッチャーが作成する新しいトランザクションの既定のタイムアウトを指定する値を取得または設定します。</summary>
+        <value>トランザクションの既定のタイムアウト時間を表す <see cref="T:System.TimeSpan" />。 既定値は、<see cref="F:System.TimeSpan.Zero" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher> のインスタンスが <xref:System.ServiceModel.CommunicationState.Created> 状態のときにのみ設定可能です。これは、この状態が変更可能で、かつ破棄されていない唯一の状態であるためです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChannelDispatcher#17](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_channeldispatcher/cs/snippets.cs#17)]
+ [!code-vb[S_UE_ChannelDispatcher#17](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_channeldispatcher/vb/snippets.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">0 未満の値または大きすぎる値が設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Opening" /> または <see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態にあります。</exception>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

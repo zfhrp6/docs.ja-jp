@@ -1,0 +1,76 @@
+<Type Name="MediaEntryAttribute" FullName="System.Data.Services.Client.MediaEntryAttribute">
+  <TypeSignature Language="C#" Value="public sealed class MediaEntryAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MediaEntryAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.MediaEntryAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定されたクラスがメディア リンク エントリとして処理されることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスは、バイナリ データとそのバイナリ データに関するメタデータを処理するための AtomPub プロトコルであるメディア リンク エントリとして処理されます。  
+  
+ <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> を呼び出した場合のこの属性でマークされた型の動作は変更されています。 メディア プロパティはメディア リソースとも呼ばれます。 保存時に、POST 要求によって、<xref:System.Data.Services.Client.MediaEntryAttribute.MediaMemberName%2A> プロパティで示される型のメディア プロパティが URI `/<EntitySet>/$value` に挿入されます。  
+  
+ `POST` の後、バイナリ コンテンツである `PUT` プロパティ以外のその型のすべてのプロパティを持つ <xref:System.Data.Services.Client.MediaEntryAttribute.MediaMemberName%2A> 要求が URI `/<EntitySet>(<key>)` に送信されます。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MediaEntryAttribute (string mediaMemberName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string mediaMemberName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.MediaEntryAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mediaMemberName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="mediaMemberName">メディア データを保持するプロパティを識別する文字列値。</param>
+        <summary><see cref="T:System.Data.Services.Client.MediaEntryAttribute" /> の新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MediaMemberName">
+      <MemberSignature Language="C#" Value="public string MediaMemberName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MediaMemberName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.MediaEntryAttribute.MediaMemberName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアを保持するクラスのプロパティの名前 (通常はバイナリ データ)。</summary>
+        <value>メディア データを保持するプロパティを識別する文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

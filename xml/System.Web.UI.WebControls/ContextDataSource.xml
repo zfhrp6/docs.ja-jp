@@ -1,0 +1,95 @@
+<Type Name="ContextDataSource" FullName="System.Web.UI.WebControls.ContextDataSource">
+  <TypeSignature Language="C#" Value="public abstract class ContextDataSource : System.Web.UI.WebControls.QueryableDataSource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ContextDataSource extends System.Web.UI.WebControls.QueryableDataSource" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ContextDataSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.QueryableDataSource</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ ソース コントロールの基底クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ContextDataSource>クラスは、Entity Framework をサポートする任意のデータ ソース コントロールの作成に使用できる基本クラスの LINQ to SQL、[!INCLUDE[vstecado](~/includes/vstecado-md.md)]データ サービス、またはその他のデータ プロバイダー。 <xref:System.Web.UI.WebControls.ContextDataSource>クラスから派生して<xref:System.Web.UI.WebControls.QueryableDataSource>です。 <xref:System.Web.UI.WebControls.QueryableDataSource>クラスを提供する<xref:System.Web.UI.WebControls.ContextDataSource.ContextTypeName%2A>データ ソース コントロールに使用するコンテキストの種類を表すプロパティ。 コンテキストの種類など、<xref:System.Web.UI.WebControls.LinqDataSource>クラスは、<xref:System.Data.Linq.DataContext>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ContextDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ContextDataSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ContextDataSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextTypeName">
+      <MemberSignature Language="C#" Value="public virtual string ContextTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContextTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ContextDataSource.ContextTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはからのデータを取得するプロパティを格納しているオブジェクトの名前を設定します。</summary>
+        <value>データを取得するプロパティを格納しているオブジェクトの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntitySetName">
+      <MemberSignature Language="C#" Value="protected string EntitySetName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EntitySetName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ContextDataSource.EntitySetName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ コレクションを表すデータ ソース オブジェクトでプロパティまたはフィールドの名前を設定します。</summary>
+        <value>プロパティまたはデータ コレクションを表すデータ ソース オブジェクトのフィールドの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntityTypeName">
+      <MemberSignature Language="C#" Value="public virtual string EntityTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EntityTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ContextDataSource.EntityTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Insert、Delete、および更新操作中に作成される型の名前を設定します。</summary>
+        <value>Insert、Delete、および更新操作中に作成される型の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

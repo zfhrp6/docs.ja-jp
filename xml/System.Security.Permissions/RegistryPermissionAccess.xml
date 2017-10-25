@@ -1,0 +1,147 @@
+<Type Name="RegistryPermissionAccess" FullName="System.Security.Permissions.RegistryPermissionAccess">
+  <TypeSignature Language="C#" Value="public enum RegistryPermissionAccess" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed RegistryPermissionAccess extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.RegistryPermissionAccess" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>レジストリ キーと値へのアクセス許可を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.RegistryPermissionAccess>値は依存しません。1 つの種類のアクセス権限は、別の権限を意味しません。 たとえば、`Write`権限へのアクセス許可を意味しません`Read`または`Create`です。  
+  
+> [!NOTE]
+>  NoAccess と AllAccess に表示されますが<xref:System.Security.Permissions.RegistryPermissionAccess.NoAccess>、無効のパラメーターとして使用する<xref:System.Security.Permissions.RegistryPermission.GetPathList%2A>説明しているのでないレジストリ変数へのアクセスの種類またはすべてのレジストリ変数アクセスの種類では、それぞれ、および<xref:System.Security.Permissions.RegistryPermission.GetPathList%2A>は 1 つのレジストリ変数アクセスの種類が必要です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllAccess">
+      <MemberSignature Language="C#" Value="AllAccess" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.RegistryPermissionAccess AllAccess = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.RegistryPermissionAccess.AllAccess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.RegistryPermissionAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="F:System.Security.Permissions.RegistryPermissionAccess.Create" />、 <see cref="F:System.Security.Permissions.RegistryPermissionAccess.Read" />、および<see cref="F:System.Security.Permissions.RegistryPermissionAccess.Write" />レジストリ変数へのアクセス。 <see cref="F:System.Security.Permissions.RegistryPermissionAccess.AllAccess" />複数を表す<see cref="T:System.Security.Permissions.RegistryPermissionAccess" />により、値を<see cref="T:System.ArgumentException" />として使用する場合、<paramref name="access" />のパラメーター、<see cref="M:System.Security.Permissions.RegistryPermission.GetPathList(System.Security.Permissions.RegistryPermissionAccess)" />メソッドで、1 つの値が必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="Create" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.RegistryPermissionAccess Create = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.RegistryPermissionAccess.Create" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.RegistryPermissionAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レジストリ変数へのアクセスを作成します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoAccess">
+      <MemberSignature Language="C#" Value="NoAccess" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.RegistryPermissionAccess NoAccess = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.RegistryPermissionAccess.NoAccess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.RegistryPermissionAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レジストリ変数へのアクセスがありません。 <see cref="F:System.Security.Permissions.RegistryPermissionAccess.NoAccess" />表す有効な<see cref="T:System.Security.Permissions.RegistryPermissionAccess" />により、値を<see cref="T:System.ArgumentException" />のパラメーターとして使用すると<see cref="M:System.Security.Permissions.RegistryPermission.GetPathList(System.Security.Permissions.RegistryPermissionAccess)" />、1 つの値を受け取る。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="Read" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.RegistryPermissionAccess Read = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.RegistryPermissionAccess.Read" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.RegistryPermissionAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レジストリ変数への読み取りアクセス。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="Write" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.RegistryPermissionAccess Write = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.RegistryPermissionAccess.Write" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.RegistryPermissionAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レジストリ変数への書き込みアクセス。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

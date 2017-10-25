@@ -1,0 +1,93 @@
+<Type Name="SoapIgnoreAttribute" FullName="System.Xml.Serialization.SoapIgnoreAttribute">
+  <TypeSignature Language="C#" Value="public class SoapIgnoreAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapIgnoreAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.SoapIgnoreAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.ReturnValue)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指示、<see cref="T:System.Xml.Serialization.XmlSerializer" />パブリック フィールドまたはパブリックの読み取り/書き込みプロパティ値をシリアル化しません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapIgnoreAttribute>を制御する属性のファミリに属しているクラスが、どのように<xref:System.Xml.Serialization.XmlSerializer>でエンコードされた SOAP XML としてオブジェクトを逆シリアル化またはシリアル化します。 結果の XML は、World Wide Web Consortium) (www.w3.org) ドキュメント、「簡易オブジェクト アクセス プロトコル (SOAP) 1.1」のセクション 5 に準拠します。 類似する属性の一覧については、次を参照してください。[でエンコードされた SOAP シリアル化を制御する属性](~/docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)です。  
+  
+ エンコードされた SOAP メッセージとしてオブジェクトをシリアル化、構築する必要があります、<xref:System.Xml.Serialization.XmlSerializer>を使用して、<xref:System.Xml.Serialization.XmlTypeMapping>で作成された、<xref:System.Xml.Serialization.SoapReflectionImporter.ImportTypeMapping%2A>のメソッド、<xref:System.Xml.Serialization.SoapReflectionImporter>クラスです。  
+  
+ 適用、<xref:System.Xml.Serialization.SoapIgnoreAttribute>するクラスのメンバーに、<xref:System.Xml.Serialization.XmlSerializer>クラスのインスタンスがシリアル化されるときに無視します。 たとえば、行うことができますこのシリアル化されるオブジェクトに関するメタデータを格納するメンバーを使用する場合。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+> [!NOTE]
+>  語を使用できます`SoapIgnore`時間が長いではなく、コードで<xref:System.Xml.Serialization.SoapIgnoreAttribute>です。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 シリアル化、`GroupName`と`IgnoreThis`フィールドおよびのメンバー、`GroupType`列挙型が上書きされます。 `CreateOverrideSerializer` 、メソッド、<xref:System.Xml.Serialization.SoapAttributeOverrides>が作成され、オーバーライドされたメンバーまたは列挙体ごとに、<xref:System.Xml.Serialization.SoapAttributes>が適切なプロパティ設定に追加で作成された、<xref:System.Xml.Serialization.SoapAttributeOverrides>です。 <xref:System.Xml.Serialization.XmlTypeMapping>を使用して作成されて、 <xref:System.Xml.Serialization.SoapAttributeOverrides>、および<xref:System.Xml.Serialization.XmlTypeMapping>作成に使用される、<xref:System.Xml.Serialization.XmlSerializer>既定のシリアル化をオーバーライドします。  
+  
+ [!code-cpp[SoapAttributesOverrides#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapAttributesOverrides/CPP/soapover.cpp#1)]
+ [!code-csharp[SoapAttributesOverrides#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapAttributesOverrides/CS/soapover.cs#1)]
+ [!code-vb[SoapAttributesOverrides#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapAttributesOverrides/VB/SoapOver.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapIgnoreAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapIgnoreAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.SoapIgnoreAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 シリアル化、`GroupName`と`IgnoreThis`フィールドおよびのメンバー、`GroupType`列挙型が上書きされます。 `CreateOverrideSerializer` 、メソッド、<xref:System.Xml.Serialization.SoapAttributeOverrides>が作成され、オーバーライドされたメンバーまたは列挙体ごとに、<xref:System.Xml.Serialization.SoapAttributes>が適切なプロパティ設定に追加で作成された、<xref:System.Xml.Serialization.SoapAttributeOverrides>です。 <xref:System.Xml.Serialization.XmlTypeMapping>を使用して作成されて、 <xref:System.Xml.Serialization.SoapAttributeOverrides>、および<xref:System.Xml.Serialization.XmlTypeMapping>作成に使用される、<xref:System.Xml.Serialization.XmlSerializer>既定のシリアル化をオーバーライドします。  
+  
+ [!code-cpp[SoapAttributesOverrides#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapAttributesOverrides/CPP/soapover.cpp#1)]
+ [!code-csharp[SoapAttributesOverrides#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapAttributesOverrides/CS/soapover.cs#1)]
+ [!code-vb[SoapAttributesOverrides#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapAttributesOverrides/VB/SoapOver.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

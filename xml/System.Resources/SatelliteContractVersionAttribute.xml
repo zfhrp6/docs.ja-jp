@@ -1,0 +1,126 @@
+<Type Name="SatelliteContractVersionAttribute" FullName="System.Resources.SatelliteContractVersionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SatelliteContractVersionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SatelliteContractVersionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.SatelliteContractVersionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指示、<see cref="T:System.Resources.ResourceManager" />サテライト アセンブリの特定のバージョンを要求するオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="desktop-apps"></a>デスクトップ アプリ  
+ デスクトップ アプリで、<xref:System.Resources.SatelliteContractVersionAttribute>属性は、メイン アセンブリとそのすべてのサテライト コントラクトを確立します。 この属性をメイン アセンブリに適用し、メイン アセンブリのこのバージョンで動作するサテライト アセンブリのバージョン番号を渡すことです。 ときに、リソース マネージャー (<xref:System.Resources.ResourceManager>オブジェクト) のリソースを検索、明示的に読み込むメイン アセンブリでは、この属性で指定されたサテライト バージョン。  
+  
+ メインのアセンブリを更新するときにそのアセンブリ バージョン番号をインクリメントします。 ただし、アプリと互換性のある既存の場合、サテライト アセンブリの新しいコピーを送付しない可能性があります。 ここでは、メイン アセンブリのバージョン番号をインクリメントが同じサテライト コントラクト バージョン番号のままにします。 リソース マネージャーでは、既存のサテライト アセンブリを使用します。  
+  
+ メイン アセンブリではなく、サテライト アセンブリを変更する場合は、サテライトのバージョン番号をインクリメントします。 この場合、発行者ポリシー アセンブリ、サテライト アセンブリを新しいサテライト アセンブリが従来のサテライト アセンブリとの下位互換性を持つことを示すと付属してください。 リソース マネージャーはに基づいて、メイン アセンブリに書き込まれる古い契約番号を使用しても、<xref:System.Resources.SatelliteContractVersionAttribute>属性です。 ただし、ローダーは、ポリシー アセンブリが指定されているバージョンのサテライト アセンブリにバインドされます。  
+  
+ 共有コンポーネントの仕入先では、発行者ポリシー アセンブリを使用して、リリースのアセンブリの特定のバージョンの互換性についてのステートメントを加えます。 発行者ポリシー アセンブリが厳密な名前付きアセンブリの形式で名前を持つ`policy.<major>.<minor>.<ComponentAssemblyName>`、し、登録は、します。 発行者ポリシーが XML 構成ファイルから生成された (を参照してください、) を使用して、 [Al.exe (アセンブリ リンカー)](~/docs/framework/tools/al-exe-assembly-linker.md)ツールです。 アセンブリ リンカーがと共に使用される、`/link`に XML 構成ファイルをグローバル アセンブリ キャッシュに格納し、マニフェストのアセンブリにリンクできます。 仕入先は、バグの修正が含まれるメンテナンス リリース (サービス パック) を出荷時に、発行者ポリシー アセンブリを使用できます。  
+  
+## <a name="includewin8appnamelongincludeswin8-appname-long-mdmd-apps"></a>[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリ  
+ この属性は無視されます[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]アプリでは、パッケージ リソース インデックス (PRI) ファイルは、バージョン管理の意味を持たないためです。 さらに、[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]モデルのパッケージ化には、サテライト アセンブリまたは PRI ファイルを再展開の可能性がない、同じパッケージに付属するすべてのリソースが必要です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SatelliteContractVersionAttribute (string version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.SatelliteContractVersionAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="version" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="version">サテライト アセンブリを読み込むのバージョンを指定する文字列。</param>
+        <summary><see cref="T:System.Resources.SatelliteContractVersionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Resources.SatelliteContractVersionAttribute.Version%2A>を持つプロパティ、`version`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="version" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public string Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.Resources.SatelliteContractVersionAttribute.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>必要なリソースをサテライト アセンブリのバージョンを取得します。</summary>
+        <value>必要なリソースをサテライト アセンブリのバージョンを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のプロパティは、この属性でマークされたメイン アセンブリで使用される、サテライト アセンブリのバージョンを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

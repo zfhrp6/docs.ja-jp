@@ -1,0 +1,679 @@
+<Type Name="Timer" FullName="System.Threading.Timer">
+  <TypeSignature Language="C#" Value="public sealed class Timer : MarshalByRefObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Timer extends System.MarshalByRefObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Timer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Timer</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定した間隔でスレッド プールのスレッドでメソッドを実行するためのメカニズムを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/threading/timer.cs#051a39d380760b26)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ 使用して、<xref:System.Threading.TimerCallback>メソッドを指定するデリゲート、<xref:System.Threading.Timer>を実行します。 署名、<xref:System.Threading.TimerCallback>デリゲートは。  
+  
+```csharp  
+void TimerCallback(Object state)  
+```  
+  
+```cpp  
+void TimerCallback(Object state)  
+```  
+  
+```vb  
+Sub TimerCallback(state As Object)  
+```  
+  
+ タイマーのデリゲートは、タイマーが構築され、変更できないときに指定します。 メソッドが、タイマー; を作成したスレッドで実行されません。上で実行、<xref:System.Threading.ThreadPool>システムによって提供されるスレッドです。  
+  
+> [!TIP]
+>  .NET Framework クラス ライブラリには、という 4 つのクラスが含まれています。 `Timer`、それぞれの異なる機能を提供します。  
+>   
+>  -   <xref:System.Timers.Timer?displayProperty=nameWithType>、または複数のイベントが一定の間隔でシンクをイベントを発生させるし、いずれかでコードを実行します。 クラスは、サーバー ベースとして使用するか、マルチ スレッド環境でのサービス コンポーネントユーザー インターフェイスを持たないし、実行時に表示されていません。  
+> -   <xref:System.Threading.Timer?displayProperty=nameWithType>、一定の間隔でスレッド プールのスレッドで単一のコールバック メソッドを実行します。 コールバック メソッドは、タイマーがインスタンス化され、変更できないときに定義されます。 同様に、<xref:System.Timers.Timer?displayProperty=nameWithType>クラス、マルチ スレッド環境でのサーバー ベースまたはサービスのコンポーネントとして使用するこのクラスが目的としています。 これは、ユーザー インターフェイスを持たないは実行時に表示されません。  
+> -   <xref:System.Windows.Forms.Timer?displayProperty=nameWithType>、イベントを発生させるし、一定の間隔で 1 つまたは複数のイベント シンクでコードを実行する Windows フォームのコンポーネントです。 コンポーネントは、ユーザー インターフェイスを持たないし、は、シングル スレッド環境で使用するために設計されていますUI スレッドで実行します。  
+> -   <xref:System.Web.UI.Timer?displayProperty=nameWithType>、定期的な間隔で非同期または同期の web ページのポストバックを実行するための ASP.NET コンポーネント。  
+  
+ タイマーを作成するときに、メソッドの最初の実行前に待機する時間の量を指定できます (期限)、および後続の実行 (ピリオド) 間の待機時間。 <xref:System.Threading.Timer>クラスには、システム クロックと同じ解像度。 つまり、期間は、システム クロックの解像度よりも小さい場合、<xref:System.Threading.TimerCallback>デリゲートは、Windows 7 および Windows 8 のシステムでは、約 15 ミリ秒であるシステム時計の解像度で定義された間隔で実行されます。 期限を変更する時間と期間、または無効化を使用して、タイマー、<xref:System.Threading.Timer.Change%2A>メソッドです。  
+  
+> [!NOTE]
+>  使用している限り、<xref:System.Threading.Timer>への参照を保持する必要があります。 任意のマネージ オブジェクトと同様、<xref:System.Threading.Timer>への参照がない場合に、ガベージ コレクションの対象とします。 ファクトを<xref:System.Threading.Timer>がまだアクティブでは収集されてからできなくされません。  
+  
+ タイマーを不要になったときに使用して、<xref:System.Threading.Timer.Dispose%2A>タイマーによって保持されているリソースを解放します。 コールバックが後に発生する可能性ことに注意してください、<xref:System.Threading.Timer.Dispose>メソッドのオーバー ロードが呼び出されたため、タイマー キューにスレッド プールのスレッドでコールバックを実行します。 使用することができます、<xref:System.Threading.Timer.Dispose%28System.Threading.WaitHandle%29>メソッドのオーバー ロードは、すべてのコールバックが完了するまで待機します。  
+  
+ 呼び出されるために、タイマーによって実行されるコールバック メソッドが、再入可能にする必要があります<xref:System.Threading.ThreadPool>スレッドです。 コールバックは、タイマーの間隔は、コールバックの実行に必要な時間よりも小さい場合、またはすべてのスレッド プール スレッドが使用されており、コールバックが複数回のキューに置かれた場合、2 つのスレッド プールのスレッドで同時に実行できます。  
+  
+> [!NOTE]
+>  <xref:System.Threading.Timer?displayProperty=nameWithType>コールバック メソッドを使用し、スレッド プールのスレッドによって処理されている単純で軽量なタイマーです。 これは、ユーザー インターフェイス スレッドでコールバックが発生しないために、Windows フォームで使用するため推奨されません。 <xref:System.Windows.Forms.Timer?displayProperty=nameWithType>Windows フォームで使用するためお勧めします。 サーバー ベースのタイマー機能の使用を検討できる<xref:System.Timers.Timer?displayProperty=nameWithType>イベントを発生させ、その他の機能をします。  
+  
+   
+  
+## Examples  
+ 次の例、`StatusChecker`含まれているクラス、`CheckStatus`メソッド シグネチャを持つ同じとして、<xref:System.Threading.TimerCallback>を委任します。 `state`の引数、`CheckStatus`メソッドは、<xref:System.Threading.AutoResetEvent>アプリケーション スレッドとコールバック デリゲートを実行するスレッド プールのスレッドを同期するために使用されるオブジェクト。 `StatusChecker`クラスには、次の 2 つの状態変数も含まれています。  
+  
+ `invokeCount`  
+ コールバック メソッドが呼び出された回数を示します。  
+  
+ `maxCount`  
+ コールバック メソッドを呼び出す必要がある最大回数を決定します。  
+  
+ アプリケーションのスレッドが 1 秒間待機しを実行すると、タイマーを作成、`CheckStatus`コールバック メソッドすべて 250 ミリ秒です。 まで、アプリケーション スレッドをブロックし、<xref:System.Threading.AutoResetEvent>オブジェクトがシグナル状態にします。 ときに、`CheckStatus`コールバック メソッドが実行される`maxCount`呼び出して、時刻、`AutoResetEvent.Set`の状態を設定するメソッドを<xref:System.Threading.AutoResetEvent>シグナル状態にオブジェクト。 初めてこのようなアプリケーションのスレッドの呼び出し、<xref:System.Threading.Timer.Change%28System.Int32%2CSystem.Int32%29>メソッド、コールバック メソッドは、0.5 秒おきを今すぐ実行するようにします。 まで再度ブロック、<xref:System.Threading.AutoResetEvent>オブジェクトがシグナル状態にします。 呼び出して、タイマーが破棄されるこのような場合は、その<xref:System.Threading.Timer.Dispose%2A>メソッド、およびアプリケーションを終了します。  
+  
+ [!code-cpp[System.Threading.Timer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Timer/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Timer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Timer/CS/source.cs#1)]
+ [!code-vb[System.Threading.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Timer/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Timer (System.Threading.TimerCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.TimerCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Timer.#ctor(System.Threading.TimerCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Timer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Threading.TimerCallback" />
+      </Parameters>
+      <Docs>
+        <param name="callback">A<see cref="T:System.Threading.TimerCallback" />を実行するメソッドを表すデリゲートします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.Timer" />期間は無限と無限の期限を時間、新しく作成されたを使用して<see cref="T:System.Threading.Timer" />オブジェクトを使用する状態オブジェクトとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用するときに、このコンス トラクターを呼び出す、<xref:System.Threading.Timer>状態オブジェクトとしてオブジェクト自体です。 タイマーを作成すると、使用、<xref:System.Threading.Timer.Change%2A>間隔と時間の期限を設定します。  
+  
+ このコンス トラクターは、無限の期限を指定します。 最初のコールバックと無限の間隔を、最初のコールバックが前に発生していることを防止するためのコールバックの前に時間、<xref:System.Threading.Timer>オブジェクトが、状態オブジェクトに割り当てられています。  
+  
+ 指定されたメソッド`callback`で呼び出されるために、再入可能でなければなりません<xref:System.Threading.ThreadPool>スレッドです。 メソッドは、タイマーの間隔が、メソッドの実行に必要な時間より小さい場合、またはすべてのスレッド プール スレッドが使用されており、メソッドが複数回のキューに置かれた場合、2 つのスレッド プールのスレッドで同時に実行できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、状態オブジェクトとしてそれ自体、タイマーを使用して、新しいタイマーを作成します。 <xref:System.Threading.Timer.Change%2A>タイマーを開始するメソッドを使用します。 タイマー コールバックが発生すると、タイマーをオフにする状態オブジェクトが使用されます。  
+  
+ [!code-csharp[TimerSelfCtor#1](~/samples/snippets/csharp/VS_Snippets_Misc/timerSelfCtor/CS/source.cs#1)]
+ [!code-vb[TimerSelfCtor#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/timerSelfCtor/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Timer (System.Threading.TimerCallback callback, object state, int dueTime, int period);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.TimerCallback callback, object state, int32 dueTime, int32 period) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Timer.#ctor(System.Threading.TimerCallback,System.Object,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Timer</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Threading.TimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="dueTime" Type="System.Int32" />
+        <Parameter Name="period" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="callback">A<see cref="T:System.Threading.TimerCallback" />を実行するメソッドを表すデリゲートします。</param>
+        <param name="state">コールバック メソッドで使用される情報を格納したオブジェクトまたは<see langword="null" />です。</param>
+        <param name="dueTime">開始するまで待機する時間<c>コールバック</c>が呼び出され、(ミリ秒単位)。 指定<see cref="F:System.Threading.Timeout.Infinite" />タイマーが起動しないようにします。 0 を指定して、タイマーをすぐに開始します。</param>
+        <param name="period">呼び出し間の時間間隔<c>コールバック</c>、(ミリ秒単位)。 指定<see cref="F:System.Threading.Timeout.Infinite" />周期的なシグナル通知を無効にします。</param>
+        <summary>新しいインスタンスを初期化、<see langword="Timer" />クラス、時間間隔を指定する 32 ビット符号付き整数を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって指定されたデリゲート、`callback`パラメーターが後に 1 回呼び出される`dueTime`が経過すると、およびたびにその後、`period`間隔が経過するまでの時間します。  
+  
+ 場合`dueTime`はゼロ (0)`callback`が即座に呼び出されます。 場合`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>、`callback`は呼び出されません。 タイマー無効ですが、呼び出すことにより再度有効にすることができます、<xref:System.Threading.Timer.Change%2A>メソッドです。  
+  
+ <xref:System.Threading.Timer>クラスには、システム クロック、Windows 7 および Windows 8 のシステムでは、約 15 ミリ秒であると同じ解像度、`callback`場合、システム クロックの解像度によって定義された間隔で実行されるデリゲート`period`が、システム クロックの解像度よりも小さいです。 場合`period`はゼロ (0) または<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>と`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>、`callback`が呼び出される 1 回; タイマーの定期的な動作無効ですが、有効にできますを使用して、<xref:System.Threading.Timer.Change%2A>メソッドです。  
+  
+ 指定されたメソッド`callback`で呼び出されるために、再入可能でなければなりません<xref:System.Threading.ThreadPool>スレッドです。 メソッドは、タイマーの間隔が、メソッドの実行に必要な時間より小さい場合、またはすべてのスレッド プール スレッドが使用されており、メソッドが複数回のキューに置かれた場合、2 つのスレッド プールのスレッドで同時に実行できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、`TimerCallback`デリゲートし、の新しいインスタンスを初期化、`Timer`クラスです。  
+  
+ [!code-cpp[System.Threading.Timer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Timer/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Timer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Timer/CS/source.cs#1)]
+ [!code-vb[System.Threading.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Timer/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="dueTime" />または<paramref name="period" />パラメーターが負の値と等しくない<see cref="F:System.Threading.Timeout.Infinite" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="callback" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Timer (System.Threading.TimerCallback callback, object state, long dueTime, long period);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.TimerCallback callback, object state, int64 dueTime, int64 period) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Timer.#ctor(System.Threading.TimerCallback,System.Object,System.Int64,System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Timer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Threading.TimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="dueTime" Type="System.Int64" />
+        <Parameter Name="period" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="callback">A<see cref="T:System.Threading.TimerCallback" />を実行するメソッドを表すデリゲートします。</param>
+        <param name="state">コールバック メソッドで使用される情報を格納したオブジェクトまたは<see langword="null" />です。</param>
+        <param name="dueTime">開始するまで待機する時間<c>コールバック</c>が呼び出され、(ミリ秒単位)。 指定<see cref="F:System.Threading.Timeout.Infinite" />タイマーが起動しないようにします。 0 を指定して、タイマーをすぐに開始します。</param>
+        <param name="period">呼び出し間の時間間隔<c>コールバック</c>、(ミリ秒単位)。 指定<see cref="F:System.Threading.Timeout.Infinite" />周期的なシグナル通知を無効にします。</param>
+        <summary>新しいインスタンスを初期化、<see langword="Timer" />クラス、時間間隔を測定する 64 ビット符号付き整数を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって指定されたデリゲート、`callback`パラメーターが後に 1 回呼び出される`dueTime`が経過すると、およびたびにその後、`period`間隔が経過するまでの時間します。  
+  
+ 場合`dueTime`はゼロ (0)`callback`が即座に呼び出されます。 場合`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>、`callback`は呼び出されません。 タイマー無効ですが、呼び出すことにより再度有効にすることができます、<xref:System.Threading.Timer.Change%2A>メソッドです。  
+  
+ <xref:System.Threading.Timer>クラスには、システム クロック、Windows 7 および Windows 8 のシステムでは、約 15 ミリ秒であると同じ解像度、`callback`場合、システム クロックの解像度によって定義された間隔で実行されるデリゲート`period`が、システム クロックの解像度よりも小さいです。 場合`period`はゼロ (0) または<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>と`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>、`callback`が呼び出される 1 回; タイマーの定期的な動作無効ですが、有効にできますを使用して、<xref:System.Threading.Timer.Change%2A>メソッドです。  
+  
+ 指定されたメソッド`callback`で呼び出されるために、再入可能でなければなりません<xref:System.Threading.ThreadPool>スレッドです。 メソッドは、タイマーの間隔が、メソッドの実行に必要な時間より小さい場合、またはすべてのスレッド プール スレッドが使用されており、メソッドが複数回のキューに置かれた場合、2 つのスレッド プールのスレッドで同時に実行できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="dueTime" />または<paramref name="period" />パラメーターが負の値と等しくない<see cref="F:System.Threading.Timeout.Infinite" />です。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="dueTime" />または<paramref name="period" />パラメーターが 4294967294 より大きい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Timer (System.Threading.TimerCallback callback, object state, TimeSpan dueTime, TimeSpan period);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.TimerCallback callback, object state, valuetype System.TimeSpan dueTime, valuetype System.TimeSpan period) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Timer.#ctor(System.Threading.TimerCallback,System.Object,System.TimeSpan,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Timer</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Threading.TimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="dueTime" Type="System.TimeSpan" />
+        <Parameter Name="period" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="callback">実行するメソッドを表すデリゲート。</param>
+        <param name="state">コールバック メソッドで使用される情報を格納したオブジェクトまたは<see langword="null" />です。</param>
+        <param name="dueTime">開始するまで待機する時間数、<c>コールバック</c>パラメーターは、メソッドを呼び出します。 -1 ミリ秒を指定して、タイマーが開始されないようにします。 0 を指定して、タイマーをすぐに開始します。</param>
+        <param name="period">によって参照されるメソッドの呼び出し間の時間間隔<c>コールバック</c>です。 -1 ミリ秒を指定して、周期的なシグナル通知を無効にします。</param>
+        <summary>新しいインスタンスを初期化、<see langword="Timer" />クラス、使用<see cref="T:System.TimeSpan" />時間間隔を測定する値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって指定されたデリゲート、`callback`パラメーターが後に 1 回呼び出される`dueTime`が経過すると、およびたびにその後、`period`間隔が経過するまでの時間します。  
+  
+ 場合`dueTime`はゼロ (0)`callback`が即座に呼び出されます。 場合`dueTime`負 (-1) 1 つ (ミリ秒単位) は、`callback`は呼び出されません。 タイマー無効ですが、呼び出すことにより再度有効にすることができます、<xref:System.Threading.Timer.Change%2A>メソッドです。  
+  
+ <xref:System.Threading.Timer>クラスには、システム クロック、Windows 7 および Windows 8 のシステムでは、約 15 ミリ秒であると同じ解像度、`callback`場合、システム クロックの解像度によって定義された間隔で実行されるデリゲート`period`が、システム クロックの解像度よりも小さいです。 場合`period`はゼロ (0) または負の値の-1 ミリ秒および`dueTime`が正の値、`callback`が呼び出される 1 回; タイマーの定期的な動作無効ですが、有効にできますを使用して、<xref:System.Threading.Timer.Change%2A>メソッドです。  
+  
+ 指定されたメソッド`callback`で呼び出されるために、再入可能でなければなりません<xref:System.Threading.ThreadPool>スレッドです。 メソッドは、タイマーの間隔が、メソッドの実行に必要な時間より小さい場合、またはすべてのスレッド プール スレッドが使用されており、メソッドが複数回のキューに置かれた場合、2 つのスレッド プールのスレッドで同時に実行できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、`TimerCallback`デリゲートし、の新しいインスタンスを初期化、`Timer`クラスです。  
+  
+ [!code-cpp[System.Threading.Timer2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Timer2/CPP/source2.cpp#1)]
+ [!code-csharp[System.Threading.Timer2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Timer2/CS/source2.cs#1)]
+ [!code-vb[System.Threading.Timer2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Timer2/VB/source2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値のミリ秒数<paramref name="dueTime" />または<paramref name="period" />は負の値と等しくない<see cref="F:System.Threading.Timeout.Infinite" />、またはよりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="callback" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Timer (System.Threading.TimerCallback callback, object state, uint dueTime, uint period);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.TimerCallback callback, object state, unsigned int32 dueTime, unsigned int32 period) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Timer.#ctor(System.Threading.TimerCallback,System.Object,System.UInt32,System.UInt32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Timer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Threading.TimerCallback" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="dueTime" Type="System.UInt32" />
+        <Parameter Name="period" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="callback">実行するメソッドを表すデリゲート。</param>
+        <param name="state">コールバック メソッドで使用される情報を格納したオブジェクトまたは<see langword="null" />です。</param>
+        <param name="dueTime">開始するまで待機する時間<c>コールバック</c>が呼び出され、(ミリ秒単位)。 指定<see cref="F:System.Threading.Timeout.Infinite" />タイマーが起動しないようにします。 0 を指定して、タイマーをすぐに開始します。</param>
+        <param name="period">呼び出し間の時間間隔<c>コールバック</c>、(ミリ秒単位)。 指定<see cref="F:System.Threading.Timeout.Infinite" />周期的なシグナル通知を無効にします。</param>
+        <summary>新しいインスタンスを初期化、<see langword="Timer" />クラス、時間間隔を測定する 32 ビット符号なし整数値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって指定されたデリゲート、`callback`パラメーターが後に 1 回呼び出される`dueTime`が経過すると、およびたびにその後、`period`間隔が経過するまでの時間します。  
+  
+ 場合`dueTime`はゼロ (0)`callback`が即座に呼び出されます。 場合`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>、`callback`は呼び出されません。 タイマー無効ですが、呼び出すことにより再度有効にすることができます、<xref:System.Threading.Timer.Change%2A>メソッドです。  
+  
+ <xref:System.Threading.Timer>クラスには、システム クロック、Windows 7 および Windows 8 のシステムでは、約 15 ミリ秒であると同じ解像度、`callback`場合、システム クロックの解像度によって定義された間隔で実行されるデリゲート`period`が、システム クロックの解像度よりも小さいです。 場合`period`はゼロ (0) または<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>と`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>、`callback`が呼び出される 1 回; タイマーの定期的な動作無効ですが、有効にできますを使用して、<xref:System.Threading.Timer.Change%2A>メソッドです。  
+  
+ 指定されたメソッド`callback`で呼び出されるために、再入可能でなければなりません<xref:System.Threading.ThreadPool>スレッドです。 メソッドは、タイマーの間隔が、メソッドの実行に必要な時間より小さい場合、またはすべてのスレッド プール スレッドが使用されており、メソッドが複数回のキューに置かれた場合、2 つのスレッド プールのスレッドで同時に実行できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="dueTime" />または<paramref name="period" />パラメーターが負の値と等しくない<see cref="F:System.Threading.Timeout.Infinite" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="callback" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Change">
+      <MemberSignature Language="C#" Value="public bool Change (int dueTime, int period);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Change(int32 dueTime, int32 period) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Timer.Change(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Timer</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dueTime" Type="System.Int32" />
+        <Parameter Name="period" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dueTime">コールバック メソッドの呼び出し時に指定するまでの遅延時間、 <see cref="T:System.Threading.Timer" /> (ミリ秒単位) が作成されました。 指定<see cref="F:System.Threading.Timeout.Infinite" />タイマーが再起動されないようにします。 0 を指定して、タイマーをすぐに再開します。</param>
+        <param name="period">ときにコールバック メソッドの呼び出し間の時間間隔が指定された、 <see cref="T:System.Threading.Timer" /> (ミリ秒単位) が作成されました。 指定<see cref="F:System.Threading.Timeout.Infinite" />周期的なシグナル通知を無効にします。</param>
+        <summary>時間間隔を計るために 32 ビット符号付き整数を使用して、タイマーの開始時刻とメソッドの呼び出しの間隔を変更します。</summary>
+        <returns>
+          <see langword="true" />場合は、タイマーが正常に更新されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コールバック メソッドの呼び出し後に 1 回`dueTime`が経過すると、および各その後で指定された時間間隔の時間を`period`が経過しました。  
+  
+ 場合`dueTime`ゼロ (0) は、すぐにコールバック メソッドが呼び出されます。 場合`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>できますが、コールバック メソッドが呼び出されることはありません。 タイマーを無効にすると、再度呼び出すことによって有効にする<xref:System.Threading.Timer.Change%2A>の正の値を指定すると`dueTime`です。  
+  
+ 場合`period`はゼロ (0) または<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>、および`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>できますが、コールバック メソッドは 1 回呼び出されます。 タイマーの定期的な動作を無効にすると、再度呼び出すことによって有効にする<xref:System.Threading.Timer.Change%2A>の正の値を指定すると`period`です。  
+  
+ <xref:System.Threading.Timer.Change%2A>からメソッドを呼び出すことができます、<xref:System.Threading.TimerCallback>を委任します。  
+  
+   
+  
+## Examples  
+ 次のコード例を開始する方法を示しています、`Timer`と、設定された数の呼び出し後の期間を変更します。  
+  
+ [!code-cpp[System.Threading.Timer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Timer/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Timer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Timer/CS/source.cs#1)]
+ [!code-vb[System.Threading.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Timer/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.Timer" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="dueTime" />または<paramref name="period" />パラメーターが負の値と等しくない<see cref="F:System.Threading.Timeout.Infinite" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Change">
+      <MemberSignature Language="C#" Value="public bool Change (long dueTime, long period);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Change(int64 dueTime, int64 period) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Timer.Change(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Timer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dueTime" Type="System.Int64" />
+        <Parameter Name="period" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="dueTime">コールバック メソッドの呼び出し時に指定するまでの遅延時間、 <see cref="T:System.Threading.Timer" /> (ミリ秒単位) が作成されました。 指定<see cref="F:System.Threading.Timeout.Infinite" />タイマーが再起動されないようにします。 0 を指定して、タイマーをすぐに再開します。</param>
+        <param name="period">ときにコールバック メソッドの呼び出し間の時間間隔が指定された、 <see cref="T:System.Threading.Timer" /> (ミリ秒単位) が作成されました。 指定<see cref="F:System.Threading.Timeout.Infinite" />周期的なシグナル通知を無効にします。</param>
+        <summary>時間間隔を計るために 64 ビット符号付き整数を使用して、タイマーの開始時刻とメソッドの呼び出しの間隔を変更します。</summary>
+        <returns>
+          <see langword="true" />場合は、タイマーが正常に更新されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コールバック メソッドの呼び出し後に 1 回`dueTime`が経過すると、および各その後で指定された時間間隔の時間を`period`が経過しました。  
+  
+ 場合`dueTime`ゼロ (0) は、すぐにコールバック メソッドが呼び出されます。 場合`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>できますが、コールバック メソッドが呼び出されることはありません。 タイマーを無効にすると、再度呼び出すことによって有効にする<xref:System.Threading.Timer.Change%2A>の正の値を指定すると`dueTime`です。  
+  
+ 場合`period`はゼロ (0) または<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>、および`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>できますが、コールバック メソッドは 1 回呼び出されます。 タイマーの定期的な動作を無効にすると、再度呼び出すことによって有効にする<xref:System.Threading.Timer.Change%2A>の正の値を指定すると`period`です。  
+  
+ <xref:System.Threading.Timer.Change%2A>からメソッドを呼び出すことができます、<xref:System.Threading.TimerCallback>を委任します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.Timer" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="dueTime" />または<paramref name="period" />パラメーターが-1 未満です。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="dueTime" />または<paramref name="period" />パラメーターが 4294967294 より大きい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Change">
+      <MemberSignature Language="C#" Value="public bool Change (TimeSpan dueTime, TimeSpan period);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Change(valuetype System.TimeSpan dueTime, valuetype System.TimeSpan period) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Timer.Change(System.TimeSpan,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Timer</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dueTime" Type="System.TimeSpan" />
+        <Parameter Name="period" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="dueTime">A<see cref="T:System.TimeSpan" />時に指定されたコールバック メソッドを呼び出す前に遅延時間の時間を表す、<see cref="T:System.Threading.Timer" />が構築されています。 タイマーが再開されないようにする -1 を指定します。 0 を指定して、タイマーをすぐに再開します。</param>
+        <param name="period">ときにコールバック メソッドの呼び出し間の時間間隔が指定された、<see cref="T:System.Threading.Timer" />が構築されています。 -1 ミリ秒を指定して、周期的なシグナル通知を無効にします。</param>
+        <summary>開始時刻とメソッドの呼び出しを使用して、タイマーの間隔を変更<see cref="T:System.TimeSpan" />時間間隔を測定する値。</summary>
+        <returns>
+          <see langword="true" />場合は、タイマーが正常に更新されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コールバック メソッドの呼び出し後に 1 回`dueTime`が経過すると、および各その後で指定された時間間隔の時間を`period`が経過しました。  
+  
+ 場合`dueTime`ゼロ (0) は、すぐにコールバック メソッドが呼び出されます。 場合`dueTime`負の値の-1 ミリ秒、コールバック メソッドが呼び出されることはありません; タイマーが無効になっていることができますが再度呼び出すことによって有効にする<xref:System.Threading.Timer.Change%2A>の正の値を指定して`dueTime`です。  
+  
+ 場合`period`はゼロ (0) または負 (-1) 1 つ (ミリ秒単位) と`dueTime`が正の値、コールバック メソッドは 1 回呼び出されます。 タイマーの定期的な動作は無効になりますが、呼び出すことにより再度有効にすることができます<xref:System.Threading.Timer.Change%2A>を 0 より大きい値を指定すると`period`です。  
+  
+ <xref:System.Threading.Timer.Change%2A>からメソッドを呼び出すことができます、<xref:System.Threading.TimerCallback>を委任します。  
+  
+   
+  
+## Examples  
+ 次のコード例を開始する方法を示しています、`Timer`と、設定された数の呼び出し後の期間を変更します。  
+  
+ [!code-cpp[System.Threading.Timer2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Timer2/CPP/source2.cpp#1)]
+ [!code-csharp[System.Threading.Timer2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Timer2/CS/source2.cs#1)]
+ [!code-vb[System.Threading.Timer2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Timer2/VB/source2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.Timer" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="dueTime" />または<paramref name="period" />パラメーター (ミリ秒単位) が、-1 未満です。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="dueTime" />または<paramref name="period" />パラメーター (ミリ秒単位) が、4294967294 より大きい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Change">
+      <MemberSignature Language="C#" Value="public bool Change (uint dueTime, uint period);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Change(unsigned int32 dueTime, unsigned int32 period) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Timer.Change(System.UInt32,System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Timer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dueTime" Type="System.UInt32" />
+        <Parameter Name="period" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="dueTime">コールバック メソッドの呼び出し時に指定するまでの遅延時間、 <see cref="T:System.Threading.Timer" /> (ミリ秒単位) が作成されました。 指定<see cref="F:System.Threading.Timeout.Infinite" />タイマーが再起動されないようにします。 0 を指定して、タイマーをすぐに再開します。</param>
+        <param name="period">ときにコールバック メソッドの呼び出し間の時間間隔が指定された、 <see cref="T:System.Threading.Timer" /> (ミリ秒単位) が作成されました。 指定<see cref="F:System.Threading.Timeout.Infinite" />周期的なシグナル通知を無効にします。</param>
+        <summary>時間間隔を計るために 32 ビット符号なし整数を使用して、タイマーの開始時刻とメソッドの呼び出しの間隔を変更します。</summary>
+        <returns>
+          <see langword="true" />場合は、タイマーが正常に更新されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コールバック メソッドの呼び出し後に 1 回`dueTime`が経過すると、および各その後で指定された時間間隔の時間を`period`が経過しました。  
+  
+ 場合`dueTime`ゼロ (0) は、すぐにコールバック メソッドが呼び出されます。 場合`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>できますが、コールバック メソッドが呼び出されることはありません。 タイマーを無効にすると、再度呼び出すことによって有効にする<xref:System.Threading.Timer.Change%2A>の正の値を指定すると`dueTime`です。  
+  
+ 場合`period`はゼロ (0) または<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>、および`dueTime`は<xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>できますが、コールバック メソッドは 1 回呼び出されます。 タイマーの定期的な動作を無効にすると、再度呼び出すことによって有効にする<xref:System.Threading.Timer.Change%2A>の正の値を指定すると`period`です。  
+  
+ <xref:System.Threading.Timer.Change%2A>からメソッドを呼び出すことができます、<xref:System.Threading.TimerCallback>を委任します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Threading.Timer" />は既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Timer.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Timer</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスによって使用されるすべてのリソースを解放<see cref="T:System.Threading.Timer" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`Dispose`によりによって使用されるリソース、<xref:System.Threading.Timer>を他の目的に再割り当てされます。 詳細については`Dispose`を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。  
+  
+> [!NOTE]
+>  コールバックが後に発生することが、<xref:System.Threading.Timer.Dispose>メソッドのオーバー ロードが呼び出されたため、タイマー キューにスレッド プールのスレッドでコールバックを実行します。 使用することができます、<xref:System.Threading.Timer.Dispose%28System.Threading.WaitHandle%29>メソッドのオーバー ロードは、すべてのコールバックが完了するまで待機します。  
+  
+   
+  
+## Examples  
+ 次のコード例によって保持されているリソースを解放する方法を示しています、`Timer`です。  
+  
+ [!code-cpp[System.Threading.Timer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Timer/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Timer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Timer/CS/source.cs#1)]
+ [!code-vb[System.Threading.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Timer/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public bool Dispose (System.Threading.WaitHandle notifyObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Dispose(class System.Threading.WaitHandle notifyObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Timer.Dispose(System.Threading.WaitHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Timer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="notifyObject" Type="System.Threading.WaitHandle" />
+      </Parameters>
+      <Docs>
+        <param name="notifyObject"><see cref="T:System.Threading.WaitHandle" />シグナル状態になるときに、<see langword="Timer" />破棄されています。</param>
+        <summary>現在のインスタンスによって使用されるすべてのリソースを解放<see cref="T:System.Threading.Timer" />と、タイマーが破棄されているときに通知します。</summary>
+        <returns>
+          <see langword="true" />関数が成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`Dispose`によりによって使用されるリソース、<xref:System.Threading.Timer>を他の目的に再割り当てされます。 詳細については`Dispose`を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。  
+  
+ このメソッドの完了時、通知、<xref:System.Threading.WaitHandle>によって指定された、`notifyObject`パラメーター。このオーバー ロードを使用して、<xref:System.Threading.Timer.Dispose%2A>メソッドが、タイマーが破棄されていないことを確実になるまでブロックしたい場合。 現在キューに置かれたすべてのコールバックが完了するまで、タイマーが破棄されていません。  
+  
+> [!NOTE]
+>  コールバックで使用する場合、<xref:System.Threading.Timer.Change%2A>を設定するメソッド、`dueTime`競合状態が発生するパラメーターを 0、ときに、<xref:System.Threading.Timer.Dispose%28System.Threading.WaitHandle%29>メソッドのオーバー ロードが呼び出されます: 場合は、タイマー キューに配置する前に、新しいコールバック、<xref:System.Threading.Timer.Dispose%28System.Threading.WaitHandle%29>コールバック キューに置かれませんはメソッドのオーバー ロードを検出<xref:System.Threading.Timer.Dispose%28System.Threading.WaitHandle%29>ブロックです。 引き続き、新しいコールバックはキューに配置されているときに、それ以外の場合、タイマーが破棄される<xref:System.ObjectDisposedException>、新しいコールバックを呼び出す場合にスローされる、<xref:System.Threading.Timer.Change%2A>メソッド。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="notifyObject" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

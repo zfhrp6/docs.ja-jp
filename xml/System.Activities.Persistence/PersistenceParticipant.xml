@@ -1,0 +1,186 @@
+<Type Name="PersistenceParticipant" FullName="System.Activities.Persistence.PersistenceParticipant">
+  <TypeSignature Language="C#" Value="public abstract class PersistenceParticipant" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PersistenceParticipant extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Persistence.PersistenceParticipant" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスでは、<see cref="T:System.Activities.WorkflowApplication" /> と <see cref="T:System.ServiceModel.WorkflowServiceHost" /> の両方が永続化プロセスに参加できます。 永続参加要素は、<see cref="T:System.Activities.Persistence.PersistenceParticipant" /> クラスまたは <see cref="T:System.Activities.Persistence.PersistenceIOParticipant" /> クラス (<see cref="T:System.Activities.Persistence.PersistenceParticipant" /> クラスの派生クラス) から派生し、抽象メソッドを実装して、クラスのインスタンスをワークフロー インスタンス拡張機能として追加します。 <see cref="T:System.Activities.WorkflowApplication" /> および <see cref="T:System.ServiceModel.WorkflowServiceHost" /> は、インスタンスの永続化時にこのような拡張機能を探し、適切なときに適切なメソッドを起動します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ホストは、インスタンスの永続化時に次の手順 (または段階) を実行します。  
+  
+1.  永続化する値を収集します。  
+  
+2.  モノリシック構造値のフィールドを個々の値にマップします。  
+  
+3.  <xref:System.Activities.DurableInstancing.SaveWorkflowCommand> を永続化プロバイダーに発行します。  
+  
+4.  永続性トランザクションの下で I/O を実行します。  
+  
+ ホストは、段階を完了してから次の段階を開始します。 たとえば永続化時は、ホストは、2 番目の段階に進む前に、すべての永続参加要素から値を収集します。 2 番目の段階では、ホストは、マップを行うために、最初の段階で収集したすべての値を 2 番目の段階のすべての永続参加要素に提供します。 3 番目の段階では、ホストは、<xref:System.Activities.DurableInstancing.SaveWorkflowCommand> の起動時に、最初の段階および 2 番目の段階で収集したすべての値を永続化プロバイダーに提供します。 次に、4 番目の段階では、ホストは、収集したすべての値を永続性トランザクションの下で永続 IO 参加要素に提供します。  
+  
+ ホストは、永続化インスタンスの読み込み時に次の段階を実行します。  
+  
+1.  <xref:System.Activities.DurableInstancing.LoadWorkflowCommand> および <xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand> を永続化プロバイダーに発行します。  
+  
+2.  永続性トランザクションの下で I/O を実行します。  
+  
+3.  読み込まれた値を発行します。  
+  
+ 最上位レベルでは、<xref:System.Activities.Persistence.PersistenceParticipant> クラスから派生するワークフロー インスタンス拡張機能は、永続化プロセスの最初の段階 (Collect) および 2 番目の段階 (Map) と、読み込みプロセスの 3 番目の段階 (Publish) に参加できます。  PersistenceIOParticipant クラスから派生するワークフロー インスタンス拡張機能は、さらに、永続化プロセスの 4 番目の段階と、読み込みプロセス (I/O) の 2 番目の段階に参加できます。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.Persistence.PersistenceParticipant> から派生したクラスの作成方法を次のコード サンプルに示します。 この例は、[雇用プロセス](~/docs/framework/windows-workflow-foundation/samples/hiring-process.md)サンプルです。  
+  
+ [!code-csharp[wfs_HiringRequestProcess#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_hiringrequestprocess/cs/hiringrequestpersistenceparticipant.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PersistenceParticipant ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Persistence.PersistenceParticipant.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Activities.Persistence.PersistenceParticipant" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Activities.Persistence.PersistenceParticipant> から派生したクラスの作成方法を次のコード サンプルに示します。 この例は、[雇用プロセス](~/docs/framework/windows-workflow-foundation/samples/hiring-process.md)サンプルです。  
+  
+ [!code-csharp[wfs_HiringRequestProcess#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_hiringrequestprocess/cs/hiringrequestpersistenceparticipant.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectValues">
+      <MemberSignature Language="C#" Value="protected virtual void CollectValues (out System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt; readWriteValues, out System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt; writeOnlyValues);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CollectValues([out] class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt;&amp; readWriteValues, [out] class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt;&amp; writeOnlyValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Persistence.PersistenceParticipant.CollectValues(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object}@,System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="readWriteValues" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;&amp;" RefType="out" />
+        <Parameter Name="writeOnlyValues" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="readWriteValues">永続化される読み取り/書き込み値。</param>
+        <param name="writeOnlyValues">永続化される書き込み専用値。</param>
+        <summary>ホストはカスタムの永続化参加要素に対してこのメソッドを呼び出して、永続化される読み取り/書き込み値および書き込み専用値を収集します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ホストは、<xref:System.Runtime.DurableInstancing.InstanceValue> コレクションの <xref:System.Activities.DurableInstancing.SaveWorkflowCommand.InstanceData*> オブジェクトとして、読み取り/書き込み値を最初のディクショナリにパッケージ化し、<xref:System.Runtime.DurableInstancing.InstanceValue> および <xref:System.Runtime.DurableInstancing.InstanceValueOptions.Optional> フラグが設定された <xref:System.Runtime.DurableInstancing.InstanceValueOptions.WriteOnly> オブジェクトとして、書き込み専用値を 2 番目のディクショナリにパッケージ化します。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.Runtime.DurableInstancing.InstanceValueOptions>」を参照してください。  
+  
+> [!IMPORTANT]
+>  1 つの永続化内のすべての永続参加要素について <xref:System.Activities.Persistence.PersistenceParticipant.CollectValues%2A> の実装によって形成される各値は、一意の Xname を持つ必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.Persistence.PersistenceParticipant> から派生したクラスでの CollectValues の使用方法を次のコード サンプルに示します。 この例は、[永続参加要素](~/docs/framework/windows-workflow-foundation/persistence-participants.md)サンプルです。  
+  
+ [!code-csharp[wfs_PersistenceParticipants#2](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_persistenceparticipants/cs/stepcountextension.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapValues">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt; MapValues (System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt; readWriteValues, System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt; writeOnlyValues);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt; MapValues(class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt; readWriteValues, class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt; writeOnlyValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Persistence.PersistenceParticipant.MapValues(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object},System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="readWriteValues" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;" />
+        <Parameter Name="writeOnlyValues" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="readWriteValues">永続化される読み取り/書き込み値。</param>
+        <param name="writeOnlyValues">永続化される書き込み専用値。</param>
+        <summary>最初の段階での値の収集が終了した後に、ホストはこのメソッドを起動します。 ホストは、最初の段階 (CollectValues 段階) ですべての永続参加要素から収集した値の 2 つの読み取り専用ディクショナリを、マップのためにこのメソッドに転送します。 ホストは、このメソッドから返されたディクショナリの値を、書き込み専用値のコレクションに追加します。</summary>
+        <returns>永続化される追加の書き込み専用値を含むディクショナリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初の段階 (CollectValues 段階) で収集されたすべての値を含む、すべての永続参加要素についてすべての <xref:System.Activities.Persistence.PersistenceParticipant.MapValues%2A> メソッドの実装によって形成される各値は一意の XName を持つ必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.Persistence.PersistenceParticipant> から派生したクラスでの MapValues の使用方法を次のコード サンプルに示します。 この例は、[企業の購買プロセス](~/docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)サンプルです。  
+  
+ [!code-csharp[wfs_PurchaseProcess#2](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_purchaseprocess/cs/xmlpersistenceparticipant.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublishValues">
+      <MemberSignature Language="C#" Value="protected virtual void PublishValues (System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt; readWriteValues);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void PublishValues(class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt; readWriteValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Persistence.PersistenceParticipant.PublishValues(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="readWriteValues" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="readWriteValues">永続ストアから読み込まれた読み取り/書き込み値。 このディクショナリは、最新の永続化で永続化された読み取り/書き込み値のディクショナリに対応します。</param>
+        <summary>ホストは、このメソッドを起動し、<see cref="P:System.Activities.Persistence.SaveWorkflowCommand.InstanceData" /> コレクション (<see cref="T:System.Activities.Persistence.LoadWorkflowCommand" /> または <see cref="T:System.Activities.Persistence.LoadWorkflowByInstanceKeyCommand" /> で埋められた) 内の読み込まれたすべての値をディクショナリ パラメーターとして渡します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Activities.Persistence.PersistenceParticipant> から派生したクラスでの PublishValues の使用方法を次のコード サンプルに示します。 この例は、[永続参加要素](~/docs/framework/windows-workflow-foundation/persistence-participants.md)サンプルです。  
+  
+ [!code-csharp[wfs_PersistenceParticipants#2](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_persistenceparticipants/cs/stepcountextension.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

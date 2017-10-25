@@ -1,0 +1,101 @@
+<Type Name="WebServiceHandlerFactory" FullName="System.Web.Services.Protocols.WebServiceHandlerFactory">
+  <TypeSignature Language="C#" Value="public class WebServiceHandlerFactory : System.Web.IHttpHandlerFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebServiceHandlerFactory extends System.Object implements class System.Web.IHttpHandlerFactory" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.WebServiceHandlerFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpHandlerFactory</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Web サービス ハンドラー インスタンスは、その型または型の実装を動的に製造、<see cref="T:System.Web.IHttpHandler" />インターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.IHttpHandler>インターフェイスは、ASP.NET を使用して入力方向の HTTP Web は、カスタム HTTP ハンドラーを使用して要求を処理するコントラクトを確立します。 <xref:System.Web.Services.Protocols.WebServiceHandlerFactory>クラスのインスタンスを生成する、 <xref:System.Web.IHttpHandler> Web サービス要求を処理するための実装です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebServiceHandlerFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.WebServiceHandlerFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.WebServiceHandlerFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHandler">
+      <MemberSignature Language="C#" Value="public System.Web.IHttpHandler GetHandler (System.Web.HttpContext context, string verb, string url, string filePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.IHttpHandler GetHandler(class System.Web.HttpContext context, string verb, string url, string filePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(System.Web.HttpContext,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.IHttpHandler</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="verb" Type="System.String" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="filePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />組み込みサーバー オブジェクトへの参照を提供する (たとえば、 <see cref="P:System.Web.HttpContext.Request" />、 <see cref="P:System.Web.HttpContext.Response" />、 <see cref="P:System.Web.HttpContext.Session" />、および<see cref="P:System.Web.HttpContext.Server" />) HTTP 要求を処理するために使用します。</param>
+        <param name="verb">HTTP データは、クライアントが使用するメソッド (GET または POST) を転送します。</param>
+        <param name="url">要求されたリソースの生の URL。</param>
+        <param name="filePath">要求されたリソースのファイル システム パス。</param>
+        <summary><see cref="T:System.Web.IHttpHandler" /> インスタンスを返します。</summary>
+        <returns><see cref="T:System.Web.IHttpHandler" /> インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseHandler">
+      <MemberSignature Language="C#" Value="public void ReleaseHandler (System.Web.IHttpHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReleaseHandler(class System.Web.IHttpHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.WebServiceHandlerFactory.ReleaseHandler(System.Web.IHttpHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Web.IHttpHandler" />
+      </Parameters>
+      <Docs>
+        <param name="handler">解放する <see cref="T:System.Web.IHttpHandler" /> のインスタンス。</param>
+        <summary>リリース、<see cref="T:System.Web.IHttpHandler" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドラーに関連付けられているリソース インスタンスにありませんが、<xref:System.Web.Services.Protocols.WebServiceHandlerFactory>クラスを解放する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

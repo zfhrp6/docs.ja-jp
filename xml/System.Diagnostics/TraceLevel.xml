@@ -1,0 +1,200 @@
+<Type Name="TraceLevel" FullName="System.Diagnostics.TraceLevel">
+  <TypeSignature Language="C#" Value="public enum TraceLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TraceLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.TraceLevel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>どのようなメッセージを出力するを指定します、 <see cref="T:System.Diagnostics.Debug" />、<see cref="T:System.Diagnostics.Trace" />と<see cref="T:System.Diagnostics.TraceSwitch" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙は、<xref:System.Diagnostics.TraceSwitch> クラスで使用します。  
+  
+ トレース出力またはスイッチを使用してデバッグを有効にする必要があります。 次の構文は、コンパイラに固有です。 以外は、c# または Visual Basic コンパイラを使用する場合は、コンパイラのドキュメントを参照してください。  
+  
+-   C# でのデバッグを有効にするには追加、`/d:DEBUG`するを追加したり、コードをコンパイルするときに、コンパイラのコマンドラインにフラグ`#define DEBUG`ファイルの先頭にします。 Visual basic では、追加、`/d:DEBUG=True`フラグをコンパイラ コマンドライン。  
+  
+-   C# でのトレースを有効にするには追加、`/d:TRACE`フラグを追加したり、コードをコンパイルすると、コンパイラのコマンドライン`#define TRACE`ファイルの先頭にします。 Visual basic では、追加、`/d:TRACE=True`フラグをコンパイラ コマンドライン。  
+  
+ アプリケーションのインストルメント化の詳細については、次を参照してください。<xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>です。  
+  
+> [!NOTE]
+>  .NET Framework バージョン 2.0 では、スイッチの値を指定するためにテキストを使用できます。 たとえば、<xref:System.Diagnostics.BooleanSwitch> に対して `true` を指定したり、<xref:System.Diagnostics.TraceSwitch> に対して列挙値のテキスト形式である `Error` を指定したりできます。 `<add name="mySwitch" value="Error" />` という行は、`<add name="mySwitch" value="1" />` と同じです。  
+  
+ バージョン 1.0 および 1.1 では、構成ファイル内のトレース レベルは、列挙型のメンバーではなく列挙メンバーに対応する整数値を使用して設定された .NET Framework で自体には、次の例として示します。  
+  
+```  
+<configuration>  
+    <system.diagnostics>  
+       <switches>  
+          <add name="mySwitch" value="4" />  
+       </switches>  
+    </system.diagnostics>  
+</configuration>  
+```  
+  
+ 列挙型の整数値を使用してトレース レベルを設定、に加えて、列挙値のテキスト表現を使用して .NET Framework version 2.0 のトレース レベルを設定することができます。 たとえば、`Verbose`の<xref:System.Diagnostics.TraceSwitch>です。 `<add name="mySwitch" value="Verbose" />` という行は、`<add name="mySwitch" value="4" />` と同じです。  
+  
+ 次の表は、関係を示しています、<xref:System.Diagnostics.TraceLevel>列挙型のメンバーとその対応する構成ファイルのエントリ。  
+  
+|トレース レベル|構成ファイルの値|  
+|-----------------|------------------------------|  
+|オフ|0|  
+|エラー|1|  
+|警告|2|  
+|情報|3|  
+|詳細|4|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="Error" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceLevel Error = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceLevel.Error" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー処理メッセージを出力します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Info">
+      <MemberSignature Language="C#" Value="Info" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceLevel Info = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceLevel.Info" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>情報メッセージ、警告、およびエラー処理メッセージを出力します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Off">
+      <MemberSignature Language="C#" Value="Off" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceLevel Off = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceLevel.Off" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トレース メッセージおよびデバッグ メッセージを出力します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbose">
+      <MemberSignature Language="C#" Value="Verbose" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceLevel Verbose = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceLevel.Verbose" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのデバッグおよびトレースのメッセージを出力します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Warning">
+      <MemberSignature Language="C#" Value="Warning" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.TraceLevel Warning = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.TraceLevel.Warning" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力の警告およびエラー処理メッセージです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

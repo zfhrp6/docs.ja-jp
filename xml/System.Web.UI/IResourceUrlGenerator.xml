@@ -1,0 +1,64 @@
+<Type Name="IResourceUrlGenerator" FullName="System.Web.UI.IResourceUrlGenerator">
+  <TypeSignature Language="C#" Value="public interface IResourceUrlGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IResourceUrlGenerator" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IResourceUrlGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>デザイナー ホストは、埋め込みリソースの URL 参照の検索を行うために実装する必要があります、メソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET version 2.0 など、コントロールのアセンブリから埋め込まれたリソースを取得する機能を提供する、<xref:System.Web.UI.Page>コントロール。 実行時に、埋め込まれたリソースへの URL を取得できるを使用して、<xref:System.Web.UI.ClientScriptManager.GetWebResourceUrl%2A>のメソッド、<xref:System.Web.UI.ClientScriptManager>クラスです。 デザイン時の意味をアセンブリから、リソース URL を生成するためには、デザイナー ホストを実装するサービスを提供できる、<xref:System.Web.UI.IResourceUrlGenerator>インターフェイスです。 詳細情報  
+  
+-   ローカリゼーションでリソースを使用して、次を参照してください。 [ASP.NET Web ページのリソースの概要](http://msdn.microsoft.com/library/0936b3b2-9e6e-4abe-9c06-364efef9dbbd)です。  
+  
+-   埋め込みリソースを使用して、次を参照してください。 [NIB: 方法: Web サーバー コントロールのプロパティ値の設定に使用するリソース](http://msdn.microsoft.com/en-us/d8e0e5c0-1958-422b-b4f5-ebe63f6c45cb)と[する方法: リソースの値をプログラムで取得](http://msdn.microsoft.com/library/7a06d512-6fc3-40ca-9cb6-7f41d1a9fa28)です。  
+  
+-   コントロール デザイナーについては、次を参照してください。 [ASP.NET コントロール デザイナーの概要](http://msdn.microsoft.com/library/1d5a99d7-0a72-403e-812e-2c1ab595c810)です。  
+  
+ <xref:System.Web.UI.IResourceUrlGenerator>インターフェイスが 1 つのメソッドには、<xref:System.Web.UI.IResourceUrlGenerator.GetResourceUrl%2A>を指定したリソースの種類と名前のリソースへの URL 参照を返すメソッド。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetResourceUrl">
+      <MemberSignature Language="C#" Value="public string GetResourceUrl (Type type, string resourceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetResourceUrl(class System.Type type, string resourceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IResourceUrlGenerator.GetResourceUrl(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="resourceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">埋め込みリソースを格納するアセンブリの型。</param>
+        <param name="resourceName">取得するリソースの名前。</param>
+        <summary>デザイン時に使用されるアセンブリに埋め込まれたリソースへの URL 参照を返します。</summary>
+        <returns>リソースへの URL 参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行時に、<xref:System.Web.UI.ClientScriptManager.GetWebResourceUrl%2A>メソッドは、リソースに URL を返します。 <xref:System.Web.Handlers.AssemblyResourceLoader>クラスは、埋め込みリソースを読み込むために使用する HTTP ハンドラーを定義します。  
+  
+ デザイン時に、<xref:System.Web.UI.ClientScriptManager.GetWebResourceUrl%2A>のメソッド、<xref:System.Web.UI.ClientScriptManager>クラスは、デザイン モードと URL を返しますデザイナー ホスト サービスの実装にデリゲートを検出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

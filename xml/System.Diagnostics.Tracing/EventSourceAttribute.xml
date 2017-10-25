@@ -1,0 +1,191 @@
+<Type Name="EventSourceAttribute" FullName="System.Diagnostics.Tracing.EventSourceAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EventSourceAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventSourceAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Tracing.EventSourceAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Tracing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows イベント トレーシング (ETW) の名前をイベント ソース クラスの名前と別に定義できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、イベント トレース Windows (ETW) のではイベント ソースの名前は、名前空間名のないが、イベント ソース クラスの名前と一致します。 これは、プライベートなイベント ソースのための十分なが複数表示されるイベント ソースのことをお勧めに階層的な名前空間など: *CompanyName*.*ProviderName*です。  <xref:System.Diagnostics.Tracing.EventSourceAttribute>属性クラスの名前とは無関係に ETW の名前を定義することができます。  
+  
+ <xref:System.Diagnostics.Tracing.EventSourceAttribute>属性では、イベント ソースの明示的に GUID を定義することもできます。  標準的な使用率イベントを定義する際に GUID を指定する必要はありませんソースまたは GUID が暗黙的にイベント ソース クラスの名前から派生したために、参照します。 GUID を明示的に定義はお勧めしませんが、ときにイベント ソースを使用する既存の ETW プロバイダーのアップグレードを除く。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventSourceAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Tracing.EventSourceAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tracing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.Tracing.EventSourceAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Guid">
+      <MemberSignature Language="C#" Value="public string Guid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Guid" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Tracing.EventSourceAttribute.Guid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tracing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントのソース識別子を設定します。</summary>
+        <value>イベントのソース識別子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準的な使用率イベントを定義する際に GUID を指定する必要はありませんソースまたは GUID が暗黙的にイベント ソース クラスの名前から派生したために、参照します。 GUID を明示的に定義はお勧めしませんが、ときにイベント ソースを使用する既存の ETW プロバイダーのアップグレードを除く。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalizationResources">
+      <MemberSignature Language="C#" Value="public string LocalizationResources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalizationResources" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Tracing.EventSourceAttribute.LocalizationResources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tracing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはローカリゼーション リソース ファイルの名前を設定します。</summary>
+        <value>ローカリゼーション リソース ファイルの名前または<see langword="null" />ローカリゼーション リソース ファイルが存在しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ソースは、イベントのローカリゼーションをサポートします。 イベント、オペレーション コード、タスク、キーワード、および複数言語へのマップを使用する名前をローカライズすることができます。 イベントをローカライズするには、作成します。プロジェクトにリソース ファイルを追加して ResX スタイル文字列テーブルです。  リソース ファイルに渡すことができる名前 (たとえば、DefaultNameSpace.ResourceFileName) が与えられます、<xref:System.Resources.ResourceManager.%23ctor%2A>コンス トラクターのリソースを読み取ることです。  この名前は、の値、<xref:System.Diagnostics.Tracing.EventSourceAttribute.LocalizationResources%2A>プロパティです。 場合、<xref:System.Diagnostics.Tracing.EventSourceAttribute.LocalizationResources%2A>プロパティは使用されません`null`、<xref:System.Diagnostics.Tracing.EventSource>オブジェクトは、大文字の用語が、イベント、タスク、キーワード、またはローカライズする必要があるマップ値の名前を表す、次のリソースの名前付けを使用してイベントがスキームのローカライズされた文字列を検索します。  
+  
+-   event_EVENTNAME  
+  
+-   task_TASKNAME  
+  
+-   keyword_KEYWORDNAME  
+  
+-   map_MAPNAME  
+  
+ イベントのローカライズされた文字列が、メッセージ文字列に対応しており、ペイロードの値を表す {0} 値を持つことができますに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Tracing.EventSourceAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Tracing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベント ソースの名前を設定します。</summary>
+        <value>イベント ソースの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

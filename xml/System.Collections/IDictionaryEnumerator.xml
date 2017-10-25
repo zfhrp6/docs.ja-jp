@@ -1,0 +1,203 @@
+<Type Name="IDictionaryEnumerator" FullName="System.Collections.IDictionaryEnumerator">
+  <TypeSignature Language="C#" Value="public interface IDictionaryEnumerator : System.Collections.IEnumerator" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDictionaryEnumerator implements class System.Collections.IEnumerator" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.IDictionaryEnumerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerator</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>非ジェネリック ディクショナリの要素を列挙します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [Visual Basic、C# の場合]  
+  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがってを使用して`foreach`列挙子を直接操作するのではなくをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A>メソッドがこの位置に戻さも、列挙子を表示します。 この位置で、呼び出し、<xref:System.Collections.IEnumerator.Current%2A>プロパティは例外をスローします。 そのため、呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A>メソッドの値を読み取る前に、コレクションの最初の要素に列挙子を進める<xref:System.Collections.IEnumerator.Current%2A>です。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 場合は、最後の呼び出し<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、呼び出し元<xref:System.Collections.IEnumerator.Current%2A>例外をスローします。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 無効になり、次の呼び出しに変更を追加するなど、コレクションを変更、または要素を削除するには、列挙子は回復不可能<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>スロー、<xref:System.InvalidOperationException>です。 間で、コレクションが変更された場合<xref:System.Collections.IEnumerator.MoveNext%2A>と<xref:System.Collections.IEnumerator.Current%2A>、<xref:System.Collections.IEnumerator.Current%2A>列挙子が既に無効になっている場合でもに設定されている要素を返します。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ このコード例を実装する、ディクショナリ列挙子を定義する方法を示します、<xref:System.Collections.IDictionaryEnumerator>インターフェイスです。  
+  
+ [!code-cpp[Dictionary#1](~/samples/snippets/cpp/VS_Snippets_CLR/Dictionary/cpp/Dictionary.cpp#1)]
+ [!code-csharp[Dictionary#1](~/samples/snippets/csharp/VS_Snippets_CLR/Dictionary/CS/Dictionary.cs#1)]
+ [!code-vb[Dictionary#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dictionary/VB/Dictionary.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="P:System.Collections.IEnumerator.Current" />から継承されたプロパティ<see cref="T:System.Collections.IEnumerator" />を返します、<see cref="T:System.Object" />は、ボックス化された<see cref="T:System.Collections.DictionaryEntry" />と同様の戻り値に、<see cref="P:System.Collections.IDictionaryEnumerator.Entry" />プロパティです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Entry">
+      <MemberSignature Language="C#" Value="public System.Collections.DictionaryEntry Entry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Collections.DictionaryEntry Entry" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.IDictionaryEnumerator.Entry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.DictionaryEntry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーと現在のディクショナリ エントリの値の両方を取得します。</summary>
+        <value>A<see cref="T:System.Collections.DictionaryEntry" />キーと現在のディクショナリ エントリの値の両方を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を作成した後、または後に、<xref:System.Collections.IEnumerator.Reset%2A>メソッドが呼び出されると、<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子の値を読み取る前に、コレクションの最初の要素に進めるメソッドを呼び出す必要があります、<xref:System.Collections.IDictionaryEnumerator.Entry%2A>プロパティ以外の場合、<xref:System.Collections.IDictionaryEnumerator.Entry%2A>が定義されていません。  
+  
+ <xref:System.Collections.IDictionaryEnumerator.Entry%2A>または例外をスロー、最後の呼び出し<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`コレクションの末尾を示します。  
+  
+ <xref:System.Collections.IDictionaryEnumerator.Entry%2A>連続して呼び出すと、列挙子の位置を移動しません<xref:System.Collections.IDictionaryEnumerator.Entry%2A>されるまで、同じオブジェクトを返す<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Collections.IDictionaryEnumerator" />または最後のエントリ後に、ディクショナリの最初のエントリ前に置かれます。</exception>
+        <block subset="none" type="overrides">
+          <para><see cref="P:System.Collections.IEnumerator.Current" />から継承されたプロパティ<see cref="T:System.Collections.IEnumerator" />を返します、<see cref="T:System.Object" />は、ボックス化された<see cref="T:System.Collections.DictionaryEntry" />と同様の戻り値に、<see cref="P:System.Collections.IDictionaryEnumerator.Entry" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public object Key { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Key" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.IDictionaryEnumerator.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のディクショナリ エントリのキーを取得します。</summary>
+        <value>列挙体の現在の要素のキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を作成した後、または後に、<xref:System.Collections.IEnumerator.Reset%2A>メソッドが呼び出されると、<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子の値を読み取る前に、コレクションの最初の要素に進めるメソッドを呼び出す必要があります、<xref:System.Collections.IDictionaryEnumerator.Key%2A>プロパティ以外の場合、<xref:System.Collections.IDictionaryEnumerator.Key%2A>が定義されていません。  
+  
+ <xref:System.Collections.IDictionaryEnumerator.Key%2A>または例外をスロー、最後の呼び出し<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`コレクションの末尾を示します。  
+  
+ <xref:System.Collections.IDictionaryEnumerator.Key%2A>連続して呼び出すと、列挙子の位置を移動しません<xref:System.Collections.IDictionaryEnumerator.Key%2A>されるまで、同じオブジェクトを返す<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Collections.IDictionaryEnumerator" />または最後のエントリ後に、ディクショナリの最初のエントリ前に置かれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.IDictionaryEnumerator.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のディクショナリ エントリの値を取得します。</summary>
+        <value>列挙体の現在の要素の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を作成した後、または後に、<xref:System.Collections.IEnumerator.Reset%2A>メソッドが呼び出されると、<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子の値を読み取る前に、コレクションの最初の要素に進めるメソッドを呼び出す必要があります、<xref:System.Collections.IDictionaryEnumerator.Value%2A>プロパティ以外の場合、<xref:System.Collections.IDictionaryEnumerator.Value%2A>が定義されていません。  
+  
+ <xref:System.Collections.IDictionaryEnumerator.Value%2A>または例外をスロー、最後の呼び出し<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`コレクションの末尾を示します。  
+  
+ <xref:System.Collections.IDictionaryEnumerator.Value%2A>連続して呼び出すと、列挙子の位置を移動しません<xref:System.Collections.IDictionaryEnumerator.Value%2A>されるまで、同じオブジェクトを返す<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Collections.IDictionaryEnumerator" />または最後のエントリ後に、ディクショナリの最初のエントリ前に置かれます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

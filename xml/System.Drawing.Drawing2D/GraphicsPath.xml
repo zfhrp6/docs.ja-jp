@@ -1,0 +1,3528 @@
+<Type Name="GraphicsPath" FullName="System.Drawing.Drawing2D.GraphicsPath">
+  <TypeSignature Language="C#" Value="public sealed class GraphicsPath : MarshalByRefObject, ICloneable, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit GraphicsPath extends System.MarshalByRefObject implements class System.ICloneable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.GraphicsPath" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>接続されている直線と曲線の系列を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、図形の輪郭を描画、図形の内側の塗りつぶしおよびクリッピング領域の作成にパスを使用します。 グラフィックス エンジンでは、世界の座標空間のパス内の幾何学図形の座標を保持します。  
+  
+ パスは、任意の数の数字 (サブパス) で構成可能性があります。 各図は、接続されている直線と曲線または幾何学模様の図形プリミティブのシーケンスのいずれかで構成されます。 図形の開始点は、接続されている直線と曲線のシーケンスの最初のポイントです。 終了ポイントは、シーケンス内の最後のポイントです。 プリミティブ幾何学図形の開始と終了ポイントは、プリミティブの仕様によって定義されます。  
+  
+ 接続された線のシーケンスで構成される図と曲線 (開始と終了点を持つは、一致する可能性があります) は、明示的に閉じられていない限りに開いている図では、です。 図を使用して明示的に閉じることができます、<xref:System.Drawing.Drawing2D.GraphicsPath.CloseFigure%2A>メソッドの開始点を終点から線を接続することで、現在の図を閉じます。 幾何学図形プリミティブので構成されている図では、閉じた図です。  
+  
+ いっぱいになるとクリッピングの目的 (を使用して、パスが表示される場合など、 <xref:System.Drawing.Graphics.FillPath%2A>)、開いているすべての図は、前回の状態に図の最初の点から行を追加で閉じられてです。  
+  
+ パスが作成されるとき、または、図表が閉じて新しい図は、暗黙的に開始します。 新しい図は、明示的に作成されたときに、<xref:System.Drawing.Drawing2D.GraphicsPath.StartFigure%2A>メソッドが呼び出されます。  
+  
+ パスには、プリミティブ幾何学図形を追加するときに、図形を含む幾何学図形を追加し、新しい図も暗黙的に開始します。 その結果、常に現在の図には、パスです。 直線と曲線がパスに追加されると、新しい行と接続された線のシーケンスを形成する曲線と曲線の開始位置への現在の図の終点の接続に必要に応じて、暗黙的な行が追加されます。  
+  
+ 図では、開始位置と終了点の間で直線と曲線のセグメントをトレースする方法を説明する方向があります。 方向は、直線と曲線、図を追加したり、プリミティブ幾何学図形によって定義された順序で定義されます。 方向は、クリップの塗りつぶしのパスの内部の判定に使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GraphicsPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />クラス、<see cref="P:System.Drawing.Drawing2D.GraphicsPath.FillMode" />値<see cref="F:System.Drawing.Drawing2D.FillMode.Alternate" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GraphicsPath (System.Drawing.Drawing2D.FillMode fillMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Drawing2D.FillMode fillMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.#ctor(System.Drawing.Drawing2D.FillMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fillMode" Type="System.Drawing.Drawing2D.FillMode" />
+      </Parameters>
+      <Docs>
+        <param name="fillMode"><see cref="T:System.Drawing.Drawing2D.FillMode" />列挙体を決定する方法、この内部<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />が入力します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Drawing.Drawing2D.GraphicsPath" /> 、指定したクラス<see cref="T:System.Drawing.Drawing2D.FillMode" />列挙します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GraphicsPath (System.Drawing.Point[] pts, byte[] types);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Point[] pts, unsigned int8[] types) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.#ctor(System.Drawing.Point[],System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pts" Type="System.Drawing.Point[]" />
+        <Parameter Name="types" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="pts">配列<see cref="T:System.Drawing.Point" />これを構成する点の座標を定義する構造体<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</param>
+        <param name="types">配列<see cref="T:System.Drawing.Drawing2D.PathPointType" />内の対応する各ポイントの種類を指定する列挙体の要素、 <c>pts</c>配列。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Drawing.Drawing2D.GraphicsPath" /> 、指定したクラス<see cref="T:System.Drawing.Drawing2D.PathPointType" />と<see cref="T:System.Drawing.Point" />配列。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GraphicsPath (System.Drawing.PointF[] pts, byte[] types);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.PointF[] pts, unsigned int8[] types) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.#ctor(System.Drawing.PointF[],System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pts" Type="System.Drawing.PointF[]" />
+        <Parameter Name="types" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="pts">配列<see cref="T:System.Drawing.PointF" />これを構成する点の座標を定義する構造体<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</param>
+        <param name="types">配列<see cref="T:System.Drawing.Drawing2D.PathPointType" />内の対応する各ポイントの種類を指定する列挙体の要素、 <c>pts</c>配列。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Drawing.Drawing2D.GraphicsPath" /> 、指定した配列<see cref="T:System.Drawing.Drawing2D.PathPointType" />と<see cref="T:System.Drawing.PointF" />配列。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GraphicsPath (System.Drawing.Point[] pts, byte[] types, System.Drawing.Drawing2D.FillMode fillMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Point[] pts, unsigned int8[] types, valuetype System.Drawing.Drawing2D.FillMode fillMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.#ctor(System.Drawing.Point[],System.Byte[],System.Drawing.Drawing2D.FillMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pts" Type="System.Drawing.Point[]" />
+        <Parameter Name="types" Type="System.Byte[]" />
+        <Parameter Name="fillMode" Type="System.Drawing.Drawing2D.FillMode" />
+      </Parameters>
+      <Docs>
+        <param name="pts">配列<see cref="T:System.Drawing.Point" />これを構成する点の座標を定義する構造体<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</param>
+        <param name="types">配列<see cref="T:System.Drawing.Drawing2D.PathPointType" />内の対応する各ポイントの種類を指定する列挙体の要素、 <c>pts</c>配列。</param>
+        <param name="fillMode">A<see cref="T:System.Drawing.Drawing2D.FillMode" />列挙型を指定する方法でこの図形の内部<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />がいっぱいになります。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Drawing.Drawing2D.GraphicsPath" /> 、指定したクラス<see cref="T:System.Drawing.Drawing2D.PathPointType" />と<see cref="T:System.Drawing.Point" />配列と、指定した<see cref="T:System.Drawing.Drawing2D.FillMode" />列挙体の要素。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GraphicsPath (System.Drawing.PointF[] pts, byte[] types, System.Drawing.Drawing2D.FillMode fillMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.PointF[] pts, unsigned int8[] types, valuetype System.Drawing.Drawing2D.FillMode fillMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.#ctor(System.Drawing.PointF[],System.Byte[],System.Drawing.Drawing2D.FillMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pts" Type="System.Drawing.PointF[]" />
+        <Parameter Name="types" Type="System.Byte[]" />
+        <Parameter Name="fillMode" Type="System.Drawing.Drawing2D.FillMode" />
+      </Parameters>
+      <Docs>
+        <param name="pts">配列<see cref="T:System.Drawing.PointF" />これを構成する点の座標を定義する構造体<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</param>
+        <param name="types">配列<see cref="T:System.Drawing.Drawing2D.PathPointType" />内の対応する各ポイントの種類を指定する列挙体の要素、 <c>pts</c>配列。</param>
+        <param name="fillMode">A<see cref="T:System.Drawing.Drawing2D.FillMode" />列挙型を指定する方法でこの図形の内部<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />がいっぱいになります。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Drawing.Drawing2D.GraphicsPath" /> 、指定した配列<see cref="T:System.Drawing.Drawing2D.PathPointType" />と<see cref="T:System.Drawing.PointF" />配列と、指定した<see cref="T:System.Drawing.Drawing2D.FillMode" />列挙体の要素。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddArc">
+      <MemberSignature Language="C#" Value="public void AddArc (System.Drawing.Rectangle rect, float startAngle, float sweepAngle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddArc(valuetype System.Drawing.Rectangle rect, float32 startAngle, float32 sweepAngle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddArc(System.Drawing.Rectangle,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="startAngle" Type="System.Single" />
+        <Parameter Name="sweepAngle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.Rectangle" />円弧の取得元となる楕円の四角形の境界を表すです。</param>
+        <param name="startAngle">円弧の開始角度は、x 軸から時計回りに測定されます。</param>
+        <param name="sweepAngle">間の角度<c>startAngle</c>と円弧の終了。</param>
+        <summary>現在の図には、楕円の円弧を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の行または図内の曲線がある場合は、円弧の始点に前のセグメントのエンドポイントを接続する行が追加されます。  
+  
+ 指定した四角形で囲まれた楕円の境界に沿って円弧がトレースされます。 円弧の始点は、開始角度で度数の数によって、(0 ° 角度) での楕円の x 軸から時計回りに測定することによって決定されます。 掃引角度に度の数によって、開始位置から時計回りに測定することでは、エンドポイントがある同様にします。 掃引角度が 360 度またはより小さい-360 度より大きい場合、円弧はちょうど 360 度または-360 度でそれぞれします。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   元の円弧が定義されている、四角形を作成します。  
+  
+-   パス、作成`myPath`です。  
+  
+-   パスに追加され、180 度を 0 ° からスイープを 180 度楕円の円弧を定義します。  
+  
+-   画面へのパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddArc">
+      <MemberSignature Language="C#" Value="public void AddArc (System.Drawing.RectangleF rect, float startAngle, float sweepAngle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddArc(valuetype System.Drawing.RectangleF rect, float32 startAngle, float32 sweepAngle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddArc(System.Drawing.RectangleF,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="startAngle" Type="System.Single" />
+        <Parameter Name="sweepAngle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.RectangleF" />円弧の取得元となる楕円の四角形の境界を表すです。</param>
+        <param name="startAngle">円弧の開始角度は、x 軸から時計回りに測定されます。</param>
+        <param name="sweepAngle">間の角度<c>startAngle</c>と円弧の終了。</param>
+        <summary>現在の図には、楕円の円弧を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の行または図内の曲線がある場合は、円弧の始点に前のセグメントのエンドポイントを接続する行が追加されます。  
+  
+ 指定した四角形で囲まれた楕円の境界に沿って円弧がトレースされます。 円弧の始点は、開始角度で度数の数によって、(0 ° 角度) での楕円の x 軸から時計回りに測定することによって決定されます。 掃引角度に度の数によって、開始位置から時計回りに測定することでは、エンドポイントがある同様にします。 掃引角度が 360 度またはより小さい-360 度より大きい場合、円弧はちょうど 360 度または-360 度でそれぞれします。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%28System.Drawing.Rectangle%2CSystem.Single%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddArc">
+      <MemberSignature Language="C#" Value="public void AddArc (int x, int y, int width, int height, float startAngle, float sweepAngle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddArc(int32 x, int32 y, int32 width, int32 height, float32 startAngle, float32 sweepAngle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddArc(System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="startAngle" Type="System.Single" />
+        <Parameter Name="sweepAngle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x">円弧を描画する元となる楕円を定義する四角形領域の左上隅の x 座標。</param>
+        <param name="y">円弧を描画する元となる楕円を定義する四角形領域の左上隅の y 座標。</param>
+        <param name="width">円弧を描画する元となる楕円を定義する四角形領域の幅。</param>
+        <param name="height">円弧を描画する元となる楕円を定義する四角形領域の高さ。</param>
+        <param name="startAngle">円弧の開始角度は、x 軸から時計回りに測定されます。</param>
+        <param name="sweepAngle">間の角度<c>startAngle</c>と円弧の終了。</param>
+        <summary>現在の図には、楕円の円弧を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の行または図内の曲線がある場合は、円弧の始点に前のセグメントのエンドポイントを接続する行が追加されます。  
+  
+ 指定した四角形で囲まれた楕円の境界に沿って円弧がトレースされます。 円弧の始点は、開始角度で度数の数によって、(0 ° 角度) での楕円の x 軸から時計回りに測定することによって決定されます。 掃引角度に度の数によって、開始位置から時計回りに測定することでは、エンドポイントがある同様にします。 掃引角度が 360 度またはより小さい-360 度より大きい場合、円弧はちょうど 360 度または-360 度でそれぞれします。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%28System.Drawing.Rectangle%2CSystem.Single%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddArc">
+      <MemberSignature Language="C#" Value="public void AddArc (float x, float y, float width, float height, float startAngle, float sweepAngle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddArc(float32 x, float32 y, float32 width, float32 height, float32 startAngle, float32 sweepAngle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddArc(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+        <Parameter Name="width" Type="System.Single" />
+        <Parameter Name="height" Type="System.Single" />
+        <Parameter Name="startAngle" Type="System.Single" />
+        <Parameter Name="sweepAngle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x">円弧を描画する元となる楕円を定義する四角形領域の左上隅の x 座標。</param>
+        <param name="y">円弧を描画する元となる楕円を定義する四角形領域の左上隅の y 座標。</param>
+        <param name="width">円弧を描画する元となる楕円を定義する四角形領域の幅。</param>
+        <param name="height">円弧を描画する元となる楕円を定義する四角形領域の高さ。</param>
+        <param name="startAngle">円弧の開始角度は、x 軸から時計回りに測定されます。</param>
+        <param name="sweepAngle">間の角度<c>startAngle</c>と円弧の終了。</param>
+        <summary>現在の図には、楕円の円弧を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の行または図内の曲線がある場合は、円弧の始点に前のセグメントのエンドポイントを接続する行が追加されます。  
+  
+ 指定した四角形で囲まれた楕円の境界に沿って円弧がトレースされます。 円弧の始点は、開始角度で度数の数によって、(0 ° 角度) での楕円の x 軸から時計回りに測定することによって決定されます。 掃引角度に度の数によって、開始位置から時計回りに測定することでは、エンドポイントがある同様にします。 掃引角度が 360 度またはより小さい-360 度より大きい場合、円弧はちょうど 360 度または-360 度でそれぞれします。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%28System.Drawing.Rectangle%2CSystem.Single%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBezier">
+      <MemberSignature Language="C#" Value="public void AddBezier (System.Drawing.Point pt1, System.Drawing.Point pt2, System.Drawing.Point pt3, System.Drawing.Point pt4);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddBezier(valuetype System.Drawing.Point pt1, valuetype System.Drawing.Point pt2, valuetype System.Drawing.Point pt3, valuetype System.Drawing.Point pt4) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddBezier(System.Drawing.Point,System.Drawing.Point,System.Drawing.Point,System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt1" Type="System.Drawing.Point" />
+        <Parameter Name="pt2" Type="System.Drawing.Point" />
+        <Parameter Name="pt3" Type="System.Drawing.Point" />
+        <Parameter Name="pt4" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pt1">A<see cref="T:System.Drawing.Point" />曲線の開始位置を表すです。</param>
+        <param name="pt2">A<see cref="T:System.Drawing.Point" />曲線の最初の制御点を表すです。</param>
+        <param name="pt3">A<see cref="T:System.Drawing.Point" />曲線の 2 番目の制御点を表すです。</param>
+        <param name="pt4">A<see cref="T:System.Drawing.Point" />曲線のエンドポイントを表すです。</param>
+        <summary>現在の図に、3 次ベジエ曲線を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 三次曲線は最初の点から 4 番目の点の制御点として、2 番目と 3 番目のポイントを使用して構築されます。  
+  
+ ある場合、前の行または曲線のセグメントの図に、三次曲線の開始位置を前のセグメントのエンドポイントを接続する行が追加されます。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddBezier%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBezier">
+      <MemberSignature Language="C#" Value="public void AddBezier (System.Drawing.PointF pt1, System.Drawing.PointF pt2, System.Drawing.PointF pt3, System.Drawing.PointF pt4);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddBezier(valuetype System.Drawing.PointF pt1, valuetype System.Drawing.PointF pt2, valuetype System.Drawing.PointF pt3, valuetype System.Drawing.PointF pt4) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddBezier(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF,System.Drawing.PointF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt1" Type="System.Drawing.PointF" />
+        <Parameter Name="pt2" Type="System.Drawing.PointF" />
+        <Parameter Name="pt3" Type="System.Drawing.PointF" />
+        <Parameter Name="pt4" Type="System.Drawing.PointF" />
+      </Parameters>
+      <Docs>
+        <param name="pt1">A<see cref="T:System.Drawing.PointF" />曲線の開始位置を表すです。</param>
+        <param name="pt2">A<see cref="T:System.Drawing.PointF" />曲線の最初の制御点を表すです。</param>
+        <param name="pt3">A<see cref="T:System.Drawing.PointF" />曲線の 2 番目の制御点を表すです。</param>
+        <param name="pt4">A<see cref="T:System.Drawing.PointF" />曲線のエンドポイントを表すです。</param>
+        <summary>現在の図に、3 次ベジエ曲線を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 三次曲線は最初の点から 4 番目の点の制御点として、2 番目と 3 番目のポイントを使用して構築されます。  
+  
+ ある場合、前の行または曲線のセグメントの図に、三次曲線の開始位置を前のセグメントのエンドポイントを接続する行が追加されます。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddBezier%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBezier">
+      <MemberSignature Language="C#" Value="public void AddBezier (int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddBezier(int32 x1, int32 y1, int32 x2, int32 y2, int32 x3, int32 y3, int32 x4, int32 y4) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddBezier(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x1" Type="System.Int32" />
+        <Parameter Name="y1" Type="System.Int32" />
+        <Parameter Name="x2" Type="System.Int32" />
+        <Parameter Name="y2" Type="System.Int32" />
+        <Parameter Name="x3" Type="System.Int32" />
+        <Parameter Name="y3" Type="System.Int32" />
+        <Parameter Name="x4" Type="System.Int32" />
+        <Parameter Name="y4" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x1">曲線の開始点の x 座標。</param>
+        <param name="y1">曲線の開始点の y 座標。</param>
+        <param name="x2">曲線の最初の制御点の x 座標。</param>
+        <param name="y2">曲線の最初の制御点の y 座標。</param>
+        <param name="x3">曲線の 2 番目の制御点の x 座標。</param>
+        <param name="y3">曲線の 2 番目の制御点の y 座標。</param>
+        <param name="x4">曲線の終点の x 座標。</param>
+        <param name="y4">曲線の終点の y 座標。</param>
+        <summary>現在の図に、3 次ベジエ曲線を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 三次曲線は最初の点から 4 番目の点の制御点として、2 番目と 3 番目のポイントを使用して構築されます。  
+  
+ ある場合、前の行または曲線のセグメントの図に、三次曲線の開始位置を前のセグメントのエンドポイントを接続する行が追加されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成します。  
+  
+-   (50, 50) 点によって定義された 3 次ベジエ曲線を追加します (70, 0)、(100, 120) と (150, 50) をパスにします。  
+  
+-   曲線を閉じます。  
+  
+-   画面へのパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBezier">
+      <MemberSignature Language="C#" Value="public void AddBezier (float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddBezier(float32 x1, float32 y1, float32 x2, float32 y2, float32 x3, float32 y3, float32 x4, float32 y4) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddBezier(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x1" Type="System.Single" />
+        <Parameter Name="y1" Type="System.Single" />
+        <Parameter Name="x2" Type="System.Single" />
+        <Parameter Name="y2" Type="System.Single" />
+        <Parameter Name="x3" Type="System.Single" />
+        <Parameter Name="y3" Type="System.Single" />
+        <Parameter Name="x4" Type="System.Single" />
+        <Parameter Name="y4" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x1">曲線の開始点の x 座標。</param>
+        <param name="y1">曲線の開始点の y 座標。</param>
+        <param name="x2">曲線の最初の制御点の x 座標。</param>
+        <param name="y2">曲線の最初の制御点の y 座標。</param>
+        <param name="x3">曲線の 2 番目の制御点の x 座標。</param>
+        <param name="y3">曲線の 2 番目の制御点の y 座標。</param>
+        <param name="x4">曲線の終点の x 座標。</param>
+        <param name="y4">曲線の終点の y 座標。</param>
+        <summary>現在の図に、3 次ベジエ曲線を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 三次曲線は最初の点から 4 番目の点の制御点として、2 番目と 3 番目のポイントを使用して構築されます。  
+  
+ ある場合、前の行または曲線のセグメントの図に、三次曲線の開始位置を前のセグメントのエンドポイントを接続する行が追加されます。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddBezier%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBeziers">
+      <MemberSignature Language="C#" Value="public void AddBeziers (params System.Drawing.Point[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddBeziers(valuetype System.Drawing.Point[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddBeziers(System.Drawing.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.Point[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.Point" />曲線を定義する点を表す構造体。</param>
+        <summary>現在の図形に接続されている 3 次ベジエ曲線のシーケンスを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `points`パラメーターは、エンドポイントの配列との接続された曲線コントロール ポイントを指定します。 4 番目の点に最初の曲線が最初のポイントから構築された、`points`の制御点として、2 番目と 3 番目のポイントを使用して配列。 シーケンス内の後続各曲線だけでなく、前の曲線のエンドポイントには 3 つの点必要があります。 シーケンス内の次の 2 つのポイントの制御点あり、3 番目のエンドポイントを追加した曲線です。  
+  
+ 前の行または図内の曲線がある場合は、シーケンス内の最初の三次曲線の開始位置を前のセグメントのエンドポイントを接続する行が追加されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   (接続された 2 つのベジエ曲線を表す) 7 つの点の配列を作成します。  
+  
+-   パスを作成し、一連のベジエ曲線の点をパスに追加します。  
+  
+-   画面へのパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBeziers">
+      <MemberSignature Language="C#" Value="public void AddBeziers (System.Drawing.PointF[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddBeziers(valuetype System.Drawing.PointF[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddBeziers(System.Drawing.PointF[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.PointF[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.PointF" />曲線を定義する点を表す構造体。</param>
+        <summary>現在の図形に接続されている 3 次ベジエ曲線のシーケンスを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `points`パラメーターは、エンドポイントの配列との接続された曲線コントロール ポイントを指定します。 4 番目の点に最初の曲線が最初のポイントから構築された、`points`の制御点として、2 番目と 3 番目のポイントを使用して配列。 シーケンス内の後続各曲線だけでなく、前の曲線のエンドポイントには 3 つの点必要があります。 シーケンス内の次の 2 つのポイントの制御点あり、3 番目のエンドポイントを追加した曲線です。  
+  
+ 前の行または図内の曲線がある場合は、シーケンス内の最初の三次曲線の開始位置を前のセグメントのエンドポイントを接続する行が追加されます。  
+  
+   
+  
+## Examples  
+ 例を参照してください。  
+  
+ <xref:System.Drawing.Drawing2D.GraphicsPath.AddBeziers%28System.Drawing.Point%5B%5D%29>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddClosedCurve">
+      <MemberSignature Language="C#" Value="public void AddClosedCurve (System.Drawing.Point[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddClosedCurve(valuetype System.Drawing.Point[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve(System.Drawing.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.Point" />曲線を定義する点を表す構造体。</param>
+        <summary>このパスに閉じた曲線を追加します。 カーディナル スプライン曲線は曲線を経由の各ポイントの配列であるために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、必要な場合、元のポイントを保持する必要があります。 元の点が 3 次ベジエ制御点を内部的に変換された、ため元の点を返すためのメカニズムはありません。 場合、最初のポイントと最後の点、`points`配列が同じポイントではない、これら 2 つのポイントを接続することで、曲線が閉じられます。 このメソッドの張力値を設定することはできませんし、既定値が値を 0.5 に相当します。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%28System.Drawing.Point%5B%5D%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddClosedCurve">
+      <MemberSignature Language="C#" Value="public void AddClosedCurve (System.Drawing.PointF[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddClosedCurve(valuetype System.Drawing.PointF[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve(System.Drawing.PointF[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.PointF[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.PointF" />曲線を定義する点を表す構造体。</param>
+        <summary>このパスに閉じた曲線を追加します。 カーディナル スプライン曲線は曲線を経由の各ポイントの配列であるために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、必要な場合、元のポイントを保持する必要があります。 元の点が 3 次ベジエ制御点を内部的に変換された、ため元の点を返すためのメカニズムはありません。 場合、最初のポイントと最後の点、`points`配列が同じポイントではない、これら 2 つのポイントを接続することで、曲線が閉じられます。 このメソッドの張力値を設定することはできませんし、既定値が値を 0.5 に相当します。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%28System.Drawing.Point%5B%5D%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddClosedCurve">
+      <MemberSignature Language="C#" Value="public void AddClosedCurve (System.Drawing.Point[] points, float tension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddClosedCurve(valuetype System.Drawing.Point[] points, float32 tension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve(System.Drawing.Point[],System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.Point[]" />
+        <Parameter Name="tension" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.Point" />曲線を定義する点を表す構造体。</param>
+        <param name="tension">0 ~ 0 が最も小さい曲線 (最も鮮明なコーナー) と 1 が、曲線の点の間の曲線曲がる量を指定する 1 の間の値です。</param>
+        <summary>このパスに閉じた曲線を追加します。 カーディナル スプライン曲線は曲線を経由の各ポイントの配列であるために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、必要な場合、元のポイントを保持する必要があります。 元の点が 3 次ベジエ制御点を内部的に変換された、ため元の点を返すためのメカニズムはありません。 場合、最初のポイントと最後の点、`points`配列が同じポイントではない、これら 2 つのポイントを接続することで、曲線が閉じられます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   (通過するカーディナル スプラインを表す) 6 つの点の配列を作成します。  
+  
+-   パスを作成し、閉じたカーディナル スプライン曲線を (終了して、エンドポイントから開始点) のパスに追加します。  
+  
+-   画面へのパスを描画します。  
+  
+ 0.5 のテンションを使用することに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#4)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#4)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddClosedCurve">
+      <MemberSignature Language="C#" Value="public void AddClosedCurve (System.Drawing.PointF[] points, float tension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddClosedCurve(valuetype System.Drawing.PointF[] points, float32 tension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve(System.Drawing.PointF[],System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.PointF[]" />
+        <Parameter Name="tension" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.PointF" />曲線を定義する点を表す構造体。</param>
+        <param name="tension">0 ~ 0 が最も小さい曲線 (最も鮮明なコーナー) と 1 が、曲線の点の間の曲線曲がる量を指定する 1 の間の値です。</param>
+        <summary>このパスに閉じた曲線を追加します。 カーディナル スプライン曲線は曲線を経由の各ポイントの配列であるために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、必要な場合、元のポイントを保持する必要があります。 元の点が 3 次ベジエ制御点を内部的に変換された、ため元の点を返すためのメカニズムはありません。 場合、最初のポイントと最後の点、`points`配列が同じポイントではない、これら 2 つのポイントを接続することで、曲線が閉じられます。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%28System.Drawing.Point%5B%5D%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCurve">
+      <MemberSignature Language="C#" Value="public void AddCurve (System.Drawing.Point[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCurve(valuetype System.Drawing.Point[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddCurve(System.Drawing.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.Point" />曲線を定義する点を表す構造体。</param>
+        <summary>現在の図に、スプライン曲線を追加します。 カーディナル スプライン曲線は曲線を経由の各ポイントの配列であるために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、必要な場合、元のポイントを保持する必要があります。 元の点が 3 次ベジエ制御点を内部的に変換された、ため元の点を返すためのメカニズムはありません。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%28System.Drawing.Point%5B%5D%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCurve">
+      <MemberSignature Language="C#" Value="public void AddCurve (System.Drawing.PointF[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCurve(valuetype System.Drawing.PointF[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddCurve(System.Drawing.PointF[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.PointF[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.PointF" />曲線を定義する点を表す構造体。</param>
+        <summary>現在の図に、スプライン曲線を追加します。 カーディナル スプライン曲線は曲線を経由の各ポイントの配列であるために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、必要な場合、元のポイントを保持する必要があります。 元の点が 3 次ベジエ制御点を内部的に変換された、ため元の点を返すためのメカニズムはありません。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%28System.Drawing.Point%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCurve">
+      <MemberSignature Language="C#" Value="public void AddCurve (System.Drawing.Point[] points, float tension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCurve(valuetype System.Drawing.Point[] points, float32 tension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddCurve(System.Drawing.Point[],System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.Point[]" />
+        <Parameter Name="tension" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.Point" />曲線を定義する点を表す構造体。</param>
+        <param name="tension">コントロール ポイント間の曲線曲がるする量を指定する値。 1 より大きい値には、予測できない結果が発生します。</param>
+        <summary>現在の図に、スプライン曲線を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、必要な場合、元のポイントを保持する必要があります。 元の点が 3 次ベジエ制御点を内部的に変換された、ため元の点を返すためのメカニズムはありません。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%28System.Drawing.Point%5B%5D%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCurve">
+      <MemberSignature Language="C#" Value="public void AddCurve (System.Drawing.PointF[] points, float tension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCurve(valuetype System.Drawing.PointF[] points, float32 tension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddCurve(System.Drawing.PointF[],System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.PointF[]" />
+        <Parameter Name="tension" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.PointF" />曲線を定義する点を表す構造体。</param>
+        <param name="tension">コントロール ポイント間の曲線曲がるする量を指定する値。 1 より大きい値には、予測できない結果が発生します。</param>
+        <summary>現在の図に、スプライン曲線を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、必要な場合、元のポイントを保持する必要があります。 元の点が 3 次ベジエ制御点を内部的に変換された、ため元の点を返すためのメカニズムはありません。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%28System.Drawing.Point%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCurve">
+      <MemberSignature Language="C#" Value="public void AddCurve (System.Drawing.Point[] points, int offset, int numberOfSegments, float tension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCurve(valuetype System.Drawing.Point[] points, int32 offset, int32 numberOfSegments, float32 tension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddCurve(System.Drawing.Point[],System.Int32,System.Int32,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.Point[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="numberOfSegments" Type="System.Int32" />
+        <Parameter Name="tension" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.Point" />曲線を定義する点を表す構造体。</param>
+        <param name="offset">内の要素のインデックス、<c>ポイント</c>曲線の最初のポイントとして使用されている配列。</param>
+        <param name="numberOfSegments">コントロール ポイント間の曲線曲がるする量を指定する値。 1 より大きい値には、予測できない結果が発生します。</param>
+        <param name="tension">コントロール ポイント間の曲線曲がるする量を指定する値。 1 より大きい値には、予測できない結果が発生します。</param>
+        <summary>現在の図に、スプライン曲線を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、必要な場合、元のポイントを保持する必要があります。 元の点が 3 次ベジエ制御点を内部的に変換された、ため元の点を返すためのメカニズムはありません。  
+  
+ 曲線の開始に指定された配列内の位置に、`offset`パラメーターで指定された点 (セグメント) の数を含めた`numberOfSegments`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   (通過するカーディナル スプラインを表す) 4 つの点の配列を作成します。  
+  
+-   パスを作成し、点の配列を使用して、曲線のパスを追加します。  
+  
+-   画面へのパスを描画します。  
+  
+ 配列は、4 つのポイントを保持しているときに含まれている 3 つだけのセグメントへの呼び出しの 3 番目の引数で指定した数値は<xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A>します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCurve">
+      <MemberSignature Language="C#" Value="public void AddCurve (System.Drawing.PointF[] points, int offset, int numberOfSegments, float tension);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCurve(valuetype System.Drawing.PointF[] points, int32 offset, int32 numberOfSegments, float32 tension) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddCurve(System.Drawing.PointF[],System.Int32,System.Int32,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.PointF[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="numberOfSegments" Type="System.Int32" />
+        <Parameter Name="tension" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.PointF" />曲線を定義する点を表す構造体。</param>
+        <param name="offset">内の要素のインデックス、<c>ポイント</c>曲線の最初のポイントとして使用されている配列。</param>
+        <param name="numberOfSegments">曲線の描画に使用されるセグメントの数。 セグメントは、2 つの点を結ぶ線として考えることができます。</param>
+        <param name="tension">コントロール ポイント間の曲線曲がるする量を指定する値。 1 より大きい値には、予測できない結果が発生します。</param>
+        <summary>現在の図に、スプライン曲線を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、必要な場合、元のポイントを保持する必要があります。 元の点が 3 次ベジエ制御点を内部的に変換された、ため元の点を返すためのメカニズムはありません。  
+  
+ 曲線の開始に指定された配列内の位置に`offset`で指定された点 (セグメント) の数を含めた`numberOfSegments`です。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%28System.Drawing.Point%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEllipse">
+      <MemberSignature Language="C#" Value="public void AddEllipse (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddEllipse(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddEllipse(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.Rectangle" />楕円を定義する外接する四角形を表すです。</param>
+        <summary>楕円を現在のパスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+ 楕円を定義する外接する四角形を作成します。  
+  
+ パスを作成し、パスにある省略記号を追加します。  
+  
+ 画面へのパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEllipse">
+      <MemberSignature Language="C#" Value="public void AddEllipse (System.Drawing.RectangleF rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddEllipse(valuetype System.Drawing.RectangleF rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddEllipse(System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.RectangleF" />楕円を定義する外接する四角形を表すです。</param>
+        <summary>楕円を現在のパスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%28System.Drawing.Rectangle%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEllipse">
+      <MemberSignature Language="C#" Value="public void AddEllipse (int x, int y, int width, int height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddEllipse(int32 x, int32 y, int32 width, int32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddEllipse(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">楕円を定義する外接する四角形の左上隅の x 座標。</param>
+        <param name="y">楕円を定義する外接する四角形の左上隅の y 座標。</param>
+        <param name="width">楕円を定義する外接する四角形の幅。</param>
+        <param name="height">楕円を定義する外接する四角形の高さ。</param>
+        <summary>楕円を現在のパスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%28System.Drawing.Rectangle%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEllipse">
+      <MemberSignature Language="C#" Value="public void AddEllipse (float x, float y, float width, float height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddEllipse(float32 x, float32 y, float32 width, float32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddEllipse(System.Single,System.Single,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+        <Parameter Name="width" Type="System.Single" />
+        <Parameter Name="height" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x">楕円を定義する外接する四角形の左上隅の x 座標。</param>
+        <param name="y">楕円を定義する外接する四角形の左上隅の y 座標。</param>
+        <param name="width">楕円を定義する外接する四角形の幅。</param>
+        <param name="height">楕円を定義する外接する四角形の高さ。</param>
+        <summary>楕円を現在のパスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%28System.Drawing.Rectangle%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLine">
+      <MemberSignature Language="C#" Value="public void AddLine (System.Drawing.Point pt1, System.Drawing.Point pt2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddLine(valuetype System.Drawing.Point pt1, valuetype System.Drawing.Point pt2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddLine(System.Drawing.Point,System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt1" Type="System.Drawing.Point" />
+        <Parameter Name="pt2" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pt1">A<see cref="T:System.Drawing.Point" />を表す行の開始点です。</param>
+        <param name="pt2">A<see cref="T:System.Drawing.Point" />を表す線の終点。</param>
+        <summary>この直線セグメントを追加<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、これの末尾に指定した点によって定義される直線セグメントを追加<xref:System.Drawing.Drawing2D.GraphicsPath>です。 前の行または内の曲線がある場合、<xref:System.Drawing.Drawing2D.GraphicsPath>パスの最後のポイントを新しい直線セグメントの最初のポイントに接続する直線セグメントを描画します。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLine">
+      <MemberSignature Language="C#" Value="public void AddLine (System.Drawing.PointF pt1, System.Drawing.PointF pt2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddLine(valuetype System.Drawing.PointF pt1, valuetype System.Drawing.PointF pt2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddLine(System.Drawing.PointF,System.Drawing.PointF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt1" Type="System.Drawing.PointF" />
+        <Parameter Name="pt2" Type="System.Drawing.PointF" />
+      </Parameters>
+      <Docs>
+        <param name="pt1">A<see cref="T:System.Drawing.PointF" />を表す行の開始点です。</param>
+        <param name="pt2">A<see cref="T:System.Drawing.PointF" />を表す線の終点。</param>
+        <summary>この直線セグメントを追加<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、これの末尾に指定した点によって定義される直線セグメントを追加<xref:System.Drawing.Drawing2D.GraphicsPath>です。 前の行または内の曲線がある場合、<xref:System.Drawing.Drawing2D.GraphicsPath>パスの最後のポイントを新しい直線セグメントの最初のポイントに接続する直線セグメントを描画します。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLine">
+      <MemberSignature Language="C#" Value="public void AddLine (int x1, int y1, int x2, int y2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddLine(int32 x1, int32 y1, int32 x2, int32 y2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddLine(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x1" Type="System.Int32" />
+        <Parameter Name="y1" Type="System.Int32" />
+        <Parameter Name="x2" Type="System.Int32" />
+        <Parameter Name="y2" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x1">行の開始点の x 座標。</param>
+        <param name="y1">行の開始点の y 座標。</param>
+        <param name="x2">線の終点の x 座標。</param>
+        <param name="y2">線の終点の y 座標。</param>
+        <summary>現在の図には、直線セグメントを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在の図の末尾に指定した点によって定義される直線セグメントを追加します。 前の行または内の曲線がある場合、<xref:System.Drawing.Drawing2D.GraphicsPath>パスの最後のポイントを新しい直線セグメントの最初のポイントに接続する直線セグメントを描画します。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 このコードは、パスを作成、三角形を形成する 3 つの行を追加し、画面にパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLine">
+      <MemberSignature Language="C#" Value="public void AddLine (float x1, float y1, float x2, float y2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddLine(float32 x1, float32 y1, float32 x2, float32 y2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddLine(System.Single,System.Single,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x1" Type="System.Single" />
+        <Parameter Name="y1" Type="System.Single" />
+        <Parameter Name="x2" Type="System.Single" />
+        <Parameter Name="y2" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x1">行の開始点の x 座標。</param>
+        <param name="y1">行の開始点の y 座標。</param>
+        <param name="x2">線の終点の x 座標。</param>
+        <param name="y2">線の終点の y 座標。</param>
+        <summary>この直線セグメントを追加<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、これの末尾に指定した点によって定義される直線セグメントを追加<xref:System.Drawing.Drawing2D.GraphicsPath>です。 前の行または内の曲線がある場合、<xref:System.Drawing.Drawing2D.GraphicsPath>パスの最後のポイントを新しい直線セグメントの最初のポイントに接続する直線セグメントを描画します。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLines">
+      <MemberSignature Language="C#" Value="public void AddLines (System.Drawing.Point[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddLines(valuetype System.Drawing.Point[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddLines(System.Drawing.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.Point" />を追加する直線セグメントを定義するポイントを表す構造体。</param>
+        <summary>これの末尾に一連の接続されている直線セグメントを追加<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の行または図内の曲線がある場合は、前のセグメントの行の開始点のエンドポイントに接続する行が追加されます。 `points`パラメーターは、エンドポイントの配列を指定します。 最初の 2 つは、最初の行を指定します。 追加の各ポイントは、線分の開始点とするには、前の行のエンドポイントのエンドポイントを指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   三角形を記述する次の 4 つの点の配列を作成します。  
+  
+-   パスを作成し、行の配列を追加します。  
+  
+-   画面へのパスを描画します。  
+  
+ 最初の時点より後の各行が、エンドポイントとして開始点と新しいポイントとして前のポイントを使用することに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#8)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#8)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLines">
+      <MemberSignature Language="C#" Value="public void AddLines (System.Drawing.PointF[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddLines(valuetype System.Drawing.PointF[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddLines(System.Drawing.PointF[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.PointF[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.PointF" />を追加する直線セグメントを定義するポイントを表す構造体。</param>
+        <summary>これの末尾に一連の接続されている直線セグメントを追加<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の行または図内の曲線がある場合は、前のセグメントの行の開始点のエンドポイントに接続する行が追加されます。 `points`パラメーターは、エンドポイントの配列を指定します。 最初の 2 つは、最初の行を指定します。 追加の各ポイントは、線分の開始点とするには、前の行のエンドポイントのエンドポイントを指定します。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddLines%28System.Drawing.Point%5B%5D%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPath">
+      <MemberSignature Language="C#" Value="public void AddPath (System.Drawing.Drawing2D.GraphicsPath addingPath, bool connect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPath(class System.Drawing.Drawing2D.GraphicsPath addingPath, bool connect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddPath(System.Drawing.Drawing2D.GraphicsPath,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addingPath" Type="System.Drawing.Drawing2D.GraphicsPath" />
+        <Parameter Name="connect" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="addingPath">追加する <see cref="T:System.Drawing.Drawing2D.GraphicsPath" />。</param>
+        <param name="connect">追加されたパスの最初の図に、このパスの最後の図形の一部であるかどうかを指定するブール値。 値<see langword="true" />(可能な場合)、追加されたパスの最初の図形が含まれるこのパスの最後の図形を指定します。 値<see langword="false" />追加されたパスの最初の図形がこのパスの最後の図形から切り離されているを指定します。</param>
+        <summary>指定した追加<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />をこのパスにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   右上側三角形で、もう一方にある上下の三角形は、2 つのパス 1 つを作成します。  
+  
+-   最初に 2 番目のパスを追加します。  
+  
+-   画面に結果のパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#9)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#9)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPie">
+      <MemberSignature Language="C#" Value="public void AddPie (System.Drawing.Rectangle rect, float startAngle, float sweepAngle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPie(valuetype System.Drawing.Rectangle rect, float32 startAngle, float32 sweepAngle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddPie(System.Drawing.Rectangle,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="startAngle" Type="System.Single" />
+        <Parameter Name="sweepAngle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.Rectangle" />円グラフの描画元となる楕円を定義する外接する四角形を表すです。</param>
+        <param name="startAngle">円グラフのセクションの開始角度は、x 軸から時計回りに測定されます。</param>
+        <param name="sweepAngle">間の角度<c>startAngle</c>とから時計回りに測定した扇形の終了<c>startAngle</c>です。</param>
+        <summary>扇形の形状のアウトラインをこのパスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 扇形の形状は、楕円と交差する部分のアウトラインのエンドポイントを 2 つの放射状線の部分的なアウトラインによって定義されます。 部分的なアウトラインが始まります`startAngle`(x 軸から時計回りに測定した) で終わります`startAngle`  + `sweepAngle`です。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddPie%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Single%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPie">
+      <MemberSignature Language="C#" Value="public void AddPie (int x, int y, int width, int height, float startAngle, float sweepAngle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPie(int32 x, int32 y, int32 width, int32 height, float32 startAngle, float32 sweepAngle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddPie(System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="startAngle" Type="System.Single" />
+        <Parameter Name="sweepAngle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x">円グラフの描画元となる楕円を定義する外接する四角形の左上隅の x 座標。</param>
+        <param name="y">円グラフの描画元となる楕円を定義する外接する四角形の左上隅の y 座標。</param>
+        <param name="width">円グラフの描画元となる楕円を定義する外接する四角形の幅。</param>
+        <param name="height">円グラフの描画元となる楕円を定義する外接する四角形の高さ。</param>
+        <param name="startAngle">円グラフのセクションの開始角度は、x 軸から時計回りに測定されます。</param>
+        <param name="sweepAngle">間の角度<c>startAngle</c>とから時計回りに測定した扇形の終了<c>startAngle</c>です。</param>
+        <summary>扇形の形状のアウトラインをこのパスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 扇形の形状は、楕円と交差する部分のアウトラインのエンドポイントを 2 つの放射状線の部分的なアウトラインによって定義されます。 部分的なアウトラインが始まります`startAngle`(x 軸から時計回りに測定した) で終わります`startAngle`  + `sweepAngle`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 このコードは、グラフィックス パスを作成、扇形の形状を追加し、画面にパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#10)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#10)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPie">
+      <MemberSignature Language="C#" Value="public void AddPie (float x, float y, float width, float height, float startAngle, float sweepAngle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPie(float32 x, float32 y, float32 width, float32 height, float32 startAngle, float32 sweepAngle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddPie(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+        <Parameter Name="width" Type="System.Single" />
+        <Parameter Name="height" Type="System.Single" />
+        <Parameter Name="startAngle" Type="System.Single" />
+        <Parameter Name="sweepAngle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x">円グラフの描画元となる楕円を定義する外接する四角形の左上隅の x 座標。</param>
+        <param name="y">円グラフの描画元となる楕円を定義する外接する四角形の左上隅の y 座標。</param>
+        <param name="width">円グラフの描画元となる楕円を定義する外接する四角形の幅。</param>
+        <param name="height">円グラフの描画元となる楕円を定義する外接する四角形の高さ。</param>
+        <param name="startAngle">円グラフのセクションの開始角度は、x 軸から時計回りに測定されます。</param>
+        <param name="sweepAngle">間の角度<c>startAngle</c>とから時計回りに測定した扇形の終了<c>startAngle</c>です。</param>
+        <summary>扇形の形状のアウトラインをこのパスに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 扇形の形状は、楕円と交差する部分のアウトラインのエンドポイントを 2 つの放射状線の部分的なアウトラインによって定義されます。 部分的なアウトラインが始まります`startAngle`(x 軸から時計回りに測定した) で終わります`startAngle`  + `sweepAngle`です。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddPie%28System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Single%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPolygon">
+      <MemberSignature Language="C#" Value="public void AddPolygon (System.Drawing.Point[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPolygon(valuetype System.Drawing.Point[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddPolygon(System.Drawing.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.Point" />を追加する多角形を定義する構造体。</param>
+        <summary>このパスには、多角形を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のポイント、`points`配列が多角形の頂点を指定します。 配列の最初のポイントは、最後のポイントと同じではない、これら 2 つの点は多角形を閉じるに接続されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   多角形を定義する点の配列を作成します。  
+  
+-   パスを作成し、多角形をパスに追加します。  
+  
+-   画面へのパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#11](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#11)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#11)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPolygon">
+      <MemberSignature Language="C#" Value="public void AddPolygon (System.Drawing.PointF[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPolygon(valuetype System.Drawing.PointF[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddPolygon(System.Drawing.PointF[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.PointF[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.PointF" />を追加する多角形を定義する構造体。</param>
+        <summary>このパスには、多角形を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のポイント、`points`配列が多角形の頂点を指定します。 配列の最初のポイントは、最後のポイントと同じではない、これら 2 つの点は多角形を閉じるに接続されます。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddPolygon%28System.Drawing.Point%5B%5D%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRectangle">
+      <MemberSignature Language="C#" Value="public void AddRectangle (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRectangle(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddRectangle(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.Rectangle" />を表す四角形を追加します。</param>
+        <summary>このパスに四角形を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成します。  
+  
+-   四角形を作成し、パスに四角形を追加します。  
+  
+-   画面へのパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#12](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#12)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#12)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRectangle">
+      <MemberSignature Language="C#" Value="public void AddRectangle (System.Drawing.RectangleF rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRectangle(valuetype System.Drawing.RectangleF rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddRectangle(System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.RectangleF" />を表す四角形を追加します。</param>
+        <summary>このパスに四角形を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangle%28System.Drawing.Rectangle%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRectangles">
+      <MemberSignature Language="C#" Value="public void AddRectangles (System.Drawing.Rectangle[] rects);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRectangles(valuetype System.Drawing.Rectangle[] rects) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddRectangles(System.Drawing.Rectangle[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rects" Type="System.Drawing.Rectangle[]" />
+      </Parameters>
+      <Docs>
+        <param name="rects">配列<see cref="T:System.Drawing.Rectangle" />を追加する四角形を表す構造体。</param>
+        <summary>このパスには、一連の四角形を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成します。  
+  
+-   四角形の配列を作成し、パスに、四角形を追加します。  
+  
+-   画面へのパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#13](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#13)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#13)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRectangles">
+      <MemberSignature Language="C#" Value="public void AddRectangles (System.Drawing.RectangleF[] rects);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRectangles(valuetype System.Drawing.RectangleF[] rects) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddRectangles(System.Drawing.RectangleF[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rects" Type="System.Drawing.RectangleF[]" />
+      </Parameters>
+      <Docs>
+        <param name="rects">配列<see cref="T:System.Drawing.RectangleF" />を追加する四角形を表す構造体。</param>
+        <summary>このパスには、一連の四角形を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangles%28System.Drawing.Rectangle%5B%5D%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddString">
+      <MemberSignature Language="C#" Value="public void AddString (string s, System.Drawing.FontFamily family, int style, float emSize, System.Drawing.Point origin, System.Drawing.StringFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddString(string s, class System.Drawing.FontFamily family, int32 style, float32 emSize, valuetype System.Drawing.Point origin, class System.Drawing.StringFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddString(System.String,System.Drawing.FontFamily,System.Int32,System.Single,System.Drawing.Point,System.Drawing.StringFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="family" Type="System.Drawing.FontFamily" />
+        <Parameter Name="style" Type="System.Int32" />
+        <Parameter Name="emSize" Type="System.Single" />
+        <Parameter Name="origin" Type="System.Drawing.Point" />
+        <Parameter Name="format" Type="System.Drawing.StringFormat" />
+      </Parameters>
+      <Docs>
+        <param name="s">追加する <see cref="T:System.String" />。</param>
+        <param name="family">A<see cref="T:System.Drawing.FontFamily" />テストが描画されるフォントの名前を表します。</param>
+        <param name="style">A <see cref="T:System.Drawing.FontStyle" /> (太字、斜体、およびなど) のテキストのスタイル情報を表す列挙体です。 これは、整数としてキャストする必要があります (このセクションのコード例を参照してください)。</param>
+        <param name="emSize">文字の境界を em 四角形のボックスの高さ。</param>
+        <param name="origin">A<see cref="T:System.Drawing.Point" />ポイント、テキストの開始位置を表すです。</param>
+        <param name="format">A<see cref="T:System.Drawing.StringFormat" />行間や配置などの情報を書式設定文字列を指定します。</param>
+        <summary>このパスをテキスト文字列を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成します。  
+  
+-   文字列とフォントの引数を設定します。  
+  
+-   パスに、文字列を追加します。  
+  
+-   画面に文字列を描画します。  
+  
+ 2 つの重要な点があります。まず、ことに注意して、`fontStyle`引数は、整数としてキャストします。 <xref:System.Drawing.Drawing2D.GraphicsPath.AddString%2A>メソッド必要となりますのでそのうち 2 つ以上<xref:System.Drawing.FontStyle>目的のフォント スタイルを作成するメンバーを組み合わせることができます (この場合、<xref:System.Drawing.FontStyle.Italic>と<xref:System.Drawing.FontStyle.Underline>)。 次に、ことに注意して、<xref:System.Drawing.Graphics.FillPath%2A>メソッドを使用してではなく、<xref:System.Drawing.Graphics.DrawPath%2A>メソッドです。 場合<xref:System.Drawing.Graphics.FillPath%2A>を使用する純色のテキストが表示され場合<xref:System.Drawing.Graphics.DrawPath%2A>はこれを使用すると、テキストになります、アウトラインのスタイル。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#14](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#14)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#14](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#14)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#14](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddString">
+      <MemberSignature Language="C#" Value="public void AddString (string s, System.Drawing.FontFamily family, int style, float emSize, System.Drawing.PointF origin, System.Drawing.StringFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddString(string s, class System.Drawing.FontFamily family, int32 style, float32 emSize, valuetype System.Drawing.PointF origin, class System.Drawing.StringFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddString(System.String,System.Drawing.FontFamily,System.Int32,System.Single,System.Drawing.PointF,System.Drawing.StringFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="family" Type="System.Drawing.FontFamily" />
+        <Parameter Name="style" Type="System.Int32" />
+        <Parameter Name="emSize" Type="System.Single" />
+        <Parameter Name="origin" Type="System.Drawing.PointF" />
+        <Parameter Name="format" Type="System.Drawing.StringFormat" />
+      </Parameters>
+      <Docs>
+        <param name="s">追加する <see cref="T:System.String" />。</param>
+        <param name="family">A<see cref="T:System.Drawing.FontFamily" />テストが描画されるフォントの名前を表します。</param>
+        <param name="style">A <see cref="T:System.Drawing.FontStyle" /> (太字、斜体、およびなど) のテキストのスタイル情報を表す列挙体です。 これは、整数としてキャストする必要があります (このセクションのコード例を参照してください)。</param>
+        <param name="emSize">文字の境界を em 四角形のボックスの高さ。</param>
+        <param name="origin">A<see cref="T:System.Drawing.PointF" />ポイント、テキストの開始位置を表すです。</param>
+        <param name="format">A<see cref="T:System.Drawing.StringFormat" />行間や配置などの情報を書式設定文字列を指定します。</param>
+        <summary>このパスをテキスト文字列を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddString%28System.String%2CSystem.Drawing.FontFamily%2CSystem.Int32%2CSystem.Single%2CSystem.Drawing.Point%2CSystem.Drawing.StringFormat%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddString">
+      <MemberSignature Language="C#" Value="public void AddString (string s, System.Drawing.FontFamily family, int style, float emSize, System.Drawing.Rectangle layoutRect, System.Drawing.StringFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddString(string s, class System.Drawing.FontFamily family, int32 style, float32 emSize, valuetype System.Drawing.Rectangle layoutRect, class System.Drawing.StringFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddString(System.String,System.Drawing.FontFamily,System.Int32,System.Single,System.Drawing.Rectangle,System.Drawing.StringFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="family" Type="System.Drawing.FontFamily" />
+        <Parameter Name="style" Type="System.Int32" />
+        <Parameter Name="emSize" Type="System.Single" />
+        <Parameter Name="layoutRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="format" Type="System.Drawing.StringFormat" />
+      </Parameters>
+      <Docs>
+        <param name="s">追加する <see cref="T:System.String" />。</param>
+        <param name="family">A<see cref="T:System.Drawing.FontFamily" />テストが描画されるフォントの名前を表します。</param>
+        <param name="style">A <see cref="T:System.Drawing.FontStyle" /> (太字、斜体、およびなど) のテキストのスタイル情報を表す列挙体です。 これは、整数としてキャストする必要があります (このセクションのコード例を参照してください)。</param>
+        <param name="emSize">文字の境界を em 四角形のボックスの高さ。</param>
+        <param name="layoutRect">A<see cref="T:System.Drawing.Rectangle" />テキストを外接する四角形を表すです。</param>
+        <param name="format">A<see cref="T:System.Drawing.StringFormat" />行間や配置などの情報を書式設定文字列を指定します。</param>
+        <summary>このパスをテキスト文字列を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddString%28System.String%2CSystem.Drawing.FontFamily%2CSystem.Int32%2CSystem.Single%2CSystem.Drawing.Point%2CSystem.Drawing.StringFormat%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddString">
+      <MemberSignature Language="C#" Value="public void AddString (string s, System.Drawing.FontFamily family, int style, float emSize, System.Drawing.RectangleF layoutRect, System.Drawing.StringFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddString(string s, class System.Drawing.FontFamily family, int32 style, float32 emSize, valuetype System.Drawing.RectangleF layoutRect, class System.Drawing.StringFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.AddString(System.String,System.Drawing.FontFamily,System.Int32,System.Single,System.Drawing.RectangleF,System.Drawing.StringFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="family" Type="System.Drawing.FontFamily" />
+        <Parameter Name="style" Type="System.Int32" />
+        <Parameter Name="emSize" Type="System.Single" />
+        <Parameter Name="layoutRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="format" Type="System.Drawing.StringFormat" />
+      </Parameters>
+      <Docs>
+        <param name="s">追加する <see cref="T:System.String" />。</param>
+        <param name="family">A<see cref="T:System.Drawing.FontFamily" />テストが描画されるフォントの名前を表します。</param>
+        <param name="style">A <see cref="T:System.Drawing.FontStyle" /> (太字、斜体、およびなど) のテキストのスタイル情報を表す列挙体です。 これは、整数としてキャストする必要があります (このセクションのコード例を参照してください)。</param>
+        <param name="emSize">文字の境界を em 四角形のボックスの高さ。</param>
+        <param name="layoutRect">A<see cref="T:System.Drawing.RectangleF" />テキストを外接する四角形を表すです。</param>
+        <param name="format">A<see cref="T:System.Drawing.StringFormat" />行間や配置などの情報を書式設定文字列を指定します。</param>
+        <summary>このパスをテキスト文字列を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.AddString%28System.String%2CSystem.Drawing.FontFamily%2CSystem.Int32%2CSystem.Single%2CSystem.Drawing.Point%2CSystem.Drawing.StringFormat%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearMarkers">
+      <MemberSignature Language="C#" Value="public void ClearMarkers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearMarkers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.ClearMarkers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このパスからのすべてのマーカーをクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Drawing.Drawing2D.GraphicsPath.SetMarkers%2A>で現在の位置にマーカーを作成する方法、<xref:System.Drawing.Drawing2D.GraphicsPath>です。 使用して、<xref:System.Drawing.Drawing2D.GraphicsPathIterator.NextMarker%2A>パス内の既存のマーカーを反復処理するメソッド。  
+  
+ マーカーは、個別のサブパスのグループに使用されます。 2 つのマーカーの間で 1 つまたは複数のサブパスが含まれていることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成します。  
+  
+-   いくつかのオブジェクトをパスに追加します。  
+  
+-   パスにマーカーを追加します。  
+  
+-   パスからのすべてのマーカーをクリアします。  
+  
+-   画面へのパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#15](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#15)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#15](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#15)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#15](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このパスの正確なコピーを作成します。</summary>
+        <returns><see cref="T:System.Drawing.Drawing2D.GraphicsPath" />オブジェクトとしてキャスト、このメソッドを作成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成します。  
+  
+-   複数の図形をパスに追加します。  
+  
+-   画面へのパスを描画します。  
+  
+-   そのパスのコピーを複製します。  
+  
+-   画面に新しいパスを描画します。  
+  
+ 注意して呼び出し、<xref:System.Drawing.Drawing2D.GraphicsPath.Clone%2A>としてメソッドをキャストする必要があります、<xref:System.Drawing.Drawing2D.GraphicsPath>です。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#16](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#16)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#16](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#16)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#16](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseAllFigures">
+      <MemberSignature Language="C#" Value="public void CloseAllFigures ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CloseAllFigures() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.CloseAllFigures" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このパスで開いているすべての数値を終了し、新しい図形を開始します。 そのエンドポイントから、開始位置に行を接続して各開いた図を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成します。  
+  
+-   いくつかの開いている図形をパスに追加します。  
+  
+-   パスのすべての図形を閉じます。  
+  
+-   画面へのパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#17](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#17)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#17](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#17)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#17](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseFigure">
+      <MemberSignature Language="C#" Value="public void CloseFigure ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CloseFigure() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.CloseFigure" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の図を終了し、新しい図形を開始します。 現在の図形に接続されている直線と曲線のシーケンスが含まれている場合、このメソッドは、開始点をエンドポイントから線を接続することによって、ループを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードでは、新しいパスを作成し、図を開始、図を次の 2 つの交差する行を追加する三角形を構成する図を閉じて三角形を作成します。 パスは、画面に描画されます。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#18](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#18)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#18](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#18)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#18](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.GraphicsPath" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Drawing.Drawing2D.GraphicsPath.Dispose%2A>により、これによって使用されるリソース<xref:System.Drawing.Drawing2D.GraphicsPath>を他の目的に再割り当てされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillMode">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.FillMode FillMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.FillMode FillMode" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.GraphicsPath.FillMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.FillMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Drawing.Drawing2D.FillMode" />列挙体を決定する方法でこの図形の内部<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />がいっぱいになります。</summary>
+        <value>A<see cref="T:System.Drawing.Drawing2D.FillMode" />列挙型を指定する方法でこの図形の内部<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />がいっぱいになります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~GraphicsPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flatten">
+      <MemberSignature Language="C#" Value="public void Flatten ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Flatten() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Flatten" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>接続されている直線セグメントのシーケンスにこのパスの各曲線に変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.Flatten%28System.Drawing.Drawing2D.Matrix%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flatten">
+      <MemberSignature Language="C#" Value="public void Flatten (System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Flatten(class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Flatten(System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix">A<see cref="T:System.Drawing.Drawing2D.Matrix" />この変換に使用する<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />フラット化する前にします。</param>
+        <summary>指定した変換を適用し、これには、各曲線に変換<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />接続されている直線セグメントのシーケンスにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.Flatten%28System.Drawing.Drawing2D.Matrix%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flatten">
+      <MemberSignature Language="C#" Value="public void Flatten (System.Drawing.Drawing2D.Matrix matrix, float flatness);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Flatten(class System.Drawing.Drawing2D.Matrix matrix, float32 flatness) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Flatten(System.Drawing.Drawing2D.Matrix,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+        <Parameter Name="flatness" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="matrix">A<see cref="T:System.Drawing.Drawing2D.Matrix" />この変換に使用する<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />フラット化する前にします。</param>
+        <param name="flatness">曲線と、フラット化された近似の間の最大許容誤差を指定します。 値は 0.25 は、既定値です。 平坦度値を小さくと、近似における直線セグメントの数が増加します。</param>
+        <summary>これで各曲線に変換します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />接続されている直線セグメントのシーケンスにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   グラフィックス パスと平行移動行列を作成します。  
+  
+-   曲線を 4 つのポイントを使用して、パスに追加します。  
+  
+-   黒のペンを使用して、画面に (曲線) のパスを描画します。  
+  
+-   10 ピクセル ダウン曲線をシフトし、平坦化します。  
+  
+-   赤のペンを使用して、画面には、曲線を描画します。  
+  
+ 赤の曲線がの点を結ぶ線をフラット化されたことに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#19](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#19)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#19](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#19)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#19](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF GetBounds ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.RectangleF GetBounds() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.GetBounds" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この領域に外接する四角形を返します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <returns>A<see cref="T:System.Drawing.RectangleF" />この領域に外接する四角形を表す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される外接する四角形のサイズは、端点キャップ、ペンの幅、およびペン マイターの種類によって異なり、そのため、範囲指定されたパスに「loose 合わせる」を生成します。 おおよその数式は、: 初期の外接する四角形がペンの幅によって大きくし、この結果は、マイター plus の端点キャップを許可する追加の余白によって乗算されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   グラフィックス パスを作成します。  
+  
+-   楕円 (円) を追加し、画面に描画します。  
+  
+-   呼び出しで円に外接する四角形を取得<xref:System.Drawing.Drawing2D.GraphicsPath.GetBounds%2A>し、画面に四角形を描画します。  
+  
+-   2 番目のグラフィックス パスを作成します。  
+  
+-   円を追加し、パスを 10 文字の幅を拡大します。  
+  
+-   画面へのパスを描画します。  
+  
+-   2 番目の円の外接する四角形を取得します。  
+  
+-   画面に外接する四角形を描画します。  
+  
+-   ダイアログ ボックスで、四角形のサイズを表示します。  
+  
+ 右側の外接する四角形が (行の追加の幅のアカウント) を大きくすることに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#20)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#20)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF GetBounds (System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.RectangleF GetBounds(class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.GetBounds(System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix"><see cref="T:System.Drawing.Drawing2D.Matrix" />外接する四角形を計算する前に、このパスに適用する変換を指定します。 このパスは完全に変換されません。変換は外接する四角形を計算するプロセス中にのみ使用されます。</param>
+        <summary>この領域に外接する四角形を返します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />このパスを変換するときに指定した<see cref="T:System.Drawing.Drawing2D.Matrix" />です。</summary>
+        <returns>A<see cref="T:System.Drawing.RectangleF" />この領域に外接する四角形を表す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される外接する四角形のサイズは、端点キャップ、ペンの幅、およびペン マイターの種類によって異なり、そのため、範囲指定されたパスに「loose 合わせる」を生成します。 おおよその数式は、: 初期の外接する四角形がペンの幅によって大きくし、この結果は、マイター plus の端点キャップを許可する追加の余白によって乗算されます。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.GetBounds>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF GetBounds (System.Drawing.Drawing2D.Matrix matrix, System.Drawing.Pen pen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.RectangleF GetBounds(class System.Drawing.Drawing2D.Matrix matrix, class System.Drawing.Pen pen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.GetBounds(System.Drawing.Drawing2D.Matrix,System.Drawing.Pen)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+      </Parameters>
+      <Docs>
+        <param name="matrix"><see cref="T:System.Drawing.Drawing2D.Matrix" />外接する四角形を計算する前に、このパスに適用する変換を指定します。 このパスは完全に変換されません。変換は外接する四角形を計算するプロセス中にのみ使用されます。</param>
+        <param name="pen"><see cref="T:System.Drawing.Pen" />を描画するために、<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</param>
+        <summary>この領域に外接する四角形を返します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />、現在のパスを変換するときに指定した<see cref="T:System.Drawing.Drawing2D.Matrix" />および指定された描画<see cref="T:System.Drawing.Pen" />です。</summary>
+        <returns>A<see cref="T:System.Drawing.RectangleF" />この領域に外接する四角形を表す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される外接する四角形のサイズは、端点キャップ、ペンの幅、およびペン マイターの種類によって異なり、そのため、範囲指定されたパスに「loose 合わせる」を生成します。 おおよその数式は、: 初期の外接する四角形がペンの幅によって大きくし、この結果は、マイター plus の端点キャップを許可する追加の余白によって乗算されます。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.GetBounds>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastPoint">
+      <MemberSignature Language="C#" Value="public System.Drawing.PointF GetLastPoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.PointF GetLastPoint() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.GetLastPoint" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.PointF</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内の最後のポイントを取得、<see cref="P:System.Drawing.Drawing2D.GraphicsPath.PathPoints" />このアレイ<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <returns>A<see cref="T:System.Drawing.PointF" />のこの最後の点を表す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、パスを作成し、パスに 1 行を追加、パスの最後のポイントを取得します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#21](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#21)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#21](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#21)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#21](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOutlineVisible">
+      <MemberSignature Language="C#" Value="public bool IsOutlineVisible (System.Drawing.Point point, System.Drawing.Pen pen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOutlineVisible(valuetype System.Drawing.Point point, class System.Drawing.Pen pen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible(System.Drawing.Point,System.Drawing.Pen)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Drawing.Point" />をテストする場所を指定します。</param>
+        <param name="pen">テスト対象の <see cref="T:System.Drawing.Pen" />。</param>
+        <summary>(下) これの輪郭内で指定したポイントが含まれるかどうかを示します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />これの輪郭内で指定したポイントが含まれているかどうかは<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたパスのアウトラインが表示される指定した位置に表示されてかどうかをテストします。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Pen%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOutlineVisible">
+      <MemberSignature Language="C#" Value="public bool IsOutlineVisible (System.Drawing.PointF point, System.Drawing.Pen pen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOutlineVisible(valuetype System.Drawing.PointF point, class System.Drawing.Pen pen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible(System.Drawing.PointF,System.Drawing.Pen)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.PointF" />
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Drawing.PointF" />をテストする場所を指定します。</param>
+        <param name="pen">テスト対象の <see cref="T:System.Drawing.Pen" />。</param>
+        <summary>(下) これの輪郭内で指定したポイントが含まれるかどうかを示します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />これの輪郭内で指定したポイントが含まれているかどうかは<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたパスのアウトラインが表示される指定した位置に表示されてかどうかをテストします。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Pen%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOutlineVisible">
+      <MemberSignature Language="C#" Value="public bool IsOutlineVisible (System.Drawing.Point pt, System.Drawing.Pen pen, System.Drawing.Graphics graphics);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOutlineVisible(valuetype System.Drawing.Point pt, class System.Drawing.Pen pen, class System.Drawing.Graphics graphics) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible(System.Drawing.Point,System.Drawing.Pen,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="pt">A<see cref="T:System.Drawing.Point" />をテストする場所を指定します。</param>
+        <param name="pen">テスト対象の <see cref="T:System.Drawing.Pen" />。</param>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />可視性をテストします。</param>
+        <summary>(下) これの輪郭内で指定したポイントが含まれるかどうかを示します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />指定して、<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />これの輪郭内で指定したポイントが含まれているかどうかは<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />で指定された描画されたとおり<see cref="T:System.Drawing.Pen" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたパスのアウトラインが表示される指定した位置に表示されてかどうかをテストします。 テストする点の座標は、世界の座標で表されます。 変換行列`graphics`可視性をテストする前に一時的に適用されます。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Pen%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOutlineVisible">
+      <MemberSignature Language="C#" Value="public bool IsOutlineVisible (System.Drawing.PointF pt, System.Drawing.Pen pen, System.Drawing.Graphics graphics);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOutlineVisible(valuetype System.Drawing.PointF pt, class System.Drawing.Pen pen, class System.Drawing.Graphics graphics) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible(System.Drawing.PointF,System.Drawing.Pen,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Drawing.PointF" />
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="pt">A<see cref="T:System.Drawing.PointF" />をテストする場所を指定します。</param>
+        <param name="pen">テスト対象の <see cref="T:System.Drawing.Pen" />。</param>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />可視性をテストします。</param>
+        <summary>(下) これの輪郭内で指定したポイントが含まれるかどうかを示します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />指定して、<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />かどうか、指定したポイント内に含まれる (下) このアウトライン<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />で指定された描画されたとおり<see cref="T:System.Drawing.Pen" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたパスのアウトラインが表示される指定した位置に表示されてかどうかをテストします。 テストする点の座標は、世界の座標で表されます。 変換行列`graphics`可視性をテストする前に一時的に適用されます。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Pen%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOutlineVisible">
+      <MemberSignature Language="C#" Value="public bool IsOutlineVisible (int x, int y, System.Drawing.Pen pen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOutlineVisible(int32 x, int32 y, class System.Drawing.Pen pen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible(System.Int32,System.Int32,System.Drawing.Pen)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする点の x 座標。</param>
+        <param name="y">テストする点の y 座標。</param>
+        <param name="pen">テスト対象の <see cref="T:System.Drawing.Pen" />。</param>
+        <summary>(下) これの輪郭内で指定したポイントが含まれるかどうかを示します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />これの輪郭内で指定したポイントが含まれているかどうかは<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたパスのアウトラインが表示される指定した位置に表示されてかどうかをテストします。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Pen%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOutlineVisible">
+      <MemberSignature Language="C#" Value="public bool IsOutlineVisible (float x, float y, System.Drawing.Pen pen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOutlineVisible(float32 x, float32 y, class System.Drawing.Pen pen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible(System.Single,System.Single,System.Drawing.Pen)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする点の x 座標。</param>
+        <param name="y">テストする点の y 座標。</param>
+        <param name="pen">テスト対象の <see cref="T:System.Drawing.Pen" />。</param>
+        <summary>(下) これの輪郭内で指定したポイントが含まれるかどうかを示します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />これの輪郭内で指定したポイントが含まれているかどうかは<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたパスのアウトラインが表示される指定した位置に表示されてかどうかをテストします。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Pen%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOutlineVisible">
+      <MemberSignature Language="C#" Value="public bool IsOutlineVisible (int x, int y, System.Drawing.Pen pen, System.Drawing.Graphics graphics);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOutlineVisible(int32 x, int32 y, class System.Drawing.Pen pen, class System.Drawing.Graphics graphics) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible(System.Int32,System.Int32,System.Drawing.Pen,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする点の x 座標。</param>
+        <param name="y">テストする点の y 座標。</param>
+        <param name="pen">テスト対象の <see cref="T:System.Drawing.Pen" />。</param>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />可視性をテストします。</param>
+        <summary>(下) これの輪郭内で指定したポイントが含まれるかどうかを示します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />指定して、<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />これの輪郭内で指定したポイントが含まれているかどうかは<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />で指定された描画されたとおり<see cref="T:System.Drawing.Pen" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたパスのアウトラインが表示される指定した位置に表示されてかどうかをテストします。 テストする点の座標は、世界の座標で表されます。 変換行列`graphics`可視性をテストする前に一時的に適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント。 コードは、次のアクションを実行します。  
+  
+-   パスを作成します。  
+  
+-   パスに四角形を追加します。  
+  
+-   幅の広いペンを作成し、そのペンで (わかりやすい例を作成する) ため、パスを拡大変換  
+  
+-   かどうかにある四角形のエッジのいずれか (下) 内で呼び出すことによって表示する点 (100, 50) をテスト<xref:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible%2A>です。  
+  
+ (この場合、true の場合)、メッセージ ボックスに、結果が表示されます。 つまり、エッジはその点の上に表示されます。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#22](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#22)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#22](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#22)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#22](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOutlineVisible">
+      <MemberSignature Language="C#" Value="public bool IsOutlineVisible (float x, float y, System.Drawing.Pen pen, System.Drawing.Graphics graphics);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOutlineVisible(float32 x, float32 y, class System.Drawing.Pen pen, class System.Drawing.Graphics graphics) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible(System.Single,System.Single,System.Drawing.Pen,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする点の x 座標。</param>
+        <param name="y">テストする点の y 座標。</param>
+        <param name="pen">テスト対象の <see cref="T:System.Drawing.Pen" />。</param>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />可視性をテストします。</param>
+        <summary>(下) これの輪郭内で指定したポイントが含まれるかどうかを示します<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />描画されると、指定した<see cref="T:System.Drawing.Pen" />指定して、<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />かどうか、指定したポイント内に含まれる (下) このアウトライン<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />で指定された描画されたとおり<see cref="T:System.Drawing.Pen" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたパスのアウトラインが表示される指定した位置に表示されてかどうかをテストします。 テストする点の座標は、世界の座標で表されます。 変換行列の`graphics`パラメーターは、可視性をテストする前に一時的に適用します。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsOutlineVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Pen%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsVisible(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Drawing.Point" />をテストする点を表すです。</param>
+        <summary>指定した点がこの内に含まれるかどうかを示す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />内で指定したポイントが含まれている場合<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「`GraphicsPath.IsVisible Method (Int32, Int32, Graphics)`」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.PointF point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.PointF point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsVisible(System.Drawing.PointF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.PointF" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Drawing.PointF" />をテストする点を表すです。</param>
+        <summary>指定した点がこの内に含まれるかどうかを示す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />内で指定したポイントが含まれている場合<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.Point pt, System.Drawing.Graphics graphics);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.Point pt, class System.Drawing.Graphics graphics) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsVisible(System.Drawing.Point,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="pt">A<see cref="T:System.Drawing.Point" />をテストする点を表すです。</param>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />可視性をテストします。</param>
+        <summary>指定した点がこの内に含まれるかどうかを示す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />内で指定したポイントが含まれている場合<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テストする点の座標は、世界の座標で表されます。 変換行列の`graphics`パラメーターは、可視性をテストする前に一時的に適用します。  
+  
+   
+  
+## Examples  
+ 例については、「`GraphicsPath.IsVisible Method (Int32, Int32, Graphics)`」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (System.Drawing.PointF pt, System.Drawing.Graphics graphics);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(valuetype System.Drawing.PointF pt, class System.Drawing.Graphics graphics) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsVisible(System.Drawing.PointF,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Drawing.PointF" />
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="pt">A<see cref="T:System.Drawing.PointF" />をテストする点を表すです。</param>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />可視性をテストします。</param>
+        <summary>指定した点がこの内に含まれるかどうかを示す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />指定したポイントがこれに含まれている、それ以外の場合は<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テストする点の座標は、世界の座標で表されます。 変換行列の`graphics`パラメーターは、可視性をテストする前に一時的に適用します。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsVisible(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする点の x 座標。</param>
+        <param name="y">テストする点の y 座標。</param>
+        <summary>指定した点がこの内に含まれるかどうかを示す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />内で指定したポイントが含まれている場合<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (float x, float y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(float32 x, float32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsVisible(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする点の x 座標。</param>
+        <param name="y">テストする点の y 座標。</param>
+        <summary>指定した点がこの内に含まれるかどうかを示す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />内で指定したポイントが含まれている場合<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (int x, int y, System.Drawing.Graphics graphics);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(int32 x, int32 y, class System.Drawing.Graphics graphics) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsVisible(System.Int32,System.Int32,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする点の x 座標。</param>
+        <param name="y">テストする点の y 座標。</param>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />可視性をテストします。</param>
+        <summary>指定した点がこの内に含まれるかどうかを示す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />を指定して<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />内で指定したポイントが含まれている場合<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テストする点の座標は、世界の座標で表されます。 変換行列`graphics`可視性をテストする前に一時的に適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成し、楕円をパスに追加します。  
+  
+-   指定したポイントが、パス内に含まれるかどうかをテストします。  
+  
+-   ダイアログ ボックスで、結果を表示します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#23](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#23)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#23](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#23)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#23](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVisible">
+      <MemberSignature Language="C#" Value="public bool IsVisible (float x, float y, System.Drawing.Graphics graphics);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsVisible(float32 x, float32 y, class System.Drawing.Graphics graphics) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.IsVisible(System.Single,System.Single,System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Single" />
+        <Parameter Name="y" Type="System.Single" />
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="x">テストする点の x 座標。</param>
+        <param name="y">テストする点の y 座標。</param>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />可視性をテストします。</param>
+        <summary>指定した点がこの内に含まれるかどうかを示す<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />、指定の表示クリップ領域内<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>このメソッドが戻る<see langword="true" />内で指定したポイントが含まれている場合<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テストする点の座標は、世界の座標で表されます。 変換行列の`graphics`パラメーターは、可視性をテストする前に一時的に適用します。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.IsVisible%28System.Int32%2CSystem.Int32%2CSystem.Drawing.Graphics%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathData">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.PathData PathData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Drawing2D.PathData PathData" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.GraphicsPath.PathData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.PathData</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Drawing2D.PathData" />点の配列をカプセル化する (<paramref name="points" />) と種類 (<paramref name="types" />) この<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <value>A<see cref="T:System.Drawing.Drawing2D.PathData" />のポイントの両方の配列とこの型をカプセル化する<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathPoints">
+      <MemberSignature Language="C#" Value="public System.Drawing.PointF[] PathPoints { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.PointF[] PathPoints" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.GraphicsPath.PathPoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.PointF[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスのポイントを取得します。</summary>
+        <value>配列<see cref="T:System.Drawing.PointF" />パスを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathTypes">
+      <MemberSignature Language="C#" Value="public byte[] PathTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] PathTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.GraphicsPath.PathTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対応するポイントの種類を取得、<see cref="P:System.Drawing.Drawing2D.GraphicsPath.PathPoints" />配列。</summary>
+        <value>パスに対応するポイントの種類を指定するバイト配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるバイトの配列、<xref:System.Drawing.Drawing2D.GraphicsPath.PathTypes%2A>プロパティのパス ポイントの種類とデータ ポイントのフラグを指定します。 各ポイントのビット 0 ~ 2、ポイントの種類を指定し、ビット 3. ~ 7. ポイントの属性を指定するフラグのセットします。 次の表は、使用可能な値とその意味を示します。  
+  
+|値|説明|  
+|-----------|-------------|  
+|0|ポイントが、図の先頭であることを示します。|  
+|1|ポイントが 1 つの行の 2 つのエンドポイントであることを示します。|  
+|3|ポイントが、3 次ベジエ スプラインのエンドポイントまたはコントロール ポイントであることを示します。|  
+|0x7|次の 3 つの下位のビットは、ポイントの種類を示すを除くすべてのビットをマスクします。|  
+|0x20|ポイントのマーカーがいるを指定します。|  
+|0x80|点が閉じられたサブパス (図) の最後の点であることを指定します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PointCount">
+      <MemberSignature Language="C#" Value="public int PointCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PointCount" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.GraphicsPath.PointCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の要素の数を取得、<see cref="P:System.Drawing.Drawing2D.GraphicsPath.PathPoints" />または<see cref="P:System.Drawing.Drawing2D.GraphicsPath.PathTypes" />配列。</summary>
+        <value>内の要素の数を指定する整数、<see cref="P:System.Drawing.Drawing2D.GraphicsPath.PathPoints" />または<see cref="P:System.Drawing.Drawing2D.GraphicsPath.PathTypes" />配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空にして、<see cref="P:System.Drawing.Drawing2D.GraphicsPath.PathPoints" />と<see cref="P:System.Drawing.Drawing2D.GraphicsPath.PathTypes" />配列や、設定、<see cref="T:System.Drawing.Drawing2D.FillMode" />に<see cref="F:System.Drawing.Drawing2D.FillMode.Alternate" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成します。  
+  
+-   これには、複数のプリミティブを追加します。  
+  
+-   パスの点の配列を画面に描画します。  
+  
+-   パスを空の状態にリセットします。  
+  
+-   再 (存在する場合は、点の配列を取得します。  
+  
+-   配列を画面に描画します。  
+  
+ 配列のリセットの呼び出しに続く見つからないことに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#24](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#24)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#24](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#24)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#24](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reverse">
+      <MemberSignature Language="C#" Value="public void Reverse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reverse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Reverse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内の地点の順序を反転、<see cref="P:System.Drawing.Drawing2D.GraphicsPath.PathPoints" />このアレイ<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成し、複数のプリミティブをパスに追加します。  
+  
+-   パスの点の配列を画面に描画します。  
+  
+-   反転された点の配列を画面に描画します。  
+  
+ 2 番目のポイントのリストが逆の順序で、最初からであることを確認します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#25](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#25)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#25](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#25)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#25](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMarkers">
+      <MemberSignature Language="C#" Value="public void SetMarkers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetMarkers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.SetMarkers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに、マーカーを設定<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パスのセクションを区切るために使用するパスにマーカーを作成します。 使用してできます、<xref:System.Drawing.Drawing2D.GraphicsPathIterator.NextMarker%2A>パス内のマーカーを反復処理するメソッド。  
+  
+ マーカーは、個別のサブパスのグループに使用されます。 パス内の 2 つのマーカーの間で 1 つまたは複数のサブパスが含まれていることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、パスを作成して、マーカーで区切られたパスを複数のプリミティブを追加し、画面にパスを描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#26](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#26)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#26](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#26)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#26](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartFigure">
+      <MemberSignature Language="C#" Value="public void StartFigure ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartFigure() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.StartFigure" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の図を閉じずに、新しい図を開始します。 パスに追加後のすべてのポイントは、この新しい図に追加されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、必要な場合、元のポイントを保持する必要があります。 元の点が 3 次ベジエ制御点を内部的に変換された、ため元の点を返すためのメカニズムはありません。  
+  
+ このメソッドは、パスに新しいサブパスを開始します。 各セクションに、パスを分離し、使用することはサブパス、<xref:System.Drawing.Drawing2D.GraphicsPathIterator>サブパスを反復処理するクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成します。  
+  
+-   2 つの数値のセットを追加します。 図形の最初のセットは、2 つの図に 4 つのプリミティブを結合します。 2 番目の数値のセット連結同じの 4 つのプリミティブ (する点を除いて、y 軸がオフセットされる) 次の 3 つの数値。  
+  
+-   画面にすべての図形を描画します。  
+  
+ 2 つの数値のセットの表示の違いに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#27](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#27)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#27](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#27)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#27](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#27)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Transform(System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix">A<see cref="T:System.Drawing.Drawing2D.Matrix" />を適用する変換を表すです。</param>
+        <summary>この変換行列を適用<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換できるスケール、変換、回転、または傾斜、<xref:System.Drawing.Drawing2D.GraphicsPath>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成し、楕円をパスに追加します。  
+  
+-   画面にパスを描画します。  
+  
+-   X 軸方向にパス 100 単位に変換する変換行列を作成します。  
+  
+-   画面に変換されたパスを描画します。  
+  
+ 黒で元の楕円を描画し、変換後の楕円が赤で描画されることに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#28](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#28)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#28](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#28)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#28](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Warp">
+      <MemberSignature Language="C#" Value="public void Warp (System.Drawing.PointF[] destPoints, System.Drawing.RectangleF srcRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Warp(valuetype System.Drawing.PointF[] destPoints, valuetype System.Drawing.RectangleF srcRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Warp(System.Drawing.PointF[],System.Drawing.RectangleF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destPoints" Type="System.Drawing.PointF[]" />
+        <Parameter Name="srcRect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="destPoints">配列<see cref="T:System.Drawing.PointF" />四角形がによって定義されている指定した平行四辺形を定義する構造体<c>srcRect</c>を変換します。 配列には、次の 3 つまたは 4 つの要素を含めることができます。 配列に 3 つの要素が含まれている場合、最初の 3 つのポイントで平行四辺形の右下隅は暗黙的です。</param>
+        <param name="srcRect">A<see cref="T:System.Drawing.RectangleF" />によって定義された平行四辺形に変換される四角形を表す<c>destPoints</c>です。</param>
+        <summary>四角形と、指定した平行四辺形をこのによって定義される、warp 変換が適用されます<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.Warp%28System.Drawing.PointF%5B%5D%2CSystem.Drawing.RectangleF%2CSystem.Drawing.Drawing2D.Matrix%2CSystem.Drawing.Drawing2D.WarpMode%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Warp">
+      <MemberSignature Language="C#" Value="public void Warp (System.Drawing.PointF[] destPoints, System.Drawing.RectangleF srcRect, System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Warp(valuetype System.Drawing.PointF[] destPoints, valuetype System.Drawing.RectangleF srcRect, class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Warp(System.Drawing.PointF[],System.Drawing.RectangleF,System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destPoints" Type="System.Drawing.PointF[]" />
+        <Parameter Name="srcRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="destPoints">配列<see cref="T:System.Drawing.PointF" />四角形がによって定義されている指定した平行四辺形を定義する構造体<c>srcRect</c>を変換します。 配列には、次の 3 つまたは 4 つの要素を含めることができます。 配列に 3 つの要素が含まれている場合、最初の 3 つのポイントで平行四辺形の右下隅は暗黙的です。</param>
+        <param name="srcRect">A<see cref="T:System.Drawing.RectangleF" />によって定義された平行四辺形に変換される四角形を表す<c>destPoints</c>です。</param>
+        <param name="matrix">A<see cref="T:System.Drawing.Drawing2D.Matrix" />パスに適用するジオメトリック変換を指定します。</param>
+        <summary>四角形と、指定した平行四辺形をこのによって定義される、warp 変換が適用されます<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.Warp%28System.Drawing.PointF%5B%5D%2CSystem.Drawing.RectangleF%2CSystem.Drawing.Drawing2D.Matrix%2CSystem.Drawing.Drawing2D.WarpMode%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Warp">
+      <MemberSignature Language="C#" Value="public void Warp (System.Drawing.PointF[] destPoints, System.Drawing.RectangleF srcRect, System.Drawing.Drawing2D.Matrix matrix, System.Drawing.Drawing2D.WarpMode warpMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Warp(valuetype System.Drawing.PointF[] destPoints, valuetype System.Drawing.RectangleF srcRect, class System.Drawing.Drawing2D.Matrix matrix, valuetype System.Drawing.Drawing2D.WarpMode warpMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Warp(System.Drawing.PointF[],System.Drawing.RectangleF,System.Drawing.Drawing2D.Matrix,System.Drawing.Drawing2D.WarpMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destPoints" Type="System.Drawing.PointF[]" />
+        <Parameter Name="srcRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+        <Parameter Name="warpMode" Type="System.Drawing.Drawing2D.WarpMode" />
+      </Parameters>
+      <Docs>
+        <param name="destPoints">配列<see cref="T:System.Drawing.PointF" />四角形がによって定義されている指定した平行四辺形を定義する構造体<c>srcRect</c>を変換します。 配列には、次の 3 つまたは 4 つの要素を含めることができます。 配列に 3 つの要素が含まれている場合、最初の 3 つのポイントで平行四辺形の右下隅は暗黙的です。</param>
+        <param name="srcRect">A<see cref="T:System.Drawing.RectangleF" />によって定義された平行四辺形に変換される四角形を表す<c>destPoints</c>です。</param>
+        <param name="matrix">A<see cref="T:System.Drawing.Drawing2D.Matrix" />パスに適用するジオメトリック変換を指定します。</param>
+        <param name="warpMode">A<see cref="T:System.Drawing.Drawing2D.WarpMode" />この warp 操作がパースペクティブまたは bilinear モードを使用するかどうかを指定する列挙です。</param>
+        <summary>四角形と、指定した平行四辺形をこのによって定義される、warp 変換が適用されます<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.Warp%28System.Drawing.PointF%5B%5D%2CSystem.Drawing.RectangleF%2CSystem.Drawing.Drawing2D.Matrix%2CSystem.Drawing.Drawing2D.WarpMode%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Warp">
+      <MemberSignature Language="C#" Value="public void Warp (System.Drawing.PointF[] destPoints, System.Drawing.RectangleF srcRect, System.Drawing.Drawing2D.Matrix matrix, System.Drawing.Drawing2D.WarpMode warpMode, float flatness);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Warp(valuetype System.Drawing.PointF[] destPoints, valuetype System.Drawing.RectangleF srcRect, class System.Drawing.Drawing2D.Matrix matrix, valuetype System.Drawing.Drawing2D.WarpMode warpMode, float32 flatness) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Warp(System.Drawing.PointF[],System.Drawing.RectangleF,System.Drawing.Drawing2D.Matrix,System.Drawing.Drawing2D.WarpMode,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destPoints" Type="System.Drawing.PointF[]" />
+        <Parameter Name="srcRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+        <Parameter Name="warpMode" Type="System.Drawing.Drawing2D.WarpMode" />
+        <Parameter Name="flatness" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="destPoints">配列<see cref="T:System.Drawing.PointF" />四角形がによって定義されている指定した平行四辺形を定義する構造体<c>srcRect</c>を変換します。 配列には、次の 3 つまたは 4 つの要素を含めることができます。 配列に 3 つの要素が含まれている場合、最初の 3 つのポイントで平行四辺形の右下隅は暗黙的です。</param>
+        <param name="srcRect">A<see cref="T:System.Drawing.RectangleF" />によって定義された平行四辺形に変換される四角形を表す<c>destPoints</c>です。</param>
+        <param name="matrix">A<see cref="T:System.Drawing.Drawing2D.Matrix" />パスに適用するジオメトリック変換を指定します。</param>
+        <param name="warpMode">A<see cref="T:System.Drawing.Drawing2D.WarpMode" />この warp 操作がパースペクティブまたは bilinear モードを使用するかどうかを指定する列挙です。</param>
+        <param name="flatness">0 ~ 1 の結果として得られる方法フラットのパスを指定する値です。 詳細については、次を参照してください。、<see cref="M:System.Drawing.Drawing2D.GraphicsPath.Flatten" />メソッドです。</param>
+        <summary>四角形と、指定した平行四辺形をこのによって定義される、warp 変換が適用されます<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成し、パスに四角形を追加します。  
+  
+-   黒の画面には、その四角形を描画します。  
+  
+-   ワープ パースペクティブ warp では、パスを使用します。  
+  
+-   変形した四角形 (パス) を赤で画面に描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#29](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#29)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#29](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#29)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#29](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#29)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Widen">
+      <MemberSignature Language="C#" Value="public void Widen (System.Drawing.Pen pen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Widen(class System.Drawing.Pen pen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Widen(System.Drawing.Pen)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+      </Parameters>
+      <Docs>
+        <param name="pen">A<see cref="T:System.Drawing.Pen" />パスの元のアウトラインとこのメソッドを作成する新しいアウトラインの幅を指定します。</param>
+        <summary>パスに追加のアウトラインを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これで、このメソッドが元の行を囲む外枠を作成<xref:System.Drawing.Drawing2D.GraphicsPath>、既存の行と新しいアウトラインの間の距離の幅を等しく、<xref:System.Drawing.Pen>への呼び出しで使用される<xref:System.Drawing.Drawing2D.GraphicsPath.Widen%2A>です。 使用する必要があります、行の間隔を設定する場合、<xref:System.Drawing.Graphics.FillPath%2A>ではなく、<xref:System.Drawing.Graphics.DrawPath%2A>です。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.Widen%28System.Drawing.Pen%2CSystem.Drawing.Drawing2D.Matrix%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Widen">
+      <MemberSignature Language="C#" Value="public void Widen (System.Drawing.Pen pen, System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Widen(class System.Drawing.Pen pen, class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Widen(System.Drawing.Pen,System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="pen">A<see cref="T:System.Drawing.Pen" />パスの元のアウトラインとこのメソッドを作成する新しいアウトラインの幅を指定します。</param>
+        <param name="matrix">A<see cref="T:System.Drawing.Drawing2D.Matrix" />拡大変換する前に、パスに適用する変換を指定します。</param>
+        <summary>追加のアウトラインが追加、<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これで、このメソッドが元の行を囲む外枠を作成<xref:System.Drawing.Drawing2D.GraphicsPath>、既存の行と新しいアウトラインの間の距離の幅を等しく、<xref:System.Drawing.Pen>への呼び出しで使用される<xref:System.Drawing.Drawing2D.GraphicsPath.Widen%2A>です。 使用する必要があります、行の間隔を設定する場合、<xref:System.Drawing.Graphics.FillPath%2A>ではなく、<xref:System.Drawing.Graphics.DrawPath%2A>です。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.GraphicsPath.Widen%28System.Drawing.Pen%2CSystem.Drawing.Drawing2D.Matrix%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Widen">
+      <MemberSignature Language="C#" Value="public void Widen (System.Drawing.Pen pen, System.Drawing.Drawing2D.Matrix matrix, float flatness);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Widen(class System.Drawing.Pen pen, class System.Drawing.Drawing2D.Matrix matrix, float32 flatness) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.GraphicsPath.Widen(System.Drawing.Pen,System.Drawing.Drawing2D.Matrix,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pen" Type="System.Drawing.Pen" />
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+        <Parameter Name="flatness" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="pen">A<see cref="T:System.Drawing.Pen" />パスの元のアウトラインとこのメソッドを作成する新しいアウトラインの幅を指定します。</param>
+        <param name="matrix">A<see cref="T:System.Drawing.Drawing2D.Matrix" />拡大変換する前に、パスに適用する変換を指定します。</param>
+        <param name="flatness">曲線の平坦度を指定する値。</param>
+        <summary>これを置き換える<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />このパスが指定されたペンで描画されるときに設定されている領域を囲む曲線にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これで、このメソッドが元の行を囲む外枠を作成<xref:System.Drawing.Drawing2D.GraphicsPath>、既存の行と新しいアウトラインの間の距離の幅を等しく、<xref:System.Drawing.Pen>への呼び出しで使用される<xref:System.Drawing.Drawing2D.GraphicsPath.Widen%2A>です。 使用する必要があります、行の間隔を設定する場合、<xref:System.Drawing.Graphics.FillPath%2A>ではなく、<xref:System.Drawing.Graphics.DrawPath%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   パスを作成し、2 つの楕円をパスに追加します。  
+  
+-   黒でパスを描画します。  
+  
+-   パスの幅が広がります。  
+  
+-   パスを赤で描画します。  
+  
+ 2 番目のレンダリングを使用することを確認<xref:System.Drawing.Graphics.FillPath%2A>の代わりに<xref:System.Drawing.Graphics.DrawPath%2A>、レンダリングの図に、入力アウトライン持ちます。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#30](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CPP/form1.cpp#30)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/CS/form1.cs#30)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicGraphicsPathExamples#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicGraphicsPathExamples/VB/form1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,197 @@
+<Type Name="SignerInfoCollection" FullName="System.Security.Cryptography.Pkcs.SignerInfoCollection">
+  <TypeSignature Language="C#" Value="public sealed class SignerInfoCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SignerInfoCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />クラスのコレクションを表します<see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />オブジェクト。 <see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" /> は、<see cref="T:System.Collections.ICollection" /> インターフェイスを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスには、パブリックなコンス トラクターがありません。そのため、そのパブリックにインスタンス化できません。 これは、読み取り専用クラスからアクセスできる、<xref:System.Security.Cryptography.Pkcs.SignedCms.SignerInfos%2A?displayProperty=nameWithType>プロパティまたは<xref:System.Security.Cryptography.Pkcs.SignerInfo.CounterSignerInfos%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.SignerInfoCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" />オブジェクトを<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクションがコピーされます。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>場所、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクションをコピーします。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfoCollection.CopyTo(System.Array,System.Int32)" />メソッド コピー、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />配列にコレクション。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">メソッドに渡された引数のいずれかが無効でした。</exception>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">引数の値は、呼び出されたメソッドで定義されている値の許容範囲外でした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Security.Cryptography.Pkcs.SignerInfo[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Security.Cryptography.Pkcs.SignerInfo[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.SignerInfoCollection.CopyTo(System.Security.Cryptography.Pkcs.SignerInfo[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Security.Cryptography.Pkcs.SignerInfo[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列<see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />オブジェクトを<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクションがコピーされます。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>場所、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクションをコピーします。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfoCollection.CopyTo(System.Security.Cryptography.Pkcs.SignerInfo[],System.Int32)" />メソッド コピー、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクションに、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />配列。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">メソッドに渡された引数のいずれかが無効でした。</exception>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">引数の値は、呼び出されたメソッドで定義されている値の許容範囲外でした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.SignerInfoCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfoCollection.Count" />プロパティ内の項目の数を取得する、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクション。</summary>
+        <value>コレクション内の項目の数を表す整数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Pkcs.SignerInfoEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Cryptography.Pkcs.SignerInfoEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.SignerInfoCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Pkcs.SignerInfoEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfoCollection.GetEnumerator" />メソッドを返します、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoEnumerator" />オブジェクトに対して、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクション。</summary>
+        <returns>A<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoEnumerator" />を列挙するために使用できるオブジェクト、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.SignerInfoCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfoCollection.IsSynchronized" />プロパティを取得しますが、コレクションにアクセスするかどうかが同期されている、またはスレッド セーフです。 このプロパティは常に返します<see langword="false" />、つまり、コレクションはスレッド セーフではありません。</summary>
+        <value>A<see cref="T:System.Boolean" />値<see langword="false" />、つまり、コレクションはスレッド セーフではありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Pkcs.SignerInfo this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Pkcs.SignerInfo Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.SignerInfoCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Pkcs.SignerInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内のインデックスを表す整数値。 インデックスは、0 から始まります。</param>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfoCollection.Item(System.Int32)" />プロパティの取得、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />オブジェクト、コレクション内の指定したインデックス位置。</summary>
+        <value>A<see cref="T:System.Security.Cryptography.Pkcs.SignerInfo" />指定したインデックスにあるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">引数の値は、呼び出されたメソッドで定義されている値の許容範囲外でした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.SignerInfoCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.SignerInfoCollection.SyncRoot" />プロパティの取得、<see cref="T:System.Object" />へのアクセスを同期するためにオブジェクトが使用される、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクション。</summary>
+        <value><see cref="T:System.Object" />へのアクセスを同期するためにオブジェクトが使用される、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.SignerInfoCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.SignerInfoCollection.System#Collections#IEnumerable#GetEnumerator" />メソッドを返します、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoEnumerator" />オブジェクトに対して、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクション。</summary>
+        <returns>A<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoEnumerator" />を列挙するために使用できるオブジェクト、<see cref="T:System.Security.Cryptography.Pkcs.SignerInfoCollection" />コレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,282 @@
+<Type Name="ConfigurationPropertyAttribute" FullName="System.Configuration.ConfigurationPropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ConfigurationPropertyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ConfigurationPropertyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationPropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>宣言によって構成プロパティをインスタンス化する .NET Framework に指示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、 <xref:System.Configuration.ConfigurationPropertyAttribute> .NET Framework をインスタンス化して、装飾パラメーターの値を使用してプロパティを初期化するように指示する構成プロパティを取得するを装飾します。  
+  
+> [!NOTE]
+>  カスタム構成要素を作成する最も簡単な方法では、属性付きの (宣言) モデルを使用します。 カスタムのパブリック プロパティを宣言し、それらを<xref:System.Configuration.ConfigurationPropertyAttribute>属性。 この属性でマークされた各プロパティの .NET Framework リフレクションを使用して装飾のパラメーターを読み取り、および関連する作成<xref:System.Configuration.ConfigurationProperty>インスタンス。 プログラムのモデルを使用することもできます、この場合は、適切にカスタムのパブリック プロパティを宣言し、そのコレクションを返します。  
+  
+ .NET Framework 構成システムは、カスタム構成要素を作成するときに使用できる属性の型を提供します。 属性の型の 2 種類あります。  
+  
+1.  .NET Framework の構成要素のカスタム プロパティをインスタンス化する方法を指示する型。 これらの型は次のとおりです。  
+  
+    -   <xref:System.Configuration.ConfigurationCollectionAttribute>  
+  
+    -   <xref:System.Configuration.ConfigurationPropertyAttribute>  
+  
+2.  .NET Framework の構成要素のカスタム プロパティを検証する方法を指示する型。 これらの型は次のとおりです。  
+  
+    -   <xref:System.Configuration.IntegerValidatorAttribute>  
+  
+    -   <xref:System.Configuration.LongValidatorAttribute>  
+  
+    -   <xref:System.Configuration.RegexStringValidatorAttribute>  
+  
+    -   <xref:System.Configuration.StringValidatorAttribute>  
+  
+    -   <xref:System.Configuration.TimeSpanValidatorAttribute>  
+  
+   
+  
+## Examples  
+ 次の例は、カスタムのプロパティを定義する方法を示しています。<xref:System.Configuration.ConfigurationSection>オブジェクトを使用して、<xref:System.Configuration.ConfigurationPropertyAttribute>属性。  
+  
+ この例には、2 つのクラスが含まれています。 `UrlsSection`カスタム クラスの使用、<xref:System.Configuration.ConfigurationPropertyAttribute>を独自のプロパティを定義します。 `UsingConfigurationPropertyAttribute`クラスの使用、`UrlsSection`アプリケーション構成ファイルにカスタムのセクションを読み書きします。  
+  
+ [!code-csharp[System.Configuration.ConfigurationPropertyAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationPropertyAttribute/CS/customsection.cs#1)]
+ [!code-vb[System.Configuration.ConfigurationPropertyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationPropertyAttribute/VB/customsection.vb#1)]  
+  
+ [!code-csharp[System.Configuration.ConfigurationPropertyAttribute#21](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationPropertyAttribute/CS/ConfigurationPropertyAttribute.cs#21)]
+ [!code-vb[System.Configuration.ConfigurationPropertyAttribute#21](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationPropertyAttribute/VB/ConfigurationPropertyAttribute.vb#21)]  
+  
+ 次は、前の例で定義されているカスタムのセクションを含む構成ファイルの抜粋です。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+    <configSections>  
+        <section name="CustomSection" type="UrlsSection, UsingConfigurationPropertyAttribute, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />  
+    </configSections>  
+    <CustomSection name="Contoso" url="http://www.contoso.com" />  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationPropertyAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationPropertyAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Configuration.ConfigurationProperty" />定義されているオブジェクト。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationPropertyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public object DefaultValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationPropertyAttribute.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または装飾されたプロパティの既定値を設定します。</summary>
+        <value>装飾された構成要素のプロパティの既定値を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationPropertyAttribute.DefaultValue%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationPropertyAttribute#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationPropertyAttribute/CS/customsection.cs#3)]
+ [!code-vb[System.Configuration.ConfigurationPropertyAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationPropertyAttribute/VB/customsection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultCollection">
+      <MemberSignature Language="C#" Value="public bool IsDefaultCollection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDefaultCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationPropertyAttribute.IsDefaultCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または装飾された構成プロパティの既定のプロパティのコレクションであるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プロパティは、要素の既定のコレクションを表す場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationPropertyAttribute.IsDefaultCollection%2A>装飾されたプロパティがコレクションではない場合、プロパティの値は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKey">
+      <MemberSignature Language="C#" Value="public bool IsKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsKey" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationPropertyAttribute.IsKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または装飾された要素のプロパティのキー プロパティであるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プロパティ コレクションの要素のキー プロパティである場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationPropertyAttribute.IsKey%2A>プロパティは、装飾するプロパティがコレクションである場合にのみ適用されます。 ない効果のいずれかのプロパティは、コレクションではない場合。 複数の要素としてマークできる<xref:System.Configuration.ConfigurationPropertyAttribute.IsKey%2A>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationPropertyAttribute.IsKey%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationPropertyAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationPropertyAttribute/CS/customsection.cs#2)]
+ [!code-vb[System.Configuration.ConfigurationPropertyAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationPropertyAttribute/VB/customsection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRequired">
+      <MemberSignature Language="C#" Value="public bool IsRequired { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRequired" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationPropertyAttribute.IsRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または装飾された要素のプロパティが必要かどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プロパティが必要な場合です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationPropertyAttribute.DefaultValue%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationPropertyAttribute#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationPropertyAttribute/CS/customsection.cs#3)]
+ [!code-vb[System.Configuration.ConfigurationPropertyAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationPropertyAttribute/VB/customsection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationPropertyAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>装飾された構成要素プロパティの名前を取得します。</summary>
+        <value>装飾された構成要素のプロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationPropertyOptions Options { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.ConfigurationPropertyOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationPropertyAttribute.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Configuration.ConfigurationPropertyOptions" />装飾された構成要素プロパティ。</summary>
+        <value>1 つ、<see cref="T:System.Configuration.ConfigurationPropertyOptions" />プロパティに関連付けられている列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,156 @@
+<Type Name="ToolStripLayoutStyle" FullName="System.Windows.Forms.ToolStripLayoutStyle">
+  <TypeSignature Language="C#" Value="public enum ToolStripLayoutStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ToolStripLayoutStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripLayoutStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定できる配置を指定の項目を<see cref="T:System.Windows.Forms.ToolStrip" />表示されることができます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 制御する<xref:System.Windows.Forms.ToolStrip>のメンバーのいずれかを選択してレイアウト<xref:System.Windows.Forms.ToolStripLayoutStyle>で、<xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A>プロパティです。  
+  
+#### <a name="stack-layouts"></a>スタックのレイアウト  
+ スタックの両端で互いの横にある項目の配置は、<xref:System.Windows.Forms.ToolStrip>です。 次の一覧では、スタックのレイアウトについて説明します。  
+  
+-   StackWithOverflow では、既定値です。 この設定により、<xref:System.Windows.Forms.ToolStripLayoutStyle.StackWithOverflow>でに従ってで自動的にそのレイアウトを変更する、<xref:System.Windows.Forms.ToolStrip.Orientation%2A>プロパティをドラッグして、ドッキングのシナリオを処理します。  
+  
+-   VerticalStackWithOverflow レンダリング、<xref:System.Windows.Forms.ToolStrip.Orientation%2A>互いの横にあるアイテムを垂直方向にします。  
+  
+-   HorizontalStackWithOverflow レンダリング、<xref:System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow>水平方向の横にある他の項目。  
+  
+#### <a name="other-features-of-stack-layouts"></a>スタックのレイアウトの他の機能  
+ <xref:System.Windows.Forms.ToolStripItem.Alignment%2A>最後の決定、<xref:System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow>項目を揃えるためです。  
+  
+ ときに項目に収まらない場合、 <xref:System.Windows.Forms.ToolStrip>、オーバーフロー ボタンが自動的に表示されます。 <xref:System.Windows.Forms.ToolStripItem.Overflow%2A>プロパティの設定は、常に、必要に応じて、または never オーバーフロー領域に項目が表示されるかどうかを決定します。  
+  
+ <xref:System.Windows.Forms.ToolStrip.LayoutCompleted>イベントを調査できます、<xref:System.Windows.Forms.ToolStripItem.Placement%2A>項目がメイン上に配置するかどうかを決定するプロパティ<xref:System.Windows.Forms.ToolStripItem.Overflow%2A>、オーバーフロー <xref:System.Windows.Forms.ToolStrip.LayoutCompleted>、またはそれが現在表示されていないすべての場合。 項目が表示されない理由、一般的な原因としては、項目が、メインに収まらなかった<xref:System.Windows.Forms.ToolStripItem.Placement%2A>とその<xref:System.Windows.Forms.ToolStripItem.Overflow%2A>プロパティに設定された<xref:System.Windows.Forms.ToolStripItemOverflow>です。  
+  
+ ように、<xref:System.Windows.Forms.ToolStrip>に配置して移動可能な<xref:System.Windows.Forms.ToolStripPanel>と設定、<xref:System.Windows.Forms.ToolStrip.GripStyle%2A>に<xref:System.Windows.Forms.ToolStripGripStyle>です。  
+  
+#### <a name="other-layout-options"></a>その他のレイアウト オプション  
+ その他のレイアウト オプションは、フローとテーブルです。  
+  
+#### <a name="flow-layout"></a>フロー レイアウト  
+ フロー レイアウトの既定値は、 <xref:System.Windows.Forms.ContextMenuStrip>、 <xref:System.Windows.Forms.ToolStripDropDownMenu>、および<xref:System.Windows.Forms.ToolStripOverflow>です。 に似ていますが、<xref:System.Windows.Forms.FlowLayoutPanel>です。 フロー レイアウトの機能は次のとおりです。  
+  
+-   すべての機能の<xref:System.Windows.Forms.FlowLayoutPanel>によって公開される、<xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A>プロパティです。 キャストする必要があります、<xref:System.Windows.Forms.LayoutSettings>クラスを<xref:System.Windows.Forms.FlowLayoutSettings>クラスです。  
+  
+-   使用することができます、<xref:System.Windows.Forms.ToolStripItem.Dock%2A>と<xref:System.Windows.Forms.ToolStripItem.Anchor%2A>行内でアイテムを揃えるためのコードでのプロパティです。  
+  
+-   <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> プロパティは無視されます。  
+  
+-   <xref:System.Windows.Forms.ToolStrip.LayoutCompleted>イベントを調査できます、<xref:System.Windows.Forms.ToolStripItem.Placement%2A>項目がメイン上に配置するかどうかを決定するプロパティ<xref:System.Windows.Forms.ToolStrip>収まりませんでしたか。  
+  
+-   ハンドルは、表示されませんし、そのため、<xref:System.Windows.Forms.ToolStrip>でフローのレイアウト スタイルで、<xref:System.Windows.Forms.ToolStripPanel>移動することはできません。  
+  
+-   <xref:System.Windows.Forms.ToolStripItem.Anchor%2A>オーバーフロー ボタンは表示されず、および<xref:System.Windows.Forms.ToolStripItem.Overflow%2A>は無視されます。  
+  
+#### <a name="table-layout"></a>テーブル レイアウト  
+ テーブル レイアウトの既定値は、<xref:System.Windows.Forms.StatusStrip>です。 似ています<xref:System.Windows.Forms.TableLayoutPanel>です。 テーブル レイアウトの機能は次のとおりです。  
+  
+-   すべての機能の<xref:System.Windows.Forms.TableLayoutPanel>によって公開される、<xref:System.Windows.Forms.ToolStrip.LayoutSettings%2A>プロパティです。 キャストする必要があります、<xref:System.Windows.Forms.LayoutSettings>クラスを<xref:System.Windows.Forms.TableLayoutSettings>クラスです。  
+  
+-   使用することができます、<xref:System.Windows.Forms.ToolStripItem.Dock%2A>と<xref:System.Windows.Forms.ToolStripItem.Anchor%2A>テーブル セル内のアイテムを整列するコードでのプロパティです。  
+  
+-   <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> プロパティは無視されます。  
+  
+-   <xref:System.Windows.Forms.ToolStrip.LayoutCompleted>イベントを調査できます、<xref:System.Windows.Forms.ToolStripItem.Placement%2A>項目がメイン上に配置するかどうかを決定するプロパティ<xref:System.Windows.Forms.ToolStripLayoutStyle.Table>収まりませんでしたか。  
+  
+-   ハンドルは表示されず、および、<xref:System.Windows.Forms.ToolStrip>テーブル レイアウト スタイル内で、<xref:System.Windows.Forms.ToolStripPanel>移動することはできません。  
+  
+-   <xref:System.Windows.Forms.ToolStrip>オーバーフロー ボタンは表示されず、および<xref:System.Windows.Forms.ToolStripItem.Overflow%2A>は無視されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Flow">
+      <MemberSignature Language="C#" Value="Flow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ToolStripLayoutStyle Flow = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolStripLayoutStyle.Flow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripLayoutStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目が水平方向または必要に応じて垂直方向にフローするを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalStackWithOverflow">
+      <MemberSignature Language="C#" Value="HorizontalStackWithOverflow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ToolStripLayoutStyle HorizontalStackWithOverflow = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripLayoutStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目が水平方向にレイアウトは、必要に応じてオーバーフローを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StackWithOverflow">
+      <MemberSignature Language="C#" Value="StackWithOverflow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ToolStripLayoutStyle StackWithOverflow = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolStripLayoutStyle.StackWithOverflow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripLayoutStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目が自動的にレイアウトされることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="Table" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ToolStripLayoutStyle Table = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolStripLayoutStyle.Table" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripLayoutStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目を左揃えを配置することを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalStackWithOverflow">
+      <MemberSignature Language="C#" Value="VerticalStackWithOverflow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ToolStripLayoutStyle VerticalStackWithOverflow = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripLayoutStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目に垂直方向にレイアウトし、コントロール内で中央揃えで配置し、必要に応じてオーバーフローことを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

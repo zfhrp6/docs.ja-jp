@@ -1,0 +1,226 @@
+<Type Name="ToolTaskExtension" FullName="Microsoft.Build.Tasks.ToolTaskExtension">
+  <TypeSignature Language="C#" Value="public abstract class ToolTaskExtension : Microsoft.Build.Utilities.ToolTask" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ToolTaskExtension extends Microsoft.Build.Utilities.ToolTask" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.ToolTaskExtension" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Utilities.ToolTask</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コマンド ライン ツールをラップするタスクを構築するための拡張ユーティリティ メソッドを構成します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="AddCommandLineCommands">
+      <MemberSignature Language="C#" Value="protected virtual void AddCommandLineCommands (Microsoft.Build.Tasks.CommandLineBuilderExtension commandLine);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void AddCommandLineCommands(class Microsoft.Build.Tasks.CommandLineBuilderExtension commandLine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ToolTaskExtension.AddCommandLineCommands(Microsoft.Build.Tasks.CommandLineBuilderExtension)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandLine" Type="Microsoft.Build.Tasks.CommandLineBuilderExtension" />
+      </Parameters>
+      <Docs>
+        <param name="commandLine">格納する <see cref="T:Microsoft.Build.Tasks.CommandLineBuilderExtension" />。</param>
+        <summary>指定した <see cref="T:Microsoft.Build.Tasks.CommandLineBuilderExtension" /> にスイッチと、コマンド ライン ツールが応答ファイルからではなく、コマンド ラインから実行する必要があることを示す他の情報を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddResponseFileCommands">
+      <MemberSignature Language="C#" Value="protected virtual void AddResponseFileCommands (Microsoft.Build.Tasks.CommandLineBuilderExtension commandLine);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void AddResponseFileCommands(class Microsoft.Build.Tasks.CommandLineBuilderExtension commandLine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ToolTaskExtension.AddResponseFileCommands(Microsoft.Build.Tasks.CommandLineBuilderExtension)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandLine" Type="Microsoft.Build.Tasks.CommandLineBuilderExtension" />
+      </Parameters>
+      <Docs>
+        <param name="commandLine">格納する <see cref="T:Microsoft.Build.Tasks.CommandLineBuilderExtension" />。</param>
+        <summary>指定した入力<see cref="T:Microsoft.Build.Tasks.CommandLineBuilderExtension" />にスイッチと他の情報を応答ファイルから、コマンド ライン ツールを実行できます。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Bag">
+      <MemberSignature Language="C#" Value="protected System.Collections.Hashtable Bag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Hashtable Bag" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ToolTaskExtension.Bag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タスクの派生クラスによって使用されるパラメーターのコレクションを取得します。</summary>
+        <value>タスクの派生クラスによって使用されるパラメーターのコレクション。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCommandLineCommands">
+      <MemberSignature Language="C#" Value="protected override string GenerateCommandLineCommands ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GenerateCommandLineCommands() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ToolTaskExtension.GenerateCommandLineCommands" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コマンド ライン ツールが応答ファイルからではなく、コマンド ラインから直接実行する必要があることを示す、スイッチと他の情報を取得します。</summary>
+        <returns>コマンド ライン ツールが応答ファイルからではなく、コマンド ラインから直接実行する必要があるスイッチと他の情報を格納する文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateResponseFileCommands">
+      <MemberSignature Language="C#" Value="protected override string GenerateResponseFileCommands ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GenerateResponseFileCommands() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ToolTaskExtension.GenerateResponseFileCommands" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>応答ファイルを指定するためにコマンド ライン ツールで使用されるスイッチを取得します。</summary>
+        <returns>応答ファイルを指定するためにコマンド ライン ツールで使用されるスイッチ。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoolParameterWithDefault">
+      <MemberSignature Language="C#" Value="protected bool GetBoolParameterWithDefault (string parameterName, bool defaultValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance bool GetBoolParameterWithDefault(string parameterName, bool defaultValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ToolTaskExtension.GetBoolParameterWithDefault(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="defaultValue" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">返されるパラメーターの名前。</param>
+        <param name="defaultValue">場合に返す値<c>parameterName</c>に存在しません、<see cref="P:Microsoft.Build.Tasks.ToolTaskExtension.Bag" />です。</param>
+        <summary>指定したブール型のパラメーターの値を取得します。</summary>
+        <returns>パラメーター値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`parameterName`に存在しません、 <xref:Microsoft.Build.Tasks.ToolTaskExtension.Bag%2A>、`defaultValue`が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetIntParameterWithDefault">
+      <MemberSignature Language="C#" Value="protected int GetIntParameterWithDefault (string parameterName, int defaultValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance int32 GetIntParameterWithDefault(string parameterName, int32 defaultValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ToolTaskExtension.GetIntParameterWithDefault(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="defaultValue" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">返されるパラメーターの名前。</param>
+        <param name="defaultValue">場合に返す値<c>parameterName</c>に存在しません、<see cref="P:Microsoft.Build.Tasks.ToolTaskExtension.Bag" />です。</param>
+        <summary>指定した整数パラメーターの値を取得します。</summary>
+        <returns>パラメーター値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`parameterName`に存在しません、 <xref:Microsoft.Build.Tasks.ToolTaskExtension.Bag%2A>、`defaultValue`が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HasLoggedErrors">
+      <MemberSignature Language="C#" Value="protected override bool HasLoggedErrors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasLoggedErrors" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ToolTaskExtension.HasLoggedErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この ToolTask がエラーを記録したかどうかを返します。</summary>
+        <value>
+          <see langword="true" />エラーを記録した場合<see langword="false" />場合それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Log">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Utilities.TaskLoggingHelper Log { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Utilities.TaskLoggingHelper Log" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ToolTaskExtension.Log" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Utilities.TaskLoggingHelper</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得、<see cref="T:Microsoft.Build.Tasks.TaskLoggingHelperExtension" />タスク ログ メソッドを含むクラスです。</summary>
+        <value>インスタンス、<see cref="T:Microsoft.Build.Tasks.TaskLoggingHelperExtension" />タスク ログ メソッドを含むクラスです。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

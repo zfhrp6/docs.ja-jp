@@ -1,0 +1,308 @@
+<Type Name="ProjectMetadata" FullName="Microsoft.Build.Evaluation.ProjectMetadata">
+  <TypeSignature Language="C#" Value="public class ProjectMetadata : IEquatable&lt;Microsoft.Build.Evaluation.ProjectMetadata&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProjectMetadata extends System.Object implements class System.IEquatable`1&lt;class Microsoft.Build.Evaluation.ProjectMetadata&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Evaluation.ProjectMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;Microsoft.Build.Evaluation.ProjectMetadata&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{Name}={EvaluatedValue} [{xml.Value}]")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表すには、デザイン時のメタデータが評価されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ % (Filename) などの組み込みのメタデータを表すには使用されません。 メタデータは、プロジェクトのソース コードに関連付けられたは常にします。  
+  
+ メタデータに含まれるか、<xref:Microsoft.Build.Evaluation.ProjectItemDefinition>または<xref:Microsoft.Build.Evaluation.ProjectItem>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ConditionLocation">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ElementLocation ConditionLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ElementLocation ConditionLocation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectMetadata.ConditionLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ElementLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Condition 属性の場所です。</summary>
+        <value>条件属性の位置を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluatedValue">
+      <MemberSignature Language="C#" Value="public string EvaluatedValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EvaluatedValue" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectMetadata.EvaluatedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価されたメタデータ値を取得します。</summary>
+        <value>評価されたメタデータ値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 直接設定することはできません: 未評価の値のみを設定することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsImported">
+      <MemberSignature Language="C#" Value="public bool IsImported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsImported" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectMetadata.IsImported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータがインポートされたファイルから発生したかどうかを判断します。</summary>
+        <value>メタデータがインポートされたファイルから作成された場合は true を返しますfalse それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemType">
+      <MemberSignature Language="C#" Value="public string ItemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ItemType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectMetadata.ItemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>包含の項目の定義または項目の項目の種類を取得します。</summary>
+        <value>包含の項目の定義または項目の項目の種類を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ElementLocation Location { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ElementLocation Location" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectMetadata.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ElementLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の位置。</summary>
+        <value>要素の位置を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectMetadata.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータの名前を取得します。</summary>
+        <value>メタデータの名前を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Predecessor">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Evaluation.ProjectMetadata Predecessor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Evaluation.ProjectMetadata Predecessor" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectMetadata.Predecessor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.ProjectMetadata</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価中にこのメタデータによって上書きされました (項目の定義またはアイテムの場合) から最後のメタデータを取得します。</summary>
+        <value>値が評価中にこのメタデータによってオーバーライドされた (項目の定義またはアイテムの場合) から、最後のメタデータを返します。 メタデータがオーバーライドされていない場合は null を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、論理プロジェクト ファイル内の上にあると、同じ項目の種類の定義に含まれており、および条件が true に評価、同じ名前を持つすべてのメタデータを検索します。 メタデータは、アイテムに含まれる、このメソッドは、以前のメタデータと同じ名前の条件が true に評価される項目を検索します。 項目の定義は、項目の前に検索されます。  
+  
+ 最後に変更されてから、プロジェクトが再評価されていません、この値が正しく可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Project">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Evaluation.Project Project { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Evaluation.Project Project" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectMetadata.Project" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.Project</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメタデータを含むプロジェクトを取得します。</summary>
+        <value>Null ではありませんが、このメタデータが含まれているプロジェクトを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IEquatable&lt;Microsoft.Build.Evaluation.ProjectMetadata&gt;.Equals">
+      <MemberSignature Language="C#" Value="bool IEquatable&lt;ProjectMetadata&gt;.Equals (Microsoft.Build.Evaluation.ProjectMetadata other);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.IEquatable&lt;Microsoft.Build.Evaluation.ProjectMetadata&gt;.Equals(class Microsoft.Build.Evaluation.ProjectMetadata other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Evaluation.ProjectMetadata.System#IEquatable&lt;Microsoft#Build#Evaluation#ProjectMetadata&gt;#Equals(Microsoft.Build.Evaluation.ProjectMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="Microsoft.Build.Evaluation.ProjectMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="other">比較対象となるプロジェクトのメタデータ。</param>
+        <summary>このプロジェクトのメタデータが指定のプロジェクトのメタデータと等しいかを比較します。</summary>
+        <returns>プロジェクトのメタデータが等しい場合は true を返します。それ以外の場合は、false を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnevaluatedValue">
+      <MemberSignature Language="C#" Value="public string UnevaluatedValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UnevaluatedValue" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectMetadata.UnevaluatedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または未評価のメタデータ値を設定します。</summary>
+        <value>未評価のメタデータ値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Setter メソッド未評価の値と評価した値の両方を更新しますが再評価されるまでプロジェクト内の他に何も影響しません。  
+  
+ たとえば、--"i"の種類のアイテムのメタデータ"m"をという名前を変更する場合には影響しません"j"から評価される"@(j -> '% (m)') で"再評価されるまでです。 -には、評価によって変更、「$(p)」、"m"の未評価の値が設定されている場合、評価された値設定されます「$(p)」を再評価されるまでです。  
+  
+ を通じてメタデータを設定、 <xref:Microsoft.Build.Evaluation.ProjectItem> 、関連付けられている場合があります<xref:Microsoft.Build.Construction.ProjectItemElement>項目要素が項目の一覧、ワイルドカード、またはセミコロン式から作成された場合は、分割します。 特定のアイテムにのみ影響を設定することを意味します。  
+  
+ プロジェクトのメタデータをメタデータの設定は行われません、分割、基になるを使用してすべての項目に影響するという目的が発生するので<xref:Microsoft.Build.Construction.ProjectMetadataElement>です。  
+  
+ 含むプロジェクトは、変更済みとしてマークされます。 評価されていない値は、格納するエスケープ文字シーケンスを必要に応じてと見なされます。  
+  
+ このメソッド可能性があります自己一貫性のある状態で、プロジェクトを残しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Xml">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectMetadataElement Xml { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ProjectMetadataElement Xml" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Evaluation.ProjectMetadata.Xml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectMetadataElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているプロジェクトのメタデータ要素を取得します。</summary>
+        <value>Null することはできませんが、関連付けられているプロジェクトのメタデータ要素を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

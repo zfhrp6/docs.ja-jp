@@ -1,0 +1,1802 @@
+<Type Name="DataGridViewColumnCollection" FullName="System.Windows.Forms.DataGridViewColumnCollection">
+  <TypeSignature Language="C#" Value="public class DataGridViewColumnCollection : System.Windows.Forms.BaseCollection, System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewColumnCollection extends System.Windows.Forms.BaseCollection implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewColumnCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.BaseCollection</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.DataGridView" /> コントロールに含まれる <see cref="T:System.Windows.Forms.DataGridViewColumn" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスを取得することができます、<xref:System.Windows.Forms.DataGridView.Columns%2A>のプロパティ、<xref:System.Windows.Forms.DataGridView>コントロール。 コレクションを使用してコントロールへの参照を保持する、<xref:System.Windows.Forms.DataGridViewColumnCollection.DataGridView%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、この型の使用を示しています。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc2#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc2/cs/misc2.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc2#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc2/vb/misc2.vb#20)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewColumnCollection (System.Windows.Forms.DataGridView dataGridView);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataGridView dataGridView) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.#ctor(System.Windows.Forms.DataGridView)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataGridView" Type="System.Windows.Forms.DataGridView" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridView"><see cref="T:System.Windows.Forms.DataGridView" />このコレクションを作成します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewColumnCollection" />クラスを指定された<see cref="T:System.Windows.Forms.DataGridView" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual int Add (System.Windows.Forms.DataGridViewColumn dataGridViewColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Add(class System.Windows.Forms.DataGridViewColumn dataGridViewColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.Add(System.Windows.Forms.DataGridViewColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataGridViewColumn" Type="System.Windows.Forms.DataGridViewColumn" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridViewColumn">追加する <see cref="T:System.Windows.Forms.DataGridViewColumn" />。</param>
+        <summary>指定した列をコレクションに追加します。</summary>
+        <returns>列のインデックス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このメソッドの使用方法を示しています。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc2#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc2/cs/misc2.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc2#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc2/vb/misc2.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataGridViewColumn" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" />  
+  
+ または  
+  
+ <paramref name="dataGridViewColumn" />既にに属している、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。  
+  
+ または  
+  
+ <paramref name="dataGridViewColumn" /> <see cref="P:System.Windows.Forms.DataGridViewColumn.SortMode" />プロパティの値が<see cref="F:System.Windows.Forms.DataGridViewColumnSortMode.Automatic" />と<see cref="P:System.Windows.Forms.DataGridView.SelectionMode" />プロパティの値が<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect" />または<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect" />です。 コントロールを使用して<see cref="M:System.Windows.Forms.DataGridView.System#ComponentModel#ISupportInitialize#BeginInit" />と<see cref="M:System.Windows.Forms.DataGridView.System#ComponentModel#ISupportInitialize#EndInit" />を一時的に競合するプロパティ値を設定する方法です。  
+  
+ または  
+  
+ <paramref name="dataGridViewColumn" /> <see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />プロパティの値が<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader" />と<see cref="P:System.Windows.Forms.DataGridView.ColumnHeadersVisible" />プロパティの値が<see langword="false" />です。  
+  
+ または  
+  
+ <paramref name="dataGridViewColumn" /><see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />のプロパティの値<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill" />と<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />のプロパティの値<see langword="true" />です。  
+  
+ または  
+  
+ <paramref name="dataGridViewColumn" /><see cref="P:System.Windows.Forms.DataGridViewColumn.FillWeight" /> 、結合された原因となるプロパティの値<see cref="P:System.Windows.Forms.DataGridViewColumn.FillWeight" />65,535 以下に、コントロール内のすべての列の値。  
+  
+ または  
+  
+ <paramref name="dataGridViewColumn" /><see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />と<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />プロパティの値は逆の隣接する列のセット間で情報が表示される<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />プロパティの値。  
+  
+ または  
+  
+ <see cref="T:System.Windows.Forms.DataGridView" />コントロールには、少なくとも 1 つの行が含まれていると<paramref name="dataGridViewColumn" />が、<see cref="P:System.Windows.Forms.DataGridViewColumn.CellType" />のプロパティの値<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual int Add (string columnName, string headerText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Add(string columnName, string headerText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+        <Parameter Name="headerText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">列を参照される名前です。</param>
+        <param name="headerText">列のヘッダーのテキスト。</param>
+        <summary>追加、<see cref="T:System.Windows.Forms.DataGridViewTextBoxColumn" />指定された列名とコレクションに列ヘッダーのテキストを使用します。</summary>
+        <returns>列のインデックス番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `columnName`と`headerText`パラメーターに関連する、<xref:System.Windows.Forms.DataGridViewColumn.Name%2A>と<xref:System.Windows.Forms.DataGridViewColumn.HeaderText%2A>プロパティ、それぞれします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" />  
+  
+ または  
+  
+ <see cref="P:System.Windows.Forms.DataGridView.SelectionMode" />プロパティの値が<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect" />または<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect" />、既定の列と競合する<see cref="P:System.Windows.Forms.DataGridViewColumn.SortMode" />のプロパティの値<see cref="F:System.Windows.Forms.DataGridViewColumnSortMode.Automatic" />です。  
+  
+ または  
+  
+ 既定の列<see cref="P:System.Windows.Forms.DataGridViewColumn.FillWeight" />100 のプロパティの値は、結合になる<see cref="P:System.Windows.Forms.DataGridViewColumn.FillWeight" />65,535 以下に、コントロール内のすべての列の値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public virtual void AddRange (params System.Windows.Forms.DataGridViewColumn[] dataGridViewColumns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddRange(class System.Windows.Forms.DataGridViewColumn[] dataGridViewColumns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.AddRange(System.Windows.Forms.DataGridViewColumn[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataGridViewColumns" Type="System.Windows.Forms.DataGridViewColumn[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="dataGridViewColumns">配列<see cref="T:System.Windows.Forms.DataGridViewColumn" />を追加するオブジェクト。</param>
+        <summary>列の範囲をコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このメソッドの使用方法を示しています。 この例で使用できる例の一部である[する方法: Windows フォーム DataGridView コントロールのサイズ変更モードを設定](~/docs/framework/winforms/controls/how-to-set-the-sizing-modes-of-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewSizingScenarios#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/CS/sizingscenarios.cs#40)]
+ [!code-vb[System.Windows.Forms.DataGridViewSizingScenarios#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSizingScenarios/vb/sizingscenarios.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataGridViewColumns" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" />  
+  
+ または  
+  
+ 少なくとも 1 つの値の<paramref name="dataGridViewColumns" />は<see langword="null" />します。  
+  
+ または  
+  
+ 少なくとも 1 つの列の<paramref name="dataGridViewColumns" />既にに属している、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。  
+  
+ または  
+  
+ 少なくとも 1 つの列の<paramref name="dataGridViewColumns" />が、<see cref="P:System.Windows.Forms.DataGridViewColumn.CellType" />のプロパティの値<see langword="null" />と<see cref="T:System.Windows.Forms.DataGridView" />コントロールには、少なくとも 1 つの行が含まれています。  
+  
+ または  
+  
+ 少なくとも 1 つの列の<paramref name="dataGridViewColumns" />が、<see cref="P:System.Windows.Forms.DataGridViewColumn.SortMode" />のプロパティの値<see cref="F:System.Windows.Forms.DataGridViewColumnSortMode.Automatic" />と<see cref="P:System.Windows.Forms.DataGridView.SelectionMode" />プロパティの値が<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect" />または<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect" />です。 コントロールを使用して<see cref="M:System.Windows.Forms.DataGridView.System#ComponentModel#ISupportInitialize#BeginInit" />と<see cref="M:System.Windows.Forms.DataGridView.System#ComponentModel#ISupportInitialize#EndInit" />を一時的に競合するプロパティ値を設定する方法です。  
+  
+ または  
+  
+ 少なくとも 1 つの列の<paramref name="dataGridViewColumns" />が、<see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />のプロパティの値<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader" />と<see cref="P:System.Windows.Forms.DataGridView.ColumnHeadersVisible" />プロパティの値が<see langword="false" />です。  
+  
+ または  
+  
+ 少なくとも 1 つの列の<paramref name="dataGridViewColumns" />が、<see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />のプロパティの値<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill" />と<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />のプロパティの値<see langword="true" />です。  
+  
+ または  
+  
+ 内の列<paramref name="dataGridViewColumns" />が<see cref="P:System.Windows.Forms.DataGridViewColumn.FillWeight" />、結合された原因となるプロパティの値<see cref="P:System.Windows.Forms.DataGridViewColumn.FillWeight" />65,535 以下に、コントロール内のすべての列の値。  
+  
+ または  
+  
+ 少なくとも 2 つの値の<paramref name="dataGridViewColumns" />同じへの参照は、<see cref="T:System.Windows.Forms.DataGridViewColumn" />です。  
+  
+ または  
+  
+ 少なくとも 1 つの列の<paramref name="dataGridViewColumns" />が<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />と<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />プロパティの値は逆の隣接する列のセット間で情報が表示される<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />プロパティの値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを空にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このメソッドの使用方法を示しています。 この例で使用できる例の一部である[Windows フォーム DataGridView コントロールで列の塗りつぶしモード](~/docs/framework/winforms/controls/column-fill-mode-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewFillColumnsDemo#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/CS/fillcolumns.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewFillColumnsDemo#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/vb/fillcolumns.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CollectionChangeEventHandler CollectionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DataGridViewColumnCollection.CollectionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.CollectionChangeEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの変更には、列の追加や削除などがあります。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridViewColumnCollection.CollectionChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridViewColumnCollection>という`DataGridViewColumnCollection1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridViewColumnCollection.CollectionChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#372](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#372)]
+ [!code-vb[System.Windows.Forms.EventExamples#372](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#372)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public virtual bool Contains (string columnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(string columnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">検索する列の名前。</param>
+        <summary>コレクションに指定した名前で参照される列が含まれているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />コレクション内の列が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって、列の名前が示されている、<xref:System.Windows.Forms.DataGridViewColumn.Name%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="columnName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public virtual bool Contains (System.Windows.Forms.DataGridViewColumn dataGridViewColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(class System.Windows.Forms.DataGridViewColumn dataGridViewColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.Contains(System.Windows.Forms.DataGridViewColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataGridViewColumn" Type="System.Windows.Forms.DataGridViewColumn" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridViewColumn"><see cref="T:System.Windows.Forms.DataGridViewColumn" />を探します。</param>
+        <summary>コレクションに指定した列が含まれているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定した列がコレクション内にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Windows.Forms.DataGridViewColumn[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Windows.Forms.DataGridViewColumn[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.CopyTo(System.Windows.Forms.DataGridViewColumn[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Windows.Forms.DataGridViewColumn[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">転送先<see cref="T:System.Windows.Forms.DataGridViewColumn" />配列。</param>
+        <param name="index">コピー先の配列のコピーを開始する位置のインデックス。</param>
+        <summary>コレクションから項目を渡された配列にコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataGridView">
+      <MemberSignature Language="C#" Value="protected System.Windows.Forms.DataGridView DataGridView { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridView DataGridView" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumnCollection.DataGridView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataGridView" />基になるコレクションが列に関連する操作を実行します。</summary>
+        <value>
+          <see cref="T:System.Windows.Forms.DataGridView" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumnCount">
+      <MemberSignature Language="C#" Value="public int GetColumnCount (System.Windows.Forms.DataGridViewElementStates includeFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetColumnCount(valuetype System.Windows.Forms.DataGridViewElementStates includeFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.GetColumnCount(System.Windows.Forms.DataGridViewElementStates)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeFilter" Type="System.Windows.Forms.DataGridViewElementStates" />
+      </Parameters>
+      <Docs>
+        <param name="includeFilter">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewElementStates" />を含めるようにフィルターを表す値です。</param>
+        <summary>指定したフィルター条件に一致する列の数を返します。</summary>
+        <returns>フィルター条件に一致する列の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このメソッドを使用して、選択した列の数を取得する方法を示しています。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewSelectedCollections#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSelectedCollections/CS/DataGridViewSelectedCollections.cs#30)]
+ [!code-vb[System.Windows.Forms.DataGridViewSelectedCollections#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSelectedCollections/VB/DataGridViewSelectedCollections.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="includeFilter" />有効なビットごとの組み合わせではない<see cref="T:System.Windows.Forms.DataGridViewElementStates" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumnsWidth">
+      <MemberSignature Language="C#" Value="public int GetColumnsWidth (System.Windows.Forms.DataGridViewElementStates includeFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetColumnsWidth(valuetype System.Windows.Forms.DataGridViewElementStates includeFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.GetColumnsWidth(System.Windows.Forms.DataGridViewElementStates)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeFilter" Type="System.Windows.Forms.DataGridViewElementStates" />
+      </Parameters>
+      <Docs>
+        <param name="includeFilter">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewElementStates" />を含めるようにフィルターを表す値です。</param>
+        <summary>(ピクセル単位) を指定したフィルター条件を満たす列のすべてを表示するために必要な幅を返します。</summary>
+        <returns>幅 (ピクセル単位) 必要があるすべてのフィルター条件に一致する列を表示します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このメソッドの使用方法を示しています。 この例で使用できる例の一部である[する方法: Windows フォーム DataGridView コントロールで行の外観をカスタマイズ](~/docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewRowPainting#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/CS/datagridviewrowpainting.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewRowPainting#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/VB/datagridviewrowpainting.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="includeFilter" />有効なビットごとの組み合わせではない<see cref="T:System.Windows.Forms.DataGridViewElementStates" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFirstColumn">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewColumn GetFirstColumn (System.Windows.Forms.DataGridViewElementStates includeFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataGridViewColumn GetFirstColumn(valuetype System.Windows.Forms.DataGridViewElementStates includeFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.GetFirstColumn(System.Windows.Forms.DataGridViewElementStates)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeFilter" Type="System.Windows.Forms.DataGridViewElementStates" />
+      </Parameters>
+      <Docs>
+        <param name="includeFilter">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewElementStates" />を含めるようにフィルターを表す値です。</param>
+        <summary>指定されたインクルード フィルター条件に一致する表示順序で最初の列を返します。</summary>
+        <returns>指定したフィルター条件に一致する表示順の最初の列または<see langword="null" />列が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初の列の表示順序には、最下位の列は、<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>列が実際に画面に表示するかどうかに関係なく、値。  
+  
+ このメソッドを使用して、インデックス値を直接比較することがなく、指定した条件に一致する最初の列を判断できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.DataGridViewColumnCollection.GetFirstColumn%2A>メソッドを最初に表示される列と表示されている最後の列を交換します。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#170](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#170)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#170](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#170)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#170](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#170)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="includeFilter" />有効なビットごとの組み合わせではない<see cref="T:System.Windows.Forms.DataGridViewElementStates" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFirstColumn">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewColumn GetFirstColumn (System.Windows.Forms.DataGridViewElementStates includeFilter, System.Windows.Forms.DataGridViewElementStates excludeFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataGridViewColumn GetFirstColumn(valuetype System.Windows.Forms.DataGridViewElementStates includeFilter, valuetype System.Windows.Forms.DataGridViewElementStates excludeFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.GetFirstColumn(System.Windows.Forms.DataGridViewElementStates,System.Windows.Forms.DataGridViewElementStates)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeFilter" Type="System.Windows.Forms.DataGridViewElementStates" />
+        <Parameter Name="excludeFilter" Type="System.Windows.Forms.DataGridViewElementStates" />
+      </Parameters>
+      <Docs>
+        <param name="includeFilter">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewElementStates" />への追加を適用するフィルターを表す値です。</param>
+        <param name="excludeFilter">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewElementStates" />の除外を適用するフィルターを表す値です。</param>
+        <summary>特定の包含フィルターと除外フィルターの要件を満たして表示順で最初の列を返します。</summary>
+        <returns>指定したフィルター条件に一致する表示順の最初の列または<see langword="null" />列が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初の列の表示順序には、最下位の列は、<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>列が実際に画面に表示するかどうかに関係なく、値。  
+  
+ このメソッドを使用して、インデックス値を直接比較することがなく、指定した条件に一致する最初の列を判断できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">少なくとも 1 つのフィルターの値が有効なビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastColumn">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewColumn GetLastColumn (System.Windows.Forms.DataGridViewElementStates includeFilter, System.Windows.Forms.DataGridViewElementStates excludeFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataGridViewColumn GetLastColumn(valuetype System.Windows.Forms.DataGridViewElementStates includeFilter, valuetype System.Windows.Forms.DataGridViewElementStates excludeFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.GetLastColumn(System.Windows.Forms.DataGridViewElementStates,System.Windows.Forms.DataGridViewElementStates)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeFilter" Type="System.Windows.Forms.DataGridViewElementStates" />
+        <Parameter Name="excludeFilter" Type="System.Windows.Forms.DataGridViewElementStates" />
+      </Parameters>
+      <Docs>
+        <param name="includeFilter">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewElementStates" />への追加を適用するフィルターを表す値です。</param>
+        <param name="excludeFilter">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewElementStates" />の除外を適用するフィルターを表す値です。</param>
+        <summary>表示順序を指定したフィルター条件を満たすには、最後の列を返します。</summary>
+        <returns>最後の表示順序を指定したフィルター条件を満たす列に表示または<see langword="null" />列が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最後の列の表示順序には、最高の値を持つ列<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>列が実際に画面に表示するかどうかに関係なく、値。  
+  
+ このメソッドを使用して、インデックス値を直接比較することがなく、指定した条件に一致する最後の列を判断できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.DataGridViewColumnCollection.GetLastColumn%2A>最後に表示される列と表示されている最初の列をスワップします。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#170](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#170)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#170](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#170)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#170](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#170)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">少なくとも 1 つのフィルターの値が有効なビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextColumn">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewColumn GetNextColumn (System.Windows.Forms.DataGridViewColumn dataGridViewColumnStart, System.Windows.Forms.DataGridViewElementStates includeFilter, System.Windows.Forms.DataGridViewElementStates excludeFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataGridViewColumn GetNextColumn(class System.Windows.Forms.DataGridViewColumn dataGridViewColumnStart, valuetype System.Windows.Forms.DataGridViewElementStates includeFilter, valuetype System.Windows.Forms.DataGridViewElementStates excludeFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.GetNextColumn(System.Windows.Forms.DataGridViewColumn,System.Windows.Forms.DataGridViewElementStates,System.Windows.Forms.DataGridViewElementStates)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataGridViewColumnStart" Type="System.Windows.Forms.DataGridViewColumn" />
+        <Parameter Name="includeFilter" Type="System.Windows.Forms.DataGridViewElementStates" />
+        <Parameter Name="excludeFilter" Type="System.Windows.Forms.DataGridViewElementStates" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridViewColumnStart">次の列の検索を開始する列です。</param>
+        <param name="includeFilter">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewElementStates" />への追加を適用するフィルターを表す値です。</param>
+        <param name="excludeFilter">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewElementStates" />の除外を適用するフィルターを表す値です。</param>
+        <summary>指定したフィルター条件に一致する表示順序に指定された列の後に、最初の列を取得します。</summary>
+        <returns>次の列を指定したフィルター条件を満たすまたは<see langword="null" />列が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の列の表示順序は、最下位の列は、<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>よりも大きな値、<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>列が実際に画面に表示するかどうかに関係なく、指定された列の値。  
+  
+ このメソッドを使用して、インデックス値を直接比較することがなく、指定した条件に一致する現在の列の後、次の列を確認できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataGridViewColumnStart" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">少なくとも 1 つのフィルターの値が有効なビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreviousColumn">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewColumn GetPreviousColumn (System.Windows.Forms.DataGridViewColumn dataGridViewColumnStart, System.Windows.Forms.DataGridViewElementStates includeFilter, System.Windows.Forms.DataGridViewElementStates excludeFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataGridViewColumn GetPreviousColumn(class System.Windows.Forms.DataGridViewColumn dataGridViewColumnStart, valuetype System.Windows.Forms.DataGridViewElementStates includeFilter, valuetype System.Windows.Forms.DataGridViewElementStates excludeFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.GetPreviousColumn(System.Windows.Forms.DataGridViewColumn,System.Windows.Forms.DataGridViewElementStates,System.Windows.Forms.DataGridViewElementStates)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataGridViewColumnStart" Type="System.Windows.Forms.DataGridViewColumn" />
+        <Parameter Name="includeFilter" Type="System.Windows.Forms.DataGridViewElementStates" />
+        <Parameter Name="excludeFilter" Type="System.Windows.Forms.DataGridViewElementStates" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridViewColumnStart">前の列の検索を開始する列です。</param>
+        <param name="includeFilter">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewElementStates" />への追加を適用するフィルターを表す値です。</param>
+        <param name="excludeFilter">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewElementStates" />の除外を適用するフィルターを表す値です。</param>
+        <summary>指定したフィルター条件に一致する表示順序で指定した列の前に最後の列を取得します。</summary>
+        <returns>指定したフィルター条件を満たしている前の列または<see langword="null" />列が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示の順序で前の列は、最高の値を持つ列<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>未満の値、<xref:System.Windows.Forms.DataGridViewColumn.DisplayIndex%2A>列が実際に画面に表示するかどうかに関係なく、指定された列の値。  
+  
+ このメソッドを使用して、インデックス値を直接比較することがなく、指定した条件に一致する現在の列の前に、最初の列を判断できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataGridViewColumnStart" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">少なくとも 1 つのフィルターの値が有効なビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Forms.DataGridViewColumn dataGridViewColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Windows.Forms.DataGridViewColumn dataGridViewColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.IndexOf(System.Windows.Forms.DataGridViewColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataGridViewColumn" Type="System.Windows.Forms.DataGridViewColumn" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridViewColumn"><see cref="T:System.Windows.Forms.DataGridViewColumn" />のインデックスを返します。</param>
+        <summary>インデックスを取得、指定された<see cref="T:System.Windows.Forms.DataGridViewColumn" />コレクション内で。</summary>
+        <returns>インデックス、指定された<see cref="T:System.Windows.Forms.DataGridViewColumn" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public virtual void Insert (int columnIndex, System.Windows.Forms.DataGridViewColumn dataGridViewColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 columnIndex, class System.Windows.Forms.DataGridViewColumn dataGridViewColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.Insert(System.Int32,System.Windows.Forms.DataGridViewColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="dataGridViewColumn" Type="System.Windows.Forms.DataGridViewColumn" />
+      </Parameters>
+      <Docs>
+        <param name="columnIndex">指定した列を挿入する位置を示す 0 から始まるインデックス。</param>
+        <param name="dataGridViewColumn">挿入する <see cref="T:System.Windows.Forms.DataGridViewColumn" />。</param>
+        <summary>コレクション内の指定したインデックスに列を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このメソッドの使用方法を示しています。 詳細については、次を参照してください。[する方法: データ バインド Windows フォーム DataGridView コントロールにバインドされていない列を追加](~/docs/framework/winforms/controls/unbound-column-to-a-data-bound-datagridview.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc#010](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#010)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc#010](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#010)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataGridViewColumn" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" />  
+  
+ または  
+  
+ <paramref name="dataGridViewColumn" />既にに属している、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。  
+  
+ または  
+  
+ <paramref name="dataGridViewColumn" /> <see cref="P:System.Windows.Forms.DataGridViewColumn.SortMode" />プロパティの値が<see cref="F:System.Windows.Forms.DataGridViewColumnSortMode.Automatic" />と<see cref="P:System.Windows.Forms.DataGridView.SelectionMode" />プロパティの値が<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect" />または<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect" />です。 コントロールを使用して<see cref="M:System.Windows.Forms.DataGridView.System#ComponentModel#ISupportInitialize#BeginInit" />と<see cref="M:System.Windows.Forms.DataGridView.System#ComponentModel#ISupportInitialize#EndInit" />を一時的に競合するプロパティ値を設定する方法です。  
+  
+ または  
+  
+ <paramref name="dataGridViewColumn" /> <see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />プロパティの値が<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader" />と<see cref="P:System.Windows.Forms.DataGridView.ColumnHeadersVisible" />プロパティの値が<see langword="false" />です。  
+  
+ または  
+  
+ <paramref name="dataGridViewColumn" /><see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />のプロパティの値<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill" />と<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />のプロパティの値<see langword="true" />です。  
+  
+ または  
+  
+ <paramref name="dataGridViewColumn" /><see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />と<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />プロパティの値は逆の隣接する列のセット間で情報が表示される<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />プロパティの値。  
+  
+ または  
+  
+ <see cref="T:System.Windows.Forms.DataGridView" />コントロールには、少なくとも 1 つの行が含まれていると<paramref name="dataGridViewColumn" />が、<see cref="P:System.Windows.Forms.DataGridViewColumn.CellType" />のプロパティの値<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewColumn this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewColumn Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumnCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する列の 0 から始まるインデックス。</param>
+        <summary>取得またはコレクション内の指定したインデックスに列を設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewColumn" />指定されたインデックス位置。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0 から 1 を引いたコレクション内の列の数より大きいか未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewColumn this[string columnName] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewColumn Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumnCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">取得または設定する列の名前。</param>
+        <summary>取得またはコレクション内で指定された名前の列を設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewColumn" />で識別される、<paramref name="columnName" />パラメーター。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="columnName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="List">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ArrayList List { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList List" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumnCollection.List" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれる要素の一覧を取得、<see cref="T:System.Windows.Forms.BaseCollection" />インスタンス。</summary>
+        <value><see cref="T:System.Collections.ArrayList" />コレクションの要素を格納します。 このプロパティを返します<see langword="null" />派生クラスでオーバーライドされない限り、します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCollectionChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnCollectionChanged (System.ComponentModel.CollectionChangeEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCollectionChanged(class System.ComponentModel.CollectionChangeEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.OnCollectionChanged(System.ComponentModel.CollectionChangeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.CollectionChangeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.CollectionChangeEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.DataGridViewColumnCollection.CollectionChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.DataGridViewColumnCollection.OnCollectionChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.DataGridViewColumnCollection.OnCollectionChanged(System.ComponentModel.CollectionChangeEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.DataGridViewColumnCollection.OnCollectionChanged(System.ComponentModel.CollectionChangeEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (string columnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(string columnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">削除する列の名前。</param>
+        <summary>コレクションから指定した名前の列を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって、列の名前が示されている、<xref:System.Windows.Forms.DataGridViewColumn.Name%2A?displayProperty=nameWithType>プロパティです。  
+  
+ データ ソースにバインドするときに自動的に生成される列を削除するでこのメソッドを呼び出す、<xref:System.Windows.Forms.DataGridView.DataBindingComplete?displayProperty=nameWithType>イベント ハンドラー。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このメソッドの使用方法を示しています。 詳細については、次を参照してください。[する方法: Windows フォーム DataGridView コントロールから自動生成された列の削除](~/docs/framework/winforms/controls/remove-autogenerated-columns-from-a-wf-datagridview-control.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMisc#110](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#110)]
+ [!code-vb[System.Windows.Forms.DataGridViewMisc#110](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#110)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="columnName" />コレクション内の任意の列の名前は一致しません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="columnName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (System.Windows.Forms.DataGridViewColumn dataGridViewColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(class System.Windows.Forms.DataGridViewColumn dataGridViewColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.Remove(System.Windows.Forms.DataGridViewColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataGridViewColumn" Type="System.Windows.Forms.DataGridViewColumn" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridViewColumn">削除する列。</param>
+        <summary>コレクションから指定された列を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースにバインドするときに自動的に生成される列を削除するでこのメソッドを呼び出す、<xref:System.Windows.Forms.DataGridView.DataBindingComplete?displayProperty=nameWithType>イベント ハンドラー。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="dataGridViewColumn" />コレクションではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataGridViewColumn" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public virtual void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する列のインデックス。</param>
+        <summary>コレクション内の指定したインデックス位置にある列を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースにバインドするときに自動的に生成される列を削除するでこのメソッドを呼び出す、<xref:System.Windows.Forms.DataGridView.DataBindingComplete?displayProperty=nameWithType>イベント ハンドラー。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0 から 1 を引いたコントロール内の列の数より大きいか未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />の現在のコレクションから要素がコピー先であること。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>コレクションの内容全体を互換性のある 1 次元にコピー<see cref="T:System.Array" />対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ ソース コレクション内の要素の数から使用可能な領域を超えています<paramref name="index" />の末尾に<paramref name="array" />です。</exception>
+        <exception cref="T:System.InvalidCastException">ソース要素の型は、の型に自動的にキャストすることはできません<paramref name="array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の要素の数を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewColumnCollection" /> にある要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスが同期されているかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Object" />コレクションへのアクセスを同期するために使用できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />コレクションの末尾に追加します。 値として <see langword="null" /> を指定できます。</param>
+        <summary>コレクションの末尾にオブジェクトを追加します。</summary>
+        <returns>位置のインデックス<paramref name="value" />が追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="value" /> が <see cref="T:System.Windows.Forms.DataGridViewColumn" /> ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" />  
+  
+ または  
+  
+ によって示されている、列<paramref name="value" />既にに属している、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。  
+  
+ または  
+  
+ <see cref="P:System.Windows.Forms.DataGridViewColumn.SortMode" />で示された列のプロパティ値<paramref name="value" />は<see cref="F:System.Windows.Forms.DataGridViewColumnSortMode.Automatic" />と<see cref="P:System.Windows.Forms.DataGridView.SelectionMode" />プロパティの値が<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect" />または<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect" />です。 コントロールを使用して<see cref="M:System.Windows.Forms.DataGridView.System#ComponentModel#ISupportInitialize#BeginInit" />と<see cref="M:System.Windows.Forms.DataGridView.System#ComponentModel#ISupportInitialize#EndInit" />を一時的に競合するプロパティ値を設定する方法です。  
+  
+ または  
+  
+ <see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />で示された列のプロパティ値<paramref name="value" />は<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader" />と<see cref="P:System.Windows.Forms.DataGridView.ColumnHeadersVisible" />プロパティの値が<see langword="false" />です。  
+  
+ または  
+  
+ によって示されている、列<paramref name="value" />が、<see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />のプロパティの値<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill" />と<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />のプロパティの値<see langword="true" />です。  
+  
+ または  
+  
+ によって示されている、列<paramref name="value" />が、 <see cref="P:System.Windows.Forms.DataGridViewColumn.FillWeight" /> 、結合された原因となるプロパティの値<see cref="P:System.Windows.Forms.DataGridViewColumn.FillWeight" />65,535 以下に、コントロール内のすべての列の値。  
+  
+ または  
+  
+ によって示されている、列<paramref name="value" />が<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />と<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />プロパティの値は逆の隣接する列のセット間で情報が表示される<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />プロパティの値。  
+  
+ または  
+  
+ <see cref="T:System.Windows.Forms.DataGridView" />コントロールには、少なくとも 1 つの行と列によって示されるが含まれている<paramref name="value" />が、<see cref="P:System.Windows.Forms.DataGridViewColumn.CellType" />のプロパティの値<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Clear">
+      <MemberSignature Language="C#" Value="void IList.Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#IList#Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Object" />。 値として <see langword="null" /> を指定できます。</param>
+        <summary>オブジェクトがコレクション内にあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="value" /> に存在する場合は <see cref="T:System.Windows.Forms.DataGridViewColumnCollection" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.Object" />。 値として <see langword="null" /> を指定できます。</param>
+        <summary>コレクション内の特定の項目のインデックスを決定します。</summary>
+        <returns>最初に見つかった位置の 0 から始まるインデックス<paramref name="value" />、それ以外の場合は、コレクション内で-1 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>挿入する必要があります。</param>
+        <param name="value">挿入する <see cref="T:System.Object" />。 値として <see langword="null" /> を指定できます。</param>
+        <summary>コレクション内の指定したインデックス位置に要素を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="value" /> が <see cref="T:System.Windows.Forms.DataGridViewColumn" /> ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" />  
+  
+ または  
+  
+ によって示されている、列<paramref name="value" />既にに属している、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。  
+  
+ または  
+  
+ <see cref="P:System.Windows.Forms.DataGridViewColumn.SortMode" />で示された列のプロパティ値<paramref name="value" />は<see cref="F:System.Windows.Forms.DataGridViewColumnSortMode.Automatic" />と<see cref="P:System.Windows.Forms.DataGridView.SelectionMode" />プロパティの値が<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect" />または<see cref="F:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect" />です。 コントロールを使用して<see cref="M:System.Windows.Forms.DataGridView.System#ComponentModel#ISupportInitialize#BeginInit" />と<see cref="M:System.Windows.Forms.DataGridView.System#ComponentModel#ISupportInitialize#EndInit" />を一時的に競合するプロパティ値を設定する方法です。  
+  
+ または  
+  
+ <see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />で示された列のプロパティ値<paramref name="value" />は<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader" />と<see cref="P:System.Windows.Forms.DataGridView.ColumnHeadersVisible" />プロパティの値が<see langword="false" />です。  
+  
+ または  
+  
+ によって示されている、列<paramref name="value" />が、<see cref="P:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode" />のプロパティの値<see cref="F:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill" />と<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />のプロパティの値<see langword="true" />です。  
+  
+ または  
+  
+ によって示されている、列<paramref name="value" />が、 <see cref="P:System.Windows.Forms.DataGridViewColumn.FillWeight" /> 、結合された原因となるプロパティの値<see cref="P:System.Windows.Forms.DataGridViewColumn.FillWeight" />65,535 以下に、コントロール内のすべての列の値。  
+  
+ または  
+  
+ によって示されている、列<paramref name="value" />が<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />と<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />プロパティの値は逆の隣接する列のセット間で情報が表示される<see cref="P:System.Windows.Forms.DataGridViewColumn.Frozen" />プロパティの値。  
+  
+ または  
+  
+ <see cref="T:System.Windows.Forms.DataGridView" />コントロールには、少なくとも 1 つの行と列によって示されるが含まれている<paramref name="value" />が、<see cref="P:System.Windows.Forms.DataGridViewColumn.CellType" />のプロパティの値<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#IList#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する列の 0 から始まるインデックス。</param>
+        <summary>指定したインデックスにある要素を取得または設定します。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.Windows.Forms.DataGridViewColumn" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ この実装では、このプロパティを設定することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このプロパティが設定されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">このプロパティを取得するときに<paramref name="index" />がゼロ未満か、1 を引いた内の列の数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.Object" />。 値として <see langword="null" /> を指定できます。</param>
+        <summary>コレクション内で最初に見つかった指定のオブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="value" /> が <see cref="T:System.Windows.Forms.DataGridViewColumn" /> ではありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />コレクションではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.RemoveAt">
+      <MemberSignature Language="C#" Value="void IList.RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewColumnCollection.System#Collections#IList#RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する要素の位置。</param>
+        <summary>指定したインデックスを持つ要素をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewColumnCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0 から 1 を引いたコントロール内の列の数より大きいか未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">関連付けられた<see cref="T:System.Windows.Forms.DataGridView" />コントロールでは、一時的に新しい列が追加されないようにする次の操作のいずれかが実行します。  
+  
+-   コントロール内のすべてのセルを選択します。  
+  
+-   選択範囲をクリアします。  
+  
+-   列の更新<see cref="P:System.Windows.Forms.DataGridViewColumn.DisplayIndex" />プロパティの値。  
+  
+ または  
+  
+ このメソッドが、次のいずれかのハンドラーから呼び出される<see cref="T:System.Windows.Forms.DataGridView" />イベント。  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidating" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.CellValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowEnter" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowLeave" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidated" />  
+  
+-   <see cref="E:System.Windows.Forms.DataGridView.RowValidating" /></exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

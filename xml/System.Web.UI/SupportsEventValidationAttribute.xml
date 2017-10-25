@@ -1,0 +1,51 @@
+<Type Name="SupportsEventValidationAttribute" FullName="System.Web.UI.SupportsEventValidationAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SupportsEventValidationAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SupportsEventValidationAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.SupportsEventValidationAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web サーバー コントロールは、イベントの検証のサポートを示すために使用するメタデータ属性を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントの検証により、ASP.NET Web ページを偽造ポストバックおよびで有効にすることができます、`EnableEventValidation`ページ ディレクティブ。  
+  
+ 詳細については、「<xref:System.Web.UI.Page.EnableEventValidation%2A>」を参照してください。 属性の詳細については、「[属性](~/docs/standard/attributes/index.md)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>定義していない場合、<see cref="T:System.Web.UI.SupportsEventValidationAttribute" />属性に、カスタム コントロールに自動的に参加していないイベントの検証。 ただし、コントロールを呼び出すことが明示的に<see cref="M:System.Web.UI.ClientScriptManager.ValidateEvent(System.String)" />です。 イベントの登録と検証を処理する場合は、呼び出す<see cref="M:System.Web.UI.ClientScriptManager.ValidateEvent(System.String)" />、コントロールに対してこの属性を定義する必要はありません。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SupportsEventValidationAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.SupportsEventValidationAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.SupportsEventValidationAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

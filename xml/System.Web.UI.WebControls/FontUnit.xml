@@ -1,0 +1,993 @@
+<Type Name="FontUnit" FullName="System.Web.UI.WebControls.FontUnit">
+  <TypeSignature Language="C#" Value="public struct FontUnit" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit FontUnit extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FontUnit" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.FontUnitConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フォントのサイズを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.FontUnit>を参照してください、<xref:System.Web.UI.WebControls.FontUnit.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Style>を同時に複数のコントロールのスタイル プロパティを変更するオブジェクト。 いずれかされるたびに、`Style`プロパティの値の変更、各コントロールを呼び出す必要があります、<xref:System.Web.UI.WebControls.WebControl.ApplyStyle%2A>メソッドです。 この例では含まれているすべてのコントロールは、紹介されているすべてのプロパティをサポートします。 コントロールが特定のプロパティをサポートしていない場合、プロパティ値が変更されたときに、コントロールの外観は変更されません。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[StyleClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/StyleClass/CS/styleclasscs.aspx#1)]
+ [!code-aspx-vb[StyleClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StyleClass/VB/styleclassvb.aspx#1)]  
+[!code-aspx-csharp[StyleClass#3](~/samples/snippets/csharp/VS_Snippets_WebNet/StyleClass/CS/styleclasscs.aspx#3)]
+[!code-aspx-vb[StyleClass#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StyleClass/VB/styleclassvb.aspx#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontUnit (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Double" />フォントのサイズを指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.FontUnit" />ポイント単位で指定されたフォント サイズを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.%23ctor%2A>作成しのインスタンスを初期化するコンス トラクター、<xref:System.Web.UI.WebControls.FontUnit>クラスの指定されたフォント サイズを使用します。 次の表の初期プロパティ値を示しています、<xref:System.Web.UI.WebControls.FontUnit>作成されるオブジェクトです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|<xref:System.Web.UI.WebControls.FontSize.AsUnit> 値。|  
+|`Unit`|A<xref:System.Web.UI.WebControls.Unit>で、<xref:System.Web.UI.WebControls.Unit.Value%2A>プロパティを等しく`value`と<xref:System.Web.UI.WebControls.Unit.Type%2A>プロパティを等しく、<xref:System.Web.UI.WebControls.UnitType.Point>値。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="value" />有効な範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontUnit (int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">フォントのサイズ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.FontUnit" />指定されたフォント サイズを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.FontUnit>クラスの指定されたフォント サイズを使用します。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|`FontSize.AsUnit`|  
+|`Unit`|A<xref:System.Web.UI.WebControls.Unit>でその<xref:System.Web.UI.WebControls.Unit.Value%2A>プロパティで指定されたフォント サイズを設定、`value`パラメーター。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontUnit (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">フォント サイズを指定する文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.FontUnit" />文字列を指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FontUnit.%23ctor%2A>コンス トラクターの呼び出し、<xref:System.Web.UI.WebControls.FontUnit.%23ctor%2A>コンス トラクターを使用して、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>プロパティを<xref:System.Globalization.CultureInfo>パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontUnit (System.Web.UI.WebControls.FontSize type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.WebControls.FontSize type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.#ctor(System.Web.UI.WebControls.FontSize)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Web.UI.WebControls.FontSize" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Web.UI.WebControls.FontSize" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Web.UI.WebControls.FontUnit" /> を使用して、<see cref="T:System.Web.UI.WebControls.FontSize" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.FontUnit>クラス<xref:System.Web.UI.WebControls.FontSize>オブジェクト。  
+  
+ 場合、`type`パラメーターには、値が含まれています。 `FontSize.AsUnit`、次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|`FontSize.AsUnit`|  
+|`Unit`|A<xref:System.Web.UI.WebControls.Unit>オブジェクトをその<xref:System.Web.UI.WebControls.Unit.Value%2A>プロパティに設定`10`です。|  
+  
+ 場合、`type`パラメーターが含まれるその他の<xref:System.Web.UI.WebControls.FontSize>値、次の表は、のインスタンスの初期プロパティ値を示します<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|`type` パラメーターの値。|  
+|`Unit`|<xref:System.Web.UI.WebControls.Unit.Empty>|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定されたフォント サイズは、のいずれかではありません、<see cref="T:System.Web.UI.WebControls.FontSize" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontUnit (System.Web.UI.WebControls.Unit value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.WebControls.Unit value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.#ctor(System.Web.UI.WebControls.Unit)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.UI.WebControls.Unit" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Web.UI.WebControls.Unit" />フォントのサイズを指定します。</param>
+        <summary>指定した <see cref="T:System.Web.UI.WebControls.FontUnit" /> を使用して、<see cref="T:System.Web.UI.WebControls.Unit" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.FontUnit>クラス<xref:System.Web.UI.WebControls.Unit>です。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Unit.IsEmpty%2A>のプロパティ、<xref:System.Web.UI.WebControls.Unit>に渡された、`value`パラメーターは`true`、次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|`FontSize.NotSet`|  
+|`Unit`|<xref:System.Web.UI.WebControls.Unit.Empty>|  
+  
+ 場合、<xref:System.Web.UI.WebControls.Unit.IsEmpty%2A>のプロパティ、<xref:System.Web.UI.WebControls.Unit>に渡された、`value`パラメーターは`false`、次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|`FontSize.AsUnit`|  
+|`Unit`|`value` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontUnit (double value, System.Web.UI.WebControls.UnitType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, valuetype System.Web.UI.WebControls.UnitType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.#ctor(System.Double,System.Web.UI.WebControls.UnitType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="type" Type="System.Web.UI.WebControls.UnitType" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Double" />フォントのサイズを指定します。</param>
+        <param name="type">A<see cref="T:System.Web.UI.WebControls.UnitType" />サイズの単位を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.FontUnit" />指定されたフォント サイズを持つクラスと<see cref="T:System.Web.UI.WebControls.UnitType" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.%23ctor%2A>作成しのインスタンスを初期化するコンス トラクター、<xref:System.Web.UI.WebControls.FontUnit>クラスの指定されたフォント サイズを使用して、ポイントやピクセルなどの単位を測定します。  
+  
+ 次の表の初期プロパティ値を示しています、<xref:System.Web.UI.WebControls.FontUnit>オブジェクト。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|<xref:System.Web.UI.WebControls.FontSize.AsUnit> 値。|  
+|`Unit`|A<xref:System.Web.UI.WebControls.Unit>で、<xref:System.Web.UI.WebControls.Unit.Value%2A>プロパティを等しく`value`と<xref:System.Web.UI.WebControls.Unit.Type%2A>プロパティを等しく`type`です。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="value" />有効な範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontUnit (string value, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string value, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.#ctor(System.String,System.Globalization.CultureInfo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">フォント サイズを指定する文字列。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />文字列比較のために使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.FontUnit" />指定して、指定した文字列を持つクラス<see cref="T:System.Globalization.CultureInfo" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FontUnit.%23ctor%2A>コンス トラクターの文字列を認識して`value`の新しいインスタンスを作成する次の表で表示されて、<xref:System.Web.UI.WebControls.FontUnit>クラスです。  
+  
+|文字列値|<xref:System.Web.UI.WebControls.FontUnit>|  
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|  
+|`xx-small`, `xxsmall`|<xref:System.Web.UI.WebControls.FontUnit.XXSmall>|  
+|`x-small`, `xsmall`|<xref:System.Web.UI.WebControls.FontUnit.XSmall>|  
+|`x-large`, `xlarge`|<xref:System.Web.UI.WebControls.FontUnit.XLarge>|  
+|`xx-large`, `xxlarge`|<xref:System.Web.UI.WebControls.FontUnit.XXLarge>|  
+|`small`|<xref:System.Web.UI.WebControls.FontUnit.Small>|  
+|`smaller`|<xref:System.Web.UI.WebControls.FontUnit.Smaller>|  
+|`large`|<xref:System.Web.UI.WebControls.FontUnit.Large>|  
+|`larger`|<xref:System.Web.UI.WebControls.FontUnit.Larger>|  
+|`medium`|<xref:System.Web.UI.WebControls.FontUnit.Medium>|  
+  
+ すべての場合、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティの値を<xref:System.Web.UI.WebControls.FontSize.NotSet>です。 文字列比較では大文字小文字を区別します。  
+  
+ 他のすべての値の`value`の新しいインスタンス、<xref:System.Web.UI.WebControls.FontUnit>クラスは、扱う方法によって作成された`value`フォント サイズの設定と、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティを<xref:System.Web.UI.WebControls.UnitType.Point>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.FontUnit Empty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Web.UI.WebControls.FontUnit Empty" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FontUnit.Empty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空の表す<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.Empty>を空を表すフィールド<xref:System.Web.UI.WebControls.FontUnit>オブジェクト。 このフィールドを使用すると、HTML で表示される出力は作成されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">A<see cref="T:System.Object" />このインスタンスと比較するオブジェクトを格納しています。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Object" />のインスタンスと等価の<see cref="T:System.Web.UI.WebControls.FontUnit" />からこのメソッドが呼び出されるクラス。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Object" />のインスタンスと等価の<see cref="T:System.Web.UI.WebControls.FontUnit" />クラスから呼び出されます。 それ以外の場合、このメソッドは、こと<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.Equals%2A>メソッドを呼び出せば確認するかどうか、指定した<xref:System.Object?displayProperty=nameWithType>のインスタンスと等価、<xref:System.Web.UI.WebControls.FontUnit>からこのメソッドが呼び出されるクラスです。 指定された<xref:System.Object?displayProperty=nameWithType>等価である、オブジェクトがある必要があります、<xref:System.Web.UI.WebControls.FontUnit>に対して同じ値を格納している、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>と<xref:System.Web.UI.WebControls.FontUnit.Unit%2A>プロパティのインスタンスとして、<xref:System.Web.UI.WebControls.FontUnit>からこのメソッドが呼び出されるクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>ハッシュ コードを表す 32 ビット符号付き整数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FontUnit.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォント サイズが設定されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、フォント サイズが設定されていません。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.IsEmpty%2A>フォント サイズが設定されているかどうかを決定するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Large">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.FontUnit Large;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Web.UI.WebControls.FontUnit Large" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FontUnit.Large" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを<see cref="P:System.Web.UI.WebControls.FontUnit.Type" />プロパティに設定<see langword="FontSize.Large" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.Large>を表すフィールド、<xref:System.Web.UI.WebControls.FontUnit>オブジェクトを<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定`FontSize.Large`です。  
+  
+ Internet Explorer 4.0 以降では、HTML が使用して、コントロールからの出力を表示、<xref:System.Web.UI.WebControls.FontInfo.Size%2A>このフィールドに設定するプロパティは`style= "font-size:Large"`します。 ブラウザーで Internet Explorer 4.0 より前の出力にレンダリングされる HTML が`<font size="5">`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Larger">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.FontUnit Larger;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Web.UI.WebControls.FontUnit Larger" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FontUnit.Larger" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを<see cref="P:System.Web.UI.WebControls.FontUnit.Type" />プロパティに設定<see langword="FontSize.Larger" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.Larger>を表すフィールド、<xref:System.Web.UI.WebControls.FontUnit>オブジェクトを<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定`FontSize.Larger`です。  
+  
+ Internet Explorer 4.0 以降では、HTML が使用して、コントロールからの出力を表示、<xref:System.Web.UI.WebControls.FontInfo.Size%2A>このフィールドに設定するプロパティは`style= "font-size:Larger"`します。 ブラウザーで Internet Explorer 4.0 より前の出力にレンダリングされる HTML は作成されません。  
+  
+> [!NOTE]
+>  一部のブラウザーを認識しない、<xref:System.Web.UI.WebControls.FontSize.Larger>フォント サイズ。 ブラウザーの互換性を確認してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Medium">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.FontUnit Medium;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Web.UI.WebControls.FontUnit Medium" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FontUnit.Medium" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを<see cref="P:System.Web.UI.WebControls.FontUnit.Type" />プロパティに設定<see langword="FontSize.Medium" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.Medium>を表すフィールド、<xref:System.Web.UI.WebControls.FontUnit>オブジェクトを<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定`FontSize.Medium`です。  
+  
+ Internet Explorer 4.0 以降では、HTML が使用して、コントロールからの出力を表示、<xref:System.Web.UI.WebControls.FontInfo.Size%2A>このフィールドに設定するプロパティは`style= "font-size:Medium"`します。 ブラウザーで Internet Explorer 4.0 より前の出力にレンダリングされる HTML が`<font size="4">`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Web.UI.WebControls.FontUnit left, System.Web.UI.WebControls.FontUnit right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Web.UI.WebControls.FontUnit left, valuetype System.Web.UI.WebControls.FontUnit right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.op_Equality(System.Web.UI.WebControls.FontUnit,System.Web.UI.WebControls.FontUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Web.UI.WebControls.FontUnit" />
+        <Parameter Name="right" Type="System.Web.UI.WebControls.FontUnit" />
+      </Parameters>
+      <Docs>
+        <param name="left">A<see cref="T:System.Web.UI.WebControls.FontUnit" />フォント プロパティを含む、演算子の左側にします。</param>
+        <param name="right">A<see cref="T:System.Web.UI.WebControls.FontUnit" />フォント プロパティを含む、演算子の右側にします。</param>
+        <summary>2 つの <see cref="T:System.Web.UI.WebControls.FontUnit" /> オブジェクトが等しいかどうかを比較します。</summary>
+        <returns>
+          <see langword="true" />両方<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FontUnit>となるオブジェクトをそれと同等の各オブジェクトの値が同じである必要があります、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>と<xref:System.Web.UI.WebControls.FontUnit.Unit%2A>プロパティです。  
+  
+ この演算子を同等の方法は、します。<xref:System.Web.UI.WebControls.FontUnit.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Web.UI.WebControls.FontUnit (int n);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Web.UI.WebControls.FontUnit op_Implicit(int32 n) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.op_Implicit(System.Int32)~System.Web.UI.WebControls.FontUnit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="n">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Web.UI.WebControls.FontUnit left, System.Web.UI.WebControls.FontUnit right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Web.UI.WebControls.FontUnit left, valuetype System.Web.UI.WebControls.FontUnit right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.op_Inequality(System.Web.UI.WebControls.FontUnit,System.Web.UI.WebControls.FontUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Web.UI.WebControls.FontUnit" />
+        <Parameter Name="right" Type="System.Web.UI.WebControls.FontUnit" />
+      </Parameters>
+      <Docs>
+        <param name="left">A<see cref="T:System.Web.UI.WebControls.FontUnit" />演算子の左側のフォント プロパティを格納します。</param>
+        <param name="right">A<see cref="T:System.Web.UI.WebControls.FontUnit" />演算子の右側のフォント プロパティを格納します。</param>
+        <summary>2 つの <see cref="T:System.Web.UI.WebControls.FontUnit" /> オブジェクトが等しくないかどうかを比較します。</summary>
+        <returns>
+          <see langword="true" />両方<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトが等しくない。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FontUnit>するオブジェクトが互いに等しくない各オブジェクトには、いずれかの値が異なる、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティまたは<xref:System.Web.UI.WebControls.FontUnit.Unit%2A>プロパティです。  
+  
+ この演算子を同等の方法は、します。<xref:System.Web.UI.WebControls.FontUnit.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.FontUnit Parse (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Web.UI.WebControls.FontUnit Parse(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">いずれかの文字列表現、<see cref="T:System.Web.UI.WebControls.FontSize" />値。</param>
+        <summary>指定した文字列に変換、<see cref="T:System.Web.UI.WebControls.FontUnit" />と同等です。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.FontUnit" />で指定されたフォント サイズを表す、<paramref name="s" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的なを使用して<xref:System.Web.UI.WebControls.FontUnit.Parse%2A>に指定した文字列を変換する方法、<xref:System.Web.UI.WebControls.FontUnit>と同等です。  
+  
+ 場合の値、`s`パラメーターではありません`null`ではなく、 <xref:System.String?displayProperty=nameWithType>、あり、有効な<xref:System.Web.UI.WebControls.FontSize>値では、次の表はの新しいインスタンスの初期プロパティ値<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|<xref:System.Web.UI.WebControls.FontSize>列挙体と同等、`s`パラメーター。|  
+|`Unit`|<xref:System.Web.UI.WebControls.Unit.Empty>|  
+  
+ 場合の値、`s`パラメーターではありません`null`ではなく、 <xref:System.String.Empty?displayProperty=nameWithType>、および無効な<xref:System.Web.UI.WebControls.FontSize>値では、次の表はの新しいインスタンスの初期プロパティ値<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|`FontSize.AsUnit`|  
+|`Unit`|A<xref:System.Web.UI.WebControls.Unit>オブジェクトをその<xref:System.Web.UI.WebControls.Unit.Value%2A>プロパティによる初期化を行う、`s`現在のスレッドのカルチャのパラメーターです。|  
+  
+ 場合の値、`s`パラメーターは`null`または<xref:System.String.Empty?displayProperty=nameWithType>、次の表は、の新しいインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|`FontSize.NotSet`|  
+|`Unit`|<xref:System.Web.UI.WebControls.Unit.Empty>|  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[StyleClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/StyleClass/CS/styleclasscs.aspx#1)]
+ [!code-aspx-vb[StyleClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StyleClass/VB/styleclassvb.aspx#1)]  
+[!code-aspx-csharp[StyleClass#3](~/samples/snippets/csharp/VS_Snippets_WebNet/StyleClass/CS/styleclasscs.aspx#3)]
+[!code-aspx-vb[StyleClass#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StyleClass/VB/styleclassvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.FontUnit Parse (string s, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Web.UI.WebControls.FontUnit Parse(string s, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.Parse(System.String,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="s">いずれかの文字列表現、<see cref="T:System.Web.UI.WebControls.FontSize" />値。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />のカルチャを表す、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクト。</param>
+        <summary>指定した文字列に変換しますその<see cref="T:System.Web.UI.WebControls.FontUnit" />指定したカルチャと同じです。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.FontUnit" />で指定されたフォント サイズを表す、<paramref name="s" />パラメーターで指定したカルチャに、<paramref name="culture" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的なを使用して<xref:System.Web.UI.WebControls.FontUnit.Parse%2A>メソッドは、指定した文字列に変換するカルチャをその<xref:System.Web.UI.WebControls.FontUnit>と同等です。  
+  
+ 場合の値、`s`パラメーターではありません`null`ではなく、 <xref:System.String.Empty?displayProperty=nameWithType>、あり、有効な<xref:System.Web.UI.WebControls.FontSize>値では、次の表はの新しいインスタンスの初期プロパティ値<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|<xref:System.Web.UI.WebControls.FontSize>列挙体と同等、`s`パラメーター。|  
+|`Unit`|<xref:System.Web.UI.WebControls.Unit.Empty>|  
+  
+ 場合の値、`s`パラメーターではありません`null`ではなく、 <xref:System.String.Empty?displayProperty=nameWithType>、および無効な<xref:System.Web.UI.WebControls.FontSize>値では、次の表はの新しいインスタンスの初期プロパティ値<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|`FontSize.AsUnit`|  
+|`Unit`|A<xref:System.Web.UI.WebControls.Unit>オブジェクトをその<xref:System.Web.UI.WebControls.Unit.Value%2A>プロパティによる初期化を行う、`s`パラメーターに指定されたカルチャ。|  
+  
+ 場合の値、`s`パラメーターは`null`または<xref:System.String.Empty?displayProperty=nameWithType>、次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|`Type`|`FontSize.NotSet`|  
+|`Unit`|<xref:System.Web.UI.WebControls.Unit.Empty>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Point">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.FontUnit Point (int n);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Web.UI.WebControls.FontUnit Point(int32 n) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.Point(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="n">表す整数、<see cref="T:System.Drawing.Point" />に変換する値、<see cref="T:System.Web.UI.WebControls.FontUnit" />です。</param>
+        <summary>作成、<see cref="T:System.Web.UI.WebControls.FontUnit" />型の<see cref="T:System.Drawing.Point" />を整数値からです。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.FontUnit" />で指定されたフォント サイズを表す、<paramref name="n" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的なを使用して<xref:System.Web.UI.WebControls.FontUnit.Point%2A>メソッドを作成、<xref:System.Web.UI.WebControls.FontUnit>で指定されたフォント サイズを表す、`n`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Small">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.FontUnit Small;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Web.UI.WebControls.FontUnit Small" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FontUnit.Small" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを<see cref="P:System.Web.UI.WebControls.FontUnit.Type" />プロパティに設定<see langword="FontSize.Small" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.Small>を表すフィールド、<xref:System.Web.UI.WebControls.FontUnit>オブジェクトを<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定`FontSize.Small`です。  
+  
+ Internet Explorer 4.0 以降では、HTML が使用して、コントロールからの出力を表示、<xref:System.Web.UI.WebControls.FontInfo.Size%2A>このフィールドに設定するプロパティは`style= "font-size:Small"`します。 ブラウザーで Internet Explorer 4.0 より前の出力にレンダリングされる HTML が`<font size="3">`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Smaller">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.FontUnit Smaller;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Web.UI.WebControls.FontUnit Smaller" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FontUnit.Smaller" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを<see cref="P:System.Web.UI.WebControls.FontUnit.Type" />プロパティに設定<see langword="FontSize.Smaller" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.Smaller>を表すフィールド、<xref:System.Web.UI.WebControls.FontUnit>オブジェクトを<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定`FontSize.Smaller`です。  
+  
+ Internet Explorer 4.0 以降では、HTML が使用して、コントロールからの出力を表示、<xref:System.Web.UI.WebControls.FontInfo.Size%2A>このフィールドに設定するプロパティは`style= "font-size:Smaller"`します。 ブラウザーで Internet Explorer 4.0 より前の出力にレンダリングされる HTML は作成されません。  
+  
+> [!NOTE]
+>  一部のブラウザーを認識しない、<xref:System.Web.UI.WebControls.FontSize.Smaller>フォント サイズ。 ブラウザーの互換性を確認してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変換、<see cref="T:System.Web.UI.WebControls.FontUnit" />を既定の文字列形式のオブジェクト。</summary>
+        <returns>文字列形式を、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.ToString%2A>の文字列形式を取得する方法を<xref:System.Web.UI.WebControls.FontUnit>です。 場合、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定されている`FontSize.AsUnit`、返される文字列は文字列と同等、<xref:System.Web.UI.WebControls.Unit>に含まれている、<xref:System.Web.UI.WebControls.FontUnit.Unit%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>他のすべてのプロパティが<xref:System.Web.UI.WebControls.FontSize>値、返される文字列は文字列と同等、<xref:System.Web.UI.WebControls.FontSize>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.ToString(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />を表すカルチャを格納している、<see cref="T:System.Web.UI.WebControls.FontUnit" />です。</param>
+        <summary>変換、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを指定して、文字列形式に<see cref="T:System.Globalization.CultureInfo" />です。</summary>
+        <returns>文字列形式を、<see cref="T:System.Web.UI.WebControls.FontUnit" />指定されたカルチャ オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.ToString%2A>の文字列形式を取得する方法を<xref:System.Web.UI.WebControls.FontUnit>指定されたカルチャ。 場合、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定されている`FontSize.AsUnit`、返される文字列は文字列と同等、<xref:System.Web.UI.WebControls.Unit>に含まれている、<xref:System.Web.UI.WebControls.FontUnit.Unit%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>他のすべてのプロパティが<xref:System.Web.UI.WebControls.FontSize>値、返される文字列は文字列と同等、<xref:System.Web.UI.WebControls.FontSize>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider formatProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider formatProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnit.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="formatProvider"><see cref="T:System.IFormatProvider" />場合に使用するカルチャ固有書式設定情報を提供する、<see cref="P:System.Web.UI.WebControls.FontUnit.Type" />プロパティに設定されている、<see cref="F:System.Web.UI.WebControls.FontSize.AsUnit" />値です。 それ以外の場合は無視されます。</param>
+        <summary>変換、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクト、文字列に相当する指定された書式プロバイダーを使用します。</summary>
+        <returns>これを表す文字列<see cref="T:System.Web.UI.WebControls.FontUnit" />で指定された形式で任意の数値の単位数を<paramref name="formatProvider" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.ToString%2A>の文字列形式を取得する方法を<xref:System.Web.UI.WebControls.FontUnit>オブジェクトの文字列に数値のカルチャに固有の書式プロバイダーを使用します。  
+  
+ 場合、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.FontSize.AsUnit>値、返される文字列は文字列相当単位の値に含まれている、<xref:System.Web.UI.WebControls.FontUnit.Unit%2A>プロパティです。 数値部分、<xref:System.Web.UI.WebControls.FontUnit.Unit%2A>値は、指定されたを使用して書式設定`formatProvider`です。 言い換えると、ときに、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定されて、<xref:System.Web.UI.WebControls.FontSize.AsUnit>を使用して、返される文字列形式を値を生成、<xref:System.Web.UI.WebControls.Unit.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>単位オブジェクトに格納されているメソッドを<xref:System.Web.UI.WebControls.FontUnit.Unit%2A>プロパティ。  
+  
+ 場合、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>他のすべてのプロパティが<xref:System.Web.UI.WebControls.FontSize>値、返される文字列は文字列と同等、<xref:System.Web.UI.WebControls.FontSize>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.FontSize Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.FontSize Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FontUnit.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontSize</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.FontSize" />フォント サイズを表す列挙値。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.FontSize" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>取得するプロパティを<xref:System.Web.UI.WebControls.FontSize>フォント サイズを表す列挙値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unit">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Unit Unit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit Unit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FontUnit.Unit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.Unit" />フォント サイズを表すです。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Unit" />フォント サイズを指定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.Unit%2A>取得するプロパティを<xref:System.Web.UI.WebControls.Unit>フォント サイズを表すです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XLarge">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.FontUnit XLarge;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Web.UI.WebControls.FontUnit XLarge" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FontUnit.XLarge" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを<see cref="P:System.Web.UI.WebControls.FontUnit.Type" />プロパティに設定<see langword="FontSize.XLarge" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.XLarge>を表すフィールド、<xref:System.Web.UI.WebControls.FontUnit>オブジェクトを<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定`FontSize.XLarge`です。  
+  
+ Internet Explorer 4.0 以降では、HTML が使用して、コントロールからの出力を表示、<xref:System.Web.UI.WebControls.FontInfo.Size%2A>このフィールドに設定するプロパティは`style= "font-size:X-Large"`します。 ブラウザーで Internet Explorer 4.0 より前の出力にレンダリングされる HTML が`<font size="6">`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XSmall">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.FontUnit XSmall;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Web.UI.WebControls.FontUnit XSmall" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FontUnit.XSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを<see cref="P:System.Web.UI.WebControls.FontUnit.Type" />プロパティに設定<see langword="FontSize.XSmall" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.XSmall>を表すフィールド、<xref:System.Web.UI.WebControls.FontUnit>オブジェクトを<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定`FontSize.XSmall`です。  
+  
+ Internet Explorer 4.0 以降では、HTML が使用して、コントロールからの出力を表示、<xref:System.Web.UI.WebControls.FontInfo.Size%2A>このフィールドに設定するプロパティは`style= "font-size:X-Small"`します。 ブラウザーで Internet Explorer 4.0 より前の出力にレンダリングされる HTML が`<font size="2">`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XXLarge">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.FontUnit XXLarge;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Web.UI.WebControls.FontUnit XXLarge" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FontUnit.XXLarge" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを<see cref="P:System.Web.UI.WebControls.FontUnit.Type" />プロパティに設定<see langword="FontSize.XXLarge" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.XXLarge>を表すフィールド、<xref:System.Web.UI.WebControls.FontUnit>オブジェクトを<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定`FontSize.XXLarge`です。  
+  
+ Internet Explorer 4.0 以降では、HTML が使用して、コントロールからの出力を表示、<xref:System.Web.UI.WebControls.FontInfo.Size%2A>このフィールドに設定するプロパティは`style= "font-size:XX-Large"`します。 ブラウザーで Internet Explorer 4.0 より前の出力にレンダリングされる HTML が`<font size="7">`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XXSmall">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.FontUnit XXSmall;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Web.UI.WebControls.FontUnit XXSmall" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FontUnit.XXSmall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを<see cref="P:System.Web.UI.WebControls.FontUnit.Type" />プロパティに設定<see langword="FontSize.XXSmall" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnit.XXSmall>を表すフィールド、<xref:System.Web.UI.WebControls.FontUnit>オブジェクトを<xref:System.Web.UI.WebControls.FontUnit.Type%2A>プロパティに設定`FontSize.XXSmall`です。  
+  
+ Internet Explorer 4.0 以降では、HTML が使用して、コントロールからの出力を表示、<xref:System.Web.UI.WebControls.FontInfo.Size%2A>このフィールドに設定するプロパティは`style= "font-size:XX-Small"`します。 ブラウザーで Internet Explorer 4.0 より前の出力にレンダリングされる HTML が`<font size="1">`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

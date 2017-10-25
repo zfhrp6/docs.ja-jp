@@ -1,0 +1,105 @@
+<Type Name="ScrollEventArgs" FullName="System.Windows.Controls.Primitives.ScrollEventArgs">
+  <TypeSignature Language="C#" Value="public class ScrollEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScrollEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.ScrollEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Controls.Primitives.ScrollBar.Scroll" />に発生するイベントと、<see cref="T:System.Windows.Controls.Primitives.Thumb" />の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />に移動します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScrollEventArgs (System.Windows.Controls.Primitives.ScrollEventType scrollEventType, double newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Controls.Primitives.ScrollEventType scrollEventType, float64 newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ScrollEventArgs.#ctor(System.Windows.Controls.Primitives.ScrollEventType,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scrollEventType" Type="System.Windows.Controls.Primitives.ScrollEventType" />
+        <Parameter Name="newValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="scrollEventType">A<see cref="T:System.Windows.Controls.Primitives.ScrollEventType" />列挙値の型を記述する<see cref="T:System.Windows.Controls.Primitives.Thumb" />イベントを発生させた移動します。</param>
+        <param name="newValue">新しい場所に対応する値、<see cref="T:System.Windows.Controls.Primitives.Thumb" />で、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.Windows.Controls.Primitives.ScrollEventArgs" />クラスを指定して<see cref="T:System.Windows.Controls.Primitives.ScrollEventType" />列挙値との新しい場所、<see cref="T:System.Windows.Controls.Primitives.Thumb" />内の制御、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.ScrollEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">呼び出すイベント ハンドラー。</param>
+        <param name="genericTarget">イベントの経路上の現在のオブジェクト。</param>
+        <summary>適切な型キャスト、タイプ セーフを実行<see cref="T:System.Windows.Controls.Primitives.ScrollEventHandler" />の委任、<see cref="E:System.Windows.Controls.Primitives.ScrollBar.Scroll" />イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewValue">
+      <MemberSignature Language="C#" Value="public double NewValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ScrollEventArgs.NewValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい場所を表す値を取得、<see cref="T:System.Windows.Controls.Primitives.Thumb" />で、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+        <value>新しい位置に対応する値、<see cref="T:System.Windows.Controls.Primitives.Thumb" />で、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい値の値に対応して、<xref:System.Windows.Controls.Primitives.Track.Value%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.Track>に実装されているコントロール、<xref:System.Windows.Controls.Primitives.ScrollBar>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollEventType">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.ScrollEventType ScrollEventType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Primitives.ScrollEventType ScrollEventType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.ScrollEventArgs.ScrollEventType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.ScrollEventType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.Primitives.ScrollEventType" />で変更を記述する列挙値、<see cref="T:System.Windows.Controls.Primitives.Thumb" />このイベントを発生させた位置。</summary>
+        <value>A<see cref="T:System.Windows.Controls.Primitives.ScrollEventType" />列挙値の型を記述する<see cref="T:System.Windows.Controls.Primitives.Thumb" />移動の原因となった、<see cref="E:System.Windows.Controls.Primitives.ScrollBar.Scroll" />イベント。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,86 @@
+<Type Name="QueryCorrelationInitializer" FullName="System.ServiceModel.Activities.QueryCorrelationInitializer">
+  <TypeSignature Language="C#" Value="public sealed class QueryCorrelationInitializer : System.ServiceModel.Activities.CorrelationInitializer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit QueryCorrelationInitializer extends System.ServiceModel.Activities.CorrelationInitializer" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activities.QueryCorrelationInitializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Activities.CorrelationInitializer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("MessageQuerySet")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メッセージ送受信時の <see cref="P:System.ServiceModel.Activities.CorrelationInitializer.CorrelationHandle" /> の結果に基づいて関連付けられた <see cref="P:System.ServiceModel.Activities.QueryCorrelationInitializer.MessageQuerySet" /> を初期化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Activities.QueryCorrelationInitializer> クラスを使用して  <xref:System.ServiceModel.Activities.SendReply> アクティビティの関連付け初期化子を設定する方法を示します。  
+  
+ [!code-csharp[ImplicitExplicitCorrelation#0](~/samples/snippets/csharp/VS_Snippets_CFX/implicitexplicitcorrelation/cs/service/pharmacyservice.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryCorrelationInitializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.QueryCorrelationInitializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activities.QueryCorrelationInitializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンストラクターを使用する方法を示しています。  
+  
+ [!code-csharp[ImplicitExplicitCorrelation#1](~/samples/snippets/csharp/VS_Snippets_CFX/implicitexplicitcorrelation/cs/service/pharmacyservice.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageQuerySet">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MessageQuerySet MessageQuerySet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.MessageQuerySet MessageQuerySet" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.QueryCorrelationInitializer.MessageQuerySet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageQuerySet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MessageQuerySet" /> の計算を実行するために使用される <see cref="T:System.ServiceModel.Channels.CorrelationKey" /> を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageQuerySet" /> の計算を実行するために使用される <see cref="T:System.ServiceModel.Channels.CorrelationKey" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Activities.QueryCorrelationInitializer.MessageQuerySet%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[ImplicitExplicitCorrelation#2](~/samples/snippets/csharp/VS_Snippets_CFX/implicitexplicitcorrelation/cs/service/pharmacyservice.cs#2)]  
+  
+ [!code-csharp[ImplicitExplicitCorrelation#1](~/samples/snippets/csharp/VS_Snippets_CFX/implicitexplicitcorrelation/cs/service/pharmacyservice.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

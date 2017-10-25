@@ -1,0 +1,129 @@
+<Type Name="ParameterModifier" FullName="System.Reflection.ParameterModifier">
+  <TypeSignature Language="C#" Value="public struct ParameterModifier" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit ParameterModifier extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.ParameterModifier" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型が変更されているパラメーター シグネチャでバインドを機能させるためにパラメーターに修飾子をアタッチします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.ParameterModifier>構造体を使用、<xref:System.Type.InvokeMember%28System.String%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%2CSystem.Object%5B%5D%2CSystem.Reflection.ParameterModifier%5B%5D%2CSystem.Globalization.CultureInfo%2CSystem.String%5B%5D%29?displayProperty=nameWithType>遅延バインディング アクセスは COM コンポーネントへの参照でパラメーターを渡すときにメソッドのオーバー ロードします。 参照によって渡されるパラメーターが 1 つで指定された<xref:System.Reflection.ParameterModifier>構造体は、1 つの要素を格納する配列で渡す必要があります。 1 つ<xref:System.Reflection.ParameterModifier>が呼び出されるメンバーのパラメーターの数では、この配列内の構造を初期化する必要があります。 参照渡しされるこれらのパラメーターを示すの値を設定、<xref:System.Reflection.ParameterModifier.Item%2A>プロパティ (c# のインデクサー) を`true`パラメーターの 0 から始まる位置に対応するインデックス番号。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しますこの 3 つの文字列引数を持つメンバーの最初とうちの 3 番目は、参照によって渡されます。 という名前の変数と仮定`obj`COM オブジェクトへの参照が含まれています。  
+  
+ [!code-cpp[System.Reflection.ParameterModifier#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.reflection.parametermodifier/cpp/source.cpp#1)]
+ [!code-csharp[System.Reflection.ParameterModifier#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.reflection.parametermodifier/cs/source.cs#1)]
+ [!code-vb[System.Reflection.ParameterModifier#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflection.parametermodifier/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParameterModifier (int parameterCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 parameterCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.ParameterModifier.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parameterCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterCount">パラメーターの数。</param>
+        <summary>指定されたパラメーター数を表す <see cref="T:System.Reflection.ParameterModifier" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="parameterCount" /> が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public bool this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ParameterModifier.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">変更ステータスが検査中あるいは設定中であるパラメーターのインデックス位置。</param>
+        <summary>指定したインデックス位置にあるパラメーターが現在の <see cref="T:System.Reflection.ParameterModifier" /> によって変更されるかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />このインデックス位置にあるパラメーターが、これによって変更するのにはかどうか<see cref="T:System.Reflection.ParameterModifier" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデクサーは、型が配列であるかのようにインデックスを作成する型で、既定のプロパティを許可します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,49 @@
+<Type Name="GridViewRowEventHandler" FullName="System.Web.UI.WebControls.GridViewRowEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void GridViewRowEventHandler(object sender, GridViewRowEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GridViewRowEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.GridViewRowEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.GridViewRowEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを含んでいる <see cref="T:System.Web.UI.WebControls.GridViewRowEventArgs" /> オブジェクト。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.GridView.RowCreated" />と<see cref="E:System.Web.UI.WebControls.GridView.RowDataBound" />のイベント、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前に、<xref:System.Web.UI.WebControls.GridView>コントロールを表示できる、<xref:System.Web.UI.WebControls.GridViewRow>コントロール内の行ごとのオブジェクトを作成する必要があります。 <xref:System.Web.UI.WebControls.GridView.RowCreated>たびに行をイベントは、<xref:System.Web.UI.WebControls.GridView>コントロールを作成します。 これにより、このイベントが発生するたびに、カスタム コンテンツを行を追加するなど、カスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ 同様に、コントロール内の各行は、前に、データ ソース内のレコードにバインドする必要が、<xref:System.Web.UI.WebControls.GridView>コントロールを表示できます。 <xref:System.Web.UI.WebControls.GridView.RowDataBound>イベントは、データ行 (によって表される、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクト) データには、バインド、<xref:System.Web.UI.WebControls.GridView>コントロール。 これにより、このイベントが発生するたびに、行にバインドされたデータの値を変更するなど、カスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ <xref:System.Web.UI.WebControls.GridViewRowEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムで追加する方法を示します、<xref:System.Web.UI.WebControls.GridViewRowEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.GridView.RowDataBound>のイベント、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[GridViewRowEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowEventHandler/CS/gridviewroweventhandlercs.aspx#1)]
+ [!code-aspx-vb[GridViewRowEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowEventHandler/VB/gridviewroweventhandlervb.aspx#1)]  
+  
+ 次の例は、宣言によって追加する方法を示します、<xref:System.Web.UI.WebControls.GridViewRowEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.GridView.RowDataBound>のイベント、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[GridViewRowDataBound#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowDataBound/CS/gridviewrowdataboundcs.aspx#1)]
+ [!code-aspx-vb[GridViewRowDataBound#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowDataBound/VB/gridviewrowdataboundvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

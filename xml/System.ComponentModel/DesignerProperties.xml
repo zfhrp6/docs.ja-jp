@@ -1,0 +1,104 @@
+<Type Name="DesignerProperties" FullName="System.ComponentModel.DesignerProperties">
+  <TypeSignature Language="C#" Value="public static class DesignerProperties" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DesignerProperties extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DesignerProperties" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイナーとの通信に使用される添付プロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.DesignerProperties>クラスは、デザイナーで実行されているコントロールの状態をクエリに使用できる添付プロパティを提供します。 デザイナー ツールは、デザイナーで実行されているオブジェクトのプロパティの値を設定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetIsInDesignMode">
+      <MemberSignature Language="C#" Value="public static bool GetIsInDesignMode (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsInDesignMode(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DesignerProperties.GetIsInDesignMode(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.ComponentModel.DesignerProperties.IsInDesignMode" />添付プロパティを指定した<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns><see cref="P:System.ComponentModel.DesignerProperties.IsInDesignMode" />要素のプロパティの値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInDesignModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsInDesignModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsInDesignModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.DesignerProperties.IsInDesignModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ComponentModel.DesignerProperties.IsInDesignMode" /> 添付プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.DesignerProperties.IsInDesignMode%2A> 添付プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsInDesignMode">
+      <MemberSignature Language="C#" Value="public static void SetIsInDesignMode (System.Windows.DependencyObject element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIsInDesignMode(class System.Windows.DependencyObject element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DesignerProperties.SetIsInDesignMode(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先となる要素。</param>
+        <param name="value">必要な<see cref="T:System.Boolean" />値。</param>
+        <summary>値を設定、<see cref="P:System.ComponentModel.DesignerProperties.IsInDesignMode" />プロパティを指定した要素にアタッチします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,66 @@
+<Type Name="TokenBinding" FullName="System.Security.Authentication.ExtendedProtection.TokenBinding">
+  <TypeSignature Language="C#" Value="public class TokenBinding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TokenBinding extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Authentication.ExtendedProtection.TokenBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トークンのバインドで使用される API を含みます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ネイティブの Win32 Api を使用して、トークンのバインドを実装します。 詳細については、次を参照してください。 [CNG トークンのバインド機能](https://msdn.microsoft.com/en-us/library/windows/desktop/mt269464\(v=vs.85\).aspx)します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BindingType">
+      <MemberSignature Language="C#" Value="public System.Security.Authentication.ExtendedProtection.TokenBindingType BindingType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Authentication.ExtendedProtection.TokenBindingType BindingType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Authentication.ExtendedProtection.TokenBinding.BindingType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExtendedProtection.TokenBindingType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークンのバインドの種類を取得します。</summary>
+        <value>トークンのバインドの種類。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRawTokenBindingId">
+      <MemberSignature Language="C#" Value="public byte[] GetRawTokenBindingId ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetRawTokenBindingId() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Authentication.ExtendedProtection.TokenBinding.GetRawTokenBindingId" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Raw トークンのバインド ID を取得します。</summary>
+        <returns>Raw トークンのバインド ID。バインディングの種類を表す生の Id の最初のバイトが削除されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

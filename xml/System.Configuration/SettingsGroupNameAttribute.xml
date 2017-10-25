@@ -1,0 +1,98 @@
+<Type Name="SettingsGroupNameAttribute" FullName="System.Configuration.SettingsGroupNameAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SettingsGroupNameAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SettingsGroupNameAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingsGroupNameAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーション設定のプロパティ グループの名前を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション設定クラスから派生した<xref:System.Configuration.ApplicationSettingsBase>、同じアプリケーション設定のプロパティ グループに属している 1 つまたは複数のプロパティを定義します。 既定では、グループには設定クラスの名前が割り当てられます。 ただし、<xref:System.Configuration.SettingsGroupNameAttribute>プロパティ グループの名前を明示的に指定するために使用できます。 この名前では、多数のサポートが必要なプログラミングのデザイン時ツールと管理ツールの実行時に、プロパティの整理に役に立つできにすることができます。 関連付けられた設定プロバイダーは、データ ストアの設定を編成するのにこの名前を使用も可能性があります。  
+  
+ <xref:System.Configuration.SettingsGroupNameAttribute>クラス レベルでのみ適用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsGroupNameAttribute (string groupName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string groupName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsGroupNameAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">A<see cref="T:System.String" />アプリケーション設定のプロパティ グループの名前を含むです。</param>
+        <summary><see cref="T:System.Configuration.SettingsGroupNameAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 理論上の最大長、`groupName`パラメーターがの上限によって制限されます、 <xref:System.Int32>、実用的な制限数、使いやすさとクォータの制限の設定プロバイダーによって決まりますが大幅に小さくなります。  
+  
+> [!NOTE]
+>  設定グループ名は一意である必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupName">
+      <MemberSignature Language="C#" Value="public string GroupName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GroupName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsGroupNameAttribute.GroupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション設定のプロパティ グループの名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />アプリケーション設定のプロパティ グループの名前を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsGroupNameAttribute.GroupName%2A>プロパティ値の設定、<xref:System.Configuration.SettingsGroupNameAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

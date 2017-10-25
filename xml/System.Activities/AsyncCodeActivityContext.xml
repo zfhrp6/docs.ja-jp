@@ -1,0 +1,81 @@
+<Type Name="AsyncCodeActivityContext" FullName="System.Activities.AsyncCodeActivityContext">
+  <TypeSignature Language="C#" Value="public sealed class AsyncCodeActivityContext : System.Activities.CodeActivityContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AsyncCodeActivityContext extends System.Activities.CodeActivityContext" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.AsyncCodeActivityContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.CodeActivityContext</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>非同期アクティビティの実行コンテキスト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これはシール クラスであり、<xref:System.Activities.CodeActivityContext> から派生します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsCancellationRequested">
+      <MemberSignature Language="C#" Value="public bool IsCancellationRequested { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCancellationRequested" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.AsyncCodeActivityContext.IsCancellationRequested" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在実行中の <see cref="T:System.Activities.AsyncCodeActivity" /> を取り消すかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、現在実行中<see cref="T:System.Activities.AsyncCodeActivity" />取り消された場合は、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkCanceled">
+      <MemberSignature Language="C#" Value="public void MarkCanceled ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MarkCanceled() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.AsyncCodeActivityContext.MarkCanceled" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクティビティ インスタンスを取り消し対象としてマークします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserState">
+      <MemberSignature Language="C#" Value="public object UserState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object UserState" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.AsyncCodeActivityContext.UserState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の非同期アクティビティに関連付けられたユーザー定義オブジェクトを取得または設定します。</summary>
+        <value>ユーザー定義オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

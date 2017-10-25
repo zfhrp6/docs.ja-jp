@@ -1,0 +1,259 @@
+<Type Name="InstallContext" FullName="System.Configuration.Install.InstallContext">
+  <TypeSignature Language="C#" Value="public class InstallContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InstallContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Install.InstallContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.Install</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のインストールに関する情報が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.Configuration.Install.InstallContext>実行可能ファイル、アセンブリをインストールするには、InstallUtil.exe など、インストールによって作成されました。 インストール プログラムを起動して、<xref:System.Configuration.Install.InstallContext>コンス トラクター、既定のログ ファイル パスとコマンド ライン パラメーターを渡します。  
+  
+ 呼び出しの前にその<xref:System.Configuration.Install.Installer.Install%2A>、 <xref:System.Configuration.Install.Installer.Commit%2A>、 <xref:System.Configuration.Install.Installer.Rollback%2A>、または<xref:System.Configuration.Install.Installer.Uninstall%2A>メソッド、インストール プログラムの設定、<xref:System.Configuration.Install.Installer.Context%2A>のプロパティ、<xref:System.Configuration.Install.Installer>のインスタンスに<xref:System.Configuration.Install.InstallContext>です。 これらのメソッドを呼び出す前に、<xref:System.Configuration.Install.Installer>でインストーラーのコレクションを格納する、<xref:System.Configuration.Install.Installer.Installers%2A>プロパティ セット、<xref:System.Configuration.Install.Installer.Context%2A>コンテナー内の各インストーラーのプロパティです。  
+  
+ <xref:System.Configuration.Install.InstallContext.Parameters%2A>プロパティには、実行可能ファイルのインストールを実行する入力したコマンドラインの解析済みのバージョンが含まれています。 プロパティには、コンソールで、ログ情報を表示するかどうか使用し、インストール中にユーザー インターフェイスを表示するかどうかを使用する、ログ ファイルへのパスなどの情報が含まれています。 呼び出す、<xref:System.Configuration.Install.InstallContext.IsParameterTrue%2A>コマンド ライン パラメーターがあるかを確認するメソッド`true`です。  
+  
+ 使用して、<xref:System.Configuration.Install.InstallContext.LogMessage%2A>インストール ログ ファイルと、コンソールにステータス メッセージを書き込みます。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallContext.%23ctor%2A>コンス トラクター、<xref:System.Configuration.Install.InstallContext.Parameters%2A>プロパティおよび<xref:System.Configuration.Install.InstallContext.LogMessage%2A>と<xref:System.Configuration.Install.InstallContext.IsParameterTrue%2A>のメソッド、<xref:System.Configuration.Install.InstallContext>クラスです。  
+  
+ ときに、<xref:System.Configuration.Install.Installer.Install%2A>インストーラーのメソッドが呼び出されて、コマンドラインからパラメーターをチェックします。 によって、コンソールに進行状況メッセージを表示し、指定されたログ ファイルにも保存します。  
+  
+ 空の任意の引数を指定せず、プログラムが呼び出される場合<xref:System.Configuration.Install.InstallContext>を作成します。 ときに"/ログ ファイル"と"/LogtoConsole"が指定されて、<xref:System.Configuration.Install.InstallContext>をそれぞれの引数を渡すことによって作成された<xref:System.Configuration.Install.InstallContext.%23ctor%2A>です。  
+  
+ [!code-cpp[InstallContext_InstallContext#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallContext_InstallContext/CPP/installcontext_installcontext.cpp#1)]
+ [!code-csharp[InstallContext_InstallContext#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallContext_InstallContext/CS/installcontext_installcontext.cs#1)]
+ [!code-vb[InstallContext_InstallContext#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallContext_InstallContext/VB/installcontext_installcontext.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstallContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.Install.InstallContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードでは、インストール ログ ファイルは作成されません。  
+  
+   
+  
+## Examples  
+  
+> [!NOTE]
+>  この例では、いずれかのオーバー ロードされたバージョンを使用して、<xref:System.Configuration.Install.InstallContext>コンス トラクターです。 使用可能な可能性のあるその他の例は、個々 のオーバー ロードのトピックを参照してください。  
+  
+ 空の任意の引数を指定せず、プログラムが呼び出される場合<xref:System.Configuration.Install.InstallContext>を作成します。  
+  
+ [!code-cpp[InstallContext_InstallContext#2](~/samples/snippets/cpp/VS_Snippets_CLR/InstallContext_InstallContext/CPP/installcontext_installcontext.cpp#2)]
+ [!code-csharp[InstallContext_InstallContext#2](~/samples/snippets/csharp/VS_Snippets_CLR/InstallContext_InstallContext/CS/installcontext_installcontext.cs#2)]
+ [!code-vb[InstallContext_InstallContext#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallContext_InstallContext/VB/installcontext_installcontext.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstallContext (string logFilePath, string[] commandLine);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string logFilePath, string[] commandLine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallContext.#ctor(System.String,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="logFilePath" Type="System.String" />
+        <Parameter Name="commandLine" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="logFilePath">このインストールのログ ファイルへのパスまたは<see langword="null" />ログ ファイルを作成できない場合。</param>
+        <param name="commandLine">インストール プログラムを実行しているときに入力したコマンド ライン パラメーターまたは<see langword="null" />[なし] が入力された場合。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.Install.InstallContext" />クラス、およびインストールするためのログ ファイルを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インストールで使用する場合[Installutil.exe (インストーラー ツール)](~/docs/framework/tools/installutil-exe-installer-tool.md)、このコンス トラクターは、指定したパスにログ ファイルを作成しにコマンド ライン パラメーターの配列を解析して、<xref:System.Configuration.Install.InstallContext.Parameters%2A>プロパティです。 ログ ファイルのパスが、コマンド ライン パラメーターで指定されている場合は、ファイルの作成に使用されます。 ログ ファイルの引数がコマンドラインの値で指定されていない場合、`logFilePath`パラメーターを使用します。 ログ ファイルの作成を抑制するのには、渡す、"/ログ ファイル ="コマンド ライン パラメーターです。  
+  
+   
+  
+## Examples  
+ この例は、例のクラスの概要では、抜粋<xref:System.Configuration.Install.InstallContext>クラスです。  
+  
+ ときに"/ログ ファイル"と"/LogtoConsole"が指定されて、<xref:System.Configuration.Install.InstallContext>をそれぞれの引数を渡すことによって作成された<xref:System.Configuration.Install.InstallContext.%23ctor%2A>です。  
+  
+ [!code-cpp[InstallContext_InstallContext#3](~/samples/snippets/cpp/VS_Snippets_CLR/InstallContext_InstallContext/CPP/installcontext_installcontext.cpp#3)]
+ [!code-csharp[InstallContext_InstallContext#3](~/samples/snippets/csharp/VS_Snippets_CLR/InstallContext_InstallContext/CS/installcontext_installcontext.cs#3)]
+ [!code-vb[InstallContext_InstallContext#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallContext_InstallContext/VB/installcontext_installcontext.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>既定のログ ファイル パスを渡す、<paramref name="logFilePath" />このコンス トラクターを呼び出す場合のパラメーターです。 これは、実行可能ファイルのインストールを実行すると、/logfile コマンド ライン パラメーターを使用しない場合、ログ ファイルが作成されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsParameterTrue">
+      <MemberSignature Language="C#" Value="public bool IsParameterTrue (string paramName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsParameterTrue(string paramName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallContext.IsParameterTrue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="paramName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="paramName">確認するコマンド ライン パラメーターの名前。</param>
+        <summary>指定したコマンド ライン パラメーターがかどうかを判断<see langword="true" />です。</summary>
+        <returns>
+          <see langword="true" />指定されたパラメーターが"yes"に設定されている場合"true"、「1」、または空の文字列 ("") です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにアクセスする、<xref:System.Configuration.Install.InstallContext.Parameters%2A>かどうかを指定したパラメーターに、コマンド ライン パラメーターの解析済みのバージョンを含むプロパティ`true`です。  
+  
+   
+  
+## Examples  
+ この例は、クラスの概要」のサンプルの抜粋、<xref:System.Configuration.Install.InstallContext>クラスです。  
+  
+ 使用して、<xref:System.Configuration.Install.InstallContext.IsParameterTrue%2A>かどうかを検索するメソッド、`LogtoConsole`パラメーターが設定されています。 場合`yes`を使用、<xref:System.Configuration.Install.InstallContext.LogMessage%2A>インストール ログ ファイルと、コンソールにステータス メッセージを書き込みます。  
+  
+ [!code-cpp[InstallContext_InstallContext#4](~/samples/snippets/cpp/VS_Snippets_CLR/InstallContext_InstallContext/CPP/installcontext_installcontext.cpp#4)]
+ [!code-csharp[InstallContext_InstallContext#4](~/samples/snippets/csharp/VS_Snippets_CLR/InstallContext_InstallContext/CS/installcontext_installcontext.cs#4)]
+ [!code-vb[InstallContext_InstallContext#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallContext_InstallContext/VB/installcontext_installcontext.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogMessage">
+      <MemberSignature Language="C#" Value="public void LogMessage (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LogMessage(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallContext.LogMessage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>コンソールとインストールのログ ファイルには、メッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インストーラーでは、進行状況やその他の状態情報をログ ファイルに書き込むには、このメソッドを呼び出すことができます。 コマンド ライン パラメーターでは、ユーザー インターフェイスを表示することを指定すると、インストーラーがメッセージ ボックスを表示するか通話だけでなくクエリを作成、<xref:System.Configuration.Install.InstallContext.LogMessage%2A>メソッドです。 ログ ファイルに書き込まれるテキストが見えないように、ユーザーが、インストールを実行する InstallUtil.exe を使用しない限り、および"/LogToConsole = true"は、コマンドラインで指定します。  
+  
+   
+  
+## Examples  
+ この例は、例のクラスの概要では、抜粋<xref:System.Configuration.Install.InstallContext>クラスです。  
+  
+ 使用して、<xref:System.Configuration.Install.InstallContext.IsParameterTrue%2A>かどうかを検索するメソッド、`LogtoConsole`パラメーターが設定されています。 場合`yes`を使用、<xref:System.Configuration.Install.InstallContext.LogMessage%2A>インストール ログ ファイルと、コンソールにステータス メッセージを書き込みます。  
+  
+ [!code-cpp[InstallContext_InstallContext#4](~/samples/snippets/cpp/VS_Snippets_CLR/InstallContext_InstallContext/CPP/installcontext_installcontext.cpp#4)]
+ [!code-csharp[InstallContext_InstallContext#4](~/samples/snippets/csharp/VS_Snippets_CLR/InstallContext_InstallContext/CS/installcontext_installcontext.cs#4)]
+ [!code-vb[InstallContext_InstallContext#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallContext_InstallContext/VB/installcontext_installcontext.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringDictionary Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringDictionary Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Install.InstallContext.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>InstallUtil.exe を実行したときに入力されたコマンド ライン パラメーターを取得します。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.StringDictionary" />実行可能ファイルのインストールが実行されたときに入力されたコマンド ライン パラメーターを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.Configuration.Install.InstallContext>作成されると、コマンドラインにパラメーターの解析、<xref:System.Configuration.Install.InstallContext.Parameters%2A>プロパティです。 キーとパラメーターの値の両方は、文字列です。  
+  
+   
+  
+## Examples  
+ この例は、例のクラスの概要では、抜粋<xref:System.Configuration.Install.InstallContext>クラスです。  
+  
+ このサンプルを取得、<xref:System.Configuration.Install.InstallContext.Parameters%2A>プロパティを任意のコマンドラインの引数が、ユーザーが入力されたかどうかを参照してください。 また、使用、<xref:System.Configuration.Install.InstallContext.IsParameterTrue%2A>かどうかを検索するメソッド、`LogtoConsole`パラメーターが設定されています。 場合`yes`を使用、<xref:System.Configuration.Install.InstallContext.LogMessage%2A>インストール ログ ファイルと、コンソールにステータス メッセージを書き込みます。  
+  
+ [!code-cpp[InstallContext_InstallContext#6](~/samples/snippets/cpp/VS_Snippets_CLR/InstallContext_InstallContext/CPP/installcontext_installcontext.cpp#6)]
+ [!code-csharp[InstallContext_InstallContext#6](~/samples/snippets/csharp/VS_Snippets_CLR/InstallContext_InstallContext/CS/installcontext_installcontext.cs#6)]
+ [!code-vb[InstallContext_InstallContext#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallContext_InstallContext/VB/installcontext_installcontext.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseCommandLine">
+      <MemberSignature Language="C#" Value="protected static System.Collections.Specialized.StringDictionary ParseCommandLine (string[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Collections.Specialized.StringDictionary ParseCommandLine(string[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallContext.ParseCommandLine(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="args">コマンド ライン パラメーターを格納する配列。</param>
+        <summary>文字列ディクショナリに、コマンド ライン パラメーターを解析します。</summary>
+        <returns>A<see cref="T:System.Collections.Specialized.StringDictionary" />解析済みのコマンド ライン パラメーターを含むです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

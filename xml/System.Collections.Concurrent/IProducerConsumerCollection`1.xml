@@ -1,0 +1,208 @@
+<Type Name="IProducerConsumerCollection&lt;T&gt;" FullName="System.Collections.Concurrent.IProducerConsumerCollection&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface IProducerConsumerCollection&lt;T&gt; : System.Collections.Generic.IEnumerable&lt;T&gt;, System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IProducerConsumerCollection`1&lt;T&gt; implements class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Concurrent.IProducerConsumerCollection`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Concurrent</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.14.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T">コレクション内の要素の型を指定します。</typeparam>
+    <summary>プロデューサー/コンシューマーの使用を意図した、スレッド セーフなコレクションを操作するメソッドを定義します。 このインターフェイスを提供する統一表現プロデューサー/コンシューマーのコレクションを上位レベルの抽象化など、<see cref="T:System.Collections.Concurrent.BlockingCollection`1" />基になるストレージ メカニズムとして、コレクションを使用できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。[スレッド セーフなコレクション](http://msdn.microsoft.com/library/2e7ca21f-786c-4367-96be-0cf3f3dcc6bd)と[BlockingCollection の概要](~/docs/standard/collections/thread-safe/blockingcollection-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、スタックのデータ構造を実装する<xref:System.Collections.Concurrent.IProducerConsumerCollection%601?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Collections.Concurrent.IProducerConsumerCollection#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.concurrent.iproducerconsumercollection/cs/iprodcon.cs#1)]
+ [!code-vb[System.Collections.Concurrent.IProducerConsumerCollection#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.concurrent.iproducerconsumercollection/vb/iprodcon.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>このインターフェイスのすべての実装には、このインターフェイスの複数のスレッドから同時に使用するすべてのメンバーが有効にする必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (T[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(!T[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.IProducerConsumerCollection`1.CopyTo(`0[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="T[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">
+            <see cref="T:System.Array" /> からコピーされる要素のコピー先となる 1 次元の <see cref="T:System.Collections.Concurrent.IProducerConsumerCollection`1" />。  
+ 
+配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>要素をコピー、<see cref="T:System.Collections.Concurrent.IProducerConsumerCollection`1" />を<see cref="T:System.Array" />、指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、基になるコレクションのスナップショットを提供します。 他のスレッドを追加したり、コピーは作成後すぐに削除することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> が null 参照 (Visual Basic では Nothing) です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="index" />長さ以上、 <paramref name="array" /> - または - コレクション内の要素の数がから利用可能な領域より大きく<paramref name="index" />変換先の末尾に<paramref name="array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToArray">
+      <MemberSignature Language="C#" Value="public T[] ToArray ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !T[] ToArray() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.IProducerConsumerCollection`1.ToArray" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>含まれる要素のコピー、<see cref="T:System.Collections.Concurrent.IProducerConsumerCollection`1" />を新しい配列にします。</summary>
+        <returns>コピーされた要素を含む新しい配列、<see cref="T:System.Collections.Concurrent.IProducerConsumerCollection`1" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、基になるコレクションのスナップショットを提供します。 他のスレッドを追加したり、配列が作成された後にすぐに削除することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryAdd">
+      <MemberSignature Language="C#" Value="public bool TryAdd (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryAdd(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.IProducerConsumerCollection`1.TryAdd(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Collections.Concurrent.IProducerConsumerCollection`1" /> に追加するオブジェクト。</param>
+        <summary><see cref="T:System.Collections.Concurrent.IProducerConsumerCollection`1" /> に対してオブジェクトの追加を試みます。</summary>
+        <returns>オブジェクトが正常に追加された場合は true。それ以外の場合は false。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="item" />がこのコレクションは無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryTake">
+      <MemberSignature Language="C#" Value="public bool TryTake (out T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryTake([out] !T&amp; item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.IProducerConsumerCollection`1.TryTake(`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="item">オブジェクトが削除され、正常に返された場合、このメソッドが戻るとき<c>項目</c>削除されたオブジェクトが含まれています。 削除できるオブジェクトがない場合、値は指定されません。</param>
+        <summary><see cref="T:System.Collections.Concurrent.IProducerConsumerCollection`1" /> からオブジェクトを削除して返そうと試みます。</summary>
+        <returns>オブジェクトが削除され、正常に返される場合は true。それ以外の場合は false です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

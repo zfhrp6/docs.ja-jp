@@ -1,0 +1,112 @@
+<Type Name="AssemblyInfo" FullName="System.Web.Configuration.AssemblyInfo">
+  <TypeSignature Language="C#" Value="public sealed class AssemblyInfo : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AssemblyInfo extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.AssemblyInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連する動的なリソースのコンパイル時にアセンブリを参照します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET は、各コード モジュールをコンパイルするときに自動的にアセンブリとリソースをリンクします。 <xref:System.Web.Configuration.AssemblyInfo>オブジェクトは、アセンブリを参照します。 アセンブリは、相互に連携して 1 つの論理的な機能単位を形成するように構築された型やリソースの集合です。 アセンブリは、型の実装を識別する必要がある情報を使用して、共通言語ランタイムを提供します。 共通言語ランタイムにとって、型はアセンブリのコンテキストの外部には存在しません。  
+  
+ 一般的にリンクされているアセンブリが一覧表示、`assemblies`のノード、`compilation`構成セクション。 さらに、アセンブリできます手動で追加するコード リソースをアプリケーションに追加機能が必要なときにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyInfo (string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.AssemblyInfo.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">バージョン、カルチャ、および公開キー トークンで構成されるコンマ区切りのアセンブリ名の組み合わせを指定します。</param>
+        <summary>インスタンスを作成、<see cref="T:System.Web.Configuration.AssemblyInfo" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.AssemblyInfo>アセンブリ情報を含むインスタンスが初期化されていない、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.Configuration.AssemblyInfo>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.AssemblyCollection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.AssemblyCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AssemblyCollection/CS/AssemblyCollection.cs#2)]
+ [!code-vb[System.Web.Configuration.AssemblyCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AssemblyCollection/VB/AssemblyCollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assembly">
+      <MemberSignature Language="C#" Value="public string Assembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Assembly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AssemblyInfo.Assembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("assembly", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または動的なリソースのコンパイル時に使用するアセンブリ参照を設定します。</summary>
+        <value>バージョン、カルチャ、およびアセンブリの公開キー トークンを指定するコンマ区切りの文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET は、まずアセンブリ DLL アプリケーションの Bin ディレクトリでプライベートにし、システム アセンブリ キャッシュ内を検索します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AssemblyInfo.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

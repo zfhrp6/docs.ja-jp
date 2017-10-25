@@ -1,0 +1,218 @@
+<Type Name="BinaryKeyIdentifierClause" FullName="System.IdentityModel.Tokens.BinaryKeyIdentifierClause">
+  <TypeSignature Language="C#" Value="public abstract class BinaryKeyIdentifierClause : System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BinaryKeyIdentifierClause extends System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.BinaryKeyIdentifierClause" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>バイナリ データに基づくキー識別子句の基本クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、カスタム セキュリティ トークン サービスが作成される場合を除いて、<xref:System.IdentityModel.Tokens.BinaryKeyIdentifierClause> を使用する必要はありません。 セキュリティ トークン サービスがセキュリティ トークンを返した場合、発行されたセキュリティ トークンには、結び付けられているセキュリティ トークンまたは結び付けられていないセキュリティ トークンへの参照が含まれます。 結び付けられている参照は、SOAP メッセージのセキュリティ ヘッダーに含まれるセキュリティ トークンを参照し、結び付けられていない参照は、SOAP メッセージのセキュリティ ヘッダーに含まれていないセキュリティ トークンを参照します。 これらの参照は、通常、発行されたセキュリティ トークンの信頼性を確認します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BinaryKeyIdentifierClause (string clauseType, byte[] identificationData, bool cloneBuffer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string clauseType, unsigned int8[] identificationData, bool cloneBuffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="clauseType" Type="System.String" />
+        <Parameter Name="identificationData" Type="System.Byte[]" />
+        <Parameter Name="cloneBuffer" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="clauseType">キー識別子句型。 <see cref="P:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.ClauseType" /> プロパティの値を設定します。</param>
+        <param name="identificationData">キー識別子を表すバイナリ データを格納する <see cref="T:System.Byte" /> の配列。</param>
+        <param name="cloneBuffer">
+          <see langword="true" />渡される配列のクローンを作成する、 <c>identificationData</c>パラメーターです。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>指定したキー識別子句の型、バイナリ データ、およびバイナリデータを複製するかどうかを示す値を使用して、<see cref="T:System.IdentityModel.Tokens.BinaryKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identificationData" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="identificationData" /> の長さがゼロです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BinaryKeyIdentifierClause (string clauseType, byte[] identificationData, bool cloneBuffer, byte[] derivationNonce, int derivationLength);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string clauseType, unsigned int8[] identificationData, bool cloneBuffer, unsigned int8[] derivationNonce, int32 derivationLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Boolean,System.Byte[],System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="clauseType" Type="System.String" />
+        <Parameter Name="identificationData" Type="System.Byte[]" />
+        <Parameter Name="cloneBuffer" Type="System.Boolean" />
+        <Parameter Name="derivationNonce" Type="System.Byte[]" />
+        <Parameter Name="derivationLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="clauseType">キー識別子句型。 <see cref="P:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.ClauseType" /> プロパティの値を設定します。</param>
+        <param name="identificationData">キー識別子を表すバイナリ データを格納する <see cref="T:System.Byte" /> の配列。 <see cref="M:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer" /> メソッドから返されるバイナリ データを設定します。</param>
+        <param name="cloneBuffer">
+          <see langword="true" />渡される配列のクローンを作成する、 <c>identificationData</c>パラメーターです。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="derivationNonce">派生キーの作成に使用された nonce を格納する <see cref="T:System.Byte" /> の配列。 <see cref="M:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.GetDerivationNonce" /> メソッドから返される値を設定します。</param>
+        <param name="derivationLength">派生キーのサイズ。 <see cref="P:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.DerivationLength" /> プロパティの値を設定します。</param>
+        <summary>指定したキー識別句の型、バイナリ データ、バイナリデータを複製するかどうかを示す値、nonce、およびキー長を使用して、<see cref="T:System.IdentityModel.Tokens.BinaryKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `derivationNonce` パラメーターと `derivationLength` パラメーターを指定した場合は、トークンの直接的なセキュリティ キーの代わりに暗黙的な派生キーが使用されます。  
+  
+ `cloneBuffer` パラメーターに渡される値に関係なく、<xref:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer%2A> メソッドは、常に `identificationData` パラメーターに渡された配列の複製を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identificationData" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="identificationData" /> の長さがゼロです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBuffer">
+      <MemberSignature Language="C#" Value="public byte[] GetBuffer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetBuffer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キー識別子句を表すバイナリ データを取得します。</summary>
+        <returns>キー識別子を表すバイナリ データを格納する <see cref="T:System.Byte" /> の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンストラクターの `cloneBuffer` パラメーターに渡される値に関係なく、<xref:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer%2A> メソッドは、常にコンストラクターの `identificationData` パラメーターに渡された配列の複製を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRawBuffer">
+      <MemberSignature Language="C#" Value="protected byte[] GetRawBuffer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance unsigned int8[] GetRawBuffer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetRawBuffer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キー識別子句を表すバイナリ データを取得します。</summary>
+        <returns>キー識別子を表すバイナリ データを格納する <see cref="T:System.Byte" /> の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetRawBuffer%2A> に渡される値が `identificationData` の場合、`cloneBuffer` メソッドから返される配列は、コンストラクターの `true` パラメーターの複製で、それ以外の場合は同じ配列です。  
+  
+ <xref:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer%2A> メソッドは、常にコンストラクターの `identificationData` パラメーターに渡された配列の複製を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public bool Matches (byte[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Matches(unsigned int8[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="data">比較する <see cref="T:System.Byte" /> の配列。</param>
+        <summary>現在のインスタンスのバイナリ データが、指定したバイナリ データと一致するどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="data" />によって返されるバイナリ データと等しい、<see cref="M:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer" />メソッド以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public override bool Matches (System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Matches(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="clause">To be added.</param>
+        <summary>このインスタンスのキー識別子が、指定したキー識別句と等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="clause" /> 型であり、<see cref="T:System.IdentityModel.Tokens.BinaryKeyIdentifierClause" /> メソッドによって返されたバイナリデータが <see cref="M:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer" /> パラメーターと現在のインスタンスと一致する場合は <paramref name="clause" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public bool Matches (byte[] data, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Matches(unsigned int8[] data, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="data">比較する <see cref="T:System.Byte" /> の配列。</param>
+        <param name="offset">比較を開始する配列内のインデックス。</param>
+        <summary>現在のインスタンスのバイナリ データが、指定したバイナリ データの指定したオフセットで一致するどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合内のバイナリ データ、<paramref name="data" />パラメーターで指定されたインデックスを開始位置、<paramref name="offset" />パラメーターによって返されたバイナリ データは、<see cref="M:System.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer" />メソッド (インデックス 0 から始まります)。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

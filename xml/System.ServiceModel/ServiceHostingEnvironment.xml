@@ -1,0 +1,143 @@
+<Type Name="ServiceHostingEnvironment" FullName="System.ServiceModel.ServiceHostingEnvironment">
+  <TypeSignature Language="C#" Value="public static class ServiceHostingEnvironment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ServiceHostingEnvironment extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ServiceHostingEnvironment" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows Communication Foundation (WCF) サービスが実行されている現在のホスト環境に関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、個々のサービスに特に関連付けられていない AppDomain 全体の設定を公開します。 このクラスは、アプリケーション レベルまたはコンピューターの構成レベルでのみ適用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AspNetCompatibilityEnabled">
+      <MemberSignature Language="C#" Value="public static bool AspNetCompatibilityEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool AspNetCompatibilityEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostingEnvironment.AspNetCompatibilityEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このサービスが、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] HTTP アプリケーション パイプラインのコンテキストで実行中かどうかを示す値を取得します。</summary>
+        <value>
+          現在の AppDomain に対して ASP.NET 互換が有効になっている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値によって設定された値を反映して、<xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.AspNetCompatibilityEnabled%2A>構成要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureInitialized">
+      <MemberSignature Language="C#" Value="public static void EnsureInitialized ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnsureInitialized() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostingEnvironment.EnsureInitialized" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既に初期化されていない場合は、サービスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureServiceAvailable">
+      <MemberSignature Language="C#" Value="public static void EnsureServiceAvailable (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnsureServiceAvailable(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHostingEnvironment.EnsureServiceAvailable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">サービスへの仮想パス。</param>
+        <summary>サービスが指定された仮想パスでアクティブ化されることを保証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、サービスがまだアクティブになっていない場合に、サードパーティのトランスポート開発者が、指定した仮想パスにあるサービスをアクティブにするために使用します。 このメソッドはべき等であるため、一度呼び出した後は同じ `virtualPath` を指定して再度呼び出しても効果がないという意味で安全です。  
+  
+ 有効な仮想パスの書式は、`/<app-name>/<sub-directory/<service-name>.svc``~/<sub-directory/<service-name>.svc``<app-name>``<sub-directory>` または `<service-name>` です。ここで、 はアプリケーション名、 は IIS 仮想ディレクトリ、そして  はサービス名です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ServiceModel.EndpointNotFoundException">指定された仮想パスでサービスが見つかりません。</exception>
+        <exception cref="T:System.ServiceModel.ServiceActivationException">サービスを正常にアクティブ化できませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスは、このホスト環境で実行されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="virtualPath" /> が絶対 URI であるか、または無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MultipleSiteBindingsEnabled">
+      <MemberSignature Language="C#" Value="public static bool MultipleSiteBindingsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool MultipleSiteBindingsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHostingEnvironment.MultipleSiteBindingsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス ホストで複数サイトのバインドが可能かどうかを指定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />複数サイトのバインドが有効な場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)][サイト バインドの複数の IIS のサポート](~/docs/framework/wcf/feature-details/supporting-multiple-iis-site-bindings.md)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

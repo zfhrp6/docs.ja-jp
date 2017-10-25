@@ -1,0 +1,414 @@
+<Type Name="FederationConfiguration" FullName="System.IdentityModel.Services.Configuration.FederationConfiguration">
+  <TypeSignature Language="C#" Value="public class FederationConfiguration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FederationConfiguration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.Configuration.FederationConfiguration" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Ws-federation 認証モジュールの動作を制御するフェデレーション設定を含むプロパティを公開 (<see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />) と、セッションの認証モジュール (<see cref="T:System.IdentityModel.Services.SessionAuthenticationModule" />) web アプリケーションでします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では web アプリケーションがある、1 つ<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>を介してアクセスされるオブジェクト、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration?displayProperty=nameWithType>プロパティです。 プロパティは、新しいへのアクセスを初めて<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>構成ファイルの設定からインスタンスを初期化し、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated?displayProperty=nameWithType>イベントが発生します。 によって公開されるメソッドとプロパティを使用することができます、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>クラスを変更またはイベント ハンドラーの構成から初期化されるオブジェクトを置換します。 このオブジェクトは、使用、<xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType>イベント ハンドラー内のプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Services.Configuration.FederationConfiguration" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  前に、新しい<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>によって構成された HTTP モジュールのいずれかのインスタンスを使用する、呼び出し、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.Initialize%2A>インスタンスが正しく初期化されていることを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FederationConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Configuration.FederationConfiguration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.Configuration.FederationConfiguration" />クラスからの設定を読み込むことにより、<see langword="system.identityModel.services" />構成ファイルのセクションです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定を読み込むことによって新しいインスタンスのプロパティが初期化、`<system.identityModel.services>`構成セクション。 このコンス トラクターを呼び出す、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.%23ctor%28System.Boolean%29?displayProperty=nameWithType>を持つコンス トラクター、`loadConfig`パラメーター`true`です。  
+  
+> [!WARNING]
+>  前に、新しい<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>によって構成された HTTP モジュールのいずれかのインスタンスを使用する、呼び出し、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.Initialize%2A>インスタンスが正しく初期化されていることを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FederationConfiguration (bool loadConfig);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool loadConfig) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Configuration.FederationConfiguration.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="loadConfig" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="loadConfig">
+          <see langword="true" />構成ファイルから読み込まれた設定を使用して初期化するには<see langword="false" />を既定値に初期化します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.Configuration.FederationConfiguration" />クラスからの設定を必要に応じて読み込むことにより、<see langword="system.identityModel.services" />構成ファイルのセクションです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!WARNING]
+>  前に、新しい<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>によって構成された HTTP モジュールのいずれかのインスタンスを使用する、呼び出し、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.Initialize%2A>インスタンスが正しく初期化されていることを確認します。  
+  
+ `system.identityModel`でセクションを指定する必要があります、`<section>`要素の下、`<configSections>`要素で、構成ファイルまたは例外がスローされます。  
+  
+```  
+<configSections>  
+  <section name="system.identityModel" type="System.IdentityModel.Configuration.SystemIdentityModelSection, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />  
+</configSections>  
+```  
+  
+ 場合`loadConfig`は`true`と 1 つだけ`<federationConfiguration>`要素を指定すると、その要素を使用して設定が読み込まれます。 複数`<federationConfiguration>`要素が指定されると、その名前付きではない要素から設定を読み込むを試行するメソッドが、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.DefaultFederationConfigurationName>です。 このような要素が存在しない場合、このメソッドは、設定を読み込むことがなく返します。 これは、結果、例外、ときに、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.Initialize%2A>メソッドが呼び出されます。  
+  
+> [!WARNING]
+>  Microsoft をお勧めを複数指定する場合`<federationConfiguration>`内の要素、`system.identityModel.services`構成セクションを少なくとも 1 つのそれらの名前がありません。 またはの名前は、空の文字列に設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see langword="system.identityModel" />構成セクションは、構成ファイルで定義されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FederationConfiguration (string federationConfigurationName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string federationConfigurationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Configuration.FederationConfiguration.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="federationConfigurationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="federationConfigurationName">名前、<see langword="&lt;federationConfiguration&gt;" />構成の読み込み元の要素。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.Configuration.FederationConfiguration" />クラス、 [ &lt;federationConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)指定した名前を持つ要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!WARNING]
+>  前に、新しい<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>によって構成された HTTP モジュールのいずれかのインスタンスを使用する、呼び出し、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.Initialize%2A>インスタンスが正しく初期化されていることを確認します。  
+  
+ このコンス トラクターが呼び出された場合、`<system.identityModel.services>`構成セクションで、`<federationConfiguration>`指定の名前を持つ要素が、構成ファイル内に存在する必要があります。  
+  
+ 両方の`system.identityModel`セクションおよび`system.identityModel.services`で指定する必要があります、`<section>`の下の要素、`<configSections>`要素で、構成ファイルまたは例外がスローされます。  
+  
+```  
+<configSections>  
+  <section name="system.identityModel" type="System.IdentityModel.Configuration.SystemIdentityModelSection, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />  
+  <section name="system.identityModel.services" type="System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />  
+</configSections>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ない<see langword="system.identityModel.services" />構成ファイルで定義されたセクションです。  
+  
+ または  
+  
+ ない<see langword="system.identityModel" />構成ファイルで定義されたセクションです。  
+  
+ または  
+  
+ ない<see langword="&lt;federationConfiguration&gt;" />で指定した名前を持つ要素、<see langword="system.identityModel.services" />セクションです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieHandler">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Services.CookieHandler CookieHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Services.CookieHandler CookieHandler" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.FederationConfiguration.CookieHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.CookieHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のセッションの認証モジュールによって使用されるクッキー ハンドラー (<see cref="T:System.IdentityModel.Services.SessionAuthenticationModule" />)。</summary>
+        <value>セッションの認証モジュール (SAM) によって使用されるクッキー ハンドラー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セッション cookie を読み書きする SAM によって使用されるクッキー ハンドラーを指定します。  
+  
+ 構成ファイルから初期化されると、このプロパティ、 [ &lt;cookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomElement">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement CustomElement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlElement CustomElement" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.FederationConfiguration.CustomElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、この構成では、いずれかが存在する場合に、カスタムの XML 要素を設定します。</summary>
+        <value>カスタムの XML 要素です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultFederationConfigurationName">
+      <MemberSignature Language="C#" Value="public static readonly string DefaultFederationConfigurationName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string DefaultFederationConfigurationName" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Services.Configuration.FederationConfiguration.DefaultFederationConfigurationName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値の名前を定義[ &lt;federationConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)設定の読み込み元となる要素。 これは、既定の要素が名前付きではない、空の文字列です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IdentityConfiguration">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Configuration.IdentityConfiguration IdentityConfiguration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Configuration.IdentityConfiguration IdentityConfiguration" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.FederationConfiguration.IdentityConfiguration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Configuration.IdentityConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.IdentityModel.Configuration.IdentityConfiguration" />このインスタンスに関連付けられているオブジェクト。</summary>
+        <value>このインスタンスに関連付けられている id の構成オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成ファイルから初期化されると、このプロパティ、 [ &lt;identityConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public virtual void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Configuration.FederationConfiguration.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、着信要求を処理する HTTP モジュールによって使用される前に、現在のインスタンスが正しく初期化されているを確認します。 のみ 1 回に呼び出す必要があります。 チェック、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.IsInitialized%2A>プロパティ、メソッドを呼び出す前にします。 このメソッドを設定、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.IsInitialized%2A>プロパティが設定されて`true`です。  
+  
+ 既定の実装がない場合を既に構成されているいずれか、既定のクッキー ハンドラーを作成、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.CookieHandler%2A>プロパティや呼び出し、 <xref:System.IdentityModel.Configuration.IdentityConfiguration.Initialize%2A?displayProperty=nameWithType> id 構成オブジェクトでメソッドを使用して構成を<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.IdentityConfiguration%2A>プロパティです。 この動作を変更または派生クラスに追加の初期化を提供する、このメソッドをオーバーライドすることができます。  
+  
+ 着信要求を処理する HTTP モジュール、クラスが使用される前に、このメソッドを呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のインスタンスは既に初期化されています (、<see cref="P:System.IdentityModel.Services.Configuration.FederationConfiguration.IsInitialized" />プロパティは<see langword="true" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitialized">
+      <MemberSignature Language="C#" Value="public virtual bool IsInitialized { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInitialized" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.FederationConfiguration.IsInitialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="M:System.IdentityModel.Services.Configuration.FederationConfiguration.Initialize" />メソッドが呼び出されました。</summary>
+        <value>
+          <see langword="true" />構成オブジェクトが構成されている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して確認するかどうか、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>オブジェクトは既に初期化されています。 <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.Initialize%2A>回だけ、メソッドを呼び出す必要があります。  
+  
+ `set`操作が`protected`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadConfiguration">
+      <MemberSignature Language="C#" Value="protected void LoadConfiguration (System.IdentityModel.Services.Configuration.FederationConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void LoadConfiguration(class System.IdentityModel.Services.Configuration.FederationConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Configuration.FederationConfiguration.LoadConfiguration(System.IdentityModel.Services.Configuration.FederationConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.IdentityModel.Services.Configuration.FederationConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see langword="&lt;federationConfiguration&gt;" />要素から設定を読み込めません。 指定できます<see langword="null" />既定値を読み込みます。</param>
+        <summary>構成ファイルから現在のインスタンスのプロパティを読み込みます。 このメソッドは、新しく作成された初期化するコンス トラクターによって呼び出さ<see cref="T:System.IdentityModel.Services.Configuration.FederationConfiguration" />構成設定から。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.LoadConfiguration%2A>を新しく作成されたプロパティを設定するコンス トラクター、メソッドを呼び出して<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>から、指定したオブジェクト`<federationConfiguration>`要素。  
+  
+ 場合`element`は`null`既定値で、インスタンスが読み込まれます。  
+  
+ 場合は、そこには、構成ファイルがないか、名前付きセクションが存在しない、例外がスローされないでは代わりに、インスタンスが既定値で読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.FederationConfiguration.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスに関連付けられている名前を取得します。</summary>
+        <value>このフェデレーションの構成のインスタンスに関連付けられている名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対応する、`name`の属性、 [ &lt;federationConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceCertificate">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2 ServiceCertificate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate2 ServiceCertificate" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.FederationConfiguration.ServiceCertificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation プロトコル メッセージの署名に使用する X.509 証明書を設定します。</summary>
+        <value>Ws-federation プロトコル メッセージの署名に使用される X.509 証明書。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成ファイルから初期化されると、このプロパティ、 [ &lt;serviceCertificate&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WsFederationConfiguration">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Services.Configuration.WsFederationConfiguration WsFederationConfiguration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Services.Configuration.WsFederationConfiguration WsFederationConfiguration" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.FederationConfiguration.WsFederationConfiguration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.Configuration.WsFederationConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、Ws-federation 認証モジュールの構成設定 (<see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />)。</summary>
+        <value>Ws-federation 認証モジュールの構成設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成ファイルから初期化されると、このプロパティ、 [ &lt;wsFederation&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

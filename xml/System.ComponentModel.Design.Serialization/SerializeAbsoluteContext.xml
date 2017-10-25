@@ -1,0 +1,114 @@
+<Type Name="SerializeAbsoluteContext" FullName="System.ComponentModel.Design.Serialization.SerializeAbsoluteContext">
+  <TypeSignature Language="C#" Value="public sealed class SerializeAbsoluteContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SerializeAbsoluteContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.SerializeAbsoluteContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>シリアライザーが既定値を処理する必要がありますを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService>絶対シリアル化をサポートします。 これは、オブジェクトの既定値と異なる値のみをシリアル化するすべての値がシリアル化されることが既に初期化されているオブジェクトの既定値にリセットされる値を許容することを意味します。 コンポーネント シリアル化サービスがこの動作を示すたい<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer>オブジェクトを配置する、<xref:System.ComponentModel.Design.Serialization.SerializeAbsoluteContext>コンテキスト スタック上のオブジェクト。 このコンテキストに含まれるメンバーがあります`null`、すべてのメンバーはシリアル化、または特定のメンバーのみがこの時点でシリアル化されることを示すことができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SerializeAbsoluteContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.SerializeAbsoluteContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.SerializeAbsoluteContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターを使用すると、すべてのメンバーをこのコンテキストを使用することを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SerializeAbsoluteContext (System.ComponentModel.MemberDescriptor member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.MemberDescriptor member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.SerializeAbsoluteContext.#ctor(System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="member" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="member">このコンテキストのバインド先であるメンバー。 指定できます<see langword="null" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.Serialization.SerializeAbsoluteContext" />クラスの特定のメンバーへのバインドのオプションを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`member`は`null`、このコンテキストは、すべてのメンバーのために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Member">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.MemberDescriptor Member { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.MemberDescriptor Member" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.SerializeAbsoluteContext.Member" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MemberDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコンテキストがバインドされているメンバーを取得します。</summary>
+        <value>、このコンテキストがバインドされているメンバーまたは<see langword="null" />コンテキストがオブジェクトのすべてのメンバーにバインドされている場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerialize">
+      <MemberSignature Language="C#" Value="public bool ShouldSerialize (System.ComponentModel.MemberDescriptor member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerialize(class System.ComponentModel.MemberDescriptor member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.SerializeAbsoluteContext.ShouldSerialize(System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="member" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="member">シリアル化のため調査するメンバー。</param>
+        <summary>このコンテキストでは指定されたメンバーをシリアル化するかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />このコンテキストでは指定されたメンバーをシリアル化する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

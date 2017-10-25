@@ -1,0 +1,246 @@
+<Type Name="UniformGrid" FullName="System.Windows.Controls.Primitives.UniformGrid">
+  <TypeSignature Language="C#" Value="public class UniformGrid : System.Windows.Controls.Panel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UniformGrid extends System.Windows.Controls.Panel" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.UniformGrid" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Panel</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>グリッド内のすべてのセルが同じサイズにあるグリッド内のコンテンツを配置する方法を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UniformGrid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.UniformGrid.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.UniformGrid" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.UniformGrid.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeSize"><see cref="T:System.Windows.Size" />を使用するグリッドの領域のです。</param>
+        <summary>レイアウトを定義、<see cref="T:System.Windows.Controls.Primitives.UniformGrid" />スペースをすべての子要素の間に均等に分散することによりします。</summary>
+        <returns>実際、<see cref="T:System.Windows.Size" />グリッドは表示される子要素の表示に表示されるのです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `arrangeSize`パラメーターは、グリッドの使用可能なレイアウト領域で、領域を定義します。 たとえば、2 つの行とグリッド内の 4 つの列がある場合は、考えられる各セルの高さは、0.5\**arrangeSizeHeight* 、最大の幅は 0.25**arrangeSizeWidth*です。 これらの計算の*arrangeSizeHeight*は、<xref:System.Windows.Size.Height%2A>の値、`arrangeSize`パラメーターと*arrangeSizeWidth*は、<xref:System.Windows.Size.Width%2A>の値、`arrangeSize`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Columns">
+      <MemberSignature Language="C#" Value="public int Columns { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Columns" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.UniformGrid.Columns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグリッドに含まれる列の数を設定します。</summary>
+        <value>グリッドに含まれる列の数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値のゼロ (0) の<xref:System.Windows.Controls.Primitives.UniformGrid.Columns%2A>プロパティに含まれる子要素の表示の数と行の数に基づいて、列数を計算することを指定します、<xref:System.Windows.Controls.Grid>です。  
+  
+ 値、<xref:System.Windows.Controls.Primitives.UniformGrid.FirstColumn%2A>の値よりも小さい必要があります、<xref:System.Windows.Controls.Primitives.UniformGrid.Columns%2A>プロパティを<xref:System.Windows.Controls.Primitives.UniformGrid>正常に動作します。  
+  
+<a name="dependencyPropertyInfo_Columns"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.UniformGrid.ColumnsProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ColumnsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ColumnsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.UniformGrid.ColumnsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.UniformGrid.Columns" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstColumn">
+      <MemberSignature Language="C#" Value="public int FirstColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FirstColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.UniformGrid.FirstColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグリッドの最初の行の先頭の空白セルの数を設定します。</summary>
+        <value>グリッドの最初の行には、空のセルの数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Windows.Controls.Primitives.UniformGrid.FirstColumn%2A>の値よりも小さい必要があります、<xref:System.Windows.Controls.Primitives.UniformGrid.Columns%2A>プロパティを<xref:System.Windows.Controls.Primitives.UniformGrid>正常に動作します。  
+  
+<a name="dependencyPropertyInfo_FirstColumn"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.UniformGrid.FirstColumnProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstColumnProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FirstColumnProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FirstColumnProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.UniformGrid.FirstColumnProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.UniformGrid.FirstColumn" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.UniformGrid.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint"><see cref="T:System.Windows.Size" />のグリッドの使用可能な領域のです。</param>
+        <summary>目的のサイズを計算、<see cref="T:System.Windows.Controls.Primitives.UniformGrid" />すべての子要素を測定します。</summary>
+        <returns>必要な<see cref="T:System.Windows.Size" />グリッドの子コンテンツに基づく、<paramref name="constraint" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `constraint`パラメーターは、グリッドの利用可能な領域の最大量を定義します。 この領域は分割され、グリッドの行と列の数に基づいて均等にします。 それぞれの子のサイズは、グリッドのすべての子要素の最大の幅を決定する測定されます。 最大値から計算されるセルの最大サイズを超えることはできません、`constraint`です。 目的のグリッド<xref:System.Windows.Size>は子の最大サイズに基づいて計算されます。 <xref:System.Windows.Size.Width%2A>列の数が最大の子の幅が乗算されます。 <xref:System.Windows.Size.Height%2A>子の最大の高さが行の数によって乗算されます。 このメソッドは、必要な返します<xref:System.Windows.Size>です。  
+  
+ たとえば、2 つの行とグリッド内の 4 つの列がある場合は、各セルの高さの最大値は 0.5 です\**constraintHeight* 、最大の幅は 0.25**constraintWidth*です。 これらの計算の*constraintHeight*は、<xref:System.Windows.Size.Height%2A>の値、`constraint`パラメーターと*constraintWidth*は、<xref:System.Windows.Size.Width%2A>の値、`constraint`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rows">
+      <MemberSignature Language="C#" Value="public int Rows { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Rows" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.UniformGrid.Rows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグリッドには行の数を設定します。</summary>
+        <value>グリッド内の行の数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値のゼロ (0) の<xref:System.Windows.Controls.Primitives.UniformGrid.Rows%2A>プロパティは、列の数と、グリッドに表示されている子要素の数に基づいて、行の数を計算することを指定します。  
+  
+<a name="dependencyPropertyInfo_Rows"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.UniformGrid.RowsProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RowsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RowsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.UniformGrid.RowsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.UniformGrid.Rows" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1412 @@
+<Type Name="SqlBulkCopy" FullName="System.Data.SqlClient.SqlBulkCopy">
+  <TypeSignature Language="C#" Value="public sealed class SqlBulkCopy : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlBulkCopy extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlBulkCopy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlClient</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>別のソースからのデータを SQL Server テーブルに効率的に一括読み込みすることができます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Microsoft SQL Server には、という一般的なコマンド プロンプト ユーティリティが含まれています。 **bcp** 1 台のサーバーであるかどうか、またはサーバー間で、1 つのテーブルからデータを移動するためです。 <xref:System.Data.SqlClient.SqlBulkCopy>クラスを使用して、同様の機能を提供するマネージ コード ソリューションを作成できます。 (たとえば INSERT ステートメント) の SQL Server テーブルにデータを読み込むには、その他の方法がありますが、<xref:System.Data.SqlClient.SqlBulkCopy>上に大幅なパフォーマンスの利点を提供します。  
+  
+ <xref:System.Data.SqlClient.SqlBulkCopy> クラスを使用すると、SQL Server のテーブルにのみデータを書き込むことができます。 ただし、データ ソースは SQL Server に制限はありません。データを読み込むことができる限り、任意のデータ ソースを使用できます、<xref:System.Data.DataTable>インスタンスまたはを使用して読み取る、<xref:System.Data.IDataReader>インスタンス。  
+  
+ <xref:System.Data.SqlClient.SqlBulkCopy>失敗する一括読み込みを行う、<xref:System.Data.DataTable>型の列<xref:System.Data.SqlTypes.SqlDateTime>SQL Server 2008 で SQL Server に型が日付/時刻型の 1 つの列を追加します。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、<xref:System.Data.SqlClient.SqlBulkCopy> クラスを使用してデータを読み込む方法について示しています。 この例では、<xref:System.Data.SqlClient.SqlDataReader>からデータをコピーするために使用、 **Production.Product**テーブルに、 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] **AdventureWorks**データベースを同じデータベース内のようなテーブルにします。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks BulkCopy.Single#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks BulkCopy.Single/CS/source.cs#1)]
+ [!code-vb[DataWorks BulkCopy.Single#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks BulkCopy.Single/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlBulkCopy (System.Data.SqlClient.SqlConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.SqlClient.SqlConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.#ctor(System.Data.SqlClient.SqlConnection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Data.SqlClient.SqlConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">既に開いている<see cref="T:System.Data.SqlClient.SqlConnection" />一括コピー操作の実行に使用するインスタンス。 接続文字列を使用しない場合<see langword="Integrated Security = true" />、使用することができます<see cref="T:System.Data.SqlClient.SqlCredential" />よりも安全にユーザー ID とパスワードを渡す接続文字列内のテキストとしてユーザー ID とパスワードを指定することです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />クラスの指定されたオープン インスタンスを使用して<see cref="T:System.Data.SqlClient.SqlConnection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 接続があるため既に開いているときに、<xref:System.Data.SqlClient.SqlBulkCopy>インスタンスが初期化されて、接続は後に開いたまま、<xref:System.Data.SqlClient.SqlBulkCopy>インスタンスが閉じています。  
+  
+ 場合、`connection`引数が null の場合、<xref:System.ArgumentNullException>がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、データの一括読み込み、既に開いている接続を使用する方法を示します。 この例では、<xref:System.Data.SqlClient.SqlDataReader>からデータをコピーするために使用、 **Production.Product**テーブルに、 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] **AdventureWorks**データベースを同じデータベース内のようなテーブルにします。 この例はデモ目的でのみです。 使用すべきでない`SqlBulkCopy`実稼働アプリケーションでは、同じデータベース内の別の 1 つのテーブルからデータを移動します。 SQL Server; 上にある、ソース データがないことに注意してください。読み取ることができる任意のデータ ソースを使用することができます、<xref:System.Data.IDataReader>に読み込まれたか、<xref:System.Data.DataTable>です。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks BulkCopy.Single#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks BulkCopy.Single/CS/source.cs#1)]
+ [!code-vb[DataWorks BulkCopy.Single#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks BulkCopy.Single/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlBulkCopy (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">使用するために開かれる接続を定義する文字列、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />インスタンス。 接続文字列を使用しない場合<see langword="Integrated Security = true" />、使用することができます<see cref="M:System.Data.SqlClient.SqlBulkCopy.#ctor(System.Data.SqlClient.SqlConnection)" />または<see cref="M:System.Data.SqlClient.SqlBulkCopy.#ctor(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlBulkCopyOptions,System.Data.SqlClient.SqlTransaction)" />と<see cref="T:System.Data.SqlClient.SqlCredential" />よりも安全にユーザー ID とパスワードを渡す接続文字列内のテキストとしてユーザー ID とパスワードを指定すること。</param>
+        <summary>初期化しの新しいインスタンスを開きます<see cref="T:System.Data.SqlClient.SqlConnection" />に基づいて、指定された<paramref name="connectionString" />です。 コンス トラクターを使用して、<see cref="T:System.Data.SqlClient.SqlConnection" />の新しいインスタンスを初期化するために、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 接続は、バルク コピー操作の最後に自動的に閉じられます。  
+  
+ 場合`connectionString`が null で、<xref:System.ArgumentNullException>がスローされます。 場合`connectionString`、空の文字列、<xref:System.ArgumentException>がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションは、データの一括読み込みを文字列として指定された接続を使用する方法を示します。 接続が自動的に閉じるときに、<xref:System.Data.SqlClient.SqlBulkCopy>インスタンスが閉じています。  
+  
+ この例では、ソース データが最初に SQL Server テーブルから読み取り、<xref:System.Data.SqlClient.SqlDataReader>インスタンス。 SQL Server; 上にある、ソース データがありません。読み取ることができる任意のデータ ソースを使用することができます、<xref:System.Data.IDataReader>に読み込まれたか、<xref:System.Data.DataTable>です。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ConnectionString#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ConnectionString/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ConnectionString#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ConnectionString/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlBulkCopy (string connectionString, System.Data.SqlClient.SqlBulkCopyOptions copyOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString, valuetype System.Data.SqlClient.SqlBulkCopyOptions copyOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.#ctor(System.String,System.Data.SqlClient.SqlBulkCopyOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="copyOptions" Type="System.Data.SqlClient.SqlBulkCopyOptions" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">使用するために開かれる接続を定義する文字列、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />インスタンス。 接続文字列を使用しない場合<see langword="Integrated Security = true" />、使用することができます<see cref="M:System.Data.SqlClient.SqlBulkCopy.#ctor(System.Data.SqlClient.SqlConnection)" />または<see cref="M:System.Data.SqlClient.SqlBulkCopy.#ctor(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlBulkCopyOptions,System.Data.SqlClient.SqlTransaction)" />と<see cref="T:System.Data.SqlClient.SqlCredential" />よりも安全にユーザー ID とパスワードを渡す接続文字列内のテキストとしてユーザー ID とパスワードを指定すること。</param>
+        <param name="copyOptions">値の組み合わせ、<see cref="T:System.Data.SqlClient.SqlBulkCopyOptions" />を決定するデータ ソース行が宛先テーブルにコピーされます。</param>
+        <summary>初期化しの新しいインスタンスを開きます<see cref="T:System.Data.SqlClient.SqlConnection" />に基づいて、指定された<paramref name="connectionString" />です。 コンス トラクターを使用している<see cref="T:System.Data.SqlClient.SqlConnection" />の新しいインスタンスを初期化するために、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />クラスです。 <see cref="T:System.Data.SqlClient.SqlConnection" />インスタンスがで指定したオプションに従って動作、<paramref name="copyOptions" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のすべての一括コピー オプションについて詳細な情報を取得することができます、<xref:System.Data.SqlClient.SqlBulkCopyOptions>トピックです。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、文字列として指定された接続を使用して、一括読み込みを実行する方法を示します。 コピー先のテーブルを読み込むときに、ソース テーブルの id 列の値を使用して設定されています。 この例では、ソース データが最初に SQL Server テーブルから読み取り、<xref:System.Data.SqlClient.SqlDataReader>インスタンス。 ソース テーブルと変換先テーブルには、Id 列が含まれます。 既定では、新しい値を**Identity**追加した各行の変換先テーブルの列を生成します。 この例では、オプションが設定を使用する一括読み込み処理を強制する、接続が開かれたときに、 **Identity**代わりに、ソース テーブルからの値します。 オプションで、サンプルを実行する方法、一括読み込みの動作をどのように影響するかを確認する、 **dbo します。BulkCopyDemoMatchingColumns**テーブルが空です。 すべての行は、ソースから読み込みます。 テーブルを空にすることがなく、サンプルを再度実行しています。 例外がスローされ、コードは、主キー制約違反のための行が追加されなかったことを通知するコンソールにメッセージを書き込みます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.KeepIdentity#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.KeepIdentity/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.KeepIdentity#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.KeepIdentity/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlBulkCopy (System.Data.SqlClient.SqlConnection connection, System.Data.SqlClient.SqlBulkCopyOptions copyOptions, System.Data.SqlClient.SqlTransaction externalTransaction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.SqlClient.SqlConnection connection, valuetype System.Data.SqlClient.SqlBulkCopyOptions copyOptions, class System.Data.SqlClient.SqlTransaction externalTransaction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.#ctor(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlBulkCopyOptions,System.Data.SqlClient.SqlTransaction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Data.SqlClient.SqlConnection" />
+        <Parameter Name="copyOptions" Type="System.Data.SqlClient.SqlBulkCopyOptions" />
+        <Parameter Name="externalTransaction" Type="System.Data.SqlClient.SqlTransaction" />
+      </Parameters>
+      <Docs>
+        <param name="connection">既に開いている<see cref="T:System.Data.SqlClient.SqlConnection" />一括コピーを実行するために使用するインスタンス。 接続文字列を使用しない場合<see langword="Integrated Security = true" />、使用することができます<see cref="T:System.Data.SqlClient.SqlCredential" />よりも安全にユーザー ID とパスワードを渡す接続文字列内のテキストとしてユーザー ID とパスワードを指定することです。</param>
+        <param name="copyOptions">値の組み合わせ、<see cref="T:System.Data.SqlClient.SqlBulkCopyOptions" />を決定するデータ ソース行が宛先テーブルにコピーされます。</param>
+        <param name="externalTransaction">既存の<see cref="T:System.Data.SqlClient.SqlTransaction" />インスタンスの下にある一括コピーが発生します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />クラスの指定された既存のオープン インスタンスを使用して<see cref="T:System.Data.SqlClient.SqlConnection" />です。 <see cref="T:System.Data.SqlClient.SqlBulkCopy" />インスタンスがで指定したオプションに従って動作、<paramref name="copyOptions" />パラメーター。 Null でない場合<see cref="T:System.Data.SqlClient.SqlTransaction" />は指定された、コピー操作は実行はトランザクション内で。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オプションがあります。 場合`UseInternalTransaction`と`externalTransaction`引数が null でない、 **InvalidArgumentException**がスローされます。  
+  
+ 使用する方法を示す例について`SqlBulkCopy`トランザクションでは、次を参照してください。[トランザクションとバルク コピー操作](~/docs/framework/data/adonet/sql/transaction-and-bulk-copy-operations.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BatchSize">
+      <MemberSignature Language="C#" Value="public int BatchSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BatchSize" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlBulkCopy.BatchSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各バッチ内の行数。 各バッチの最後に、バッチの行がサーバーに送信されます。</summary>
+        <value>整数値、<see cref="P:System.Data.SqlClient.SqlBulkCopy.BatchSize" />プロパティ、または値が設定されていない場合は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチが完了すると<xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A>行が処理されるか、変換先データ ソースに送信する行がありません。  
+  
+ 0 (既定値) をそれぞれ示します<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>操作が 1 つのバッチ。  
+  
+ 場合、<xref:System.Data.SqlClient.SqlBulkCopy>されず、インスタンスが宣言されて、<xref:System.Data.SqlClient.SqlBulkCopyOptions.UseInternalTransaction>オプション実際には、行は、サーバーに送信されます<xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A>時間がないトランザクション関連のアクションに位置する行を取得します。 場合<xref:System.Data.SqlClient.SqlBulkCopyOptions.UseInternalTransaction>が有効で行の各バッチが個別のトランザクションとして挿入します。  
+  
+ <xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A>プロパティは、いつでも設定できます。 一括コピーが既に実行中の場合、現在のバッチが以前のバッチ サイズに応じてサイズ調整されます。 以降のバッチでは、新しいサイズを使用します。 場合、<xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A>の初期値 0 と中に変更された、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>操作が既に進行中、操作が 1 つのバッチとしてデータを読み込むことです。 その後<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>に対して同じ操作<xref:System.Data.SqlClient.SqlBulkCopy>インスタンスを使用して、新しい<xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、データの一括読み込みの 50 行のバッチにする方法を示します。 例の示すについてどの<xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A>トランザクションとの連携を参照してください[トランザクションとバルク コピー操作](~/docs/framework/data/adonet/sql/transaction-and-bulk-copy-operations.md)です。  
+  
+ この例では、ソース データが最初に SQL Server テーブルから読み取り、<xref:System.Data.SqlClient.SqlDataReader>インスタンス。 SQL Server; 上にある、ソース データがありません。読み取ることができる任意のデータ ソースを使用することができます、<xref:System.Data.IDataReader>に読み込まれたか、<xref:System.Data.DataTable>です。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.BatchSize#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.BatchSize/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.BatchSize#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.BatchSize/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BulkCopyTimeout">
+      <MemberSignature Language="C#" Value="public int BulkCopyTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BulkCopyTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlBulkCopy.BulkCopyTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイムアウトになる前に操作が完了するまでの秒数。</summary>
+        <value>整数値、<see cref="P:System.Data.SqlClient.SqlBulkCopy.BulkCopyTimeout" />プロパティです。 既定値は 30 秒です。 値 0 は無制限を意味します。一括コピーは無期限に待機します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作がタイムアウトになった場合、トランザクションがコミットされていないと、コピー先のテーブルからコピーされたすべての行が削除されます。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションは、60 秒間にタイムアウトを変更する方法を示しますとデータの一括読み込みします。  
+  
+ この例では、ソース データが最初から読み取り、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]テーブル、<xref:System.Data.SqlClient.SqlDataReader>インスタンス。 上にある、ソース データがない[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]; を読み取ることができる任意のデータ ソースを使用することができます、<xref:System.Data.IDataReader>に読み込まれたか、<xref:System.Data.DataTable>です。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 元と移行先のテーブルが同じ場合[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]インスタンスは簡単かつ迅速に使用して、 [!INCLUDE[tsql](~/includes/tsql-md.md)] `INSERT … SELECT`データをコピーするステートメント。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.Timeout#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.Timeout/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.Timeout#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.Timeout/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.SqlClient.SqlBulkCopy" /> インスタンスを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出した後、<xref:System.Data.SqlClient.SqlBulkCopy.Close%2A>上、<xref:System.Data.SqlClient.SqlBulkCopy>オブジェクト、その他の操作はすべて失敗します。 呼び出し、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>メソッドがスローされます、<xref:System.InvalidOperationException>です。  
+  
+ 呼び出す、<xref:System.Data.SqlClient.SqlBulkCopy.Close%2A>メソッドから、<xref:System.Data.SqlClient.SqlBulkCopy.SqlRowsCopied>イベントにより、<xref:System.InvalidOperationException>がスローされます。  
+  
+ 開いているに注意してください<xref:System.Data.SqlClient.SqlBulkCopy>の最後のインスタンスが暗黙的に閉じられて、`using`ブロックします。  
+  
+   
+  
+## Examples  
+ 次の例は、同じ<xref:System.Data.SqlClient.SqlBulkCopy>2 つのコピー先テーブルに販売注文とその関連する詳細情報を追加するインスタンス。 **AdventureWorks**販売注文テーブルが大きい、サンプルは、特定のアカウント番号によってなされた注文のみを読み取りますおよび変換先テーブルに一括コピーしています。 <xref:System.Data.SqlClient.SqlBulkCopy.Close%2A>メソッドは、両方の一括コピー操作が完了した後にのみ使用します。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.OrdersDetails#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.OrdersDetails/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.OrdersDetails#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.OrdersDetails/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnMappings">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlBulkCopyColumnMappingCollection ColumnMappings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.SqlClient.SqlBulkCopyColumnMappingCollection ColumnMappings" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlBulkCopy.ColumnMappings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlBulkCopyColumnMappingCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.SqlClient.SqlBulkCopyColumnMapping" /> は項目のコレクションを返します。 列マッピングは、データ ソース中の列とターゲット中の列の間の関係を定義します。</summary>
+        <value>列マッピングのコレクション。 既定では、空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースと変換先テーブルがある同じ数の列、データ ソース内の各ソース列の序数位置に対応する先の列の序数位置が一致する場合、<xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings%2A>コレクションは必要ありません。 ただし、列数が異なる場合、または序数の位置に整合性がありません、行う必要があります<xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings%2A>正しい列にデータがコピーされることを確認します。  
+  
+ 一括コピー操作の実行中にこのコレクションにアクセスできるが、変更することはできません。 変更しようとすると、スロー、<xref:System.InvalidOperationException>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationTableName">
+      <MemberSignature Language="C#" Value="public string DestinationTableName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DestinationTableName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー上の宛先テーブルの名前。</summary>
+        <value><see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" /> プロパティの文字列値。または、値が指定されていない場合は null。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Data.SqlClient.SqlBulkCopy.DestinationTableName%2A>が設定されていない場合に<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>が呼び出されたが、<xref:System.ArgumentNullException>がスローされます。  
+  
+ 場合<xref:System.Data.SqlClient.SqlBulkCopy.DestinationTableName%2A>が変更されたときに、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>操作が実行されている、変更では、現在の操作には影響しません。 新しい<xref:System.Data.SqlClient.SqlBulkCopy.DestinationTableName%2A>値は次の時間を使用、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>メソッドが呼び出されます。  
+  
+ <xref:System.Data.SqlClient.SqlBulkCopy.DestinationTableName%2A>3 部構成の名前 (`<database>.<owningschema>.<name>`)。 選択した場合は、そのデータベースと所有しているスキーマでテーブル名を修飾することができます。 ただし、テーブル名がアンダー スコア (「_ _」) またはその他の特殊文字を使用する場合は、使用するように角かっこで囲んで、名前をエスケープする必要があります (`[<database>.<owningschema>.<name_01>]`)。 詳細については、SQL Server オンライン ブックの「識別子」を参照してください。  
+  
+ などの値を使用して、一時テーブルにデータを一括コピーすることができます`tempdb..#table`または`tempdb.<owner>.#table`の<xref:System.Data.SqlClient.SqlBulkCopy.DestinationTableName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、データの一括読み込み、既に開いている接続を使用する方法を示します。 コピー先のテーブルが内のテーブル、 **AdventureWorks**データベース。  
+  
+ この例では、最初に接続が使用する SQL Server テーブルからデータを読み取る、<xref:System.Data.SqlClient.SqlDataReader>インスタンス。 SQL Server; 上にある、ソース データがありません。読み取ることができる任意のデータ ソースを使用することができます、<xref:System.Data.IDataReader>に読み込まれたか、<xref:System.Data.DataTable>です。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.Single#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.Single/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.Single#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.Single/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableStreaming">
+      <MemberSignature Language="C#" Value="public bool EnableStreaming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableStreaming" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlBulkCopy.EnableStreaming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.IDataReader" /> オブジェクトからデータをストリーミングする <see cref="T:System.Data.SqlClient.SqlBulkCopy" /> オブジェクトを有効または無効にします。</summary>
+        <value>
+          <see cref="T:System.Data.SqlClient.SqlBulkCopy" /> オブジェクトが <see cref="T:System.Data.IDataReader" /> オブジェクトからデータをストリーミングできる場合は <see langword="true" />。それ以外の場合は false。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Data.SqlClient.SqlBulkCopy.EnableStreaming%2A>は`true`、<xref:System.Data.SqlClient.SqlBulkCopy>から読み取り、<xref:System.Data.IDataReader>オブジェクトを使用して<xref:System.Data.CommandBehavior.SequentialAccess>を使用してメモリ使用量を最適化する、<xref:System.Data.IDataReader>機能をストリーミングします。 False に設定されている場合、<xref:System.Data.SqlClient.SqlBulkCopy>クラスには、によって返されるすべてのデータが読み込まれる、<xref:System.Data.IDataReader>オブジェクトを送信する前にメモリに[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]または SQL Azure です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyAfter">
+      <MemberSignature Language="C#" Value="public int NotifyAfter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NotifyAfter" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlBulkCopy.NotifyAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通知イベントを生成する前に処理する行の数を定義します。</summary>
+        <value>整数値、<see cref="P:System.Data.SqlClient.SqlBulkCopy.NotifyAfter" />プロパティ、またはプロパティが設定されていない場合は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、一括コピー操作の進行状況を示すユーザー インターフェイス コンポーネントに適しています。 通知イベントを生成する前に処理される行の数を示します。 <xref:System.Data.SqlClient.SqlBulkCopy.NotifyAfter%2A>は一括コピー操作の進行中であっても、いつでもプロパティを設定できます。 一括コピー操作中に行われた変更は、[次へ] の通知後も反映されます。 新しい設定は、同じインスタンス上の後続のすべての操作に適用されます。  
+  
+ 場合<xref:System.Data.SqlClient.SqlBulkCopy.NotifyAfter%2A>0 より小さい数値に設定するには、<xref:System.ArgumentOutOfRangeException>がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、データの一括読み込み、既に開いている接続を使用する方法を示します。 <xref:System.Data.SqlClient.SqlBulkCopy.NotifyAfter%2A>プロパティが設定されているため、すべての 50 行がテーブルにコピーした後、イベント ハンドラーが呼び出されます。  
+  
+ この例では、最初に接続が使用する SQL Server テーブルからデータを読み取る、<xref:System.Data.SqlClient.SqlDataReader>インスタンス。 2 つ目の接続は、一括コピー データに開かれます。 SQL Server; 上にある、ソース データがないことに注意してください。読み取ることができる任意のデータ ソースを使用することができます、<xref:System.Data.IDataReader>に読み込まれたか、<xref:System.Data.DataTable>です。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.NotifyAfter#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.NotifyAfter/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.NotifyAfter#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.NotifyAfter/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SqlRowsCopied">
+      <MemberSignature Language="C#" Value="public event System.Data.SqlClient.SqlRowsCopiedEventHandler SqlRowsCopied;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Data.SqlClient.SqlRowsCopiedEventHandler SqlRowsCopied" />
+      <MemberSignature Language="DocId" Value="E:System.Data.SqlClient.SqlBulkCopy.SqlRowsCopied" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlRowsCopiedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の数によって指定されるたびに発生する、<see cref="P:System.Data.SqlClient.SqlBulkCopy.NotifyAfter" />プロパティが処理されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 注意してください、設定の<xref:System.Data.SqlClient.SqlBulkCopy.NotifyAfter%2A>と<xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A>は独立しています。 受信確認、<xref:System.Data.SqlClient.SqlBulkCopy.SqlRowsCopied>イベントはすべての行がサーバーに送信またはコミットされることを意味しません。  
+  
+ SqlBulkCopy.Close を呼び出すことはできません (<xref:System.Data.SqlClient.SqlBulkCopy.Close%2A>) または SqlConnection.Close (<xref:System.Data.SqlClient.SqlConnection.Close%2A>) このイベントからです。 これにより、実行、<xref:System.InvalidOperationException>がスローされ、および<xref:System.Data.SqlClient.SqlBulkCopy>オブジェクトの状態は変更されません。 ユーザーが、イベントから、操作をキャンセルする場合は、<xref:System.Data.SqlClient.SqlRowsCopiedEventArgs.Abort%2A>のプロパティ、<xref:System.Data.SqlClient.SqlRowsCopiedEventArgs>使用できます。 (を参照してください[トランザクションとバルク コピー操作](~/docs/framework/data/adonet/sql/transaction-and-bulk-copy-operations.md)を使用する例については、<xref:System.Data.SqlClient.SqlRowsCopiedEventArgs.Abort%2A>プロパティです)。  
+  
+ トランザクション アクティビティなどの操作はサポートされておらず、バルク コピー操作の実行中に接続され、中に使用された同一の接続を使用しないことをお勧め、<xref:System.Data.SqlClient.SqlBulkCopy.SqlRowsCopied>イベント。 ただし、別の接続を開くことができます。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、データの一括読み込み、既に開いている接続を使用する方法を示します。 <xref:System.Data.SqlClient.SqlBulkCopy.NotifyAfter%2A>プロパティが設定されているため、すべての 50 行がテーブルにコピーした後、イベント ハンドラーが呼び出されます。  
+  
+ この例では、最初に接続が使用する SQL Server テーブルからデータを読み取る、<xref:System.Data.SqlClient.SqlDataReader>インスタンス。 SQL Server; 上にある、ソース データがないことに注意してください。読み取ることができる任意のデータ ソースを使用することができます、<xref:System.Data.IDataReader>に読み込まれたか、<xref:System.Data.DataTable>です。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.NotifyAfter#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.NotifyAfter/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.NotifyAfter#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.NotifyAfter/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.SqlClient.SqlBulkCopy" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Dispose` を使い終わったら <xref:System.Data.SqlClient.SqlBulkCopy> を呼び出します。 `Dispose` メソッドによって、<xref:System.Data.SqlClient.SqlBulkCopy> は使用不可の状態になります。 呼び出した後`Dispose`へのすべての参照を解放する必要があります、<xref:System.Data.SqlClient.SqlBulkCopy>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Data.SqlClient.SqlBulkCopy>占有されていた。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  `Dispose` への最後の参照を解放する前に、必ず <xref:System.Data.SqlClient.SqlBulkCopy> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Data.SqlClient.SqlBulkCopy> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="WriteToServer">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定された宛先のテーブルにデータ ソースからすべての行をコピー、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のアクティブな結果セット (MARS) が使用できなくなり、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>ビジー状態の接続を作成します。 MARS が有効になっている場合への呼び出しをインターリーブできます<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>同じ接続で他のコマンド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="WriteToServer">
+      <MemberSignature Language="C#" Value="public void WriteToServer (System.Data.Common.DbDataReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteToServer(class System.Data.Common.DbDataReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.Common.DbDataReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">A<see cref="T:System.Data.Common.DbDataReader" />行が宛先テーブルにコピーされます。</param>
+        <summary>指定されたすべての行をコピー<see cref="T:System.Data.Common.DbDataReader" />配列で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServer">
+      <MemberSignature Language="C#" Value="public void WriteToServer (System.Data.DataRow[] rows);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteToServer(class System.Data.DataRow[] rows) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataRow[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rows" Type="System.Data.DataRow[]" />
+      </Parameters>
+      <Docs>
+        <param name="rows">配列<see cref="T:System.Data.DataRow" />先テーブルにコピーされるオブジェクト。</param>
+        <summary>指定されたすべての行をコピー<see cref="T:System.Data.DataRow" />配列で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一括コピー操作進行中に、関連する宛先<xref:System.Data.SqlClient.SqlConnection>がビジー状態である機能を提供するとの接続で実行できるその他の操作がありません。  
+  
+ <xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings%2A>コレクションから、マップ、<xref:System.Data.DataRow>変換先のデータベース テーブルに列です。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションは、データの一括読み込みをする方法を示します、<xref:System.Data.DataRow>配列。 コピー先のテーブルが内のテーブル、 **AdventureWorks**データベース。  
+  
+ この例では、<xref:System.Data.DataTable>は実行時に作成します。 1 つの行が選択されて、<xref:System.Data.DataTable>先テーブルにコピーします。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.RowArray#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.RowArray/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.RowArray#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.RowArray/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServer">
+      <MemberSignature Language="C#" Value="public void WriteToServer (System.Data.DataTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteToServer(class System.Data.DataTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Data.DataTable" />
+      </Parameters>
+      <Docs>
+        <param name="table">A<see cref="T:System.Data.DataTable" />行が宛先テーブルにコピーされます。</param>
+        <summary>提供されたすべての行をコピー<see cref="T:System.Data.DataTable" />で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての行、<xref:System.Data.DataTable>が削除されているものを除き、変換先テーブルにコピーします。  
+  
+ 一括コピー操作進行中に、関連する宛先<xref:System.Data.SqlClient.SqlConnection>がビジー状態である機能を提供するとの接続で実行できるその他の操作がありません。  
+  
+ <xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings%2A>コレクションから、マップ、<xref:System.Data.DataTable>変換先のデータベース テーブルに列です。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションは、データの一括読み込みをする方法を示します、<xref:System.Data.DataTable>です。 コピー先のテーブルが内のテーブル、 **AdventureWorks**データベース。  
+  
+ この例では、<xref:System.Data.DataTable>実行時に作成され、ソース、`SqlBulkCopy`操作します。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.DataTable#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.DataTable/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.DataTable#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.DataTable/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServer">
+      <MemberSignature Language="C#" Value="public void WriteToServer (System.Data.IDataReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteToServer(class System.Data.IDataReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.IDataReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Data.IDataReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">A<see cref="T:System.Data.IDataReader" />行が宛先テーブルにコピーされます。</param>
+        <summary>提供されたすべての行をコピー<see cref="T:System.Data.IDataReader" />で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コピー操作は、リーダーの使用可能な次の行から開始されます。 ほとんどの場合、リーダーだけからが返された<xref:System.Data.IDbCommand.ExecuteReader%2A>または [次へ] の使用可能な行は最初の行のような呼び出しです。 複数の結果を処理するには、呼び出す<xref:System.Data.IDataReader.NextResult%2A>データ リーダーと呼び出し<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>もう一度です。  
+  
+ 使用して<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>リーダーの状態を変更します。 メソッドを呼び出す<xref:System.Data.IDataReader.Read%2A>false を返します、操作を中止すると、または、エラーが発生するまでです。 つまり、データ リーダーが結果セットの最後におそらく、別の状態に含まれるときに、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>操作が完了しました。  
+  
+ 一括コピー操作進行中に、関連する宛先<xref:System.Data.SqlClient.SqlConnection>がビジー状態である機能を提供するとの接続で実行できるその他の操作がありません。  
+  
+ <xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings%2A>コレクション、データからリーダー列マップ先のデータベース テーブルにします。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションは、データの一括読み込みをする方法を示します、<xref:System.Data.SqlClient.SqlDataReader>です。 コピー先のテーブルが内のテーブル、 **AdventureWorks**データベース。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ConnectionString#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ConnectionString/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ConnectionString#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ConnectionString/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServer">
+      <MemberSignature Language="C#" Value="public void WriteToServer (System.Data.DataTable table, System.Data.DataRowState rowState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteToServer(class System.Data.DataTable table, valuetype System.Data.DataRowState rowState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable,System.Data.DataRowState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Data.DataTable" />
+        <Parameter Name="rowState" Type="System.Data.DataRowState" />
+      </Parameters>
+      <Docs>
+        <param name="table">A<see cref="T:System.Data.DataTable" />行が宛先テーブルにコピーされます。</param>
+        <param name="rowState"><see cref="T:System.Data.DataRowState" /> 列挙体の値。 行の状態に一致する行のみが、コピー先にコピーされます。</param>
+        <summary>提供された指定された行の状態と一致する行だけをコピー<see cref="T:System.Data.DataTable" />で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の行のみ、<xref:System.Data.DataTable>に示されている状態である、`rowState`引数が削除されていないと、変換先テーブルにコピーされます。  
+  
+> [!NOTE]
+>  場合<xref:System.Data.DataRowState.Deleted>が指定されている任意<xref:System.Data.DataRowState.Unchanged>、 <xref:System.Data.DataRowState.Added>、および<xref:System.Data.DataRowState.Modified>行は、サーバーにコピーすることもできます。 例外は発生しません。  
+  
+ 一括コピー操作進行中に、関連する宛先<xref:System.Data.SqlClient.SqlConnection>がビジー状態である機能を提供するとの接続で実行できるその他の操作がありません。  
+  
+ <xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings%2A>コレクションから、マップ、<xref:System.Data.DataTable>変換先のデータベース テーブルに列です。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、一括読み込みの行のみ、<xref:System.Data.DataTable>指定された状態に一致します。 この場合、変更されていない行のみが追加されます。 コピー先のテーブルが内のテーブル、 **AdventureWorks**データベース。  
+  
+ この例では、 <xref:System.Data.DataTable> 3 つの実行時に作成された行を追加します。 前に、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>メソッドが実行され、編集、行の 1 つです。 <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>メソッドが呼び出された、 `DataRowState.Unchanged` `rowState`引数、変更されていない 2 つの行だけが転送先に一括コピーします。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.DataRowState#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.DataRowState/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.DataRowState#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.DataRowState/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="WriteToServerAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>非同期バージョンの<see cref="Overload:System.Data.SqlClient.SqlBulkCopy.WriteToServer" />、データ ソースからすべての行で指定された宛先のテーブルにコピー、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のアクティブな結果セット (MARS) が使用できなくなり、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>ビジー状態の接続を作成します。 MARS が有効になっている場合への呼び出しをインターリーブできます<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>同じ接続で他のコマンド。  
+  
+ ロールバックされたいずれかが失敗した行の数は、いくつかの方法によって異なります。  
+  
+-   場合<xref:System.Data.SqlClient.SqlBulkCopyOptions.UseInternalTransaction>を指定します。  
+  
+-   ある場合は、独自のトランザクション。  
+  
+-   <xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A> の値。  
+  
+ データをサーバーでは、現在のバッチを送信中にエラーがある場合 (の指定に従って<xref:System.Data.SqlClient.SqlBulkCopy.BatchSize%2A>) はロールバックされます。 場合<xref:System.Data.SqlClient.SqlBulkCopyOptions.UseInternalTransaction>が指定されていない、独自のトランザクションがあると、トランザクション全体がロールバック (をすべての以前バッチを含む)。  
+  
+ 使用して<xref:System.Data.SqlClient.SqlBulkCopy.SqlRowsCopied>をサーバーにコピーされた行の数を確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="WriteToServerAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteToServerAsync (System.Data.Common.DbDataReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteToServerAsync(class System.Data.Common.DbDataReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.Common.DbDataReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">A<see cref="T:System.Data.Common.DbDataReader" />行が宛先テーブルにコピーされます。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.Common.DbDataReader)" />から、指定されたすべての行をコピーする<see cref="T:System.Data.Common.DbDataReader" />配列で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServerAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteToServerAsync (System.Data.DataRow[] rows);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteToServerAsync(class System.Data.DataRow[] rows) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataRow[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rows" Type="System.Data.DataRow[]" />
+      </Parameters>
+      <Docs>
+        <param name="rows">配列<see cref="T:System.Data.DataRow" />先テーブルにコピーされるオブジェクト。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataRow[])" />から、指定されたすべての行をコピーする<see cref="T:System.Data.DataRow" />配列で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期プログラミングの詳細については、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[非同期プログラミング](~/docs/framework/data/adonet/asynchronous-programming.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataRow[])" />複数回、同じインスタンスに対してタスクの完了前にします。  
+  
+ 呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataRow[])" />と<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataRow[])" />タスクの完了前に、同じインスタンスに対してです。  
+  
+ 接続が切断または中に閉じられた<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataRow[])" />実行します。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />メソッドの実行中にオブジェクトが閉じられました。  
+  
+ タスク オブジェクトで返されたため、接続プールがタイムアウトした。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlConnection" />メソッドの実行前にオブジェクトが閉じられています。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">タスク オブジェクトで返される、によって返されるエラー[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]接続を開くときに発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServerAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteToServerAsync (System.Data.DataTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteToServerAsync(class System.Data.DataTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Data.DataTable" />
+      </Parameters>
+      <Docs>
+        <param name="table">A<see cref="T:System.Data.DataTable" />行が宛先テーブルにコピーされます。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable)" />、提供されたすべての行をコピーする<see cref="T:System.Data.DataTable" />で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期プログラミングの詳細については、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[非同期プログラミング](~/docs/framework/data/adonet/asynchronous-programming.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable)" />複数回、同じインスタンスに対してタスクの完了前にします。  
+  
+ 呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable)" />と<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable)" />タスクの完了前に、同じインスタンスに対してです。  
+  
+ 接続が切断または中に閉じられた<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable)" />実行します。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />メソッドの実行中にオブジェクトが閉じられました。  
+  
+ タスク オブジェクトで返されたため、接続プールがタイムアウトした。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlConnection" />メソッドの実行前にオブジェクトが閉じられています。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">タスク オブジェクトで返される、によって返されるエラー[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]接続を開くときに発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServerAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteToServerAsync (System.Data.IDataReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteToServerAsync(class System.Data.IDataReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.IDataReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Data.IDataReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">A<see cref="T:System.Data.IDataReader" />行が宛先テーブルにコピーされます。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.IDataReader)" />、提供されたすべての行をコピーする<see cref="T:System.Data.IDataReader" />で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期プログラミングの詳細については、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[非同期プログラミング](~/docs/framework/data/adonet/asynchronous-programming.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.IDataReader)" />複数回、同じインスタンスに対してタスクの完了前にします。  
+  
+ 呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.IDataReader)" />と<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.IDataReader)" />タスクの完了前に、同じインスタンスに対してです。  
+  
+ 接続が切断または中に閉じられた<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.IDataReader)" />実行します。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />メソッドの実行中にオブジェクトが閉じられました。  
+  
+ タスク オブジェクトで返されたため、接続プールがタイムアウトした。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlConnection" />メソッドの実行前にオブジェクトが閉じられています。  
+  
+ <see cref="T:System.Data.IDataReader" />が終了する前に完了した<see cref="T:System.Threading.Tasks.Task" />が返されます。  
+  
+ <see cref="T:System.Data.IDataReader" />'S に関連付けられた接続が完了する前に閉じられた<see cref="T:System.Threading.Tasks.Task" />が返されます。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">タスク オブジェクトで返される、によって返されるエラー[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]接続を開くときに発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServerAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteToServerAsync (System.Data.Common.DbDataReader reader, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteToServerAsync(class System.Data.Common.DbDataReader reader, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.Common.DbDataReader,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Data.Common.DbDataReader" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="reader">A<see cref="T:System.Data.Common.DbDataReader" />行が宛先テーブルにコピーされます。</param>
+        <param name="cancellationToken">取り消し命令。 A<see cref="P:System.Threading.CancellationToken.None" />このパラメーターの値により、このメソッドのと同じ<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.Common.DbDataReader)" />です。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.Common.DbDataReader)" />から、指定されたすべての行をコピーする<see cref="T:System.Data.Common.DbDataReader" />配列で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServerAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteToServerAsync (System.Data.DataRow[] rows, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteToServerAsync(class System.Data.DataRow[] rows, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataRow[],System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rows" Type="System.Data.DataRow[]" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="rows">配列<see cref="T:System.Data.DataRow" />先テーブルにコピーされるオブジェクト。</param>
+        <param name="cancellationToken">取り消し命令。 A<see cref="P:System.Threading.CancellationToken.None" />このパラメーターの値により、このメソッドのと同じ<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable)" />です。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataRow[])" />から、指定されたすべての行をコピーする<see cref="T:System.Data.DataRow" />配列で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。  
+  
+ キャンセル トークンを使用すると、コマンド タイムアウトが経過する前に操作を破棄することを要求できます。  例外は、返されたタスク オブジェクトによって報告されます。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期プログラミングの詳細については、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[非同期プログラミング](~/docs/framework/data/adonet/asynchronous-programming.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataRow[])" />複数回、同じインスタンスに対してタスクの完了前にします。  
+  
+ 呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataRow[])" />と<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataRow[])" />タスクの完了前に、同じインスタンスに対してです。  
+  
+ 接続が切断または中に閉じられた<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataRow[])" />実行します。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />メソッドの実行中にオブジェクトが閉じられました。  
+  
+ タスク オブジェクトで返されたため、接続プールがタイムアウトした。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlConnection" />メソッドの実行前にオブジェクトが閉じられています。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">タスク オブジェクトで返される、によって返されるエラー[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]接続を開くときに発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServerAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteToServerAsync (System.Data.DataTable table, System.Data.DataRowState rowState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteToServerAsync(class System.Data.DataTable table, valuetype System.Data.DataRowState rowState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable,System.Data.DataRowState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Data.DataTable" />
+        <Parameter Name="rowState" Type="System.Data.DataRowState" />
+      </Parameters>
+      <Docs>
+        <param name="table">A<see cref="T:System.Data.DataTable" />行が宛先テーブルにコピーされます。</param>
+        <param name="rowState"><see cref="T:System.Data.DataRowState" /> 列挙体の値。 行の状態に一致する行のみが、コピー先にコピーされます。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable,System.Data.DataRowState)" />、提供された指定された行の状態と一致する行だけをコピーする<see cref="T:System.Data.DataTable" />で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期プログラミングの詳細については、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[非同期プログラミング](~/docs/framework/data/adonet/asynchronous-programming.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable,System.Data.DataRowState)" />複数回、同じインスタンスに対してタスクの完了前にします。  
+  
+ 呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable,System.Data.DataRowState)" />と<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable,System.Data.DataRowState)" />タスクの完了前に、同じインスタンスに対してです。  
+  
+ 接続が切断または中に閉じられた<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable,System.Data.DataRowState)" />実行します。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />メソッドの実行中にオブジェクトが閉じられました。  
+  
+ タスク オブジェクトで返されたため、接続プールがタイムアウトした。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlConnection" />メソッドの実行前にオブジェクトが閉じられています。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">タスク オブジェクトで返される、によって返されるエラー[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]接続を開くときに発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServerAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteToServerAsync (System.Data.DataTable table, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteToServerAsync(class System.Data.DataTable table, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Data.DataTable" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="table">A<see cref="T:System.Data.DataTable" />行が宛先テーブルにコピーされます。</param>
+        <param name="cancellationToken">取り消し命令。 A<see cref="P:System.Threading.CancellationToken.None" />このパラメーターの値により、このメソッドのと同じ<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable)" />です。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable)" />、提供されたすべての行をコピーする<see cref="T:System.Data.DataTable" />で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。  
+  
+ キャンセル トークンを使用すると、コマンド タイムアウトが経過する前に操作を破棄することを要求できます。  例外は、返されたタスク オブジェクトによって報告されます。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期プログラミングの詳細については、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[非同期プログラミング](~/docs/framework/data/adonet/asynchronous-programming.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable)" />複数回、同じインスタンスに対してタスクの完了前にします。  
+  
+ 呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable)" />と<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable)" />タスクの完了前に、同じインスタンスに対してです。  
+  
+ 接続が切断または中に閉じられた<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable)" />実行します。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />メソッドの実行中にオブジェクトが閉じられました。  
+  
+ タスク オブジェクトで返されたため、接続プールがタイムアウトした。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlConnection" />メソッドの実行前にオブジェクトが閉じられています。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">タスク オブジェクトで返される、によって返されるエラー[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]接続を開くときに発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServerAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteToServerAsync (System.Data.IDataReader reader, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteToServerAsync(class System.Data.IDataReader reader, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.IDataReader,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Data.IDataReader" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="reader">A<see cref="T:System.Data.IDataReader" />行が宛先テーブルにコピーされます。</param>
+        <param name="cancellationToken">取り消し命令。 A<see cref="P:System.Threading.CancellationToken.None" />このパラメーターの値により、このメソッドのと同じ<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable)" />です。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.IDataReader)" />、提供されたすべての行をコピーする<see cref="T:System.Data.IDataReader" />で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。  
+  
+ キャンセル トークンを使用すると、コマンド タイムアウトが経過する前に操作を破棄することを要求できます。  例外は、返されたタスク オブジェクトによって報告されます。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期プログラミングの詳細については、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[非同期プログラミング](~/docs/framework/data/adonet/asynchronous-programming.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.IDataReader)" />複数回、同じインスタンスに対してタスクの完了前にします。  
+  
+ 呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.IDataReader)" />と<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.IDataReader)" />タスクの完了前に、同じインスタンスに対してです。  
+  
+ 接続が切断または中に閉じられた<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.IDataReader)" />実行します。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />メソッドの実行中にオブジェクトが閉じられました。  
+  
+ タスク オブジェクトで返されたため、接続プールがタイムアウトした。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlConnection" />メソッドの実行前にオブジェクトが閉じられています。  
+  
+ <see cref="T:System.Data.IDataReader" />が終了する前に完了した<see cref="T:System.Threading.Tasks.Task" />が返されます。  
+  
+ <see cref="T:System.Data.IDataReader" />'S に関連付けられた接続が完了する前に閉じられた<see cref="T:System.Threading.Tasks.Task" />が返されます。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">タスク オブジェクトで返される、によって返されるエラー[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]接続を開くときに発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToServerAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteToServerAsync (System.Data.DataTable table, System.Data.DataRowState rowState, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteToServerAsync(class System.Data.DataTable table, valuetype System.Data.DataRowState rowState, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable,System.Data.DataRowState,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Data.DataTable" />
+        <Parameter Name="rowState" Type="System.Data.DataRowState" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="table">A<see cref="T:System.Data.DataTable" />行が宛先テーブルにコピーされます。</param>
+        <param name="rowState"><see cref="T:System.Data.DataRowState" /> 列挙体の値。 行の状態に一致する行のみが、コピー先にコピーされます。</param>
+        <param name="cancellationToken">取り消し命令。 A<see cref="P:System.Threading.CancellationToken.None" />このパラメーターの値により、このメソッドのと同じ<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable)" />です。</param>
+        <summary>非同期バージョンの<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable,System.Data.DataRowState)" />、提供された指定された行の状態と一致する行だけをコピーする<see cref="T:System.Data.DataTable" />で指定された宛先のテーブルに、<see cref="P:System.Data.SqlClient.SqlBulkCopy.DestinationTableName" />のプロパティ、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />オブジェクト。  
+  
+ キャンセル トークンを使用すると、コマンド タイムアウトが経過する前に操作を破棄することを要求できます。  例外は、返されたタスク オブジェクトによって報告されます。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期プログラミングの詳細については、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] Data Provider for[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]を参照してください[非同期プログラミング](~/docs/framework/data/adonet/asynchronous-programming.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable,System.Data.DataRowState)" />複数回、同じインスタンスに対してタスクの完了前にします。  
+  
+ 呼び出す<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable,System.Data.DataRowState)" />と<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable,System.Data.DataRowState)" />タスクの完了前に、同じインスタンスに対してです。  
+  
+ 接続が切断または中に閉じられた<see cref="M:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync(System.Data.DataTable,System.Data.DataRowState)" />実行します。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />メソッドの実行中にオブジェクトが閉じられました。  
+  
+ タスク オブジェクトで返されたため、接続プールがタイムアウトした。  
+  
+ タスク オブジェクトで返された、<see cref="T:System.Data.SqlClient.SqlConnection" />メソッドの実行前にオブジェクトが閉じられています。  
+  
+ <see langword="Context Connection=true" /> は接続文字列で指定されます。</exception>
+        <exception cref="T:System.Data.SqlClient.SqlException">タスク オブジェクトで返される、によって返されるエラー[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]接続を開くときに発生しました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

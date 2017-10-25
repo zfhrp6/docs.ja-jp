@@ -1,0 +1,86 @@
+<Type Name="SuppressUnmanagedCodeSecurityAttribute" FullName="System.Security.SuppressUnmanagedCodeSecurityAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SuppressUnmanagedCodeSecurityAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SuppressUnmanagedCodeSecurityAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Security.SuppressUnmanagedCodeSecurityAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Method | System.AttributeTargets.Interface | System.AttributeTargets.Delegate, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マネージ コードを、スタック ウォークなしでアンマネージ コードに呼び出せるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  この属性を使用して、十分に注意します。 不適切な使用には、セキュリティ上の弱点を作成できます。  
+  
+ この属性は、その際に、ランタイム セキュリティ チェックのパフォーマンスの低下を生じることがなくネイティブ コードへの呼び出しをメソッドに適用できます。 結果的にパフォーマンスが大幅に節約の実行時に、アンマネージ コードを呼び出すときに実行されたスタック ウォークが省略されています。 クラスでこの属性を使用すると、コンテナー内のすべてのメソッドに適用します。  
+  
+ 一般に、マネージ コードは、(PInvoke または COM 相互運用機能をネイティブ コード) をアンマネージ コードを呼び出す、たびの使用量が、`UnmanagedCode`のアクセス権をすべての呼び出し元は、これを許可するために必要な権限を持っています。 この明示的な属性を適用すると、開発者は、実行時に要求を抑制できます。 開発者は、アンマネージ コードへの移行が他の方法で十分に保護されていることを維持するための責任を負う必要があります。 必要な`UnmanagedCode`権限はリンク時に行われます。 たとえば、関数 A が関数 B とが関数 B が付いて<xref:System.Security.SuppressUnmanagedCodeSecurityAttribute>関数 A のチェック対象となるアンマネージ コード権限ジャスト イン タイムのコンパイル中に、実行時にその後です。  
+  
+ この属性は PInvoke メソッド (または PInvoke メソッドを含むクラス) に適用するときにのみ、または相互運用呼び出しに使用するインターフェイスの定義。 これは、他のすべてのコンテキストでは無視されます。  
+  
+ この属性は、アンマネージ コードを通じてシステム リソースへのアクセスを提供するクラスを実装するために役立ちます。 アンマネージ コードへのアクセス許可を持たないコードは、アンマネージ コードにアクセスするには、この属性を持つクラスを呼び出すことができます。 これは、場合、この属性を持つクラスのライターのプログラムは、クラスをセキュリティで保護された使用セーフであるだけです。 存在しない場合、この属性は、危険が不正に使用するコードを許可することができます。  
+  
+ これは、宣言セキュリティ属性は標準属性なく (から派生して<xref:System.Attribute>ではなく、 <xref:System.Security.Permissions.SecurityAttribute>)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SuppressUnmanagedCodeSecurityAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SuppressUnmanagedCodeSecurityAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.SuppressUnmanagedCodeSecurityAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、フィールドを既定値に初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

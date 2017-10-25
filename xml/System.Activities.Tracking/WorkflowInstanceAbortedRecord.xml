@@ -1,0 +1,176 @@
+<Type Name="WorkflowInstanceAbortedRecord" FullName="System.Activities.Tracking.WorkflowInstanceAbortedRecord">
+  <TypeSignature Language="C#" Value="public sealed class WorkflowInstanceAbortedRecord : System.Activities.Tracking.WorkflowInstanceRecord" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WorkflowInstanceAbortedRecord extends System.Activities.Tracking.WorkflowInstanceRecord" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Tracking.WorkflowInstanceAbortedRecord" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.Tracking.WorkflowInstanceRecord</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー インスタンスが中止されたとき、ランタイム追跡インフラストラクチャによって追跡参加要素へ送られるデータを格納します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowInstanceAbortedRecord (Guid instanceId, string activityDefinitionId, string reason);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, string activityDefinitionId, string reason) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceAbortedRecord.#ctor(System.Guid,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="activityDefinitionId" Type="System.String" />
+        <Parameter Name="reason" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">中止されたワークフローのインスタンス ID。</param>
+        <param name="activityDefinitionId">ルート ワークフロー アクティビティの表示名。</param>
+        <param name="reason">ワークフローの中止の理由。</param>
+        <summary><see cref="T:System.Activities.Tracking.WorkflowInstanceAbortedRecord" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowInstanceAbortedRecord (Guid instanceId, long recordNumber, string activityDefinitionId, string reason);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, int64 recordNumber, string activityDefinitionId, string reason) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceAbortedRecord.#ctor(System.Guid,System.Int64,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="recordNumber" Type="System.Int64" />
+        <Parameter Name="activityDefinitionId" Type="System.String" />
+        <Parameter Name="reason" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">中止されたワークフローのインスタンス ID。</param>
+        <param name="recordNumber">追跡レコードを生成する順序を定義するシーケンス。</param>
+        <param name="activityDefinitionId">ルート ワークフロー アクティビティの表示名。</param>
+        <param name="reason">ワークフローの中止の理由。</param>
+        <summary><see cref="T:System.Activities.Tracking.WorkflowInstanceAbortedRecord" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowInstanceAbortedRecord (Guid instanceId, string activityDefinitionId, string reason, System.Activities.WorkflowIdentity workflowDefinitionIdentity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, string activityDefinitionId, string reason, class System.Activities.WorkflowIdentity workflowDefinitionIdentity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceAbortedRecord.#ctor(System.Guid,System.String,System.String,System.Activities.WorkflowIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="activityDefinitionId" Type="System.String" />
+        <Parameter Name="reason" Type="System.String" />
+        <Parameter Name="workflowDefinitionIdentity" Type="System.Activities.WorkflowIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">中止されたワークフローのインスタンス ID。</param>
+        <param name="activityDefinitionId">ルート ワークフロー アクティビティの表示名。</param>
+        <param name="reason">ワークフローの中止の理由。</param>
+        <param name="workflowDefinitionIdentity">ワークフロー id に関する情報。</param>
+        <summary><see cref="T:System.Activities.Tracking.WorkflowInstanceAbortedRecord" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowInstanceAbortedRecord (Guid instanceId, long recordNumber, string activityDefinitionId, string reason, System.Activities.WorkflowIdentity workflowDefinitionIdentity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, int64 recordNumber, string activityDefinitionId, string reason, class System.Activities.WorkflowIdentity workflowDefinitionIdentity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceAbortedRecord.#ctor(System.Guid,System.Int64,System.String,System.String,System.Activities.WorkflowIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="recordNumber" Type="System.Int64" />
+        <Parameter Name="activityDefinitionId" Type="System.String" />
+        <Parameter Name="reason" Type="System.String" />
+        <Parameter Name="workflowDefinitionIdentity" Type="System.Activities.WorkflowIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">中止されたワークフローのインスタンス ID。</param>
+        <param name="recordNumber">追跡レコードを生成する順序を定義するシーケンス。</param>
+        <param name="activityDefinitionId">ルート ワークフロー アクティビティの表示名。</param>
+        <param name="reason">ワークフローの中止の理由。</param>
+        <param name="workflowDefinitionIdentity">ワークフロー id に関する情報。</param>
+        <summary><see cref="T:System.Activities.Tracking.WorkflowInstanceAbortedRecord" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="protected override System.Activities.Tracking.TrackingRecord Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Activities.Tracking.TrackingRecord Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceAbortedRecord.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Tracking.TrackingRecord</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reason">
+      <MemberSignature Language="C#" Value="public string Reason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Reason" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Tracking.WorkflowInstanceAbortedRecord.Reason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフローが中止された理由を説明する文字列を取得します。</summary>
+        <value>ワークフローの中止の理由。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceAbortedRecord.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追跡レコード データが含まれる文字列を返します。</summary>
+        <returns>追跡レコード データ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

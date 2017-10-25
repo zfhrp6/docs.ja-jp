@@ -1,0 +1,149 @@
+<Type Name="FileSecurity" FullName="System.Security.AccessControl.FileSecurity">
+  <TypeSignature Language="C#" Value="public sealed class FileSecurity : System.Security.AccessControl.FileSystemSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FileSecurity extends System.Security.AccessControl.FileSystemSecurity" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.FileSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.FileSystemSecurity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アクセス制御を表す監査ファイルのセキュリティとします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.AccessControl.FileSecurity>クラスは、システム ファイルとは、アクセス試行の監査のアクセス権を指定します。  このクラスは、一連のルールとして、アクセスおよび監査権限を表します。 各アクセス規則は、<xref:System.Security.AccessControl.FileSystemAccessRule>オブジェクト、各監査規則がによって表されるときに、<xref:System.Security.AccessControl.FileSystemAuditRule>オブジェクト。  
+  
+ <xref:System.Security.AccessControl.FileSecurity>クラスは、基になる Microsoft Windows ファイルのセキュリティ システムの抽象化します。 このシステムでは、各ファイルは、ファイルへのアクセスを制御するには、随意アクセス制御リスト (DACL)、およびシステム アクセス制御リスト (SACL) は監査するアクセス制御の試行を指定するがします。  <xref:System.Security.AccessControl.FileSystemAccessRule>と<xref:System.Security.AccessControl.FileSystemAuditRule>クラスは、Dacl と Sacl を構成するアクセス制御エントリ (Ace) の抽象化します。  
+  
+ <xref:System.Security.AccessControl.FileSecurity>クラスには、数多くの Dacl と Sacl の詳細が非表示に以外の ACE の順序または null DACL について心配する必要はありません。  
+  
+ 使用して、<xref:System.Security.AccessControl.FileSecurity>クラスを取得、追加、または、DACL とファイルの SACL を表すアクセス規則を変更します。  
+  
+ 新しいまたは変更されたアクセスを永続化または監査規則、ファイルを使用して、<xref:System.IO.FileInfo.SetAccessControl%2A>メソッドです。 既存のファイルからアクセス規則または監査規則を取得するには、<xref:System.IO.FileInfo.GetAccessControl%2A> メソッドを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Security.AccessControl.FileSecurity>クラスを追加し、ファイルからのアクセス制御リスト (ACL) エントリを削除します。  この例を実行するには、有効なユーザーまたはグループ アカウントを指定する必要があります。  
+  
+ [!code-cpp[IO.File.GetAccessControl-SetAccessControl#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/cpp/sample.cpp#1)]
+ [!code-csharp[IO.File.GetAccessControl-SetAccessControl#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/CS/sample.cs#1)]
+ [!code-vb[IO.File.GetAccessControl-SetAccessControl#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/VB/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.FileSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.AccessControl.FileSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、空を作成するときに<xref:System.Security.AccessControl.FileSecurity>が既存のファイルに基づいていないオブジェクトです。  アクセス制御情報を持つオブジェクトを設定し、ファイルに適用することができます。  
+  
+ アクセスを追加したり、監査規則を<xref:System.Security.AccessControl.FileSecurity>オブジェクトを使用して、<xref:System.Security.AccessControl.FileSystemSecurity.AddAccessRule%2A>メソッドです。 アクセス権を削除したり、監査規則を使用して、<xref:System.Security.AccessControl.FileSystemSecurity.RemoveAccessRule%2A>メソッドです。  
+  
+ 新しいまたは変更されたアクセスを永続化または監査規則、ファイルを使用して、<xref:System.IO.File.SetAccessControl%2A>または<xref:System.IO.FileInfo.SetAccessControl%2A>メソッドです。  アクセスを取得または監査規則、既存のファイルを使用して、<xref:System.IO.File.GetAccessControl%2A>または<xref:System.IO.FileInfo.GetAccessControl%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows 2000 以降ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileSecurity (string fileName, System.Security.AccessControl.AccessControlSections includeSections);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, valuetype System.Security.AccessControl.AccessControlSections includeSections) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.FileSecurity.#ctor(System.String,System.Security.AccessControl.AccessControlSections)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="includeSections" Type="System.Security.AccessControl.AccessControlSections" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">作成するファイルの場所、<see cref="T:System.Security.AccessControl.FileSecurity" />オブジェクトからです。</param>
+        <param name="includeSections">1 つ、<see cref="T:System.Security.AccessControl.AccessControlSections" />アクセスの種類を指定する値を制御リスト (ACL) 情報を取得します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.AccessControl.FileSecurity" />クラスの指定した値を使用して、指定したファイルから、<see cref="T:System.Security.AccessControl.AccessControlSections" />列挙します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが、指定したファイルのアクセス制御情報を取得しを作成し、<xref:System.Security.AccessControl.FileSecurity>その情報をカプセル化するオブジェクト。  ことができますし、検査、追加、または指定されたファイルのアクセス制御情報を削除します。  
+  
+ アクセスを追加したり、監査規則を<xref:System.Security.AccessControl.FileSecurity>オブジェクトを使用して、<xref:System.Security.AccessControl.FileSystemSecurity.AddAccessRule%2A>メソッドです。 アクセス権を削除したり、監査規則を使用して、<xref:System.Security.AccessControl.FileSystemSecurity.RemoveAccessRule%2A>メソッドです。  
+  
+ 新しいまたは変更されたアクセスを永続化または監査規則、ファイルを使用して、<xref:System.IO.File.SetAccessControl%2A>または<xref:System.IO.FileInfo.SetAccessControl%2A>メソッドです。  アクセスを取得または監査規則、既存のファイルを使用して、<xref:System.IO.File.GetAccessControl%2A>または<xref:System.IO.FileInfo.GetAccessControl%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="fileName" /> パラメーターは長さゼロの文字列で、空白のみで構成されているか、または <see cref="F:System.IO.Path.InvalidPathChars" /> で定義されるように 1 つ以上の無効な文字を含んでいます。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (マップされていないドライブ上のパスなど)。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定されたファイル、<paramref name="fileName" />パラメーターが見つかりませんでした。</exception>
+        <exception cref="T:System.IO.IOException">ファイルを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" /> の形式が正しくありません。</exception>
+        <exception cref="T:System.Runtime.InteropServices.SEHException"><paramref name="fileName" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows 2000 以降ではありません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.AccessControl.PrivilegeNotHeldException">現在のシステム アカウントには、管理者特権がありません。</exception>
+        <exception cref="T:System.SystemException">ファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="fileName" /> パラメーターに読み取り専用のファイルが指定されています。  
+  
+ または  
+  
+ この操作は、現在のプラットフォームではサポートされていません。  
+  
+ または  
+  
+ <paramref name="fileName" /> パラメーターにディレクトリが指定されています。  
+  
+ または  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定されたファイルへのアクセス許可、<paramref name="name" />パラメーター。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" /> 、<see cref="F:System.Security.AccessControl.AccessControlActions.View" />  
+  
+ セキュリティ アクション: 必要に応じて</permission>
+        <block subset="none" type="usage">
+          <para><see cref="M:System.Security.AccessControl.FileSecurity.#ctor(System.String,System.Security.AccessControl.AccessControlSections)" />コンス トラクターには、現在のアカウントに管理者特権が必要です。 新しいインスタンスを作成する、<see cref="T:System.Security.AccessControl.FileSecurity" />いない管理者特権を持つでは、使用するアカウントを使用して特定のファイルのクラス、<see cref="M:System.IO.FileStream.GetAccessControl" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

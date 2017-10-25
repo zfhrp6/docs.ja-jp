@@ -1,0 +1,107 @@
+<Type Name="IDesignerSerializationService" FullName="System.ComponentModel.Design.Serialization.IDesignerSerializationService">
+  <TypeSignature Language="C#" Value="public interface IDesignerSerializationService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignerSerializationService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.IDesignerSerializationService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>シリアル化および逆シリアル化を呼び出すことのできるインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このサービスは、オブジェクトのコレクションをそれらを表すシリアル化可能なオブジェクトに変換し、それが表すオブジェクトをシリアル化データを変換するメソッドを提供します。  
+  
+ デザイナーをサポートするすべてのコンポーネントは、各コンポーネントの型のシリアル化をサポートする必要があります。 これは、デザイナーのパブリック プロパティ、メソッド、およびイベントの種類ごとにスキャンし、型記述子でこれらを表す場合に発生します。  
+  
+ このインターフェイスでは、メンバーのスキャンのテクニックを使用して、コンポーネントのコレクションを実行時のシリアル化をサポートする 1 つのオブジェクトに変換します。 これは、クラスに属しているカスタム型のシリアル化は必ずしも提供されません。 多くのオブジェクトでは、実行時にシリアル化の値を持つカスタムのシリアライザーが必要です。 カスタム型のシリアライザーを指定するには、使用、<xref:System.ComponentModel.Design.Serialization.DesignerSerializerAttribute>属性に実装するか、<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationProvider>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Deserialize (object serializationData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection Deserialize(object serializationData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.IDesignerSerializationService.Deserialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serializationData">シリアル化されたデータで構成されるオブジェクト。</param>
+        <summary>指定したシリアル化データ オブジェクトを逆シリアル化し、そのデータによって表されるオブジェクトのコレクションを返します。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />オブジェクト指定したシリアル化データ オブジェクトからを再構築します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public object Serialize (System.Collections.ICollection objects);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Serialize(class System.Collections.ICollection objects) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.IDesignerSerializationService.Serialize(System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objects" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="objects">シリアル化されるオブジェクトのコレクション。</param>
+        <summary>指定されたオブジェクトのコレクションをシリアル化およびシリアル化データ オブジェクトに格納します。</summary>
+        <returns>指定されたオブジェクトのコレクションのシリアル化された状態を格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトは、実行時のシリアル化を完全にサポートします。  
+  
+ このメソッドから返されるオブジェクトには、コレクション内のオブジェクトへのライブ参照が含まれています。 このオブジェクトは、任意の実行時のシリアル化メカニズムに渡すことができます。 オブジェクト自体は、デザイナーは、プロパティごとの状態を保存することで、それらのソースを書き込む場合と同様のコンポーネントをシリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

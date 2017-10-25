@@ -1,0 +1,1027 @@
+<Type Name="Collection" FullName="Microsoft.VisualBasic.Collection">
+  <TypeSignature Language="C#" Value="public sealed class Collection : System.Collections.IList, System.Runtime.Serialization.IDeserializationCallback, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed Collection extends System.Object implements class System.Collections.ICollection, class System.Collections.IList, class System.Runtime.Serialization.IDeserializationCallback, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Collection" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IDeserializationCallback</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Count = {Count}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(Microsoft.VisualBasic.Collection/CollectionDebugView))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Visual Basic の <see langword="Collection" /> は、単位として参照できる項目の順序付けされたセットです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  ジェネリック コレクションを使用する必要があります、可能な限り、<xref:System.Collections.Generic?displayProperty=nameWithType>名前空間または<xref:System.Collections.Concurrent>Visual Basic ではなく名前空間`Collection`です。 詳細については、次を参照してください。[コレクション](http://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)です。  
+  
+ Visual Basic`Collection`オブジェクトは、単一のオブジェクトとしてアイテムの関連するグループを参照する便利な手段を提供します。 項目、または*要素*で、コレクション内に存在しているという事実によって、コレクションを関連のみ必要があります。 コレクションの要素を同じデータ型を共有する必要はありません。  
+  
+ 次の例に示すようには、コレクションの他のオブジェクトの作成と同じ方法を作成することができます。  
+  
+```  
+Dim coll As New Microsoft.VisualBasic.Collection()  
+```  
+  
+ コレクションを作成した後は、次のいずれかの操作を行います。  
+  
+-   持つ要素を追加、<xref:Microsoft.VisualBasic.Collection.Add%2A>メソッドです。  
+  
+-   持つ要素を削除、<xref:Microsoft.VisualBasic.Collection.Remove%2A>メソッドです。  
+  
+-   すべての要素を削除、<xref:Microsoft.VisualBasic.Collection.Clear%2A>メソッドです。  
+  
+-   持つコレクションに要素の数を検索、<xref:Microsoft.VisualBasic.Collection.Count%2A>プロパティです。  
+  
+-   特定の要素が存在するかどうかを確認して、<xref:Microsoft.VisualBasic.Collection.Contains%2A>メソッドです。  
+  
+-   使用して、コレクションから特定の要素を返す、<xref:Microsoft.VisualBasic.Collection.Item%2A>プロパティです。  
+  
+-   使用して、全体のコレクションを反復処理する、[ごとにしています.次のステートメントの](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md)します。  
+  
+    > [!NOTE]
+    >  Visual Basic`Collection`オブジェクトと同じ機能を持つ、 `Collection` Visual Basic 6.0 でオブジェクトの 2 つが COM 環境で相互運用することはできません。  
+  
+    > [!CAUTION]
+    >  Visual Basic の反復`Collection`はスレッド セーフなプロシージャはありません。 コレクションが同期されている場合でも他のスレッドが例外をスローする列挙子の原因と、コレクションを変更できます。 列挙中にスレッド セーフを確保する、コレクションをロックするか、他のスレッドによって行われた変更に起因する例外をキャッチします。 プログラミング要素のロックの詳細については、次を参照してください。 [SyncLock ステートメント](~/docs/visual-basic/language-reference/statements/synclock-statement.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、`Collection`オブジェクト`names`と、ダイアログ ボックスを使用するユーザーは、コレクションにオブジェクト (名前) を追加できます。 コレクション内の名前を表示し、最後にコレクションを空には破棄せず、`Collection`オブジェクト自体です。  
+  
+ 表示するこの動作方法を選択、**クラスの追加**コマンドを**プロジェクト**メニューと呼ばれる、パブリック変数を宣言および`instanceName`、モジュール レベルの`nameClass`(型`Public instanceName`) を保持するには各インスタンスの名前。 既定の名前として`nameClass`です。 コピーして貼り付けるには、次のコード、**全般**別のモジュールのセクションで、ステートメントを使用して起動`classNamer`別のプロシージャでします。 (この例は、クラスをサポートするホスト アプリケーションでのみ動作)。  
+  
+ [!code-vb[VbVbalrCollectionObject#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Collection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>作成して、新しい返します[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]このコンス トラクターによって返されるコレクションは空に割り当てられているすべての初期容量がありません。  
+  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コレクションと互換性がない、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]コレクションで使用できる、 <xref:System.Collections?displayProperty=nameWithType>、 <xref:System.Collections.Generic?displayProperty=nameWithType>、および<xref:System.Collections.Specialized?displayProperty=nameWithType>名前空間。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コレクションし、変数に代入`coll`:  
+  
+```  
+Dim coll As New Microsoft.VisualBasic.Collection()  
+```  
+  
+ これは、`Collection`オブジェクトは 1 から始まる、つまり 1 の値からの要素範囲のインデックス値、`Count`プロパティです。 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]コレクション型の要素を保持する<xref:System.Object>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (object Item, string Key = null, object Before = null, object After = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void Add(object Item, string Key, object Before, object After) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.Add(System.Object,System.String,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Item" Type="System.Object" />
+        <Parameter Name="Key" Type="System.String" />
+        <Parameter Name="Before" Type="System.Object" />
+        <Parameter Name="After" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Item">必須です。 コレクションに追加する要素を指定する任意の型のオブジェクトです。</param>
+        <param name="Key">省略可能です。 一意な<see langword="String" />位置のインデックスではなく、コレクション内の新しい要素にアクセスするために使用するキー文字列を指定する式。</param>
+        <param name="Before">省略可能です。 コレクション内の相対位置を指定する式。 によって識別される要素の前に、コレクションに追加する要素が配置されます、<c>する前に</c>引数。 場合<c>する前に</c>数値式は、コレクションの値を使用して 1 から番号をする必要があります<see cref="P:Microsoft.VisualBasic.Collection.Count" />プロパティです。 場合<c>する前に</c>は、<see langword="String" />式では、参照されている要素がコレクションに追加されたときに指定されたキーの文字列に対応は必要があります。 両方を指定することはできません<c>する前に</c>と<c>後</c>です。</param>
+        <param name="After">省略可能です。 コレクション内の相対位置を指定する式。 によって識別される要素の後にコレクションに追加する要素を配置している、<c>後</c>引数。 場合<c>後</c>数値式は、コレクションの値を使用して 1 から番号をする必要があります<see langword="Count" />プロパティです。 場合<c>後</c>は、<see langword="String" />式では、参照先の要素がコレクションに追加したときに指定されたキーの文字列に対応は必要があります。 両方を指定することはできません<c>する前に</c>と<c>後</c>です。</param>
+        <summary>要素を追加、<see langword="Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Before`または`After`引数は、コレクションの既存の要素を参照する必要があります。 それ以外の場合、エラーが発生します。  
+  
+ 両方の`Before`と`After`引数を省略した、新しいオブジェクトがコレクションの末尾に追加します。  
+  
+ 指定した場合にも、エラーが発生`Key`値に一致するコレクションの既存の要素のキー。  
+  
+   
+  
+## Examples  
+ 次の例では、`Add`メソッドを追加する`child`オブジェクト — クラスのインスタンスと呼ばれます`child`を含む、`Public`プロパティ`name`: と呼ばれるコレクションに`family`です。 このしくみを表示するには、作成、 <xref:System.Windows.Forms.Form> 、2 つ<xref:System.Windows.Forms.Button>コントロールとセット、<xref:System.Windows.Forms.Control.Text%2A>プロパティを`Add`と`List`です。 追加、`child`クラス定義と`family`フォームのコードを宣言します。 変更、`_Click`のイベント ハンドラー、**追加**と**リスト**ようにのボタンをクリックします。 **追加**ボタンをクリックすると、子を追加することができます。 **リスト**ボタンには、すべての子の名前が表示されます。  
+  
+ [!code-vb[VbVbalrCollectionObject#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Visual Basic のすべての要素を削除<see langword="Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Clear`メソッドは、コレクションを空にして、リセット、<xref:Microsoft.VisualBasic.Collection.Count%2A>プロパティを 0 にします。  
+  
+   
+  
+## Examples  
+ [!code-vb[VbVbalrCollectionObject#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string Key);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool Contains(string Key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Key">必須です。 A<see langword="String" />コレクションの要素を検索するキーを指定する式。</param>
+        <summary>返します、 <see langword="Boolean" /> Visual Basic かどうかを示すを値<see langword="Collection" />オブジェクトには、特定のキーを持つ要素が含まれています。</summary>
+        <returns>返します、 <see langword="Boolean" /> Visual Basic かどうかを示すを値<see langword="Collection" />オブジェクトには、特定のキーを持つ要素が含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Contains`返します`True`正確に一致するキーを持つ要素がコレクションに含まれている場合`Key`です。 それ以外の場合、`Contains`返します`False`です。 一致するキー値の場合は無視されます。  
+  
+ Visual Basic`Collection`キーがあるいくつかの要素およびキーを持たない他の要素を保持できます。 これは異なるかどうかを呼び出す、<xref:Microsoft.VisualBasic.Collection.Add%2A>メソッドには、オプションの引数が指定されて`Key`パラメーター。  
+  
+   
+  
+## Examples  
+ [!code-vb[VbVbalrCollectionObject#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#4)]  
+  
+ 指定するコレクションのキーを使用して要素を検索する場合は、保存、`Key`引数を呼び出すたびに、`Add`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Collection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see langword="Integer" />コレクション内の要素数を格納します。 読み取り専用です。</summary>
+        <value>返します、<see langword="Integer" />コレクション内の要素数を格納します。 読み取り専用です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`Count`内の要素の数を決定するプロパティ、`Collection`オブジェクト。  
+  
+   
+  
+## Examples  
+ この例での使用、`Count`内の要素の数を表示するプロパティを<xref:Microsoft.VisualBasic.Collection>変数内のオブジェクト`birthdays`です。  
+  
+ [!code-vb[VbVbalrCollectionObject#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#5)]  
+[!code-vb[VbVbalrCollectionObject#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#6)]  
+  
+ `Collection`オブジェクトは 1 から始まる、つまり 1 の値からの要素範囲のインデックス値、`Count`プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復処理に使用される、列挙子オブジェクトへの参照を返します、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</summary>
+        <returns>反復処理に使用される、列挙子オブジェクトへの参照を返します、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [ごとにしています.次のステートメントの](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md)呼び出し`GetEnumerator`コレクションの要素に対する反復処理をサポートする列挙子オブジェクトを取得します。 通常は、使用、`For Each`しています.`Next`コレクションまたは配列を走査するループしを呼び出す必要はありません`GetEnumerator`明示的にします。  
+  
+ イテレーションに近い制御必要がある場合、`For Each`しています.`Next`ステートメントの提供、使用することができます、`GetEnumerator`カスタマイズの検査を実行するメソッド。 次に、場合によってはするがこれを行う必要があります。  
+  
+-   コレクションの先頭に戻るしが終わる前に、もう一度イテレーションを開始する可能性があります。  
+  
+-   さまざまな理由の 1 つまたは複数の要素をスキップする場合があります。  
+  
+-   走査中にコレクションの要素を変更する必要があります。 ここでは前の 1 つが無効になっているために、新しい列挙子オブジェクトを取得する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。`GetEnumerator`のすべての要素を取得する、`Collection`オブジェクト。  
+  
+ [!code-vb[VbVbalrCollectionObject#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#7)]  
+  
+ `GetEnumerator`構築してを実装する列挙子オブジェクトを返す、<xref:System.Collections.IEnumerator>のインターフェイス、<xref:System.Collections>名前空間。 列挙子オブジェクトは、公開、<xref:System.Collections.IEnumerator.Current%2A>プロパティおよび<xref:System.Collections.IEnumerator.MoveNext%2A>と<xref:System.Collections.IEnumerator.Reset%2A>メソッドです。 詳細については、次を参照してください[ごとにしています.。次のステートメントの](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md)します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int Index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Collection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Index">(コレクションの要素の位置を指定します A) の数値式です。 <c>インデックス</c>はコレクションの値を使用して 1 の数値でなければなりません<see cref="P:Microsoft.VisualBasic.Collection.Count" />プロパティです。 または (B)、<see langword="Object" />コレクションの要素の位置またはキー文字列を指定します。</param>
+        <summary>特定の要素を返し、<see langword="Collection" />位置またはキーのいずれかのオブジェクト。 読み取り専用です。</summary>
+        <value>特定の要素を返し、<see langword="Collection" />位置またはキーのいずれかのオブジェクト。 読み取り専用です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Index`の種類は`Object`、`Item`として処理しようとしているプロパティ、 `String`、 `Char`、`Char`配列、または整数値。 場合`Item`に変換できません`Index`に`String`または`Integer`、スロー、<xref:System.ArgumentException>例外。  
+  
+ `Item`プロパティは、コレクションの既定のプロパティです。 したがって、次のコード行は等価です。  
+  
+```  
+MsgBox(CStr(customers.Item(1)))  
+MsgBox(CStr(customers(1)))  
+```  
+  
+   
+  
+## Examples  
+ 次の例では、`Item`コレクション内のオブジェクトへの参照を取得するプロパティです。 作成`birthdays`として、`Collection`オブジェクトし、キーを使用して、課金内容の生年月日を表すオブジェクトを取得し、`"Bill"`として、`Index`引数。  
+  
+ [!code-vb[VbVbalrCollectionObject#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#5)]  
+[!code-vb[VbVbalrCollectionObject#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#8)]  
+  
+ ノートの最初の呼び出しを明示的に指定する、`Item`プロパティが 2 つ目はありません。 呼び出しは両方ともために、機能、`Item`プロパティは既定のプロパティを`Collection`オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[object Index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(object)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Collection.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Index" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Index">(コレクションの要素の位置を指定します A) の数値式です。 <c>インデックス</c>はコレクションの値を使用して 1 の数値でなければなりません<see cref="P:Microsoft.VisualBasic.Collection.Count" />プロパティです。 または (B)、<see langword="Object" />コレクションの要素の位置またはキー文字列を指定します。</param>
+        <summary>特定の要素を返し、<see langword="Collection" />位置またはキーのいずれかのオブジェクト。 読み取り専用です。</summary>
+        <value>特定の要素を返し、<see langword="Collection" />位置またはキーのいずれかのオブジェクト。 読み取り専用です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Index`の種類は`Object`、`Item`として処理しようとしているプロパティ、 `String`、 `Char`、`Char`配列、または整数値。 場合`Item`に変換できません`Index`に`String`または`Integer`、スロー、<xref:System.ArgumentException>例外。  
+  
+ `Item`プロパティは、コレクションの既定のプロパティです。 したがって、次のコード行は等価です。  
+  
+```  
+MsgBox(CStr(customers.Item(1)))  
+MsgBox(CStr(customers(1)))  
+```  
+  
+   
+  
+## Examples  
+ 次の例では、`Item`コレクション内のオブジェクトへの参照を取得するプロパティです。 作成`birthdays`として、`Collection`オブジェクトし、キーを使用して、課金内容の生年月日を表すオブジェクトを取得し、`"Bill"`として、`Index`引数。  
+  
+ [!code-vb[VbVbalrCollectionObject#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#5)]  
+[!code-vb[VbVbalrCollectionObject#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#8)]  
+  
+ ノートの最初の呼び出しを明示的に指定する、`Item`プロパティが 2 つ目はありません。 呼び出しは両方ともために、機能、`Item`プロパティは既定のプロパティを`Collection`オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string Key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Collection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Key">一意な<see langword="String" />使用できる、位置指定のインデックスではなく、コレクションの要素にアクセスするキー文字列を指定します。 <c>キー</c>に対応する必要があります、<c>キー</c>要素をコレクションに追加したときに引数を指定します。</param>
+        <summary>特定の要素を返し、<see langword="Collection" />位置またはキーのいずれかのオブジェクト。 読み取り専用です。</summary>
+        <value>特定の要素を返し、<see langword="Collection" />位置またはキーのいずれかのオブジェクト。 読み取り専用です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`Index`の種類は`Object`、`Item`として処理しようとしているプロパティ、 `String`、 `Char`、`Char`配列、または整数値。 場合`Item`に変換できません`Index`に`String`または`Integer`、スロー、<xref:System.ArgumentException>例外。  
+  
+ `Item`プロパティは、コレクションの既定のプロパティです。 したがって、次のコード行は等価です。  
+  
+```  
+MsgBox(CStr(customers.Item(1)))  
+MsgBox(CStr(customers(1)))  
+```  
+  
+   
+  
+## Examples  
+ 次の例では、`Item`コレクション内のオブジェクトへの参照を取得するプロパティです。 作成`birthdays`として、`Collection`オブジェクトし、キーを使用して、課金内容の生年月日を表すオブジェクトを取得し、`"Bill"`として、`Index`引数。  
+  
+ [!code-vb[VbVbalrCollectionObject#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#5)]  
+[!code-vb[VbVbalrCollectionObject#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#8)]  
+  
+ ノートの最初の呼び出しを明示的に指定する、`Item`プロパティが 2 つ目はありません。 呼び出しは両方ともために、機能、`Item`プロパティは既定のプロパティを`Collection`オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (int Index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(int32 Index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.Remove(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Index">コレクションの要素の位置を指定する数値式です。 <c>インデックス</c>はコレクションの値を使用して 1 の数値でなければなりません<see cref="P:Microsoft.VisualBasic.Collection.Count" />プロパティです。</param>
+        <summary>要素を削除、<see langword="Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`Remove`、コレクションから要素を削除、デクリメント、コレクションの<xref:Microsoft.VisualBasic.Collection.Count%2A>によって 1 つのプロパティです。 これもデクリメント、`Index`コレクション内で削除された要素の後に続くすべての要素の値。  
+  
+ 要素がなく、コレクションに追加した場合、 `Key`、使用する必要があります、`Index`を削除します。  
+  
+   
+  
+## Examples  
+ この例での使用、`Remove`からオブジェクトを削除する方法、<xref:Microsoft.VisualBasic.Collection>変数内のオブジェクト`birthdays`です。  
+  
+ [!code-vb[VbVbalrCollectionObject#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#5)]  
+[!code-vb[VbVbalrCollectionObject#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#9)]  
+  
+ 呼び出しを次の 4 つ、`Add`メソッド、`Count`プロパティには、4 が含まれています。 要素`"Bill"`インデックス値 1、および要素を持つ`"Pete"`4 インデックス値を持ちます。  
+  
+ 次の最初の呼び出し`Remove`、`Count`は、3、要素`"Bill"`削除されると、要素と`"Pete"`インデックス値 3 を持ちます。  
+  
+ 次の 2 番目の呼び出し`Remove`、 `Count` 2 では、要素`"Mike"`削除されると、要素と`"Pete"`2 のインデックス値を持ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string Key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string Key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Key">一意な<see langword="String" />使用できる、位置指定のインデックスではなく、コレクションの要素にアクセスするキー文字列を指定します。 <c>キー</c>に対応する必要があります、<c>キー</c>要素をコレクションに追加したときに引数を指定します。</param>
+        <summary>要素を削除、<see langword="Collection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`Remove`、コレクションから要素を削除、デクリメント、コレクションの<xref:Microsoft.VisualBasic.Collection.Count%2A>によって 1 つのプロパティです。 これもデクリメント、`Index`コレクション内で削除された要素の後に続くすべての要素の値。  
+  
+ 要素がなく、コレクションに追加した場合、 `Key`、使用する必要があります、`Index`を削除します。  
+  
+   
+  
+## Examples  
+ この例での使用、`Remove`からオブジェクトを削除する方法、<xref:Microsoft.VisualBasic.Collection>変数内のオブジェクト`birthdays`です。  
+  
+ [!code-vb[VbVbalrCollectionObject#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#5)]  
+[!code-vb[VbVbalrCollectionObject#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionObject/VB/Class1.vb#9)]  
+  
+ 呼び出しを次の 4 つ、`Add`メソッド、`Count`プロパティには、4 が含まれています。 要素`"Bill"`インデックス値 1、および要素を持つ`"Pete"`4 インデックス値を持ちます。  
+  
+ 次の最初の呼び出し`Remove`、`Count`は、3、要素`"Bill"`削除されると、要素と`"Pete"`インデックス値 3 を持ちます。  
+  
+ 次の 2 番目の呼び出し`Remove`、 `Count` 2 では、要素`"Mike"`削除されると、要素と`"Pete"`2 のインデックス値を持ちます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance void ICollectionCopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.ICollectionCopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />からコピーした要素のコピー先は<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:Microsoft.VisualBasic.Collection" /> の要素を <see cref="T:System.Array" /> にコピーします。<see cref="T:System.Array" /> の特定のインデックスからコピーが開始されます。 <see cref="T:System.Collections.ICollection" /> インターフェイスを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素のコピー先は、<xref:System.Array>を列挙子が反復処理する順序と同じ順序で、<xref:Microsoft.VisualBasic.Collection>オブジェクト。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`から取得した、<xref:Microsoft.VisualBasic.Collection.System%23Collections%23ICollection%23Count>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ ソース内の要素の数<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトがから利用可能な領域よりも大きい<paramref name="index" />変換先の末尾に<paramref name="array" />です。</exception>
+        <exception cref="T:System.InvalidCastException">ソースの種類<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトは、変換先の型に自動的にキャストすることはできません<paramref name="array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.ICollectionCount">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.ICollectionCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ICollectionCount" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Collection.ICollectionCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.ICollectionIsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.ICollectionIsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ICollectionIsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Collection.ICollectionIsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.ICollectionSyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.ICollectionSyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ICollectionSyncRoot" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Collection.ICollectionSyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance class System.Collections.IEnumerator ICollectionGetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.ICollectionGetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。 <see cref="T:System.Collections.ICollection" /> インターフェイスを実装します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [Visual Basic、C# の場合]  
+  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A>メソッドがこの位置に戻さも、列挙子を表示します。 この位置にある、<xref:System.Collections.IEnumerator.Current%2A>プロパティが定義されていません。 そのため、呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A>メソッドの値を読み取る前に、コレクションの最初の要素に列挙子を進める<xref:System.Collections.IEnumerator.Current%2A>です。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 場合は、最後の呼び出し<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。 コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance int32 IListAdd(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.IListAdd(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />に追加する、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</param>
+        <summary>項目を追加、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。 <see cref="T:System.Collections.IList" /> インターフェイスを実装します。</summary>
+        <returns>新しい要素が挿入された位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することも、<xref:Microsoft.VisualBasic.Collection.Item%2A>にキーの値を設定して、新しい要素を追加するプロパティが存在しません、<xref:Microsoft.VisualBasic.Collection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトは読み取り専用です。  
+  
+ または  
+  
+ <see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトのサイズが固定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Clear">
+      <MemberSignature Language="C#" Value="void IList.Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance void IListClear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.IListClear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての項目を削除、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。 <see cref="T:System.Collections.IList" /> インターフェイスを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドからすべての項目を削除する、<xref:Microsoft.VisualBasic.Collection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.IList" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance bool IListContains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.IListContains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />内で検索する、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</param>
+        <summary>指定するかどうか、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトには、特定の値が含まれています。 <see cref="T:System.Collections.IList" /> インターフェイスを実装します。</summary>
+        <returns>返します<see langword="True" />場合、<see cref="T:System.Object" />で見つかった、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。 それ以外の場合、<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを判断するかどうか、<xref:Microsoft.VisualBasic.Collection>オブジェクトには、特定の値が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IListIsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IListIsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IListIsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Collection.IListIsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IListIsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IListIsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IListIsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Collection.IListIsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IListItem">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.IListItem[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object IListItem(int32)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Collection.IListItem(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance int32 IListIndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.IListIndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />内で検索する、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</param>
+        <summary>内の特定の項目のインデックス番号、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。 <see cref="T:System.Collections.IList" /> インターフェイスを実装します。</summary>
+        <returns>インデックス<paramref name="value" />コレクション内で見つかった場合は、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッド内の特定の項目のインデックスを決定する、<xref:Microsoft.VisualBasic.Collection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance void IListInsert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.IListInsert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>挿入する必要があります。</param>
+        <param name="value"><see cref="T:System.Object" />に挿入する、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</param>
+        <summary>項目を挿入、<see cref="T:Microsoft.VisualBasic.Collection" />指定したインデックスにあるオブジェクト。 <see cref="T:System.Collections.IList" /> インターフェイスを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`index`内の項目数に等しければ、<xref:Microsoft.VisualBasic.Collection>オブジェクト、`value`が末尾に追加されます。  
+  
+ リストなどの連続する要素のコレクションでは、新しい要素を挿入するために、挿入位置より後にある要素の位置が繰り下げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、要素が概念的にバケットにグループ化されているハッシュ テーブルなどのコレクションには適用されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />有効なインデックスではありません、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトは読み取り専用です。  
+  
+ または  
+  
+ <see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトのサイズが固定されています。</exception>
+        <exception cref="T:System.NullReferenceException">
+          <paramref name="value" />内の null 参照には、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance void IListRemove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.IListRemove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />から削除する、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</param>
+        <summary>最初に見つかった特定のオブジェクトから削除、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。 <see cref="T:System.Collections.IList" /> インターフェイスを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リストなどの連続する要素のコレクションでは、空白になった位置を埋めるために、削除された要素の後にある要素の位置が繰り上げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、要素が概念的にバケットにグループ化されているハッシュ テーブルなどのコレクションには適用されません。 場合`value`に載っていない、<xref:Microsoft.VisualBasic.Collection>オブジェクト、<xref:Microsoft.VisualBasic.Collection>オブジェクトが変更されないと、例外はスローされません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトは読み取り専用です。  
+  
+ または  
+  
+ <see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトのサイズが固定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.RemoveAt">
+      <MemberSignature Language="C#" Value="void IList.RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance void IListRemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.IListRemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス。</param>
+        <summary>削除、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトの項目を指定したインデックス位置。 <see cref="T:System.Collections.IList" /> インターフェイスを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リストなどの連続する要素のコレクションでは、空白になった位置を埋めるために、削除された要素の後にある要素の位置が繰り上げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、要素が概念的にバケットにグループ化されているハッシュ テーブルなどのコレクションには適用されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />有効なインデックスではありません、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトは読み取り専用です。  
+  
+ または  
+  
+ <see cref="T:Microsoft.VisualBasic.Collection" />オブジェクトのサイズが固定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.IDeserializationCallback.OnDeserialization">
+      <MemberSignature Language="C#" Value="void IDeserializationCallback.OnDeserialization (object sender);" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance void OnDeserialization(object sender) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.OnDeserialization(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="sender">コールバックを開始したオブジェクト。</param>
+        <summary>全体の後に実行<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト グラフが逆シリアル化されました。 <see cref="T:System.Runtime.Serialization.IDeserializationCallback" /> インターフェイスを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、全体の後に呼び出されます<xref:Microsoft.VisualBasic.Collection>オブジェクト グラフが逆シリアル化されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Collection.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトをシリアル化するために必要な情報を含む、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />オブジェクト ソースと関連付けられているシリアル化されたストリームの先を含む、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。</param>
+        <summary>シリアル化するために必要なデータを返す、<see cref="T:Microsoft.VisualBasic.Collection" />オブジェクト。 <see cref="T:System.Runtime.Serialization.ISerializable" /> インターフェイスを実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、シリアル化に必要なデータを返します、<xref:Microsoft.VisualBasic.Collection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

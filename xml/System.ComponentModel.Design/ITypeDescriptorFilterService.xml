@@ -1,0 +1,192 @@
+<Type Name="ITypeDescriptorFilterService" FullName="System.ComponentModel.Design.ITypeDescriptorFilterService">
+  <TypeSignature Language="C#" Value="public interface ITypeDescriptorFilterService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypeDescriptorFilterService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ITypeDescriptorFilterService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン モードでコンポーネントの一連のメンバー記述子を変更するためのインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.ITypeDescriptorFilterService>インターフェイスには、デザイン時に、プロパティ、イベント、およびコンポーネントのクラス レベルの属性を変更できるようにするインターフェイスが用意されています。 一連のコンポーネントを使用するを介して記述子を使用してこの変更が行われる、<xref:System.ComponentModel.TypeDescriptor>です。 型記述子のコンポーネントのサイトがクエリを実行、<xref:System.ComponentModel.Design.ITypeDescriptorFilterService>サービスし、型記述子がこのサービスに収集したすべてのメタデータを渡すことがある場合。 サービスは、追加、削除、およびコンポーネントの既存の特性を変更してメタデータを変更できます。  
+  
+ コンポーネントのプロパティを変更して、呼び出すことによってなど、<xref:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterProperties%2A>メソッドです。 フィルター サービスがプロパティ名と型の場合は、そのプロパティ記述子を格納するディクショナリを取得<xref:System.ComponentModel.PropertyDescriptor>です。 変更は、次のロジックを使用して実装されます。  
+  
+|変更|実装|  
+|------------------|--------------------|  
+|削除|ディクショナリ内の対応するエントリを削除します。|  
+|加算|ディクショナリに適切なエントリを追加します。|  
+|変更を加える|既存のプロパティ記述子のメソッドを呼び出して、関連付けられているプロパティ記述子のエントリを置き換えるまたは置換全体のプロパティのキー/値ペアのディクショナリ。|  
+  
+ 戻り値<xref:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterProperties%2A>このプロパティのセットは固定されているかどうかを決定します。 このメソッドが戻る場合`true`、<xref:System.ComponentModel.TypeDescriptor>のこのコンポーネントは、結果をキャッシュできます。 いずれかのコンポーネントがガベージ コレクションされるまで、このキャッシュが保持されますまたは<xref:System.ComponentModel.TypeDescriptor.Refresh%2A>型記述子のメソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますを使用するデザイナー、 <xref:System.ComponentModel.Design.ITypeDescriptorFilterService> 、新規または既存の属性コレクションをフィルターする<xref:System.Windows.Forms.Button>読み込みやボタンのデザイナーを再読み込みする前に、新しいデザイナーのデザイナーの属性を追加します。  
+  
+ 例を使用するには、Windows フォーム プロジェクトにコードを追加およびクラス ライブラリからツールボックスにコンポーネントを読み込みます。  
+  
+ 参照してください[チュートリアル: カスタム コンポーネントを使用して、ツールボックスが自動的に入力](http://msdn.microsoft.com/library/fw694kde\(v=vs.110\).aspx)です。  
+  
+ フォームにいくつかのボタンを追加します。 追加、`ButtonDesignerFilterComponent`をフォームに、コンポーネント トレイに表示されます。 `ButtonDesignerFilterComponent`は追加、`ButtonDesignerFilterService`を実装する<xref:System.ComponentModel.Design.ITypeDescriptorFilterService>、デザイン モードのサービス プロバイダーとして。 既存または新規<xref:System.Windows.Forms.Button>、フォーム上のオブジェクトが循環後の色を開始、`ButtonDesignerFilterService`で各既存および新規のボタンのデザイナーが置き換えられます、`ColorCycleButtonDesigner`です。 色のボタンがサイクルまたはする場合、マウス ポインターを移動し、または繰り返しを続行の前景色および背景色をリセット`MouseLeave`イベント。 新しい<xref:System.Windows.Forms.Button>オブジェクトが与えられます、`ColorCycleButtonDesigner`を通じて、<xref:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterAttributes%2A>のメソッド、`ButtonDesignerFilterService`されるまで、読み込まれています、`ButtonDesignerFilterComponent`が破棄され、元の置換<xref:System.ComponentModel.Design.ITypeDescriptorFilterService>です。 `ColorCycleButton`クラスがこの例では、<xref:System.Windows.Forms.Button>に関連付けられている、`ColorCycleButtonDesigner`です。  
+  
+ [!code-cpp[ITypeDescriptorFilterService#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ITypeDescriptorFilterService/CPP/source.cpp#1)]
+ [!code-csharp[ITypeDescriptorFilterService#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ITypeDescriptorFilterService/CS/source.cs#1)]
+ [!code-vb[ITypeDescriptorFilterService#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ITypeDescriptorFilterService/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>によって公開されるメンバー記述子をフィルター処理する、<see cref="T:System.ComponentModel.TypeDescriptor" />コンポーネントでこのインターフェイスを実装し、オーバーライド、 <see cref="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterAttributes(System.ComponentModel.IComponent,System.Collections.IDictionary)" />、 <see cref="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterEvents(System.ComponentModel.IComponent,System.Collections.IDictionary)" />、または<see cref="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterProperties(System.ComponentModel.IComponent,System.Collections.IDictionary)" />をそれぞれの属性、イベント、またはプロパティをフィルター処理するには、このクラスのメソッドです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="FilterAttributes">
+      <MemberSignature Language="C#" Value="public bool FilterAttributes (System.ComponentModel.IComponent component, System.Collections.IDictionary attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool FilterAttributes(class System.ComponentModel.IComponent component, class System.Collections.IDictionary attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterAttributes(System.ComponentModel.IComponent,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="attributes" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="component">属性をフィルター処理する対象のコンポーネント。</param>
+        <param name="attributes">変更できる属性のディクショナリ。</param>
+        <summary><see cref="T:System.ComponentModel.TypeDescriptor" /> を通じてコンポーネントが公開する属性をフィルター処理します。</summary>
+        <returns>
+          フィルター処理した一連の属性をキャッシュに保存する場合は <see langword="true" />。フィルター サービスが再照会する必要がある場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ユーザーが、コンポーネントの属性のセットを要求したときに呼び出されます。 属性の属性を使用してディクショナリに追加<xref:System.Attribute.TypeId%2A>キーと値として実際の属性です。 このサービスを実装は、追加、削除、またはディクショナリ内の既存の属性エントリを変更できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>返す<see langword="false" />ので、必要な型記述子のフィルター サービスへのクエリ パフォーマンスが低下することができますを繰り返す場合にのみです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterEvents">
+      <MemberSignature Language="C#" Value="public bool FilterEvents (System.ComponentModel.IComponent component, System.Collections.IDictionary events);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool FilterEvents(class System.ComponentModel.IComponent component, class System.Collections.IDictionary events) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterEvents(System.ComponentModel.IComponent,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="events" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="component">イベントをフィルター処理する対象のコンポーネント。</param>
+        <param name="events">変更できるイベントのディクショナリ。</param>
+        <summary><see cref="T:System.ComponentModel.TypeDescriptor" /> を通じてコンポーネントが公開するイベントをフィルター処理します。</summary>
+        <returns>
+          フィルター処理した一連のイベントをキャッシュに保存する場合は <see langword="true" />。フィルター サービスが再照会する必要がある場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ユーザーが、コンポーネントのイベントのセットを要求したときに呼び出されます。 イベントは、キーと、対応するイベント名を使用してディクショナリに追加されます<xref:System.ComponentModel.EventDescriptor>値としてオブジェクト。 このサービスを実装は、追加、削除、またはディクショナリ内のイベント エントリを変更できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>返す<see langword="false" />ので、必要な型記述子のフィルター サービスへのクエリ パフォーマンスが低下することができますを繰り返す場合にのみです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterProperties">
+      <MemberSignature Language="C#" Value="public bool FilterProperties (System.ComponentModel.IComponent component, System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool FilterProperties(class System.ComponentModel.IComponent component, class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterProperties(System.ComponentModel.IComponent,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="component">プロパティをフィルター処理する対象のコンポーネント。</param>
+        <param name="properties">変更できるプロパティのディクショナリ。</param>
+        <summary><see cref="T:System.ComponentModel.TypeDescriptor" /> を通じてコンポーネントが公開するプロパティをフィルター処理します。</summary>
+        <returns>
+          フィルター処理した一連のプロパティをキャッシュに保存する場合は <see langword="true" />。フィルター サービスが再照会する必要がある場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ユーザーは、一連のコンポーネントのプロパティを要求したときに呼び出されます。 プロパティは、キーと、対応するとしてプロパティ名を使用してディクショナリに追加されます<xref:System.ComponentModel.PropertyDescriptor>値としてオブジェクト。 このサービスを実装は、追加、削除、またはディクショナリ内のエントリのプロパティを変更できます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>返す<see langword="false" />ので、必要な型記述子のフィルター サービスへのクエリ パフォーマンスが低下することができますを繰り返す場合にのみです。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

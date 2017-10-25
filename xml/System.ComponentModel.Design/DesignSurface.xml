@@ -1,0 +1,972 @@
+<Type Name="DesignSurface" FullName="System.ComponentModel.Design.DesignSurface">
+  <TypeSignature Language="C#" Value="public class DesignSurface : IDisposable, IServiceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignSurface extends System.Object implements class System.IDisposable, class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignSurface" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンポーネントをデザインするためのユーザー インターフェイスを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurface>デザイナーとして認識し、ユーザー クラスを実装します。 <xref:System.ComponentModel.Design.DesignSurface>ユーザーのユーザー インターフェイスをデザイン時の機能を変更する操作です。 <xref:System.ComponentModel.Design.DesignSurface>完全に自己完結型のデザイン画面を提供します。  
+  
+ <xref:System.ComponentModel.Design.DesignSurface>クラスは、スタンドアロンのデザイナーとして使用する可能性がありますかと組み合わせることがあります、<xref:System.ComponentModel.Design.DesignSurfaceManager>複数をホストするアプリケーションの一般的な実装を提供するクラス<xref:System.ComponentModel.Design.DesignSurface>オブジェクト。  
+  
+ <xref:System.ComponentModel.Design.DesignSurface>クラスは、単独で使用できますか、ユーザーはそこから新しいクラスを派生し、動作を拡張します。  
+  
+ <xref:System.ComponentModel.Design.DesignSurface>クラスが自動的にいくつかのデザイン時サービスを提供します。 <xref:System.ComponentModel.Design.DesignSurface>クラスはそのすべてのサービスのコンス トラクターに追加します。 これらのサービスのほとんどは、保護対象に置き換えることによってオーバーライドできます<xref:System.ComponentModel.Design.DesignSurface.ServiceContainer%2A>プロパティです。 サービスを置き換えるには、コンス トラクターをオーバーライド、基本、および、保護対象から変更を加える<xref:System.ComponentModel.Design.DesignSurface.ServiceContainer%2A>プロパティです。 サービス コンテナーに追加され、実装しているすべてのサービス<xref:System.IDisposable>デザイン サーフェイスが破棄されるときに破棄されます。 置き換え可能の既定のセットの各サービス、<xref:System.ComponentModel.Design.DesignSurface>クラスは、次の表に示すようには用意されています。  
+  
+|サービス|説明|  
+|-------------|-----------------|  
+|<xref:System.ComponentModel.Design.IExtenderProviderService>|独自の拡張プロバイダーを提供するコンテナーのコンポーネントのコレクションの一部ではないオブジェクトを有効にします。|  
+|<xref:System.ComponentModel.Design.IExtenderListService>|によって使用される<xref:System.ComponentModel.TypeDescriptor>拡張プロバイダーの一覧を取得します。 このサービスに拡張プロバイダーは、コンテナーの外部でライブことができます。|  
+|<xref:System.ComponentModel.Design.ITypeDescriptorFilterService>|デザイナーのメタデータのフックを提供します。 これは、メタデータのフィルター処理の基本インターフェイスです。|  
+|<xref:System.ComponentModel.Design.ISelectionService>|デザイナーでコンポーネントを選択する方法を提供します。|  
+|<xref:System.ComponentModel.Design.IReferenceService>|これらのオブジェクトが配置されていない場合でも、オブジェクトの名前を取得する方法を提供します。|  
+|<xref:System.ComponentModel.Design.DesignSurface>|デザイン画面は、サービスとして提供しています。|  
+|<xref:System.ComponentModel.Design.DesignerOptionService>|取得し、デザイナーのオプションの値の設定には、基本クラスを提供します。|  
+  
+ 次の表は、既定で提供される非置換可能なサービスを示します。  
+  
+|サービス|説明|  
+|-------------|-----------------|  
+|<xref:System.ComponentModel.Design.IComponentChangeService>|コンポーネントに変更が加えられるイベントを発生させます。|  
+|<xref:System.ComponentModel.Design.IDesignerHost>|種類、サービス、およびトランザクションへのアクセスを制御します。 デザイナーのマスター インターフェイスです。|  
+|<xref:System.ComponentModel.IContainer>|設計されているコンポーネントのセットを所有しています。 各デザイナーには、<xref:System.ComponentModel.IContainer>コンポーネントを所有しています。|  
+|<xref:System.ComponentModel.Design.IServiceContainer>|派生した<xref:System.IServiceProvider>し、追加し、デザイナーからサービスを削除する方法を提供します。|  
+  
+ これらのサービスだけでなく、<xref:System.ComponentModel.Design.DesignSurface>クラスには、コンポーネントのサイトを介して使用可能な 1 つのサービスも用意されています。 このサービスは、各コンポーネントについて一意です。 次の表は、置き換えることのできないサービスを示します。  
+  
+|サービス|説明|  
+|-------------|-----------------|  
+|<xref:System.ComponentModel.Design.IDictionaryService>|コンポーネントに関する任意のデータの格納に使用できるキー/値ペアのジェネリック ディクショナリ。|  
+|<xref:System.ComponentModel.INestedContainer>|デザイナーに追加の子コンポーネントを追加するコンポーネントを有効にするコンテナーです。 これらのコンポーネントは、デザイン サーフェイスの一部になりますが、シリアル化に参加しません。 これには、デザイナーでそれ自体の領域を公開できるコントロールをデザインするときに便利ですが、領域をシリアル化に参加しないようにします。|  
+  
+ 加え<xref:System.ComponentModel.ISite>サイトは、次のインターフェイスも実装します。  
+  
+> [!CAUTION]
+>  実装していないその他のサイトの実装が可能性がありますので、無差別なキャストを使用するのではなく、これらのインターフェイスの存在を確認します。  
+  
+|サービス|説明|  
+|-------------|-----------------|  
+|<xref:System.ComponentModel.Design.IServiceContainer>|サイト固有のサービスのコンテナーにアクセスする方法を提供します。 たとえば、<xref:System.ComponentModel.Design.IDictionaryService>サイト固有のサービスです。 このサービスでは、サイト固有の追加のサービスを追加できます。|  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignSurface ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.DesignSurface" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignSurface (IServiceProvider parentProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider parentProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.#ctor(System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parentProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="parentProvider">親サービス プロバイダーまたは<see langword="null" />かどうかは、サービスの解決に使用する親はありません。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignSurface" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`parentProvide`が含まれている、画面に含まれるデザイナーは、アプリケーションからサービスを取得することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignSurface (Type rootComponentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type rootComponentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rootComponentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="rootComponentType">作成するルート コンポーネントの型。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignSurface" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、<xref:System.ComponentModel.Design.DesignSurface.%23ctor%2A>コンス トラクター、さらに、指定された型のコンポーネントを作成し、読み込みプロセスを終了する単純なデザイナー ローダーを作成します。 これは、簡単にすることを前提として、デザイナーを作成すべての状態の保存は外部で行われます。 内部的には、これを呼び出す<xref:System.ComponentModel.Design.DesignSurface.BeginLoad%2A>ルート コンポーネントの種類を渡します。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.DesignSurface.%23ctor%2A>オーバー ロードは受けません<xref:System.Windows.Forms.Design.DesignerOptions>です。 <xref:System.Windows.Forms.Design.DesignerOptions>デザイン サーフェイスが読み込まれる前に、サービス コンテナーにする必要があります。 アクセスを必要がある場合<xref:System.Windows.Forms.Design.DesignerOptions>、空のコンス トラクターを呼び出して、追加、<xref:System.Windows.Forms.Design.DesignerOptions>を<xref:System.ComponentModel.Design.DesignSurface.ServiceContainer%2A>を呼び出すと<xref:System.ComponentModel.Design.DesignSurface.BeginLoad%2A>で`rootComponentType`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rootComponent" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignSurface (IServiceProvider parentProvider, Type rootComponentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider parentProvider, class System.Type rootComponentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.#ctor(System.IServiceProvider,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parentProvider" Type="System.IServiceProvider" />
+        <Parameter Name="rootComponentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="parentProvider">親サービス プロバイダーまたは<see langword="null" />かどうかは、サービスの解決に使用する親はありません。</param>
+        <param name="rootComponentType">作成するルート コンポーネントの型。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignSurface" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.ComponentModel.Design.DesignSurface.%23ctor%2A>コンス トラクターは、指定された型のコンポーネントを作成し、読み込みプロセスを終了する単純なデザイナー ローダーを作成します。 これは、簡単にすることを前提として、デザイナーを作成すべての状態の保存は外部で行われます。 内部的には、これを呼び出す<xref:System.ComponentModel.Design.DesignSurface.BeginLoad%2A>ルート コンポーネントの種類を渡します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rootComponent" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginLoad">
+      <MemberSignature Language="C#" Value="public void BeginLoad (System.ComponentModel.Design.Serialization.DesignerLoader loader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginLoad(class System.ComponentModel.Design.Serialization.DesignerLoader loader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.BeginLoad(System.ComponentModel.Design.Serialization.DesignerLoader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="loader" Type="System.ComponentModel.Design.Serialization.DesignerLoader" />
+      </Parameters>
+      <Docs>
+        <param name="loader">デザイナーの読み込みに使用するデザイナー ローダー。</param>
+        <summary>指定されたデザイナー ローダーを使用して、読み込みプロセスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーの読み込みできる非同期のため、読み込みは、この呼び出しが返された後に進行状況を続行します。 イベント ハンドラーをアタッチ、<xref:System.ComponentModel.Design.IDesignerHost.LoadComplete>デザイン画面には、読み込みが完了したときに通知するイベントです。  
+  
+ 後に<xref:System.ComponentModel.Design.DesignSurface.BeginLoad%2A>が呼び出されると、すぐに取得できます、ビュー、デザイナーのデザイナー ローダーは必要があります提供ためには、少なくともルート コンポーネントに非同期的に読み込むときにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="loader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginLoad">
+      <MemberSignature Language="C#" Value="public void BeginLoad (Type rootComponentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginLoad(class System.Type rootComponentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.BeginLoad(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootComponentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="rootComponentType">デザイン モードで作成するコンポーネントの型。</param>
+        <summary>読み込みプロセスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`rootComponentType`が指定されているだけのインスタンスを作成する既定のデザイナー ローダー`rootComponentType`使用されます。 デザイナーの読み込みできる非同期のため、読み込みは、この呼び出しが返された後に進行状況を続行します。 イベント ハンドラーをアタッチ、<xref:System.ComponentModel.Design.IDesignerHost.LoadComplete>デザイン画面には、読み込みが完了したときに通知するイベントです。  
+  
+ 後に<xref:System.ComponentModel.Design.DesignSurface.BeginLoad%2A>が呼び出されると、すぐに取得できます、ビュー、デザイナーのデザイナー ローダーは必要があります提供ためには、少なくともルート コンポーネントに非同期的に読み込むときにします。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.DesignSurface.BeginLoad%2A>メソッドは、コンポーネントの種類のインスタンスを作成し、このインスタンスのデザイナーを初期化します。 <xref:System.ComponentModel.Design.DesignSurface.Loaded>イベントは、このメソッドが戻る前に発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="rootComponentType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ComponentContainer">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IContainer ComponentContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IContainer ComponentContainer" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignSurface.ComponentContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.ComponentModel.IContainer" />デザイン画面内で実装します。</summary>
+        <value><see cref="T:System.ComponentModel.IContainer" />デザイン画面内で実装します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurface.ComponentContainer%2A>プロパティが現在デザイン モードになっているすべてのオブジェクトを保持します。 コンポーネントを追加するときに<xref:System.ComponentModel.Design.DesignSurface.ComponentContainer%2A>、そのデザイナーは読み込まれます。 コンポーネントがデザイン サーフェイスへのフル アクセスを提供するサイトに位置します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComponent">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.IComponent CreateComponent (Type componentType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.ComponentModel.IComponent CreateComponent(class System.Type componentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.CreateComponent(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("CreateComponent has been replaced by CreateInstance and will be removed after Beta2")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="componentType">作成するコンポーネントの型。</param>
+        <summary>コンポーネントのインスタンスを作成します。</summary>
+        <returns>新しく作成されたコンポーネント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurface.CreateComponent%2A>メソッドは、デザイン画面の<xref:System.ComponentModel.Design.IDesignerHost.CreateComponent%2A>メソッドをコンポーネントのインスタンスを作成します。 コンポーネントが作成され、デザイン画面で、パブリック コンテナーに追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="componentType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDesigner">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.Design.IDesigner CreateDesigner (System.ComponentModel.IComponent component, bool rootDesigner);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.ComponentModel.Design.IDesigner CreateDesigner(class System.ComponentModel.IComponent component, bool rootDesigner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.CreateDesigner(System.ComponentModel.IComponent,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.IDesigner</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="rootDesigner" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component">デザイナーの作成対象となるコンポーネントです。</param>
+        <param name="rootDesigner">
+          <see langword="true" />ルート デザイナー; を作成するには<see langword="false" />通常デザイナーを作成します。</param>
+        <summary>デザイナーは、コンテナーに追加されると、コンポーネントを作成します。</summary>
+        <returns>要求されたデザイナーのインスタンスまたは<see langword="null" />場合は対応するデザイナーが見つかりませんでした。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurface.CreateDesigner%2A>メソッドは、デザイン画面の<xref:System.ComponentModel.IContainer>のコンポーネントをコンテナーに追加するときにします。 このメソッドは、デザイナーを作成しますが、初期化は行いません。 返されると、デザイナーがコンテナーで初期化されます。  
+  
+ <xref:System.ComponentModel.Design.DesignSurface.CreateDesigner%2A>2 つの異なる種類のデザイナーを作成できます。 ルート デザイナーと通常のデザイナー。 ルート デザイナーは、定義では、コンテナーに追加された最初のコンポーネントをデザイン画面のルート コンポーネントのデザイナーです。 ルート デザイナーは、エンドユーザーに表示されるユーザー インターフェイスを担当しているために、通常のデザイナーとは異なります。 ルート デザイナーは、通常、このインターフェイスを提供するデザイン サーフェイスにデザイナーの残りの部分と調整します。  
+  
+ このメソッドの既定の実装を委任する場合<xref:System.ComponentModel.TypeDescriptor>を渡して、<xref:System.ComponentModel.Design.IRootDesigner>ルート デザイナーのデザイナー型としてまたは<xref:System.ComponentModel.Design.IDesigner>の通常のデザイナー。 デザイナーの特定の種類を要求するには、このメソッドをオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="protected virtual object CreateInstance (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance object CreateInstance(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.CreateInstance(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成する型。</param>
+        <summary>指定された型のインスタンスを作成します。</summary>
+        <returns>新しく作成されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`type`は、 <xref:System.ComponentModel.IComponent>、<xref:System.ComponentModel.Design.DesignSurface.CreateInstance%2A>型のコンス トラクターを検索<xref:System.ComponentModel.IContainer>最初に、空のコンス トラクターを続けています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNestedContainer">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.INestedContainer CreateNestedContainer (System.ComponentModel.IComponent owningComponent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.INestedContainer CreateNestedContainer(class System.ComponentModel.IComponent owningComponent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.CreateNestedContainer(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.INestedContainer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owningComponent" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="owningComponent">入れ子になったコンテナーを管理するコンポーネント。</param>
+        <summary>入れ子になったコントロールやコンポーネントの適切なコンテナーを作成します。</summary>
+        <returns>入れ子になったコンテナーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネントを入れ子になったコンテナーに追加すると、そのデザイナーを作成し、すべてのサービスの条件に適合で使用できるようにデザイン サーフェイスからします。 入れ子になったコンテナーに追加されたコンポーネントは、シリアル化には参加しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="owningComponent" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNestedContainer">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.INestedContainer CreateNestedContainer (System.ComponentModel.IComponent owningComponent, string containerName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.INestedContainer CreateNestedContainer(class System.ComponentModel.IComponent owningComponent, string containerName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.CreateNestedContainer(System.ComponentModel.IComponent,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.INestedContainer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owningComponent" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="containerName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="owningComponent">入れ子になったコンテナーを管理するコンポーネント。</param>
+        <param name="containerName">入れ子になったコンテナーの追加の名前。</param>
+        <summary>入れ子になったコントロールやコンポーネントの適切なコンテナーを作成します。</summary>
+        <returns>入れ子になったコンテナーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネントを入れ子になったコンテナーに追加すると、そのデザイナーを作成し、すべてのサービスの条件に適合で使用できるようにデザイン サーフェイスからします。 入れ子になったコンテナーに追加されたコンポーネントは、シリアル化には参加しません。  
+  
+ 追加の名前を指定することができます、<xref:System.ComponentModel.Design.DesignSurface.CreateNestedContainer%2A>メソッドに値を渡すことによって`containerName`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="owningComponent" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.DesignSurface" /> で使用したリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリック<xref:System.ComponentModel.Design.DesignSurface.Dispose%2A>メソッドの標準に準拠<xref:System.IDisposable>パターン。 このメソッドを呼び出すと、デザイン サーフェイスが破棄されます。 このメソッドの保護されているバージョンは`virtual`であり、標準に従って<xref:System.IDisposable>パターン。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.DesignSurface> 、クリーンアップのすべてのネイティブ コードはありませんがないファイナライザーを呼び出す<xref:System.ComponentModel.Design.DesignSurface.Dispose%28System.Boolean%29>です。 呼び出す必要がある場合<xref:System.ComponentModel.Design.DesignSurface.Dispose%28System.Boolean%29>ファイナライザーを自分で追加する必要があります。  
+  
+ <xref:System.ComponentModel.Design.DesignSurface.Dispose%2A> を使い終わったら <xref:System.ComponentModel.Design.DesignSurface> を呼び出します。 <xref:System.ComponentModel.Design.DesignSurface.Dispose%2A> メソッドによって、<xref:System.ComponentModel.Design.DesignSurface> は使用不可の状態になります。 呼び出した後<xref:System.ComponentModel.Design.DesignSurface.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.ComponentModel.Design.DesignSurface>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.ComponentModel.Design.DesignSurface>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.DesignSurface.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.ComponentModel.Design.DesignSurface> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.ComponentModel.Design.DesignSurface> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignSurface" /> で使用したリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリック<xref:System.ComponentModel.Design.DesignSurface.Dispose>メソッドの標準に準拠<xref:System.IDisposable>パターン。 このメソッドを呼び出すと、デザイン サーフェイスが破棄されます。 このメソッドの保護されているバージョンは`virtual`であり、標準に従って<xref:System.IDisposable>パターン。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.DesignSurface> 、クリーンアップのすべてのネイティブ コードはありませんがないファイナライザーを呼び出す<xref:System.ComponentModel.Design.DesignSurface.Dispose%2A>です。 呼び出す必要がある場合<xref:System.ComponentModel.Design.DesignSurface.Dispose%2A>ファイナライザーを自分で追加する必要があります。  
+  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.ComponentModel.Design.DesignSurface>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Disposed">
+      <MemberSignature Language="C#" Value="public event EventHandler Disposed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Disposed" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignSurface.Disposed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン サーフェイスが破棄されるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーフェイスが破棄された場合にのみ、パブリック<xref:System.ComponentModel.Design.DesignSurface.Dispose%2A>メソッド<xref:System.ComponentModel.Design.DesignSurface>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DtelLoading">
+      <MemberSignature Language="C#" Value="public bool DtelLoading { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DtelLoading" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignSurface.DtelLoading" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、**デザイン時のエラー一覧**読み込みします。</summary>
+        <value>
+          <see langword="true" />場合、**デザイン時のエラー一覧**読み込み、それ以外は、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン画面への変更をシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurface.Flush%2A>シリアライザーまでデザイン サーフェイスに加えられた変更をプッシュするメソッドを呼び出すことができます。 これにより、デザイン画面とそのシリアル化された状態が同期されていること。 このメソッドの実際の実装は、デザイン サーフェイスに関連付けられたデザイナー ローダーに転送されます。 デザイナー ローダーのまでの変更を遅らせることもできます<xref:System.ComponentModel.Design.DesignSurface.Flush%2A>が呼び出されると、データを保持する、シリアル化されたすべてのユーザーの変更で最新の状態を選択できますか。 <xref:System.ComponentModel.Design.DesignSurface.Flush%2A>メソッドは、モデルをデザイナー ローダーを使用することを選択するに関係なくシリアル化された状態が同期されるは、実際のデザイン画面を確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flushed">
+      <MemberSignature Language="C#" Value="public event EventHandler Flushed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Flushed" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignSurface.Flushed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出しが行われたときに発生、<see cref="M:System.ComponentModel.Design.DesignSurface.Flush" />メソッドの<see cref="T:System.ComponentModel.Design.DesignSurface" />します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー ローダーは最初に、フラッシュし、<xref:System.ComponentModel.Design.DesignSurface.Flushed>イベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得するサービスの型。</param>
+        <summary>サービス コンテナーからサービスを取得します。</summary>
+        <returns>を実装するか、の派生クラスを、そのオブジェクト<paramref name="serviceType" />、または<see langword="null" />サービス コンテナーには、サービスが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurface.GetService%2A>メソッドは、デザイン画面のサービス コンテナー内のサービスを取得します。 さらに、これは構築時に、デザイン画面に指定されたサービス プロバイダーに転送します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLoaded">
+      <MemberSignature Language="C#" Value="public bool IsLoaded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLoaded" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignSurface.IsLoaded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン画面が現在読み込まれているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />デザイン画面が現在読み込まれている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Loaded">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.LoadedEventHandler Loaded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.LoadedEventHandler Loaded" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignSurface.Loaded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.LoadedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの読み込みが完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurface.Loaded>読み込みに成功と失敗のイベントが発生します。 このイベント ハンドラーのコードでは、例外をスローする場合に、デザイナーはアンロードされます。  
+  
+ <xref:System.ComponentModel.Design.LoadedEventArgs>オブジェクトを使用して、ロード、成功したかを確認し、読み込み中に発生したエラーの一覧も提供します。  
+  
+> [!NOTE]
+>  シリアル化システムがエラーを許容する同様に、読み込みに成功のエラーが発生することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadErrors">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection LoadErrors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection LoadErrors" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignSurface.LoadErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーまたは void コレクションの読み込み中のコレクションを返します。</summary>
+        <value>A<see cref="T:System.Collections.ICollection" />の読み込みエラーです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Loading">
+      <MemberSignature Language="C#" Value="public event EventHandler Loading;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Loading" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignSurface.Loading" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーが読み込まれるときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoaded">
+      <MemberSignature Language="C#" Value="protected virtual void OnLoaded (System.ComponentModel.Design.LoadedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnLoaded(class System.ComponentModel.Design.LoadedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.OnLoaded(System.ComponentModel.Design.LoadedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.Design.LoadedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.Design.LoadedEventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Design.DesignSurface.Loaded" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoading">
+      <MemberSignature Language="C#" Value="protected virtual void OnLoading (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnLoading(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.OnLoading(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Design.DesignSurface.Loading" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUnloaded">
+      <MemberSignature Language="C#" Value="protected virtual void OnUnloaded (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnUnloaded(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.OnUnloaded(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Design.DesignSurface.Unloaded" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUnloading">
+      <MemberSignature Language="C#" Value="protected virtual void OnUnloading (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnUnloading(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.OnUnloading(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Design.DesignSurface.Unloading" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnViewActivate">
+      <MemberSignature Language="C#" Value="protected virtual void OnViewActivate (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnViewActivate(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurface.OnViewActivate(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Design.DesignSurface.ViewActivated" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceContainer">
+      <MemberSignature Language="C#" Value="protected System.ComponentModel.Design.ServiceContainer ServiceContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.ServiceContainer ServiceContainer" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignSurface.ServiceContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ServiceContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス コンテナーを取得します。</summary>
+        <value>デザイン画面に含まれるデザイナーへのすべてのサービスを提供するサービス コンテナーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構築時に<xref:System.ComponentModel.Design.DesignSurface>このサービス コンテナーに既定のサービスを追加します。 現在の状態で、既定のサービスのままにすることができますか、それらを削除し、独自に置き換えることができます。 既定のサービスは、すべて要求に応じて作成、構築時に追加するのではパフォーマンスの損失がないようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Unloaded">
+      <MemberSignature Language="C#" Value="public event EventHandler Unloaded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Unloaded" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignSurface.Unloaded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーがアンロードを完了したときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unloading">
+      <MemberSignature Language="C#" Value="public event EventHandler Unloading;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Unloading" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignSurface.Unloading" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーは、アンロードするときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーをアンロードするときに、デザイナーのビューを含むすべてのデザイナーの状態は破棄されます。 この時点で、ビューが親必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="View">
+      <MemberSignature Language="C#" Value="public object View { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object View" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignSurface.View" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルート デザイナーのビューを取得します。</summary>
+        <value>ルート デザイナーのビューです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurface.BeginLoad%2A>メソッドが、読み込みプロセスを開始する事前呼び出す必要があります。 デザイナー ローダーは、デザイナー ローダーによって作成された最初のオブジェクトであるビューを提供するルート デザイナーの読み込みが終了する前に、ビューを返すことは。 ビューが使用できない場合<xref:System.ComponentModel.Design.DesignSurface.BeginLoad%2A>例外が発生します。  
+  
+ ビュー技術の概念は廃止されています。 しかし、旧バージョンとの互換性のためのルート デザイナーのインターフェイスに残ります。 使用してすべてのユーザーからの使用が非表示<xref:System.ComponentModel.Design.DesignSurface>オブジェクト。 <xref:System.ComponentModel.Design.DesignSurface.View%2A>プロパティは、ルート デザイナーにサポートされているテクノロジを渡すことによってビュー テクノロジを非表示にします。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法<xref:System.ComponentModel.Design.DesignSurface.View%2A>非表示には、テクノロジを表示します。  
+  
+ ```csharp 
+ IRootDesigner d;  
+  
+ ViewTechnology[] supported = d.SupportedTechnologies;  
+  
+ return d.GetView(supported[0]);
+ ``` 
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">デザイン サーフェイスを読み込んでいない、デザイナー ローダーで、ルート デザイナーがまだ作成されていない、またはデザイン サーフェイスが完了しましたが、失敗、負荷。 詳細についてで使用できる可能性があります、<see cref="P:System.Exception.InnerException" />です。</exception>
+        <exception cref="T:System.NotSupportedException">デザイナーが読み込まれますが、このデザイン サーフェイスと互換性のあるビューを提供しません。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Design.IDesignerHost" />にアタッチされている、<see cref="T:System.ComponentModel.Design.DesignSurface" />は破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewActivated">
+      <MemberSignature Language="C#" Value="public event EventHandler ViewActivated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ViewActivated" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignSurface.ViewActivated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="M:System.ComponentModel.Design.IDesignerHost.Activate" />でメソッドが呼び出された<see cref="T:System.ComponentModel.Design.IDesignerHost" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする場合、<xref:System.ComponentModel.Design.IDesignerHost.Activate%2A>メソッド、イベント ハンドラーには、このデザイン サーフェイスでのウィンドウがアクティブ化する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

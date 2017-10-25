@@ -1,0 +1,71 @@
+<Type Name="SamlSecurityKeyIdentifierClause" FullName="System.IdentityModel.Tokens.SamlSecurityKeyIdentifierClause">
+  <TypeSignature Language="C#" Value="public class SamlSecurityKeyIdentifierClause : System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlSecurityKeyIdentifierClause extends System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SamlSecurityKeyIdentifierClause" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスは使用せず、SamlAssertion が受信したときに、 &lt;ds:KeyInfo&gt;署名要素内に要素。 必要な KeyInfo では、署名の確認に必要なキーについて説明します。 現在この句が表示されます、キーが必要なときに<see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />です。 完全に読み取りすることができますを照会するために必要なキーを特定の SamlAssertion が格納されます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlSecurityKeyIdentifierClause (System.IdentityModel.Tokens.SamlAssertion assertion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SamlAssertion assertion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityKeyIdentifierClause.#ctor(System.IdentityModel.Tokens.SamlAssertion)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assertion" Type="System.IdentityModel.Tokens.SamlAssertion" />
+      </Parameters>
+      <Docs>
+        <param name="assertion">このアサーションは、現在処理中です。 <see cref="P:System.IdentityModel.Tokens.SamlSecurityKeyIdentifierClause.Assertion" /> プロパティの値を設定します。</param>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlSecurityKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アサーションの署名を確認するために必要なキーを解決するときに、発行者に関する情報を取得するクエリを実行できます。 アサーションが読み取られる完全にこの句が渡されたときに、<xref:System.IdentityModel.Selectors.SecurityTokenResolver>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assertion">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SamlAssertion Assertion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SamlAssertion Assertion" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlSecurityKeyIdentifierClause.Assertion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAssertion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスに現在関連付けられている SamlAssertion を取得します。</summary>
+        <value>このインスタンスに現在関連付けられている SamlAssertion です。 指定できます<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アサーションの署名を確認するために必要なキーを解決するときに、発行者に関する情報を取得するクエリを実行できます。  
+  
+ アサーションの可能性がありますが返される`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

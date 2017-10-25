@@ -1,0 +1,135 @@
+<Type Name="IDictionaryService" FullName="System.ComponentModel.Design.IDictionaryService">
+  <TypeSignature Language="C#" Value="public interface IDictionaryService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDictionaryService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IDictionaryService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>デザイナーは、ユーザー定義のデータの格納に使用できるサービスを介して、基本的なコンポーネント サイト固有のキーと値のペアのディクショナリを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このサービスは、設定、取得、および関連付けられているキーを持つオブジェクトを参照する単純なインターフェイスを提供します。  
+  
+   
+  
+## Examples  
+ 次の例の制御とデザイナーの使用、<xref:System.ComponentModel.Design.IDictionaryService>をそのサイト固有のキー/値ペアのディクショナリを使用してデータを共有します。  
+  
+ [!code-cpp[IDictionaryServiceExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IDictionaryServiceExample/CPP/source.cpp#1)]
+ [!code-csharp[IDictionaryServiceExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IDictionaryServiceExample/CS/source.cs#1)]
+ [!code-vb[IDictionaryServiceExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IDictionaryServiceExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="public object GetKey (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetKey(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDictionaryService.GetKey(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">ディクショナリ内を検索する値。</param>
+        <summary>指定した値に対応するキーを取得します。</summary>
+        <returns>関連付けられたキー、または<see langword="null" />キーが存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetValue(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDictionaryService.GetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">値を検索するキー。</param>
+        <summary>指定したキーに対応する値を取得します。</summary>
+        <returns>関連付けられた値、または<see langword="null" />値が存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (object key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(object key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IDictionaryService.SetValue(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">値に関連付けるにはキーとして使用するオブジェクト。</param>
+        <param name="value">格納する値。</param>
+        <summary>指定したキー/値ペアを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

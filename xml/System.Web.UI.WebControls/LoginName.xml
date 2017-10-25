@@ -1,0 +1,294 @@
+<Type Name="LoginName" FullName="System.Web.UI.WebControls.LoginName">
+  <TypeSignature Language="C#" Value="public class LoginName : System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LoginName extends System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.LoginName" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("FormatString")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.LoginNameDesigner,System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>値を表示、<see langword="System.Web.UI.Page.User.Identity.Name" />プロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [ユーザー補助](#accessibility)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 既定では、<xref:System.Web.UI.WebControls.LoginName>コントロールに含まれている名前を表示する、<xref:System.Web.UI.Page.User%2A>のプロパティ、<xref:System.Web.UI.Page>クラスです。 場合、`System.Web.UI.Page.User.Identity.Name`プロパティが空のコントロールは表示されません場合、。  
+  
+> [!NOTE]
+>  ASP.NET で使用できるログイン コントロールのセットに慣れていない場合は、次を参照してください。 [ASP.NET ログイン コントロールの概要](http://msdn.microsoft.com/library/ac032230-6469-4b03-b68d-03ef2643a24d)続行する前にします。 ログイン コントロールおよびメンバーシップに関連するその他のトピックの一覧は、次を参照してください。[メンバーシップを使用したユーザーを管理する](http://msdn.microsoft.com/library/824c3a24-f0af-427c-a652-0d2d1e9397cd)です。  
+  
+ によって表示されるテキストを変更する、<xref:System.Web.UI.WebControls.LoginName>コントロールを設定、<xref:System.Web.UI.WebControls.LoginName.FormatString%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.LoginName>外部コントロールで使用できない、 `<form>` Web ページ上にタグ付けします。 具体的には、<xref:System.Web.UI.WebControls.LoginName>ページのタイトルにユーザーの名前を格納するために使用できません。  
+  
+<a name="accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:LoginName  
+    AccessKey="string"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CssClass="string"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    FormatString="string"  
+    Height="size"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    ToolTip="string"  
+    Visible="True|False"  
+    Width="size"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.LoginName>ページ上のクラスです。 表示形式を変更 ボタンをクリックします。  
+  
+ [!code-aspx-csharp[LoginNameTextFormat#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginNameTextFormat/CS/loginnametextformatcs.aspx#1)]
+ [!code-aspx-vb[LoginNameTextFormat#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginNameTextFormat/VB/loginnametextformatvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LoginName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginName.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>初期化、<see cref="T:System.Web.UI.WebControls.LoginName" />その既定値を制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成、<xref:System.Web.UI.WebControls.LoginName>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatString">
+      <MemberSignature Language="C#" Value="public virtual string FormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LoginName.FormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("{0}")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示する書式指定項目の文字列を提供します。</summary>
+        <value>ユーザーの名前を表示するための書式項目を含む文字列。 既定値は"0"} です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LoginName.FormatString%2A>プロパティには、Web ページに、ユーザーの名前を表示する標準のテキストの書式指定文字列が含まれています。 文字列"0"} では、文字列で、ユーザーの名前が挿入されることを示します。 次の表では、使用可能なプロパティの設定について説明します。  
+  
+|プロパティの設定|動作|  
+|----------------------|--------------|  
+|既定値 ("{0}")|ユーザーがログオンとユーザーの名前が表示されます。それ以外の場合、何も表示されます。|  
+|<xref:System.String.Empty>|既定値と同じです。 コントロールを非表示にするには設定、<xref:System.Web.UI.Control.Visible%2A>プロパティを`false`です。|  
+|「My サイト {0} へようこそ。」|文字列が表示されます"自分のサイトへようこそ*username*"。 ときに、ユーザーがログインします。 ユーザーがログインしていないときに何が表示されます。|  
+|「自分のサイトへようこそ。」|ときに、<xref:System.Web.UI.WebControls.LoginName.FormatString%2A>プロパティを文字列に設定されて、ユーザーがログインした場合、文字列が表示されます。 文字列が含まれていない"{0}"、ユーザーの名前は表示されません。 ユーザーがログインしていないときに何が表示されます。|  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.LoginName.FormatString%2A>ページのプロパティです。 表示形式を変更 ボタンをクリックします。  
+  
+ [!code-aspx-csharp[LoginNameTextFormat#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginNameTextFormat/CS/loginnametextformatcs.aspx#1)]
+ [!code-aspx-vb[LoginNameTextFormat#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginNameTextFormat/VB/loginnametextformatvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">書式指定文字列が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginName.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />表示される出力を受け取る。</param>
+        <summary>表示、<see cref="T:System.Web.UI.WebControls.LoginName" />を指定したコントロール<see cref="T:System.Web.UI.HtmlTextWriter" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderBeginTag">
+      <MemberSignature Language="C#" Value="public override void RenderBeginTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RenderBeginTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginName.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.Web.UI.HtmlTextWriter" />をクライアントに HTML のコンテンツを表示する出力ストリームを表すオブジェクト。</param>
+        <summary>開始タグを指定されたライターにコントロールの HTML をレンダリングします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginName.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.Web.UI.HtmlTextWriter" />をクライアントに HTML のコンテンツを表示する出力ストリームを表すオブジェクト。</param>
+        <summary>指定したライターにコントロールの内容を表示します。 このメソッドは、主にコントロールの開発者によって使用されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.FormatException"><see cref="P:System.Web.UI.WebControls.LoginName.FormatString" />プロパティが有効な書式文字列に設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderEndTag">
+      <MemberSignature Language="C#" Value="public override void RenderEndTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RenderEndTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginName.RenderEndTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.Web.UI.HtmlTextWriter" />をクライアントに HTML のコンテンツを表示する出力ストリームを表すオブジェクト。</param>
+        <summary>終了タグを指定されたライターにコントロールの HTML をレンダリングします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDisabledAttribute">
+      <MemberSignature Language="C#" Value="public override bool SupportsDisabledAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDisabledAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LoginName.SupportsDisabledAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの <see cref="P:System.Web.UI.WebControls.WebControl.IsEnabled" /> プロパティが <see langword="false" /> の場合、レンダリングされた HTML 要素の <see langword="disabled" /> 属性を "無効" に設定するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Web.UI.Control.RenderingCompatibility" />プロパティがより低い ASP.NET のバージョンを示す<c>4.0</c>、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが無効になっているときに ASP.NET がそのコントロールの HTML をどのように描画するかを示します。 場合は、このプロパティは`true`、ASP.NET は表示、`disabled`属性のコントロールを無効にします。 場合は、このプロパティは`false`、ASP.NET は表示、`class`属性のコントロールを無効にします。 詳細については、「<xref:System.Web.UI.WebControls.WebControl.SupportsDisabledAttribute%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

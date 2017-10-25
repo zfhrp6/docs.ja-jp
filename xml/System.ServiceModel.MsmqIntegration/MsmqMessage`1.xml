@@ -1,0 +1,662 @@
+<Type Name="MsmqMessage&lt;T&gt;" FullName="System.ServiceModel.MsmqIntegration.MsmqMessage&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public sealed class MsmqMessage&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MsmqMessage`1&lt;T&gt; extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MsmqIntegration.MsmqMessage`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ServiceModel.MessageContract(IsWrapped=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="T">メッセージの本文を表します。</typeparam>
+    <summary><see cref="T:System.ServiceModel.MsmqIntegration.MsmqMessage`1" /> クラスは、メッセージ キュー (MSMQ) 統合チャネルを通して、既存のメッセージ キュー アプリケーションとの間で送受信されるメッセージ キュー メッセージをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キュー メッセージのプロパティにアクセスするには、<xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601> クラスを使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#1](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#1)]
+ [!code-vb[UEMsmqMessage#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.ArgumentNullException">メッセージ本文が null です。</exception>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqMessage (T body);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(!T body) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqIntegration.MsmqMessage`1.#ctor(`0)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="body" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="body"><see cref="T:System.ServiceModel.MsmqIntegration.MsmqMessage`1" /> クラスの新しいインスタンスを初期化するために使用するメッセージ本文。</param>
+        <summary>提供したメッセージ本文を使用して、<see cref="T:System.ServiceModel.MsmqIntegration.MsmqMessage`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キュー (MSMQ) メッセージは、T 型の本文で作成できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#2](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#2)]
+ [!code-vb[UEMsmqMessage#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">メッセージ本文が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcknowledgeType">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Messaging.AcknowledgeTypes&gt; AcknowledgeType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Messaging.AcknowledgeTypes&gt; AcknowledgeType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.AcknowledgeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Messaging.AcknowledgeTypes&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージに関連付けられている <see cref="T:System.Messaging.AcknowledgeTypes" /> を取得または設定します。</summary>
+        <value>このメッセージに関連付けられている <see cref="T:System.Messaging.AcknowledgeTypes" />。 <see langword="null" /> でもかまいません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、送信元アプリケーションによって要求される受信確認メッセージのタイプを指定します。 アプリケーションはこのプロパティを使用して、特定のイベントの通知を要求できます。 たとえば、アプリケーションが通知を要求するケースとして、メッセージが送信先キューに到着したとき、メッセージが取得されたとき、メッセージが送信先キューに到着するか取得される前にタイムアウトが発生したとき、などがあります。 メンバーの詳細については、<xref:System.Messaging.AcknowledgeTypes> を参照してください。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#3](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#3)]
+ [!code-vb[UEMsmqMessage#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Acknowledgment">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Messaging.Acknowledgment&gt; Acknowledgment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Messaging.Acknowledgment&gt; Acknowledgment" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.Acknowledgment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Messaging.Acknowledgment&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージに関連付けられている <see cref="T:System.Messaging.Acknowledgment" /> を取得します。</summary>
+        <value>このメッセージに関連付けられている <see cref="T:System.Messaging.Acknowledgment" />。 既定値は Acknowledgement.None です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 管理キューからメッセージを受信するときは、このプロパティを読み取ることで元のメッセージのステータスを確認できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#4](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#4)]
+ [!code-vb[UEMsmqMessage#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdministrationQueue">
+      <MemberSignature Language="C#" Value="public Uri AdministrationQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri AdministrationQueue" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.AdministrationQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージに関連付けられている管理キューの <see cref="T:System.Uri" /> を取得または設定します。</summary>
+        <value>このメッセージに関連付けられている管理キューの <see cref="T:System.Uri" />。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージに関連付けられた管理キューには、そのメッセージが送信先キューに到着したかどうか、送信先キューから削除されたかどうかを知らせる受信確認メッセージが届きます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#5](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#5)]
+ [!code-vb[UEMsmqMessage#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppSpecific">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; AppSpecific { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; AppSpecific" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.AppSpecific" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージに関連付けられているアプリケーション固有の追加情報を表す <see cref="T:System.Int32" /> 値を取得または設定します。</summary>
+        <value>このメッセージに関連付けられているアプリケーション固有の追加情報を表す <see cref="T:System.Int32" /> 値。 既定値は、送信アプリケーションがアクセスするときは <see langword="null" /> で、受信アプリケーションがアクセスするときは 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#6](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#6)]
+ [!code-vb[UEMsmqMessage#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrivedTime">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; ArrivedTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; ArrivedTime" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.ArrivedTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが送信先キューに到達した時刻を示す <see cref="T:System.DateTime" /> を取得または設定します。</summary>
+        <value>メッセージが送信先キューに到達した時刻を示す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#7](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#7)]
+ [!code-vb[UEMsmqMessage#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authenticated">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; Authenticated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; Authenticated" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.Authenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが認証されたかどうかを示すブール値を取得します。</summary>
+        <value>
+          メッセージが認証されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信者が認証を要求するか、認証が要求されるように構成されたメッセージ キューにメッセージを送信すると、メッセージが認証されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#8](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#8)]
+ [!code-vb[UEMsmqMessage#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public T Body { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T Body" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの本文を取得または設定します。</summary>
+        <value>メッセージの本文。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#9](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#9)]
+ [!code-vb[UEMsmqMessage#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">メッセージ本文が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BodyType">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; BodyType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; BodyType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.BodyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの本文の種類を示す <see cref="T:System.Int32" /> 値を取得または設定します。</summary>
+        <value>メッセージの本文の種類を示す <see cref="T:System.Int32" /> 値。 <see langword="null" /> でもかまいません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キュー (MSMQ) は、本文内容をオブジェクトまたはシリアル化されたストリームとして認識します。 `BodyType` プロパティは、メッセージの Body プロパティ内のオブジェクトの型を示します。  
+  
+ ActiveX フォーマッタは、メッセージ本文内でネイティブな型とオブジェクトのバインドを実行します。 ActiveX フォーマッタを使用する場合は、フォーマッタが `BodyType` プロパティを自動的に設定します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#10](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#10)]
+ [!code-vb[UEMsmqMessage#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CorrelationId">
+      <MemberSignature Language="C#" Value="public string CorrelationId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CorrelationId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.CorrelationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージの相関 ID を格納している <see cref="T:System.String" /> を取得または設定します。</summary>
+        <value>このメッセージの相関 ID を格納している <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キュー (MSMQ) は、受信確認メッセージまたはレポート メッセージを生成するとき、このプロパティを使用して、元のメッセージのメッセージ ID を指定します。 元のメッセージを送信したアプリケーションは、受信確認応答メッセージまたはレポート メッセージを受信したとき、そのメッセージからこのプロパティを取得して、元のメッセージのメッセージ ID を確認できます。  
+  
+ アプリケーションはこのプロパティを使用して、自身の目的のためにメッセージを相互に関連付けることができます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#11](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#11)]
+ [!code-vb[UEMsmqMessage#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationQueue">
+      <MemberSignature Language="C#" Value="public Uri DestinationQueue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri DestinationQueue" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.DestinationQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージの送信先キューの <see cref="T:System.Uri" /> を取得します。</summary>
+        <value>このメッセージの送信先キューの <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#12](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#12)]
+ [!code-vb[UEMsmqMessage#12](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extension">
+      <MemberSignature Language="C#" Value="public byte[] Extension { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Extension" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.Extension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージに関連付けられているアプリケーション定義の追加情報を格納している <see cref="T:System.Byte" /> の配列を取得または設定します。</summary>
+        <value>このメッセージに関連付けられているアプリケーション定義の追加情報を格納している <see cref="T:System.Byte" /> 配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、ラージ バイナリ オブジェクトなどの追加情報を格納します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#13](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#13)]
+ [!code-vb[UEMsmqMessage#13](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージのメッセージ ID を格納している <see cref="T:System.String" /> を取得します。</summary>
+        <value>このメッセージのメッセージ ID を格納している <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはメッセージ送信後にアクセス可能になります。  
+  
+ メッセージの送信時に、メッセージ キュー (MSMQ) はメッセージのメッセージ ID を生成します。 メッセージ ID は 20 バイトで構成され、送信元コンピューターのマシン GUID と、送信元コンピューターに一意な ID の 2 つの部分を含みます。 この 2 つの部分を組み合わせることにより、ネットワーク上で一意なメッセージ ID が生成されます。  
+  
+ メッセージ キューは、受信確認メッセージやレポート メッセージなど、すべてのメッセージについてメッセージ ID を生成します。 メッセージ キューは、アプリケーションによって送信されたメッセージが到着するか、送信エラーになると、受信確認メッセージを送信します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#14](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#14)]
+ [!code-vb[UEMsmqMessage#14](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public string Label { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Label" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ ラベルを格納している <see cref="T:System.String" /> を取得または設定します。</summary>
+        <value>メッセージ ラベルを格納している <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ラベルには、メッセージ キュー (MSMQ) に固有の意味はありません。 ラベルは、ユーザーが判読できる方法でメッセージを識別するために使用します。 メッセージ ラベルの解釈はユーザー アプリケーションが行います。 メッセージ ラベルは、一意にする必要はありません。  
+  
+ メッセージ ラベルにはさまざまな用途があります。たとえば、単純にラベルを表示したり、ラベルに基づいて選択的にメッセージを処理したりできます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#15](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#15)]
+ [!code-vb[UEMsmqMessage#15](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageType">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Messaging.MessageType&gt; MessageType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Messaging.MessageType&gt; MessageType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.MessageType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Messaging.MessageType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージに関連付けられている <see cref="T:System.Messaging.MessageType" /> を取得します。</summary>
+        <value>このメッセージに関連付けられている <see cref="T:System.Messaging.MessageType" />。 <see langword="null" /> でもかまいません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キュー (MSMQ) は、メッセージを送信するときにこのプロパティを設定します。 メッセージは、次のいずれかのタイプがあります。  
+  
+-   <xref:System.Messaging.MessageType.Normal> : アプリケーションによって送信されたメッセージ。  
+  
+-   <xref:System.Messaging.MessageType.Acknowledgment> : アプリケーションが通常メッセージを送信し、受信確認を要求したときに、メッセージ キューが生成するメッセージ。 たとえば、メッセージ キューは、元のメッセージが送信先キューに到着したかどうか、または受信側アプリケーションによって送信先キューから取得されたかどうかによって、肯定受信確認または否定受信確認を生成します。 メッセージ キューは、送信元アプリケーションによって指定される管理キューに適切な受信確認メッセージを返します。  
+  
+-   <xref:System.Messaging.MessageType.Report> : ローカルのキュー マネージャーによってレポート キューが定義されている場合は、アプリケーションがメッセージを送信するたびに、メッセージ キューはレポート メッセージを生成し、レポート キューに送信します。 トレースが有効である場合、メッセージ キューは、メッセージ キュー サーバーで元のメッセージの入出力が発生するたびに、レポート メッセージをレポート キューに送信します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#16](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#16)]
+ [!code-vb[UEMsmqMessage#16](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Messaging.MessagePriority&gt; Priority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Messaging.MessagePriority&gt; Priority" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Messaging.MessagePriority&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメッセージに関連付けられている <see cref="T:System.Messaging.MessagePriority" /> を取得または設定します。</summary>
+        <value>このメッセージに関連付けられている <see cref="T:System.Messaging.MessagePriority" />。 <see langword="null" /> でもかまいません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ優先度は、送信途中のメッセージおよび送信先キューに到達した後のメッセージに対するメッセージ キュー (MSMQ) の処理方法に影響を与えます。 高優先度のメッセージは優先的にルーティングされ、送信先キューの先頭から挿入されます。 優先順位の同じメッセージは、到達時刻に応じて送信先キューに登録されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#17](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#17)]
+ [!code-vb[UEMsmqMessage#17](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseQueue">
+      <MemberSignature Language="C#" Value="public Uri ResponseQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ResponseQueue" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.ResponseQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信アプリケーションからの応答メッセージを受信するメッセージ キューの <see cref="T:System.Uri" /> を取得または設定します。</summary>
+        <value>このプロパティの既定値 <see langword="null" /> です。  
+  
+ このプロパティは、受信側アプリケーションから送信側アプリケーションに返される応答メッセージを受け取るキューを識別します。 送信側アプリケーションは、受信側アプリケーションにメッセージを送信するとき、応答キューを指定します。 送信側アプリケーションは、使用可能ないずれかのキューを応答キューとして指定できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#18](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#18)]
+ [!code-vb[UEMsmqMessage#18](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SenderId">
+      <MemberSignature Language="C#" Value="public byte[] SenderId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] SenderId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.SenderId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信側アプリケーションの送信者 ID を格納している <see cref="T:System.Byte" /> 配列を取得します。</summary>
+        <value>送信側アプリケーションの送信者 ID を格納している <see cref="T:System.Byte" /> 配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キュー (MSMQ) は、送信側アプリケーションの送信者 ID をメッセージに添付します。 このプロパティは、受信側アプリケーションが承認チェックを実行するために使用できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#19](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#19)]
+ [!code-vb[UEMsmqMessage#19](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SentTime">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; SentTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; SentTime" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.SentTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信側アプリケーションのコンピューターのキュー マネージャーによってメッセージが送信された時刻を示す <see cref="T:System.DateTime" /> を取得します。</summary>
+        <value>送信側アプリケーションのコンピューターのキュー マネージャーによってメッセージが送信された時刻を示す <see cref="T:System.DateTime" />。 <see langword="null" /> でもかまいません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信時刻は、送信側アプリケーションのコンピューターのローカル時刻に調整されます。 送信元キューと送信先キューは、タイムゾーンの異なるコンピューター上に存在していてもかまいません。  
+  
+ このプロパティの既定値は `null` です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#20](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#20)]
+ [!code-vb[UEMsmqMessage#20](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeToReachQueue">
+      <MemberSignature Language="C#" Value="public Nullable&lt;TimeSpan&gt; TimeToReachQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; TimeToReachQueue" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqMessage`1.TimeToReachQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが送信先キューに到達するまでの最大許容時間を示す <see cref="T:System.TimeSpan" /> を取得または設定します。</summary>
+        <value>メッセージが送信先キューに到達するまでの最大許容時間を示す <see cref="T:System.TimeSpan" />。 <see langword="null" /> でもかまいません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージが送信先キューに到達する前にこのプロパティによって指定された期間が終了すると、メッセージ キュー (MSMQ) は次のいずれかの方法でそのメッセージを破棄します。 メッセージの <xref:System.Messaging.Message.UseDeadLetterQueue%2A> プロパティが `true` の場合、メッセージは配信不能キューに送信されます。 この時間内に到達しなかったメッセージは破棄されます。  
+  
+ このプロパティの既定値は `null` です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMsmqMessage#21](~/samples/snippets/csharp/VS_Snippets_CFX/uemsmqmessage/cs/program.cs#21)] 
+ [!code-vb[UEMsmqMessage#21](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemsmqmessage/vb/program.vb#21)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

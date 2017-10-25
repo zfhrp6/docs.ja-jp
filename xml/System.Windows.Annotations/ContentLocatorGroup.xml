@@ -1,0 +1,178 @@
+<Type Name="ContentLocatorGroup" FullName="System.Windows.Annotations.ContentLocatorGroup">
+  <TypeSignature Language="C#" Value="public sealed class ContentLocatorGroup : System.Windows.Annotations.ContentLocatorBase, System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContentLocatorGroup extends System.Windows.Annotations.ContentLocatorBase implements class System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Annotations.ContentLocatorGroup" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Annotations.ContentLocatorBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Xml.Serialization.IXmlSerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlRoot(ElementName="ContentLocatorGroup", Namespace="http://schemas.microsoft.com/windows/annotations/2003/11/core")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>順序付きセットを表す<see cref="T:System.Windows.Annotations.ContentLocator" />コンテンツの項目を識別する要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.ContentLocator>要素内で定義された、<xref:System.Windows.Annotations.ContentLocatorGroup>構造化された外部データ項目を参照する手段を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentLocatorGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.ContentLocatorGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Annotations.ContentLocatorGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.ContentLocatorGroup.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Annotations.ContentLocatorGroup" /> の変更可能な詳細コピーの複製を作成します。</summary>
+        <returns>この <see cref="T:System.Windows.Annotations.ContentLocatorGroup" /> の変更可能な詳細コピーの複製。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Windows.Annotations.ContentLocatorGroup.Clone%2A>メソッドの変更可能なコピーを作成する固定<xref:System.Windows.Freezable>オブジェクト。  便宜上、<xref:System.Windows.Annotations.ContentLocatorGroup.Clone%2A>厳密に型指定された実装が継承されたバージョンをシャドウします。  詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ 複製された<xref:System.Windows.Annotations.ContentLocatorGroup>の<xref:System.Windows.Freezable.IsFrozen%2A>プロパティ`false`場合でもこのソース<xref:System.Windows.Annotations.ContentLocatorGroup>の<xref:System.Windows.Freezable.IsFrozen%2A>プロパティは、`true.`  
+  
+ 依存関係プロパティをコピーするときに<xref:System.Windows.Annotations.ContentLocatorGroup.Clone%2A>(ただし、それらが解決されない場合があります) にリソース参照とデータ バインディングをコピーできませんアニメーションまたはアニメーションの現在の値はコピーされませんが、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema GetSchema ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.Schema.XmlSchema GetSchema() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.ContentLocatorGroup.GetSchema" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>常に <see langword="null" /> を返します。  参照してください[注釈スキーマ](~/docs/framework/wpf/advanced/annotations-schema.md)のスキーマの詳細。</summary>
+        <returns>常に <see langword="null" />。  参照してください[注釈スキーマ](~/docs/framework/wpf/advanced/annotations-schema.md)のスキーマの詳細。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.ContentLocatorGroup.GetSchema%2A>コントラクトを満たすために提供される、<xref:System.Xml.Serialization.IXmlSerializable>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Locators">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Windows.Annotations.ContentLocator&gt; Locators { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Windows.Annotations.ContentLocator&gt; Locators" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Annotations.ContentLocatorGroup.Locators" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Windows.Annotations.ContentLocator&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得、<see cref="T:System.Windows.Annotations.ContentLocator" />これを構成する要素<see cref="T:System.Windows.Annotations.ContentLocatorGroup" />です。</summary>
+        <value>コレクション<see cref="T:System.Windows.Annotations.ContentLocator" />これを構成する要素<see cref="T:System.Windows.Annotations.ContentLocatorGroup" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.ContentLocator>返されるコレクションはできなくなります`null`です。  場合、<xref:System.Windows.Annotations.ContentLocatorGroup>が含まれていませんには<xref:System.Windows.Annotations.ContentLocator>オブジェクト、返されるコレクションには、0 個の要素にが含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public void ReadXml (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReadXml(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.ContentLocatorGroup.ReadXml(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Windows.Annotations.ContentLocatorGroup" /> の逆シリアル化に使用する XML リーダー。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlReader" /> から <see cref="T:System.Windows.Annotations.ContentLocatorGroup" /> を逆シリアル化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XmlException"><see cref="T:System.Windows.Annotations.ContentLocatorGroup" /> についてシリアル化した XML が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.ContentLocatorGroup.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Windows.Annotations.ContentLocatorGroup" /> のシリアル化に使用する XML ライター。</param>
+        <summary><see cref="T:System.Windows.Annotations.ContentLocatorGroup" /> を、指定された <see cref="T:System.Xml.XmlWriter" /> にシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

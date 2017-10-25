@@ -1,0 +1,125 @@
+<Type Name="IAdphManager" FullName="System.Web.Hosting.IAdphManager">
+  <TypeSignature Language="C#" Value="public interface IAdphManager" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAdphManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.IAdphManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーション ドメイン プロトコル ハンドラーを管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.IAdphManager>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="StartAppDomainProtocolListenerChannel">
+      <MemberSignature Language="C#" Value="public void StartAppDomainProtocolListenerChannel (string appId, string protocolId, System.Web.Hosting.IListenerChannelCallback listenerChannelCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StartAppDomainProtocolListenerChannel([in]string appId, [in]string protocolId, class System.Web.Hosting.IListenerChannelCallback listenerChannelCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IAdphManager.StartAppDomainProtocolListenerChannel(System.String,System.String,System.Web.Hosting.IListenerChannelCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="protocolId" Type="System.String" />
+        <Parameter Name="listenerChannelCallback" Type="System.Web.Hosting.IListenerChannelCallback" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アプリケーション ID</param>
+        <param name="protocolId">プロトコルの id。</param>
+        <param name="listenerChannelCallback">プロトコルのリスナー チャネルのコールバック。</param>
+        <summary>アプリケーション ドメイン プロトコル リスナー チャネルを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.IAdphManager.StartAppDomainProtocolListenerChannel%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StopAppDomainProtocol">
+      <MemberSignature Language="C#" Value="public void StopAppDomainProtocol (string appId, string protocolId, bool immediate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopAppDomainProtocol([in]string appId, [in]string protocolId, bool immediate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IAdphManager.StopAppDomainProtocol(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="protocolId" Type="System.String" />
+        <Parameter Name="immediate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アプリケーション ID</param>
+        <param name="protocolId">プロトコルの id。</param>
+        <param name="immediate">プロトコルのリスナー チャネルのコールバック。</param>
+        <summary>アプリケーション ドメイン プロトコル リスナー チャネルを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.IAdphManager.StopAppDomainProtocol%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StopAppDomainProtocolListenerChannel">
+      <MemberSignature Language="C#" Value="public void StopAppDomainProtocolListenerChannel (string appId, string protocolId, int listenerChannelId, bool immediate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopAppDomainProtocolListenerChannel([in]string appId, [in]string protocolId, int32 listenerChannelId, bool immediate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IAdphManager.StopAppDomainProtocolListenerChannel(System.String,System.String,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="protocolId" Type="System.String" />
+        <Parameter Name="listenerChannelId" Type="System.Int32" />
+        <Parameter Name="immediate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アプリケーション ID</param>
+        <param name="protocolId">プロトコルの id。</param>
+        <param name="listenerChannelId">プロトコルのリスナー チャネルのコールバック。</param>
+        <param name="immediate">プロトコルのリスナー チャネルを直ちに停止するかどうか</param>
+        <summary>アプリケーション ドメイン プロトコル リスナー チャネルを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.IAdphManager.StopAppDomainProtocolListenerChannel%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,384 @@
+<Type Name="PropertyMetadata" FullName="System.Windows.PropertyMetadata">
+  <TypeSignature Language="C#" Value="public class PropertyMetadata" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PropertyMetadata extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.PropertyMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>登録時の条件など、特定の種類に適用されるときの依存関係プロパティの動作を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティのメタデータを定義しを呼び出すときに、依存関係プロパティの登録中に使用される、<xref:System.Windows.DependencyProperty.Register%2A>メソッド (または、アタッチされるプロパティまたは読み取り専用の依存関係プロパティのバリエーション) 以降の呼び出し時に元の所有者の登録、<xref:System.Windows.DependencyPropertyKey.OverrideMetadata%2A>メソッドです。 <xref:System.Windows.DependencyProperty.AddOwner%2A>プロパティのメタデータを受け取ります。  
+  
+ このクラスは、それらの各呼び出しで使用できる具象基底クラスです。 ただし、メタデータなどを使用して、派生クラスのいずれかを指定する非常に一般的なは<xref:System.Windows.FrameworkPropertyMetadata>します。 これらの派生クラスを検出するか、いくつか、プロパティに動作でのみ実装されているシステムとレイアウトを有効にするのに便利ですが、ブール型プロパティ値として実行されます。 詳細なメタデータをサポートする、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フレームワーク レベル。  
+  
+ このクラスのいくつかのプロパティは、オブジェクト モデルへの読み取り/書き込みがなどのプロパティのシステム操作で使用されているインスタンスの前にのみ書き込むこと<xref:System.Windows.DependencyProperty.Register%2A>または<xref:System.Windows.DependencyPropertyKey.OverrideMetadata%2A>です。 これらの各プロパティ コンス トラクターによって設定されてもでしたが、公開されるように<xref:System.Windows.PropertyMetadata.Merge%2A>メソッドの実装が設定できます。  
+  
+<a name="xamlTextUsage_PropertyMetadata"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ この型、および、この型のメンバーは、通常は使用されません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PropertyMetadata.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.PropertyMetadata" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyMetadata (object defaultValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object defaultValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PropertyMetadata.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">いくつか特定の型の値として通常提供される、依存関係プロパティを指定する既定値です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.PropertyMetadata" />にこのメタデータが適用される依存関係プロパティの指定された既定値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型`defaultValue`一致する必要がありますか、このメタデータに適用される依存関係プロパティの元の登録で指定された型に関連しています。 (この不一致は実行時の例外が発生) コンパイル時に、不一致が検出できないために、既定値の型のメタデータと適用される依存関係プロパティの型の間の不一致は、デバッグが困難できます。  
+  
+ パラメーターなしのコンス トラクターごとの既定値は、`defaultValue`の<xref:System.Windows.DependencyProperty.UnsetValue>は指定できません。 しようとすると、例外が発生します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[PropertyMetadataAPIs#Initpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initpm)]  
+[!code-csharp[PropertyMetadataAPIs#PMCtor1param](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#pmctor1param)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="defaultValue" />値に設定することはできません<see cref="F:System.Windows.DependencyProperty.UnsetValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyMetadata (System.Windows.PropertyChangedCallback propertyChangedCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.PropertyChangedCallback propertyChangedCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PropertyMetadata.#ctor(System.Windows.PropertyChangedCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="propertyChangedCallback" Type="System.Windows.PropertyChangedCallback" />
+      </Parameters>
+      <Docs>
+        <param name="propertyChangedCallback">プロパティの有効な値が変更されるたびに、プロパティのシステムによって呼び出されるハンドラーの実装への参照。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.PropertyMetadata" /> 、指定したクラス<see cref="T:System.Windows.PropertyChangedCallback" />の参照を実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[PropertyMetadataAPIs#Initpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initpm)]  
+[!code-csharp[PropertyMetadataAPIs#PMCtor1paramcallback](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#pmctor1paramcallback)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyMetadata (object defaultValue, System.Windows.PropertyChangedCallback propertyChangedCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object defaultValue, class System.Windows.PropertyChangedCallback propertyChangedCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PropertyMetadata.#ctor(System.Object,System.Windows.PropertyChangedCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Object" />
+        <Parameter Name="propertyChangedCallback" Type="System.Windows.PropertyChangedCallback" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">依存関係プロパティをいくつか特定の型の値として提供される通常の既定値。</param>
+        <param name="propertyChangedCallback">プロパティの有効な値が変更されるたびに、プロパティのシステムによって呼び出されるハンドラーの実装への参照。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.PropertyMetadata" />指定された既定値を持つクラスと<see cref="T:System.Windows.PropertyChangedCallback" />の参照を実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値の型`defaultValue`一致する必要がありますか、このメタデータに適用される依存関係プロパティの元の登録で指定された型に関連しています。 (この不一致は実行時の例外が発生) コンパイル時に、不一致が検出できないために、既定値の型のメタデータと適用される依存関係プロパティの型の間の不一致は、デバッグが困難できます。  
+  
+ パラメーターなしのコンス トラクターごとの既定値は、`defaultValue`の<xref:System.Windows.DependencyProperty.UnsetValue>は指定できません。 しようとすると、例外が発生します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[PropertyMetadataAPIs#Initpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initpm)]  
+[!code-csharp[PropertyMetadataAPIs#PMCtor2param](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#pmctor2param)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="defaultValue" />値に設定することはできません<see cref="F:System.Windows.DependencyProperty.UnsetValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyMetadata (object defaultValue, System.Windows.PropertyChangedCallback propertyChangedCallback, System.Windows.CoerceValueCallback coerceValueCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object defaultValue, class System.Windows.PropertyChangedCallback propertyChangedCallback, class System.Windows.CoerceValueCallback coerceValueCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PropertyMetadata.#ctor(System.Object,System.Windows.PropertyChangedCallback,System.Windows.CoerceValueCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Object" />
+        <Parameter Name="propertyChangedCallback" Type="System.Windows.PropertyChangedCallback" />
+        <Parameter Name="coerceValueCallback" Type="System.Windows.CoerceValueCallback" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">依存関係プロパティをいくつか特定の型の値として提供される通常の既定値。</param>
+        <param name="propertyChangedCallback">プロパティの有効な値が変更されるたびに、プロパティのシステムによって呼び出されるハンドラーの実装への参照。</param>
+        <param name="coerceValueCallback">プロパティのシステムが呼び出すたびに呼び出されるハンドラーの実装への参照を<see cref="M:System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)" />このプロパティに対して。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.PropertyMetadata" />コールバックと指定された既定値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定する場合、<xref:System.Windows.CoerceValueCallback>ではなく、<xref:System.Windows.PropertyChangedCallback>を渡すことができます`null`の`propertyChangedCallback`パラメーター。  
+  
+ 指定された値の型`defaultValue`一致する必要がありますか、このメタデータに適用される依存関係プロパティの元の登録で指定された型に関連しています。 (この不一致は実行時の例外が発生) コンパイル時に、不一致が検出できないために、既定値の型のメタデータと適用される依存関係プロパティの型の間の不一致は、デバッグが困難できます。  
+  
+ パラメーターなしのコンス トラクターごとの既定値は、`defaultValue`の<xref:System.Windows.DependencyProperty.UnsetValue>は指定できません。 しようとすると、例外が発生します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[PropertyMetadataAPIs#Initpm](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#initpm)]  
+[!code-csharp[PropertyMetadataAPIs#PMCtor3param](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#pmctor3param)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="defaultValue" />値に設定することはできません<see cref="F:System.Windows.DependencyProperty.UnsetValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CoerceValueCallback">
+      <MemberSignature Language="C#" Value="public System.Windows.CoerceValueCallback CoerceValueCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.CoerceValueCallback CoerceValueCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.PropertyMetadata.CoerceValueCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.CoerceValueCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の参照、<see cref="T:System.Windows.CoerceValueCallback" />このメタデータに指定された実装。</summary>
+        <value>A<see cref="T:System.Windows.CoerceValueCallback" />の参照を実装します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティのメタデータでコールバックは、このプロパティの値が同じ既存の依存関係プロパティのメタデータを使用するほとんどのシナリオの重要ではありませんので、型は、通常のパブリック メンバーではありません。 このプロパティが公開されている理由の 1 つはメタデータ サブクラスは基本のメタデータとメタデータをオーバーライドする追加の両方を指定する場合、マージが必要なロジックを実行できるように、<xref:System.Windows.CoerceValueCallback>です。 ただし、既定値はマージのロジックを<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>前を置換するとします。  
+  
+ <xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>読み取り/書き込みとしてオブジェクト モデルで定義されます。 これは、<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>の初期化後に調整することができます、<xref:System.Windows.PropertyMetadata>オブジェクト自体です。 ただし、メタデータがへの呼び出しの一部として使用された後<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびプロパティを変更できないと見なされますようになりました。 設定しようとしています。<xref:System.Windows.PropertyMetadata.CoerceValueCallback%2A>したら<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">依存関係プロパティの操作にいったん適用した後は、メタデータのプロパティを設定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public object DefaultValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.PropertyMetadata.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係プロパティの既定値を取得または設定します。</summary>
+        <value>プロパティの既定値。 既定値、<see cref="T:System.Windows.PropertyMetadata" />パラメーターなしのコンス トラクターで作成されたインスタンスになります<see cref="F:System.Windows.DependencyProperty.UnsetValue" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.PropertyMetadata.DefaultValue%2A>読み取り/書き込みとしてオブジェクト モデルで定義されます。 これは、<xref:System.Windows.PropertyMetadata.DefaultValue%2A>の初期化後に調整することができます、<xref:System.Windows.PropertyMetadata>オブジェクト自体です。 ただし、メタデータがへの呼び出しの一部として使用された後<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびプロパティを変更できないと見なされますようになりました。 設定しようとしています。<xref:System.Windows.PropertyMetadata.DefaultValue%2A>したら<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+ パラメーターなしのコンス トラクターごとの既定値は、`defaultValue`の<xref:System.Windows.DependencyProperty.UnsetValue>いずれかを使用して設定することはできません<xref:System.Windows.PropertyMetadata.DefaultValue%2A>またはコンス トラクターです。 しようとすると、例外が発生します。  
+  
+<a name="xamlTextUsage_PropertyChangedCallback"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ この型のメンバーは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値に設定することはできません<see cref="F:System.Windows.DependencyProperty.UnsetValue" />1 回作成します。</exception>
+        <exception cref="T:System.InvalidOperationException">依存関係プロパティの操作にいったん適用した後は、メタデータのプロパティを設定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSealed">
+      <MemberSignature Language="C#" Value="protected bool IsSealed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSealed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.PropertyMetadata.IsSealed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結果としてそのメタデータ インスタンスの変更できない状態の何らかの方法では、プロパティにメタデータが適用されているかどうかを決定する値を取得します。</summary>
+        <value>
+          <see langword="true" />メタデータ インスタンスは不変であり場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ さまざまなプロパティ<xref:System.Windows.PropertyMetadata>など<xref:System.Windows.PropertyMetadata.DefaultValue%2A>読み取り/書き込みとしてオブジェクト モデルで定義されます。 これは、これらのプロパティの初期化後に調整できるように、<xref:System.Windows.PropertyMetadata>オブジェクト自体です。 ただしへの呼び出しの一部として、依存関係プロパティに適用するメタデータ<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびプロパティを変更できないと見なされますようになりました。 これらの呼び出しのいずれかの時点で<xref:System.Windows.PropertyMetadata.OnApply%2A>が呼び出されるにこのプロパティの値を設定および`true`です。  
+  
+   
+  
+## Examples  
+ 次の例のチェック<xref:System.Windows.PropertyMetadata.IsSealed%2A>カスタム メタデータ プロパティの設定操作の前にします。  
+  
+ [!code-csharp[PropertyMetadataAPIs#MergeImpl](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#mergeimpl)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Merge">
+      <MemberSignature Language="C#" Value="protected virtual void Merge (System.Windows.PropertyMetadata baseMetadata, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Merge(class System.Windows.PropertyMetadata baseMetadata, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseMetadata" Type="System.Windows.PropertyMetadata" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="baseMetadata">このインスタンスの値とマージする基本のメタデータ。</param>
+        <param name="dp">このメタデータが適用されている依存関係プロパティ。</param>
+        <summary>このメタデータと基本メタデータをマージします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータが上書きされているときに、このメソッドは内部的に使用 (<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>メソッド)。  
+  
+   
+  
+## Examples  
+ 次の例では、プロパティのメタデータに追加のプロパティを追加するカスタム メタデータの種類のマージを実装します。  
+  
+ [!code-csharp[PropertyMetadataAPIs#MergeImpl](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertyMetadataAPIs/CSharp/Class1.cs#mergeimpl)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>クラスから派生する実装<see cref="T:System.Windows.PropertyMetadata" />の実装では、追加のメタデータ プロパティに対応するには、このメソッドをオーバーライドする必要があります。 たとえば、実装に追加可能性があります新しいフラグ列挙値では、および<see cref="M:System.Windows.PropertyMetadata.Merge(System.Windows.PropertyMetadata,System.Windows.DependencyProperty)" />実装はこれらのフラグを正しく組み合わせることができるしする必要があります。  
+  
+ 常に、基本実装を呼び出す、実装コードの前に既に定義されているすべてのプロパティのマージの基底の実装が行われますので、<see cref="T:System.Windows.PropertyMetadata" />型です。  
+  
+ マージの正確な動作は、ユーザーの責任です。 結合の値を持つ、派生のメタデータは、既定値、または、特定のメタデータ クラスとその意味を追加したプロパティの型に基づくその他の多くの動作に残されている場合、ベース値に戻すを選択する可能性があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApply">
+      <MemberSignature Language="C#" Value="protected virtual void OnApply (System.Windows.DependencyProperty dp, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnApply(class System.Windows.DependencyProperty dp, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.PropertyMetadata.OnApply(System.Windows.DependencyProperty,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="dp">メタデータが適用されている依存関係プロパティ。</param>
+        <param name="targetType">型固有のメタデータは、この場合、このメタデータに関連付けられている型。 これが既定のメタデータである場合は、この値は、null 参照です。</param>
+        <summary>このメタデータは、メタデータがシールされていることを示すプロパティに適用されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブクラスはことを保証のデータ構造のすべての変更可能性、<xref:System.Windows.PropertyMetadata>サブクラスとマークするか変更不可として 1 回<xref:System.Windows.PropertyMetadata.OnApply%2A>と呼びます。 プロパティのシステム操作にメタデータが適用されると呼び出されます (登録、所有者を追加、メタデータをオーバーライドする)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyChangedCallback">
+      <MemberSignature Language="C#" Value="public System.Windows.PropertyChangedCallback PropertyChangedCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.PropertyChangedCallback PropertyChangedCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.PropertyMetadata.PropertyChangedCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.PropertyChangedCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の参照、<see cref="T:System.Windows.PropertyChangedCallback" />このメタデータに指定された実装。</summary>
+        <value>A<see cref="T:System.Windows.PropertyChangedCallback" />の参照を実装します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティのメタデータでコールバックは、このプロパティの値が同じ既存の依存関係プロパティのメタデータを使用するほとんどのシナリオの重要ではありませんので、型の定義、通常のパブリック メンバーではありません。 このプロパティが公開されている理由の 1 つは基本のメタデータとメタデータをオーバーライドする追加の両方を指定する場合、メタデータ クラスは、マージが必要なロジックを実行できるように、<xref:System.Windows.PropertyChangedCallback>です。 既定のマージのロジックはすべて維持するために、<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>テーブルとは、最初を実行している階層の最下位のクラスによって確立されたコールバックの呼び出しごとに実装します。  
+  
+ <xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>読み取り/書き込みとしてオブジェクト モデルで定義されます。 これは、<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>の初期化後に調整することができます、<xref:System.Windows.PropertyMetadata>オブジェクト自体です。 ただし、メタデータがへの呼び出しの一部として使用された後<xref:System.Windows.DependencyProperty.Register%2A>、 <xref:System.Windows.DependencyProperty.AddOwner%2A>、または<xref:System.Windows.DependencyProperty.OverrideMetadata%2A>プロパティ システムはそのメタデータ インスタンスをシール、およびプロパティを変更できないと見なされますようになりました。 設定しようとしています。<xref:System.Windows.PropertyMetadata.PropertyChangedCallback%2A>したら<xref:System.Windows.PropertyMetadata.IsSealed%2A>は`true`このメタデータをインスタンスで例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">依存関係プロパティの操作にいったん適用した後は、メタデータのプロパティを設定できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

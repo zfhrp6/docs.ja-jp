@@ -1,0 +1,458 @@
+<Type Name="FileWebResponse" FullName="System.Net.FileWebResponse">
+  <TypeSignature Language="C#" Value="public class FileWebResponse : System.Net.WebResponse, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit FileWebResponse extends System.Net.WebResponse implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.FileWebResponse" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.WebResponse</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ファイル システムの実装を提供、<see cref="T:System.Net.WebResponse" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FileWebResponse>クラスが実装する、 <xref:System.Net.WebResponse> `abstract`基底クラスへのファイル システム リソースを返す、<xref:System.Net.FileWebRequest>クラスです。  
+  
+ クライアント アプリケーションを作成しない<xref:System.Net.FileWebResponse>インスタンス直接。 代わりに、呼び出すことによって作成される、<xref:System.Net.FileWebRequest.GetResponse%2A>メソッドを、<xref:System.Net.FileWebRequest>インスタンス。  
+  
+ <xref:System.Net.FileWebResponse.GetResponseStream%2A>メソッドを返します、<xref:System.IO.Stream>ファイル システム リソースへの読み取り専用のアクセスを提供するインスタンス。  
+  
+ <xref:System.Net.FileWebResponse>に依存している、<xref:System.IO.File>エラー処理とコード アクセス セキュリティのクラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FileWebResponse (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FileWebResponse.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Serialization is obsoleted for this type. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">新しい <see cref="T:System.Runtime.Serialization.SerializationInfo" /> インスタンスをシリアル化するために必要な情報を格納する <see cref="T:System.Net.FileWebResponse" /> インスタンス。</param>
+        <param name="streamingContext">インスタンス、<see cref="T:System.Runtime.Serialization.StreamingContext" />新しいに関連付けられているシリアル化ストリームのソースを含むクラス<see cref="T:System.Net.FileWebResponse" />インスタンス。</param>
+        <summary><see cref="T:System.Net.FileWebResponse" /> クラスと <see cref="T:System.Runtime.Serialization.SerializationInfo" /> クラスの指定したインスタンスから、<see cref="T:System.Runtime.Serialization.StreamingContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを実装して、<xref:System.Runtime.Serialization.ISerializable>のためのインターフェイス、<xref:System.Net.FileWebResponse>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FileWebResponse.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>応答ストリームを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FileWebResponse.Close%2A>メソッドで使用したリソースをクリーンアップする<xref:System.Net.FileWebResponse>を呼び出して、応答ストリームを閉じると、<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  システム リソースの不足を回避する応答のストリームを閉じる必要があります。 呼び出して、応答ストリームを閉じることができます<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>または<xref:System.Net.FileWebResponse.Close%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.FileWebResponse.Close%2A>応答ストリームを閉じます。  
+  
+ [!code-cpp[FileWebResponse_Close#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FileWebResponse_Close/CPP/filewebresponse_close.cpp#1)]
+ [!code-csharp[FileWebResponse_Close#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FileWebResponse_Close/CS/filewebresponse_close.cs#1)]
+ [!code-vb[FileWebResponse_Close#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FileWebResponse_Close/VB/filewebresponse_close.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentLength">
+      <MemberSignature Language="C#" Value="public override long ContentLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FileWebResponse.ContentLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイル システム リソースのコンテンツの長さを取得します。</summary>
+        <value>ファイル システム リソースから返されたバイト数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FileWebResponse.ContentLength%2A>プロパティには、ファイル システム リソースの長さ、(バイト単位) が含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.FileWebResponse.ContentLength%2A>ファイル システム リソースのコンテンツの長さを取得するプロパティです。  
+  
+ [!code-cpp[FileWebResponse_ContentLength_ContentType#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FileWebResponse_ContentLength_ContentType/CPP/filewebresponse_contentlength_contenttype.cpp#1)]
+ [!code-csharp[FileWebResponse_ContentLength_ContentType#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FileWebResponse_ContentLength_ContentType/CS/filewebresponse_contentlength_contenttype.cs#1)]
+ [!code-vb[FileWebResponse_ContentLength_ContentType#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FileWebResponse_ContentLength_ContentType/VB/filewebresponse_contentlength_contenttype.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public override string ContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FileWebResponse.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイル システム リソースのコンテンツの種類を取得します。</summary>
+        <value>値「バイナリ/オクテット ストリーム」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FileWebResponse.ContentType%2A>プロパティには、ファイル システム リソースのコンテンツの種類が含まれています。 値<xref:System.Net.FileWebResponse.ContentType%2A>「バイナリ/オクテット ストリーム」では常にします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.FileWebResponse.ContentType%2A>ファイル システム リソースのコンテンツの種類を取得するプロパティです。  
+  
+ [!code-cpp[FileWebResponse_ContentLength_ContentType#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FileWebResponse_ContentLength_ContentType/CPP/filewebresponse_contentlength_contenttype.cpp#1)]
+ [!code-csharp[FileWebResponse_ContentLength_ContentType#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FileWebResponse_ContentLength_ContentType/CS/filewebresponse_contentlength_contenttype.cs#1)]
+ [!code-vb[FileWebResponse_ContentLength_ContentType#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FileWebResponse_ContentLength_ContentType/VB/filewebresponse_contentlength_contenttype.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected override void GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FileWebResponse.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="streamingContext">このシリアル化の転送先を指定する <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、対象のオブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれる任意のオブジェクト、<xref:System.Runtime.Serialization.SerializationInfo>自動的に追跡され、フォーマッタによってシリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponseStream">
+      <MemberSignature Language="C#" Value="public override System.IO.Stream GetResponseStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.Stream GetResponseStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FileWebResponse.GetResponseStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイル システム リソースからのデータ ストリームを返します。</summary>
+        <returns>A<see cref="T:System.IO.Stream" />ファイル システムのリソースからデータを読み取るためです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FileWebResponse.GetResponseStream%2A>メソッドは、ファイル システムのリソースからのデータ ストリームを返します。  
+  
+> [!NOTE]
+>  システム リソースの不足を回避する応答のストリームを閉じる必要があります。 呼び出して、応答ストリームを閉じることができます<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>または<xref:System.Net.FileWebResponse.Close%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.FileWebResponse.GetResponseStream%2A>ファイル システムのリソースからのデータ ストリームを返すメソッド。  
+  
+ [!code-cpp[FileWebResponse_GetResponseStream#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FileWebResponse_GetResponseStream/CPP/filewebresponse_getresponsestream.cpp#1)]
+ [!code-csharp[FileWebResponse_GetResponseStream#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FileWebResponse_GetResponseStream/CS/filewebresponse_getresponsestream.cs#1)]
+ [!code-vb[FileWebResponse_GetResponseStream#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FileWebResponse_GetResponseStream/VB/filewebresponse_getresponsestream.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public override System.Net.WebHeaderCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebHeaderCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FileWebResponse.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebHeaderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答に関連付けられているヘッダーの名前/値ペアのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Net.WebHeaderCollection" />応答に関連付けられているヘッダーの名前/値ペアを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FileWebResponse.Headers%2A>プロパティには、コンテンツの長さとコンテンツの種類のどちらもは、プロパティとして公開されても、2 つの名前/値ペアが含まれています。<xref:System.Net.FileWebResponse.ContentLength%2A>と<xref:System.Net.FileWebResponse.ContentType%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.FileWebResponse.Headers%2A>応答に関連付けられている名前/値ペアを取得するプロパティです。  
+  
+ [!code-cpp[FileWebResponse_Headers#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FileWebResponse_Headers/CPP/filewebresponse_headers.cpp#1)]
+ [!code-csharp[FileWebResponse_Headers#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FileWebResponse_Headers/CS/filewebresponse_headers.cs#1)]
+ [!code-vb[FileWebResponse_Headers#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FileWebResponse_Headers/VB/filewebresponse_headers.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseUri">
+      <MemberSignature Language="C#" Value="public override Uri ResponseUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ResponseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FileWebResponse.ResponseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答したファイル システム リソースの URI を取得します。</summary>
+        <value>A<see cref="T:System.Uri" />応答したファイル システム リソースの URI を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FileWebResponse.ResponseUri%2A>プロパティが応答したファイル システム リソースの URI を格納します。 これは、常に、要求されたファイル システム リソースです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.FileWebResponse.ResponseUri%2A>応答したファイル システム リソースの URI を取得します。  
+  
+ [!code-cpp[FileWebResponse_ResponseUri#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FileWebResponse_ResponseUri/CPP/filewebresponse_responseuri.cpp#1)]
+ [!code-csharp[FileWebResponse_ResponseUri#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FileWebResponse_ResponseUri/CS/filewebresponse_responseuri.cs#1)]
+ [!code-vb[FileWebResponse_ResponseUri#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FileWebResponse_ResponseUri/VB/filewebresponse_responseuri.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsHeaders">
+      <MemberSignature Language="C#" Value="public override bool SupportsHeaders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsHeaders" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FileWebResponse.SupportsHeaders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Net.FileWebResponse.Headers" />でプロパティがサポートされて、<see cref="T:System.Net.FileWebResponse" />インスタンス。</summary>
+        <value><see cref="T:System.Boolean" /> を返します。  
+  
+ true の場合、<see cref="P:System.Net.FileWebResponse.Headers" />でプロパティがサポートされて、<see cref="T:System.Net.FileWebResponse" />インスタンス。 それ以外の場合は false。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常の true[!INCLUDE[net_v45](~/includes/net-v45-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FileWebResponse.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">A <see cref="T:System.Runtime.Serialization.SerializationInfo" /> 、シリアル化されたデータを保持する、<see cref="T:System.Net.FileWebResponse" />です。</param>
+        <param name="streamingContext">A<see cref="T:System.Runtime.Serialization.StreamingContext" />新しいに関連付けられているシリアル化されたストリームの転送先を含む<see cref="T:System.Net.FileWebResponse" />です。</param>
+        <summary>追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />をシリアル化するために必要なデータ インスタンス、<see cref="T:System.Net.FileWebResponse" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

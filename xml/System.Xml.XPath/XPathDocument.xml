@@ -1,0 +1,309 @@
+<Type Name="XPathDocument" FullName="System.Xml.XPath.XPathDocument">
+  <TypeSignature Language="C#" Value="public class XPathDocument : System.Xml.XPath.IXPathNavigable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XPathDocument extends System.Object implements class System.Xml.XPath.IXPathNavigable" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XPath.XPathDocument" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XPath</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Xml.XPath.IXPathNavigable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>XPath データ モデルを使用して、XML ドキュメントの読み取り専用で高速なインメモリ表現を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XPath データ モデルを使用して XML データの処理の詳細については、次を参照してください。、 [XPath データ モデルを使用して XML データの処理](~/docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)トピックです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathDocument (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathDocument.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" /> XML データを格納するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Xml.XPath.XPathDocument" /> 、指定した XML データからクラスを<see cref="T:System.IO.Stream" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Xml.XmlException">XML データにエラーが発生しました。 <see cref="T:System.Xml.XPath.XPathDocument" />は空のままです。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.IO.Stream" />パラメーターとして渡されたオブジェクト<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathDocument (System.IO.TextReader textReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextReader textReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathDocument.#ctor(System.IO.TextReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="textReader" Type="System.IO.TextReader" />
+      </Parameters>
+      <Docs>
+        <param name="textReader"><see cref="T:System.IO.TextReader" /> XML データを格納するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.XPath.XPathDocument" />クラスに含まれている XML データから、指定した<see cref="T:System.IO.TextReader" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後に、<xref:System.IO.TextReader>オブジェクトが、XML データのカーソルの読み込みに使用された、<xref:System.IO.TextReader>オブジェクトは、データの末尾に配置します。 <xref:System.IO.TextReader>オブジェクトは、データを再度読み取りをリセットする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">XML データにエラーが発生しました。 <see cref="T:System.Xml.XPath.XPathDocument" />は空のままです。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.IO.TextReader" />パラメーターとして渡されたオブジェクト<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathDocument (string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathDocument.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">XML データを格納しているファイルのパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.XPath.XPathDocument" />指定したファイルに XML データからのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空白を保持するために使用して、<xref:System.Xml.XPath.XPathDocument.%23ctor%2A>を受け取るコンス トラクター、<xref:System.Xml.XmlSpace>オブジェクトをパラメーターとして。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">XML データにエラーが発生しました。 <see cref="T:System.Xml.XPath.XPathDocument" />は空のままです。</exception>
+        <exception cref="T:System.ArgumentNullException">ファイル パス パラメーターが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathDocument (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathDocument.#ctor(System.Xml.XmlReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" /> XML データを格納するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.XPath.XPathDocument" />クラスに含まれている XML データから、指定した<see cref="T:System.Xml.XmlReader" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlReader>オブジェクトは、XML ドキュメント全体または一部に XML ドキュメントの読み込みに使用できます、<xref:System.Xml.XPath.XPathDocument>です。 XML ドキュメントの一部に読み込む、 <xref:System.Xml.XPath.XPathDocument>、位置、<xref:System.Xml.XmlReader>データの読み込みの最上位の XML ノード上のオブジェクト。 作成するときに、<xref:System.Xml.XPath.XPathDocument>を使用して、<xref:System.Xml.XPath.XPathDocument.%23ctor%2A>コンス トラクター、データがすべての兄弟を現在の最上位ノードから読み込まれます。 その後、<xref:System.Xml.XmlReader>最上位の XML ノードのスコープの外部に配置されています。 また、使用することができます、<xref:System.Xml.XmlReader.ReadSubtree%2A>を読み込む方法、 <xref:System.Xml.XPath.XPathDocument> XML ドキュメント内の特定の要素にします。  
+  
+ 重要な注意事項を使用する場合は、次のとおり、<xref:System.Xml.XPath.XPathDocument.%23ctor%2A>コンス トラクターです。  
+  
+-   <xref:System.Xml.XmlReader>オブジェクトと適切な関連付けられている<xref:System.Xml.XmlResolver>エンティティまたは XML データの他の参照を解決するのには、オブジェクトの設定を使用できます。  
+  
+-   場合、<xref:System.Xml.XmlReader>オブジェクトは、ドキュメントのルート レベルとして無効なリーフ ノードに配置 — 空白または属性ノードなど、—、<xref:System.Xml.XmlReader>オブジェクトに配置されるまでの読み取りを継続ルートとして使用できるノードにします。 <xref:System.Xml.XPath.XPathDocument>この時点での読み込みを開始します。  
+  
+-   空白を保持するために使用して、<xref:System.Xml.XPath.XPathDocument.%23ctor%2A>を受け取るコンス トラクター、<xref:System.Xml.XmlSpace>オブジェクトをパラメーターとして。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">XML データにエラーが発生しました。 <see cref="T:System.Xml.XPath.XPathDocument" />は空のままです。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" />パラメーターとして渡されたオブジェクト<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathDocument (string uri, System.Xml.XmlSpace space);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uri, valuetype System.Xml.XmlSpace space) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathDocument.#ctor(System.String,System.Xml.XmlSpace)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+        <Parameter Name="space" Type="System.Xml.XmlSpace" />
+      </Parameters>
+      <Docs>
+        <param name="uri">XML データを格納しているファイルのパス。</param>
+        <param name="space"><see cref="T:System.Xml.XmlSpace" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.XPath.XPathDocument" />指定された空白文字の処理で指定されたファイル内の XML データからのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   <xref:System.Xml.XmlSpace>空白を保持するかどうかをパラメーターで指定として渡されたオブジェクト。 <xref:System.Xml.XmlSpace.Default>のみ有意の空白は保持されます。<xref:System.Xml.XmlSpace.Preserve>すべての空白が維持されます。 既定では、<xref:System.Xml.XmlSpace>にオブジェクトが設定されている<xref:System.Xml.XmlSpace.Default>です。  
+  
+-   機能、<xref:System.Xml.XPath.XPathDocument.%23ctor%2A>コンス トラクターは、のものと同じ、<xref:System.Xml.XPath.XPathDocument.%23ctor%2A>処理オプションが説明されている空白以外のコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">XML データにエラーが発生しました。 <see cref="T:System.Xml.XPath.XPathDocument" />は空のままです。</exception>
+        <exception cref="T:System.ArgumentNullException">ファイル パスのパラメーターまたは<see cref="T:System.Xml.XmlSpace" />オブジェクト パラメーターは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathDocument (System.Xml.XmlReader reader, System.Xml.XmlSpace space);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader reader, valuetype System.Xml.XmlSpace space) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathDocument.#ctor(System.Xml.XmlReader,System.Xml.XmlSpace)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="space" Type="System.Xml.XmlSpace" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" /> XML データを格納するオブジェクト。</param>
+        <param name="space"><see cref="T:System.Xml.XmlSpace" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.XPath.XPathDocument" />クラスに含まれている XML データから、指定した<see cref="T:System.Xml.XmlReader" />指定の空白文字の処理を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   <xref:System.Xml.XmlSpace>空白を保持するかどうかをパラメーターで指定として渡されたオブジェクト。 <xref:System.Xml.XmlSpace.Default>のみ有意の空白は保持されます。<xref:System.Xml.XmlSpace.Preserve>すべての空白が維持されます。 既定では、<xref:System.Xml.XmlSpace>にオブジェクトが設定されている<xref:System.Xml.XmlSpace.Default>です。  
+  
+-   機能、<xref:System.Xml.XPath.XPathDocument.%23ctor%2A>コンス トラクターは、のものと同じ、<xref:System.Xml.XPath.XPathDocument.%23ctor%2A>処理オプションが説明されている空白以外のコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">XML データにエラーが発生しました。 <see cref="T:System.Xml.XPath.XPathDocument" />は空のままです。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Xml.XmlReader" />オブジェクト パラメーターまたは<see cref="T:System.Xml.XmlSpace" />オブジェクト パラメーターは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNavigator">
+      <MemberSignature Language="C#" Value="public System.Xml.XPath.XPathNavigator CreateNavigator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XPath.XPathNavigator CreateNavigator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathDocument.CreateNavigator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathNavigator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>読み取り専用に初期化<see cref="T:System.Xml.XPath.XPathNavigator" />これでノード間を移動するためのオブジェクト<see cref="T:System.Xml.XPath.XPathDocument" />です。</summary>
+        <returns>読み取り専用の <see cref="T:System.Xml.XPath.XPathNavigator" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XPath.XPathNavigator>のルート要素に配置されて、<xref:System.Xml.XPath.XPathDocument>です。 ルート要素が存在しない場合、<xref:System.Xml.XPath.XPathNavigator>の最初の要素に配置されて、<xref:System.Xml.XPath.XPathDocument>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

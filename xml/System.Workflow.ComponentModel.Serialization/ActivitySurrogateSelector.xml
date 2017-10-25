@@ -1,0 +1,103 @@
+<Type Name="ActivitySurrogateSelector" FullName="System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector">
+  <TypeSignature Language="C#" Value="public sealed class ActivitySurrogateSelector : System.Runtime.Serialization.SurrogateSelector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ActivitySurrogateSelector extends System.Runtime.Serialization.SurrogateSelector" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Serialization.SurrogateSelector</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> のシリアル化に使用できるサロゲートを選択します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ シリアル化サロゲートは、異なるオブジェクトのシリアル化要件を処理し、必要に応じてシリアル化データを変換できるオブジェクトを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivitySurrogateSelector ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector Default" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の <see cref="T:System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector" /> を取得します。 このプロパティは読み取り専用です。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector" /> のシリアル化に使用できる既定の <see cref="T:System.Workflow.ComponentModel.Activity" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSurrogate">
+      <MemberSignature Language="C#" Value="public override System.Runtime.Serialization.ISerializationSurrogate GetSurrogate (Type type, System.Runtime.Serialization.StreamingContext context, out System.Runtime.Serialization.ISurrogateSelector selector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Runtime.Serialization.ISerializationSurrogate GetSurrogate(class System.Type type, valuetype System.Runtime.Serialization.StreamingContext context, [out] class System.Runtime.Serialization.ISurrogateSelector&amp; selector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Serialization.ActivitySurrogateSelector.GetSurrogate(System.Type,System.Runtime.Serialization.StreamingContext,System.Runtime.Serialization.ISurrogateSelector@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ISerializationSurrogate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+        <Parameter Name="selector" Type="System.Runtime.Serialization.ISurrogateSelector&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="type">サロゲートを取得する対象の <see cref="T:System.Type" />。</param>
+        <param name="context">現在のシリアル化の転送元と転送先に関するコンテキストとして使用される <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <param name="selector">このメソッドから制御が戻るときに、適切なサロゲートが見つかったサロゲート セレクターへの参照を保持する <see cref="T:System.Runtime.Serialization.ISurrogateSelector" /> が格納されます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定した型を表すサロゲートを検索します。検索は、指定したシリアル化コンテキストの指定したサロゲート セレクターから開始されます。</summary>
+        <returns>指定した型およびコンテキストに該当するサロゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるサロゲートの型は、`type` から割り当てることができる型に依存します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

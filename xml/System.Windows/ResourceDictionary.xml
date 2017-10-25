@@ -1,0 +1,846 @@
+<Type Name="ResourceDictionary" FullName="System.Windows.ResourceDictionary">
+  <TypeSignature Language="C#" Value="public class ResourceDictionary : System.Collections.IDictionary, System.ComponentModel.ISupportInitialize, System.Windows.Markup.INameScope, System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ResourceDictionary extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable, class System.ComponentModel.ISupportInitialize, class System.Windows.Markup.INameScope, class System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.ResourceDictionary" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IDictionary</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.INameScope</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IUriContext</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Ignore)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.UsableDuringInitialization(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ハッシュ テーブルを提供/コンポーネントおよび WPF アプリケーションの他の要素によって使用される WPF リソースを含むディクショナリの実装です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の項目、<xref:System.Windows.ResourceDictionary>によってアプリケーション コードが読み込まれるとすぐには処理されません、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ローダー。 代わりに、<xref:System.Windows.ResourceDictionary>オブジェクトとして永続化され、個々 の値が具体的には要求されたときにのみ処理されます。  
+  
+ <xref:System.Windows.ResourceDictionary>からクラスを派生していない<xref:System.Collections.DictionaryBase>です。 代わりに、<xref:System.Windows.ResourceDictionary>クラスが実装する<xref:System.Collections.IDictionary>に依存していますが、<xref:System.Collections.Hashtable>内部的にします。  
+  
+ [!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]、<xref:System.Windows.ResourceDictionary>クラスが暗黙的なコレクションは要素をいくつかのオブジェクト要素の値では通常`Resources`プロパティ、プロパティ要素構文で指定されるとします。 詳細については、暗黙の型のコレクションで[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]を参照してください[XAML 構文の詳細](~/docs/framework/wpf/advanced/xaml-syntax-in-detail.md)です。 例外は、マージされたディクショナリを指定する場合詳細については、「[リソース ディクショナリのトピックとマージ](~/docs/framework/wpf/advanced/merged-resource-dictionaries.md)です。  
+  
+ 考えられる別[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用状況、リソース ディクショナリが個別としてを宣言する[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ファイル、およびどちらかで実行時に読み込む<xref:System.Windows.Markup.XamlReader.Load%2A>(完全に信頼された) プロジェクトにリソースまたは厳密でないファイルとして含めるまたはします。 この場合、<xref:System.Windows.ResourceDictionary>のルート要素として、オブジェクト要素として宣言することができます、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 適切な XML 名前空間の値をマップする必要があります (の既定値、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]名前空間と通常`x:`の[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]名前空間) に、<xref:System.Windows.ResourceDictionary>要素をルート要素として使用する場合。 値を持つ各リソースを定義する子要素を追加することができます。  
+  
+<a name="xamlImplicitCollectionUsage_ResourceDictionary"></a>   
+## <a name="xaml-implicit-collection-usage"></a>XAML 暗黙的コレクションの使用  
+  
+```  
+<object>  
+  <object.resourcesProperty>  
+    oneOrMoreResources  
+  </object.resourcesProperty>  
+</object>  
+```  
+  
+<a name="xamlValues_ResourceDictionary"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *resourcesProperty*  
+ ここでそのプロパティの値の型は、プロパティ要素を指定するプロパティ<xref:System.Windows.ResourceDictionary>です。 通常、これは、`Resources`プロパティの<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>、またはの<xref:System.Windows.Application>アプリケーション リソースの場合にします。  
+  
+ *oneOrMoreResources*  
+ 1 つまたは複数のリソースがオブジェクト要素として指定します。 各リソースを指定する必要があります、 [X:key ディレクティブ](~/docs/framework/xaml-services/x-key-directive.md)割り当てられます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceDictionary ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.ResourceDictionary" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (object key, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(object key, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.Add(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">追加するキーの名前。</param>
+        <param name="value">追加するリソースの値。</param>
+        <summary>キーでこのリソースを追加します。<see cref="T:System.Windows.ResourceDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 重複するキーを追加しようと、例外が発生します。  
+  
+ キーは常に、基本ディクショナリに追加します。 キーを<xref:System.Windows.ResourceDictionary.MergedDictionaries%2A>現在内<xref:System.Windows.ResourceDictionary>に対してはチェックされませんの重複、重複部分の基本ディクショナリのみがチェックされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.ResourceDictionary" />ロックされているか読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException">同じキーを持つ要素が、<see cref="T:System.Collections.Hashtable" /> に既に存在します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この初期化フェーズを開始<see cref="T:System.Windows.ResourceDictionary" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの呼び出しを示す値の内容、<xref:System.Windows.ResourceDictionary>が読み込まれます。 呼び出すプロセスの次の手順は、<xref:System.Windows.ResourceDictionary.EndInit%2A>です。  
+  
+ 呼び出す必要はありません<xref:System.Windows.ResourceDictionary.BeginInit%2A>も複数回呼び出す前に<xref:System.Windows.ResourceDictionary.EndInit%2A>です。 そうと、例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼ばれる<see cref="M:System.Windows.ResourceDictionary.BeginInit" />する前に 2 回以上<see cref="M:System.Windows.ResourceDictionary.EndInit" />が呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのキー (と値) をベースに消去<see cref="T:System.Windows.ResourceDictionary" />です。 これはクリアされません、ディクショナリの項目をマージします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マージされたディクショナリの項目をクリアする必要がある場合から特定の辞書を取得<xref:System.Windows.ResourceDictionary.MergedDictionaries%2A>コレクションと明示的に呼び出し<xref:System.Windows.ResourceDictionary.Clear%2A>を<xref:System.Windows.ResourceDictionary>、通常、辞書がリモートにあると、アクセスがないです。 または、全体を削除<xref:System.Windows.ResourceDictionary>から<xref:System.Windows.ResourceDictionary.MergedDictionaries%2A>ジェネリック コレクションで削除を呼び出すことによりします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">
+          <see cref="T:System.Windows.ResourceDictionary" /> 内で検索されるキー。</param>
+        <summary>指定したキーの要素が <see cref="T:System.Windows.ResourceDictionary" /> に格納されているかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="T:System.Windows.ResourceDictionary" />、指定したキー/値ペアを含むキー、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求されたキーがこのリソース ディクショナリ内にしない場合は、リソースの検索ロジックは、マージされたディクショナリも確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Collections.DictionaryEntry[] array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(valuetype System.Collections.DictionaryEntry[] array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.CopyTo(System.Collections.DictionaryEntry[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Collections.DictionaryEntry[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピー先である 1 次元の配列、<see cref="T:System.Collections.DictionaryEntry" />からコピーされるオブジェクト、<see cref="T:System.Windows.ResourceDictionary" />インスタンス。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="arrayIndex">0 から始まるインデックス<c>配列</c>コピー開始位置。</param>
+        <summary>コピー、<see cref="T:System.Windows.ResourceDictionary" />要素を 1 次元<see cref="T:System.Collections.DictionaryEntry" />指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これにより、基本ディクショナリだけがコピーされます。 結果の配列を持たない<xref:System.Windows.ResourceDictionary.MergedDictionaries%2A>それが再構成する場合、<xref:System.Windows.ResourceDictionary>もう一度です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ベース内のエントリの数を取得<see cref="T:System.Windows.ResourceDictionary" />です。</summary>
+        <value>現在の基本ディクショナリ内のエントリの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeferrableContent">
+      <MemberSignature Language="C#" Value="public System.Windows.DeferrableContent DeferrableContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DeferrableContent DeferrableContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.DeferrableContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DeferrableContent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのリソース ディクショナリの遅延コンテンツを設定します。</summary>
+        <value>常に <see langword="null" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化フェーズを終了し、初期化フェーズ中にキーに加えられたすべての変更を考慮するように、前のツリーを無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.ResourceDictionary.BeginInit%2A>および<xref:System.Windows.ResourceDictionary.EndInit%2A>トランザクション モデルに従います。 <xref:System.Windows.ResourceDictionary.BeginInit%2A>初期化されていないディクショナリをマークし、<xref:System.Windows.ResourceDictionary.EndInit%2A>初期化のマークします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindName">
+      <MemberSignature Language="C#" Value="public object FindName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object FindName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.FindName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要求されたオブジェクトの名前の識別子。</param>
+        <summary>このディクショナリの実装ではサポートされていません。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.ResourceDictionary>クラスは、名前で登録をサポートしていません。 代わりにキーを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionaryEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionaryEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IDictionaryEnumerator" />反復処理に使用できる、<see cref="T:System.Windows.ResourceDictionary" />です。</summary>
+        <returns>特殊な列挙子、<see cref="T:System.Windows.ResourceDictionary" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 反復子は基本ディクショナリのみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうかこの<see cref="T:System.Windows.ResourceDictionary" />固定サイズです。</summary>
+        <value>
+          <see langword="true" />ハッシュ テーブルが固定サイズの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を返します、<xref:System.Collections.Hashtable>既定値、つまり`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうかこの<see cref="T:System.Windows.ResourceDictionary" />は読み取り専用です。</summary>
+        <value>
+          <see langword="true" />ハッシュ テーブルが読み取り専用の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します、<xref:System.Collections.Hashtable>既定値、つまり`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[object key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">任意のキーを取得または設定します。</param>
+        <summary>取得または指定したキーに関連付けられている値を設定します。</summary>
+        <value>キーの値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求されたキーがこのリソース ディクショナリ内にしない場合は、フレームワーク リソース システムは、マージされたディクショナリも確認します。  
+  
+ チェック、<xref:System.Windows.ResourceDictionary>項目またはインデックスでは通常、リソースを取得することをお勧めします。 代わりに、完全なリソースのルックアップ プロセスに参加しているは、そのキーを使用してリソースを検索し、アプリケーションまたはテーマでのリソースを検索するメソッドを呼び出す必要があります。 <xref:System.Windows.FrameworkElement.FindResource%2A>これらのメソッドは、いずれかの上に存在<xref:System.Windows.FrameworkElement>です。 それ以外の場合、リソースを検索しようとするでは、true の実行時の動作が一致しません。  
+  
+ ただし、個々 の辞書から直接リソースを取得する場合があります既知からリソースを取得している場合に適しています<xref:System.Windows.ResourceDictionary>場所、可能なキーの検索を実行時のパフォーマンスとスコープによる影響を回避するために実行します。  
+  
+ コレクション メンバーを定義するインデクサーを使用しない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 代わりに、要素を作成する子のマークアップ。 いずれかの子要素の子要素が<xref:System.Windows.ResourceDictionary>、またはプロパティの型がここでは、プロパティ要素の`ResourceDictionary`します。 詳細については、次を参照してください。、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]のセクションでは、使用状況<xref:System.Windows.ResourceDictionary>です。  
+  
+<a name="xamlTextUsage_Item"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 「解説」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに含まれるすべてのキーのコレクションを取得<see cref="T:System.Windows.ResourceDictionary" />です。</summary>
+        <value>すべてのキーのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要としているために、このプロパティが存在する<xref:System.Collections.IDictionary>が<xref:System.Windows.ResourceDictionary.Keys%2A>、通常はほとんど役に立ちません<xref:System.Windows.ResourceDictionary>シナリオです。  
+  
+ 返されるキー内のキーを含めないでください、<xref:System.Windows.ResourceDictionary.MergedDictionaries%2A>です。 また、キーのコレクションは、基本ディクショナリ内のキーのスナップショットです。 変更した場合、その後この<xref:System.Windows.ResourceDictionary>、格納された<xref:System.Windows.ResourceDictionary.Keys%2A>変更は反映されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MergedDictionaries">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Windows.ResourceDictionary&gt; MergedDictionaries { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Windows.ResourceDictionary&gt; MergedDictionaries" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.MergedDictionaries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Windows.ResourceDictionary&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得、<see cref="T:System.Windows.ResourceDictionary" />をマージされたディクショナリ内のさまざまなリソース ディクショナリを構成します。</summary>
+        <value>マージされたディクショナリのコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディクショナリは追加することによって、<xref:System.Windows.ResourceDictionary>によって参照されるジェネリック コレクションを<xref:System.Windows.ResourceDictionary.MergedDictionaries%2A>です。 マージ<xref:System.Windows.ResourceDictionary>マークアップ内に定義されているリソース要素がありません。 代わりに、マージされたディクショナリは、<xref:System.Windows.ResourceDictionary>が定義されている (またはコードによって追加された要素のない)、マークアップの子要素で、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]向けに指定された<xref:System.Windows.ResourceDictionary.Source%2A>です。 <xref:System.Windows.ResourceDictionary.Source%2A>指定により、アプリケーションに付属している別のリソース アセンブリなどの外部ソースから入手するマージされたディクショナリ"loose [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]"、または特定のローカライズまたはグローバル リソースのアセンブリ。  
+  
+ 内のリソース要素を指定する、<xref:System.Windows.ResourceDictionary>を持つ<xref:System.Windows.ResourceDictionary.Source%2A>指定はサポートされていません。  
+  
+ 内の検索動作、<xref:System.Windows.ResourceDictionary.MergedDictionaries%2A>コレクションが最後に追加した検索<xref:System.Windows.ResourceDictionary>最初、および要求されたキーが見つかるとすぐに、検索は停止します。 マージされたディクショナリのコレクション全体にわたって重複するキーが無効ではありません。 マージされたディクショナリ動作の詳細については、次を参照してください。[マージされたリソース ディクショナリ](~/docs/framework/wpf/advanced/merged-resource-dictionaries.md)です。  
+  
+<a name="xamlPropertyElementUsage_MergedDictionaries"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.MergedDictionaries>  
+    oneOrMoreResourceDictionaries  
+  </object.MergedDictionaries>  
+</object>  
+  
+```  
+  
+<a name="xamlValues_MergedDictionaries"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreResourceDictionaries*  
+ 1 つまたは複数<xref:System.Windows.ResourceDictionary>object 要素。 A<xref:System.Windows.ResourceDictionary>使用<xref:System.Windows.ResourceDictionary.MergedDictionaries%2A>コレクションのコンテンツがないし、指定、 <xref:System.Windows.ResourceDictionary.Source%2A> 、完全な参照する属性を<xref:System.Windows.ResourceDictionary>リモートでします。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つを指定します<xref:System.Windows.ResourceDictionary>プライマリへの結合要素<xref:System.Windows.ResourceDictionary>です。  
+  
+ [!code-xaml[ResourceMergeDictionary#MergedXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceMergeDictionary/CS/default.xaml#mergedxaml)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGettingValue">
+      <MemberSignature Language="C#" Value="protected virtual void OnGettingValue (object key, ref object value, out bool canCache);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnGettingValue(object key, object&amp; value, [out] bool&amp; canCache) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.OnGettingValue(System.Object,System.Object@,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object&amp;" RefType="ref" />
+        <Parameter Name="canCache" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得するリソースのキー。</param>
+        <param name="value">要求されたリソースの値です。</param>
+        <param name="canCache">
+          <see langword="true" />リソースを保存し、後で使用される場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>発生したときに、<see cref="T:System.Windows.ResourceDictionary" />リソースに対する要求を受信します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterName">
+      <MemberSignature Language="C#" Value="public void RegisterName (string name, object scopedElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterName(string name, object scopedElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.RegisterName(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="scopedElement" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">サポートされていません。</param>
+        <param name="scopedElement">サポートされていません。</param>
+        <summary>このディクショナリの実装ではサポートされていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.ResourceDictionary>クラスは、名前で登録をサポートしていません。 代わりにキーを使用します。 XAML 名前スコープのメソッドで動作していないバージョンとして実装<xref:System.Windows.ResourceDictionary>リソースに適用されない名前その XAML を区別しやすいようにします。  
+  
+ このメソッドは、通話、<xref:System.NotSupportedException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドが呼び出されたときのすべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (object key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除するエントリのキー。</param>
+        <summary>基本ディクショナリから指定したキーを持つエントリを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.ResourceDictionary>指定のキーを持つ要素が含まれていない、<xref:System.Windows.ResourceDictionary>は変更されません。 例外は発生しません。  
+  
+ このメソッドからのキーは削除されません、<xref:System.Windows.ResourceDictionary.MergedDictionaries%2A>です。 固有の仕様を取得する必要があります<xref:System.Windows.ResourceDictionary>キーもの削除するコレクションからがいるできない可能性がありますので、このような辞書をリモートでアクセスしている通常します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.ResourceDictionary" />ロックされているか読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]からリソースを読み込みます。</summary>
+        <value>外部リソース ディクショナリのソースの場所。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.Windows.ResourceDictionary.Source%2A>は、アプリケーション プロジェクトのビルドでコンパイルされていないリソースまたはコンテンツのビルド アクションとして含まれているリソース ディクショナリの場所を参照するパック URI として指定します。 パック URI の形式に関する詳細については、「 [WPF のパック Uri](~/docs/framework/wpf/app-development/pack-uris-in-wpf.md)です。  
+  
+ 一般に、<xref:System.Windows.ResourceDictionary.Source%2A>プロパティの設定の場合のみ、<xref:System.Windows.ResourceDictionary>に指定されている、<xref:System.Windows.ResourceDictionary.MergedDictionaries%2A>プロパティ (いずれかのプロパティ要素として[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、または、<xref:System.Windows.ResourceDictionary>コード内のコレクションの項目)。 このコンテキストでの値の設定<xref:System.Windows.ResourceDictionary.Source%2A>に指定された辞書の内容をマージ[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]現在<xref:System.Windows.ResourceDictionary>です。 読み込みエラーがスローされる例外となります。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つを指定します<xref:System.Windows.ResourceDictionary>プライマリへの結合要素<xref:System.Windows.ResourceDictionary>です。  
+  
+ [!code-xaml[ResourceMergeDictionary#MergedXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceMergeDictionary/CS/default.xaml#mergedxaml)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Windows.Markup.Localizer.BamlLocalizationDictionary" /> からコピーされた項目を受け取る、0 から始まる <see cref="T:System.Array" />。</param>
+        <param name="arrayIndex">指定した最初の位置<see cref="T:System.Array" />内容のコピーを受信します。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.ResourceDictionary> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.ICollection.IsSynchronized" />」をご覧ください。</summary>
+        <value>
+          <see langword="true" />場合へのアクセスを<see cref="T:System.Windows.ResourceDictionary" />が同期 (スレッド セーフな) です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.ResourceDictionary> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.ICollection.SyncRoot" />」を参照してください。</summary>
+        <value>アクセスを同期するために使用できるオブジェクト<see cref="T:System.Windows.ResourceDictionary" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.ResourceDictionary> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IEnumerable.GetEnumerator" />」をご覧ください。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.ResourceDictionary> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IUriContext.BaseUri">
+      <MemberSignature Language="C#" Value="Uri System.Windows.Markup.IUriContext.BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri System.Windows.Markup.IUriContext.BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.System#Windows#Markup#IUriContext#BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Windows.Markup.IUriContext.BaseUri" />」を参照してください。</summary>
+        <value>基本[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]現在のコンテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.ResourceDictionary> のインスタンスが <xref:System.Windows.Markup.IUriContext> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterName">
+      <MemberSignature Language="C#" Value="public void UnregisterName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UnregisterName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ResourceDictionary.UnregisterName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">サポートされていません。</param>
+        <summary>このディクショナリの実装ではサポートされていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.ResourceDictionary>クラスは、名前で登録をサポートしていません。 代わりにキーを使用します。 このメソッドを呼び出すと、何も行われません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ResourceDictionary.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに含まれるキーに関連付けられているすべての値のコレクションを取得<see cref="T:System.Windows.ResourceDictionary" />です。</summary>
+        <value>すべての値のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 必要としているために、このプロパティが存在する<xref:System.Collections.IDictionary>、通常はほとんど役に立ちませんが、<xref:System.Windows.ResourceDictionary>シナリオです。  
+  
+ 返された値内の値を含めないでください、<xref:System.Windows.ResourceDictionary.MergedDictionaries%2A>です。 また、コレクションは、基本ディクショナリ内の値のスナップショットです。 変更した場合、その後この<xref:System.Windows.ResourceDictionary>、格納された<xref:System.Windows.ResourceDictionary.Values%2A>変更は反映されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

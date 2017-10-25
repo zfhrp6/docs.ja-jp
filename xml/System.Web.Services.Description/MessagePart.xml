@@ -1,0 +1,187 @@
+<Type Name="MessagePart" FullName="System.Web.Services.Description.MessagePart">
+  <TypeSignature Language="C#" Value="public sealed class MessagePart : System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MessagePart extends System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.MessagePart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.NamedItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtensionPoint("Extensions")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>具体的な抽象情報の各部分についての論理単位に分割することへのメッセージを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.MessagePart>クラスは、対応する、Web サービス記述言語 (WSDL)`part`要素で囲ま、`message`要素で囲まれた順番、`definitions`ルート要素です。 WSDL の詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例での一般的な使用、<xref:System.Web.Services.Description.MessagePart>クラスです。 `element`と`targetNamespace`パラメーターは、このメソッドの呼び出しに渡されるユーザー定義の文字列。  
+  
+ [!code-cpp[DescriptionNamespaceSample1#10](~/samples/snippets/cpp/VS_Snippets_Remoting/DescriptionNamespaceSample1/CPP/descriptionnamespacesample1.cpp#10)]
+ [!code-csharp[DescriptionNamespaceSample1#10](~/samples/snippets/csharp/VS_Snippets_Remoting/DescriptionNamespaceSample1/CS/descriptionnamespacesample1.cs#10)]
+ [!code-vb[DescriptionNamespaceSample1#10](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DescriptionNamespaceSample1/VB/descriptionnamespacesample1.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessagePart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MessagePart.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.MessagePart" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Element">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName Element { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlQualifiedName Element" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MessagePart.Element" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("element")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の対応する XML 要素の名前の設定を取得または<see cref="T:System.Web.Services.Description.MessagePart" />です。</summary>
+        <value>現在の対応する XML 要素の名前<see cref="T:System.Web.Services.Description.MessagePart" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに対応、`element`の属性、`part`要素を<xref:System.Web.Services.Description.MessagePart>クラス ラッパーとして機能します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[DescriptionNamespaceSample1#11](~/samples/snippets/cpp/VS_Snippets_Remoting/DescriptionNamespaceSample1/CPP/descriptionnamespacesample1.cpp#11)]
+ [!code-csharp[DescriptionNamespaceSample1#11](~/samples/snippets/csharp/VS_Snippets_Remoting/DescriptionNamespaceSample1/CS/descriptionnamespacesample1.cs#11)]
+ [!code-vb[DescriptionNamespaceSample1#11](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DescriptionNamespaceSample1/VB/descriptionnamespacesample1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public override System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MessagePart.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> に関連付けられている <see cref="T:System.Web.Services.Description.MessagePart" /> を取得します。</summary>
+        <value>この <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> に関連付けられている <see cref="T:System.Web.Services.Description.MessagePart" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Message Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Message Message" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MessagePart.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Message</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Services.Description.Message" />うち、<see cref="T:System.Web.Services.Description.MessagePart" />メンバーであります。</summary>
+        <value>これのメッセージ、<see cref="T:System.Web.Services.Description.MessagePart" />メンバーであります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.Web.Services.Description.Message>プロパティです。  
+  
+ [!code-cpp[MessagePartCollection#2](~/samples/snippets/cpp/VS_Snippets_Remoting/MessagePartCollection/CPP/messagepartcollection.cpp#2)]
+ [!code-csharp[MessagePartCollection#2](~/samples/snippets/csharp/VS_Snippets_Remoting/MessagePartCollection/CS/messagepartcollection.cs#2)]
+ [!code-vb[MessagePartCollection#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessagePartCollection/VB/messagepartcollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlQualifiedName Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MessagePart.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("type")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の XML データ型、<see cref="T:System.Web.Services.Description.MessagePart" />です。</summary>
+        <value><see cref="T:System.Xml.XmlQualifiedName" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに対応、`type`の属性、`part`要素を<xref:System.Web.Services.Description.MessagePart>クラス ラッパーとして機能します。 一般に、XSD スキーマで定義されているデータ型を示しますが、拡張することも、使用される XML 名前空間がされる Web サービス記述言語 (WSDL) のものと異なる限り。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.Web.Services.Description.MessagePart.Type%2A>プロパティです。  
+  
+ MessagePart_Type #1  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,59 @@
+<Type Name="DataGridViewCellFormattingEventHandler" FullName="System.Windows.Forms.DataGridViewCellFormattingEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataGridViewCellFormattingEventHandler(object sender, DataGridViewCellFormattingEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewCellFormattingEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCellFormattingEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellFormattingEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellFormattingEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.DataGridView.CellFormatting" /> の <see cref="T:System.Windows.Forms.DataGridView" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Windows.Forms.DataGridView.CellFormatting>セル値の表示に適切な形式への変換をカスタマイズする場合、または状態または値に応じてセルの外観をカスタマイズするイベントです。  
+  
+ <xref:System.Windows.Forms.DataGridView.CellFormatting>イベントは、各セルが描画、避ける必要がありますのでこのイベントを処理するときに処理時間がかかるたびに発生します。 このイベントにも発生時にセル<xref:System.Windows.Forms.DataGridViewCell.FormattedValue%2A>を取得またはその<xref:System.Windows.Forms.DataGridViewCell.GetFormattedValue%2A>メソッドが呼び出されます。  
+  
+ 処理するときに、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A?displayProperty=nameWithType>プロパティは、セルの値で初期化します。 セルの値から、表示値へのカスタム変換を指定する場合は、設定、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A?displayProperty=nameWithType>プロパティ セルで指定された型の新しい値があることを確認、変換後の値を<xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A>プロパティです。 さらに値の書式設定が必要ないことを示す、設定、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A?displayProperty=nameWithType>プロパティを`true`です。  
+  
+ イベント ハンドラーの完了時場合、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A?displayProperty=nameWithType>は`null`か、適切な型はありませんまたは<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A?displayProperty=nameWithType>プロパティは`false`、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>を使用して書式設定、 <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A>、 <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>、<xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>と<xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>によって返されるセルのスタイルのプロパティ、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.CellStyle%2A?displayProperty=nameWithType>セルを使用して初期化されるプロパティ<xref:System.Windows.Forms.DataGridViewCell.InheritedStyle%2A>プロパティです。  
+  
+ 値に関係なく、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A?displayProperty=nameWithType>プロパティ、によって返されるオブジェクトの表示プロパティ、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.CellStyle%2A?displayProperty=nameWithType>プロパティは、セルを表示するために使用します。  
+  
+ 詳細については、カスタム書式設定を使用して、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベントを参照してください[する方法: Windows フォーム DataGridView コントロールでデータの書式をカスタマイズする](~/docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)です。  
+  
+ パフォーマンスの低下を避けるためには、このイベントを処理するときに、セルにセルに直接アクセスするのではなく、イベント ハンドラーのパラメーターを使用してアクセスします。  
+  
+ ユーザーが指定した書式設定された値の実際のセル値への変換をカスタマイズするには、処理、<xref:System.Windows.Forms.DataGridView.CellParsing>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Windows.Forms.DataGridViewCellFormattingEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.GridViewUnbound#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GridViewUnbound/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,90 @@
+<Type Name="SqlDataSourceSelectingEventArgs" FullName="System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs">
+  <TypeSignature Language="C#" Value="public class SqlDataSourceSelectingEventArgs : System.Web.UI.WebControls.SqlDataSourceCommandEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlDataSourceSelectingEventArgs extends System.Web.UI.WebControls.SqlDataSourceCommandEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.SqlDataSourceCommandEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.SqlDataSource.Selecting" />のイベント、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理するイベント ハンドラー デリゲートを追加することによって、<xref:System.Web.UI.WebControls.SqlDataSource.Selecting>イベント、必要な追加処理を実行または完全なデータベース クエリをキャンセルできます。 <xref:System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs>から派生したクラスは、<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>取り消すことができます、クラス、保留中<xref:System.Web.UI.WebControls.SqlDataSource>データベース クエリを設定して、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。 チェックおよび操作することができます、 <xref:System.Data.Common.DbCommand.CommandText%2A>、<xref:System.Data.Common.DbCommand.Parameters%2A>コレクション、およびその他のデータベース クエリのプロパティにアクセスしてクエリを実行する前に、<xref:System.Data.Common.DbCommand>オブジェクトによって公開されている、<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs.Command%2A>プロパティです。 調べることも、<xref:System.Web.UI.DataSourceSelectArguments>に渡されるオブジェクト、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドにアクセスして、<xref:System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs.Arguments%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs>クラスが使用されて、<xref:System.Web.UI.WebControls.SqlDataSourceView.OnSelecting%2A>へのアクセスを提供するメソッドを<xref:System.Web.UI.WebControls.SqlDataSource>データベース クエリの実行前にします。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSource>コントロールは、基になるデータ オブジェクト、データの操作の実行中に操作を処理できる多くのイベントを公開します。 次の表は、イベントの一覧し、関連付けられている<xref:System.EventArgs>クラスとイベント ハンドラー デリゲート。  
+  
+|イベント|EventArgs|EventHandler|  
+|-----------|---------------|------------------|  
+|<xref:System.Web.UI.WebControls.SqlDataSource.Selecting>。<br /><br /> データが取得される前に発生します。|<xref:System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs>|<xref:System.Web.UI.WebControls.SqlDataSourceSelectingEventHandler>|  
+|<xref:System.Web.UI.WebControls.SqlDataSource.Inserting>、<xref:System.Web.UI.WebControls.SqlDataSource.Updating>、および <xref:System.Web.UI.WebControls.SqlDataSource.Deleting>。<br /><br /> Insert、update、または削除操作が実行されるまでに発生します。|<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs>|<xref:System.Web.UI.WebControls.SqlDataSourceCommandEventHandler>|  
+|<xref:System.Web.UI.WebControls.SqlDataSource.Selected>、<xref:System.Web.UI.WebControls.SqlDataSource.Inserted>、<xref:System.Web.UI.WebControls.SqlDataSource.Updated>、および <xref:System.Web.UI.WebControls.SqlDataSource.Deleted>。<br /><br /> データの取得、挿入、更新、または削除操作が完了した後に発生します。|<xref:System.Web.UI.WebControls.SqlDataSourceStatusEventArgs>|<xref:System.Web.UI.WebControls.SqlDataSourceStatusEventHandler>|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlDataSourceSelectingEventArgs (System.Data.Common.DbCommand command, System.Web.UI.DataSourceSelectArguments arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Common.DbCommand command, class System.Web.UI.DataSourceSelectArguments arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs.#ctor(System.Data.Common.DbCommand,System.Web.UI.DataSourceSelectArguments)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="command" Type="System.Data.Common.DbCommand" />
+        <Parameter Name="arguments" Type="System.Web.UI.DataSourceSelectArguments" />
+      </Parameters>
+      <Docs>
+        <param name="command"><see cref="T:System.Data.Common.DbCommand" />を表す、キャンセル可能なオブジェクト<see cref="M:System.Web.UI.WebControls.SqlDataSource.Select(System.Web.UI.DataSourceSelectArguments)" />クエリ。</param>
+        <param name="arguments"><see cref="T:System.Web.UI.DataSourceSelectArguments" />オブジェクトに渡される、<see cref="M:System.Web.UI.WebControls.SqlDataSource.Select(System.Web.UI.DataSourceSelectArguments)" />メソッドです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs" />クラスを指定して<see cref="T:System.Data.Common.DbCommand" />オブジェクトとその<see cref="T:System.Web.UI.DataSourceSelectArguments" />に渡される、<see cref="M:System.Web.UI.WebControls.SqlDataSource.Select(System.Web.UI.DataSourceSelectArguments)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `inputParameters`パラメーターは、<xref:System.Collections.IDictionary>のメソッドのシグネチャに一致し、参照によって渡される名前/値ペアのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Arguments">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataSourceSelectArguments Arguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataSourceSelectArguments Arguments" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs.Arguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceSelectArguments</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.DataSourceSelectArguments" />オブジェクトに渡される、<see cref="M:System.Web.UI.WebControls.SqlDataSource.Select(System.Web.UI.DataSourceSelectArguments)" />メソッドです。</summary>
+        <value>A<see cref="T:System.Web.UI.DataSourceSelectArguments" />オブジェクト、または<see langword="null" />いない場合<see cref="T:System.Web.UI.DataSourceSelectArguments" />中にオブジェクトが指定されて<see cref="T:System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs" />作成します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 調べることができます、<xref:System.Web.UI.DataSourceSelectArguments>並べ替え、ページング、かどうかを判断するオブジェクトまたはデータ取得操作の一部として要求された行の数。  
+  
+ データ バインド コントロールを使用して、<xref:System.Web.UI.DataSourceSelectArguments>を要求できるクラス、<xref:System.Web.UI.WebControls.SqlDataSource>データの並べ替えやデータの特定のサブセットを返すなどの結果セットに追加のデータに関連する操作を実行します。 これらのデータに関連する操作は列挙、<xref:System.Web.UI.DataSourceCapabilities>列挙します。 詳細については、「<xref:System.Web.UI.DataSourceSelectArguments>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

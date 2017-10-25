@@ -1,0 +1,145 @@
+<Type Name="PrimaryInteropAssemblyAttribute" FullName="System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class PrimaryInteropAssemblyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PrimaryInteropAssemblyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>属性付きのアセンブリがプライマリ相互運用機能アセンブリであることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性をアセンブリに適用することができます、 [Tlbimp.exe (タイプ ライブラリ インポーター)](~/docs/framework/tools/tlbimp-exe-type-library-importer.md)通常適用するタイプ ライブラリをインポートするとき。  
+  
+ 相互運用機能アセンブリには、既に多くの場合、COM タイプ ライブラリで説明される既存の COM 型を記述するメタデータが含まれています。 Tlbimp.exe は、COM タイプ ライブラリから相互運用機能アセンブリを生成します。 相互運用機能アセンブリ通常のみを含めるメタデータ コードではなく)。 プライマリ相互運用機能アセンブリは、記述、およびそのタイプ ライブラリで定義されている種類の正式な定義を提供するタイプ ライブラリと同じ発行元によって提供されます。 プライマリ相互運用機能アセンブリは、一意性を保証する、発行元によって必ず署名されます。  
+  
+ 次のように、タイプ ライブラリからプライマリ相互運用機能アセンブリを生成できます。  
+  
+-   TlbImp.exe での実行、`/primary`コマンド ライン オプションです。  
+  
+-   適用、<xref:System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute>デザイン時にします。  
+  
+ マネージ ソース コードにプライマリ相互運用機能アセンブリの指定に適用する必要があります、<xref:System.Runtime.InteropServices.GuidAttribute?displayProperty=nameWithType>と<xref:System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute>デザイン時にアセンブリにします。 <xref:System.Runtime.InteropServices.GuidAttribute>プライマリ相互運用機能アセンブリのタイプ ライブラリの LIBID を識別し、<xref:System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute>このアセンブリのプライマリ相互運用機能アセンブリの特定のタイプ ライブラリのバージョンを識別します。 <xref:System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute>アセンブリが複数のバージョン、同じタイプ ライブラリのプライマリ相互運用機能アセンブリの場合、複数回使用できます。  
+  
+ タイプ ライブラリで定義された型を使用する場合は、常に、そのタイプ ライブラリではなく再インポートまたは再定義して型自体のプライマリ相互運用機能アセンブリを参照します。 ガイドラインと手順を生成するかプライマリ相互運用機能アセンブリを使用する方法について、次を参照してください。[プライマリ相互運用機能アセンブリ](http://msdn.microsoft.com/en-us/b977a8be-59a0-40a0-a806-b11ffba5c080)です。 プロセスをインポートするタイプ ライブラリの詳細については、次を参照してください。[タイプ ライブラリからアセンブリ変換の要約](http://msdn.microsoft.com/en-us/bf3f90c5-4770-4ab8-895c-3ba1055cc958)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrimaryInteropAssemblyAttribute (int major, int minor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 major, int32 minor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="major" Type="System.Int32" />
+        <Parameter Name="minor" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="major">このアセンブリのプライマリ相互運用機能アセンブリのタイプ ライブラリのメジャー バージョン。</param>
+        <param name="minor">このアセンブリのプライマリ相互運用機能アセンブリのタイプ ライブラリのマイナー バージョン。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute" />このアセンブリのプライマリ相互運用機能アセンブリのタイプ ライブラリのメジャーおよびマイナー バージョン番号を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute>アセンブリが複数のバージョン、同じタイプ ライブラリのプライマリ相互運用機能アセンブリの場合、複数回使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorVersion">
+      <MemberSignature Language="C#" Value="public int MajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MajorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute.MajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアセンブリのプライマリ相互運用機能アセンブリのタイプ ライブラリのメジャー バージョン番号を取得します。</summary>
+        <value>このアセンブリのプライマリ相互運用機能アセンブリのタイプ ライブラリのメジャー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorVersion">
+      <MemberSignature Language="C#" Value="public int MinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute.MinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアセンブリのプライマリ相互運用機能アセンブリのタイプ ライブラリのマイナー バージョン番号を取得します。</summary>
+        <value>このアセンブリのプライマリ相互運用機能アセンブリのタイプ ライブラリのマイナー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

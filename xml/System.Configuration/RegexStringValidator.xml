@@ -1,0 +1,148 @@
+<Type Name="RegexStringValidator" FullName="System.Configuration.RegexStringValidator">
+  <TypeSignature Language="C#" Value="public class RegexStringValidator : System.Configuration.ConfigurationValidatorBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RegexStringValidator extends System.Configuration.ConfigurationValidatorBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.RegexStringValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationValidatorBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>正規表現によって提供される規則に基づいて、文字列の検証を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.RegexStringValidator>オブジェクトには、正規表現に基づく文字列オブジェクトを検証するために必要なルールが含まれています。 インスタンスに、規則が確立される、<xref:System.Configuration.RegexStringValidator>クラスを作成します。  
+  
+ <xref:System.Configuration.RegexStringValidator.CanValidate%2A>メソッドでは、オブジェクトの種類の検証中に、予期された型が一致するかどうかを判断します。 検証されるオブジェクトのパラメーターとして渡されます、<xref:System.Configuration.RegexStringValidator.Validate%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.RegexStringValidator>型です。  
+  
+ [!code-csharp[System.Configuration.RegexStringValidator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.RegexStringValidator/CS/RegexStringValidator.cs#1)]
+ [!code-vb[System.Configuration.RegexStringValidator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.RegexStringValidator/VB/RegexStringValidator.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegexStringValidator (string regex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string regex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RegexStringValidator.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="regex" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="regex">正規表現を指定する文字列。</param>
+        <summary><see cref="T:System.Configuration.RegexStringValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="regex" />null または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidate">
+      <MemberSignature Language="C#" Value="public override bool CanValidate (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanValidate(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RegexStringValidator.CanValidate(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型。</param>
+        <summary>オブジェクトの型を検証できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="type" />文字列に一致するパラメーターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証に失敗した場合、例外がスローされます。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.RegexStringValidator.CanValidate%2A> メソッドの使用方法を次の例に示します。 このコード例は提供されている長い例の一部である、<xref:System.Configuration.RegexStringValidator>クラスです。  
+  
+ [!code-csharp[System.Configuration.RegexStringValidator#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.RegexStringValidator/CS/RegexStringValidator.cs#3)]
+ [!code-vb[System.Configuration.RegexStringValidator#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.RegexStringValidator/VB/RegexStringValidator.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public override void Validate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Validate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RegexStringValidator.Validate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">オブジェクトの値。</param>
+        <summary>オブジェクトの値が有効かどうかを判断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Configuration.RegexStringValidator>オブジェクトには、正規表現に基づく文字列オブジェクトを検証するために必要なルールが含まれています。 インスタンスに、規則が確立される、<xref:System.Configuration.RegexStringValidator>クラスを作成します。 検証対象の文字列オブジェクトがのパラメーターとして渡される、<xref:System.Configuration.RegexStringValidator.Validate%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.RegexStringValidator.Validate%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.RegexStringValidator>クラスです。  
+  
+ [!code-csharp[System.Configuration.RegexStringValidator#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.RegexStringValidator/CS/RegexStringValidator.cs#4)]
+ [!code-vb[System.Configuration.RegexStringValidator#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.RegexStringValidator/VB/RegexStringValidator.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />パラメーターに準拠していない、<see cref="T:System.Text.RegularExpressions.Regex" />クラスです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

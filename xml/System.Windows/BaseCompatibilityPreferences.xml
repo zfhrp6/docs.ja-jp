@@ -1,0 +1,96 @@
+<Type Name="BaseCompatibilityPreferences" FullName="System.Windows.BaseCompatibilityPreferences">
+  <TypeSignature Language="C#" Value="public static class BaseCompatibilityPreferences" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed BaseCompatibilityPreferences extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.BaseCompatibilityPreferences" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WindowsBase アセンブリに含まれる新しい WPF 機能に関連して、アプリケーションの動作方法を指定するプロパティが含まれています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FlowDispatcherSynchronizationContextPriority">
+      <MemberSignature Language="C#" Value="public static bool FlowDispatcherSynchronizationContextPriority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool FlowDispatcherSynchronizationContextPriority" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.BaseCompatibilityPreferences.FlowDispatcherSynchronizationContextPriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかについては、<see cref="P:System.Windows.Threading.DispatcherOperation.Priority" />に保存される、<see cref="T:System.Windows.Threading.DispatcherSynchronizationContext" />です。</summary>
+        <value>
+          <see langword="true" />場合については、<see cref="P:System.Windows.Threading.DispatcherOperation.Priority" />に保存される、 <see cref="T:System.Windows.Threading.DispatcherSynchronizationContext" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値には、WPF のバージョンが依存していること、アプリケーションが対象です。  アプリケーションが対象 WPF 4.0 または既定値は、以前に場合`false`です。  アプリでは、WPF 4.5 をターゲットとする場合、既定は`true`します。  WPF の動作を変更するこのプロパティを使用する場合は、アプリケーションから継承するクラスのコンス トラクターでこのようなアプリの有効期間の初期段階で、プロパティの値を変更する必要があります。  値が読み取られた後にもう一度変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InlineDispatcherSynchronizationContextSend">
+      <MemberSignature Language="C#" Value="public static bool InlineDispatcherSynchronizationContextSend { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool InlineDispatcherSynchronizationContextSend" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.BaseCompatibilityPreferences.InlineDispatcherSynchronizationContextSend" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="M:System.Windows.Threading.DispatcherSynchronizationContext.Send(System.Threading.SendOrPostCallback,System.Object)" />メソッドは、ディスパッチャー キューに、デリゲートを格納またはデリゲートが直接呼び出されるかどうか。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="M:System.Windows.Threading.DispatcherSynchronizationContext.Send(System.Threading.SendOrPostCallback,System.Object)" />メソッドは、ディスパッチャー キューに、デリゲートを格納またはデリゲートが直接呼び出される、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値には、WPF のバージョンが依存していること、アプリケーションが対象です。  アプリケーションが対象 WPF 4.0 または既定値は、以前に場合`false`です。  アプリでは、WPF 4.5 をターゲットとする場合、既定は`true`します。  WPF の動作を変更するこのプロパティを使用する場合は、アプリケーションから継承するクラスのコンス トラクターでこのようなアプリの有効期間の初期段階で、プロパティの値を変更する必要があります。  値が読み取られた後にもう一度変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReuseDispatcherSynchronizationContextInstance">
+      <MemberSignature Language="C#" Value="public static bool ReuseDispatcherSynchronizationContextInstance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool ReuseDispatcherSynchronizationContextInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.BaseCompatibilityPreferences.ReuseDispatcherSynchronizationContextInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値、1 つかどうか<see cref="T:System.Windows.Threading.DispatcherSynchronizationContext" />は複数のディスパッチャー操作に使用します。</summary>
+        <value>true の場合は、1 つ<see cref="T:System.Windows.Threading.DispatcherSynchronizationContext" />が複数のディスパッチャー操作に使用されます。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値には、WPF のバージョンが依存していること、アプリケーションが対象です。  アプリケーションが対象 WPF 4.0 または既定値は、以前に場合`true`です。  アプリでは、WPF 4.5 をターゲットとする場合、既定は`false`します。  WPF の動作を変更するこのプロパティを使用する場合は、アプリケーションから継承するクラスのコンス トラクターでこのようなアプリの有効期間の初期段階で、プロパティの値を変更する必要があります。  値が読み取られた後にもう一度変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

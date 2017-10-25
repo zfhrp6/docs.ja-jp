@@ -1,0 +1,134 @@
+<Type Name="AdamInstanceCollection" FullName="System.DirectoryServices.ActiveDirectory.AdamInstanceCollection">
+  <TypeSignature Language="C#" Value="public class AdamInstanceCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AdamInstanceCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.AdamInstanceCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstanceCollection" /> クラスは、<see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" /> オブジェクトを格納する読み取り専用のコレクションです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.DirectoryServices.ActiveDirectory.AdamInstanceCollection>クラス参照を Active Directory アプリケーション モード (ADAM) を Active Directory ライトウェイト ディレクトリ サービス (AD LDS) に変更されています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.DirectoryServices.ActiveDirectory.AdamInstance adamInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.DirectoryServices.ActiveDirectory.AdamInstance adamInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.AdamInstanceCollection.Contains(System.DirectoryServices.ActiveDirectory.AdamInstance)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="adamInstance" Type="System.DirectoryServices.ActiveDirectory.AdamInstance" />
+      </Parameters>
+      <Docs>
+        <param name="adamInstance">このコレクション内で検索する <see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" /> オブジェクトがこのコレクション内にあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" /> ; このコレクション内のオブジェクトがそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="adamInstance" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.DirectoryServices.ActiveDirectory.AdamInstance[] adamInstances, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.DirectoryServices.ActiveDirectory.AdamInstance[] adamInstances, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.AdamInstanceCollection.CopyTo(System.DirectoryServices.ActiveDirectory.AdamInstance[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="adamInstances" Type="System.DirectoryServices.ActiveDirectory.AdamInstance[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="adamInstances">このコレクションの要素を受け取る <see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" /> オブジェクトの配列。</param>
+        <param name="index">内の 0 から始まるインデックス<c>adamInstances</c>このメソッドがこのコレクションのコピーを開始します。</param>
+        <summary>このコレクション内のすべての <see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" /> オブジェクトを、特定の配列にコピーします。コピー先の配列の指定したインデックスからコピーが開始されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">コピー先の配列の大きさが十分でないため、必要な数の要素を保持できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="adamInstances" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した <paramref name="index" /> はコピー先の配列の範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.DirectoryServices.ActiveDirectory.AdamInstance adamInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.DirectoryServices.ActiveDirectory.AdamInstance adamInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.AdamInstanceCollection.IndexOf(System.DirectoryServices.ActiveDirectory.AdamInstance)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="adamInstance" Type="System.DirectoryServices.ActiveDirectory.AdamInstance" />
+      </Parameters>
+      <Docs>
+        <param name="adamInstance">このコレクション内で検索する <see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" /> オブジェクトがこのコレクション内で最初に見つかった位置のインデックスを返します。</summary>
+        <returns>最初に一致するオブジェクトの 0 から始まるインデックス。 このコレクションに <see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" /> オブジェクトと同じメンバーが存在しない場合は、-1 を返します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="adamInstance" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AdamInstance this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.AdamInstance Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.AdamInstanceCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AdamInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する <see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" /> オブジェクトの 0 から始まるインデックス。</param>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />このコレクション内のオブジェクト。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />指定したインデックス位置に存在するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />が指定されたコレクションの範囲外です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,297 @@
+<Type Name="SessionSecurityTokenCacheKey" FullName="System.IdentityModel.Tokens.SessionSecurityTokenCacheKey">
+  <TypeSignature Language="C#" Value="public class SessionSecurityTokenCacheKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SessionSecurityTokenCacheKey extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内のエントリのキーを表す、<see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenCache" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュする場合、<xref:System.IdentityModel.Tokens.SessionSecurityToken>のために必要な 2 つのインデックスが存在します。 によって表されるコンテキスト ID を 1 つは、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A?displayProperty=nameWithType>プロパティはすべてのセッション トークン全体で一意です。 によって表されるキーの生成、もう 1 つは、<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A?displayProperty=nameWithType>プロパティで、セッションのトークン内で一意です。 セッション トークンが発行されるときにのみコンテキスト id。 セッション トークンを更新すると、キーの生成が追加されます。 更新後、更新されたセッション トークンはコンテキスト ID とキーの生成を使用して一意に識別します。  
+  
+ 型のオブジェクト<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey>セッション トークンのキャッシュへのインデックスとして使用されます。 インデックスが有効なが常に<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ContextId%2A>、指定されたプロパティが、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration%2A>プロパティがあります`null`トークンが更新されているかどうかに応じて、します。 省略可能な<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.EndpointId%2A>トークンのスコープをエンドポイントを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityTokenCacheKey (string endpointId, System.Xml.UniqueId contextId, System.Xml.UniqueId keyGeneration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string endpointId, class System.Xml.UniqueId contextId, class System.Xml.UniqueId keyGeneration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.#ctor(System.String,System.Xml.UniqueId,System.Xml.UniqueId)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpointId" Type="System.String" />
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="keyGeneration" Type="System.Xml.UniqueId" />
+      </Parameters>
+      <Docs>
+        <param name="endpointId">キャッシュ エントリのスコープをエンドポイント ID。 これは、値にする必要があります、<see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId" />キャッシュされたトークンのプロパティです。</param>
+        <param name="contextId">キャッシュ エントリのコンテキスト ID です。 これは、値にする必要があります、<see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.ContextId" />キャッシュされたトークンのプロパティです。</param>
+        <param name="keyGeneration">キャッシュ エントリのキーの生成。 これは、値にする必要があります、<see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration" />キャッシュされたトークンのプロパティです。 この値は、トークンの更新時に使用します。 なります<see langword="null" />新しいトークンをキャッシュする場合。</param>
+        <summary><see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextId">
+      <MemberSignature Language="C#" Value="public System.Xml.UniqueId ContextId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.UniqueId ContextId" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ContextId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.UniqueId</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ キーのコンテキスト ID を取得します。</summary>
+        <value>キャッシュ キーのコンテキスト ID です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これに対応して、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A>キャッシュされたトークンのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointId">
+      <MemberSignature Language="C#" Value="public string EndpointId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EndpointId" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.EndpointId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このキャッシュ エントリのスコープをエンドポイント ID を取得します。</summary>
+        <value>このキャッシュ エントリのスコープをエンドポイント ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これに対応して、<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>キャッシュされたトークンのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のキャッシュ キーと比較するオブジェクト。 割り当て可能にする必要があります<see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey" />です。</param>
+        <summary>指定したオブジェクトが現在のキャッシュ キーと同じかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトが、現在のキャッシュ キーと同じ場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration%2A>は`true`、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration%2A>プロパティは、比較では使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のキャッシュ キーのハッシュ コードを返します。</summary>
+        <returns>現在のキャッシュ キーのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration%2A>は`true`、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration%2A>プロパティは、ハッシュ コードを生成するのには使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreKeyGeneration">
+      <MemberSignature Language="C#" Value="public bool IgnoreKeyGeneration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreKeyGeneration" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインデックスの比較を行うときに、キーの生成を無視することができるかどうか示す値を設定します。</summary>
+        <value>
+          <see langword="true" />キーの生成を無視するにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに影響する方法、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration%2A>プロパティは、次のメソッドと演算子によって処理: <xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equals%2A>、 <xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.GetHashCode%2A>、 <xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Equality%2A>、 <xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Inequality%2A>、および<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ToString%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyGeneration">
+      <MemberSignature Language="C#" Value="public System.Xml.UniqueId KeyGeneration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.UniqueId KeyGeneration" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.UniqueId</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ キーのキーの生成を取得します。</summary>
+        <value>キャッシュ キーのキーの生成</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これに対応して、<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A>キャッシュされたトークンのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.IdentityModel.Tokens.SessionSecurityTokenCacheKey first, System.IdentityModel.Tokens.SessionSecurityTokenCacheKey second);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.IdentityModel.Tokens.SessionSecurityTokenCacheKey first, class System.IdentityModel.Tokens.SessionSecurityTokenCacheKey second) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Equality(System.IdentityModel.Tokens.SessionSecurityTokenCacheKey,System.IdentityModel.Tokens.SessionSecurityTokenCacheKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="first" Type="System.IdentityModel.Tokens.SessionSecurityTokenCacheKey" />
+        <Parameter Name="second" Type="System.IdentityModel.Tokens.SessionSecurityTokenCacheKey" />
+      </Parameters>
+      <Docs>
+        <param name="first">比較する最初のキャッシュ キー。</param>
+        <param name="second">比較する 2 番目のキャッシュ キー。</param>
+        <summary>等値演算子を実装、<see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey" />クラスです。</summary>
+        <returns>
+          <see langword="true" />キャッシュ キーが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration%2A>は`true`、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration%2A>プロパティは、比較では使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.IdentityModel.Tokens.SessionSecurityTokenCacheKey first, System.IdentityModel.Tokens.SessionSecurityTokenCacheKey second);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.IdentityModel.Tokens.SessionSecurityTokenCacheKey first, class System.IdentityModel.Tokens.SessionSecurityTokenCacheKey second) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Inequality(System.IdentityModel.Tokens.SessionSecurityTokenCacheKey,System.IdentityModel.Tokens.SessionSecurityTokenCacheKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="first" Type="System.IdentityModel.Tokens.SessionSecurityTokenCacheKey" />
+        <Parameter Name="second" Type="System.IdentityModel.Tokens.SessionSecurityTokenCacheKey" />
+      </Parameters>
+      <Docs>
+        <param name="first">比較する最初のキャッシュ キー。</param>
+        <param name="second">比較する 2 番目のキャッシュ キー。</param>
+        <summary>等値演算子を実装、<see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey" />クラスです。</summary>
+        <returns>
+          <see langword="true" />キャッシュ キーが等しくない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration%2A>は`true`、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration%2A>プロパティは、比較では使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オーバーライド<see cref="M:System.Object.ToString" />一意識別子を提供します。</summary>
+        <returns>文字列形式のキーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration%2A>は`true`、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration%2A>プロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

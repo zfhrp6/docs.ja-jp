@@ -1,0 +1,264 @@
+<Type Name="BufferedGraphicsContext" FullName="System.Drawing.BufferedGraphicsContext">
+  <TypeSignature Language="C#" Value="public sealed class BufferedGraphicsContext : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BufferedGraphicsContext extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.BufferedGraphicsContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ダブル バッファリングに使用できるグラフィックス バッファーを作成するためのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.BufferedGraphicsContext>クラスでは、グラフィックスのカスタムのダブル バッファリングを実装することができます。 ダブル バッファリングを使用するグラフィックスを軽減または、画面の表面を再描画が原因で発生するちらつきを除去します。  
+  
+> [!NOTE]
+>  ダブル バッファリングを使用する最も簡単な方法が設定するには、<xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer>を使用してコントロールのスタイル フラグを制御、<xref:System.Windows.Forms.Control.SetStyle%2A>メソッドです。 設定、<xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer>コントロールのコントロールのスタイル フラグが追加のコードを必要とせず、既定のグラフィックス バッファーを使用してコントロールのすべての描画をリダイレクトします。 このフラグに設定されている`true`既定です。  
+  
+ <xref:System.Drawing.BufferedGraphicsContext>クラスを作成およびグラフィックス バッファーを構成するためのメソッドを提供します。 <xref:System.Drawing.BufferedGraphicsContext.Allocate%2A>メソッドを作成、 <xref:System.Drawing.BufferedGraphics>、これはまた、バッファーに書き込むし、出力デバイスにコンテンツのレンダリングに使用できる方法を提供するグラフィックス バッファーのラッパー。  
+  
+ 取得することができます、<xref:System.Drawing.BufferedGraphicsContext>静的から現在のアプリケーション ドメインに対する<xref:System.Drawing.BufferedGraphicsManager.Current%2A?displayProperty=nameWithType>プロパティです。 アニメーションなどの画像を多用するアプリケーションは、作成、専用<xref:System.Drawing.BufferedGraphicsContext>、コンス トラクターを使用して、ほとんどのアプリケーションが、<xref:System.Drawing.BufferedGraphicsManager.Current%2A?displayProperty=nameWithType>プロパティでは十分です。  
+  
+ バッファリングされたグラフィックスとバッファー処理のカスタム実装の描画の詳細については、次を参照してください。[ダブル バッファリングされたグラフィックス](~/docs/framework/winforms/advanced/double-buffered-graphics.md)と[する方法: バッファリングされたグラフィックス管理手動で](~/docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、取得、<xref:System.Drawing.BufferedGraphicsContext>の現在のアプリケーション ドメイン。 このコードに示されている例の一部である、<xref:System.Drawing.BufferedGraphics>クラスです。  
+  
+ [!code-cpp[BufferingExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/BufferingExamples/CPP/bufferingexamples.cpp#1)]
+ [!code-csharp[BufferingExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/BufferingExamples/CS/bufferingexamples.cs#1)]
+ [!code-vb[BufferingExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BufferingExamples/VB/bufferingexamples.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BufferedGraphicsContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphicsContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.BufferedGraphicsContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションなどの画像を多用するアプリケーションは、場合によってパフォーマンスを向上できる専用を使用して<xref:System.Drawing.BufferedGraphicsContext>によって提供される既定のインスタンスではなく、<xref:System.Drawing.BufferedGraphicsManager>です。 これにより、作成およびグラフィックス バッファーを個別に管理することができます。  
+  
+> [!NOTE]
+>  常に呼び出す必要があります<xref:System.Drawing.BufferedGraphicsContext.Dispose%2A>専用の使用が終了するときに<xref:System.Drawing.BufferedGraphicsContext>です。  
+  
+ 専用のグラフィックス バッファーの詳細については、次を参照してください。[する方法: バッファリングされたグラフィックス管理手動で](~/docs/framework/winforms/advanced/how-to-manually-manage-buffered-graphics.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Allocate">
+      <MemberSignature Language="C#" Value="public System.Drawing.BufferedGraphics Allocate (System.Drawing.Graphics targetGraphics, System.Drawing.Rectangle targetRectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.BufferedGraphics Allocate(class System.Drawing.Graphics targetGraphics, valuetype System.Drawing.Rectangle targetRectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphicsContext.Allocate(System.Drawing.Graphics,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.BufferedGraphics</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetGraphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="targetRectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="targetGraphics"><see cref="T:System.Drawing.Graphics" />に新しいバッファーのピクセル形式に一致するようにします。</param>
+        <param name="targetRectangle">A<see cref="T:System.Drawing.Rectangle" />を作成するバッファーのサイズを示すです。</param>
+        <summary>指定したピクセル形式を使用して、指定されたサイズのグラフィックス バッファーを作成<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>A<see cref="T:System.Drawing.BufferedGraphics" />を使用して指定された大きさのバッファーを描画することです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと、<xref:System.Drawing.BufferedGraphicsContext.Allocate%2A>メソッドに値を超えるサイズの四角形の<xref:System.Drawing.BufferedGraphicsContext.MaximumBuffer%2A>プロパティ、一時的な<xref:System.Drawing.BufferedGraphicsContext>バッファーを割り当てるし、バッファーの一時的なコンテキストを指定するために作成します。 新しい<xref:System.Drawing.BufferedGraphicsContext>とは異なります、<xref:System.Drawing.BufferedGraphicsContext>アプリケーションのドメインが破棄されて自動的にとき、<xref:System.Drawing.BufferedGraphics>によって返される、<xref:System.Drawing.BufferedGraphicsContext.Allocate%2A>メソッドが破棄されます。  
+  
+   
+  
+## Examples  
+ グラフィックス バッファーを使用して、作成するコード例を次に示します、<xref:System.Drawing.BufferedGraphicsContext.Allocate%2A>メソッドです。 このコードに示されている例の一部である、<xref:System.Drawing.BufferedGraphics>クラスです。  
+  
+ [!code-cpp[BufferingExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/BufferingExamples/CPP/bufferingexamples.cpp#3)]
+ [!code-csharp[BufferingExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/BufferingExamples/CS/bufferingexamples.cs#3)]
+ [!code-vb[BufferingExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BufferingExamples/VB/bufferingexamples.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Allocate">
+      <MemberSignature Language="C#" Value="public System.Drawing.BufferedGraphics Allocate (IntPtr targetDC, System.Drawing.Rectangle targetRectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.BufferedGraphics Allocate(native int targetDC, valuetype System.Drawing.Rectangle targetRectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphicsContext.Allocate(System.IntPtr,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.BufferedGraphics</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetDC" Type="System.IntPtr" />
+        <Parameter Name="targetRectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="targetDC"><see cref="T:System.IntPtr" />に新しいバッファーのピクセル形式に一致するデバイス コンテキストにします。</param>
+        <param name="targetRectangle">A<see cref="T:System.Drawing.Rectangle" />を作成するバッファーのサイズを示すです。</param>
+        <summary>指定したピクセル形式を使用して、指定されたサイズのグラフィックス バッファーを作成<see cref="T:System.Drawing.Graphics" />です。</summary>
+        <returns>A<see cref="T:System.Drawing.BufferedGraphics" />を使用して指定された大きさのバッファーを描画することです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと、<xref:System.Drawing.BufferedGraphicsContext.Allocate%2A>メソッドに値を超えるサイズの四角形の<xref:System.Drawing.BufferedGraphicsContext.MaximumBuffer%2A>プロパティ、一時的な<xref:System.Drawing.BufferedGraphicsContext>バッファーを割り当てるし、バッファーの一時的なコンテキストを指定するために作成します。 新しい<xref:System.Drawing.BufferedGraphicsContext>とは異なります、<xref:System.Drawing.BufferedGraphicsContext>アプリケーションのドメインが破棄されて自動的にとき、<xref:System.Drawing.BufferedGraphics>によって返される、<xref:System.Drawing.BufferedGraphicsContext.Allocate%2A>メソッドが破棄されます。  
+  
+   
+  
+## Examples  
+ グラフィックス バッファーを使用して、作成するコード例を次に示します、<xref:System.Drawing.BufferedGraphicsContext.Allocate%2A>メソッドです。 このコードに示されている例の一部である、<xref:System.Drawing.BufferedGraphics>クラスです。  
+  
+ [!code-cpp[BufferingExamples#4](~/samples/snippets/cpp/VS_Snippets_Winforms/BufferingExamples/CPP/bufferingexamples.cpp#4)]
+ [!code-csharp[BufferingExamples#4](~/samples/snippets/csharp/VS_Snippets_Winforms/BufferingExamples/CS/bufferingexamples.cs#4)]
+ [!code-vb[BufferingExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BufferingExamples/VB/bufferingexamples.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphicsContext.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Drawing.BufferedGraphicsContext" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.BufferedGraphicsContext.Dispose%2A> を使い終わったら <xref:System.Drawing.BufferedGraphicsContext> を呼び出します。 <xref:System.Drawing.BufferedGraphicsContext.Dispose%2A> メソッドによって、<xref:System.Drawing.BufferedGraphicsContext> は使用不可の状態になります。 呼び出した後<xref:System.Drawing.BufferedGraphicsContext.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Drawing.BufferedGraphicsContext>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Drawing.BufferedGraphicsContext>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.BufferedGraphicsContext.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Drawing.BufferedGraphicsContext> を呼び出してください。 それ以外の場合、使用されているリソースは解放されませんガベージ コレクター呼び出すまで、<xref:System.Object.Finalize%2A>のメソッド、<xref:System.Drawing.BufferedGraphicsContext>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~BufferedGraphicsContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphicsContext.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invalidate">
+      <MemberSignature Language="C#" Value="public void Invalidate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invalidate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphicsContext.Invalidate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バッファーが割り当てられていて、まだ破棄されていない場合は、現在のグラフィックス バッファーを破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフィックス バッファーが使用中にある場合は、マークされます廃棄されるとすぐに、無料です。それ以外の場合、インスタンスは破棄されますすぐにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumBuffer">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size MaximumBuffer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size MaximumBuffer" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.BufferedGraphicsContext.MaximumBuffer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用するバッファーの最大サイズを取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Size" />バッファーの大きさの最大サイズを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得またはメモリに保持するバッファーの最大サイズを設定できます。 ただしより大きいサイズのバッファーのいずれかの任意のサイズのバッファーを割り当てることができます、<xref:System.Drawing.BufferedGraphicsContext.MaximumBuffer%2A>サイズになります一時的に使用され、破棄時に、<xref:System.Drawing.BufferedGraphics>オブジェクトを解放します。  
+  
+   
+  
+## Examples  
+ 次の例でのバッファーの最大サイズを設定、<xref:System.Drawing.BufferedGraphicsContext>です。 このコードに示されている例の一部である、<xref:System.Drawing.BufferedGraphics>クラスです。  
+  
+ [!code-cpp[BufferingExamples#2](~/samples/snippets/cpp/VS_Snippets_Winforms/BufferingExamples/CPP/bufferingexamples.cpp#2)]
+ [!code-csharp[BufferingExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/BufferingExamples/CS/bufferingexamples.cs#2)]
+ [!code-vb[BufferingExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BufferingExamples/VB/bufferingexamples.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">サイズの幅、高さは 0 に等しいまたはそれよりも小さいです。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">すべての windows へのユーザー アクセスを許可します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

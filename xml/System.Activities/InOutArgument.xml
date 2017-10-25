@@ -1,0 +1,43 @@
+<Type Name="InOutArgument" FullName="System.Activities.InOutArgument">
+  <TypeSignature Language="C#" Value="public abstract class InOutArgument : System.Activities.Argument" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit InOutArgument extends System.Activities.Argument" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.InOutArgument" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.Argument</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>バインディング ターミナルを表す抽象基本クラス。このバインディング ターミナルは、アクティビティとの間でデータが出入りするフローをサポートします。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateReference">
+      <MemberSignature Language="C#" Value="public static System.Activities.InOutArgument CreateReference (System.Activities.InOutArgument argumentToReference, string referencedArgumentName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.InOutArgument CreateReference(class System.Activities.InOutArgument argumentToReference, string referencedArgumentName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.InOutArgument.CreateReference(System.Activities.InOutArgument,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.InOutArgument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argumentToReference" Type="System.Activities.InOutArgument" />
+        <Parameter Name="referencedArgumentName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="argumentToReference">ターゲット<see langword="in/out" />参照に渡す引数。</param>
+        <param name="referencedArgumentName">参照対象引数の名前。</param>
+        <summary>指定された参照対象引数名を使用して、指定された対象 <see cref="T:System.Activities.InOutArgument" /> を参照する新しい <see cref="T:System.Activities.InOutArgument" /> を作成します。</summary>
+        <returns>新しい<see langword="in/out" />、指定したターゲットを参照する引数<see cref="T:System.Activities.InOutArgument" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

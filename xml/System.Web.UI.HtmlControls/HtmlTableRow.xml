@@ -1,0 +1,557 @@
+<Type Name="HtmlTableRow" FullName="System.Web.UI.HtmlControls.HtmlTableRow">
+  <TypeSignature Language="C#" Value="public class HtmlTableRow : System.Web.UI.HtmlControls.HtmlContainerControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlTableRow extends System.Web.UI.HtmlControls.HtmlContainerControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlTableRow" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HtmlControls.HtmlContainerControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true, "Cells")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.HtmlControls.HtmlTable" /> コントロール内の <see langword="&lt;tr&gt;" /> HTML 要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<tr>`要素は、テーブルの行を表します。 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRow>をプログラムから制御クラス、`<tr>`で HTML 要素、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlTableRow>クラスでは、行の背景色、罫線の色、およびセルの高さを指定することによって、テーブルの行の外観をカスタマイズすることができます。 使用してこれらの属性が設定された、 <xref:System.Web.UI.HtmlControls.HtmlTableRow.BgColor%2A>、 <xref:System.Web.UI.HtmlControls.HtmlTableRow.BorderColor%2A>、および<xref:System.Web.UI.HtmlControls.HtmlTableRow.Height%2A>プロパティです。  
+  
+ 使用して行全体に対する、セルの内容の配置を制御することができます、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Align%2A>と<xref:System.Web.UI.HtmlControls.HtmlTableRow.VAlign%2A>プロパティです。 <xref:System.Web.UI.HtmlControls.HtmlTableRow.Align%2A>プロパティは、セルの内容の水平方向の配置を制御中に、<xref:System.Web.UI.HtmlControls.HtmlTableRow.VAlign%2A>プロパティは縦方向の配置を制御します。  
+  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Cells%2A>コレクションのこのクラスは、テーブルの行の個々 のセル プログラムでアクセスできます。 これにより、コンテンツと同様に、各セルのプロパティを制御できます。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.HtmlControls.HtmlTableRow>を参照してください、<xref:System.Web.UI.HtmlControls.HtmlTableRow.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRow>インスタンス内の行を表す、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。 <xref:System.Web.UI.HtmlControls.HtmlTableRow>から取得した、<xref:System.Web.UI.HtmlControls.HtmlTable.Rows%2A>テーブルとその内容のコレクションを変更します。  
+  
+ [!code-aspx-csharp[HtmlTableRow#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRow/CS/htmltablerowcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRow#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRow/VB/htmltablerowvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlTableRow ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRow.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlTableRow>クラスです。 このコンス トラクターを使用して作成する、<xref:System.Web.UI.HtmlControls.HtmlTableRow>を表すオブジェクト、`<tr>`テーブルの行の要素。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlTableRow>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>|"Tr"リテラル文字列です。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlTable>で制御<xref:System.Web.UI.HtmlControls.HtmlTableRow>を制御し、Web ページで、テーブルに配置します。  
+  
+ [!code-aspx-csharp[HtmlTableCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableCtor/CS/htmltablectorcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableCtor/VB/htmltablectorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Align">
+      <MemberSignature Language="C#" Value="public string Align { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Align" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRow.Align" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内容の水平方向の配置内の行のセル、<see cref="T:System.Web.UI.HtmlControls.HtmlTable" />コントロール。</summary>
+        <value>内の行のセルの内容の水平方向の配置、<see cref="T:System.Web.UI.HtmlControls.HtmlTable" />コントロール。 既定値は<see cref="F:System.String.Empty" />、このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Align%2A>内の行のセルの内容の水平方向の配置を指定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+> [!NOTE]
+>  このプロパティの設定のインスタンスによって表されるテーブルの行のすべてのセルに影響を与える、<xref:System.Web.UI.HtmlControls.HtmlTableRow>クラスです。 行の 1 つのセルにアラインメント属性を適用するには、設定、<xref:System.Web.UI.HtmlControls.HtmlTableCell.Align%2A>そのセルのプロパティです。  
+  
+ 次の表に、このプロパティの使用できる値を示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`Left`|セルの左端とセルの内容を配置します。|  
+|`Center`|セルの途中で、セルの内容を配置します。|  
+|`Right`|セルの右端とセルの内容を配置します。|  
+  
+> [!NOTE]
+>  使用することも`Justify`と`Char`としてこのプロパティの値。 ただし、一部のブラウザーは、これらの機能をサポートします。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Align%2A>行全体をセルの内容の水平方向の配置を制御するプロパティです。  
+  
+ [!code-aspx-csharp[HtmlTableRowBehavior#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowBehavior/CS/htmltablerowbehaviorcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowBehavior#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowBehavior/VB/htmltablerowbehaviorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BgColor">
+      <MemberSignature Language="C#" Value="public string BgColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BgColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRow.BgColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のインスタンスで表される行の背景色、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />クラスです。</summary>
+        <value>インスタンスで表される行の背景色<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRow.BgColor%2A>プロパティのインスタンスで表される行の背景色を指定する、<xref:System.Web.UI.HtmlControls.HtmlTableRow>クラスです。 名前またはにシャープ記号の前に、16 進数の値を使用して、色を指定できます (#)、#RRGGBB の形式でします。 RR、GG、および BB、255 の範囲をそれぞれ、色の赤、緑、および青の要素を示す 0 から 16 進数の値を表します。 たとえば、値 # 0000ff 青の色。 青の要素に最大値 (FF) を指定する際に、最小値 (00) を赤と緑の要素を指定します。  
+  
+ 次の表は、16 個の定義済み HTML 色の名前および対応する 16 進値を使用できる、<xref:System.Web.UI.HtmlControls.HtmlTableRow.BgColor%2A>プロパティです。 HTML 色の詳細については、次を参照してください。、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+|色の名前|16 進値|  
+|----------------|-----------------------|  
+|アクア|# 00FFFF|  
+|黒|#000000|  
+|青|#0000FF|  
+|ピンク|# FF00FF|  
+|灰色|#808080|  
+|緑|#008000|  
+|ライム|#00FF00|  
+|栗色|#800000|  
+|ネイビー カラー|#000080|  
+|オリーブ|#808000|  
+|紫色|#800080|  
+|赤|#FF0000|  
+|Silver|# C0C0C0|  
+|青緑|#008080|  
+|白|#FFFFFF|  
+|黄|#FFFF00|  
+  
+ 使用するため利用可能な色、<xref:System.Web.UI.HtmlControls.HtmlTableRow.BgColor%2A>からプロパティを決定できます、<xref:System.Drawing.KnownColor>列挙します。  
+  
+ 色の名前は区別されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRow.BgColor%2A>プロパティ内の行の背景色を制御する、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+ [!code-aspx-csharp[HtmlTableRowAppearance#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowAppearance/CS/htmltablerowappearancecs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowAppearance#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowAppearance/VB/htmltablerowappearancevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderColor">
+      <MemberSignature Language="C#" Value="public string BorderColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BorderColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRow.BorderColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のインスタンスで表される行の境界線の色、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />クラスです。</summary>
+        <value>インスタンスで表される行の境界線の色<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableCell.BorderColor%2A>プロパティのインスタンスで表される行の境界線の色を指定する、<xref:System.Web.UI.HtmlControls.HtmlTableRow>クラスです。 名前またはにシャープ記号の前に、16 進数の値を使用して、色を指定できます (#)、#RRGGBB の形式でします。 RR、GG、および BB、255 の範囲をそれぞれ、色の赤、緑、および青の要素を示す 0 から 16 進数の値を表します。 たとえば、値 # 0000ff 青の色。 青の要素に最大値 (FF) を指定する際に、最小値 (00) を赤と緑の要素を指定します。  
+  
+ 次の表は、16 個の定義済み HTML 色の名前および対応する 16 進値を使用できる、<xref:System.Web.UI.HtmlControls.HtmlTableRow.BorderColor%2A>プロパティです。 HTML 色の詳細については、次を参照してください。、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+|色の名前|16 進値|  
+|----------------|-----------------------|  
+|アクア|# 00FFFF|  
+|黒|#000000|  
+|青|#0000FF|  
+|ピンク|# FF00FF|  
+|灰色|#808080|  
+|緑|#008000|  
+|ライム|#00FF00|  
+|栗色|#800000|  
+|ネイビー カラー|#000080|  
+|オリーブ|#808000|  
+|紫色|#800080|  
+|赤|#FF0000|  
+|Silver|# C0C0C0|  
+|青緑|#008080|  
+|白|#FFFFFF|  
+|黄|#FFFF00|  
+  
+ 使用するため利用可能な色、<xref:System.Web.UI.HtmlControls.HtmlTableRow.BorderColor%2A>からプロパティを決定できます、<xref:System.Drawing.KnownColor>列挙します。  
+  
+ 色の名前は区別されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRow.BorderColor%2A>プロパティ内の行の境界線の色を制御する、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+ [!code-aspx-csharp[HtmlTableRowAppearance#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowAppearance/CS/htmltablerowappearancecs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowAppearance#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowAppearance/VB/htmltablerowappearancevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cells">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.HtmlControls.HtmlTableCellCollection Cells { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.HtmlControls.HtmlTableCellCollection Cells" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRow.Cells" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlControls.HtmlTableCellCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />の行に含まれるセルを表すオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTable" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.HtmlControls.HtmlTableCellCollection" />内の行のセルが含まれている、<see cref="T:System.Web.UI.HtmlControls.HtmlTable" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Cells%2A>内の行のセルをプログラムでアクセスするコレクション、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。 プログラムで追加することができます、削除、および、コレクション内のセルを挿入します。  
+  
+> [!NOTE]
+>  空の行で定義されているセルがないかどうかは<xref:System.Web.UI.HtmlControls.HtmlTableCellCollection>オブジェクトが返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Cells%2A>によって表される行のセルを反復処理するコレクション、<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクト。 セルは、新しいコンテンツにし、更新されます。  
+  
+ [!code-aspx-csharp[HtmlTableRow#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRow/CS/htmltablerowcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRow#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRow/VB/htmltablerowvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRow.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新たに作成<see cref="T:System.Web.UI.ControlCollection" />オブジェクトに対して、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />コントロール。</summary>
+        <returns>A<see cref="T:System.Web.UI.ControlCollection" />を格納している、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />コントロールの子サーバー コントロールです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlTableRow.CreateControlCollection%2A>メソッドが新たに作成<xref:System.Web.UI.ControlCollection>行のセルを保持するために使用されるコレクション。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlTableRow.CreateControlCollection%2A>メソッドは、主の機能を拡張するコントロールの開発者を対象、<xref:System.Web.UI.HtmlControls.HtmlTableRow>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public string Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Height" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRow.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のインスタンスで表される行の高さ (ピクセル単位) で、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />クラスです。</summary>
+        <value>インスタンスで表される行の高さ (ピクセル単位) で<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />です。 既定値は<see cref="F:System.String.Empty" />、このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Height%2A>プロパティのインスタンスで表されるセルの高さをピクセル単位で指定する、<xref:System.Web.UI.HtmlControls.HtmlTableRow>クラスです。 すべてのセル、行には、同じ高さを共有します。  
+  
+> [!NOTE]
+>  テーブルの行に、セルの内容を表示するために必要なよりも小さな高さを指定すると、このプロパティは無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRow.Height%2A>プロパティ内の行の高さを制御する、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+ [!code-aspx-csharp[HtmlTableRowAppearance#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowAppearance/CS/htmltablerowappearancecs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowAppearance#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowAppearance/VB/htmltablerowappearancevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerHtml">
+      <MemberSignature Language="C#" Value="public override string InnerHtml { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InnerHtml" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRow.InnerHtml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタグに特殊文字を自動的に変換せず、開始タグと終了タグのコントロールの間のコンテンツを設定します。 このプロパティは、このコントロールはサポートされません。</summary>
+        <value>開始タグと終了タグのコントロールの間のコンテンツ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  読み取り、このプロパティに値を割り当てるしたりしないでください。 このような操作を行わない場合、<xref:System.NotSupportedException?displayProperty=nameWithType> 例外がスローされます。 このプロパティは、<xref:System.Web.UI.HtmlControls.HtmlContainerControl>クラスし、は適用されません、<xref:System.Web.UI.HtmlControls.HtmlTableRow>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">読み取りまたはこのプロパティに値を代入しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerText">
+      <MemberSignature Language="C#" Value="public override string InnerText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InnerText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRow.InnerText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタグにタグと終了タグのコントロールの特殊文字の自動変換との間のコンテンツを設定します。 このプロパティは、このコントロールはサポートされません。</summary>
+        <value>開始タグと終了タグのコントロールの間のコンテンツ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  読み取り、このプロパティに値を割り当てるしたりしないでください。 それ以外の場合、<xref:System.NotSupportedException?displayProperty=nameWithType>例外が発生します。 このプロパティは、<xref:System.Web.UI.HtmlControls.HtmlContainerControl>クラスし、は適用されません、<xref:System.Web.UI.HtmlControls.HtmlTableRow>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">読み取りまたはこのプロパティに値を代入しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderChildren">
+      <MemberSignature Language="C#" Value="protected override void RenderChildren (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderChildren(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRow.RenderChildren(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />描画された内容を受け取るオブジェクトです。</param>
+        <summary>表示、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />コントロールの子コントロールを指定した<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlTableRow.RenderChildren%2A>メソッドは、基本クラスの呼び出しの前後に、追加の書式設定を提供<xref:System.Web.UI.Control.RenderChildren%2A>メソッドです。 により、追加の書式設定、<xref:System.Web.UI.HtmlControls.HtmlTableRow>コントロール レンダリングされる HTML をレンダリングする前にインデントを戻り値の行を追加して読みやすく、<xref:System.Web.UI.HtmlControls.HtmlTableRow>コントロールの子オブジェクト。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlTableRow.RenderChildren%2A>メソッドが、主の機能を拡張するコントロールの開発者によって使用される、<xref:System.Web.UI.HtmlControls.HtmlTableRow>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderEndTag">
+      <MemberSignature Language="C#" Value="protected override void RenderEndTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderEndTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRow.RenderEndTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />描画された内容を受け取るオブジェクトです。</param>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" /> コントロールの終了タグを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlTableRow.RenderEndTag%2A>メソッドは、基本クラスの呼び出し後に追加の書式設定を提供<xref:System.Web.UI.HtmlControls.HtmlContainerControl.RenderEndTag%2A>メソッドです。 により、追加の書式設定、<xref:System.Web.UI.HtmlControls.HtmlTableRow>コントロール レンダリングされる HTML、終了後に戻り値の行を追加して読みやすく`<tr>`タグ。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlTableRow.RenderEndTag%2A>メソッドが、主の機能を拡張するコントロールの開発者によって使用される、<xref:System.Web.UI.HtmlControls.HtmlTableRow>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VAlign">
+      <MemberSignature Language="C#" Value="public string VAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlTableRow.VAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内容の垂直方向の配置内の行のセル、<see cref="T:System.Web.UI.HtmlControls.HtmlTable" />コントロール。</summary>
+        <value>内の行のセルの内容の垂直方向の配置、<see cref="T:System.Web.UI.HtmlControls.HtmlTable" />コントロール。 既定値は<see cref="F:System.String.Empty" />、このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlTableRow.VAlign%2A>内の行のセルのコンテンツの縦方向の配置を指定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。  
+  
+> [!NOTE]
+>  このプロパティの設定のインスタンスによって表されるテーブルの行のすべてのセルに影響を与える、<xref:System.Web.UI.HtmlControls.HtmlTableRow>クラスです。 行の 1 つのセルにアラインメント属性を適用するには、設定、<xref:System.Web.UI.HtmlControls.HtmlTableCell.VAlign%2A>そのセルのプロパティです。  
+  
+ 次の表に、このプロパティの使用できる値を示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`Top`|セルの上端とセルの内容を配置します。|  
+|`Middle`|セルの中央のセルの内容を配置します。|  
+|`Bottom`|セルの下端とセルの内容を配置します。|  
+  
+> [!NOTE]
+>  使用することも`BaseLine`としてこのプロパティの値。 ただし、一部のブラウザーは、この機能をサポートします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlTableRow.VAlign%2A>行全体をセルの内容の垂直方向の配置を制御するプロパティです。  
+  
+ [!code-aspx-csharp[HtmlTableRowBehavior#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlTableRowBehavior/CS/htmltablerowbehaviorcs.aspx#1)]
+ [!code-aspx-vb[HtmlTableRowBehavior#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlTableRowBehavior/VB/htmltablerowbehaviorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

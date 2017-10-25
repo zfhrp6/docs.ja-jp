@@ -1,0 +1,105 @@
+<Type Name="InputLanguageEventArgs" FullName="System.Windows.Input.InputLanguageEventArgs">
+  <TypeSignature Language="C#" Value="public abstract class InputLanguageEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit InputLanguageEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.InputLanguageEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>入力言語の変更を処理するイベントの引数の基底クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの基本クラスを提供する、<xref:System.Windows.Input.InputLanguageChangedEventArgs>と<xref:System.Windows.Input.InputLanguageChangingEventArgs>順番の引数を提供するには、クラス、<xref:System.Windows.Input.InputLanguageManager.InputLanguageChanged>と<xref:System.Windows.Input.InputLanguageManager.InputLanguageChanging>ルーティング イベントをそれぞれします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InputLanguageEventArgs (System.Globalization.CultureInfo newLanguageId, System.Globalization.CultureInfo previousLanguageId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Globalization.CultureInfo newLanguageId, class System.Globalization.CultureInfo previousLanguageId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputLanguageEventArgs.#ctor(System.Globalization.CultureInfo,System.Globalization.CultureInfo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="newLanguageId" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="previousLanguageId" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="newLanguageId">A<see cref="T:System.Globalization.CultureInfo" />を新しい現在の入力言語を表すオブジェクト。</param>
+        <param name="previousLanguageId">A<see cref="T:System.Globalization.CultureInfo" />前の現在の入力言語を表すオブジェクト。</param>
+        <summary>基本クラスの値の派生クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス<xref:System.Windows.Input.InputLanguageEventArgs>抽象基本クラスによって提供される値が正しく初期化されていることを確認するこのコンス トラクターを呼び出す必要があります。  
+  
+ コンス トラクター<xref:System.Windows.Input.InputLanguageChangedEventArgs>と<xref:System.Windows.Input.InputLanguageChangingEventArgs>自動的にこの基底コンス トラクターを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewLanguage">
+      <MemberSignature Language="C#" Value="public virtual System.Globalization.CultureInfo NewLanguage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo NewLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputLanguageEventArgs.NewLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Globalization.CultureInfo" />を新しい現在の入力言語を表すオブジェクト。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />を新しい現在の入力言語を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値はを介して確立、`newLanguageId`パラメーターによって提供される、<xref:System.Windows.Input.InputLanguageEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousLanguage">
+      <MemberSignature Language="C#" Value="public virtual System.Globalization.CultureInfo PreviousLanguage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo PreviousLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputLanguageEventArgs.PreviousLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Globalization.CultureInfo" />前の現在の入力言語を表すオブジェクト。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />前の現在の入力言語を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値はを介して確立、`previousLanguageId`パラメーターによって提供される、<xref:System.Windows.Input.InputLanguageEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

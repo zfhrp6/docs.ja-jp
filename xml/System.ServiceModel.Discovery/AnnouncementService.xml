@@ -1,0 +1,210 @@
+<Type Name="AnnouncementService" FullName="System.ServiceModel.Discovery.AnnouncementService">
+  <TypeSignature Language="C#" Value="public class AnnouncementService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AnnouncementService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.AnnouncementService" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceBehavior(ConcurrencyMode=System.ServiceModel.ConcurrencyMode.Multiple, InstanceContextMode=System.ServiceModel.InstanceContextMode.Single)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アナウンス サービスの自己ホスト型実装。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、標準アナウンス エンドポイント (<xref:System.ServiceModel.Discovery.AnnouncementEndpoint>) 上で受信メッセージをリッスンし、Hello または Bye アナウンス メッセージが到着するとイベント通知を発行します。 このクラスから派生するカスタム アナウンス サービスを実装できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnouncementService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.AnnouncementService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.AnnouncementService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnouncementService (int duplicateMessageHistoryLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 duplicateMessageHistoryLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.AnnouncementService.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="duplicateMessageHistoryLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="duplicateMessageHistoryLength">重複するメッセージを識別するためにトランスポートで使用されるメッセージ ハッシュの最大数。 既定値は 0 です。</param>
+        <summary>指定された長さの重複メッセージ履歴を使用して <see cref="T:System.ServiceModel.Discovery.AnnouncementService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OfflineAnnouncementReceived">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.ServiceModel.Discovery.AnnouncementEventArgs&gt; OfflineAnnouncementReceived;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.ServiceModel.Discovery.AnnouncementEventArgs&gt; OfflineAnnouncementReceived" />
+      <MemberSignature Language="DocId" Value="E:System.ServiceModel.Discovery.AnnouncementService.OfflineAnnouncementReceived" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.ServiceModel.Discovery.AnnouncementEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オフライン アナウンス (Bye) を受信した場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginOfflineAnnouncement">
+      <MemberSignature Language="C#" Value="protected virtual IAsyncResult OnBeginOfflineAnnouncement (System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence, System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult OnBeginOfflineAnnouncement(class System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence, class System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.AnnouncementService.OnBeginOfflineAnnouncement(System.ServiceModel.Discovery.DiscoveryMessageSequence,System.ServiceModel.Discovery.EndpointDiscoveryMetadata,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageSequence" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+        <Parameter Name="endpointDiscoveryMetadata" Type="System.ServiceModel.Discovery.EndpointDiscoveryMetadata" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="messageSequence">現在の通知のシーケンス内でのこのメッセージの位置。</param>
+        <param name="endpointDiscoveryMetadata">スコープ、リッスン URI、コントラクト名、エンドポイント アドレスなどのエンドポイント メタデータを提供するオブジェクト。</param>
+        <param name="callback">非同期操作の完了時に呼び出すメソッド。</param>
+        <param name="state">インフラストラクチャ定義の状態データ。</param>
+        <summary>受信オフライン アナウンス (Bye) メッセージの処理を開始します。</summary>
+        <returns>保留中の非同期要求のステータス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.AnnouncementService> から継承したクラスが、カスタム アナウンス リスナー サービスを実装するには、このメソッドをオーバーライドし、受信 Bye メッセージの処理を開始する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginOnlineAnnouncement">
+      <MemberSignature Language="C#" Value="protected virtual IAsyncResult OnBeginOnlineAnnouncement (System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence, System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult OnBeginOnlineAnnouncement(class System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence, class System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.AnnouncementService.OnBeginOnlineAnnouncement(System.ServiceModel.Discovery.DiscoveryMessageSequence,System.ServiceModel.Discovery.EndpointDiscoveryMetadata,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageSequence" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+        <Parameter Name="endpointDiscoveryMetadata" Type="System.ServiceModel.Discovery.EndpointDiscoveryMetadata" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="messageSequence">現在の通知のシーケンス内でのこのメッセージの位置。</param>
+        <param name="endpointDiscoveryMetadata">スコープ、リッスン URI、コントラクト名、エンドポイント アドレスなどのエンドポイント メタデータを提供するオブジェクト。</param>
+        <param name="callback">非同期操作の完了時に呼び出すメソッド。</param>
+        <param name="state">インフラストラクチャ定義の状態データ。</param>
+        <summary>受信オンライン アナウンス (Hello) メッセージの処理を開始します。</summary>
+        <returns>保留中の非同期要求のステータス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.AnnouncementService> から継承したクラスが、カスタム アナウンス リスナー サービスを実装するには、このメソッドをオーバーライドし、受信 Hello メッセージの処理を開始する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndOfflineAnnouncement">
+      <MemberSignature Language="C#" Value="protected virtual void OnEndOfflineAnnouncement (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnEndOfflineAnnouncement(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.AnnouncementService.OnEndOfflineAnnouncement(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">対応する <see cref="M:System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginOnlineAnnouncement(System.ServiceModel.Discovery.AnnouncementMessage,System.AsyncCallback,System.Object)" /> によって返される非同期の結果。</param>
+        <summary><see cref="T:System.ServiceModel.Discovery.AnnouncementService" /> から継承したユーザーがカスタム アナウンス リスナー サービスを実装するには、このメソッドをオーバーライドし、受信オフライン アナウンス (Bye) メッセージの処理をここで開始する必要があります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndOnlineAnnouncement">
+      <MemberSignature Language="C#" Value="protected virtual void OnEndOnlineAnnouncement (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnEndOnlineAnnouncement(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.AnnouncementService.OnEndOnlineAnnouncement(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">対応する <see cref="M:System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginOnlineAnnouncement(System.ServiceModel.Discovery.AnnouncementMessage,System.AsyncCallback,System.Object)" /> によって返される非同期の結果。</param>
+        <summary><see cref="T:System.ServiceModel.Discovery.AnnouncementService" /> から継承したユーザーがカスタム アナウンス リスナー サービスを実装するには、このメソッドをオーバーライドし、受信オフライン アナウンス (Bye) メッセージの処理をここで開始する必要があります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnlineAnnouncementReceived">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.ServiceModel.Discovery.AnnouncementEventArgs&gt; OnlineAnnouncementReceived;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.ServiceModel.Discovery.AnnouncementEventArgs&gt; OnlineAnnouncementReceived" />
+      <MemberSignature Language="DocId" Value="E:System.ServiceModel.Discovery.AnnouncementService.OnlineAnnouncementReceived" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.ServiceModel.Discovery.AnnouncementEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オンライン アナウンス (Hello) を受信した場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,105 @@
+<Type Name="ListControlDataBindingHandler" FullName="System.Web.UI.Design.WebControls.ListControlDataBindingHandler">
+  <TypeSignature Language="C#" Value="public class ListControlDataBindingHandler : System.Web.UI.Design.DataBindingHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListControlDataBindingHandler extends System.Web.UI.Design.DataBindingHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.ListControlDataBindingHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.DataBindingHandler</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインディングを実行、 <see cref="T:System.Web.UI.WebControls.ListControl" /> Web サーバー コントロールのビジュアルなデザイナー内で。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ListControlDataBindingHandler>クラスのデザイン時のデータ バインディングを実行する、<xref:System.Web.UI.WebControls.ListControl>コントロール。 <xref:System.Web.UI.Design.WebControls.ListControlDataBindingHandler>によってクラスが参照される、<xref:System.Web.UI.WebControls.ListControl>を使用して、<xref:System.Web.UI.DataBindingHandlerAttribute>クラスです。  
+  
+ <xref:System.Web.UI.Design.WebControls.ListControlDataBindingHandler.DataBindControl%2A>メソッドは、デザイン時のデータ バインディングを実行します。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初の例は、コントロールから派生する方法を示して、<xref:System.Web.UI.WebControls.RadioButtonList>を制御し、そのデータ バインディングのハンドラーに関連付けます。 2 番目の例を示してからクラスを取得する方法、<xref:System.Web.UI.Design.WebControls.ListControlDataBindingHandler>クラスです。  
+  
+ 次のコード例を派生させる方法を示しています、`SimpleRadioButtonList`から制御、<xref:System.Web.UI.WebControls.RadioButtonList>を制御し、適用、<xref:System.Web.UI.DataBindingHandlerAttribute>属性に関連付けるには、 `SimpleRadioButtonList` 、データ バインディングのハンドラーを持つコントロール、`SimpleRadioButtonListDataBindingHandler`クラスです。  
+  
+ [!code-csharp[ListControlDesigner_Samples#5](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDesigner_Samples/CS/SimpleRadioButtonList.cs#5)]
+ [!code-vb[ListControlDesigner_Samples#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDesigner_Samples/VB/simpleradiobuttonlist.vb#5)]  
+  
+ 次のコード例を派生させる方法を示しています、`SimpleRadioButtonListDataBindingHandler`クラス、<xref:System.Web.UI.Design.WebControls.ListControlDataBindingHandler>クラスです。 も優先、 <xref:System.Web.UI.Design.WebControls.ListControlDataBindingHandler.DataBindControl%2A> 、関連付けられているメッセージを追加するメソッドを`SimpleRadioButtonList`そのコントロールがバインドされたデータの場合を制御します。  
+  
+ [!code-csharp[ListControlDesigner_Samples#6](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDesigner_Samples/CS/SimpleRadioButtonListDataBindingHandler.cs#6)]
+ [!code-vb[ListControlDesigner_Samples#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDesigner_Samples/VB/simpleradiobuttonlistdatabindinghandler.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListControlDataBindingHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListControlDataBindingHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.ListControlDataBindingHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.ListControlDataBindingHandler>クラスによってクラスが参照されている場合、<xref:System.Web.UI.DataBindingHandlerAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindControl">
+      <MemberSignature Language="C#" Value="public override void DataBindControl (System.ComponentModel.Design.IDesignerHost designerHost, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DataBindControl(class System.ComponentModel.Design.IDesignerHost designerHost, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListControlDataBindingHandler.DataBindControl(System.ComponentModel.Design.IDesignerHost,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost"><see cref="T:System.ComponentModel.Design.IDesignerHost" />コントロールを含むドキュメントのです。</param>
+        <param name="control">バインドする <see cref="T:System.Web.UI.Control" />。</param>
+        <summary>指定したコントロールにデータ バインドを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.ListControl>で指定されているコントロール`control`内で指定されたデータ ソースがその<xref:System.Web.UI.IDataBindingsAccessor.DataBindings%2A>プロパティを<xref:System.Web.UI.Design.WebControls.ListControlDataBindingHandler.DataBindControl%2A>メソッドをクリア、<xref:System.Web.UI.WebControls.ListControl.Items%2A>のコレクション、 <xref:System.Web.UI.WebControls.ListControl>、ことを示す文字列メッセージを追加し、<xref:System.Web.UI.WebControls.ListControl>にバインドされたデータ、<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、 <xref:System.Web.UI.Design.WebControls.ListControlDataBindingHandler.DataBindControl%2A> 、関連付けられている文字列メッセージを追加するメソッドを`SimpleRadioButtonList`そのコントロールがバインドされたデータの場合を制御します。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.Design.WebControls.ListControlDataBindingHandler>クラスです。  
+  
+ [!code-csharp[ListControlDesigner_Samples#7](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDesigner_Samples/CS/SimpleRadioButtonListDataBindingHandler.cs#7)]
+ [!code-vb[ListControlDesigner_Samples#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDesigner_Samples/VB/simpleradiobuttonlistdatabindinghandler.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

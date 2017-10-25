@@ -1,0 +1,440 @@
+<Type Name="SqlTrackingWorkflowInstance" FullName="System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance">
+  <TypeSignature Language="C#" Value="public class SqlTrackingWorkflowInstance" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlTrackingWorkflowInstance extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー インスタンスの <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" /> によって SQL データベース内に保持される追跡データへのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトは、<xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.TryGetWorkflow%2A?displayProperty=nameWithType> および <xref:System.Workflow.Runtime.Tracking.SqlTrackingQuery.GetWorkflows%2A?displayProperty=nameWithType> の呼び出しによって返されます。このオブジェクトは、特定のワークフロー インスタンスに関する <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> によって SQL データベース内に保持される追跡データへのアクセスを提供します。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> クラスは、コレクションを保持するプロパティに関して、データベースへのアクセスを最適化します。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、表示されたワークフローのリストに含まれているすべての <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトに関する情報を取得する方法を示しています。 このコードでは、`ListViewItem` 変数内の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> ごとに `displayedWorkflows` を作成します。 各 <xref:System.Windows.Forms.ListViewItem> には、文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowInstanceInternalId%2A>、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowType%2A>、および <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Status%2A> プロパティが含まれています。 次に、アイテムを `workflowStatusList` に追加します。 前に指定したプロパティ値と文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Initialized%2A> プロパティを使用して、`WorkflowStatusInfo` に追加する新しい `workflowStatusList` オブジェクトを作成します。  
+  
+ 次のコード例は、Mainform.cs ファイルに含まれているワークフロー モニターの SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#137](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#137)]
+ [!code-vb[WF_Samples#137](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#137)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActivityEvents">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.ActivityTrackingRecord&gt; ActivityEvents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Workflow.Runtime.Tracking.ActivityTrackingRecord&gt; ActivityEvents" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.ActivityEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.ActivityTrackingRecord&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このワークフロー インスタンスに関して、ランタイム追跡インフラストラクチャによって <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" /> データベースに既に送られたアクティビティ追跡レコードのリストを取得します。</summary>
+        <value>ランタイム追跡インフラストラクチャによって、このワークフロー インスタンス用に追跡データベースに送信された <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingRecord" /> オブジェクトのリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.AutoRefresh%2A> が `true` の場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.ActivityEvents%2A> には、このワークフロー インスタンスに関して現時点までに送られたすべてのアクティビティ追跡レコードが含まれます。<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.AutoRefresh%2A> が `false` の場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.ActivityEvents%2A> には、最後の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A> の時点までに送られたアクティビティ追跡レコードが含まれます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.ActivityEvents%2A> には、このワークフロー インスタンスに関して、ランタイム追跡インフラストラクチャによってデータベースに送られたアクティビティ追跡レコードが含まれます。 アクティビティ追跡レコードがワークフロー ランタイム エンジン追跡インフラストラクチャによって送られるのは、ワークフロー インスタンスが、インスタンスの <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> に指定された <xref:System.Workflow.Runtime.Tracking.TrackingProfile> に対応するアクティビティ ステータス イベントを出した場合のみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoRefresh">
+      <MemberSignature Language="C#" Value="public bool AutoRefresh { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoRefresh" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.AutoRefresh" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> に関するプロパティ データをアクセス時に自動更新するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          アクセス時にプロパティ データを自動更新する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データベース パフォーマンスを最適化するために、クエリ対象データのコレクションを保持するプロパティ (たとえば <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.ActivityEvents%2A>) は、プロパティへのアクセス時にのみ新しい要素に関するデータベース クエリを実行します。そのようなプロパティのコレクションは、プロパティへのアクセス時に必要な場合に限り更新されます。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance>クラスは各プロパティの 2 つのタイムスタンプを保持: コレクションの追跡データの最終時刻を示す 1 つが読み込まれ、最後に示す別、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance>が更新されます。 コレクション プロパティのいずれか 1 つを取得すると、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> は、コレクションの追跡データが最後に読み込まれた時刻と <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> が最後に更新された時刻の間にデータベースに追加された追跡データを読み込んで、プロパティで保持されているコレクションにそのデータを追加します。 次に、プロパティのデータが最後に読み込まれた時刻を示すタイムスタンプは、最後の更新を示すタイムスタンプの値に設定されます。 この 2 つのタイムスタンプが等しい場合には、アクセス時にプロパティに関する追跡データはそれ以上読み込まれません。 プロパティによって保持されるコレクション内に返される追跡データを常に最新に保つために、コレクション プロパティへのアクセス時に毎回更新を実行するには、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.AutoRefresh%2A> を `true` に設定します。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.AutoRefresh%2A> が `false` の場合、最後の更新に対応するタイムスタンプをリセットするには、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A> を呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialized">
+      <MemberSignature Language="C#" Value="public DateTime Initialized { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime Initialized" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Initialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このワークフロー インスタンスの最初の <see cref="T:System.DateTime" /> がワークフロー ランタイム エンジンによって要求された時刻を示す <see cref="T:System.Workflow.Runtime.Tracking.TrackingChannel" /> を取得または設定します。</summary>
+        <value>このワークフロー インスタンスの最初の <see cref="T:System.DateTime" /> がワークフロー ランタイム エンジンによって要求された時刻を示す <see cref="T:System.Workflow.Runtime.Tracking.TrackingChannel" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、表示されたワークフローのリストに含まれているすべての <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトに関する情報を取得する方法を示しています。 このコードでは、`ListViewItem` 変数内の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> ごとに `displayedWorkflows` を作成します。 各 <xref:System.Windows.Forms.ListViewItem> には、文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowInstanceInternalId%2A>、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowType%2A>、および <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Status%2A> プロパティが含まれています。 次に、アイテムを `workflowStatusList` に追加します。 前に指定したプロパティ値と文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Initialized%2A> プロパティを使用して、`WorkflowStatusInfo` に追加する新しい `workflowStatusList` オブジェクトを作成します。  
+  
+ 次のコード例は、Mainform.cs ファイルに含まれているワークフロー モニターの SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[Wf_samples#288](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#288)]
+ [!code-vb[Wf_samples#288](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#288)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokedWorkflows">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance&gt; InvokedWorkflows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance&gt; InvokedWorkflows" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.InvokedWorkflows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このワークフローによって呼び出されたワークフローに対応する <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> オブジェクトのリストを取得します。</summary>
+        <value>このワークフローによって呼び出されたワークフローに対応する <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> オブジェクトのリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.AutoRefresh%2A> が `true` の場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.InvokedWorkflows%2A> には、現時点までにこのワークフロー インスタンスによって呼び出された各ワークフロー インスタンスの <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> が含まれます。<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.AutoRefresh%2A> が `false` の場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.InvokedWorkflows%2A> には、最後の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> までの時点でこのワークフロー インスタンスによって呼び出された各ワークフロー インスタンスの <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A> が含まれます。  
+  
+ このプロパティの内容は、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> で管理されている SQL データベース内のこのワークフロー インスタンスの追跡データによって決まります。 この追跡データは、このワークフロー インスタンスに関連付けられている <xref:System.Workflow.Runtime.Tracking.TrackingProfile> の追跡ポイントで指定された追跡イベントが発生した場合にランタイム追跡インフラストラクチャによって送信される追跡レコードに対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokingWorkflowInstanceId">
+      <MemberSignature Language="C#" Value="public Guid InvokingWorkflowInstanceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid InvokingWorkflowInstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.InvokingWorkflowInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このワークフロー インスタンスを呼び出したワークフロー インスタンスの <see cref="T:System.Guid" /> を取得または設定します。</summary>
+        <value>このワークフロー インスタンスを呼び出したワークフロー インスタンスの <see cref="T:System.Guid" />。ただし、このワークフロー インスタンスが別のワークフロー インスタンスによって呼び出されなかった場合には、空の <see cref="T:System.Guid" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの内容は、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> で管理されている SQL データベース内のこのワークフロー インスタンスの追跡データによって決まります。 この追跡データは、このワークフロー インスタンスに関連付けられている <xref:System.Workflow.Runtime.Tracking.TrackingProfile> の追跡ポイントで指定された追跡イベントが発生した場合にランタイム追跡インフラストラクチャによって送信される追跡レコードに対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" /> のプロパティ データを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A> は、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> に関するデータを実際に読み込むわけではありません。 データベース パフォーマンスを最適化するために、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> クラスは必要に応じてコレクション プロパティのデータを読み込みます。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance>クラスは各プロパティの 2 つのタイムスタンプを保持: コレクションの追跡データの最終時刻を示す 1 つが読み込まれ、最後に示す別、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance>が更新されます。 コレクション プロパティのいずれか 1 つを取得すると、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> は、コレクションの追跡データが最後に読み込まれた時刻と <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> が最後に更新された時刻の間にデータベースに追加された追跡データを読み込んで、プロパティで保持されているコレクションにそのデータを追加します。 次に、プロパティのデータが最後に読み込まれた時刻を示すタイムスタンプは、最後の更新を示すタイムスタンプの値に設定されます。 この 2 つのタイムスタンプが等しい場合には、アクセス時にプロパティに関する追跡データはそれ以上読み込まれません。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A> は、<xref:System.DateTime.UtcNow%2A?displayProperty=nameWithType> の最後の更新に対応するタイムスタンプを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Status">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowStatus Status { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.Runtime.WorkflowStatus Status" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Status" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスのステータスを取得します。</summary>
+        <value>ワークフロー インスタンスの現在のステータスを表す <see cref="T:System.Workflow.Runtime.WorkflowStatus" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Status%2A> はワークフロー インスタンスの追跡データ (特に、ランタイム追跡インフラストラクチャによって送られるワークフロー追跡レコード) に基づいて決定されます。したがって、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Status%2A> は、ワークフロー インスタンスの <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> 内の <xref:System.Workflow.Runtime.Tracking.TrackingProfile> オブジェクトに部分的に依存します。 <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord.TrackingWorkflowEvent%2A?displayProperty=nameWithType> 内のそれぞれの <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> は、いずれかの <xref:System.Workflow.Runtime.WorkflowStatus> 値に一致します。 このワークフロー インスタンスに関してランタイム追跡インフラストラクチャによってワークフロー追跡レコードがまだ送られていない場合には、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Status%2A> は <xref:System.Workflow.Runtime.WorkflowStatus.Created> です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、表示されたワークフローのリストに含まれているすべての <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトに関する情報を取得する方法を示しています。 このコードでは、`ListViewItem` 変数内の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> ごとに `displayedWorkflows` を作成します。 各 <xref:System.Windows.Forms.ListViewItem> には、文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowInstanceInternalId%2A>、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowType%2A>、および <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Status%2A> プロパティが含まれています。 次に、アイテムを `workflowStatusList` に追加します。 前に指定したプロパティ値と文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Initialized%2A> プロパティを使用して、`WorkflowStatusInfo` に追加する新しい `workflowStatusList` オブジェクトを作成します。  
+  
+ 次のコード例は、Mainform.cs ファイルに含まれているワークフロー モニターの SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[Wf_samples#288](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#288)]
+ [!code-vb[Wf_samples#288](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#288)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserEvents">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.UserTrackingRecord&gt; UserEvents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Workflow.Runtime.Tracking.UserTrackingRecord&gt; UserEvents" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.UserEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.UserTrackingRecord&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このワークフロー インスタンスに関して、ランタイム追跡インフラストラクチャによって <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" /> データベースに既に送られたユーザー追跡レコードのリストを取得します。</summary>
+        <value>ランタイム追跡インフラストラクチャによって、このワークフロー インスタンス用に追跡データベースに送信された <see cref="T:System.Workflow.Runtime.Tracking.UserTrackingRecord" /> オブジェクトのリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.AutoRefresh%2A> が `true` の場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.UserEvents%2A> には、このワークフロー インスタンスに関して現時点までに送られたすべてのユーザー追跡レコードが含まれます。<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.AutoRefresh%2A> が `false` の場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.UserEvents%2A> には、最後の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A> の時点までに送られたユーザー追跡レコードが含まれます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.UserEvents%2A> には、このワークフロー インスタンスに関して、ランタイム追跡インフラストラクチャによってデータベースに送られたユーザー追跡レコードが含まれます。 ユーザー追跡レコードがワークフロー ランタイム エンジン追跡インフラストラクチャによって送られるのは、ワークフロー インスタンスが、インスタンスの <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> に指定された <xref:System.Workflow.Runtime.Tracking.TrackingProfile> に対応するユーザー イベントを出した場合のみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowDefinition">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Activity WorkflowDefinition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Activity WorkflowDefinition" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowDefinition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの現在のワークフロー定義を表す <see cref="T:System.Workflow.ComponentModel.Activity" /> を取得します。</summary>
+        <value>ワークフロー インスタンスの現在のワークフロー定義を表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの内容は、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> で管理されている SQL データベース内のこのワークフロー インスタンスの追跡データによって決まります。 この追跡データは、このワークフロー インスタンスに関連付けられている <xref:System.Workflow.Runtime.Tracking.TrackingProfile> の追跡ポイントで指定された追跡イベントが発生した場合にランタイム追跡インフラストラクチャによって送信される追跡レコードに対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowDefinitionUpdated">
+      <MemberSignature Language="C#" Value="public bool WorkflowDefinitionUpdated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WorkflowDefinitionUpdated" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowDefinitionUpdated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowDefinition" /> が最後に読み込まれた後にワークフローが更新されたかどうかを示す値を取得します。</summary>
+        <value>
+          オブジェクトが更新された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの内容は、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> で管理されている SQL データベース内のこのワークフロー インスタンスの追跡データによって決まります。 この追跡データは、このワークフロー インスタンスに関連付けられている <xref:System.Workflow.Runtime.Tracking.TrackingProfile> の追跡ポイントで指定された追跡イベントが発生した場合にランタイム追跡インフラストラクチャによって送信される追跡レコードに対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowEvents">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.WorkflowTrackingRecord&gt; WorkflowEvents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Workflow.Runtime.Tracking.WorkflowTrackingRecord&gt; WorkflowEvents" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Workflow.Runtime.Tracking.WorkflowTrackingRecord&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このワークフロー インスタンスに関して、ランタイム追跡インフラストラクチャによって <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingService" /> データベースに既に送られたワークフロー追跡レコードのリストを取得します。</summary>
+        <value>ランタイム追跡インフラストラクチャによって、このワークフロー インスタンス用に追跡データベースに送信された <see cref="T:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord" /> オブジェクトのリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.AutoRefresh%2A> が `true` の場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowEvents%2A> には、このワークフロー インスタンスに関して現時点までに送られたすべてのワークフロー追跡レコードが含まれます。<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.AutoRefresh%2A> が `false` の場合、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowEvents%2A> には、最後の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Refresh%2A> の時点までに送られたワークフロー追跡レコードが含まれます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowEvents%2A> には、このワークフロー インスタンスに関して、ランタイム追跡インフラストラクチャによってデータベースに送られたワークフロー追跡レコードが含まれます。 ワークフロー追跡レコードがワークフロー ランタイム エンジン追跡インフラストラクチャによって送られるのは、ワークフロー インスタンスが、インスタンスの <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> に指定された <xref:System.Workflow.Runtime.Tracking.TrackingProfile> に対応するワークフロー ステータス イベントを出した場合のみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowInstanceId">
+      <MemberSignature Language="C#" Value="public Guid WorkflowInstanceId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid WorkflowInstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Guid" /> が適用される対象のワークフロー インスタンスの <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" />。</summary>
+        <value>この <see cref="T:System.Guid" /> が適用される対象のワークフロー インスタンスの <see cref="T:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、表示されたワークフローのリストに含まれているすべての <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトに関する情報を取得する方法を示しています。 このコードでは、`ListViewItem` 変数内の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> ごとに `displayedWorkflows` を作成します。 各 <xref:System.Windows.Forms.ListViewItem> には、文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowInstanceInternalId%2A>、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowType%2A>、および <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Status%2A> プロパティが含まれています。 次に、アイテムを `workflowStatusList` に追加します。 前に指定したプロパティ値と文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Initialized%2A> プロパティを使用して、`WorkflowStatusInfo` に追加する新しい `workflowStatusList` オブジェクトを作成します。  
+  
+ 次のコード例は、Mainform.cs ファイルに含まれているワークフロー モニターの SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[Wf_samples#288](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#288)]
+ [!code-vb[Wf_samples#288](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#288)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowInstanceInternalId">
+      <MemberSignature Language="C#" Value="public long WorkflowInstanceInternalId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 WorkflowInstanceInternalId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowInstanceInternalId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このワークフロー インスタンスに関して、別個のビューで関連レコードを見つけるための使用可能な数値を取得または設定します。</summary>
+        <value>このワークフロー インスタンスに関して、別個のビューで関連レコードを見つけるために使用できる数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは内部結合操作です。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowInstanceInternalId%2A> を使用すると、ワークフロー インスタンス <xref:System.Guid> を使用する場合に比べて、SQL データベース内のワークフロー インスタンスのデータに、より効率的にアクセスできます。 別個のビューでこのワークフロー インスタンスの関連レコードを見つけるには、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowInstanceInternalId%2A> を使用してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、表示されたワークフローのリストに含まれているすべての <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトに関する情報を取得する方法を示しています。 このコードでは、`ListViewItem` 変数内の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> ごとに `displayedWorkflows` を作成します。 各 <xref:System.Windows.Forms.ListViewItem> には、文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowInstanceInternalId%2A>、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowType%2A>、および <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Status%2A> プロパティが含まれています。 次に、アイテムを `workflowStatusList` に追加します。 前に指定したプロパティ値と文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Initialized%2A> プロパティを使用して、`WorkflowStatusInfo` に追加する新しい `workflowStatusList` オブジェクトを作成します。  
+  
+ 次のコード例は、Mainform.cs ファイルに含まれているワークフロー モニターの SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[Wf_samples#288](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#288)]
+ [!code-vb[Wf_samples#288](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#288)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowType">
+      <MemberSignature Language="C#" Value="public Type WorkflowType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type WorkflowType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの <see cref="T:System.Type" /> を取得および設定します。</summary>
+        <value>ワークフロー インスタンスの <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、表示されたワークフローのリストに含まれているすべての <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> オブジェクトに関する情報を取得する方法を示しています。 このコードでは、`ListViewItem` 変数内の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance> ごとに `displayedWorkflows` を作成します。 各 <xref:System.Windows.Forms.ListViewItem> には、文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowInstanceInternalId%2A>、<xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.WorkflowType%2A>、および <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Status%2A> プロパティが含まれています。 次に、アイテムを `workflowStatusList` に追加します。 前に指定したプロパティ値と文字列表記の <xref:System.Workflow.Runtime.Tracking.SqlTrackingWorkflowInstance.Initialized%2A> プロパティを使用して、`WorkflowStatusInfo` に追加する新しい `workflowStatusList` オブジェクトを作成します。  
+  
+ 次のコード例は、Mainform.cs ファイルに含まれているワークフロー モニターの SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[Wf_samples#288](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#288)]
+ [!code-vb[Wf_samples#288](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#288)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

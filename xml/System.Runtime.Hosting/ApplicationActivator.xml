@@ -1,0 +1,180 @@
+<Type Name="ApplicationActivator" FullName="System.Runtime.Hosting.ApplicationActivator">
+  <TypeSignature Language="C#" Value="public class ApplicationActivator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ApplicationActivator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Hosting.ApplicationActivator" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アセンブリのマニフェストに基づくのライセンス認証の基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つの指定されたインスタンスがある、<xref:System.Runtime.Hosting.ApplicationActivator>クラスにそれぞれ<xref:System.AppDomain>呼び出しをルーティングするすべてのアクティブ化します。 <xref:System.AppDomainManager>現在の<xref:System.AppDomain>独自のカスタムを提供できます<xref:System.Runtime.Hosting.ApplicationActivator>この目的のためです。 場合、カスタム<xref:System.Runtime.Hosting.ApplicationActivator>が指定されていない、既定のインスタンス<xref:System.Runtime.Hosting.ApplicationActivator>を作成します。  
+  
+ 次の手順は、既定の動作を記述<xref:System.Runtime.Hosting.ApplicationActivator.CreateInstance%2A>メソッドの実装。  
+  
+1.  場合にチェック、<xref:System.ActivationContext>のアドインをアクティブ化された一致する、<xref:System.ActivationContext>現在のドメインです。 ない場合、手順 2. に進みます。 それ以外の場合、アセンブリを実行し、オブジェクト ハンドルでラップした結果を返します。  
+  
+2.  新しいにアドインをアクティブに<xref:System.AppDomain>です。 次の手順は、新しい初期化するために実行<xref:System.AppDomain>を使用して、<xref:System.Runtime.Hosting.ActivationArguments>用アドインです。  
+  
+    1.  新たに作成<xref:System.AppDomainSetup>オブジェクトを使用して、<xref:System.Runtime.Hosting.ActivationArguments>アドインでのアクティベーション コンテキストを含むオブジェクト。  
+  
+    2.  呼び出し、<xref:System.Runtime.Hosting.ApplicationActivator.CreateInstanceHelper%2A>メソッドを使用して新しいドメインを作成、<xref:System.AppDomainSetup>オブジェクト。  
+  
+    3.  <xref:System.Runtime.Hosting.ApplicationActivator.CreateInstanceHelper%2A>メソッドの呼び出し、<xref:System.Security.HostSecurityManager.DetermineApplicationTrust%2A?displayProperty=nameWithType>を取得するメソッド、<xref:System.Security.Policy.ApplicationTrust>アドインのオブジェクト。 場合、<xref:System.Security.Policy.ApplicationTrust.IsApplicationTrustedToRun%2A>プロパティから返される`true`、アドインを実行します。 ない場合は、<xref:System.Runtime.Hosting.ApplicationActivator.CreateInstanceHelper%2A>スロー、<xref:System.Security.Policy.PolicyException>を示す実行アクセス許可を取得できませんでした。  
+  
+    4.  アドインを実行し、新しい信頼できる場合に<xref:System.AppDomain>が作成され、構成されている、<xref:System.ActivationContext>アドインのアドインの読み込みし、実行されるとします。  
+  
+    5.  オブジェクト ハンドルにラップされて、アドインのアクティブ化の結果が返されます。  
+  
+ カスタム アクティベータは、特定の一連の状況にアドインのアクティブ化を調整できます。 たとえば、カスタムのアクティベーターが見つかりませんでした既存<xref:System.AppDomain>たびに新しいドメインを作成する代わりのこのアドインのアクティブ化します。  
+  
+ 次の手順は、カスタムの動作を記述<xref:System.Runtime.Hosting.ApplicationActivator>、既存のアドインをアクティブに<xref:System.AppDomain>:  
+  
+1.  カスタムのアクティベーターが同じドメインを検索する<xref:System.ActivationContext>アドインをアクティブ化するとします。  
+  
+2.  場合、<xref:System.ActivationContext>プロセスでは、カスタムのアクティベーターを作成する前に表示されていることはありません<xref:System.AppDomain>この<xref:System.ActivationContext>を呼び出して、<xref:System.AppDomain.CreateDomain%2A>メソッドを直接、またはこの活動を委任する、<xref:System.Runtime.Hosting.ApplicationActivator.CreateInstanceHelper%2A>基底クラスです。  
+  
+3.  同じ既存のドメインがある場合<xref:System.ActivationContext>、アクティベーターを委任することができ、<xref:System.Runtime.Hosting.ApplicationActivator.CreateInstance%2A>メソッドの呼び出しを<xref:System.Runtime.Hosting.ApplicationActivator>対象のドメイン。 これは、ドメイン間の呼び出しであることに注意してください、<xref:System.Runtime.Hosting.ApplicationActivator>ターゲット内に存在する<xref:System.AppDomain>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Runtime.Hosting.ApplicationActivator>オブジェクト現在から<xref:System.AppDomain.DomainManager%2A>マニフェスト ベースのアプリケーションにします。  
+  
+ [!code-csharp[System.Runtime.Hosting.ApplicationActivator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Runtime.Hosting.ApplicationActivator/cs/program.cs#1)]
+ [!code-vb[System.Runtime.Hosting.ApplicationActivator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Runtime.Hosting.ApplicationActivator/vb/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationActivator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Hosting.ApplicationActivator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Hosting.ApplicationActivator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.ObjectHandle CreateInstance (ActivationContext activationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.ObjectHandle CreateInstance(class System.ActivationContext activationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Hosting.ApplicationActivator.CreateInstance(System.ActivationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activationContext" Type="System.ActivationContext" />
+      </Parameters>
+      <Docs>
+        <param name="activationContext"><see cref="T:System.ActivationContext" />をアクティブ化アプリケーションを識別します。</param>
+        <summary>指定したアクティベーション コンテキストを使用して、アクティブ化するアプリケーションのインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Runtime.Remoting.ObjectHandle" />されているアプリケーションの実行の戻り値のラッパー。 戻り値は、ラップを実際のオブジェクトにアクセスすることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはアプリケーションのマニフェストに基づくアクティベーションものです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activationContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.ObjectHandle CreateInstance (ActivationContext activationContext, string[] activationCustomData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.ObjectHandle CreateInstance(class System.ActivationContext activationContext, string[] activationCustomData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Hosting.ApplicationActivator.CreateInstance(System.ActivationContext,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activationContext" Type="System.ActivationContext" />
+        <Parameter Name="activationCustomData" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="activationContext"><see cref="T:System.ActivationContext" />をアクティブ化アプリケーションを識別します。</param>
+        <param name="activationCustomData">カスタム アクティベーション データ。</param>
+        <summary>指定したアクティベーション コンテキストおよびカスタム アクティベーション データを使用して、アクティブ化するアプリケーションのインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Runtime.Remoting.ObjectHandle" />されているアプリケーションの実行の戻り値のラッパー。 戻り値は、ラップを実際のオブジェクトにアクセスすることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはアプリケーションのマニフェストに基づくアクティベーションものです。 ライセンス認証データは、URL のクエリ文字列部分などの情報で構成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activationContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceHelper">
+      <MemberSignature Language="C#" Value="protected static System.Runtime.Remoting.ObjectHandle CreateInstanceHelper (AppDomainSetup adSetup);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstanceHelper(class System.AppDomainSetup adSetup) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Hosting.ApplicationActivator.CreateInstanceHelper(System.AppDomainSetup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.ObjectHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="adSetup" Type="System.AppDomainSetup" />
+      </Parameters>
+      <Docs>
+        <param name="adSetup"><see cref="T:System.AppDomainSetup" />オブジェクト<see cref="P:System.AppDomainSetup.ActivationArguments" />プロパティがアクティブにするアプリケーションを識別します。</param>
+        <summary>指定されたを使用するアプリケーションのインスタンスを作成<see cref="T:System.AppDomainSetup" />オブジェクト。</summary>
+        <returns><see cref="T:System.Runtime.Remoting.ObjectHandle" />されているアプリケーションの実行の戻り値のラッパー。 戻り値は、ラップを実際のオブジェクトにアクセスすることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはアプリケーションのマニフェストに基づくアクティベーションものです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="adSetup" /> の <see cref="P:System.AppDomainSetup.ActivationArguments" /> プロパティが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Policy.PolicyException">アプリケーション インスタンスは、現在のアプリケーション ドメインのポリシー設定は、このアプリケーションを実行するアクセス許可を提供しないのでを実行できませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

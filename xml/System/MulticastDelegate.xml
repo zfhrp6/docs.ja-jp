@@ -1,0 +1,535 @@
+<Type Name="MulticastDelegate" FullName="System.MulticastDelegate">
+  <TypeSignature Language="C#" Value="public abstract class MulticastDelegate : Delegate" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi abstract serializable beforefieldinit MulticastDelegate extends System.Delegate" />
+  <TypeSignature Language="DocId" Value="T:System.MulticastDelegate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マルチキャスト デリゲート、つまり呼び出しリストに複数の要素を組み込むことができるデリゲートを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.MulticastDelegate>特殊なクラスです。 コンパイラ、およびその他のツールは、このクラスから派生できますが、明示的にそこから派生させることはできません。 場合も、同様の<xref:System.Delegate>クラスです。  
+  
+ 継承のデリゲート型のメソッドに加えて<xref:System.MulticastDelegate>、共通言語ランタイムは、次の 2 つの特殊なメソッドを提供:`BeginInvoke`と`EndInvoke`です。 これらのメソッドの詳細については、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+ A<xref:System.MulticastDelegate>デリゲートの呼び出しリストと呼ばれる 1 つまたは複数の要素から成るリンク リストがあります。 マルチキャスト デリゲートが呼び出されたときに表示される順序に、呼び出しリストにデリゲートが同期的に呼び出されます。 一覧の実行中にエラーが発生した場合は、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では、クラス、`StringContainer`文字列のコレクションが含まれます。 そのメンバーの 1 つは、`CheckAndDisplayDelegate`デリゲートに格納された文字列の表示に使用される、`StringContainer`特定の条件に適合するオブジェクト。 デリゲートがパラメーターとして 1 つの文字列を受け取りを返す`void`(または、Visual basic では、`Sub`プロシージャ) です。 メソッドも含まれています。 `DisplayAllQualified`、1 つのパラメーターを持つ、`CheckAndDisplayDelegate`を委任します。 これにより、呼び出されるメソッドとデリゲートを含むメソッドに基づいてフィルター処理されている文字列のセットを表示します。  
+  
+ ユーティリティ クラスも定義`StringExtensions`、2 つのメソッドを持ちます。  
+  
+-   `ConStart`、子音で始まる文字列が表示されます。  
+  
+-   `VowelStart`、母音で始まる文字列が表示されます。  
+  
+ 両方のメソッドが 1 つの文字列パラメーターを含めるし、返す注`void`です。 つまり、両方のメソッドに指定できます、`CheckAndDisplayDelegate`を委任します。  
+  
+ `Test.Main`メソッドは、アプリケーションのエントリ ポイントです。 インスタンス化、`StringContainer`オブジェクト、文字列に設定し、2 つ作成されます`CheckAndDisplayDelegate`デリゲート、`conStart`と`vowelStart`、1 つのメソッドを呼び出すことです。 呼び出して、<xref:System.Delegate.Combine%2A?displayProperty=nameWithType>メソッドを作成、`multipleDelegates`デリゲート、これが最初に含まれています、`ConStart`と`VowelStart`デリゲート。 場合、`multipleDelegates`デリゲートが呼び出される、元の順序でコレクション内のすべての文字列が表示されます。 これは、各文字を個別に各デリゲートに渡され、各文字が 2 つのデリゲートの 1 つだけのフィルター条件を満たしているためです。 呼び出し後に最後に、<xref:System.Delegate.Remove%2A?displayProperty=nameWithType>と<xref:System.Delegate.Combine%2A?displayProperty=nameWithType>、`multipleDelegates`は 2 つ`conStart`デリゲート。 呼び出される場合、各文字列に、`StringContainer`オブジェクトが 2 回表示されます。  
+  
+ [!code-cpp[Multicast Delegate Introduction#1](~/samples/snippets/cpp/VS_Snippets_CLR/Multicast Delegate Introduction/CPP/delegatestring.cpp#1)]
+ [!code-csharp[Multicast Delegate Introduction#1](~/samples/snippets/csharp/VS_Snippets_CLR/Multicast Delegate Introduction/CS/delegatestring.cs#1)]
+ [!code-vb[Multicast Delegate Introduction#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Multicast Delegate Introduction/VB/delegatestring.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MulticastDelegate (object target, string method);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(object target, string method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.#ctor(System.Object,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="method" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="target">対象となるオブジェクト<c>メソッド</c>が定義されています。</param>
+        <param name="method">デリゲートを作成するためのメソッドの名前。</param>
+        <summary><see cref="T:System.MulticastDelegate" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、アプリケーション コードでは使用できません。 インスタンス メソッドの名前を指定することによって、デリゲートを作成するには、オーバー ロードを使用して、<xref:System.Delegate.CreateDelegate%2A?displayProperty=nameWithType>がメソッド名とターゲット オブジェクトを指定するメソッド。 たとえば、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.String%29?displayProperty=nameWithType>メソッド オーバー ロードは、指定した名前を持つインスタンス メソッドのデリゲートを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MulticastDelegate (Type target, string method);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Type target, string method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.#ctor(System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="target" Type="System.Type" />
+        <Parameter Name="method" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="target">対象となるオブジェクトの種類<c>メソッド</c>が定義されています。</param>
+        <param name="method">デリゲートを作成するための静的メソッドの名前。</param>
+        <summary><see cref="T:System.MulticastDelegate" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、アプリケーション コードでは使用できません。 静的メソッドの名前を指定することによって、デリゲートを作成するには、オーバー ロードを使用して、<xref:System.Delegate.CreateDelegate%2A?displayProperty=nameWithType>メソッドをメソッドの名前を指定しますが、ターゲット オブジェクトが指定されていません。 たとえば、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Type%2CSystem.String%29?displayProperty=nameWithType>メソッド オーバー ロードは、指定した名前の静的メソッドのデリゲートを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CombineImpl">
+      <MemberSignature Language="C#" Value="protected override sealed Delegate CombineImpl (Delegate follow);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Delegate CombineImpl(class System.Delegate follow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.CombineImpl(System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="follow" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="follow">このデリゲートと結合するデリゲート。</param>
+        <summary>これを組み合わせて<see cref="T:System.Delegate" />、指定した<see cref="T:System.Delegate" />新しいデリゲートを作成します。</summary>
+        <returns>A であるデリゲートの新しいルート、<see cref="T:System.MulticastDelegate" />呼び出しリスト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="follow" />このインスタンスと同じ型がありません。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DynamicInvokeImpl">
+      <MemberSignature Language="C#" Value="protected override sealed object DynamicInvokeImpl (object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object DynamicInvokeImpl(object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.DynamicInvokeImpl(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="args">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override sealed bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト。</param>
+        <summary>このマルチキャスト デリゲートと指定されたオブジェクトが等しいかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="obj" />このインスタンスが同じ呼び出しリストにあり、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのデリゲートが等しくない場合は`null`は正確に同じ型のそれぞれの呼び出しリストには、同じ数要素にはが含まれてし、最初のデリゲートの呼び出しリスト内のすべての要素が 2 番目のデリゲートの呼び出しリスト内の対応する要素と等しい。  
+  
+ 2 つの呼び出しリストの要素は、同じ対象インスタンス上の同じインスタンス メソッドを呼び出し、または同じ静的メソッドを呼び出し、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override sealed int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInvocationList">
+      <MemberSignature Language="C#" Value="public override sealed Delegate[] GetInvocationList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Delegate[] GetInvocationList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.GetInvocationList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このマルチキャスト デリゲートの呼び出しリストを呼び出し順に返します。</summary>
+        <returns>対象のインスタンスの呼び出しリストと完全に一致する呼び出しリストを持つデリゲートの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列には、それぞれ 1 つのエントリの呼び出しリストに、デリゲートのセットが含まれています。 配列の順序で順番に、これらのデリゲートを呼び出すには、現在のインスタンスを呼び出すのと同じ結果が生成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodImpl">
+      <MemberSignature Language="C#" Value="protected override System.Reflection.MethodInfo GetMethodImpl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Reflection.MethodInfo GetMethodImpl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.GetMethodImpl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在によって表される静的メソッドを返します<see cref="T:System.MulticastDelegate" />です。</summary>
+        <returns>現在によって表される静的メソッド<see cref="T:System.MulticastDelegate" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.MulticastDelegate>複数のメソッドを表す 1 つのメソッドが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">このインスタンスのシリアル化または逆シリアル化に必要なすべてのデータを保持するオブジェクト。</param>
+        <param name="context">(予約済み) シリアル化データを格納および取得する位置。</param>
+        <summary>追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />をこのインスタンスをシリアル化するために必要なすべてのデータを持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッド内のすべての情報を格納する`info`このインスタンスをシリアル化するために必要です。  
+  
+ `context`パラメーターは予約されており、このメソッドの実行で現在使用されていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化エラーが発生しました。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (MulticastDelegate d1, MulticastDelegate d2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.MulticastDelegate d1, class System.MulticastDelegate d2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.op_Equality(System.MulticastDelegate,System.MulticastDelegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d1" Type="System.MulticastDelegate" />
+        <Parameter Name="d2" Type="System.MulticastDelegate" />
+      </Parameters>
+      <Docs>
+        <param name="d1">左オペランド。</param>
+        <param name="d2">右オペランド。</param>
+        <summary>2 つの <see cref="T:System.MulticastDelegate" /> オブジェクトが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="d1" />と<paramref name="d2" />同じ呼び出しリストを持つ、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのデリゲートが等しくない場合は`null`は正確に同じ型のそれぞれの呼び出しリストには、同じ数要素にはが含まれてし、最初のデリゲートの呼び出しリスト内のすべての要素が 2 番目のデリゲートの呼び出しリスト内の対応する要素と等しい。  
+  
+ 2 つの呼び出しリストの要素は、同じ対象インスタンス上の同じインスタンス メソッドを呼び出し、または同じ静的メソッドを呼び出し、します。  
+  
+ この演算子を同等の方法は、します。<xref:System.MulticastDelegate.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (MulticastDelegate d1, MulticastDelegate d2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.MulticastDelegate d1, class System.MulticastDelegate d2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.op_Inequality(System.MulticastDelegate,System.MulticastDelegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d1" Type="System.MulticastDelegate" />
+        <Parameter Name="d2" Type="System.MulticastDelegate" />
+      </Parameters>
+      <Docs>
+        <param name="d1">左オペランド。</param>
+        <param name="d2">右オペランド。</param>
+        <summary>2 つあるかどうかを決定<see cref="T:System.MulticastDelegate" />オブジェクトが等しくないです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="d1" />と<paramref name="d2" />同じ呼び出しリストにはありません。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのデリゲートが等しくない場合は`null`は正確に同じ型のそれぞれの呼び出しリストには、同じ数要素にはが含まれてし、最初のデリゲートの呼び出しリスト内のすべての要素が 2 番目のデリゲートの呼び出しリスト内の対応する要素と等しい。  
+  
+ 2 つの呼び出しリストの要素は、同じ対象インスタンス上の同じインスタンス メソッドを呼び出し、または同じ静的メソッドを呼び出し、します。  
+  
+ この演算子を同等の方法は、します。<xref:System.MulticastDelegate.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveImpl">
+      <MemberSignature Language="C#" Value="protected override sealed Delegate RemoveImpl (Delegate value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Delegate RemoveImpl(class System.Delegate value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.RemoveImpl(System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="value">呼び出しリスト内で検索するデリゲート。</param>
+        <summary>この呼び出しリストから要素を削除<see cref="T:System.MulticastDelegate" />の値が指定したデリゲートをします。</summary>
+        <returns>場合<paramref name="value" />し、新しい、このインスタンスの呼び出しリストに載って<see cref="T:System.Delegate" />せず<paramref name="value" />呼び出しリストです。 それ以外の場合、このインスタンスで元の呼び出しリスト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.MemberAccessException">抽象クラスのインスタンスを作成することができないか、またはこのメンバーは遅延バインド メカニズムで呼び出されました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

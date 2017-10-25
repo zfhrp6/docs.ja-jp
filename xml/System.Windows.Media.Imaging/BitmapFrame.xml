@@ -1,0 +1,430 @@
+<Type Name="BitmapFrame" FullName="System.Windows.Media.Imaging.BitmapFrame">
+  <TypeSignature Language="C#" Value="public abstract class BitmapFrame : System.Windows.Media.Imaging.BitmapSource, System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BitmapFrame extends System.Windows.Media.Imaging.BitmapSource implements class System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.BitmapFrame" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Imaging.BitmapSource</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IUriContext</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>デコーダーによって返され、エンコーダーによって受け入れられるイメージ データを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapFrame>定義されていない追加の機能を提供<xref:System.Windows.Media.Imaging.BitmapSource>へのアクセスを提供することによって、<xref:System.Windows.Media.Imaging.BitmapFrame.Thumbnail%2A>イメージの特定のフレームに関連付けられています。 <xref:System.Windows.Media.Imaging.BitmapFrame>使用してメタデータ情報の書き込みをサポートも、<xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A>プロパティまたは<xref:System.Windows.Media.Imaging.BitmapFrame.CreateInPlaceBitmapMetadataWriter%2A>メソッドです。  
+  
+ どの<xref:System.Windows.Media.Imaging.BitmapFrame>から返されたデコーダーが常に固定されています。 コピーを作成する必要がありますまず変更可能なコピーを必要とする場合、<xref:System.Windows.Media.Imaging.BitmapFrame>を使用して、<xref:System.Windows.Media.Imaging.BitmapSource.Clone%2A>メソッドです。  
+  
+ のみ[!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)]と[!INCLUDE[TLA#tla_gif](~/includes/tlasharptla-gif-md.md)]形式のイメージが複数のフレームをサポートします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.Windows.Media.Imaging.BitmapSource>を使用して、<xref:System.Windows.Media.Imaging.BitmapFrame>です。  
+  
+ [!code-csharp[bitmapframeexample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#1)]
+ [!code-vb[bitmapframeexample#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#1)]  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapFrame>オブジェクトを開くには、[!INCLUDE[TLA#tla_png](~/includes/tlasharptla-png-md.md)]グラフィックと書き込みのメタデータを使用して、<xref:System.Windows.Media.Imaging.BitmapFrame.CreateInPlaceBitmapMetadataWriter%2A>メソッドです。  
+  
+ [!code-cpp[bitmapmetadata#SetQuery](~/samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#setquery)]
+ [!code-csharp[bitmapmetadata#SetQuery](~/samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#setquery)]
+ [!code-vb[bitmapmetadata#SetQuery](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitMapMetadata/VB/BitmapMetadata.vb#setquery)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BitmapFrame ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapFrame.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Imaging.BitmapFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseUri">
+      <MemberSignature Language="C#" Value="public abstract Uri BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapFrame.BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるを取得または設定の底を表す値<see cref="T:System.Uri" />現在のコンテキスト。</summary>
+        <value><see cref="T:System.Uri" />現在のコンテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorContexts">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.ColorContext&gt; ColorContexts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Media.ColorContext&gt; ColorContexts" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapFrame.ColorContexts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.ColorContext&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるのコレクションを取得<see cref="T:System.Windows.Media.ColorContext" />これに関連付けられているオブジェクト<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</summary>
+        <value>読み取り専用コレクション<see cref="T:System.Windows.Media.ColorContext" />これに関連付けられているオブジェクト<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapFrame Create (System.IO.Stream bitmapStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapFrame Create(class System.IO.Stream bitmapStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapFrame.Create(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapFrame</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmapStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapStream"><see cref="T:System.IO.Stream" />構築するために使用される、<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.IO.Stream" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.IO.Stream" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `bitmapStream`後、フレームが作成される場合にのみ閉じることができます、<xref:System.Windows.Media.Imaging.BitmapCacheOption.OnLoad>キャッシュ オプションを使用します。 既定値<xref:System.Windows.Media.Imaging.BitmapCacheOption.OnDemand>キャッシュ オプションは、フレームが必要になるまで、ストリームが保持されます。 使用して、<xref:System.Windows.Media.Imaging.BitmapFrame.Create%28System.IO.Stream%2CSystem.Windows.Media.Imaging.BitmapCreateOptions%2CSystem.Windows.Media.Imaging.BitmapCacheOption%29>を指定するメソッドを作成し、オプションをキャッシュします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapFrame Create (Uri bitmapUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapFrame Create(class System.Uri bitmapUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapFrame.Create(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapFrame</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmapUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapUri"><see cref="T:System.Uri" />のソースを識別する、<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Uri" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Uri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapFrame>から、指定された<xref:System.Uri>です。  
+  
+ [!code-csharp[bitmapframeexample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#1)]
+ [!code-vb[bitmapframeexample#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapFrame Create (System.Windows.Media.Imaging.BitmapSource source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapFrame Create(class System.Windows.Media.Imaging.BitmapSource source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapFrame.Create(System.Windows.Media.Imaging.BitmapSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapFrame</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.Media.Imaging.BitmapSource" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Windows.Media.Imaging.BitmapSource" />構築するために使用される<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Windows.Media.Imaging.BitmapSource" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Windows.Media.Imaging.BitmapSource" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapFrame Create (Uri bitmapUri, System.Net.Cache.RequestCachePolicy uriCachePolicy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapFrame Create(class System.Uri bitmapUri, class System.Net.Cache.RequestCachePolicy uriCachePolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapFrame.Create(System.Uri,System.Net.Cache.RequestCachePolicy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapFrame</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmapUri" Type="System.Uri" />
+        <Parameter Name="uriCachePolicy" Type="System.Net.Cache.RequestCachePolicy" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapUri">元のビットマップの場所、<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />を作成します。</param>
+        <param name="uriCachePolicy">このキャッシュ要件<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <summary>作成、<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Uri" />、指定した<see cref="T:System.Net.Cache.RequestCachePolicy" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Uri" />、指定した<see cref="T:System.Net.Cache.RequestCachePolicy" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapFrame.Create%28System.Uri%2CSystem.Net.Cache.RequestCachePolicy%29>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapFrame Create (System.Windows.Media.Imaging.BitmapSource source, System.Windows.Media.Imaging.BitmapSource thumbnail);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapFrame Create(class System.Windows.Media.Imaging.BitmapSource source, class System.Windows.Media.Imaging.BitmapSource thumbnail) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapFrame.Create(System.Windows.Media.Imaging.BitmapSource,System.Windows.Media.Imaging.BitmapSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapFrame</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.Media.Imaging.BitmapSource" />
+        <Parameter Name="thumbnail" Type="System.Windows.Media.Imaging.BitmapSource" />
+      </Parameters>
+      <Docs>
+        <param name="source">元のソース、<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />を構築します。</param>
+        <param name="thumbnail">結果のサムネイル画像<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />します。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Windows.Media.Imaging.BitmapSource" />のサムネイルを指定します。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Windows.Media.Imaging.BitmapSource" />のサムネイルを指定します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapFrame Create (System.IO.Stream bitmapStream, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapFrame Create(class System.IO.Stream bitmapStream, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapFrame.Create(System.IO.Stream,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapFrame</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmapStream" Type="System.IO.Stream" />
+        <Parameter Name="createOptions" Type="System.Windows.Media.Imaging.BitmapCreateOptions" />
+        <Parameter Name="cacheOption" Type="System.Windows.Media.Imaging.BitmapCacheOption" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapStream">このストリーム<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />を構築します。</param>
+        <param name="createOptions">これを作成するために使用できるオプション<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <param name="cacheOption">これは作成に使用されるキャッシュ オプション<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.IO.Stream" />、指定した<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />と<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.IO.Stream" />、指定した<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />と<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Imaging.BitmapCacheOption.OnLoad>を終了する場合の cache オプション、`bitmapStream`ビットマップが作成された後です。 既定値<xref:System.Windows.Media.Imaging.BitmapCacheOption.OnDemand>キャッシュ オプションは、ビットマップが必要なクリーンアップは、ガベージ コレクターによって処理されるまで、ストリームへのアクセスが保持されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapFrame Create (Uri bitmapUri, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapFrame Create(class System.Uri bitmapUri, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapFrame.Create(System.Uri,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapFrame</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmapUri" Type="System.Uri" />
+        <Parameter Name="createOptions" Type="System.Windows.Media.Imaging.BitmapCreateOptions" />
+        <Parameter Name="cacheOption" Type="System.Windows.Media.Imaging.BitmapCacheOption" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapUri">元のビットマップの場所、<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />を作成します。</param>
+        <param name="createOptions">これを作成するために使用できるオプション<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <param name="cacheOption">これは作成に使用されるキャッシュ オプション<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <summary>作成、<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Uri" />、指定した<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />と<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Uri" />、指定した<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />、および<see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapFrame Create (Uri bitmapUri, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption, System.Net.Cache.RequestCachePolicy uriCachePolicy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapFrame Create(class System.Uri bitmapUri, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption, class System.Net.Cache.RequestCachePolicy uriCachePolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapFrame.Create(System.Uri,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption,System.Net.Cache.RequestCachePolicy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapFrame</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmapUri" Type="System.Uri" />
+        <Parameter Name="createOptions" Type="System.Windows.Media.Imaging.BitmapCreateOptions" />
+        <Parameter Name="cacheOption" Type="System.Windows.Media.Imaging.BitmapCacheOption" />
+        <Parameter Name="uriCachePolicy" Type="System.Net.Cache.RequestCachePolicy" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapUri">元のビットマップの場所、<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />を作成します。</param>
+        <param name="createOptions">これを作成するために使用できるオプション<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <param name="cacheOption">これは作成に使用されるキャッシュ オプション<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <param name="uriCachePolicy">このキャッシュ要件<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <summary>作成、<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Uri" />、指定した<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />、 <see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />、および<see cref="T:System.Net.Cache.RequestCachePolicy" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Uri" />、指定した<see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" />、 <see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />、および<see cref="T:System.Net.Cache.RequestCachePolicy" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Imaging.BitmapFrame.Create%28System.Uri%2CSystem.Windows.Media.Imaging.BitmapCreateOptions%2CSystem.Windows.Media.Imaging.BitmapCacheOption%2CSystem.Net.Cache.RequestCachePolicy%29>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapFrame Create (System.Windows.Media.Imaging.BitmapSource source, System.Windows.Media.Imaging.BitmapSource thumbnail, System.Windows.Media.Imaging.BitmapMetadata metadata, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.ColorContext&gt; colorContexts);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapFrame Create(class System.Windows.Media.Imaging.BitmapSource source, class System.Windows.Media.Imaging.BitmapSource thumbnail, class System.Windows.Media.Imaging.BitmapMetadata metadata, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Media.ColorContext&gt; colorContexts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapFrame.Create(System.Windows.Media.Imaging.BitmapSource,System.Windows.Media.Imaging.BitmapSource,System.Windows.Media.Imaging.BitmapMetadata,System.Collections.ObjectModel.ReadOnlyCollection{System.Windows.Media.ColorContext})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapFrame</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.Media.Imaging.BitmapSource" />
+        <Parameter Name="thumbnail" Type="System.Windows.Media.Imaging.BitmapSource" />
+        <Parameter Name="metadata" Type="System.Windows.Media.Imaging.BitmapMetadata" />
+        <Parameter Name="colorContexts" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.ColorContext&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Windows.Media.Imaging.BitmapSource" />構築するために使用される<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <param name="thumbnail">結果のサムネイル画像<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />します。</param>
+        <param name="metadata">これに関連付けるメタデータ<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <param name="colorContexts"><see cref="T:System.Windows.Media.ColorContext" />これに関連付けられているオブジェクト<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Windows.Media.Imaging.BitmapSource" />で指定されたサムネイル、 <see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />、および<see cref="T:System.Windows.Media.ColorContext" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />から、指定された<see cref="T:System.Windows.Media.Imaging.BitmapSource" />で指定されたサムネイル、 <see cref="T:System.Windows.Media.Imaging.BitmapMetadata" />、および<see cref="T:System.Windows.Media.ColorContext" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInPlaceBitmapMetadataWriter">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter CreateInPlaceBitmapMetadataWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter CreateInPlaceBitmapMetadataWriter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapFrame.CreateInPlaceBitmapMetadataWriter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、メタデータを <see cref="T:System.Windows.Media.Imaging.BitmapFrame" /> に関連付けるために使用できる <see cref="T:System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter" /> のインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータのみ追加できますかを使用して編集、<xref:System.Windows.Media.Imaging.BitmapFrame.CreateInPlaceBitmapMetadataWriter%2A>イメージ ファイルには、新しいメタデータの十分な空き領域が含まれています。 それ以外の場合、メタデータを追加できますを使用して、<xref:System.Windows.Media.Imaging.BitmapSource.Metadata%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Media.Imaging.BitmapFrame>オブジェクトを開くには、[!INCLUDE[TLA#tla_png](~/includes/tlasharptla-png-md.md)]グラフィックと書き込みのメタデータを使用して、<xref:System.Windows.Media.Imaging.BitmapFrame.CreateInPlaceBitmapMetadataWriter%2A>メソッドです。  
+  
+ [!code-cpp[bitmapmetadata#SetQuery](~/samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#setquery)]
+ [!code-csharp[bitmapmetadata#SetQuery](~/samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#setquery)]
+ [!code-vb[bitmapmetadata#SetQuery](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitMapMetadata/VB/BitmapMetadata.vb#setquery)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decoder">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.Imaging.BitmapDecoder Decoder { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapDecoder Decoder" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapFrame.Decoder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapDecoder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得、デコーダーのこのインスタンスに関連付けられている<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</summary>
+        <value>この <see cref="T:System.Windows.Media.Imaging.BitmapFrame" /> に関連付けられた <see cref="T:System.Windows.Media.Imaging.BitmapDecoder" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thumbnail">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.Imaging.BitmapSource Thumbnail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapSource Thumbnail" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapFrame.Thumbnail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、これに関連付けられているサムネイル イメージを取得<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapSource" /> 、現在のサムネイルを表す<see cref="T:System.Windows.Media.Imaging.BitmapFrame" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

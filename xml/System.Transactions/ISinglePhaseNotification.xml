@@ -1,0 +1,85 @@
+<Type Name="ISinglePhaseNotification" FullName="System.Transactions.ISinglePhaseNotification">
+  <TypeSignature Language="C#" Value="public interface ISinglePhaseNotification : System.Transactions.IEnlistmentNotification" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISinglePhaseNotification implements class System.Transactions.IEnlistmentNotification" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.ISinglePhaseNotification" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Transactions.IEnlistmentNotification</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>トランザクションに参加するための単一フェーズ コミットの最適化をサポートしているリソース オブジェクトについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソース マネージャーは、単一フェーズのコミットの最適化をサポートするためにこのインターフェイスを実装する場合でもことが保証されていないこと単一フェーズのコミットを受け取ることに注意してください。 トランザクション マネージャーは、2 フェーズ コミットの通知を代わりに送信することができますも。  
+  
+ 呼び出し、トランザクションの参加者として、リソース マネージャーを参加させる、<xref:System.Transactions.Transaction.EnlistVolatile%2A>メソッドまたは<xref:System.Transactions.Transaction.EnlistDurable%2A>のメソッド、<xref:System.Transactions.Transaction>クラスです。 具体的には、`EnlistmentOptions`に等しくなる必要ありますパラメーター<xref:System.Transactions.EnlistmentOptions.None>単一フェーズのコミットを実行するためにします。 誤って設定されている場合<xref:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired>、ありません単一フェーズのコミットが発生します。  
+  
+ 以降、<xref:System.Transactions.ISinglePhaseNotification>から派生したインターフェイス、<xref:System.Transactions.IEnlistmentNotification>インターフェイス、2 フェーズ コミットの通知をリソース マネージャーは、後者のすべてのメソッドを実装もする必要があります。  2 フェーズ コミットするかどうかに関して、トランザクション マネージャーの選択または、このリソース マネージャーで単一フェーズのコミットの最適化が使用されます。  ただし、このインターフェイスを実装する機会を与えるリソース マネージャー、活用するために、最適化がある場合。  
+  
+ かどうか、最適化が使用され、トランザクション マネージャーが、<xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit%2A>参加しているリソースのメソッドは、リソース マネージャーに応答この呼び出しのさまざまなメソッドを使用して、<xref:System.Transactions.SinglePhaseEnlistment>場合は、トランザクションがコミットまたはロールバックするのには、トランザクション マネージャーに通知するクラス。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="SinglePhaseCommit">
+      <MemberSignature Language="C#" Value="public void SinglePhaseCommit (System.Transactions.SinglePhaseEnlistment enlistment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SinglePhaseCommit(class System.Transactions.SinglePhaseEnlistment enlistment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit(System.Transactions.SinglePhaseEnlistment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="singlePhaseEnlistment" Type="System.Transactions.SinglePhaseEnlistment" />
+      </Parameters>
+      <Docs>
+        <param name="enlistment">To be added.</param>
+        <summary>単一フェーズのコミットの最適化のコールバックのリソース マネージャーの実装を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 フェーズ コミットするかどうかに関して、トランザクション マネージャーの選択または、このリソース マネージャーで単一フェーズのコミットの最適化が使用されます。  1 つの段階および 2 フェーズ コミットの詳細については、次を参照してください。 [Single-Phase で、トランザクションのコミットとマルチ フェーズ](http://msdn.microsoft.com/en-us/74b3cfe1-d33a-45b8-91f4-dfd6f6598c4d)です。  
+  
+ そのため、リソース マネージャーのこの参加リストでいずれか、<xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit%2A>メソッドが呼び出されると、か、2 フェーズ コミット メソッドがそので定義されている<xref:System.Transactions.IEnlistmentNotification>インターフェイスが呼び出されます。  
+  
+ このメソッドの実装は、いずれかを呼び出す必要があります、<xref:System.Transactions.SinglePhaseEnlistment.Committed%2A>メソッドまたは<xref:System.Transactions.SinglePhaseEnlistment.Aborted%2A>のメソッド、`singlePhaseEnlistment`トランザクションをコミットまたはロールバックするかどうかを示します。  
+  
+ トランザクション マネージャーは、単一フェーズのコミットをサポートする 1 つだけの揮発性参加リストがある場合、または 0 または揮発性参加リストと 1 つの永続参加リストがある場合に、このメソッドを呼び出します。 後者の場合、揮発性参加リストが表示される<xref:System.Transactions.IEnlistmentNotification.Prepare%2A>コミット段階-双と唯一の永続参加リスト用の通知は、単一フェーズのコミットの通知を受信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

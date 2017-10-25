@@ -1,0 +1,86 @@
+<Type Name="SecurityKeyType" FullName="System.IdentityModel.Tokens.SecurityKeyType">
+  <TypeSignature Language="C#" Value="public enum SecurityKeyType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SecurityKeyType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SecurityKeyType" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>セキュリティ トークンに関連付けられるキーの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityKeyType> 列挙型を使用して、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyType%2A> プロパティを設定します。  
+  
+ BearerKey フィールドを使用、<xref:System.ServiceModel.Configuration.IssuedTokenParametersElement.KeyType%2A>プロパティです。  
+  
+### <a name="bearerkey-requires-wsuid-or-transport-security-with-message-credentials"></a>BearerKey には Wsu:Id またはメッセージ資格情報付きトランスポート セキュリティが必要  
+ フェデレーション シナリオで発行されるトークンは、通常、クライアントと証明書利用者の間のメッセージ セキュリティのための保証サポート トークンとして構成されます。 しかし、セキュリティ トークン サービス (STS) で発行されたトークンにキー (BearerKey) が含まれていない場合、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] は、このトークンを <xref:System.ServiceModel.Security.SecurityTokenAttachmentMode> サポート トークンとして構成します ([!INCLUDE[indigo2](~/includes/indigo2-md.md)] はキーのないトークンを保証できません)。 このため、発行されたトークンを署名で参照する必要があります。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] では、現在、参照機構 (Wsu:Id) として、http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd:Id が使用されています。  
+  
+ 発行されたトークンがこのような属性を持たない場合は、クライアントで、"署名する要素には ID が必要です" というメッセージと共に、<xref:System.ServiceModel.Security.MessageSecurityException> がスローされます。 これは、発行されたトークンとして、SAML 1.1 トークンが使用されている場合に起こります (Wsu:Id は、SAML 1.1 仕様では定義されていません)。  
+  
+ この状況を回避するには、メッセージ資格情報を持つトランスポート セキュリティ (たとえば、<xref:System.ServiceModel.Configuration.AuthenticationMode>) を使用するか、または STS で、発行されたトークンに http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd:Id (Wsu:Id) を追加する必要があります。  
+  
+ ただし、Wsu:Id を SAML 1.1 トークンに追加した場合、結果として得られる XML は SAML 1.1 仕様に準拠しないので注意してください。 または、発行されたトークンの暗号化結果 `EncryptedData` に Wsu:Id を追加します。 `EncryptedData` 要素は Wsu:Id 属性をサポートしているので、この手順は SAML 1.1 仕様に準拠します。  
+  
+ したがって、仕様に準拠させるには、所有者トークンを STS で暗号化する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AsymmetricKey">
+      <MemberSignature Language="C#" Value="AsymmetricKey" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IdentityModel.Tokens.SecurityKeyType AsymmetricKey = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Tokens.SecurityKeyType.AsymmetricKey" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーが非対称キーであることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BearerKey">
+      <MemberSignature Language="C#" Value="BearerKey" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IdentityModel.Tokens.SecurityKeyType BearerKey = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Tokens.SecurityKeyType.BearerKey" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンには所有の証明キーが含まれていないことを表します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SymmetricKey">
+      <MemberSignature Language="C#" Value="SymmetricKey" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IdentityModel.Tokens.SecurityKeyType SymmetricKey = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Tokens.SecurityKeyType.SymmetricKey" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーが対称キーであることを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

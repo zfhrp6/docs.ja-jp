@@ -1,0 +1,286 @@
+<Type Name="DiscoveryMessageSequence" FullName="System.ServiceModel.Discovery.DiscoveryMessageSequence">
+  <TypeSignature Language="C#" Value="public class DiscoveryMessageSequence : IComparable&lt;System.ServiceModel.Discovery.DiscoveryMessageSequence&gt;, IEquatable&lt;System.ServiceModel.Discovery.DiscoveryMessageSequence&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DiscoveryMessageSequence extends System.Object implements class System.IComparable`1&lt;class System.ServiceModel.Discovery.DiscoveryMessageSequence&gt;, class System.IEquatable`1&lt;class System.ServiceModel.Discovery.DiscoveryMessageSequence&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IComparable&lt;System.ServiceModel.Discovery.DiscoveryMessageSequence&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.ServiceModel.Discovery.DiscoveryMessageSequence&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>WS-Discovery プロトコルで定義されている AppSequence ヘッダーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用すると、探索メッセージの受信先が、それらのメッセージを異なる順序で受信した場合でも正しい順序で処理できるようになります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanCompareTo">
+      <MemberSignature Language="C#" Value="public bool CanCompareTo (System.ServiceModel.Discovery.DiscoveryMessageSequence other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanCompareTo(class System.ServiceModel.Discovery.DiscoveryMessageSequence other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryMessageSequence.CanCompareTo(System.ServiceModel.Discovery.DiscoveryMessageSequence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+      </Parameters>
+      <Docs>
+        <param name="other">比較する探索メッセージ シーケンス。</param>
+        <summary>指定された <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> インスタンスが現在の <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> インスタンスと比較可能かどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />場合は、2 つの探索メッセージ シーケンスは、同等です。それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (System.ServiceModel.Discovery.DiscoveryMessageSequence other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(class System.ServiceModel.Discovery.DiscoveryMessageSequence other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryMessageSequence.CompareTo(System.ServiceModel.Discovery.DiscoveryMessageSequence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+      </Parameters>
+      <Docs>
+        <param name="other">比較する探索メッセージ シーケンス。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> を現在の <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> インスタンスと比較します。</summary>
+        <returns>2 つの探索メッセージ シーケンスが等価な場合は 0、<paramref name="other" /> のメッセージ番号が現在の探索シーケンスのメッセージ番号よりも大きい場合は負の数値になります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryMessageSequence.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト。</param>
+        <summary>指定されたオブジェクトが現在の <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> インスタンスと等しいかどうかを判定します。</summary>
+        <returns>指定されたオブジェクトが現在の探索メッセージ シーケンスと等しい場合は true。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.ServiceModel.Discovery.DiscoveryMessageSequence other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.ServiceModel.Discovery.DiscoveryMessageSequence other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryMessageSequence.Equals(System.ServiceModel.Discovery.DiscoveryMessageSequence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+      </Parameters>
+      <Docs>
+        <param name="other">比較する探索メッセージ シーケンス。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> インスタンスが現在の <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> インスタンスと比較可能であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、2 つの探索メッセージ シーケンスは、同等です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryMessageSequence.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> インスタンスのハッシュ コードを取得します。</summary>
+        <returns>ハッシュ コード値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public long InstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.DiscoveryMessageSequence.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンス ID を取得します。</summary>
+        <value>インスタンス ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、サービスがシャットダウンしたり、状態を失うたびに増加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageNumber">
+      <MemberSignature Language="C#" Value="public long MessageNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MessageNumber" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.DiscoveryMessageSequence.MessageNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ番号を取得します。</summary>
+        <value>メッセージ番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、シーケンス識別子とインスタンス識別子のコンテキスト内でメッセージを識別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence1, System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence1, class System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryMessageSequence.op_Equality(System.ServiceModel.Discovery.DiscoveryMessageSequence,System.ServiceModel.Discovery.DiscoveryMessageSequence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageSequence1" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+        <Parameter Name="messageSequence2" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+      </Parameters>
+      <Docs>
+        <param name="messageSequence1">探索メッセージ シーケンス。</param>
+        <param name="messageSequence2">探索メッセージ シーケンス。</param>
+        <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> の指定された 2 つのインスタンスが等しいかどうかを判定します。</summary>
+        <returns>
+          <see langword="true" />2 つの探索メッセージ シーケンス インスタンスが等しい場合はそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence1, System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence1, class System.ServiceModel.Discovery.DiscoveryMessageSequence messageSequence2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryMessageSequence.op_Inequality(System.ServiceModel.Discovery.DiscoveryMessageSequence,System.ServiceModel.Discovery.DiscoveryMessageSequence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageSequence1" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+        <Parameter Name="messageSequence2" Type="System.ServiceModel.Discovery.DiscoveryMessageSequence" />
+      </Parameters>
+      <Docs>
+        <param name="messageSequence1">探索メッセージ シーケンス。</param>
+        <param name="messageSequence2">探索メッセージ シーケンス。</param>
+        <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> の指定された 2 つのインスタンスが異なるかどうかを判定します。</summary>
+        <returns>
+          <see langword="true" />2 つの探索メッセージ シーケンス インスタンスが等しくない場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SequenceId">
+      <MemberSignature Language="C#" Value="public Uri SequenceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri SequenceId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.DiscoveryMessageSequence.SequenceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シーケンス ID を取得します。</summary>
+        <value>シーケンス ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、インスタンス識別子のコンテキスト内でシーケンスを識別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryMessageSequence.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequence" /> インスタンスの文字列表現を作成します。</summary>
+        <returns>探索メッセージのシーケンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

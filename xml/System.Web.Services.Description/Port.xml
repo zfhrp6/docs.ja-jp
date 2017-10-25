@@ -1,0 +1,156 @@
+<Type Name="Port" FullName="System.Web.Services.Description.Port">
+  <TypeSignature Language="C#" Value="public sealed class Port : System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Port extends System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.Port" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.NamedItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtensionPoint("Extensions")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML Web サービスに含まれる個別のエンドポイントを定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの 1 つのアドレス (URI) を指定する、 <xref:System.Web.Services.Description.Binding>、操作のメッセージ形式とプロトコルの詳細を定義し、用にメッセージを指定された<xref:System.Web.Services.Description.PortType>です。 <xref:System.Web.Services.Description.Port.Binding%2A>プロパティを取得または指定したにこれらの値を設定`Port`です。  
+  
+ このクラスは Web サービス記述言語 (WSDL) に、対応`<port>`要素で囲まれた、`<service>`要素。 WSDL の詳細については、http://www.w3.org/TR/wsdl の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、作成、<xref:System.Web.Services.Description.Port>に追加し、 <xref:System.Web.Services.Description.Service.Ports%2A> 、既存のコレクション<xref:System.Web.Services.Description.ServiceDescription>という`myDescription`です。  
+  
+ [!code-cpp[PortClass#1](~/samples/snippets/cpp/VS_Snippets_Remoting/PortClass/CPP/portclass.cpp#1)]
+ [!code-csharp[PortClass#1](~/samples/snippets/csharp/VS_Snippets_Remoting/PortClass/CS/portclass.cs#1)]
+ [!code-vb[PortClass#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/PortClass/VB/portclass.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Port ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.Port.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.Port" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Binding">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName Binding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlQualifiedName Binding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Port.Binding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("binding")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML の値の設定を取得または<see langword="&lt;binding&gt;" />の属性、<see cref="T:System.Web.Services.Description.Port" />です。</summary>
+        <value>XML バインドの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインディングの操作のメッセージ形式とプロトコルの詳細を定義および向けメッセージ、<xref:System.Web.Services.Description.PortType>です。 このプロパティを取得または特定の値を設定`Port`です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[PortClass#2](~/samples/snippets/cpp/VS_Snippets_Remoting/PortClass/CPP/portclass.cpp#2)]
+ [!code-csharp[PortClass#2](~/samples/snippets/csharp/VS_Snippets_Remoting/PortClass/CS/portclass.cs#2)]
+ [!code-vb[PortClass#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/PortClass/VB/portclass.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public override System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Port.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられている機能拡張要素のコレクションを取得、<see cref="T:System.Web.Services.Description.Port" />です。</summary>
+        <value>ポートに関連付けられている機能拡張要素のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[PortClass#3](~/samples/snippets/cpp/VS_Snippets_Remoting/PortClass/CPP/portclass.cpp#3)]
+ [!code-csharp[PortClass#3](~/samples/snippets/csharp/VS_Snippets_Remoting/PortClass/CS/portclass.cs#3)]
+ [!code-vb[PortClass#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/PortClass/VB/portclass.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Service">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Service Service { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Service Service" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Port.Service" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Service</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Services.Description.Service" />うち、<see cref="T:System.Web.Services.Description.Port" />メンバーであります。</summary>
+        <value><see cref="T:System.Web.Services.Description.Service" />うち、<see cref="T:System.Web.Services.Description.Port" />メンバーであります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ PortClass #5  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

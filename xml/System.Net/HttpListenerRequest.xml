@@ -1,0 +1,1471 @@
+<Type Name="HttpListenerRequest" FullName="System.Net.HttpListenerRequest">
+  <TypeSignature Language="C#" Value="public sealed class HttpListenerRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpListenerRequest extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.HttpListenerRequest" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.HttpListener</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>受信 HTTP 要求について説明します、<see cref="T:System.Net.HttpListener" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって処理されるときにクライアントが要求に、Uniform Resource Identifier ()、<xref:System.Net.HttpListener>オブジェクト、<xref:System.Net.HttpListener>提供、<xref:System.Net.HttpListenerContext>送信者、要求、およびクライアントに送信される応答に関する情報を含むオブジェクト。 <xref:System.Net.HttpListenerContext.Request%2A?displayProperty=nameWithType>プロパティから返される、<xref:System.Net.HttpListenerRequest>要求を記述するオブジェクト。  
+  
+ <xref:System.Net.HttpListenerRequest>オブジェクトには、要求などの要求に関する情報が含まれています。<xref:System.Net.HttpListenerRequest.HttpMethod%2A>文字列、<xref:System.Net.HttpListenerRequest.UserAgent%2A>文字列、および本文データの要求 (を参照してください、<xref:System.Net.HttpListenerRequest.InputStream%2A>プロパティ)。  
+  
+ 要求に応答してを使用して、関連する応答を取得する必要があります、<xref:System.Net.HttpListenerContext.Response%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、受信および応答するための方法を示します、<xref:System.Net.HttpListenerRequest>です。  
+  
+ [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AcceptTypes">
+      <MemberSignature Language="C#" Value="public string[] AcceptTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AcceptTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.AcceptTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが受け入れる MIME の種類を取得します。</summary>
+        <value>A <see cref="T:System.String" /> 、要求で指定された型名を格納する配列<see langword="Accept" />ヘッダーまたは<see langword="null" />クライアント要求を含んでいない場合、<see langword="Accept" />ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Accept`ヘッダーは、Multipurpose Internet Mail Extensions (MIME) の型名をスペースで区切られた文字列 (たとえば、 `image/jpeg`)、MIME の種類、クライアントはそのまま使用し、応答で処理する準備を示すです。 `*/*`エントリは、クライアントが任意の MIME 型を受け入れることを示します。 詳細の詳細については、`Accept`ヘッダーで使用できる RFC 2616 を参照してください[http://www.rfc-editor.org](http://www.rfc-editor.org/)です。  
+  
+ 要求ヘッダーの完全な一覧については、<xref:System.Net.HttpRequestHeader>列挙します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetClientCertificate">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginGetClientCertificate (AsyncCallback requestCallback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginGetClientCertificate(class System.AsyncCallback requestCallback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerRequest.BeginGetClientCertificate(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestCallback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="requestCallback">操作の完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、操作が完了すると、コールバック デリゲートに渡されます。</param>
+        <summary>クライアントの X.509 v.3 証明書への非同期要求を開始します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />操作の状態を示すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCertificateError">
+      <MemberSignature Language="C#" Value="public int ClientCertificateError { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ClientCertificateError" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ClientCertificateError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>問題を識別するエラー コードを取得、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />クライアントによって指定します。</summary>
+        <value><see cref="T:System.Int32" /> Windows エラー コードを含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、によって、Secure Channel (Schannel) セキュリティ サポート プロバイダー インターフェイス (SSPI)、証明書の検証に使用されるを返された Windows エラー コードが含まれています。 Schannel の SSPI サポートに関する詳細については、マニュアルを参照して"を作成する、セキュリティで保護された接続を使用して Schannel"セキュリティで[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、要求に有効な証明書が含まれているかどうかを確認するには、このプロパティを確認します。  
+  
+ [!code-csharp[NCLListener#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLListener/CS/sample.cs#3)]
+ [!code-vb[NCLListener#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLListener/vb/sample.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">クライアント証明書がへの呼び出しによってまだ初期化されていませんが、<see cref="M:System.Net.HttpListenerRequest.BeginGetClientCertificate(System.AsyncCallback,System.Object)" />または<see cref="M:System.Net.HttpListenerRequest.GetClientCertificate" />メソッド  
+  
+ または  
+  
+ 操作が進行中です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding ContentEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding ContentEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ContentEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求で送信されるデータで使用できるコンテンツ エンコーディングを取得します。</summary>
+        <value><see cref="T:System.Text.Encoding" />オブジェクト内のデータで使用するのに適した、<see cref="P:System.Net.HttpListenerRequest.InputStream" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.Encoding>バイト シーケンスを文字セット (コード ページ) と文字をバイト シーケンスに変換するオブジェクトを使用できます。 このプロパティには、文字セット値が使用されます、`Content-Type`ヘッダー エンコード方法を判断します。 このプロパティを返しますのかどうかはその情報は使用できません、<xref:System.Text.Encoding.Default%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListenerRequest.ContentEncoding%2A>プロパティです。  
+  
+ [!code-csharp[Net_Listener_Basic#16](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentLength64">
+      <MemberSignature Language="C#" Value="public long ContentLength64 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength64" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ContentLength64" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に含まれる本文データの長さを取得します。</summary>
+        <value>要求の値<see langword="Content-Length" />ヘッダー。 コンテンツの長さが不明の場合、この値は-1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Content-Length`ヘッダーが要求に付随する本文データの長さをバイト単位で表されます。  
+  
+ 要求ヘッダーの完全な一覧については、<xref:System.Net.HttpRequestHeader>列挙します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.HttpListenerRequest.ContentLength64%2A>本文データの処理中にプロパティです。  
+  
+ [!code-csharp[Net_Listener_Basic#16](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public string ContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に含まれる本文データの MIME の種類を取得します。</summary>
+        <value>A<see cref="T:System.String" />の要求のテキストを含む<see langword="Content-Type" />ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 本文のデータの Multipurpose Internet Mail Extensions (MIME) の型を宣言、クライアントには、要求の本文データが含まれている場合、`Content-Type`ヘッダー。 たとえば、Web フォームを使用して、データの既定の MIME タイプが返されます、`POST`メソッドは`application/x-www-form-urlencoded`します。  
+  
+ 要求ヘッダーの完全な一覧については、<xref:System.Net.HttpRequestHeader>列挙および RFC 2616 で利用可能な[http://www.rfc-editor.org](http://www.rfc-editor.org/)です。  
+  
+ <xref:System.Net.HttpListenerRequest.ContentType%2A>がある場合は null にない`Content-Type`要求のヘッダー。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用する方法を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#16](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="public System.Net.CookieCollection Cookies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.CookieCollection Cookies" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.Cookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.CookieCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求で送信されたクッキーを取得します。</summary>
+        <value>A<see cref="T:System.Net.CookieCollection" />要求に付随する cookie を格納しています。 このプロパティは、cookie が要求に含まれていない場合、空のコレクションを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Cookie とは、ローカル (クライアント) コンピューターに格納されている Web サーバーから名前/値のテキスト データです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、要求で送信されたクッキーの値を表示します。  
+  
+ [!code-csharp[Net_Listener_Basic#18](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGetClientCertificate">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2 EndGetClientCertificate (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Cryptography.X509Certificates.X509Certificate2 EndGetClientCertificate(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerRequest.EndGetClientCertificate(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">保留中の証明書の要求。</param>
+        <summary>クライアントの X.509 v.3 証明書への非同期要求を終了します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />操作が開始されたときに返されるオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" />呼び出して取得されませんでした。<see cref="M:System.Net.HttpListenerRequest.BeginGetClientCertificate(System.AsyncCallback,System.Object)" /><paramref name="e." /></exception>
+        <exception cref="T:System.InvalidOperationException">によって識別される操作に対してこのメソッドが既に呼び出さ<paramref name="asyncResult" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClientCertificate">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2 GetClientCertificate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Cryptography.X509Certificates.X509Certificate2 GetClientCertificate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerRequest.GetClientCertificate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントの X.509 v.3 証明書を取得します。</summary>
+        <returns>A<see cref="N:System.Security.Cryptography.X509Certificates" />クライアントの X.509 v.3 証明書を含むオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、証明書を取得するまでブロックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">進行状況では、クライアントの X.509 v.3 証明書を取得するには、このメソッドを呼び出すと、そのため、このメソッドに別の呼び出しを確立できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClientCertificateAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Security.Cryptography.X509Certificates.X509Certificate2&gt; GetClientCertificateAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Security.Cryptography.X509Certificates.X509Certificate2&gt; GetClientCertificateAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerRequest.GetClientCertificateAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Security.Cryptography.X509Certificates.X509Certificate2&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期操作として、クライアントの X.509 v.3 証明書を取得します。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。 <see cref="P:System.Threading.Tasks.Task`1.Result" />タスク オブジェクトのプロパティを返します、<see cref="N:System.Security.Cryptography.X509Certificates" />クライアントの X.509 v.3 証明書を含むオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>オブジェクトは、証明書が取得されたときに、完了します。  
+  
+ クライアントの X.509 v.3 証明書を取得するには、このメソッドを呼び出すが進行中に、このメソッドに別の呼び出しを確立できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasEntityBody">
+      <MemberSignature Language="C#" Value="public bool HasEntityBody { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasEntityBody" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.HasEntityBody" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />要求に本文データが関連付けられているかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />要求の本文のデータが関連付けられている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、サーバーにデータを送信する要求、`POST`メソッドはなど、エンティティ本体を持つ必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#16](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求で送信ヘッダーの名前/値ペアのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Net.WebHeaderCollection" />要求に含まれる HTTP ヘッダーを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求ヘッダーには、メタデータ情報が含まれています。 たとえば、ヘッダーは、サーバーをクライアントを参照するリソースの Uniform リソース識別子 (URI) を含めることができます、応答本文内のデータ型のクライアント、および、許容される MIME で使用されるユーザー エージェントの id。  
+  
+ 要求ヘッダーの完全な一覧については、<xref:System.Net.HttpRequestHeader>列挙します。  
+  
+   
+  
+## Examples  
+ 次のコード例のすべての情報を表示する、指定された<xref:System.Net.WebHeaderCollection>オブジェクト。  
+  
+ [!code-csharp[Net_Listener_Basic#21](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpMethod">
+      <MemberSignature Language="C#" Value="public string HttpMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HttpMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.HttpMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントによって指定された HTTP メソッドを取得します。</summary>
+        <value>A<see cref="T:System.String" />要求で使用されるメソッドを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP メソッドは通常 GET または POST によっては、クライアントで必要とするアクションです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream InputStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream InputStream" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.InputStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントによって送信される本文データを格納しているストリームを取得します。</summary>
+        <value>読み取り可能な<see cref="T:System.IO.Stream" />要求の本文内のクライアントから送信されたバイト数を格納しているオブジェクト。 このプロパティを返します<see cref="F:System.IO.Stream.Null" />場合は、要求と一緒に送信されるデータがありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントには、データが転送される場合 (たとえば、HTTP を使用して`POST`メソッド)、このメソッドによって返されるストリームには、そのデータが含まれています。  
+  
+> [!NOTE]
+>  要求を終了しても、このプロパティによって返されたストリームは閉じられません。 ストリームが不要になったときに呼び出すことで閉じる必要があります、<xref:System.IO.Stream.Close%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用して、要求と共に送信されるデータの読み取りを示します。  
+  
+ [!code-csharp[Net_Listener_Basic#16](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAuthenticated">
+      <MemberSignature Language="C#" Value="public bool IsAuthenticated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAuthenticated" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.IsAuthenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Always returns false")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />この要求を送信するクライアントが認証されたかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />場合は、クライアントが認証されています。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションが要求を使用してクライアント認証、<xref:System.Net.HttpListener.AuthenticationSchemes%2A>または<xref:System.Net.HttpListener.AuthenticationSchemeSelectorDelegate%2A>プロパティです。  
+  
+ アプリケーションが受信されません、<xref:System.Net.HttpListenerContext>が正常に認証されていないクライアントからの要求。  
+  
+   
+  
+## Examples  
+ 次のコード例の値を表示する、<xref:System.Net.HttpListenerRequest.IsAuthenticated%2A>プロパティです。  
+  
+ [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLocal">
+      <MemberSignature Language="C#" Value="public bool IsLocal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLocal" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.IsLocal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />要求がローカル コンピューターから送信されたかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />同じコンピューターで、要求が発生した場合、 <see cref="T:System.Net.HttpListener" /> ; 要求を提供するオブジェクトそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、このプロパティを使用して、要求は、ローカル コンピューターとは、特別な処理を実行することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListenerRequest.IsLocal%2A>プロパティです。  
+  
+ [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecureConnection">
+      <MemberSignature Language="C#" Value="public bool IsSecureConnection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecureConnection" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.IsSecureConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />要求を送信するために使用する TCP 接続が Secure Sockets Layer (SSL) プロトコルを使用するかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />TCP 接続が SSL; を使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントの要求を使用するには、セキュリティで保護された接続を要求するには、<xref:System.Uri.UriSchemeHttps>の代わりに<xref:System.Uri.UriSchemeHttp>です。 SSL を使用して接続を確立できない場合、クライアントが受信、<xref:System.Net.WebException>エラーに関する情報を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListenerRequest.IsSecureConnection%2A>プロパティです。  
+  
+ [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWebSocketRequest">
+      <MemberSignature Language="C#" Value="public bool IsWebSocketRequest { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsWebSocketRequest" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.IsWebSocketRequest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Boolean" /> TCP 接続が WebSocket 要求であるかどうかを示す値。</summary>
+        <value><see cref="T:System.Boolean" /> を返します。  
+  
+ <see langword="true" />TCP 接続が WebSocket 要求である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepAlive">
+      <MemberSignature Language="C#" Value="public bool KeepAlive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepAlive" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.KeepAlive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />をクライアントが永続的な接続を要求するかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />場合は、接続を開いておく必要があります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、HTTP クライアントとサーバーを短時間で複数回データを交換する、永続的な接続、通信速度を各メッセージ用の TCP 接続を開いたり、閉じたりするために必要なオーバーヘッドを回避することができます。 このプロパティの既定値は、http/1.1 を使用するクライアント、`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalEndPoint">
+      <MemberSignature Language="C#" Value="public System.Net.IPEndPoint LocalEndPoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPEndPoint LocalEndPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.LocalEndPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPEndPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーに、要求を転送する IP アドレスとポート番号を取得します。</summary>
+        <value><see cref="T:System.Net.IPEndPoint" />に要求が送信される IP アドレスを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、これらのアドレスは方法に基づいて、要求に応答する場合に便利です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolVersion">
+      <MemberSignature Language="C#" Value="public Version ProtocolVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version ProtocolVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ProtocolVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求元のクライアントで使用される HTTP バージョンを取得します。</summary>
+        <value>A <see cref="T:System.Version" /> HTTP クライアントのバージョンを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 利用できるドキュメントのさまざまな HTTP バージョンの機能が指定されて[http://www.rfc-editor.org](http://www.rfc-editor.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryString">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection QueryString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection QueryString" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.QueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に含まれるクエリ文字列を取得します。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.NameValueCollection" />要求に含まれるクエリ データを格納しているオブジェクト<see cref="P:System.Net.HttpListenerRequest.Url" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URL をクエリの情報は、パス情報、疑問符 (?) で区切られます。 名前/値ペアは等号 (=) で区切られます。 1 つの文字列としてクエリのデータにアクセスするには、取得、<xref:System.Uri.Query%2A>からプロパティ値、<xref:System.Uri>によって返されるオブジェクト<xref:System.Net.HttpListenerRequest.Url%2A>です。  
+  
+> [!NOTE]
+>  等号 (=) なしのクエリ (例: [http://www.contoso.com/query.htm?Name](http://www.contoso.com/query.htm?Name) ) に追加されます、`null`キー、<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListenerRequest.QueryString%2A>プロパティです。  
+  
+ [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RawUrl">
+      <MemberSignature Language="C#" Value="public string RawUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RawUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.RawUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントによって要求された URL 情報 (せずに、ホストとポート) を取得します。</summary>
+        <value>A<see cref="T:System.String" />この要求の生の URL を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 生の URL は、次のドメイン情報の URL の一部として定義されます。 URL 文字列で`http://www.contoso.com/articles/recent.aspx`、生の URL は`/articles/recent.aspx`します。 生の URL には、存在する場合、クエリ文字列が含まれます。  
+  
+ ホストとポートの情報を取得するを使用して、<xref:System.Net.HttpListenerRequest.RemoteEndPoint%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListenerRequest.RawUrl%2A>プロパティです。  
+  
+ [!code-csharp[Net_Listener_Basic#11](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteEndPoint">
+      <MemberSignature Language="C#" Value="public System.Net.IPEndPoint RemoteEndPoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPEndPoint RemoteEndPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.RemoteEndPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPEndPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント要求の送信元 IP アドレスとポート番号を取得します。</summary>
+        <value><see cref="T:System.Net.IPEndPoint" />要求の送信元 IP アドレスとポート番号を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#17](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestTraceIdentifier">
+      <MemberSignature Language="C#" Value="public Guid RequestTraceIdentifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid RequestTraceIdentifier" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.RequestTraceIdentifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Always returns Guid.Empty")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信 HTTP 要求の要求識別子を取得します。</summary>
+        <value>A <see cref="T:System.Guid" /> HTTP 要求の識別子を含むオブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceName">
+      <MemberSignature Language="C#" Value="public string ServiceName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServiceName" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ServiceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが要求を送信したサービス プロバイダー名 (SPN) を取得します。</summary>
+        <value>A <see cref="T:System.String" /> SPN 要求で送信されたクライアントを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを使用して、<xref:System.Net.HttpListenerRequest.ServiceName%2A>プロパティをカスタム提供サービス名 (SPN) の検証を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportContext">
+      <MemberSignature Language="C#" Value="public System.Net.TransportContext TransportContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.TransportContext TransportContext" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.TransportContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.TransportContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.TransportContext" />クライアント要求します。</summary>
+        <value>A<see cref="T:System.Net.TransportContext" />クライアントの要求に対するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.TransportContext>に対してチャネル バインディング トークン (CBT) を取得するプロパティを使用することができます、 <xref:System.Net.HttpListenerRequest> HTTPS を使用して送信されました。  
+  
+ アプリケーションを使用して、<xref:System.Net.TransportContext>ネイティブ Win32 への呼び出しを使用したカスタム認証を実行するプロパティ[AcceptSecurityContext](http://go.microsoft.com/fwlink/?LinkId=147021)関数。  
+  
+ アプリケーションが、これからチャネル バインディング トークン (CBT) を取得しようとしています。 場合<xref:System.Net.HttpListenerRequest.TransportContext%2A>プロパティを使用して、<xref:System.Net.TransportContext.GetChannelBinding%2A>メソッドおよび<xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind>は<xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint>、、<xref:System.Net.HttpListenerRequest>がスローされます<xref:System.NotSupportedException>です。 <xref:System.Net.HttpListenerRequest>よりも優先、<xref:System.Net.TransportContext.GetChannelBinding%2A>内部実装を持つメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public Uri Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Url" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Uri" />クライアントによって要求されたオブジェクト。</summary>
+        <value>A<see cref="T:System.Uri" />クライアントによって要求されたリソースを識別するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListenerRequest.Url%2A>プロパティをから利用可能なすべての情報を取得できるように、<xref:System.Uri>オブジェクト。 URI の要求の生のテキストのみを知っている必要がある場合は、使用を検討して、<xref:System.Net.HttpListenerRequest.RawUrl%2A>プロパティ代わりにします。  
+  
+ <xref:System.Net.HttpListenerRequest.Url%2A>プロパティが null 場合、<xref:System.Uri>クライアントから解析できませんでした。  
+  
+ <xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A>プロパティを示す場合<xref:System.Net.HttpListener>変換された URI でパーセント エンコード値を変換し、その他の正規化手順は実行ではなく生のエスケープ解除された URI を使用します。  
+  
+ ときに、<xref:System.Net.HttpListener>インスタンスを介して要求を受け取ると、`http.sys`サービスによって提供される URI 文字列のインスタンス作成`http.sys`、として公開して、<xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=nameWithType>プロパティです。  
+  
+ `http.sys`サービスは 2 つの要求の URI 文字列を公開します。  
+  
+-   生の URI  
+  
+-   変換された URI  
+  
+ 生の URI は、<xref:System.Uri?displayProperty=nameWithType>の HTTP 要求の要求行で提供されます。  
+  
+ `GET /path/`  
+  
+ `Host: www.contoso.com`  
+  
+ によって提供される生の URI `http.sys` 、上記で説明した要求は「/path/」です。 これは、ネットワーク経由で送信された HTTP 動詞の後に、文字列を表します。  
+  
+ `http.sys`サービスが HTTP 要求の行で提供される URI を使用して、要求で提供される情報から変換された URI を作成しに、元のサーバー要求を決定するホスト ヘッダーを転送する必要があります。 これは、一連の登録済み URI プレフィックスの要求からの情報を比較することによって行います。 これらの値を比較できるようにするには、するために、要求に正規化をいくつか行う必要があります。 変換された URI 上のサンプルではようになります。  
+  
+ `http://www.contoso.com/path/`  
+  
+ `http.sys`を組み合わせたものをサービス、<xref:System.Uri.Host%2A?displayProperty=nameWithType>変換された URI を作成する要求行の文字列とプロパティの値。 さらに、`http.sys`と<xref:System.Uri?displayProperty=nameWithType>クラスも、次の操作します。  
+  
+-   エスケープを解除すべてパーセント エンコードされた値。  
+  
+-   Utf-16 文字表記に非 ASCII 文字をパーセント エンコードに変換します。 Unicode 文字 (Unicode エンコーディング %uxxxx 形式を使用して) だけでなく utf-8 と ANSI や DBCS 文字はサポートされていることに注意してください。  
+  
+-   パスの圧縮など、他の正規化の手順を実行します。  
+  
+ 要求には、パーセントでエンコードされた値に使用されるエンコーディングに関する情報が含まれていない、ためには、パーセント エンコード値を解析するだけ、正しいエンコーディングを決定することはできません。  
+  
+ したがって`http.sys`プロセスを変更するための 2 つのレジストリ キーを提供します。  
+  
+|レジストリ キー|既定値|説明|  
+|------------------|-------------------|-----------------|  
+|EnableNonUTF8|1|0 の場合、 `http.sys` UTF で 8 でエンコードされた Url のみを受け入れます。<br /><br /> 0 以外の場合`http.sys`も要求で ANSI でエンコードされたまたは DBCS でエンコードされた Url を受け取ります。|  
+|FavorUTF8|1|0 以外の場合`http.sys`し、変換に失敗したし、EnableNonUTF8 が 0 でない場合に utf-8 として URL を先にデコードすると常に、Http.sys を ANSI または DBCS としてデコードしようとします。<br /><br /> 0 の場合 (そして EnableNonUTF8 0 ではない)、`http.sys`場合は、その ANSI または DBCS; としてデコードする試行が成功しない、utf-8 の変換を試みます。|  
+  
+ ときに<xref:System.Net.HttpListener>要求を受信して変換された URI を使用して`http.sys`への入力として、<xref:System.Net.HttpListenerRequest.Url%2A>プロパティです。  
+  
+ Uri の文字と数字以外の文字をサポートする必要があります。 例としては次の URI は、顧客の顧客情報の取得に使用される「1/3812」番号します。  
+  
+ `http://www.contoso.com/Customer('1%2F3812')/`  
+  
+ Uri (%2f) で、パーセント エンコードのスラッシュを注意してください。 これは、ここでは、スラッシュ文字を表し、データはパス区切り記号ではないため、必要に応じて。  
+  
+ Uri のコンス トラクターに文字列を渡すことは、次の URI になります。  
+  
+ `http://www.contoso.com/Customer('1/3812')/`  
+  
+ 分割して、パスのセグメントに、次の要素の結果になります。  
+  
+ `Customer('1`  
+  
+ `3812')`  
+  
+ これは、要求の送信元の目的ではありません。  
+  
+ 場合、<xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A>プロパティが false に設定し、<xref:System.Net.HttpListener>要求を受信から変換された URI ではなく生の URI を使用して、`http.sys`への入力として、<xref:System.Net.HttpListenerRequest.Url%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.HttpListenerRequest.Url%2A>プロパティです。  
+  
+ [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlReferrer">
+      <MemberSignature Language="C#" Value="public Uri UrlReferrer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri UrlReferrer" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.UrlReferrer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーにクライアントを参照するリソースの Uniform リソース識別子 (URI) を取得します。</summary>
+        <value>A<see cref="T:System.Uri" />の要求のテキストを格納しているオブジェクト<see cref="F:System.Net.HttpRequestHeader.Referer" />ヘッダー、または<see langword="null" />ヘッダーが要求に含まれていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントには、要求された URI へのハイパーリンクが後に、その要求があります、`Referrer`ハイパーリンクが含まれているリソースの URI を識別するヘッダー。  
+  
+ クライアントが偽るまたは表示をしない、<xref:System.Net.HttpRequestHeader.Referer>ヘッダー。 したがって、while、<xref:System.Net.HttpListenerRequest.UrlReferrer%2A>プロパティは、Web トラフィックの基本的な傾向の識別に役立ちます; 必要がありますいないとして使用する認証スキームの一部をデータへのアクセスを制御します。  
+  
+ 要求ヘッダーの完全な一覧については、<xref:System.Net.HttpRequestHeader>列挙します。  
+  
+ <xref:System.Net.HttpListenerRequest.UrlReferrer%2A>がある場合は null にない`Referrer`要求のヘッダー場合や、`Referrer`ヘッダーは要求内に存在が、有効な解析されない<xref:System.Uri>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserAgent">
+      <MemberSignature Language="C#" Value="public string UserAgent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserAgent" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.UserAgent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントから提示されたユーザー エージェントを取得します。</summary>
+        <value>A<see cref="T:System.String" />の要求のテキストを格納しているオブジェクト<see langword="User-Agent" />ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `User-Agent`ヘッダーには通常の要求の生成に使用するソフトウェアの名前とバージョン番号を識別するテキストが含まれています。  
+  
+ 要求ヘッダーの完全な一覧については、<xref:System.Net.HttpRequestHeader>列挙します。  
+  
+ <xref:System.Net.HttpListenerRequest.UserAgent%2A>がある場合は null にない`User-Agent`要求のヘッダー。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserHostAddress">
+      <MemberSignature Language="C#" Value="public string UserHostAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserHostAddress" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.UserHostAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーに、要求を転送する IP アドレスとポート番号を取得します。</summary>
+        <value>A<see cref="T:System.String" />ホスト アドレス情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される情報はまた、<xref:System.Net.HttpListenerRequest.LocalEndPoint%2A>プロパティの値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserHostName">
+      <MemberSignature Language="C#" Value="public string UserHostName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserHostName" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.UserHostName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DNS 名を取得し、指定した場合、ポート番号が、クライアントによって指定します。</summary>
+        <value>A<see cref="T:System.String" />の要求のテキストを含む値<see langword="Host" />ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Host`ヘッダーには、要求されたサーバーのホスト名が含まれています。 ポート番号を指定すると、場合をコロンで区切ってと (たとえば、 `www.contoso.com:8080`)。  
+  
+ このプロパティを使用して、要求で指定されたホスト名に応じた別の応答を返すことができます。  
+  
+ 要求ヘッダーの完全な一覧については、<xref:System.Net.HttpRequestHeader>列挙します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserLanguages">
+      <MemberSignature Language="C#" Value="public string[] UserLanguages { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] UserLanguages" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.UserLanguages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答として優先される自然言語を取得します。</summary>
+        <value>A <see cref="T:System.String" /> 、要求で指定された言語を含む配列<see cref="F:System.Net.HttpRequestHeader.AcceptLanguage" />ヘッダーまたは<see langword="null" />クライアント要求を含んでいない場合、<see cref="F:System.Net.HttpRequestHeader.AcceptLanguage" />ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細の詳細については、`Accept-Language`ヘッダーを参照してください RFC 2616 14.4 で利用可能な[http://www.rfc-editor.org](http://www.rfc-editor.org/)です。  
+  
+ 要求ヘッダーの完全な一覧については、<xref:System.Net.HttpRequestHeader>列挙します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、要求から言語を表示`Accept-Language`ヘッダー。  
+  
+ [!code-csharp[Net_Listener_Basic#15](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

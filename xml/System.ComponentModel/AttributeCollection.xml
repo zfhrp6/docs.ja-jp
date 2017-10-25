@@ -1,0 +1,803 @@
+<Type Name="AttributeCollection" FullName="System.ComponentModel.AttributeCollection">
+  <TypeSignature Language="C#" Value="public class AttributeCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AttributeCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.AttributeCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>属性のコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.AttributeCollection>クラスは読み取り専用です。 属性を追加または削除メソッドは実装されません。 これらのメソッドを実装するには、このクラスから継承する必要があります。  
+  
+ 使用して、<xref:System.ComponentModel.AttributeCollection.Count%2A>コレクション内に存在する属性の数を検索するプロパティです。  
+  
+ このクラスのメソッドを使用して、その内容のコレクションを照会することができますも。 呼び出す、<xref:System.ComponentModel.AttributeCollection.Contains%2A>メソッドを指定した属性または属性の配列がコレクションに存在することを確認します。 呼び出す、<xref:System.ComponentModel.AttributeCollection.Matches%2A>メソッドを指定した属性または属性の配列が、コレクションに存在して、指定された属性の値が、コレクション内の値と同じであることを確認します。  
+  
+ ほとんどの属性には、既定値がありますが、既定値は必要ありません。 属性は既定値を持たない場合`null`型を受け取り、インデックス付きのプロパティから返されます。 独自の属性を定義するときに、"Default"をという名前の属性型のパブリック静的フィールドを定義するかを引数をとらないコンス トラクターを提供することにより、既定値を宣言できます。  
+  
+   
+  
+## Examples  
+ 最初のコード例を確認するかどうか、<xref:System.ComponentModel.BrowsableAttribute>がこのコレクションに設定されています。 実際の値を取得する 2 つ目のコード例、<xref:System.ComponentModel.DescriptionAttribute>ボタン。 どちらの例で必要とする`button1`と`textBox1`フォーム上に作成します。 属性を使用することを確認属性が設定されている、またはの値にアクセスします。  
+  
+ [!code-cpp[Classic AttributeCollection Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic AttributeCollection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic AttributeCollection Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic AttributeCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic AttributeCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic AttributeCollection Example/VB/source.vb#1)]  
+  
+ [!code-cpp[Classic AttributeCollection Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic AttributeCollection Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic AttributeCollection Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic AttributeCollection Example/CS/source.cs#2)]
+ [!code-vb[Classic AttributeCollection Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic AttributeCollection Example/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AttributeCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AttributeCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.AttributeCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AttributeCollection (params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AttributeCollection.#ctor(System.Attribute[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />このコレクションの属性を提供します。</param>
+        <summary><see cref="T:System.ComponentModel.AttributeCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.ComponentModel.AttributeCollection>で属性を使用して`button1`です。 いるものと`button1`がフォーム上に作成されました。  
+  
+ [!code-cpp[Classic AttributeCollection.AttributeCollection Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic AttributeCollection.AttributeCollection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic AttributeCollection.AttributeCollection Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic AttributeCollection.AttributeCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic AttributeCollection.AttributeCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic AttributeCollection.AttributeCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="attributes" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="protected virtual Attribute[] Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Attribute[] Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AttributeCollection.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Attribute[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性のコレクションを取得します。</summary>
+        <value>属性のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (Attribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Attribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AttributeCollection.Contains(System.Attribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Attribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute"><see cref="T:System.Attribute" />のコレクションを検索します。</param>
+        <summary>この属性のコレクションが指定された属性を持つかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />格納する場合、コレクション属性または属性の型の既定の属性は、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションは、指定した属性の型が、コレクション内に存在する場合と指定した属性の値がコレクション内の属性のインスタンスの値と同じである場合、指定された属性を持ちます。  
+  
+ 間の違い、<xref:System.ComponentModel.AttributeCollection.Matches%2A>と<xref:System.ComponentModel.AttributeCollection.Contains%2A>メソッドは、<xref:System.ComponentModel.AttributeCollection.Matches%2A>呼び出し、<xref:System.Attribute.Match%2A>属性、メソッドおよび<xref:System.ComponentModel.AttributeCollection.Contains%2A>呼び出し、<xref:System.Object.Equals%2A>メソッドです。  
+  
+ ほとんどの属性は、これらのメソッドは、同じ処理を行います。 ただし、複数のフラグを持たない可能性のある属性の<xref:System.Attribute.Match%2A>を返すように、通常、実装`true`フラグのいずれかが満たされている場合。 たとえば、"SupportsSql"、"SupportsOleDb"および"SupportsXml"のブール フラグとデータ バインディング属性があるとします。 この属性は、3 つすべてのデータ バインディング アプローチをサポートしているプロパティ上に存在する可能性があります。 プログラマが特定の方法は、使用可能なかどうかのみ確認する必要がある場合もありますが、すべての 3 つです。 そのため、プログラマが使用でした<xref:System.Attribute.Match%2A>プログラマ フラグのみが含まれる属性のインスタンスの必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例のチェックをコレクションに含まれているかどうかを確認、 <xref:System.ComponentModel.BrowsableAttribute> 'éý'`true`です。 いるものと`button1`と`textBox1`フォームで作成されています。  
+  
+ [!code-cpp[Classic AttributeCollection.Contains Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic AttributeCollection.Contains Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic AttributeCollection.Contains Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic AttributeCollection.Contains Example/CS/source.cs#1)]
+ [!code-vb[Classic AttributeCollection.Contains Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic AttributeCollection.Contains Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AttributeCollection.Contains(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />のコレクションを検索します。</param>
+        <summary>この属性のコレクションが属性の配列で指定されたすべての属性を含めるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />コレクションには、すべての属性が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションでは、すべての指定された属性型がコレクションに存在する場合、および指定した配列内の各属性は、コレクション内の属性と同じ属性の指定した配列があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、内の属性を比較`button1`と`textBox1`をテキスト ボックスの属性に、ボタンの属性が含まれるかどうかを確認します。 これでは、両方`button1`と`textBox1`フォームで作成されています。  
+  
+ [!code-cpp[Classic AttributeCollection.Contains1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic AttributeCollection.Contains1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic AttributeCollection.Contains1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic AttributeCollection.Contains1 Example/CS/source.cs#1)]
+ [!code-vb[Classic AttributeCollection.Contains1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic AttributeCollection.Contains1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AttributeCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コレクションのコピー先の <see cref="T:System.Array" />。</param>
+        <param name="index">コピーの開始位置を示すインデックス。</param>
+        <summary>指定したインデックスにある開始位置として、配列にコレクションをコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AttributeCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の数を取得します。</summary>
+        <value>属性の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.ComponentModel.AttributeCollection.Count%2A>オブジェクトのコレクションを反復処理するループの制限を設定するプロパティです。 コレクションの 0 から始まる場合、必ず使用して`Count - 1`ループの上限の境界として。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ComponentModel.AttributeCollection.Count%2A>プロパティにプロパティの数を印刷する`button1`テキスト ボックスにします。 いるものと`button1`と`textBox1`フォームで作成されています。  
+  
+ [!code-cpp[Classic AttributeCollection.Count Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic AttributeCollection.Count Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic AttributeCollection.Count Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic AttributeCollection.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic AttributeCollection.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic AttributeCollection.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.AttributeCollection Empty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.AttributeCollection Empty" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.AttributeCollection.Empty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新規に作成するのではなく、使用できる、空のコレクションを指定します。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromExisting">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.AttributeCollection FromExisting (System.ComponentModel.AttributeCollection existing, params Attribute[] newAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.AttributeCollection FromExisting(class System.ComponentModel.AttributeCollection existing, class System.Attribute[] newAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AttributeCollection.FromExisting(System.ComponentModel.AttributeCollection,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="existing" Type="System.ComponentModel.AttributeCollection" />
+        <Parameter Name="newAttributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="existing"><see cref="T:System.ComponentModel.AttributeCollection" />元となる、コピーを作成します。</param>
+        <param name="newAttributes">型の配列<see cref="T:System.Attribute" />このコレクションの属性を提供します。 指定できます<see langword="null" />です。</param>
+        <summary>新たに作成<see cref="T:System.ComponentModel.AttributeCollection" />、既存の<see cref="T:System.ComponentModel.AttributeCollection" />します。</summary>
+        <returns>新しい<see cref="T:System.ComponentModel.AttributeCollection" />のコピーである<paramref name="existing" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`newAttributes`パラメーターを指定すると、その<xref:System.Attribute>のエントリがマージされます、`existing`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="existing" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultAttribute">
+      <MemberSignature Language="C#" Value="protected Attribute GetDefaultAttribute (Type attributeType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Attribute GetDefaultAttribute(class System.Type attributeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AttributeCollection.GetDefaultAttribute(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Attribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType"><see cref="T:System.Type" />の属性を取得します。</param>
+        <summary>既定値を返します<see cref="T:System.Attribute" />の指定された<see cref="T:System.Type" />です。</summary>
+        <returns>既定値<see cref="T:System.Attribute" />の指定された<paramref name="attributeType" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AttributeCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコレクションの列挙子を取得します。</summary>
+        <returns>型の列挙子<see cref="T:System.Collections.IEnumerator" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、属性の列挙子を取得`button1`です。 列挙子を使用して、コレクション内の属性の名前を出力します。 いるものと`button1`と`textBox1`フォームで作成されています。  
+  
+ [!code-cpp[Classic AttributeCollection.GetEnumerator Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic AttributeCollection.GetEnumerator Example/CPP/Source.cpp#1)]
+ [!code-csharp[Classic AttributeCollection.GetEnumerator Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic AttributeCollection.GetEnumerator Example/CS/source.cs#1)]
+ [!code-vb[Classic AttributeCollection.GetEnumerator Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic AttributeCollection.GetEnumerator Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual Attribute this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Attribute Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AttributeCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Attribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス<see cref="T:System.ComponentModel.AttributeCollection" />です。</param>
+        <summary>指定したインデックス番号の属性を取得します。</summary>
+        <value><see cref="T:System.Attribute" />指定したインデックス番号します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックス番号は 0 です。 したがって、特定の位置を表す数値から 1 を減算する必要があります<xref:System.Attribute>へのアクセスを<xref:System.Attribute>です。 たとえば、3 つ目を取得する<xref:System.Attribute>を指定する必要があります`myColl[2]`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ComponentModel.AttributeCollection.Item%2A>プロパティの名前を印刷する、<xref:System.Attribute>テキスト ボックス内のインデックス番号を指定します。 このコード例で、2 つ目の名前を表示するインデックス番号は 0 から始まるため<xref:System.Attribute>テキスト ボックスにします。 想定`button1`と`textBox1`フォームで作成されています。  
+  
+ [!code-cpp[Classic AttributeCollection.this Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic AttributeCollection.this Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic AttributeCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic AttributeCollection.this Example/CS/source.cs#1)]
+ [!code-vb[Classic AttributeCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic AttributeCollection.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual Attribute this[Type attributeType] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Attribute Item(class System.Type)" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AttributeCollection.Item(System.Type)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Attribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType"><see cref="T:System.Type" />の<see cref="T:System.Attribute" />をコレクションから取得します。</param>
+        <summary>指定した型の属性を取得します。</summary>
+        <value><see cref="T:System.Attribute" />型を指定して、属性が存在しない場合、属性の型の既定値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内に属性が存在しない場合、このプロパティは、属性の型の既定値を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.ComponentModel.DesignerAttribute>コレクションからその値を出力します。 いるものと`button1`と`textBox1`フォームで作成されています。  
+  
+ このコード例を実行するには、完全修飾アセンブリ名を指定する必要があります。 アセンブリの完全修飾名を取得する方法については、次を参照してください。[アセンブリ名](~/docs/framework/app-domains/assembly-names.md)です。  
+  
+ [!code-cpp[Classic AttributeCollection.this1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic AttributeCollection.this1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic AttributeCollection.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic AttributeCollection.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic AttributeCollection.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic AttributeCollection.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public bool Matches (Attribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Matches(class System.Attribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AttributeCollection.Matches(System.Attribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Attribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">インスタンス<see cref="T:System.Attribute" />このコレクション内の属性と比較します。</param>
+        <summary>指定した属性は、コレクション内の属性と同じかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />属性は、コレクション内に含まれ、コレクション内の属性と同じ値を持つ場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性は、照合のサポートを提供できます。  
+  
+ 間の違い、<xref:System.ComponentModel.AttributeCollection.Matches%2A>と<xref:System.ComponentModel.AttributeCollection.Contains%2A>メソッドは、<xref:System.ComponentModel.AttributeCollection.Matches%2A>呼び出し、<xref:System.Attribute.Match%2A>属性、メソッドおよび<xref:System.ComponentModel.AttributeCollection.Contains%2A>呼び出し、<xref:System.Object.Equals%2A>メソッドです。  
+  
+ ほとんどの属性は、これらのメソッドは、同じ処理を行います。 ただし、複数のフラグを持たない可能性のある属性の<xref:System.Attribute.Match%2A>を返すように、通常、実装`true`フラグのいずれかが満たされている場合。 たとえば、"SupportsSql"、"SupportsOleDb"および"SupportsXml"のブール フラグとデータ バインディング属性があるとします。 この属性は、次の 3 つのデータ バインディングの方法はすべてをサポートしているプロパティ上に存在する可能性があります。 プログラマが特定の方法は、使用可能なかどうかのみ確認する必要がある場合もありますが、すべての 3 つです。 そのため、プログラマが使用でした<xref:System.Attribute.Match%2A>プログラマ フラグのみが含まれる属性のインスタンスの必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、あることを確認、<xref:System.ComponentModel.BrowsableAttribute>がコレクションのメンバーでありに設定されている`true`です。 いるものと`button1`と`textBox1`フォームで作成されています。  
+  
+ [!code-cpp[Classic AttributeCollection.Matches Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic AttributeCollection.Matches Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic AttributeCollection.Matches Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic AttributeCollection.Matches Example/CS/source.cs#1)]
+ [!code-vb[Classic AttributeCollection.Matches Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic AttributeCollection.Matches Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public bool Matches (Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Matches(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AttributeCollection.Matches(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">配列<see cref="T:System.CodeDom.MemberAttributes" />このコレクション内の属性と比較します。</param>
+        <summary>指定した配列内の属性は、コレクション内の属性と同じかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />配列内のすべての属性は、コレクションに含まれ、コレクション内の属性と値が同じである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性は、照合のサポートを提供できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ボタンと一致するかどうかを表示するテキスト ボックス内の属性を比較します。 いるものと`button1`と`textBox1`フォームで作成されています。  
+  
+ [!code-cpp[Classic AttributeCollection.Matches1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic AttributeCollection.Matches1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic AttributeCollection.Matches1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic AttributeCollection.Matches1 Example/CS/source.cs#1)]
+ [!code-vb[Classic AttributeCollection.Matches1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic AttributeCollection.Matches1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AttributeCollection.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションに格納されている要素の数を取得します。</summary>
+        <value>コレクションに格納されている要素の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AttributeCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コレクションへのアクセスが同期されている (スレッド セーフ); 場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AttributeCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AttributeCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.IEnumerator" /> の <see cref="T:System.Collections.IDictionary" /> を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> の <see cref="T:System.Collections.IDictionary" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

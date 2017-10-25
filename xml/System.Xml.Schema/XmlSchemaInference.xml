@@ -1,0 +1,344 @@
+<Type Name="XmlSchemaInference" FullName="System.Xml.Schema.XmlSchemaInference">
+  <TypeSignature Language="C#" Value="public sealed class XmlSchemaInference" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlSchemaInference extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaInference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML ドキュメントから XML スキーマ定義言語 (XSD: XML Schema Definition Language) スキーマを推論します。 <see cref="T:System.Xml.Schema.XmlSchemaInference" />クラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  -   場所や不明または信頼できないソースからスキーマを使用しないでください。 これは、コードのセキュリティが低下します。  
+> -   XML スキーマ (インライン スキーマを含む) を受けます本質的にサービス拒否攻撃です。信頼されていないシナリオでに同意されません。  
+> -   スキーマ検証エラー メッセージと例外には、コンテンツ モデルや、スキーマ ファイルの URI パスに関する機密情報が公開します。 信頼されていない呼び出し元にこの情報を公開しないように注意します。  
+  
+ <xref:System.Xml.Schema.XmlSchemaInference>クラス内で、<xref:System.Xml.Schema?displayProperty=nameWithType>名前空間では、XML ドキュメントの構造から XML スキーマ定義言語 (XSD) スキーマを推論することができます。 <xref:System.Xml.Schema.XmlSchemaInference> クラスは XML ドキュメントの検証に使える XML スキーマを出力します。  
+  
+ <xref:System.Xml.Schema.XmlSchemaInference>クラスは、W3C の XML と XML スキーマ仕様をサポートします。 新しいスキーマを推論するかを既存のスキーマを絞り込むために使用できます。  
+  
+   
+  
+## Examples  
+ この例では、XML ファイルを入力として受け取りし、XML の例を検証できるスキーマを生成します。  
+  
+ [!code-cpp[XmlSchemaInferenceExamples#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlSchemaInferenceExamples/CPP/XmlSchemaInferenceExamples.cpp#1)]
+ [!code-csharp[XmlSchemaInferenceExamples#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaInferenceExamples/CS/XmlSchemaInferenceExamples.cs#1)]
+ [!code-vb[XmlSchemaInferenceExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaInferenceExamples/VB/XmlSchemaInferenceExamples.vb#1)]  
+  
+ 入力 XML ファイルを次に示します。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#5](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/contosoBooks.xml#5)]  
+  
+ XML ドキュメントから推論されたスキーマを次に示します。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#6](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/contosoBooks.xsd#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSchemaInference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaInference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaInference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InferSchema">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaSet InferSchema (System.Xml.XmlReader instanceDocument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchemaSet InferSchema(class System.Xml.XmlReader instanceDocument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaInference.InferSchema(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceDocument" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="instanceDocument"><see cref="T:System.Xml.XmlReader" />オブジェクト ドキュメントを含む、XML からスキーマを推論します。</param>
+        <summary>含まれる XML ドキュメントから XML スキーマ定義言語 (XSD) スキーマを推論、<see cref="T:System.Xml.XmlReader" />指定されたオブジェクト。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchemaSet" />推論されるスキーマを含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A>メソッドによって自動的に推測または XML からの複数の W3C XML スキーマ定義言語 (XSD) スキーマに含まれるドキュメントのインスタンス、<xref:System.Xml.XmlReader>指定されたオブジェクト。 XML ドキュメントには、要素および属性を複数の名前空間が含まれています。 場合は、複数のスキーマが生成されます: ドキュメントで使用される名前空間ごとに 1 つです。 プライマリのスキーマは、XML ドキュメント全体を検証できるスキーマと、そのターゲットの名前空間は、XML ドキュメントのドキュメントの要素の名前空間と同じです。  
+  
+ 重要な注意事項を使用する場合は、次のとおり、<xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A>メソッドです。  
+  
+-   <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A>メソッド無視`xsi:type`、 `xsi:schemaLocation`、または`xsi:noNamespaceSchemaLocation`XML ドキュメント内の属性です。  
+  
+-   場合、<xref:System.Xml.XmlReader>オブジェクトが型指定された、型情報が含まれているは無視されます。  
+  
+-   場合、<xref:System.Xml.XmlReader>オブジェクトが XML ドキュメントのルート要素ではない要素の位置に、その要素のみのスキーマを推論します。 場合、<xref:System.Xml.XmlReader>オブジェクトが、要素に配置されていない、<xref:System.Xml.XmlReader.Read%2A>メソッドが、<xref:System.Xml.XmlReader>パラメーター要素が検出されるまで (ときなど、<xref:System.Xml.XmlReader.NodeType%2A>は<xref:System.Xml.XmlNodeType.Element>)。 この時点では、その要素から推論プロセスを開始します。 要素は、ドキュメントの最後まで検出されない場合、<xref:System.ArgumentException>がスローされます。  
+  
+   
+  
+## Examples  
+ この例では、XML ファイルを入力として受け取りし、XML の例を検証できるスキーマを生成します。  
+  
+ [!code-cpp[XmlSchemaInferenceExamples#1](~/samples/snippets/cpp/VS_Snippets_Data/XmlSchemaInferenceExamples/CPP/XmlSchemaInferenceExamples.cpp#1)]
+ [!code-csharp[XmlSchemaInferenceExamples#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaInferenceExamples/CS/XmlSchemaInferenceExamples.cs#1)]
+ [!code-vb[XmlSchemaInferenceExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaInferenceExamples/VB/XmlSchemaInferenceExamples.vb#1)]  
+  
+ 入力 XML ファイルを次に示します。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#5](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/contosoBooks.xml#5)]  
+  
+ XML ドキュメントから推論されたスキーマを次に示します。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#6](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/contosoBooks.xsd#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">XML ドキュメントが整形式ではありません。</exception>
+        <exception cref="T:System.Xml.Schema.XmlSchemaInferenceException"><see cref="T:System.Xml.XmlReader" />ルート ノードまたは要素上で、オブジェクトが配置されていません。 スキーマ推論プロセス中にエラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InferSchema">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaSet InferSchema (System.Xml.XmlReader instanceDocument, System.Xml.Schema.XmlSchemaSet schemas);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchemaSet InferSchema(class System.Xml.XmlReader instanceDocument, class System.Xml.Schema.XmlSchemaSet schemas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaInference.InferSchema(System.Xml.XmlReader,System.Xml.Schema.XmlSchemaSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceDocument" Type="System.Xml.XmlReader" />
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+      </Parameters>
+      <Docs>
+        <param name="instanceDocument"><see cref="T:System.Xml.XmlReader" />オブジェクト ドキュメントを含む、XML からスキーマを推論します。</param>
+        <param name="schemas"><see cref="T:System.Xml.Schema.XmlSchemaSet" />推論されるスキーマの調整に使用する既存のスキーマを含むオブジェクト。</param>
+        <summary>含まれる XML ドキュメントから XML スキーマ定義言語 (XSD) スキーマを推論、<see cref="T:System.Xml.XmlReader" />オブジェクトが指定すると、および内の既存のスキーマを使用して、推論されるスキーマを絞り込む、<see cref="T:System.Xml.Schema.XmlSchemaSet" />同じターゲット名前空間を持つ指定されたオブジェクト。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchemaSet" />推論されるスキーマを含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A>メソッドによって自動的に推測または XML からの複数の W3C XML スキーマ定義言語 (XSD) スキーマに含まれるドキュメントのインスタンス、<xref:System.Xml.XmlReader>指定されたオブジェクト。 複数のスキーマを生成する場合は、XML ドキュメントには、要素および属性を複数の名前空間が含まれています、: ドキュメントで使用される名前空間ごとに 1 つです。 プライマリのスキーマは、XML ドキュメント全体を検証できるスキーマと、そのターゲットの名前空間は、XML ドキュメントのドキュメントの要素の名前空間と同じです。  
+  
+ 重要な注意事項を使用する場合は、次のとおり、<xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A>メソッドです。  
+  
+-   <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A>メソッド無視`xsi:type`、 `xsi:schemaLocation`、または`xsi:noNamespaceSchemaLocation`XML ドキュメント内の属性です。  
+  
+-   場合、<xref:System.Xml.XmlReader>オブジェクトが型指定された、型情報が含まれているは無視されます。  
+  
+-   場合、<xref:System.Xml.XmlReader>オブジェクトが XML ドキュメントのルート要素ではない要素の位置に、その要素のみのスキーマを推論します。 場合、<xref:System.Xml.XmlReader>オブジェクトが、要素に配置されていない、<xref:System.Xml.XmlReader.Read%2A>メソッドが、<xref:System.Xml.XmlReader>パラメーター要素が検出されるまで (ときなど、<xref:System.Xml.XmlReader.NodeType%2A>は<xref:System.Xml.XmlNodeType.Element>)。 この時点では、その要素から推論プロセスを開始します。 要素は、ドキュメントの最後まで検出されない場合、<xref:System.ArgumentException>がスローされます。  
+  
+-   場合、<xref:System.Xml.Schema.XmlSchemaSet>オブジェクトと基になる要素のパラメーターとして渡されます、<xref:System.Xml.XmlReader>オブジェクトが配置されている、スキーマのいずれかで定義されて、 <xref:System.Xml.Schema.XmlSchemaSet>、推論されたスキーマを使用して、既存のスキーマを改良し、<xref:System.Xml.Schema.XmlSchemaSet>パラメーターと同じターゲットの名前空間です。 名前空間の新しいスキーマを推論するそれ以外の場合。  
+  
+   
+  
+## Examples  
+ 次のコード例では、XML ドキュメントの入力として 1 を取得し、1 の XML ドキュメントを検証できるスキーマを生成します。 コード例は、2 の XML ドキュメントを取得し、XML ドキュメント 1、2 の XML ドキュメントで見つかった変更に基づいてから生成されたスキーマをきめ細かく調整します。  
+  
+ XML ドキュメント 1 を次に示します。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#13](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/item1.xml#13)]  
+  
+ 2 の XML ドキュメントを次に示します。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#14](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/item2.xml#14)]  
+  
+ 次のコード例に含まれる最初の XML ドキュメントからスキーマを推論する`reader`に含まれる 2 番目の XML ドキュメントで見つかった変更と、推論されるスキーマを合わせると`reader1`です。 このコード例で最初のオーバー ロードされた<xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A>、スキーマ、および 2 つ目を推測するメソッド オーバー ロード<xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A>を既存のスキーマを絞り込むためのメソッド、<xref:System.Xml.Schema.XmlSchemaSet>オブジェクト。  
+  
+ [!code-cpp[XmlSchemaInferenceExamples#4](~/samples/snippets/cpp/VS_Snippets_Data/XmlSchemaInferenceExamples/CPP/XmlSchemaInferenceExamples.cpp#4)]
+ [!code-csharp[XmlSchemaInferenceExamples#4](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaInferenceExamples/CS/XmlSchemaInferenceExamples.cs#4)]
+ [!code-vb[XmlSchemaInferenceExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaInferenceExamples/VB/XmlSchemaInferenceExamples.vb#4)]  
+  
+ 次のスキーマは、1 の XML ドキュメントから推論されたスキーマです。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#15](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/InferSchema1.xml#15)]  
+  
+ 次のスキーマは、XML ドキュメント 2 に基づく、上記のスキーマの洗練されたバージョンです。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#16](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/InferSchema2.xml#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.XmlException">XML ドキュメントが整形式ではありません。</exception>
+        <exception cref="T:System.Xml.Schema.XmlSchemaInferenceException"><see cref="T:System.Xml.XmlReader" />ルート ノードまたは要素上で、オブジェクトが配置されていません。 スキーマ推論プロセス中にエラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Occurrence">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaInference.InferenceOption Occurrence { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Schema.XmlSchemaInference/InferenceOption Occurrence" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaInference.Occurrence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaInference+InferenceOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.Xml.Schema.XmlSchemaInference.InferenceOption" /> XML ドキュメントから推論されたスキーマに見つかった位置の宣言に影響する値。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlSchemaInference.InferenceOption" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A>プロパティに設定されている<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted>、XML ドキュメントの最初の要素の時間が発生した、スキーマ宣言として推論`minOccurs="1"`です。 スキーマ宣言として推論される属性が発生したときに`use="required"`です。  
+  
+ 場合、<xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A>プロパティに設定されている<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>、として推論されるスキーマの要素の宣言`minOccurs="0"`、として推論されるスキーマの属性の宣言と`use="optional"`です。  
+  
+ 既定値、<xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A>プロパティは<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted>します。  
+  
+   
+  
+## Examples  
+ この例では、発生したがどのように影響するか、<xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A>プロパティです。 コード例は 2 つの異なる方法で XML ファイルから出現する位置を推測: 緩和し、制限されています。 XML ファイルの例を次に示します。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#7](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/Occurrence1.xml#7)]  
+  
+ 次のコード例のように指示、<xref:System.Xml.Schema.XmlSchemaInference>厳密でない方法で出現する位置の要素と属性を推論するクラス。  
+  
+ [!code-cpp[XmlSchemaInferenceExamples#2](~/samples/snippets/cpp/VS_Snippets_Data/XmlSchemaInferenceExamples/CPP/XmlSchemaInferenceExamples.cpp#2)]
+ [!code-csharp[XmlSchemaInferenceExamples#2](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaInferenceExamples/CS/XmlSchemaInferenceExamples.cs#2)]
+ [!code-vb[XmlSchemaInferenceExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaInferenceExamples/VB/XmlSchemaInferenceExamples.vb#2)]  
+  
+ <xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A>プロパティに設定された<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>、次のスキーマが生成されました。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#8](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/Occurrence2.xml#8)]  
+  
+ 場合は、上記のコード例に、<xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A>プロパティ設定されていない<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>、<xref:System.Xml.Schema.XmlSchemaInference>クラスが既定値に<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted>され、次のスキーマを生成します。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#9](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/Occurrence3.xml#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeInference">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaInference.InferenceOption TypeInference { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Schema.XmlSchemaInference/InferenceOption TypeInference" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaInference.TypeInference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaInference+InferenceOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.Xml.Schema.XmlSchemaInference.InferenceOption" /> XML ドキュメントから推論された型に影響する値。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlSchemaInference.InferenceOption" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A>プロパティに設定されている<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>、単純コンテンツを含む XML ドキュメントの要素および属性の推定型は常に`xs:string`です。 場合、<xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A>プロパティに設定されている<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted>など、特定の型は推論される`xs:date`、 `xs:decimal`、`xs:unsignedByte`のようにします。  
+  
+ 既定値、<xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A>プロパティは<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted>します。  
+  
+   
+  
+## Examples  
+ この例では、型の推定によってがどのように影響するか、<xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A>プロパティです。 コード例は次の 2 つの異なる方法で XML ファイルから型を推測: 緩和し、制限されています。 XML ファイルの例を次に示します。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#10](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/TypeInference1.xml#10)]  
+  
+ 次のコード例のように指示、<xref:System.Xml.Schema.XmlSchemaInference>推論クラス`xs:string`要素と単純コンテンツを持つ属性にします。  
+  
+ [!code-cpp[XmlSchemaInferenceExamples#3](~/samples/snippets/cpp/VS_Snippets_Data/XmlSchemaInferenceExamples/CPP/XmlSchemaInferenceExamples.cpp#3)]
+ [!code-csharp[XmlSchemaInferenceExamples#3](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaInferenceExamples/CS/XmlSchemaInferenceExamples.cs#3)]
+ [!code-vb[XmlSchemaInferenceExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaInferenceExamples/VB/XmlSchemaInferenceExamples.vb#3)]  
+  
+ <xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A>プロパティに設定された<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>、次のスキーマが生成されました。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#11](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/TypeInference2.xml#11)]  
+  
+ 場合は、上記のコード例に、<xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A>プロパティ設定されていない<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>、<xref:System.Xml.Schema.XmlSchemaInference>クラスが既定値に<xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted>され、次のスキーマを生成します。  
+  
+ [!code-xml[XmlSchemaInferenceExamples#12](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/TypeInference3.xml#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

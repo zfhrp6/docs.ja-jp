@@ -1,0 +1,121 @@
+<Type Name="IWebPartRow" FullName="System.Web.UI.WebControls.WebParts.IWebPartRow">
+  <TypeSignature Language="C#" Value="public interface IWebPartRow" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebPartRow" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.IWebPartRow" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>単一のデータ フィールドを使用して 2 つのサーバー コントロールを接続するためのプロバイダー インターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、Web パーツの接続で使用するよう設計されています。 内に存在する 2 つのサーバー コントロール、Web パーツ接続において、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンは、コンシューマーとして機能する 1 つの制御と、その他のプロバイダーとして機能するコントロール接続と共有のデータを確立します。 Web パーツ接続でデータを共有するためのメカニズムは、コールバック メソッドを使用して、プロバイダーがコンシューマーに機能する、インターフェイス インスタンスです。 接続を確立するためにコンシューマーおよびプロバイダー必要があります両方動作と同じインターフェイスの種類データを共有します。 トランスフォーマーを使用して、コントロールを接続することも可能では、コンシューマーが、プロバイダーによって送信されたインターフェイスの型を認識しない場合 (、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>オブジェクト)、コンシューマーによって認識される型に、プロバイダーによって送信されたインターフェイスのインスタンスに変換します。 接続の詳細については、「<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>と[Web パーツ接続の概要](http://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b)です。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイスは、Web パーツ コントロールのデータ行に基づく接続を作成するための標準インターフェイスとしてセットに含まれているプロバイダーのインターフェイスです。 Web パーツの接続で使用するカスタムのインターフェイスを作成することもできますが、多くのデータ ドリブンの Web アプリケーション、共通のフィールドに基づく接続を作成すると便利です (詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.IWebPartField>インターフェイス)、テーブル (詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.IWebPartTable>インターフェイス)、またはデータ ソースからの行。 一般的な接続で、<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーを実装するように機能を制御、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイスし、特殊なコールバック メソッドのコンシューマーにインターフェイスのインスタンスを提供します。 たとえば、プロバイダーを実装する<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>ユーザー情報テーブル内のユーザーに対応する行のインターフェイスです。 別<xref:System.Web.UI.WebControls.WebParts.WebPart>コンシューマー インターフェイス インスタンスが表示されると、ユーザー データを抽出、そのユーザーのアカウントの追加情報の検索に使用し、 ページでそのユーザーに関連するすべての情報を表示する特別なメソッドを定義するように動作するを制御します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイスが公開されている 2 つのメンバーです。 <xref:System.Web.UI.WebControls.WebParts.IWebPartRow.Schema%2A>にカプセル化されたデータ行に関するスキーマ情報を返します、<xref:System.ComponentModel.PropertyDescriptorCollection>オブジェクト。 <xref:System.Web.UI.WebControls.WebParts.IWebPartRow.GetRowData%2A>メソッド (プロバイダー コントロールなど) を実装者が、コールバック メソッドが呼び出されたときに、インターフェイスのインスタンスの行のデータの取得に使用するメソッドを宣言しています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して 2 つのコントロール間の静的な接続を作成する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイスです。 このコード例では、3 つの部分があります。  
+  
+-   2 つのカスタムのコードをソース<xref:System.Web.UI.WebControls.WebParts.WebPart>接続を使用して、構成できる、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>プロバイダーとコンシューマーとして機能する 1 つのコントロールとのインターフェイスです。  
+  
+-   コントロールをホストし、永続化の形式で静的な接続を宣言する Web ページ。  
+  
+-   コード例を実行時の動作の説明です。  
+  
+ コード例の最初の部分では、2 つのカスタム コントロールのソース コードを示します。 実装するプロバイダーのコードを 1 つ目は、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイスです。 例ではわかりやすくするため、プロバイダーは、データベースに接続するのではなく、一部のデータとテーブルを作成します。 `GetConnectionInterface`メソッドは、プロバイダーの接続ポイントをコンシューマーにインターフェイスのインスタンスを返すコールバック メソッドとして機能します。 コンシューマーとそのインターフェイスのインスタンスをプロバイダーから取得という名前のメソッドで`SetConnectionInterface`でマークされている、`ConnectionConsumer`属性。 インターフェイス、コンシューマーのインスタンスを取得した後、`OnPreRender`メソッドの実装を呼び出す、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow.GetRowData%2A>実際のデータを取得し、ページに書き込む、プロバイダーのメソッドです。  
+  
+ コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_IWebPartRow_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPartRow_Overview/CS/IRowSamples.cs#2)]
+ [!code-vb[WebParts_IWebPartRow_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPartRow_Overview/VB/IRowSamples.vb#2)]  
+  
+ コード例の 2 番目の部分は、静的な接続とホスト コントロールを宣言する Web ページです。 ページの上部には、 `Register` App_Code ディレクトリに含まれるソース コードの名前空間を宣言します。 使用して接続を宣言、`<asp:webpartconnection>`要素。 コンシューマーおよびプロバイダーのカスタム コントロールが宣言されている、`<zonetemplate>`内の要素、`<asp:webpartzone>`接続できるようにするために必要である要素 (から継承するゾーン内に存在する必要がありますが、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>クラス)。  
+  
+ [!code-aspx-csharp[WebParts_IWebPartRow_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPartRow_Overview/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[WebParts_IWebPartRow_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPartRow_Overview/VB/defaultvb.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 コンシューマー コントロール プロバイダーのインスタンスで使用できる、指定された行から提供されるデータを表示、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetRowData">
+      <MemberSignature Language="C#" Value="public void GetRowData (System.Web.UI.WebControls.WebParts.RowCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetRowData(class System.Web.UI.WebControls.WebParts.RowCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.IWebPartRow.GetRowData(System.Web.UI.WebControls.WebParts.RowCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Web.UI.WebControls.WebParts.RowCallback" />
+      </Parameters>
+      <Docs>
+        <param name="callback">A<see cref="T:System.Web.UI.WebControls.WebParts.RowCallback" />データを受け取るメソッドのアドレスが含まれるデリゲート。</param>
+        <summary>インターフェイスによって 2 つの間の接続の基礎として使用されている行のデータを返します<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、インターフェイスによって渡されるデータ行の値を取得できます。 プロバイダーは、このメソッドを実装およびコンシューマーこれを呼び出して、時点で、コンシューマーが処理またはデータを表示する準備ができたとき。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装との使用を示しています。、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow.GetRowData%2A>メソッドです。 完全な例のクラスの概要に表示されます、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイスです。 プロバイダーのコントロールを実装する、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow.GetRowData%2A>データ テーブル内の特定の行の値を返すメソッド。 コンシューマー コントロールは、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow.GetRowData%2A>メソッドでその`OnPreRender`メソッド、データの値をページに書き込むことができるようにします。  
+  
+ [!code-csharp[WebParts_IWebPartRow_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPartRow_Overview/CS/IRowSamples.cs#2)]
+ [!code-vb[WebParts_IWebPartRow_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPartRow_Overview/VB/IRowSamples.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptorCollection Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IWebPartRow.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つのデータを共有するために使用するデータ行のスキーマ情報を取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />データを記述します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、データのプロパティ情報を提供します。 使用して、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイス接続では、取得、<xref:System.ComponentModel.PropertyDescriptorCollection>によって参照されているオブジェクト、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow.Schema%2A>プロパティです。 その呼び出し元を指定するコントラクト`Schema[n].GetValue(RowData)`の値を返します、 * n*行の列です。 使用する必要があります、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow.Schema%2A>行の値を取得するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装との使用を示しています。、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow.Schema%2A>プロパティです。 完全な例のクラスの概要に表示されます、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイスです。 プロバイダーのコントロールを実装する、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow.Schema%2A>プロパティです。 コンシューマー コントロールをその`RenderContents`メソッドは、クエリ、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow.Schema%2A>ページに行データの書き込み、行の情報を取得するプロパティです。  
+  
+ [!code-csharp[WebParts_IWebPartRow_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPartRow_Overview/CS/IRowSamples.cs#2)]
+ [!code-vb[WebParts_IWebPartRow_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPartRow_Overview/VB/IRowSamples.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

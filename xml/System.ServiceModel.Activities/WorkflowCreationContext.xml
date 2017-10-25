@@ -1,0 +1,204 @@
+<Type Name="WorkflowCreationContext" FullName="System.ServiceModel.Activities.WorkflowCreationContext">
+  <TypeSignature Language="C#" Value="public class WorkflowCreationContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowCreationContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activities.WorkflowCreationContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフローのアクティブ化時にワークフローをホストするエンドポイントを使用して設定され、引数を処理し、ワークフローの完了通知を受け取るコンテキストを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowCreationContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.WorkflowCreationContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.Activities.WorkflowCreationContext" /> クラスの新しいインスタンスを開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOnly">
+      <MemberSignature Language="C#" Value="public bool CreateOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CreateOnly" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.WorkflowCreationContext.CreateOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成後にワークフロー インスタンスを中断または実行するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />後に、ワークフロー インスタンスが中断されている場合が作成されます。<see langword="false" />が作成された後、ワークフローが実行される場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCompletionTransactionRequired">
+      <MemberSignature Language="C#" Value="public bool IsCompletionTransactionRequired { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompletionTransactionRequired" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.WorkflowCreationContext.IsCompletionTransactionRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.ServiceModel.Activities.WorkflowCreationContext.OnBeginWorkflowCompleted(System.Activities.ActivityInstanceState,System.Collections.Generic.IDictionary{System.String,System.Object},System.Exception,System.TimeSpan,System.AsyncCallback,System.Object)" /> メソッドをトランザクションで呼び出すかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />入力候補のトランザクションが必要な場合です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAbort">
+      <MemberSignature Language="C#" Value="protected virtual void OnAbort ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnAbort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.WorkflowCreationContext.OnAbort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activities.WorkflowCreationContext" /> を中止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、<xref:System.ServiceModel.Activities.WorkflowCreationContext.OnAbort%2A> メソッドを実装する方法を示しています。  
+  
+ [!code-csharp[WFCreationContext#2](~/samples/snippets/csharp/VS_Snippets_CFX/wfcreationcontext/cs/program.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginWorkflowCompleted">
+      <MemberSignature Language="C#" Value="protected virtual IAsyncResult OnBeginWorkflowCompleted (System.Activities.ActivityInstanceState completionState, System.Collections.Generic.IDictionary&lt;string,object&gt; workflowOutputs, Exception terminationException, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.IAsyncResult OnBeginWorkflowCompleted(valuetype System.Activities.ActivityInstanceState completionState, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; workflowOutputs, class System.Exception terminationException, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.WorkflowCreationContext.OnBeginWorkflowCompleted(System.Activities.ActivityInstanceState,System.Collections.Generic.IDictionary{System.String,System.Object},System.Exception,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="completionState" Type="System.Activities.ActivityInstanceState" />
+        <Parameter Name="workflowOutputs" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="terminationException" Type="System.Exception" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="completionState">ワークフロー インスタンスの状態。</param>
+        <param name="workflowOutputs">ワークフロー インスタンスによって生成された出力を含むキーと値のペアのコレクション。</param>
+        <param name="terminationException">存在する場合は、ワークフローの終了の原因となったエラー。</param>
+        <param name="timeout">非同期操作を完了する必要がある時間間隔。</param>
+        <param name="callback">非同期操作が完了したときに制御が戻るアプリケーション内の場所。</param>
+        <param name="state">ユーザー定義の状態。</param>
+        <summary>ワークフロー インスタンスの完了を通知する非同期操作を開始します。 このメソッドは、この <see cref="T:System.ServiceModel.Activities.WorkflowCreationContext" /> と関連付けられたワークフロー インスタンスが完了したときに呼び出されます。 派生クラスでは、この操作をオーバーライドして、ワークフロー インスタンスの完了時にカスタム アクションを実行できます。</summary>
+        <returns>非同期操作の状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、<xref:System.ServiceModel.Activities.WorkflowCreationContext.OnBeginWorkflowCompleted%2A> メソッドを実装する方法を示しています。  
+  
+ [!code-csharp[WFCreationContext#0](~/samples/snippets/csharp/VS_Snippets_CFX/wfcreationcontext/cs/program.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndWorkflowCompleted">
+      <MemberSignature Language="C#" Value="protected virtual void OnEndWorkflowCompleted (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnEndWorkflowCompleted(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.WorkflowCreationContext.OnEndWorkflowCompleted(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">非同期操作の状態。</param>
+        <summary>この <see cref="T:System.ServiceModel.Activities.WorkflowCreationContext" /> と関連付けられたワークフロー インスタンスの完了を通知する非同期操作を完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Activities.WorkflowCreationContext.OnEndWorkflowCompleted%2A> メソッドの単純な実装の例を次に示します。 基本クラスの <xref:System.ServiceModel.Activities.WorkflowCreationContext.OnAbort%2A> メソッドが呼び出されることに注目してください。  
+  
+ [!code-csharp[WFCreationContext#2](~/samples/snippets/csharp/VS_Snippets_CFX/wfcreationcontext/cs/program.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowArguments">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; WorkflowArguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; WorkflowArguments" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.WorkflowCreationContext.WorkflowArguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しく作成されたワークフロー インスタンスに渡す引数を取得します。</summary>
+        <value>ワークフロー インスタンスに渡すキーと値のペアの引数のディクショナリ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

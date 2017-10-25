@@ -1,0 +1,3370 @@
+<Type Name="RichTextBox" FullName="System.Windows.Forms.RichTextBox">
+  <TypeSignature Language="C#" Value="public class RichTextBox : System.Windows.Forms.TextBoxBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RichTextBox extends System.Windows.Forms.TextBoxBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.RichTextBox" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.TextBoxBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.RichTextBoxDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Forms.Docking(System.Windows.Forms.DockingBehavior.Ask)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows リッチ テキスト ボックス コントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RichTextBox>コントロール、ユーザーが入力してテキストを編集します。 コントロールは、標準のより高度な書式設定機能も用意されています。<xref:System.Windows.Forms.TextBox>コントロール。 テキストは、コントロールに直接割り当てることができます。 またはリッチ テキスト形 (式 RTF) またはプレーン テキスト ファイルから読み込まれることができます。 文字および段落の書式設定、コントロール内のテキストを割り当てることができます。  
+  
+ <xref:System.Windows.Forms.RichTextBox>コントロールには、コントロール内のテキストの任意の部分に書式設定を適用するのに使用できるプロパティの数が用意されています。 テキストの書式を変更するには、最初に選択してください。 文字および段落の書式設定、選択したテキストのみを割り当てることができます。 設定を選択したテキストのセクションを確立すると、設定の変更が行われるまでに、選択範囲が同じ設定でフォーマットされても後に入力したすべてのテキストまたはコントロールのドキュメントのさまざまなセクションを選択します。 <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A>プロパティでは、太字や斜体のテキストを作成することができます。 このプロパティを使用して、テキストのフォントとサイズを変更することができますも。 <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A>プロパティでは、テキストの色を変更することができます。 使用することができます、箇条書きリストを作成する、<xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>プロパティです。 段落の書式設定を調整することも、 <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>、 <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>、および<xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.RichTextBox>コントロールが開き、ファイルを保存する機能を提供するメソッドを提供します。 <xref:System.Windows.Forms.RichTextBox.LoadFile%2A>メソッドでは、コントロールに既存の rtf 形式または ASCII テキスト ファイルを読み込むことができます。 既に開かれているデータ ストリームからデータを読み込むこともできます。 <xref:System.Windows.Forms.RichTextBox.SaveFile%2A>に rtf 形式または ASCII テキスト ファイルを保存することができます。 ような<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>メソッドを使用することも、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>オープン データ ストリームに保存するメソッド。 <xref:System.Windows.Forms.RichTextBox>コントロールでは、テキストの文字列を検索するための機能もが用意されています。 <xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドは、コントロールのテキスト内でも、特定の文字を検索するには、テキストの両方の文字列にオーバー ロードされました。  
+  
+ 初期化することも、<xref:System.Windows.Forms.RichTextBox>メモリに格納されたデータを制御します。 たとえば、初期化、<xref:System.Windows.Forms.RichTextBox.Rtf%2A>プロパティを表示するにはテキストを含むテキストの書式設定方法を決定する RTF コードを含む文字列にします。  
+  
+ 使用することができます、コントロール内のテキストには、Web サイトへのリンクなどのリンクが含まれている場合、<xref:System.Windows.Forms.RichTextBox.DetectUrls%2A>コントロールのテキストで、リンクを適切に表示するプロパティです。 処理し、<xref:System.Windows.Forms.RichTextBox.LinkClicked>リンクに関連付けられているタスクを実行するイベントです。 <xref:System.Windows.Forms.RichTextBox.SelectionProtected%2A>プロパティでは、コントロール内のテキストをユーザーが操作から保護することができます。 コントロールで保護されたテキストを処理することができます、<xref:System.Windows.Forms.RichTextBox.Protected>ときにユーザーが保護対象のテキストを変更しようし、して、テキストが保護されているか、標準的な保護されたテキストを操作する方法をユーザーに提供をユーザーに警告するかを決定するイベントです。  
+  
+ 既に使用しているアプリケーション<xref:System.Windows.Forms.TextBox>コントロールを作成するために適合簡単にできるを使用して<xref:System.Windows.Forms.RichTextBox>コントロール。 ただし、<xref:System.Windows.Forms.RichTextBox>コントロールには、同じ 64 K の文字の容量の上限はありません、<xref:System.Windows.Forms.TextBox>コントロール。 <xref:System.Windows.Forms.RichTextBox>通常はテキストの操作を提供し、Microsoft Word などのワード プロセッシング アプリケーションと同様の機能の表示に使用します。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.TextBoxBase.Undo%2A?displayProperty=nameWithType>メソッドでは機能しません、<xref:System.Windows.Forms.Control.KeyPress>または<xref:System.Windows.Forms.Control.TextChanged>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.RichTextBox>コントロールをコントロールし、"Text"という単語の最初のインスタンスを検索に RTF ファイルを読み込みます フォント スタイル、フォント サイズ、および、選択したテキストのフォントの色を変更し、変更を元のファイルに保存します。 コード例は、コントロールを追加することによってが完了すると、<xref:System.Windows.Forms.Form>です。 この例では、コード例で作成したメソッドに追加する必要があります、<xref:System.Windows.Forms.Form>クラスおよびフォームのコンス トラクターから呼び出されます。 また、例では語"Text"を含む、C ドライブのルートで、RTF ファイルを作成することが必要です。  
+  
+ [!code-cpp[Classic RichTextBox Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RichTextBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.RichTextBox" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Forms.TextBoxBase.Multiline%2A>コントロールのプロパティに設定されて`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.RichTextBox>コントロールをコントロールし、"Text"という単語の最初のインスタンスを検索に RTF ファイルを読み込みます フォント スタイル、フォント サイズ、および、選択したテキストのフォントの色を変更し、変更を元のファイルに保存します。 コード例は、コントロールを追加することによってが完了すると、<xref:System.Windows.Forms.Form>です。 この例では、コード例で作成したメソッドに追加する必要があります、<xref:System.Windows.Forms.Form>クラスおよびフォームのコンス トラクターから呼び出されます。 また、例では語"Text"を含む、C ドライブのルートで、RTF ファイルを作成することが必要です。  
+  
+ [!code-cpp[Classic RichTextBox Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowDrop">
+      <MemberSignature Language="C#" Value="public override bool AllowDrop { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowDrop" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.AllowDrop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールでドラッグ アンド ドロップ操作を有効にするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールでドラッグ アンド ドロップが有効になっている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用して、ドラッグ アンド ドロップ操作を実行する方法を示します、<xref:System.Windows.Forms.ListBox>コントロールにドロップする項目を含む、<xref:System.Windows.Forms.RichTextBox>コントロール。 フォームのセットのコンス トラクター、<xref:System.Windows.Forms.RichTextBox.AllowDrop%2A>プロパティを`true`をドラッグ アンド ドロップ操作を有効にする、<xref:System.Windows.Forms.RichTextBox>です。 この例では、<xref:System.Windows.Forms.Control.MouseDown>のイベント、<xref:System.Windows.Forms.ListBox>を呼び出すことによって、ドラッグ操作を開始する、<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッドです。 この例では、<xref:System.Windows.Forms.Control.DragEnter>に項目をドラッグしている場合を決定するイベント、<xref:System.Windows.Forms.RichTextBox>は有効なデータ型です。 <xref:System.Windows.Forms.Control.DragDrop>イベントにドラッグした項目の実際の削除を実行する、<xref:System.Windows.Forms.RichTextBox>内で現在のカーソル位置にあるコントロール、<xref:System.Windows.Forms.RichTextBox>です。 この例では、する必要があります、<xref:System.Windows.Forms.Control.DragDrop>と<xref:System.Windows.Forms.Control.DragEnter>の例で定義されたイベント ハンドラーに接続されたイベント。  
+  
+ [!code-cpp[RichTextBox.AllowDrop#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.AllowDrop/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.AllowDrop#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.AllowDrop/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.AllowDrop#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.AllowDrop/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSize">
+      <MemberSignature Language="C#" Value="public override bool AutoSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.AutoSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>
+          有効である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoWordSelection">
+      <MemberSignature Language="C#" Value="public bool AutoWordSelection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoWordSelection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.AutoWordSelection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または単語の自動選択が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />自動単語選択が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合`true`コントロールのテキストの一部を選択すると、単語全体を選択します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Windows.Forms.RichTextBox>テキストにズーム インするは、単語がダブルクリックされたときに、コントロールのクライアント領域の右側にある余白が場合に、コントロールのテキストに単語を自動的に選択します。 場合、<xref:System.Windows.Forms.RichTextBox>コントロールが、小規模の幅では、このコードを使用して作成されます、<xref:System.Windows.Forms.RichTextBox>独自の行のテキストの各文字が表示されます。 この垂直方向の表示位置に単語の任意の部分をクリックすると、テキストが垂直方向に表示されているファクトに関係なく、単語のすべての文字が選択されます。 この例では、フォームが含まれていますがあることが必要です、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`です。  
+  
+ [!code-cpp[RichTextBox.ZoomFactor#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.ZoomFactor/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.ZoomFactor#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.ZoomFactor/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.ZoomFactor#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.ZoomFactor/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImage">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Image BackgroundImage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image BackgroundImage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.BackgroundImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>コントロールに表示される背景イメージ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.BackgroundImageChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.RichTextBox.BackgroundImage" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayout">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ImageLayout BackgroundImageLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ImageLayout BackgroundImageLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.BackgroundImageLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImageLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>コントロールに表示される背景イメージのレイアウトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayoutChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageLayoutChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageLayoutChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.BackgroundImageLayoutChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.RichTextBox.BackgroundImageLayout" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BulletIndent">
+      <MemberSignature Language="C#" Value="public int BulletIndent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BulletIndent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.BulletIndent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で使用されるインデント、<see cref="T:System.Windows.Forms.RichTextBox" />テキストに行頭文字スタイルを適用する場合を制御します。</summary>
+        <value>行頭文字の後にインデント幅として挿入するピクセルの数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストの段落に行頭文字スタイルを適用するには、設定、<xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>プロパティを`true`し、設定、<xref:System.Windows.Forms.RichTextBox.BulletIndent%2A>プロパティをテキストをインデントするピクセルの数。 段落は、適用されるインデント後の項目の指定した量の行頭文字スタイルがあります。 このプロパティは、コントロールのテキストと箇条書きアイテムの一覧で現在選択されている行頭文字内の現在の段落にのみ影響します。 に行頭文字付き項目のリスト全体を別のインデント レベルを適用するには、設定する前に行頭文字付きの項目のすべてのテキストを選択、<xref:System.Windows.Forms.RichTextBox.BulletIndent%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>を持つプロパティ、 <xref:System.Windows.Forms.RichTextBox.BulletIndent%2A>、 <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A>、 <xref:System.Windows.Forms.RichTextBox.SelectedText%2A>、および<xref:System.Windows.Forms.RichTextBox.SelectionColor%2A>の箇条書きリストを作成するプロパティ、<xref:System.Windows.Forms.RichTextBox>コントロール。 この例では、する必要があります、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`フォーム上に作成します。  
+  
+ [!code-cpp[RichTextBox.BulletIndent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.BulletIndent/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.BulletIndent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.BulletIndent/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.BulletIndent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.BulletIndent/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したインデントが 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanPaste">
+      <MemberSignature Language="C#" Value="public bool CanPaste (System.Windows.Forms.DataFormats.Format clipFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanPaste(class System.Windows.Forms.DataFormats/Format clipFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.CanPaste(System.Windows.Forms.DataFormats.Format)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clipFormat" Type="System.Windows.Forms.DataFormats+Format" />
+      </Parameters>
+      <Docs>
+        <param name="clipFormat"><see cref="T:System.Windows.Forms.DataFormats.Format" /> 値のいずれか。</param>
+        <summary>指定したデータ形式でクリップボードから情報を貼り付けることができるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />は、指定したデータ形式でクリップボードからデータを貼り付けることができる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうかをクリップボードの現在の内容で指定されたクリップボードのデータ形式に貼り付けるには、ユーザーを有効にする前にこのメソッドを使用することができます、<xref:System.Windows.Forms.RichTextBox>コントロール。 などのイベント ハンドラーを作成、<xref:System.Windows.Forms.MenuItem.Popup>貼り付けコマンドのイベント<xref:System.Windows.Forms.MenuItem>し、このメソッドを使用しているかどうか貼り付け<xref:System.Windows.Forms.MenuItem>クリップボード内のデータ型に基づいて有効にする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.RichTextBox.Paste%2A>にビットマップを貼り付けする方法、<xref:System.Windows.Forms.RichTextBox>コントロール。 この例ではファイルからビットマップを開いた後、<xref:System.Windows.Forms.Clipboard.SetDataObject%2A>にビットマップを Windows クリップボードにコピーする方法です。 最後に、例がの形式を取得、<xref:System.Drawing.Bitmap>オブジェクトを使用して、<xref:System.Windows.Forms.RichTextBox.CanPaste%2A>形式に貼り付けることができることを確認するメソッド、<xref:System.Windows.Forms.RichTextBox>コントロール、および、使用、<xref:System.Windows.Forms.RichTextBox.Paste%2A>データを貼り付けるメソッドです。  
+  
+ [!code-cpp[RichText_Paste#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichText_Paste/CPP/form1.cpp#1)]
+ [!code-csharp[RichText_Paste#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichText_Paste/CS/form1.cs#1)]
+ [!code-vb[RichText_Paste#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichText_Paste/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRedo">
+      <MemberSignature Language="C#" Value="public bool CanRedo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRedo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.CanRedo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内で発生したアクションがあるかどうかを示す値を取得、<see cref="T:System.Windows.Forms.RichTextBox" />を再適用することができます。</summary>
+        <value>
+          <see langword="true" />完了済みの操作がある場合を充てることが、コントロールの内容それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 決定するこのプロパティを使用するかどうか、最後の操作を取り消し、<xref:System.Windows.Forms.RichTextBox>を使用して再適用することができます、<xref:System.Windows.Forms.RichTextBox.Redo%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.RichTextBox.CanRedo%2A>と<xref:System.Windows.Forms.RichTextBox.RedoActionName%2A>プロパティ、および<xref:System.Windows.Forms.RichTextBox.Redo%2A>メソッドは、テキストの削除を除く任意のアクションをやり直し操作を制限します。 この例では、フォームが含まれていますがあることが必要です、<xref:System.Windows.Forms.RichTextBox>とコントロール内の操作、<xref:System.Windows.Forms.RichTextBox>実行され、この例では、コードを呼び出す前に元に戻します。  
+  
+ [!code-cpp[RichTextBox.RedoAction#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.RedoAction/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.RedoAction#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.RedoAction/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.RedoAction#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.RedoAction/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentsResized">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.ContentsResizedEventHandler ContentsResized;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ContentsResizedEventHandler ContentsResized" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.ContentsResized" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContentsResizedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの内容のサイズが変更されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.RichTextBox.ContentsResized>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.RichTextBox>という`RichTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.RichTextBox.ContentsResized>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#537](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#537)]
+ [!code-vb[System.Windows.Forms.EventExamples#537](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#537)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParams">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.CreateParams CreateParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CreateParams CreateParams" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.CreateParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CreateParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール ハンドルが作成されるときに必要な作成パラメーターを取得します。</summary>
+        <value>コントロールを識別するハンドルを作成するときに必要な作成パラメーターを格納している <see cref="T:System.Windows.Forms.CreateParams" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRichEditOleCallback">
+      <MemberSignature Language="C#" Value="protected virtual object CreateRichEditOleCallback ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object CreateRichEditOleCallback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.CreateRichEditOleCallback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、 <see langword="IRichEditOleCallback" />-リッチ エディット コールバック操作を処理するための互換性のあるオブジェクト。</summary>
+        <returns><see langword="IRichEditOleCallback" /> インターフェイスを実装するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す即時呼び出し元がします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <block subset="none" type="overrides">
+          <para>このメソッドは、基になるの豊富な編集機能へのアクセスを有効にする派生クラスでオーバーライドできます。 このメソッドをオーバーライドする場合、ドラッグ アンド ドロップのすべてのイベントは発生しません。 その結果、ドラッグ アンド ドロップ操作に独自のサポートを提供する必要があります。 詳細については、<see langword="IRichEditOleCallback" />インターフェイスでは、http://msdn.microsoft.com、プラットフォーム SDK のドキュメントを参照してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size DefaultSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size DefaultSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.DefaultSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの既定のサイズを取得します。</summary>
+        <value><see cref="T:System.Drawing.Size" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetectUrls">
+      <MemberSignature Language="C#" Value="public bool DetectUrls { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DetectUrls" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.DetectUrls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Forms.RichTextBox" />はコントロールに入力したときに、Uniform Resource Locator (URL) をオート フォーマットができます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.RichTextBox" />が、それ以外のリンクとしてコントロールに型指定された Url は自動的に書式設定<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合`true`、によって決定されるコントロールに入力した任意のテキスト、 <xref:System.Windows.Forms.RichTextBox> URL はリンクとして自動的に書式設定します。 イベント ハンドラーを作成することができます、<xref:System.Windows.Forms.RichTextBox.LinkClicked>コントロール内のすべてのリンクを処理するイベントをクリックします。 <xref:System.Windows.Forms.LinkClickedEventArgs>のイベント ハンドラーに提供される、<xref:System.Windows.Forms.RichTextBox.LinkClicked>イベントは、リンクを処理するために、コントロールでクリックしてされたリンクを判断することができますのデータを提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例には、イベント ハンドラーが含まれています、<xref:System.Windows.Forms.RichTextBox.LinkClicked>イベント。 イベント ハンドラーは、のドキュメント内のリンクのクリックを処理、<xref:System.Windows.Forms.RichTextBox>を制御し、既定のブラウザーのインスタンスを起動 (を使用して、<xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType>メソッド) をクリックしたリンクのページを表示します。 この例では、イベント ハンドラーに接続されている必要があります、<xref:System.Windows.Forms.RichTextBox.LinkClicked>イベントを<xref:System.Windows.Forms.RichTextBox>です。  
+  
+ [!code-cpp[Classic RichTextBox.LinkClicked Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.LinkClicked Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.LinkClicked Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.LinkClicked Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.LinkClicked Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.LinkClicked Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragDrop">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.DragEventHandler DragDrop;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.DragEventHandler DragDrop" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.DragDrop" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがドラッグ アンド ドロップを完了すると発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragEnter">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.DragEventHandler DragEnter;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.DragEventHandler DragEnter" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.DragEnter" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトがコントロールの境界内にドラッグされると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.RichTextBox.DragEnter>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.RichTextBox>という`RichTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.RichTextBox.DragEnter>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#539](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#539)]
+ [!code-vb[System.Windows.Forms.EventExamples#539](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#539)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragLeave">
+      <MemberSignature Language="C#" Value="public event EventHandler DragLeave;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DragLeave" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.DragLeave" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトがコントロールの境界外にドラッグされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。 イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragOver">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.DragEventHandler DragOver;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.DragEventHandler DragOver" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.DragOver" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトがコントロールの境界を越えてドラッグされると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。 イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawToBitmap">
+      <MemberSignature Language="C#" Value="public void DrawToBitmap (System.Drawing.Bitmap bitmap, System.Drawing.Rectangle targetBounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToBitmap(class System.Drawing.Bitmap bitmap, valuetype System.Drawing.Rectangle targetBounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.DrawToBitmap(System.Drawing.Bitmap,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bitmap" Type="System.Drawing.Bitmap" />
+        <Parameter Name="targetBounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="bitmap"><see cref="T:System.Drawing.Bitmap" />。</param>
+        <param name="targetBounds"><see cref="T:System.Drawing.Rectangle" />。</param>
+        <summary>このクラスでは、このメソッドは無効です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このメソッドは無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableAutoDragDrop">
+      <MemberSignature Language="C#" Value="public bool EnableAutoDragDrop { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableAutoDragDrop" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.EnableAutoDragDrop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、テキスト、画像、およびその他のデータでのドラッグ アンド ドロップ操作を有効にする値を設定します。</summary>
+        <value>
+          <see langword="true" />ドラッグ アンド ドロップ操作を有効にするにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public int Find (char[] characterSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Find(char[] characterSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.Find(System.Char[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="characterSet" Type="System.Char[]" />
+      </Parameters>
+      <Docs>
+        <param name="characterSet">検索する文字の配列。</param>
+        <summary>テキストを検索、<see cref="T:System.Windows.Forms.RichTextBox" />文字の一覧から文字の最初のインスタンスを制御します。</summary>
+        <returns>ここで、検索文字が見つからなかったか、検索文字が見つからない場合は-1 または空の検索文字セット コントロール内の位置がで指定された、<paramref name="char" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドで指定された文字の一覧から文字の最初のインスタンスを検索、`characterSet`パラメーターを文字の位置を返します。 たとえば、'Q' 文字を含む文字の配列を渡します。 コントロールには、"クイック Brown Fox"、テキストが含まれている場合、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドは 4 つの値を返します。 大文字と小文字の文字は、検索に異なる値と見なされます。  
+  
+ プロパティが負の値を返す場合、検索対象の文字がコントロールの内容が見つかりません。 このメソッドは、コントロール内の文字のグループの検索を使用することができます。 このバージョンの<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドは、文字、コントロールに含まれるドキュメント全体を検索する必要があります。 場合、メソッドので提供される文字の一覧から文字`characterSet`パラメーターが見つかった場合、このメソッドによって返される値は、コントロール内の文字の位置の 0 から始まるインデックス。 場所と見なされます、文字メソッドによって、文字の位置を決定するとき。  
+  
+   
+  
+## Examples  
+ 次のコード例の内容を検索、<xref:System.Windows.Forms.RichTextBox>内のメソッドに渡される文字の`text`パラメーター。 場合の内容、`text`配列に含まれて、<xref:System.Windows.Forms.RichTextBox>メソッドは、それ以外の値のインデックスを返します、-1 を返します。 例では、このメソッドがクラスに配置されている必要があります、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`と<xref:System.Windows.Forms.Button>という名前のコントロール`button1`、つまりに接続されている、`Click`で定義されたイベント ハンドラー例では、します。  
+  
+ [!code-cpp[RichTextBox.FindChar1#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.FindChar1/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.FindChar1#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.FindChar1/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.FindChar1#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.FindChar1/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public int Find (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Find(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.Find(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">コントロール内で検索するテキストです。</param>
+        <summary>内のテキストを検索、<see cref="T:System.Windows.Forms.RichTextBox" />文字列を制御します。</summary>
+        <returns>検索文字列が見つかったがコントロール内の位置または検索文字列が見つからないか、空の検索文字列がで指定された場合は-1、<paramref name="str" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドで指定したテキストを検索、`str`パラメーター コントロール内で最初の文字の場所を返します。 プロパティが負の値を返す場合、コントロールの内容の中に検索対象のテキスト文字列が検出されませんでした。 このメソッドを使用して、コントロールのユーザーに提供できる検索機能を作成することができます。 このメソッドを使用して、特定の形式に置換するテキストを検索することができますも。 などの場合は、ユーザーは、コントロールに日付を入力、使用できます、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドは、ドキュメント内のすべての日付の検索を使用する前に、適切な形式と置き換えて、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>コントロールのメソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.RichTextBox.Find%2A>を受け入れるメソッド、`string`ように、パラメーター内のテキストの 2 つ以上の行に含まれているテキストを見つけることができません、<xref:System.Windows.Forms.RichTextBox>です。 このような検索を実行すると、負の値の値が返されます 1 (-1)。  
+  
+   
+  
+## Examples  
+ 次のコード例の内容全体を検索、<xref:System.Windows.Forms.RichTextBox>メソッドのテキスト パラメーターに渡された検索文字列の最初のインスタンス。 検索文字列が見つかった場合、 <xref:System.Windows.Forms.RichTextBox>、メソッドの値を返します`true`を返しますそれ以外の場合、検索テキストを強調表示と`false`です。 例では、このメソッドがクラスに配置されている必要があります、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.RichTextBox>という`richTextBox1`です。  
+  
+ [!code-cpp[Classic RichTextBox.Find Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.Find Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.Find Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.Find Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.Find Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.Find Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public int Find (char[] characterSet, int start);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Find(char[] characterSet, int32 start) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.Find(System.Char[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="characterSet" Type="System.Char[]" />
+        <Parameter Name="start" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="characterSet">検索する文字の配列。</param>
+        <param name="start">検索を開始する位置を示す、コントロールのテキスト内の位置。</param>
+        <summary>テキストを検索、<see cref="T:System.Windows.Forms.RichTextBox" />文字の一覧から文字の最初のインスタンスを特定の開始時点でのコントロールです。</summary>
+        <returns>コントロール内で、検索文字がある場所です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドで指定された文字の一覧から文字の最初のインスタンスを検索、`characterSet`パラメーターは文字の場所を返します。 たとえば、'Q' 文字を含む文字の配列を渡します。 コントロールには、"クイック Brown Fox"、テキストが含まれている場合、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドは 4 つの値を返します。 大文字と小文字の文字は、検索に異なる値と見なされます。  
+  
+ プロパティが負の値を返す場合、検索対象の文字がコントロールの内容が見つかりません。 このメソッドは、コントロール内の文字のグループの検索を使用することができます。 場合、メソッドので提供される文字の一覧から文字`characterSet`パラメーターが見つかった場合、このメソッドによって返される値は、コントロール内の文字の位置の 0 から始まるインデックス。 場所と見なされます、文字メソッドによって、文字の位置を決定するとき。  
+  
+ このバージョンの<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドでは、文字の値を指定することによって、コントロールのテキスト内で指定された開始位置からセットを検索することができます、`start`パラメーター。 ゼロの値では、コントロール内のドキュメントの先頭から検索を開始することを示します。 このバージョンを使用することができます、<xref:System.Windows.Forms.RichTextBox.Find%2A>を既に把握しているテキストを回避する検索を絞り込むメソッドに指定された文字検索するか、検索の重要ではないにはが含まれていません。  
+  
+   
+  
+## Examples  
+ 次のコード例の内容を検索、<xref:System.Windows.Forms.RichTextBox>内のメソッドに渡される文字の`text`パラメーター。 内の位置から検索が開始、<xref:System.Windows.Forms.RichTextBox>によって指定された、`start`のパラメーター、`FindMyText`メソッドです。 文字列配列の内容がで検出されたかどうか、<xref:System.Windows.Forms.RichTextBox>メソッドは、それ以外の値のインデックスを返します、-1 を返します。 例では、このメソッドがクラスに配置されている必要があります、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`と<xref:System.Windows.Forms.Button>という名前のコントロール`button1`に接続されている、<xref:System.Windows.Forms.Control.Click>で定義されたイベント ハンドラー、例です。  
+  
+ [!code-cpp[RichTextBox.FindChar2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.FindChar2/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.FindChar2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.FindChar2/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.FindChar2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.FindChar2/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public int Find (string str, System.Windows.Forms.RichTextBoxFinds options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Find(string str, valuetype System.Windows.Forms.RichTextBoxFinds options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.Find(System.String,System.Windows.Forms.RichTextBoxFinds)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="options" Type="System.Windows.Forms.RichTextBoxFinds" />
+      </Parameters>
+      <Docs>
+        <param name="str">コントロール内で検索するテキストです。</param>
+        <param name="options"><see cref="T:System.Windows.Forms.RichTextBoxFinds" /> 値のビットごとの組み合わせ。</param>
+        <summary>内のテキストを検索、<see cref="T:System.Windows.Forms.RichTextBox" />検索に適用される特定のオプションの文字列のコントロールです。</summary>
+        <returns>検索文字列が見つかったがコントロール内の位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドで指定したテキストを検索、`str`パラメーター コントロール内で最初の文字の場所を返します。 プロパティが負の値を返す場合、コントロールの内容の中に検索対象のテキスト文字列が検出されませんでした。 このメソッドを使用して、コントロールのユーザーに提供できる検索機能を作成することができます。 このメソッドを使用して、特定の形式に置換するテキストを検索することができますも。 などの場合は、ユーザーがコントロールに日付を入力することができますを使用して、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドは、ドキュメント内のすべての日付の検索を使用する前に、適切な形式と置き換えて、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>コントロールのメソッドです。  
+  
+ このバージョンので、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドを使用すると、展開したり、検索の絞り込みオプションを指定できます。 検索語句の大文字と小文字が一致するかを単語の一部ではなく単語全体の検索を有効にするオプションを指定することができます。 指定して、`RichTextBoxFinds.Reverse`内の列挙型、`options`パラメーターを最下部にある検索メソッドに既定の top の代わりに、ドキュメントの最下位からテキストを検索することができます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.RichTextBox.Find%2A>を受け入れるメソッド、`string`ように、パラメーター内のテキストの 2 つ以上の行に含まれているテキストを見つけることができません、<xref:System.Windows.Forms.RichTextBox>です。 このような検索を実行すると、負の値の値が返されます 1 (-1)。  
+  
+   
+  
+## Examples  
+ 次のコード例の内容全体を検索、<xref:System.Windows.Forms.RichTextBox>メソッドのテキスト パラメーターに渡された検索文字列の最初のインスタンス。 検索文字列が見つかった場合、 <xref:System.Windows.Forms.RichTextBox>、メソッドの値を返します`true`してテキストを強調表示を返しますそれ以外の場合、`false`です。 例は、指定した検索文字列の大文字と小文字が一致するように、検索にもオプションを指定します。 例では、このメソッドがクラスに配置されている必要があります、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.RichTextBox>という`richTextBox1`です。  
+  
+ [!code-cpp[Classic RichTextBox.Find1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.Find1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.Find1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.Find1 Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.Find1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.Find1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public int Find (char[] characterSet, int start, int end);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Find(char[] characterSet, int32 start, int32 end) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.Find(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="characterSet" Type="System.Char[]" />
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="end" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="characterSet">検索する文字の配列。</param>
+        <param name="start">検索を開始する位置を示す、コントロールのテキスト内の位置。</param>
+        <param name="end">検索終了位置のコントロールのテキスト内の位置。</param>
+        <summary>内のテキストの範囲を検索、<see cref="T:System.Windows.Forms.RichTextBox" />文字の一覧から文字の最初のインスタンスを制御します。</summary>
+        <returns>コントロール内で、検索文字がある場所です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドで指定された文字の一覧から文字の最初のインスタンスを検索、`characterSet`パラメーターを文字の位置を返します。 たとえば、'Q' 文字を含む文字の配列を渡します。 コントロールには、"クイック Brown Fox"、テキストが含まれている場合、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドは 4 つの値を返します。 大文字と小文字の文字は、検索に異なる値と見なされます。  
+  
+ プロパティが負の値を返す場合、検索対象の文字がコントロールの内容が見つかりません。 このメソッドは、コントロール内の文字のグループの検索を使用することができます。 場合、メソッドので提供される文字の一覧から文字`characterSet`パラメーターが見つかった場合、このメソッドによって返される値は 0 から始まる、コントロール内の文字の位置のインデックス。 場所と見なされます、文字メソッドによって、文字の位置を決定するとき。  
+  
+ このバージョンの<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドでは、文字の値を指定することによって、コントロール内のテキストの範囲からセットを検索することができます、`start`と`end`パラメーター。 ゼロの値、`start`パラメーターは、コントロール内のドキュメントの先頭から検索を開始することを示します。 -1 の値を`end`パラメーターは、コントロール内のテキストの末尾に検索を終了することを示します。 このバージョンを使用することができます、<xref:System.Windows.Forms.RichTextBox.Find%2A>特定アプリケーションのニーズに重要ではないドキュメントの領域を検索しないようにするコントロール内のテキストの範囲に検索を絞り込む方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="characterSet" /> が null です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="start" />0 未満か、コントロール内のテキストの長さより大きい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public int Find (string str, int start, System.Windows.Forms.RichTextBoxFinds options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Find(string str, int32 start, valuetype System.Windows.Forms.RichTextBoxFinds options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.Find(System.String,System.Int32,System.Windows.Forms.RichTextBoxFinds)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="options" Type="System.Windows.Forms.RichTextBoxFinds" />
+      </Parameters>
+      <Docs>
+        <param name="str">コントロール内で検索するテキストです。</param>
+        <param name="start">検索を開始する位置を示す、コントロールのテキスト内の位置。</param>
+        <param name="options"><see cref="T:System.Windows.Forms.RichTextBoxFinds" /> 値のビットごとの組み合わせ。</param>
+        <summary>内のテキストを検索、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール内で、検索に適用される特定のオプションを使用して特定の位置に文字列を制御します。</summary>
+        <returns>検索文字列が見つかったがコントロール内の位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドで指定したテキストを検索、`str`パラメーターと、検索の最初の文字の場所は、コントロール内で文字列を返します。 プロパティが負の値を返す場合、コントロールの内容の中に検索対象のテキスト文字列が検出されませんでした。 このメソッドを使用して、コントロールのユーザーに提供できる検索機能を作成することができます。 このメソッドを使用して、特定の形式に置換するテキストを検索することができますも。 などの場合は、ユーザーは、コントロールに日付を入力、使用できます、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドは、ドキュメント内のすべての日付の検索を使用する前に、適切な形式と置き換えて、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>コントロールのメソッドです。  
+  
+ このバージョンので、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドを使用すると、展開したり、検索の絞り込みオプションを指定できます。 検索語句の大文字と小文字が一致するかを単語の一部ではなく単語全体の検索を有効にするオプションを指定することができます。 指定して、`RichTextBoxFinds.Reverse`内の列挙型、`options`パラメーターを最下部にある検索メソッドに既定の top の代わりに、ドキュメントの最下位からテキストを検索することができます。 このバージョンの<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドではことと、コントロールのテキスト内の特定の開始位置を選択してテキストの検索を絞り込むこともできます。 この機能を使用してする可能性がありますが既にを検索するか、またはに存在しないことを検索する特定のテキストがわかっているテキストを回避することができます。 ときに、`RichTextBoxFinds.Reverse`で値が指定された、`options`パラメーターでは、値、`start`パラメーターがのこのバージョンを使用する場合は、ドキュメントの下部にある検索を開始するための逆方向検索の終了場所位置を示す、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.RichTextBox.Find%2A>を受け入れるメソッド、`string`ように、パラメーター内のテキストの 2 つ以上の行に含まれているテキストを見つけることができません、<xref:System.Windows.Forms.RichTextBox>です。 このような検索を実行すると、負の値の値が返されます 1 (-1)。  
+  
+   
+  
+## Examples  
+ 次のコード例の内容全体を検索、<xref:System.Windows.Forms.RichTextBox>メソッドのテキスト パラメーターに渡された検索文字列の最初のインスタンス。 検索の開始位置は、メソッドの開始パラメーターによって指定されます。 検索文字列が見つかった場合、 <xref:System.Windows.Forms.RichTextBox>-1 の値を返しますそれ以外の場合、;、メソッドが検出された文字列の最初の文字のインデックス位置を返し、見つかったテキストを強調表示します。 例は、指定した検索文字列の大文字と小文字が一致するように、検索にもオプションを指定します。 例では、このメソッドがクラスに配置されている必要があります、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.RichTextBox>という`richTextBox1`です。 この例は、「次を検索」の種類の操作の実行に使用できます。 検索テキストのインスタンスが見つかった後の値を変更することで、テキストの他のインスタンスを見つけることができます、`start`パラメーターを現在の一致があった位置以降の場所で検索します。  
+  
+ [!code-cpp[Classic RichTextBox.Find2 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.Find2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.Find2 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.Find2 Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.Find2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.Find2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public int Find (string str, int start, int end, System.Windows.Forms.RichTextBoxFinds options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Find(string str, int32 start, int32 end, valuetype System.Windows.Forms.RichTextBoxFinds options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.Find(System.String,System.Int32,System.Int32,System.Windows.Forms.RichTextBoxFinds)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="end" Type="System.Int32" />
+        <Parameter Name="options" Type="System.Windows.Forms.RichTextBoxFinds" />
+      </Parameters>
+      <Docs>
+        <param name="str">コントロール内で検索するテキストです。</param>
+        <param name="start">検索を開始する位置を示す、コントロールのテキスト内の位置。</param>
+        <param name="end">検索終了位置のコントロールのテキスト内の位置。 この値は、負の 1 (-1) と同じである必要がありますより大きいまたは等しい、<c>開始</c>パラメーター。</param>
+        <param name="options"><see cref="T:System.Windows.Forms.RichTextBoxFinds" /> 値のビットごとの組み合わせ。</param>
+        <summary>内のテキストを検索、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール内で、検索に適用される特定のオプションを使用してテキストの範囲内で文字列を制御します。</summary>
+        <returns>検索文字列が見つかったがコントロール内の位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドで指定したテキストを検索、`str`パラメーターと、検索の最初の文字の場所は、コントロール内で文字列を返します。 プロパティが負の値を返す場合、コントロールの内容の中に検索対象のテキスト文字列が検出されませんでした。 このメソッドを使用して、コントロールのユーザーに提供できる検索機能を作成することができます。 このメソッドを使用して、特定の形式に置換するテキストを検索することができますも。 などの場合は、ユーザーがコントロールに日付を入力することができますを使用して、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドは、ドキュメント内のすべての日付の検索を使用する前に、適切な形式と置き換えて、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>コントロールのメソッドです。  
+  
+ このバージョンので、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドを使用すると、展開したり、検索の絞り込みオプションを指定できます。 検索語句の大文字と小文字が一致するかを単語の一部ではなく単語全体の検索を有効にするオプションを指定することができます。 指定して、`RichTextBoxFinds.Reverse`内の列挙型、`options`パラメーターを最下部にある検索メソッドに既定の top の代わりに、ドキュメントの最下位からテキストを検索することができます。 このバージョンの<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドでは、コントロールのテキスト内の特定の開始と終了位置を選択してテキストの検索を絞り込むこともできます。 この機能を使用して、コントロールのテキストの特定のセクションの検索範囲を制限することができます。 負の値 (-1) に割り当てられている場合、`end`パラメーター、メソッドは、内のテキストの最後まで検索は、<xref:System.Windows.Forms.RichTextBox>通常検索します。 逆方向の検索、値は負の 1 (-1) に割り当てられている、`end`パラメーターは、によって定義される位置にテキスト (下部) の末尾からテキストが検索されることを示します`start`パラメーター。 ときに、`start`と`end`コントロール全体と同じ値が通常の検索で検索パラメーターを指定します。 逆方向検索の場合は、コントロール全体を検索が、検索のドキュメントの末尾で開始され、ドキュメントの先頭まで検索します。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.RichTextBox.Find%2A>を受け入れるメソッド、`string`ように、パラメーター内のテキストの 2 つ以上の行に含まれているテキストを見つけることができません、<xref:System.Windows.Forms.RichTextBox>です。 このような検索を実行すると、負の値の値が返されます 1 (-1)。  
+  
+   
+  
+## Examples  
+ 次のコード例は、内のテキストのセクションを検索、<xref:System.Windows.Forms.RichTextBox>に渡された検索文字列の最初のインスタンス、`searchText`メソッドのパラメーターです。 指定されたコントロール内のテキストを検索する範囲、`searchStart`と`searchEnd`メソッドのパラメーターです。 検索文字列が見つかった場合、 <xref:System.Windows.Forms.RichTextBox>-1 の値を返しますそれ以外の場合、;、メソッドが検出された文字列の最初の文字のインデックス位置を返し、見つかったテキストを強調表示します。 また、例では、`options`のパラメーター、<xref:System.Windows.Forms.RichTextBox.Find%2A>検出された文字列が検索文字列の大文字と小文字を一致する必要がありますを指定します。 例では、このメソッドがクラスに配置されている必要があります、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`です。 1 つ目後の検索文字列のインスタンスが見つかると、この例を使用して、テキストで他のインスタンスを検索することができます。  
+  
+ [!code-cpp[RichTextBox.FindStringStartEnd#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.FindStringStartEnd/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.FindStringStartEnd#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.FindStringStartEnd/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.FindStringStartEnd#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.FindStringStartEnd/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="str" /> パラメーターは <see langword="null" /> でした。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="end" />パラメーターが小さい、<paramref name="start" />パラメーター。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Font Font { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font Font" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールによって表示されるテキストのフォントを取得または設定します。</summary>
+        <value>コントロールによって表示されるテキストに適用される <see cref="T:System.Drawing.Font" />。 既定値は <see cref="P:System.Windows.Forms.Control.DefaultFont" /> プロパティの値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの前景色を取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />コントロールの前景色を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCharIndexFromPosition">
+      <MemberSignature Language="C#" Value="public override int GetCharIndexFromPosition (System.Drawing.Point pt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetCharIndexFromPosition(valuetype System.Drawing.Point pt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.GetCharIndexFromPosition(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pt">検索する位置。</param>
+        <summary>指定位置に最も近い文字のインデックスを取得します。</summary>
+        <returns>指定した位置の 0 から始まる文字インデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定された位置に最も近い文字のインデックスを返します、`pt`パラメーター。 文字インデックスは、スペースを含む、コントロール内のテキストの 0 から始まるインデックスです。 このメソッドを使用すると、場所、テキストで、ユーザーが、このメソッドに、マウス座標を渡すことによって、マウスを決定します。 ユーザーがコントロールのテキスト内の単語にマウス ポインターを置いたときにタスクを実行する場合に役立ちます。 これができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.RichTextBox.GetCharIndexFromPosition%2A>メソッドを<xref:System.Windows.Forms.RichTextBox.Find%2A>内で特定の文字列を検索する方法、<xref:System.Windows.Forms.RichTextBox>を制御し、検索した文字列が内にある文字のインデックスを表示、 <xref:System.Windows.Forms.RichTextBox>コントロール。 この例では、//"brown"コントロールの内容の中の単語を検索し、検索文字列がある文字のインデックス位置を返します。 この例では、フォームが含まれていますがあることが必要です、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`テキストを格納しています。 また、コードの例でに接続されていることが必要に、<xref:System.Windows.Forms.Control.MouseDown>のイベント、<xref:System.Windows.Forms.RichTextBox>です。  
+  
+ [!code-cpp[RichTextBox.GetCharIndexFromPosition#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.GetCharIndexFromPosition/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.GetCharIndexFromPosition#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.GetCharIndexFromPosition/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.GetCharIndexFromPosition#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.GetCharIndexFromPosition/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineFromCharIndex">
+      <MemberSignature Language="C#" Value="public override int GetLineFromCharIndex (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetLineFromCharIndex(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.GetLineFromCharIndex(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">検索する文字インデックスの位置。</param>
+        <summary>テキスト内で指定した文字位置からの行番号を取得、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+        <returns>文字インデックスを含む行の 0 から始まる行番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定された文字のインデックスに基づいて行の数を決定することができます、`index`メソッドのパラメーターです。 コントロール内のテキストの最初の行では、値 0 を返します。 <xref:System.Windows.Forms.RichTextBox.GetLineFromCharIndex%2A>メソッドは、インデックス付きの文字がコントロール内にある物理的な行番号を返します。 たとえば場合内のテキストの最初の論理行の一部、コントロールが次の行に折り返される、<xref:System.Windows.Forms.RichTextBox.GetLineFromCharIndex%2A>メソッドは、指定された文字のインデックス位置にある文字が 2 番目の物理的な行に折り返されます場合、1 を返します。 場合<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>に設定されている`false`行の一部を次に折り返されるなしと指定の文字インデックスの場合は 0 を返します。 このメソッドを使用するにはのどの行で、特定の文字のインデックスが内にあるかを判断します。 呼び出しの後など、<xref:System.Windows.Forms.RichTextBox.Find%2A>テキストを検索する方法、検索結果がある文字のインデックスを取得することができます。 によって返される文字のインデックスを持つこのメソッドを呼び出すことができます、<xref:System.Windows.Forms.RichTextBox.Find%2A>という単語が行を決定するメソッドが見つかりました。  
+  
+ 場合によっては、 <xref:System.Windows.Forms.RichTextBox.GetLineFromCharIndex%2A> 、例外をスローしない場合、`index`パラメーターが無効な値です。 例:  
+  
+-   場合、`index`パラメーターは<xref:System.Int32.MinValue>または-1、 <xref:System.Windows.Forms.RichTextBox.GetLineFromCharIndex%2A> 0 を返します。  
+  
+-   場合、`index`パラメーターは、テキストの長さまたは<xref:System.Int32.MaxValue>、<xref:System.Windows.Forms.RichTextBox.GetLineFromCharIndex%2A>必ずしも同じではありません、テキストの最後の行の数を返しますとして`Lines.Length-1`の値に応じて、<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>プロパティ。  
+  
+ このような場合は、呼び出す前に、入力の検証<xref:System.Windows.Forms.RichTextBox.GetLineFromCharIndex%2A>です。  
+  
+> [!NOTE]
+>  内の文字のインデックスが指定されている場合、`index`パラメーターは、コントロール内に含まれる使用可能な行数外ですが、最後の行番号が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.RichTextBox.GetLineFromCharIndex%2A>メソッドです。 例を実行するを含むフォームで、次のコードを貼り付けます、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`RichTextBox1`、という名前のボタン`Button1`とという 2 つのテキスト ボックス`TextBox1`と`TextBox2`です。 例が実行されているときに検索文字列を入力してください。`TextBox2`検索結果を取得するボタンをクリックします。  
+  
+ [!code-cpp[System.Windows.Forms.RichTextBoxGetLine#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxGetLine/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.RichTextBoxGetLine#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxGetLine/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.RichTextBoxGetLine#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxGetLine/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPositionFromCharIndex">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Point GetPositionFromCharIndex (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Drawing.Point GetPositionFromCharIndex(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.GetPositionFromCharIndex(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の取得対象とする文字のインデックス。</param>
+        <summary>指定の文字インデックスにおけるコントロール内の位置を取得します。</summary>
+        <returns>指定した文字の位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、コントロールの特定の文字のインデックスが存在を確認することができます。 このメソッドは、コントロール内の単語のショートカット メニュー項目またはヘルプ情報を表示するなどのタスクを使用できます。 たとえば、ユーザーがコントロールに含まれる単語を右クリックしたときに、ユーザーにオプションのメニューを表示する場合は、行うこともできますこのメソッドを正しく表示する単語の位置を決定する、<xref:System.Windows.Forms.ContextMenu>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GiveFeedback">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.GiveFeedbackEventHandler GiveFeedback;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.GiveFeedbackEventHandler GiveFeedback" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.GiveFeedback" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.GiveFeedbackEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグ操作中に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HScroll">
+      <MemberSignature Language="C#" Value="public event EventHandler HScroll;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler HScroll" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.HScroll" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがコントロールの水平スクロール バーをクリックすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.RichTextBox.HScroll>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.RichTextBox>という`RichTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.RichTextBox.HScroll>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#540](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#540)]
+ [!code-vb[System.Windows.Forms.EventExamples#540](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#540)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImeChange">
+      <MemberSignature Language="C#" Value="public event EventHandler ImeChange;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ImeChange" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.ImeChange" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが Windows オペレーティング システムのアジア バージョンで入力方法を切り替えると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.RichTextBox.ImeChange>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.RichTextBox>という`RichTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.RichTextBox.ImeChange>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#542](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#542)]
+ [!code-vb[System.Windows.Forms.EventExamples#542](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#542)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LanguageOption">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.RichTextBoxLanguageOptions LanguageOption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.RichTextBoxLanguageOptions LanguageOption" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.LanguageOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxLanguageOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を示す値を取得または<see cref="T:System.Windows.Forms.RichTextBox" />入力方式エディター (IME) とアジア言語のサポートを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.RichTextBoxLanguageOptions" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.RichTextBoxLanguageOptions.AutoFontSizeAdjust" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkClicked">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.LinkClickedEventHandler LinkClicked;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.LinkClickedEventHandler LinkClicked" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.LinkClicked" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LinkClickedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがコントロールのテキスト内のリンクをクリックすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール内でクリックされたリンクを処理するには、このイベントのイベント ハンドラーを作成することができます。 イベント ハンドラーに提供される情報を使用して、ドキュメント内でクリックしてされたリンクを確認できます。  
+  
+> [!IMPORTANT]
+>  既定では、リンクはテキストとして表示され、クリックすることはできません。 クリック可能なセットをようにする、<xref:System.Windows.Forms.RichTextBox.DetectUrls%2A>プロパティを`true`です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例には、イベント ハンドラーが含まれています、<xref:System.Windows.Forms.RichTextBox.LinkClicked>イベント。 イベント ハンドラーは、のドキュメント内のリンクのクリックを処理、<xref:System.Windows.Forms.RichTextBox>を制御し、既定のブラウザーのインスタンスを起動 (を使用して、<xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType>メソッド) をクリックしたリンクのページを表示します。 この例では、イベント ハンドラーに接続されている必要があります、<xref:System.Windows.Forms.RichTextBox.LinkClicked>イベントを<xref:System.Windows.Forms.RichTextBox>です。  
+  
+ [!code-cpp[Classic RichTextBox.LinkClicked Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.LinkClicked Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.LinkClicked Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.LinkClicked Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.LinkClicked Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.LinkClicked Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadFile">
+      <MemberSignature Language="C#" Value="public void LoadFile (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadFile(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.LoadFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">名前と、コントロールに読み込むファイルの場所。</param>
+        <summary>リッチ テキスト形 (式 RTF) または標準の ASCII テキスト ファイルに読み込まれる、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つファイルを読み込むときに、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>メソッド、読み込まれているファイルの内容、全体の内容を置き換える、<xref:System.Windows.Forms.RichTextBox>コントロール。 これによりの値、<xref:System.Windows.Forms.TextBoxBase.Text%2A>と<xref:System.Windows.Forms.RichTextBox.Rtf%2A>プロパティを変更します。 このメソッドを使用すると、コントロールの操作用に以前に作成したテキストまたは rtf 形式のドキュメントを読み込みます。 ファイルを保存する場合は、使用、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>メソッドです。  
+  
+> [!NOTE]
+>  このバージョンので、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>メソッド、読み込まれているファイルが、RTF ドキュメントではない場合、例外が発生します。 ASCII テキスト ファイルなどのさまざまな型を読み込むには、その他のバージョンからの値をそのまま使用するメソッドの使用して、<xref:System.Windows.Forms.RichTextBoxStreamType>列挙体をパラメーターとして。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.RichTextBox.LoadFile%2A>のハンドルが作成されるまでは、メソッドは、ファイルを開けません。、<xref:System.Windows.Forms.RichTextBox>です。 呼び出しの前に、コントロールのハンドルが作成されるように、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例に RTF ファイルを開き、<xref:System.Windows.Forms.RichTextBox>コントロール。 この例では、<xref:System.Windows.Forms.OpenFileDialog>ユーザーからファイルを要求するダイアログ ボックスを表示するクラス。 次に rtf ファイルであると仮定するとするためにファイルが読み込まれるファイルを文書化します。 ファイルがない場合、コード例には例外がスローされます。 この例にコードを配置する必要があります、<xref:System.Windows.Forms.Form>を持つクラス、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`です。  
+  
+ [!code-cpp[Classic RichTextBox.LoadFile Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.LoadFile Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.LoadFile Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.LoadFile Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.LoadFile Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.LoadFile Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">コントロールに、ファイルの読み込み中にエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">読み込まれているファイルは、RTF ドキュメントではありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルを開く。 関連する列挙値:<see langword="Read" />値<see cref="T:System.Security.Permissions.FileIOPermissionAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadFile">
+      <MemberSignature Language="C#" Value="public void LoadFile (System.IO.Stream data, System.Windows.Forms.RichTextBoxStreamType fileType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadFile(class System.IO.Stream data, valuetype System.Windows.Forms.RichTextBoxStreamType fileType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.LoadFile(System.IO.Stream,System.Windows.Forms.RichTextBoxStreamType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.IO.Stream" />
+        <Parameter Name="fileType" Type="System.Windows.Forms.RichTextBoxStreamType" />
+      </Parameters>
+      <Docs>
+        <param name="data">読み込むデータのストリーム、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</param>
+        <param name="fileType"><see cref="T:System.Windows.Forms.RichTextBoxStreamType" /> 値のいずれか。</param>
+        <summary>既存のデータ ストリームの内容を読み込みます、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンを使用することができます、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>を読み込む方法、<xref:System.Windows.Forms.RichTextBox>データの既存のストリームからデータを使用します。 コントロールに読み込まれるデータの内容全体が置き換えられます、<xref:System.Windows.Forms.RichTextBox>コントロール。 これによりの値、<xref:System.Windows.Forms.TextBoxBase.Text%2A>と<xref:System.Windows.Forms.RichTextBox.Rtf%2A>プロパティを変更します。 このメソッドは、データ ストリームを操作するためのコントロールに既に開かれているファイルの読み込みに使用できます。 コントロールの内容をストリームに保存する場合は、使用、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>を受け取るメソッドを<xref:System.IO.Stream>オブジェクトをパラメーターとして。  
+  
+ このバージョンの<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>メソッドでは、コントロールが読み込まれるデータの種類を指定することもできます。 この機能では、データを含む式 (RTF) ドキュメントのリッチ テキスト以外のコントロールにデータ ストリームを使用することができます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.RichTextBox.LoadFile%2A>のハンドルが作成されるまでは、メソッドは、ファイルを開けません。、<xref:System.Windows.Forms.RichTextBox>です。 呼び出しの前に、コントロールのハンドルが作成されるように、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>と<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>ストリームを持つメソッドです。 使用しても示します、 <xref:System.Windows.Forms.FileDialog.FileName%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.FileDialog.DefaultExt%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.SaveFileDialog.CreatePrompt%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.SaveFileDialog.OverwritePrompt%2A?displayProperty=nameWithType>メンバー。  
+  
+ これは、プロジェクトにコピーするときに実行する準備が整っている完全な例です。  
+  
+ [!code-cpp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">コントロールに、ファイルの読み込み中にエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">読み込まれているファイルは、RTF ドキュメントではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadFile">
+      <MemberSignature Language="C#" Value="public void LoadFile (string path, System.Windows.Forms.RichTextBoxStreamType fileType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadFile(string path, valuetype System.Windows.Forms.RichTextBoxStreamType fileType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.LoadFile(System.String,System.Windows.Forms.RichTextBoxStreamType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="fileType" Type="System.Windows.Forms.RichTextBoxStreamType" />
+      </Parameters>
+      <Docs>
+        <param name="path">名前と、コントロールに読み込むファイルの場所。</param>
+        <param name="fileType"><see cref="T:System.Windows.Forms.RichTextBoxStreamType" /> 値のいずれか。</param>
+        <summary>特定の種類のファイルを読み込み、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つファイルを読み込むときに、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>メソッド、読み込まれているファイルの内容、全体の内容を置き換える、<xref:System.Windows.Forms.RichTextBox>コントロール。 これによりの値、<xref:System.Windows.Forms.TextBoxBase.Text%2A>と<xref:System.Windows.Forms.RichTextBox.Rtf%2A>プロパティを変更します。 コントロールの操作用に以前に作成したテキストまたはリッチ テキスト形式 (RTF) ドキュメントを読み込むには、このメソッドを使用できます。 ファイルを保存する場合は、使用、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>メソッドです。  
+  
+ このバージョンを使用することができます、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>読み込まれているファイルのファイルの種類を指定します。 この機能を使用すると、コントロールに RTF ドキュメント以外のファイルを読み込むことができます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.RichTextBox.LoadFile%2A>のハンドルが作成されるまでは、メソッドは、ファイルを開けません。、<xref:System.Windows.Forms.RichTextBox>です。 呼び出しの前に、コントロールのハンドルが作成されるように、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例にテキスト ファイルを開き、<xref:System.Windows.Forms.RichTextBox>コントロール。 この例では、<xref:System.Windows.Forms.OpenFileDialog>ユーザーからファイルを要求するダイアログ ボックスを表示するクラス。 コードは、次にそのファイルに読み込みます、<xref:System.Windows.Forms.RichTextBox>コントロール。 例では、このバージョンを使用して、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>メソッドを標準のリッチ テキスト形式ではなく ASCII テキスト ファイルとしてファイルが開かれることを指定します。 この例にコードを配置する必要があります、<xref:System.Windows.Forms.Form>を持つクラス、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`です。  
+  
+ [!code-cpp[Classic RichTextBox.LoadFile1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.LoadFile1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.LoadFile1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.LoadFile1 Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.LoadFile1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.LoadFile1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">コントロールに、ファイルの読み込み中にエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">読み込まれているファイルは、RTF ドキュメントではありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルを開く。 関連する列挙値:<see langword="Read" />値<see cref="T:System.Security.Permissions.FileIOPermissionAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLength">
+      <MemberSignature Language="C#" Value="public override int MaxLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.MaxLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(2147483647)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最大文字数、ユーザーが入力またはリッチ テキスト ボックス コントロールに貼り付けることができます。</summary>
+        <value>コントロールに入力できる文字数。 既定値は、<see cref="F:System.Int32.MaxValue" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが 0 に設定されている場合、コントロールに入力できるテキストの最大長は 64 KB の文字がします。 このプロパティは、通常際に使用される、<xref:System.Windows.Forms.RichTextBox>リッチ テキスト形 (式 RTF) テキストの 1 行の表示に使用します。 郵便番号や電話番号などの値をコントロールに入力したテキストの長さが制限またはデータがデータベースに入力するときに入力したテキストの長さを制限するには、このプロパティを使用することができます。 データベース内の対応するフィールドの最大長をコントロールに入力したテキストを制限することができます。  
+  
+> [!NOTE]
+>  コードでは、値を設定することができます、<xref:System.Windows.Forms.TextBoxBase.Text%2A>プロパティを持つ、長さで指定された値を超える値を<xref:System.Windows.Forms.TextBoxBase.MaxLength%2A>プロパティです。 このプロパティは、実行時に、コントロールに入力したテキストにのみ影響します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.RichTextBox.MaxLength%2A>プロパティのテキストに割り当てられている場合、<xref:System.Windows.Forms.RichTextBox>コントロールに割り当てられている値より大きい、<xref:System.Windows.Forms.RichTextBox.MaxLength%2A>プロパティです。 この例では、テキストを大きくできない場合、<xref:System.Windows.Forms.RichTextBox.SelectedText%2A>コントロールにテキストを割り当てるプロパティをします。 この例では、する必要があります、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`がフォームに追加されたコントロールへの貼り付けは、パラメーターに指定されたテキストを含む例のメソッドが呼び出されるとします。 この例もする必要があります、<xref:System.Windows.Forms.TextBoxBase.MaxLength%2A>プロパティにテキスト入力を制限する値に設定されて、<xref:System.Windows.Forms.RichTextBox>です。  
+  
+ [!code-cpp[RichTextBox.MaxLength#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.MaxLength/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.MaxLength#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.MaxLength/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.MaxLength#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.MaxLength/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティに割り当てられた値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiline">
+      <MemberSignature Language="C#" Value="public override bool Multiline { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Multiline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.Multiline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数行であるかどうかを示す値を取得または<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+        <value>
+          <see langword="true" />コントロールが複数行の場合<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBackColorChanged">
+      <MemberSignature Language="C#" Value="protected override void OnBackColorChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnBackColorChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnBackColorChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.BackColorChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContentsResized">
+      <MemberSignature Language="C#" Value="protected virtual void OnContentsResized (System.Windows.Forms.ContentsResizedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnContentsResized(class System.Windows.Forms.ContentsResizedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnContentsResized(System.Windows.Forms.ContentsResizedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.ContentsResizedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.ContentsResizedEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.RichTextBox.ContentsResized" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.RichTextBox.OnContentsResized%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.RichTextBox.OnContentsResized(System.Windows.Forms.ContentsResizedEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.RichTextBox.OnContentsResized(System.Windows.Forms.ContentsResizedEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContextMenuChanged">
+      <MemberSignature Language="C#" Value="protected override void OnContextMenuChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContextMenuChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnContextMenuChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.ContextMenuChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleCreated">
+      <MemberSignature Language="C#" Value="protected override void OnHandleCreated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleCreated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnHandleCreated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleCreated" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleDestroyed">
+      <MemberSignature Language="C#" Value="protected override void OnHandleDestroyed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleDestroyed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnHandleDestroyed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHScroll">
+      <MemberSignature Language="C#" Value="protected virtual void OnHScroll (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnHScroll(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnHScroll(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.RichTextBox.HScroll" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.RichTextBox.OnHScroll%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.RichTextBox.OnHScroll(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.RichTextBox.OnHScroll(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnImeChange">
+      <MemberSignature Language="C#" Value="protected virtual void OnImeChange (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnImeChange(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnImeChange(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.RichTextBox.ImeChange" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.RichTextBox.OnImeChange%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.RichTextBox.OnImeChange(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.RichTextBox.OnImeChange(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLinkClicked">
+      <MemberSignature Language="C#" Value="protected virtual void OnLinkClicked (System.Windows.Forms.LinkClickedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnLinkClicked(class System.Windows.Forms.LinkClickedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnLinkClicked(System.Windows.Forms.LinkClickedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.LinkClickedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.LinkClickedEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.RichTextBox.LinkClicked" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.RichTextBox.OnLinkClicked%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.RichTextBox.OnLinkClicked(System.Windows.Forms.LinkClickedEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.RichTextBox.OnLinkClicked(System.Windows.Forms.LinkClickedEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnProtected">
+      <MemberSignature Language="C#" Value="protected virtual void OnProtected (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnProtected(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnProtected(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.RichTextBox.Protected" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.RichTextBox.OnProtected%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.RichTextBox.OnProtected(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.RichTextBox.OnProtected(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRightToLeftChanged">
+      <MemberSignature Language="C#" Value="protected override void OnRightToLeftChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRightToLeftChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnRightToLeftChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.RightToLeftChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectionChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnSelectionChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSelectionChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnSelectionChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.RichTextBox.SelectionChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.RichTextBox.OnSelectionChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.RichTextBox.OnSelectionChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.RichTextBox.OnSelectionChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnVScroll">
+      <MemberSignature Language="C#" Value="protected virtual void OnVScroll (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnVScroll(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.OnVScroll(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.RichTextBox.VScroll" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Forms.RichTextBox.OnVScroll%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.RichTextBox.OnVScroll(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.RichTextBox.OnVScroll(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Paste">
+      <MemberSignature Language="C#" Value="public void Paste (System.Windows.Forms.DataFormats.Format clipFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Paste(class System.Windows.Forms.DataFormats/Format clipFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.Paste(System.Windows.Forms.DataFormats.Format)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clipFormat" Type="System.Windows.Forms.DataFormats+Format" />
+      </Parameters>
+      <Docs>
+        <param name="clipFormat">クリップボードの形式をクリップボードからデータを取得する必要があります。</param>
+        <summary>指定されたクリップボードの形式でクリップボードの内容を貼り付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、コントロールに、クリップボードからデータを貼り付けることができます。 このバージョンの<xref:System.Windows.Forms.RichTextBox.Paste%2A>メソッドとは異なる、<xref:System.Windows.Forms.TextBoxBase.Paste%2A?displayProperty=nameWithType>メソッドでは、指定されたクリップボードの形式でテキストのみを貼り付けすることができます。 使用することができます、<xref:System.Windows.Forms.RichTextBox.CanPaste%2A>クリップボード内のデータが指定のクリップボード形式であるかどうかを調べます。 このバージョンを呼び出すことができますし、<xref:System.Windows.Forms.RichTextBox.Paste%2A>メソッドを適切なデータ形式と、貼り付け操作が行われることを確認してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.RichTextBox.Paste%2A>にビットマップを貼り付けする方法、<xref:System.Windows.Forms.RichTextBox>コントロール。 この例ではファイルからビットマップを開いた後、<xref:System.Windows.Forms.Clipboard.SetDataObject%2A>にビットマップを Windows クリップボードにコピーする方法です。 最後に、例がの形式を取得、<xref:System.Drawing.Bitmap>オブジェクト、形式に貼り付けることができることを確認、<xref:System.Windows.Forms.RichTextBox>コントロールを使用して、<xref:System.Windows.Forms.RichTextBox.Paste%2A>データを貼り付けるメソッドです。  
+  
+ [!code-cpp[RichText_Paste#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichText_Paste/CPP/form1.cpp#1)]
+ [!code-csharp[RichText_Paste#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichText_Paste/CS/form1.cs#1)]
+ [!code-vb[RichText_Paste#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichText_Paste/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">クリップボードからの読み取り。 関連する列挙値:<see langword="AllClipboard" />値<see cref="T:System.Security.Permissions.UIPermissionClipboard" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessCmdKey">
+      <MemberSignature Language="C#" Value="protected override bool ProcessCmdKey (ref System.Windows.Forms.Message m, System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ProcessCmdKey(valuetype System.Windows.Forms.Message&amp; m, valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理するウィンドウ メッセージを表す、参照渡しされた <see cref="T:System.Windows.Forms.Message" />。</param>
+        <param name="keyData">1 つ、<see cref="T:System.Windows.Forms.Keys" />を処理するキーを表す値です。</param>
+        <summary>コマンド キーを処理します。</summary>
+        <returns>
+          文字がコントロールによって処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Protected">
+      <MemberSignature Language="C#" Value="public event EventHandler Protected;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Protected" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.Protected" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール内の保護されたテキストをユーザーが変更しようとすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがコントロールに保護対象としてマークされているテキストを変更しようとした場合を決定する、アプリケーションでは、このイベントのイベント ハンドラーを作成できます。 ユーザーのテキストが変更しようとするユーザーが保護されている通知にまたはをテキストに適切な変更を加える、ユーザーを有効にする ダイアログ ボックスを表示する、イベント ハンドラーを使用できます。 たとえば、保護された領域が日付の場合は、ユーザーがコントロールのテキストに適用できる日付を選択できるダイアログ ボックスを表示できます。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.RichTextBox.Protected>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.RichTextBox>という`RichTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.RichTextBox.Protected>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#543](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#543)]
+ [!code-vb[System.Windows.Forms.EventExamples#543](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#543)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryContinueDrag">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.QueryContinueDragEventHandler QueryContinueDrag;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.QueryContinueDragEventHandler QueryContinueDrag" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.QueryContinueDrag" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.QueryContinueDragEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このイベントは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Redo">
+      <MemberSignature Language="C#" Value="public void Redo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Redo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.Redo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールで取り消された最後の操作を再適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してできます、<xref:System.Windows.Forms.RichTextBox.Redo%2A>コントロールに対して、最後に元に戻す操作を再適用するメソッド。 <xref:System.Windows.Forms.RichTextBox.CanRedo%2A>メソッドでは、コントロールにユーザーを元に戻した最後の操作を再適用することができるかどうかを判断することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.RichTextBox.CanRedo%2A>と<xref:System.Windows.Forms.RichTextBox.RedoActionName%2A>プロパティ、および<xref:System.Windows.Forms.RichTextBox.Redo%2A>メソッドは、テキストの削除を除く任意のアクションをやり直し操作を制限します。 この例では、フォームが含まれていますがあることが必要です、<xref:System.Windows.Forms.RichTextBox>とコントロール内の操作、<xref:System.Windows.Forms.RichTextBox>実行され、この例では、コードを呼び出す前に元に戻します。  
+  
+ [!code-cpp[RichTextBox.RedoAction#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.RedoAction/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.RedoAction#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.RedoAction/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.RedoAction#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.RedoAction/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedoActionName">
+      <MemberSignature Language="C#" Value="public string RedoActionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RedoActionName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.RedoActionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールを再適用できるアクションの名前を取得時に、<see cref="M:System.Windows.Forms.RichTextBox.Redo" />メソッドが呼び出されます。</summary>
+        <value>呼び出し時に実行されるアクションの名前を表す文字列、<see cref="M:System.Windows.Forms.RichTextBox.Redo" />メソッドが行われます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、空の文字列を返す場合 ("")、コントロールを再適用できる操作はありません。 このメソッドを使用するには最後に取り消し操作を決定する、<xref:System.Windows.Forms.RichTextBox>への呼び出し時にコントロールを再適用することができますし、コントロール、<xref:System.Windows.Forms.RichTextBox.Redo%2A>メソッドが行われます。 使用して、コントロールに再度適用されるすべての操作があるかどうかを判断できます、<xref:System.Windows.Forms.RichTextBox.CanRedo%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.RichTextBox.CanRedo%2A>と<xref:System.Windows.Forms.RichTextBox.RedoActionName%2A>プロパティ、および<xref:System.Windows.Forms.RichTextBox.Redo%2A>メソッドは、テキストの削除を除く任意のアクションをやり直し操作を制限します。 この例では、フォームが含まれていますがあることが必要です、<xref:System.Windows.Forms.RichTextBox>とコントロール内の操作、<xref:System.Windows.Forms.RichTextBox>実行され、この例では、コードを呼び出す前に元に戻します。  
+  
+ [!code-cpp[RichTextBox.RedoAction#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.RedoAction/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.RedoAction#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.RedoAction/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.RedoAction#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.RedoAction/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RichTextShortcutsEnabled">
+      <MemberSignature Language="C#" Value="public bool RichTextShortcutsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RichTextShortcutsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.RichTextShortcutsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>
+          <see langword="true" />ショートカット キーは有効な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightMargin">
+      <MemberSignature Language="C#" Value="public int RightMargin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RightMargin" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.RightMargin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のテキストの 1 行のサイズ、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+        <value>コントロール内のテキストの 1 行のピクセル単位のサイズ。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 0 より大きい値がコントロールに入力されると、指定したコントロールの左端のピクセル数でコントロールに表示されない余白が配置されます。 この余白を超えて入力したテキストは、コントロール内のテキストの次の行に配置されます。 このプロパティでは、現在プロパティを設定した後に、コントロールに入力されたテキストと同様に、コントロールに入力されたすべてのテキストに影響します。 このプロパティを使用してすべてのテキストに入力された行の最大の幅を指定することができます、<xref:System.Windows.Forms.RichTextBox>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Windows.Forms.RichTextBox>テキストにズーム インするは、単語がダブルクリックされたときに、コントロールのクライアント領域の右側にある余白が場合に、コントロールのテキストに単語を自動的に選択します。 場合、<xref:System.Windows.Forms.RichTextBox>コントロールが、小規模の幅では、このコードを使用して作成されます、<xref:System.Windows.Forms.RichTextBox>独自の行のテキストの各文字が表示されます。 この垂直方向の表示位置に単語の任意の部分をクリックすると、テキストが垂直方向に表示されているファクトに関係なく、単語のすべての文字が選択されます。 この例では、フォームが含まれていますがあることが必要です、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`です。  
+  
+ [!code-cpp[RichTextBox.ZoomFactor#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.ZoomFactor/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.ZoomFactor#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.ZoomFactor/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.ZoomFactor#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.ZoomFactor/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した値が 0 未満でした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Rtf">
+      <MemberSignature Language="C#" Value="public string Rtf { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Rtf" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.Rtf" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のテキスト、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール、すべてのリッチ テキスト形式の (式 RTF) コードを含むです。</summary>
+        <value>コントロールに RTF 形式のテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールに RTF 形式のテキストを配置するには、このプロパティを使用するには、表示、または、指定した RTF 書式を設定して、コントロールのテキストで定義されているコントロールのテキストを抽出します。 このプロパティは通常、Microsoft Word や Windows ワードパッドなどの別の RTF ソースからのコントロールに rtf 形式のテキストを割り当てているときに使用されます。  
+  
+ 変更した場合、<xref:System.Windows.Forms.Control.RightToLeft%2A>未加工のテキストの書式設定なしのみ、実行時にプロパティが保持されます。  
+  
+ RTF コードを参照してください。 MSDN ライブラリ http://msdn.microsoft.com/library で"リッチ テキスト形式の (式 RTF) 仕様、バージョン 1.6"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveFile">
+      <MemberSignature Language="C#" Value="public void SaveFile (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveFile(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.SaveFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">名前と保存するファイルの場所。</param>
+        <summary>内容を保存、<see cref="T:System.Windows.Forms.RichTextBox" />リッチ テキスト形式の (式 RTF) のファイルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RichTextBox.SaveFile%2A>メソッドでは、Microsoft Word や Windows ワードパッドなどの他のプログラムで使用できる RTF ファイルに、コントロールの内容全体を保存することができます。 ファイルの名前をする場合に渡される、`path`パラメーターが指定されたディレクトリに既に存在、将来予告なしに、ファイルは上書きされます。 使用することができます、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>にファイルの内容を読み込むにはメソッド、<xref:System.Windows.Forms.RichTextBox>です。  
+  
+> [!NOTE]
+>  ASCII テキストなどのファイル形式の異なる型に、コントロールの内容を保存するから値をそのまま使用するメソッドの他のバージョンを使用、<xref:System.Windows.Forms.RichTextBoxStreamType>列挙体をパラメーターとして。  
+  
+   
+  
+## Examples  
+ 次のコード例の内容を保存する、 <xref:System.Windows.Forms.RichTextBox> RTF ファイルを制御します。 この例では、<xref:System.Windows.Forms.SaveFileDialog>を保存する、ユーザー、パスおよびファイルのファイル名を要求するダイアログ ボックスを表示するクラス。 コードは、リッチ テキスト形式でのコンテンツがある場合、ファイルを保存します。 ファイルが既に存在する場合は、自動的に上書きされます。 この例にコードを配置する必要があります、<xref:System.Windows.Forms.Form>を持つクラス、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`です。  
+  
+ [!code-cpp[Classic RichTextBox.SaveFile Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.SaveFile Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.SaveFile Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.SaveFile Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.SaveFile Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.SaveFile Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">ファイルに、コントロールの内容を保存中にエラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveFile">
+      <MemberSignature Language="C#" Value="public void SaveFile (System.IO.Stream data, System.Windows.Forms.RichTextBoxStreamType fileType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveFile(class System.IO.Stream data, valuetype System.Windows.Forms.RichTextBoxStreamType fileType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.SaveFile(System.IO.Stream,System.Windows.Forms.RichTextBoxStreamType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.IO.Stream" />
+        <Parameter Name="fileType" Type="System.Windows.Forms.RichTextBoxStreamType" />
+      </Parameters>
+      <Docs>
+        <param name="data">保存するファイルを格納しているデータ ストリーム。</param>
+        <param name="fileType"><see cref="T:System.Windows.Forms.RichTextBoxStreamType" /> 値のいずれか。</param>
+        <summary>内容を保存、<see cref="T:System.Windows.Forms.RichTextBox" />オープン データ ストリームを制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>メソッドでは、データ ストリームが既に開かれているコントロールの内容全体を保存することができます。 データ ストリームは、ファイルに情報を保存できます。 使用することができます、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>にファイルの内容を読み込むにはメソッド、<xref:System.Windows.Forms.RichTextBox>です。  
+  
+ このバージョンの<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>メソッドでに送信される情報のデータ形式を指定することもできます、<xref:System.IO.Stream>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>と<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>ストリームを持つメソッドです。 使用しても示します、 <xref:System.Windows.Forms.FileDialog.FileName%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.FileDialog.DefaultExt%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.SaveFileDialog.CreatePrompt%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.SaveFileDialog.OverwritePrompt%2A?displayProperty=nameWithType>メンバー。  
+  
+ これは、プロジェクトにコピーするときに実行する準備が整っている完全な例です。  
+  
+ [!code-cpp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">無効なファイルの種類が指定された、<paramref name="fileType" />パラメーター。</exception>
+        <exception cref="T:System.IO.IOException">ファイルに、コントロールの内容を保存中にエラーが発生します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">作成またはファイルを変更します。 関連する列挙値:<see langword="Write" />値<see cref="T:System.Security.Permissions.FileIOPermissionAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveFile">
+      <MemberSignature Language="C#" Value="public void SaveFile (string path, System.Windows.Forms.RichTextBoxStreamType fileType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveFile(string path, valuetype System.Windows.Forms.RichTextBoxStreamType fileType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.SaveFile(System.String,System.Windows.Forms.RichTextBoxStreamType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="fileType" Type="System.Windows.Forms.RichTextBoxStreamType" />
+      </Parameters>
+      <Docs>
+        <param name="path">名前と保存するファイルの場所。</param>
+        <param name="fileType"><see cref="T:System.Windows.Forms.RichTextBoxStreamType" /> 値のいずれか。</param>
+        <summary>内容を保存、<see cref="T:System.Windows.Forms.RichTextBox" />ファイルの種類を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RichTextBox.SaveFile%2A>メソッドでは、Microsoft Word や Windows ワードパッドなどの他のプログラムで使用できる RTF ファイルに、コントロールの内容全体を保存することができます。 ファイルの名前をする場合に渡される、`path`パラメーターが指定されたディレクトリに既に存在、将来予告なしに、ファイルは上書きされます。 使用することができます、<xref:System.Windows.Forms.RichTextBox.LoadFile%2A>にファイルの内容を読み込むにはメソッド、<xref:System.Windows.Forms.RichTextBox>です。  
+  
+ このバージョンの<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>メソッドでは、コントロールの内容を保存するファイルの種類を指定することができます。 この機能を使用すると、コントロールの内容に基づく適切な形式でファイルを保存することを確認してください。 たとえば、フォント スタイルや色の違い、ドキュメントがない場合は、ことができます、ファイルとして保存する ASCII テキスト ファイルを設定して、`fileType`パラメーターを`RichTextBoxStreamType.PlainText`です。  
+  
+   
+  
+## Examples  
+ 次のコード例の内容を保存する、 <xref:System.Windows.Forms.RichTextBox> ASCII テキスト ファイルにします。 この例では、<xref:System.Windows.Forms.SaveFileDialog>ユーザーからのパスとファイル名を要求するダイアログ ボックスを表示するクラス。 コードは、コントロールの内容をそのファイルに保存します。 例では、このバージョンを使用して、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A>ファイルが標準のリッチ テキスト形式ではなく ASCII テキスト ファイルとして保存されることを指定します。 この例にコードを配置する必要があります、<xref:System.Windows.Forms.Form>を持つクラス、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`です。  
+  
+ [!code-cpp[Classic RichTextBox.SaveFile1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.SaveFile1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.SaveFile1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.SaveFile1 Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.SaveFile1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.SaveFile1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">無効なファイルの種類が指定された、<paramref name="fileType" />パラメーター。</exception>
+        <exception cref="T:System.IO.IOException">ファイルに、コントロールの内容を保存中にエラーが発生します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">作成またはファイルを変更します。 関連する列挙値:<see langword="Write" />値<see cref="T:System.Security.Permissions.FileIOPermissionAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollBars">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.RichTextBoxScrollBars ScrollBars { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.RichTextBoxScrollBars ScrollBars" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.ScrollBars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxScrollBars</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示するスクロール バーの種類、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+        <value><see cref="T:System.Windows.Forms.RichTextBoxScrollBars" /> 値のいずれか。 既定値は、<see langword="RichTextBoxScrollBars.Both" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、垂直および水平スクロール バーのユーザーに提供することができます、<xref:System.Windows.Forms.RichTextBox>寸法コントロールの外にあるコントロール内のテキストをスクロールを有効にするコントロール。 このプロパティを使用して、コントロールの内容をスクロールできないようにするコントロールからスクロール バーを削除することができますも。  
+  
+> [!NOTE]
+>  水平スクロール バーは表示されない場合、<xref:System.Windows.Forms.TextBoxBase.WordWrap%2A>は`true`の値に関係なく、<xref:System.Windows.Forms.RichTextBox.ScrollBars%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定された値が定義されていない、<see cref="T:System.Windows.Forms.RichTextBoxScrollBars" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedRtf">
+      <MemberSignature Language="C#" Value="public string SelectedRtf { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedRtf" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectedRtf" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールで現在選択されているリッチ テキストのテキストの書式設定 (RTF) 形式を設定します。</summary>
+        <value>コントロールで選択した RTF テキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、RTF 書式コードを含む、コントロールで選択したテキストを取得することができます。 このプロパティを使用するには、コントロールからテキストをコピーする、RTF をそのまま使用する他のアプリケーション内のテキスト形式の Microsoft Word や Windows ワードパッドなどのテキストを書式設定、および貼り付けに完了しません。 RTF 書式コードせず、選択したテキストを取得する、<xref:System.Windows.Forms.TextBoxBase.SelectedText%2A>プロパティです。  
+  
+ テキストが現在選択されていない場合は、このプロパティで指定したテキストがカーソル位置に挿入されます。 テキストが選択されている場合、このプロパティに割り当てられている任意のテキストは、選択したテキストを置換します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedText">
+      <MemberSignature Language="C#" Value="public override string SelectedText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectedText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択したテキスト内で取得または設定、<see cref="T:System.Windows.Forms.RichTextBox" />です。</summary>
+        <value>コントロールで選択したテキストを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>を持つプロパティ、 <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A>、 <xref:System.Windows.Forms.RichTextBox.SelectedText%2A>、および<xref:System.Windows.Forms.RichTextBox.SelectionColor%2A>の箇条書きリストを作成するプロパティ、<xref:System.Windows.Forms.RichTextBox>コントロール。 この例では、する必要があります、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`フォーム上に作成します。  
+  
+ [!code-cpp[RichTextBox.SelectionBullet#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.SelectionBullet/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.SelectionBullet#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.SelectionBullet/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.SelectionBullet#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.SelectionBullet/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HorizontalAlignment SelectionAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.HorizontalAlignment SelectionAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HorizontalAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の選択または挿入ポイントに適用する配置を設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.HorizontalAlignment" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール内の段落が選択されていない場合は、挿入ポイントが表示されると段落の配置プロパティの設定のある段落の後に作成されたかの段落に、配置設定を適用するこのプロパティを設定します。 たとえば、2 つの段落がある場合、<xref:System.Windows.Forms.RichTextBox>コントロールと、カーソルが 2 番目の段落内にあります。 設定した場合、<xref:System.Windows.Forms.RichTextBox.SelectionAlignment%2A>プロパティを`HorizontalAlignment.Center`段落のカーソル位置には、コントロール内で中央揃えされます。 3 番目の段落が 2 番目の段落の後に作成される場合も整列コントロールの中央にします。  
+  
+ 場合は、選択コントロール内でプロパティが設定されている場合、このプロパティの設定に基づいて選択したすべての段落を配置します。 作成されているドキュメント内の段落を整列するこのプロパティを使用することができます、<xref:System.Windows.Forms.RichTextBox>です。 たとえば、中央揃えにするドキュメントのすべての段落にする場合は、コントロール内のすべての段落を選択して設定、<xref:System.Windows.Forms.RichTextBox.SelectionAlignment%2A>プロパティを`HorizontalAlignment.Center`です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.RichTextBox.SelectionAlignment%2A>返します`SelectionAlignment.Left`混合の配置で複数の段落が選択されているテキストに含まれている場合。  
+  
+   
+  
+## Examples  
+ 次のコード例は、内のテキストを整列する方法を示します、<xref:System.Windows.Forms.RichTextBox>です。 この例では、する必要があります、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`がフォームに追加されました。  
+  
+ [!code-cpp[RichTextBox.SelectionAlignment#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.SelectionAlignment/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.SelectionAlignment#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.SelectionAlignment/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.SelectionAlignment#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.SelectionAlignment/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定した値がないで定義されている値のいずれか、<see cref="T:System.Windows.Forms.HorizontalAlignment" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionBackColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color SelectionBackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color SelectionBackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionBackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはでテキストを選択すると、テキストの色を設定、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />テキストが選択されている場合に、テキストの色を表すです。 既定値は <see cref="P:System.Windows.Forms.Control.DefaultBackColor" /> プロパティの値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Windows.Forms.RichTextBox.SelectionBackColor%2A>を取得または設定で選択したテキストの色、<xref:System.Windows.Forms.RichTextBox>です。 テキストが選択されていない場合、<xref:System.Windows.Forms.RichTextBox.SelectionBackColor%2A>プロパティ、そのキャレットの現在の位置に適用されます。 その位置から入力した文字がある、指定した<xref:System.Windows.Forms.RichTextBox.SelectionBackColor%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionBullet">
+      <MemberSignature Language="C#" Value="public bool SelectionBullet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SelectionBullet" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionBullet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の選択または挿入ポイントに行頭文字スタイルを適用するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />現在の選択または挿入ポイントが行頭文字スタイルの適用されています。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストが選択されていない場合、現在のカーソル位置に、挿入位置より後にユーザーが入力したすべての段落に行頭文字スタイルが適用されます。 行頭文字スタイルは、カーソルが移動するまで、または空の項目で、ユーザーが Enter キーを押したときに、コントロールのテキストに適用されます。  
+  
+ このプロパティが設定されている場合に、コントロール内のテキストが選択されている場合、選択したテキスト内のすべての段落は箇条書きの行頭文字付きの項目に変換されます。 作成したドキュメント内の箇条書きリストを作成するこのプロパティを使用することができます、<xref:System.Windows.Forms.RichTextBox>コントロール。  
+  
+ <xref:System.Windows.Forms.RichTextBox.BulletIndent%2A>プロパティでは、行頭文字と記号付きの項目のテキストの間で適用するインデント幅を指定することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A>を持つプロパティ、 <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A>、 <xref:System.Windows.Forms.RichTextBox.SelectedText%2A>、および<xref:System.Windows.Forms.RichTextBox.SelectionColor%2A>の箇条書きリストを作成するプロパティ、<xref:System.Windows.Forms.RichTextBox>コントロール。 この例では、する必要があります、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`フォーム上に作成します。  
+  
+ [!code-cpp[RichTextBox.SelectionBullet#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.SelectionBullet/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.SelectionBullet#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.SelectionBullet/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.SelectionBullet#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.SelectionBullet/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler SelectionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SelectionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.SelectionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール内で選択されているテキストが変更されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがコントロール内のテキスト選択範囲を変更する場合を判断するには、このイベントのイベント ハンドラーを作成することができます。 このイベントのイベント ハンドラーは、ユーザーがアプリケーション内のタスクを完了するまで選択されているテキストを保持するために使用します。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.RichTextBox.SelectionChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.RichTextBox>という`RichTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.RichTextBox.SelectionChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#544](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#544)]
+ [!code-vb[System.Windows.Forms.EventExamples#544](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#544)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionCharOffset">
+      <MemberSignature Language="C#" Value="public int SelectionCharOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectionCharOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionCharOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロール内のテキストはベースラインの下の添字としてまたは上付き文字として、ベースラインを表示するかを設定します。</summary>
+        <value>文字のオフセットを指定する数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、-2000 ~ 2000 でなければなりません。  
+  
+ このプロパティが 0 に設定されている場合は、ベースラインにテキストが表示されます。 正の数値の場合は、数はベースラインより上のテキスト選択範囲の拡張に使用するピクセルの数を指定します。 負の数値の場合、この数は、テキストの選択範囲の添字をピクセルの数を指定します。 このプロパティを使用して、上付きまたは添字としてテキストを指定することができます。  
+  
+ テキストが選択されていない場合、オフセットは、現在のカーソル位置と、ユーザーが挿入位置より後に入力するすべてのテキストに適用されます。 コントロール内の別の場所にカーソルを移動するまでまたは別の値にプロパティが変更されるまでの文字のオフセットが適用されます。  
+  
+ テキストがコントロール内で選択されている場合、選択したテキストと任意のテキスト入力テキストの選択は、適用される、このプロパティの値になります。 このプロパティを使用して、このようなアプリケーションと、数値式の上付き文字と下付き文字のテキストを作成することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、内の上付き文字と下付き文字のテキストを指定する方法を示します、<xref:System.Windows.Forms.RichTextBox>を使用して、<xref:System.Windows.Forms.RichTextBox.SelectionCharOffset%2A>プロパティです。 この例では、する必要があります、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`がフォームに追加されました。  
+  
+ [!code-cpp[RichTextBox.SelectionCharOffset#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.SelectionCharOffset/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.SelectionCharOffset#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.SelectionCharOffset/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.SelectionCharOffset#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.SelectionCharOffset/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した値は、-2000 2000年よりも大きいか小さいをでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color SelectionColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color SelectionColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のテキストの選択またはカーソルの位置のテキストの色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />を表す、色が現在のテキスト選択範囲を適用するか、挿入後に入力したテキストをポイントします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返しますのかどうかは、現在選択されているテキスト指定された 1 つ以上の色、`Color.Empty`です。 テキストが選択されていない場合、このプロパティで指定されたテキストの色は、現在のカーソル位置と、挿入位置より後に、コントロールに入力されるすべてのテキストに適用されます。 コントロール内の別の場所にカーソルを移動するまでまたは別の色にプロパティが変更されるまで、テキストの色の設定が適用されます。  
+  
+ テキストがコントロール内で選択されている場合、選択したテキストと任意のテキスト入力テキストの選択は、適用される、このプロパティの値になります。 このプロパティを使用して内のテキストの色を変更することができます、<xref:System.Windows.Forms.RichTextBox>です。  
+  
+ コントロールでテキストを太字を使用して、<xref:System.Windows.Forms.RichTextBox.SelectionFont%2A>プロパティを指定された太字のフォント スタイルを持つ新しいフォントを割り当てることです。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.Windows.Forms.ColorDialog>を現在のテキスト選択項目または現在の挿入後に入力したテキストの色を指定するユーザーに特定の時点、<xref:System.Windows.Forms.RichTextBox>コントロール。 この例に、この例で定義されたメソッドが追加されている必要があります、<xref:System.Windows.Forms.Form>クラスを含む、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`です。  
+  
+ [!code-cpp[Classic RichTextBox.SelectionColor Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.SelectionColor Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.SelectionColor Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.SelectionColor Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.SelectionColor Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.SelectionColor Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionFont">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font SelectionFont { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font SelectionFont" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionFont" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のテキストの選択またはカーソルの位置のフォントを設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Font" />現在のテキスト選択範囲に適用するポイントの挿入後に入力したテキストにフォントを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、現在のテキスト選択範囲に複数のフォントを指定した場合は、`null`です。 テキストが選択されていない場合、このプロパティで指定したフォントは、現在のカーソル位置と、挿入位置より後に、コントロールに入力されるすべてのテキストに適用されます。 コントロール内の別の場所にカーソルを移動するまでまたは別のフォントにプロパティが変更されるまで、フォントの設定が適用されます。  
+  
+ テキストがコントロール内で選択されている場合、選択したテキストと任意のテキスト入力テキストの選択は、適用される、このプロパティの値になります。 このプロパティを使用して内のテキストのフォント スタイルを変更することができます、<xref:System.Windows.Forms.RichTextBox>です。 太字、斜体、および下線付きコントロールでテキストを行うことができます。 テキストとテキストに適用するフォントのサイズを変更することもできます。  
+  
+ コントロール内のテキストの色を変更するには、<xref:System.Windows.Forms.RichTextBox.SelectionColor%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例、現在のフォント太字スタイル選択されているテキストまたは内の挿入ポイント後に入力したテキストの設定を変更する、<xref:System.Windows.Forms.RichTextBox>コントロール。 この例では、メソッド内でコードが含まれていることが必要です、<xref:System.Windows.Forms.Form>です。 例もする必要があります、 <xref:System.Windows.Forms.RichTextBox>、名前付き`richTextBox1`に追加された、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[Classic RichTextBox.SelectionFont Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.SelectionFont Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.SelectionFont Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.SelectionFont Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.SelectionFont Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.SelectionFont Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionHangingIndent">
+      <MemberSignature Language="C#" Value="public int SelectionHangingIndent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectionHangingIndent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionHangingIndent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または選択した段落のテキストの最初の行の左端と、同じ paragraph 内の後続の行の左端の間の距離を設定します。</summary>
+        <value>距離 (ピクセル単位) の現在のテキストの選択または挿入ポイントに適用されるぶら下げインデントを設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストが選択されていない場合、ぶら下げインデントは、挿入ポイントが表示されるの段落と、挿入位置より後に、コントロールに入力されるすべてのテキストに適用されます。 コントロール内で別の段落にカーソルを移動するまでまたは別の値にプロパティが変更されるまで、ぶら下げインデントの設定が適用されます。  
+  
+ テキストがコントロール内で選択されている場合、選択したテキストと任意のテキスト入力テキストの選択は、適用される、このプロパティの値になります。 このプロパティを使用して、段落にぶら下げインデントを適用することができます。  
+  
+ 段落の選択範囲の最初の行のインデントを設定するには、使用、<xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、内のぶら下げインデントを指定する方法を示します、<xref:System.Windows.Forms.RichTextBox>を使用して、<xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A>プロパティです。 この例では、する必要があります、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`がフォームに追加されました。  
+  
+ [!code-cpp[RichTextBox.SelectionHangingIndent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.SelectionHangingIndent/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.SelectionHangingIndent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.SelectionHangingIndent/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.SelectionHangingIndent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.SelectionHangingIndent/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionIndent">
+      <MemberSignature Language="C#" Value="public int SelectionIndent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectionIndent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionIndent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または選択範囲の開始位置の行のインデントの幅 (ピクセル単位) の長さを設定します。</summary>
+        <value>現在の距離、現在のテキスト選択範囲、またはカーソルの左側に適用されるインデントの幅 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストが選択されていない場合、挿入ポイントが表示される段落と挿入位置より後に、コントロールに入力されるすべてのテキストにインデントの設定が適用されます。 コントロール内で別の段落にカーソルを移動するまでまたは別の値にプロパティが変更されるまで、インデントの設定が適用されます。  
+  
+ テキストがコントロール内で選択されている場合、選択したテキストと任意のテキスト入力テキストの選択は、適用される、このプロパティの値になります。 このプロパティを使用してのドキュメントに含まれる段落のインデントを設定することができます、<xref:System.Windows.Forms.RichTextBox>です。 組み合わせてこのプロパティを使用することができます、<xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>段落の段落に表示を作成します。  
+  
+ コントロール内の段落のインデントを作成するには、使用、<xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、インデントされたテキストを指定する方法を示します、<xref:System.Windows.Forms.RichTextBox>を使用して、<xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>プロパティです。 この例では、する必要があります、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`がフォームに追加されました。  
+  
+ [!code-cpp[RichTextBox.SelectionIndent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.SelectionIndent/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.SelectionIndent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.SelectionIndent/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.SelectionIndent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.SelectionIndent/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionLength">
+      <MemberSignature Language="C#" Value="public override int SelectionLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectionLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールで選択されている文字の数を設定します。</summary>
+        <value>テキスト ボックスで選択されている文字の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、かどうか任意の文字は現在選択されているテキスト ボックス コントロールで選択したテキストの操作を実行する前に確認します。 このプロパティを使用してでタスクを 1 つの文字を実行するときに選択されている文字 (スペースを含む) の合計数を決定する、`for`ループします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.RichTextBox.SelectionLength%2A>内でテキストが選択したかどうかを決定するプロパティ、<xref:System.Windows.Forms.RichTextBox>です。 この例では、する必要があります、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`がフォームに追加されました。 この例もする必要があります`richTextBox1`コントロールで選択されているテキストが含まれています。  
+  
+ [!code-cpp[RichTextBox.SelectionLength#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.SelectionLength/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.SelectionLength#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.SelectionLength/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.SelectionLength#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.SelectionLength/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionProtected">
+      <MemberSignature Language="C#" Value="public bool SelectionProtected { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SelectionProtected" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionProtected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のテキスト選択範囲が保護されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />現在の選択内容をすべての変更を禁止する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストが選択されていない場合、保護設定は、挿入ポイントが表示される段落と、挿入位置より後に、コントロールに入力されるすべてのテキストに適用されます。 コントロール内で別の段落にカーソルを移動するまでまたは別の値にプロパティが変更されるまで、保護の設定が適用されます。  
+  
+ テキストがコントロール内で選択されている場合、選択したテキストと任意のテキスト入力テキストの選択は、適用される、このプロパティの値になります。 このプロパティを使用して、ユーザーがコントロール内のテキストのセクションを変更しないようにすることができます。  
+  
+ このプロパティ設定されている場合`true`、<xref:System.Windows.Forms.RichTextBox.Protected>イベントは、ユーザーが現在のテキスト選択範囲を変更しようとしたときに発生します。  
+  
+> [!NOTE]
+>  このプロパティは返します`true`コントロール内で選択範囲全体には、保護されたコンテンツが含まれている場合のみです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、内で保護されたテキストを指定する方法を示します、<xref:System.Windows.Forms.RichTextBox>を使用して、<xref:System.Windows.Forms.RichTextBox.SelectionProtected%2A>プロパティです。 この例では、する必要があります、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`、フォームに追加されましたが、<xref:System.Windows.Forms.RichTextBox>コントロールにテキストを追加"RichTextBox"という単語を含む。  
+  
+ [!code-cpp[RichTextBox.SelectionProtected#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.SelectionProtected/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.SelectionProtected#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.SelectionProtected/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.SelectionProtected#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.SelectionProtected/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionRightIndent">
+      <MemberSignature Language="C#" Value="public int SelectionRightIndent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectionRightIndent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionRightIndent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>右端からの距離をピクセル単位で、<see cref="T:System.Windows.Forms.RichTextBox" />コントロールとが選択されているか、現在のカーソル位置に追加するテキストの右端。</summary>
+        <value>インデントの幅 (ピクセル単位)、現在の選択または挿入ポイントの右側にあります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストが選択されていない場合、挿入ポイントが表示される段落と挿入位置より後に、コントロールに入力されるすべてのテキストにインデントの設定が適用されます。 コントロール内で別の段落にカーソルを移動するまでまたは別の値にプロパティが変更されるまで、インデントの設定が適用されます。  
+  
+ テキストがコントロール内で選択されている場合、選択したテキストと任意のテキスト入力テキストの選択は、適用される、このプロパティの値になります。 このプロパティを使用してのドキュメントに含まれる段落のインデントを設定することができます、<xref:System.Windows.Forms.RichTextBox>です。 組み合わせてこのプロパティを使用することができます、<xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>段落の段落に表示を作成します。  
+  
+ コントロール内の段落のインデントを作成するには、使用、<xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の右余白を作成する方法を示します、<xref:System.Windows.Forms.RichTextBox>を使用して、<xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>プロパティです。 例では、ある必要があるフォームが含まれていますが、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`コード例は、フォームのクラス内のイベントから呼び出されるとします。  
+  
+ [!code-cpp[RichTextBox.SelectionRightIndent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.SelectionRightIndent/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.SelectionRightIndent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.SelectionRightIndent/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.SelectionRightIndent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.SelectionRightIndent/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionTabs">
+      <MemberSignature Language="C#" Value="public int[] SelectionTabs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32[] SelectionTabs" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionTabs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定タブの絶対位置、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+        <value>配列の各メンバーがタブ オフセット (ピクセル単位) を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、現在のテキスト選択範囲内の各タブのスペースを含む配列を取得することができます、<xref:System.Windows.Forms.RichTextBox>コントロール。 このプロパティを使用して、テキストの選択範囲内の各タブのサイズを調整することができますし、します。 たとえば、ドキュメント内のタブ領域を調整する場合は、文書全体を選択して使用してタブのスペースの一覧を取得、、<xref:System.Windows.Forms.RichTextBox.SelectionTabs%2A>プロパティです。 新しい値に調整し、もう一度このプロパティに割り当てます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">配列は、最大 32 要素を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.RichTextBoxSelectionTypes SelectionType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.RichTextBoxSelectionTypes SelectionType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.SelectionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxSelectionTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール内の選択の種類を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.RichTextBoxSelectionTypes" /> 値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、現在の選択項目のコントロール内のタスクを実行するときに、選択範囲を適切に処理するために、コントロールで現在選択されているデータの種類を決定します。 プロパティの値の任意の組み合わせを表すことができます、<xref:System.Windows.Forms.RichTextBoxSelectionTypes>さまざまな種類の現在の選択範囲内のオブジェクトを表す列挙体です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowSelectionMargin">
+      <MemberSignature Language="C#" Value="public bool ShowSelectionMargin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowSelectionMargin" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.ShowSelectionMargin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に選択した余白を表示するかどうかを示す値、<see cref="T:System.Windows.Forms.RichTextBox" />です。</summary>
+        <value>
+          <see langword="true" />コントロールで選択した余白が有効になっている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するには、ユーザーに行のテキストを簡単に選択するために、<xref:System.Windows.Forms.RichTextBox>です。 マージンの左側に追加、<xref:System.Windows.Forms.RichTextBox>です。 この余白やすくユーザー コントロールの左側にあるテキストを選択するためです。 ユーザーでは、1 行のテキストを選択する選択範囲のマージンをクリックしてしたりをダブルクリックしてダブルクリックされた行に含まれる段落全体を選択することができます。  
+  
+> [!NOTE]
+>  場合、<xref:System.Windows.Forms.RichTextBox.ShowSelectionMargin%2A>プロパティに設定されている`true`、設定、<xref:System.Windows.Forms.RichTextBox.ScrollBars%2A>プロパティを`RichTextBoxScrollBars.Horizontal`、 `RichTextBoxScrollBars.Vertical`、または`RichTextBoxScrollBars.Both`スクロール バーを表示するには発生しません。 中にスクロール バーを表示するために、<xref:System.Windows.Forms.RichTextBox.ShowSelectionMargin%2A>プロパティに設定されている`true`、設定、<xref:System.Windows.Forms.RichTextBox.ScrollBars%2A>プロパティを`RichTextBoxScrollBars.ForcedHorizontal`、 `RichTextBoxScrollBars.ForcedVertical`、または`RichTextBoxScrollBars.ForcedBoth`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリッチ テキスト ボックスで、現在のテキストを設定します。</summary>
+        <value>コントロール内に表示するテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のテキストの複数の線を表示する、 <xref:System.Windows.Forms.RichTextBox>、設定、<xref:System.Windows.Forms.TextBoxBase.Multiline%2A>プロパティを`true`です。 読み取りや複数行テキスト ボックスのテキストを設定を使用して、<xref:System.Windows.Forms.TextBoxBase.Lines%2A>プロパティです。 <xref:System.Windows.Forms.RichTextBox.Text%2A>プロパティの内容に適用される書式設定に関する情報を返さない、<xref:System.Windows.Forms.RichTextBox>です。 リッチ テキストの (式 RTF) コードを書式設定を取得する、<xref:System.Windows.Forms.RichTextBox.Rtf%2A>プロパティです。 入力できるテキストの量、<xref:System.Windows.Forms.RichTextBox>コントロールが使用可能なシステム メモリによってのみ制限されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextLength">
+      <MemberSignature Language="C#" Value="public override int TextLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TextLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.TextLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのテキストの長さを取得します。</summary>
+        <value>コントロールのテキストに格納されている文字数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndoActionName">
+      <MemberSignature Language="C#" Value="public string UndoActionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UndoActionName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.UndoActionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールで元に戻すことができます、アクションの名前を取得時に、<see cref="M:System.Windows.Forms.TextBoxBase.Undo" />メソッドが呼び出されます。</summary>
+        <value>元に戻すことが可能なアクションのテキストの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、元に戻すことができるコントロール内に行われた最後のアクションを決定することができます。 このプロパティを使用して、コントロールのユーザーが取り消しに使用できる操作を制限することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VScroll">
+      <MemberSignature Language="C#" Value="public event EventHandler VScroll;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler VScroll" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.RichTextBox.VScroll" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがコントロールの垂直スクロール バーをクリックすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.RichTextBox.VScroll>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.RichTextBox>という`RichTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.RichTextBox.VScroll>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#545](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#545)]
+ [!code-vb[System.Windows.Forms.EventExamples#545](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#545)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RichTextBox.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">Windows メッセージ オブジェクトです。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoomFactor">
+      <MemberSignature Language="C#" Value="public float ZoomFactor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 ZoomFactor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RichTextBox.ZoomFactor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のズーム レベルを設定、<see cref="T:System.Windows.Forms.RichTextBox" />です。</summary>
+        <value>コントロールの内容を拡大する場合の係数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、1/64 (0.015625) ~ 64.0、いない包括的にすることができます。 値が 1.0 のでは、コントロールをズームが適用されていないことを示します。 ズーム機能は、ドキュメントには、TrueType フォントが含まれている場合、最適に実行します。 コントロールのドキュメント内ではない TrueType フォントを使用すると、<xref:System.Windows.Forms.RichTextBox.ZoomFactor%2A>プロパティは、最も近い整数値を使用します。 このプロパティを使用してユーザーを有効にすることができます、<xref:System.Windows.Forms.RichTextBox>が参照または画面に表示するドキュメントの詳細を有効にするビューを縮小するには小さすぎること、ドキュメントのトピックを拡大表示を制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Windows.Forms.RichTextBox>テキストにズーム インするは、単語がダブルクリックされたときに、コントロールのクライアント領域の右側にある余白が場合に、コントロールのテキストに単語を自動的に選択します。 場合、<xref:System.Windows.Forms.RichTextBox>コントロールが、小規模の幅では、このコードを使用して作成されます、<xref:System.Windows.Forms.RichTextBox>独自の行のテキストの各文字が表示されます。 この垂直方向の表示位置に単語の任意の部分をクリックすると、テキストが垂直方向に表示されているファクトに関係なく、単語のすべての文字が選択されます。 この例では、フォームが含まれていますがあることが必要です、<xref:System.Windows.Forms.RichTextBox>という名前のコントロール`richTextBox1`です。  
+  
+ [!code-cpp[RichTextBox.ZoomFactor#1](~/samples/snippets/cpp/VS_Snippets_Winforms/RichTextBox.ZoomFactor/CPP/form1.cpp#1)]
+ [!code-csharp[RichTextBox.ZoomFactor#1](~/samples/snippets/csharp/VS_Snippets_Winforms/RichTextBox.ZoomFactor/CS/form1.cs#1)]
+ [!code-vb[RichTextBox.ZoomFactor#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/RichTextBox.ZoomFactor/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">倍率が指定された許容範囲内で分類されません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

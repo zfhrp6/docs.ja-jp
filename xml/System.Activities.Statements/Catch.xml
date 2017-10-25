@@ -1,0 +1,44 @@
+<Type Name="Catch" FullName="System.Activities.Statements.Catch">
+  <TypeSignature Language="C#" Value="public abstract class Catch" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Catch extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Statements.Catch" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>対応する例外がスローされた後に実行するアクションを含む<see langword="Try" />のブロック、<see cref="T:System.Activities.Statements.TryCatchFinally" />アクティビティ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーに配置される<xref:System.Activities.Statements.Catch>デザイナーでアクティビティを並べ替えることができません。  コレクションを並べ替えるには<xref:System.Activities.Statements.Catch>アクティビティ、削除して、正しい順序で追加し直すか、ワークフローの xaml (コード) ビューを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExceptionType">
+      <MemberSignature Language="C#" Value="public abstract Type ExceptionType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ExceptionType" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.Catch.ExceptionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Statements.Catch" /> ブロックが処理している例外の種類。</summary>
+        <value>例外の種類。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

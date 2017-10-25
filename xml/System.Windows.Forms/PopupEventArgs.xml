@@ -1,0 +1,210 @@
+<Type Name="PopupEventArgs" FullName="System.Windows.Forms.PopupEventArgs">
+  <TypeSignature Language="C#" Value="public class PopupEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PopupEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.PopupEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.ToolTip.Popup" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolTip.Popup>のイベント、<xref:System.Windows.Forms.ToolTip>クラスは、ツールヒントが表示される前に発生します。 このイベントのハンドラーが型のパラメーターを受け取る<xref:System.Windows.Forms.PopupEventArgs>です。 このパラメーターはツールヒントに関する情報を提供し、を通じてツールヒントのサイズを変更することができます、<xref:System.Windows.Forms.PopupEventArgs.ToolTipSize%2A>プロパティです。 <xref:System.Windows.Forms.ToolTip.Popup>から派生した<xref:System.ComponentModel.CancelEventArgs>ハンドラーが表示されるツールヒントを停止することもできます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolTip.Popup>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolTip>という`ToolTip1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolTip.Popup>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#619](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#619)]
+ [!code-vb[System.Windows.Forms.EventExamples#619](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#619)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PopupEventArgs (System.Windows.Forms.IWin32Window associatedWindow, System.Windows.Forms.Control associatedControl, bool isBalloon, System.Drawing.Size size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.IWin32Window associatedWindow, class System.Windows.Forms.Control associatedControl, bool isBalloon, valuetype System.Drawing.Size size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PopupEventArgs.#ctor(System.Windows.Forms.IWin32Window,System.Windows.Forms.Control,System.Boolean,System.Drawing.Size)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="associatedWindow" Type="System.Windows.Forms.IWin32Window" />
+        <Parameter Name="associatedControl" Type="System.Windows.Forms.Control" />
+        <Parameter Name="isBalloon" Type="System.Boolean" />
+        <Parameter Name="size" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="associatedWindow"><see cref="T:System.Windows.Forms.IWin32Window" />にツールヒントがバインドされています。</param>
+        <param name="associatedControl"><see cref="T:System.Windows.Forms.Control" />のツールヒントが作成されます。</param>
+        <param name="isBalloon">
+          <see langword="true" />関連付けられているツールヒント ウィンドウがバルーン スタイルの外観では; であることを示すそれ以外の場合、<see langword="false" />ツールヒント ウィンドウが標準の長方形の外観を持つことを示すためにします。</param>
+        <param name="size"><see cref="T:System.Drawing.Size" />のツールヒント。</param>
+        <summary>
+          <see cref="T:System.Windows.Forms.PopupEventArgs" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターを<xref:System.Windows.Forms.PopupEventArgs.%23ctor%2A>コンス トラクターは、対応する、同様に名前付きプロパティを初期化するために使用します。 `associatedControl`パラメーターを指定できます`null`場合は、所有しているウィンドウの種類ではありません<xref:System.Windows.Forms.Control>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociatedControl">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control AssociatedControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control AssociatedControl" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PopupEventArgs.AssociatedControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象のコントロールを取得、<see cref="T:System.Windows.Forms.ToolTip" />が描画されます。</summary>
+        <value><see cref="T:System.Windows.Forms.Control" />と関連付けられている、 <see cref="T:System.Windows.Forms.ToolTip" />、または<see langword="null" />ツールヒントは、コントロールに関連付けられていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連付けることができる、<xref:System.Windows.Forms.ToolTip>を通じて複数のコントロールに、<xref:System.Windows.Forms.ToolTip.SetToolTip%2A?displayProperty=nameWithType>メソッドを使用できます、<xref:System.Windows.Forms.PopupEventArgs.AssociatedControl%2A>を決定するコントロールのプロパティ、<xref:System.Windows.Forms.ToolTip.Draw>イベントに関連付けられています。 これは、関連付けられたコントロールに基づく別のツールヒントのカスタマイズを実行する場合に便利です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolTip>という`ToolTip1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#619](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#619)]
+ [!code-vb[System.Windows.Forms.EventExamples#619](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#619)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociatedWindow">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.IWin32Window AssociatedWindow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.IWin32Window AssociatedWindow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PopupEventArgs.AssociatedWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.IWin32Window</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このウィンドウを取得<see cref="T:System.Windows.Forms.ToolTip" />がバインドされています。</summary>
+        <value>所有するウィンドウ、<see cref="T:System.Windows.Forms.ToolTip" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウィンドウには、別のウィンドウが所有して、所有されているウィンドウが最小化され、オーナー ウィンドウに閉じます。 所有しているウィンドウはその所有者のフォームの背後に表示もされません。 この場合、ツールヒントによって所有されて、ネイティブの Win32 ウィンドウによって表される、<xref:System.Windows.Forms.DrawToolTipEventArgs.AssociatedWindow%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolTip>という`ToolTip1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#619](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#619)]
+ [!code-vb[System.Windows.Forms.EventExamples#619](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#619)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBalloon">
+      <MemberSignature Language="C#" Value="public bool IsBalloon { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBalloon" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PopupEventArgs.IsBalloon" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準の四角形またはバルーン ウィンドウとして、ツールヒントが表示されるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />バルーン ウィンドウでツールヒントを表示する場合それ以外の場合、<see langword="false" />標準的な方形ウィンドウを使用する場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウィンドウのツールヒントの使用の種類がで指定された、<xref:System.Windows.Forms.ToolTip.IsBalloon%2A?displayProperty=nameWithType>のメソッド、<xref:System.Windows.Forms.ToolTip>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolTip>という`ToolTip1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#619](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#619)]
+ [!code-vb[System.Windows.Forms.EventExamples#619](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#619)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipSize">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size ToolTipSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size ToolTipSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PopupEventArgs.ToolTipSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツールヒントのサイズを設定します。</summary>
+        <value><see cref="T:System.Drawing.Size" />の<see cref="T:System.Windows.Forms.ToolTip" />ウィンドウです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.PopupEventArgs.ToolTipSize%2A>プロパティにより、<xref:System.Windows.Forms.ToolTip.Popup>ツールヒント ウィンドウのサイズを変更するイベント ハンドラー。 <xref:System.Windows.Forms.PopupEventArgs.ToolTipSize%2A>メンバーと共にでよく使用されて、<xref:System.Windows.Forms.DrawToolTipEventArgs>ツールヒントの外観をカスタマイズするクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolTip>という`ToolTip1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#619](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#619)]
+ [!code-vb[System.Windows.Forms.EventExamples#619](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#619)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

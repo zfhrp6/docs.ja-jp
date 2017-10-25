@@ -1,0 +1,101 @@
+<Type Name="ICommandSource" FullName="System.Windows.Input.ICommandSource">
+  <TypeSignature Language="C#" Value="public interface ICommandSource" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICommandSource" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ICommandSource" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コマンドの呼び出し方法を認識しているオブジェクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンド ソースは、特定のオブジェクトでのコマンドを呼び出す方法を定義します。  たとえば場合、 <xref:System.Windows.Controls.Button> 、コマンドに関連付けられてが呼び出されるときに、<xref:System.Windows.Controls.Button>がクリックされました。  
+  
+ 関連付けられているコマンドは、現在のコマンド ターゲットで実行できない場合に、コマンド ソースにより自体は通常無効にします。  たとえば、<xref:System.Windows.Controls.MenuItem>に関連付けられている、<xref:System.Windows.Input.ApplicationCommands.Paste%2A>コマンドをいつは淡色表示自体は、<xref:System.Windows.Input.ApplicationCommands.Paste%2A>コマンドが現在のコマンド ターゲットで実行できません。  
+  
+ コマンド ソースがリッスンする通常、<xref:System.Windows.Input.ICommand.CanExecuteChanged>のコマンドは、上のイベントです。  キーボード フォーカスが失われるなど、コマンドの対象の状態の変化時に、コマンド ソースが通知されます。  コマンド ソース クエリを実行できますを使用して、コマンド、<xref:System.Windows.Input.ICommand.CanExecute%2A>メソッドです。  
+  
+ いくつかのクラスの[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]を実装する<xref:System.Windows.Input.ICommandSource>されます: <xref:System.Windows.Controls.Primitives.ButtonBase>、 <xref:System.Windows.Controls.MenuItem>、および<xref:System.Windows.Documents.Hyperlink>です。  
+  
+ [!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]システム コマンドの実行、<xref:System.Windows.Input.InputBinding.CommandTarget%2A>プロパティを<xref:System.Windows.Input.ICommandSource>のみ該当する場合は、<xref:System.Windows.Input.ICommand>は、<xref:System.Windows.Input.RoutedCommand>です。  場合、<xref:System.Windows.Input.InputBinding.CommandTarget%2A>に設定されている、 <xref:System.Windows.Input.ICommandSource> 、対応するコマンドが、<xref:System.Windows.Input.RoutedCommand>コマンドの対象は無視されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ICommand Command { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ICommand Command" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ICommandSource.Command" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンド ソースが呼び出されたときに実行されるコマンドを取得します。</summary>
+        <value>コマンド ソースが呼び出されたときに実行されるコマンド。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandParameter">
+      <MemberSignature Language="C#" Value="public object CommandParameter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandParameter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ICommandSource.CommandParameter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行時にコマンドに渡すことができるユーザー定義のデータ値を表します。</summary>
+        <value>コマンド固有のデータです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.Windows.Input.ICommandSource.CommandParameter%2A>を実行すると、コマンドに固有の情報を渡すために使用します。  データの型は、コマンドによって定義されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTarget">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement CommandTarget { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement CommandTarget" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ICommandSource.CommandTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドが実行されているオブジェクト。</summary>
+        <value>コマンドが実行されているオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]システム コマンドの実行、<xref:System.Windows.Input.InputBinding.CommandTarget%2A>プロパティを<xref:System.Windows.Input.ICommandSource>のみ該当する場合は、<xref:System.Windows.Input.ICommand>は、<xref:System.Windows.Input.RoutedCommand>です。  場合、<xref:System.Windows.Input.InputBinding.CommandTarget%2A>に設定されている、 <xref:System.Windows.Input.ICommandSource> 、対応するコマンドが、<xref:System.Windows.Input.RoutedCommand>コマンドの対象は無視されます。  
+  
+ 使用すると、 <xref:System.Windows.Input.RoutedCommand>、コマンドの対象が対象となるオブジェクト、<xref:System.Windows.Input.CommandManager.Executed>と<xref:System.Windows.Input.CommandManager.CanExecute>イベントが発生します。 場合、<xref:System.Windows.Input.ICommandSource.CommandTarget%2A>プロパティが設定されていないので、キーボード フォーカスを持つ要素をターゲットとして使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

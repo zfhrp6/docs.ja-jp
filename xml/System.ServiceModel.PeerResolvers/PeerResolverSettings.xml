@@ -1,0 +1,98 @@
+<Type Name="PeerResolverSettings" FullName="System.ServiceModel.PeerResolvers.PeerResolverSettings">
+  <TypeSignature Language="C#" Value="public class PeerResolverSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PeerResolverSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.PeerResolvers.PeerResolverSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ピア リゾルバー サービスの設定を定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerResolverSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.PeerResolverSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.PeerResolvers.PeerResolverSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.PeerResolvers.PeerCustomResolverSettings Custom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.PeerResolvers.PeerCustomResolverSettings Custom" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.PeerResolverSettings.Custom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.PeerCustomResolverSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム ピア リゾルバーの特定の設定を取得します。</summary>
+        <value>
+          関連付けられたカスタム ピア リゾルバー サービスの設定とリゾルバー インスタンスが格納されている <see cref="T:System.ServiceModel.PeerResolvers.PeerCustomResolverSettings" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.ServiceModel.PeerResolvers.PeerResolverSettings.Mode%2A> が <xref:System.ServiceModel.PeerResolvers.PeerResolverMode.Custom> に設定されている場合にのみ設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.PeerResolvers.PeerResolverMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.PeerResolvers.PeerResolverMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.PeerResolverSettings.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.PeerResolverMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このサービスに関連付けられるピア リゾルバー インスタンスが PNRP 固有、カスタム リゾルバー、自動的に決定されるのいずれであるかを取得または設定します。</summary>
+        <value>
+          ピア リゾルバー サービスのモードを指定する <see cref="T:System.ServiceModel.PeerResolvers.PeerResolverMode" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferralPolicy">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.PeerResolvers.PeerReferralPolicy ReferralPolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.PeerResolvers.PeerReferralPolicy ReferralPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.PeerResolverSettings.ReferralPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.PeerReferralPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア リゾルバー サービスが使用する特定の参照ポリシーを取得または設定します。</summary>
+        <value>
+          ピア参照が共有かどうかを指定する <see cref="T:System.ServiceModel.PeerResolvers.PeerReferralPolicy" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1214 @@
+<Type Name="ClipboardProxy" FullName="Microsoft.VisualBasic.MyServices.ClipboardProxy">
+  <TypeSignature Language="C#" Value="public class ClipboardProxy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ClipboardProxy extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.MyServices.ClipboardProxy" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クリップボードを操作するためのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションのシャット ダウンした後も、項目が移動またはクリップボードにコピーが保持されます。  
+  
+ クリップボードのデータは、クリップボードの形式とも呼ばれる任意のデータ形式にできます。 クリップボードを使用する定義済みの形式の一覧は、次を参照してください。<xref:System.Windows.Forms.DataFormats>です。 項目を移動したり、クリップボードにコピーしたりその他の形式で項目が消去されます。 その他の形式を保持するために、次のように使用します。 <xref:Microsoft.VisualBasic.VariantType.DataObject>、すべての既存の他のアプリケーションから貼り付ける項目を含む、現在クリップボードにコピーします。 わからない場合があります、ある形式の要件の対象アプリケーションがデータを正常に取得できます可能性を最大化する複数の形式でクリップボードにデータを配置します。  
+  
+ すべての Windows アプリケーションでは、システム クリップボードを共有するため、別のアプリケーションに切り替えたときに内容が変わる可能性があります。  
+  
+ クラスは、クリップボードに保存するのには、シリアル化する必要があります。 参照してください[シリアル化](http://msdn.microsoft.com/library/f7570c09-7db5-44f2-983a-e8859caeb0d5)詳細についてはします。  
+  
+ クリップボードをリモートでアクセスするときに、<xref:System.Threading.ThreadStateException>にアクセスするスレッドは STA (シングル スレッド アパートメント) モードで動作しない限りがスローされます。 この問題を解決するには、設定、`ThreadApartmentState`に`STA`です。 詳細については、「<xref:System.STAThreadAttribute>」を参照してください。  
+  
+ 詳細については、次を参照してください。[のデータを格納すると、クリップボードからの読み取り](~/docs/visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、クリップボードからテキストを文字列に読み取った`textOnClipboard`です。  
+  
+ [!code-vb[VbVbcnMyClipboard#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#6)]  
+  
+ この例は、クリップボードにテキストがない場合は失敗します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードをクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.UIPermission>クラスは、クリップボードと関連付けられているへのアクセスを制御<xref:System.Security.Permissions.UIPermissionClipboard>列挙値は、アクセスのレベルを示します。 詳細については、次を参照してください。 [Windows フォームに追加のセキュリティの考慮事項](~/docs/framework/winforms/additional-security-considerations-in-windows-forms.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、クリップボードをクリアします。  
+  
+```  
+My.Computer.Clipboard.Clear()  
+```  
+  
+ これは、クリップボードからすべてのデータを削除します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsAudio">
+      <MemberSignature Language="C#" Value="public bool ContainsAudio ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsAudio() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsAudio" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードにオーディオ データが含まれるかどうかを示します。</summary>
+        <returns>
+          <see langword="True" />オーディオ データがクリップボードに格納されている場合それ以外の場合<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、クリップボードがオーディオ データを含む、結果を表示するかどうかを判断します。  
+  
+ [!code-vb[VbRefClipbd#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsData">
+      <MemberSignature Language="C#" Value="public bool ContainsData (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsData(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">
+          <see langword="String" />。 チェックするカスタム形式の名前です。 必須です。</param>
+        <summary>指定されたカスタム形式でデータがクリップボードに含まれるかどうかを示します。</summary>
+        <returns>
+          <see langword="True" />指定されたカスタム形式でデータがクリップボードに格納されている場合それ以外の場合<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリップボードにカスタムの書式付きデータを配置した場合は、このメソッドでは、クリップボードの形式でデータを確認することができます。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、カスタム形式のデータの`specialFormat`します。  
+  
+ [!code-vb[VbRefClipbd#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#6)]  
+  
+ 置き換える`specialFormat`確認するカスタム書式指定の名前に置き換えます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsFileDropList">
+      <MemberSignature Language="C#" Value="public bool ContainsFileDropList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsFileDropList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsFileDropList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see langword="Boolean" />クリップボードにファイルのドロップダウン リストが含まれているかどうかを示すです。</summary>
+        <returns>
+          <see langword="True" />リストがクリップボードに格納されている場合は、ファイルを削除それ以外の場合<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルのドロップダウン リストは、ファイルのパス情報を格納する文字列のコレクションです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、クリップボードのファイルのドロップダウン リストがあるかどうかを判断するリストを追加し、`ListBox.lstFiles`存在する場合。  
+  
+ [!code-vb[VbRefClipbd#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#12)]  
+  
+ このコードで例外が作成する場合がある場合ありません`ListBox`という`lstFiles`です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsImage">
+      <MemberSignature Language="C#" Value="public bool ContainsImage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsImage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsImage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see langword="Boolean" />クリップボードのイメージが格納されているかどうかを示すです。</summary>
+        <returns>
+          <see langword="True" />クリップボードにイメージが格納されている場合それ以外の場合<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例を確認してクリップボードにイメージがある場合し、その場合、イメージを取得およびに追加`PictureBox1`です。  
+  
+ [!code-vb[VbRefClipbd#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#8)]  
+  
+ この例は、の存在に依存する`PictureBox`という`PictureBox1`です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsText">
+      <MemberSignature Language="C#" Value="public bool ContainsText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードのテキストがあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="True" />クリップボードにテキストが含まれている場合それ以外の場合<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用できる形式は<xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>、 <xref:System.Windows.Forms.TextDataFormat.Html>、<xref:System.Windows.Forms.TextDataFormat.Rtf>と<xref:System.Windows.Forms.TextDataFormat.UnicodeText>です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、HTML テキスト場合は、クリップボードからの読み取り、クリップボードに保存されますを決定します。  
+  
+ [!code-vb[VbRefClipbd#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsText">
+      <MemberSignature Language="C#" Value="public bool ContainsText (System.Windows.Forms.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsText(valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText(System.Windows.Forms.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format">
+          <see cref="T:System.Windows.Forms.TextDataFormat" />。 指定した場合は、チェックするには、どのようなテキスト形式を識別します。 必須です。</param>
+        <summary>クリップボードのテキストがあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="True" />クリップボードにテキストが含まれている場合それ以外の場合<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用できる形式は<xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>、 <xref:System.Windows.Forms.TextDataFormat.Html>、<xref:System.Windows.Forms.TextDataFormat.Rtf>と<xref:System.Windows.Forms.TextDataFormat.UnicodeText>です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、HTML テキスト場合は、クリップボードからの読み取り、クリップボードに保存されますを決定します。  
+  
+ [!code-vb[VbRefClipbd#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAudioStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetAudioStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance class System.IO.Stream GetAudioStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetAudioStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードからオーディオ ストリームを取得します。</summary>
+        <returns>A<see cref="T:System.IO.Stream" />オーディオ データを格納しているオブジェクトまたは<see langword="Nothing" />クリップボードにオーディオ データが含まれていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、クリップボードからオーディオ ストリームを取得し、再生します。  
+  
+ [!code-vb[VbRefClipbd#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public object GetData (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance object GetData(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">
+          <see langword="String" />。 データ形式の名前。 必須です。</param>
+        <summary>クリップボードからカスタム形式のデータを取得します。</summary>
+        <returns><see langword="Object" />クリップボード データを表すまたは<see langword="Nothing" />クリップボードに指定された形式では、またはその形式に変換できるデータが含まれていないかどうか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例の形式でデータを読み取ります`specialformat`クリップボードからファイルに書き込みます。  
+  
+ [!code-vb[VbRefClipbd#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#7)]  
+  
+ 置き換える`specialformat`取得するカスタム データ形式にします。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataObject">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.IDataObject GetDataObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance class System.Windows.Forms.IDataObject GetDataObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetDataObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.IDataObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードからデータを取得、<see cref="T:System.Windows.Forms.IDataObject" />です。</summary>
+        <returns><see cref="T:System.Windows.Forms.IDataObject" />現在、クリップボードにデータを表すオブジェクトまたは<see langword="Nothing" />クリップボードにデータがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、高度なメンバーの場合です。クリックするまで、IntelliSense が表示されない、**すべて**タブです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、形式でクリップボードからデータを読み取り、<xref:System.Windows.Forms.IDataObject>し、それをファイルに書き込みます。  
+  
+ [!code-vb[VbRefClipbd#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#1)]  
+  
+ 置き換える`C:\mylogfile`を記述するファイルの名前に置き換えます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileDropList">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection GetFileDropList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance class System.Collections.Specialized.StringCollection GetFileDropList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetFileDropList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードからファイル名を表す文字列のコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Collections.Specialized.StringCollection" />ファイル名を含むまたは<see langword="Nothing" />クリップボードに内にあるデータが含まれていないかどうか、<see cref="F:System.Windows.Forms.DataFormats.FileDrop" />書式設定するか、その形式に変換することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは非サーバー アプリケーションに対してのみ使用できます。  
+  
+ ファイルのドロップダウン リストは、ファイルのパス情報を格納する文字列のコレクションです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、クリップボードのファイルのドロップダウン リストがあるかどうかを判断するリストを追加し、`ListBox.lstFiles`存在する場合。  
+  
+ [!code-vb[VbRefClipbd#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#9)]  
+  
+ このコードがある場合、例外を作成ありません`ListBox`という`lstFiles`です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetImage">
+      <MemberSignature Language="C#" Value="public System.Drawing.Image GetImage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance class System.Drawing.Image GetImage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetImage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードからイメージを取得します。</summary>
+        <returns><see cref="T:System.Drawing.Image" />クリップボードのイメージ データを表すまたは<see langword="Nothing" />クリップボードに内にあるデータが含まれていないかどうか、<see cref="F:System.Windows.Forms.DataFormats.Bitmap" />書式設定するか、その形式に変換することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、イメージを取得して `PictureBox1` に割り当てる前に、そのイメージがクリップボードにあるかどうかを確認します。  
+  
+ [!code-vb[VbRefClipbd#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#4)]  
+  
+ この例が正常に機能する必要があります、`PictureBox`という`PictureBox1`フォーム上でします。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public string GetText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance string GetText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリップボードからテキストを取得します。</summary>
+        <returns>クリップボードのテキスト データまたは空の文字列内のデータがクリップボードに含まれていない場合、<see cref="F:System.Windows.Forms.DataFormats.Text" />または<see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" />形式、オペレーティング システムによって異なります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用できる形式は<xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>、 <xref:System.Windows.Forms.TextDataFormat.Html>、<xref:System.Windows.Forms.TextDataFormat.Rtf>と<xref:System.Windows.Forms.TextDataFormat.UnicodeText>です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、クリップボードからテキストを文字列に読み取った`textOnClipboard`です。  
+  
+ [!code-vb[VbVbcnMyClipboard#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#6)]  
+  
+ この例は、クリップボードにテキストがない場合に失敗します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public string GetText (System.Windows.Forms.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance string GetText(valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText(System.Windows.Forms.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format">
+          <see cref="T:System.Windows.Forms.TextDataFormat" />。 指定した場合は、どのようなテキスト形式を取得する必要がありますを識別します。 既定値は <see cref="F:System.Windows.Forms.TextDataFormat.CommaSeparatedValue" /> です。 必須です。</param>
+        <summary>クリップボードからテキストを取得します。</summary>
+        <returns>クリップボードのテキスト データやクリップボードに指定された形式でデータが含まれていない場合は空の文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用できる形式は<xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>、 <xref:System.Windows.Forms.TextDataFormat.Html>、<xref:System.Windows.Forms.TextDataFormat.Rtf>と<xref:System.Windows.Forms.TextDataFormat.UnicodeText>です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、クリップボードからテキストを文字列に読み取った`textOnClipboard`です。  
+  
+ [!code-vb[VbVbcnMyClipboard#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#6)]  
+  
+ この例は、クリップボードにテキストがない場合に失敗します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAudio">
+      <MemberSignature Language="C#" Value="public void SetAudio (byte[] audioBytes);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SetAudio(unsigned int8[] audioBytes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetAudio(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioBytes" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="audioBytes">
+          <see langword="Byte" /> 配列 クリップボードに書き込まれるオーディオ データ。 必須です。</param>
+        <summary>オーディオ データをクリップボードに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  クリップボードには他のユーザーもアクセスできるため、パスワード、機密データなどの機密情報は格納しないでください。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、バイト配列 `musicReader` を作成し、`cool.wav` ファイルを読み込んでから、それをクリップボードに書き込みます。  
+  
+ [!code-vb[VbRefClipbd#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#2)]  
+  
+ 置き換える`cool.wav`読みたいファイルのパスと名前でします。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAudio">
+      <MemberSignature Language="C#" Value="public void SetAudio (System.IO.Stream audioStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SetAudio(class System.IO.Stream audioStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetAudio(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="audioStream">
+          <see cref="T:System.IO.Stream" />クリップボードに書き込まれるオーディオ データ。 必須です。</param>
+        <summary>オーディオ データをクリップボードに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  クリップボードには他のユーザーもアクセスできるため、パスワード、機密データなどの機密情報は格納しないでください。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、バイト配列 `musicReader` を作成し、`cool.wav` ファイルを読み込んでから、それをクリップボードに書き込みます。  
+  
+ [!code-vb[VbRefClipbd#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#2)]  
+  
+ 置き換える`cool.wav`読みたいファイルのパスと名前でします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (string format, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SetData(string format, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">
+          <see langword="String" />。 データの形式です。 必須です。</param>
+        <param name="data">
+          <see langword="Object" />。 データをクリップボードに書き込まれるオブジェクト。 必須です。</param>
+        <summary>カスタム形式でクリップボードにデータを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  クリップボードには他のユーザーもアクセスできるため、パスワード、機密データなどの機密情報は格納しないでください。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`DataObject.dataChunk` をカスタム書式 `specialFormat` でクリップボードに書き込みます。  
+  
+ [!code-vb[VbVbcnMyClipboard#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#7)]  
+  
+ この例は、カスタム データ形式の存在に依存`specialFormat`です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDataObject">
+      <MemberSignature Language="C#" Value="public void SetDataObject (System.Windows.Forms.DataObject data);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SetDataObject(class System.Windows.Forms.DataObject data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetDataObject(System.Windows.Forms.DataObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Windows.Forms.DataObject" />
+      </Parameters>
+      <Docs>
+        <param name="data">
+          <see cref="T:System.Windows.Forms.DataObject" />。 データをクリップボードに書き込まれるオブジェクト。 必須です。</param>
+        <summary>書き込みます、<see cref="T:System.Windows.Forms.DataObject" />をクリップボードにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、高度なメンバーの場合です。クリックするまで、IntelliSense が表示されない、**すべて**タブです。  
+  
+> [!IMPORTANT]
+>  クリップボードには他のユーザーもアクセスできるため、パスワード、機密データなどの機密情報は格納しないでください。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、データ オブジェクトを書き込みます`dataChunk`をクリップボードにします。  
+  
+ [!code-vb[VbVbcnMyClipboard#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#9)]  
+  
+ この例は、データ オブジェクトの存在に依存`dataChunk`です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFileDropList">
+      <MemberSignature Language="C#" Value="public void SetFileDropList (System.Collections.Specialized.StringCollection filePaths);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SetFileDropList(class System.Collections.Specialized.StringCollection filePaths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetFileDropList(System.Collections.Specialized.StringCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filePaths" Type="System.Collections.Specialized.StringCollection" />
+      </Parameters>
+      <Docs>
+        <param name="filePaths">
+          <see cref="T:System.Collections.Specialized.StringCollection" />。 ファイル名の一覧です。 必須です。</param>
+        <summary>クリップボードへのファイルのパスを表す文字列のコレクションを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルのドロップダウン リストは、ファイル名を表す文字列のコレクションです。  
+  
+> [!IMPORTANT]
+>  クリップボードには他のユーザーもアクセスできるため、パスワード、機密データなどの機密情報は格納しないでください。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例からのファイル名のコレクションを取得**マイ ドキュメント**、ファイル ドロップ リストに変換およびをクリップボードに書き込みます。  
+  
+ [!code-vb[VbRefClipbd#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImage">
+      <MemberSignature Language="C#" Value="public void SetImage (System.Drawing.Image image);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SetImage(class System.Drawing.Image image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetImage(System.Drawing.Image)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="image">
+          <see cref="T:System.Drawing.Image" />。 書き込まれるイメージです。 必須です。</param>
+        <summary>クリップボードにイメージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  クリップボードには他のユーザーもアクセスできるため、パスワード、機密データなどの機密情報は格納しないでください。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、イメージを書き込みます`coolPicture`をクリップボードにします。  
+  
+ [!code-vb[VbVbcnMyClipboard#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#8)]  
+  
+ この例は、イメージの存在に依存`coolPicture`です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetText">
+      <MemberSignature Language="C#" Value="public void SetText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SetText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">
+          <see langword="String" />。 書き込まれるテキストです。 必須です。</param>
+        <summary>クリップボードにテキストを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用できる形式は<xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>、 <xref:System.Windows.Forms.TextDataFormat.Html>、<xref:System.Windows.Forms.TextDataFormat.Rtf>と<xref:System.Windows.Forms.TextDataFormat.UnicodeText>です。  
+  
+ 以前のクリップボード形式は保持されません。  
+  
+> [!IMPORTANT]
+>  クリップボードには他のユーザーもアクセスできるため、パスワード、機密データなどの機密情報は格納しないでください。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、文字列を書き込みます`This is a test string.`をクリップボードにします。  
+  
+ [!code-vb[VbVbcnMyClipboard#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="text" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> は <see langword="Nothing" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetText">
+      <MemberSignature Language="C#" Value="public void SetText (string text, System.Windows.Forms.TextDataFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SetText(string text, valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText(System.String,System.Windows.Forms.TextDataFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="format" Type="System.Windows.Forms.TextDataFormat" />
+      </Parameters>
+      <Docs>
+        <param name="text">
+          <see langword="String" />。 書き込まれるテキストです。 必須です。</param>
+        <param name="format">
+          <see cref="T:System.Windows.Forms.TextDataFormat" />。 テキストを書き込むときに使用される書式を設定します。 既定値は <see cref="F:System.Windows.Forms.TextDataFormat.UnicodeText" /> です。 必須です。</param>
+        <summary>クリップボードにテキストを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用できる形式は<xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>、 <xref:System.Windows.Forms.TextDataFormat.Html>、<xref:System.Windows.Forms.TextDataFormat.Rtf>と<xref:System.Windows.Forms.TextDataFormat.UnicodeText>です。  
+  
+ 以前のクリップボード形式は保持されません。  
+  
+> [!IMPORTANT]
+>  クリップボードには他のユーザーもアクセスできるため、パスワード、機密データなどの機密情報は格納しないでください。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例は、文字列を書き込みます`This is a test string.`をクリップボードにします。  
+  
+ [!code-vb[VbVbcnMyClipboard#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="text" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> は <see langword="Nothing" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">
+          <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" />システム クリップボードにアクセスする権限が必要です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

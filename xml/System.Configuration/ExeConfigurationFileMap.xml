@@ -1,0 +1,172 @@
+<Type Name="ExeConfigurationFileMap" FullName="System.Configuration.ExeConfigurationFileMap">
+  <TypeSignature Language="C#" Value="public sealed class ExeConfigurationFileMap : System.Configuration.ConfigurationFileMap" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ExeConfigurationFileMap extends System.Configuration.ConfigurationFileMap" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ExeConfigurationFileMap" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationFileMap</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>.Exe アプリケーション構成ファイルのマッピングを定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ExeConfigurationFileMap>クラスには、.exe アプリケーションのカスタム構成ファイルの階層を定義する手段が用意されています。 <xref:System.Configuration.ExeConfigurationFileMap>クラスは、1 つのパスまたは構成ファイルに関連する複数のパスを指定できます。  
+  
+   
+  
+## Examples  
+ このクラスを使用する方法を示す例については、<xref:System.Configuration.ConfigurationManager.OpenMappedExeConfiguration%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExeConfigurationFileMap ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ExeConfigurationFileMap.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.ExeConfigurationFileMap" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExeConfigurationFileMap (string machineConfigFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string machineConfigFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ExeConfigurationFileMap.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="machineConfigFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="machineConfigFileName">完全な物理パスを含むマシン構成ファイルの名前 (たとえば、 <c>c:\Windows\Microsoft.NET\Framework\v2.0.50727\CONFIG\machine.config</c>)。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.ExeConfigurationFileMap" />指定されたマシン構成ファイルの名前を使用して、クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョンを対象としているときに、このコンス トラクターを使用する、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]するよりも前か、コンピューターにインストールされている最新のものです。 このコンス トラクターでは、マシン構成ファイルのバージョンに適切なを指定することができます、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]対象となります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ExeConfigurationFileMap.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既存のコピーを作成<see cref="T:System.Configuration.ExeConfigurationFileMap" />オブジェクト。</summary>
+        <returns><see cref="T:System.Configuration.ExeConfigurationFileMap" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExeConfigFilename">
+      <MemberSignature Language="C#" Value="public string ExeConfigFilename { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ExeConfigFilename" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ExeConfigurationFileMap.ExeConfigFilename" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または構成ファイルの名前を設定します。</summary>
+        <value>構成ファイルの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalUserConfigFilename">
+      <MemberSignature Language="C#" Value="public string LocalUserConfigFilename { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalUserConfigFilename" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ExeConfigurationFileMap.LocalUserConfigFilename" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはローカル ユーザーの構成ファイルの名前を設定します。</summary>
+        <value>構成ファイルの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RoamingUserConfigFilename">
+      <MemberSignature Language="C#" Value="public string RoamingUserConfigFilename { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RoamingUserConfigFilename" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ExeConfigurationFileMap.RoamingUserConfigFilename" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはローミング ユーザーの構成ファイルの名前を設定します。</summary>
+        <value>構成ファイルの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

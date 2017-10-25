@@ -1,0 +1,290 @@
+<Type Name="ListBindingHelper" FullName="System.Windows.Forms.ListBindingHelper">
+  <TypeSignature Language="C#" Value="public static class ListBindingHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ListBindingHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ListBindingHelper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>バインド可能なリストとバインド先のオブジェクトのパブリック プロパティと異なる場合に、リストに含まれる項目のプロパティを検出する機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスなどのクラスによって使用<xref:System.Windows.Forms.BindingSource>です。  
+  
+ スマート フォンのアプリケーションでこのクラスが必要である Windows Mobile Version 5.0 ソフトウェア スマート フォン用に注意してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetList">
+      <MemberSignature Language="C#" Value="public static object GetList (object list);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetList(object list) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBindingHelper.GetList(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="list" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="list">その基になるリストがないか調査をデータ ソース。</param>
+        <summary>指定されたデータ ソースに関連付けられた一覧を返します。</summary>
+        <returns><see cref="T:System.Object" />が存在する場合は基底のリストを表す; で指定された元のデータ ソースのそれ以外の場合、<paramref name="list" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって、データ ソースが指定されている場合、`list`パラメーターを実装する、 <xref:System.ComponentModel.IListSource> 、インターフェイス、<xref:System.Windows.Forms.ListBindingHelper.GetList%2A>メソッドは型のオブジェクトを返します<xref:System.Collections.IList>関連付けられたリストを表すです。 それ以外の場合、基になるリストが存在しないために、このメソッドは、指定されたデータ ソースを返すだけ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetList">
+      <MemberSignature Language="C#" Value="public static object GetList (object dataSource, string dataMember);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetList(object dataSource, string dataMember) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBindingHelper.GetList(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">元の一覧を検索するデータ ソース。</param>
+        <param name="dataMember">一覧を含むデータ ソースのプロパティの名前。 これは、<see langword="null" />です。</param>
+        <summary>指定したデータ ソースと省略可能なデータ メンバーの評価からオブジェクトを通常はリストを返します。</summary>
+        <returns><see cref="T:System.Object" />が、それ以外の場合は、基になるリストを表す<paramref name="dataSource" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ メンバーが場合`null`または空の文字列 ("") では、<xref:System.Windows.Forms.ListBindingHelper.GetList%2A>メソッドを返します。`dataSource`です。  
+  
+ 場合`dataSource`、一覧ではない<xref:System.Windows.Forms.ListBindingHelper.GetList%2A>の値を返します、`dataSource`に一致するプロパティ、`dataMember`値。  
+  
+ 場合`dataSource`一覧を実装するいずれかの点では、<xref:System.Windows.Forms.ICurrencyManagerProvider>または<xref:System.Collections.IEnumerable>インターフェイスについては、基になるリストの取得を一覧からアイテムを選択しで指定したプロパティの値には、その項目のクエリを実行する`dataMember`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したデータ メンバー名は、データ ソースで検出されたプロパティのいずれかとも一致しませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListItemProperties">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptorCollection GetListItemProperties (object list);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptorCollection GetListItemProperties(object list) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBindingHelper.GetListItemProperties(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="list" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="list">プロパティの情報を検査するデータ ソース。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />指定したデータ ソース、または指定されたデータ ソースのプロパティに含まれる項目の種類のプロパティの説明です。</summary>
+        <returns><see cref="T:System.ComponentModel.PropertyDescriptorCollection" />に含まれるアイテムのプロパティを含む<paramref name="list" />、または のプロパティ<paramref name="list." /></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListBindingHelper.GetListItemProperties%2A>データ ソースのプロパティのコレクションを検査するメソッドを使用します。 このメソッドのアクションの実際の型によって異なります、`list`次の表に従ってパラメーター。  
+  
+|パラメーターの型|アクション|  
+|--------------------|------------|  
+|リストまたは項目のコレクションの型。|返します、<xref:System.ComponentModel.PropertyDescriptorCollection>リストに含まれる項目の種類のプロパティを記述します。|  
+|リストまたはコレクションではない型です。|返します、<xref:System.ComponentModel.PropertyDescriptorCollection>型のプロパティを記述します。|  
+|`null`|空の <xref:System.ComponentModel.PropertyDescriptorCollection> を返します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListItemProperties">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptorCollection GetListItemProperties (object list, System.ComponentModel.PropertyDescriptor[] listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptorCollection GetListItemProperties(object list, class System.ComponentModel.PropertyDescriptor[] listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBindingHelper.GetListItemProperties(System.Object,System.ComponentModel.PropertyDescriptor[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="list" Type="System.Object" />
+        <Parameter Name="listAccessors" Type="System.ComponentModel.PropertyDescriptor[]" />
+      </Parameters>
+      <Docs>
+        <param name="list">プロパティ情報を調査するデータ ソース。</param>
+        <param name="listAccessors"><see cref="T:System.ComponentModel.PropertyDescriptor" />を確認するソースのデータのプロパティを表す配列。 これは、<see langword="null" />です。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />データ ソースのコレクション プロパティに含まれる項目の種類のプロパティの説明です。 指定された<see cref="T:System.ComponentModel.PropertyDescriptor" />を確認するプロパティを指定する配列。</summary>
+        <returns><see cref="T:System.ComponentModel.PropertyDescriptorCollection" />データ ソースのコレクション プロパティに含まれる項目の種類のプロパティを記述します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListBindingHelper.GetListItemProperties%2A>メソッドは、データ ソースが項目のコレクションであるプロパティとコレクション型のプロパティではなく、コレクション内の項目の種類のプロパティを確認する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListItemProperties">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptorCollection GetListItemProperties (object dataSource, string dataMember, System.ComponentModel.PropertyDescriptor[] listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptorCollection GetListItemProperties(object dataSource, string dataMember, class System.ComponentModel.PropertyDescriptor[] listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBindingHelper.GetListItemProperties(System.Object,System.String,System.ComponentModel.PropertyDescriptor[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+        <Parameter Name="listAccessors" Type="System.ComponentModel.PropertyDescriptor[]" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">プロパティ情報を調査するデータ ソース。</param>
+        <param name="dataMember">プロパティ情報を調査する省略可能なデータ メンバーです。 これは、<see langword="null" />です。</param>
+        <param name="listAccessors"><see cref="T:System.ComponentModel.PropertyDescriptor" />を調べるデータ メンバーのプロパティを表す配列。 これは、<see langword="null" />です。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />データ ソースの指定されたデータ メンバーに含まれる項目の種類のプロパティの説明です。 指定された<see cref="T:System.ComponentModel.PropertyDescriptor" />を確認するプロパティを指定する配列。</summary>
+        <returns><see cref="T:System.ComponentModel.PropertyDescriptorCollection" />指定されたデータ ソースのコレクション プロパティに含まれる項目の種類のプロパティを記述します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `dataMember`パラメーターを指定できます`null`、その場合、<xref:System.Windows.Forms.ListBindingHelper.GetListItemProperties%2A>メソッドは、データ ソースを使用してプロパティの説明を返しますと<xref:System.ComponentModel.PropertyDescriptor>配列。  
+  
+ <xref:System.Windows.Forms.ListBindingHelper.GetListItemProperties%2A>データ メンバー項目のコレクションであるプロパティがあり、コレクション型のプロパティではなく、コレクション内の項目の種類のプロパティを知りたい場合に役立ちます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したデータ メンバーが、指定されたデータ ソースで見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListItemType">
+      <MemberSignature Language="C#" Value="public static Type GetListItemType (object list);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetListItemType(object list) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBindingHelper.GetListItemType(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="list" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="list">型情報を調査するリスト。</param>
+        <summary>指定されたリストの項目のデータ型を返します。</summary>
+        <returns><see cref="T:System.Type" />リストに含まれる項目の。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`list`リストまたは配列にパラメーターがありませんが、返される型の`list`パラメーター自体です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListItemType">
+      <MemberSignature Language="C#" Value="public static Type GetListItemType (object dataSource, string dataMember);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetListItemType(object dataSource, string dataMember) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBindingHelper.GetListItemType(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+        <Parameter Name="dataMember" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">項目をチェックするデータ ソース。</param>
+        <param name="dataMember">データ メンバーとして使用するのには、データ ソースのプロパティの省略可能な名前。 これは、<see langword="null" />です。</param>
+        <summary>指定されたデータ ソース内の項目のデータ型を返します。</summary>
+        <returns>複合データ バインディング、<see cref="T:System.Type" />によって表される項目の<paramref name="dataMember" />; データ ソースのそれ以外の場合、<see cref="T:System.Type" />一覧自体内の項目の。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Windows.Forms.ListBindingHelper.GetListItemType%2A>複合または単純データ バインディング スキームで使用される項目の種類を判断するメソッドを使用します。 この静的メソッドは、それを試行する前に、提案されたデータ バインディング スキームが適切かどうかの決定に役立つ可能性があります。  
+  
+ 場合`dataSource`は`null`、指定されたデータ メンバーのリスト項目のプロパティ記述子が見つからないか、リスト項目のプロパティ記述子には、 <xref:System.ComponentModel.ICustomTypeDescriptor>、このメソッドの種類を取得し、<xref:System.Object>クラスです。  
+  
+ 場合`dataMember`は`null`空で、このメソッドを返しますまたは、<xref:System.Type>データ ソースにある項目の場合は、一覧にあるそれ以外の場合、このメソッドが戻る、<xref:System.Type>のデータ ソース自体です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListName">
+      <MemberSignature Language="C#" Value="public static string GetListName (object list, System.ComponentModel.PropertyDescriptor[] listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetListName(object list, class System.ComponentModel.PropertyDescriptor[] listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBindingHelper.GetListName(System.Object,System.ComponentModel.PropertyDescriptor[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="list" Type="System.Object" />
+        <Parameter Name="listAccessors" Type="System.ComponentModel.PropertyDescriptor[]" />
+      </Parameters>
+      <Docs>
+        <param name="list">リスト名をチェックするデータ ソース。</param>
+        <param name="listAccessors">データ ソースで検索する <see cref="T:System.ComponentModel.PropertyDescriptor" /> オブジェクトの配列。 これは、<see langword="null" />です。</param>
+        <summary>データ ソースと省略可能な <see cref="T:System.ComponentModel.PropertyDescriptor" /> 配列を指定して、基になるリストの名前を返します。</summary>
+        <returns><paramref name="listAccessors" /> で定義されるデータ ソースのリストの名前、またはデータ ソースの種類の名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`listAccessors`は`null`空、または、<xref:System.Windows.Forms.ListBindingHelper.GetListName%2A>メソッドは、データ ソースの種類の名前を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

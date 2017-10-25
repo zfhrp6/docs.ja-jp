@@ -1,0 +1,129 @@
+<Type Name="SerialError" FullName="System.IO.Ports.SerialError">
+  <TypeSignature Language="C#" Value="public enum SerialError" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SerialError extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Ports.SerialError" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Ports</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>発生したエラーを示す、<see cref="T:System.IO.Ports.SerialPort" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理するときに、この列挙体が役に立ちます、<xref:System.IO.Ports.SerialPort.ErrorReceived>を検出して使用してデータを通信するときに、エラーに応答するイベント、<xref:System.IO.Ports.SerialPort>です。 エラーの種類を確認するには、eceivedEventArgs クラスの eceivedEventArgs.EventType プロパティを取得します。 EceivedEventArgs.EventType プロパティにはから値のいずれかが含まれています、<xref:System.IO.Ports.SerialErrorReceivedEventArgs.EventType%2A>列挙します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Frame">
+      <MemberSignature Language="C#" Value="Frame" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.SerialError Frame = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.SerialError.Frame" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.SerialError</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハードウェアには、フレーム化エラーが検出されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Overrun">
+      <MemberSignature Language="C#" Value="Overrun" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.SerialError Overrun = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.SerialError.Overrun" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.SerialError</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字バッファー オーバーランが発生しました。 次の文字が失われます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RXOver">
+      <MemberSignature Language="C#" Value="RXOver" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.SerialError RXOver = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.SerialError.RXOver" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.SerialError</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力バッファーのオーバーフローが発生しました。 どちらなしスペースが、入力バッファー内またはファイル終端 (EOF) 文字の後に文字を受け取りました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RXParity">
+      <MemberSignature Language="C#" Value="RXParity" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.SerialError RXParity = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.SerialError.RXParity" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.SerialError</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハードウェアには、パリティ エラーが検出されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TXFull">
+      <MemberSignature Language="C#" Value="TXFull" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.SerialError TXFull = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.SerialError.TXFull" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.SerialError</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションは、文字を送信しようとしていますが、出力バッファーがいっぱいでした。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

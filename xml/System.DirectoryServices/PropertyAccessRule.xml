@@ -1,0 +1,204 @@
+<Type Name="PropertyAccessRule" FullName="System.DirectoryServices.PropertyAccessRule">
+  <TypeSignature Language="C#" Value="public sealed class PropertyAccessRule : System.DirectoryServices.ActiveDirectoryAccessRule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PropertyAccessRule extends System.DirectoryServices.ActiveDirectoryAccessRule" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.PropertyAccessRule" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.ActiveDirectoryAccessRule</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.PropertyAccessRule" />クラスは、特定の種類の Active Directory ドメイン サービスのプロパティへのアクセス許可または拒否に使用されるアクセス規則を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Active Directory ドメイン サービス プロパティのアクセス規則の作成を簡素化するものです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyAccessRule (System.Security.Principal.IdentityReference identity, System.Security.AccessControl.AccessControlType type, System.DirectoryServices.PropertyAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.Security.AccessControl.AccessControlType type, valuetype System.DirectoryServices.PropertyAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.PropertyAccessRule.#ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.AccessControlType,System.DirectoryServices.PropertyAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+        <Parameter Name="access" Type="System.DirectoryServices.PropertyAccess" />
+      </Parameters>
+      <Docs>
+        <param name="identity">アクセス規則のトラスティを識別する <see cref="T:System.Security.Principal.IdentityReference" /> オブジェクト。</param>
+        <param name="type">アクセス規則の種類を指定する <see cref="T:System.Security.AccessControl.AccessControlType" /> 列挙値の 1 つ。</param>
+        <param name="access">プロパティのアクセスの種類を指定する <see cref="T:System.DirectoryServices.PropertyAccess" /> 列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.PropertyAccessRule" />指定された id 参照、アクセス制御の種類、およびプロパティへのアクセスを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用する場合は、すべてのプロパティ型に適用されるプロパティのアクセス規則を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyAccessRule (System.Security.Principal.IdentityReference identity, System.Security.AccessControl.AccessControlType type, System.DirectoryServices.PropertyAccess access, System.DirectoryServices.ActiveDirectorySecurityInheritance inheritanceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.Security.AccessControl.AccessControlType type, valuetype System.DirectoryServices.PropertyAccess access, valuetype System.DirectoryServices.ActiveDirectorySecurityInheritance inheritanceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.PropertyAccessRule.#ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.AccessControlType,System.DirectoryServices.PropertyAccess,System.DirectoryServices.ActiveDirectorySecurityInheritance)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+        <Parameter Name="access" Type="System.DirectoryServices.PropertyAccess" />
+        <Parameter Name="inheritanceType" Type="System.DirectoryServices.ActiveDirectorySecurityInheritance" />
+      </Parameters>
+      <Docs>
+        <param name="identity">アクセス規則のトラスティを識別する <see cref="T:System.Security.Principal.IdentityReference" /> オブジェクト。</param>
+        <param name="type">アクセス規則の種類を指定する <see cref="T:System.Security.AccessControl.AccessControlType" /> 列挙値の 1 つ。</param>
+        <param name="access">プロパティのアクセスの種類を指定する <see cref="T:System.DirectoryServices.PropertyAccess" /> 列挙値の 1 つ。</param>
+        <param name="inheritanceType">アクセス規則の継承の種類を指定する、<see cref="T:System.DirectoryServices.ActiveDirectorySecurityInheritance" /> 列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.PropertyAccessRule" />指定された id 参照、アクセス制御の種類、プロパティへのアクセス、および Active Directory ドメイン サービス セキュリティの継承を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用する場合は、すべてのプロパティ型に適用されるプロパティのアクセス規則を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyAccessRule (System.Security.Principal.IdentityReference identity, System.Security.AccessControl.AccessControlType type, System.DirectoryServices.PropertyAccess access, Guid propertyType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.Security.AccessControl.AccessControlType type, valuetype System.DirectoryServices.PropertyAccess access, valuetype System.Guid propertyType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.PropertyAccessRule.#ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.AccessControlType,System.DirectoryServices.PropertyAccess,System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+        <Parameter Name="access" Type="System.DirectoryServices.PropertyAccess" />
+        <Parameter Name="propertyType" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="identity">アクセス規則のトラスティを識別する <see cref="T:System.Security.Principal.IdentityReference" /> オブジェクト。</param>
+        <param name="type">アクセス規則の種類を指定する <see cref="T:System.Security.AccessControl.AccessControlType" /> 列挙値の 1 つ。</param>
+        <param name="access">プロパティのアクセスの種類を指定する <see cref="T:System.DirectoryServices.PropertyAccess" /> 列挙値の 1 つ。</param>
+        <param name="propertyType">スキーマにこのアクセス規則が適用されるプロパティの GUID です。 これは、する場合<see cref="F:System.Guid.Empty" />、アクセス規則はすべてのプロパティ型に適用されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.PropertyAccessRule" />指定された id 参照、アクセス制御の種類、プロパティへのアクセス、およびプロパティの型を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyAccessRule (System.Security.Principal.IdentityReference identity, System.Security.AccessControl.AccessControlType type, System.DirectoryServices.PropertyAccess access, System.DirectoryServices.ActiveDirectorySecurityInheritance inheritanceType, Guid inheritedObjectType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.Security.AccessControl.AccessControlType type, valuetype System.DirectoryServices.PropertyAccess access, valuetype System.DirectoryServices.ActiveDirectorySecurityInheritance inheritanceType, valuetype System.Guid inheritedObjectType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.PropertyAccessRule.#ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.AccessControlType,System.DirectoryServices.PropertyAccess,System.DirectoryServices.ActiveDirectorySecurityInheritance,System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+        <Parameter Name="access" Type="System.DirectoryServices.PropertyAccess" />
+        <Parameter Name="inheritanceType" Type="System.DirectoryServices.ActiveDirectorySecurityInheritance" />
+        <Parameter Name="inheritedObjectType" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="identity">アクセス規則のトラスティを識別する <see cref="T:System.Security.Principal.IdentityReference" /> オブジェクト。</param>
+        <param name="type">アクセス規則の種類を指定する <see cref="T:System.Security.AccessControl.AccessControlType" /> 列挙値の 1 つ。</param>
+        <param name="access">プロパティのアクセスの種類を指定する <see cref="T:System.DirectoryServices.PropertyAccess" /> 列挙値の 1 つ。</param>
+        <param name="inheritanceType">アクセス規則の継承の種類を指定する、<see cref="T:System.DirectoryServices.ActiveDirectorySecurityInheritance" /> 列挙値の 1 つ。</param>
+        <param name="inheritedObjectType">このアクセス規則を継承できる子オブジェクトの種類のスキーマ GUID。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.PropertyAccessRule" />指定された id 参照、アクセス制御の種類、プロパティへのアクセス、Active Directory ドメイン サービス セキュリティの継承、および継承されるオブジェクトの型を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用する場合は、すべてのプロパティ型に適用されるプロパティのアクセス規則を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyAccessRule (System.Security.Principal.IdentityReference identity, System.Security.AccessControl.AccessControlType type, System.DirectoryServices.PropertyAccess access, Guid propertyType, System.DirectoryServices.ActiveDirectorySecurityInheritance inheritanceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.Security.AccessControl.AccessControlType type, valuetype System.DirectoryServices.PropertyAccess access, valuetype System.Guid propertyType, valuetype System.DirectoryServices.ActiveDirectorySecurityInheritance inheritanceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.PropertyAccessRule.#ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.AccessControlType,System.DirectoryServices.PropertyAccess,System.Guid,System.DirectoryServices.ActiveDirectorySecurityInheritance)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+        <Parameter Name="access" Type="System.DirectoryServices.PropertyAccess" />
+        <Parameter Name="propertyType" Type="System.Guid" />
+        <Parameter Name="inheritanceType" Type="System.DirectoryServices.ActiveDirectorySecurityInheritance" />
+      </Parameters>
+      <Docs>
+        <param name="identity">アクセス規則のトラスティを識別する <see cref="T:System.Security.Principal.IdentityReference" /> オブジェクト。</param>
+        <param name="type">アクセス規則の種類を指定する <see cref="T:System.Security.AccessControl.AccessControlType" /> 列挙値の 1 つ。</param>
+        <param name="access">プロパティのアクセスの種類を指定する <see cref="T:System.DirectoryServices.PropertyAccess" /> 列挙値の 1 つ。</param>
+        <param name="propertyType">スキーマにこのアクセス規則が適用されるプロパティの GUID です。 これは、する場合<see cref="F:System.Guid.Empty" />、アクセス規則はすべてのプロパティ型に適用されます。</param>
+        <param name="inheritanceType">アクセス規則の継承の種類を指定する、<see cref="T:System.DirectoryServices.ActiveDirectorySecurityInheritance" /> 列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.PropertyAccessRule" />指定された id 参照、アクセス制御の種類、プロパティへのアクセス、プロパティの型、および Active Directory ドメイン サービス セキュリティの継承を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PropertyAccessRule (System.Security.Principal.IdentityReference identity, System.Security.AccessControl.AccessControlType type, System.DirectoryServices.PropertyAccess access, Guid propertyType, System.DirectoryServices.ActiveDirectorySecurityInheritance inheritanceType, Guid inheritedObjectType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.Security.AccessControl.AccessControlType type, valuetype System.DirectoryServices.PropertyAccess access, valuetype System.Guid propertyType, valuetype System.DirectoryServices.ActiveDirectorySecurityInheritance inheritanceType, valuetype System.Guid inheritedObjectType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.PropertyAccessRule.#ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.AccessControlType,System.DirectoryServices.PropertyAccess,System.Guid,System.DirectoryServices.ActiveDirectorySecurityInheritance,System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+        <Parameter Name="access" Type="System.DirectoryServices.PropertyAccess" />
+        <Parameter Name="propertyType" Type="System.Guid" />
+        <Parameter Name="inheritanceType" Type="System.DirectoryServices.ActiveDirectorySecurityInheritance" />
+        <Parameter Name="inheritedObjectType" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="identity"><see cref="T:System.Security.Principal.IdentityReference" />アクセス規則のトラスティを識別するオブジェクト。</param>
+        <param name="type">1 つ、<see cref="T:System.Security.AccessControl.AccessControlType" />アクセス規則の種類を指定する列挙値。</param>
+        <param name="access">プロパティのアクセスの種類を指定する <see cref="T:System.DirectoryServices.PropertyAccess" /> 列挙値の 1 つ。</param>
+        <param name="propertyType">スキーマにこのアクセス規則が適用されるプロパティの GUID です。 これは、する場合<see cref="F:System.Guid.Empty" />、アクセス規則はすべてのプロパティ型に適用されます。</param>
+        <param name="inheritanceType">アクセス規則の継承の種類を指定する、<see cref="T:System.DirectoryServices.ActiveDirectorySecurityInheritance" /> 列挙値の 1 つ。</param>
+        <param name="inheritedObjectType">このアクセス規則を継承できる子オブジェクトの種類のスキーマ GUID。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.PropertyAccessRule" />指定された id 参照、アクセス制御の種類、プロパティへのアクセス、プロパティの型、Active Directory ドメイン サービス セキュリティの継承、および継承されるオブジェクトの型を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

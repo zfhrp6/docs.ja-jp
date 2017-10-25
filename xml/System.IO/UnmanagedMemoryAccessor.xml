@@ -1,0 +1,1908 @@
+<Type Name="UnmanagedMemoryAccessor" FullName="System.IO.UnmanagedMemoryAccessor">
+  <TypeSignature Language="C#" Value="public class UnmanagedMemoryAccessor : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UnmanagedMemoryAccessor extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.UnmanagedMemoryAccessor" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>メモリのアンマネージ ブロックにマネージ コードからランダムにアクセスできるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateViewAccessor%2A>のメソッド、<xref:System.IO.MemoryMappedFiles.MemoryMappedFile>オブジェクトがメモリ マップト ファイルのビューの操作用のメモリのアンマネージ ブロックを返します。  
+  
+[!INCLUDE[note_unnecessary_dispose](~/includes/note-unnecessary-dispose.md)]
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected UnmanagedMemoryAccessor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.UnmanagedMemoryAccessor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UnmanagedMemoryAccessor (System.Runtime.InteropServices.SafeBuffer buffer, long offset, long capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Runtime.InteropServices.SafeBuffer buffer, int64 offset, int64 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.#ctor(System.Runtime.InteropServices.SafeBuffer,System.Int64,System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Runtime.InteropServices.SafeBuffer" />
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="capacity" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">アクセサーを格納するバッファー。</param>
+        <param name="offset">アクセサーの開始位置のバイト。</param>
+        <param name="capacity">割り当てるメモリのサイズ (バイト単位)。</param>
+        <summary>指定されたバッファー、オフセット、および容量を使用して、<see cref="T:System.IO.UnmanagedMemoryAccessor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="offset" />plus<paramref name="capacity" />がより大きい<paramref name="buffer" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="capacity" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="offset" />plus<paramref name="capacity" />はアドレス空間の上限をラップします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UnmanagedMemoryAccessor (System.Runtime.InteropServices.SafeBuffer buffer, long offset, long capacity, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Runtime.InteropServices.SafeBuffer buffer, int64 offset, int64 capacity, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.#ctor(System.Runtime.InteropServices.SafeBuffer,System.Int64,System.Int64,System.IO.FileAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Runtime.InteropServices.SafeBuffer" />
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="capacity" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">アクセサーを格納するバッファー。</param>
+        <param name="offset">アクセサーの開始位置のバイト。</param>
+        <param name="capacity">割り当てるメモリのサイズ (バイト単位)。</param>
+        <param name="access">メモリに対して許可されているアクセス権の種類。 既定値は、<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" /> です。</param>
+        <summary>指定されたバッファー、オフセット、容量、およびアクセス権を使用して、<see cref="T:System.IO.UnmanagedMemoryAccessor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="offset" />plus<paramref name="capacity" />がより大きい<paramref name="buffer" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="capacity" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="access" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" /> 列挙値ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="offset" />plus<paramref name="capacity" />はアドレス空間の上限をラップします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public bool CanRead { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRead" />
+      <MemberSignature Language="DocId" Value="P:System.IO.UnmanagedMemoryAccessor.CanRead" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセサーが読み取り可能かどうかを決定します。</summary>
+        <value>
+          アクセサーが読み取り可能な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWrite">
+      <MemberSignature Language="C#" Value="public bool CanWrite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWrite" />
+      <MemberSignature Language="DocId" Value="P:System.IO.UnmanagedMemoryAccessor.CanWrite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセサーが書き込み可能かどうかを決定します。</summary>
+        <value>
+          アクセサーが書き込み可能な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Capacity">
+      <MemberSignature Language="C#" Value="public long Capacity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Capacity" />
+      <MemberSignature Language="DocId" Value="P:System.IO.UnmanagedMemoryAccessor.Capacity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセサーの容量を取得します。</summary>
+        <value>アクセサーの容量。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.IO.UnmanagedMemoryAccessor" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.UnmanagedMemoryAccessor" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.IO.UnmanagedMemoryAccessor>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected void Initialize (System.Runtime.InteropServices.SafeBuffer buffer, long offset, long capacity, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void Initialize(class System.Runtime.InteropServices.SafeBuffer buffer, int64 offset, int64 capacity, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Initialize(System.Runtime.InteropServices.SafeBuffer,System.Int64,System.Int64,System.IO.FileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Runtime.InteropServices.SafeBuffer" />
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="capacity" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">アクセサーを格納するバッファー。</param>
+        <param name="offset">アクセサーの開始位置のバイト。</param>
+        <param name="capacity">割り当てるメモリのサイズ (バイト単位)。</param>
+        <param name="access">メモリに対して許可されているアクセス権の種類。 既定値は、<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" /> です。</param>
+        <summary>アクセサーの初期値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、このクラスのコンス トラクターによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="offset" />plus<paramref name="capacity" />がより大きい<paramref name="buffer" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="capacity" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="access" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" /> 列挙値ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="offset" />plus<paramref name="capacity" />はアドレス空間の上限をラップします。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOpen">
+      <MemberSignature Language="C#" Value="protected bool IsOpen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOpen" />
+      <MemberSignature Language="DocId" Value="P:System.IO.UnmanagedMemoryAccessor.IsOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在、アクセサーがプロセスによって開かれているかどうかを確認します。</summary>
+        <value>
+          アクセサーが開かれている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public void Read&lt;T&gt; (long position, out T structure) where T : struct;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Read&lt;struct .ctor (class System.ValueType) T&gt;(int64 position, [out] !!T&amp; structure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Read``1(System.Int64,``0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>DefaultConstructorConstraint</ParameterAttribute>
+            <ParameterAttribute>NotNullableValueTypeConstraint</ParameterAttribute>
+            <BaseTypeName>System.ValueType</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="structure" Type="T&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">構造体の型。</typeparam>
+        <param name="position">アクセサー内の読み取り開始位置。</param>
+        <param name="structure">読み取りデータが格納されている構造体。</param>
+        <summary>アクセサーから指定された参照に <paramref name="T" /> 型の構造体を読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、中規模から大規模の構造体は、このクラスの他の読み取りメソッドを簡単に対応できないを読み取る。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />型の構造体を読み取る<paramref name="T" />です。  
+  
+ または  
+  
+ <see langword="T" />1 つまたは複数の参照型を含む値型です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadArray&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public int ReadArray&lt;T&gt; (long position, T[] array, int offset, int count) where T : struct;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ReadArray&lt;struct .ctor (class System.ValueType) T&gt;(int64 position, !!T[] array, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadArray``1(System.Int64,``0[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>DefaultConstructorConstraint</ParameterAttribute>
+            <ParameterAttribute>NotNullableValueTypeConstraint</ParameterAttribute>
+            <BaseTypeName>System.ValueType</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="array" Type="T[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">構造体の型。</typeparam>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <param name="array">アクセサーから読み取った構造体を格納する配列。</param>
+        <param name="offset">内のインデックス<c>配列</c>を最初のコピーされた構造体を配置します。</param>
+        <param name="count">型の構造体の数<c>T</c>アクセサーから読み取れません。</param>
+        <summary>アクセサーから <paramref name="T" /> 型の配列に <paramref name="T" /> 型の構造体を読み取ります。</summary>
+        <returns><paramref name="array" /> に読み取った構造体の数。 構造体の数が <paramref name="count" /> よりも少ない場合、戻り値は count よりも小さくなります。また、アクセサーの末尾に到達した場合は 0 が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、安全ではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" />格納するのに十分な大きさがない<paramref name="count" />構造体の (から<paramref name="position" />)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadBoolean">
+      <MemberSignature Language="C#" Value="public bool ReadBoolean (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ReadBoolean(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadBoolean(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーからブール値を読み取ります。</summary>
+        <returns>
+          <see langword="true" /> または <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadByte">
+      <MemberSignature Language="C#" Value="public byte ReadByte (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8 ReadByte(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadByte(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーからバイト値を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadChar">
+      <MemberSignature Language="C#" Value="public char ReadChar (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance char ReadChar(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadChar(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーから文字を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadDecimal">
+      <MemberSignature Language="C#" Value="public decimal ReadDecimal (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Decimal ReadDecimal(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadDecimal(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーから 10 進値を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。  
+  
+ または  
+  
+ 読み取る 10 進数が正しくありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadDouble">
+      <MemberSignature Language="C#" Value="public double ReadDouble (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 ReadDouble(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadDouble(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーから倍精度浮動小数点値を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadInt16">
+      <MemberSignature Language="C#" Value="public short ReadInt16 (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int16 ReadInt16(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadInt16(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーから 16 ビットの整数を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadInt32">
+      <MemberSignature Language="C#" Value="public int ReadInt32 (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ReadInt32(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadInt32(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーから 32 ビットの整数を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadInt64">
+      <MemberSignature Language="C#" Value="public long ReadInt64 (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 ReadInt64(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadInt64(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーから 64 ビットの整数を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSByte">
+      <MemberSignature Language="C#" Value="public sbyte ReadSByte (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int8 ReadSByte(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadSByte(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーから 8 ビットの符号付き整数を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <altCompliant cref="T:System.Int16" />
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSingle">
+      <MemberSignature Language="C#" Value="public float ReadSingle (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float32 ReadSingle(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadSingle(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーから単精度浮動小数点値を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadUInt16">
+      <MemberSignature Language="C#" Value="public ushort ReadUInt16 (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int16 ReadUInt16(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadUInt16(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーから 16 ビットの符号なし整数を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <altCompliant cref="T:System.Int32" />
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadUInt32">
+      <MemberSignature Language="C#" Value="public uint ReadUInt32 (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int32 ReadUInt32(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadUInt32(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーから 32 ビットの符号なし整数を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <altCompliant cref="T:System.Int64" />
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadUInt64">
+      <MemberSignature Language="C#" Value="public ulong ReadUInt64 (long position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int64 ReadUInt64(int64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.ReadUInt64(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの読み取り開始位置 (バイト数)。</param>
+        <summary>アクセサーから 64 ビットの符号なし整数を読み取ります。</summary>
+        <returns>読み取られた値。</returns>
+        <remarks>To be added.</remarks>
+        <altCompliant cref="T:System.Decimal" />
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を読み取れません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは読み取りをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーにブール値を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, byte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, unsigned int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーにバイト値を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, char value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, char value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーに文字を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, decimal value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, valuetype System.Decimal value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.Decimal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.Decimal" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーに 10 進値を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。  
+  
+ または  
+  
+ 10 進数が正しくありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーに <see langword="Double" /> 値を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, short value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーに 16 ビットの整数を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーに 32 ビットの整数を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーに 64 ビットの整数を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">値を書き込むことの位置の後に十分なバイト数がありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, sbyte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.SByte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.SByte" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーに 8 ビットの整数を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <altCompliant cref="T:System.Int16" />
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, float value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, float32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーに <see langword="Single" /> を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, ushort value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, unsigned int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.UInt16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.UInt16" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーに 16 ビットの符号なし整数を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <altCompliant cref="T:System.Int32" />
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, uint value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, unsigned int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーに 32 ビットの符号なし整数を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <altCompliant cref="T:System.Int64" />
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (long position, ulong value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(int64 position, unsigned int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write(System.Int64,System.UInt64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.UnmanagedMemoryStream</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="value" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="value">書き込む値。</param>
+        <summary>アクセサーに 64 ビットの符号なし整数を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <altCompliant cref="T:System.Decimal" />
+        <exception cref="T:System.ArgumentException">後に十分なバイトがいません<paramref name="position" />値を書き込むことです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public void Write&lt;T&gt; (long position, ref T structure) where T : struct;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write&lt;struct .ctor (class System.ValueType) T&gt;(int64 position, !!T&amp; structure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.Write``1(System.Int64,``0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>DefaultConstructorConstraint</ParameterAttribute>
+            <ParameterAttribute>NotNullableValueTypeConstraint</ParameterAttribute>
+            <BaseTypeName>System.ValueType</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="structure" Type="T&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">構造体の型。</typeparam>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="structure">書き込む構造体。</param>
+        <summary>アクセサーに構造体を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、他が簡単に対応できない大規模な中規模の構造を記述<xref:System.IO.UnmanagedMemoryAccessor.Write%2A>このクラスのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">後に、アクセサーに十分なバイト数がありません<paramref name="position" />型の構造を記述する<paramref name="T" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteArray&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public void WriteArray&lt;T&gt; (long position, T[] array, int offset, int count) where T : struct;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteArray&lt;struct .ctor (class System.ValueType) T&gt;(int64 position, !!T[] array, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.UnmanagedMemoryAccessor.WriteArray``1(System.Int64,``0[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>DefaultConstructorConstraint</ParameterAttribute>
+            <ParameterAttribute>NotNullableValueTypeConstraint</ParameterAttribute>
+            <BaseTypeName>System.ValueType</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="array" Type="T[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">構造体の型。</typeparam>
+        <param name="position">アクセサーの書き込み開始位置 (バイト数)。</param>
+        <param name="array">アクセサーに書き込む配列。</param>
+        <param name="offset">内のインデックス<c>配列</c>から書き込みを開始します。</param>
+        <param name="count">内の構造体の数<c>配列</c>を書き込めません。</param>
+        <summary><paramref name="T" /> 型の配列からアクセサーに構造体を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">後に、アクセサーに十分なバイト数がありません<paramref name="position" />で指定された構造体の数を書き込む<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" />ゼロ未満か、アクセサーの容量よりも大きくします。  
+  
+ または  
+  
+ <paramref name="offset" /> または <paramref name="count" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">アクセサーは書き込みをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">アクセサーは破棄されました。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

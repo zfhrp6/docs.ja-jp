@@ -1,0 +1,95 @@
+<Type Name="SettingsManageabilityAttribute" FullName="System.Configuration.SettingsManageabilityAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SettingsManageabilityAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SettingsManageabilityAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingsManageabilityAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーション設定のプロパティの特別なサービスを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsManageabilityAttribute> 、特別な定義済みのサービスが個々 のアプリケーション設定のプロパティとプロパティ グループに提供することを示します。 これらのサービスのほとんどは、Windows オペレーティング システムによって提供されます。  
+  
+ アプリケーション設定のプロパティおよびその使用方法の詳細については、次を参照してください。 [Windows フォーム用のアプリケーション設定](~/docs/framework/winforms/advanced/application-settings-for-windows-forms.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsManageabilityAttribute (System.Configuration.SettingsManageability manageability);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Configuration.SettingsManageability manageability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsManageabilityAttribute.#ctor(System.Configuration.SettingsManageability)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="manageability" Type="System.Configuration.SettingsManageability" />
+      </Parameters>
+      <Docs>
+        <param name="manageability">A<see cref="T:System.Configuration.SettingsManageability" />要求されているサービスの列挙値。</param>
+        <summary><see cref="T:System.Configuration.SettingsManageabilityAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義されている値を組み合わせて複数のサービスを要求することができます、<xref:System.Configuration.SettingsManageability>論理列挙`OR`演算子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Manageability">
+      <MemberSignature Language="C#" Value="public System.Configuration.SettingsManageability Manageability { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.SettingsManageability Manageability" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsManageabilityAttribute.Manageability" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsManageability</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求された特別なサービスのセットを取得します。</summary>
+        <value>論理を使用してから結果を値<see langword="OR" />すべてを結合する演算子、<see cref="T:System.Configuration.SettingsManageability" />要求されたサービスに対応する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ、<xref:System.Configuration.SettingsManageabilityAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

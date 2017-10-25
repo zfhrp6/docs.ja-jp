@@ -1,0 +1,624 @@
+<Type Name="DynamicDataExtensions" FullName="System.Web.DynamicData.DynamicDataExtensions">
+  <TypeSignature Language="C#" Value="public static class DynamicDataExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DynamicDataExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DynamicDataExtensions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET 動的データによって使用されている拡張メソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ConvertEditedValue">
+      <MemberSignature Language="C#" Value="public static object ConvertEditedValue (this System.Web.DynamicData.IFieldFormattingOptions formattingOptions, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ConvertEditedValue(class System.Web.DynamicData.IFieldFormattingOptions formattingOptions, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.ConvertEditedValue(System.Web.DynamicData.IFieldFormattingOptions,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formattingOptions" Type="System.Web.DynamicData.IFieldFormattingOptions" RefType="this" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="formattingOptions"><see cref="T:System.Web.DynamicData.IFieldFormattingOptions" /> オブジェクトで定義されたとおりの書式設定オプション オブジェクト。</param>
+        <param name="value">変換する入力値。</param>
+        <summary>検証されているコントロールにユーザーが指定した値を返します。</summary>
+        <returns>
+          <paramref name="value" /> が <see langword="null" /> または空の文字列で、<paramref name="formattingOptions" /> の <see cref="P:System.Web.DynamicData.IFieldFormattingOptions.ConvertEmptyStringToNull" /> プロパティが <see langword="true" /> の場合は <see langword="null" /> です。<paramref name="value" /> が <see langword="null" /> でも空の文字列でもなく、<paramref name="formattingOptions" /> の <see cref="P:System.Web.DynamicData.IFieldFormattingOptions.NullDisplayText" /> プロパティに一致する場合は <see langword="null" /> です。それ以外の場合は <paramref name="value" /> の未変更の値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 書式設定オプションについては、次を参照してください。、<xref:System.Web.DynamicData.IFieldFormattingOptions>の概要を入力します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.DynamicData.DynamicDataExtensions.ConvertEditedValue%2A> メソッドを使用する方法の例を次に示します。 例では、日付と時刻のデータを受け入れるように構成されているフィールド テンプレートからユーザー入力を取得します。 DynamicData\FieldTemplates\DateTime_Edit.ascx.cs または DynamicData\FieldTemplates\DateTime_Edit.ascx.vb ファイルでは、メソッドは、空の文字列に変換します`null`です。  
+  
+ [!code-csharp[System.Web.DynamicData.DynamicDataExtensions#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataExtensions/cs/DateTime_Edit.ascx.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnablePersistedSelection">
+      <MemberSignature Language="C#" Value="public static void EnablePersistedSelection (this System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnablePersistedSelection(class System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.EnablePersistedSelection(System.Web.UI.WebControls.BaseDataBoundControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use the EnablePersistedSelection property on a databound control such as GridView or ListView.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataBoundControl" Type="System.Web.UI.WebControls.BaseDataBoundControl" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="dataBoundControl">データ バインド コントロール。</param>
+        <summary>選択内容とページングをサポートするデータ コントロールで選択内容の永続化を有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張するコントロールで<xref:System.Web.UI.WebControls.BaseDataBoundControl>をサポートしている、選択範囲のページングを並べ替え、このメソッドを呼び出すことにより、選択した行が表示されていない場合でも、選択範囲を保持するコントロール。 たとえば、ユーザーが行を選択し、別のページにページまたは、ユーザーがデータを並べ替える場合は、選択した行は選択されたままです。 このメソッドが呼び出されない場合、ユーザーがページや並べ替えを行うときに選択範囲が失われます。  
+  
+ <xref:System.Web.DynamicData.DynamicDataManager.RegisterControl%2A> メソッドは <xref:System.Web.DynamicData.DynamicDataExtensions.EnablePersistedSelection%2A> を呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandDynamicWhereParameters">
+      <MemberSignature Language="C#" Value="public static void ExpandDynamicWhereParameters (this System.Web.DynamicData.IDynamicDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ExpandDynamicWhereParameters(class System.Web.DynamicData.IDynamicDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.ExpandDynamicWhereParameters(System.Web.DynamicData.IDynamicDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.DynamicData.IDynamicDataSource" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ ソース オブジェクト。</param>
+        <summary>展開に動的フィルター<see langword="Where" />データ ソースで使用可能なパラメーターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの展開の現在のインスタンスの値、<xref:System.Web.DynamicData.DynamicControlParameter>と<xref:System.Web.DynamicData.DynamicQueryStringParameter>へ制御`Where`データ ソースがクエリで使用可能なパラメーターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindDataSourceControl">
+      <MemberSignature Language="C#" Value="public static System.Web.DynamicData.IDynamicDataSource FindDataSourceControl (this System.Web.UI.Control current);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.DynamicData.IDynamicDataSource FindDataSourceControl(class System.Web.UI.Control current) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.FindDataSourceControl(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.IDynamicDataSource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="current" Type="System.Web.UI.Control" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="current">コントロールを含む、データ バインド コントロールの階層内のコントロールは、検索するとします。</param>
+        <summary>指定したコントロールのデータ コントロールに関連付けられているデータ ソースを返します。</summary>
+        <returns>指定したコントロールのデータ コントロールに関連付けられているデータ ソース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、格納しているデータ ソース コントロールを見つける方法を示します。 例では、動的なデータ ページのテンプレートは、AdventureWorksLT データベースの ProductDescription テーブルをカスタムの表示を提供する \DynamicData\CustomPages\ProductDescriptions フォルダーにコピーされます。 追加する Insert.aspx ファイルのマークアップが変更された、`OnDataBound`という名前のイベント ハンドラー`DetailsView1_DataBound`を<xref:System.Web.DynamicData.DynamicDataExtensions.FindDataSourceControl%2A>データ ソース コントロールを検索するメソッドが呼び出されます。  
+  
+ [!code-csharp[System.Web.DynamicData.DynamicDataExtensions#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataExtensions/cs/Insert.aspx.cs#1)]  
+ [!code-aspx-csharp[System.Web.DynamicData.DynamicDataExtensions#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataExtensions/cs/Insert.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindFieldTemplate">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.Control FindFieldTemplate (this System.Web.UI.Control control, string columnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.Control FindFieldTemplate(class System.Web.UI.Control control, string columnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.FindFieldTemplate(System.Web.UI.Control,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" RefType="this" />
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="control">含まれるコントロール。</param>
+        <param name="columnName">列の名前。</param>
+        <summary>指定したコントロールの指定した列のフィールド テンプレートの名前付けコンテナーを返します。</summary>
+        <returns>指定したコントロールの名前付けコンテナー内の指定された列のフィールド テンプレート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、指定された列名のテキスト ボックス コントロールを検索する方法を示します。 例では、動的なデータ ページのテンプレートは、AdventureWorksLT データベースの ProductDescription テーブルをカスタムの表示を提供する \DynamicData\CustomPages\ProductDescriptions フォルダーにコピーされます。 追加する Insert.aspx ファイルのマークアップが変更された、`OnDataBound`という名前のイベント ハンドラー`DetailsView1_DataBound`を<xref:System.Web.DynamicData.DynamicDataExtensions.FindDataSourceControl%2A>テキスト ボックス コントロールを検索するメソッドが呼び出されます。  
+  
+ [!code-csharp[System.Web.DynamicData.DynamicDataExtensions#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataExtensions/cs/Insert.aspx.cs#1)]  
+[!code-aspx-csharp[System.Web.DynamicData.DynamicDataExtensions#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataExtensions/cs/Insert.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindMetaTable">
+      <MemberSignature Language="C#" Value="public static System.Web.DynamicData.MetaTable FindMetaTable (this System.Web.UI.Control current);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.DynamicData.MetaTable FindMetaTable(class System.Web.UI.Control current) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.FindMetaTable(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="current" Type="System.Web.UI.Control" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="current">現在のコントロール。</param>
+        <summary>コンテナーのデータ コントロールの metatable オブジェクトを返します。</summary>
+        <returns>コンテナーのデータ コントロールの metatable オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、検索する方法を示します、<xref:System.Web.DynamicData.MetaTable>コントロール用のオブジェクト。 例では、動的なデータ ページのテンプレートは、AdventureWorksLT データベースの ProductDescription テーブルをカスタムの表示を提供する \DynamicData\CustomPages\ProductDescriptions フォルダーにコピーされます。 追加する Insert.aspx ファイルのマークアップが変更された、`OnDataBound`という名前のイベント ハンドラー`DetailsView1_DataBound`を<xref:System.Web.DynamicData.DynamicDataExtensions.FindMetaTable%2A>を検索するメソッドが呼び出された、<xref:System.Web.DynamicData.MetaTable>オブジェクト。  
+  
+ [!code-csharp[System.Web.DynamicData.DynamicDataExtensions#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataExtensions/cs/Insert.aspx.cs#1)]  
+[!code-aspx-csharp[System.Web.DynamicData.DynamicDataExtensions#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataExtensions/cs/Insert.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatEditValue">
+      <MemberSignature Language="C#" Value="public static string FormatEditValue (this System.Web.DynamicData.IFieldFormattingOptions formattingOptions, object fieldValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string FormatEditValue(class System.Web.DynamicData.IFieldFormattingOptions formattingOptions, object fieldValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.FormatEditValue(System.Web.DynamicData.IFieldFormattingOptions,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formattingOptions" Type="System.Web.DynamicData.IFieldFormattingOptions" RefType="this" />
+        <Parameter Name="fieldValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="formattingOptions">使用する <see cref="T:System.Web.DynamicData.IFieldFormattingOptions" /> インスタンス。</param>
+        <param name="fieldValue">書式を設定するフィールドの値。</param>
+        <summary>指定した書式設定オプションを使用して、指定したフィールドの値を書式設定します。</summary>
+        <returns>指定した書式設定オプションを使用してフォーマットされたフィールドの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicDataExtensions.FormatEditValue%2A>などのメソッドは、<xref:System.Web.DynamicData.DynamicDataExtensions.FormatValue%2A>メソッドが、フィールドが編集モードではときに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatValue">
+      <MemberSignature Language="C#" Value="public static string FormatValue (this System.Web.DynamicData.IFieldFormattingOptions formattingOptions, object fieldValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string FormatValue(class System.Web.DynamicData.IFieldFormattingOptions formattingOptions, object fieldValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.FormatValue(System.Web.DynamicData.IFieldFormattingOptions,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formattingOptions" Type="System.Web.DynamicData.IFieldFormattingOptions" RefType="this" />
+        <Parameter Name="fieldValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="formattingOptions">使用する <see cref="T:System.Web.DynamicData.IFieldFormattingOptions" /> インスタンス。</param>
+        <param name="fieldValue">書式を設定するフィールドの値。</param>
+        <summary>指定した書式設定オプションを使用して、指定したフィールドの値を書式設定します。</summary>
+        <returns>指定した書式設定オプションを使用してフォーマットされたフィールドの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultValues">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,object&gt; GetDefaultValues (this System.Web.UI.IDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, object&gt; GetDefaultValues(class System.Web.UI.IDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.GetDefaultValues(System.Web.UI.IDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.UI.IDataSource" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">既定値を取得する対象のデータ ソース。</param>
+        <summary>指定したデータ ソースの既定値のコレクションを取得します。</summary>
+        <returns>関連付けられている既定値のコレクション、<see cref="T:System.Web.UI.IDataSource" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して既定値のコレクションを設定、<xref:System.Web.DynamicData.DynamicDataExtensions.SetMetaTable%2A>または<xref:System.Web.UI.DataControlExtensions.EnableDynamicData%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultValues">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,object&gt; GetDefaultValues (this System.Web.UI.INamingContainer control);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, object&gt; GetDefaultValues(class System.Web.UI.INamingContainer control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.GetDefaultValues(System.Web.UI.INamingContainer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.INamingContainer" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="control">既定値を取得する対象のデータ コントロールです。</param>
+        <summary>指定されたデータ コントロールの既定値のコレクションを取得します。</summary>
+        <returns>関連付けられている既定値のコレクション、<see cref="T:System.Web.UI.INamingContainer" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して既定値のコレクションを設定、<xref:System.Web.DynamicData.DynamicDataExtensions.SetMetaTable%2A>または<xref:System.Web.UI.DataControlExtensions.EnableDynamicData%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumType">
+      <MemberSignature Language="C#" Value="public static Type GetEnumType (this System.Web.DynamicData.MetaColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetEnumType(class System.Web.DynamicData.MetaColumn column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.GetEnumType(System.Web.DynamicData.MetaColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="column">列挙型を取得する列。</param>
+        <summary>列を表す列挙体の型を取得します。</summary>
+        <returns>基になる型が列挙体以外の場合は、列を表す列挙体の型それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基になる型が列挙体の場合、またはでエンティティ部分クラスに注釈が付いている列、列が列挙体を表す、<xref:System.ComponentModel.DataAnnotations.EnumDataTypeAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetaTable">
+      <MemberSignature Language="C#" Value="public static System.Web.DynamicData.MetaTable GetMetaTable (this System.Web.UI.IDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.DynamicData.MetaTable GetMetaTable(class System.Web.UI.IDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.GetMetaTable(System.Web.UI.IDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.UI.IDataSource" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ ソースのテーブルのメタデータを取得する対象のオブジェクト。</param>
+        <summary>指定されたデータ ソース オブジェクトでのテーブルのメタデータを取得します。</summary>
+        <returns>関連付けられているテーブルのメタデータ、<see cref="T:System.Web.UI.IDataSource" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーブルのメタデータを使用して設定された、<xref:System.Web.DynamicData.DynamicDataExtensions.SetMetaTable%2A>または<xref:System.Web.UI.DataControlExtensions.EnableDynamicData%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetaTable">
+      <MemberSignature Language="C#" Value="public static System.Web.DynamicData.MetaTable GetMetaTable (this System.Web.UI.INamingContainer control);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.DynamicData.MetaTable GetMetaTable(class System.Web.UI.INamingContainer control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.GetMetaTable(System.Web.UI.INamingContainer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.INamingContainer" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="control">テーブルのメタデータを取得する対象のデータ コントロールです。</param>
+        <summary>指定されたデータ コントロールのテーブルのメタデータを取得します。</summary>
+        <returns>関連付けられているテーブルのメタデータ、<see cref="T:System.Web.UI.INamingContainer" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーブルのメタデータを使用して設定された、<xref:System.Web.DynamicData.DynamicDataExtensions.SetMetaTable%2A>または<xref:System.Web.UI.DataControlExtensions.EnableDynamicData%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTable">
+      <MemberSignature Language="C#" Value="public static System.Web.DynamicData.MetaTable GetTable (this System.Web.DynamicData.IDynamicDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.DynamicData.MetaTable GetTable(class System.Web.DynamicData.IDynamicDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.GetTable(System.Web.DynamicData.IDynamicDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.DynamicData.IDynamicDataSource" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ ソース コントロール。</param>
+        <summary>返します、<see cref="T:System.Web.DynamicData.MetaTable" />指定したデータ ソース コントロールに関連付けられているオブジェクト。</summary>
+        <returns>指定されたデータに関連付けられているテーブルはソース コントロールです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="dataSource" /> の <see cref="P:System.Web.DynamicData.IDynamicDataSource.EntitySetName" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="dataSource" /> の <see cref="P:System.Web.DynamicData.IDynamicDataSource.ContextType" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadWith&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public static void LoadWith&lt;TEntity&gt; (this System.Web.UI.WebControls.LinqDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void LoadWith&lt;TEntity&gt;(class System.Web.UI.WebControls.LinqDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.LoadWith``1(System.Web.UI.WebControls.LinqDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.UI.WebControls.LinqDataSource" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEntity">データ ソースによって返されるエンティティの型。</typeparam>
+        <param name="dataSource">LINQ をデータ ソースから外部キーを読み込みます。</param>
+        <summary>セット、<see cref="T:System.Data.Linq.DataLoadOptions" />読み込まれるすべての外部キーのエンティティを強制的に LINQ to SQL データ ソースの値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadWithForeignKeys">
+      <MemberSignature Language="C#" Value="public static void LoadWithForeignKeys (this System.Web.UI.WebControls.LinqDataSource dataSource, Type rowType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void LoadWithForeignKeys(class System.Web.UI.WebControls.LinqDataSource dataSource, class System.Type rowType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.LoadWithForeignKeys(System.Web.UI.WebControls.LinqDataSource,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.UI.WebControls.LinqDataSource" RefType="this" />
+        <Parameter Name="rowType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">LINQ をデータ ソースから外部キーを読み込みます。</param>
+        <param name="rowType">データ ソースによって返されるエンティティの型。</param>
+        <summary>セット、<see cref="T:System.Data.Linq.DataLoadOptions" />読み込まれるすべての外部キーのエンティティを強制的に LINQ to SQL データ ソースの値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。、<xref:System.Data.Linq.DataLoadOptions?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMetaTable">
+      <MemberSignature Language="C#" Value="public static void SetMetaTable (this System.Web.UI.INamingContainer control, System.Web.DynamicData.MetaTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetMetaTable(class System.Web.UI.INamingContainer control, class System.Web.DynamicData.MetaTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.SetMetaTable(System.Web.UI.INamingContainer,System.Web.DynamicData.MetaTable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.INamingContainer" RefType="this" />
+        <Parameter Name="table" Type="System.Web.DynamicData.MetaTable" />
+      </Parameters>
+      <Docs>
+        <param name="control"><see cref="T:System.Web.UI.INamingContainer" />テーブルを含むオブジェクト。</param>
+        <param name="table">テーブルのメタデータ。</param>
+        <summary>指定されたデータ コントロールのテーブルのメタデータを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMetaTable">
+      <MemberSignature Language="C#" Value="public static void SetMetaTable (this System.Web.UI.INamingContainer control, System.Web.DynamicData.MetaTable table, System.Collections.Generic.IDictionary&lt;string,object&gt; defaultValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetMetaTable(class System.Web.UI.INamingContainer control, class System.Web.DynamicData.MetaTable table, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; defaultValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.SetMetaTable(System.Web.UI.INamingContainer,System.Web.DynamicData.MetaTable,System.Collections.Generic.IDictionary{System.String,System.Object})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.INamingContainer" RefType="this" />
+        <Parameter Name="table" Type="System.Web.DynamicData.MetaTable" />
+        <Parameter Name="defaultValues" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="control"><see cref="T:System.Web.UI.INamingContainer" />テーブルを含むオブジェクト。</param>
+        <param name="table">テーブルのメタデータ。</param>
+        <param name="defaultValues">既定値のマッピング。</param>
+        <summary>指定されたデータ コントロールのテーブルのメタデータと既定値のマッピングを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMetaTable">
+      <MemberSignature Language="C#" Value="public static void SetMetaTable (this System.Web.UI.INamingContainer control, System.Web.DynamicData.MetaTable table, object defaultValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetMetaTable(class System.Web.UI.INamingContainer control, class System.Web.DynamicData.MetaTable table, object defaultValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.SetMetaTable(System.Web.UI.INamingContainer,System.Web.DynamicData.MetaTable,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.INamingContainer" RefType="this" />
+        <Parameter Name="table" Type="System.Web.DynamicData.MetaTable" />
+        <Parameter Name="defaultValues" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="control"><see cref="T:System.Web.UI.INamingContainer" />テーブルを含むオブジェクト。</param>
+        <param name="table">テーブルのメタデータ。</param>
+        <param name="defaultValues">既定値のマッピング。</param>
+        <summary>指定されたデータ コントロールのテーブルのメタデータと既定値のマッピングを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetMetaTable">
+      <MemberSignature Language="C#" Value="public static bool TryGetMetaTable (this System.Web.UI.IDataSource dataSource, out System.Web.DynamicData.MetaTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGetMetaTable(class System.Web.UI.IDataSource dataSource, [out] class System.Web.DynamicData.MetaTable&amp; table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.TryGetMetaTable(System.Web.UI.IDataSource,System.Web.DynamicData.MetaTable@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.UI.IDataSource" RefType="this" />
+        <Parameter Name="table" Type="System.Web.DynamicData.MetaTable&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">テーブルを含むデータ ソース。</param>
+        <param name="table">このメソッドが戻るときに、テーブルのメタデータが含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>テーブルのメタデータが使用できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />テーブルのメタデータがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetMetaTable">
+      <MemberSignature Language="C#" Value="public static bool TryGetMetaTable (this System.Web.UI.INamingContainer control, out System.Web.DynamicData.MetaTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGetMetaTable(class System.Web.UI.INamingContainer control, [out] class System.Web.DynamicData.MetaTable&amp; table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataExtensions.TryGetMetaTable(System.Web.UI.INamingContainer,System.Web.DynamicData.MetaTable@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.INamingContainer" RefType="this" />
+        <Parameter Name="table" Type="System.Web.DynamicData.MetaTable&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="control"><see cref="T:System.Web.UI.INamingContainer" />テーブルを含むオブジェクト。</param>
+        <param name="table">このメソッドが戻るときに、テーブルのメタデータが含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>テーブルのメタデータが使用できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />テーブルのメタデータがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

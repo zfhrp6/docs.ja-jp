@@ -1,0 +1,95 @@
+<Type Name="ContractArgumentValidatorAttribute" FullName="System.Diagnostics.Contracts.ContractArgumentValidatorAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ContractArgumentValidatorAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContractArgumentValidatorAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Contracts.ContractArgumentValidatorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>により、従来のファクタリング<see langword="if-then-throw" />、再利用するための異なるメソッドにコードおよびスローされる例外と引数を完全に制御を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コードで明示的に使用する場合`if-then-throw`パラメーターを検証するコードは、次の例で示すようにで、チェックを実行し、失敗した場合、特定の例外をスローするヘルパー メソッドを使用します。  
+  
+ [!code-csharp[System.Diagnostics.Contracts.ContractArgumentValidatorAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.diagnostics.contracts.contractargumentvalidatorattribute/cs/ifthenthrow1.cs#1)]
+ [!code-vb[System.Diagnostics.Contracts.ContractArgumentValidatorAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.diagnostics.contracts.contractargumentvalidatorattribute/vb/ifthenthrow1.vb#1)]  
+  
+ この例では`Execute`パラメーターの値がされないことを指定する、選択可能な必須の条件を持つ`null`します。 あることを認識するコントラクト ツールへの呼び出しを有効にする`ValidationHelper.NotNull`コントラクトを表しますで呼び出されたメソッドをマークすることができます、<xref:System.Diagnostics.Contracts.ContractArgumentValidatorAttribute>属性。 <xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A?displayProperty=nameWithType>メソッドの呼び出しは、ドキュメントの生成と静的の確認では、次のように、適切な仕様を抽出するためのツールを有効にするために使用する必要があります。  
+  
+ [!code-csharp[System.Diagnostics.Contracts.ContractArgumentValidatorAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.diagnostics.contracts.contractargumentvalidatorattribute/cs/ifthenthrow2.cs#2)]
+ [!code-vb[System.Diagnostics.Contracts.ContractArgumentValidatorAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.diagnostics.contracts.contractargumentvalidatorattribute/vb/ifthenthrow2.vb#2)]  
+  
+ 加え`if-then-throw`ステートメント、検証メソッドのコントラクトのコントラクトのセクションではコントラクト検証メソッドを他の呼び出しを含む可能性があります。 ただし、他のコントラクトはなし (など<xref:System.Diagnostics.Contracts.Contract.Requires%2A?displayProperty=nameWithType>、または<xref:System.Diagnostics.Contracts.Contract.Ensures%2A?displayProperty=nameWithType>) は許可します。 次のコード、<xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A?displayProperty=nameWithType>コントラクトのすべてのツールでの呼び出しは無視されます。  
+  
+ 次の例は、既存の観点から書き込まれる範囲引数バリデーター`NotNull`バリデーター メソッドです。  
+  
+ [!code-csharp[System.Diagnostics.Contracts.ContractArgumentValidatorAttribute#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.diagnostics.contracts.contractargumentvalidatorattribute/cs/ifthenthrow3.cs#3)]
+ [!code-vb[System.Diagnostics.Contracts.ContractArgumentValidatorAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.diagnostics.contracts.contractargumentvalidatorattribute/vb/ifthenthrow3.vb#3)]  
+  
+ 仕様の観点から、`Execute`メソッドには次の 3 つのコントラクト。  
+  
+```  
+Contract.Requires<ArgumentNullException>(data != null);  
+Contract.Requires<ArgumentOutOfRangeException>(position >= 0);  
+Contract.Requires<ArgumentOutOfRangeException>(position < data.Length);  
+  
+```  
+  
+ 標準の方法でコントラクトの検証メソッドの呼び出し自由に混合できるその他のコントラクトでなど<xref:System.Diagnostics.Contracts.Contract.Ensures%2A?displayProperty=nameWithType>または<xref:System.Diagnostics.Contracts.Contract.Requires%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContractArgumentValidatorAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.ContractArgumentValidatorAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.Contracts.ContractArgumentValidatorAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

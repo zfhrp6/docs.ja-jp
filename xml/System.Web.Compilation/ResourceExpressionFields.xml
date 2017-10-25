@@ -1,0 +1,93 @@
+<Type Name="ResourceExpressionFields" FullName="System.Web.Compilation.ResourceExpressionFields">
+  <TypeSignature Language="C#" Value="public sealed class ResourceExpressionFields" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ResourceExpressionFields extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ResourceExpressionFields" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>リソースの解析された式からのフィールドが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソースの式に含まれる値が解析されのインスタンスに格納されているページが解析される際に、<xref:System.Web.Compilation.ResourceExpressionFields>クラスです。 これは、<xref:System.Web.Compilation.ResourceExpressionFields>オブジェクトには、2 つのフィールドが含まれています。<xref:System.Web.Compilation.ResourceExpressionFields.ClassKey%2A>と<xref:System.Web.Compilation.ResourceExpressionFields.ResourceKey%2A>です。 これらのフィールドは、明示的でリソースの式の値から取り出さ (`<%$ Resources: ClassKey, ResourceKey %>`) または暗黙的な (`meta:resourcekey="ResourceKey"`) 形式です。  
+  
+ <xref:System.Web.Compilation.ResourceExpressionFields.ClassKey%2A>プロパティは、リソース ファイルにマップされているリソースのクラス名を識別します。 たとえば、Financial.resx、または Financial.en GB.resx などのローカライズされたバージョンをという名前のリソース ファイルを参照するリソースの式として表示される`<%$ Resources: Financial, ResourceKey %>`です。 解析後に、<xref:System.Web.Compilation.ResourceExpressionFields.ClassKey%2A>プロパティはその値として「財務」を返します。  
+  
+ <xref:System.Web.Compilation.ResourceExpressionFields.ResourceKey%2A>プロパティは、ファイルから取得する特定のキー/値ペアを識別します。 Financial.resx ファイルと呼ばれるキーが含まれている場合`Currency`、リソースの式の値を指定するでした`<%$ Resources: Financial, Currency %>`です。 解析後に、<xref:System.Web.Compilation.ResourceExpressionFields.ResourceKey%2A>プロパティはその値として"Currency"を返します。  
+  
+ を介して、リソースの式を解析、<xref:System.Web.Compilation.ResourceExpressionBuilder.ParseExpression%2A>メソッドです。  
+  
+> [!CAUTION]
+>  機密情報をリソース ファイルに格納されません必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClassKey">
+      <MemberSignature Language="C#" Value="public string ClassKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClassKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ResourceExpressionFields.ClassKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式の解析されたリソース クラス キーを取得します。</summary>
+        <value>A<see cref="T:System.String" />クラス キーを含むまたは<see cref="F:System.String.Empty" />クラス キーが設定されていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、式の解析されたリソース クラス キーを返します。 クラス キーは、リソース ファイルの名前を表すし、コンマ (,) の前に、フォームの式で指定された値は、`<%$ Resources: [Namespace.]ClassKey, ResourceKey $>`です。 リソース クラスの名前空間の値は省略できます。 名前空間とクラスのキーが返される名前空間が提供されている場合、<xref:System.Web.Compilation.ResourceExpressionFields.ClassKey%2A>プロパティです。 クラス キーは、スペースを含めることはできませんまたは 2 バイト文字セット (DBCS)。  
+  
+ Financial.resx または Financial.en GB.resx などのローカライズされたバージョンをという名前のリソース ファイルを参照するには、リソースの式が含まれます <`%$ Resources: Financial, ResourceKey %>`です。 解析後に、<xref:System.Web.Compilation.ResourceExpressionFields.ClassKey%2A>プロパティはその値として「財務」を返します。  
+  
+> [!CAUTION]
+>  機密情報をリソース ファイルに格納されません必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceKey">
+      <MemberSignature Language="C#" Value="public string ResourceKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResourceKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ResourceExpressionFields.ResourceKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式の解析されたリソースのリソース キーを取得します。</summary>
+        <value>A<see cref="T:System.String" />リソース キーを含むまたは<see cref="F:System.String.Empty" />リソース キーが設定されていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、式の解析されたリソースのリソース キーを返します。 リソース キーは、コンマ (,) の後に、フォームの式で指定された値`<%$ Resources: ClassKey, ResourceKey %>`です。 <xref:System.Web.Compilation.ResourceExpressionFields.ResourceKey%2A>プロパティは、クラス キーにマップされているリソース ファイル内の特定のキー/値ペアを識別します。 たとえば、という名前のファイルの場合 Financial.resx が含まれていますと呼ばれるキーには`Currency`、リソースの式で値を指定する可能性があります`<%$ Resources: Financial, Currency %>`です。 解析後に、<xref:System.Web.Compilation.ResourceExpressionFields.ResourceKey%2A>プロパティはその値として"Currency"を返します。  
+  
+> [!CAUTION]
+>  機密情報をリソース ファイルに格納されません必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

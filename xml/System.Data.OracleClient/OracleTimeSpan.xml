@@ -1,0 +1,832 @@
+<Type Name="OracleTimeSpan" FullName="System.Data.OracleClient.OracleTimeSpan">
+  <TypeSignature Language="C#" Value="public struct OracleTimeSpan : IComparable, System.Data.SqlTypes.INullable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit OracleTimeSpan extends System.ValueType implements class System.Data.SqlTypes.INullable, class System.IComparable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleTimeSpan" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.OracleClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Data.SqlTypes.INullable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Oracle 9i に対応して時間間隔を表す<see langword="INTERVAL DAY TO SECOND" />データ型。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Oracle`INTERVAL DAY TO SECOND`データ型 (Oracle 9i 以降) 日数、時間、分、および秒単位で時間間隔を含み、11 バイトのサイズが固定されています。  
+  
+ 取得する、<xref:System.Data.OracleClient.OracleTimeSpan>オブジェクトを呼び出し、<xref:System.Data.OracleClient.OracleDataReader.GetOracleTimeSpan%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleTimeSpan (System.Data.OracleClient.OracleTimeSpan from);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Data.OracleClient.OracleTimeSpan from) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.#ctor(System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="from" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="from">既存の<see cref="T:System.Data.OracleClient.OracleTimeSpan" />新しい構造の作成元の構造体。</param>
+        <summary>新しい初期化<see cref="T:System.Data.OracleClient.OracleTimeSpan" />既存の構造体。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleTimeSpan (long ticks);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 ticks) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.#ctor(System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ticks" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="ticks">100 ナノ秒単位で表される期間。</param>
+        <summary>新しい初期化<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造を指定したタイマー刻み数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleTimeSpan (TimeSpan ts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.TimeSpan ts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.#ctor(System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ts" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="ts">指定した <see cref="T:System.TimeSpan" />。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 、指定した構造<see cref="T:System.TimeSpan" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleTimeSpan (int hours, int minutes, int seconds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 hours, int32 minutes, int32 seconds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.#ctor(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="hours" Type="System.Int32" />
+        <Parameter Name="minutes" Type="System.Int32" />
+        <Parameter Name="seconds" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="hours">時間数。</param>
+        <param name="minutes">分数。</param>
+        <param name="seconds">秒数。</param>
+        <summary>新しい初期化<see cref="T:System.Data.OracleClient.OracleTimeSpan" />を指定した時間、分、および秒の構造体。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">パラメーターを指定して、<see cref="T:System.Data.OracleClient.OracleTimeSpan" />値より小さい<see cref="F:System.Data.OracleClient.OracleTimeSpan.MinValue" />以上<see cref="F:System.Data.OracleClient.OracleTimeSpan.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleTimeSpan (int days, int hours, int minutes, int seconds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 days, int32 hours, int32 minutes, int32 seconds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="days" Type="System.Int32" />
+        <Parameter Name="hours" Type="System.Int32" />
+        <Parameter Name="minutes" Type="System.Int32" />
+        <Parameter Name="seconds" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="days">日数。</param>
+        <param name="hours">時間数。</param>
+        <param name="minutes">分数。</param>
+        <param name="seconds">秒数。</param>
+        <summary>新しい初期化<see cref="T:System.Data.OracleClient.OracleTimeSpan" />を指定した日数、時間、分、および秒の構造体。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">パラメーターを指定して、<see cref="T:System.Data.OracleClient.OracleTimeSpan" />値より小さい<see cref="F:System.Data.OracleClient.OracleTimeSpan.MinValue" />以上<see cref="F:System.Data.OracleClient.OracleTimeSpan.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleTimeSpan (int days, int hours, int minutes, int seconds, int milliseconds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 days, int32 hours, int32 minutes, int32 seconds, int32 milliseconds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="days" Type="System.Int32" />
+        <Parameter Name="hours" Type="System.Int32" />
+        <Parameter Name="minutes" Type="System.Int32" />
+        <Parameter Name="seconds" Type="System.Int32" />
+        <Parameter Name="milliseconds" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="days">日数。</param>
+        <param name="hours">時間数。</param>
+        <param name="minutes">分数。</param>
+        <param name="seconds">秒数。</param>
+        <param name="milliseconds">ミリ秒数。</param>
+        <summary>新しい初期化<see cref="T:System.Data.OracleClient.OracleTimeSpan" />を指定した日数、時間、分、秒、およびミリ秒の構造体。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">パラメーターを指定して、<see cref="T:System.Data.OracleClient.OracleTimeSpan" />値より小さい<see cref="F:System.Data.OracleClient.OracleTimeSpan.MinValue" />以上<see cref="F:System.Data.OracleClient.OracleTimeSpan.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較されるオブジェクト。</param>
+        <summary>これと比較<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造が指定したオブジェクトをこれらの相対値を示す値を返します。</summary>
+        <returns>インスタンスの相対値を示す符号付き数値、<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造とオブジェクト。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>条件  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスは、オブジェクトより小さいです。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスは、オブジェクトと同じです。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスが、オブジェクトより大きいか、またはオブジェクトが null 参照 (<see langword="Nothing" /> Visual Basic で)。  
+  
+ </description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Days">
+      <MemberSignature Language="C#" Value="public int Days { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Days" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleTimeSpan.Days" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスで表される日数の数を取得します。</summary>
+        <value>このインスタンスの日の部分。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較されるオブジェクト。</param>
+        <summary>指定したオブジェクトのパラメーターを<see cref="P:System.Data.OracleClient.OracleTimeSpan.Value" />のプロパティ、<see cref="T:System.Data.OracleClient.OracleTimeSpan" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合は、オブジェクトのインスタンスでは<see cref="T:System.Data.OracleClient.OracleTimeSpan" />、2 つが等しいか、それ以外の場合と<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean Equals (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean Equals(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.Equals(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造体をそれらが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />2 つの値が等しい場合はそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスのハッシュ コードを取得します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GreaterThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean GreaterThan (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean GreaterThan(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.GreaterThan(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleTimeSpan" />を 1 つは、2 番目より大きいかどうかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは 2 番目のインスタンスよりも大きいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleTimeSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean GreaterThanOrEqual (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean GreaterThanOrEqual(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.GreaterThanOrEqual(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleTimeSpan" />を 1 つは、2 番目以上かどうかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスがより大きいか等しい 2 番目のインスタンスでは、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleTimeSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />なります<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hours">
+      <MemberSignature Language="C#" Value="public int Hours { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Hours" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleTimeSpan.Hours" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスで表される時間数を取得します。</summary>
+        <value>0 ~ 23 の範囲には、このインスタンスの時間部分。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNull">
+      <MemberSignature Language="C#" Value="public bool IsNull { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleTimeSpan.IsNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Data.OracleClient.OracleTimeSpan.Value" />のプロパティ、<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造が null です。</summary>
+        <value>
+          <see langword="true" />場合<see cref="P:System.Data.OracleClient.OracleTimeSpan.Value" />null、それ以外の場合は、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LessThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean LessThan (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean LessThan(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.LessThan(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleTimeSpan" />最初が小さいかどうかを決定する 2 番目よりです。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />場合は、最初のインスタンスは、2 つ目のインスタンスより小さい、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleTimeSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean LessThanOrEqual (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean LessThanOrEqual(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.LessThanOrEqual(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleTimeSpan" />を最初は、2 番目以下かどうかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは、2 番目のインスタンスでは、小さいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleTimeSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxValue">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleTimeSpan MaxValue;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleTimeSpan MaxValue" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleTimeSpan.MaxValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleTimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効な日付の最大値を表す、<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、10675199.02:48:05.4775807 です。 大きい値を取得する<xref:System.Data.OracleClient.OracleTimeSpan.MaxValue>、Oracle 選択 TO_CHAR ステートメントを使用します。 Oracle 9i でサポートされる範囲の詳細については`INTERVAL DAY TO SECOND`型では、Oracle のマニュアルを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Milliseconds">
+      <MemberSignature Language="C#" Value="public int Milliseconds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Milliseconds" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleTimeSpan.Milliseconds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスで表される整数のミリ秒単位の数を取得します。</summary>
+        <value>0 ~ 999 の間には、このインスタンスのミリ秒の部分です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minutes">
+      <MemberSignature Language="C#" Value="public int Minutes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Minutes" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleTimeSpan.Minutes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスで表される整数の分単位の数を取得します。</summary>
+        <value>0 ~ 59 の間には、このインスタンスの分の部分。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinValue">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleTimeSpan MinValue;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleTimeSpan MinValue" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleTimeSpan.MinValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleTimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最小の有効な日付の値を表す、<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は --10675199.02:48:05.4775808 です。 値を取得するより小さい<xref:System.Data.OracleClient.OracleTimeSpan.MinValue>、Oracle 選択 TO_CHAR ステートメントを使用します。 Oracle 9i でサポートされる範囲の詳細については`INTERVAL DAY TO SECOND`型では、Oracle のマニュアルを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotEquals">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean NotEquals (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean NotEquals(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.NotEquals(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスの論理比較を実行<see cref="T:System.Data.OracleClient.OracleTimeSpan" />両者が等しくないかどうかを決定します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しくない場合または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しい場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleTimeSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleTimeSpan Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleTimeSpan Null" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleTimeSpan.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleTimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てることが null 値を表す、<see cref="P:System.Data.OracleClient.OracleTimeSpan.Value" />のインスタンスのプロパティ、<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Null`関数の定数として、<xref:System.Data.OracleClient.OracleTimeSpan>構造体。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator == (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_Equality(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.op_Equality(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造体をそれらが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />2 つの値が等しい場合はそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleTimeSpan.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator TimeSpan (System.Data.OracleClient.OracleTimeSpan x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.TimeSpan op_Explicit(valuetype System.Data.OracleClient.OracleTimeSpan x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.op_Explicit(System.Data.OracleClient.OracleTimeSpan)~System.TimeSpan" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator System.Data.OracleClient.OracleTimeSpan (string x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleTimeSpan op_Explicit(string x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.op_Explicit(System.String)~System.Data.OracleClient.OracleTimeSpan" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleTimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &gt; (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_GreaterThan(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.op_GreaterThan(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleTimeSpan" />を 1 つは、2 番目より大きいかどうかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは 2 番目のインスタンスよりも大きいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleTimeSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleTimeSpan.GreaterThan%28System.Data.OracleClient.OracleTimeSpan%2CSystem.Data.OracleClient.OracleTimeSpan%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &gt;= (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_GreaterThanOrEqual(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.op_GreaterThanOrEqual(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleTimeSpan" />を 1 つは、2 番目以上かどうかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスがより大きいか等しい 2 番目のインスタンスでは、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleTimeSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleTimeSpan.GreaterThanOrEqual%28System.Data.OracleClient.OracleTimeSpan%2CSystem.Data.OracleClient.OracleTimeSpan%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator != (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_Inequality(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.op_Inequality(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスの論理比較を実行<see cref="T:System.Data.OracleClient.OracleTimeSpan" />をそれらが等しいかどうかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しくない場合または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しい場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleTimeSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleTimeSpan.NotEquals%28System.Data.OracleClient.OracleTimeSpan%2CSystem.Data.OracleClient.OracleTimeSpan%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &lt; (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_LessThan(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.op_LessThan(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleTimeSpan" />最初が小さいかどうかを決定する 2 番目よりです。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />場合は、最初のインスタンスは、2 つ目のインスタンスより小さい、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleTimeSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleTimeSpan.LessThan%28System.Data.OracleClient.OracleTimeSpan%2CSystem.Data.OracleClient.OracleTimeSpan%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &lt;= (System.Data.OracleClient.OracleTimeSpan x, System.Data.OracleClient.OracleTimeSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_LessThanOrEqual(valuetype System.Data.OracleClient.OracleTimeSpan x, valuetype System.Data.OracleClient.OracleTimeSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.op_LessThanOrEqual(System.Data.OracleClient.OracleTimeSpan,System.Data.OracleClient.OracleTimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleTimeSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleTimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleTimeSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleTimeSpan" />を最初は、2 番目以下かどうかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは、2 番目のインスタンスでは、小さいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleTimeSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleTimeSpan.LessThanOrEqual%28System.Data.OracleClient.OracleTimeSpan%2CSystem.Data.OracleClient.OracleTimeSpan%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleTimeSpan Parse (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleTimeSpan Parse(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleTimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s"><see langword="String" />で解析できません。</param>
+        <summary>指定された変換<see cref="T:System.String" />形式の日付と時刻をその<see cref="T:System.Data.OracleClient.OracleTimeSpan" />と同等です。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造体の指定したによって表される日時と等しい<see langword="String" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seconds">
+      <MemberSignature Language="C#" Value="public int Seconds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Seconds" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleTimeSpan.Seconds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスで表される秒数を取得します。</summary>
+        <value>0 ~ 59 の間には、このインスタンスの 2 番目のコンポーネントです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleTimeSpan.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この変換<see cref="T:System.Data.OracleClient.OracleTimeSpan" />に構造体、<see cref="T:System.String" />です。</summary>
+        <returns>A<see langword="String" />を表す、<see cref="P:System.Data.OracleClient.OracleTimeSpan.Value" />プロパティこの<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public TimeSpan Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleTimeSpan.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得、<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造体。</summary>
+        <value>この値<see cref="T:System.Data.OracleClient.OracleTimeSpan" />構造体。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

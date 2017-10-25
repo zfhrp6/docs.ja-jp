@@ -1,0 +1,411 @@
+<Type Name="ObjectPoolingAttribute" FullName="System.EnterpriseServices.ObjectPoolingAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ObjectPoolingAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ObjectPoolingAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ObjectPoolingAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>有効にして、コンポーネントのオブジェクトがプールを構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト プールが指定されている場合に無効にしないで COM + カタログでCOM + カタログで有効な場合は、コンポーネントで指定しなければなりません。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.EnterpriseServices.ObjectPoolingAttribute>を参照してください、<xref:System.EnterpriseServices.ObjectPoolingAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この属性の使用を示します。  
+  
+ [!code-cpp[EnterpriseServices_Pooling#0](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CPP/inspector.cpp#0)]
+ [!code-csharp[EnterpriseServices_Pooling#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CS/inspector.cs#0)]
+ [!code-vb[EnterpriseServices_Pooling#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Pooling/VB/inspector.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.ObjectPoolingAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectPoolingAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ObjectPoolingAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.ObjectPoolingAttribute" />クラスとセット、 <see cref="P:System.EnterpriseServices.ObjectPoolingAttribute.Enabled" />、 <see cref="P:System.EnterpriseServices.ObjectPoolingAttribute.MaxPoolSize" />、 <see cref="P:System.EnterpriseServices.ObjectPoolingAttribute.MinPoolSize" />、および<see cref="P:System.EnterpriseServices.ObjectPoolingAttribute.CreationTimeout" />プロパティを既定値です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.EnterpriseServices.ObjectPoolingAttribute>です。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|有効|`true`|  
+|MaxPoolSize|-1|  
+|MinPoolSize|-1|  
+|CreationTimeout|-1|  
+  
+   
+  
+## Examples  
+ 次のコード例では、この属性の使用を示します。  
+  
+ [!code-cpp[EnterpriseServices_Pooling#0](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CPP/inspector.cpp#0)]
+ [!code-csharp[EnterpriseServices_Pooling#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CS/inspector.cs#0)]
+ [!code-vb[EnterpriseServices_Pooling#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Pooling/VB/inspector.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectPoolingAttribute (bool enable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool enable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ObjectPoolingAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="enable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="enable">
+          <see langword="true" />オブジェクト プールを有効にするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.ObjectPoolingAttribute" />クラスとセット、<see cref="P:System.EnterpriseServices.ObjectPoolingAttribute.Enabled" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.EnterpriseServices.ObjectPoolingAttribute>です。  
+  
+ [!code-cpp[EnterpriseServicesObjectPoolingAttribute#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/cpp/class1.cpp#1)]
+ [!code-csharp[EnterpriseServicesObjectPoolingAttribute#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/CS/class1.cs#1)]
+ [!code-vb[EnterpriseServicesObjectPoolingAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectPoolingAttribute (int minPoolSize, int maxPoolSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 minPoolSize, int32 maxPoolSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ObjectPoolingAttribute.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="minPoolSize" Type="System.Int32" />
+        <Parameter Name="maxPoolSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="minPoolSize">最小プール サイズ。</param>
+        <param name="maxPoolSize">最大プール サイズ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.ObjectPoolingAttribute" />クラスとセット、<see cref="P:System.EnterpriseServices.ObjectPoolingAttribute.MaxPoolSize" />と<see cref="P:System.EnterpriseServices.ObjectPoolingAttribute.MinPoolSize" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.EnterpriseServices.ObjectPoolingAttribute>です。  
+  
+ [!code-cpp[EnterpriseServicesObjectPoolingAttribute#3](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/cpp/class1.cpp#3)]
+ [!code-csharp[EnterpriseServicesObjectPoolingAttribute#3](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/CS/class1.cs#3)]
+ [!code-vb[EnterpriseServicesObjectPoolingAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectPoolingAttribute (bool enable, int minPoolSize, int maxPoolSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool enable, int32 minPoolSize, int32 maxPoolSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ObjectPoolingAttribute.#ctor(System.Boolean,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="enable" Type="System.Boolean" />
+        <Parameter Name="minPoolSize" Type="System.Int32" />
+        <Parameter Name="maxPoolSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="enable">
+          <see langword="true" />オブジェクト プールを有効にするにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="minPoolSize">最小プール サイズ。</param>
+        <param name="maxPoolSize">最大プール サイズ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.ObjectPoolingAttribute" />クラスとセット、 <see cref="P:System.EnterpriseServices.ObjectPoolingAttribute.Enabled" />、 <see cref="P:System.EnterpriseServices.ObjectPoolingAttribute.MaxPoolSize" />、および<see cref="P:System.EnterpriseServices.ObjectPoolingAttribute.MinPoolSize" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.EnterpriseServices.ObjectPoolingAttribute>です。  
+  
+ [!code-cpp[EnterpriseServicesObjectPoolingAttribute#2](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/cpp/class1.cpp#2)]
+ [!code-csharp[EnterpriseServicesObjectPoolingAttribute#2](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/CS/class1.cs#2)]
+ [!code-vb[EnterpriseServicesObjectPoolingAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterSaveChanges">
+      <MemberSignature Language="C#" Value="public bool AfterSaveChanges (System.Collections.Hashtable info);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool AfterSaveChanges(class System.Collections.Hashtable info) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ObjectPoolingAttribute.AfterSaveChanges(System.Collections.Hashtable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Collections.Hashtable" />
+      </Parameters>
+      <Docs>
+        <param name="info">内部キーによって参照される内部オブジェクトを格納するハッシュ テーブルです。</param>
+        <summary>インストールして、COM + カタログでアセンブリを構成中に、.NET Framework インフラストラクチャによって内部的に呼び出さです。</summary>
+        <returns>
+          <see langword="true" />メソッドには、変更が行われます場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリック メソッドである場合でも、<xref:System.EnterpriseServices.ObjectPoolingAttribute.AfterSaveChanges%2A>メソッドは、.NET Framework インフラストラクチャ内から使用するだけです。 適用する開発者にとって十分では、<xref:System.EnterpriseServices.ObjectPoolingAttribute>属性をクラスし、そのインターフェイスで他のメンバーを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Apply">
+      <MemberSignature Language="C#" Value="public bool Apply (System.Collections.Hashtable info);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Apply(class System.Collections.Hashtable info) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ObjectPoolingAttribute.Apply(System.Collections.Hashtable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Collections.Hashtable" />
+      </Parameters>
+      <Docs>
+        <param name="info">オブジェクト プール プロパティの適用、内部キーによって参照される内部オブジェクトを格納するハッシュ テーブル。</param>
+        <summary>適用中に、.NET Framework インフラストラクチャによって内部的に呼び出され、 <see cref="T:System.EnterpriseServices.ObjectPoolingAttribute" /> :class 属性をサービスのコンポーネントです。</summary>
+        <returns>
+          <see langword="true " />メソッドには、変更が行われます場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリック メソッドである場合でも、<xref:System.EnterpriseServices.ObjectPoolingAttribute.Apply%2A>メソッドは、.NET Framework インフラストラクチャ内から使用するだけです。 適用する開発者にとって十分では、<xref:System.EnterpriseServices.ObjectPoolingAttribute>属性をクラスし、そのインターフェイスで他のメンバーを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreationTimeout">
+      <MemberSignature Language="C#" Value="public int CreationTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CreationTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ObjectPoolingAttribute.CreationTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用可能になる、プールで例外をスローする前にオブジェクトを待機する時間の長さを設定します。 この値はミリ秒です。</summary>
+        <value>タイムアウト値 (ミリ秒)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントがどのくらいの時間を指定します (ミリ秒単位) オブジェクトをプールから返されるため、待機します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-cpp[EnterpriseServices_Pooling#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CPP/inspector.cpp#1)]
+ [!code-csharp[EnterpriseServices_Pooling#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CS/inspector.cs#1)]
+ [!code-vb[EnterpriseServices_Pooling#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Pooling/VB/inspector.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ObjectPoolingAttribute.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクト プールが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />オブジェクト プールが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を取得し、値を設定、`ObjectPoolingAttribute`の<xref:System.EnterpriseServices.ObjectPoolingAttribute.Enabled%2A>プロパティです。  
+  
+ [!code-cpp[EnterpriseServicesObjectPoolingAttribute#4](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/cpp/class1.cpp#4)]
+ [!code-csharp[EnterpriseServicesObjectPoolingAttribute#4](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/CS/class1.cs#4)]
+ [!code-vb[EnterpriseServicesObjectPoolingAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesObjectPoolingAttribute/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidTarget">
+      <MemberSignature Language="C#" Value="public bool IsValidTarget (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsValidTarget(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ObjectPoolingAttribute.IsValidTarget(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">サービス コンポーネントを示す特殊な値をチェックする .NET Framework インフラストラクチャによって生成される文字列。</param>
+        <summary>インストールして、COM + カタログでアセンブリを構成中に、.NET Framework インフラストラクチャによって内部的に呼び出さです。</summary>
+        <returns>
+          <see langword="true" />場合は、属性は、サービス コンポーネントのクラスに適用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリック メソッドである場合でも、<xref:System.EnterpriseServices.ObjectPoolingAttribute.IsValidTarget%2A>メソッドは、.NET Framework インフラストラクチャ内から使用するだけです。 適用する開発者にとって十分では、<xref:System.EnterpriseServices.ObjectPoolingAttribute>属性をクラスし、そのインターフェイスで他のメンバーを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPoolSize">
+      <MemberSignature Language="C#" Value="public int MaxPoolSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxPoolSize" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ObjectPoolingAttribute.MaxPoolSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプールの最大サイズの値を設定します。</summary>
+        <value>プール内のオブジェクトの最大数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ObjectPoolingAttribute.MaxPoolSize%2A>プール マネージャーで作成される、両方積極的にクライアントによって使用されると、プールの非アクティブなプール内のオブジェクトの最大数を表します。 オブジェクトを作成するときに、プール マネージャーが、最大プール サイズに達していないと、プール マネージャーがクライアントに提供する新しいオブジェクトを作成されていない場合ことを確認するを確認します。 最大プール サイズに達している場合、クライアント要求はキューに入っているおよび受信した順序で、プールから最初の使用可能なオブジェクトを受け取ります。 オブジェクトの作成は、指定した期間の後にタイムアウトを要求します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-cpp[EnterpriseServices_Pooling#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CPP/inspector.cpp#1)]
+ [!code-csharp[EnterpriseServices_Pooling#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CS/inspector.cs#1)]
+ [!code-vb[EnterpriseServices_Pooling#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Pooling/VB/inspector.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinPoolSize">
+      <MemberSignature Language="C#" Value="public int MinPoolSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinPoolSize" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ObjectPoolingAttribute.MinPoolSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプールの最小サイズの値を設定します。</summary>
+        <value>プール内のオブジェクトの最小数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ObjectPoolingAttribute.MinPoolSize%2A>アプリケーションの起動時に作成されるオブジェクトの数と、アプリケーションの実行中に、プールで保持するオブジェクトの最小数を表します。 プールで使用可能なオブジェクトの数が指定の最小値を下回る場合、新しいオブジェクトは、プールの補充を保留状態のオブジェクトのすべての要求を満たすために作成されます。 プールで使用可能なオブジェクトの数が最小の数よりも大きい場合は、そうした過剰なオブジェクトは、クリーンアップ サイクル中に破棄されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-cpp[EnterpriseServices_Pooling#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CPP/inspector.cpp#1)]
+ [!code-csharp[EnterpriseServices_Pooling#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CS/inspector.cs#1)]
+ [!code-vb[EnterpriseServices_Pooling#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Pooling/VB/inspector.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

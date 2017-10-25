@@ -1,0 +1,263 @@
+<Type Name="RenderCapability" FullName="System.Windows.Media.RenderCapability">
+  <TypeSignature Language="C#" Value="public static class RenderCapability" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit RenderCapability extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.RenderCapability" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>により、WPF アプリケーションをそれに関連付けられた現在の描画層でクエリを<see cref="T:System.Windows.Threading.Dispatcher" />オブジェクトと、変更の通知に登録します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] アプリケーションを実行するデバイスのグラフィックス ハードウェア性能は描画層で決まります。 次の描画層のレベルに最も影響のグラフィックス ハードウェア機能を示します。  
+  
+-   ビデオ RAM: のグラフィックス ハードウェアのビデオ メモリ量は、合成グラフィックスのために使用するバッファーの数とサイズを決定します。  
+  
+-   ピクセル シェーダー: ピクセル シェーダーは、グラフィックス ピクセル単位で効果を計算する関数を処理します。 表示されるグラフィックスの解像度によっては、各表示フレームの処理に数百万単位のピクセルが必要になることがあります。  
+  
+-   頂点シェーダー: 頂点シェーダーは、グラフィックス処理オブジェクトの頂点のデータの数学的な操作を実行する関数です。  
+  
+-   マルチ テクスチャのサポート: マルチ テクスチャのサポートは、3 D グラフィックス オブジェクトの描画操作中に 2 つ以上の別個のテクスチャを適用する機能を指します。 マルチテクスチャ サポートの度合いは、グラフィックス ハードウェア上のマルチテクスチャ ユニットの数で決まります。  
+  
+ ピクセル シェーダー、頂点シェーダーとマルチ テクスチャ機能の定義に使用特定[!INCLUDE[TLA2#tla_dx](~/includes/tla2sharptla-dx-md.md)]さらに、さまざまな表示の層の定義に使用されるバージョン レベル[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。 フルの描画層の説明を表示するには、次を参照してください。[グラフィックスの描画層](~/docs/framework/wpf/advanced/graphics-rendering-tiers.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsPixelShaderVersionSupported">
+      <MemberSignature Language="C#" Value="public static bool IsPixelShaderVersionSupported (short majorVersionRequested, short minorVersionRequested);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsPixelShaderVersionSupported(int16 majorVersionRequested, int16 minorVersionRequested) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.RenderCapability.IsPixelShaderVersionSupported(System.Int16,System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="majorVersionRequested" Type="System.Int16" />
+        <Parameter Name="minorVersionRequested" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="majorVersionRequested">ピクセル シェーダーのメジャー バージョン。</param>
+        <param name="minorVersionRequested">ピクセル シェーダーのマイナー バージョン。</param>
+        <summary>指定したピクセル シェーダーのバージョンがサポートされているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />WPF での現在のバージョンでピクセル シェーダーのバージョンがサポートされている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.RenderCapability.IsPixelShaderVersionSupported%2A>メソッドを返します。`true`場合とピクセル シェーダーのバージョンが、WPF の現在のバージョンでサポートされている場合、<xref:System.Windows.Media.Effects.Effect>指定したメジャー/マイナー バージョンを使用して GPU で実行できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPixelShaderVersionSupportedInSoftware">
+      <MemberSignature Language="C#" Value="public static bool IsPixelShaderVersionSupportedInSoftware (short majorVersionRequested, short minorVersionRequested);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsPixelShaderVersionSupportedInSoftware(int16 majorVersionRequested, int16 minorVersionRequested) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.RenderCapability.IsPixelShaderVersionSupportedInSoftware(System.Int16,System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="majorVersionRequested" Type="System.Int16" />
+        <Parameter Name="minorVersionRequested" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="majorVersionRequested">ピクセル シェーダーのメジャー バージョン。</param>
+        <param name="minorVersionRequested">ピクセル シェーダーのマイナー バージョン。</param>
+        <summary>現在のシステム上のソフトウェアで指定したピクセル シェーダーのバージョンを表示することができるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />ピクセル シェーダーは、現在のシステム上のソフトウェアで表示する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Pixel Shader 2.0 は、ソフトウェア レンダリングがのみサポートされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsShaderEffectSoftwareRenderingSupported">
+      <MemberSignature Language="C#" Value="public static bool IsShaderEffectSoftwareRenderingSupported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsShaderEffectSoftwareRenderingSupported" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.RenderCapability.IsShaderEffectSoftwareRenderingSupported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("IsShaderEffectSoftwareRenderingSupported property is deprecated.  Use IsPixelShaderVersionSupportedInSoftware static method instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムでのソフトウェアのビットマップ効果を描画できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />システムはソフトウェアでのビットマップ効果を描画できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxHardwareTextureSize">
+      <MemberSignature Language="C#" Value="public static System.Windows.Size MaxHardwareTextureSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Size MaxHardwareTextureSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.RenderCapability.MaxHardwareTextureSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるハードウェア デバイスのビットマップ作成の最大の幅と高さを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Size" />最大の幅と高さのハードウェアのビットマップ作成を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のデバイスがある場合<xref:System.Windows.Media.RenderCapability.MaxHardwareTextureSize%2A>それらの間の最小サイズを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPixelShaderInstructionSlots">
+      <MemberSignature Language="C#" Value="public static int MaxPixelShaderInstructionSlots (short majorVersionRequested, short minorVersionRequested);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 MaxPixelShaderInstructionSlots(int16 majorVersionRequested, int16 minorVersionRequested) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.RenderCapability.MaxPixelShaderInstructionSlots(System.Int16,System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="majorVersionRequested" Type="System.Int16" />
+        <Parameter Name="minorVersionRequested" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="majorVersionRequested">ピクセル シェーダーのメジャー バージョン。</param>
+        <param name="minorVersionRequested">ピクセル シェーダーのマイナー バージョン。</param>
+        <summary>指定したピクセル シェーダーのバージョンでサポートされている命令スロットの最大数を取得します。</summary>
+        <returns>Pixel Shader 2.0、ピクセル シェーダーの 3.0 用には、512 以上の 96 またはピクセル シェーダーの他の任意のバージョンの場合は 0 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピクセル シェーダー 3.0 でサポートされている命令のスロットの数が異なりますが、512 以上では常にします。  
+  
+ Pixel Shader 2.0 と 3.0 のみがサポートされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tier">
+      <MemberSignature Language="C#" Value="public static int Tier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 Tier" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.RenderCapability.Tier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドの描画層を示す値を取得します。</summary>
+        <value><see cref="T:System.Int32" />値が上位ワードが、現在のスレッドの描画層に対応しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  .NET Framework 4 より、描画層 1 が再定義され、[!INCLUDE[TLA2#tla_dx](~/includes/tla2sharptla-dx-md.md)] 9.0 以上をサポートするグラフィックスのみが含まれます。 [!INCLUDE[TLA2#tla_dx](~/includes/tla2sharptla-dx-md.md)] 7 または 8 をサポートするグラフィックス ハードウェアは現在、描画層 0 として定義されています。  
+  
+ 戻り値では、3 つの値のいずれかです。  
+  
+|戻り値|描画層|ノート|  
+|------------------|--------------------|-----------|  
+|0x00000000|0|デバイス上のアプリケーションはハードウェアのグラフィックス アクセラレータは有効ではありません。 すべてのグラフィックス機能でソフトウェア高速化が利用されます。 [!INCLUDE[TLA2#tla_dx](~/includes/tla2sharptla-dx-md.md)] バージョン レベルはバージョン 9.0 より前です。|  
+|0x00010000|1|グラフィックス機能のほとんど[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]必要なシステム リソースが使用できず、終了されていない場合に、ハードウェア アクセラレータを使用します。 これは 9.0 以上のバージョンの [!INCLUDE[TLA2#tla_dx](~/includes/tla2sharptla-dx-md.md)] に相当します。|  
+|0x00020000|2|グラフィックス機能のほとんど[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]提供、必要なシステム リソースが枯渇していない場合に、ハードウェア アクセラレータを使用します。 これは 9.0 以上のバージョンの [!INCLUDE[TLA2#tla_dx](~/includes/tla2sharptla-dx-md.md)] に相当します。|  
+  
+ 次の表は、描画層 1 と描画層 2 のグラフィックス ハードウェア要件の違いをまとめたものです。  
+  
+|特性|層 1|層 2|  
+|-------------|------------|------------|  
+|[!INCLUDE[TLA2#tla_dx](~/includes/tla2sharptla-dx-md.md)] のバージョン|9.0 以上が要求されます。|9.0 以上が要求されます。|  
+|ビデオ RAM|60MB 以上が要求されます。|120MB 以上が要求されます。|  
+|ピクセル シェーダー|バージョン 2.0 以上が要求されます。|バージョン 2.0 以上が要求されます。|  
+|頂点シェーダー|要件はありません。|バージョン 2.0 以上が要求されます。|  
+|マルチテクスチャ ユニット|要件はありません。|ユニット数が 4 以上であることが要求されます。|  
+  
+ 描画層の定義の詳細については、次を参照してください。[グラフィックスの描画層](~/docs/framework/wpf/advanced/graphics-rendering-tiers.md)です。  
+  
+ 現在のスレッドに関連付けられていない場合<xref:System.Windows.Threading.Dispatcher>オブジェクトのいずれかが自動的に作成します。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のスレッドの描画層を返す方法を示します。  
+  
+ [!code-csharp[RenderOptions#RenderCapability1](~/samples/snippets/csharp/VS_Snippets_Wpf/RenderOptions/CSharp/Window1.xaml.cs#rendercapability1)]
+ [!code-vb[RenderOptions#RenderCapability1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RenderOptions/visualbasic/window1.xaml.vb#rendercapability1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TierChanged">
+      <MemberSignature Language="C#" Value="public static event EventHandler TierChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TierChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Media.RenderCapability.TierChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>描画層が変更されたときに発生、<see cref="T:System.Windows.Threading.Dispatcher" />現在のスレッドのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のスレッドに関連付けられていない場合<xref:System.Windows.Threading.Dispatcher>オブジェクトのいずれかが自動的に作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,632 @@
+<Type Name="PrintDocument" FullName="System.Drawing.Printing.PrintDocument">
+  <TypeSignature Language="C#" Value="public class PrintDocument : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrintDocument extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Printing.PrintDocument" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("PrintPage")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("DocumentName")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Drawing.Printing")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows フォーム アプリケーションからの印刷時にプリンターに出力を送信する再利用可能なオブジェクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常のインスタンスを作成、<xref:System.Drawing.Printing.PrintDocument>クラスでプロパティを設定など、<xref:System.Drawing.Printing.PrintDocument.DocumentName%2A>と<xref:System.Drawing.Printing.PrintDocument.PrinterSettings%2A>を呼び出すと、<xref:System.Drawing.Printing.PrintDocument.Print%2A>印刷プロセスを開始するメソッド。 処理、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベントを使用して、印刷出力を指定する、 <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A> <xref:System.Drawing.Graphics>のプロパティ、<xref:System.Drawing.Printing.PrintPageEventArgs>です。  
+  
+ 詳細については、Windows フォーム アプリケーションから印刷すると、次を参照してください。、 [Windows フォームにおける印刷のサポート](~/docs/framework/winforms/advanced/windows-forms-print-support.md)です。 Windows Presentation Foundation アプリケーションから印刷する場合を参照してください、<xref:System.Printing>名前空間。  
+  
+   
+  
+## Examples  
+ 次のコード例では、既定のプリンターで C:\My Documents\MyFile.txt をという名前のファイルを出力します。 例を実行するには、新しい Windows フォーム プロジェクトを作成し、コード例をファイルの内容を置き換える、フォームに貼り付けます。 C# の場合は、Form1.Designer.cs ファイルを削除する必要があります。 また、印刷するファイルへのパスを変更します。  
+  
+> [!NOTE]
+>  この例では、各行が、ページの幅内に収まることが必要です。  
+  
+ 使用して、 <xref:System.ComponentModel>、 <xref:System.Windows.Forms>、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic PrintDocument Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PrintDocument Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrintDocument Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PrintDocument Example/CS/source.cs#1)]
+ [!code-vb[Classic PrintDocument Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PrintDocument Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrintDocument.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Printing.PrintDocument" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターは、既定のプリンターに基づくすべてのフィールドを初期化します。 新規作成した後は、通常、 <xref:System.Drawing.Printing.PrintDocument>、を通じて出力に影響するプリンターとページの設定を設定する、<xref:System.Drawing.Printing.PrintDocument.PrinterSettings%2A>と<xref:System.Drawing.Printing.PrintDocument.DefaultPageSettings%2A>プロパティ、それぞれします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ドキュメントのページの向きを横を設定し、文書を印刷します。  
+  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic PrintDocument Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PrintDocument Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrintDocument Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PrintDocument Example/CS/source.cs#1)]
+ [!code-vb[Classic PrintDocument Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PrintDocument Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginPrint">
+      <MemberSignature Language="C#" Value="public event System.Drawing.Printing.PrintEventHandler BeginPrint;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Drawing.Printing.PrintEventHandler BeginPrint" />
+      <MemberSignature Language="DocId" Value="E:System.Drawing.Printing.PrintDocument.BeginPrint" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrintEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="M:System.Drawing.Printing.PrintDocument.Print" />メソッドが呼び出されるとドキュメント印刷の最初のページの前にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、処理、<xref:System.Drawing.Printing.PrintDocument.BeginPrint>フォント、ファイル ストリーム、および印刷処理中に使用されるその他のリソースを初期化するためにイベント。  
+  
+ イベントをイベント ハンドラーに関連付けるのインスタンスを追加、<xref:System.Drawing.Printing.PrintEventHandler>イベントにデリゲートします。 イベントが発生するたびに、イベント ハンドラーが呼び出されます。 デリゲートでイベントを処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPageSettings">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PageSettings DefaultPageSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PageSettings DefaultPageSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintDocument.DefaultPageSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PageSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷するすべてのページの既定値として使用されるページ設定を取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Printing.PageSettings" />ドキュメントの既定のページ設定を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつかの既定のページ設定を指定できます、<xref:System.Drawing.Printing.PrintDocument.DefaultPageSettings%2A>プロパティです。 など、<xref:System.Drawing.Printing.PageSettings.Color%2A?displayProperty=nameWithType>プロパティは、ページの色で印刷するかどうかを指定します、<xref:System.Drawing.Printing.PageSettings.Landscape%2A?displayProperty=nameWithType>プロパティは、横または縦の向きを指定し、<xref:System.Drawing.Printing.PageSettings.Margins%2A?displayProperty=nameWithType>プロパティがページの余白を指定します。  
+  
+ ページの単位で設定を指定するには、処理、<xref:System.Drawing.Printing.PrintDocument.PrintPage>または<xref:System.Drawing.Printing.PrintDocument.QueryPageSettings>イベントを変更し、<xref:System.Drawing.Printing.PrintPageEventArgs.PageSettings%2A>引数に含まれる、<xref:System.Drawing.Printing.PrintPageEventArgs>または<xref:System.Drawing.Printing.QueryPageSettingsEventArgs>、それぞれします。  
+  
+> [!NOTE]
+>  印刷が開始した後でページ設定の変更、<xref:System.Drawing.Printing.PrintDocument.DefaultPageSettings%2A>プロパティが印刷されるページと変わりません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ドキュメントのページの向きを横を設定し、文書を印刷します。 例は次の 3 つの前提条件: という名前の変数を`filePath`; を印刷するファイルのパスに設定されていますという名前のメソッドを`pd_PrintPage`、処理する、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベントが定義されて、という名前の変数`printer`されましたプリンターの名前に設定されます。  
+  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic PrintDocument.PrintDocument Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PrintDocument.PrintDocument Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrintDocument.PrintDocument Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PrintDocument.PrintDocument Example/CS/source.cs#1)]
+ [!code-vb[Classic PrintDocument.PrintDocument Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PrintDocument.PrintDocument Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentName">
+      <MemberSignature Language="C#" Value="public string DocumentName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DocumentName" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintDocument.DocumentName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("document")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントの印刷中に、印刷ステータス ダイアログ ボックスやプリンター キューなどで表示するドキュメントの名前を取得または設定します。</summary>
+        <value>ドキュメントの印刷中に表示するドキュメント名。 既定値は "document" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PrintDocument.DocumentName%2A>プロパティが印刷するファイルを指定していません。 処理することにより、出力を指定する代わりに、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。 例については、次を参照してください。、<xref:System.Drawing.Printing.PrintDocument>クラスの概要です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、色の最初のページ文書を印刷する場合は、プリンターがサポートしていると、設定、<xref:System.Drawing.Printing.PrintDocument.DocumentName%2A>のわかりやすい名前にします。 例では、する必要があります、<xref:System.Drawing.Printing.PrintDocument>という名前の変数`printDoc`が作成されたら、および<xref:System.Drawing.Printing.PrintDocument.PrintPage>と<xref:System.Drawing.Printing.PrintDocument.QueryPageSettings>イベントが処理されます。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Drawing.Printing>この例の名前空間。  
+  
+ [!code-cpp[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#6)]
+ [!code-csharp[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#6)]
+ [!code-vb[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndPrint">
+      <MemberSignature Language="C#" Value="public event System.Drawing.Printing.PrintEventHandler EndPrint;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Drawing.Printing.PrintEventHandler EndPrint" />
+      <MemberSignature Language="DocId" Value="E:System.Drawing.Printing.PrintDocument.EndPrint" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrintEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントの最後のページが印刷されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、処理、<xref:System.Drawing.Printing.PrintDocument.EndPrint>などのフォントのフォント、ファイル ストリーム、および印刷処理中に使用されるその他のリソースを解放するイベントです。  
+  
+ 設定して印刷するページはありませんがあることを示します、<xref:System.Drawing.Printing.PrintPageEventArgs.HasMorePages%2A?displayProperty=nameWithType>プロパティを`false`で、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。 <xref:System.Drawing.Printing.PrintDocument.EndPrint>イベントは、印刷の処理が取り消されたか、印刷処理中に例外が発生した場合にも発生します。  
+  
+ イベントをイベント ハンドラーに関連付けるのインスタンスを追加、<xref:System.Drawing.Printing.PrintEventHandler>イベントにデリゲートします。 イベントが発生するたびに、イベント ハンドラーが呼び出されます。 デリゲートでイベントを処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginPrint">
+      <MemberSignature Language="C#" Value="protected virtual void OnBeginPrint (System.Drawing.Printing.PrintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnBeginPrint(class System.Drawing.Printing.PrintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrintDocument.OnBeginPrint(System.Drawing.Printing.PrintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Drawing.Printing.PrintEventArgs" />。</param>
+        <summary><see cref="E:System.Drawing.Printing.PrintDocument.BeginPrint" /> イベントを発生させます。 後に呼び出されます、<see cref="M:System.Drawing.Printing.PrintDocument.Print" />メソッドが呼び出されると、ドキュメントの印刷がの最初のページの前にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PrintDocument.OnBeginPrint%2A>メソッドにより、派生クラスでデリゲートを結び付けずに、イベントを処理します。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ 派生クラスを呼び出すと、<xref:System.Drawing.Printing.PrintDocument.OnBeginPrint%2A>を生成、メソッド、<xref:System.Drawing.Printing.PrintDocument.BeginPrint>を呼び出して、イベント ハンドラーがデリゲートからのイベントです。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Drawing.Printing.PrintDocument.OnBeginPrint(System.Drawing.Printing.PrintEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Drawing.Printing.PrintDocument.OnBeginPrint(System.Drawing.Printing.PrintEventArgs)" /> メソッドを呼び出してください。 このメソッドは、初期化を実行します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndPrint">
+      <MemberSignature Language="C#" Value="protected virtual void OnEndPrint (System.Drawing.Printing.PrintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnEndPrint(class System.Drawing.Printing.PrintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrintDocument.OnEndPrint(System.Drawing.Printing.PrintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Drawing.Printing.PrintEventArgs" />。</param>
+        <summary><see cref="E:System.Drawing.Printing.PrintDocument.EndPrint" /> イベントを発生させます。 ドキュメントの最後のページが印刷されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PrintDocument.OnEndPrint%2A>メソッドにより、派生クラスでデリゲートを結び付けずに、イベントを処理します。 派生クラスでイベントを処理する場合は、この手法をお勧めします。 <xref:System.Drawing.Printing.PrintDocument.OnEndPrint%2A>印刷処理が取り消されたり、印刷処理中に例外が発生した場合、メソッドが呼び出されます。  
+  
+ 派生クラスを呼び出すと、<xref:System.Drawing.Printing.PrintDocument.OnEndPrint%2A>を生成、メソッド、<xref:System.Drawing.Printing.PrintDocument.EndPrint>を呼び出して、イベント ハンドラーがデリゲートからのイベントです。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Drawing.Printing.PrintDocument.OnEndPrint(System.Drawing.Printing.PrintEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Drawing.Printing.PrintDocument.OnEndPrint(System.Drawing.Printing.PrintEventArgs)" /> メソッドを呼び出してください。 このメソッドは、初期化解除中に適した場所です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPrintPage">
+      <MemberSignature Language="C#" Value="protected virtual void OnPrintPage (System.Drawing.Printing.PrintPageEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPrintPage(class System.Drawing.Printing.PrintPageEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrintDocument.OnPrintPage(System.Drawing.Printing.PrintPageEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintPageEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Drawing.Printing.PrintPageEventArgs" />。</param>
+        <summary><see cref="E:System.Drawing.Printing.PrintDocument.PrintPage" /> イベントを発生させます。 ページの印刷前に呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PrintDocument.OnPrintPage%2A>メソッドにより、派生クラスでデリゲートを結び付けずに、イベントを処理します。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ 派生クラスを呼び出すと、<xref:System.Drawing.Printing.PrintDocument.OnPrintPage%2A>を生成、メソッド、<xref:System.Drawing.Printing.PrintDocument.PrintPage>を呼び出して、イベント ハンドラーがデリゲートからのイベントです。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Drawing.Printing.PrintDocument.OnPrintPage(System.Drawing.Printing.PrintPageEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Drawing.Printing.PrintDocument.OnPrintPage(System.Drawing.Printing.PrintPageEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnQueryPageSettings">
+      <MemberSignature Language="C#" Value="protected virtual void OnQueryPageSettings (System.Drawing.Printing.QueryPageSettingsEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnQueryPageSettings(class System.Drawing.Printing.QueryPageSettingsEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrintDocument.OnQueryPageSettings(System.Drawing.Printing.QueryPageSettingsEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Drawing.Printing.QueryPageSettingsEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Drawing.Printing.QueryPageSettingsEventArgs" />。</param>
+        <summary><see cref="E:System.Drawing.Printing.PrintDocument.QueryPageSettings" /> イベントを発生させます。 それぞれの直前に呼び出されますが、<see cref="E:System.Drawing.Printing.PrintDocument.PrintPage" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PrintDocument.OnQueryPageSettings%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ 派生クラスを呼び出すと、<xref:System.Drawing.Printing.PrintDocument.OnQueryPageSettings%2A>を生成、メソッド、<xref:System.Drawing.Printing.PrintDocument.QueryPageSettings>を呼び出して、イベント ハンドラーがデリゲートからのイベントです。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Drawing.Printing.PrintDocument.OnQueryPageSettings(System.Drawing.Printing.QueryPageSettingsEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Drawing.Printing.PrintDocument.OnQueryPageSettings(System.Drawing.Printing.QueryPageSettingsEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginAtMargins">
+      <MemberSignature Language="C#" Value="public bool OriginAtMargins { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OriginAtMargins" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintDocument.OriginAtMargins" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページに関連付けられているグラフィック オブジェクトの位置が、ユーザー指定の余白の内側にあるか、ページの印刷可能領域の左上隅にあるかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ページの余白にグラフィックスの元の開始<see langword="false" />グラフィックスの元の印刷可能なページの左上隅にある場合。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 印刷可能な領域を計算するには、用紙、ページの余白の物理サイズとの場所を知る必要があります、<xref:System.Drawing.Graphics>配信元のオブジェクトします。 ときに<xref:System.Drawing.Printing.PrintDocument.OriginAtMargins%2A>は`true`、<xref:System.Drawing.Graphics>オブジェクトの場所は考慮に入れて、<xref:System.Drawing.Printing.PageSettings.Margins%2A?displayProperty=nameWithType>プロパティの値と、ページの印刷可能な領域。 ときに<xref:System.Drawing.Printing.PrintDocument.OriginAtMargins%2A>は`false`の場所を特定するページの印刷可能領域のみが使用される、 <xref:System.Drawing.Graphics> 、元のオブジェクト、<xref:System.Drawing.Printing.PageSettings.Margins%2A?displayProperty=nameWithType>値は無視されます。  
+  
+ たとえば場合、<xref:System.Drawing.Printing.PrintDocument.OriginAtMargins%2A>は`true`、および<xref:System.Drawing.Printing.PageSettings.Margins%2A?displayProperty=nameWithType>それぞれの側では、1 インチに設定されて、<xref:System.Drawing.Graphics>に含まれるオブジェクト、<xref:System.Drawing.Printing.PrintPageEventArgs>配置の 1 インチ、左右のページの上部からです。 ページの印刷可能領域の両側に 1 インチの.25 場合および<xref:System.Drawing.Printing.PrintDocument.OriginAtMargins%2A>は`false`、<xref:System.Drawing.Graphics>オブジェクトがある.25 インチ、左右のページの上部からです。  
+  
+> [!NOTE]
+>  ページの印刷可能な領域は、プリンターによって異なります、対称であるとは限りません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Print">
+      <MemberSignature Language="C#" Value="public void Print ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Print() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrintDocument.Print" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ドキュメントの印刷プロセスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理することにより、出力を指定、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベントを使用して、<xref:System.Drawing.Graphics>に含まれる、<xref:System.Drawing.Printing.PrintPageEventArgs>です。  
+  
+ 使用して、<xref:System.Drawing.Printing.PrinterSettings.PrinterName%2A?displayProperty=nameWithType>プロパティを指定するプリンターはドキュメントを印刷する必要があります。  
+  
+ <xref:System.Drawing.Printing.PrintDocument.Print%2A>メソッドが、印刷ダイアログ ボックスを使用せずに文書を印刷します。 使用して、<xref:System.Windows.Forms.PrintDialog>印刷設定を選択する機能をユーザーに提供する場合。  
+  
+> [!NOTE]
+>  例外によって処理されていない場合、<xref:System.Drawing.Printing.PrintDocument.Print%2A>メソッドは、印刷時にスローされると、ドキュメントの印刷を中止します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、既定のプリンターにコマンドラインを使用して指定されているファイルを出力します。  
+  
+> [!NOTE]
+>  この例では、各行が、ページの幅内に収まることが必要です。  
+  
+ 使用して、 <xref:System.ComponentModel>、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、 <xref:System.IO>、および<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[Classic PrintDocument.PrintPage Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PrintDocument.PrintPage Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrintDocument.PrintPage Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PrintDocument.PrintPage Example/CS/source.cs#1)]
+ [!code-vb[Classic PrintDocument.PrintPage Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PrintDocument.PrintPage Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Drawing.Printing.InvalidPrinterException">プリンターがという名前で、<see cref="P:System.Drawing.Printing.PrinterSettings.PrinterName" />プロパティは存在しません。</exception>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">安全な印刷用の制限付きのダイアログ ボックス。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintController">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrintController PrintController { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PrintController PrintController" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintDocument.PrintController" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrintController</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷プロセスを制御するプリント コントローラーを取得または設定します。</summary>
+        <value><see cref="T:System.Drawing.Printing.PrintController" />印刷プロセスを制御します。 既定値はの新しいインスタンス、<see cref="T:System.Windows.Forms.PrintControllerWithStatusDialog" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリント コント ローラーは、いくつかの方法での印刷プロセスをガイドします。 たとえば、ドキュメントを印刷する必要がありますに変換する<xref:System.Drawing.Graphics>オブジェクト。 A<xref:System.Drawing.Printing.PrintController>または実際には、ドキュメントを印刷するプリンターで印刷プレビューの画像の画像を描画する場所を指定します。 プリント コント ローラーはすぐに、ドキュメントを印刷または指定した時間だけ待機するかどうかも指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、インスタンスを作成することが必要です、<xref:System.Drawing.Printing.PrintDocument>というクラス`myPrintDocument`です。 例では、新しいインスタンスを作成する、<xref:System.Drawing.Printing.PrintController>クラスに割り当てます、<xref:System.Drawing.Printing.PrintDocument.PrintController%2A>プロパティ`myPrintDocument`、し、文書を印刷します。  
+  
+ 使用して、<xref:System.Drawing.Printing>と<xref:System.Windows.Forms>この例の名前空間。  
+  
+ [!code-cpp[Classic PrintDocument.PrintController Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PrintDocument.PrintController Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrintDocument.PrintController Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PrintDocument.PrintController Example/CS/source.cs#1)]
+ [!code-vb[Classic PrintDocument.PrintController Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PrintDocument.PrintController Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Drawing.Printing.PrintingPermission">安全な印刷用の制限付きのダイアログ ボックス。 関連する列挙。<see cref="F:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PrinterSettings">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PrinterSettings PrinterSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Printing.PrinterSettings PrinterSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PrintDocument.PrinterSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrinterSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントを印刷するプリンターを取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Printing.PrinterSettings" />ドキュメントが印刷される場所と方法を指定します。 既定値は、<see cref="T:System.Drawing.Printing.PrinterSettings" />とそのプロパティが既定値に設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のプリンター設定を指定できます、<xref:System.Drawing.Printing.PrintDocument.PrinterSettings%2A>プロパティです。 たとえば、使用して、<xref:System.Drawing.Printing.PrinterSettings.Copies%2A?displayProperty=nameWithType>プロパティを印刷する部数を指定する、<xref:System.Drawing.Printing.PrinterSettings.PrinterName%2A?displayProperty=nameWithType>プロパティを使用するには、プリンターを指定して<xref:System.Drawing.Printing.PrinterSettings.PrintRange%2A?displayProperty=nameWithType>を印刷するページの範囲を指定するプロパティ。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定されたプリンターにドキュメントを印刷します。 例は次の 3 つの前提条件: する変数名`filePath`; を印刷するファイルのパスに設定されていますという名前のメソッドを`pd_PrintPage`、処理する、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベントが定義されて、という名前の変数`printer`されましたプリンターの名前に設定されます。  
+  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic PrintDocument.PrinterSettings Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PrintDocument.PrinterSettings Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrintDocument.PrinterSettings Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PrintDocument.PrinterSettings Example/CS/source.cs#1)]
+ [!code-vb[Classic PrintDocument.PrinterSettings Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PrintDocument.PrinterSettings Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintPage">
+      <MemberSignature Language="C#" Value="public event System.Drawing.Printing.PrintPageEventHandler PrintPage;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Drawing.Printing.PrintPageEventHandler PrintPage" />
+      <MemberSignature Language="DocId" Value="E:System.Drawing.Printing.PrintDocument.PrintPage" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PrintPageEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のページに印刷する出力が必要なときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 印刷する出力を指定するには、使用、<xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A>のプロパティ、<xref:System.Drawing.Printing.PrintPageEventArgs>です。 たとえばをある行のテキストを印刷するかを指定するには、描画を使用して、テキスト、<xref:System.Drawing.Graphics.DrawString%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 出力を指定するだけでなくを設定して印刷するその他のページがあるかどうかを示すことができます、<xref:System.Drawing.Printing.PrintPageEventArgs.HasMorePages%2A?displayProperty=nameWithType>プロパティを`true`です。 既定値は`false`、印刷するページはありませんがあることを示します。 個々 のページの設定を変更することも、<xref:System.Drawing.Printing.PageSettings>を設定して、印刷ジョブを取り消すことができます、<xref:System.Drawing.Printing.PrintPageEventArgs.Cancel%2A?displayProperty=nameWithType>プロパティを`true`です。 別のページの設定を使用してドキュメントの各ページを印刷するには、処理、<xref:System.Drawing.Printing.PrintDocument.QueryPageSettings>イベント。  
+  
+ イベントをイベント ハンドラーに関連付けるのインスタンスを追加、<xref:System.Drawing.Printing.PrintPageEventHandler>イベントにデリゲートします。 イベントが発生するたびに、イベント ハンドラーが呼び出されます。 デリゲートでイベントを処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理を示します、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。  
+  
+ 別の例では、次を参照してください。[する方法: Windows フォームで複数ページのテキスト ファイルを印刷](~/docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)です。  
+  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic PrintDocument Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PrintDocument Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrintDocument Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PrintDocument Example/CS/source.cs#1)]
+ [!code-vb[Classic PrintDocument Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PrintDocument Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryPageSettings">
+      <MemberSignature Language="C#" Value="public event System.Drawing.Printing.QueryPageSettingsEventHandler QueryPageSettings;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Drawing.Printing.QueryPageSettingsEventHandler QueryPageSettings" />
+      <MemberSignature Language="DocId" Value="E:System.Drawing.Printing.PrintDocument.QueryPageSettings" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.QueryPageSettingsEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>それぞれの直前に発生した<see cref="E:System.Drawing.Printing.PrintDocument.PrintPage" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のページの設定を使用してドキュメントの各ページを印刷することができます。 設定ページの個々 のプロパティを変更することによって、<xref:System.Drawing.Printing.QueryPageSettingsEventArgs.PageSettings%2A?displayProperty=nameWithType>プロパティまたはプロパティを設定して、<xref:System.Drawing.Printing.PageSettings>です。 変更、<xref:System.Drawing.Printing.PageSettings>だけ現在のページ、ドキュメントの既定のページ設定ではなくに影響します。 印刷ジョブを設定して取り消すこともできます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`の<xref:System.Drawing.Printing.QueryPageSettingsEventArgs>です。  
+  
+ イベントをイベント ハンドラーに関連付けるのインスタンスを追加、<xref:System.Drawing.Printing.QueryPageSettingsEventHandler>イベントにデリゲートします。 イベントが発生するたびに、イベント ハンドラーが呼び出されます。 デリゲートでイベントを処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、色の最初のページ文書を印刷するプリンターがサポートされている場合。 例では、する必要があります、<xref:System.Drawing.Printing.PrintDocument>という名前の変数`printDoc`が作成されたら、および<xref:System.Drawing.Printing.PrintDocument.PrintPage>と<xref:System.Drawing.Printing.PrintDocument.QueryPageSettings>イベントが処理されます。 `currentPageNumber`ですべてのページが印刷された後に変数が増加、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベントは表示されません。  
+  
+ 使用して、<xref:System.Drawing>と<xref:System.Drawing.Printing>この例の名前空間。  
+  
+ [!code-cpp[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#6)]
+ [!code-csharp[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#6)]
+ [!code-vb[PaperSource and PaperSize Example with Resolution#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrintDocument.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>印刷ドキュメントに関する情報を文字列形式で提供します。</summary>
+        <returns>文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

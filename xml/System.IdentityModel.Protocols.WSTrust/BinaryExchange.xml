@@ -1,0 +1,193 @@
+<Type Name="BinaryExchange" FullName="System.IdentityModel.Protocols.WSTrust.BinaryExchange">
+  <TypeSignature Language="C#" Value="public class BinaryExchange" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BinaryExchange extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Protocols.WSTrust.BinaryExchange" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Ws-trust BinaryExchange 要素の内容を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスが表す要素の詳細については、自分のシナリオに適用される Ws-trust 仕様のバージョンを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BinaryExchange (byte[] binaryData, Uri valueType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] binaryData, class System.Uri valueType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.BinaryExchange.#ctor(System.Byte[],System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binaryData" Type="System.Byte[]" />
+        <Parameter Name="valueType" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="binaryData">交換されるバイナリ データ。</param>
+        <param name="valueType">A<see cref="T:System.Uri" />を表すバイナリ データの値の型。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.IdentityModel.Protocols.WSTrust.BinaryExchange" />指定されたデータと ValueType URI を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、新しいインスタンスの初期プロパティ値を示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Protocols.WSTrust.BinaryExchange.BinaryData%2A>|指定したバイナリ データ。|  
+|<xref:System.IdentityModel.Protocols.WSTrust.BinaryExchange.EncodingType%2A>|A<xref:System.Uri>に基づいて、<xref:System.IdentityModel.WSSecurity10Constants.EncodingTypes.Base64>定数。|  
+|<xref:System.IdentityModel.Protocols.WSTrust.BinaryExchange.ValueType%2A>|指定した値型<xref:System.Uri>です。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="binaryData" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="valueType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="valueType" /> は絶対 URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BinaryExchange (byte[] binaryData, Uri valueType, Uri encodingType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] binaryData, class System.Uri valueType, class System.Uri encodingType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.BinaryExchange.#ctor(System.Byte[],System.Uri,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binaryData" Type="System.Byte[]" />
+        <Parameter Name="valueType" Type="System.Uri" />
+        <Parameter Name="encodingType" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="binaryData">交換されるバイナリ データ。</param>
+        <param name="valueType">A<see cref="T:System.Uri" />を表すバイナリ データの値の型。</param>
+        <param name="encodingType">A<see cref="T:System.Uri" />バイナリ データのエンコードに使用するエンコードの種類を指定します。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.IdentityModel.Protocols.WSTrust.BinaryExchange" />指定されたデータ、ValueType URI、および EncodingType URI を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、新しいインスタンスの初期プロパティ値を示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Protocols.WSTrust.BinaryExchange.BinaryData%2A>|指定したバイナリ データ。|  
+|<xref:System.IdentityModel.Protocols.WSTrust.BinaryExchange.EncodingType%2A>|指定したエンコードの種類<xref:System.Uri>です。|  
+|<xref:System.IdentityModel.Protocols.WSTrust.BinaryExchange.ValueType%2A>|指定した値型<xref:System.Uri>です。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="binaryData" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="encodingType" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="valueType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="encodingType" /> は絶対 URI ではありません。  
+  
+ または  
+  
+ <paramref name="valueType" /> は絶対 URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BinaryData">
+      <MemberSignature Language="C#" Value="public byte[] BinaryData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] BinaryData" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.BinaryExchange.BinaryData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>BinaryExchange 要素に関連付けられているバイナリ データを取得します。</summary>
+        <value>配列<see cref="T:System.Byte" />バイナリ データを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、BinaryExchange 要素の値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodingType">
+      <MemberSignature Language="C#" Value="public Uri EncodingType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri EncodingType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.BinaryExchange.EncodingType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>EncodingType URI を取得します。</summary>
+        <value>A<see cref="T:System.Uri" />エンコードの種類を格納しています。 これは、BinaryExchange 要素の EncodingType 属性の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素に含まれるバイナリ データのエンコードに使用するエンコードの種類を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueType">
+      <MemberSignature Language="C#" Value="public Uri ValueType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ValueType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.BinaryExchange.ValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ValueType URI を取得します。</summary>
+        <value>A<see cref="T:System.Uri" />値の型を格納しています。 これは、BinaryExchange 要素の ValueType 属性の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素に含まれるバイナリ データの種類を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

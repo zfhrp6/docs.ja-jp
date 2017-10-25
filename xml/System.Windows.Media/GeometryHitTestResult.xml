@@ -1,0 +1,122 @@
+<Type Name="GeometryHitTestResult" FullName="System.Windows.Media.GeometryHitTestResult">
+  <TypeSignature Language="C#" Value="public class GeometryHitTestResult : System.Windows.Media.HitTestResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GeometryHitTestResult extends System.Windows.Media.HitTestResult" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.GeometryHitTestResult" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.HitTestResult</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用するヒット テストの結果を返します、<see cref="T:System.Windows.Media.Geometry" />ヒットとしてパラメーターをテストします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してビジュアル オブジェクトでヒット テストを実行することもできます、<xref:System.Windows.Point>ヒットとしてパラメーターをテストし、として結果を返す、<xref:System.Windows.Media.PointHitTestResult>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GeometryHitTestResult (System.Windows.Media.Visual visualHit, System.Windows.Media.IntersectionDetail intersectionDetail);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Visual visualHit, valuetype System.Windows.Media.IntersectionDetail intersectionDetail) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GeometryHitTestResult.#ctor(System.Windows.Media.Visual,System.Windows.Media.IntersectionDetail)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visualHit" Type="System.Windows.Media.Visual" />
+        <Parameter Name="intersectionDetail" Type="System.Windows.Media.IntersectionDetail" />
+      </Parameters>
+      <Docs>
+        <param name="visualHit">ヒット テスト中にヒットしたビジュアル オブジェクトです。</param>
+        <param name="intersectionDetail">交差部分について説明します、<see cref="T:System.Windows.Media.Geometry" />と<c>visualHit</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.GeometryHitTestResult" />指定したビジュアル オブジェクトを使用して、クラスと<see cref="T:System.Windows.Media.IntersectionDetail" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Media.GeometryHitTestResult>オブジェクトのオーバーライドされた実装については、戻り値として使用して<xref:System.Windows.Media.Visual.HitTestCore%2A>です。  
+  
+ [!code-csharp[HitTestingOverview#HitTestingOverviewSnippet13](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/GeometryHitTest.cs#hittestingoverviewsnippet13)]
+ [!code-vb[HitTestingOverview#HitTestingOverviewSnippet13](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/geometryhittest.vb#hittestingoverviewsnippet13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IntersectionDetail">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.IntersectionDetail IntersectionDetail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.IntersectionDetail IntersectionDetail" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GeometryHitTestResult.IntersectionDetail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.IntersectionDetail</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.IntersectionDetail" />ヒット テストの値。</summary>
+        <value><see cref="T:System.Windows.Media.IntersectionDetail" />ヒット テストの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A>プロパティの交差部分の説明、<xref:System.Windows.Media.Geometry>とターゲット ビジュアル オブジェクトです。  
+  
+ 次の図は、ヒット テスト ジオメトリ (青の円) と、ターゲット オブジェクト (赤い四角形) 間のリレーションシップを示します。  
+  
+ ![ヒット テストで使用される IntersectionDetail のダイアグラム](~/add/media/intersectiondetail01.png "ダイアグラムので使用される IntersectionDetail のヒット テスト")  
+ヒット テスト ジオメトリとターゲット オブジェクトの交差部分  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.GeometryHitTestResult.IntersectionDetail%2A>プロパティ<xref:System.Windows.Media.GeometryHitTestResult>です。  
+  
+ [!code-csharp[HitTestingOverview#HitTestingOverviewSnippet11](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/GeometryHitTest.cs#hittestingoverviewsnippet11)]
+ [!code-vb[HitTestingOverview#HitTestingOverviewSnippet11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/geometryhittest.vb#hittestingoverviewsnippet11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualHit">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Visual VisualHit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Visual VisualHit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GeometryHitTestResult.VisualHit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒット テストの結果から返されるビジュアル オブジェクトを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Media.Visual" />ヒット テストの結果を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を参照する方法を示しています、<xref:System.Windows.Media.GeometryHitTestResult.VisualHit%2A>ヒット テスト コールバック プロシージャ内のプロパティです。  
+  
+ [!code-csharp[HitTestingOverview#HitTestingOverviewSnippet11](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/GeometryHitTest.cs#hittestingoverviewsnippet11)]
+ [!code-vb[HitTestingOverview#HitTestingOverviewSnippet11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/geometryhittest.vb#hittestingoverviewsnippet11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

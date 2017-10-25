@@ -1,0 +1,275 @@
+<Type Name="MouseEventArgs" FullName="System.Windows.Forms.MouseEventArgs">
+  <TypeSignature Language="C#" Value="public class MouseEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MouseEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MouseEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Control.MouseUp" />、<see cref="E:System.Windows.Forms.Control.MouseDown" />、<see cref="E:System.Windows.Forms.Control.MouseMove" /> の各イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.MouseDown>イベントは、コントロールの上にポインターが、ユーザーがマウス ボタンを押したときに発生します。 <xref:System.Windows.Forms.Control.MouseUp>イベントは、ポインターがコントロール上でマウス ボタンを離したときに発生します。 <xref:System.Windows.Forms.Control.MouseMove>イベント、コントロールの上にマウス ポインターを動かしたときに発生します。 A<xref:System.Windows.Forms.MouseEventArgs>どのマウス ボタンが押された、何回か、マウス ボタンが押され、リリースされると、マウスのボタンと、マウス ホイールを移動量の座標を指定します。  
+  
+ 受信することは、<xref:System.Windows.Forms.Control.MouseDown>のに、対応するイベント<xref:System.Windows.Forms.Control.MouseUp>ユーザーがマウス ボタンを解放する前に別のアプリケーションにフォーカスを切り替える場合。  
+  
+ これら 3 つのイベントがの存在、 <xref:System.Windows.Forms.Control>、 <xref:System.Windows.Forms.AxHost>、および<xref:System.Windows.Forms.NotifyIcon>クラスです。  
+  
+ イベント モデルについては、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.Control.MouseDown>でイベントを<xref:System.Windows.Forms.TextBox>コントロールをコントロールのすべてのテキストを選択するマウスの右ボタンをクリックします。 この例では、フォームが含まれていますがあることが必要です、<xref:System.Windows.Forms.TextBox>というコントロール`textBox1`です。  
+  
+ [!code-csharp[MouseEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MouseEventArgs/CS/Form1.cs#1)]
+ [!code-vb[MouseEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MouseEventArgs/VB/Form1.vb#1)]  
+  
+ 次のコード例では、`Location`を追跡するプロパティは、ユーザー入力への応答で一連の線分を描画して、マウスの左ボタンのクリックします。 例では、再描画されない行は、フォームを非表示にすると、それを再表示します。このコードは、わかりやすくするために省略されています。  
+  
+ [!code-csharp[MouseEventArgs#2](~/samples/snippets/csharp/VS_Snippets_Winforms/MouseEventArgs/CS/Form1.cs#2)]
+ [!code-vb[MouseEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MouseEventArgs/VB/Form1.vb#2)]  
+  
+ 次のコード例では、<xref:System.Windows.Forms.MouseEventArgs.X%2A>と<xref:System.Windows.Forms.MouseEventArgs.Y%2A>でマウス ポインターの現在の位置を表示するプロパティ、<xref:System.Windows.Forms.ToolTip>ウィンドウです。  
+  
+ [!code-csharp[MouseEventArgs#3](~/samples/snippets/csharp/VS_Snippets_Winforms/MouseEventArgs/CS/Form1.cs#3)]
+ [!code-vb[MouseEventArgs#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MouseEventArgs/VB/Form1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MouseEventArgs (System.Windows.Forms.MouseButtons button, int clicks, int x, int y, int delta);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.MouseButtons button, int32 clicks, int32 x, int32 y, int32 delta) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MouseEventArgs.#ctor(System.Windows.Forms.MouseButtons,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="button" Type="System.Windows.Forms.MouseButtons" />
+        <Parameter Name="clicks" Type="System.Int32" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="delta" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="button">1 つ、<see cref="T:System.Windows.Forms.MouseButtons" />押されたマウス ボタンを示す値。</param>
+        <param name="clicks">マウス ボタンが押された回数。</param>
+        <param name="x">マウスの x 座標 (ピクセル単位) をクリックします。</param>
+        <param name="y">マウスの y 座標 (ピクセル単位) をクリックします。</param>
+        <param name="delta">マウス ホイールの回転回数を表す符号付きの数値。</param>
+        <summary><see cref="T:System.Windows.Forms.MouseEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Button">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.MouseButtons Button { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.MouseButtons Button" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MouseEventArgs.Button" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseButtons</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスのどのボタンが押されたかを示す値を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.MouseButtons" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.Control.MouseDown>でイベントを<xref:System.Windows.Forms.TextBox>コントロールをコントロールのすべてのテキストを選択するマウスの右ボタンをクリックします。 この例では、フォームが含まれていますがあることが必要です、<xref:System.Windows.Forms.TextBox>という名前のコントロール`textBox1`です。  
+  
+ [!code-csharp[MouseEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MouseEventArgs/CS/Form1.cs#1)]
+ [!code-vb[MouseEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MouseEventArgs/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clicks">
+      <MemberSignature Language="C#" Value="public int Clicks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Clicks" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MouseEventArgs.Clicks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ボタンが押されて離された回数を取得します。</summary>
+        <value><see cref="T:System.Int32" />を含む、マウス ボタンが押され、リリースされた回数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows のインターフェイスを定義しますが、標準のマウス イベントのいずれかとしてシングル クリックまたはダブルクリックする、個々 のアプリケーションが単一のイベントとして多数の数回のクリックを解釈できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Control.MouseClick?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生してデバッグに役立つについて学びます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Control>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.ComboBox>です。 インスタンスを名前`Control1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Control.MouseClick?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#54](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#54)]
+ [!code-vb[System.Windows.Forms.EventExamples#54](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#54)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delta">
+      <MemberSignature Language="C#" Value="public int Delta { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Delta" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MouseEventArgs.Delta" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ホイールの回転回数を表す符号付きの数値に定数 WHEEL_DELTA の値を乗算した値を取得します。 マウス ホイールのノッチ 1 つ分が 1 移動量に相当します。</summary>
+        <value>マウス ホイールの回転回数を表す符号付きの数値に定数 WHEEL_DELTA の値を乗算した値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウスのホイールでは、ホイールとマウスのボタンの機能を結合します。 ホイールには、discrete、等間隔のノッチがあります。 ホイールを回転するとき 1 目盛りの検出とホイール メッセージが送信されます。 1 つのホイールのノッチ、分は、120 である windows 定数 wheel_delta の値、によって定義されます。 正の値は、ホイールを (ユーザー); 奥フォワード回転されたことを示します負の値は、ホイールが (ユーザー) に向かって後方回転されたことを示します。  
+  
+ 現時点では、120 の値は、1 つ分の標準です。 高解像度マウスが導入されている wheel_delta の値の定義が小さくなる可能性があります。 集計合計ではなく、正または負の値のほとんどのアプリケーションを確認する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Control.MouseClick?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生してデバッグに役立つについて学びます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Control>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.ComboBox>です。 インスタンスを名前`Control1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Control.MouseClick?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#54](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#54)]
+ [!code-vb[System.Windows.Forms.EventExamples#54](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#54)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point Location { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point Location" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MouseEventArgs.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス イベント生成時のマウスの位置を取得します。</summary>
+        <value>A <see cref="T:System.Drawing.Point" /> (ピクセル単位) フォームの左上隅を基準とした、x と y マウス座標を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.MouseEventArgs.Location%2A>プロパティをマウスの左クリックを追跡し、ユーザー入力への応答で一連の線分を描画します。 フォームを非表示にして、それを再表示する場合に、例で描画された行が保持されません。このコードは、わかりやすくするため省略されました。  
+  
+ [!code-csharp[MouseEventArgs#2](~/samples/snippets/csharp/VS_Snippets_Winforms/MouseEventArgs/CS/Form1.cs#2)]
+ [!code-vb[MouseEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MouseEventArgs/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public int X { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MouseEventArgs.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス イベント生成時のマウスの x 座標を取得します。</summary>
+        <value>マウスの x 座標 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウスの座標は、発生するイベントによって異なります。 たとえば、ときに、<xref:System.Windows.Forms.Control.MouseMove?displayProperty=nameWithType>イベントが処理される、イベントを発生させたコントロールの座標に対する相対マウス座標の値は、します。 ドラッグ アンド ドロップ操作に関連するいくつかのイベントには、フォームの原点または画面の原点とする相対的なマウス座標の値が関連付けられています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.MouseEventArgs.X%2A>と<xref:System.Windows.Forms.MouseEventArgs.Y%2A>でマウス ポインターの現在の位置を表示するプロパティ、<xref:System.Windows.Forms.ToolTip>ウィンドウです。  
+  
+ [!code-csharp[MouseEventArgs#3](~/samples/snippets/csharp/VS_Snippets_Winforms/MouseEventArgs/CS/Form1.cs#3)]
+ [!code-vb[MouseEventArgs#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MouseEventArgs/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public int Y { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MouseEventArgs.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス イベント生成時のマウスの y 座標を取得します。</summary>
+        <value>マウスの y 座標 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウスの座標は、発生するイベントによって異なります。 たとえば、ときに、<xref:System.Windows.Forms.Control.MouseMove?displayProperty=nameWithType>イベントが処理される、イベントを発生させたコントロールの座標に対する相対マウス座標の値は、します。 ドラッグ アンド ドロップ操作に関連するいくつかのイベントには、フォームの原点または画面の原点に対する相対マウス座標の値が関連付けられています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.MouseEventArgs.X%2A>と<xref:System.Windows.Forms.MouseEventArgs.Y%2A>でマウス ポインターの現在の位置を表示するプロパティ、<xref:System.Windows.Forms.ToolTip>ウィンドウです。 このコードを使用する呼び出し`TrackCoordinates`フォームのコンス トラクターからです。  
+  
+ [!code-csharp[MouseEventArgs#3](~/samples/snippets/csharp/VS_Snippets_Winforms/MouseEventArgs/CS/Form1.cs#3)]
+ [!code-vb[MouseEventArgs#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MouseEventArgs/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

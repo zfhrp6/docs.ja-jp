@@ -1,0 +1,274 @@
+<Type Name="PixelFormat" FullName="System.Windows.Media.PixelFormat">
+  <TypeSignature Language="C#" Value="public struct PixelFormat : IEquatable&lt;System.Windows.Media.PixelFormat&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit PixelFormat extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.Media.PixelFormat&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.PixelFormat" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Windows.Media.PixelFormat&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Media.PixelFormatConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>画像やピクセル ベースのサーフェイスのピクセル形式を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_PixelFormat"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="pixelFormat"/>  
+```  
+  
+<a name="xamlValues_PixelFormat"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *pixelFormat*  
+ によって定義される定義済みのピクセル形式のいずれか、<xref:System.Windows.Media.PixelFormats>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Media.PixelFormat>し、そのプロパティの値を検索します。  
+  
+ [!code-csharp[ImagingSnippetGallery_procedural_snip#PixelFormatExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/CSharp/PixelFormatsExample.cs#pixelformatexample1)]
+ [!code-vb[ImagingSnippetGallery_procedural_snip#PixelFormatExample1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/VB/PixelFormatsExample.vb#pixelformatexample1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BitsPerPixel">
+      <MemberSignature Language="C#" Value="public int BitsPerPixel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BitsPerPixel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.PixelFormat.BitsPerPixel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビット/ピクセル (bpp) の数を取得<see cref="T:System.Windows.Media.PixelFormat" />です。</summary>
+        <value>ビット/ピクセル (bpp) この数<see cref="T:System.Windows.Media.PixelFormat" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.PixelFormat.BitsPerPixel%2A>ピクセル形式のビットはピクセル単位の数を検索するプロパティです。  
+  
+ [!code-csharp[ImagingSnippetGallery_procedural_snip#PixelFormatExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/CSharp/PixelFormatsExample.cs#pixelformatexample1)]
+ [!code-vb[ImagingSnippetGallery_procedural_snip#PixelFormatExample1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/VB/PixelFormatsExample.vb#pixelformatexample1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormat.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.Windows.Media.PixelFormat" /> が <paramref name="obj" /> に等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Media.PixelFormat pixelFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Windows.Media.PixelFormat pixelFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormat.Equals(System.Windows.Media.PixelFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pixelFormat" Type="System.Windows.Media.PixelFormat" />
+      </Parameters>
+      <Docs>
+        <param name="pixelFormat">比較するピクセル形式です。</param>
+        <summary>ピクセル形式が等しいかどうかを判断、指定された<see cref="T:System.Windows.Media.PixelFormat" />です。</summary>
+        <returns>
+          <see langword="true" />ピクセル形式が等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Media.PixelFormat left, System.Windows.Media.PixelFormat right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Media.PixelFormat left, valuetype System.Windows.Media.PixelFormat right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormat.Equals(System.Windows.Media.PixelFormat,System.Windows.Media.PixelFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Media.PixelFormat" />
+        <Parameter Name="right" Type="System.Windows.Media.PixelFormat" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初の<see cref="T:System.Windows.Media.PixelFormat" />等しいかどうかを比較するオブジェクト。</param>
+        <param name="right">2 番目<see cref="T:System.Windows.Media.PixelFormat" />等しいかどうかを比較するオブジェクト。</param>
+        <summary>指定された <see cref="T:System.Windows.Media.PixelFormat" /> インスタンスが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />2 つのパラメーターが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormat.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このピクセル形式のハッシュ コードを作成<see cref="P:System.Windows.Media.PixelFormat.Masks" />値。</summary>
+        <returns>ピクセル形式のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Masks">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Windows.Media.PixelFormatChannelMask&gt; Masks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;valuetype System.Windows.Media.PixelFormatChannelMask&gt; Masks" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.PixelFormat.Masks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Windows.Media.PixelFormatChannelMask&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているビット マスクのコレクションを取得、<see cref="T:System.Windows.Media.PixelFormat" />です。</summary>
+        <value>ビット マスクおよびに関連付けられているシフトのコレクション、<see cref="T:System.Windows.Media.PixelFormat" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.PixelFormat.Masks%2A>ピクセル形式に関連付けられたビット マスクを取得するプロパティです。  
+  
+ [!code-csharp[ImagingSnippetGallery_procedural_snip#PixelFormatExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/CSharp/PixelFormatsExample.cs#pixelformatexample1)]
+ [!code-vb[ImagingSnippetGallery_procedural_snip#PixelFormatExample1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ImagingSnippetGallery_procedural_snip/VB/PixelFormatsExample.vb#pixelformatexample1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Media.PixelFormat left, System.Windows.Media.PixelFormat right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Media.PixelFormat left, valuetype System.Windows.Media.PixelFormat right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormat.op_Equality(System.Windows.Media.PixelFormat,System.Windows.Media.PixelFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Media.PixelFormat" />
+        <Parameter Name="right" Type="System.Windows.Media.PixelFormat" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象となる最初の <see cref="T:System.Windows.Media.PixelFormat" />。</param>
+        <param name="right">比較対象となる 2 番目の <see cref="T:System.Windows.Media.PixelFormat" />。</param>
+        <summary>2 つの <see cref="T:System.Windows.Media.PixelFormat" /> インスタンスを比較し、相互に等価かどうかを判断します。</summary>
+        <returns>
+          2 つの <see cref="T:System.Windows.Media.PixelFormat" /> オブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Media.PixelFormat left, System.Windows.Media.PixelFormat right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Media.PixelFormat left, valuetype System.Windows.Media.PixelFormat right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormat.op_Inequality(System.Windows.Media.PixelFormat,System.Windows.Media.PixelFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Media.PixelFormat" />
+        <Parameter Name="right" Type="System.Windows.Media.PixelFormat" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象となる最初の <see cref="T:System.Windows.Media.PixelFormat" />。</param>
+        <param name="right">比較対象となる 2 番目の <see cref="T:System.Windows.Media.PixelFormat" />。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Media.PixelFormat" />非等値のインスタンス。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Media.PixelFormat" />オブジェクトが等しくない。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PixelFormat.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この文字列表現を作成<see cref="T:System.Windows.Media.PixelFormat" />です。</summary>
+        <returns>A<see cref="T:System.String" />の表現を含む、<see cref="T:System.Windows.Media.PixelFormat" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,101 @@
+<Type Name="FrameworkCompatibilityPreferences" FullName="System.Windows.FrameworkCompatibilityPreferences">
+  <TypeSignature Language="C#" Value="public static class FrameworkCompatibilityPreferences" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed FrameworkCompatibilityPreferences extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FrameworkCompatibilityPreferences" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>PresentationFramework アセンブリ内にある WPF 機能に関連する、アプリケーションの動作方法を指定するプロパティが含まれています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AreInactiveSelectionHighlightBrushKeysSupported">
+      <MemberSignature Language="C#" Value="public static bool AreInactiveSelectionHighlightBrushKeysSupported { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool AreInactiveSelectionHighlightBrushKeysSupported" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkCompatibilityPreferences.AreInactiveSelectionHighlightBrushKeysSupported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションで使用するかどうかを示す値を設定、<see cref="P:System.Windows.SystemColors.InactiveSelectionHighlightBrush" />と<see cref="P:System.Windows.SystemColors.InactiveSelectionHighlightTextBrush" />非アクティブな選択した項目の色のプロパティです。</summary>
+        <value>
+          <see langword="true" />アプリケーションが使用する場合、<see cref="P:System.Windows.SystemColors.InactiveSelectionHighlightBrush" />と<see cref="P:System.Windows.SystemColors.InactiveSelectionHighlightTextBrush" />非アクティブな選択した項目の色のプロパティをそれ以外の場合<see langword="false" /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値には、WPF のバージョンが依存していること、アプリケーションが対象です。  アプリケーションが対象 WPF 4.0 または既定値は、以前に場合`false`です。  アプリでは、WPF 4.5 をターゲットとする場合、既定は`true`します。  WPF の動作を変更するこのプロパティを使用する場合は、アプリケーションから継承するクラスのコンス トラクターでこのようなアプリの有効期間の初期段階で、プロパティの値を変更する必要があります。  値が読み取られた後にもう一度変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepTextBoxDisplaySynchronizedWithTextProperty">
+      <MemberSignature Language="C#" Value="public static bool KeepTextBoxDisplaySynchronizedWithTextProperty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool KeepTextBoxDisplaySynchronizedWithTextProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkCompatibilityPreferences.KeepTextBoxDisplaySynchronizedWithTextProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値、データにバインドされたかどうか<see cref="T:System.Windows.Controls.TextBox" />ソースの値と同一である文字列を表示する必要があります、<see cref="P:System.Windows.Controls.TextBox.Text" />プロパティ</summary>
+        <value>
+          <see langword="true" />場合、データにバインドされた<see cref="T:System.Windows.Controls.TextBox" />ソースの値と同一である文字列を表示する必要があります、<see cref="P:System.Windows.Controls.TextBox.Text" />プロパティ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値には、WPF のバージョンが依存していること、アプリケーションが対象です。  アプリケーションが対象 WPF 4.0 または既定値は、以前に場合`false`です。  アプリでは、WPF 4.5 をターゲットとする場合、既定は`true`します。  WPF の動作を変更するこのプロパティを使用する場合は、アプリケーションから継承するクラスのコンス トラクターでこのようなアプリの有効期間の初期段階で、プロパティの値を変更する必要があります。  値が読み取られた後にもう一度変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldThrowOnCopyOrCutFailure">
+      <MemberSignature Language="C#" Value="public static bool ShouldThrowOnCopyOrCutFailure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool ShouldThrowOnCopyOrCutFailure" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FrameworkCompatibilityPreferences.ShouldThrowOnCopyOrCutFailure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.TextBoxBase" /> インスタンス内で失敗したコピーまたは切り取り操作が <see cref="T:System.Runtime.InteropServices.ExternalException" /> という結果になるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see cref="T:System.Windows.Controls.Primitives.TextBoxBase" /> インスタンスで失敗したコピーまたは切り取り操作が <see cref="T:System.Runtime.InteropServices.ExternalException" /> という結果の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリップボードの操作が失敗した場合などの**HRESULT 0x800401D0 (CLIPBRD_E_CANT_OPEN)** 、対応するエラー <xref:System.Runtime.InteropServices.ExternalException> (ExternalException の型です) がスローされます。  
+  
+ Win32 `OpenClipboard` API は機能し、グローバルに適切に記述されたアプリケーション呼び出す必要があります、対応する`CloseClipboard`API、クリップボード操作が完了するとすぐにします。 それ以外の場合、他のアプリケーションが、同じセッションで実行することはできませんクリップボード機能へのアクセスします。  
+  
+ WPF では、このようなクリップボードへのアクセスの拒否はサイレント モードで無視通常されます。 ただし、アプリケーションこともできますが、`ExternalException`を設定して障害発生時に、<xref:System.Windows.FrameworkCompatibilityPreferences.ShouldThrowOnCopyOrCutFailure%2A>フラグを`true`です。 ただし、例外を受信することも必要です、アプリケーションで処理する<xref:System.Windows.Input.ApplicationCommands.Cut%2A>と<xref:System.Windows.Input.ApplicationCommands.Copy%2A>を通じて RoutedUICommands、 <xref:System.Windows.Input.CommandBinding>、TextBoxBase、すべてのコントロールに適用し、バインディングを (<xref:System.Windows.Controls.TextBox>と<xref:System.Windows.Controls.RichTextBox>) アプリケーションにします。 アプリケーションは、ExternalExceptions CommandBinding の Executed ハンドラーで、コピーと切り取り操作の結果を処理することを確認する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

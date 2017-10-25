@@ -1,0 +1,79 @@
+<Type Name="QueueTransferProtocol" FullName="System.ServiceModel.QueueTransferProtocol">
+  <TypeSignature Language="C#" Value="public enum QueueTransferProtocol" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed QueueTransferProtocol extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.QueueTransferProtocol" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>キュー マネージャー間でのメッセージの転送で使用されるプロトコルを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ UseActiveDirectory 属性設定されている場合は、Srmp または SrmpSecure を指定する`true`SRMP を使用する場合、Active Directory がアドレス指定のメッセージ キュー (MSMQ) を提供しないために、例外が発生します。 UseActiveDirectory は、属性、 [ &lt;netMsmqBinding&gt; ](~/docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)と[ &lt;msmqIntegrationBinding&gt;](~/docs/framework/configure-apps/file-schema/wcf/msmqintegrationbinding.md)です。  
+  
+ キューのアドレス指定の詳細については、次を参照してください。[サービス エンドポイントとキューのアドレス指定](~/docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Native">
+      <MemberSignature Language="C#" Value="Native" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.QueueTransferProtocol Native = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.QueueTransferProtocol.Native" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.QueueTransferProtocol</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネイティブな MSMQ プロトコルを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Srmp">
+      <MemberSignature Language="C#" Value="Srmp" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.QueueTransferProtocol Srmp = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.QueueTransferProtocol.Srmp" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.QueueTransferProtocol</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP リライアブル メッセージ プロトコル (SRMP) を使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SrmpSecure">
+      <MemberSignature Language="C#" Value="SrmpSecure" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.QueueTransferProtocol SrmpSecure = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.QueueTransferProtocol.SrmpSecure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.QueueTransferProtocol</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP リライアブル メッセージ プロトコル セキュア (SRMPS) トランスポートを使用します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

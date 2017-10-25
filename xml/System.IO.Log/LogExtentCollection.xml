@@ -1,0 +1,355 @@
+<Type Name="LogExtentCollection" FullName="System.IO.Log.LogExtentCollection">
+  <TypeSignature Language="C#" Value="public sealed class LogExtentCollection : System.Collections.Generic.IEnumerable&lt;System.IO.Log.LogExtent&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LogExtentCollection extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;class System.IO.Log.LogExtent&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Log.LogExtentCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Log</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.IO.Log.LogExtent&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.IO.Log.LogExtent" /> に関連付けられた <see cref="T:System.IO.Log.LogStore" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、<xref:System.IO.Log.LogExtent> に関連付けられている <xref:System.IO.Log.LogStore> オブジェクトのコレクションを格納します。 <xref:System.IO.Log.LogStore> インスタンスは、<xref:System.IO.Log.LogExtent> により表されるディスク エクステントのコレクションにデータを保存します。 個々の <xref:System.IO.Log.LogExtent> は 1 つの <xref:System.IO.Log.LogStore> に関連付けられ、同一の <xref:System.IO.Log.LogExtent> 内の  <xref:System.IO.Log.LogStore> オブジェクトのサイズはすべて同じです。 領域が追加され、エクステント増加分が <xref:System.IO.Log.LogStore> インスタンスから削除されます。  
+  
+ <xref:System.IO.Log.LogExtent> オブジェクトはディスク上でファイルとして表されますが、通常のファイルとして移動したり削除したりすることはできません。 <xref:System.IO.Log.LogExtent> インスタンスを直接追加または削除する場合は、このクラスのメソッドを使用する必要があります。 通常、アクティブなデータがなくなったエクステントは削除されます。 ただし、`force` メソッドの <xref:System.IO.Log.LogExtentCollection.Remove%2A> パラメーターが `true` の場合、エクステントを直ちに削除できないときは例外がスローされます。  
+  
+ <xref:System.IO.Log.LogExtentCollection> 内の最後のエクステントを削除することはできません。つまり、エクステントの追加後に <xref:System.IO.Log.LogExtentCollection.Count%2A> プロパティが 0 になることはありません。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogExtent> クラスおよび <xref:System.IO.Log.LogExtentCollection> クラスを使用して、エクステントをログ シーケンスに追加およびエミュレートする方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#0)]
+ [!code-vb[S_UELogRecordSequence#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogExtentCollection.Add(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">追加するログ エクステントのパス。</param>
+        <summary><see cref="T:System.IO.Log.LogExtent" /> のインスタンスをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しく追加された <xref:System.IO.Log.LogExtent> インスタンスのサイズは、コレクション内の既存の <xref:System.IO.Log.LogExtent> インスタンスのサイズと同じです。  
+  
+> [!NOTE]
+>  このメソッドを使用してコレクションに最初の <xref:System.IO.Log.LogExtent> を追加しないでください。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogExtent> クラスおよび <xref:System.IO.Log.LogExtentCollection> クラスを使用して、エクステントをログ シーケンスに追加およびエミュレートする方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#0)]
+ [!code-vb[S_UELogRecordSequence#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> で指定されたログ ストア ファイル名が無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">最初のエクステントにサイズを指定する必要があります。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ ファイルまたはディレクトリが既に存在するため、<paramref name="path" /> で指定されたファイルを作成できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。  
+  
+ または  
+  
+ 記憶域ディスクまたはメディアがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string path, long size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string path, int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogExtentCollection.Add(System.String,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="path">ログ エクステントのパス。</param>
+        <param name="size">ログ エクステントのサイズ。</param>
+        <summary>指定されたサイズで新しい <see cref="T:System.IO.Log.LogExtent" /> を作成し、コレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションが空ではない場合、コレクション内の他のエクステント以上のサイズを指定する必要があります。 この場合、`size` パラメーターは無視され、エクステントはコレクション内の他のエクステントと同じサイズで作成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="size" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="archiveTail" /> が有効な範囲ではありません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> で指定されたログ ストア ファイル名が無効です。  
+  
+ <paramref name="size" /> がストア内の他のエクステントのサイズより小さい値です。</exception>
+        <exception cref="T:System.InvalidOperationException">最初のエクステントにサイズを指定する必要があります。  
+  
+ または  
+  
+ 重複するエクステント名は使用できません。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ ファイルまたはディレクトリが既に存在するため、<paramref name="path" /> で指定されたファイルを作成できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。  
+  
+ または  
+  
+ 記憶域ディスクまたはメディアがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogExtentCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内のログ エクステントの数を取得します。</summary>
+        <value>コレクション内のログ エクステントの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogExtent> クラスおよび <xref:System.IO.Log.LogExtentCollection> クラスを使用して、エクステントをログ シーケンスに追加およびエミュレートする方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#0)]
+ [!code-vb[S_UELogRecordSequence#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ログ ストアが破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FreeCount">
+      <MemberSignature Language="C#" Value="public int FreeCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FreeCount" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogExtentCollection.FreeCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の解放されている <see cref="T:System.IO.Log.LogExtent" /> インスタンスの数 (データが存在しない <see cref="T:System.IO.Log.LogExtent" /> インスタンスの数) を取得します。</summary>
+        <value>コレクション内の解放されている <see cref="T:System.IO.Log.LogExtent" /> インスタンスの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogExtent> クラスおよび <xref:System.IO.Log.LogExtentCollection> クラスを使用して、エクステントをログ シーケンスに追加およびエミュレートする方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#0)]
+ [!code-vb[S_UELogRecordSequence#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ログ ストアが破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;System.IO.Log.LogExtent&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.IO.Log.LogExtent&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogExtentCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.IO.Log.LogExtent&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコレクション内の <see cref="T:System.IO.Log.LogExtent" /> インスタンスの列挙子を取得します。 このメソッドは継承できません。</summary>
+        <returns>このコレクション内の <see cref="T:System.IO.Log.LogExtent" /> インスタンスの列挙子。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">次のいずれかの理由により、操作が無効です。  
+  
+-   列挙体が終了しています。  
+  
+-   コレクションが変更されています。  
+  
+-   列挙体が開始されていません。 <see cref="M:System.Collections.IEnumerator.MoveNext" /> を呼び出す必要があります。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.IO.Log.LogExtent extent, bool force);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.IO.Log.LogExtent extent, bool force) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogExtentCollection.Remove(System.IO.Log.LogExtent,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extent" Type="System.IO.Log.LogExtent" />
+        <Parameter Name="force" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="extent">削除対象の <see cref="T:System.IO.Log.LogExtent" /> インスタンス。</param>
+        <param name="force">
+          エクステントを直ちに削除する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定した <see cref="T:System.IO.Log.LogExtent" /> インスタンスをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.LogExtent> インスタンスは、<xref:System.IO.Log.LogStore> のアクティブ領域の一部ではない場合にのみ、コレクションから削除できます。 `force` パラメーターが `true` であり、エクステントを直ちに削除できない場合、例外がスローされます。 `force` パラメーターが `false` であり、エクステントを直ちに削除できない場合、アクティブ領域の一部ではなくなるまで削除は遅延されます。  
+  
+ <xref:System.IO.Log.LogExtentCollection> 内の最後のエクステントを削除することはできません。つまり、エクステントの追加後に <xref:System.IO.Log.LogExtentCollection.Count%2A> プロパティが 0 になることはありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="extent" /> または <paramref name="force" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="extent" /> がコレクション内に見つかりません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="extent" /> を削除できません。 依然としてアクティブ領域の一部であるか、またはアクセスが拒否されました。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ <paramref name="extent" /> を削除できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string path, bool force);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string path, bool force) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogExtentCollection.Remove(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="force" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">削除する <see cref="T:System.IO.Log.LogExtent" /> インスタンスのパス。</param>
+        <param name="force">
+          エクステントを直ちに削除する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定したパスの <see cref="T:System.IO.Log.LogExtent" /> インスタンスをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.LogExtent> インスタンスは、<xref:System.IO.Log.LogStore> のアクティブ領域の一部ではない場合にのみ、コレクションから削除できます。 `force` パラメーターが `true` であり、エクステントを直ちに削除できない場合、例外がスローされます。 `force` パラメーターが `false` であり、エクステントを直ちに削除できない場合、アクティブ領域の一部ではなくなるまで削除は遅延されます。  
+  
+ <xref:System.IO.Log.LogExtentCollection> 内の最後のエクステントを削除することはできません。つまり、エクステントの追加後に <xref:System.IO.Log.LogExtentCollection.Count%2A> プロパティが 0 になることはありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="force" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> で指定したエクステントがコレクション内に見つかりません。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="path" /> で指定したエクステントを削除できません。 依然としてアクティブ領域の一部であるか、またはアクセスが拒否されました。</exception>
+        <exception cref="T:System.IO.IOException">予期しない I/O 例外のため、要求は実行されませんでした。  
+  
+ または  
+  
+ <paramref name="path" /> で指定したエクステントを削除できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+        <exception cref="T:System.IO.Log.SequenceFullException">レコード シーケンスがいっぱいです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定のログ ストアへのアクセスは、オペレーティング システムにより拒否されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.LogExtentCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコレクション内の <see cref="T:System.IO.Log.LogExtent" /> インスタンスの列挙子を取得します。 このメソッドは継承できません。</summary>
+        <returns>このコレクション内の <see cref="T:System.IO.Log.LogExtent" /> インスタンスの列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

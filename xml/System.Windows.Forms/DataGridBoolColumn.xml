@@ -1,0 +1,753 @@
+<Type Name="DataGridBoolColumn" FullName="System.Windows.Forms.DataGridBoolColumn">
+  <TypeSignature Language="C#" Value="public class DataGridBoolColumn : System.Windows.Forms.DataGridColumnStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridBoolColumn extends System.Windows.Forms.DataGridColumnStyle" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridBoolColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridColumnStyle</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>各セルにブール値を表すためのチェック ボックスが含まれています、列を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridBoolColumn>から派生した、`abstract`クラス<xref:System.Windows.Forms.DataGridColumnStyle>です。 実行時に、<xref:System.Windows.Forms.DataGridBoolColumn>を既定では 3 つの状態を持つ各セルにチェック ボックスが含まれています: チェック (`true`) またはオフ、(`false`)、および<xref:System.DBNull.Value>です。 2 つの状態のチェック ボックスを使用して、設定、<xref:System.Windows.Forms.DataGridBoolColumn.AllowNull%2A>プロパティを`false`です。  
+  
+ クラスに追加されたプロパティを含める<xref:System.Windows.Forms.DataGridBoolColumn.FalseValue%2A>、 <xref:System.Windows.Forms.DataGridBoolColumn.NullValue%2A>、および<xref:System.Windows.Forms.DataGridBoolColumn.TrueValue%2A>です。 これらのプロパティは、それぞれの列の状態を基になる値を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は最初に、新しい作成<xref:System.Windows.Forms.DataGridBoolColumn>に追加し、<xref:System.Windows.Forms.GridColumnStylesCollection>の<xref:System.Windows.Forms.DataGridTableStyle>です。  
+  
+ [!code-cpp[DataGridBoolColumn overview#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DataGridBoolColumn overview/CPP/boolcolumn.cpp#1)]
+ [!code-csharp[DataGridBoolColumn overview#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DataGridBoolColumn overview/CS/boolcolumn.cs#1)]
+ [!code-vb[DataGridBoolColumn overview#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataGridBoolColumn overview/VB/boolcolumn.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridBoolColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridBoolColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを使用して作成するときに、 <xref:System.Windows.Forms.DataGridBoolColumn>、必ず設定して、<xref:System.Windows.Forms.DataGridColumnStyle.MappingName%2A>値を<xref:System.Data.DataColumn.ColumnName%2A>の<xref:System.Data.DataColumn>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は最初に、新しい作成<xref:System.Windows.Forms.DataGridBoolColumn>に追加し、<xref:System.Windows.Forms.GridColumnStylesCollection>の<xref:System.Windows.Forms.DataGridTableStyle>です。  
+  
+ [!code-cpp[Classic DataGridBoolColumn Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridBoolColumn Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridBoolColumn Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridBoolColumn Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridBoolColumn Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridBoolColumn Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridBoolColumn (System.ComponentModel.PropertyDescriptor prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.PropertyDescriptor prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.#ctor(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="prop"><see cref="T:System.ComponentModel.PropertyDescriptor" />列に関連付けられています。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.DataGridBoolColumn" /> 、指定した<see cref="T:System.ComponentModel.PropertyDescriptor" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridBoolColumn>を含むデータ ソースに関連付ける必要がある<xref:System.Boolean>値。  
+  
+ 取得する、 <xref:System.ComponentModel.PropertyDescriptor>、まず使用して、<xref:System.Windows.Forms.BindingContext>を返す、適切な<xref:System.Windows.Forms.BindingManagerBase>します。 使用して、<xref:System.Windows.Forms.BindingManagerBase.GetItemProperties%2A>のメソッド、<xref:System.Windows.Forms.BindingManagerBase>を返す、<xref:System.ComponentModel.PropertyDescriptorCollection>です。 最後に、使用して、<xref:System.ComponentModel.PropertyDescriptorCollection.Item%2A>のプロパティ、<xref:System.ComponentModel.PropertyDescriptorCollection>を固有の仕様を返す<xref:System.ComponentModel.PropertyDescriptor>列にします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.BindingManagerBase.GetItemProperties%2A>を返すメソッドを<xref:System.ComponentModel.PropertyDescriptorCollection?displayProperty=nameWithType>の<xref:System.Data.DataTable>です。 <xref:System.ComponentModel.PropertyDescriptor>の<xref:System.Data.DataColumn>の作成に使用し、<xref:System.Windows.Forms.DataGridBoolColumn>です。  
+  
+ [!code-cpp[Classic DataGridBoolColumn.DataGridBoolColumn1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridBoolColumn.DataGridBoolColumn1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridBoolColumn.DataGridBoolColumn1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridBoolColumn.DataGridBoolColumn1 Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridBoolColumn.DataGridBoolColumn1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridBoolColumn.DataGridBoolColumn1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridBoolColumn (System.ComponentModel.PropertyDescriptor prop, bool isDefault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.PropertyDescriptor prop, bool isDefault) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.#ctor(System.ComponentModel.PropertyDescriptor,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="isDefault" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="prop"><see cref="T:System.ComponentModel.PropertyDescriptor" />列に関連付けられています。</param>
+        <param name="isDefault">
+          <see langword="true" />既定として列を指定するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.DataGridBoolColumn" /> 、指定した<see cref="T:System.ComponentModel.PropertyDescriptor" />列のスタイルは、既定の列かどうかを指定するとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、 <xref:System.ComponentModel.PropertyDescriptor>、まず使用して、<xref:System.Windows.Forms.BindingContext>を返す、適切な<xref:System.Windows.Forms.BindingManagerBase>します。 使用して、<xref:System.Windows.Forms.BindingManagerBase.GetItemProperties%2A>のメソッド、<xref:System.Windows.Forms.BindingManagerBase>を返す、<xref:System.ComponentModel.PropertyDescriptorCollection>です。 最後に、使用して、<xref:System.ComponentModel.PropertyDescriptorCollection.Item%2A>のプロパティ、<xref:System.ComponentModel.PropertyDescriptorCollection>を固有の仕様を返す<xref:System.ComponentModel.PropertyDescriptor>列にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="protected override void Abort (int rowNum);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Abort(int32 rowNum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.Abort(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowNum" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowNum">操作が中断されている行の数。</param>
+        <summary>編集プロシージャを中断する要求を開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowNull">
+      <MemberSignature Language="C#" Value="public bool AllowNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowNull" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridBoolColumn.AllowNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または null 値が許可されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />null 値が許可された場合、それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列のチェック ボックスが 2 つの状態を持つこのプロパティが false に設定されている場合: チェック (`true`) と unchecked (`false`)。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Windows.Forms.DataGridBoolColumn.AllowNull%2A>プロパティです。  
+  
+ [!code-cpp[Classic DataGridBoolColumn.AllowNull Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridBoolColumn.AllowNull Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridBoolColumn.AllowNull Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridBoolColumn.AllowNull Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridBoolColumn.AllowNull Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridBoolColumn.AllowNull Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowNullChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler AllowNullChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AllowNullChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DataGridBoolColumn.AllowNullChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Forms.DataGridBoolColumn.AllowNull" />プロパティを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[DataGridBoolColumn#2](~/samples/snippets/cpp/VS_Snippets_Winforms/DataGridBoolColumn/CPP/datagridboolcolumn.cpp#2)]
+ [!code-csharp[DataGridBoolColumn#2](~/samples/snippets/csharp/VS_Snippets_Winforms/DataGridBoolColumn/CS/datagridboolcolumn.cs#2)]
+ [!code-vb[DataGridBoolColumn#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataGridBoolColumn/VB/datagridboolcolumn.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="protected override bool Commit (System.Windows.Forms.CurrencyManager dataSource, int rowNum);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool Commit(class System.Windows.Forms.CurrencyManager dataSource, int32 rowNum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.Commit(System.Windows.Forms.CurrencyManager,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="rowNum" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource"><see cref="T:System.Data.DataView" />編集された列の。</param>
+        <param name="rowNum">編集された行の番号。</param>
+        <summary>編集プロシージャを完了する要求を開始します。</summary>
+        <returns>
+          編集プロシージャが正常にコミットされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConcedeFocus">
+      <MemberSignature Language="C#" Value="protected override void ConcedeFocus ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void ConcedeFocus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.ConcedeFocus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列がホストしているコントロールへのフォーカスを放棄する必要があることを列に通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Edit">
+      <MemberSignature Language="C#" Value="protected override void Edit (System.Windows.Forms.CurrencyManager source, int rowNum, System.Drawing.Rectangle bounds, bool readOnly, string displayText, bool cellIsVisible);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Edit(class System.Windows.Forms.CurrencyManager source, int32 rowNum, valuetype System.Drawing.Rectangle bounds, bool readOnly, string displayText, bool cellIsVisible) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.Edit(System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Rectangle,System.Boolean,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="rowNum" Type="System.Int32" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="readOnly" Type="System.Boolean" />
+        <Parameter Name="displayText" Type="System.String" />
+        <Parameter Name="cellIsVisible" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Data.DataView" />編集されたセルのです。</param>
+        <param name="rowNum">編集するセルの行番号。</param>
+        <param name="bounds">コントロールの配置先の <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="readOnly">
+          <see langword="true" />場合は、値は読み取り専用です。それ以外の場合、<see langword="false" />です。</param>
+        <param name="displayText">セルに表示するテキスト。</param>
+        <param name="cellIsVisible">
+          <see langword="true" />セルを表示するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>値を編集するためにセルを準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの一般的な実装とは異なり (」の説明に従って、<xref:System.Windows.Forms.DataGridColumnStyle>クラス) では、<xref:System.Windows.Forms.DataGridBoolColumn.Edit%2A>セルの値を編集用のコントロール サイト メソッドがありません。 チェック ボックスを描画する代わりに、ときに、<xref:System.Windows.Forms.DataGridBoolColumn.Paint%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnterNullValue">
+      <MemberSignature Language="C#" Value="protected override void EnterNullValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void EnterNullValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.EnterNullValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="F:System.DBNull.Value" /> を列に入力します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Null 値を入力するときに使用される実際の値を設定するには、使用、<xref:System.Windows.Forms.DataGridBoolColumn.NullValue%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.DataGridBoolColumn.EnterNullValue%2A>列に null 値を入力します。  
+  
+ [!code-cpp[Classic DataGridBoolColumn.EnterNullValue Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridBoolColumn.EnterNullValue Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridBoolColumn.EnterNullValue Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridBoolColumn.EnterNullValue Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridBoolColumn.EnterNullValue Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridBoolColumn.EnterNullValue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception"><see cref="P:System.Windows.Forms.DataGridBoolColumn.AllowNull" /> プロパティが <see langword="false" /> に設定されている。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FalseValue">
+      <MemberSignature Language="C#" Value="public object FalseValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object FalseValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridBoolColumn.FalseValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の値を設定するときに使用される実際の値の設定を取得または<see langword="false" />です。</summary>
+        <value>として型指定された値、<see cref="T:System.Object" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridBoolColumn.FalseValue%2A>、 <xref:System.Windows.Forms.DataGridBoolColumn.NullValue%2A>、および<xref:System.Windows.Forms.DataGridBoolColumn.TrueValue%2A>プロパティは、データ ソースへのプッシュは実際の値を決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 <xref:System.Windows.Forms.DataGridBoolColumn.TrueValue%2A>、 <xref:System.Windows.Forms.DataGridBoolColumn.FalseValue%2A>、および<xref:System.Windows.Forms.DataGridBoolColumn.NullValue%2A>のプロパティ、<xref:System.Windows.Forms.DataGridBoolColumn>です。  
+  
+ [!code-cpp[Classic DataGridBoolColumn.TrueValue Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridBoolColumn.TrueValue Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridBoolColumn.TrueValue Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridBoolColumn.TrueValue Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridBoolColumn.TrueValue Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridBoolColumn.TrueValue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FalseValueChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler FalseValueChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler FalseValueChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DataGridBoolColumn.FalseValueChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Forms.DataGridBoolColumn.FalseValue" />プロパティを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[DataGridBoolColumn#3](~/samples/snippets/cpp/VS_Snippets_Winforms/DataGridBoolColumn/CPP/datagridboolcolumn.cpp#3)]
+ [!code-csharp[DataGridBoolColumn#3](~/samples/snippets/csharp/VS_Snippets_Winforms/DataGridBoolColumn/CS/datagridboolcolumn.cs#3)]
+ [!code-vb[DataGridBoolColumn#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataGridBoolColumn/VB/datagridboolcolumn.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumnValueAtRow">
+      <MemberSignature Language="C#" Value="protected override object GetColumnValueAtRow (System.Windows.Forms.CurrencyManager lm, int row);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object GetColumnValueAtRow(class System.Windows.Forms.CurrencyManager lm, int32 row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.GetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lm" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="row" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="lm"><see cref="T:System.Windows.Forms.CurrencyManager" />列にします。</param>
+        <param name="row">行番号。</param>
+        <summary>指定された行の値を取得します。</summary>
+        <returns>として型指定された値、<see cref="T:System.Object" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMinimumHeight">
+      <MemberSignature Language="C#" Value="protected override int GetMinimumHeight ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance int32 GetMinimumHeight() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.GetMinimumHeight" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列のセルの高さを取得します。</summary>
+        <returns>列の高さ。 既定値は 16 です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredHeight">
+      <MemberSignature Language="C#" Value="protected override int GetPreferredHeight (System.Drawing.Graphics g, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance int32 GetPreferredHeight(class System.Drawing.Graphics g, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.GetPreferredHeight(System.Drawing.Graphics,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />が画面に描画します。</param>
+        <param name="value"><see cref="T:System.Object" />画面に描画される値を格納します。</param>
+        <summary>列のサイズを変更するときに使用する高さを取得します。</summary>
+        <returns>自動的に列のセルのサイズを変更するために使用する高さ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size GetPreferredSize (System.Drawing.Graphics g, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance valuetype System.Drawing.Size GetPreferredSize(class System.Drawing.Graphics g, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.GetPreferredSize(System.Drawing.Graphics,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="g">A<see cref="T:System.Drawing.Graphics" />セルを描画します。</param>
+        <param name="value">この値は、セルに収まる必要があります。</param>
+        <summary>最適な幅を含む特定の値を指定したセルの高さを取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />のセルの描画の情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridBoolColumn.GetPreferredSize%2A>メソッドでは、表示される値に基づいて、列のサイズを変更することができます。 たとえば、セルに、特に大きな値が含まれている場合を使えば、<xref:System.Windows.Forms.DataGridBoolColumn.GetPreferredSize%2A>値に基づいてセルの最適なサイズを返すメソッドをします。 最適なサイズでは、だけでなく、文字列も表示に使用するフォントのサイズが考慮されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NullValue">
+      <MemberSignature Language="C#" Value="public object NullValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object NullValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridBoolColumn.NullValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の値を設定するときに使用される実際の値の設定を取得または<see cref="F:System.DBNull.Value" />です。</summary>
+        <value>として型指定された値、<see cref="T:System.Object" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定によって表示されるテキストを指定することも、<xref:System.Windows.Forms.DataGridColumnStyle.NullText%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.DataGridBoolColumn.AllowNull%2A>プロパティは、null 値を入力する場合は true に設定する必要があります。  
+  
+ <xref:System.Windows.Forms.DataGridBoolColumn.FalseValue%2A>、 <xref:System.Windows.Forms.DataGridBoolColumn.NullValue%2A>、および<xref:System.Windows.Forms.DataGridBoolColumn.TrueValue%2A>プロパティは、データ ソースへのプッシュは実際の値を決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 <xref:System.Windows.Forms.DataGridBoolColumn.TrueValue%2A>、 <xref:System.Windows.Forms.DataGridBoolColumn.FalseValue%2A>、および<xref:System.Windows.Forms.DataGridBoolColumn.NullValue%2A>のプロパティ、<xref:System.Windows.Forms.DataGridBoolColumn>です。  
+  
+ [!code-cpp[Classic DataGridBoolColumn.TrueValue Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridBoolColumn.TrueValue Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridBoolColumn.TrueValue Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridBoolColumn.TrueValue Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridBoolColumn.TrueValue Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridBoolColumn.TrueValue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.CurrencyManager source, int rowNum);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Paint(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.CurrencyManager source, int32 rowNum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.CurrencyManager,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="source" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="rowNum" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="g">描画する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="bounds">描画範囲の外接する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="source"><see cref="T:System.Windows.Forms.CurrencyManager" />列の。</param>
+        <param name="rowNum">基になるデータで参照される行の数。</param>
+        <summary>描画、<see cref="T:System.Windows.Forms.DataGridBoolColumn" />と、指定された<see cref="T:System.Drawing.Graphics" />、<see cref="T:System.Drawing.Rectangle" />および行の数。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、渡されたグラフィック オブジェクトの背景色と背景を描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.CurrencyManager source, int rowNum, bool alignToRight);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Paint(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.CurrencyManager source, int32 rowNum, bool alignToRight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.CurrencyManager,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="source" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="rowNum" Type="System.Int32" />
+        <Parameter Name="alignToRight" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="g">描画する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="bounds">描画範囲の外接する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="source"><see cref="T:System.Windows.Forms.CurrencyManager" />列の。</param>
+        <param name="rowNum">参照先の、基になるデータ テーブルにある行の番号。</param>
+        <param name="alignToRight">右側にコンテンツを整列するかどうかを示す値。 <see langword="true" />場合は、コンテンツが右揃えに、それ以外の場合、<see langword="false" />です。</param>
+        <summary>描画、<see cref="T:System.Windows.Forms.DataGridBoolColumn" />と、指定された<see cref="T:System.Drawing.Graphics" />、 <see cref="T:System.Drawing.Rectangle" />、行番号、および配置の設定。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.CurrencyManager source, int rowNum, System.Drawing.Brush backBrush, System.Drawing.Brush foreBrush, bool alignToRight);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Paint(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.CurrencyManager source, int32 rowNum, class System.Drawing.Brush backBrush, class System.Drawing.Brush foreBrush, bool alignToRight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Brush,System.Drawing.Brush,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="source" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="rowNum" Type="System.Int32" />
+        <Parameter Name="backBrush" Type="System.Drawing.Brush" />
+        <Parameter Name="foreBrush" Type="System.Drawing.Brush" />
+        <Parameter Name="alignToRight" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="g">描画する <see cref="T:System.Drawing.Graphics" />。</param>
+        <param name="bounds">描画範囲の外接する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="source"><see cref="T:System.Windows.Forms.CurrencyManager" />列の。</param>
+        <param name="rowNum">参照先の、基になるデータ テーブルにある行の番号。</param>
+        <param name="backBrush">背景色の描画に使用する <see cref="T:System.Drawing.Brush" />。</param>
+        <param name="foreBrush">前景色の描画に使用する <see cref="T:System.Drawing.Color" />。</param>
+        <param name="alignToRight">右側にコンテンツを整列するかどうかを示す値。 <see langword="true" />場合は、コンテンツが右揃えに、それ以外の場合、<see langword="false" />です。</param>
+        <summary>描画、<see cref="T:System.Windows.Forms.DataGridBoolColumn" />と、指定された<see cref="T:System.Drawing.Graphics" />、 <see cref="T:System.Drawing.Rectangle" />、行の数、 <see cref="T:System.Drawing.Brush" />、および<see cref="T:System.Drawing.Color" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列のチェック ボックスを描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColumnValueAtRow">
+      <MemberSignature Language="C#" Value="protected override void SetColumnValueAtRow (System.Windows.Forms.CurrencyManager lm, int row, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void SetColumnValueAtRow(class System.Windows.Forms.CurrencyManager lm, int32 row, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridBoolColumn.SetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lm" Type="System.Windows.Forms.CurrencyManager" />
+        <Parameter Name="row" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="lm"><see cref="T:System.Windows.Forms.CurrencyManager" />列にします。</param>
+        <param name="row">行番号。</param>
+        <param name="value">として型指定された値を設定すると、<see cref="T:System.Object" />です。</param>
+        <summary>指定した行の値を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrueValue">
+      <MemberSignature Language="C#" Value="public object TrueValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TrueValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridBoolColumn.TrueValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の値を設定するときに使用される実際の値の設定を取得または<see langword="true" />です。</summary>
+        <value>として型指定された値、<see cref="T:System.Object" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridBoolColumn.FalseValue%2A>、 <xref:System.Windows.Forms.DataGridBoolColumn.NullValue%2A>、および<xref:System.Windows.Forms.DataGridBoolColumn.TrueValue%2A>プロパティは、データ ソースへのプッシュは実際の値を決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 <xref:System.Windows.Forms.DataGridBoolColumn.TrueValue%2A>、 <xref:System.Windows.Forms.DataGridBoolColumn.FalseValue%2A>、および<xref:System.Windows.Forms.DataGridBoolColumn.NullValue%2A>のプロパティ、<xref:System.Windows.Forms.DataGridBoolColumn>です。  
+  
+ [!code-cpp[Classic DataGridBoolColumn.TrueValue Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGridBoolColumn.TrueValue Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGridBoolColumn.TrueValue Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGridBoolColumn.TrueValue Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGridBoolColumn.TrueValue Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGridBoolColumn.TrueValue Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrueValueChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TrueValueChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TrueValueChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DataGridBoolColumn.TrueValueChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Forms.DataGridBoolColumn.TrueValue" />プロパティ値を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[DataGridBoolColumn#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DataGridBoolColumn/CPP/datagridboolcolumn.cpp#1)]
+ [!code-csharp[DataGridBoolColumn#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DataGridBoolColumn/CS/datagridboolcolumn.cs#1)]
+ [!code-vb[DataGridBoolColumn#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DataGridBoolColumn/VB/datagridboolcolumn.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

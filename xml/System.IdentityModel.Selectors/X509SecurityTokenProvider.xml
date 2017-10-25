@@ -1,0 +1,170 @@
+<Type Name="X509SecurityTokenProvider" FullName="System.IdentityModel.Selectors.X509SecurityTokenProvider">
+  <TypeSignature Language="C#" Value="public class X509SecurityTokenProvider : System.IdentityModel.Selectors.SecurityTokenProvider, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509SecurityTokenProvider extends System.IdentityModel.Selectors.SecurityTokenProvider implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.X509SecurityTokenProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Selectors.SecurityTokenProvider</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>SOAP メッセージ送信者の <see cref="T:System.IdentityModel.Tokens.X509SecurityToken" /> セキュリティ トークンを提供するセキュリティ トークン プロバイダーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大半の場合、<xref:System.IdentityModel.Selectors.X509SecurityTokenProvider> クラスを直接呼び出す必要はありません。このクラスはクライアントが <xref:System.IdentityModel.Tokens.X509SecurityToken> セキュリティ トークンを必要とする SOAP メッセージを送信するときに呼び出されます。 特に、クライアントは <xref:System.ServiceModel.Description.ClientCredentials> クラスを使用して必要なセキュリティ トークンの種類を指定し、<xref:System.ServiceModel.Description.ClientCredentials> クラスはセキュリティ トークンを取得するために <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> メソッドを呼び出します。 必要なセキュリティ トークンが <xref:System.IdentityModel.Tokens.X509SecurityToken> セキュリティ トークンである場合、<xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> メソッドは <xref:System.IdentityModel.Selectors.X509SecurityTokenProvider.GetTokenCore%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509SecurityTokenProvider (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509SecurityTokenProvider.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">セキュリティ トークンを取得する対象の <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。</param>
+        <summary>指定した X.509 証明書を使用して、<see cref="T:System.IdentityModel.Selectors.X509SecurityTokenProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509SecurityTokenProvider.GetTokenCore%2A> メソッドは、`certificate` パラメーターに指定された証明書に基づいてセキュリティ トークンを取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509SecurityTokenProvider (System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, System.Security.Cryptography.X509Certificates.StoreName storeName, System.Security.Cryptography.X509Certificates.X509FindType findType, object findValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, valuetype System.Security.Cryptography.X509Certificates.StoreName storeName, valuetype System.Security.Cryptography.X509Certificates.X509FindType findType, object findValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509SecurityTokenProvider.#ctor(System.Security.Cryptography.X509Certificates.StoreLocation,System.Security.Cryptography.X509Certificates.StoreName,System.Security.Cryptography.X509Certificates.X509FindType,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="storeLocation" Type="System.Security.Cryptography.X509Certificates.StoreLocation" />
+        <Parameter Name="storeName" Type="System.Security.Cryptography.X509Certificates.StoreName" />
+        <Parameter Name="findType" Type="System.Security.Cryptography.X509Certificates.X509FindType" />
+        <Parameter Name="findValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="storeLocation">証明書ストアの場所を示す <see cref="T:System.Security.Cryptography.X509Certificates.StoreLocation" /> の値。</param>
+        <param name="storeName">証明書ストアの名前を示す <see cref="T:System.Security.Cryptography.X509Certificates.StoreName" /> の値。</param>
+        <param name="findType">1 つ、<see cref="T:System.Security.Cryptography.X509Certificates.X509FindType" />証明書ストアを検索する方法を指定する値。</param>
+        <param name="findValue">証明書ストア内の X.509 証明書の検索に使用する値。</param>
+        <summary>指定された証明書ストアの条件から X.509 証明書を取得して、<see cref="T:System.IdentityModel.Selectors.X509SecurityTokenProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509SecurityTokenProvider.GetTokenCore%2A> メソッドは、指定された証明書ストアの条件に一致する証明書に基づいてセキュリティ トークンを取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="findValue" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">指定された条件に一致する証明書がありません。  
+  
+ または  
+  
+ 指定された条件に一致する証明書が複数あります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Certificate">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2 Certificate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate2 Certificate" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.X509SecurityTokenProvider.Certificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.X509SecurityToken" /> セキュリティ トークンに関連付けられた X.509 証明書を取得します。</summary>
+        <value>セキュリティ トークンの X.509 証明書を表す <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" /> を取得します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509SecurityTokenProvider.GetTokenCore%2A> メソッドは、<xref:System.IdentityModel.Selectors.X509SecurityTokenProvider.Certificate%2A> プロパティに指定された証明書に基づいてセキュリティ トークンを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509SecurityTokenProvider.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.IdentityModel.Selectors.X509SecurityTokenProvider" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenCore">
+      <MemberSignature Language="C#" Value="protected override System.IdentityModel.Tokens.SecurityToken GetTokenCore (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IdentityModel.Tokens.SecurityToken GetTokenCore(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509SecurityTokenProvider.GetTokenCore(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">セキュリティ トークンを取得するメッセージのタイムアウト値を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>コンストラクターに指定された X.509 証明書を使用して、セキュリティ トークンを取得します。</summary>
+        <returns>取得するセキュリティ トークンを表す <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントが SOAP メッセージを送信し、<xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> セキュリティ トークンが要求される場合、<xref:System.ServiceModel.Description.ClientCredentials> メソッドが <xref:System.IdentityModel.Tokens.X509SecurityToken> クラスにより呼び出されます。  
+  
+ <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> メソッドは <xref:System.IdentityModel.Selectors.X509SecurityTokenProvider.GetTokenCore%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

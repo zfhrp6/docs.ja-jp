@@ -1,0 +1,2050 @@
+<Type Name="TreeNodeBinding" FullName="System.Web.UI.WebControls.TreeNodeBinding">
+  <TypeSignature Language="C#" Value="public sealed class TreeNodeBinding : ICloneable, System.Web.UI.IDataSourceViewSchemaAccessor, System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TreeNodeBinding extends System.Object implements class System.ICloneable, class System.Web.UI.IDataSourceViewSchemaAccessor, class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TreeNodeBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IDataSourceViewSchemaAccessor</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("TextField")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ項目とそのバインド先のノードの間のリレーションシップを定義、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがバインドされている各データ項目がいくつかの属性を持つ XML 要素) などの複数のフィールドを含むデータ ソースにノードがによって返される値を表示、`ToString`既定では、データ項目のメソッドです。 XML 要素の場合、ノードには、要素名、ツリーの基になる構造を示していますが、それ以外が非常に便利ですが表示されます。 ノードのプロパティは、ツリー ノードのバインディングを指定することによって、特定のフィールドにバインドできます。 A<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトは、各データ項目とそのバインド先のノード間のリレーションシップを定義します。  
+  
+ <xref:System.Web.UI.WebControls.TreeView>ストアを制御、<xref:System.Web.UI.WebControls.TreeNodeBinding>内のオブジェクト、<xref:System.Web.UI.WebControls.TreeView.DataBindings%2A>プロパティし、ツリー階層と、データ ソースの階層間で一対一のリレーションシップを作成するデータ ソースにバインドを適用します。 データ ソース内の各データ項目の<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ項目を照合しようとした場合、 <xref:System.Web.UI.WebControls.TreeNodeBinding> 、対応するを作成するためにオブジェクト<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。  
+  
+ 作成するときに、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクト、バインディングの基準を指定する必要があります。 条件は、データ項目ノードにバインドするときを示します。 指定することができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>または<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>プロパティ、または両方のプロパティです。 両方を指定してがわずかなパフォーマンスが向上します。 ノードの深さは、バインドされるノードのレベルを指定します。 たとえば、次<xref:System.Web.UI.WebControls.TreeNodeBinding>宣言バインド、`Name`と`ID`をデータ ソースのフィールド、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>と<xref:System.Web.UI.WebControls.TreeNode.Value%2A>プロパティ、それぞれに、すべてのノードの深さが 0 の。  
+  
+```  
+<asp:TreeNodeBinding Depth="0" TextField="Name" ValueField="ID">  
+```  
+  
+ データ メンバーは、基になるデータ ソースのデータ項目の種類を指定しますが、データ ソースに応じて、異なる情報を表すことができます。 階層データ ソース内の各データ項目 (によって表される、<xref:System.Web.UI.IHierarchyData?displayProperty=nameWithType>インターフェイス) を公開、<xref:System.Web.UI.IHierarchyData.Type%2A?displayProperty=nameWithType>プロパティをデータ項目の種類を指定します。 たとえば、XML 要素のデータ メンバーは、要素の名前を指定します。 データ メンバーがデータを指定して、データ ソースには、複数のデータ項目の種類が含まれている、項目の種類を使用します。 次<xref:System.Web.UI.WebControls.TreeNodeBinding>宣言バインド、`<Book>`の要素、<xref:System.Web.UI.WebControls.XmlDataSource>コントロールを階層内の場所に関係なく、ツリー内のすべてのノード。  
+  
+```  
+<asp:TreeNodeBinding DataMember="Book" TextField="Title" ValueField= "ISBN">  
+```  
+  
+ バインディングの基準が確立されるのプロパティはバインドし、<xref:System.Web.UI.WebControls.TreeNode>値にバインドできるオブジェクト。 データ項目のフィールドまたは静的な値をバインドすることができます。 静的な値にバインドするときすべて<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトが適用される同じ値を共有します。  
+  
+> [!NOTE]
+>  バインドされたプロパティを選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト ノードで直接対応するプロパティを設定します。  
+  
+ 次の表のプロパティの一覧、<xref:System.Web.UI.WebControls.TreeNodeBinding>クラスのプロパティをバインドするため、<xref:System.Web.UI.WebControls.TreeNode>データ項目のフィールドへのオブジェクト。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageUrlField%2A>|バインドするフィールド、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTipField%2A>|バインドするフィールド、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrlField%2A>|バインドするフィールド、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.TextField%2A>|バインドするフィールド、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTipField%2A>|バインドするフィールド、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.ValueField%2A>|バインドするフィールド、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+  
+ 次の表のプロパティの一覧、<xref:System.Web.UI.WebControls.TreeNodeBinding>クラスのプロパティをバインドするため、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを静的な値にします。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageUrl%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTip%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrl%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.PopulateOnDemand%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.TreeNode.PopulateOnDemand%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.SelectAction%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.TreeNode.SelectAction%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.ShowCheckBox%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.TreeNode.ShowCheckBox%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.Text%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTip%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+|<xref:System.Web.UI.WebControls.TreeNodeBinding.Value%2A>|静的な値にバインドする、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。|  
+  
+ 競合している場合<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトが定義されて、<xref:System.Web.UI.WebControls.TreeView>制御の優先順位の順にツリー ノードのバインディングに適用されます。  
+  
+1.  <xref:System.Web.UI.WebControls.TreeNodeBinding>を定義し、深さと、データ メンバーの両方に一致するオブジェクト。  
+  
+2.  <xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクト定義し、一致するデータ メンバーのみです。  
+  
+3.  <xref:System.Web.UI.WebControls.TreeNodeBinding>を定義し、のみの深さに一致するオブジェクト。  
+  
+4.  <xref:System.Web.UI.WebControls.TreeNodeBinding>深さでも、データ メンバーを定義するオブジェクト。 (この型のツリー ノードのバインディングは、ツリー内のすべてのノードに適用されます)。  
+  
+5.  <xref:System.Web.UI.WebControls.TreeNodeBinding>データ ソースに一致していないオブジェクトです。 この場合、によって返される値、`ToString`データ項目のメソッドにバインドし、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>と<xref:System.Web.UI.WebControls.TreeNode.Value%2A>するノードのプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。  
+  
+ <xref:System.Web.UI.WebControls.TreeNodeBinding>クラスでは設定して、ノードに表示されるテキストの書式設定することもできます、<xref:System.Web.UI.WebControls.TreeNodeBinding.FormatString%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の表は、バインディングの宣言をいくつかのツリー ノードの例に示します。  
+  
+|バインディングの例|説明|  
+|---------------------|-----------------|  
+|`<asp:TreeNodeBinding TextField="Title" ValueField= "ID"/>`|バインド、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>と<xref:System.Web.UI.WebControls.TreeNode.Value%2A>ツリー内のすべてのノードのプロパティ、`Title`と`ID`データのソース フィールド、それぞれします。 すべてのノードがこのツリー ノードのバインドの宣言を使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>と<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>プロパティが設定されていません。|  
+|`<asp:TreeNodeBinding DataMember= "Book" TextField= "Title" ValueField= "ID"/>`|バインド、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>と<xref:System.Web.UI.WebControls.TreeNode.Value%2A>ツリー内のすべてのノードのプロパティ、`Title`と`ID`のフィールド、`Book`それぞれのデータをデータ ソースの項目。|  
+|`<asp:TreeNodeBinding Depth="2" TextField= "Title" ValueField= "ID"/>`|バインド、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>と<xref:System.Web.UI.WebControls.TreeNode.Value%2A>ツリー内の 2 の深さをすべてのノードのプロパティ、`Title`と`ID`それぞれ項目、データ ソースでデータのフィールドです。|  
+|`<asp:TreeNodeBinding DataMember="Book" Depth= "2" TextField= "Title" ValueField= "ID" ImageUrl= "Image.jpg">`|バインド、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>と<xref:System.Web.UI.WebControls.TreeNode.Value%2A>ツリー内の 2 の深さをすべてのノードのプロパティ、`Title`と`ID`のフィールド、`Book`それぞれのデータをデータ ソースの項目。 バインドも、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>静的な値を設定するノードのプロパティです。|  
+  
+ このセクションには、3 つのコード例が含まれています。 最初のコード例を使用する方法を示しています<xref:System.Web.UI.WebControls.TreeNodeBinding>ノードとデータ項目の間のリレーションシップを定義するには、宣言的オブジェクトです。 2 番目のコード例を使用する方法を示しています<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトをプログラムでノードとデータ項目の間のリレーションシップを定義します。 3 番目のコード例では、最初と 2 番目のコード例については、サンプルの XML データを提供します。  
+  
+ 次のコード例を使用する方法を示しています<xref:System.Web.UI.WebControls.TreeNodeBinding>ノードとデータ項目の間のリレーションシップを定義するには、宣言的オブジェクトです。 この例を正しく動作するには、Book.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeViewXml#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewXml/CS/treeviewxmlcs.aspx#1)]
+ [!code-aspx-vb[TreeViewXml#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewXml/VB/treeviewxmlvb.aspx#1)]  
+  
+ 次のコード例を使用する方法を示しています<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトをプログラムでノードとデータ項目の間のリレーションシップを定義します。 この例を正しく動作する Book.xml をという名前のファイルに次のコード例では提供されるサンプル XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeViewCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewCtor/CS/treeviewctorcs.aspx#1)]
+ [!code-aspx-vb[TreeViewCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewCtor/VB/treeviewctorvb.aspx#1)]  
+  
+ 次のコード例では、上記のコードの例については、サンプルの XML データを提供します。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+</Book>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNodeBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.TreeNodeBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.%23ctor%2A>の新しいインスタンスを初期化するコンス トラクター、<xref:System.Web.UI.WebControls.TreeNodeBinding>クラスです。 動的に設定するときによく使用される、<xref:System.Web.UI.WebControls.TreeView.DataBindings%2A>のコレクション、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.%23ctor%2A>コンス トラクターを追加する、<xref:System.Web.UI.WebControls.TreeNodeBinding>に動的にオブジェクト、<xref:System.Web.UI.WebControls.TreeView.DataBindings%2A>のコレクション、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-aspx-csharp[TreeViewCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewCtor/CS/treeviewctorcs.aspx#1)]
+ [!code-aspx-vb[TreeViewCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewCtor/VB/treeviewctorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataMember">
+      <MemberSignature Language="C#" Value="public string DataMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataMember" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.DataMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定と照合する値、<see cref="P:System.Web.UI.IHierarchyData.Type" />ツリー ノードのバインドを適用するかどうかを判断するデータ項目のプロパティです。</summary>
+        <value>データ項目のと照合する値<see cref="P:System.Web.UI.IHierarchyData.Type" />ツリー ノードのバインドを適用するかどうかを決定するプロパティです。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.DataMember" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ メンバーは、基になるデータ ソースのデータ項目の種類を指定しますが、データ ソースに応じて、異なる情報を表すことができます。 階層データ ソース内の各データ項目 (によって表される、<xref:System.Web.UI.IHierarchyData?displayProperty=nameWithType>オブジェクト) を公開、<xref:System.Web.UI.IHierarchyData.Type%2A?displayProperty=nameWithType>プロパティをデータ項目の種類を指定します。 たとえば、XML 要素のデータ メンバーは、要素の名前を指定します。 データ メンバーがデータを指定して、データ ソースには、複数のデータ項目の種類が含まれている、項目の種類を使用します。 次<xref:System.Web.UI.WebControls.TreeNodeBinding>宣言バインド、`<Book>`の要素、<xref:System.Web.UI.WebControls.XmlDataSource>コントロールを階層内の場所に関係なく、ツリー内のすべてのノード。  
+  
+```  
+<asp:TreeNodeBinding DataMember="Book" TextField="Title" ValueField= "ISBN">  
+```  
+  
+ 作成するときに、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクト、バインディングの基準を指定する必要があります。 条件は、データ項目ノードにバインドするときを示します。 指定することができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>または<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>プロパティ、または両方のプロパティです。 両方を指定してがわずかなパフォーマンスが向上します。  
+  
+ バインディングの基準が確立されるのプロパティはバインドし、<xref:System.Web.UI.WebControls.TreeNode>値にバインドできるオブジェクト。 データ項目のフィールドまたは静的な値をバインドすることができます。 静的な値にバインドするときすべて<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトが適用される同じ値を共有します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>ノードに連結される XML 要素を指定するプロパティです。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>ノードに連結される XML 要素を指定するプロパティです。 このコード例を正しく実行するには、Book.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingDataMember#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingDataMember/CS/treenodebindingdatamembercs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingDataMember#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingDataMember/VB/treenodebindingdatamembervb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+    <Appendix Heading="Appendix A">  
+    </Appendix>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Depth">
+      <MemberSignature Language="C#" Value="public int Depth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Depth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.Depth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.WebControls.TreeNodeBindingDepthConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のノードの深さ、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>ノード階層の深さです、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は-1、ことを示す、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.Depth" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ノードの深さは、バインドされるノードのレベルを指定します。 たとえば、次<xref:System.Web.UI.WebControls.TreeNodeBinding>宣言バインド、`Name`と`ID`をデータ ソースのフィールド、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>と<xref:System.Web.UI.WebControls.TreeNode.Value%2A>プロパティ、それぞれに、すべてのノードの深さが 0 の。  
+  
+```  
+<asp:TreeNodeBinding Depth="0" TextField="Name" ValueField="ID">  
+```  
+  
+ 作成するときに、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクト、バインディングの基準を指定する必要があります。 条件は、データ項目ノードにバインドするときを示します。 指定することができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>または<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>プロパティ、または両方のプロパティです。 両方を指定してがわずかなパフォーマンスが向上します。  
+  
+ バインディングの基準が確立されるのプロパティはバインドし、<xref:System.Web.UI.WebControls.TreeNode>値にバインドできるオブジェクト。 データ項目のフィールドまたは静的な値をバインドすることができます。 静的な値にバインドするときすべて<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトが適用される同じ値を共有します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>を適用するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトは特定のノードの深さ。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>を適用するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトは特定のノードの深さ。 この例を正しく動作するには、Book.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingDataMember#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingDataMember/CS/treenodebindingdatamembercs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingDataMember#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingDataMember/VB/treenodebindingdatamembervb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+    <Appendix Heading="Appendix A">  
+    </Appendix>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatString">
+      <MemberSignature Language="C#" Value="public string FormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.FormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するノードのテキストの表示形式を指定する文字列、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>ノードのテキストの表示形式を指定する書式指定文字列、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.FormatString" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNodeBinding.FormatString%2A>プロパティを使用するノードのテキストのカスタム書式を指定します。 データの書式指定文字列は、フォームで、コロンで区切られた 2 つの部分で構成されます { `A` : `Bxx` }。 たとえば、書式設定文字列`{0:F2}`小数点以下 2 桁の固定小数点数が表示されます。  
+  
+> [!NOTE]
+>  文字列全体は、書式指定文字列とリテラル文字列ではなくであることを示すために中かっこで囲む必要があります。 かっこの外側の任意のテキストは、リテラル テキストとして表示されます。  
+  
+ コロンの前に値 (`A`一般的な例で) パラメーターの 0 から始まるリストのパラメーターのインデックスを指定します。  
+  
+> [!NOTE]
+>  内の各ノードは 1 つだけの値がないために、この値を 0 に設定できます。  
+  
+ コロンの後に文字 (`B`一般的な例で) 値の表示形式を指定します。 次の表は、一般的な形式を示します。  
+  
+|書式指定文字|数値の表示形式|  
+|----------------------|--------------------------------|  
+|`C`|通貨の形式。|  
+|`D`|10 進数形式です。|  
+|`E`|指数 (指数) 形式です。|  
+|`F`|固定形式です。|  
+|`G`|一般的な形式です。|  
+|`N`|数値書式。|  
+|`X`|16 進数形式です。|  
+  
+> [!NOTE]
+>  除く`X`、書式指定文字が大文字小文字を区別します。 `X`形式の文字が指定されている場合、16 進文字を表示します。  
+  
+ 書式指定文字の後の値 (`xx`一般的な例で) の有効桁数または小数点以下桁数を表示する数を指定します。  
+  
+ 書式指定文字列の詳細については、「[Formatting Types](~/docs/standard/base-types/formatting-types.md)」(型の書式設定) を参照してください。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ 値、<xref:System.Web.UI.WebControls.TreeNodeBinding.FormatString%2A>プロパティを設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.FormatString%2A>プロパティをルート ノードに表示されるテキストにカスタムの表示形式を指定します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.FormatString%2A>プロパティをルート ノードに表示されるテキストにカスタムの表示形式を指定します。 この例を正しく動作するには、Book.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingFormatString#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingFormatString/CS/treenodebindingformatstringcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingFormatString#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingFormatString/VB/treenodebindingformatstringvb.aspx#1)]  
+  
+ 次のコード例は、前の例のサンプル XML データです。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+    <Appendix Heading="Appendix A">  
+    </Appendix>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageToolTip">
+      <MemberSignature Language="C#" Value="public string ImageToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するノードの横に表示されるイメージのツールヒントのテキスト、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>ノードの横に表示されるイメージのツールヒントのテキスト、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は空の文字列 ("")、値が設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTip%2A>プロパティにバインドする値を指定する、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 指定したテキストは、支援テクノロジ デバイスでコントロールを使いやすくするために使用できるイメージの説明を提供します。  
+  
+ このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 ノードの横にあるイメージが表示されたら、画像の上にマウス ポインターが配置されているときにツールヒント テキストが表示されます。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTip%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>直接の各ノードのプロパティです。  
+  
+ 使用する代わりに、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTip%2A>同じのツールヒント テキストを各ノード イメージにバインドするプロパティをバインドすることができます、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTipField%2A>プロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTip%2A>するノードの横に表示されるイメージのツールヒントのテキストを指定するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTip%2A>するノードの横に表示されるイメージのツールヒントのテキストを指定するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingText/CS/treenodebindingtextcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingText/VB/treenodebindingtextvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageToolTipField">
+      <MemberSignature Language="C#" Value="public string ImageToolTipField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageToolTipField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTipField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.TreeNode.ImageToolTip" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.TreeNode.ImageToolTip" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTipField" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTipField%2A>プロパティにバインドするフィールド名を指定する、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 指定したテキストは、支援テクノロジ デバイスでコントロールを使いやすくするために使用できるイメージの説明を提供します。  
+  
+ このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 ノードの横にあるイメージが表示されたら、画像の上にマウス ポインターが配置されているときにツールヒント テキストが表示されます。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTipField%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>直接の各ノードのプロパティです。  
+  
+ 使用する代わりに、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTipField%2A>バインドするプロパティ、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト フィールドを設定することができます、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>プロパティを設定して、固定値を<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTip%2A>プロパティです。  
+  
+> [!NOTE]
+>  最初に設定する必要がある、データ ソースに複数のフィールドが含まれている場合、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>または<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>プロパティ、または適切なフィールドにバインドするために両方のプロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTipField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTipField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.ImageToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトが適用されます。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeTextField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeTextField/CS/treenodebindingtextfieldcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeTextField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeTextField/VB/treenodebindingtextfieldvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrl">
+      <MemberSignature Language="C#" Value="public string ImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.ImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するノードの横に表示されるイメージの URL を設定または、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>ノードの横に表示されるイメージの URL、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 次に、  
+  
+ <see cref="P:System.Web.UI.WebControls.TreeNodeBinding.ImageUrl" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageUrl%2A>プロパティにバインドするカスタム イメージを指定する、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 イメージは、ノードの横にあるが表示され、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) することができます。  
+  
+> [!NOTE]
+>  設定して、個々 のノードのイメージをオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>プロパティを直接です。  
+  
+ このプロパティを使用して、各ノードに、同じイメージをバインドするの代わりにバインドできます、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageUrlField%2A>プロパティです。  
+  
+ 持つノードの横にあるイメージを表示するときに、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageUrl%2A>プロパティの設定も検討する必要があります、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTip%2A>プロパティです。 ツールヒントのテキストを指定するは、支援テクノロジ デバイスでコントロールを使いやすくするために使用できるイメージの説明を提供します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>を適用するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトは特定のノードの深さ。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageUrl%2A>するノードのカスタム イメージを指定するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingText/CS/treenodebindingtextcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingText/VB/treenodebindingtextvb.aspx#1)]  
+  
+ 次のコード例では、前の例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrlField">
+      <MemberSignature Language="C#" Value="public string ImageUrlField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrlField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.ImageUrlField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.TreeNode.ImageUrl" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.TreeNode.ImageUrl" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.ImageUrlField" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageUrlField%2A>プロパティをバインドするフィールドの名前を指定する、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 イメージは、ノードの横にあるが表示され、クライアント ブラウザーには、形式がサポートしている限り、任意のファイル形式 (.jpg、.gif、.bmp など) にできます。  
+  
+> [!NOTE]
+>  設定して、個々 のノードのイメージをオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>プロパティを直接です。  
+  
+ このプロパティを使用してバインドするのではなく、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト フィールドを設定することができます、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>プロパティを設定して、固定値を<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageUrl%2A>プロパティです。  
+  
+> [!NOTE]
+>  最初に設定する必要がある、データ ソースに複数のフィールドが含まれている場合、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>または<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>プロパティ、または適切なフィールドにバインドするために両方のプロパティです。  
+  
+ 持つノードの横にあるイメージを表示するときに、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageUrlField%2A>プロパティの設定も検討する必要があります、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageToolTipField%2A>プロパティです。 ツールヒントのテキストを指定するは、支援テクノロジ デバイスでコントロールを使いやすくするために使用できるイメージの説明を提供します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageUrlField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.ImageUrlField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeTextField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeTextField/CS/treenodebindingtextfieldcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeTextField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeTextField/VB/treenodebindingtextfieldvb.aspx#1)]  
+  
+ 次のコード例では、前の例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrl">
+      <MemberSignature Language="C#" Value="public string NavigateUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するノードにリンクする URL、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用して、クリックします。</summary>
+        <value>ときにノードのリンク先の URL、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトが適用されてをクリックします。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrl" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrl%2A>プロパティにバインドする URL を指定する、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 このプロパティが設定されている場合、<xref:System.Web.UI.WebControls.TreeView>コントロールには、プレーン テキストではなく、ノードのテキストのハイパーリンクが表示されます。 また、必要に応じて設定することができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>プロパティ ウィンドウまたはリンクされたコンテンツを表示するフレームを指定します。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrl%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>直接の各ノードのプロパティです。  
+  
+ 使用する代わりに、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrl%2A>同じ URL を各ノードにバインドするプロパティをバインドすることができます、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrlField%2A>プロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrl%2A>先ノードにリンクする URL を指定するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトが適用されてをクリックします。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrl%2A>先ノードにリンクする URL を指定するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトが適用されてをクリックします。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingText/CS/treenodebindingtextcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingText/VB/treenodebindingtextvb.aspx#1)]  
+  
+ 次のコード例では、前の例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrlField">
+      <MemberSignature Language="C#" Value="public string NavigateUrlField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrlField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrlField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.TreeNode.NavigateUrl" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.TreeNode.NavigateUrl" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrlField" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrlField%2A>プロパティにバインドするフィールド名を指定する、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 ときに、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrlField%2A>プロパティが設定されて、<xref:System.Web.UI.WebControls.TreeView>コントロールには、プレーン テキストではなく、ノードのテキストのハイパーリンクが表示されます。 また、必要に応じて設定することができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>プロパティ ウィンドウまたはリンクされたコンテンツを表示するフレームを指定します。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrlField%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>直接の各ノードのプロパティです。  
+  
+ 使用する代わりに、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrlField%2A>バインドするプロパティ、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト フィールドを設定することができます、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>プロパティを設定して、固定値を<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrl%2A>プロパティです。  
+  
+> [!NOTE]
+>  最初に設定する必要がある、データ ソースに複数のフィールドが含まれている場合、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>または<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>プロパティ、または適切なフィールドにバインドするために両方のプロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrlField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.NavigateUrlField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeTextField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeTextField/CS/treenodebindingtextfieldcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeTextField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeTextField/VB/treenodebindingtextfieldvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateOnDemand">
+      <MemberSignature Language="C#" Value="public bool PopulateOnDemand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PopulateOnDemand" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.PopulateOnDemand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、ノード、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトが適用されるが動的に設定されます。</summary>
+        <value>
+          <see langword="true" />設定するノードを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />動的に、それ以外のオブジェクトが適用されて<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合によっては、データのサイズまたはユーザーの入力に依存するカスタム コンテンツのためのツリー構造を静的に事前に定義することは実用的ではありません。 このため、<xref:System.Web.UI.WebControls.TreeView>コントロールは、動的なノードをサポートしています。 ときに、<xref:System.Web.UI.WebControls.TreeNodeBinding.PopulateOnDemand%2A>プロパティに設定されている`true`、ノードの子ノードを<xref:System.Web.UI.WebControls.TreeNodeBinding>を取得するオブジェクトが適用されて、ノードを展開するときに実行時に設定されます。  
+  
+ 設定してデータ バインディングを作成するときに、<xref:System.Web.UI.WebControls.TreeView.AutoGenerateDataBindings%2A>の<xref:System.Web.UI.WebControls.TreeView>に制御を`true`、作成されるバインディングがある、<xref:System.Web.UI.WebControls.TreeNodeBinding.PopulateOnDemand%2A>プロパティに設定`true`です。 宣言によって作成されるデータ バインディングがある、<xref:System.Web.UI.WebControls.TreeNodeBinding.PopulateOnDemand%2A>プロパティに設定`false`です。 宣言の構文を使用するには、個々 のデータ バインディングの動作を制御することができます。  
+  
+> [!NOTE]
+>  異なり、<xref:System.Web.UI.WebControls.TreeNode.PopulateOnDemand%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>クラス、<xref:System.Web.UI.WebControls.TreeNodeBinding.PopulateOnDemand%2A>プロパティでは、イベント処理メソッドを定義するのには必要ありません、<xref:System.Web.UI.WebControls.TreeView.TreeNodePopulate>イベントなど、データ ソース コントロールを使用している場合の<xref:System.Web.UI.WebControls.XmlDataSource>です。 代わりに、<xref:System.Web.UI.WebControls.TreeView>コントロールのプロパティを使用して、イベント処理メソッドを動的に生成する、<xref:System.Web.UI.WebControls.TreeNodeBinding>内のオブジェクト、<xref:System.Web.UI.WebControls.TreeView.DataBindings%2A>コレクション。 用のイベント ハンドラー メソッドを定義できます、<xref:System.Web.UI.WebControls.TreeView.TreeNodePopulate>イベントです。 ただし、イベント ハンドラー メソッドの後に呼び出されます、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ サポートされているブラウザーでは、クライアント側のも利用できます。 これにより、有効にすると、<xref:System.Web.UI.WebControls.TreeView>ノードを展開すると、不要にサーバーにポストバック時に、クライアントで動的にノードを設定するとします。 クライアント側のノードのカタログ作成の詳細については、次を参照してください。<xref:System.Web.UI.WebControls.TreeView.PopulateNodesFromClient%2A>です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.ShowCheckBox%2A>プロパティ ノードのチェック ボックスを表示するかどうかを指定します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.ShowCheckBox%2A>プロパティ ノードのチェック ボックスを表示するかどうかを指定します。 この例を正しく動作するには、Book.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingPopulateOnDemand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingPopulateOnDemand/CS/treenodebindingpopulateondemandcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingPopulateOnDemand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingPopulateOnDemand/VB/treenodebindingpopulateondemandvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+    <Appendix Heading="Appendix A">  
+    </Appendix>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectAction">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TreeNodeSelectAction SelectAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.TreeNodeSelectAction SelectAction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.SelectAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNodeSelectAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントまたはイベントを生成する先のノードを取得または設定、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトの適用が選択されています。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.TreeNodeSelectAction" /> 値のいずれか。 既定値は、<see langword="TreeNodeSelectAction.Select" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.SelectAction%2A>プロパティにバインドする値を指定する、<xref:System.Web.UI.WebControls.TreeNode.SelectAction%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 <xref:System.Web.UI.WebControls.TreeNode.SelectAction%2A>ノードが選択されているときに発生するイベントまたはイベントを指定するプロパティを使用します。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.SelectAction%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.SelectAction%2A>直接の各ノードのプロパティです。  
+  
+ 利用可能なオプションの一覧を次の表に示します。  
+  
+|`SelectAction` の値|説明|  
+|--------------------------|-----------------|  
+|`TreeNodeSelectAction.Expand`|ノードの展開と折りたたみを切り替えます。 発生させる、<xref:System.Web.UI.WebControls.TreeView.TreeNodeExpanded>イベントまたは<xref:System.Web.UI.WebControls.TreeView.TreeNodeCollapsed>必要に応じて、イベント。|  
+|`TreeNodeSelectAction.None`|ノードが選択されているときにイベントを発生させません。|  
+|`TreeNodeSelectAction.Select`|発生させる、<xref:System.Web.UI.WebControls.TreeView.SelectedNodeChanged>イベント ノードを選択するとします。|  
+|`TreeNodeSelectAction.SelectExpand`|両方を生成、<xref:System.Web.UI.WebControls.TreeView.SelectedNodeChanged>と<xref:System.Web.UI.WebControls.TreeView.TreeNodeExpanded>イベント ノードを選択するとします。 ノードのみを展開、折りたたむことはできません。|  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeView.HoverNodeStyle%2A>を持つノードにはレンダリングされません、<xref:System.Web.UI.WebControls.TreeNode.SelectAction%2A>プロパティに設定`TreeNodeSelectAction.None`です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.SelectAction%2A>プロパティ ノードがクリックされたときに発生するイベントを指定します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.SelectAction%2A>プロパティ ノードがクリックされたときに発生するイベントを指定します。 この例を正しく動作するには、Book.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingSelectAction#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingSelectAction/CS/treenodebindingselectactioncs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingSelectAction#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingSelectAction/VB/treenodebindingselectactionvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+    <Appendix Heading="Appendix A">  
+    </Appendix>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowCheckBox">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; ShowCheckBox { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; ShowCheckBox" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.ShowCheckBox" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Nullable`1&lt;System.Boolean&gt;), "")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するノードの横にあるチェック ボックスを表示するかどうかを示す値、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>
+          <see langword="true" />ノードの横にあるチェック ボックスを表示する、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトが適用されている、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数ノードの選択のサポートを提供する、<xref:System.Web.UI.WebControls.TreeView>コントロール内のノード イメージの横にあるチェック ボックスを表示することができます。 ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.ShowCheckBox%2A>プロパティにバインドする値を指定する、<xref:System.Web.UI.WebControls.TreeNode.ShowCheckBox%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 <xref:System.Web.UI.WebControls.TreeNode.ShowCheckBox%2A>プロパティは、またはノードのチェック ボックスを非表示に使用します。  
+  
+> [!NOTE]
+>  ただし、 <xref:System.Web.UI.WebControls.TreeNodeBinding.ShowCheckBox%2A>  チェック ボックスを表示するプロパティを使用することができます、使用する方が一般的、<xref:System.Web.UI.WebControls.TreeView.ShowCheckBoxes%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeView>コントロール。 ただし、<xref:System.Web.UI.WebControls.TreeView.ShowCheckBoxes%2A>プロパティは、プロパティによって指定されているすべてのノード型に影響そのため、<xref:System.Web.UI.WebControls.TreeNodeBinding.ShowCheckBox%2A>プロパティを使用するノードでその設定のオーバーライドを多くの場合、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.ShowCheckBox%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.ShowCheckBox%2A>直接の各ノードのプロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.ShowCheckBox%2A>プロパティ ノードのチェック ボックスを表示するかどうかを指定します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.ShowCheckBox%2A>プロパティ ノードのチェック ボックスを表示するかどうかを指定します。 この例を正しく動作するには、Book.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingShowCheckBox#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingShowCheckBox/CS/treenodebindingshowcheckboxcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingShowCheckBox#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingShowCheckBox/VB/treenodebindingshowcheckboxvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+    <Appendix Heading="Appendix A">  
+    </Appendix>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeBinding.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.TreeNodeBinding" /> オブジェクトのコピーを作成します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.TreeNodeBinding" /> オブジェクトのコピーを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNodeBinding.System%23ICloneable%23Clone%2A>メソッドのコピーを作成するヘルパー関数では、<xref:System.Web.UI.WebControls.TreeNodeBinding>元のオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding.System%23ICloneable%23Clone%2A>メソッドが呼び出されます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeNodeBinding.System%23ICloneable%23Clone%2A>メソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataSourceViewSchemaAccessor.DataSourceViewSchema">
+      <MemberSignature Language="C#" Value="object System.Web.UI.IDataSourceViewSchemaAccessor.DataSourceViewSchema { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Web.UI.IDataSourceViewSchemaAccessor.DataSourceViewSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.System#Web#UI#IDataSourceViewSchemaAccessor#DataSourceViewSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IDataSourceViewSchemaAccessor.DataSourceViewSchema" />」をご覧ください。</summary>
+        <value>関連付けられているスキーマを表すオブジェクト、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.TreeNodeBinding>にインスタンスをキャスト、<xref:System.Web.UI.IDataSourceViewSchemaAccessor>インターフェイスです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IStateManager.IsTrackingViewState" />」をご覧ください。</summary>
+        <value>
+          <see langword="true" />、その状態を保存するコントロールがマークされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.TreeNodeBinding>にインスタンスをキャスト、<xref:System.Web.UI.IStateManager>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeBinding.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">A<see cref="T:System.Object" />保存されているビュー ステートの値を格納しています。</param>
+        <summary>ノードの以前に保存したビューステートを読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeBinding.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトに、ビュー状態の変更を保存します。</summary>
+        <returns>ビュー ステートの変化を格納するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeBinding.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー ステートへの変更を追跡するように <see cref="T:System.Web.UI.WebControls.TreeNode" /> オブジェクトに指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後に、<xref:System.Web.UI.WebControls.TreeNodeBinding.System%23Web%23UI%23IStateManager%23TrackViewState%2A>サーバー コントロールでメソッドが呼び出されて、<xref:System.Web.UI.Control.IsTrackingViewState%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象のウィンドウまたはフレームをノードに関連付けられている Web ページの内容を表示するための取得または設定、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>リンクされた Web ページの内容を表示する対象のウィンドウまたはフレーム。 値で始めなければなりません A Z からの範囲の文字 (大文字小文字を区別しない)、次の表に示すように、アンダー スコアで始まる特殊な値を除く。  
+  
+ <list type="table"><listheader><term>対象の値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term><see langword="_blank" /></term><description>新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。  
+  
+ </description></item><item><term><see langword="_parent" /></term><description>直前のフレーム セットの親に内容を表示します。  
+  
+ </description></item><item><term><see langword="_search" /></term><description>[検索] ウィンドウの内容を表示します。  
+  
+ </description></item><item><term><see langword="_self" /></term><description>フォーカスのあるフレームのコンテンツをレンダリングします。  
+  
+ </description></item><item><term><see langword="_top" /></term><description>フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。  
+  
+ </description></item></list><block subset="none" type="note"><para>  
+ ブラウザーのマニュアルを参照するかどうかを<see langword="_search" />値はサポートされています。  Microsoft Internet Explorer バージョン 5.0 およびそれ以降のサポートなど、<see langword="_search" />ターゲット値。  
+  
+</para></block>  
+  
+ 既定値は空の文字列 ("")、ウィンドウまたはフォーカスのあるフレームが更新されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>プロパティにバインドする値を指定する、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 <xref:System.Web.UI.WebControls.TreeNode.Target%2A>プロパティの使用をウィンドウを指定、またはノードがクリックしてされたときに、ノードに表示される Web する、コンテンツ フレームがリンクされています。  
+  
+> [!NOTE]
+>  設定、<xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>プロパティのオーバーライド、<xref:System.Web.UI.WebControls.TreeView.Target%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeView>するノードのコントロール、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>直接の各ノードのプロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>としてプロパティを表示、`target`属性。 `target`属性`anchor`要素は、XHTML 1.1 ドキュメント型定義で許可されていません。 設定しないでください、<xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>プロパティの場合に表示される出力、<xref:System.Web.UI.WebControls.TreeNodeBinding>コントロールは XHTML 1.1 に準拠する必要があります。 詳細については、次を参照してください。 [Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+>   
+>  ユーザー補助対応の Web ページを作成するときに使用しないように、<xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>を別のウィンドウを対象とするプロパティです。 詳細については、次を参照してください。 [NIB: ASP.NET のユーザー補助](http://msdn.microsoft.com/en-us/9b5f3e05-e88d-4248-a5f4-9e64850fa0ae)です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>ルート ノードに関連付けられている Web ページが新しいウィンドウに表示されることを指定するプロパティです。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>ルート ノードに関連付けられている Web ページが新しいウィンドウに表示されることを指定するプロパティです。 この例を正しく動作するには、Book.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingTarget#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingTarget/CS/treenodebindingtargetcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingTarget#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingTarget/VB/treenodebindingtargetvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Book Title="Book Title">  
+    <Chapter Heading="Chapter 1">  
+        <Section Heading="Section 1">  
+        </Section>  
+        <Section Heading="Section 2">  
+        </Section>  
+    </Chapter>  
+    <Chapter Heading="Chapter 2">  
+        <Section Heading="Section 1">  
+        </Section>  
+    </Chapter>  
+    <Appendix Heading="Appendix A">  
+    </Appendix>  
+</Book>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetField">
+      <MemberSignature Language="C#" Value="public string TargetField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.TargetField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.TreeNode.Target" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.TreeNode.Target" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.TargetField" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.TargetField%2A>プロパティにバインドするフィールド名を指定する、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 <xref:System.Web.UI.WebControls.TreeNode.Target%2A>プロパティの使用をウィンドウを指定、またはノードがクリックしてされたときに、ノードに表示される Web する、コンテンツ フレームがリンクされています。  
+  
+ このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.TargetField%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>直接の各ノードのプロパティです。  
+  
+ 使用する代わりに、<xref:System.Web.UI.WebControls.TreeNodeBinding.TargetField%2A>バインドするプロパティ、<xref:System.Web.UI.WebControls.TreeNode.Target%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト フィールドを設定することができます<xref:System.Web.UI.WebControls.TreeNode.Target%2A>プロパティを設定して、固定値を<xref:System.Web.UI.WebControls.TreeNodeBinding.Target%2A>プロパティです。  
+  
+> [!NOTE]
+>  最初に設定する必要がある、データ ソースに複数のフィールドが含まれている場合、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>または<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>プロパティ、または適切なフィールドにバインドするために両方のプロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するノードに表示されるテキスト、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>ノードに表示されるテキスト、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.Text%2A>プロパティにバインドする値を指定する、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 <xref:System.Web.UI.WebControls.TreeNode.Text%2A>プロパティの使用をノードに表示されるテキストを指定します。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.Text%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>直接の各ノードのプロパティです。  
+  
+ 使用する代わりに、<xref:System.Web.UI.WebControls.TreeNodeBinding.Text%2A>同じテキストを各ノードにバインドするプロパティをバインドすることができます、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.TreeNodeBinding.TextField%2A>プロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.Text%2A>プロパティを表示する先のノードの値を指定する、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.Text%2A>プロパティを表示する先のノードの値を指定する、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingText/CS/treenodebindingtextcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingText/VB/treenodebindingtextvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextField">
+      <MemberSignature Language="C#" Value="public string TextField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TextField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.TextField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.TreeNode.Text" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.TreeNode.Text" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.TextField" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.TextField%2A>プロパティにバインドするフィールド名を指定する、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 <xref:System.Web.UI.WebControls.TreeNode.Text%2A>プロパティの使用をノードに表示されるテキストを指定します。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.TextField%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>直接の各ノードのプロパティです。  
+  
+ 使用する代わりに、<xref:System.Web.UI.WebControls.TreeNodeBinding.TextField%2A>バインドするプロパティ、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト フィールドを設定することができます、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>プロパティを設定して、固定値を<xref:System.Web.UI.WebControls.TreeNodeBinding.Text%2A>プロパティです。  
+  
+> [!NOTE]
+>  最初に設定する必要がある、データ ソースに複数のフィールドが含まれている場合、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>または<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>プロパティ、または適切なフィールドにバインドするために両方のプロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.TextField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.TextField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトが適用されます。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeTextField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeTextField/CS/treenodebindingtextfieldcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeTextField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeTextField/VB/treenodebindingtextfieldvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public string ToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するノードのツールヒントのテキストを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>ノードのツールヒントのテキスト、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.ToolTip" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTip%2A>プロパティにバインドする値を指定する、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 ノード上にマウス ポインターを置くと、ツールヒントのテキストが表示されます。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTip%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>直接の各ノードのプロパティです。  
+  
+ 使用する代わりに、<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTip%2A>同じのツールヒント テキストを各ノードにバインドするプロパティをバインドすることができます、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTipField%2A>プロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTip%2A>するノードのツールヒントのテキストを指定するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTip%2A>するノードのツールヒントのテキストを指定するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingText/CS/treenodebindingtextcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingText/VB/treenodebindingtextvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipField">
+      <MemberSignature Language="C#" Value="public string ToolTipField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTipField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.ToolTipField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.TreeNode.ToolTip" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.TreeNode.ToolTip" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.ToolTipField" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTipField%2A>プロパティにバインドするフィールド名を指定する、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 ノード上にマウス ポインターを置くと、ツールヒントのテキストが表示されます。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTipField%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>直接の各ノードのプロパティです。  
+  
+ 使用する代わりに、<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTipField%2A>バインドするプロパティ、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト フィールドを設定することができます、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>プロパティを設定して、固定値を<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTip%2A>プロパティです。  
+  
+> [!NOTE]
+>  最初に設定する必要がある、データ ソースに複数のフィールドが含まれている場合、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>または<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>プロパティ、または適切なフィールドにバインドするために両方のプロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTipField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.ToolTipField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.ToolTip%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトが適用されます。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeTextField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeTextField/CS/treenodebindingtextfieldcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeTextField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeTextField/VB/treenodebindingtextfieldvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeBinding.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.DataMember" />プロパティです。</summary>
+        <returns>返します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.DataMember" />プロパティです。 場合、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.DataMember" />プロパティは<see langword="null" />または空の文字列 ("")、 **(空)**が返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定は表示されませんが、先のノードに関するその他のデータの格納に使用する値を表示、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />ポストバック イベントを処理するために使用されるデータなど、オブジェクトを適用します。</summary>
+        <value>先のノードに関する補足データ、<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトが適用されてです。 このデータは表示されません。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.Value%2A>プロパティにバインドする値を指定する、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 <xref:System.Web.UI.WebControls.TreeNode.Value%2A>を補足するプロパティを使用、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>するノードに関連付けられている追加のデータを格納することによってプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 この値は、コントロールでは表示されず、一般的にポストバック イベントを処理するためのデータを格納するために使用します。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.Value%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>直接の各ノードのプロパティです。  
+  
+ 使用する代わりに、 <xref:System.Web.UI.WebControls.TreeNodeBinding.Value%2A> 、各ノードに同じ値をバインドするプロパティをバインドすることができます、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを設定して、データ ソースのフィールドを<xref:System.Web.UI.WebControls.TreeNodeBinding.ValueField%2A>プロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.Value%2A>するノードに関する補足データを格納するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.Value%2A>するノードに関する補足データを格納するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeBindingText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeBindingText/CS/treenodebindingtextcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeBindingText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeBindingText/VB/treenodebindingtextvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueField">
+      <MemberSignature Language="C#" Value="public string ValueField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValueField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeBinding.ValueField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定フィールドの名前、データ ソースにバインドする、<see cref="P:System.Web.UI.WebControls.TreeNode.Value" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。</summary>
+        <value>バインドするフィールドの名前、<see cref="P:System.Web.UI.WebControls.TreeNode.Value" />のプロパティ、<see cref="T:System.Web.UI.WebControls.TreeNode" />オブジェクトを<see cref="T:System.Web.UI.WebControls.TreeNodeBinding" />オブジェクトを適用します。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeBinding.ValueField" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.TreeView>コントロールがデータ ソースにバインドされている、使用して、<xref:System.Web.UI.WebControls.TreeNodeBinding.ValueField%2A>プロパティにバインドするフィールド名を指定する、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト。 このバインディングの関係をすべてに影響<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 <xref:System.Web.UI.WebControls.TreeNode.Value%2A>を補足するプロパティを使用、<xref:System.Web.UI.WebControls.TreeNode.Text%2A>するノードに関連付けられている追加のデータを格納することによってプロパティ、<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 この値は、コントロールでは表示されず、一般的にポストバック イベントを処理するためのデータを格納するために使用します。  
+  
+> [!NOTE]
+>  選択的にオーバーライドすることができます、<xref:System.Web.UI.WebControls.TreeNodeBinding.ValueField%2A>プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>直接の各ノードのプロパティです。  
+  
+ 使用する代わりに、<xref:System.Web.UI.WebControls.TreeNodeBinding.ValueField%2A>バインドするプロパティ、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクト、フィールドを設定することができます、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>プロパティを設定して、固定値を<xref:System.Web.UI.WebControls.TreeNodeBinding.Value%2A>プロパティです。  
+  
+> [!NOTE]
+>  最初に設定する必要がある、データ ソースに複数のフィールドが含まれている場合、<xref:System.Web.UI.WebControls.TreeNodeBinding.Depth%2A>または<xref:System.Web.UI.WebControls.TreeNodeBinding.DataMember%2A>プロパティ、または適切なフィールドにバインドするために両方のプロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeBinding.ValueField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトを適用します。 2 番目のコード例では、最初のコード例のサンプル XML データを提供します。  
+  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.TreeNodeBinding.ValueField%2A>プロパティをバインドする XML 要素の属性を指定する、<xref:System.Web.UI.WebControls.TreeNode.Value%2A>のプロパティ、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトを<xref:System.Web.UI.WebControls.TreeNodeBinding>オブジェクトが適用されます。 この例を正しく動作するには、Booklist.xml をという名前のファイルにこのコード例の後、サンプルの XML データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[TreeNodeTextField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeTextField/CS/treenodebindingtextfieldcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeTextField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeTextField/VB/treenodebindingtextfieldvb.aspx#1)]  
+  
+ 次のコード例では、前のコード例のサンプル XML データを提供します。  
+  
+```  
+<Books Text="Books List">  
+    <Book Text="Book Title One"  
+        Value="1"   
+        Image="Bookimage1.jpg"  
+        ImageToolTip="Book 1 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Book Title 1">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$1.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage1.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+    <Book Text="Book Title Two"  
+        Value="2"   
+        Image="Bookimage2.jpg"  
+        ImageToolTip="Book 2 Photo"   
+        Nav="http://www.microsoft.com"  
+        Tip="Click Me">  
+        <Description Text="Book Description">  
+        </Description>  
+        <Price Value="$2.99">  
+        </Price>  
+        <Author Text="Author Name"  
+            Value="LastName"   
+            Image="Authorimage2.jpg"   
+            Nav="http://www.microsoft.com"  
+            Tip="Author Name">  
+        </Author>  
+    </Book>  
+</Books>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

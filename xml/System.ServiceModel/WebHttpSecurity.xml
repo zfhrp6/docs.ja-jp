@@ -1,0 +1,156 @@
+<Type Name="WebHttpSecurity" FullName="System.ServiceModel.WebHttpSecurity">
+  <TypeSignature Language="C#" Value="public sealed class WebHttpSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebHttpSecurity extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.WebHttpSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>HTTP 要求を受信するために構成するサービス エンドポイントで使用できるセキュリティの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WebHttpSecurity> は、<xref:System.ServiceModel.WebHttpBinding>で構成されるエンドポイントのセキュリティ要件を指定します。  
+  
+ <xref:System.ServiceModel.WebHttpSecurityMode.Transport> 値が <xref:System.ServiceModel.WebHttpBinding.%23ctor%28System.ServiceModel.WebHttpSecurityMode%29> メソッドによって指定される場合、<xref:System.ServiceModel.WebHttpSecurity.Transport%2A> プロパティによって指定される設定は、そのサービス エンドポイントで有効になります。 <xref:System.ServiceModel.WebHttpSecurityMode> の値は、これを明示的なパラメーターとする <xref:System.ServiceModel.WebHttpBinding> コンストラクターにのみ設定されます。その値はバインディング インスタンスが作成された後は再び設定できません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebHttpSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WebHttpSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.WebHttpSecurity" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.WebHttpSecurityMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.WebHttpSecurityMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WebHttpSecurity.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WebHttpSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.WebHttpBinding" /> を伴う HTTP 要求を受信するために構成されるエンドポイントによって使用されるセキュリティのモードを、取得または設定します。</summary>
+        <value>エンドポイントで、トランスポート レベルのセキュリティを使用するか、セキュリティを使用しないかを示す <see cref="T:System.ServiceModel.WebHttpSecurityMode" /> の値。 既定値は <see cref="F:System.ServiceModel.WebHttpSecurityMode.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.ServiceModel.WebHttpSecurity.Transport%2A> プロパティの設定が有効になるかどうかを決定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が有効な <see cref="T:System.ServiceModel.WebHttpSecurityMode" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeMode">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeMode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeMode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WebHttpSecurity.ShouldSerializeMode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WebHttpSecurity.Mode" /> プロパティが既定値から変更されたかどうかと、シリアル化する必要があるかどうかを指定します。 この情報は、XAML 統合に使用されます。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WebHttpSecurity.Mode" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTransport">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTransport ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTransport() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WebHttpSecurity.ShouldSerializeTransport" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Transport プロパティが既定値から変更されたかどうかと、シリアル化する必要があるかどうかを示す値を返します。 この情報は、WCF によって XAML 統合に使用されます。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WebHttpSecurity.Transport" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transport">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.HttpTransportSecurity Transport { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.HttpTransportSecurity Transport" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WebHttpSecurity.Transport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.HttpTransportSecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングのトランスポート レベルのセキュリティ設定を格納するオブジェクトを取得します。</summary>
+        <value>このバインディングの <see cref="T:System.ServiceModel.HttpTransportSecurity" />。  
+  
+ 既定値の設定は、<see cref="P:System.ServiceModel.HttpTransportSecurity.ClientCredentialType" /> が <see cref="F:System.ServiceModel.HttpClientCredentialType.None" />、<see cref="P:System.ServiceModel.HttpTransportSecurity.ProxyCredentialType" /> が <see cref="F:System.ServiceModel.HttpProxyCredentialType.None" />、および <see cref="P:System.ServiceModel.HttpTransportSecurity.Realm" /> = "" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される <xref:System.ServiceModel.HttpTransportSecurity> オブジェクトを使用して、<xref:System.ServiceModel.WebHttpBinding> のトランスポート セキュリティのパラメーターを設定します。  
+  
+ <xref:System.ServiceModel.WebHttpSecurityMode.Transport> 値または <xref:System.ServiceModel.WebHttpSecurityMode.TransportCredentialOnly> 値が <xref:System.ServiceModel.WebHttpBinding.%23ctor%28System.ServiceModel.WebHttpSecurityMode%29> メソッドによって指定される場合、<xref:System.ServiceModel.WebHttpSecurity.Transport%2A> プロパティによって指定される設定は、そのサービス エンドポイントで有効になります。  
+  
+ <xref:System.ServiceModel.WebHttpSecurityMode.TransportCredentialOnly> 値が <xref:System.ServiceModel.WebHttpBinding.%23ctor%28System.ServiceModel.WebHttpSecurityMode%29> メソッドによって指定される場合、<xref:System.ServiceModel.WebHttpSecurity.Transport%2A> プロパティによって指定される設定は、そのサービス エンドポイントで有効になります。 <xref:System.ServiceModel.WebHttpSecurityMode> の値は、これを明示的なパラメーターとする <xref:System.ServiceModel.WebHttpBinding> コンストラクターにのみ設定されます。その値はバインディング インスタンスが作成された後は再び設定できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,159 @@
+<Type Name="WebAuthenticationFailureAuditEvent" FullName="System.Web.Management.WebAuthenticationFailureAuditEvent">
+  <TypeSignature Language="C#" Value="public class WebAuthenticationFailureAuditEvent : System.Web.Management.WebFailureAuditEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebAuthenticationFailureAuditEvent extends System.Web.Management.WebFailureAuditEvent" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebAuthenticationFailureAuditEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebFailureAuditEvent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET 認証の失敗に関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のリストが対象の機能を説明<xref:System.Web.Management.WebAuthenticationFailureAuditEvent>既定では、ASP.NET によってイベントが発生します。  
+  
+> [!NOTE]
+>  既定では ASP.NET が構成されている監査エラーの状態をログにのみ、そのログの成功条件深刻な負担がかかり、システム リソースです。 常に、成功条件を記録するシステムを構成できます。  
+  
+-   フォーム認証です。 成功の監査中には、認証されてください。 ユーザー名を含める失敗の監査は、暗号化解除または検証に失敗したチケットが原因であることが通常ので、ユーザー名、含まれません。 いずれには、クライアントの IP アドレスが含まれます。 関連するイベントの監査のコードは<xref:System.Web.Management.WebEventCodes.AuditFormsAuthenticationFailure>します。  
+  
+-   メンバーシップ。 成功および失敗の監査には、試行したユーザー名が含まれています。 どちらの監査フォームをしてしまうリスクがログに有効なパスワードを永続化するため、試行されたか、パスワードが格納されます。 関連するイベントの監査のコードは<xref:System.Web.Management.WebEventCodes.AuditMembershipAuthenticationFailure>します。  
+  
+ ときに、<xref:System.Web.Management.WebAuthenticationFailureAuditEvent>発生すると、既定で監査認証失敗イベントの発生について、パフォーマンス カウンターを更新します。 システム モニター (PerfMon) には、このパフォーマンス カウンターを表示する、**カウンターの追加**ウィンドウを選択`ASP.NET`で、**パフォーマンス**オブジェクト ドロップダウン リスト、選択、**認証エラーのイベントが発生**パフォーマンス カウンターをおよびクリック、**追加**ボタンをクリックします。 詳細については、次を参照してください。 [ASP.NET アプリケーションをシステム モニター (PerfMon) を使用して](http://go.microsoft.com/fwlink/?linkid=36882&clcid=0x409)msdn です。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 派生する例については、<xref:System.Web.Management.WebAuthenticationFailureAuditEvent>クラスのこのトピックで例を参照してください。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Management.WebAuthenticationFailureAuditEvent> クラスを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Management.WebAuthenticationFailureAuditEvent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.management.WebAuthenticationFailureAuditEvent/CS/WebAuthenticationFailureAuditEvent.cs#1)]
+ [!code-vb[System.Web.Management.WebAuthenticationFailureAuditEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.management.WebAuthenticationFailureAuditEvent/VB/WebAuthenticationFailureAuditEvent.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebAuthenticationFailureAuditEvent (string message, object eventSource, int eventCode, string nameToAuthenticate);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, string nameToAuthenticate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebAuthenticationFailureAuditEvent.#ctor(System.String,System.Object,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="nameToAuthenticate" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode"><see cref="T:System.Web.Management.WebEventCodes" />イベントに関連付けられている値。</param>
+        <param name="nameToAuthenticate">ユーザーの認証の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Management.WebAuthenticationFailureAuditEvent" />指定されたイベントのパラメーターを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebAuthenticationFailureAuditEvent.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET によって呼び出されます。 呼び出すことができます、<xref:System.Web.Management.WebAuthenticationFailureAuditEvent.%23ctor%2A>コンス トラクターから派生している場合、<xref:System.Web.Management.WebAuthenticationFailureAuditEvent>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターをカスタマイズする方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebAuthenticationFailureAuditEvent#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.management.WebAuthenticationFailureAuditEvent/CS/WebAuthenticationFailureAuditEvent.cs#2)]
+ [!code-vb[System.Web.Management.WebAuthenticationFailureAuditEvent#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.management.WebAuthenticationFailureAuditEvent/VB/WebAuthenticationFailureAuditEvent.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebAuthenticationFailureAuditEvent (string message, object eventSource, int eventCode, int eventDetailCode, string nameToAuthenticate);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, int32 eventDetailCode, string nameToAuthenticate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebAuthenticationFailureAuditEvent.#ctor(System.String,System.Object,System.Int32,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="eventDetailCode" Type="System.Int32" />
+        <Parameter Name="nameToAuthenticate" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <param name="eventDetailCode"><see cref="T:System.Web.Management.WebEventCodes" />イベントの詳細な識別子を指定する値。</param>
+        <param name="nameToAuthenticate">ユーザーの認証の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Management.WebAuthenticationFailureAuditEvent" />指定されたイベントのパラメーターを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebAuthenticationFailureAuditEvent.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET によって呼び出されます。 呼び出すことができます、<xref:System.Web.Management.WebAuthenticationFailureAuditEvent.%23ctor%2A>コンス トラクターから派生している場合、<xref:System.Web.Management.WebAuthenticationFailureAuditEvent>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターをカスタマイズする方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebAuthenticationFailureAuditEvent#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.management.WebAuthenticationFailureAuditEvent/CS/WebAuthenticationFailureAuditEvent.cs#3)]
+ [!code-vb[System.Web.Management.WebAuthenticationFailureAuditEvent#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.management.WebAuthenticationFailureAuditEvent/VB/WebAuthenticationFailureAuditEvent.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameToAuthenticate">
+      <MemberSignature Language="C#" Value="public string NameToAuthenticate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NameToAuthenticate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebAuthenticationFailureAuditEvent.NameToAuthenticate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証にユーザーの名前を取得します。</summary>
+        <value>ユーザーの認証の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 成功の監査のみでは、認証されたユーザーの名前を含める必要があります。 障害が発生した復号化や検証からなり、通常、失敗の監査は、ユーザー名を含めないでください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示しています。<xref:System.Web.Management.WebAuthenticationFailureAuditEvent.NameToAuthenticate%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Management.WebAuthenticationFailureAuditEvent#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.management.WebAuthenticationFailureAuditEvent/CS/WebAuthenticationFailureAuditEvent.cs#3)]
+ [!code-vb[System.Web.Management.WebAuthenticationFailureAuditEvent#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.management.WebAuthenticationFailureAuditEvent/VB/WebAuthenticationFailureAuditEvent.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

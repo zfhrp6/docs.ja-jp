@@ -1,0 +1,761 @@
+<Type Name="BindingOperations" FullName="System.Windows.Data.BindingOperations">
+  <TypeSignature Language="C#" Value="public static class BindingOperations" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit BindingOperations extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.BindingOperations" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Data.Binding" />、<see cref="T:System.Windows.Data.MultiBinding" />、<see cref="T:System.Windows.Data.PriorityBinding" /> オブジェクトなどのバインディングを操作するための静的メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、データ バインディング用のヘルパー操作として機能する静的メソッドのセットを公開します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AccessCollection">
+      <MemberSignature Language="C#" Value="public static void AccessCollection (System.Collections.IEnumerable collection, Action accessMethod, bool writeAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AccessCollection(class System.Collections.IEnumerable collection, class System.Action accessMethod, bool writeAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.AccessCollection(System.Collections.IEnumerable,System.Action,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.IEnumerable" />
+        <Parameter Name="accessMethod" Type="System.Action" />
+        <Parameter Name="writeAccess" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="collection">アクセスするコレクション。</param>
+        <param name="accessMethod">コレクションに対して実行するアクション。</param>
+        <param name="writeAccess">
+          <see langword="true" />場合<c>accessMethod</c>コレクションへの書き込み、それ以外の場合、<see langword="false" />です。</param>
+        <summary>アプリケーションの EnableCollectionSynchronization が呼び出されたときに指定されている同期機構を使用して、コレクションへのアクセスを提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearAllBindings">
+      <MemberSignature Language="C#" Value="public static void ClearAllBindings (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ClearAllBindings(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.ClearAllBindings(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target">バインドを削除するオブジェクト。</param>
+        <summary>型のバインドを含む、すべてのバインドを解除する<see cref="T:System.Windows.Data.Binding" />、 <see cref="T:System.Windows.Data.MultiBinding" />、および<see cref="T:System.Windows.Data.PriorityBinding" />、指定された対象から<see cref="T:System.Windows.DependencyObject" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したオブジェクトがデータ バインドでない場合は、このメソッドは影響を与えません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" /> が <see langword="null" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearBinding">
+      <MemberSignature Language="C#" Value="public static void ClearBinding (System.Windows.DependencyObject target, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ClearBinding(class System.Windows.DependencyObject target, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.ClearBinding(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="target">バインドを削除するオブジェクト。</param>
+        <param name="dp">バインドを削除する依存関係プロパティ。</param>
+        <summary>プロパティからバインドを削除します (存在する場合)。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたプロパティは、データ バインドの場合、 <xref:System.Windows.Data.Binding>、 <xref:System.Windows.Data.PriorityBinding>、または<xref:System.Windows.Data.MultiBinding>、このメソッドは、対応するバインディング式および復元すると、ローカルの値は前に、のプロパティの値をバインディングによって設定されたを削除します。  
+  
+ 指定されたプロパティがデータ バインドでない場合は、このメソッドは影響を与えません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" /> パラメーターと <paramref name="dp" /> パラメーターを <see langword="null" /> にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionRegistering">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Windows.Data.CollectionRegisteringEventArgs&gt; CollectionRegistering;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Data.CollectionRegisteringEventArgs&gt; CollectionRegistering" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Data.BindingOperations.CollectionRegistering" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Data.CollectionRegisteringEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインド システム コレクションの通知と発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionViewRegistering">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Windows.Data.CollectionViewRegisteringEventArgs&gt; CollectionViewRegistering;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Data.CollectionViewRegisteringEventArgs&gt; CollectionViewRegistering" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Data.BindingOperations.CollectionViewRegistering" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Data.CollectionViewRegisteringEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインド システム通知コレクション ビューと発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableCollectionSynchronization">
+      <MemberSignature Language="C#" Value="public static void DisableCollectionSynchronization (System.Collections.IEnumerable collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisableCollectionSynchronization(class System.Collections.IEnumerable collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.DisableCollectionSynchronization(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="collection">同期アクセスを削除するコレクション。</param>
+        <summary>指定したコレクションの登録、同期を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisconnectedSource">
+      <MemberSignature Language="C#" Value="public static object DisconnectedSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property object DisconnectedSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.BindingOperations.DisconnectedSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>置換するオブジェクトを取得、<see cref="P:System.Windows.FrameworkElement.DataContext" />項目コンテナーがビジュアル ツリーから削除されたとき。</summary>
+        <value>オブジェクトを置き換える、<see cref="P:System.Windows.FrameworkElement.DataContext" />項目コンテナーがビジュアル ツリーから削除されたとき。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対処する必要がある場合は、このプロパティを使用して、<xref:System.Windows.FrameworkElement.DataContext%2A>項目コンテナーのです。  項目コンテナーは、<xref:System.Windows.Controls.ItemsControl> に項目を表示する UI 要素です。  <xref:System.Windows.Controls.ItemsControl> がコレクションにバインドされたデータの場合、項目コンテナーは項目ごとに生成されます。  場合によっては、項目コンテナーがビジュアル ツリーから削除されます。  項目コンテナーが削除される 2 つの一般的なケースは、項目が基になるコレクションから削除されたときと、仮想化が <xref:System.Windows.Controls.ItemsControl> で有効になっているときです。  このような場合、<xref:System.Windows.FrameworkElement.DataContext%2A>項目コンテナーのプロパティ設定されます、<xref:System.Windows.Data.BindingOperations.DisconnectedSource%2A>プロパティを確認してくださいかどうか、<xref:System.Windows.FrameworkElement.DataContext%2A>と等しい、<xref:System.Windows.Data.BindingOperations.DisconnectedSource%2A>アクセスする前に、<xref:System.Windows.FrameworkElement.DataContext%2A>で、<xref:System.Windows.FrameworkElement.DataContextChanged>項目コンテナーのイベントです。 項目コンテナーと仮想化の詳細についてで「解説」を参照してください、<xref:System.Windows.Controls.VirtualizingStackPanel>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="EnableCollectionSynchronization">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>有効な<see cref="T:System.Windows.Data.CollectionView" />に参加するオブジェクトには、複数のスレッドで使用されるコレクションへのアクセスが同期されています。 </summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+WPF アプリケーションを使用してデータのコレクションを表示できる、<xref:System.Windows.Controls.ItemsControl>またはそのサブクラスのいずれか (<xref:System.Windows.Controls.ListBox>、 <xref:System.Windows.Controls.DataGrid>、 <xref:System.Windows.Controls.TreeView>、 <xref:System.Windows.Controls.ListView>, などです。)。 WPF のサブクラスでコレクションへのアクセスをすべてのチャンネル<xref:System.Windows.Data.CollectionView>です。 両方の<xref:System.Windows.Controls.ItemsControl>と<xref:System.Windows.Data.CollectionView>をスレッドにアフィニティを持つ、<xref:System.Windows.Controls.ItemsControl>が作成された、つまり、別のスレッドで使用が禁止されています、例外をスローします。 実際には、この制限は、コレクションにもに適用されます。
+ 
+複数のスレッドでコレクションを使用することがあります。   コレクションを更新するなど、追加 (アイテムを削除)「データの収集」のスレッドで、「ユーザー インターフェイス」スレッドで、結果を表示するときに、UI が中に応答できるようにデータ収集が行われています。 このような状況で、コレクションへの同期 (「スレッド セーフである」) アクセスを担当しています。   これは、通常セマフォなどを使用して単純ロック機構またはより複雑な同期メカニズムのいずれかと、イベントなどをリセットします。 
+ 
+WPF からそのアクセスを保証する必要がありますも中に、コレクションへのアプリケーションのアクセスを同期する必要があります (特にから<xref:System.Windows.Data.CollectionView>) が同じ同期機構に参加します。  これを行うには、<xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization%2A> メソッドを呼び出します。
+ 
+使用してコレクション複数のスレッドのうちの 1 つを所有する UI スレッド、<xref:System.Windows.Controls.ItemsControl>アプリケーションには、次の責任を負います。
+
+1. 同期メカニズムを選択します。
+
+1. このメカニズムを使用して、コレクションにアプリケーションからのすべてのアクセスを同期します。
+
+1. 呼び出す<xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization%2A>機構の WPF を通知するためにします。
+
+   - 呼び出しは、UI スレッドで行う必要があります。
+
+   - 別のスレッドのコレクションを使用する前に、またはコレクションをアタッチする前に呼び出しを行う必要があります、 <xref:System.Windows.Controls.ItemsControl>、自動的に整理します。
+
+   - 呼び出す、<xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object)>単純ロック メカニズムを使用した場合、オーバー ロード; 呼び出し、<xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object,System.Windows.Data.CollectionSynchronizationCallback)>オーバー ロードの場合はより複雑なメカニズムを使用します。
+
+1. コレクションとその変更の通知への変更を確認してください (を通じて<xref:System.Collections.Specialized.INotifyCollectionChanged>) はアトミックです。 他のスレッドからのアクセスに対処できますありません。  (これは、通常無料です。 For instance、<xref:System.Collections.ObjectModel.ObservableCollection%601>同期で保護されているすべての変更をこのことを保証します)。
+
+1. 呼び出す場合<xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>呼び出しが UI スレッドで行う必要がありますもします。
+
+1. 複数の UI スレッドで同じコレクションを使用する場合は、呼び出す必要があります<xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization%2A>(および<xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>、必要に応じて) UI スレッドごとに個別にします。
+
+1. デッドロックを回避します。  これは既に、アプリケーションの責任、同期を使用するが、これも考慮する必要があります、同期アカウント WPF への参加にしたら、次の段落で説明したようです。
+
+代わりに、WPF には、次の動作が用意されています。
+
+- <xref:System.Windows.Data.CollectionView>特定の同期機構を使用してコレクションにアクセスします。
+
+- <xref:System.Windows.Data.CollectionView> "シャドウのコピーを保持"コレクションを使用するため、UI スレッドでします。
+
+- <xref:System.Windows.Data.CollectionView.CollectionChanged>イベントは、キューに登録 (スレッド) で受信したとき。
+
+- 保留中のイベントに適用されます、UI スレッドで非同期的にシャドウ コピーする機会があるとします。
+
+- <xref:System.Windows.Data.CollectionView>アプリケーションに表示されている同期機構を直接使用されません。 これは、WPF の方法を回避することができのデッドロック (7 の前の項目を参照してください)。   
+
+Net の効果は、任意のスレッドのコレクションを変更してにそれらの変更が最終的に表示されます、 <xref:System.Windows.Controls.ItemsControl> UI スレッドが"の遅れを取り戻す"時刻を持つ場合です。  実装では、調整されているため変更がバック グラウンドを保持する UI スレッドにフローするレートが飽和状態になる UI スレッドと通常のユーザー入力に応答を不足からスレッドを調整します。
+
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="EnableCollectionSynchronization">
+      <MemberSignature Language="C#" Value="public static void EnableCollectionSynchronization (System.Collections.IEnumerable collection, object lockObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableCollectionSynchronization(class System.Collections.IEnumerable collection, object lockObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.IEnumerable" />
+        <Parameter Name="lockObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="collection">必要があるコレクションには、アクセスが同期されています。</param>
+        <param name="lockObject">コレクションにアクセスするときにロックするオブジェクト。</param>
+        <summary>有効な<see cref="T:System.Windows.Data.CollectionView" />に参加するオブジェクトには、単純ロック メカニズムを使用して複数のスレッドで使用されるコレクションへのアクセスが同期されています。 </summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+## Remarks
+
+WPF アプリケーションを使用してデータのコレクションを表示できる、<xref:System.Windows.Controls.ItemsControl>またはそのサブクラスのいずれか (<xref:System.Windows.Controls.ListBox>、 <xref:System.Windows.Controls.DataGrid>、 <xref:System.Windows.Controls.TreeView>、 <xref:System.Windows.Controls.ListView>, などです。)。 WPF のサブクラスでコレクションへのアクセスをすべてのチャンネル<xref:System.Windows.Data.CollectionView>です。 両方の<xref:System.Windows.Controls.ItemsControl>と<xref:System.Windows.Data.CollectionView>をスレッドにアフィニティを持つ、<xref:System.Windows.Controls.ItemsControl>が作成された、つまり、別のスレッドで使用が禁止されています、例外をスローします。 実際には、この制限は、コレクションにもに適用されます。
+ 
+複数のスレッドでコレクションを使用することがあります。   コレクションを更新するなど、追加 (アイテムを削除)「データの収集」のスレッドで、「ユーザー インターフェイス」スレッドで、結果を表示するときに、UI が中に応答できるようにデータ収集が行われています。 このような状況で、必要があります (「スレッド セーフである」) のアクセスとは、WPF から確実にアクセスするコレクションを同期されていることを確認の (特にから<xref:System.Windows.Data.CollectionView>) が同じ同期機構に参加します。 呼び出して、<xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object)>メソッド、これを行う単純ロック メカニズムを使用しています。 
+ 
+使用してコレクション複数のスレッドのうちの 1 つを所有する UI スレッド、<xref:System.Windows.Controls.ItemsControl>次を行う必要があります。
+
+1. コレクションにアクセスする際にロックするオブジェクトのインスタンスを作成します。
+
+1. そのオブジェクトをロックすることにより、アプリケーションから、コレクションへのすべてのアクセスを同期します。
+
+1. 呼び出す<xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object)>WPF 単純ロック メカニズムを使用することを通知するためにします。
+
+   - 呼び出しは、UI スレッドで行う必要があります。
+
+   - 別のスレッドのコレクションを使用する前に、またはコレクションをアタッチする前に呼び出しを行う必要があります、 <xref:System.Windows.Controls.ItemsControl>、自動的に整理します。
+
+1. コレクションとその変更の通知への変更を確認してください (を通じて<xref:System.Collections.Specialized.INotifyCollectionChanged>) はアトミックです。 他のスレッドからのアクセスに対処できますありません。  (これは、通常無料です。 For instance、<xref:System.Collections.ObjectModel.ObservableCollection%601>同期で保護されているすべての変更をこのことを保証します)。
+
+1. 呼び出す場合<xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>呼び出しが UI スレッドで行う必要がありますもします。
+
+1. 複数の UI スレッドで同じコレクションを使用する場合は、呼び出す必要があります<xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization%2A>(および<xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>、必要に応じて) UI スレッドごとに個別にします。
+
+1. デッドロックを回避します。  、同期を使用するが、その必要がありますも考慮に入れる同期 WPF への参加が既にアプリケーションの責任になります。 (参照の詳細は、下)。
+
+代わりに、WPF には、次の動作が用意されています。
+
+- <xref:System.Windows.Data.CollectionView>ロック メカニズムを使用してコレクションにアクセスします。
+
+- <xref:System.Windows.Data.CollectionView> "シャドウのコピーを保持"コレクションを使用するため、UI スレッドでします。
+
+- <xref:System.Windows.Data.CollectionView.CollectionChanged%2A>イベントは、キューに登録 (スレッド) で受信したとき。
+
+- 保留中のイベントに適用されます、UI スレッドで非同期的にシャドウ コピーする機会があるとします。
+
+- <xref:System.Windows.Data.CollectionView>アプリケーションに表示されている同期機構直接使用されます。 これは、WPF の方法を回避することができのデッドロック (7 の前の項目を参照してください)。   
+
+Net の効果は、任意のスレッドのコレクションを変更してにそれらの変更が最終的に表示されます、 <xref:System.Windows.Controls.ItemsControl> UI スレッドが"の遅れを取り戻す"時刻を持つ場合です。  実装では、調整されているため変更がバック グラウンドを保持する UI スレッドにフローするレートが飽和状態になる UI スレッドと通常のユーザー入力に応答を不足からスレッドを調整します。
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableCollectionSynchronization">
+      <MemberSignature Language="C#" Value="public static void EnableCollectionSynchronization (System.Collections.IEnumerable collection, object context, System.Windows.Data.CollectionSynchronizationCallback synchronizationCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableCollectionSynchronization(class System.Collections.IEnumerable collection, object context, class System.Windows.Data.CollectionSynchronizationCallback synchronizationCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object,System.Windows.Data.CollectionSynchronizationCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.IEnumerable" />
+        <Parameter Name="context" Type="System.Object" />
+        <Parameter Name="synchronizationCallback" Type="System.Windows.Data.CollectionSynchronizationCallback" />
+      </Parameters>
+      <Docs>
+        <param name="collection">必要があるコレクションには、アクセスが同期されています。</param>
+        <param name="context">コールバックに渡されるオブジェクト。</param>
+        <param name="synchronizationCallback">コレクションへのアクセスが必要なときに呼び出されるコールバック。 コレクションが、一度に 1 つのスレッドによってアクセスされることを確認するのにには、これを使用できます。 </param>
+        <summary>有効な<see cref="T:System.Windows.Data.CollectionView" />に参加するオブジェクトには、単純ロック以外のメカニズムを使用して複数のスレッドで使用されるコレクションへのアクセスが同期されています。 </summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+
+WPF アプリケーションを使用してデータのコレクションを表示できる、<xref:System.Windows.Controls.ItemsControl>またはそのサブクラスのいずれか (<xref:System.Windows.Controls.ListBox>、 <xref:System.Windows.Controls.DataGrid>、 <xref:System.Windows.Controls.TreeView>、 <xref:System.Windows.Controls.ListView>, などです。)。 WPF のサブクラスでコレクションへのアクセスをすべてのチャンネル<xref:System.Windows.Data.CollectionView>です。 両方の<xref:System.Windows.Controls.ItemsControl>と<xref:System.Windows.Data.CollectionView>をスレッドにアフィニティを持つ、<xref:System.Windows.Controls.ItemsControl>が作成された、つまり、別のスレッドで使用が禁止されています、例外をスローします。 実際には、この制限は、コレクションにもに適用されます。
+ 
+複数のスレッドでコレクションを使用することがあります。   コレクションを更新するなど、追加 (アイテムを削除)「データの収集」のスレッドで、「ユーザー インターフェイス」スレッドで、結果を表示するときに、UI が中に応答できるようにデータ収集が行われています。 このような状況で、必要があります (「スレッド セーフである」) のアクセスとは、WPF から確実にアクセスするコレクションを同期されていることを確認の (特にから<xref:System.Windows.Data.CollectionView>) が同じ同期機構に参加します。 呼び出して、<xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object,System.Windows.Data.CollectionSynchronizationCallback)>メソッド、これを行うなど、セマフォ、リセット イベントなどの同期機構を使用します。 
+ 
+使用してコレクション複数のスレッドのうちの 1 つを所有する UI スレッド、<xref:System.Windows.Controls.ItemsControl>次を行う必要があります。
+
+1. 同期メカニズムを選択します。
+
+1. このメカニズムを使用して、コレクションにアプリケーションからのすべてのアクセスを同期します。
+
+1. 呼び出す、 <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization(System.Collections.IEnumerable,System.Object,System.Windows.Data.CollectionSynchronizationCallback)> WPF 単純ロック以外のメカニズムを使用していることを通知するためにオーバー ロードします。
+
+   - 呼び出しは、UI スレッドで行う必要があります。
+
+   - 別のスレッドのコレクションを使用する前に、またはコレクションをアタッチする前に呼び出しを行う必要があります、 <xref:System.Windows.Controls.ItemsControl>、自動的に整理します。
+
+1. コレクションとその変更の通知への変更を確認してください (を通じて<xref:System.Collections.Specialized.INotifyCollectionChanged>) はアトミックです。 他のスレッドからのアクセスに対処できますありません。  (これは、通常無料です。 For instance、<xref:System.Collections.ObjectModel.ObservableCollection%601>同期で保護されているすべての変更をこのことを保証します)。
+
+1. 呼び出す場合<xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>呼び出しが UI スレッドで行う必要がありますもします。
+
+1. 複数の UI スレッドで同じコレクションを使用する場合は、呼び出す必要があります<xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization%2A>(および<xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization%2A>、必要に応じて) UI スレッドごとに個別にします。
+
+1. デッドロックを回避します。  、同期を使用するが、その必要がありますも考慮に入れる同期 WPF への参加が既にアプリケーションの責任になります。 (参照の詳細は、下)。
+
+代わりに、WPF には、次の動作が用意されています。
+
+- <xref:System.Windows.Data.CollectionView>を呼び出して、登録されているコレクションにアクセスする<xref:System.Windows.Data.CollectionSynchronizationCallback>次の引数で。
+
+   - `collection`: 関心のあるコレクション。
+   - `context`: 登録されているコンテキスト オブジェクト。
+   - `accessMethod`: 実際のアクセスを実行するデリゲート。
+   - `writeAccess`:`true`デリゲートは、コレクションを変更する場合`false`それ以外の場合。
+
+   <xref:System.Windows.Data.CollectionSynchronizationCallback>コレクションでの同期を確立する必要があります (を使用して、`context`オブジェクトおよび`writeAccess`では、適切な値)、呼び出す、`accessMethod`同期を解放します。
+
+- <xref:System.Windows.Data.CollectionView> "シャドウのコピーを保持"コレクションを使用するため、UI スレッドでします。
+
+- <xref:System.Windows.Data.CollectionView.CollectionChanged%2A>イベントは、キューに登録 (スレッド) で受信したとき。
+
+- 保留中のイベントに適用されます、UI スレッドで非同期的にシャドウ コピーする機会があるとします。
+
+- <xref:System.Windows.Data.CollectionView>アプリケーションに表示されている同期機構直接使用されます。 これは、WPF の方法を回避することができのデッドロック (7 の前の項目を参照してください)。   
+
+Net の効果は、任意のスレッドのコレクションを変更してにそれらの変更が最終的に表示されます、 <xref:System.Windows.Controls.ItemsControl> UI スレッドが"の遅れを取り戻す"時刻を持つ場合です。  実装では、調整されているため変更がバック グラウンドを保持する UI スレッドにフローするレートが飽和状態になる UI スレッドと通常のユーザー入力に応答を不足からスレッドを調整します。
+
+ `context`パラメーターは、任意のオブジェクトに渡される、`callback`です。 アクセスを制御するために使用する同期メカニズムの決定を行うこともできます`collection`です。 `Context`指定できます`null`です。  
+ 
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBinding">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.Binding GetBinding (System.Windows.DependencyObject target, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Data.Binding GetBinding(class System.Windows.DependencyObject target, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.GetBinding(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.Binding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="target">オブジェクトを<c>dp</c>はします。</param>
+        <param name="dp">バインディングを取得する対象のバインディング ターゲット プロパティ。</param>
+        <summary>取得、<see cref="T:System.Windows.Data.Binding" />指定したプロパティに設定されているオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Data.Binding" />オブジェクトに指定されたプロパティを設定または<see langword="null" />いない場合<see cref="T:System.Windows.Data.Binding" />オブジェクトが設定されています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" />と<paramref name="dp" />パラメーターを null にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBindingBase">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.BindingBase GetBindingBase (System.Windows.DependencyObject target, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Data.BindingBase GetBindingBase(class System.Windows.DependencyObject target, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.GetBindingBase(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="target">オブジェクトを<c>dp</c>はします。</param>
+        <param name="dp">バインディング ターゲット プロパティを取得する、<see cref="T:System.Windows.Data.BindingBase" />オブジェクト。</param>
+        <summary>取得、<see cref="T:System.Windows.Data.BindingBase" />指定したプロパティに設定されているオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Data.BindingBase" />特定のプロパティに設定されているオブジェクトまたは<see langword="null" />バインド オブジェクトが設定されていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.BindingBase>クラスは、共通の基本クラス、 <xref:System.Windows.Data.Binding>、 <xref:System.Windows.Data.PriorityBinding>、および<xref:System.Windows.Data.MultiBinding>クラスです。 使用することができます、 <xref:System.Windows.Data.BindingOperations.GetBinding%2A>、 <xref:System.Windows.Data.BindingOperations.GetPriorityBinding%2A>、および<xref:System.Windows.Data.BindingOperations.GetMultiBinding%2A>メソッド、つまりバインディングの種類が事前にわかっている場合は、プロパティに設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" /> パラメーターと <paramref name="dp" /> パラメーターを <see langword="null" /> にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBindingExpression">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.BindingExpression GetBindingExpression (System.Windows.DependencyObject target, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Data.BindingExpression GetBindingExpression(class System.Windows.DependencyObject target, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.GetBindingExpression(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="target">バインディング ターゲット オブジェクトを<c>dp</c>はします。</param>
+        <param name="dp">バインディング ターゲット プロパティを取得する、<see cref="T:System.Windows.Data.BindingExpression" />オブジェクト。</param>
+        <summary>返します、<see cref="T:System.Windows.Data.BindingExpression" />に指定したバインディング ターゲット プロパティは、指定したオブジェクトに関連付けられているオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Data.BindingExpression" />特定のプロパティに関連付けられているオブジェクトまたは<see langword="null" />が存在しない場合。 場合、<see cref="T:System.Windows.Data.PriorityBindingExpression" />オブジェクトが、プロパティの設定、<see cref="P:System.Windows.Data.PriorityBindingExpression.ActiveBindingExpression" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.BindingExpression>オブジェクトは、バインディング ソースとバインド ターゲットの間の接続を維持します。 取得することができます、<xref:System.Windows.Data.BindingExpression>オブジェクトをこの静的メソッドを呼び出すかを呼び出して、<xref:System.Windows.FrameworkElement.GetBindingExpression%2A>メソッドをデータにバインドされた<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例の実装を示しています、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント ハンドラーを使用する、<xref:System.Windows.Data.BindingOperations.GetBindingExpression%2A>を取得するメソッド、<xref:System.Windows.Data.BindingExpression>しを呼び出して、<xref:System.Windows.Data.BindingExpression.DataItem%2A>バインド ソース オブジェクトにアクセスするプロパティです。  
+  
+ <xref:System.Windows.Controls.TextBlock> `SavingsText`バインディング ターゲット オブジェクトと<xref:System.Windows.Controls.TextBlock.Text%2A>バインディング ターゲット プロパティです。  
+  
+ [!code-csharp[DirectionalBinding#OnRentRaise](~/samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml.cs#onrentraise)]
+ [!code-vb[DirectionalBinding#OnRentRaise](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DirectionalBinding/VisualBasic/DirectionalBinding.vb#onrentraise)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" /> パラメーターと <paramref name="dp" /> パラメーターを <see langword="null" /> にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBindingExpressionBase">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.BindingExpressionBase GetBindingExpressionBase (System.Windows.DependencyObject target, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Data.BindingExpressionBase GetBindingExpressionBase(class System.Windows.DependencyObject target, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.GetBindingExpressionBase(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingExpressionBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="target">オブジェクトを<c>dp</c>はします。</param>
+        <param name="dp">バインディング ターゲット プロパティを取得する、<see cref="T:System.Windows.Data.BindingExpressionBase" />オブジェクト。</param>
+        <summary>取得、<see cref="T:System.Windows.Data.BindingExpressionBase" />指定したプロパティに設定されているオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Data.BindingExpressionBase" />特定のプロパティに設定されているオブジェクトまたは<see langword="null" />バインド オブジェクトが設定されていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.BindingExpressionBase>クラスは、共通の基本クラス、 <xref:System.Windows.Data.BindingExpression>、 <xref:System.Windows.Data.PriorityBindingExpression>、および<xref:System.Windows.Data.MultiBindingExpression>クラスです。 使用することができます、 <xref:System.Windows.Data.BindingOperations.GetBindingExpression%2A>、 <xref:System.Windows.Data.BindingOperations.GetPriorityBindingExpression%2A>、および<xref:System.Windows.Data.BindingOperations.GetMultiBindingExpression%2A>メソッドの場合は事前にわかっているバインディングの種類が、プロパティに設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" />と<paramref name="dp" />パラメーターを null にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMultiBinding">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.MultiBinding GetMultiBinding (System.Windows.DependencyObject target, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Data.MultiBinding GetMultiBinding(class System.Windows.DependencyObject target, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.GetMultiBinding(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.MultiBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="target">オブジェクトを<c>dp</c>はします。</param>
+        <param name="dp">バインディングを取得する対象のバインディング ターゲット プロパティ。</param>
+        <summary>取得、<see cref="T:System.Windows.Data.MultiBinding" />指定したプロパティに設定されているオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Data.MultiBinding" />オブジェクトに指定されたプロパティを設定または<see langword="null" />いない場合<see cref="T:System.Windows.Data.MultiBinding" />オブジェクトが設定されています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" />と<paramref name="dp" />パラメーターを null にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMultiBindingExpression">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.MultiBindingExpression GetMultiBindingExpression (System.Windows.DependencyObject target, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Data.MultiBindingExpression GetMultiBindingExpression(class System.Windows.DependencyObject target, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.GetMultiBindingExpression(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.MultiBindingExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="target">バインディング ターゲット オブジェクトを<c>dp</c>はします。</param>
+        <param name="dp">バインディング ターゲット プロパティを取得する、<see cref="T:System.Windows.Data.MultiBindingExpression" />オブジェクト。</param>
+        <summary>返します、<see cref="T:System.Windows.Data.MultiBindingExpression" />に指定したバインディング ターゲット プロパティは、指定したオブジェクトに関連付けられているオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Data.MultiBindingExpression" />特定のプロパティに関連付けられているオブジェクトまたは<see langword="null" />が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.MultiBindingExpression>特定のプロパティに関連付けられているオブジェクトまたは`null`が存在しない場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" /> パラメーターと <paramref name="dp" /> パラメーターを <see langword="null" /> にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPriorityBinding">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.PriorityBinding GetPriorityBinding (System.Windows.DependencyObject target, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Data.PriorityBinding GetPriorityBinding(class System.Windows.DependencyObject target, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.GetPriorityBinding(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.PriorityBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="target">オブジェクトを<c>dp</c>はします。</param>
+        <param name="dp">バインディングを取得する対象のバインディング ターゲット プロパティ。</param>
+        <summary>取得、<see cref="T:System.Windows.Data.PriorityBinding" />指定したプロパティに設定されているオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Data.PriorityBinding" />オブジェクトに指定されたプロパティを設定または<see langword="null" />いない場合<see cref="T:System.Windows.Data.PriorityBinding" />オブジェクトが設定されています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" />と<paramref name="dp" />パラメーターを null にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPriorityBindingExpression">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.PriorityBindingExpression GetPriorityBindingExpression (System.Windows.DependencyObject target, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Data.PriorityBindingExpression GetPriorityBindingExpression(class System.Windows.DependencyObject target, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.GetPriorityBindingExpression(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.PriorityBindingExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="target">バインディング ターゲット オブジェクトを<c>dp</c>はします。</param>
+        <param name="dp">バインディング ターゲット プロパティを取得する、<see cref="T:System.Windows.Data.PriorityBindingExpression" />オブジェクト。</param>
+        <summary>返します、<see cref="T:System.Windows.Data.PriorityBindingExpression" />に指定したバインディング ターゲット プロパティは、指定したオブジェクトに関連付けられているオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Data.PriorityBindingExpression" />特定のプロパティに関連付けられているオブジェクトまたは<see langword="null" />が存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" /> パラメーターと <paramref name="dp" /> パラメーターを <see langword="null" /> にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSourceUpdatingBindingGroups">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Data.BindingGroup&gt; GetSourceUpdatingBindingGroups (System.Windows.DependencyObject root);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Data.BindingGroup&gt; GetSourceUpdatingBindingGroups(class System.Windows.DependencyObject root) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.GetSourceUpdatingBindingGroups(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Data.BindingGroup&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="root" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="root">ルート<see cref="T:System.Windows.UIElement" />のグループをバインドを取得します。  このメソッドが戻る<see cref="T:System.Windows.Data.BindingGroup" />この要素またはその子孫の要素に関連付けられているオブジェクト。</param>
+        <summary>すべてを取得<see cref="T:System.Windows.Data.BindingGroup" />されていない無効な値またはターゲット値を持つオブジェクト ソースを更新します。</summary>
+        <returns>コレクション<see cref="T:System.Windows.Data.BindingGroup" />されていない指定した要素に関連付けられていて、無効な値またはターゲット値をオブジェクト ソースを更新します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`root`は`null`、<xref:System.Windows.Data.BindingOperations.GetSourceUpdatingBindingGroups%2A>すべてを返します<xref:System.Windows.Data.BindingGroup>が無効か、更新されていないオブジェクトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSourceUpdatingBindings">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Data.BindingExpressionBase&gt; GetSourceUpdatingBindings (System.Windows.DependencyObject root);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Data.BindingExpressionBase&gt; GetSourceUpdatingBindings(class System.Windows.DependencyObject root) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.GetSourceUpdatingBindings(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Data.BindingExpressionBase&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="root" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="root">ルート<see cref="T:System.Windows.UIElement" />のグループをバインドを取得します。  このメソッドが戻る<see cref="T:System.Windows.Data.BindingExpressionBase" />この要素またはその子孫の要素に関連付けられているオブジェクト。</param>
+        <summary>すべてを取得<see cref="T:System.Windows.Data.BindingExpressionBase" />されていない無効な値またはターゲット値を持つオブジェクト ソースを更新します。</summary>
+        <returns>コレクション<see cref="T:System.Windows.Data.BindingExpressionBase" />されていない指定した要素に関連付けられていて、無効な値またはターゲット値をオブジェクト ソースを更新します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`root`は`null`、<xref:System.Windows.Data.BindingOperations.GetSourceUpdatingBindings%2A>すべてを返します<xref:System.Windows.Data.BindingExpressionBase>が無効か、更新されていないオブジェクトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDataBound">
+      <MemberSignature Language="C#" Value="public static bool IsDataBound (System.Windows.DependencyObject target, System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDataBound(class System.Windows.DependencyObject target, class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.IsDataBound(System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="target">オブジェクトを<c>dp</c>はします。</param>
+        <param name="dp">確認する依存関係プロパティ。</param>
+        <summary>指定したプロパティが現在のデータ バインドであるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />指定したプロパティがデータ バインドされている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="target" /> が <see langword="null" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBinding">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.BindingExpressionBase SetBinding (System.Windows.DependencyObject target, System.Windows.DependencyProperty dp, System.Windows.Data.BindingBase binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Data.BindingExpressionBase SetBinding(class System.Windows.DependencyObject target, class System.Windows.DependencyProperty dp, class System.Windows.Data.BindingBase binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.BindingOperations.SetBinding(System.Windows.DependencyObject,System.Windows.DependencyProperty,System.Windows.Data.BindingBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingExpressionBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="binding" Type="System.Windows.Data.BindingBase" />
+      </Parameters>
+      <Docs>
+        <param name="target">バインディングのバインディング ターゲット。</param>
+        <param name="dp">バインディングのターゲット プロパティ。</param>
+        <param name="binding"><see cref="T:System.Windows.Data.BindingBase" />バインディングを記述するオブジェクト。</param>
+        <summary>作成しの新しいインスタンスを関連付けます<see cref="T:System.Windows.Data.BindingExpressionBase" />指定したバインディング ターゲット プロパティ。</summary>
+        <returns>インスタンス<see cref="T:System.Windows.Data.BindingExpressionBase" />に対して作成され、指定したプロパティに関連付けられています。 <see cref="T:System.Windows.Data.BindingExpressionBase" />クラスの基底クラスは、 <see cref="T:System.Windows.Data.BindingExpression" />、 <see cref="T:System.Windows.Data.MultiBindingExpression" />、および<see cref="T:System.Windows.Data.PriorityBindingExpression" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、の新しいインスタンスを作成、<xref:System.Windows.Data.BindingExpressionBase>し、指定したオブジェクトの指定された依存関係プロパティを持つインスタンスを関連付けます。 このメソッドは任意にバインディングをアタッチする方法は、<xref:System.Windows.DependencyObject>独自 SetBinding メソッドを公開する可能性がありますされません。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用してバインディングを設定する方法を示します。 この例では`myNewBindDef`は、<xref:System.Windows.Data.Binding>バインディングを記述するオブジェクト。 バインディング ターゲット`myDateText`のインスタンス、<xref:System.Windows.Controls.TextBlock>クラスです。  
+  
+ [!code-csharp[BindConversion#BOSetBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#bosetbinding)]
+ [!code-vb[BindConversion#BOSetBinding](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#bosetbinding)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="binding" /> パラメーターとして <see langword="null" /> を使用することはできません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

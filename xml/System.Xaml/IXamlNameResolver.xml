@@ -1,0 +1,210 @@
+<Type Name="IXamlNameResolver" FullName="System.Xaml.IXamlNameResolver">
+  <TypeSignature Language="C#" Value="public interface IXamlNameResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXamlNameResolver" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.IXamlNameResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>XAML 名で指定されたオブジェクトを返すことができますか、または、名前解決を遅延するトークンを返すサービスについて説明します。 サービスでは、XAML 名前スコープ内にあるすべての名前付きオブジェクトの列挙可能なセットを返すこともできます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスになっているために、このインターフェイスは XAML の一般的なシナリオの実装を外部のものでありません。 このサービスは、マークアップ拡張機能とノードに XAML 表現の中になっている間には、同じ XAML ソースからの他のオブジェクトを XAML 名を解決する型コンバーターを使用します。 周囲の XAML の運用環境にアクセスする非線形ため XAML 名に依存している任意のメカニズムの前方参照を解決するのには、サービスを使用できます。 詳細については、次を参照してください。[型コンバーターと XAML のマークアップ拡張機能](~/docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)します。  
+  
+ 型コンバーターおよびマークアップ拡張機能を照会できます<xref:System.Xaml.IXamlNameResolver>XAML オブジェクト ライターは、値変換の動作を呼び出すときは、XAML オブジェクト ライターによって提供されるサービスのコンテキストでサービスとして。 詳細については、次を参照してください。[型コンバーターと XAML のマークアップ拡張機能](~/docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)と[サービスで使用できるコンテキスト型コンバーターおよびマークアップ拡張機能](~/docs/framework/xaml-services/service-contexts-available-to-type-converters-and-markup-extensions.md)します。  
+  
+ このサービスは、名前解決を延期できる API を公開します。 サービスによって実装される比喩は、部分的な名前とオブジェクト グラフに対する最初のパスに解決できない名前必要があります格納されている、フィックス アップ トークンを作成するために使用します。 既定の動作でこのようなすべての名前は、2 番目のパスでの別の解像度にしようとしての送信されます。 2 番目の段階で、全体的な名前とオブジェクト グラフが完了して、フィックス アップのすべてのトークンを解決するのには、します。  
+  
+> [!NOTE]
+>  場合でも、特定の実装では許可されて、XAML での前方参照必然的いないパフォーマンスに影響があります。 XAML の運用環境品質のベスト プラクティスとして、前方参照可能な限りを回避します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetAllNamesAndValuesInScope">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;string,object&gt;&gt; GetAllNamesAndValuesInScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, object&gt;&gt; GetAllNamesAndValuesInScope() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IXamlNameResolver.GetAllNamesAndValuesInScope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;System.String,System.Object&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XAML 名前スコープ内のすべての名前付きオブジェクトの列挙可能なセットを返します。</summary>
+        <returns>列挙可能なセット<see cref="T:System.Collections.Generic.KeyValuePair`2" />オブジェクト。 各<see cref="T:System.Collections.Generic.KeyValuePair`2" />では、<see cref="P:System.Collections.Generic.KeyValuePair`2.Key" />コンポーネントは、文字列と<see cref="P:System.Collections.Generic.KeyValuePair`2.Value" />コンポーネントは、使用するオブジェクト、 <see cref="P:System.Collections.Generic.KeyValuePair`2.Key" /> XAML 名前スコープ内の名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFixupToken">
+      <MemberSignature Language="C#" Value="public object GetFixupToken (System.Collections.Generic.IEnumerable&lt;string&gt; names);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetFixupToken(class System.Collections.Generic.IEnumerable`1&lt;string&gt; names) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IXamlNameResolver.GetFixupToken(System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="names" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="names">可能な前方参照名のコレクション。</param>
+        <summary>特定の前方参照を生成するマークアップのパターンを修正できるオブジェクトを返します。</summary>
+        <returns>後で評価されるように検索の動作のトークンを提供するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の内部サービス プロバイダーのマークアップ拡張のスキーマのコンテキストで使用可能な型コンバーターは、このサービスを実装できます。ただし、これらは既定の XAML スキーマ コンテキスト下で動作する既存の XAML ライターのみを処理できる内部型を返します。  
+  
+ すべての前方参照名は、解決可能なリスト内の各名前は再解析をユーザー コードが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFixupToken">
+      <MemberSignature Language="C#" Value="public object GetFixupToken (System.Collections.Generic.IEnumerable&lt;string&gt; names, bool canAssignDirectly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetFixupToken(class System.Collections.Generic.IEnumerable`1&lt;string&gt; names, bool canAssignDirectly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IXamlNameResolver.GetFixupToken(System.Collections.Generic.IEnumerable{System.String},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="names" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="canAssignDirectly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="names">可能な前方参照名のコレクション。</param>
+        <param name="canAssignDirectly">
+          <see langword="true" />すぐにするには、ターゲット プロパティへの参照を解決済みの名前を割り当てます。 <see langword="false" />コードを呼び出すため、ユーザーの再解析します。 既定の動作は<see langword="false" />します。</param>
+        <summary>特定の前方参照を生成するマークアップのパターンを修正できるオブジェクトを返します。</summary>
+        <returns>後で評価されるように検索の動作のトークンを提供するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の内部サービス プロバイダーのマークアップ拡張のスキーマのコンテキストで使用可能な型コンバーターを実装します。 このサービスただし、それらは既定の XAML スキーマ コンテキスト下で動作する既存の XAML ライターによってのみ処理可能な内部型を返します。  
+  
+ 場合`canAssignDirectly`は`false`前方のすべての参照名が、解決可能な場合は、ユーザー コードが呼び出され、リスト内の各名前は再解析がします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixupTokenAvailable">
+      <MemberSignature Language="C#" Value="public bool IsFixupTokenAvailable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixupTokenAvailable" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.IXamlNameResolver.IsFixupTokenAvailable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出すかどうかを決定する値を取得<see cref="M:System.Xaml.IXamlNameResolver.GetFixupToken(System.Collections.Generic.IEnumerable{System.String},System.Boolean)" />は順方向の解像度のトークンに名前を解決するために使用できます。</summary>
+        <value>
+          <see langword="true" />場合<see cref="M:System.Xaml.IXamlNameResolver.GetFixupToken(System.Collections.Generic.IEnumerable{System.String},System.Boolean)" />前方の解決のために役立ちますトークンを返す実装として利用可能なそれ以外は、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します`false`ときに<xref:System.Xaml.IXamlNameResolver.GetFixupToken%2A>ため、トークンを返さない、<xref:System.Xaml.Schema.XamlValueConverter%601>が既存のトークンの 2 番目のパスで使用されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNameScopeInitializationComplete">
+      <MemberSignature Language="C#" Value="public event EventHandler OnNameScopeInitializationComplete;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler OnNameScopeInitializationComplete" />
+      <MemberSignature Language="DocId" Value="E:System.Xaml.IXamlNameResolver.OnNameScopeInitializationComplete" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML プロセッサには、バッキング XAML 名前スコープに関連するすべての名前が登録されているときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public object Resolve (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Resolve(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IXamlNameResolver.Resolve(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">解決するのには名前の参照。</param>
+        <summary>名前の参照からのオブジェクトを解決します。</summary>
+        <returns>解決されたオブジェクトです。または null。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ として値が返された場合`null`、前方参照が存在する可能性があります。 前方参照をサポートする実装を使用できる、`FixupToken`を通じてパターン、<xref:System.Xaml.IXamlNameResolver.GetFixupToken%2A>と<xref:System.Xaml.IXamlNameResolver.IsFixupTokenAvailable%2A>Api です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public object Resolve (string name, out bool isFullyInitialized);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Resolve(string name, [out] bool&amp; isFullyInitialized) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IXamlNameResolver.Resolve(System.String,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="isFullyInitialized" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">解決するのには名前の参照。</param>
+        <param name="isFullyInitialized">このメソッドが戻るとき<see langword="true" />、返されたオブジェクトに依存関係がある場合は、未解決の参照をそれ以外の場合、<see langword="false" />です。</param>
+        <summary>名前の参照からオブジェクトを解決し、オブジェクトがオブジェクト グラフ用に完全に初期化されているかどうかを報告する追跡値を提供します。</summary>
+        <returns>後で評価されるように検索の動作のトークンを提供するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

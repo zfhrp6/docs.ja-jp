@@ -1,0 +1,96 @@
+<Type Name="Collation" FullName="System.Printing.Collation">
+  <TypeSignature Language="C#" Value="public enum Collation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Collation extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.Collation" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>プリンターでは、複数ページの印刷ジョブの複数のコピーを印刷するときに、出力が並べて表示するかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準的なプリンター通常、部単位での最初のコピーでは、すべてのページし、2 番目のコピーとなどのすべてのページを印刷します。 標準的なプリンターが collate いないときに、最初のページのすべてのコピーし、2 ページ目となどのすべてのコピーを印刷します。  
+  
+ プリンターによっては、特別に装備されているビンを照合します。標準のプリンターのこれらの特別に装備されたプリンターの印刷順序が異なる場合があります。ただし、結果は同じです。 複数ページの印刷ジョブの各コピーには、手動の並べ替えの適切な順序ですべてのページが含まれています。  
+  
+ 次の目的で、主に、この型の値を使用します。  
+  
+-   メンバーとして、<xref:System.Printing.PrintCapabilities.CollationCapability%2A>プロパティには、コレクションの<xref:System.Printing.PrintCapabilities>、これらの値は、プリンターをサポートする出力の種類を示します。 (多くのプリンターは、両方の種類をサポートします)。  
+  
+-   値として、<xref:System.Printing.PrintTicket.Collation%2A>のプロパティ、<xref:System.Printing.PrintTicket>の値は、指示、プリンターを照合するかどうか。  
+  
+ **不明な**のプロパティで値が使われていない<xref:System.Printing.PrintCapabilities>オブジェクト。  
+  
+ 設定する必要がありますしない、<xref:System.Printing.PrintTicket>プロパティを**不明な**します。 その他の場合<xref:System.Printing.PrintTicket>生成したアプリケーションが作成、 *PrintTicket ドキュメント*照合機能を認識されない照合順序オプションに設定する、<xref:System.Printing.PrintTicket>そのドキュメントに作成されますが、アプリケーションのオブジェクトになります**不明な**の値として、<xref:System.Printing.PrintTicket.Collation%2A>プロパティです。  
+  
+ <xref:System.Printing.PrintTicket>と<xref:System.Printing.PrintCapabilities>クラスは継承できません、拡張することができます、[印刷スキーマ](http://go.microsoft.com/fwlink/?LinkId=186397)では考慮されません印刷デバイスの機能を認識するように、<xref:System.Printing.PrintTicket>または<xref:System.Printing.PrintCapabilities>クラスです。 詳細については、次を参照してください。[ビルド内にありません: 方法: 印刷スキーマと新しい印刷システム クラスを作成する拡張](http://msdn.microsoft.com/en-us/a3600218-1ea5-478a-9853-6560464f2885)です。  
+  
+   
+  
+## Examples  
+ 次の例では、プリンターの機能をテストして、それらを活用するために、印刷ジョブを構成する方法を示します。 。  
+  
+ [!code-cpp[XpsCreate#PrinterCapabilities](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#printercapabilities)]
+ [!code-csharp[XpsCreate#PrinterCapabilities](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#printercapabilities)]
+ [!code-vb[XpsCreate#PrinterCapabilities](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#printercapabilities)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Collated">
+      <MemberSignature Language="C#" Value="Collated" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.Collation Collated = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.Collation.Collated" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.Collation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>部単位で出力します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Uncollated">
+      <MemberSignature Language="C#" Value="Uncollated" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.Collation Uncollated = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.Collation.Uncollated" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.Collation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>丁合いなしの出力です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.Collation Unknown = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.Collation.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.Collation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>機能 (オプションはこの列挙体によって表されます) がで定義されていないオプションに設定されている、[印刷スキーマ](http://go.microsoft.com/fwlink/?LinkId=186397)です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

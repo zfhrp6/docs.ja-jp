@@ -1,0 +1,63 @@
+<Type Name="BitmapMetadataBlob" FullName="System.Windows.Media.Imaging.BitmapMetadataBlob">
+  <TypeSignature Language="C#" Value="public class BitmapMetadataBlob" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BitmapMetadataBlob extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.BitmapMetadataBlob" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>C# からメタデータが引き続き発生する基になるデータ型に変換できないメタデータ項目のプレース ホルダーを提供します。 blob はバイトの配列に変換されて、内容を保持します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]次のイメージのメタデータのスキーマをサポートしています: [!INCLUDE[TLA#tla_exif](~/includes/tlasharptla-exif-md.md)]、テキスト ([!INCLUDE[TLA2#tla_png](~/includes/tla2sharptla-png-md.md)]テキスト形式のデータ)、 [!INCLUDE[TLA#tla_ifd](~/includes/tlasharptla-ifd-md.md)]、 [!INCLUDE[TLA#tla_iptc](~/includes/tlasharptla-iptc-md.md)]、および[!INCLUDE[TLA#tla_xmp](~/includes/tlasharptla-xmp-md.md)]です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapMetadataBlob (byte[] blob);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] blob) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadataBlob.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="blob" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="blob">プレースホルダーのメタデータ。</param>
+        <summary>インスタンスを初期化<see cref="T:System.Windows.Media.Imaging.BitmapMetadataBlob" />メタデータを変換し、その内容を保持するバイトの配列を保持します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBlobValue">
+      <MemberSignature Language="C#" Value="public byte[] GetBlobValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetBlobValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapMetadataBlob.GetBlobValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値を表すバイトの配列を返します、<see cref="T:System.Windows.Media.Imaging.BitmapMetadataBlob" />です。</summary>
+        <returns>バイト配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

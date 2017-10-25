@@ -1,0 +1,208 @@
+<Type Name="CounterData" FullName="System.Diagnostics.PerformanceData.CounterData">
+  <TypeSignature Language="C#" Value="public sealed class CounterData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CounterData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.PerformanceData.CounterData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カウンターの生データが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.PerformanceData.CounterSetInstanceCounterDataSet.Item%2A?displayProperty=nameWithType>プロパティは、このクラスのインスタンスを返します。  
+  
+ このクラスは、カウンター データの読み書きにスレッド セーフであるメソッドを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Decrement">
+      <MemberSignature Language="C#" Value="public void Decrement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Decrement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceData.CounterData.Decrement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カウンター値を 1 だけデクリメントします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのマルチ スレッド アプリケーションのカウンター値が安全にデクリメントします。  
+  
+ 特定の値によって、カウンターの値をデクリメントする呼び出し、<xref:System.Diagnostics.PerformanceData.CounterData.IncrementBy%2A>メソッドとセット、`value`パラメーターを負の数。  
+  
+ カウンターの値を設定するには、使用、<xref:System.Diagnostics.PerformanceData.CounterData.Value%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Increment">
+      <MemberSignature Language="C#" Value="public void Increment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Increment() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceData.CounterData.Increment" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このカウンターの値を 1 だけインクリメントします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、マルチ スレッド アプリケーションのカウンター値を安全にインクリメントします。  
+  
+ カウンターの値を設定するには、使用、<xref:System.Diagnostics.PerformanceData.CounterData.Value%2A>プロパティです。  
+  
+ 特定の値によって、カウンターの値をインクリメントする呼び出し、<xref:System.Diagnostics.PerformanceData.CounterData.IncrementBy%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncrementBy">
+      <MemberSignature Language="C#" Value="public void IncrementBy (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void IncrementBy(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceData.CounterData.IncrementBy(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">このカウンターの値をインクリメントする量。 増分値には、正または負の値を指定できます。</param>
+        <summary>指定した量によって、カウンターの値をインクリメントします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、マルチ スレッド アプリケーションのカウンター値を安全にインクリメントします。  
+  
+ カウンターの値を設定するには、使用、<xref:System.Diagnostics.PerformanceData.CounterData.Value%2A>プロパティです。  
+  
+ このカウンターの値を 1 つをインクリメントする、<xref:System.Diagnostics.PerformanceData.CounterData.Increment%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RawValue">
+      <MemberSignature Language="C#" Value="public long RawValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 RawValue" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceData.CounterData.RawValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定またはカウンターの生データを取得します。</summary>
+        <value>カウンターの生データ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、スレッド セーフではありません、シングル スレッドのアクセスにのみ適した。 、カウンターのデータへのアクセスがマルチ スレッドを使用して、<xref:System.Diagnostics.PerformanceData.CounterData.Value%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public long Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceData.CounterData.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定またはカウンター データを取得します。</summary>
+        <value>カウンターのデータ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、マルチ スレッド アプリケーションのカウンターのデータに安全にアクセスを提供します。 パフォーマンスが主な考慮事項である場合を使用して、<xref:System.Diagnostics.PerformanceData.CounterData.RawValue%2A>プロパティです。 ただし、、<xref:System.Diagnostics.PerformanceData.CounterData.RawValue%2A>プロパティはスレッド セーフではありません。  
+  
+ なお、<xref:System.Diagnostics.PerformanceData.CounterData.Value%2A>プロパティはスレッド セーフでは、.NET Framework 3.5 ではありません。  
+  
+ このカウンターの値をインクリメントするには、使用を検討して、<xref:System.Diagnostics.PerformanceData.CounterData.Increment%2A>または<xref:System.Diagnostics.PerformanceData.CounterData.IncrementBy%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Diagnostics.PerformanceData>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

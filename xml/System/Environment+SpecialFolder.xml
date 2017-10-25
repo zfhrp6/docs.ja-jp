@@ -1,0 +1,1279 @@
+<Type Name="Environment+SpecialFolder" FullName="System.Environment+SpecialFolder">
+  <TypeSignature Language="C#" Value="public enum Environment.SpecialFolder" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed Environment/SpecialFolder extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Environment.SpecialFolder" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>システムの特別なフォルダーへのディレクトリ パスを取得するために使用される列挙定数を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムの特別なフォルダーは、フォルダーなど**Program Files**、**プログラム**、**システム**、または**スタートアップ**、一般的な情報が含まれています。 特別なフォルダーは既定では、システムによってまたは明示的に設定、ユーザーが Windows のバージョンをインストールするときにします。  
+  
+ <xref:System.Environment.GetFolderPath%2A>メソッドは、この列挙体に関連付けられている場所を返します。 これらのフォルダーの場所が異なるオペレーティング システム上の異なる値を持つことができます、ユーザーによって変更する、場所のおよび位置がローカライズされます。  
+  
+ 特別なフォルダーの詳細については、次を参照してください。、 [KNOWNFOLDERID](http://msdn.microsoft.com/library/dd378457.aspx) 、Windows のマニュアルで使用される定数です。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Environment.SpecialFolder>で、<xref:System.Environment.GetFolderPath%2A>システム ディレクトリを取得します。  
+  
+ [!code-cpp[Environment.GetFolderPath#1](~/samples/snippets/cpp/VS_Snippets_CLR/Environment.GetFolderPath/CPP/getfolderpath.cpp#1)]
+ [!code-csharp[Environment.GetFolderPath#1](~/samples/snippets/csharp/VS_Snippets_CLR/Environment.GetFolderPath/CS/getfolderpath.cs#1)]
+ [!code-vb[Environment.GetFolderPath#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Environment.GetFolderPath/VB/getfolderpath.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AdminTools">
+      <MemberSignature Language="C#" Value="AdminTools" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder AdminTools = int32(48)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.AdminTools" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>個々のユーザーの管理ツールを格納するために使用されるファイル システム ディレクトリ。 Microsoft 管理コンソール (MMC: Microsoft Management Console) は、カスタマイズされたコンソールをこのディレクトリに保存します。このディレクトリは、ユーザーと共に移動します。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationData">
+      <MemberSignature Language="C#" Value="ApplicationData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder ApplicationData = int32(26)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.ApplicationData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のローミング ユーザーのアプリケーション固有のデータの共通リポジトリとして機能するディレクトリ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローミング ユーザーは、ネットワーク上の 1 つ以上のコンピューターで機能します。 ローミング ユーザーのプロファイルがネットワーク上のサーバーで保持され、ユーザーがログオンしたときに、システムに読み込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CDBurning">
+      <MemberSignature Language="C#" Value="CDBurning" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CDBurning = int32(59)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CDBurning" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CD への書き込みを待機しているファイルのステージング領域として機能するファイル システム ディレクトリ。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonAdminTools">
+      <MemberSignature Language="C#" Value="CommonAdminTools" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonAdminTools = int32(47)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonAdminTools" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターのすべてのユーザーの管理ツールを格納するファイル システム ディレクトリ。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonApplicationData">
+      <MemberSignature Language="C#" Value="CommonApplicationData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonApplicationData = int32(35)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonApplicationData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのユーザーが使用するアプリケーション固有のデータの共通リポジトリとして機能するディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonDesktopDirectory">
+      <MemberSignature Language="C#" Value="CommonDesktopDirectory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonDesktopDirectory = int32(25)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonDesktopDirectory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのユーザーのデスクトップに表示されるファイルおよびフォルダーを格納するファイル システム ディレクトリ。 この特別なフォルダーは、Windows NT システムでのみ有効です。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonDocuments">
+      <MemberSignature Language="C#" Value="CommonDocuments" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonDocuments = int32(46)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonDocuments" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのユーザーに共通のドキュメントを格納するファイル システム ディレクトリ。 この特別なフォルダーは、Shfolder.dll がインストールされている Windows NT システム、Windows 95 システム、および Windows 98 システムで有効です。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonMusic">
+      <MemberSignature Language="C#" Value="CommonMusic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonMusic = int32(53)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonMusic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのユーザーに共通のミュージック ファイルを格納するリポジトリの役割をするファイル システム ディレクトリ。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonOemLinks">
+      <MemberSignature Language="C#" Value="CommonOemLinks" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonOemLinks = int32(58)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonOemLinks" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows Vista では、この値は下位互換性のために認識されますが、特別なフォルダー自体は使用されなくなりました。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonPictures">
+      <MemberSignature Language="C#" Value="CommonPictures" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonPictures = int32(54)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonPictures" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのユーザーに共通のイメージ ファイルを格納するリポジトリの役割をするファイル システム ディレクトリ。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonProgramFiles">
+      <MemberSignature Language="C#" Value="CommonProgramFiles" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonProgramFiles = int32(43)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonProgramFiles" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション間で共有されるコンポーネント用のディレクトリ。  
+  
+ x86 以外のシステムの x86 共通 Program Files ディレクトリを取得するには、<see cref="F:System.Environment.SpecialFolder.ProgramFilesX86" /> メンバーを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonProgramFilesX86">
+      <MemberSignature Language="C#" Value="CommonProgramFilesX86" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonProgramFilesX86 = int32(44)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonProgramFilesX86" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**Program Files**フォルダーです。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonPrograms">
+      <MemberSignature Language="C#" Value="CommonPrograms" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonPrograms = int32(23)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonPrograms" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション間で共有されるコンポーネントを格納するフォルダー。 この特別なフォルダーは、Windows NT、Windows 2000、および Windows XP の各システムでのみ有効です。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonStartMenu">
+      <MemberSignature Language="C#" Value="CommonStartMenu" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonStartMenu = int32(22)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonStartMenu" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プログラムおよびに表示されるフォルダーを格納するファイル システム ディレクトリ、**開始**すべてのユーザーのメニュー。 この特別なフォルダーは、Windows NT システムでのみ有効です。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonStartup">
+      <MemberSignature Language="C#" Value="CommonStartup" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonStartup = int32(24)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonStartup" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示されるプログラムを格納するファイル システム ディレクトリ、**スタートアップ**すべてのユーザー用のフォルダーです。 この特別なフォルダーは、Windows NT システムでのみ有効です。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonTemplates">
+      <MemberSignature Language="C#" Value="CommonTemplates" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonTemplates = int32(45)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonTemplates" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのユーザーが使用できるテンプレートを格納するファイル システム ディレクトリ。 この特別なフォルダーは、Windows NT システムでのみ有効です。  [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonVideos">
+      <MemberSignature Language="C#" Value="CommonVideos" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder CommonVideos = int32(55)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.CommonVideos" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのユーザーに共通のビデオ ファイルを格納するリポジトリの役割をするファイル システム ディレクトリ。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="Cookies" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder Cookies = int32(33)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.Cookies" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット cookies の共通リポジトリとして機能するディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Desktop">
+      <MemberSignature Language="C#" Value="Desktop" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder Desktop = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.Desktop" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>物理的なファイル システム上の場所ではない論理的なデスクトップ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DesktopDirectory">
+      <MemberSignature Language="C#" Value="DesktopDirectory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder DesktopDirectory = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.DesktopDirectory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デスクトップ上のファイル オブジェクトを物理的に格納するために使用されるディレクトリ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このディレクトリは仮想フォルダー自体は、デスクトップ フォルダーとを混同しないでください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Favorites">
+      <MemberSignature Language="C#" Value="Favorites" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder Favorites = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.Favorites" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーのお気に入り項目の共通リポジトリとして機能するディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Fonts">
+      <MemberSignature Language="C#" Value="Fonts" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder Fonts = int32(20)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.Fonts" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントが含まれる仮想フォルダー。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="History">
+      <MemberSignature Language="C#" Value="History" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder History = int32(34)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.History" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネットの履歴項目の共通リポジトリとして機能するディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InternetCache">
+      <MemberSignature Language="C#" Value="InternetCache" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder InternetCache = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.InternetCache" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一時インターネット ファイルの共通リポジトリとして機能するディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalApplicationData">
+      <MemberSignature Language="C#" Value="LocalApplicationData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder LocalApplicationData = int32(28)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.LocalApplicationData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の非ローミング ユーザーが使用するアプリケーション固有のデータの共通リポジトリとして機能するディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalizedResources">
+      <MemberSignature Language="C#" Value="LocalizedResources" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder LocalizedResources = int32(57)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.LocalizedResources" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカライズされたリソース データを格納するファイル システム ディレクトリ。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MyComputer">
+      <MemberSignature Language="C#" Value="MyComputer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder MyComputer = int32(17)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.MyComputer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**マイ コンピューター**フォルダーです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ MyComputer 定数が常に空の文字列を生成 ("")、[マイ コンピューター] フォルダーのパスが定義されていないためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MyDocuments">
+      <MemberSignature Language="C#" Value="MyDocuments" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder MyDocuments = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.MyDocuments" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**マイ ドキュメント**フォルダーです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、個人のと同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MyMusic">
+      <MemberSignature Language="C#" Value="MyMusic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder MyMusic = int32(13)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.MyMusic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**マイ ミュージック**フォルダーです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MyPictures">
+      <MemberSignature Language="C#" Value="MyPictures" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder MyPictures = int32(39)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.MyPictures" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**マイ ピクチャ**フォルダーです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MyVideos">
+      <MemberSignature Language="C#" Value="MyVideos" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder MyVideos = int32(14)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.MyVideos" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが所有しているビデオを格納するリポジトリの役割をするファイル システム ディレクトリ。  [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NetworkShortcuts">
+      <MemberSignature Language="C#" Value="NetworkShortcuts" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder NetworkShortcuts = int32(19)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.NetworkShortcuts" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在するリンク オブジェクトを格納するファイル システム ディレクトリ、**マイ ネットワーク**仮想フォルダー。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Personal">
+      <MemberSignature Language="C#" Value="Personal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder Personal = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.Personal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントの共通リポジトリとして機能するディレクトリ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、マイ ドキュメントと同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrinterShortcuts">
+      <MemberSignature Language="C#" Value="PrinterShortcuts" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder PrinterShortcuts = int32(27)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.PrinterShortcuts" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示できるリンク オブジェクトを格納するファイル システム ディレクトリ、**プリンター**仮想フォルダー。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgramFiles">
+      <MemberSignature Language="C#" Value="ProgramFiles" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder ProgramFiles = int32(38)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.ProgramFiles" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プログラム ファイル ディレクトリ。  
+  
+ x86 以外のシステムでは、<see cref="M:System.Environment.GetFolderPath(System.Environment.SpecialFolder)" /> メソッドに <see cref="F:System.Environment.SpecialFolder.ProgramFiles" /> を渡すと x86 以外のプログラムのパスを返します。 x86 以外のシステムの x86 の Program Files ディレクトリを取得するには、<see cref="F:System.Environment.SpecialFolder.ProgramFilesX86" /> メンバーを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgramFilesX86">
+      <MemberSignature Language="C#" Value="ProgramFilesX86" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder ProgramFilesX86 = int32(42)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.ProgramFilesX86" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X86 **Program Files**フォルダーです。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Programs">
+      <MemberSignature Language="C#" Value="Programs" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder Programs = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.Programs" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーのプログラム グループを格納するディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Recent">
+      <MemberSignature Language="C#" Value="Recent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder Recent = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.Recent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが最近使用したドキュメントを格納するディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Resources">
+      <MemberSignature Language="C#" Value="Resources" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder Resources = int32(56)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.Resources" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソース データを格納するファイル システム ディレクトリ。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SendTo">
+      <MemberSignature Language="C#" Value="SendTo" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder SendTo = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.SendTo" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[送る] メニュー項目を格納するディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StartMenu">
+      <MemberSignature Language="C#" Value="StartMenu" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder StartMenu = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.StartMenu" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[スタート] メニュー項目を格納するディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Startup">
+      <MemberSignature Language="C#" Value="Startup" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder Startup = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.Startup" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーの [スタート アップ] プログラム グループに対応するディレクトリ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムがユーザーのログオン時または Windows NT が開始されるたびに、これらのプログラムを起動またはそれ以降、または Windows 98 を開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System">
+      <MemberSignature Language="C#" Value="System" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder System = int32(37)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.System" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>System ディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemX86">
+      <MemberSignature Language="C#" Value="SystemX86" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder SystemX86 = int32(41)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.SystemX86" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows**システム**フォルダーです。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Templates">
+      <MemberSignature Language="C#" Value="Templates" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder Templates = int32(21)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.Templates" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメント テンプレートの共通リポジトリとして機能するディレクトリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UserProfile">
+      <MemberSignature Language="C#" Value="UserProfile" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder UserProfile = int32(40)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.UserProfile" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーのプロファイル フォルダー。 アプリケーションでは、この階層にファイルやフォルダーを作成しないでください。アプリケーションのデータは、<see cref="F:System.Environment.SpecialFolder.ApplicationData" /> で参照される場所に配置する必要があります。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Windows">
+      <MemberSignature Language="C#" Value="Windows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Environment/SpecialFolder Windows = int32(36)" />
+      <MemberSignature Language="DocId" Value="F:System.Environment.SpecialFolder.Windows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Environment+SpecialFolder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows ディレクトリまたは SYSROOT。 これは、%windir% 環境変数または %SYSTEMROOT% 環境変数に対応します。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] に追加されました。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,990 @@
+<Type Name="ManagedCompiler" FullName="Microsoft.Build.Tasks.ManagedCompiler">
+  <TypeSignature Language="C#" Value="public abstract class ManagedCompiler : Microsoft.Build.Tasks.ToolTaskExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ManagedCompiler extends Microsoft.Build.Tasks.ToolTaskExtension" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.ManagedCompiler" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Tasks.ToolTaskExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マネージ コンパイラ タスクに共通のプロパティとメソッドを定義します。</summary>
+    <remarks>To be added.</remarks>
+    <block subset="none" type="overrides">
+      <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+    </block>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ManagedCompiler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ManagedCompiler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.ManagedCompiler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddCommandLineCommands">
+      <MemberSignature Language="C#" Value="protected override void AddCommandLineCommands (Microsoft.Build.Tasks.CommandLineBuilderExtension commandLine);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void AddCommandLineCommands(class Microsoft.Build.Tasks.CommandLineBuilderExtension commandLine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ManagedCompiler.AddCommandLineCommands(Microsoft.Build.Tasks.CommandLineBuilderExtension)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandLine" Type="Microsoft.Build.Tasks.CommandLineBuilderExtension" />
+      </Parameters>
+      <Docs>
+        <param name="commandLine">引数の追加先のコマンド ライン ビルダー。</param>
+        <summary>コマンド ライン ツールが応答ファイルからではなく、コマンド ラインから直接実行する必要があるコマンド ライン引数を生成します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AdditionalLibPaths">
+      <MemberSignature Language="C#" Value="public string[] AdditionalLibPaths { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AdditionalLibPaths" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.AdditionalLibPaths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリを検索する追加のフォルダーを取得または設定します。</summary>
+        <value>アセンブリを検索する追加のフォルダー。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddModules">
+      <MemberSignature Language="C#" Value="public string[] AddModules { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AddModules" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.AddModules" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在コンパイル中のプロジェクトに使用できるようにするコンパイラ用のモジュールを取得または設定します。</summary>
+        <value>現在コンパイル中のプロジェクトに使用できるようにするコンパイラ用のモジュール。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddResponseFileCommands">
+      <MemberSignature Language="C#" Value="protected override void AddResponseFileCommands (Microsoft.Build.Tasks.CommandLineBuilderExtension commandLine);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void AddResponseFileCommands(class Microsoft.Build.Tasks.CommandLineBuilderExtension commandLine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ManagedCompiler.AddResponseFileCommands(Microsoft.Build.Tasks.CommandLineBuilderExtension)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commandLine" Type="Microsoft.Build.Tasks.CommandLineBuilderExtension" />
+      </Parameters>
+      <Docs>
+        <param name="commandLine">引数の追加先のコマンド ライン ビルダー。</param>
+        <summary>指定した <paramref name="commandLine" /> パラメーターに、応答ファイルに追加できるスイッチおよびその他の情報を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CheckAllReferencesExistOnDisk">
+      <MemberSignature Language="C#" Value="protected bool CheckAllReferencesExistOnDisk ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool CheckAllReferencesExistOnDisk() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ManagedCompiler.CheckAllReferencesExistOnDisk" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定したすべての参照がディスク上に存在することを検証します。</summary>
+        <returns>
+          <see langword="true" />すべての参照がディスクに存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CheckHostObjectSupport">
+      <MemberSignature Language="C#" Value="protected void CheckHostObjectSupport (string parameterName, bool resultFromHostObjectSetOperation);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void CheckHostObjectSupport(string parameterName, bool resultFromHostObjectSetOperation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ManagedCompiler.CheckHostObjectSupport(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="resultFromHostObjectSetOperation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">ホスト コンパイラで設定するパラメーターの名前。</param>
+        <param name="resultFromHostObjectSetOperation">
+          <see langword="true" />ホスト コンパイラがサポートする場合は<c>parameterName</c>以外の場合、<see langword="false" /></param>
+        <summary>指定したパラメーターがホスト コンパイラでサポートされていない場合、メッセージを記録します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CodePage">
+      <MemberSignature Language="C#" Value="public int CodePage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CodePage" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.CodePage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイルですべてのソース コード ファイルに使用するコード ページを取得または設定します。</summary>
+        <value>コンパイルですべてのソース コード ファイルに使用するコード ページ。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DebugType">
+      <MemberSignature Language="C#" Value="public string DebugType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DebugType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.DebugType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デバッグの種類を取得または設定します。</summary>
+        <value>デバッグの種類。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DefineConstants">
+      <MemberSignature Language="C#" Value="public string DefineConstants { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefineConstants" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.DefineConstants" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>条件付きコンパイラ定数を取得または設定します。</summary>
+        <value>条件付きコンパイラ定数。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DelaySign">
+      <MemberSignature Language="C#" Value="public bool DelaySign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DelaySign" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.DelaySign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>公開キーがアセンブリに配置されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          公開キーがアセンブリに配置されている場合は <see langword="true" />、アセンブリが完全に署名されている場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EmitDebugInformation">
+      <MemberSignature Language="C#" Value="public bool EmitDebugInformation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EmitDebugInformation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.EmitDebugInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイラがデバッグ情報を生成するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          デバッグ情報が生成される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FileAlignment">
+      <MemberSignature Language="C#" Value="public int FileAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FileAlignment" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.FileAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力ファイルのセクションの配置位置を示す値を取得または設定します。</summary>
+        <value>出力ファイルのセクションの配置位置を示す値。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HandleTaskExecutionErrors">
+      <MemberSignature Language="C#" Value="protected override bool HandleTaskExecutionErrors ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool HandleTaskExecutionErrors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ManagedCompiler.HandleTaskExecutionErrors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンパイラからのリターン コードを処理します。</summary>
+        <returns>
+          リターン コードが正常に処理された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に `false` を返します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HighEntropyVA">
+      <MemberSignature Language="C#" Value="public bool HighEntropyVA { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HighEntropyVA" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.HighEntropyVA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HighEntropyVA 属性を設定します。</summary>
+        <value>HighEntropyVA 属性を返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HostCompilerSupportsAllParameters">
+      <MemberSignature Language="C#" Value="protected bool HostCompilerSupportsAllParameters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HostCompilerSupportsAllParameters" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.HostCompilerSupportsAllParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホスト コンパイラがすべてのタスク パラメーターをサポートするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ホスト コンパイラがすべてのタスク パラメーターをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="KeyContainer">
+      <MemberSignature Language="C#" Value="public string KeyContainer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyContainer" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.KeyContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号化キー コンテナーの名前を取得または設定します。</summary>
+        <value>暗号化キー コンテナーの名前。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="KeyFile">
+      <MemberSignature Language="C#" Value="public string KeyFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyFile" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.KeyFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号化キーを格納するファイル名を取得または設定します。</summary>
+        <value>暗号化キーを格納するファイル名。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LinkResources">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] LinkResources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] LinkResources" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.LinkResources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]出力ファイルにリンクするリソース ファイル。</summary>
+        <value>[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]出力ファイルにリンクするリソース ファイル。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ListHasNoDuplicateItems">
+      <MemberSignature Language="C#" Value="protected bool ListHasNoDuplicateItems (Microsoft.Build.Framework.ITaskItem[] itemList, string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool ListHasNoDuplicateItems(class Microsoft.Build.Framework.ITaskItem[] itemList, string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ManagedCompiler.ListHasNoDuplicateItems(Microsoft.Build.Framework.ITaskItem[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemList" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="itemList">重複をチェックする項目の一覧。</param>
+        <param name="parameterName">含むパラメーターの名前、 <c>itemList</c>です。</param>
+        <summary>指定したタスクのパラメーターに重複した項目が存在するかどうかを判別します。</summary>
+        <returns>
+          <see langword="true" />項目リストに重複; が含まれていない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MainEntryPoint">
+      <MemberSignature Language="C#" Value="public string MainEntryPoint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MainEntryPoint" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.MainEntryPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メイン エントリ ポイントを格納するクラスまたはモジュールを取得または設定します。</summary>
+        <value>メイン エントリ ポイントを格納するクラスまたはモジュール。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NoConfig">
+      <MemberSignature Language="C#" Value="public bool NoConfig { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NoConfig" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.NoConfig" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイラで既定の応答ファイルを使用するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コンパイラは既定の応答ファイルを使用していない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NoLogo">
+      <MemberSignature Language="C#" Value="public bool NoLogo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NoLogo" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.NoLogo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイラの著作権情報が表示されないようにするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コンパイラの著作権情報を抑制するにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NoWin32Manifest">
+      <MemberSignature Language="C#" Value="public bool NoWin32Manifest { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NoWin32Manifest" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.NoWin32Manifest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションの外部の UAC マニフェストを生成するかどうかを指定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />アプリケーションの外部の UAC マニフェストが生成される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Optimize">
+      <MemberSignature Language="C#" Value="public bool Optimize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Optimize" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.Optimize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイラの最適化を有効にするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コンパイラの最適化を有効にするにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OutputAssembly">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem OutputAssembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem OutputAssembly" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.OutputAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力ファイルの名前を取得または設定します。</summary>
+        <value>出力ファイルの名前。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Platform">
+      <MemberSignature Language="C#" Value="public string Platform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Platform" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.Platform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプラットフォーム属性を設定します。</summary>
+        <value>プラットフォーム属性を返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Prefer32Bit">
+      <MemberSignature Language="C#" Value="public bool Prefer32Bit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Prefer32Bit" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.Prefer32Bit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Prefer32Bit 属性を設定します。</summary>
+        <value>Prefer32Bit 属性を返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="References">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] References { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] References" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.References" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイラがパブリック型の情報のインポート元とする項目を取得または設定します。</summary>
+        <value>コンパイラがパブリック型の情報のインポート元とする項目。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Resources">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] Resources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] Resources" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.Resources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]出力ファイルに埋め込むリソース。</summary>
+        <value>[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]出力ファイルに埋め込むリソース。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] ResponseFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] ResponseFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.ResponseFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タスクに対するコマンドを格納した応答ファイルを取得または設定します。</summary>
+        <value>タスクに対するコマンドを格納した応答ファイル。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Sources">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] Sources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] Sources" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.Sources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイルするソース ファイルを取得または設定します。</summary>
+        <value>コンパイルするソース ファイル。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StandardOutputEncoding">
+      <MemberSignature Language="C#" Value="protected override System.Text.Encoding StandardOutputEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding StandardOutputEncoding" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.StandardOutputEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャプチャしたタスクの標準出力ストリームのエンコーディングを取得または設定します。</summary>
+        <value>キャプチャしたタスクの標準出力ストリームのエンコーディング。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SubsystemVersion">
+      <MemberSignature Language="C#" Value="public string SubsystemVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SubsystemVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.SubsystemVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SubsystemVersion 属性値を設定します。</summary>
+        <value>サブシステム バージョンを返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TargetType">
+      <MemberSignature Language="C#" Value="public string TargetType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetType" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.TargetType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力ファイルのファイル形式を取得または設定します。</summary>
+        <value>出力ファイルのファイル形式。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TreatWarningsAsErrors">
+      <MemberSignature Language="C#" Value="public bool TreatWarningsAsErrors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TreatWarningsAsErrors" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.TreatWarningsAsErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>警告をエラーとして扱うかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />警告として扱う場合はエラーです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UseAlternateCommandLineToolToExecute">
+      <MemberSignature Language="C#" Value="protected virtual bool UseAlternateCommandLineToolToExecute ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool UseAlternateCommandLineToolToExecute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ManagedCompiler.UseAlternateCommandLineToolToExecute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>代替ツールの名前またはツールのパスは、プロジェクト ファイルで指定されている場合は、そのツールが使用統合開発環境 (IDE) のためにホスト コンパイラがビルドではなくです。</summary>
+        <returns>
+          <see langword="false" />ホスト コンパイラを使用する場合それ以外の場合、<see langword="true" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UsedCommandLineTool">
+      <MemberSignature Language="C#" Value="protected bool UsedCommandLineTool { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsedCommandLineTool" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.UsedCommandLineTool" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>かどうか、ホスト オブジェクトのコンパイラではなく、コマンド ライン コンパイラが起動します。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Utf8Output">
+      <MemberSignature Language="C#" Value="public bool Utf8Output { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Utf8Output" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.Utf8Output" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UTF-8 エンコーディングを使用してコンパイラの出力が記録されたかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コンパイラの出力は utf-8 エンコードを使用してログオンしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateParameters">
+      <MemberSignature Language="C#" Value="protected override bool ValidateParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ValidateParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ManagedCompiler.ValidateParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>タスク パラメーターを検証します。</summary>
+        <returns>
+          <see langword="true" />場合、すべてのパラメーターが無効です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Win32Icon">
+      <MemberSignature Language="C#" Value="public string Win32Icon { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Win32Icon" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.Win32Icon" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイコンのファイル名を取得または設定します。</summary>
+        <value>アイコンのファイル名。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Win32Manifest">
+      <MemberSignature Language="C#" Value="public string Win32Manifest { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Win32Manifest" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.Win32Manifest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Win32 マニフェストを設定します。</summary>
+        <value>Win32 マニフェスト。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Win32Resource">
+      <MemberSignature Language="C#" Value="public string Win32Resource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Win32Resource" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ManagedCompiler.Win32Resource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力ファイルに挿入する Win32 リソース (.res) ファイルを取得または設定します。</summary>
+        <value>出力ファイルに挿入する Win32 リソース (.res) ファイル。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このクラスを使用して、<see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />属性を継承できません。</para>
+        </block>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

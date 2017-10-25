@@ -1,0 +1,85 @@
+<Type Name="WebBrowserNavigatedEventArgs" FullName="System.Windows.Forms.WebBrowserNavigatedEventArgs">
+  <TypeSignature Language="C#" Value="public class WebBrowserNavigatedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebBrowserNavigatedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.WebBrowserNavigatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.WebBrowser.Navigated" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Windows.Forms.WebBrowser.Navigated?displayProperty=nameWithType>イベント通知を受信するときに、<xref:System.Windows.Forms.WebBrowser>コントロールが新しいドキュメントに移動します。 <xref:System.Windows.Forms.WebBrowserNavigatedEventArgs> 、イベント ハンドラーに渡されたオブジェクトを使用して新しいドキュメントの場所を取得することができます、<xref:System.Windows.Forms.WebBrowserNavigatedEventArgs.Url%2A>プロパティです。 ときに、<xref:System.Windows.Forms.WebBrowser.Navigated?displayProperty=nameWithType>イベントが発生する、新しいドキュメントには、によってコンテンツの一部にアクセスすることを意味の読み込みが開始されて、 <xref:System.Windows.Forms.WebBrowser.Document%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.WebBrowser.DocumentText%2A?displayProperty=nameWithType>、または<xref:System.Windows.Forms.WebBrowser.DocumentStream%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.WebBrowser.Navigated>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.WebBrowser>という`WebBrowser1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.WebBrowser.Navigated>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#649](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#649)]
+ [!code-vb[System.Windows.Forms.EventExamples#649](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#649)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebBrowserNavigatedEventArgs (Uri url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.WebBrowserNavigatedEventArgs.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="url">A<see cref="T:System.Uri" />するドキュメントの場所を表す、<see cref="T:System.Windows.Forms.WebBrowser" />コントロールが移動します。</param>
+        <summary><see cref="T:System.Windows.Forms.WebBrowserNavigatedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public Uri Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Url" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.WebBrowserNavigatedEventArgs.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>先のドキュメントの場所を取得、<see cref="T:System.Windows.Forms.WebBrowser" />コントロールが移動します。</summary>
+        <value>A<see cref="T:System.Uri" />するドキュメントの場所を表す、<see cref="T:System.Windows.Forms.WebBrowser" />コントロールが移動します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.WebBrowser.Navigated?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.WebBrowser>という`WebBrowser1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.WebBrowser.Navigated?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#649](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#649)]
+ [!code-vb[System.Windows.Forms.EventExamples#649](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#649)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Net.WebPermission">現在の URL にアクセスします。 関連付けられた列挙は:<see cref="F:System.Net.NetworkAccess.Connect" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,251 @@
+<Type Name="ExpressionBuilder" FullName="System.Web.Compilation.ExpressionBuilder">
+  <TypeSignature Language="C#" Value="public abstract class ExpressionBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ExpressionBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ExpressionBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ページの解析中に式を評価します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ExpressionBuilder>クラスは、式ビルダーの基本クラスなど、<xref:System.Web.Compilation.AppSettingsExpressionBuilder>ページの解析中にコード式を作成するクラス。  
+  
+ 式ビルダーは、宣言型の式を解析し、コントロールのプロパティにバインドされている値を取得するコードを作成します。 コンパイルなしのシナリオでは、コンパイルなし機能をサポートする式ビルダーは、実行時に式を評価します。  
+  
+ ページのパーサーが文字列で区切られた式を検出すると`<%$ %>`文字列のプレフィックスに基づく式の式ビルダーが作成されます。 プレフィックスは、コロン (:) の左側にある文字列の部分です。 たとえば、パーサーを検出した場合、文字列`<%$ ConnectionStrings:MessageDB %>`、作成、<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder>オブジェクト。 プレフィックスは、式ビルダーで Web.config ファイルに関連付け、<xref:System.Web.Configuration.CompilationSection.ExpressionBuilders%2A>セクションです。  
+  
+ 宣言型の式の右辺は、評価のため、式ビルダーに渡されます。 上書き、<xref:System.Web.Compilation.ExpressionBuilder.GetCodeExpression%2A>ページにコンパイルされるコードを生成する方法です。  
+  
+ またをオーバーライドする必要がある、カスタム式ビルダーがコンパイルされていないページ上でアクティブにする場合は、<xref:System.Web.Compilation.ExpressionBuilder.EvaluateExpression%2A>式の結果を表すオブジェクトを返すメソッド。 上書きすることも必要があります、<xref:System.Web.Compilation.ExpressionBuilder.SupportsEvaluate%2A>でカスタム式ビルダーでは、コンパイルなしページはサポートを示すプロパティです。  
+  
+ プロパティとメソッドを選択し、式エディターを実装することでのデザイン時にコントロールのプロパティに関連付けられている式を評価するためのセットを定義することができます。 エディターは、クラス レベルのメタデータを式ビルダーでマークされます。 詳細については、「<xref:System.Web.UI.Design.ExpressionEditor>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装することによってカスタム式ビルダーを作成する方法を示す、<xref:System.Web.Compilation.ExpressionBuilder>抽象クラスです。 この実装<xref:System.Web.Compilation.ExpressionBuilder>式に渡されるステートメントの評価を返します。 この例を実行するには、最初に、Web.config ファイルでカスタム式ビルダーを登録する必要があります。 最初のコード例では、Web.config ファイルでカスタム式ビルダーを登録する方法を示します。  
+  
+```  
+<configuration>  
+    <system.web>  
+       <compilation>  
+          <expressionBuilders>  
+              <add expressionPrefix="MyCustomExpression"  
+               type="MyCustomExpressionBuilder"/>  
+          </expressionBuilders>  
+       </compilation>  
+    </system.web>  
+</configuration>  
+```  
+  
+ 2 つ目のコード例では、.aspx ファイル内の式を参照する方法を示します。  
+  
+```  
+<asp:Label ID="Label1" runat="server"   
+Text="<%$ MyCustomExpression:Hello, world! %>" />  
+```  
+  
+ 3 番目のコード例から派生することによってカスタマイズされた式ビルダーを開発する方法を示します<xref:System.Web.Compilation.ExpressionBuilder>です。 このコード例を実行するには、App_Code フォルダーに、クラスを配置する必要があります。  
+  
+ [!code-csharp[System.Web.Compilation.ExpressionBuilder#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#1)] 
+ [!code-vb[System.Web.Compilation.ExpressionBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#1)]   
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Web.Compilation.ExpressionBuilder" />オーバーライドする必要があります、クラス、<see cref="M:System.Web.Compilation.ExpressionBuilder.GetCodeExpression(System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />メソッドです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ExpressionBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ExpressionBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Compilation.ExpressionBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ExpressionBuilder>クラスは抽象クラスのインスタンスを作成することはできません<xref:System.Web.Compilation.ExpressionBuilder>を使用して直接、<xref:System.Web.Compilation.ExpressionBuilder.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生している場合、<see cref="T:System.Web.Compilation.ExpressionBuilder" />クラス、オーバーライド、<see cref="M:System.Web.Compilation.ExpressionBuilder.#ctor" />式ビルダーを実装するためのカスタムの初期化のアクションを実装するコンス トラクターです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateExpression">
+      <MemberSignature Language="C#" Value="public virtual object EvaluateExpression (object target, System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object EvaluateExpression(object target, class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ExpressionBuilder.EvaluateExpression(System.Object,System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="entry" Type="System.Web.UI.BoundPropertyEntry" />
+        <Parameter Name="parsedData" Type="System.Object" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="target">式を表すオブジェクト。</param>
+        <param name="entry">式でバインドされるプロパティに関する情報を表すオブジェクト。</param>
+        <param name="parsedData">によって返されるデータを解析するオブジェクトを含む<see cref="M:System.Web.Compilation.ExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />です。</param>
+        <param name="context">式の評価にコンテキスト情報です。</param>
+        <summary>派生クラスでオーバーライドされると、評価された式を表すオブジェクトを返します。</summary>
+        <returns>評価した式を表すオブジェクトそれ以外の場合、 <see langword="null" /> 、継承するオブジェクトを実装しない場合<see cref="M:System.Web.Compilation.ExpressionBuilder.EvaluateExpression(System.Object,System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、<xref:System.Web.Compilation.ExpressionBuilder>コンパイルなし機能をサポートするページ上でアクティブにするオブジェクトをオーバーライドすることができます、<xref:System.Web.Compilation.ExpressionBuilder.EvaluateExpression%2A>メソッドおよび<xref:System.Web.Compilation.ExpressionBuilder.SupportsEvaluate%2A>プロパティです。 <xref:System.Web.Compilation.ExpressionBuilder.EvaluateExpression%2A>メソッドは、現在の式の評価を返す必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドされたを使用する方法を示します<xref:System.Web.Compilation.ExpressionBuilder.EvaluateExpression%2A>評価された式を返すメソッド。  
+  
+ [!code-csharp[System.Web.Compilation.ExpressionBuilder#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#3)]    
+ [!code-vb[System.Web.Compilation.ExpressionBuilder#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#3)]   
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.Compilation.ExpressionBuilder.EvaluateExpression(System.Object,System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />メソッドを上書きする必要ありますも、<see cref="P:System.Web.Compilation.ExpressionBuilder.SupportsEvaluate" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCodeExpression">
+      <MemberSignature Language="C#" Value="public abstract System.CodeDom.CodeExpression GetCodeExpression (System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.CodeExpression GetCodeExpression(class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ExpressionBuilder.GetCodeExpression(System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entry" Type="System.Web.UI.BoundPropertyEntry" />
+        <Parameter Name="parsedData" Type="System.Object" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="entry">式でバインドされるプロパティに関する情報を表すオブジェクト。</param>
+        <param name="parsedData">によって返されるデータを解析するオブジェクトを含む<see cref="M:System.Web.Compilation.ExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />です。</param>
+        <param name="context">式の評価にコンテキスト情報です。</param>
+        <summary>派生クラスでオーバーライドされると、式の評価結果を取得するページの実行中に使用されるコードを返します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeExpression" />プロパティの割り当てに使用されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラス、<xref:System.Web.Compilation.ExpressionBuilder>クラスを実装する必要があります、<xref:System.Web.Compilation.ExpressionBuilder.GetCodeExpression%2A>抽象メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、返す方法を示します、<xref:System.CodeDom.CodeExpression>オーバーライドすることでオブジェクト、<xref:System.Web.Compilation.ExpressionBuilder.GetCodeExpression%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Compilation.ExpressionBuilder#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#4)] 
+ [!code-vb[System.Web.Compilation.ExpressionBuilder#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#4)]   
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>コントロールのプロパティを適切な型キャストを実行してで、キャスト操作を返す必要がありますカスタム式ビルダーを実装する場合、<see cref="T:System.CodeDom.CodeExpression" />オブジェクト。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseExpression">
+      <MemberSignature Language="C#" Value="public virtual object ParseExpression (string expression, Type propertyType, System.Web.Compilation.ExpressionBuilderContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ParseExpression(string expression, class System.Type propertyType, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="context" Type="System.Web.Compilation.ExpressionBuilderContext" />
+      </Parameters>
+      <Docs>
+        <param name="expression">宣言型の式の値。</param>
+        <param name="propertyType">プロパティの型は、式にバインドします。</param>
+        <param name="context">式の評価にコンテキスト情報です。</param>
+        <summary>派生クラスでオーバーライドされると、解析された式を表すオブジェクトを返します。</summary>
+        <returns><see cref="T:System.Object" /> ; 式の解析済み表現を含むそれ以外の場合、<see langword="null" />場合<see cref="M:System.Web.Compilation.ExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />は実装されていません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドされると、このメソッドは、式を解析し、として使用できるオブジェクトとして返します、`parsedData`内のパラメーター、<xref:System.Web.Compilation.ExpressionBuilder.GetCodeExpression%2A>または<xref:System.Web.Compilation.ExpressionBuilder.EvaluateExpression%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsEvaluate">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsEvaluate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsEvaluate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ExpressionBuilder.SupportsEvaluate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるを示す値を返します。 かどうか、現在<see cref="T:System.Web.Compilation.ExpressionBuilder" />オブジェクトは、コンパイルなしのページをサポートしています。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.Compilation.ExpressionBuilder" />式の評価をサポートしています。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Web.Compilation.ExpressionBuilder.SupportsEvaluate%2A>プロパティは`false`します。 コンパイルなしのページをサポートするために、両方をオーバーライドする必要があります、<xref:System.Web.Compilation.ExpressionBuilder.EvaluateExpression%2A>メソッドおよび<xref:System.Web.Compilation.ExpressionBuilder.SupportsEvaluate%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Compilation.ExpressionBuilder.SupportsEvaluate%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Compilation.ExpressionBuilder#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#2)] 
+ [!code-vb[System.Web.Compilation.ExpressionBuilder#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#2)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

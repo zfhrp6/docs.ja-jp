@@ -1,0 +1,149 @@
+<Type Name="IAttachedPropertyStore" FullName="System.Xaml.IAttachedPropertyStore">
+  <TypeSignature Language="C#" Value="public interface IAttachedPropertyStore" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAttachedPropertyStore" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.IAttachedPropertyStore" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>アタッチ可能なメンバーが設定されているオブジェクトのアタッチ可能なメンバー ストアを表します。 このアタッチ可能なメンバー ストアで参照できます<see cref="T:System.Xaml.AttachablePropertyServices" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、アタッチ可能なメンバーが実装され、アタッチ可能なプロパティとして使用します。 「アタッチ可能なメンバー」という用語は、テクノロジにもアタッチ可能なイベントのシステムが定義される可能性を提供します。 プロパティ ストア内のアイテム、としては、アタッチ可能なイベントは、アタッチ可能なメンバーの使用方法によって割り当てられているハンドラーへの参照を格納します。 XAML でアタッチ可能なイベントは、アタッチ可能なプロパティは、本当に基になる型システムにプロパティが、アタッチ可能なイベントではない場合でも、または実際の使用中と見なされるよう、同じストアを使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CopyPropertiesTo">
+      <MemberSignature Language="C#" Value="public void CopyPropertiesTo (System.Collections.Generic.KeyValuePair&lt;System.Xaml.AttachableMemberIdentifier,object&gt;[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyPropertiesTo(valuetype System.Collections.Generic.KeyValuePair`2&lt;class System.Xaml.AttachableMemberIdentifier, object&gt;[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IAttachedPropertyStore.CopyPropertiesTo(System.Collections.Generic.KeyValuePair{System.Xaml.AttachableMemberIdentifier,System.Object}[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Collections.Generic.KeyValuePair&lt;System.Xaml.AttachableMemberIdentifier,System.Object&gt;[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピー先の配列。 配列は、ジェネリック配列、渡す必要がありますのコンポーネントが必要<see cref="T:System.Xaml.AttachableMemberIdentifier" />と<see langword="object" />です。</param>
+        <param name="index">コピーの開始位置を示す元のインデックス。</param>
+        <summary>コピーこのアタッチ可能なメンバーからのすべてのアタッチ可能メンバー/値ペアは、コピー先の配列に格納します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyCount">
+      <MemberSignature Language="C#" Value="public int PropertyCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PropertyCount" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.IAttachedPropertyStore.PropertyCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアタッチ可能なメンバー ストア内の添付可能なメンバーの数のエントリを取得します。</summary>
+        <value>ストア内のエントリの整数の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveProperty">
+      <MemberSignature Language="C#" Value="public bool RemoveProperty (System.Xaml.AttachableMemberIdentifier attachableMemberIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool RemoveProperty(class System.Xaml.AttachableMemberIdentifier attachableMemberIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IAttachedPropertyStore.RemoveProperty(System.Xaml.AttachableMemberIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attachableMemberIdentifier" Type="System.Xaml.AttachableMemberIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="attachableMemberIdentifier">削除する添付可能なメンバーのエントリの XAML 型システム識別子。</param>
+        <summary>このアタッチ可能なメンバー ストアから、指定されたアタッチ可能なメンバーのエントリを削除します。</summary>
+        <returns>
+          <see langword="true" />アタッチ可能なメンバーのエントリを場合、<paramref name="attachableMemberIdentifier" />がストアに存在し、削除された、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetProperty">
+      <MemberSignature Language="C#" Value="public void SetProperty (System.Xaml.AttachableMemberIdentifier attachableMemberIdentifier, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetProperty(class System.Xaml.AttachableMemberIdentifier attachableMemberIdentifier, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IAttachedPropertyStore.SetProperty(System.Xaml.AttachableMemberIdentifier,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attachableMemberIdentifier" Type="System.Xaml.AttachableMemberIdentifier" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="attachableMemberIdentifier">設定する添付可能なメンバーのエントリの XAML 型システム識別子。</param>
+        <param name="value">設定する値。</param>
+        <summary>指定されたストアに、指定されたアタッチ可能なメンバーの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 添付可能な特定のメンバーが既に存在する場合、実装は例外をスローしません。 実装が、既存の値を上書きするメンバーが既に存在する場合`value`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetProperty">
+      <MemberSignature Language="C#" Value="public bool TryGetProperty (System.Xaml.AttachableMemberIdentifier attachableMemberIdentifier, out object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryGetProperty(class System.Xaml.AttachableMemberIdentifier attachableMemberIdentifier, [out] object&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.IAttachedPropertyStore.TryGetProperty(System.Xaml.AttachableMemberIdentifier,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attachableMemberIdentifier" Type="System.Xaml.AttachableMemberIdentifier" />
+        <Parameter Name="value" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="attachableMemberIdentifier">取得する添付可能なメンバーのエントリの XAML 型システム識別子。</param>
+        <param name="value">Out パラメーター。 このメソッドが戻るときに場合、値のコピー先のオブジェクトを含む<c>attachableMemberIdentifier</c>ストア内に存在し、値。</param>
+        <summary>指定されたストアで指定されたアタッチ可能なメンバーの値の取得を試みます。</summary>
+        <returns>
+          <see langword="true" />アタッチ可能なメンバーのエントリを場合、<paramref name="attachableMemberIdentifier" />が、ストアに見つかりましたし、値にポストされた<paramref name="value" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 添付可能な特定のメンバーは、ストアに配置されていない場合、実装は例外をスローしません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,49 @@
+<Type Name="ADODC+ErrorDelegate" FullName="Microsoft.VisualBasic.Compatibility.VB6.ADODC+ErrorDelegate">
+  <TypeSignature Language="C#" Value="public delegate void ADODC.ErrorDelegate(int errorNumber, ref string description, int scode, string source, string helpFile, int helpContext, ref bool cancelDisplay);" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed ADODC/ErrorDelegate extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.ADODC.ErrorDelegate" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="errorNumber" Type="System.Int32" />
+    <Parameter Name="description" Type="System.String&amp;" RefType="ref" />
+    <Parameter Name="scode" Type="System.Int32" />
+    <Parameter Name="source" Type="System.String" />
+    <Parameter Name="helpFile" Type="System.String" />
+    <Parameter Name="helpContext" Type="System.Int32" />
+    <Parameter Name="cancelDisplay" Type="System.Boolean&amp;" RefType="ref" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="errorNumber"><see langword="Integer" />はエラー番号を表すです。</param>
+    <param name="description">A<see langword="String" />エラー メッセージを格納しています。</param>
+    <param name="scode"><see langword="Integer" />エラーの発生元を表すです。</param>
+    <param name="source">A<see langword="String" />ソースの名前を表します。</param>
+    <param name="helpFile">A<see langword="String" />エラーに関するヘルプ ファイルを表すです。</param>
+    <param name="helpContext"><see langword="Integer" />へルプ トピックに対してコンテキスト ID を表すです。</param>
+    <param name="cancelDisplay">A<see langword="Boolean" />ユーザーが、エラー ダイアログ ボックスを取り消すことができるかどうかを決定します。</param>
+    <summary>処理するメソッドを表す、<see langword="Error" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

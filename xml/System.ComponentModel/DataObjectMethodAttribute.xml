@@ -1,0 +1,302 @@
+<Type Name="DataObjectMethodAttribute" FullName="System.ComponentModel.DataObjectMethodAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DataObjectMethodAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataObjectMethodAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataObjectMethodAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型、操作の種類、メソッドは、実行、およびメソッドの既定のデータのメソッドがかどうかによって公開されるデータの操作方法を識別します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.ComponentModel.DataObjectMethodAttribute>でマークされた型のデータ操作メソッドを識別する、<xref:System.ComponentModel.DataObjectAttribute>属性のリフレクションを使用して呼び出し元がより簡単に示されているようにします。 ときに、<xref:System.ComponentModel.DataObjectMethodAttribute>属性がメソッドに適用される、このメソッドを実行し、メソッドに型の既定のデータ操作メソッドかどうかを示します操作の種類について説明します。 などのコンポーネント、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールと<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner>に実行時に呼び出すには、どのデータ メソッドを特定するために、存在する場合、クラスが、この属性の値を確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、適用する方法を示しています、<xref:System.ComponentModel.DataObjectMethodAttribute>公開されるメソッドに属性をデータ操作を実行できるだけでなく、その型の既定のデータのメソッドであるかどうかの種類を識別します。 この例では、`NorthwindData`型データの 2 つの方法で公開される: という名前のデータのセットを取得する 1 つ`GetAllEmployees`、もう 1 つをという名前のデータを削除する`DeleteEmployeeByID`です。 <xref:System.ComponentModel.DataObjectMethodAttribute>属性は、両方の方法に適用、`GetAllEmployees`メソッドが、データの選択操作の既定のメソッドとしてマークされていると、`DeleteEmployeeByID`メソッドがデータの削除操作の既定のメソッドとしてマークされています。  
+  
+ [!code-csharp[System.ComponentModel.DataObjectMethodAttribute#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataObjectMethodAttribute/CS/dataobjectmethodattribute.cs#3)]
+ [!code-vb[System.ComponentModel.DataObjectMethodAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataObjectMethodAttribute/VB/dataobjectmethodattribute.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataObjectMethodAttribute (System.ComponentModel.DataObjectMethodType methodType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ComponentModel.DataObjectMethodType methodType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataObjectMethodAttribute.#ctor(System.ComponentModel.DataObjectMethodType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="methodType" Type="System.ComponentModel.DataObjectMethodType" />
+      </Parameters>
+      <Docs>
+        <param name="methodType">1 つ、<see cref="T:System.ComponentModel.DataObjectMethodType" />データ操作を記述する値、メソッドを実行します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataObjectMethodAttribute" />クラスし、メソッドが実行されるデータ操作の種類を識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.DataObjectMethodAttribute.IsDefault%2A>プロパティに設定されている`false`を作成するとき、<xref:System.ComponentModel.DataObjectMethodAttribute>オブジェクトを使用してこの<xref:System.ComponentModel.DataObjectMethodAttribute.%23ctor%28System.ComponentModel.DataObjectMethodType%29>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、適用する方法を示しています、<xref:System.ComponentModel.DataObjectMethodAttribute>公開されるメソッドに属性をデータ操作を実行できるだけでなく、その型の既定のデータのメソッドであるかどうかの種類を識別します。 この例では、`NorthwindData`型データの 2 つの方法で公開される: という名前のデータのセットを取得する 1 つ`GetAllEmployees`、もう 1 つをという名前のデータを削除する`DeleteEmployeeByID`です。 <xref:System.ComponentModel.DataObjectMethodAttribute>属性は、両方の方法に適用、`GetAllEmployees`メソッドが、データの選択操作の既定のメソッドとしてマークされていると、`DeleteEmployeeByID`メソッドがデータの削除操作の既定のメソッドとしてマークされています。  
+  
+ [!code-csharp[System.ComponentModel.DataObjectMethodAttribute#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataObjectMethodAttribute/CS/dataobjectmethodattribute.cs#3)]
+ [!code-vb[System.ComponentModel.DataObjectMethodAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataObjectMethodAttribute/VB/dataobjectmethodattribute.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataObjectMethodAttribute (System.ComponentModel.DataObjectMethodType methodType, bool isDefault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ComponentModel.DataObjectMethodType methodType, bool isDefault) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataObjectMethodAttribute.#ctor(System.ComponentModel.DataObjectMethodType,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="methodType" Type="System.ComponentModel.DataObjectMethodType" />
+        <Parameter Name="isDefault" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="methodType">1 つ、<see cref="T:System.ComponentModel.DataObjectMethodType" />データ操作を記述する値、メソッドを実行します。</param>
+        <param name="isDefault">
+          <see langword="true" />属性を適用するメソッドが、指定されたデータ オブジェクトの既定のメソッドであることを示す<c>methodType</c>、それ以外の<see langword="false" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataObjectMethodAttribute" />クラス、メソッドを実行して、メソッドが、データ オブジェクトを公開する既定のデータのメソッドであるかどうかを識別データ操作の種類を識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、適用する方法を示しています、<xref:System.ComponentModel.DataObjectMethodAttribute>公開されるメソッドに属性をデータ操作を実行できるだけでなく、その型の既定のデータのメソッドであるかどうかの種類を識別します。 この例では、`NorthwindData`型データの 2 つの方法で公開される: という名前のデータのセットを取得する 1 つ`GetAllEmployees`、もう 1 つをという名前のデータを削除する`DeleteEmployeeByID`です。 <xref:System.ComponentModel.DataObjectMethodAttribute>属性は、両方の方法に適用、`GetAllEmployees`メソッドが、データの選択操作の既定のメソッドとしてマークされていると、`DeleteEmployeeByID`メソッドがデータの削除操作の既定のメソッドとしてマークされています。  
+  
+ [!code-csharp[System.ComponentModel.DataObjectMethodAttribute#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataObjectMethodAttribute/CS/dataobjectmethodattribute.cs#3)]
+ [!code-vb[System.ComponentModel.DataObjectMethodAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataObjectMethodAttribute/VB/dataobjectmethodattribute.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataObjectMethodAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト<see cref="T:System.ComponentModel.DataObjectMethodAttribute" />です。</param>
+        <summary>このインスタンスが指定されたオブジェクトに等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />このインスタンスがで指定されたインスタンスと同じである場合、<paramref name="obj" />パラメーターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを判断するかどうかこの<xref:System.ComponentModel.DataObjectMethodAttribute>別のオブジェクトのパターンに適合します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataObjectMethodAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefault">
+      <MemberSignature Language="C#" Value="public bool IsDefault { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDefault" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataObjectMethodAttribute.IsDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、メソッドを<see cref="T:System.ComponentModel.DataObjectMethodAttribute" />に適用される特定のメソッドの型のデータ オブジェクトによって公開されている既定のデータのメソッドは、です。</summary>
+        <value>
+          <see langword="true" />メソッドがメソッドの型のオブジェクトによって公開される既定のメソッドである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ObjectDataSource>コントロール、<xref:System.ComponentModel.DataObjectMethodAttribute.IsDefault%2A>型の特定のメソッド署名の要件に一致する複数のメソッドを区別するプロパティです。 2 つのメソッドが、署名の要件を持つメソッドを一致するかどうか、<xref:System.ComponentModel.DataObjectMethodAttribute.IsDefault%2A>プロパティに設定`true`が選択されています。  
+  
+ デザイン時に、<xref:System.ComponentModel.DataObjectMethodAttribute.IsDefault%2A>プロパティが自動的に設定に使用される、 <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSource.UpdateMethod%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSource.DeleteMethod%2A>、および<xref:System.Web.UI.WebControls.ObjectDataSource.InsertMethod%2A>プロパティを<xref:System.Web.UI.WebControls.ObjectDataSource>インスタンス。  
+  
+ 場合、<xref:System.ComponentModel.DataObjectMethodAttribute>を使用して作成されて、<xref:System.ComponentModel.DataObjectMethodAttribute.%23ctor%28System.ComponentModel.DataObjectMethodType%29>のみを受け取るコンス トラクター、<xref:System.ComponentModel.DataObjectMethodType>パラメーター、<xref:System.ComponentModel.DataObjectMethodAttribute.IsDefault%2A>プロパティに設定されている`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public override bool Match (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Match(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataObjectMethodAttribute.Match(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト<see cref="T:System.ComponentModel.DataObjectMethodAttribute" />です。</param>
+        <summary>このインスタンスが、指定した属性と一般的なパターンを共有するかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />このインスタンスがで指定されたインスタンスと同じである場合、<paramref name="obj" />パラメーターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、1 つかどうかを判断<xref:System.ComponentModel.DataObjectMethodAttribute>別のパターンに適合します。 その実装がないのと同じ<xref:System.ComponentModel.DataObjectMethodAttribute.Equals%2A>、ただし、true に等しいかどうかをテストしないためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodType">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.DataObjectMethodType MethodType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.DataObjectMethodType MethodType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataObjectMethodAttribute.MethodType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.DataObjectMethodType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.ComponentModel.DataObjectMethodType" />メソッドが実行されるデータ操作の種類を示す値。</summary>
+        <value>1 つ、<see cref="T:System.ComponentModel.DataObjectMethodType" />するメソッドによって実行されるデータの操作の種類を識別する値、<see cref="T:System.ComponentModel.DataObjectMethodAttribute" />を適用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

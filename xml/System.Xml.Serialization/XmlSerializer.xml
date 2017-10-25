@@ -1,0 +1,2191 @@
+<Type Name="XmlSerializer" FullName="System.Xml.Serialization.XmlSerializer">
+  <TypeSignature Language="C#" Value="public class XmlSerializer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSerializer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクトから XML ドキュメントへのシリアル化および XML ドキュメントからオブジェクトへの逆シリアル化を実行します。 <see cref="T:System.Xml.Serialization.XmlSerializer" />オブジェクトを XML にエンコードする方法を制御することができます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML シリアル化とは、オブジェクトのパブリック プロパティとパブリック フィールドを格納したり伝送できるようにシリアル形式 (この場合は XML) に変換する処理のことです。 逆シリアル化は、XML 出力から元の状態でオブジェクトを再作成します。 オブジェクトの状態をストリームまたはバッファーに保存しておく方法としてシリアル化を検討することができます。 たとえば、ASP.NET を使用して、 <xref:System.Xml.Serialization.XmlSerializer> XML Web サービス メッセージをエンコードするクラス。  
+  
+ オブジェクトのデータは、クラス、フィールド、プロパティ、プリミティブ型、配列などのプログラミング構成要素、および <xref:System.Xml.XmlElement> オブジェクトまたは <xref:System.Xml.XmlAttribute> オブジェクトの形で埋め込まれている XML を使用して記述されます。 属性、またはを使用して注釈が付けられた独自のクラスを作成するオプションがある、 [XML スキーマ定義ツール (Xsd.exe)](http://msdn.microsoft.com/en-us/a6e6e65c-347f-4494-9457-653bf29baac2)を既存の XML スキーマ定義 (XSD) ドキュメントに基づいたクラスを生成します。 XML スキーマがある場合は、厳密にスキーマに型指定されたされ、シリアル化する場合のスキーマに準拠する属性で注釈が付けられたされているクラスのセットを生成するために Xsd.exe を実行できます。  
+  
+ オブジェクトと XML 間でデータを転送するには、プログラミング言語構成要素の XML スキーマと XML スキーマをプログラミング言語構成要素からマッピングが必要です。 <xref:System.Xml.Serialization.XmlSerializer> Xsd.exe と同様に関連するツールは、両方のデザイン時にこれら 2 つのテクノロジとランタイム間のブリッジを提供します。 デザイン時に、カスタム クラスから XML スキーマ ドキュメント (.xsd) を生成するために、または特定のスキーマからクラスを生成するために Xsd.exe を使用します。 どちらの場合、クラスがカスタム属性で注釈に指示するため、 <xref:System.Xml.Serialization.XmlSerializer> XML スキーマのシステムと、共通言語ランタイムの間にマップする方法です。 実行時に、クラスのインスタンスを指定したスキーマに従っている XML ドキュメントにシリアル化できます。 同様に、これらの XML ドキュメントの場合は、ランタイム オブジェクトに逆シリアル化できます。 デザイン時または実行時に、オプションであり、必須ではないに XML スキーマことに注意してください。  
+  
+## <a name="controlling-generated-xml"></a>生成された XML を制御します。  
+ 生成された XML を制御するには、クラスとメンバーに特別な属性を適用できます。 たとえば、さまざまな XML 要素名を指定する次のように適用します。、<xref:System.Xml.Serialization.XmlElementAttribute>をパブリック フィールドまたはプロパティを設定し、<xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A>プロパティです。 類似する属性の一覧については、次を参照してください。[コントロール XML シリアル化する属性](http://msdn.microsoft.com/en-us/414b820f-a696-4206-b576-2711d85490c7)です。 実装することも、 <xref:System.Xml.Serialization.IXmlSerializable> XML 出力を制御するインターフェイスです。  
+  
+ 生成される XML は、ワールド ワイド Consortium) (www.w3.org) ドキュメントのセクション 5 に準拠する必要があります、「簡易オブジェクト アクセス プロトコル (SOAP) 1.1」、する必要がありますを作成する、<xref:System.Xml.Serialization.XmlSerializer>で、<xref:System.Xml.Serialization.XmlTypeMapping>です。 コントロールでエンコードされた SOAP XML をさらに一覧表示される属性を使用して[でエンコードされた SOAP シリアル化を制御する属性](http://msdn.microsoft.com/en-us/93ee258c-9c0f-4a08-897c-c10db7a00f91)です。  
+  
+ <xref:System.Xml.Serialization.XmlSerializer>厳密に型指定されたクラスの使用を利用し、XML の柔軟性がまだあることができます。 型のフィールドまたはプロパティを使用して<xref:System.Xml.XmlElement>、<xref:System.Xml.XmlAttribute>または<xref:System.Xml.XmlNode>厳密に型指定されたクラスには、XML オブジェクトに直接 XML ドキュメントの部分を読み取ることができます。  
+  
+ 拡張可能な XML スキーマを使用する場合は、使用することも、<xref:System.Xml.Serialization.XmlAnyElementAttribute>と<xref:System.Xml.Serialization.XmlAnyAttributeAttribute>属性および要素または元のスキーマではない属性を逆シリアル化します。 オブジェクトを使用するのには、適用、<xref:System.Xml.Serialization.XmlAnyElementAttribute>の配列を返すフィールドに<xref:System.Xml.XmlElement>オブジェクト、または適用、<xref:System.Xml.Serialization.XmlAnyAttributeAttribute>の配列を返すフィールドに<xref:System.Xml.XmlAttribute>オブジェクト。  
+  
+ プロパティやフィールドが複雑なオブジェクト (配列やクラス インスタンスなど) を返す場合、<xref:System.Xml.Serialization.XmlSerializer> は、そのオブジェクトを、メイン XML ドキュメント内で入れ子になっている要素に変換します。 たとえば、次のコードの最初のクラスは、2 番目のクラスのインスタンスを返します。  
+  
+```vb  
+Public Class MyClass  
+    Public MyObjectProperty As MyObject  
+End Class  
+  
+Public Class MyObject  
+    Public ObjectName As String  
+End Class  
+```  
+  
+```csharp  
+public class MyClass  
+{  
+    public MyObject MyObjectProperty;  
+}  
+public class MyObject  
+{  
+    public string ObjectName;  
+}  
+```  
+  
+ XML 出力は次のように、シリアル化します。  
+  
+```  
+<MyClass>  
+  <MyObjectProperty>  
+  <ObjectName>My String</ObjectName>  
+  </MyObjectProperty>  
+</MyClass>  
+```  
+  
+ スキーマには、省略可能な要素が含まれている場合 (minOccurs = '0')、または 2 つのオプションがスキーマには、既定値が含まれている場合。 1 つのオプションは、使用する<xref:System.ComponentModel.DefaultValueAttribute?displayProperty=nameWithType>を次のコードに示すように、既定値を指定します。  
+  
+```vb  
+Public Class PurchaseOrder  
+    <System.ComponentModel.DefaultValueAttribute ("2002")> _  
+    Public Year As String  
+End Class  
+```  
+  
+```csharp  
+public class PurchaseOrder  
+{  
+    [System.ComponentModel.DefaultValueAttribute ("2002")]  
+    public string Year;  
+}  
+```  
+  
+ によって認識されるブール型のフィールドを作成する特殊なパターンを使用することもできます、 <xref:System.Xml.Serialization.XmlSerializer>、適用して、<xref:System.Xml.Serialization.XmlIgnoreAttribute>フィールドにします。 パターンは、の形式で作成`propertyNameSpecified`です。 たとえば、"MyFirstNameSpecified"という名前のフィールドを作成することも、"MyFirstName"という名前のフィールドがあるかどうかをするように指示、 <xref:System.Xml.Serialization.XmlSerializer> "MyFirstName"をという名前の XML 要素を生成するかどうか。 これを次の例に示します。  
+  
+```vb  
+Public Class OptionalOrder  
+    ' This field's value should not be serialized   
+    ' if it is uninitialized.  
+    Public FirstOrder As String  
+  
+    ' Use the XmlIgnoreAttribute to ignore the   
+    ' special field named "FirstOrderSpecified".  
+    <System.Xml.Serialization.XmlIgnoreAttribute> _  
+    Public FirstOrderSpecified As Boolean  
+End Class  
+```  
+  
+```csharp  
+public class OptionalOrder  
+{  
+    // This field should not be serialized   
+    // if it is uninitialized.  
+    public string FirstOrder;  
+  
+    // Use the XmlIgnoreAttribute to ignore the   
+    // special field named "FirstOrderSpecified".  
+    [System.Xml.Serialization.XmlIgnoreAttribute]  
+    public bool FirstOrderSpecified;  
+}  
+```  
+  
+## <a name="overriding-default-serialization"></a>既定のシリアル化のオーバーライド  
+ インスタンスに追加することを適切な属性のいずれかを作成して、任意のオブジェクトとそのフィールドおよびプロパティのセットのシリアル化を上書きすることも、<xref:System.Xml.Serialization.XmlAttributes>クラスです。 2 つの用途を持つこの方法でシリアル化のオーバーライド: 最初に、制御し、ソースにアクセスを持っていない場合でも、DLL で見つかったオブジェクトのシリアル化を強化できます次に、シリアル化可能なクラスの 1 つのセットを作成するが、複数の方法でオブジェクトをシリアル化します。 詳細については、次を参照してください。、<xref:System.Xml.Serialization.XmlAttributeOverrides>クラスと[する方法: 派生クラスのシリアル化の制御](http://msdn.microsoft.com/en-us/caa92596-9e15-4d91-acbe-56911ef47a84)です。  
+  
+ オブジェクトをシリアル化を呼び出し、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドです。 オブジェクトを逆シリアル化を呼び出し、<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>メソッドです。  
+  
+ XML ドキュメントに XML 名前空間を追加するを参照してください。<xref:System.Xml.Serialization.XmlSerializerNamespaces>です。  
+  
+> [!NOTE]
+>  <xref:System.Xml.Serialization.XmlSerializer>特別な処理を実装するクラスは、<xref:System.Collections.IEnumerable>または<xref:System.Collections.ICollection>です。 <xref:System.Collections.IEnumerable> を実装するクラスは、単一のパラメーターを受け取るパブリックな `Add` メソッドを実装している必要があります。 `Add`から返されると、同じ型のメソッドのパラメーターがある必要があります、`Current`プロパティから返される値を`GetEnumerator`、またはその型の基本型のいずれか。 実装するクラス<xref:System.Collections.ICollection>(など<xref:System.Collections.CollectionBase>) に加え<xref:System.Collections.IEnumerable>パブリック必要があります`Item`プロパティ (c# のインデクサー) を受け取る整数では、インデックスが作成され、パブリック必要があります`Count`整数型のプロパティです。 パラメーターを`Add`メソッドから返されると同じ型である必要があります、`Item`プロパティ、またはその型の基本型のいずれか。 クラスを実装する<xref:System.Collections.ICollection>、シリアル化する値を取得、インデックスから`Item`プロパティを呼び出すことではなく`GetEnumerator`です。  
+  
+ オブジェクトを逆シリアル化する (ように、TEMP 環境変数によって定義される) を一時ディレクトリに書き込むアクセス許可が必要です。  
+  
+## <a name="dynamically-generated-assemblies"></a>動的に生成されたアセンブリ  
+ パフォーマンスを向上させるには、XML シリアル化インフラストラクチャでは、シリアル化し、指定された型を逆シリアル化アセンブリが動的に生成されます。 インフラストラクチャは、検索して、それらのアセンブリを再利用します。 この動作は、次のコンス トラクターを使用する場合にのみ発生します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%29?displayProperty=nameWithType>  
+  
+ <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.String%29?displayProperty=nameWithType>  
+  
+ 他のコンス トラクターを使用する場合、同じアセンブリの複数のバージョンが生成され、その結果、メモリ リークとパフォーマンスの低下にアンロードされません。 最も簡単なソリューションでは、前述の 2 つのコンス トラクターのいずれかを使用します。 それ以外の場合、内のアセンブリをキャッシュする必要があります、<xref:System.Collections.Hashtable>の次の例に示すようにします。  
+  
+```csharp  
+Hashtable serializers = new Hashtable();  
+  
+// Use the constructor that takes a type and XmlRootAttribute.  
+XmlSerializer s = new XmlSerializer(typeof(MyClass), myRoot);  
+  
+// Implement a method named GenerateKey that creates unique keys   
+// for each instance of the XmlSerializer. The code should take   
+// into account all parameters passed to the XmlSerializer   
+// constructor.  
+object key = GenerateKey(typeof(MyClass), myRoot);  
+  
+// Check the local cache for a matching serializer.  
+XmlSerializer ser = (XmlSerializer)serializers[key];  
+if (ser == null)   
+{  
+    ser = new XmlSerializer(typeof(MyClass), myRoot);  
+    // Cache the serializer.  
+    serializers[key] = ser;  
+}  
+else  
+{  
+    // Use the serializer to serialize, or deserialize.  
+}  
+```  
+  
+```vb  
+Dim serializers As New Hashtable()  
+  
+' Use the constructor that takes a type and XmlRootAttribute.  
+Dim s As New XmlSerializer(GetType([MyClass]), myRoot)  
+  
+' Implement a method named GenerateKey that creates unique keys   
+' for each instance of the XmlSerializer. The code should take   
+' into account all parameters passed to the XmlSerializer   
+' constructor.  
+Dim key As Object = GenerateKey(GetType([MyClass]), myRoot)  
+  
+' Check the local cache for a matching serializer.  
+Dim ser As XmlSerializer = CType(serializers(key), XmlSerializer)  
+  
+If ser Is Nothing Then  
+    ser = New XmlSerializer(GetType([MyClass]), myRoot)  
+    ' Cache the serializer.  
+    serializers(key) = ser  
+Else   
+    ' Use the serializer to serialize, or deserialize.  
+End If  
+```  
+  
+## <a name="serialization-of-arraylist-and-generic-list"></a>ArrayList とジェネリック リストのシリアル化  
+ <xref:System.Xml.Serialization.XmlSerializer>次を逆シリアル化または逆シリアル化できません。  
+  
+-   配列<xref:System.Collections.ArrayList>  
+  
+-   配列<xref:System.Collections.Generic.List%601>  
+  
+## <a name="serialization-of-enumerations-of-unsigned-long"></a>Unsigned Long の列挙体のシリアル化  
+ <xref:System.Xml.Serialization.XmlSerializer>を次の条件に該当する場合は、列挙型をシリアル化するインスタンス化することはできません: 列挙体は、符号なし long 型 (`ulong` C# の場合)、列挙体より大きい値を持つメンバーが含まれています9,223,372,036,854,775,807 です。 たとえば、次のシリアル化できません。  
+  
+```  
+public enum LargeNumbers: ulong  
+{  
+    a = 9223372036854775808  
+}  
+// At runtime, the following code will fail.  
+xmlSerializer mySerializer=new XmlSerializer(typeof(LargeNumbers));  
+```  
+  
+## <a name="objects-marked-with-the-obsolete-attribute-no-longer-serialized"></a>オブジェクトが不要になったシリアル化、不使用属性でマーク  
+ [!INCLUDE[netfx35_short](~/includes/netfx35-short-md.md)] 、<xref:System.Xml.Serialization.XmlSerializer>クラスが不要になったとしてマークされているオブジェクトをシリアル化`[Obsolete]`です。  
+  
+   
+  
+## Examples  
+ 次の例には、次の 2 つの主要なクラスが含まれています:`PurchaseOrder`と`Test`です。 `PurchaseOrder`クラスには、1 つの購入に関する情報が含まれています。 `Test`クラスには、発注書を作成して、作成された発注書を読み取るメソッドが含まれています。  
+  
+ [!code-cpp[Classic XmlSerializer Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+    <altmember cref="T:System.Xml.Serialization.XmlAttributeOverrides" />
+    <altmember cref="T:System.Xml.Serialization.XmlAttributes" />
+    <altmember cref="T:System.Xml.Serialization.XmlSerializer" />
+    <altmember cref="P:System.Xml.Serialization.XmlAttributes.XmlText" />
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XmlSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializer (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型をこの<see cref="T:System.Xml.Serialization.XmlSerializer" />シリアル化できます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlSerializer" />を指定した型のオブジェクトに XML ドキュメントに指定した型のオブジェクトをシリアル化および XML を逆シリアル化できるクラスについて説明します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的には、アプリケーションをいくつか定義するクラス、<xref:System.Xml.Serialization.XmlSerializer>を 1 つの XML インスタンス ドキュメントに変換します。 ただし、 <xref:System.Xml.Serialization.XmlSerializer> 1 種類だけ--を XML ルート要素を表すクラスの型を知る必要があります。 <xref:System.Xml.Serialization.XmlSerializer>自動的にすべての下位のクラス インスタンスをシリアル化します。 同様に、XML ルート要素の型のみが逆シリアル化に必要です。  
+  
+   
+  
+## Examples  
+ 次の例の構築、<xref:System.Xml.Serialization.XmlSerializer>という名前のオブジェクトをシリアル化`Widget`です。 例では、呼び出す前に、オブジェクトのさまざまなプロパティの設定、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドです。  
+  
+ [!code-cpp[Classic XmlSerializer.XmlSerializer6 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer6 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.XmlSerializer6 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer6 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.XmlSerializer6 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer6 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)" />
+        <altmember cref="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)" />
+        <altmember cref="T:System.Xml.Serialization.XmlAttributes" />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializer (System.Xml.Serialization.XmlTypeMapping xmlTypeMapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Serialization.XmlTypeMapping xmlTypeMapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Xml.Serialization.XmlTypeMapping)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlTypeMapping" Type="System.Xml.Serialization.XmlTypeMapping" />
+      </Parameters>
+      <Docs>
+        <param name="xmlTypeMapping"><see cref="T:System.Xml.Serialization.XmlTypeMapping" />別に対応する 1 つの型。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlSerializer" />クラス別に 1 つの型をマップするオブジェクトを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成する、 <xref:System.Xml.Serialization.XmlSerializer> SOAP メッセージに、オブジェクトをシリアル化するとします。 生成される SOAP メッセージを制御するために特別な属性 ("Soap"という単語で始まる) を使用して、<xref:System.Xml.Serialization>名前空間。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 シリアル化、 `GroupName`、`IgnoreThis`フィールド、およびのメンバー、`GroupType`列挙型が上書きされます。 `CreateOverrideSerializer` 、メソッド、<xref:System.Xml.Serialization.SoapAttributeOverrides>オブジェクトが作成され、オーバーライドされたメンバーまたは列挙体ごとに、<xref:System.Xml.Serialization.SoapAttributes>オブジェクトが適切なプロパティ設定に追加で作成された、<xref:System.Xml.Serialization.SoapAttributeOverrides>オブジェクト。 <xref:System.Xml.Serialization.XmlMapping>を使用してオブジェクトを作成、<xref:System.Xml.Serialization.SoapAttributeOverrides>オブジェクト、およびを<xref:System.Xml.Serialization.XmlMapping>を作成するオブジェクトが使用される、<xref:System.Xml.Serialization.XmlSerializer>既定のシリアル化をオーバーライドします。  
+  
+ [!code-cpp[SoapAttributesOverrides#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapAttributesOverrides/CPP/soapover.cpp#1)]
+ [!code-csharp[SoapAttributesOverrides#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapAttributesOverrides/CS/soapover.cs#1)]
+ [!code-vb[SoapAttributesOverrides#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapAttributesOverrides/VB/SoapOver.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializer (Type type, string defaultNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, string defaultNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="defaultNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型をこの<see cref="T:System.Xml.Serialization.XmlSerializer" />シリアル化できます。</param>
+        <param name="defaultNamespace">すべての XML 要素を使用する既定の名前空間。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlSerializer" />を指定した型のオブジェクトに XML ドキュメントに指定した型のオブジェクトをシリアル化および XML を逆シリアル化できるクラスについて説明します。 すべての XML 要素の既定の名前空間を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の構築、<xref:System.Xml.Serialization.XmlSerializer>という名前のオブジェクトをシリアル化`Widget`です。 例では、呼び出す前に、オブジェクトのさまざまなプロパティの設定、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドです。  
+  
+ [!code-cpp[Classic XmlSerializer.XmlSerializer1 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.XmlSerializer1 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer1 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.XmlSerializer1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="T:System.Xml.Serialization.XmlAttributes" />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializer (Type type, Type[] extraTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, class System.Type[] extraTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Type[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="extraTypes" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型をこの<see cref="T:System.Xml.Serialization.XmlSerializer" />シリアル化できます。</param>
+        <param name="extraTypes">A<see cref="T:System.Type" />をシリアル化する他のオブジェクト型の配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlSerializer" />指定した型のオブジェクトに XML ドキュメントに指定した型のオブジェクトをシリアル化および XML を逆シリアル化できるクラスについて説明します。 プロパティまたはフィールドが、配列を返す場合、<paramref name="extraTypes" />パラメーター配列に挿入できるオブジェクトを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、パブリック プロパティまたはフィールドは、オブジェクト、または、オブジェクトの配列を返す場合、オブジェクトの種類は自動的にシリアル化されます。 ただし、クラスには、フィールドまたはプロパティが含まれている場合を返す型の配列<xref:System.Object>、任意のオブジェクトを配列に挿入することができます。 その場合は、<xref:System.Xml.Serialization.XmlSerializer>に挿入されるすべての可能なオブジェクトの種類を想定するように指定する必要があります、<xref:System.Object>配列。 これを行うを使用して、`extraTypes`パラメーターを逆シリアル化または逆シリアル化する余分なオブジェクトの種類を指定します。  
+  
+ 使用することも、`extraTypes`基底クラスから派生した型を指定するパラメーターです。 たとえば、という名前の基本クラス`Phone`が存在する、という名前のクラスと`InternationalPhone`そこから派生します。 使用して、`extraTypes`パラメーターを同様に、派生型を指定します。  
+  
+   
+  
+## Examples  
+ 次の例では、オブジェクトの配列を返すパブリック フィールドを含むクラスのインスタンスがシリアル化します。 `extraTypes`のパラメーター、<xref:System.Xml.Serialization.XmlSerializer>コンス トラクターは、配列にシリアル化可能なオブジェクトの種類を指定します。  
+  
+ [!code-cpp[Classic XmlSerializer.XmlSerializer3 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer3 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.XmlSerializer3 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer3 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.XmlSerializer3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializer (Type type, System.Xml.Serialization.XmlAttributeOverrides overrides);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, class System.Xml.Serialization.XmlAttributeOverrides overrides) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" />
+      </Parameters>
+      <Docs>
+        <param name="type">シリアル化するオブジェクトの型。</param>
+        <param name="overrides"><see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlSerializer" />を指定した型のオブジェクトに XML ドキュメントに指定した型のオブジェクトをシリアル化および XML を逆シリアル化できるクラスについて説明します。 各オブジェクトをシリアル化を含めることができます自体、クラスのインスタンスがこのオーバー ロードは、他のクラスでオーバーライドできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `overrides`フィールドおよびプロパティを XML にエンコードする方法を制御するパラメーターを使用することができます。 これらの設定は、オブジェクトに既に存在するすべての属性をオーバーライドします。 これは、ソース コードを変更することはできませんまたは複数のエンコーディングは、同じクラスに必要なときに役立ちます。  
+  
+   
+  
+## Examples  
+ 次の例では、DLL、およびそのためには定義、DLL 内のパブリック メンバーをオーバーライドするクラスのインスタンスがシリアル化します。  
+  
+ [!code-cpp[Classic XmlSerializer.XmlSerializer4 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer4 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.XmlSerializer4 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer4 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.XmlSerializer4 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer4 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializer (Type type, System.Xml.Serialization.XmlRootAttribute root);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, class System.Xml.Serialization.XmlRootAttribute root) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlRootAttribute)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型をこの<see cref="T:System.Xml.Serialization.XmlSerializer" />シリアル化できます。</param>
+        <param name="root"><see cref="T:System.Xml.Serialization.XmlRootAttribute" />を表す XML ルート要素です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlSerializer" />を XML ドキュメントでは、指定した型のオブジェクトをシリアル化し、指定した型のオブジェクトに XML ドキュメントを逆シリアル化するクラス。 また、XML ルート要素として使用するクラスを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML ドキュメントのルート要素には、その他のすべての要素が含まれます。 既定では、によって指定されたオブジェクト、`type`パラメーターは、ルート要素としてシリアル化します。 ルート要素の XML 要素名などのプロパティから取得されます、`type`オブジェクト。 ただし、`root`パラメーターを指定して既定のオブジェクトの情報を交換することができます、 <xref:System.Xml.Serialization.XmlRootAttribute>; オブジェクトでは、別の名前空間、要素名、およびなどを設定することができます。  
+  
+   
+  
+## Examples  
+ 次の例の構築、<xref:System.Xml.Serialization.XmlSerializer>を使用して、 <xref:System.Xml.Serialization.XmlRootAttribute> XML ルート要素の名前空間と要素の名前などのさまざまなプロパティを格納します。  
+  
+ [!code-cpp[Classic XmlSerializer.XmlSerializer2 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.XmlSerializer2 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer2 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.XmlSerializer2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="T:System.Xml.Serialization.XmlAttributes" />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializer (Type type, System.Xml.Serialization.XmlAttributeOverrides overrides, Type[] extraTypes, System.Xml.Serialization.XmlRootAttribute root, string defaultNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, class System.Xml.Serialization.XmlAttributeOverrides overrides, class System.Type[] extraTypes, class System.Xml.Serialization.XmlRootAttribute root, string defaultNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides,System.Type[],System.Xml.Serialization.XmlRootAttribute,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" />
+        <Parameter Name="extraTypes" Type="System.Type[]" />
+        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" />
+        <Parameter Name="defaultNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型をこの<see cref="T:System.Xml.Serialization.XmlSerializer" />シリアル化できます。</param>
+        <param name="overrides"><see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />拡張またはで指定されたクラスの動作を上書きする、<c>型</c>パラメーター。</param>
+        <param name="extraTypes">A<see cref="T:System.Type" />をシリアル化する他のオブジェクト型の配列。</param>
+        <param name="root"><see cref="T:System.Xml.Serialization.XmlRootAttribute" /> XML ルート要素のプロパティを定義します。</param>
+        <param name="defaultNamespace">XML ドキュメント内のすべての XML 要素の既定の名前空間。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlSerializer" />型のオブジェクトをシリアル化できるクラス<see cref="T:System.Object" />を XML ドキュメント インスタンス、および XML ドキュメント インスタンスの型のオブジェクトに逆シリアル化<see cref="T:System.Object" />です。 各オブジェクトをシリアル化を含めることができます自体の他のクラスのこのオーバー ロードをオーバーライドするクラスのインスタンス。 このオーバー ロードには、すべての XML 要素と XML ルート要素として使用するクラスの既定の名前空間も指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `overrides`パラメーターを使用して作成するため、[XmlSerializer コンス トラクター (型、XmlAttributeOverrides、型\<xref:System.Xml.Serialization.XmlSerializer > を拡張またはの動作をオーバーライドするクラスをシリアル化します。基本クラスです。 たとえば、DLL を指定するには、可能であればを継承または DLL に含まれるクラスを拡張するクラスを作成します。 このようなクラスをシリアル化するには、インスタンスを使用する必要があります、[XmlSerializer コンス トラクター (型、XmlAttributeOverrides、Type\<xref:System.Xml.Serialization.XmlAttributeOverrides > [XmlSerializer コンス トラクター (を構築するときにクラス型、XmlAttributeOverrides、Type\<xref:System.Xml.Serialization.XmlSerializer >。 詳細については、次を参照してください。 [XmlSerializer コンス トラクター (型、XmlAttributeOverrides、Type\<xref:System.Xml.Serialization.XmlAttributeOverrides >。  
+  
+ 既定では、パブリック プロパティまたはフィールドは、オブジェクト、または、オブジェクトの配列を返す場合、オブジェクトの種類は自動的にシリアル化されます。 ただし、クラスには、フィールドまたはプロパティが含まれている場合を返す型の配列 [XmlSerializer コンス トラクター (型、XmlAttributeOverrides、Type\<xref:System.Object >、任意のオブジェクトを配列に挿入することができます。 その場合は、[XmlSerializer コンス トラクター (型、XmlAttributeOverrides、Type\<xref:System.Xml.Serialization.XmlSerializer > [XmlSerializer に挿入されるすべての可能なオブジェクトの種類を想定するように指定する必要がありますコンス トラクター (型、XmlAttributeOverrides、Type\<xref:System.Object > 配列。 これを行うを使用して、`extraTypes`パラメーターを逆シリアル化または逆シリアル化する余分なオブジェクトの種類を指定します。  
+  
+ XML ドキュメントのルート要素には、その他のすべての要素が含まれます。 既定では、によって指定されたオブジェクト、`type`パラメーターは、ルート要素としてシリアル化します。 ルート要素の XML 要素名などのプロパティから取得されます、`type`オブジェクト。 ただし、`root`パラメーターを指定して既定のオブジェクトの情報を交換することができます、[XmlSerializer コンス トラクター (型、XmlAttributeOverrides、Type\<xref:System.Xml.Serialization.XmlRootAttribute > 以外の場合は、オブジェクトでは、別の名前空間、要素名、およびなどを設定することができます。  
+  
+ 使用して、`defaultName`によって生成されたすべての XML 要素の既定の名前空間を指定するパラメーター、[XmlSerializer コンス トラクター (型、XmlAttributeOverrides、Type\<xref:System.Xml.Serialization.XmlSerializer >。  
+  
+   
+  
+## Examples  
+ 次の例では、DLL ではこれを行うには、クラスのパブリック メンバーをオーバーライドするクラスのインスタンスがシリアル化します。 この例では、余分な型は、すべての XML 要素、および XML ルート要素の情報を提供するクラスを使用する既定の名前空間の配列も指定します。 この例では、先頭のコードがという名前の DLL にコンパイルされている`HighSchool`です。  
+  
+ [!code-cpp[Classic XmlSerializer.XmlSerializer Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.XmlSerializer Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.XmlSerializer Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.XmlSerializer Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializer (Type type, System.Xml.Serialization.XmlAttributeOverrides overrides, Type[] extraTypes, System.Xml.Serialization.XmlRootAttribute root, string defaultNamespace, string location);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, class System.Xml.Serialization.XmlAttributeOverrides overrides, class System.Type[] extraTypes, class System.Xml.Serialization.XmlRootAttribute root, string defaultNamespace, string location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides,System.Type[],System.Xml.Serialization.XmlRootAttribute,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" />
+        <Parameter Name="extraTypes" Type="System.Type[]" />
+        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" />
+        <Parameter Name="defaultNamespace" Type="System.String" />
+        <Parameter Name="location" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型をこの<see cref="T:System.Xml.Serialization.XmlSerializer" />シリアル化できます。</param>
+        <param name="overrides"><see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />拡張またはで指定されたクラスの動作を上書きする、<c>型</c>パラメーター。</param>
+        <param name="extraTypes">A<see cref="T:System.Type" />をシリアル化する他のオブジェクト型の配列。</param>
+        <param name="root"><see cref="T:System.Xml.Serialization.XmlRootAttribute" /> XML ルート要素のプロパティを定義します。</param>
+        <param name="defaultNamespace">XML ドキュメント内のすべての XML 要素の既定の名前空間。</param>
+        <param name="location">型の位置。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlSerializer" />型のオブジェクトをシリアル化できるクラス<see cref="T:System.Object" />を XML ドキュメント インスタンス、および XML ドキュメント インスタンスの型のオブジェクトに逆シリアル化<see cref="T:System.Object" />です。 各オブジェクトをシリアル化を含めることができます自体の他のクラスのこのオーバー ロードをオーバーライドするクラスのインスタンス。 このオーバー ロードには、すべての XML 要素と XML ルート要素として使用するクラスの既定の名前空間も指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializer (Type type, System.Xml.Serialization.XmlAttributeOverrides overrides, Type[] extraTypes, System.Xml.Serialization.XmlRootAttribute root, string defaultNamespace, string location, System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, class System.Xml.Serialization.XmlAttributeOverrides overrides, class System.Type[] extraTypes, class System.Xml.Serialization.XmlRootAttribute root, string defaultNamespace, string location, class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides,System.Type[],System.Xml.Serialization.XmlRootAttribute,System.String,System.String,System.Security.Policy.Evidence)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This method is obsolete and will be removed in a future release of the .NET Framework. Please use a XmlSerializer constructor overload which does not take an Evidence parameter. See http://go2.microsoft.com/fwlink/?LinkId=131738 for more information.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="overrides" Type="System.Xml.Serialization.XmlAttributeOverrides" />
+        <Parameter Name="extraTypes" Type="System.Type[]" />
+        <Parameter Name="root" Type="System.Xml.Serialization.XmlRootAttribute" />
+        <Parameter Name="defaultNamespace" Type="System.String" />
+        <Parameter Name="location" Type="System.String" />
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型をこの<see cref="T:System.Xml.Serialization.XmlSerializer" />シリアル化できます。</param>
+        <param name="overrides"><see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />拡張またはで指定されたクラスの動作を上書きする、<c>型</c>パラメーター。</param>
+        <param name="extraTypes">A<see cref="T:System.Type" />をシリアル化する他のオブジェクト型の配列。</param>
+        <param name="root"><see cref="T:System.Xml.Serialization.XmlRootAttribute" /> XML ルート要素のプロパティを定義します。</param>
+        <param name="defaultNamespace">XML ドキュメント内のすべての XML 要素の既定の名前空間。</param>
+        <param name="location">型の位置。</param>
+        <param name="evidence">インスタンス、<see cref="T:System.Security.Policy.Evidence" />型にアクセスするために必要な資格情報を含むクラスです。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Xml.Serialization.XmlSerializer" /> XML ドキュメントのインスタンスに指定した型のオブジェクトをシリアル化したり、XML ドキュメントのインスタンスを指定した型のオブジェクトに逆シリアル化できるクラスです。 このオーバー ロードでは、その他の種類の既定の名前空間、すべての XML 要素の XML ルート要素、その場所、およびアクセスに必要な資格情報として使用するクラスと同様に、シリアル化または逆シリアル化操作中に発生することができますを提供できます。.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一時ディレクトリへのアクセスをより細かく制御できますおよびコードの挿入や悪用を防止します。 このメソッドを使用するのには、場所を指定し、特定のユーザーにのみアクセスできるようにします。 管理者は、証拠に基づいてアクセス許可に一致する証拠のリストを持つポリシーを設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanDeserialize">
+      <MemberSignature Language="C#" Value="public virtual bool CanDeserialize (System.Xml.XmlReader xmlReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanDeserialize(class System.Xml.XmlReader xmlReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.CanDeserialize(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader"><see cref="T:System.Xml.XmlReader" />を逆シリアル化するドキュメントを参照します。</param>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xml.Serialization.XmlSerializer" />指定された XML ドキュメントを逆シリアル化できます。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xml.Serialization.XmlSerializer" />オブジェクトを逆シリアル化できるを<see cref="T:System.Xml.XmlReader" />ポイント以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、 <xref:System.Xml.Serialization.XmlSerializer.CanDeserialize%2A> XML ドキュメントを逆シリアル化できるかどうかを確認します。  
+  
+ [!code-cpp[Classic XmlSerializer.CanDeserialize Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.CanDeserialize Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.CanDeserialize Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.CanDeserialize Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.CanDeserialize Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.CanDeserialize Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateReader">
+      <MemberSignature Language="C#" Value="protected virtual System.Xml.Serialization.XmlSerializationReader CreateReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xml.Serialization.XmlSerializationReader CreateReader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.CreateReader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSerializationReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル化する XML ドキュメントの読み取りに使用するオブジェクトを返します。</summary>
+        <returns>XML ドキュメントを読み取るために使用する <see cref="T:System.Xml.Serialization.XmlSerializationReader" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">しようとするが、メソッドが派生クラスでオーバーライドされていない場合、メソッドにアクセスしようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWriter">
+      <MemberSignature Language="C#" Value="protected virtual System.Xml.Serialization.XmlSerializationWriter CreateWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xml.Serialization.XmlSerializationWriter CreateWriter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.CreateWriter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSerializationWriter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、オブジェクトをシリアル化に使用するライターを返します。</summary>
+        <returns>実装するインスタンス、<see cref="T:System.Xml.Serialization.XmlSerializationWriter" />クラスです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">しようとするが、メソッドが派生クラスでオーバーライドされていない場合、メソッドにアクセスしようとしています。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Deserialize">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>XML ドキュメントを逆シリアル化します。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Deserialize(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" />を含む XML ドキュメントを逆シリアル化します。</param>
+        <summary>指定したに含まれる XML ドキュメントを逆シリアル化<see cref="T:System.IO.Stream" />です。</summary>
+        <returns><see cref="T:System.Object" />逆シリアル化します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 逆シリアル化は、XML ドキュメントを読み取ると、ドキュメントの XML スキーマ (XSD) を厳密に型指定されたオブジェクトを構築するプロセスです。  
+  
+ 逆シリアル化する前に、<xref:System.Xml.Serialization.XmlSerializer>逆シリアル化されるオブジェクトの型を使用して構築する必要があります。  
+  
+ 使用して、`stream`から派生したオブジェクトを指定するパラメーター、<xref:System.IO.Stream>クラスは、ストリームに書き込むよう設計されています。 派生したクラス、<xref:System.IO.Stream>クラスが含まれます。  
+  
+-   <xref:System.IO.BufferedStream>  
+  
+-   <xref:System.IO.FileStream>  
+  
+-   <xref:System.IO.MemoryStream>  
+  
+-   <xref:System.Net.Sockets.NetworkStream>  
+  
+-   <xref:System.Security.Cryptography.CryptoStream>  
+  
+> [!NOTE]
+>  <xref:System.Xml.Serialization.XmlSerializer> 、次の逆シリアル化できません: 配列の<xref:System.Collections.ArrayList>およびの配列<xref:System.Collections.Generic.List%601>です。  
+  
+   
+  
+## Examples  
+ 次の例では、オブジェクトを使用して、逆シリアル化、<xref:System.IO.Stream>オブジェクト。  
+  
+ [!code-cpp[Classic XmlSerializer.Deserialize Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.Deserialize Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.Deserialize Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.Deserialize Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.Deserialize Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.Deserialize Example/VB/source.vb#1)]
+ [!code-xml[Classic XmlSerializer.Deserialize Example#1](~/samples/snippets/common/VS_Snippets_Remoting/Classic XmlSerializer.Deserialize Example/Common/simple.xml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (System.IO.TextReader textReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Deserialize(class System.IO.TextReader textReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textReader" Type="System.IO.TextReader" />
+      </Parameters>
+      <Docs>
+        <param name="textReader"><see cref="T:System.IO.TextReader" />を含む XML ドキュメントを逆シリアル化します。</param>
+        <summary>指定したに含まれる XML ドキュメントを逆シリアル化<see cref="T:System.IO.TextReader" />です。</summary>
+        <returns><see cref="T:System.Object" />逆シリアル化します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 逆シリアル化は、XML ドキュメントのインスタンスを読み取り、およびドキュメントの XML スキーマ (XSD) を厳密に型指定されたオブジェクトを構築するプロセスです。  
+  
+ 逆シリアル化する前に、<xref:System.Xml.Serialization.XmlSerializer>逆シリアル化されるオブジェクトの型を使用して構築する必要があります。  
+  
+ 継承するクラス<xref:System.IO.TextReader>含める<xref:System.IO.StringReader>と<xref:System.IO.StreamReader>です。 使用している場合、<xref:System.IO.StreamReader>オブジェクトを逆シリアル化、構築する必要があります、<xref:System.IO.StreamReader>を適切な<xref:System.Text.Encoding>します。 XML ドキュメントで指定されているエンコードは無視されます。  
+  
+> [!NOTE]
+>  使用するには、XML ドキュメントで指定されたエンコーディングを使用して、<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>を受け取るオーバー ロード、<xref:System.Xml.XmlReader>代わりにします。 <xref:System.Xml.XmlReader>自動的に検出して XML ドキュメントで指定されたエンコーディングを使用します。  
+  
+> [!NOTE]
+>  <xref:System.Xml.Serialization.XmlSerializer> 、次の逆シリアル化できません: 配列の<xref:System.Collections.ArrayList>およびの配列<xref:System.Collections.Generic.List%601>です。  
+  
+   
+  
+## Examples  
+ 次の例では、オブジェクトを使用して、逆シリアル化、<xref:System.IO.TextReader>オブジェクト。  
+  
+ [!code-cpp[Classic XmlSerializer.Deserialize1 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.Deserialize1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.Deserialize1 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.Deserialize1 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.Deserialize1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.Deserialize1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">逆シリアル化中にエラーが発生しました。 元の例外は、使用可能なを使用して、<see cref="P:System.Exception.InnerException" />プロパティです。</exception>
+        <altmember cref="T:System.Xml.Serialization.XmlAttributes" />
+        <altmember cref="M:System.Xml.Serialization.XmlSerializer.CanDeserialize(System.Xml.XmlReader)" />
+        <altmember cref="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)" />
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="protected virtual object Deserialize (System.Xml.Serialization.XmlSerializationReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object Deserialize(class System.Xml.Serialization.XmlSerializationReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.Serialization.XmlSerializationReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.Serialization.XmlSerializationReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.Serialization.XmlSerializationReader" />を含む XML ドキュメントを逆シリアル化します。</param>
+        <summary>指定したに含まれる XML ドキュメントを逆シリアル化<see cref="T:System.Xml.Serialization.XmlSerializationReader" />です。</summary>
+        <returns>逆シリアル化されたオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">しようとするが、メソッドが派生クラスでオーバーライドされていない場合、メソッドにアクセスしようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (System.Xml.XmlReader xmlReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Deserialize(class System.Xml.XmlReader xmlReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader"><see cref="T:System.Xml.XmlReader" />を含む XML ドキュメントを逆シリアル化します。</param>
+        <summary>指定したに含まれる XML ドキュメントを逆シリアル化<see cref="T:System.Xml.XmlReader" />です。</summary>
+        <returns><see cref="T:System.Object" />逆シリアル化します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 逆シリアル化は、XML ドキュメントのインスタンスを読み取り、およびドキュメントの XML スキーマ (XSD) を厳密に型指定されたオブジェクトを構築するプロセスです。  
+  
+ 逆シリアル化する前に、<xref:System.Xml.Serialization.XmlSerializer>逆シリアル化されるオブジェクトの型を使用して構築する必要があります。  
+  
+ <xref:System.Xml.XmlReader>自動的に検出して XML ドキュメントで指定されたエンコーディングを使用します。  
+  
+> [!NOTE]
+>  <xref:System.Xml.Serialization.XmlSerializer> 、次の逆シリアル化できません: 配列の<xref:System.Collections.ArrayList>およびの配列<xref:System.Collections.Generic.List%601>です。  
+  
+   
+  
+## Examples  
+ 次の例では、オブジェクトを使用して、逆シリアル化、<xref:System.Xml.XmlReader>です。  
+  
+ [!code-cpp[Classic XmlSerializer.Deserialize2 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.Deserialize2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.Deserialize2 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.Deserialize2 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.Deserialize2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.Deserialize2 Example/VB/source.vb#1)]
+ [!code-xml[Classic XmlSerializer.Deserialize2 Example#1](~/samples/snippets/common/VS_Snippets_Remoting/Classic XmlSerializer.Deserialize2 Example/Common/simple.xml#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">逆シリアル化中にエラーが発生しました。 元の例外は、使用可能なを使用して、<see cref="P:System.Exception.InnerException" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (System.Xml.XmlReader xmlReader, string encodingStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Deserialize(class System.Xml.XmlReader xmlReader, string encodingStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="encodingStyle" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader"><see cref="T:System.Xml.XmlReader" />を含む XML ドキュメントを逆シリアル化します。</param>
+        <param name="encodingStyle">シリアル化された XML のエンコーディングのスタイルです。</param>
+        <summary>指定したに含まれる XML ドキュメントを逆シリアル化<see cref="T:System.Xml.XmlReader" />とスタイルをエンコードします。</summary>
+        <returns>逆シリアル化されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 逆シリアル化は、XML ドキュメントのインスタンスを読み取り、およびドキュメントの XML スキーマ (XSD) を厳密に型指定されたオブジェクトを構築するプロセスです。  
+  
+ 逆シリアル化する前に、<xref:System.Xml.Serialization.XmlSerializer>逆シリアル化されるオブジェクトの型を使用して構築する必要があります。  
+  
+ 設定、`encodingStyle`パラメーターを"http://schemas.xmlsoap.org/soap/encoding/"の SOAP バージョン 1.1 のエンコードです。それ以外の場合、SOAP バージョン 1.2 をエンコードするためには、"http://www.w3.org/2001/12/soap-encoding"に設定します。  
+  
+ **注**、 <xref:System.Xml.Serialization.XmlSerializer> 、次の逆シリアル化できません: 配列の<xref:System.Collections.ArrayList>およびの配列<xref:System.Collections.Generic.List%601>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">逆シリアル化中にエラーが発生しました。 元の例外は、使用可能なを使用して、<see cref="P:System.Exception.InnerException" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (System.Xml.XmlReader xmlReader, System.Xml.Serialization.XmlDeserializationEvents events);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Deserialize(class System.Xml.XmlReader xmlReader, valuetype System.Xml.Serialization.XmlDeserializationEvents events) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader,System.Xml.Serialization.XmlDeserializationEvents)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="events" Type="System.Xml.Serialization.XmlDeserializationEvents" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader"><see cref="T:System.Xml.XmlReader" />を含む、ドキュメントを逆シリアル化します。</param>
+        <param name="events"><see cref="T:System.Xml.Serialization.XmlDeserializationEvents" /> クラスのインスタンス。</param>
+        <summary>指定したに含まれる XML ドキュメントを逆シリアル化<see cref="T:System.Xml.XmlReader" />し、逆シリアル化中に発生するイベントのオーバーライドできるようにします。</summary>
+        <returns><see cref="T:System.Object" />逆シリアル化します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 逆シリアル化されるオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (System.Xml.XmlReader xmlReader, string encodingStyle, System.Xml.Serialization.XmlDeserializationEvents events);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Deserialize(class System.Xml.XmlReader xmlReader, string encodingStyle, valuetype System.Xml.Serialization.XmlDeserializationEvents events) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader,System.String,System.Xml.Serialization.XmlDeserializationEvents)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="encodingStyle" Type="System.String" />
+        <Parameter Name="events" Type="System.Xml.Serialization.XmlDeserializationEvents" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader">インスタンス、<see cref="T:System.Xml.XmlReader" />クラス、ドキュメントを読み取るために使用します。</param>
+        <param name="encodingStyle">使用するエンコーディング。</param>
+        <param name="events"><see cref="T:System.Xml.Serialization.XmlDeserializationEvents" /> クラスのインスタンス。</param>
+        <summary>指定したに含まれるデータを使用してオブジェクトを逆シリアル化<see cref="T:System.Xml.XmlReader" />です。</summary>
+        <returns>逆シリアル化されるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、Web サービス シナリオでのみの不明なヘッダーの逆シリアル化に必要です。 このメソッドでは、Web サービス メソッドでイベントの同期を回避することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="FromMappings">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>インスタンスを返します、<see cref="T:System.Xml.Serialization.XmlSerializer" />指定のマッピングからのクラスです。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="FromMappings">
+      <MemberSignature Language="C#" Value="public static System.Xml.Serialization.XmlSerializer[] FromMappings (System.Xml.Serialization.XmlMapping[] mappings);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Serialization.XmlSerializer[] FromMappings(class System.Xml.Serialization.XmlMapping[] mappings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSerializer[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" />
+      </Parameters>
+      <Docs>
+        <param name="mappings">配列<see cref="T:System.Xml.Serialization.XmlTypeMapping" />別に対応する 1 つの型。</param>
+        <summary>配列を返します<see cref="T:System.Xml.Serialization.XmlSerializer" />オブジェクトの配列から作成された<see cref="T:System.Xml.Serialization.XmlTypeMapping" />オブジェクト。</summary>
+        <returns><see cref="T:System.Xml.Serialization.XmlSerializer" /> オブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromMappings">
+      <MemberSignature Language="C#" Value="public static System.Xml.Serialization.XmlSerializer[] FromMappings (System.Xml.Serialization.XmlMapping[] mappings, System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Serialization.XmlSerializer[] FromMappings(class System.Xml.Serialization.XmlMapping[] mappings, class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This method is obsolete and will be removed in a future release of the .NET Framework. Please use an overload of FromMappings which does not take an Evidence parameter. See http://go2.microsoft.com/fwlink/?LinkId=131738 for more information.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSerializer[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" />
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="mappings">配列<see cref="T:System.Xml.Serialization.XmlMapping" />オブジェクトを別の 1 つの種類をマップするために使用します。</param>
+        <param name="evidence">インスタンス、<see cref="T:System.Security.Policy.Evidence" />を共通言語ランタイム ポリシー システムに表示されるホストおよびアセンブリのデータを含むクラスです。</param>
+        <summary>インスタンスを返します、<see cref="T:System.Xml.Serialization.XmlSerializer" />クラス別に 1 つの XML 型のマッピングを作成します。</summary>
+        <returns><see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromMappings">
+      <MemberSignature Language="C#" Value="public static System.Xml.Serialization.XmlSerializer[] FromMappings (System.Xml.Serialization.XmlMapping[] mappings, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Serialization.XmlSerializer[] FromMappings(class System.Xml.Serialization.XmlMapping[] mappings, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSerializer[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="mappings"><see cref="T:System.Xml.Serialization.XmlMapping" /> オブジェクトの配列。</param>
+        <param name="type"><see cref="T:System.Type" />の逆シリアル化されたオブジェクト。</param>
+        <summary>インスタンスを返します、<see cref="T:System.Xml.Serialization.XmlSerializer" />指定のマッピングからのクラスです。</summary>
+        <returns><see cref="T:System.Xml.Serialization.XmlSerializer" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromTypes">
+      <MemberSignature Language="C#" Value="public static System.Xml.Serialization.XmlSerializer[] FromTypes (Type[] types);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Serialization.XmlSerializer[] FromTypes(class System.Type[] types) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.FromTypes(System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSerializer[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="types" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="types"><see cref="T:System.Type" /> オブジェクトの配列。</param>
+        <summary>配列を返します<see cref="T:System.Xml.Serialization.XmlSerializer" />型の配列から作成されたオブジェクト。</summary>
+        <returns><see cref="T:System.Xml.Serialization.XmlSerializer" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlSerializer.FromTypes%2A>メソッドでは、配列を効率的に作成できます。<xref:System.Xml.Serialization.XmlSerializer>オブジェクトの配列を処理するため<xref:System.Type>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Xml.Serialization.XmlSerializer.FromTypes%2A>の配列を返すメソッドを<xref:System.Xml.Serialization.XmlSerializer>オブジェクト。 コードには配列の作成に使用される各 3 つのクラス定義が含まれています<xref:System.Type>オブジェクト。  
+  
+ [!code-cpp[Classic XmlSerializer.FromTypes Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.FromTypes Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.FromTypes Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.FromTypes Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.FromTypes Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.FromTypes Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GenerateSerializer">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>型指定されたシリアライザーを含むアセンブリを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [XML シリアライザー ジェネレーター ツール (Sgen.exe)](~/docs/standard/serialization/xml-serializer-generator-tool-sgen-exe.md)の実行時のパフォーマンスを向上させるために指定されたアセンブリで型の XML シリアル化アセンブリを作成、<xref:System.Xml.Serialization.XmlSerializer>シリアル化またはのオブジェクトを逆シリアル化すると、指定された型。 使用して、<xref:System.Xml.Serialization.XmlSerializer.GetXmlSerializerAssemblyName%2A>ようなアセンブリの名前を返します。  
+  
+ Web サービスを呼び出すクライアント アプリケーションの一部としてこのようなアセンブリを配布する場合は、適用、<xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute>アセンブリの名前と場所を指定するクライアントの種類にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GenerateSerializer">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Assembly GenerateSerializer (Type[] types, System.Xml.Serialization.XmlMapping[] mappings);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Assembly GenerateSerializer(class System.Type[] types, class System.Xml.Serialization.XmlMapping[] mappings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.GenerateSerializer(System.Type[],System.Xml.Serialization.XmlMapping[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" />
+      </Parameters>
+      <Docs>
+        <param name="types">型のコレクション。</param>
+        <param name="mappings">コレクション<see cref="T:System.Xml.Serialization.XmlMapping" />オブジェクトを 1 つの型を変換するために使用します。</param>
+        <summary>指定したマッピングを使用して、指定された型をシリアル化または逆シリアル化するために使用するカスタムのシリアライザーを含むアセンブリを返します。</summary>
+        <returns><see cref="T:System.Reflection.Assembly" />およびマッピングの指定された型のシリアライザーを含むオブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateSerializer">
+      <MemberSignature Language="C#" Value="public static System.Reflection.Assembly GenerateSerializer (Type[] types, System.Xml.Serialization.XmlMapping[] mappings, System.CodeDom.Compiler.CompilerParameters parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Assembly GenerateSerializer(class System.Type[] types, class System.Xml.Serialization.XmlMapping[] mappings, class System.CodeDom.Compiler.CompilerParameters parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.GenerateSerializer(System.Type[],System.Xml.Serialization.XmlMapping[],System.CodeDom.Compiler.CompilerParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="types" Type="System.Type[]" />
+        <Parameter Name="mappings" Type="System.Xml.Serialization.XmlMapping[]" />
+        <Parameter Name="parameters" Type="System.CodeDom.Compiler.CompilerParameters" />
+      </Parameters>
+      <Docs>
+        <param name="types">型の配列<see cref="T:System.Type" />およびデータを逆シリアル化に使用されるオブジェクトを格納しています。</param>
+        <param name="mappings">型の配列<see cref="T:System.Xml.Serialization.XmlMapping" />型データを XML データをマップします。</param>
+        <param name="parameters">インスタンス、<see cref="T:System.CodeDom.Compiler.CompilerParameters" />コンパイラを呼び出すために使用されるパラメーターを表すクラスです。</param>
+        <summary>指定したマッピングおよびコンパイラ設定とオプションを使用して、指定された型をシリアル化または逆シリアル化するために使用するカスタムのシリアライザーを含むアセンブリを返します。</summary>
+        <returns><see cref="T:System.Reflection.Assembly" />の特別なバージョンを格納している、<see cref="T:System.Xml.Serialization.XmlSerializer" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetXmlSerializerAssemblyName">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>1 つまたは複数のバージョンを含むアセンブリの名前を返します、<see cref="T:System.Xml.Serialization.XmlSerializer" />特に、特定の種類を逆シリアル化または逆シリアル化を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [XML シリアライザー ジェネレーター ツール (Sgen.exe)](~/docs/standard/serialization/xml-serializer-generator-tool-sgen-exe.md)の実行時のパフォーマンスを向上させるために指定されたアセンブリで型の XML シリアル化アセンブリを作成、<xref:System.Xml.Serialization.XmlSerializer>シリアル化またはのオブジェクトを逆シリアル化すると、指定された型。 使用して、<xref:System.Xml.Serialization.XmlSerializer.GetXmlSerializerAssemblyName%2A>ようなアセンブリの名前を返します。  
+  
+ Web サービスを呼び出すクライアント アプリケーションの一部としてこのようなアセンブリを配布する場合は、適用、<xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute>アセンブリの名前と場所を指定するクライアントの種類にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetXmlSerializerAssemblyName">
+      <MemberSignature Language="C#" Value="public static string GetXmlSerializerAssemblyName (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetXmlSerializerAssemblyName(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.GetXmlSerializerAssemblyName(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />にシリアル化します。</param>
+        <summary>1 つまたは複数のバージョンを含むアセンブリの名前を返します、<see cref="T:System.Xml.Serialization.XmlSerializer" />特に、指定した型を逆シリアル化または逆シリアル化を作成します。</summary>
+        <returns>含むアセンブリの名前、<see cref="T:System.Xml.Serialization.XmlSerializer" />の種類。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [XML シリアライザー ジェネレーター ツール (Sgen.exe)](~/docs/standard/serialization/xml-serializer-generator-tool-sgen-exe.md)の実行時のパフォーマンスを向上させるために指定されたアセンブリで型の XML シリアル化アセンブリを作成、<xref:System.Xml.Serialization.XmlSerializer>シリアル化またはのオブジェクトを逆シリアル化すると、指定された型。 使用して、<xref:System.Xml.Serialization.XmlSerializer.GetXmlSerializerAssemblyName%2A>ようなアセンブリの名前を返します。  
+  
+ Web サービスを呼び出すクライアント アプリケーションの一部としてこのようなアセンブリを配布する場合は、適用、<xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute>アセンブリの名前と場所を指定するクライアントの種類にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXmlSerializerAssemblyName">
+      <MemberSignature Language="C#" Value="public static string GetXmlSerializerAssemblyName (Type type, string defaultNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetXmlSerializerAssemblyName(class System.Type type, string defaultNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.GetXmlSerializerAssemblyName(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="defaultNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />興味のあります。</param>
+        <param name="defaultNamespace">型の名前空間。</param>
+        <summary>指定した名前空間で指定した型のシリアライザーを格納するアセンブリの名前を返します。</summary>
+        <returns>特別に構築されたシリアライザーを含むアセンブリの名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [XML シリアライザー ジェネレーター ツール (Sgen.exe)](~/docs/standard/serialization/xml-serializer-generator-tool-sgen-exe.md)の実行時のパフォーマンスを向上させるために指定されたアセンブリで型の XML シリアル化アセンブリを作成、<xref:System.Xml.Serialization.XmlSerializer>シリアル化またはのオブジェクトを逆シリアル化すると、指定された型。 使用して、<xref:System.Xml.Serialization.XmlSerializer.GetXmlSerializerAssemblyName%2A>ようなアセンブリの名前を返します。  
+  
+ Web サービスを呼び出すクライアント アプリケーションの一部としてこのようなアセンブリを配布する場合は、適用、<xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute>アセンブリの名前と場所を指定するクライアントの種類にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Serialize">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>オブジェクトを XML ドキュメントにシリアル化します。</summary>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.Stream stream, object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.IO.Stream stream, object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" /> XML ドキュメントを書き込むために使用します。</param>
+        <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+        <summary>指定したシリアル化<see cref="T:System.Object" />しを使用して、指定したファイルに XML ドキュメントを書き込みます<see cref="T:System.IO.Stream" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドは、パブリック フィールドおよびオブジェクトの読み取り/書き込みプロパティを XML に変換します。 メソッド、インデクサー、プライベート フィールド、または読み取り専用プロパティは変換されません。 すべてのオブジェクトのフィールドとプロパティをシリアル化には、パブリックとプライベートの両方を使用して、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>です。  
+  
+ `stream`パラメーター、抽象から派生したオブジェクトを指定して<xref:System.IO.Stream>クラスです。 派生したクラス<xref:System.IO.Stream>が含まれます。  
+  
+-   <xref:System.IO.BufferedStream>  
+  
+-   <xref:System.IO.FileStream>  
+  
+-   <xref:System.IO.MemoryStream>  
+  
+-   <xref:System.Net.Sockets.NetworkStream>  
+  
+-   <xref:System.Security.Cryptography.CryptoStream>  
+  
+> [!NOTE]
+>  <xref:System.Xml.Serialization.XmlSerializer> 、次をシリアル化できません: 配列の<xref:System.Collections.ArrayList>およびの配列<xref:System.Collections.Generic.List%601>です。  
+  
+   
+  
+## Examples  
+ 次の例では、オブジェクトを使用して、シリアル化、<xref:System.IO.Stream>オブジェクト。  
+  
+ [!code-cpp[Classic XmlSerializer.Serialize2 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.Serialize2 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize2 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.Serialize2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.Serialize2 Example/VB/source.vb#1)]
+ [!code-xml[Classic XmlSerializer.Serialize2 Example#1](~/samples/snippets/common/VS_Snippets_Remoting/Classic XmlSerializer.Serialize2 Example/Common/simple.xml#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シリアル化中にエラーが発生しました。 元の例外は、使用可能なを使用して、<see cref="P:System.Exception.InnerException" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.TextWriter textWriter, object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.IO.TextWriter textWriter, object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textWriter" Type="System.IO.TextWriter" />
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="textWriter"><see cref="T:System.IO.TextWriter" /> XML ドキュメントを書き込むために使用します。</param>
+        <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+        <summary>指定したシリアル化<see cref="T:System.Object" />しを使用して、指定したファイルに XML ドキュメントを書き込みます<see cref="T:System.IO.TextWriter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドは、パブリック フィールドおよびオブジェクトの読み取り/書き込みプロパティを XML に変換します。 メソッド、インデクサー、プライベート フィールド、または読み取り専用プロパティは変換されません。 オブジェクトのすべてのフィールドとプロパティをシリアル化するパブリックとプライベートの両方を使用して、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>です。  
+  
+ `textWriter`パラメーター、抽象から派生したオブジェクトを指定して<xref:System.IO.TextWriter>クラスです。 派生したクラス<xref:System.IO.TextWriter>が含まれます。  
+  
+-   <xref:System.IO.StreamWriter>  
+  
+-   <xref:System.IO.StringWriter>  
+  
+-   <xref:System.CodeDom.Compiler.IndentedTextWriter>  
+  
+> [!NOTE]
+>  <xref:System.Xml.Serialization.XmlSerializer> 、次をシリアル化できません: 配列の<xref:System.Collections.ArrayList>およびの配列<xref:System.Collections.Generic.List%601>です。  
+  
+   
+  
+## Examples  
+ 次の例では、オブジェクトを使用して、シリアル化、<xref:System.IO.TextWriter>です。  
+  
+ [!code-cpp[Classic XmlSerializer.Serialize Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.Serialize Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.Serialize Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.Serialize Example/VB/source.vb#1)]
+ [!code-xml[Classic XmlSerializer.Serialize Example#1](~/samples/snippets/common/VS_Snippets_Remoting/Classic XmlSerializer.Serialize Example/Common/simple.xml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="protected virtual void Serialize (object o, System.Xml.Serialization.XmlSerializationWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Serialize(object o, class System.Xml.Serialization.XmlSerializationWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Object,System.Xml.Serialization.XmlSerializationWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="writer" Type="System.Xml.Serialization.XmlSerializationWriter" />
+      </Parameters>
+      <Docs>
+        <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+        <param name="writer"><see cref="T:System.Xml.Serialization.XmlSerializationWriter" /> XML ドキュメントを書き込むために使用します。</param>
+        <summary>指定したシリアル化<see cref="T:System.Object" />しを使用して、指定したファイルに XML ドキュメントを書き込みます<see cref="T:System.Xml.Serialization.XmlSerializationWriter" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">しようとするが、メソッドが派生クラスでオーバーライドされていない場合、メソッドにアクセスしようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.Xml.XmlWriter xmlWriter, object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.Xml.XmlWriter xmlWriter, object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="xmlWriter"><see cref="T:System.Xml.XmlWriter" /> XML ドキュメントを書き込むために使用します。</param>
+        <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+        <summary>指定したシリアル化<see cref="T:System.Object" />しを使用して、指定したファイルに XML ドキュメントを書き込みます<see cref="T:System.Xml.XmlWriter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドは、パブリック フィールドおよびオブジェクトの読み取り/書き込みプロパティを XML に変換します。 メソッド、インデクサー、プライベート フィールド、または読み取り専用プロパティは変換されません。 オブジェクトのすべてのフィールドとプロパティをシリアル化するパブリックとプライベートの両方を使用して、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>です。  
+  
+ `xmlWriter`パラメーター、抽象から派生したオブジェクトを指定して<xref:System.Xml.XmlWriter>クラスです。 <xref:System.Xml.XmlTextWriter>から派生した、<xref:System.Xml.XmlWriter>です。  
+  
+> [!NOTE]
+>  <xref:System.Xml.Serialization.XmlSerializer> 、次をシリアル化できません: 配列の<xref:System.Collections.ArrayList>およびの配列<xref:System.Collections.Generic.List%601>です。  
+  
+   
+  
+## Examples  
+ 次の例では、オブジェクトを使用して、シリアル化、<xref:System.Xml.XmlWriter>です。  
+  
+ [!code-cpp[Classic XmlSerializer.Serialize4 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize4 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.Serialize4 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize4 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.Serialize4 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.Serialize4 Example/VB/source.vb#1)]
+ [!code-xml[Classic XmlSerializer.Serialize4 Example#1](~/samples/snippets/common/VS_Snippets_Remoting/Classic XmlSerializer.Serialize4 Example/Common/simple.xml#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シリアル化中にエラーが発生しました。 元の例外は、使用可能なを使用して、<see cref="P:System.Exception.InnerException" />プロパティです。</exception>
+        <altmember cref="T:System.Xml.Serialization.XmlAttributes" />
+        <altmember cref="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)" />
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.Stream stream, object o, System.Xml.Serialization.XmlSerializerNamespaces namespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.IO.Stream stream, object o, class System.Xml.Serialization.XmlSerializerNamespaces namespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" /> XML ドキュメントを書き込むために使用します。</param>
+        <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+        <param name="namespaces"><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />オブジェクトによって参照されます。</param>
+        <summary>指定したシリアル化<see cref="T:System.Object" />しを使用して、指定したファイルに XML ドキュメントを書き込みます<see cref="T:System.IO.Stream" />指定した名前空間を参照します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドが呼び出される、パブリック フィールドおよびオブジェクトの読み取り/書き込みプロパティを XML に変換します。 メソッド、インデクサー、プライベート フィールド、および読み取り専用プロパティはシリアル化されません。 すべてのフィールドとプロパティをシリアル化するパブリックとプライベートの両方を使用して、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>です。  
+  
+ 使用して、`stream`抽象から派生したオブジェクトを指定するパラメーター<xref:System.IO.Stream>クラスは、ストリームに書き込むよう設計されています。 派生したクラス、<xref:System.IO.Stream>クラスが含まれます。  
+  
+-   <xref:System.IO.BufferedStream>  
+  
+-   <xref:System.IO.FileStream>  
+  
+-   <xref:System.IO.MemoryStream>  
+  
+-   <xref:System.Net.Sockets.NetworkStream>  
+  
+-   <xref:System.Security.Cryptography.CryptoStream>  
+  
+> [!NOTE]
+>  <xref:System.Xml.Serialization.XmlSerializer> 、次をシリアル化できません: 配列の<xref:System.Collections.ArrayList>およびの配列<xref:System.Collections.Generic.List%601>です。  
+  
+   
+  
+## Examples  
+ 次の例を持つオブジェクトをシリアル化、<xref:System.IO.Stream>オブジェクト。 例でも作成、<xref:System.Xml.Serialization.XmlSerializerNamespaces>し、オブジェクトに 2 つの名前空間を追加します。 シリアル化されたオブジェクトを定義するクラスは、属性が設定されても<xref:System.Xml.Serialization.XmlElementAttribute>属性の各要素の名前空間を指定します。  
+  
+ [!code-cpp[Classic XmlSerializer.Serialize3 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize3 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.Serialize3 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize3 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.Serialize3 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.Serialize3 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シリアル化中にエラーが発生しました。 元の例外は、使用可能なを使用して、<see cref="P:System.Exception.InnerException" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.TextWriter textWriter, object o, System.Xml.Serialization.XmlSerializerNamespaces namespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.IO.TextWriter textWriter, object o, class System.Xml.Serialization.XmlSerializerNamespaces namespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textWriter" Type="System.IO.TextWriter" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
+      </Parameters>
+      <Docs>
+        <param name="textWriter"><see cref="T:System.IO.TextWriter" /> XML ドキュメントを書き込むために使用します。</param>
+        <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+        <param name="namespaces"><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />生成された XML ドキュメントの名前空間を格納しています。</param>
+        <summary>指定したシリアル化<see cref="T:System.Object" />しを使用して、指定したファイルに XML ドキュメントを書き込みます<see cref="T:System.IO.TextWriter" />し、指定した名前空間を参照します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドが呼び出される、パブリック フィールドとオブジェクトの読み取り/書き込みプロパティを XML に変換します。 メソッド、インデクサー、プライベート フィールド、および読み取り専用プロパティはシリアル化されません。 すべてのフィールドとプロパティをシリアル化するパブリックとプライベートの両方を使用して、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>です。  
+  
+ 使用して、`textWriter`抽象から派生したオブジェクトを指定するパラメーター<xref:System.IO.TextWriter>クラスです。 派生したクラス<xref:System.IO.TextWriter>クラスが含まれます。  
+  
+-   <xref:System.IO.StreamWriter>  
+  
+-   <xref:System.IO.StringWriter>  
+  
+-   <xref:System.CodeDom.Compiler.IndentedTextWriter>  
+  
+> [!NOTE]
+>  <xref:System.Xml.Serialization.XmlSerializer> 、次をシリアル化できません: 配列の<xref:System.Collections.ArrayList>およびの配列<xref:System.Collections.Generic.List%601>です。  
+  
+   
+  
+## Examples  
+ 次の例を持つオブジェクトをシリアル化、<xref:System.IO.TextWriter>です。 例でも作成、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクトおよびオブジェクトに 2 つの名前空間を追加します。 シリアル化されたオブジェクトを定義するクラスは、属性が設定されても<xref:System.Xml.Serialization.XmlElementAttribute>属性の各要素の名前空間を指定します。  
+  
+ [!code-cpp[Classic XmlSerializer.Serialize1 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.Serialize1 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize1 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.Serialize1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.Serialize1 Example/VB/source.vb#1)]
+ [!code-xml[Classic XmlSerializer.Serialize1 Example#1](~/samples/snippets/common/VS_Snippets_Remoting/Classic XmlSerializer.Serialize1 Example/Common/simple.xml#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シリアル化中にエラーが発生しました。 元の例外は、使用可能なを使用して、<see cref="P:System.Exception.InnerException" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.Xml.XmlWriter xmlWriter, object o, System.Xml.Serialization.XmlSerializerNamespaces namespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.Xml.XmlWriter xmlWriter, object o, class System.Xml.Serialization.XmlSerializerNamespaces namespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
+      </Parameters>
+      <Docs>
+        <param name="xmlWriter"><see cref="T:System.Xml.XmlWriter" /> XML ドキュメントを書き込むために使用します。</param>
+        <param name="o">シリアル化する <see cref="T:System.Object" />。</param>
+        <param name="namespaces"><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />オブジェクトによって参照されます。</param>
+        <summary>指定したシリアル化<see cref="T:System.Object" />しを使用して、指定したファイルに XML ドキュメントを書き込みます<see cref="T:System.Xml.XmlWriter" />し、指定した名前空間を参照します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドが呼び出される、パブリック フィールドおよびオブジェクトの読み取り/書き込みプロパティを XML に変換します。 メソッド、インデクサー、プライベート フィールド、および読み取り専用プロパティはシリアル化されません。 すべてのフィールドとプロパティをシリアル化するパブリックとプライベートの両方を使用して、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>です。  
+  
+ 使用して、`xmlWriter`抽象から派生したオブジェクトを指定するパラメーター<xref:System.Xml.XmlWriter>クラスは、XML ドキュメントを作成するよう設計されています。 <xref:System.Xml.XmlTextWriter>から派生した、<xref:System.Xml.XmlWriter>です。  
+  
+> [!NOTE]
+>  <xref:System.Xml.Serialization.XmlSerializer> 、次をシリアル化できません: 配列の<xref:System.Collections.ArrayList>およびの配列<xref:System.Collections.Generic.List%601>です。  
+  
+   
+  
+## Examples  
+ 次の例を持つオブジェクトをシリアル化、<xref:System.Xml.XmlWriter>です。 例でも作成、<xref:System.Xml.Serialization.XmlSerializerNamespaces>し、オブジェクトに 2 つの名前空間を追加します。 複数のインスタンス、<xref:System.Xml.Serialization.XmlElementAttribute>クラスは、各要素の名前空間を指定するクラスのメンバーに適用されます。  
+  
+ [!code-cpp[Classic XmlSerializer.Serialize5 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize5 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.Serialize5 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.Serialize5 Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.Serialize5 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.Serialize5 Example/VB/source.vb#1)]
+ [!code-xml[Classic XmlSerializer.Serialize5 Example#1](~/samples/snippets/common/VS_Snippets_Remoting/Classic XmlSerializer.Serialize5 Example/Common/simple.xml#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シリアル化中にエラーが発生しました。 元の例外は、使用可能なを使用して、<see cref="P:System.Exception.InnerException" />プロパティです。</exception>
+        <altmember cref="T:System.Xml.Serialization.XmlAttributes" />
+        <altmember cref="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)" />
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.Xml.XmlWriter xmlWriter, object o, System.Xml.Serialization.XmlSerializerNamespaces namespaces, string encodingStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.Xml.XmlWriter xmlWriter, object o, class System.Xml.Serialization.XmlSerializerNamespaces namespaces, string encodingStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
+        <Parameter Name="encodingStyle" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlWriter"><see cref="T:System.Xml.XmlWriter" /> XML ドキュメントを書き込むために使用します。</param>
+        <param name="o">シリアル化するオブジェクト。</param>
+        <param name="namespaces"><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />オブジェクトによって参照されます。</param>
+        <param name="encodingStyle">シリアル化された XML のエンコーディングのスタイルです。</param>
+        <summary>指定したオブジェクトをシリアル化および XML ドキュメントを使用して、指定したファイルに書き込みます<see cref="T:System.Xml.XmlWriter" />と指定した名前空間とエンコード スタイルを参照します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドが呼び出される、パブリック フィールドおよびオブジェクトの読み取り/書き込みプロパティを XML に変換します。 メソッド、インデクサー、プライベート フィールド、および読み取り専用プロパティはシリアル化されません。 すべてのフィールドとプロパティをシリアル化するパブリックとプライベートの両方を使用して、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>です。  
+  
+ 使用して、`xmlWriter`抽象から派生したオブジェクトを指定するパラメーター<xref:System.Xml.XmlWriter>クラスは、XML ドキュメントを作成するよう設計されています。 <xref:System.Xml.XmlTextWriter>から派生した、<xref:System.Xml.XmlWriter>です。  
+  
+ 設定、 `encodingStyle` "http://schemas.xmlsoap.org/soap/encoding/"SOAP 1.1 エンコードです。 それ以外の場合、設定のパラメーターの SOAP バージョン 1.2 のエンコードには、"http://www.w3.org/2001/12/soap-encoding"にします。  
+  
+> [!NOTE]
+>  <xref:System.Xml.Serialization.XmlSerializer> 、次をシリアル化できません: 配列の<xref:System.Collections.ArrayList>およびの配列<xref:System.Collections.Generic.List%601>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シリアル化中にエラーが発生しました。 元の例外は、使用可能なを使用して、<see cref="P:System.Exception.InnerException" />プロパティです。</exception>
+        <altmember cref="T:System.Xml.Serialization.XmlAttributes" />
+        <altmember cref="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)" />
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.Xml.XmlWriter xmlWriter, object o, System.Xml.Serialization.XmlSerializerNamespaces namespaces, string encodingStyle, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.Xml.XmlWriter xmlWriter, object o, class System.Xml.Serialization.XmlSerializerNamespaces namespaces, string encodingStyle, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="namespaces" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
+        <Parameter Name="encodingStyle" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlWriter"><see cref="T:System.Xml.XmlWriter" /> XML ドキュメントを書き込むために使用します。</param>
+        <param name="o">シリアル化するオブジェクト。</param>
+        <param name="namespaces">インスタンス、<see langword="XmlSerializaerNamespaces" />名前空間およびプレフィックスを使用することが含まれています。</param>
+        <param name="encodingStyle">ドキュメントで使用するエンコーディング。</param>
+        <param name="id">SOAP のエンコードされたメッセージ、ベースの id 属性を生成するために使用します。</param>
+        <summary>指定したシリアル化<see cref="T:System.Object" />を指定してファイルに XML ドキュメントを書き込みます<see cref="T:System.Xml.XmlWriter" />、XML 名前空間、およびエンコードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *Id*パラメーターが SOAP の id を作成するために使用する基本の文字列を指定します。 既定では、これらは"id1"や"id2"です。 かどうか、パラメーターが設定"myBase"に生成された値がある"myBaseid1"、"myBaseid2"など この機能を使用して、SOAP メッセージ全体にわたる一意の id 値を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnknownAttribute">
+      <MemberSignature Language="C#" Value="public event System.Xml.Serialization.XmlAttributeEventHandler UnknownAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Xml.Serialization.XmlAttributeEventHandler UnknownAttribute" />
+      <MemberSignature Language="DocId" Value="E:System.Xml.Serialization.XmlSerializer.UnknownAttribute" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlAttributeEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Xml.Serialization.XmlSerializer" />逆シリアル化中に不明な種類の XML 属性が発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、呼び出した後、 <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> 、メソッド、<xref:System.Xml.Serialization.XmlSerializer>不明な型の XML 属性を無視します。 ただし、このイベントを使用して、このようなノード型を処理することができます。  
+  
+ 逆シリアル化されるクラスのインスタンスの配列を返すフィールドが含まれる場合<xref:System.Xml.XmlAttribute>オブジェクトおよび<xref:System.Xml.Serialization.XmlAnyAttributeAttribute>、フィールドに適用されて、<xref:System.Xml.Serialization.XmlSerializer.UnknownAttribute>イベントは発生しません。 代わりに、すべての不明な XML 属性は、配列に収集されます。  
+  
+   
+  
+## Examples  
+ 次の例では、XML ドキュメントを逆シリアル化中に発生した不明な属性に関する情報を出力します。  
+  
+ [!code-cpp[Classic XmlSerializer.UnknownAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.UnknownAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.UnknownAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.UnknownAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnknownElement">
+      <MemberSignature Language="C#" Value="public event System.Xml.Serialization.XmlElementEventHandler UnknownElement;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Xml.Serialization.XmlElementEventHandler UnknownElement" />
+      <MemberSignature Language="DocId" Value="E:System.Xml.Serialization.XmlSerializer.UnknownElement" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Xml.Serialization.XmlSerializer" />逆シリアル化中に不明な型の XML 要素が発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、呼び出した後、 <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> 、メソッド、<xref:System.Xml.Serialization.XmlSerializer>不明な型の XML 属性を無視します。 ただし、このイベントを使用して、このようなノード型を処理することができます。  
+  
+> [!NOTE]
+>  場合、<xref:System.Xml.Serialization.XmlAnyElementAttribute>の配列を返すフィールドに適用される<xref:System.Xml.XmlElement>オブジェクト、配列のすべての不明な要素が収集されます。 その場合は、<xref:System.Xml.Serialization.XmlSerializer.UnknownElement>イベントは発生しません。  
+  
+   
+  
+## Examples  
+ 次の例には、という名前のクラスが逆シリアル化`Group`UnknownElements.xml をという名前のファイルからです。 要素はクラスでは、対応するメンバーを持たないファイルで検出されると、<xref:System.Xml.Serialization.XmlSerializer.UnknownElement>イベントが発生します。 この例を実行するには、UnknownElements.xml をという名前のファイルに次の XML コードを貼り付けます。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
+  <GroupName>MyGroup</GroupName>  
+  <GroupSize>Large</GroupSize>  
+  <GroupNumber>444</GroupNumber>  
+  <GroupBase>West</GroupBase>  
+</Group>  
+```  
+  
+ [!code-cpp[XmlSerializer.UnknownElement Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlSerializer.UnknownElement Example/CPP/unknownelement.cpp#1)]
+ [!code-csharp[XmlSerializer.UnknownElement Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlSerializer.UnknownElement Example/CS/unknownelement.cs#1)]
+ [!code-vb[XmlSerializer.UnknownElement Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XmlSerializer.UnknownElement Example/VB/unknownelement.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnknownNode">
+      <MemberSignature Language="C#" Value="public event System.Xml.Serialization.XmlNodeEventHandler UnknownNode;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Xml.Serialization.XmlNodeEventHandler UnknownNode" />
+      <MemberSignature Language="DocId" Value="E:System.Xml.Serialization.XmlSerializer.UnknownNode" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlNodeEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Xml.Serialization.XmlSerializer" />逆シリアル化中に不明な型の XML ノードを検出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、呼び出した後、 <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> 、メソッド、<xref:System.Xml.Serialization.XmlSerializer>不明な型の XML ノードは無視されます。 ただし、このイベントを使用して、このようなノード型を処理することができます。  
+  
+   
+  
+## Examples  
+ 次の例では、発生した不明なノードの種類を出力します。  
+  
+ [!code-cpp[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnreferencedObject">
+      <MemberSignature Language="C#" Value="public event System.Xml.Serialization.UnreferencedObjectEventHandler UnreferencedObject;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Xml.Serialization.UnreferencedObjectEventHandler UnreferencedObject" />
+      <MemberSignature Language="DocId" Value="E:System.Xml.Serialization.XmlSerializer.UnreferencedObject" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.UnreferencedObjectEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP でエンコードされた XML ストリームの逆シリアル化中に発生したときに、<see cref="T:System.Xml.Serialization.XmlSerializer" />で認識される型は使用されませんまたはで参照されていることを検出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlSerializer.UnreferencedObject>のみイベントが発生したときに、 <xref:System.Xml.Serialization.XmlSerializer> 「簡易オブジェクト アクセス プロトコル (SOAP) 1.1」、World Wide Web Consortium) (www.w3.org) ドキュメントのセクション 5 に準拠する SOAP メッセージを含む XML ドキュメントを逆シリアル化するために使用します。  
+  
+ セクション 5 に準拠しているドキュメントは、特殊な形式で、します。 少なくともは、このようなドキュメントには、SOAP メッセージの本文が含まれています。 ただし、すべての型を持つドキュメントにインラインで定義されたではなく一部の型定義は、ドキュメント内の最上位の要素への参照としてエンコードできます。 したがって、参照であるメイン ボディの検出された要素ごとに、必要があります型定義を含む対応する要素。 型定義には、参照元の要素とその型定義を関連付けるため、`id`属性と参照元の要素の一意の文字列 ID を設定するが、`href`同じ ID を参照する属性  
+  
+```  
+<Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="id1" n1:GroupName=".NET" GroupNumber="ZDI=" CreationDate="2002-05-02" xmlns:n1="http:'www.cpandl.com">  
+    <PosInt xsi:type="xsd:nonNegativeInteger">10000</PosInt>  
+    <GroupVehicle href="#id2" />  
+  </Group>  
+  <Vehicle id="id2" n1:type="Vehicle" xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">  
+    <licenseNumber xmlns:q1="http://www.w3.org/2001/XMLSchema" n1:type="q1:string">1234</licenseNumber>  
+  </Vehicle>  
+```  
+  
+ <xref:System.Xml.Serialization.XmlSerializer.UnreferencedObject>ドキュメントで検出された種類の定義がある場合に、イベントが発生するが、メイン ボディのパラメーターから参照されていません。 確認するには、参照されていないオブジェクトの XML 型を取得するには、イベントの発生時に、<xref:System.Xml.Serialization.UnreferencedObjectEventArgs.UnreferencedObject%2A>のプロパティ、<xref:System.Xml.Serialization.UnreferencedObjectEventArgs>クラスです。 オブジェクトの XML ID がによって返される、<xref:System.Xml.Serialization.UnreferencedObjectEventArgs.UnreferencedId%2A>プロパティです。  
+  
+ <xref:System.Xml.Serialization.XmlSerializer.UnreferencedObject>イベントがないと混同しないでください、<xref:System.Xml.Serialization.XmlSerializer.UnknownElement>と<xref:System.Xml.Serialization.XmlSerializer.UnknownNode>イベントでは、XML ノードや要素の型に対応するクラスのメンバーがない場合に発生します。  
+  
+   
+  
+## Examples  
+ 次の例では追加、<xref:System.Xml.Serialization.UnreferencedObjectEventHandler>を<xref:System.Xml.Serialization.XmlSerializer>です。 イベントを処理して、`Serializer``_``UnreferencedObject`メソッドです。 実行するには、例を切り取って"UnrefObj.xml"という名前のファイルに次の XML を貼り付けます。  
+  
+```  
+<wrapper>  
+  <Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="id1" n1:GroupName=".NET" xmlns:n1="http://www.cpandl.com">  
+   </Group>  
+<Vehicle id="id2" n1:type="Vehicle" xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">  
+    <licenseNumber xmlns:q1="http://www.w3.org/2001/XMLSchema" n1:type="q1:string">ABCD</licenseNumber>  
+  </Vehicle>  
+<Vehicle id="id3" n1:type="Vehicle" xmlns:n1="http://www.w3.org/2001/XMLSchema-instance">  
+    <licenseNumber xmlns:q1="http://www.w3.org/2001/XMLSchema" n1:type="q1:string">1234</licenseNumber>  
+  </Vehicle>  
+</wrapper>  
+```  
+  
+ [!code-cpp[UnreferencedObject Event Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/UnreferencedObject Event Example/CPP/unrefobj.cpp#1)]
+ [!code-csharp[UnreferencedObject Event Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/UnreferencedObject Event Example/CS/unrefobj.cs#1)]
+ [!code-vb[UnreferencedObject Event Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/UnreferencedObject Event Example/VB/unrefobj.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

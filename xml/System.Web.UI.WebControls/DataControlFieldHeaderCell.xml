@@ -1,0 +1,141 @@
+<Type Name="DataControlFieldHeaderCell" FullName="System.Web.UI.WebControls.DataControlFieldHeaderCell">
+  <TypeSignature Language="C#" Value="public class DataControlFieldHeaderCell : System.Web.UI.WebControls.DataControlFieldCell" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataControlFieldHeaderCell extends System.Web.UI.WebControls.DataControlFieldCell" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataControlFieldHeaderCell" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataControlFieldCell</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザー補助機能のシナリオで、表形式の ASP.NET データ バインド コントロール (<see cref="T:System.Web.UI.WebControls.GridView" /> など) の、表示されたテーブル内のヘッダー セルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlFieldHeaderCell>クラスがデータ テーブルで使用される (など、<xref:System.Web.UI.WebControls.GridView>コントロール) をアクセス可能なヘッダーを表します。 表形式のコントロールなど、<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.FormView>レイアウトのテーブルと見なされます、ため、アクセス可能なヘッダーは必要なく、使用しない、<xref:System.Web.UI.WebControls.DataControlFieldHeaderCell>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.DataControlFieldHeaderCell>クラスは 2 つのケースで使用します。  
+  
+-   <xref:System.Web.UI.WebControls.GridView.UseAccessibleHeader%2A> プロパティが `true` です。  
+  
+-   このフィールドは、<xref:System.Web.UI.WebControls.BoundField>オブジェクト<xref:System.Web.UI.WebControls.BoundField.DataField%2A>プロパティとして設定されて、<xref:System.Web.UI.WebControls.GridView.RowHeaderColumn%2A>プロパティです。  
+  
+ かどうかはない場合は、通常、<xref:System.Web.UI.WebControls.DataControlFieldHeaderCell>オブジェクトを使用すると、表示される、`<td>`の代わりに、`<th>`要素。  
+  
+ <xref:System.Web.UI.WebControls.DataControlFieldHeaderCell>クラスでサポート、<xref:System.Web.UI.WebControls.DataControlFieldHeaderCell.AbbreviatedText%2A>プロパティが使用して、<xref:System.Web.UI.WebControls.GridView>制御されるたびに、<xref:System.Web.UI.WebControls.GridView.UseAccessibleHeader%2A>プロパティは`true`します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataControlFieldHeaderCell (System.Web.UI.WebControls.DataControlField containingField);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.DataControlField containingField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldHeaderCell.#ctor(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="containingField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="containingField"><see cref="T:System.Web.UI.WebControls.DataControlField" />現在のセルを格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.DataControlFieldHeaderCell" />クラス、指定した設定<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト セルのコンテナーとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlFieldHeaderCell.%23ctor%2A>コンス トラクターのパス、<xref:System.Web.UI.HtmlTextWriterTag?displayProperty=nameWithType>要素としてその`tagKey`でレンダリングされる HTML タグの形式であるパラメーターです。 <xref:System.Web.UI.WebControls.DataControlField>に渡された、`containingField`とレポートが表示されるセルに適用するスタイル新機能のヘッダーを表示するかどうかを判断するパラメーターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AbbreviatedText">
+      <MemberSignature Language="C#" Value="public virtual string AbbreviatedText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AbbreviatedText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlFieldHeaderCell.AbbreviatedText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の短縮のテキスト、HTML で表示される<see langword="abbr" />属性、スクリーン リーダーによって使用されます。</summary>
+        <value>スクリーン リーダーによって読み取られるテーブルのヘッダーのテキストの簡略化されたバージョン。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Web.UI.WebControls.DataControlFieldHeaderCell.AbbreviatedText%2A>プロパティは viewstate に格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldHeaderCell.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" /> HTML コンテンツをクライアントに表示する出力ストリームを表すです。</param>
+        <summary>テーブル セルに関する情報を表示する属性の一覧に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlFieldHeaderCell.AddAttributesToRender%2A>メソッドを追加、<xref:System.Web.UI.HtmlTextWriterAttribute.Scope>または<xref:System.Web.UI.HtmlTextWriterAttribute.Abbr>属性の場合は、それぞれ<xref:System.Web.UI.WebControls.DataControlFieldHeaderCell.Scope%2A>または<xref:System.Web.UI.WebControls.DataControlFieldHeaderCell.AbbreviatedText%2A>プロパティが設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableHeaderScope Scope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.TableHeaderScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlFieldHeaderCell.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableHeaderScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTML テーブル内のヘッダー セルのスコープを設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.TableHeaderScope" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.TableHeaderScope.NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Web.UI.WebControls.DataControlFieldHeaderCell.Scope%2A>プロパティは、HTML としてレンダリングされます`scope`属性によって、<xref:System.Web.UI.WebControls.DataControlFieldHeaderCell>オブジェクト。 <xref:System.Web.UI.WebControls.DataControlFieldHeaderCell.Scope%2A>プロパティに初期化<xref:System.Web.UI.WebControls.TableHeaderScope.NotSet>、いずれかに設定する必要があります<xref:System.Web.UI.WebControls.TableHeaderScope.Column>または<xref:System.Web.UI.WebControls.TableHeaderScope.Row>ヘッダーが表すセルに応じて、します。  
+  
+ 値、<xref:System.Web.UI.WebControls.DataControlFieldHeaderCell.Scope%2A>プロパティは viewstate に格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

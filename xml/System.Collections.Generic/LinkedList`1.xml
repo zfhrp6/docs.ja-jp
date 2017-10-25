@@ -1,0 +1,1707 @@
+<Type Name="LinkedList&lt;T&gt;" FullName="System.Collections.Generic.LinkedList&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class LinkedList&lt;T&gt; : System.Collections.Generic.ICollection&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;, System.Collections.Generic.IReadOnlyCollection&lt;T&gt;, System.Collections.ICollection, System.Runtime.Serialization.IDeserializationCallback, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit LinkedList`1&lt;T&gt; extends System.Object implements class System.Collections.Generic.ICollection`1&lt;!T&gt;, class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.Generic.IReadOnlyCollection`1&lt;!T&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Runtime.Serialization.IDeserializationCallback, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Generic.LinkedList`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IReadOnlyCollection&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IDeserializationCallback</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Count = {Count}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Collections.Generic.System_CollectionDebugView`1))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="T">リンク リストの要素の型を指定します。</typeparam>
+    <summary>ダブルリンク リストを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>汎用のリンク リストです。 列挙子、および実装をサポートしている、<xref:System.Collections.ICollection>インターフェイス、.NET Framework の他のコレクション クラスと一致します。  
+  
+ <xref:System.Collections.Generic.LinkedList%601>型の別のノードは、<xref:System.Collections.Generic.LinkedListNode%601>のため、挿入、削除、o (1) 操作です。  
+  
+ ノードを削除し、同じリスト内または他のリスト、その結果、ヒープに割り当てられた追加オブジェクトはありません、再度を挿入することができます。 一覧には、内部の数も保持、するための取得、<xref:System.Collections.Generic.LinkedList%601.Count%2A>プロパティは、o (1) 操作になります。  
+  
+ 内の各ノードは<xref:System.Collections.Generic.LinkedList%601>オブジェクトの種類が<xref:System.Collections.Generic.LinkedListNode%601>です。 <xref:System.Collections.Generic.LinkedList%601>二重リンクすると、各ノードへのポインター フォワード、<xref:System.Collections.Generic.LinkedListNode%601.Next%2A>ノードとするに旧バージョンと、<xref:System.Collections.Generic.LinkedListNode%601.Previous%2A>ノード。  
+  
+ 参照型を含むリストはパフォーマンスが向上、同時に、ノードとその値が作成されます。 <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照のプロパティを型し、重複する値を指定できます。  
+  
+ 場合、<xref:System.Collections.Generic.LinkedList%601>は空では、<xref:System.Collections.Generic.LinkedList%601.First%2A>と<xref:System.Collections.Generic.LinkedList%601.Last%2A>プロパティが含まれる`null`です。  
+  
+ <xref:System.Collections.Generic.LinkedList%601>クラスがチェーン、分割、サイクル、または不整合な状態に、一覧のままにできるその他の機能をサポートしていません。 一覧の 1 つのスレッドに一貫性が保たです。 サポートされる唯一のマルチ スレッド シナリオ<xref:System.Collections.Generic.LinkedList%601>マルチ スレッドの読み取り操作は、します。  
+  
+   
+  
+## Examples  
+ 次のコード例の多くの機能を示します、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ [!code-cpp[Generic.LinkedList#1](~/samples/snippets/cpp/VS_Snippets_CLR/Generic.LinkedList/cpp/source.cpp#1)]
+ [!code-csharp[Generic.LinkedList#1](~/samples/snippets/csharp/VS_Snippets_CLR/Generic.LinkedList/cs/source.cs#1)]
+ [!code-vb[Generic.LinkedList#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Generic.LinkedList/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフではありません。 場合、<see cref="T:System.Collections.Generic.LinkedList`1" />に複数のスレッドがアクセスする必要がある独自の同期機構を実装する必要があります。  
+  
+ A<see cref="T:System.Collections.Generic.LinkedList`1" />コレクションが変更されない限り、複数のリーダーを同時にサポートできます。 それでも、コレクションの列挙は、本質的には、スレッド セーフなプロシージャではします。 まれに、列挙型と競合書き込みアクセスでは、列挙中にコレクションをロックする必要があります。 コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinkedList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.LinkedList`1" /> クラスの新しい空のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ 場合、<xref:System.Collections.Generic.LinkedList%601>は空では、<xref:System.Collections.Generic.LinkedList%601.First%2A>と<xref:System.Collections.Generic.LinkedList%601.Last%2A>プロパティが含まれる`null`です。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Collections.Generic.LinkedList%601>型の<xref:System.String>、いくつかのノードを追加し、その内容を表示します。  
+  
+ [!code-cpp[System.Collections.Generic.LinkedList.ctor#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Generic.LinkedList.ctor/CPP/llctor.cpp#1)]
+ [!code-csharp[System.Collections.Generic.LinkedList.ctor#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.LinkedList.ctor/CS/llctor.cs#1)]
+ [!code-vb[System.Collections.Generic.LinkedList.ctor#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.LinkedList.ctor/VB/llctor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinkedList (System.Collections.Generic.IEnumerable&lt;T&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.#ctor(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">新しい <see cref="T:System.Collections.IEnumerable" /> に要素がコピーされた <see cref="T:System.Collections.Generic.LinkedList`1" />。</param>
+        <summary>指定した <see cref="T:System.Collections.Generic.LinkedList`1" /> からコピーした要素を格納し、コピーされる要素の数を格納できるだけの容量を備えた、<see cref="T:System.Collections.IEnumerable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ 場合`collection`要素がないし、新しい<xref:System.Collections.Generic.LinkedList%601>は空では、<xref:System.Collections.Generic.LinkedList%601.First%2A>と<xref:System.Collections.Generic.LinkedList%601.Last%2A>プロパティが含まれる`null`です。  
+  
+ このコンス トラクターは、o (n) 操作で`n`内の要素の数は、`collection`です。  
+  
+   
+  
+## Examples  
+ このコンス トラクターを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collection" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected LinkedList (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> をシリアル化するために必要な情報を格納している <see cref="T:System.Collections.Generic.LinkedList`1" /> オブジェクト。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> に関連付けられているシリアル化ストリームのソースおよびデスティネーションを格納している <see cref="T:System.Collections.Generic.LinkedList`1" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Generic.LinkedList`1" />は、指定したシリアル化クラス<see cref="T:System.Runtime.Serialization.SerializationInfo" />と<see cref="T:System.Runtime.Serialization.StreamingContext" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ 場合、<xref:System.Collections.Generic.LinkedList%601>は空では、<xref:System.Collections.Generic.LinkedList%601.First%2A>と<xref:System.Collections.Generic.LinkedList%601.Last%2A>プロパティが含まれる`null`です。  
+  
+ このコンス トラクターは、o (n) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAfter">
+      <MemberSignature Language="C#" Value="public void AddAfter (System.Collections.Generic.LinkedListNode&lt;T&gt; node, System.Collections.Generic.LinkedListNode&lt;T&gt; newNode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAfter(class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; node, class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; newNode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.AddAfter(System.Collections.Generic.LinkedListNode{`0},System.Collections.Generic.LinkedListNode{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Collections.Generic.LinkedListNode&lt;T&gt;" />
+        <Parameter Name="newNode" Type="System.Collections.Generic.LinkedListNode&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Collections.Generic.LinkedListNode`1" />後ろに挿入する<c>newNode</c>です。</param>
+        <param name="newNode">新しい<see cref="T:System.Collections.Generic.LinkedListNode`1" />に追加する、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</param>
+        <summary>指定した既存のノードの後に、指定した新しいノードを追加、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="node" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="newNode" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="node" />現在では<see cref="T:System.Collections.Generic.LinkedList`1" />します。  
+  
+ または  
+  
+ <paramref name="newNode" />別に属している<see cref="T:System.Collections.Generic.LinkedList`1" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAfter">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.LinkedListNode&lt;T&gt; AddAfter (System.Collections.Generic.LinkedListNode&lt;T&gt; node, T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; AddAfter(class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; node, !T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.AddAfter(System.Collections.Generic.LinkedListNode{`0},`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.LinkedListNode&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Collections.Generic.LinkedListNode&lt;T&gt;" />
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Collections.Generic.LinkedListNode`1" />後に、新しい挿入<see cref="T:System.Collections.Generic.LinkedListNode`1" />を含む<c>値</c>です。</param>
+        <param name="value">追加する値、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</param>
+        <summary>指定した既存のノードの後に、指定された値を含む新しいノードを追加、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <returns>新しい<see cref="T:System.Collections.Generic.LinkedListNode`1" />を含む<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="node" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="node" />現在では<see cref="T:System.Collections.Generic.LinkedList`1" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBefore">
+      <MemberSignature Language="C#" Value="public void AddBefore (System.Collections.Generic.LinkedListNode&lt;T&gt; node, System.Collections.Generic.LinkedListNode&lt;T&gt; newNode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddBefore(class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; node, class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; newNode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.AddBefore(System.Collections.Generic.LinkedListNode{`0},System.Collections.Generic.LinkedListNode{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Collections.Generic.LinkedListNode&lt;T&gt;" />
+        <Parameter Name="newNode" Type="System.Collections.Generic.LinkedListNode&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Collections.Generic.LinkedListNode`1" />前に挿入する<c>newNode</c>です。</param>
+        <param name="newNode">新しい<see cref="T:System.Collections.Generic.LinkedListNode`1" />に追加する、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</param>
+        <summary>指定した既存のノードの前に、指定した新しいノードを追加、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="node" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="newNode" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="node" />現在では<see cref="T:System.Collections.Generic.LinkedList`1" />します。  
+  
+ または  
+  
+ <paramref name="newNode" />別に属している<see cref="T:System.Collections.Generic.LinkedList`1" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBefore">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.LinkedListNode&lt;T&gt; AddBefore (System.Collections.Generic.LinkedListNode&lt;T&gt; node, T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; AddBefore(class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; node, !T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.AddBefore(System.Collections.Generic.LinkedListNode{`0},`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.LinkedListNode&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Collections.Generic.LinkedListNode&lt;T&gt;" />
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Collections.Generic.LinkedListNode`1" />新しいを挿入する前に<see cref="T:System.Collections.Generic.LinkedListNode`1" />を含む<c>値</c>です。</param>
+        <param name="value">追加する値、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</param>
+        <summary>指定した既存のノードの前に指定された値を含む新しいノードを追加、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <returns>新しい<see cref="T:System.Collections.Generic.LinkedListNode`1" />を含む<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="node" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="node" />現在では<see cref="T:System.Collections.Generic.LinkedList`1" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddFirst">
+      <MemberSignature Language="C#" Value="public void AddFirst (System.Collections.Generic.LinkedListNode&lt;T&gt; node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddFirst(class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.AddFirst(System.Collections.Generic.LinkedListNode{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Collections.Generic.LinkedListNode&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="node">新しい<see cref="T:System.Collections.Generic.LinkedListNode`1" />の先頭に追加する、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</param>
+        <summary>開始時に指定した新しいノードを追加、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ 場合、<xref:System.Collections.Generic.LinkedList%601>が空で、新しいノードが、<xref:System.Collections.Generic.LinkedList%601.First%2A>と<xref:System.Collections.Generic.LinkedList%601.Last%2A>です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="node" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="node" />別に属している<see cref="T:System.Collections.Generic.LinkedList`1" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddFirst">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.LinkedListNode&lt;T&gt; AddFirst (T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; AddFirst(!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.AddFirst(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.LinkedListNode&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="value">先頭に追加する値、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</param>
+        <summary>先頭に指定された値を含む新しいノードを追加、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <returns>新しい<see cref="T:System.Collections.Generic.LinkedListNode`1" />を含む<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ 場合、<xref:System.Collections.Generic.LinkedList%601>が空で、新しいノードが、<xref:System.Collections.Generic.LinkedList%601.First%2A>と<xref:System.Collections.Generic.LinkedList%601.Last%2A>です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLast">
+      <MemberSignature Language="C#" Value="public void AddLast (System.Collections.Generic.LinkedListNode&lt;T&gt; node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddLast(class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.AddLast(System.Collections.Generic.LinkedListNode{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Collections.Generic.LinkedListNode&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="node">新しい<see cref="T:System.Collections.Generic.LinkedListNode`1" />の末尾に追加する、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</param>
+        <summary>末尾に指定した新しいノードを追加、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ 場合、<xref:System.Collections.Generic.LinkedList%601>が空で、新しいノードが、<xref:System.Collections.Generic.LinkedList%601.First%2A>と<xref:System.Collections.Generic.LinkedList%601.Last%2A>です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="node" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="node" />別に属している<see cref="T:System.Collections.Generic.LinkedList`1" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLast">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.LinkedListNode&lt;T&gt; AddLast (T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; AddLast(!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.AddLast(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.LinkedListNode&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="value">末尾に追加する値、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</param>
+        <summary>末尾に指定された値を含む新しいノードを追加、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <returns>新しい<see cref="T:System.Collections.Generic.LinkedListNode`1" />を含む<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ 場合、<xref:System.Collections.Generic.LinkedList%601>が空で、新しいノードが、<xref:System.Collections.Generic.LinkedList%601.First%2A>と<xref:System.Collections.Generic.LinkedList%601.Last%2A>です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのノードを削除、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601.Count%2A>0 に設定し、コレクションの要素から他のオブジェクトへの参照も解放します。  <xref:System.Collections.Generic.LinkedList%601.First%2A>および<xref:System.Collections.Generic.LinkedList%601.Last%2A>に設定されている`null`です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.LinkedList%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.Contains(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see cref="T:System.Collections.Generic.LinkedList`1" /> 内で検索される値。 参照型の場合は <see langword="null" /> の値を使用できます。</param>
+        <summary>値がかどうかを判断、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="value" /> に存在する場合は <see cref="T:System.Collections.Generic.LinkedList`1" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一方向の検索を実行します。そのため、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.LinkedList%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (T[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(!T[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.CopyTo(`0[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="T[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.Generic.LinkedList`1" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Collections.Generic.LinkedList`1" /> 全体を、互換性のある 1 次元の <see cref="T:System.Array" /> にコピーします。コピー操作は、コピー先の配列の指定したインデックスから始まる部分に行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して<xref:System.Array.Copy%2A?displayProperty=nameWithType>要素のコピー。  
+  
+ 要素のコピー先は、<xref:System.Array>を列挙子が反復処理する順序と同じ順序で、<xref:System.Collections.Generic.LinkedList%601>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.LinkedList%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">コピー元の <see cref="T:System.Collections.Generic.LinkedList`1" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.LinkedList`1.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実際に含まれているノードの数を取得、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <value>実際に含まれているノードの数、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ このプロパティを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.LinkedListNode&lt;T&gt; Find (T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; Find(!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.Find(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.LinkedListNode&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see cref="T:System.Collections.Generic.LinkedList`1" /> 内で検索される値。</param>
+        <summary>指定した値を含む最初のノードを検索します。</summary>
+        <returns>最初の<see cref="T:System.Collections.Generic.LinkedListNode`1" />、それ以外の場合、指定した値を含む<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>転送を開始位置として検索が<xref:System.Collections.Generic.LinkedList%601.First%2A>で終わる<xref:System.Collections.Generic.LinkedList%601.Last%2A>です。  
+  
+ このメソッドは、一方向の検索を実行します。そのため、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.LinkedList%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindLast">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.LinkedListNode&lt;T&gt; FindLast (T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; FindLast(!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.FindLast(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.LinkedListNode&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see cref="T:System.Collections.Generic.LinkedList`1" /> 内で検索される値。</param>
+        <summary>指定した値を含む最後のノードを検索します。</summary>
+        <returns>最後の<see cref="T:System.Collections.Generic.LinkedListNode`1" />、それ以外の場合、指定した値を含む<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>検索旧バージョンとを開始位置として、<xref:System.Collections.Generic.LinkedList%601.Last%2A>で終わる<xref:System.Collections.Generic.LinkedList%601.First%2A>です。  
+  
+ このメソッドは、一方向の検索を実行します。そのため、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.LinkedList%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="First">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.LinkedListNode&lt;T&gt; First { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; First" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.LinkedList`1.First" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.LinkedListNode&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初のノードを取得、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <value>最初の<see cref="T:System.Collections.Generic.LinkedListNode`1" />の<see cref="T:System.Collections.Generic.LinkedList`1" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ 場合、<xref:System.Collections.Generic.LinkedList%601>は空では、<xref:System.Collections.Generic.LinkedList%601.First%2A>と<xref:System.Collections.Generic.LinkedList%601.Last%2A>プロパティが含まれる`null`です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ このプロパティを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.LinkedList&lt;T&gt;.Enumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Collections.Generic.LinkedList`1/Enumerator&lt;!T&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.LinkedList&lt;T&gt;+Enumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.LinkedList`1" /> を反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.LinkedList`1.Enumerator" /> の <see cref="T:System.Collections.Generic.LinkedList`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `foreach` C# 言語のステートメント (`for each` C++ では、 `For Each` Visual Basic で)、列挙子の複雑さが隠されています。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 この位置では、<xref:System.Collections.Generic.LinkedList%601.Enumerator.Current%2A> が未定義です。 そのため、<xref:System.Collections.Generic.LinkedList%601.Enumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.Generic.LinkedList%601.Enumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.Generic.LinkedList%601.Enumerator.Current%2A> は、<xref:System.Collections.Generic.LinkedList%601.Enumerator.MoveNext%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.Generic.LinkedList%601.Enumerator.MoveNext%2A> は、<xref:System.Collections.Generic.LinkedList%601.Enumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.Generic.LinkedList%601.Enumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.Generic.LinkedList%601.Enumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.Generic.LinkedList%601.Enumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.Generic.LinkedList%601.Enumerator.MoveNext%2A>返される`false`、<xref:System.Collections.Generic.LinkedList%601.Enumerator.Current%2A>が定義されていません。 <xref:System.Collections.Generic.LinkedList%601.Enumerator.Current%2A> を、再度、コレクションの最初の要素に設定することはできません。列挙子の新しいインスタンスを作成する必要があります。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ 既定の実装のコレクションの<xref:System.Collections.Generic?displayProperty=nameWithType>が同期されていません。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> インスタンスをシリアル化するために必要な情報を格納する <see cref="T:System.Collections.Generic.LinkedList`1" /> オブジェクト。</param>
+        <param name="context"><see cref="T:System.Collections.Generic.LinkedList`1" /> インスタンスに関連付けられているシリアル化ストリームの転送元および転送先を格納する <see cref="T:System.Runtime.Serialization.StreamingContext" /> オブジェクト。</param>
+        <summary><see cref="T:System.Runtime.Serialization.ISerializable" /> インターフェイスを実装し、<see cref="T:System.Collections.Generic.LinkedList`1" /> インスタンスをシリアル化するために必要なデータを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.LinkedList%601.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Last">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.LinkedListNode&lt;T&gt; Last { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; Last" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.LinkedList`1.Last" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.LinkedListNode&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後のノードを取得、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <value>最後の<see cref="T:System.Collections.Generic.LinkedListNode`1" />の<see cref="T:System.Collections.Generic.LinkedList`1" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ 場合、<xref:System.Collections.Generic.LinkedList%601>は空では、<xref:System.Collections.Generic.LinkedList%601.First%2A>と<xref:System.Collections.Generic.LinkedList%601.Last%2A>プロパティが含まれる`null`です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ このプロパティを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeserialization">
+      <MemberSignature Language="C#" Value="public virtual void OnDeserialization (object sender);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnDeserialization(object sender) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.OnDeserialization(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="sender">逆シリアル化イベントのソース。</param>
+        <summary><see cref="T:System.Runtime.Serialization.ISerializable" /> インターフェイスを実装し、逆シリアル化が完了したときに逆シリアル化イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.LinkedList%601.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトに現在関連付けられている<see cref="T:System.Collections.Generic.LinkedList`1" />インスタンスは無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Collections.Generic.LinkedListNode&lt;T&gt; node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Collections.Generic.LinkedListNode`1&lt;!T&gt; node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.Remove(System.Collections.Generic.LinkedListNode{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Collections.Generic.LinkedListNode&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Collections.Generic.LinkedListNode`1" /> から削除する <see cref="T:System.Collections.Generic.LinkedList`1" />。</param>
+        <summary>指定したノードから、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="node" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="node" />現在では<see cref="T:System.Collections.Generic.LinkedList`1" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.Remove(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="value">削除する値、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</param>
+        <summary>最初に見つかった位置の指定された値を削除、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <returns>
+          <see langword="true" />場合、要素を含む<paramref name="value" />が正常に削除された、それ以外の<see langword="false" />します。  このメソッドは、<see langword="false" /> が <paramref name="value" /> に見つからなかった場合にも <see cref="T:System.Collections.Generic.LinkedList`1" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一方向の検索を実行します。そのため、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.LinkedList%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveFirst">
+      <MemberSignature Language="C#" Value="public void RemoveFirst ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveFirst() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.RemoveFirst" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>先頭のノードを削除、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Collections.Generic.LinkedList`1" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveLast">
+      <MemberSignature Language="C#" Value="public void RemoveLast ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveLast() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.RemoveLast" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>末尾にノードを削除、<see cref="T:System.Collections.Generic.LinkedList`1" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Collections.Generic.LinkedList`1" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.ICollection&lt;T&gt;.Add">
+      <MemberSignature Language="C#" Value="void ICollection&lt;T&gt;.Add (T value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.Generic.ICollection&lt;T&gt;.Add(!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.System#Collections#Generic#ICollection&lt;T&gt;#Add(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="value">末尾に追加する値、<see cref="T:System.Collections.Generic.ICollection`1" />です。</param>
+        <summary>末尾に項目を追加、<see cref="T:System.Collections.Generic.ICollection`1" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.LinkedList%601>受け付ける`null`として有効な<xref:System.Collections.Generic.LinkedListNode%601.Value%2A>参照型し、重複する値を指定できます。  
+  
+ 場合、<xref:System.Collections.Generic.LinkedList%601>が空で、新しいノードが、<xref:System.Collections.Generic.LinkedList%601.First%2A>と<xref:System.Collections.Generic.LinkedList%601.Last%2A>です。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ このメソッドを含む例については、<xref:System.Collections.Generic.LinkedList%601>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.ICollection&lt;T&gt;.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.Generic.ICollection&lt;T&gt;.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.Generic.ICollection&lt;T&gt;.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.LinkedList`1.System#Collections#Generic#ICollection&lt;T&gt;#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.ICollection`1" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> が読み取り専用である場合は <see cref="T:System.Collections.Generic.ICollection`1" />。それ以外の場合は <see langword="false" />。  <see cref="T:System.Collections.Generic.LinkedList`1" /> の既定の実装では、このプロパティは常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用のコレクションでは、コレクション作成後に要素の追加、削除、または変更はできません。  
+  
+ 読み取り専用であるコレクションは、コレクションのコレクションの変更を防止するラッパーです。そのため、基になるコレクションの変更が加えられた、読み取り専用コレクションはそれらの変更を反映します。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;T&gt; IEnumerable&lt;T&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;!T&gt; System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.System#Collections#Generic#IEnumerable&lt;T&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.Generic.IEnumerator`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `foreach` C# 言語のステートメント (`for each` C++ では、 `For Each` Visual Basic で)、列挙子の複雑さが隠されています。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 この位置では、<xref:System.Collections.Generic.IEnumerator%601.Current%2A> が未定義です。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.Generic.IEnumerator%601.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.Generic.IEnumerator%601.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.Generic.IEnumerator%601.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.Generic.IEnumerator%601.Current%2A>が定義されていません。 <xref:System.Collections.Generic.IEnumerator%601.Current%2A> を、再度、コレクションの最初の要素に設定することはできません。列挙子の新しいインスタンスを作成する必要があります。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ 既定の実装のコレクションの<xref:System.Collections.Generic?displayProperty=nameWithType>が同期されていません。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.ICollection" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Collections.ICollection" /> の要素を <see cref="T:System.Array" /> にコピーします。<see cref="T:System.Array" /> の特定のインデックスからコピーが開始されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  場合、ソースの種類<xref:System.Collections.ICollection>変換先の型に自動的にキャストすることはできません`array`の非ジェネリックの実装<xref:System.Collections.ICollection.CopyTo%2A?displayProperty=nameWithType>スロー<xref:System.InvalidCastException>汎用実装でスローされ、<xref:System.ArgumentException>です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.LinkedList%601.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ <paramref name="array" />0 から始まるインデックスがありませんでした。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.ICollection" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.ICollection" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.LinkedList`1.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.ICollection" />。それ以外の場合は <see langword="false" />。  <see cref="T:System.Collections.Generic.LinkedList`1" /> の既定の実装では、このプロパティは常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装のコレクションの<xref:System.Collections.Generic?displayProperty=nameWithType>が同期されていません。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ <xref:System.Collections.ICollection.SyncRoot%2A>アクセスを同期するために使用できるオブジェクトを返します、<xref:System.Collections.ICollection>です。 同期は、すべてのスレッドがコレクションにアクセスする前にこのオブジェクトをロックする場合のみ有効です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.LinkedList`1.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクト。  <see cref="T:System.Collections.Generic.LinkedList`1" /> の既定の実装では、このプロパティは常に現在のインスタンスを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装のコレクションの<xref:System.Collections.Generic?displayProperty=nameWithType>が同期されていません。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ <xref:System.Collections.ICollection.SyncRoot%2A>アクセスを同期するために使用できるオブジェクトを返します、<xref:System.Collections.ICollection>です。 同期は、すべてのスレッドがコレクションにアクセスする前にこのオブジェクトをロックする場合のみ有効です。 次のコードの使用を示しています、 <xref:System.Collections.ICollection.SyncRoot%2A> c#、C++、および Visual Basic のプロパティです。  
+  
+```csharp  
+ICollection ic = ...;  
+lock (ic.SyncRoot) {  
+   // Access the collection.  
+}  
+```  
+  
+```vb  
+Dim ic As ICollection = ...  
+SyncLock ic.SyncRoot  
+   ' Access the collection.  
+End SyncLock  
+```  
+  
+```cpp#  
+ICollection^ ic = ...;  
+try {  
+   Monitor::Enter(ic->SyncRoot);  
+   // Access the collection.  
+}  
+finally {  
+   Monitor::Exit(ic->SyncRoot);  
+}  
+```  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.LinkedList`1.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションとしてリンクされたリストを反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />コレクションとしてリンクされたリストを反復処理に使用できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `foreach` C# 言語のステートメント (`for each` C++ では、 `For Each` Visual Basic で)、列挙子の複雑さが隠されています。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。  この位置では、<xref:System.Collections.IEnumerator.Current%2A> が未定義です。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ 既定の実装のコレクションの<xref:System.Collections.Generic?displayProperty=nameWithType>が同期されていません。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

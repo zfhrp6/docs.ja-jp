@@ -1,0 +1,75 @@
+<Type Name="VirtualizationMode" FullName="System.Windows.Controls.VirtualizationMode">
+  <TypeSignature Language="C#" Value="public enum VirtualizationMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed VirtualizationMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.VirtualizationMode" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.Windows.Controls.VirtualizingStackPanel" /> が子アイテムの仮想化の管理に使用するメソッドを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Controls.VirtualizingStackPanel>ごとに表示される項目の項目コンテナーを作成し、(など、ときに、項目スクロールされて見えない) 必要がなくなったときにそれを廃棄します。 ときに、<xref:System.Windows.Controls.ItemsControl>多くの項目を含む、プロセスを作成して、項目コンテナーの破棄のパフォーマンスが低下することができます。 ときに<xref:System.Windows.Controls.VirtualizingPanel.VirtualizationMode%2A>リサイクル中に設定されている、<xref:System.Windows.Controls.VirtualizingStackPanel>項目コンテナー代わりに、新しいものを作成するたびに再利用します。  
+  
+ ときに<xref:System.Windows.Controls.VirtualizingStackPanel>項目コンテナーをリサイクルできませんを作成し、各項目の項目コンテナーを破棄するのには、仮想化の標準モードを使用します。 次の一覧は、ケースを説明します。 ときに、<xref:System.Windows.Controls.VirtualizingStackPanel>項目コンテナーが再利用できません。  
+  
+-   <xref:System.Windows.Controls.ItemsControl>さまざまな種類の項目コンテナーが含まれています。  たとえば、<xref:System.Windows.Controls.Menu>両方を使用するアイテムがあります<xref:System.Windows.Controls.MenuItem>と<xref:System.Windows.Controls.Separator>項目コンテナーとオブジェクト。  
+  
+-   項目コンテナーを明示的に作成する、<xref:System.Windows.Controls.ItemsControl>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.ListBox>設定と、<xref:System.Windows.Controls.VirtualizingPanel.VirtualizationMode%2A>リサイクル中にプロパティをアタッチします。  
+  
+ [!code-xaml[RecycleItemContainerShippets#VirtualizationMode](~/samples/snippets/csharp/VS_Snippets_Wpf/RecycleItemContainerShippets/CSharp/Window1.xaml#virtualizationmode)]  
+  
+ 次の例では、前の例で使用されるデータを示します。  
+  
+ [!code-csharp[RecycleItemContainerShippets#ListBoxData](~/samples/snippets/csharp/VS_Snippets_Wpf/RecycleItemContainerShippets/CSharp/Window1.xaml.cs#listboxdata)]
+ [!code-vb[RecycleItemContainerShippets#ListBoxData](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RecycleItemContainerShippets/visualbasic/window1.xaml.vb#listboxdata)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Recycling">
+      <MemberSignature Language="C#" Value="Recycling" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.VirtualizationMode Recycling = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.VirtualizationMode.Recycling" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.VirtualizationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目コンテナーを再利用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Standard">
+      <MemberSignature Language="C#" Value="Standard" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.VirtualizationMode Standard = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.VirtualizationMode.Standard" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.VirtualizationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目コンテナーを作成し、破棄します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

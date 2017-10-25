@@ -1,0 +1,274 @@
+<Type Name="RangeValidator" FullName="System.Web.UI.WebControls.RangeValidator">
+  <TypeSignature Language="C#" Value="public class RangeValidator : System.Web.UI.WebControls.BaseCompareValidator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RangeValidator extends System.Web.UI.WebControls.BaseCompareValidator" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RangeValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.BaseCompareValidator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:RangeValidator runat="server" ErrorMessage="RangeValidator"&gt;&lt;/{0}:RangeValidator&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>入力コントロールの値が指定された範囲内の値であるかどうかをチェックします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RangeValidator>入力コントロールの値が指定された範囲内かどうかにテストを制御します。  
+  
+ <xref:System.Web.UI.WebControls.RangeValidator>コントロールは、その検証を実行する 4 つのキー プロパティを使用します。 <xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>プロパティには検証する入力コントロールが含まれています。 <xref:System.Web.UI.WebControls.RangeValidator.MinimumValue%2A>と<xref:System.Web.UI.WebControls.RangeValidator.MaximumValue%2A>プロパティが有効な範囲の最小値と最大値を指定します。  
+  
+ <xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A?displayProperty=nameWithType>プロパティの使用を比較する値のデータ型を指定します。 比較対象の値は、検証操作が実行される前に、このデータ型に変換されます。  
+  
+> [!NOTE]
+>  ときに、<xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.ValidationDataType.Date>と現在のカレンダーの種類はグレゴリオ暦以外、バリデーターにはサーバー側の検証のみを実行します。 検証コントロールのクライアント スクリプトには、構成のグレゴリオ暦カレンダーのみがサポートしています。  
+  
+ 次の表は、比較できるさまざまなデータ型を一覧表示します。  
+  
+|データ型|説明|  
+|---------------|-----------------|  
+|`String`|文字列データ型。|  
+|`Integer`|32 ビット符号付き整数データ型。|  
+|`Double`|倍精度浮動小数点数値データ型。|  
+|`Date`|Date データ型。|  
+|`Currency`|通貨記号を含めることができる 10 進データ型。|  
+  
+> [!NOTE]
+>  入力コントロールが空の場合、検証が成功します。 使用して、<xref:System.Web.UI.WebControls.RequiredFieldValidator>のため入力コントロール、必須フィールドに制御します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.RangeValidator>によって値が指定されている場合、コントロールが例外をスロー、<xref:System.Web.UI.WebControls.RangeValidator.MaximumValue%2A>または<xref:System.Web.UI.WebControls.RangeValidator.MinimumValue%2A>プロパティを変換することはできませんを指定した<xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  使用すると、<xref:System.Web.UI.WebControls.RangeValidator>内の制御、<xref:System.Web.UI.UpdatePanel>制御、検証コントロールと関連付けられているコントロールが同じパネルであるかどうかを確認します。 使用しての詳細については、<xref:System.Web.UI.UpdatePanel>部分ページ更新プログラムの制御を参照してください[部分ページ レンダリング概要](http://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49)です。  
+  
+ 検証コントロールの追加については、次を参照してください。<xref:System.Web.UI.WebControls.BaseValidator>です。  
+  
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Web.UI.WebControls.RangeValidator>入力コントロールに入力した値が比較範囲内かどうかを決定する Web ページ上のコントロールです。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[RangeValidator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RangeValidator/CS/rangevalidatorcs.aspx#1)]
+ [!code-aspx-vb[RangeValidator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RangeValidator/VB/rangevalidatorvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RangeValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RangeValidator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RangeValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RangeValidator.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>HTML 属性および表示する必要があるコントロールのスタイルを指定した<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.RangeValidator.AddAttributesToRender%2A>カスタム サーバー コントロールできるように、<xref:System.Web.UI.WebControls.RangeValidator>常にテキストが太字で表示されます。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[CustomRangeValidatorAddAttributesToRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRangeValidatorAddAttributesToRender/CS/custom_rangevalidator_addattributestorendercs.aspx#1)]
+ [!code-aspx-vb[CustomRangeValidatorAddAttributesToRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRangeValidatorAddAttributesToRender/VB/custom_rangevalidator_addattributestorendervb.aspx#1)]  
+[!code-csharp[CustomRangeValidatorAddAttributesToRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRangeValidatorAddAttributesToRender/CS/custom_rangevalidator_addattributestorender.cs#2)]
+[!code-vb[CustomRangeValidatorAddAttributesToRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRangeValidatorAddAttributesToRender/VB/custom_rangevalidator_addattributestorender.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlPropertiesValid">
+      <MemberSignature Language="C#" Value="protected override bool ControlPropertiesValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ControlPropertiesValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RangeValidator.ControlPropertiesValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これは、プロパティを確認して、開発者によってなされたすべてのエラーのチェックを含むです。</summary>
+        <returns>
+          <see langword="true" />場合は、コントロール プロパティが無効です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateIsValid">
+      <MemberSignature Language="C#" Value="protected override bool EvaluateIsValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool EvaluateIsValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RangeValidator.EvaluateIsValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入力コントロールのコンテンツが有効かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、コントロールが無効です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.RangeValidator.EvaluateIsValid%2A>カスタム サーバー内のメソッドを制御常に検証するための最小値を指定して、値が存在し、最大値内では、<xref:System.Web.UI.WebControls.RangeValidator>です。  
+  
+ [!code-aspx-csharp[CustomRangeValidatorEvaluateIsValid#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRangeValidatorEvaluateIsValid/CS/custom_rangevalidator_evaluateisvalidcs.aspx#1)]
+ [!code-aspx-vb[CustomRangeValidatorEvaluateIsValid#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRangeValidatorEvaluateIsValid/VB/custom_rangevalidator_evaluateisvalidvb.aspx#1)]  
+[!code-csharp[CustomRangeValidatorEvaluateIsValid#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRangeValidatorEvaluateIsValid/CS/custom_rangevalidator_evaluateisvalid.cs#2)]
+[!code-vb[CustomRangeValidatorEvaluateIsValid#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRangeValidatorEvaluateIsValid/VB/custom_rangevalidator_evaluateisvalid.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumValue">
+      <MemberSignature Language="C#" Value="public string MaximumValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MaximumValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RangeValidator.MaximumValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証の範囲の最大値を設定します。</summary>
+        <value>検証の範囲の最大値。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RangeValidator.MaximumValue%2A>プロパティの検証範囲の最大値を指定します。 このプロパティによって指定された値がで指定されたデータ型に変換に失敗した場合、<xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A?displayProperty=nameWithType>プロパティ、例外がスローされます。  
+  
+> [!NOTE]
+>  指定した場合`ValidationDataType.Date`の<xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A?displayProperty=nameWithType>プログラムによって、アプリケーションのカルチャを設定しなくてもプロパティを YYYY DD MM などのカルチャに依存しない形式を使用する必要があります、<xref:System.Web.UI.WebControls.RangeValidator.MaximumValue%2A>と<xref:System.Web.UI.WebControls.RangeValidator.MinimumValue%2A>プロパティです。 それ以外の場合、日付が正しく解釈されません。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.RangeValidator.MaximumValue%2A>プロパティの検証範囲の最大値を指定します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[RangeValidator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RangeValidator/CS/rangevalidatorcs.aspx#1)]
+ [!code-aspx-vb[RangeValidator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RangeValidator/VB/rangevalidatorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumValue">
+      <MemberSignature Language="C#" Value="public string MinimumValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MinimumValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RangeValidator.MinimumValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証範囲の最小値を設定します。</summary>
+        <value>検証の範囲の最小値。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RangeValidator.MinimumValue%2A>プロパティの検証範囲の最小値を指定します。 このプロパティによって指定された値がで指定されたデータ型に変換に失敗した場合、<xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A?displayProperty=nameWithType>プロパティ、例外がスローされます。  
+  
+> [!NOTE]
+>  指定した場合`ValidationDataType.Date`の<xref:System.Web.UI.WebControls.BaseCompareValidator.Type%2A?displayProperty=nameWithType>プログラムによって、アプリケーションのカルチャを設定しなくてもプロパティを YYYY DD MM などのカルチャに依存しない形式を使用する必要があります、<xref:System.Web.UI.WebControls.RangeValidator.MaximumValue%2A>と<xref:System.Web.UI.WebControls.RangeValidator.MinimumValue%2A>プロパティです。 それ以外の場合、日付が正しく解釈されません。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.RangeValidator.MinimumValue%2A>プロパティの検証範囲の最小値を指定します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[RangeValidator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RangeValidator/CS/rangevalidatorcs.aspx#1)]
+ [!code-aspx-vb[RangeValidator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RangeValidator/VB/rangevalidatorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

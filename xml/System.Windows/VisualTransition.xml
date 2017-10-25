@@ -1,0 +1,251 @@
+<Type Name="VisualTransition" FullName="System.Windows.VisualTransition">
+  <TypeSignature Language="C#" Value="public class VisualTransition : System.Windows.DependencyObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VisualTransition extends System.Windows.DependencyObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.VisualTransition" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Storyboard")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロールの 1 つの状態が遷移するときに発生する視覚的な動作を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールのビジュアルの動作を指定するには、追加することで状態の間を遷移するとき<xref:System.Windows.VisualTransition>オブジェクト。 作成するときに、<xref:System.Windows.VisualTransition>次の 1 つ以上を指定します。  
+  
+-   時間を設定して発生する状態間の遷移の<xref:System.Windows.VisualTransition.GeneratedDuration%2A>プロパティです。  
+  
+-   コントロールの外観を設定して、移行時に発生する追加の変更、<xref:System.Windows.VisualTransition.Storyboard%2A>プロパティです。  
+  
+-   ときに、<xref:System.Windows.VisualTransition>設定が適用される、<xref:System.Windows.VisualTransition.To%2A>と<xref:System.Windows.VisualTransition.From%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.VisualTransition>からコントロールのマウスを動かしたときにコントロールの境界線に変更されている青、黄、しを黒に 1.5 秒を指定します。 全体の例では、次を参照してください。 [、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+ [!code-xaml[VSMButtonTemplate#8](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VisualTransition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.VisualTransition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.VisualTransition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="From">
+      <MemberSignature Language="C#" Value="public string From { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string From" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualTransition.From" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Windows.VisualState" />への移行。</summary>
+        <value>名前、<see cref="T:System.Windows.VisualState" />への移行。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.VisualTransition.From%2A>プロパティはオプションです。 A<xref:System.Windows.VisualTransition>特定の状態のみに適用する制限できます。 または、適用できるコントロールの状態遷移にいつします。 時間を制限する、<xref:System.Windows.VisualTransition>設定が適用される、<xref:System.Windows.VisualTransition.To%2A>と<xref:System.Windows.VisualTransition.From%2A>プロパティです。 次の表では、制限が最も厳しいレベルから最も緩いレベルまでを一覧にして示しています。  
+  
+|制限の種類|値します。|値|  
+|-------------------------|-------------------|-----------------|  
+|指定した状態から別の指定した状態まで|名前、<xref:System.Windows.VisualState>|名前、<xref:System.Windows.VisualState>|  
+|任意の状態から指定された状態まで|未設定|名前、<xref:System.Windows.VisualState>|  
+|指定した状態から任意の状態まで|名前、<xref:System.Windows.VisualState>|未設定|  
+|他の状態のいずれかの状態から|未設定|未設定|  
+  
+ 複数<xref:System.Windows.VisualTransition>内のオブジェクト、<xref:System.Windows.VisualStateGroup>を参照する、同じ状態が、前の表に示す順序で使用されます。  
+  
+ 継承する新しいクラスを作成することでこの動作を変更することができます<xref:System.Windows.VisualStateManager>をオーバーライドして、<xref:System.Windows.VisualStateManager.GoToStateCore%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つ作成されます<xref:System.Windows.VisualTransition>オブジェクト。 コントロールが遷移すると、`Pressed`状態、 `MouseOver` 、状態、<xref:System.Windows.VisualTransition>両方を持つ<xref:System.Windows.VisualTransition.From%2A>と<xref:System.Windows.VisualTransition.To%2A>セットを使用します。 コントロールが `Pressed` ではない状態から `MouseOver` 状態に遷移するときには、別の状態を使用します。  
+  
+ [!code-xaml[VSMButtonTemplate#7](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeneratedDuration">
+      <MemberSignature Language="C#" Value="public System.Windows.Duration GeneratedDuration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Duration GeneratedDuration" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualTransition.GeneratedDuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.DurationConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 つの状態からの移行にかかる時間を設定します。</summary>
+        <value>1 つの状態からの移行にかかる時間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定して、移行にかかる時間を指定することができます、<xref:System.Windows.VisualTransition.GeneratedDuration%2A>プロパティです。 設定すると、<xref:System.Windows.VisualTransition.GeneratedDuration%2A>プロパティ、発生する可能性への移行にかかる時間を指定します。  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールが 0.5 秒間に入りますを取ることを指定します、`MouseOver`状態です。 全体の例では、次を参照してください。 [、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+ [!code-xaml[VSMButtonTemplate#MouseOverTransition](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#mouseovertransition)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeneratedEasingFunction">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.IEasingFunction GeneratedEasingFunction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.IEasingFunction GeneratedEasingFunction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualTransition.GeneratedEasingFunction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.IEasingFunction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または状態を切り替えるのために使用されるカスタムの数式を設定します。</summary>
+        <value>カスタムの数式状態間を遷移するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます、<xref:System.Windows.VisualTransition.GeneratedEasingFunction%2A>に遷移が発生する方法を指定するプロパティです。 たとえばを加速または減速遷移イージング関数を指定できます。 詳細については、次を参照してください。[イージング関数](~/docs/framework/wpf/graphics-multimedia/easing-functions.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.VisualTransition>原因となった、<xref:System.Windows.Shapes.Rectangle>上で、ユーザーがマウス ボタンを押したときに垂直方向に移動する、<xref:System.Windows.Controls.Canvas>です。 例のセット、<xref:System.Windows.VisualTransition.GeneratedEasingFunction%2A>プロパティを<xref:System.Windows.Media.Animation.BounceEase>が発生するオブジェクト、<xref:System.Windows.Shapes.Rectangle>バウンド先に着いたときに表示されないようにします。 <xref:System.Windows.VisualTransition> 、ボタンを離したときに使用される別が<xref:System.Windows.Media.Animation.BounceEase>が発生するオブジェクト、<xref:System.Windows.Shapes.Rectangle>跳ね返ります元の位置に返す前にします。  
+  
+ [!code-xaml[VSMCustomControl#VSMEasingFunction](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#vsmeasingfunction)]  
+  
+ 次の例では、対応するイベント ハンドラー、<xref:System.Windows.UIElement3D.MouseDown>と<xref:System.Windows.UIElement.MouseUp>イベント。 呼び出しの例、<xref:System.Windows.VisualStateManager.GoToElementState%2A>を変更するメソッド、<xref:System.Windows.VisualState>キャンバスのです。  
+  
+ [!code-csharp[VSMCustomControl#VSMEasingFunctionLogic](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml.cs#vsmeasingfunctionlogic)]
+ [!code-vb[VSMCustomControl#VSMEasingFunctionLogic](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/window1.xaml.vb#vsmeasingfunctionlogic)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Storyboard">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.Storyboard Storyboard { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.Storyboard Storyboard" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualTransition.Storyboard" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Storyboard</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Animation.Storyboard" />遷移が発生したときに発生します。</summary>
+        <value><see cref="T:System.Windows.Media.Animation.Storyboard" />遷移が発生したときに発生します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.VisualTransition>が含まれています、 <xref:System.Windows.Media.Animation.Storyboard>、<xref:System.Windows.Media.Animation.Storyboard>を実行、<xref:System.Windows.VisualTransition>を適用します。 罫線を追加する場合など、<xref:System.Windows.Controls.Button>色を変更することからマウスを動かしたときに、作成することができます、<xref:System.Windows.VisualTransition>を持つ、<xref:System.Windows.Media.Animation.Storyboard>ボタンの背景を変更します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.VisualTransition>からコントロールのマウスを動かしたときにコントロールの境界線に変更されている青、黄、しを黒に 1.5 秒を指定します。 全体の例では、次を参照してください。 [、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+ [!code-xaml[VSMButtonTemplate#8](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="To">
+      <MemberSignature Language="C#" Value="public string To { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string To" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualTransition.To" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Windows.VisualState" />に移行します。</summary>
+        <value>遷移先の <see cref="T:System.Windows.VisualState" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.VisualTransition.To%2A>プロパティはオプションです。 A<xref:System.Windows.VisualTransition>特定の状態のみに適用する制限できます。 または、適用できるコントロールの状態遷移にいつします。 時間を制限する、<xref:System.Windows.VisualTransition>設定が適用される、<xref:System.Windows.VisualTransition.To%2A>と<xref:System.Windows.VisualTransition.From%2A>プロパティです。 次の表では、制限が最も厳しいレベルから最も緩いレベルまでを一覧にして示しています。  
+  
+|制限の種類|値します。|値|  
+|-------------------------|-------------------|-----------------|  
+|指定した状態から別の指定した状態まで|名前、<xref:System.Windows.VisualState>|名前、<xref:System.Windows.VisualState>|  
+|任意の状態から指定された状態まで|未設定|名前、<xref:System.Windows.VisualState>|  
+|指定した状態から任意の状態まで|名前、<xref:System.Windows.VisualState>|未設定|  
+|他の状態のいずれかの状態から|未設定|未設定|  
+  
+ 複数<xref:System.Windows.VisualTransition>内のオブジェクト、<xref:System.Windows.VisualStateGroup>を参照する、同じ状態が、前の表に示す順序で使用されます。  
+  
+ 継承する新しいクラスを作成することでこの動作を変更することができます<xref:System.Windows.VisualStateManager>をオーバーライドして、<xref:System.Windows.VisualStateManager.GoToStateCore%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つ作成されます<xref:System.Windows.VisualTransition>オブジェクト。 コントロールが遷移すると、`Pressed`状態、 `MouseOver` 、状態、<xref:System.Windows.VisualTransition>両方を持つ<xref:System.Windows.VisualTransition.From%2A>と<xref:System.Windows.VisualTransition.To%2A>セットを使用します。 コントロールが `Pressed` ではない状態から `MouseOver` 状態に遷移するときには、別の状態を使用します。  
+  
+ [!code-xaml[VSMButtonTemplate#7](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmbuttontemplate/csharp/skinnedbutton.xaml#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

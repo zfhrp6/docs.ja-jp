@@ -1,0 +1,931 @@
+<Type Name="ActivityPreviewDesigner" FullName="System.Workflow.ComponentModel.Design.ActivityPreviewDesigner">
+  <TypeSignature Language="C#" Value="public class ActivityPreviewDesigner : System.Workflow.ComponentModel.Design.SequentialActivityDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivityPreviewDesigner extends System.Workflow.ComponentModel.Design.SequentialActivityDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Design.SequentialActivityDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Design.ActivityDesignerTheme(typeof(System.Workflow.ComponentModel.Design.ActivityPreviewDesignerTheme))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プレビュー ストリップに子アクティビティ デザイナーのコレクションを表示します。プレビュー ストリップで子デザイナーが選択されると、選択された子アクティビティ デザイナーを、ワークフロー デザイン サーフェイスにプレビュー モードまたは編集モードで表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> はシーケンシャル アクティビティ デザイナーです。デザイン サーフェイスの上部に表示されるストリップに、そのすべての子アクティビティ デザイナーを表示します。 いずれかの子デザイナーを選択すると、アクティビティ プレビュー デザイナーのストリップの下にあるプレビュー ウィンドウに、その子デザイナーが表示されます。 <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> にはプレビュー モードと編集モードがあります。 プレビュー モードでは、ユーザーは選択したデザイナー全体をスクロールせずに見ることができます。ただし、選択したアクティビティ デザイナーを編集することはできません。 編集モードでは、ユーザーは選択したアクティビティ デザイナーを編集することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityPreviewDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessibilityObject">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject AccessibilityObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.AccessibleObject AccessibilityObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.AccessibilityObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーが、障碍を持つユーザー用に UI を調整するのに使用できる、<see cref="T:System.Windows.Forms.AccessibleObject" /> を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.AccessibleObject" /> が、障碍を持つユーザー用に UI を調整するのに使用できる <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.AccessibleObject> の初期値が null 参照 (Visual Basic の場合は `Nothing`) の場合は、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> によって <xref:System.Windows.Forms.AccessibleObject> が作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainedDesigners">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.ActivityDesigner&gt; ContainedDesigners { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Design.ActivityDesigner&gt; ContainedDesigners" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.ContainedDesigners" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.ActivityDesigner&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ プレビュー デザイナーによって表示されるアクティビティ デザイナーのコレクションを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> によって表示されるデザイナーを格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> 読み取り専用コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentDropTarget">
+      <MemberSignature Language="C#" Value="protected override int CurrentDropTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentDropTarget" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.CurrentDropTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.GetDropTargets(System.Drawing.Point)" /> によって返されるドロップ ターゲットの配列に含まれる現在のドロップ ターゲットのインデックスを取得または設定します。</summary>
+        <value>デザイナーの現在のドロップ ターゲットのインデックスを表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.CurrentDropTarget%2A> の設定操作で、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> の上部に表示されるプレビュー ストリップ内にターゲットを設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースを解放するには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureVisibleContainedDesigner">
+      <MemberSignature Language="C#" Value="public override void EnsureVisibleContainedDesigner (System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EnsureVisibleContainedDesigner(class System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.EnsureVisibleContainedDesigner(System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containedDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="containedDesigner">ワークフロー デザイン サーフェイス上に表示するための <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <summary>指定したアクティビティ デザイナーがワークフロー デザイン サーフェイスに表示されるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.EnsureVisibleContainedDesigner%2A> は、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> に含まれるすべてのアクティビティ デザイナーとその子を、デザイナーの上部のプレビュー ストリップに表示しておきます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="containedDesigner" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstSelectableObject">
+      <MemberSignature Language="C#" Value="public override object FirstSelectableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object FirstSelectableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.FirstSelectableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> のナビゲーション順で最初の選択可能オブジェクトを取得します。</summary>
+        <value>デザイナーのナビゲーション順で最初に選択可能な <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.Expanded%2A> と <xref:System.Workflow.ComponentModel.Design.ActivityDesigner.IsVisible%2A> に null 参照 (Visual Basic の場合は `Nothing`) が含まれない場合、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.FirstSelectableObject%2A> は <xref:System.Workflow.ComponentModel.Design.ActivityDesigner.Activity%2A> の <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.PreviewedDesigner%2A> プロパティの値を返します。 <xref:System.Workflow.ComponentModel.Design.ActivityDesigner.Activity%2A> プロパティに null 参照 (`Nothing`) が含まれる場合、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.FirstSelectableObject%2A> は <xref:System.Workflow.ComponentModel.Activity> コレクション内の最初のデザイナーに関連付けられた <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.ContainedDesigners%2A> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConnectors">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle[] GetConnectors ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance valuetype System.Drawing.Rectangle[] GetConnectors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.GetConnectors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクティビティ デザイナーのコネクタの境界となる四角形の配列を返します。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" /> に含まれるすべてのコネクタの境界を定義する <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> 配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次に示す条件が 1 つ以上該当する場合、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.GetConnectors%2A> は空の配列を返します。  
+  
+-   <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> がワークフロー デザイン サーフェイス上のアクティブ デザイナーでない。  
+  
+-   <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> に子アクティビティ デザイナーが含まれない。  
+  
+-   <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> がワークフロー デザイン サーフェイスに展開されていない。  
+  
+-   <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.ShowPreview%2A> が `true` に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDropTargets">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle[] GetDropTargets (System.Drawing.Point dropPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle[] GetDropTargets(valuetype System.Drawing.Point dropPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.GetDropTargets(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dropPoint" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="dropPoint">ドロップ ターゲットの x 座標と y 座標を定義する <see cref="T:System.Drawing.Point" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> 内の有効なドロップ場所を表す四角形の配列を返します。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" /> 内の有効なドロップ場所を表す <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> 配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `dropPoint` が <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> のプレビュー ストリップ内だった場合、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.GetDropTargets%2A> はストリップ内の可能なドロップ ターゲットを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextSelectableObject">
+      <MemberSignature Language="C#" Value="public override object GetNextSelectableObject (object obj, System.Workflow.ComponentModel.Design.DesignerNavigationDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetNextSelectableObject(object obj, valuetype System.Workflow.ComponentModel.Design.DesignerNavigationDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.GetNextSelectableObject(System.Object,System.Workflow.ComponentModel.Design.DesignerNavigationDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="direction" Type="System.Workflow.ComponentModel.Design.DesignerNavigationDirection" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ナビゲーション順の現在のオブジェクト。</param>
+        <param name="direction">デザイナーのナビゲーション方向を指定する <see cref="T:System.Workflow.ComponentModel.Design.DesignerNavigationDirection" /> 列挙値。</param>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> のナビゲーション順で、指定されたオブジェクトから後の最初の選択可能オブジェクトを返します。</summary>
+        <returns><see cref="T:System.Object" /> の後に続く、ナビゲーション順で最初に選択可能な <paramref name="obj" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> のプレビュー ペインで移動できるのは水平方向だけであるため、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.GetNextSelectableObject%2A> は <xref:System.Workflow.ComponentModel.Design.DesignerNavigationDirection.Left> と <xref:System.Workflow.ComponentModel.Design.DesignerNavigationDirection.Right> だけを認識します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Glyphs">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection Glyphs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection Glyphs" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.Glyphs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に関連付けられたグリフの読み取り専用コレクションを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.DesignerGlyph" /> に関連付けられたグリフを格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> 読み取り専用コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.Glyphs%2A> には、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> の上部のプレビュー ストリップに表示されるグリフのコレクションが格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpText">
+      <MemberSignature Language="C#" Value="protected override string HelpText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpText" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.HelpText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に他のアクティビティ デザイナーが含まれないときに表示されるテキストを取得または設定します。</summary>
+        <value>デザイナー画面に表示されるテキストを含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.HelpText%2A> の設定操作で、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> の上部に表示されるプレビュー ストリップにテキストを追加できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public override System.Workflow.ComponentModel.Design.HitTestInfo HitTest (System.Drawing.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Workflow.ComponentModel.Design.HitTestInfo HitTest(valuetype System.Drawing.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.HitTest(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">情報収集元のワークフロー デザイン サーフェイス上の座標を格納している <see cref="T:System.Drawing.Point" />。</param>
+        <summary>ワークフロー デザイン サーフェイス上の指定した座標にある <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に関する情報を返します。</summary>
+        <returns>指定した座標の <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" /> に関する情報を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected override void Initialize (System.Workflow.ComponentModel.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Initialize(class System.Workflow.ComponentModel.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.Initialize(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">デザイナーを初期化する対象の <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>指定したアクティビティによって使用されるデザイナーを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これによって、`activity` に関連付けられたアクティビティ デザイナーに関する選択項目変更イベントのリッスンが設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsContainedDesignerVisible">
+      <MemberSignature Language="C#" Value="public override bool IsContainedDesignerVisible (System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsContainedDesignerVisible(class System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.IsContainedDesignerVisible(System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containedDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="containedDesigner">確認対象の <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <summary>指定したアクティビティ デザイナーが <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に表示されているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が表示されている場合は <paramref name="containedDesigner" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.ShowPreview%2A> が `true` でプレビュー ウィンドウがプレビュー モードに設定されている場合、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.IsContainedDesignerVisible%2A> は `false` を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="containedDesigner" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LastSelectableObject">
+      <MemberSignature Language="C#" Value="public override object LastSelectableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object LastSelectableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.LastSelectableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> のナビゲーション順で最後の選択可能オブジェクトを取得します。</summary>
+        <value>デザイナーのナビゲーション順で最後に選択可能な <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.Expanded%2A> と <xref:System.Workflow.ComponentModel.Design.ActivityDesigner.IsVisible%2A> に null 参照 (Visual Basic の場合は `Nothing`) が含まれない場合、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.LastSelectableObject%2A> は <xref:System.Workflow.ComponentModel.Design.ActivityDesigner.Activity%2A> の <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.PreviewedDesigner%2A> プロパティの値を返します。 <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.PreviewedDesigner%2A> に null 参照 (Visual Basic の場合は `Nothing`) が含まれる場合、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.LastSelectableObject%2A> は、<xref:System.Workflow.ComponentModel.Activity> コレクション内の最後のデザイナーに関連付けられた <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.ContainedDesigners%2A> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (System.IO.BinaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(class System.IO.BinaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.LoadViewState(System.IO.BinaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.BinaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">デザイナーのビューステートを復元するのに使用される <see cref="T:System.IO.BinaryReader" />。</param>
+        <summary>バイナリ ストリームから <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> のビューステートを読み込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+        <exception cref="T:System.Exception">デザイナーに関連付けられたデザイナー ホストが null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Point Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point Location" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスにおけるデザイナーの論理座標上の位置を取得または設定します。</summary>
+        <value>ワークフロー デザイン サーフェイス上の <see cref="T:System.Drawing.Point" /> に関連付けられた x 座標と y 座標を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.Location%2A> の設定操作で、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> とそれに含まれるすべての子デザイナーの位置を更新できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContainedActivitiesChanged">
+      <MemberSignature Language="C#" Value="protected override void OnContainedActivitiesChanged (System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs listChangeArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContainedActivitiesChanged(class System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs listChangeArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnContainedActivitiesChanged(System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listChangeArgs" Type="System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="listChangeArgs">イベント データを格納している <see cref="T:System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に含まれるアクティビティの数が変更されたことをデザイナーに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `listChangeArgs` には、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> に対して追加および削除されたアクティビティ デザイナーが格納されます。 <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnContainedActivitiesChanged%2A> は、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> に関連付けられたデザイナー動詞を更新し、ワークフロー デザイン サーフェイス上のデザイナー レイアウトを変更します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="listChangeArgs" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragEnter">
+      <MemberSignature Language="C#" Value="protected override void OnDragEnter (System.Workflow.ComponentModel.Design.ActivityDragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragEnter(class System.Workflow.ComponentModel.Design.ActivityDragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnDragEnter(System.Workflow.ComponentModel.Design.ActivityDragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />。</param>
+        <summary>ドラッグ ドロップの操作中にユーザーのマウス カーソルがデザイナーの境界に入ったときに、<see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="e" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragOver">
+      <MemberSignature Language="C#" Value="protected override void OnDragOver (System.Workflow.ComponentModel.Design.ActivityDragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragOver(class System.Workflow.ComponentModel.Design.ActivityDragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnDragOver(System.Workflow.ComponentModel.Design.ActivityDragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />。</param>
+        <summary>ドラッグ ドロップの操作中にユーザーのマウス カーソルがデザイナーの境界内にあるときに、<see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="e" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayoutPosition">
+      <MemberSignature Language="C#" Value="protected override void OnLayoutPosition (System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLayoutPosition(class System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnLayoutPosition(System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> にビジュアル キューと子デザイナーを配置するためのレイアウト タスクを実行します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="e" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayoutSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size OnLayoutSize (System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Size OnLayoutSize(class System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnLayoutSize(System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> 内に含まれるデザイナーでのビジュアル キューのサイズを設定します。</summary>
+        <returns><see cref="T:System.Drawing.Size" /> の新しいサイズ設定を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnLayoutSize%2A> は、子アクティビティ デザイナーのコレクションを表示する <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> プレビュー ストリップと、選択されたアクティビティ デザイナーを表示するプレビュー ウィンドウのサイズを決定します。 また、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnLayoutSize%2A> は、デザイナーが編集モードかプレビュー モードかによって、プレビュー ウィンドウのサイズを決定します。  
+  
+ <xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner.Expanded%2A> が `false` を返した場合、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnLayoutSize%2A> は <xref:System.Workflow.ComponentModel.Design.SequentialActivityDesigner> から継承された基本実装を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDoubleClick">
+      <MemberSignature Language="C#" Value="protected override void OnMouseDoubleClick (System.Windows.Forms.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseDoubleClick(class System.Windows.Forms.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnMouseDoubleClick(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary>ユーザーがアクティビティ デザイナーのサーフェイスをダブルクリックしたときに、<see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがプレビュー ウィンドウでダブルクリックすると、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnMouseDoubleClick%2A> は <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> の編集モードを有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseDown (System.Windows.Forms.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseDown(class System.Windows.Forms.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnMouseDown(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary>マウス ポインターがデザイナーの境界内にあるときにユーザーがマウス ボタンを押すと、<see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス カーソルがプレビュー ウィンドウ内にあるときにユーザーがマウス ボタンを押すと、デザイナーの編集モードがオンになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeave">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeave ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeave() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnMouseLeave" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザーがマウス カーソルをデザイナーの境界外に移動させたときに、デザイナーに通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseUp">
+      <MemberSignature Language="C#" Value="protected override void OnMouseUp (System.Windows.Forms.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseUp(class System.Windows.Forms.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnMouseUp(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary>ユーザーがデザイナーの境界内でマウス ボタンを離すと、デザイナーに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがプレビュー ストリップ上でマウス ボタンを離すと、スクロール可能ボタンが最小スクロール矢印に変わります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected override void OnPaint (System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPaint(class System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnPaint(System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerPaintEventArgs" />。</param>
+        <summary>デザイン時に <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に関連付けられたアクティビティのビジュアル表現を描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnThemeChange">
+      <MemberSignature Language="C#" Value="protected override void OnThemeChange (System.Workflow.ComponentModel.Design.ActivityDesignerTheme newTheme);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnThemeChange(class System.Workflow.ComponentModel.Design.ActivityDesignerTheme newTheme) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnThemeChange(System.Workflow.ComponentModel.Design.ActivityDesignerTheme)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newTheme" Type="System.Workflow.ComponentModel.Design.ActivityDesignerTheme" />
+      </Parameters>
+      <Docs>
+        <param name="newTheme">更新されたテーマのプロパティ設定を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerTheme" />。</param>
+        <summary>関連付けられたテーマが変更されたことを <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.OnThemeChange%2A> は <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> のテーマ プロパティ設定を更新するだけでなく、新しい設定をプレビュー ウィンドウにレンダリングします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewedDesigner">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.ActivityDesigner PreviewedDesigner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ActivityDesigner PreviewedDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.PreviewedDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ デザイナーのプレビュー セクションでプレビューされるデザイナーを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> のプレビュー セクションに表示する <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> のプレビュー ストリップ セクションでデザイナーが選択されていない場合、<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.PreviewedDesigner%2A> は null 参照 (Visual Basic の場合は `Nothing`) を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshDesignerActions">
+      <MemberSignature Language="C#" Value="protected override void RefreshDesignerActions ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RefreshDesignerActions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.RefreshDesignerActions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に関連付けられた構成エラーを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.RefreshDesignerActions%2A> は <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> に関連付けられたアクションを更新するだけでなく、新しいビューをプレビュー ウィンドウにレンダリングします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshPreview">
+      <MemberSignature Language="C#" Value="public void RefreshPreview ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RefreshPreview() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.RefreshPreview" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> のプレビュー ウィンドウに表示されるビューを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.ShowPreview%2A> がビューの更新を実行するには、`true` を <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.RefreshPreview%2A> に設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override void SaveViewState (System.IO.BinaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SaveViewState(class System.IO.BinaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.SaveViewState(System.IO.BinaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.BinaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">現在のデザイナーのビューステートが格納される <see cref="T:System.IO.BinaryWriter" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> の現在のビューステートをバイナリ ストリームに格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.SaveViewState%2A> は、プレビュー ストリップで現在選択されているアクティビティ デザイナーを保存します。<xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.ShowPreview%2A> が `true` を返した場合は、プレビュー ウィンドウの内容を保存します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowPreview">
+      <MemberSignature Language="C#" Value="public bool ShowPreview { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowPreview" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.ShowPreview" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ プレビューをデザイナーに表示する必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          アクティビティ プレビューを <see langword="true" /> に表示する場合は <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbs">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.Design.ActivityDesignerVerbCollection Verbs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ActivityDesignerVerbCollection Verbs" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.Verbs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesignerVerbCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" /> に関連付ける動詞のコレクションを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerVerbCollection" /> に関連付けられた動詞を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner.Verbs%2A> プロパティをオーバーライドして <xref:System.Workflow.ComponentModel.Design.ActivityPreviewDesigner> のカスタム動詞アクションを挿入する方法の例を、次に示します。 `CreateActivityVerbs` が <xref:System.Workflow.ComponentModel.Design.ActivityDesignerVerb> という名前の新しい `"Add New Parallel Branch"` を作成し、`OnAddParallelBranch` という名前のイベント ハンドラーを関連付けます。 ワークフロー デザイナーで動詞がクリックされると、イベント ハンドラーが呼び出されます。  
+  
+ [!code-csharp[WF_Samples#73](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#73)]
+ [!code-vb[WF_Samples#73](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#73)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

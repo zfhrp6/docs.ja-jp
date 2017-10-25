@@ -1,0 +1,113 @@
+<Type Name="RuleConditionReference" FullName="System.Workflow.Activities.Rules.RuleConditionReference">
+  <TypeSignature Language="C#" Value="public class RuleConditionReference : System.Workflow.ComponentModel.ActivityCondition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RuleConditionReference extends System.Workflow.ComponentModel.ActivityCondition" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.RuleConditionReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.ActivityCondition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.Activities.Rules.Design.RuleConditionReferenceTypeConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Compiler.ActivityValidator(typeof(System.Workflow.Activities.Rules.RuleConditionReferenceValidator))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>条件コレクションの <see cref="T:System.Workflow.Activities.Rules.RuleCondition" /> を表し、プログラムによる条件の評価を可能にします。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleConditionReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleConditionReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleConditionReference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionName">
+      <MemberSignature Language="C#" Value="public string ConditionName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConditionName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleConditionReference.ConditionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価する <see cref="T:System.Workflow.Activities.Rules.RuleCondition" /> の名前を取得または設定します。</summary>
+        <value>評価する <see cref="T:System.Workflow.Activities.Rules.RuleCondition" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.Rules.RuleConditionReference> の基になる実際の条件定義は、<xref:System.Workflow.Activities.Rules.RuleExpressionCondition> 型で、これは <xref:System.Workflow.Activities.Rules.RuleCondition> から派生しています。 この定義によって、ルール条件を定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evaluate">
+      <MemberSignature Language="C#" Value="public override bool Evaluate (System.Workflow.ComponentModel.Activity activity, IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Evaluate(class System.Workflow.ComponentModel.Activity activity, class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleConditionReference.Evaluate(System.Workflow.ComponentModel.Activity,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="activity">この条件に関連付けられた <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <param name="provider">この条件評価のための <see cref="T:System.IServiceProvider" />。</param>
+        <summary>基になる <see cref="T:System.Workflow.Activities.Rules.RuleCondition" /> を評価します。</summary>
+        <returns>
+          条件の評価が <see langword="true" /> の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeProperties">
+      <MemberSignature Language="C#" Value="protected override void InitializeProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InitializeProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleConditionReference.InitializeProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleCondition" /> が参照している <see cref="T:System.Workflow.Activities.Rules.RuleConditionReference" /> に基づいて、メンバー プロパティを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

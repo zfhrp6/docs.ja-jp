@@ -1,0 +1,107 @@
+<Type Name="RouteUrlExpressionEditor" FullName="System.Web.UI.Design.RouteUrlExpressionEditor">
+  <TypeSignature Language="C#" Value="public class RouteUrlExpressionEditor : System.Web.UI.Design.ExpressionEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RouteUrlExpressionEditor extends System.Web.UI.Design.ExpressionEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.RouteUrlExpressionEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ExpressionEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティとメソッドを作成するための提供、<see langword="RouteURL" />デザイン時の式。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアルなデザイナー ホストなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]を使用して、<xref:System.Web.UI.Design.RouteUrlExpressionEditor>を作成するクラス、`RouteUrl`マークアップ式。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RouteUrlExpressionEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.RouteUrlExpressionEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.RouteUrlExpressionEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateExpression">
+      <MemberSignature Language="C#" Value="public override object EvaluateExpression (string expression, object parseTimeData, Type propertyType, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EvaluateExpression(string expression, object parseTimeData, class System.Type propertyType, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.RouteUrlExpressionEditor.EvaluateExpression(System.String,System.Object,System.Type,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="parseTimeData" Type="System.Object" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="expression">A<see langword="RouteUrl" />に評価される式。 式を含まない、<see langword="RouteUrl" />式のプレフィックス。</param>
+        <param name="parseTimeData">式を評価するための追加の解析情報を格納するオブジェクト。</param>
+        <param name="propertyType">コントロールのプロパティの型。</param>
+        <param name="serviceProvider">追加のデザイン時サービスを得るために使用されるデザイナー ホストによって提供されるサービス プロバイダーの実装です。</param>
+        <summary>評価、<see langword="RouteUrl" />表現し、デザイン時の値を提供します。</summary>
+        <returns>指定されたルートおよびルートのパラメーターの値式の評価が成功した場合の URLそれ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーを使用して、<xref:System.Web.UI.Design.RouteUrlExpressionEditor.EvaluateExpression%2A>を評価するメソッド、`RouteUrl`式に関連付けられたコントロールのプロパティのデザイン時の値を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExpressionEditorSheet">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.ExpressionEditorSheet GetExpressionEditorSheet (string expression, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.Design.ExpressionEditorSheet GetExpressionEditorSheet(string expression, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.RouteUrlExpressionEditor.GetExpressionEditorSheet(System.String,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ExpressionEditorSheet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="expression">式エディターのシートを初期化するために使用される式の文字列。 式を含まない、<see langword="RouteUrl" />式のプレフィックス。</param>
+        <param name="serviceProvider">追加のデザイン時サービスを得るために使用されるデザイナー ホストによって提供されるサービス プロバイダーの実装です。</param>
+        <summary>式エディターのシートを返します、<see langword="RouteUrl" />式。</summary>
+        <returns>A<see cref="T:System.Web.UI.Design.RouteUrlExpressionEditorSheet" />を定義するインスタンス、<see langword="RouteUrl" />式のプロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.RouteUrlExpressionEditor.GetExpressionEditorSheet%2A>エディター シート実装を返します`RouteUrl`式。 エディター シート`RouteUrl`式により、ユーザーがパラメーターとルート名を選択します。 パラメーターとルート名、ユーザーが選択され、エディター シートの実装を生成、`RouteUrl`式で、ビジュアル デザイナーに返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

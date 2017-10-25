@@ -1,0 +1,684 @@
+<Type Name="PipeSecurity" FullName="System.IO.Pipes.PipeSecurity">
+  <TypeSignature Language="C#" Value="public class PipeSecurity : System.Security.AccessControl.NativeObjectSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PipeSecurity extends System.Security.AccessControl.NativeObjectSecurity" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Pipes.PipeSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.NativeObjectSecurity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表すアクセス制御と監査セキュリティをパイプします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.PipeSecurity>クラスは、パイプとは、アクセス試行の監査のアクセス権を指定します。  このクラスは、一連のルールとして、アクセスおよび監査権限を表します。 各アクセス規則は、<xref:System.IO.Pipes.PipeAccessRule>オブジェクト、各監査規則がによって表されるときに、<xref:System.IO.Pipes.PipeAuditRule>オブジェクト。  
+  
+ <xref:System.IO.Pipes.PipeSecurity>クラスは、基になる Microsoft Windows ファイルのセキュリティ システムの抽象化します。 このシステムの各パイプがパイプへのアクセスを制御するには、随意アクセス制御リスト (DACL)、およびシステム アクセス制御リスト (SACL) は監査するアクセス制御の試行を指定します。  <xref:System.IO.Pipes.PipeAccessRule>と<xref:System.IO.Pipes.PipeAuditRule>クラスは、Dacl と Sacl を構成するアクセス制御エントリ (Ace) の抽象化します。  
+  
+ <xref:System.IO.Pipes.PipeSecurity>クラスには、数多くの Dacl と Sacl の詳細が非表示に以外の ACE の順序または null DACL について心配する必要はありません。  
+  
+ 使用して、<xref:System.IO.Pipes.PipeSecurity>クラスを取得、追加、または、DACL とパイプの SACL を表すアクセス規則を変更します。  
+  
+ 新しいまたは変更されたアクセスを永続化または監査規則、パイプを使用して、<xref:System.IO.Pipes.PipeStream.SetAccessControl%2A>メソッドです。 既存のファイルからアクセス規則または監査規則を取得するには、<xref:System.IO.Pipes.PipeStream.GetAccessControl%2A> メソッドを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PipeSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.Pipes.PipeSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、空を作成<xref:System.IO.Pipes.PipeSecurity>オブジェクトが、既存のパイプに基づいていないです。 アクセス制御情報を持つオブジェクトを設定し、パイプに適用することができます。  
+  
+ アクセスを追加したり、監査規則を<xref:System.IO.Pipes.PipeSecurity>オブジェクトを使用して、<xref:System.IO.Pipes.PipeSecurity.AddAccessRule%2A>メソッドです。 アクセス権を削除したり、監査規則を使用して、<xref:System.IO.Pipes.PipeSecurity.RemoveAccessRule%2A>メソッドです。  
+  
+ 新しいまたは変更されたアクセスを永続化または監査規則、パイプを使用して、<xref:System.IO.Pipes.PipeStream.SetAccessControl%2A>メソッドです。 既存のファイルからアクセス規則または監査規則を取得するには、<xref:System.IO.Pipes.PipeStream.GetAccessControl%2A> メソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessRightType">
+      <MemberSignature Language="C#" Value="public override Type AccessRightType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type AccessRightType" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Pipes.PipeSecurity.AccessRightType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />に現在関連付けられているセキュリティ保護可能なオブジェクトの<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <value>現在関連付けられているセキュリティ保護可能なオブジェクトの種類<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス、<xref:System.Security.AccessControl.ObjectSecurity>クラスのオーバーライド、<xref:System.Security.AccessControl.ObjectSecurity.AccessRightType%2A>プロパティと戻り値のアクセス権を表すために使用する型。 配列または複数の種類のセキュリティ オブジェクトを格納するコレクションを操作するときは、このプロパティを使用して、各セキュリティ オブジェクトで使用する適切な列挙型を判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessRuleFactory">
+      <MemberSignature Language="C#" Value="public override System.Security.AccessControl.AccessRule AccessRuleFactory (System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AccessControlType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.AccessControl.AccessRule AccessRuleFactory(class System.Security.Principal.IdentityReference identityReference, int32 accessMask, bool isInherited, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.AccessControlType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.AccessRuleFactory(System.Security.Principal.IdentityReference,System.Int32,System.Boolean,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AccessControlType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AccessRule</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identityReference" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="isInherited" Type="System.Boolean" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+      </Parameters>
+      <Docs>
+        <param name="identityReference">アクセス ルールが適用される id。 オブジェクトとしてキャスト可能なをする必要があります、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</param>
+        <param name="accessMask">このルールのアクセス マスク。 アクセス マスクの意味は、各インテグレーターによって定義された匿名ビットの 32 ビットのコレクションは、します。</param>
+        <param name="isInherited">
+          <see langword="true" />このルールは、親コンテナーから継承する場合それ以外の場合は false。</param>
+        <param name="inheritanceFlags">1 つ、<see cref="T:System.Security.AccessControl.InheritanceFlags" />アクセス規則の継承プロパティを指定する値。</param>
+        <param name="propagationFlags">1 つ、<see cref="T:System.Security.AccessControl.PropagationFlags" />継承されたアクセス規則を自動的に反映させるかどうかを指定する値。 場合、伝達フラグは無視されます<c>inheritanceFlags</c>に設定されている<see cref="F:System.Security.AccessControl.InheritanceFlags.None" />です。</param>
+        <param name="type">有効なアクセス制御の種類を指定します。</param>
+        <summary>値を指定して、<see cref="T:System.Security.AccessControl.AccessRule" /> クラスの新しいインスタンスを初期化します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Security.AccessControl.AccessRule" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス制御規則を作成することをお勧めはのコンス トラクターを使用する、<xref:System.IO.Pipes.PipeAccessRule>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="accessMask" />、 <paramref name="inheritanceFlags" />、 <paramref name="propagationFlags" />、または<paramref name="type" />に無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identityReference" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="accessMask" /> が 0 です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="identityReference" />型のどちらも<see cref="T:System.Security.Principal.SecurityIdentifier" />も、型のように<see cref="T:System.Security.Principal.NTAccount" />、型に変換できる<see cref="T:System.Security.Principal.SecurityIdentifier" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessRuleType">
+      <MemberSignature Language="C#" Value="public override Type AccessRuleType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type AccessRuleType" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Pipes.PipeSecurity.AccessRuleType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Type" /> 、現在のアクセス ルールに関連付けられているオブジェクトの<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <value>現在のアクセス規則に関連付けられているオブジェクトの種類<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス、<xref:System.Security.AccessControl.ObjectSecurity>クラスのオーバーライド、<xref:System.Security.AccessControl.ObjectSecurity.AccessRuleType%2A>プロパティと戻り値のアクセス権を表すために使用する型。 配列または複数の種類のセキュリティ オブジェクトを格納するコレクションを操作するときは、このプロパティを使用して、各セキュリティ オブジェクトで使用する適切な列挙型を判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAccessRule">
+      <MemberSignature Language="C#" Value="public void AddAccessRule (System.IO.Pipes.PipeAccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAccessRule(class System.IO.Pipes.PipeAccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.AddAccessRule(System.IO.Pipes.PipeAccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.IO.Pipes.PipeAccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">追加するアクセス規則。</param>
+        <summary>アクセス規則を追加するを随意アクセス制御リスト (DACL) に現在関連付けられている<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.PipeSecurity.AddAccessRule%2A>メソッドは、ルールの一覧に新しいルールを追加する、<xref:System.IO.Pipes.PipeSecurity>オブジェクトが含まれます。指定したルールのアクセス制御リスト (ACL) が既に存在する場合、<xref:System.IO.Pipes.PipeSecurity.AddAccessRule%2A>メソッドは 1 つの例外の規則を追加しても:<xref:System.IO.Pipes.PipeAccessRule>を使用して作成されたオブジェクトに、<xref:System.Security.AccessControl.AccessControlType.Deny>値を使用して作成されるオブジェクトに置き換えられる、<xref:System.Security.AccessControl.AccessControlType.Allow>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rule" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAuditRule">
+      <MemberSignature Language="C#" Value="public void AddAuditRule (System.IO.Pipes.PipeAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAuditRule(class System.IO.Pipes.PipeAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.AddAuditRule(System.IO.Pipes.PipeAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.IO.Pipes.PipeAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">追加する監査規則。</param>
+        <summary>監査規則を追加するに、システム アクセス制御リスト (SACL) に現在関連付けられている<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.PipeSecurity.AddAuditRule%2A>メソッドは、ルールの一覧に新しい監査規則を追加する、<xref:System.IO.Pipes.PipeSecurity>オブジェクトが含まれます。  
+  
+ 指定したルールの監査規則が既に存在する場合、<xref:System.IO.Pipes.PipeSecurity.AddAuditRule%2A>メソッドはルールを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rule" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditRuleFactory">
+      <MemberSignature Language="C#" Value="public override sealed System.Security.AccessControl.AuditRule AuditRuleFactory (System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AuditFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.AccessControl.AuditRule AuditRuleFactory(class System.Security.Principal.IdentityReference identityReference, int32 accessMask, bool isInherited, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.AuditFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.AuditRuleFactory(System.Security.Principal.IdentityReference,System.Int32,System.Boolean,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AuditFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.AuditRule</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identityReference" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="accessMask" Type="System.Int32" />
+        <Parameter Name="isInherited" Type="System.Boolean" />
+        <Parameter Name="inheritanceFlags" Type="System.Security.AccessControl.InheritanceFlags" />
+        <Parameter Name="propagationFlags" Type="System.Security.AccessControl.PropagationFlags" />
+        <Parameter Name="flags" Type="System.Security.AccessControl.AuditFlags" />
+      </Parameters>
+      <Docs>
+        <param name="identityReference">アクセス ルールが適用される id。 オブジェクトとしてキャスト可能なをする必要があります、<see cref="T:System.Security.Principal.SecurityIdentifier" />オブジェクト。</param>
+        <param name="accessMask">このルールのアクセス マスク。 アクセス マスクの意味は、各インテグレーターによって定義された匿名ビットの 32 ビットのコレクションは、します。</param>
+        <param name="isInherited">
+          <see langword="true" />このルールは、親コンテナーから継承する場合それ以外の場合は false.</param>
+        <param name="inheritanceFlags">1 つ、<see cref="T:System.Security.AccessControl.InheritanceFlags" />アクセス規則の継承プロパティを指定する値。</param>
+        <param name="propagationFlags">1 つ、<see cref="T:System.Security.AccessControl.PropagationFlags" />継承されたアクセス規則を自動的に反映させるかどうかを指定する値。 場合、伝達フラグは無視されます<c>inheritanceFlags</c>に設定されている<see cref="F:System.Security.AccessControl.InheritanceFlags.None" />です。</param>
+        <param name="flags">1 つ、<see cref="T:System.Security.AccessControl.AuditFlags" />コントロール型の有効なアクセス権を指定する値。</param>
+        <summary>値を指定して、<see cref="T:System.Security.AccessControl.AuditRule" /> クラスの新しいインスタンスを初期化します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Security.AccessControl.AuditRule" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターを使用するのには、監査規則を作成することをお勧め、<xref:System.IO.Pipes.PipeAuditRule>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="accessMask" />、 <paramref name="inheritanceFlags" />、 <paramref name="propagationFlags" />、または<paramref name="flags" />プロパティが無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="identityReference" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="accessMask" />プロパティが 0 です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="identityReference" />プロパティは、型のどちらも<see cref="T:System.Security.Principal.SecurityIdentifier" />も、型のように<see cref="T:System.Security.Principal.NTAccount" />、型に変換できる<see cref="T:System.Security.Principal.SecurityIdentifier" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditRuleType">
+      <MemberSignature Language="C#" Value="public override Type AuditRuleType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type AuditRuleType" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Pipes.PipeSecurity.AuditRuleType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />オブジェクトの現在の監査規則に関連付けられている<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <value>現在の監査規則に関連付けられているオブジェクトの種類<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス、<xref:System.Security.AccessControl.ObjectSecurity>クラスのオーバーライド、<xref:System.Security.AccessControl.ObjectSecurity.AuditRuleType%2A>プロパティと戻り値のアクセス権を表すために使用する型。 配列または複数の種類のセキュリティ オブジェクトを格納するコレクションを操作するときは、このプロパティを使用して、各セキュリティ オブジェクトで使用する適切な列挙型を判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Persist">
+      <MemberSignature Language="C#" Value="protected void Persist (System.Runtime.InteropServices.SafeHandle handle);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void Persist(class System.Runtime.InteropServices.SafeHandle handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.Persist(System.Runtime.InteropServices.SafeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.Runtime.InteropServices.SafeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="handle">セキュリティ保護可能なハンドル オブジェクトを現在<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクトに関連付けられています。</param>
+        <summary>現在関連付けられているセキュリティ記述子の指定したセクションでは、保存<see cref="T:System.IO.Pipes.PipeSecurity" />永続ストレージにオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Persist">
+      <MemberSignature Language="C#" Value="protected void Persist (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void Persist(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.Persist(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">オブジェクトのセキュリティ保護可能な名前を現在<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクトに関連付けられています。</param>
+        <summary>現在関連付けられているセキュリティ記述子の指定したセクションでは、保存<see cref="T:System.IO.Pipes.PipeSecurity" />永続ストレージにオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAccessRule">
+      <MemberSignature Language="C#" Value="public bool RemoveAccessRule (System.IO.Pipes.PipeAccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveAccessRule(class System.IO.Pipes.PipeAccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.RemoveAccessRule(System.IO.Pipes.PipeAccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.IO.Pipes.PipeAccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除するアクセス規則。</param>
+        <summary>随意アクセス制御リスト (DACL) に現在関連付けられているアクセス規則を削除<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <returns>
+          操作が正常に終了した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.PipeSecurity.RemoveAccessRule%2A>メソッドはすべて一致するか、削除<xref:System.Security.AccessControl.AccessControlType.Deny>アクセス ルールまたは照合<xref:System.Security.AccessControl.AccessControlType.Allow>現在からアクセス規則<xref:System.IO.Pipes.PipeSecurity>オブジェクト。 たとえば、すべてを削除するこのメソッドを使用できます<xref:System.Security.AccessControl.AccessControlType.Deny>に対してアクセス規則、ユーザーを渡すことによって、<xref:System.IO.Pipes.PipeAccessRule>を使用して作成されたオブジェクト、<xref:System.Security.AccessControl.AccessControlType.Deny>値、<xref:System.IO.Pipes.PipeAccessRights.Read>値、およびユーザー アカウントです。 <xref:System.IO.Pipes.PipeSecurity.RemoveAccessRule%2A>メソッドを指定する、拒否のルールの削除、<xref:System.IO.Pipes.PipeAccessRights.Read>値または<xref:System.IO.Pipes.PipeAccessRights.Write>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rule" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAccessRuleSpecific">
+      <MemberSignature Language="C#" Value="public void RemoveAccessRuleSpecific (System.IO.Pipes.PipeAccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAccessRuleSpecific(class System.IO.Pipes.PipeAccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.RemoveAccessRuleSpecific(System.IO.Pipes.PipeAccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.IO.Pipes.PipeAccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除するアクセス規則。</param>
+        <summary>随意アクセス制御リスト (DACL) に現在関連付けられている指定されたアクセス規則を削除<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.PipeSecurity.RemoveAccessRule%2A>メソッドはすべて一致するか、削除<xref:System.Security.AccessControl.AccessControlType.Deny>アクセス ルールまたは照合<xref:System.Security.AccessControl.AccessControlType.Allow>現在からアクセス規則<xref:System.IO.Pipes.PipeSecurity>オブジェクト。 たとえば、すべてを削除するこのメソッドを使用できます<xref:System.Security.AccessControl.AccessControlType.Deny>に対してアクセス規則、ユーザーを渡すことによって、<xref:System.IO.Pipes.PipeAccessRule>を使用して作成されたオブジェクト、<xref:System.Security.AccessControl.AccessControlType.Deny>値、<xref:System.IO.Pipes.PipeAccessRights.Read>値、およびユーザー アカウントです。 <xref:System.IO.Pipes.PipeSecurity.RemoveAccessRule%2A>メソッドを指定する、拒否のルールの削除、<xref:System.IO.Pipes.PipeAccessRights.Read>値または<xref:System.IO.Pipes.PipeAccessRights.Write>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rule" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditRule">
+      <MemberSignature Language="C#" Value="public bool RemoveAuditRule (System.IO.Pipes.PipeAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveAuditRule(class System.IO.Pipes.PipeAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.RemoveAuditRule(System.IO.Pipes.PipeAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.IO.Pipes.PipeAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除する監査規則。</param>
+        <summary>システム アクセス制御リスト (SACL) に現在関連付けられている監査規則を削除<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />監査規則が削除された場合それ以外の場合<see langword="false" /></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.PipeSecurity.RemoveAuditRule%2A>メソッドはすべて一致するか、削除<xref:System.Security.AccessControl.AccessControlType.Deny>監査規則、またはすべてに一致する<xref:System.Security.AccessControl.AccessControlType.Allow>監査規則を現在<xref:System.IO.Pipes.PipeSecurity>オブジェクト。  たとえば、すべてを削除するこのメソッドを使用できます<xref:System.Security.AccessControl.AccessControlType.Deny>に関する監査規則、ユーザーを渡すことによって、<xref:System.Security.AccessControl.FileSystemAuditRule>を使用して作成されたオブジェクト、<xref:System.Security.AccessControl.AccessControlType.Deny>値、<xref:System.Security.AccessControl.AuditFlags.Failure>値、およびユーザー アカウントです。  これを行うときに、<xref:System.IO.Pipes.PipeSecurity.RemoveAuditRule%2A>メソッドを指定する、拒否のルールの削除、<xref:System.Security.AccessControl.AuditFlags.Failure>値または<xref:System.Security.AccessControl.AuditFlags.Success>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rule" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditRuleAll">
+      <MemberSignature Language="C#" Value="public void RemoveAuditRuleAll (System.IO.Pipes.PipeAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAuditRuleAll(class System.IO.Pipes.PipeAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.RemoveAuditRuleAll(System.IO.Pipes.PipeAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.IO.Pipes.PipeAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除する監査規則。</param>
+        <summary>指定された監査規則からのシステム アクセス制御リスト (SACL) に現在関連付けられていると同じセキュリティ識別子を持つすべての監査規則を削除<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.PipeSecurity.RemoveAuditRuleAll%2A>メソッドは、指定したユーザーのすべての監査規則を削除します。  すべての値は無視されます、<xref:System.IO.Pipes.PipeAuditRule>ユーザー アカウントを除くオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rule" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAuditRuleSpecific">
+      <MemberSignature Language="C#" Value="public void RemoveAuditRuleSpecific (System.IO.Pipes.PipeAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAuditRuleSpecific(class System.IO.Pipes.PipeAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.RemoveAuditRuleSpecific(System.IO.Pipes.PipeAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.IO.Pipes.PipeAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">削除する監査規則。</param>
+        <summary>システム アクセス制御リスト (SACL) に現在関連付けられている指定された監査規則が削除<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.PipeSecurity.RemoveAuditRuleSpecific%2A>メソッドは、指定された一致する、削除<xref:System.Security.AccessControl.AccessControlType.Deny>ルールまたは指定した照合監査<xref:System.Security.AccessControl.AccessControlType.Allow>現在から監査規則<xref:System.IO.Pipes.PipeSecurity>オブジェクト。  このメソッドを指定された削除を使用するなど、<xref:System.Security.AccessControl.AccessControlType.Deny>を渡すことによって、ユーザーの監査規則、<xref:System.Security.AccessControl.FileSystemAuditRule>を使用して作成されたオブジェクト、<xref:System.Security.AccessControl.AccessControlType.Deny>値、<xref:System.Security.AccessControl.AuditFlags.Failure>値、およびユーザー アカウントです。  これを行うときに、<xref:System.IO.Pipes.PipeSecurity.RemoveAuditRuleSpecific%2A>メソッドを指定する拒否ルールのみを削除する、<xref:System.Security.AccessControl.AuditFlags.Failure>値。  指定する任意の拒否規則は削除されません、<xref:System.Security.AccessControl.AuditFlags.Success>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rule" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetAccessRule">
+      <MemberSignature Language="C#" Value="public void ResetAccessRule (System.IO.Pipes.PipeAccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetAccessRule(class System.IO.Pipes.PipeAccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.ResetAccessRule(System.IO.Pipes.PipeAccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.IO.Pipes.PipeAccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">追加するアクセス規則。</param>
+        <summary>随意アクセス制御リスト (DACL) に現在関連付けられているすべてのアクセス規則を削除<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクトし、指定されたアクセス規則を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.PipeSecurity.ResetAccessRule%2A>メソッドを指定したアクセス制御リスト (ACL) の規則を追加またはと一致する同一の ACL ルールを上書き、`rule`パラメーター。  たとえば場合、`rule`パラメーターを指定します、<xref:System.IO.Pipes.PipeAccessRights.Read>値と<xref:System.IO.Pipes.PipeSecurity.ResetAccessRule%2A>メソッドを指定するのと同じ ACL 規則の検索、<xref:System.IO.Pipes.PipeAccessRights.Read>値と同じルールが上書きされます。  場合、<xref:System.IO.Pipes.PipeSecurity.ResetAccessRule%2A>メソッドを指定するのと同じ ACL 規則の検索、<xref:System.IO.Pipes.PipeAccessRights.Write>値と同じルールもは上書きされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rule" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAccessRule">
+      <MemberSignature Language="C#" Value="public void SetAccessRule (System.IO.Pipes.PipeAccessRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAccessRule(class System.IO.Pipes.PipeAccessRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.SetAccessRule(System.IO.Pipes.PipeAccessRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.IO.Pipes.PipeAccessRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">設定するルール。</param>
+        <summary>随意アクセス制御リスト (DACL) に現在関連付けられているアクセス規則を設定<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.PipeSecurity.SetAccessRule%2A>メソッドを指定したアクセス制御リスト (ACL) の規則を追加またはと一致する同一の ACL ルールを上書き、<xref:System.IO.Pipes.PipeAccessRights>の値、`rule`パラメーター。  たとえば場合、`rule`パラメーターを指定します、<xref:System.IO.Pipes.PipeAccessRights.Read>値と<xref:System.IO.Pipes.PipeSecurity.SetAccessRule%2A>メソッドを指定するのと同じ ACL 規則の検索、<xref:System.IO.Pipes.PipeAccessRights.Read>値と同じルールが上書きされます。  場合、<xref:System.IO.Pipes.PipeSecurity.SetAccessRule%2A>メソッドを指定するのと同じ ACL 規則の検索、<xref:System.IO.Pipes.PipeAccessRights.Write>値と同じルールは上書きされません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rule" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAuditRule">
+      <MemberSignature Language="C#" Value="public void SetAuditRule (System.IO.Pipes.PipeAuditRule rule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAuditRule(class System.IO.Pipes.PipeAuditRule rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeSecurity.SetAuditRule(System.IO.Pipes.PipeAuditRule)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rule" Type="System.IO.Pipes.PipeAuditRule" />
+      </Parameters>
+      <Docs>
+        <param name="rule">設定するルール。</param>
+        <summary>システム アクセス制御リスト (SACL) に現在関連付けられている監査規則を設定<see cref="T:System.IO.Pipes.PipeSecurity" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Pipes.PipeSecurity.SetAuditRule%2A>メソッドを指定された監査規則を追加またはに一致する任意のと同じ監査規則を上書き、<xref:System.IO.Pipes.PipeAccessRights>の値、`rule`パラメーター。  たとえば場合、`rule`パラメーターを指定します、<xref:System.IO.Pipes.PipeAccessRights.Read>値、および<xref:System.IO.Pipes.PipeSecurity.SetAuditRule%2A>メソッドを指定するのと同じ監査規則の検索、<xref:System.IO.Pipes.PipeAccessRights.Read>値と同じルールが上書きされます。  場合、<xref:System.IO.Pipes.PipeSecurity.SetAuditRule%2A>メソッドを指定するのと同じ監査規則の検索、<xref:System.IO.Pipes.PipeAccessRights.Write>値と同じルールは上書きされません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="rule" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

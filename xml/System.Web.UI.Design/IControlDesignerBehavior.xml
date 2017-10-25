@@ -1,0 +1,122 @@
+<Type Name="IControlDesignerBehavior" FullName="System.Web.UI.Design.IControlDesignerBehavior">
+  <TypeSignature Language="C#" Value="public interface IControlDesignerBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IControlDesignerBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.IControlDesignerBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The recommended alternative is System.Web.UI.Design.IControlDesignerTag and System.Web.UI.Design.IControlDesignerView. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロール デザイナーの特定の動作の拡張機能を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.IControlDesignerBehavior>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.Design.IControlDesignerTag>と<xref:System.Web.UI.Design.IControlDesignerView>同等のコントロール デザイナーの機能のインターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DesignTimeElementView">
+      <MemberSignature Language="C#" Value="public object DesignTimeElementView { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DesignTimeElementView" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IControlDesignerBehavior.DesignTimeElementView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーのデザイン時ビュー コントロール オブジェクトを取得します。</summary>
+        <value>デザイナーのビュー コントロール オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.IControlDesignerBehavior>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.Design.IControlDesignerTag>と<xref:System.Web.UI.Design.IControlDesignerView>同等のコントロール デザイナーの機能のインターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignTimeHtml">
+      <MemberSignature Language="C#" Value="public string DesignTimeHtml { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DesignTimeHtml" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IControlDesignerBehavior.DesignTimeHtml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイナーのコントロールのデザイン時 HTML を設定します。</summary>
+        <value>デザイン時に、コントロールの書式設定するために使用する HTML。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.IControlDesignerBehavior>インターフェイスは今後使用しません。 使用して、<xref:System.Web.UI.Design.IControlDesignerTag>と<xref:System.Web.UI.Design.IControlDesignerView>同等のコントロール デザイナーの機能のインターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTemplateModeChanged">
+      <MemberSignature Language="C#" Value="public void OnTemplateModeChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnTemplateModeChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IControlDesignerBehavior.OnTemplateModeChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイナーは、入力したり、テンプレート モードを終了するときに処理を実行する機会を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.Design.IControlDesignerBehavior.OnTemplateModeChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <block subset="none" type="note">
+              <para>  
+ <see cref="T:System.Web.UI.Design.IControlDesignerBehavior" />インターフェイスは今後使用しません。 使用して、<see cref="T:System.Web.UI.Design.IControlDesignerTag" />と<see cref="T:System.Web.UI.Design.IControlDesignerView" />同等のコントロール デザイナーの機能のインターフェイスです。  
+  
+</para>
+            </block>  
+  
+ 派生クラスで <see cref="M:System.Web.UI.Design.IControlDesignerBehavior.OnTemplateModeChanged" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.Design.IControlDesignerBehavior.OnTemplateModeChanged" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

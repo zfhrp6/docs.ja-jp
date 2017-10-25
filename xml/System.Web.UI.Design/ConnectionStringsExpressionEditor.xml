@@ -1,0 +1,113 @@
+<Type Name="ConnectionStringsExpressionEditor" FullName="System.Web.UI.Design.ConnectionStringsExpressionEditor">
+  <TypeSignature Language="C#" Value="public class ConnectionStringsExpressionEditor : System.Web.UI.Design.ExpressionEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectionStringsExpressionEditor extends System.Web.UI.Design.ExpressionEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ConnectionStringsExpressionEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ExpressionEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティとデザイン時にコントロールのプロパティに関連付けられているデータ接続の式を選択するためのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアルなデザイナー ホストなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]を使用して、<xref:System.Web.UI.Design.ConnectionStringsExpressionEditor>から接続文字列を選択するクラス、`connectionStrings`構成セクション。  
+  
+ <xref:System.Web.UI.Design.ConnectionStringsExpressionEditor>から派生したクラスは、<xref:System.Web.UI.Design.ExpressionEditor>クラス、そこから派生するときの利点はありませんが、パブリック技術的な理由によりとします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionStringsExpressionEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ConnectionStringsExpressionEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.ConnectionStringsExpressionEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateExpression">
+      <MemberSignature Language="C#" Value="public override object EvaluateExpression (string expression, object parseTimeData, Type propertyType, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EvaluateExpression(string expression, object parseTimeData, class System.Type propertyType, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ConnectionStringsExpressionEditor.EvaluateExpression(System.String,System.Object,System.Type,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="parseTimeData" Type="System.Object" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="expression">評価する接続文字列式です。 式を含まない、<see langword="ConnectionStrings" />式のプレフィックス。</param>
+        <param name="parseTimeData">式を評価するための追加の解析情報を格納するオブジェクト。</param>
+        <param name="propertyType">コントロールのプロパティの型。</param>
+        <param name="serviceProvider">追加のデザイン時サービスを取得するために使用、デザイナー ホストによって提供されるサービス プロバイダーの実装です。</param>
+        <summary>接続文字列式を評価し、コントロールのプロパティのデザイン時の値を提供します。</summary>
+        <returns>式の評価が成功した場合、式の評価結果の文字列によって参照されるオブジェクトそれ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ConnectionStringsExpressionEditor.EvaluateExpression%2A>メソッドは、接続の名前とで指定された型を検索`expression`、接続を返します。  
+  
+ ビジュアル デザイナーを使用して、<xref:System.Web.UI.Design.ConnectionStringsExpressionEditor.EvaluateExpression%2A>を接続文字列式を評価し、関連付けられているコントロールのデザイン時の値を提供するメソッド。 ビジュアル デザイナーを使用して、<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.ParseExpression%2A?displayProperty=nameWithType>をデザイン時、および、呼び出しの式の文字列の解析、<xref:System.Web.UI.Design.ConnectionStringsExpressionEditor.EvaluateExpression%2A>解析された式のデータを持つメソッドです。 ビジュアル デザイナーでは、評価された式の結果を使用してコントロールのデザイン サーフェイスに表示されるプロパティの値を割り当てます。  
+  
+ ページのパーサーを使用して、実行時に、<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.EvaluateExpression%2A>と<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder.GetCodeExpression%2A>メソッドの対応する<xref:System.Web.Compilation.ConnectionStringsExpressionBuilder>式を評価し、関連するコントロール プロパティの実行時の値を提供する実装。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExpressionEditorSheet">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.ExpressionEditorSheet GetExpressionEditorSheet (string expression, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.Design.ExpressionEditorSheet GetExpressionEditorSheet(string expression, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ConnectionStringsExpressionEditor.GetExpressionEditorSheet(System.String,System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ExpressionEditorSheet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="expression">式エディターのシートを初期化するために使用される、コントロール プロパティを設定する式の文字列。 式を含まない、<see langword="ConnectionStrings" />式のプレフィックス。</param>
+        <param name="serviceProvider">追加のデザイン時サービスを取得するために使用、デザイナー ホストによって提供されるサービス プロバイダーの実装です。</param>
+        <summary>接続文字列式の式エディター シートを返します。</summary>
+        <returns><see cref="T:System.Web.UI.Design.ExpressionEditorSheet" />接続文字列の式のプロパティを定義するインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ConnectionStringsExpressionEditor.GetExpressionEditorSheet%2A>メソッドがエディターを接続文字列の式のシートの実装を返します。 接続文字列の式のエディター シートにより、ユーザーを選択して、接続の名前と種類で定義されている現在の接続文字列に基づいて、 [connectionStrings 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b6ffbb2e-a4d1-410e-8f7e-9755e92c65de) Web 構成ファイルのセクションです。 ユーザー接続の式のプロパティを選択すると、エディターのシートの実装は、接続の名前と型をビジュアル デザイナーに返される接続文字列式に結合します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

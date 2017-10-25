@@ -1,0 +1,110 @@
+<Type Name="CustomProviderDataAttribute" FullName="System.Web.Profile.CustomProviderDataAttribute">
+  <TypeSignature Language="C#" Value="public sealed class CustomProviderDataAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CustomProviderDataAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.CustomProviderDataAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロファイル プロパティのプロバイダーにカスタム データの文字列を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.CustomProviderDataAttribute>カスタム プロファイル プロバイダーにプロファイル プロパティを使用してデータの文字列を提供するクラスが使用されます。 カスタム データ文字列の任意の文字列値に設定することができ、を使用して設定されている、`customProviderData`プロファイルのプロパティを追加するための構成要素の属性です。 場合、`customProviderData`属性を設定すると、しの値を格納、<xref:System.Configuration.SettingsProperty.Attributes%2A>プロパティのコレクションと"CustomProviderData"名前によるインデックス作成  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomProviderDataAttribute (string customProviderData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string customProviderData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.CustomProviderDataAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="customProviderData" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="customProviderData">プロバイダーに提供するカスタム データの文字列です。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.Profile.CustomProviderDataAttribute" />クラスし、カスタム データの文字列を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.CustomProviderDataAttribute>カスタム プロファイル プロバイダーにプロファイル プロパティを使用してデータの文字列を提供するクラスが使用されます。 カスタム データ文字列の任意の文字列値に設定することができ、を使用して設定されている、`customProviderData`プロファイルのプロパティを追加するための構成要素の属性です。 場合、`customProviderData`属性を設定すると、しの値を格納、<xref:System.Configuration.SettingsProperty.Attributes%2A>プロパティのコレクションと"CustomProviderData"名前によるインデックス作成  
+  
+ このコンス トラクターは、.NET Framework を使用して、アプリケーション コードから呼び出されるものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomProviderData">
+      <MemberSignature Language="C#" Value="public string CustomProviderData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CustomProviderData" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.CustomProviderDataAttribute.CustomProviderData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロファイル プロパティのプロバイダーのカスタム データの文字列を取得します。</summary>
+        <value>プロファイル プロパティのプロバイダー用のカスタム データの文字列。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.CustomProviderDataAttribute.CustomProviderData%2A>プロパティ値の設定を使用して、`customProviderData`プロファイルのプロパティを追加するための構成要素の属性です。 <xref:System.Web.Profile.CustomProviderDataAttribute.CustomProviderData%2A>プロパティは、プロパティのプロファイル プロバイダーで使用される任意の文字列値に設定できます。 場合、`customProviderData`属性を設定すると、しの値を格納、<xref:System.Configuration.SettingsProperty.Attributes%2A>プロパティのコレクションと"CustomProviderData"名前によるインデックス作成  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.CustomProviderDataAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Web.Profile.CustomProviderDataAttribute.CustomProviderData" />プロパティが既定値に設定します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Web.Profile.CustomProviderDataAttribute.CustomProviderData" />プロパティが既定値です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Web.Profile.CustomProviderDataAttribute.CustomProviderData%2A>プロパティは`null`、または空の文字列型のプロファイル プロパティの`String`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

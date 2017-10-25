@@ -1,0 +1,154 @@
+<Type Name="InstancePersistenceEvent" FullName="System.Runtime.DurableInstancing.InstancePersistenceEvent">
+  <TypeSignature Language="C#" Value="public abstract class InstancePersistenceEvent : IEquatable&lt;System.Runtime.DurableInstancing.InstancePersistenceEvent&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit InstancePersistenceEvent extends System.Object implements class System.IEquatable`1&lt;class System.Runtime.DurableInstancing.InstancePersistenceEvent&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Runtime.DurableInstancing.InstancePersistenceEvent&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ホストに状態に関して通知する場合にインスタンス ストアで実行されるイベントを表します。 例: <see cref="T:System.Activities.DurableInstancing.HasRunnableWorkflowEvent" /> および <see cref="T:System.Activities.DurableInstancing.HasActivatableWorkflowEvent" />。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceEvent.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>現在の <see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> オブジェクトが <see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> として変換された渡されたオブジェクトと同じであるかどうかを調べます。</summary>
+        <returns>返します<see langword="True" />オブジェクトが同じです。 それ以外の場合は、を返します<see langword="False" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Runtime.DurableInstancing.InstancePersistenceEvent persistenceEvent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Runtime.DurableInstancing.InstancePersistenceEvent persistenceEvent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceEvent.Equals(System.Runtime.DurableInstancing.InstancePersistenceEvent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="persistenceEvent" Type="System.Runtime.DurableInstancing.InstancePersistenceEvent" />
+      </Parameters>
+      <Docs>
+        <param name="persistenceEvent">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>現在の <see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> オブジェクトが渡された <see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> オブジェクトと同じであるかどうかを調べます。</summary>
+        <returns>返します<see langword="True" />オブジェクトが同じです。 それ以外の場合は、を返します<see langword="False" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceEvent.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> インスタンスのハッシュ コードを返します。</summary>
+        <returns>インスタンスのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public System.Xml.Linq.XName Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Linq.XName Name" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.DurableInstancing.InstancePersistenceEvent.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>永続性イベントの XName (名前と組み合わされた名前空間) を返します。</summary>
+        <value>永続性イベントの XName。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Runtime.DurableInstancing.InstancePersistenceEvent left, System.Runtime.DurableInstancing.InstancePersistenceEvent right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Runtime.DurableInstancing.InstancePersistenceEvent left, class System.Runtime.DurableInstancing.InstancePersistenceEvent right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceEvent.op_Equality(System.Runtime.DurableInstancing.InstancePersistenceEvent,System.Runtime.DurableInstancing.InstancePersistenceEvent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Runtime.DurableInstancing.InstancePersistenceEvent" />
+        <Parameter Name="right" Type="System.Runtime.DurableInstancing.InstancePersistenceEvent" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の <see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> オブジェクト。</param>
+        <param name="right">比較する 2 番目の <see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> オブジェクトが同じであるかどうかを示す値を返します。</summary>
+        <returns>
+          2 つのオブジェクトが同一である場合は <see langword="True" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Runtime.DurableInstancing.InstancePersistenceEvent left, System.Runtime.DurableInstancing.InstancePersistenceEvent right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Runtime.DurableInstancing.InstancePersistenceEvent left, class System.Runtime.DurableInstancing.InstancePersistenceEvent right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.DurableInstancing.InstancePersistenceEvent.op_Inequality(System.Runtime.DurableInstancing.InstancePersistenceEvent,System.Runtime.DurableInstancing.InstancePersistenceEvent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Runtime.DurableInstancing.InstancePersistenceEvent" />
+        <Parameter Name="right" Type="System.Runtime.DurableInstancing.InstancePersistenceEvent" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の <see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> オブジェクト。</param>
+        <param name="right">比較する 2 番目の <see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Runtime.DurableInstancing.InstancePersistenceEvent" /> オブジェクトが同じでないかどうかを示す値を返します。</summary>
+        <returns>
+          2 つのオブジェクトが同一である場合は <see langword="True" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

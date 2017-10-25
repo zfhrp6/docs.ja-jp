@@ -1,0 +1,491 @@
+<Type Name="IpcChannel" FullName="System.Runtime.Remoting.Channels.Ipc.IpcChannel">
+  <TypeSignature Language="C#" Value="public class IpcChannel : System.Runtime.Remoting.Channels.IChannelReceiver, System.Runtime.Remoting.Channels.IChannelSender, System.Runtime.Remoting.Channels.ISecurableChannel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IpcChannel extends System.Object implements class System.Runtime.Remoting.Channels.IChannel, class System.Runtime.Remoting.Channels.IChannelReceiver, class System.Runtime.Remoting.Channels.IChannelSender, class System.Runtime.Remoting.Channels.ISecurableChannel" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.Ipc.IpcChannel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Remoting</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.IChannelReceiver</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.IChannelSender</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.ISecurableChannel</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>IPC プロトコルを使用してメッセージを送信するチャネルの実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルは、リモート呼び出しを転送する.net Framework リモート処理インフラストラクチャによって使用されます。 クライアントが、リモート オブジェクトを呼び出すと呼び出しは、クライアント チャネルで送信され、サーバー チャネルによって受信されるメッセージにシリアル化されます。 メッセージを受信すると、それを逆シリアル化、処理します。 戻り値はすべては、サーバーのチャネルで送信され、クライアント チャネルで受信します。  
+  
+ <xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel>クラスは、便利なクラスの機能を組み合わせて、<xref:System.Runtime.Remoting.Channels.Ipc.IpcClientChannel>クラスおよび<xref:System.Runtime.Remoting.Channels.Ipc.IpcServerChannel>クラスです。  
+  
+> [!CAUTION]
+>  設定するときに、`exclusiveAddressUse`プロパティを`false`で、`properties`引数、いくつか<xref:System.Runtime.Remoting.Channels.Ipc.IpcServerChannel>同じ名前付きパイプのオブジェクトを登録することができます。 このような場合は、要求が登録されているチャネルのいずれかに移動できます。 この設定は、Alc も使用されている場合にのみセキュリティで保護されたと見なされます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel>リモート処理サーバーとそのクライアントを設定します。 この例には、3 つの部分が含まれています。  
+  
+-   サーバー  
+  
+-   クライアント  
+  
+-   サーバーとクライアントによって使用されるリモート オブジェクトです。  
+  
+ 次のコード例は、サーバーを示しています。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#10](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/server.cpp#10)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/server.cs#10)]  
+  
+ 次のコード例は、このサーバーのクライアントを示しています。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#20](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/client.cpp#20)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#20](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/client.cs#20)]  
+  
+ 次のコード例では、サーバーとクライアントによって使用されるリモート オブジェクトを示します。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#30](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/common.cpp#30)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#30](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/common.cs#30)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IpcChannel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Ipc.IpcChannel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Channels.Ipc.IpcChannel" />のみのクライアント チャネル、およびサーバー チャネルではないライセンス認証するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを使用する方法を示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#21](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/client.cpp#21)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#21](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/client.cs#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IpcChannel (string portName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string portName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Ipc.IpcChannel.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="portName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="portName">IPC ポートの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Channels.Ipc.IpcChannel" />サーバー チャネルは、指定された IPC ポートでリッスンを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを使用する方法を示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#11](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/server.cpp#11)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#11](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/server.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IpcChannel (System.Collections.IDictionary properties, System.Runtime.Remoting.Channels.IClientChannelSinkProvider clientSinkProvider, System.Runtime.Remoting.Channels.IServerChannelSinkProvider serverSinkProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary properties, class System.Runtime.Remoting.Channels.IClientChannelSinkProvider clientSinkProvider, class System.Runtime.Remoting.Channels.IServerChannelSinkProvider serverSinkProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Ipc.IpcChannel.#ctor(System.Collections.IDictionary,System.Runtime.Remoting.Channels.IClientChannelSinkProvider,System.Runtime.Remoting.Channels.IServerChannelSinkProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+        <Parameter Name="clientSinkProvider" Type="System.Runtime.Remoting.Channels.IClientChannelSinkProvider" />
+        <Parameter Name="serverSinkProvider" Type="System.Runtime.Remoting.Channels.IServerChannelSinkProvider" />
+      </Parameters>
+      <Docs>
+        <param name="properties">A<see cref="T:System.Collections.IDictionary" />コレクションのクライアントとサーバーのチャネルで使用する構成プロパティの値を指定します。</param>
+        <param name="clientSinkProvider"><see cref="T:System.Runtime.Remoting.Channels.IClientChannelSinkProvider" />クライアント チャネルで使用する実装。</param>
+        <param name="serverSinkProvider"><see cref="T:System.Runtime.Remoting.Channels.IServerChannelSinkProvider" />サーバー チャネルが使用する実装。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Channels.Ipc.IpcChannel" />シンクと指定された構成プロパティを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルの構成プロパティの詳細については、次を参照してください。[チャネルとフォーマッタの構成プロパティ](http://msdn.microsoft.com/en-us/226ecf74-ebbd-4ea0-a701-dcf4441deefe)です。  
+  
+ チャネル シンクは、基になるチャネルだけでなく、リモート オブジェクトにメッセージを送信するトランスポート機構によって使用されるストリーム経由でやり取りされるメッセージにアクセスできるようにするプラグインのポイントを提供します。 チャネル シンクは、また、クライアントとサーバー間でメッセージを転送します。 チャネル シンクは、一連の相互リンクされているし、すべてのチャネルのメッセージはこのシンク チェーンをメッセージが最後にシリアル化および転送します。 シンクの機能が必要でない場合は、設定、`clientSinkProvider`と`serverSinkProvider`パラメーター`null`です。  
+  
+> [!CAUTION]
+>  設定するときに、`exclusiveAddressUse`プロパティを`false`で、`properties`引数、いくつか<xref:System.Runtime.Remoting.Channels.Ipc.IpcServerChannel>同じ名前付きパイプのオブジェクトを登録することができます。 このような場合は、要求が登録されているチャネルのいずれかに移動できます。 この設定は、Alc も使用されている場合にのみセキュリティで保護されたと見なされます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを使用する方法を示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#41](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/server2.cpp#41)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#41](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/server2.cs#41)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IpcChannel (System.Collections.IDictionary properties, System.Runtime.Remoting.Channels.IClientChannelSinkProvider clientSinkProvider, System.Runtime.Remoting.Channels.IServerChannelSinkProvider serverSinkProvider, System.Security.AccessControl.CommonSecurityDescriptor securityDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary properties, class System.Runtime.Remoting.Channels.IClientChannelSinkProvider clientSinkProvider, class System.Runtime.Remoting.Channels.IServerChannelSinkProvider serverSinkProvider, class System.Security.AccessControl.CommonSecurityDescriptor securityDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Ipc.IpcChannel.#ctor(System.Collections.IDictionary,System.Runtime.Remoting.Channels.IClientChannelSinkProvider,System.Runtime.Remoting.Channels.IServerChannelSinkProvider,System.Security.AccessControl.CommonSecurityDescriptor)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+        <Parameter Name="clientSinkProvider" Type="System.Runtime.Remoting.Channels.IClientChannelSinkProvider" />
+        <Parameter Name="serverSinkProvider" Type="System.Runtime.Remoting.Channels.IServerChannelSinkProvider" />
+        <Parameter Name="securityDescriptor" Type="System.Security.AccessControl.CommonSecurityDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="properties">A<see cref="T:System.Collections.IDictionary" />コレクションのクライアントとサーバーのチャネルで使用する構成プロパティの値を指定します。</param>
+        <param name="clientSinkProvider"><see cref="T:System.Runtime.Remoting.Channels.IClientChannelSinkProvider" />クライアント チャネルで使用する実装。</param>
+        <param name="serverSinkProvider"><see cref="T:System.Runtime.Remoting.Channels.IServerChannelSinkProvider" />サーバー チャネルが使用する実装。</param>
+        <param name="securityDescriptor">セキュリティ記述子。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Channels.Ipc.IpcChannel" />シンクと指定された構成プロパティを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelData">
+      <MemberSignature Language="C#" Value="public object ChannelData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ChannelData" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Ipc.IpcChannel.ChannelData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル固有のデータを取得します。</summary>
+        <value>A<see cref="T:System.Runtime.Remoting.Channels.ChannelDataStore" />チャネル固有のデータを格納しているインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスとして返されますが<xref:System.Object?displayProperty=nameWithType>のインスタンスにこのプロパティの値をキャストできます<xref:System.Runtime.Remoting.Channels.ChannelDataStore>先のチャネルを記述する、<xref:System.Runtime.Remoting.Channels.Http.HttpServerChannel>オブジェクトの受信を待機します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel.ChannelData%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#15](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/server.cpp#15)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#15](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/server.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelName">
+      <MemberSignature Language="C#" Value="public string ChannelName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ChannelName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Ipc.IpcChannel.ChannelName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のチャネルの名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />チャネルの名前を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録されている各チャネルは、一意の名前を持ちます。 呼び出すときに、特定のチャネルを取得する名前が使用される<xref:System.Runtime.Remoting.Channels.ChannelServices.GetChannel%2A>です。 既定の名前は、"ipc"です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel.ChannelName%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#12](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/server.cpp#12)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#12](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/server.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelPriority">
+      <MemberSignature Language="C#" Value="public int ChannelPriority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ChannelPriority" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Ipc.IpcChannel.ChannelPriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のチャネルの優先度を取得します。</summary>
+        <value>チャネルに割り当てる優先度を表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の優先順位は 20 です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel.ChannelPriority%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#13](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/server.cpp#13)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#13](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/server.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMessageSink">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Messaging.IMessageSink CreateMessageSink (string url, object remoteChannelData, out string objectURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Messaging.IMessageSink CreateMessageSink(string url, object remoteChannelData, [out] string&amp; objectURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Ipc.IpcChannel.CreateMessageSink(System.String,System.Object,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="remoteChannelData" Type="System.Object" />
+        <Parameter Name="objectURI" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="url">新しいシンクがメッセージを配信する先の URL です。 指定できます<see langword="null" />です。</param>
+        <param name="remoteChannelData">新しいシンクがメッセージを配信する先のリモート ホストのチャネル データ オブジェクト。 指定できます<see langword="null" />です。</param>
+        <param name="objectURI">このメソッドが戻るとき、指定した URL またはチャネル データ オブジェクトにメッセージを配信する、新しいメッセージのチャネル シンクの URI を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定した URL またはチャネルのデータ オブジェクトにメッセージを配信するチャネル メッセージ シンクを返します。</summary>
+        <returns>指定した URL またはチャネルのデータ オブジェクトにメッセージを配信するチャネル メッセージ シンク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel.CreateMessageSink%2A>メソッドは URL またはチャネルのデータ オブジェクトを指定するか、メッセージを配信するチャネル メッセージ シンクを返します。 場合、`uri`パラメーターは`null`、`remoteChannelData`シンクのターゲットとして使用されます。 いずれか、`url`または`remoteChannelData`パラメーターを指定できます`null`、両方は使用しません。  
+  
+ チャネル シンクは、基になるチャネルだけでなく、リモート オブジェクトにメッセージを送信するトランスポート機構によって使用されるストリーム経由でやり取りされるメッセージにアクセスできるようにするプラグインのポイントを提供します。 チャネル シンクは互いにリンクされてのチェーン`ChannelSinkProviders`し、すべてのチャネルのメッセージはこのシンク チェーンをメッセージが最後にシリアル化および転送します。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel.CreateMessageSink%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#22](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/client.cpp#22)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#22](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/client.cs#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUrlsForUri">
+      <MemberSignature Language="C#" Value="public string[] GetUrlsForUri (string objectURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetUrlsForUri(string objectURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Ipc.IpcChannel.GetUrlsForUri(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectURI" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="objectURI">Url が必要であるオブジェクトの URI。</param>
+        <summary>現在でホストされている、指定した URI を持つオブジェクトのすべての Url の配列を返します<see cref="T:System.Runtime.Remoting.Channels.Ipc.IpcChannel" />です。</summary>
+        <returns>現在のホストされている、指定した URI を持つオブジェクトの Url の配列<see cref="T:System.Runtime.Remoting.Channels.Ipc.IpcChannel" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して<xref:System.Runtime.Remoting.Channels.ChannelServices.GetUrlsForObject%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel.GetUrlsForUri%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#19](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/server.cpp#19)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#19](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/server.cs#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecured">
+      <MemberSignature Language="C#" Value="public bool IsSecured { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecured" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Ipc.IpcChannel.IsSecured" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のチャネルがセキュリティで保護されたかどうかを示すブール値を設定します。</summary>
+        <value>現在のインスタンスがセキュリティで保護されたかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが必要ありませんする明示的に設定を設定するだけで十分です<xref:System.Runtime.Remoting.RemotingConfiguration.Configure%28System.String%2CSystem.Boolean%29>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public string Parse (string url, out string objectURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Parse(string url, [out] string&amp; objectURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Ipc.IpcChannel.Parse(System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="objectURI" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="url">リモートの既知のオブジェクトの URI を抽出する元の URL です。</param>
+        <param name="objectURI">このメソッドが戻るとき、<see cref="T:System.String" />リモートの既知のオブジェクトの URI を保持します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定された URL からチャネル URI と URI のリモートのよく知られているオブジェクトを抽出します。</summary>
+        <returns>現在のチャネルの URI。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトの URI は、特定のオブジェクト インスタンスを一意に識別する値です。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel.Parse%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#19](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CPP/server.cpp#19)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Ipc.IpcChannel#19](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Ipc.IpcChannel/CS/server.cs#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartListening">
+      <MemberSignature Language="C#" Value="public void StartListening (object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StartListening(object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Ipc.IpcChannel.StartListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">省略可能な初期化情報。</param>
+        <summary>現在のチャネルの要求のリッスンを開始するように指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しく初期化されたチャネルがリッスンを開始するには、このメソッドを呼び出す必要はありません。  
+  
+ このメソッドを使用して、再起動後にチャネルでリッスンしている、<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel.StopListening%2A>メソッドが呼び出されました。  
+  
+ `data`パラメーターは、特定の初期化状態をチャネルに渡すを使用することができます。 特定の状態をチャネルに渡すしたくない場合は、設定`data`に`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopListening">
+      <MemberSignature Language="C#" Value="public void StopListening (object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopListening(object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Ipc.IpcChannel.StopListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">チャネルの省略可能な状態情報。</param>
+        <summary>現在のチャネルの要求のリッスンを停止するように指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、チャネルでの待機を停止します。 リッスンして再起動して、以下の<xref:System.Runtime.Remoting.Channels.Ipc.IpcChannel.StartListening%2A>メソッドです。  
+  
+ `data`パラメーターは、特定の初期化状態をチャネルに渡すを使用することができます。 特定の状態をチャネルに渡すしたくない場合は、設定`data`に`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

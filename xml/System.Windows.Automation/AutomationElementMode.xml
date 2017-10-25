@@ -1,0 +1,69 @@
+<Type Name="AutomationElementMode" FullName="System.Windows.Automation.AutomationElementMode">
+  <TypeSignature Language="C#" Value="public enum AutomationElementMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AutomationElementMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.AutomationElementMode" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>UI オートメーション要素を返すときに使用する参照の種類を指定する値が含まれています。 これらの値がで使用される、<see cref="P:System.Windows.Automation.CacheRequest.AutomationElementMode" />プロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フル、既定値は、返される要素が、基になる完全参照を含むことを指定[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]です。 [なし] には、返される要素は、基になる UI への参照があるないと、キャッシュされた情報のみが含まれてを指定します。  
+  
+ 要素で特定の操作など<xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A>または<xref:System.Windows.Automation.AutomationElement.SetFocus%2A>、完全参照が必要です。 これらに対して実行しようとしています。 を [なし] を持つ要素がの結果、<xref:System.InvalidOperationException>です。  
+  
+ [なし] を使用するプロパティのみが必要な場合より効率的なオーバーヘッドを回避できるので完全参照を設定します。  
+  
+   
+  
+## Examples  
+ 次の例に、モードを設定する方法を示しています、<xref:System.Windows.Automation.CacheRequest>です。  
+  
+ [!code-csharp[UIAClient_snip#183](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#183)]
+ [!code-vb[UIAClient_snip#183](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#183)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Full">
+      <MemberSignature Language="C#" Value="Full" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Automation.AutomationElementMode Full = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.AutomationElementMode.Full" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElementMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返される要素が、基になる完全参照を持つことを指定[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Automation.AutomationElementMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.AutomationElementMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElementMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返される要素に、基になるへの参照がないことを指定[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]キャッシュされた情報のみを含めるとします。 たとえば、このモードは、項目自体への参照を取得することがなく、リスト ボックス内の項目の名前を取得するは使用可能性があります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,73 @@
+<Type Name="IServiceProvider" FullName="System.IServiceProvider">
+  <TypeSignature Language="C#" Value="public interface IServiceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.IServiceProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>サービス オブジェクト、つまり他のオブジェクトに対するカスタム サポートを提供するオブジェクトを取得するためのメカニズムを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、他のオブジェクトへのサービスを提供するクラスまたは値の型によって実装されます。  
+  
+ <xref:System.IServiceProvider.GetService%2A>このインターフェイスのメソッドは、サービスを提供するオブジェクトを取得します。  
+  
+ <xref:System.IServiceProvider>インターフェイスはいくつかの型を含む<xref:System.Web.HttpContext?displayProperty=nameWithType>、 <xref:System.ComponentModel.LicenseContext?displayProperty=nameWithType>、 <xref:System.ComponentModel.MarshalByValueComponent?displayProperty=nameWithType>、および<xref:System.ComponentModel.Design.ServiceContainer?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IServiceProvider.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得対象となるサービスの型を指定するオブジェクト。</param>
+        <summary>指定した型のサービス オブジェクトを取得します。</summary>
+        <returns>型のサービス オブジェクト<paramref name="serviceType" />です。  
+  
+ または  
+  
+ <see langword="null" />型のサービス オブジェクトが存在しない場合<paramref name="serviceType" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

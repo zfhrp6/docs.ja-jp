@@ -1,0 +1,905 @@
+<Type Name="ServiceModelSecurityTokenRequirement" FullName="System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement">
+  <TypeSignature Language="C#" Value="public abstract class ServiceModelSecurityTokenRequirement : System.IdentityModel.Selectors.SecurityTokenRequirement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ServiceModelSecurityTokenRequirement extends System.IdentityModel.Selectors.SecurityTokenRequirement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Selectors.SecurityTokenRequirement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>抽象クラスを実装した場合は、Windows Communication Foundation (WCF) に固有要求または認証されるトークンのセキュリティ プロパティ要件を指定します。 セキュリティ トークン マネージャーは、セキュリティ トークン プロバイダーとトークンの要件に基づいた WCF セキュリティ プロセッサで使用されるセキュリティ トークンの認証システムを構築します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ トークンは、資格情報に基づいて認証情報および承認情報を転送する、暗号化署名されたデータの単位です。 この派生クラスは、セキュリティ トークン マネージャーが、セキュリティ トークンに必要な事項 (キー サイズ、キーの種類、キーの使用方法など) を指定するのに使用します。 セキュリティ トークンが指定された条件に一致することが判明すると、<xref:System.IdentityModel.Selectors.SecurityTokenProvider> および <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> を作成して、それぞれ送信 SOAP メッセージのセキュリティ トークンの提供、および受信 SOAP メッセージのセキュリティ トークンの認証を行うことができます。 たとえば、送信 SOAP メッセージの既定のセキュリティ トークン マネージャーの `CreateSecurityTokenProvider` メソッドに <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> パラメーターを指定して呼び出すことにより、そのセキュリティ トークン プロバイダーに一致するセキュリティ トークン プロバイダーを取得できます。  
+  
+ このクラスの基本クラスである <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> には、プロパティ名をその値にマッピングするディクショナリ <xref:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties%2A> が含まれています。 このクラスには、"Property" で終わる名前のプロパティが多数含まれます。 これらのプロパティから返される文字列を使用して、ディクショナリ内の対応する値が`get`または`set`されます。 たとえば、<xref:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.AuditLogLocationProperty%2A> は <xref:System.ServiceModel.Security.Tokens.RecipientServiceModelSecurityTokenRequirement.AuditLogLocation%2A> プロパティの値のキーです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ServiceModelSecurityTokenRequirement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.SupportSecurityContextCancellationProperty%2A> に `false` が設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditLogLocationProperty">
+      <MemberSignature Language="C#" Value="public static string AuditLogLocationProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string AuditLogLocationProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.AuditLogLocationProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証結果を記録するときに使用する監査ログの場所を値とするトークン要件プロパティ名を取得します (サービスのみ)。</summary>
+        <value>トークン要件の Properties ディクショナリ内の AuditLogLocation のキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ名に対応する値は、次のメンバーを持つ列挙体である <xref:System.ServiceModel.AuditLogLocation> 型です。  
+  
+-   <xref:System.ServiceModel.AuditLogLocation.Application> : オペレーティング システムのイベント ログ内のアプリケーション ログ。  
+  
+-   <xref:System.ServiceModel.AuditLogLocation.Default> : オペレーティング システムによって決定される既定の場所。  
+  
+-   <xref:System.ServiceModel.AuditLogLocation.Security> : イベント ログ内のセキュリティ ログ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelParametersCollectionProperty">
+      <MemberSignature Language="C#" Value="public static string ChannelParametersCollectionProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ChannelParametersCollectionProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.ChannelParametersCollectionProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル パラメーターのコレクションを値とするトークン要件プロパティ名を取得します (クライアントのみ)。</summary>
+        <value>キーを<see langword="ChannelParametersCollection" />トークン要件の Properties ディクショナリ内です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ名に対応する値は <xref:System.ServiceModel.Channels.ChannelParameterCollection> 型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DuplexClientLocalAddressProperty">
+      <MemberSignature Language="C#" Value="public static string DuplexClientLocalAddressProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string DuplexClientLocalAddressProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.DuplexClientLocalAddressProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see langword="DuplexClientLocalAddress" /> コレクションのインデックス名を示す値を取得します。</summary>
+        <value><see cref="P:System.IdentityModel.Selectors.SecurityTokenRequirement.Properties" /> プロパティの <see langword="DuplexClientLocalAddress" /> コレクションのインデックス名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トークン要件を作成するチャネルが双方向チャネルである場合、このプロパティには、双方向チャネルが受信メッセージをリッスンするエンドポイント アドレスが格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointFilterTableProperty">
+      <MemberSignature Language="C#" Value="public static string EndpointFilterTableProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string EndpointFilterTableProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.EndpointFilterTableProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス エンドポイントが受信するメッセージのフィルターを格納しているエンドポイント フィルター テーブルを値とするトークン要件プロパティのキーを取得します。 これはサービスのプロパティです。</summary>
+        <value>トークン要件のエンドポイント フィルター テーブル プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに対応する値は <xref:System.ServiceModel.Dispatcher.IMessageFilterTable%601> 型で、ジェネリック型は <xref:System.ServiceModel.EndpointAddress> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtendedProtectionPolicy">
+      <MemberSignature Language="C#" Value="public static string ExtendedProtectionPolicy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ExtendedProtectionPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.ExtendedProtectionPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信クライアント接続を検証するためにサーバーによって使用される保護ポリシーを取得します。</summary>
+        <value>サーバーによって使用される保護ポリシー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpAuthenticationSchemeProperty">
+      <MemberSignature Language="C#" Value="public static string HttpAuthenticationSchemeProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string HttpAuthenticationSchemeProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.HttpAuthenticationSchemeProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要求が HTTP 認証に使用されるトークン プロバイダーまたはトークン認証システムの要求である場合、HTTP 認証方式を値とするトークン要件プロパティのキーを取得します。</summary>
+        <value>トークン要件の HTTP 認証方式プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに対応する値は <xref:System.Net.AuthenticationSchemes> 型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitiator">
+      <MemberSignature Language="C#" Value="public bool IsInitiator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInitiator" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.IsInitiator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークン要件を作成するエンドポイントがイニシエーターか受信者かを示す値を取得します。</summary>
+        <value>
+          要求がチャネルのイニシエーターによって行われた場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitiatorProperty">
+      <MemberSignature Language="C#" Value="public static string IsInitiatorProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string IsInitiatorProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.IsInitiatorProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求がチャネルのイニシエーターによって行われたか、チャネルの受信者によって行われたかを示す値を持つトークン要件プロパティのキーを取得します。</summary>
+        <value>要件を作成するエンドポイントがイニシエーターか受信者かを示す値を持つトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトークン要件キーに対応する値は Boolean 型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOutOfBandTokenProperty">
+      <MemberSignature Language="C#" Value="public static string IsOutOfBandTokenProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string IsOutOfBandTokenProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.IsOutOfBandTokenProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要求がクライアントまたはサービスで構成されたトークンの要求であるかどうかを示す値を持つトークン要件プロパティのキーを取得します。</summary>
+        <value>この要求がクライアントまたはサービスで構成されたトークンの要求であるかどうかを示す値を持つトークン要件プロパティのキー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuedSecurityTokenParametersProperty">
+      <MemberSignature Language="C#" Value="public static string IssuedSecurityTokenParametersProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string IssuedSecurityTokenParametersProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.IssuedSecurityTokenParametersProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要件が発行済みトークンの要件である場合、トークンに関する情報を格納している <see cref="T:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" /> を値とするトークン要件プロパティのキーを取得します。</summary>
+        <value>要件が発行済みトークンの要件である場合、トークンに関する情報を格納している <see cref="T:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters" /> を値とするトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに対応する値は <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters> 型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress IssuerAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointAddress IssuerAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.IssuerAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要件が発行済みトークンの要件である場合、このプロパティには発行者のエンドポイント アドレスが格納されます。</summary>
+        <value>トークン発行者のエンドポイント アドレス。 これは、発行済みトークンに使用されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerAddressProperty">
+      <MemberSignature Language="C#" Value="public static string IssuerAddressProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string IssuerAddressProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.IssuerAddressProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要件が発行済みトークンの要件である場合、発行者の <see cref="T:System.ServiceModel.EndpointAddress" /> を値とするトークン要件プロパティのキーを取得します。</summary>
+        <value>発行者の <see cref="T:System.ServiceModel.EndpointAddress" /> を値とするトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに対応する値は <xref:System.ServiceModel.EndpointAddress> 型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerBinding">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Binding IssuerBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.Binding IssuerBinding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.IssuerBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Binding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要件が発行済みトークンの要件である場合、このプロパティには、発行者との通信に使用するバインディングが格納されます。</summary>
+        <value>ユーザーとの通信に使用されるバインディング。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ トークンの発行者への通信に使用するバインディングを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerBindingContextProperty">
+      <MemberSignature Language="C#" Value="public static string IssuerBindingContextProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string IssuerBindingContextProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.IssuerBindingContextProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要件が発行済みトークンの要件である場合、発行者との対話に使用する <see cref="T:System.ServiceModel.Channels.BindingContext" /> を値とするトークン要件プロパティのキーを取得します。</summary>
+        <value>発行者との対話に使用する <see cref="T:System.ServiceModel.Channels.BindingContext" /> を値とするトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに対応する値は <xref:System.ServiceModel.Channels.BindingContext> 型です。 このプロパティは、セキュリティで保護された通信および SPNEGO/TLSNEGO 認証に関するトークン要件に追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerBindingProperty">
+      <MemberSignature Language="C#" Value="public static string IssuerBindingProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string IssuerBindingProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.IssuerBindingProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要件が発行済みトークンの要件である場合、発行者との対話に使用するバインディングを値とするトークン要件プロパティのキーを取得します。</summary>
+        <value>発行者との対話に使用するバインディングを値とするトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに対応する値は <xref:System.ServiceModel.Channels.Binding> 型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListenUriProperty">
+      <MemberSignature Language="C#" Value="public static string ListenUriProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ListenUriProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.ListenUriProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求を行うサービス エンドポイントがリッスンしている URI を値とするトークン要求プロパティのキーを取得します (サービスのみ)。</summary>
+        <value>要求を行うサービス エンドポイントがリッスンしている URI を値とするトークン要求プロパティのキー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageAuthenticationAuditLevelProperty">
+      <MemberSignature Language="C#" Value="public static string MessageAuthenticationAuditLevelProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string MessageAuthenticationAuditLevelProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.MessageAuthenticationAuditLevelProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証結果を記録するときに使用する監査レベルを値とするトークン要件プロパティのキーを取得します (サービスのみ)。</summary>
+        <value>認証結果を記録するときに使用する監査レベルを値とするトークン要件プロパティのキーを取得します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに対応する値は、次のメンバーを持つ列挙体である <xref:System.ServiceModel.AuditLevel> 型です。  
+  
+-   <xref:System.ServiceModel.AuditLevel.Failure> : 失敗したセキュリティ関連イベントだけが記録されます。  
+  
+-   <xref:System.ServiceModel.AuditLevel.None> : イベントは記録されません。  
+  
+-   <xref:System.ServiceModel.AuditLevel.Success> : 成功したセキュリティ関連イベントだけが記録されます。  
+  
+-   <xref:System.ServiceModel.AuditLevel.SuccessOrFailure> : 失敗したセキュリティ関連イベントと成功したセキュリティ関連イベントの両方が記録されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageDirectionProperty">
+      <MemberSignature Language="C#" Value="public static string MessageDirectionProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string MessageDirectionProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.MessageDirectionProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用する <see cref="T:System.ServiceModel.Description.MessageDirection" /> 列挙体のメンバーであり、クライアントとサーバーの間で送信されるメッセージにトークン プロバイダーが必要かどうかを示す値を持つトークン要件プロパティのキーを取得します。</summary>
+        <value>使用する <see cref="T:System.ServiceModel.Description.MessageDirection" /> 列挙体のメンバーを値とするトークン要件プロパティのキーを取得します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに対応する値は <xref:System.ServiceModel.Description.MessageDirection> 型です。 このプロパティは、資格情報の実装が、要求と応答の処理のためのさまざまなトークンを提供するために使用します。 たとえば、資格情報の実装で、エンドポイントが送信メッセージに署名するための証明書と、相手側がメッセージを暗号化するために使用する証明書として異なる証明書を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageSecurityVersion">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.SecurityTokenVersion MessageSecurityVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.SecurityTokenVersion MessageSecurityVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.MessageSecurityVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>必要に応じて、使用するメッセージ セキュリティ バージョンを取得または設定します。</summary>
+        <value>メッセージ セキュリティ バージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageSecurityVersion> には、メッセージの各構成部分のバージョン番号を指定する多数のプロパティが含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageSecurityVersionProperty">
+      <MemberSignature Language="C#" Value="public static string MessageSecurityVersionProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string MessageSecurityVersionProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.MessageSecurityVersionProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネルが構成された <see cref="T:System.ServiceModel.Channels.MessageVersion" /> を値とするトークン要件プロパティのキーを取得します。</summary>
+        <value>チャネルが構成された <see cref="T:System.ServiceModel.Channels.MessageVersion" /> を値とするトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageSecurityVersion> には、メッセージの各構成部分のバージョン番号を指定する多数のプロパティが含まれます。 <xref:System.ServiceModel.Channels.MessageVersion> は、トークン プロバイダーとトークン認証システムの実装が、セキュリティで保護された通信などでエンドポイントからトークンを取得するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="protected const string Namespace;" />
+      <MemberSignature Language="ILAsm" Value=".field family static literal string Namespace" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.Namespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の名前空間を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferSslCertificateAuthenticatorProperty">
+      <MemberSignature Language="C#" Value="public static string PreferSslCertificateAuthenticatorProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string PreferSslCertificateAuthenticatorProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.PreferSslCertificateAuthenticatorProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を持つは SSL セキュリティ トークン認証システムを作成するために使用するトークン要件プロパティのキーを取得します。</summary>
+        <value>値を持つは SSL セキュリティ トークン認証システムを作成するために使用するトークン要件プロパティのキー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivacyNoticeUriProperty">
+      <MemberSignature Language="C#" Value="public static string PrivacyNoticeUriProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string PrivacyNoticeUriProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.PrivacyNoticeUriProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスにプライバシー ポリシーがある場合、サービスのプライバシー ポリシーを指す URI へのリンクを値とするトークン要件プロパティのキーを取得します。</summary>
+        <value>サービスのプライバシー ポリシーを指す URI へのリンクを値とするトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに対応する値は <xref:System.Uri> 型です。 このプロパティを使用して、[!INCLUDE[infocard](~/includes/infocard-md.md)] と同様の方法でユーザー インターフェイス (UI) 内にリンクを表示できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivacyNoticeVersionProperty">
+      <MemberSignature Language="C#" Value="public static string PrivacyNoticeVersionProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string PrivacyNoticeVersionProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.PrivacyNoticeVersionProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライバシーに関する声明のバージョンを表す文字列を値とするトークン要件プロパティのキーを取得します。</summary>
+        <value>プライバシーに関する声明のバージョンを表す値を持つトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに対応する値は <xref:System.Int32> 型です。 このプロパティを使用して、[!INCLUDE[infocard](~/includes/infocard-md.md)] と同様の方法でユーザー インターフェイス (UI) 内にリンクを表示できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecureConversationSecurityBindingElement">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.SecurityBindingElement SecureConversationSecurityBindingElement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.SecurityBindingElement SecureConversationSecurityBindingElement" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.SecureConversationSecurityBindingElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティで保護された通信のブートストラップ メッセージをセキュリティで保護するために使用されるセキュリティ バインディング要素を取得または設定します。</summary>
+        <value>セキュリティで保護されたメッセージ交換のブートス トラップ メッセージを保護するために使用されるセキュリティ バインド要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、セキュリティで保護された通信のブートストラップ メッセージをセキュリティで保護するために使用されるセキュリティ バインディング要素を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecureConversationSecurityBindingElementProperty">
+      <MemberSignature Language="C#" Value="public static string SecureConversationSecurityBindingElementProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SecureConversationSecurityBindingElementProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.SecureConversationSecurityBindingElementProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティで保護されたブートストラップ メッセージをセキュリティで保護するために使用されるセキュリティ バインディング要素を値とするトークン要件プロパティのキーを取得します。</summary>
+        <value>セキュリティで保護されたブートストラップ メッセージをセキュリティで保護するために使用されるセキュリティ バインディング要素を値とするトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このキーに対応する値は <xref:System.ServiceModel.Channels.SecurityBindingElement> 型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityAlgorithmSuite">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityAlgorithmSuite SecurityAlgorithmSuite { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecurityAlgorithmSuite SecurityAlgorithmSuite" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.SecurityAlgorithmSuite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>必要に応じて、使用するセキュリティ アルゴリズム スイートを取得または設定します。</summary>
+        <value>使用されるセキュリティ アルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> オブジェクトには、特定の条件で使用するセキュリティ アルゴリズムを指定する多数のプロパティが含まれます。 また、サービスが提供するさまざまなセキュリティ機能も記述されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityAlgorithmSuiteProperty">
+      <MemberSignature Language="C#" Value="public static string SecurityAlgorithmSuiteProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SecurityAlgorithmSuiteProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.SecurityAlgorithmSuiteProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネルがメッセージ セキュリティを実行するために使用するアルゴリズム スイートを値とするトークン要件プロパティのキーを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" /> を値とするトークン要件プロパティのキー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityBindingElement">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.SecurityBindingElement SecurityBindingElement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.SecurityBindingElement SecurityBindingElement" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.SecurityBindingElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ バインド要素を取得または設定します。</summary>
+        <value>セキュリティ バインディング要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP メッセージ セキュリティの場合、このプロパティには、トークン要件を生成するバインディングのセキュリティ バインディング要素が格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityBindingElementProperty">
+      <MemberSignature Language="C#" Value="public static string SecurityBindingElementProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SecurityBindingElementProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.SecurityBindingElementProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネルの作成に使用されるセキュリティ バインディング要素を値とするトークン要件プロパティのキーを取得します。</summary>
+        <value>チャネルの作成に使用される <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> を値とするトークン要件プロパティのキー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportingTokenAttachmentModeProperty">
+      <MemberSignature Language="C#" Value="public static string SupportingTokenAttachmentModeProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SupportingTokenAttachmentModeProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.SupportingTokenAttachmentModeProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求がサポート トークンの要求である場合、関連付けられている <see cref="T:System.ServiceModel.Security.SecurityTokenAttachmentMode" /> 列挙体のメンバーを値とするトークン要件プロパティのキーを取得します。</summary>
+        <value>関連付けられている <see cref="T:System.ServiceModel.Security.SecurityTokenAttachmentMode" /> 列挙体のメンバーを値とするトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求がサポート トークンの要求である場合、`SupportingTokenAttachmentMode` プロパティは <xref:System.ServiceModel.Security.SecurityTokenAttachmentMode> 列挙体のメンバーです。 サポート トークンには、プリンシパル トークンに含まれていない追加のバインディング クレームを指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportSecurityContextCancellationProperty">
+      <MemberSignature Language="C#" Value="public static string SupportSecurityContextCancellationProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SupportSecurityContextCancellationProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.SupportSecurityContextCancellationProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティで保護された通信のトークンが、セキュリティ セッション用である (この場合、セッションの有効期間はユーザーのチャネルの有効期間に関連付けられます) のか、それともデータグラムのセキュリティ チャネル用であるのかを示す値を持つトークン要件プロパティのキーを取得します。</summary>
+        <value>セキュリティで保護された通信をキャンセル可能にするかどうかを示す値を持つトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要件がセキュリティで保護された通信のトークンの要件である場合、`SupportSecurityContextCancellation` には、セキュリティで保護された通信のトークンが、セキュリティ セッション用である (この場合は、セッションの有効期間がユーザーのチャネルの有効期間に関連付けられます) のか、それともデータグラムのセキュリティ チャネル用であるのかを示す値が格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressAuditFailureProperty">
+      <MemberSignature Language="C#" Value="public static string SuppressAuditFailureProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SuppressAuditFailureProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.SuppressAuditFailureProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証結果を記録するときに発生したエラーを無視するかどうかを示す値を持つトークン要件プロパティのキーを取得します (サービスのみ)。</summary>
+        <value>認証結果を記録するときに発生したエラーを無視するかどうかを示す値を持つトークン要件プロパティのキー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetAddressProperty">
+      <MemberSignature Language="C#" Value="public static string TargetAddressProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string TargetAddressProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.TargetAddressProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネルが対話するエンドポイント アドレスを値とするトークン要件プロパティのキーを取得します (クライアントのみ)。</summary>
+        <value>チャネルが対話する <see cref="T:System.ServiceModel.EndpointAddress" /> を値とするトークン要件プロパティのキー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportScheme">
+      <MemberSignature Language="C#" Value="public string TransportScheme { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TransportScheme" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.TransportScheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスポート スキームを取得または設定します。</summary>
+        <value>トランスポート スキーム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランスポート セキュリティの場合、このプロパティには、トークン要件を生成する `TransportBindingElement` のトランスポート スキームが格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportSchemeProperty">
+      <MemberSignature Language="C#" Value="public static string TransportSchemeProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string TransportSchemeProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.TransportSchemeProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求がトランスポート セキュリティで使用されるトークン プロバイダーまたはトークン認証システムの要求である場合、この文字列は、トランスポート スキームを値とするトークン要件プロパティのキーです。</summary>
+        <value>トランスポート スキームを値とするトークン要件プロパティのキー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViaProperty">
+      <MemberSignature Language="C#" Value="public static string ViaProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ViaProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenRequirement.ViaProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネルが接続する経由 URI を値とするトークン要件プロパティのキーを取得します (クライアントのみ)。</summary>
+        <value>チャネルが接続する経由 URI を値とするトークン要件プロパティのキー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.Tokens.InitiatorServiceModelSecurityTokenRequirement.Via%2A> プロパティには、中継送信先の URI が格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

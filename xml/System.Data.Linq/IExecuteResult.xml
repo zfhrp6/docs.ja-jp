@@ -1,0 +1,74 @@
+<Type Name="IExecuteResult" FullName="System.Data.Linq.IExecuteResult">
+  <TypeSignature Language="C#" Value="public interface IExecuteResult : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExecuteResult implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.IExecuteResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>戻り値またはクエリの実行の結果へのアクセスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetParameterValue">
+      <MemberSignature Language="C#" Value="public object GetParameterValue (int parameterIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetParameterValue(int32 parameterIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.IExecuteResult.GetParameterValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterIndex">取得するパラメーターのインデックス。</param>
+        <summary>アクセスできるように、 * n*番目の出力パラメーターです。</summary>
+        <returns>指定されたパラメーターの値を格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは通常、クエリが出力パラメーターをマップされた関数の場合に使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnValue">
+      <MemberSignature Language="C#" Value="public object ReturnValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ReturnValue" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.IExecuteResult.ReturnValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>戻り値または実行されたクエリの結果を取得します。</summary>
+        <value>値または実行されたクエリの結果。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオブジェクトと同じ基になる型には、`Type`クエリ式のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

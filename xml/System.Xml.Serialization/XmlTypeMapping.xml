@@ -1,0 +1,205 @@
+<Type Name="XmlTypeMapping" FullName="System.Xml.Serialization.XmlTypeMapping">
+  <TypeSignature Language="C#" Value="public class XmlTypeMapping : System.Xml.Serialization.XmlMapping" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlTypeMapping extends System.Xml.Serialization.XmlMapping" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlTypeMapping" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.Serialization.XmlMapping</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>別の 1 つの型のマッピングを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlTypeMapping>でエンコードされた SOAP XML としてオブジェクトをシリアル化するクラスを使用します。 結果の XML は、World Wide Web Consortium) (www.w3.org) ドキュメント、「簡易オブジェクト アクセス プロトコル (SOAP) 1.1」のセクション 5 に準拠します。 作成、<xref:System.Xml.Serialization.XmlTypeMapping>を呼び出して、<xref:System.Xml.Serialization.SoapReflectionImporter.ImportTypeMapping%2A>のメソッド、<xref:System.Xml.Serialization.SoapReflectionImporter>クラスです。 使用して、<xref:System.Xml.Serialization.XmlTypeMapping>のインスタンスを構築するために、<xref:System.Xml.Serialization.XmlSerializer>クラスです。 シリアル化を制御するには、いずれかで表示されている属性を使用[でエンコードされた SOAP シリアル化を制御する属性](~/docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスのインスタンスをシリアル化`Transportation`という名前のフィールドを格納している`Vehicle`です。 A<xref:System.Xml.Serialization.SoapElementAttribute>フィールドに適用します。 フィールドがシリアル化する場合は、"Vehicle"ではなく"Wheels"は XML 要素名です。 `SerializeOverride`メソッドを作成、<xref:System.Xml.Serialization.SoapElementAttribute>設定と、<xref:System.Xml.Serialization.SoapAttributes.SoapElement%2A>のプロパティ、<xref:System.Xml.Serialization.SoapAttributes>を<xref:System.Xml.Serialization.SoapElementAttribute>です。 <xref:System.Xml.Serialization.SoapAttributes>に追加、<xref:System.Xml.Serialization.SoapAttributeOverrides>作成に使用される、<xref:System.Xml.Serialization.XmlTypeMapping>です。 <xref:System.Xml.Serialization.XmlSerializer>で構築された、 <xref:System.Xml.Serialization.XmlTypeMapping>、クラスのインスタンスおよび、`Transportation`クラスは、再度シリアル化します。 <xref:System.Xml.Serialization.SoapElementAttribute>はシリアル化を上書きに使用すると、生成された XML 要素名が、"Wheels"ではなく"Truck"です。  
+  
+ [!code-cpp[SoapElementOverrides#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapElementOverrides/CPP/soapelementoverrides.cpp#1)]
+ [!code-csharp[SoapElementOverrides#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapElementOverrides/CS/soapelementoverrides.cs#1)]
+ [!code-vb[SoapElementOverrides#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapElementOverrides/VB/soapelementoverrides.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TypeFullName">
+      <MemberSignature Language="C#" Value="public string TypeFullName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeFullName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeMapping.TypeFullName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前空間 (または名前空間) を含む完全修飾型名と入力します。</summary>
+        <value>完全修飾型名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[XmlTypeMapping Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlTypeMapping Example/CPP/mapping.cpp#1)]
+ [!code-csharp[XmlTypeMapping Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlTypeMapping Example/CS/mapping.cs#1)]
+ [!code-vb[XmlTypeMapping Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XmlTypeMapping Example/VB/mapping.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public string TypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeMapping.TypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てられたオブジェクトの型名を取得します。</summary>
+        <value>割り当てられたオブジェクトの型名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型名は、割り当てられたオブジェクトのクラスの名前です。  
+  
+ 完全修飾名を調べることによっても確認できます、<xref:System.Xml.Serialization.XmlTypeMapping.TypeFullName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[XmlTypeMapping Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlTypeMapping Example/CPP/mapping.cpp#1)]
+ [!code-csharp[XmlTypeMapping Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlTypeMapping Example/CS/mapping.cs#1)]
+ [!code-vb[XmlTypeMapping Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XmlTypeMapping Example/VB/mapping.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XsdTypeName">
+      <MemberSignature Language="C#" Value="public string XsdTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XsdTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てられたオブジェクトの XML 要素名を取得します。</summary>
+        <value>割り当てられたオブジェクトの XML 要素名。 既定では、オブジェクトのクラス名です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトの代替要素名を設定するには、適用、<xref:System.Xml.Serialization.SoapTypeAttribute>を設定し、クラス、<xref:System.Xml.Serialization.SoapTypeAttribute.TypeName%2A>プロパティを新しい値。  
+  
+   
+  
+## Examples  
+ [!code-cpp[XmlTypeMapping Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlTypeMapping Example/CPP/mapping.cpp#1)]
+ [!code-csharp[XmlTypeMapping Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlTypeMapping Example/CS/mapping.cs#1)]
+ [!code-vb[XmlTypeMapping Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XmlTypeMapping Example/VB/mapping.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XsdTypeNamespace">
+      <MemberSignature Language="C#" Value="public string XsdTypeNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XsdTypeNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てられたオブジェクトの XML 名前空間を取得します。</summary>
+        <value>割り当てられたオブジェクトの XML 名前空間。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトの名前空間の名前を設定するには、適用、<xref:System.Xml.Serialization.SoapTypeAttribute>を設定し、クラス、<xref:System.Xml.Serialization.SoapTypeAttribute.Namespace%2A>プロパティを新しい値。  
+  
+   
+  
+## Examples  
+ [!code-cpp[XmlTypeMapping Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlTypeMapping Example/CPP/mapping.cpp#1)]
+ [!code-csharp[XmlTypeMapping Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlTypeMapping Example/CS/mapping.cs#1)]
+ [!code-vb[XmlTypeMapping Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XmlTypeMapping Example/VB/mapping.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

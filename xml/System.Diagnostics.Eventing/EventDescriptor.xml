@@ -1,0 +1,213 @@
+<Type Name="EventDescriptor" FullName="System.Diagnostics.Eventing.EventDescriptor">
+  <TypeSignature Language="C#" Value="public struct EventDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public ansi sealed beforefieldinit EventDescriptor extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Eventing.EventDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベントを定義するメタデータが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、マニフェストで定義されているイベントを表します。 マニフェストを作成した後は、リソース ファイルを生成するのにメッセージ コンパイラ (MC.exe) を使用します。 プロセスの過程では、次の例のようにを C では、イベント記述子を含むヘッダー ファイルがされます。  
+  
+```  
+EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR ReadEvent = {0x1, 0x0, 0x10, 0x4, 0x0, 0x0, 0x8000000000000005};  
+```  
+  
+ 次の例で示すように、このクラスのインスタンスを作成するのに記述子の値を使用します。 キーワードは、符号なし long 型の値し、時間の長い; に直接キャストできません。使用する必要があります、`unchecked`言語キーワードを割り当てる。  
+  
+```  
+unchecked  
+{  
+    readEvent = new EventDescriptor(0x1, 0x0, 0x10, 0x4, 0x0, 0x0, (long)0x8000000000000005);  
+}  
+```  
+  
+ 呼び出すときに、記述子を使用する、<xref:System.Diagnostics.Eventing.EventProvider.WriteEvent%2A?displayProperty=nameWithType>または<xref:System.Diagnostics.Eventing.EventProvider.WriteEvent%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 詳細については、マニフェストを作成およびメッセージ コンパイラを使用して、次を参照してください[イベント発行元の開発。](https://msdn.microsoft.com/en-us/library/windows/desktop/aa964766\(v=vs.85\).aspx)  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventDescriptor (int id, byte version, byte channel, byte level, byte opcode, int task, long keywords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 id, unsigned int8 version, unsigned int8 channel, unsigned int8 level, unsigned int8 opcode, int32 task, int64 keywords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.EventDescriptor.#ctor(System.Int32,System.Byte,System.Byte,System.Byte,System.Byte,System.Int32,System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="version" Type="System.Byte" />
+        <Parameter Name="channel" Type="System.Byte" />
+        <Parameter Name="level" Type="System.Byte" />
+        <Parameter Name="opcode" Type="System.Byte" />
+        <Parameter Name="task" Type="System.Int32" />
+        <Parameter Name="keywords" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="id">イベント識別子。</param>
+        <param name="version">イベントのバージョン。 バージョンにはイベント定義のリビジョンが示されます。 このメンバーと ID メンバーは、一意のイベントの識別に使用できます。</param>
+        <param name="channel">イベントの潜在的なターゲットを定義します。</param>
+        <param name="level">イベントに含まれる詳細レベルを指定します。</param>
+        <param name="opcode">イベントの書き込み時に実行する操作。</param>
+        <param name="task">イベントの書き込みを行うアプリケーションの論理コンポーネントを識別します。</param>
+        <param name="keywords">イベントのカテゴリを指定するビット マスク。 キーワードには、1 つまたは複数のプロバイダー定義のキーワード、標準のキーワード、またはその両方を含めることができます。</param>
+        <summary><see cref="T:System.Diagnostics.Eventing.EventDescriptor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのパラメーターの詳細については、「の属性、 [EventDefinitionType](https://msdn.microsoft.com/en-us/library/windows/desktop/aa382754\(v=vs.85\).aspx)複合型。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Channel">
+      <MemberSignature Language="C#" Value="public byte Channel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Channel" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.EventDescriptor.Channel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントの記述子からチャンネルの値を取得します。</summary>
+        <value>イベントの潜在的なターゲットを定義するチャネル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventId">
+      <MemberSignature Language="C#" Value="public int EventId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EventId" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.EventDescriptor.EventId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントの記述子からイベントの識別子の値を取得します。</summary>
+        <value>イベント識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keywords">
+      <MemberSignature Language="C#" Value="public long Keywords { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Keywords" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.EventDescriptor.Keywords" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントの記述子からキーワード値を取得します。</summary>
+        <value>イベントのカテゴリを指定するビット マスクは、キーワードです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Level">
+      <MemberSignature Language="C#" Value="public byte Level { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Level" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.EventDescriptor.Level" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントの記述子からレベルの値を取得します。</summary>
+        <value>イベントに含まれる詳細のレベルです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Opcode">
+      <MemberSignature Language="C#" Value="public byte Opcode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Opcode" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.EventDescriptor.Opcode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントの記述子から、操作コードの値を取得します。</summary>
+        <value>時に実行される操作、イベントが書き込まれます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Task">
+      <MemberSignature Language="C#" Value="public int Task { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Task" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.EventDescriptor.Task" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントの記述子からタスクの値を取得します。</summary>
+        <value>イベントの書き込みを行うアプリケーションの論理コンポーネントを識別するタスク。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public byte Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Version" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.EventDescriptor.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントの記述子からバージョンの値を取得します。</summary>
+        <value>イベントのバージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョンにはイベント定義のリビジョンが示されます。 このメンバーと ID メンバーは、一意のイベントの識別に使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

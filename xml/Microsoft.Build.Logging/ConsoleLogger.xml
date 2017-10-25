@@ -1,0 +1,561 @@
+<Type Name="ConsoleLogger" FullName="Microsoft.Build.Logging.ConsoleLogger">
+  <TypeSignature Language="C#" Value="public class ConsoleLogger : Microsoft.Build.Framework.INodeLogger" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConsoleLogger extends System.Object implements class Microsoft.Build.Framework.ILogger, class Microsoft.Build.Framework.INodeLogger" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Logging.ConsoleLogger" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Build.Framework.INodeLogger</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コンソール (stdout) にイベント データを出力する既定のロガーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、作成し、ラップするデリゲート、`BaseConsoleLogger`か、`SerialConsoleLogger`または`ParallelConsoleLogger`です。  
+  
+ このクラスはスレッド セーフではありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConsoleLogger ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定のロガーを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConsoleLogger (Microsoft.Build.Framework.LoggerVerbosity verbosity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Microsoft.Build.Framework.LoggerVerbosity verbosity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.#ctor(Microsoft.Build.Framework.LoggerVerbosity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="verbosity" Type="Microsoft.Build.Framework.LoggerVerbosity" />
+      </Parameters>
+      <Docs>
+        <param name="verbosity">詳細レベルです。</param>
+        <summary>既定のコンソールにログに記録する指定された冗長性をロガー インスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConsoleLogger (Microsoft.Build.Framework.LoggerVerbosity verbosity, Microsoft.Build.Logging.WriteHandler write, Microsoft.Build.Logging.ColorSetter colorSet, Microsoft.Build.Logging.ColorResetter colorReset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype Microsoft.Build.Framework.LoggerVerbosity verbosity, class Microsoft.Build.Logging.WriteHandler write, class Microsoft.Build.Logging.ColorSetter colorSet, class Microsoft.Build.Logging.ColorResetter colorReset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.#ctor(Microsoft.Build.Framework.LoggerVerbosity,Microsoft.Build.Logging.WriteHandler,Microsoft.Build.Logging.ColorSetter,Microsoft.Build.Logging.ColorResetter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="verbosity" Type="Microsoft.Build.Framework.LoggerVerbosity" />
+        <Parameter Name="write" Type="Microsoft.Build.Logging.WriteHandler" />
+        <Parameter Name="colorSet" Type="Microsoft.Build.Logging.ColorSetter" />
+        <Parameter Name="colorReset" Type="Microsoft.Build.Logging.ColorResetter" />
+      </Parameters>
+      <Docs>
+        <param name="verbosity">詳細レベルです。</param>
+        <param name="write">書き込みハンドラー。</param>
+        <param name="colorSet">テキストの色を設定します。</param>
+        <param name="colorReset">テキストの色をリセットします。</param>
+        <summary>代替の出力ハンドラーのロガーを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyParameter">
+      <MemberSignature Language="C#" Value="public void ApplyParameter (string parameterName, string parameterValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ApplyParameter(string parameterName, string parameterValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.ApplyParameter(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="parameterValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="parameterValue">パラメーターの値。</param>
+        <summary>ロガーにパラメーターを適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用しないでください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildFinishedHandler">
+      <MemberSignature Language="C#" Value="public void BuildFinishedHandler (object sender, Microsoft.Build.Framework.BuildFinishedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BuildFinishedHandler(object sender, class Microsoft.Build.Framework.BuildFinishedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.BuildFinishedHandler(System.Object,Microsoft.Build.Framework.BuildFinishedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.BuildFinishedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">送信者 (null を指定する必要があります)。</param>
+        <param name="e">イベント引数。</param>
+        <summary>ビルドが終了したときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildStartedHandler">
+      <MemberSignature Language="C#" Value="public void BuildStartedHandler (object sender, Microsoft.Build.Framework.BuildStartedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BuildStartedHandler(object sender, class Microsoft.Build.Framework.BuildStartedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.BuildStartedHandler(System.Object,Microsoft.Build.Framework.BuildStartedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.BuildStartedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">送信者 (null を指定する必要があります)。</param>
+        <param name="e">イベント引数。</param>
+        <summary>ビルドが開始されたときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomEventHandler">
+      <MemberSignature Language="C#" Value="public void CustomEventHandler (object sender, Microsoft.Build.Framework.CustomBuildEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CustomEventHandler(object sender, class Microsoft.Build.Framework.CustomBuildEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.CustomEventHandler(System.Object,Microsoft.Build.Framework.CustomBuildEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.CustomBuildEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントの送信元です。</param>
+        <param name="e">イベント引数。</param>
+        <summary>カスタム イベントをログに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorHandler">
+      <MemberSignature Language="C#" Value="public void ErrorHandler (object sender, Microsoft.Build.Framework.BuildErrorEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ErrorHandler(object sender, class Microsoft.Build.Framework.BuildErrorEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.ErrorHandler(System.Object,Microsoft.Build.Framework.BuildErrorEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.BuildErrorEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントの送信元です。</param>
+        <param name="e">イベント引数。</param>
+        <summary>エラー イベントを記録するには、呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public virtual void Initialize (Microsoft.Build.Framework.IEventSource eventSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(class Microsoft.Build.Framework.IEventSource eventSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.Initialize(Microsoft.Build.Framework.IEventSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventSource" Type="Microsoft.Build.Framework.IEventSource" />
+      </Parameters>
+      <Docs>
+        <param name="eventSource">使用可能なイベントです。</param>
+        <summary>指定されたビルド イベントのコンソール ロガーを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public virtual void Initialize (Microsoft.Build.Framework.IEventSource eventSource, int nodeCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(class Microsoft.Build.Framework.IEventSource eventSource, int32 nodeCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.Initialize(Microsoft.Build.Framework.IEventSource,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventSource" Type="Microsoft.Build.Framework.IEventSource" />
+        <Parameter Name="nodeCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="eventSource">イベント ソース。</param>
+        <param name="nodeCount">ノードの数。</param>
+        <summary>指定したイベント ソースとノードの数のロガーを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageHandler">
+      <MemberSignature Language="C#" Value="public void MessageHandler (object sender, Microsoft.Build.Framework.BuildMessageEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MessageHandler(object sender, class Microsoft.Build.Framework.BuildMessageEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.MessageHandler(System.Object,Microsoft.Build.Framework.BuildMessageEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.BuildMessageEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントの送信元です。</param>
+        <param name="e">イベント引数。</param>
+        <summary>メッセージ イベントをログに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public string Parameters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Parameters" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Logging.ConsoleLogger.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、キーと値のペアをセミコロンで区切られた一連のパラメーターに設定します。</summary>
+        <value>キー/値ペアのパラメーターのセミコロン区切りのリストを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectFinishedHandler">
+      <MemberSignature Language="C#" Value="public void ProjectFinishedHandler (object sender, Microsoft.Build.Framework.ProjectFinishedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ProjectFinishedHandler(object sender, class Microsoft.Build.Framework.ProjectFinishedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.ProjectFinishedHandler(System.Object,Microsoft.Build.Framework.ProjectFinishedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.ProjectFinishedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">送信者 (null を指定する必要があります)。</param>
+        <param name="e">イベント引数。</param>
+        <summary>プロジェクトを記録する終了イベント呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectStartedHandler">
+      <MemberSignature Language="C#" Value="public void ProjectStartedHandler (object sender, Microsoft.Build.Framework.ProjectStartedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ProjectStartedHandler(object sender, class Microsoft.Build.Framework.ProjectStartedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.ProjectStartedHandler(System.Object,Microsoft.Build.Framework.ProjectStartedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.ProjectStartedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">送信者 (null を指定する必要があります)。</param>
+        <param name="e">イベント引数。</param>
+        <summary>プロジェクトを記録する開始イベント呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowSummary">
+      <MemberSignature Language="C#" Value="public bool ShowSummary { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowSummary" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Logging.ConsoleLogger.ShowSummary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエラーと警告の概要の表示を抑制するかどうかを決定するスイッチを設定します。</summary>
+        <value>エラーおよび警告の概要の表示を抑制するかどうかを決定するスイッチを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public virtual void Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビルドが終了したときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンソール logger は、リソースを解放する必要はありません。 このメソッドは何も実行しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipProjectStartedText">
+      <MemberSignature Language="C#" Value="public bool SkipProjectStartedText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SkipProjectStartedText" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Logging.ConsoleLogger.SkipProjectStartedText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロジェクトのヘッダーの表示を抑制するかどうかを決定するスイッチを設定します。</summary>
+        <value>プロジェクトのヘッダーの表示を抑制するかどうかを決定するスイッチを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロジェクトのヘッダーは、このプロパティが設定されていない限り、既定で表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFinishedHandler">
+      <MemberSignature Language="C#" Value="public void TargetFinishedHandler (object sender, Microsoft.Build.Framework.TargetFinishedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TargetFinishedHandler(object sender, class Microsoft.Build.Framework.TargetFinishedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.TargetFinishedHandler(System.Object,Microsoft.Build.Framework.TargetFinishedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.TargetFinishedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">送信者 (null を指定する必要があります)。</param>
+        <param name="e">イベント引数。</param>
+        <summary>ターゲットにログオンする終了イベント呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetStartedHandler">
+      <MemberSignature Language="C#" Value="public void TargetStartedHandler (object sender, Microsoft.Build.Framework.TargetStartedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TargetStartedHandler(object sender, class Microsoft.Build.Framework.TargetStartedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.TargetStartedHandler(System.Object,Microsoft.Build.Framework.TargetStartedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.TargetStartedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">送信者 (null を指定する必要があります)。</param>
+        <param name="e">イベント引数。</param>
+        <summary>ターゲットにログオンする開始イベント呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaskFinishedHandler">
+      <MemberSignature Language="C#" Value="public void TaskFinishedHandler (object sender, Microsoft.Build.Framework.TaskFinishedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TaskFinishedHandler(object sender, class Microsoft.Build.Framework.TaskFinishedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.TaskFinishedHandler(System.Object,Microsoft.Build.Framework.TaskFinishedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.TaskFinishedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">送信者 (null を指定する必要があります)。</param>
+        <param name="e">イベント引数。</param>
+        <summary>タスクを記録する終了イベント呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaskStartedHandler">
+      <MemberSignature Language="C#" Value="public void TaskStartedHandler (object sender, Microsoft.Build.Framework.TaskStartedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TaskStartedHandler(object sender, class Microsoft.Build.Framework.TaskStartedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.TaskStartedHandler(System.Object,Microsoft.Build.Framework.TaskStartedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.TaskStartedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">送信者 (null を指定する必要があります)。</param>
+        <param name="e">イベント引数。</param>
+        <summary>タスクを記録する開始イベント呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbosity">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.LoggerVerbosity Verbosity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Build.Framework.LoggerVerbosity Verbosity" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Logging.ConsoleLogger.Verbosity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.LoggerVerbosity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ログに表示される詳細レベルを取得または設定します。</summary>
+        <value>イベント ログに表示される詳細レベルを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WarningHandler">
+      <MemberSignature Language="C#" Value="public void WarningHandler (object sender, Microsoft.Build.Framework.BuildWarningEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WarningHandler(object sender, class Microsoft.Build.Framework.BuildWarningEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ConsoleLogger.WarningHandler(System.Object,Microsoft.Build.Framework.BuildWarningEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="Microsoft.Build.Framework.BuildWarningEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントの送信元です。</param>
+        <param name="e">イベント引数。</param>
+        <summary>警告イベントをログに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteHandler">
+      <MemberSignature Language="C#" Value="protected Microsoft.Build.Logging.WriteHandler WriteHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Logging.WriteHandler WriteHandler" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Logging.ConsoleLogger.WriteHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Logging.WriteHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>必要な場合 (例: ファイル) にリダイレクトできるように書き込みハンドラーのデリゲートにアクセスを提供します。</summary>
+        <value>書き込みハンドラーのデリゲートを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

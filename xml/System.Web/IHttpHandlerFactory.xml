@@ -1,0 +1,101 @@
+<Type Name="IHttpHandlerFactory" FullName="System.Web.IHttpHandlerFactory">
+  <TypeSignature Language="C#" Value="public interface IHttpHandlerFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHttpHandlerFactory" />
+  <TypeSignature Language="DocId" Value="T:System.Web.IHttpHandlerFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>クラス ファクトリは、新規作成するために実装する必要がありますコントラクトを定義<see cref="T:System.Web.IHttpHandler" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するクラス、<xref:System.Web.IHttpHandlerFactory>インターフェイスを実装するクラスの新しいインスタンスを動的に製造以外の動作を持たない、<xref:System.Web.IHttpHandler>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetHandler">
+      <MemberSignature Language="C#" Value="public System.Web.IHttpHandler GetHandler (System.Web.HttpContext context, string requestType, string url, string pathTranslated);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.IHttpHandler GetHandler(class System.Web.HttpContext context, string requestType, string url, string pathTranslated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IHttpHandlerFactory.GetHandler(System.Web.HttpContext,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.IHttpHandler</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="requestType" Type="System.String" />
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="pathTranslated" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">インスタンス、<see cref="T:System.Web.HttpContext" />組み込みサーバー オブジェクトへの参照を提供するクラス (たとえば、 <see langword="Request" />、 <see langword="Response" />、 <see langword="Session" />、および<see langword="Server" />) HTTP 要求を処理するために使用します。</param>
+        <param name="requestType">HTTP データ転送メソッド (<see langword="GET" />または<see langword="POST" />) クライアントが使用します。</param>
+        <param name="url"><see cref="P:System.Web.HttpRequest.RawUrl" />要求されたリソースのです。</param>
+        <param name="pathTranslated"><see cref="P:System.Web.HttpRequest.PhysicalApplicationPath" />に要求されたリソース。</param>
+        <summary>実装するクラスのインスタンスを返します、<see cref="T:System.Web.IHttpHandler" />インターフェイスです。</summary>
+        <returns>新しい<see cref="T:System.Web.IHttpHandler" />要求を処理するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、クライアント要求への応答でカスタム ハンドラー オブジェクトを作成する方法を示します。 この例では、2 つの部分があります。  
+  
+-   ハンドラー ファクトリ クラスです。  
+  
+-   Web.config ファイルの抜粋です。  
+  
+ この例の最初の部分では、abc.aspx または発生した場合のいずれかをという名前のページのクライアント要求への応答でカスタム ハンドラー オブジェクトを作成する方法を示します。 という名前のハンドラー ファクトリ クラス`hwf`に要求したページによって適切なハンドラー オブジェクトを作成します。  
+  
+ [!code-csharp[Classic IHttpHandlerFactory.GetHandler Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic IHttpHandlerFactory.GetHandler Example/CS/source.cs#1)]
+ [!code-vb[Classic IHttpHandlerFactory.GetHandler Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic IHttpHandlerFactory.GetHandler Example/VB/source.vb#1)]  
+  
+ この例の 2 番目の部分では、Web.config ファイルの抜粋を示します。 上記のハンドラー ファクトリを使用するのには、Web.config ファイルに次の行を追加します。  
+  
+```  
+<configuration>   
+  <system.web>   
+    <httpHandlers>   
+      <add verb="*" path="abc.aspx" type="test.MyFactory,HandlerFactoryTest" />   
+      <add verb="*" path="xyz.aspx" type="test.MyFactory,HandlerFactoryTest" />   
+    </httpHandlers>   
+  </system.web>  
+</configuration>   
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseHandler">
+      <MemberSignature Language="C#" Value="public void ReleaseHandler (System.Web.IHttpHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReleaseHandler(class System.Web.IHttpHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IHttpHandlerFactory.ReleaseHandler(System.Web.IHttpHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Web.IHttpHandler" />
+      </Parameters>
+      <Docs>
+        <param name="handler"><see cref="T:System.Web.IHttpHandler" />を再利用するオブジェクト。</param>
+        <summary>既存ハンドラー インスタンスを再利用するためにファクトリを有効にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

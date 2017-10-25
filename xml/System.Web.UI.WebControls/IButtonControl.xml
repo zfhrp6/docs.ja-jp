@@ -1,0 +1,233 @@
+<Type Name="IButtonControl" FullName="System.Web.UI.WebControls.IButtonControl">
+  <TypeSignature Language="C#" Value="public interface IButtonControl" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IButtonControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.IButtonControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティと、Web ページ上のボタンのように動作制御できるように実装する必要がありますのあるイベントを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.IButtonControl>プロパティを定義するインターフェイスと動作を制御できるように実装する必要があるイベントなどの Web ページ上のボタンをクリックします。  
+  
+ このインターフェイスのメンバーを発生させる機能などの基本的なボタン機能を提供する、<xref:System.Web.UI.WebControls.IButtonControl.Click>イベントおよび<xref:System.Web.UI.WebControls.IButtonControl.Command>イベント。 <xref:System.Web.UI.WebControls.IButtonControl.PostBackUrl%2A>プロパティがページ間ポスティング機能を提供します。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>Web ページ上のボタン コントロールと同様に動作するクラスには、このインターフェイスを実装します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="CausesValidation">
+      <MemberSignature Language="C#" Value="public bool CausesValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CausesValidation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IButtonControl.CausesValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ボタンをクリックすると、ページの検証を実行であるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ボタンをクリックするとページの検証を実行します。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するコントロール、<xref:System.Web.UI.WebControls.IButtonControl>インターフェイスを実装する必要があります、 <xref:System.Web.UI.WebControls.IButtonControl.CausesValidation%2A>  ボタンをクリックすると、ページの検証を実行であるかどうかを示すプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event EventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.IButtonControl.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタン コントロールがクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.IButtonControl.Click>ボタン コントロールがクリックされたときにイベントが発生します。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.CommandEventHandler Command;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.CommandEventHandler Command" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.IButtonControl.Command" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.CommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタン コントロールがクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.IButtonControl.Command>ボタン コントロールがクリックされたときにイベントが発生します。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandArgument">
+      <MemberSignature Language="C#" Value="public string CommandArgument { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CommandArgument" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IButtonControl.CommandArgument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に反映される省略可能な引数、<see cref="E:System.Web.UI.WebControls.IButtonControl.Command" />イベント。</summary>
+        <value>引数に反映される、<see cref="E:System.Web.UI.WebControls.IButtonControl.Command" />イベント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するコントロール、<xref:System.Web.UI.WebControls.IButtonControl>インターフェイスを実装する必要があります、<xref:System.Web.UI.WebControls.IButtonControl.CommandArgument%2A>プロパティおよび<xref:System.Web.UI.WebControls.IButtonControl.CommandName%2A>プロパティに反映される引数とコマンドの名前を示す、<xref:System.Web.UI.WebControls.IButtonControl.Command>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandName">
+      <MemberSignature Language="C#" Value="public string CommandName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CommandName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IButtonControl.CommandName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に反映されるコマンド名、<see cref="E:System.Web.UI.WebControls.IButtonControl.Command" />イベント。</summary>
+        <value>反映されるコマンドの名前、<see cref="E:System.Web.UI.WebControls.IButtonControl.Command" />イベント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するコントロール、<xref:System.Web.UI.WebControls.IButtonControl>インターフェイスを実装する必要があります、<xref:System.Web.UI.WebControls.IButtonControl.CommandArgument%2A>プロパティおよび<xref:System.Web.UI.WebControls.IButtonControl.CommandName%2A>プロパティに反映される引数とコマンドの名前を示す、<xref:System.Web.UI.WebControls.IButtonControl.Command>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostBackUrl">
+      <MemberSignature Language="C#" Value="public string PostBackUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PostBackUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IButtonControl.PostBackUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはボタン コントロールがクリックされたときに、現在のページからに投稿する Web ページの URL を設定します。</summary>
+        <value>ボタン コントロールがクリックされたときに、現在のページからに投稿する Web ページの URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.WebControls.IButtonControl.PostBackUrl%2A>ページ間の post を実行するプロパティです。 場合、<xref:System.Web.UI.WebControls.IButtonControl.PostBackUrl%2A>ボタンは現在の通常のポストバック イベント サイクルが発生したページにプロパティを設定します。  
+  
+ 実装するコントロール、<xref:System.Web.UI.WebControls.IButtonControl>インターフェイスを実装する必要があります、<xref:System.Web.UI.WebControls.IButtonControl.PostBackUrl%2A>をボタン コントロールがクリックされたときに、現在のページからに投稿する Web ページの URL を示すプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IButtonControl.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはボタンに表示されるテキスト キャプションを設定します。</summary>
+        <value>ボタンに表示されるテキスト キャプション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するコントロール、<xref:System.Web.UI.WebControls.IButtonControl>インターフェイスを実装する必要があります、<xref:System.Web.UI.WebControls.IButtonControl.Text%2A>をボタンに表示されるテキスト キャプションを示すプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationGroup">
+      <MemberSignature Language="C#" Value="public string ValidationGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.IButtonControl.ValidationGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはボタン コントロールが、サーバーへのポストバック時に検証が実行されるコントロールのグループの名前を設定します。</summary>
+        <value>ボタン コントロールが、サーバーへのポストバック時に検証が実行されるコントロールのグループの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するコントロール、<xref:System.Web.UI.WebControls.IButtonControl>インターフェイスを実装する必要があります、<xref:System.Web.UI.WebControls.IButtonControl.ValidationGroup%2A>ボタン コントロールが、サーバーへのポストバック時に検証が実行されるコントロールのグループの名前を示すプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

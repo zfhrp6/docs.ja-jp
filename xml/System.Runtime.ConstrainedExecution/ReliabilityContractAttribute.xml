@@ -1,0 +1,144 @@
+<Type Name="ReliabilityContractAttribute" FullName="System.Runtime.ConstrainedExecution.ReliabilityContractAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ReliabilityContractAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ReliabilityContractAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method | System.AttributeTargets.Interface, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一部のコードの作成者とそのコードに依存関係を持つ開発者の間で信頼性のコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute>属性には、コードを文書化し、信頼性の種類が割り当てられる保証を示すためにするためのメカニズムが不整合な状態につながる可能性のある例外の条件に行うことができます。 このコンテキストでは、例外的な条件は、中止されたスレッド、メモリ不足の状況をなど、実行時に、共通言語ランタイムによって生成される非同期例外とスタックがオーバーフローに定義されます。 適用することができます、<xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute>属性をアセンブリ、型、およびメソッドです。  
+  
+ この属性を使用して、<xref:System.Runtime.ConstrainedExecution.Consistency>コードの特定の部分で信頼性のレベルを文書化して、信頼性のコントラクトを定義する列挙です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute>属性をアセンブリの信頼性のレベルを文書化します。  
+  
+ [!code-cpp[FxCop.Reliability.ReliabilityContract#1](~/samples/snippets/cpp/VS_Snippets_CodeAnalysis/FxCop.Reliability.ReliabilityContract/cpp/FxCop.Reliability.ReliabilityContract.cpp#1)]
+ [!code-csharp[FxCop.Reliability.ReliabilityContract#1](~/samples/snippets/csharp/VS_Snippets_CodeAnalysis/FxCop.Reliability.ReliabilityContract/cs/FxCop.Reliability.ReliabilityContract.cs#1)]
+ [!code-vb[FxCop.Reliability.ReliabilityContract#1](~/samples/snippets/visualbasic/VS_Snippets_CodeAnalysis/FxCop.Reliability.ReliabilityContract/vb/FxCop.Reliability.ReliabilityContract.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReliabilityContractAttribute (System.Runtime.ConstrainedExecution.Consistency consistencyGuarantee, System.Runtime.ConstrainedExecution.Cer cer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.ConstrainedExecution.Consistency consistencyGuarantee, valuetype System.Runtime.ConstrainedExecution.Cer cer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute.#ctor(System.Runtime.ConstrainedExecution.Consistency,System.Runtime.ConstrainedExecution.Cer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="consistencyGuarantee" Type="System.Runtime.ConstrainedExecution.Consistency" />
+        <Parameter Name="cer" Type="System.Runtime.ConstrainedExecution.Cer" />
+      </Parameters>
+      <Docs>
+        <param name="consistencyGuarantee"><see cref="T:System.Runtime.ConstrainedExecution.Consistency" /> 値のいずれか。</param>
+        <param name="cer"><see cref="T:System.Runtime.ConstrainedExecution.Cer" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute" /> 、指定したクラス<see cref="T:System.Runtime.ConstrainedExecution.Consistency" />保証と<see cref="T:System.Runtime.ConstrainedExecution.Cer" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute.%23ctor%2A>制約された実行領域を作成するコンス トラクターと`finally`を実行することが保証されるブロックします。  
+  
+ [!code-csharp[System.Runtime.ConstrainedExecution#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Runtime.ConstrainedExecution/cs/program.cs#1)]
+ [!code-vb[System.Runtime.ConstrainedExecution#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Runtime.ConstrainedExecution/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cer">
+      <MemberSignature Language="C#" Value="public System.Runtime.ConstrainedExecution.Cer Cer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.ConstrainedExecution.Cer Cer" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute.Cer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.ConstrainedExecution.Cer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>制約された実行領域 (CER) 下で呼び出されたときに、メソッド、型、またはアセンブリの動作を決定する値を取得します。</summary>
+        <value><see cref="T:System.Runtime.ConstrainedExecution.Cer" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsistencyGuarantee">
+      <MemberSignature Language="C#" Value="public System.Runtime.ConstrainedExecution.Consistency ConsistencyGuarantee { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.ConstrainedExecution.Consistency ConsistencyGuarantee" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute.ConsistencyGuarantee" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.ConstrainedExecution.Consistency</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得、<see cref="T:System.Runtime.ConstrainedExecution.Consistency" />信頼性のコントラクト。</summary>
+        <value><see cref="T:System.Runtime.ConstrainedExecution.Consistency" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

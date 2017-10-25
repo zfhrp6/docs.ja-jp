@@ -1,0 +1,166 @@
+<Type Name="WebEventFormatter" FullName="System.Web.Management.WebEventFormatter">
+  <TypeSignature Language="C#" Value="public class WebEventFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebEventFormatter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebEventFormatter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET の状態監視イベントの情報を書式設定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ <xref:System.Web.Management.WebEventFormatter>一様にイベント データをログに記録され後で、ユーザーに提示する必要がある場合に便利ですが、イベント関連の情報を書式設定に使用するサポートの種類には.  
+  
+ インスタンス、<xref:System.Web.Management.WebEventFormatter>クラスは、正常性イベントの種類によって定義された書式指定メソッドに引数として渡されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.WebEventFormatter>イベント情報の形式にします。 使用する正しい構文を表示するためのものでは、主にします。 このコード例に示されている例の一部である、<xref:System.Web.Management.WebBaseEvent>クラスです。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#17](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#17)]
+ [!code-vb[System.Web.Management.WebBaseEvent#17](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#17)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AppendLine">
+      <MemberSignature Language="C#" Value="public void AppendLine (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendLine(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebEventFormatter.AppendLine(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">イベント情報を追加する文字列。</param>
+        <summary>指定した文字列と、イベント情報をキャリッジ リターンを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventFormatter.AppendLine%2A>メソッドでは、独自のイベントに固有のデータを追加することによって、イベント情報をカスタマイズすることができます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Management.WebEventFormatter.AppendLine%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#20](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#20)]
+ [!code-vb[System.Web.Management.WebBaseEvent#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndentationLevel">
+      <MemberSignature Language="C#" Value="public int IndentationLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 IndentationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebEventFormatter.IndentationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインデント レベルを設定します。</summary>
+        <value>インデント レベルに使用するタブの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventFormatter.IndentationLevel%2A>プロパティでは、イベント情報をインデントする方法を制御することができます。 インデントの基本単位がによって定義された、<xref:System.Web.Management.WebEventFormatter.TabSize%2A>プロパティです。 インデント レベルごとに、1 つのインデントのタブを増やします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebEventFormatter.IndentationLevel%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#18](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#18)]
+ [!code-vb[System.Web.Management.WebBaseEvent#18](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabSize">
+      <MemberSignature Language="C#" Value="public int TabSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TabSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebEventFormatter.TabSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタブのサイズを設定します。</summary>
+        <value>タブの空白の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventFormatter.TabSize%2A>プロパティでは、イベント情報を書き込むときに使用されるタブ サイズを制御することができます。 <xref:System.Web.Management.WebEventFormatter.TabSize%2A>によって制御される、インデントの単位あたりのスペースの数を決定<xref:System.Web.Management.WebEventFormatter.IndentationLevel%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebEventFormatter.TabSize%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEvent#19](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/CS/webbaseevent.cs#19)]
+ [!code-vb[System.Web.Management.WebBaseEvent#19](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEvent/VB/webbaseevent.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebEventFormatter.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列の形式で、イベント情報を返します。</summary>
+        <returns>イベント情報</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventFormatter>内部使用<xref:System.Text.StringBuilder>イベント情報を格納する変数。 これは、<xref:System.Web.Management.WebEventFormatter.ToString%2A>メソッドでは、文字列の形式ですべての情報を取得することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

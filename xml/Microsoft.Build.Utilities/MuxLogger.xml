@@ -1,0 +1,222 @@
+<Type Name="MuxLogger" FullName="Microsoft.Build.Utilities.MuxLogger">
+  <TypeSignature Language="C#" Value="public class MuxLogger : Microsoft.Build.Framework.INodeLogger" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MuxLogger extends System.Object implements class Microsoft.Build.Framework.ILogger, class Microsoft.Build.Framework.INodeLogger" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.MuxLogger" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Build.Framework.INodeLogger</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>多重化ロガーを表します。 このロガーの目的は、登録し、ビルド時に複数の logger を登録解除にです。 各プロジェクト システムのビルド要求のロガーを登録および登録解除は、Visual Studio IDE シナリオをサポートします。 1 つの物理ビルドでは、それぞれ独自のロガーのセットに複数の論理ビルドを持つことができます。  
+  
+ <see langword="MuxLogger" />自体を正規の中央/l スタイル ロガーとしてビルド マネージャーに登録します。 ビルド マネージャーからメッセージを受信し、元のメッセージを構築する論理に基づいて、正しい logger にルーティングします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `MuxLogger`一般的に次のように機能します。  
+  
+-   `MuxLogger`ビルド マネージャーの開始のビルドの先頭に登録します。  
+  
+     ビルド マネージャーは、ビルドを開始する前に登録されているすべてのロガーと同時にビルドが開始されたイベントを取得する、`MuxLogger`です。  
+  
+     ビルド マネージャーは、ビルドを開始した後に登録、ロガーは、合成のビルドが開始されたイベントを取得します。 イベントを作成すると、し、イベントをキャッシュは、正しくないビルド時間で、複数のロガーに登録されているときに、ビルドが開始されたイベントのタイムスタンプが決まるために、イベントをキャッシュすることはできません、`MuxLogger`です。  
+  
+-   `MuxLogger`ビルド マネージャーで初期化されます  
+  
+     `MuxLogger`ビルド マネージャーからイベント ソースのすべてのイベントをリッスンし、イベントを正しく登録されているロガーにルーティングします。  
+  
+-   `MuxLogger`シャット ダウンは、最後のビルドのビルドが終了した場合。 この時点では、それに付随するすべてのロガーを登録解除します。  
+  
+-   `MuxLogger`最初のプロジェクト開始イベント プロジェクト完了イベントが各 logger に対して表示されるときに、ビルド完了イベントをログに記録します。  
+  
+ `MuxLogger`ロガーを次のように登録します。  
+  
+1.  ロガーに渡される、`MuxLogger.RegisterLogger`そのロガーへメッセージをルーティングに使用される送信 ID を持つメソッドです。  
+  
+2.  `MuxLogger`にロガーを登録、`MuxLogger`イベント ソース。  
+  
+3.  ビルドが開始されたイベントが既に記録されてした場合、`MuxLogger`新しいビルドが開始されたイベントを作成し、ロガーのイベント ソースに送信します。  
+  
+ `MuxLogger`次のように複数のロガーの登録を解除します。  
+  
+1.  ビルドの送信が完了したときに、`MuxLogger.UnregisterLogger`ロガーの送信 ID とメソッドが呼び出されます。  
+  
+2.  `MuxLogger`送信 ID のプロジェクトの完了イベントの成功の状態を検索し、ロガーにビルド完了イベントをログに記録します。  
+  
+3.  `MuxLogger`イベント ソースをクリーンアップします。  
+  
+     ログ スレッド以外のスレッドからの登録解除は、イベント ログに記録するときに、登録解除が呼び出された場合に、同期の問題が発生する可能性があることに注意してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MuxLogger ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.MuxLogger.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>多重化ロガーの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize (Microsoft.Build.Framework.IEventSource eventSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(class Microsoft.Build.Framework.IEventSource eventSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.MuxLogger.Initialize(Microsoft.Build.Framework.IEventSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventSource" Type="Microsoft.Build.Framework.IEventSource" />
+      </Parameters>
+      <Docs>
+        <param name="eventSource">イベント ソース。</param>
+        <summary>初期化、<see langword="MuxLogger" />指定したイベント ソースを持つインスタンス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize (Microsoft.Build.Framework.IEventSource eventSource, int maxNodeCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(class Microsoft.Build.Framework.IEventSource eventSource, int32 maxNodeCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.MuxLogger.Initialize(Microsoft.Build.Framework.IEventSource,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventSource" Type="Microsoft.Build.Framework.IEventSource" />
+        <Parameter Name="maxNodeCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="eventSource">イベント ソース。</param>
+        <param name="maxNodeCount">ノードの最大数。</param>
+        <summary>初期化、<see langword="MuxLogger" />インスタンスと指定したイベント ソースとノードの最大数を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public string Parameters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Parameters" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.MuxLogger.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得および設定に必要なパラメーターの属性、<see langword="ILogger" />インターフェイスです。</summary>
+        <value>パラメーター属性を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterLogger">
+      <MemberSignature Language="C#" Value="public void RegisterLogger (int submissionId, Microsoft.Build.Framework.ILogger logger);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterLogger(int32 submissionId, class Microsoft.Build.Framework.ILogger logger) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.MuxLogger.RegisterLogger(System.Int32,Microsoft.Build.Framework.ILogger)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="submissionId" Type="System.Int32" />
+        <Parameter Name="logger" Type="Microsoft.Build.Framework.ILogger" />
+      </Parameters>
+      <Docs>
+        <param name="submissionId">登録されているロガーの送信 ID。</param>
+        <param name="logger">登録するロガー。</param>
+        <summary>ロガーを登録、<see langword="MuxLogger" />し、ビルドが開始されたイベントが既に記録された場合は、ビルドが開始されたイベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public void Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.MuxLogger.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シャット ダウン、<see langword="MuxLogger" />し、いずれかの状態をクリアします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterLoggers">
+      <MemberSignature Language="C#" Value="public bool UnregisterLoggers (int submissionId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool UnregisterLoggers(int32 submissionId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.MuxLogger.UnregisterLoggers(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="submissionId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="submissionId">削除するロガーの送信 ID。</param>
+        <summary>MuxLogger から指定したロガーを削除します。</summary>
+        <returns>返します<see langword="true" />メソッドが成功、ロガーを削除するために、それ以外の場合、返されます<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbosity">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.LoggerVerbosity Verbosity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Build.Framework.LoggerVerbosity Verbosity" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.MuxLogger.Verbosity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.LoggerVerbosity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得しに必要な詳細度属性を設定して、<see langword="ILogger" />インターフェイスです。</summary>
+        <value>詳細度属性を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

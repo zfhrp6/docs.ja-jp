@@ -1,0 +1,314 @@
+<Type Name="ActivationContext" FullName="System.ActivationContext">
+  <TypeSignature Language="C#" Value="public sealed class ActivationContext : IDisposable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ActivationContext extends System.Object implements class System.IDisposable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.ActivationContext" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>現在のアプリケーションのアクティベーション コンテキストを識別します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ActivationContext>クラスに含まれる、<xref:System.ApplicationIdentity>し、アプリケーション マニフェストを内部専用のアクセスを提供します。 アクティブ化コンテキストは、ドメイン ポリシーを設定し、アプリケーション ベースのセキュリティ モデルを提供するマニフェスト ベースのアクティブ化時に使用されます。 詳細については、<xref:System.Security.Policy.ApplicationSecurityManager> クラスを参照してください。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ActivationContext>を取得するオブジェクト、<xref:System.ApplicationIdentity>マニフェスト ベースのアプリケーションにします。 正しい結果を得るには、マニフェストに基づくアプリケーションとしてこのコード例を実行します。  
+  
+ [!code-csharp[System.ActivationContext#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ActivationContext/cs/program.cs#1)]
+ [!code-vb[System.ActivationContext#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ActivationContext/vb/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationManifestBytes">
+      <MemberSignature Language="C#" Value="public byte[] ApplicationManifestBytes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] ApplicationManifestBytes" />
+      <MemberSignature Language="DocId" Value="P:System.ActivationContext.ApplicationManifestBytes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションの ClickOnce アプリケーション マニフェストを取得します。</summary>
+        <value>これに関連付けられているアプリケーションの ClickOnce アプリケーション マニフェストを格納するバイト配列<see cref="T:System.ActivationContext" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、アクティブ化コンテキストは<xref:System.ActivationContext.ContextForm.Loose>アプリケーションがインストールされていないことを意味ダウンロードの一時フォルダーから ClickOnce ストアに配置マニフェストの読み取り。 アクティブ化コンテキストが場合<xref:System.ActivationContext.ContextForm.StoreBounded>ストア、配置マニフェストは、ClickOnce でアプリケーションがインストールされていることを意味から読み取られた ClickOnce ストア。 配置マニフェストの詳細については、次を参照してください。 [ClickOnce 配置マニフェスト](http://msdn.microsoft.com/library/8457e615-e3b6-4990-8dcf-11bc590e4e9b)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePartialActivationContext">
+      <MemberSignature Language="C#" Value="public static ActivationContext CreatePartialActivationContext (ApplicationIdentity identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ActivationContext CreatePartialActivationContext(class System.ApplicationIdentity identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ActivationContext.CreatePartialActivationContext(System.ApplicationIdentity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ActivationContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.ApplicationIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="identity">アプリケーションを識別するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ActivationContext" />クラスの指定したアプリケーション id を使用します。</summary>
+        <returns>指定したアプリケーション id を持つオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ActivationContext.CreatePartialActivationContext%2A>メソッドは新しいアクティブ化コンテキストを作成する内部のコンス トラクターを呼び出します。 実装、<xref:System.ActivationContext>は .NET Framework version 2.0 内のクラスがいないストアに完全にインストール、またはフォルダーに完全に含まれているをアプリケーション向けに設計します。 このメソッドは、パブリック コンス トラクターが完全なアクティベーション コンテキストを提供する以降のリリースとの下位互換性を提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identity" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">配置またはアプリケーション id が指定されていない<paramref name="identity" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePartialActivationContext">
+      <MemberSignature Language="C#" Value="public static ActivationContext CreatePartialActivationContext (ApplicationIdentity identity, string[] manifestPaths);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ActivationContext CreatePartialActivationContext(class System.ApplicationIdentity identity, string[] manifestPaths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ActivationContext.CreatePartialActivationContext(System.ApplicationIdentity,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ActivationContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.ApplicationIdentity" />
+        <Parameter Name="manifestPaths" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="identity">アプリケーションを識別するオブジェクト。</param>
+        <param name="manifestPaths">アプリケーションのマニフェストのパスの文字列配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ActivationContext" />クラスの指定したアプリケーション id とマニフェスト パスの配列を使用します。</summary>
+        <returns>指定したアプリケーション id とマニフェストのパスの配列を持つオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ActivationContext.CreatePartialActivationContext%2A>メソッドは新しいアクティブ化コンテキストを作成する内部のコンス トラクターを呼び出します。 実装、<xref:System.ActivationContext>は .NET Framework version 2.0 内のクラスがいないストアに完全にインストール、またはフォルダーに完全に含まれているをアプリケーション向けに設計します。 このメソッドは、パブリック コンス トラクターが完全なアクティベーション コンテキストを提供する以降のリリースとの下位互換性を提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identity" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="manifestPaths" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">配置またはアプリケーション id が指定されていない<paramref name="identity" />です。  
+  
+ または  
+  
+ <paramref name="identity" />マニフェストの id が一致しません。  
+  
+ または  
+  
+ <paramref name="identity" />マニフェストのパスと同じコンポーネント数がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeploymentManifestBytes">
+      <MemberSignature Language="C#" Value="public byte[] DeploymentManifestBytes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] DeploymentManifestBytes" />
+      <MemberSignature Language="DocId" Value="P:System.ActivationContext.DeploymentManifestBytes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションの ClickOnce 配置マニフェストを取得します。</summary>
+        <value>この <see cref="T:System.ActivationContext" /> に関連付けられたアプリケーションの ClickOnce 配置マニフェストを含むバイト配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、アクティブ化コンテキストは<xref:System.ActivationContext.ContextForm.Loose>アプリケーションがインストールされていないことを意味ダウンロードの一時フォルダーから ClickOnce ストアに配置マニフェストの読み取り。 アクティブ化コンテキストが場合<xref:System.ActivationContext.ContextForm.StoreBounded>ストア、配置マニフェストは、ClickOnce でアプリケーションがインストールされていることを意味から読み取られた ClickOnce ストア。 配置マニフェストの詳細については、次を参照してください。 [ClickOnce 配置マニフェスト](http://msdn.microsoft.com/library/8457e615-e3b6-4990-8dcf-11bc590e4e9b)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ActivationContext.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ActivationContext" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ActivationContext.Dispose%2A> を使い終わったら <xref:System.ActivationContext> を呼び出します。 <xref:System.ActivationContext.Dispose%2A> メソッドによって、<xref:System.ActivationContext> は使用不可の状態になります。 呼び出した後<xref:System.ActivationContext.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.ActivationContext>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.ActivationContext>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.ActivationContext.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.ActivationContext> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.ActivationContext> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~ActivationContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ActivationContext.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、<see cref="T:System.ActivationContext" />リソースを解放し、前に他のクリーンアップ操作を実行しようとするオブジェクト、<see cref="T:System.ActivationContext" />がガベージ コレクションによって回収されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Form">
+      <MemberSignature Language="C#" Value="public ActivationContext.ContextForm Form { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ActivationContext/ContextForm Form" />
+      <MemberSignature Language="DocId" Value="P:System.ActivationContext.Form" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ActivationContext+ContextForm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションのフォーム、またはストアのコンテキストを取得します。</summary>
+        <value>列挙値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マニフェスト ベースのアプリケーションがインストールされていない ClickOnce ストアにします。 アプリケーションのマニフェストでアクティブ化されるアプリケーションの実行など、ストアに含まれていない[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]、として分類<xref:System.ActivationContext.ContextForm.Loose>です。 ストアに含まれているアプリケーションとして分類されます<xref:System.ActivationContext.ContextForm.StoreBounded>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public ApplicationIdentity Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ApplicationIdentity Identity" />
+      <MemberSignature Language="DocId" Value="P:System.ActivationContext.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ApplicationIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションのアプリケーション id を取得します。</summary>
+        <value><see cref="T:System.ApplicationIdentity" />オブジェクトを現在のアプリケーションを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ApplicationIdentity>アプリケーションの完全な名前と場所によって、アプリケーションを一意に識別します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ActivationContext>を取得するオブジェクト、<xref:System.ApplicationIdentity>マニフェスト ベースのアプリケーションにします。 このコード例に示されている例の一部である、<xref:System.ActivationContext>クラスです。  
+  
+ [!code-csharp[System.ActivationContext#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ActivationContext/cs/program.cs#2)]
+ [!code-vb[System.ActivationContext#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ActivationContext/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ActivationContext.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データを読み込む先のオブジェクト。</param>
+        <param name="context">このシリアル化の構造体。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、対象のオブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,277 @@
+<Type Name="ServiceThrottlingBehavior" FullName="System.ServiceModel.Description.ServiceThrottlingBehavior">
+  <TypeSignature Language="C#" Value="public class ServiceThrottlingBehavior : System.ServiceModel.Description.IServiceBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceThrottlingBehavior extends System.Object implements class System.ServiceModel.Description.IServiceBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.ServiceThrottlingBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IServiceBehavior</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>サービス パフォーマンスを調整できるようにするランタイム スループット設定を構成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceThrottlingBehavior> クラスを使用して、アプリケーションのメモリ不足を防ぐためのさまざまなスループット設定を制御します。  
+  
+ <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A> プロパティは、<xref:System.ServiceModel.ServiceHost> で同時に処理できるメッセージの数を制限します。  
+  
+ <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> プロパティは、<xref:System.ServiceModel.InstanceContext> で同時に実行できる <xref:System.ServiceModel.ServiceHost> オブジェクトの数を制限します。  
+  
+ <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> プロパティは、<xref:System.ServiceModel.ServiceHost> オブジェクトが受け入れ可能なセッションの数を制限します。  
+  
+ 実行時の負荷分散にはアプリケーションの実行エクスペリエンスが必要なため、サービスのパフォーマンスを最大化するために実行を変更する場合は、アプリケーション構成ファイルから <xref:System.ServiceModel.Description.ServiceThrottlingBehavior> を使用する方法が最も一般的です。  
+  
+> [!NOTE]
+>  これらのプロパティの値に到達するたびにトレースが出力されます。 最初のトレースは警告として出力されます。  
+  
+ 使用して、この属性の値を設定することも、 [ &lt;serviceThrottling&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicethrottling.md)アプリケーション構成ファイル内の要素。  
+  
+   
+  
+## Examples  
+ 例として、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior>、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A>、および <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A> の各プロパティを 1 に設定するアプリケーション構成ファイルから <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> を使用する方法を次のコード例に示します。 特定のアプリケーションで最適な設定については、実際の動作から判断します。  
+  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceThrottlingBehavior ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceThrottlingBehavior.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.ServiceThrottlingBehavior" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成済みの <xref:System.ServiceModel.Description.ServiceThrottlingBehavior> をプログラムによって追加する場合は、このコンストラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxConcurrentCalls">
+      <MemberSignature Language="C#" Value="public int MaxConcurrentCalls { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConcurrentCalls" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ServiceHost" /> でアクティブに処理されるメッセージの最大数を指定する値を取得または設定します。</summary>
+        <value>サービス内でアクティブなメッセージの数の上限。 既定値は、プロセッサ数の 16 回です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A> プロパティは、<xref:System.ServiceModel.ServiceHost> オブジェクトでアクティブに処理されるメッセージの最大数を指定します。 各チャネルは 1 つの保留メッセージを持つことができます。保留メッセージは、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A> がその処理を開始するまで、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] の値にはカウントされません。  
+  
+ 使用して、この属性の値を設定することも、 [ &lt;serviceThrottling&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicethrottling.md)アプリケーション構成ファイル内の要素。  
+  
+> [!WARNING]
+>  <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A>キューに置かれたシナリオでは、SQL 接続プール サイズ未満に設定する必要があります。  
+  
+   
+  
+## Examples  
+ 例として、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior>、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A>、および <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A> の各プロパティを 1 に設定するアプリケーション構成ファイルから <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> を使用する方法を次のコード例に示します。 特定のアプリケーションで最適な設定については、実際の動作から判断します。  
+  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxConcurrentInstances">
+      <MemberSignature Language="C#" Value="public int MaxConcurrentInstances { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConcurrentInstances" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同時に実行できるサービス内の <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトの最大数を指定する値を取得または設定します。</summary>
+        <value>任意の一時点におけるサービス内の <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトの最大数。 既定値の値の合計<see cref="P:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions" />の値と<see cref="P:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> プロパティは、サービス内の <xref:System.ServiceModel.InstanceContext> オブジェクトの最大数を表します。 <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> プロパティおよび <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティの間の関係を覚えておくことは重要です。 <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> が <xref:System.ServiceModel.InstanceContextMode.PerSession> の場合、得られる値はセッションの合計数です。 <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> が <xref:System.ServiceModel.InstanceContextMode.PerCall> の場合、得られる値は同時呼び出し数です。 <xref:System.ServiceModel.InstanceContext> オブジェクトの数が最大数に達しているときに受信したメッセージは、1 つの <xref:System.ServiceModel.InstanceContext> オブジェクトを閉じるまで保留されます。  
+  
+ 使用して、この属性の値を設定することも、 [ &lt;serviceThrottling&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicethrottling.md)アプリケーション構成ファイル内の要素。  
+  
+   
+  
+## Examples  
+ 例として、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior>、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A>、および <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A> の各プロパティを 1 に設定するアプリケーション構成ファイルから <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> を使用する方法を次のコード例に示します。 特定のアプリケーションで最適な設定については、実際の動作から判断します。  
+  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxConcurrentSessions">
+      <MemberSignature Language="C#" Value="public int MaxConcurrentSessions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConcurrentSessions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ServiceHost" /> オブジェクトが同時に受け入れ可能なセッションの最大数を指定する値を取得または設定します。</summary>
+        <value>1 つのサービス ホストが受け入れ可能なセッションの最大数。 既定値は、プロセッサ数の 100 回です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> プロパティは、<xref:System.ServiceModel.ServiceHost> オブジェクトが受け入れ可能なセッションの最大数を表します。 この場合のセッションは、信頼できるセッションをサポートしているチャネルだけを意味するわけではないことに注意してください (たとえば、<xref:System.ServiceModel.NetNamedPipeBinding?displayProperty=nameWithType> はセッションをサポートしますが、信頼できるセッションは含みません)。  
+  
+ 各リスナー オブジェクトは 1 つの保留チャネル セッションを持つことができます。保留チャネル セッションは、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> がそのチャネル セッションを受け入れ、そのチャネル セッションでメッセージの処理を開始するまで、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] の値にはカウントされません。 このプロパティは、セッションを使用するシナリオで最も有用です。  
+  
+ このプロパティをクライアントのスレッド数より少ない値に設定すると、複数のクライアントからの要求が同じソケット接続でキューに置かれる場合があります。 このサービスで開いているセッション数が `MaxConcurrentSessions` に達している場合、このサービスでセッションを作成していないクライアントからの要求は、他のクライアントとのセッションが閉じられるまでブロックされます。 処理されないクライアント要求はタイムアウトになり、セッションが突然閉じられます。  
+  
+ この状況を回避するには、別のアプリケーション ドメインからクライアント スレッドを実行して、要求メッセージが別のソケット接続に送信されるようにします。  
+  
+ 使用して、この属性の値を設定することも、 [ &lt;serviceThrottling&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicethrottling.md)アプリケーション構成ファイル内の要素。  
+  
+   
+  
+## Examples  
+ 例として、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior>、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A>、および <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A> の各プロパティを 1 に設定するアプリケーション構成ファイルから <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> を使用する方法を次のコード例に示します。 特定のアプリケーションで最適な設定については、実際の動作から判断します。  
+  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.AddBindingParameters">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.AddBindingParameters (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase, System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.AddBindingParameters(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase, class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceThrottlingBehavior.System#ServiceModel#Description#IServiceBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+        <Parameter Name="endpoints" Type="System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt;" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="description">サービスの説明。</param>
+        <param name="serviceHostBase">サービスのホスト。</param>
+        <param name="endpoints">サービスによって公開されるエンドポイント。</param>
+        <param name="parameters">サービスの動作をサポートするように構成するバインディング パラメーター。</param>
+        <summary>バインディングを、サービスの動作をサポートするように構成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> メソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.ApplyDispatchBehavior (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceThrottlingBehavior.System#ServiceModel#Description#IServiceBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="description">構成されるサービスの説明。</param>
+        <param name="serviceHostBase">サービスのホスト。</param>
+        <summary>サービスを、サービスの動作をサポートするように構成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> メソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.Validate">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.Validate (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.Validate(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceThrottlingBehavior.System#ServiceModel#Description#IServiceBehavior#Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="description">サービスの動作によって検証されるサービスの説明。</param>
+        <param name="serviceHostBase">サービスの動作によって検証されるサービス ホスト。</param>
+        <summary>サービスおよびホストがサービスの動作をサポートできることを検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> メソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

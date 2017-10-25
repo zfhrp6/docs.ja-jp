@@ -1,0 +1,173 @@
+<Type Name="LinearQuaternionKeyFrame" FullName="System.Windows.Media.Animation.LinearQuaternionKeyFrame">
+  <TypeSignature Language="C#" Value="public class LinearQuaternionKeyFrame : System.Windows.Media.Animation.QuaternionKeyFrame" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinearQuaternionKeyFrame extends System.Windows.Media.Animation.QuaternionKeyFrame" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.LinearQuaternionKeyFrame" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.QuaternionKeyFrame</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アニメーション化、 <see cref="T:System.Windows.Media.Media3D.Quaternion" /> 、それぞれに前のキー フレームの値<see cref="P:System.Windows.Media.Animation.QuaternionKeyFrame.Value" />線形補間を使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの一部として使用される、<xref:System.Windows.Media.Animation.QuaternionKeyFrameCollection>と組み合わせて、<xref:System.Windows.Media.Animation.QuaternionAnimationUsingKeyFrames>アニメーション化する、<xref:System.Windows.Media.Media3D.Quaternion>一連のキー フレームに沿って。  
+  
+ キー フレームのセグメントを定義する、<xref:System.Windows.Media.Animation.QuaternionAnimationUsingKeyFrames>属しています。 各キー フレームがターゲット<xref:System.Windows.Media.Animation.QuaternionKeyFrame.Value%2A>と<xref:System.Windows.Media.Animation.QuaternionKeyFrame.KeyTime%2A>です。 <xref:System.Windows.Media.Animation.QuaternionKeyFrame.KeyTime%2A>どの時点を指定します、キー フレームの<xref:System.Windows.Media.Animation.QuaternionKeyFrame.Value%2A>に到達します。 キー フレームは、前のキー フレームのターゲット値から独自のターゲット値をアニメーション化します。 前のキー フレームが終了し、独自のキーの日時に達したときに終了時に開始します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearQuaternionKeyFrame ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearQuaternionKeyFrame.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.LinearQuaternionKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearQuaternionKeyFrame (System.Windows.Media.Media3D.Quaternion value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.Media3D.Quaternion value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearQuaternionKeyFrame.#ctor(System.Windows.Media.Media3D.Quaternion)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Media.Media3D.Quaternion" />
+      </Parameters>
+      <Docs>
+        <param name="value">キー フレームの終了値 (「ターゲット値」)。</param>
+        <summary>指定した終了値を使用して、<see cref="T:System.Windows.Media.Animation.LinearQuaternionKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearQuaternionKeyFrame (System.Windows.Media.Media3D.Quaternion value, System.Windows.Media.Animation.KeyTime keyTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.Media3D.Quaternion value, valuetype System.Windows.Media.Animation.KeyTime keyTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearQuaternionKeyFrame.#ctor(System.Windows.Media.Media3D.Quaternion,System.Windows.Media.Animation.KeyTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Media.Media3D.Quaternion" />
+        <Parameter Name="keyTime" Type="System.Windows.Media.Animation.KeyTime" />
+      </Parameters>
+      <Docs>
+        <param name="value">キー フレームの終了値 (「ターゲット値」)。</param>
+        <param name="keyTime">キー フレームのキー時刻。 キー時刻によりターゲット値に到達する時点が決まります。この時刻はキー フレームが終了する時点にもなります。</param>
+        <summary>指定した終了値とキー時刻を使用して <see cref="T:System.Windows.Media.Animation.LinearQuaternionKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearQuaternionKeyFrame.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.LinearQuaternionKeyFrame" /> の新しいインスタンスを作成します。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterpolateValueCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Media3D.Quaternion InterpolateValueCore (System.Windows.Media.Media3D.Quaternion baseValue, double keyFrameProgress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Media.Media3D.Quaternion InterpolateValueCore(valuetype System.Windows.Media.Media3D.Quaternion baseValue, float64 keyFrameProgress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearQuaternionKeyFrame.InterpolateValueCore(System.Windows.Media.Media3D.Quaternion,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Quaternion</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseValue" Type="System.Windows.Media.Media3D.Quaternion" />
+        <Parameter Name="keyFrameProgress" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="baseValue">アニメーション化する元の値。</param>
+        <param name="keyFrameProgress">このキー フレームの経過時間の割合を示す 0.0 ～ 1.0 の値。</param>
+        <summary>指定された進行状況の増分を使用して、以前のキー フレーム値と現在のキー フレーム値の間の線形補間を実行します。</summary>
+        <returns>指定された基準値と進行状況が示された、このキー フレームの出力値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseShortestPath">
+      <MemberSignature Language="C#" Value="public bool UseShortestPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseShortestPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.LinearQuaternionKeyFrame.UseShortestPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーションが球面線形補間を使用して位置の間の最短の円弧を計算するかどうかを示すブール値を取得または設定します。 これは依存関係プロパティです。</summary>
+        <value>アニメーションが球面線形補間を使用して位置の間の最短の円弧を計算するかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_UseShortestPath"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.LinearQuaternionKeyFrame.UseShortestPathProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseShortestPathProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty UseShortestPathProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty UseShortestPathProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.LinearQuaternionKeyFrame.UseShortestPathProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.LinearQuaternionKeyFrame.UseShortestPath" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

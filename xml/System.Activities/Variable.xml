@@ -1,0 +1,221 @@
+<Type Name="Variable" FullName="System.Activities.Variable">
+  <TypeSignature Language="C#" Value="public abstract class Variable : System.Activities.LocationReference" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Variable extends System.Activities.LocationReference" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Variable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.LocationReference</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Name = {Name}, Type = {Type}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー データ メンバー サポート クラス <see cref="T:System.Activities.Variable`1" /> の派生元となる抽象基本クラス。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Activities.Variable Create (string name, Type type, System.Activities.VariableModifiers modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.Variable Create(string name, class System.Type type, valuetype System.Activities.VariableModifiers modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Variable.Create(System.String,System.Type,System.Activities.VariableModifiers)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Variable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="modifiers" Type="System.Activities.VariableModifiers" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Activities.Variable" /> の名前。</param>
+        <param name="type"><see cref="T:System.Activities.Variable" /> の型。</param>
+        <param name="modifiers"><see cref="T:System.Activities.Variable" /> の構成オプション。</param>
+        <summary><see cref="T:System.Activities.Variable" /> クラスの新しいインスタンスを初期化して返します。</summary>
+        <returns>新しい変数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public System.Activities.ActivityWithResult Default { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.ActivityWithResult Default" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Variable.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.IgnoreDataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.ActivityWithResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Activities.ActivityWithResult" /> の既定値を表す <see cref="T:System.Activities.Variable" /> を取得または設定します。</summary>
+        <value>この <see cref="T:System.Activities.Variable" /> の既定値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public object Get (System.Activities.ActivityContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Get(class System.Activities.ActivityContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Variable.Get(System.Activities.ActivityContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.ActivityContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">現在の実行コンテキスト。</param>
+        <summary>指定した <see cref="T:System.Activities.Variable" /> を使用して、<see cref="T:System.Activities.ActivityContext" /> の値を取得します。</summary>
+        <returns><see cref="T:System.Activities.Variable" /> の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocation">
+      <MemberSignature Language="C#" Value="public override System.Activities.Location GetLocation (System.Activities.ActivityContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Activities.Location GetLocation(class System.Activities.ActivityContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Variable.GetLocation(System.Activities.ActivityContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Location</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.ActivityContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">実行アクティビティのアクティビティ コンテキスト。</param>
+        <summary>この <see cref="T:System.Activities.Location" /> の <see cref="T:System.Activities.Variable" /> を取得します。</summary>
+        <returns>この <see cref="T:System.Activities.Variable" /> の場所。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modifiers">
+      <MemberSignature Language="C#" Value="public System.Activities.VariableModifiers Modifiers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Activities.VariableModifiers Modifiers" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Variable.Modifiers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.VariableModifiers</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Activities.VariableModifiers" /> の <see cref="T:System.Activities.Variable" /> 値を取得または設定します。</summary>
+        <value>この <see cref="T:System.Activities.Variable" /> の変数修飾子の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは実行時に読み取り専用です。 実行時に値が設定された場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Variable.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Variable" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Activities.Variable" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは実行時に読み取り専用です。 実行時に値が設定された場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameCore">
+      <MemberSignature Language="C#" Value="protected override string NameCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NameCore" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Variable.NameCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Variable" /> の名前を取得します。</summary>
+        <value><see cref="T:System.Activities.Variable" /> の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public void Set (System.Activities.ActivityContext context, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Set(class System.Activities.ActivityContext context, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Variable.Set(System.Activities.ActivityContext,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.ActivityContext" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">現在の実行コンテキスト。</param>
+        <param name="value">新しい値。</param>
+        <summary>指定された <see cref="T:System.Activities.Variable" /> を使用して、<see cref="T:System.Activities.ActivityContext" /> の値を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,156 @@
+<Type Name="Blend" FullName="System.Drawing.Drawing2D.Blend">
+  <TypeSignature Language="C#" Value="public sealed class Blend" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Blend extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.Blend" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Blend のパターンを定義、<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラデーションは、形状の内部にスムーズに影を付けるよく使用されます。 Blend のパターンは、2 つの配列によって定義されます (<xref:System.Drawing.Drawing2D.Blend.Factors%2A>と<xref:System.Drawing.Drawing2D.Blend.Positions%2A>) それぞれ同じ数の要素を含むです。 各要素、<xref:System.Drawing.Drawing2D.Blend.Positions%2A>配列がグラデーションの線に沿った距離の割合を表します。 各要素、<xref:System.Drawing.Drawing2D.Blend.Factors%2A>配列は、開始と終了値に対応する要素によって表されるグラデーションの線に沿った位置にある組み合わせのグラデーションの色の比率を表す、<xref:System.Drawing.Drawing2D.Blend.Positions%2A>配列。  
+  
+ たとえば、対応する要素の<xref:System.Drawing.Drawing2D.Blend.Positions%2A>と<xref:System.Drawing.Drawing2D.Blend.Factors%2A>の配列が 0.2、0.3、それぞれ、30% 青と赤が 70% は、その行 (距離の 20%) に沿った色 20 ピクセル、100 ピクセル線に沿って赤青から線形グラデーションのです。  
+  
+   
+  
+## Examples  
+ 次の例は、Windows フォームの環境で使用するためのものです。 使用する方法を示します、<xref:System.Drawing.Drawing2D.Blend>クラスと組み合わせて、<xref:System.Drawing.Drawing2D.LinearGradientBrush>を画面に楕円を描画するクラスがその色の間です。 楕円はブレンド センターでは、赤、左側の青とブレンドが右側の青にバックアップします。 これは、設定を使用、`myFactors`と`myPositions`で使用される配列、<xref:System.Drawing.Drawing2D.Blend.Factors%2A>と<xref:System.Drawing.Drawing2D.Blend.Positions%2A>プロパティです。 なお、<xref:System.Drawing.Drawing2D.Blend>のプロパティ、<xref:System.Drawing.Drawing2D.LinearGradientBrush>という名前のオブジェクト`lgBrush2`に行う必要があります、<xref:System.Drawing.Drawing2D.Blend>オブジェクト`myBlend`です。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMisc#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMisc#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMisc#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/VB/form1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Blend ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Blend.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Drawing2D.Blend" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、Windows フォームの環境で使用するためのものです。 使用する方法を示します、<xref:System.Drawing.Drawing2D.Blend>クラスと組み合わせて、<xref:System.Drawing.Drawing2D.LinearGradientBrush>を画面に楕円を描画するクラスがその色の間です。 楕円はブレンド センターでは、赤、左側の青とブレンドが右側の青にバックアップします。 これは、設定を使用、`myFactors`と`myPositions`で使用される配列、<xref:System.Drawing.Drawing2D.Blend.Factors%2A>と<xref:System.Drawing.Drawing2D.Blend.Positions%2A>プロパティです。 なお、<xref:System.Drawing.Drawing2D.Blend>のプロパティ、<xref:System.Drawing.Drawing2D.LinearGradientBrush>という名前のオブジェクト`lgBrush2`に行う必要があります、<xref:System.Drawing.Drawing2D.Blend>オブジェクト`myBlend`です。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMisc#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMisc#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMisc#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMisc/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Blend (int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Blend.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="count">内の要素の数、<see cref="P:System.Drawing.Drawing2D.Blend.Factors" />と<see cref="P:System.Drawing.Drawing2D.Blend.Positions" />配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Drawing2D.Blend" />要因と位置の指定した数を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.Blend.%23ctor%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Factors">
+      <MemberSignature Language="C#" Value="public float[] Factors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32[] Factors" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.Blend.Factors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のグラデーションの合成要素の配列。</summary>
+        <value>開始色と対応する位置で使用する終了色の割合を指定するための blend 要素の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、この配列の要素は、1.0 f 0.0f からの値です。 これらの要素は、blend の位置の終了色と、対応するを使用する開始色の割合を指定します。 たとえば、0.2 の値は、指定した位置にブレンドされた色は 20% のグラデーションの終了色とグラデーションの開始色の 80% の構成を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Drawing2D.Blend>クラスを設定して、<xref:System.Drawing.Drawing2D.Blend.Factors%2A>と<xref:System.Drawing.Drawing2D.Blend.Positions%2A>プロパティです。 この例は、Windows フォームで使用するよう設計されています。 インポートするフォームにコードを貼り付けます、<xref:System.Drawing.Drawing2D>名前空間。 フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントと呼び出し、`DemonstrateBlend`渡してメソッド`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.Misc2#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Misc2/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.Misc2#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc2/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.Misc2#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc2/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Positions">
+      <MemberSignature Language="C#" Value="public float[] Positions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32[] Positions" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.Blend.Positions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のグラデーションの blend の位置の配列。</summary>
+        <value>グラデーションの線に沿った距離の割合を指定する blend 位置の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この配列の要素では、グラデーションの線に沿った距離の割合を指定します。 たとえば、0.2f の要素の値では、このポイントが開始点と、総距離の 20% を指定します。 この配列内の要素は、0.0f から 1.0f 浮動小数値で表されます。 配列の最初の要素は、0.0f である必要があり、最後の要素は 1.0f までの値である必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Drawing2D.Blend>クラスを設定して、<xref:System.Drawing.Drawing2D.Blend.Factors%2A>と<xref:System.Drawing.Drawing2D.Blend.Positions%2A>プロパティです。 この例は、Windows フォームで使用するよう設計されています。 インポートするフォームにコードを貼り付けます、<xref:System.Drawing.Drawing2D>名前空間。 フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントと呼び出し、`DemonstrateBlend`渡してメソッド`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.Misc2#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Misc2/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.Misc2#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc2/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.Misc2#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc2/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

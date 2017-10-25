@@ -1,0 +1,104 @@
+<Type Name="AuthenticateEventArgs" FullName="System.Web.UI.WebControls.AuthenticateEventArgs">
+  <TypeSignature Language="C#" Value="public class AuthenticateEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthenticateEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.AuthenticateEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.Login.Authenticate" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.AuthenticateEventArgs>クラスに必要なデータを提供、<xref:System.Web.UI.WebControls.Login.Authenticate>イベント。 Web サイト用のカスタム認証方式、<xref:System.Web.UI.WebControls.AuthenticateEventArgs.Authenticated%2A>プロパティをユーザーのログインの試行が成功したかどうかを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.AuthenticateEventArgs>カスタム認証方法にデータを渡すクラスです。  
+  
+ [!code-aspx-csharp[LoginAuthenticate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginAuthenticate/CS/loginauthenticatecs.aspx#1)]
+ [!code-aspx-vb[LoginAuthenticate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginAuthenticate/VB/loginauthenticatevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AuthenticateEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.AuthenticateEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.AuthenticateEventArgs" />クラス、<see cref="P:System.Web.UI.WebControls.AuthenticateEventArgs.Authenticated" />プロパティに設定<see langword="false" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AuthenticateEventArgs (bool authenticated);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool authenticated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.AuthenticateEventArgs.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="authenticated" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="authenticated">
+          <see langword="true" />場合は、ユーザーが認証されます。それ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.AuthenticateEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authenticated">
+      <MemberSignature Language="C#" Value="public bool Authenticated { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Authenticated" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.AuthenticateEventArgs.Authenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーの認証の試行が成功したかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />認証の試行が成功した場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.AuthenticateEventArgs.Authenticated%2A>カスタム認証方式でプロパティに実装されて、<xref:System.Web.UI.WebControls.Login.Authenticate?displayProperty=nameWithType>イベント ハンドラーをユーザーのログインの試行の成否を示します。  
+  
+ 設定、<xref:System.Web.UI.WebControls.AuthenticateEventArgs.Authenticated%2A>プロパティを`false`Web サイトのユーザーが有効な資格情報を提示していないことを示す、<xref:System.Web.UI.WebControls.Login>コントロールを発生させる、<xref:System.Web.UI.WebControls.Login.LoginError>ログイン試行を示すテキストを表示するだけでなくイベントに失敗しました。 <xref:System.Web.UI.WebControls.Login.LoginError>イベントに追加のプロセスまたはユーザー認証が失敗したときに発生するアクションを持つページの開発者を有効にします。 設定<xref:System.Web.UI.WebControls.AuthenticateEventArgs.Authenticated%2A>に`true`、ユーザーが有効な資格情報を表示することを示します、<xref:System.Web.UI.WebControls.Login>コントロールを発生させる、<xref:System.Web.UI.WebControls.Login.LoggedIn>イベントとによって示される、ユーザーは現在のページに戻るか、ページにリダイレクト<xref:System.Web.UI.WebControls.Login.DestinationPageUrl%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.AuthenticateEventArgs.Authenticated%2A>ユーザーのログインの試行の成否を示すためにカスタムの認証スキームを持つプロパティです。  
+  
+ [!code-aspx-csharp[LoginAuthenticate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginAuthenticate/CS/loginauthenticatecs.aspx#1)]
+ [!code-aspx-vb[LoginAuthenticate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginAuthenticate/VB/loginauthenticatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

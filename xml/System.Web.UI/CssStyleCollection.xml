@@ -1,0 +1,347 @@
+<Type Name="CssStyleCollection" FullName="System.Web.UI.CssStyleCollection">
+  <TypeSignature Language="C#" Value="public sealed class CssStyleCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CssStyleCollection extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.CssStyleCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定された HTML サーバー コントロールの HTML のカスケード スタイル シート (CSS) インライン スタイル属性が含まれています。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の HTML サーバー コントロールの宣言されたスタイルは、Web フォーム ページが解析されるときにコレクションに追加されます。 自動的に解析され、ディクショナリ パターン API を通じて CSS プロパティを公開します。 使用して、サーバー コントロールの任意の CSS プロパティを操作することができます、<xref:System.Web.UI.HtmlControls.HtmlControl.Style%2A>プロパティです。 単にインデックス付きコレクションで、CSS プロパティのキーと値を使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を反復処理、<xref:System.Web.UI.CssStyleCollection>オブジェクトに対して、<xref:System.Web.UI.HtmlControls.HtmlInputText>サーバー コントロールです。 <xref:System.Web.UI.CssStyleCollection.Keys%2A>サーバー コントロールにスタイル属性が宣言されているを決定するプロパティを使用し、バインド、属性の名前し値を<xref:System.Web.UI.WebControls.DataList>Web フォーム ページ上のオブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.UI.CssStyleCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.CssStyleCollection/CS/css1.cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.CssStyleCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.CssStyleCollection/VB/css1.vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string key, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string key, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.CssStyleCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">コレクションに追加する新しいスタイル属性の名前。</param>
+        <param name="value">コレクションに追加するスタイル属性の値。</param>
+        <summary>スタイル アイテムを追加、<see cref="T:System.Web.UI.CssStyleCollection" />を指定した名前/値ペアを使用してコントロールのです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加するスタイルの項目が存在する場合、<xref:System.Web.UI.HtmlTextWriterStyle>列挙型のオーバー ロードを使用して、<xref:System.Web.UI.CssStyleCollection.Add%2A>を受け取るメソッド、<xref:System.Web.UI.HtmlTextWriterStyle>パラメーターは厳密に型指定するためです。 つまりの get アクセサーを持つ項目を表示するときに追加される項目を含めるがあること、<xref:System.Web.UI.CssStyleCollection.Item%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の両方のオーバー ロードを使用する方法を示します、<xref:System.Web.UI.CssStyleCollection.Add%2A>するカスケード スタイル シートを追加するメソッドを<xref:System.Web.UI.HtmlControls.HtmlSelect>、 <xref:System.Web.UI.HtmlControls.HtmlInputSubmit>、および<xref:System.Web.UI.WebControls.Label>をプログラムで制御します。  
+  
+ [!code-aspx-csharp[Classic CssStyleCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CssStyleCollection.Add Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CssStyleCollection.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CssStyleCollection.Add Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.UI.HtmlTextWriterStyle key, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(valuetype System.Web.UI.HtmlTextWriterStyle key, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.CssStyleCollection.Add(System.Web.UI.HtmlTextWriterStyle,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Web.UI.HtmlTextWriterStyle" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key"><see cref="T:System.Web.UI.HtmlTextWriterStyle" />列挙体の値をコレクションに追加します。</param>
+        <param name="value">コレクションに追加するスタイル属性の値。</param>
+        <summary>スタイル アイテムを追加、<see cref="T:System.Web.UI.CssStyleCollection" />指定して、コントロールのコレクション<see cref="T:System.Web.UI.HtmlTextWriterStyle" />列挙値と対応する値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加するスタイルの項目が存在する場合、<xref:System.Web.UI.HtmlTextWriterStyle>列挙型、これを使用して<xref:System.Web.UI.CssStyleCollection.Add%2A>のオーバー ロード、<xref:System.Web.UI.CssStyleCollection.Add%2A>を受け取らないオーバー ロードではなく、メソッド、<xref:System.Web.UI.HtmlTextWriterStyle>パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の両方のオーバー ロードを使用する方法を示します、<xref:System.Web.UI.CssStyleCollection.Add%2A>するカスケード スタイル シートを追加するメソッドを<xref:System.Web.UI.HtmlControls.HtmlSelect>、 <xref:System.Web.UI.HtmlControls.HtmlInputSubmit>、および<xref:System.Web.UI.WebControls.Label>をプログラムで制御します。  
+  
+ [!code-aspx-csharp[Classic CssStyleCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CssStyleCollection.Add Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CssStyleCollection.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CssStyleCollection.Add Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.CssStyleCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての項目のスタイルを削除、<see cref="T:System.Web.UI.CssStyleCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.CssStyleCollection.Clear%2A>からすべての CSS をプログラムで削除するメソッドのスタイル、<xref:System.Web.UI.HtmlControls.HtmlSelect>コントロール。  
+  
+ [!code-aspx-csharp[Classic CssStyleCollection.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CssStyleCollection.Clear Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CssStyleCollection.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CssStyleCollection.Clear Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.CssStyleCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目の数を取得、<see cref="T:System.Web.UI.CssStyleCollection" />オブジェクト。</summary>
+        <value>内の項目数、<see cref="T:System.Web.UI.CssStyleCollection" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、`CountStyleFunc`の現在の値を取得する関数、<xref:System.Web.UI.CssStyleCollection.Count%2A>プロパティを<xref:System.Web.UI.HtmlControls.HtmlInputText>サーバー コントロールし、ASP.NET ページを表示します。  
+  
+ [!code-aspx-csharp[CssStyleCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CssStyleCollection/CS/cssstylecollection_4.cs.aspx#1)]
+ [!code-aspx-vb[CssStyleCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CssStyleCollection/VB/cssstylecollection_4.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[string key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.CssStyleCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">CSS 属性のインデックス。</param>
+        <summary>取得または HTML サーバー コントロールの指定した CSS 値を設定します。</summary>
+        <value><paramref name="key" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.CssStyleCollection.Item%2A>プロパティが設定されているスタイルの値を返す、<xref:System.Web.UI.HtmlControls.HtmlInputText>コントロール。  
+  
+ [!code-aspx-csharp[Classic CssStyleCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CssStyleCollection.this Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CssStyleCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CssStyleCollection.this Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[System.Web.UI.HtmlTextWriterStyle key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(valuetype System.Web.UI.HtmlTextWriterStyle)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.CssStyleCollection.Item(System.Web.UI.HtmlTextWriterStyle)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Web.UI.HtmlTextWriterStyle" />
+      </Parameters>
+      <Docs>
+        <param name="key"><see cref="T:System.Web.UI.HtmlTextWriterStyle" />。</param>
+        <summary>指定した設定を取得または<see cref="T:System.Web.UI.HtmlTextWriterStyle" />HTML サーバー コントロールの値。</summary>
+        <value>値<paramref name="key" />、それ以外の<see langword="null" />場合は、<paramref name="key" />サーバー コントロールのコレクションに含まれない。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プログラムに追加される項目のスタイルを設定、<xref:System.Web.UI.CssStyleCollection>を持つコントロールのコレクション、<xref:System.Web.UI.CssStyleCollection.Item%2A>プロパティまたは<xref:System.Web.UI.CssStyleCollection.Add%2A>メソッドを<xref:System.Web.UI.HtmlTextWriterStyle>と共に返される項目のスタイルのカウントの入力としての列挙値が含まれている、<xref:System.Web.UI.CssStyleCollection.Count%2A>と共に返される、文字列リテラルに含まれているプロパティであり、<xref:System.Web.UI.CssStyleCollection.Value%2A>プロパティです。 これらの属性は厳密型指定されました。 サーバー コントロールを追加するカスケード スタイル シートの属性が存在する場合、<xref:System.Web.UI.HtmlTextWriterStyle>列挙型、これらの厳密に型指定されたメソッドを使用します。 追加する属性が存在しない場合、<xref:System.Web.UI.HtmlTextWriterStyle>列挙体を使用して、<xref:System.Web.UI.CssStyleCollection.Item%2A>プロパティまたは<xref:System.Web.UI.CssStyleCollection.Add%2A>メソッドです。  
+  
+ アクセスしようとして、<xref:System.Web.UI.HtmlTextWriterStyle>の列挙値に、<xref:System.Web.UI.CssStyleCollection>が追加されているコントロールが追加されている CSS 属性にアクセスしたり、<xref:System.Web.UI.CssStyleCollection.Item%2A>プロパティまたは<xref:System.Web.UI.CssStyleCollection.Add%2A>メソッドを返します`null`を使用して、<xref:System.Web.UI.CssStyleCollection.Item%2A>プロパティ。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.CssStyleCollection.Item%2A>プロパティが設定されているスタイルの値を返す、<xref:System.Web.UI.HtmlControls.HtmlInputText>コントロール。  
+  
+ [!code-aspx-csharp[Classic CssStyleCollection.this Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CssStyleCollection.this Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CssStyleCollection.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CssStyleCollection.this Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.CssStyleCollection.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのスタイルのキーのコレクションを取得、<see cref="T:System.Web.UI.CssStyleCollection" />特定 HTML サーバー コントロールのオブジェクト。</summary>
+        <value>含まれているキーのコレクション、<see cref="T:System.Web.UI.CssStyleCollection" />指定した HTML サーバー コントロールのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を反復処理する方法を示しています、<xref:System.Web.UI.CssStyleCollection>のコレクション、<xref:System.Web.UI.HtmlControls.HtmlInputText>サーバー コントロールです。 <xref:System.Web.UI.CssStyleCollection.Keys%2A>プロパティを使用するスタイル属性は、サーバー コントロールで宣言されていますが判断されるとバインド属性の名前と値を<xref:System.Web.UI.WebControls.DataList>Web フォーム ページ上のオブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.UI.CssStyleCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.CssStyleCollection/CS/css1.cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.CssStyleCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.CssStyleCollection/VB/css1.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.CssStyleCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除する項目のスタイルの文字列リテラルです。</param>
+        <summary>スタイル アイテムを削除、<see cref="T:System.Web.UI.CssStyleCollection" />指定したスタイルのキーを使用してコントロールのです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.CssStyleCollection.Remove%2A>からスタイルの CSS をプログラムで削除するメソッドを<xref:System.Web.UI.HtmlControls.HtmlSelect>コントロール。  
+  
+ [!code-aspx-csharp[Classic CssStyleCollection.Remove Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CssStyleCollection.Remove Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CssStyleCollection.Remove Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CssStyleCollection.Remove Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.HtmlTextWriterStyle key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(valuetype System.Web.UI.HtmlTextWriterStyle key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.CssStyleCollection.Remove(System.Web.UI.HtmlTextWriterStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Web.UI.HtmlTextWriterStyle" />
+      </Parameters>
+      <Docs>
+        <param name="key"><see cref="T:System.Web.UI.HtmlTextWriterStyle" />列挙体の値を削除します。</param>
+        <summary>スタイル アイテムを削除、<see cref="T:System.Web.UI.CssStyleCollection" />指定して、コントロールのコレクション<see cref="T:System.Web.UI.HtmlTextWriterStyle" />列挙値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.CssStyleCollection.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値、 <see langword="style" /> HTML サーバー コントロールの属性です。</summary>
+        <value>スタイルの文字列リテラルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.CssStyleCollection.Value%2A>プロパティのスタイル属性の一覧を<xref:System.Web.UI.HtmlControls.HtmlSelect>ユーザーが [送信] ボタンをクリックしたときを制御します。  
+  
+ [!code-aspx-csharp[Classic CssStyleCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CssStyleCollection.Add Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic CssStyleCollection.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CssStyleCollection.Add Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

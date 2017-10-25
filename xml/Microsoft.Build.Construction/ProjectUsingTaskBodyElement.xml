@@ -1,0 +1,121 @@
+<Type Name="ProjectUsingTaskBodyElement" FullName="Microsoft.Build.Construction.ProjectUsingTaskBodyElement">
+  <TypeSignature Language="C#" Value="public class ProjectUsingTaskBodyElement : Microsoft.Build.Construction.ProjectElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProjectUsingTaskBodyElement extends Microsoft.Build.Construction.ProjectElement" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Construction.ProjectUsingTaskBodyElement" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Construction.ProjectElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Evaluate={Evaluate} TaskBody={TaskBody}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>インライン タスクの本体を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Condition">
+      <MemberSignature Language="C#" Value="public override string Condition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Condition" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectUsingTaskBodyElement.Condition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Condition 属性は、この要素の存在しないと、存在しない条件が true に暗黙的にあるために、null を取得します。</summary>
+        <value>Null を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionLocation">
+      <MemberSignature Language="C#" Value="public override Microsoft.Build.Construction.ElementLocation ConditionLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ElementLocation ConditionLocation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectUsingTaskBodyElement.ConditionLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ElementLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用しないでください。 Condition 属性がの存在しない<see cref="T:Microsoft.Build.Construction.ProjectUsingTaskBodyElement" />です。 Get では、内部エラーをスローします。</summary>
+        <value>内部エラーをスローし、null を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evaluate">
+      <MemberSignature Language="C#" Value="public string Evaluate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Evaluate" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectUsingTaskBodyElement.Evaluate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証属性の値を取得します。</summary>
+        <value>これは"true"または"false"評価属性の値を返します。 属性が存在しない場合は、"true"を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ "True"の場合は、インライン タスクの本体で項目とプロパティの値を展開します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateLocation">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ElementLocation EvaluateLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Construction.ElementLocation EvaluateLocation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectUsingTaskBodyElement.EvaluateLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ElementLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在する場合、この要素の検証属性の場所です。</summary>
+        <value>検証属性の位置を返します。 このような属性が存在しない場合は、既定の属性の場所ではなく、要素の位置を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaskBody">
+      <MemberSignature Language="C#" Value="public string TaskBody { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TaskBody" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Construction.ProjectUsingTaskBodyElement.TaskBody" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインライン タスクの内容の未評価の値を設定します。</summary>
+        <value>未評価の内部 XML のインライン タスクの内容を返します。 インライン タスクの本体が存在しない場合は、空の文字列を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

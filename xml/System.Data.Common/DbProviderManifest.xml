@@ -1,0 +1,354 @@
+<Type Name="DbProviderManifest" FullName="System.Data.Common.DbProviderManifest">
+  <TypeSignature Language="C#" Value="public abstract class DbProviderManifest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DbProviderManifest extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.DbProviderManifest" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべての CLR 型の型のメタデータ インターフェイス</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ここのコンテンツは更新されません。ここに資料を追加しないでください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DbProviderManifest ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderManifest.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DbProviderManifest" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConceptualSchemaDefinition">
+      <MemberSignature Language="C#" Value="public static readonly string ConceptualSchemaDefinition;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string ConceptualSchemaDefinition" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Common.DbProviderManifest.ConceptualSchemaDefinition" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>渡す値を取得、ConceptualSchemaDefinitionVersion GetInformation です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConceptualSchemaDefinitionVersion3">
+      <MemberSignature Language="C#" Value="public static readonly string ConceptualSchemaDefinitionVersion3;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string ConceptualSchemaDefinitionVersion3" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Common.DbProviderManifest.ConceptualSchemaDefinitionVersion3" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>渡す値を取得、ConceptualSchemaDefinitionVersion3 GetInformation です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EscapeLikeArgument">
+      <MemberSignature Language="C#" Value="public virtual string EscapeLikeArgument (string argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string EscapeLikeArgument(string argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderManifest.EscapeLikeArgument(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="argument">エスケープする引数。</param>
+        <summary>プロバイダーの作成者は、ワイルドカードとエスケープ文字がエスケープで引数を返すには、このメソッドをオーバーライドする必要があります。 このメソッドは SupportsEscapingLikeArgument が true を返す場合にのみ使用します。</summary>
+        <returns>引数のワイルドカードとエスケープ文字がエスケープされます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDbInformation">
+      <MemberSignature Language="C#" Value="protected abstract System.Xml.XmlReader GetDbInformation (string informationType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xml.XmlReader GetDbInformation(string informationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderManifest.GetDbInformation(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="informationType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="informationType">返される情報の種類。</param>
+        <summary>派生クラスでオーバーライドされると、このメソッドは、プロバイダー固有の情報を返します。</summary>
+        <returns>基になるデータへのマッピングを表す XmlReader オブジェクトでは、カタログを格納します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEdmType">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Metadata.Edm.TypeUsage GetEdmType (System.Data.Metadata.Edm.TypeUsage storeType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.Metadata.Edm.TypeUsage GetEdmType(class System.Data.Metadata.Edm.TypeUsage storeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderManifest.GetEdmType(System.Data.Metadata.Edm.TypeUsage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="storeType" Type="System.Data.Metadata.Edm.TypeUsage" />
+      </Parameters>
+      <Docs>
+        <param name="storeType">EDM 型にマップするには、記憶域の種類とその型のファセットのセットを表す TypeUsage インスタンス。</param>
+        <summary>派生クラスでオーバーライドされると、このメソッドは、指定した記憶域の種類とその型のファセットのセットを EDM 型にマップされます。</summary>
+        <returns><see cref="T:System.Data.Metadata.Edm.TypeUsage" /> EDM 型とその型のファセットのセットを表すインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFacetDescriptions">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.FacetDescription&gt; GetFacetDescriptions (System.Data.Metadata.Edm.EdmType edmType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.FacetDescription&gt; GetFacetDescriptions(class System.Data.Metadata.Edm.EdmType edmType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderManifest.GetFacetDescriptions(System.Data.Metadata.Edm.EdmType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.FacetDescription&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="edmType" Type="System.Data.Metadata.Edm.EdmType" />
+      </Parameters>
+      <Docs>
+        <param name="edmType">ファセットの説明を取得する EDM 型。</param>
+        <summary>特定の種類に関する FacetDescription オブジェクトを返します。</summary>
+        <returns>FacetDescription オブジェクトに対して、指定された EDM 型。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInformation">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlReader GetInformation (string informationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlReader GetInformation(string informationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderManifest.GetInformation(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="informationType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="informationType">返される情報の種類。</param>
+        <summary>プロバイダー固有の情報を取得します。</summary>
+        <returns>プロバイダー固有の情報です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStoreFunctions">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt; GetStoreFunctions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.EdmFunction&gt; GetStoreFunctions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderManifest.GetStoreFunctions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、プロバイダー マニフェストでサポートされている EDM 関数のコレクションを返します。</summary>
+        <returns>EDM 関数のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStoreType">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Metadata.Edm.TypeUsage GetStoreType (System.Data.Metadata.Edm.TypeUsage edmType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.Metadata.Edm.TypeUsage GetStoreType(class System.Data.Metadata.Edm.TypeUsage edmType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderManifest.GetStoreType(System.Data.Metadata.Edm.TypeUsage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.TypeUsage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="edmType" Type="System.Data.Metadata.Edm.TypeUsage" />
+      </Parameters>
+      <Docs>
+        <param name="edmType">記憶域の種類にマップするには、EDM 型とその型のファセットのセットを表す TypeUsage インスタンス。</param>
+        <summary>派生クラスでオーバーライドされると、このメソッドは、指定された EDM 型とその型のファセットのセットを記憶域の種類にマップされます。</summary>
+        <returns>記憶域の種類とその型のファセットのセットを表す TypeUsage インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStoreTypes">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.PrimitiveType&gt; GetStoreTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.PrimitiveType&gt; GetStoreTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderManifest.GetStoreTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.PrimitiveType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、データ ソースによってサポートされるプリミティブ型のセットを返します。</summary>
+        <returns>データ ソースによってサポートされる型のセット。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceName">
+      <MemberSignature Language="C#" Value="public abstract string NamespaceName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NamespaceName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbProviderManifest.NamespaceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロバイダー マニフェストで使用される名前空間を取得します。</summary>
+        <value>このプロバイダー マニフェストで使用される名前空間。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreSchemaDefinition">
+      <MemberSignature Language="C#" Value="public static readonly string StoreSchemaDefinition;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string StoreSchemaDefinition" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Common.DbProviderManifest.StoreSchemaDefinition" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>渡す値を取得、StoreSchemaDefinitionVersion GetInformation です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreSchemaDefinitionVersion3">
+      <MemberSignature Language="C#" Value="public static readonly string StoreSchemaDefinitionVersion3;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string StoreSchemaDefinitionVersion3" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Common.DbProviderManifest.StoreSchemaDefinitionVersion3" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>渡す値を取得、StoreSchemaDefinitionVersion3 GetInformation です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreSchemaMapping">
+      <MemberSignature Language="C#" Value="public static readonly string StoreSchemaMapping;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string StoreSchemaMapping" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Common.DbProviderManifest.StoreSchemaMapping" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>渡す値を取得、StoreSchemaMappingVersion GetInformation です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreSchemaMappingVersion3">
+      <MemberSignature Language="C#" Value="public static readonly string StoreSchemaMappingVersion3;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string StoreSchemaMappingVersion3" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Common.DbProviderManifest.StoreSchemaMappingVersion3" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>渡す値を取得、StoreSchemaMappingVersion3 GetInformation です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsEscapingLikeArgument">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsEscapingLikeArgument (out char escapeCharacter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SupportsEscapingLikeArgument([out] char&amp; escapeCharacter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbProviderManifest.SupportsEscapingLikeArgument(System.Char@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="escapeCharacter" Type="System.Char&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="escapeCharacter">プロバイダーが、エスケープ文字として使用される文字のエスケープをサポートしているか。</param>
+        <summary>プロバイダーが Like 式のパターンとして使用するエスケープ文字列をサポートしているかを示します。</summary>
+        <returns>
+          <see langword="True" />このプロバイダーが Like 式; 内のパターンとして使用するエスケープ文字列をサポートしている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

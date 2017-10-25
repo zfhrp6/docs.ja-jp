@@ -1,0 +1,127 @@
+<Type Name="DataControlReferenceCollection" FullName="System.Web.DynamicData.DataControlReferenceCollection">
+  <TypeSignature Language="C#" Value="public class DataControlReferenceCollection : System.Collections.ObjectModel.Collection&lt;System.Web.DynamicData.DataControlReference&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataControlReferenceCollection extends System.Collections.ObjectModel.Collection`1&lt;class System.Web.DynamicData.DataControlReference&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DataControlReferenceCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.Collection&lt;System.Web.DynamicData.DataControlReference&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Web.DynamicData.DataControlReference</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+          <see cref="T:System.Web.UI.WebControls.MenuItemBinding" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataControlReferenceCollection (System.Web.DynamicData.DynamicDataManager owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.DynamicData.DynamicDataManager owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DataControlReferenceCollection.#ctor(System.Web.DynamicData.DynamicDataManager)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.DynamicData.DynamicDataManager" />
+      </Parameters>
+      <Docs>
+        <param name="owner">コンテナーオブジェクト。</param>
+        <summary><see cref="T:System.Web.DynamicData.DataControlReferenceCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="owner" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, System.Web.DynamicData.DataControlReference item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, class System.Web.DynamicData.DataControlReference item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DataControlReferenceCollection.InsertItem(System.Int32,System.Web.DynamicData.DataControlReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Web.DynamicData.DataControlReference" />
+      </Parameters>
+      <Docs>
+        <param name="index">データ コントロールを挿入する位置を示すインデックス。</param>
+        <param name="item">挿入するデータ コントロール。</param>
+        <summary>データ コントロールの参照をコレクションにデータ コントロールの参照を挿入します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.DynamicDataManager Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.DynamicDataManager Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DataControlReferenceCollection.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.DynamicDataManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.DynamicData.DynamicDataManager" />データ コントロールを含むコントロールです。</summary>
+        <value><see cref="T:System.Web.DynamicData.DynamicDataManager" />データ コントロールを含むコントロールです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItem">
+      <MemberSignature Language="C#" Value="protected override void RemoveItem (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RemoveItem(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DataControlReferenceCollection.RemoveItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">データ コントロールの参照を削除するインデックス。</param>
+        <summary>データ コントロールの参照をコレクションから削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, System.Web.DynamicData.DataControlReference item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, class System.Web.DynamicData.DataControlReference item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DataControlReferenceCollection.SetItem(System.Int32,System.Web.DynamicData.DataControlReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Web.DynamicData.DataControlReference" />
+      </Parameters>
+      <Docs>
+        <param name="index">設定への参照をデータ コントロールのインデックス。</param>
+        <param name="item">データ コントロール。</param>
+        <summary>セット、<see cref="T:System.Web.DynamicData.DynamicDataManager" />データ コントロール参照を含むコントロールです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

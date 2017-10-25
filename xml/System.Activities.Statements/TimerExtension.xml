@@ -1,0 +1,129 @@
+<Type Name="TimerExtension" FullName="System.Activities.Statements.TimerExtension">
+  <TypeSignature Language="C#" Value="public abstract class TimerExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TimerExtension extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Statements.TimerExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>タイマー拡張機能の抽象基本クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイマー拡張機能は、<xref:System.Activities.Statements.Delay> などのアクティビティがタイマーの管理のために使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TimerExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.TimerExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで実装された場合、派生クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelTimer">
+      <MemberSignature Language="C#" Value="public void CancelTimer (System.Activities.Bookmark bookmark);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelTimer(class System.Activities.Bookmark bookmark) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.TimerExtension.CancelTimer(System.Activities.Bookmark)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bookmark" Type="System.Activities.Bookmark" />
+      </Parameters>
+      <Docs>
+        <param name="bookmark">タイマーに関連付けられているブックマーク。</param>
+        <summary>タイマーを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCancelTimer">
+      <MemberSignature Language="C#" Value="protected abstract void OnCancelTimer (System.Activities.Bookmark bookmark);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCancelTimer(class System.Activities.Bookmark bookmark) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.TimerExtension.OnCancelTimer(System.Activities.Bookmark)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bookmark" Type="System.Activities.Bookmark" />
+      </Parameters>
+      <Docs>
+        <param name="bookmark">タイマーに関連付けられているブックマーク。</param>
+        <summary><see cref="M:System.Activities.Statements.TimerExtension.CancelTimer(System.Activities.Bookmark)" /> メソッドによって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRegisterTimer">
+      <MemberSignature Language="C#" Value="protected abstract void OnRegisterTimer (TimeSpan timeout, System.Activities.Bookmark bookmark);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRegisterTimer(valuetype System.TimeSpan timeout, class System.Activities.Bookmark bookmark) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.TimerExtension.OnRegisterTimer(System.TimeSpan,System.Activities.Bookmark)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="bookmark" Type="System.Activities.Bookmark" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">タイマーの継続時間。</param>
+        <param name="bookmark">タイマーが時間切れになった場合に再開するように、タイマーに関連付けられているブックマーク。</param>
+        <summary><see cref="M:System.Activities.Statements.TimerExtension.RegisterTimer(System.TimeSpan,System.Activities.Bookmark)" /> メソッドによって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterTimer">
+      <MemberSignature Language="C#" Value="public void RegisterTimer (TimeSpan timeout, System.Activities.Bookmark bookmark);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterTimer(valuetype System.TimeSpan timeout, class System.Activities.Bookmark bookmark) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.TimerExtension.RegisterTimer(System.TimeSpan,System.Activities.Bookmark)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="bookmark" Type="System.Activities.Bookmark" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">タイマーの継続時間。</param>
+        <param name="bookmark">タイマーが時間切れになった場合に再開するように、タイマーに関連付けられているブックマーク。</param>
+        <summary>指定した継続時間および関連付けられているブックマークに基づいて、タイマーを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,68 @@
+<Type Name="ToolBarAppearance" FullName="System.Windows.Forms.ToolBarAppearance">
+  <TypeSignature Language="C#" Value="public enum ToolBarAppearance" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ToolBarAppearance extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolBarAppearance" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>表示するツールバーの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体がなどのメンバーによって使用されます<xref:System.Windows.Forms.ToolBar.Appearance%2A?displayProperty=nameWithType>です。  
+  
+ 設定、<xref:System.Windows.Forms.ToolBar.Appearance%2A>ツールバーのプロパティ`ToolBarAppearance.Flat`ツールバーとそのボタンの外観フラットです。 マウス ポインターをボタンの上に移動すると、ボタンの外観 3 次元に変化します。 区切り記号は、ボタン、ツールバーがあるフラットな外観との間のスペースではなく、線として表示されます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.ToolBar>コントロールの共通プロパティの一部を設定し、<xref:System.Windows.Forms.Form>です。 デリゲートにも追加、<xref:System.Windows.Forms.ToolBar.ButtonClick>と<xref:System.Windows.Forms.ToolBar.ButtonDropDown>イベント。 この例では、<xref:System.Windows.Forms.ToolBar>という名前`toolBar1`と<xref:System.Windows.Forms.ImageList>という`imageList1`宣言されています。  
+  
+ [!code-cpp[ToolBar#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ToolBar/CPP/mytoolbar.cpp#1)]
+ [!code-csharp[ToolBar#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolBar/CS/mytoolbar.cs#1)]
+ [!code-vb[ToolBar#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolBar/VB/mytoolbar.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Flat">
+      <MemberSignature Language="C#" Value="Flat" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ToolBarAppearance Flat = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolBarAppearance.Flat" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolBarAppearance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールバーとボタンがフラットで表示されますが、上にマウス ポインターを移動すると、ボタンを 3d に変更します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ToolBarAppearance Normal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolBarAppearance.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolBarAppearance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツールバーとボタンは、標準の 3d コントロールとして表示されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

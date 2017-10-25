@@ -1,0 +1,624 @@
+<Type Name="EncryptedPackageEnvelope" FullName="System.IO.Packaging.EncryptedPackageEnvelope">
+  <TypeSignature Language="C#" Value="public class EncryptedPackageEnvelope : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EncryptedPackageEnvelope extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.EncryptedPackageEnvelope" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>暗号化されたパッケージを含む OLE 複合ファイルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.EncryptedPackageEnvelope>パブリック コンス トラクターがありません。  <xref:System.IO.Packaging.EncryptedPackageEnvelope> 、静的なを使用して作成された<xref:System.IO.Packaging.EncryptedPackageEnvelope.Create%2A>、 <xref:System.IO.Packaging.EncryptedPackageEnvelope.CreateFromPackage%2A>、または<xref:System.IO.Packaging.EncryptedPackageEnvelope.Open%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>暗号化されたパッケージおよびそれを保持する OLE 複合ファイルを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して、終了する方法を示しています、<xref:System.IO.Packaging.EncryptedPackageEnvelope>です。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubencrypt)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubencrypt)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.IO.Packaging.EncryptedPackageEnvelope Create (System.IO.Stream envelopeStream, System.Security.RightsManagement.PublishLicense publishLicense, System.Security.RightsManagement.CryptoProvider cryptoProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Packaging.EncryptedPackageEnvelope Create(class System.IO.Stream envelopeStream, class System.Security.RightsManagement.PublishLicense publishLicense, class System.Security.RightsManagement.CryptoProvider cryptoProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.Create(System.IO.Stream,System.Security.RightsManagement.PublishLicense,System.Security.RightsManagement.CryptoProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.EncryptedPackageEnvelope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="envelopeStream" Type="System.IO.Stream" />
+        <Parameter Name="publishLicense" Type="System.Security.RightsManagement.PublishLicense" />
+        <Parameter Name="cryptoProvider" Type="System.Security.RightsManagement.CryptoProvider" />
+      </Parameters>
+      <Docs>
+        <param name="envelopeStream">ファイルを作成する対象のストリーム。</param>
+        <param name="publishLicense">複合ファイルに埋め込まれている公開ライセンス。</param>
+        <param name="cryptoProvider">どのような操作を決定するオブジェクト、現在のユーザーが許可された、暗号化されたコンテンツに対する実行します。</param>
+        <summary>作成して返します、<see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />指定したストリームにします。</summary>
+        <returns>新しく作成された <see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のユーザーは、新しいファイルに読み取り/書き込みアクセス権を持っています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="envelopeStream" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="envelopeStream" />読み取り/書き込みアクセスを提供しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.IO.Packaging.EncryptedPackageEnvelope Create (string envelopeFileName, System.Security.RightsManagement.PublishLicense publishLicense, System.Security.RightsManagement.CryptoProvider cryptoProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Packaging.EncryptedPackageEnvelope Create(string envelopeFileName, class System.Security.RightsManagement.PublishLicense publishLicense, class System.Security.RightsManagement.CryptoProvider cryptoProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.Create(System.String,System.Security.RightsManagement.PublishLicense,System.Security.RightsManagement.CryptoProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.EncryptedPackageEnvelope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="envelopeFileName" Type="System.String" />
+        <Parameter Name="publishLicense" Type="System.Security.RightsManagement.PublishLicense" />
+        <Parameter Name="cryptoProvider" Type="System.Security.RightsManagement.CryptoProvider" />
+      </Parameters>
+      <Docs>
+        <param name="envelopeFileName">OLE 複合ファイルの名前。</param>
+        <param name="publishLicense">複合ファイルに埋め込まれている公開ライセンス。</param>
+        <param name="cryptoProvider">どのような操作を決定するオブジェクト、現在のユーザーが許可された、暗号化されたコンテンツに対する実行します。</param>
+        <summary>作成して返します、<see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />し、指定したファイル名が付けられます。</summary>
+        <returns>新しく作成された <see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した名前のファイルが既に存在する場合は上書きされます。  
+  
+ 現在のユーザーは、ファイルに読み取り/書き込みアクセス権を持っています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="envelopeFileName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CreateFromPackage">
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />そのコンテンツのソースとして既存の暗号化されていないパッケージを使用しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.IO.Packaging.EncryptedPackageEnvelope.CreateFromPackage%2A>をインスタンス化するメソッド、<xref:System.IO.Packaging.EncryptedPackageEnvelope>です。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubencrypt)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubencrypt)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateFromPackage">
+      <MemberSignature Language="C#" Value="public static System.IO.Packaging.EncryptedPackageEnvelope CreateFromPackage (System.IO.Stream envelopeStream, System.IO.Stream packageStream, System.Security.RightsManagement.PublishLicense publishLicense, System.Security.RightsManagement.CryptoProvider cryptoProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Packaging.EncryptedPackageEnvelope CreateFromPackage(class System.IO.Stream envelopeStream, class System.IO.Stream packageStream, class System.Security.RightsManagement.PublishLicense publishLicense, class System.Security.RightsManagement.CryptoProvider cryptoProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.CreateFromPackage(System.IO.Stream,System.IO.Stream,System.Security.RightsManagement.PublishLicense,System.Security.RightsManagement.CryptoProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.EncryptedPackageEnvelope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="envelopeStream" Type="System.IO.Stream" />
+        <Parameter Name="packageStream" Type="System.IO.Stream" />
+        <Parameter Name="publishLicense" Type="System.Security.RightsManagement.PublishLicense" />
+        <Parameter Name="cryptoProvider" Type="System.Security.RightsManagement.CryptoProvider" />
+      </Parameters>
+      <Docs>
+        <param name="envelopeStream">ファイルを作成する対象のストリーム。</param>
+        <param name="packageStream">既存の暗号化されていないパッケージを表すストリーム。</param>
+        <param name="publishLicense">複合ファイルに埋め込まれている公開ライセンス。</param>
+        <param name="cryptoProvider">どのような操作を決定するオブジェクト、現在のユーザーが許可された、暗号化されたコンテンツに対する実行します。</param>
+        <summary>作成して返します、 <see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" /> (指定したストリーム) を使用した、指定した暗号化されていないパッケージをコンテンツとして。</summary>
+        <returns>新しく作成された <see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のユーザーは、新しいファイルに読み取り/書き込みアクセス権を持っています。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.IO.Packaging.EncryptedPackageEnvelope.CreateFromPackage%2A>をインスタンス化するメソッド、<xref:System.IO.Packaging.EncryptedPackageEnvelope>です。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubencrypt)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubencrypt)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="envelopeStream" /> または <paramref name="packageStream" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="envelopeStream" />読み取り/書き込みアクセスを提供しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromPackage">
+      <MemberSignature Language="C#" Value="public static System.IO.Packaging.EncryptedPackageEnvelope CreateFromPackage (string envelopeFileName, System.IO.Stream packageStream, System.Security.RightsManagement.PublishLicense publishLicense, System.Security.RightsManagement.CryptoProvider cryptoProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Packaging.EncryptedPackageEnvelope CreateFromPackage(string envelopeFileName, class System.IO.Stream packageStream, class System.Security.RightsManagement.PublishLicense publishLicense, class System.Security.RightsManagement.CryptoProvider cryptoProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.CreateFromPackage(System.String,System.IO.Stream,System.Security.RightsManagement.PublishLicense,System.Security.RightsManagement.CryptoProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.EncryptedPackageEnvelope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="envelopeFileName" Type="System.String" />
+        <Parameter Name="packageStream" Type="System.IO.Stream" />
+        <Parameter Name="publishLicense" Type="System.Security.RightsManagement.PublishLicense" />
+        <Parameter Name="cryptoProvider" Type="System.Security.RightsManagement.CryptoProvider" />
+      </Parameters>
+      <Docs>
+        <param name="envelopeFileName">OLE 複合ファイルの名前。</param>
+        <param name="packageStream">既存の暗号化されていないパッケージを表すストリーム。</param>
+        <param name="publishLicense">複合ファイルに埋め込まれている公開ライセンス。</param>
+        <param name="cryptoProvider">どのような操作を決定するオブジェクト、現在のユーザーが許可された、暗号化されたコンテンツに対する実行します。</param>
+        <summary>作成して返します、<see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />をコンテンツとして指定した暗号化されていないパッケージを使用し、指定したファイル名が付けられます。</summary>
+        <returns>新しく作成された <see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した名前のファイルが既に存在する場合は上書きされます。  
+  
+ 現在のユーザーは、ファイルに読み取り/書き込みアクセス権を持っています。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.IO.Packaging.EncryptedPackageEnvelope.CreateFromPackage%2A>をインスタンス化するメソッド、<xref:System.IO.Packaging.EncryptedPackageEnvelope>です。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubencrypt)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubencrypt)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="envelopeFileName" /> または <paramref name="packageStream" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.IO.Packaging.EncryptedPackageEnvelope.Dispose%2A>の使用が終わったら、<xref:System.IO.Packaging.EncryptedPackageEnvelope>です。 <xref:System.IO.Packaging.EncryptedPackageEnvelope.Dispose%2A> メソッドによって、<xref:System.IO.Packaging.EncryptedPackageEnvelope> は使用不可の状態になります。 呼び出した後<xref:System.IO.Packaging.EncryptedPackageEnvelope.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.IO.Packaging.EncryptedPackageEnvelope>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.IO.Packaging.EncryptedPackageEnvelope>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.IO.Packaging.EncryptedPackageEnvelope.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.IO.Packaging.EncryptedPackageEnvelope> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.IO.Packaging.EncryptedPackageEnvelope> オブジェクトの <xref:System.Object.Finalize%2A> メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.IO.Packaging.EncryptedPackageEnvelope>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FileOpenAccess">
+      <MemberSignature Language="C#" Value="public System.IO.FileAccess FileOpenAccess { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.FileAccess FileOpenAccess" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.EncryptedPackageEnvelope.FileOpenAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り、書き込み、またはその両方で、ファイルが開かれたかどうかを指定する値を取得します。</summary>
+        <value><see cref="T:System.IO.FileAccess" />ファイルを開くために使用する値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>両方のストリームをフラッシュ、<see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />とパッケージ コンテンツ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPackage">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.Package GetPackage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.Package GetPackage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.GetPackage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.Package</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>暗号化されたパッケージ内の取得、<see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />です。</summary>
+        <returns><see cref="T:System.IO.Packaging.Package" />エンベロープにします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEncryptedPackageEnvelope">
+      <MemberSignature Language="C#" Value="public static bool IsEncryptedPackageEnvelope (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsEncryptedPackageEnvelope(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.IsEncryptedPackageEnvelope(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">テストされるストリーム。</param>
+        <summary>指定したストリームが暗号化されたパッケージ ストリームを持つ OLE 複合ファイルでかどうかを指定する値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定したストリームが暗号化されたパッケージ ストリーム; を持つ OLE 複合ファイルです。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEncryptedPackageEnvelope">
+      <MemberSignature Language="C#" Value="public static bool IsEncryptedPackageEnvelope (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsEncryptedPackageEnvelope(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.IsEncryptedPackageEnvelope(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">テストされるファイルです。</param>
+        <summary>指定したファイルは、暗号化されたパッケージ ストリームを持つ OLE 複合ファイルかどうかを指定する値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定したファイルが暗号化されたパッケージ ストリーム; を持つ OLE 複合ファイルの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このメソッドを使用して暗号化をテストする方法を示します。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubencrypt)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubencrypt)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static System.IO.Packaging.EncryptedPackageEnvelope Open (System.IO.Stream envelopeStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Packaging.EncryptedPackageEnvelope Open(class System.IO.Stream envelopeStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.Open(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.EncryptedPackageEnvelope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="envelopeStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="envelopeStream">暗号化されたパッケージを含むストリーム。</param>
+        <summary>指定したストリームで暗号化されたパッケージを開きます。</summary>
+        <returns><see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />開かれることです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストリームには、暗号化されたパッケージが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static System.IO.Packaging.EncryptedPackageEnvelope Open (string envelopeFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Packaging.EncryptedPackageEnvelope Open(string envelopeFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.Open(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.EncryptedPackageEnvelope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="envelopeFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="envelopeFileName">暗号化されたパッケージを含むファイルです。</param>
+        <summary>指定したファイルに読み取り専用かつ非共有として暗号化されたパッケージを開きます。</summary>
+        <returns><see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />開かれることです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルには、暗号化されたパッケージが必要です。  
+  
+ 開かれたファイルは読み取り専用共有されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static System.IO.Packaging.EncryptedPackageEnvelope Open (string envelopeFileName, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Packaging.EncryptedPackageEnvelope Open(string envelopeFileName, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.Open(System.String,System.IO.FileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.EncryptedPackageEnvelope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="envelopeFileName" Type="System.String" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="envelopeFileName">暗号化されたパッケージを含むファイルです。</param>
+        <param name="access">アクセスの種類。</param>
+        <summary>指定されたファイルとして共有されていないと、指定したアクセスで暗号化されたパッケージを開きます。</summary>
+        <returns><see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />開かれることです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルには、暗号化されたパッケージが必要です。  
+  
+ 開かれたファイルでは、共有します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static System.IO.Packaging.EncryptedPackageEnvelope Open (string envelopeFileName, System.IO.FileAccess access, System.IO.FileShare sharing);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Packaging.EncryptedPackageEnvelope Open(string envelopeFileName, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare sharing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.EncryptedPackageEnvelope.Open(System.String,System.IO.FileAccess,System.IO.FileShare)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.EncryptedPackageEnvelope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="envelopeFileName" Type="System.String" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="sharing" Type="System.IO.FileShare" />
+      </Parameters>
+      <Docs>
+        <param name="envelopeFileName">暗号化されたパッケージを含むファイルです。</param>
+        <param name="access">アクセスの種類。</param>
+        <param name="sharing">共有の種類。</param>
+        <summary>指定したファイルに暗号化されたパッケージを開くと、指定のアクセスが与えられます、共有します。</summary>
+        <returns><see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />開かれることです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルには、暗号化されたパッケージが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PackageProperties">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.PackageProperties PackageProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Packaging.PackageProperties PackageProperties" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.EncryptedPackageEnvelope.PackageProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.PackageProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コア権限管理ドキュメントの (タイトル、件名や) パッケージのプロパティを取得します。</summary>
+        <value><see cref="T:System.IO.Packaging.PackageProperties" />パッケージ用です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのコア プロパティは、標準的な OLE プロパティ ストリーム (\005SummaryInformation および \005DocumentSummaryInformation) に格納されます。 主要プロパティは、パッケージ自体にも格納されます。 プロパティの同期の 2 つのセットを保持するアプリケーションの役割です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightsManagementInformation">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.RightsManagementInformation RightsManagementInformation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Packaging.RightsManagementInformation RightsManagementInformation" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.EncryptedPackageEnvelope.RightsManagementInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.RightsManagementInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>管理情報に格納されている、権限を取得、<see cref="T:System.IO.Packaging.EncryptedPackageEnvelope" />具体的には、、<see cref="T:System.Security.RightsManagement.PublishLicense" />と<see cref="T:System.Security.RightsManagement.UseLicense" />s rights management を具体化する OLE 複合ファイルに格納されているパッケージの保護。</summary>
+        <value><see cref="T:System.IO.Packaging.RightsManagementInformation" />パッケージ用です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します<xref:System.IO.Packaging.RightsManagementInformation>を使用して暗号化されたパッケージを<xref:System.IO.Packaging.EncryptedPackageEnvelope.RightsManagementInformation%2A>プロパティです。  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubencrypt)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubEncrypt](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubencrypt)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StorageInfo">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.StorageInfo StorageInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Packaging.StorageInfo StorageInfo" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.EncryptedPackageEnvelope.StorageInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.StorageInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号化されたパッケージの外部複合ファイル ストリームへのアクセスを提供するオブジェクトを取得します。</summary>
+        <value>A <see cref="T:System.IO.Packaging.StorageInfo" /> OLE 複合ファイルでは暗号化されたパッケージ外にあるストリームを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

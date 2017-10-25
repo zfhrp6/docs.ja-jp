@@ -1,0 +1,175 @@
+<Type Name="XmlSchemaSimpleTypeUnion" FullName="System.Xml.Schema.XmlSchemaSimpleTypeUnion">
+  <TypeSignature Language="C#" Value="public class XmlSchemaSimpleTypeUnion : System.Xml.Schema.XmlSchemaSimpleTypeContent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSchemaSimpleTypeUnion extends System.Xml.Schema.XmlSchemaSimpleTypeContent" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaSimpleTypeUnion" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.Schema.XmlSchemaSimpleTypeContent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="union" /> World Wide Web Consortium (W3C) で指定された XML スキーマから単純型の要素。 A<see langword="union" />のコンテンツを指定するデータ型を使用することができます、<see langword="simpleType" />です。 値、<see langword="simpleType" />要素は、共用体で指定した代替データ型のセットのいずれかである必要があります。 共用体型は常に派生型であり、許容するデータ型が複数指定されている必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`union`型により、1 つの要素または属性値またはの 1 つ以上のインスタンスが複数の atomic 和集合から描画された入力し型の一覧です。  
+  
+   
+  
+## Examples  
+ 次の例は、の使用を示しています。`XmlSchemaSimpleTypeUnion`クラスです。  
+  
+ [!code-cpp[Classic WebData XmlSchemaSimpleTypeUnion Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic Webdata XmlSchemaSimpleTypeUnion Example/CPP/simpletypeunion.cpp#1)]
+ [!code-csharp[Classic WebData XmlSchemaSimpleTypeUnion Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic Webdata XmlSchemaSimpleTypeUnion Example/CS/simpletypeunion.cs#1)]
+ [!code-vb[Classic WebData XmlSchemaSimpleTypeUnion Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic Webdata XmlSchemaSimpleTypeUnion Example/VB/simpletypeunion.vb#1)]  
+  
+ このコード例については、次の XML ファイルが生成されます。  
+  
+ [!code-xml[Classic WebData XmlSchemaSimpleTypeUnion Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic Webdata XmlSchemaSimpleTypeUnion Example/XML/example.xsd#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSchemaSimpleTypeUnion ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSimpleTypeUnion.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaSimpleTypeUnion" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseMemberTypes">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaSimpleType[] BaseMemberTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaSimpleType[] BaseMemberTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSimpleTypeUnion.BaseMemberTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaSimpleType[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配列を取得<see cref="T:System.Xml.Schema.XmlSchemaSimpleType" />オブジェクトの種類を表す、<see langword="simpleType" />に基づいて、要素、<see cref="P:System.Xml.Schema.XmlSchemaSimpleTypeUnion.BaseTypes" />と<see cref="P:System.Xml.Schema.XmlSchemaSimpleTypeUnion.MemberTypes" />単純型の値。</summary>
+        <value>配列<see cref="T:System.Xml.Schema.XmlSchemaSimpleType" />オブジェクトの種類を表す、<see langword="simpleType" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、スキーマのコンパイル後の情報セット プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseTypes">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaObjectCollection BaseTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaObjectCollection BaseTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSimpleTypeUnion.BaseTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("simpleType", typeof(System.Xml.Schema.XmlSchemaSimpleType))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaObjectCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本型のコレクションを取得します。</summary>
+        <value>単純型の基本値のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberTypes">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName[] MemberTypes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlQualifiedName[] MemberTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSimpleTypeUnion.MemberTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("memberTypes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または組み込みのデータ型の名前で修飾されたメンバーの配列を設定または<see langword="simpleType" />このスキーマ (または指定した名前空間で示された別のスキーマ) で定義された要素。</summary>
+        <value>組み込みデータ型または単純型のメンバーのリストで構成される配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,149 @@
+<Type Name="ListViewSortEventArgs" FullName="System.Web.UI.WebControls.ListViewSortEventArgs">
+  <TypeSignature Language="C#" Value="public class ListViewSortEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewSortEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListViewSortEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.ListView.Sorting" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView>制御が発生し、<xref:System.Web.UI.WebControls.ListView.Sorting>イベント並べ替えボタンをクリックすると、その前に、<xref:System.Web.UI.WebControls.ListView>コントロールは、並べ替え操作を処理します。 (並べ替えボタンは、ボタンが`CommandName`プロパティを"Sort"に設定します)。これにより、並べ替え式のカスタマイズなど、このイベントが発生するたびに、カスタム ルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ A<xref:System.Web.UI.WebControls.ListViewSortEventArgs>オブジェクトは、イベント処理メソッドに渡されます。 このオブジェクトを指定するかの並べ替え式および並べ替えの方向を決定することができるように、<xref:System.Web.UI.WebControls.ListView>コントロール。 並べ替え式を確認するには<xref:System.Web.UI.WebControls.ListViewSortEventArgs.SortExpression%2A>プロパティです。 並べ替えの方向を確認するには<xref:System.Web.UI.WebControls.ListViewSortEventArgs.SortDirection%2A>プロパティです。 設定して、並べ替え操作をキャンセルすることも、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+ <xref:System.Web.UI.WebControls.ListViewSortEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.ListViewSelectEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewSortEventArgs>並べ替えの方向と並べ替えられている列を表示するオブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListView.Sorting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.Sorting/CS/ListViewSortingCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListView.Sorting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.Sorting/VB/ListViewSortingVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewSortEventArgs (string sortExpression, System.Web.UI.WebControls.SortDirection sortDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sortExpression, valuetype System.Web.UI.WebControls.SortDirection sortDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewSortEventArgs.#ctor(System.String,System.Web.UI.WebControls.SortDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sortExpression" Type="System.String" />
+        <Parameter Name="sortDirection" Type="System.Web.UI.WebControls.SortDirection" />
+      </Parameters>
+      <Docs>
+        <param name="sortExpression">コントロール内の項目の並べ替えに使用する並べ替え式。</param>
+        <param name="sortDirection">A<see cref="T:System.Web.UI.WebControls.SortDirection" />をコントロール内の項目を並べ替える方向を示す値。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ListViewSortEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.ListViewSortEventArgs>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させる場合にコントロールの開発者によって、主に使用します。  
+  
+ <xref:System.Web.UI.WebControls.ListViewSortEventArgs> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.ListViewSortEventArgs.SortExpression%2A>|`sortExpression` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.ListViewSortEventArgs.SortDirection%2A>|`sortDirection` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortDirection">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SortDirection SortDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.SortDirection SortDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewSortEventArgs.SortDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SortDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を並べ替える方向、<see cref="T:System.Web.UI.WebControls.ListView" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.SortDirection" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ListView.Sorting>イベントは、使用することができます、<xref:System.Web.UI.WebControls.ListViewSortEventArgs.SortDirection%2A>プロパティを指定または順序を決定する、<xref:System.Web.UI.WebControls.ListView>コントロールを並べ替えます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewSortEventArgs>並べ替えの方向と並べ替えられる列を表示するオブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewSortEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.Sorting#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.Sorting/CS/ListViewSortingCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.ListView.Sorting#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.Sorting/VB/ListViewSortingVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortExpression">
+      <MemberSignature Language="C#" Value="public string SortExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SortExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewSortEventArgs.SortExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の項目の並べ替えに使用される式、<see cref="T:System.Web.UI.WebControls.ListView" />コントロール。</summary>
+        <value>内の項目の並べ替えに使用される式、<see cref="T:System.Web.UI.WebControls.ListView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ListView.Sorting>イベントは、使用することができます、<xref:System.Web.UI.WebControls.ListViewSortEventArgs.SortExpression%2A>の並べ替えに使用される並べ替え式を指定するプロパティ、<xref:System.Web.UI.WebControls.ListView>コントロール。 並べ替え式には、並べ替えるフィールドの名前が含まれています。 一度に複数の列を並べ替えると、フィールド名のコンマ区切りの一覧にこのプロパティをプログラムから設定できます。  
+  
+> [!NOTE]
+>  既定では、<xref:System.Web.UI.WebControls.ListView>コントロールでは、列の完全な一覧に、並べ替えの方向が適用されます。 その結果、並べ替えの方向は、一覧の最後の列のみに適用されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewSortEventArgs>並べ替えの方向と並べ替えられる列を表示するオブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewSortEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.Sorting#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.Sorting/CS/ListViewSortingCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.ListView.Sorting#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.Sorting/VB/ListViewSortingVB.aspx#2)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Web.UI.WebControls.ListViewSortEventArgs.SortExpression%2A>各列に適用されるさまざまな並べ替えの方向性に複数の列を並べ替えるためにはプロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListViewSortEventArgs.SortExpression#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewSortEventArgs.SortExpression/CS/SortExpressionCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListViewSortEventArgs.SortExpression#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewSortEventArgs.SortExpression/VB/SortExpressionVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

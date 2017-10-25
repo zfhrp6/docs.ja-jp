@@ -1,0 +1,110 @@
+<Type Name="CustomExpression" FullName="System.Web.UI.WebControls.Expressions.CustomExpression">
+  <TypeSignature Language="C#" Value="public class CustomExpression : System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomExpression extends System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Expressions.CustomExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true, "Parameters")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>イベントに応答して呼び出されるカスタム LINQ クエリを指定する方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Expressions.CustomExpression>クラスが使用されて、<xref:System.Web.UI.WebControls.QueryExtender>コントロール。 <xref:System.Web.UI.WebControls.QueryExtender>コントロールは、さまざまなデータをフィルター処理に使用できるオプションをサポートしています。 <xref:System.Web.UI.WebControls.QueryExtender>コントロールは、検索文字列を指定した範囲の値を検索、指定した値にテーブルのプロパティ値を比較するデータを並べ替えることのできるフィルターをサポートします。 これらのオプションが LINQ の式として提供される、<xref:System.Web.UI.WebControls.QueryExtender>コントロール。 これらのフィルター式を使用するかで使用できるカスタム式を指定することができます、<xref:System.Web.UI.WebControls.QueryExtender>コントロール。 <xref:System.Web.UI.WebControls.Expressions.CustomExpression>クラスをアプリケーションでカスタム式を指定し、イベント ハンドラーで呼び出すことができます。  
+  
+> [!NOTE]
+>  使用して、イベント ハンドラーではなく、メソッドによって呼び出されるカスタム クエリを指定することができます、<xref:System.Web.UI.WebControls.Expressions.MethodExpression>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Web.UI.WebControls.Expressions.CustomExpression>オブジェクトによって使用される、<xref:System.Web.UI.WebControls.QueryExtender>コントロール。 カスタム式の呼び出し、`FilterProducts`メソッドで、カスタム LINQ 式が含まれています。 フィルター処理操作の結果に表示されます、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+  
+  
+ 次の例では、カスタム LINQ クエリを含むイベント ハンドラーを示します。 式は、AdventureWorks データベースの Product テーブルをフィルター処理し、表示価格ドル 3,500.00 以上の製品を表示します。  
+  
+ [!code-csharp[QueryExtenderCustomFiltering#2](~/samples/snippets/csharp/VS_Snippets_WebNet/queryextendercustomfiltering/cs/queryextendercustomfiltering.cs#2)]
+ [!code-vb[QueryExtenderCustomFiltering#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/queryextendercustomfiltering/vb/queryextendercustomfiltering.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Expressions.CustomExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Expressions.CustomExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryable">
+      <MemberSignature Language="C#" Value="public override System.Linq.IQueryable GetQueryable (System.Linq.IQueryable source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Linq.IQueryable GetQueryable(class System.Linq.IQueryable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Expressions.CustomExpression.GetQueryable(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="source">データ ソースを<see cref="T:System.Linq.IQueryable" />オブジェクトが使用されます。</param>
+        <summary>変更されたへのアクセスを提供<see cref="T:System.Linq.IQueryable" />オブジェクトのデータ ソースの使用。</summary>
+        <returns>変更されたデータ ソースのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Querying">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.Expressions.CustomExpressionEventArgs&gt; Querying;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.Expressions.CustomExpressionEventArgs&gt; Querying" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.Expressions.CustomExpression.Querying" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.Expressions.CustomExpressionEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Linq.IQueryable" />データ ソースの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Expressions.CustomExpression>オブジェクトでは、イベント ハンドラーでカスタム式を指定することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

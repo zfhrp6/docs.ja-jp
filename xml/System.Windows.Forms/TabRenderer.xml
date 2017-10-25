@@ -1,0 +1,513 @@
+<Type Name="TabRenderer" FullName="System.Windows.Forms.TabRenderer">
+  <TypeSignature Language="C#" Value="public sealed class TabRenderer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TabRenderer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TabRenderer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Visual スタイルでタブ コントロールを表示するために使用されるメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TabRenderer>クラスのセットを提供`static`オペレーティング システムの現在の visual スタイルを持つタブ コントロールを表示するために使用できるメソッドです。 コントロールのレンダリングとは、コントロールのユーザー インターフェイスを描画することを意味します。 これは、現在の visual スタイルの外観を持つカスタム コントロールを描画する場合に便利です。 タブ コントロールを描画するには、使用、<xref:System.Windows.Forms.TabRenderer.DrawTabPage%2A>メソッドは、ページの描画を使用して、<xref:System.Windows.Forms.TabRenderer.DrawTabItem%2A>それぞれのタブを描画するメソッド。  
+  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルがアプリケーション ウィンドウのクライアント領域に適用されている場合、このクラスのメソッドは現在の visual スタイルを持つタブ コントロールを描画します。 このクラスのプロパティとメソッドがスローされますそれ以外の場合、<xref:System.InvalidOperationException>です。 このクラスのメンバーを使用することができるかどうかを決定するには、値を確認、<xref:System.Windows.Forms.TabRenderer.IsSupported%2A>プロパティです。  
+  
+ このクラスの機能をラップする、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer?displayProperty=nameWithType>によって公開されている要素のいずれかに設定されている、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Tab?displayProperty=nameWithType>クラスです。 詳細については、次を参照してください。 [Visual スタイルを使用しているコントロールのレンダリング](~/docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するカスタム コントロールを作成する方法を示しています、<xref:System.Windows.Forms.TabRenderer.DrawTabPage%2A>と<xref:System.Windows.Forms.TabRenderer.DrawTabItem%2A>を 2 つのタブと [基本] タブのコントロールを描画するメソッド。  
+  
+ [!code-cpp[System.Windows.Forms.TabRenderer#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/cpp/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.TabRenderer#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.TabRenderer#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/VB/form1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DrawTabItem">
+      <MemberSignature Language="C#" Value="public static void DrawTabItem (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.TabItemState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTabItem(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.TabItemState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabRenderer.DrawTabItem(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.TabItemState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TabItemState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />  タブを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />  タブの境界を指定します。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.TabItemState" />  タブの表示状態を指定する値。</param>
+        <summary>指定された状態と境界のタブを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TabRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTabItem">
+      <MemberSignature Language="C#" Value="public static void DrawTabItem (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, bool focused, System.Windows.Forms.VisualStyles.TabItemState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTabItem(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, bool focused, valuetype System.Windows.Forms.VisualStyles.TabItemState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabRenderer.DrawTabItem(System.Drawing.Graphics,System.Drawing.Rectangle,System.Boolean,System.Windows.Forms.VisualStyles.TabItemState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TabItemState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />  タブを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />  タブの境界を指定します。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.TabItemState" />  タブの表示状態を指定する値。</param>
+        <summary>タブで、指定した状態と、境界とフォーカスを示すオプションを示す四角形を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TabRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTabItem">
+      <MemberSignature Language="C#" Value="public static void DrawTabItem (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, string tabItemText, System.Drawing.Font font, System.Windows.Forms.VisualStyles.TabItemState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTabItem(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, string tabItemText, class System.Drawing.Font font, valuetype System.Windows.Forms.VisualStyles.TabItemState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabRenderer.DrawTabItem(System.Drawing.Graphics,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Windows.Forms.VisualStyles.TabItemState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="tabItemText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TabItemState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />  タブを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />  タブの境界を指定します。</param>
+        <param name="tabItemText"><see cref="T:System.String" />  タブで描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>tabItemText</c>です。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.TabItemState" />  タブの表示状態を指定する値。</param>
+        <summary>指定した状態と境界で、指定したテキストを持つタブを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TabRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTabItem">
+      <MemberSignature Language="C#" Value="public static void DrawTabItem (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Drawing.Image image, System.Drawing.Rectangle imageRectangle, bool focused, System.Windows.Forms.VisualStyles.TabItemState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTabItem(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Drawing.Image image, valuetype System.Drawing.Rectangle imageRectangle, bool focused, valuetype System.Windows.Forms.VisualStyles.TabItemState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabRenderer.DrawTabItem(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Image,System.Drawing.Rectangle,System.Boolean,System.Windows.Forms.VisualStyles.TabItemState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="imageRectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TabItemState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />  タブを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />  タブの境界を指定します。</param>
+        <param name="image"><see cref="T:System.Drawing.Image" />  タブで描画します。</param>
+        <param name="imageRectangle"><see cref="T:System.Drawing.Rectangle" />の境界を指定する<c>イメージ</c>です。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.TabItemState" />  タブの表示状態を指定する値。</param>
+        <summary>指定した状態と、指定されたイメージとは省略可能なフォーカスを示す四角形の境界タブを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TabRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTabItem">
+      <MemberSignature Language="C#" Value="public static void DrawTabItem (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, string tabItemText, System.Drawing.Font font, bool focused, System.Windows.Forms.VisualStyles.TabItemState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTabItem(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, string tabItemText, class System.Drawing.Font font, bool focused, valuetype System.Windows.Forms.VisualStyles.TabItemState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabRenderer.DrawTabItem(System.Drawing.Graphics,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Boolean,System.Windows.Forms.VisualStyles.TabItemState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="tabItemText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TabItemState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />  タブを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />  タブの境界を指定します。</param>
+        <param name="tabItemText"><see cref="T:System.String" />  タブで描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>tabItemText</c>です。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.TabItemState" />  タブの表示状態を指定する値。</param>
+        <summary>指定した状態と、指定したテキスト、およびオプションでフォーカスを示す四角形の境界タブを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TabRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.TabRenderer.DrawTabItem%28System.Drawing.Graphics%2CSystem.Drawing.Rectangle%2CSystem.String%2CSystem.Drawing.Font%2CSystem.Boolean%2CSystem.Windows.Forms.VisualStyles.TabItemState%29>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>タブ項目を描画するメソッド。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TabRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.TabRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.TabRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.TabRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTabItem">
+      <MemberSignature Language="C#" Value="public static void DrawTabItem (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, string tabItemText, System.Drawing.Font font, System.Windows.Forms.TextFormatFlags flags, bool focused, System.Windows.Forms.VisualStyles.TabItemState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTabItem(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, string tabItemText, class System.Drawing.Font font, valuetype System.Windows.Forms.TextFormatFlags flags, bool focused, valuetype System.Windows.Forms.VisualStyles.TabItemState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabRenderer.DrawTabItem(System.Drawing.Graphics,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Windows.Forms.TextFormatFlags,System.Boolean,System.Windows.Forms.VisualStyles.TabItemState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="tabItemText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TabItemState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />  タブを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />  タブの境界を指定します。</param>
+        <param name="tabItemText"><see cref="T:System.String" />  タブで描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>tabItemText</c>です。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.TabItemState" />  タブの表示状態を指定する値。</param>
+        <summary>指定した状態と、指定したテキストとテキストの書式設定、およびオプションでフォーカスを示す四角形の境界タブを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TabRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTabItem">
+      <MemberSignature Language="C#" Value="public static void DrawTabItem (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, string tabItemText, System.Drawing.Font font, System.Drawing.Image image, System.Drawing.Rectangle imageRectangle, bool focused, System.Windows.Forms.VisualStyles.TabItemState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTabItem(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, string tabItemText, class System.Drawing.Font font, class System.Drawing.Image image, valuetype System.Drawing.Rectangle imageRectangle, bool focused, valuetype System.Windows.Forms.VisualStyles.TabItemState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabRenderer.DrawTabItem(System.Drawing.Graphics,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Drawing.Image,System.Drawing.Rectangle,System.Boolean,System.Windows.Forms.VisualStyles.TabItemState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="tabItemText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="imageRectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TabItemState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />  タブを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />  タブの境界を指定します。</param>
+        <param name="tabItemText"><see cref="T:System.String" />  タブで描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>tabItemText</c>です。</param>
+        <param name="image"><see cref="T:System.Drawing.Image" />  タブで描画します。</param>
+        <param name="imageRectangle"><see cref="T:System.Drawing.Rectangle" />の境界を指定する<c>イメージ</c>です。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.TabItemState" />  タブの表示状態を指定する値。</param>
+        <summary>指定した状態と、指定したテキストとイメージ、およびオプションでフォーカスを示す四角形の境界タブを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TabRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTabItem">
+      <MemberSignature Language="C#" Value="public static void DrawTabItem (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, string tabItemText, System.Drawing.Font font, System.Windows.Forms.TextFormatFlags flags, System.Drawing.Image image, System.Drawing.Rectangle imageRectangle, bool focused, System.Windows.Forms.VisualStyles.TabItemState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTabItem(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, string tabItemText, class System.Drawing.Font font, valuetype System.Windows.Forms.TextFormatFlags flags, class System.Drawing.Image image, valuetype System.Drawing.Rectangle imageRectangle, bool focused, valuetype System.Windows.Forms.VisualStyles.TabItemState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabRenderer.DrawTabItem(System.Drawing.Graphics,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Windows.Forms.TextFormatFlags,System.Drawing.Image,System.Drawing.Rectangle,System.Boolean,System.Windows.Forms.VisualStyles.TabItemState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="tabItemText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="imageRectangle" Type="System.Drawing.Rectangle" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TabItemState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />  タブを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />  タブの境界を指定します。</param>
+        <param name="tabItemText"><see cref="T:System.String" />  タブで描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>tabItemText</c>です。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <param name="image"><see cref="T:System.Drawing.Image" />  タブで描画します。</param>
+        <param name="imageRectangle"><see cref="T:System.Drawing.Rectangle" />の境界を指定する<c>イメージ</c>です。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、 <see cref="T:System.Windows.Forms.VisualStyles.TabItemState" />  タブの表示状態を指定する値。</param>
+        <summary>指定した状態と境界をタブを描画します。指定したテキスト、テキストの書式設定、およびイメージです。省略可能なフォーカス四角形を持つ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TabRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTabPage">
+      <MemberSignature Language="C#" Value="public static void DrawTabPage (System.Drawing.Graphics g, System.Drawing.Rectangle bounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTabPage(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabRenderer.DrawTabPage(System.Drawing.Graphics,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />タブ ページを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />タブ ページの境界を指定します。</param>
+        <summary>指定した範囲内のタブ ページを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TabRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.TabRenderer.DrawTabPage%2A>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>タブ ページを描画するメソッド。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TabRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.TabRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.TabRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.TabRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupported">
+      <MemberSignature Language="C#" Value="public static bool IsSupported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsSupported" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabRenderer.IsSupported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.TabRenderer" />クラスは、visual スタイルでタブ コントロールを描画するために使用できます。</summary>
+        <value>
+          <see langword="true" />場合は、ユーザーには、オペレーティング システムで visual スタイルが有効にして、visual スタイル; のアプリケーション ウィンドウのクライアント領域に適用されます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、する場合`false`、<xref:System.Windows.Forms.TabRenderer.DrawTabPage%2A>と<xref:System.Windows.Forms.TabRenderer.DrawTabItem%2A>メソッドがスローされます、<xref:System.InvalidOperationException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.TabRenderer.IsSupported%2A>プロパティを使用するかどうかを決定する、<xref:System.Windows.Forms.TabRenderer.DrawTabPage%2A>と<xref:System.Windows.Forms.TabRenderer.DrawTabItem%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TabRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.TabRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.TabRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.TabRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TabRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

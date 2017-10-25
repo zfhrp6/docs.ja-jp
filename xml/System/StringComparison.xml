@@ -1,0 +1,226 @@
+<Type Name="StringComparison" FullName="System.StringComparison">
+  <TypeSignature Language="C#" Value="public enum StringComparison" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed StringComparison extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.StringComparison" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="M:System.String.Compare(System.String,System.String)" /> メソッドと <see cref="M:System.String.Equals(System.Object)" /> メソッドの特定のオーバーロードで使用するカルチャ、大文字と小文字の区別、および並べ替え規則を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.StringComparison>列挙体を使用して、文字列の比較が、現在のカルチャまたはインバリアント カルチャ、word または序数の並べ替え規則を使用し、大文字または小文字にするかどうかを指定します。  
+  
+> [!IMPORTANT]
+>  などの文字列比較メソッドを呼び出す場合<xref:System.String.Compare%2A?displayProperty=nameWithType>、 <xref:System.String.Equals%2A?displayProperty=nameWithType>、または<xref:System.String.IndexOf%2A?displayProperty=nameWithType>、型のパラメーターを含むオーバー ロードを常に呼び出す必要があります<xref:System.StringComparison>メソッドを実行する比較の種類を指定できるようにします。 詳細については、「[文字列を使用するためのベスト プラクティス](~/docs/standard/base-types/best-practices-strings.md)」を参照してください。  
+  
+ 単語の並べ替え規則を使用する操作は、特定の英数字以外の Unicode 文字特別な重みが割り当てられているカルチャに依存した比較を行います。 単語の並べ替え規則と、ハイフン、特定のカルチャの規則を使用して ("-")"coop"と"co-op"、並べ替え済みリストで互いの横に表示されるように割り当てられている重みは非常に小さい場合があります。  
+  
+ 序数の並べ替え規則を使用する操作は、それぞれの数値 (Unicode コード ポイント) に基づく比較を実行<xref:System.Char>文字列にします。 序数に基づく比較が高速なカルチャに依存しません。 Unicode 文字 (U +) で始まる文字列の並べ替えに序数の並べ替え規則を使用するときに文字列 U +0 xxxx が前に来る文字列 U +0 yyyy xxxx の値が数値で小さい yyyy より場合。  
+  
+ 比較の詳細については、次を参照してください。、<xref:System.String?displayProperty=nameWithType>注釈クラス。 カルチャの詳細については、次を参照してください。、<xref:System.Globalization.CultureInfo?displayProperty=nameWithType>注釈クラス。 序数に基づくまたはカルチャに依存した比較規則またはインバリアント カルチャの規則を使用する場合のガイドラインについては、次を参照してください。[文字列を使用するためのベスト プラクティス](~/docs/standard/base-types/best-practices-strings.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、単語の 4 つのセットを比較の各メンバーを使用して、<xref:System.StringComparison>列挙します。  比較では、英語 (米国)、Sami、Nothern (スウェーデン) カルチャの規則を使用します。 文字列"encyclopædia"および「百科事典」がサーミ語 (スウェーデン) カルチャではなく、EN-US カルチャで該当するショートカットと見なされますに注意してください。  
+  
+ [!code-csharp[System.String.Equals#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.string.equals/cs/equals_ex3.cs#3)]
+ [!code-vb[System.String.Equals#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.string.equals/vb/equals_ex3.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CurrentCulture">
+      <MemberSignature Language="C#" Value="CurrentCulture" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.StringComparison CurrentCulture = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.StringComparison.CurrentCulture" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparison</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャに依存した並べ替え規則と、現在のカルチャを使用して、文字列を比較します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentCultureIgnoreCase">
+      <MemberSignature Language="C#" Value="CurrentCultureIgnoreCase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.StringComparison CurrentCultureIgnoreCase = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.StringComparison.CurrentCultureIgnoreCase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparison</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャに依存した並べ替え規則と、現在のカルチャを使用し、比較対象の文字列の大文字と小文字の区別を無視して、文字列を比較します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InvariantCulture">
+      <MemberSignature Language="C#" Value="InvariantCulture" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.StringComparison InvariantCulture = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.StringComparison.InvariantCulture" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparison</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャに依存した並べ替え規則と、インバリアント カルチャを使用して、文字列を比較します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InvariantCultureIgnoreCase">
+      <MemberSignature Language="C#" Value="InvariantCultureIgnoreCase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.StringComparison InvariantCultureIgnoreCase = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.StringComparison.InvariantCultureIgnoreCase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparison</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャに依存した並べ替え規則と、インバリアント カルチャを使用し、比較対象の文字列の大文字と小文字の区別を無視して、文字列を比較します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Ordinal">
+      <MemberSignature Language="C#" Value="Ordinal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.StringComparison Ordinal = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.StringComparison.Ordinal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparison</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>序数 (バイナリ) の並べ替え規則を使用して文字列を比較します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OrdinalIgnoreCase">
+      <MemberSignature Language="C#" Value="OrdinalIgnoreCase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.StringComparison OrdinalIgnoreCase = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.StringComparison.OrdinalIgnoreCase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparison</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>序数 (バイナリ) の並べ替え規則を使用し、比較対象の文字列の大文字と小文字の区別を無視して、文字列を比較します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

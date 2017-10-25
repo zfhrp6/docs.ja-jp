@@ -1,0 +1,136 @@
+<Type Name="ObjectListCommandEventArgs" FullName="System.Web.UI.MobileControls.ObjectListCommandEventArgs">
+  <TypeSignature Language="C#" Value="public class ObjectListCommandEventArgs : System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectListCommandEventArgs extends System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.ObjectListCommandEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.CommandEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>情報のデータを提供、<see cref="E:System.Web.UI.MobileControls.ObjectList.ItemCommand" />のイベント、<see cref="T:System.Web.UI.MobileControls.ObjectList" />です。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>To be added.</remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectListCommandEventArgs (System.Web.UI.MobileControls.ObjectListItem item, string commandName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.MobileControls.ObjectListItem item, string commandName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ObjectListCommandEventArgs.#ctor(System.Web.UI.MobileControls.ObjectListItem,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.MobileControls.ObjectListItem" />
+        <Parameter Name="commandName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="item">初期化、<see cref="P:System.Web.UI.MobileControls.ObjectListCommandEventArgs.ListItem" />プロパティです。</param>
+        <param name="commandName">初期化、<see cref="P:System.Web.UI.MobileControls.Command.CommandName" />プロパティです。</param>
+        <summary><see cref="T:System.Web.UI.MobileControls.ObjectListCommandEventArgs" /> クラスの新しいインスタンスを初期化します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectListCommandEventArgs (System.Web.UI.MobileControls.ObjectListItem item, object commandSource, System.Web.UI.WebControls.CommandEventArgs originalArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.MobileControls.ObjectListItem item, object commandSource, class System.Web.UI.WebControls.CommandEventArgs originalArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ObjectListCommandEventArgs.#ctor(System.Web.UI.MobileControls.ObjectListItem,System.Object,System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.MobileControls.ObjectListItem" />
+        <Parameter Name="commandSource" Type="System.Object" />
+        <Parameter Name="originalArgs" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="item">初期化、<see cref="P:System.Web.UI.MobileControls.ObjectListCommandEventArgs.ListItem" />プロパティです。</param>
+        <param name="commandSource">初期化、<see cref="P:System.Web.UI.MobileControls.ObjectListCommandEventArgs.CommandSource" />プロパティです。</param>
+        <param name="originalArgs">継承した、元の引数、<see cref="T:System.Web.UI.WebControls.CommandEventArgs" />オブジェクト。</param>
+        <summary><see cref="T:System.Web.UI.MobileControls.ObjectListCommandEventArgs" /> クラスの新しいインスタンスを初期化します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アイテムと<xref:System.Web.UI.MobileControls.ObjectListCommandEventArgs.CommandSource%2A>パラメーターを初期化、<xref:System.Web.UI.WebControls.ListItem>と<xref:System.Web.UI.MobileControls.ObjectListCommandEventArgs.CommandSource%2A>それぞれの値を持つプロパティです。 `originalArgs`パラメーターは、これはバブル イベントを処理するために便利コマンド引数のセットで渡すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandSource">
+      <MemberSignature Language="C#" Value="public object CommandSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ObjectListCommandEventArgs.CommandSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させたコントロールを返します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>イベントを発生させたコントロールです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCommand">
+      <MemberSignature Language="C#" Value="protected static readonly string DefaultCommand;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly string DefaultCommand" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.MobileControls.ObjectListCommandEventArgs.DefaultCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定のコマンドの名前を設定します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、<xref:System.Web.UI.MobileControls.ObjectList>既定のコマンドを起動するショートカットを表示しようとしています。 HTML では、既定値でレンダリング`ListView`へのリンクとして、最初のフィールドを表示、`DetailsView`の<xref:System.Web.UI.MobileControls.ObjectList>です。 設定して、<xref:System.Web.UI.MobileControls.ObjectListCommandEventArgs.DefaultCommand>リンクをクリックすると、プロパティが既定のコマンドを呼び出します。 既定のコマンドの呼び出しを生成、<xref:System.Web.UI.MobileControls.ObjectList.ItemCommand>イベント。 <xref:System.Web.UI.MobileControls.Command.CommandName%2A>の<xref:System.Web.UI.MobileControls.ObjectListCommandEventArgs>オブジェクトがの値に設定されている、<xref:System.Web.UI.MobileControls.ObjectListCommandEventArgs.DefaultCommand>プロパティです。  
+  
+ 既定のコマンドが定義されている場合でも、コマンド コレクション内と同じ名前のコマンドを含める必要があります。 既定のコマンドのレンダリングをまだ使用可能な場合は、コントロールは、既定のコマンドのショートカットを含む、グラフィック要素を表示できません、<xref:System.Web.UI.MobileControls.ObjectListCommandCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListItem">
+      <MemberSignature Language="C#" Value="public System.Web.UI.MobileControls.ObjectListItem ListItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.MobileControls.ObjectListItem ListItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ObjectListCommandEventArgs.ListItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.MobileControls.ObjectListItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを生成したリスト項目を返します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>イベントを生成したリスト項目。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

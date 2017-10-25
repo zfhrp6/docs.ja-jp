@@ -1,0 +1,3164 @@
+<Type Name="TextWriter" FullName="System.IO.TextWriter">
+  <TypeSignature Language="C#" Value="public abstract class TextWriter : MarshalByRefObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit TextWriter extends System.MarshalByRefObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.TextWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一連の文字を書き込むことができるライターを表します。 このクラスは抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextWriter>抽象基本クラスは、<xref:System.IO.StreamWriter>と<xref:System.IO.StringWriter>、それぞれストリームと、文字列に文字を書き込むします。 インスタンスを作成する<xref:System.IO.TextWriter>オブジェクトを文字列に書き込み、ファイルに文字列を書き込み、または XML をシリアル化します。 インスタンスを使用することもできます。<xref:System.IO.TextWriter>テキスト文字列またはストリームを使用すると、同じ Api を使用するカスタム バッキング ストアを書き込むか、テキストの書式設定のサポートを追加します。  
+  
+ すべての`Write`のメソッド<xref:System.IO.TextWriter>プリミティブ データ型を持つパラメーターが文字列として値を書き出すとします。  
+  
+ 既定では、<xref:System.IO.TextWriter>はスレッド セーフであります。 参照してください<xref:System.IO.TextWriter.Synchronized%2A?displayProperty=nameWithType>スレッド セーフ ラッパー。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 この型から派生した任意の型を使用してが完了したら、直接的または間接的にそれを破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IO.TextWriter.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細については、Dispose、"を使用して、オブジェクトを実装する IDisposable"」、およびを参照してください、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ <xref:System.IO.TextWriter> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 <xref:System.IO.StreamWriter>クラスから派生<xref:System.IO.TextWriter>し、ストリームに書き込むためのメンバーの実装を提供します。 次の例を使用して、テキスト ファイルに文字列の値から成る 2 つの行を記述する方法を示しています、<xref:System.IO.StreamWriter.WriteLineAsync%28System.String%29>メソッドです。  
+  
+ 提供する派生クラスで Dispose をオーバーライドします。  
+  
+ [!code-csharp[System.IO.StreamWriter#23](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamWriter/CS/example23.cs#23)]
+ [!code-vb[System.IO.StreamWriter#23](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamWriter/VB/example23.vb#23)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生クラスで実装する必要があります最小限、<see cref="M:System.IO.TextWriter.Write(System.Char)" />を行うに便利なインスタンス メソッド<see cref="T:System.IO.TextWriter" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TextWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.TextWriter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を指定しない場合は、このコンス トラクター オーバー ロードを使用して、<xref:System.IO.TextWriter.FormatProvider%2A>プロパティです。 ときに、<xref:System.IO.TextWriter.FormatProvider%2A>プロパティは`null`、現在のスレッドのカルチャが書式設定に使用します。  
+  
+ 派生クラスのこのコンス トラクターを使用します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TextWriter (IFormatProvider formatProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.IFormatProvider formatProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.#ctor(System.IFormatProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="formatProvider">書式を制御する <see cref="T:System.IFormatProvider" /> オブジェクト。</param>
+        <summary>指定した書式プロバイダーで <see cref="T:System.IO.TextWriter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を指定するこのコンス トラクター オーバー ロードを使用して、<xref:System.IO.TextWriter.FormatProvider%2A>プロパティです。 値、<xref:System.IO.TextWriter.FormatProvider%2A>プロパティを呼び出すときに使用されるカルチャ固有の書式設定を指定します、<xref:System.IO.TextWriter.Write%2A>と<xref:System.IO.TextWriter.WriteLine%2A>メソッドです。 使用してインスタンスを作成する、書式プロバイダーを提供しない場合、<xref:System.IO.TextWriter.%23ctor>コンス トラクターは、設定、<xref:System.IO.TextWriter.FormatProvider%2A>プロパティを`null`です。 ときに、<xref:System.IO.TextWriter.FormatProvider%2A>プロパティは`null`、現在のスレッドのカルチャが書式設定に使用します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public virtual void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のライターを終了し、ライターに関連付けられたすべてのシステム リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装`Close`呼び出し、<xref:System.IO.TextWriter.Dispose%28System.Boolean%29?displayProperty=nameWithType>メソッド渡します、`true`値。  
+  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません<xref:System.IO.TextWriter.Flush%2A>または`Close`です。 設定、<xref:System.IO.StreamWriter.AutoFlush%2A?displayProperty=nameWithType>プロパティを`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、エンコーダーは、隣接する文字または文字列を受信した後にのみ特定の文字をエンコードすることができますに影響します。  
+  
+> [!NOTE]
+>  派生クラスでオーバーライドしない、<xref:System.IO.TextWriter.Close%2A>メソッドです。 代わりに、オーバーライド、<xref:System.IO.TextWriter.Dispose%28System.Boolean%29?displayProperty=nameWithType>リソースを解放するためのコードを追加するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CoreNewLine">
+      <MemberSignature Language="C#" Value="protected char[] CoreNewLine;" />
+      <MemberSignature Language="ILAsm" Value=".field family char[] CoreNewLine" />
+      <MemberSignature Language="DocId" Value="F:System.IO.TextWriter.CoreNewLine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see langword="TextWriter" /> で使用する改行文字を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.IO.TextWriter" /> オブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextWriter.Dispose%2A> を使い終わったら <xref:System.IO.TextWriter> を呼び出します。 <xref:System.IO.TextWriter.Dispose%2A> メソッドによって、<xref:System.IO.TextWriter> は使用不可の状態になります。 呼び出した後<xref:System.IO.TextWriter.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.IO.TextWriter>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.IO.TextWriter>占有されていた。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ **注**常に呼び出し<xref:System.IO.TextWriter.Dispose%2A>への参照を解放する前に、<xref:System.IO.TextWriter>です。 そうしないと、ガベージ コレクターが <xref:System.IO.TextWriter> オブジェクトの <xref:System.Object.Finalize%2A> メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.TextWriter" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって呼び出されます`Dispose`と<xref:System.Object.Finalize%2A>です。 既定では、このメソッドを指定します、`disposing`パラメーターとして`true`です。 <xref:System.Object.Finalize%2A>指定します、`disposing`パラメーターとして`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.IO.TextWriter> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.IO.TextWriter.Dispose(System.Boolean)" /> は、他のオブジェクトから複数回呼び出すことができます。 このメソッドをオーバーライドする場合は、既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 このメソッドを実装する方法の詳細については、次を参照してください。 [Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see cref="M:System.IDisposable.Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public abstract System.Text.Encoding Encoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding Encoding" />
+      <MemberSignature Language="DocId" Value="P:System.IO.TextWriter.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスによってオーバーライドされると、出力を書き込む文字エンコーディングを返します。</summary>
+        <value>出力の書き込み時に適用する文字エンコーディング。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、一部の XML のシナリオで使用されるエンコーディングを格納している、ヘッダーを書き込む必要があります、必要に応じて、`TextWriter`です。 これにより、任意に使用する XML コード`TextWriter`し、正しい XML ヘッダーを生成します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public virtual void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のライターのすべてのバッファーをクリアし、バッファー内のデータを基になるデバイスに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは既定では何もが、派生クラスは、適切な機能を提供するメソッドをオーバーライドできます。  
+  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません`Flush`または<xref:System.IO.TextWriter.Close%2A>です。 設定<xref:System.IO.StreamWriter.AutoFlush%2A>に`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、特定の文字をエンコードするため、エンコーダーは、隣接する文字または文字列を受信した後に影響します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlushAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task FlushAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task FlushAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.FlushAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のライターのすべてのバッファーを非同期にクリアし、バッファー内のデータを基になるデバイスに書き込みます。</summary>
+        <returns>非同期のフラッシュ操作を表すタスク。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">テキスト ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatProvider">
+      <MemberSignature Language="C#" Value="public virtual IFormatProvider FormatProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IFormatProvider FormatProvider" />
+      <MemberSignature Language="DocId" Value="P:System.IO.TextWriter.FormatProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IFormatProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書式を制御するオブジェクトを取得します。</summary>
+        <value>特定のカルチャ設定の <see cref="T:System.IFormatProvider" /> オブジェクト、または他のカルチャ設定が指定されていない場合は現在のカルチャ設定の書式。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.IO.TextWriter.FormatProvider%2A>プロパティを呼び出すときに使用されるカルチャ固有の書式設定を指定します、<xref:System.IO.TextWriter.Write%2A>と<xref:System.IO.TextWriter.WriteLine%2A>メソッドです。 使用してインスタンスを作成する、書式プロバイダーを提供しない場合、<xref:System.IO.TextWriter.%23ctor>コンス トラクターは、設定、<xref:System.IO.TextWriter.FormatProvider%2A>プロパティを`null`です。 ときに、<xref:System.IO.TextWriter.FormatProvider%2A>プロパティが含まれます`null`、現在のスレッドのカルチャが書式設定に使用します。  
+  
+ ファイルを作成し、テキスト ファイルへの書き込みの例は、次を参照してください。[する方法: テキスト ファイルを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)です。 ファイルからテキストの読み取りの例は、次を参照してください。[する方法: テキスト ファイルからの読み取り](~/docs/standard/io/how-to-read-text-from-a-file.md)です。 読み取りと書き込み、バイナリ ファイルの例は、次を参照してください。[する方法: 新しく作成されたデータ ファイルに読み書き](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)です。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewLine">
+      <MemberSignature Language="C#" Value="public virtual string NewLine { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewLine" />
+      <MemberSignature Language="DocId" Value="P:System.IO.TextWriter.NewLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see langword="TextWriter" /> で使用される行終端文字列を取得または設定します。</summary>
+        <value>現在の <see langword="TextWriter" /> で使用する行終端文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の行終端記号の文字列は、キャリッジ リターンとライン フィード ("\r\n") です。  
+  
+ 行終端記号の文字列が 1 つのテキスト ストリームに書き込まれるの`WriteLine`メソッドが呼び出されます。 によって書き込まれるテキストの順序で、`TextWriter`読み取りが可能である、 <xref:System.IO.TextReader>、終端記号の文字列として"\n"または"\r\n"のみを使用する必要があります。 場合`NewLine`に設定されている`null`既定の改行文字が代わりに使用されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.IO.TextWriter Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.IO.TextWriter Null" />
+      <MemberSignature Language="DocId" Value="F:System.IO.TextWriter.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextWriter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッキング ストアを持たない書き込み専用の <see langword="TextWriter" /> を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して`Null`はすべてのオペレーティング システム リソースを消費していないストリームに出力をリダイレクトします。  
+  
+ ときに、<xref:System.IO.TextWriter.Write%2A?displayProperty=nameWithType>でメソッドが呼び出される`Null`呼び出しを単純に返します、および、実際にデータは、バッキング ストアに書き込まれません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronized">
+      <MemberSignature Language="C#" Value="public static System.IO.TextWriter Synchronized (System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.TextWriter Synchronized(class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Synchronized(System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.TextWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">同期する <see langword="TextWriter" />。</param>
+        <summary>指定した <see langword="TextWriter" /> をラップするスレッド セーフ ラッパーを作成します。</summary>
+        <returns>スレッド セーフ ラッパー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての書き込み操作で返されるラッパーにはスレッド セーフであるになります。 一度に 1 つのスレッドが上のメソッドを実行できることを確認するには、このメソッドを呼び出す、<xref:System.IO.TextWriter>返されるインスタンス。 同期とスレッド処理の詳細については、次を参照してください。[マルチ スレッドのデータの同期](~/docs/standard/threading/synchronizing-data-for-multithreading.md)です。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む <see langword="Boolean" /> 値。</param>
+        <summary><see langword="Boolean" /> 値のテキスト形式をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.Boolean.ToString%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このメソッドを出力するか<xref:System.Boolean.TrueString?displayProperty=nameWithType>または<xref:System.Boolean.FalseString?displayProperty=nameWithType>です。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (char value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(char value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="value">テキスト ストリームに書き込む文字。</param>
+        <summary>文字をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは既定では何もが、派生クラスは、適切な機能を提供するメソッドをオーバーライドできます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (char[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(char[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.Char[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">テキスト ストリームに書き込む文字配列。</param>
+        <summary>文字配列をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定した文字列で個別の改行文字 (16 進数で 0x000a) を検索しないため、改行文字は <xref:System.IO.TextWriter.NewLine%2A> に置き換えられません。  
+  
+ このメソッドは既定の呼び出し、<xref:System.IO.TextWriter.Write%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29>メソッド全体の文字配列を渡します。 文字配列がある場合`null`、何も書き込まれません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (decimal value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(valuetype System.Decimal value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.Decimal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Decimal" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 10 進値。</param>
+        <summary>10 進値のテキスト形式をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextWriter.FormatProvider%2A>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 8 バイト浮動小数点値。</param>
+        <summary>8 バイト浮動小数点値のテキスト形式をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.Double.ToString%2A?displayProperty=nameWithType>メソッドです。 <xref:System.IO.TextWriter.FormatProvider%2A?displayProperty=nameWithType>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 4 バイト符号付き整数。</param>
+        <summary>4 バイト符号付き整数のテキスト形式をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.Int32.ToString%2A?displayProperty=nameWithType>メソッドです。 <xref:System.IO.TextWriter.FormatProvider%2A?displayProperty=nameWithType>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 8 バイト符号付き整数。</param>
+        <summary>8 バイト符号付き整数のテキスト形式をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.Int64.ToString%2A?displayProperty=nameWithType>メソッドです。 <xref:System.IO.TextWriter.FormatProvider%2A?displayProperty=nameWithType>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ [方法: ファイルにテキストを書き込む](~/docs/standard/io/how-to-write-text-to-a-file.md)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込むオブジェクト。</param>
+        <summary>オブジェクトで <see langword="ToString" /> メソッドを呼び出して、そのオブジェクトのテキスト形式をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードは、<xref:System.IO.TextWriter.Write%28System.String%29>オーバー ロードします。  
+  
+ 指定したオブジェクトが場合`null`、何も処理および例外はスローされません。 それ以外の場合、オブジェクトの`ToString`形式の文字列形式を生成するためにメソッドが呼び出され、結果の文字列が出力ストリームに書き込まれます。 <xref:System.IO.TextWriter.FormatProvider%2A>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (float value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(float32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 4 バイト浮動小数点値。</param>
+        <summary>4 バイト浮動小数点値のテキスト形式をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.Single.ToString%2A?displayProperty=nameWithType>メソッドです。 <xref:System.IO.TextWriter.FormatProvider%2A?displayProperty=nameWithType>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む文字列。</param>
+        <summary>文字列をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードは、<xref:System.IO.TextWriter.Write%28System.Char%5B%5D%29>オーバー ロードします。  
+  
+ このメソッドは、指定した文字列で個別の改行文字 (16 進数で 0x000a) を検索しないため、改行文字は <xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType> に置き換えられません。  
+  
+ `value` が `null` の場合は、何もテキスト ストリームに書き込みません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (uint value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 4 バイト符号なし整数。</param>
+        <summary>4 バイト符号なし整数のテキスト形式をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.UInt32.ToString%2A?displayProperty=nameWithType>メソッドです。 <xref:System.IO.TextWriter.FormatProvider%2A?displayProperty=nameWithType>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (ulong value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.UInt64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 8 バイト符号なし整数。</param>
+        <summary>8 バイト符号なし整数のテキスト形式をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.UInt64.ToString%2A?displayProperty=nameWithType>メソッドです。 <xref:System.IO.TextWriter.FormatProvider%2A?displayProperty=nameWithType>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (string format, object arg0);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(string format, object arg0) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="arg0" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">複合書式設定文字列。</param>
+        <param name="arg0">書式設定および書き込みをするオブジェクト。</param>
+        <summary><see cref="M:System.String.Format(System.String,System.Object)" /> メソッドと同じセマンティクスを使用して、書式設定された文字列をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、オブジェクトの値を文字列形式に変換して、その表現を文字列に埋め込むには、複合書式指定を使用します。 .NET には、次の書式設定のトピックで詳しく説明されている広範な書式設定のサポートが用意されています。  
+  
+-   複合書式指定機能の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   についての日付と時刻の書式指定子の詳細については、次を参照してください。[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+-   列挙型書式指定子の詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `format`パラメーターは、0 または 1 つ以上のインデックス付きプレース ホルダー、このメソッドのパラメーター リスト内のオブジェクトに対応する書式指定項目と呼ばれる個以上のテキストを混在させます。 書式設定プロセスでは、対応するオブジェクトの値の文字列形式を各書式項目を置き換えます。  
+  
+ 書式指定項目の構文は次のとおりです。  
+  
+ {*インデックス*[、*長さ*] [:*formatString*]}  
+  
+ 角かっこ内の要素は省略できます。 次の表では、各要素について説明します。 複合書式指定項目の構文を含む、機能を書式設定の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|インデックス|書式設定するオブジェクトのパラメーター リスト内の 0 から始まる位置。 オブジェクトを指定して場合*インデックス*は`null`、書式指定項目が置き換え<xref:System.String?displayProperty=nameWithType>です。 このオーバー ロードは、パラメーターの 1 つのオブジェクトのみを持つためにボックスの一覧の値*インデックス*常に 0 にある必要があります。 内のパラメーターが存在しない場合、*インデックス*、位置、<xref:System.FormatException>がスローされます。|  
+|、*長さ*|パラメーターの文字列表記で文字の最小数。 正の値は、パラメーター右揃えになります。負の場合は、左揃えをお勧めします。|  
+|:*formatString*|書式設定するオブジェクトでサポートされている標準またはカスタムの書式指定文字列。 指定できる値*formatString*は、オブジェクトのによってサポートされる値と同じ`ToString(string format)`メソッドです。 場合*formatString*が指定されていない書式設定するオブジェクトを実装して、<xref:System.IFormattable>インターフェイス、`null`の値として渡される、`format`パラメーターとして使用される、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>書式指定文字列。|  
+  
+ 先頭および末尾の文字を中かっこ"{"と"}"が必要です。 単一のリテラルのかっこ記号を指定する`format`先頭の 2 つの指定、または末尾の文字は; 中かっこを使用は、"{{"または"}}"。  
+  
+ 」を参照してください。 このメソッドは、指定した文字列で個別の改行文字 (16 進数で 0x000a) を検索しないため、改行文字は <xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType> に置き換えられません。  
+  
+ 指定したオブジェクトは、書式指定文字列で参照されていないは無視されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />有効な複合書式指定文字列ではありません。  
+  
+ または  
+  
+ 書式指定項目のインデックスが 0 (ゼロ) 未満か、(、このメソッドのオーバー ロードの 1 つである) 書式指定するオブジェクトの数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (string format, params object[] arg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(string format, object[] arg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="arg" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="format">複合書式設定文字列。</param>
+        <param name="arg">書式設定および書き込みをする 0 個以上のオブジェクトを含むオブジェクト配列。</param>
+        <summary><see cref="M:System.String.Format(System.String,System.Object[])" /> メソッドと同じセマンティクスを使用して、書式設定された文字列をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、オブジェクトの値を文字列形式に変換して、その表現を文字列に埋め込むには、複合書式指定を使用します。 .NET には、次の書式設定のトピックで詳しく説明されている広範な書式設定のサポートが用意されています。  
+  
+-   複合書式指定機能の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   についての日付と時刻の書式指定子の詳細については、次を参照してください。[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+-   列挙型書式指定子の詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `format`パラメーターは、0 または 1 つ以上のインデックス付きプレース ホルダー、このメソッドのパラメーター リスト内のオブジェクトに対応する書式指定項目と呼ばれる個以上のテキストを混在させます。 書式設定プロセスでは、対応するオブジェクトの値の文字列形式を各書式項目を置き換えます。  
+  
+ 書式指定項目の構文は次のとおりです。  
+  
+ {*インデックス*[、*長さ*] [:*formatString*]}  
+  
+ 角かっこ内の要素は省略できます。 次の表では、各要素について説明します。 複合書式指定項目の構文を含む、機能を書式設定の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|インデックス|書式設定するオブジェクトのパラメーター リスト内の 0 から始まる位置。 オブジェクトを指定して場合*インデックス*は`null`、書式指定項目が置き換え<xref:System.String?displayProperty=nameWithType>です。 このオーバー ロードは、パラメーターの配列をあるためにボックスの一覧の値*インデックス*常に、配列の長さよりも小さくする必要があります。 内のパラメーターが存在しない場合、*インデックス*、位置、<xref:System.FormatException>がスローされます。|  
+|、*長さ*|パラメーターの文字列表記で文字の最小数。 正の値は、パラメーター右揃えになります。負の場合は、左揃えをお勧めします。|  
+|:*formatString*|書式設定するオブジェクトでサポートされている標準またはカスタムの書式指定文字列。 指定できる値*formatString*は、オブジェクトのによってサポートされる値と同じ`ToString(string format)`メソッドです。 場合*formatString*が指定されていない書式設定するオブジェクトを実装して、<xref:System.IFormattable>インターフェイス、`null`の値として渡される、`format`パラメーターとして使用される、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>書式指定文字列。|  
+  
+ 先頭および末尾の文字を中かっこ"{"と"}"が必要です。 単一のリテラルのかっこ記号を指定する`format`先頭の 2 つの指定、または末尾の文字は; 中かっこを使用は、"{{"または"}}"。  
+  
+ このメソッドは、指定した文字列で個別の改行文字 (16 進数で 0x000a) を検索しないため、改行文字は <xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType> に置き換えられません。  
+  
+ 指定したオブジェクトは、書式指定文字列で参照されていないは無視されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> または <paramref name="arg" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />有効な複合書式指定文字列ではありません。  
+  
+ または  
+  
+ 書式指定項目のインデックスが 0 (ゼロ) 未満または以上の長さ、<paramref name="arg" />配列。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データの書き込み元の文字配列。</param>
+        <param name="index">データの取得を開始する、バッファー内の文字位置。</param>
+        <param name="count">書き込む文字数。</param>
+        <summary>文字の部分配列をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、書き込み`count`文字のデータにこの`TextWriter`から、`buffer`開始位置から文字配列`index`です。  
+  
+ このオーバー ロードは、<xref:System.IO.TextWriter.Write%28System.Char%5B%5D%29>内の各文字のオーバー ロード`buffer`間`index`と (`index` + `count`)。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">バッファーの長さマイナス<paramref name="index" />はより小さい<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (string format, object arg0, object arg1);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(string format, object arg0, object arg1) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.String,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="arg0" Type="System.Object" />
+        <Parameter Name="arg1" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">複合書式設定文字列。</param>
+        <param name="arg0">書式設定および書き込みをする最初のオブジェクト。</param>
+        <param name="arg1">書式設定および書き込みをする 2 番目のオブジェクト。</param>
+        <summary><see cref="M:System.String.Format(System.String,System.Object,System.Object)" /> メソッドと同じセマンティクスを使用して、書式設定された文字列をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、オブジェクトの値を文字列形式に変換して、その表現を文字列に埋め込むには、複合書式指定を使用します。 .NET には、次の書式設定のトピックで詳しく説明されている広範な書式設定のサポートが用意されています。  
+  
+-   複合書式指定機能の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   についての日付と時刻の書式指定子の詳細については、次を参照してください。[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+-   列挙型書式指定子の詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `format`パラメーターは、0 または 1 つ以上のインデックス付きプレース ホルダー、このメソッドのパラメーター リスト内のオブジェクトに対応する書式指定項目と呼ばれる個以上のテキストを混在させます。 書式設定プロセスでは、対応するオブジェクトの値の文字列形式を各書式項目を置き換えます。  
+  
+ 書式指定項目の構文は次のとおりです。  
+  
+ {*インデックス*[、*長さ*] [:*formatString*]}  
+  
+ 角かっこ内の要素は省略できます。 次の表では、各要素について説明します。 複合書式指定項目の構文を含む、機能を書式設定の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|インデックス|書式設定するオブジェクトのパラメーター リスト内の 0 から始まる位置。 オブジェクトを指定して場合*インデックス*は`null`、書式指定項目が置き換え<xref:System.String?displayProperty=nameWithType>です。 このオーバー ロードのパラメーターで 2 つのオブジェクトがあるためにボックスの一覧の値*インデックス*0 または 1 を常にする必要があります。 内のパラメーターが存在しない場合、*インデックス*、位置、<xref:System.FormatException>がスローされます。|  
+|、*長さ*|パラメーターの文字列表記で文字の最小数。 正の値は、パラメーター右揃えになります。負の場合は、左揃えをお勧めします。|  
+|:*formatString*|書式設定するオブジェクトでサポートされている標準またはカスタムの書式指定文字列。 指定できる値*formatString*は、オブジェクトのによってサポートされる値と同じ`ToString(string format)`メソッドです。 場合*formatString*が指定されていない書式設定するオブジェクトを実装して、<xref:System.IFormattable>インターフェイス、`null`の値として渡される、`format`パラメーターとして使用される、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>書式指定文字列。|  
+  
+ 先頭および末尾の文字を中かっこ"{"と"}"が必要です。 単一のリテラルのかっこ記号を指定する`format`先頭の 2 つの指定、または末尾の文字は; 中かっこを使用は、"{{"または"}}"。  
+  
+ このメソッドは、指定した文字列で個別の改行文字 (16 進数で 0x000a) を検索しないため、改行文字は <xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType> に置き換えられません。  
+  
+ 指定したオブジェクトは、書式指定文字列で参照されていないは無視されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />有効な複合書式指定文字列ではありません。  
+  
+ または  
+  
+ 書式指定項目のインデックスが 0 (ゼロ) 未満か (つまり、このメソッドのオーバー ロードの 2 つ) を書式設定オブジェクトの数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public virtual void Write (string format, object arg0, object arg1, object arg2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(string format, object arg0, object arg1, object arg2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.Write(System.String,System.Object,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="arg0" Type="System.Object" />
+        <Parameter Name="arg1" Type="System.Object" />
+        <Parameter Name="arg2" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">複合書式設定文字列。</param>
+        <param name="arg0">書式設定および書き込みをする最初のオブジェクト。</param>
+        <param name="arg1">書式設定および書き込みをする 2 番目のオブジェクト。</param>
+        <param name="arg2">書式設定および書き込みをする 3 番目のオブジェクト。</param>
+        <summary><see cref="M:System.String.Format(System.String,System.Object,System.Object,System.Object)" /> メソッドと同じセマンティクスを使用して、書式設定された文字列をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、オブジェクトの値を文字列形式に変換して、その表現を文字列に埋め込むには、複合書式指定を使用します。 .NET には、次の書式設定のトピックで詳しく説明されている広範な書式設定のサポートが用意されています。  
+  
+-   複合書式指定機能の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   についての日付と時刻の書式指定子の詳細については、次を参照してください。[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+-   列挙型書式指定子の詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `format`パラメーターは、0 または 1 つ以上のインデックス付きプレース ホルダー、このメソッドのパラメーター リスト内のオブジェクトに対応する書式指定項目と呼ばれる個以上のテキストを混在させます。 書式設定プロセスでは、対応するオブジェクトの値の文字列形式を各書式項目を置き換えます。  
+  
+ 書式指定項目の構文は次のとおりです。  
+  
+ {*インデックス*[、*長さ*] [:*formatString*]}  
+  
+ 角かっこ内の要素は省略できます。 次の表では、各要素について説明します。 複合書式指定項目の構文を含む、機能を書式設定の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|インデックス|書式設定するオブジェクトのパラメーター リスト内の 0 から始まる位置。 オブジェクトを指定して場合*インデックス*は`null`、書式指定項目が置き換え<xref:System.String?displayProperty=nameWithType>です。 このオーバー ロードでは、3 つのオブジェクトが、パラメーターの一覧の値*インデックス*0、1、または 2 を常にする必要があります。 内のパラメーターが存在しない場合、*インデックス*、位置、<xref:System.FormatException>がスローされます。|  
+|、*長さ*|パラメーターの文字列表記で文字の最小数。 正の値は、パラメーター右揃えになります。負の場合は、左揃えをお勧めします。|  
+|:*formatString*|書式設定するオブジェクトでサポートされている標準またはカスタムの書式指定文字列。 指定できる値*formatString*は、オブジェクトのによってサポートされる値と同じ`ToString(string format)`メソッドです。 場合*formatString*が指定されていない書式設定するオブジェクトを実装して、<xref:System.IFormattable>インターフェイス、`null`の値として渡される、`format`パラメーターとして使用される、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>書式指定文字列。|  
+  
+ 先頭および末尾の文字を中かっこ"{"と"}"が必要です。 単一のリテラルのかっこ記号を指定する`format`先頭の 2 つの指定、または末尾の文字は; 中かっこを使用は、"{{"または"}}"。  
+  
+ このメソッドは個別の改行文字 (16 進 0x000a) の指定した文字列を検索されず、単に置き換え<xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType>です。  
+  
+ 指定したオブジェクトは、書式指定文字列で参照されていないは無視されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />有効な複合書式指定文字列ではありません。  
+  
+ または  
+  
+ 書式指定項目のインデックスが 0 (ゼロ) 未満か (つまり、このメソッドのオーバー ロードの 3 つ) を書式設定オブジェクトの数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task WriteAsync (char value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task WriteAsync(char value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteAsync(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="value">テキスト ストリームに書き込む文字。</param>
+        <summary>文字をテキスト文字列またはストリームに非同期的に書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextWriter> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextWriter.WriteAsync%2A>メソッドを参照してください、<xref:System.IO.StreamWriter.WriteAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">テキスト ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">テキスト ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteAsync (char[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteAsync(char[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteAsync(System.Char[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">テキスト ストリームに書き込む文字配列。 場合<c>バッファー</c>は<see langword="null" />、何も書き込まれません。</param>
+        <summary>文字配列をテキスト文字列またはストリームに非同期的に書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">テキスト ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">テキスト ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task WriteAsync (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task WriteAsync(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む文字列。 場合<c>値</c>は<see langword="null" />、何もテキスト ストリームに書き込まれません。</param>
+        <summary>文字列をテキスト文字列またはストリームに非同期的に書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextWriter> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextWriter.WriteAsync%2A>メソッドを参照してください、<xref:System.IO.StreamWriter.WriteAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">テキスト ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">テキスト ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task WriteAsync (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task WriteAsync(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データの書き込み元の文字配列。</param>
+        <param name="index">データの取得を開始する、バッファー内の文字位置。</param>
+        <param name="count">書き込む文字数。</param>
+        <summary>文字の部分配列をテキスト文字列またはストリームに非同期的に書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextWriter> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextWriter.WriteAsync%2A>メソッドを参照してください、<xref:System.IO.StreamWriter.WriteAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="index" /> Plus<paramref name="count" />がバッファーの長さを超えています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException">テキスト ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">テキスト ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>行終端記号をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む <see langword="Boolean" /> 値。</param>
+        <summary><see langword="Boolean" /> 値のテキスト形式をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.Boolean.ToString%2A?displayProperty=nameWithType>メソッドです。  
+  
+ このメソッドを出力するか<xref:System.Boolean.TrueString?displayProperty=nameWithType>または<xref:System.Boolean.FalseString?displayProperty=nameWithType>です。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (char value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(char value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="value">テキスト ストリームに書き込む文字。</param>
+        <summary>文字をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードは等価<xref:System.IO.TextWriter.Write%28System.Char%29>続く<xref:System.IO.TextWriter.WriteLine>です。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (char[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(char[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.Char[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データの読み取り元の文字配列。</param>
+        <summary>文字の配列をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての文字`buffer`が基になるストリームに書き込まれます。 文字配列が `null` の場合は、行終端記号だけが書き込まれます。  
+  
+ このオーバー ロードは等価<xref:System.IO.TextWriter.Write%28System.Char%5B%5D%29>続く<xref:System.IO.TextWriter.WriteLine>です。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (decimal value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(valuetype System.Decimal value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.Decimal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Decimal" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 10 進値。</param>
+        <summary>10 進値のテキスト形式をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextWriter.FormatProvider%2A>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 8 バイト浮動小数点値。</param>
+        <summary>8 バイト浮動小数点値のテキスト形式をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextWriter.FormatProvider%2A>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 4 バイト符号付き整数。</param>
+        <summary>4 バイト符号付き整数のテキスト形式をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.Int32.ToString%2A?displayProperty=nameWithType>メソッドです。 <xref:System.IO.TextWriter.FormatProvider%2A?displayProperty=nameWithType>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 8 バイト符号付き整数。</param>
+        <summary>8 バイト符号付き整数のテキスト形式をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.Int64.ToString%2A?displayProperty=nameWithType>メソッドです。 <xref:System.IO.TextWriter.FormatProvider%2A?displayProperty=nameWithType>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込むオブジェクト。 場合<c>値</c>は<see langword="null" />、行終端記号だけが書き込まれます。</param>
+        <summary>オブジェクトで <see langword="ToString" /> メソッドを呼び出して、そのオブジェクトのテキスト形式をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードは、<xref:System.IO.TextWriter.Write%28System.String%2CSystem.Object%29>オーバー ロードします。 <xref:System.IO.TextWriter.FormatProvider%2A>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (float value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(float32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 4 バイト浮動小数点値。</param>
+        <summary>4 バイト浮動小数点値のテキスト形式をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.TextWriter.FormatProvider%2A>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む文字列。 場合<c>値</c>は<see langword="null" />、行終端記号だけが書き込まれます。</param>
+        <summary>文字列をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードは、<xref:System.IO.TextWriter.Write%28System.Char%5B%5D%29>オーバー ロードします。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ このメソッドは、指定した文字列で個別の改行文字 (16 進数で 0x000a) を検索しないため、改行文字は <xref:System.IO.TextWriter.NewLine%2A> に置き換えられません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (uint value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(unsigned int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 4 バイト符号なし整数。</param>
+        <summary>4 バイト符号なし整数のテキスト形式をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.UInt32.ToString%2A?displayProperty=nameWithType>メソッドです。 <xref:System.IO.TextWriter.FormatProvider%2A>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (ulong value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(unsigned int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.UInt64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む 8 バイト符号なし整数。</param>
+        <summary>8 バイト符号なし整数のテキスト形式をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値のテキスト表現が呼び出しによって生成された、<xref:System.UInt64.ToString%2A?displayProperty=nameWithType>メソッドです。 <xref:System.IO.TextWriter.FormatProvider%2A>いない場合は、プロパティ`null`カルチャに固有の書式を指定します。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (string format, object arg0);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(string format, object arg0) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="arg0" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">複合書式設定文字列。</param>
+        <param name="arg0">書式設定および書き込みをするオブジェクト。</param>
+        <summary><see cref="M:System.String.Format(System.String,System.Object)" /> メソッドと同じセマンティクスを使用して、書式設定された文字列と改行をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、オブジェクトの値を文字列形式に変換して、その表現を文字列に埋め込むには、複合書式指定を使用します。 .NET には、次の書式設定のトピックで詳しく説明されている広範な書式設定のサポートが用意されています。  
+  
+-   複合書式指定機能の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   についての日付と時刻の書式指定子の詳細については、次を参照してください。[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+-   列挙型書式指定子の詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `format`パラメーターは、0 または 1 つ以上のインデックス付きプレース ホルダー、このメソッドのパラメーター リスト内のオブジェクトに対応する書式指定項目と呼ばれる個以上のテキストを混在させます。 書式設定プロセスでは、対応するオブジェクトの値の文字列形式を各書式項目を置き換えます。  
+  
+ 書式指定項目の構文は次のとおりです。  
+  
+ {*インデックス*[、*長さ*] [:*formatString*]}  
+  
+ 角かっこ内の要素は省略できます。 次の表では、各要素について説明します。 複合書式指定項目の構文を含む、機能を書式設定の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|インデックス|書式設定するオブジェクトのパラメーター リスト内の 0 から始まる位置。 オブジェクトを指定して場合*インデックス*は`null`、書式指定項目が置き換え<xref:System.String?displayProperty=nameWithType>です。 このオーバー ロードは、パラメーターの 1 つのオブジェクトのみを持つためにボックスの一覧の値*インデックス*常に 0 にある必要があります。 内のパラメーターが存在しない場合、*インデックス*、位置、<xref:System.FormatException>がスローされます。|  
+|、*長さ*|パラメーターの文字列表記で文字の最小数。 正の値は、パラメーター右揃えになります。負の場合は、左揃えをお勧めします。|  
+|:*formatString*|書式設定するオブジェクトでサポートされている標準またはカスタムの書式指定文字列。 指定できる値*formatString*は、オブジェクトのによってサポートされる値と同じ`ToString(string format)`メソッドです。 場合*formatString*が指定されていない書式設定するオブジェクトを実装して、<xref:System.IFormattable>インターフェイス、`null`の値として渡される、`format`パラメーターとして使用される、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>書式指定文字列。|  
+  
+ 先頭および末尾の文字を中かっこ"{"と"}"が必要です。 単一のリテラルのかっこ記号を指定する`format`先頭の 2 つの指定、または末尾の文字は; 中かっこを使用は、"{{"または"}}"。  
+  
+ このメソッドは、指定した文字列で個別の改行文字 (16 進数で 0x000a) を検索しないため、改行文字は <xref:System.IO.TextWriter.NewLine%2A> に置き換えられません。  
+  
+ 指定したオブジェクトは、書式指定文字列で参照されていないは無視されます。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />有効な複合書式指定文字列ではありません。  
+  
+ または  
+  
+ 書式指定項目のインデックスが 0 (ゼロ) 未満か、(、このメソッドのオーバー ロードの 1 つである) 書式指定するオブジェクトの数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (string format, params object[] arg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(string format, object[] arg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="arg" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="format">複合書式設定文字列。</param>
+        <param name="arg">書式設定および書き込みをする 0 個以上のオブジェクトを含むオブジェクト配列。</param>
+        <summary><see cref="M:System.String.Format(System.String,System.Object)" /> と同じセマンティクスを使用して、書式設定された文字列と改行を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、オブジェクトの値を文字列形式に変換して、その表現を文字列に埋め込むには、複合書式指定を使用します。 .NET には、次の書式設定のトピックで詳しく説明されている広範な書式設定のサポートが用意されています。  
+  
+-   複合書式指定機能の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   についての日付と時刻の書式指定子の詳細については、次を参照してください。[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+-   列挙型書式指定子の詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `format`パラメーターは、0 または 1 つ以上のインデックス付きプレース ホルダー、このメソッドのパラメーター リスト内のオブジェクトに対応する書式指定項目と呼ばれる個以上のテキストを混在させます。 書式設定プロセスでは、対応するオブジェクトの値の文字列形式を各書式項目を置き換えます。  
+  
+ 書式指定項目の構文は次のとおりです。  
+  
+ {*インデックス*[、*長さ*] [:*formatString*]}  
+  
+ 角かっこ内の要素は省略できます。 次の表では、各要素について説明します。 複合書式指定項目の構文を含む、機能を書式設定の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|インデックス|書式設定するオブジェクトのパラメーター リスト内の 0 から始まる位置。 オブジェクトを指定して場合*インデックス*は`null`、書式指定項目が置き換え<xref:System.String?displayProperty=nameWithType>です。 このオーバー ロードは、パラメーターの配列をあるためにボックスの一覧の値*インデックス*常に、配列の長さよりも小さくする必要があります。 内のパラメーターが存在しない場合、*インデックス*、位置、<xref:System.FormatException>がスローされます。|  
+|、*長さ*|パラメーターの文字列表記で文字の最小数。 正の値は、パラメーター右揃えになります。負の場合は、左揃えをお勧めします。|  
+|:*formatString*|書式設定するオブジェクトでサポートされている標準またはカスタムの書式指定文字列。 指定できる値*formatString*は、オブジェクトのによってサポートされる値と同じ`ToString(string format)`メソッドです。 場合*formatString*が指定されていない書式設定するオブジェクトを実装して、<xref:System.IFormattable>インターフェイス、`null`の値として渡される、`format`パラメーターとして使用される、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>書式指定文字列。|  
+  
+ 先頭および末尾の文字を中かっこ"{"と"}"が必要です。 単一のリテラルのかっこ記号を指定する`format`先頭の 2 つの指定、または末尾の文字は; 中かっこを使用は、"{{"または"}}"。  
+  
+ このメソッドは、指定した文字列で個別の改行文字 (16 進数で 0x000a) を検索しないため、改行文字は <xref:System.IO.TextWriter.NewLine%2A> に置き換えられません。  
+  
+ 指定したオブジェクトは、書式指定文字列で参照されていないは無視されます。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">文字列型またはオブジェクトとして渡される<see langword="null" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />有効な複合書式指定文字列ではありません。  
+  
+ または  
+  
+ 書式指定項目のインデックスが 0 (ゼロ) 未満または以上の長さ、<paramref name="arg" />配列。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データの読み取り元の文字配列。</param>
+        <param name="index">内の文字位置<c>バッファー</c>データの読み取りを開始する位置です。</param>
+        <param name="count">書き込む文字の最大数。</param>
+        <summary>文字の部分配列をテキスト文字列またはストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、書き込み`count`文字のデータにこの`TextWriter`から、`buffer`開始位置から文字配列`index`です。  
+  
+ このオーバー ロードを呼び出すことは、<xref:System.IO.TextWriter.Write%28System.Char%5B%5D%29>メソッドに続けて<xref:System.IO.TextWriter.WriteLine%2A>内の各文字の`buffer`間`index`と (`index` + `count`)。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">バッファーの長さマイナス<paramref name="index" />はより小さい<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="buffer" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (string format, object arg0, object arg1);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(string format, object arg0, object arg1) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.String,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="arg0" Type="System.Object" />
+        <Parameter Name="arg1" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">複合書式設定文字列。</param>
+        <param name="arg0">書式設定および書き込みをする最初のオブジェクト。</param>
+        <param name="arg1">書式設定および書き込みをする 2 番目のオブジェクト。</param>
+        <summary><see cref="M:System.String.Format(System.String,System.Object,System.Object)" /> メソッドと同じセマンティクスを使用して、書式設定された文字列と改行をテキスト文字列またはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、オブジェクトの値を文字列形式に変換して、その表現を文字列に埋め込むには、複合書式指定を使用します。 .NET には、次の書式設定のトピックで詳しく説明されている広範な書式設定のサポートが用意されています。  
+  
+-   複合書式指定機能の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   についての日付と時刻の書式指定子の詳細については、次を参照してください。[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+-   列挙型書式指定子の詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `format`パラメーターは、0 または 1 つ以上のインデックス付きプレース ホルダー、このメソッドのパラメーター リスト内のオブジェクトに対応する書式指定項目と呼ばれる個以上のテキストを混在させます。 書式設定プロセスでは、対応するオブジェクトの値の文字列形式を各書式項目を置き換えます。  
+  
+ 書式指定項目の構文は次のとおりです。  
+  
+ {*インデックス*[、*長さ*] [:*formatString*]}  
+  
+ 角かっこ内の要素は省略できます。 次の表では、各要素について説明します。 複合書式指定項目の構文を含む、機能を書式設定の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|インデックス|書式設定するオブジェクトのパラメーター リスト内の 0 から始まる位置。 オブジェクトを指定して場合*インデックス*は`null`、書式指定項目が置き換え<xref:System.String?displayProperty=nameWithType>です。 このオーバー ロードのパラメーターで 2 つのオブジェクトがあるためにボックスの一覧の値*インデックス*0 または 1 を常にする必要があります。 内のパラメーターが存在しない場合、*インデックス*、位置、<xref:System.FormatException>がスローされます。|  
+|、*長さ*|パラメーターの文字列表記で文字の最小数。 正の値は、パラメーター右揃えになります。負の場合は、左揃えをお勧めします。|  
+|:*formatString*|書式設定するオブジェクトでサポートされている標準またはカスタムの書式指定文字列。 指定できる値*formatString*は、オブジェクトのによってサポートされる値と同じ`ToString(string format)`メソッドです。 場合*formatString*が指定されていない書式設定するオブジェクトを実装して、<xref:System.IFormattable>インターフェイス、`null`の値として渡される、`format`パラメーターとして使用される、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>書式指定文字列。|  
+  
+ 先頭および末尾の文字を中かっこ"{"と"}"が必要です。 単一のリテラルのかっこ記号を指定する`format`先頭の 2 つの指定、または末尾の文字は; 中かっこを使用は、"{{"または"}}"。  
+  
+ このメソッドは、指定した文字列で個別の改行文字 (16 進数で 0x000a) を検索しないため、改行文字は <xref:System.IO.TextWriter.NewLine%2A> に置き換えられません。  
+  
+ 指定したオブジェクトは、書式指定文字列で参照されていないは無視されます。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />有効な複合書式指定文字列ではありません。  
+  
+ または  
+  
+ 書式指定項目のインデックスが 0 (ゼロ) 未満か (つまり、このメソッドのオーバー ロードの 2 つ) を書式設定オブジェクトの数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public virtual void WriteLine (string format, object arg0, object arg1, object arg2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteLine(string format, object arg0, object arg1, object arg2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLine(System.String,System.Object,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="arg0" Type="System.Object" />
+        <Parameter Name="arg1" Type="System.Object" />
+        <Parameter Name="arg2" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="format">複合書式設定文字列。</param>
+        <param name="arg0">書式設定および書き込みをする最初のオブジェクト。</param>
+        <param name="arg1">書式設定および書き込みをする 2 番目のオブジェクト。</param>
+        <param name="arg2">書式設定および書き込みをする 3 番目のオブジェクト。</param>
+        <summary><see cref="M:System.String.Format(System.String,System.Object)" /> と同じセマンティクスを使用して、書式設定された文字列と改行を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、オブジェクトの値を文字列形式に変換して、その表現を文字列に埋め込むには、複合書式指定を使用します。 .NET には、次の書式設定のトピックで詳しく説明されている広範な書式設定のサポートが用意されています。  
+  
+-   複合書式指定機能の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   についての日付と時刻の書式指定子の詳細については、次を参照してください。[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+-   列挙型書式指定子の詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。  
+  
+-   書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `format`パラメーターは、0 または 1 つ以上のインデックス付きプレース ホルダー、このメソッドのパラメーター リスト内のオブジェクトに対応する書式指定項目と呼ばれる個以上のテキストを混在させます。 書式設定プロセスでは、対応するオブジェクトの値の文字列形式を各書式項目を置き換えます。  
+  
+ 書式指定項目の構文は次のとおりです。  
+  
+ {*インデックス*[、*長さ*] [:*formatString*]}  
+  
+ 角かっこ内の要素は省略できます。 次の表では、各要素について説明します。 複合書式指定項目の構文を含む、機能を書式設定の詳細については、次を参照してください。[複合書式指定](~/docs/standard/base-types/composite-formatting.md)です。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|インデックス|書式設定するオブジェクトのパラメーター リスト内の 0 から始まる位置。 オブジェクトを指定して場合*インデックス*は`null`、書式指定項目が置き換え<xref:System.String?displayProperty=nameWithType>です。 このオーバー ロードでは、3 つのオブジェクトが、パラメーターの一覧の値*インデックス*0、1、または 2 を常にする必要があります。 内のパラメーターが存在しない場合、*インデックス*、位置、<xref:System.FormatException>がスローされます。|  
+|、*長さ*|パラメーターの文字列表記で文字の最小数。 正の値は、パラメーター右揃えになります。負の場合は、左揃えをお勧めします。|  
+|:*formatString*|書式設定するオブジェクトでサポートされている標準またはカスタムの書式指定文字列。 指定できる値*formatString*は、オブジェクトのによってサポートされる値と同じ`ToString(string format)`メソッドです。 場合*formatString*が指定されていない書式設定するオブジェクトを実装して、<xref:System.IFormattable>インターフェイス、`null`の値として渡される、`format`パラメーターとして使用される、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>書式指定文字列。|  
+  
+ 先頭および末尾の文字を中かっこ"{"と"}"が必要です。 単一のリテラルのかっこ記号を指定する`format`先頭の 2 つの指定、または末尾の文字は; 中かっこを使用は、"{{"または"}}"。  
+  
+ このメソッドは、指定した文字列で個別の改行文字 (16 進数で 0x000a) を検索しないため、改行文字は <xref:System.IO.TextWriter.NewLine%2A> に置き換えられません。  
+  
+ 指定したオブジェクトは、書式指定文字列で参照されていないは無視されます。  
+  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.TextWriter" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />有効な複合書式指定文字列ではありません。  
+  
+ または  
+  
+ 書式指定項目のインデックスが 0 (ゼロ) 未満か (つまり、このメソッドのオーバー ロードの 3 つ) を書式設定オブジェクトの数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task WriteLineAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task WriteLineAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLineAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>行終端記号をテキスト文字列またはストリームに非同期的に書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">テキスト ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">テキスト ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task WriteLineAsync (char value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task WriteLineAsync(char value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLineAsync(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="value">テキスト ストリームに書き込む文字。</param>
+        <summary>文字をテキスト文字列またはストリームに非同期的に書き込み、続けて行終端記号を書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ <xref:System.IO.TextWriter> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextWriter.WriteLineAsync%2A>メソッドを参照してください、<xref:System.IO.StreamWriter.WriteLineAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">テキスト ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">テキスト ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteLineAsync (char[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteLineAsync(char[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLineAsync(System.Char[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">テキスト ストリームに書き込む文字配列。 文字配列が <see langword="null" /> の場合は、行終端記号だけが書き込まれます。</param>
+        <summary>文字の配列をテキスト文字列またはストリームに非同期的に書き込み、続けて行終端記号を書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">テキスト ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">テキスト ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task WriteLineAsync (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task WriteLineAsync(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLineAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む文字列。 値が <see langword="null" /> の場合は、行終端記号だけが書き込まれます。</param>
+        <summary>文字列をテキスト文字列またはストリームに非同期的に書き込み、続けて行終端記号を書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ <xref:System.IO.TextWriter> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextWriter.WriteLineAsync%2A>メソッドを参照してください、<xref:System.IO.StreamWriter.WriteLineAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">テキスト ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">テキスト ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task WriteLineAsync (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task WriteLineAsync(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.TextWriter.WriteLineAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データの書き込み元の文字配列。</param>
+        <param name="index">データの取得を開始する、バッファー内の文字位置。</param>
+        <param name="count">書き込む文字数。</param>
+        <summary>文字の部分配列をテキスト文字列またはストリームに非同期的に書き込み、続けて行終端記号を書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行終端記号は、<xref:System.IO.TextWriter.CoreNewLine> フィールドで定義されます。  
+  
+ <xref:System.IO.TextWriter> クラスは抽象クラスです。 そのため、コードでそれをインスタンス化することはありません。 使用する例については、<xref:System.IO.TextWriter.WriteLineAsync%2A>メソッドを参照してください、<xref:System.IO.StreamWriter.WriteLineAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="index" /> Plus<paramref name="count" />がバッファーの長さを超えています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException">テキスト ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">テキスト ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

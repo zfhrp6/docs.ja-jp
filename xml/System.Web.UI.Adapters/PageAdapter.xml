@@ -1,0 +1,662 @@
+<Type Name="PageAdapter" FullName="System.Web.UI.Adapters.PageAdapter">
+  <TypeSignature Language="C#" Value="public abstract class PageAdapter : System.Web.UI.Adapters.ControlAdapter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PageAdapter extends System.Web.UI.Adapters.ControlAdapter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Adapters.PageAdapter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Adapters.ControlAdapter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>特定のブラウザーの Web ページを調整し、継承元となるすべてのページ アダプター、直接または間接的に基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter>クラスは、ブラウザー、ブラウザーを使用するマークアップ言語で定義されている (たとえば、HTML または XHTML) の特定のクラスの Web ページの対応する抽象クラスです。 派生する特殊なテキスト ライター クラスにカプセル化できますレンダリング動作に適応性の多く、<xref:System.Web.UI.HtmlTextWriter>クラス、常に、ページ アダプターを指定する必要はありません。  
+  
+ 派生ページ アダプターのほとんどのメンバーが呼び出される、<xref:System.Web.UI.Page>クラスまたはコントロール アダプターからです。 最初に、<xref:System.Web.UI.Page>クラスまたはコントロール アダプター派生ページ アダプターの存在を検出し、メンバーを呼び出すかページ アダプターが存在しない場合は、機能を提供します。  
+  
+ メンバー、<xref:System.Web.UI.Adapters.PageAdapter>クラスは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Adapters.PageAdapter.CacheVaryByHeaders%2A>と<xref:System.Web.UI.Adapters.PageAdapter.CacheVaryByParams%2A>プロパティ定義の追加の HTTP ヘッダーと HTTP`GET`と`POST`キャッシュを変更するために使用されるパラメーター。 キャッシュの初期化中に呼び出される、<xref:System.Web.UI.Page>クラスです。  
+  
+-   <xref:System.Web.UI.Adapters.PageAdapter.GetStatePersister%2A>メソッドは、結合されたビューとコントロールをページの状態を永続化に使用できるオブジェクトを返します。 参照されている、<xref:System.Web.UI.Page.PageStatePersister%2A>プロパティ派生ページ アダプターが存在する場合。  
+  
+-   <xref:System.Web.UI.Adapters.PageAdapter.GetPostBackFormReference%2A>メソッドはスクリプト内のフォームを参照するために使用する DHTML コード フラグメントを提供します。  
+  
+-   <xref:System.Web.UI.Adapters.PageAdapter.DeterminePostBackMode%2A>ページがポストバックの場合、メソッドがポストバックの変数のコレクションを返します。 代わりに、.NET フレームワークによって呼び出されます、<xref:System.Web.UI.Page.DeterminePostBackMode%2A?displayProperty=nameWithType>メソッド派生ページ アダプターが存在する場合。  
+  
+-   <xref:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink%2A>と<xref:System.Web.UI.Adapters.PageAdapter.RenderEndHyperlink%2A>メソッドが派生ページ アダプターが存在する場合にハイパーリンクを表示するためにコントロール アダプターによって使用されます。  
+  
+-   <xref:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent%2A>メソッドはハイパーリンクまたはフォームを送信できるポストバック クライアント タグをレンダリングします。  
+  
+-   <xref:System.Web.UI.Adapters.PageAdapter.RegisterRadioButton%2A>と<xref:System.Web.UI.Adapters.PageAdapter.GetRadioButtonsByGroup%2A>メソッド ラジオ ボタン コントロール アダプターで使用して、他の参照<xref:System.Web.UI.WebControls.RadioButton>ラジオ ボタン グループ内のコントロールです。  
+  
+-   <xref:System.Web.UI.Adapters.PageAdapter.ClientState%2A>プロパティ、コントロールとビューの状態の組み合わせへのアクセスを提供する、<xref:System.Web.UI.Page>を介して、内部オブジェクト`ClientState`のプロパティ、<xref:System.Web.UI.Page>クラスです。  
+  
+-   <xref:System.Web.UI.Adapters.PageAdapter.TransformText%2A>メソッドは、デバイス固有のテキスト変換を実行するコントロール アダプターによって使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、という名前のクラスを派生させる`CustomPageAdapter`から、<xref:System.Web.UI.Adapters.PageAdapter>クラスし、オーバーライド、<xref:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink%2A>メソッド。 <xref:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink%2A>メソッドという名前の属性を追加する`src`これをハイパーリンクに現在のページへの参照が含まれています。 ページに表示されるすべてのハイパーリンク`CustomPageAdapter`がアタッチされているが、`src`属性。  
+  
+ [!code-csharp[System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink/CS/pageadapter.cs#1)]
+ [!code-vb[System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink/VB/pageadapter.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PageAdapter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Adapters.PageAdapter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework 構築このアダプター内部的に対応する、作成時に<xref:System.Web.UI.Page>クラスまたは派生クラス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheVaryByHeaders">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Specialized.StringCollection CacheVaryByHeaders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection CacheVaryByHeaders" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Adapters.PageAdapter.CacheVaryByHeaders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この派生ページ アダプターが接続されている Web ページのキャッシュに影響するその他の HTTP ヘッダーの一覧を取得します。</summary>
+        <value><see cref="T:System.Collections.IList" /> HTTP ヘッダーの一覧を格納している、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web 上の Web ページをキャッシュするエンティティは、HTTP ヘッダーとその他の要因に基づいて、複数のバージョンをキャッシュします。 たとえば、バージョン、ページを生成する各言語がキャッシュされる通常に基づいて、 `Accept-Language` HTTP ヘッダー。  
+  
+ ブラウザーによっては、ターゲットに依存しないキャッシュを制御する、ヘッダーだけでなく、HTTP ヘッダーによってキャッシュを変更するために必要な場合があります。 たとえば、さまざまな画面サイズに対してページの異なるバージョンをキャッシュする必要があります。  
+  
+ によって返されるヘッダー名、<xref:System.Web.UI.Adapters.PageAdapter.CacheVaryByHeaders%2A>プロパティがヘッダーの一覧に追加されて、`Vary`クライアントのブラウザーに送信された HTTP ヘッダー。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />クラスをオーバーライドできます、<see cref="P:System.Web.UI.Adapters.PageAdapter.CacheVaryByHeaders" />プロパティをターゲットに固有のキャッシュを制御する追加のヘッダーの一覧を返します。 <see cref="P:System.Web.UI.Adapters.PageAdapter.CacheVaryByHeaders" />プロパティから返されるを基本<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheVaryByParams">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Specialized.StringCollection CacheVaryByParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection CacheVaryByParams" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Adapters.PageAdapter.CacheVaryByParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この派生ページ アダプターが接続されている Web ページのキャッシュに影響する HTTP GET および POST 要求から追加のパラメーターの一覧を取得します。</summary>
+        <value><see cref="T:System.Collections.IList" /> GET と POST パラメーターの一覧を格納している、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュ Web ページが複数のバージョンをキャッシュする Web 上のエンティティに基づいて、その他の要因の間で要求のパラメーターです。 たとえば、バージョン ページが生成対象となる小売チェーン内における各ストアの場所はキャッシュ通常に基づいてのパラメーター名 (たとえば、 `StoreID`)。  
+  
+ ブラウザーによっては、GET でキャッシュを変更またはターゲットに依存しないキャッシュを制御するパラメーターのパラメーター以外に投稿に必要な場合があります。 たとえば、さまざまな携帯電話サービス プロバイダーのページの異なるバージョンをキャッシュする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />クラスをオーバーライドできます、<see cref="P:System.Web.UI.Adapters.PageAdapter.CacheVaryByParams" />プロパティをターゲットに固有のキャッシュを制御する追加の GET または POST パラメーターの一覧を返します。 <see cref="P:System.Web.UI.Adapters.PageAdapter.CacheVaryByParams" />基本メソッドを返します。<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientState">
+      <MemberSignature Language="C#" Value="protected string ClientState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClientState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Adapters.PageAdapter.ClientState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この派生ページ アダプターが接続されている Web ページのビューとコントロールの状態データを含むエンコードされた文字列を取得します。</summary>
+        <value>エンコードされた<see cref="T:System.String" />、ビューとコントロールの状態の組み合わせに関連付けられたコントロールを含む<see cref="T:System.Web.UI.Page" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter.ClientState%2A>プロパティは、内部へのアクセスを提供`ClientState`のプロパティ、<xref:System.Web.UI.Page>クラスです。  
+  
+ によって保存された状態データを表示、<xref:System.Web.UI.PageStatePersister>は内部オブジェクト`ClientState`プロパティ<xref:System.Web.UI.Page>Web ページ上の隠しフィールドに保存常にします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />オーバーライドすることはできません、クラス、<see cref="P:System.Web.UI.Adapters.PageAdapter.ClientState" />プロパティではないため<see langword="virtual" />です。 動作を変更する<see cref="P:System.Web.UI.Adapters.PageAdapter.ClientState" />派生クラスで実装、新しい<see cref="P:System.Web.UI.Adapters.PageAdapter.ClientState" />を参照するプロパティ、<see cref="P:System.Web.UI.Adapters.PageAdapter.ClientState" />基底クラスのプロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DeterminePostBackMode">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Specialized.NameValueCollection DeterminePostBackMode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Specialized.NameValueCollection DeterminePostBackMode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.DeterminePostBackMode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Web ページがポストバックし、ポストバックの変数の名前/値コレクションを返すかどうかを判断します。</summary>
+        <returns>A<see cref="T:System.Collections.Specialized.NameValueCollection" />以外の場合は、ポストバック変数のそれ以外の場合<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter.DeterminePostBackMode%2A>メソッドでは、次のコレクションのいずれかを返します。  
+  
+-   フォーム変数の場合は HTTP データ転送メソッドが`POST`です。  
+  
+-   HTTP メソッドがある場合、クエリ文字列変数`GET`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />クラスをオーバーライドできます、<see cref="M:System.Web.UI.Adapters.PageAdapter.DeterminePostBackMode" />ポストバック変数コレクションのターゲット固有の処理を提供するメソッド。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DeterminePostBackModeUnvalidated">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Specialized.NameValueCollection DeterminePostBackModeUnvalidated ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Specialized.NameValueCollection DeterminePostBackModeUnvalidated() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.DeterminePostBackModeUnvalidated" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求で ASP.NET 要求の検証を実行しなくても、POST または GET コマンドのいずれかを使用して、ページにポストされたデータの名前と値のコレクションを返します。</summary>
+        <returns>未検証のフォーム データ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.Web.UnvalidatedRequestValues> クラスを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPostBackFormReference">
+      <MemberSignature Language="C#" Value="protected virtual string GetPostBackFormReference (string formId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance string GetPostBackFormReference(string formId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.GetPostBackFormReference(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="formId">A<see cref="T:System.String" />がポストされたフォームのクライアント ID を保持します。</param>
+        <summary>クライアントのブラウザーが送信されたページ上のフォームを参照に使用できる DHTML コード フラグメントを返します。</summary>
+        <returns>A<see cref="T:System.String" />送信されたページ上のフォームへの参照を使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter.GetPostBackFormReference%2A>メソッドは、ポストバックのフォームに DHTML のリファレンスを提供します。 コード フラグメントでは、次の形式があります。  
+  
+ `document.forms['` `formID` `']`  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />クラスをオーバーライドできます、<see cref="M:System.Web.UI.Adapters.PageAdapter.GetPostBackFormReference(System.String)" />メソッドのマークアップ、アダプターによってサポートされるブラウザーをポストバックのフォーム参照の別の形式が必要な場合です。 たとえば、PocketPC ブラウザーで使用される HTML 3.2 規格では、次の形式が必要です。  
+  
+ <c>ドキュメントです。</c><paramref name="formID" /></para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRadioButtonsByGroup">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection GetRadioButtonsByGroup (string groupName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection GetRadioButtonsByGroup(string groupName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.GetRadioButtonsByGroup(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="groupName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="groupName">A<see cref="T:System.String" />の名前は、<see cref="T:System.Web.UI.WebControls.RadioButton" />グループを取得します。</param>
+        <summary>指定されたオプション ボタン コントロールのコレクションを取得して<paramref name="groupName" />です。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />の<see cref="T:System.Web.UI.WebControls.RadioButton" />を構成するコントロール<paramref name="groupName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ラジオ ボタン コントロールのアダプターを使用して、<xref:System.Web.UI.Adapters.PageAdapter.GetRadioButtonsByGroup%2A>と<xref:System.Web.UI.Adapters.PageAdapter.RegisterRadioButton%2A>を他の参照方法<xref:System.Web.UI.WebControls.RadioButton>グループ内のコントロールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStatePersister">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.PageStatePersister GetStatePersister ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.PageStatePersister GetStatePersister() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.GetStatePersister" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PageStatePersister</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Web ページで、制御を維持し、状態の確認に使用されるオブジェクトを返します。</summary>
+        <returns>派生したオブジェクト<see cref="T:System.Web.UI.PageStatePersister" />を作成して、結合されたコントロールとビューの州の抽出をサポートする、<see cref="T:System.Web.UI.Page" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Page.PageStatePersister%2A>プロパティの使用、<xref:System.Web.UI.Adapters.PageAdapter.GetStatePersister%2A>から派生したオブジェクトを返すメソッドを<xref:System.Web.UI.PageStatePersister>クラス、フォーム、ページのすべてのコントロールとビューの状態を抽出します。 ページに関連付けられている派生ページ アダプターが存在しない場合、<xref:System.Web.UI.HiddenFieldPageStatePersister>オブジェクトは、ページ上の隠しフィールドに状態を維持するために使用します。  
+  
+|リンクの種類|結果として得られるリンク|  
+|---------------|--------------------|  
+|コードのエンティティ参照、cer|<xref:System.Char.ToString%2A>|  
+|エンティティの参照を修飾、cerq コードします。|<xref:System.Char.ToString%2A?displayProperty=nameWithType>|  
+|エンティティの参照を特定、cer コードします。|<xref:System.Char.ToString%28System.Char%29>|  
+|エンティティの参照を修飾固有のもので cerqs コードします。|<xref:System.Char.ToString%28System.Char%29?displayProperty=nameWithType>|  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>によって保存された状態データを表示、<see cref="T:System.Web.UI.PageStatePersister" />は内部オブジェクト<see langword="ClientState" />のプロパティ、 <see cref="T:System.Web.UI.Page" /> Web ページ上の隠しフィールドに保存常にします。</para>
+        </block>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />クラスをオーバーライドできます、<see cref="M:System.Web.UI.Adapters.PageAdapter.GetStatePersister" />を返す別のメソッドが (たとえば、限られたリソース) が原因の隠しフィールドに組み合わされた状態を維持するために実行可能でない場合、ページ状態 persister を派生します。  
+  
+ <see cref="M:System.Web.UI.Adapters.PageAdapter.GetStatePersister" />基本クラスを返します、<see cref="T:System.Web.UI.HiddenFieldPageStatePersister" />オブジェクト。 使用することができます、<see cref="T:System.Web.UI.SessionPageStatePersister" />セッション状態のページの状態を維持するクラス。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterRadioButton">
+      <MemberSignature Language="C#" Value="public virtual void RegisterRadioButton (System.Web.UI.WebControls.RadioButton radioButton);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterRadioButton(class System.Web.UI.WebControls.RadioButton radioButton) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.RegisterRadioButton(System.Web.UI.WebControls.RadioButton)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="radioButton" Type="System.Web.UI.WebControls.RadioButton" />
+      </Parameters>
+      <Docs>
+        <param name="radioButton">コレクションに追加する <see cref="T:System.Web.UI.WebControls.RadioButton" />。</param>
+        <summary>指定されたオプション ボタン グループのコレクションにラジオ ボタン コントロールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter>クラスの使用、<xref:System.Collections.Specialized.ListDictionary>ラジオ ボタン グループの一覧を保持するオブジェクト。 内の各要素<xref:System.Collections.Specialized.ListDictionary>のコレクションには、<xref:System.Web.UI.WebControls.RadioButton>ラジオ ボタン グループ内のコントロールです。 <xref:System.Web.UI.Adapters.PageAdapter.RegisterRadioButton%2A>メソッドを追加、<xref:System.Web.UI.WebControls.RadioButton>コントロールを既にがない場合、コレクションを作成することは、適切なコレクションに<xref:System.Collections.Specialized.ListDictionary>あります以前登録されている場合<xref:System.Web.UI.WebControls.RadioButton>コントロール。  
+  
+ ラジオ ボタン コントロールのアダプターを使用して、<xref:System.Web.UI.Adapters.PageAdapter.RegisterRadioButton%2A>と<xref:System.Web.UI.Adapters.PageAdapter.GetRadioButtonsByGroup%2A>を他の参照方法<xref:System.Web.UI.WebControls.RadioButton>ラジオ ボタン グループ内のコントロールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderBeginHyperlink">
+      <MemberSignature Language="C#" Value="public virtual void RenderBeginHyperlink (System.Web.UI.HtmlTextWriter writer, string targetUrl, bool encodeUrl, string softkeyLabel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RenderBeginHyperlink(class System.Web.UI.HtmlTextWriter writer, string targetUrl, bool encodeUrl, string softkeyLabel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink(System.Web.UI.HtmlTextWriter,System.String,System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+        <Parameter Name="targetUrl" Type="System.String" />
+        <Parameter Name="encodeUrl" Type="System.Boolean" />
+        <Parameter Name="softkeyLabel" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />ターゲット固有の出力を表示するためにメソッドを含むです。</param>
+        <param name="targetUrl"><see cref="T:System.String" />リンクのターゲット URL を保持します。</param>
+        <param name="encodeUrl">
+          <see langword="true" />使用する<see cref="M:System.Web.HttpUtility.HtmlAttributeEncode(System.String)" />; 出力ストリームのエンコードにそれ以外の場合、<see langword="false" />です。</param>
+        <param name="softkeyLabel"><see cref="T:System.String" />ソフト キー ラベルとして使用する値。</param>
+        <summary>タグをレンダリング応答ストリームにターゲット URL を含むハイパーリンク タグ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink%2A>メソッドは、開始を書き込みます。 ハイパーリンク タグ。 ときに`writer`は<xref:System.Web.UI.HtmlTextWriter>、このタグは、次の形式。  
+  
+ `<a href="` `targetUrl` `">`  
+  
+   
+  
+## Examples  
+ 次のコード例では、という名前のクラスを派生させる`CustomPageAdapter`から、<xref:System.Web.UI.Adapters.PageAdapter>クラスし、オーバーライド、<xref:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink%2A>メソッド。 <xref:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink%2A>メソッドという名前の属性を追加する`src`これをハイパーリンクに現在のページへの参照が含まれています。 ページに表示されるすべてのハイパーリンク`CustomPageAdapter`がアタッチされているが、`src`属性。  
+  
+ [!code-csharp[System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink/CS/pageadapter.cs#1)]
+ [!code-vb[System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink/VB/pageadapter.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />クラスをオーバーライドできます、<see cref="M:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink(System.Web.UI.HtmlTextWriter,System.String,System.Boolean,System.String)" />タグまたは属性を追加タグを記述するのには、ハイパーリンクの開始の別の形式を書き込みます。 たとえば、<see cref="M:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink(System.Web.UI.HtmlTextWriter,System.String,System.Boolean,System.String)" />基本メソッドがの属性を書き込まない<paramref name="softkeyLabel" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderBeginHyperlink">
+      <MemberSignature Language="C#" Value="public virtual void RenderBeginHyperlink (System.Web.UI.HtmlTextWriter writer, string targetUrl, bool encodeUrl, string softkeyLabel, string accessKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RenderBeginHyperlink(class System.Web.UI.HtmlTextWriter writer, string targetUrl, bool encodeUrl, string softkeyLabel, string accessKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink(System.Web.UI.HtmlTextWriter,System.String,System.Boolean,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+        <Parameter Name="targetUrl" Type="System.String" />
+        <Parameter Name="encodeUrl" Type="System.Boolean" />
+        <Parameter Name="softkeyLabel" Type="System.String" />
+        <Parameter Name="accessKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />ターゲット固有の出力を表示するためにメソッドを含むです。</param>
+        <param name="targetUrl"><see cref="T:System.String" />リンクのターゲット URL を保持します。</param>
+        <param name="encodeUrl">
+          <see langword="true" />使用する<see cref="M:System.Web.HttpUtility.HtmlAttributeEncode(System.String)" />; 出力ストリームのエンコードにそれ以外の場合、<see langword="false" />です。</param>
+        <param name="softkeyLabel"><see cref="T:System.String" />ソフト キー ラベルとして使用する値。</param>
+        <param name="accessKey"><see cref="T:System.String" />に代入する値、<see langword="accessKey" />作成へのリンクの属性です。</param>
+        <summary>タグをレンダリング ターゲット URL と応答ストリームへのアクセス キーを含むハイパーリンク タグ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink%2A>メソッドは、開始を書き込みます。 ハイパーリンク タグ。 ときに`writer`は、<xref:System.Web.UI.HtmlTextWriter>のオブジェクト、このタグは、次の形式。  
+  
+ `<a href="``targetUrl``" accessKey="``accessKey``">`  
+  
+   
+  
+## Examples  
+ 次のコード例では、という名前のクラスを派生させる`CustomPageAdapter`から、<xref:System.Web.UI.Adapters.PageAdapter>クラスし、オーバーライド、<xref:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink%2A>メソッド。 <xref:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink%2A>という名前の属性を追加`src`これをハイパーリンクに現在のページへの参照が含まれています。 ページに表示されるすべてのハイパーリンク`CustomPageAdapter`がアタッチされているが、`src`属性。  
+  
+ [!code-csharp[System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink/CS/pageadapter.cs#1)]
+ [!code-vb[System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink/VB/pageadapter.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="accessKey" />1 つの文字を超えています。</exception>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />クラスをオーバーライドできます、<see cref="M:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink(System.Web.UI.HtmlTextWriter,System.String,System.Boolean,System.String,System.String)" />タグまたは属性を追加タグを記述するのには、ハイパーリンクの開始の別の形式を書き込みます。 たとえば、<see cref="M:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink(System.Web.UI.HtmlTextWriter,System.String,System.Boolean,System.String,System.String)" />基本メソッドがの属性を書き込まない<paramref name="softkeyLabel" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderEndHyperlink">
+      <MemberSignature Language="C#" Value="public virtual void RenderEndHyperlink (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RenderEndHyperlink(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.RenderEndHyperlink(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />ターゲット固有の出力を表示するためにメソッドを格納しています。</param>
+        <summary>応答ストリームにハイパーリンクの終了タグをレンダリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter.RenderEndHyperlink%2A>メソッド終了のハイパーリンク タグ。 テキスト ライターの場合は、<xref:System.Web.UI.HtmlTextWriter>のオブジェクト、このタグは、次の形式。  
+  
+ `</a>`  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />クラスをオーバーライドできます、<see cref="M:System.Web.UI.Adapters.PageAdapter.RenderEndHyperlink(System.Web.UI.HtmlTextWriter)" />と<see cref="Overload:System.Web.UI.Adapters.PageAdapter.RenderBeginHyperlink" />メソッドと、別のハイパーリンクの書式を表示する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderPostBackEvent">
+      <MemberSignature Language="C#" Value="public virtual void RenderPostBackEvent (System.Web.UI.HtmlTextWriter writer, string target, string argument, string softkeyLabel, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RenderPostBackEvent(class System.Web.UI.HtmlTextWriter writer, string target, string argument, string softkeyLabel, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+        <Parameter Name="target" Type="System.String" />
+        <Parameter Name="argument" Type="System.String" />
+        <Parameter Name="softkeyLabel" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />ターゲット固有の出力を表示するためにメソッドを含むです。</param>
+        <param name="target"><see cref="T:System.String" />ポストバック イベント ターゲット名を保持します。</param>
+        <param name="argument"><see cref="T:System.String" />ポストバック対象イベントに渡す引数を保持します。</param>
+        <param name="softkeyLabel"><see cref="T:System.String" />ソフト キー ラベルとして使用する値。</param>
+        <param name="text"><see cref="T:System.String" />リンクとして表示するテキストの値。</param>
+        <summary>応答ストリームにポストバック イベントをエンコードおよび場合によって暗号化されたビュー状態、およびイベント ターゲットおよび引数を含む、ハイパーリンクとしてレンダリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent%2A>メソッドは、スクリプトを持たないハイパーリンクとしてポストバック イベントを書き込みます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />クラスをオーバーライドできます、<see cref="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String)" />メソッドの場合は、別の形式はポストバック イベントのハイパーリンクの必須またはその他の一意の要件がブラウザーにします。 たとえば、一部のブラウザーでは、ハイパーリンク テキストをリンクが表示する場合は空にすることが必要です。 オーバーライドすることも<see cref="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String)" />限られたリソースでは、URL パラメーターとしてビュー ステートを含むようにする場合。 <see cref="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String)" />基本メソッドがの属性を書き込まない<paramref name="softkeyLabel" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderPostBackEvent">
+      <MemberSignature Language="C#" Value="public virtual void RenderPostBackEvent (System.Web.UI.HtmlTextWriter writer, string target, string argument, string softkeyLabel, string text, string postUrl, string accessKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RenderPostBackEvent(class System.Web.UI.HtmlTextWriter writer, string target, string argument, string softkeyLabel, string text, string postUrl, string accessKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+        <Parameter Name="target" Type="System.String" />
+        <Parameter Name="argument" Type="System.String" />
+        <Parameter Name="softkeyLabel" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="postUrl" Type="System.String" />
+        <Parameter Name="accessKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />ターゲット固有の出力を表示するためにメソッドを含むです。</param>
+        <param name="target"><see cref="T:System.String" />ポストバック イベント ターゲット名を保持します。</param>
+        <param name="argument"><see cref="T:System.String" />ポストバック対象イベントに渡す引数を保持します。</param>
+        <param name="softkeyLabel"><see cref="T:System.String" />ソフト キー ラベルとして使用する値。</param>
+        <param name="text"><see cref="T:System.String" />リンクとして表示するテキストの値。</param>
+        <param name="postUrl"><see cref="T:System.String" />ポストバックの URL ターゲット ページを保持します。</param>
+        <param name="accessKey"><see cref="T:System.String" />値を割り当てるために使用、<see langword="accessKey" />作成したリンクの属性です。</param>
+        <summary>応答ストリームにポストバック イベントをエンコードおよび場合によって暗号化されたビュー状態、イベント ターゲットと引数、前のページのパラメーターでは、アクセス キーなど、ハイパーリンクとしてレンダリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent%2A>可能性のあるチャンクを含むメソッドは、スクリプトを持たないハイパーリンクとしてポストバック イベントを書き込みます<xref:System.Web.HttpUtility.UrlEncode%2A>ビュー ステート`__EVENTTARGET=target`、 `__EVENTARGUMENT=argument`、`__PREVIOUSPAGE=currentFilePath`パラメーター、および`accessKey="accessKey"`属性。  
+  
+ 場合、ビュー ステートが暗号化されて、`enableViewStateMac`の属性、[要素 (ASP.NET 設定スキーマ) のページ](http://msdn.microsoft.com/en-us/4123bb66-3fe4-4d62-b70e-33758656b458)に設定されている構成要素`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />クラスをオーバーライドできます、<see cref="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String,System.String,System.String)" />メソッドの場合は、別の形式はポストバック イベントのハイパーリンクの必須またはその他の一意の要件がブラウザーにします。 たとえば、一部のブラウザーでは、ハイパーリンク テキストをリンクが表示する場合は空にすることが必要です。 オーバーライドすることも<see cref="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String,System.String,System.String)" />限られたリソースでは、URL パラメーターとしてビュー ステートを含むようにする場合。 <see cref="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String,System.String,System.String)" />基本メソッドがの属性を書き込まない<paramref name="softkeyLabel" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderPostBackEvent">
+      <MemberSignature Language="C#" Value="protected void RenderPostBackEvent (System.Web.UI.HtmlTextWriter writer, string target, string argument, string softkeyLabel, string text, string postUrl, string accessKey, bool encode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RenderPostBackEvent(class System.Web.UI.HtmlTextWriter writer, string target, string argument, string softkeyLabel, string text, string postUrl, string accessKey, bool encode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+        <Parameter Name="target" Type="System.String" />
+        <Parameter Name="argument" Type="System.String" />
+        <Parameter Name="softkeyLabel" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="postUrl" Type="System.String" />
+        <Parameter Name="accessKey" Type="System.String" />
+        <Parameter Name="encode" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />ターゲット固有の出力を表示するためにメソッドを含むです。</param>
+        <param name="target"><see cref="T:System.String" />ポストバック イベント ターゲット名を保持します。</param>
+        <param name="argument"><see cref="T:System.String" />ポストバック対象イベントに渡す引数を保持します。</param>
+        <param name="softkeyLabel"><see cref="T:System.String" />ソフト キー ラベルとして使用する値。</param>
+        <param name="text"><see cref="T:System.String" />リンクとして表示するテキストの値。</param>
+        <param name="postUrl"><see cref="T:System.String" />ポストバックの URL ターゲット ページを保持します。</param>
+        <param name="accessKey"><see cref="T:System.String" />に代入する値、<see langword="accessKey" />作成したリンクの属性です。</param>
+        <param name="encode">
+          <see langword="true" />使用する<c> &amp;amp;</c> URL パラメーター区切り記号としてです。<see langword="false" />を使用する<c> &amp;</c>です。</param>
+        <summary>ポストバック イベントを応答ストリームにエンコードされたビュー状態、イベント ターゲットと引数、前のページのパラメーターでは、アクセス キーなど、ハイパーリンクとしてレンダリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent%2A>可能性のあるチャンクを含むメソッドは、スクリプトを持たないハイパーリンクとしてポストバック イベントを書き込みます<xref:System.Web.HttpUtility.UrlEncode%2A>ビュー ステート`__EVENTTARGET=target`、 `__EVENTARGUMENT=argument`、`__PREVIOUSPAGE=currentFilePath`パラメーター、および`accessKey="accessKey"`属性。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />クラスをオーバーライドできます、<see cref="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String,System.String,System.String)" />メソッドの場合は、別の形式はポストバック イベントのハイパーリンクの必須またはその他の一意の要件がブラウザーにします。 たとえば、一部のブラウザーでは、ハイパーリンク テキストをリンクが表示する場合は空にすることが必要です。 オーバーライドすることも<see cref="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String,System.String,System.String)" />限られたリソースは、URL パラメーターとしてのビュー ステートを含むようにする場合。 <see cref="M:System.Web.UI.Adapters.PageAdapter.RenderPostBackEvent(System.Web.UI.HtmlTextWriter,System.String,System.String,System.String,System.String,System.String,System.String)" />基本メソッドがの属性を書き込まない<paramref name="softkeyLabel" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformText">
+      <MemberSignature Language="C#" Value="public virtual string TransformText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string TransformText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Adapters.PageAdapter.TransformText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">A<see cref="T:System.String" />を変換するテキストであります。</param>
+        <summary>対象のブラウザーのテキストに変換します。</summary>
+        <returns>A<see cref="T:System.String" />変換するテキストを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Adapters.PageAdapter.TransformText%2A>メソッドで使用できます、たとえば、タブ文字を変換する (`\t`) に改行 (`\n`)。  
+  
+ <xref:System.Web.UI.Adapters.PageAdapter.TransformText%2A>基本メソッドを返します。`text`変更されません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.Adapters.PageAdapter" />オーバーライドするクラス、<see cref="M:System.Web.UI.Adapters.PageAdapter.TransformText(System.String)" />特定のマークアップに標準の HTML からのさまざまなフォームを持つコンストラクトがある場合。 例では、ブラウザーが HTML では、使用されるどのようなタグ別の識別子を必要とする場合の<see cref="M:System.Web.UI.Adapters.PageAdapter.TransformText(System.String)" />そのタグを見つけて、それを変更するメソッドをオーバーライドすることができます。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

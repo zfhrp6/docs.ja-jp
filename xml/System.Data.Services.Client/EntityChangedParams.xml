@@ -1,0 +1,149 @@
+<Type Name="EntityChangedParams" FullName="System.Data.Services.Client.EntityChangedParams">
+  <TypeSignature Language="C#" Value="public sealed class EntityChangedParams" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EntityChangedParams extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.EntityChangedParams" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" /> デリゲートの引数をカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の XAML ファイルの分離コード ページを作成、<xref:System.Data.Services.Client.DataServiceCollection%601>バインディング コレクションにバインドされているデータが変更されたときに呼び出されるカスタム メソッドを使用します。 <xref:System.Collections.ObjectModel.ObservableCollection%601.CollectionChanged> イベントが発生すると、指定したメソッドは、バインディング コレクションから削除された項目がデータ サービスから削除されることを防止します。 <xref:System.Collections.ObjectModel.ObservableCollection%601.PropertyChanged> イベントが発生すると、出荷済みの注文に対する変更がないことを確認するために、`ShipDate` の値が検証されます。  
+  
+ [!code-csharp[Astoria Northwind Client#WpfDataBindingCustom](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorderscustom.xaml.cs#wpfdatabindingcustom)]
+ [!code-vb[Astoria Northwind Client#WpfDataBindingCustom](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderscustom.xaml.vb#wpfdatabindingcustom)]
+ [!code-vb[Astoria Northwind Client#WpfDataBindingCustom](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderscustom2.xaml.vb#wpfdatabindingcustom)]  
+  
+ 次の XAML コードでは、前の例については、ウィンドウを定義します。  
+  
+ [!code-xaml[Astoria Northwind Client#WpfDataBindingCustomXaml](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderscustom.xaml#wpfdatabindingcustomxaml)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Services.Client.DataServiceContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityChangedParams.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更されたエンティティ オブジェクトに関連付けられているコンテキスト。</summary>
+        <value>変更されたオブジェクトを追跡しているコンテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Entity">
+      <MemberSignature Language="C#" Value="public object Entity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Entity" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityChangedParams.Entity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更されたエンティティ オブジェクト。</summary>
+        <value>変更されたオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyName">
+      <MemberSignature Language="C#" Value="public string PropertyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityChangedParams.PropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット オブジェクトを参照するエンティティ オブジェクトのプロパティの名前。</summary>
+        <value>変更されたプロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyValue">
+      <MemberSignature Language="C#" Value="public object PropertyValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object PropertyValue" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityChangedParams.PropertyValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティ オブジェクトの変更されたプロパティによって現在参照されるオブジェクト。</summary>
+        <value>ターゲット エンティティを参照する現在の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceEntitySet">
+      <MemberSignature Language="C#" Value="public string SourceEntitySet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceEntitySet" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityChangedParams.SourceEntitySet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース オブジェクトのエンティティ セット。</summary>
+        <value>エンティティ セットの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetEntitySet">
+      <MemberSignature Language="C#" Value="public string TargetEntitySet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetEntitySet" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.EntityChangedParams.TargetEntitySet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット エンティティ オブジェクトが属しているエンティティ セット。</summary>
+        <value>エンティティ セットの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

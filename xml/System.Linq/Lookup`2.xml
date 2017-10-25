@@ -1,0 +1,306 @@
+<Type Name="Lookup&lt;TKey,TElement&gt;" FullName="System.Linq.Lookup&lt;TKey,TElement&gt;">
+  <TypeSignature Language="C#" Value="public class Lookup&lt;TKey,TElement&gt; : System.Collections.Generic.IEnumerable&lt;System.Linq.IGrouping&lt;TKey,TElement&gt;&gt;, System.Linq.ILookup&lt;TKey,TElement&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Lookup`2&lt;TKey, TElement&gt; extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;class System.Linq.IGrouping`2&lt;!TKey, !TElement&gt;&gt;, class System.Collections.IEnumerable, class System.Linq.ILookup`2&lt;!TKey, !TElement&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Linq.Lookup`2" />
+  <AssemblyInfo>
+    <AssemblyName>System.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TKey" />
+    <TypeParameter Name="TElement" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Linq.IGrouping&lt;TKey,TElement&gt;&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Linq.ILookup&lt;TKey,TElement&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TKey">内のキーの種類、<see cref="T:System.Linq.Lookup`2" />です。</typeparam>
+    <typeparam name="TElement">各要素の型<see cref="T:System.Collections.Generic.IEnumerable`1" />値で、<see cref="T:System.Linq.Lookup`2" />です。</typeparam>
+    <summary>それぞれ 1 つ以上の値にマップされているキーのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Linq.Lookup%602>に似ています、<xref:System.Collections.Generic.Dictionary%602>です。 その違いは、<xref:System.Collections.Generic.Dictionary%602>一方、キーを 1 つの値を割り当てる、<xref:System.Linq.Lookup%602>キー値のコレクションを割り当てます。  
+  
+ インスタンスを作成することができます、<xref:System.Linq.Lookup%602>を呼び出して<xref:System.Linq.Enumerable.ToLookup%2A>を実装するオブジェクトで<xref:System.Collections.Generic.IEnumerable%601>です。  
+  
+> [!NOTE]
+>  新しいインスタンスを作成するパブリック コンス トラクターはありません、<xref:System.Linq.Lookup%602>です。 さらに、<xref:System.Linq.Lookup%602>オブジェクトは不変、つまり、追加または要素またはからキーを削除することはできません、<xref:System.Linq.Lookup%602>が作成された後のオブジェクトします。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Linq.Lookup%602>オブジェクトのコレクションから。 列挙し、<xref:System.Linq.Lookup%602>し、各キーと値のキーの関連付けられているコレクション内の各値を出力します。 プロパティを使用する方法も示します<xref:System.Linq.Lookup%602.Count%2A>と<xref:System.Linq.Lookup%602.Item%2A>およびメソッド<xref:System.Linq.Lookup%602.Contains%2A>と<xref:System.Linq.Lookup%602.GetEnumerator%2A>です。  
+  
+ [!code-csharp[System.Linq.Lookup#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Linq.Lookup/CS/lookup.cs#1)]
+ [!code-vb[System.Linq.Lookup#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Linq.Lookup/VB/Lookup.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplyResultSelector&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;TResult&gt; ApplyResultSelector&lt;TResult&gt; (Func&lt;TKey,System.Collections.Generic.IEnumerable&lt;TElement&gt;,TResult&gt; resultSelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;!!TResult&gt; ApplyResultSelector&lt;TResult&gt;(class System.Func`3&lt;!TKey, class System.Collections.Generic.IEnumerable`1&lt;!TElement&gt;, !!TResult&gt; resultSelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Lookup`2.ApplyResultSelector``1(System.Func{`0,System.Collections.Generic.IEnumerable{`1},``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="resultSelector" Type="System.Func&lt;TKey,System.Collections.Generic.IEnumerable&lt;TElement&gt;,TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">によって生成される結果の値の型<c>ある resultSelector</c>です。</typeparam>
+        <param name="resultSelector">各キーから結果値とその関連する値を射影する関数。</param>
+        <summary>各キーとその関連する値に変換関数を適用し、結果を返します。</summary>
+        <returns>コレクション内の各キー/値コレクション ペアの 1 つの値を含む、<see cref="T:System.Linq.Lookup`2" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (TKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(!TKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Lookup`2.Contains(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索するキー、<see cref="T:System.Linq.Lookup`2" />です。</param>
+        <summary>指定したキーがかどうかを判断、<see cref="T:System.Linq.Lookup`2" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="key" />では、 <see cref="T:System.Linq.Lookup`2" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Linq.Lookup%602.Contains%2A>を決定するかどうか、<xref:System.Linq.Lookup%602>指定したキーが含まれています。 このコード例に示されている例の一部である、<xref:System.Linq.Lookup%602>クラスです。  
+  
+ [!code-csharp[System.Linq.Lookup#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Linq.Lookup/CS/lookup.cs#4)]
+ [!code-vb[System.Linq.Lookup#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Linq.Lookup/VB/Lookup.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Linq.Lookup`2.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション ペアのキー/値の数を取得、<see cref="T:System.Linq.Lookup`2" />です。</summary>
+        <value>キーと値のコレクション ペアの数、<see cref="T:System.Linq.Lookup`2" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Linq.Lookup%602.Count%2A>項目を追加またはから削除できないために、プロパティは変更されません、<xref:System.Linq.Lookup%602>が作成された後のオブジェクトします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Linq.Lookup%602.Count%2A>キーと値のコレクション ペアの数を決定する、<xref:System.Linq.Lookup%602>です。 このコード例に示されている例の一部である、<xref:System.Linq.Lookup%602>クラスです。  
+  
+ [!code-csharp[System.Linq.Lookup#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Linq.Lookup/CS/lookup.cs#2)]
+ [!code-vb[System.Linq.Lookup#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Linq.Lookup/VB/Lookup.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;System.Linq.IGrouping&lt;TKey,TElement&gt;&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.Linq.IGrouping`2&lt;!TKey, !TElement&gt;&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Lookup`2.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Linq.IGrouping&lt;TKey,TElement&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復処理するジェネリック列挙子を返します、<see cref="T:System.Linq.Lookup`2" />です。</summary>
+        <returns><see cref="T:System.Linq.Lookup`2" /> の列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Linq.Lookup%602.GetEnumerator%2A>キーと値の反復処理に、<xref:System.Linq.Lookup%602>です。 このコード例に示されている例の一部である、<xref:System.Linq.Lookup%602>クラスです。  
+  
+ [!code-csharp[System.Linq.Lookup#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Linq.Lookup/CS/lookup.cs#5)]
+ [!code-vb[System.Linq.Lookup#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Linq.Lookup/VB/Lookup.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;TElement&gt; this[TKey key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;!TElement&gt; Item(!TKey)" />
+      <MemberSignature Language="DocId" Value="P:System.Linq.Lookup`2.Item(`0)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">目的の値のコレクションのキー。</param>
+        <summary>指定したキーによってインデックス付けされた値のコレクションを取得します。</summary>
+        <value>指定したキーによってインデックス付けされた値のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデックス付きプロパティの値の特定のコレクションのインデックスを作成する機能を提供する、<xref:System.Linq.Lookup%602>次の構文を使用して:`myLookup[key]`で[!INCLUDE[csprcs](~/includes/csprcs-md.md)]または`myLookup(key)`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 場合、`key`が見つからない、コレクション内に空のシーケンスが返されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Linq.Lookup%602.Item%2A>に直接インデックスを<xref:System.Linq.Lookup%602>です。 このコード例に示されている例の一部である、<xref:System.Linq.Lookup%602>クラスです。  
+  
+ [!code-csharp[System.Linq.Lookup#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Linq.Lookup/CS/lookup.cs#3)]
+ [!code-vb[System.Linq.Lookup#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Linq.Lookup/VB/Lookup.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Lookup`2.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Linq.Lookup`2" /> を反復処理する列挙子を返します。 このクラスは継承できません。</summary>
+        <returns><see cref="T:System.Linq.Lookup`2" /> の列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

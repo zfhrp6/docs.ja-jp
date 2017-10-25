@@ -1,0 +1,663 @@
+<Type Name="Financial" FullName="Microsoft.VisualBasic.Financial">
+  <TypeSignature Language="C#" Value="public sealed class Financial" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Financial extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Financial" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>Microsoft.VisualBasic.CompilerServices.StandardModule</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="Financial" />モジュールには、財務関連の操作を実行するための手順が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモジュールは、減価償却、現在および将来の値、金利、戻り値、および支払いの速度などの財務計算を実行する Visual Basic ランタイム ライブラリ メンバーをサポートします。  
+  
+   
+  
+## Examples  
+ この例では、`Rate`支払の合計数を指定されたローンの目的の割合を計算する関数 (`TotPmts`)、ローン支払の量 (`Payment`)、現在の値またはローンのプリンシパル (`PVal`)、将来ローンの値 (`FVal`)、支払いの期限が先頭または末尾の支払い期間がかどうかを示す数値 (`PayType`)、および予期される利率の概算値 (`Guess`)。  
+  
+ [!code-vb[VbVbalrMath#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DDB">
+      <MemberSignature Language="C#" Value="public static double DDB (double Cost, double Salvage, double Life, double Period, double Factor = 2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 DDB(float64 Cost, float64 Salvage, float64 Life, float64 Period, float64 Factor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.DDB(System.Double,System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Cost" Type="System.Double" />
+        <Parameter Name="Salvage" Type="System.Double" />
+        <Parameter Name="Life" Type="System.Double" />
+        <Parameter Name="Period" Type="System.Double" />
+        <Parameter Name="Factor" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="Cost">必須です。 <see langword="Double" />資産の初期コストを指定します。</param>
+        <param name="Salvage">必須です。 <see langword="Double" />耐用年数の最後の資産の値を指定します。</param>
+        <param name="Life">必須です。 <see langword="Double" />資産の耐用年数を指定します。</param>
+        <param name="Period">必須です。 <see langword="Double" />減価償却が計算される期間を指定します。</param>
+        <param name="Factor">省略可能です。 <see langword="Double" />レートを減価償却を指定します。 省略した場合、2 (倍率逓減法) が使用されます。</param>
+        <summary>返します、<see langword="Double" />倍率逓減法または指定したその他の方法を使用して、特定の期間の資産の減価償却を指定します。</summary>
+        <returns>返します、<see langword="Double" />倍率逓減法または指定したその他の方法を使用して、特定の期間の資産の減価償却を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 倍率逓減法では、迅速なレートで減価償却費を計算します。 減価償却では、最初の期間が最も高くし、連続する期間に減少します。  
+  
+ `Life`と`Period`引数は、同じ単位で表す必要があります。 たとえば場合、`Life`月単位で指定された`Period`も月単位で指定する必要があります。 すべての引数は正の数値である必要があります。  
+  
+ `DDB`関数では、次の数式を使用して、特定の期間に対する減価償却費を計算します。  
+  
+ 減価償却/期間 = ((Cost – Salvage) * 係数)/有効期間  
+  
+   
+  
+## Examples  
+ この例では、`DDB`を指定した期間の初期コストを指定した資産の減価償却を返す関数 (`InitCost`)、資産の耐用年数の最後に部分的な救済値 (`SalvageVal`)、(年単位で資産の合計の有効期間`LifeTime`)、および年減価償却費を計算する期間 (`Depr`)。  
+  
+ [!code-vb[VbVbalrMath#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Factor" />&lt;= 0, <paramref name="Salvage" /> &lt; 0, <paramref name="Period" /> &lt;= 0, or <paramref name="Period" /> &gt;<paramref name="Life." /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FV">
+      <MemberSignature Language="C#" Value="public static double FV (double Rate, double NPer, double Pmt, double PV = 0, Microsoft.VisualBasic.DueDate Due = Microsoft.VisualBasic.DueDate.EndOfPeriod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 FV(float64 Rate, float64 NPer, float64 Pmt, float64 PV, valuetype Microsoft.VisualBasic.DueDate Due) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.FV(System.Double,System.Double,System.Double,System.Double,Microsoft.VisualBasic.DueDate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Rate" Type="System.Double" />
+        <Parameter Name="NPer" Type="System.Double" />
+        <Parameter Name="Pmt" Type="System.Double" />
+        <Parameter Name="PV" Type="System.Double" />
+        <Parameter Name="Due" Type="Microsoft.VisualBasic.DueDate" />
+      </Parameters>
+      <Docs>
+        <param name="Rate">必須です。 <see langword="Double" />一定期間金利を指定します。 たとえば、自動車ローンを 10% の年率 (年 4 月) で取得して毎月の支払いを行う場合期間ごとのレートは 0.1/12、0.0083 です。</param>
+        <param name="NPer">必須です。 <see langword="Double" />年金の支払い回数の合計数を指定します。 たとえば、4 年カー ローンの毎月の支払いを行う場合、合計で 4 x 12 (または 48) の支払い期間があることにします。</param>
+        <param name="Pmt">必須です。 <see langword="Double" />それぞれの期間に支払いを指定します。 通常、支払いには、プリンシパルと、年金の期間を変更しない関心が含まれます。</param>
+        <param name="PV">省略可能です。 <see langword="Double" />一連の将来の支払いの現在の値 (または一括) を指定します。 たとえば、車を購入するコストを借用するときにローン額、自動車支払いを行うかの lender に存在値です。 省略した場合、0 と見なされます。</param>
+        <param name="Due">省略可能です。 型のオブジェクト<see cref="T:Microsoft.VisualBasic.DueDate" />支払いが期限を指定します。 この引数はいずれかである必要があります<see langword="DueDate.EndOfPeriod" />支払い期間の最後に支払う場合または<see langword="DueDate.BegOfPeriod" />期間の先頭に支払う場合。 省略した場合、<see langword="DueDate.EndOfPeriod" />と見なされます。</param>
+        <summary>返します、<see langword="Double" />定期的な定額払いおよび固定金利をに基づいて年金の将来の値を指定します。</summary>
+        <returns>返します、<see langword="Double" />定期的な定額払いおよび固定金利をに基づいて年金の将来の値を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 年金は、一連の支払いを時間の経過と共に行うです。 年金には、住宅ローン) などのローンまたは (毎月のコスト削減プラン) など、投資収益率を指定できます。  
+  
+ `Rate`と`NPer`引数は、同じ単位で支払い期間を使用して計算する必要があります。 たとえば場合、`Rate`か月間を使用して計算されます`NPer`か月間を使用して計算する必要があります。  
+  
+ すべての引数、預金) など配当は負の数値で表されます。(被除数をチェックします) などに受信したキャッシュは、正の数値で表されます。  
+  
+   
+  
+## Examples  
+ この例では、 `FV` 、割合投資の将来の値を返す関数を評価する期間ごとに想定される (`APR / 12`)、支払の合計数 (`TotPmts`)、payment (`Payment`) の現在の値、投資収益率 (`PVal`)、および先頭または末尾の支払い期間で支払いが行われるかどうかを示す数値 (`PayType`)。 注意してください`Payment`支払額を表す負の数値であります。  
+  
+ [!code-vb[VbVbalrMath#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IPmt">
+      <MemberSignature Language="C#" Value="public static double IPmt (double Rate, double Per, double NPer, double PV, double FV = 0, Microsoft.VisualBasic.DueDate Due = Microsoft.VisualBasic.DueDate.EndOfPeriod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 IPmt(float64 Rate, float64 Per, float64 NPer, float64 PV, float64 FV, valuetype Microsoft.VisualBasic.DueDate Due) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.IPmt(System.Double,System.Double,System.Double,System.Double,System.Double,Microsoft.VisualBasic.DueDate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Rate" Type="System.Double" />
+        <Parameter Name="Per" Type="System.Double" />
+        <Parameter Name="NPer" Type="System.Double" />
+        <Parameter Name="PV" Type="System.Double" />
+        <Parameter Name="FV" Type="System.Double" />
+        <Parameter Name="Due" Type="Microsoft.VisualBasic.DueDate" />
+      </Parameters>
+      <Docs>
+        <param name="Rate">必須です。 <see langword="Double" />一定期間金利を指定します。 たとえば、自動車ローンを 10% の年率 (年 4 月) で取得して毎月の支払いを行う場合期間ごとのレートは 0.1/12、0.0083 です。</param>
+        <param name="Per">必須です。 <see langword="Double" />~ 1 の範囲で支払い期間を指定する<c>NPer</c>です。</param>
+        <param name="NPer">必須です。 <see langword="Double" />年金の支払い回数の合計数を指定します。 たとえば、4 年カー ローンの毎月の支払いを行う場合、合計で 4 x 12 (または 48) の支払い期間があることにします。</param>
+        <param name="PV">必須です。 <see langword="Double" />存在を指定することや、または値今日では、将来の支払いを処理または配信確認メッセージの一連の値します。 たとえば、車を購入するコストを借用するときにローン額、自動車支払いを行うかの lender に存在値です。</param>
+        <param name="FV">省略可能です。 <see langword="Double" />将来の値または最終のお支払いを行った後にした場合を指定します。 たとえば、ローンの将来の値が $0 が最終のお支払いの後にその値です。 ただし、お子様の教育用 18 歳以上で $50,000 を保存する場合は、将来の値が $50,000 にします。 省略した場合、0 と見なされます。</param>
+        <param name="Due">省略可能です。 型のオブジェクト<see cref="T:Microsoft.VisualBasic.DueDate" />支払いが期限を指定します。 この引数はいずれかである必要があります<c>DueDate.EndOfPeriod</c>支払い期間の最後に支払う場合または<c>DueDate.BegOfPeriod</c>期間の先頭に支払う場合。 省略した場合、 <c>DueDate.EndOfPeriod</c>と見なされます。</param>
+        <summary>返します、<see langword="Double" />定期的な定額払いおよび固定金利に基づく指定された期間の年金の利払いを指定します。</summary>
+        <returns>返します、<see langword="Double" />定期的な定額払いおよび固定金利に基づく指定された期間の年金の利払いを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 年金は、一連の支払いを時間の経過と共に行うです。 年金には、住宅ローン) などのローンまたは (毎月のコスト削減プラン) など、投資収益率を指定できます。  
+  
+ `Rate`と`NPer`引数は、同じ単位で支払い期間を使用して計算する必要があります。 たとえば場合、`Rate`か月間を使用して計算されます`NPer`か月間を使用して計算する必要があります。  
+  
+ すべての引数、預金) など配当は負の数値で表されます。(被除数をチェックします) などに受信したキャッシュは、正の数値で表されます。  
+  
+   
+  
+## Examples  
+ この例では、`IPmt`がどの程度支払利息すべての支払額がの場合と同じを計算する関数。 期間ごとに利率割合は、指定された (`APR / 12`)、関心領域が必要な支払い期間 (`Period`)、支払の合計数 (`TotPmts`)、現在の値またはローンのプリンシパル (`PVal`) では、ローンの将来の値 (`FVal`)、および、支払いの期限が先頭または末尾の支払い期間がかどうかを示す数値 (`PayType`)。  
+  
+ [!code-vb[VbVbalrMath#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Per" />&lt;= 0 or <paramref name="Per" /> &gt;<paramref name="NPer" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IRR">
+      <MemberSignature Language="C#" Value="public static double IRR (ref double[] ValueArray, double Guess = 0.1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 IRR(float64[]&amp; ValueArray, float64 Guess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.IRR(System.Double[]@,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ValueArray" Type="System.Double[]&amp;" RefType="ref" />
+        <Parameter Name="Guess" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="ValueArray">必須です。 配列<see langword="Double" />キャッシュ フローの値を指定します。 配列には、少なくとも 1 つの負の値 (支払) と 1 つの正の値 (受信確認) を含める必要があります。</param>
+        <param name="Guess">省略可能です。 推定値を指定するオブジェクトによって返される<see langword="IRR" />です。 省略した場合、<c>推測</c>0.1 (10%)。</param>
+        <summary>返します、<see langword="Double" />一連の定期的なキャッシュ フロー (支払いと受け取り) の内部利益率を指定します。</summary>
+        <returns>返します、<see langword="Double" />一連の定期的なキャッシュ フロー (支払いと受け取り) の内部利益率を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部利益率は、支払いと受け取り一定の間隔で発生するので構成される投資に対する利率です。  
+  
+ `IRR`関数では、配列内の値の順序を使用して、支払いと受け取りの順序を解釈します。 必ず、正しいシーケンスで支払いと受信確認の値を入力してください。 年金は、各期間のキャッシュ フローは修正するのには必要ありません。  
+  
+ `IRR`イテレーションによって計算されます。 値で始まる`Guess`、`IRR`結果が 0.00001% 以内に正確になるまで、計算を切り替えます。 場合`IRR`20 後の結果が、失敗した場合に見つけることができません。  
+  
+   
+  
+## Examples  
+ この例では、`IRR`関数を配列に格納されている 5 つのキャッシュ フローの系列に対する内部利益率を返します`Values()`です。 配列の最初の要素は、ビジネスの操業を表す負の値のキャッシュ フローです。 残りの 4 つのキャッシュ フローは、後続の 4 年間の正のキャッシュ フローを表します。 `Guess`推定の内部収益率がします。  
+  
+ [!code-vb[VbVbalrMath#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">配列引数の値が無効または<paramref name="Guess" /> &lt;-1 を = です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MIRR">
+      <MemberSignature Language="C#" Value="public static double MIRR (ref double[] ValueArray, double FinanceRate, double ReinvestRate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 MIRR(float64[]&amp; ValueArray, float64 FinanceRate, float64 ReinvestRate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.MIRR(System.Double[]@,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ValueArray" Type="System.Double[]&amp;" RefType="ref" />
+        <Parameter Name="FinanceRate" Type="System.Double" />
+        <Parameter Name="ReinvestRate" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="ValueArray">必須です。 配列<see langword="Double" />キャッシュ フローの値を指定します。 配列には、少なくとも 1 つの負の値 (支払) と 1 つの正の値 (受信確認) を含める必要があります。</param>
+        <param name="FinanceRate">必須です。 <see langword="Double" />利率を指定する支払額です。</param>
+        <param name="ReinvestRate">必須です。 <see langword="Double" />現金利率の利率を指定します。</param>
+        <summary>返します、<see langword="Double" />一連の定期的なキャッシュ フロー (支払いと受け取り) の戻り値の変更された内部収益率を指定します。</summary>
+        <returns>返します、<see langword="Double" />一連の定期的なキャッシュ フロー (支払いと受け取り) の戻り値の変更された内部収益率を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更された内部利益率は、内部の戻り値の支払いと受け取りを異なるレートで管理する場合です。 `MIRR`関数では、投資収益率のコストの両方を考慮に入れます (`FinanceRate`) と収益利率 (`ReinvestRate`)。  
+  
+ `FinanceRate`と`ReinvestRatearguments`10 進数値で表した比率です。 たとえば、12% は、0.12 として表されます。  
+  
+ `MIRR`関数では、配列内の値の順序を使用して、支払いと受け取りの順序を解釈します。 必ず、正しいシーケンスで支払いと受信確認の値を入力してください。  
+  
+   
+  
+## Examples  
+ この例では、`MIRR`関数を配列に含まれているキャッシュ フローの系列の戻り値の変更された内部収益率を返します`Values()`です。 `LoanAPR`ファイナンスの目的を表すと`InvAPR`貸付に利率を表します。  
+  
+ [!code-vb[VbVbalrMath#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#29)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ランク<paramref name="ValueArray" />1 と等しくない<paramref name="FinanceRate" />=-1、または<paramref name="ReinvestRate" />-1 を =</exception>
+        <exception cref="T:System.DivideByZeroException">0 による除算が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NPer">
+      <MemberSignature Language="C#" Value="public static double NPer (double Rate, double Pmt, double PV, double FV = 0, Microsoft.VisualBasic.DueDate Due = Microsoft.VisualBasic.DueDate.EndOfPeriod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 NPer(float64 Rate, float64 Pmt, float64 PV, float64 FV, valuetype Microsoft.VisualBasic.DueDate Due) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.NPer(System.Double,System.Double,System.Double,System.Double,Microsoft.VisualBasic.DueDate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Rate" Type="System.Double" />
+        <Parameter Name="Pmt" Type="System.Double" />
+        <Parameter Name="PV" Type="System.Double" />
+        <Parameter Name="FV" Type="System.Double" />
+        <Parameter Name="Due" Type="Microsoft.VisualBasic.DueDate" />
+      </Parameters>
+      <Docs>
+        <param name="Rate">必須です。 <see langword="Double" />一定期間金利を指定します。 たとえば、自動車ローンを 10% の年率 (年 4 月) で取得して毎月の支払いを行う場合期間ごとのレートは 0.1/12、0.0083 です。</param>
+        <param name="Pmt">必須です。 <see langword="Double" />それぞれの期間に支払いを指定します。 通常、支払いには、プリンシパルと、年金の寿命が変化しない関心が含まれます。</param>
+        <param name="PV">必須です。 <see langword="Double" />存在を指定することや、または値今日では、将来の支払いを処理または配信確認メッセージの一連の値します。 たとえば、車を購入するコストを借用するときにローン額、自動車支払いを行うかの lender に存在値です。</param>
+        <param name="FV">省略可能です。 <see langword="Double" />将来の値または最終の支払いを行った後にするキャッシュのバランスを指定します。 たとえば、ローンの将来の値が $0 が最終のお支払いの後にその値です。 ただし、お子様の教育用 18 歳以上で $50,000 を保存する場合は、将来の値が $50,000 にします。 省略した場合、0 と見なされます。</param>
+        <param name="Due">省略可能です。 型のオブジェクト<see cref="T:Microsoft.VisualBasic.DueDate" />支払いが期限を指定します。 この引数はいずれかである必要があります<c>DueDate.EndOfPeriod</c>支払い期間の最後に支払う場合または<c>DueDate.BegOfPeriod</c>期間の先頭に支払う場合。 省略した場合、 <c>DueDate.EndOfPeriod</c>と見なされます。</param>
+        <summary>返します、<see langword="Double" />定期定額払いおよび固定金利をに基づいて年金の期間の数を指定します。</summary>
+        <returns>返します、<see langword="Double" />定期定額払いおよび固定金利をに基づいて年金の期間の数を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 年金は、一連の支払いを一定期間の時間です。 年金には、住宅ローン) などのローンまたは (毎月のコスト削減プラン) など、投資収益率を指定できます。  
+  
+ すべての引数、預金) など配当は負の数値で表されます。(被除数をチェックします) などに受信したキャッシュは、正の数値で表されます。  
+  
+   
+  
+## Examples  
+ この例では、`NPer`にによって、値を持つローン支払に支払いを行う必要があります期間の数を返す関数が含まれて`PVal`です。 また、一定期間割合金利 (`APR / 12`)、payment (`Payment`)、ローンの将来の値 (`FVal`)、および、支払いの期限が先頭または末尾の支払い期間がかどうかを示す数値 (`PayType`).  
+  
+ [!code-vb[VbVbalrMath#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Rate" />= 0 and <paramref name="Pmt" /> = 0</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NPV">
+      <MemberSignature Language="C#" Value="public static double NPV (double Rate, ref double[] ValueArray);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 NPV(float64 Rate, float64[]&amp; ValueArray) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.NPV(System.Double,System.Double[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Rate" Type="System.Double" />
+        <Parameter Name="ValueArray" Type="System.Double[]&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="Rate">必須です。 <see langword="Double" />一定期間の割引率を指定することは、10 進数として表されます。</param>
+        <param name="ValueArray">必須です。 配列<see langword="Double" />キャッシュ フローの値を指定します。 配列には、少なくとも 1 つの負の値 (支払) と 1 つの正の値 (受信確認) を含める必要があります。</param>
+        <summary>返します、<see langword="Double" />一連の定期的なキャッシュ フロー (支払いと受け取り) および公定歩合に基づいて投資の正味現在価値を指定します。</summary>
+        <returns>返します、<see langword="Double" />一連の定期的なキャッシュ フロー (支払いと受け取り) および公定歩合に基づいて投資の正味現在価値を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 投資の正味現在価値は、支払いと受け取りの将来のシリーズの現在の値です。  
+  
+ `NPV`関数では、配列内の値の順序を使用して、支払いと受け取りの順序を解釈します。 必ず、正しいシーケンスで支払いと受信確認の値を入力してください。  
+  
+ `NPV`投資した日付より前に、のキャッシュ フローの最初の値の 1 つのピリオドを開始し、配列の最後のキャッシュ フローの値で終了します。  
+  
+ 正味現在価値の計算は、将来のキャッシュ フローに基づいています。 によって返される値を最初の値を追加する必要があります、先頭の最初の期間の最初のキャッシュ フローする場合は、`NPV`キャッシュ フローの値に含まれていない必要があります`ValueArray`です。  
+  
+ `NPV`関数がに似ていますが、`PV`関数 (現在の値) ことを除いて、`PV`関数により、キャッシュ フローの終了またはピリオドの先頭での作業を開始します。 変数とは異なり`NPV`キャッシュ フローの値、`PV`投資収益率全体でのキャッシュ フローを固定する必要があります。  
+  
+   
+  
+## Examples  
+ この例では、`NPV`関数を配列に含まれているキャッシュ フローの系列の正味現在価値を返します`values()`です。 格納されている、戻り値`FixedRetRate`、固定内部利益率を表します。  
+  
+ [!code-vb[VbVbalrMath#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="ValueArray" /><see langword="Nothing" />の順位付け、 <paramref name="ValueArray" /> &lt; &gt; 1、または<paramref name="Rate" />-1 を =</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pmt">
+      <MemberSignature Language="C#" Value="public static double Pmt (double Rate, double NPer, double PV, double FV = 0, Microsoft.VisualBasic.DueDate Due = Microsoft.VisualBasic.DueDate.EndOfPeriod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 Pmt(float64 Rate, float64 NPer, float64 PV, float64 FV, valuetype Microsoft.VisualBasic.DueDate Due) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.Pmt(System.Double,System.Double,System.Double,System.Double,Microsoft.VisualBasic.DueDate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Rate" Type="System.Double" />
+        <Parameter Name="NPer" Type="System.Double" />
+        <Parameter Name="PV" Type="System.Double" />
+        <Parameter Name="FV" Type="System.Double" />
+        <Parameter Name="Due" Type="Microsoft.VisualBasic.DueDate" />
+      </Parameters>
+      <Docs>
+        <param name="Rate">必須です。 <see langword="Double" />利率の期間を指定します。 たとえば、自動車ローンを 10% の年率 (年 4 月) で取得して毎月の支払いを行う場合期間ごとのレートは 0.1/12、0.0083 です。</param>
+        <param name="NPer">必須です。 <see langword="Double" />年金の支払い回数の合計数を指定します。 たとえば、4 年カー ローンの毎月の支払いを行う場合、4 × 12 (または 48) の支払い期間の合計があることにします。</param>
+        <param name="PV">必須です。 <see langword="Double" />存在または値を指定 (一括の) 一連の今後の支払いが現在価値があります。 たとえば、車を購入するコストを借用するときにローン額、自動車支払いを行うかの lender に存在値です。</param>
+        <param name="FV">省略可能です。 <see langword="Double" />将来の値または最終の支払いを行った後にするキャッシュのバランスを指定します。 たとえば、ローンの将来の値が $0 が最終のお支払いの後にその値です。 ただし、18 歳以上のお子様の教育中 $50,000 を保存する場合は、将来の値が $50,000 にします。 省略した場合、0 と見なされます。</param>
+        <param name="Due">省略可能です。 型のオブジェクト<see cref="T:Microsoft.VisualBasic.DueDate" />支払いが期限を指定します。 この引数はいずれかである必要があります<c>DueDate.EndOfPeriod</c>支払い期間の最後に支払う場合または<c>DueDate.BegOfPeriod</c>期間の先頭に支払う場合。 省略した場合、 <c>DueDate.EndOfPeriod</c>と見なされます。</param>
+        <summary>返します、<see langword="Double" />定期的な定額払いおよび固定金利をに基づいて年金の支払い額を指定します。</summary>
+        <returns>返します、<see langword="Double" />定期的な定額払いおよび固定金利をに基づいて年金の支払い額を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 年金は、一連の支払いを時間の期間中に行うです。 年金には、住宅ローン) などのローンまたは (毎月のコスト削減プラン) など、投資収益率を指定できます。  
+  
+ `Rate`と`NPer`引数は、同じ単位で支払い期間を使用して計算する必要があります。 たとえば場合、`Rate`か月間を使用して計算されます`NPer`か月間を使用して計算する必要があります。  
+  
+ すべての引数、預金) などの支払額は負の数値で表されます。(被除数をチェックします) などに受信したキャッシュは、正の数値で表されます。  
+  
+   
+  
+## Examples  
+ この例では、`Pmt`を一定の期間中にローンの毎月の支払いを返す関数。 期間ごとに利率割合は、指定された (`APR / 12`)、支払の合計数 (`TotPmts`)、現在の値またはローンのプリンシパル (`PVal`)、ローンの将来の値 (`FVal`) とを示す数かどうか、支払期限は、先頭またはお支払い期間の終了`(PayType).`  
+  
+ [!code-vb[VbVbalrMath#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="NPer" /> = 0.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PPmt">
+      <MemberSignature Language="C#" Value="public static double PPmt (double Rate, double Per, double NPer, double PV, double FV = 0, Microsoft.VisualBasic.DueDate Due = Microsoft.VisualBasic.DueDate.EndOfPeriod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 PPmt(float64 Rate, float64 Per, float64 NPer, float64 PV, float64 FV, valuetype Microsoft.VisualBasic.DueDate Due) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.PPmt(System.Double,System.Double,System.Double,System.Double,System.Double,Microsoft.VisualBasic.DueDate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Rate" Type="System.Double" />
+        <Parameter Name="Per" Type="System.Double" />
+        <Parameter Name="NPer" Type="System.Double" />
+        <Parameter Name="PV" Type="System.Double" />
+        <Parameter Name="FV" Type="System.Double" />
+        <Parameter Name="Due" Type="Microsoft.VisualBasic.DueDate" />
+      </Parameters>
+      <Docs>
+        <param name="Rate">必須です。 <see langword="Double" />利率の期間を指定します。 たとえば、自動車ローンを 10% の年率 (年 4 月) で取得して毎月の支払いを行う場合期間ごとのレートは 0.1/12、0.0083 です。</param>
+        <param name="Per">必須です。 <see langword="Double" />~ 1 の範囲で支払い期間を指定<c>NPer</c>です。</param>
+        <param name="NPer">必須です。 <see langword="Double" />年金の支払い回数の合計数を指定します。 たとえば、4 年カー ローンの毎月の支払いを行う場合、合計で 4 x 12 (または 48) の支払い期間があることにします。</param>
+        <param name="PV">必須です。 <see langword="Double" />一連の将来の支払いを処理または配信確認メッセージの現在の値を指定します。 たとえば、車を購入するコストを借用するときにローン額、自動車支払いを行うかの lender に存在値です。</param>
+        <param name="FV">省略可能です。 <see langword="Double" />将来の値または最終の支払いを行った後にするキャッシュのバランスを指定します。 たとえば、ローンの将来の値が $0 が最終のお支払いの後にその値です。 ただし、お子様の教育用 18 歳以上で $50,000 を保存する場合は、将来の値が $50,000 にします。 省略した場合、0 と見なされます。</param>
+        <param name="Due">省略可能です。 型のオブジェクト<see cref="T:Microsoft.VisualBasic.DueDate" />支払いが期限を指定します。 この引数はいずれかである必要があります<c>DueDate.EndOfPeriod</c>支払い期間の最後に支払う場合または<c>DueDate.BegOfPeriod</c>期間の先頭に支払う場合。 省略した場合、 <c>DueDate.EndOfPeriod</c>と見なされます。</param>
+        <summary>返します、<see langword="Double" />定期定額払いおよび固定金利に基づく指定された期間の年金の支払い額をプリンシパルを指定します。</summary>
+        <returns>返します、<see langword="Double" />定期定額払いおよび固定金利に基づく指定された期間の年金の支払い額をプリンシパルを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 年金は、一連の支払いを一定期間の時間です。 年金には、住宅ローン) などのローンまたは (毎月のコスト削減プラン) など、投資収益率を指定できます。  
+  
+ `Rate`と`NPer`引数は、同じ単位で支払い期間を使用して計算する必要があります。 たとえば場合、`Rate`か月間を使用して計算されます`NPer`か月間を使用して計算する必要があります。  
+  
+ すべての引数、預金) などの支払額は負の数値で表されます。(被除数をチェックします) などに受信したキャッシュは、正の数値で表されます。  
+  
+   
+  
+## Examples  
+ この例では、`PPmt`がどの程度の特定の期間プリンシパルすべての支払額がの場合と同じを計算する関数。 一定期間割合金利を指定された (`APR / 12`)、プリンシパルの部分が必要な支払い期間 (`Period`)、支払の合計数 (`TotPmts`)、現在の値またはローンのプリンシパル (`PVal`) では、ローンの将来の値 (`FVal`)、および、支払いの期限が先頭または末尾の支払い期間がかどうかを示す数値 (`PayType`)。  
+  
+ [!code-vb[VbVbalrMath#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Per" />&lt;=0 or <paramref name="Per" /> &gt; <paramref name="NPer" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PV">
+      <MemberSignature Language="C#" Value="public static double PV (double Rate, double NPer, double Pmt, double FV = 0, Microsoft.VisualBasic.DueDate Due = Microsoft.VisualBasic.DueDate.EndOfPeriod);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 PV(float64 Rate, float64 NPer, float64 Pmt, float64 FV, valuetype Microsoft.VisualBasic.DueDate Due) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.PV(System.Double,System.Double,System.Double,System.Double,Microsoft.VisualBasic.DueDate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Rate" Type="System.Double" />
+        <Parameter Name="NPer" Type="System.Double" />
+        <Parameter Name="Pmt" Type="System.Double" />
+        <Parameter Name="FV" Type="System.Double" />
+        <Parameter Name="Due" Type="Microsoft.VisualBasic.DueDate" />
+      </Parameters>
+      <Docs>
+        <param name="Rate">必須です。 <see langword="Double" />利率の期間を指定します。 たとえば、自動車ローンを 10% の年率 (年 4 月) で取得して毎月の支払いを行う場合期間ごとのレートは 0.1/12、0.0083 です。</param>
+        <param name="NPer">必須です。 <see langword="Double" />年金の支払い回数の合計数を指定します。 たとえば、4 年カー ローンの毎月の支払いを行う場合、4 x 12 (または 48) の支払い期間があることにします。</param>
+        <param name="Pmt">必須です。 <see langword="Double" />それぞれの期間に支払いを指定します。 通常、支払には、プリンシパルと、年金の有効期間中に変化しない関心が含まれます。</param>
+        <param name="FV">省略可能です。 <see langword="Double" />最後の支払いを行った後にする将来の値または現金の残高を指定します。 たとえば、ローンの将来の値が $0 が最終のお支払いの後にその値です。 ただし、お子様の教育用 18 歳以上で $50,000 を保存する場合は、将来の値が $50,000 にします。 省略した場合、0 と見なされます。</param>
+        <param name="Due">省略可能です。 型のオブジェクト<see cref="T:Microsoft.VisualBasic.DueDate" />支払いが期限を指定します。 この引数はいずれかである必要があります<c>DueDate.EndOfPeriod</c>支払い期間の最後に支払う場合または<c>DueDate.BegOfPeriod</c>期間の先頭に支払う場合。 省略した場合、 <c>DueDate.EndOfPeriod</c>と見なされます。</param>
+        <summary>返します、<see langword="Double" />今後支払われる定期的な定額払いおよび固定金利をに基づいて年金の現在の値を指定します。</summary>
+        <returns>返します、<see langword="Double" />今後支払われる定期的な定額払いおよび固定金利をに基づいて年金の現在の値を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 年金は、一連の支払いを一定期間の時間です。 年金には、住宅ローン) などのローンまたは (毎月のコスト削減プラン) など、投資収益率を指定できます。  
+  
+ `Rate`と`NPer`引数は、同じ単位で支払い期間を使用して計算する必要があります。 たとえば場合、`Rate`か月間を使用して計算されます`NPer`か月間を使用して計算する必要があります。  
+  
+ すべての引数、預金) など配当は負の数値で表されます。(被除数をチェックします) などに受信したキャッシュは、正の数値で表されます。  
+  
+   
+  
+## Examples  
+ この例では、 `PV` $ 20 年後の年、50,000 を提供する $1,000,000 年金の現在の値を返します。 指定されたは、予想される年率 (`APR`)、支払の合計数 (`TotPmts`) の各支払額を (`YrIncome`)、投資収益率の合計の将来値 (`FVal`) とを示す数値かどうか各先頭または末尾の支払い期間で支払いが行われる (`PayType`)。 なお`YrIncome`配当投資から各年を表すためには負の数値がします。  
+  
+ [!code-vb[VbVbalrMath#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rate">
+      <MemberSignature Language="C#" Value="public static double Rate (double NPer, double Pmt, double PV, double FV = 0, Microsoft.VisualBasic.DueDate Due = Microsoft.VisualBasic.DueDate.EndOfPeriod, double Guess = 0.1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 Rate(float64 NPer, float64 Pmt, float64 PV, float64 FV, valuetype Microsoft.VisualBasic.DueDate Due, float64 Guess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.Rate(System.Double,System.Double,System.Double,System.Double,Microsoft.VisualBasic.DueDate,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="NPer" Type="System.Double" />
+        <Parameter Name="Pmt" Type="System.Double" />
+        <Parameter Name="PV" Type="System.Double" />
+        <Parameter Name="FV" Type="System.Double" />
+        <Parameter Name="Due" Type="Microsoft.VisualBasic.DueDate" />
+        <Parameter Name="Guess" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="NPer">必須です。 <see langword="Double" />年金の支払い回数の合計数を指定します。 たとえば、4 年カー ローンの毎月の支払いを行う場合、合計で 4 * 12 (または 48) の支払い期間があることにします。</param>
+        <param name="Pmt">必須です。 <see langword="Double" />それぞれの期間に支払いを指定します。 通常、支払いには、プリンシパルと、年金の期間を変更しない関心が含まれます。</param>
+        <param name="PV">必須です。 <see langword="Double" />指定の値または今日では、将来の支払いを処理または配信確認メッセージの一連の値します。 たとえば、車を購入するコストを借用するときにローン額、自動車支払いを行うかの lender に存在値です。</param>
+        <param name="FV">省略可能です。 <see langword="Double" />最後の支払いを行った後にする将来の値または現金の残高を指定します。 たとえば、ローンの将来の値が $0 が最終のお支払いの後にその値です。 ただし、お子様の教育用 18 歳以上で $50,000 を保存する場合は、将来の値が $50,000 にします。 省略した場合、0 と見なされます。</param>
+        <param name="Due">省略可能です。 型のオブジェクト<see cref="T:Microsoft.VisualBasic.DueDate" />支払いが期限を指定します。 この引数はいずれかである必要があります<c>DueDate.EndOfPeriod</c>支払い期間の最後に支払う場合または<c>DueDate.BegOfPeriod</c>期間の先頭に支払う場合。 省略した場合、 <c>DueDate.EndOfPeriod</c>と見なされます。</param>
+        <param name="Guess">省略可能です。 <see langword="Double" />によって返される推定値を示す<see langword="Rate" />です。 省略した場合、<c>推測</c>0.1 (10%)。</param>
+        <summary>返します、<see langword="Double" />年金の毎期金利を指定します。</summary>
+        <returns>返します、<see langword="Double" />年金の毎期金利を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 年金は、一連の支払いを一定期間の時間です。 年金には、住宅ローン) などのローンまたは (毎月のコスト削減プラン) など、投資収益率を指定できます。  
+  
+ すべての引数、預金) など配当は負の数値で表されます。(被除数をチェックします) などに受信したキャッシュは、正の数値で表されます。  
+  
+ `Rate`イテレーションによって計算されます。 値で始まる`Guess`、`Rate`結果が 0.00001% 以内に正確になるまで、計算を切り替えます。 場合`Rate`20 後の結果が、失敗した場合に見つけることができません。 推定値が 10% の場合と`Rate`失敗した場合、再試行の値が異なる`Guess`です。  
+  
+   
+  
+## Examples  
+ この例では、`Rate`ローン支払の合計数を指定の目的の割合を計算する関数 (`TotPmts`)、ローン支払の量 (`Payment`)、現在の値またはローンのプリンシパル (`PVal`)、将来ローンの値 (`FVal`)、支払いの期限が先頭または末尾の支払い期間がかどうかを示す数値 (`PayType`)、および予期される利率の概算値 (`Guess`)。  
+  
+ [!code-vb[VbVbalrMath#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="NPer" /> &lt;= 0.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SLN">
+      <MemberSignature Language="C#" Value="public static double SLN (double Cost, double Salvage, double Life);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 SLN(float64 Cost, float64 Salvage, float64 Life) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.SLN(System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Cost" Type="System.Double" />
+        <Parameter Name="Salvage" Type="System.Double" />
+        <Parameter Name="Life" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="Cost">必須です。 <see langword="Double" />資産の初期コストを指定します。</param>
+        <param name="Salvage">必須です。 <see langword="Double" />耐用年数の最後の資産の値を指定します。</param>
+        <param name="Life">必須です。 <see langword="Double" />資産の耐用年数を指定します。</param>
+        <summary>返します、<see langword="Double" />単一期間に対する資産の定額償却を指定します。</summary>
+        <returns>返します、<see langword="Double" />単一期間に対する資産の定額償却を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 減価償却の期間と同じ単位で表す必要があります、`Life`引数。 すべての引数は正の数値である必要があります。  
+  
+   
+  
+## Examples  
+ この例では、`SLN`アセットの初期コストを指定した単一期間に対する資産の定額償却を返す関数 (`InitCost`)、資産の耐用年数の最後に部分的な救済値 (`SalvageVal`)、およびの合計の有効期間年単位で、資産 (`LifeTime`)。  
+  
+ [!code-vb[VbVbalrMath#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Life" /> = 0.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SYD">
+      <MemberSignature Language="C#" Value="public static double SYD (double Cost, double Salvage, double Life, double Period);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float64 SYD(float64 Cost, float64 Salvage, float64 Life, float64 Period) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Financial.SYD(System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Cost" Type="System.Double" />
+        <Parameter Name="Salvage" Type="System.Double" />
+        <Parameter Name="Life" Type="System.Double" />
+        <Parameter Name="Period" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="Cost">必須です。 <see langword="Double" />資産の初期コストを指定します。</param>
+        <param name="Salvage">必須です。 <see langword="Double" />耐用年数の最後の資産の値を指定します。</param>
+        <param name="Life">必須です。 <see langword="Double" />資産の耐用年数の長さを指定します。</param>
+        <param name="Period">必須です。 <see langword="Double" />減価償却が計算される期間を指定します。</param>
+        <summary>返します、<see langword="Double" />逓減合計資産の減価償却を指定した期間を指定します。</summary>
+        <returns>返します、<see langword="Double" />逓減合計資産の減価償却を指定した期間を指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Life`と`Period`引数は、同じ単位で表す必要があります。 たとえば場合、`Life`月単位で指定された`Period`も月単位で指定する必要があります。 すべての引数は正の数値である必要があります。  
+  
+   
+  
+## Examples  
+ この例では、`SYD`アセットの初期コストを指定された、指定した期間、資産の減価償却を返す関数 (`InitCost`)、資産の耐用年数の最後に部分的な救済値 (`SalvageVal`)、およびのアセットの合計の有効期間年 (`LifeTime`)。  
+  
+ [!code-vb[VbVbalrMath#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Salvage" />&lt; 0, <paramref name="Period" /> &gt; <paramref name="Life" />, or <paramref name="Period" /> &lt;=0.</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

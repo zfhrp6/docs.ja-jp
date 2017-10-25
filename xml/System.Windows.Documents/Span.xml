@@ -1,0 +1,236 @@
+<Type Name="Span" FullName="System.Windows.Documents.Span">
+  <TypeSignature Language="C#" Value="public class Span : System.Windows.Documents.Inline" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Span extends System.Windows.Documents.Inline" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Span" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.Inline</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Inlines")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>その他のグループ化<see cref="T:System.Windows.Documents.Inline" />フロー コンテンツ要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Span>その他のインライン フロー コンテンツ要素をグループ化に使用されます。 コンテンツ内にその他の要素に特有のレンダリングは適用されません、<xref:System.Windows.Documents.Span>要素。  
+  
+ <xref:System.Windows.Documents.Span>子コンテンツの強力なコンテンツ モデルを適用します。 含まれる子要素、<xref:System.Windows.Documents.Span>から要素を派生する必要があります<xref:System.Windows.Documents.Inline>です。 有効な子要素は次のとおりです。  
+  
+-   <xref:System.Windows.Documents.Bold>  
+  
+-   <xref:System.Windows.Documents.Figure>  
+  
+-   <xref:System.Windows.Documents.Floater>  
+  
+-   <xref:System.Windows.Documents.Hyperlink>  
+  
+-   <xref:System.Windows.Documents.InlineUIContainer>  
+  
+-   <xref:System.Windows.Documents.Italic>  
+  
+-   <xref:System.Windows.Documents.LineBreak>  
+  
+-   <xref:System.Windows.Documents.Run>  
+  
+-   <xref:System.Windows.Documents.Span>  
+  
+-   <xref:System.Windows.Documents.Underline>  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Span ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Span.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Windows.Documents.Span" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Span (System.Windows.Documents.Inline childInline);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.Inline childInline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Span.#ctor(System.Windows.Documents.Inline)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childInline" Type="System.Windows.Documents.Inline" />
+      </Parameters>
+      <Docs>
+        <param name="childInline">新しいの初期コンテンツ<see cref="T:System.Windows.Documents.Span" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Documents.Span" /> 、指定したクラス<see cref="T:System.Windows.Documents.Inline" />初期コンテンツとしてオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンス トラクターを使用してを含む新しい範囲を作成する方法を示しています、<xref:System.Windows.Documents.Run>です。  
+  
+ [!code-csharp[SpanSnippets#_Span_Const1](~/samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_span_const1)]
+ [!code-vb[SpanSnippets#_Span_Const1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_span_const1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Span (System.Windows.Documents.Inline childInline, System.Windows.Documents.TextPointer insertionPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.Inline childInline, class System.Windows.Documents.TextPointer insertionPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Span.#ctor(System.Windows.Documents.Inline,System.Windows.Documents.TextPointer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childInline" Type="System.Windows.Documents.Inline" />
+        <Parameter Name="insertionPosition" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="childInline"><see cref="T:System.Windows.Documents.Inline" />新しいの初期コンテンツを指定するオブジェクト<see cref="T:System.Windows.Documents.Span" />です。 このパラメーターが null である場合いいえ<see cref="T:System.Windows.Documents.Inline" />を挿入します。</param>
+        <param name="insertionPosition">A<see cref="T:System.Windows.Documents.TextPointer" />を挿入する位置を指定する、<see cref="T:System.Windows.Documents.Span" />要素は、その作成した後、または自動挿入の場合は null です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.Span" />クラス、指定した<see cref="T:System.Windows.Documents.Inline" />オブジェクトとして、新しいの初期コンテンツ<see cref="T:System.Windows.Documents.Span" />、および<see cref="T:System.Windows.Documents.TextPointer" />新しいの挿入位置を示す<see cref="T:System.Windows.Documents.Inline" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このコンス トラクターを使用して新しいを作成する方法を示しています。<xref:System.Windows.Documents.Span>を格納している、<xref:System.Windows.Documents.Run>の先頭の挿入、<xref:System.Windows.Documents.Paragraph>です。  
+  
+ [!code-csharp[SpanSnippets#_Span_Const2](~/samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_span_const2)]
+ [!code-vb[SpanSnippets#_Span_Const2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_span_const2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Span (System.Windows.Documents.TextPointer start, System.Windows.Documents.TextPointer end);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.TextPointer start, class System.Windows.Documents.TextPointer end) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Span.#ctor(System.Windows.Documents.TextPointer,System.Windows.Documents.TextPointer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="start" Type="System.Windows.Documents.TextPointer" />
+        <Parameter Name="end" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="start">A<see cref="T:System.Windows.Documents.TextPointer" />コンテンツの選択範囲の先頭を示すを新しい<see cref="T:System.Windows.Documents.Span" />が含まれます。</param>
+        <param name="end">A<see cref="T:System.Windows.Documents.TextPointer" />コンテンツの選択範囲の末尾を示すを新しい<see cref="T:System.Windows.Documents.Span" />が含まれます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.Span" />クラス、2 つ<see cref="T:System.Windows.Documents.TextPointer" />の先頭と末尾の選択範囲を示すオブジェクトのコンテンツを新しい<see cref="T:System.Windows.Documents.Span" />が含まれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、新しい初期化を意図して<xref:System.Windows.Documents.Span>既存の選択範囲を囲むことなどのコンテンツ要素。  
+  
+   
+  
+## Examples  
+ 次の例は、このコンス トラクターを使用して新しいを作成する方法を示しています。<xref:System.Windows.Documents.Span>コンテンツの範囲に適用されています。 コンテンツの範囲は開始と終了によって決まります<xref:System.Windows.Documents.TextPointer>コンス トラクターで指定されたオブジェクト。  
+  
+ [!code-csharp[SpanSnippets#_Span_Const3](~/samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_span_const3)]
+ [!code-vb[SpanSnippets#_Span_Const3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_span_const3)]  
+  
+ 次の図は、この例で表示する方法を示します、<xref:System.Windows.Documents.FlowDocument>です。  
+  
+ ![スクリーン ショット: 3 つのテキスト ラン](~/add/media/span-grouping.png "スクリーン ショット: 3 つのテキスト ラン")  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="start" />または<paramref name="end" />が null です。</exception>
+        <exception cref="T:System.ArgumentException">いつ発生する<paramref name="start" />と<paramref name="end" />によってエンクロージャに適したコンテンツの範囲に解決されません、<see cref="T:System.Windows.Documents.Span" />要素。 たとえば、場合<paramref name="start" />と<paramref name="end" />別の段落に位置を示します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Inlines">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.InlineCollection Inlines { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.InlineCollection Inlines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Span.Inlines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.InlineCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.InlineCollection" />最上位レベルを含む<see cref="T:System.Windows.Documents.Inline" />要素の内容を構成する、<see cref="T:System.Windows.Documents.Span" />です。</summary>
+        <value><see cref="T:System.Windows.Documents.InlineCollection" />を含む、<see cref="T:System.Windows.Documents.Inline" />要素の内容を構成する、<see cref="T:System.Windows.Documents.Span" />です。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Documents.InlineCollection>列挙またはの内容を操作するには、このプロパティによって返される、<xref:System.Windows.Documents.Span>要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeInlines">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeInlines (System.Windows.Markup.XamlDesignerSerializationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeInlines(class System.Windows.Markup.XamlDesignerSerializationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Span.ShouldSerializeInlines(System.Windows.Markup.XamlDesignerSerializationManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.Windows.Markup.XamlDesignerSerializationManager" />
+      </Parameters>
+      <Docs>
+        <param name="manager">このオブジェクトのシリアル化サービス マネージャー オブジェクトです。</param>
+        <summary>示す値を返すかどうかのコンテンツ、<see cref="T:System.Windows.Documents.Span" />のシリアル化中に要素をシリアル化する必要があります、<see cref="T:System.Windows.Documents.Run" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合は、コンテンツをシリアル化する必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Documents.Span.Inlines%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Documents.Span>やコントロールを組み込む独自の開発、<xref:System.Windows.Documents.Span>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException">
+          <paramref name="manager" /> が null です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

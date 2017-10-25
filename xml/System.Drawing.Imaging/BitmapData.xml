@@ -1,0 +1,181 @@
+<Type Name="BitmapData" FullName="System.Drawing.Imaging.BitmapData">
+  <TypeSignature Language="C#" Value="public sealed class BitmapData" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit BitmapData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.BitmapData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビットマップ イメージの属性を指定します。 <see cref="T:System.Drawing.Imaging.BitmapData" />クラスを使って、<see cref="Overload:System.Drawing.Bitmap.LockBits" />と<see cref="M:System.Drawing.Bitmap.UnlockBits(System.Drawing.Imaging.BitmapData)" />のメソッド、<see cref="T:System.Drawing.Bitmap" />クラスです。 継承はできません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.Imaging.BitmapData>クラス、<xref:System.Drawing.Bitmap.LockBits%2A>と<xref:System.Drawing.Bitmap.UnlockBits%2A>メソッドです。 この例は、Windows フォームで使用するよう設計されています。 この例を実行するフォームに貼り付けるし、フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントを呼び出すことによって、`LockUnlockBitsExample`渡してメソッド`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.BitmapMembers#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.BitmapMembers#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.BitmapMembers#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.BitmapMembers/VB/form1.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.BitmapData.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Imaging.BitmapData" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public int Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.BitmapData.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のピクセルの高さ、<see cref="T:System.Drawing.Bitmap" />オブジェクト。 またとも呼ばスキャン行数を指定します。</summary>
+        <value>ピクセルの高さ、<see cref="T:System.Drawing.Bitmap" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelFormat">
+      <MemberSignature Language="C#" Value="public System.Drawing.Imaging.PixelFormat PixelFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Imaging.PixelFormat PixelFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.BitmapData.PixelFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.PixelFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の情報は、ピクセルの形式、<see cref="T:System.Drawing.Bitmap" />この返されたオブジェクト<see cref="T:System.Drawing.Imaging.BitmapData" />オブジェクト。</summary>
+        <value>A <see cref="T:System.Drawing.Imaging.PixelFormat" /> 、関連するピクセルの情報の形式を指定する<see cref="T:System.Drawing.Bitmap" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 形式は、単一のピクセルの色の情報を格納する必要なメモリのビット数を定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reserved">
+      <MemberSignature Language="C#" Value="public int Reserved { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Reserved" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.BitmapData.Reserved" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>予約済み。 使用しないでください。</summary>
+        <value>予約済み。 使用しないでください。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scan0">
+      <MemberSignature Language="C#" Value="public IntPtr Scan0 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Scan0" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.BitmapData.Scan0" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビットマップのピクセルの最初のデータのアドレスを設定します。 これはもようなもののビットマップ内の最初のスキャン ライン。</summary>
+        <value>ビットマップ内で最初のピクセルのデータのアドレス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Drawing.Image.PixelFormat%2A>、 <xref:System.Drawing.Image.Height%2A>、 <xref:System.Drawing.Image.Width%2A>、および<xref:System.Drawing.Imaging.BitmapData.Scan0%2A>プロパティ以外の場合は、<xref:System.Drawing.Bitmap.LockBits%2A>と<xref:System.Drawing.Bitmap.UnlockBits%2A>メソッドおよび<xref:System.Drawing.Imaging.ImageLockMode>列挙します。 この例は、Windows フォームで使用するよう設計されています。 この例を実行するフォームに貼り付けるし、呼び出すことによって、フォームの Paint イベントを処理、`LockUnlockBitsExample`渡してメソッド`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+> [!NOTE]
+>  次のコード例が使用してイメージで使用するために作成された、<xref:System.Drawing.Imaging.PixelFormat.Format24bppRgb>形式です。  
+  
+ [!code-cpp[System.Drawing.BitmapMembers#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.BitmapMembers#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.BitmapMembers/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.BitmapMembers#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.BitmapMembers/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stride">
+      <MemberSignature Language="C#" Value="public int Stride { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Stride" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.BitmapData.Stride" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のストライド幅 (スキャン幅とも呼ばれます)、<see cref="T:System.Drawing.Bitmap" />オブジェクト。</summary>
+        <value>Stride の幅 (バイト単位) の<see cref="T:System.Drawing.Bitmap" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Stride とは、4 バイト境界に切り上げられます (スキャン ライン) をピクセル単位の 1 行の幅です。 Stride が正の場合は、ビットマップが上から下にします。 Stride が負の場合、ビットマップはボトムアップがします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public int Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.BitmapData.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の幅をピクセル単位、<see cref="T:System.Drawing.Bitmap" />オブジェクト。 これはもようなものの 1 つのスキャン ラインのピクセル数です。</summary>
+        <value>幅をピクセル単位、<see cref="T:System.Drawing.Bitmap" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

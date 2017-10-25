@@ -1,0 +1,129 @@
+<Type Name="ThreadExceptionEventArgs" FullName="System.Threading.ThreadExceptionEventArgs">
+  <TypeSignature Language="C#" Value="public class ThreadExceptionEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ThreadExceptionEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.ThreadExceptionEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Thread</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Application.ThreadException" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Threading.ThreadExceptionEventArgs>未処理の例外が発生したときに、スレッドが作成されます。 <xref:System.Threading.ThreadExceptionEventArgs>含まれています、<xref:System.Exception>が発生しました。  
+  
+   
+  
+## Examples  
+ 次の例では、発生することができます、 <xref:System.Windows.Forms.Application.ThreadException>  をクリックしてイベント`button1`フォームにします。 この例では、2 つのクラスを作成します。 `ErrorHandler`クラスは、フォームと、イベントを発生させるボタンを作成します。 `CustomExceptionHandler`クラス、例外を処理するメソッドを提供します。  
+  
+ `Main`で、`ErrorHandler`クラス、例外処理は、クラスのインスタンスの新しいインスタンスを作成するコード、`CustomExceptionHandler`です。 イベントに、インスタンスを追加し、およびアプリケーションを実行します。  
+  
+ `OnThreadException`メソッドで、`CustomExceptionHandler`クラス、例を使用して、`try...catch...finally`例外を処理するステートメント。 `ShowThreadExceptionDialog`メソッドを表示するには、メッセージを作成し、それをメッセージ ボックスに表示します。  
+  
+ [!code-csharp[Classic ThreadExceptionEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ThreadExceptionEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic ThreadExceptionEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ThreadExceptionEventArgs Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ThreadExceptionEventArgs (Exception t);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Exception t) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.ThreadExceptionEventArgs.#ctor(System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="t" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="t">発生した <see cref="T:System.Exception" />。</param>
+        <summary><see cref="T:System.Threading.ThreadExceptionEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、発生することができます、 <xref:System.Windows.Forms.Application.ThreadException>  をクリックしてイベント`button1`フォームにします。 この例では、2 つのクラスを作成します。 `ErrorHandler`クラスは、フォームと、イベントを発生させるボタンを作成します。 `CustomExceptionHandler`クラス、例外を処理するメソッドを提供します。  
+  
+ `Main`で、`ErrorHandler`クラス、例外処理は、クラスのインスタンスの新しいインスタンスを作成するコード、`CustomExceptionHandler`です。 イベントに、インスタンスを追加し、およびアプリケーションを実行します。  
+  
+ `OnThreadException`メソッドで、`CustomExceptionHandler`クラス、例を使用して、`try...catch...finally`例外を処理するステートメント。 `ShowThreadExceptionDialog`メソッドを表示するには、メッセージを作成し、それをメッセージ ボックスに表示します。  
+  
+ [!code-csharp[Classic ThreadExceptionEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ThreadExceptionEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic ThreadExceptionEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ThreadExceptionEventArgs Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.ThreadExceptionEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Exception" />が発生しました。</summary>
+        <value>発生した <see cref="T:System.Exception" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、発生することができます、 <xref:System.Windows.Forms.Application.ThreadException>  をクリックしてイベント`button1`フォームにします。 この例では、2 つのクラスを作成します。 `ErrorHandler`クラスは、フォームと、イベントを発生させるボタンを作成します。 `CustomExceptionHandler`クラス、例外を処理するメソッドを提供します。  
+  
+ `Main`で、`ErrorHandler`クラス、例外処理は、クラスのインスタンスの新しいインスタンスを作成するコード、`CustomExceptionHandler`です。 イベントに、インスタンスを追加し、およびアプリケーションを実行します。  
+  
+ `OnThreadException`メソッドで、`CustomExceptionHandler`クラス、例を使用して、`try...catch...finally`例外を処理するステートメント。 `ShowThreadExceptionDialog`メソッドを表示するには、メッセージを作成し、それをメッセージ ボックスに表示します。  
+  
+ [!code-csharp[Classic ThreadExceptionEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ThreadExceptionEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic ThreadExceptionEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ThreadExceptionEventArgs Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

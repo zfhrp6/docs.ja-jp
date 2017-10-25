@@ -1,0 +1,878 @@
+<Type Name="ClientBuildManager" FullName="System.Web.Compilation.ClientBuildManager">
+  <TypeSignature Language="C#" Value="public sealed class ClientBuildManager : MarshalByRefObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ClientBuildManager extends System.MarshalByRefObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ClientBuildManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ASP.NET アプリケーションのコンパイル サービスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ClientBuildManager>クラスは、メソッドとプロパティの ASP.NET Web アプリケーションをコンパイルして、生成されたアセンブリを取得することもソース コードを生成します。 クラスのインスタンスをクライアントのアプリケーション ドメインで確立して ASP.NET ビルド システムの外部で Microsoft インターネット インフォメーション サービス (IIS) へのアクセスを提供します。 クラスは、Web アプリケーションをコンパイルするためのカスタマイズされたツールの開発に使用できます。  
+  
+ コマンド ライン ツール`aspnet_compiler`を使用して、<xref:System.Web.Compilation.ClientBuildManager>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientBuildManager (string appVirtualDir, string appPhysicalSourceDir);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string appVirtualDir, string appPhysicalSourceDir) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appVirtualDir" Type="System.String" />
+        <Parameter Name="appPhysicalSourceDir" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="appVirtualDir">アプリケーション ルートの仮想パス。</param>
+        <param name="appPhysicalSourceDir">アプリケーションのルートへの物理パス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Compilation.ClientBuildManager" />クラス プリコンパイル フラグまたは指定されたターゲット ディレクトリがない場合。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientBuildManager (string appVirtualDir, string appPhysicalSourceDir, string appPhysicalTargetDir);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string appVirtualDir, string appPhysicalSourceDir, string appPhysicalTargetDir) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appVirtualDir" Type="System.String" />
+        <Parameter Name="appPhysicalSourceDir" Type="System.String" />
+        <Parameter Name="appPhysicalTargetDir" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="appVirtualDir">アプリケーション ルートの仮想パス。</param>
+        <param name="appPhysicalSourceDir">アプリケーションのルートへの物理パス。</param>
+        <param name="appPhysicalTargetDir">プリコンパイルのターゲット ディレクトリ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Compilation.ClientBuildManager" />クラス、ターゲット ディレクトリを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフォームのコンス トラクターはプリコンパイル先ディレクトリを指定すること、プリコンパイルに通常使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientBuildManager (string appVirtualDir, string appPhysicalSourceDir, string appPhysicalTargetDir, System.Web.Compilation.ClientBuildManagerParameter parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string appVirtualDir, string appPhysicalSourceDir, string appPhysicalTargetDir, class System.Web.Compilation.ClientBuildManagerParameter parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.#ctor(System.String,System.String,System.String,System.Web.Compilation.ClientBuildManagerParameter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appVirtualDir" Type="System.String" />
+        <Parameter Name="appPhysicalSourceDir" Type="System.String" />
+        <Parameter Name="appPhysicalTargetDir" Type="System.String" />
+        <Parameter Name="parameter" Type="System.Web.Compilation.ClientBuildManagerParameter" />
+      </Parameters>
+      <Docs>
+        <param name="appVirtualDir">アプリケーション ルートの仮想パス。</param>
+        <param name="appPhysicalSourceDir">アプリケーションのルートへの物理パス。</param>
+        <param name="appPhysicalTargetDir">プリコンパイルのターゲット ディレクトリ。</param>
+        <param name="parameter">プリコンパイルの動作を決定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Compilation.ClientBuildManager" />指定されたターゲットのディレクトリとコンパイルのパラメーターを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフォームのコンス トラクターはプリコンパイル ターゲット ディレクトリとプリコンパイル フラグが指定にプリコンパイルに通常使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientBuildManager (string appVirtualDir, string appPhysicalSourceDir, string appPhysicalTargetDir, System.Web.Compilation.ClientBuildManagerParameter parameter, System.ComponentModel.TypeDescriptionProvider typeDescriptionProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string appVirtualDir, string appPhysicalSourceDir, string appPhysicalTargetDir, class System.Web.Compilation.ClientBuildManagerParameter parameter, class System.ComponentModel.TypeDescriptionProvider typeDescriptionProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.#ctor(System.String,System.String,System.String,System.Web.Compilation.ClientBuildManagerParameter,System.ComponentModel.TypeDescriptionProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appVirtualDir" Type="System.String" />
+        <Parameter Name="appPhysicalSourceDir" Type="System.String" />
+        <Parameter Name="appPhysicalTargetDir" Type="System.String" />
+        <Parameter Name="parameter" Type="System.Web.Compilation.ClientBuildManagerParameter" />
+        <Parameter Name="typeDescriptionProvider" Type="System.ComponentModel.TypeDescriptionProvider" />
+      </Parameters>
+      <Docs>
+        <param name="appVirtualDir">アプリケーション ルートの仮想パス。</param>
+        <param name="appPhysicalSourceDir">アプリケーション ルートの物理パス。</param>
+        <param name="appPhysicalTargetDir">プリコンパイルのターゲット ディレクトリ。</param>
+        <param name="parameter">プリコンパイルの動作を決定する値。</param>
+        <param name="typeDescriptionProvider">使用する型説明プロバイダー。 このパラメーターは、主に、Visual Studio でのマルチ ターゲットのインフラストラクチャをサポートするために使用します。 これを使用して、.NET Framework の特定のバージョンに対してはフィルター処理の種類についてのメタデータを取得します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Compilation.ClientBuildManager" />指定された仮想ディレクトリ、ソース ディレクトリ、対象ディレクトリ、コンパイルのパラメーターと型説明プロバイダーを使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppDomainShutdown">
+      <MemberSignature Language="C#" Value="public event System.Web.Compilation.BuildManagerHostUnloadEventHandler AppDomainShutdown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.Compilation.BuildManagerHostUnloadEventHandler AppDomainShutdown" />
+      <MemberSignature Language="DocId" Value="E:System.Web.Compilation.ClientBuildManager.AppDomainShutdown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.BuildManagerHostUnloadEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ドメインがシャット ダウン時に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppDomainStarted">
+      <MemberSignature Language="C#" Value="public event EventHandler AppDomainStarted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AppDomainStarted" />
+      <MemberSignature Language="DocId" Value="E:System.Web.Compilation.ClientBuildManager.AppDomainStarted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ドメインが開始されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppDomainUnloaded">
+      <MemberSignature Language="C#" Value="public event System.Web.Compilation.BuildManagerHostUnloadEventHandler AppDomainUnloaded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.Compilation.BuildManagerHostUnloadEventHandler AppDomainUnloaded" />
+      <MemberSignature Language="DocId" Value="E:System.Web.Compilation.ClientBuildManager.AppDomainUnloaded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.BuildManagerHostUnloadEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ドメインがアンロードされるときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeGenDir">
+      <MemberSignature Language="C#" Value="public string CodeGenDir { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CodeGenDir" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ClientBuildManager.CodeGenDir" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コード生成に使用するディレクトリへの物理パスを取得します。</summary>
+        <value>A<see cref="T:System.String" />コード生成に使用するディレクトリ パスを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード生成用のディレクトリは通常、一時 ASP.NET files ディレクトリになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileApplicationDependencies">
+      <MemberSignature Language="C#" Value="public void CompileApplicationDependencies ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CompileApplicationDependencies() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.CompileApplicationDependencies" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>App_Code ディレクトリ内のファイル、Global.asax ファイル、リソース ファイル、および Web 参照などのアプリケーションに依存するファイルをコンパイルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ClientBuildManager.CompileApplicationDependencies%2A>メソッドは、リソース、Web 参照、App_Code ディレクトリ内のファイル、.browser ディレクトリ内のファイル、App_Browsers、および、Global.asax ファイルがコンパイルされたことを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileFile">
+      <MemberSignature Language="C#" Value="public void CompileFile (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CompileFile(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.CompileFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">コンパイルするファイルへのパス。</param>
+        <summary>仮想パスで表されるファイルをコンパイルします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileFile">
+      <MemberSignature Language="C#" Value="public void CompileFile (string virtualPath, System.Web.Compilation.ClientBuildManagerCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CompileFile(string virtualPath, class System.Web.Compilation.ClientBuildManagerCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.CompileFile(System.String,System.Web.Compilation.ClientBuildManagerCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="callback" Type="System.Web.Compilation.ClientBuildManagerCallback" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">コンパイルするファイルへのパス。</param>
+        <param name="callback">コンパイルからステータス情報を取得するオブジェクト。</param>
+        <summary>仮想パスで表されるファイルをコンパイルし、ビルドに関するステータス情報を受信するコールバック クラスを提供します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObject">
+      <MemberSignature Language="C#" Value="public System.Web.Hosting.IRegisteredObject CreateObject (Type type, bool failIfExists);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Hosting.IRegisteredObject CreateObject(class System.Type type, bool failIfExists) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.CreateObject(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.IRegisteredObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="failIfExists" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するオブジェクトの型。</param>
+        <param name="failIfExists">
+          <see langword="true" />ASP.NET ランタイムのアプリケーション ドメインには、オブジェクトが既に作成されている場合に例外をスローするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>ASP.NET ランタイムのアプリケーション ドメイン内にオブジェクトを作成します。</summary>
+        <returns>ASP.NET ランタイムのアプリケーション ドメイン内のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">オブジェクトは、アプリケーション ドメインに既に存在し、<paramref name="failIfExists" />は<see langword="true" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCode">
+      <MemberSignature Language="C#" Value="public string GenerateCode (string virtualPath, string virtualFileString, out System.Collections.IDictionary linePragmasTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GenerateCode(string virtualPath, string virtualFileString, [out] class System.Collections.IDictionary&amp; linePragmasTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GenerateCode(System.String,System.String,System.Collections.IDictionary@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="virtualFileString" Type="System.String" />
+        <Parameter Name="linePragmasTable" Type="System.Collections.IDictionary&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">ファイルへの仮想パス。</param>
+        <param name="virtualFileString">ファイルの内容。</param>
+        <param name="linePragmasTable">このメソッドが戻るときに、line プラグマのディクショナリが含まれています。</param>
+        <summary>ファイルの内容からコードを生成します。</summary>
+        <returns>A<see cref="T:System.String" />生成されたコードを含むです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeCompileUnit">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeCompileUnit GenerateCodeCompileUnit (string virtualPath, out Type codeDomProviderType, out System.CodeDom.Compiler.CompilerParameters compilerParameters, out System.Collections.IDictionary linePragmasTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.CodeDom.CodeCompileUnit GenerateCodeCompileUnit(string virtualPath, [out] class System.Type&amp; codeDomProviderType, [out] class System.CodeDom.Compiler.CompilerParameters&amp; compilerParameters, [out] class System.Collections.IDictionary&amp; linePragmasTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GenerateCodeCompileUnit(System.String,System.Type@,System.CodeDom.Compiler.CompilerParameters@,System.Collections.IDictionary@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCompileUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="codeDomProviderType" Type="System.Type&amp;" RefType="out" />
+        <Parameter Name="compilerParameters" Type="System.CodeDom.Compiler.CompilerParameters&amp;" RefType="out" />
+        <Parameter Name="linePragmasTable" Type="System.Collections.IDictionary&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">ファイルへの仮想パス。</param>
+        <param name="codeDomProviderType">このメソッドが戻るときに、コードの生成とコンパイルのために使用する codeDOM プロバイダー型が含まれています。</param>
+        <param name="compilerParameters">このメソッドが戻るとき、ファイルをコンパイルする方法を定義するプロパティが含まれています。</param>
+        <param name="linePragmasTable">このメソッドが戻るときに、line プラグマのディクショナリが含まれています。</param>
+        <summary>CodeDOM ツリー、コンパイラ タイプ、および仮想パスで表されるファイルのコンパイラ パラメーターを返します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeCompileUnit" />指定されたファイルです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ClientBuildManager.GenerateCodeCompileUnit%2A>メソッド ファイルをコンパイルするために必要な情報を取得します。 加え、<xref:System.CodeDom.CodeCompileUnit>を返す 3 つの戻り値としてオブジェクト`out`パラメーター。 `codeDomProviderType`パラメーターが生成およびファイルをコンパイルするため、プロバイダーの型を返します。 `compilerParameters`パラメーターには、コンパイルの動作を決定するプロパティが含まれています。 `linePragmasTable`パラメーターには、line プラグマのディクショナリが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateCodeCompileUnit">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeCompileUnit GenerateCodeCompileUnit (string virtualPath, string virtualFileString, out Type codeDomProviderType, out System.CodeDom.Compiler.CompilerParameters compilerParameters, out System.Collections.IDictionary linePragmasTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.CodeDom.CodeCompileUnit GenerateCodeCompileUnit(string virtualPath, string virtualFileString, [out] class System.Type&amp; codeDomProviderType, [out] class System.CodeDom.Compiler.CompilerParameters&amp; compilerParameters, [out] class System.Collections.IDictionary&amp; linePragmasTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GenerateCodeCompileUnit(System.String,System.String,System.Type@,System.CodeDom.Compiler.CompilerParameters@,System.Collections.IDictionary@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCompileUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="virtualFileString" Type="System.String" />
+        <Parameter Name="codeDomProviderType" Type="System.Type&amp;" RefType="out" />
+        <Parameter Name="compilerParameters" Type="System.CodeDom.Compiler.CompilerParameters&amp;" RefType="out" />
+        <Parameter Name="linePragmasTable" Type="System.Collections.IDictionary&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">ファイルへの仮想パス。</param>
+        <param name="virtualFileString">によって表されるファイルの内容、 <c>virtualPath</c>パラメーター。</param>
+        <param name="codeDomProviderType">このメソッドが戻るときに、コードの生成とコンパイルのために使用する codeDOM プロバイダー型が含まれています。</param>
+        <param name="compilerParameters">このメソッドが戻るときに、ファイルがによって表される方法を定義するプロパティが含まれています、 <c>virtualPath</c>パラメーターはコンパイルされます。</param>
+        <param name="linePragmasTable">このメソッドが戻るときに、line プラグマのディクショナリが含まれています。</param>
+        <summary>内容、codeDOM ツリー、コンパイラ タイプ、および仮想パスで表されるファイルのコンパイラ パラメーターを返します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeCompileUnit" />指定されたファイルです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ClientBuildManager.GenerateCodeCompileUnit%2A>メソッド ファイルをコンパイルするために必要な情報を取得します。 加え、<xref:System.CodeDom.CodeCompileUnit>を返す 3 つの戻り値としてオブジェクト`out`パラメーター。 `codeDomProviderType`パラメーターが生成およびファイルをコンパイルするため、プロバイダーの型を返します。 `compilerParameters`パラメーターには、コンパイルの動作を決定するプロパティが含まれています。 `linePragmasTable`パラメーターには、line プラグマのディクショナリが含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAppDomainShutdownDirectories">
+      <MemberSignature Language="C#" Value="public string[] GetAppDomainShutdownDirectories ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetAppDomainShutdownDirectories() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GetAppDomainShutdownDirectories" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ディレクトリでファイルを取得、変更されると、アプリケーション ドメインがシャット ダウンが発生します。</summary>
+        <returns>A<see cref="T:System.String" />最上位レベルのディレクトリ名を含む配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の最上位ディレクトリのファイルへの変更には、アプリケーション ドメインがシャット ダウンが発生します。 すべての変更を検出するためには、Bin、App_Code、Global_Resources、Web 参照、および App_Browsers ディレクトリ内のファイルが監視されます。 変更が検出されると、アプリケーション ドメインがシャット ダウンします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBrowserDefinitions">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary GetBrowserDefinitions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IDictionary GetBrowserDefinitions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GetBrowserDefinitions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ブラウザーの要素のコレクションを取得します。</summary>
+        <returns><see cref="T:System.Collections.IDictionary" />ブラウザー要素を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.IDictionary>オブジェクトには、キーのブラウザー名が含まれていますと<xref:System.Web.UI.Triplet>値のオブジェクト。 <xref:System.Web.UI.Triplet>各オブジェクトには、ブラウザーの親要素、説明、およびブラウザー要素ツリーの深さの名前が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCodeDirectoryInformation">
+      <MemberSignature Language="C#" Value="public void GetCodeDirectoryInformation (string virtualCodeDir, out Type codeDomProviderType, out System.CodeDom.Compiler.CompilerParameters compilerParameters, out string generatedFilesDir);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetCodeDirectoryInformation(string virtualCodeDir, [out] class System.Type&amp; codeDomProviderType, [out] class System.CodeDom.Compiler.CompilerParameters&amp; compilerParameters, [out] string&amp; generatedFilesDir) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GetCodeDirectoryInformation(System.String,System.Type@,System.CodeDom.Compiler.CompilerParameters@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualCodeDir" Type="System.String" />
+        <Parameter Name="codeDomProviderType" Type="System.Type&amp;" RefType="out" />
+        <Parameter Name="compilerParameters" Type="System.CodeDom.Compiler.CompilerParameters&amp;" RefType="out" />
+        <Parameter Name="generatedFilesDir" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="virtualCodeDir">に関する情報を取得するディレクトリ。</param>
+        <param name="codeDomProviderType">このメソッドが戻るときに、コードの生成とコンパイルのために使用するプロバイダーの種類が含まれています。</param>
+        <param name="compilerParameters">このメソッドが戻るとき、ファイルをコンパイルする方法を定義するプロパティが含まれています。</param>
+        <param name="generatedFilesDir">このメソッドが戻るときに、コード以外のファイルから生成されたファイルのディレクトリが含まれています。</param>
+        <summary>コンパイラの種類、コンパイラ パラメーター、および .wsdl ファイルなどの非コード ファイルから生成されるコード ファイルを格納するディレクトリに関する情報を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ClientBuildManager.GetCodeDirectoryInformation%2A>メソッド コード ディレクトリの構築に必要な情報を取得します。 3 つを使用してこの情報を返します`out`パラメーター。 `codeDomProviderType`パラメーターが生成およびコンパイル コード ディレクトリ内のファイルをプロバイダーの種類を返します。 `compilerParameters`パラメーターには、コンパイルの動作を決定するプロパティが含まれています。 `generatedFilesDir`パラメーターは、.wsdl ファイルなどのコード ディレクトリ内のコード以外のファイルから生成されたすべてのコード ファイルが含まれるディレクトリ パスを格納します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualCodeDir" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCompiledType">
+      <MemberSignature Language="C#" Value="public Type GetCompiledType (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Type GetCompiledType(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GetCompiledType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">コンパイルするファイルの仮想パス。</param>
+        <summary>仮想パスで表されるファイルをコンパイルし、コンパイルされた型を返します。</summary>
+        <returns><see cref="T:System.Type" />のコンパイル済みのファイルです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCompilerParameters">
+      <MemberSignature Language="C#" Value="public void GetCompilerParameters (string virtualPath, out Type codeDomProviderType, out System.CodeDom.Compiler.CompilerParameters compilerParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetCompilerParameters(string virtualPath, [out] class System.Type&amp; codeDomProviderType, [out] class System.CodeDom.Compiler.CompilerParameters&amp; compilerParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GetCompilerParameters(System.String,System.Type@,System.CodeDom.Compiler.CompilerParameters@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="codeDomProviderType" Type="System.Type&amp;" RefType="out" />
+        <Parameter Name="compilerParameters" Type="System.CodeDom.Compiler.CompilerParameters&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">ファイルへの仮想パス。</param>
+        <param name="codeDomProviderType">このメソッドが戻るときに、コードの生成とコンパイルのために使用するプロバイダーの種類が含まれています。</param>
+        <param name="compilerParameters">このメソッドが戻るとき、ファイルをコンパイルする方法を定義するプロパティが含まれています。</param>
+        <summary>コンパイラの種類と仮想パスで表されるファイルの作成に使用されるパラメーターを返します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGeneratedFileVirtualPath">
+      <MemberSignature Language="C#" Value="public string GetGeneratedFileVirtualPath (string filePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetGeneratedFileVirtualPath(string filePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GetGeneratedFileVirtualPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filePath">生成されたファイルの完全な物理パス。</param>
+        <summary>生成されたファイルの仮想パスを返します。</summary>
+        <returns>A<see cref="T:System.String" />の仮想パスを含む<paramref name="filePath" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filePath" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGeneratedSourceFile">
+      <MemberSignature Language="C#" Value="public string GetGeneratedSourceFile (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetGeneratedSourceFile(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GetGeneratedSourceFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">取得するファイルの仮想パス。</param>
+        <summary>仮想パスで生成されたファイルへの物理パスを取得します。</summary>
+        <returns>A<see cref="T:System.String" />生成されたファイルへの物理パスを格納しています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTopLevelAssemblyReferences">
+      <MemberSignature Language="C#" Value="public string[] GetTopLevelAssemblyReferences (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetTopLevelAssemblyReferences(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GetTopLevelAssemblyReferences(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">構成パスと名前。</param>
+        <summary>Bin ディレクトリに定義されているアセンブリの配列を返しますと<see langword="&lt;assembly&gt;" />Web 構成ファイルのセクションです。</summary>
+        <returns>A <see cref="T:System.String" /> Bin ディレクトリのパス コードを含む配列のベースと<see langword="&lt;assembly&gt;" />Web 構成ファイルのセクションです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVirtualCodeDirectories">
+      <MemberSignature Language="C#" Value="public string[] GetVirtualCodeDirectories ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetVirtualCodeDirectories() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.GetVirtualCodeDirectories" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>App_Code ディレクトリと ASP.NET アプリケーションでは、そのサブディレクトリへの仮想パスを返します。</summary>
+        <returns>A<see cref="T:System.String" />アプリケーションのコード ディレクトリへのすべての仮想パスを含む配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeLifetimeService">
+      <MemberSignature Language="C#" Value="public override object InitializeLifetimeService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object InitializeLifetimeService() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.InitializeLifetimeService" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーション ドメインは、無限リースが作成されるようにすることによって有効期間。</summary>
+        <returns>常に <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.MarshalByRefObject.InitializeLifetimeService%2A>基本クラス メソッド。 常に返します`null`およびこれにより、アプリケーション ドメインの有効期間を制限する作成されないリースを防止します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCodeAssembly">
+      <MemberSignature Language="C#" Value="public bool IsCodeAssembly (string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsCodeAssembly(string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.IsCodeAssembly(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">コードのアセンブリとして識別するため、アセンブリの名前。</param>
+        <summary>アセンブリが、コードのアセンブリであるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="assemblyName" />パラメーターでは、生成されるコード アセンブリのいずれかと一致する、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assemblyName" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHostCreated">
+      <MemberSignature Language="C#" Value="public bool IsHostCreated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsHostCreated" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ClientBuildManager.IsHostCreated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET Web アプリケーションをコンパイルするためのアプリケーション ドメインが作成されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ASP.NET Web アプリケーションをコンパイルするためのアプリケーション ドメインが作成された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="PrecompileApplication">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ASP.NET アプリケーションをプリコンパイルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET には、プリコンパイルの 3 つの形式がサポートされています。 1 つのフォームは、ASP.NET アプリケーションのインプレースでプリコンパイルにできます。 このフォームで、サイトは運用環境に展開し、プリコンパイルし、ユーザーが最初にアクセスされるときに、サイトを動的にコンパイルする必要があります。 サイトの最初のユーザーには、動的にコンパイルされているサイトで発生した通常の遅延は発生しません。  
+  
+ プリコンパイルの他の 2 つの形式は、配置に使用されます。 サイトのレイアウトが生成されるいずれかの形式で実稼働コンピューターを展開できます。 マークアップ ページは、コンパイル済みのサイトである程度の更新を実行できるようにこれらの形式の 1 つ含まれます。 その他のフォームは、マークアップ ページが含まれていないと、元のサイトを再コンパイルしなくても更新することはできません。 ソース コードがこれらの形式のプリコンパイルのいずれかのターゲット環境に展開されていません。  
+  
+ プリコンパイルするアプリケーションが定義されている、<xref:System.Web.Compilation.ClientBuildManager>コンス トラクターです。 <xref:System.Web.Compilation.ClientBuildManagerParameter>のオブジェクト、<xref:System.Web.Compilation.ClientBuildManager.%23ctor%2A>コンス トラクターを実行するプリコンパイルの 3 つの形式のどちらを定義します。  
+  
+ プリコンパイルする Web サイトで、`aspnet_compiler`コマンド ライン ツールまたは呼び出すことによって、<xref:System.Web.Compilation.ClientBuildManager.PrecompileApplication%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="PrecompileApplication">
+      <MemberSignature Language="C#" Value="public void PrecompileApplication ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PrecompileApplication() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.PrecompileApplication" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ASP.NET アプリケーションをプリコンパイルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET には、プリコンパイルの 3 つの形式がサポートされています。 1 つのフォームは、ASP.NET アプリケーションのインプレースでプリコンパイルにできます。 このフォームで、サイトは運用環境に展開し、プリコンパイルし、ユーザーが最初にアクセスされるときに、サイトを動的にコンパイルする必要があります。 サイトの最初のユーザーには、動的にコンパイルされているサイトで発生した通常の遅延は発生しません。  
+  
+ プリコンパイルの他の 2 つの形式は、配置に使用されます。 サイトのレイアウトが生成されるいずれかの形式で実稼働コンピューターを展開できます。 マークアップ ページは、コンパイル済みのサイトである程度の更新を実行できるようにこれらの形式の 1 つ含まれます。 その他のフォームは、マークアップ ページが含まれていないと、元のサイトを再コンパイルしなくても更新することはできません。 ソース コードがこれらの形式のプリコンパイルのいずれかのターゲット環境に展開されていません。  
+  
+ プリコンパイルするアプリケーションが定義されている、<xref:System.Web.Compilation.ClientBuildManager>コンス トラクターです。 <xref:System.Web.Compilation.ClientBuildManagerParameter>のオブジェクト、<xref:System.Web.Compilation.ClientBuildManager.%23ctor%2A>コンス トラクターを実行するプリコンパイルの 3 つの形式のどちらを定義します。  
+  
+ プリコンパイルする Web サイトで、`aspnet_compiler`コマンド ライン ツールまたは呼び出すことによって、<xref:System.Web.Compilation.ClientBuildManager.PrecompileApplication%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrecompileApplication">
+      <MemberSignature Language="C#" Value="public void PrecompileApplication (System.Web.Compilation.ClientBuildManagerCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PrecompileApplication(class System.Web.Compilation.ClientBuildManagerCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.PrecompileApplication(System.Web.Compilation.ClientBuildManagerCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Web.Compilation.ClientBuildManagerCallback" />
+      </Parameters>
+      <Docs>
+        <param name="callback">A<see cref="T:System.Web.Compilation.ClientBuildManagerCallback" />コンパイルの結果を報告したときに呼び出すメソッドを含むです。</param>
+        <summary>ASP.NET アプリケーションをプリコンパイルし、ビルドに関するステータス情報を受信するコールバック メソッドを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET には、プリコンパイルの 3 つの形式がサポートされています。 1 つのフォームは、ASP.NET アプリケーションのインプレースでプリコンパイルにできます。 このフォームで、サイトは運用環境に展開し、プリコンパイルし、ユーザーが最初にアクセスされるときに、サイトを動的にコンパイルする必要があります。 サイトの最初のユーザーには、動的にコンパイルされているサイトで発生した通常の遅延は発生しません。 `callback`パラメーターには、コンパイルの結果を報告したときに呼び出すメソッドが含まれています。  
+  
+ プリコンパイルの他の 2 つの形式は、配置に使用されます。 サイトのレイアウトが生成されるいずれかの形式で実稼働コンピューターを展開できます。 マークアップ ページは、コンパイル済みのサイトである程度の更新を実行できるようにこれらの形式の 1 つ含まれます。 その他のフォームは、マークアップ ページが含まれていないと、元のサイトを再コンパイルしなくても更新することはできません。 ソース コードがこれらの形式のプリコンパイルのいずれかのターゲット環境に展開されていません。  
+  
+ プリコンパイルするアプリケーションが定義されている、<xref:System.Web.Compilation.ClientBuildManager>コンス トラクターです。 <xref:System.Web.Compilation.ClientBuildManagerParameter>のオブジェクト、<xref:System.Web.Compilation.ClientBuildManager.%23ctor%2A>コンス トラクターを実行するプリコンパイルの 3 つの形式のどちらを定義します。  
+  
+ プリコンパイルする Web サイトで、`aspnet_compiler`コマンド ライン ツールまたは呼び出すことによって、<xref:System.Web.Compilation.ClientBuildManager.PrecompileApplication%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrecompileApplication">
+      <MemberSignature Language="C#" Value="public void PrecompileApplication (System.Web.Compilation.ClientBuildManagerCallback callback, bool forceCleanBuild);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PrecompileApplication(class System.Web.Compilation.ClientBuildManagerCallback callback, bool forceCleanBuild) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.PrecompileApplication(System.Web.Compilation.ClientBuildManagerCallback,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Web.Compilation.ClientBuildManagerCallback" />
+        <Parameter Name="forceCleanBuild" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="callback">A<see cref="T:System.Web.Compilation.ClientBuildManagerCallback" />コンパイルの結果を報告したときに呼び出すメソッドを含むです。</param>
+        <param name="forceCleanBuild">
+          <see langword="true" />最初にすべてのオブジェクトと中間ファイルを削除する、クリーン ビルドを実行するには<see langword="false" />が変更されたファイルのみを再構築します。 ビルド環境によって、依存関係が検出されない可能性がある場合は true に設定します。</param>
+        <summary>ASP.NET アプリケーションをプリコンパイル、ビルドに関するステータス情報を受信するコールバック メソッドを提供、クリーン ビルドを作成するかどうかを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET には、プリコンパイルの 3 つの形式がサポートされています。 1 つのフォームは、ASP.NET アプリケーションのインプレースでプリコンパイルにできます。 このフォームで、サイトは運用環境に展開し、プリコンパイルし、ユーザーが最初にアクセスされるときに、サイトを動的にコンパイルする必要があります。 サイトの最初のユーザーには、動的にコンパイルされているサイトで発生した通常の遅延は発生しません。 `callback`パラメーターには、コンパイルの結果を報告したときに呼び出すメソッドが含まれています。  
+  
+ プリコンパイルの他の 2 つの形式は、配置に使用されます。 サイトのレイアウトが生成されるいずれかの形式で実稼働コンピューターを展開できます。 マークアップ ページは、コンパイル済みのサイトである程度の更新を実行できるようにこれらの形式の 1 つ含まれます。 その他のフォームは、マークアップ ページが含まれていないと、元のサイトを再コンパイルしなくても更新することはできません。 ソース コードがこれらの形式のプリコンパイルのいずれかのターゲット環境に展開されていません。  
+  
+ プリコンパイルするアプリケーションが定義されている、<xref:System.Web.Compilation.ClientBuildManager>コンス トラクターです。 <xref:System.Web.Compilation.ClientBuildManagerParameter>のオブジェクト、<xref:System.Web.Compilation.ClientBuildManager.%23ctor%2A>コンス トラクターを実行するプリコンパイルの 3 つの形式のどちらを定義します。  
+  
+ プリコンパイルする Web サイトで、`aspnet_compiler`コマンド ライン ツールまたは呼び出すことによって、<xref:System.Web.Compilation.ClientBuildManager.PrecompileApplication%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の ASP.NET アプリケーションを終了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unload">
+      <MemberSignature Language="C#" Value="public bool Unload ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Unload() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ClientBuildManager.Unload" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ASP.NET Web アプリケーションをコンパイルするためのアプリケーション ドメインをアンロードします。</summary>
+        <returns>
+          <see langword="true" />場合は、アプリケーション ドメインがアンロードされます。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

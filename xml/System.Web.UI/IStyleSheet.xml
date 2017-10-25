@@ -1,0 +1,139 @@
+<Type Name="IStyleSheet" FullName="System.Web.UI.IStyleSheet">
+  <TypeSignature Language="C#" Value="public interface IStyleSheet" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IStyleSheet" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IStyleSheet" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>スタイル ルールの作成をサポートするためにクラスを実装する必要があるメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスを実装するクラスを使用して、スタイル ルールの作成をサポートします。  
+  
+ カスケード スタイル シートが作成され、登録する方法をカスタマイズするには、このインターフェイスを実装するクラスを作成する必要があります。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlHead>クラスを介して ASP.NET で使用するためには、このインターフェイスを実装する、<xref:System.Web.UI.Page.Header%2A>プロパティです。  
+  
+> [!NOTE]
+>  追加または非同期ポストバック中にスタイルまたはスタイル ルールをプログラムで変更がサポートされていません。 ASP.NET Web ページに AJAX 機能を追加すると、非同期ポストバックはページ全体を更新することがなく、ページの領域を更新します。 詳細については、次を参照してください。 [Microsoft Ajax 概要](http://msdn.microsoft.com/library/be84d9b3-b7cd-47d7-8494-be4abfaad9cb)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.Page.Header%2A>の実装<xref:System.Web.UI.IStyleSheet>プログラムで新しいスタイル ルールを作成して、カスタムの登録を説明する<xref:System.Web.UI.WebControls.Style>オブジェクト。  
+  
+ 例では、カスタムの最初の部分で<xref:System.Web.UI.WebControls.Style>オブジェクト、`labelStyle`が作成され、現在の場所 (URL) に対して登録されています。 続いて、`label1`呼び出しにラベルを付ける、<xref:System.Web.UI.WebControls.WebControl.MergeStyle%2A>メソッドできるように、`labelStyle`スタイルを適用、`label1`ラベル。  
+  
+ 他のカスタムの例では、2 番目の部分定義<xref:System.Web.UI.WebControls.Style>オブジェクト、 `bodyStyle`、し、新しいスタイル ルールを作成するには、そのプロパティを設定します。  
+  
+> [!NOTE]
+>  このクラスは、主に、カスタム実装を作成する開発者向け目的としています。 この例では、.NET Framework で提供される実装を示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.IStyleSheet#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IStyleSheet/CS/istylesheetcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.IStyleSheet#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IStyleSheet/VB/istylesheetvb.aspx#1)]  
+  
+ 前の例で Web ページの分離コード ファイルを次に示します。  
+  
+ [!code-csharp[System.Web.UI.IStyleSheet#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IStyleSheet/CS/istylesheetcs.aspx.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateStyleRule">
+      <MemberSignature Language="C#" Value="public void CreateStyleRule (System.Web.UI.WebControls.Style style, System.Web.UI.IUrlResolutionService urlResolver, string selector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CreateStyleRule(class System.Web.UI.WebControls.Style style, class System.Web.UI.IUrlResolutionService urlResolver, string selector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IStyleSheet.CreateStyleRule(System.Web.UI.WebControls.Style,System.Web.UI.IUrlResolutionService,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Web.UI.WebControls.Style" />
+        <Parameter Name="urlResolver" Type="System.Web.UI.IUrlResolutionService" />
+        <Parameter Name="selector" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="style">埋め込まれたスタイル シートに追加するスタイル ルール。</param>
+        <param name="urlResolver"><see cref="T:System.Web.UI.IUrlResolutionService" />-現在の場所 (URL) のコンテキスト情報を格納しているオブジェクトを実装します。</param>
+        <param name="selector">スタイルによって影響を受ける HTML ページの一部です。</param>
+        <summary>クラスに実装すると、指定されたドキュメントの言語要素の型、またはセレクターのスタイル ルールを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IStyleSheet.CreateStyleRule%2A>メソッドは、指定されたセレクターのスタイル ルールを作成します。 複数のスタイル ルールは、同じセレクターを作成できます。  
+  
+ 場合`urlResolver`に設定されている`null`、現在の URL<xref:System.Web.UI.Page>インスタンスを使用します。  
+  
+> [!NOTE]
+>  追加または非同期ポストバック中にスタイルまたはスタイル ルールをプログラムで変更がサポートされていません。 ASP.NET Web ページに AJAX 機能を追加すると、非同期ポストバックはページ全体を更新することがなく、ページの領域を更新します。 詳細については、次を参照してください。 [Microsoft Ajax 概要](http://msdn.microsoft.com/library/be84d9b3-b7cd-47d7-8494-be4abfaad9cb)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.Page.Header%2A>の実装<xref:System.Web.UI.IStyleSheet>新しい定義を示すために<xref:System.Web.UI.WebControls.Style>オブジェクト、`bodyStyle`です。 `bodyStyle`呼び出しによって現在の URL に追加される<xref:System.Web.UI.IStyleSheet.CreateStyleRule%2A>です。  
+  
+ [!code-aspx-csharp[System.Web.UI.IStyleSheetCreateStyleRule#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IStyleSheetCreateStyleRule/CS/istylesheetcreatestylerulecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.IStyleSheetCreateStyleRule#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IStyleSheetCreateStyleRule/VB/istylesheetcreatestylerulevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterStyle">
+      <MemberSignature Language="C#" Value="public void RegisterStyle (System.Web.UI.WebControls.Style style, System.Web.UI.IUrlResolutionService urlResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterStyle(class System.Web.UI.WebControls.Style style, class System.Web.UI.IUrlResolutionService urlResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IStyleSheet.RegisterStyle(System.Web.UI.WebControls.Style,System.Web.UI.IUrlResolutionService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Web.UI.WebControls.Style" />
+        <Parameter Name="urlResolver" Type="System.Web.UI.IUrlResolutionService" />
+      </Parameters>
+      <Docs>
+        <param name="style">埋め込まれたスタイル シートに追加するスタイル ルール。</param>
+        <param name="urlResolver"><see cref="T:System.Web.UI.IUrlResolutionService" />-現在の場所 (URL) のコンテキスト情報を格納しているオブジェクトを実装します。</param>
+        <summary>クラスに実装すると、新しいスタイル規則を追加で埋め込まれたスタイル シート、 <see langword="&lt;head&gt;" /> Web ページのセクションです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、新しいスタイル ルールを追加し、<xref:System.Web.UI.WebControls.Style.RegisteredCssClass%2A>内の埋め込みスタイル シートにプロパティ名、`<head>`のセクションで、<xref:System.Web.UI.Page>オブジェクト、およびスタイルの自動生成された名前のルールを関連付けます。 <xref:System.Web.UI.WebControls.Style>使用して、指定したオブジェクトがレンダリングされる`urlResolver`パラメーター。  
+  
+ 場合`urlResolver`に設定されている`null`、現在の URL<xref:System.Web.UI.Page>を使用します。  
+  
+ 場合、<xref:System.Web.UI.WebControls.Style>オブジェクトが既に登録されている追加されていない複数回です。  
+  
+> [!NOTE]
+>  追加または非同期ポストバック中にスタイルをプログラムで変更がサポートされていません。 ASP.NET Web ページに AJAX 機能を追加すると、非同期ポストバックはページ全体を更新することがなく、ページの領域を更新します。 詳細については、次を参照してください。 [Microsoft Ajax 概要](http://msdn.microsoft.com/library/be84d9b3-b7cd-47d7-8494-be4abfaad9cb)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.Page.Header%2A>の実装<xref:System.Web.UI.IStyleSheet>カスタムを作成する方法について説明する<xref:System.Web.UI.WebControls.Style>オブジェクト、 `labelStyle`、現在の場所 (URL) の登録を行うとします。 続いて、`label1`呼び出しにラベルを付ける、<xref:System.Web.UI.WebControls.WebControl.MergeStyle%2A>メソッドできるように、`labelStyle`スタイルを適用、`label1`ラベル。  
+  
+ [!code-aspx-csharp[System.Web.UI.IStyleSheetRegisterStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IStyleSheetRegisterStyle/CS/istylesheetregisterstylecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.IStyleSheetRegisterStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IStyleSheetRegisterStyle/VB/istylesheetregisterstylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

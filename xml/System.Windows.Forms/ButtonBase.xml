@@ -1,0 +1,1363 @@
+<Type Name="ButtonBase" FullName="System.Windows.Forms.ButtonBase">
+  <TypeSignature Language="C#" Value="public abstract class ButtonBase : System.Windows.Forms.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ButtonBase extends System.Windows.Forms.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ButtonBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.ButtonBaseDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ボタン コントロールに共通の基本機能を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常から継承していない<xref:System.Windows.Forms.ButtonBase>です。 継承する独自のボタンのクラスを作成する、 <xref:System.Windows.Forms.Button>、 <xref:System.Windows.Forms.CheckBox>、または<xref:System.Windows.Forms.RadioButton>クラスです。  
+  
+ 画像を表示する派生ボタン コントロールには、設定、<xref:System.Windows.Forms.ButtonBase.Image%2A>プロパティまたは<xref:System.Windows.Forms.ButtonBase.ImageList%2A>と<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>プロパティです。 設定してボタン コントロールのイメージを配置することができます、<xref:System.Windows.Forms.ButtonBase.ImageAlign%2A>プロパティです。 同様に、位置を揃える、<xref:System.Windows.Forms.Control.Text%2A>ボタン コントロールに表示される、設定、<xref:System.Windows.Forms.ButtonBase.TextAlign%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.ButtonBase.FlatStyle%2A>プロパティは、コントロールの外観とスタイルを決定します。 場合、<xref:System.Windows.Forms.ButtonBase.FlatStyle%2A>プロパティに設定されている<xref:System.Windows.Forms.FlatStyle?displayProperty=nameWithType>ユーザーのオペレーティング システムが、コントロールの外観を決定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ButtonBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ButtonBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoEllipsis">
+      <MemberSignature Language="C#" Value="public bool AutoEllipsis { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoEllipsis" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.AutoEllipsis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのテキストが、指定されたコントロールの長さを超えることを示す省略記号文字 (...) を、コントロールの右端に表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />追加のラベル テキストを省略記号によって示される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定<xref:System.Windows.Forms.ButtonBase.AutoEllipsis%2A>に`true`をユーザーがマウスでコントロールの上に通過するときに、コントロールの幅を越えるテキストを表示します。 コントロールを設定する必要があります`AutoSize`プロパティを`false`場合<xref:System.Windows.Forms.ButtonBase.AutoEllipsis%2A>する`true`です。 場合`AutoSize`は`true`コントロールがテキストに合わせて拡張、および、省略記号は表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSize">
+      <MemberSignature Language="C#" Value="public override bool AutoSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.AutoSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内容に合わせてコントロールのサイズを変更するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コントロールが自動的にサイズ変更に基づいて表示内容それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSizeChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler AutoSizeChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AutoSizeChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ButtonBase.AutoSizeChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.ButtonBase.AutoSize" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ButtonBase.AutoSizeChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ButtonBase>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.CheckBox>です。 インスタンスを名前`ButtonBase1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ButtonBase.AutoSizeChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#136](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#136)]
+ [!code-vb[System.Windows.Forms.EventExamples#136](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#136)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの背景色を取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />背景色を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns>コントロールの新しい <see cref="T:System.Windows.Forms.AccessibleObject" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParams">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.CreateParams CreateParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CreateParams CreateParams" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.CreateParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CreateParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール ハンドルが作成されるときに必要な作成パラメーターを取得します。</summary>
+        <value>コントロールを識別するハンドルを作成するときに必要な作成パラメーターを格納している <see cref="T:System.Windows.Forms.CreateParams" />。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultImeMode">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.ImeMode DefaultImeMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ImeMode DefaultImeMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.DefaultImeMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImeMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでサポートされている既定の IME (Input Method Editor) モードを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.ImeMode" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装されている、<xref:System.Windows.Forms.ButtonBase>クラス、このプロパティは常に返します、`Disable`値<xref:System.Windows.Forms.ImeMode?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size DefaultSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size DefaultSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.DefaultSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの既定のサイズを取得します。</summary>
+        <value>コントロールの既定の <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.ButtonBase" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Windows.Forms.ButtonBase>参照します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FlatAppearance">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.FlatButtonAppearance FlatAppearance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.FlatButtonAppearance FlatAppearance" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.FlatAppearance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlatButtonAppearance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チェックの状態およびマウスの状態を示すために使用する境界線の外観と色を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.FlatButtonAppearance" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ButtonBase.FlatAppearance%2A>のみを持つプロパティ<xref:System.Windows.Forms.Button>が制御<xref:System.Windows.Forms.FlatStyle>は<xref:System.Windows.Forms.FlatStyle.Flat>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlatStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.FlatStyle FlatStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.FlatStyle FlatStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.FlatStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタン コントロールのフラット スタイルの外観を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.FlatStyle" /> 値のいずれか。 既定値は <see langword="Standard" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.ButtonBase.FlatStyle%2A>のプロパティ、<xref:System.Windows.Forms.RadioButton>と<xref:System.Windows.Forms.CheckBox>クラスに設定されている`System`、ユーザーのオペレーティング システムによって、コントロールを描画およびチェックの配置がに基づいて、`CheckAlign`と<xref:System.Windows.Forms.ButtonBase.TextAlign%2A>プロパティの値。 `CheckAlign`プロパティの値は変更されませんが、コントロールの外観が影響を受けることができます。 チェック ボックスは水平方向に (左側または中央揃えで表示される左側右寄せの場合はの変更されていません)、コントロールの左または右のエッジに配置し、説明のテキストと同じを垂直方向に揃えます。 ある場合など、<xref:System.Windows.Forms.CheckBox>と制御、`CheckAlign`のプロパティの値`ContentAlignment`です。 `MiddleCenter`、、<xref:System.Windows.Forms.ButtonBase.TextAlign%2A>のプロパティの値`ContentAlignment.TopRight`、および<xref:System.Windows.Forms.ButtonBase.FlatStyle%2A>にプロパティの値が設定されている`System`、するチェック ボックスの配置が表示されます`ContentAlignment.TopLeft`テキストの配置が変更されないままです。  
+  
+> [!NOTE]
+>  場合、<xref:System.Windows.Forms.ButtonBase.FlatStyle%2A>プロパティに設定されている`FlatStyle.System`に割り当てられているすべてのイメージ、<xref:System.Windows.Forms.ButtonBase.Image%2A>プロパティは表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.Button>し、一部の共通プロパティを設定します。 左側のテキストと、右上の画像を含むフラットなボタンになります。 このコードが必要という名前のビットマップ イメージ`MyBitMap.bmp`に格納されている、`C:\Graphics`ディレクトリ、およびをへの参照、<xref:System.Drawing?displayProperty=nameWithType>名前空間が含まれる。  
+  
+ [!code-cpp[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/CS/source.cs#1)]
+ [!code-vb[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられている値は、のいずれかではありません、<see cref="T:System.Windows.Forms.FlatStyle" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredSize">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Size GetPreferredSize (System.Drawing.Size proposedSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Drawing.Size GetPreferredSize(valuetype System.Drawing.Size proposedSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.GetPreferredSize(System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="proposedSize" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="proposedSize">コントロールのカスタム サイズ領域。</param>
+        <summary>コントロールが収まる四角形の領域のサイズを取得します。</summary>
+        <returns>四角形の幅と高さを表す、順序を付与した <see cref="T:System.Drawing.Size" /> 型のペア。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動作<xref:System.Windows.Forms.ButtonBase.GetPreferredSize%2A>コントロールによって異なります。 <xref:System.Windows.Forms.Control.LayoutEngine%2A>に返されるサイズをコントロールに割り当てることがない可能性があります。 示されている制約よりも大きいサイズを返すことができます、`proposedSize`パラメーターが、`proposedSize`減少するように制約が減少します。 たとえば、`GetPreferredSize(new Size(100, 0))`よりも太くなってしないで`GetPreferredSize(new Size(200, 0))`です。 例外は、 `proposedSize` 0 または`Size.Empty`、制約として定義されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public System.Drawing.Image Image { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image Image" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.Image" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタン コントロールに表示されるイメージを取得または設定します。</summary>
+        <value><see cref="T:System.Drawing.Image" />ボタン コントロールに表示されます。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.ButtonBase.Image%2A>プロパティが設定されて、<xref:System.Windows.Forms.ButtonBase.ImageList%2A>プロパティ設定されます`null`、および<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>プロパティは、その既定値は-1 に設定されます。  
+  
+> [!NOTE]
+>  場合、<xref:System.Windows.Forms.ButtonBase.FlatStyle%2A>プロパティに設定されている`FlatStyle.System`に割り当てられているすべてのイメージ、<xref:System.Windows.Forms.ButtonBase.Image%2A>プロパティは表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.Button>し、一部の共通プロパティを設定します。 左側のテキストと、右上の画像を含むフラットなボタンになります。 このコードが必要という名前のビットマップ イメージ`MyBitMap.bmp`に格納されている、`C:\Graphics`ディレクトリ、およびをへの参照、<xref:System.Drawing?displayProperty=nameWithType>名前空間が含まれる。  
+  
+ [!code-cpp[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/CS/source.cs#1)]
+ [!code-vb[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageAlign">
+      <MemberSignature Language="C#" Value="public System.Drawing.ContentAlignment ImageAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.ContentAlignment ImageAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.ImageAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.ContentAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタン コントロール上のイメージの配置を取得または設定します。</summary>
+        <value><see cref="T:System.Drawing.ContentAlignment" /> 値のいずれか。 既定値は <see langword="MiddleCenter" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.Button>し、一部の共通プロパティを設定します。 左側のテキストと、右上の画像を含むフラットなボタンになります。 このコードが必要という名前のビットマップ イメージ`MyBitMap.bmp`に格納されている、`C:\Graphics`ディレクトリ、およびをへの参照、<xref:System.Drawing?displayProperty=nameWithType>名前空間が含まれる。  
+  
+ [!code-cpp[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/CS/source.cs#1)]
+ [!code-vb[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられている値は、のいずれかではありません、<see cref="T:System.Drawing.ContentAlignment" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageIndex">
+      <MemberSignature Language="C#" Value="public int ImageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ImageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.ImageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ImageIndexConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタン コントロールに表示されているイメージのイメージ リスト内でのインデックス値を取得または設定します。</summary>
+        <value>イメージの位置を表す、0 から始まるインデックス、<see cref="T:System.Windows.Forms.ImageList" />です。 既定値は -1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>または<xref:System.Windows.Forms.ButtonBase.ImageList%2A>プロパティを設定、<xref:System.Windows.Forms.ButtonBase.Image%2A>プロパティがその既定値に設定`null`です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Windows.Forms.ButtonBase.ImageList%2A>にプロパティ値が変更された`null`、<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>プロパティは、その既定値は-1 を返します。 ただし、割り当てられている<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>値が内部的に保持され、別の使用<xref:System.Windows.Forms.ImageList>にオブジェクトが割り当てられた、<xref:System.Windows.Forms.ButtonBase.ImageList%2A>プロパティです。 場合、新しい<xref:System.Windows.Forms.ImageList>に割り当てられている、<xref:System.Windows.Forms.ButtonBase.ImageList%2A>プロパティには、<xref:System.Windows.Forms.ImageList.ImageCollection.Count%2A?displayProperty=nameWithType>プロパティの値に割り当てられている値未満である、<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>マイナス 1 (0 から始まるインデックスをされているコレクションのアカウント) するには、プロパティ、<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>プロパティの値は 1 つを調整してより小さい<xref:System.Windows.Forms.ImageList.ImageCollection.Count%2A>プロパティの値。 たとえば、ボタンいるコントロール<xref:System.Windows.Forms.ImageList>があり、3 つのイメージが<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>プロパティが 2 に設定します。 場合、新しい<xref:System.Windows.Forms.ImageList>を持つ 2 つのみのイメージ、ボタンに割り当てられている、<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>値 1 に変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.Button>設定と、<xref:System.Windows.Forms.ButtonBase.ImageList%2A>と<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>プロパティです。 このコードでは、する必要があります、<xref:System.Windows.Forms.ImageList>が作成されて、最低 1 つの<xref:System.Drawing.Image>がそれに割り当てられています。 このコードもが必要という名前のビットマップ イメージ`MyBitMap.bmp`に格納されている、`C:\Graphics`ディレクトリ。  
+  
+ [!code-cpp[Classic ButtonBase.ImageIndex Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ButtonBase.ImageIndex Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ButtonBase.ImageIndex Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ButtonBase.ImageIndex Example/CS/source.cs#1)]
+ [!code-vb[Classic ButtonBase.ImageIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ButtonBase.ImageIndex Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">割り当てられた値がの下限より小さい、<see cref="P:System.Windows.Forms.ButtonBase.ImageIndex" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageKey">
+      <MemberSignature Language="C#" Value="public string ImageKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.ImageKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ImageKeyConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定キー アクセサー内のイメージを<see cref="P:System.Windows.Forms.ButtonBase.ImageList" />です。</summary>
+        <value>イメージのキーを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ButtonBase.ImageKey%2A>プロパティがコントロール上に表示するイメージ リストのイメージを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageList">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ImageList ImageList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ImageList ImageList" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.ImageList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImageList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ImageList" />を格納している、<see cref="T:System.Drawing.Image" />ボタン コントロールに表示されます。</summary>
+        <value><see cref="T:System.Windows.Forms.ImageList" />。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.ButtonBase.ImageList%2A>または<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>プロパティが設定されて、<xref:System.Windows.Forms.ButtonBase.Image%2A>プロパティが設定されて`null`、これは、既定値です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Windows.Forms.ButtonBase.ImageList%2A>にプロパティ値が変更された`null`、<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>プロパティは、その既定値は-1 を返します。 ただし、割り当てられている<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>値が内部的に保持され、別の使用<xref:System.Windows.Forms.ImageList>に割り当てられている、<xref:System.Windows.Forms.ButtonBase.ImageList%2A>プロパティです。 場合、新しい<xref:System.Windows.Forms.ImageList>に割り当てられている、<xref:System.Windows.Forms.ButtonBase.ImageList%2A>プロパティには、<xref:System.Windows.Forms.ImageList.ImageCollection.Count%2A?displayProperty=nameWithType>に割り当てられている値未満であるプロパティ値、<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>から 1 を引いたプロパティ (コレクションが、0 から始まるインデックスであるため)、<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>プロパティ値を調整して、いずれかにより小さい<xref:System.Windows.Forms.ImageList.ImageCollection.Count%2A>プロパティの値。 たとえば、ボタンいるコントロール<xref:System.Windows.Forms.ImageList>があり、3 つのイメージが<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>プロパティが 2 に設定します。 場合、新しい<xref:System.Windows.Forms.ImageList>を持つ 2 つのみのイメージ、ボタンに割り当てられている、<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>値 1 に変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.Button>設定と、<xref:System.Windows.Forms.ButtonBase.ImageList%2A>と<xref:System.Windows.Forms.ButtonBase.ImageIndex%2A>プロパティです。 このコードでは、する必要があります、<xref:System.Windows.Forms.ImageList>が作成されて、最低 1 つの<xref:System.Drawing.Image>がそれに割り当てられています。 このコードもが必要という名前のビットマップ イメージ`MyBitMap.bmp`に格納されている、`C:\Graphics`ディレクトリ。  
+  
+ [!code-cpp[Classic ButtonBase.ImageIndex Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ButtonBase.ImageIndex Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ButtonBase.ImageIndex Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ButtonBase.ImageIndex Example/CS/source.cs#1)]
+ [!code-vb[Classic ButtonBase.ImageIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ButtonBase.ImageIndex Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImeMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ImeMode ImeMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ImeMode ImeMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.ImeMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImeMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールでサポートされている IME (Input Method Editor) モードを取得または設定します。 このクラスでは、このプロパティは使用されません。</summary>
+        <value><see cref="T:System.Windows.Forms.ImeMode" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImeModeChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ImeModeChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ImeModeChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ButtonBase.ImeModeChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Forms.ButtonBase.ImeMode" />プロパティを変更します。 このクラスでは、このイベントは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefault">
+      <MemberSignature Language="C#" Value="protected bool IsDefault { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.IsDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタン コントロールが既定のボタンかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ボタン コントロールが既定のボタンの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.ButtonBase.IsDefault%2A>プロパティに設定されている`true`、ボタンがの既定のボタン、<xref:System.Windows.Forms.Form>です。 これはないその他のボタンの場合、ENTER キーを押すか、ENTER キーをキャプチャするその他のコントロールにフォーカスがあるときに、ボタンがクリックされたことを意味します。  
+  
+ フォームの既定のボタンを指定するには、設定、<xref:System.Windows.Forms.Form.AcceptButton%2A>目的のボタンにフォームのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEnabledChanged">
+      <MemberSignature Language="C#" Value="protected override void OnEnabledChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnEnabledChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnEnabledChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.EnabledChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGotFocus">
+      <MemberSignature Language="C#" Value="protected override void OnGotFocus (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnGotFocus(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnGotFocus(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.GotFocus" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ButtonBase.OnGotFocus%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ButtonBase.OnGotFocus(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ButtonBase.OnGotFocus(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Forms.KeyEventArgs kevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Forms.KeyEventArgs kevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnKeyDown(System.Windows.Forms.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kevent" Type="System.Windows.Forms.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="kevent">イベント データを格納している <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.ButtonBase.OnKeyUp(System.Windows.Forms.KeyEventArgs)" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ButtonBase.OnKeyDown%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+> [!NOTE]
+>  呼び出す必要はありません<xref:System.Windows.Forms.ButtonBase.OnKeyDown%2A>ボタンが無効になっている場合 (これには、基本クラスへの呼び出しが含まれます<xref:System.Windows.Forms.ButtonBase.OnKeyDown%2A>メソッドをオーバーライドするときに<xref:System.Windows.Forms.ButtonBase.OnKeyDown%2A>派生クラスで)。 オーバーライドで、ボタンを無効にすると<xref:System.Windows.Forms.ButtonBase.OnKeyDown%2A>、基本クラスの<xref:System.Windows.Forms.ButtonBase.OnKeyDown%2A>メソッドは、ボタンを無効にする前に呼び出す必要はありませんがまったくまたは。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ButtonBase.OnKeyDown(System.Windows.Forms.KeyEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ButtonBase.OnKeyDown(System.Windows.Forms.KeyEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyUp">
+      <MemberSignature Language="C#" Value="protected override void OnKeyUp (System.Windows.Forms.KeyEventArgs kevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyUp(class System.Windows.Forms.KeyEventArgs kevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnKeyUp(System.Windows.Forms.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kevent" Type="System.Windows.Forms.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="kevent">イベント データを格納している <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.ButtonBase.OnKeyUp(System.Windows.Forms.KeyEventArgs)" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ButtonBase.OnKeyUp%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ButtonBase.OnKeyUp(System.Windows.Forms.KeyEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ButtonBase.OnKeyUp(System.Windows.Forms.KeyEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLostFocus">
+      <MemberSignature Language="C#" Value="protected override void OnLostFocus (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLostFocus(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnLostFocus(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.ButtonBase.OnLostFocus(System.EventArgs)" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ButtonBase.OnLostFocus%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ButtonBase.OnLostFocus(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ButtonBase.OnLostFocus(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseDown (System.Windows.Forms.MouseEventArgs mevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseDown(class System.Windows.Forms.MouseEventArgs mevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnMouseDown(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mevent" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="mevent">イベント データを格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.Control.OnMouseDown(System.Windows.Forms.MouseEventArgs)" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ButtonBase.OnMouseDown%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+> [!NOTE]
+>  呼び出す必要はありません<xref:System.Windows.Forms.ButtonBase.OnMouseDown%2A>ボタンが無効になっている場合 (これには、基本クラスへの呼び出しが含まれます<xref:System.Windows.Forms.ButtonBase.OnMouseDown%2A>メソッドをオーバーライドするときに<xref:System.Windows.Forms.ButtonBase.OnMouseDown%2A>派生クラスで)。 オーバーライドで、ボタンを無効にすると<xref:System.Windows.Forms.ButtonBase.OnMouseDown%2A>、基本クラスの<xref:System.Windows.Forms.ButtonBase.OnMouseDown%2A>メソッドは、ボタンを無効にする前に呼び出す必要はありませんがまったくまたは。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ButtonBase.OnMouseDown(System.Windows.Forms.MouseEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ButtonBase.OnMouseDown(System.Windows.Forms.MouseEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseEnter">
+      <MemberSignature Language="C#" Value="protected override void OnMouseEnter (EventArgs eventargs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseEnter(class System.EventArgs eventargs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnMouseEnter(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventargs" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="eventargs">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.Control.OnMouseEnter(System.EventArgs)" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ButtonBase.OnMouseEnter%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+> [!NOTE]
+>  呼び出す必要はありません<xref:System.Windows.Forms.ButtonBase.OnMouseEnter%2A>ボタンが無効になっている場合 (これには、基本クラスへの呼び出しが含まれます<xref:System.Windows.Forms.ButtonBase.OnMouseEnter%2A>メソッドをオーバーライドするときに<xref:System.Windows.Forms.ButtonBase.OnMouseEnter%2A>派生クラスで)。 オーバーライドで、ボタンを無効にすると<xref:System.Windows.Forms.ButtonBase.OnMouseEnter%2A>、基本クラスの<xref:System.Windows.Forms.ButtonBase.OnMouseEnter%2A>メソッドは、ボタンを無効にする前に呼び出す必要はありませんがまったくまたは。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ButtonBase.OnMouseEnter(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ButtonBase.OnMouseEnter(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeave">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeave (EventArgs eventargs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeave(class System.EventArgs eventargs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnMouseLeave(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventargs" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="eventargs">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.Control.OnMouseLeave(System.EventArgs)" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ButtonBase.OnMouseLeave%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ButtonBase.OnMouseLeave(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ButtonBase.OnMouseLeave(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseMove">
+      <MemberSignature Language="C#" Value="protected override void OnMouseMove (System.Windows.Forms.MouseEventArgs mevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseMove(class System.Windows.Forms.MouseEventArgs mevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnMouseMove(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mevent" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="mevent">イベント データを格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.Control.OnMouseMove(System.Windows.Forms.MouseEventArgs)" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ButtonBase.OnMouseMove%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+> [!NOTE]
+>  呼び出す必要はありません<xref:System.Windows.Forms.ButtonBase.OnMouseMove%2A>ボタンが無効になっている場合 (これには、基本クラスへの呼び出しが含まれます<xref:System.Windows.Forms.ButtonBase.OnMouseMove%2A>メソッドをオーバーライドするときに<xref:System.Windows.Forms.ButtonBase.OnMouseMove%2A>派生クラスで)。 オーバーライドで、ボタンを無効にすると<xref:System.Windows.Forms.ButtonBase.OnMouseMove%2A>、基本クラスの<xref:System.Windows.Forms.ButtonBase.OnMouseMove%2A>メソッドは、ボタンを無効にする前に呼び出す必要はありませんがまったくまたは。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ButtonBase.OnMouseMove(System.Windows.Forms.MouseEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ButtonBase.OnMouseMove(System.Windows.Forms.MouseEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseUp">
+      <MemberSignature Language="C#" Value="protected override void OnMouseUp (System.Windows.Forms.MouseEventArgs mevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseUp(class System.Windows.Forms.MouseEventArgs mevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnMouseUp(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mevent" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="mevent">イベント データを格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.ButtonBase.OnMouseUp(System.Windows.Forms.MouseEventArgs)" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ButtonBase.OnMouseUp%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ButtonBase.OnMouseUp(System.Windows.Forms.MouseEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ButtonBase.OnMouseUp(System.Windows.Forms.MouseEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected override void OnPaint (System.Windows.Forms.PaintEventArgs pevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPaint(class System.Windows.Forms.PaintEventArgs pevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnPaint(System.Windows.Forms.PaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pevent" Type="System.Windows.Forms.PaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="pevent">イベント データを格納している <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.ButtonBase.OnPaint(System.Windows.Forms.PaintEventArgs)" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ButtonBase.OnPaint%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ButtonBase.OnPaint(System.Windows.Forms.PaintEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ButtonBase.OnPaint(System.Windows.Forms.PaintEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnParentChanged">
+      <MemberSignature Language="C#" Value="protected override void OnParentChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnParentChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnParentChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.ParentChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextChanged">
+      <MemberSignature Language="C#" Value="protected override void OnTextChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnTextChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnTextChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.TextChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnVisibleChanged">
+      <MemberSignature Language="C#" Value="protected override void OnVisibleChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnVisibleChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.OnVisibleChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.VisibleChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetFlagsandPaint">
+      <MemberSignature Language="C#" Value="protected void ResetFlagsandPaint ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ResetFlagsandPaint() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.ResetFlagsandPaint" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセット、<see cref="T:System.Windows.Forms.Button" />が押されたして再描画する前に、状態を制御します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.SettingsBindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールに関連付けられているテキストを取得または設定します。</summary>
+        <value>このコントロールに関連付けられたテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlign">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.ContentAlignment TextAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.ContentAlignment TextAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.TextAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.ContentAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボタン コントロールのテキストの配置を取得または設定します。</summary>
+        <value><see cref="T:System.Drawing.ContentAlignment" /> 値のいずれか。 既定値は、<see langword="MiddleCenter" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.Button>し、一部の共通プロパティを設定します。 左側のテキストと、右上の画像を含むフラットなボタンになります。 このコードが必要という名前のビットマップ イメージ`MyBitMap.bmp`に格納されている、`C:\Graphics`ディレクトリ、およびをへの参照、<xref:System.Drawing?displayProperty=nameWithType>名前空間が含まれる。  
+  
+ [!code-cpp[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/CS/source.cs#1)]
+ [!code-vb[Classic ButtonBase.FlatStyle Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ButtonBase.FlatStyle Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられている値は、のいずれかではありません、<see cref="T:System.Drawing.ContentAlignment" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TextImageRelation">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TextImageRelation TextImageRelation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.TextImageRelation TextImageRelation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.TextImageRelation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TextImageRelation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストおよびイメージの、互いを基準とした相対位置を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.TextImageRelation" /> の値の 1 つ。 既定値は、<see cref="F:System.Windows.Forms.TextImageRelation.Overlay" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">値が、<see cref="T:System.Windows.Forms.TextImageRelation" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseCompatibleTextRendering">
+      <MemberSignature Language="C#" Value="public bool UseCompatibleTextRendering { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseCompatibleTextRendering" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.UseCompatibleTextRendering" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を使用するかどうかを決定する値、<see cref="T:System.Drawing.Graphics" />クラス ([!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]) または<see cref="T:System.Windows.Forms.TextRenderer" />クラス ([!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]) テキストの表示にします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Drawing.Graphics" />クラスは、バージョン 1.0 および 1.1 と互換性のためのテキストのレンダリングを実行するために使用する必要があります。 .NET Framework のそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `UseCompatibleTextRendering`プロパティがそのレンダリング テキストを使用して Windows フォーム コントロールの間での visual の互換性を維持するためのもの、<xref:System.Windows.Forms.TextRenderer>クラスと[!INCLUDE[net_v10_short](~/includes/net-v10-short-md.md)]と[!INCLUDE[net_v11_short](~/includes/net-v11-short-md.md)]カスタム テキスト レンダリングを使用して実行するアプリケーション、<xref:System.Drawing.Graphics>クラスです。 ほとんどの場合、アプリケーションはからアップグレードされていない場合に[!INCLUDE[net_v10_short](~/includes/net-v10-short-md.md)]または[!INCLUDE[net_v11_short](~/includes/net-v11-short-md.md)]、しておくことをお勧め`UseCompatibleTextRendering`の既定値に設定`false`です。  
+  
+ [!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]ベース<xref:System.Windows.Forms.TextRenderer>クラスで導入された、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]パフォーマンスを向上させるようにテキストの外観をよく、および国際対応フォントのサポートを改善します。 以前のバージョンので、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]ベース<xref:System.Drawing.Graphics>クラスを使用してすべてのテキスト レンダリングを実行します。 [!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]文字間隔とでの折り返しが異なるから計算[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]です。 使用する Windows フォーム アプリケーションで、<xref:System.Drawing.Graphics>クラスのテキストを表示するために、これが原因で、コントロールのテキストを使用する<xref:System.Windows.Forms.TextRenderer>を異なるアプリケーションで他のテキストで表示します。 この非互換性を解決するには、設定することができます、`UseCompatibleTextRendering`プロパティを`true`の特定のコントロールです。 設定する`UseCompatibleTextRendering`に`true`サポートされている、すべてのコントロール、アプリケーションで呼び出して、<xref:System.Windows.Forms.Application.SetCompatibleTextRenderingDefault%2A?displayProperty=nameWithType>メソッドのパラメーターを持つ`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseMnemonic">
+      <MemberSignature Language="C#" Value="public bool UseMnemonic { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseMnemonic" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.UseMnemonic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値を示すかどうか、最初の文字が前にアンパサンド (&amp;) は、コントロールのニーモニック キーとして使用します。</summary>
+        <value>
+          <see langword="true" />最初の文字をする場合は、前にアンパサンド (&amp;) が、コントロールのニーモニック キーとして使用されます。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseVisualStyleBackColor">
+      <MemberSignature Language="C#" Value="public bool UseVisualStyleBackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseVisualStyleBackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ButtonBase.UseVisualStyleBackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>visual スタイルがサポートされている場合に、visual スタイルを使用して背景を描画するかどうかを決定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />visual スタイルを使用して、背景が描画された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual スタイルが、コントロールの外観を指定します。 たとえば、visual スタイルは、色、サイズ、およびコントロールのフォントを定義でき、アプリケーションのインターフェイスと連携するビジュアル インターフェイスを構成することができます。 さらに、すべて Windows ベースのアプリケーションで visual スタイルが適用されてする機構が用意されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ButtonBase.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の Windows <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

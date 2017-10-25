@@ -1,0 +1,132 @@
+<Type Name="AxHost+State" FullName="System.Windows.Forms.AxHost+State">
+  <TypeSignature Language="C#" Value="public class AxHost.State : System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi serializable beforefieldinit AxHost/State extends System.Object implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AxHost.State" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.TypeConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ActiveX コントロールの永続化された状態をカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.AxHost.State>を使用して取得できます、<xref:System.Windows.Forms.AxHost.OcxState%2A?displayProperty=nameWithType>プロパティ、またはデータ ストリームから、コントロールの状態を読み取ることによりします。  
+  
+ 詳細については、ドキュメントを参照して`IPersistStream`と`IPersistPropertyBag`MSDN ライブラリです。 `IPersistStream`COM SDK ドキュメントのインターフェイス リファレンスのセクションで確認できますと`IPersistPropertyBag`COM SDK ドキュメントの COM の基本インターフェイス リファレンスのセクションで確認できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected State (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.State.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> 値。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> 値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.AxHost.State" />クラスの状態を逆シリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public State (System.IO.Stream ms, int storageType, bool manualUpdate, string licKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream ms, int32 storageType, bool manualUpdate, string licKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.State.#ctor(System.IO.Stream,System.Int32,System.Boolean,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ms" Type="System.IO.Stream" />
+        <Parameter Name="storageType" Type="System.Int32" />
+        <Parameter Name="manualUpdate" Type="System.Boolean" />
+        <Parameter Name="licKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ms">A<see cref="T:System.IO.Stream" />状態を格納します。</param>
+        <param name="storageType"><see cref="T:System.Int32" />記憶域の種類を示すです。</param>
+        <param name="manualUpdate">
+          <see langword="true" />手動更新それ以外の場合、<see langword="false" />です。</param>
+        <param name="licKey">コントロールのライセンス キーです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.AxHost.State" />状態をシリアル化するためのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo si, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.State.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="si" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="si">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化のシリアル化先。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、対象のオブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、`context`パラメーターを参照してください、<xref:System.Runtime.Serialization.StreamingContext>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを実行します。 関連する列挙。<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

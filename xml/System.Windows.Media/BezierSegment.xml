@@ -1,0 +1,316 @@
+<Type Name="BezierSegment" FullName="System.Windows.Media.BezierSegment">
+  <TypeSignature Language="C#" Value="public sealed class BezierSegment : System.Windows.Media.PathSegment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BezierSegment extends System.Windows.Media.PathSegment" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.BezierSegment" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.PathSegment</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>2 つの点を結ぶ 3 次ベジエ曲線を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.PathFigure>を格納するオブジェクト<xref:System.Windows.Media.BezierSegment>オブジェクトとその他のセグメント。  
+  
+ 3 次ベジエ曲線が 4 つの点によって定義された: 始点、終点 (<xref:System.Windows.Media.BezierSegment.Point3%2A>) と 2 つのコントロール ポイント (<xref:System.Windows.Media.BezierSegment.Point1%2A>と<xref:System.Windows.Media.BezierSegment.Point2%2A>)。<xref:System.Windows.Media.BezierSegment>クラスには、曲線の開始点のプロパティが含まれていません。 終了ポイントだけを定義します。 曲線の開始点は、現在のポイントの<xref:System.Windows.Media.PathFigure>先、<xref:System.Windows.Media.BezierSegment>を追加します。  
+  
+ 3 次ベジエ曲線の 2 つの制御点は、磁石、直線自体にするにはの一部を獲得し、曲線を生成するように動作します。 最初の制御点<xref:System.Windows.Media.BezierSegment.Point1%2A>、先頭に影響を与える曲線の部分です。 2 番目の制御点<xref:System.Windows.Media.BezierSegment.Point2%2A>、曲線の終了部分に影響します。 曲線が; のコントロール ポイントのいずれかを通過しない必ずしもことに注意してください。各管理ポイントは、に向かって自体がそれ自体ではなく、行の一部を移動します。  
+  
+## <a name="freezable-features"></a>Freezable 機能  
+ A<xref:System.Windows.Media.BezierSegment>の種類は、<xref:System.Windows.Freezable>オブジェクト。 について<xref:System.Windows.Freezable>の凍結と、複製などの機能を参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BezierSegment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BezierSegment.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.BezierSegment" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 3 次ベジエ曲線が 4 つの点によって定義された: 始点、終点 (`point3`) と 2 つのコントロール ポイント (`point1`と`point2`)。 このメソッドで使用する曲線の開始点を指定できません。曲線がの現在の位置で始まって、<xref:System.Windows.Media.PathFigure>オブジェクトを<xref:System.Windows.Media.BezierSegment>を追加します。  
+  
+ 3 次ベジエ曲線の 2 つの制御点は、磁石、直線自体にするにはの一部を獲得し、曲線を生成するように動作します。 最初の制御点`point1`、先頭に影響を与える曲線の部分です。 2 番目の制御点`point2`、曲線の終了部分に影響します。 曲線が; のコントロール ポイントのいずれかを通過しない必ずしもことに注意してください。各管理ポイントは、に向かって自体がそれ自体ではなく、行の一部を移動します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BezierSegment (System.Windows.Point point1, System.Windows.Point point2, System.Windows.Point point3, bool isStroked);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Point point1, valuetype System.Windows.Point point2, valuetype System.Windows.Point point3, bool isStroked) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BezierSegment.#ctor(System.Windows.Point,System.Windows.Point,System.Windows.Point,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Windows.Point" />
+        <Parameter Name="point2" Type="System.Windows.Point" />
+        <Parameter Name="point3" Type="System.Windows.Point" />
+        <Parameter Name="isStroked" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="point1">曲線の開始部分を決定する、最初のコントロール ポイント。</param>
+        <param name="point2">曲線の終了部分を決定する、2 番目のコントロール ポイント。</param>
+        <param name="point3">曲線を描画するポイント。</param>
+        <param name="isStroked">
+          <see langword="true" />弧を描くときに、<see cref="T:System.Windows.Media.Pen" />がセグメントを表示するために使用されます。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.BezierSegment" />した指定の制御点、終点、ストローク オプション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 3 次ベジエ曲線が 4 つの点によって定義された: 始点、終点 (`point3`) と 2 つのコントロール ポイント (`point1`と`point2`)。 このメソッドで使用する曲線の開始点を指定できません。曲線がの現在の位置で始まって、<xref:System.Windows.Media.PathFigure>オブジェクトを<xref:System.Windows.Media.BezierSegment>を追加します。  
+  
+ 3 次ベジエ曲線の 2 つの制御点は、磁石、直線自体にするにはの一部を獲得し、曲線を生成するように動作します。 最初の制御点`point1`、先頭に影響を与える曲線の部分です。 2 番目の制御点`point2`、曲線の終了部分に影響します。 曲線が; のコントロール ポイントのいずれかを通過しない必ずしもことに注意してください。各管理ポイントは、に向かって自体がそれ自体ではなく、行の一部を移動します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.BezierSegment Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.BezierSegment Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BezierSegment.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.BezierSegment</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.BezierSegment" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.BezierSegment CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.BezierSegment CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BezierSegment.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.BezierSegment</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.BezierSegment" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.BezierSegment.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Point1">
+      <MemberSignature Language="C#" Value="public System.Windows.Point Point1 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point Point1" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.BezierSegment.Point1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>曲線の最初の制御点を取得または設定します。</summary>
+        <value>曲線の最初の制御点。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 3 次ベジエ曲線の 2 つの制御点は、磁石、直線自体にするにはの一部を獲得し、曲線を生成するように動作します。 最初の制御点<xref:System.Windows.Media.BezierSegment.Point1%2A>、先頭に影響を与える曲線の部分です。 2 番目の制御点<xref:System.Windows.Media.BezierSegment.Point2%2A>、曲線の終了部分に影響します。 曲線が; のコントロール ポイントのいずれかを通過しない必ずしもことに注意してください。各管理ポイントは、に向かって自体がそれ自体ではなく、行の一部を移動します。  
+  
+<a name="dependencyPropertyInfo_Point1"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.BezierSegment.Point1Property>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Point1Property">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty Point1Property;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty Point1Property" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.BezierSegment.Point1Property" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.BezierSegment.Point1" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Point2">
+      <MemberSignature Language="C#" Value="public System.Windows.Point Point2 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point Point2" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.BezierSegment.Point2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>曲線の 2 番目の制御点を取得または設定します。</summary>
+        <value>曲線の 2 番目の制御点。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 3 次ベジエ曲線の 2 つの制御点は、磁石、直線自体にするにはの一部を獲得し、曲線を生成するように動作します。 最初の制御点<xref:System.Windows.Media.BezierSegment.Point1%2A>、先頭に影響を与える曲線の部分です。 2 番目の制御点<xref:System.Windows.Media.BezierSegment.Point2%2A>、曲線の終了部分に影響します。 曲線が; のコントロール ポイントのいずれかを通過しない必ずしもことに注意してください。各管理ポイントは、に向かって自体がそれ自体ではなく、行の一部を移動します。  
+  
+<a name="dependencyPropertyInfo_Point2"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.BezierSegment.Point2Property>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Point2Property">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty Point2Property;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty Point2Property" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.BezierSegment.Point2Property" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.BezierSegment.Point2" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Point3">
+      <MemberSignature Language="C#" Value="public System.Windows.Point Point3 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point Point3" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.BezierSegment.Point3" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>曲線の終点を取得または設定します。</summary>
+        <value>曲線の終点。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.BezierSegment>クラスには、曲線の開始点のプロパティが含まれていません。 終了ポイントだけを定義します。 曲線の開始点は、現在のポイントの<xref:System.Windows.Media.PathFigure>先、<xref:System.Windows.Media.BezierSegment>を追加します。  
+  
+<a name="dependencyPropertyInfo_Point3"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.BezierSegment.Point3Property>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Point3Property">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty Point3Property;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty Point3Property" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.BezierSegment.Point3Property" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.BezierSegment.Point3" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

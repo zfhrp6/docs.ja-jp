@@ -1,0 +1,447 @@
+<Type Name="ServiceDebugElement" FullName="System.ServiceModel.Configuration.ServiceDebugElement">
+  <TypeSignature Language="C#" Value="public sealed class ServiceDebugElement : System.ServiceModel.Configuration.BehaviorExtensionElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceDebugElement extends System.ServiceModel.Configuration.BehaviorExtensionElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.ServiceDebugElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Configuration.BehaviorExtensionElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows Communication Foundation (WCF) サービスのデバッグ機能とヘルプ情報機能を指定する構成要素を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プログラムで <xref:System.ServiceModel.Configuration.ServiceDebugElement.IncludeExceptionDetailInFaults%2A> プロパティを `true` に設定すると、デバッグ目的でクライアントへのマネージ例外情報のフローを有効にし、Web ブラウザーでサービスを閲覧するユーザー向けに HTML 情報ファイルを公開できます。  
+  
+> [!CAUTION]
+>  マネージ例外情報をサービスに戻すことは、セキュリティ リスクとなり得ます。 これは、例外の詳細が、未承認のサービスが使用できる内部クライアント実装についての情報を公開するからです。  
+  
+ <xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageEnabled%2A> プロパティおよび <xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageEnabled%2A> プロパティにより、サービスが HTML ブラウザーを使用して表示されるときに HTML ヘルプ ファイルを公開できます。  
+  
+ <xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageUrl%2A> プロパティおよび <xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageUrl%2A> プロパティは、表示される HTML ヘルプ ページの位置を制御します。  
+  
+ 構成ファイルを使用していずれかの <xref:System.ServiceModel.Configuration.ServiceDebugElement> 機能を有効または無効にするには、以下を行う必要があります。  
+  
+1.  追加、`behaviorConfiguration`属性を[&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)要素を[!INCLUDE[indigo2](~/includes/indigo2-md.md)]サービス。 (にエンドポイントの動作が構成されている`<endpoint>`要素; 上のサービス動作[&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)要素です)。  
+  
+2.  追加または作成し、 [ &lt;serviceBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)セクションし、追加、 [&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)要素をに一致する名前を持つ`behaviorConfiguration`手順 1. から属性の値。 (を使用してエンドポイントの動作は、構成、 [ &lt;endpointBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)要素以外のサービスを使用して動作が構成されて、 [ &lt;serviceBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)要素。  
+  
+3.  追加、 [ &lt;serviceDebug&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicedebug.md)要素を[&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)手順 2 から要素を有効または無効にするさまざまなプロパティが適切なシナリオです。  
+  
+ 個々の例については、「使用例」のセクションを参照してください。  
+  
+   
+  
+## Examples  
+ 構成ファイルを使用して、HTML ヘルプ ページ機能を有効にし、メタデータのサポートを有効にすると共に、デバッグのために SOAP エラー内の例外情報をクライアントに返す方法を次のコード例に示します。  
+  
+ [!code-xml[ServiceDebugBehaviorConfig#1](~/samples/snippets/csharp/VS_Snippets_CFX/servicedebugbehaviorconfig/cs/hostapplication.exe.config#1)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceDebugElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.ServiceDebugElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.ServiceDebugElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BehaviorType">
+      <MemberSignature Language="C#" Value="public override Type BehaviorType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type BehaviorType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceDebugElement.BehaviorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この動作要素の型を取得します。</summary>
+        <value>動作の種類です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFrom">
+      <MemberSignature Language="C#" Value="public override void CopyFrom (System.ServiceModel.Configuration.ServiceModelExtensionElement from);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyFrom(class System.ServiceModel.Configuration.ServiceModelExtensionElement from) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.ServiceDebugElement.CopyFrom(System.ServiceModel.Configuration.ServiceModelExtensionElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="from" Type="System.ServiceModel.Configuration.ServiceModelExtensionElement" />
+      </Parameters>
+      <Docs>
+        <param name="from">コピーされる構成要素。</param>
+        <summary>指定された構成要素の内容をこの構成要素にコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBehavior">
+      <MemberSignature Language="C#" Value="protected override object CreateBehavior ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object CreateBehavior() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.ServiceDebugElement.CreateBehavior" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpHelpPageBinding">
+      <MemberSignature Language="C#" Value="public string HttpHelpPageBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HttpHelpPageBinding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("httpHelpPageBinding", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP を利用してサービス ヘルプ ページにアクセスする場合に使用するバインディングを指定する文字列値を取得または設定します。</summary>
+        <value>サービス ヘルプ ページへのアクセスに HTTP を利用するときに使用されるバインディング。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが設定されていない場合、必要に応じて、サービス ヘルプ ページにアクセスするために既定のバインディング (HttpTransportBindingElement) が使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpHelpPageBindingConfiguration">
+      <MemberSignature Language="C#" Value="public string HttpHelpPageBindingConfiguration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HttpHelpPageBindingConfiguration" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageBindingConfiguration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("httpHelpPageBindingConfiguration", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageBinding" /> に指定されたバインディングに関して追加の構成情報を定義する XML セクションを指す文字列を取得または設定します。</summary>
+        <value>指定されたバインディングの追加の構成情報を定義する XML セクション<see cref="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageBinding" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpHelpPageEnabled">
+      <MemberSignature Language="C#" Value="public bool HttpHelpPageEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HttpHelpPageEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("httpHelpPageEnabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか[!INCLUDE[indigo1](~/includes/indigo1-md.md)]により指定されたアドレスに HTML ヘルプ ページを公開、<see cref="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageUrl" />プロパティです。</summary>
+        <value>
+          WCF が HTML ヘルプ ページを公開する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを `false` に設定して、HTML ブラウザーに表示される HTML ヘルプ ページの公開を無効にできます。  
+  
+ HTML ヘルプ ページが、<xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageUrl%2A> プロパティにより制御される場所に公開されるようにするには、このプロパティを `true` に設定する必要があります。 さらに、次のいずれかの条件も満たす必要があります。  
+  
+-   <xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageUrl%2A> プロパティは、HTTP プロトコル スキームをサポートする絶対アドレスです。  
+  
+-   HTTP プロトコル スキームをサポートするサービスのベース アドレスがあります。  
+  
+ HTTP プロトコル スキームをサポートしない絶対アドレスが <xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageUrl%2A> プロパティに割り当てられている場合は例外がスローされますが、前の基準をどれも満たさないその他のシナリオでは、例外も HTML ヘルプ ページも表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpHelpPageUrl">
+      <MemberSignature Language="C#" Value="public Uri HttpHelpPageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HttpHelpPageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("httpHelpPageUrl")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTML ヘルプ ファイルが公開される場所を取得または設定します。</summary>
+        <value>HTML ブラウザーを使用してエンドポイントを表示するときにユーザーが参照する、カスタム HTML ヘルプ ファイルの相対的または絶対的な HTTP ベースの URL。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、HTTP/Get 要求から返されるカスタム HTML ヘルプ ファイルを HTML ブラウザーなどから利用できます。 HTML ヘルプ ファイルの位置は、次のように解決されます。  
+  
+1.  このプロパティの値が相対アドレスの場合、HTML ヘルプ ファイルの位置は、HTTP 要求をサポートするサービスのベース アドレスにこのプロパティの値を加えた値になります。  
+  
+2.  このプロパティが絶対アドレスであり、HTTP 要求をサポートする場合は、HTML ヘルプ ファイルの位置はこのプロパティの値になります。  
+  
+3.  このプロパティの値が絶対値であっても HTTP 要求をサポートしていない場合は、例外がスローされます。  
+  
+ このプロパティは、<xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpHelpPageEnabled%2A> プロパティが `true` に設定されている場合にのみ有効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpsHelpPageBinding">
+      <MemberSignature Language="C#" Value="public string HttpsHelpPageBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HttpsHelpPageBinding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("httpsHelpPageBinding", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTPS を利用してサービス ヘルプ ページにアクセスする場合に使用するバインディングを指定する文字列値を取得または設定します。</summary>
+        <value>サービス ヘルプ ページへのアクセスに HTTPS を利用するときに使用されるバインディング。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが設定されていない場合、必要に応じて、サービス ヘルプ ページにアクセスするために既定のバインディング (HttpsTransportBindingElement) が使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpsHelpPageBindingConfiguration">
+      <MemberSignature Language="C#" Value="public string HttpsHelpPageBindingConfiguration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HttpsHelpPageBindingConfiguration" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageBindingConfiguration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("httpsHelpPageBindingConfiguration", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageBinding" /> に指定されたバインディングに関して追加の構成情報を定義する XML セクションを指す文字列を取得または設定します。</summary>
+        <value>指定されたバインディングの追加の構成情報を定義する XML セクション<see cref="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageBinding" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpsHelpPageEnabled">
+      <MemberSignature Language="C#" Value="public bool HttpsHelpPageEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HttpsHelpPageEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("httpsHelpPageEnabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値かどうか[!INCLUDE[indigo1](~/includes/indigo1-md.md)]で指定されたアドレスに HTTPS を介して HTML ヘルプ ファイルを返します、<see cref="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageUrl" />プロパティです。</summary>
+        <value>
+          HTML ヘルプ ファイルが、HTML ブラウザーなどから HTTPS/GET 要求を行うクライアントに返される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを `false` に設定して、HTML ブラウザーに表示される HTML ヘルプ ページの公開を無効にできます。  
+  
+ HTML ヘルプ ページが、<xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageUrl%2A> プロパティにより制御される場所に公開されるようにするには、このプロパティを `true` に設定する必要があります。 さらに、次のいずれかの条件も満たす必要があります。  
+  
+-   <xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageUrl%2A> プロパティは、HTTPS プロトコル スキームをサポートする絶対アドレスです。  
+  
+-   HTTPS プロトコル スキームをサポートするサービスのベース アドレスがあります。  
+  
+-   HTTPS プロトコル スキームをサポートしない絶対アドレスが <xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageUrl%2A> プロパティに割り当てられている場合は例外がスローされますが、前の基準をどれも満たさないその他のシナリオでは、例外も HTML ヘルプ ページも表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpsHelpPageUrl">
+      <MemberSignature Language="C#" Value="public Uri HttpsHelpPageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri HttpsHelpPageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("httpsHelpPageUrl")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTTPS を使用した取得の HTML ヘルプ ファイルが公開される場所を設定します。</summary>
+        <value>HTML ブラウザーを使用してエンドポイントを表示するときにユーザーが参照する、カスタム HTML ヘルプ ファイルの相対的または絶対的な HTTPS ベースの URL。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、HTTPS/Get 要求から返されるカスタム HTML ヘルプ ファイルを HTML ブラウザーなどから利用できます。 HTML ヘルプ ファイルの位置は、次のように解決されます。  
+  
+1.  このプロパティの値が相対アドレスの場合、HTML ヘルプ ファイルの位置は、HTTPS 要求をサポートするサービスのベース アドレスにこのプロパティの値を加えた値になります。  
+  
+2.  このプロパティが絶対アドレスであり、HTTPS 要求をサポートする場合は、HTML ヘルプ ファイルの位置はこのプロパティの値になります。  
+  
+3.  このプロパティの値が絶対値であっても HTTPS 要求をサポートしていない場合は、例外がスローされます。  
+  
+ このプロパティは、<xref:System.ServiceModel.Configuration.ServiceDebugElement.HttpsHelpPageEnabled%2A> プロパティが `true` に設定されている場合にのみ有効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeExceptionDetailInFaults">
+      <MemberSignature Language="C#" Value="public bool IncludeExceptionDetailInFaults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeExceptionDetailInFaults" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceDebugElement.IncludeExceptionDetailInFaults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("includeExceptionDetailInFaults", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デバッグの目的でクライアントに返される SOAP エラーの詳細に、マネージ例外情報を含めるかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合[!INCLUDE[indigo1](~/includes/indigo1-md.md)]クライアント側のデバッグ目的で、SOAP エラーのマネージ例外情報を返しますそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プログラムで <xref:System.ServiceModel.Configuration.ServiceDebugElement.IncludeExceptionDetailInFaults%2A> プロパティを `true` に設定すると、デバッグ目的でクライアントへのマネージ例外情報のフローを有効にし、Web ブラウザーでサービスを閲覧するユーザー向けに HTML 情報ファイルを公開できます。  
+  
+> [!CAUTION]
+>  マネージ例外情報をサービスに戻すことは、セキュリティ リスクとなり得ます。 これは、例外の詳細が、未承認のサービスが使用できる内部クライアント実装についての情報を公開するからです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceDebugElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

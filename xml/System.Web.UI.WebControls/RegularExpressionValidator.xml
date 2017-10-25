@@ -1,0 +1,224 @@
+<Type Name="RegularExpressionValidator" FullName="System.Web.UI.WebControls.RegularExpressionValidator">
+  <TypeSignature Language="C#" Value="public class RegularExpressionValidator : System.Web.UI.WebControls.BaseValidator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RegularExpressionValidator extends System.Web.UI.WebControls.BaseValidator" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RegularExpressionValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.BaseValidator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:RegularExpressionValidator runat="server" ErrorMessage="RegularExpressionValidator"&gt;&lt;/{0}:RegularExpressionValidator&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>関連付けられた入力コントロールの値が正規表現で指定されたパターンに一致するかどうかを検証します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RegularExpressionValidator>コントロールは、入力コントロールの値が正規表現で定義されているパターンに一致するかどうかを確認します。 この種類の検証では、電子メール アドレス、電話番号、および郵便番号などの文字の予測可能なシーケンスを確認することができます。  
+  
+> [!NOTE]
+>  入力コントロールが空の場合、検証が成功します。 値が関連付けられた入力コントロールの必要な場合は、使用、<xref:System.Web.UI.WebControls.RequiredFieldValidator>制御に加え、<xref:System.Web.UI.WebControls.RegularExpressionValidator>コントロール。  
+  
+ ブラウザーがクライアント側の検証をサポートしていないか、クライアント側の検証が明示的に無効になっている場合を除き、サーバー側とクライアント側の両方の検証が実行されます (設定して、<xref:System.Web.UI.WebControls.BaseValidator.EnableClientScript%2A>プロパティを`false`)。  
+  
+ 正規表現の検証の実装はよりも、サーバー上のクライアントで若干異なります。 クライアントでは、JScript 正規表現の構文が使用されます。 サーバーで、<xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>構文を使用します。 正規表現の構文のサブセットである JScript 以降<xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>構文、お勧め JScript 正規表現の構文が、クライアントとサーバーの両方で同じ結果を生成するために使用することです。  
+  
+> [!NOTE]
+>  使用すると、<xref:System.Web.UI.WebControls.RegularExpressionValidator>内の制御、<xref:System.Web.UI.UpdatePanel>制御、検証コントロールと関連付けられているコントロールが同じパネルであるかどうかを確認します。 使用しての詳細については、<xref:System.Web.UI.UpdatePanel>部分ページ更新プログラムの制御を参照してください[部分ページ レンダリング概要](http://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49)です。  
+  
+ 検証コントロールの追加については、次を参照してください。<xref:System.Web.UI.WebControls.BaseValidator>です。 正規表現の詳細については、次を参照してください。 [.NET Framework 正規表現](~/docs/standard/base-types/regular-expressions.md)です。  
+  
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、 <xref:System.Web.UI.WebControls.RegularExpressionValidator> 5 桁の郵便番号コードを検証するコントロール。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic RegularExpressionValidator Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RegularExpressionValidator Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RegularExpressionValidator Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RegularExpressionValidator Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegularExpressionValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RegularExpressionValidator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RegularExpressionValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RegularExpressionValidator.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクトの HTML 属性およびスタイルのコントロールをレンダリングする必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.RegularExpressionValidator.AddAttributesToRender%2A>カスタム サーバー コントロールできるように、<xref:System.Web.UI.WebControls.RegularExpressionValidator>エラー メッセージが常に太字で表示されます。  
+  
+ [!code-csharp[CustomRegularExpressionValidatorAddAttributesToRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRegularExpressionValidatorAddAttributesToRender/CS/custom_regularexpressionvalidator_addattributestorender.cs#2)]
+ [!code-vb[CustomRegularExpressionValidatorAddAttributesToRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRegularExpressionValidatorAddAttributesToRender/VB/custom_regularexpressionvalidator_addattributestorender.vb#2)]  
+  
+ 次のコード例を使用する方法を示しています、`CustomRegularExpressionValidatorAddAttributesToRender`コントロール、Web フォーム ページで、前の例で定義されています。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[CustomRegularExpressionValidatorAddAttributesToRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRegularExpressionValidatorAddAttributesToRender/CS/custom_regularexpressionvalidator_addattributestorendercs.aspx#1)]
+ [!code-aspx-vb[CustomRegularExpressionValidatorAddAttributesToRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRegularExpressionValidatorAddAttributesToRender/VB/custom_regularexpressionvalidator_addattributestorendervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateIsValid">
+      <MemberSignature Language="C#" Value="protected override bool EvaluateIsValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool EvaluateIsValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RegularExpressionValidator.EvaluateIsValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入力コントロールの値が有効かどうかを示します。</summary>
+        <returns>
+          入力コントロールの値が有効である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.RegularExpressionValidator.EvaluateIsValid%2A>カスタム サーバー内のメソッドは制御内の一致を式に対して値を常に確認できるように、<xref:System.Web.UI.WebControls.RegularExpressionValidator>です。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[CustomRegularExpressionValidatorEvaluateIsValid#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRegularExpressionValidatorEvaluateIsValid/CS/custom_regularexpressionvalidator_evaluateisvalid.cs#2)]
+ [!code-vb[CustomRegularExpressionValidatorEvaluateIsValid#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRegularExpressionValidatorEvaluateIsValid/VB/custom_regularexpressionvalidator_evaluateisvalid.vb#2)]  
+  
+ 次のコード例を使用する方法を示しています、`CustomRegularExpressionValidatorEvaluateIsValid`コントロール、Web フォーム ページで、前の例で定義されています。  
+  
+ [!code-aspx-csharp[CustomRegularExpressionValidatorEvaluateIsValid#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomRegularExpressionValidatorEvaluateIsValid/CS/custom_regularexpressionvalidator_evaluateisvalidcs.aspx#1)]
+ [!code-aspx-vb[CustomRegularExpressionValidatorEvaluateIsValid#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomRegularExpressionValidatorEvaluateIsValid/VB/custom_regularexpressionvalidator_evaluateisvalidvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchTimeout">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; MatchTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; MatchTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RegularExpressionValidator.MatchTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作がタイムアウトする前に 1 つの一致操作を実行する最大時間間隔を取得または設定します。</summary>
+        <value>操作がタイムアウトする前に 1 つの一致操作を実行する最大時間間隔。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationExpression">
+      <MemberSignature Language="C#" Value="public string ValidationExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RegularExpressionValidator.ValidationExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.RegexTypeEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフィールドを検証するために使用するパターンを決定する正規表現を設定します。</summary>
+        <value>形式のフィールドの検証に使用される正規表現を指定する文字列。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、予測可能な一連の社会保障番号、電子メール アドレス、電話番号、および郵便番号などの文字を確認するために使用するパターンを指定します。  
+  
+ <xref:System.Web.UI.WebControls.RegularExpressionValidator>空の文字列の検証は実行されません。 テストする文字列を空にすることがある場合を使用して、<xref:System.Web.UI.WebControls.RequiredFieldValidator>だけでなく<xref:System.Web.UI.WebControls.RegularExpressionValidator>です。  
+  
+ 正規表現の詳細については、次を参照してください。 [.NET Framework 正規表現](~/docs/standard/base-types/regular-expressions.md)です。  
+  
+> [!NOTE]
+>  パターン一致式で問題が発生する場合は、式での折り返しを再試行してください"^ (「および」) の $"です。 たとえば、"、(& a) #124; ab"になります"^ (、&#124; ab) $"です。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、 <xref:System.Web.UI.WebControls.RegularExpressionValidator.ValidationExpression%2A> 5 桁の数字を含むフィールドを検証するプロパティです。 ときに、<xref:System.Web.UI.WebControls.Button>コントロールがクリックされた、結果として得られる<xref:System.Web.UI.WebControls.Button.OnClick%2A>イベント ハンドラーのチェック、<xref:System.Web.UI.Page.IsValid%2A>のプロパティ、<xref:System.Web.UI.Page>を決定するかどうか内のテキスト、<xref:System.Web.UI.WebControls.TextBox>正規表現を満たします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic RegularExpressionValidator Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RegularExpressionValidator Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RegularExpressionValidator Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RegularExpressionValidator Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">正規表現の形式が正しくありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

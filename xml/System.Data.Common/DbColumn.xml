@@ -1,0 +1,605 @@
+<Type Name="DbColumn" FullName="System.Data.Common.DbColumn">
+  <TypeSignature Language="C#" Value="public abstract class DbColumn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DbColumn extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.DbColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ ソース内の列を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DbColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DbColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowDBNull">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; AllowDBNull { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; AllowDBNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.AllowDBNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="DBNull" /> 値がこの列で許容されるかどうかを示す null 許容のブール値を取得します。または値が設定されていない場合は <see langword="null" /> を返します。 <see langword="true" /> または <see langword="false" /> のいずれかを設定して、<see langword="DBNull" /> 値がこの列で許容されるかどうかを示します。または派生クラスで無視される場合は <see langword="null" /> (Visual Basicの場合 <see langword="Nothing" />) を設定できます。</summary>
+        <value><see langword="DBNull" /> 値がこの列で許可されている場合、<see langword="true" /> を返します。それ以外の場合は <see langword="false" /> です。 値が設定されていない場合は、null 参照 (Visual Basic の場合は <see langword="Nothing" />) が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseCatalogName">
+      <MemberSignature Language="C#" Value="public string BaseCatalogName { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BaseCatalogName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.BaseCatalogName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースに関連付けられているカタログ名を取得します。それ以外で、値が設定されていない場合は <see langword="null" /> です。 カタログ名、または派生クラスで無視される場合は <see langword="null" />、のいずれかに設定できます。</summary>
+        <value>データ ソースに関連付けられているカタログ名です。それ以外で、値が設定されていない場合は null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseColumnName">
+      <MemberSignature Language="C#" Value="public string BaseColumnName { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BaseColumnName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.BaseColumnName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ベースの列名を取得します。それ以外で、値が設定されていない場合は <see langword="null" /> です。 列名、または派生クラスで無視される場合は <see langword="null" /> のいずれかに設定できます。</summary>
+        <value>ベースの列名、それ以外で値が設定されていない場合は null 参照 (Visual Basic の場合 <see langword="Nothing" />)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseSchemaName">
+      <MemberSignature Language="C#" Value="public string BaseSchemaName { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BaseSchemaName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.BaseSchemaName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースに関連付けられているスキーマ名を取得します。値が設定されていない場合は <see langword="null" /> です。 スキーマ名か、派生クラスで無視される場合は <see langword="null" /> に設定できます。</summary>
+        <value>データ ソースに関連付けられているスキーマ名です。値が設定されていない場合は null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseServerName">
+      <MemberSignature Language="C#" Value="public string BaseServerName { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BaseServerName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.BaseServerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列に関連付けられているサーバー名を取得します。それ以外で、値が設定されていない場合は <see langword="null" /> です。 サーバー名、または派生クラスで無視される場合は <see langword="null" />、のいずれかに設定できます。</summary>
+        <value>列に関連付けられているサーバー名です。それ以外で、値が設定されていない場合は null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseTableName">
+      <MemberSignature Language="C#" Value="public string BaseTableName { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BaseTableName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.BaseTableName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スキーマ内のテーブル名を取得します。値が設定されていない場合は <see langword="null" /> です。 テーブル名か、派生クラスで無視される場合は <see langword="null" /> に設定できます。</summary>
+        <value>スキーマ内のテーブル名です。値が設定されていない場合は null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnName">
+      <MemberSignature Language="C#" Value="public string ColumnName { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ColumnName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.ColumnName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の名前を取得します。 派生クラスでオーバーライドされた場合は列名に設定できます。</summary>
+        <value>列の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnOrdinal">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; ColumnOrdinal { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; ColumnOrdinal" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.ColumnOrdinal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データソース行での列の位置 (序数) を取得します。値が設定されていない場合は <see langword="null" /> です。 列の位置を指定する <see langword="int32" /> 値、または派生クラスで無視される場合 <see langword="null" />、のいずれかに設定できます。</summary>
+        <value>列序数の <see langword="int32" /> 値、値が設定されていない場合は null 参照 (Visual Basic の場合 <see langword="Nothing" />)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnSize">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; ColumnSize { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; ColumnSize" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.ColumnSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のサイズを取得します。値が設定されていない場合は <see langword="null" /> です。 列のサイズを指定する <see langword="int32" /> 値か、派生クラスで無視される場合は <see langword="null" /> に設定できます。</summary>
+        <value><see langword="int32" />値を列のサイズです。 それ以外の場合は、null 参照 (<see langword="Nothing" /> Visual Basic で) 値が設定されていない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataType">
+      <MemberSignature Language="C#" Value="public Type DataType { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DataType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.DataType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列に格納されているデータの型を取得します。 設定することができます、<see cref="T:System.Type" />派生クラスでオーバーライドされると、列内のデータ型を表すオブジェクト。</summary>
+        <value>列に含まれるデータ型を表す <see cref="T:System.Type" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTypeName">
+      <MemberSignature Language="C#" Value="public string DataTypeName { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.DataTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ型の名前を取得します。値が設定されていない場合は <see langword="null" /> です。 データ型の名前、または派生クラスで無視される場合は <see langword="null" />、のいずれかに設定できます。</summary>
+        <value>データ型の名前、あるいは値が設定されていない場合は null 参照 (Visual Basic の場合 <see langword="Nothing" />)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAliased">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsAliased { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsAliased" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.IsAliased" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この列に別名が設定されているかどうかを示す null 許容のブール値を取得するか、値が設定されていない場合は <see langword="null" /> を返します。 <see langword="true" />、この列に別名が設定されているかどうかを示す <see langword="false" />、または派生クラスで無視される場合 <see langword="null" /> (Visual Basic の場合 <see langword="Nothing" />)、のいずれかに設定できます。</summary>
+        <value>この列に別名が設定されている場合 <see langword="true" /> を返します。それ以外の場合、<see langword="false" /> です。 値が設定されていない場合は、null 参照 (Visual Basic の場合は <see langword="Nothing" />) が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAutoIncrement">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsAutoIncrement { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsAutoIncrement" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.IsAutoIncrement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この列の値が自動的にインクリメントされるかどうかを示す null 許容のブール値を取得するか、値が設定されていない場合は <see langword="null" /> を返します。 <see langword="true" />、この列の値が自動的にインクリメントされるかどうかを示す <see langword="false" />、または派生クラスで無視される場合 <see langword="null" /> (Visual Basic の場合 <see langword="Nothing" />)、のいずれかに設定できます。</summary>
+        <value>この列の値が自動的にインクリメントされる場合に <see langword="true" /> を返します。それ以外の場合は <see langword="false" /> です。 値が設定されていない場合は、null 参照 (Visual Basic の場合は <see langword="Nothing" />) が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsExpression">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsExpression { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.IsExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この列が式であるかどうかを示す null 許容のブール値を取得するか、値が設定されていない場合は <see langword="null" /> を返します。 <see langword="true" />、この列が式であるかどうかを示す <see langword="false" />、または派生クラスで無視される場合 <see langword="null" /> (Visual Basic の場合 <see langword="Nothing" />)、のいずれかに設定できます。</summary>
+        <value>この列が式である場合 <see langword="true" /> を返します。それ以外の場合、<see langword="false" /> です。 値が設定されていない場合は、null 参照 (Visual Basic の場合は <see langword="Nothing" />) が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHidden">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsHidden { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsHidden" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.IsHidden" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この列が非表示であるかどうかを示す null 許容のブール値を取得するか、値が設定されていない場合は <see langword="null" /> を返します。 <see langword="true" /> または <see langword="false" /> のいずれかを設定して、この列が非表示かどうかを示します。または、派生クラスで無視される場合は <see langword="null" /> (Visual Basic の場合 <see langword="Nothing" />) を設定できます。</summary>
+        <value>この列が非表示である場合 <see langword="true" /> を返します。それ以外の場合、<see langword="false" /> です。 値が設定されていない場合は、null 参照 (Visual Basic の場合は <see langword="Nothing" />) が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIdentity">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsIdentity { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.IsIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この列が ID であるかどうかを示す null 許容のブール値を取得するか、値が設定されていない場合は <see langword="null" /> を返します。 <see langword="true" />、この列が ID であるかどうかを示す <see langword="false" />、または派生クラスで無視される場合は <see langword="null" /> (Visual Basic の場合は <see langword="Nothing" />) のいずれかに設定できます。</summary>
+        <value>この列が ID の場合は <see langword="true" /> を返します。それ以外の場合は <see langword="false" /> です。 値が設定されていない場合は、null 参照 (Visual Basic の場合は <see langword="Nothing" />) が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKey">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsKey { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.IsKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この列がキーであるかどうかを示す null 許容のブール値を取得するか、値が設定されていない場合は <see langword="null" /> を返します。 <see langword="true" />、この列がキーであるかどうかを示す <see langword="false" />、または派生クラスで無視される場合は <see langword="null" /> (Visual Basic の場合は <see langword="Nothing" />) に設定できます。</summary>
+        <value>この列がキーの場合は <see langword="true" /> を返します。それ以外の場合は <see langword="false" /> です。 値が設定されていない場合は、null 参照 (Visual Basic の場合は <see langword="Nothing" />) が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLong">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsLong { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsLong" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.IsLong" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この列が長いデータを含むかどうかを示す null 許容のブール値を取得するか、値が設定されていない場合は <see langword="null" /> を返します。 <see langword="true" />、この列が長いデータを含むかどうかを示す <see langword="false" />、または派生クラスで無視される場合 <see langword="null" /> (Visual Basic の場合 <see langword="Nothing" />)、のいずれかに設定できます。</summary>
+        <value>この列が長いデータを含む場合に <see langword="true" /> を返します。それ以外の場合は <see langword="false" /> です。 値が設定されていない場合は、null 参照 (Visual Basic の場合は <see langword="Nothing" />) が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsReadOnly { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この列が読み取り専用であるかどうかを示す null 許容のブール値を取得するか、値が設定されていない場合は <see langword="null" /> を返します。 <see langword="true" /> または <see langword="false" /> のいずれかを設定して、この列が読み取り専用であるかどうかを示します。または、派生クラスで無視される場合は <see langword="null" /> (Visual Basic の場合 <see langword="Nothing" />) を設定できます。</summary>
+        <value>この列が読み取り専用の場合は <see langword="true" /> を返し、それ以外の場合は <see langword="false" /> を返します。 値が設定されていない場合は、null 参照 (Visual Basic の場合は <see langword="Nothing" />) が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnique">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsUnique { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsUnique" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.IsUnique" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一意の制約がこの列に適用されるかどうかを示す null 許容のブール値を取得します。または、値が設定されていない場合は <see langword="null" /> を返します。 <see langword="true" /> または <see langword="false" /> のいずれかを設定して、一意の制約がこの列に適用されるかどうかを示します。または、派生クラスで無視される場合は <see langword="null" /> (Visual Basic の場合 <see langword="Nothing" />) を設定できます。</summary>
+        <value>この列に一意の制約が適用される場合、<see langword="true" /> を返します。それ以外の場合 <see langword="false" /> です。 値が設定されていない場合は、null 参照 (Visual Basic の場合は <see langword="Nothing" />) が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual object this[string property] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="property">列のプロパティ名。</param>
+        <summary>列プロパティの名前に基づいてオブジェクトを取得します。</summary>
+        <value>列のプロパティ名に基づくオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumericPrecision">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; NumericPrecision { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; NumericPrecision" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.NumericPrecision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のデータの数値有効桁数を取得します。あるいは値が設定されていない場合は <see langword="null" />。 列のデータの数値有効桁数を指定する <see langword="int32" /> 値か、派生クラスで無視される場合は <see langword="null" /> に設定できます。</summary>
+        <value><see langword="int32" />データがそれ以外の数値の場合は、列のデータの有効桁数を指定する値、null 参照 (<see langword="Nothing" /> Visual Basic で) 値が設定されていない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumericScale">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; NumericScale { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;int32&gt; NumericScale" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.NumericScale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="null" /> または列のデータの小数点以下桁数を返す、null 許容の <see langword="int32" /> 値を取得します。 設定できるいずれかに<see langword="null" />または<see langword="int32" />派生クラスでオーバーライドされた場合は、列のデータの数値の小数点以下桁数の値。</summary>
+        <value>値が設定されていない場合、null 参照 (Visual Basic の場合は <see langword="Nothing" />)、あるいはデータが数値の場合、列のデータの有効桁数を指定する <see langword="int32" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UdtAssemblyQualifiedName">
+      <MemberSignature Language="C#" Value="public string UdtAssemblyQualifiedName { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UdtAssemblyQualifiedName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbColumn.UdtAssemblyQualifiedName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のデータの型を表す <see cref="T:System.Type" /> オブジェクトのアセンブリ修飾名を取得します。それ以外で、値が設定されていない場合は、<see langword="null" /> です。 アセンブリ修飾名、または派生クラスで無視される場合は <see langword="null" />、のいずれかに設定できます。</summary>
+        <value>列のデータの型を表す <see cref="T:System.Type" /> オブジェクトのアセンブリ修飾名です。それ以外で、値が設定されていない場合は、null 参照 (Visual Basic の場合 <see langword="Nothing" />) です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

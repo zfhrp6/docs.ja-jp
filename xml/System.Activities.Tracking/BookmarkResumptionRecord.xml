@@ -1,0 +1,161 @@
+<Type Name="BookmarkResumptionRecord" FullName="System.Activities.Tracking.BookmarkResumptionRecord">
+  <TypeSignature Language="C#" Value="public sealed class BookmarkResumptionRecord : System.Activities.Tracking.TrackingRecord" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BookmarkResumptionRecord extends System.Activities.Tracking.TrackingRecord" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Tracking.BookmarkResumptionRecord" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.Tracking.TrackingRecord</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+          <see cref="T:System.Activities.Bookmark" /> が再開されたとき、ランタイム追跡インフラストラクチャによって追跡参加要素へ送られるデータを格納します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BookmarkResumptionRecord (Guid instanceId, long recordNumber, Guid bookmarkScope, string bookmarkName, System.Activities.Tracking.ActivityInfo owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, int64 recordNumber, valuetype System.Guid bookmarkScope, string bookmarkName, class System.Activities.Tracking.ActivityInfo owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.BookmarkResumptionRecord.#ctor(System.Guid,System.Int64,System.Guid,System.String,System.Activities.Tracking.ActivityInfo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="recordNumber" Type="System.Int64" />
+        <Parameter Name="bookmarkScope" Type="System.Guid" />
+        <Parameter Name="bookmarkName" Type="System.String" />
+        <Parameter Name="owner" Type="System.Activities.Tracking.ActivityInfo" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">関連付けられているアクティビティのインスタンス ID。</param>
+        <param name="recordNumber">追跡レコードを生成する順序を定義するシーケンス。</param>
+        <param name="bookmarkScope">関連付けられているアクティビティの <see cref="T:System.Activities.BookmarkScope" /> の ID。</param>
+        <param name="bookmarkName">ブックマーク名。</param>
+        <param name="owner">ブックマークの再開を待機していたアクティビティ。</param>
+        <summary>指定したインスタンス ID、レコード番号、ブックマーク スコープ、ブックマーク名、および所有者を使用して、<see cref="T:System.Activities.Tracking.BookmarkResumptionRecord" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BookmarkName">
+      <MemberSignature Language="C#" Value="public string BookmarkName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BookmarkName" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Tracking.BookmarkResumptionRecord.BookmarkName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー実行エンジンによって再開された <see cref="T:System.Activities.Bookmark" /> の名前を取得します。</summary>
+        <value>この <see cref="T:System.Activities.Bookmark" /> によって参照される <see cref="T:System.Activities.Tracking.BookmarkResumptionRecord" /> の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BookmarkScope">
+      <MemberSignature Language="C#" Value="public Guid BookmarkScope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid BookmarkScope" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Tracking.BookmarkResumptionRecord.BookmarkScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このブックマークに関連付けられている <see cref="T:System.Activities.BookmarkScope" /> のスコープ ID を取得します。</summary>
+        <value>スコープ ID。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="protected override System.Activities.Tracking.TrackingRecord Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Activities.Tracking.TrackingRecord Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.BookmarkResumptionRecord.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Tracking.TrackingRecord</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Activities.Tracking.ActivityInfo Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Tracking.ActivityInfo Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Tracking.BookmarkResumptionRecord.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Tracking.ActivityInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブックマークの再開を待機していた <see cref="T:System.Activities.Tracking.ActivityInfo" /> オブジェクトの情報を取得します。</summary>
+        <value>アクティビティ情報。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Payload">
+      <MemberSignature Language="C#" Value="public object Payload { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Payload" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Tracking.BookmarkResumptionRecord.Payload" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Bookmark" /> が再開されたときに渡された値を取得します。</summary>
+        <value><see cref="T:System.Activities.Bookmark" /> が再開されたときに渡された値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.BookmarkResumptionRecord.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.String" /> オブジェクトを表す <see cref="T:System.Activities.Tracking.BookmarkResumptionRecord" /> を返します。</summary>
+        <returns>現在のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

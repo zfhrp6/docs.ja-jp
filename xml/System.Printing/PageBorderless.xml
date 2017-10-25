@@ -1,0 +1,83 @@
+<Type Name="PageBorderless" FullName="System.Printing.PageBorderless">
+  <TypeSignature Language="C#" Value="public enum PageBorderless" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PageBorderless extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PageBorderless" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>印刷デバイスが、メディアの端まで印刷またはエッジに余白を提供するかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのレーザー プリンターとインク ジェット プリンターはふちなし印刷をサポートしません。 余白を取得中に用紙をプリンターの部分からトナーを防ぐために必要になります。 ただし、多くの写真プリンターは、ふちなし印刷をサポートしています。  
+  
+ 目的のための主に、この型の値を使用します。  
+  
+-   メンバーとして、<xref:System.Printing.PrintCapabilities.PageBorderlessCapability%2A>プロパティには、コレクションの<xref:System.Printing.PrintCapabilities>、これらの値は、デバイスがふちなし印刷をサポートしているかどうかを示します。  
+  
+-   値として、<xref:System.Printing.PrintTicket.PageBorderless%2A>のプロパティ、<xref:System.Printing.PrintTicket>の値は、指示、プリンター、メディアの端まで印刷するかどうか。  
+  
+ **不明な**のプロパティで値が使われていない<xref:System.Printing.PrintCapabilities>オブジェクト。  
+  
+ 設定する必要がありますしない、<xref:System.Printing.PrintTicket>プロパティを**不明な**します。 その他の場合<xref:System.Printing.PrintTicket>生成したアプリケーションが作成、 *PrintTicket ドキュメント*ページふちなし機能を認識されないオプションを設定する、<xref:System.Printing.PrintTicket>そのドキュメントに作成されますが、アプリケーションのオブジェクトになります**不明な**の値として、<xref:System.Printing.PrintTicket.PageBorderless%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Borderless">
+      <MemberSignature Language="C#" Value="Borderless" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PageBorderless Borderless = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PageBorderless.Borderless" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PageBorderless</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>用紙の端にデバイスの出力は、印刷フチなし。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PageBorderless None = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PageBorderless.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PageBorderless</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>枠線で印刷、つまり、デバイスを提供余白、用紙の端の周りします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.PageBorderless Unknown = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.PageBorderless.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PageBorderless</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>機能 (オプションはこの列挙体によって表されます) は、定義されていないオプションに設定されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

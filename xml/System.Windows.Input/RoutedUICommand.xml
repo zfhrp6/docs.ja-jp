@@ -1,0 +1,151 @@
+<Type Name="RoutedUICommand" FullName="System.Windows.Input.RoutedUICommand">
+  <TypeSignature Language="C#" Value="public class RoutedUICommand : System.Windows.Input.RoutedCommand" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RoutedUICommand extends System.Windows.Input.RoutedCommand" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.RoutedUICommand" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.RoutedCommand</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Input.CommandConverter, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>定義、<see cref="T:System.Windows.Input.ICommand" />を要素ツリーを通じてルーティングされ、text プロパティが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 間の違い、<xref:System.Windows.Input.RoutedUICommand>と<xref:System.Windows.Input.RoutedCommand>される<xref:System.Windows.Input.RoutedUICommand>が含まれています、<xref:System.Windows.Input.RoutedUICommand.Text%2A>プロパティです。  
+  
+ <xref:System.Windows.Input.RoutedCommand.Execute%2A>と<xref:System.Windows.Input.RoutedCommand.CanExecute%2A>のメソッド、<xref:System.Windows.Input.RoutedCommand>ように、通常の場合は、コマンドは、コマンドのロジックを含まない<xref:System.Windows.Input.ICommand>です。  これらのメソッドを持つオブジェクトを探して、要素ツリーを走査するイベントを発生させる、<xref:System.Windows.Input.CommandBinding>です。  イベント ハンドラーがアタッチされている、<xref:System.Windows.Input.CommandBinding>コマンド ロジックが含まれています。  
+  
+ <xref:System.Windows.Input.RoutedCommand.Execute%2A>メソッドが発生し、<xref:System.Windows.Input.CommandManager.PreviewExecuted>と<xref:System.Windows.Input.CommandManager.Executed>イベント。  <xref:System.Windows.Input.RoutedCommand.CanExecute%2A>メソッドが発生し、<xref:System.Windows.Input.CommandManager.PreviewCanExecute>と<xref:System.Windows.Input.CommandManager.CanExecute>イベント。  
+  
+<a name="xamlAttributeUsage_RoutedUICommand"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="predefinedCommandName"/>  
+- or -  
+<object property="predefinedClassName.predefinedCommandName"/>  
+- or -  
+<object property="{x:Static customClassName.customCommandName}"/>  
+  
+```  
+  
+<a name="xamlValues_RoutedUICommand"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *predefinedClassName*  
+ 定義済みのコマンド クラスの 1 つ。  
+  
+ *predefinedCommandName*  
+ 定義済みのコマンドのいずれか。  
+  
+ *プレフィックス*  
+ `xlmns`マップ プレフィックス*customClassName*.*customCommandName*を[!INCLUDE[TLA2#tla_net](~/includes/tla2sharptla-net-md.md)]クラスです。  詳細については、次を参照してください。 [XAML 名前空間と WPF XAML のマッピングの Namespace](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
+  
+ *customClassName*  
+ カスタム コマンドが含まれたカスタム クラス。  
+  
+ *customCommandName*  
+ カスタム コマンド。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoutedUICommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.RoutedUICommand.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.RoutedUICommand" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoutedUICommand (string text, string name, Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string name, class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.RoutedUICommand.#ctor(System.String,System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="text">コマンドの説明テキスト。</param>
+        <param name="name">シリアル化のためのコマンドは、の宣言された名前。</param>
+        <param name="ownerType">このコマンドを登録する型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.RoutedUICommand" />クラス、わかりやすいテキストを指定して、名前、および所有者型を宣言します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="ownerType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoutedUICommand (string text, string name, Type ownerType, System.Windows.Input.InputGestureCollection inputGestures);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string name, class System.Type ownerType, class System.Windows.Input.InputGestureCollection inputGestures) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.RoutedUICommand.#ctor(System.String,System.String,System.Type,System.Windows.Input.InputGestureCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="inputGestures" Type="System.Windows.Input.InputGestureCollection" />
+      </Parameters>
+      <Docs>
+        <param name="text">コマンドの説明テキスト。</param>
+        <param name="name">シリアル化のためのコマンドは、の宣言された名前。</param>
+        <param name="ownerType">このコマンドを登録する型。</param>
+        <param name="inputGestures">関連付けるコマンド、ジェスチャのコレクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.RoutedUICommand" />クラス、指定された説明テキスト、宣言された名前、所有者型、および入力ジェスチャを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="ownerType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.RoutedUICommand.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このコマンドを説明するテキストを設定します。</summary>
+        <value>コマンドを説明するテキストです。  既定値は空の文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

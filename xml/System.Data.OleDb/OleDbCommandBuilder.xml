@@ -1,0 +1,633 @@
+<Type Name="OleDbCommandBuilder" FullName="System.Data.OleDb.OleDbCommandBuilder">
+  <TypeSignature Language="C#" Value="public sealed class OleDbCommandBuilder : System.Data.Common.DbCommandBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OleDbCommandBuilder extends System.Data.Common.DbCommandBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbCommandBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbCommandBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>加えられた変更を調整するために使用される単一テーブル コマンドを自動的に生成、<see cref="T:System.Data.DataSet" />データベースに関連付けられました。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbDataAdapter>に加えられた変更を調整するために必要な SQL ステートメントを自動的に生成しない、<xref:System.Data.DataSet>関連付けられているデータ ソースとします。 ただし、作成することができます、<xref:System.Data.OleDb.OleDbCommandBuilder>設定した場合、SQL ステートメントの 1 つのテーブルの更新プログラムを自動的に生成するオブジェクト、<xref:System.Data.OleDb.OleDbDataAdapter.SelectCommand%2A>のプロパティ、<xref:System.Data.OleDb.OleDbDataAdapter>です。 次に、追加の SQL ステートメントを設定しないことがによって生成される、<xref:System.Data.OleDb.OleDbCommandBuilder>です。  
+  
+ <xref:System.Data.OleDb.OleDbCommandBuilder>自体のリスナーとして登録<xref:System.Data.OleDb.OleDbDataAdapter.RowUpdating>を設定する場合に、イベント、<xref:System.Data.OleDb.OleDbCommandBuilder.DataAdapter%2A>プロパティです。 関連付けることができますのみ<xref:System.Data.OleDb.OleDbDataAdapter>または<xref:System.Data.OleDb.OleDbCommandBuilder>互いにオブジェクトを一度に 1 つです。  
+  
+ INSERT、UPDATE、または DELETE のステートメントを生成する、<xref:System.Data.OleDb.OleDbCommandBuilder>を使用して、<xref:System.Data.OleDb.OleDbDataAdapter.SelectCommand%2A>自動的に必要な一連のメタデータを取得するプロパティです。 変更した場合、<xref:System.Data.OleDb.OleDbDataAdapter.SelectCommand%2A>メタデータが取得された後、呼び出す必要があります最初の更新の後など、<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>にメタデータを更新する方法です。  
+  
+ <xref:System.Data.OleDb.OleDbCommandBuilder>も使用して、 <xref:System.Data.OleDb.OleDbCommand.Connection%2A>、 <xref:System.Data.OleDb.OleDbCommand.CommandTimeout%2A>、および<xref:System.Data.OleDb.OleDbCommand.Transaction%2A>プロパティによって参照される、<xref:System.Data.OleDb.OleDbDataAdapter.SelectCommand%2A>です。 ユーザーが呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>1 つ以上のこれらのプロパティを変更すると場合、または、<xref:System.Data.OleDb.OleDbDataAdapter.SelectCommand%2A>自体は置き換えられます。 それ以外の場合、 <xref:System.Data.OleDb.OleDbDataAdapter.InsertCommand%2A>、 <xref:System.Data.OleDb.OleDbDataAdapter.UpdateCommand%2A>、および<xref:System.Data.OleDb.OleDbDataAdapter.DeleteCommand%2A>プロパティは、前回の値を保持します。  
+  
+ 呼び出す場合<xref:System.ComponentModel.Component.Dispose%2A>、<xref:System.Data.OleDb.OleDbCommandBuilder>関連付けが解除され、 <xref:System.Data.OleDb.OleDbDataAdapter>、され、生成されたコマンドは使用されなくです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.OleDb.OleDbCommand>と共に、<xref:System.Data.OleDb.OleDbDataAdapter>と<xref:System.Data.OleDb.OleDbConnection>、データ ソースから行を選択します。 例が初期化された渡された<xref:System.Data.DataSet>、接続文字列、クエリ文字列では、SQL SELECT ステートメント、およびデータ ソース テーブルの名前を指定する文字列。 作成し、<xref:System.Data.OleDb.OleDbCommandBuilder>です。  
+  
+ [!code-csharp[Classic WebData OleDbCommandBuilder#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbCommandBuilder/CS/mysample.cs#1)]
+ [!code-vb[Classic WebData OleDbCommandBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbCommandBuilder/VB/mysample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OleDbCommandBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OleDb.OleDbCommandBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OleDbCommandBuilder (System.Data.OleDb.OleDbDataAdapter adapter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.OleDb.OleDbDataAdapter adapter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.#ctor(System.Data.OleDb.OleDbDataAdapter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="adapter" Type="System.Data.OleDb.OleDbDataAdapter" />
+      </Parameters>
+      <Docs>
+        <param name="adapter"><see cref="T:System.Data.OleDb.OleDbDataAdapter" />。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Data.OleDb.OleDbCommandBuilder" /> 、関連付けられているクラス<see cref="T:System.Data.OleDb.OleDbDataAdapter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbCommandBuilder>自体のリスナーとして登録<xref:System.Data.OleDb.OleDbDataAdapter.RowUpdating>によって生成されるイベント、<xref:System.Data.OleDb.OleDbDataAdapter>このプロパティで指定します。  
+  
+ 新しいインスタンスを作成する場合<xref:System.Data.OleDb.OleDbCommandBuilder>、既存<xref:System.Data.OleDb.OleDbCommandBuilder>これに関連付けられている<xref:System.Data.OleDb.OleDbDataAdapter>を解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyParameterInfo">
+      <MemberSignature Language="C#" Value="protected override void ApplyParameterInfo (System.Data.Common.DbParameter parameter, System.Data.DataRow datarow, System.Data.StatementType statementType, bool whereClause);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ApplyParameterInfo(class System.Data.Common.DbParameter parameter, class System.Data.DataRow datarow, valuetype System.Data.StatementType statementType, bool whereClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.ApplyParameterInfo(System.Data.Common.DbParameter,System.Data.DataRow,System.Data.StatementType,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Data.Common.DbParameter" />
+        <Parameter Name="datarow" Type="System.Data.DataRow" />
+        <Parameter Name="statementType" Type="System.Data.StatementType" />
+        <Parameter Name="whereClause" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">To be added.</param>
+        <param name="datarow">To be added.</param>
+        <param name="statementType">To be added.</param>
+        <param name="whereClause">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataAdapter">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbDataAdapter DataAdapter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OleDb.OleDbDataAdapter DataAdapter" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbCommandBuilder.DataAdapter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbDataAdapter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.OleDb.OleDbDataAdapter" />オブジェクトの SQL ステートメントが自動的に生成します。</summary>
+        <value><see cref="T:System.Data.OleDb.OleDbDataAdapter" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbCommandBuilder>自体のリスナーとして登録<xref:System.Data.OleDb.OleDbDataAdapter.RowUpdating>によって生成されるイベント、<xref:System.Data.OleDb.OleDbDataAdapter>このプロパティで指定します。  
+  
+ 新しいインスタンスを作成する場合<xref:System.Data.OleDb.OleDbCommandBuilder>、既存<xref:System.Data.OleDb.OleDbCommandBuilder>これに関連付けられている<xref:System.Data.OleDb.OleDbDataAdapter>を解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeriveParameters">
+      <MemberSignature Language="C#" Value="public static void DeriveParameters (System.Data.OleDb.OleDbCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DeriveParameters(class System.Data.OleDb.OleDbCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.DeriveParameters(System.Data.OleDb.OleDbCommand)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.Data.OleDb.OleDbCommand" />
+      </Parameters>
+      <Docs>
+        <param name="command"><see cref="T:System.Data.OleDb.OleDbCommand" />が、パラメーター情報の派生元となるストアド プロシージャを参照します。 派生パラメーターに追加されます、<see cref="P:System.Data.OleDb.OleDbCommand.Parameters" />のコレクション、<see cref="T:System.Data.OleDb.OleDbCommand" />です。</param>
+        <summary>指定されたストアド プロシージャからパラメーター情報を取得、<see cref="T:System.Data.OleDb.OleDbCommand" />取り込んで、<see cref="P:System.Data.OleDb.OleDbCommand.Parameters" />の指定されたコレクション<see cref="T:System.Data.OleDb.OleDbCommand" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbCommandBuilder.DeriveParameters%2A>既存のパラメーター情報を上書き、<xref:System.Data.OleDb.OleDbCommand>です。  
+  
+ <xref:System.Data.OleDb.OleDbCommandBuilder.DeriveParameters%2A>情報を取得するデータ ソースに追加の呼び出しが必要です。 パラメーター情報が事前にわかっている場合は、情報を明示的に設定して、パラメーター コレクションを設定する方が効率的です。  
+  
+ 使用できるだけ<xref:System.Data.OleDb.OleDbCommandBuilder.DeriveParameters%2A>ストアド プロシージャを使用します。 使用することはできません<xref:System.Data.OleDb.OleDbCommandBuilder.DeriveParameters%2A>を設定する、<xref:System.Data.OleDb.OleDbParameterCollection>パラメーター化された SELECT ステートメントなど、任意の TRANSACT-SQL ステートメントを使用します。  
+  
+ 詳細については、次を参照してください。[構成パラメーターとパラメーターのデータ型](~/docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基になる OLE DB プロバイダーがストアド プロシージャのパラメーター情報を返すことをサポートしていない、コマンド テキストが有効なストアド プロシージャ名、または<see cref="P:System.Data.OleDb.OleDbCommand.CommandType" />でした指定<see langword="StoredProcedure" />です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetDeleteCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OleDb.OleDbCommand" />データ ソースの削除を実行するために必要なオブジェクトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OleDb.OleDbCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.OleDb.OleDbCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.OleDb.OleDbDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>はまだ正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.OleDb.OleDbDataAdapter.UpdateCommand*>または<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetDeleteCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbCommand GetDeleteCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbCommand GetDeleteCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OleDb.OleDbCommand" />データ ソースの削除を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OleDb.OleDbCommand" />削除を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OleDb.OleDbCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.OleDb.OleDbCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.OleDb.OleDbDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>はまだ正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.OleDb.OleDbDataAdapter.UpdateCommand*>または<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDeleteCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbCommand GetDeleteCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbCommand GetDeleteCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">場合<see langword="true" />、可能な場合に、列名に一致するパラメーター名を生成します。 場合<see langword="false" />、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OleDb.OleDbCommand" />データ ソースの削除を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OleDb.OleDbCommand" />削除を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OleDb.OleDbCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.OleDb.OleDbCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.OleDb.OleDbDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>はまだ正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.OleDb.OleDbDataAdapter.UpdateCommand*>または<xref:System.Data.OleDb.OleDbCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターさせることができます、<xref:System.Data.OleDb.OleDbCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>が指定されている、生成されたパラメーター名以上の長さ。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>正規表現。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetInsertCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OleDb.OleDbCommand" />データ ソースでの挿入を実行するために必要なオブジェクトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングを目的のテキストを返すので、<xref:System.Data.OleDb.OleDbCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.OleDb.OleDbCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.OleDb.OleDbDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>はまだ正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.OleDb.OleDbDataAdapter.UpdateCommand*>または<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetInsertCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbCommand GetInsertCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbCommand GetInsertCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OleDb.OleDbCommand" />データ ソースでの挿入を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OleDb.OleDbCommand" />挿入を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングを目的のテキストを返すので、<xref:System.Data.OleDb.OleDbCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.OleDb.OleDbCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.OleDb.OleDbDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>はまだ正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.OleDb.OleDbDataAdapter.UpdateCommand*>または<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInsertCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbCommand GetInsertCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbCommand GetInsertCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">場合<see langword="true" />、可能な場合に、列名に一致するパラメーター名を生成します。 場合<see langword="false" />、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OleDb.OleDbCommand" />データ ソースでの挿入を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OleDb.OleDbCommand" />挿入を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングを目的のテキストを返すので、<xref:System.Data.OleDb.OleDbCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.OleDb.OleDbCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.OleDb.OleDbDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>はまだ正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.OleDb.OleDbDataAdapter.UpdateCommand*>または<xref:System.Data.OleDb.OleDbCommandBuilder.GetInsertCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターさせることができます、<xref:System.Data.OleDb.OleDbCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>が指定されている、生成されたパラメーター名以上の長さ。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>正規表現。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterName">
+      <MemberSignature Language="C#" Value="protected override string GetParameterName (int parameterOrdinal);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterName(int32 parameterOrdinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.GetParameterName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterOrdinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterOrdinal">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterName">
+      <MemberSignature Language="C#" Value="protected override string GetParameterName (string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterName(string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.GetParameterName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterPlaceholder">
+      <MemberSignature Language="C#" Value="protected override string GetParameterPlaceholder (int parameterOrdinal);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterPlaceholder(int32 parameterOrdinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.GetParameterPlaceholder(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterOrdinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterOrdinal">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetUpdateCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OleDb.OleDbCommand" />オブジェクト、データ ソースの更新を実行するために必要です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OleDb.OleDbCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.OleDb.OleDbCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.OleDb.OleDbDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>はまだ正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.OleDb.OleDbDataAdapter.UpdateCommand*>または<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetUpdateCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbCommand GetUpdateCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbCommand GetUpdateCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OleDb.OleDbCommand" />オブジェクト、データ ソースの更新を実行するために必要です。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OleDb.OleDbCommand" />オブジェクトの更新を実行するために必要です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OleDb.OleDbCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.OleDb.OleDbCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.OleDb.OleDbDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>はまだ正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.OleDb.OleDbDataAdapter.UpdateCommand*>または<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUpdateCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbCommand GetUpdateCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OleDb.OleDbCommand GetUpdateCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">場合<see langword="true" />、可能な場合に、列名に一致するパラメーター名を生成します。 場合<see langword="false" />、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OleDb.OleDbCommand" />必要に応じてパラメーターの名前の列を使用して、データ ソースで更新を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OleDb.OleDbCommand" />オブジェクトの更新を実行するために必要です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OleDb.OleDbCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.OleDb.OleDbCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.OleDb.OleDbDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>はまだ正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.OleDb.OleDbDataAdapter.UpdateCommand*>または<xref:System.Data.OleDb.OleDbCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターさせることができます、<xref:System.Data.OleDb.OleDbCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>が指定されている、生成されたパラメーター名以上の長さ。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>正規表現。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuoteIdentifier">
+      <MemberSignature Language="C#" Value="public override string QuoteIdentifier (string unquotedIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string QuoteIdentifier(string unquotedIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.QuoteIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unquotedIdentifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="unquotedIdentifier">元の囲まれていない識別子です。</param>
+        <summary>正しいカタログ ケースで囲まれていない識別子、指定したを返します、正しい形式の id を引用符で囲まれました。 これには、識別子に埋め込まれた引用符は、正しくエスケープが含まれます。</summary>
+        <returns>引用符で囲まれた識別子のバージョンです。 Id 内に埋め込まれた引用符は、正しくエスケープします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuoteIdentifier">
+      <MemberSignature Language="C#" Value="public string QuoteIdentifier (string unquotedIdentifier, System.Data.OleDb.OleDbConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string QuoteIdentifier(string unquotedIdentifier, class System.Data.OleDb.OleDbConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.QuoteIdentifier(System.String,System.Data.OleDb.OleDbConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unquotedIdentifier" Type="System.String" />
+        <Parameter Name="connection" Type="System.Data.OleDb.OleDbConnection" />
+      </Parameters>
+      <Docs>
+        <param name="unquotedIdentifier">引用符で囲まれた形式で返される囲まれていない識別子です。</param>
+        <param name="connection">接続が渡されると、OLE DB プロバイダーからの引用文字を取得するマネージ ラッパーが行われます。 接続が渡されない場合、文字列は引用符で囲まれた値を使用して<see cref="P:System.Data.Common.DbCommandBuilder.QuotePrefix" />と<see cref="P:System.Data.Common.DbCommandBuilder.QuoteSuffix" />です。</param>
+        <summary>正しいカタログ ケースで囲まれていない識別子、指定したを返します、正しい形式の id を引用符で囲まれました。 これには、識別子に埋め込まれた引用符は、正しくエスケープが含まれます。</summary>
+        <returns>引用符で囲まれた識別子のバージョンです。 Id 内に埋め込まれた引用符は、正しくエスケープします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRowUpdatingHandler">
+      <MemberSignature Language="C#" Value="protected override void SetRowUpdatingHandler (System.Data.Common.DbDataAdapter adapter);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetRowUpdatingHandler(class System.Data.Common.DbDataAdapter adapter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.SetRowUpdatingHandler(System.Data.Common.DbDataAdapter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="adapter" Type="System.Data.Common.DbDataAdapter" />
+      </Parameters>
+      <Docs>
+        <param name="adapter">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnquoteIdentifier">
+      <MemberSignature Language="C#" Value="public override string UnquoteIdentifier (string quotedIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string UnquoteIdentifier(string quotedIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.UnquoteIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="quotedIdentifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="quotedIdentifier">埋め込まれた引用符が削除される id。</param>
+        <summary>引用符で囲まれた識別子では、指定した識別子の正しい引用符なしの形式を返します。 これが正常に含まれますがエスケープされていないいずれかに埋め込まれた引用符識別子。</summary>
+        <returns>正しくエスケープされていない埋め込み文字を引用符で囲まれていない識別子です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnquoteIdentifier">
+      <MemberSignature Language="C#" Value="public string UnquoteIdentifier (string quotedIdentifier, System.Data.OleDb.OleDbConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string UnquoteIdentifier(string quotedIdentifier, class System.Data.OleDb.OleDbConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbCommandBuilder.UnquoteIdentifier(System.String,System.Data.OleDb.OleDbConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="quotedIdentifier" Type="System.String" />
+        <Parameter Name="connection" Type="System.Data.OleDb.OleDbConnection" />
+      </Parameters>
+      <Docs>
+        <param name="quotedIdentifier">埋め込まれた引用符が削除される id。</param>
+        <param name="connection"><see cref="T:System.Data.OleDb.OleDbConnection" />。</param>
+        <summary>引用符で囲まれた識別子では、指定した識別子の正しい引用符なしの形式を返します。 これが正常に含まれますがエスケープされていないいずれかに埋め込まれた引用符識別子。</summary>
+        <returns>正しくエスケープされていない埋め込み文字を引用符で囲まれていない識別子です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

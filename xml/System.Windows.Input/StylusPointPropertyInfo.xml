@@ -1,0 +1,225 @@
+<Type Name="StylusPointPropertyInfo" FullName="System.Windows.Input.StylusPointPropertyInfo">
+  <TypeSignature Language="C#" Value="public class StylusPointPropertyInfo : System.Windows.Input.StylusPointProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StylusPointPropertyInfo extends System.Windows.Input.StylusPointProperty" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.StylusPointPropertyInfo" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.StylusPointProperty</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内のプロパティの制約を指定、<see cref="T:System.Windows.Input.StylusPoint" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.StylusPointPropertyInfo>クラスから継承、<xref:System.Windows.Input.StylusPointProperty>クラスを生成、 <xref:System.Windows.Input.StylusPointPropertyInfo.Minimum%2A>、 <xref:System.Windows.Input.StylusPointPropertyInfo.Maximum%2A>、 <xref:System.Windows.Input.StylusPointPropertyInfo.Resolution%2A>、および<xref:System.Windows.Input.StylusPointPropertyInfo.Unit%2A>のプロパティを定義するために使用する値、<xref:System.Windows.Input.StylusPoint>です。 各プロパティ値の有効性は、デジタイザーとスタイラスの製造元によって異なります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.StylusPointDescription>オブジェクトから、<xref:System.Windows.Input.StylusPointCollection>ごとに情報を取得および<xref:System.Windows.Input.StylusPointPropertyInfo>で、<xref:System.Windows.Input.StylusPointDescription>です。  
+  
+ [!code-csharp[PacketSpy#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[PacketSpy#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#2)]  
+[!code-csharp[PacketSpy#4](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#4)]
+[!code-vb[PacketSpy#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StylusPointPropertyInfo (System.Windows.Input.StylusPointProperty stylusPointProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.StylusPointProperty stylusPointProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPointPropertyInfo.#ctor(System.Windows.Input.StylusPointProperty)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stylusPointProperty" Type="System.Windows.Input.StylusPointProperty" />
+      </Parameters>
+      <Docs>
+        <param name="stylusPointProperty"><see cref="T:System.Windows.Input.StylusPointProperty" />を新しい基本<see cref="T:System.Windows.Input.StylusPointProperty" />にします。</param>
+        <summary><see cref="T:System.Windows.Input.StylusPointPropertyInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、新しい<xref:System.Windows.Input.StylusPointPropertyInfo>です。  
+  
+ [!code-csharp[PacketSpy#16](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#16)]
+ [!code-vb[PacketSpy#16](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StylusPointPropertyInfo (System.Windows.Input.StylusPointProperty stylusPointProperty, int minimum, int maximum, System.Windows.Input.StylusPointPropertyUnit unit, float resolution);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.StylusPointProperty stylusPointProperty, int32 minimum, int32 maximum, valuetype System.Windows.Input.StylusPointPropertyUnit unit, float32 resolution) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.StylusPointPropertyInfo.#ctor(System.Windows.Input.StylusPointProperty,System.Int32,System.Int32,System.Windows.Input.StylusPointPropertyUnit,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stylusPointProperty" Type="System.Windows.Input.StylusPointProperty" />
+        <Parameter Name="minimum" Type="System.Int32" />
+        <Parameter Name="maximum" Type="System.Int32" />
+        <Parameter Name="unit" Type="System.Windows.Input.StylusPointPropertyUnit" />
+        <Parameter Name="resolution" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="stylusPointProperty"><see cref="T:System.Windows.Input.StylusPointProperty" />を新しい基本<see cref="T:System.Windows.Input.StylusPointProperty" />にします。</param>
+        <param name="minimum">最小値が受け入れられます、<see cref="T:System.Windows.Input.StylusPoint" />プロパティです。</param>
+        <param name="maximum">最大値が受け入れられます、<see cref="T:System.Windows.Input.StylusPoint" />プロパティです。</param>
+        <param name="unit"><see cref="T:System.Windows.Input.StylusPointPropertyUnit" /> 値のいずれか。</param>
+        <param name="resolution"><see cref="T:System.Windows.Input.StylusPoint" /> プロパティの値をこの単位に変換するスケール。</param>
+        <summary>指定した値を使用して、<see cref="T:System.Windows.Input.StylusPointPropertyInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、新しい<xref:System.Windows.Input.StylusPointPropertyInfo>です。  
+  
+ [!code-csharp[PacketSpy#16](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#16)]
+ [!code-vb[PacketSpy#16](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Maximum">
+      <MemberSignature Language="C#" Value="public int Maximum { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Maximum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusPointPropertyInfo.Maximum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>許容最大値を取得、<see cref="T:System.Windows.Input.StylusPoint" />プロパティです。</summary>
+        <value>最大値が受け入れられます、<see cref="T:System.Windows.Input.StylusPoint" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.StylusPointDescription>オブジェクトから、<xref:System.Windows.Input.StylusPointCollection>ごとに情報を取得および<xref:System.Windows.Input.StylusPointPropertyInfo>で、<xref:System.Windows.Input.StylusPointDescription>です。  
+  
+ [!code-csharp[PacketSpy#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[PacketSpy#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#2)]  
+[!code-csharp[PacketSpy#4](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#4)]
+[!code-vb[PacketSpy#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minimum">
+      <MemberSignature Language="C#" Value="public int Minimum { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Minimum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusPointPropertyInfo.Minimum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>許容最小値を取得、<see cref="T:System.Windows.Input.StylusPoint" />プロパティです。</summary>
+        <value>最小値が受け入れられます、<see cref="T:System.Windows.Input.StylusPoint" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.StylusPointDescription>オブジェクトから、<xref:System.Windows.Input.StylusPointCollection>ごとに情報を取得および<xref:System.Windows.Input.StylusPointPropertyInfo>で、<xref:System.Windows.Input.StylusPointDescription>です。  
+  
+ [!code-csharp[PacketSpy#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[PacketSpy#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#2)]  
+[!code-csharp[PacketSpy#4](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#4)]
+[!code-vb[PacketSpy#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolution">
+      <MemberSignature Language="C#" Value="public float Resolution { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Resolution" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusPointPropertyInfo.Resolution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変換するスケールを取得、<see cref="T:System.Windows.Input.StylusPoint" />単位 (ou) のプロパティの値。</summary>
+        <value>スケールに変換する<see cref="T:System.Windows.Input.StylusPoint" />単位 (ou) のプロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 解像度の値に乗算する<xref:System.Windows.Input.StylusPoint>単位に基づく値を取得するプロパティです。 などの場合は、このプロパティの値は 100、単位は、(インチ単位)、解像度が.01 が、そのプロパティの値が 1 インチであることがわかります.01 で 100 を乗算します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.StylusPointDescription>オブジェクトから、<xref:System.Windows.Input.StylusPointCollection>ごとに情報を取得および<xref:System.Windows.Input.StylusPointPropertyInfo>で、<xref:System.Windows.Input.StylusPointDescription>です。  
+  
+ [!code-csharp[PacketSpy#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[PacketSpy#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#2)]  
+[!code-csharp[PacketSpy#4](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#4)]
+[!code-vb[PacketSpy#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unit">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StylusPointPropertyUnit Unit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.StylusPointPropertyUnit Unit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.StylusPointPropertyInfo.Unit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StylusPointPropertyUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって使用される測定値の型を取得<see cref="T:System.Windows.Input.StylusPoint" />プロパティです。</summary>
+        <value><see cref="T:System.Windows.Input.StylusPointPropertyUnit" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.StylusPointDescription>オブジェクトから、<xref:System.Windows.Input.StylusPointCollection>ごとに情報を取得および<xref:System.Windows.Input.StylusPointPropertyInfo>で、<xref:System.Windows.Input.StylusPointDescription>です。  
+  
+ [!code-csharp[PacketSpy#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[PacketSpy#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#2)]  
+[!code-csharp[PacketSpy#4](~/samples/snippets/csharp/VS_Snippets_Wpf/PacketSpy/CSharp/Window1.xaml.cs#4)]
+[!code-vb[PacketSpy#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PacketSpy/VisualBasic/Window1.xaml.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

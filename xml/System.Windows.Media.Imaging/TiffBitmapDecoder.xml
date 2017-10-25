@@ -1,0 +1,104 @@
+<Type Name="TiffBitmapDecoder" FullName="System.Windows.Media.Imaging.TiffBitmapDecoder">
+  <TypeSignature Language="C#" Value="public sealed class TiffBitmapDecoder : System.Windows.Media.Imaging.BitmapDecoder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TiffBitmapDecoder extends System.Windows.Media.Imaging.BitmapDecoder" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.TiffBitmapDecoder" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Imaging.BitmapDecoder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ファイル形式 TIFF (Tagged Image) でエンコードされたイメージのデコーダーを定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TiffBitmapDecoder (System.IO.Stream bitmapStream, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream bitmapStream, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.TiffBitmapDecoder.#ctor(System.IO.Stream,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="bitmapStream" Type="System.IO.Stream" />
+        <Parameter Name="createOptions" Type="System.Windows.Media.Imaging.BitmapCreateOptions" />
+        <Parameter Name="cacheOption" Type="System.Windows.Media.Imaging.BitmapCacheOption" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapStream">デコードするビットマップのストリーム。</param>
+        <param name="createOptions">ビットマップ イメージの初期化オプションです。</param>
+        <param name="cacheOption">ビットマップ イメージのキャッシュ方法です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Imaging.TiffBitmapDecoder" />クラスを指定して、指定されたファイル ストリームから<paramref name="createOptions" />と<paramref name="cacheOption" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Imaging.BitmapCacheOption.OnLoad>を終了する場合の cache オプション、`bitmapStream`デコーダーが作成された後です。 既定値<xref:System.Windows.Media.Imaging.BitmapCacheOption.OnDemand>キャッシュ オプションは、ビットマップが必要なクリーンアップは、ガベージ コレクターによって処理されるまで、ストリームへのアクセスが保持されます。  
+  
+   
+  
+## Examples  
+ 次の例では、インスタンスを作成および使用する方法、<xref:System.Windows.Media.Imaging.TiffBitmapDecoder>ファイル ストリームからです。 デコードされたイメージのソースとして使用されます、<xref:System.Windows.Controls.Image>コントロール。  
+  
+ [!code-cpp[tiffbitmapdecoderencoder#1](~/samples/snippets/cpp/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/CPP/TiffEncoderDecoder.cpp#1)]
+ [!code-csharp[tiffbitmapdecoderencoder#1](~/samples/snippets/csharp/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/CSharp/TiffEncoderDecoder.cs#1)]
+ [!code-vb[tiffbitmapdecoderencoder#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/VB/TiffEncoderDecoder.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bitmapStream" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileFormatException"><paramref name="bitmapStream" />されませんが、[!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)]でエンコードされたイメージ。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TiffBitmapDecoder (Uri bitmapUri, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri bitmapUri, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.TiffBitmapDecoder.#ctor(System.Uri,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="bitmapUri" Type="System.Uri" />
+        <Parameter Name="createOptions" Type="System.Windows.Media.Imaging.BitmapCreateOptions" />
+        <Parameter Name="cacheOption" Type="System.Windows.Media.Imaging.BitmapCacheOption" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapUri"><see cref="T:System.Uri" />デコードにビットマップを識別します。</param>
+        <param name="createOptions">ビットマップ イメージの初期化オプションです。</param>
+        <param name="cacheOption">ビットマップ イメージのキャッシュ方法です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Imaging.TiffBitmapDecoder" />から、指定したクラス<see cref="T:System.Uri" />、指定した<paramref name="createOptions" />と<paramref name="cacheOption" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、インスタンスを作成および使用する方法、<xref:System.Windows.Media.Imaging.TiffBitmapDecoder>から、<xref:System.Uri>です。 デコードされたイメージのソースとして使用されます、<xref:System.Windows.Controls.Image>コントロール。  
+  
+ [!code-cpp[tiffbitmapdecoderencoder#5](~/samples/snippets/cpp/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/CPP/TiffEncoderDecoder.cpp#5)]
+ [!code-csharp[tiffbitmapdecoderencoder#5](~/samples/snippets/csharp/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/CSharp/TiffEncoderDecoder.cs#5)]
+ [!code-vb[tiffbitmapdecoderencoder#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/VB/TiffEncoderDecoder.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bitmapUri" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileFormatException"><paramref name="bitmapUri" />されませんが、[!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)]でエンコードされたイメージ。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

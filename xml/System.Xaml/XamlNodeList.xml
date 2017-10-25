@@ -1,0 +1,167 @@
+<Type Name="XamlNodeList" FullName="System.Xaml.XamlNodeList">
+  <TypeSignature Language="C#" Value="public class XamlNodeList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlNodeList extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlNodeList" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>遅延方式で XAML ノードを作成するなどのシナリオで使用できるは、XAML ノードの一覧を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、 <xref:System.Xaml.XamlNodeList>、として存在するライター デリゲートを作成する、<xref:System.Xaml.XamlNodeList.Writer%2A>値。 ライターのデリゲートは、XAML ノードが具体的には、する内部 XAML ライター クラスに基づいています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlNodeList (System.Xaml.XamlSchemaContext schemaContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlSchemaContext schemaContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlNodeList.#ctor(System.Xaml.XamlSchemaContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemaContext" Type="System.Xaml.XamlSchemaContext" />
+      </Parameters>
+      <Docs>
+        <param name="schemaContext">ノードの操作に使用するスキーマ コンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlNodeList" />クラス、指定したスキーマ コンテキストを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ として存在する XAML ライターに、スキーマ コンテキストが適用される、<xref:System.Xaml.XamlNodeList.Writer%2A>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="schemaContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlNodeList (System.Xaml.XamlSchemaContext schemaContext, int size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlSchemaContext schemaContext, int32 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlNodeList.#ctor(System.Xaml.XamlSchemaContext,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemaContext" Type="System.Xaml.XamlSchemaContext" />
+        <Parameter Name="size" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="schemaContext">ノードの操作に使用するスキーマ コンテキスト。</param>
+        <param name="size">一覧の項目数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlNodeList" />クラス、指定したスキーマ コンテキストとリストのサイズを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="schemaContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlNodeList.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この一覧の項目をクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す`Clear`基になるリストの実装にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlNodeList.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このノードの数を取得<see cref="T:System.Xaml.XamlNodeList" />です。</summary>
+        <value>このノードの数<see cref="T:System.Xaml.XamlNodeList" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReader">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlReader GetReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xaml.XamlReader GetReader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlNodeList.GetReader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XAML リーダーの実装デリゲートを返します。</summary>
+        <returns>XAML リーダーの実装デリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 具体的には、サービス プロバイダーではありませんが、使用できます、<xref:System.Xaml.XamlReader>から返されるデリゲート<xref:System.Xaml.XamlNodeList.GetReader%2A?displayProperty=nameWithType>にキャストする、サービス モードで<xref:System.Xaml.IXamlIndexingReader>です。 そのモードで取得し、インデックス値を設定<xref:System.Xaml.IXamlIndexingReader.CurrentIndex%2A?displayProperty=nameWithType>です。 この方法で、セット モードでは、ノードをスキップして標準を使用せず`Read`と`Skip`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xaml.XamlException"><see cref="T:System.Xaml.XamlNodeList" />がまだ書き込みモードでします。  
+  
+ または  
+  
+ ノード リストに使用されるライターには、スキーマ コンテキストがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Writer">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlWriter Writer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlWriter Writer" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlNodeList.Writer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlWriter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連する XAML ライターを取得します。</summary>
+        <value>関連する XAML ライター。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

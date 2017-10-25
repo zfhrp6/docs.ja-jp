@@ -1,0 +1,723 @@
+<Type Name="SystemBrushes" FullName="System.Drawing.SystemBrushes">
+  <TypeSignature Language="C#" Value="public sealed class SystemBrushes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SystemBrushes extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.SystemBrushes" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>各プロパティ、<see cref="T:System.Drawing.SystemBrushes" />クラスは、 <see cref="T:System.Drawing.SolidBrush" /> Windows 表示要素の色であること。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、キーボード ショートカットを使用して、設定する方法を示します、<xref:System.Drawing.StringFormat.HotkeyPrefix%2A>プロパティです。 使用する方法も示します、<xref:System.Drawing.SystemBrushes.FromSystemColor%2A>メソッドです。 この例を実行するコードをフォームに貼り付け、フォームの処理<xref:System.Windows.Forms.Control.Paint>イベントと呼び出しを渡す次のメソッドは、`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.MiscExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.MiscExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActiveBorder">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ActiveBorder { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ActiveBorder" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ActiveBorder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブなウィンドウの境界線の色である <see cref="T:System.Drawing.SolidBrush" /> を取得します。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />のアクティブなウィンドウの境界線の色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveCaption">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ActiveCaption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ActiveCaption" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ActiveCaption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーの背景の色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーの背景の色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveCaptionText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ActiveCaptionText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ActiveCaptionText" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ActiveCaptionText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーのテキストの色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーの背景の色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppWorkspace">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush AppWorkspace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush AppWorkspace" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.AppWorkspace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />アプリケーション ワークスペースの色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />アプリケーション ワークスペースの色であります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション ワークスペースは、ドキュメントで使用されていない複数のドキュメント ビューの領域です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonFace">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ButtonFace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ButtonFace" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ButtonFace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の表面の色はします。</summary>
+        <value>A <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の表面の色はします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonHighlight">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ButtonHighlight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ButtonHighlight" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ButtonHighlight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の強調表示色であります。</summary>
+        <value>A <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の強調表示色であります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この色は、3-D 要素の光源に面している部分に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonShadow">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ButtonShadow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ButtonShadow" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ButtonShadow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の影の色はします。</summary>
+        <value>A <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の影の色はします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この色は、3-D 要素の光源から離れてが直面する部分に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush Control" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の表面の色はします。</summary>
+        <value>A <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の表面の色はします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlDark">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ControlDark { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ControlDark" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ControlDark" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の影の色はします。</summary>
+        <value>A <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の影の色はします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 影の色は、3-D 要素の光源から離れてが直面する部分に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlDarkDark">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ControlDarkDark { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ControlDarkDark" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ControlDarkDark" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の暗いシャドウの色はします。</summary>
+        <value>A <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の暗いシャドウの色はします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 濃い影の色は、最も色の濃い色である 3-D 要素の部分に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlLight">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ControlLight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ControlLight" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ControlLight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の明るい色はします。</summary>
+        <value>A <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の明るい色はします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明るい色は、3-D 要素の光源に面している部分に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlLightLight">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ControlLightLight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ControlLightLight" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ControlLightLight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の強調表示色であります。</summary>
+        <value>A <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素の強調表示色であります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 強調表示色は、明るい色である 3-D 要素の部分に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ControlText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ControlText" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ControlText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素のテキストの色であります。</summary>
+        <value>A <see cref="T:System.Drawing.SolidBrush" /> 3-D 要素のテキストの色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Desktop">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush Desktop { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush Desktop" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.Desktop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デスクトップの色を示す <see cref="T:System.Drawing.SolidBrush" /> を取得します。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />デスクトップの色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromSystemColor">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush FromSystemColor (System.Drawing.Color c);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Brush FromSystemColor(valuetype System.Drawing.Color c) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.SystemBrushes.FromSystemColor(System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="c" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="c"><see cref="T:System.Drawing.Color" />作成元の構造体、<see cref="T:System.Drawing.Brush" />です。</param>
+        <summary>作成、<see cref="T:System.Drawing.Brush" />から、指定した<see cref="T:System.Drawing.Color" />構造体。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.Brush" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GradientActiveCaption">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush GradientActiveCaption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush GradientActiveCaption" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.GradientActiveCaption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーの色グラデーションの最も明るい色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーの色グラデーションの最も明るい色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GradientInactiveCaption">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush GradientInactiveCaption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush GradientInactiveCaption" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.GradientInactiveCaption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーの色グラデーションの最も明るい色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーの色グラデーションの最も明るい色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GrayText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush GrayText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush GrayText" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.GrayText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />淡色表示されているテキストの色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />淡色表示されているテキストの色であります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスト内の無効化された項目が淡色表示されているテキストに表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Highlight">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush Highlight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush Highlight" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.Highlight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />選択した項目の背景の色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />選択した項目の背景の色であります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 選択した項目には、選択したテキストと同様にメニュー項目があります。 たとえば、ブラシには、リスト ボックスで選択した項目の背景に使用する色があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HighlightText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush HighlightText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush HighlightText" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.HighlightText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択した項目のテキストの色である <see cref="T:System.Drawing.SolidBrush" /> を取得します。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />選択項目のテキストの色であります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 選択した項目には、選択したテキストと同様にメニュー項目があります。 たとえば、ブラシには、リスト ボックスで選択した項目のテキストに使用する色があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HotTrack">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush HotTrack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush HotTrack" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.HotTrack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />ホット トラッキング項目の指定に使用される色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />ホット トラッキング項目の指定に使用される色であります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ホット トラッキング項目の 1 回のクリックして、項目を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InactiveBorder">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush InactiveBorder { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush InactiveBorder" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.InactiveBorder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />非アクティブなウィンドウの境界線の色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />のアクティブなウィンドウの境界線の色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InactiveCaption">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush InactiveCaption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush InactiveCaption" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.InactiveCaption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーの背景の色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーの背景の色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InactiveCaptionText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush InactiveCaptionText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush InactiveCaptionText" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.InactiveCaptionText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーのテキストの色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />アクティブなウィンドウのタイトル バーのテキストの色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Info">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush Info { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush Info" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.Info" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />ツールヒントの背景の色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />ツールヒントの背景の色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InfoText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush InfoText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush InfoText" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.InfoText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />ツールヒントのテキストの色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />ツールヒントのテキストの色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Menu">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush Menu { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush Menu" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.Menu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />メニューの背景の色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />メニューの背景の色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuBar">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush MenuBar { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush MenuBar" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.MenuBar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />メニュー バーの背景の色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />メニュー バーの背景の色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuHighlight">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush MenuHighlight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush MenuHighlight" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.MenuHighlight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />メニューがフラットなメニューとして表示されるメニュー項目を強調表示色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />メニューがフラットなメニューとして表示されるメニュー項目を強調表示色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush MenuText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush MenuText" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.MenuText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />メニューのテキストの色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />メニューのテキストの色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollBar">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush ScrollBar { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush ScrollBar" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.ScrollBar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />スクロール バーの背景の色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />スクロール バーの背景の色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Window">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush Window { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush Window" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.Window" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />ウィンドウのクライアント領域の背景色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />ウィンドウのクライアント領域の背景色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowFrame">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush WindowFrame { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush WindowFrame" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.WindowFrame" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />ウィンドウ フレームの色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />ウィンドウ フレームの色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Brush WindowText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.Brush WindowText" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.SystemBrushes.WindowText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.SolidBrush" />ウィンドウのクライアント領域内のテキストの色であります。</summary>
+        <value>A<see cref="T:System.Drawing.SolidBrush" />ウィンドウのクライアント領域内のテキストの色であります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

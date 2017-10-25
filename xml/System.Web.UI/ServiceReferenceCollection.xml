@@ -1,0 +1,59 @@
+<Type Name="ServiceReferenceCollection" FullName="System.Web.UI.ServiceReferenceCollection">
+  <TypeSignature Language="C#" Value="public class ServiceReferenceCollection : System.Collections.ObjectModel.Collection&lt;System.Web.UI.ServiceReference&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceReferenceCollection extends System.Collections.ObjectModel.Collection`1&lt;class System.Web.UI.ServiceReference&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ServiceReferenceCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.Collection&lt;System.Web.UI.ServiceReference&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Web.UI.ServiceReference</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セットを含む<see cref="T:System.Web.UI.ServiceReference" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ServiceReferenceCollection>オブジェクトが含まれています、 <xref:System.Web.UI.ServiceReference> AJAX 対応の ASP.NET ページに登録されている各 Web サービスのオブジェクト。 Web サービスを定義することができます、<xref:System.Web.UI.ScriptManager>コントロールまたは関連付けられている<xref:System.Web.UI.ScriptManagerProxy>コントロール。  
+  
+ Web サービスを追加することができます、 <xref:System.Web.UI.ServiceReferenceCollection> 1 つまたは複数を追加することにより宣言によってオブジェクト`<asp:ServiceReference>`要素を`<Services>`内の要素、`<asp:ScriptManager>`要素 ページで、次の例で示すようにします。  
+  
+```  
+<asp:ScriptManager ID="SM1" runat="server">  
+  <Services>  
+    <asp:ServiceReference Path="Service1.asmx" />  
+    <asp:ServiceReference Path="Service2.asmx" />  
+  </Services>  
+</asp:ScriptManager>  
+```  
+  
+ プログラムでも追加することができます、<xref:System.Web.UI.ServiceReference>オブジェクトを<xref:System.Web.UI.ScriptManager.Services%2A>コレクションを使用して、<xref:System.Collections.ObjectModel.Collection%601.Add%2A>のメソッド、<xref:System.Web.UI.ServiceReferenceCollection>クラスです。  
+  
+ 登録されている web サービス、<xref:System.Web.UI.ScriptManager>コントロール、ページの中に<xref:System.Web.UI.Control.PreRender>ライフ サイクルの段階です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceReferenceCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ServiceReferenceCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ServiceReferenceCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

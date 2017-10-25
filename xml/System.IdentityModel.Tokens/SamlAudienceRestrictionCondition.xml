@@ -1,0 +1,213 @@
+<Type Name="SamlAudienceRestrictionCondition" FullName="System.IdentityModel.Tokens.SamlAudienceRestrictionCondition">
+  <TypeSignature Language="C#" Value="public class SamlAudienceRestrictionCondition : System.IdentityModel.Tokens.SamlCondition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlAudienceRestrictionCondition extends System.IdentityModel.Tokens.SamlCondition" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SamlCondition</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SAML アサーションが特定のユーザーを対象とすることを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition>クラスに対応して、 `<saml:AudienceRestrictionCondition>` XML 要素は、OASIS SAML 1.1 仕様で定義されています。 <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> は、SAML アサーションのスコープを設定するために使用できる複数の <xref:System.IdentityModel.Tokens.SamlConditions> の 1 つです。  
+  
+ <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> クラスを使用して、<xref:System.IdentityModel.Tokens.SamlAssertion> が特定のユーザーを対象とすること、および発行元の SAML 証明機関は、このセキュリティ トークンの受信先以外の対象に対しては SAML アサーションを保証しないことを指定します。 <xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンのクレームは、<xref:System.IdentityModel.Tokens.SamlAssertion> の一部として表現され、アサーションの有効性に影響する条件セットをオプションで持つことができます。 これらの条件の 1 つとして、アサーションの特定の対象を指定する <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> があります。 発行元の SAML 証明機関は、意図していない受信者が、SAML アサーションで提供された情報に基づいてなんらかのアクションを起こすのを防ぐことはできません。 ただし、<xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> クラスを使用すると、SAML 証明機関は、そのような受信者に対する保証が提供されないことをコンピューターとユーザーの両方が読み取り可能な形で明示的に指定できます。  
+  
+ 目的の対象セットを指定するには、対象セットを受け入れる <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.%23ctor%28System.Collections.Generic.IEnumerable%7BSystem.Uri%7D%29> コンストラクターを使用します。 目的の対象セットを取得するには、<xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.Audiences%2A> プロパティにアクセスします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAudienceRestrictionCondition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAudienceRestrictionCondition (System.Collections.Generic.IEnumerable&lt;Uri&gt; audiences);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Uri&gt; audiences) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.#ctor(System.Collections.Generic.IEnumerable{System.Uri})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="audiences" Type="System.Collections.Generic.IEnumerable&lt;System.Uri&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="audiences">想定される配信対象を含む <see cref="T:System.Collections.Generic.IEnumerable`1" /> 型の <see cref="T:System.Uri" />。</param>
+        <summary>指定した SAML アサーションの対象セットを使用して、<see cref="T:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.Audiences%2A> プロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="audiences" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Audiences">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Uri&gt; Audiences { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Uri&gt; Audiences" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.Audiences" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Uri&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SAML アサーションが目的とする対象セットを取得します。</summary>
+        <value>想定される配信対象を含む <see cref="T:System.Collections.Generic.IList`1" /> 型の <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.Audiences%2A> プロパティを設定するには、対象セットを受け入れる <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.%23ctor%28System.Collections.Generic.IEnumerable%7BSystem.Uri%7D%29> コンストラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public override bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスのプロパティが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          このインスタンスのプロパティが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> クラスのこのインスタンスを読み取り専用にするために、<xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.MakeReadOnly%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public override void MakeReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void MakeReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.MakeReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスを読み取り専用にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.MakeReadOnly%2A> メソッドが呼び出されると、<xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.IsReadOnly%2A> プロパティが `true` に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public override void ReadXml (System.Xml.XmlDictionaryReader reader, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer, System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ReadXml(class System.Xml.XmlDictionaryReader reader, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer, class System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.ReadXml(System.Xml.XmlDictionaryReader,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+        <Parameter Name="outOfBandTokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlDictionaryReader" /> 要素を読み取るための <see langword="&lt;AudienceRestrictionCondition&gt;" />。</param>
+        <param name="samlSerializer">SAML 仕様で定義されている SAML アサーション内の XML 要素の読み取りができる <see cref="T:System.IdentityModel.Tokens.SamlSerializer" />。</param>
+        <param name="keyInfoSerializer">デジタル署名の <see cref="T:System.IdentityModel.Selectors.SecurityTokenSerializer" /> 句を読み取る <see langword="KeyInfo" />。</param>
+        <param name="outOfBandTokenResolver">デジタル署名を作成したセキュリティ トークンを調べる <see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />。</param>
+        <summary>指定した XML リーダーから <see langword="&lt;AudienceRestrictionCondition&gt;" /> 要素を読み取ります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException"><see langword="&lt;AudienceRestrictionCondition&gt;" /> 要素には、値を持たない子 <see langword="&lt;Audience&gt;" /> 要素があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlDictionaryWriter writer, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlDictionaryWriter writer, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition.WriteXml(System.Xml.XmlDictionaryWriter,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlDictionaryWriter" /> 要素を書き込む <see langword="&lt;AudienceRestrictionCondition&gt;" />。</param>
+        <param name="samlSerializer">SAML 仕様で定義されている SAML アサーション内の XML 要素の書き込みができる <see cref="T:System.IdentityModel.Tokens.SamlSerializer" />。</param>
+        <param name="keyInfoSerializer"><see cref="T:System.IdentityModel.Selectors.SecurityTokenSerializer" /> 句を書き込むことができる <see langword="KeyInfo" />。</param>
+        <summary>指定した XML シリアライザーに <see langword="&lt;AudienceRestrictionCondition&gt;" /> 要素を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

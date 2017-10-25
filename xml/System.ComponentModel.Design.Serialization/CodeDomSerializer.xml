@@ -1,0 +1,316 @@
+<Type Name="CodeDomSerializer" FullName="System.ComponentModel.Design.Serialization.CodeDomSerializer">
+  <TypeSignature Language="C#" Value="public class CodeDomSerializer : System.ComponentModel.Design.Serialization.CodeDomSerializerBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CodeDomSerializer extends System.ComponentModel.Design.Serialization.CodeDomSerializerBase" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.CodeDomSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.Serialization.CodeDomSerializerBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DefaultSerializationProvider(typeof(System.ComponentModel.Design.Serialization.CodeDomSerializationProvider))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>一連の CodeDOM ステートメントにオブジェクト グラフをシリアル化します。 このクラスは、シリアライザーの抽象基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタムを実装する<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer>をデザイン時コンポーネントの型のコンポーネント初期化コードの生成を制御します。  
+  
+ カスタムの実装に<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer>タイプは、する必要があります。  
+  
+1.  <xref:System.ComponentModel.Design.Serialization.CodeDomSerializer> から派生するクラスを定義します。  
+  
+2.  実装メソッドは、シリアル化または逆シリアル化メソッドをオーバーライドします。 (詳細については、以下の情報を参照してください)。  
+  
+3.  カスタムを関連付ける<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer>型を使用してコンポーネントの実装、<xref:System.ComponentModel.Design.Serialization.DesignerSerializerAttribute>です。  
+  
+ コンポーネントの構成コードを生成するためのシリアル化メソッドを実装するには。  
+  
+1.  派生したクラス内で<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer>適切なシリアル化のオーバーライド、または基底クラスのメソッドの逆シリアル化します。  
+  
+2.  既定のシリアライザーを既定のコンポーネントの構成を実行するコード ステートメントを生成する場合は取得する必要がありますして、コンポーネントの基本のシリアライザーを呼び出します。 コンポーネントの基本のシリアライザーを取得するを呼び出して、<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer%2A>のメソッド、<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager>メソッドのオーバーライドに渡されます。 渡す、<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer%2A>メソッドを構成、およびこれは、要求しているシリアライザーの基本型をシリアル化するコンポーネントの種類<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer>です。 使用して、基本のシリアライザーでオーバーライドして、同じ名前のメソッドを呼び出す、<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager>およびオーバーライド メソッドに渡されるオブジェクト。 実装する場合、 <xref:System.ComponentModel.Design.Serialization.CodeDomSerializer.Serialize%2A> 、メソッド、<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer.Serialize%2A>ベースのシリアライザーのメソッドは、オブジェクトを返します。 このオブジェクトの種類は、値をシリアル化するコンポーネントの種類に依存する基本のシリアライザーの型によって異なります。 実装する場合、 <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeEvents%2A>、 <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeProperties%2A>、または<xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializePropertiesToResources%2A>メソッドを作成する必要が新しい<xref:System.CodeDom.CodeStatementCollection>ステートメントでは、生成されたコードが含まれており、メソッドに渡すことにします。  
+  
+3.  基本シリアライザー メソッドを呼び出した場合があります、<xref:System.CodeDom.CodeStatementCollection>コンポーネントを初期化するために生成するステートメントを含むです。 それ以外の場合を作成する必要がある、<xref:System.CodeDom.CodeStatementCollection>です。 追加することができます<xref:System.CodeDom.CodeStatement>をこのコレクションにコンポーネントの構成コードを生成するステートメントを表すオブジェクト。  
+  
+4.  返す、<xref:System.CodeDom.CodeStatementCollection>コンポーネントの構成を生成するソース コードを表すです。  
+  
+   
+  
+## Examples  
+ 次のコード例から派生するカスタムの CodeDOM シリアライザーを作成する方法を示しています。<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer>です。  
+  
+ [!code-cpp[IDesignerSerializationManagerSample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IDesignerSerializationManagerSample/CPP/idesignerserializationmanagersample.cpp#1)]
+ [!code-csharp[IDesignerSerializationManagerSample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IDesignerSerializationManagerSample/CS/idesignerserializationmanagersample.cs#1)]
+ [!code-vb[IDesignerSerializationManagerSample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IDesignerSerializationManagerSample/VB/idesignerserializationmanagersample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializer" /> から継承する場合は、<see cref="M:System.ComponentModel.Design.Serialization.CodeDomSerializer.Deserialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)" /> メンバーと <see cref="M:System.ComponentModel.Design.Serialization.CodeDomSerializer.Serialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)" /> メンバーをオーバーライドする必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeDomSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public virtual object Deserialize (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object codeObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Deserialize(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object codeObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializer.Deserialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="codeObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="manager">逆シリアル化プロセス中に使用されるシリアル化マネージャー インターフェイスです。</param>
+        <param name="codeObject">逆シリアル化のシリアル化した CodeDOM オブジェクト。</param>
+        <summary>オブジェクトには、指定したシリアル化した CodeDOM オブジェクトを逆シリアル化します。</summary>
+        <returns>逆シリアル化された CodeDOM オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、シリアル化マネージャーを使用して、オブジェクトを作成し、データ型を解決します。 オブジェクト グラフのルートが返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" /> または <paramref name="codeObject" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="codeObject" />サポートされていないコード要素です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeserializeStatementToInstance">
+      <MemberSignature Language="C#" Value="protected object DeserializeStatementToInstance (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, System.CodeDom.CodeStatement statement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object DeserializeStatementToInstance(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, class System.CodeDom.CodeStatement statement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializer.DeserializeStatementToInstance(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.CodeDom.CodeStatement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="statement" Type="System.CodeDom.CodeStatement" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化に使用するシリアル化マネージャー。</param>
+        <param name="statement">逆シリアル化するステートメント。</param>
+        <summary>1 つのステートメントを逆シリアル化します。</summary>
+        <returns>オブジェクトのインスタンスを逆シリアル化の結果として得られる<paramref name="statement" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomSerializer.DeserializeStatementToInstance%2A>は呼び出すことと同じ<xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.DeserializeStatement%2A>, 点が異なりますが、変数の代入ステートメントでは、init 式、またはフィールドの代入ステートメントを含む変数宣言ステートメントで結果として得られる場合は、オブジェクトのインスタンスを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTargetComponentName">
+      <MemberSignature Language="C#" Value="public virtual string GetTargetComponentName (System.CodeDom.CodeStatement statement, System.CodeDom.CodeExpression expression, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetTargetComponentName(class System.CodeDom.CodeStatement statement, class System.CodeDom.CodeExpression expression, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializer.GetTargetComponentName(System.CodeDom.CodeStatement,System.CodeDom.CodeExpression,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="statement" Type="System.CodeDom.CodeStatement" />
+        <Parameter Name="expression" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="statement"><see cref="T:System.CodeDom.CodeStatement" />グループを決定します。</param>
+        <param name="expression">A<see cref="T:System.CodeDom.CodeExpression" />を<c>ステートメント</c>に減りました。</param>
+        <param name="targetType"><see cref="T:System.Type" />の<c>ステートメント</c>です。</param>
+        <summary>特定のステートメントが属する必要のあるステートメント グループを決定します。</summary>
+        <returns>使用して、コンポーネントの名前<paramref name="statement" />グループ化する必要があります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public virtual object Serialize (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Serialize(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializer.Serialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化時に使用するシリアル化マネージャー。</param>
+        <param name="value">シリアル化するオブジェクト。</param>
+        <summary>特定のオブジェクトをシリアル化して、CodeDOM オブジェクトを生成します。</summary>
+        <returns>シリアル化されたオブジェクトを表す CodeDOM オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeAbsolute">
+      <MemberSignature Language="C#" Value="public virtual object SerializeAbsolute (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object SerializeAbsolute(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializer.SerializeAbsolute(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化に使用するシリアル化マネージャー。</param>
+        <param name="value">シリアル化するオブジェクト。</param>
+        <summary>既定値を特定のオブジェクトをシリアル化します。</summary>
+        <returns>表す CodeDom オブジェクト<paramref name="value" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeMember">
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.CodeStatementCollection SerializeMember (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object owningObject, System.ComponentModel.MemberDescriptor member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.CodeStatementCollection SerializeMember(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object owningObject, class System.ComponentModel.MemberDescriptor member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializer.SerializeMember(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object,System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeStatementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="owningObject" Type="System.Object" />
+        <Parameter Name="member" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化に使用するシリアル化マネージャー。</param>
+        <param name="owningObject">オブジェクトは<c>メンバー</c>添付します。</param>
+        <param name="member">シリアル化するメンバー。</param>
+        <summary>指定されたオブジェクトの指定されたメンバーをシリアル化します。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeStatementCollection" />のシリアル化された状態を表す<paramref name="member" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" />、<paramref name="owningObject" />、または <paramref name="member" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="member" />シリアル化可能な型がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeMemberAbsolute">
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.CodeStatementCollection SerializeMemberAbsolute (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object owningObject, System.ComponentModel.MemberDescriptor member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.CodeStatementCollection SerializeMemberAbsolute(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object owningObject, class System.ComponentModel.MemberDescriptor member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializer.SerializeMemberAbsolute(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object,System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeStatementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="owningObject" Type="System.Object" />
+        <Parameter Name="member" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化に使用するシリアル化マネージャー。</param>
+        <param name="owningObject">オブジェクトは<c>メンバー</c>添付します。</param>
+        <param name="member">シリアル化するメンバー。</param>
+        <summary>既定値を考慮して、指定されたメンバーをシリアル化します。</summary>
+        <returns>表す CodeDom オブジェクト<paramref name="member" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="manager" />、<paramref name="owningObject" />、または <paramref name="member" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="member" />シリアル化可能な型がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeToReferenceExpression">
+      <MemberSignature Language="C#" Value="protected System.CodeDom.CodeExpression SerializeToReferenceExpression (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.CodeDom.CodeExpression SerializeToReferenceExpression(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializer.SerializeToReferenceExpression(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This method has been deprecated. Use SerializeToExpression or GetExpression instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアル化時に使用するシリアル化マネージャー。</param>
+        <param name="value">シリアル化するオブジェクト。</param>
+        <summary>CodeDOM 式に指定した値をシリアル化します。</summary>
+        <returns>シリアル化された値。 返されます。<see langword="null" />参照式を、指定した値を取得できない場合、または値をシリアル化することはできません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはのような<xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeToExpression%2A>値の単純な参照式を取得できない場合は停止する点を除いて、します。 パラメーターまたはステートメントの対象として使用する結果として得られる式が予想される場合は、このメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

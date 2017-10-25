@@ -1,0 +1,153 @@
+<Type Name="DataGridViewAutoSizeColumnsMode" FullName="System.Windows.Forms.DataGridViewAutoSizeColumnsMode">
+  <TypeSignature Language="C#" Value="public enum DataGridViewAutoSizeColumnsMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewAutoSizeColumnsMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewAutoSizeColumnsMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>列の幅を調整する方法を指定する値を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView>コントロールがコントロールの使用可能な水平方向の幅を入力できるようにしたりして、すべてのセルのまたは指定されたセルの完全な内容を表示、列のサイズを変更します。  
+  
+ <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill>でコントロールで表示されているすべての列が使用可能な表示領域の水平方向の幅を正確に入力できるように、そのモードでのすべての列をサイズ変更モードでは、列の幅が決定されます。 その他のモードは、最適な列幅は、現在表示されている行に含まれるセルのサブセットなど、その列のすべてのセルまたはセルのサブセットから最大のセル値を表示するために必要な最小の幅です。 セルのサブセットを使用して新しい幅を決定するは、多くのデータ行を操作するときに、パフォーマンスの低下を避けるために便利です。  
+  
+ コンテンツ ベースの自動サイズ変更すると、ユーザーがマウスで列の幅を調整するできなくなります。 ユーザーによるサイズ変更が有効な塗りつぶしモード、ただしです。  
+  
+ この列挙体を使って、<xref:System.Windows.Forms.DataGridView>コントロール<xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A>プロパティおよび<xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A>メソッド。  
+  
+ サイズ変更モードの詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールのサイズ変更オプション](~/docs/framework/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control.md)です。 列フィル モードの詳細については具体的を参照してください[Windows フォーム DataGridView コントロールで列フィル モード](~/docs/framework/winforms/controls/column-fill-mode-in-the-windows-forms-datagridview-control.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つにマスター/詳細シナリオでは、この列挙体の使用を示しています<xref:System.Windows.Forms.DataGridView>コントロールが、親/子リレーションシップに 2 つのテーブルからデータを表示します。 この例では、マスター コントロールの列のサイズ変更モードが None で、列の幅は、読み込まれた値に合わせてプログラムで初期化します。 (たとえば、ユーザーは、親テーブルの現在の行を変更) ときに、値が変更されるたびに列が自動的に調整できるように、詳細コントロールは自動サイズ変更モードに設定します。 この例で使用できる例の一部である[する方法: マスター/詳細形式を使用して 2 つ Windows フォーム DataGridView コントロールの作成](~/docs/framework/winforms/controls/create-a-master-detail-form-using-two-datagridviews.md)です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewMasterDetails#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/CS/masterdetails.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridViewMasterDetails#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/VB/masterdetails.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllCells">
+      <MemberSignature Language="C#" Value="AllCells" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeColumnsMode AllCells = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeColumnsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘッダー セルを含む列に、すべてのセルの内容に合わせて列の幅を調整します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllCellsExceptHeader">
+      <MemberSignature Language="C#" Value="AllCellsExceptHeader" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeColumnsMode AllCellsExceptHeader = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeColumnsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヘッダー セルを除く、列のすべてのセルの内容に合わせて列の幅を調整します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnHeader">
+      <MemberSignature Language="C#" Value="ColumnHeader" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeColumnsMode ColumnHeader = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeColumnsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の幅は、列のヘッダー セルの内容に合わせて調整します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayedCells">
+      <MemberSignature Language="C#" Value="DisplayedCells" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeColumnsMode DisplayedCells = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeColumnsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の幅は、表示されている行が画面に表示される、ヘッダー セルを含む列のすべてのセルの内容に合わせて調整します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayedCellsExceptHeader">
+      <MemberSignature Language="C#" Value="DisplayedCellsExceptHeader" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeColumnsMode DisplayedCellsExceptHeader = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeColumnsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の幅をある列で表示されている行で画面に表示される、ヘッダー セルを除くすべてのセルの内容に合わせて調整します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Fill">
+      <MemberSignature Language="C#" Value="Fill" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeColumnsMode Fill = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeColumnsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の幅を調整するすべての列の幅は、上記の列の幅を保持するだけ水平方向にスクロールを必要とする、コントロールの表示領域を正確に入力できるように、<see cref="P:System.Windows.Forms.DataGridViewColumn.MinimumWidth" />プロパティの値。 相対参照列の幅を決定する相対で<see cref="P:System.Windows.Forms.DataGridViewColumn.FillWeight" />プロパティの値。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGridViewAutoSizeColumnsMode None = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAutoSizeColumnsMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の幅は自動的に調整しません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

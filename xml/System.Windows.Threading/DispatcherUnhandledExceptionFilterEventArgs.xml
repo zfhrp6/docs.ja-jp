@@ -1,0 +1,74 @@
+<Type Name="DispatcherUnhandledExceptionFilterEventArgs" FullName="System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class DispatcherUnhandledExceptionFilterEventArgs : System.Windows.Threading.DispatcherEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DispatcherUnhandledExceptionFilterEventArgs extends System.Windows.Threading.DispatcherEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="T:System.Windows.Threading.Dispatcher" /> <see cref="E:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter>イベントが発生したときにコードをによって実行する、<xref:System.Windows.Threading.Dispatcher>処理されない例外がスローされます。  
+  
+ <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter>イベントを発生させませんする手段を提供する、<xref:System.Windows.Threading.Dispatcher.UnhandledException>イベント。  <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter>イベントは、最初に、場合<xref:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs.RequestCatch%2A>上、<xref:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs>に設定されている`false`、<xref:System.Windows.Threading.Dispatcher.UnhandledException>イベントは発生しません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスパッチャーを使用してコードを実行するときに発生した例外を取得します。</summary>
+        <value>例外。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestCatch">
+      <MemberSignature Language="C#" Value="public bool RequestCatch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequestCatch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs.RequestCatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、例外がキャッチされ、イベント ハンドラーが呼び出されるかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="E:System.Windows.Threading.Dispatcher.UnhandledException" />ですそれ以外の発生にする必要があります。<see langword="false" />.  既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Threading.Dispatcher.UnhandledExceptionFilter>イベントを発生させませんする手段を提供する、<xref:System.Windows.Threading.Dispatcher.UnhandledException>イベント。  <xref:System.Windows.Threading.Dispatcher.UnhandledException>が最初に、発生した場合に<xref:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs.RequestCatch%2A>で、<xref:System.Windows.Threading.DispatcherUnhandledExceptionFilterEventArgs>に設定されている`false`、<xref:System.Windows.Threading.Dispatcher.UnhandledException>イベントは発生しません。  
+  
+ イベントのマルチキャストの以前のハンドラーが既にこのプロパティを設定`false`例外がキャッチされないことを示すです。  デバッグ時に行われる可能性が高いために、例外をキャッチしない"動作は他のすべてで上書きされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

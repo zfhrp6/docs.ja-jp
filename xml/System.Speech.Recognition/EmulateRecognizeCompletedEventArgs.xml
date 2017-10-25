@@ -1,0 +1,91 @@
+<Type Name="EmulateRecognizeCompletedEventArgs" FullName="System.Speech.Recognition.EmulateRecognizeCompletedEventArgs">
+  <TypeSignature Language="C#" Value="public class EmulateRecognizeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EmulateRecognizeCompletedEventArgs extends System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.EmulateRecognizeCompletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.AsyncCompletedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see langword="EmulateRecognizeCompleted" />のイベント、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />と<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス<xref:System.Speech.Recognition.EmulateRecognizeCompletedEventArgs>場合は、作成、<xref:System.Speech.Recognition.SpeechRecognitionEngine>オブジェクト、<xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognizeCompleted>イベント。 認識の結果に関する情報を入手するには、アクセス、<xref:System.Speech.Recognition.EmulateRecognizeCompletedEventArgs.Result%2A>イベントのハンドラーのプロパティです。  
+  
+ エミュレーションは、プロセスであり、オーディオではなく、テキストに音声認識エンジンへの入力です。 オーディオの入力をバイパスする、<xref:System.Speech.Recognition.SpeechRecognitionEngine>エミュレーションでは、使用中にオブジェクトを<xref:System.Speech.Recognition.SpeechRecognitionEngine.SetInputToNull%2A>メソッドです。  
+  
+ 音声認識エンジンが認識操作中に例外が発生した場合、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>プロパティが例外に設定し、<xref:System.Speech.Recognition.EmulateRecognizeCompletedEventArgs.Result%2A>プロパティに設定されている`null`です。  
+  
+ <xref:System.Speech.Recognition.EmulateRecognizeCompletedEventArgs> は、<xref:System.ComponentModel.AsyncCompletedEventArgs> から派生します。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを追加、<xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognizeCompleted>イベントを<xref:System.Speech.Recognition.SpeechRecognitionEngine>です。 ハンドラーから認識されたテキストを取得する、<xref:System.Speech.Recognition.EmulateRecognizeCompletedEventArgs.Result%2A>プロパティです。  
+  
+```csharp  
+  
+private SpeechRecognitionEngine sre;  
+  
+// Initialize the speech recognition engine.   
+private void Initialize()  
+{  
+  sre = new SpeechRecognitionEngine();  
+  
+  // Add a handler for the EmulateRecognizeCompleted event.  
+  sre.EmulateRecognizeCompleted += new EventHandler<EmulateRecognizeCompletedEventArgs>(sre_EmulateRecognizeCompleted);  
+  
+  // Add other initialization code here.  
+}  
+  
+// Handle the EmulateRecognizeCompleted event.   
+void sre_EmulateRecognizeCompleted(object sender, EmulateRecognizeCompletedEventArgs e)  
+{  
+  if (e.Result == null) return;  
+  
+  string phrase = e.Result.Text;  
+  
+  // Add event handler code here.  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.RecognitionResult Result { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.Recognition.RecognitionResult Result" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.EmulateRecognizeCompletedEventArgs.Result" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.RecognitionResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エミュレートされた認識の結果を取得します。</summary>
+        <value>認識の結果に関する詳細情報または<see langword="null" />場合はエラーが発生しました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.RecognitionResult>から派生したオブジェクト<xref:System.Speech.Recognition.RecognizedPhrase>認識操作によって返される語句に関する完全な情報が含まれています。 すべての認識候補オフ一覧を取得することができます、<xref:System.Speech.Recognition.RecognitionResult.Alternates%2A>プロパティです。  
+  
+ 認識エンジンが認識操作中に例外が発生した場合、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>プロパティが例外に設定され、<xref:System.Speech.Recognition.EmulateRecognizeCompletedEventArgs.Result%2A>プロパティに設定されている`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,521 @@
+<Type Name="PersonalizableAttribute" FullName="System.Web.UI.WebControls.WebParts.PersonalizableAttribute">
+  <TypeSignature Language="C#" Value="public sealed class PersonalizableAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PersonalizableAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.PersonalizableAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>パーソナル化属性を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーソナル化属性`Personalizable`、パーソナル化情報を保持する必要があるパブリック コントロールのプロパティに適用します。 ASP.NET は、自動的に継続するか、またはコントロールの Web パーツ ページで Web パーツ ゾーン内に、基になるデータ ストアからこれらの値を取得するコードを生成します。  
+  
+ パーソナル化可能とマークされるプロパティの次の要件を満たす必要があります。  
+  
+-   プロパティ必要がありますはパブリックである必要がありますパブリックの get し、set アクセサー。  
+  
+-   プロパティは、読み取り/書き込みプロパティにする必要があります。  
+  
+-   プロパティは、パラメーターを指定せずにする必要があります。  
+  
+-   プロパティのインデックスを作成できません。  
+  
+ コードは、読み込みし、保存のプロパティのパーソナル化データを自動的に生成されます。 パーソナル化をサポートするプロパティは、プロパティとプロパティが上記の制約に準拠しているファクトのこの属性の存在に基づいて決定されます。  
+  
+ 個人用設定の読み取り専用、書き込み専用のプロパティがサポートされていないことに注意してください。 この属性を読み取り専用または書き込み専用プロパティに適用する結果に、<xref:System.Web.HttpException>がスローされます。 スローされてもパラメーター化されたプロパティ、<xref:System.Web.HttpException>例外。  
+  
+ この属性を持たない個々 のプロパティから除外されますパーソナル化なし特別な処理を通じて、<xref:System.Web.UI.WebControls.WebParts.IPersonalizable>インターフェイスを使用します。  
+  
+ 属性の使用方法の詳細については、次を参照してください。 [Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>コード内のクラスです。 サンプルはという Web パーツのユーザー コントロールを参照する .aspx ページ`ColorSelector.ascx`です。 次のコードは、たとえば、.aspx ファイルです。  
+  
+ [!code-aspx-csharp[WebParts_SimplePersonalization#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_SimplePersonalization/CS/Default.aspx#1)]  
+  
+ 次のコードは、`ColorSelector.ascx`コントロール。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[WebParts_SimplePersonalization#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_SimplePersonalization/CS/ColorSelector.ascx#2)]  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.Web.HttpException">プロパティは、読み取り専用または書き込み専用のパブリック プロパティです。  
+  
+ \- または  
+  
+ プロパティは、プライベートまたはプロテクトの読み取り/書き込みプロパティです。  
+  
+ \- または  
+  
+ プロパティには、インデックス パラメーターがあります。</exception>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersonalizableAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizableAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは内部で設定、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsPersonalizable%2A>プロパティを`true`、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Scope%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>、および<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersonalizableAttribute (bool isPersonalizable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isPersonalizable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isPersonalizable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isPersonalizable">プロパティの設定を変更できるかどうかを示すブール値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizableAttribute" />クラスの指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは内部で設定、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsPersonalizable%2A>プロパティにブール型のパラメーターの値を<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Scope%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>、および<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>プロパティを`false`です。  
+  
+ このコンス トラクターは、パーソナル化できない、派生型に基本型のパーソナル化可能である仮想プロパティを示すために派生型の場合に便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersonalizableAttribute (System.Web.UI.WebControls.WebParts.PersonalizationScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.#ctor(System.Web.UI.WebControls.WebParts.PersonalizationScope)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+      </Parameters>
+      <Docs>
+        <param name="scope">A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />パーソナル化のスコープを示すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizableAttribute" />クラスの指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは内部で設定、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsPersonalizable%2A>プロパティを`true`、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Scope%2A>プロパティを指定すると、パラメーター、および<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersonalizableAttribute (System.Web.UI.WebControls.WebParts.PersonalizationScope scope, bool isSensitive);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope, bool isSensitive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.#ctor(System.Web.UI.WebControls.WebParts.PersonalizationScope,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Web.UI.WebControls.WebParts.PersonalizationScope" />
+        <Parameter Name="isSensitive" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="scope">A<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />パーソナル化のスコープを示すです。</param>
+        <param name="isSensitive">プロパティ情報は機密性の高い考慮するかどうかを示すブール値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizableAttribute" />クラスに指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは内部で設定、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsPersonalizable%2A>プロパティを`true`、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Scope%2A>プロパティを指定すると、最初のパラメーターと<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>プロパティで指定した 2 つ目のパラメーターをします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.PersonalizableAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.PersonalizableAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化のサポートがないことを示します。 属性インスタンスを返します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドと組み合わせて使用、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsDefaultAttribute%2A>メソッドです。  
+  
+ このフィールドと<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.NotPersonalizable>フィールドが同じ値を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizableAttribute" />現在のインスタンスと比較します。</param>
+        <summary>返しますの現在のインスタンスのブール型の評価のオーバーライドされた場合、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizableAttribute" />別<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizableAttribute" />をパラメーターとして指定されたインスタンスです。</summary>
+        <returns>
+          <see langword="true" />値が等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>場合、インスタンスが等しいかどうかと見なされます、 <xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsPersonalizable%2A>、 <xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Scope%2A>、および<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>プロパティ設定は、同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オーバーライドされた場合、属性のハッシュ コードを返します。</summary>
+        <returns>整数値の形式でのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ コードが属性に基づいての<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsPersonalizable%2A>、 <xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Scope%2A>、および<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>プロパティの設定。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPersonalizableProperties">
+      <MemberSignature Language="C#" Value="public static System.Collections.ICollection GetPersonalizableProperties (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ICollection GetPersonalizableProperties(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.GetPersonalizableProperties(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">検索する対象の型<see langword="Personalizable" />プロパティです。</param>
+        <summary>コレクションを返します<see cref="T:System.Reflection.PropertyInfo" />パラメーター型と一致し、パーソナル化可能とマークされているプロパティのオブジェクト。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />のパーソナル化可能なプロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、0 個以上を含むコレクションを返します<xref:System.Reflection.PropertyInfo>は指定された型の各プロパティのコレクション内の 1 つのオブジェクトと、オブジェクトとしてマークされている、パーソナル化可能な場所<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsPersonalizable%2A>equals`true`です。  
+  
+ `type`パラメーター検索対象の型が`Personalizable`プロパティです。 たとえば、するには渡します`"typeof(MyWebPart)"`を取得する、`Personalizable`プロパティを`MyWebPart`クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">パブリック型のプロパティで、パーソナル化可能としてマークされてが読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オーバーライドされた場合、属性のインスタンスが、静的な値に等しいかどうかを示す値を返します<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Default" />フィールドです。</summary>
+        <returns>
+          <see langword="true" />属性のインスタンスには、静的なと等しい場合<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Default" />フィールドです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Default>フィールドにないパーソナル化のサポートことを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPersonalizable">
+      <MemberSignature Language="C#" Value="public bool IsPersonalizable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPersonalizable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsPersonalizable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンス トラクターのいずれかによって確立されると、属性をパーソナル化できるかどうかを示す設定を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティの設定を変更する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスにこの値は設定、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>クラスを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSensitive">
+      <MemberSignature Language="C#" Value="public bool IsSensitive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSensitive" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性が機密性の高い、コンス トラクターのいずれかで指定されているかどうかを示す設定を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、プロパティは機密情報です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスにこの値は設定、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>クラスを作成します。  
+  
+ このプロパティは、プロパティの値をエクスポートする方法を制御します。 プロパティ設定されている場合`true`、ことがないエクスポート時にコントロールの<xref:System.Web.UI.WebControls.WebParts.WebPart.ExportMode%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.WebParts.WebPartExportMode.NonSensitiveData>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public override bool Match (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Match(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Match(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizableAttribute" />現在のインスタンスと比較します。</param>
+        <summary>示す値を返すかどうかの現在のインスタンス<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizableAttribute" />と、指定した<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizableAttribute" />が同じである<see cref="P:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsPersonalizable" />プロパティの値。</summary>
+        <returns>
+          <see langword="true" />2 つの属性が同じである場合<see cref="P:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsPersonalizable" />値。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して同じであるプロパティと一致する<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsPersonalizable%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotPersonalizable">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.PersonalizableAttribute NotPersonalizable;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.PersonalizableAttribute NotPersonalizable" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.NotPersonalizable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化のサポートがないことを示します。 属性インスタンスを返します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドと<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Default>フィールドが同じ値を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Personalizable">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.PersonalizableAttribute Personalizable;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.PersonalizableAttribute Personalizable" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Personalizable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化のサポートを示す属性インスタンスを返します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性のインスタンスがその<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Scope%2A>プロパティに設定<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>とその<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>プロパティに設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.PersonalizationScope Scope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizationScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" />コンス トラクターによって設定された、クラスのインスタンスの列挙値。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> 列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスにこの値は設定、<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute>クラスを作成します。  
+  
+ このプロパティがプロパティの値が保存され、読み込まれたときに制御に応じて、<xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Scope%2A>ページのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SharedPersonalizable">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.PersonalizableAttribute SharedPersonalizable;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.PersonalizableAttribute SharedPersonalizable" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.SharedPersonalizable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共有のスコープでのパーソナル化のサポートを示す属性インスタンスを返します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性のインスタンスがその<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Scope%2A>プロパティに設定<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>とその<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>プロパティに設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserPersonalizable">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.PersonalizableAttribute UserPersonalizable;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.PersonalizableAttribute UserPersonalizable" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.UserPersonalizable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PersonalizableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーソナル化のサポートを示す属性インスタンスを返します<see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" />スコープ。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性のインスタンスがその<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.Scope%2A>プロパティに設定<xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>とその<xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute.IsSensitive%2A>プロパティに設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

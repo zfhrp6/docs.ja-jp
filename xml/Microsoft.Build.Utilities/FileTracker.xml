@@ -1,0 +1,878 @@
+<Type Name="FileTracker" FullName="Microsoft.Build.Utilities.FileTracker">
+  <TypeSignature Language="C#" Value="public static class FileTracker" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed FileTracker extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.FileTracker" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスを起動しての追跡ツールのログ記録をカプセル化するユーティリティ関数が含まれています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateRootingMarkerResponseFile">
+      <MemberSignature Language="C#" Value="public static string CreateRootingMarkerResponseFile (Microsoft.Build.Framework.ITaskItem[] sources);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string CreateRootingMarkerResponseFile(class Microsoft.Build.Framework.ITaskItem[] sources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.CreateRootingMarkerResponseFile(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sources" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="sources">ソース ファイルのセット。</param>
+        <summary>ITaskItem の形式でソース ファイルのセット、それらのソースに対応するルートのマーカーを含む一時応答ファイルを作成します。</summary>
+        <returns>応答ファイルのパス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRootingMarkerResponseFile">
+      <MemberSignature Language="C#" Value="public static string CreateRootingMarkerResponseFile (string rootMarker);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string CreateRootingMarkerResponseFile(string rootMarker) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.CreateRootingMarkerResponseFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootMarker" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="rootMarker">応答ファイルに格納するルートのマーカー。</param>
+        <summary>ルートのマーカーには、そのルート マーカーを一時応答ファイルを作成します。</summary>
+        <returns>応答ファイルのパス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndTrackingContext">
+      <MemberSignature Language="C#" Value="public static void EndTrackingContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EndTrackingContext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.EndTrackingContext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイル アクセスの追跡を停止します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureFileTrackerOnPath">
+      <MemberSignature Language="C#" Value="public static string EnsureFileTrackerOnPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string EnsureFileTrackerOnPath() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.EnsureFileTrackerOnPath" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>PATH 環境変数に適切な FileTracker アセンブリへのパスの先頭が追加されます。 インプロセス追跡に使用します。</summary>
+        <returns>PATH 環境変数の古い値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureFileTrackerOnPath">
+      <MemberSignature Language="C#" Value="public static string EnsureFileTrackerOnPath (string rootPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string EnsureFileTrackerOnPath(string rootPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.EnsureFileTrackerOnPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="rootPath">FileTracker.dll のルート パス。 指定した場合、toolType をオーバーライドします。</param>
+        <summary>PATH 環境変数に適切な FileTracker アセンブリへのパスの先頭が追加されます。 インプロセスで追跡、やパス上、.NET Framework に存在しない場合に使用します。</summary>
+        <returns>パスの古い値</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileIsExcludedFromDependencies">
+      <MemberSignature Language="C#" Value="public static bool FileIsExcludedFromDependencies (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool FileIsExcludedFromDependencies(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.FileIsExcludedFromDependencies(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">テストするファイルの完全なパス</param>
+        <summary>指定したファイルは追跡対象の依存関係から除外されているかどうかはどうかを確認します。</summary>
+        <returns>ファイルが除外されている場合に true を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileIsUnderPath">
+      <MemberSignature Language="C#" Value="public static bool FileIsUnderPath (string fileName, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool FileIsUnderPath(string fileName, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.FileIsUnderPath(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">テストするファイルの完全なパス</param>
+        <param name="path">ファイルを含めることができるパスです。</param>
+        <summary>指定したファイルが、指定したパスにあるかどうかをテストします。</summary>
+        <returns>ファイルがパスの下にある場合は true を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindTrackerOnPath">
+      <MemberSignature Language="C#" Value="public static string FindTrackerOnPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string FindTrackerOnPath() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.FindTrackerOnPath" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Tracker.exe: の場所の %path% を検索しに一致する最初のパスを返します。一致するパスが見つからない場合は、Tracker.exe: または null への完全パスを照合します。</summary>
+        <returns>Tracker.exe: へのパスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceOutOfProcTracking">
+      <MemberSignature Language="C#" Value="public static bool ForceOutOfProcTracking (Microsoft.Build.Utilities.ExecutableType toolType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ForceOutOfProcTracking(valuetype Microsoft.Build.Utilities.ExecutableType toolType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.ForceOutOfProcTracking(Microsoft.Build.Utilities.ExecutableType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolType" Type="Microsoft.Build.Utilities.ExecutableType" />
+      </Parameters>
+      <Docs>
+        <param name="toolType">追跡されているツールの実行可能ファイルの種類</param>
+        <summary>アウト オブ、追跡する必要があるかどうかや、インプロセスで追跡が機能するかどうかを判断します。</summary>
+        <returns>True の場合、インプロセスで追跡する場合、アウト オブ、false を追跡する必要があります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceOutOfProcTracking">
+      <MemberSignature Language="C#" Value="public static bool ForceOutOfProcTracking (Microsoft.Build.Utilities.ExecutableType toolType, string dllName, string cancelEventName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ForceOutOfProcTracking(valuetype Microsoft.Build.Utilities.ExecutableType toolType, string dllName, string cancelEventName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.ForceOutOfProcTracking(Microsoft.Build.Utilities.ExecutableType,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolType" Type="Microsoft.Build.Utilities.ExecutableType" />
+        <Parameter Name="dllName" Type="System.String" />
+        <Parameter Name="cancelEventName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="toolType">追跡されているツールの実行可能ファイルの種類</param>
+        <param name="dllName">追跡されているツールです。</param>
+        <param name="cancelEventName">[キャンセル] イベントの追跡ツールの名前は、またはいずれかを使用する必要がある場合は null をリッスンする必要があります。</param>
+        <summary>アウト オブ、追跡する必要があるかどうかや、インプロセスで追跡が機能するかどうかを判断します。</summary>
+        <returns>True の場合、インプロセスで追跡する場合、アウト オブ、false を追跡する必要があります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatRootingMarker">
+      <MemberSignature Language="C#" Value="public static string FormatRootingMarker (Microsoft.Build.Framework.ITaskItem source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string FormatRootingMarker(class Microsoft.Build.Framework.ITaskItem source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.FormatRootingMarker(Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="source">プライマリのソース。</param>
+        <summary>プライマリ ソース ITaskItem の配列からルート マーカーの文字列を構築します。</summary>
+        <returns>マーカーの文字列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatRootingMarker">
+      <MemberSignature Language="C#" Value="public static string FormatRootingMarker (Microsoft.Build.Framework.ITaskItem[] sources);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string FormatRootingMarker(class Microsoft.Build.Framework.ITaskItem[] sources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.FormatRootingMarker(Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sources" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="sources">プライマリ ソース ITaskItem の配列。</param>
+        <summary>プライマリ ソース ITaskItem の配列からルート マーカーの文字列を構築します。</summary>
+        <returns>マーカーの文字列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatRootingMarker">
+      <MemberSignature Language="C#" Value="public static string FormatRootingMarker (Microsoft.Build.Framework.ITaskItem source, Microsoft.Build.Framework.ITaskItem output);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string FormatRootingMarker(class Microsoft.Build.Framework.ITaskItem source, class Microsoft.Build.Framework.ITaskItem output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.FormatRootingMarker(Microsoft.Build.Framework.ITaskItem,Microsoft.Build.Framework.ITaskItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="Microsoft.Build.Framework.ITaskItem" />
+        <Parameter Name="output" Type="Microsoft.Build.Framework.ITaskItem" />
+      </Parameters>
+      <Docs>
+        <param name="source">プライマリのソース。</param>
+        <param name="output">出力ファイル。</param>
+        <summary>プライマリ ソース ITaskItem の配列からルート マーカーの文字列を構築します。</summary>
+        <returns>マーカーの文字列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatRootingMarker">
+      <MemberSignature Language="C#" Value="public static string FormatRootingMarker (Microsoft.Build.Framework.ITaskItem[] sources, Microsoft.Build.Framework.ITaskItem[] outputs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string FormatRootingMarker(class Microsoft.Build.Framework.ITaskItem[] sources, class Microsoft.Build.Framework.ITaskItem[] outputs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.FormatRootingMarker(Microsoft.Build.Framework.ITaskItem[],Microsoft.Build.Framework.ITaskItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sources" Type="Microsoft.Build.Framework.ITaskItem[]" />
+        <Parameter Name="outputs" Type="Microsoft.Build.Framework.ITaskItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="sources">プライマリ ソース ITaskItem の配列。</param>
+        <param name="outputs">出力ファイル。</param>
+        <summary>プライマリ ソース ITaskItem の配列からルート マーカーの文字列を構築します。</summary>
+        <returns>マーカーの文字列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileTrackerPath">
+      <MemberSignature Language="C#" Value="public static string GetFileTrackerPath (Microsoft.Build.Utilities.ExecutableType toolType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetFileTrackerPath(valuetype Microsoft.Build.Utilities.ExecutableType toolType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.GetFileTrackerPath(Microsoft.Build.Utilities.ExecutableType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolType" Type="Microsoft.Build.Utilities.ExecutableType" />
+      </Parameters>
+      <Docs>
+        <param name="toolType">ラップされているツールの ExecutableType します。</param>
+        <summary>ラップされているツールの ExecutableType および情報をお、現在のビット数を知り、出します正しい FileTracker.dll へのパスを返しますを指定します。</summary>
+        <returns>ツールのパスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileTrackerPath">
+      <MemberSignature Language="C#" Value="public static string GetFileTrackerPath (Microsoft.Build.Utilities.ExecutableType toolType, string rootPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetFileTrackerPath(valuetype Microsoft.Build.Utilities.ExecutableType toolType, string rootPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.GetFileTrackerPath(Microsoft.Build.Utilities.ExecutableType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolType" Type="Microsoft.Build.Utilities.ExecutableType" />
+        <Parameter Name="rootPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="toolType">ToolType です。</param>
+        <param name="rootPath">FileTracker.dll のルート パス。 指定した場合、toolType をオーバーライドします。</param>
+        <summary>ラップされているツールの ExecutableType および情報をお、現在のビット数を知り、出します正しい FileTracker.dll へのパスを返しますを指定します。</summary>
+        <returns><see cref="T:System.String" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTrackerPath">
+      <MemberSignature Language="C#" Value="public static string GetTrackerPath (Microsoft.Build.Utilities.ExecutableType toolType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetTrackerPath(valuetype Microsoft.Build.Utilities.ExecutableType toolType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.GetTrackerPath(Microsoft.Build.Utilities.ExecutableType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolType" Type="Microsoft.Build.Utilities.ExecutableType" />
+      </Parameters>
+      <Docs>
+        <param name="toolType">ラップされているツールの ExecutableType します。</param>
+        <summary>ラップされているツールの ExecutableType と情報は、現在のビット数は次のトピック、出します正しい Tracker.exe: へのパスを返しますを指定します。</summary>
+        <returns>追跡ツールのパスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTrackerPath">
+      <MemberSignature Language="C#" Value="public static string GetTrackerPath (Microsoft.Build.Utilities.ExecutableType toolType, string rootPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetTrackerPath(valuetype Microsoft.Build.Utilities.ExecutableType toolType, string rootPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.GetTrackerPath(Microsoft.Build.Utilities.ExecutableType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolType" Type="Microsoft.Build.Utilities.ExecutableType" />
+        <Parameter Name="rootPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="toolType">ToolType です。</param>
+        <param name="rootPath">Tracker.exe: のルート パス。 指定した場合、toolType をオーバーライドします。</param>
+        <summary>ラップされているツールの ExecutableType と情報は、現在のビット数は次のトピック、出します正しい Tracker.exe: へのパスを返しますを指定します。</summary>
+        <returns><see cref="T:System.String" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResumeTracking">
+      <MemberSignature Language="C#" Value="public static void ResumeTracking ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ResumeTracking() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.ResumeTracking" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>再開追跡ファイルは、現在の追跡のコンテキストでアクセスします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetThreadCount">
+      <MemberSignature Language="C#" Value="public static void SetThreadCount (int threadCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetThreadCount(int32 threadCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.SetThreadCount(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="threadCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="threadCount">スレッドの数。</param>
+        <summary>グローバルなスレッド数を設定し、その数を現在のスレッドに割り当てます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartProcess">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.Process StartProcess (string command, string arguments, Microsoft.Build.Utilities.ExecutableType toolType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process StartProcess(string command, string arguments, valuetype Microsoft.Build.Utilities.ExecutableType toolType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.StartProcess(System.String,System.String,Microsoft.Build.Utilities.ExecutableType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Process</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.String" />
+        <Parameter Name="arguments" Type="System.String" />
+        <Parameter Name="toolType" Type="Microsoft.Build.Utilities.ExecutableType" />
+      </Parameters>
+      <Docs>
+        <param name="command">追跡するコマンド</param>
+        <param name="arguments">追跡するためにコマンドの引数</param>
+        <param name="toolType">ラップされたツールは、実行可能ファイルの種類</param>
+        <summary>プロセスを開始します。コマンドを追跡します。</summary>
+        <returns>プロセスのインスタンスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartProcess">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.Process StartProcess (string command, string arguments, Microsoft.Build.Utilities.ExecutableType toolType, string rootFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process StartProcess(string command, string arguments, valuetype Microsoft.Build.Utilities.ExecutableType toolType, string rootFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.StartProcess(System.String,System.String,Microsoft.Build.Utilities.ExecutableType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Process</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.String" />
+        <Parameter Name="arguments" Type="System.String" />
+        <Parameter Name="toolType" Type="Microsoft.Build.Utilities.ExecutableType" />
+        <Parameter Name="rootFiles" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="command">追跡するコマンド</param>
+        <param name="arguments">コマンドの引数</param>
+        <param name="toolType">ラップされたツールは、実行可能ファイルの種類</param>
+        <param name="rootFiles">ルート マーカー</param>
+        <summary>プロセスを開始します。コマンドを追跡します。</summary>
+        <returns>プロセスのインスタンスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartProcess">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.Process StartProcess (string command, string arguments, Microsoft.Build.Utilities.ExecutableType toolType, string intermediateDirectory, string rootFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process StartProcess(string command, string arguments, valuetype Microsoft.Build.Utilities.ExecutableType toolType, string intermediateDirectory, string rootFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.StartProcess(System.String,System.String,Microsoft.Build.Utilities.ExecutableType,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Process</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.String" />
+        <Parameter Name="arguments" Type="System.String" />
+        <Parameter Name="toolType" Type="Microsoft.Build.Utilities.ExecutableType" />
+        <Parameter Name="intermediateDirectory" Type="System.String" />
+        <Parameter Name="rootFiles" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="command">追跡するコマンド</param>
+        <param name="arguments">追跡するためにコマンドの引数</param>
+        <param name="toolType">ラップされたツールは、実行可能ファイルの種類</param>
+        <param name="intermediateDirectory">追跡ログが書き込まれる場所中間ディレクトリ</param>
+        <param name="rootFiles">ルート マーカー</param>
+        <summary>プロセスを開始します。コマンドを追跡します。</summary>
+        <returns>プロセスのインスタンスを返します</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartProcess">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.Process StartProcess (string command, string arguments, Microsoft.Build.Utilities.ExecutableType toolType, string dllName, string intermediateDirectory, string rootFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process StartProcess(string command, string arguments, valuetype Microsoft.Build.Utilities.ExecutableType toolType, string dllName, string intermediateDirectory, string rootFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.StartProcess(System.String,System.String,Microsoft.Build.Utilities.ExecutableType,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Process</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.String" />
+        <Parameter Name="arguments" Type="System.String" />
+        <Parameter Name="toolType" Type="Microsoft.Build.Utilities.ExecutableType" />
+        <Parameter Name="dllName" Type="System.String" />
+        <Parameter Name="intermediateDirectory" Type="System.String" />
+        <Parameter Name="rootFiles" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="command">追跡するコマンド</param>
+        <param name="arguments">追跡するためにコマンドの引数</param>
+        <param name="toolType">ラップされたツールは、実行可能ファイルの種類</param>
+        <param name="dllName">追跡を実行している dll の名前</param>
+        <param name="intermediateDirectory">追跡ログが書き込まれる場所中間ディレクトリ</param>
+        <param name="rootFiles">ルート マーカー</param>
+        <summary>プロセスを開始します。コマンドを追跡します。</summary>
+        <returns>プロセス インスタンス</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartProcess">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.Process StartProcess (string command, string arguments, Microsoft.Build.Utilities.ExecutableType toolType, string dllName, string intermediateDirectory, string rootFiles, string cancelEventName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process StartProcess(string command, string arguments, valuetype Microsoft.Build.Utilities.ExecutableType toolType, string dllName, string intermediateDirectory, string rootFiles, string cancelEventName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.StartProcess(System.String,System.String,Microsoft.Build.Utilities.ExecutableType,System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Process</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.String" />
+        <Parameter Name="arguments" Type="System.String" />
+        <Parameter Name="toolType" Type="Microsoft.Build.Utilities.ExecutableType" />
+        <Parameter Name="dllName" Type="System.String" />
+        <Parameter Name="intermediateDirectory" Type="System.String" />
+        <Parameter Name="rootFiles" Type="System.String" />
+        <Parameter Name="cancelEventName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="command">追跡するコマンド</param>
+        <param name="arguments">追跡するためにコマンドの引数</param>
+        <param name="toolType">ラップされたツールは、実行可能ファイルの種類</param>
+        <param name="dllName">追跡を実行している dll の名前</param>
+        <param name="intermediateDirectory">追跡ログが書き込まれる場所中間ディレクトリ</param>
+        <param name="rootFiles">ルート マーカー</param>
+        <param name="cancelEventName">場合の追跡ツールは、キャンセルの特定のイベントでリッスンしている必要があります、ここでその名前を渡す</param>
+        <summary>プロセスを開始します。コマンドを追跡します。</summary>
+        <returns>プロセス インスタンス</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartTrackingContext">
+      <MemberSignature Language="C#" Value="public static void StartTrackingContext (string intermediateDirectory, string taskName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void StartTrackingContext(string intermediateDirectory, string taskName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.StartTrackingContext(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="intermediateDirectory" Type="System.String" />
+        <Parameter Name="taskName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="intermediateDirectory">ログ ファイルの追跡の書き込み先のディレクトリ</param>
+        <param name="taskName">追跡用の名前を決定するため、この関数を呼び出すタスクの名前のログ ファイル</param>
+        <summary>ファイル アクセスの追跡を開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartTrackingContextWithRoot">
+      <MemberSignature Language="C#" Value="public static void StartTrackingContextWithRoot (string intermediateDirectory, string taskName, string rootMarkerResponseFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void StartTrackingContextWithRoot(string intermediateDirectory, string taskName, string rootMarkerResponseFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.StartTrackingContextWithRoot(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="intermediateDirectory" Type="System.String" />
+        <Parameter Name="taskName" Type="System.String" />
+        <Parameter Name="rootMarkerResponseFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="intermediateDirectory">ログ ファイルの追跡の書き込み先のディレクトリ</param>
+        <param name="taskName">追跡用の名前を決定するため、この関数を呼び出すタスクの名前のログ ファイル</param>
+        <param name="rootMarkerResponseFile">応答ファイルのルートのマーカー。</param>
+        <summary>ファイル アクセスの追跡、指定した応答ファイルのルートのマーカーを使用して、起動します。 ルートのマーカーを指定して応答ファイルを自動的に生成するには、FileTracker.CreateRootingMarkerResponseFile を呼び出します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopTrackingAndCleanup">
+      <MemberSignature Language="C#" Value="public static void StopTrackingAndCleanup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void StopTrackingAndCleanup() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.StopTrackingAndCleanup" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイル アクセスの追跡を停止し、現在の追跡コンテキストを処分します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuspendTracking">
+      <MemberSignature Language="C#" Value="public static void SuspendTracking ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SuspendTracking() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.SuspendTracking" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイルのアクセスを現在の追跡のコンテキストでの追跡を一時的に中断します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackerArguments">
+      <MemberSignature Language="C#" Value="public static string TrackerArguments (string command, string arguments, string dllName, string intermediateDirectory, string rootFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string TrackerArguments(string command, string arguments, string dllName, string intermediateDirectory, string rootFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.TrackerArguments(System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.String" />
+        <Parameter Name="arguments" Type="System.String" />
+        <Parameter Name="dllName" Type="System.String" />
+        <Parameter Name="intermediateDirectory" Type="System.String" />
+        <Parameter Name="rootFiles" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="command">追跡するコマンド</param>
+        <param name="arguments">追跡するためにコマンドの引数</param>
+        <param name="dllName">追跡を実行している dll の名前</param>
+        <param name="intermediateDirectory">追跡ログが書き込まれる場所中間ディレクトリ</param>
+        <param name="rootFiles">ルート マーカー</param>
+        <summary>このメソッドは、そのパラメーターから正しい Tracker.exe: 引数を構築します。</summary>
+        <returns>文字列として引数</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackerArguments">
+      <MemberSignature Language="C#" Value="public static string TrackerArguments (string command, string arguments, string dllName, string intermediateDirectory, string rootFiles, string cancelEventName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string TrackerArguments(string command, string arguments, string dllName, string intermediateDirectory, string rootFiles, string cancelEventName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.TrackerArguments(System.String,System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.String" />
+        <Parameter Name="arguments" Type="System.String" />
+        <Parameter Name="dllName" Type="System.String" />
+        <Parameter Name="intermediateDirectory" Type="System.String" />
+        <Parameter Name="rootFiles" Type="System.String" />
+        <Parameter Name="cancelEventName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="command">追跡するコマンド</param>
+        <param name="arguments">追跡するためにコマンドの引数</param>
+        <param name="dllName">追跡を実行している dll の名前</param>
+        <param name="intermediateDirectory">追跡ログが書き込まれる場所中間ディレクトリ</param>
+        <param name="rootFiles">ルート マーカー</param>
+        <param name="cancelEventName">そのトラッカーをリッスンする、その名前がここで渡されるキャンセル イベントが作成されている場合</param>
+        <summary>このメソッドは、そのパラメーターから正しい Tracker.exe: 引数を構築します。</summary>
+        <returns>文字列として引数</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackerCommandArguments">
+      <MemberSignature Language="C#" Value="public static string TrackerCommandArguments (string command, string arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string TrackerCommandArguments(string command, string arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.TrackerCommandArguments(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.String" />
+        <Parameter Name="arguments" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="command">追跡するコマンド</param>
+        <param name="arguments">追跡するためにコマンドの引数</param>
+        <summary>このメソッドは、そのパラメーターから正しい Tracker.exe: コマンド引数を構築します。</summary>
+        <returns>文字列として引数</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackerResponseFileArguments">
+      <MemberSignature Language="C#" Value="public static string TrackerResponseFileArguments (string dllName, string intermediateDirectory, string rootFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string TrackerResponseFileArguments(string dllName, string intermediateDirectory, string rootFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.TrackerResponseFileArguments(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dllName" Type="System.String" />
+        <Parameter Name="intermediateDirectory" Type="System.String" />
+        <Parameter Name="rootFiles" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dllName">追跡を実行している dll の名前</param>
+        <param name="intermediateDirectory">追跡ログが書き込まれる場所中間ディレクトリ</param>
+        <param name="rootFiles">ルート マーカー</param>
+        <summary>このメソッドは、そのパラメーターから正しい Tracker.exe: 応答ファイル引数を構築します。</summary>
+        <returns>文字列として引数</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackerResponseFileArguments">
+      <MemberSignature Language="C#" Value="public static string TrackerResponseFileArguments (string dllName, string intermediateDirectory, string rootFiles, string cancelEventName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string TrackerResponseFileArguments(string dllName, string intermediateDirectory, string rootFiles, string cancelEventName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.TrackerResponseFileArguments(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dllName" Type="System.String" />
+        <Parameter Name="intermediateDirectory" Type="System.String" />
+        <Parameter Name="rootFiles" Type="System.String" />
+        <Parameter Name="cancelEventName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dllName">追跡を実行している dll の名前</param>
+        <param name="intermediateDirectory">追跡ログが書き込まれる場所中間ディレクトリ</param>
+        <param name="rootFiles">ルート マーカー</param>
+        <param name="cancelEventName">そのトラッカーをリッスンする、その名前がここで渡されるキャンセル イベントが作成されている場合</param>
+        <summary>このメソッドは、そのパラメーターから正しい Tracker.exe: 応答ファイル引数を構築します。</summary>
+        <returns>文字列として引数</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAllTLogs">
+      <MemberSignature Language="C#" Value="public static void WriteAllTLogs (string intermediateDirectory, string taskName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteAllTLogs(string intermediateDirectory, string taskName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.WriteAllTLogs(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="intermediateDirectory" Type="System.String" />
+        <Parameter Name="taskName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="intermediateDirectory">ログ ファイルの追跡の書き込み先のディレクトリ</param>
+        <param name="taskName">追跡用の名前を決定するため、この関数を呼び出すタスクの名前のログ ファイル</param>
+        <summary>すべてのスレッドとコンテキストに対する追跡ログを記述します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteContextTLogs">
+      <MemberSignature Language="C#" Value="public static void WriteContextTLogs (string intermediateDirectory, string taskName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteContextTLogs(string intermediateDirectory, string taskName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Utilities.FileTracker.WriteContextTLogs(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="intermediateDirectory" Type="System.String" />
+        <Parameter Name="taskName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="intermediateDirectory">ログ ファイルの追跡の書き込み先のディレクトリ</param>
+        <param name="taskName">追跡用の名前を決定するため、この関数を呼び出すタスクの名前のログ ファイル</param>
+        <summary>現在の追跡のコンテキストに対応する追跡ログを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

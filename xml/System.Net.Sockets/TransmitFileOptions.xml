@@ -1,0 +1,197 @@
+<Type Name="TransmitFileOptions" FullName="System.Net.Sockets.TransmitFileOptions">
+  <TypeSignature Language="C#" Value="public enum TransmitFileOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TransmitFileOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.TransmitFileOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Net.Sockets.TransmitFileOptions" />列挙体は、ファイル転送の要求で使用される値を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **注**状態ファイルが送信された後の切断と ReuseSocket ソケットに戻り、切断された再利用可能なフラグです。 サービス プロバイダーがすぐに任意のファイル転送が完了する前に、ソケットに関連付けられているサービスの品質を削除する可能性がありますので、これらのフラグは、サービスの品質 (QOS) が要求されたソケットでは使用されません必要があります。 QOS が有効なソケットの最善の方法が呼び出されて<xref:System.Net.Sockets.Socket.Close%2A>ファイル転送が完了したら、これらのフラグではなくです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する<xref:System.Net.Sockets.TransmitFileOptions.ReuseSocket>への呼び出しで<xref:System.Net.Sockets.Socket.SendFile%2A>です。 ファイル"test.txt"は、ローカル コンピューターのルート ディレクトリにあります。 この例では事前バッファリングと事後バッファリングのデータが作成され、ファイルにリモート ホストに送信します。 システムの既定のスレッドを使用するのには、UseDefaultWorkerThread を指定します。  
+  
+ [!code-cpp[NCLSocketEnhancements#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSocketEnhancements/CPP/nclsocketenhancements.cpp#4)]
+ [!code-csharp[NCLSocketEnhancements#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSocketEnhancements/CS/nclsocketenhancements.cs#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Disconnect">
+      <MemberSignature Language="C#" Value="Disconnect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.TransmitFileOptions Disconnect = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.TransmitFileOptions.Disconnect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.TransmitFileOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスポート レベルの開始は切断すべて伝送用のデータがキューに登録されているファイルです。 使用すると<see cref="F:System.Net.Sockets.TransmitFileOptions.ReuseSocket" />ファイルが送信された後、これらのフラグが切断されている、再利用可能な状態にソケットを返します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReuseSocket">
+      <MemberSignature Language="C#" Value="ReuseSocket" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.TransmitFileOptions ReuseSocket = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.TransmitFileOptions.ReuseSocket" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.TransmitFileOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の完了時に、ソケット ハンドルを再利用可能性があります。 このフラグは有効な場合にのみ、<see cref="F:System.Net.Sockets.TransmitFileOptions.Disconnect" />も指定されています。 使用すると<see cref="F:System.Net.Sockets.TransmitFileOptions.Disconnect" />ファイルが送信された後、これらのフラグが切断されている、再利用可能な状態にソケットを返します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDefaultWorkerThread">
+      <MemberSignature Language="C#" Value="UseDefaultWorkerThread" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.TransmitFileOptions UseDefaultWorkerThread = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.TransmitFileOptions.UseDefaultWorkerThread" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.TransmitFileOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>長いファイル転送の要求を処理するのにには、既定のスレッドを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseKernelApc">
+      <MemberSignature Language="C#" Value="UseKernelApc" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.TransmitFileOptions UseKernelApc = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.TransmitFileOptions.UseKernelApc" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.TransmitFileOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カーネル非同期プロシージャの使用は、長いファイル転送の要求を処理するワーカー スレッドではなく (Apc) を呼び出します。 長い要求は、ファイルやキャッシュから 1 つの読み取りよりも多く必要とする要求として定義されます。そのため、要求、ファイルのサイズと送信パケットの指定された長さによって異なります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSystemThread">
+      <MemberSignature Language="C#" Value="UseSystemThread" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.TransmitFileOptions UseSystemThread = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.TransmitFileOptions.UseSystemThread" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.TransmitFileOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>長いファイル転送の要求を処理するには、システムのスレッドを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteBehind">
+      <MemberSignature Language="C#" Value="WriteBehind" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.TransmitFileOptions WriteBehind = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.TransmitFileOptions.WriteBehind" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.TransmitFileOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルの転送要求を完了しなくてもすぐに、保留中です。 このフラグを指定し、ファイル転送が成功した場合、データされたシステムで受け入れられますがリモート エンドで確認されたわけです。 このフラグを使用しない、<see cref="F:System.Net.Sockets.TransmitFileOptions.Disconnect" />と<see cref="F:System.Net.Sockets.TransmitFileOptions.ReuseSocket" />フラグ。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

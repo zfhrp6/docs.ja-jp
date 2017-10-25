@@ -1,0 +1,500 @@
+<Type Name="ItemCollection" FullName="System.Data.Metadata.Edm.ItemCollection">
+  <TypeSignature Language="C#" Value="public abstract class ItemCollection : System.Data.Metadata.Edm.ReadOnlyMetadataCollection&lt;System.Data.Metadata.Edm.GlobalItem&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ItemCollection extends System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1&lt;class System.Data.Metadata.Edm.GlobalItem&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Metadata.Edm.ItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Metadata.Edm.ReadOnlyMetadataCollection&lt;System.Data.Metadata.Edm.GlobalItem&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="T">System.Data.Metadata.Edm.GlobalItem</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CLSCompliant(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Data.Metadata.Edm.ObjectItemCollection" />、<see cref="T:System.Data.Metadata.Edm.EdmItemCollection" />、<see cref="T:System.Data.Mapping.StorageMappingItemCollection" /> の各クラスの基本クラスです。 <see cref="T:System.Data.Metadata.Edm.ItemCollection" /> クラスは、インメモリのメタデータを読み込んだり保持したりするためのコア API を備えた抽象クラスです。 このクラスは、<see cref="T:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1" /> クラスから派生しています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。 [(メタデータ) の項目のコレクション](http://msdn.microsoft.com/en-us/3051a40a-ff45-42f8-8f93-7545e427a404)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DataSpace">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.DataSpace DataSpace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Metadata.Edm.DataSpace DataSpace" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.ItemCollection.DataSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.DataSpace</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この項目コレクションに関連付けられているデータ モデルを取得します。</summary>
+        <value>この項目コレクションに関連付けられているデータ モデル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.Data.Metadata.Edm.DataSpace.OSpace> に対して <xref:System.Data.Metadata.Edm.ObjectItemCollection>、<xref:System.Data.Metadata.Edm.DataSpace.CSpace> に対して <xref:System.Data.Metadata.Edm.EdmItemCollection>、<xref:System.Data.Metadata.Edm.DataSpace.CSSpace> に対して <xref:System.Data.Mapping.StorageMappingItemCollection> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntityContainer">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.EntityContainer GetEntityContainer (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Metadata.Edm.EntityContainer GetEntityContainer(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.GetEntityContainer(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EntityContainer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">エンティティ コンテナー名。</param>
+        <summary>指定されたエンティティ コンテナー名を使用して、<see cref="T:System.Data.Metadata.Edm.EntityContainer" /> オブジェクトを返します。</summary>
+        <returns>エンティティ コンテナーが存在しない場合は、NULL が返されます。それ以外の場合は、最初に見つかったエンティティ コンテナーが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntityContainer">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.EntityContainer GetEntityContainer (string name, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Metadata.Edm.EntityContainer GetEntityContainer(string name, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.GetEntityContainer(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EntityContainer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">エンティティ コンテナー名。</param>
+        <param name="ignoreCase">
+          <see langword="true" />大文字と小文字の検索を実行するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定されたエンティティ コンテナー名を使用して、<see cref="T:System.Data.Metadata.Edm.EntityContainer" /> オブジェクトを返します。</summary>
+        <returns>エンティティ コンテナーが存在しない場合は、NULL が返されます。それ以外の場合は、最初に見つかったエンティティ コンテナーが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFunctions">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt; GetFunctions (string functionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.EdmFunction&gt; GetFunctions(string functionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.GetFunctions(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="functionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="functionName">関数の完全な名前。</param>
+        <summary>この項目コレクションから、指定された名前の関数のすべてのオーバーロードを返します。</summary>
+        <returns>指定された名前を持つ関数をすべて格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFunctions">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt; GetFunctions (string functionName, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.EdmFunction&gt; GetFunctions(string functionName, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.GetFunctions(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="functionName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="functionName">関数の完全な名前。</param>
+        <param name="ignoreCase">
+          <see langword="true" />大文字と小文字の検索を実行するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>この項目コレクションから、指定された名前の関数のすべてのオーバーロードを返します。</summary>
+        <returns>指定された名前を持つ関数をすべて格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFunctions">
+      <MemberSignature Language="C#" Value="protected static System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt; GetFunctions (System.Collections.Generic.Dictionary&lt;string,System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt;&gt; functionCollection, string functionName, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.EdmFunction&gt; GetFunctions(class System.Collections.Generic.Dictionary`2&lt;string, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.EdmFunction&gt;&gt; functionCollection, string functionName, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.GetFunctions(System.Collections.Generic.Dictionary{System.String,System.Collections.ObjectModel.ReadOnlyCollection{System.Data.Metadata.Edm.EdmFunction}},System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="functionCollection" Type="System.Collections.Generic.Dictionary&lt;System.String,System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.EdmFunction&gt;&gt;" />
+        <Parameter Name="functionName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="functionCollection">関数のディクショナリ。</param>
+        <param name="functionName">関数の完全な名前。</param>
+        <param name="ignoreCase">
+          <see langword="true" />大文字と小文字の検索を実行するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>この項目コレクションから、指定された名前の関数のすべてのオーバーロードを返します。</summary>
+        <returns>指定された名前を持つ関数をすべて格納する ReadOnlyCollection 型のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItem&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetItem&lt;T&gt; (string identity) where T : System.Data.Metadata.Edm.GlobalItem;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetItem&lt;(class System.Data.Metadata.Edm.GlobalItem) T&gt;(string identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.GetItem``1(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Data.Metadata.Edm.GlobalItem</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">メソッドによって返される型。</typeparam>
+        <param name="identity">項目の ID。</param>
+        <summary>指定された ID を使用して、厳密に型指定された <see cref="T:System.Data.Metadata.Edm.GlobalItem" /> オブジェクトを返します。</summary>
+        <returns>ID で指定された項目。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItem&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetItem&lt;T&gt; (string identity, bool ignoreCase) where T : System.Data.Metadata.Edm.GlobalItem;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetItem&lt;(class System.Data.Metadata.Edm.GlobalItem) T&gt;(string identity, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.GetItem``1(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Data.Metadata.Edm.GlobalItem</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">メソッドによって返される型。</typeparam>
+        <param name="identity">項目の ID。</param>
+        <param name="ignoreCase">
+          <see langword="true" />大文字と小文字の検索を実行するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定された ID を使用し、厳密に型指定された <see cref="T:System.Data.Metadata.Edm.GlobalItem" /> オブジェクトを返します。大文字と小文字を区別して検索するか、区別せずに検索するかを指定できます。</summary>
+        <returns>ID で指定された項目。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItems&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;T&gt; GetItems&lt;T&gt; () where T : System.Data.Metadata.Edm.GlobalItem;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;!!T&gt; GetItems&lt;(class System.Data.Metadata.Edm.GlobalItem) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.GetItems``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Data.Metadata.Edm.GlobalItem</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">メソッドによって返される型。</typeparam>
+        <summary>この項目コレクションから、指定された型の項目をすべて返します。</summary>
+        <returns>指定された型の項目をすべて格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.EdmType GetType (string name, string namespaceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Metadata.Edm.EdmType GetType(string name, string namespaceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.GetType(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EdmType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="namespaceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の名前。</param>
+        <param name="namespaceName">型の名前空間。</param>
+        <summary>この項目コレクションから、指定された型名と名前空間名を使用して、<see cref="T:System.Data.Metadata.Edm.EdmType" /> オブジェクトを返します。</summary>
+        <returns>この項目コレクションにおいて、指定された型名と名前空間名に一致する型を表す <see cref="T:System.Data.Metadata.Edm.EdmType" /> オブジェクト。 一致する型が存在しない場合は、NULL が返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.EdmType GetType (string name, string namespaceName, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Metadata.Edm.EdmType GetType(string name, string namespaceName, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.GetType(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EdmType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="namespaceName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の名前。</param>
+        <param name="namespaceName">型の名前空間。</param>
+        <param name="ignoreCase">
+          <see langword="true" />大文字と小文字の検索を実行するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>この項目コレクションから、指定された型名と名前空間名を使用して、<see cref="T:System.Data.Metadata.Edm.EdmType" /> オブジェクトを返します。</summary>
+        <returns>この項目コレクションにおいて、指定された型名と名前空間名に一致する型を表す <see cref="T:System.Data.Metadata.Edm.EdmType" /> オブジェクト。 一致する型が存在しない場合は、NULL が返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetEntityContainer">
+      <MemberSignature Language="C#" Value="public bool TryGetEntityContainer (string name, out System.Data.Metadata.Edm.EntityContainer entityContainer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetEntityContainer(string name, [out] class System.Data.Metadata.Edm.EntityContainer&amp; entityContainer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.TryGetEntityContainer(System.String,System.Data.Metadata.Edm.EntityContainer@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="entityContainer" Type="System.Data.Metadata.Edm.EntityContainer&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">エンティティ コンテナー名。</param>
+        <param name="entityContainer">このメソッドから制御が戻った時点で、<see cref="T:System.Data.Metadata.Edm.EntityContainer" /> オブジェクトが格納されます。 エンティティ コンテナーが存在しない場合、この出力パラメーターには NULL が格納されます。それ以外の場合、出力パラメーターには最初のエンティティ コンテナーが格納されます。</param>
+        <summary>指定されたエンティティ コンテナー名を使用して、<see cref="T:System.Data.Metadata.Edm.EntityContainer" /> オブジェクトを返します。 エンティティ コンテナーが存在しない場合、出力パラメーターには NULL が格納されます。それ以外の場合、出力パラメーターには最初のエンティティ コンテナーが格納されます。</summary>
+        <returns>
+          <see langword="true" />検索条件に一致するエンティティ コンテナーがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetEntityContainer">
+      <MemberSignature Language="C#" Value="public bool TryGetEntityContainer (string name, bool ignoreCase, out System.Data.Metadata.Edm.EntityContainer entityContainer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetEntityContainer(string name, bool ignoreCase, [out] class System.Data.Metadata.Edm.EntityContainer&amp; entityContainer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.TryGetEntityContainer(System.String,System.Boolean,System.Data.Metadata.Edm.EntityContainer@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="entityContainer" Type="System.Data.Metadata.Edm.EntityContainer&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">エンティティ コンテナー名。</param>
+        <param name="ignoreCase">
+          <see langword="true" />大文字と小文字の検索を実行するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="entityContainer">このメソッドから制御が戻った時点で、<see cref="T:System.Data.Metadata.Edm.EntityContainer" /> オブジェクトが格納されます。 エンティティ コンテナーが存在しない場合、この出力パラメーターには NULL が格納されます。それ以外の場合、出力パラメーターには最初のエンティティ コンテナーが格納されます。</param>
+        <summary>指定されたエンティティ コンテナー名を使用して、<see cref="T:System.Data.Metadata.Edm.EntityContainer" /> オブジェクトを返します。 エンティティ コンテナーが存在しない場合、この出力パラメーターには NULL が格納されます。それ以外の場合、出力パラメーターには最初のエンティティ コンテナーが格納されます。</summary>
+        <returns>
+          <see langword="true" />検索条件に一致するエンティティ コンテナーがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetItem&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public bool TryGetItem&lt;T&gt; (string identity, out T item) where T : System.Data.Metadata.Edm.GlobalItem;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetItem&lt;(class System.Data.Metadata.Edm.GlobalItem) T&gt;(string identity, [out] !!T&amp; item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.TryGetItem``1(System.String,``0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Data.Metadata.Edm.GlobalItem</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+        <Parameter Name="item" Type="T&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">メソッドによって返される型。</typeparam>
+        <param name="identity">項目の ID。</param>
+        <param name="item">このメソッドから制御が戻った時点で、出力パラメーターには <see cref="T:System.Data.Metadata.Edm.GlobalItem" /> オブジェクトが格納されます。 項目コレクションに、指定された ID のグローバル項目が存在しなかった場合、この出力パラメーターには NULL が格納されます。</param>
+        <summary>この項目コレクションから、指定された ID を使用して、厳密に型指定された <see cref="T:System.Data.Metadata.Edm.GlobalItem" /> オブジェクトを返します。</summary>
+        <returns>
+          <see langword="true" />検索条件に一致する項目がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetItem&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public bool TryGetItem&lt;T&gt; (string identity, bool ignoreCase, out T item) where T : System.Data.Metadata.Edm.GlobalItem;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetItem&lt;(class System.Data.Metadata.Edm.GlobalItem) T&gt;(string identity, bool ignoreCase, [out] !!T&amp; item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.TryGetItem``1(System.String,System.Boolean,``0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.Data.Metadata.Edm.GlobalItem</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="item" Type="T&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">メソッドによって返される型。</typeparam>
+        <param name="identity">項目の ID。</param>
+        <param name="ignoreCase">
+          <see langword="true" />大文字と小文字の検索を実行するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="item">このメソッドから制御が戻った時点で、出力パラメーターには <see cref="T:System.Data.Metadata.Edm.GlobalItem" /> オブジェクトが格納されます。 項目コレクションに、指定された ID のグローバル項目が存在しなかった場合、この出力パラメーターには NULL が格納されます。</param>
+        <summary>この項目コレクションから、指定された ID を使用して、厳密に型指定された <see cref="T:System.Data.Metadata.Edm.GlobalItem" /> オブジェクトを返します。</summary>
+        <returns>
+          <see langword="true" />検索条件に一致する項目がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetType">
+      <MemberSignature Language="C#" Value="public bool TryGetType (string name, string namespaceName, out System.Data.Metadata.Edm.EdmType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetType(string name, string namespaceName, [out] class System.Data.Metadata.Edm.EdmType&amp; type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.TryGetType(System.String,System.String,System.Data.Metadata.Edm.EdmType@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="namespaceName" Type="System.String" />
+        <Parameter Name="type" Type="System.Data.Metadata.Edm.EdmType&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の名前。</param>
+        <param name="namespaceName">型の名前空間。</param>
+        <param name="type">このメソッドから制御が戻った時点で、この出力パラメーターには <see cref="T:System.Data.Metadata.Edm.EdmType" /> オブジェクトが格納されます。 項目コレクションに、指定された名前と名前空間名に一致する型が存在しなかった場合、この出力パラメーターには NULL が格納されます。</param>
+        <summary>この項目コレクションから、指定された型名と名前空間名を使用して、<see cref="T:System.Data.Metadata.Edm.EdmType" /> オブジェクトを返します。</summary>
+        <returns>
+          <see langword="true" />検索条件に一致する型がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetType">
+      <MemberSignature Language="C#" Value="public bool TryGetType (string name, string namespaceName, bool ignoreCase, out System.Data.Metadata.Edm.EdmType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetType(string name, string namespaceName, bool ignoreCase, [out] class System.Data.Metadata.Edm.EdmType&amp; type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.ItemCollection.TryGetType(System.String,System.String,System.Boolean,System.Data.Metadata.Edm.EdmType@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="namespaceName" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="type" Type="System.Data.Metadata.Edm.EdmType&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">型の名前。</param>
+        <param name="namespaceName">型の名前空間。</param>
+        <param name="ignoreCase">
+          <see langword="true" />大文字と小文字の検索を実行するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="type">このメソッドから制御が戻った時点で、この出力パラメーターには <see cref="T:System.Data.Metadata.Edm.EdmType" /> オブジェクトが格納されます。 項目コレクションに、指定された名前と名前空間名に一致する型が存在しなかった場合、この出力パラメーターには NULL が格納されます。</param>
+        <summary>この項目コレクションから、指定された型名と名前空間名を使用して、<see cref="T:System.Data.Metadata.Edm.EdmType" /> オブジェクトを返します。</summary>
+        <returns>
+          <see langword="true" />検索条件に一致する型がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

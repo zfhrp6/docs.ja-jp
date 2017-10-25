@@ -1,0 +1,223 @@
+<Type Name="RadioButton" FullName="System.Windows.Controls.RadioButton">
+  <TypeSignature Language="C#" Value="public class RadioButton : System.Windows.Controls.Primitives.ToggleButton" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi RadioButton extends System.Windows.Controls.Primitives.ToggleButton" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.RadioButton" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Primitives.ToggleButton</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.RadioButton)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>選択することができますが、クリアしないと、ユーザーがボタンを表します。 <see cref="P:System.Windows.Controls.Primitives.ToggleButton.IsChecked" />のプロパティ、<see cref="T:System.Windows.Controls.RadioButton" />をクリックして設定できますが、プログラムによって、消去できるのみです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.RadioButton>は、 <xref:System.Windows.Controls.ContentControl>、任意の型 (文字列、画像、パネルなど) の 1 つのオブジェクトに含めることを意味します。 詳細については、<xref:System.Windows.Controls.ContentControl> クラスを参照してください。  
+  
+ A<xref:System.Windows.Controls.RadioButton>が 2 つの状態:`true`または`false`です。 <xref:System.Windows.Controls.RadioButton>のグループ内のアイテムとして通常使用されるコントロールは、<xref:System.Windows.Controls.RadioButton>コントロール。 ただし、可能であれば、1 つを作成する<xref:System.Windows.Controls.RadioButton>です。  かどうか、<xref:System.Windows.Controls.RadioButton>が選択されているの状態によって決定されます、<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A>プロパティです。  
+  
+ ときに、<xref:System.Windows.Controls.RadioButton>は選択すると、消去できませんをクリックします。 ときに<xref:System.Windows.Controls.RadioButton>要素がグループ化、ボタンは相互に排他的です。 ユーザーが内で一度に 1 つの項目を選択できる、<xref:System.Windows.Controls.RadioButton>グループ。 グループ化できます<xref:System.Windows.Controls.RadioButton>コントロールかを設定して、親の内側に配置することによって、<xref:System.Windows.Controls.RadioButton.GroupName%2A>プロパティごとに<xref:System.Windows.Controls.RadioButton>です。  
+  
+## <a name="customizing-the-radiobutton-control"></a>RadioButton コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.RadioButton>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.RadioButton>を参照してください[RadioButton スタイルとテンプレート](~/docs/framework/wpf/controls/radiobutton-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.RadioButton>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、作成する方法を示しています。 <xref:System.Windows.Controls.RadioButton> 、コントロールがコンテナーの内部グループ化し、処理、<xref:System.Windows.Controls.Primitives.ToggleButton.Checked>イベント。  
+  
+ [!code-xaml[RadioButton#3](~/samples/snippets/csharp/VS_Snippets_Wpf/RadioButton/CSharp/Pane1.xaml#3)]  
+  
+ [!code-csharp[RadioButton#5](~/samples/snippets/csharp/VS_Snippets_Wpf/RadioButton/CSharp/Pane1.xaml.cs#5)]
+ [!code-vb[RadioButton#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RadioButton/VisualBasic/Window1.xaml.vb#5)]  
+  
+ 次のコード サンプルの作成 2 つの異なる<xref:System.Windows.Controls.RadioButton>グループ:`colorgrp`と`numgrp`です。 ユーザーが 1 つを選択できる<xref:System.Windows.Controls.RadioButton>各グループにします。  
+  
+ [!code-xaml[RadioButton#4](~/samples/snippets/csharp/VS_Snippets_Wpf/RadioButton/CSharp/Pane1.xaml#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RadioButton ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RadioButton.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.RadioButton" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupName">
+      <MemberSignature Language="C#" Value="public string GroupName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GroupName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RadioButton.GroupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する名前<see cref="T:System.Windows.Controls.RadioButton" />コントロールは相互に排他的です。</summary>
+        <value>名前を指定する<see cref="T:System.Windows.Controls.RadioButton" />コントロールは相互に排他的です。  既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに 2 つ以上<xref:System.Windows.Controls.RadioButton>コントロールが同じである<xref:System.Windows.Controls.RadioButton.GroupName%2A>、ユーザーが 1 つだけを選択できる<xref:System.Windows.Controls.RadioButton>一度にです。  
+  
+<a name="dependencyPropertyInfo_GroupName"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.RadioButton.GroupNameProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次のコード サンプルの作成 2 つの異なる<xref:System.Windows.Controls.RadioButton>グループ:`colorgrp`と`numgrp`です。 ユーザーが 1 つを選択できる<xref:System.Windows.Controls.RadioButton>各グループにします。  
+  
+ [!code-xaml[RadioButton#4](~/samples/snippets/csharp/VS_Snippets_Wpf/RadioButton/CSharp/Pane1.xaml#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupNameProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty GroupNameProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty GroupNameProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.RadioButton.GroupNameProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.RadioButton.GroupName" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAccessKey">
+      <MemberSignature Language="C#" Value="protected override void OnAccessKey (System.Windows.Input.AccessKeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnAccessKey(class System.Windows.Input.AccessKeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RadioButton.OnAccessKey(System.Windows.Input.AccessKeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.AccessKeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">データを提供<see cref="T:System.Windows.Input.AccessKeyEventArgs" />です。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.AccessText.AccessKey" />ラジオ ボタンが呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChecked">
+      <MemberSignature Language="C#" Value="protected override void OnChecked (System.Windows.RoutedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnChecked(class System.Windows.RoutedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RadioButton.OnChecked(System.Windows.RoutedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.RoutedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">データを提供<see cref="T:System.Windows.RoutedEventArgs" />です。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.Primitives.ToggleButton.IsChecked" />プロパティがなります<see langword="true" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RadioButton.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>適切な提供<see cref="T:System.Windows.Automation.Peers.RadioButtonAutomationPeer" />の一部として、このコントロールの実装、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]オートメーション インフラストラクチャです。</summary>
+        <returns>型固有の <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 実装。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnToggle">
+      <MemberSignature Language="C#" Value="protected override void OnToggle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnToggle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RadioButton.OnToggle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって呼び出される、<see cref="M:System.Windows.Controls.Primitives.ToggleButton.OnClick" />を実装するメソッド、<see cref="T:System.Windows.Controls.RadioButton" />コントロールの表示/非表示動作します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを切り替えます、<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

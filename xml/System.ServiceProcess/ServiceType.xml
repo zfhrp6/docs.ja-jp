@@ -1,0 +1,195 @@
+<Type Name="ServiceType" FullName="System.ServiceProcess.ServiceType">
+  <TypeSignature Language="C#" Value="public enum ServiceType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ServiceType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceProcess.ServiceType" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サービスの型を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスの種類は、システムによって、サービスを使用する方法を示します。 <xref:System.ServiceProcess.ServiceController>で渡されたコマンドには、サービス ストアのサービス型の値。  
+  
+ ServiceType インスタンスの値では、ビットごとの OR 演算子を使用して結合フラグのセットを表します。  
+  
+ 対話型サービスの作成はサポートされていません。 回避策をこれには、非対話型サービスと個別のコントロールのソケットまたはリモート処理を使用して、サービスと通信する GUI アプリケーションを作成することができます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceProcess.ServiceController>ローカル コンピューター上のデバイス ドライバー サービスを表示するクラス。  
+  
+ [!code-cpp[ServiceController#5](~/samples/snippets/cpp/VS_Snippets_CLR/ServiceController/CPP/servicecontroller.cpp#5)]
+ [!code-csharp[ServiceController#5](~/samples/snippets/csharp/VS_Snippets_CLR/ServiceController/CS/servicecontroller.cs#5)]
+ [!code-vb[ServiceController#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/ServiceController/VB/servicecontroller.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Adapter">
+      <MemberSignature Language="C#" Value="Adapter" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceType Adapter = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceType.Adapter" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>独自のドライバーが必要なハードウェア デバイス向けのサービス。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FileSystemDriver">
+      <MemberSignature Language="C#" Value="FileSystemDriver" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceType FileSystemDriver = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceType.FileSystemDriver" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カーネル デバイス ドライバーでもあるファイル システム ドライバー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InteractiveProcess">
+      <MemberSignature Language="C#" Value="InteractiveProcess" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceType InteractiveProcess = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceType.InteractiveProcess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デスクトップと通信できるサービス。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="KernelDriver">
+      <MemberSignature Language="C#" Value="KernelDriver" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceType KernelDriver = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceType.KernelDriver" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハード ディスクやその他のロー レベルのハードウェア デバイス ドライバーなどのカーネル デバイス ドライバー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RecognizerDriver">
+      <MemberSignature Language="C#" Value="RecognizerDriver" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceType RecognizerDriver = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceType.RecognizerDriver" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>起動中にシステム上でファイル システムの存在を確認するファイル システム ドライバー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Win32OwnProcess">
+      <MemberSignature Language="C#" Value="Win32OwnProcess" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceType Win32OwnProcess = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceType.Win32OwnProcess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス コントローラーにより開始可能で、サービス制御プロトコルに従う Win32 プログラム。 この種類の Win32 サービスは独自のプロセスで実行されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Win32ShareProcess">
+      <MemberSignature Language="C#" Value="Win32ShareProcess" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.ServiceType Win32ShareProcess = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.ServiceType.Win32ShareProcess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess.ServiceController</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>他の Win32 サービスとのプロセス共有が可能な Win32 サービス。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

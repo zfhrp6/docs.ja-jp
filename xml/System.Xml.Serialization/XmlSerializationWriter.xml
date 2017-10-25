@@ -1,0 +1,4026 @@
+<Type Name="XmlSerializationWriter" FullName="System.Xml.Serialization.XmlSerializationWriter">
+  <TypeSignature Language="C#" Value="public abstract class XmlSerializationWriter : System.Xml.Serialization.XmlSerializationGeneratedCode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlSerializationWriter extends System.Xml.Serialization.XmlSerializationGeneratedCode" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlSerializationWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.Serialization.XmlSerializationGeneratedCode</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によるシリアル化を制御するために使用される抽象クラスを表す、<see cref="T:System.Xml.Serialization.XmlSerializer" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化中に、.NET Framework XML のシリアル化インフラストラクチャ動的に生成し、抽象型から派生したシリアル化のため一時クラスをコンパイル<xref:System.Xml.Serialization.XmlSerializationWriter>クラスです。 <xref:System.Xml.Serialization.XmlSerializationWriter>.NET Framework のシリアル化の内部に実装されても<xref:System.Web.Services.Discovery.DiscoveryDocument>と<xref:System.Web.Services.Description.ServiceDescription>を XML ドキュメント オブジェクト。  
+  
+ クラスを派生させる必要がありますいない<xref:System.Xml.Serialization.XmlSerializationWriter>です。 代わりを呼び出して、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XmlSerializationWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlSerializationWriter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddWriteCallback">
+      <MemberSignature Language="C#" Value="protected void AddWriteCallback (Type type, string typeName, string typeNs, System.Xml.Serialization.XmlSerializationWriteCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AddWriteCallback(class System.Type type, string typeName, string typeNs, class System.Xml.Serialization.XmlSerializationWriteCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.AddWriteCallback(System.Type,System.String,System.String,System.Xml.Serialization.XmlSerializationWriteCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="typeNs" Type="System.String" />
+        <Parameter Name="callback" Type="System.Xml.Serialization.XmlSerializationWriteCallback" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />のシリアル化されるオブジェクト。</param>
+        <param name="typeName">シリアル化されるオブジェクトの種類の名前。</param>
+        <param name="typeNs">シリアル化されるオブジェクトの種類の名前空間。</param>
+        <param name="callback">インスタンス、<see cref="T:System.Xml.Serialization.XmlSerializationWriteCallback" />を委任します。</param>
+        <summary>実装を格納、<see cref="T:System.Xml.Serialization.XmlSerializationWriteCallback" />デリゲートとそれ以降の呼び出しのために、適用される型。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 初期化中に、.NET Framework XML のシリアル化インフラストラクチャ動的に生成およびコンパイル一時クラスから派生したシリアル化の<xref:System.Xml.Serialization.XmlSerializationWriter>します。 このプロセス中に、.NET Framework には書き込みメソッドを実装するが生成されます、<xref:System.Xml.Serialization.XmlSerializationWriteCallback>を委任します。 .NET Framework の型と、SOAP でエンコードされた XML を使用してシリアル化、ルート要素ではない XML データ型間のマッピングでは特定のためです。 次に、必要に応じて、書き込みメソッドは、シリアル化中に呼び出されます。  
+  
+ インスタンスを直接作成する必要がありますいない<xref:System.Xml.Serialization.XmlSerializationWriteCallback>です。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChoiceIdentifierValueException">
+      <MemberSignature Language="C#" Value="protected Exception CreateChoiceIdentifierValueException (string value, string identifier, string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Exception CreateChoiceIdentifierValueException(string value, string identifier, string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.CreateChoiceIdentifierValueException(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="identifier" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">無効な名前です。</param>
+        <param name="identifier"><see langword="choice" />に名前が属している要素の宣言。</param>
+        <param name="name">要素の予期されたローカル名。</param>
+        <param name="ns">要素の予期される名前空間。</param>
+        <summary>作成、<see cref="T:System.InvalidOperationException" />に予期しない XML スキーマに準拠している要素の名前を示す<see langword="choice" />要素宣言します。</summary>
+        <returns>新しく作成された例外。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInvalidAnyTypeException">
+      <MemberSignature Language="C#" Value="protected Exception CreateInvalidAnyTypeException (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Exception CreateInvalidAnyTypeException(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidAnyTypeException(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">無効なメンバーを表すオブジェクト。</param>
+        <summary>作成、<see cref="T:System.InvalidOperationException" />を示す、<see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />あった無効なメンバーに適用されるだけですは型のメンバー <see cref="T:System.Xml.XmlNode" />、またはから派生した<see cref="T:System.Xml.XmlNode" />、有効です。</summary>
+        <returns>新しく作成された例外。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInvalidAnyTypeException">
+      <MemberSignature Language="C#" Value="protected Exception CreateInvalidAnyTypeException (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Exception CreateInvalidAnyTypeException(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidAnyTypeException(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />が無効です。</param>
+        <summary>作成、<see cref="T:System.InvalidOperationException" />を示す、<see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" />あった無効なメンバーに適用されるだけですは型のメンバー <see cref="T:System.Xml.XmlNode" />、またはから派生した<see cref="T:System.Xml.XmlNode" />、有効です。</summary>
+        <returns>新しく作成された例外。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInvalidChoiceIdentifierValueException">
+      <MemberSignature Language="C#" Value="protected Exception CreateInvalidChoiceIdentifierValueException (string type, string identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Exception CreateInvalidChoiceIdentifierValueException(string type, string identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidChoiceIdentifierValueException(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="identifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">シリアル化する型。</param>
+        <param name="identifier">名前、<see langword="choice" />要素宣言します。</param>
+        <summary>作成、 <see cref="T:System.InvalidOperationException" /> 、XML スキーマの配列を書き込み中にエラーを示す<see langword="choice" />要素宣言を適用します。</summary>
+        <returns>新しく作成された例外。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInvalidEnumValueException">
+      <MemberSignature Language="C#" Value="protected Exception CreateInvalidEnumValueException (object value, string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Exception CreateInvalidEnumValueException(object value, string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidEnumValueException(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">無効な列挙体を表すオブジェクト。</param>
+        <param name="typeName">XML 型の名前。</param>
+        <summary>作成、<see cref="T:System.InvalidOperationException" />の無効な列挙値。</summary>
+        <returns>新しく作成された例外。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMismatchChoiceException">
+      <MemberSignature Language="C#" Value="protected Exception CreateMismatchChoiceException (string value, string elementName, string enumValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Exception CreateMismatchChoiceException(string value, string elementName, string enumValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.CreateMismatchChoiceException(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="enumValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">値が無効です。</param>
+        <param name="elementName">値が無効な XML 要素の名前。</param>
+        <param name="enumValue">有効な値です。</param>
+        <summary>作成、<see cref="T:System.InvalidOperationException" />を示す XML 要素の値が、列挙型と一致しません。</summary>
+        <returns>新しく作成された例外。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUnknownAnyElementException">
+      <MemberSignature Language="C#" Value="protected Exception CreateUnknownAnyElementException (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Exception CreateUnknownAnyElementException(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.CreateUnknownAnyElementException(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">処理できない XML 要素。</param>
+        <param name="ns">XML 要素の名前空間です。</param>
+        <summary>作成、<see cref="T:System.InvalidOperationException" />ことを示す XML 要素の XML スキーマに従う必要がありますを<see langword="any" />要素宣言を処理することはできません。</summary>
+        <returns>新しく作成された例外。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUnknownTypeException">
+      <MemberSignature Language="C#" Value="protected Exception CreateUnknownTypeException (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Exception CreateUnknownTypeException(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.CreateUnknownTypeException(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">オブジェクトの型をシリアル化することはできません。</param>
+        <summary>作成、<see cref="T:System.InvalidOperationException" />シリアル化される型が有効な方法で使用されていないかが予期せず発生したことを示すです。</summary>
+        <returns>新しく作成された例外。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUnknownTypeException">
+      <MemberSignature Language="C#" Value="protected Exception CreateUnknownTypeException (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Exception CreateUnknownTypeException(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.CreateUnknownTypeException(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">この型は、シリアル化することはできません。</param>
+        <summary>作成、<see cref="T:System.InvalidOperationException" />シリアル化される型が有効な方法で使用されていないかが予期せず発生したことを示すです。</summary>
+        <returns>新しく作成された例外。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EscapeName">
+      <MemberSignature Language="C#" Value="protected bool EscapeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EscapeName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlSerializationWriter.EscapeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="M:System.Xml.XmlConvert.EncodeName(System.String)" />メソッドを使用して有効な XML を書き込むことです。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlQualifiedName(System.Xml.XmlQualifiedName)" />メソッドを返します、エンコードされた名前、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlConvert.EncodeName%2A>メソッドは、無効なソースから有効な XML を書き込みます。 たとえば、<xref:System.Data.DataColumn.ColumnName%2A>のプロパティ、<xref:System.Data.DataColumn>クラスは XML として無効なスペースを含めることができます。 <xref:System.Xml.XmlConvert.DecodeName%2A>メソッド、エンコードされた XML を読み取り、元の値に復元します。 ただし、<xref:System.Xml.Schema.XmlSchema.Read%2A>のメソッド、<xref:System.Xml.Schema.XmlSchema>などでエンコードされた XML を読み取ることができません。 その場合は、設定、<xref:System.Xml.Serialization.XmlSerializationWriter.EscapeName%2A>プロパティを`false`XML のエンコーディングを無効にします。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromByteArrayBase64">
+      <MemberSignature Language="C#" Value="protected static byte[] FromByteArrayBase64 (byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig unsigned int8[] FromByteArrayBase64(unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromByteArrayBase64(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">Base 64<see cref="T:System.Byte" />配列。</param>
+        <summary>Base 64 バイト配列を処理します。</summary>
+        <returns>引数として渡された同じバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ メソッドを静的な「から」として他の類似文字列を返すのではなく<xref:System.Xml.Serialization.XmlSerializationWriter.FromByteArrayBase64%2A>メソッドは、元を返します`byte[]`パフォーマンスが向上し、メモリを節約するためのオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromByteArrayHex">
+      <MemberSignature Language="C#" Value="protected static string FromByteArrayHex (byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromByteArrayHex(unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromByteArrayHex(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">文字列に変換する 16 進数のバイト配列。</param>
+        <summary>16 進数の入力バイト配列から文字列を生成します。</summary>
+        <returns>バイト配列値は、文字列に変換します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.FromByteArrayHex%2A>メソッドが静的です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromChar">
+      <MemberSignature Language="C#" Value="protected static string FromChar (char value);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromChar(char value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromChar(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Char" />文字列に変換します。</param>
+        <summary>入力から文字列を生成する<see cref="T:System.Char" />です。</summary>
+        <returns><see cref="T:System.Char" />値を文字列に変換します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.FromChar%2A>メソッドが静的です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromDate">
+      <MemberSignature Language="C#" Value="protected static string FromDate (DateTime value);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromDate(valuetype System.DateTime value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromDate(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.DateTime" />文字列に変換します。</param>
+        <summary>文字列を作成、<see cref="T:System.DateTime" />オブジェクト。</summary>
+        <returns>文字列表現、<see cref="T:System.DateTime" />を示す日付と時間がないです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.FromDate%2A>メソッドが静的です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromDateTime">
+      <MemberSignature Language="C#" Value="protected static string FromDateTime (DateTime value);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromDateTime(valuetype System.DateTime value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromDateTime(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.DateTime" />文字列に変換します。</param>
+        <summary>入力から文字列を生成する<see cref="T:System.DateTime" />です。</summary>
+        <returns>文字列表現、<see cref="T:System.DateTime" />日付と時刻を表示します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.FromDateTime%2A>メソッドが静的です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="FromEnum">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>数値型の列挙値を受け取り、区切られた識別子が設定されている列挙のメンバーを表すので構成される文字列を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="FromEnum">
+      <MemberSignature Language="C#" Value="protected static string FromEnum (long value, string[] values, long[] ids);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromEnum(int64 value, string[] values, int64[] ids) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromEnum(System.Int64,System.String[],System.Int64[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+        <Parameter Name="values" Type="System.String[]" />
+        <Parameter Name="ids" Type="System.Int64[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">列挙値のビットごとの系列として<see langword="OR" />操作します。</param>
+        <param name="values">列挙体の名前の値。</param>
+        <param name="ids">列挙型の定数値。</param>
+        <summary>設定されている列挙のメンバーを表す、区切られた識別子で構成される文字列を生成します。</summary>
+        <returns>構成される文字列には、セットの列挙子リストからメンバーを表す各識別子が区切られます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.FromEnum%2A>メソッドが静的です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromEnum">
+      <MemberSignature Language="C#" Value="protected static string FromEnum (long value, string[] values, long[] ids, string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromEnum(int64 value, string[] values, int64[] ids, string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromEnum(System.Int64,System.String[],System.Int64[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+        <Parameter Name="values" Type="System.String[]" />
+        <Parameter Name="ids" Type="System.Int64[]" />
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">列挙値のビットごとの系列として<see langword="OR" />操作します。</param>
+        <param name="values">列挙体の値です。</param>
+        <param name="ids">列挙型の定数です。</param>
+        <param name="typeName">型の名前</param>
+        <summary>数値型の列挙値と名前、および列挙体の列挙子リストから定数を受け取り、区切られた識別子が設定されている列挙のメンバーを表すので構成される文字列を返します。</summary>
+        <returns>構成される文字列には、ここでビットごとの演算によって設定された値の 1 つは各項目の識別子が区切られます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromTime">
+      <MemberSignature Language="C#" Value="protected static string FromTime (DateTime value);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromTime(valuetype System.DateTime value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromTime(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.DateTime" />キーを文字列に変換されます。</param>
+        <summary>文字列を作成、<see cref="T:System.DateTime" />オブジェクト。</summary>
+        <returns>文字列表現、<see cref="T:System.DateTime" />時間がない日付を表示するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.FromTime%2A>メソッドが静的です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromXmlName">
+      <MemberSignature Language="C#" Value="protected static string FromXmlName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromXmlName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">XML 名として使用する文字列。</param>
+        <summary>エスケープ シーケンスに無効な文字を置き換えることで、有効な XML 名をエンコードします。</summary>
+        <returns>エンコードされた文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.FromXmlName%2A>メソッドが静的です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromXmlNCName">
+      <MemberSignature Language="C#" Value="protected static string FromXmlNCName (string ncName);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromXmlNCName(string ncName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlNCName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ncName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ncName">ローカル (非修飾) XML 名として使用する文字列。</param>
+        <summary>エスケープ シーケンスに無効な文字を置き換えることで、有効な XML ローカル名をエンコードします。</summary>
+        <returns>エンコードされた文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー、<xref:System.Xml.Serialization.XmlSerializationWriter>クラスは、.NET Framework の XML シリアル化インフラストラクチャで内部的に使用される、派生クラスによって利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.FromXmlNCName%2A>メソッドが静的です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromXmlNmToken">
+      <MemberSignature Language="C#" Value="protected static string FromXmlNmToken (string nmToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromXmlNmToken(string nmToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlNmToken(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nmToken" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="nmToken">エンコードされる XML 名です。</param>
+        <summary>XML 名をエンコードします。</summary>
+        <returns>エンコードされた文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.FromXmlNmToken%2A>メソッドが静的です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromXmlNmTokens">
+      <MemberSignature Language="C#" Value="protected static string FromXmlNmTokens (string nmTokens);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string FromXmlNmTokens(string nmTokens) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlNmTokens(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nmTokens" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="nmTokens">スペースで区切られた一連のエンコードを XML 名です。</param>
+        <summary>単一の XML 名に XML 名をスペースで区切られたシーケンスにエンコードします。</summary>
+        <returns>エンコードされた文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.FromXmlNmTokens%2A>メソッドが静的です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromXmlQualifiedName">
+      <MemberSignature Language="C#" Value="protected string FromXmlQualifiedName (System.Xml.XmlQualifiedName xmlQualifiedName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string FromXmlQualifiedName(class System.Xml.XmlQualifiedName xmlQualifiedName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlQualifiedName(System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlQualifiedName" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="xmlQualifiedName"><see cref="T:System.Xml.XmlQualifiedName" />書き込まれる XML を表すです。</param>
+        <summary>無効な文字のエスケープ シーケンスで置換した XML 修飾名を返します。</summary>
+        <returns>XML 修飾名、無効な文字のエスケープ シーケンスに置き換えられます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FromXmlQualifiedName">
+      <MemberSignature Language="C#" Value="protected string FromXmlQualifiedName (System.Xml.XmlQualifiedName xmlQualifiedName, bool ignoreEmpty);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string FromXmlQualifiedName(class System.Xml.XmlQualifiedName xmlQualifiedName, bool ignoreEmpty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlQualifiedName(System.Xml.XmlQualifiedName,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlQualifiedName" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="ignoreEmpty" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="xmlQualifiedName"><see cref="T:System.Xml.XmlQualifiedName" />書き込まれる XML を表すです。</param>
+        <param name="ignoreEmpty">
+          <see langword="true" />文字列内の空白を無視するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>書き込むことのできる、XML 修飾名として無効な文字のエスケープ シーケンスで置換した文字列を生成します。</summary>
+        <returns>XML 修飾名、無効な文字のエスケープ シーケンスに置き換えられます。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InitCallbacks">
+      <MemberSignature Language="C#" Value="protected abstract void InitCallbacks ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitCallbacks() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.InitCallbacks" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを初期化、 <see cref="T:System.Xml.Serialization.XmlSerializationWriteCallback" /> SOAP でエンコードされた XML データをシリアル化するデリゲート。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 初期化中に、.NET Framework XML のシリアル化インフラストラクチャ動的に生成およびコンパイル一時クラスから派生したシリアル化の<xref:System.Xml.Serialization.XmlSerializationWriter>します。 このプロセス中に、.NET Framework には書き込みメソッドを実装するが生成されます、<xref:System.Xml.Serialization.XmlSerializationWriteCallback>を委任します。 .NET Framework の型と、SOAP でエンコードされた XML を使用してシリアル化、ルート要素ではない XML データ型間のマッピングでは特定のためです。 次に、必要に応じて、書き込みメソッドは、シリアル化中に呼び出されます。  
+  
+ 抽象<xref:System.Xml.Serialization.XmlSerializationWriter.InitCallbacks%2A>メソッドでは、一時的な派生クラスのインスタンスを作成し、初期化は、コールバック メソッドを記述します。  
+  
+ インスタンスを直接作成する必要がありますいない<xref:System.Xml.Serialization.XmlSerializationWriteCallback>です。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Namespaces">
+      <MemberSignature Language="C#" Value="protected System.Collections.ArrayList Namespaces { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList Namespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlSerializationWriter.Namespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または名前空間と XML ドキュメント内の修飾名を生成するために使用されるプレフィックスを含む XML 修飾名オブジェクトの一覧を設定します。</summary>
+        <value><see cref="T:System.Collections.ArrayList" />名前空間とプレフィックスのペアを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveDynamicAssembly">
+      <MemberSignature Language="C#" Value="protected static System.Reflection.Assembly ResolveDynamicAssembly (string assemblyFullName);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Reflection.Assembly ResolveDynamicAssembly(string assemblyFullName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.ResolveDynamicAssembly(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyFullName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyFullName">アセンブリの完全名。</param>
+        <summary>名前によって動的に生成されたアセンブリを取得します。</summary>
+        <returns>動的に生成されたアセンブリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.ResolveDynamicAssembly%2A>メソッドが静的です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TopLevelElement">
+      <MemberSignature Language="C#" Value="protected void TopLevelElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void TopLevelElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.TopLevelElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>SOAP でエンコードされた SOAP メッセージをシリアル化中にのみ、オブジェクト参照を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ SOAP エンコーディングには、一意の XML 要素として SOAP メッセージ内で 1 回出現することができます、`multiRef`要素を参照する任意の数の時間は要素を使用してください。 <xref:System.Xml.Serialization.XmlSerializationWriter.TopLevelElement%2A>メソッドとしてシリアル化可能なオブジェクトの追跡に役立ちます`multiRef`要素。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttribute">
+      <MemberSignature Language="C#" Value="protected void WriteAttribute (string localName, byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteAttribute(string localName, unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 属性のローカル名。</param>
+        <param name="value">バイト配列としての XML 属性の値。</param>
+        <summary>指示、 <see cref="T:System.Xml.XmlWriter" /> XML 属性を書き込むオブジェクトにその名前の指定された名前空間がありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttribute">
+      <MemberSignature Language="C#" Value="protected void WriteAttribute (string localName, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteAttribute(string localName, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 属性のローカル名。</param>
+        <param name="value">文字列としての XML 属性の値。</param>
+        <summary>指示、<see cref="T:System.Xml.XmlWriter" />をその名前の指定された名前空間を持たない XML 属性の書き込み。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttribute">
+      <MemberSignature Language="C#" Value="protected void WriteAttribute (string localName, string ns, byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteAttribute(string localName, string ns, unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 属性のローカル名。</param>
+        <param name="ns">XML 属性の名前空間です。</param>
+        <param name="value">バイト配列としての XML 属性の値。</param>
+        <summary>指示、 <see cref="T:System.Xml.XmlWriter" /> XML 属性を書き込むオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttribute">
+      <MemberSignature Language="C#" Value="protected void WriteAttribute (string localName, string ns, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteAttribute(string localName, string ns, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 属性のローカル名。</param>
+        <param name="ns">XML 属性の名前空間です。</param>
+        <param name="value">文字列としての XML 属性の値。</param>
+        <summary>XML 属性を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttribute">
+      <MemberSignature Language="C#" Value="protected void WriteAttribute (string prefix, string localName, string ns, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteAttribute(string prefix, string localName, string ns, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">書き込む名前空間プレフィックス。</param>
+        <param name="localName">XML 属性のローカル名。</param>
+        <param name="ns">名前空間プレフィックスによって表されます。</param>
+        <param name="value">文字列としての XML 属性の値。</param>
+        <summary>名前空間プレフィックスが手動でに提供される XML 属性を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementEncoded">
+      <MemberSignature Language="C#" Value="protected void WriteElementEncoded (System.Xml.XmlNode node, string name, string ns, bool isNullable, bool any);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementEncoded(class System.Xml.XmlNode node, string name, string ns, bool isNullable, bool any) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementEncoded(System.Xml.XmlNode,System.String,System.String,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="isNullable" Type="System.Boolean" />
+        <Parameter Name="any" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="node">、可能性のある XML 要素の子を記述する XML ノードです。</param>
+        <param name="name">書き込み先の親 XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の親 XML 要素の名前空間。</param>
+        <param name="isNullable">
+          <see langword="true" />書き込む、<see langword="xsi:nil='true'" />属性の場合は、オブジェクトをシリアル化する<see langword="null" />、それ以外の<see langword="false" />します。</param>
+        <param name="any">
+          <see langword="true" />ノードを場合は、XML 要素に準拠する XML スキーマを示すために<see langword="any" />要素宣言をそれ以外の<see langword="false" />します。</param>
+        <summary>名前付きの XML 要素の本体内で XML ノード オブジェクトを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteElementEncoded%2A>として SOAP でエンコードされた XML の書き込み、SOAP 1.1 仕様のセクション 5 で説明されている場合にのみ、メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementLiteral">
+      <MemberSignature Language="C#" Value="protected void WriteElementLiteral (System.Xml.XmlNode node, string name, string ns, bool isNullable, bool any);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementLiteral(class System.Xml.XmlNode node, string name, string ns, bool isNullable, bool any) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementLiteral(System.Xml.XmlNode,System.String,System.String,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="isNullable" Type="System.Boolean" />
+        <Parameter Name="any" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="node">、可能性のある XML 要素の子を記述する XML ノードです。</param>
+        <param name="name">書き込み先の親 XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の親 XML 要素の名前空間。</param>
+        <param name="isNullable">
+          <see langword="true" />書き込む、<see langword="xsi:nil='true'" />属性の場合は、オブジェクトをシリアル化する<see langword="null" />、それ以外の<see langword="false" />します。</param>
+        <param name="any">
+          <see langword="true" />ノードを場合は、XML 要素に準拠する XML スキーマを示すために<see langword="any" />要素宣言をそれ以外の<see langword="false" />します。</param>
+        <summary>指示、<see cref="T:System.Xml.XmlWriter" />を記述するオブジェクト、<see cref="T:System.Xml.XmlNode" />名前付きの XML 要素の本文内のオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteElementLiteral%2A>のみ XML スキーマ ドキュメントで定義できるリテラルの XML の書き込み中にメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementQualifiedName">
+      <MemberSignature Language="C#" Value="protected void WriteElementQualifiedName (string localName, System.Xml.XmlQualifiedName value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementQualifiedName(string localName, class System.Xml.XmlQualifiedName value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="value" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="value">名前空間で修飾された、要素のテキストの場合は、そのプレフィックスを使用して記述するには名前です。</param>
+        <summary>本文に指定した修飾名を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementQualifiedName">
+      <MemberSignature Language="C#" Value="protected void WriteElementQualifiedName (string localName, string ns, System.Xml.XmlQualifiedName value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementQualifiedName(string localName, string ns, class System.Xml.XmlQualifiedName value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.String,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="ns">XML 要素の名前空間です。</param>
+        <param name="value">名前空間で修飾された、要素のテキストの場合は、そのプレフィックスを使用して記述するには名前です。</param>
+        <summary>本文に指定した修飾名を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementQualifiedName">
+      <MemberSignature Language="C#" Value="protected void WriteElementQualifiedName (string localName, System.Xml.XmlQualifiedName value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementQualifiedName(string localName, class System.Xml.XmlQualifiedName value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="value" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="value">名前空間で修飾された、要素のテキストの場合は、そのプレフィックスを使用して記述するには名前です。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>本文に指定した修飾名を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementQualifiedName">
+      <MemberSignature Language="C#" Value="protected void WriteElementQualifiedName (string localName, string ns, System.Xml.XmlQualifiedName value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementQualifiedName(string localName, string ns, class System.Xml.XmlQualifiedName value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.String,System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="ns">XML 要素の名前空間です。</param>
+        <param name="value">名前空間で修飾された、要素のテキストの場合は、そのプレフィックスを使用して記述するには名前です。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>本文に指定した修飾名を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementString">
+      <MemberSignature Language="C#" Value="protected void WriteElementString (string localName, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementString(string localName, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">名前空間修飾を使わなくても記述する XML 要素のローカル名。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementString">
+      <MemberSignature Language="C#" Value="protected void WriteElementString (string localName, string ns, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementString(string localName, string ns, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="ns">XML 要素の名前空間です。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementString">
+      <MemberSignature Language="C#" Value="protected void WriteElementString (string localName, string value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementString(string localName, string value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementString">
+      <MemberSignature Language="C#" Value="protected void WriteElementString (string localName, string ns, string value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementString(string localName, string ns, string value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String,System.String,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="ns">XML 要素の名前空間です。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementStringRaw">
+      <MemberSignature Language="C#" Value="protected void WriteElementStringRaw (string localName, byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementStringRaw(string localName, unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementStringRaw">
+      <MemberSignature Language="C#" Value="protected void WriteElementStringRaw (string localName, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementStringRaw(string localName, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementStringRaw">
+      <MemberSignature Language="C#" Value="protected void WriteElementStringRaw (string localName, byte[] value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementStringRaw(string localName, unsigned int8[] value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.Byte[],System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementStringRaw">
+      <MemberSignature Language="C#" Value="protected void WriteElementStringRaw (string localName, string ns, byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementStringRaw(string localName, string ns, unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="ns">XML 要素の名前空間です。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementStringRaw">
+      <MemberSignature Language="C#" Value="protected void WriteElementStringRaw (string localName, string ns, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementStringRaw(string localName, string ns, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="ns">XML 要素の名前空間です。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementStringRaw">
+      <MemberSignature Language="C#" Value="protected void WriteElementStringRaw (string localName, string value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementStringRaw(string localName, string value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementStringRaw">
+      <MemberSignature Language="C#" Value="protected void WriteElementStringRaw (string localName, string ns, byte[] value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementStringRaw(string localName, string ns, unsigned int8[] value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.Byte[],System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="ns">XML 要素の名前空間です。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteElementStringRaw">
+      <MemberSignature Language="C#" Value="protected void WriteElementStringRaw (string localName, string ns, string value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteElementStringRaw(string localName, string ns, string value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.String,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="localName">XML 要素のローカル名。</param>
+        <param name="ns">XML 要素の名前空間です。</param>
+        <param name="value">XML 要素のテキスト値。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>本文に指定された値を持つ XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEmptyTag">
+      <MemberSignature Language="C#" Value="protected void WriteEmptyTag (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteEmptyTag(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteEmptyTag(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <summary>本文は空の XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEmptyTag">
+      <MemberSignature Language="C#" Value="protected void WriteEmptyTag (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteEmptyTag(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteEmptyTag(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <summary>本文は空の XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEndElement">
+      <MemberSignature Language="C#" Value="protected void WriteEndElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteEndElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteEndElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>書き込みます、<see langword="&lt;closing&gt;" />要素のタグ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEndElement">
+      <MemberSignature Language="C#" Value="protected void WriteEndElement (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteEndElement(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteEndElement(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">シリアル化されるオブジェクト。</param>
+        <summary>書き込みます、<see langword="&lt;closing&gt;" />要素のタグ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteId">
+      <MemberSignature Language="C#" Value="protected void WriteId (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteId(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteId(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">シリアル化されるオブジェクト。</param>
+        <summary>書き込みます、 <see langword="id" /> SOAP エンコードに表示される属性<see langword="multiRef" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ SOAP エンコーディングには、一意の XML 要素として SOAP メッセージ内で 1 回出現することができます、`multiRef`で識別される要素、`id`属性。 `id`値を参照できます複数回`href`属性 (または`ref`SOAP 1.2 では属性) で要素を置き換えます。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNamespaceDeclarations">
+      <MemberSignature Language="C#" Value="protected void WriteNamespaceDeclarations (System.Xml.Serialization.XmlSerializerNamespaces xmlns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNamespaceDeclarations(class System.Xml.Serialization.XmlSerializerNamespaces xmlns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNamespaceDeclarations(System.Xml.Serialization.XmlSerializerNamespaces)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlns" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
+      </Parameters>
+      <Docs>
+        <param name="xmlns">XML 名前空間を宣言します。</param>
+        <summary>名前空間宣言属性を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullableQualifiedNameEncoded">
+      <MemberSignature Language="C#" Value="protected void WriteNullableQualifiedNameEncoded (string name, string ns, System.Xml.XmlQualifiedName value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullableQualifiedNameEncoded(string name, string ns, class System.Xml.XmlQualifiedName value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableQualifiedNameEncoded(System.String,System.String,System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="value">XML 要素の本体で記述する XML 修飾名。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>本体持つにはには、有効な XML 修飾名が含まれています。 XML 要素を書き込みます。 <see cref="T:System.Xml.XmlWriter" />挿入、<see langword="xsi:nil='true'" />属性文字列の値が場合<see langword="null" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullableQualifiedNameEncoded%2A>として SOAP でエンコードされた XML の書き込み、SOAP 1.1 仕様のセクション 5 で説明されている場合にのみ、メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullableQualifiedNameLiteral">
+      <MemberSignature Language="C#" Value="protected void WriteNullableQualifiedNameLiteral (string name, string ns, System.Xml.XmlQualifiedName value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullableQualifiedNameLiteral(string name, string ns, class System.Xml.XmlQualifiedName value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableQualifiedNameLiteral(System.String,System.String,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="value">XML 要素の本体で記述する XML 修飾名。</param>
+        <summary>本体持つにはには、有効な XML 修飾名が含まれています。 XML 要素を書き込みます。 <see cref="T:System.Xml.XmlWriter" />挿入、<see langword="xsi:nil='true'" />属性文字列の値が場合<see langword="null" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullableQualifiedNameLiteral%2A>のみ XML スキーマ ドキュメントで定義できるリテラルの XML の書き込み中にメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullableStringEncoded">
+      <MemberSignature Language="C#" Value="protected void WriteNullableStringEncoded (string name, string ns, string value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullableStringEncoded(string name, string ns, string value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncoded(System.String,System.String,System.String,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="value">XML 要素の本体に書き込む文字列。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>本文として文字列を含む XML 要素を書き込みます。 <see cref="T:System.Xml.XmlWriter" />挿入、<see langword="xsi:nil='true'" />属性文字列の値が場合<see langword="null" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncoded%2A>として SOAP でエンコードされた XML の書き込み、SOAP 1.1 仕様のセクション 5 で説明されている場合にのみ、メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullableStringEncodedRaw">
+      <MemberSignature Language="C#" Value="protected void WriteNullableStringEncodedRaw (string name, string ns, byte[] value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullableStringEncodedRaw(string name, string ns, unsigned int8[] value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncodedRaw(System.String,System.String,System.Byte[],System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="value">XML 要素の本体で記述するバイト配列。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>XML 要素の本文としてバイト配列に書き込みます。 <see cref="T:System.Xml.XmlWriter" />挿入、<see langword="xsi:nil='true'" />属性文字列の値が場合<see langword="null" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncodedRaw%2A>として SOAP でエンコードされた XML の書き込み、SOAP 1.1 仕様のセクション 5 で説明されている場合にのみ、メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullableStringEncodedRaw">
+      <MemberSignature Language="C#" Value="protected void WriteNullableStringEncodedRaw (string name, string ns, string value, System.Xml.XmlQualifiedName xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullableStringEncodedRaw(string name, string ns, string value, class System.Xml.XmlQualifiedName xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncodedRaw(System.String,System.String,System.String,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="xsiType" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="value">XML 要素の本体に書き込む文字列。</param>
+        <param name="xsiType">書き込まれる XML スキーマ データ型の名前、<see langword="xsi:type" />属性。</param>
+        <summary>本文として文字列を含む XML 要素を書き込みます。 <see cref="T:System.Xml.XmlWriter" />挿入、<see langword="xsi:nil='true'" />属性文字列の値が場合<see langword="null" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncodedRaw%2A>として SOAP でエンコードされた XML の書き込み、SOAP 1.1 仕様のセクション 5 で説明されている場合にのみ、メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullableStringLiteral">
+      <MemberSignature Language="C#" Value="protected void WriteNullableStringLiteral (string name, string ns, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullableStringLiteral(string name, string ns, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteral(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="value">XML 要素の本体に書き込む文字列。</param>
+        <summary>本文として文字列を含む XML 要素を書き込みます。 <see cref="T:System.Xml.XmlWriter" />挿入、<see langword="xsi:nil='true'" />属性文字列の値が場合<see langword="null" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteral%2A>のみ XML スキーマ ドキュメントで定義できるリテラルの XML の書き込み中にメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullableStringLiteralRaw">
+      <MemberSignature Language="C#" Value="protected void WriteNullableStringLiteralRaw (string name, string ns, byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullableStringLiteralRaw(string name, string ns, unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteralRaw(System.String,System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="value">XML 要素の本体で記述するバイト配列。</param>
+        <summary>XML 要素の本文としてバイト配列に書き込みます。 <see cref="T:System.Xml.XmlWriter" />挿入、<see langword="xsi:nil='true'" />属性文字列の値が場合<see langword="null" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteralRaw%2A>のみ XML スキーマ ドキュメントで定義できるリテラルの XML の書き込み中にメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullableStringLiteralRaw">
+      <MemberSignature Language="C#" Value="protected void WriteNullableStringLiteralRaw (string name, string ns, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullableStringLiteralRaw(string name, string ns, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteralRaw(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="value">XML 要素の本体に書き込む文字列。</param>
+        <summary>本文として文字列を含む XML 要素を書き込みます。 <see cref="T:System.Xml.XmlWriter" />挿入、<see langword="xsi:nil='true'" />属性文字列の値が場合<see langword="null" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteralRaw%2A>のみ XML スキーマ ドキュメントで定義できるリテラルの XML の書き込み中にメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullTagEncoded">
+      <MemberSignature Language="C#" Value="protected void WriteNullTagEncoded (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullTagEncoded(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagEncoded(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <summary>XML の要素を書き込みます、<see langword="xsi:nil='true'" />属性。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagEncoded%2A>として SOAP でエンコードされた XML の書き込み、SOAP 1.1 仕様のセクション 5 で説明されている場合にのみ、メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullTagEncoded">
+      <MemberSignature Language="C#" Value="protected void WriteNullTagEncoded (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullTagEncoded(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagEncoded(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <summary>XML の要素を書き込みます、<see langword="xsi:nil='true'" />属性。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagEncoded%2A>として SOAP でエンコードされた XML の書き込み、SOAP 1.1 仕様のセクション 5 で説明されている場合にのみ、メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullTagLiteral">
+      <MemberSignature Language="C#" Value="protected void WriteNullTagLiteral (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullTagLiteral(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagLiteral(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <summary>XML の要素を書き込みます、<see langword="xsi:nil='true'" />属性。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagLiteral%2A>のみ XML スキーマ ドキュメントで定義できるリテラルの XML の書き込み中にメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteNullTagLiteral">
+      <MemberSignature Language="C#" Value="protected void WriteNullTagLiteral (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteNullTagLiteral(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagLiteral(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <summary>XML の要素を書き込みます、<see langword="xsi:nil='true'" />属性。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ 設定すると`true`、 `nil` XML スキーマ インスタンス名前空間の属性 (省略`xsi`) null 値を示します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagLiteral%2A>のみ XML スキーマ ドキュメントで定義できるリテラルの XML の書き込み中にメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WritePotentiallyReferencingElement">
+      <MemberSignature Language="C#" Value="protected void WritePotentiallyReferencingElement (string n, string ns, object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WritePotentiallyReferencingElement(string n, string ns, object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WritePotentiallyReferencingElement(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="n">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="o">現在の XML 要素のいずれかをシリアル化対象のオブジェクトまたは<see langword="multiRef" />の現在の要素によって参照される要素。</param>
+        <summary>参照を含めることができる SOAP メッセージの XML 要素を書き込み、<see langword="&lt;multiRef&gt;" />から特定のオブジェクトの XML 要素です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ SOAP エンコーディングには、一意の XML 要素として SOAP メッセージ内で 1 回出現することができます、`<multiRef>`で識別される要素、`id`属性。 `id`値は、参照先の複数を使用して時刻を指定できます`href`属性 (または`ref`SOAP 1.2 では属性) で要素を置き換えます。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WritePotentiallyReferencingElement">
+      <MemberSignature Language="C#" Value="protected void WritePotentiallyReferencingElement (string n, string ns, object o, Type ambientType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WritePotentiallyReferencingElement(string n, string ns, object o, class System.Type ambientType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WritePotentiallyReferencingElement(System.String,System.String,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="ambientType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="n">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="o">現在の XML 要素のいずれかをシリアル化対象のオブジェクトまたは<see langword="multiRef" />要素の現在の要素によって参照されます。</param>
+        <param name="ambientType">オブジェクトの型マッピングで格納されている型 (オブジェクトではなくの型が見つかりました経由で直接、<see langword="typeof" />操作)。</param>
+        <summary>参照を含めることができる SOAP メッセージの XML 要素を書き込み、<see langword="&lt;multiRef&gt;" />から特定のオブジェクトの XML 要素です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ SOAP エンコーディングには、一意の XML 要素として SOAP メッセージ内で 1 回出現することができます、`<multiRef>`で識別される要素、`id`属性。 `id`値は、参照先の複数を使用して時刻を指定できます`href`属性 (または`ref`SOAP 1.2 では属性) で要素を置き換えます。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WritePotentiallyReferencingElement">
+      <MemberSignature Language="C#" Value="protected void WritePotentiallyReferencingElement (string n, string ns, object o, Type ambientType, bool suppressReference);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WritePotentiallyReferencingElement(string n, string ns, object o, class System.Type ambientType, bool suppressReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WritePotentiallyReferencingElement(System.String,System.String,System.Object,System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="ambientType" Type="System.Type" />
+        <Parameter Name="suppressReference" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="n">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="o">現在の XML 要素のいずれかをシリアル化対象のオブジェクトまたは<see langword="multiRef" />の現在の要素によって参照される要素。</param>
+        <param name="ambientType">オブジェクトの型マッピングで格納されている型 (オブジェクトではなくの型が見つかりました経由で直接、<see langword="typeof" />操作)。</param>
+        <param name="suppressReference">
+          <see langword="true" />データを格納している別の要素が参照するのではなく、XML 要素に直接オブジェクトをシリアル化するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>参照を含めることができる SOAP メッセージの XML 要素を書き込み、<see langword="&lt;multiRef&gt;" />から特定のオブジェクトの XML 要素です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ SOAP エンコーディングには、一意の XML 要素として SOAP メッセージ内で 1 回出現することができます、`multiRef`で識別される要素、`id`属性。 `id`値は、参照先の複数を使用して時刻を指定できます`href`属性 (または`ref`SOAP 1.2 では属性) で要素を置き換えます。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WritePotentiallyReferencingElement">
+      <MemberSignature Language="C#" Value="protected void WritePotentiallyReferencingElement (string n, string ns, object o, Type ambientType, bool suppressReference, bool isNullable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WritePotentiallyReferencingElement(string n, string ns, object o, class System.Type ambientType, bool suppressReference, bool isNullable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WritePotentiallyReferencingElement(System.String,System.String,System.Object,System.Type,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="ambientType" Type="System.Type" />
+        <Parameter Name="suppressReference" Type="System.Boolean" />
+        <Parameter Name="isNullable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="n">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="o">現在の XML 要素のいずれかをシリアル化対象のオブジェクトまたは<see langword="multiRef" />要素の現在の要素によって参照されます。</param>
+        <param name="ambientType">オブジェクトの型マッピングで格納されている型 (オブジェクトではなくの型が見つかりました経由で直接、<see langword="typeof" />操作)。</param>
+        <param name="suppressReference">
+          <see langword="true" />データを格納している別の要素が参照するのではなく、XML 要素に直接オブジェクトをシリアル化するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="isNullable">
+          <see langword="true" />書き込む、<see langword="xsi:nil='true'" />属性の場合は、オブジェクトをシリアル化する<see langword="null" />、それ以外の<see langword="false" />します。</param>
+        <summary>参照を含めることができる SOAP メッセージの XML 要素を書き込み、<see langword="multiRef" />から特定のオブジェクトの XML 要素です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ SOAP エンコーディングには、一意の XML 要素として SOAP メッセージ内で 1 回出現することができます、`multiRef`で識別される要素、`id`属性。 `id`値は、参照先の複数を使用して時刻を指定できます`href`属性 (または`ref`SOAP 1.2 では属性) で要素を置き換えます。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Writer">
+      <MemberSignature Language="C#" Value="protected System.Xml.XmlWriter Writer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlWriter Writer" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlSerializationWriter.Writer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlWriter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Xml.XmlWriter" />によって使用されている、<see cref="T:System.Xml.Serialization.XmlSerializationWriter" />です。</summary>
+        <value><see cref="T:System.Xml.XmlWriter" />クラス インスタンスによって使用されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteReferencedElements">
+      <MemberSignature Language="C#" Value="protected void WriteReferencedElements ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteReferencedElements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteReferencedElements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>SOAP でエンコードされたオブジェクトにシリアル化<see langword="multiRef" />SOAP メッセージ内の XML 要素です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ SOAP エンコーディングには、一意の XML 要素として SOAP メッセージ内で 1 回出現することができます、`multiRef`で識別される要素、`id`属性。 `id`値は、参照先の複数を使用して時刻を指定できます`href`属性 (または`ref`SOAP 1.2 では属性) で要素を置き換えます。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteReferencingElement">
+      <MemberSignature Language="C#" Value="protected void WriteReferencingElement (string n, string ns, object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteReferencingElement(string n, string ns, object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteReferencingElement(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="n">参照元に書き込まれる要素のローカル名。</param>
+        <param name="ns">参照元に書き込まれる要素の名前空間。</param>
+        <param name="o">シリアル化されるオブジェクト。</param>
+        <summary>参照を含む SOAP メッセージの XML 要素を書き込みます、<see langword="multiRef" />特定のオブジェクトの要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ SOAP エンコーディングには、一意の XML 要素として SOAP メッセージ内で 1 回出現することができます、`multiRef`で識別される要素、`id`属性。 `id`値は、参照先の複数を使用して時刻を指定できます`href`属性 (または`ref`SOAP 1.2 では属性) で要素を置き換えます。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteReferencingElement">
+      <MemberSignature Language="C#" Value="protected void WriteReferencingElement (string n, string ns, object o, bool isNullable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteReferencingElement(string n, string ns, object o, bool isNullable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteReferencingElement(System.String,System.String,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="isNullable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="n">参照元に書き込まれる要素のローカル名。</param>
+        <param name="ns">参照元に書き込まれる要素の名前空間。</param>
+        <param name="o">シリアル化されるオブジェクト。</param>
+        <param name="isNullable">
+          <see langword="true" />書き込む、<see langword="xsi:nil='true'" />属性の場合は、オブジェクトをシリアル化する<see langword="null" />、それ以外の<see langword="false" />します。</param>
+        <summary>参照を含む SOAP メッセージの XML 要素を書き込みます、<see langword="multiRef" />特定のオブジェクトの要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ SOAP エンコーディングには、一意の XML 要素として SOAP メッセージ内で 1 回出現することができます、`multiRef`で識別される要素、`id`属性。 `id`値は、参照先の複数を使用して時刻を指定できます`href`属性 (または`ref`SOAP 1.2 では属性) で要素を置き換えます。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteRpcResult">
+      <MemberSignature Language="C#" Value="protected void WriteRpcResult (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteRpcResult(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteRpcResult(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">結果の本体のローカル名。</param>
+        <param name="ns">結果の本体の名前空間。</param>
+        <summary>本文で指定した修飾名を持つ SOAP 1.2 の RPC 結果の要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ `result` "Http://www.w3.org/2002/12/soap-rpc"名前空間に要素が定義されています。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSerializable">
+      <MemberSignature Language="C#" Value="protected void WriteSerializable (System.Xml.Serialization.IXmlSerializable serializable, string name, string ns, bool isNullable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteSerializable(class System.Xml.Serialization.IXmlSerializable serializable, string name, string ns, bool isNullable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteSerializable(System.Xml.Serialization.IXmlSerializable,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializable" Type="System.Xml.Serialization.IXmlSerializable" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="isNullable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serializable">実装するオブジェクト、<see cref="T:System.Xml.Serialization.IXmlSerializable" />カスタムの XML 書式設定を使用するインターフェイスです。</param>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="isNullable">
+          <see langword="true" />書き込む、<see langword="xsi:nil='true'" />属性の場合、<see cref="T:System.Xml.Serialization.IXmlSerializable" />クラスのオブジェクトが<see langword="null" />、それ以外の<see langword="false" />します。</param>
+        <summary>XML 要素としてカスタムの XML 書式設定を使用するオブジェクトを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSerializable">
+      <MemberSignature Language="C#" Value="protected void WriteSerializable (System.Xml.Serialization.IXmlSerializable serializable, string name, string ns, bool isNullable, bool wrapped);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteSerializable(class System.Xml.Serialization.IXmlSerializable serializable, string name, string ns, bool isNullable, bool wrapped) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteSerializable(System.Xml.Serialization.IXmlSerializable,System.String,System.String,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializable" Type="System.Xml.Serialization.IXmlSerializable" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="isNullable" Type="System.Boolean" />
+        <Parameter Name="wrapped" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serializable">実装するオブジェクト、<see cref="T:System.Xml.Serialization.IXmlSerializable" />カスタムの XML 書式設定を使用するインターフェイスです。</param>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="isNullable">
+          <see langword="true" />書き込む、<see langword="xsi:nil='true'" />属性の場合、<see cref="T:System.Xml.Serialization.IXmlSerializable" />オブジェクトが<see langword="null" />、それ以外の<see langword="false" />します。</param>
+        <param name="wrapped">
+          <see langword="true" />書き込みの開始要素を無視するタグです。それ以外の場合、<see langword="false" />書き込む開始要素タグ。</param>
+        <summary>指示<see cref="T:System.Xml.XmlNode" />XML 要素としてカスタムの XML 書式設定を使用するオブジェクトを記述します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartDocument">
+      <MemberSignature Language="C#" Value="protected void WriteStartDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteStartDocument() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartDocument" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML を書き込むライターが XML ドキュメントの先頭に配置されている場合に宣言します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartElement">
+      <MemberSignature Language="C#" Value="protected void WriteStartElement (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteStartElement(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <summary>タグを書き込みましている属性を含め、要素のタグ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartElement">
+      <MemberSignature Language="C#" Value="protected void WriteStartElement (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteStartElement(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <summary>タグを書き込みましている属性を含め、要素のタグ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartElement">
+      <MemberSignature Language="C#" Value="protected void WriteStartElement (string name, string ns, bool writePrefixed);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteStartElement(string name, string ns, bool writePrefixed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="writePrefixed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="writePrefixed">
+          <see langword="true" />none が指定された名前空間の使用可能な場合は、プレフィックスを持つ要素名を記述するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>タグを書き込みましている属性を含め、要素のタグ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartElement">
+      <MemberSignature Language="C#" Value="protected void WriteStartElement (string name, string ns, object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteStartElement(string name, string ns, object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="o">XML 要素としてシリアル化されるオブジェクト。</param>
+        <summary>タグを書き込みましている属性を含め、要素のタグ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartElement">
+      <MemberSignature Language="C#" Value="protected void WriteStartElement (string name, string ns, object o, bool writePrefixed);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteStartElement(string name, string ns, object o, bool writePrefixed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="writePrefixed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="o">XML 要素としてシリアル化されるオブジェクト。</param>
+        <param name="writePrefixed">
+          <see langword="true" />none が指定された名前空間の使用可能な場合は、プレフィックスを持つ要素名を記述するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>タグを書き込みましている属性を含め、要素のタグ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartElement">
+      <MemberSignature Language="C#" Value="protected void WriteStartElement (string name, string ns, object o, bool writePrefixed, System.Xml.Serialization.XmlSerializerNamespaces xmlns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteStartElement(string name, string ns, object o, bool writePrefixed, class System.Xml.Serialization.XmlSerializerNamespaces xmlns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Object,System.Boolean,System.Xml.Serialization.XmlSerializerNamespaces)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="writePrefixed" Type="System.Boolean" />
+        <Parameter Name="xmlns" Type="System.Xml.Serialization.XmlSerializerNamespaces" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の XML 要素のローカル名。</param>
+        <param name="ns">書き込み先の XML 要素の名前空間。</param>
+        <param name="o">XML 要素としてシリアル化されるオブジェクト。</param>
+        <param name="writePrefixed">
+          <see langword="true" />none が指定された名前空間の使用可能な場合は、プレフィックスを持つ要素名を記述するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="xmlns">インスタンス、<see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />生成された XML で使用されるプレフィックスと名前空間のペアを格納するクラス。</param>
+        <summary>タグを書き込みましている属性を含め、要素のタグ。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTypedPrimitive">
+      <MemberSignature Language="C#" Value="protected void WriteTypedPrimitive (string name, string ns, object o, bool xsiType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteTypedPrimitive(string name, string ns, object o, bool xsiType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteTypedPrimitive(System.String,System.String,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="xsiType" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">書き込み先の要素のローカル名。</param>
+        <param name="ns">書き込み先の要素の名前空間。</param>
+        <param name="o">要素の本体でシリアル化するオブジェクト。</param>
+        <param name="xsiType">
+          <see langword="true" />XML 要素は、テキスト値を明示的に指定されている場合を使用して型、<see langword="xsi:type" />属性です。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>テキスト本体を持つ単純な XML スキーマ データ型の値は、XML 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ `xsi:type`属性が明示的に XML スキーマ データ型を示します。 プレフィックス`xsi`XML スキーマ インスタンス名前空間を参照します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteValue">
+      <MemberSignature Language="C#" Value="protected void WriteValue (byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteValue(unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteValue(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込むバイト配列。</param>
+        <summary>Base 64 バイト配列に書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteValue">
+      <MemberSignature Language="C#" Value="protected void WriteValue (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteValue(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む文字列の値。</param>
+        <summary>指定した文字列値を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXmlAttribute">
+      <MemberSignature Language="C#" Value="protected void WriteXmlAttribute (System.Xml.XmlNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteXmlAttribute(class System.Xml.XmlNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteXmlAttribute(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="node">記述する XML ノードです。</param>
+        <summary>指定した書き込み<see cref="T:System.Xml.XmlNode" />XML 属性として。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXmlAttribute">
+      <MemberSignature Language="C#" Value="protected void WriteXmlAttribute (System.Xml.XmlNode node, object container);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteXmlAttribute(class System.Xml.XmlNode node, object container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteXmlAttribute(System.Xml.XmlNode,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+        <Parameter Name="container" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="node">記述する XML ノードです。</param>
+        <param name="container"><see cref="T:System.Xml.Schema.XmlSchemaObject" />オブジェクト (または<see langword="null" />) 修飾名の値を生成するために使用する<see langword="arrayType" />Web サービス記述言語 (WSDL) の名前空間 ("http://schemas.xmlsoap.org/wsdl/") の属性です。</param>
+        <summary>指定した書き込み<see cref="T:System.Xml.XmlNode" />XML 属性としてオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXsiType">
+      <MemberSignature Language="C#" Value="protected void WriteXsiType (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteXsiType(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationWriter.WriteXsiType(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">XML スキーマ データ型のローカル名。</param>
+        <param name="ns">XML スキーマ データ型の名前空間。</param>
+        <summary>書き込みます、<see langword="xsi:type" />をドキュメントにシリアル化する XML 要素の属性です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロテクト メンバー<xref:System.Xml.Serialization.XmlSerializationWriter>は .NET Framework XML のシリアル化インフラストラクチャで内部的に使用される、派生クラスによってのみに利用を想定します。  
+  
+ `xsi:type`属性が明示的に XML スキーマ データ型を示します。 プレフィックス`xsi`XML スキーマ インスタンス名前空間を参照します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

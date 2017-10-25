@@ -1,0 +1,440 @@
+<Type Name="AttributeCollection" FullName="System.Web.UI.AttributeCollection">
+  <TypeSignature Language="C#" Value="public sealed class AttributeCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AttributeCollection extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.AttributeCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET サーバー コントロール要素の開始タグで宣言されているすべての属性にオブジェクト モデルのアクセスを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内の個々 の項目を返す、<xref:System.String>それらの値としてオブジェクト。 コレクションを返しますのかどうかは項目があるない属性コレクション内で、`null`です。  
+  
+ HTML サーバー コントロールの属性は、プログラムで、<xref:System.Web.UI.HtmlControls.HtmlControl.Attributes%2A>プロパティで、すべての HTML サーバー コントロールによって継承されます。 ASP.NET は、これらのコントロールのプロパティとして HTML サーバー コントロールの属性を公開します。  
+  
+ Web サーバー コントロールに属性を追加することができます、<xref:System.Web.UI.WebControls.WebControl.Attributes%2A>プロパティで、すべての Web サーバー コントロールによって継承されます。 Web サーバー コントロールの属性コレクション内の属性がそのコントロールのコントロールの厳密に型指定されたプロパティを必ずしも対応していません。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Web.UI.AttributeCollection>というオブジェクト`myAttributeCollection`、し、バックアップが、ページに通知されるかどうかをチェックします。 されていない場合、コードは、コレクションに 2 つの属性を追加します。 コレクション内の属性の数を取得し、ページに各属性にキーを書き込み、コレクションを反復処理します。 ページがポストバックの場合は、コードは新しい属性の数を取得し、ページに各属性の値とキーを書き込み、コレクションを反復処理します。  
+  
+ [!code-csharp[AttributeCollection_AttributeCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/AttributeCollection_AttributeCollection/CS/attributecollection_attributecollection.cs.aspx#1)]
+ [!code-vb[AttributeCollection_AttributeCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/AttributeCollection_AttributeCollection/VB/attributecollection_attributecollection.vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AttributeCollection (System.Web.UI.StateBag bag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.StateBag bag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AttributeCollection.#ctor(System.Web.UI.StateBag)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bag" Type="System.Web.UI.StateBag" />
+      </Parameters>
+      <Docs>
+        <param name="bag">属性キーと、サーバー コントロールの開始タグから値を格納するオブジェクト。</param>
+        <summary><see cref="T:System.Web.UI.AttributeCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.AttributeCollection>クラスのインスタンスを作成するコンス トラクターで名前付き`myAttributeCollection`します。 コントロールの<xref:System.Web.UI.Control.ViewState%2A>パラメーターの引数としてプロパティです。  
+  
+ [!code-csharp[AttributeCollection_AttributeCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/AttributeCollection_AttributeCollection/CS/attributecollection_attributecollection.cs.aspx#2)]
+ [!code-vb[AttributeCollection_AttributeCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/AttributeCollection_AttributeCollection/VB/attributecollection_attributecollection.vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string key, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string key, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AttributeCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">属性名。</param>
+        <param name="value">属性値。</param>
+        <summary>サーバー コントロールの属性を追加<see cref="T:System.Web.UI.AttributeCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合内の文字列、`value`パラメーターが含まれるは、アンパサンド (&)、文字は自動的にエンコードします。 HTML 形式を結果として得られるは"&amp;"です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、 <xref:System.Web.UI.AttributeCollection.Add%2A> ASP.NET サーバー コントロールに属性をプログラムで追加するメソッドを<xref:System.Web.UI.AttributeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[Classic AttributeCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic AttributeCollection.Add Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic AttributeCollection.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic AttributeCollection.Add Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributes">
+      <MemberSignature Language="C#" Value="public void AddAttributes (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAttributes(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AttributeCollection.AddAttributes(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" /> ASP.NET サーバー コントロールの開始タグを書き込み、属性のインスタンス。</param>
+        <summary>属性を追加、<see cref="T:System.Web.UI.AttributeCollection" />クラスを<see cref="T:System.Web.UI.HtmlTextWriter" />をマークアップとして属性を表示するために実行するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはすべてのサーバー コントロールの属性をコピー、<xref:System.Web.UI.HtmlTextWriter>オブジェクトには、次の呼び出しによってレンダリングされることができますが、<xref:System.Web.UI.HtmlTextWriter.RenderBeginTag%2A>メソッドです。  
+  
+ などの他のコントロールに含まれているコントロールの<xref:System.Web.UI.WebControls.Calendar>と<xref:System.Web.UI.WebControls.CheckBoxList>、直接含まれるコントロールをレンダリングすることによって、パフォーマンスが向上することができます。 直接レンダリングはコンテナー コントロールは、コンテナーのコントロールに子コントロールのすべての属性をコピーして、コピーした後、それらをレンダリングする必要があるため、コンテナー コントロールを介して表示よりも速くなります。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい属性を追加する方法を示しています、<xref:System.Web.UI.WebControls.Button>という名前のサーバー コントロール`myButton`と<xref:System.Web.UI.WebControls.TextBox>という名前のサーバー コントロール`myTextBox`です。 次に、これらの属性をカスタム追加<xref:System.Web.UI.HtmlTextWriter>を出力ストリームにこれらのコントロールの各属性を記述するオブジェクト。  
+  
+ [!code-csharp[AttributeCollection_Item#1](~/samples/snippets/csharp/VS_Snippets_WebNet/AttributeCollection_Item/CS/attributecollection_item.cs.aspx#1)]
+ [!code-vb[AttributeCollection_Item#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/AttributeCollection_Item/VB/attributecollection_item.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AttributeCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サーバー コントロールからのすべての属性を削除<see cref="T:System.Web.UI.AttributeCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、プログラムから HTML サーバー コントロールのすべての属性を削除する方法を示しています。<xref:System.Web.UI.AttributeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[Classic AttributeCollection.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic AttributeCollection.Clear Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic AttributeCollection.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic AttributeCollection.Clear Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.AttributeCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の属性の数を取得、<see cref="T:System.Web.UI.AttributeCollection" />オブジェクト。</summary>
+        <value>コレクション内の項目数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.AttributeCollection.Count%2A>プロパティを含むページにコントロールの属性の数を記述します。  
+  
+ [!code-csharp[AttributeCollection_AttributeCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/AttributeCollection_AttributeCollection/CS/attributecollection_attributecollection.cs.aspx#4)]
+ [!code-vb[AttributeCollection_AttributeCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/AttributeCollection_AttributeCollection/VB/attributecollection_attributecollection.vb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CssStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.CssStyleCollection CssStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.CssStyleCollection CssStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.AttributeCollection.CssStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.CssStyleCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイルのコレクションを取得する ASP.NET サーバー コントロールの現在の<see cref="T:System.Web.UI.AttributeCollection" />オブジェクトが属しています。</summary>
+        <value>現在のサーバー コントロールのスタイルを含むコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のスタイル宣言に、特定の HTML サーバー コントロールが追加される、<xref:System.Web.UI.CssStyleCollection>オブジェクトを含む ASP.NET Web ページが解析されたとき。 このプロパティは、追加、削除、およびサーバー コントロールの宣言されたスタイルを反復処理に使用できます。  
+  
+   
+  
+## Examples  
+ 次の例は、CSS スタイルの値をサーバー コントロールのプログラムで追加する方法を示しています。<xref:System.Web.UI.AttributeCollection>オブジェクト。 ときに、ボタンがクリックされたの背景色、<xref:System.Web.UI.WebControls.TextBox>という名前のサーバー コントロール`TextBox1`で選択した項目に設定されている、<xref:System.Web.UI.WebControls.DropDownList>という名前のサーバー コントロール`DropDownList1`です。  
+  
+ [!code-csharp[AttributeCollection_CssStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/AttributeCollection_CssStyle/CS/attributecollection_cssstyle.cs.aspx#1)]
+ [!code-vb[AttributeCollection_CssStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/AttributeCollection_CssStyle/VB/attributecollection_cssstyle.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AttributeCollection.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">このインスタンスと比較するオブジェクトのインスタンス。</param>
+        <summary>指定するかどうかの現在のインスタンス、<see cref="T:System.Web.UI.AttributeCollection" />オブジェクトが、指定したオブジェクトと等しい。</summary>
+        <returns>
+          <see langword="true" />場合に含まれているオブジェクト、<paramref name="o" />パラメーターがの現在のインスタンスに等しい<see cref="T:System.Web.UI.AttributeCollection" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較されるオブジェクトが等しい場合、次の要件を満たしている必要があります。  
+  
+-   含まれているオブジェクト、`o`パラメーターである必要があります、<xref:System.Web.UI.AttributeCollection>オブジェクト。  
+  
+-   両方のコレクションには、同じ数の項目を含める必要があります。  
+  
+-   両方のコレクション内の各エントリのキー値が一致する必要があります。  
+  
+    > [!NOTE]
+    >  このメソッドは主に、コントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AttributeCollection.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.AttributeCollection.GetHashCode%2A>これのハッシュ コードを確認するメソッド<xref:System.Web.UI.AttributeCollection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[string key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.AttributeCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">コレクション内の属性の場所です。</param>
+        <summary>取得またはサーバー コントロールの指定した属性値を設定します。</summary>
+        <value>属性値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性の追加や、このプロパティを使用する ASP.NET サーバー コントロールから取得できます。  
+  
+   
+  
+## Examples  
+ 次の例は、動的な HTML を設定する方法を示します`onblur`ように ECMAScript (JavaScript) を実行する属性を<xref:System.Web.UI.WebControls.TextBox>Web サーバー コントロールがフォーカスを失った。  
+  
+ [!code-aspx-csharp[Classic AttributeCollection Example 2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic AttributeCollection Example 2/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic AttributeCollection Example 2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic AttributeCollection Example 2/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.AttributeCollection.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー コントロールのすべての属性にキーのコレクションを取得<see cref="T:System.Web.UI.AttributeCollection" />オブジェクト。</summary>
+        <value>キーのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに含まれるすべてのキーが含まれています、 <xref:System.Web.UI.AttributeCollection> 、ASP.NET サーバー コントロールのかどうかに追加したプログラムで、<xref:System.Web.UI.AttributeCollection.Add%2A>メソッド、または宣言します。  
+  
+   
+  
+## Examples  
+ 次の例を反復処理する方法を示しています、<xref:System.Web.UI.AttributeCollection.Keys%2A>のプロパティ、<xref:System.Web.UI.AttributeCollection>オブジェクトに対して、<xref:System.Web.UI.HtmlControls.HtmlSelect>サーバー コントロールです。  
+  
+ [!code-aspx-csharp[Classic AttributeCollection.Keys Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic AttributeCollection.Keys Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic AttributeCollection.Keys Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic AttributeCollection.Keys Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AttributeCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除する属性の名前。</param>
+        <summary>サーバー コントロールから属性を削除<see cref="T:System.Web.UI.AttributeCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.AttributeCollection>オブジェクトには、指定された属性が含まれていません`key`コレクションは変更されません。 例外をスローすることはありません。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムから HTML サーバー コントロールの属性を削除する方法を示しています。<xref:System.Web.UI.AttributeCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[Classic AttributeCollection.Remove Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic AttributeCollection.Remove Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic AttributeCollection.Remove Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic AttributeCollection.Remove Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="public void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.AttributeCollection.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />インスタンスを現在の出力ストリームに書き込み、属性のコレクション。</param>
+        <summary>指定した属性のコレクションを書き込みます<see cref="T:System.Web.UI.HtmlTextWriter" />コレクションが属するコントロールの出力ストリーム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例から継承する方法を示しています、<xref:System.Web.UI.WebControls.WebControl>という名前のカスタム コントロールを作成するクラス`AttribRender`をオーバーライドする、<xref:System.Web.UI.AttributeCollection.Render%2A>メソッドです。 2 つ目のコード例では、ASP.NET Web ページで、カスタム コントロールを使用する方法を示します。  
+  
+ 次の例は、という名前のカスタム コントロールを作成する方法を示しています。`AttribRender`をオーバーライドする、<xref:System.Web.UI.WebControls.WebControl.Render%2A>のメソッド、<xref:System.Web.UI.WebControls.WebControl>呼び出さずにクラス、<xref:System.Web.UI.WebControls.WebControl.Render%2A>基底クラスのメソッドです。 代わりに、`AttribRender`呼び出します、<xref:System.Web.UI.AttributeCollection.Render%2A>メソッドです。  
+  
+ [!code-csharp[AttributeCollection.Render_Sample1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/AttributeCollection.Render_Sample1/CS/attributecollection_render.cs#1)]
+ [!code-vb[AttributeCollection.Render_Sample1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/AttributeCollection.Render_Sample1/VB/attributecollection_render.vb#1)]  
+  
+ 次の例を使用する方法を示しています、 `AttribRender` Web ページでカスタム コントロールです。 カスタム コントロールのコード ファイルがアプリケーションの App_Code フォルダーにあると見なします。  
+  
+ [!code-aspx-csharp[AttributeCollection.Render_Sample1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/AttributeCollection.Render_Sample1/CS/attributecollection_rendercs.aspx#2)]
+ [!code-aspx-vb[AttributeCollection.Render_Sample1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/AttributeCollection.Render_Sample1/VB/attributecollection_rendervb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

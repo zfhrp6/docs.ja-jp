@@ -1,0 +1,34 @@
+<Type Name="IReadOnlySessionState" FullName="System.Web.SessionState.IReadOnlySessionState">
+  <TypeSignature Language="C#" Value="public interface IReadOnlySessionState : System.Web.SessionState.IRequiresSessionState" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IReadOnlySessionState implements class System.Web.SessionState.IRequiresSessionState" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SessionState.IReadOnlySessionState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.SessionState.IRequiresSessionState</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>対象の HTTP ハンドラーが、セッション状態の値への読み取りアクセスのみが必要であるを指定します。 これはマーカー インターフェイスであり、メソッドはありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Web.SessionState.IReadOnlySessionState>ハンドラーが、セッション状態の値への読み取りアクセスのみが必要であるかを識別する、カスタム ハンドラーのインターフェイスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を調べ、現在の HTTP<xref:System.Web.HttpContext.Handler%2A>プロパティをセッション状態の値への読み取りアクセスのみが必要とするかどうかを確認します。  
+  
+ [!code-csharp[HttpSessionState#31](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/snippetscs.aspx#31)]
+ [!code-vb[HttpSessionState#31](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/snippetsvb.aspx#31)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

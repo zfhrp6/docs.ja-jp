@@ -1,0 +1,114 @@
+<Type Name="OptionalReliableSession" FullName="System.ServiceModel.OptionalReliableSession">
+  <TypeSignature Language="C#" Value="public class OptionalReliableSession : System.ServiceModel.ReliableSession" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OptionalReliableSession extends System.ServiceModel.ReliableSession" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.OptionalReliableSession" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.ReliableSession</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>信頼できるセッションがオプションである定義済みのバインドを使用するときに、信頼できるセッションを有効にする便利な方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼できるセッションを有効にする機能は、システムが提供するバインディングのうちの 3 つを備えています。 信頼できるセッションは、次のようになります。  
+  
+-   <xref:System.ServiceModel.NetTcpBinding> と <xref:System.ServiceModel.WSHttpBinding> に関しては省略可能 (既定ではオフ)  
+  
+-   <xref:System.ServiceModel.WSDualHttpBinding> に関しては必須 (常にオン)  
+  
+   
+  
+## Examples  
+ 信頼できるセッションを新たに作成する方法およびそのセッションの既定値にアクセスして変更する方法を次の例に示します。  
+  
+ [!code-csharp[S_UEOptionalReliableSession#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueoptionalreliablesession/cs/program.cs#0)]
+ [!code-vb[S_UEOptionalReliableSession#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueoptionalreliablesession/vb/source.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OptionalReliableSession ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.OptionalReliableSession.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.OptionalReliableSession" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OptionalReliableSession (System.ServiceModel.Channels.ReliableSessionBindingElement binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.ReliableSessionBindingElement binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.OptionalReliableSession.#ctor(System.ServiceModel.Channels.ReliableSessionBindingElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reliableSessionBindingElement" Type="System.ServiceModel.Channels.ReliableSessionBindingElement" />
+      </Parameters>
+      <Docs>
+        <param name="binding">To be added.</param>
+        <summary>信頼できるセッション バインド要素から、<see cref="T:System.ServiceModel.OptionalReliableSession" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="binding" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.OptionalReliableSession.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>信頼できるセッションが有効かどうかを示す値を取得または設定します。</summary>
+        <value>
+          信頼できるセッションが有効な場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、使用されているバインディングによって異なります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼できるセッションを有効にする機能は、システムが提供するバインディングのうちの 3 つを備えています。 信頼できるセッションは、次のようになります。  
+  
+-   <xref:System.ServiceModel.NetTcpBinding> と <xref:System.ServiceModel.WSHttpBinding> に関しては省略可能 (既定ではオフ)  
+  
+-   <xref:System.ServiceModel.WSDualHttpBinding> に関しては必須 (常にオン)  
+  
+   
+  
+## Examples  
+ 信頼できるセッションを新たに作成する方法およびそのセッションの既定値にアクセスして変更する方法を次の例に示します。  
+  
+ [!code-csharp[S_UEOptionalReliableSession#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueoptionalreliablesession/cs/program.cs#0)]
+ [!code-vb[S_UEOptionalReliableSession#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ueoptionalreliablesession/vb/source.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

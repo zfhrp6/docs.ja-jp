@@ -1,0 +1,644 @@
+<Type Name="TypeDescriptionProvider" FullName="System.ComponentModel.TypeDescriptionProvider">
+  <TypeSignature Language="C#" Value="public abstract class TypeDescriptionProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TypeDescriptionProvider extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.TypeDescriptionProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>補足のメタデータを提供、<see cref="T:System.ComponentModel.TypeDescriptor" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptionProvider>クラスは、追加、変更、または属性、プロパティ、およびイベントなどの特性を非表示にする型またはオブジェクトに関連付けられている型情報を動的に拡張します。 1 つのメタデータを提供する複数の型説明プロバイダー クラスがある<xref:System.ComponentModel.TypeDescriptor>です。  
+  
+ 関連付けるには 2 つの方法、<xref:System.ComponentModel.TypeDescriptionProvider>で、 <xref:System.ComponentModel.TypeDescriptor>:  
+  
+-   デザイン時、ときに、ターゲット クラス割り当てることができる、適切な<xref:System.ComponentModel.TypeDescriptionProviderAttribute>タグ。  
+  
+-   実行時に、1 つの<xref:System.ComponentModel.TypeDescriptor.AddProvider%2A>のメソッド、<xref:System.ComponentModel.TypeDescriptor>クラスを呼び出すことができます。 これらのオーバー ロードされたメソッドは、ターゲット オブジェクトまたはそのクラス型のいずれかが必要です。  
+  
+ <xref:System.ComponentModel.TypeDescriptionProvider>クラスは構築時に指定された、同じ型の親オブジェクトに依存します。 これによりから派生したクラス<xref:System.ComponentModel.CustomTypeDescriptor>選択的にメソッドをオーバーライドします。  
+  
+ インスタンス<xref:System.ComponentModel.TypeDescriptionProvider>は必要に応じて、カスタム型に関する情報のパフォーマンスに影響を最小限に抑えるに基づいて構築されるだけです。  
+  
+ このクラスは継承できません。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>として、派生型をマークすることがあります<see langword="internal" />または<see langword="private" />で、型のインスタンスを作成できますが、<see cref="T:System.ComponentModel.TypeDescriptor" />クラスです。 呼び出し元を有することにより、安全でないコードが信頼されているとは書き込みません。 代わりに呼び出し元が部分的な信頼で、型のインスタンスを作成可能性がありますを前提としています。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TypeDescriptionProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.TypeDescriptionProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、他の呼び出しに相当<xref:System.ComponentModel.TypeDescriptionProvider.%23ctor%28System.ComponentModel.TypeDescriptionProvider%29>パラメーター値を持つコンス トラクター`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TypeDescriptionProvider (System.ComponentModel.TypeDescriptionProvider parent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.TypeDescriptionProvider parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.#ctor(System.ComponentModel.TypeDescriptionProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parent" Type="System.ComponentModel.TypeDescriptionProvider" />
+      </Parameters>
+      <Docs>
+        <param name="parent">親の型説明のプロバイダー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.TypeDescriptionProvider" />クラス、親の型説明プロバイダーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`parent`パラメーターは`null`すべて、<xref:System.ComponentModel.TypeDescriptionProvider>メソッドは既定値を返します。 それ以外の場合、すべて<xref:System.ComponentModel.TypeDescriptionProvider>メソッドのメソッドに代行させるは`parent`します。  
+  
+ 次の表に、既定値を返します<xref:System.ComponentModel.TypeDescriptionProvider>メソッドです。  
+  
+|メソッド|既定の戻り値|  
+|------------|--------------------------|  
+|<xref:System.ComponentModel.TypeDescriptionProvider.GetCache%2A>|`null`|  
+|<xref:System.ComponentModel.TypeDescriptionProvider.CreateInstance%2A>|新しく作成されたオブジェクトを呼び出すことによって、<xref:System.Activator.CreateInstance%2A>メソッドです。|  
+|<xref:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor%2A>|既定のインスタンス、<xref:System.ComponentModel.CustomTypeDescriptor>クラスです。|  
+|<xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor%2A>|既定のインスタンス、<xref:System.ComponentModel.CustomTypeDescriptor>クラスです。|  
+|<xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType%2A>|`objectType`最初のパラメーターです。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public virtual object CreateInstance (IServiceProvider provider, Type objectType, Type[] argTypes, object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateInstance(class System.IServiceProvider provider, class System.Type objectType, class System.Type[] argTypes, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.CreateInstance(System.IServiceProvider,System.Type,System.Type[],System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="objectType" Type="System.Type" />
+        <Parameter Name="argTypes" Type="System.Type[]" />
+        <Parameter Name="args" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="provider">省略可能なサービス プロバイダーの場合。</param>
+        <param name="objectType">作成するオブジェクトの型。 このパラメーターは決して<see langword="null" />です。</param>
+        <param name="argTypes">省略可能なオブジェクトのコンス トラクターに渡されるパラメーターの型を表す型の配列。 この配列は、<see langword="null" />または長さ 0 のです。</param>
+        <param name="args">オブジェクトのコンストラクターに渡すパラメーターの値の省略可能な配列。</param>
+        <summary>別のデータ型の代わりに使用できるオブジェクトを作成します。</summary>
+        <returns>代替<see cref="T:System.Object" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IServiceProvider>によって指定された、`provider`パラメーターによって渡される、<xref:System.ComponentModel.TypeDescriptor.CreateInstance%2A?displayProperty=nameWithType>のメソッド、<xref:System.ComponentModel.TypeDescriptor>クラスです。 場合`provider`は`null`、サービス プロバイダーは、作成呼び出しに関する追加のコンテキストを取得する型説明プロバイダーを使用できます。  
+  
+ <xref:System.ComponentModel.TypeDescriptionProvider.CreateInstance%2A>メソッドは`virtual`し、既定では、結果を返します、<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>メソッド場合`provider`は`null`します。 場合`provider`は`null`、このメソッドを呼び出しますが、<xref:System.ComponentModel.TypeDescriptionProvider.CreateInstance%2A>親プロバイダーのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>場合は、派生クラスは、代替インスタンスを提供するのには必要ない、基本実装を呼び出します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCache">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IDictionary GetCache (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionary GetCache(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.GetCache(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">キャッシュを取得する対象のオブジェクト。</param>
+        <summary>としてアクセス、オブジェクトごとのキャッシュを取得、<see cref="T:System.Collections.IDictionary" />のキー/値ペア。</summary>
+        <returns><see cref="T:System.Collections.IDictionary" />キャッシュ; 指定されたオブジェクトがサポートする場合はそれ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.ComponentModel.TypeDescriptor>メタデータのコレクションで複雑な操作を実行する必要があります。 型は、ドメインの有効期間アンロードされないため、<xref:System.ComponentModel.TypeDescriptor>クラスの型に基づくこれらの操作の結果が自動的にキャッシュします。 ただし、一部の操作は、ライブ オブジェクトのインスタンスを使用します。 内でこれらの操作をキャッシュすることはできません、<xref:System.ComponentModel.TypeDescriptor>クラスためにキャッシュすると、オブジェクトがガベージ コレクトされないできなくなります。 代わりに、<xref:System.ComponentModel.TypeDescriptor>としてアクセスされる、オブジェクトごとのキャッシュでは、クラス、<xref:System.Collections.IDictionary>オブジェクト上に存在する、キー/値ペアのです。 <xref:System.ComponentModel.TypeDescriptionProvider.GetCache%2A>メソッドは、このキャッシュのインスタンスを返します。 <xref:System.ComponentModel.TypeDescriptionProvider.GetCache%2A>メソッドが返す`null`オブジェクトのサポートされているキャッシュが存在しない場合。  
+  
+ 既定値<xref:System.ComponentModel.TypeDescriptionProvider>によって使用される<xref:System.ComponentModel.TypeDescriptor>配置のコンポーネントを実装するかどうかはそのオブジェクトを調べ、<xref:System.ComponentModel.Design.IDictionaryService>インターフェイスです。 オブジェクトの場合、オブジェクトのキャッシュを格納するディクショナリ サービスを使用します。 それ以外の場合、オブジェクトを返します`null`です。 その他の型説明プロバイダーでは、ここで、独自の実装を提供できます。 たとえば、依存関係オブジェクトには型のプロパティがアタッチできるだけ<xref:System.Collections.IDictionary>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExtendedTypeDescriptor">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.ICustomTypeDescriptor GetExtendedTypeDescriptor (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.ICustomTypeDescriptor GetExtendedTypeDescriptor(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ICustomTypeDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">拡張の型記述子を取得する対象のオブジェクト。</param>
+        <summary>指定したオブジェクトの拡張のカスタム型記述子を取得します。</summary>
+        <returns><see cref="T:System.ComponentModel.ICustomTypeDescriptor" />オブジェクトの拡張されたメタデータを提供することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張型記述子は、その他のオブジェクトがこのオブジェクトに追加のプロパティが提供が実際には、オブジェクトで定義されているカスタム型記述子です。 たとえば、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]コンポーネント モデルを実装するオブジェクト、<xref:System.ComponentModel.IExtenderProvider>インターフェイスが、同じ論理コンテナー内に存在するその他のオブジェクトにプロパティを関連付けることができます。 オーバー ロードされた<xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor%2A>メソッドはこれら追加の拡張プロパティを提供する型記述子を返しません。 <xref:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor%2A>メソッドは、これらの拡張プロパティのセットを返します。 <xref:System.ComponentModel.TypeDescriptor>これら 2 つのプロパティのコレクションの結果を自動的にマージします。 中に、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]コンポーネント モデルには、拡張プロパティのみがサポートしている<xref:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor%2A>型説明プロバイダーをサポートしている場合、拡張属性だけでなく、イベントを使用できます。  
+  
+ <xref:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor%2A>`virtual`し、既定では、親のプロバイダーが渡されなかった場合は、空の結果を返すカスタム型記述子を返します。 このメソッドが親プロバイダーを呼び出す親プロバイダーが渡された場合<xref:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExtenderProviders">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.IExtenderProvider[] GetExtenderProviders (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.ComponentModel.IExtenderProvider[] GetExtenderProviders(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.GetExtenderProviders(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IExtenderProvider[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">拡張プロバイダーを取得するオブジェクト。</param>
+        <summary>指定したオブジェクトの拡張プロバイダーを取得します。</summary>
+        <returns>配列の拡張プロバイダーの<paramref name="instance" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="instance" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFullComponentName">
+      <MemberSignature Language="C#" Value="public virtual string GetFullComponentName (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetFullComponentName(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.GetFullComponentName(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">指定されたコンポーネント。</param>
+        <summary>指定されたコンポーネントの名前を取得または<see langword="null" />コンポーネントに名前があるない場合。</summary>
+        <returns>指定されたコンポーネントの名前。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReflectionType">
+      <MemberSignature Language="C#" Value="public Type GetReflectionType (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Type GetReflectionType(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.GetReflectionType(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">型のインスタンス (しないで<see langword="null" />)。</param>
+        <summary>指定したオブジェクトに対して通常のリフレクションを実行します。</summary>
+        <returns>このリフレクションの型<paramref name="instance" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType%2A>メソッドは、下位レベルのバージョンのでは、<xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor%2A>メソッドです。 カスタム型記述子が見つからないオブジェクトの場合<xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType%2A>オブジェクトに対して通常のリフレクションを実行すると呼びます。  
+  
+ 型の代わりにインスタンスを使用する型記述子のメンバーを呼び出した場合は、このメソッドのオーバー ロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="instance" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReflectionType">
+      <MemberSignature Language="C#" Value="public Type GetReflectionType (Type objectType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Type GetReflectionType(class System.Type objectType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.GetReflectionType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="objectType">取得する対象のオブジェクトの種類、<see cref="T:System.Reflection.IReflect" />です。</param>
+        <summary>通常の型に対してリフレクションを実行します。</summary>
+        <returns>このリフレクションの型<paramref name="objectType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType%2A>メソッドは、下位レベルのバージョンのでは、<xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor%2A>メソッドです。 カスタム型記述子が見つからないオブジェクトの場合<xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType%2A>オブジェクトに対して通常のリフレクションを実行すると呼びます。  
+  
+ インスタンスの代わりに、型を使用する型記述子のメンバーを呼び出した場合は、このメソッドのオーバー ロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="objectType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReflectionType">
+      <MemberSignature Language="C#" Value="public virtual Type GetReflectionType (Type objectType, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetReflectionType(class System.Type objectType, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.GetReflectionType(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectType" Type="System.Type" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="objectType">取得する対象のオブジェクトの種類、<see cref="T:System.Reflection.IReflect" />です。</param>
+        <param name="instance">型のインスタンス。 指定できます<see langword="null" />です。</param>
+        <summary>指定したオブジェクトに対して指定された種類の通常のリフレクションを実行します。</summary>
+        <returns>このリフレクションの型<paramref name="objectType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType%2A>メソッドは、下位レベルのバージョンのでは、<xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor%2A>メソッドです。 カスタム型記述子が見つからないオブジェクトの場合<xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType%2A>オブジェクトに対して通常のリフレクションを実行すると呼びます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドは、プロトタイプは<see langword="virtual" />、および既定値を返します<paramref name="objectType" />親プロバイダーが渡されなかった場合。 このメソッドが親プロバイダーを呼び出す親プロバイダーが渡された場合<see cref="Overload:System.ComponentModel.TypeDescriptionProvider.GetReflectionType" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeType">
+      <MemberSignature Language="C#" Value="public virtual Type GetRuntimeType (Type reflectionType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetRuntimeType(class System.Type reflectionType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.GetRuntimeType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reflectionType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="reflectionType">等価のランタイムに変換する型。</param>
+        <summary>ランタイム型にリフレクション型を変換します。</summary>
+        <returns>A<see cref="T:System.Type" />のランタイムと同じを表す<paramref name="reflectionType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptionProvider.GetRuntimeType%2A>メソッド反転、<xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType%2A>リフレクション型に変換するメソッドはランタイム型に戻します。 使用して、<xref:System.ComponentModel.TypeDescriptionProvider.GetRuntimeType%2A>メソッドが使用する場合より優先される、<xref:System.Type.UnderlyingSystemType%2A>プロパティで、ランタイムの型を返すために以前のバージョンで使用されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reflectionType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeDescriptor">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ICustomTypeDescriptor GetTypeDescriptor (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.ICustomTypeDescriptor GetTypeDescriptor(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ICustomTypeDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">型のインスタンス。 指定できます<see langword="null" />にインスタンスが渡されなかった場合、<see cref="T:System.ComponentModel.TypeDescriptor" />です。</param>
+        <summary>指定したオブジェクトのカスタム型記述子を取得します。</summary>
+        <returns><see cref="T:System.ComponentModel.ICustomTypeDescriptor" />型のメタデータを提供することができます。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="instance" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeDescriptor">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ICustomTypeDescriptor GetTypeDescriptor (Type objectType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.ICustomTypeDescriptor GetTypeDescriptor(class System.Type objectType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ICustomTypeDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="objectType">型記述子を取得する対象のオブジェクトの型。</param>
+        <summary>指定された型のカスタム型記述子を取得します。</summary>
+        <returns><see cref="T:System.ComponentModel.ICustomTypeDescriptor" />型のメタデータを提供することができます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeDescriptor">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.ICustomTypeDescriptor GetTypeDescriptor (Type objectType, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.ICustomTypeDescriptor GetTypeDescriptor(class System.Type objectType, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ICustomTypeDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectType" Type="System.Type" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="objectType">型記述子を取得する対象のオブジェクトの型。</param>
+        <param name="instance">型のインスタンス。 指定できます<see langword="null" />にインスタンスが渡されなかった場合、<see cref="T:System.ComponentModel.TypeDescriptor" />です。</param>
+        <summary>渡された型とオブジェクトのカスタム型記述子を取得します。</summary>
+        <returns><see cref="T:System.ComponentModel.ICustomTypeDescriptor" />型のメタデータを提供することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、プロトタイプは`virtual`し、既定では、親のプロバイダーが渡されなかった場合に空の記述子を返します。 このメソッドが親プロバイダーを呼び出す親プロバイダーが渡された場合<xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor(System.Type,System.Object)" />メソッドがオブジェクトのカスタム型記述子を返す必要があります。 返すかかどうか、メソッドは、オブジェクトの型情報を提供しない、<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupportedType">
+      <MemberSignature Language="C#" Value="public virtual bool IsSupportedType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSupportedType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptionProvider.IsSupportedType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">互換性をテストする型。</param>
+        <summary>指定した型が互換性のある型の説明と、一連の型説明プロバイダーを使用するかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="type" />、それ以外の型の説明と型説明のプロバイダーのチェーンと互換性のある<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

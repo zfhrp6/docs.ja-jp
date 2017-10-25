@@ -1,0 +1,334 @@
+<Type Name="DBConcurrencyException" FullName="System.Data.DBConcurrencyException">
+  <TypeSignature Language="C#" Value="public sealed class DBConcurrencyException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DBConcurrencyException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.Data.DBConcurrencyException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によってスローされた例外、<see cref="T:System.Data.Common.DataAdapter" />挿入時に、更新、または影響を受ける行の数が 0 に等しい場合は、操作を削除します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.DataAdapter>は各 insert、update、または削除操作の実行によって影響を受ける行の数を調べ、数が 0 に等しい場合は、この例外をスローします。 通常、この例外は、同時実行違反によって発生します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DBConcurrencyException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DBConcurrencyException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.DBConcurrencyException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、フィールドを既定値に初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DBConcurrencyException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DBConcurrencyException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の詳細を説明する文字列。</param>
+        <summary><see cref="T:System.Data.DBConcurrencyException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DBConcurrencyException (string message, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DBConcurrencyException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の詳細を説明する文字列。</param>
+        <param name="inner">内部例外への参照。</param>
+        <summary><see cref="T:System.Data.DBConcurrencyException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以前の例外をキャッチする新しい例外を作成することができます。 2 つ目の例外を処理するコードは、最初のエラーの原因をチェックするのに、内部例外とも呼ばれる以前の例外からの追加情報を使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DBConcurrencyException (string message, Exception inner, System.Data.DataRow[] dataRows);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner, class System.Data.DataRow[] dataRows) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DBConcurrencyException.#ctor(System.String,System.Exception,System.Data.DataRow[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+        <Parameter Name="dataRows" Type="System.Data.DataRow[]" />
+      </Parameters>
+      <Docs>
+        <param name="message">この例外の原因を説明するエラー メッセージ。</param>
+        <param name="inner">現在の例外の原因である例外。内部例外が指定されていない場合は null 参照 (Visual Basic では、<see langword="Nothing" />)。</param>
+        <param name="dataRows">含む配列、<see cref="T:System.Data.DataRow" />オブジェクトが更新プログラムのエラーは、この例外を生成します。</param>
+        <summary><see cref="T:System.Data.DBConcurrencyException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyToRows">
+      <MemberSignature Language="C#" Value="public void CopyToRows (System.Data.DataRow[] array);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyToRows(class System.Data.DataRow[] array) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DBConcurrencyException.CopyToRows(System.Data.DataRow[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Data.DataRow[]" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元配列<see cref="T:System.Data.DataRow" />コピーするオブジェクト、<see cref="T:System.Data.DataRow" />にオブジェクトします。</param>
+        <summary>コピー、<see cref="T:System.Data.DataRow" />が更新プログラムのエラーには、指定した配列に、この例外が生成されたオブジェクト<see cref="T:System.Data.DataRow" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチ更新プログラムを実行するときに、<xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A>のプロパティ、 <xref:System.Data.Common.DataAdapter> 'éý' `true`、すべての行の更新失敗する場合、この例外がスローされます。 この場合、この<xref:System.Data.DBConcurrencyException>が含まれています<xref:System.Data.DataRow>すべての行の 1 つだけではなくの更新が失敗したオブジェクト<xref:System.Data.DataRow>オブジェクトに<xref:System.Data.DBConcurrencyException.Row%2A>、影響を受けると<xref:System.Data.DataRow>オブジェクトを呼び出すことによって取得できます<xref:System.Data.DBConcurrencyException.CopyToRows%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyToRows">
+      <MemberSignature Language="C#" Value="public void CopyToRows (System.Data.DataRow[] array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyToRows(class System.Data.DataRow[] array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DBConcurrencyException.CopyToRows(System.Data.DataRow[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Data.DataRow[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元配列<see cref="T:System.Data.DataRow" />コピーするオブジェクト、<see cref="T:System.Data.DataRow" />にオブジェクトします。</param>
+        <param name="arrayIndex">コピーを開始するコピー先配列インデックス。</param>
+        <summary>コピー、<see cref="T:System.Data.DataRow" />が更新プログラムのエラーには、指定した配列に、この例外が生成されたオブジェクト<see cref="T:System.Data.DataRow" />オブジェクト、指定したコピー先配列インデックスで開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッチ更新プログラムを実行するときに、<xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A>のプロパティ、 <xref:System.Data.Common.DataAdapter> 'éý' `true`、すべての行の更新失敗する場合、この例外がスローされます。 この場合、この<xref:System.Data.DBConcurrencyException>が含まれています<xref:System.Data.DataRow>すべての行の 1 つだけではなくの更新が失敗したオブジェクト<xref:System.Data.DataRow>オブジェクトに<xref:System.Data.DBConcurrencyException.Row%2A>、影響を受けると<xref:System.Data.DataRow>オブジェクトを呼び出すことによって取得できます<xref:System.Data.DBConcurrencyException.CopyToRows%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo si, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.DBConcurrencyException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="si" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="si"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> と関連付けるシリアル化データを保持する <see cref="T:System.Data.DBConcurrencyException" />。</param>
+        <param name="context"><see cref="T:System.Runtime.Serialization.StreamingContext" /> に関連付けるシリアル化ストリームの転送元および転送先を格納する <see cref="T:System.Data.DBConcurrencyException" />。</param>
+        <summary>Aprcified シリアル化情報オブジェクトをシリアル化に必要なデータを追加、<see cref="T:System.Data.DBConcurrencyException" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" />パラメーターが null 参照 (<see langword="Nothing" /> Visual Basic で)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Row">
+      <MemberSignature Language="C#" Value="public System.Data.DataRow Row { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataRow Row" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DBConcurrencyException.Row" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値、<see cref="T:System.Data.DataRow" />を生成した、<see cref="T:System.Data.DBConcurrencyException" />です。</summary>
+        <value><see cref="T:System.Data.DataRow" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Data.DBConcurrencyException.Row%2A>の値を取得する、<xref:System.Data.DataRow>行を生成した、<xref:System.Data.DBConcurrencyException>です。 値を設定、<xref:System.Data.DataRow>も何も起こりません。  
+  
+ バッチ更新プログラムを実行するときに、<xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A>のプロパティ、 <xref:System.Data.Common.DataAdapter> 'éý' `true`、すべての行の更新失敗する場合、この例外がスローされます。 この場合、この<xref:System.Data.DBConcurrencyException>が含まれています<xref:System.Data.DataRow>すべての行の 1 つだけではなくの更新が失敗したオブジェクト<xref:System.Data.DataRow>オブジェクトに<xref:System.Data.DBConcurrencyException.Row%2A>、影響を受けると<xref:System.Data.DataRow>オブジェクトを呼び出すことによって取得できます<xref:System.Data.DBConcurrencyException.CopyToRows%2A>です。  
+  
+ シリアル化のサポートがありません<xref:System.Data.DataRow>オブジェクト。 したがって、シリアル化する場合、<xref:System.Data.DBConcurrencyException>オブジェクト、値の<xref:System.Data.DBConcurrencyException.Row%2A>オブジェクトのシリアル化されたバージョンのプロパティが null 値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowCount">
+      <MemberSignature Language="C#" Value="public int RowCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Data.DBConcurrencyException.RowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外を生成する、更新が失敗した行の数を取得します。</summary>
+        <value>更新が失敗した行の数のカウントを表す整数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,54 @@
+<Type Name="IDocumentPaginatorSource" FullName="System.Windows.Documents.IDocumentPaginatorSource">
+  <TypeSignature Language="C#" Value="public interface IDocumentPaginatorSource" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDocumentPaginatorSource" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.IDocumentPaginatorSource" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>実際のコンテンツの改ページ調整を実行するソース オブジェクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Documents.IDocumentPaginatorSource>インターフェイスです。  
+  
+ [!code-csharp[XpsSave#XpsSaveLoadFixedContent](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/Window1.xaml.cs#xpssaveloadfixedcontent)]
+ [!code-vb[XpsSave#XpsSaveLoadFixedContent](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/window1.xaml.vb#xpssaveloadfixedcontent)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DocumentPaginator">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.DocumentPaginator DocumentPaginator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.DocumentPaginator DocumentPaginator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.IDocumentPaginatorSource.DocumentPaginator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.DocumentPaginator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合は、コンテンツの改ページを実行するオブジェクトを取得します。</summary>
+        <value>実際のコンテンツの改ページを実行するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Windows.Documents.IDocumentPaginatorSource.DocumentPaginator%2A>プロパティです。  
+  
+ [!code-csharp[XpsSave#CreateFixedDocument](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsSave/CSharp/XpfContent.cs#createfixeddocument)]
+ [!code-vb[XpsSave#CreateFixedDocument](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpfcontent.vb#createfixeddocument)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

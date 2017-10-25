@@ -1,0 +1,726 @@
+<Type Name="ImmutableArray" FullName="System.Collections.Immutable.ImmutableArray">
+  <TypeSignature Language="C#" Value="public static class ImmutableArray" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ImmutableArray extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Immutable.ImmutableArray" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Immutable</AssemblyName>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <AssemblyVersion>1.2.1.0</AssemblyVersion>
+    <AssemblyVersion>1.2.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>  
+  
+ 変更できない配列を作成するためのメソッドを提供します。つまり、この配列は、作成後に変更することができません。  
+  
+ [!INCLUDE[immutable_nuget_short](~/includes/immutable-nuget-short-md.md)]</summary>
+    <remarks>To be added.</remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="BinarySearch&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int BinarySearch&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; array, T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 BinarySearch&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; array, !!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.BinarySearch``1(System.Collections.Immutable.ImmutableArray{``0},``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="array" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="array">検索する並べ替えられた配列。</param>
+        <param name="value">検索するオブジェクト。</param>
+        <summary>  
+  
+ 既定の比較子を使用して、並べ替えられた変更できない配列で、指定された要素を検索します。見つかった場合は、その要素の 0 から始まるインデックスを返します。</summary>
+        <returns>項目が見つかった場合は、配列内の項目の 0 から始まるインデックス。見つからなかった場合は、負の値。これは、<paramref name="value" /> の次に大きい要素のインデックスのビットごとの補数です。ただし、大きい要素が存在しない場合は、<see cref="P:System.Collections.Generic.ICollection`1.Count" /> のビットごとの補数です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="value" />実装していません<see cref="T:System.IComparable" />や検索が実装されていない要素が発生した<see cref="T:System.IComparable" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BinarySearch&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int BinarySearch&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; array, T value, System.Collections.Generic.IComparer&lt;T&gt; comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 BinarySearch&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; array, !!T value, class System.Collections.Generic.IComparer`1&lt;!!T&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.BinarySearch``1(System.Collections.Immutable.ImmutableArray{``0},``0,System.Collections.Generic.IComparer{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="array" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="value" Type="T" />
+        <Parameter Name="comparer" Type="System.Collections.Generic.IComparer&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="array">検索する並べ替えられた配列。</param>
+        <param name="value">検索するオブジェクト。</param>
+        <param name="comparer">要素を比較する場合に使用する比較子実装。または、既定の比較子を使用する場合は null。</param>
+        <summary>  
+  
+ 並べ替えられた変更できない配列で、指定された要素を検索します。見つかった場合は、その要素のゼロから始まるインデックスを返します。</summary>
+        <returns>項目が見つかった場合は、配列内の項目の 0 から始まるインデックス。見つからなかった場合は、負の値。これは、<paramref name="value" /> の次に大きい要素のインデックスのビットごとの補数です。ただし、大きい要素が存在しない場合は、<see cref="P:System.Collections.Generic.ICollection`1.Count" /> のビットごとの補数です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="comparer" />null と<paramref name="value" />を実装していません<see cref="T:System.IComparable" />や検索が実装されていない要素が発生した<see cref="T:System.IComparable" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BinarySearch&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int BinarySearch&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; array, int index, int length, T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 BinarySearch&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; array, int32 index, int32 length, !!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.BinarySearch``1(System.Collections.Immutable.ImmutableArray{``0},System.Int32,System.Int32,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="array" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="array">検索する並べ替えられた配列。</param>
+        <param name="index">検索範囲の開始位置を示すインデックス。</param>
+        <param name="length">検索する範囲の長さ。</param>
+        <param name="value">検索するオブジェクト。</param>
+        <summary>  
+  
+ 並べ替えられた変更できない配列で、指定された要素を検索します。見つかった場合は、その要素のゼロから始まるインデックスを返します。</summary>
+        <returns>項目が見つかった場合は、配列内の項目の 0 から始まるインデックス。見つからなかった場合は、負の値。これは、<paramref name="value" /> の次に大きい要素のインデックスのビットごとの補数です。ただし、大きい要素が存在しない場合は、<see cref="P:System.Collections.Generic.ICollection`1.Count" /> のビットごとの補数です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="value" />実装していません<see cref="T:System.IComparable" />や検索が実装されていない要素が発生した<see cref="T:System.IComparable" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BinarySearch&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int BinarySearch&lt;T&gt; (this System.Collections.Immutable.ImmutableArray&lt;T&gt; array, int index, int length, T value, System.Collections.Generic.IComparer&lt;T&gt; comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 BinarySearch&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; array, int32 index, int32 length, !!T value, class System.Collections.Generic.IComparer`1&lt;!!T&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.BinarySearch``1(System.Collections.Immutable.ImmutableArray{``0},System.Int32,System.Int32,``0,System.Collections.Generic.IComparer{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="array" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" RefType="this" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+        <Parameter Name="value" Type="T" />
+        <Parameter Name="comparer" Type="System.Collections.Generic.IComparer&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="array">検索する並べ替えられた配列。</param>
+        <param name="index">検索範囲の開始位置を示すインデックス。</param>
+        <param name="length">検索する範囲の長さ。</param>
+        <param name="value">検索するオブジェクト。</param>
+        <param name="comparer">要素の等値性を比較する場合に使用する比較子。または、既定の比較子を使用する場合は <see langword="null" />。</param>
+        <summary>  
+  
+ 並べ替えられた変更できない配列で、指定された要素を検索し、その要素のゼロから始まるインデックスを返します。</summary>
+        <returns>項目が見つかった場合は、配列内の項目の 0 から始まるインデックス。見つからなかった場合は、負の値。これは、<paramref name="value" /> の次に大きい要素のインデックスのビットごとの補数です。ただし、大きい要素が存在しない場合は、<see cref="P:System.Collections.Generic.ICollection`1.Count" /> のビットごとの補数です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="comparer" />null と<paramref name="value" />を実装していません<see cref="T:System.IComparable" />や検索が実装されていない要素が発生した<see cref="T:System.IComparable" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;T&gt; Create&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; Create&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.Create``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <summary>  
+  
+ 空の変更できない配列を作成します。</summary>
+        <returns>空の変更できない配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;T&gt; Create&lt;T&gt; (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; Create&lt;T&gt;(!!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.Create``1(``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="item">配列に格納するオブジェクト。</param>
+        <summary>  
+  
+ 指定されたオブジェクトを格納する、変更できない配列を作成します。</summary>
+        <returns>指定されたオブジェクトを格納する、変更できない配列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;T&gt; Create&lt;T&gt; (params T[] items);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; Create&lt;T&gt;(!!T[] items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.Create``1(``0[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="T[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="items">配列に読み込むオブジェクトの配列。</param>
+        <summary>  
+  
+ 指定されたオブジェクトの配列から、変更できない配列を作成します。</summary>
+        <returns>項目の配列を格納する、変更できない配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;T&gt; Create&lt;T&gt; (T item1, T item2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; Create&lt;T&gt;(!!T item1, !!T item2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.Create``1(``0,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item1" Type="T" />
+        <Parameter Name="item2" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="item1">配列に格納する最初のオブジェクト。</param>
+        <param name="item2">配列に格納する 2 番目のオブジェクト。</param>
+        <summary>  
+  
+ 指定されたオブジェクトを格納する、変更できない配列を作成します。</summary>
+        <returns>指定されたオブジェクトを格納する、変更できない配列を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;T&gt; Create&lt;T&gt; (System.Collections.Immutable.ImmutableArray&lt;T&gt; items, int start, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; Create&lt;T&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; items, int32 start, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.Create``1(System.Collections.Immutable.ImmutableArray{``0},System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Immutable.ImmutableArray&lt;T&gt;" />
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="items">オブジェクトのソース配列。</param>
+        <param name="start">コピーする最初の要素のインデックス<c>項目</c>です。</param>
+        <param name="length">要素の数<c>項目</c>この変更できない配列に含める。</param>
+        <summary>  
+  
+ 別の変更できない配列から指定されたオブジェクトで、変更できない配列を作成します。</summary>
+        <returns>ソース配列から指定されたオブジェクトを格納する、変更できない配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;T&gt; Create&lt;T&gt; (T item1, T item2, T item3);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; Create&lt;T&gt;(!!T item1, !!T item2, !!T item3) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.Create``1(``0,``0,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item1" Type="T" />
+        <Parameter Name="item2" Type="T" />
+        <Parameter Name="item3" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="item1">配列に格納する最初のオブジェクト。</param>
+        <param name="item2">配列に格納する 2 番目のオブジェクト。</param>
+        <param name="item3">配列に格納する 3 番目のオブジェクト。</param>
+        <summary>  
+  
+ 指定されたオブジェクトを格納する、変更できない配列を作成します。</summary>
+        <returns>指定されたオブジェクトを格納する、変更できない配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;T&gt; Create&lt;T&gt; (T[] items, int start, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; Create&lt;T&gt;(!!T[] items, int32 start, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.Create``1(``0[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="T[]" />
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="items">オブジェクトのソース配列。</param>
+        <param name="start">コピーする最初の要素のインデックス<c>項目</c>です。</param>
+        <param name="length">要素の数<c>項目</c>この変更できない配列に含める。</param>
+        <summary>  
+  
+ 別の配列から指定されたオブジェクトで、変更できない配列を作成します。</summary>
+        <returns>ソース配列から指定されたオブジェクトを格納する、変更できない配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;T&gt; Create&lt;T&gt; (T item1, T item2, T item3, T item4);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; Create&lt;T&gt;(!!T item1, !!T item2, !!T item3, !!T item4) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.Create``1(``0,``0,``0,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="item1" Type="T" />
+        <Parameter Name="item2" Type="T" />
+        <Parameter Name="item3" Type="T" />
+        <Parameter Name="item4" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="item1">配列に格納する最初のオブジェクト。</param>
+        <param name="item2">配列に格納する 2 番目のオブジェクト。</param>
+        <param name="item3">配列に格納する 3 番目のオブジェクト。</param>
+        <param name="item4">配列に格納する 4 番目のオブジェクト。</param>
+        <summary>  
+  
+ 指定されたオブジェクトを格納する、変更できない配列を作成します。</summary>
+        <returns>指定されたオブジェクトを格納する、変更できない配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBuilder&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;T&gt;.Builder CreateBuilder&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableArray`1/Builder&lt;!!T&gt; CreateBuilder&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.CreateBuilder``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;T&gt;+Builder</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">ビルダー内に格納されている要素の型。</typeparam>
+        <summary>  
+  
+ 新しいメモリを割り当てずに <see cref="T:System.Collections.Immutable.ImmutableArray" /> に変換できる可変配列を作成します。</summary>
+        <returns>変更できない配列に効率的に変換できる、指定された型の可変配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBuilder&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;T&gt;.Builder CreateBuilder&lt;T&gt; (int initialCapacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Immutable.ImmutableArray`1/Builder&lt;!!T&gt; CreateBuilder&lt;T&gt;(int32 initialCapacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.CreateBuilder``1(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;T&gt;+Builder</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="initialCapacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">ビルダー内に格納されている要素の型。</typeparam>
+        <param name="initialCapacity">ビルダーの初期量。</param>
+        <summary>  
+  
+ 新しいメモリを割り当てずに <see cref="T:System.Collections.Immutable.ImmutableArray" /> に変換できる可変配列を作成します。</summary>
+        <returns>変更できない配列に効率的に変換できる、指定された型の可変配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRange&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;T&gt; CreateRange&lt;T&gt; (System.Collections.Generic.IEnumerable&lt;T&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!T&gt; CreateRange&lt;T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.CreateRange``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">配列内に格納されている要素の型。</typeparam>
+        <param name="items">配列に追加する要素。</param>
+        <summary>  
+  
+ 指定された項目が設定された、新しい <see cref="T:System.Collections.Immutable.ImmutableArray`1" /> を作成します。</summary>
+        <returns>指定された項目を格納する、変更できない配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRange&lt;TSource,TResult&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;TResult&gt; CreateRange&lt;TSource,TResult&gt; (System.Collections.Immutable.ImmutableArray&lt;TSource&gt; items, Func&lt;TSource,TResult&gt; selector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TResult&gt; CreateRange&lt;TSource, TResult&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TSource&gt; items, class System.Func`2&lt;!!TSource, !!TResult&gt; selector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.CreateRange``2(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Immutable.ImmutableArray&lt;TSource&gt;" />
+        <Parameter Name="selector" Type="System.Func&lt;TSource,TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">To be added.</typeparam>
+        <typeparam name="TResult">To be added.</typeparam>
+        <param name="items">結果の配列を初期化するためにソースの配列。</param>
+        <param name="selector">ソース配列の各要素に適用する関数。</param>
+        <summary><see cref="T:System.Collections.Immutable.ImmutableArray`1" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードにより効率的に作成、<xref:System.Collections.Immutable.ImmutableArray%601>既存に基づいて<xref:System.Collections.Immutable.ImmutableArray%601>マッピング関数が、ソース配列の各要素に適用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRange&lt;TSource,TResult&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;TResult&gt; CreateRange&lt;TSource,TResult&gt; (System.Collections.Immutable.ImmutableArray&lt;TSource&gt; items, int start, int length, Func&lt;TSource,TResult&gt; selector);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TResult&gt; CreateRange&lt;TSource, TResult&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TSource&gt; items, int32 start, int32 length, class System.Func`2&lt;!!TSource, !!TResult&gt; selector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.CreateRange``2(System.Collections.Immutable.ImmutableArray{``0},System.Int32,System.Int32,System.Func{``0,``1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Immutable.ImmutableArray&lt;TSource&gt;" />
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+        <Parameter Name="selector" Type="System.Func&lt;TSource,TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">To be added.</typeparam>
+        <typeparam name="TResult">To be added.</typeparam>
+        <param name="items">結果の配列を初期化するためにソースの配列。</param>
+        <param name="start">結果の配列に含めるソース配列の最初の要素のインデックス。</param>
+        <param name="length">結果の配列に含める、ソース配列の要素の数。</param>
+        <param name="selector">結果の配列に含まれるソース配列の各要素に適用する関数。</param>
+        <summary><see cref="T:System.Collections.Immutable.ImmutableArray`1" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードにより効率的に作成、 <xref:System.Collections.Immutable.ImmutableArray%601> 、既存のスライスに基づく<xref:System.Collections.Immutable.ImmutableArray%601>マッピング関数がここで、結果の配列に含まれるソース配列の各要素に適用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRange&lt;TSource,TArg,TResult&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;TResult&gt; CreateRange&lt;TSource,TArg,TResult&gt; (System.Collections.Immutable.ImmutableArray&lt;TSource&gt; items, Func&lt;TSource,TArg,TResult&gt; selector, TArg arg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TResult&gt; CreateRange&lt;TSource, TArg, TResult&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TSource&gt; items, class System.Func`3&lt;!!TSource, !!TArg, !!TResult&gt; selector, !!TArg arg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.CreateRange``3(System.Collections.Immutable.ImmutableArray{``0},System.Func{``0,``1,``2},``1)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+        <TypeParameter Name="TArg" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Immutable.ImmutableArray&lt;TSource&gt;" />
+        <Parameter Name="selector" Type="System.Func&lt;TSource,TArg,TResult&gt;" />
+        <Parameter Name="arg" Type="TArg" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">To be added.</typeparam>
+        <typeparam name="TArg">To be added.</typeparam>
+        <typeparam name="TResult">To be added.</typeparam>
+        <param name="items">結果の配列を初期化するためにソースの配列。</param>
+        <param name="selector">ソース配列の各要素に適用する関数。</param>
+        <param name="arg">セレクター マッピング関数に渡される引数。</param>
+        <summary><see cref="T:System.Collections.Immutable.ImmutableArray`1" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードにより効率的に作成、<xref:System.Collections.Immutable.ImmutableArray%601>既存に基づいて<xref:System.Collections.Immutable.ImmutableArray%601>マッピング関数が、ソース配列の各要素に適用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRange&lt;TSource,TArg,TResult&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;TResult&gt; CreateRange&lt;TSource,TArg,TResult&gt; (System.Collections.Immutable.ImmutableArray&lt;TSource&gt; items, int start, int length, Func&lt;TSource,TArg,TResult&gt; selector, TArg arg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TResult&gt; CreateRange&lt;TSource, TArg, TResult&gt;(valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TSource&gt; items, int32 start, int32 length, class System.Func`3&lt;!!TSource, !!TArg, !!TResult&gt; selector, !!TArg arg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.CreateRange``3(System.Collections.Immutable.ImmutableArray{``0},System.Int32,System.Int32,System.Func{``0,``1,``2},``1)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+        <TypeParameter Name="TArg" />
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Immutable.ImmutableArray&lt;TSource&gt;" />
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+        <Parameter Name="selector" Type="System.Func&lt;TSource,TArg,TResult&gt;" />
+        <Parameter Name="arg" Type="TArg" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">To be added.</typeparam>
+        <typeparam name="TArg">To be added.</typeparam>
+        <typeparam name="TResult">To be added.</typeparam>
+        <param name="items">結果の配列を初期化するためにソースの配列。</param>
+        <param name="start">結果の配列に含めるソース配列の最初の要素のインデックス。</param>
+        <param name="length">結果の配列に含める、ソース配列の要素の数。</param>
+        <param name="selector">結果の配列に含まれるソース配列の各要素に適用する関数。</param>
+        <param name="arg">セレクター マッピング関数に渡される引数。</param>
+        <summary><see cref="T:System.Collections.Immutable.ImmutableArray`1" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードにより効率的に作成、 <xref:System.Collections.Immutable.ImmutableArray%601> 、既存のスライスに基づく<xref:System.Collections.Immutable.ImmutableArray%601>マッピング関数がここで、結果の配列に含まれるソース配列の各要素に適用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToImmutableArray&lt;TSource&gt;">
+      <MemberSignature Language="C#" Value="public static System.Collections.Immutable.ImmutableArray&lt;TSource&gt; ToImmutableArray&lt;TSource&gt; (this System.Collections.Generic.IEnumerable&lt;TSource&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Collections.Immutable.ImmutableArray`1&lt;!!TSource&gt; ToImmutableArray&lt;TSource&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Immutable.ImmutableArray.ToImmutableArray``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Immutable</AssemblyName>
+        <AssemblyVersion>1.2.0.0</AssemblyVersion>
+        <AssemblyVersion>1.2.1.0</AssemblyVersion>
+        <AssemblyVersion>1.2.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;TSource&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TSource" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IEnumerable&lt;TSource&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TSource">含まれる要素の型<c>項目</c>です。</typeparam>
+        <param name="items">変更できない配列にコピーするオブジェクトのコレクション。</param>
+        <summary>  
+  
+ 指定されたコレクションから、変更できない配列を作成します。</summary>
+        <returns>指定されたオブジェクトのコレクションを格納する、変更できない配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

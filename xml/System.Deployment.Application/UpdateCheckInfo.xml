@@ -1,0 +1,183 @@
+<Type Name="UpdateCheckInfo" FullName="System.Deployment.Application.UpdateCheckInfo">
+  <TypeSignature Language="C#" Value="public class UpdateCheckInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UpdateCheckInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Deployment.Application.UpdateCheckInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Deployment</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>呼び出すことによって取得される詳細な更新情報を表す<see cref="M:System.Deployment.Application.ApplicationDeployment.CheckForDetailedUpdate" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.UpdateCheckInfo>、最新バージョンについての情報に基づいて、ClickOnce アプリケーションをアップグレードするかどうかを決定できます。 <xref:System.Deployment.Application.UpdateCheckInfo.UpdateAvailable%2A>あるかどうか、新しい更新プログラムをすべてを示すブール値を返します。 <xref:System.Deployment.Application.UpdateCheckInfo.AvailableVersion%2A>プロパティは、新しいバージョンのバージョン番号を提供中に<xref:System.Deployment.Application.UpdateCheckInfo.MinimumRequiredVersion%2A>ユーザーがインストールされている必要がありますが、最も古いバージョンを提供します。 <xref:System.Deployment.Application.UpdateCheckInfo.IsUpdateRequired%2A>最新の利用可能な更新プログラムがユーザーの必要かどうかを表します。 最後に、<xref:System.Deployment.Application.UpdateCheckInfo.UpdateSizeBytes%2A>更新プログラムの合計サイズを表します。  
+  
+> [!NOTE]
+>  Visual Studio は追加、`<deploymentProvider>`要素をアプリケーションが更新を確認するいずれかを確認しなければならないように設定されている場合にのみマニフェスト**アプリケーションの更新プログラムを確認する必要があります**で更新の URL を指定または**の場所を更新**で、[アプリケーションの更新 ダイアログ ボックス](http://msdn.microsoft.com/en-us/8eca8743-8e68-4d04-bfd5-4dc0a9b2934f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Deployment.Application.UpdateCheckInfo.UpdateAvailable%2A>、新しいアプリケーションの更新があるかどうかを判断して<xref:System.Deployment.Application.UpdateCheckInfo.IsUpdateRequired%2A>をユーザーが、更新プログラムをインストールするように依頼するかどうかを判断します。  
+  
+ [!code-cpp[ClickOnceAPI#6](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#6)]
+ [!code-csharp[ClickOnceAPI#6](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#6)]
+ [!code-vb[ClickOnceAPI#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AvailableVersion">
+      <MemberSignature Language="C#" Value="public Version AvailableVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version AvailableVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.UpdateCheckInfo.AvailableVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後にインストールされていないバージョンのバージョン番号を取得します。</summary>
+        <value><see cref="T:System.Version" />最新バージョンのメジャーおよびマイナー ビルドおよびリビジョン番号を表現します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます<xref:System.Deployment.Application.UpdateCheckInfo.AvailableVersion%2A>更新プログラムの重要度に基づいて更新プログラムをインストールするかどうかを決定します。 のみの場合など、<xref:System.Version.Build%2A>または<xref:System.Version.Revision%2A>バージョンのプロパティが変更され、アプリケーションが更新されるまでする必要はありません、<xref:System.Version.Minor%2A>または<xref:System.Version.Major%2A>プロパティの変更。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUpdateRequired">
+      <MemberSignature Language="C#" Value="public bool IsUpdateRequired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUpdateRequired" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.UpdateCheckInfo.IsUpdateRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新プログラムをインストールする必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />更新プログラムが必要な場合です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ClickOnce アプリケーションに更新プログラムを展開するときに必要な更新プログラムとしてマークすぐにアップグレードする必要がありますをアプリケーションに通知できます。 最新バージョンには、重要な更新が含まれている場合、またはファイル形式や、以前のバージョンで使用するバックエンド データ ソースと互換性がない場合は、アプリケーションをマークするには。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Deployment.Application.UpdateCheckInfo.IsUpdateRequired%2A>を更新プログラムをインストールするかに確認しないでインストールをユーザーに確認するかどうかを判断します。  
+  
+ [!code-cpp[ClickOnceAPI#6](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#6)]
+ [!code-csharp[ClickOnceAPI#6](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#6)]
+ [!code-vb[ClickOnceAPI#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumRequiredVersion">
+      <MemberSignature Language="C#" Value="public Version MinimumRequiredVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version MinimumRequiredVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.UpdateCheckInfo.MinimumRequiredVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがコンピューターにインストールされている必要がありますの最小バージョンを取得します。</summary>
+        <value>A<see cref="T:System.Version" />ユーザーがインストールする必要がある最小のバージョンを表現します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、ユーザーが特別な代入時に通常し、は、コンピューターから離れた週間隔または月の必要な更新プログラムを見逃すことができます。 用途  
+  
+ <xref:System.Deployment.Application.UpdateCheckInfo.MinimumRequiredVersion%2A>ユーザーは、アップグレード時に、アプリケーションと 1 つ以上が実行されなかった場合は必須の更新プログラムを実行します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、表示を示しています、<xref:System.Deployment.Application.UpdateCheckInfo.MinimumRequiredVersion%2A>プロパティをユーザーが必要な更新プログラムが入手可能にします。  
+  
+ [!code-cpp[ClickOnceAPI#6](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#6)]
+ [!code-csharp[ClickOnceAPI#6](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#6)]
+ [!code-vb[ClickOnceAPI#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">新しいバージョンをインストールできる状態はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateAvailable">
+      <MemberSignature Language="C#" Value="public bool UpdateAvailable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UpdateAvailable" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.UpdateCheckInfo.UpdateAvailable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インストールされていない更新プログラムがあるかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />新しいバージョンのアプリケーションがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を検査<xref:System.Deployment.Application.UpdateCheckInfo.UpdateAvailable%2A>をインストールする更新プログラムがあるかどうかを判断します。  
+  
+ [!code-cpp[ClickOnceAPI#6](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#6)]
+ [!code-csharp[ClickOnceAPI#6](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#6)]
+ [!code-vb[ClickOnceAPI#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateSizeBytes">
+      <MemberSignature Language="C#" Value="public long UpdateSizeBytes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 UpdateSizeBytes" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.UpdateCheckInfo.UpdateSizeBytes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用可能な更新プログラムのサイズを取得します。</summary>
+        <value><see cref="T:System.Int64" />使用可能な更新プログラムのバイト単位のサイズを記述します。 更新プログラムが使用できない場合は、0 を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

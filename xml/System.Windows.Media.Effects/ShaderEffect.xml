@@ -1,0 +1,588 @@
+<Type Name="ShaderEffect" FullName="System.Windows.Media.Effects.ShaderEffect">
+  <TypeSignature Language="C#" Value="public abstract class ShaderEffect : System.Windows.Media.Effects.Effect" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract ShaderEffect extends System.Windows.Media.Effects.Effect" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Effects.ShaderEffect" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Effects.Effect</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Media.Effects.PixelShader" /> を使用して、カスタム ビットマップ効果を実現します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生して、<xref:System.Windows.Media.Effects.ShaderEffect>カスタム エフェクトを実装するクラスが単一のピクセル シェーダーに基づいています。  
+  
+ 次の手順では、カスタム エフェクトを作成する方法を示します。  
+  
+1.  負荷、<xref:System.Windows.Media.Effects.PixelShader>プリコンパイル済みの高レベル シェーダー言語 (HLSL) バイトコードからです。  
+  
+2.  効果のパラメーターを表す依存関係プロパティを定義して、 <xref:System.Windows.Media.Brush>-サーフェスの入力をベースです。 いずれかを使用して、<xref:System.Windows.Media.Effects.ShaderEffect.RegisterPixelShaderSamplerProperty%2A>にこれらの入力とを関連付けるにはオーバー ロードは、HLSL バイトコードで参照されている番号を登録します。  
+  
+ サンプラーの数は 4 に制限されます。  
+  
+ PS 3.0 シェーダーを使用する場合、次の制限が適用されます。  
+  
+-   PS 3.0 シェーダーが割り当てられたときにサンプラーの数は 8 に増加します。 その他のシェーダー登録 8 サンプラーを有効にする前に、PS 3.0 シェーダーを割り当てます。  
+  
+-   浮動小数点数の 224 の完全なシェーダー定数レジスタ制限が使用されます。 詳細については、次を参照してください。 [ps_3_0](http://go.microsoft.com/fwlink/?LinkId=166292)です。  
+  
+-   次のデータ型は、PS 3.0 シェーダーでのみでサポートされます。 シェーダーの低いバージョンで使用する場合は、例外がスローされます。  
+  
+    -   `int`and types convertible to `int`: `uint`, `byte`, `sbyte`, `long`, `ulong`, `short`, `ushort`,`char`  
+  
+    -   `bool`  
+  
+-   有効な PS 3.0 シェーダーがハードウェア PS 3.0 のサポートがないコンピューターに読み込まれている場合は、シェーダーは無視されます。 シェーダーが有効でない場合、例外はスローされません。  
+  
+-   コンピューターが 1 つ以上のビデオ カードを持っている場合、動作は、少なくとも対応ビデオ カードによって定義されます。 たとえば、コンピューターに、PS 3.0 をサポートしているうちの 1 つとしないうちの 1 つ、2 つのビデオ カードがある場合、動作は同じコンピューターは PS 3.0 をサポートしていない場合、です。  
+  
+-   コンピューターは、ハードウェアでレンダリング PS 3.0 をサポートしていますが、無効な PS 3.0 シェーダーが割り当てられている場合、<xref:System.Windows.Media.Effects.PixelShader.InvalidPixelShaderEncountered>イベントが発生します。 無効なの PS 3.0 シェーダーの例は、コンパイルされたもの、`ps_3_sw`フラグ。 <xref:System.Windows.Media.Effects.ShaderEffect>クラスがコンパイルされた PS 3.0 シェーダーのみを受け付ける、 `ps_3_0` fxc.exe にフラグが渡されます。 詳細については、次を参照してください。[効果コンパイラ ツール](http://go.microsoft.com/fwlink/?LinkId=166293)です。  
+  
+> [!NOTE]
+>  PS 2.0 シェーダーは、ソフトウェアでレンダリングするときに実行します。 ただし、PS 3.0 がシステムのハードウェアによってサポートされている場合でも PS 3.0 シェーダーでは実行されませんソフトウェア レンダリング中にします。  
+  
+   
+  
+## Examples  
+ 次のコード例から派生する方法を示しています、<xref:System.Windows.Media.Effects.ShaderEffect>クラスです。  
+  
+ [!code-csharp[System.Windows.Media.Effects.ShaderEffect#1](~/samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.Media.Effects.ShaderEffect/CS/ThresholdEffect.cs#1)]  
+  
+ 次のコード例は、以前に対応するシェーダーを表示<xref:System.Windows.Media.Effects.ShaderEffect>クラスです。  
+  
+ [!code-csharp[System.Windows.Media.Effects.ShaderEffect#10](~/samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.Media.Effects.ShaderEffect/CS/Threshold.fx#10)]  
+  
+ 次の XAML では、カスタムのシェーダー エフェクトを使用する方法を示します。  
+  
+ [!code-xaml[System.Windows.Media.Effects.ShaderEffect#1000](~/samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.Media.Effects.ShaderEffect/CS/Window1.xaml#1000)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.UIPermission">UI リソースへのフル アクセスできます。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ShaderEffect ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Effects.ShaderEffect" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.ShaderEffect Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Effects.ShaderEffect Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.ShaderEffect</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Effects.ShaderEffect" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、このオブジェクトの依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>このインスタンスの変更可能な複製。 返される複製は、事実上、現在のオブジェクトの詳細コピーです。 複製の <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは <see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Effects.ShaderEffect.Clone%2A>の変更可能なコピーを生成するためにメソッドを使用できる固定<xref:System.Windows.Freezable>オブジェクト。 便宜上、このメソッドは、継承されたシャドウ<xref:System.Windows.Freezable.Clone%2A>厳密に型指定された実装を提供するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.CloneCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する対象のオブジェクト。</param>
+        <summary>基本 (アニメーション化されていない) プロパティ値を使用して、インスタンスを、指定した <see cref="T:System.Windows.Freezable" /> の複製 (詳細コピー) にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.ShaderEffect CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Effects.ShaderEffect CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.ShaderEffect</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Effects.ShaderEffect" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValueCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCurrentValueCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCurrentValueCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.CloneCurrentValueCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する <see cref="T:System.Windows.Freezable" />。</param>
+        <summary>現在のプロパティ値を使用して、インスタンスを、指定した <see cref="T:System.Windows.Freezable" /> の変更可能な複製 (詳細コピー) にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Freezable" /> 派生クラスの新しいインスタンスを作成します。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DdxUvDdyUvRegisterIndex">
+      <MemberSignature Language="C#" Value="protected int DdxUvDdyUvRegisterIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DdxUvDdyUvRegisterIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.ShaderEffect.DdxUvDdyUvRegisterIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>画面空間に対するテクスチャ座標の偏導関数で使用するシェーダー レジスタを示す値を取得または設定します。</summary>
+        <value>偏導関数を格納するレジスタのインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Effects.ShaderEffect.DdxUvDdyUvRegisterIndex%2A>画面空間に対するテクスチャの偏導関数を格納するシェーダー レジスタを指定するプロパティを調整します。 たとえば場合、<xref:System.Windows.Media.Effects.ShaderEffect.DdxUvDdyUvRegisterIndex%2A>設定されている 4、シェーダー レジスタ c4 を使用します。 レジスタ c4 には、次の 4 つの浮動小数点フィールドが含まれています。 次の高レベル シェーダー言語 (HLSL) コードでは、このレジスタの使用方法を示します。 `nextPixelUV`値が右側に、[次へ] のピクセルを表します。  
+  
+```  
+float4 ddxUvDdyUv : register(c4);  
+SamplerState  sampler : register(S0);  
+...  
+float2 nextPixelUV;  
+nextPixelUV.u = ddxUvDdyUv.x + u;  
+nextPixelUV.v = ddxUvDdyUv.y + v;  
+  
+tex2D(sampler, nextPixelUV);  
+```  
+  
+ 次の表は、のレジスタを指定する方法を示しています。<xref:System.Windows.Media.Effects.ShaderEffect.DdxUvDdyUvRegisterIndex%2A>入力されます。  
+  
+|レジスタの定数|派生値|  
+|-----------------------|----------------------|  
+|x コンポーネント|ddx (u)|  
+|y 成分|ddx (v)|  
+|z 成分|ddy (u)|  
+|w コンポーネント|ddy(v)|  
+  
+ テクスチャ座標として示されます`(u, v)`です。 `ddx(u)`テクスチャ座標のコンポーネントの定数の偏導関数`u`に関して画面領域の x 座標。 `ddy(u)`テクスチャ座標の偏導関数`u`に関して画面領域の y 座標。 同様に、`ddx(v)`と`ddy(v)`テクスチャ座標のコンポーネントの対応する画面領域派生クラスは、`v`です。  
+  
+> [!NOTE]
+>  HLSL がこれらの値を計算する ddx と ddy 手順が、これらの手順はすべて PixelShader 2.0 ハードウェアでは使用されません。  
+  
+ これらの定数は、次のように考える可能性があります。 ステップ実行した場合 1 ピクセルを画面領域 (x 軸方向) の右側に、`ddx(u)`量を`u`テクスチャ空間での変更と`ddx(v)`量を`v`テクスチャ空間で変更します。 かどうか、効果が軸に沿ったし、表示される`ddx(v)`は 0 です。 表示されるかどうか、効果が回転`ddx(v)`は 0 以外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">設定しようとしましたが、<see cref="P:System.Windows.Media.Effects.ShaderEffect.DdxUvDdyUvRegisterIndex" />効果の初期処理の前後に 1 回よりも多くのプロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.GetAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">コピーするインスタンス。</param>
+        <summary>インスタンスの指定された固定された複製は、<see cref="T:System.Windows.Freezable" />基本 (アニメーション化されていない) プロパティの値を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetCurrentValueAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetCurrentValueAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">コピーし、固定する <see cref="T:System.Windows.Freezable" />。</param>
+        <summary>現在のインスタンスの指定された固定された複製は、<see cref="T:System.Windows.Freezable" />です。 オブジェクトに、アニメーション化された依存関係プロパティが存在する場合、現在アニメーション化されている値がコピーされます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingBottom">
+      <MemberSignature Language="C#" Value="protected double PaddingBottom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PaddingBottom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.ShaderEffect.PaddingBottom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>効果の出力テクスチャが、下端に合わせたその入力テクスチャより大きいことを示す値を取得または設定します。</summary>
+        <value>効果の下端に沿った埋め込み。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingLeft">
+      <MemberSignature Language="C#" Value="protected double PaddingLeft { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PaddingLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.ShaderEffect.PaddingLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>効果の出力テクスチャが、左端に合わせたその入力テクスチャより大きいことを示す値を取得または設定します。</summary>
+        <value>効果の左端に沿った埋め込み。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingRight">
+      <MemberSignature Language="C#" Value="protected double PaddingRight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PaddingRight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.ShaderEffect.PaddingRight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>効果の出力テクスチャが、右端に合わせたその入力テクスチャより大きいことを示す値を取得または設定します。</summary>
+        <value>効果の右端に沿った埋め込み。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingTop">
+      <MemberSignature Language="C#" Value="protected double PaddingTop { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PaddingTop" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.ShaderEffect.PaddingTop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>効果の出力テクスチャが、上端に合わせたその入力テクスチャより大きいことを示す値を取得または設定します。</summary>
+        <value>効果の上端に沿った埋め込み。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelShader">
+      <MemberSignature Language="C#" Value="protected System.Windows.Media.Effects.PixelShader PixelShader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Effects.PixelShader PixelShader" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.ShaderEffect.PixelShader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.PixelShader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>効果で使用する <see cref="T:System.Windows.Media.Effects.PixelShader" /> を取得または設定します。</summary>
+        <value>効果の <see cref="T:System.Windows.Media.Effects.PixelShader" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_PixelShader"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Effects.ShaderEffect.PixelShaderProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelShaderConstantCallback">
+      <MemberSignature Language="C#" Value="protected static System.Windows.PropertyChangedCallback PixelShaderConstantCallback (int floatRegisterIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Windows.PropertyChangedCallback PixelShaderConstantCallback(int32 floatRegisterIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.PixelShaderConstantCallback(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.PropertyChangedCallback</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="floatRegisterIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="floatRegisterIndex">依存関係プロパティに関連付けられるシェーダー レジスタのインデックス。</param>
+        <summary>依存関係プロパティの値をピクセル シェーダーの float 型定数レジスタに関連付けます。</summary>
+        <returns>依存関係プロパティと、<see cref="T:System.Windows.PropertyChangedCallback" /> で指定されたシェーダー定数レジスタを関連付ける <paramref name="floatRegisterIndex" /> デリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Effects.ShaderEffect.PixelShaderConstantCallback%2A>メソッド シェーダー定数の依存関係プロパティを登録するときにします。 <xref:System.Windows.Media.Effects.ShaderEffect.PixelShaderConstantCallback%2A>メソッド コンストラクト、<xref:System.Windows.PropertyChangedCallback>デリゲートを呼び出すと、依存関係プロパティで指定されたシェーダー定数レジスタとの関連付けを作成`floatRegisterIndex`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">依存関係プロパティとは、不明な型です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="floatRegisterIndex" />大きいか等しい 32、または<paramref name="floatRegisterIndex" />が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelShaderProperty">
+      <MemberSignature Language="C#" Value="protected static readonly System.Windows.DependencyProperty PixelShaderProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly class System.Windows.DependencyProperty PixelShaderProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Effects.ShaderEffect.PixelShaderProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Effects.ShaderEffect.PixelShader" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelShaderSamplerCallback">
+      <MemberSignature Language="C#" Value="protected static System.Windows.PropertyChangedCallback PixelShaderSamplerCallback (int samplerRegisterIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Windows.PropertyChangedCallback PixelShaderSamplerCallback(int32 samplerRegisterIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.PixelShaderSamplerCallback(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.PropertyChangedCallback</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="samplerRegisterIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="samplerRegisterIndex">依存関係プロパティに関連付けられるシェーダー サンプラーのインデックス。</param>
+        <summary>依存関係プロパティの値をピクセル シェーダーのサンプラー レジスタに関連付けます。</summary>
+        <returns>依存関係プロパティと、<see cref="T:System.Windows.PropertyChangedCallback" /> で指定されたシェーダー サンプラー レジスタを関連付ける <paramref name="samplerRegisterIndex" /> デリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Effects.ShaderEffect.PixelShaderSamplerCallback%2A>メソッドを登録するとき、 <xref:System.Windows.Media.Brush>-依存関係プロパティをシェーダー サンプラーの値します。 <xref:System.Windows.Media.Effects.ShaderEffect.PixelShaderSamplerCallback%2A>メソッド コンストラクト、<xref:System.Windows.PropertyChangedCallback>デリゲートを呼び出すと、依存関係プロパティで指定されたシェーダー サンプラー レジスタとの関連付けを作成`samplerRegisterIndex`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelShaderSamplerCallback">
+      <MemberSignature Language="C#" Value="protected static System.Windows.PropertyChangedCallback PixelShaderSamplerCallback (int samplerRegisterIndex, System.Windows.Media.Effects.SamplingMode samplingMode);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Windows.PropertyChangedCallback PixelShaderSamplerCallback(int32 samplerRegisterIndex, valuetype System.Windows.Media.Effects.SamplingMode samplingMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.PixelShaderSamplerCallback(System.Int32,System.Windows.Media.Effects.SamplingMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.PropertyChangedCallback</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="samplerRegisterIndex" Type="System.Int32" />
+        <Parameter Name="samplingMode" Type="System.Windows.Media.Effects.SamplingMode" />
+      </Parameters>
+      <Docs>
+        <param name="samplerRegisterIndex">依存関係プロパティに関連付けられるシェーダー サンプラーのインデックス。</param>
+        <param name="samplingMode">シェーダー サンプラーの <see cref="T:System.Windows.Media.Effects.SamplingMode" />。</param>
+        <summary>依存関係プロパティの値をピクセル シェーダーのサンプラー レジスタおよび <see cref="T:System.Windows.Media.Effects.SamplingMode" /> に関連付けます。</summary>
+        <returns>依存関係プロパティと、<see cref="T:System.Windows.PropertyChangedCallback" /> で指定されたシェーダー サンプラー レジスタを関連付ける <paramref name="samplerRegisterIndex" /> デリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Effects.ShaderEffect.RegisterPixelShaderSamplerProperty%2A>メソッドを登録するとき、 <xref:System.Windows.Media.Brush>-依存関係プロパティをシェーダー サンプラーの値します。 <xref:System.Windows.Media.Effects.ShaderEffect.RegisterPixelShaderSamplerProperty%2A>メソッド コンストラクト、<xref:System.Windows.PropertyChangedCallback>デリゲートを呼び出すと、依存関係プロパティで指定されたシェーダー サンプラー レジスタとの関連付けを作成`samplerRegisterIndex`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterPixelShaderSamplerProperty">
+      <MemberSignature Language="C#" Value="protected static System.Windows.DependencyProperty RegisterPixelShaderSamplerProperty (string dpName, Type ownerType, int samplerRegisterIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Windows.DependencyProperty RegisterPixelShaderSamplerProperty(string dpName, class System.Type ownerType, int32 samplerRegisterIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.RegisterPixelShaderSamplerProperty(System.String,System.Type,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dpName" Type="System.String" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="samplerRegisterIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dpName">依存関係プロパティの名前。</param>
+        <param name="ownerType">依存関係プロパティを持つ効果の種類。</param>
+        <param name="samplerRegisterIndex">依存関係プロパティに関連付けられるシェーダー サンプラーのインデックス。</param>
+        <summary>依存関係プロパティをシェーダー サンプラー レジスタに関連付けます。</summary>
+        <returns><paramref name="samplerRegisterIndex" /> で指定されるシェーダー サンプラーに関連付けられた依存関係プロパティ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterPixelShaderSamplerProperty">
+      <MemberSignature Language="C#" Value="protected static System.Windows.DependencyProperty RegisterPixelShaderSamplerProperty (string dpName, Type ownerType, int samplerRegisterIndex, System.Windows.Media.Effects.SamplingMode samplingMode);" />
+      <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Windows.DependencyProperty RegisterPixelShaderSamplerProperty(string dpName, class System.Type ownerType, int32 samplerRegisterIndex, valuetype System.Windows.Media.Effects.SamplingMode samplingMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.RegisterPixelShaderSamplerProperty(System.String,System.Type,System.Int32,System.Windows.Media.Effects.SamplingMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dpName" Type="System.String" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="samplerRegisterIndex" Type="System.Int32" />
+        <Parameter Name="samplingMode" Type="System.Windows.Media.Effects.SamplingMode" />
+      </Parameters>
+      <Docs>
+        <param name="dpName">依存関係プロパティの名前。</param>
+        <param name="ownerType">依存関係プロパティを持つ効果の種類。</param>
+        <param name="samplerRegisterIndex">依存関係プロパティに関連付けられるシェーダー サンプラーのインデックス。</param>
+        <param name="samplingMode">シェーダー サンプラーの <see cref="T:System.Windows.Media.Effects.SamplingMode" />。</param>
+        <summary>依存関係プロパティをシェーダー サンプラ レジスタおよび <see cref="T:System.Windows.Media.Effects.SamplingMode" /> に関連付けます。</summary>
+        <returns><paramref name="samplerRegisterIndex" /> で指定されるシェーダー サンプラーに関連付けられた依存関係プロパティ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateShaderValue">
+      <MemberSignature Language="C#" Value="protected void UpdateShaderValue (System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void UpdateShaderValue(class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.ShaderEffect.UpdateShaderValue(System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dp">更新される依存関係プロパティ。</param>
+        <summary>指定した依存関係プロパティに対応するシェーダー定数またはシェーダー サンプラーの更新が必要な効果を通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

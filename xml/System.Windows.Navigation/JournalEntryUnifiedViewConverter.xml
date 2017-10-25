@@ -1,0 +1,234 @@
+<Type Name="JournalEntryUnifiedViewConverter" FullName="System.Windows.Navigation.JournalEntryUnifiedViewConverter">
+  <TypeSignature Language="C#" Value="public sealed class JournalEntryUnifiedViewConverter : System.Windows.Data.IMultiValueConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit JournalEntryUnifiedViewConverter extends System.Object implements class System.Windows.Data.IMultiValueConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.JournalEntryUnifiedViewConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Data.IMultiValueConverter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>
+      <see cref="T:System.Windows.Navigation.JournalEntryUnifiedViewConverter" />"戻る"ナビゲーション履歴と移動先の履歴をマージ (によって公開される<see cref="T:System.Windows.Controls.Frame" />または<see cref="T:System.Windows.Navigation.NavigationWindow" />)、単一の Windows Internet Explorer 7 スタイルのナビゲーション メニューにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方<xref:System.Windows.Controls.Frame>と<xref:System.Windows.Navigation.NavigationWindow>次のメカニズムを使用して履歴ナビゲーションをサポートするナビゲーション クロムの表示。  
+  
+-   ナビゲーション ボタンでは、一度に 1 つのコンテンツをバックアップします。  
+  
+-   一度に転送の 1 つのコンテンツを移動するためのボタンをクリックします。  
+  
+-   [!INCLUDE[TLA#tla_ie7](~/includes/tlasharptla-ie7-md.md)]のスタイル ボックスの一覧を表示します。  
+  
+    -   最大 9 つのリスト項目ナビゲーション履歴を戻ると、最大 9 個の項目"進む"ナビゲーション履歴にします。  
+  
+    -   現在の背面と"進む"ナビゲーション履歴の両方に関してのコンテンツの位置。  
+  
+ 両方で、ナビゲーション履歴が格納されている<xref:System.Windows.Navigation.NavigationWindow>と<xref:System.Windows.Controls.Frame>次のプロパティ。  
+  
+ **戻るナビゲーション履歴**: <xref:System.Windows.Controls.Frame.BackStack%2A?displayProperty=nameWithType>、<xref:System.Windows.Navigation.NavigationWindow.BackStack%2A?displayProperty=nameWithType>です。  
+  
+ **ナビゲーション履歴**: <xref:System.Windows.Controls.Frame.ForwardStack%2A?displayProperty=nameWithType>、<xref:System.Windows.Navigation.NavigationWindow.ForwardStack%2A?displayProperty=nameWithType>です。  
+  
+ 作成する、 [!INCLUDE[TLA#tla_ie7](~/includes/tlasharptla-ie7-md.md)]-スタイルのドロップダウン リスト、<xref:System.Windows.Navigation.NavigationWindow>と<xref:System.Windows.Controls.Frame>を使用して<xref:System.Windows.Navigation.JournalEntryUnifiedViewConverter>個々 の戻るナビゲーション履歴をマージし、履歴エントリを 1 つのナビゲーションのリストにナビゲーション履歴を転送します。 結果のリストには、"進む"ナビゲーション履歴から 9 つのエントリと、現在のコンテンツのエントリまで"戻る"ナビゲーション履歴から 9 個までのエントリが含まれています。  
+  
+ カスタム ナビゲーションを作成する場合[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]を提供する必要があります、 [!INCLUDE[TLA#tla_ie7](~/includes/tlasharptla-ie7-md.md)]-使用するスタイルのドロップダウン リスト、<xref:System.Windows.Navigation.JournalEntryUnifiedViewConverter>と同様の効果をします。  
+  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ このクラスは、通常では使用されない[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例では、テキスト ベースのナビゲーション履歴 メニューを作成する方法を示します。 メニューを使用して<xref:System.Windows.Navigation.JournalEntryUnifiedViewConverter>戻ると、ホスト型の"進む"ナビゲーション履歴の両方を結合する<xref:System.Windows.Controls.Frame>ナビゲーター。  
+  
+ [!code-xaml[JournalEntryUnifiedPositionConverterSnippets#JournalEntryUnifiedPositionConverterWithMenuXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/JournalEntryUnifiedPositionConverterSnippets/CS/mainwindow.xaml#journalentryunifiedpositionconverterwithmenuxaml)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JournalEntryUnifiedViewConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.JournalEntryUnifiedViewConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Navigation.JournalEntryUnifiedViewConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public object Convert (object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Convert(object[] values, class System.Type targetType, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.JournalEntryUnifiedViewConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="values">2 つのナビゲーション スタックの配列。</param>
+        <param name="targetType">このパラメーターは使用されません。</param>
+        <param name="parameter">このパラメーターは使用されません。</param>
+        <param name="culture">このパラメーターは使用されません。</param>
+        <summary>2 つのナビゲーション履歴スタックにマージします。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />どちら渡されたナビゲーション スタックがある場合は、ナビゲーション履歴スタックのマージされた一覧を列挙に使用できる<see langword="null" />です。 <see langword="null" />、それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Frame>ナビゲーションのスタックは、次のプロパティから使用できます。  
+  
+-   <xref:System.Windows.Controls.Frame.BackStack%2A>  
+  
+-   <xref:System.Windows.Controls.Frame.ForwardStack%2A>  
+  
+ <xref:System.Windows.Navigation.NavigationWindow>ナビゲーションのスタックは、次のプロパティから使用できます。  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.BackStack%2A>  
+  
+ <xref:System.Windows.Navigation.NavigationWindow.ForwardStack%2A>  
+  
+ 2 つの渡されたナビゲーション スタックは、最大で各ナビゲーション スタックから 9 個のアイテムに加えて、現在のアイテムが格納される単一のナビゲーション スタックに結合されます。  
+  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ このクラスのメンバーは、通常使用されないかの[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]では使用できませんまたは[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertBack">
+      <MemberSignature Language="C#" Value="public object[] ConvertBack (object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] ConvertBack(object value, class System.Type[] targetTypes, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.JournalEntryUnifiedViewConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="targetTypes" Type="System.Type[]" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">このパラメーターは使用されません。</param>
+        <param name="targetTypes">このパラメーターは使用されません。</param>
+        <param name="parameter">このパラメーターは使用されません。</param>
+        <param name="culture">このパラメーターは使用されません。</param>
+        <summary>実装されていません。</summary>
+        <returns>常に <see cref="F:System.Windows.Data.Binding.DoNothing" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ このクラスのメンバーは、通常使用されないかの[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]では使用できませんまたは[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetJournalEntryPosition">
+      <MemberSignature Language="C#" Value="public static System.Windows.Navigation.JournalEntryPosition GetJournalEntryPosition (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Navigation.JournalEntryPosition GetJournalEntryPosition(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.JournalEntryUnifiedViewConverter.GetJournalEntryPosition(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.JournalEntryPosition</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティ値の取得元の要素。</param>
+        <summary>取得、<see cref="P:System.Windows.Navigation.JournalEntryUnifiedViewConverter.JournalEntryPosition" />添付プロパティを指定した要素。</summary>
+        <returns>値、<see cref="P:System.Windows.Navigation.JournalEntryUnifiedViewConverter.JournalEntryPosition" />指定の要素に対応する履歴項目のプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JournalEntryPositionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty JournalEntryPositionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty JournalEntryPositionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.JournalEntryUnifiedViewConverter.JournalEntryPositionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Navigation.JournalEntryUnifiedViewConverter.JournalEntryPosition" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetJournalEntryPosition">
+      <MemberSignature Language="C#" Value="public static void SetJournalEntryPosition (System.Windows.DependencyObject element, System.Windows.Navigation.JournalEntryPosition position);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetJournalEntryPosition(class System.Windows.DependencyObject element, valuetype System.Windows.Navigation.JournalEntryPosition position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.JournalEntryUnifiedViewConverter.SetJournalEntryPosition(System.Windows.DependencyObject,System.Windows.Navigation.JournalEntryPosition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="position" Type="System.Windows.Navigation.JournalEntryPosition" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの値を設定する要素。</param>
+        <param name="position">位置、<see cref="T:System.Windows.Navigation.JournalEntryPosition" />オブジェクト。</param>
+        <summary>セット、<see cref="F:System.Windows.Navigation.JournalEntryUnifiedViewConverter.JournalEntryPositionProperty" />指定した要素のプロパティを添付します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ このクラスのメンバーは、通常使用されないかの[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]では使用できませんまたは[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

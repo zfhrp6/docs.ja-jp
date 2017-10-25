@@ -1,0 +1,275 @@
+<Type Name="TraceEventCache" FullName="System.Diagnostics.TraceEventCache">
+  <TypeSignature Language="C#" Value="public class TraceEventCache" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TraceEventCache extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.TraceEventCache" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スレッドおよびプロセスに固有のトレース イベント データを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Diagnostics.TraceEventCache>クラス トレース リスナーの呼び出しのパフォーマンスを最適化として設計されていますが、カスタム トレース リスナーを作成する開発者にのみ関連します。  
+  
+ <xref:System.Diagnostics.TraceEventCache>クラスは、トレース イベントのソースを正確に識別するトレース メソッドでパラメーターとして使用します。 使用するメソッドの例として<xref:System.Diagnostics.TraceEventCache>は<xref:System.Diagnostics.TraceListener.TraceEvent%2A?displayProperty=nameWithType>と<xref:System.Diagnostics.TraceFilter.ShouldTrace%2A?displayProperty=nameWithType>です。 <xref:System.Diagnostics.TraceEventCache.LogicalOperationStack%2A>プロパティには関連するトレースとトレースを関連付けるために使用できるデータが含まれています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TraceEventCache ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.TraceEventCache.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.TraceEventCache" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Callstack">
+      <MemberSignature Language="C#" Value="public string Callstack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Callstack" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TraceEventCache.Callstack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドの呼び出し履歴を取得します。</summary>
+        <value>スタック トレース情報を格納している文字列。 この値は空の文字列を指定できます ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.TraceEventCache.Callstack%2A>プロパティから、呼び出し履歴の取得、<xref:System.Environment.StackTrace%2A>のプロパティ、<xref:System.Environment>クラスです。 プロパティの値では、メソッド呼び出し時間においてこの順に一覧表示します。 つまり、最新のメソッド呼び出しが最初に記述します。 スタックの各メソッド呼び出しのスタック トレース情報の 1 つの行が表示されます。 詳細については、「<xref:System.Environment.StackTrace%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">アクセス許可によって保護されているリソースへのフル アクセスできます。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DateTime">
+      <MemberSignature Language="C#" Value="public DateTime DateTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime DateTime" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TraceEventCache.DateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントのトレースが発生した日時を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />値が日付と時刻を世界協定時刻 (UTC) で表されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティのインスタンスへのアクセスが初めて、<xref:System.Diagnostics.TraceEventCache>クラス、現在の時刻が返されます。 その同じインスタンス内でこのプロパティの後続のクエリを返す<xref:System.DateTime>値、タイムスタンプとして使用できるようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalOperationStack">
+      <MemberSignature Language="C#" Value="public System.Collections.Stack LogicalOperationStack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Stack LogicalOperationStack" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TraceEventCache.LogicalOperationStack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Stack</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタックに格納されている、関連付けデータを取得します。</summary>
+        <value>A<see cref="T:System.Collections.Stack" />相関関係データを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連付けデータは、名前"System.Diagnostics.Trace.CorrelationManagerSlot"の呼び出しのコンテキスト内のオブジェクトとして格納されます。 <xref:System.Diagnostics.CorrelationManager>クラスはスレッド バインド コンテキストに論理操作の id を格納し、タグ ストアドの id を持つスレッドによって生成される各トレース イベントを自動的に使用されるメソッドを提供します。 <xref:System.Diagnostics.CorrelationManager>を通じてアクセス、<xref:System.Diagnostics.Trace.CorrelationManager%2A?displayProperty=nameWithType>プロパティです。 呼び出しごとに、<xref:System.Diagnostics.CorrelationManager.StartLogicalOperation%2A>メソッドは、スタック上に新しい論理操作の id をプッシュします。 呼び出しごとに、<xref:System.Diagnostics.CorrelationManager.StopLogicalOperation%2A>メソッドによって、スタックから論理操作の id がポップされます  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessId">
+      <MemberSignature Language="C#" Value="public int ProcessId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProcessId" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TraceEventCache.ProcessId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のプロセスの一意の識別子を取得します。</summary>
+        <value>システムによって生成された一意の識別子、現在のプロセス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロセスが終了するまでプロセス識別子は、システム全体でプロセスを一意に識別します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadId">
+      <MemberSignature Language="C#" Value="public string ThreadId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThreadId" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TraceEventCache.ThreadId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のマネージ スレッドの一意の識別子を取得します。</summary>
+        <value>このマネージ スレッドの一意の整数識別子を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッド識別子の値は、<xref:System.Threading.Thread.ManagedThreadId%2A?displayProperty=nameWithType>プロパティが文字列として書式設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timestamp">
+      <MemberSignature Language="C#" Value="public long Timestamp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Timestamp" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.TraceEventCache.Timestamp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイマー機構の現在のタイマー刻み数を取得します。</summary>
+        <value>基になるタイマー機構のタイマー刻みカウンター値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Get アクセサーの呼び出し、<xref:System.Diagnostics.Stopwatch.GetTimestamp%2A?displayProperty=nameWithType>タイムスタンプを取得します。 場合、<xref:System.Diagnostics.Stopwatch>クラスは、高解像度のパフォーマンス カウンターを使用して<xref:System.Diagnostics.Stopwatch.GetTimestamp%2A>そのカウンターの現在の値を返します。 場合、<xref:System.Diagnostics.Stopwatch>クラス タイマーを使用して、システム、<xref:System.Diagnostics.Stopwatch.GetTimestamp%2A>を返します、<xref:System.DateTime.Ticks%2A>プロパティ<xref:System.DateTime.Now%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

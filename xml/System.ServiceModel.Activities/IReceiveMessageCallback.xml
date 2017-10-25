@@ -1,0 +1,57 @@
+<Type Name="IReceiveMessageCallback" FullName="System.ServiceModel.Activities.IReceiveMessageCallback">
+  <TypeSignature Language="C#" Value="public interface IReceiveMessageCallback" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IReceiveMessageCallback" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activities.IReceiveMessageCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.Activities.Receive" /> アクティビティと <see cref="T:System.ServiceModel.Activities.ReceiveParameters" /> アクティビティがサービス メッセージを受信したときに実行されるコールバックを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、メッセージが受信されたときにメッセージ ヘッダーにアクセスするための <xref:System.ServiceModel.Activities.IReceiveMessageCallback> インターフェイスを実装する方法を示します。  
+  
+ [!code-csharp[AccessingOperationContext#1](~/samples/snippets/csharp/VS_Snippets_CFX/accessingoperationcontext/cs/receiveinstanceidcallback.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="OnReceiveMessage">
+      <MemberSignature Language="C#" Value="public void OnReceiveMessage (System.ServiceModel.OperationContext operationContext, System.Activities.ExecutionProperties activityExecutionProperties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnReceiveMessage(class System.ServiceModel.OperationContext operationContext, class System.Activities.ExecutionProperties activityExecutionProperties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationContext" Type="System.ServiceModel.OperationContext" />
+        <Parameter Name="activityExecutionProperties" Type="System.Activities.ExecutionProperties" />
+      </Parameters>
+      <Docs>
+        <param name="operationContext">メッセージが受信される操作コンテキスト。</param>
+        <param name="activityExecutionProperties">ワークフロー内で使用できる実行プロパティのセット。</param>
+        <summary>サービス メッセージを受信したときに実行されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、メッセージが受信されたときにメッセージ ヘッダーにアクセスするための <xref:System.ServiceModel.Activities.IReceiveMessageCallback> インターフェイスを実装する方法を示します。  
+  
+ [!code-csharp[AccessingOperationContext#1](~/samples/snippets/csharp/VS_Snippets_CFX/accessingoperationcontext/cs/receiveinstanceidcallback.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

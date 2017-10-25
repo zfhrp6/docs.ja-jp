@@ -1,0 +1,20 @@
+<Namespace Name="System.Web.ClientServices">
+  <Docs>
+    <summary><see cref="N:System.Web.ClientServices" />名前空間は、Windows ベース アプリケーションでは、Microsoft Ajax 認証、ロール、およびプロファイル サービスへのアクセスをサポートするクラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のクラス、<xref:System.Web.ClientServices>名前空間では、クライアント アプリケーション サービス プロバイダーのサポート、<xref:System.Web.ClientServices.Providers>名前空間。 これらのサービス プロバイダーを使用する Windows ベースのアプリケーションを有効にする、[!INCLUDE[ajax_current_short](~/includes/ajax-current-short-md.md)]認証、ロール、および既存のプロファイル サービス[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]メンバーシップ、id、およびアプリケーションの設定のインフラストラクチャです。 クライアント サービス プロバイダーでは、保存し、アプリケーションがオフラインのときは、ローカル データ キャッシュ内のユーザー情報を取得する不定期の接続もサポートされます。 詳細については、「[クライアント アプリケーション サービス](~/docs/framework/common-client-technologies/client-application-services.md)」を参照してください。  
+  
+ <xref:System.Web.ClientServices.ClientFormsIdentity>と<xref:System.Web.ClientServices.ClientRolePrincipal>クラスは、プロパティと、ユーザーの id、ロール、および認証の状態に関連するメソッドを提供します。  
+  
+ <xref:System.Web.ClientServices.ConnectivityStatus>クラスでは、ローカル データ キャッシュ内のユーザーのネットワーク接続の状態を格納することができます。 接続の状態は、クライアント サービス プロバイダーがオフライン キャッシュを使用するのか、またはアプリケーションのサービスにアクセスしようとしています。 のかどうかを示します。  
+  
+> [!NOTE]
+>  <xref:System.Web.ClientServices.ConnectivityStatus>クラスには、ネットワーク接続の実際の状態を判断するロジックは含まれません。 ユーザーは、独自の条件と設定に従って、アプリケーションの接続の状態を決定する担当、<xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A>プロパティに応じて。 たとえば、Windows ベースのアプリケーションでは多くの場合、ユーザー インターフェイスのオプションを提供して、できるように、ユーザーはオフライン モードで作業したり、オンラインにしようとしています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

@@ -1,0 +1,203 @@
+<Type Name="AssemblyHashAlgorithm" FullName="System.Configuration.Assemblies.AssemblyHashAlgorithm">
+  <TypeSignature Language="C#" Value="public enum AssemblyHashAlgorithm" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed AssemblyHashAlgorithm extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Assemblies.AssemblyHashAlgorithm" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ファイルのハッシュ処理および厳密な名前を生成するために使用するすべてのハッシュ アルゴリズムを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`hash function``H`入力として取得する変換です`m`ハッシュ値と呼ばれる固定サイズの文字列を返しますと`h`(つまり、 `h`  =  `H` (`m`))。 このプロパティだけを使用してハッシュ関数は、さまざまな一般的な計算が広く、ハッシュ関数は通常、選択いくつかのプロパティがあります。  
+  
+ 暗号ハッシュ関数の基本的な要件は次のとおりです。  
+  
+-   任意の長さの入力ができます。  
+  
+-   出力は、固定長がします。  
+  
+-   `H`(`x)`は比較的簡単に、指定された x を計算します。  
+  
+-   `H`(`x`) が一方向です。  
+  
+-   `H`(`x`) の競合がないです。  
+  
+ 長いメッセージまたは元となることが計算された; ドキュメントに、ハッシュ値が簡潔に記述を表しますこの値には、メッセージ ダイジェストが呼び出されます。 サイズが大きいドキュメントのデジタル指紋として、メッセージ ダイジェストの考えることができます。 よく知られているハッシュ関数の例としては、MD2、および SHA です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MD5">
+      <MemberSignature Language="C#" Value="MD5" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.Assemblies.AssemblyHashAlgorithm MD5 = int32(32771)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.Assemblies.AssemblyHashAlgorithm.MD5" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Assemblies.AssemblyHashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MD5 メッセージ ダイジェスト アルゴリズムを取得します。 MD5 は、1991 Rivest によって開発されました。 基本的には、MD4 の安全と MD4 よりもわずかに遅くなりますが、これにより、セキュリティを強化します。 アルゴリズムから成る 4 つの個別のラウンドで MD4 の場合と若干異なるデザインを持つ。 メッセージ ダイジェストのサイズと埋め込みの要件は変わりません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.Assemblies.AssemblyHashAlgorithm None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.Assemblies.AssemblyHashAlgorithm.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Assemblies.AssemblyHashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハッシュ アルゴリズムがないことを示すマスクです。 指定した場合<see langword="None" />マルチ モジュール アセンブリの場合、共通言語ランタイムの既定値の SHA1 アルゴリズムにマルチ モジュール アセンブリは、ハッシュを生成する必要があるためです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SHA1">
+      <MemberSignature Language="C#" Value="SHA1" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.Assemblies.AssemblyHashAlgorithm SHA1 = int32(32772)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.Assemblies.AssemblyHashAlgorithm.SHA1" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Assemblies.AssemblyHashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SHA にパブリッシュされていない問題を修正するセキュリティで保護されたハッシュ アルゴリズムのリビジョンを取得するために使用するマスクです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SHA256">
+      <MemberSignature Language="C#" Value="SHA256" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.Assemblies.AssemblyHashAlgorithm SHA256 = int32(32780)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.Assemblies.AssemblyHashAlgorithm.SHA256" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Assemblies.AssemblyHashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハッシュ サイズが 256 ビットのセキュア ハッシュ アルゴリズムのバージョンを取得するために使用するマスクです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SHA384">
+      <MemberSignature Language="C#" Value="SHA384" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.Assemblies.AssemblyHashAlgorithm SHA384 = int32(32781)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.Assemblies.AssemblyHashAlgorithm.SHA384" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Assemblies.AssemblyHashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハッシュ サイズが 384 ビットのセキュア ハッシュ アルゴリズムのバージョンを取得するために使用するマスクです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SHA512">
+      <MemberSignature Language="C#" Value="SHA512" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.Assemblies.AssemblyHashAlgorithm SHA512 = int32(32782)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.Assemblies.AssemblyHashAlgorithm.SHA512" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Assemblies.AssemblyHashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>512 ビットのハッシュのサイズにセキュア ハッシュ アルゴリズムのバージョンを取得するために使用するマスクです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

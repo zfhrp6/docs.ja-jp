@@ -1,0 +1,2734 @@
+<Type Name="SpeechRecognizer" FullName="System.Speech.Recognition.SpeechRecognizer">
+  <TypeSignature Language="C#" Value="public class SpeechRecognizer : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SpeechRecognizer extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SpeechRecognizer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Windows デスクトップで使用可能な共有音声認識サービスへのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、Windows 音声認識にアクセスするのに、共有認識エンジンを使用します。 使用して、 <xref:System.Speech.Recognition.SpeechRecognizer> Windows 音声ユーザー エクスペリエンスに追加するオブジェクト。  
+  
+ このクラスは、音声認識プロセスのさまざまな側面を制御を提供します。  
+  
+-   音声認識の文法を管理するを使用して、 <xref:System.Speech.Recognition.SpeechRecognizer.LoadGrammar%2A>、 <xref:System.Speech.Recognition.SpeechRecognizer.LoadGrammarAsync%2A>、 <xref:System.Speech.Recognition.SpeechRecognizer.UnloadGrammar%2A>、 <xref:System.Speech.Recognition.SpeechRecognizer.UnloadAllGrammars%2A>、および<xref:System.Speech.Recognition.SpeechRecognizer.Grammars%2A>です。  
+  
+-   情報を取得する現在の音声認識操作、サブスクライブ、<xref:System.Speech.Recognition.SpeechRecognizer>の<xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected>、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized>、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognitionRejected>、および<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized>イベント。  
+  
+-   を表示または認識エンジンが返す代替結果の数を変更するには、<xref:System.Speech.Recognition.SpeechRecognizer.MaxAlternates%2A>プロパティです。 認識エンジンで認識の結果が返されます、<xref:System.Speech.Recognition.RecognitionResult>オブジェクト。  
+  
+-   アクセスまたは、共有認識エンジンの状態を監視、使用、 <xref:System.Speech.Recognition.SpeechRecognizer.AudioLevel%2A>、 <xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition%2A>、 <xref:System.Speech.Recognition.SpeechRecognizer.AudioState%2A>、 <xref:System.Speech.Recognition.SpeechRecognizer.Enabled%2A>、 <xref:System.Speech.Recognition.SpeechRecognizer.PauseRecognizerOnRecognition%2A>、 <xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition%2A>、および<xref:System.Speech.Recognition.SpeechRecognizer.State%2A>プロパティおよび<xref:System.Speech.Recognition.SpeechRecognizer.AudioLevelUpdated>、 <xref:System.Speech.Recognition.SpeechRecognizer.AudioSignalProblemOccurred>、 <xref:System.Speech.Recognition.SpeechRecognizer.AudioStateChanged>、および<xref:System.Speech.Recognition.SpeechRecognizer.StateChanged>イベント。  
+  
+-   認識エンジンへの変更を同期するために使用して、<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>メソッドです。 共有認識エンジンでは、複数のスレッドを使用して、タスクを実行します。  
+  
+-   使用して、共有認識エンジンへの入力をエミュレートするために、<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize%2A>と<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A>メソッドです。  
+  
+ Windows 音声認識の構成が使用することで管理されている、**音声プロパティ**] ダイアログ ボックス、**コントロール パネルの [**です。 このインターフェイスを使用すると、既定のデスクトップの音声認識エンジンと言語、オーディオ入力デバイス、および音声認識のスリープ状態の動作を選択します。 アプリケーションの実行中に、(たとえば、音声認識が無効か、入力言語が変更された) Windows 音声認識の構成が変更された場合、すべての変更に影響<xref:System.Speech.Recognition.SpeechRecognizer>オブジェクト。  
+  
+ Windows 音声認識から独立しているプロセスで音声認識エンジンを作成するには、使用、<xref:System.Speech.Recognition.SpeechRecognitionEngine>クラスです。  
+  
+> [!NOTE]
+>  常に呼び出す<xref:System.Speech.Recognition.SpeechRecognizer.Dispose%2A>音声認識エンジンへの参照を解放する前にします。 それ以外の場合、使用されているリソースは解放されませんガベージ コレクターは、認識エンジン オブジェクトのまで`Finalize`メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、音声認識の文法を読み込んで、非同期エミュー レートされた入力、関連付けられている認識の結果、音声認識エンジンによって生成される関連付けられたイベントを説明するコンソール アプリケーションの一部です。  Windows 音声認識が実行されていない場合、このアプリケーションの起動と Windows 音声認識が開始もします。 Windows 音声認識がの場合、**休止中**状態にある場合、<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A>常に null を返します。  
+  
+```csharp  
+using System;  
+using System.Speech.Recognition;  
+using System.Threading;  
+  
+namespace SharedRecognizer  
+{  
+  class Program  
+  {  
+  
+    // Indicate whether the asynchronous emulate recognition  
+    // operation has completed.  
+    static bool completed;  
+  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize an instance of the shared recognizer.  
+      using (SpeechRecognizer recognizer = new SpeechRecognizer())  
+      {  
+  
+        // Create and load a sample grammar.  
+        Grammar testGrammar =  
+          new Grammar(new GrammarBuilder("testing testing"));  
+        testGrammar.Name = "Test Grammar";  
+        recognizer.LoadGrammar(testGrammar);  
+  
+        // Attach event handlers for recognition events.  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(  
+            SpeechRecognizedHandler);  
+        recognizer.EmulateRecognizeCompleted +=  
+          new EventHandler<EmulateRecognizeCompletedEventArgs>(  
+            EmulateRecognizeCompletedHandler);  
+  
+        completed = false;  
+  
+        // Start asynchronous emulated recognition.   
+        // This matches the grammar and generates a SpeechRecognized event.  
+        recognizer.EmulateRecognizeAsync("testing testing");  
+  
+        // Wait for the asynchronous operation to complete.  
+        while (!completed)  
+        {  
+          Thread.Sleep(333);  
+        }  
+  
+        completed = false;  
+  
+        // Start asynchronous emulated recognition.  
+        // This does not match the grammar or generate a SpeechRecognized event.  
+        recognizer.EmulateRecognizeAsync("testing one two three");  
+  
+        // Wait for the asynchronous operation to complete.  
+        while (!completed)  
+        {  
+          Thread.Sleep(333);  
+        }  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void SpeechRecognizedHandler(  
+      object sender, SpeechRecognizedEventArgs e)  
+    {  
+      if (e.Result != null)  
+      {  
+        Console.WriteLine("Recognition result = {0}",  
+          e.Result.Text ?? "<no text>");  
+      }  
+      else  
+      {  
+        Console.WriteLine("No recognition result");  
+      }  
+    }  
+  
+    // Handle the SpeechRecognizeCompleted event.  
+    static void EmulateRecognizeCompletedHandler(  
+      object sender, EmulateRecognizeCompletedEventArgs e)  
+    {  
+      if (e.Result == null)  
+      {  
+        Console.WriteLine("No result generated.");  
+      }  
+  
+      // Indicate the asynchronous operation is complete.  
+      completed = true;  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SpeechRecognizer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.SpeechRecognizer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Speech.Recognition.SpeechRecognizer>オブジェクトが別の音声認識の文法のセットを保持します。  
+  
+   
+  
+## Examples  
+ 次の例は、音声認識の文法を読み込んで、非同期エミュー レートされた入力、関連付けられている認識の結果、音声認識エンジンによって生成される関連付けられたイベントを説明するコンソール アプリケーションの一部です。 Windows 音声認識が実行されていない場合、このアプリケーションの起動と Windows 音声認識が開始もします。 Windows 音声認識がの場合、**休止中**状態にある場合、<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A>常に null を返します。  
+  
+```csharp  
+using System;  
+using System.Speech.Recognition;  
+using System.Threading;  
+  
+namespace SharedRecognizer  
+{  
+  class Program  
+  {  
+  
+    // Indicate whether the asynchronous emulate recognition  
+    // operation has completed.  
+    static bool completed;  
+  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize an instance of the shared recognizer.  
+      using (SpeechRecognizer recognizer = new SpeechRecognizer())  
+      {  
+  
+        // Create and load a sample grammar.  
+        Grammar testGrammar =  
+          new Grammar(new GrammarBuilder("testing testing"));  
+        testGrammar.Name = "Test Grammar";  
+        recognizer.LoadGrammar(testGrammar);  
+  
+        // Attach event handlers for recognition events.  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(  
+            SpeechRecognizedHandler);  
+        recognizer.EmulateRecognizeCompleted +=  
+          new EventHandler<EmulateRecognizeCompletedEventArgs>(  
+            EmulateRecognizeCompletedHandler);  
+  
+        completed = false;  
+  
+        // Start asynchronous emulated recognition.   
+        // This matches the grammar and generates a SpeechRecognized event.  
+        recognizer.EmulateRecognizeAsync("testing testing");  
+  
+        // Wait for the asynchronous operation to complete.  
+        while (!completed)  
+        {  
+          Thread.Sleep(333);  
+        }  
+  
+        completed = false;  
+  
+        // Start asynchronous emulated recognition.  
+        // This does not match the grammar or generate a SpeechRecognized event.  
+        recognizer.EmulateRecognizeAsync("testing one two three");  
+  
+        // Wait for the asynchronous operation to complete.  
+        while (!completed)  
+        {  
+          Thread.Sleep(333);  
+        }  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void SpeechRecognizedHandler(  
+      object sender, SpeechRecognizedEventArgs e)  
+    {  
+      if (e.Result != null)  
+      {  
+        Console.WriteLine("Recognition result = {0}",  
+          e.Result.Text ?? "<no text>");  
+      }  
+      else  
+      {  
+        Console.WriteLine("No recognition result");  
+      }  
+    }  
+  
+    // Handle the SpeechRecognizeCompleted event.  
+    static void EmulateRecognizeCompletedHandler(  
+      object sender, EmulateRecognizeCompletedEventArgs e)  
+    {  
+      if (e.Result == null)  
+      {  
+        Console.WriteLine("No result generated.");  
+      }  
+  
+      // Indicate the asynchronous operation is complete.  
+      completed = true;  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudioFormat">
+      <MemberSignature Language="C#" Value="public System.Speech.AudioFormat.SpeechAudioFormatInfo AudioFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.AudioFormat.SpeechAudioFormatInfo AudioFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SpeechRecognizer.AudioFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.AudioFormat.SpeechAudioFormatInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声認識エンジンによって受信されるオーディオの形式を取得します。</summary>
+        <value>音声認識では、オーディオ入力フォーマットまたは<see langword="null" />認識エンジンへの入力が構成されていない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudioLevel">
+      <MemberSignature Language="C#" Value="public int AudioLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AudioLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SpeechRecognizer.AudioLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声認識エンジンによって受信されるオーディオのレベルを取得します。</summary>
+        <value>入力、音声認識では、0 ~ 100 のオーディオ レベル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudioLevelUpdated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Recognition.AudioLevelUpdatedEventArgs&gt; AudioLevelUpdated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Recognition.AudioLevelUpdatedEventArgs&gt; AudioLevelUpdated" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Recognition.SpeechRecognizer.AudioLevelUpdated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Recognition.AudioLevelUpdatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共有認識エンジンは、オーディオ入力のレベルを報告したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認識エンジンは、1 秒間に複数回、このイベントを発生させます。 イベントが発生する頻度は、アプリケーションが実行されているコンピューターによって異なります。  
+  
+ イベントの時点で、オーディオ レベルを取得する、 <xref:System.Speech.Recognition.AudioLevelUpdatedEventArgs.AudioLevel%2A> 、関連するプロパティ<xref:System.Speech.Recognition.AudioLevelUpdatedEventArgs>です。 認識エンジンへの入力の現在のオーディオ レベルを取得するには、認識エンジンを使用<xref:System.Speech.Recognition.SpeechRecognizer.AudioLevel%2A>プロパティです。  
+  
+ デリゲートを作成する場合、`AudioLevelUpdated`イベント、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベントとデリゲート](http://go.microsoft.com/fwlink/?LinkId=162418)です。  
+  
+   
+  
+## Examples  
+ 次の例は、ハンドラーを追加、`AudioLevelUpdated`イベントを<xref:System.Speech.Recognition.SpeechRecognizer>オブジェクト。 ハンドラーは、コンソールに新しいオーディオ レベルを出力します。  
+  
+```csharp  
+private SpeechRecognizer recognizer;  
+  
+// Initialize the SpeechRecognizer object.   
+private void Initialize()  
+{  
+  recognizer = new SpeechRecognizer();  
+  
+  // Add an event handler for the AudioLevelUpdated event.  
+  recognizer.AudioLevelUpdated +=   
+    new EventHandler<AudioLevelUpdatedEventArgs>(recognizer_AudioLevelUpdated);  
+  
+  // Add other initialization code here.  
+  
+}  
+  
+// Write the audio level to the console when the AudioLevelUpdated event is raised.  
+void recognizer_AudioLevelUpdated(object sender, AudioLevelUpdatedEventArgs e)  
+{  
+  Console.WriteLine("The audio level is now: {0}.", e.AudioLevel);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudioPosition">
+      <MemberSignature Language="C#" Value="public TimeSpan AudioPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan AudioPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SpeechRecognizer.AudioPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声認識エンジンへの入力を提供しているデバイスによって生成されるオーディオ ストリームの現在の場所を取得します。</summary>
+        <value>音声認識エンジンのオーディオの入力ストリームを使用する入力を受信した現在の場所。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デスクトップの音声認識が実行中に、共有認識エンジンは入力を受け取ります。  
+  
+ `AudioPosition`プロパティは、生成されたオーディオ ストリーム内の入力デバイスの位置を参照します。 これに対し、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition%2A>プロパティは、オーディオ入力の処理の認識エンジンの位置を参照します。 これらの位置は別にすることはできます。  たとえば、認識エンジンが受信した場合どの it されていない入力が、認識結果が次の値を生成、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition%2A>プロパティは、の値より小さい、<xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、共有音声認識エンジンは、音声入力に一致するのに、ディクテーション文法を使用します。 ハンドラーを<xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected>イベントは、コンソールを書き込みます、 <xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition%2A>、 <xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition%2A>、および<xref:System.Speech.Recognition.SpeechRecognizer.AudioLevel%2A>音声認識エンジンが入力に音声を検出したときにします。  
+  
+```  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    private static SpeechRecognizer recognizer;  
+    public static void Main(string[] args)  
+    {  
+  
+      // Initialize a shared speech recognition engine.  
+      recognizer = new SpeechRecognizer();  
+  
+      // Add handlers for events.  
+      recognizer.LoadGrammarCompleted +=   
+        new EventHandler<LoadGrammarCompletedEventArgs>(recognizer_LoadGrammarCompleted);  
+      recognizer.SpeechRecognized +=   
+        new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+      recognizer.StateChanged +=   
+        new EventHandler<StateChangedEventArgs>(recognizer_StateChanged);  
+      recognizer.SpeechDetected +=   
+        new EventHandler<SpeechDetectedEventArgs>(recognizer_SpeechDetected);  
+  
+      // Create a dictation grammar.  
+      Grammar dictation = new DictationGrammar();  
+      dictation.Name = "Dictation";  
+  
+      // Load the grammar object to the recognizer.  
+      recognizer.LoadGrammarAsync(dictation);  
+  
+      // Keep the console window open.  
+      Console.ReadLine();  
+    }  
+  
+    // Gather information about detected speech and write it to the console.  
+    static void recognizer_SpeechDetected(object sender, SpeechDetectedEventArgs e)  
+    {  
+      Console.WriteLine();  
+      Console.WriteLine("Speech detected:");  
+      Console.WriteLine("  Audio level: " + recognizer.AudioLevel);  
+      Console.WriteLine("  Audio position: " + recognizer.AudioPosition);  
+      Console.WriteLine("  Recognizer audio position: " + recognizer.RecognizerAudioPosition);  
+    }  
+  
+    // Write the text of the recognition result to the console.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {   
+      Console.WriteLine("Speech recognized: " + e.Result.Text);  
+  
+      // Add event handler code here.  
+    }  
+  
+    // Write the name of the loaded grammar to the console.  
+    static void recognizer_LoadGrammarCompleted(object sender, LoadGrammarCompletedEventArgs e)  
+    {  
+      Console.WriteLine("Grammar loaded: " + e.Grammar.Name);  
+    }  
+  
+    // Put the shared speech recognizer into "listening" mode.  
+    static void recognizer_StateChanged(object sender, StateChangedEventArgs e)  
+    {  
+      if (e.RecognizerState != RecognizerState.Stopped)  
+      {  
+        recognizer.EmulateRecognizeAsync("Start listening");  
+      }  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudioSignalProblemOccurred">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Recognition.AudioSignalProblemOccurredEventArgs&gt; AudioSignalProblemOccurred;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Recognition.AudioSignalProblemOccurredEventArgs&gt; AudioSignalProblemOccurred" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Recognition.SpeechRecognizer.AudioSignalProblemOccurred" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Recognition.AudioSignalProblemOccurredEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識エンジンには、オーディオ信号に問題が発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どのような問題が発生させるを使用して、 <xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs.AudioSignalProblem%2A> 、関連するプロパティ<xref:System.Speech.Recognition.AudioSignalProblemOccurredEventArgs>です。  
+  
+ デリゲートを作成する場合、`AudioSignalProblemOccurred`イベント、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベントとデリゲート](http://go.microsoft.com/fwlink/?LinkId=162418)です。  
+  
+   
+  
+## Examples  
+ 次の例に関する情報を収集するイベント ハンドラーを定義する、`AudioSignalProblemOccurred`イベント。  
+  
+```  
+private SpeechRecognizer recognizer;  
+  
+// Initialize the speech recognition engine.  
+private void Initialize()  
+{  
+  recognizer = new SpeechRecognizer();  
+  
+  // Add a handler for the AudioSignalProblemOccurred event.  
+  recognizer.AudioSignalProblemOccurred +=   
+    new EventHandler<AudioSignalProblemOccurredEventArgs>(  
+      recognizer_AudioSignalProblemOccurred);  
+}  
+  
+// Gather information when the AudioSignalProblemOccurred event is raised.  
+void recognizer_AudioSignalProblemOccurred(object sender, AudioSignalProblemOccurredEventArgs e)  
+{  
+  StringBuilder details = new StringBuilder();  
+  
+  details.AppendLine("Audio signal problem information:");  
+  details.AppendFormat(  
+    " Audio level:               {0}" + Environment.NewLine +  
+    " Audio position:            {1}" + Environment.NewLine +  
+    " Audio signal problem:      {2}" + Environment.NewLine +  
+    " Recognition engine audio position: {3}" + Environment.NewLine,  
+    e.AudioLevel, e.AudioPosition,  e.AudioSignalProblem,  
+    e.recoEngineAudioPosition);  
+  
+  // Insert additional event handler code here.  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudioState">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.AudioState AudioState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Recognition.AudioState AudioState" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SpeechRecognizer.AudioState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.AudioState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声認識エンジンによって受信されるオーディオの状態を取得します。</summary>
+        <value>音声認識にオーディオの入力の状態。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudioStateChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Recognition.AudioStateChangedEventArgs&gt; AudioStateChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Recognition.AudioStateChangedEventArgs&gt; AudioStateChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Recognition.SpeechRecognizer.AudioStateChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Recognition.AudioStateChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオの状態の変更は、認識エンジンによって受信されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントの時点でオーディオの状態を取得する、 <xref:System.Speech.Recognition.AudioStateChangedEventArgs.AudioState%2A> 、関連するプロパティ<xref:System.Speech.Recognition.AudioStateChangedEventArgs>です。 認識エンジンへの入力の現在のオーディオ状態を取得するには、使用、認識エンジンの<xref:System.Speech.Recognition.SpeechRecognizer.AudioState%2A>プロパティです。 オーディオの状態に関する詳細については、次を参照してください。、<xref:System.Speech.Recognition.AudioState>列挙します。  
+  
+ デリゲートを作成する場合、`AudioStateChanged`イベント、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベントとデリゲート](http://go.microsoft.com/fwlink/?LinkId=162418)です。  
+  
+   
+  
+## Examples  
+ 次の例のハンドラーを使用して、 `AudioStateChanged` 、認識エンジンを書き込むイベントの新しい<xref:System.Speech.Recognition.SpeechRecognizer.AudioState%2A>コンソールに変更されるたびのメンバーを使用して、<xref:System.Speech.Recognition.AudioState>列挙します。  
+  
+```  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    private static SpeechRecognizer recognizer;  
+    public static void Main(string[] args)  
+    {  
+  
+      // Initialize a shared speech recognition engine.  
+      recognizer = new SpeechRecognizer();  
+  
+        // Create and load a grammar.  
+        Grammar dictation = new DictationGrammar();  
+        dictation.Name = "Dictation Grammar";  
+        recognizer.LoadGrammar(dictation);  
+  
+        // Attach event handlers.  
+        recognizer.AudioStateChanged +=  
+          new EventHandler<AudioStateChangedEventArgs>(recognizer_AudioStateChanged);  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+        recognizer.StateChanged +=  
+          new EventHandler<StateChangedEventArgs>(recognizer_StateChanged);  
+  
+        // Keep the console window open.  
+        Console.ReadLine();  
+      }  
+  
+    // Handle the AudioStateChanged event.  
+    static void recognizer_AudioStateChanged(object sender, AudioStateChangedEventArgs e)  
+    {  
+      Console.WriteLine("The new audio state is: " + e.AudioState);  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      if (e.Result != null && e.Result.Text != null)  
+      {  
+        Console.WriteLine();  
+        Console.WriteLine("  Recognized text =  {0}", e.Result.Text);  
+        Console.WriteLine();  
+      }  
+      else  
+      {  
+        Console.WriteLine("  Recognized text not available.");  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Done.");  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Put the recognizer into Listening mode.  
+    static void recognizer_StateChanged(object sender, StateChangedEventArgs e)  
+    {  
+      if (e.RecognizerState != RecognizerState.Stopped)  
+      {  
+        Console.WriteLine();  
+        recognizer.EmulateRecognizeAsync("Start listening");  
+      }  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>破棄、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Speech.Recognition.SpeechRecognizer" /> オブジェクトを破棄し、セッション中に使用するリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="EmulateRecognize">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>同期の音声認識のオーディオの代わりにテキストを使用して、共有音声認識エンジンへの入力をエミュレートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのメソッドは、システムのオーディオ入力をバイパスします。 これは、ことができますをテストまたはアプリケーションまたは文法をデバッグするとき。  
+  
+> [!NOTE]
+>  Windows 音声認識がの場合、**休止中**状態にある場合、これらのメソッドを返します`null`です。  
+  
+ 共有認識エンジンが発生し、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected>、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized>、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognitionRejected>、および<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized>イベント認識操作がエミュレートされていない場合と同様です。 認識エンジンでは、新しい行と余分な空白は無視されます、リテラルの入力として区切り記号を扱います。  
+  
+> [!NOTE]
+>  <xref:System.Speech.Recognition.RecognitionResult>エミュー レートされた入力に応答することで、共有の認識エンジンによって生成されたオブジェクトの値を持つ`null`の<xref:System.Speech.Recognition.RecognitionResult.Audio%2A>プロパティです。  
+  
+ 非同期の認識をエミュレートするために使用して、<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="EmulateRecognize">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.RecognitionResult EmulateRecognize (string inputText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Speech.Recognition.RecognitionResult EmulateRecognize(string inputText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.RecognitionResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputText">認識操作の入力です。</param>
+        <summary>同期の音声認識のオーディオの代わりにテキストを使用して、共有音声認識エンジンに語句の入力をエミュレートします。</summary>
+        <returns>認識操作の結果を認識または<see langword="null" />Windows 音声認識は、操作が成功しなかった場合は、**休止中**状態です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Vista および Windows 7 に付属しているレコグナイザーは、大文字小文字を区別し、入力の語句に文法ルールを適用するときに幅を文字です。 この種類の比較の詳細については、次を参照してください。、<xref:System.Globalization.CompareOptions>列挙値<xref:System.Globalization.CompareOptions.OrdinalIgnoreCase>と<xref:System.Globalization.CompareOptions.IgnoreWidth>です。 認識は、新しい行と余分な空白を無視し、リテラルの入力として句読点を扱います。  
+  
+   
+  
+## Examples  
+ 次の例、共有認識エンジンにサンプルの文法を読み込んで、認識エンジンへの入力をエミュレートします。 Windows 音声認識が実行されていない場合、このアプリケーションの起動と Windows 音声認識が開始もします。 Windows 音声認識がの場合、**休止中**状態にある場合、<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize%2A>常に null を返します。  
+  
+```csharp  
+  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SharedRecognizer  
+{  
+  class Program  
+  {  
+  
+    static void Main(string[] args)  
+    {  
+      // Initialize an instance of the shared recognizer.  
+      using (SpeechRecognizer recognizer = new SpeechRecognizer())  
+      {  
+        // Create and load a sample grammar.  
+        Grammar testGrammar =  
+          new Grammar(new GrammarBuilder("testing testing"));  
+        testGrammar.Name = "Test Grammar";  
+  
+        recognizer.LoadGrammar(testGrammar);  
+  
+        RecognitionResult result;  
+  
+        // This EmulateRecognize call matches the grammar and returns a  
+        // recognition result.  
+        result = recognizer.EmulateRecognize("testing testing");  
+        OutputResult(result);  
+  
+        // This EmulateRecognize call does not match the grammar and   
+        // returns null.  
+        result = recognizer.EmulateRecognize("testing one two three");  
+        OutputResult(result);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Output information about a recognition result to the console.  
+    private static void OutputResult(RecognitionResult result)  
+    {  
+      if (result != null)  
+      {  
+        Console.WriteLine("Recognition result = {0}",  
+          result.Text ?? "<no text>");  
+      }  
+      else  
+      {  
+        Console.WriteLine("No recognition result");  
+      }  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmulateRecognize">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.RecognitionResult EmulateRecognize (System.Speech.Recognition.RecognizedWordUnit[] wordUnits, System.Globalization.CompareOptions compareOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Speech.Recognition.RecognitionResult EmulateRecognize(class System.Speech.Recognition.RecognizedWordUnit[] wordUnits, valuetype System.Globalization.CompareOptions compareOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize(System.Speech.Recognition.RecognizedWordUnit[],System.Globalization.CompareOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.RecognitionResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wordUnits" Type="System.Speech.Recognition.RecognizedWordUnit[]" />
+        <Parameter Name="compareOptions" Type="System.Globalization.CompareOptions" />
+      </Parameters>
+      <Docs>
+        <param name="wordUnits">認識操作の入力が含まれている単語単位の配列。</param>
+        <param name="compareOptions">エミュレートされた認識操作に使用する比較の種類を記述する列挙値のビットごとの組み合わせ。</param>
+        <summary>オーディオの代わりに、同期の音声認識のテキストを使用して、共有音声認識に特定の単語の入力をエミュレートし、認識エンジンが単語と読み込まれた音声認識の文法で Unicode 比較を処理する方法を指定します。</summary>
+        <returns>認識操作の結果を認識または<see langword="null" />Windows 音声認識は、操作が成功しなかった場合は、**休止中**状態です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを作成、<xref:System.Speech.Recognition.RecognitionResult>オブジェクトで提供される情報を使用して、`wordUnits`パラメーター。  
+  
+ 認識エンジンを使用して、`compareOptions`ときに適用される文法ルール語句を入力します。 Vista および Windows 7 に付属しているレコグナイザーが場合は、大文字小文字を区別、<xref:System.Globalization.CompareOptions.OrdinalIgnoreCase>または<xref:System.Globalization.CompareOptions.IgnoreCase>値が存在します。 認識は、常に文字幅を無視し、カナ型を無視することはありません。 レコグナイザーは、新しい行と余分な空白を無視する、リテラルの入力として区切り記号を扱います。 詳細については、文字幅、ひらがなとカタカナは、次を参照してください。、<xref:System.Globalization.CompareOptions>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmulateRecognize">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.RecognitionResult EmulateRecognize (string inputText, System.Globalization.CompareOptions compareOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Speech.Recognition.RecognitionResult EmulateRecognize(string inputText, valuetype System.Globalization.CompareOptions compareOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize(System.String,System.Globalization.CompareOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.RecognitionResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputText" Type="System.String" />
+        <Parameter Name="compareOptions" Type="System.Globalization.CompareOptions" />
+      </Parameters>
+      <Docs>
+        <param name="inputText">認識操作の入力フレーズです。</param>
+        <param name="compareOptions">エミュレートされた認識操作に使用する比較の種類を記述する列挙値のビットごとの組み合わせ。</param>
+        <summary>オーディオの代わりに、同期の音声認識のテキストを使用して、共有音声認識エンジンに語句の入力をエミュレートし、認識エンジンが、語句と読み込まれた音声認識の文法で Unicode 比較を処理する方法を指定します。</summary>
+        <returns>認識操作の結果を認識または<see langword="null" />Windows 音声認識は、操作が成功しなかった場合は、**休止中**状態です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認識エンジンを使用して、`compareOptions`ときに適用される文法ルール語句を入力します。 Vista および Windows 7 に付属しているレコグナイザーが場合は、大文字小文字を区別、<xref:System.Globalization.CompareOptions.OrdinalIgnoreCase>または<xref:System.Globalization.CompareOptions.IgnoreCase>値が存在します。 認識は、常に文字幅を無視し、カナ型を無視することはありません。 レコグナイザーは、新しい行と余分な空白を無視する、リテラルの入力として区切り記号を扱います。 詳細については、文字幅、ひらがなとカタカナは、次を参照してください。、<xref:System.Globalization.CompareOptions>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="EmulateRecognizeAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>非同期の音声認識のオーディオの代わりにテキストを使用して、共有音声認識エンジンへの入力をエミュレートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのメソッドは、システムのオーディオ入力をバイパスします。 これは、ことができますをテストまたはアプリケーションまたは文法をデバッグするとき。  
+  
+ 共有認識エンジンが発生し、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected>、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized>、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognitionRejected>、および<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized>イベント認識操作がエミュレートされていない場合と同様です。 認識エンジンには、非同期の認識操作が完了すると、それを発生させる、<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeCompleted>イベント。 認識エンジンでは、新しい行と余分な空白は無視されます、リテラルの入力として区切り記号を扱います。  
+  
+> [!NOTE]
+>  Windows 音声認識がの場合、**休止中**状態にある場合、共有認識エンジンが入力を処理しませんし、発生しません、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected>と関連するイベントは、ですが、まだが発生し、<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeCompleted>イベント。  
+  
+> [!NOTE]
+>  <xref:System.Speech.Recognition.RecognitionResult>エミュー レートされた入力に応答することで、共有の認識エンジンによって生成されたオブジェクトの値を持つ`null`の<xref:System.Speech.Recognition.RecognitionResult.Audio%2A>プロパティです。  
+  
+ 同期の認識をエミュレートするために使用して、<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="EmulateRecognizeAsync">
+      <MemberSignature Language="C#" Value="public void EmulateRecognizeAsync (string inputText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EmulateRecognizeAsync(string inputText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputText">認識操作の入力です。</param>
+        <summary>非同期の音声認識のオーディオの代わりにテキストを使用して、共有音声認識エンジンに語句の入力をエミュレートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Vista および Windows 7 に付属しているレコグナイザーは、大文字小文字を区別し、入力の語句に文法ルールを適用するときに幅を文字です。 この種類の比較の詳細については、次を参照してください。、<xref:System.Globalization.CompareOptions>列挙値<xref:System.Globalization.CompareOptions.OrdinalIgnoreCase>と<xref:System.Globalization.CompareOptions.IgnoreWidth>です。 認識は、新しい行と余分な空白を無視し、リテラルの入力として句読点を扱います。  
+  
+   
+  
+## Examples  
+ 次の例は、音声認識の文法を読み込んで、非同期エミュー レートされた入力、関連付けられている認識の結果、音声認識エンジンによって生成される関連付けられたイベントを説明するコンソール アプリケーションの一部です。 Windows 音声認識が実行されていない場合、このアプリケーションの起動と Windows 音声認識が開始もします。 Windows 音声認識がの場合、**休止中**状態にある場合、<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A>常に null を返します。  
+  
+```csharp  
+using System;  
+using System.Speech.Recognition;  
+using System.Threading;  
+  
+namespace SharedRecognizer  
+{  
+  class Program  
+  {  
+    static bool completed;  
+  
+    static void Main(string[] args)  
+    {  
+      // Initialize an instance of the shared recognizer.  
+      using (SpeechRecognizer recognizer = new SpeechRecognizer())  
+      {  
+        // Create and load a sample grammar.  
+        Grammar testGrammar =  
+          new Grammar(new GrammarBuilder("testing testing"));  
+        testGrammar.Name = "Test Grammar";  
+  
+        recognizer.LoadGrammar(testGrammar);  
+  
+        // Attach event handlers for recognition events.  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(  
+            SpeechRecognizedHandler);  
+        recognizer.EmulateRecognizeCompleted +=  
+          new EventHandler<EmulateRecognizeCompletedEventArgs>(  
+            EmulateRecognizeCompletedHandler);  
+  
+        completed = false;  
+  
+        // This EmulateRecognizeAsync call generates a SpeechRecognized event.  
+        recognizer.EmulateRecognizeAsync("testing testing");  
+  
+        // Wait for the asynchronous operation to complete.  
+        while (!completed)  
+        {  
+          Thread.Sleep(333);  
+        }  
+  
+        completed = false;  
+  
+        // This EmulateRecognizeAsync call does not match the grammar   
+        // or generate a SpeechRecognized event.  
+        recognizer.EmulateRecognizeAsync("testing one two three");  
+  
+        // Wait for the asynchronous operation to complete.  
+        while (!completed)  
+        {  
+          Thread.Sleep(333);  
+        }  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void SpeechRecognizedHandler(  
+      object sender, SpeechRecognizedEventArgs e)  
+    {  
+      if (e.Result != null)  
+      {  
+        Console.WriteLine("Recognition result = {0}",  
+          e.Result.Text ?? "<no text>");  
+      }  
+      else  
+      {  
+        Console.WriteLine("No recognition result");  
+      }  
+    }  
+  
+    // Handle the EmulateRecognizeCompleted event.   
+    static void EmulateRecognizeCompletedHandler(  
+      object sender, EmulateRecognizeCompletedEventArgs e)  
+    {  
+      if (e.Result == null)  
+      {  
+        Console.WriteLine("No result generated.");  
+      }  
+  
+      completed = true;  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmulateRecognizeAsync">
+      <MemberSignature Language="C#" Value="public void EmulateRecognizeAsync (System.Speech.Recognition.RecognizedWordUnit[] wordUnits, System.Globalization.CompareOptions compareOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EmulateRecognizeAsync(class System.Speech.Recognition.RecognizedWordUnit[] wordUnits, valuetype System.Globalization.CompareOptions compareOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync(System.Speech.Recognition.RecognizedWordUnit[],System.Globalization.CompareOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wordUnits" Type="System.Speech.Recognition.RecognizedWordUnit[]" />
+        <Parameter Name="compareOptions" Type="System.Globalization.CompareOptions" />
+      </Parameters>
+      <Docs>
+        <param name="wordUnits">認識操作の入力が含まれている単語単位の配列。</param>
+        <param name="compareOptions">エミュレートされた認識操作に使用する比較の種類を記述する列挙値のビットごとの組み合わせ。</param>
+        <summary>オーディオの代わりに、非同期の音声認識のテキストを使用して、共有音声認識に特定の単語の入力をエミュレートし、認識エンジンが単語と読み込まれた音声認識の文法で Unicode 比較を処理する方法を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを作成、<xref:System.Speech.Recognition.RecognitionResult>オブジェクトで提供される情報を使用して、`wordUnits`パラメーター。  
+  
+ 認識エンジンを使用して、`compareOptions`ときに適用される文法ルール語句を入力します。 Vista および Windows 7 に付属しているレコグナイザーが場合は、大文字小文字を区別、<xref:System.Globalization.CompareOptions.OrdinalIgnoreCase>または<xref:System.Globalization.CompareOptions.IgnoreCase>値が存在します。 認識は、常に文字幅を無視し、カナ型を無視することはありません。 レコグナイザーは、新しい行と余分な空白を無視する、リテラルの入力として区切り記号を扱います。 詳細については、文字幅、ひらがなとカタカナは、次を参照してください。、<xref:System.Globalization.CompareOptions>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmulateRecognizeAsync">
+      <MemberSignature Language="C#" Value="public void EmulateRecognizeAsync (string inputText, System.Globalization.CompareOptions compareOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EmulateRecognizeAsync(string inputText, valuetype System.Globalization.CompareOptions compareOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync(System.String,System.Globalization.CompareOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputText" Type="System.String" />
+        <Parameter Name="compareOptions" Type="System.Globalization.CompareOptions" />
+      </Parameters>
+      <Docs>
+        <param name="inputText">認識操作の入力フレーズです。</param>
+        <param name="compareOptions">エミュレートされた認識操作に使用する比較の種類を記述する列挙値のビットごとの組み合わせ。</param>
+        <summary>オーディオの代わりに、非同期の音声認識のテキストを使用して、共有音声認識エンジンに語句の入力をエミュレートし、認識エンジンが、語句と読み込まれた音声認識の文法で Unicode 比較を処理する方法を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認識エンジンを使用して、`compareOptions`ときに適用される文法ルール語句を入力します。 Vista および Windows 7 に付属しているレコグナイザーが場合は、大文字小文字を区別、<xref:System.Globalization.CompareOptions.OrdinalIgnoreCase>または<xref:System.Globalization.CompareOptions.IgnoreCase>値が存在します。 認識は、常に文字幅を無視し、カナ型を無視することはありません。 レコグナイザーは、新しい行と余分な空白を無視する、リテラルの入力として区切り記号を扱います。 詳細については、文字幅、ひらがなとカタカナは、次を参照してください。、<xref:System.Globalization.CompareOptions>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmulateRecognizeCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Recognition.EmulateRecognizeCompletedEventArgs&gt; EmulateRecognizeCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Recognition.EmulateRecognizeCompletedEventArgs&gt; EmulateRecognizeCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Recognition.EmulateRecognizeCompletedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エミュレートされた入力に対して非同期認識操作の終了処理として、共有認識エンジンと発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A>メソッドが非同期認識操作を開始します。 認識エンジンが発生し、`EmulateRecognizeCompleted`非同期操作を終了したときにイベント。  
+  
+ 非同期の認識操作を発生させることができます、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected>、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized>、 <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognitionRejected>、および<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized>イベント。 <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeCompleted>イベントが最後にそのようなイベントが、認識エンジンは、指定した操作を発生させます。  
+  
+ デリゲートを作成する場合、`EmulateRecognizeCompleted`イベント、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベントとデリゲート](http://go.microsoft.com/fwlink/?LinkId=162418)です。  
+  
+   
+  
+## Examples  
+ 次の例は、音声認識の文法を読み込んで、非同期エミュー レートされた入力、関連付けられている認識の結果、音声認識エンジンによって生成される関連付けられたイベントを説明するコンソール アプリケーションの一部です。 Windows 音声認識が実行されていない場合、このアプリケーションの起動と Windows 音声認識が開始もします。 Windows 音声認識がの場合、**休止中**モード、<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A>常に null を返します。  
+  
+```csharp  
+using System;  
+using System.Speech.Recognition;  
+using System.Threading;  
+  
+namespace SharedRecognizer  
+{  
+  class Program  
+  {  
+    // Indicate whether the asynchronous emulate recognition  
+    // operation has completed.  
+    static bool completed;  
+  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize an instance of the shared recognizer.  
+      using (SpeechRecognizer recognizer = new SpeechRecognizer())  
+      {  
+        // Create and load a sample grammar.  
+        Grammar testGrammar =  
+          new Grammar(new GrammarBuilder("testing testing"));  
+        testGrammar.Name = "Test Grammar";  
+        recognizer.LoadGrammar(testGrammar);  
+  
+        // Attach event handlers for recognition events.  
+        recognizer.SpeechRecognized +=   
+          new EventHandler<SpeechRecognizedEventArgs>(SpeechRecognizedHandler);  
+        recognizer.EmulateRecognizeCompleted +=   
+          new EventHandler<EmulateRecognizeCompletedEventArgs>(  
+            EmulateRecognizeCompletedHandler);  
+  
+        completed = false;  
+  
+        // This EmulateRecognizeAsync call generates a SpeechRecognized event.  
+        recognizer.EmulateRecognizeAsync("testing testing");  
+  
+        // Wait for the asynchronous operation to complete.  
+        while (!completed)  
+        {  
+          Thread.Sleep(333);  
+        }  
+  
+        completed = false;  
+  
+        // This EmulateRecognizeAsync call does not match the grammar  
+        // or generate a SpeechRecognized event.  
+        recognizer.EmulateRecognizeAsync("testing one two three");  
+  
+        // Wait for the asynchronous operation to complete.  
+        while (!completed)  
+        {  
+          Thread.Sleep(333);  
+        }  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void SpeechRecognizedHandler(  
+      object sender, SpeechRecognizedEventArgs e)  
+    {  
+      if (e.Result != null)  
+      {  
+        Console.WriteLine("Recognition result = {0}",  
+          e.Result.Text ?? "<no text>");  
+      }  
+      else  
+      {  
+        Console.WriteLine("No recognition result");  
+      }  
+    }  
+  
+    // Handle the EmulateRecognizeCompleted event.  
+    static void EmulateRecognizeCompletedHandler(  
+      object sender, EmulateRecognizeCompletedEventArgs e)  
+    {  
+      if (e.Result == null)  
+      {  
+        Console.WriteLine("No result generated.");  
+      }  
+  
+      // Indicate the asynchronous operation is complete.  
+      completed = true;  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SpeechRecognizer.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかこの<see cref="T:System.Speech.Recognition.SpeechRecognizer" />オブジェクトが音声認識を処理できる状態にします。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Speech.Recognition.SpeechRecognizer" />オブジェクトは音声認識を実行して、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに対する変更の他のインスタンスには影響しません、<xref:System.Speech.Recognition.SpeechRecognizer>クラスです。  
+  
+ 既定では、値、<xref:System.Speech.Recognition.SpeechRecognizer.Enabled%2A>プロパティは`true`の新しくインスタンス化されたインスタンスに対して<xref:System.Speech.Recognition.SpeechRecognizer>です。 認識エンジンが無効にしたままの認識エンジンの音声認識の文法は一切認識操作に使用できます。 設定する認識エンジンの<xref:System.Speech.Recognition.SpeechRecognizer.Enabled%2A>プロパティは、認識エンジンの上の影響を与えません<xref:System.Speech.Recognition.SpeechRecognizer.State%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Grammars">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.Recognition.Grammar&gt; Grammars { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Speech.Recognition.Grammar&gt; Grammars" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SpeechRecognizer.Grammars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.Recognition.Grammar&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得、<see cref="T:System.Speech.Recognition.Grammar" />この読み込まれているオブジェクト<see cref="T:System.Speech.Recognition.SpeechRecognizer" />インスタンス。</summary>
+        <value>コレクション、<see cref="T:System.Speech.Recognition.Grammar" />共有認識エンジンの現在のインスタンスに、アプリケーションが読み込まれているオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは返されません、音声認識文法が別のアプリケーションによって読み込まれます。  
+  
+   
+  
+## Examples  
+ 次の例では、共有音声認識エンジンに読み込まれる各音声認識の文法のコンソールに情報を出力します。  
+  
+```csharp  
+  
+using System;  
+using System.Collections.Generic;  
+using System.Speech.Recognition;  
+using System.Threading;  
+  
+namespace SharedRecognizer  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+      using (SpeechRecognizer recognizer = new SpeechRecognizer())  
+      {  
+        Grammar sampleGrammar = new Grammar(new GrammarBuilder("sample phrase"));  
+        sampleGrammar.Name = "Sample Grammar";  
+        recognizer.LoadGrammar(sampleGrammar);  
+  
+        OutputGrammarList(recognizer);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    private static void OutputGrammarList(SpeechRecognizer recognizer)  
+    {  
+      List<Grammar> grammars = new List<Grammar>(recognizer.Grammars);  
+      if (grammars.Count > 0)  
+      {  
+        Console.WriteLine("Loaded grammars:");  
+        foreach (Grammar g in grammars)  
+        {  
+          Console.WriteLine("  Grammar: {0}",  
+            (g.Name != null) ? g.Name : "<no name>");  
+        }  
+      }  
+      else  
+      {  
+        Console.WriteLine("No grammars loaded.");  
+      }  
+    }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadGrammar">
+      <MemberSignature Language="C#" Value="public void LoadGrammar (System.Speech.Recognition.Grammar grammar);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadGrammar(class System.Speech.Recognition.Grammar grammar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.LoadGrammar(System.Speech.Recognition.Grammar)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="grammar" Type="System.Speech.Recognition.Grammar" />
+      </Parameters>
+      <Docs>
+        <param name="grammar">音声認識文法を読み込めません。</param>
+        <summary>音声認識の文法が読み込まれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共有認識エンジンは、音声認識の文法が既に読み込まれて、非同期的に読み込まれる、またはがすべての認識エンジンに読み込めませんだった場合に例外をスローします。 認識エンジンが実行されている場合、アプリケーションが使用する必要があります<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>を読み込み、アンロードが有効にすると、または、文法を無効にする前に、音声認識エンジンを一時停止します。  
+  
+ 音声認識の文法を非同期的に読み込むを使用して、<xref:System.Speech.Recognition.SpeechRecognizer.LoadGrammarAsync%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、音声認識の文法を読み込んで、非同期エミュー レートされた入力、関連付けられている認識の結果、音声認識エンジンによって生成される関連付けられたイベントを説明するコンソール アプリケーションの一部です。 Windows 音声認識が実行されていない場合、このアプリケーションの起動と Windows 音声認識が開始もします。 Windows 音声認識がの場合、**休止中**状態にある場合、<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A>常に null を返します。  
+  
+```csharp  
+using System;  
+using System.Speech.Recognition;  
+using System.Threading;  
+  
+namespace SharedRecognizer  
+{  
+  class Program  
+  {  
+    // Indicate whether the asynchronous emulate recognition  
+    // operation has completed.  
+    static bool completed;  
+  
+    static void Main(string[] args)  
+    {  
+      // Initialize an instance of the shared recognizer.  
+      using (SpeechRecognizer recognizer = new SpeechRecognizer())  
+      {  
+        // Create and load a sample grammar.  
+        Grammar testGrammar =  
+          new Grammar(new GrammarBuilder("testing testing"));  
+        testGrammar.Name = "Test Grammar";  
+  
+        recognizer.LoadGrammar(testGrammar);  
+  
+        // Attach event handlers for recognition events.  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(  
+            SpeechRecognizedHandler);  
+        recognizer.EmulateRecognizeCompleted +=  
+          new EventHandler<EmulateRecognizeCompletedEventArgs>(  
+            EmulateRecognizeCompletedHandler);  
+  
+        completed = false;  
+  
+        // This EmulateRecognizeAsync call generates a SpeechRecognized event.  
+        recognizer.EmulateRecognizeAsync("testing testing");  
+  
+        // Wait for the asynchronous operation to complete.  
+        while (!completed)  
+        {  
+          Thread.Sleep(333);  
+        }  
+  
+        completed = false;  
+  
+        // This EmulateRecognizeAsync call does not match the grammar   
+        // or generate a SpeechRecognized event.  
+        recognizer.EmulateRecognizeAsync("testing one two three");  
+  
+        // Wait for the asynchronous operation to complete.  
+        while (!completed)  
+        {  
+          Thread.Sleep(333);  
+        }  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void SpeechRecognizedHandler(  
+      object sender, SpeechRecognizedEventArgs e)  
+    {  
+      if (e.Result != null)  
+      {  
+        Console.WriteLine("Recognition result = {0}",  
+          e.Result.Text ?? "<no text>");  
+      }  
+      else  
+      {  
+        Console.WriteLine("No recognition result");  
+      }  
+    }   
+  
+    // Handle the EmulateRecognizeCompleted event.   
+    static void EmulateRecognizeCompletedHandler(  
+      object sender, EmulateRecognizeCompletedEventArgs e)  
+    {  
+      if (e.Result == null)  
+      {  
+        Console.WriteLine("No result generated.");  
+      }  
+  
+      completed = true;  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadGrammarAsync">
+      <MemberSignature Language="C#" Value="public void LoadGrammarAsync (System.Speech.Recognition.Grammar grammar);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadGrammarAsync(class System.Speech.Recognition.Grammar grammar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.LoadGrammarAsync(System.Speech.Recognition.Grammar)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="grammar" Type="System.Speech.Recognition.Grammar" />
+      </Parameters>
+      <Docs>
+        <param name="grammar">音声認識文法を読み込めません。</param>
+        <summary>音声認識の文法を非同期的に読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認識エンジンには、この非同期操作が完了すると、それを発生させる、<xref:System.Speech.Recognition.SpeechRecognizer.LoadGrammarCompleted>イベント。 認識エンジンは、音声認識の文法が既に読み込まれて、非同期的に読み込まれる、またはがすべての認識エンジンに読み込めませんだった場合に例外をスローします。 認識エンジンが実行されている場合、アプリケーションが使用する必要があります<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>を読み込み、アンロードが有効にすると、または、文法を無効にする前に、音声認識エンジンを一時停止します。  
+  
+ 音声認識の文法を同期的に読み込むを使用して、<xref:System.Speech.Recognition.SpeechRecognizer.LoadGrammar%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadGrammarCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Recognition.LoadGrammarCompletedEventArgs&gt; LoadGrammarCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Recognition.LoadGrammarCompletedEventArgs&gt; LoadGrammarCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Recognition.SpeechRecognizer.LoadGrammarCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Recognition.LoadGrammarCompletedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識エンジンには、音声認識の文法の非同期読み込みが完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認識エンジンの<xref:System.Speech.Recognition.SpeechRecognizer.LoadGrammarAsync%2A>メソッドが非同期操作を開始します。 認識エンジンが発生し、`LoadGrammarCompleted`イベント、操作が完了するとします。 取得する、 <xref:System.Speech.Recognition.Grammar> 、認識エンジンが読み込まれているオブジェクトを使用して、 <xref:System.Speech.Recognition.LoadGrammarCompletedEventArgs.Grammar%2A> 、関連するプロパティ<xref:System.Speech.Recognition.LoadGrammarCompletedEventArgs>です。 現在の取得に<xref:System.Speech.Recognition.Grammar>、認識エンジンが読み込まれたオブジェクトは、認識エンジンを使用して<xref:System.Speech.Recognition.SpeechRecognizer.Grammars%2A>プロパティです。  
+  
+ デリゲートを作成する場合、`LoadGrammarCompleted`イベント、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベントとデリゲート](http://go.microsoft.com/fwlink/?LinkId=162418)です。  
+  
+   
+  
+## Examples  
+ 次の例では、共有音声認識を作成し、特定の単語を認識するため、空きディクテーションを受け入れるための文法の 2 種類が作成されます。 例は、認識エンジンに作成されたすべての文法を非同期的に読み込みます。 認識エンジンのハンドラー<xref:System.Speech.Recognition.SpeechRecognizer.LoadGrammarCompleted>と<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized>イベントでは、認識と認識の結果のテキストをそれぞれ実行に使用されている文法の名前をコンソールに書き込みます。  
+  
+```  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    private static SpeechRecognizer recognizer;  
+    public static void Main(string[] args)  
+    {  
+  
+      // Initialize a shared speech recognition engine.  
+      recognizer = new SpeechRecognizer();  
+  
+        // Add a handler for the LoadGrammarCompleted event.  
+        recognizer.LoadGrammarCompleted +=  
+          new EventHandler<LoadGrammarCompletedEventArgs>(recognizer_LoadGrammarCompleted);  
+  
+        // Add a handler for the SpeechRecognized event.  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+  
+        // Add a handler for the StateChanged event.  
+        recognizer.StateChanged +=  
+          new EventHandler<StateChangedEventArgs>(recognizer_StateChanged);  
+  
+        // Create "yesno" grammar.  
+        Choices yesChoices = new Choices(new string[] { "yes", "yup", "yeah}" });  
+        SemanticResultValue yesValue =  
+            new SemanticResultValue(yesChoices, (bool)true);  
+        Choices noChoices = new Choices(new string[] { "no", "nope", "neah" });  
+        SemanticResultValue noValue =  
+            new SemanticResultValue(noChoices, (bool)false);  
+        SemanticResultKey yesNoKey =  
+            new SemanticResultKey("yesno", new Choices(new GrammarBuilder[] { yesValue, noValue }));  
+        Grammar yesnoGrammar = new Grammar(yesNoKey);  
+        yesnoGrammar.Name = "yesNo";  
+  
+        // Create "done" grammar.  
+        Grammar doneGrammar =  
+          new Grammar(new Choices(new string[] { "done", "exit", "quit", "stop" }));  
+        doneGrammar.Name = "Done";  
+  
+        // Create dictation grammar.  
+        Grammar dictation = new DictationGrammar();  
+        dictation.Name = "Dictation";  
+  
+        // Load grammars to the recognizer.  
+        recognizer.LoadGrammarAsync(yesnoGrammar);  
+        recognizer.LoadGrammarAsync(doneGrammar);  
+        recognizer.LoadGrammarAsync(dictation);  
+  
+        // Keep the console window open.  
+        Console.ReadLine();  
+      }  
+  
+    // Handle the SpeechRecognized event.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("Grammar({0}): {1}", e.Result.Grammar.Name, e.Result.Text);  
+  
+      // Add event handler code here.  
+    }  
+  
+    // Handle the LoadGrammarCompleted event.   
+    static void recognizer_LoadGrammarCompleted(object sender, LoadGrammarCompletedEventArgs e)  
+    {  
+      string grammarName = e.Grammar.Name;  
+      bool grammarLoaded = e.Grammar.Loaded;  
+  
+      if (e.Error != null)  
+      {  
+        Console.WriteLine("LoadGrammar for {0} failed with a {1}.",  
+        grammarName, e.Error.GetType().Name);  
+  
+        // Add exception handling code here.  
+      }  
+  
+      Console.WriteLine("Grammar {0} {1} loaded.",  
+      grammarName, (grammarLoaded) ? "is" : "is not");  
+    }  
+  
+    // Put the shared speech recognizer into "listening" mode.   
+    static void recognizer_StateChanged(object sender, StateChangedEventArgs e)  
+    {  
+      if (e.RecognizerState != RecognizerState.Stopped)  
+      {  
+        recognizer.EmulateRecognizeAsync("Start listening");  
+      }  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxAlternates">
+      <MemberSignature Language="C#" Value="public int MaxAlternates { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxAlternates" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SpeechRecognizer.MaxAlternates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認識操作ごとに、共有認識エンジンを表す代替認識の結果の最大数を設定します。</summary>
+        <value>音声認識エンジンが認識操作ごとに返す代替結果の最大数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.RecognitionResult.Alternates%2A>のプロパティ、<xref:System.Speech.Recognition.RecognitionResult>クラスのコレクションを格納する<xref:System.Speech.Recognition.RecognizedPhrase>入力の他の候補の解釈を表すオブジェクト。  
+  
+ 既定値<xref:System.Speech.Recognition.SpeechRecognizer.MaxAlternates%2A>10 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PauseRecognizerOnRecognition">
+      <MemberSignature Language="C#" Value="public bool PauseRecognizerOnRecognition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PauseRecognizerOnRecognition" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SpeechRecognizer.PauseRecognizerOnRecognition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションの処理中には、共有認識エンジンが認識操作を一時停止するかどうかを示す値を設定、<see cref="E:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized" />イベント。</summary>
+        <value>
+          <see langword="true" />任意のアプリケーションの処理中に入力を処理する、共有認識エンジンが待機する場合、<see cref="E:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized" />イベントです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`場合は、内で、<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized>イベント ハンドラーが、アプリケーションは、音声認識サービスの状態を変更するか、音声認識サービスは、複数の入力を処理する前に読み込まれたまたは有効な音声認識の文法を変更する必要があります。  
+  
+> [!NOTE]
+>  設定、<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized>プロパティを`true`と、 <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized> Windows 音声認識サービスをブロックするすべてのアプリケーション内のイベント ハンドラー。  
+  
+ アプリケーションの状態で、共有認識エンジンへの変更を同期するために使用して、<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>メソッドです。  
+  
+ ときに<xref:System.Speech.Recognition.SpeechRecognizer.PauseRecognizerOnRecognition%2A>は`true`の実行中に、<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized>ハンドラー、音声認識サービスが一時停止し、受信する新しいオーディオ入力をバッファーします。 1 回、<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized>イベント ハンドラーが終了する音声の認識サービスを再開し、入力バッファーからの情報の処理を開始します。  
+  
+ を有効にするにまたは音声認識サービスを無効にするには、<xref:System.Speech.Recognition.SpeechRecognizer.Enabled%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecognizerAudioPosition">
+      <MemberSignature Language="C#" Value="public TimeSpan RecognizerAudioPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan RecognizerAudioPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオの入力を処理しているので、認識エンジンの現在の場所を取得します。</summary>
+        <value>オーディオの入力を処理しているので、認識エンジンの位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `RecognizerAudioPosition`プロパティは、オーディオ入力の処理の認識エンジンの位置を参照します。 これに対し、<xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition%2A>プロパティは、生成されたオーディオ ストリーム内の入力デバイスの位置を参照します。 これらの位置は別にすることはできます。 たとえば、認識エンジンが受信した場合どの it されていない入力が、認識結果が次の値を生成、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition%2A>プロパティは、の値より小さい、<xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecognizerInfo">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.RecognizerInfo RecognizerInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.Recognition.RecognizerInfo RecognizerInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SpeechRecognizer.RecognizerInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.RecognizerInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共有音声認識エンジンに関する情報を取得します。</summary>
+        <value>共有音声認識機能について説明します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、Windows 音声認識で使用中の音声認識エンジンに関する情報を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、コンソールに、共有認識エンジンに関する情報を送信します。  
+  
+```csharp  
+  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SharedRecognizer  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+      using (SpeechRecognizer recognizer = new SpeechRecognizer())  
+      {  
+        Console.WriteLine("Recognizer information for the shared recognizer:");  
+        Console.WriteLine("  Name: {0}", recognizer.RecognizerInfo.Name);  
+        Console.WriteLine("  Culture: {0}", recognizer.RecognizerInfo.Culture.ToString());  
+        Console.WriteLine("  Description: {0}", recognizer.RecognizerInfo.Description);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecognizerUpdateReached">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Recognition.RecognizerUpdateReachedEventArgs&gt; RecognizerUpdateReached;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Recognition.RecognizerUpdateReachedEventArgs&gt; RecognizerUpdateReached" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Recognition.RecognizerUpdateReachedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識エンジンが認識し、その他の操作を同期するために置いたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを使用する必要があります<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>を実行中のインスタンスを一時停止する<xref:System.Speech.Recognition.SpeechRecognizer>変更する前にその<xref:System.Speech.Recognition.Grammar>オブジェクト。 などの<xref:System.Speech.Recognition.SpeechRecognizer>が一時停止していることができますをロード、アンロード、有効にするには、または無効化する<xref:System.Speech.Recognition.Grammar>オブジェクト。 <xref:System.Speech.Recognition.SpeechRecognizer>変更を受け入れる準備ができたときにこのイベントを発生させます。  
+  
+ デリゲートを作成する場合、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベント、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベントとデリゲート](http://go.microsoft.com/fwlink/?LinkId=162418)です。  
+  
+   
+  
+## Examples  
+ 次の例では、コンソール アプリケーションをロードおよびアンロード<xref:System.Speech.Recognition.Grammar>オブジェクト。 アプリケーションを使用して、<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>音声認識エンジンの更新プログラムを受信できるようにを一時停止を要求するメソッド。 アプリケーションが読み込むか、アンロード、<xref:System.Speech.Recognition.Grammar>オブジェクト。  
+  
+ 各更新プログラムのハンドラーで<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベントが現在読み込み済みの状態と名前を書き込みます<xref:System.Speech.Recognition.Grammar>オブジェクトをコンソールです。 ように文法では、読み込まれ、アンロードすることが、アプリケーションは、ファーム動物の名前、果物の名前およびファーム動物の名前にし果物の名前だけに最初認識します。  
+  
+```csharp  
+using System;  
+using System.Speech.Recognition;  
+using System.Collections.Generic;  
+using System.Threading;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    private static SpeechRecognizer recognizer;  
+    public static void Main(string[] args)  
+    {  
+  
+      // Initialize a shared speech recognition engine.  
+      recognizer = new SpeechRecognizer();  
+  
+      // Create the first grammar - Farm.  
+      Choices animals = new Choices(new string[] { "cow", "pig", "goat" });  
+      GrammarBuilder farm = new GrammarBuilder(animals);  
+      Grammar farmAnimals = new Grammar(farm);  
+      farmAnimals.Name = "Farm";  
+  
+      // Create the second grammar - Fruit.  
+      Choices fruit = new Choices(new string[] { "apples", "peaches", "oranges" });  
+      GrammarBuilder favorite = new GrammarBuilder(fruit);  
+      Grammar favoriteFruit = new Grammar(favorite);  
+      favoriteFruit.Name = "Fruit";  
+  
+      // Attach event handlers.  
+      recognizer.SpeechRecognized +=  
+        new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+      recognizer.RecognizerUpdateReached +=  
+        new EventHandler<RecognizerUpdateReachedEventArgs>(recognizer_RecognizerUpdateReached);  
+      recognizer.StateChanged +=   
+        new EventHandler<StateChangedEventArgs>(recognizer_StateChanged);  
+  
+      // Load the Farm grammar.  
+      recognizer.LoadGrammar(farmAnimals);  
+      Console.WriteLine("Grammar Farm is loaded");  
+  
+      // Pause to recognize farm animals.  
+      Thread.Sleep(7000);  
+      Console.WriteLine();  
+  
+      // Request an update and load the Fruit grammar.  
+      recognizer.RequestRecognizerUpdate();  
+      recognizer.LoadGrammarAsync(favoriteFruit);  
+      Thread.Sleep(5000);  
+  
+      // Request an update and unload the Farm grammar.  
+      recognizer.RequestRecognizerUpdate();  
+      recognizer.UnloadGrammar(farmAnimals);  
+      Thread.Sleep(5000);  
+  
+      // Keep the console window open.  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Put the shared speech recognizer into "listening" mode.  
+    static void recognizer_StateChanged(object sender, StateChangedEventArgs e)  
+    {  
+      if (e.RecognizerState != RecognizerState.Stopped)  
+      {  
+        recognizer.EmulateRecognizeAsync("Start listening");  
+      }  
+    }  
+  
+    // At the update, get the names and enabled status of the currently loaded grammars.  
+    public static void recognizer_RecognizerUpdateReached(  
+      object sender, RecognizerUpdateReachedEventArgs e)  
+    {  
+      Console.WriteLine();  
+      Console.WriteLine("Update reached:");  
+      Thread.Sleep(1000);  
+  
+      string qualifier;  
+      List<Grammar> grammars = new List<Grammar>(recognizer.Grammars);  
+      foreach (Grammar g in grammars)  
+      {  
+        qualifier = (g.Enabled) ? "enabled" : "disabled";  
+        Console.WriteLine("  Grammar {0} is loaded and is {1}.",  
+        g.Name, qualifier);  
+      }  
+    }  
+  
+    // Write the text of the recognized phrase to the console.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("  Speech recognized: " + e.Result.Text);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="RequestRecognizerUpdate">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>要求、共有認識エンジンが一時停止し、その状態を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを共有認識エンジンへの変更を同期するために使用します。 たとえば、読み込み、認識エンジンが入力の処理中に音声認識の文法をアンロードするか、このメソッドを使用し、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>認識エンジンの状態とアプリケーションの動作を同期するイベントです。  
+  
+ このメソッドが呼び出されると、一時停止または非同期操作が完了して、レコグナイザーが生成されます、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベント。 A<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベント ハンドラーは認識操作の間、認識エンジンの状態を変更できます。  
+  
+ このメソッドが呼び出されたとき。  
+  
+-   認識エンジンが直ちに生成、認識エンジンが入力を処理されていない場合、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベント。  
+  
+-   認識エンジンが認識操作を一時停止し、生成、認識エンジンがサイレント状態のバック グラウンド ノイズで構成される入力を処理している場合、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベント。  
+  
+-   認識エンジンが認識操作を完了し、生成、認識エンジンがサイレント状態またはバック グラウンド ノイズ数に達していない入力を処理している場合、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベント。  
+  
+ 認識エンジンが処理中に、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベント。  
+  
+-   認識エンジンでは、入力、およびの値は処理されません、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition%2A>プロパティは変わりません。  
+  
+-   認識エンジンを継続して入力を収集しの値、<xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition%2A>プロパティを変更することができます。  
+  
+ アプリケーションの処理中に、共有認識エンジンが認識操作を一時停止するかどうかを変更する、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized>イベントを使用して、<xref:System.Speech.Recognition.SpeechRecognizer.PauseRecognizerOnRecognition%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、コンソール アプリケーションをロードおよびアンロード<xref:System.Speech.Recognition.Grammar>オブジェクト。 アプリケーションを使用して、<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>音声認識エンジンの更新プログラムを受信できるようにを一時停止を要求するメソッド。 アプリケーションが読み込むか、アンロード、<xref:System.Speech.Recognition.Grammar>オブジェクト。  
+  
+ 各更新プログラムのハンドラーで<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベントが現在読み込み済みの状態と名前を書き込みます<xref:System.Speech.Recognition.Grammar>オブジェクトをコンソールです。 ように文法では、読み込まれ、アンロードすることが、アプリケーションは、ファーム動物の名前、果物の名前およびファーム動物の名前にし果物の名前だけに最初認識します。  
+  
+```csharp  
+  
+using System;  
+using System.Speech.Recognition;  
+using System.Collections.Generic;  
+using System.Threading;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    private static SpeechRecognizer recognizer;  
+    public static void Main(string[] args)  
+    {  
+  
+      // Initialize an in-process speech recognition engine and configure its input.  
+      recognizer = new SpeechRecognizer();  
+  
+      // Create the first grammar - Farm.  
+      Choices animals = new Choices(new string[] { "cow", "pig", "goat" });  
+      GrammarBuilder farm = new GrammarBuilder(animals);  
+      Grammar farmAnimals = new Grammar(farm);  
+      farmAnimals.Name = "Farm";  
+  
+      // Create the second grammar - Fruit.  
+      Choices fruit = new Choices(new string[] { "apples", "peaches", "oranges" });  
+      GrammarBuilder favorite = new GrammarBuilder(fruit);  
+      Grammar favoriteFruit = new Grammar(favorite);  
+      favoriteFruit.Name = "Fruit";  
+  
+      // Attach event handlers.  
+      recognizer.SpeechRecognized +=  
+        new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+      recognizer.RecognizerUpdateReached +=  
+        new EventHandler<RecognizerUpdateReachedEventArgs>(recognizer_RecognizerUpdateReached);  
+  
+      // Check to see if recognizer is loaded, wait if it is not loaded.  
+      if (recognizer.State != RecognizerState.Listening)  
+      {  
+        Thread.Sleep(5000);  
+  
+        // Put recognizer in listening state.  
+        recognizer.EmulateRecognizeAsync("Start listening");  
+      }  
+  
+      // Load the Farm grammar.  
+      recognizer.LoadGrammar(farmAnimals);  
+      Console.WriteLine("Grammar Farm is loaded");  
+  
+      // Pause to recognize farm animals.  
+      Thread.Sleep(7000);  
+      Console.WriteLine();  
+  
+      // Request an update and load the Fruit grammar.  
+      recognizer.RequestRecognizerUpdate();  
+      recognizer.LoadGrammarAsync(favoriteFruit);  
+      Thread.Sleep(5000);  
+  
+      // Request an update and unload the Farm grammar.  
+      recognizer.RequestRecognizerUpdate();  
+      recognizer.UnloadGrammar(farmAnimals);  
+      Thread.Sleep(5000);  
+  
+      // Keep the console window open.  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    public static void recognizer_RecognizerUpdateReached(object sender, RecognizerUpdateReachedEventArgs e)  
+    {  
+      // At the update, get the names and enabled status of the currently loaded grammars.  
+      Console.WriteLine();  
+      Console.WriteLine("Update reached:");  
+      Thread.Sleep(1000);  
+      string qualifier;  
+      List<Grammar> grammars = new List<Grammar>(recognizer.Grammars);  
+      foreach (Grammar g in grammars)  
+      {  
+        qualifier = (g.Enabled) ? "enabled" : "disabled";  
+        Console.WriteLine("  Grammar {0} is loaded and is {1}.",  
+        g.Name, qualifier);  
+      }  
+    }  
+  
+    // Write the text of the recognized phrase to the console.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("  Speech recognized: " + e.Result.Text);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="RequestRecognizerUpdate">
+      <MemberSignature Language="C#" Value="public void RequestRecognizerUpdate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RequestRecognizerUpdate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求、共有認識エンジンが一時停止し、その状態を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認識エンジンが生成するとき、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベント、<xref:System.Speech.Recognition.RecognizerUpdateReachedEventArgs.UserToken%2A>のプロパティ、<xref:System.Speech.Recognition.RecognizerUpdateReachedEventArgs>は`null`します。  
+  
+ ユーザー トークンを指定するには、<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>または<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>メソッドです。 オーディオの位置のオフセットを指定するには、使用、<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestRecognizerUpdate">
+      <MemberSignature Language="C#" Value="public void RequestRecognizerUpdate (object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RequestRecognizerUpdate(object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="userToken">ユーザー定義情報を操作の情報が含まれています。</param>
+        <summary>要求を共有認識エンジンを一時停止の状態の更新プログラムと関連付けられているイベントのユーザー トークンを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認識エンジンが生成するとき、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベント、<xref:System.Speech.Recognition.RecognizerUpdateReachedEventArgs.UserToken%2A>のプロパティ、<xref:System.Speech.Recognition.RecognizerUpdateReachedEventArgs>の値が含まれています、`userToken`パラメーター。  
+  
+ オーディオの位置のオフセットを指定するには、使用、<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestRecognizerUpdate">
+      <MemberSignature Language="C#" Value="public void RequestRecognizerUpdate (object userToken, TimeSpan audioPositionAheadToRaiseUpdate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RequestRecognizerUpdate(object userToken, valuetype System.TimeSpan audioPositionAheadToRaiseUpdate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate(System.Object,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userToken" Type="System.Object" />
+        <Parameter Name="audioPositionAheadToRaiseUpdate" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="userToken">ユーザー定義情報を操作の情報が含まれています。</param>
+        <param name="audioPositionAheadToRaiseUpdate">現在のオフセット<see cref="P:System.Speech.Recognition.SpeechRecognizer.AudioPosition" />を要求を遅延します。</param>
+        <summary>要求を共有認識エンジンを一時停止の状態の更新プログラムと関連付けられているイベントのオフセット、およびユーザーのトークンを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認識エンジンが認識エンジンのまで認識エンジンの更新要求を開始できません<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition%2A>現在に等しい<xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition%2A>の値に加えて、`audioPositionAheadToRaiseUpdate`パラメーター。  
+  
+ 認識エンジンが生成するとき、<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached>イベント、<xref:System.Speech.Recognition.RecognizerUpdateReachedEventArgs.UserToken%2A>のプロパティ、<xref:System.Speech.Recognition.RecognizerUpdateReachedEventArgs>の値が含まれています、`userToken`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeechDetected">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Recognition.SpeechDetectedEventArgs&gt; SpeechDetected;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Recognition.SpeechDetectedEventArgs&gt; SpeechDetected" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Recognition.SpeechRecognizer.SpeechDetected" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Recognition.SpeechDetectedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識エンジンが音声として特定することの入力を検出したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共有認識エンジンには、このイベントの入力に応答を生成できます。 <xref:System.Speech.Recognition.SpeechDetectedEventArgs.AudioPosition%2A> 、関連するプロパティ<xref:System.Speech.Recognition.SpeechDetectedEventArgs>オブジェクトを認識エンジンが音声を認識する場合、入力ストリーム内の場所を示します。 詳細については、次を参照してください。、<xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition%2A>と<xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition%2A>プロパティおよび<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize%2A>と<xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A>メソッドです。  
+  
+ デリゲートを作成する場合、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected>イベント、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベントとデリゲート](http://go.microsoft.com/fwlink/?LinkId=162418)です。  
+  
+   
+  
+## Examples  
+ 次の例は、フライトの送信元と送信先の都市を選択するためのコンソール アプリケーションの一部です。 アプリケーションが語句を認識する Miami からシカゴにスライドします"など  この例では、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected>イベント レポートを<xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition%2A>各時間音声が検出されました。  
+  
+```  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+  
+    // Initialize a shared speech recognition engine.  
+    {  
+      using (SpeechRecognizer recognizer =  
+         new SpeechRecognizer())  
+      {  
+  
+        // Create a grammar.  
+        Choices cities = new Choices(new string[] {   
+          "Los Angeles", "New York", "Chicago", "San Francisco", "Miami", "Dallas" });  
+  
+        GrammarBuilder gb = new GrammarBuilder();  
+        gb.Append("I would like to fly from");  
+        gb.Append(cities);  
+        gb.Append("to");  
+        gb.Append(cities);  
+  
+        // Create a Grammar object and load it to the recognizer.  
+        Grammar g = new Grammar(gb);  
+        g.Name = ("City Chooser");  
+        recognizer.LoadGrammarAsync(g);  
+  
+        // Attach event handlers.  
+        recognizer.LoadGrammarCompleted +=  
+          new EventHandler<LoadGrammarCompletedEventArgs>(recognizer_LoadGrammarCompleted);  
+        recognizer.SpeechDetected +=   
+          new EventHandler<SpeechDetectedEventArgs>(recognizer_SpeechDetected);  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+  
+        // Keep the console window open.  
+        Console.ReadLine();  
+      }  
+    }  
+  
+    // Handle the SpeechDetected event.  
+    static void recognizer_SpeechDetected(object sender, SpeechDetectedEventArgs e)  
+    {  
+      Console.WriteLine("Speech detected at AudioPosition = {0}", e.AudioPosition);  
+    }  
+  
+    // Handle the LoadGrammarCompleted event.  
+    static void recognizer_LoadGrammarCompleted(object sender, LoadGrammarCompletedEventArgs e)  
+    {  
+      Console.WriteLine("Grammar loaded: " + e.Grammar.Name);  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("Speech recognized: " + e.Result.Text);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeechHypothesized">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Recognition.SpeechHypothesizedEventArgs&gt; SpeechHypothesized;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Recognition.SpeechHypothesizedEventArgs&gt; SpeechHypothesized" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Recognition.SpeechHypothesizedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>単語または単語を文法で語句全体を複数のコンポーネントである可能性があります、認識エンジンが認識されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共有認識エンジンには、入力があいまいな場合は、このイベントを生成できます。 たとえば、いずれかの認識をサポートする音声認識文法"新しいゲームをしてください。"または"新しいゲーム"、"新しいゲームをしてください"、あいまいさのない入力は、"新しいゲーム"はあいまいな入力です。  
+  
+ デリゲートを作成する場合、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized>イベント、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベントとデリゲート](http://go.microsoft.com/fwlink/?LinkId=162418)です。  
+  
+   
+  
+## Examples  
+ 次の例では、「ジャズのカテゴリのアーティストの一覧を表示する」などの語句を認識します。 この例では、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized>認識するように、コンソールで不完全な語句フラグメントを表示するイベントです。  
+  
+```  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+  
+    // Initialize a shared speech recognition engine.  
+    {  
+      using (SpeechRecognizer recognizer =  
+         new SpeechRecognizer())  
+      {  
+  
+        // Create a grammar.  
+        //  Create lists of alternative choices.  
+        Choices listTypes = new Choices(new string[] { "albums", "artists" });  
+        Choices genres = new Choices(new string[] {   
+          "blues", "classical", "gospel", "jazz", "rock" });  
+  
+        //  Create a GrammarBuilder object and assemble the grammar components.  
+        GrammarBuilder mediaMenu = new GrammarBuilder("Display the list of");  
+        mediaMenu.Append(listTypes);  
+        mediaMenu.Append("in the");  
+        mediaMenu.Append(genres);  
+        mediaMenu.Append("category.");  
+  
+        //  Build a Grammar object from the GrammarBuilder.  
+        Grammar mediaMenuGrammar = new Grammar(mediaMenu);  
+        mediaMenuGrammar.Name = "Media Chooser";  
+  
+        // Attach event handlers.  
+        recognizer.LoadGrammarCompleted +=  
+          new EventHandler<LoadGrammarCompletedEventArgs>(recognizer_LoadGrammarCompleted);  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+        recognizer.SpeechHypothesized +=   
+          new EventHandler<SpeechHypothesizedEventArgs>(recognizer_SpeechHypothesized);  
+  
+        // Load the grammar object to the recognizer.  
+        recognizer.LoadGrammarAsync(mediaMenuGrammar);  
+  
+        // Keep the console window open.  
+        Console.ReadLine();  
+      }  
+    }  
+  
+    // Handle the SpeechHypothesized event.  
+    static void recognizer_SpeechHypothesized(object sender, SpeechHypothesizedEventArgs e)  
+    {  
+      Console.WriteLine("Speech hypothesized: " + e.Result.Text);  
+    }  
+  
+    // Handle the LoadGrammarCompleted event.  
+    static void recognizer_LoadGrammarCompleted(object sender, LoadGrammarCompletedEventArgs e)  
+    {  
+      Console.WriteLine("Grammar loaded: " + e.Grammar.Name);  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("Speech recognized: " + e.Result.Text);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeechRecognitionRejected">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Recognition.SpeechRecognitionRejectedEventArgs&gt; SpeechRecognitionRejected;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Recognition.SpeechRecognitionRejectedEventArgs&gt; SpeechRecognitionRejected" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Recognition.SpeechRecognizer.SpeechRecognitionRejected" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Recognition.SpeechRecognitionRejectedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識エンジンが読み込まれた音声認識の文法のいずれかに一致しない入力を受け取ると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共有認識エンジンは、入力が一致しないことための十分な信頼で読み込まれた音声認識の文法のいずれかを判断した場合、このイベントを発生させます。 <xref:System.Speech.Recognition.RecognitionEventArgs.Result%2A>のプロパティ、 <xref:System.Speech.Recognition.SpeechRecognitionRejectedEventArgs> 、拒否されたを含む<xref:System.Speech.Recognition.RecognitionResult>オブジェクト。  
+  
+ 信頼度のしきい値によって管理される共有認識エンジンを<xref:System.Speech.Recognition.SpeechRecognizer>のユーザー プロファイルに関連付けられているし、Windows レジストリに格納します。 アプリケーションは、プロパティ、共有認識エンジンのレジストリに変更を書き込めません必要があります。  
+  
+ デリゲートを作成する場合、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognitionRejected>イベント、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベントとデリゲート](http://go.microsoft.com/fwlink/?LinkId=162418)です。  
+  
+   
+  
+## Examples  
+ 次の例では、「ジャズ カテゴリのアーティストの一覧を表示する」や「表示アルバム考えないで」などの語句を認識します。 この例のハンドラーを使用して、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognitionRejected>成功認識を生成するために十分な信頼度と文法の内容に一致することはできません、音声の入力時に、コンソールで、通知を表示するイベントです。  
+  
+```csharp  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+  
+    // Initialize a shared speech recognition engine.  
+    {  
+      using (SpeechRecognizer recognizer =  
+         new SpeechRecognizer())  
+      {  
+  
+        // Create a grammar.  
+        //  Create lists of alternative choices.  
+        Choices listTypes = new Choices(new string[] { "albums", "artists" });  
+        Choices genres = new Choices(new string[] {   
+          "blues", "classical", "gospel", "jazz", "rock" });  
+  
+        //  Create a GrammarBuilder object and assemble the grammar components.  
+        GrammarBuilder mediaMenu = new GrammarBuilder("Display");  
+        mediaMenu.Append("the list of", 0, 1);  
+        mediaMenu.Append(listTypes);  
+        mediaMenu.Append("in the", 0, 1);  
+        mediaMenu.Append(genres);  
+        mediaMenu.Append("category", 0, 1);  
+  
+        //  Build a Grammar object from the GrammarBuilder.  
+        Grammar mediaMenuGrammar = new Grammar(mediaMenu);  
+        mediaMenuGrammar.Name = "Media Chooser";  
+  
+        // Attach event handlers.  
+        recognizer.LoadGrammarCompleted +=  
+          new EventHandler<LoadGrammarCompletedEventArgs>(recognizer_LoadGrammarCompleted);  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+        recognizer.SpeechRecognitionRejected +=   
+          new EventHandler<SpeechRecognitionRejectedEventArgs>(recognizer_SpeechRecognitionRejected);  
+  
+        // Load the grammar object to the recognizer.  
+        recognizer.LoadGrammarAsync(mediaMenuGrammar);  
+  
+        // Keep the console window open.  
+        Console.ReadLine();  
+      }  
+    }  
+  
+    // Handle the SpeechRecognitionRejected event.  
+    static void recognizer_SpeechRecognitionRejected(object sender, SpeechRecognitionRejectedEventArgs e)  
+    {  
+      Console.WriteLine("Speech input was rejected.");  
+    }  
+  
+    // Handle the LoadGrammarCompleted event.  
+    static void recognizer_LoadGrammarCompleted(object sender, LoadGrammarCompletedEventArgs e)  
+    {  
+      Console.WriteLine("Grammar loaded: " + e.Grammar.Name);  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("Speech recognized: " + e.Result.Text);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeechRecognized">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Recognition.SpeechRecognizedEventArgs&gt; SpeechRecognized;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Recognition.SpeechRecognizedEventArgs&gt; SpeechRecognized" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Recognition.SpeechRecognizedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識エンジンが、音声認識の文法の 1 つに一致する入力を受け取ると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認識エンジンが発生し、`SpeechRecognized`自信のための十分な入力はアンロードされ、有効な音声認識の文法の 1 つに一致するいると判断した場合のイベントです。 <xref:System.Speech.Recognition.RecognitionEventArgs.Result%2A>のプロパティ、<xref:System.Speech.Recognition.SpeechRecognitionRejectedEventArgs>承諾が含まれています<xref:System.Speech.Recognition.RecognitionResult>オブジェクト。  
+  
+ 信頼度のしきい値によって管理される共有認識エンジンを<xref:System.Speech.Recognition.SpeechRecognizer>のユーザー プロファイルに関連付けられているし、Windows レジストリに格納します。 アプリケーションは、プロパティ、共有認識エンジンのレジストリに変更を書き込めません必要があります。  
+  
+ 認識エンジンが、文法に一致する入力を受け取るときに、<xref:System.Speech.Recognition.Grammar>オブジェクトを発生させることができます、<xref:System.Speech.Recognition.Grammar.SpeechRecognized>イベント。 <xref:System.Speech.Recognition.Grammar>オブジェクトの<xref:System.Speech.Recognition.Grammar.SpeechRecognized>音声認識エンジンの前にイベントが発生した<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized>イベント。  
+  
+ デリゲートを作成する場合、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized>イベント、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベントとデリゲート](http://go.microsoft.com/fwlink/?LinkId=162418)です。  
+  
+   
+  
+## Examples  
+ 次の例は、音声認識の文法を読み込んで、音声入力を共有認識エンジン、関連付けられている認識の結果、および音声認識エンジンによって生成される関連するイベントについて説明するコンソール アプリケーションです。 Windows 音声認識が実行されていない場合、このアプリケーションの起動と Windows 音声認識が開始もします。  
+  
+ 「する Miami にシカゴからスライド」をトリガーするように入力を読み上げ、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized>イベント。 "飛行 me ヒューストンからシカゴに"という語句を話すはトリガーされません、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized>イベント。  
+  
+ 例では、ハンドラーを使用して、<xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized>を正常に表示するイベントには、語句と、コンソールに含まれているセマンティクスが認識されています。  
+  
+```csharp  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+  
+    // Initialize a shared speech recognition engine.  
+    {  
+      using (SpeechRecognizer recognizer = new SpeechRecognizer())  
+      {  
+  
+        // Create SemanticResultValue objects that contain cities and airport codes.  
+        SemanticResultValue chicago = new SemanticResultValue("Chicago", "ORD");  
+        SemanticResultValue boston = new SemanticResultValue("Boston", "BOS");  
+        SemanticResultValue miami = new SemanticResultValue("Miami", "MIA");  
+        SemanticResultValue dallas = new SemanticResultValue("Dallas", "DFW");  
+  
+        // Create a Choices object and add the SemanticResultValue objects, using  
+        // implicit conversion from SemanticResultValue to GrammarBuilder  
+        Choices cities = new Choices();  
+        cities.Add(new Choices(new GrammarBuilder[] { chicago, boston, miami, dallas }));  
+  
+        // Build the phrase and add SemanticResultKeys.  
+        GrammarBuilder chooseCities = new GrammarBuilder();  
+        chooseCities.Append("I want to fly from");  
+        chooseCities.Append(new SemanticResultKey("origin", cities));  
+        chooseCities.Append("to");  
+        chooseCities.Append(new SemanticResultKey("destination", cities));  
+  
+        // Build a Grammar object from the GrammarBuilder.  
+        Grammar bookFlight = new Grammar(chooseCities);  
+        bookFlight.Name = "Book Flight";  
+  
+        // Add a handler for the LoadGrammarCompleted event.  
+        recognizer.LoadGrammarCompleted +=  
+          new EventHandler<LoadGrammarCompletedEventArgs>(recognizer_LoadGrammarCompleted);  
+  
+        // Add a handler for the SpeechRecognized event.  
+        recognizer.SpeechRecognized +=   
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+  
+        // Load the grammar object to the recognizer.  
+        recognizer.LoadGrammarAsync(bookFlight);  
+  
+        // Keep the console window open.  
+        Console.ReadLine();  
+      }  
+    }  
+  
+    // Handle the LoadGrammarCompleted event.  
+    static void recognizer_LoadGrammarCompleted(object sender, LoadGrammarCompletedEventArgs e)  
+    {  
+      Console.WriteLine("Grammar loaded: " + e.Grammar.Name);  
+      Console.WriteLine();  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("Speech recognized:  " + e.Result.Text);  
+      Console.WriteLine();  
+      Console.WriteLine("Semantic results:");  
+      Console.WriteLine("  The flight origin is " + e.Result.Semantics["origin"].Value);  
+      Console.WriteLine("  The flight destination is " + e.Result.Semantics["destination"].Value);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.RecognizerState State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Recognition.RecognizerState State" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SpeechRecognizer.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.RecognizerState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態を取得、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />オブジェクト。</summary>
+        <value>状態、<see langword="SpeechRecognizer" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この読み取り専用プロパティは、Windows に常駐している、共有認識エンジンがかどうかを示す、`Stopped`または`Listening`状態です。 詳細については、<xref:System.Speech.Recognition.RecognizerState> 列挙型のページをご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StateChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Recognition.StateChangedEventArgs&gt; StateChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Recognition.StateChangedEventArgs&gt; StateChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Recognition.SpeechRecognizer.StateChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Recognition.StateChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows デスクトップ音声テクノロジ認識エンジンの実行状態が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共有認識エンジンが Windows 音声認識の状態に変更したときに、このイベントを発生させる、<xref:System.Speech.Recognition.RecognizerState.Listening>または<xref:System.Speech.Recognition.RecognizerState.Stopped>状態です。  
+  
+ イベントの時点で、共有認識エンジンの状態を取得する、 <xref:System.Speech.Recognition.StateChangedEventArgs.RecognizerState%2A> 、関連するプロパティ<xref:System.Speech.Recognition.StateChangedEventArgs>です。 共有認識エンジンの現在の状態を取得するには、認識エンジンを使用<xref:System.Speech.Recognition.SpeechRecognizer.State%2A>プロパティです。  
+  
+ デリゲートを作成する場合、<xref:System.Speech.Recognition.SpeechRecognizer.StateChanged>イベント、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベントとデリゲート](http://go.microsoft.com/fwlink/?LinkId=162418)です。  
+  
+   
+  
+## Examples  
+ 次の例では、共有音声認識を作成し、特定の単語を認識するため、空きディクテーションを受け入れるための文法の 2 種類が作成されます。 例は、認識エンジンに作成されたすべての文法を非同期的に読み込みます。  ハンドラーを<xref:System.Speech.Recognition.SpeechRecognizer.StateChanged>イベントを使用して、 <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync%2A> 「リッスン」モードに Windows 認識するメソッド。  
+  
+```csharp  
+using System;  
+using System.Speech.Recognition;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    private static SpeechRecognizer recognizer;  
+    public static void Main(string[] args)  
+    {  
+  
+      // Initialize a shared speech recognition engine.  
+      recognizer = new SpeechRecognizer();  
+  
+      // Add a handler for the LoadGrammarCompleted event.  
+      recognizer.LoadGrammarCompleted += new EventHandler<LoadGrammarCompletedEventArgs>(recognizer_LoadGrammarCompleted);  
+  
+      // Add a handler for the SpeechRecognized event.  
+      recognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+  
+      // Add a handler for the StateChanged event.  
+      recognizer.StateChanged += new EventHandler<StateChangedEventArgs>(recognizer_StateChanged);  
+  
+      // Create "yesno" grammar.  
+      Choices yesChoices = new Choices(new string[] { "yes", "yup", "yah}" });  
+      SemanticResultValue yesValue =  
+          new SemanticResultValue(yesChoices, (bool)true);  
+      Choices noChoices = new Choices(new string[] { "no", "nope", "nah" });  
+      SemanticResultValue noValue = new SemanticResultValue(noChoices, (bool)false);  
+      SemanticResultKey yesNoKey =  
+          new SemanticResultKey("yesno", new Choices(new GrammarBuilder[] { yesValue, noValue }));  
+      Grammar yesnoGrammar = new Grammar(yesNoKey);  
+      yesnoGrammar.Name = "yesNo";  
+  
+      // Create "done" grammar.  
+      Grammar doneGrammar =  
+        new Grammar(new Choices(new string[] { "done", "exit", "quit", "stop" }));  
+      doneGrammar.Name = "Done";  
+  
+      // Create dictation grammar.  
+      Grammar dictation = new DictationGrammar();  
+      dictation.Name = "Dictation";  
+  
+      // Load grammars to the recognizer.  
+      recognizer.LoadGrammarAsync(yesnoGrammar);  
+      recognizer.LoadGrammarAsync(doneGrammar);  
+      recognizer.LoadGrammarAsync(dictation);  
+  
+      // Keep the console window open.  
+      Console.ReadLine();  
+    }  
+  
+    // Put the shared speech recognizer into "listening" mode.  
+    static void  recognizer_StateChanged(object sender, StateChangedEventArgs e)  
+    {  
+     if (e.RecognizerState != RecognizerState.Stopped)  
+      {  
+        recognizer.EmulateRecognizeAsync("Start listening");  
+      }  
+    }  
+  
+    // Write the text of the recognized phrase to the console.  
+    static void  recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+     Console.WriteLine("Grammar({0}): {1}", e.Result.Grammar.Name, e.Result.Text);  
+  
+      // Add event handler code here.  
+    }  
+  
+    // Handle the LoadGrammarCompleted event.  
+    static void  recognizer_LoadGrammarCompleted(object sender, LoadGrammarCompletedEventArgs e)  
+    {  
+     string grammarName = e.Grammar.Name;  
+      bool grammarLoaded = e.Grammar.Loaded;  
+      if (e.Error != null)  
+      {  
+        Console.WriteLine("LoadGrammar for {0} failed with a {1}.",  
+        grammarName, e.Error.GetType().Name);  
+      }  
+  
+      // Add exception handling code here.  
+      Console.WriteLine("Grammar {0} {1} loaded.",  
+      grammarName, (grammarLoaded) ? "is" : "is not");  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadAllGrammars">
+      <MemberSignature Language="C#" Value="public void UnloadAllGrammars ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnloadAllGrammars() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.UnloadAllGrammars" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>共有認識エンジンからのすべての音声認識文法をアンロードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、認識エンジンが現在を読み込んで、文法に非同期的に、このメソッドは、文法が読み込まれるまで、すべての認識エンジンの文法がアンロードする前に待機します。  
+  
+ 特定の文法をアンロードするを使用して、<xref:System.Speech.Recognition.SpeechRecognizer.UnloadGrammar%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadGrammar">
+      <MemberSignature Language="C#" Value="public void UnloadGrammar (System.Speech.Recognition.Grammar grammar);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnloadGrammar(class System.Speech.Recognition.Grammar grammar) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SpeechRecognizer.UnloadGrammar(System.Speech.Recognition.Grammar)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="grammar" Type="System.Speech.Recognition.Grammar" />
+      </Parameters>
+      <Docs>
+        <param name="grammar">文法をアンロードします。</param>
+        <summary>共有認識エンジンから、指定した音声認識の文法をアンロードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認識エンジンが実行されている場合、アプリケーションが使用する必要があります<xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate%2A>を読み込み、アンロードが有効にすると、または、文法を無効にする前に、音声認識エンジンを一時停止します。 すべての文法をアンロードするを使用して、<xref:System.Speech.Recognition.SpeechRecognizer.UnloadAllGrammars%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

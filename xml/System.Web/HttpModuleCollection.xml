@@ -1,0 +1,210 @@
+<Type Name="HttpModuleCollection" FullName="System.Web.HttpModuleCollection">
+  <TypeSignature Language="C#" Value="public sealed class HttpModuleCollection : System.Collections.Specialized.NameObjectCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpModuleCollection extends System.Collections.Specialized.NameObjectCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpModuleCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Specialized.NameObjectCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インデックスを作成しのコレクションを取得する方法を提供<see cref="T:System.Web.IHttpModule" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Web.HttpModuleCollection.AllKeys%2A>プロパティおよび<xref:System.Web.HttpModuleCollection.GetKey%2A>と<xref:System.Web.HttpModuleCollection.CopyTo%2A>のメソッド、<xref:System.Web.HttpModuleCollection>クラスです。 例では、現在の要求に対するアプリケーション オブジェクトを現在から取得する<xref:System.Web.HttpContext>オブジェクト。 これは、後を抽出、<xref:System.Web.HttpModuleCollection>アプリケーション インスタンスからオブジェクトの名前を表示し、<xref:System.Web.IHttpModule>オブジェクト。  
+  
+ [!code-aspx-csharp[HttpModuleCollection1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpModuleCollection1/CS/httpmodulecollection1cs.aspx#1)]
+ [!code-aspx-vb[HttpModuleCollection1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpModuleCollection1/VB/httpmodulecollection1vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllKeys">
+      <MemberSignature Language="C#" Value="public string[] AllKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AllKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpModuleCollection.AllKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のすべてのキー (モジュールの名前) を含む文字列配列を取得、<see cref="T:System.Web.HttpModuleCollection" />です。</summary>
+        <value>モジュール名の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Web.HttpModuleCollection.AllKeys%2A>プロパティおよび<xref:System.Web.HttpModuleCollection.GetKey%2A>と<xref:System.Web.HttpModuleCollection.CopyTo%2A>のメソッド、<xref:System.Web.HttpModuleCollection>クラスです。 例では、現在の要求に対するアプリケーション オブジェクトを現在から取得する<xref:System.Web.HttpContext>オブジェクト。 これは、後を抽出、<xref:System.Web.HttpModuleCollection>アプリケーション インスタンスからオブジェクトの名前を表示し、<xref:System.Web.IHttpModule>オブジェクト。  
+  
+ [!code-aspx-csharp[HttpModuleCollection1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpModuleCollection1/CS/httpmodulecollection1cs.aspx#1)]
+ [!code-aspx-vb[HttpModuleCollection1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpModuleCollection1/VB/httpmodulecollection1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array dest, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Array dest, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpModuleCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dest" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dest">コピー先 <see cref="T:System.Array" />。</param>
+        <param name="index">変換先のインデックス<see cref="T:System.Array" />コピーの開始場所。</param>
+        <summary>モジュール コレクションのメンバーをコピー、<see cref="T:System.Array" />配列の指定したインデックス位置以降します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Web.HttpModuleCollection.AllKeys%2A>プロパティおよび<xref:System.Web.HttpModuleCollection.GetKey%2A>と<xref:System.Web.HttpModuleCollection.CopyTo%2A>のメソッド、<xref:System.Web.HttpModuleCollection>クラスです。 例では、現在の要求に対するアプリケーション オブジェクトを現在から取得する<xref:System.Web.HttpContext>オブジェクト。 これは、後を抽出、<xref:System.Web.HttpModuleCollection>アプリケーション インスタンスからオブジェクトの名前を表示し、<xref:System.Web.IHttpModule>オブジェクト。  
+  
+ [!code-aspx-csharp[HttpModuleCollection1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpModuleCollection1/CS/httpmodulecollection1cs.aspx#1)]
+ [!code-aspx-vb[HttpModuleCollection1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpModuleCollection1/VB/httpmodulecollection1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Web.IHttpModule Get (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.IHttpModule Get(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpModuleCollection.Get(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.IHttpModule</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.IHttpModule" />コレクションから返されるオブジェクト。</param>
+        <summary>返します、<see cref="T:System.Web.IHttpModule" />から指定されたインデックスを持つオブジェクト、<see cref="T:System.Web.HttpModuleCollection" />です。</summary>
+        <returns><see cref="T:System.Web.IHttpModule" />で指定されたメンバー、<paramref name="index" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Web.IHttpModule Get (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.IHttpModule Get(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpModuleCollection.Get(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.IHttpModule</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する項目のキー。</param>
+        <summary>返します、<see cref="T:System.Web.IHttpModule" />から指定した名前のオブジェクト、<see cref="T:System.Web.HttpModuleCollection" />です。</summary>
+        <returns><see cref="T:System.Web.IHttpModule" />で指定されたメンバー、<paramref name="name" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="public string GetKey (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetKey(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpModuleCollection.GetKey(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから取得するキーのインデックス。</param>
+        <summary>キー (名前) を返します、<see cref="T:System.Web.IHttpModule" />指定した数値インデックス オブジェクトです。</summary>
+        <returns>名前、<see cref="T:System.Web.IHttpModule" />で指定されたメンバー、<paramref name="index" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Web.HttpModuleCollection.AllKeys%2A>プロパティおよび<xref:System.Web.HttpModuleCollection.GetKey%2A>と<xref:System.Web.HttpModuleCollection.CopyTo%2A>のメソッド、<xref:System.Web.HttpModuleCollection>クラスです。 例では、現在の要求に対するアプリケーション オブジェクトを現在から取得する<xref:System.Web.HttpContext>オブジェクト。 これは、後を抽出、<xref:System.Web.HttpModuleCollection>アプリケーション インスタンスからオブジェクトの名前を表示し、<xref:System.Web.IHttpModule>オブジェクト。  
+  
+ [!code-aspx-csharp[HttpModuleCollection1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpModuleCollection1/CS/httpmodulecollection1cs.aspx#1)]
+ [!code-aspx-vb[HttpModuleCollection1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpModuleCollection1/VB/httpmodulecollection1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.IHttpModule this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.IHttpModule Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpModuleCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.IHttpModule</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.IHttpModule" />コレクションから取得するオブジェクト。</param>
+        <summary>取得、<see cref="T:System.Web.IHttpModule" />から指定した数値のインデックスを持つオブジェクト、<see cref="T:System.Web.HttpModuleCollection" />です。</summary>
+        <value><see cref="T:System.Web.IHttpModule" />によって指定されたオブジェクト モジュール、<paramref name="index" />パラメーター。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.IHttpModule this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.IHttpModule Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpModuleCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.IHttpModule</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する項目のキー。</param>
+        <summary>取得、<see cref="T:System.Web.IHttpModule" />から指定した名前のオブジェクト、<see cref="T:System.Web.HttpModuleCollection" />です。</summary>
+        <value><see cref="T:System.Web.IHttpModule" />によって指定されたオブジェクト モジュール、<paramref name="name" />パラメーター。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

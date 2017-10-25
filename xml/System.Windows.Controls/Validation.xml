@@ -1,0 +1,432 @@
+<Type Name="Validation" FullName="System.Windows.Controls.Validation">
+  <TypeSignature Language="C#" Value="public static class Validation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Validation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Validation" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データの検証をサポートするメソッドと添付プロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証プロセスの詳細についてを参照してください「データの検証」[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddErrorHandler">
+      <MemberSignature Language="C#" Value="public static void AddErrorHandler (System.Windows.DependencyObject element, EventHandler&lt;System.Windows.Controls.ValidationErrorEventArgs&gt; handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddErrorHandler(class System.Windows.DependencyObject element, class System.EventHandler`1&lt;class System.Windows.Controls.ValidationErrorEventArgs&gt; handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.AddErrorHandler(System.Windows.DependencyObject,System.EventHandler{System.Windows.Controls.ValidationErrorEventArgs})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.EventHandler&lt;System.Windows.Controls.ValidationErrorEventArgs&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />を追加するオブジェクト<c>ハンドラー</c>にします。</param>
+        <param name="handler">追加するハンドラー。</param>
+        <summary>イベント ハンドラーを追加、<see cref="E:System.Windows.Controls.Validation.Error" />イベントを指定したオブジェクトにアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearInvalid">
+      <MemberSignature Language="C#" Value="public static void ClearInvalid (System.Windows.Data.BindingExpressionBase bindingExpression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ClearInvalid(class System.Windows.Data.BindingExpressionBase bindingExpression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.ClearInvalid(System.Windows.Data.BindingExpressionBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingExpression" Type="System.Windows.Data.BindingExpressionBase" />
+      </Parameters>
+      <Docs>
+        <param name="bindingExpression">有効にするオブジェクト。</param>
+        <summary>すべて削除<see cref="T:System.Windows.Controls.ValidationError" />から、指定したオブジェクト<see cref="T:System.Windows.Data.BindingExpressionBase" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `bindingExpression`オブジェクトされていない有効期間の開始、<xref:System.Windows.Controls.Validation.MarkInvalid%2A>呼び出しまたは以前に失敗した検証します。 オブジェクトは、この呼び出しの後に有効です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bindingExpression" /> が <see langword="null" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ErrorEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ErrorEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Validation.ErrorEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Controls.Validation.Error" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ErrorsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ErrorsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Validation.ErrorsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Validation.Errors" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ErrorTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ErrorTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Validation.ErrorTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Validation.ErrorTemplate" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrors">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyObservableCollection&lt;System.Windows.Controls.ValidationError&gt; GetErrors (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ObjectModel.ReadOnlyObservableCollection`1&lt;class System.Windows.Controls.ValidationError&gt; GetErrors(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.GetErrors(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyObservableCollection&lt;System.Windows.Controls.ValidationError&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />から値を読み取るためのオブジェクト。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Validation.Errors" />指定した要素のプロパティを添付します。</summary>
+        <returns><see cref="T:System.Collections.ObjectModel.ReadOnlyObservableCollection`1" /> オブジェクトの <see cref="T:System.Windows.Controls.ValidationError" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="element" /> が <see langword="null" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorTemplate">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.ControlTemplate GetErrorTemplate (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Controls.ControlTemplate GetErrorTemplate(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.GetErrorTemplate(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ControlTemplate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />から値を読み取るためのオブジェクト。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Validation.ErrorTemplate" />指定した要素のプロパティを添付します。</summary>
+        <returns><see cref="T:System.Windows.Controls.ControlTemplate" />装飾層に対して検証エラー フィードバックを生成するために使用します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="element" /> が <see langword="null" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHasError">
+      <MemberSignature Language="C#" Value="public static bool GetHasError (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetHasError(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.GetHasError(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />から値を読み取るためのオブジェクト。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Validation.HasError" />指定した要素のプロパティを添付します。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.Validation.HasError" />指定した要素のプロパティを添付します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="element" /> が <see langword="null" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValidationAdornerSite">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyObject GetValidationAdornerSite (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyObject GetValidationAdornerSite(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.GetValidationAdornerSite(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">取得する要素、<see cref="P:System.Windows.Controls.Validation.ValidationAdornerSite" />です。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Validation.ValidationAdornerSite" />添付プロパティを指定した要素。</summary>
+        <returns><see cref="P:System.Windows.Controls.Validation.ValidationAdornerSite" /> の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValidationAdornerSiteFor">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyObject GetValidationAdornerSiteFor (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyObject GetValidationAdornerSiteFor(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.GetValidationAdornerSiteFor(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">取得する要素、<see cref="P:System.Windows.Controls.Validation.ValidationAdornerSiteFor" />です。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Validation.ValidationAdornerSiteFor" />添付プロパティを指定した要素。</summary>
+        <returns><see cref="P:System.Windows.Controls.Validation.ValidationAdornerSiteFor" /> の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasErrorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HasErrorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HasErrorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Validation.HasErrorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Validation.HasError" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkInvalid">
+      <MemberSignature Language="C#" Value="public static void MarkInvalid (System.Windows.Data.BindingExpressionBase bindingExpression, System.Windows.Controls.ValidationError validationError);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void MarkInvalid(class System.Windows.Data.BindingExpressionBase bindingExpression, class System.Windows.Controls.ValidationError validationError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.MarkInvalid(System.Windows.Data.BindingExpressionBase,System.Windows.Controls.ValidationError)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingExpression" Type="System.Windows.Data.BindingExpressionBase" />
+        <Parameter Name="validationError" Type="System.Windows.Controls.ValidationError" />
+      </Parameters>
+      <Docs>
+        <param name="bindingExpression"><see cref="T:System.Windows.Data.BindingExpression" />無効としてマークするオブジェクト。</param>
+        <param name="validationError">使用する <see cref="T:System.Windows.Controls.ValidationError" /> オブジェクト。</param>
+        <summary>指定したマーク<see cref="T:System.Windows.Data.BindingExpression" />オブジェクトとして指定された無効な<see cref="T:System.Windows.Controls.ValidationError" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.BindingExpression>オブジェクトままになるまで無効な<xref:System.Windows.Controls.Validation.ClearInvalid%2A>が呼び出されたか、バインディング ソースへの別の転送が正常に検証します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="validationError" /> が <see langword="null" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveErrorHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveErrorHandler (System.Windows.DependencyObject element, EventHandler&lt;System.Windows.Controls.ValidationErrorEventArgs&gt; handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveErrorHandler(class System.Windows.DependencyObject element, class System.EventHandler`1&lt;class System.Windows.Controls.ValidationErrorEventArgs&gt; handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.RemoveErrorHandler(System.Windows.DependencyObject,System.EventHandler{System.Windows.Controls.ValidationErrorEventArgs})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.EventHandler&lt;System.Windows.Controls.ValidationErrorEventArgs&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />オブジェクトを削除する<c>ハンドラー</c>からです。</param>
+        <param name="handler">削除するハンドラー。</param>
+        <summary>イベント ハンドラーを追加、<see cref="E:System.Windows.Controls.Validation.Error" />指定したオブジェクトからイベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetErrorTemplate">
+      <MemberSignature Language="C#" Value="public static void SetErrorTemplate (System.Windows.DependencyObject element, System.Windows.Controls.ControlTemplate value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetErrorTemplate(class System.Windows.DependencyObject element, class System.Windows.Controls.ControlTemplate value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.SetErrorTemplate(System.Windows.DependencyObject,System.Windows.Controls.ControlTemplate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Controls.ControlTemplate" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />を設定するオブジェクト<c>値</c>にします。</param>
+        <param name="value"><see cref="T:System.Windows.Controls.ControlTemplate" />装飾層に対して検証エラー フィードバックを生成に使用します。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.Validation.ErrorTemplate" />プロパティを指定した要素にアタッチします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="element" /> が <see langword="null" /> の場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValidationAdornerSite">
+      <MemberSignature Language="C#" Value="public static void SetValidationAdornerSite (System.Windows.DependencyObject element, System.Windows.DependencyObject value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetValidationAdornerSite(class System.Windows.DependencyObject element, class System.Windows.DependencyObject value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.SetValidationAdornerSite(System.Windows.DependencyObject,System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">設定する対象の要素、<see cref="P:System.Windows.Controls.Validation.ValidationAdornerSite" />です。</param>
+        <param name="value"><see cref="P:System.Windows.Controls.Validation.ValidationAdornerSite" />指定の要素。</param>
+        <summary>セット、<see cref="P:System.Windows.Controls.Validation.ValidationAdornerSite" />添付プロパティを指定した要素で指定した値にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValidationAdornerSiteFor">
+      <MemberSignature Language="C#" Value="public static void SetValidationAdornerSiteFor (System.Windows.DependencyObject element, System.Windows.DependencyObject value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetValidationAdornerSiteFor(class System.Windows.DependencyObject element, class System.Windows.DependencyObject value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Validation.SetValidationAdornerSiteFor(System.Windows.DependencyObject,System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">設定する対象の要素、<see cref="P:System.Windows.Controls.Validation.ValidationAdornerSiteFor" />です。</param>
+        <param name="value"><see cref="P:System.Windows.Controls.Validation.ValidationAdornerSiteFor" />指定の要素。</param>
+        <summary>セット、<see cref="P:System.Windows.Controls.Validation.ValidationAdornerSiteFor" />添付プロパティを指定した要素で指定した値にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationAdornerSiteForProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ValidationAdornerSiteForProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ValidationAdornerSiteForProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Validation.ValidationAdornerSiteForProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Validation.ValidationAdornerSiteFor" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationAdornerSiteProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ValidationAdornerSiteProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ValidationAdornerSiteProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Validation.ValidationAdornerSiteProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Validation.ValidationAdornerSite" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

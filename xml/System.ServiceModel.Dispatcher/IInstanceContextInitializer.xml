@@ -1,0 +1,57 @@
+<Type Name="IInstanceContextInitializer" FullName="System.ServiceModel.Dispatcher.IInstanceContextInitializer">
+  <TypeSignature Language="C#" Value="public interface IInstanceContextInitializer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IInstanceContextInitializer" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.IInstanceContextInitializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>必要なときに <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトの作成を検査または変更するために必要なメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成時に <xref:System.ServiceModel.InstanceContext> オブジェクトを検査または変更するには、<xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer> インターフェイスを実装し、<xref:System.ServiceModel.Description.IContractBehavior> を使用して、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceContextInitializers%2A> プロパティに追加します。  
+  
+ 1 つのサービスに対して任意の数のコンテキスト初期化子を使用できます。 通常、<xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer> は、アプリケーション全体にデータを渡すためのメカニズムとして、<xref:System.ServiceModel.InstanceContext> オブジェクトに拡張機能を結び付けるために追加されます。  
+  
+ メッセージを処理する <xref:System.ServiceModel.InstanceContext> オブジェクトの提供または選択への参加を希望する場合は、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider?displayProperty=nameWithType> を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public void Initialize (System.ServiceModel.InstanceContext instanceContext, System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(class System.ServiceModel.InstanceContext instanceContext, class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IInstanceContextInitializer.Initialize(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceContext" Type="System.ServiceModel.InstanceContext" />
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="instanceContext">システムが提供するインスタンス コンテキスト。</param>
+        <param name="message">インスタンス コンテキストの作成をトリガーしたメッセージ。</param>
+        <summary>新しく作成された <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトを変更することができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer.Initialize%2A> メソッドは、<xref:System.ServiceModel.InstanceContext> オブジェクトが作成されると呼び出されます。 通常、このメソッドは、アプリケーション全体からカスタム データにアクセスできるように、拡張機能を結び付けるために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,170 @@
+<Type Name="WebBaseEventCollection" FullName="System.Web.Management.WebBaseEventCollection">
+  <TypeSignature Language="C#" Value="public sealed class WebBaseEventCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebBaseEventCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebBaseEventCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.Management.WebBaseEvent" /> オブジェクトのコレクションを含んでいます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ <xref:System.Web.Management.WebBaseEventCollection>稼働状況の監視のコレクションを提供するクラスが使用されるイベントなどのプロバイダーを<xref:System.Web.Management.SqlWebEventProvider>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Management.WebBaseEventCollection> クラスを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEventCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEventCollection/CS/webbaseeventcollection.cs#1)]
+ [!code-vb[System.Web.Management.WebBaseEventCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEventCollection/VB/webbaseeventcollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebBaseEventCollection (System.Collections.ICollection events);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ICollection events) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseEventCollection.#ctor(System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="events" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="events"><see cref="T:System.Web.Management.WebBaseEvent" /> オブジェクトのコレクション。</param>
+        <summary><see cref="T:System.Web.Management.WebBaseEventCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebBaseEventCollection.%23ctor%28System.Collections.ICollection%29>コンス トラクターでは、インスタンスを作成することができます、<xref:System.Web.Management.WebBaseEventCollection>クラスし、のコレクションで初期化<xref:System.Web.Management.WebBaseEvent>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを使用する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEventCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEventCollection/CS/webbaseeventcollection.cs#2)]
+ [!code-vb[System.Web.Management.WebBaseEventCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEventCollection/VB/webbaseeventcollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="events" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.Management.WebBaseEvent value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.Management.WebBaseEvent value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseEventCollection.Contains(System.Web.Management.WebBaseEvent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.Management.WebBaseEvent" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.Management.WebBaseEvent" />検索するオブジェクト。</param>
+        <summary>コレクションが、指定したに含まれているかどうかを示す<see cref="T:System.Web.Management.WebBaseEvent" />オブジェクト。</summary>
+        <returns>
+          指定した要素がコレクションに格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebBaseEventCollection.Contains%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEventCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEventCollection/CS/webbaseeventcollection.cs#5)]
+ [!code-vb[System.Web.Management.WebBaseEventCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEventCollection/VB/webbaseeventcollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.Management.WebBaseEvent value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.Management.WebBaseEvent value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebBaseEventCollection.IndexOf(System.Web.Management.WebBaseEvent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.Management.WebBaseEvent" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.Management.WebBaseEvent" />インデックスを取得する対象のオブジェクト。</param>
+        <summary>指定したインデックスを取得<see cref="T:System.Web.Management.WebBaseEvent" />オブジェクト。</summary>
+        <returns>指定したインデックス<see cref="T:System.Web.Management.WebBaseEvent" />コレクション内のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebBaseEventCollection.IndexOf%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEventCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEventCollection/CS/webbaseeventcollection.cs#4)]
+ [!code-vb[System.Web.Management.WebBaseEventCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEventCollection/VB/webbaseeventcollection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">オブジェクトがコレクション内にありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Management.WebBaseEvent this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Management.WebBaseEvent Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebBaseEventCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.WebBaseEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションのインデックス、<see cref="T:System.Web.Management.WebBaseEvent" />を取得するオブジェクトします。</param>
+        <summary>取得、<see cref="T:System.Web.Management.WebBaseEvent" />指定したインデックスにあるオブジェクト。</summary>
+        <value>指定したインデックス位置にある <see cref="T:System.Web.Management.WebBaseEvent" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebBaseEventCollection.Item%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Management.WebBaseEventCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebBaseEventCollection/CS/webbaseeventcollection.cs#3)]
+ [!code-vb[System.Web.Management.WebBaseEventCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebBaseEventCollection/VB/webbaseeventcollection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定されたインデックスは、コレクションの範囲外です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

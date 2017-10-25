@@ -1,0 +1,158 @@
+<Type Name="DragEventArgs" FullName="System.Windows.DragEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class DragEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DragEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DragEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ドラッグ アンド ドロップのすべてのイベントに関連する引数が含まれています (<see cref="E:System.Windows.DragDrop.DragEnter" />、 <see cref="E:System.Windows.DragDrop.DragLeave" />、 <see cref="E:System.Windows.DragDrop.DragOver" />、および<see cref="E:System.Windows.DragDrop.Drop" />)。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllowedEffects">
+      <MemberSignature Language="C#" Value="public System.Windows.DragDropEffects AllowedEffects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.DragDropEffects AllowedEffects" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DragEventArgs.AllowedEffects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーを取得、<see cref="T:System.Windows.DragDropEffects" />ドラッグ イベントの元の送信者にどのような操作が許可されているを指定する列挙です。</summary>
+        <value>メンバー、<see cref="T:System.Windows.DragDropEffects" />ドラッグ イベントの元の送信者にどのような操作が許可されているを指定する列挙です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことによって、ドラッグ アンド ドロップ操作が開始したときに、<xref:System.Windows.DragDrop.DoDragDrop%2A>メソッドのメンバーで許可される操作が指定されて、<xref:System.Windows.DragDropEffects>列挙します。 たとえば、読み取り専用ファイルをドラッグしたときにドラッグ イニシエーターは、ファイルのコピーが移動されないことを示す必要があります。  ドラッグされたデータに対して操作を実行する前に、この操作が許可されていることを確認するには、このプロパティを調べます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public System.Windows.IDataObject Data { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IDataObject Data" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DragEventArgs.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IDataObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対応するドラッグ イベントに関連付けられているデータを格納するデータ オブジェクトを取得します。</summary>
+        <value>対応するドラッグ イベントに関連付けられているデータを格納するデータ オブジェクト.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Effects">
+      <MemberSignature Language="C#" Value="public System.Windows.DragDropEffects Effects { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.DragDropEffects Effects" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DragEventArgs.Effects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはターゲットのドラッグ アンド ドロップ操作を設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.DragDropEffects" />ターゲットのドラッグ アンド ドロップ操作を指定する列挙です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このプロパティで指定した効果はドラッグ アンド ドロップ操作の対象のマウス カーソルを決定します。 これは、対応するオブジェクトが削除されるときに行われる操作についてユーザーにフィードバックを提供すると便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPosition">
+      <MemberSignature Language="C#" Value="public System.Windows.Point GetPosition (System.Windows.IInputElement relativeTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Point GetPosition(class System.Windows.IInputElement relativeTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragEventArgs.GetPosition(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="relativeTo"><see cref="T:System.Windows.IInputElement" />相対ドロップ ポイントを取得する対象のオブジェクト。</param>
+        <summary>指定された相対ドロップ ポイントを返します<see cref="T:System.Windows.IInputElement" />です。</summary>
+        <returns>指定された要素に対して相対的であるドロップ ポイント<paramref name="relativeTo" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="relativeTo" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">To be added.</param>
+        <param name="genericTarget">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyStates">
+      <MemberSignature Language="C#" Value="public System.Windows.DragDropKeyStates KeyStates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.DragDropKeyStates KeyStates" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DragEventArgs.KeyStates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DragDropKeyStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ボタンの状態だけでなく、shift キーを押し、CTRL、および ALT の各キーの現在の状態を示すフラグ列挙値を取得します。</summary>
+        <value>1 つまたは複数のメンバー、<see cref="T:System.Windows.DragDropKeyStates" />フラグ列挙体です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のキーの状態に応じてドラッグ アンド ドロップ操作の効果を調整できます。 たとえば、データ可能性がありますか、コピーまたは移動するドラッグ アンド ドロップ操作中に、ctrl キーまたは SHIFT キーが押されたかどうかによって異なります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

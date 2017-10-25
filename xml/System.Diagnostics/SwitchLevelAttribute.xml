@@ -1,0 +1,117 @@
+<Type Name="SwitchLevelAttribute" FullName="System.Diagnostics.SwitchLevelAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SwitchLevelAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SwitchLevelAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.SwitchLevelAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>スイッチ レベルの型を識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性はから継承するすべてのクラスに適用するためのもので、<xref:System.Diagnostics.Switch>クラスです。 属性の目的は、スイッチのスイッチの条件を指定する型を識別します。 各スイッチを決定するかどうか、トレースが書き込まれるイベントの種類が一致するかの値を超えるかどうかに基づいて、<xref:System.Diagnostics.SwitchLevelAttribute.SwitchLevelType%2A>スイッチのプロパティです。 使用する種類、<xref:System.Diagnostics.SwitchLevelAttribute.SwitchLevelType%2A>別々 のスイッチのプロパティが異なります。 たとえば、スイッチ レベルの型、<xref:System.Diagnostics.BooleanSwitch>クラスは<xref:System.Boolean>、およびスイッチ レベルの型、<xref:System.Diagnostics.TraceSwitch>クラスは<xref:System.Diagnostics.TraceLevel>します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SwitchLevelAttribute (Type switchLevelType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type switchLevelType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.SwitchLevelAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="switchLevelType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="switchLevelType"><see cref="T:System.Type" />トレースを書き込むかどうかを決定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.SwitchLevelAttribute" />クラス、トレースを書き込むかどうかを決定する型を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `switchLevelType`パラメーターは、そのスイッチによって判別されるかどうか、トレースを出力する必要があります。 型を特定の種類など、<xref:System.Diagnostics.TraceSwitch.Level%2A>のプロパティ、<xref:System.Diagnostics.TraceSwitch>クラスは<xref:System.Diagnostics.TraceLevel>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SwitchLevelType">
+      <MemberSignature Language="C#" Value="public Type SwitchLevelType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type SwitchLevelType" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.SwitchLevelAttribute.SwitchLevelType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトレースを書き込むかどうかを決定する型を設定します。</summary>
+        <value><see cref="T:System.Type" />トレースを書き込むかどうかを決定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スイッチのレベルのプロパティが必ずしも命名されていない`Level`; たとえばのレベルのプロパティ、<xref:System.Diagnostics.BooleanSwitch>クラスは<xref:System.Diagnostics.BooleanSwitch.Enabled%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例の値を表示する、<xref:System.Diagnostics.SwitchLevelAttribute.SwitchLevelType%2A>プロパティを<xref:System.Diagnostics.BooleanSwitch>です。  
+  
+ [!code-csharp[System.Diagnostics.TraceSource#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.TraceSource/CS/program.cs#13)]
+ [!code-vb[System.Diagnostics.TraceSource#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.TraceSource/VB/program.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値があるために、設定操作が失敗しました<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

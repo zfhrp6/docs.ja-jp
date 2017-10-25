@@ -1,0 +1,226 @@
+<Type Name="VirtualizationCacheLengthConverter" FullName="System.Windows.Controls.VirtualizationCacheLengthConverter">
+  <TypeSignature Language="C#" Value="public class VirtualizationCacheLengthConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VirtualizationCacheLengthConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.VirtualizationCacheLengthConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクトとを変換、<see cref="T:System.Windows.Controls.VirtualizationCacheLength" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VirtualizationCacheLengthConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizationCacheLengthConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.VirtualizationCacheLengthConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizationCacheLengthConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext">形式コンテキストを提供するオブジェクト。</param>
+        <param name="sourceType">変換前の型。</param>
+        <summary>決定するかどうか、<see cref="T:System.Windows.Controls.VirtualizationCacheLengthConverter" />に指定した型のオブジェクトに変換できる、 <see cref="T:System.Windows.Controls.VirtualizationCacheLength" />、指定のコンテキストを使用します。</summary>
+        <returns>true の場合、 <see cref="T:System.Windows.Controls.VirtualizationCacheLengthConverter" /> 、指定された型を変換できる、 <see cref="T:System.Windows.Controls.VirtualizationCacheLength" />。 それ以外の場合は false。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.VirtualizationCacheLengthConverter>する次の種類を変換できる、 <xref:System.Windows.Controls.VirtualizationCacheLength>:  
+  
+-   <xref:System.String>  
+  
+-   <xref:System.Decimal>  
+  
+-   <xref:System.Single>  
+  
+-   <xref:System.Double>  
+  
+-   <xref:System.Int16>  
+  
+-   <xref:System.Int32>  
+  
+-   <xref:System.Int64>  
+  
+-   <xref:System.UInt16>  
+  
+-   <xref:System.UInt32>  
+  
+-   <xref:System.UInt64>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizationCacheLengthConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext">形式コンテキストを提供するオブジェクト。</param>
+        <param name="destinationType">変換後の型。</param>
+        <summary>決定するかどうか、<see cref="T:System.Windows.Controls.VirtualizationCacheLengthConverter" />変換できる、<see cref="T:System.Windows.Controls.VirtualizationCacheLength" />指定された型にします。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.VirtualizationCacheLengthConverter" />変換できる、<see cref="T:System.Windows.Controls.VirtualizationCacheLength" />指定された型にそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.VirtualizationCacheLengthConverter.CanConvertTo%2A>メソッドを返します。`true`場合`destinationType`は<xref:System.String>または<xref:System.ComponentModel.Design.Serialization.InstanceDescriptor>です。 それ以外の場合、<xref:System.Windows.Controls.VirtualizationCacheLengthConverter.CanConvertTo%2A>返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Globalization.CultureInfo cultureInfo, object source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Globalization.CultureInfo cultureInfo, object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizationCacheLengthConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext">形式コンテキストを提供するオブジェクト。</param>
+        <param name="cultureInfo">変換中に使用されるカルチャ情報を提供するオブジェクト。</param>
+        <param name="source">変換するオブジェクト、<see cref="T:System.Windows.Controls.VirtualizationCacheLength" />です。</param>
+        <summary>指定したオブジェクトを <see cref="T:System.Windows.Controls.VirtualizationCacheLength" /> に変換します。</summary>
+        <returns>変換後のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.VirtualizationCacheLengthConverter>する次の種類を変換できる、 <xref:System.Windows.Controls.VirtualizationCacheLength>:  
+  
+-   <xref:System.String>  
+  
+-   <xref:System.Decimal>  
+  
+-   <xref:System.Single>  
+  
+-   <xref:System.Double>  
+  
+-   <xref:System.Int16>  
+  
+-   <xref:System.Int32>  
+  
+-   <xref:System.Int64>  
+  
+-   <xref:System.UInt16>  
+  
+-   <xref:System.UInt32>  
+  
+-   <xref:System.UInt64>  
+  
+ 呼び出す、<xref:System.Windows.Controls.VirtualizationCacheLengthConverter.CanConvertFrom%2A>メソッドを呼び出す前に、<xref:System.Windows.Controls.VirtualizationCacheLengthConverter.ConvertFrom%2A>例外がスローされないようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="source" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="source" />変換できない、<see cref="T:System.Windows.Controls.VirtualizationCacheLength" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Globalization.CultureInfo cultureInfo, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Globalization.CultureInfo cultureInfo, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.VirtualizationCacheLengthConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext">形式コンテキストを提供するオブジェクト。</param>
+        <param name="cultureInfo">変換中に使用されるカルチャ情報を提供するオブジェクト。</param>
+        <param name="value">A<see cref="T:System.Windows.Controls.VirtualizationCacheLength" />を別の型に変換します。</param>
+        <param name="destinationType">変換後の型。</param>
+        <summary>指定された変換<see cref="T:System.Windows.Controls.VirtualizationCacheLength" />指定した型のオブジェクトにします。</summary>
+        <returns>変換後のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Controls.VirtualizationCacheLengthConverter.CanConvertTo%2A>メソッドを呼び出す前に、<xref:System.Windows.Controls.VirtualizationCacheLengthConverter.ConvertFrom%2A>例外がスローされないようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destinationType" /> は <paramref name="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="value" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="value" /> が <see cref="T:System.Windows.Controls.VirtualizationCacheLength" /> ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

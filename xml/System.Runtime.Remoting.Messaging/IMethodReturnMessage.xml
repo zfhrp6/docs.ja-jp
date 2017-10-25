@@ -1,0 +1,215 @@
+<Type Name="IMethodReturnMessage" FullName="System.Runtime.Remoting.Messaging.IMethodReturnMessage">
+  <TypeSignature Language="C#" Value="public interface IMethodReturnMessage : System.Runtime.Remoting.Messaging.IMethodMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMethodReturnMessage implements class System.Runtime.Remoting.Messaging.IMessage, class System.Runtime.Remoting.Messaging.IMethodMessage" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Messaging.IMethodReturnMessage" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Messaging.IMethodMessage</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッド呼び出しの戻り値メッセージ インターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッド呼び出しの応答メッセージでは、メッセージ シンクの end でオブジェクトに対するメソッド呼び出しへの応答を表します。 <xref:System.Runtime.Remoting.Messaging.IMethodReturnMessage>は、リモート オブジェクトで呼び出されるメソッドの結果として生成され、呼び出し元に戻すメソッドの呼び出しの結果を返すために使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例はそのオーバーライドのカスタムのプロキシを示しています`RealProxy.Invoke`戻りメッセージの情報をコンソールに記述するためにします。  
+  
+ [!code-cpp[IMethodReturnMessage_ReturnValue#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IMethodReturnMessage_ReturnValue/CPP/imethodreturnmessage_returnvalue.cpp#1)]
+ [!code-csharp[IMethodReturnMessage_ReturnValue#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IMethodReturnMessage_ReturnValue/CS/imethodreturnmessage_returnvalue.cs#1)]
+ [!code-vb[IMethodReturnMessage_ReturnValue#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IMethodReturnMessage_ReturnValue/VB/imethodreturnmessage_returnvalue.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Messaging.IMethodReturnMessage.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの呼び出し中にスローされる例外を取得します。</summary>
+        <value>メソッドの呼び出しの例外オブジェクトまたは<see langword="null" />場合は、メソッドは例外をスローしませんでした。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、応答メッセージについては、メソッドが例外をスローしたかどうかなどを記述するために RealProxy.Invoke をオーバーライドするカスタムのプロキシを示しています。  
+  
+ [!code-cpp[IMethodReturnMessage_Exception#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IMethodReturnMessage_Exception/CPP/imethodreturnmessage_exception.cpp#1)]
+ [!code-csharp[IMethodReturnMessage_Exception#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IMethodReturnMessage_Exception/CS/imethodreturnmessage_exception.cs#1)]
+ [!code-vb[IMethodReturnMessage_Exception#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IMethodReturnMessage_Exception/VB/imethodreturnmessage_exception.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutArg">
+      <MemberSignature Language="C#" Value="public object GetOutArg (int argNum);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetOutArg(int32 argNum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.IMethodReturnMessage.GetOutArg(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argNum" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="argNum">要求された引数の数。</param>
+        <summary>としてマークされている指定された引数を返し、<see langword="ref" />または<see langword="out" />パラメーター。</summary>
+        <returns>指定された引数としてマークされている、<see langword="ref" />または<see langword="out" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutArgName">
+      <MemberSignature Language="C#" Value="public string GetOutArgName (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetOutArgName(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.IMethodReturnMessage.GetOutArgName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">要求された引数の名前の数。</param>
+        <summary>としてマークされている指定された引数の名前を返します、<see langword="ref" />または<see langword="out" />パラメーター。</summary>
+        <returns>引数の名前、または<see langword="null" />場合は、現在のメソッドは実装されていません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OutArgCount">
+      <MemberSignature Language="C#" Value="public int OutArgCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OutArgCount" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Messaging.IMethodReturnMessage.OutArgCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>としてマークされたメソッドの呼び出しの引数の数を取得<see langword="ref" />または<see langword="out" />パラメーター。</summary>
+        <value>としてマークされたメソッドの呼び出しの引数の数<see langword="ref" />または<see langword="out" />パラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例はそのオーバーライドのカスタムのプロキシを示しています`RealProxy.Invoke`戻りメッセージの情報をコンソールに記述するためにします。  
+  
+ [!code-cpp[IMethodReturnMessage_ReturnValue#2](~/samples/snippets/cpp/VS_Snippets_Remoting/IMethodReturnMessage_ReturnValue/CPP/imethodreturnmessage_returnvalue.cpp#2)]
+ [!code-csharp[IMethodReturnMessage_ReturnValue#2](~/samples/snippets/csharp/VS_Snippets_Remoting/IMethodReturnMessage_ReturnValue/CS/imethodreturnmessage_returnvalue.cs#2)]
+ [!code-vb[IMethodReturnMessage_ReturnValue#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IMethodReturnMessage_ReturnValue/VB/imethodreturnmessage_returnvalue.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OutArgs">
+      <MemberSignature Language="C#" Value="public object[] OutArgs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object[] OutArgs" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Messaging.IMethodReturnMessage.OutArgs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>としてマークされている指定された引数を返し、<see langword="ref" />または<see langword="out" />パラメーター。</summary>
+        <value>指定された引数としてマークされている、<see langword="ref" />または<see langword="out" />パラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Messaging.IMethodReturnMessage.OutArgs%2A>で同じ機能を実現できるため、プロパティは冗長、<xref:System.Runtime.Remoting.Messaging.IMethodReturnMessage.OutArgCount%2A>フィールドと<xref:System.Runtime.Remoting.Messaging.IMethodReturnMessage.GetOutArg%2A>メソッド、ある可能性がありますパフォーマンスの最適化使用可能なすべての引数を取得するときに、実装者が認識する場合。  
+  
+> [!WARNING]
+>  場合<xref:System.Runtime.Remoting.Messaging.IMethodReturnMessage.Exception%2A>は`null`、<xref:System.IndexOutOfRangeException?displayProperty=nameWithType>ときに例外がスローされます<xref:System.Runtime.Remoting.Messaging.IMethodReturnMessage.OutArgs%2A>にアクセスします。  
+  
+   
+  
+## Examples  
+ [!code-cpp[IMethodReturnMessage_ReturnValue#2](~/samples/snippets/cpp/VS_Snippets_Remoting/IMethodReturnMessage_ReturnValue/CPP/imethodreturnmessage_returnvalue.cpp#2)]
+ [!code-csharp[IMethodReturnMessage_ReturnValue#2](~/samples/snippets/csharp/VS_Snippets_Remoting/IMethodReturnMessage_ReturnValue/CS/imethodreturnmessage_returnvalue.cs#2)]
+ [!code-vb[IMethodReturnMessage_ReturnValue#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IMethodReturnMessage_ReturnValue/VB/imethodreturnmessage_returnvalue.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnValue">
+      <MemberSignature Language="C#" Value="public object ReturnValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ReturnValue" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Messaging.IMethodReturnMessage.ReturnValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドの呼び出しの戻り値を取得します。</summary>
+        <value>メソッド呼び出しの戻り値。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元は、インターフェイスへの参照を使用して呼び出しを行うし、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

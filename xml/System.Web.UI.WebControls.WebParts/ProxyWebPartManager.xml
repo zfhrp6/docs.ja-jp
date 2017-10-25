@@ -1,0 +1,398 @@
+<Type Name="ProxyWebPartManager" FullName="System.Web.UI.WebControls.WebParts.ProxyWebPartManager">
+  <TypeSignature Language="C#" Value="public class ProxyWebPartManager : System.Web.UI.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProxyWebPartManager extends System.Web.UI.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ProxyWebPartManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.WebParts.ProxyWebPartManagerDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.NonVisualControl</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>開発者が static として宣言するための手段を提供、コンテンツ内の接続ページ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールはコンテンツ ページの関連マスター ページで宣言されています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager> 、特定のコントロールが存在するときにページのコンテンツで静的接続を宣言するシナリオ、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールは、マスター ページで既に宣言されています。  
+  
+ いずれか (および 1 つだけ) 仕様では、Web パーツ コントロールを使用する Web ページがあります<xref:System.Web.UI.WebControls.WebParts.WebPartManager>ページ上のすべての Web パーツ コントロールを管理するコントロール。 Web パーツ アプリケーションでは、マスター ページを使用する場合は通常を配置する、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>すべてのコンテンツ ページは、マスター ページと実行時間と、1 つにマージされますので、マスター ページで制御<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールは、すべてのコンテンツ ページのすべての Web パーツ コントロールを管理します。 ただし、開発者は、このようなアプリケーションのコンテンツ ページで静的接続を宣言する場合、それらに思えます制限に直面しています。 静的な Web パーツ接続を追加するだけで宣言することができます、<`asp:webpartconnection>`の子要素として、`<staticconnections>`要素自体の子である必要があります、`<asp:webpartmanager>`要素。 ので、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールがマスター ページで、既に宣言されて、許可、1 つは<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール、開発者は、追加で宣言できません<xref:System.Web.UI.WebControls.WebParts.WebPartManager>静的な接続を追加するコンテンツ ページのコントロールです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コントロールに代わる、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>このシナリオで制御します。 開発者は、宣言、`<asp:proxywebpartmanager>`要素の代わりに、`<asp:webpartmanager>`要素、コンテンツ ページとは、宣言する静的な接続の子として要素。 実行時では、接続、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コントロールを単純に追加される、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.StaticConnections%2A>のコレクション、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>を制御し、その他の任意の接続と同様に扱われます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コントロールがこの特定の開発のシナリオでのみ使用されるよりも機能が制限されることにより、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>クラスです。 実際には、ですが、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コントロール用の静的な接続を格納するプロキシとして機能、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール コンテンツ ページで、継承していないから、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 直接継承、<xref:System.Web.UI.Control>クラス、および基本メンバーの一部のみをオーバーライドします。 <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.EnableTheming%2A>、 <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.Visible%2A>、および<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.SkinID%2A>プロパティがオーバーライドされから使用されるように値を代入します。 基本プロパティと同じ動作がそれ以外の場合では、デザイン時動作を調整するその他の継承されたプロパティが上書きされます。 ように、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.Controls%2A>と<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.ClientID%2A>プロパティです。 最後に、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>クラスには 1 つの非継承プロパティ。 <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.StaticConnections%2A>プロパティは、静的な接続の独自のコレクションを返します (、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartConnectionCollection>オブジェクト)。  
+  
+ メソッドの場合と、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>クラスが同様に、使用を制限するには、ほとんどの場合のいくつかメソッドをオーバーライドします。 継承された<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.Focus%2A>メソッドが呼び出された場合に例外をスローして使用不可に行ったです。 <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.CreateControlCollection%2A>メソッドは常にコントロールのコレクションを含めることができない原因の影響は、空のコントロール コレクションを返します。 最後に、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.OnInit%2A>メソッドを選択し、基本のメソッドを呼び出しによって参照される接続のコレクションを割り当てます、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.StaticConnections%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.WebPartManager.StaticConnections%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 これは、ロールアップするすべてのコンテンツ ページで宣言されているすべての静的な接続の効果にすることによって管理される接続のコレクションの一部と、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>マスター ページ内のコントロールです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>マスター ページを使用するアプリケーションのコンテンツ ページ上の静的接続を宣言するクラス。 この例では、5 つの部分があります。  
+  
+-   Web パーツを変更することができますユーザー コントロールは、ページのモードを表示します。  
+  
+-   ソース インターフェイスと 2 つのコード<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーとの接続のコンシューマーとしての動作を制御します。  
+  
+-   ユーザー コントロール、コンテンツのページをホストする Web ページをマスターと<xref:System.Web.UI.WebControls.WebParts.WebPartManager>アプリケーションのコントロールです。  
+  
+-   ホストするコンテンツの Web ページ、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コントロール、2 つのカスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、および 2 つのコントロールを接続するための静的な接続します。  
+  
+-   ページの例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 次のソース コード、ファイルを保存 .ascx、それにに割り当てられているファイルの名前、`Src`の属性、`Register`ホスティング マスター ページの上部にあるディレクティブは、このユーザー コントロールをします。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_ProxyWebPartManager_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ProxyWebPartManager_Overview/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_ProxyWebPartManager_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ProxyWebPartManager_Overview/VB/DisplayModeMenuVB.ascx#6)]  
+  
+ コード例の 2 番目の部分では、インターフェイスとコントロールのソース コードを示します。 ソース ファイルには、という名前の単純なインターフェイスが含まれています。`IZipCode`です。 <xref:System.Web.UI.WebControls.WebParts.WebPart>という名前のクラス`ZipCodeWebPart`インターフェイスを実装して、プロバイダー コントロールとして機能します。 その`ProvideIZipCode`インターフェイスの唯一のメンバーを実装するコールバック メソッドです。 このメソッドは、単に、インターフェイスのインスタンスを返します。 メソッドが付いている、`ConnectionProvider`メタデータ内の属性です。 これは、プロバイダーの接続ポイントのコールバック メソッドとしてメソッドを識別するためのメカニズムです。 他の<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスの名前は`WeatherWebPart`、し、接続のコンシューマーとして機能します。 このクラスは、という名前のメソッドを持つ`GetZipCode`のインスタンスを取得する、`IZipCode`プロバイダー コントロールからのインターフェイスです。 このメソッドが、コンシューマーの接続ポイント メソッドとしてマークされていることに注意してください、`ConnectionConsumer`メタデータ内の属性です。  
+  
+ コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_ProxyWebPartManager_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ProxyWebPartManager_Overview/CS/ZipCodeComponent.cs#4)]
+ [!code-vb[WebParts_ProxyWebPartManager_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ProxyWebPartManager_Overview/VB/ZipCodeComponent.vb#4)]  
+  
+ コード例の 3 番目の部分は、マスター ページです。 次のソース コードを実行し、MasterPageCS.master または MasterPageVB.master (言語に応じてを使用する)、名前を付け、ファイルに保存する必要があります。 マスター ページが含まれたメモ、`Register`ユーザー コントロールとそれを登録するディレクティブが、ユーザー コントロール、ページの本文自体を参照します。 マスター ページは、1 つも宣言されています。`<asp:webpartmanager>`要素のこのページと関連するすべてのコンテンツ ページを使用します。 最後に、マスター ページに、`<asp: contentplaceholder>`コンテンツ ページを挿入する場所 ページで、ポイントを宣言する要素。  
+  
+ [!code-aspx-csharp[WebParts_ProxyWebPartManager_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ProxyWebPartManager_Overview/CS/MasterPageCS.master#1)]
+ [!code-aspx-vb[WebParts_ProxyWebPartManager_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ProxyWebPartManager_Overview/VB/MasterPageVB.master#1)]  
+  
+ コード例の 4 番目の部分は、コンテンツ ページです。 次のソース コードをコピーし、拡張子が .aspx ファイルに保存する必要があります。 注意してその`Page`ディレクティブが含まれています、`MasterFile`属性をマスター ページを参照してください。 また、このページには、`Register`を動的にコンパイルされたカスタムを含む App_Code フォルダーにファイルを登録するディレクティブ<xref:System.Web.UI.WebControls.WebParts.WebPart>接続に参加しているコントロール。 内で、`<asp:content>`タグ、ページは、<`asp:proxywebpartmanager>`要素の子を持つ、`<staticconnections>`をさらに、子を持つ要素`<asp:webpartconnection>`接続の詳細を宣言する要素。 内で、 `<script>`  ページで、タグ、`Button1_Click`メソッドは、主にアクセスするいくつかのコードを追加<xref:System.Web.UI.WebControls.WebParts.WebPartManager>マスター ページ内のコントロールと<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コンテンツ ページで、制御し、それらの詳細の一部をページに書き込みます。  
+  
+ [!code-aspx-csharp[WebParts_ProxyWebPartManager_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ProxyWebPartManager_Overview/CS/contentPage1CS.aspx#2)]
+ [!code-aspx-vb[WebParts_ProxyWebPartManager_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ProxyWebPartManager_Overview/VB/contentPage1VB.aspx#2)]  
+  
+ ブラウザーでページを読み込んだ後、 **WebPartManager 情報**ボタンをクリックし、についての情報を確認、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>マスター ページで、コントロールと<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コンテンツ ページのコントロールです。 両方があること、同じ数に対応するプロパティを静的な接続を追跡するメモなど、(、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.StaticConnections%2A>プロパティ)。 なおですが、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールが、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts%2A>の数を追跡するプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPart>、管理対象のコントロール、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コントロールには、このようなプロパティがありませんだけを目的の静的な接続が含まれますが。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProxyWebPartManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.ProxyWebPartManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientID">
+      <MemberSignature Language="C#" Value="public override string ClientID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClientID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.ClientID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET によって生成される HTML マークアップのコントロール ID を取得します。</summary>
+        <value>ASP.NET によって生成される HTML マークアップのコントロール ID。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ControlCollection Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCollection Controls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UI 階層内の指定されたサーバー コントロールの子コントロールを表す <see cref="T:System.Web.UI.ControlCollection" /> オブジェクトを取得します。</summary>
+        <value>指定されたサーバー コントロールの子コントロールのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>防ぐために基本プロパティをオーバーライドします<see cref="T:System.Web.UI.WebControls.WebParts.ProxyWebPartManager" />からコントロールを含むコントロールです。</summary>
+        <returns>常に <see cref="T:System.Web.UI.EmptyControlCollection" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.CreateControlCollection%2A>メソッドは、基本を防ぐために、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コントロールが含まれていると、コントロールのコレクションを返すからです。 唯一の目的では、マスター ページを使用するアプリケーション内のコンテンツ ページで宣言する静的な接続を有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableTheming">
+      <MemberSignature Language="C#" Value="public override bool EnableTheming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableTheming" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.EnableTheming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマが使用されていることを防ぐために、基本プロパティをオーバーライドします。</summary>
+        <value>常に返します<see langword="false" />をテーマが使用されていることを防ぐためにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.EnableTheming%2A>プロパティをテーマがで使用されていることを防ぐために基本プロパティをオーバーライドします<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コントロール。 これで使用されている任意のテーマでの競合に入ってくることがないように、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>マスター ページ内のコントロール (その<xref:System.Web.UI.WebControls.WebParts.WebPartManager.EnableTheming%2A?displayProperty=nameWithType>プロパティは常に返します`true`)。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">呼び出し元は、このプロパティに値を代入しようとします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Focus">
+      <MemberSignature Language="C#" Value="public override void Focus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Focus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.Focus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メソッドが呼び出されないようにする基本メソッドをオーバーライドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.Focus%2A>メソッドが基本メソッドをオーバーライドし、任意の呼び出し元がメソッドを呼び出すしようとした場合は例外をスローします。 これは、継承された<xref:System.Web.UI.Control.Focus%2A?displayProperty=nameWithType>メソッドがユーザー インターフェイス (UI) を持つコントロール用に設計されたが、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コントロールが UI がないと、そのため、フォーカスを設定する必要がないです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">呼び出し元は、このメソッドを呼び出すしようとします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させます、<see cref="E:System.Web.UI.Control.Init" />イベントと、コントロールを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.OnInit%2A>メソッドが基本メソッドを呼び出しおよび初期化するためにタスクを実行し、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コントロール。 によって参照される接続のコレクションに割り当てるには、このメソッドの重要なタスク、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.StaticConnections%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPartManager.StaticConnections%2A?displayProperty=nameWithType>コレクション。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />関連マスター ページからコントロールが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SkinID">
+      <MemberSignature Language="C#" Value="public override string SkinID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SkinID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.SkinID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値が割り当てられていることを防ぐための基本プロパティをオーバーライドします。</summary>
+        <value>常に空の文字列を返します ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.SkinID%2A>プロパティのオーバーライドに使用されるを基本プロパティを値が、それに割り当てられていることを防ぐためを回避するという効果を持つスキン、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コントロール。 これは、コントロールがページ上のユーザー インターフェイス (UI) を公開しないためです。 によって、同じ動作が実装される、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>の制御、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.SkinID%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">呼び出し元は、このプロパティに値を代入しようとします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StaticConnections">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.ProxyWebPartConnectionCollection StaticConnections { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.ProxyWebPartConnectionCollection StaticConnections" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.StaticConnections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ProxyWebPartConnectionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内で宣言された静的な接続のコレクションを取得、<see langword="&lt;asp:proxywebpartmanager&gt;" />コンテンツ ページの要素。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.ProxyWebPartConnectionCollection" />を含むすべての静的<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />内で宣言されたオブジェクト、<see langword="&lt;asp:proxywebpartmanager&gt;" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.StaticConnections%2A>プロパティのコレクションを参照する<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>で宣言されているオブジェクト、`<asp:proxywebpartmanager>`要素。 静的な接続をこのコレクションに含まれている接続が追加、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール (により参照されているその<xref:System.Web.UI.WebControls.WebParts.WebPartManager.StaticConnections%2A?displayProperty=nameWithType>コレクション)、他の接続に関連付けられているのと同じように扱われます、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。  
+  
+ 対応する宣言型の要素、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.StaticConnections%2A>プロパティは、`<staticconnections>`要素。 マスター ページを使用するアプリケーションで、`<staticconnections>`の子として要素を追加、`<asp:proxywebpartmanager>`コンテンツ ページでは、上の要素と`<asp:webpartconnection>`要素が追加の子としてしてさらに、`<staticconnections>`要素。 複数`<asp:webpartconnection>`要素は、いずれかに追加できる`<staticconnections>`要素、および複数のコンテンツ ページは、マスター ページ アプリケーションの一部として静的接続を宣言できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.StaticConnections%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>クラスです。 このコード例は、コードを宣言するコンテンツ ページからの関連部分のみ、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>制御と静的な接続します。 コード例とをそれらを設定する方法の説明を実行するために必要な他のページのセクションの例を参照してください、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>クラスの概要です。  
+  
+ 次のコードは、コンテンツ ページを宣言する、`<staticconnections>`の子要素として、`<asp:proxywebpartmanager>`要素。 またを注意してください、`Button1_Click`メソッドの数をチェックする、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.StaticConnections%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>を制御し、ページに書き込みます。  
+  
+ [!code-aspx-csharp[WebParts_ProxyWebPartManager_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ProxyWebPartManager_Overview/CS/contentPage1CS.aspx#2)]
+ [!code-aspx-vb[WebParts_ProxyWebPartManager_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ProxyWebPartManager_Overview/VB/contentPage1VB.aspx#2)]  
+  
+ ブラウザーでページを読み込んだ後、 **WebPartManager 情報**ボタンをクリックし、についての情報を確認、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>マスター ページで、コントロールと<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>コンテンツ ページのコントロールです。 両方があること、同じ数に対応するプロパティを静的な接続を追跡するメモなど、(、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.StaticConnections%2A>プロパティ)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public override bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値が割り当てられていることを防ぐための基本プロパティをオーバーライドします。</summary>
+        <value>常に返します<see langword="false" />コントロールが表示されないようにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager.Visible%2A>プロパティを防ぐための基本プロパティをオーバーライドします<xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>表示が行われるコントロール。 <xref:System.Web.UI.WebControls.WebParts.ProxyWebPartManager>制御と同様に、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>制御をユーザー インターフェイス (UI) を持たず、ユーザーには表示されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">呼び出し元は、このプロパティに値を代入しようとします。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

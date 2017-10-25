@@ -1,0 +1,59 @@
+<Type Name="IQueryable&lt;T&gt;" FullName="System.Linq.IQueryable&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface IQueryable&lt;out T&gt; : System.Collections.Generic.IEnumerable&lt;out T&gt;, System.Linq.IQueryable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IQueryable`1&lt;+ T&gt; implements class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.IEnumerable, class System.Linq.IQueryable" />
+  <TypeSignature Language="DocId" Value="T:System.Linq.IQueryable`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Linq.Expressions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <ParameterAttribute>Covariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Linq.IQueryable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T">データ ソース内のデータの型。</typeparam>
+    <summary>データの型がわかっている特定のデータ ソースに対するクエリを評価する機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Linq.IQueryable%601>インターフェイスは、クエリ プロバイダーで実装するためです。  
+  
+ このインターフェイスが継承、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスを表している場合、クエリ、そのクエリの結果を列挙することができます。 列挙体に関連付けられている式ツリーを強制する、<xref:System.Linq.IQueryable%601>を実行するオブジェクト。 列挙可能な結果を返さないクエリが実行されるときに、<xref:System.Linq.IQueryProvider.Execute%60%601%28System.Linq.Expressions.Expression%29>メソッドが呼び出されます。  
+  
+ 「式ツリーの実行」の定義は、クエリ プロバイダーに固有です。 たとえば、基になるデータ ソースの適切なクエリ言語を式ツリーを変換する必要可能性があります。  
+  
+ <xref:System.Linq.IQueryable%601>インターフェイスをポリモーフィックでクエリを有効にします。 つまり、ために対するクエリ、`IQueryable`データ ソースは、式のツリーとして表される、さまざまな種類のデータ ソースに対して実行できます。  
+  
+ `static` (`Shared` Visual Basic で) クラスで定義されているメソッド<xref:System.Linq.Queryable>(除く<xref:System.Linq.Queryable.AsQueryable%2A>、 <xref:System.Linq.Queryable.ThenBy%2A>、および<xref:System.Linq.Queryable.ThenByDescending%2A>) を実装する型のオブジェクトを拡張、<xref:System.Linq.IQueryable%601>インターフェイスです。  
+  
+ LINQ プロバイダーを作成する方法の詳細については、次を参照してください。 [LINQ: IQueryable プロバイダーのビルド](http://go.microsoft.com/fwlink/?LinkID=112370)MSDN ブログ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

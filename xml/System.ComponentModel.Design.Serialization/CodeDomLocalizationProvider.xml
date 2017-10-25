@@ -1,0 +1,151 @@
+<Type Name="CodeDomLocalizationProvider" FullName="System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider">
+  <TypeSignature Language="C#" Value="public sealed class CodeDomLocalizationProvider : IDisposable, System.ComponentModel.Design.Serialization.IDesignerSerializationProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CodeDomLocalizationProvider extends System.Object implements class System.ComponentModel.Design.Serialization.IDesignerSerializationProvider, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Design.Serialization.IDesignerSerializationProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>リソースの CodeDOM シリアル化サービスを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider>クラスは、ローカライズ機能を提供するシリアル化プロバイダー。 経由でリソースへのシリアル化をサポートしている<xref:System.ComponentModel.Design.IResourceService>、2 つのプロパティをルート コンポーネントが追加されます:`Language`と`Localizable`です。 場合`Localizable`に設定されている`true`、このプロバイダーは、コンポーネントのプロパティが生成され、その値をリソース ファイルにルーティングする方法を変更します。 2 つのローカリゼーション モデルがサポートされます。  
+  
+ 提供されているカルチャとコンス トラクターのパラメーターでのローカライズのスタイルを制御できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeDomLocalizationProvider (IServiceProvider provider, System.ComponentModel.Design.Serialization.CodeDomLocalizationModel model);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider provider, valuetype System.ComponentModel.Design.Serialization.CodeDomLocalizationModel model) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider.#ctor(System.IServiceProvider,System.ComponentModel.Design.Serialization.CodeDomLocalizationModel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="model" Type="System.ComponentModel.Design.Serialization.CodeDomLocalizationModel" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IServiceProvider" />ローカリゼーション プロバイダーにエクステンダー プロパティを追加するために使用します。</param>
+        <param name="model">A <see cref="T:System.ComponentModel.Design.Serialization.CodeDomLocalizationModel" /> CodeDOM リソース アダプターによって使用されるローカリゼーション モデルを示す値</param>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider.%23ctor%2A>コンス トラクターは、新しいアダプターを作成し、シリアル化マネージャーに結び付けます。 これ自体をシリアル化マネージャーにリソースのシリアライザーとして追加し、既に追加されていない場合、追加自体の拡張プロバイダーとしてルート コンポーネントをします。  
+  
+ 場合、`model`パラメーターではありません<xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationModel.None>、<xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider>提供、`Language`と`Localizable`プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeDomLocalizationProvider (IServiceProvider provider, System.ComponentModel.Design.Serialization.CodeDomLocalizationModel model, System.Globalization.CultureInfo[] supportedCultures);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider provider, valuetype System.ComponentModel.Design.Serialization.CodeDomLocalizationModel model, class System.Globalization.CultureInfo[] supportedCultures) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider.#ctor(System.IServiceProvider,System.ComponentModel.Design.Serialization.CodeDomLocalizationModel,System.Globalization.CultureInfo[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="model" Type="System.ComponentModel.Design.Serialization.CodeDomLocalizationModel" />
+        <Parameter Name="supportedCultures" Type="System.Globalization.CultureInfo[]" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IServiceProvider" />ローカリゼーション プロバイダーにエクステンダー プロパティを追加するために使用します。</param>
+        <param name="model">A <see cref="T:System.ComponentModel.Design.Serialization.CodeDomLocalizationModel" /> CodeDOM リソース アダプターによって使用されるローカリゼーション モデルを示す値</param>
+        <param name="supportedCultures">このリソースのアダプターをサポートするカルチャの配列。</param>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider.%23ctor%2A>コンス トラクターは、新しいアダプターを作成し、シリアル化マネージャーに結び付けます。 これ自体をシリアル化マネージャーにリソースのシリアライザーとして追加し、既に追加されていない場合、追加自体の拡張プロバイダーとしてルート コンポーネントをします。  
+  
+ 場合、`model`パラメーターではありません<xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationModel.None>、<xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider>提供、`Language`と`Localizable`プロパティです。  
+  
+ 場合`supportedCultures`が提供されていない場合、既定値は、コンピューターに現在インストールされているすべてのカルチャ。 カルチャの配列を指定すると、コンピューターにインストールされていないカルチャが含まれている場合は、これらのカルチャは使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationProvider.GetSerializer">
+      <MemberSignature Language="C#" Value="object IDesignerSerializationProvider.GetSerializer (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object currentSerializer, Type objectType, Type serializerType);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.Design.Serialization.IDesignerSerializationProvider.GetSerializer(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object currentSerializer, class System.Type objectType, class System.Type serializerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider.System#ComponentModel#Design#Serialization#IDesignerSerializationProvider#GetSerializer(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object,System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="currentSerializer" Type="System.Object" />
+        <Parameter Name="objectType" Type="System.Type" />
+        <Parameter Name="serializerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアライザーを要求するシリアル化マネージャー。</param>
+        <param name="currentSerializer">指定した型の現在のシリアライザーのインスタンス。 これは、<see langword="null" />指定した型のシリアライザーが存在しない場合。</param>
+        <param name="objectType">シリアル化するオブジェクトのデータ型。</param>
+        <param name="serializerType">作成するシリアライザーのデータ型。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.Design.Serialization.IDesignerSerializationProvider.GetSerializer(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object,System.Type,System.Type)" />」をご覧ください。</summary>
+        <returns>要求された型のシリアライザーのインスタンスまたは<see langword="null" />場合は、要求を満たすことはできません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider> のインスタンスが <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

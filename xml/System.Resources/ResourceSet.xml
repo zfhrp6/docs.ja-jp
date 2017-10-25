@@ -1,0 +1,694 @@
+<Type Name="ResourceSet" FullName="System.Resources.ResourceSet">
+  <TypeSignature Language="C#" Value="public class ResourceSet : IDisposable, System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ResourceSet extends System.Object implements class System.Collections.IEnumerable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.ResourceSet" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ある特定のカルチャ用にローカライズされたすべてのリソースを格納します。フォールバック規則を含む他のすべてのカルチャ設定は無視されます。  
+  
+ **セキュリティに関する注意**: セキュリティ上のリスクは、信頼できないデータをこのクラスのメソッドを呼び出すことです。 信頼されたデータだけクラスでメソッドを呼び出します。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](https://docs.com/rick-anderson-1/8710/untrusted-data-security-risks)です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResourceSet>クラスを列挙、 <xref:System.Resources.IResourceReader>、すべての名前と値を読み込み、格納することで、<xref:System.Collections.Hashtable>です。 カスタム<xref:System.Resources.IResourceReader>使用できます。  
+  
+ インスタンス化することができます、<xref:System.Resources.ResourceSet>を呼び出すことによって、特定のカルチャのリソースを表すオブジェクト、<xref:System.Resources.ResourceManager.GetResourceSet%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生クラスの<see cref="T:System.Resources.ResourceSet" />独自リソース リーダーを使用して、ライターをオーバーライドする必要があります<see cref="M:System.Resources.ResourceSet.GetDefaultReader" />、および<see cref="M:System.Resources.ResourceSet.GetDefaultWriter" />、リソース セットを解釈するための適切な機能を提供します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ResourceSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Resources.ResourceSet" /> クラスの新しいインスタンスを、既定のプロパティを使用して初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceSet (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み取るリソースの <see cref="T:System.IO.Stream" />。 ストリームは、既存のリソース ファイルを参照している必要があります。</param>
+        <summary><see cref="T:System.Resources.ResourceSet" /> クラスの新しいインスタンスを、指定したストリームからリソースを読み取るシステムの既定の <see cref="T:System.Resources.ResourceReader" /> を使用して作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="stream" />読み取ることができません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stream" /> パラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceSet (System.Resources.IResourceReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Resources.IResourceReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.#ctor(System.Resources.IResourceReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Resources.IResourceReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">使用するリーダー。</param>
+        <summary><see cref="T:System.Resources.ResourceSet" /> クラスの新しいインスタンスを、指定したリソース リーダーを使用して作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用するには、ユーザー指定を使用してカスタムのリソース形式をサポートする<xref:System.Resources.IResourceReader>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="reader" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceSet (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">読み取るリソース ファイル。</param>
+        <summary><see cref="T:System.Resources.ResourceSet" /> クラスの新しいインスタンスを、指定したファイルを開いてリソースを読み取るシステムの既定の <see cref="T:System.Resources.ResourceReader" /> を使用して作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを定義、<xref:System.Resources.ResourceSet>特定のファイルのクラスは、そのファイルで使用されているリソースを反復処理し、その内容をコンソールに表示します。  
+  
+ [!code-cpp[System.Resources.ResourceSet.GetEnumerator#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Resources.ResourceSet.GetEnumerator/CPP/getenumerator.cpp#1)]
+ [!code-csharp[System.Resources.ResourceSet.GetEnumerator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Resources.ResourceSet.GetEnumerator/CS/getenumerator.cs#1)]
+ [!code-vb[System.Resources.ResourceSet.GetEnumerator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Resources.ResourceSet.GetEnumerator/VB/getenumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="fileName" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public virtual void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Resources.ResourceSet" /> が使用するすべてのリソースを閉じて解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上のメソッドへのすべての呼び出し、<xref:System.Resources.ResourceSet>後、このメソッドの呼び出しが失敗する可能性があります。  
+  
+ <xref:System.Resources.ResourceSet.Close%2A>安全に複数回呼び出します。  
+  
+> [!NOTE]
+>  現在の実装<xref:System.Resources.ResourceSet.Close%2A>呼び出し<xref:System.Resources.ResourceSet.Dispose%2A>(`true`)。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Resources.ResourceSet.Close%2A>を呼び出し元によって使用されるすべてのリソースを解放するメソッド<xref:System.Resources.ResourceSet>インスタンス。  
+  
+ [!code-cpp[System.Resources.ResourceSet.GetEnumerator#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Resources.ResourceSet.GetEnumerator/CPP/getenumerator.cpp#1)]
+ [!code-csharp[System.Resources.ResourceSet.GetEnumerator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Resources.ResourceSet.GetEnumerator/CS/getenumerator.cs#1)]
+ [!code-vb[System.Resources.ResourceSet.GetEnumerator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Resources.ResourceSet.GetEnumerator/VB/getenumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Resources.ResourceSet" /> の現在のインスタンスで使用されていたリソース (メモリを除く) を破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResourceSet.Dispose%2A> を使い終わったら <xref:System.Resources.ResourceSet> を呼び出します。 <xref:System.Resources.ResourceSet.Dispose%2A> メソッドによって、<xref:System.Resources.ResourceSet> は使用不可の状態になります。 呼び出した後<xref:System.Resources.ResourceSet.Dispose%2A>、すべての参照を解放する必要があります、<xref:System.Resources.ResourceSet>が使用していたメモリをガベージ コレクションによって再要求できるようにします。  
+  
+> [!NOTE]
+>  現在のメソッドの実装は、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>です。 この実装を呼び出す<xref:System.Resources.ResourceSet.Dispose%2A>(`true`)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">現在のインスタンスに格納されているオブジェクトを明示的に閉じるかどうかを示します。</param>
+        <summary>現在のインスタンスに関連付けられたリソース (メモリを除く) を解放し、要求された場合には内部マネージ オブジェクトを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`dispose`パラメーターは`true`、現在のメソッドとそれに関連付けられているすべてのオブジェクトと関連付けられているすべてのリソースを解放します。 場合`dispose`は`false`、現在のメソッドに、割り当てられたリソースだけを解放し、それに関連付けられているオブジェクトを無視します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultReader">
+      <MemberSignature Language="C#" Value="public virtual Type GetDefaultReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetDefaultReader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.GetDefaultReader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この種類の <see cref="T:System.Resources.ResourceSet" /> で優先的に使用するリソース リーダー クラスを返します。</summary>
+        <returns>この種類の <see cref="T:System.Resources.ResourceSet" /> で優先的に使用するリソース リーダーの <see cref="T:System.Type" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスの<see cref="T:System.Resources.ResourceSet" />独自リソース リーダーを使用してオーバーライドする必要があります<see cref="M:System.Resources.ResourceSet.GetDefaultReader" />、および<see cref="M:System.Resources.ResourceSet.GetDefaultWriter" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultWriter">
+      <MemberSignature Language="C#" Value="public virtual Type GetDefaultWriter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetDefaultWriter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.GetDefaultWriter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この種類の <see cref="T:System.Resources.ResourceSet" /> で優先的に使用するリソース ライター クラスを返します。</summary>
+        <returns>この種類の <see cref="T:System.Resources.ResourceSet" /> で優先的に使用するリソース ライターの <see cref="T:System.Type" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスの<see cref="T:System.Resources.ResourceSet" />独自リソース リーダーを使用してオーバーライドする必要があります<see cref="M:System.Resources.ResourceSet.GetDefaultReader" />、および<see cref="M:System.Resources.ResourceSet.GetDefaultWriter" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IDictionaryEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionaryEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Resources.ResourceSet" /> を反復処理できる <see cref="T:System.Collections.IDictionaryEnumerator" /> を返します。</summary>
+        <returns>この <see cref="T:System.Resources.ResourceSet" /> の <see cref="T:System.Collections.IDictionaryEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子は、コレクション内のデータの読み取りのみ許可します。 列挙子を使用して、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。 この位置で、呼び出す<xref:System.Collections.IEnumerator.Current%2A>例外をスローします。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ コレクションの末尾を過ぎると、列挙子はコレクションの最後の要素の後ろに配置され、<xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出すと `false` が返されます。 場合は、最後の呼び出し<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、呼び出し元<xref:System.Collections.IEnumerator.Current%2A>例外をスローします。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションの変更が加えられた場合など、追加すると、要素、変更、削除、列挙子は回復不可能と、次の呼び出しに<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>スロー、<xref:System.InvalidOperationException>です。 コレクションが <xref:System.Collections.IEnumerator.MoveNext%2A> と <xref:System.Collections.IEnumerator.Current%2A> の間で変更された場合は、列挙子が既に無効になっていても、<xref:System.Collections.IEnumerator.Current%2A> は設定した要素を返します。  
+  
+ 使用することができます、<xref:System.Collections.IDictionaryEnumerator.Entry%2A?displayProperty=nameWithType>プロパティの現在の要素に格納されている値にアクセスします。 使用して、<xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType>プロパティの現在の要素のキーにアクセスします。 使用して、<xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType>プロパティを現在の要素の値にアクセスします。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 コレクションが同期されている場合でも、他のスレッドがコレクションを変更する、これにより、列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、 <xref:System.Resources.ResourceSet> `rs`ファイルの`items.resources`します。 次に、<xref:System.Resources.ResourceSet.GetEnumerator%2A>メソッドの使用を作成、<xref:System.Collections.IDictionaryEnumerator>の`rs`します。 <xref:System.Collections.IDictionaryEnumerator>を反復処理`rs`内容、コンソールに表示するとします。  
+  
+ [!code-cpp[System.Resources.ResourceSet.GetEnumerator#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Resources.ResourceSet.GetEnumerator/CPP/getenumerator.cpp#1)]
+ [!code-csharp[System.Resources.ResourceSet.GetEnumerator#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Resources.ResourceSet.GetEnumerator/CS/getenumerator.cs#1)]
+ [!code-vb[System.Resources.ResourceSet.GetEnumerator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Resources.ResourceSet.GetEnumerator/VB/getenumerator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">リソース セットが閉じられたか、破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject">
+      <MemberSignature Language="C#" Value="public virtual object GetObject (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetObject(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.GetObject(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するリソースの大文字と小文字を区別した名前。</param>
+        <summary>指定した名前のリソース オブジェクトを検索します。</summary>
+        <returns>要求されたリソース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソース オブジェクトの名前は大文字小文字を区別します。 大文字と小文字の検索を使用して<xref:System.Resources.ResourceSet.GetObject%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトが閉じているか、破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject">
+      <MemberSignature Language="C#" Value="public virtual object GetObject (string name, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetObject(string name, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.GetObject(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するリソースの名前。</param>
+        <param name="ignoreCase">指定した名前の大文字と小文字の区別を無視するかどうかを示します。</param>
+        <summary>要求された場合に、大文字と小文字を区別せずに、指定した名前のリソース オブジェクトを検索します。</summary>
+        <returns>要求されたリソース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、`ignoreCase`パラメーターは`true`、「リソース」という名前のリソースは「リソース」という名前のリソースに相当します。 ただし、このメソッドは、大文字と小文字の文字列比較を行うを常に実行<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>です。 このメソッドによって実行される大文字と小文字の文字列比較の結果がカルチャに関係なくすべてのコンピューターで同じである場合は。 欠点は、結果は、すべてのカルチャの大文字小文字の規則と一致しません。  
+  
+ たとえば、トルコ語のアルファベットがドットに I の文字の 2 つのバージョンとドットのない 1 つです。 トルコ語では、文字 I (Unicode 0049) と見なされます ı (Unicode 0131) 別の文字の大文字バージョン。 文字 (Unicode 0069) i は、さらに別の文字 İ (Unicode 0130) の小文字版と見なされます。 これらの大文字と小文字の規則、大文字と小文字の文字列の比較に従って文字 i (Unicode 0069) と手動 (Unicode 0049) が失敗する、カルチャ"TR-TR"(トルコのトルコ語) をします。 使用して、`GetObject`メソッドを`ignoreCase`'éý' `true`、この比較は成功します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトが閉じているか、破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetString">
+      <MemberSignature Language="C#" Value="public virtual string GetString (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetString(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.GetString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するリソースの名前。</param>
+        <summary>指定した名前の <see cref="T:System.String" /> リソースを検索します。</summary>
+        <returns>値が <see cref="T:System.String" /> の場合は、リソースの値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">指定されたリソース<paramref name="name" />されませんが、<see cref="T:System.String" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトが閉じているか、破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetString">
+      <MemberSignature Language="C#" Value="public virtual string GetString (string name, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetString(string name, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.GetString(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するリソースの名前。</param>
+        <param name="ignoreCase">指定した名前の大文字と小文字の区別を無視するかどうかを示します。</param>
+        <summary>要求された場合に、大文字と小文字を区別せずに、指定した名前の <see cref="T:System.String" /> リソースを検索します。</summary>
+        <returns>値が <see cref="T:System.String" /> の場合は、リソースの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、`ignoreCase`パラメーターは`true`、「リソース」という名前のリソースは「リソース」という名前のリソースに相当します。 ただし、このメソッドは、大文字と小文字の文字列比較を行うを常に実行<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>です。 このメソッドによって実行される大文字と小文字の文字列比較の結果がカルチャに関係なくすべてのコンピューターで同じである場合は。 欠点は、結果は、すべてのカルチャの大文字小文字の規則と一致しません。  
+  
+ たとえば、トルコ語のアルファベットがドットに I の文字の 2 つのバージョンとドットのない 1 つです。 トルコ語では、文字 I (Unicode 0049) と見なされます ı (Unicode 0131) 別の文字の大文字バージョン。 文字 (Unicode 0069) i は、さらに別の文字 İ (Unicode 0130) の小文字版と見なされます。 これらの大文字と小文字の規則、大文字と小文字の文字列の比較に従って文字 i (Unicode 0069) と手動 (Unicode 0049) が失敗する、カルチャ"TR-TR"(トルコのトルコ語) をします。 使用して、`GetString`メソッドを`ignoreCase`'éý' `true`、この比較は成功します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">指定されたリソース<paramref name="name" />されませんが、<see cref="T:System.String" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトが閉じているか、破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reader">
+      <MemberSignature Language="C#" Value="protected System.Resources.IResourceReader Reader;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Resources.IResourceReader Reader" />
+      <MemberSignature Language="DocId" Value="F:System.Resources.ResourceSet.Reader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Resources.IResourceReader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースを読み取るときに使用する <see cref="T:System.Resources.IResourceReader" /> を示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadResources">
+      <MemberSignature Language="C#" Value="protected virtual void ReadResources ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ReadResources() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.ReadResources" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのリソースを読み取り、<see cref="F:System.Resources.ResourceSet.Table" /> プロパティが示す <see cref="T:System.Collections.Hashtable" /> に格納します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスの<see cref="T:System.Resources.ResourceSet" />明示的に呼び出す必要があります<see cref="M:System.Resources.ResourceSet.ReadResources" />からすべてのリソースを読み込む、<see cref="T:System.Resources.IResourceReader" />に<see cref="F:System.Resources.ResourceSet.Table" />、一般に、コンス トラクターで、または遅延を最初に呼び出していずれかに<see cref="M:System.Resources.ResourceSet.GetString(System.String)" />または<see cref="M:System.Resources.ResourceSet.GetObject(System.String)" />です。 ただし、リソース セットは、クラスに既に他の情報であるし、した場合より効率的に負荷が少しのリソースを選択する、この手順をスキップすることができます。 ワーキング セットを最小限に抑えるには、アプリケーションによって要求されたリソース値のみをクラスを照会するように、リソース セットを作成します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceSet.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see langword="Dispose" /> との競合状態を避けるために、<see cref="T:System.Collections.IEnumerator" /> オブジェクトを返します。 このメンバーは、コードで直接使用するためのものではありません。</summary>
+        <returns>現在の <see cref="T:System.Resources.ResourceSet" /> オブジェクトの列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="protected System.Collections.Hashtable Table;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Collections.Hashtable Table" />
+      <MemberSignature Language="DocId" Value="F:System.Resources.ResourceSet.Table" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースを格納する <see cref="T:System.Collections.Hashtable" />。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

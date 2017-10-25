@@ -1,0 +1,80 @@
+<Type Name="EventHandlerTaskAsyncHelper" FullName="System.Web.EventHandlerTaskAsyncHelper">
+  <TypeSignature Language="C#" Value="public sealed class EventHandlerTaskAsyncHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventHandlerTaskAsyncHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.EventHandlerTaskAsyncHelper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET の以前のバージョンで使用される非同期プログラミング モデルを使用して、ベースのメソッドを非同期メソッドの開始し、終了イベントのタスクを返すに変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 4.5 での非同期タスクを処理すると、タスクを返すロジックを実装する、<xref:System.Web.TaskEventHandler>を委任します。 タスク ベースの非同期プログラミングのこのモデルには、以前のバージョンの ASP.NET のすべてのイベント処理の開始し、終了イベントは、どのベースで使用されるモデルがより優先されます。 実装した後、<xref:System.Web.TaskEventHandler>デリゲートを渡すことができますしに、<xref:System.Web.EventHandlerTaskAsyncHelper.%23ctor%2A>タスクを返すロジックをラップし、モデルの使用を開始し、終了イベントにハンドラーを変換するコンス トラクターです。 <xref:System.Web.EventHandlerTaskAsyncHelper>クラスにより、 <xref:System.Web.TaskEventHandler> ASP.NET ページ フレームワークと互換性があるオブジェクト。 呼び出すと、<xref:System.Web.UI.Page.AddOnPreRenderCompleteAsync%2A>非同期ページのタスクを処理するメソッドを使用できます、<xref:System.Web.EventHandlerTaskAsyncHelper.BeginEventHandler%2A>と<xref:System.Web.EventHandlerTaskAsyncHelper.EndEventHandler%2A>メソッドに変換後の開始とイベント ハンドラーを渡すプロパティをします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventHandlerTaskAsyncHelper (System.Web.TaskEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.TaskEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.EventHandlerTaskAsyncHelper.#ctor(System.Web.TaskEventHandler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Web.TaskEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="handler">非同期タスク。</param>
+        <summary><see cref="T:System.Web.EventHandlerTaskAsyncHelper" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginEventHandler">
+      <MemberSignature Language="C#" Value="public System.Web.BeginEventHandler BeginEventHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.BeginEventHandler BeginEventHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.EventHandlerTaskAsyncHelper.BeginEventHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.BeginEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.BeginEventHandler" />非同期タスクのメソッドです。</summary>
+        <value>非同期タスクの開始イベントを処理するメソッド。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndEventHandler">
+      <MemberSignature Language="C#" Value="public System.Web.EndEventHandler EndEventHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.EndEventHandler EndEventHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.EventHandlerTaskAsyncHelper.EndEventHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.EndEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表す、<see cref="T:System.Web.EndEventHandler" />非同期タスクのメソッドです。</summary>
+        <value>非同期タスクの終了イベントを処理するメソッド。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

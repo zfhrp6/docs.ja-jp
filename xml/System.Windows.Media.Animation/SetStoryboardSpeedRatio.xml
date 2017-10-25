@@ -1,0 +1,80 @@
+<Type Name="SetStoryboardSpeedRatio" FullName="System.Windows.Media.Animation.SetStoryboardSpeedRatio">
+  <TypeSignature Language="C#" Value="public sealed class SetStoryboardSpeedRatio : System.Windows.Media.Animation.ControllableStoryboardAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SetStoryboardSpeedRatio extends System.Windows.Media.Animation.ControllableStoryboardAction" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.SetStoryboardSpeedRatio" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.ControllableStoryboardAction</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>速度を変更するトリガー アクション、<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio>アクションが、<xref:System.Windows.EventTrigger>または<xref:System.Windows.Trigger>をストーリー ボードの速度比率を対話的に制御します。  
+  
+ 使用して、<xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio.SpeedRatio%2A>プロパティ<xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio>新しいを指定する<xref:System.Windows.Media.Animation.Storyboard>古いアニメーションの速度の比率としてアニメーションの速度です。 設定する場合など、<xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio.SpeedRatio%2A>の速度を 2 倍を 2 に、<xref:System.Windows.Media.Animation.Storyboard>アニメーションを 50% 速度を低下させる 0.5 の値を設定した場合とします。  
+  
+ このオブジェクトに影響を与える、<xref:System.Windows.Media.Animation.Storyboard>で後にいつでも、<xref:System.Windows.Media.Animation.Storyboard>を開始します。 一時停止する場合など、<xref:System.Windows.Media.Animation.Storyboard>を使用して、<xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio>を再開すると、 <xref:System.Windows.Media.Animation.Storyboard>、新しい速度比率を使用します。  
+  
+ <xref:System.Windows.Media.Animation.PauseStoryboard>機能を制御しません、<xref:System.Windows.Media.Animation.Storyboard>直接です。 代わりに、<xref:System.Windows.Media.Animation.PauseStoryboard>参照する必要があります、<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>の<xref:System.Windows.Media.Animation.BeginStoryboard>、どのコントロール、<xref:System.Windows.Media.Animation.Storyboard>です。  
+  
+## <a name="pause-resume-stop-or-otherwise-control-a-storyboard-interactively"></a>一時停止、再開、停止、またはそれ以外の場合、ストーリー ボードを対話的に制御  
+ 一時停止するには、再開、またはその他の制御、<xref:System.Windows.Media.Animation.BeginStoryboard.Storyboard%2A>対話的に設定、<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>のプロパティ、<xref:System.Windows.Media.Animation.BeginStoryboard>を使用して、<xref:System.Windows.Media.Animation.ControllableStoryboardAction>オブジェクト (など<xref:System.Windows.Media.Animation.PauseStoryboard>、 <xref:System.Windows.Media.Animation.ResumeStoryboard>、または<xref:System.Windows.Media.Animation.StopStoryboard>) を参照することで制御するその<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>です。 場合、<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>の<xref:System.Windows.Media.Animation.BeginStoryboard>は指定されていない、<xref:System.Windows.Media.Animation.BeginStoryboard.Storyboard%2A>を開始した後に対話的に制御できません。 参照してください[する方法: イベント トリガーを使用して、ストーリー ボードの後に開始を制御する](~/docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)詳細についてはします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SetStoryboardSpeedRatio ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SetStoryboardSpeedRatio.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.SetStoryboardSpeedRatio" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeedRatio">
+      <MemberSignature Language="C#" Value="public double SpeedRatio { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SpeedRatio" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.SetStoryboardSpeedRatio.SpeedRatio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい設定を取得または<see cref="T:System.Windows.Media.Animation.Storyboard" />古いアニメーションの速度の比率としてアニメーションの速度です。</summary>
+        <value>速度比率、<see cref="T:System.Windows.Media.Animation.Storyboard" />です。 既定値は 1.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、新しい<xref:System.Windows.Media.Animation.Storyboard>古いアニメーションの速度の比率としてアニメーションの速度です。 設定する場合など、<xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio.SpeedRatio%2A>の速度を 2 倍を 2 に、<xref:System.Windows.Media.Animation.Storyboard>アニメーションを 50% 速度を低下させる 0.5 の値を設定した場合とします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

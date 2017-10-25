@@ -1,0 +1,89 @@
+<Type Name="IMemoryCacheManager" FullName="System.Runtime.Caching.Hosting.IMemoryCacheManager">
+  <TypeSignature Language="C#" Value="public interface IMemoryCacheManager" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMemoryCacheManager" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.Hosting.IMemoryCacheManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>キャッシュをホスト環境にキャッシュ メモリ使用量を通信するために使用するインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.Hosting.IMemoryCacheManager>インターフェイスは、ASP.NET などのホスト環境によって実装され、によって使用される<xref:System.Runtime.Caching.ObjectCache>実装メモリ使用量を決定するホスト環境と対話する必要があります。 キャッシュは多くの場合、大量のメモリを使用するので、<xref:System.Runtime.Caching.Hosting.IMemoryCacheManager>インターフェイスにより、ホスト環境のメモリ使用量を管理します。  
+  
+ 通常、のみ<xref:System.Runtime.Caching.ObjectCache>メモリ内キャッシュ オブジェクトの管理の実装はこのインターフェイスを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ReleaseCache">
+      <MemberSignature Language="C#" Value="public void ReleaseCache (System.Runtime.Caching.MemoryCache cache);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReleaseCache(class System.Runtime.Caching.MemoryCache cache) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.Hosting.IMemoryCacheManager.ReleaseCache(System.Runtime.Caching.MemoryCache)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cache" Type="System.Runtime.Caching.MemoryCache" />
+      </Parameters>
+      <Docs>
+        <param name="cache">キャッシュへの参照。</param>
+        <summary>ホスト環境で、キャッシュへのすべての参照を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュが以前登録された自体では、ホスト環境の場合、キャッシュを呼び出すことができます、<xref:System.Runtime.Caching.Hosting.IMemoryCacheManager.ReleaseCache%2A>参照を解放します。 呼び出して、キャッシュが破棄されるときに、<xref:System.Runtime.Caching.Hosting.IMemoryCacheManager.ReleaseCache%2A>メソッドをホストでキャッシュへの参照が保持されていないことを確認してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCacheSize">
+      <MemberSignature Language="C#" Value="public void UpdateCacheSize (long size, System.Runtime.Caching.MemoryCache cache);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UpdateCacheSize(int64 size, class System.Runtime.Caching.MemoryCache cache) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.Hosting.IMemoryCacheManager.UpdateCacheSize(System.Int64,System.Runtime.Caching.MemoryCache)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Int64" />
+        <Parameter Name="cache" Type="System.Runtime.Caching.MemoryCache" />
+      </Parameters>
+      <Docs>
+        <param name="size">(バイト単位)、キャッシュを消費するメモリのサイズ。</param>
+        <param name="cache">キャッシュへの参照。</param>
+        <summary>現在のキャッシュのサイズを報告します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適切に動作のキャッシュ実装を使用する必要があります、<xref:System.Runtime.Caching.Hosting.IMemoryCacheManager.UpdateCacheSize%2A>ホスト環境に、キャッシュのメモリ使用量のサイズを定期的に報告するメソッド。  
+  
+ サイズに関するレポートのキャッシュ実装は、パラメーターとして自体への参照を渡します。 これにより、ホスト環境は、次のタスクを実行します。  
+  
+-   既知のオブジェクトのキャッシュのリストを保持します。  
+  
+-   キャッシュを呼び出し、必要がある場合、キャッシュがレポートのサイズに基づくキャッシュ アイテムの割合をトリミングことを依頼してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,56 @@
+<Type Name="ExecutedRoutedEventHandler" FullName="System.Windows.Input.ExecutedRoutedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ExecutedRoutedEventHandler(object sender, ExecutedRoutedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ExecutedRoutedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ExecutedRoutedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Input.ExecutedRoutedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Windows.Input.CommandBinding.Executed" />と<see cref="E:System.Windows.Input.CommandBinding.PreviewExecuted" />ルーティング イベントに関連する添付イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートには実装ロジックが含まれています、<xref:System.Windows.Input.RoutedCommand>です。  コマンドの実装ロジックを分離することにより、さまざまなソースと種類から呼び出されるコマンドと、コマンドのロジックの集中管理を有効にします。  
+  
+ このデリゲートにも使用<xref:System.Windows.Input.CommandManager.Executed?displayProperty=nameWithType>と<xref:System.Windows.Input.CommandManager.PreviewExecuted?displayProperty=nameWithType>にアタッチされるイベントは、<xref:System.Windows.Input.CommandManager>コマンド実行のインフラストラクチャの大半を実装するクラス。 最も実用的なハンドラーが処理されます、<xref:System.Windows.Input.CommandBinding.Executed>特定からのイベント<xref:System.Windows.Input.CommandBinding>ではなくで機能するよりも、<xref:System.Windows.Input.CommandManager>レベル。  
+  
+ 内で<xref:System.Windows.Input.ExecutedRoutedEventArgs>、次のプロパティは関心のある一般的には実行されたコマンドを実行した結果のルーティング イベントのイベント ハンドラーを記述する場合。  
+  
+-   <xref:System.Windows.RoutedEventArgs.Source%2A>コマンドが実行された対象を報告します。 見なすことも、コマンドを実行すると、<xref:System.Windows.RoutedEventArgs.Source%2A>複数通常でルーティング イベントの条件、ルーティングされたイベントを発生させたオブジェクトとして。  
+  
+-   <xref:System.Windows.Input.ExecutedRoutedEventArgs.Command%2A>実行コマンドを報告します。 このプロパティは、コマンドのショートカット キーを使用する場合、および可能性のある複数のコマンドを処理するハンドラーを記述する場合に便利です。  
+  
+-   <xref:System.Windows.Input.ExecutedRoutedEventArgs.Parameter%2A>実行中のコマンドで渡されたコマンド固有のパラメーターをレポートします。 すべてのコマンドを使用してまたはコマンド固有のパラメーターを想定します。  
+  
+-   <xref:System.Windows.RoutedEventArgs.Handled%2A>経路上の別の要素で、実行されるコマンドから生成されるルーティング イベントは処理されたかどうかを報告します。 ハンドラーを設定するイベントを処理するときに、意味のある作業を実行して推奨される方法は、ルーティングされたイベント ハンドラーを<xref:System.Windows.RoutedEventArgs.Handled%2A>に`true`です。 これを防止、イベントのハンドラーを一般的なイベントをもう一度経路さらに処理します。 ルーティング イベントを処理する方法の詳細については、次を参照してください。 [Handled、クラス処理とルーティング イベントをマーク](~/docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)です。  
+  
+ このデリゲート用のハンドラーを表すも<xref:System.Windows.Input.CommandManager.Executed?displayProperty=nameWithType>と<xref:System.Windows.Input.CommandManager.PreviewExecutedEvent?displayProperty=nameWithType>にアタッチされるイベントは、<xref:System.Windows.Input.CommandManager>コマンド実行のインフラストラクチャの大半を実装するクラス。 最も実用的なハンドラーが処理されます、<xref:System.Windows.Input.CommandBinding.Executed>特定からのイベント<xref:System.Windows.Input.CommandBinding>ではなくで機能するよりも、<xref:System.Windows.Input.CommandManager>レベル。  
+  
+ コマンド実行の詳細については、「[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ この例で作成、<xref:System.Windows.Input.ExecutedRoutedEventHandler>コマンドを実行すると、ターゲットの視覚プロパティを設定します。 例にも含まれています、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>同じコマンド。  
+  
+ [!code-csharp[Custom_RoutedCommand#Custom_RoutedCommandHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/Custom_RoutedCommand/CSharp/Window1.xaml.cs#custom_routedcommandhandlers)]
+ [!code-vb[Custom_RoutedCommand#Custom_RoutedCommandHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Custom_RoutedCommand/visualbasic/window1.xaml.vb#custom_routedcommandhandlers)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

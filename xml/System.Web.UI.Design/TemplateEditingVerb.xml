@@ -1,0 +1,229 @@
+<Type Name="TemplateEditingVerb" FullName="System.Web.UI.Design.TemplateEditingVerb">
+  <TypeSignature Language="C#" Value="public class TemplateEditingVerb : System.ComponentModel.Design.DesignerVerb, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TemplateEditingVerb extends System.ComponentModel.Design.DesignerVerb implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.TemplateEditingVerb" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.DesignerVerb</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Use of this type is not recommended because template editing is handled in ControlDesigner. To support template editing expose template data in the TemplateGroups property and call SetViewFlags(ViewFlags.TemplateEditing, true). http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テンプレート編集フレームを作成し、テンプレートのエディターによってのみ呼び出すことができますをデザイナー動詞を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.TemplateEditingVerb>クラスが廃止されています。 使用してテンプレートを公開、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのプロパティです。 デザイン ホストの作成、<xref:System.Web.UI.Design.TemplatedEditableDesignerRegion>各<xref:System.Web.UI.Design.TemplateGroup>コントロール デザイナーに対して定義されています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateEditingVerb (string text, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateEditingVerb.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="text">メニューの動詞を表示するテキスト。</param>
+        <param name="index">動詞のセット内の動詞のインデックスを示すために通常、デザイナーで使用できる省略可能な整数値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.TemplateEditingVerb" />指定された動詞テキストおよびインデックスを含むクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.TemplateEditingVerb>クラスが廃止されています。 使用してテンプレートを公開、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのプロパティです。 デザイン ホストの作成、<xref:System.Web.UI.Design.TemplatedEditableDesignerRegion>各<xref:System.Web.UI.Design.TemplateGroup>コントロール デザイナーに対して定義されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateEditingVerb (string text, int index, System.Web.UI.Design.TemplatedControlDesigner designer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, int32 index, class System.Web.UI.Design.TemplatedControlDesigner designer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateEditingVerb.#ctor(System.String,System.Int32,System.Web.UI.Design.TemplatedControlDesigner)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="designer" Type="System.Web.UI.Design.TemplatedControlDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="text">メニューの動詞を表示するテキスト。</param>
+        <param name="index">動詞のセット内の動詞のインデックスを示すために通常、デザイナーで使用できる省略可能な整数値。</param>
+        <param name="designer"><see cref="T:System.Web.UI.Design.TemplatedControlDesigner" />この動詞が使用することができます。</param>
+        <summary><see cref="T:System.Web.UI.Design.TemplateEditingVerb" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.TemplateEditingVerb>クラスが廃止されています。 使用してテンプレートを公開、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのプロパティです。 デザイン ホストの作成、<xref:System.Web.UI.Design.TemplatedEditableDesignerRegion>各<xref:System.Web.UI.Design.TemplateGroup>コントロール デザイナーに対して定義されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateEditingVerb.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Web.UI.Design.TemplateEditingVerb" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Web.UI.Design.TemplateEditingVerb.Dispose%2A>によりによって使用されるリソース、<xref:System.Web.UI.Design.TemplateEditingVerb>を他の目的に再割り当てされます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.TemplateEditingVerb>クラスが廃止されています。 使用してテンプレートを公開、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのプロパティです。 デザイン ホストの作成、<xref:System.Web.UI.Design.TemplatedEditableDesignerRegion>各<xref:System.Web.UI.Design.TemplateGroup>コントロール デザイナーに対して定義されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateEditingVerb.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Web.UI.Design.TemplateEditingVerb" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`'éý'`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに`disposing`は`true`、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Web.UI.Design.TemplateEditingVerb>参照します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <block subset="none" type="note">
+              <para>  
+ <see cref="T:System.Web.UI.Design.TemplateEditingVerb" />クラスが廃止されています。 使用してテンプレートを公開、<see cref="P:System.Web.UI.Design.ControlDesigner.TemplateGroups" />コントロール デザイナーのプロパティです。 デザイン ホストの作成、<see cref="T:System.Web.UI.Design.TemplatedEditableDesignerRegion" />各<see cref="T:System.Web.UI.Design.TemplateGroup" />コントロール デザイナーに対して定義されています。  
+  
+</para>
+            </block>
+            <see langword="Dispose" />複数回呼び出す他のオブジェクトから。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~TemplateEditingVerb ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateEditingVerb.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトがガベージ コレクションによって回収される前にリソースを解放しようとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.Finalize%2A?displayProperty=nameWithType>を呼び出してリソースをクリーンアップし、`Dispose(false)`です。 `Dispose(Boolean)` をオーバーライドしてクリーンアップをカスタマイズします。  
+  
+ アプリケーション コードではこのメソッドを呼び出す必要がありますいません。オブジェクトの`Finalize`への呼び出しによって、ガベージ コレクターによって終了処理が無効になっていない限り、ガベージ コレクション中にメソッドが自動的に起動、<xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 詳細については、次を参照してください。 [Finalize メソッドおよびデストラクター](http://msdn.microsoft.com/en-us/fd376774-1643-499b-869e-9546a3aeea70)、[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)、および[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.TemplateEditingVerb>クラスが廃止されています。 使用してテンプレートを公開、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのプロパティです。 デザイン ホストの作成、<xref:System.Web.UI.Design.TemplatedEditableDesignerRegion>各<xref:System.Web.UI.Design.TemplateGroup>コントロール デザイナーに対して定義されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Index">
+      <MemberSignature Language="C#" Value="public int Index { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Index" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateEditingVerb.Index" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動詞は、インデックスまたはその他のユーザー データを取得します。</summary>
+        <value>動詞のインデックスまたはユーザー データ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動詞のセット内の各動詞のインデックスの格納には、このプロパティは使用が場合があります。 カスタム デザイナーを実装する場合は、整数型のカスタム定義のデータを格納するこのプロパティを使用できます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.TemplateEditingVerb>クラスが廃止されています。 使用してテンプレートを公開、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>コントロール デザイナーのプロパティです。 デザイン ホストの作成、<xref:System.Web.UI.Design.TemplatedEditableDesignerRegion>各<xref:System.Web.UI.Design.TemplateGroup>コントロール デザイナーに対して定義されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

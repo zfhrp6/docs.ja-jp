@@ -1,0 +1,192 @@
+<Type Name="ExportAttribute" FullName="System.ComponentModel.Composition.ExportAttribute">
+  <TypeSignature Language="C#" Value="public class ExportAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExportAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.ExportAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型、プロパティ、フィールド、またはメソッドが特定のエクスポートを提供することを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性付きプログラミング モデルで、<xref:System.ComponentModel.Composition.ExportAttribute>部品がエクスポートを宣言したり、特定のコントラクトを実現するオブジェクト、合成コンテナーに提供します。 インポートが一致するコントラクトを使用してパーツは、構成時に、エクスポートされたオブジェクトで埋められた依存関係があります。  
+  
+ <xref:System.ComponentModel.Composition.ExportAttribute>クラス全体、またはプロパティ、フィールド、またはクラスのメソッドを装飾することができます。 クラス全体が装飾されている場合、クラスのインスタンスは、エクスポートされたオブジェクトです。 クラスのメンバーを装飾すると、エクスポートされたオブジェクトが修飾されたメンバーの値になります。  
+  
+ コントラクトが一致するかどうかは、主に、コントラクト名とコントラクトの型によって決定されます。 詳細については、「<xref:System.ComponentModel.Composition.ImportAttribute>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、3 つのクラスで修飾された、 <xref:System.ComponentModel.Composition.ExportAttribute>、およびそれに一致する次の 3 つのインポート。  
+  
+ [!code-csharp[ImportAndExport#1](~/samples/snippets/csharp/VS_Snippets_Misc/importandexport/cs/program.cs#1)]
+ [!code-vb[ImportAndExport#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/importandexport/vb/module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExportAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.ExportAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.ExportAttribute" />クラスがコントラクト名の下には、この属性でマークされた型またはメンバーをエクスポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド、プロパティまたはフィールドの種類またはこの属性でマークされている型。  
+  
+ この属性でマークされたメソッドがいずれかを使用してコントラクト名または型を指定する必要があります<xref:System.ComponentModel.Composition.ExportAttribute.%23ctor%28System.String%29>または<xref:System.ComponentModel.Composition.ExportAttribute.%23ctor%28System.Type%29>です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExportAttribute (string contractName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string contractName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.ExportAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contractName">型またはこの属性でマークされたメンバーをエクスポートするために使用されるコントラクト名または<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.ExportAttribute" />クラスが、指定したコントラクト名の下には、この属性でマークされた型またはメンバーをエクスポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド、プロパティまたはフィールド型で、またはこの属性でマークされているがこの型にします。  
+  
+ この属性でマークされたメソッドがいずれかを使用してコントラクト名または型を指定する必要があります<xref:System.ComponentModel.Composition.ExportAttribute.%23ctor%28System.String%29>または<xref:System.ComponentModel.Composition.ExportAttribute.%23ctor%28System.Type%29>です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExportAttribute (Type contractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type contractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.ExportAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="contractType">型またはこの属性でマークされたメンバーをエクスポートするために使用されるコントラクト名を派生元の型または<see langword="null" />コントラクト名を使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.ExportAttribute" />クラスが指定した型から派生したコントラクト名の下には、この属性でマークされた型またはメンバーをエクスポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド`contractType`です。  
+  
+ コントラクト名は、呼び出しの結果、<xref:System.ComponentModel.Composition.AttributedModelServices.GetContractName%2A>メソッド、プロパティまたはフィールドの種類またはこの属性でマークされている型。  
+  
+ この属性でマークされたメソッドがいずれかを使用してコントラクト名または型を指定する必要があります<xref:System.ComponentModel.Composition.ExportAttribute.%23ctor%28System.String%29>または<xref:System.ComponentModel.Composition.ExportAttribute.%23ctor%28System.Type%29>です。  
+  
+ 使用して、コントラクト名を比較、<xref:System.StringComparer.Ordinal%2A>大文字と小文字、非言語的な比較を実行するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExportAttribute (string contractName, Type contractType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string contractName, class System.Type contractType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.ExportAttribute.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contractName" Type="System.String" />
+        <Parameter Name="contractType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="contractName">型またはこの属性でマークされたメンバーをエクスポートするために使用されるコントラクト名または<see langword="null" />または空の文字列 ("")、コントラクト名を使用します。</param>
+        <param name="contractType">エクスポートする型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.ExportAttribute" />クラス、指定したコントラクトの名前で指定された型をエクスポートします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractName">
+      <MemberSignature Language="C#" Value="public string ContractName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContractName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.ExportAttribute.ContractName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型またはこの属性でマークされたメンバーをエクスポートするために使用されるコントラクト名を取得します。</summary>
+        <value>型またはメンバーをエクスポートするために使用されるコントラクト名は、この属性でマークします。 既定値は、空の文字列 ("") です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractType">
+      <MemberSignature Language="C#" Value="public Type ContractType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ContractType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.ExportAttribute.ContractType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性に関連付けられているメンバーによってエクスポートされたコントラクトの型を取得します。</summary>
+        <value>提供されているエクスポートの型。 既定値は<see langword="null" />型は、このエクスポートに関連付けられているメンバーの種類を調べることで取得ことを意味します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

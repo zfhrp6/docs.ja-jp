@@ -1,0 +1,79 @@
+<Type Name="IScriptControl" FullName="System.Web.UI.IScriptControl">
+  <TypeSignature Language="C#" Value="public interface IScriptControl" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IScriptControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IScriptControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>リソースを定義するように ECMAScript (JavaScript) アプリケーションの AJAX 対応の ASP.NET サーバー コントロールを実装する必要があるメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスのメソッドによって実装された場合、<xref:System.Web.UI.IScriptControl>インターフェイスは、クライアント コンポーネントを定義し、クライアントの種類のインスタンスを表す記述子のスクリプトを作成するスクリプト ライブラリへの参照を提供します。 スクリプト コントロールの機能を含めるカスタム サーバー コントロールには、このインターフェイスを実装します。  
+  
+ 詳細については、次を参照してください。 [、Web サーバー コントロールのクライアント機能の追加](http://msdn.microsoft.com/library/1d365cbe-1bde-4cef-9fe7-2cd04d3cbdea)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetScriptDescriptors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt; GetScriptDescriptors ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptDescriptor&gt; GetScriptDescriptors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IScriptControl.GetScriptDescriptors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ECMAScript (JavaScript) クライアント コンポーネントを表すスクリプト記述子のコレクションを取得します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" /> オブジェクトの <see cref="T:System.Web.UI.ScriptDescriptor" /> コレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネント、動作、またはサーバー コントロールを必要とする Microsoft Ajax ライブラリからのクライアントのコントロールを定義するには、このメソッドを実装します。 このメソッドを使用すると、Microsoft Ajax ライブラリ関数を宣言によって指定されたパラメーターを渡すことができます。  
+  
+ このメソッドを使用して、abstract を実装する必要がありますも<xref:System.Web.UI.ScriptDescriptor>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScriptReferences">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt; GetScriptReferences ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptReference&gt; GetScriptReferences() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IScriptControl.GetScriptReferences" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールに必要なスクリプト リソースを定義する <see cref="T:System.Web.UI.ScriptReference" /> オブジェクトのコレクションを取得します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" /> オブジェクトの <see cref="T:System.Web.UI.ScriptReference" /> コレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の Web アプリケーションの Scripts フォルダー内のスクリプトまたはアセンブリ内のリソースなど、サーバー コントロールに必要なカスタム スクリプト ライブラリの依存関係を定義するには、このメソッドを実装します。 Microsoft Ajax ライブラリからスクリプトをこの方法で登録する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

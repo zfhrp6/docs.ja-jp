@@ -1,0 +1,105 @@
+<Type Name="ActivatableWorkflowsQueryResult" FullName="System.Activities.DurableInstancing.ActivatableWorkflowsQueryResult">
+  <TypeSignature Language="C#" Value="public sealed class ActivatableWorkflowsQueryResult : System.Runtime.DurableInstancing.InstanceStoreQueryResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ActivatableWorkflowsQueryResult extends System.Runtime.DurableInstancing.InstanceStoreQueryResult" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DurableInstancing.ActivatableWorkflowsQueryResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.DurableInstancing.InstanceStoreQueryResult</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンス ストアに対して<see cref="T:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand" /> を実行した結果を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス ストアは、そのストアを使用するワークフロー ホストに属しているアクティブ化可能なワークフロー インスタンスを定期的に検索します。 永続化ストアにアクティブ化可能なインスタンスが見つかると、<xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> を発生させます。 永続化ストアにアクティブ化可能なインスタンスが見つからない場合は、永続化ストアでのアクティブ化可能なインスタンスの監視を続行します。  
+  
+ HasActivatableWorkflowEvent を発生させた場合は、<xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> を受け取って実行するまで、永続化ストアでのアクティブ化可能なインスタンスの監視を停止します。 このコマンドを実行してもアクティブ化可能なワークフロー インスタンスが返されない場合のみ、監視を続行します。  
+  
+ このイベントを受け取った汎用ホストは、インスタンス ストアに対して <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> を実行して、ワークフロー ホストの作成に必要なアクティブ化パラメーターを取得します。 これらのアクティブ化パラメーターを使用してワークフロー ホストを作成します。作成されたワークフロー ホストは、サービス インスタンスを読み込んで実行します。 WAS アクティブ化型のアクティブ化パラメーターは、サイト名、(サイトを基準とする) アプリケーション パス、および (アプリケーションを基準とする) サービス パスです。 インスタンス ストアは、これら 3 つのアクティブ化パラメーターの複数のセットを返すことがあります。  
+  
+ 汎用ホストはという XName パラメーターを持つホスト**ActivationType**、これは、インスタンス ストアでサポートされる値に設定してください。 現時点では、SQL Workflow Instance Store は ActivationType パラメーターの値を設定した汎用ホストをサポートしています: **WAS**です。 ActivationType が設定されていない場合、そのホストは汎用ホストと見なされます。  
+  
+> [!NOTE]
+>  ネーム"Dublin"(.NET 4.0 用アプリケーション サーバーの拡張) をコードに付属するワークフロー管理サービスが、ライセンス認証の種類に設定された汎用ホストは、 **WAS**です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivatableWorkflowsQueryResult ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DurableInstancing.ActivatableWorkflowsQueryResult.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Activities.DurableInstancing.ActivatableWorkflowsQueryResult" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivatableWorkflowsQueryResult (System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt; parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt; parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DurableInstancing.ActivatableWorkflowsQueryResult.#ctor(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">アクティブ化パラメーターを格納しているディクショナリ オブジェクト。</param>
+        <summary><see cref="T:System.Activities.DurableInstancing.ActivatableWorkflowsQueryResult" /> クラスのインスタンスを作成し、パラメーターとして渡されるディクショナリ オブジェクトのデータを使用して <see cref="P:System.Activities.DurableInstancing.ActivatableWorkflowsQueryResult.ActivationParameters" /> プロパティを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivatableWorkflowsQueryResult (System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt;&gt; parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt;&gt; parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DurableInstancing.ActivatableWorkflowsQueryResult.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object}})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">アクティブ化パラメーターを格納している列挙可能なディクショナリ オブジェクト。</param>
+        <summary><see cref="T:System.Activities.DurableInstancing.ActivatableWorkflowsQueryResult" /> クラスのインスタンスを作成し、パラメーターとして渡される列挙可能なディクショナリ オブジェクトのデータを使用して、<see cref="P:System.Activities.DurableInstancing.ActivatableWorkflowsQueryResult.ActivationParameters" /> プロパティを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivationParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt;&gt; ActivationParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt;&gt; ActivationParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.DurableInstancing.ActivatableWorkflowsQueryResult.ActivationParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>汎用ホストがワークフロー ホストを作成するために使用するアクティブ化パラメーターの一覧です。</summary>
+        <value>アクティブ化パラメーターを格納するリスト オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,581 @@
+<Type Name="FileSystemRights" FullName="System.Security.AccessControl.FileSystemRights">
+  <TypeSignature Language="C#" Value="public enum FileSystemRights" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FileSystemRights extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.FileSystemRights" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクセスおよび監査規則を作成するときに使用するアクセス権を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.AccessControl.FileSystemRights>列挙体は、特定のユーザー アカウントを許可するファイル システム アクションとどのファイル システム アクションは監査の特定のユーザー アカウントを指定します。  
+  
+ 使用して、<xref:System.Security.AccessControl.FileSystemRights>列挙とアクセス ルールを作成するときに、<xref:System.Security.AccessControl.FileSystemAccessRule>クラスまたはときに、監査を作成するルールを<xref:System.Security.AccessControl.FileSystemAuditRule>クラスです。  
+  
+ この列挙体には、いくつかの細かいシステム権限の値とその細分化された値の組み合わせは、いくつかの値が含まれています。  など、FullControl、読み取りと書き込みはなく、各コンポーネントの値を個別に指定する値の組み合わせを使用する簡単です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Security.AccessControl.FileSystemRights.FullControl>列挙型をアクセス規則を指定し、ファイルからアクセス規則を削除します。  この例を実行するには、有効なユーザーまたはグループ アカウントを指定する必要があります。  
+  
+ [!code-cpp[IO.File.GetAccessControl-SetAccessControl#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/cpp/sample.cpp#1)]
+ [!code-csharp[IO.File.GetAccessControl-SetAccessControl#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/CS/sample.cs#1)]
+ [!code-vb[IO.File.GetAccessControl-SetAccessControl#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/VB/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AppendData">
+      <MemberSignature Language="C#" Value="AppendData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights AppendData = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.AppendData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルの末尾にデータを追加する権限を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangePermissions">
+      <MemberSignature Language="C#" Value="ChangePermissions" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights ChangePermissions = int32(262144)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.ChangePermissions" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティを変更して、ファイルまたはフォルダーに関連付けられているルールを監査する権限を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDirectories">
+      <MemberSignature Language="C#" Value="CreateDirectories" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights CreateDirectories = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.CreateDirectories" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォルダーを作成する権限を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この権限は、同期の値が必要です。  同期値は、ファイルまたはフォルダーを作成するときに明示的に設定しなくて場合同期値設定されることに自動的にするのに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFiles">
+      <MemberSignature Language="C#" Value="CreateFiles" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights CreateFiles = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.CreateFiles" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルを作成する権限を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この権限は、同期の値が必要です。  同期値は、ファイルまたはフォルダーを作成するときに明示的に設定しなくて場合同期値設定されることに自動的にするのに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="Delete" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights Delete = int32(65536)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.Delete" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォルダーまたはファイルを削除する権限を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteSubdirectoriesAndFiles">
+      <MemberSignature Language="C#" Value="DeleteSubdirectoriesAndFiles" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights DeleteSubdirectoriesAndFiles = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.DeleteSubdirectoriesAndFiles" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォルダーとそのフォルダー内に含まれるすべてのファイルを削除する権限を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteFile">
+      <MemberSignature Language="C#" Value="ExecuteFile" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights ExecuteFile = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.ExecuteFile" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ファイルを実行する権限を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FullControl">
+      <MemberSignature Language="C#" Value="FullControl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights FullControl = int32(2032127)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.FullControl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォルダーまたはファイルを完全に制御し、アクセス コントロールを変更して、監査規則するを指定します。  この値はファイルで何も操作する権限を表す、この列挙体のすべての権限の組み合わせです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ListDirectory">
+      <MemberSignature Language="C#" Value="ListDirectory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights ListDirectory = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.ListDirectory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリの内容を読み取る権限を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Modify">
+      <MemberSignature Language="C#" Value="Modify" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights Modify = int32(197055)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.Modify" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り、書き込み、フォルダー内容の一覧、フォルダーとファイルの削除、およびアプリケーション ファイルを実行する権限を指定します。  この権限が含まれています、 <see cref="F:System.Security.AccessControl.FileSystemRights.ReadAndExecute" /> 、右、<see cref="F:System.Security.AccessControl.FileSystemRights.Write" />右側、および<see cref="F:System.Security.AccessControl.FileSystemRights.Delete" />右。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="Read" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights Read = int32(131209)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.Read" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開き、フォルダーまたは読み取り専用でファイルをコピーする権利を指定します。  この権限が含まれています、<see cref="F:System.Security.AccessControl.FileSystemRights.ReadData" />右側、<see cref="F:System.Security.AccessControl.FileSystemRights.ReadExtendedAttributes" />右側、<see cref="F:System.Security.AccessControl.FileSystemRights.ReadAttributes" />右、および<see cref="F:System.Security.AccessControl.FileSystemRights.ReadPermissions" />右。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAndExecute">
+      <MemberSignature Language="C#" Value="ReadAndExecute" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights ReadAndExecute = int32(131241)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.ReadAndExecute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開き、フォルダーまたは読み取り専用でファイルをコピーし、アプリケーション ファイルを実行する権限を指定します。  この権限が含まれています、<see cref="F:System.Security.AccessControl.FileSystemRights.Read" />右と<see cref="F:System.Security.AccessControl.FileSystemRights.ExecuteFile" />右。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAttributes">
+      <MemberSignature Language="C#" Value="ReadAttributes" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights ReadAttributes = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.ReadAttributes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開き、フォルダーまたはファイルからファイル システム属性をコピーする権利を指定します。  たとえば、この値は、ファイルの作成を表示する権限を指定または変更日。  これは、データ、拡張ファイル システム属性、またはアクセスを読み取るし、監査規則を右には含まれません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadData">
+      <MemberSignature Language="C#" Value="ReadData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights ReadData = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.ReadData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開き、ファイルまたはフォルダーをコピーする権利を指定します。  これは、拡張ファイル システム属性、またはアクセスおよび監査規則、ファイル システム属性を読み取る権限には含まれません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadExtendedAttributes">
+      <MemberSignature Language="C#" Value="ReadExtendedAttributes" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights ReadExtendedAttributes = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.ReadExtendedAttributes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開き、フォルダーまたはファイルから拡張ファイル システム属性をコピーする権利を指定します。  たとえば、この値は、作成者およびコンテンツ情報を表示する権限を指定します。  これは、データ、ファイル システム属性、またはアクセスを読み取るし、監査規則を右には含まれません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadPermissions">
+      <MemberSignature Language="C#" Value="ReadPermissions" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights ReadPermissions = int32(131072)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.ReadPermissions" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開くとアクセスをコピーし、監査フォルダーから規則またはファイル権限を指定します。  これにより、データを読み取り、ファイル システム属性を右には含まれません、ファイル システム属性の拡張します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronize">
+      <MemberSignature Language="C#" Value="Synchronize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights Synchronize = int32(1048576)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.Synchronize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションがファイル ハンドルの I/O 操作の完了に同期するために待機できるかどうかを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同期値は、アクセスを許可する場合に自動的に設定され、アクセスを拒否するときに自動的に除外されます。  
+  
+ ファイルまたはフォルダーを作成する権限は、この値が必要です。  この値は、ファイルを作成するときに明示的に設定しなくても、自動的に設定されますに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TakeOwnership">
+      <MemberSignature Language="C#" Value="TakeOwnership" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights TakeOwnership = int32(524288)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.TakeOwnership" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォルダーまたはファイルの所有者を変更する権限を指定します。  リソースの所有者にそのリソースへのフル アクセスがあることに注意してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Traverse">
+      <MemberSignature Language="C#" Value="Traverse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights Traverse = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.Traverse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォルダーの内容を一覧表示し、そのフォルダー内に含まれるアプリケーションを実行する権限を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="Write" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights Write = int32(278)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.Write" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォルダーとファイルを作成および追加またはファイルからデータを削除する権限を指定します。  この権限が含まれています、<see cref="F:System.Security.AccessControl.FileSystemRights.WriteData" />右側、<see cref="F:System.Security.AccessControl.FileSystemRights.AppendData" />右側、<see cref="F:System.Security.AccessControl.FileSystemRights.WriteExtendedAttributes" />右、および<see cref="F:System.Security.AccessControl.FileSystemRights.WriteAttributes" />右。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttributes">
+      <MemberSignature Language="C#" Value="WriteAttributes" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights WriteAttributes = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.WriteAttributes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開き、フォルダーまたはファイルをファイル システム属性を書き込む権限を指定します。 これは、データの書き込み、属性の拡張、またはアクセスおよび監査規則機能には含まれません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteData">
+      <MemberSignature Language="C#" Value="WriteData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights WriteData = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.WriteData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開き、ファイルまたはフォルダーへの書き込み権限を指定します。  これは、開き、ファイル システムの属性、ファイル システム属性、またはアクセスおよび監査規則の拡張を書き込む権限には含まれません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteExtendedAttributes">
+      <MemberSignature Language="C#" Value="WriteExtendedAttributes" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.AccessControl.FileSystemRights WriteExtendedAttributes = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.AccessControl.FileSystemRights.WriteExtendedAttributes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.FileSystemRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開き、フォルダーまたはファイルに拡張ファイル システム属性を書き込む権限を指定します。  これは、データの書き込み、属性、またはアクセスおよび監査規則機能には含まれません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

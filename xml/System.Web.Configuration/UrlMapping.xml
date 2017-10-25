@@ -1,0 +1,170 @@
+<Type Name="UrlMapping" FullName="System.Web.Configuration.UrlMapping">
+  <TypeSignature Language="C#" Value="public sealed class UrlMapping : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UrlMapping extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.UrlMapping" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションのページの URL にユーザーに表示されている URL にマップします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.UrlMapping>クラスでは、Web アプリケーションに存在する URL をユーザーに表示されている URL にマップすることができます。 追加する、<xref:System.Web.Configuration.UrlMapping>オブジェクトを<xref:System.Web.Configuration.UrlMappingCollection>などに相当するプログラム、`add`内の要素、`urlMappings`構成ファイルのセクションです。  
+  
+ 各<xref:System.Web.Configuration.UrlMapping>オブジェクトには、2 つのプロパティ識別する URL にはが含まれています。 1 つのプロパティをユーザーに表示される URL を指定しますもう一方には、Web アプリケーションで URL を指定します。 末尾の両方で空白文字は無視されます、<xref:System.Web.Configuration.UrlMapping.Url%2A>と<xref:System.Web.Configuration.UrlMapping.MappedUrl%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.UrlMapping>プロパティは、関連する、構成ファイルのセクションに従って section プロパティによって定義された制限に情報を書き込むことが<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.MachineToApplication>です。 階層では許可されませんレベルで構成ファイルに書き込みをしようとすると、パーサーによって生成されたエラー メッセージが発生します。 ただし、このクラスを使用すると、階層内の任意のレベルで構成情報を読み取る。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.Configuration.UrlMappingsSection>の web.config ファイルの 2 つの Url にマップして、追加の URL のマッピングを追加します。 変更した Web.config ファイルを保存すると、アプリケーションを再起動します。  
+  
+  
+[!code-aspx-csharp[System.Web.Configuration.UrlMapping2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping2/cs/default.aspx#1)]
+[!code-aspx-vb[System.Web.Configuration.UrlMapping2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping2/vb/default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UrlMapping (string url, string mappedUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, string mappedUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.UrlMapping.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="mappedUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">ユーザーに表示される URL です。</param>
+        <param name="mappedUrl">Web アプリケーションに存在する URL です。</param>
+        <summary><see cref="T:System.Web.Configuration.UrlMapping" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.UrlMapping.%23ctor%2A>コンス トラクターは、主に内部で使用する ASP.NET によってです。 このクラスから派生する必要はありませんし、Web.config ファイルを変更するために使用される、ためには、コードで使用する必要がありません。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.Configuration.UrlMappingsSection>の web.config ファイルの 2 つの Url にマップして、追加の URL のマッピングを追加します。 変更した Web.config ファイルを保存すると、アプリケーションを再起動します。  
+  
+  
+[!code-aspx-csharp[System.Web.Configuration.UrlMapping2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping2/cs/default.aspx#1)]
+[!code-aspx-vb[System.Web.Configuration.UrlMapping2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping2/vb/default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MappedUrl">
+      <MemberSignature Language="C#" Value="public string MappedUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MappedUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.UrlMapping.MappedUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("mappedUrl", IsRequired=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web アプリケーションでの URL です。</summary>
+        <value>指定された値にマップされている Web アプリケーションの URL、<see cref="P:System.Web.Configuration.UrlMapping.Url" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.UrlMapping.MappedUrl%2A>プロパティは、プログラムによるそれと同等の`mappedUrl`の属性、`add`内の要素、`urlMappings`構成ファイルのセクションです。  
+  
+> [!NOTE]
+>  使用する場合は、IIS 5.0 でを使用する場合、<xref:System.Web.Configuration.UrlMapping.MappedUrl%2A>にマップするプロパティ (.aspx ファイル) などのサポートされているページの種類 (など、「*.asp ページ)、サポートされていないページの種類エラーが発生します。 この種類のマッピングは、IIS バージョン 6.0 でサポートされています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.UrlMapping.MappedUrl%2A>プロパティです。 この例のサンプルが大きく、<xref:System.Web.Configuration.UrlMapping>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.UrlMapping2#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping2/cs/default.aspx#4)]
+ [!code-vb[System.Web.Configuration.UrlMapping2#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping2/vb/default.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.UrlMapping.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public string Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.UrlMapping.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("url", IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーに表示されている URL を取得します。</summary>
+        <value>ユーザーに表示される URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.UrlMapping.Url%2A>プロパティは、プログラムによるそれと同等の`Url`の属性、`add`内の要素、`urlMappings`構成ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ 例については、次を参照してください。、<xref:System.Web.Configuration.UrlMapping>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,206 @@
+<Type Name="DataGridCellsPanel" FullName="System.Windows.Controls.DataGridCellsPanel">
+  <TypeSignature Language="C#" Value="public class DataGridCellsPanel : System.Windows.Controls.VirtualizingPanel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi DataGridCellsPanel extends System.Windows.Controls.VirtualizingPanel" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DataGridCellsPanel" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.VirtualizingPanel</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セルおよびデータ グリッド内の列ヘッダーをレイアウトするパネルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.DataGridCellsPanel>として使用される、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>の<xref:System.Windows.Controls.Primitives.DataGridCellsPresenter>行内のセルのレイアウトにします。 として使用されている、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>の<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>列ヘッダーのレイアウトにします。 パネルは、セルを水平方向に整列し、各セルの正しいサイズを決定する各セルの列情報を使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridCellsPanel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridCellsPanel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.DataGridCellsPanel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridCellsPanel.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeSize">パネルが占有できる最大サイズ。</param>
+        <summary>最終的なサイズと、パネルの配置を決定します。</summary>
+        <returns>最終的なサイズと、パネルの配置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.DataGridCellsPanel>クラスの使用、<xref:System.Windows.Controls.DataGridCellsPanel.ArrangeOverride%2A>表示されているセルをレイアウトするメソッド。 表示されていないセルが仮想化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BringIndexIntoView">
+      <MemberSignature Language="C#" Value="protected override void BringIndexIntoView (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void BringIndexIntoView(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridCellsPanel.BringIndexIntoView(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">表示される項目のインデックス。</param>
+        <summary>指定したインデックス位置にある項目をビューポートをスクロールします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">インデックスが範囲外です。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.DataGridCellsPanel.BringIndexIntoView(System.Int32)" />派生クラスで、基本クラスを呼び出すことを確認します<see cref="M:System.Windows.Controls.DataGridCellsPanel.BringIndexIntoView(System.Int32)" />メソッドです。 それ以外の場合、重要な機能は無効になります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridCellsPanel.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">パネルが占有できる最大サイズ。</param>
+        <summary>パネルの目的のサイズを決定します。</summary>
+        <returns>パネルの必要なサイズ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.DataGridCellsPanel>クラスの使用、<xref:System.Windows.Controls.DataGridCellsPanel.MeasureOverride%2A>どのセルが表示され、どのセルが仮想化を確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClearChildren">
+      <MemberSignature Language="C#" Value="protected override void OnClearChildren ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClearChildren() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridCellsPanel.OnClearChildren" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ときに呼び出されます内の子のコレクション、<see cref="T:System.Windows.Controls.DataGrid" />がオフになっています。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.DataGridCellsPanel.OnClearChildren" />派生クラスで、基本クラスを呼び出すことを確認します<see cref="M:System.Windows.Controls.DataGridCellsPanel.OnClearChildren" />メソッドです。 それ以外の場合、重要な機能は無効になります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnIsItemsHostChanged">
+      <MemberSignature Language="C#" Value="protected override void OnIsItemsHostChanged (bool oldIsItemsHost, bool newIsItemsHost);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnIsItemsHostChanged(bool oldIsItemsHost, bool newIsItemsHost) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridCellsPanel.OnIsItemsHostChanged(System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldIsItemsHost" Type="System.Boolean" />
+        <Parameter Name="newIsItemsHost" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="oldIsItemsHost"><see cref="P:System.Windows.Controls.Panel.IsItemsHost" /> プロパティの変更前の値。</param>
+        <param name="newIsItemsHost"><see cref="P:System.Windows.Controls.Panel.IsItemsHost" /> プロパティの新しい値。</param>
+        <summary>示します、<see cref="P:System.Windows.Controls.Panel.IsItemsHost" />プロパティ値が変更されます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドして、通知として使用する、<see cref="P:System.Windows.Controls.Panel.IsItemsHost" />プロパティが変更されました。 次に、古い値と新しい値に基づいて、独自のロジックを実行します。 必ず、基本クラスの<see cref="M:System.Windows.Controls.DataGridCellsPanel.OnIsItemsHostChanged(System.Boolean,System.Boolean)" />メソッドです。 それ以外の場合、重要な機能は無効になります。 基底の実装が同期、<see cref="T:System.Windows.Controls.DataGridCellsPanel" />で、<see cref="T:System.Windows.Controls.Primitives.DataGridCellsPresenter" />または<see cref="T:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter" />に関連付けられています。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsChanged">
+      <MemberSignature Language="C#" Value="protected override void OnItemsChanged (object sender, System.Windows.Controls.Primitives.ItemsChangedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnItemsChanged(object sender, class System.Windows.Controls.Primitives.ItemsChangedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridCellsPanel.OnItemsChanged(System.Object,System.Windows.Controls.Primitives.ItemsChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="args" Type="System.Windows.Controls.Primitives.ItemsChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">発生させたオブジェクト、<see cref="E:System.Windows.Controls.ItemContainerGenerator.ItemsChanged" />イベント。</param>
+        <param name="args">イベントのデータ。</param>
+        <summary>更新プログラムの表示されている場合にセル内の項目、<see cref="P:System.Windows.Controls.ItemsControl.Items" />コレクションが変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Windows.Controls.DataGridCellsPanel.OnItemsChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.DataGridCellsPanel.OnItemsChanged(System.Object,System.Windows.Controls.Primitives.ItemsChangedEventArgs)" />派生クラスで、基本クラスを呼び出すことを確認します<see cref="M:System.Windows.Controls.DataGridCellsPanel.OnItemsChanged(System.Object,System.Windows.Controls.Primitives.ItemsChangedEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

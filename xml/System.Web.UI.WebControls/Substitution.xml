@@ -1,0 +1,228 @@
+<Type Name="Substitution" FullName="System.Web.UI.WebControls.Substitution">
+  <TypeSignature Language="C#" Value="public class Substitution : System.Web.UI.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Substitution extends System.Web.UI.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Substitution" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("MethodName")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.SubstitutionDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>キャッシュから除外される出力キャッシュ Web ページ上のセクションを指定します。 この場所に動的なコンテンツが取得され、置き換え、<see cref="T:System.Web.UI.WebControls.Substitution" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、<xref:System.Web.UI.WebControls.Substitution>コントロールのコントロールで動的なコンテンツする出力キャッシュ Web ページのセクションを指定する代わりに使用します。 <xref:System.Web.UI.WebControls.Substitution>コントロールは、部分ページのキャッシュ ページ大部分のコンテンツがキャッシュされているシンプルなソリューションを提供しています。 出力キャッシュ全体のページでは、しを使用して<xref:System.Web.UI.WebControls.Substitution>コントロールをページのキャッシュから除外されている部分を指定します。 キャッシュ領域は、1 回だけ実行され、キャッシュ エントリの有効期限が切れるかが削除されるまでにキャッシュから再生されます。 動的な領域は、ページが要求されるたびを実行します。 このキャッシュ モデルには、Web ユーザー コントロール内のキャッシュにセクションをカプセル化する必要はありませんので、主に静的なページのためのコードが簡略化します。 たとえば、このキャッシュ モデルは、ニュースなどの静的なコンテンツを含むページが存在するシナリオで役に立ちますと<xref:System.Web.UI.WebControls.AdRotator>提供情報を表示するコントロール。 ニュース記事は変わらないのでキャッシュできます。 ただし、ユーザーが、ページを要求するたびにする新しい提供情報を表示します。 <xref:System.Web.UI.WebControls.AdRotator>コントロールは、直接キャッシュ後置換をサポートし、新しい提供情報ごとにページ ポストバック、ページがキャッシュされるかどうかに関係なくをレンダリングします。  
+  
+> [!NOTE]
+>  配置することができます、<xref:System.Web.UI.WebControls.Substitution>キャッシュされたページに含まれるユーザー コントロール内のコントロールです。 ただし、配置することはできません、<xref:System.Web.UI.WebControls.Substitution>出力キャッシュのユーザー コントロールのコントロールです。  
+  
+ ときに、<xref:System.Web.UI.WebControls.Substitution>コントロールが実行されると、文字列を返すメソッドを呼び出します。 メソッドが返す文字列は、コンテンツの場所にあるページに表示する、<xref:System.Web.UI.WebControls.Substitution>コントロール。 使用して、<xref:System.Web.UI.WebControls.Substitution.MethodName%2A>に時に呼び出されるコールバック メソッドの名前を指定するプロパティ、<xref:System.Web.UI.WebControls.Substitution>コントロールを実行します。 指定したコールバック メソッドを含むページやユーザー コントロールの静的メソッドをする必要があります、<xref:System.Web.UI.WebControls.Substitution>コントロール。 コールバック メソッドのシグネチャがのシグネチャに一致する必要があります、<xref:System.Web.HttpResponseSubstitutionCallback>を受け取るデリゲート、<xref:System.Web.HttpContext>パラメーター文字列を返します。  
+  
+ ページの出力キャッシュを操作するには、使用することができます、 [@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2)ディレクティブ、<xref:System.Web.HttpCachePolicy>クラス、または<xref:System.Web.HttpResponse.Cache%2A>プロパティです。 ページのキャッシュの詳細については、次を参照してください。 [ASP.NET ページのキャッシュ](http://msdn.microsoft.com/library/e9666a1b-88df-4931-af0b-a754fc65660b)と[ASP.NET ページの一部をキャッシュ](http://msdn.microsoft.com/library/cdd8e523-7305-4685-a456-c5be1de1367e)です。  
+  
+ 使用する代わりに、<xref:System.Web.UI.WebControls.Substitution>コントロールの動作を使用するキャッシュの置換も取得できます、<xref:System.Web.HttpResponseSubstitutionCallback>を委任します。 また、置換などのキャッシュ、コントロールの動作を取得することができます、<xref:System.Web.UI.WebControls.AdRotator>直接この機能をサポートするコントロール。 詳細については、次を参照してください。[キャッシュ ページの部分を動的に更新](http://msdn.microsoft.com/library/09c9bd9a-0d68-4a5c-aa6f-1b461c208795)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:Substitution  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    MethodName="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Visible="True|False"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、追加する方法を示します、<xref:System.Web.UI.WebControls.Substitution>宣言によって、出力キャッシュ Web ページを制御します。 ページが読み込まれると、現在の日付と時刻がラベルでユーザーに表示されます。 ページのこのセクションでは、キャッシュされ、60 秒ごとに更新します。 ときに、<xref:System.Web.UI.WebControls.Substitution>コントロールが実行されると、呼び出し、`GetCurrentDateTime`メソッドです。 によって返される文字列`GetCurrentDateTime`がユーザーに表示されます。 ページのこのセクションでは、キャッシュされていないし、ページが更新されるたびに更新されます。  
+  
+ [!code-aspx-csharp[SubstitutionsClass1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SubstitutionsClass1/CS/substitutionclass1cs.aspx#1)]
+ [!code-aspx-vb[SubstitutionsClass1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SubstitutionsClass1/VB/substitutionclass1vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Substitution ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Substitution.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Substitution" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Substitution.%23ctor%2A>作成しの新しいインスタンスを初期化するコンス トラクター、<xref:System.Web.UI.WebControls.Substitution>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、追加する方法を示します、<xref:System.Web.UI.WebControls.Substitution>出力キャッシュ Web ページにプログラムで制御します。 ページが読み込まれると、現在の日付と時刻がラベルでユーザーに表示されます。 ページのこのセクションでは、キャッシュされ、60 秒ごとに更新します。 ときに、<xref:System.Web.UI.WebControls.Substitution>コントロールが実行されると、呼び出し、`GetCurrentDateTime`メソッドです。 によって返される文字列`GetCurrentDateTime`がユーザーに表示されます。 ページのこのセクションでは、キャッシュされていないし、ページが更新されるたびに更新されます。  
+  
+ [!code-aspx-csharp[SubstitutionCstr#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SubstitutionCstr/CS/substitutioncstrcs.aspx#1)]
+ [!code-aspx-vb[SubstitutionCstr#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SubstitutionCstr/VB/substitutioncstrvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlCollection">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Substitution.CreateControlCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Web.UI.EmptyControlCollection" />オブジェクト、ことを示す、<see cref="T:System.Web.UI.WebControls.Substitution" />コントロールで子コントロールがサポートされていません。</summary>
+        <returns><see cref="T:System.Web.UI.EmptyControlCollection" />コントロールが子コントロールをサポートしていないことを示すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Substitution.CreateControlCollection%2A>メソッドは通常作成に使用する<xref:System.Web.UI.ControlCollection>コントロールの子コントロールを格納するオブジェクト。 実装、<xref:System.Web.UI.WebControls.Substitution.CreateControlCollection%2A>のメソッド、<xref:System.Web.UI.WebControls.Substitution>制御を返しますでは常に、<xref:System.Web.UI.EmptyControlCollection>オブジェクトを示すために、<xref:System.Web.UI.WebControls.Substitution>コントロールで子コントロールがサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.WebControls.Substitution" />オーバーライドすることができます、コントロール、<see cref="M:System.Web.UI.WebControls.Substitution.CreateControlCollection" />子コントロールをサポートするために派生クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodName">
+      <MemberSignature Language="C#" Value="public virtual string MethodName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MethodName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Substitution.MethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に時に呼び出されるコールバック メソッドの名前、<see cref="T:System.Web.UI.WebControls.Substitution" />コントロールを実行します。</summary>
+        <value>ときに呼び出すメソッドの名前を表す文字列、<see cref="T:System.Web.UI.WebControls.Substitution" />コントロールを実行します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Substitution.MethodName%2A>に時に呼び出されるコールバック メソッドの名前を指定するプロパティ、<xref:System.Web.UI.WebControls.Substitution>コントロールを実行します。 指定したコールバック メソッドを含むページやユーザー コントロールの静的メソッドをする必要があります、<xref:System.Web.UI.WebControls.Substitution>コントロール。 コールバック メソッドのシグネチャがのシグネチャに一致する必要があります、<xref:System.Web.HttpResponseSubstitutionCallback>を受け取るデリゲート、<xref:System.Web.HttpContext>パラメーター文字列を返します。 コールバック メソッドで返される文字列は、コンテンツの場所にあるページに表示する、<xref:System.Web.UI.WebControls.Substitution>コントロール。  
+  
+ <xref:System.Web.HttpContext>パラメーターは、個々 の HTTP 要求に関する HTTP 固有のすべての情報をカプセル化します。 セッション変数、認証情報とパーソナル化の詳細にアクセスするのにには、これを使用できます。 詳細については、「<xref:System.Web.HttpResponseSubstitutionCallback>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、追加する方法を示します、<xref:System.Web.UI.WebControls.Substitution>宣言によって、出力キャッシュ Web ページを制御します。 ページが読み込まれると、ユーザーに静的な箇条書きリストが表示されます。 ページのこのセクションでは、キャッシュされ、60 秒ごとに更新します。 ときに、<xref:System.Web.UI.WebControls.Substitution>コントロールが実行されると、呼び出し、`GetUser`メソッドで、現在のユーザーを表す文字列を返します。 この文字列がの位置に表示される、<xref:System.Web.UI.WebControls.Substitution>ページ上のコントロールです。 ページのこのセクションでは、キャッシュされていないし、ページが更新されるたびに更新されます。  
+  
+ [!code-aspx-csharp[Substitution.MethodName#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Substitution.MethodName/CS/substitution.methodnamecs.aspx#1)]
+ [!code-aspx-vb[Substitution.MethodName#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Substitution.MethodName/VB/substitution.methodnamevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Substitution.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary><see cref="E:System.Web.UI.Control.PreRender" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">親コントロールまたはマスター ページがキャッシュされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Substitution.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">サーバー コントロールの内容を受け取る <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクト。</param>
+        <summary>指定されたサーバー コントロールの内容を送信<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクトで、クライアントに表示される内容を書き込みます</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

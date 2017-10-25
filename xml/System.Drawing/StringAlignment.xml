@@ -1,0 +1,82 @@
+<Type Name="StringAlignment" FullName="System.Drawing.StringAlignment">
+  <TypeSignature Language="C#" Value="public enum StringAlignment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed StringAlignment extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.StringAlignment" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>レイアウト四角形を基準としたテキスト文字列の配置を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、<xref:System.Drawing.StringFormat.LineAlignment%2A>プロパティ、この列挙体が描画された文字列の垂直方向の配置を設定します。 使用すると、<xref:System.Drawing.StringFormat.Alignment%2A>プロパティ、この列挙体は、水平方向の配置を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Drawing.StringFormat.LineAlignment%2A>と<xref:System.Drawing.StringFormat.Alignment%2A>プロパティおよび<xref:System.Drawing.StringAlignment>列挙型を文字列に揃え。 この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowLineAndAlignment`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.Misc2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Misc2/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Misc2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc2/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Misc2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc2/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Center">
+      <MemberSignature Language="C#" Value="Center" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringAlignment Center = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringAlignment.Center" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レイアウト四角形の中心でのテキストの配置を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Far">
+      <MemberSignature Language="C#" Value="Far" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringAlignment Far = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringAlignment.Far" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レイアウト四角形の元の位置かけ離れていることのテキストの配置を指定します。 レイアウトでは、左から右へ、相手側の位置は右です。 右から左のレイアウトでは、相手側の位置は左側です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Near">
+      <MemberSignature Language="C#" Value="Near" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringAlignment Near = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringAlignment.Near" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストを配置するレイアウトの近くを指定します。 左から右のレイアウトでは、最も近い位置は左側です。 右から左のレイアウトに最も近い位置は右です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

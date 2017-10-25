@@ -1,0 +1,217 @@
+<Type Name="DesignerActionList" FullName="System.ComponentModel.Design.DesignerActionList">
+  <TypeSignature Language="C#" Value="public class DesignerActionList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerActionList extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerActionList" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スマート タグ パネルの作成に使用される項目の一覧を定義する型の基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `DesignerAction`コンポーネントおよび状況依存の情報とコマンドを表示するコントロール機能を有効にします。 `DesignerAction`機能は、デザイナー動詞の代わりに、ため、<xref:System.ComponentModel.Design.DesignerActionItem>では、スマート タグ パネルおよびコンポーネントまたはコントロールに関連付けられているショートカット メニューに表示されることができます。 <xref:System.ComponentModel.Design.DesignerActionList>クラスは、カスタム コンポーネントとコントロールのスマート タグを追加する開発者向けサポートのために相互作用の主要なポイントを表します。  
+  
+ <xref:System.ComponentModel.Design.DesignerActionList>派生したコンポーネントの開発者がスマート タグ パネルに反映するために、基本クラスです。 スマート タグ パネルでは、スマート タグのメニューのようなユーザー インターフェイス (UI) を表します。  
+  
+ この派生クラスで実装することが、 `virtual` <xref:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems%2A>から派生したオブジェクトのコレクションを返すメソッドを<xref:System.ComponentModel.Design.DesignerActionItem>です。 これらのオブジェクトは、スマート タグ パネルの項目を表します。 各項目は、その型に従ったパネルに表示されます。 たとえば、<xref:System.ComponentModel.Design.DesignerActionTextItem>は静的なテキスト ラベルとして表示されます。 によって表される、アクティブなパネル アイテム、<xref:System.ComponentModel.Design.DesignerActionPropertyItem>と<xref:System.ComponentModel.Design.DesignerActionMethodItem>型、ある対応するパブリックにアクセス可能なプロパティまたはメソッドをそれぞれ、その項目の機能を実装します。  
+  
+ スマート タグ パネルに項目を追加する方法の詳細については、次を参照してください。、<xref:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems%2A>メソッドです。  
+  
+> [!NOTE]
+>  派生したクラスのメンバーによってフォームとダイアログ ボックスを表示できる<xref:System.ComponentModel.Design.DesignerActionList>です。 既定では、スマート タグ パネルの [コンテナー] ウィンドウがこれらのウィンドウの親になります。 明示的に別のサービスまたはウィンドウにこれらの子ウィンドウの親と、スマート タグが適切に表示する場合があります。  
+>   
+>  スマート タグ パネルはスクロールをサポートしていないまたは多くのスマート タグのアイテムで、パネルを設定しないように注意するためのページングは、します。 スマート タグ パネルが画面の境界を越えてを拡張するアイテムが多すぎる可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のコレクションを作成する方法を示します<xref:System.ComponentModel.Design.DesignerActionItem>オブジェクト。  
+  
+ このコード例の完全な説明については、次を参照してください。[する方法: Windows フォームのコンポーネントにスマート タグを添付](http://msdn.microsoft.com/library/42cc4a0c-9ab3-47e1-93b8-03b6a6ccf233)です。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/CS/smarttags.cs#2)]
+ [!code-vb[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/VB/smarttags.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerActionList (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionList.#ctor(System.ComponentModel.IComponent)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">関連するコンポーネント、<see cref="T:System.ComponentModel.Design.DesignerActionList" />です。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignerActionList" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerActionList>コンス トラクターのセット、<xref:System.ComponentModel.Design.DesignerActionList.AutoShow%2A>プロパティを`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のコレクションを作成する方法を示します<xref:System.ComponentModel.Design.DesignerActionItem>オブジェクト。  
+  
+ このコード例の完全な説明については、次を参照してください。[する方法: Windows フォームのコンポーネントにスマート タグを添付](http://msdn.microsoft.com/library/42cc4a0c-9ab3-47e1-93b8-03b6a6ccf233)です。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/CS/smarttags.cs#4)]
+ [!code-vb[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/VB/smarttags.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoShow">
+      <MemberSignature Language="C#" Value="public virtual bool AutoShow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoShow" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerActionList.AutoShow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスマート タグ パネルがの作成時に自動的に表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />所有しているコンポーネントの作成時に、パネルが表示される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの値設定されている場合`true`、このコンポーネント<xref:System.ComponentModel.Design.DesignerActionList>は自動的に関連付けられているを展開し、コンポーネントが作成されるときにスマート タグ パネルを表示します。  
+  
+ 選択を解除するこの動作を設定して、<xref:System.Windows.Forms.Design.DesignerOptions.ObjectBoundSmartTagAutoShow%2A?displayProperty=nameWithType>プロパティを`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のコレクションを作成する方法を示します<xref:System.ComponentModel.Design.DesignerActionItem>オブジェクト。  
+  
+ このコード例の完全な説明については、次を参照してください。[する方法: Windows フォームのコンポーネントにスマート タグを添付](http://msdn.microsoft.com/library/42cc4a0c-9ab3-47e1-93b8-03b6a6ccf233)です。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/CS/smarttags.cs#7)]
+ [!code-vb[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/VB/smarttags.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Component">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IComponent Component { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IComponent Component" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerActionList.Component" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連するコンポーネントを取得<see cref="T:System.ComponentModel.Design.DesignerActionList" />です。</summary>
+        <value>コンポーネントに関連する<see cref="T:System.ComponentModel.Design.DesignerActionList" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionList.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">によって提供されるサービス、<see cref="T:System.ComponentModel.Component" />です。</param>
+        <summary>関連付けられているコンポーネントによって提供されるサービスを表すオブジェクトを返します、<see cref="T:System.ComponentModel.Design.DesignerActionList" />です。</summary>
+        <returns><see cref="T:System.Object" />によって提供されるサービスを表す、<see cref="T:System.ComponentModel.Component" />です。 この値は<see langword="null" />場合、<see cref="T:System.ComponentModel.Component" />は指定されたサービスが提供されません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSortedActionItems">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.Design.DesignerActionItemCollection GetSortedActionItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.DesignerActionItemCollection GetSortedActionItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionItemCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを返します<see cref="T:System.ComponentModel.Design.DesignerActionItem" />一覧に含まれるオブジェクト。</summary>
+        <returns>A<see cref="T:System.ComponentModel.Design.DesignerActionItem" />をこのリスト内の項目を格納する配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `virtual` <xref:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems%2A>メソッドを実装する予定の表示順序を返すから派生したオブジェクトのコレクション、<xref:System.ComponentModel.Design.DesignerActionItem>クラスです。 これらの項目は、次の特定の種類にできます。  
+  
+|型|説明|  
+|----------|-----------------|  
+|<xref:System.ComponentModel.Design.DesignerActionHeaderItem>|グループ ラベルは、太字で表示されます。|  
+|<xref:System.ComponentModel.Design.DesignerActionTextItem>|通常フォントで表示されるラベルです。|  
+|<xref:System.ComponentModel.Design.DesignerActionPropertyItem>|プロパティに関連付けられた項目のパネルです。 チェック マークまたは基になるプロパティに関連付けられたプロパティ エディターも表示されます。|  
+|<xref:System.ComponentModel.Design.DesignerActionMethodItem>|パネルのアイテムは、ハイパーリンクとして表示され、メソッドに関連付けられています。|  
+  
+ すべて<xref:System.ComponentModel.Design.DesignerActionMethodItem>と<xref:System.ComponentModel.Design.DesignerActionPropertyItem>、対応するメソッドまたはプロパティは、プログラマが提供するクラスから派生したに追加する必要があります、<xref:System.ComponentModel.Design.DesignerActionList>クラスです。 各メソッドおよびプロパティ項目は、アクティブなエントリです。やり取りすること、ユーザー インターフェイス (UI) を呼び出す、対応するメソッドまたはプロパティそれぞれします。  
+  
+ プロパティ項目を対応するプロパティ値の表示と操作を有効にする特殊なパネル アイテム インターフェイスを持っています。 詳細については、<xref:System.ComponentModel.Design.DesignerActionPropertyItem> クラスを参照してください。  
+  
+ 返される配列内の項目の順序は、パネルに表示される順序を反映します。 よると、アイテムがグループ化、<xref:System.ComponentModel.Design.DesignerActionItem.Category%2A>プロパティ、次の規則を使用します。  
+  
+-   最初の項目のカテゴリが発生した最初のグループの開始を示します。 そのグループには、後続の各項目が、同じカテゴリは限りが続行されます。 異なる、新しいカテゴリの項目が検出されたときに、新しいグループが作成され、これで、項目を配置します。  
+  
+-   項目が現在のグループとは異なる型、そのカテゴリが既に使用されて、一致する既存のカテゴリにアイテムが配置されます。  
+  
+-   項目がカテゴリを持たない場合は、パネルの最後にその他のグループに配置されます。 このグループにも項目が含まれていますが<xref:System.ComponentModel.Design.DesignerActionItem.AllowAssociate%2A>プロパティに設定されている`false`です。  
+  
+ <xref:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems%2A>パネルが最初に作成されたときに、メソッドが呼び出されます。 呼び出す必要があります、<xref:System.ComponentModel.Design.DesignerActionUIService.Refresh%2A>パネルに表示される項目の一覧を更新するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のコレクションを作成する方法を示します<xref:System.ComponentModel.Design.DesignerActionItem>オブジェクト。  
+  
+ このコード例の完全な説明については、次を参照してください。[する方法: Windows フォームのコンポーネントにスマート タグを添付](http://msdn.microsoft.com/library/42cc4a0c-9ab3-47e1-93b8-03b6a6ccf233)です。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/CS/smarttags.cs#7)]
+ [!code-vb[System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerAction.AddSmartTagsToWFComponent/VB/smarttags.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

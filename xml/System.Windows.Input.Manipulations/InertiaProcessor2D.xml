@@ -1,0 +1,333 @@
+<Type Name="InertiaProcessor2D" FullName="System.Windows.Input.Manipulations.InertiaProcessor2D">
+  <TypeSignature Language="C#" Value="public class InertiaProcessor2D" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InertiaProcessor2D extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.Manipulations.InertiaProcessor2D" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>操作の位置、向き、および平均半径の推定を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Manipulations.InertiaProcessor2D>オブジェクトにより、アプリケーションで実際の動作をシミュレートすることによって、要素の位置、向き、およびその他のプロパティを推定します。  
+  
+ たとえば、ユーザーは、要素を移動し、それを解放し、要素できます移動、減速しないとし、緩やかに変化停止します。 慣性プロセッサは、アフィン 2-d 値 (原点、拡大縮小、平行移動、および回転) 指定した減速率で指定した時間の経過と共に変化することで、この動作を実装します。  
+  
+ 単独で、慣性プロセッサに移動し、減速要素は発生しません。 アプリケーションでは、慣性プロセッサから情報を受信し、アプリケーション固有の要素に必要な値を適用します。 通常、アプリケーションでは、慣性プロセッサから受信した情報を使用して、場所、サイズ、または要素の向きを変更します。  
+  
+ 慣性の処理は通常、操作の処理と組み合わせて使用されます。 詳細については、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> クラスを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InertiaProcessor2D ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.InertiaProcessor2D.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.Manipulations.InertiaProcessor2D" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complete">
+      <MemberSignature Language="C#" Value="public void Complete (long timestamp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Complete(int64 timestamp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.InertiaProcessor2D.Complete(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timestamp" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="timestamp">100 ナノ秒タイマー刻み単位での推定を完了するためのタイムスタンプ。</param>
+        <summary>指定したタイムスタンプを使用して最終的な推定を完了し、<see cref="E:System.Windows.Input.Manipulations.InertiaProcessor2D.Completed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムスタンプは、100 ナノ秒単位ではします。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント ハンドラーを<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started?displayProperty=nameWithType>を慣性の処理が実行されている場合と、そのイベントの確認を停止することを呼び出して、<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Complete%2A>メソッドです。  
+  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_OnManipulationStarted](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_onmanipulationstarted)]  
+  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_Timestamp](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_timestamp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">タイムスタンプ パラメーターは最初または前のタイムスタンプより小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Completed">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Input.Manipulations.Manipulation2DCompletedEventArgs&gt; Completed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Input.Manipulations.Manipulation2DCompletedEventArgs&gt; Completed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.Manipulations.InertiaProcessor2D.Completed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Input.Manipulations.Manipulation2DCompletedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>推定完了時に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delta">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs&gt; Delta;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs&gt; Delta" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>推定配信元が変更されたとき、または平行移動、拡大/縮小、または回転が発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta?displayProperty=nameWithType>イベントおよび<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta?displayProperty=nameWithType>イベントは、同じ型です。 通常、両方のイベントの同じイベント ハンドラーを使用することができます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_OnManipulationOrInertiaDelta](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_onmanipulationorinertiadelta)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpansionBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Manipulations.InertiaExpansionBehavior2D ExpansionBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.Manipulations.InertiaExpansionBehavior2D ExpansionBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaProcessor2D.ExpansionBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Manipulations.InertiaExpansionBehavior2D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または慣性プロセッサの展開の動作を設定します。</summary>
+        <value>慣性プロセッサの展開の動作です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialOriginX">
+      <MemberSignature Language="C#" Value="public float InitialOriginX { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 InitialOriginX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaProcessor2D.InitialOriginX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または座標単位で初期の原点の x 座標を設定します。</summary>
+        <value>座標単位で、初期の原点の x 座標。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって表される、原点、<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.InitialOriginX%2A>と<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.InitialOriginY%2A>プロパティは、要素に関連付けられているすべてのマニピュレーターの平均位置です。  
+  
+ 有効な値を<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.InitialOriginX%2A>の有限の数値します。 既定値は 0.0 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialOriginY">
+      <MemberSignature Language="C#" Value="public float InitialOriginY { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 InitialOriginY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaProcessor2D.InitialOriginY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または座標単位で初期の原点の y 座標を設定します。</summary>
+        <value>座標単位で、初期の原点の y 座標。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって表される、原点、<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.InitialOriginX%2A>と<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.InitialOriginY%2A>プロパティは、要素に関連付けられているすべてのマニピュレーターの平均位置です。  
+  
+ 有効な値を<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.InitialOriginY%2A>の有限の数値します。 既定値は 0.0 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRunning">
+      <MemberSignature Language="C#" Value="public bool IsRunning { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRunning" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaProcessor2D.IsRunning" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>慣性は現在進行中かどうかを取得します。</summary>
+        <value>慣性は現在進行中かどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、イベント ハンドラーを<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started?displayProperty=nameWithType>イベントを確認かどうか慣性の処理が実行されているし、必要な場合を呼び出して停止、<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Completed>メソッドです。  
+  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_OnManipulationStarted](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_onmanipulationstarted)]  
+  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_Timestamp](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_timestamp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Process">
+      <MemberSignature Language="C#" Value="public bool Process (long timestamp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Process(int64 timestamp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.InertiaProcessor2D.Process(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timestamp" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="timestamp">100 ナノ秒タイマー刻み単位での推定を行うためのタイムスタンプ。</param>
+        <summary>指定された時間に、操作の位置、向き、および平均半径を推定します。</summary>
+        <returns>操作の位置、向き、および指定した時間の平均の半径。 <see langword="true" />推定は、実行中である場合それ以外の場合、<see langword="false" />推定が完了した場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムスタンプは、100 ナノ秒単位ではします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">タイムスタンプ パラメーターは最初または前のタイムスタンプより小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RotationBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Manipulations.InertiaRotationBehavior2D RotationBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.Manipulations.InertiaRotationBehavior2D RotationBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaProcessor2D.RotationBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Manipulations.InertiaRotationBehavior2D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または慣性プロセッサの回転の動作を設定します。</summary>
+        <value>慣性プロセッサの回転動作します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Input.Manipulations.InertiaRotationBehavior2D.DesiredRotation%2A>慣性の処理の開始の方向からのオブジェクト 3---1.5 倍の回転を有効にするプロパティを設定します。  
+  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_SetDesiredRotation](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_setdesiredrotation)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParameters">
+      <MemberSignature Language="C#" Value="public void SetParameters (System.Windows.Input.Manipulations.InertiaParameters2D parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParameters(class System.Windows.Input.Manipulations.InertiaParameters2D parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.InertiaProcessor2D.SetParameters(System.Windows.Input.Manipulations.InertiaParameters2D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Windows.Input.Manipulations.InertiaParameters2D" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">設定するパラメーター。</param>
+        <summary>慣性プロセッサのパラメーターを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslationBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Manipulations.InertiaTranslationBehavior2D TranslationBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.Manipulations.InertiaTranslationBehavior2D TranslationBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.InertiaProcessor2D.TranslationBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Manipulations.InertiaTranslationBehavior2D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または慣性プロセッサの変換動作を設定します。</summary>
+        <value>慣性プロセッサの変換動作します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

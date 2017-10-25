@@ -1,0 +1,663 @@
+<Type Name="Stopwatch" FullName="System.Diagnostics.Stopwatch">
+  <TypeSignature Language="C#" Value="public class Stopwatch" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Stopwatch extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Stopwatch" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>経過時間を正確に計測するために使用できる一連のメソッドとプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#System/services/monitoring/system/diagnosticts/Stopwatch.cs#ceb0ba9cc88de82e)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ A<xref:System.Diagnostics.Stopwatch>インスタンスは複数の間隔の間で 1 つの間隔の経過時間の合計経過時間を測定することができます。 一般的な<xref:System.Diagnostics.Stopwatch>シナリオを呼び出す、<xref:System.Diagnostics.Stopwatch.Start%2A>メソッド、最終的に呼び出す、<xref:System.Diagnostics.Stopwatch.Stop%2A>メソッド、およびし確認の経過時間を使用して、<xref:System.Diagnostics.Stopwatch.Elapsed%2A>プロパティです。  
+  
+ A<xref:System.Diagnostics.Stopwatch>インスタンスは実行中または停止のいずれかです。 使用<xref:System.Diagnostics.Stopwatch.IsRunning%2A>の現在の状態を決定する、<xref:System.Diagnostics.Stopwatch>です。 使用して<xref:System.Diagnostics.Stopwatch.Start%2A>; 経過時間の計測を開始する使用<xref:System.Diagnostics.Stopwatch.Stop%2A>経過時間の計測を停止します。 クエリのプロパティを使用した経過時間値<xref:System.Diagnostics.Stopwatch.Elapsed%2A>、 <xref:System.Diagnostics.Stopwatch.ElapsedMilliseconds%2A>、または<xref:System.Diagnostics.Stopwatch.ElapsedTicks%2A>です。 インスタンスが実行中か停止中に、経過時間のプロパティを照会できます。 プロパティが徐々 に増やす経過時間中に、<xref:System.Diagnostics.Stopwatch>が実行中です。 定数として残りますインスタンスを停止します。  
+  
+ 既定では、経過時間の値、<xref:System.Diagnostics.Stopwatch>のインスタンスが等しいすべての測定される時間間隔の合計。 各呼び出し<xref:System.Diagnostics.Stopwatch.Start%2A>累積の経過時間でのカウントを開始への各呼び出し<xref:System.Diagnostics.Stopwatch.Stop%2A>現在の間隔の計測を終了し、累積的な経過時間の値を固定します。 使用して、 <xref:System.Diagnostics.Stopwatch.Reset%2A> 、既存の累積的な経過時間を消去するメソッドを<xref:System.Diagnostics.Stopwatch>インスタンス。  
+  
+ <xref:System.Diagnostics.Stopwatch>基になるタイマー機構のタイマー刻みをカウントして、経過時間を測定します。 場合は、インストールされているハードウェアとオペレーティング システムのサポート、高解像度のパフォーマンス カウンター、<xref:System.Diagnostics.Stopwatch>クラスは、経過時間を測定するカウンターを使用します。 それ以外の場合、<xref:System.Diagnostics.Stopwatch>クラスでは、システム タイマーを使用して、経過時間を測定します。 使用して、<xref:System.Diagnostics.Stopwatch.Frequency>と<xref:System.Diagnostics.Stopwatch.IsHighResolution>、有効桁数と解決策を決定するフィールド、<xref:System.Diagnostics.Stopwatch>タイミング実装します。  
+  
+ <xref:System.Diagnostics.Stopwatch>クラスは、マネージ コード内のタイミングに関連するパフォーマンス カウンターの操作を支援します。 具体的には、<xref:System.Diagnostics.Stopwatch.Frequency>フィールドと<xref:System.Diagnostics.Stopwatch.GetTimestamp%2A>メソッドは、アンマネージ Win32 Api の代わりに使用できる`QueryPerformanceFrequency`と`QueryPerformanceCounter`です。  
+  
+> [!NOTE]
+>  マルチプロセッサ コンピューターで必要に、スレッドを実行するプロセッサはありません。 ただし、BIOS、またはハードウェア アブストラクション レイヤー (HAL) で、バグのためには、別のプロセッサでさまざまなタイミングの結果を取得できます。 スレッドのプロセッサ アフィニティを指定するには、使用、<xref:System.Diagnostics.ProcessThread.ProcessorAffinity%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Diagnostics.Stopwatch>クラス アプリケーションの実行時間を決定します。  
+  
+ [!code-csharp[System.Diagnostics.Stopwatch#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.Stopwatch/CS/source.cs#1)]
+ [!code-vb[System.Diagnostics.Stopwatch#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.Stopwatch/VB/source.vb#1)]  
+  
+ 次の例での使用、<xref:System.Diagnostics.Stopwatch>パフォーマンス データを計算するクラス。  
+  
+ [!code-cpp[StopWatchPerfSample#1](~/samples/snippets/cpp/VS_Snippets_CLR/StopWatchPerfSample/CPP/source.cpp#1)]
+ [!code-csharp[StopWatchPerfSample#1](~/samples/snippets/csharp/VS_Snippets_CLR/StopWatchPerfSample/CS/source.cs#1)]
+ [!code-vb[StopWatchPerfSample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StopWatchPerfSample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Stopwatch ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Stopwatch.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.Stopwatch" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Diagnostics.Stopwatch>インスタンスは停止し、インスタンスの経過時間のプロパティが 0 です。  
+  
+ 使用して、<xref:System.Diagnostics.Stopwatch.Start%2A>メソッドを新しい経過時間の計測を開始する<xref:System.Diagnostics.Stopwatch>インスタンス。 使用して、<xref:System.Diagnostics.Stopwatch.StartNew%2A>メソッドは、新しい初期化を<xref:System.Diagnostics.Stopwatch>をインスタンス化し、すぐに開始します。  
+  
+   
+  
+## Examples  
+ 次の例の初期化、<xref:System.Diagnostics.Stopwatch>単純なクラスのコンス トラクターを使用してインスタンス。  
+  
+ [!code-csharp[System.Diagnostics.Stopwatch#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.Stopwatch/CS/source.cs#1)]
+ [!code-vb[System.Diagnostics.Stopwatch#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.Stopwatch/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Elapsed">
+      <MemberSignature Language="C#" Value="public TimeSpan Elapsed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Elapsed" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Stopwatch.Elapsed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスで計測された経過時間の合計を取得します。</summary>
+        <value>現在のインスタンスで計測された経過時間の合計を表す読み取り専用の <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な<xref:System.Diagnostics.Stopwatch>シナリオを呼び出す、<xref:System.Diagnostics.Stopwatch.Start%2A>メソッド、最終的に呼び出す、<xref:System.Diagnostics.Stopwatch.Stop%2A>メソッド、およびし確認の経過時間を使用して、<xref:System.Diagnostics.Stopwatch.Elapsed%2A>プロパティです。  
+  
+ 使用して、<xref:System.Diagnostics.Stopwatch.Elapsed%2A>経過時間を取得するプロパティの値を使用して<xref:System.TimeSpan>メソッドとプロパティ。 たとえば、書式を設定できます、返された<xref:System.TimeSpan>をテキスト形式のインスタンスまたは必要とする別のクラスに渡す、<xref:System.TimeSpan>パラメーター。  
+  
+ プロパティを照会する<xref:System.Diagnostics.Stopwatch.Elapsed%2A>、 <xref:System.Diagnostics.Stopwatch.ElapsedMilliseconds%2A>、および<xref:System.Diagnostics.Stopwatch.ElapsedTicks%2A>中に、<xref:System.Diagnostics.Stopwatch>インスタンスが実行中か停止します。 プロパティが徐々 に増やす経過時間中に、<xref:System.Diagnostics.Stopwatch>が実行中です。 定数として残りますインスタンスを停止します。  
+  
+ 既定では、経過時間の値、<xref:System.Diagnostics.Stopwatch>のインスタンスが等しいすべての測定される時間間隔の合計。 各呼び出し<xref:System.Diagnostics.Stopwatch.Start%2A>累積の経過時間でのカウントを開始への各呼び出し<xref:System.Diagnostics.Stopwatch.Stop%2A>現在の間隔の計測を終了し、累積的な経過時間の値を固定します。 使用して、 <xref:System.Diagnostics.Stopwatch.Reset%2A> 、既存の累積的な経過時間を消去するメソッドを<xref:System.Diagnostics.Stopwatch>インスタンス。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.Stopwatch.Elapsed%2A>プロパティをアプリケーションの実行時間を決定します。  
+  
+ [!code-csharp[System.Diagnostics.Stopwatch#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.Stopwatch/CS/source.cs#1)]
+ [!code-vb[System.Diagnostics.Stopwatch#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.Stopwatch/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElapsedMilliseconds">
+      <MemberSignature Language="C#" Value="public long ElapsedMilliseconds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ElapsedMilliseconds" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Stopwatch.ElapsedMilliseconds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスで計測された経過時間の合計を取得します (ミリ秒単位)。</summary>
+        <value>現在のインスタンスで計測されたミリ秒の合計を表す読み取り専用の長整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、最も近い整数のミリ秒の値に丸められた経過時間を表します。 高い精度の測定値を使用して、<xref:System.Diagnostics.Stopwatch.Elapsed%2A>または<xref:System.Diagnostics.Stopwatch.ElapsedTicks%2A>プロパティです。  
+  
+ プロパティを照会する<xref:System.Diagnostics.Stopwatch.Elapsed%2A>、 <xref:System.Diagnostics.Stopwatch.ElapsedMilliseconds%2A>、および<xref:System.Diagnostics.Stopwatch.ElapsedTicks%2A>中に、<xref:System.Diagnostics.Stopwatch>インスタンスが実行中か停止します。 プロパティが徐々 に増やす経過時間中に、<xref:System.Diagnostics.Stopwatch>が実行中です。 定数として残りますインスタンスを停止します。  
+  
+ 既定では、経過時間の値、<xref:System.Diagnostics.Stopwatch>のインスタンスが等しいすべての測定される時間間隔の合計。 各呼び出し<xref:System.Diagnostics.Stopwatch.Start%2A>累積の経過時間でのカウントを開始への各呼び出し<xref:System.Diagnostics.Stopwatch.Stop%2A>現在の間隔の計測を終了し、累積的な経過時間の値を固定します。 使用して、 <xref:System.Diagnostics.Stopwatch.Reset%2A> 、既存の累積的な経過時間を消去するメソッドを<xref:System.Diagnostics.Stopwatch>インスタンス。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Diagnostics.Stopwatch>整数文字列からを解析するための 4 つの異なる実装のパフォーマンスを測定するクラス。 このコード例に示されている例の一部である、<xref:System.Diagnostics.Stopwatch>クラスです。  
+  
+ [!code-cpp[StopWatchPerfSample#3](~/samples/snippets/cpp/VS_Snippets_CLR/StopWatchPerfSample/CPP/source.cpp#3)]
+ [!code-csharp[StopWatchPerfSample#3](~/samples/snippets/csharp/VS_Snippets_CLR/StopWatchPerfSample/CS/source.cs#3)]
+ [!code-vb[StopWatchPerfSample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/StopWatchPerfSample/VB/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElapsedTicks">
+      <MemberSignature Language="C#" Value="public long ElapsedTicks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ElapsedTicks" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Stopwatch.ElapsedTicks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスで計測された経過時間の合計を取得します (タイマー刻み)。</summary>
+        <value>現在のインスタンスで計測されたタイマー刻みの合計を表す読み取り専用の長整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、基になるタイマー機構の経過したタイマー刻みの数を表します。 1 ティックは時間の最小単位を<xref:System.Diagnostics.Stopwatch>タイマーを測定できます。 使用して、<xref:System.Diagnostics.Stopwatch.Frequency>に変換するフィールド、<xref:System.Diagnostics.Stopwatch.ElapsedTicks%2A>値の秒数にします。  
+  
+ プロパティを照会する<xref:System.Diagnostics.Stopwatch.Elapsed%2A>、 <xref:System.Diagnostics.Stopwatch.ElapsedMilliseconds%2A>、および<xref:System.Diagnostics.Stopwatch.ElapsedTicks%2A>中に、<xref:System.Diagnostics.Stopwatch>インスタンスが実行中か停止します。 プロパティが徐々 に増やす経過時間中に、<xref:System.Diagnostics.Stopwatch>が実行中です。 定数として残りますインスタンスを停止します。  
+  
+ 既定では、経過時間の値、<xref:System.Diagnostics.Stopwatch>のインスタンスが等しいすべての測定される時間間隔の合計。 各呼び出し<xref:System.Diagnostics.Stopwatch.Start%2A>累積の経過時間でのカウントを開始への各呼び出し<xref:System.Diagnostics.Stopwatch.Stop%2A>現在の間隔の計測を終了し、累積的な経過時間の値を固定します。 使用して、 <xref:System.Diagnostics.Stopwatch.Reset%2A> 、既存の累積的な経過時間を消去するメソッドを<xref:System.Diagnostics.Stopwatch>インスタンス。  
+  
+> [!NOTE]
+>  <xref:System.Diagnostics.Stopwatch>目盛りとは異なる<xref:System.DateTime.Ticks%2A?displayProperty=nameWithType>です。 各ティック、<xref:System.DateTime.Ticks%2A?displayProperty=nameWithType>値が 1 つの 100 ナノ秒間隔を表します。 各ティック、<xref:System.Diagnostics.Stopwatch.ElapsedTicks%2A>値で割った値 1 秒に等しい時間間隔を表す、<xref:System.Diagnostics.Stopwatch.Frequency>です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Diagnostics.Stopwatch>整数文字列からを解析するための 4 つの異なる実装のパフォーマンスを測定するクラス。 このコード例に示されている例の一部である、<xref:System.Diagnostics.Stopwatch>クラスです。  
+  
+ [!code-cpp[StopWatchPerfSample#4](~/samples/snippets/cpp/VS_Snippets_CLR/StopWatchPerfSample/CPP/source.cpp#4)]
+ [!code-csharp[StopWatchPerfSample#4](~/samples/snippets/csharp/VS_Snippets_CLR/StopWatchPerfSample/CS/source.cs#4)]
+ [!code-vb[StopWatchPerfSample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/StopWatchPerfSample/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Frequency">
+      <MemberSignature Language="C#" Value="public static readonly long Frequency;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly int64 Frequency" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.Stopwatch.Frequency" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 秒あたりのタイマー刻みの数として、タイマーの頻度を取得します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイマーの頻度は、タイマーの精度と解像度を示します。 たとえば、タイマーの頻度は 200万タイマー刻みあたり 2 つ目の代入ティックあたり 500 ナノ秒のタイマー刻み。 つまり、1 秒間に等しいため 10億ナノ秒、1 秒あたりの 200万タイマー刻みのタイマーの頻度は 200万あたり 500 ナノ秒あたり 1 ティックをさらに簡略化 10億ナノ秒のタイマー刻み等価です。  
+  
+ <xref:System.Diagnostics.Stopwatch.Frequency>値が、基になるタイミング メカニズムの分解能に依存します。 場合は、インストールされているハードウェアとオペレーティング システムのサポート、高解像度のパフォーマンス カウンター、<xref:System.Diagnostics.Stopwatch.Frequency>値には、そのカウンターの頻度が反映されます。 それ以外の場合、<xref:System.Diagnostics.Stopwatch.Frequency>値のシステム タイマーの頻度に基づきます。  
+  
+ <xref:System.Diagnostics.Stopwatch>頻度は、インストールされているハードウェアとオペレーティング システムによって異なります、<xref:System.Diagnostics.Stopwatch.Frequency>システムが実行されている間、値が一定です。  
+  
+   
+  
+## Examples  
+ 次の例は、頻度と解決策が表示されます、<xref:System.Diagnostics.Stopwatch>タイマーです。 このコード例に示されている例の一部である、<xref:System.Diagnostics.Stopwatch>クラスです。  
+  
+ [!code-cpp[StopWatchPerfSample#2](~/samples/snippets/cpp/VS_Snippets_CLR/StopWatchPerfSample/CPP/source.cpp#2)]
+ [!code-csharp[StopWatchPerfSample#2](~/samples/snippets/csharp/VS_Snippets_CLR/StopWatchPerfSample/CS/source.cs#2)]
+ [!code-vb[StopWatchPerfSample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/StopWatchPerfSample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTimestamp">
+      <MemberSignature Language="C#" Value="public static long GetTimestamp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 GetTimestamp() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Stopwatch.GetTimestamp" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>タイマー機構の現在のタイマー刻み数を取得します。</summary>
+        <returns>基になるタイマー機構のタイマー刻みカウンター値を表す長整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Diagnostics.Stopwatch>クラスは、高解像度のパフォーマンス カウンターを使用して<xref:System.Diagnostics.Stopwatch.GetTimestamp%2A>そのカウンターの現在の値を返します。 場合、<xref:System.Diagnostics.Stopwatch>クラス タイマーを使用して、システム、 <xref:System.Diagnostics.Stopwatch.GetTimestamp%2A> 、現在を返して<xref:System.DateTime.Ticks%2A?displayProperty=nameWithType>のプロパティ、<xref:System.DateTime.Now%2A?displayProperty=nameWithType>インスタンス。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Diagnostics.Stopwatch.GetTimestamp%2A>パフォーマンス カウンターを更新する方法です。  
+  
+ [!code-cpp[PerformanceCounterType.ElapsedTime#2](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.ElapsedTime/CPP/elapsedtime.cpp#2)]
+ [!code-csharp[PerformanceCounterType.ElapsedTime#2](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.ElapsedTime/CS/elapsedtime.cs#2)]
+ [!code-vb[PerformanceCounterType.ElapsedTime#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.ElapsedTime/VB/elapsedtime.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHighResolution">
+      <MemberSignature Language="C#" Value="public static readonly bool IsHighResolution;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly bool IsHighResolution" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.Stopwatch.IsHighResolution" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイマーが高解像力のパフォーマンス カウンターに基づいているかどうかを示します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイマーによって使用される、<xref:System.Diagnostics.Stopwatch>クラスは、システムのハードウェアとオペレーティング システムによって異なります。 <xref:System.Diagnostics.Stopwatch.IsHighResolution>`true`場合、<xref:System.Diagnostics.Stopwatch>タイマーが高解像度のパフォーマンス カウンターに基づいています。 それ以外の場合、<xref:System.Diagnostics.Stopwatch.IsHighResolution>は`false`、ことを示します、<xref:System.Diagnostics.Stopwatch>タイマーがシステム タイマーに基づいています。  
+  
+   
+  
+## Examples  
+ 次の例は、頻度と解決策が表示されます、<xref:System.Diagnostics.Stopwatch>タイマーです。 このコード例に示されている例の一部である、<xref:System.Diagnostics.Stopwatch>クラスです。  
+  
+ [!code-cpp[StopWatchPerfSample#2](~/samples/snippets/cpp/VS_Snippets_CLR/StopWatchPerfSample/CPP/source.cpp#2)]
+ [!code-csharp[StopWatchPerfSample#2](~/samples/snippets/csharp/VS_Snippets_CLR/StopWatchPerfSample/CS/source.cs#2)]
+ [!code-vb[StopWatchPerfSample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/StopWatchPerfSample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRunning">
+      <MemberSignature Language="C#" Value="public bool IsRunning { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRunning" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Stopwatch.IsRunning" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Diagnostics.Stopwatch" />タイマーが実行されています。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Diagnostics.Stopwatch" />インスタンスが現在実行されていて、間隔の経過時間の計測それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Diagnostics.Stopwatch>インスタンスへの呼び出しの実行が開始<xref:System.Diagnostics.Stopwatch.Start%2A>または<xref:System.Diagnostics.Stopwatch.StartNew%2A>です。 呼び出しを実行しているインスタンスが停止<xref:System.Diagnostics.Stopwatch.Stop%2A>または<xref:System.Diagnostics.Stopwatch.Reset%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Stopwatch.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>タイマー間隔の計測を停止して、経過時間をゼロにリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Diagnostics.Stopwatch>インスタンスを計算し、インスタンスがリセットされるまで、複数の時間間隔の間で累積的な経過時間を保持します。 使用して<xref:System.Diagnostics.Stopwatch.Stop%2A>を現在の間隔の計測を停止し、経過時間の累積値を保持します。 使用して<xref:System.Diagnostics.Stopwatch.Reset%2A>進行中の間隔の計測を停止し、経過時間の値をオフにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Restart">
+      <MemberSignature Language="C#" Value="public void Restart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Restart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Stopwatch.Restart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>時間間隔の計測を停止し、経過時間をゼロにリセットして、経過時間の計測を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Diagnostics.Stopwatch>インスタンスを計算し、インスタンスをリセット、または再起動するまで、複数の時間間隔の間で累積的な経過時間を保持します。 使用して<xref:System.Diagnostics.Stopwatch.Stop%2A>を現在の間隔の計測を停止し、経過時間の累積値を保持します。 使用して<xref:System.Diagnostics.Stopwatch.Reset%2A>進行中の間隔の計測を停止し、経過時間の値をオフにします。 使用して<xref:System.Diagnostics.Stopwatch.Restart%2A>を現在の間隔の計測を停止し、新しい間隔の計測を開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Stopwatch.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>間隔の経過時間の計測を開始または再開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な<xref:System.Diagnostics.Stopwatch>シナリオを呼び出す、<xref:System.Diagnostics.Stopwatch.Start%2A>メソッド、最終的に呼び出す、<xref:System.Diagnostics.Stopwatch.Stop%2A>メソッド、およびし確認の経過時間を使用して、<xref:System.Diagnostics.Stopwatch.Elapsed%2A>プロパティです。  
+  
+ 起動されたら、<xref:System.Diagnostics.Stopwatch>インスタンスが停止しているか、リセットされるまで、タイマーが経過したタイマー刻みで、現在の間隔を測定します。 以降、<xref:System.Diagnostics.Stopwatch>は既に実行されていますが、タイマー状態を変更または経過時間のプロパティをリセットしません。  
+  
+ ときに、<xref:System.Diagnostics.Stopwatch>インスタンスが 1 つ以上の間隔を測定、<xref:System.Diagnostics.Stopwatch.Start%2A>メソッドは、現在の経過時間の値から時間の計測を再開します。 A<xref:System.Diagnostics.Stopwatch>インスタンスを計算し、インスタンスがリセットされるまで、複数の時間間隔の間で累積的な経過時間を保持します。 使用して、<xref:System.Diagnostics.Stopwatch.Reset%2A>メソッドを呼び出す前に<xref:System.Diagnostics.Stopwatch.Start%2A>の累積的な経過時間をオフにする、<xref:System.Diagnostics.Stopwatch>インスタンス。 使用して、<xref:System.Diagnostics.Stopwatch.Restart%2A>メソッドを<xref:System.Diagnostics.Stopwatch.Reset%2A>と<xref:System.Diagnostics.Stopwatch.Start%2A>、 <xref:System.Diagnostics.Stopwatch> 1 つのコマンドを使用します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.Stopwatch.Start%2A>アプリケーションの実行時間を測定するタイマーを開始するメソッド。  
+  
+ [!code-csharp[System.Diagnostics.Stopwatch#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.Stopwatch/CS/source.cs#1)]
+ [!code-vb[System.Diagnostics.Stopwatch#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.Stopwatch/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartNew">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.Stopwatch StartNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Stopwatch StartNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Stopwatch.StartNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Stopwatch</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい初期化<see cref="T:System.Diagnostics.Stopwatch" />インスタンスには、0、経過時間のプロパティを設定し、経過時間の計測を開始します。</summary>
+        <returns>A<see cref="T:System.Diagnostics.Stopwatch" />経過時間の計測を開始しました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すことは、<xref:System.Diagnostics.Stopwatch>コンス トラクターと呼び出すことで、<xref:System.Diagnostics.Stopwatch.Start%2A>の新しいインスタンス。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Diagnostics.Stopwatch>整数文字列からを解析するための 4 つの異なる実装のパフォーマンスを測定するクラス。 このコード例に示されている例の一部である、<xref:System.Diagnostics.Stopwatch>クラスです。  
+  
+ [!code-cpp[StopWatchPerfSample#4](~/samples/snippets/cpp/VS_Snippets_CLR/StopWatchPerfSample/CPP/source.cpp#4)]
+ [!code-csharp[StopWatchPerfSample#4](~/samples/snippets/csharp/VS_Snippets_CLR/StopWatchPerfSample/CS/source.cs#4)]
+ [!code-vb[StopWatchPerfSample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/StopWatchPerfSample/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Stopwatch.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>間隔の経過時間の計測を停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な<xref:System.Diagnostics.Stopwatch>シナリオを呼び出す、<xref:System.Diagnostics.Stopwatch.Start%2A>メソッド、最終的に呼び出す、<xref:System.Diagnostics.Stopwatch.Stop%2A>メソッド、およびし確認の経過時間を使用して、<xref:System.Diagnostics.Stopwatch.Elapsed%2A>プロパティです。  
+  
+ <xref:System.Diagnostics.Stopwatch.Stop%2A>メソッドは現在の時間間隔の計測を終了します。 停止、<xref:System.Diagnostics.Stopwatch>は実行されていないがタイマーの状態を変更または経過時間のプロパティをリセットしません。  
+  
+ ときに、<xref:System.Diagnostics.Stopwatch>インスタンスが 1 つ以上の間隔を測定、<xref:System.Diagnostics.Stopwatch.Stop%2A>メソッドは、経過時間の測定を一時停止します。 後続の呼び出しに<xref:System.Diagnostics.Stopwatch.Start%2A>現在の経過時間の値からの時間の計測を再開します。 使用して、<xref:System.Diagnostics.Stopwatch.Reset%2A>の累積的な経過時間を消去するメソッドを<xref:System.Diagnostics.Stopwatch>インスタンス。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.Stopwatch.Stop%2A>メソッドをアプリケーションの実行時間を測定するタイマーを停止します。  
+  
+ [!code-csharp[System.Diagnostics.Stopwatch#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.Stopwatch/CS/source.cs#1)]
+ [!code-vb[System.Diagnostics.Stopwatch#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.Stopwatch/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

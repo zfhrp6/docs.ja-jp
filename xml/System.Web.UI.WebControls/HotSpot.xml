@@ -1,0 +1,763 @@
+<Type Name="HotSpot" FullName="System.Web.UI.WebControls.HotSpot">
+  <TypeSignature Language="C#" Value="public abstract class HotSpot : System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HotSpot extends System.Object implements class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.HotSpot" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべてのホット スポット形状に共通の基本機能を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象のインスタンスを直接作成できない<xref:System.Web.UI.WebControls.HotSpot>クラスです。 代わりに、このクラスは、継承によって、 <xref:System.Web.UI.WebControls.CircleHotSpot>、 <xref:System.Web.UI.WebControls.RectangleHotSpot>、および<xref:System.Web.UI.WebControls.PolygonHotSpot>ホット スポットの共通の基本的な機能を提供するクラス。 派生する必要があります、<xref:System.Web.UI.WebControls.HotSpot>を表す一意の形状を定義するカスタムのホット スポット クラスを作成するクラス。 ただし、ほとんどの図形を使用してを定義することができます、 <xref:System.Web.UI.WebControls.CircleHotSpot>、 <xref:System.Web.UI.WebControls.RectangleHotSpot>、および<xref:System.Web.UI.WebControls.PolygonHotSpot>クラスです。  
+  
+ ときに、<xref:System.Web.UI.WebControls.HotSpot>で、<xref:System.Web.UI.WebControls.ImageMap>コントロールがクリックされると、ページ URL に移動、生成、サーバーへのポストバックまたは何も行われません。 <xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティは、この動作を指定します。 URL に移動するには、設定、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティを`HotSpotMode.Navigate`です。 使用して、<xref:System.Web.UI.WebControls.HotSpot.NavigateUrl%2A>プロパティに移動する URL を指定します。 サーバーに投稿するには、設定、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティを`HotSpotMode.PostBack`です。 使用して、<xref:System.Web.UI.WebControls.HotSpot.PostBackValue%2A>プロパティの名前を指定する、<xref:System.Web.UI.WebControls.HotSpot>オブジェクト。 この名前は、<xref:System.Web.UI.WebControls.ImageMapEventArgs>イベント データときに、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトをクリックします。 場合は、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトの動作がないように設定、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティを`HotSpotMode.Inactive`です。  
+  
+ また、使用することができます、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティに含まれている<xref:System.Web.UI.WebControls.ImageMap>コントロールで指定する、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトの動作です。 詳細については、「<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Web.UI.WebControls.HotSpot" /> から継承する場合は、<see cref="M:System.Web.UI.WebControls.HotSpot.GetCoordinates" /> メンバーと <see cref="P:System.Web.UI.WebControls.HotSpot.MarkupName" /> メンバーをオーバーライドする必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HotSpot ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpot.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.HotSpot" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、この型の状態を初期化するために、派生クラスのコンス トラクターによって呼び出されます。 <xref:System.Web.UI.WebControls.HotSpot>クラスは抽象であり、そのため、直接インスタンス化できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessKey">
+      <MemberSignature Language="C#" Value="public virtual string AccessKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AccessKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpot.AccessKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にすばやく移動できるようにするアクセス キー、<see cref="T:System.Web.UI.WebControls.HotSpot" />領域。</summary>
+        <value>アクセス キーにすばやく移動できる、<see cref="T:System.Web.UI.WebControls.HotSpot" />領域。 既定値は<see cref="F:System.String.Empty" />、このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HotSpot.AccessKey%2A>のキーボード ショートカットを指定するプロパティ、<xref:System.Web.UI.WebControls.HotSpot>領域。 これにより、キーボードの ALT キーと指定した文字のキーを押して領域にすばやく移動することができます。 たとえば、設定のアクセス キー、<xref:System.Web.UI.WebControls.HotSpot>を文字列"D"地域では、ALT キーを押しながら D キーを押して、ユーザーがコントロールに移動できることを示します。  
+  
+ 1 つの文字列のみが許可されている、<xref:System.Web.UI.WebControls.HotSpot.AccessKey%2A>プロパティです。 このプロパティはどちらも値を設定しようとする場合`null`、 <xref:System.String.Empty>、単一の文字の文字列では、例外がスローされてもします。  
+  
+> [!NOTE]
+>  このプロパティは、以降 Internet Explorer 4.0 でのみサポートします。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したアクセス キーはどちらも<see langword="null" />、空の文字列 ("") も 1 つの文字列。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternateText">
+      <MemberSignature Language="C#" Value="public virtual string AlternateText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AlternateText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpot.AlternateText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を表示する代替テキスト、<see cref="T:System.Web.UI.WebControls.HotSpot" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.ImageMap" />イメージは使用できませんまたはイメージをサポートしないブラウザーにレンダリングを制御します。</summary>
+        <value>代わりに表示されるテキスト、<see cref="T:System.Web.UI.WebControls.HotSpot" />ときに、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロールのイメージは使用できません。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HotSpot.AlternateText%2A>プロパティを表示するテキストを指定する、<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクト、<xref:System.Web.UI.WebControls.ImageMap>によって指定されたイメージを制御、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティは使用できません。  
+  
+ ときに、<xref:System.Web.UI.WebControls.ImageMap>コントロールを表示するイメージを表示するのではなく、イメージをサポートしないブラウザーに、それぞれのハイパーリンクを表示<xref:System.Web.UI.WebControls.HotSpot>で、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 コントロールからハイパーリンクごとに表示するテキストを取得する、<xref:System.Web.UI.WebControls.HotSpot.AlternateText%2A>それぞれのプロパティ<xref:System.Web.UI.WebControls.HotSpot>です。 ようにユーザーをクリックすると、ハイパーリンクのいずれかが、動作、<xref:System.Web.UI.WebControls.HotSpot>に移動するか、指定された URL、によって、サーバーへのポストバックを生成するか、何も実行しています。  
+  
+ ときに、<xref:System.Web.UI.WebControls.ImageMap>コントロールがツールヒント機能の値をサポートするブラウザーにレンダリング、<xref:System.Web.UI.WebControls.HotSpot.AlternateText%2A>のツールヒントとして表示されるプロパティ、<xref:System.Web.UI.WebControls.HotSpot>です。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCoordinates">
+      <MemberSignature Language="C#" Value="public abstract string GetCoordinates ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetCoordinates() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpot.GetCoordinates" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされるの座標を表す文字列を返します、<see cref="T:System.Web.UI.WebControls.HotSpot" />領域。</summary>
+        <returns>座標を表す文字列、<see cref="T:System.Web.UI.WebControls.HotSpot" />領域。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドされると、<xref:System.Web.UI.WebControls.HotSpot.GetCoordinates%2A>メソッドの座標の文字列表現を返します、<xref:System.Web.UI.WebControls.HotSpot>領域。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Web.UI.WebControls.HotSpot" />、オーバーライドする必要があります、<see cref="M:System.Web.UI.WebControls.HotSpot.GetCoordinates" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="HotSpotMode">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.HotSpotMode HotSpotMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.HotSpotMode HotSpotMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpot.HotSpotMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HotSpotMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の動作、<see cref="T:System.Web.UI.WebControls.HotSpot" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.ImageMap" />タイミングを制御、<see cref="T:System.Web.UI.WebControls.HotSpot" />をクリックします。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.HotSpotMode" /> 列挙値のいずれか。 既定値は、<see langword="Default" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>の動作を指定するプロパティ、<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクト、<xref:System.Web.UI.WebControls.ImageMap>タイミングを制御、<xref:System.Web.UI.WebControls.HotSpot>をクリックします。 このプロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.HotSpotMode>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`NotSet`|<xref:System.Web.UI.WebControls.HotSpot>設定されている動作を使用して、<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.ImageMap>コントロールを動作を一切定義しません、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトが、URL に移動します。|  
+|`Inactive`|<xref:System.Web.UI.WebControls.HotSpot>すべての動作はありません。|  
+|`Navigate`|<xref:System.Web.UI.WebControls.HotSpot> URL に移動します。|  
+|`PostBack`|<xref:System.Web.UI.WebControls.HotSpot>サーバーへのポストバックが生成されます。|  
+  
+ 指定できます<xref:System.Web.UI.WebControls.HotSpot>いずれかの動作を<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティ、コントロールのか、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティをそれぞれ個別<xref:System.Web.UI.WebControls.HotSpot>オブジェクト。 両方のプロパティが設定されている場合、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>ごとに指定されたプロパティ<xref:System.Web.UI.WebControls.HotSpot>オブジェクトよりも優先、<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティを<xref:System.Web.UI.WebControls.ImageMap>コントロール。  
+  
+ 指定した場合`HotSpotMode.NotSet`の<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>、1 つのプロパティ<xref:System.Web.UI.WebControls.HotSpot>オブジェクト、<xref:System.Web.UI.WebControls.HotSpot>の親からその動作を取得<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティ。 このシナリオの場合、<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A>プロパティのいずれかに設定されていない値またはに設定されている`HotSpotMode.NotSet`URL に移動するのには、既定の動作です。  
+  
+ 指定した場合`HotSpotMode.Navigate`の<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>のプロパティ、<xref:System.Web.UI.WebControls.HotSpot>オブジェクト、<xref:System.Web.UI.WebControls.HotSpot>ホット スポット領域がクリックされたときに、オブジェクトが、URL に移動します。 使用して、<xref:System.Web.UI.WebControls.HotSpot.NavigateUrl%2A>プロパティに移動する URL を指定します。  
+  
+ 指定する場合`HotSpotMode.PostBack`の<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>のプロパティ、<xref:System.Web.UI.WebControls.HotSpot>オブジェクト、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトには、サーバーへのポストバックが生成されるときに、<xref:System.Web.UI.WebControls.HotSpot>をクリックします。 使用して、<xref:System.Web.UI.WebControls.HotSpot.PostBackValue%2A>プロパティの名前を指定する、<xref:System.Web.UI.WebControls.HotSpot>です。 この名前は、<xref:System.Web.UI.WebControls.ImageMapEventArgs>ポストバック イベントの発生時にイベント データ。 ポストバック時に<xref:System.Web.UI.WebControls.HotSpot>がクリックされると、<xref:System.Web.UI.WebControls.ImageMap.Click>イベントが発生します。 ポストバック時にプログラムによってコントロールに、操作を実行<xref:System.Web.UI.WebControls.HotSpot>がのイベント ハンドラーを指定する をクリックして、<xref:System.Web.UI.WebControls.ImageMap.Click>イベント。  
+  
+ すべてが発生する<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクト、<xref:System.Web.UI.WebControls.ImageMap>コントロールに同じように動作を設定、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティごとに<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを`HotSpotMode.NotSet`かの値を指定しないで、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティです。  
+  
+ さまざまな動作を指定する<xref:System.Web.UI.WebControls.HotSpot>内のオブジェクト、<xref:System.Web.UI.WebControls.ImageMap>コントロールを設定、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティごとに<xref:System.Web.UI.WebControls.HotSpot>するか、オブジェクト`HotSpotMode.Navigate`、 `HotSpotMode.PostBack`、または`HotSpotMode.Inactive`です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティまたは<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.UI.WebControls.HotSpot>が含まれているオブジェクトがないか、値を設定またはに設定`HotSpotMode.NotSet`、既定の動作は`HotSpotMode.Navigate`します。  
+  
+ 指定した場合`HotSpotMode.Inactive`の<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A?displayProperty=nameWithType>プロパティ、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを持たないすべての動作がクリックされたとき。 この値を使用するより大きな active ホット スポットの中の非アクティブのホット スポットを作成します。 このオプションを指定すると、内のホット スポットのより複雑なゾーンを作成すること、<xref:System.Web.UI.WebControls.ImageMap>コントロール。  
+  
+ アクティブなホット スポット内の非アクティブな領域を作成するでアクティブなホット スポットの前に、非アクティブなホット スポットを指定する必要があります、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 たとえば、次<xref:System.Web.UI.WebControls.ImageMap>大規模な active 円形のホット スポット内で非アクティブな循環ホット スポットを指定することで、アクティブなリングを定義します。  
+  
+```  
+<asp:ImageMap ID="SaturnImage"   
+  ImageUrl="~/saturn.PNG"   
+  runat="server" OnClick="SaturnImage_Click">  
+  <asp:CircleHotSpot AlternateText="planet" HotSpotMode=PostBack  
+    PostBackValue="planet" Radius=40 X=100 Y=100 />  
+  <asp:CircleHotSpot HotSpotMode=Inactive   
+    Radius=60 X=100 Y=100 />  
+  <asp:CircleHotSpot AlternateText="rings" HotSpotMode=PostBack  
+    PostBackValue="rings" Radius=80 X=100 Y=100 />  
+</asp:ImageMap>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された型は、のいずれかではない、<see cref="T:System.Web.UI.WebControls.HotSpotMode" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTrackingViewState">
+      <MemberSignature Language="C#" Value="protected virtual bool IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpot.IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトがビュー ステートの変更を追跡します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.HotSpot" />ビュー ステートの変更を追跡しているオブジェクト。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpot.IsTrackingViewState%2A>からカスタムの実装を派生している場合、主にコントロールの開発者によってメンバーが使用される、<xref:System.Web.UI.WebControls.HotSpot>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected virtual void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpot.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Object" />を表す、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトを復元します。</param>
+        <summary>復元、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトはの以前のビュー ステートを保存されたオブジェクトにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。 ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ <xref:System.Web.UI.WebControls.HotSpot.LoadViewState%2A>からカスタムの実装を派生している場合、メソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.HotSpot>クラスです。  
+  
+ このメソッドのビュー ステート情報の復元、<xref:System.Web.UI.WebControls.HotSpot>によって保存された前回のページ要求からのオブジェクト、<xref:System.Web.UI.WebControls.HotSpot.SaveViewState%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkupName">
+      <MemberSignature Language="C#" Value="protected abstract string MarkupName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MarkupName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpot.MarkupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得、文字列表現を<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトの形状。</summary>
+        <value>名前を表す文字列、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトの形状。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpot.MarkupName%2A>からカスタムの実装を派生している場合、主にコントロールの開発者によってメンバーが使用される、<xref:System.Web.UI.WebControls.HotSpot>クラスです。  
+  
+ 派生クラスでオーバーライドされると、<xref:System.Web.UI.WebControls.HotSpot.MarkupName%2A>プロパティの名前を表す文字列を取得、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトの形状。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>継承する場合<see cref="T:System.Web.UI.WebControls.HotSpot" />、オーバーライドする必要があります、<see cref="P:System.Web.UI.WebControls.HotSpot.MarkupName" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrl">
+      <MemberSignature Language="C#" Value="public string NavigateUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpot.NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するときに移動先の URL、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトをクリックします。</summary>
+        <value>ときに移動先の URL、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトをクリックします。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HotSpot.NavigateUrl%2A>ときに移動する URL を指定するプロパティ、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトをクリックします。 このプロパティは、有効される場合にのみ、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティに設定されている`HotSpotMode.Navigate`URL に移動します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostBackValue">
+      <MemberSignature Language="C#" Value="public string PostBackValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PostBackValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpot.PostBackValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクト、イベントのデータを渡すときに、<see cref="T:System.Web.UI.WebControls.HotSpot" />がクリックされました。</summary>
+        <value>名前、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクト、イベントのデータを渡すときに、<see cref="T:System.Web.UI.WebControls.HotSpot" />がクリックされました。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HotSpot.PostBackValue%2A>プロパティの名前を指定する、<xref:System.Web.UI.WebControls.HotSpot>オブジェクト。 この名前は、<xref:System.Web.UI.WebControls.ImageMapEventArgs>イベント データときに、<xref:System.Web.UI.WebControls.HotSpot>をクリックします。 このプロパティは、有効される場合にのみ、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティに設定されている`HotSpotMode.PostBack`でサーバーへのポストバックを生成します。  
+  
+ プログラムによってコントロールに、操作を実行時に、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトがクリックされると、イベント ハンドラーを作成して、<xref:System.Web.UI.WebControls.ImageMap.Click>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected virtual object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpot.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更を保存、<see cref="T:System.Web.UI.WebControls.HotSpot" />ページがサーバーにポストされた時間以降のオブジェクトのビュー ステート。</summary>
+        <returns><see cref="T:System.Object" />への変更を格納している、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトのビュー ステート。 ビュー ステートがいないかどうか、オブジェクトに関連付け、このメソッドが戻る<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpot.SaveViewState%2A>からカスタムの実装を派生している場合、主にコントロールの開発者によってメンバーが使用される、<xref:System.Web.UI.WebControls.HotSpot>クラスです。  
+  
+ ビュー ステートが、サーバー コントロールのプロパティの値の累積します。 これらの値は自動的に、サーバー コントロールの配置<xref:System.Web.UI.Control.ViewState%2A>インスタンスであるプロパティの<xref:System.Web.UI.StateBag>クラスです。 保存状態の段階のサーバー コントロールのライフ サイクルの後に、このプロパティの値が文字列オブジェクトを永続化します。 詳細については、次を参照してください。 [IIS 5.0 および 6.0 用の ASP.NET アプリケーションのライフ サイクルの概要](http://msdn.microsoft.com/library/de0d8a1c-b1bc-48e1-b246-26e32289a82f)です。  
+  
+ ビューステートを保存すると、この文字列オブジェクトが非表示の HTML input 要素に格納されている変数としてクライアントに返されます。 カスタム サーバー コントロールを作成するときに、このメソッドをオーバーライドし、変更、サーバー コントロールの効率を向上できます`ViewState`プロパティです。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpot.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトがビュー ステートの変更を追跡します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.HotSpot" />ビュー ステートの変更を追跡しているオブジェクト、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.HotSpot.IsTrackingViewState%2A?displayProperty=nameWithType>メンバーに確認するかどうか、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトがビュー状態の変更を追跡します。  
+  
+ <xref:System.Web.UI.WebControls.HotSpot.System%23Web%23UI%23IStateManager%23IsTrackingViewState%2A>メンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.HotSpot>にインスタンスをキャスト、<xref:System.Web.UI.IStateManager>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>ビュー ステートを追跡するためのカスタム実装を定義する、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクト、オーバーライド、<see cref="P:System.Web.UI.WebControls.HotSpot.IsTrackingViewState" />メンバー。 明示的なインターフェイス実装の呼び出し、<see cref="P:System.Web.UI.WebControls.HotSpot.IsTrackingViewState" />オブジェクトがビュー状態の変更を追跡しているかどうかを決定するプロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpot.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Object" />の保存されているビュー ステートの値を格納している、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトを復元します。</param>
+        <summary>復元、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトはの以前のビュー ステートを保存されたオブジェクトにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.HotSpot.LoadViewState%2A?displayProperty=nameWithType>のビューステートを復元するにはメンバー、<xref:System.Web.UI.WebControls.HotSpot>オブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.HotSpot.System%23Web%23UI%23IStateManager%23LoadViewState%2A>メンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.HotSpot>にインスタンスをキャスト、<xref:System.Web.UI.IStateManager>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>ビューステートを復元するためのカスタム実装を定義する、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクト、オーバーライド、<see cref="M:System.Web.UI.WebControls.HotSpot.LoadViewState(System.Object)" />メンバー。 明示的なインターフェイス実装の呼び出し、<see cref="M:System.Web.UI.WebControls.HotSpot.LoadViewState(System.Object)" />のビューステートを復元する方法、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクト。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpot.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更を保存、<see cref="T:System.Web.UI.WebControls.HotSpot" />サーバーにポストバックされたページの前回のオブジェクトのビュー ステート。</summary>
+        <returns><see cref="T:System.Object" />への変更を格納している、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクトのビュー ステート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.HotSpot.SaveViewState%2A?displayProperty=nameWithType>のビューステートを保存するメソッド、<xref:System.Web.UI.WebControls.HotSpot>領域。  
+  
+ <xref:System.Web.UI.WebControls.HotSpot.System%23Web%23UI%23IStateManager%23SaveViewState%2A>メソッドは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.HotSpot>にインスタンスをキャスト、<xref:System.Web.UI.IStateManager>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>ビュー ステートを追跡するためのカスタム実装を定義する、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクト、オーバーライド、<see cref="M:System.Web.UI.WebControls.HotSpot.SaveViewState" />メンバー。 明示的なインターフェイス実装の呼び出し、<see cref="M:System.Web.UI.WebControls.HotSpot.SaveViewState" />メソッド、オブジェクトのビュー ステートの変更を保存します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpot.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指示、<see cref="T:System.Web.UI.WebControls.HotSpot" />ビューステートへの変更を追跡する領域です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.HotSpot.TrackViewState%2A?displayProperty=nameWithType>ビュー ステートの変更の追跡を開始するメソッド、<xref:System.Web.UI.WebControls.HotSpot>領域。  
+  
+ <xref:System.Web.UI.WebControls.HotSpot.System%23Web%23UI%23IStateManager%23TrackViewState%2A>メソッドは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.HotSpot>にインスタンスをキャスト、<xref:System.Web.UI.IStateManager>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>ビュー ステートを追跡するためのカスタム実装を定義する、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクト、オーバーライド、<see cref="M:System.Web.UI.WebControls.HotSpot.TrackViewState" />メンバー。 明示的なインターフェイス実装の呼び出し、<see cref="M:System.Web.UI.WebControls.HotSpot.TrackViewState" />オブジェクトのビュー状態の追跡を初期化します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="TabIndex">
+      <MemberSignature Language="C#" Value="public virtual short TabIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int16 TabIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpot.TabIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のタブ インデックス、<see cref="T:System.Web.UI.WebControls.HotSpot" />領域。</summary>
+        <value>タブ インデックス、<see cref="T:System.Web.UI.WebControls.HotSpot" />領域。 既定値は 0 です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HotSpot.TabIndex%2A>を指定するかのタブ インデックスを特定のプロパティ、 <xref:System.Web.UI.WebControls.HotSpot> Web フォーム ページ上の領域。  
+  
+ Web サーバー コントロールにフォーカスが表示される順序がによって決まりますが、TAB キーを押すと、<xref:System.Web.UI.WebControls.HotSpot.TabIndex%2A>各コントロールのプロパティです。 ページが最初に読み込まれると、フォーカスを受け取る、TAB キーが押されたときに最初の項目は、アドレス バーにです。 次に、Web フォーム ページ上のコントロールは、タブを昇順の値に基づいて、<xref:System.Web.UI.WebControls.HotSpot.TabIndex%2A>各コントロールのプロパティです。 複数のコントロールは、同じタブ インデックスを共有している場合、コントロールは、Web フォーム ページで宣言されている順序でフォーカスを受け取る。 最後に、0 のタブ インデックスを持つコントロールには、宣言された順序でタブ付きします。  
+  
+> [!NOTE]
+>  0 以外のタブ インデックスを持つコントロールのみが表示されます、`tabindex`属性。  
+  
+ 削除することができます、<xref:System.Web.UI.WebControls.HotSpot>領域、タブ オーダーを設定してから、<xref:System.Web.UI.WebControls.HotSpot.TabIndex%2A>プロパティを負の値にします。  
+  
+> [!NOTE]
+>  このプロパティは、以降 Internet Explorer 4.0 でのみサポートします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">-32768 から 32767 までの指定したタブのインデックスがします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public virtual string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpot.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.TargetConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはターゲット ウィンドウまたはフレームを表示するための Web ページの内容がリンクされているを設定すると、 <see cref="T:System.Web.UI.WebControls.HotSpot" /> URL に移動するオブジェクトをクリックします。</summary>
+        <value>ターゲット ウィンドウまたはフレームを Web ページを読み込むときにリンクされている、 <see cref="T:System.Web.UI.WebControls.HotSpot" /> URL に移動するオブジェクトをクリックします。 既定値は空の文字列 ("") です。フォーカスのあるウィンドウまたはフレームが更新されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HotSpot.Target%2A>ときにフレームまたは Web ページを表示するウィンドウを指定するプロパティがリンクされている、 <xref:System.Web.UI.WebControls.HotSpot> URL に移動するオブジェクトをクリックします。 このプロパティは、有効される場合にのみ、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティに設定されている`HotSpotMode.Navigate`URL に移動します。 このプロパティが設定されていない場合は、ブラウザーまたはフォーカスがあるウィンドウを更新時に、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトをクリックします。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.HotSpot.Target%2A>としてプロパティを表示、`target`属性。 `target`アンカー要素の属性は、XHTML 1.1 ドキュメント型定義で許可されていません。 設定しないでください、<xref:System.Web.UI.WebControls.HotSpot.Target%2A>プロパティ場合に表示される出力、 <xref:System.Web.UI.WebControls.HotSpot> XHTML 1.1 を準拠にする必要があります。 詳細については、トピックを参照してください[Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+  
+> [!CAUTION]
+>  、アクセス可能な Web ページを作成するときに使用しないことを強くお勧め、<xref:System.Web.UI.WebControls.HotSpot.Target%2A>を別のウィンドウを対象とするプロパティです。 詳細については、次を参照してください。 [NIB: ASP.NET のユーザー補助](http://msdn.microsoft.com/en-us/9b5f3e05-e88d-4248-a5f4-9e64850fa0ae)です。  
+  
+ <xref:System.Web.UI.WebControls.HotSpot.Target%2A>値は、範囲の A ~ Z (大文字)、次の特殊な値を除く、アンダー スコアで始まるの文字で始める必要があります。  
+  
+|対象の値|説明|  
+|------------------|-----------------|  
+|`_blank`|新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+|`_parent`|直前のフレーム セットの親に内容を表示します。|  
+|`_search`|[検索] ウィンドウの内容を表示します。|  
+|`_self`|フォーカスのあるフレームのコンテンツをレンダリングします。|  
+|`_top`|フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+  
+> [!NOTE]
+>  決定する、ブラウザーのマニュアルを確認するかどうか、`_search`値はサポートされています。  Internet Explorer 5.0 またはそれ以降のサポートなど、`_search`ターゲット値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpot.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.String" />のこのインスタンスの表現、<see cref="T:System.Web.UI.WebControls.HotSpot" />オブジェクト。</summary>
+        <returns>この <see cref="T:System.Web.UI.WebControls.HotSpot" /> オブジェクトを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpot.ToString%2A>メソッドを現在を表す文字列を返します<xref:System.Web.UI.WebControls.HotSpot>オブジェクト。 たとえば場合、現在<xref:System.Web.UI.WebControls.HotSpot>のインスタンス、<xref:System.Web.UI.WebControls.CircleHotSpot>クラス、このメソッドを呼び出すが、文字列"CircleHotSpot"を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected virtual void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HotSpot.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、<see cref="T:System.Web.UI.WebControls.HotSpot" />でオブジェクトの保存できるように、ビューステートへの変更を追跡するオブジェクト<see cref="T:System.Web.UI.StateBag" />オブジェクト。 このオブジェクトは、<see cref="P:System.Web.UI.Control.ViewState" /> プロパティによってアクセスできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpot.TrackViewState%2A>からカスタムの実装を派生している場合、主にコントロールの開発者によってメンバーが使用される、<xref:System.Web.UI.WebControls.HotSpot>クラスです。  
+  
+ このメソッドは、ASP.NET によって自動的に呼び出されます。 ときに、<xref:System.Web.UI.WebControls.HotSpot>オブジェクトを初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewState">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.StateBag ViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.StateBag ViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HotSpot.ViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.StateBag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態情報を保存およびのビューステートを復元することができますのディクショナリを取得、<see cref="T:System.Web.UI.WebControls.HotSpot" />同じページに対する複数の要求オブジェクト。</summary>
+        <value>インスタンス、<see cref="T:System.Web.UI.StateBag" />クラスを含む、<see cref="T:System.Web.UI.WebControls.HotSpot" />領域のビュー ステート情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HotSpot.ViewState%2A>からカスタムの実装を派生している場合、主にコントロールの開発者によってメンバーが使用される、<xref:System.Web.UI.WebControls.HotSpot>クラスです。  
+  
+ サーバー コントロールのビューステートは、すべてのプロパティ値の累積です。 HTTP 要求間でこれらの値を保持するために ASP.NET サーバー コントロールを使用して、<xref:System.Web.UI.WebControls.HotSpot.ViewState%2A>インスタンスであるプロパティの<xref:System.Web.UI.StateBag>クラス、プロパティ値を格納します。 値はし、後続の要求が処理されるときに、変数として、非表示の HTML 要素に渡されます。 サーバー コントロールのビューステートの保存に関する詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ 既定では、すべてのサーバー コントロールのビューステートが有効な場合がありますを無効にするされます。 詳細については、次を参照してください。 [ASP.NET パフォーマンス概要](http://msdn.microsoft.com/library/f882bf1b-a009-4312-ac06-74370ffabc0b)です。  
+  
+ ディクショナリとその使用方法については、次を参照してください。[コレクションとデータ構造体](http://msdn.microsoft.com/library/60cc581f-1db5-445b-ba04-a173396bf872)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,681 @@
+<Type Name="WqlEventQuery" FullName="System.Management.WqlEventQuery">
+  <TypeSignature Language="C#" Value="public class WqlEventQuery : System.Management.EventQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WqlEventQuery extends System.Management.EventQuery" />
+  <TypeSignature Language="DocId" Value="T:System.Management.WqlEventQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.EventQuery</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WMI イベント クエリを表す*WQL*形式です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WqlEventQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.WqlEventQuery.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.WqlEventQuery" /> クラスの新しいインスタンスを初期化します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WqlEventQuery (string queryOrEventClassName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string queryOrEventClassName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.WqlEventQuery.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="queryOrEventClassName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="queryOrEventClassName">クエリに、全体のイベント クエリまたはイベント クラスの名前を表す文字列。 オブジェクトは、有効なイベントのクエリとして文字列を解析しようとしています。 失敗した場合は、パーサーは、パラメーターが表すイベント クラスの名前と見なされます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.WqlEventQuery" />クラスが指定されたクエリ文字列またはイベントのクラス名に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例の初期化、<xref:System.Management.WqlEventQuery>クエリとし、初期化を指定して、<xref:System.Management.WqlEventQuery>イベントを指定することによってです。  
+  
+ [!code-csharp[wminet_WqlEventQuery-S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_WqlEventQuery-S/cs/WqlEventQuery-S.cs#1)]
+ [!code-vb[wminet_WqlEventQuery-S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_WqlEventQuery-S/vb/WqlEventQuery-S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WqlEventQuery (string eventClassName, string condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string eventClassName, string condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.WqlEventQuery.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventClassName" Type="System.String" />
+        <Parameter Name="condition" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventClassName">クエリにイベント クラスの名前。</param>
+        <param name="condition">指定したクラスのイベントに適用する条件です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.WqlEventQuery" />指定されたイベント クラス名の指定した条件を満たすためのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WqlEventQuery (string eventClassName, TimeSpan withinInterval);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string eventClassName, valuetype System.TimeSpan withinInterval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.WqlEventQuery.#ctor(System.String,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventClassName" Type="System.String" />
+        <Parameter Name="withinInterval" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="eventClassName">クエリにイベント クラスの名前。</param>
+        <param name="withinInterval">A<see cref="T:System.TimeSpan" />このイベントを受け取るまでの許容待機時間を指定する値。 この値は、要求されると、クエリに明示的なイベント プロバイダーがありません、かつ条件をポーリングする WMI が必要な場合に使用されます。 この間隔は、イベントの通知が配信される前に渡すことができる時間の最大量です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.WqlEventQuery" />指定した待機時間と、指定されたイベント クラスのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例の初期化、<xref:System.Management.WqlEventQuery>イベントと、時間の期間イベントを受け取る許容待機時間を指定する値を指定しています。  
+  
+ [!code-csharp[wminet_WqlEventQuery-S_T#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_WqlEventQuery-S_T/cs/WqlEventQuery-S_T.cs#1)]
+ [!code-vb[wminet_WqlEventQuery-S_T#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_WqlEventQuery-S_T/vb/WqlEventQuery-S_T.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WqlEventQuery (string eventClassName, string condition, TimeSpan groupWithinInterval);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string eventClassName, string condition, valuetype System.TimeSpan groupWithinInterval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.WqlEventQuery.#ctor(System.String,System.String,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventClassName" Type="System.String" />
+        <Parameter Name="condition" Type="System.String" />
+        <Parameter Name="groupWithinInterval" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="eventClassName">クエリにイベント クラスの名前。</param>
+        <param name="condition">指定したクラスのイベントに適用する条件です。</param>
+        <param name="groupWithinInterval">WMI が送信する 1 つ指定した期間<c>集約イベント</c>、多数のイベントではなくです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.WqlEventQuery" />指定されたイベント クラスの名前、条件、およびグループ化の間隔を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WqlEventQuery (string eventClassName, TimeSpan withinInterval, string condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string eventClassName, valuetype System.TimeSpan withinInterval, string condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.WqlEventQuery.#ctor(System.String,System.TimeSpan,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventClassName" Type="System.String" />
+        <Parameter Name="withinInterval" Type="System.TimeSpan" />
+        <Parameter Name="condition" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventClassName">クエリにイベント クラスの名前。</param>
+        <param name="withinInterval">A<see cref="T:System.TimeSpan" />このイベントを受け取るまでの許容待機時間を指定する値。 この値は、要求されたクエリに明示的なイベント プロバイダーがありません、かつ条件をポーリングする WMI が必要な場合に使用されます。 この間隔は、イベントの通知が配信される前に渡すことができる時間の最大量です。</param>
+        <param name="condition">指定したクラスのイベントに適用する条件です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.WqlEventQuery" />指定されたイベント クラス名、ポーリング間隔と条件を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント クエリを作成:"選択 * _ _instancecreationevent から*WITHIN* 10 TargetInstance ISA Win32_Service 場所"の作成の通知を送信する**Win32_Service**され、ポーリング間隔は 10 秒のインスタンス。  
+  
+ [!code-csharp[wminet_WqlEventQuery-S_T_S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_WqlEventQuery-S_T_S/cs/WqlEventQuery-S_T_S.cs#1)]
+ [!code-vb[wminet_WqlEventQuery-S_T_S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_WqlEventQuery-S_T_S/vb/WqlEventQuery-S_T_S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WqlEventQuery (string eventClassName, string condition, TimeSpan groupWithinInterval, string[] groupByPropertyList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string eventClassName, string condition, valuetype System.TimeSpan groupWithinInterval, string[] groupByPropertyList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.WqlEventQuery.#ctor(System.String,System.String,System.TimeSpan,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventClassName" Type="System.String" />
+        <Parameter Name="condition" Type="System.String" />
+        <Parameter Name="groupWithinInterval" Type="System.TimeSpan" />
+        <Parameter Name="groupByPropertyList" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="eventClassName">クエリにイベント クラスの名前。</param>
+        <param name="condition">指定したクラスのイベントに適用する条件です。</param>
+        <param name="groupWithinInterval">WMI が送信する 1 つ指定した期間<c>集約イベント</c>、多数のイベントではなくです。</param>
+        <param name="groupByPropertyList">イベントのグループ化するイベント クラスのプロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.WqlEventQuery" />指定されたイベント クラスの名前、条件、グループ化間隔、およびグループ化のプロパティを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WqlEventQuery (string eventClassName, TimeSpan withinInterval, string condition, TimeSpan groupWithinInterval, string[] groupByPropertyList, string havingCondition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string eventClassName, valuetype System.TimeSpan withinInterval, string condition, valuetype System.TimeSpan groupWithinInterval, string[] groupByPropertyList, string havingCondition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.WqlEventQuery.#ctor(System.String,System.TimeSpan,System.String,System.TimeSpan,System.String[],System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventClassName" Type="System.String" />
+        <Parameter Name="withinInterval" Type="System.TimeSpan" />
+        <Parameter Name="condition" Type="System.String" />
+        <Parameter Name="groupWithinInterval" Type="System.TimeSpan" />
+        <Parameter Name="groupByPropertyList" Type="System.String[]" />
+        <Parameter Name="havingCondition" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventClassName">クエリを実行するには、イベント クラスの名前。</param>
+        <param name="withinInterval">A<see cref="T:System.TimeSpan" />このイベントを受け取るまでの許容待機時間を指定する値。 この値は、要求されると、クエリに明示的なイベント プロバイダーがありません、かつ条件をポーリングする WMI が必要な場合に使用されます。 この間隔は、イベントの通知が配信される前に渡すことができる時間の最大量です。</param>
+        <param name="condition">指定したクラスのイベントに適用する条件です。</param>
+        <param name="groupWithinInterval">WMI が送信する 1 つ指定した期間<c>集約イベント</c>、多数のイベントではなくです。</param>
+        <param name="groupByPropertyList">イベントのグループ化するイベント クラスのプロパティです。</param>
+        <param name="havingCondition">イベントの数に適用する条件です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.WqlEventQuery" />クラスで指定されたイベント クラス名、条件、グループ化の間隔、グループ化のプロパティ、およびイベントの数を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント クエリを作成:"選択 * _ _instancecreationevent TargetInstance ISA Win32_NTLogEvent グループが 600 内から TargetInstance.SourceName で HAVING NumberOfEvents > 15"番号がある場合にのみ、集計イベントを提供します。**Win32_NTLogEvent**同じソースから受信したイベントが 15 を超えています。  
+  
+ [!code-csharp[wminet_WqlEventQuery-S_T_S_T_S_S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_WqlEventQuery-S_T_S_T_S_S/cs/WqlEventQuery-S_T_S_T_S_S.cs#1)]
+ [!code-vb[wminet_WqlEventQuery-S_T_S_T_S_S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_WqlEventQuery-S_T_S_T_S_S/vb/WqlEventQuery-S_T_S_T_S_S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildQuery">
+      <MemberSignature Language="C#" Value="protected void BuildQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void BuildQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.WqlEventQuery.BuildQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のプロパティ値に従って、クエリ文字列を構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.WqlEventQuery.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを作成します。</summary>
+        <returns>コピーされるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Condition">
+      <MemberSignature Language="C#" Value="public string Condition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Condition" />
+      <MemberSignature Language="DocId" Value="P:System.Management.WqlEventQuery.Condition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したクラスのイベントに適用する条件を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />条件または条件をイベントを含む値のクエリを実行します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しい条件を反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ 条件は、フォームの 1 つ以上の句を含む文字列として表されます。 \<propName >\<演算子 >\<値 > 論理演算子と組み合わせて使用します。 \<propName > このクエリで指定されたイベント クラスで定義されたプロパティを表す必要があります。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を新しい初期化<xref:System.Management.WqlEventQuery>し、イベントのクエリ文字列を表示します。  
+  
+ [!code-csharp[wminet_WqlEventQuery_Condition#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_WqlEventQuery_Condition/cs/WqlEventQuery_Condition.cs#1)]
+ [!code-vb[wminet_WqlEventQuery_Condition#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_WqlEventQuery_Condition/vb/WqlEventQuery_Condition.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventClassName">
+      <MemberSignature Language="C#" Value="public string EventClassName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EventClassName" />
+      <MemberSignature Language="DocId" Value="P:System.Management.WqlEventQuery.EventClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリには、イベント クラスを設定します。</summary>
+        <value>返します、<see cref="T:System.String" />イベント クラスの名前をイベントを含む値のクエリを実行します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しいクラスの名前を反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ クエリにイベント クラスの名前を含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を新しい初期化<xref:System.Management.WqlEventQuery>し、イベントのクエリ文字列を表示します。  
+  
+ [!code-csharp[wminet_WqlEventQuery_EventClassName#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_WqlEventQuery_EventClassName/cs/WqlEventQuery_EventClassName.cs#1)]
+ [!code-vb[wminet_WqlEventQuery_EventClassName#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_WqlEventQuery_EventClassName/vb/WqlEventQuery_EventClassName.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupByPropertyList">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection GroupByPropertyList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection GroupByPropertyList" />
+      <MemberSignature Language="DocId" Value="P:System.Management.WqlEventQuery.GroupByPropertyList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または同じ種類のイベントをグループ化するために使用するイベントのプロパティを設定します。</summary>
+        <value>返します、<see cref="T:System.Collections.Specialized.StringCollection" />同じ種類のイベントをグループ化するために使用するイベントのプロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しいグループ化を反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ グループ化が必要です。 ない場合は null します。それ以外の場合、イベントのプロパティ名のコレクション。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を新しい初期化<xref:System.Management.WqlEventQuery>し、イベントのクエリ文字列を表示します。  
+  
+ [!code-csharp[wminet_WqlEventQuery_GroupByPropertyList#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_WqlEventQuery_GroupByPropertyList/cs/WqlEventQuery_GroupByPropertyList.cs#1)]
+ [!code-vb[wminet_WqlEventQuery_GroupByPropertyList#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_WqlEventQuery_GroupByPropertyList/vb/WqlEventQuery_GroupByPropertyList.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupWithinInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan GroupWithinInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan GroupWithinInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Management.WqlEventQuery.GroupWithinInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または同じ種類のイベントをグループ化するために使用される間隔を設定します。</summary>
+        <value>返します、<see cref="T:System.TimeSpan" />同じ種類のイベントをグループ化するために使用される間隔を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しい間隔を反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ Null の場合がない場合はグループ化します。それ以外の場合、wmi 間隔は、同じ種類のイベントをグループ化する必要があります。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を新しい初期化<xref:System.Management.WqlEventQuery>し、イベントのクエリ文字列を表示します。  
+  
+ [!code-csharp[wminet_WqlEventQuery_GroupWithinInterval#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_WqlEventQuery_GroupWithinInterval/cs/WqlEventQuery_GroupWithinInterval.cs#1)]
+ [!code-vb[wminet_WqlEventQuery_GroupWithinInterval#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_WqlEventQuery_GroupWithinInterval/vb/WqlEventQuery_GroupWithinInterval.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HavingCondition">
+      <MemberSignature Language="C#" Value="public string HavingCondition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HavingCondition" />
+      <MemberSignature Language="DocId" Value="P:System.Management.WqlEventQuery.HavingCondition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または受信したイベントの数に基づいて、イベントの集計を適用する条件を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />受信したイベントの数に基づいて、イベントの集計に適用される条件を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しい条件のグループ化を反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ 集約または条件を適用しない場合は null します。それ以外の場合、フォームの条件"NumberOfEvents\<演算子 >\<値 >"です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を新しい初期化<xref:System.Management.WqlEventQuery>し、イベントのクエリ文字列を表示します。  
+  
+ [!code-csharp[wminet_WqlEventQuery_HavingCondition#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_WqlEventQuery_HavingCondition/cs/WqlEventQuery_HavingCondition.cs#1)]
+ [!code-vb[wminet_WqlEventQuery_HavingCondition#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_WqlEventQuery_HavingCondition/vb/WqlEventQuery_HavingCondition.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseQuery">
+      <MemberSignature Language="C#" Value="protected override void ParseQuery (string query);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void ParseQuery(string query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.WqlEventQuery.ParseQuery(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="query">解析するクエリ文字列。</param>
+        <summary>クエリ文字列を解析し、それに応じて、プロパティの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryLanguage">
+      <MemberSignature Language="C#" Value="public override string QueryLanguage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string QueryLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Management.WqlEventQuery.QueryLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリの言語を取得します。</summary>
+        <value>返します、<see cref="T:System.String" />クエリ言語で記述されたクエリを含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ このオブジェクトでこのプロパティの値は、常に"WQL"です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryString">
+      <MemberSignature Language="C#" Value="public override string QueryString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string QueryString" />
+      <MemberSignature Language="DocId" Value="P:System.Management.WqlEventQuery.QueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリを表す文字列を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />クエリを含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ クエリを表す文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を新しい初期化<xref:System.Management.WqlEventQuery>し、イベントのクエリ文字列を表示します。  
+  
+ [!code-csharp[wminet_WqlEventQuery_QueryString#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_WqlEventQuery_QueryString/cs/WqlEventQuery_QueryString.cs#1)]
+ [!code-vb[wminet_WqlEventQuery_QueryString#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_WqlEventQuery_QueryString/vb/WqlEventQuery_QueryString.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WithinInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan WithinInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan WithinInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Management.WqlEventQuery.WithinInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのクエリで使用されるポーリング間隔を設定します。</summary>
+        <value>返します、<see cref="T:System.TimeSpan" />イベントのクエリに使用されるポーリング間隔を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、の場合のみ設定する必要がありますがありません*イベント プロバイダー*イベントが要求されると、および WMI が要求された状態をポーリングする必要の。  
+  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しい間隔を反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ Null の場合がない場合はポーリング関係です。それ以外の場合、有効な<xref:System.TimeSpan>ポーリングが必要な場合は値です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を新しい初期化<xref:System.Management.WqlEventQuery>クエリを表す:"選択 * _ _instancecreationevent から*WITHIN* 1 WHERE TargetInstance ISA 'Win32_Process'"です。  
+  
+ [!code-csharp[wminet_WqlEventQuery_WithinInterval#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_WqlEventQuery_WithinInterval/cs/WqlEventQuery_WithinInterval.cs#1)]
+ [!code-vb[wminet_WqlEventQuery_WithinInterval#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_WqlEventQuery_WithinInterval/vb/WqlEventQuery_WithinInterval.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

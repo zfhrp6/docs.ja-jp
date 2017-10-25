@@ -1,0 +1,1308 @@
+<Type Name="MediaElement" FullName="System.Windows.Controls.MediaElement">
+  <TypeSignature Language="C#" Value="public class MediaElement : System.Windows.FrameworkElement, System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi MediaElement extends System.Windows.FrameworkElement implements class System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.MediaElement" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IUriContext</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オーディオとビデオのいずれかまたはその両方を含むコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションでメディアを配布するときに、プロジェクト リソースとしてメディア ファイルを使うことはできません。 プロジェクト ファイルで、メディアの種類を `Content` に設定し、`CopyToOutputDirectory` を `PreserveNewest` または `Always` に設定する必要があります。  
+  
+ <xref:System.Windows.Controls.MediaElement>コントロールを与えているに応じて、2 つの異なるモードで使用できます: 独立モードまたはクロック モード。 独立のモードで使用する場合、 <xref:System.Windows.Controls.MediaElement> 、イメージに似ています、 <xref:System.Windows.Controls.MediaElement.Source%2A> [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]直接指定することができます。 クロック モードで、 <xref:System.Windows.Controls.MediaElement> 、アニメーションのターゲットとして考えることができます、したがってこれが対応する<xref:System.Windows.Media.Animation.Timeline>と<xref:System.Windows.Media.Animation.Clock>タイミング ツリー内のエントリ。 メディア モードの詳細については、次を参照してください。、[マルチ メディア概要](~/docs/framework/wpf/graphics-multimedia/multimedia-overview.md)です。  
+  
+ 制御する例については、<xref:System.Windows.Controls.MediaElement>独立モードを参照してください。[する方法: (再生、一時停止、停止、ボリューム、および速度)、MediaElement を制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)です。  
+  
+ なるまで、<xref:System.Windows.Controls.MediaElement.MediaOpened>イベントが発生した、<xref:System.Windows.FrameworkElement.ActualWidth%2A>と<xref:System.Windows.FrameworkElement.ActualHeight%2A>コントロールの報告 0 とメディアのコンテンツは最終的なサイズとコントロールの位置を決定するために使用します。 オーディオのみのコンテンツをこれらのプロパティは 0 を常になります。  
+  
+ 固定サイズのコントロールの<xref:System.Windows.FrameworkElement.Width%2A>や<xref:System.Windows.FrameworkElement.Height%2A>プロパティを設定することができます。 ただし、メディアの縦横比を保持するために次のように設定します。、<xref:System.Windows.FrameworkElement.Width%2A>または<xref:System.Windows.FrameworkElement.Height%2A>プロパティが、両方は使用できません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MediaElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MediaElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.MediaElement" /> クラスの新しいインスタンスを生成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size finalSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size finalSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MediaElement.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="finalSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="finalSize">コントロールの配置に使用するサイズ。</param>
+        <summary>サイズを設定して、配置、<see cref="T:System.Windows.Controls.MediaElement" />コントロール。</summary>
+        <returns>コントロールのサイズ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Balance">
+      <MemberSignature Language="C#" Value="public double Balance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Balance" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.Balance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または左右のスピーカーのボリュームの比率を設定します。</summary>
+        <value>-1 ~ 1 の間でのスピーカーのボリュームの比率。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値-1 は、左側にあるスピーカーの 100% と右側にあるスピーカーの 1 は 100% を表します。  
+  
+<a name="dependencyPropertyInfo_Balance"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.BalanceProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BalanceProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BalanceProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BalanceProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.BalanceProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.MediaElement.Balance" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BufferingEnded">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler BufferingEnded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler BufferingEnded" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.MediaElement.BufferingEnded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアのバッファリングが終了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_BufferingEnded"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.BufferingEndedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BufferingEndedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent BufferingEndedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent BufferingEndedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.BufferingEndedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.MediaElement.BufferingEnded" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BufferingProgress">
+      <MemberSignature Language="C#" Value="public double BufferingProgress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 BufferingProgress" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.BufferingProgress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッファー処理の進行の割合を示す値を取得します。</summary>
+        <value>バッファリングがコンテンツのストリーミングに完了した割合。 値の範囲は 0 から 1 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BufferingStarted">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler BufferingStarted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler BufferingStarted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.MediaElement.BufferingStarted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアのバッファリングが開始されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_BufferingStarted"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.BufferingStartedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BufferingStartedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent BufferingStartedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent BufferingStartedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.BufferingStartedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.MediaElement.BufferingStarted" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanPause">
+      <MemberSignature Language="C#" Value="public bool CanPause { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanPause" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.CanPause" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアを一時停止できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />メディアを一時停止する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clock">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.MediaClock Clock { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.MediaClock Clock" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.Clock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.MediaClock</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられているクロック、<see cref="T:System.Windows.Media.MediaTimeline" />メディアの再生を制御します。</summary>
+        <value>関連付けられているクロック、<see cref="T:System.Windows.Media.MediaTimeline" />メディアの再生を制御します。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの設定は、メディア要素を使って、タイミング エンジンを利用するモードにします。 再生されていたメディアはすべて停止し、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]新しいに関連付けられているクロックが開かれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MediaElement.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メディアを閉じます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadProgress">
+      <MemberSignature Language="C#" Value="public double DownloadProgress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 DownloadProgress" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.DownloadProgress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダウンロードが完了した、リモート サーバー上のコンテンツの量を示すパーセント値を取得します。</summary>
+        <value>ダウンロードが完了した、リモート サーバー上のコンテンツの量を示すパーセント値。 値の範囲は 0 から 1 です。 既定値は 0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasAudio">
+      <MemberSignature Language="C#" Value="public bool HasAudio { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasAudio" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.HasAudio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアにオーディオが含まれているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />メディアにオーディオ; がある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasVideo">
+      <MemberSignature Language="C#" Value="public bool HasVideo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasVideo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.HasVideo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアにビデオが含まれているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、メディアがあるビデオです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBuffering">
+      <MemberSignature Language="C#" Value="public bool IsBuffering { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBuffering" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.IsBuffering" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアをバッファリングするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、メディアのバッファリングされます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMuted">
+      <MemberSignature Language="C#" Value="public bool IsMuted { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMuted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.IsMuted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオーディオをミュートするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />オーディオをミュートされる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsMuted"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.IsMutedProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMutedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsMutedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsMutedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.IsMutedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.MediaElement.IsMuted" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadedBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.MediaState LoadedBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.MediaState LoadedBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.LoadedBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.MediaState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の読み込み動作<see cref="T:System.Windows.Controls.MediaState" />メディアのです。</summary>
+        <value>読み込み動作<see cref="T:System.Windows.Controls.MediaState" />メディアに設定します。 既定値は <see cref="F:System.Windows.Controls.MediaState.Play" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>設定する必要があります<xref:System.Windows.Controls.MediaState.Manual>でメディアを対話的に制御するために、 <xref:System.Windows.Controls.MediaElement.Play%2A>、 <xref:System.Windows.Controls.MediaElement.Pause%2A>、および<xref:System.Windows.Controls.MediaElement.Stop%2A>メソッドです。  
+  
+<a name="dependencyPropertyInfo_LoadedBehavior"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.LoadedBehaviorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadedBehaviorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LoadedBehaviorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LoadedBehaviorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.LoadedBehaviorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.MediaElement.LoadedBehavior" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size availableSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size availableSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MediaElement.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="availableSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="availableSize">要素数の上限を超えない必要があります。</param>
+        <summary>更新プログラム、<see cref="P:System.Windows.UIElement.DesiredSize" />の<see cref="T:System.Windows.Controls.MediaElement" />です。 このメソッドは、親<see cref="T:System.Windows.UIElement" />です。 これは、レイアウトの最初のパスです。</summary>
+        <returns>必要なサイズ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MediaEnded">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler MediaEnded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler MediaEnded" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.MediaElement.MediaEnded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアが終了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_MediaEnded"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.MediaEndedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MediaEndedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent MediaEndedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent MediaEndedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.MediaEndedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.MediaElement.MediaEnded" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MediaFailed">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.ExceptionRoutedEventArgs&gt; MediaFailed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.ExceptionRoutedEventArgs&gt; MediaFailed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.MediaElement.MediaFailed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.ExceptionRoutedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーが発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_MediaFailed"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.MediaFailedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.EventHandler%601>、の制約が設定された<xref:System.Windows.ExceptionRoutedEventArgs>です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MediaFailedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent MediaFailedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent MediaFailedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.MediaFailedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.MediaElement.MediaFailed" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MediaOpened">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler MediaOpened;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler MediaOpened" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.MediaElement.MediaOpened" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアの読み込みが完了したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_MediaOpened"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.MediaOpenedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MediaOpenedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent MediaOpenedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent MediaOpenedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.MediaOpenedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.MediaElement.MediaOpened" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NaturalDuration">
+      <MemberSignature Language="C#" Value="public System.Windows.Duration NaturalDuration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Duration NaturalDuration" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.NaturalDuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアの自然な期間を取得します。</summary>
+        <value>メディアの自然な期間です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値は独立して<xref:System.Windows.Controls.MediaElement.SpeedRatio%2A>です。  
+  
+ <xref:System.Windows.Controls.MediaElement.NaturalDuration%2A>まで正確ではない、<xref:System.Windows.Controls.MediaElement.MediaOpened>イベントが発生しました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NaturalVideoHeight">
+      <MemberSignature Language="C#" Value="public int NaturalVideoHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NaturalVideoHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.NaturalVideoHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアに関連付けられているビデオの高さを取得します。</summary>
+        <value>メディアに関連付けられているビデオの高さ。 オーディオ ファイルでは、0 を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.MediaElement.NaturalVideoHeight%2A>まで正確ではない、<xref:System.Windows.Controls.MediaElement.MediaOpened>イベントが発生しました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NaturalVideoWidth">
+      <MemberSignature Language="C#" Value="public int NaturalVideoWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NaturalVideoWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.NaturalVideoWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアに関連付けられているビデオの幅を取得します。</summary>
+        <value>メディアに関連付けられているビデオの幅。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.MediaElement.NaturalVideoWidth%2A>まで正確ではない、<xref:System.Windows.Controls.MediaElement.MediaOpened>イベントが発生しました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MediaElement.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />オブジェクトの<see cref="T:System.Windows.Controls.MediaElement" />します。</summary>
+        <returns>この <see cref="T:System.Windows.Controls.MediaElement" /> の <see cref="T:System.Windows.Automation.Peers.AutomationPeer" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRender">
+      <MemberSignature Language="C#" Value="protected override void OnRender (System.Windows.Media.DrawingContext drawingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRender(class System.Windows.Media.DrawingContext drawingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MediaElement.OnRender(System.Windows.Media.DrawingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="drawingContext" Type="System.Windows.Media.DrawingContext" />
+      </Parameters>
+      <Docs>
+        <param name="drawingContext">描画する <see cref="T:System.Windows.Media.DrawingContext" />。</param>
+        <summary>内容を描画する<see cref="T:System.Windows.Media.DrawingContext" />のレンダー パス中にオブジェクトを<see cref="T:System.Windows.Controls.MediaElement" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pause">
+      <MemberSignature Language="C#" Value="public void Pause ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Pause() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MediaElement.Pause" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の位置でメディアを一時停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、メディアが現在実行されている場合、メディアを一時停止します。 <xref:System.Windows.Controls.MediaElement.Play%2A>を再開するメソッドを使用できます。  
+  
+ このメソッドを使用する場合にのみ、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは`null`します。 ときに、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは、非`null`、タイミング エンジンは、メディアの再生の動作を制御します。  
+  
+ このメソッドは、有効の場合のみ、<xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>プロパティに設定されている<xref:System.Windows.Controls.MediaState.Manual>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Controls.MediaElement.Clock" />プロパティは使用されません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Play">
+      <MemberSignature Language="C#" Value="public void Play ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Play() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MediaElement.Play" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メディアを現在の位置から再生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは現在アクティブになっていない場合は、メディアを開始または、一時停止されている場合は、メディアを再開します。 メディアが現在実行されている場合は、このメソッドを指定しても効果はありません。  
+  
+ このメソッドを使用する場合にのみ、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは`null`します。 ときに、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは、非`null`、タイミング エンジンは、メディアの再生の動作を制御します。  
+  
+ このメソッドは、有効の場合のみ、<xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>プロパティに設定されている<xref:System.Windows.Controls.MediaState.Manual>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Controls.MediaElement.Clock" />プロパティは使用されません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public TimeSpan Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Position" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアの再生時間全体の中の現在の経過位置を取得または設定します。</summary>
+        <value>メディアの先頭からの経過時間。 既定値は、00:00:00 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定することができます (シークとも呼ばれます) の再生でさまざまなポイントにジャンプします。 型を使用するすべてのメディアのシーク操作します。 <xref:System.Windows.Controls.MediaElement.MediaFailed>メディア ソースがシークを許可しない場合、イベントは起動されます。  
+  
+ このプロパティは後までの影響を与えません、<xref:System.Windows.Controls.MediaElement.MediaOpened>イベントが発生しました。  
+  
+ このプロパティを設定できる場合にのみ、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは`null`します。 ときに、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは、非`null`、タイミング エンジンは、メディアの再生の動作を制御します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Controls.MediaElement.Clock" />プロパティは使用されません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptCommand">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.MediaScriptCommandRoutedEventArgs&gt; ScriptCommand;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.MediaScriptCommandRoutedEventArgs&gt; ScriptCommand" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.MediaElement.ScriptCommand" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.MediaScriptCommandRoutedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スクリプト コマンドは、メディアで発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_ScriptCommand"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.ScriptCommandEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.EventHandler>、の制約が設定されました。<xref:System.Windows.MediaScriptCommandRoutedEventArgs>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptCommandEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ScriptCommandEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ScriptCommandEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.ScriptCommandEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.MediaElement.ScriptCommand" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrubbingEnabled">
+      <MemberSignature Language="C#" Value="public bool ScrubbingEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ScrubbingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.ScrubbingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Controls.MediaElement" />はの更新プログラムのフレームがシーク操作を一時停止中にします。</summary>
+        <value>
+          <see langword="true" />一時停止中に、フレームが更新される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると`false`、シーク、特定の場所のみが更新されますメディアを再生している場合は、表示されているフレームをします。  
+  
+ 設定<xref:System.Windows.Controls.MediaElement.ScrubbingEnabled%2A>に`true`メディアの再生を対話的に制御する場合は特に若干のパフォーマンス コストが発生することができます。  
+  
+<a name="dependencyPropertyInfo_ScrubbingEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.ScrubbingEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrubbingEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ScrubbingEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ScrubbingEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.ScrubbingEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.MediaElement.ScrubbingEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定メディア ソース、<see cref="T:System.Windows.Controls.MediaElement" />です。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]要素のソースを指定します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、再生するメディアとします。  
+  
+ このプロパティを設定できる場合にのみ、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは`null`します。 ときに、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは、非`null`、タイミング エンジンは、メディアの再生の動作を制御します。  
+  
+<a name="dependencyPropertyInfo_Source"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.SourceProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Controls.MediaElement.Clock" />プロパティは使用されません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SourceProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SourceProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.SourceProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.MediaElement.Source" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeedRatio">
+      <MemberSignature Language="C#" Value="public double SpeedRatio { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SpeedRatio" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.SpeedRatio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアの速度比率を取得または設定します。</summary>
+        <value>メディアの速度比率。 有効な範囲は 0 (ゼロ) ～無限大です。 1 未満の値を設定すると標準の再生より遅くなり、1 より大きな値を設定すると標準の再生より速くなります。 負の値は 0 として扱われます。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定できる場合にのみ、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは`null`します。 ときに、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは、非`null`、タイミング エンジンは、メディアの再生の動作を制御します。  
+  
+ オーディオの再生が発生しない限りの値<xref:System.Windows.Controls.MediaElement.SpeedRatio%2A>は 1 です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Controls.MediaElement.Clock" />プロパティは使用されません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MediaElement.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メディアを停止し、最初から再生できるようにリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する場合にのみ、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは`null`します。 ときに、<xref:System.Windows.Controls.MediaElement.Clock%2A>プロパティは、非`null`、タイミング エンジンは、メディアの再生の動作を制御します。  
+  
+ このメソッドは、有効の場合のみ、<xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A>プロパティに設定されている<xref:System.Windows.Controls.MediaState.Manual>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Controls.MediaElement.Clock" />プロパティは使用されません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Stretch">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Stretch Stretch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Stretch Stretch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.Stretch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Stretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Stretch" />を記述する値か、<see cref="T:System.Windows.Controls.MediaElement" />先の四角形を塗りつぶします。</summary>
+        <value>レンダリングされるメディアの stretch の値です。 既定値は、<see cref="F:System.Windows.Media.Stretch.Uniform" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図に、異なる示します<xref:System.Windows.Media.Stretch>値。  
+  
+ ![別の TileBrush Stretch 設定](~/add/media/img-mmgraphics-stretchenum.jpg "別の TileBrush Stretch 設定")  
+別のグラデーションの拡散メソッド  
+  
+<a name="dependencyPropertyInfo_Stretch"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.StretchProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Controls.Viewbox>設定と、<xref:System.Windows.Media.Stretch>コンテンツのモード。  
+  
+ [!code-cpp[ViewBoxCode#2](~/samples/snippets/cpp/VS_Snippets_Wpf/ViewBoxCode/CPP/ViewboxCode.cpp#2)]
+ [!code-csharp[ViewBoxCode#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ViewBoxCode/Csharp/ViewboxCode.cs#2)]
+ [!code-vb[ViewBoxCode#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ViewBoxCode/VisualBasic/ViewBoxCodeVB.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StretchDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.StretchDirection StretchDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.StretchDirection StretchDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.StretchDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.StretchDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはのイメージに適用されるスケーリングの制限を決定する値を設定します。</summary>
+        <value>要素の方向を指定する値が合わせて引き伸ばされます。 既定値は、<see cref="F:System.Windows.Controls.StretchDirection.Both" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_StretchDirection"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.StretchDirectionProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ [!code-xaml[mediagallery_snip#StretchMediaElementExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MediaGallery_snip/VB/StretchMediaElementExample.xaml#stretchmediaelementexamplewholepage)]
+ [!code-xaml[mediagallery_snip#StretchMediaElementExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/MediaGallery_snip/CSharp/StretchMediaElementExample.xaml#stretchmediaelementexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StretchDirectionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StretchDirectionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StretchDirectionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.StretchDirectionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.MediaElement.StretchDirection" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StretchProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StretchProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StretchProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.StretchProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.MediaElement.Stretch" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IUriContext.BaseUri">
+      <MemberSignature Language="C#" Value="Uri System.Windows.Markup.IUriContext.BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri System.Windows.Markup.IUriContext.BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.System#Windows#Markup#IUriContext#BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <value>現在のコンテキストのベース URI。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadedBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.MediaState UnloadedBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.MediaState UnloadedBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.UnloadedBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.MediaState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のアンロード動作<see cref="T:System.Windows.Controls.MediaState" />メディアのです。</summary>
+        <value>アンロード動作<see cref="T:System.Windows.Controls.MediaState" />メディアのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_UnloadedBehavior"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.UnloadedBehaviorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadedBehaviorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty UnloadedBehaviorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty UnloadedBehaviorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.UnloadedBehaviorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.MediaElement.UnloadedBehavior" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Volume">
+      <MemberSignature Language="C#" Value="public double Volume { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Volume" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.MediaElement.Volume" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メディアのボリュームを取得または設定します。</summary>
+        <value>0 ～ 1 の間の線形スケール上で表されるメディアのボリューム。 既定値は 0.5 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Volume"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.MediaElement.VolumeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VolumeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VolumeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VolumeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.MediaElement.VolumeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.MediaElement.Volume" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

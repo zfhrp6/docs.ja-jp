@@ -1,0 +1,214 @@
+<Type Name="PaddingMode" FullName="System.Security.Cryptography.PaddingMode">
+  <TypeSignature Language="C#" Value="public enum PaddingMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed PaddingMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.PaddingMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メッセージ データ ブロックが、暗号化操作に必要な合計バイト数より短い場合に適用するパディングの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのプレーン テキスト メッセージは、ブロックが完全に入力するバイト数ので構成されていません。 多くの場合、最後のブロックを格納するための十分なバイトがありません。 この場合、テキストに埋め込み文字列が追加されます。 たとえば、ブロックの長さは 64 ビット、最後のブロックには、40 ビットだけが含まれている場合は、24 ビットのパディングが追加されます。  
+  
+ 一部の暗号化標準では、特定の埋め込みスキームを指定します。 次の例では、これらのモードが機能するしくみを示します。 8 の blocklength、9 のデータ長は、7、および FF FF FF FF FF FF FF FF FF に等しいデータと等しい埋め込みオクテットの数を指定するには。  
+  
+ データ: FF FF FF FF FF FF FF FF FF  
+  
+ X923 パディング: FF FF FF FF FF FF FF FF FF 00 00 00 00 00 00 07  
+  
+ PKCS7 パディング: FF FF FF FF FF FF FF FF FF 07 07 07 07 07 07 07  
+  
+ ISO10126 パディング: FF FF FF FF FF FF FF FF FF 7 D 2A 75 EF F8 EF 07  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ANSIX923">
+      <MemberSignature Language="C#" Value="ANSIX923" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.PaddingMode ANSIX923 = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.PaddingMode.ANSIX923" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.PaddingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ANSIX923 埋め込み文字列は、長さの前にゼロで埋められたバイトのシーケンスで構成されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例では、このモードの動作を示します。 8 の blocklength、9 のデータ長は、7、および FF FF FF FF FF FF FF FF FF に等しいデータと等しい埋め込みオクテットの数を指定するには。  
+  
+ データ: FF FF FF FF FF FF FF FF FF  
+  
+ X923 パディング: FF FF FF FF FF FF FF FF FF 00 00 00 00 00 00 07  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ISO10126">
+      <MemberSignature Language="C#" Value="ISO10126" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.PaddingMode ISO10126 = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.PaddingMode.ISO10126" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.PaddingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ISO10126 の埋め込み文字列は、長さの前にランダムなデータで構成されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例では、このモードの動作を示します。 8 の blocklength、9 のデータ長は、7、および FF FF FF FF FF FF FF FF FF に等しいデータと等しい埋め込みオクテットの数を指定するには。  
+  
+ データ: FF FF FF FF FF FF FF FF FF  
+  
+ ISO10126 パディング: FF FF FF FF FF FF FF FF FF 7 D 2A 75 EF F8 EF 07  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.PaddingMode None = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.PaddingMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.PaddingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>埋め込みは行われません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PKCS7">
+      <MemberSignature Language="C#" Value="PKCS7" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.PaddingMode PKCS7 = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.PaddingMode.PKCS7" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.PaddingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>PKCS #7 埋め込み文字列は、それぞれが追加されたバイトは余白の合計数と等しく、バイト シーケンスで構成されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例では、これらのモードが機能するしくみを示します。 8 の blocklength、9 のデータ長は、7、および FF FF FF FF FF FF FF FF FF に等しいデータと等しい埋め込みオクテットの数を指定するには。  
+  
+ データ: FF FF FF FF FF FF FF FF FF  
+  
+ PKCS7 パディング: FF FF FF FF FF FF FF FF FF 07 07 07 07 07 07 07  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Zeros">
+      <MemberSignature Language="C#" Value="Zeros" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Cryptography.PaddingMode Zeros = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.PaddingMode.Zeros" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.PaddingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>埋め込み文字列は、バイトをゼロに設定で構成されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

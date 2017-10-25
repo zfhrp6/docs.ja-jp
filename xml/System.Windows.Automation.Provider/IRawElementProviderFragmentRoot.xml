@@ -1,0 +1,113 @@
+<Type Name="IRawElementProviderFragmentRoot" FullName="System.Windows.Automation.Provider.IRawElementProviderFragmentRoot">
+  <TypeSignature Language="C#" Value="public interface IRawElementProviderFragmentRoot : System.Windows.Automation.Provider.IRawElementProviderFragment" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRawElementProviderFragmentRoot implements class System.Windows.Automation.Provider.IRawElementProviderFragment, class System.Windows.Automation.Provider.IRawElementProviderSimple" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Automation.Provider.IRawElementProviderFragment</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("620ce2a5-ab8f-40a9-86cb-de3c75599b58")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フラグメントのルート要素のメソッドとプロパティを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、フレームワーク; 内のルート要素たとえば、ウィンドウ内のリスト ボックスです。 リスト項目など、同じフラグメント内の他の要素を実装して、<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ElementProviderFromPoint">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.IRawElementProviderFragment ElementProviderFromPoint (double x, double y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Automation.Provider.IRawElementProviderFragment ElementProviderFromPoint(float64 x, float64 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot.ElementProviderFromPoint(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderFragment</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Double" />
+        <Parameter Name="y" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x">x 座標。</param>
+        <param name="y">Y 座標。</param>
+        <summary>このフラグメント内の指定したポイントにある要素を取得します。</summary>
+        <returns>指定したポイントに子要素が存在する場合は、その子要素のプロバイダー。指定したポイントがこの要素上にあるものの、どの子要素上にもない場合は、ルート プロバイダー。 それ以外の場合は、<see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフラグメントでホストされている他のフレームワーク内の要素に、ポイントがある場合、メソッドは、そのフラグメントをホストする要素を返します。  
+  
+ 返されるプロバイダーは、指定した位置にマウス入力を受信する要素に対応する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、1 つの可能な非スクロール リスト ボックスのこのメソッドの実装を示しています。 各項目の高さを使用して指定した位置にリスト項目のインデックスが計算され、項目がその時点で返されます。 項目が存在しない場合その時点で (たとえば、リスト ボックスの空白の領域は、null 参照を返します (`Nothing`)。  
+  
+ [!code-csharp[UIAFragmentProvider_snip#106](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFragmentProvider_snip/CSharp/ListFragment.cs#106)]
+ [!code-vb[UIAFragmentProvider_snip#106](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListFragment.vb#106)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFocus">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.IRawElementProviderFragment GetFocus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Automation.Provider.IRawElementProviderFragment GetFocus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot.GetFocus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderFragment</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入力フォーカスがあるこのフラグメント内の要素を取得します。</summary>
+        <returns>存在する場合、入力フォーカスのあるこのフラグメント内の要素のプロバイダーそれ以外の場合は、null 参照 (<see langword="Nothing" /> Visual Basic で)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフラグメントでホストされている他のフレームワーク内の要素にフォーカスがある場合は、そのフラグメントをホストする要素を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、1 つの可能なリスト ボックスのこのメソッドの実装を示しています。 一覧で、現在選択されている項目を返します。  
+  
+ [!code-csharp[UIAFragmentProvider_snip#107](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFragmentProvider_snip/CSharp/ListFragment.cs#107)]
+ [!code-vb[UIAFragmentProvider_snip#107](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListFragment.vb#107)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

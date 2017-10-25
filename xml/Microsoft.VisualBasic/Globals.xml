@@ -1,0 +1,183 @@
+<Type Name="Globals" FullName="Microsoft.VisualBasic.Globals">
+  <TypeSignature Language="C#" Value="public sealed class Globals" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Globals extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Globals" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>Microsoft.VisualBasic.CompilerServices.StandardModule</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="Globals" />モジュールには、スクリプト エンジンの関数が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモジュールは、Visual Basic 言語のキーワードと現在使用されているランタイムの概要情報を提供するランタイム ライブラリ メンバーをサポートします。  
+  
+   
+  
+## Examples  
+ 次の例では、`ScriptEngineMajorVersion`および現在のランタイム情報を記述する文字列を返す関連のプロパティ。  
+  
+```  
+Function getRuntimeInfo() As String  
+    Dim runtime As String = ScriptEngine & " Version "  
+    runtime &= CStr(ScriptEngineMajorVersion) & "."  
+    runtime &= CStr(ScriptEngineMinorVersion) & "."  
+    runtime &= CStr(ScriptEngineBuildVersion)  
+    ' Return the current runtime information.  
+    Return runtime  
+End Function  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ScriptEngine">
+      <MemberSignature Language="C#" Value="public static string ScriptEngine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ScriptEngine" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Globals.ScriptEngine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see langword="String" />使用中のランタイムを表すです。</summary>
+        <value>返します、<see langword="String" />使用中のランタイムを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ScriptEngine`プロパティ文字列"VB"を返します。  
+  
+ 使用することができます`ScriptEngine`スクリプトでは、またはホスト アプリケーションで、スタンドアロン プログラムとしてアプリケーションが実行されている場合。  
+  
+   
+  
+## Examples  
+ 次の例では、`ScriptEngine`および関連プロパティを現在の実行時の情報を説明する文字列を返します。  
+  
+ [!code-vb[VbVbalrScriptEngineProperties#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrScriptEngineProperties/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptEngineBuildVersion">
+      <MemberSignature Language="C#" Value="public static int ScriptEngineBuildVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 ScriptEngineBuildVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Globals.ScriptEngineBuildVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see langword="Integer" />現在使用されているランタイムのビルド バージョン番号を含むです。</summary>
+        <value>返します、<see langword="Integer" />現在使用されているランタイムのビルド バージョン番号を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値は、現在のランタイム DLL に含まれるバージョン情報に直接対応します。  
+  
+ 使用することができます`ScriptEngineBuildVersion`スクリプトでは、またはホスト アプリケーションで、スタンドアロン プログラムとしてアプリケーションが実行されている場合。  
+  
+   
+  
+## Examples  
+ 次の例では、`ScriptEngineBuildVersion`および関連プロパティを現在の実行時の情報を説明する文字列を返します。  
+  
+ [!code-vb[VbVbalrScriptEngineProperties#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrScriptEngineProperties/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptEngineMajorVersion">
+      <MemberSignature Language="C#" Value="public static int ScriptEngineMajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 ScriptEngineMajorVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Globals.ScriptEngineMajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see langword="Integer" />現在使用されているランタイムのメジャー バージョン番号を含むです。</summary>
+        <value>返します、<see langword="Integer" />現在使用されているランタイムのメジャー バージョン番号を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値は、現在のランタイム DLL に含まれるバージョン情報に直接対応します。  
+  
+ 使用することができます`ScriptEngineMajorVersion`スクリプトでは、またはホスト アプリケーションで、スタンドアロン プログラムとしてアプリケーションが実行されている場合。  
+  
+   
+  
+## Examples  
+ 次の例では、`ScriptEngineMajorVersion`および関連プロパティを現在の実行時の情報を説明する文字列を返します。  
+  
+ [!code-vb[VbVbalrScriptEngineProperties#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrScriptEngineProperties/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptEngineMinorVersion">
+      <MemberSignature Language="C#" Value="public static int ScriptEngineMinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 ScriptEngineMinorVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Globals.ScriptEngineMinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see langword="Integer" />現在使用されているランタイムのマイナー バージョン番号を含むです。</summary>
+        <value>返します、<see langword="Integer" />現在使用されているランタイムのマイナー バージョン番号を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値は、現在のランタイム DLL に含まれるバージョン情報に直接対応します。  
+  
+ 使用することができます`ScriptEngineMinorVersion`スクリプトでは、またはホスト アプリケーションで、スタンドアロン プログラムとしてアプリケーションが実行されている場合。  
+  
+   
+  
+## Examples  
+ 次の例では、`ScriptEngineMinorVersion`および関連プロパティを現在の実行時の情報を説明する文字列を返します。  
+  
+ [!code-vb[VbVbalrScriptEngineProperties#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrScriptEngineProperties/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

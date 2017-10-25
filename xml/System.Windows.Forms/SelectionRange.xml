@@ -1,0 +1,227 @@
+<Type Name="SelectionRange" FullName="System.Windows.Forms.SelectionRange">
+  <TypeSignature Language="C#" Value="public sealed class SelectionRange" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SelectionRange extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.SelectionRange" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.SelectionRangeConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>月間予定表コントロールで日付の選択範囲を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SelectionRange>日付または日付を選択し、強調表示されている、<xref:System.Windows.Forms.MonthCalendar>コントロール。 1 つの日付が選択されている場合のみ、<xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティの値に等しくなります。 <xref:System.Windows.Forms.SelectionRange>目的の日付の間でマウス ポインターをドラッグするときに日付をクリックすると、ユーザーによって変更できますか、コードの範囲を設定することができます。 ユーザーに 2 つの日付範囲を入力するなど、<xref:System.Windows.Forms.TextBox>コントロールまたは 2<xref:System.Windows.Forms.DateTimePicker>コントロールとセット、<xref:System.Windows.Forms.SelectionRange>それらの日付に基づきます。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Windows.Forms.SelectionRange>のプロパティ、<xref:System.Windows.Forms.MonthCalendar>コントロールを 2 つに入力した 2 つの日付に基づく<xref:System.Windows.Forms.TextBox>タイミングを制御、<xref:System.Windows.Forms.Button>をクリックします。 このコードは、の新しいインスタンスを想定しています、<xref:System.Windows.Forms.MonthCalendar>を制御する 2 つ<xref:System.Windows.Forms.TextBox>コントロール、および<xref:System.Windows.Forms.Button>で作成された、<xref:System.Windows.Forms.Form>です。 検証コードを追加することを検討する可能性があります、<xref:System.Windows.Forms.Control.Text%2A>有効な日付が含まれていることを確認するテキスト ボックスに割り当てられます。  
+  
+ [!code-cpp[Classic SelectionRange.SelectionRange1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic SelectionRange.SelectionRange1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SelectionRange.SelectionRange1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic SelectionRange.SelectionRange1 Example/CS/source.cs#1)]
+ [!code-vb[Classic SelectionRange.SelectionRange1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic SelectionRange.SelectionRange1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SelectionRange ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRange.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.SelectionRange" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>値に設定されます`null`このコンス トラクターを使用する場合。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.SelectionRange>オブジェクトのセットをその<xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティ、および割り当て、<xref:System.Windows.Forms.SelectionRange>オブジェクトを<xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>のプロパティ、<xref:System.Windows.Forms.MonthCalendar>コントロール。 ときに、<xref:System.Windows.Forms.MonthCalendar.DateChanged>のイベントが発生、<xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティの値が、テキスト ボックスに表示されます。 この例があるか、 <xref:System.Windows.Forms.Form> 、2 つ<xref:System.Windows.Forms.TextBox>、コントロール、 <xref:System.Windows.Forms.Button>、および<xref:System.Windows.Forms.MonthCalendar>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/CPP/selectionrangeobj.cpp#1)]
+ [!code-csharp[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/CS/selectionrangeobj.cs#1)]
+ [!code-vb[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/VB/selectionrangeobj.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SelectionRange (System.Windows.Forms.SelectionRange range);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.SelectionRange range) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRange.#ctor(System.Windows.Forms.SelectionRange)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="range" Type="System.Windows.Forms.SelectionRange" />
+      </Parameters>
+      <Docs>
+        <param name="range">既存の<see cref="T:System.Windows.Forms.SelectionRange" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.SelectionRange" />指定された選択範囲を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティの値が割り当てられている、<xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティの値を割り当てられている<xref:System.Windows.Forms.SelectionRange>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.SelectionRange>オブジェクトのセットをその<xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティ、および割り当て、<xref:System.Windows.Forms.SelectionRange>オブジェクトを<xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>のプロパティ、<xref:System.Windows.Forms.MonthCalendar>コントロール。 ときに、<xref:System.Windows.Forms.MonthCalendar.DateChanged>のイベントが発生、<xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティの値が、テキスト ボックスに表示されます。 この例があるか、 <xref:System.Windows.Forms.Form> 、2 つ<xref:System.Windows.Forms.TextBox>、コントロール、 <xref:System.Windows.Forms.Button>、および<xref:System.Windows.Forms.MonthCalendar>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/CPP/selectionrangeobj.cpp#1)]
+ [!code-csharp[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/CS/selectionrangeobj.cs#1)]
+ [!code-vb[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/VB/selectionrangeobj.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SelectionRange (DateTime lower, DateTime upper);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTime lower, valuetype System.DateTime upper) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRange.#ctor(System.DateTime,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="lower" Type="System.DateTime" />
+        <Parameter Name="upper" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="lower">開始日、<see cref="T:System.Windows.Forms.SelectionRange" />です。</param>
+        <param name="upper">終了日、<see cref="T:System.Windows.Forms.SelectionRange" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.SelectionRange" />指定された開始日と終了日を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  場合、 `lower` <xref:System.DateTime>値がより大きい、 `upper` <xref:System.DateTime>値、`lower`に値が割り当てられる、<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティの代わりに、<xref:System.Windows.Forms.SelectionRange.Start%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Windows.Forms.SelectionRange>のプロパティ、<xref:System.Windows.Forms.MonthCalendar>コントロールを 2 つに入力した 2 つの日付に基づく<xref:System.Windows.Forms.TextBox>タイミングを制御、<xref:System.Windows.Forms.Button>をクリックします。 このコードは、の新しいインスタンスを想定しています、<xref:System.Windows.Forms.MonthCalendar>を制御する 2 つ<xref:System.Windows.Forms.TextBox>コントロール、および<xref:System.Windows.Forms.Button>で作成された、<xref:System.Windows.Forms.Form>です。 検証コードを追加することを検討する可能性があります、<xref:System.Windows.Forms.Control.Text%2A>有効な日付が含まれていることを確認するテキスト ボックスに割り当てられます。  
+  
+ [!code-cpp[Classic SelectionRange.SelectionRange1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic SelectionRange.SelectionRange1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SelectionRange.SelectionRange1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic SelectionRange.SelectionRange1 Example/CS/source.cs#1)]
+ [!code-vb[Classic SelectionRange.SelectionRange1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic SelectionRange.SelectionRange1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="End">
+      <MemberSignature Language="C#" Value="public DateTime End { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime End" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SelectionRange.End" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または終了日時の選択範囲を設定します。</summary>
+        <value>終了<see cref="T:System.DateTime" />範囲の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.SelectionRange>オブジェクトのセットをその<xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティ、および割り当て、<xref:System.Windows.Forms.SelectionRange>オブジェクトを<xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>のプロパティ、<xref:System.Windows.Forms.MonthCalendar>コントロール。 ときに、<xref:System.Windows.Forms.MonthCalendar.DateChanged>のイベントが発生、<xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティの値が、テキスト ボックスに表示されます。 この例があるか、 <xref:System.Windows.Forms.Form> 、2 つ<xref:System.Windows.Forms.TextBox>、コントロール、 <xref:System.Windows.Forms.Button>、および<xref:System.Windows.Forms.MonthCalendar>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/CPP/selectionrangeobj.cpp#1)]
+ [!code-csharp[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/CS/selectionrangeobj.cs#1)]
+ [!code-vb[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/VB/selectionrangeobj.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public DateTime Start { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime Start" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SelectionRange.Start" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または開始日時の選択範囲を設定します。</summary>
+        <value>開始<see cref="T:System.DateTime" />範囲の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.SelectionRange>オブジェクトのセットをその<xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティ、および割り当て、<xref:System.Windows.Forms.SelectionRange>オブジェクトを<xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>のプロパティ、<xref:System.Windows.Forms.MonthCalendar>コントロール。 ときに、<xref:System.Windows.Forms.MonthCalendar.DateChanged>のイベントが発生、<xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティの値が、テキスト ボックスに表示されます。 この例があるか、 <xref:System.Windows.Forms.Form> 、2 つ<xref:System.Windows.Forms.TextBox>、コントロール、 <xref:System.Windows.Forms.Button>、および<xref:System.Windows.Forms.MonthCalendar>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/CPP/selectionrangeobj.cpp#1)]
+ [!code-csharp[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/CS/selectionrangeobj.cs#1)]
+ [!code-vb[System.Windows.Forms.SelectionRange Members#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.SelectionRange Members/VB/selectionrangeobj.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SelectionRange.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表す文字列を返します、<see cref="T:System.Windows.Forms.SelectionRange" />です。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.SelectionRange" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SelectionRange.ToString%2A>メソッドの値を含む文字列を返します、<xref:System.Windows.Forms.SelectionRange.Start%2A>と<xref:System.Windows.Forms.SelectionRange.End%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

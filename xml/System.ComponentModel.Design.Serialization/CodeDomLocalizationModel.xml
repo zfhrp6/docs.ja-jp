@@ -1,0 +1,66 @@
+<Type Name="CodeDomLocalizationModel" FullName="System.ComponentModel.Design.Serialization.CodeDomLocalizationModel">
+  <TypeSignature Language="C#" Value="public enum CodeDomLocalizationModel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CodeDomLocalizationModel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.CodeDomLocalizationModel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>CodeDom のリソース アダプターによって使用されるローカリゼーション モデルを決定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.Serialization.CodeDomLocalizationModel None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.Serialization.CodeDomLocalizationModel.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Serialization.CodeDomLocalizationModel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカリゼーション プロバイダーは、ローカライズされたプロパティを無視してください。 コード生成をサポートしていませんしはシリアル化するオブジェクトのリソースを引き続き書き込まれます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyAssignment">
+      <MemberSignature Language="C#" Value="PropertyAssignment" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.Serialization.CodeDomLocalizationModel PropertyAssignment = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.Serialization.CodeDomLocalizationModel.PropertyAssignment" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Serialization.CodeDomLocalizationModel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカリゼーション プロバイダーは、各プロパティにリソースを割り当てることでローカライズされたプロパティを書き込みます。 このモデルは、プロパティの数が小さい場合は、拡張性に乏しいアプローチの既定値を含むプロパティの数の増大に応じて拡張高速です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyReflection">
+      <MemberSignature Language="C#" Value="PropertyReflection" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.Design.Serialization.CodeDomLocalizationModel PropertyReflection = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.Design.Serialization.CodeDomLocalizationModel.PropertyReflection" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Serialization.CodeDomLocalizationModel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカリゼーション プロバイダーは、リソース ファイルに書き込むためにローカライズされたプロパティの値とを使用して、<see cref="T:System.ComponentModel.ComponentResourceManager" />クラスによって実行時に情報を入力する名前のプロパティに反映するようにします。 これは、リフレクションを使用して実行時に、低速であることができますが、既定値を持つプロパティの多数のパフォーマンスを維持します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

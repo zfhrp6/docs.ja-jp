@@ -1,0 +1,437 @@
+<Type Name="CustomAttributeTypedArgument" FullName="System.Reflection.CustomAttributeTypedArgument">
+  <TypeSignature Language="C#" Value="public struct CustomAttributeTypedArgument" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit CustomAttributeTypedArgument extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.CustomAttributeTypedArgument" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リフレクションのみのコンテキスト内でのカスタム属性の引数、つまり配列引数の要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 常とそのプロパティを調べてなどのメソッドを使用してそれらのインスタンスを作成することでカスタム属性を確認することはできませんので、リフレクションのみのコンテキストで検査されているコードを実行できません<xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>、<xref:System.Reflection.MemberInfo.GetCustomAttributes%2A?displayProperty=nameWithType>のようにします。 属性型自体のコードがリフレクションのみのコンテキストに読み込まれている場合は実行できません。  
+  
+ <xref:System.Reflection.CustomAttributeNamedArgument>構造体を使用して、<xref:System.Reflection.CustomAttributeData>属性コンス トラクターを実行することがなく、カスタム属性のインスタンスに指定された位置指定引数の値と型にアクセスできるようにするクラス。 カスタム属性の型の対応するプロパティのコードを実行することがなく名前付き引数の値と型へアクセスを提供します。  
+  
+ 型と属性のインスタンスのすべての位置と名前付き引数の値がによって提供される<xref:System.Reflection.CustomAttributeTypedArgument>構造体。 によって返される位置指定の属性、<xref:System.Reflection.CustomAttributeData.ConstructorArguments%2A?displayProperty=nameWithType>プロパティがによって表される直接<xref:System.Reflection.CustomAttributeTypedArgument>構造体がによって返される、名前付き引数、<xref:System.Reflection.CustomAttributeData.NamedArguments%2A?displayProperty=nameWithType>プロパティがによって表される<xref:System.Reflection.CustomAttributeNamedArgument>構造を取得する、<xref:System.Reflection.CustomAttributeTypedArgument>構造の名前付き引数、使用、<xref:System.Reflection.CustomAttributeNamedArgument.TypedValue%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 引数が、値の配列である場合、<xref:System.Reflection.CustomAttributeTypedArgument.Value%2A>のプロパティ、<xref:System.Reflection.CustomAttributeTypedArgument>表します引数を返すことジェネリック<xref:System.Collections.ObjectModel.ReadOnlyCollection%601>の<xref:System.Reflection.CustomAttributeTypedArgument>オブジェクト。 各<xref:System.Reflection.CustomAttributeTypedArgument>コレクション内のオブジェクトが配列の対応する要素を表します。  
+  
+ インスタンスを作成する、<xref:System.Reflection.CustomAttributeData>クラスを使用して、 `static` <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A>ファクトリ メソッド。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 4 つのコンス トラクターと 4 つのプロパティを持つカスタム属性を定義します。 2 つのプロパティは読み取り専用され、コンス トラクターの位置指定パラメーターを使用して設定されます。 その他の 2 つのプロパティは読み取り/書き込み、および名前付き引数を使用して設定できます。 1 つの位置指定プロパティは、文字列の配列および 1 つの名前付きプロパティは、整数の配列。  
+  
+ この属性は、アセンブリ、アセンブリで宣言された型、型のメソッド、メソッドのパラメーターに適用されます。 別のコンス トラクターは、このような場合に使用されます。 実行すると、アセンブリはリフレクション専用コンテキストに読み込みます自体し、カスタム属性を表示します。  
+  
+ 型に適用される属性では、位置指定および名前付きの両方の引数を指定して、配列のプロパティを示します。  
+  
+ [!code-cpp[CustomAttributeData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomAttributeTypedArgument (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeTypedArgument.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">カスタム属性の引数の値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Reflection.CustomAttributeTypedArgument" />指定の値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `value`パラメーターを指定できません`null`このコンス トラクターの引数の型がの型から推論されるので`value`です。 指定する、`null`値を使用して、<xref:System.Reflection.CustomAttributeTypedArgument.%23ctor%28System.Type%2CSystem.Object%29>コンス トラクターです。  
+  
+ このコンス トラクターの継承クラスによって使用されます、<xref:System.Reflection.CustomAttributeTypedArgument>クラスです。 アプリケーション コードで使用することはありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomAttributeTypedArgument (Type argumentType, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type argumentType, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeTypedArgument.#ctor(System.Type,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="argumentType" Type="System.Type" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="argumentType">カスタム属性の引数の型。</param>
+        <param name="value">カスタム属性の引数の値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Reflection.CustomAttributeTypedArgument" />指定された型と値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの継承クラスによって使用されます、<xref:System.Reflection.CustomAttributeTypedArgument>クラスです。 アプリケーション コードで使用することはありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="argumentType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ArgumentType">
+      <MemberSignature Language="C#" Value="public Type ArgumentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ArgumentType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.CustomAttributeTypedArgument.ArgumentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>または引数の配列要素の引数の型を取得します。</summary>
+        <value>A<see cref="T:System.Type" />または引数の配列要素の型を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティがによって返される値の実際の型を識別する単純な引数や配列引数の要素を<xref:System.Reflection.CustomAttributeTypedArgument.Value%2A>プロパティです。 配列引数のこのプロパティが配列型を返しますが、<xref:System.Reflection.CustomAttributeTypedArgument.Value%2A>プロパティから返される、 `ReadOnlyCollection<CustomAttributeTypedArgument>` (`ReadOnlyCollection(Of CustomAttributeTypedArgument)` Visual Basic で) コレクションの各要素には、配列引数の対応する要素を表します。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 4 つのコンス トラクターと 4 つのプロパティを持つカスタム属性を定義します。 2 つのプロパティは読み取り専用され、コンス トラクターの位置指定パラメーターを使用して設定されます。 その他の 2 つのプロパティは読み取り/書き込み、および名前付き引数を使用して設定できます。 1 つの位置指定プロパティは、文字列の配列および 1 つの名前付きプロパティは、整数の配列。  
+  
+ この属性は、アセンブリ、アセンブリで宣言された型、型のメソッド、メソッドのパラメーターに適用されます。 別のコンス トラクターは、このような場合に使用されます。 実行すると、アセンブリはリフレクション専用コンテキストに読み込みます自体し、カスタム属性を表示します。  
+  
+ 型に適用される属性では、位置指定および名前付きの両方の引数を指定して、配列のプロパティを示します。  
+  
+ <xref:System.Reflection.CustomAttributeTypedArgument.ArgumentType%2A>でプロパティが使用される、`ShowValueOrArray`を属性の種類を表示する、カスタム属性のデータを表示するメソッド。  
+  
+ [!code-cpp[CustomAttributeData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeTypedArgument.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のもう 1 つのオブジェクト。</param>
+        <summary>このインスタンスと指定したオブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> とこのインスタンスが同じ型で、同じ値を表している場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeTypedArgument.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>このインスタンスのハッシュ コードである 32 ビット符号付き整数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Reflection.CustomAttributeTypedArgument left, System.Reflection.CustomAttributeTypedArgument right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Reflection.CustomAttributeTypedArgument left, valuetype System.Reflection.CustomAttributeTypedArgument right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeTypedArgument.op_Equality(System.Reflection.CustomAttributeTypedArgument,System.Reflection.CustomAttributeTypedArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.CustomAttributeTypedArgument" />
+        <Parameter Name="right" Type="System.Reflection.CustomAttributeTypedArgument" />
+      </Parameters>
+      <Docs>
+        <param name="left">等値演算子の左側に表示される <see cref="T:System.Reflection.CustomAttributeTypedArgument" /> 構造体。</param>
+        <param name="right"><see cref="T:System.Reflection.CustomAttributeTypedArgument" />等値演算子の右側に構造体。</param>
+        <summary>2 つの <see cref="T:System.Reflection.CustomAttributeTypedArgument" /> 構造体が等しいかどうかテストします。</summary>
+        <returns>
+          2 つの <see cref="T:System.Reflection.CustomAttributeTypedArgument" /> 構造体が等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.Reflection.CustomAttributeTypedArgument.Equals%2A?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Reflection.CustomAttributeTypedArgument left, System.Reflection.CustomAttributeTypedArgument right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Reflection.CustomAttributeTypedArgument left, valuetype System.Reflection.CustomAttributeTypedArgument right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeTypedArgument.op_Inequality(System.Reflection.CustomAttributeTypedArgument,System.Reflection.CustomAttributeTypedArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.CustomAttributeTypedArgument" />
+        <Parameter Name="right" Type="System.Reflection.CustomAttributeTypedArgument" />
+      </Parameters>
+      <Docs>
+        <param name="left">非等値演算子の左側に表示される <see cref="T:System.Reflection.CustomAttributeTypedArgument" /> 構造体。</param>
+        <param name="right"><see cref="T:System.Reflection.CustomAttributeTypedArgument" />非等値演算子の右側に構造体。</param>
+        <summary>2 つの <see cref="T:System.Reflection.CustomAttributeTypedArgument" /> 構造体が異なるかどうかテストします。</summary>
+        <returns>
+          2 つの <see cref="T:System.Reflection.CustomAttributeTypedArgument" /> 構造体が異なる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.Reflection.CustomAttributeTypedArgument.Equals%2A?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeTypedArgument.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>引数名、等号 (=) および引数値の文字列表現から成る文字列を返します。</summary>
+        <returns>引数名、等号 (=) および引数値の文字列表現から成る文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.CustomAttributeTypedArgument.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>単純な引数や配列引数の要素の引数の値を取得します。配列引数の値のコレクションを取得します。</summary>
+        <value>引数または要素、またはジェネリック型の値を表すオブジェクト<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />の<see cref="T:System.Reflection.CustomAttributeTypedArgument" />配列型の引数の値を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Reflection.CustomAttributeTypedArgument>このプロパティを返しますでは、配列引数を表す、 `ReadOnlyCollection<CustomAttributeTypedArgument>` (`ReadOnlyCollection(Of CustomAttributeTypedArgument)` Visual Basic で)。 コレクションの各要素は、配列の引数の対応する要素を表します。  
+  
+ 使用して、値の型を取得できる、<xref:System.Reflection.CustomAttributeTypedArgument.ArgumentType%2A>プロパティです。 <xref:System.Reflection.CustomAttributeTypedArgument.ArgumentType%2A>によって返される値の実際の型を取得、<xref:System.Reflection.CustomAttributeTypedArgument.Value%2A>単純引数または配列の要素のプロパティです。 配列引数の配列の型を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 4 つのコンス トラクターと 4 つのプロパティを持つカスタム属性を定義します。 2 つのプロパティは読み取り専用され、コンス トラクターの位置指定パラメーターを使用して設定されます。 その他の 2 つのプロパティは読み取り/書き込み、および名前付き引数を使用して設定できます。 1 つの位置指定プロパティは、文字列の配列および 1 つの名前付きプロパティは、整数の配列。  
+  
+ この属性は、アセンブリ、アセンブリで宣言された型、型のメソッド、メソッドのパラメーターに適用されます。 別のコンス トラクターは、このような場合に使用されます。 実行すると、アセンブリはリフレクション専用コンテキストに読み込みます自体し、カスタム属性を表示します。  
+  
+ 型に適用される属性では、位置指定および名前付きの両方の引数を指定して、配列のプロパティを示します。  
+  
+ <xref:System.Reflection.CustomAttributeTypedArgument.Value%2A>でプロパティが使用される、`ShowValueOrArray`を属性の値を表示する、カスタム属性のデータを表示するメソッド。  
+  
+ [!code-cpp[CustomAttributeData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+  
+ <xref:System.Reflection.CustomAttributeTypedArgument.ArgumentType%2A> &#124; <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

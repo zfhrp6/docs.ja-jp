@@ -1,0 +1,376 @@
+<Type Name="ResXDataNode" FullName="System.Resources.ResXDataNode">
+  <TypeSignature Language="C#" Value="public sealed class ResXDataNode : System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ResXDataNode extends System.Object implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.ResXDataNode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>XML リソース (.resx) ファイル内の要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResXDataNode>クラス リソース ファイル内の豊富なデータ型の表現をサポートしています。 オブジェクトがシリアル化と型のエディターをサポートしている限り、リソース ファイルに任意のオブジェクトのストレージをサポートできます。  
+  
+ 作成することができます、<xref:System.Resources.ResXDataNode>そのオーバー ロードされたクラスのコンス トラクターのいずれかを呼び出すオブジェクト。 できますし、または追加するリソース アイテム要素のリソース ファイルを呼び出すことによって、<xref:System.Resources.ResXResourceWriter.AddResource%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 既存を取得する<xref:System.Resources.ResXDataNode>オブジェクトを列挙する必要があります、<xref:System.Resources.ResXDataNode>をインスタンス化して、XML リソース ファイル内のオブジェクト、<xref:System.Resources.ResXResourceReader>オブジェクト、設定、<xref:System.Resources.ResXResourceReader.UseResXDataNodes%2A?displayProperty=nameWithType>プロパティを`true`を呼び出すと、<xref:System.Resources.ResXResourceReader.GetEnumerator%2A?displayProperty=nameWithType>列挙子を取得します。 具体的な例を次に示します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Resources.ResXResourceReader.GetEnumerator%2A?displayProperty=nameWithType>を取得するメソッド、<xref:System.Collections.IDictionaryEnumerator>列挙に使用されるオブジェクト、 <xref:System.Resources.ResXDataNode> .resx ファイル内のオブジェクト。 この例では、`CreateResourceFile`ルーチンのために必要な XML リソース ファイルを作成します。  
+  
+ [!code-csharp[System.Resources.ResXDataNode.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resxdatanode.class/cs/resxresourcereader2.cs#1)]
+ [!code-vb[System.Resources.ResXDataNode.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resxdatanode.class/vb/resxresourcereader2.vb#1)]  
+  
+ <xref:System.Resources.ResXResourceReader.UseResXDataNodes%2A>プロパティは`true`の値、<xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType>プロパティは、<xref:System.Resources.ResXDataNode>リソース値ではなくオブジェクトします。 これにより、リソース アイテムのコメントから使用可能な<xref:System.Resources.ResXDataNode.Comment%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 この型は、部分的に信頼されたコードでは使用できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResXDataNode (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXDataNode.#ctor(System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。</param>
+        <param name="value">格納するリソースです。</param>
+        <summary><see cref="T:System.Resources.ResXDataNode" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">リソース名前<paramref name="value" />はシリアル化をサポートしていません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />長さ 0 の文字列です。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResXDataNode (string name, System.Resources.ResXFileRef fileRef);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Resources.ResXFileRef fileRef) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXDataNode.#ctor(System.String,System.Resources.ResXFileRef)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="fileRef" Type="System.Resources.ResXFileRef" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。</param>
+        <param name="fileRef">リソースとして使用するファイルの参照。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Resources.ResXDataNode" />リソース ファイルへの参照を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が <see langword="null" /> または <paramref name="fileRef" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />長さ 0 の文字列です。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResXDataNode (string name, object value, Func&lt;Type,string&gt; typeNameConverter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, object value, class System.Func`2&lt;class System.Type, string&gt; typeNameConverter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXDataNode.#ctor(System.String,System.Object,System.Func{System.Type,System.String})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="typeNameConverter" Type="System.Func&lt;System.Type,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。</param>
+        <param name="value">格納するリソースです。</param>
+        <param name="typeNameConverter">受け取るメソッドへの参照、<see cref="T:System.Type" />を含む文字列を返します、<see cref="T:System.Type" />名。</param>
+        <summary><see cref="T:System.Resources.ResXDataNode" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">リソース名前<paramref name="value" />はシリアル化をサポートしていません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />長さ 0 の文字列です。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResXDataNode (string name, System.Resources.ResXFileRef fileRef, Func&lt;Type,string&gt; typeNameConverter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Resources.ResXFileRef fileRef, class System.Func`2&lt;class System.Type, string&gt; typeNameConverter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXDataNode.#ctor(System.String,System.Resources.ResXFileRef,System.Func{System.Type,System.String})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="fileRef" Type="System.Resources.ResXFileRef" />
+        <Parameter Name="typeNameConverter" Type="System.Func&lt;System.Type,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。</param>
+        <param name="fileRef">リソースとして使用するファイルの参照。</param>
+        <param name="typeNameConverter">受け取るメソッドへの参照、<see cref="T:System.Type" />を含む文字列を返します、<see cref="T:System.Type" />名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Resources.ResXDataNode" />リソース ファイルへの参照を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が <see langword="null" /> または <paramref name="fileRef" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />長さ 0 の文字列です。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Comment">
+      <MemberSignature Language="C#" Value="public string Comment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Comment" />
+      <MemberSignature Language="DocId" Value="P:System.Resources.ResXDataNode.Comment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのリソースに関する任意のコメントを設定します。</summary>
+        <value>コメントを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コメントがリソースに割り当てられていない場合は、アイテムのアイテムの値、<xref:System.Resources.ResXDataNode.Comment%2A>プロパティは<xref:System.String?displayProperty=nameWithType>します。  
+  
+ アクセスする、<xref:System.Resources.ResXDataNode.Comment%2A>をインスタンス化して、既存の XML リソース ファイル内のデータ ノードのプロパティ、<xref:System.Resources.ResXResourceReader>オブジェクト、設定、<xref:System.Resources.ResXResourceReader.UseResXDataNodes%2A?displayProperty=nameWithType>プロパティを`true`を呼び出すと、<xref:System.Resources.ResXResourceReader.GetEnumerator%2A?displayProperty=nameWithType>を取得する方法、<xref:System.Collections.IDictionaryEnumerator>オブジェクトの XML リソース ファイル内の項目を列挙に使用することです。 <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType>プロパティから返される、<xref:System.Resources.ResXDataNode>オブジェクト。  
+  
+   
+  
+## Examples  
+ 例を参照して、<xref:System.Resources.ResXDataNode>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileRef">
+      <MemberSignature Language="C#" Value="public System.Resources.ResXFileRef FileRef { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Resources.ResXFileRef FileRef" />
+      <MemberSignature Language="DocId" Value="P:System.Resources.ResXDataNode.FileRef" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Resources.ResXFileRef</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このリソースのファイル参照を取得します。</summary>
+        <value>このリソースは 1 つを使用している場合のファイル参照。 このリソースとその値を格納する場合、 <see cref="T:System.Object" />、このプロパティは返します<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNodePosition">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point GetNodePosition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Point GetNodePosition() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXDataNode.GetNodePosition" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リソースのリソース ファイル内の位置を取得します。</summary>
+        <returns>行の位置として、リソース ファイルでこのリソースの場所を指定する構造体 (<see cref="P:System.Drawing.Point.X" />) と列の位置 (<see cref="P:System.Drawing.Point.Y" />)。 このリソースがリソース ファイルの一部でない場合は、このメソッドを持つ構造体を返します、 <see cref="P:System.Drawing.Point.X" /> 0 と<see cref="P:System.Drawing.Point.Y" />は 0 です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (System.ComponentModel.Design.ITypeResolutionService typeResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetValue(class System.ComponentModel.Design.ITypeResolutionService typeResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXDataNode.GetValue(System.ComponentModel.Design.ITypeResolutionService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeResolver" Type="System.ComponentModel.Design.ITypeResolutionService" />
+      </Parameters>
+      <Docs>
+        <param name="typeResolver">型コンバーターの検索時に使用する型解決サービスです。</param>
+        <summary>指定した型解決サービスを使用して、このノードに格納されているオブジェクトを取得します。</summary>
+        <returns>格納されている値に対応するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メモリに格納されている値が現在存在する場合、直接返されます。 リソース ファイルに格納されていて、ファイル参照ではない場合<xref:System.Resources.ResXDataNode.GetValue%2A>は検索、<xref:System.ComponentModel.TypeConverter>文字列から適切なオブジェクトに変換できる、指定した型解決サービスを使用しています。 リソースがファイルの参照、<xref:System.Resources.ResXDataNode.GetValue%2A>逆シリアル化しようとしています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.TypeLoadException">対応する型が見つかりません、または適切な型コンバーターは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (System.Reflection.AssemblyName[] names);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetValue(class System.Reflection.AssemblyName[] names) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXDataNode.GetValue(System.Reflection.AssemblyName[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="names" Type="System.Reflection.AssemblyName[]" />
+      </Parameters>
+      <Docs>
+        <param name="names">オブジェクトの種類を検索するアセンブリの一覧です。</param>
+        <summary>指定したアセンブリを検索することでこのノードに格納されているオブジェクトを取得します。</summary>
+        <returns>格納されている値に対応するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メモリに格納されている値が現在存在する場合、直接返されます。 リソース ファイルに格納されていて、ファイル参照ではない場合<xref:System.Resources.ResXDataNode.GetValue%2A>オブジェクトの対応する型を検索する名前で識別されるアセンブリの検索し、次を検索、<xref:System.ComponentModel.TypeConverter>文字列から適切なオブジェクトに変換することができます。 リソースがファイルの参照、<xref:System.Resources.ResXDataNode.GetValue%2A>逆シリアル化しようとしています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.TypeLoadException">対応する型が見つかりません、または適切な型コンバーターは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueTypeName">
+      <MemberSignature Language="C#" Value="public string GetValueTypeName (System.ComponentModel.Design.ITypeResolutionService typeResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetValueTypeName(class System.ComponentModel.Design.ITypeResolutionService typeResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXDataNode.GetValueTypeName(System.ComponentModel.Design.ITypeResolutionService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeResolver" Type="System.ComponentModel.Design.ITypeResolutionService" />
+      </Parameters>
+      <Docs>
+        <param name="typeResolver">型解決サービスを使用してこの型のコンバーターを検索します。</param>
+        <summary>指定した型解決サービスを使用して、値の型名を取得します。</summary>
+        <returns>型の完全修飾名を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.TypeLoadException">対応する型が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueTypeName">
+      <MemberSignature Language="C#" Value="public string GetValueTypeName (System.Reflection.AssemblyName[] names);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetValueTypeName(class System.Reflection.AssemblyName[] names) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXDataNode.GetValueTypeName(System.Reflection.AssemblyName[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="names" Type="System.Reflection.AssemblyName[]" />
+      </Parameters>
+      <Docs>
+        <param name="names">型をチェックするアセンブリ。</param>
+        <summary>指定したアセンブリを調べることで、値の型名を取得します。</summary>
+        <returns>型の完全修飾名を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.TypeLoadException">対応する型が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Resources.ResXDataNode.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのリソースの名前を設定します。</summary>
+        <value>リソース名に対応する文字列。 名前が割り当てられていない場合、このプロパティは、長さ 0 の文字列を返します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Name プロパティに設定<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">Name プロパティは長さがゼロの文字列に設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo si, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResXDataNode.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="si" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="si">データを読み込む先のオブジェクト。</param>
+        <param name="context">このシリアル化のシリアル化先。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクトに、対象オブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Resources.ResXDataNode> のインスタンスが <xref:System.Runtime.Serialization.ISerializable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

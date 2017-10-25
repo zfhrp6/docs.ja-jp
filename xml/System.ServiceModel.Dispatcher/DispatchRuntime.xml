@@ -1,0 +1,844 @@
+<Type Name="DispatchRuntime" FullName="System.ServiceModel.Dispatcher.DispatchRuntime">
+  <TypeSignature Language="C#" Value="public sealed class DispatchRuntime" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DispatchRuntime extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.DispatchRuntime" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>既定のサービス動作の変更や、カスタム オブジェクトの結合に使用できるプロパティを公開します。このカスタム オブジェクトで、受信メッセージをオブジェクトに変換して操作にディスパッチする方法を変更できます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime> クラスは、サービスまたは個別のエンドポイントの既定動作を変更するため、またはカスタム変更を実装したオブジェクトを次のサービス プロセスの一方または両方に挿入するために使用します。  
+  
+1.  受信メッセージをオブジェクトに変換し、メソッド呼び出しとしてサービス オブジェクト上でそれらのオブジェクトを解放します。  
+  
+2.  サービス操作呼び出しに対する応答から受信したオブジェクトを送信メッセージに変換します。  
+  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] では、チャネル ディスパッチャーとエンドポイント ディスパッチャーは、新しいチャネルの受け入れ、メッセージの受信、メソッドのディスパッチと呼び出し、および応答処理を行うサービス コンポーネントです。 <xref:System.ServiceModel.ServiceHost> オブジェクトによって公開される各エンドポイントには、1 つのエンドポイント ディスパッチャーと、関連付けられた 1 つのチャネル ディスパッチャーがあります。さらに、双方向通信に参加する各クライアントには、各コールバック エンドポイントのエンドポイント ディスパッチャーとチャネル ディスパッチャーもあります。  
+  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime> を使用すると、メッセージが認識されない場合でも、特定のコントラクト全体のすべてのメッセージについて、特定のチャネルまたはエンドポイント ディスパッチャーを途中受信および拡張できます。 コントラクト内で宣言されているどのメッセージとも一致しないメッセージが到着すると、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.UnhandledDispatchOperation%2A> プロパティにより返された操作にディスパッチされます。 特定の操作についてすべてのメッセージを途中受信または拡張する方法については、<xref:System.ServiceModel.Dispatcher.DispatchOperation> クラスを参照してください。  
+  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime> クラスによって公開されているディスパッチャー拡張性は次の 4 つの領域に大別できます。  
+  
+1.  ディスパッチ コンポーネントは、<xref:System.ServiceModel.Dispatcher.DispatchRuntime> のプロパティおよび <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ChannelDispatcher%2A> プロパティによって返される関連チャネル ディスパッチャーのプロパティを使用して、チャネル ディスパッチャーがチャネルを受け入れてクローズする方法をカスタマイズします。 この分類に属するプロパティとして、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ChannelInitializers%2A> プロパティおよび <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InputSessionShutdownHandlers%2A> があります。  
+  
+2.  メッセージ コンポーネントを、処理されるメッセージごとにカスタマイズします。 この分類に属するプロパティとして、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageInspectors%2A>、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector%2A>、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.Operations%2A>、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A> があります。  
+  
+3.  インスタンス コンポーネントが、特定のサービス型のインスタンスの作成、有効期間、破棄をカスタマイズします。 サービス オブジェクトの有効期間の詳細については、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティを参照してください。 このカテゴリには、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceContextInitializers%2A> プロパティおよび <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> プロパティが含まれます。  
+  
+4.  セキュリティ関連コンポーネントは、次のプロパティを使用できます。  
+  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A> は、監査イベントが出力される場所を示します。  
+  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations%2A> は、サービスが受信メッセージによって提供される資格情報を使用して偽装を試みるかどうかを制御します。  
+  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageAuthenticationAuditLevel%2A> は、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A> によって指定されたイベント ログに、メッセージ認証成功イベントを出力するかどうかを制御します。  
+  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.PrincipalPermissionMode%2A> は、<xref:System.Threading.Thread.CurrentPrincipal%2A> プロパティの設定方法を制御します。  
+  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ServiceAuthorizationAuditLevel%2A> は、承認イベントの監査の実行方法を指定します。  
+  
+    -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SuppressAuditFailure%2A> は、ログ記録処理中に発生した致命的でない例外を抑制するかどうかを指定します。  
+  
+ カスタムの拡張オブジェクトは通常、<xref:System.ServiceModel.Dispatcher.DispatchRuntime> プロパティに割り当てるか、またはサービス動作 (<xref:System.ServiceModel.Description.IServiceBehavior> を実装するオブジェクト)、契約動作 (<xref:System.ServiceModel.Description.IContractBehavior> を実装するオブジェクト)、エンドポイント動作 (<xref:System.ServiceModel.Description.IEndpointBehavior> を実装するオブジェクト) のいずれかによってコレクションに挿入します。 次に、インストール動作オブジェクトを、プログラムで直接、またはカスタムの <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> オブジェクトを実装して適切な動作コレクションに追加し、アプリケーション構成ファイルを使用して動作を挿入できるようにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AutomaticInputSessionShutdown">
+      <MemberSignature Language="C#" Value="public bool AutomaticInputSessionShutdown { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutomaticInputSessionShutdown" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.AutomaticInputSessionShutdown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが出力セッションを閉じるときに、サービスは入力セッションを閉じるかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          クライアントが出力セッションを閉じるときにサービスが入力セッションを閉じる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.AutomaticInputSessionShutdown%2A> プロパティに `false` を設定した場合は、その他のしくみによってチャネルが閉じられる必要があります。 この場合は、カスタム セッション シャットダウン ハンドラーを <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InputSessionShutdownHandlers%2A> プロパティに追加する必要があります。  
+  
+ 既定では、クライアントが出力セッションを閉じ、残っているすべてのメッセージの処理をサービスが終了した時点で、サービスはセッションを閉じます。 <xref:System.ServiceModel.Dispatcher.DispatchRuntime.AutomaticInputSessionShutdown%2A> を `false` に設定すると、サーバーがセッションを自動的に閉じることはなく、セッションの有効期間のカスタム制御が可能です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallbackClientRuntime">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.ClientRuntime CallbackClientRuntime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.ClientRuntime CallbackClientRuntime" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.CallbackClientRuntime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.ClientRuntime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>双方向コールバック エンドポイントに対する送信呼び出しに関する <see cref="T:System.ServiceModel.Dispatcher.ClientRuntime" /> への機能拡張のインストール ポイントを表す [!INCLUDE[indigo1](~/includes/indigo1-md.md)] オブジェクトを取得します。</summary>
+        <value>双方向コントラクトでのランタイム クライアント カスタマイズのインストール ポイントである <see cref="T:System.ServiceModel.Dispatcher.ClientRuntime" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.CallbackClientRuntime%2A> を使用して、パラメーターの送信メッセージへの変換方法および応答メッセージの戻り値への変換方法を表示または変更する、カスタムの拡張オブジェクトを追加します。 詳細については、「<xref:System.ServiceModel.Dispatcher.ClientRuntime>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelDispatcher">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.ChannelDispatcher ChannelDispatcher { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.ChannelDispatcher ChannelDispatcher" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.ChannelDispatcher" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.ChannelDispatcher</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このディスパッチ ランタイム オブジェクトの <see cref="T:System.ServiceModel.Dispatcher.ChannelDispatcher" /> を取得します。</summary>
+        <value>ディスパッチ ランタイム オブジェクトのチャネル ディスパッチャー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConcurrencyMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.ConcurrencyMode ConcurrencyMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.ConcurrencyMode ConcurrencyMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.ConcurrencyMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ConcurrencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスのインスタンスがメッセージを順番に処理するか、または同時に処理するかを取得または設定します。</summary>
+        <value>サービスのインスタンスがメッセージを順番に処理するか、または同時に処理するかを制御する <see cref="T:System.ServiceModel.ConcurrencyMode" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Multiple` 同時実行モードを使用するには、サービスの実装がスレッドセーフである必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointDispatcher">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.EndpointDispatcher EndpointDispatcher { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.EndpointDispatcher EndpointDispatcher" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.EndpointDispatcher" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.EndpointDispatcher</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このディスパッチ ランタイムの <see cref="T:System.ServiceModel.Dispatcher.EndpointDispatcher" /> を取得します。</summary>
+        <value>このディスパッチ ランタイムの <see cref="T:System.ServiceModel.Dispatcher.EndpointDispatcher" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.EndpointDispatcher%2A> プロパティを使用して、エンドポイント固有の実行を変更またはカスタマイズするために、このディスパッチ ランタイムと関連付けられているエンドポイント ディスパッチャーを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureOrderedDispatch">
+      <MemberSignature Language="C#" Value="public bool EnsureOrderedDispatch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnsureOrderedDispatch" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.EnsureOrderedDispatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが送信された順序でディスパッチするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />メッセージが送信された順序でディスパッチする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalAuthorizationPolicies">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; ExternalAuthorizationPolicies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; ExternalAuthorizationPolicies" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.ExternalAuthorizationPolicies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のクレーム セットについて、ユーザーを承認するための一連のルールを定義する外部承認ポリシーを取得または設定します。</summary>
+        <value>特定のクレーム セットについて、ユーザーを承認するための一連のルールを定義する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> オブジェクトの <see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、特定のクレーム セットについてユーザーを承認するための一連のルールを定義する <xref:System.IdentityModel.Policy.IAuthorizationPolicy> のカスタム実装を追加するために使用します。 このカスタム実装は、サービスが呼び出されるたびに使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreTransactionMessageProperty">
+      <MemberSignature Language="C#" Value="public bool IgnoreTransactionMessageProperty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreTransactionMessageProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.IgnoreTransactionMessageProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.TransactionMessageProperty" /> を無視するかどうかを取得または設定します。</summary>
+        <value>
+          サービス メソッドを実行するときに <see langword="true" /> を無視する場合は <see cref="T:System.ServiceModel.Channels.TransactionMessageProperty" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.TransactionMessageProperty> を使用すると、チャネルに独自のトランザクション フロー メカニズムを使用するサードパーティのチャネル開発者は、独自のトランザクションを [!INCLUDE[indigo1](~/includes/indigo1-md.md)] に導入できます。 このプロパティを `true` に設定すると、サービス メソッドの実行時にトランザクションは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImpersonateCallerForAllOperations">
+      <MemberSignature Language="C#" Value="public bool ImpersonateCallerForAllOperations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ImpersonateCallerForAllOperations" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信メッセージによって提供される資格情報を使用してサービスが偽装を試みるかどうかを制御する値を取得または設定します。</summary>
+        <value>
+          操作の <see langword="true" /> プロパティの値が <see cref="P:System.ServiceModel.Dispatcher.DispatchOperation.Impersonation" /> または <see cref="F:System.ServiceModel.ImpersonationOption.Required" /> のときに、メッセージの資格情報に基づいてサービスが偽装を試みる場合は <see cref="F:System.ServiceModel.ImpersonationOption.Allowed" />、操作の <see langword="false" /> プロパティの値が <see cref="P:System.ServiceModel.Dispatcher.DispatchOperation.Impersonation" /> のときにのみサービスが偽装を試みる場合は <see cref="F:System.ServiceModel.ImpersonationOption.Required" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations%2A> プロパティを使用して、操作の <xref:System.ServiceModel.Dispatcher.DispatchOperation.Impersonation%2A> プロパティ値が <xref:System.ServiceModel.ImpersonationOption.Allowed> のときに偽装を行うどうかを制御します。 このプロパティが `true` であるが、操作の <xref:System.ServiceModel.Dispatcher.DispatchOperation.Impersonation%2A> プロパティ値は <xref:System.ServiceModel.ImpersonationOption.NotAllowed> の場合、例外がスローされます。  
+  
+ 操作の <xref:System.ServiceModel.Dispatcher.DispatchOperation.Impersonation%2A> プロパティ値が <xref:System.ServiceModel.ImpersonationOption.Required> の場合は、常に偽装を試みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImpersonateOnSerializingReply">
+      <MemberSignature Language="C#" Value="public bool ImpersonateOnSerializingReply { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ImpersonateOnSerializingReply" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.ImpersonateOnSerializingReply" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答操作のシリアル化で権限借用を使用するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />権限借用が応答操作のシリアル化を使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputSessionShutdownHandlers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IInputSessionShutdown&gt; InputSessionShutdownHandlers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedCollection`1&lt;class System.ServiceModel.Dispatcher.IInputSessionShutdown&gt; InputSessionShutdownHandlers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.InputSessionShutdownHandlers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IInputSessionShutdown&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力セッションを閉じる方法を制御するためのカスタム ハンドラーの追加に使用できる <see cref="T:System.ServiceModel.Dispatcher.IInputSessionShutdown" /> オブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.SynchronizedCollection`1" /> 型オブジェクトの <see cref="T:System.ServiceModel.Dispatcher.IInputSessionShutdown" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力セッションのクローズ方法を制御するこのプロパティに、<xref:System.ServiceModel.Dispatcher.IInputSessionShutdown> オブジェクトを追加します。 <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A?displayProperty=nameWithType> での <xref:System.ServiceModel.Channels.IDuplexSessionChannel?displayProperty=nameWithType> メソッドの呼び出しが最初に `null` を返す (これは、入力セッションが閉じられていることを示します) と、ディスパッチャーは各 <xref:System.ServiceModel.Dispatcher.IInputSessionShutdown> オブジェクトを呼び出して、<xref:System.ServiceModel.Channels.IDuplexSessionChannel?displayProperty=nameWithType> オブジェクトを渡します。 カスタムの <xref:System.ServiceModel.Dispatcher.IInputSessionShutdown> オブジェクトは、この <xref:System.ServiceModel.Channels.IDuplexSessionChannel> オブジェクトを使用して、各チャネル状態のクリーンアップを実行したり、応答メッセージを送信してからチャネルをクローズしたりできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceContextInitializers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IInstanceContextInitializer&gt; InstanceContextInitializers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedCollection`1&lt;class System.ServiceModel.Dispatcher.IInstanceContextInitializer&gt; InstanceContextInitializers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceContextInitializers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IInstanceContextInitializer&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.IInstanceContextInitializer" /> オブジェクトが最初に作成されたときにそれを検査または変更するために使用できる <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.SynchronizedCollection`1" /> 型の <see cref="T:System.ServiceModel.Dispatcher.IInstanceContextInitializer" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceContextInitializers%2A> プロパティを使用して、<xref:System.ServiceModel.InstanceContext> オブジェクトの作成時に検査または変更できるカスタム初期化子を追加します。 <xref:System.ServiceModel.InstanceContext> オブジェクトが作成される頻度は、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティにより制御されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceContextProvider">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.IInstanceContextProvider InstanceContextProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.IInstanceContextProvider InstanceContextProvider" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceContextProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.IInstanceContextProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.IInstanceContextProvider" /> が使用する <see cref="T:System.ServiceModel.Dispatcher.DispatchRuntime" /> を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Dispatcher.IInstanceContextProvider" /> で使用する <see cref="T:System.ServiceModel.Dispatcher.DispatchRuntime" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceProvider">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.IInstanceProvider InstanceProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.IInstanceProvider InstanceProvider" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.IInstanceProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス オブジェクトの作成と破棄の制御に使用できる <see cref="T:System.ServiceModel.Dispatcher.IInstanceProvider" /> オブジェクトを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Dispatcher.IInstanceProvider" /> オブジェクトに関連付けられたサービス オブジェクトの生成と破棄を制御する <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IInstanceProvider> インターフェイスを実装し、その実装を <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> プロパティに割り当てることで、既定のコンストラクター以外のコンストラクター (たとえば、インスタンス プールなどのカスタムのインスタンス生成モードを実装するコンストラクター) を用いてサービス型のインスタンスを制御します。  
+  
+ 通常、<xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドは、<xref:System.ServiceModel.InstanceContext> オブジェクトが最初に生成されたときに、一度だけ呼び出されます。 <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A> メソッドも、<xref:System.ServiceModel.InstanceContext> がクローズされたときに、一度だけ呼び出されます。  
+  
+ <xref:System.ServiceModel.InstanceContext> オブジェクトがクローズされる前にインスタンスを解放するように、サービスを構成することもできます。 それには、<xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> プロパティを使用するか、<xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A> メソッドを呼び出します。 そうすると、<xref:System.ServiceModel.InstanceContext> オブジェクトは <xref:System.ServiceModel.Dispatcher.IInstanceProvider.ReleaseInstance%2A> メソッドを呼び出します。 インスタンスが解放された後に新しいメッセージが着信すると、<xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A> メソッドによって新しいインスタンスが生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageAuthenticationAuditLevel">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.AuditLevel MessageAuthenticationAuditLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.AuditLevel MessageAuthenticationAuditLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.MessageAuthenticationAuditLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AuditLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ認証成功イベントを <see cref="P:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation" /> で指定されているイベント ログに書き込むかどうかを指定する値を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.AuditLevel" /> 値のいずれか。 既定値は、<see cref="F:System.ServiceModel.AuditLevel.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageAuthenticationAuditLevel%2A> プロパティを使用して、メッセージ認証成功イベントをイベント ログに書き出すかどうかを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageInspectors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IDispatchMessageInspector&gt; MessageInspectors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedCollection`1&lt;class System.ServiceModel.Dispatcher.IDispatchMessageInspector&gt; MessageInspectors" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.MessageInspectors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IDispatchMessageInspector&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイントを通過するすべての受信および送信メッセージにカスタム メッセージ インスペクターを結合するために使用できる <see cref="T:System.ServiceModel.Dispatcher.IDispatchMessageInspector" /> オブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.SynchronizedCollection`1" /> 型の <see cref="T:System.ServiceModel.Dispatcher.IDispatchMessageInspector" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageInspectors%2A> プロパティを使用して、エンドポイントを通過するすべてのメッセージを検査または変換するカスタムの <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector> オブジェクトを結び付けます。 <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector> オブジェクトはメッセージへの参照を取得するため、それをバッファーに格納して、メッセージ本文のコピーを調べることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operations">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedKeyedCollection&lt;string,System.ServiceModel.Dispatcher.DispatchOperation&gt; Operations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedKeyedCollection`2&lt;string, class System.ServiceModel.Dispatcher.DispatchOperation&gt; Operations" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.Operations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.SynchronizedKeyedCollection&lt;System.String,System.ServiceModel.Dispatcher.DispatchOperation&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定の操作の実行動作の制御に使用できる <see cref="T:System.ServiceModel.Dispatcher.DispatchOperation" /> オブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.SynchronizedKeyedCollection`2" /> 型および <see cref="T:System.String" /> 型オブジェクトの <see cref="T:System.ServiceModel.Dispatcher.DispatchOperation" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.Operations%2A> プロパティを使用して、パラメーターの検査または変更、パラメーターおよび戻り値のシリアル化/逆シリアル化の制御、操作の呼び出しの制御、その他の単一操作による動作の変更を行います。 詳細については、「<xref:System.ServiceModel.Dispatcher.DispatchOperation>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OperationSelector">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.IDispatchOperationSelector OperationSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.IDispatchOperationSelector OperationSelector" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.IDispatchOperationSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のメッセージの宛先 <see cref="T:System.ServiceModel.Dispatcher.IDispatchOperationSelector" /> の選択を制御する <see cref="T:System.ServiceModel.Dispatcher.DispatchOperation" /> オブジェクトを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Dispatcher.IDispatchOperationSelector" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector%2A> プロパティを使用して、指定したメッセージを受信する操作を決定します。 既定の操作セレクターは、メッセージのアクション ヘッダーの値を返します。アクション ヘッダーは、正しい <xref:System.ServiceModel.Dispatcher.DispatchOperation> を検索するためのキーとして使用します。 一致する操作が見つからない場合は、呼び出しが <xref:System.ServiceModel.Dispatcher.DispatchRuntime.UnhandledDispatchOperation%2A> プロパティからの戻り値にディスパッチされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreserveMessage">
+      <MemberSignature Language="C#" Value="public bool PreserveMessage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PreserveMessage" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.PreserveMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが保持されるかどうかを取得または設定します。</summary>
+        <value>
+          <see langword="true" />メッセージが維持されます。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrincipalPermissionMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.PrincipalPermissionMode PrincipalPermissionMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Description.PrincipalPermissionMode PrincipalPermissionMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.PrincipalPermissionMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.PrincipalPermissionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Threading.Thread.CurrentPrincipal" /> プロパティの設定方法を指定する値を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Description.PrincipalPermissionMode" /> 値の 1 つ。既定値は <see cref="F:System.ServiceModel.Description.PrincipalPermissionMode.UseWindowsGroups" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.PrincipalPermissionMode%2A> プロパティが <xref:System.ServiceModel.Description.PrincipalPermissionMode.None> である場合、<xref:System.Threading.Thread.CurrentPrincipal%2A> プロパティは設定されません。  
+  
+ 値が <xref:System.ServiceModel.Description.PrincipalPermissionMode.UseWindowsGroups> の場合は、受信メッセージのユーザー資格情報に基づいて、<xref:System.Threading.Thread.CurrentPrincipal%2A> プロパティに <xref:System.Security.Principal.WindowsPrincipal> を格納します。  
+  
+ 値が <xref:System.ServiceModel.Description.PrincipalPermissionMode.UseAspNetRoles> の場合は、<xref:System.Threading.Thread.CurrentPrincipal%2A> のロール情報に基づいて、<xref:System.Security.Principal.IPrincipal> プロパティに [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] オブジェクトが設定されます。  
+  
+ 値が <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom> の場合は、カスタムの <xref:System.Threading.Thread.CurrentPrincipal%2A> の実装によって <xref:System.IdentityModel.Policy.IAuthorizationPolicy> プロパティに値が設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseServiceInstanceOnTransactionComplete">
+      <MemberSignature Language="C#" Value="public bool ReleaseServiceInstanceOnTransactionComplete { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReleaseServiceInstanceOnTransactionComplete" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.ReleaseServiceInstanceOnTransactionComplete" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションが正常に完了した後でサービス オブジェクトをリサイクルするかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          トランザクションが正常に終了した後、サービス オブジェクトを再利用する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see cref="P:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete" /> の値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションが正常終了したときに、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.ReleaseServiceInstanceOnTransactionComplete%2A> を使用して、<xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A> メソッドが呼び出されるよう指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RoleProvider">
+      <MemberSignature Language="C#" Value="public System.Web.Security.RoleProvider RoleProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Security.RoleProvider RoleProvider" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.RoleProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.RoleProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Security.RoleProvider" /> が使用するカスタム <see cref="T:System.ServiceModel.Dispatcher.DispatchRuntime" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Web.Security.RoleProvider" /> が使用しているカスタム <see cref="T:System.ServiceModel.Dispatcher.DispatchRuntime" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityAuditLogLocation">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.AuditLogLocation SecurityAuditLogLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.AuditLogLocation SecurityAuditLogLocation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AuditLogLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>監査ログの場所を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.AuditLogLocation" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceAuthenticationManager">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.ServiceAuthenticationManager ServiceAuthenticationManager { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.ServiceAuthenticationManager ServiceAuthenticationManager" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.ServiceAuthenticationManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ServiceAuthenticationManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス操作の認証プロセスを管理するオブジェクトを取得または設定します。</summary>
+        <value>認証管理オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証によって、メッセージに署名したエンティティの ID が判定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceAuthorizationAuditLevel">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.AuditLevel ServiceAuthorizationAuditLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.AuditLevel ServiceAuthorizationAuditLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.ServiceAuthorizationAuditLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AuditLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>監査するサービス承認イベントを制御する値を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.AuditLevel" /> 値のいずれか。 既定値は、<see cref="F:System.ServiceModel.AuditLevel.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、サービス承認イベントは監査されません。 <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ServiceAuthorizationAuditLevel%2A> プロパティの値が <xref:System.ServiceModel.AuditLevel.Success> の場合は、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A> プロパティによって指定された監査ログに、サービス承認成功イベントだけが出力されます。 このプロパティの値が <xref:System.ServiceModel.AuditLevel.Failure> の場合は、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A> プロパティによって指定された監査ログに、サービス承認失敗イベントだけが出力されます。 <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ServiceAuthorizationAuditLevel%2A> プロパティの値が <xref:System.ServiceModel.AuditLevel.SuccessOrFailure> の場合は、サービス承認成功イベントとサービス承認失敗イベントの両方が監査ログに出力されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceAuthorizationManager">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.ServiceAuthorizationManager ServiceAuthorizationManager { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.ServiceAuthorizationManager ServiceAuthorizationManager" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.ServiceAuthorizationManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ServiceAuthorizationManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ServiceAuthorizationManager" /> に関する承認検査を提供する <see cref="T:System.ServiceModel.Dispatcher.DispatchRuntime" /> を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.ServiceAuthorizationManager" /> に関する承認検査を提供する <see cref="T:System.ServiceModel.Dispatcher.DispatchRuntime" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SingletonInstanceContext">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.InstanceContext SingletonInstanceContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.InstanceContext SingletonInstanceContext" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.SingletonInstanceContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.InstanceContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Dispatcher.IInstanceContextProvider" /> が使用するシングルトン <see cref="T:System.ServiceModel.Dispatcher.DispatchRuntime" /> を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Dispatcher.IInstanceContextProvider" /> が使用するシングルトン <see cref="T:System.ServiceModel.Dispatcher.DispatchRuntime" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressAuditFailure">
+      <MemberSignature Language="C#" Value="public bool SuppressAuditFailure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SuppressAuditFailure" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.SuppressAuditFailure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログ記録処理中に発生した致命的でない例外を抑制するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          ログ記録処理中に発生した致命的でない例外を抑制する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査ログへの出力中に発生した例外をアプリケーションで再度スローする場合は、<xref:System.ServiceModel.Dispatcher.DispatchRuntime.SuppressAuditFailure%2A> に `false` を設定します。 既定では、監査イベントの出力中に発生した例外のうち、<xref:System.OutOfMemoryException>、<xref:System.StackOverflowException>、<xref:System.Threading.ThreadAbortException>、および <xref:System.ArgumentException> だけがアプリケーションで再度スローされ、その他の例外は抑制されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SynchronizationContext">
+      <MemberSignature Language="C#" Value="public System.Threading.SynchronizationContext SynchronizationContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.SynchronizationContext SynchronizationContext" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.SynchronizationContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.SynchronizationContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス操作の呼び出しに使用される同期コンテキストを取得または設定します。</summary>
+        <value>サービス操作が呼び出されるスレッドを決定するために使用される <see cref="T:System.Threading.SynchronizationContext" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値が `null` になる場合もあります。 この値が `null` 以外の場合は、この同期コンテキストを使用して、正しいスレッド上でサービス操作を呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionAutoCompleteOnSessionClose">
+      <MemberSignature Language="C#" Value="public bool TransactionAutoCompleteOnSessionClose { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TransactionAutoCompleteOnSessionClose" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.TransactionAutoCompleteOnSessionClose" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションが閉じるときに現在のトランザクションを自動的に完了するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          セッションのクローズ時に自動的にトランザクションを完了する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see cref="P:System.ServiceModel.ServiceBehaviorAttribute.TransactionAutoCompleteOnSessionClose" /> によって指定された値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.TransactionAutoCompleteOnSessionClose%2A> が `true` で、かつアクティブなトランザクションが存在する場合、そのトランザクションはセッションが閉じると完了します。 <xref:System.ServiceModel.Dispatcher.DispatchRuntime.TransactionAutoCompleteOnSessionClose%2A> が `false` の場合、アクティブなトランザクションは完了せず、最終的には中止されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトの型を取得または設定します。</summary>
+        <value>コントラクトの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnhandledDispatchOperation">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.DispatchOperation UnhandledDispatchOperation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.DispatchOperation UnhandledDispatchOperation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.UnhandledDispatchOperation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.DispatchOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認識されないメッセージをディスパッチする操作を取得または設定します。</summary>
+        <value>認識されなかったメッセージがディスパッチされる <see cref="T:System.ServiceModel.Dispatcher.DispatchOperation" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.UnhandledDispatchOperation%2A> で返される操作は、<xref:System.ServiceModel.OperationContractAttribute.Action%2A> プロパティで "*" (アスタリスク) を使用して示されている操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateMustUnderstand">
+      <MemberSignature Language="C#" Value="public bool ValidateMustUnderstand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateMustUnderstand" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.DispatchRuntime.ValidateMustUnderstand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.ServiceBehaviorAttribute.ValidateMustUnderstand" /> の値を取得または設定します。</summary>
+        <value><see cref="P:System.ServiceModel.ServiceBehaviorAttribute.ValidateMustUnderstand" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 予期しないメッセージのヘッダーがエラー状態の原因であるかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

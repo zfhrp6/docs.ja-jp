@@ -1,0 +1,99 @@
+<Type Name="AutoValidate" FullName="System.Windows.Forms.AutoValidate">
+  <TypeSignature Language="C#" Value="public enum AutoValidate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AutoValidate extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AutoValidate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>コントロールにユーザー入力フォーカスがなくなったときのコントロールの検証方法を決定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールが使用している場合は、ユーザーは、Windows フォーム コントロールからフォーカスを切り替える、<xref:System.Windows.Forms.AutoValidate>そのデータを検証する方法を決定します。 アプリケーション開発者は、明示的な呼び出しを行うことがなく、発生するため、この種類の検証は暗黙の検証と呼ばれる<xref:System.Windows.Forms.ContainerControl.Validate%2A>または<xref:System.Windows.Forms.ContainerControl.ValidateChildren%2A>です。  
+  
+ この値に対応するプロパティは、コントロールの種類に基づく別の既定値があります。 詳細については、次を参照してください。 [Windows フォームでのユーザーの入力検証](~/docs/framework/winforms/user-input-validation-in-windows-forms.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フォームとそのコンテナー内のコントロールのすべての暗黙的な検証をオフにし、代わりに、マウス ボタンがクリックされたときに手動ですべてのフォームの子の検証を実行します。  
+  
+ [!code-csharp[ValidateChildren#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ValidateChildren/CS/Form1.cs#1)]
+ [!code-vb[ValidateChildren#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ValidateChildren/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Disable">
+      <MemberSignature Language="C#" Value="Disable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AutoValidate Disable = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AutoValidate.Disable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoValidate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗黙の検証は行われません。 明示的な呼び出しにはこの値の設定は影響しません<see cref="M:System.Windows.Forms.ContainerControl.Validate" />または<see cref="M:System.Windows.Forms.ContainerControl.ValidateChildren" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableAllowFocusChange">
+      <MemberSignature Language="C#" Value="EnableAllowFocusChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AutoValidate EnableAllowFocusChange = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AutoValidate.EnableAllowFocusChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoValidate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証が行われますが、新しいコントロールにフォーカスを移動も検証が失敗した場合、暗黙の型。 検証に失敗した場合、<see cref="E:System.Windows.Forms.Control.Validated" />イベントは起動しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EnablePreventFocusChange">
+      <MemberSignature Language="C#" Value="EnablePreventFocusChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AutoValidate EnablePreventFocusChange = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AutoValidate.EnablePreventFocusChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoValidate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗黙の検証は、コントロールがフォーカスを失ったときに発生します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Inherit">
+      <MemberSignature Language="C#" Value="Inherit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.AutoValidate Inherit = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.AutoValidate.Inherit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoValidate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの継承、 <see cref="T:System.Windows.Forms.AutoValidate" /> (フォームの別のコントロールなど) がコンテナーからの動作です。 コンテナー コントロールがない場合、既定値は<see cref="F:System.Windows.Forms.AutoValidate.EnablePreventFocusChange" />します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

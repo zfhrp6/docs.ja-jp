@@ -1,0 +1,116 @@
+<Type Name="PrincipalPolicy" FullName="System.Security.Principal.PrincipalPolicy">
+  <TypeSignature Language="C#" Value="public enum PrincipalPolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed PrincipalPolicy extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Principal.PrincipalPolicy" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Principal</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーション ドメインのプリンシパルと id オブジェクトを作成する方法を指定します。 既定値は、<see langword="UnauthenticatedPrincipal" /> です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンス上の理由から、既定のプリンシパルと id オブジェクトは作成されません必要になるまで。 プリンシパルは、現在のスレッドに明示的に追加されて、既定のプリンシパルが作成されていないと、プリンシパルのポリシー設定は無視されます。  
+  
+ 信頼されたホストを使用してこれらの値のもう 1 つを指定してプリンシパルの既定のポリシーをオーバーライドすることができます、<xref:System.AppDomain.SetPrincipalPolicy%2A>のメソッド、<xref:System.AppDomain>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="NoPrincipal">
+      <MemberSignature Language="C#" Value="NoPrincipal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.PrincipalPolicy NoPrincipal = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.PrincipalPolicy.NoPrincipal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.PrincipalPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンシパルまたは id のオブジェクトは作成されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UnauthenticatedPrincipal">
+      <MemberSignature Language="C#" Value="UnauthenticatedPrincipal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.PrincipalPolicy UnauthenticatedPrincipal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.PrincipalPolicy.UnauthenticatedPrincipal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.PrincipalPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証されていないエンティティのプリンシパルと id のオブジェクトを作成する必要があります。 認証されていないエンティティが<see cref="P:System.Security.Principal.GenericIdentity.Name" />設定を空の文字列 ("") と<see cref="P:System.Security.Principal.GenericIdentity.IsAuthenticated" />に設定<see langword="false" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowsPrincipal">
+      <MemberSignature Language="C#" Value="WindowsPrincipal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.PrincipalPolicy WindowsPrincipal = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.PrincipalPolicy.WindowsPrincipal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.PrincipalPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の実行スレッドに関連付けられているオペレーティング システムのトークンを表すプリンシパルと id のオブジェクトを作成する必要があります、および関連付けられているオペレーティング システムのグループをロールにマップする必要があります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

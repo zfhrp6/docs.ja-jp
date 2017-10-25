@@ -1,0 +1,201 @@
+<Type Name="PageMediaSize" FullName="System.Printing.PageMediaSize">
+  <TypeSignature Language="C#" Value="public sealed class PageMediaSize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PageMediaSize extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PageMediaSize" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>用紙または他のメディアのページ サイズをについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ としてメディア サイズに関する同じ情報を含むクラスの<xref:System.Printing.PageMediaSize>情報も含まれますとページのイメージの領域について、次を参照してください。<xref:System.Printing.PrintDocumentImageableArea>です。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+   
+  
+## Examples  
+ 次の例では、このクラスを使用して、それを印刷する用紙の余白内に収まるように視覚的要素を拡張する方法を示します。  
+  
+ [!code-csharp[XpsPrint#PageMediaSize](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsPrint/CSharp/XpsPrintHelper.cs#pagemediasize)]
+ [!code-vb[XpsPrint#PageMediaSize](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsPrint/visualbasic/xpsprinthelper.vb#pagemediasize)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageMediaSize (System.Printing.PageMediaSizeName mediaSizeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Printing.PageMediaSizeName mediaSizeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PageMediaSize.#ctor(System.Printing.PageMediaSizeName)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mediaSizeName" Type="System.Printing.PageMediaSizeName" />
+      </Parameters>
+      <Docs>
+        <param name="mediaSizeName">たとえば、サイズ用紙 (またはその他のメディア) のページの名前<see cref="F:System.Printing.PageMediaSizeName.NorthAmericaLetter" />または<see cref="F:System.Printing.PageMediaSizeName.ISOA4" />です。</param>
+        <summary>指定された <see cref="T:System.Printing.PageMediaSize" /> を使用して、<see cref="T:System.Printing.PageMediaSizeName" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageMediaSize (double width, double height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 width, float64 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PageMediaSize.#ctor(System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="width" Type="System.Double" />
+        <Parameter Name="height" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="width">(ピクセル単位) は 1/96 インチ単位の幅。</param>
+        <param name="height">(ピクセル単位) は 1/96 インチ単位の高さ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PageMediaSize" />幅と高さを使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageMediaSize (System.Printing.PageMediaSizeName mediaSizeName, double width, double height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Printing.PageMediaSizeName mediaSizeName, float64 width, float64 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PageMediaSize.#ctor(System.Printing.PageMediaSizeName,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mediaSizeName" Type="System.Printing.PageMediaSizeName" />
+        <Parameter Name="width" Type="System.Double" />
+        <Parameter Name="height" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="mediaSizeName">たとえば、サイズ用紙 (またはその他のメディア) のページの名前<see cref="F:System.Printing.PageMediaSizeName.NorthAmericaLetter" />または<see cref="F:System.Printing.PageMediaSizeName.ISOA4" />です。</param>
+        <param name="width">(ピクセル単位) は 1/96 インチ単位の幅。</param>
+        <param name="height">(ピクセル単位) は 1/96 インチ単位の高さ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PageMediaSize" />クラスを指定して<see cref="T:System.Printing.PageMediaSizeName" />幅と高さ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public Nullable&lt;double&gt; Height { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;float64&gt; Height" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageMediaSize.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの高さを取得します。</summary>
+        <value>A<see cref="T:System.Double" />ページの高さ (ピクセル単位 1/96 インチ単位) を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このクラスを使用して、それを印刷する用紙の余白内に収まるように視覚的要素を拡張する方法を示します。  
+  
+ [!code-csharp[XpsPrint#PageMediaSize](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsPrint/CSharp/XpsPrintHelper.cs#pagemediasize)]
+ [!code-vb[XpsPrint#PageMediaSize](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsPrint/visualbasic/xpsprinthelper.vb#pagemediasize)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageMediaSizeName">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Printing.PageMediaSizeName&gt; PageMediaSizeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Printing.PageMediaSizeName&gt; PageMediaSizeName" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageMediaSize.PageMediaSizeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Printing.PageMediaSizeName&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>用紙または他のメディアのページ サイズの名前を取得します。</summary>
+        <value>A<see cref="T:System.Printing.PageMediaSizeName" />ページ サイズの名前を示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PageMediaSize.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>用紙または他のメディアのページ サイズを表示します。</summary>
+        <returns>A<see cref="T:System.String" />用紙または他のメディアのページ サイズを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される文字列の形式は次のとおりです。  
+  
+ <xref:System.Printing.PageMediaSizeName>(<xref:System.Printing.PageMediaSize.Width%2A> x <xref:System.Printing.PageMediaSize.Height%2A>)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public Nullable&lt;double&gt; Width { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;float64&gt; Width" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PageMediaSize.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの幅を取得します。</summary>
+        <value>A<see cref="T:System.Double" />ページの幅 (ピクセル単位 1/96 インチ単位) を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このクラスを使用して、それを印刷する用紙の余白内に収まるように視覚的要素を拡張する方法を示します。  
+  
+ [!code-csharp[XpsPrint#PageMediaSize](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsPrint/CSharp/XpsPrintHelper.cs#pagemediasize)]
+ [!code-vb[XpsPrint#PageMediaSize](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsPrint/visualbasic/xpsprinthelper.vb#pagemediasize)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

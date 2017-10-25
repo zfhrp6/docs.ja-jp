@@ -1,0 +1,66 @@
+<Type Name="RuleChainingBehavior" FullName="System.Workflow.Activities.Rules.RuleChainingBehavior">
+  <TypeSignature Language="C#" Value="public enum RuleChainingBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RuleChainingBehavior extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.RuleChainingBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Activities.Rules.RuleSet" /> の動作を連鎖的に波及させるかどうかを指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Full">
+      <MemberSignature Language="C#" Value="Full" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.Activities.Rules.RuleChainingBehavior Full = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.Rules.RuleChainingBehavior.Full" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleChainingBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクションによりフィールドやプロパティが更新されたとき、アクション内で <see cref="T:System.Workflow.Activities.Rules.RuleWriteAttribute" /> を指定してメソッドが呼び出されたとき、<see cref="T:System.Workflow.Activities.Rules.RuleUpdateAction" /> が実行されたときに、その動作を連鎖的に波及させる旨を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.Activities.Rules.RuleChainingBehavior None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.Rules.RuleChainingBehavior.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleChainingBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動作を連鎖的に波及させません。 つまり、ルールはそれぞれ 1 回だけ実行されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateOnly">
+      <MemberSignature Language="C#" Value="UpdateOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.Activities.Rules.RuleChainingBehavior UpdateOnly = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.Rules.RuleChainingBehavior.UpdateOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleChainingBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleUpdateAction" /> により、実行したアクションで明示的に指定されている場合のみ、動作を連鎖的に波及させます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

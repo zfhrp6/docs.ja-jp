@@ -1,0 +1,145 @@
+<Type Name="Triplet" FullName="System.Web.UI.Triplet">
+  <TypeSignature Language="C#" Value="public sealed class Triplet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit Triplet extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Triplet" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>次の 3 つの関連オブジェクトを格納するために使用する基本ユーティリティ クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Triplet>クラスは、次の 3 つの関連オブジェクトを格納する基本的な構造体として使用します。 これは、ASP.NET でさまざまな方法で使用されるユーティリティ クラスです。 使用することができます、<xref:System.Web.UI.Triplet>独自のコードを任意の場所でクラスの次の 3 つの関連するオブジェクトと非表示データが必須ではありませんを格納する構造体をする必要があります。 <xref:System.Web.UI.Triplet>クラスをカプセル化しない、`object`参照、 <xref:System.Web.UI.Triplet.First>、 <xref:System.Web.UI.Triplet.Second>、および<xref:System.Web.UI.Triplet.Third>プロパティに、すべての呼び出し元コードに直接として公開パブリック クラスのフィールドです。  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.Web.UI.Triplet> 3 つの整数の値を保持するオブジェクトを<xref:System.Web.UI.Triplet>3 つのラベル コントロールを保持するためにします。  
+  
+> [!NOTE]
+>  メンバーが参照型にアクセスするときに、 <xref:System.Web.UI.Triplet>、のみジェネリック<xref:System.Object>メソッドはそのメンバーを使用できます。  
+  
+ [!code-aspx-csharp[System.Web.UI.Triplet#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Triplet/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.Triplet#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Triplet/VB/Default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Triplet ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Triplet.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Triplet" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Triplet (object x, object y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object x, object y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Triplet.#ctor(System.Object,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Object" />
+        <Parameter Name="y" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="x">オブジェクトに割り当てられている<see cref="F:System.Web.UI.Triplet.First" />です。</param>
+        <param name="y">オブジェクトに割り当てられている<see cref="F:System.Web.UI.Triplet.Second" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Triplet" />クラスし、最初の 2 つのオブジェクトを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Triplet (object x, object y, object z);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object x, object y, object z) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Triplet.#ctor(System.Object,System.Object,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Object" />
+        <Parameter Name="y" Type="System.Object" />
+        <Parameter Name="z" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="x">オブジェクトに割り当てられている<see cref="F:System.Web.UI.Triplet.First" />です。</param>
+        <param name="y">オブジェクトに割り当てられている<see cref="F:System.Web.UI.Triplet.Second" />です。</param>
+        <param name="z">オブジェクトに割り当てられている<see cref="F:System.Web.UI.Triplet.Third" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Triplet" />指定の 3 つのオブジェクトを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="First">
+      <MemberSignature Language="C#" Value="public object First;" />
+      <MemberSignature Language="ILAsm" Value=".field public object First" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.Triplet.First" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の設定を取得または<see langword="object" />トリプレットのです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Second">
+      <MemberSignature Language="C#" Value="public object Second;" />
+      <MemberSignature Language="ILAsm" Value=".field public object Second" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.Triplet.Second" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 番目の設定を取得または<see langword="object" />トリプレットのです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Third">
+      <MemberSignature Language="C#" Value="public object Third;" />
+      <MemberSignature Language="ILAsm" Value=".field public object Third" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.Triplet.Third" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>3 番目の設定を取得または<see langword="object" />トリプレットのです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,55 @@
+<Type Name="XmlValueGetter" FullName="System.Xml.Schema.XmlValueGetter">
+  <TypeSignature Language="C#" Value="public delegate object XmlValueGetter();" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XmlValueGetter extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlValueGetter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters />
+  <ReturnValue>
+    <ReturnType>System.Object</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <summary>A<see langword="delegate" />によって使用される、<see cref="T:System.Xml.Schema.XmlSchemaValidator" />クラス属性、テキスト、または空白の XML スキーマ定義言語 (XSD) 型と互換性のある共通言語ランタイム (CLR) 型として属性、テキスト、および空白文字の値を渡します。</summary>
+    <returns>属性、テキスト、または空白の値を格納するオブジェクト。 オブジェクトは、属性、テキスト、または空白の値の XSD 型に対応する CLR 型です。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Schema.XmlValueGetter> `delegate`属性、テキスト、または空白ノードの CLR 値が使用可能な既にとを変換するコストを回避できる場合に便利です、`string`し、検証のために再度解析とします。  
+  
+ 詳細については、<xref:System.Xml.Schema.XmlSchemaValidator>クラスを参照してください、 [XmlSchemaValidator のプッシュ ベースの検証](~/docs/standard/data/xml/xmlschemavalidator-push-based-validation.md)トピック、または<xref:System.Xml.Schema.XmlSchemaValidator>クラスのリファレンス ドキュメント。  
+  
+   
+  
+## Examples  
+ 次の例は、検証、`contosoBooks.xml`ファイルに対して、`contosoBooks.xsd`スキーマです。 この例では、<xref:System.Xml.Serialization.XmlSerializer> クラスを使用して、`contosoBooks.xml` ファイルを逆シリアル化し、ノードの値を <xref:System.Xml.Schema.XmlSchemaValidator> クラスのメソッドに渡します。  
+  
+ [!code-csharp[XmlSchemaValidatorExamples#1](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaValidatorExamples/CS/XmlSchemaValidatorExamples.cs#1)]
+ [!code-vb[XmlSchemaValidatorExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaValidatorExamples/VB/XmlSchemaValidatorExamples.vb#1)]  
+  
+ この例は、`contosoBooks.xml` ファイルを入力として使用します。  
+  
+ [!code-xml[XPathXMLExamples#2](~/samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xml#2)]  
+  
+ また、`contosoBooks.xsd` ファイルも入力として使用します。  
+  
+ [!code-xml[XPathXMLExamples#3](~/samples/snippets/xml/VS_Snippets_Data/XPathXMLExamples/XML/contosoBooks.xsd#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

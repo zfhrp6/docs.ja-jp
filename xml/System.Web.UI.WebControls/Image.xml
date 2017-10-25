@@ -1,0 +1,524 @@
+<Type Name="Image" FullName="System.Web.UI.WebControls.Image">
+  <TypeSignature Language="C#" Value="public class Image : System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Image extends System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Image" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("ImageUrl")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.PreviewControlDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web ページ上にイメージを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [ユーザー補助](#accessibility)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.Image>制御サーバー コードからイメージを操作できます。 使用して、 <xref:System.Web.UI.WebControls.Image> Web ページの要求元のブラウザーでサポートされている任意の有効なイメージを表示するコントロール。 設定して表示されるイメージへのパスが指定されて、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティです。 設定して、イメージが利用できない場合、イメージの代わりに表示するテキストを指定することができます、<xref:System.Web.UI.WebControls.Image.AlternateText%2A>プロパティです。 Web ページの他の要素に関連してイメージの配置を設定して指定<xref:System.Web.UI.WebControls.Image.ImageAlign%2A>プロパティです。  
+  
+> [!NOTE]
+>  このコントロールには、イメージのみが表示されます。 使用して、画像上にマウスをキャプチャする必要がある場合、<xref:System.Web.UI.WebControls.ImageButton>コントロール。  
+  
+<a name="accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:Image  
+    AccessKey="string"  
+    AlternateText="string"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CssClass="string"  
+    DescriptionUrl="uri"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ForeColor="color name|#dddddd"  
+    GenerateEmptyAlternateText="True|False"  
+    Height="size"  
+    ID="string"  
+    ImageAlign="NotSet|Left|Right|Baseline|Top|Middle|Bottom|  
+        AbsBottom|AbsMiddle|TextTop"  
+    ImageUrl="uri"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    ToolTip="string"  
+    Visible="True|False"  
+    Width="size"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、 <xref:System.Web.UI.WebControls.Image> Web ページ上のコントロールです。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic Image Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Image Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Image Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Image Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Image ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Image.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Image" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.Image>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例で作成しの新しいインスタンスを初期化する方法、<xref:System.Web.UI.WebControls.Image>クラスです。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic Image.Image Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Image.Image Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Image.Image Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Image.Image Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Image.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.Web.UI.HtmlTextWriter" />クライアントのブラウザーに表示する出力ストリームを格納しています。</param>
+        <summary>属性を追加、<see cref="T:System.Web.UI.WebControls.Image" />クライアントに表示する出力ストリームにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.Image.AddAttributesToRender%2A>カスタム サーバー コントロールできるように、<xref:System.Web.UI.WebControls.Image>細い境界線で常に表示されます。  
+  
+ [!code-aspx-csharp[CustomImageAddAttributesToRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomImageAddAttributesToRender/CS/custom_image_addattributestorendercs.aspx#1)]
+ [!code-aspx-vb[CustomImageAddAttributesToRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomImageAddAttributesToRender/VB/custom_image_addattributestorendervb.aspx#1)]  
+[!code-csharp[CustomImageAddAttributesToRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomImageAddAttributesToRender/CS/custom_image_addattributestorender.cs#2)]
+[!code-vb[CustomImageAddAttributesToRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomImageAddAttributesToRender/VB/custom_image_addattributestorender.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternateText">
+      <MemberSignature Language="C#" Value="public virtual string AlternateText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AlternateText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Image.AlternateText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示される代替テキスト、<see cref="T:System.Web.UI.WebControls.Image" />イメージが使用可能な場合を制御します。 ツール ヒント機能をサポートするブラウザーでは、ツールヒントとしてこのテキストを表示します。</summary>
+        <value>表示される代替テキスト、<see cref="T:System.Web.UI.WebControls.Image" />イメージが使用可能な場合を制御します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、イメージがで指定された場合に表示するテキストを指定する、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティは使用できません。 ツール ヒント機能をサポートするブラウザーでは、このテキストはツールヒントとしても表示されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[ASP.NET のグローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.Image.AlternateText%2A>イメージが利用できない場合、イメージに対して表示する代替テキストを指定するプロパティです。  
+  
+ [!code-aspx-csharp[Classic Image.AlternateText Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Image.AlternateText Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Image.AlternateText Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Image.AlternateText Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DescriptionUrl">
+      <MemberSignature Language="C#" Value="public virtual string DescriptionUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DescriptionUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Image.DescriptionUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージの詳細な説明を場所を設定します。</summary>
+        <value>イメージの詳細な説明を格納しているファイルの URL です。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Image.DescriptionUrl%2A>プロパティは、イメージの追加の詳細を提供する HTML ファイルを指定します。 <xref:System.Web.UI.WebControls.Image.DescriptionUrl%2A>としてプロパティを表示、`longdesc`イメージ コントロールの属性です。 場合、<xref:System.Web.UI.WebControls.Image.DescriptionUrl%2A>プロパティが設定されていない、または空の文字列に設定されている ("") では、<xref:System.Web.UI.WebControls.Image>コントロールを表示せず、`longdesc`属性。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.Image.DescriptionUrl%2A>プロパティを補足するものを<xref:System.Web.UI.WebControls.Image.AlternateText%2A>プロパティです。 たとえば、使用する場合、<xref:System.Web.UI.WebControls.Image>太陽系のイメージを表示するコントロールを設定することができます、<xref:System.Web.UI.WebControls.Image.AlternateText%2A>プロパティを`The Solar System,`し、設定、<xref:System.Web.UI.WebControls.Image.DescriptionUrl%2A>軌道太陽系 sun 惑星のイメージの詳細を説明する HTML ページにプロパティ。  
+  
+ <xref:System.Web.UI.WebControls.Image.DescriptionUrl%2A>はプロパティが省略可能で、テキストのみのブラウザーは、Web ページのアクセシビリティを強化し、スクリーン リーダーことができます。 ブラウザーは、詳細なテキストの説明を使用して、代わりに、またはそれらに加えて、重要な概念を伝えるを視覚的イメージです。 指定された説明の内容を使用する方法については、ブラウザーのマニュアルを参照してください、`longdesc`属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public override bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Image.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールが有効である場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このプロパティは、<xref:System.Web.UI.WebControls.WebControl>クラスし、は適用されません、<xref:System.Web.UI.WebControls.Image>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.FontInfo Font { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.FontInfo Font" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Image.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールに関連付けられているテキストのフォントのプロパティを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.FontInfo" />コントロールに関連付けられているテキストのプロパティを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このプロパティは、<xref:System.Web.UI.WebControls.WebControl>クラスし、は適用されません、<xref:System.Web.UI.WebControls.Image>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateEmptyAlternateText">
+      <MemberSignature Language="C#" Value="public virtual bool GenerateEmptyAlternateText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool GenerateEmptyAlternateText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Image.GenerateEmptyAlternateText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールが空の文字列値の代替テキスト属性を生成するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールは、空の文字列値の代替テキスト属性を生成する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ときに、<xref:System.Web.UI.WebControls.Image.AlternateText%2A>プロパティが設定されていない、<xref:System.Web.UI.WebControls.Image>コントロールは含まれません、`alt`コントロールのレンダリングの代替テキストを指定する属性。 設定、<xref:System.Web.UI.WebControls.Image.GenerateEmptyAlternateText%2A>プロパティを`true`に表示される出力の代替テキスト属性を常に含める、<xref:System.Web.UI.WebControls.Image>コントロール。  
+  
+ XHTML ドキュメント型定義が必要です、`alt`イメージ コントロールの属性です。 ただし、ユーザー補助のベスト プラクティスは、Web ページのコンテキストに関連する情報を伝達しないイメージ コントロールを指定する必要がありますしないことを勧め、`alt`属性。 設定して XHTML とユーザー補助機能の両方の要件を満たしていることができます、<xref:System.Web.UI.WebControls.Image.GenerateEmptyAlternateText%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageAlign">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ImageAlign ImageAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ImageAlign ImageAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Image.ImageAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ImageAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の配置、 <see cref="T:System.Web.UI.WebControls.Image" /> Web ページ上の他の要素に関連して制御します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ImageAlign" /> 値のいずれか。 既定値は、<see langword="NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Image.ImageAlign%2A>プロパティを指定するか、Web ページの他の要素に関連して、イメージのアラインメントを決定します。 次の表は、可能な配置の設定を一覧表示します。  
+  
+|アラインメント|説明|  
+|---------------|-----------------|  
+|`NotSet`|配置が設定されていません。|  
+|`Left`|イメージは、テキストの折り返しの右側に、Web ページの左の端に揃えられます。|  
+|`Right`|イメージは、テキストの折り返しの左上に Web ページの右の端に揃えられます。|  
+|`Baseline`|イメージの下枠は、テキストの最初の行の下の端に揃えられます。|  
+|`Top`|イメージの上端は、同じ行の最高位置の要素の上端に揃えられます。|  
+|`Middle`|イメージの中央は、テキストの最初の行の下のエッジに揃えられます。|  
+|`Bottom`|イメージの下枠は、テキストの最初の行の下の端に揃えられます。|  
+|`AbsBottom`|イメージの下枠は、同じ行に最も大きな要素の下枠に揃えられます。|  
+|`AbsMiddle`|イメージの中心は、同じ行に最も大きな要素の中央に揃えられます。|  
+|`TextTop`|イメージの上端は、同じ行に最も高いテキストの上端に揃えられます。|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Image.ImageAlign%2A>のアラインメントを指定するプロパティ、 <xref:System.Web.UI.WebControls.Image> Web ページ上の他の要素に関連して制御します。  
+  
+ [!code-aspx-csharp[Classic Image.AlternateText Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Image.AlternateText Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Image.AlternateText Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Image.AlternateText Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した値が、<see cref="T:System.Web.UI.WebControls.ImageAlign" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string ImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Image.ImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で表示するイメージへのパスを提供する URL、<see cref="T:System.Web.UI.WebControls.Image" />コントロール。</summary>
+        <value>表示するイメージへのパスを提供する URL、<see cref="T:System.Web.UI.WebControls.Image" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティを表示するイメージの URL を指定する、<xref:System.Web.UI.WebControls.Image>コントロール。 相対パスまたは絶対 URL を使用することができます。 相対 URL では、サーバーで、完全なパスを指定せず、Web ページの場所にイメージの場所を関連付けます。 Web ページの場所への相対パスでは。 これにより、コードを更新することがなく別のディレクトリに、サーバー上のサイト全体を移動しやすくします。 絶対 URL は、サイトを別のディレクトリに移動するには、コードを更新する必要がありますので、完全なパスを提供します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティを表示するイメージの場所を指定する、<xref:System.Web.UI.WebControls.Image>コントロール。  
+  
+ [!code-aspx-csharp[Classic Image.AlternateText Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Image.AlternateText Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Image.AlternateText Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Image.AlternateText Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Image.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>指定したライターに、イメージ コントロールの内容を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Image.RenderContents%2A>メソッドは、主にコントロールの開発者によって使用されます。 <xref:System.Web.UI.WebControls.Image>制御を実装して、<xref:System.Web.UI.WebControls.Image.RenderContents%2A>子コントロールのレンダリングをスキップするメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.Image.RenderContents%2A>カスタム サーバー内のメソッドを制御できるように、いくつかのテキストが後に常に表示されます、<xref:System.Web.UI.WebControls.Image>です。  
+  
+ [!code-aspx-csharp[CustomImageRenderContents#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomImageRenderContents/CS/custom_image_rendercontentscs.aspx#1)]
+ [!code-aspx-vb[CustomImageRenderContents#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomImageRenderContents/VB/custom_image_rendercontentsvb.aspx#1)]  
+[!code-csharp[CustomImageRenderContents#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomImageRenderContents/CS/custom_image_rendercontents.cs#2)]
+[!code-vb[CustomImageRenderContents#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomImageRenderContents/VB/custom_image_rendercontents.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDisabledAttribute">
+      <MemberSignature Language="C#" Value="public override bool SupportsDisabledAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDisabledAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Image.SupportsDisabledAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの <see cref="P:System.Web.UI.WebControls.WebControl.IsEnabled" /> プロパティが <see langword="false" /> の場合、レンダリングされた HTML 要素の <see langword="disabled" /> 属性を "無効" に設定するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Web.UI.Control.RenderingCompatibility" />プロパティがより低い ASP.NET のバージョンを示す<c>4.0</c>、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが無効になっているときに ASP.NET がそのコントロールの HTML をどのように描画するかを示します。 場合は、このプロパティは`true`、ASP.NET は表示、`disabled`属性のコントロールを無効にします。 場合は、このプロパティは`false`、ASP.NET は表示、`class`属性のコントロールを無効にします。 詳細については、「<xref:System.Web.UI.WebControls.WebControl.SupportsDisabledAttribute%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

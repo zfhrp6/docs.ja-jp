@@ -1,0 +1,189 @@
+<Type Name="PowerBroadcastStatus" FullName="System.ServiceProcess.PowerBroadcastStatus">
+  <TypeSignature Language="C#" Value="public enum PowerBroadcastStatus" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PowerBroadcastStatus extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceProcess.PowerBroadcastStatus" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>システムの電源の状態を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.PowerBroadcastStatus>によって使用される、<xref:System.ServiceProcess.ServiceBase>クラスをシステムの電源ステータスの変更を示します。 電源状態の変更に対応するためにアプリケーションを設計することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BatteryLow">
+      <MemberSignature Language="C#" Value="BatteryLow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.PowerBroadcastStatus BatteryLow = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.PowerBroadcastStatus.BatteryLow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.PowerBroadcastStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッテリ電源が低い場合です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OemEvent">
+      <MemberSignature Language="C#" Value="OemEvent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.PowerBroadcastStatus OemEvent = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.PowerBroadcastStatus.OemEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.PowerBroadcastStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドバンスト パワー マネージメント (APM) BIOS は、OEM の APM イベントを通知します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PowerStatusChange">
+      <MemberSignature Language="C#" Value="PowerStatusChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.PowerBroadcastStatus PowerStatusChange = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.PowerBroadcastStatus.PowerStatusChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.PowerBroadcastStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッテリ電源から A/C への切り替えなど、コンピューターの電源の状態の変更が検出されました。 システムは、ユーザーによって指定されたしきい値を下回るバッテリ電源の残量またはバッテリ電源が、指定した割合によって変更された場合にもこのイベントをブロードキャストします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="QuerySuspend">
+      <MemberSignature Language="C#" Value="QuerySuspend" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.PowerBroadcastStatus QuerySuspend = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.PowerBroadcastStatus.QuerySuspend" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.PowerBroadcastStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムには、コンピューターを中断するアクセス許可が必要です。 アクセス許可を付与されているアプリケーションは、戻る前に中断するための準備を行ってください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="QuerySuspendFailed">
+      <MemberSignature Language="C#" Value="QuerySuspendFailed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.PowerBroadcastStatus QuerySuspendFailed = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.PowerBroadcastStatus.QuerySuspendFailed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.PowerBroadcastStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムには、コンピューターを中断するアクセス許可が拒否されました。 すべてのアプリケーションまたはドライバーを以前拒否された場合、このステータスがブロードキャスト<see langword="QuerySuspend" />状態です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ResumeAutomatic">
+      <MemberSignature Language="C#" Value="ResumeAutomatic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.PowerBroadcastStatus ResumeAutomatic = int32(18)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.PowerBroadcastStatus.ResumeAutomatic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.PowerBroadcastStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターがウェイク アップをさせる自動的にイベントを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  システムがブロードキャストの後に任意のユーザー アクティビティを検出した場合`ResumeAutomatic`、これは、ブロードキャスト、`ResumeSuspend`アプリケーションがユーザーとの完全な対話を再開することを確認できるようにするイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResumeCritical">
+      <MemberSignature Language="C#" Value="ResumeCritical" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.PowerBroadcastStatus ResumeCritical = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.PowerBroadcastStatus.ResumeCritical" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.PowerBroadcastStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムには、重大な障害が発生したバッテリによる中断後に操作が再開されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  事前の通知なく重大な中断が発生したためリソースと以前に使用可能なデータいない可能性があります、アプリケーションは、このイベントを受信するとします。 アプリケーションは、最良の機能にその状態を復元しようとする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResumeSuspend">
+      <MemberSignature Language="C#" Value="ResumeSuspend" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.PowerBroadcastStatus ResumeSuspend = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.PowerBroadcastStatus.ResumeSuspend" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.PowerBroadcastStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムには、中断された後の操作が再開されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Suspend">
+      <MemberSignature Language="C#" Value="Suspend" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceProcess.PowerBroadcastStatus Suspend = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceProcess.PowerBroadcastStatus.Suspend" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.PowerBroadcastStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターが、一時停止状態を入力します。 このイベントは、すべてのアプリケーションとインストール可能なドライバーが返されるときに通常ブロードキャスト<see langword="true" />以前に<see langword="QuerySuspend" />状態です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

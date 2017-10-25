@@ -1,0 +1,116 @@
+<Type Name="ApplicationActivationAttribute" FullName="System.EnterpriseServices.ApplicationActivationAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ApplicationActivationAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ApplicationActivationAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ApplicationActivationAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アセンブリ内のコンポーネントが作成元のプロセスまたはシステム プロセスで実行するかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します`ApplicationActivationAttribute`をマークする、<xref:System.EnterpriseServices.ServicedComponent>です。  
+  
+ [!code-cpp[EnterpriseServices_Basic#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Basic/CPP/calculator.cpp#1)]
+ [!code-csharp[EnterpriseServices_Basic#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Basic/CS/calculator.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationActivationAttribute (System.EnterpriseServices.ActivationOption opt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.EnterpriseServices.ActivationOption opt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ApplicationActivationAttribute.#ctor(System.EnterpriseServices.ActivationOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="opt" Type="System.EnterpriseServices.ActivationOption" />
+      </Parameters>
+      <Docs>
+        <param name="opt"><see cref="T:System.EnterpriseServices.ActivationOption" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.ApplicationActivationAttribute" />クラス、指定した設定<see cref="T:System.EnterpriseServices.ActivationOption" />値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapMailbox">
+      <MemberSignature Language="C#" Value="public string SoapMailbox { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SoapMailbox" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ApplicationActivationAttribute.SoapMailbox" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは現在のバージョンでサポートされていません。</summary>
+        <value>このプロパティは現在のバージョンでサポートされていません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapVRoot">
+      <MemberSignature Language="C#" Value="public string SoapVRoot { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SoapVRoot" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ApplicationActivationAttribute.SoapVRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または COM + アプリケーションの Web 上の仮想ルートを表す値を設定します。</summary>
+        <value>COM + アプリケーションの Web 上の仮想ルート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用すると、セットアップまたはアプリケーションの SOAP の破棄に必要なすべての作業が発生します。 このプロパティがいるコンピューターで実行されているアプリケーションに対して設定されている場合、[!INCLUDE[winsdklong](~/includes/winsdklong-md.md)]がインストールされていない、エラーが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.ActivationOption Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.EnterpriseServices.ActivationOption Value" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ApplicationActivationAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ActivationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された取得<see cref="T:System.EnterpriseServices.ActivationOption" />値。</summary>
+        <value>1 つ、<see cref="T:System.EnterpriseServices.ActivationOption" />値か、<see langword="Library" />または<see langword="Server" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

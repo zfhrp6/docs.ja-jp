@@ -1,0 +1,89 @@
+<Type Name="FormViewMode" FullName="System.Web.UI.WebControls.FormViewMode">
+  <TypeSignature Language="C#" Value="public enum FormViewMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FormViewMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FormViewMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>別のデータ入力モードを表します、<see cref="T:System.Web.UI.WebControls.FormView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormViewMode>のデータ入力モードを表す列挙体が使用される、<xref:System.Web.UI.WebControls.FormView>コントロール。 コントロールの現在のモードを確認するには<xref:System.Web.UI.WebControls.FormView.CurrentMode%2A>プロパティです。 Insert または update 操作の後、<xref:System.Web.UI.WebControls.FormView>によって指定されたモードに制御が戻る、<xref:System.Web.UI.WebControls.FormView.DefaultMode%2A>プロパティです。 既定では、コントロールは、読み取り専用モードに戻ります。 設定に戻るに代替のモードを指定することができます、<xref:System.Web.UI.WebControls.FormView.DefaultMode%2A>プロパティです。 プログラムでモードを変更するには、使用、<xref:System.Web.UI.WebControls.FormView.ChangeMode%2A>メソッドです。 ときに、<xref:System.Web.UI.WebControls.FormView>制御モードを変更する、次の表に、イベントが発生します。  
+  
+|イベント|説明|  
+|-----------|-----------------|  
+|<xref:System.Web.UI.WebControls.FormView.ModeChanging>|発生したときに、<xref:System.Web.UI.WebControls.FormView>コントロールは、編集、挿入、および読み取り専用モードの間ですが、モードが実際に変更する前に変更しようとします。 このイベントは、モードの変更をキャンセルよく使用されます。|  
+|<xref:System.Web.UI.WebControls.FormView.ModeChanged>|後に発生する<xref:System.Web.UI.WebControls.FormView>コントロールは、編集、挿入、または読み取り専用モードから別のモードに変更されました。 このイベントは、タスクを実行する多くの場合、使用時に、<xref:System.Web.UI.WebControls.FormView>コントロールがモードを変更します。|  
+  
+   
+  
+## Examples  
+ 次の例では、保持する方法、<xref:System.Web.UI.WebControls.FormView>コントロールを編集モードを設定して更新操作の後で、<xref:System.Web.UI.WebControls.FormView.DefaultMode%2A>プロパティを`FormViewMode.Edit`です。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormViewDefaultMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewDefaultMode/CS/formviewdefaultmodecs.aspx#1)]
+ [!code-aspx-vb[FormViewDefaultMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewDefaultMode/VB/formviewdefaultmodevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Edit">
+      <MemberSignature Language="C#" Value="Edit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.FormViewMode Edit = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FormViewMode.Edit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FormViewMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが既存のレコードの値に更新できる編集モードです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="Insert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.FormViewMode Insert = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FormViewMode.Insert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FormViewMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが新しいレコードの値を入力できる挿入モードです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="ReadOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.FormViewMode ReadOnly = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.FormViewMode.ReadOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FormViewMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがレコードの値を変更することを防止する表示モード。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

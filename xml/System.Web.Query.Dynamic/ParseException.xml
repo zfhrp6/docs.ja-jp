@@ -1,0 +1,87 @@
+<Type Name="ParseException" FullName="System.Web.Query.Dynamic.ParseException">
+  <TypeSignature Language="C#" Value="public class ParseException : Exception" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ParseException extends System.Exception" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Query.Dynamic.ParseException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>発生したエラーを表すときに、<see cref="T:System.Web.UI.WebControls.LinqDataSource" />コントロールは、クエリを作成する値を解析します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Query.Dynamic.ParseException>オブジェクトには、発生する例外に関する情報が含まれています。 ときに、<xref:System.Web.UI.WebControls.LinqDataSource>コントロールが動的にクエリを作成するために値を解析します。  
+  
+ 場合、<xref:System.Web.UI.WebControls.LinqDataSource.Select%2A>プロパティには、データ オブジェクトに含まれていないプロパティが含まれています、<xref:System.Web.UI.WebControls.LinqDataSource>制御が発生し、<xref:System.Web.Query.Dynamic.ParseException>例外。 メッセージは、データ オブジェクトのプロパティが存在しないことを示します。  
+  
+ 内のデータ オブジェクトを割り当てることができます、<xref:System.Web.UI.WebControls.LinqDataSource.Selecting>イベントを設定して、<xref:System.Web.UI.WebControls.LinqDataSourceSelectEventArgs.Result%2A>プロパティをクエリから返されるオブジェクト。 データ オブジェクトに存在しないプロパティを選択した場合、<xref:System.Web.UI.WebControls.LinqDataSource>制御が発生し、<xref:System.Web.Query.Dynamic.ParseException>例外。 メッセージが特定のプロパティに存在しないことを示す、`AnonymousType`オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParseException (string message, int position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, int32 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Query.Dynamic.ParseException.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="position" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <param name="position">エラーの位置。</param>
+        <summary><see cref="T:System.Web.Query.Dynamic.ParseException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public int Position { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Position" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Query.Dynamic.ParseException.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーの場所を取得します。</summary>
+        <value>例外が発生した場所です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Query.Dynamic.ParseException.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エラー メッセージとエラーの位置を返します。</summary>
+        <returns>メッセージとエラーの位置。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

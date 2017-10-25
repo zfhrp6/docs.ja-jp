@@ -1,0 +1,206 @@
+<Type Name="DataMemberConverter" FullName="System.Web.UI.Design.DataMemberConverter">
+  <TypeSignature Language="C#" Value="public class DataMemberConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataMemberConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.DataMemberConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のコンポーネントの選択したデータ ソースからデータ メンバーの一覧を取得する型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataMemberConverter>デザイン時コンポーネントの現在のデータ ソースからデータ メンバーの一覧を取得できるメソッドを提供します。  
+  
+ この型コンバーターを使用して[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]プロパティ ウィンドウ内のメンバー データの一覧に表示される値を提供します。  
+  
+> [!CAUTION]
+>  実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して<xref:System.ComponentModel.TypeDescriptor>です。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ 型コンバーターの詳細については、次を参照してください。、<xref:System.ComponentModel.TypeConverter>基底クラスと[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[DataSourceTypeConverterExamples#2](~/samples/snippets/cpp/VS_Snippets_WebNet/DataSourceTypeConverterExamples/CPP/datasourcetypeconverterexamples.cpp#2)]
+ [!code-csharp[DataSourceTypeConverterExamples#2](~/samples/snippets/csharp/VS_Snippets_WebNet/DataSourceTypeConverterExamples/CS/datasourcetypeconverterexamples.cs#2)]
+ [!code-vb[DataSourceTypeConverterExamples#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataSourceTypeConverterExamples/VB/datasourcetypeconverterexamples.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataMemberConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataMemberConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.DataFieldConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataMemberConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用できるオブジェクト。</param>
+        <param name="sourceType">A<see cref="T:System.Type" />から変換する型を表すです。</param>
+        <summary>コンバーターが、指定したソースの種類のオブジェクトをコンバーターのネイティブ型に変換できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />コンバーターが変換を実行できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を満たすには、このメソッドをオーバーライドします。  
+  
+ <paramref name="context" />コンバーターが呼び出されている環境に関する追加情報を抽出するパラメーターを使用することができます。 あります<see langword="null" />ので、常に確認する必要があります。 また、プロパティの<paramref name="context" />オブジェクトを返す可能性がありますも<see langword="null" />します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataMemberConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用できるオブジェクト。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />ローカリゼーション機能をサポートするために使用できます。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定したオブジェクトをコンバーターのネイティブ型に変換します。</summary>
+        <returns><see cref="T:System.Object" />変換後に、指定したオブジェクトを表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を満たすには、このメソッドをオーバーライドします。  
+  
+ <paramref name="context" />コンバーターが呼び出されている環境に関する追加情報を抽出するパラメーターを使用することができます。 あります<see langword="null" />ので、常に確認する必要があります。 また、プロパティの<paramref name="context" />オブジェクトを返す可能性がありますも<see langword="null" />します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataMemberConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />コンポーネントやコントロールの値を取得することを示すオブジェクト。</param>
+        <summary>それらについての情報が利用可能な場合は、選択したデータ ソース内で存在するデータ メンバーを取得します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />コンポーネント用に選択されたデータ ソースのデータ メンバーを一覧表示します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンバーターを使用して、<xref:System.Web.UI.Design.IDataSourceProvider>を現在のデータ ソースの選択を取得する、関連付けられているコンポーネントのデザイナーの実装です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataMemberConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />書式指定コンテキストを提供するオブジェクト。</param>
+        <summary>標準値のコレクションが返されるかどうかを示す値を取得<see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />可能な値の一覧を示します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />から返された<see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />が有効なすべての可能な値の排他的なリストは、<see langword="false" />他の値も有効である場合。  
+  
+ このメソッドは常に返します、このクラスに実装された<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙型の値リストのように、リストが排他的な場合は、他の値は有効ではありません。 リストが排他的なかどうかは、さらに、標準の一覧の値を他の有効な値がある<xref:System.ComponentModel.TypeConverter.GetStandardValues%2A>を提供します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型は、標準の値をサポートしている場合は、このメソッドをオーバーライドします。  
+  
+ <paramref name="context" /> パラメーターを使用すると、このコンバーターが呼び出されている環境についての追加情報を抽出できます。 あります<see langword="null" />ので、常に確認する必要があります。 また、プロパティの<paramref name="context" />オブジェクトを返す可能性がありますも<see langword="null" />します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DataMemberConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />追加のコンテキスト情報を取得するために使用できるオブジェクト。</param>
+        <summary>コンバーターが、一覧から選択できる値の標準セットをサポートするかどうかを示す値を取得します。</summary>
+        <returns>
+          オブジェクトがサポートしている標準値セットを見つけるために <see langword="true" /> を呼び出す必要がある場合は <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />。それ以外の場合は <see langword="false" />。 この実装は常に返します<see langword="true" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

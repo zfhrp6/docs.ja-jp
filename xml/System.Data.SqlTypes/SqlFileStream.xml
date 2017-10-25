@@ -1,0 +1,721 @@
+<Type Name="SqlFileStream" FullName="System.Data.SqlTypes.SqlFileStream">
+  <TypeSignature Language="C#" Value="public sealed class SqlFileStream : System.IO.Stream" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlFileStream extends System.IO.Stream" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlTypes.SqlFileStream" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.Stream</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>バイトのシーケンスとして FILESTREAM 列属性に格納されている SQL Server のデータを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlTypes.SqlFileStream>と連携するクラスを使用`varbinary(max)`SQL Server 2008 データベースに FILESTREAM 属性を持つ格納されているデータ。 .NET Framework 3.5 SP1 をインストールする必要があります (またはそれ以降) を使用する<xref:System.Data.SqlTypes.SqlFileStream>FILESTREAM データを操作します。  
+  
+ FILESTREAM を指定する属性を`varbinary(max)`列により、SQL Server はローカル NTFS ファイル システムの代わりに、データベース ファイル内にデータを格納します。 TRANSACT-SQL ステートメントは、サーバー内のデータ操作機能を提供し、Win32 ファイル システム インターフェイスは、データへのストリーミング アクセスを提供します。  
+  
+> [!NOTE]
+>  FILESTREAM 列に格納されている個々 のファイルは、NTFS ファイル システムから直接開くことができません。 FILESTREAM データのストリーミングは、SQL Server トランザクションのコンテキストでのみ動作します。  
+  
+ <xref:System.Data.SqlTypes.SqlFileStream>から派生したクラスは、<xref:System.IO.Stream>クラスで、ファイルやメモリのブロックなどのいくつかの任意のデータ ソースからのバイト シーケンスを抽象化を表します。 ストリームからバイトの配列などのデータ構造にデータを転送することによって、FILESTREAM から読み取ることができます。 ストリームにデータ構造からデータを転送することによって、FILESTREAM に記述できます。 クエリや、ストリーム内の現在位置にあるデータを変更することができます、ストリームでシークすることができますも。  
+  
+ 概念説明のドキュメントとコード例では、次を参照してください。 [FILESTREAM データ](~/docs/framework/data/adonet/sql/filestream-data.md)です。  
+  
+ 設定して、SQL Server の FILESTREAM データの構成に関するドキュメントについては、次を参照してください。[のデザインと実装の FILESTREAM ストレージ](http://go.microsoft.com/fwlink/?LinkId=121499)SQL Server 2008 オンライン ブック。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Data.SqlTypes.SqlFileStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、コード アクセス セキュリティ (CAS) アクセス許可を使用するため、スタック内のすべての呼び出し元が必要な`SqlFileStream`コンス トラクターです。  
+  
+|ファイルへのアクセス|アクセス許可|  
+|-----------------|----------------|  
+|読み取り|<xref:System.Security.Permissions.FileIOPermissionAccess.Read>|  
+|書き込み|<xref:System.Security.Permissions.FileIOPermissionAccess.Write>|  
+|読み取り/書き込み|<xref:System.Security.Permissions.FileIOPermissionAccess.Read> および <xref:System.Security.Permissions.FileIOPermissionAccess.Write>|  
+  
+ CA の詳細については、次を参照してください。[コード アクセス セキュリティと ADO.NET](~/docs/framework/data/adonet/code-access-security.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlFileStream (string path, byte[] transactionContext, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, unsigned int8[] transactionContext, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.#ctor(System.String,System.Byte[],System.IO.FileAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="transactionContext" Type="System.Byte[]" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="path">ファイルへの論理パス。 テーブル内の基になる FILESTREAM 列で Transact-SQL Pathname 関数を使用して、パスを取得できます。</param>
+        <param name="transactionContext"><see langword="SqlFileStream" /> オブジェクトのトランザクション コンテキスト。 アプリケーションが、GET_FILESTREAM_TRANSACTION_CONTEXT メソッドの呼び出しで返されるバイト配列を返す必要があります。</param>
+        <param name="access">ファイルを開くときに使用するアクセス モード。 サポートされている <see cref="T:System.IO.FileAccess" /> 列挙値は <see cref="F:System.IO.FileAccess.Read" />、<see cref="F:System.IO.FileAccess.Write" />、および <see cref="F:System.IO.FileAccess.ReadWrite" /> です。  
+  
+ <see langword="FileAccess.Read" /> を使用する際には、<see langword="SqlFileStream" /> オブジェクトを使用して、既存のデータをすべて読み取ることができます。  
+  
+ <see langword="FileAccess.Write" /> を使用する際に、<see langword="SqlFileStream" /> は 0 バイトのファイルを指します。 オブジェクトが閉じ、トランザクションがコミットされると、既存のデータが上書きされます。  
+  
+ <see langword="FileAccess.ReadWrite" /> を使用する際に、<see langword="SqlFileStream" /> はすべての既存のデータがあるファイルを指します。 このファイルの先頭にハンドルが配置されます。 <see langword="System.IO" /><see langword="Seek" /> メソッドの 1 つを使用して、ファイル内でハンドルの位置を移動し、新しいデータを書き込んだり付加したりできます。</param>
+        <summary><see cref="T:System.Data.SqlTypes.SqlFileStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外がスローされた場合、開かれたトランザクション ロールバックするか。 それ以外の場合、データ損失が発生することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> が null 参照か、<paramref name="transactionContext" /> が null です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="path" /> は空の文字列 ("") であるか、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。  
+  
+ <paramref name="path" />始まる"\\\\.\\「、たとえば」\\\\。 \PHYSICALDRIVE0"です。  
+  
+ NTCreateFile に対する呼び出しで返されたハンドルの型が FILE_TYPE_DISK ではありません。  
+  
+ サポートされていない値が <paramref name="options" /> に含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定された <paramref name="path" /> が正しくありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたパスへの要求されたアクセスは、オペレーティング システムによって許可されていません。 これは、書き込みアクセスか読み取り/書き込みアクセスが指定されており、ファイルまたはディレクトリが読み取り専用アクセス用に設定されている場合に発生します。</exception>
+        <exception cref="T:System.InvalidOperationException">NtCreateFile は失敗し、エラー コードは ERROR_SHARING_VIOLATION に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlFileStream (string path, byte[] transactionContext, System.IO.FileAccess access, System.IO.FileOptions options, long allocationSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, unsigned int8[] transactionContext, valuetype System.IO.FileAccess access, valuetype System.IO.FileOptions options, int64 allocationSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.#ctor(System.String,System.Byte[],System.IO.FileAccess,System.IO.FileOptions,System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="transactionContext" Type="System.Byte[]" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="options" Type="System.IO.FileOptions" />
+        <Parameter Name="allocationSize" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="path">ファイルへの論理パス。 テーブル内の基になる FILESTREAM 列で Transact-SQL Pathname 関数を使用して、パスを取得できます。</param>
+        <param name="transactionContext"><see langword="SqlFileStream" /> オブジェクトのトランザクション コンテキスト。 null に設定されている場合、<see langword="SqlFileStream" />オブジェクトには暗黙のトランザクションが使用されます。 アプリケーションは、GET_FILESTREAM_TRANSACTION_CONTEXT メソッドの呼び出しで返されるバイト配列を返す必要があります。</param>
+        <param name="access">ファイルを開くときに使用するアクセス モード。 サポートされている <see cref="T:System.IO.FileAccess" /> 列挙値は <see cref="F:System.IO.FileAccess.Read" />、<see cref="F:System.IO.FileAccess.Write" />、および <see cref="F:System.IO.FileAccess.ReadWrite" /> です。  
+  
+ <see langword="FileAccess.Read" /> を使用する際には、<see langword="SqlFileStream" /> オブジェクトを使用して、既存のデータをすべて読み取ることができます。  
+  
+ <see langword="FileAccess.Write" /> を使用する際に、<see langword="SqlFileStream" /> は 0 バイトのファイルを指します。 オブジェクトが閉じ、トランザクションがコミットされると、既存のデータが上書きされます。  
+  
+ <see langword="FileAccess.ReadWrite" /> を使用する際に、<see langword="SqlFileStream" /> はすべての既存のデータがあるファイルを指します。 このファイルの先頭にハンドルが配置されます。 <see langword="System.IO" /><see langword="Seek" /> メソッドの 1 つを使用して、ファイル内でハンドルの位置を移動し、新しいデータを書き込んだり付加したりできます。</param>
+        <param name="options">ファイルを開く際に使用するオプションを指定します。 サポートされる <see cref="T:System.IO.FileOptions" /> 値は <see cref="F:System.IO.FileOptions.Asynchronous" />、<see cref="F:System.IO.FileOptions.WriteThrough" />、<see cref="F:System.IO.FileOptions.SequentialScan" />、および <see cref="F:System.IO.FileOptions.RandomAccess" /> です。</param>
+        <param name="allocationSize">ファイル作成時に使用する割り当てサイズ。 0 に設定されている場合、既定値が使用されます。</param>
+        <summary><see cref="T:System.Data.SqlTypes.SqlFileStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外がスローされた場合、開かれたトランザクション ロールバックするか。 それ以外の場合、データ損失が発生することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> が null 参照か、<paramref name="transactionContext" /> が null です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="path" /> は空の文字列 ("") であるか、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。  
+  
+ <paramref name="path" />始まる"\\\\.\\「、たとえば」\\\\。 \PHYSICALDRIVE0"です。  
+  
+ NTCreateFile に対する呼び出しで返されたハンドルの型が FILE_TYPE_DISK ではありません。  
+  
+ サポートされていない値が <paramref name="options" /> に含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定された <paramref name="path" /> が正しくありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたパスへの要求されたアクセスは、オペレーティング システムによって許可されていません。 これは、書き込みアクセスか読み取り/書き込みアクセスが指定されており、ファイルまたはディレクトリが読み取り専用アクセス用に設定されている場合に発生します。</exception>
+        <exception cref="T:System.InvalidOperationException">NtCreateFile は失敗し、エラー コードは ERROR_SHARING_VIOLATION に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginRead">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] buffer, int offset, int count, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データを読み込むバッファー。</param>
+        <param name="offset">内のバイト オフセット<c>バッファー</c>ストリームから読み取られるデータの書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取る最大バイト数。</param>
+        <param name="callback">読み取り完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の非同期読み取り要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の読み込み動作を開始します。</summary>
+        <returns>非同期の読み込みを表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.SqlTypes.SqlFileStream.CanRead%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">データの読み取り操作は、ストリームではサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginWrite">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] buffer, int offset, int count, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データの書き込み元となるバッファー。</param>
+        <param name="offset">内のバイト オフセット<c>バッファー</c>書き込みを開始位置を示すです。</param>
+        <param name="count">書き込む最大バイト数。</param>
+        <param name="callback">書き込みの完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の非同期書き込み要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の書き込み操作を開始します。</summary>
+        <returns>非同期の書き込みを表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.SqlTypes.SqlFileStream.CanWrite%2A>プロパティを現在のインスタンスが書き込みをサポートするかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">データの書き込み操作は、ストリームではサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public override bool CanRead { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRead" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlTypes.SqlFileStream.CanRead" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のストリームが読み取りをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在のストリームが読み取りをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSeek">
+      <MemberSignature Language="C#" Value="public override bool CanSeek { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSeek" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlTypes.SqlFileStream.CanSeek" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のストリームがシークをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          現在のストリームがシークをサポートしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanTimeout">
+      <MemberSignature Language="C#" Value="public override bool CanTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlTypes.SqlFileStream.CanTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のストリームがタイム アウトになる可能性があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在のストリームがタイムアウト; できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWrite">
+      <MemberSignature Language="C#" Value="public override bool CanWrite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWrite" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlTypes.SqlFileStream.CanWrite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のストリームが書き込みをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          現在のストリームが書き込みをサポートしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndRead">
+      <MemberSignature Language="C#" Value="public override int EndRead (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 EndRead(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.EndRead(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">終了させる保留状態の非同期リクエストへの参照。</param>
+        <summary>保留中の非同期読み取りが完了するまで待機します。</summary>
+        <returns>ストリームから読み取ったバイト数 (0 ～要求したバイト数の間の数値)。 ゼロ (0) が返されるのは、ストリームの末尾で読み取ろうとしたときだけです。それ以外の場合は、少なくとも 1 バイトが読み込み可能になるまでブロックします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.IAsyncResult" /> オブジェクトが、対応する <see langword="BeginRead" /> メソッドからのものではありませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndWrite">
+      <MemberSignature Language="C#" Value="public override void EndWrite (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndWrite(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.EndWrite(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">保留状態の非同期 I/O リクエストへの参照。</param>
+        <summary>非同期書き込み操作を終了します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.IAsyncResult" /> オブジェクトが、対応する <see langword="BeginWrite" /> メソッドからのものではありませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~SqlFileStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ガベージ コレクターが <see cref="T:System.Data.SqlTypes.SqlFileStream" /> を再利用するときに、リソースの解放およびその他のクリーンアップ操作を確実に実行するようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストリームに対応するすべてのバッファーをクリアし、バッファー内のデータを基になるデバイスに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public override long Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlTypes.SqlFileStream.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バイト単位の現在のストリームの長さを示す値を取得します。</summary>
+        <value><see cref="T:System.Int64" /> (バイト単位) の現在のストリームの長さを指定します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlTypes.SqlFileStream.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>論理パスを取得、<see cref="T:System.Data.SqlTypes.SqlFileStream" />コンス トラクターに渡されます。</summary>
+        <value>名前を示す文字列値、<see cref="T:System.Data.SqlTypes.SqlFileStream" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public override long Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Position" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlTypes.SqlFileStream.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のストリーム内の位置を取得または設定します。</summary>
+        <value>内の現在位置、<see cref="T:System.Data.SqlTypes.SqlFileStream" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override int Read (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read([out] unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.Read(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">バイト配列。 このメソッドが返されるとき、バッファーは現在のソースから読み取ったバイトにより置き換えられた、オフセットから (オフセット + データの個数 - 1) の間の値を持つ指定されたバイト配列を含みます。</param>
+        <param name="offset">現在のストリームから読み取ったデータの格納を開始する位置を示す バッファ内の0 から始まるバイト オフセット。</param>
+        <param name="count">現在のストリームから読み取る最大バイト数。</param>
+        <summary>現在のストリームからバイト シーケンスを読み取り、読み取ったバイト数だけストリーム内の位置を進めます。</summary>
+        <returns>バッファーに読み取られた合計バイト数。 要求しただけのバイト数を読み取ることができなかった場合、この値は要求したバイト数より小さくなります。ストリームの末尾に到達した場合は 0 (ゼロ) になることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.SqlTypes.SqlFileStream.CanRead%2A>プロパティを現在のインスタンスが書き込みをサポートするかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このオブジェクトはデータの読み取りをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadByte">
+      <MemberSignature Language="C#" Value="public override int ReadByte ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadByte() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.ReadByte" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストリームから 1 バイトを読み取り、ストリーム内の位置を 1 バイト進めます。ストリームの末尾の場合は -1 を返します。</summary>
+        <returns><see cref="T:System.Int32" /> にキャストされた符号なしバイト。ストリームの末尾の場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.SqlTypes.SqlFileStream.CanRead%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このオブジェクトはデータの読み取りをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadTimeout">
+      <MemberSignature Language="C#" Value="public override int ReadTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReadTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlTypes.SqlFileStream.ReadTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリームがタイムアウト前に読み取りを試みる期間を決定する値 (ミリ秒単位) を取得または設定します。</summary>
+        <value>ストリームがタイムアウト前に読み取りを試みる期間を決定する値 (ミリ秒単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public override long Seek (long offset, System.IO.SeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 Seek(int64 offset, valuetype System.IO.SeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.Seek(System.Int64,System.IO.SeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="origin" Type="System.IO.SeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="offset">相対バイト オフセット、<c>原点</c>パラメーター</param>
+        <param name="origin">型の値<see cref="T:System.IO.SeekOrigin" />新しい位置を取得するために使用する参照ポイントを示す</param>
+        <summary>現在のストリーム内の位置を設定します。</summary>
+        <returns>現在のストリーム内の新しい位置。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLength">
+      <MemberSignature Language="C#" Value="public override void SetLength (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetLength(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.SetLength(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在のストリームの希望の長さ (バイト数)。</param>
+        <summary>現在のストリームの長さを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.SqlTypes.SqlFileStream.CanRead%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このオブジェクトはデータの読み取りをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionContext">
+      <MemberSignature Language="C#" Value="public byte[] TransactionContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] TransactionContext" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlTypes.SqlFileStream.TransactionContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクション コンテキストを設定を取得または<see cref="T:System.Data.SqlTypes.SqlFileStream" />オブジェクト。</summary>
+        <value><paramref name="transactionContext" />このコンス トラクターに渡された配列<see cref="T:System.Data.SqlTypes.SqlFileStream" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.Write(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">バイト配列。 このメソッドは、コピー<c>カウント</c>からバイト<c>バッファー</c>現在のストリームにします。</param>
+        <param name="offset">内の 0 から始まるバイト オフセット<c>バッファー</c>現在のストリームにバイトのコピーを開始する位置。</param>
+        <param name="count">現在のストリームに書き込むバイト数。</param>
+        <summary>現在のストリームにバイト シーケンスを書き込み、書き込んだバイト数だけストリーム内の現在位置を進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.SqlTypes.SqlFileStream.CanWrite%2A>プロパティを現在のインスタンスが書き込みをサポートするかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このオブジェクトにおいて、データの書き込みはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteByte">
+      <MemberSignature Language="C#" Value="public override void WriteByte (byte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteByte(unsigned int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlTypes.SqlFileStream.WriteByte(System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="value">ストリームに書き込むバイト。</param>
+        <summary>ストリームの現在位置にバイトを書き込み、ストリームの位置を 1 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.SqlTypes.SqlFileStream.CanWrite%2A>プロパティを現在のインスタンスが書き込みをサポートするかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このオブジェクトにおいて、データの書き込みはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTimeout">
+      <MemberSignature Language="C#" Value="public override int WriteTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 WriteTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlTypes.SqlFileStream.WriteTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリームがタイムアウト前に書き込みを試行する期間を決定する値 (ミリ秒単位) を取得または設定します。</summary>
+        <value>ストリームがタイムアウト前に書き込みを試行する期間を決定する値 (ミリ秒単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

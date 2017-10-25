@@ -1,0 +1,178 @@
+<Type Name="ThreadPriority" FullName="System.Threading.ThreadPriority">
+  <TypeSignature Language="C#" Value="public enum ThreadPriority" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed ThreadPriority extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.ThreadPriority" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Thread</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>スケジューリング優先順位を指定します、<see cref="T:System.Threading.Thread" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.ThreadPriority>スレッドの優先度のすべての値のセットを定義します。 スレッドの優先順位は、スレッド間の相対的な優先順位を指定します。  
+  
+ すべてのスレッドは、割り当てられた優先度を持っています。 ランタイム内で作成されたスレッドが最初に割り当てられている、`Normal`優先度がランタイムに入るときに、ランタイム外で作成されたスレッドは、以前優先順位を保持します。 取得し、アクセスすることによって、スレッドの優先順位を設定できますその<xref:System.Threading.Thread.Priority%2A>プロパティです。  
+  
+ 優先度に基づいて実行するためのスレッドがスケジュールされます。 スレッドの実行の順序を決定するために使用するスケジューリング アルゴリズムは、各オペレーティング システムによって異なります。 オペレーティング システムできますもスレッドの優先順位を動的に調整フォア グラウンドとバック グラウンドの間で、ユーザー インターフェイスのフォーカスが移動されるとします。  
+  
+ スレッドの優先順位では、スレッドの状態には影響しませんスレッドの状態である必要があります<xref:System.Threading.ThreadState.Running>前に、オペレーティング システムでスケジュールできます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、スレッドの優先度の変更の結果を示しています。 3 つのスレッドが作成された、BelowNormal に 1 つのスレッドの優先順位が設定されているおよび AboveNormal に 2 つ目の優先順位が設定されています。 各スレッドで変数をインクリメントする、`while`ループ、一定の時間が実行されます。  
+  
+ [!code-csharp[System.Threading.ThreadPriority#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Threading.ThreadPriority/cs/Example1.cs#1)]
+ [!code-vb[System.Threading.ThreadPriority#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Threading.ThreadPriority/vb/Example1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AboveNormal">
+      <MemberSignature Language="C#" Value="AboveNormal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadPriority AboveNormal = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadPriority.AboveNormal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Threading.Thread" />スレッドの後にスケジュールできます<see langword="Highest" />優先度の前に<see langword="Normal" />優先度。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BelowNormal">
+      <MemberSignature Language="C#" Value="BelowNormal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadPriority BelowNormal = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadPriority.BelowNormal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Threading.Thread" />スレッドの後にスケジュールできます<see langword="Normal" />優先度の前に<see langword="Lowest" />優先度。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Highest">
+      <MemberSignature Language="C#" Value="Highest" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadPriority Highest = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadPriority.Highest" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Threading.Thread" />スレッド、他の優先度の前にスケジュールすることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Lowest">
+      <MemberSignature Language="C#" Value="Lowest" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadPriority Lowest = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadPriority.Lowest" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Threading.Thread" />後、その他の優先度のスレッドをスケジュールすることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ThreadPriority Normal = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ThreadPriority.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Threading.Thread" />スレッドの後にスケジュールできます<see langword="AboveNormal" />優先度の前に<see langword="BelowNormal" />優先度。 スレッドが<see langword="Normal" />既定では優先順位。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

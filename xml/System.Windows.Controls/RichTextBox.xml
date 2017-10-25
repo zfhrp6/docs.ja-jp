@@ -1,0 +1,563 @@
+<Type Name="RichTextBox" FullName="System.Windows.Controls.RichTextBox">
+  <TypeSignature Language="C#" Value="public class RichTextBox : System.Windows.Controls.Primitives.TextBoxBase, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi RichTextBox extends System.Windows.Controls.Primitives.TextBoxBase implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.RichTextBox" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Primitives.TextBoxBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Inherit)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Document")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>に基づいて動作する機能豊富な編集コントロールを表す<see cref="T:System.Windows.Documents.FlowDocument" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.FlowDocument>サポートされている唯一の子要素、<xref:System.Windows.Controls.RichTextBox>です。  
+  
+> [!IMPORTANT]
+>  <xref:System.Windows.Controls.RichTextBox>バブルの組み込みの処理が<xref:System.Windows.UIElement.MouseUp>と<xref:System.Windows.UIElement.MouseDown>イベント。  したがって、カスタム イベント ハンドラーをリッスン`MouseUp`または`MouseDown`からのイベント、<xref:System.Windows.Controls.RichTextBox>は決して呼び出されません。  これらのイベントに応答する必要がある場合は、トンネリングをリッスン<xref:System.Windows.UIElement.PreviewMouseUp>と<xref:System.Windows.UIElement.PreviewMouseDown>イベント代わりのハンドラーを登録または、<xref:System.Windows.EventSetter.HandledEventsToo%2A>引数 (この後者のオプションはコードで使用できるのみです)。 イベントを無効にする意図的にしない限り、処理済みのマークを付けないでください<xref:System.Windows.Controls.RichTextBox>ネイティブこれらのイベントを処理し、コントロールの注目すべきへの影響ことに注意してください[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。  
+  
+ 中に<xref:System.Windows.Controls.RichTextBox>イメージをコピーして貼り付けるサポート、特定のシナリオは現在サポートされていませんし、正しく動作しない可能性があります。  次の表では、これらのシナリオと予想される結果をまとめたものです。  
+  
+|イメージのコピー元|イメージの貼り付けの結果|  
+|-----------------------|------------------------|  
+|画像ソースは、グラフィックのメタファイル|イメージは貼り付けられません|  
+|画像ソースの相対パスまたはリンクを使用します。|不明瞭または空白の画像が貼り付けられます|  
+|イメージ ソースのリンクが、予期されるイメージの形式で終わらない (です。PNG、します。JPG、します。GIF)|不明瞭または空白の画像が貼り付けられます|  
+|イメージ ソースの形式が正しくないリッチ テキスト (RTF) からのコピー|イメージのソースへのリンクが貼り付けられます (なくイメージ)|  
+  
+ HTML コンテンツを貼り付けることにより、<xref:System.Windows.Controls.RichTextBox>ために、予期しない動作になる可能性があります<xref:System.Windows.Controls.RichTextBox>を使用して直接 HTML 形式ではなく使用 RTF 形式です。  
+  
+ テキストを折り返す常に、<xref:System.Windows.Controls.RichTextBox>です。 テキストを折り返すに設定したくない場合、<xref:System.Windows.Documents.FlowDocument.PageWidth%2A>上、<xref:System.Windows.Documents.FlowDocument>の幅よりも大きく、<xref:System.Windows.Controls.RichTextBox>です。 ただしに達すると、ページの幅は、テキストが折り返されます。  
+  
+ 内のコンテンツを水平方向および垂直方向に整列、<xref:System.Windows.Controls.RichTextBox>処理が終わったら、<xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A>と<xref:System.Windows.Controls.Control.VerticalContentAlignment%2A>プロパティです。 整列、<xref:System.Windows.Controls.RichTextBox>のページ レイアウト内で行われます、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>と<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティです。  
+  
+ スクロール バーには表示されません、<xref:System.Windows.Controls.RichTextBox>既定です。 スクロール バーを表示するには、設定、<xref:System.Windows.Controls.Primitives.TextBoxBase.VerticalScrollBarVisibility%2A>プロパティを<xref:System.Windows.Controls.ScrollBarVisibility.Visible>または<xref:System.Windows.Controls.ScrollBarVisibility.Auto>です。  
+  
+ 通常、<xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged>ときを検出するためにイベントを使用する必要があります内のテキスト、<xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>変更ではなく<xref:System.Windows.UIElement.KeyDown>想定される場合があります。 例については、次を参照してください。[する方法: 検出時にテキストを、テキスト ボックスが変更された](~/docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md)です。  
+  
+ <xref:System.Windows.Controls.RichTextBox>さまざまなキーボード コマンドをサポートしています。 キーボード コマンドの一覧は、次を参照してください。<xref:System.Windows.Documents.EditingCommands>です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Controls.RichTextBox>を含む、単純な<xref:System.Windows.Documents.FlowDocument>します。  
+  
+ [!code-xaml[RichTextBoxSnippets#_RTB_XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxSnippets/CSharp/Window1.xaml#_rtb_xaml)]  
+  
+ [!code-csharp[RichTextBoxMiscSnippets_procedural_snip#RichTextBoxCodeOnlyExample](~/samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxMiscSnippets_procedural_snip/CSharp/RichTextBoxExample.cs#richtextboxcodeonlyexample)]
+ [!code-vb[RichTextBoxMiscSnippets_procedural_snip#RichTextBoxCodeOnlyExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxMiscSnippets_procedural_snip/visualbasic/richtextboxexample.vb#richtextboxcodeonlyexample)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RichTextBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい既定のインスタンスを初期化、<see cref="T:System.Windows.Controls.RichTextBox" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、空を作成<xref:System.Windows.Documents.FlowDocument>ドキュメント プロパティに関連付けられています。  空では具体的には、<xref:System.Windows.Documents.FlowDocument>が 1 つには含まれています<xref:System.Windows.Documents.Paragraph>、1 つが含まれている<xref:System.Windows.Documents.Run>テキストを含まない。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RichTextBox (System.Windows.Documents.FlowDocument document);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.FlowDocument document) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.#ctor(System.Windows.Documents.FlowDocument)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="document" Type="System.Windows.Documents.FlowDocument" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Windows.Documents.FlowDocument" />新しいの初期コンテンツとして追加される<see cref="T:System.Windows.Controls.RichTextBox" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Controls.RichTextBox" />クラス、指定した追加<see cref="T:System.Windows.Documents.FlowDocument" />初期コンテンツとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用を示します。  
+  
+ [!code-csharp[RichTextBoxSnippets#_RTB_Constructor](~/samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxSnippets/CSharp/Window1.xaml.cs#_rtb_constructor)]
+ [!code-vb[RichTextBoxSnippets#_RTB_Constructor](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxSnippets/visualbasic/window1.xaml.vb#_rtb_constructor)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaretPosition">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer CaretPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer CaretPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RichTextBox.CaretPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または入力カーソルの位置を設定します。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointer" />入力カーソルの位置を指定するオブジェクト。  
+  
+ 既定では、カーソルがによってホストされているコンテンツの先頭に最初のカーソル位置にあるが、<see cref="T:System.Windows.Controls.RichTextBox" />です。 参照してください<see cref="T:System.Windows.Documents.TextPointer" />「挿入位置」のようなテキストの位置の用語集についての詳細。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このプロパティの使用方法を示しています。  
+  
+ [!code-csharp[RichTextBoxSnippets#_RTB_CaretPosition](~/samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxSnippets/CSharp/Window1.xaml.cs#_rtb_caretposition)]
+ [!code-vb[RichTextBoxSnippets#_RTB_CaretPosition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxSnippets/visualbasic/window1.xaml.vb#_rtb_caretposition)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティを設定しようとしましたが<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">このプロパティを設定しようとしましたが、<see cref="T:System.Windows.Documents.TextPointer" />現在のドキュメントの外部での位置を参照します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.FlowDocument Document { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.FlowDocument Document" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RichTextBox.Document" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.FlowDocument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Documents.FlowDocument" />の内容を表す、<see cref="T:System.Windows.Controls.RichTextBox" />です。</summary>
+        <value>A<see cref="T:System.Windows.Documents.FlowDocument" />の内容を表すオブジェクト、<see cref="T:System.Windows.Controls.RichTextBox" />です。  
+  
+ 既定では、このプロパティは、空に設定<see cref="T:System.Windows.Documents.FlowDocument" />です。  空では具体的には、<see cref="T:System.Windows.Documents.FlowDocument" />が 1 つには含まれています<see cref="T:System.Windows.Documents.Paragraph" />、1 つが含まれている<see cref="T:System.Windows.Documents.Run" />テキストを含まない。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ FlowDocument は、1 つでのみホストする<xref:System.Windows.Controls.RichTextBox>です。  複数のコンテンツとして FlowDocument を 1 つを指定する<xref:System.Windows.Controls.RichTextBox>コントロールはサポートされていません。  
+  
+   
+  
+## Examples  
+ 次の例は、このプロパティの使用方法を示しています。  
+  
+ [!code-csharp[RichTextBoxSnippets#_RTB_Document](~/samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxSnippets/CSharp/Window1.xaml.cs#_rtb_document)]
+ [!code-vb[RichTextBoxSnippets#_RTB_Document](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxSnippets/visualbasic/window1.xaml.vb#_rtb_document)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティを設定しようとしましたが<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">このプロパティを設定しようとしましたが、<see cref="T:System.Windows.Documents.FlowDocument" />別の内容を表す<see cref="T:System.Windows.Controls.RichTextBox" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">ブロックの変更がアクティブ化されている場合に、このプロパティが設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextSpellingErrorPosition">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer GetNextSpellingErrorPosition (System.Windows.Documents.TextPointer position, System.Windows.Documents.LogicalDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer GetNextSpellingErrorPosition(class System.Windows.Documents.TextPointer position, valuetype System.Windows.Documents.LogicalDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.GetNextSpellingErrorPosition(System.Windows.Documents.TextPointer,System.Windows.Documents.LogicalDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Windows.Documents.TextPointer" />
+        <Parameter Name="direction" Type="System.Windows.Documents.LogicalDirection" />
+      </Parameters>
+      <Docs>
+        <param name="position">A<see cref="T:System.Windows.Documents.TextPointer" />から次のスペル ミスを検索する位置を示すです。</param>
+        <param name="direction">A<see cref="T:System.Windows.Documents.LogicalDirection" />で、指定した、次のスペル ミスを検索する<c>posision</c>です。</param>
+        <summary>返します、<see cref="T:System.Windows.Documents.TextPointer" />の内容は、次のスペル ミスを指す、<see cref="T:System.Windows.Controls.RichTextBox" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextPointer" />の内容は、次のスペル ミスを指す、 <see cref="T:System.Windows.Controls.RichTextBox" />、または<see langword="null" />次のスペル ミスが存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPositionFromPoint">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer GetPositionFromPoint (System.Windows.Point point, bool snapToText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextPointer GetPositionFromPoint(valuetype System.Windows.Point point, bool snapToText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.GetPositionFromPoint(System.Windows.Point,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="snapToText" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Windows.Point" />オブジェクトを取得する位置を指定する、<see cref="T:System.Windows.Documents.TextPointer" />用です。</param>
+        <param name="snapToText">場合<see langword="true" />、このメソッドは常に返します、<see cref="T:System.Windows.Documents.TextPointer" />の最も近い挿入位置を指定する、<see cref="T:System.Windows.Point" />指定かどうかに関係なく、指定された<see cref="T:System.Windows.Point" />は文字の内部境界ボックス。  
+  
+ 場合<see langword="false" />、このメソッドが戻る<see langword="null" />場合、指定した<see cref="T:System.Windows.Point" />境界ボックスの任意の文字内にありません。</param>
+        <summary>返します、<see cref="T:System.Windows.Documents.TextPointer" />カーソルの指定した位置に最も近いを指し示します。</summary>
+        <returns>A <see cref="T:System.Windows.Documents.TextPointer" /> 、指定したポイントに最も近い挿入位置を指定または<see langword="null" />場合<paramref name="snapToText" />は<see langword="false" />と、指定された<see cref="T:System.Windows.Point" />内ではありません任意の文字の境界ボックス。 なお、<see cref="T:System.Windows.Documents.TextPointer" />通常 2 つの文字の間での位置は、返されます。 使用して、 <see cref="P:System.Windows.Documents.TextPointer.LogicalDirection" /> 、返されたプロパティ<see cref="T:System.Windows.Documents.TextPointer" />を 2 つの文字の決定、<see cref="T:System.Windows.Documents.TextPointer" />に対応しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.RichTextBox>標準的な座標システムの左上隅にある配信元を使用して、<xref:System.Windows.Controls.RichTextBox>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">場合に発生のレイアウト情報、<see cref="T:System.Windows.Controls.RichTextBox" />最新ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSpellingError">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.SpellingError GetSpellingError (System.Windows.Documents.TextPointer position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Controls.SpellingError GetSpellingError(class System.Windows.Documents.TextPointer position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.GetSpellingError(System.Windows.Documents.TextPointer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.SpellingError</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="position">A<see cref="T:System.Windows.Documents.TextPointer" />位置およびスペル ミスを検査する文字に解決される論理方向を指定します。 使用して、<see cref="P:System.Windows.Documents.TextPointer.LogicalDirection" />このプロパティ<see cref="T:System.Windows.Documents.TextPointer" />を検査する文字の方向を指定します。</param>
+        <summary>返します、<see cref="T:System.Windows.Controls.SpellingError" />の内容の指定した位置にある、スペル ミスに関連付けられているオブジェクト、<see cref="T:System.Windows.Controls.RichTextBox" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Controls.SpellingError" />によって示される文字で見つかったスペル ミスの詳細を含むオブジェクト<paramref name="position" />、または<see langword="null" />指定した文字にスペル ミスが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Documents.TextPointer>など`position`通常 2 つの文字の間での位置を指定します。 使用して、<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>プロパティ`position`をチェックする文字を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSpellingErrorRange">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextRange GetSpellingErrorRange (System.Windows.Documents.TextPointer position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Documents.TextRange GetSpellingErrorRange(class System.Windows.Documents.TextPointer position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.GetSpellingErrorRange(System.Windows.Documents.TextPointer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextRange</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="position">A<see cref="T:System.Windows.Documents.TextPointer" />位置およびスペル ミスを検査する文字に解決される論理方向を指定します。 使用して、<see cref="P:System.Windows.Documents.TextPointer.LogicalDirection" />このプロパティ<see cref="T:System.Windows.Documents.TextPointer" />を検査する文字の方向を指定します。</param>
+        <summary>返します、<see cref="T:System.Windows.Documents.TextRange" />いずれかに対応するオブジェクトの内容の指定した位置にある単語のスペル、<see cref="T:System.Windows.Controls.RichTextBox" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Documents.TextRange" />覆っているいずれかで指定された文字を含む word スペルが間違っている<paramref name="position" />、または<see langword="null" />指定した文字にスペル ミスが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Documents.TextPointer>など`position`通常 2 つの文字の間での位置を指定します。 使用して、<xref:System.Windows.Documents.TextPointer.LogicalDirection%2A>プロパティ`position`をチェックする文字を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDocumentEnabled">
+      <MemberSignature Language="C#" Value="public bool IsDocumentEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDocumentEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RichTextBox.IsDocumentEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定をユーザーに対話できるかどうかを示す値を取得または<see cref="T:System.Windows.UIElement" />と<see cref="T:System.Windows.ContentElement" />内のオブジェクトは、<see cref="T:System.Windows.Controls.RichTextBox" />です。</summary>
+        <value>
+          <see langword="true" />ユーザーと対話することができる場合<see cref="T:System.Windows.UIElement" />と<see cref="T:System.Windows.ContentElement" />内のオブジェクトは、 <see cref="T:System.Windows.Controls.RichTextBox" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.RichTextBox.IsDocumentEnabled%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例<xref:System.Windows.Controls.CheckBox>と<xref:System.Windows.Controls.RichTextBox>を格納している、<xref:System.Windows.Documents.Hyperlink>と<xref:System.Windows.Controls.Button>です。  <xref:System.Windows.Controls.RichTextBox.IsDocumentEnabled%2A>のプロパティ、<xref:System.Windows.Controls.RichTextBox>にバインドされて、<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A>のプロパティ、<xref:System.Windows.Controls.CheckBox>です。  ユーザーが選択すると、<xref:System.Windows.Controls.CheckBox>と、ユーザーが対話、<xref:System.Windows.Controls.Button>と<xref:System.Windows.Documents.Hyperlink>です。 ユーザーがクリアすると、 <xref:System.Windows.Controls.CheckBox>、<xref:System.Windows.Controls.Button>と<xref:System.Windows.Documents.Hyperlink>は無効になります。  
+  
+ [!code-xaml[RTBIsDocumentEnabled#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RTBIsDocumentEnabled/VB/Window1.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDocumentEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsDocumentEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsDocumentEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.RichTextBox.IsDocumentEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.RichTextBox.IsDocumentEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RichTextBox.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>論理子を反復処理できる列挙子を取得、<see langword="RichTextBox" />です。</summary>
+        <value>論理上の子の列挙子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">A<see cref="T:System.Windows.Size" />構造体のサイズに制約を指定する、<see cref="T:System.Windows.Controls.RichTextBox" />です。</param>
+        <summary>再測定と呼ばれる、<see cref="T:System.Windows.Controls.RichTextBox" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Size" />構造体の新しいサイズを示す、<see cref="T:System.Windows.Controls.RichTextBox" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.Controls.Control.MeasureOverride%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />オブジェクトの<see cref="T:System.Windows.Controls.RichTextBox" />します。</summary>
+        <returns><see cref="T:System.Windows.Automation.Peers.AutomationPeer" />オブジェクトの<see cref="T:System.Windows.Controls.RichTextBox" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.ContentElement.OnCreateAutomationPeer%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDpiChanged">
+      <MemberSignature Language="C#" Value="protected override void OnDpiChanged (System.Windows.DpiScale oldDpiScaleInfo, System.Windows.DpiScale newDpiScaleInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDpiChanged(valuetype System.Windows.DpiScale oldDpiScaleInfo, valuetype System.Windows.DpiScale newDpiScaleInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.OnDpiChanged(System.Windows.DpiScale,System.Windows.DpiScale)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldDpiScaleInfo" Type="System.Windows.DpiScale" />
+        <Parameter Name="newDpiScaleInfo" Type="System.Windows.DpiScale" />
+      </Parameters>
+      <Docs>
+        <param name="oldDpiScaleInfo">設定前の DPI スケールします。</param>
+        <param name="newDpiScaleInfo">新規の DPI スケール設定。</param>
+        <summary>このリッチ テキスト ボックスが表示される DPI が変更されるときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selection">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextSelection Selection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextSelection Selection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RichTextBox.Selection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextSelection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TextSelection" />オブジェクトの現在の選択を含む、<see cref="T:System.Windows.Controls.RichTextBox" />です。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextSelection" />オブジェクトの現在の選択を含む、<see cref="T:System.Windows.Controls.RichTextBox" />です。  
+  
+ 既定値が返される<see cref="T:System.Windows.Documents.TextSelection" />が、<see cref="P:System.Windows.Documents.TextRange.IsEmpty" />のプロパティの値<see langword="True" />です。 空<see cref="T:System.Windows.Documents.TextSelection" />で選択されていないテキスト領域内のキャレットとして表示されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Documents.TextRange.Select%2A>メソッドをプログラムでコンテンツを選択します。  
+  
+   
+  
+## Examples  
+ 次の例は、このプロパティの使用方法を示しています。  
+  
+ [!code-csharp[RichTextBoxSnippets#_RTB_Selection](~/samples/snippets/csharp/VS_Snippets_Wpf/RichTextBoxSnippets/CSharp/Window1.xaml.cs#_rtb_selection)]
+ [!code-vb[RichTextBoxSnippets#_RTB_Selection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RichTextBoxSnippets/visualbasic/window1.xaml.vb#_rtb_selection)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeDocument">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeDocument() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.ShouldSerializeDocument" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかの有効値、<see cref="P:System.Windows.Controls.RichTextBox.Document" />のシリアル化中にプロパティをシリアル化する、<see cref="T:System.Windows.Controls.RichTextBox" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.RichTextBox.Document" />プロパティは、それ以外のシリアル化する必要があります<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RichTextBox.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加する文字列。</param>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

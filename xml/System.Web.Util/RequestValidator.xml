@@ -1,0 +1,217 @@
+<Type Name="RequestValidator" FullName="System.Web.Util.RequestValidator">
+  <TypeSignature Language="C#" Value="public class RequestValidator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RequestValidator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Util.RequestValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム要求の検証のための基本メソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ASP.NET は要求を検証できませんコードが要求の値を明示的に要求されるまでです。 たとえば、ASP.NET では検証されませんクエリ文字列の値のコードにアクセスするまで、<xref:System.Web.HttpRequest.QueryString%2A>コレクション。 既定では、ASP.NET も検証されませんフォームの値、cookie、HTTP、およびの値を使用してアップロードされたファイルの名前などの要求データの種類によって、<xref:System.Web.HttpRequest.RawUrl%2A>プロパティです。  
+  
+ <xref:System.Web.Util.RequestValidator>クラスは、カスタムの要求の検証を提供するために実装できる基本クラスです。 このクラスを実装すると、検証が発生したときと検証を実行する要求データの種類を指定できます。  
+  
+ 既定では、ASP.NET は、クロスサイト スクリプト (XSS) のチェックを提供します。 ただし、補完したり、XSS のカスタム実装を作成することで、ASP.NET で提供される要求の検証ロジックを置換できます。 たとえば、XSS 攻撃のチェックに加えて、SQL インジェクション攻撃をスキャンするカスタムの要求の検証の実装を記述することができます。  
+  
+ 派生するカスタム クラスを記述するカスタムの要求の検証を作成する、<xref:System.Web.Util.RequestValidator>基本クラスです。 アプリケーション レベルの Web.config ファイルでカスタム要求の検証コントロールを使用する ASP.NET を構成します。 カスタム クラスを App_Code フォルダーにある Bin フォルダーにコンパイル済みのクラス ライブラリ内に配置することも、GAC のコンパイル済みのクラス ライブラリに配置することができます。  
+  
+> [!NOTE]
+>  1 つだけカスタム要求の検証の種類は、アプリケーションを構成できます。 個々 の仮想パスまたはページのさまざまな要求の検証の種類を構成することはできません。  
+  
+   
+  
+## Examples  
+ 次の例では、クエリ文字列の値に使用する特定の文字列のみを許可するカスタムの要求の検証コントロールを作成する方法を示します。  
+  
+ [!code-csharp[System.Web.Util.RequestValidator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.util.requestvalidator/cs/requestvalidator.cs#1)]
+ [!code-vb[System.Web.Util.RequestValidator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.util.requestvalidator/vb/requestvalidator.vb#1)]  
+  
+ 次の例では、アプリケーションの Web.config ファイルでカスタム検証を使用する ASP.NET を構成する方法を示します。  
+  
+```  
+<system.web>  
+  <httpRuntime requestValidationType="CustomRequestValidation" />  
+</system.web>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.RequestValidator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Util.RequestValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Util.RequestValidator>クラスには既定のコンス トラクターです。 クラスの新しいインスタンスを初期化する場合、内部メソッドは、アプリケーションの構成情報からカスタムの検証の詳細を取得します。 構成の詳細が含まれている、<xref:System.Web.Configuration.HttpRuntimeSection>セクションです。 詳細については、次を参照してください。 [httpRuntime Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/e9b81350-8aaf-47cc-9843-5f7d0c59f369)と<xref:System.Web.Configuration.HttpRuntimeSection.RequestValidationType%2A>属性。  
+  
+ 1 つのインスタンスの初期化中に、<xref:System.Web.Util.RequestValidator>クラスが作成され、インスタンスへの参照は保持され、<xref:System.Web.Util.RequestValidator.Current%2A>プロパティです。 ASP.NET では、要求ごとに新しい要求の検証コントロール インスタンスは作成されません。 したがって、カスタム実装の<xref:System.Web.Util.RequestValidator>クラスはスレッド セーフである必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.Web.Util.RequestValidator Current { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Util.RequestValidator Current" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Util.RequestValidator.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.RequestValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の参照を現在<see cref="T:System.Web.Util.RequestValidator" />アプリケーションで使用されるインスタンスです。</summary>
+        <value><see cref="T:System.Web.Util.RequestValidator" /> クラスのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Util.RequestValidator.Current%2A>プロパティの許可されている単一のインスタンスへの参照を保持する、<xref:System.Web.Util.RequestValidator>クラスです。 インスタンスが存在しない場合、新しいものが作成されます。 インスタンスが既に存在する場合は、現在のインスタンスが返されます。  
+  
+ 1 つのインスタンスの初期化中に、<xref:System.Web.Util.RequestValidator>クラスが作成され、インスタンスへの参照に公開されますが、<xref:System.Web.Util.RequestValidator.Current%2A>プロパティです。 ASP.NET では、要求ごとに新しい要求の検証コントロール インスタンスは作成されません。 したがって、カスタム実装の<xref:System.Web.Util.RequestValidator>クラスはスレッド セーフである必要があります。  
+  
+> [!NOTE]
+>  <xref:System.Web.Util.RequestValidator.Current%2A>プロパティはスレッド セーフであるプロパティを設定すると、現在参照中に<xref:System.Web.Util.RequestValidator>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeIsValidRequestString">
+      <MemberSignature Language="C#" Value="public bool InvokeIsValidRequestString (System.Web.HttpContext context, string value, System.Web.Util.RequestValidationSource requestValidationSource, string collectionKey, out int validationFailureIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool InvokeIsValidRequestString(class System.Web.HttpContext context, string value, valuetype System.Web.Util.RequestValidationSource requestValidationSource, string collectionKey, [out] int32&amp; validationFailureIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.RequestValidator.InvokeIsValidRequestString(System.Web.HttpContext,System.String,System.Web.Util.RequestValidationSource,System.String,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="requestValidationSource" Type="System.Web.Util.RequestValidationSource" />
+        <Parameter Name="collectionKey" Type="System.String" />
+        <Parameter Name="validationFailureIndex" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="context">要求の HTTP コンテキスト。</param>
+        <param name="value">検証する HTTP 要求データ。</param>
+        <param name="requestValidationSource">検証中の要求データのソースを表す列挙体。 この列挙体の有効な値を次に示します。  
+  
+-   <see langword="QueryString" />  
+  
+-   <see langword="Form" />  
+  
+-   <see langword="Cookies" />  
+  
+-   <see langword="Files" />  
+  
+-   <see langword="Path" />  
+  
+-   <see langword="PathInfo" />  
+  
+-   <see langword="Headers" /></param>
+        <param name="collectionKey">(省略可能) 検証する項目の要求コレクション内のキー。 このパラメーターは、検証するデータをコレクションから取得する場合に使用します。 検証するデータをコレクションから取得しない場合、このパラメーターを <see langword="null" /> にすることができます。</param>
+        <param name="validationFailureIndex">このメソッドが呼び出し元に復帰するときに、要求コレクション内の問題があるまたは無効なテキストの、0 から始まる開始点が示されます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>HTTP 要求データを検証するために、保護された <see cref="M:System.Web.Util.RequestValidator.IsValidRequestString(System.Web.HttpContext,System.String,System.Web.Util.RequestValidationSource,System.String,System.Int32@)" /> メソッドを呼び出すパブリック メソッドを提供します。</summary>
+        <returns>
+          検証する文字列に、悪意のあるスクリプト攻撃で使用される可能性があるエンコードされていない文字が含まれていない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Util.RequestValidator.InvokeIsValidRequestString%2A>メソッドは、保護対象へのパブリック アクセスを提供<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドです。 カスタム ラッパー クラスを作成できるよう、<xref:System.Web.Util.RequestValidator>クラスと呼び出し、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドから継承せず、<xref:System.Web.Util.RequestValidator>クラスです。  
+  
+ 要求の検証方法については、次を参照してください。<xref:System.Web.UnvalidatedRequestValues>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidRequestString">
+      <MemberSignature Language="C#" Value="protected virtual bool IsValidRequestString (System.Web.HttpContext context, string value, System.Web.Util.RequestValidationSource requestValidationSource, string collectionKey, out int validationFailureIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool IsValidRequestString(class System.Web.HttpContext context, string value, valuetype System.Web.Util.RequestValidationSource requestValidationSource, string collectionKey, [out] int32&amp; validationFailureIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Util.RequestValidator.IsValidRequestString(System.Web.HttpContext,System.String,System.Web.Util.RequestValidationSource,System.String,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="requestValidationSource" Type="System.Web.Util.RequestValidationSource" />
+        <Parameter Name="collectionKey" Type="System.String" />
+        <Parameter Name="validationFailureIndex" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="context">現在の要求のコンテキスト。</param>
+        <param name="value">検証する HTTP 要求データ。</param>
+        <param name="requestValidationSource">検証中の要求データのソースを表す列挙体。 この列挙体の有効な値を次に示します。  
+  
+- <see langword="QueryString" />
+- <see langword="Form " />
+- <see langword="Cookies" />
+- <see langword="Files" />
+- <see langword="RawUrl" />
+- <see langword="Path" />
+- <see langword="PathInfo" />
+- <see langword="Headers" /></param>
+        <param name="collectionKey">検証する項目の要求コレクション内のキー。 このパラメーターは省略できます。 このパラメーターは、検証するデータをコレクションから取得する場合に使用します。 コレクションから検証するデータがない場合<c>collectionKey</c>できます<see langword="null" />です。</param>
+        <param name="validationFailureIndex">このメソッドが呼び出し元に復帰するときに、要求コレクション内の問題があるまたは無効なテキストの、0 から始まる開始点が示されます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>HTTP 要求データを含む文字列を検証します。</summary>
+        <returns>
+          検証する文字列が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求データのカスタム検証を実行するには、このメソッドを実装するとします。 基本動作、<xref:System.Web.Util.RequestValidator.IsValidRequestString%28System.Web.HttpContext%2CSystem.String%2CSystem.Web.Util.RequestValidationSource%2CSystem.String%2CSystem.Int32%40%29>メソッドは、クロスサイト スクリプティングの検証に危険な文字列をチェックする ASP.NET が内部的に実装する動作に似ています。 詳細については、次を参照してください。 [How To: ASP.NET でのクロス サイト スクリプティングのを防ぐ](http://go.microsoft.com/fwlink/?LinkID=178708)です。  
+  
+ かどうか、カスタム検証ロジックはエラーを検出、このメソッドが返す`false`で値を指定して`validationFailureIndex`エラーが発生したテキストの開始位置を示すためにします。 値`validationFailureIndex`0 または正の整数にする必要があります。  
+  
+ 要求の検証チェックのロジックは次のとおり進行します。  
+  
+-   <xref:System.Web.HttpRequest>クラスは、受け取ったデータに null 文字の削除のチェックを実行します。  
+  
+-   <xref:System.Web.HttpRequest>クラスを呼び出すか、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッド (基本メソッドの既定の実装) か派生バージョンのメソッドを呼び出します。  
+  
+-   場合<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドを返します。`false`検証失敗を示すときには、ASP.NET (必要な場合)、エラー文字列を構築およびスロー、<xref:System.Web.HttpRequestValidationException>例外。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

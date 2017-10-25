@@ -1,0 +1,1879 @@
+<Type Name="Axis" FullName="System.Windows.Forms.DataVisualization.Charting.Axis">
+  <TypeSignature Language="C#" Value="public class Axis : System.Windows.Forms.DataVisualization.Charting.ChartNamedElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Axis extends System.Windows.Forms.DataVisualization.Charting.ChartNamedElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.Axis" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataVisualization.Charting.ChartNamedElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Enabled")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内の軸を管理するメソッドとプロパティを提供、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Chart" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでの軸のすべての機能をカプセル化、<xref:System.Windows.Forms.DataVisualization.Charting.Chart>制御、およびによって公開される、 <xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.AxisX%2A>、 <xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.AxisY%2A>、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.AxisX2%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.AxisY2%2A>プロパティの<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>オブジェクト。  
+  
+ すべてのグラフに-を除くバー、積み上げ横棒グラフ、円グラフおよびドーナツ グラフ-、プライマリとセカンダリ軸は次のように。  
+  
+|軸の種類|説明|  
+|---------------|-----------------|  
+|主軸の x 軸|下の水平軸です。|  
+|第 2 x 軸|上部の水平軸です。|  
+|主軸の y 軸|左側は縦軸です。|  
+|第 2 y 軸|右の垂直の軸です。|  
+  
+ グラフ、時計回りに 90 ° 回転、軸のないバーおよび積み上げ横棒グラフのため、これらの 2 つの種類のグラフの X 軸はプライマリは、左の垂直軸です。  
+  
+ **注**軸の 1 つだけのセットがあります: 2 つの垂直方向および水平方向の 2 つ — ごと<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>オブジェクト。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.Axis>クラスには、絶対ピクセル座標を 2D のカスタム描画有用なまたは相対座標は、カスタムの 3D の描画に便利です、軸の値を変換に使用できるいくつかのメソッドも含まれています。 絶対と相対座標は、軸の値に変換することもできます。  
+  
+ によって公開される最も重要な軸要素は、次のとおり、<xref:System.Windows.Forms.DataVisualization.Charting.Axis>クラス。  
+  
+|Axis 要素|説明|  
+|------------------|-----------------|  
+|軸ラベル|軸、およびその関連プロパティのラベル。|  
+|グリッド線|軸の目盛りと補助グリッド線。|  
+|目盛り|軸の目盛りと補助目盛りはします。|  
+|ストリップ ライン|ストリップ ライン。|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Axis ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Axis.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Axis (System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea, System.Windows.Forms.DataVisualization.Charting.AxisName axisTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea, valuetype System.Windows.Forms.DataVisualization.Charting.AxisName axisTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Axis.#ctor(System.Windows.Forms.DataVisualization.Charting.ChartArea,System.Windows.Forms.DataVisualization.Charting.AxisName)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="chartArea" Type="System.Windows.Forms.DataVisualization.Charting.ChartArea" />
+        <Parameter Name="axisTypeName" Type="System.Windows.Forms.DataVisualization.Charting.AxisName" />
+      </Parameters>
+      <Docs>
+        <param name="chartArea">グラフ領域。</param>
+        <param name="axisTypeName">軸の名前。</param>
+        <summary><paramref name="chartArea" /> と <paramref name="axisTypeName" />の値を指定して、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrowStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle ArrowStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle ArrowStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.ArrowStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 2D 軸の矢印のスタイルを設定このスタイルは、3 D グラフ領域には適用されません。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AxisName">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.DataVisualization.Charting.AxisName AxisName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.AxisName AxisName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.AxisName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.AxisName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれかの X、Y、X2 または Y2 可能性があると、軸の名前を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.AxisName" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Crossing">
+      <MemberSignature Language="C#" Value="public virtual double Crossing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Crossing" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.Crossing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(NaN)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.AxisCrossingValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連付けられている軸で位置軸を超えました。 場所を設定します。</summary>
+        <value>A<see langword="double" />その関連付けられた軸の軸の交差を表す値です。 既定値は <see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ここで、その他のプライマリ軸と交差すると同様に、セカンダリ軸の設定が他のセカンダリ軸と交差する位置に決定されます、プライマリ軸のプロパティをこの設定が決定されます。 たとえば、設定、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Crossing%2A>主軸の x 軸のプロパティは、主軸の y 軸がクロスを決定します。  
+  
+ 4 つのモードを使用できる、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Crossing%2A>軸のプロパティ。  
+  
+-   "Auto"、交差する値を関連する軸の最小値または最大値に設定されることを意味します。 軸の主な場合、値になります、最小値軸がセカンダリの場合、最大値になります。 実行時に、"Auto"に設定するには、使用、<xref:System.Double.NaN>値。  
+  
+-   「最小」は、軸の交差する値の意味は、その最小値になります。 実行時の使用時の「最小」に設定する、<xref:System.Double.MinValue>値。  
+  
+-   「最大」は、軸の交差する値の意味は、その最大値になります。 実行時の使用時の「最大」に設定する、<xref:System.Double.MaxValue>値。  
+  
+-   指定した`double`値は、関連する軸の最小値と最大値の間です。 交差する値は、最小値未満か、交差する値が最大値より大きい場合、例外がスローされます。  
+  
+ 時に既定以外の交差する値を使用すると、ラベルと目盛りは軸の場合もに応じて、交差軸に従わない、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.IsMarksNextToAxis%2A>プロパティの設定。 既定では、交差軸と共に移動されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomLabels">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.CustomLabelsCollection CustomLabels { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.CustomLabelsCollection CustomLabels" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.CustomLabels" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartCollectionEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.CustomLabelsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataVisualization.Charting.CustomLabelsCollection" />オブジェクトの格納に使用される<see cref="T:System.Windows.Forms.DataVisualization.Charting.CustomLabel" />オブジェクト。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.CustomLabelsCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加または軸のカスタム ラベルを削除するには、このプロパティを使用します。 使用して<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel>オブジェクトには、軸ラベルのテキストを任意に設定する、開発者ができるようにします。  
+  
+ ラベルの 2 行目では、カスタム ラベルのみを使用できます。 また、カスタム ラベルが最初のラベル行で使用されている場合、この最初の行のすべてのラベルもカスタム ラベルにする必要があります。  
+  
+ ラベルをデータ ポイントの設定もまたは軸のスケールを自動的に生成できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Axis.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see langword="True" />アンマネージ コードとマネージの両方のリソースを解放するには<see langword="false" />アンマネージ リソースだけを解放します。</param>
+        <summary>リリースでは、アンマネージし、オプションでマネージ リソース。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.AxisEnabled Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.AxisEnabled Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Windows.Forms.DataVisualization.Charting.AxisEnabled), "Auto")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.AxisEnabled</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸が有効になっているかどうかを示す値を設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.AxisEnabled" /> 列挙値。 既定値は <see cref="F:System.Windows.Forms.DataVisualization.Charting.AxisEnabled.Auto" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 軸が有効でない場合 (目盛りは、ストリップ ライン、ラベル、およびなど) は、その属性と共に、軸は表示されません。  
+  
+ 軸が有効になっている場合のプロットに使用されているかどうかに関係なくすべての属性 (目盛りは、ストリップ ライン、ラベル、およびなど) と共に、軸が表示されます、<xref:System.Windows.Forms.DataVisualization.Charting.Series>です。  
+  
+ 値の場合<xref:System.Windows.Forms.DataVisualization.Charting.AxisEnabled.Auto>が使用して、軸がまたはが表示されない、プロットに使用されているかどうかに応じて、<xref:System.Windows.Forms.DataVisualization.Charting.Series>です。 データのプロットに使用されている軸はによって決定されます、<xref:System.Windows.Forms.DataVisualization.Charting.Series.XAxisType%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.Series.YAxisType%2A>プロパティの設定。  
+  
+> [!NOTE]
+>  軸が有効になっていない場合は、隣接する軸はグリッド線を使用して、これらのグリッド線の 1 つが無効になって、軸の代わりに表示されます。 同じ状況が発生、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Enabled%2A>軸のプロパティに設定されて<xref:System.Windows.Forms.DataVisualization.Charting.AxisEnabled.Auto>が、軸がデータのプロットに使用されていない。 隣接する軸のグリッド線が代わりに表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPosition">
+      <MemberSignature Language="C#" Value="public double GetPosition (double axisValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 GetPosition(float64 axisValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Axis.GetPosition(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="axisValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="axisValue">軸の値。</param>
+        <summary>相対的な位置に軸の値を変換します (0 ~ 100%)。 軸が対数の場合は、値は、線形スケールに変換されます。</summary>
+        <returns>A<see langword="double" />相対的な位置を表す値 (0 ~ 100%)。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterlacedColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color InterlacedColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color InterlacedColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.InterlacedColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインター レース ストリップ ラインの色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />インター レース ストリップ ラインの色を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すときに表示されているインター レース ストリップ ラインの色を指定するこのプロパティを使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.InterlacedColor%2A>プロパティです。  
+  
+ インター レース ストリップ ラインの境界線の色を指定するを使用してストリップを表示する必要があります、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.StripLines%2A>コレクション プロパティの代わりに、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.InterlacedColor%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Interval">
+      <MemberSignature Language="C#" Value="public double Interval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Interval" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.Interval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.AxisIntervalValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸の間隔を設定します。</summary>
+        <value>A<see langword="double" />軸の間隔を表す値です。 既定値は、"Auto"は、ゼロ (0) の値として表されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、どのくらいの頻度、ラベル、目盛りを決定し、場合、軸に関連付けられているグリッド線は描画、`Interval`にラベル、目盛り、またはグリッド線のプロパティの値を設定<xref:System.Double.NaN>、設定されていないことを意味します。  
+  
+ `Interval`目盛り、グリッド線または軸のラベルのプロパティでは、優先順位を持つ経由で、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Interval%2A>プロパティの設定、<xref:System.Windows.Forms.DataVisualization.Charting.Axis>オブジェクト。  
+  
+ ゼロの値では、"Auto"の値を表します。 これは、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Interval%2A>プロパティに設定することはできません<xref:System.Double.NaN>です。 このプロパティの値を割り当てた場合<xref:System.Double.NaN>ゼロの値が使用されます。  
+  
+ **注**軸の目盛りと補助グリッド線の間隔のこのプロパティを使用しません。  
+  
+ 軸の間隔の種類はによって決定されます、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalType%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IntervalAutoMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode IntervalAutoMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode IntervalAutoMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalAutoMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸では、固定数の間隔を使用する場合、または軸のサイズ、間隔の数が依存している場合を決定するフラグを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode" /> 列挙値。 既定値は <see cref="F:System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.FixedCount" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Interval%2A>プロパティが「自動」に設定されている、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalAutoMode%2A>プロパティは、間隔の数を計算するかを決定します。 グラフがサイズ変更または多くの場合、再描画される場合は、設定、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalAutoMode%2A>プロパティを<xref:System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount>、いる場合、グラフで軸の間隔に動的に計算します。 これは、ここで、グラフの間隔は、データに応じて異なる形式で表示する場合に特に便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IntervalOffset">
+      <MemberSignature Language="C#" Value="public double IntervalOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 IntervalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.AxisIntervalValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸の間隔のオフセットを設定します。</summary>
+        <value>A<see langword="double" />を軸の間隔のオフセットを表す値です。 既定値は、"Auto"は、ゼロ (0) の値として表されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalOffset%2A>プロパティが軸の間隔のオフセットを決定します。 この値は、軸のラベルと目盛りおよびグリッド線の場合、軸に関連付けられたの間隔のオフセットとして使用、 `IntervalOffset` 、ラベル、目盛り、またはグリッド線のプロパティの値が設定されていないの値で表される<xref:System.Double.NaN>です。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalOffset%2A> 、目盛り、ラベルと軸のグリッド線のプロパティでは、優先順位を持つ経由で、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalOffset%2A>プロパティの設定、<xref:System.Windows.Forms.DataVisualization.Charting.Axis>オブジェクト。  
+  
+ ゼロの値では、"Auto"の値を表します。 また、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Interval%2A>を設定しないように設定することはできません (つまり、 <xref:System.Double.NaN>)。 割り当てる場合<xref:System.Double.NaN>、"Auto"の値-0 の値は、— が使用されます。  
+  
+ **注**軸の目盛りと補助グリッド線の間隔のオフセットのこのプロパティを使用しません。  
+  
+ 軸の間隔のオフセットの種類はによって決定されます、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalOffsetType%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IntervalOffsetType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType IntervalOffsetType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType IntervalOffsetType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalOffsetType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸の間隔のオフセットの種類を設定します。</summary>
+        <value>軸の種類、間隔のオフセット。 既定値は <see cref="F:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、軸の間隔のオフセットの種類を決定し、場合は、軸のラベルと目盛りまたはグリッド線の間隔のオフセットの種類に対して使用軸要素の独自`IntervalOffsetType`にプロパティの値が設定されている<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.NotSet>です。  
+  
+ このプロパティを設定<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.NotSet>の値になります<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto>使用されている (にグリッド線など、軸要素のみを設定することができます<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.NotSet>)。  
+  
+> [!NOTE]
+>  軸の目盛りと補助グリッド線の間隔のオフセット型に対してこのプロパティを使用しないでください。  
+  
+ 軸の間隔はによって決定されます、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalOffset%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IntervalType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType IntervalType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType IntervalType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.IntervalType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸の間隔の種類を設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType" />軸の間隔の種類を表すです。 既定値は <see cref="F:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、軸の間隔の種類を決定し、場合は、軸のラベル、目盛り、またはグリッド線の間隔の種類に対して使用軸要素の独自`IntervalType`にプロパティの値が設定されている<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.NotSet>です。  
+  
+ このプロパティを設定<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.NotSet>の値になります<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto>使用されています。 グリッド線などの軸要素のみに設定することができます<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.NotSet>です。  
+  
+ **注**軸の目盛りと補助グリッド線の間隔の種類このプロパティを使用しません。  
+  
+ 軸の間隔はによって決定されます、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Interval%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  軸の間隔の種類が正しく機能するズームの順序でし、時間、分、およびなどの時間で表される場合、<xref:System.Windows.Forms.DataVisualization.Charting.Cursor.IntervalType%2A>も時刻の値に設定する必要があります。 たとえば、ChartArea1.AxisX.IntervalType が時間に設定されている場合分に ChartArea1.CursorX.IntervalType を設定可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInterlaced">
+      <MemberSignature Language="C#" Value="public bool IsInterlaced { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInterlaced" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.IsInterlaced" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸に対してインター レース ストリップ ラインが表示されるかどうかを決定するフラグを設定します。</summary>
+        <value>
+          <see langword="True" />場合は、軸に対してインター レース ストリップ ラインが表示されます。それ以外の場合、<see langword="False" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLabelAutoFit">
+      <MemberSignature Language="C#" Value="public bool IsLabelAutoFit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLabelAutoFit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.IsLabelAutoFit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸のラベルを自動調整するかどうかを決定するフラグを設定します。</summary>
+        <value>
+          <see langword="True" />軸ラベルのサイズを自動調整する場合それ以外の場合、<see langword="False" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLogarithmic">
+      <MemberSignature Language="C#" Value="public bool IsLogarithmic { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLogarithmic" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.IsLogarithmic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸目盛りが対数であるかどうかを示すフラグを設定します。 対数グラフでは、ゼロまたは負のデータ値は許可されません。</summary>
+        <value>
+          <see langword="True" />場合は、軸の目盛りが対数です。それ以外の場合、<see langword="False" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMarginVisible">
+      <MemberSignature Language="C#" Value="public bool IsMarginVisible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMarginVisible" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.IsMarginVisible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸に余白を追加するかどうかを決定するフラグを設定します。</summary>
+        <value>
+          <see langword="True" />最初と最後のデータ ポイントとグラフ領域の枠線の間にスペースが追加されます。 場合、</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMarksNextToAxis">
+      <MemberSignature Language="C#" Value="public virtual bool IsMarksNextToAxis { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMarksNextToAxis" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.IsMarksNextToAxis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはかどうかし軸ラベル、目盛りは軸と共に移動、軸の交差するポイントが変更された場合を決定するフラグを設定します。</summary>
+        <value>
+          <see langword="True" />かどうか目盛りおよび軸ラベル軸と共に移動、軸の交差するポイントを変更します。それ以外の場合、<see langword="False" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReversed">
+      <MemberSignature Language="C#" Value="public bool IsReversed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReversed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.IsReversed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸が逆になっているかどうかを示すフラグを設定します。</summary>
+        <value>
+          <see langword="True" />場合は、軸が反転されます。それ以外の場合、<see langword="False" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定取り消された、軸の値は逆の並べ替え順序におけると軸の値の方向を反転します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStartedFromZero">
+      <MemberSignature Language="C#" Value="public bool IsStartedFromZero { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStartedFromZero" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.IsStartedFromZero" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはすべてのデータ ポイント値が正の値が場合に、軸の最小値がゼロに自動的に設定するかどうかを示すフラグを設定します。 負の値のデータ ポイント値がある場合は、データ ポイントの最小値が使用されます。</summary>
+        <value>
+          <see langword="True" />値が正の値は、軸の最小値が自動的にすべてのデータ ポイントを 0 に設定されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LabelAutoFitMaxFontSize">
+      <MemberSignature Language="C#" Value="public int LabelAutoFitMaxFontSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LabelAutoFitMaxFontSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.LabelAutoFitMaxFontSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(10)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはラベルの自動調整アルゴリズムで使用できるフォントの最大サイズを設定します。</summary>
+        <value><see langword="integer" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォント サイズは、5 未満にすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LabelAutoFitMinFontSize">
+      <MemberSignature Language="C#" Value="public int LabelAutoFitMinFontSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LabelAutoFitMinFontSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.LabelAutoFitMinFontSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(6)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはラベルの自動調整アルゴリズムで使用できるフォントの最小サイズを設定します。</summary>
+        <value><see langword="integer" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LabelAutoFitStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles LabelAutoFitStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles LabelAutoFitStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.LabelAutoFitStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.FlagsEnumUITypeEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸に沿った合わせてラベルを有効にできる使用可能なラベルの変更を設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.LabelAutoFitStyles" /> 列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.Axis.IsLabelAutoFit%2A>プロパティに設定する必要があります`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LabelStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.LabelStyle LabelStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.LabelStyle LabelStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.LabelStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.LabelStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.DataVisualization.Charting.LabelStyle" />軸のプロパティです。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.LabelStyle" />軸ラベルのスタイルを定義するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、書式設定、スタイルを指定するなど、軸のラベル。  
+  
+ 場合、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.IsLabelAutoFit%2A>プロパティは`true`、フォント サイズ、フォントの角度、およびオフセット ラベルの使用が自動的に決定されます。 LabelStyle.Font.Size のいずれかを設定した場合<xref:System.Windows.Forms.DataVisualization.Charting.LabelStyle.Angle%2A>または<xref:System.Windows.Forms.DataVisualization.Charting.LabelStyle.IsStaggered%2A>、プロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.IsLabelAutoFit%2A>プロパティ設定されます`false`です。  
+  
+ ラベルの時刻を使用せずに、日付ので構成される書式をする場合に注意してください、<xref:System.DateTime>使用されるデータ ポイント値が時間を指定、ラベルの書式設定によっては表示されない場合でも、時間がデータ ポイントの位置に影響します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color LineColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color LineColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.LineColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "Black")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸の線の色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />軸を描画する線の色を表すオブジェクトを使用します。 既定値は、<see cref="P:System.Drawing.Color.Black" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.LineColor%2A>軸の線の色を指定するプロパティです。  
+  
+ **注**軸が有効ではありませんが、隣接する軸はグリッド線を使用して、そのグリッド線のいずれかが表示されますが有効でない軸の代わりにします。 同じ状況が発生、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Enabled%2A>軸のプロパティに設定されて<xref:System.Windows.Forms.DataVisualization.Charting.AxisEnabled.Auto>です。 この場合、軸は、データのプロットに使用されていないと、隣接する軸のグリッド線が代わりに表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineDashStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.ChartDashStyle LineDashStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.ChartDashStyle LineDashStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.LineDashStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.ChartDashStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸の線のスタイルを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartDashStyle" /> 列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.Axis.LineDashStyle%2A>プロパティが軸を使用する線のスタイルを決定します。 行には、純色、ピリオドで区切られたなどを指定できます。  
+  
+ **注**軸が有効ではありませんが、隣接する軸はグリッド線を使用して、そのグリッド線のいずれかが表示されますが有効でない軸の代わりにします。 同じ状況が発生、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Enabled%2A>軸のプロパティに設定されて<xref:System.Windows.Forms.DataVisualization.Charting.AxisEnabled.Auto>です。 この場合、軸は、データのプロットに使用されていないと、隣接する軸のグリッド線が代わりに表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineWidth">
+      <MemberSignature Language="C#" Value="public int LineWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LineWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.LineWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸の線の幅をピクセル単位で設定します。</summary>
+        <value><see langword="integer" />軸線の幅を表す値です。 既定値は、1 つ (1) ピクセルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.Axis.LineWidth%2A>プロパティを取得または、軸線の幅をピクセル単位で設定します。 幅がゼロ (0) に設定されている場合、行は表示されません。  
+  
+ **注**軸が有効ではありませんが、隣接する軸はグリッド線を使用して、そのグリッド線のいずれかが表示されますが有効でない軸の代わりにします。 同じ状況が発生、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Enabled%2A>軸のプロパティに設定されて<xref:System.Windows.Forms.DataVisualization.Charting.AxisEnabled.Auto>です。 この場合、軸は、データのプロットに使用されていないと、隣接する軸のグリッド線が代わりに表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogarithmBase">
+      <MemberSignature Language="C#" Value="public double LogarithmBase { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 LogarithmBase" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.LogarithmBase" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(10)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または対数軸の対数の底の値を設定します。</summary>
+        <value><see langword="double" /> 値。 既定値は、10 進数です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、特殊効果、ときに、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.IsLogarithmic%2A>プロパティに設定されている`true`です。  
+  
+ このプロパティは、データのプロットに使用される値軸に適用のみに注意してください。 カテゴリ軸には、このプロパティを設定すると、スローされた例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorGrid">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.Grid MajorGrid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.Grid MajorGrid" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.MajorGrid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.Grid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Grid" />の主要グリッドの軸の線のプロパティを設定するために使用します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.Grid" />オブジェクトを取得または軸のグリッド線のプロパティを設定するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グリッド線は常にデータ ポイントと共にを描画します。 つまり、カテゴリ軸の目盛りに、データ ポイントと軸に沿って同じ位置にそれらが発生します。 値軸のラベルされる場所に、既定ではグリッド線が描画されます。  
+  
+ グリッド線、色、およびなどを変更するのには、このプロパティを使用することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorTickMark">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.TickMark MajorTickMark { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.TickMark MajorTickMark" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.MajorTickMark" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.TickMark</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.DataVisualization.Charting.TickMark" />主目盛りは軸のプロパティをマークを設定するために使用します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.TickMark" />軸の目盛りのプロパティを設定するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 目盛りは常にデータ ポイントと共にを描画します。 カテゴリ軸の目盛りが軸に沿ったデータ ポイントと同じ位置に発生します。 値軸の目盛りにはラベルされる場所に既定で描画されます。  
+  
+ このプロパティを使用して、頻度、色、サイズなどの目盛りマーク プロパティを変更することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Maximum">
+      <MemberSignature Language="C#" Value="public double Maximum { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Maximum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.Maximum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(NaN)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.AxisMinMaxAutoValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸の最大値を設定します。</summary>
+        <value>A<see langword="double" />軸の最大値を表す値です。 既定値は <see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自動的に最大と最小軸を丸めるに値を呼び出し、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.RoundAxisValues%2A>メソッドです。 <xref:System.Windows.Forms.DataVisualization.Charting.Axis.Maximum%2A>値より大きくなければなりません、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Minimum%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumAutoSize">
+      <MemberSignature Language="C#" Value="public float MaximumAutoSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 MaximumAutoSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.MaximumAutoSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(75)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ領域の比率として計測、軸の最大サイズを設定します。 この値は、自動レイアウト アルゴリズムによって使用されます。</summary>
+        <value>A<see langword="float" />軸の最大サイズを表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minimum">
+      <MemberSignature Language="C#" Value="public double Minimum { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Minimum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.Minimum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(NaN)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.AxisMinMaxAutoValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸の最小値を設定します。</summary>
+        <value>A<see langword="double" />軸の最小値を表す値です。 既定値は <see cref="F:System.Double.NaN" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ある場合、この値を明示的に設定すると、データ要素の X 値に考慮しなければならないアカウントに注意してください。 すべてのデータ ポイントの X-値がゼロの場合、<xref:System.Windows.Forms.DataVisualization.Charting.Chart>コントロールは最初のデータ ポイントが 0 時に発生すると仮定します。 また場合、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Minimum%2A>値が明示的に設定されて、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.IsStartedFromZero%2A>プロパティは無視されます。 <xref:System.Windows.Forms.DataVisualization.Charting.Axis.Minimum%2A>値である必要がありますよりも低い<xref:System.Windows.Forms.DataVisualization.Charting.Axis.Maximum%2A>値。  
+  
+ 自動的に最大と最小の軸の値を丸める。 呼び出す、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.RoundAxisValues%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorGrid">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.Grid MinorGrid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.Grid MinorGrid" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.MinorGrid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.Grid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Grid" />補助グリッド線の軸の属性を指定するために使用します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.Grid" />オブジェクトを取得または軸の補助グリッド線の属性を設定するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グリッド線の間に、補助グリッド線が描画されます。  
+  
+ このプロパティを使用すると、頻度、色、およびなどなどの補助グリッド線の属性を変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorTickMark">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.TickMark MinorTickMark { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.TickMark MinorTickMark" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.MinorTickMark" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.TickMark</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.DataVisualization.Charting.TickMark" />オブジェクトの補助目盛りは軸のプロパティをマークを設定するために使用します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.TickMark" />軸の補助目盛りマーク プロパティに使用されるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 目盛りには、ラベルが通常発生間には、補助目盛りを作成する必要があります。  
+  
+ このプロパティを使用すると、補助目盛りの頻度、色、およびなどを変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸の名前を設定します。</summary>
+        <value>A<see langword="string" />を軸のテキストの名前を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelPositionToValue">
+      <MemberSignature Language="C#" Value="public double PixelPositionToValue (double position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 PixelPositionToValue(float64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Axis.PixelPositionToValue(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="position">ピクセルの位置。</param>
+        <summary>軸に沿った絶対ピクセル位置を軸の値に変換します。 このメソッドは、描画イベントでのみ機能します。</summary>
+        <returns>A<see langword="double" />軸の値を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PositionToValue">
+      <MemberSignature Language="C#" Value="public double PositionToValue (double position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 PositionToValue(float64 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Axis.PositionToValue(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="position">相対的な位置 (0 ~ 100%)。</param>
+        <summary>軸の値軸に沿った相対座標に変換します。 このメソッドは、描画イベントでのみ機能します。</summary>
+        <returns>A<see langword="double" />軸の値を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RoundAxisValues">
+      <MemberSignature Language="C#" Value="public void RoundAxisValues ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RoundAxisValues() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Axis.RoundAxisValues" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>軸の値を自動的に丸めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.RoundAxisValues%2A>軸の値を丸めます。 このメソッドが呼び出されたときに、軸で使用される間隔は変更されないことに注意してください。 このメソッドは、X 軸と X2 でのみサポート軸です。 既定では、Y および Y2 軸の値が丸められます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleBreakStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.DataVisualization.Charting.AxisScaleBreakStyle ScaleBreakStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.AxisScaleBreakStyle ScaleBreakStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.ScaleBreakStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.AxisScaleBreakStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸のスケール区切りのスタイルを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.AxisScaleBreakStyle" />をグラフの軸のスケール区切りのスタイルを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleView">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.AxisScaleView ScaleView { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.AxisScaleView ScaleView" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.ScaleView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.AxisScaleView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸のビューを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.AxisScaleView" />を軸のスケールのビューを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollBar">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.AxisScrollBar ScrollBar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.AxisScrollBar ScrollBar" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.ScrollBar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.AxisScrollBar</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸のスクロール バーを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.AxisScrollbar" />を軸のスクロール バーを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、軸のスクロール バーを操作できます。  
+  
+ 詳細についてを参照してください、<xref:System.Windows.Forms.DataVisualization.Charting.AxisScrollBar>クラスのドキュメントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StripLines">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.StripLinesCollection StripLines { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.StripLinesCollection StripLines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.StripLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartCollectionEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.StripLinesCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataVisualization.Charting.StripLinesCollection" />コレクション オブジェクト。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.StripLinesCollection" />すべてを格納するコレクション オブジェクト<see cref="T:System.Windows.Forms.DataVisualization.Charting.StripLine" />軸のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストリップ ラインは全体の四角形のストリップを描画に使用する、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>オブジェクト、および全体には常に描か\<A href =""> 領域。  
+  
+ これらのストリップ グリッド線には関連しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextOrientation">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.TextOrientation TextOrientation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.TextOrientation TextOrientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.TextOrientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.TextOrientation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸のタイトルのテキストの向きを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.TextOrientation" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸のタイトルを設定します。</summary>
+        <value>A<see langword="string" />を軸のタイトルを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得または軸のタイトルを設定します。  
+  
+ 使用して、タイトルのフォントのプロパティを設定することができます、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.TitleFont%2A>プロパティです。  
+  
+ 使用して、タイトルの色を設定することができます、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.TitleForeColor%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleAlignment">
+      <MemberSignature Language="C#" Value="public System.Drawing.StringAlignment TitleAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.StringAlignment TitleAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.TitleAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.StringAlignment), "Center")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸のタイトルの配置を設定します。</summary>
+        <value><see cref="T:System.Drawing.StringAlignment" /> 列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 可能なアラインメント値は<xref:System.Drawing.StringAlignment.Center>、 <xref:System.Drawing.StringAlignment.Far>、および<xref:System.Drawing.StringAlignment.Near>です。 値<xref:System.Drawing.StringAlignment.Far>上部または軸またはストリップ ラインの向きに応じて、右に配置のようになります。 同様の値で<xref:System.Drawing.StringAlignment.Near>下または右に配置のようになります。  
+  
+ 使用してカスタム描画を実行する必要があります、軸のタイトルの位置より詳細に制御する場合、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.PostPaint>または<xref:System.Windows.Forms.DataVisualization.Charting.Chart.PrePaint>イベント。  
+  
+ さらに配置しのタイトルを配置できます<xref:System.Windows.Forms.DataVisualization.Charting.StripLine>オブジェクトを使用して、<xref:System.Windows.Forms.DataVisualization.Charting.StripLine.TextLineAlignment%2A>と TitleAngle プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleFont">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font TitleFont { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font TitleFont" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.TitleFont" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Font), "Microsoft Sans Serif, 8pt")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフォント プロパティを軸のタイトルを設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Font" />タイトルのフォントのプロパティに使用されるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得またはフェイスやサイズなどのタイトルのフォント プロパティを設定します。  
+  
+ プロパティを設定するフォントの実行時、新しい<xref:System.Windows.Forms.DataVisualization.Charting.AnnotationGroup.Font%2A>オブジェクトを作成する必要があります。 現在のプロパティを変更しようとすると<xref:System.Windows.Forms.DataVisualization.Charting.AnnotationGroup.Font%2A>実行時にオブジェクトが、コンパイル エラーになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color TitleForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color TitleForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.TitleForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "Black")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸のタイトルのテキストの色を設定します。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 構造。 既定の色は <see cref="P:System.Drawing.Color.Black" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得または設定のテキストの色、<xref:System.Windows.Forms.DataVisualization.Charting.Axis>オブジェクトのタイトル。  
+  
+ 任意の有効な (アルファ、赤、緑、青) ARGB 色を使用することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public string ToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.Axis.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸に使用するツールヒントを設定します。</summary>
+        <value><see langword="string" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueToPixelPosition">
+      <MemberSignature Language="C#" Value="public double ValueToPixelPosition (double axisValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 ValueToPixelPosition(float64 axisValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Axis.ValueToPixelPosition(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="axisValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="axisValue">軸の値。</param>
+        <summary>軸の値を軸に沿った絶対座標に変換します。 ピクセル単位で測定されます。 このメソッドは、描画イベントでのみ機能します。</summary>
+        <returns>A<see langword="double" />ピクセルの位置を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueToPosition">
+      <MemberSignature Language="C#" Value="public double ValueToPosition (double axisValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 ValueToPosition(float64 axisValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.Axis.ValueToPosition(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="axisValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="axisValue">軸の値。</param>
+        <summary>軸の値を相対的な位置に変換します (0 ~ 100%)。 軸の対数スケールの場合、値は、線形スケールに変換されます。 このメソッドは、描画イベントでのみ機能します。</summary>
+        <returns>A<see langword="double" />相対的な位置を表す値 (0 ~ 100%)。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

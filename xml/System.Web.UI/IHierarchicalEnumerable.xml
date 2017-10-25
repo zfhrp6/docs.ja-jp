@@ -1,0 +1,74 @@
+<Type Name="IHierarchicalEnumerable" FullName="System.Web.UI.IHierarchicalEnumerable">
+  <TypeSignature Language="C#" Value="public interface IHierarchicalEnumerable : System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHierarchicalEnumerable implements class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IHierarchicalEnumerable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>列挙できる階層的なコレクションを表します、<see cref="T:System.Collections.IEnumerator" />インターフェイスです。 実装するコレクション、<see cref="T:System.Web.UI.IHierarchicalEnumerable" />インターフェイスは、ASP.NET サイトのナビゲーションとデータ ソース コントロールによって使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IHierarchicalEnumerable>インターフェイスを拡張、<xref:System.Collections.IEnumerable>インターフェイスを公開<xref:System.Web.UI.IHierarchicalEnumerable.GetHierarchyData%2A>、メソッドは、取得するために使用、<xref:System.Web.UI.IHierarchyData>オブジェクト列挙アイテムからに加え、<xref:System.Collections.IEnumerable.GetEnumerator%2A>メソッドです。  
+  
+ 通常、クライアントを使用する<xref:System.Web.UI.IHierarchicalEnumerable>コレクションを取得、<xref:System.Collections.IEnumerator>を呼び出してオブジェクト、<xref:System.Collections.IEnumerable.GetEnumerator%2A>メソッド、列挙型と呼び出しを反復処理して、<xref:System.Web.UI.IHierarchicalEnumerable.GetHierarchyData%2A>取得に列挙された各項目を<xref:System.Web.UI.IHierarchyData>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Web.UI.IHierarchicalEnumerable>を拡張するクラスとインターフェイス<xref:System.Collections.ArrayList>のコレクションを提供および<xref:System.Web.UI.IHierarchyData>オブジェクトをラップする<xref:System.IO.FileSystemInfo>オブジェクト。 <xref:System.Web.UI.IHierarchicalEnumerable>コレクションから派生したクラスによって使用されます<xref:System.Web.UI.HierarchicalDataSourceView>階層ノードのコレクションを返すときに、<xref:System.Web.UI.HierarchicalDataSourceView.Select%2A>メソッドが呼び出されます。 このコード例に示されている例の一部である、<xref:System.Web.UI.HierarchicalDataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.FileSystemDataSource_1#4](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/CS/filesystemdatasource.cs#4)]
+ [!code-vb[Urtue.Samples.Alexkr.FileSystemDataSource_1#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.FileSystemDataSource_1/VB/filesystemdatasource.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetHierarchyData">
+      <MemberSignature Language="C#" Value="public System.Web.UI.IHierarchyData GetHierarchyData (object enumeratedItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.IHierarchyData GetHierarchyData(object enumeratedItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IHierarchicalEnumerable.GetHierarchyData(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchyData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumeratedItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="enumeratedItem"><see cref="T:System.Object" />を返す、<see cref="T:System.Web.UI.IHierarchyData" />です。</param>
+        <summary>指定された列挙項目の階層的なデータ項目を返します。</summary>
+        <returns><see cref="T:System.Web.UI.IHierarchyData" />を表すインスタンス、<see cref="T:System.Object" />に渡される、<see cref="M:System.Web.UI.IHierarchicalEnumerable.GetHierarchyData(System.Object)" />メソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、クライアントを使用して<xref:System.Web.UI.IHierarchicalEnumerable>コレクションを取得、<xref:System.Collections.IEnumerator>を呼び出してオブジェクト、<xref:System.Collections.IEnumerable.GetEnumerator%2A>メソッド、列挙型と呼び出しを反復処理し、<xref:System.Web.UI.IHierarchicalEnumerable.GetHierarchyData%2A>メソッドを取得する列挙された各項目を<xref:System.Web.UI.IHierarchyData>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ASP.NET の階層的なデータ バインド コントロールの使用方法を示しています、<xref:System.Web.UI.IHierarchyData>再帰的なデータ バインディング メソッドのオブジェクト。 内の項目、<xref:System.Web.UI.IHierarchicalEnumerable>オブジェクトには、列挙、および各、<xref:System.Web.UI.IHierarchyData>を使用してオブジェクトを取得、<xref:System.Web.UI.IHierarchicalEnumerable.GetHierarchyData%2A>メソッドです。 最後に、<xref:System.Web.UI.IHierarchyData.HasChildren%2A>再帰が必要かどうかを決定するプロパティをチェックします。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.GeneologyTree#5](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/CS/geneologytree.cs#5)]
+ [!code-vb[Samples.AspNet.GeneologyTree#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/VB/geneologytree.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

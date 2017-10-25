@@ -1,0 +1,293 @@
+<Type Name="TransactionScope" FullName="System.Activities.Statements.TransactionScope">
+  <TypeSignature Language="C#" Value="public sealed class TransactionScope : System.Activities.NativeActivity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TransactionScope extends System.Activities.NativeActivity" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Statements.TransactionScope" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.NativeActivity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Body")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>トランザクションの境界を設定するアクティビティ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアクティビティが実行を開始すると、既に存在しない場合は新しい <xref:System.Transactions.Transaction> が開始されます。 アクティビティおよびトランザクションの他のすべての参加要素が正常に完了すると、トランザクションはコミットされます。  
+  
+> [!NOTE]
+>  <xref:System.Activities.Statements.TryCatch.Finally%2A>アクティビティ メンバーの<xref:System.Activities.Statements.TryCatch>はの子アクティビティ、<xref:System.Activities.Statements.TransactionScope>過去の未処理の例外を伝達する場合は実行されません、<xref:System.Activities.Statements.TransactionScope>境界です。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.Statements.TransactionScope> アクティビティを作成するコード サンプルを次に示します。 この例は、[基本 TransactionScope](~/docs/framework/windows-workflow-foundation/samples/basic-transactionscope.md)サンプルです。  
+  
+ [!code-csharp[wfs_NestedTransactionScope#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_nestedtransactionscope/cs/program.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TransactionScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.TransactionScope.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Statements.TransactionScope" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Activities.Statements.TransactionScope> アクティビティを作成するコード サンプルを次に示します。 この例は、[基本 TransactionScope](~/docs/framework/windows-workflow-foundation/samples/basic-transactionscope.md)サンプルです。  
+  
+ [!code-csharp[wfs_NestedTransactionScope#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_nestedtransactionscope/cs/program.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AbortInstanceOnTransactionFailure">
+      <MemberSignature Language="C#" Value="public bool AbortInstanceOnTransactionFailure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AbortInstanceOnTransactionFailure" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.TransactionScope.AbortInstanceOnTransactionFailure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションが中止した場合にワークフローを中止する必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ワークフローを中止する必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは実行時に読み取り専用です。 実行時に値が設定された場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public System.Activities.Activity Body { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Activity Body" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.TransactionScope.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Statements.TransactionScope" /> の実行時にスケジュールされるアクティビティを取得または設定します。</summary>
+        <value><see cref="T:System.Activities.Statements.TransactionScope" /> の実行時にスケジュールされるアクティビティ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは実行時に読み取り専用です。 実行時に値が設定された場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheMetadata">
+      <MemberSignature Language="C#" Value="protected override void CacheMetadata (System.Activities.NativeActivityMetadata metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CacheMetadata(valuetype System.Activities.NativeActivityMetadata metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.TransactionScope.CacheMetadata(System.Activities.NativeActivityMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Activities.NativeActivityMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanInduceIdle">
+      <MemberSignature Language="C#" Value="protected override bool CanInduceIdle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanInduceIdle" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.TransactionScope.CanInduceIdle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="protected override void Execute (System.Activities.NativeActivityContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Execute(class System.Activities.NativeActivityContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.TransactionScope.Execute(System.Activities.NativeActivityContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.NativeActivityContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsolationLevel">
+      <MemberSignature Language="C#" Value="public System.Transactions.IsolationLevel IsolationLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Transactions.IsolationLevel IsolationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.TransactionScope.IsolationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Transactions.IsolationLevel" /> の <see cref="T:System.Activities.Statements.TransactionScope" /> を取得または設定します。</summary>
+        <value>この <see cref="T:System.Transactions.IsolationLevel" /> の <see cref="T:System.Activities.Statements.TransactionScope" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは実行時に読み取り専用です。 実行時に値が設定された場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeIsolationLevel">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeIsolationLevel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeIsolationLevel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.TransactionScope.ShouldSerializeIsolationLevel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="P:System.Activities.Statements.TransactionScope.IsolationLevel" /> の <see cref="T:System.Activities.Statements.TransactionScope" /> をシリアル化する必要があるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.Activities.Statements.TransactionScope.IsolationLevel" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTimeout">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTimeout ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTimeout() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.TransactionScope.ShouldSerializeTimeout" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="P:System.Activities.Statements.TransactionScope.Timeout" /> の <see cref="T:System.Activities.Statements.TransactionScope" /> をシリアル化する必要があるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.Activities.Statements.TransactionScope.Timeout" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public System.Activities.InArgument&lt;TimeSpan&gt; Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.InArgument`1&lt;valuetype System.TimeSpan&gt; Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.TransactionScope.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.InArgument&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.TimeSpan" /> に使用するトランザクションのタイムアウト時間を表す <see cref="T:System.Activities.Statements.TransactionScope" /> を取得または設定します。</summary>
+        <value>この <see cref="T:System.TimeSpan" /> に使用するトランザクションのタイムアウト時間を表す <see cref="T:System.Activities.Statements.TransactionScope" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは実行時に読み取り専用です。 実行時に値が設定された場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.Statements.TransactionScope> アクティビティの Timeout プロパティを設定するコード サンプルを次に示します。 この例は、[基本 TransactionScope](~/docs/framework/windows-workflow-foundation/samples/basic-transactionscope.md)サンプルです。  
+  
+ [!code-csharp[wfs_NestedTransactionScope#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_nestedtransactionscope/cs/program.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

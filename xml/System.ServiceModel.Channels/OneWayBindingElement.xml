@@ -1,0 +1,406 @@
+<Type Name="OneWayBindingElement" FullName="System.ServiceModel.Channels.OneWayBindingElement">
+  <TypeSignature Language="C#" Value="public sealed class OneWayBindingElement : System.ServiceModel.Channels.BindingElement, System.ServiceModel.Description.IPolicyExportExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OneWayBindingElement extends System.ServiceModel.Channels.BindingElement implements class System.ServiceModel.Description.IPolicyExportExtension" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.OneWayBindingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.BindingElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IPolicyExportExtension</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>パケット ルーティングを有効にし、一方向メソッドを使用できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パケット ルーティングを有効にする、*一方向の変換*レイヤーが必要ですが、このクラスが提供されます。 このクラスは、バインディングのスタック内にあるバインディングであり、`OneWayBindingElement` と呼ばれるメッセージ レベルの形状変更を行います。 この形状変更は、<xref:System.ServiceModel.Channels.IDuplexSessionChannel> または <xref:System.ServiceModel.Channels.IRequestChannel> を受け取って <xref:System.ServiceModel.Channels.IInputChannel> として公開することも、逆に、<xref:System.ServiceModel.Channels.IDuplexSessionChannel> または <xref:System.ServiceModel.Channels.IRequestChannel> を受け取って <xref:System.ServiceModel.Channels.IOutputChannel> として公開することもできます。 カスタム バインディングを作成し、このバインディングをセッション対応または要求応答のトランスポートの上に重ねて、パケット ルーティング可能にすることができます。  
+  
+ このクラスは、一方向メソッドをよりネイティブな形式で公開するときにも役に立ちます。 複合二重や信頼できるメッセージ機能などのさらに大きい変換は、この層に対して適用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OneWayBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.OneWayBindingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.OneWayBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.OneWayBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">ファクトリが作成するチャネルの種類。</typeparam>
+        <param name="context">バインディング要素のコンテキストを提供する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>バインディング コンテキストから一方向チャネルを生成するためのチャネル ファクトリを初期化します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.IChannelFactory`1" /> から初期化される <see cref="T:System.ServiceModel.Channels.IChannel" /> 型の <paramref name="context" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、チャネル ファクトリを作成します。これは、このバインディングの送信メッセージを処理するチャネルの作成に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="TChannel" /> の型が <see cref="T:System.ServiceModel.Channels.IOutputChannel" /> ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">内部バインディング要素は、<see cref="T:System.ServiceModel.Channels.IDuplexSessionChannel" /> または <see cref="T:System.ServiceModel.Channels.IRequestChannel" /> をサポートしません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.OneWayBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">リスナーが受け入れるように作成されているチャネルの種類。</typeparam>
+        <param name="context">バインディング要素のコンテキストを提供する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>一方向チャネルを受け入れるようにチャネル リスナーを初期化します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.IChannelListener`1" /> から初期化される <see cref="T:System.ServiceModel.Channels.IChannel" /> 型の <paramref name="context" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、チャネル リスナーを作成します。これは、このバインディングの受信メッセージを処理するチャネルの作成に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="TChannel" /> の型が <see cref="T:System.ServiceModel.Channels.IInputChannel" /> ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">内部バインディング要素は、<see cref="T:System.ServiceModel.Channels.IDuplexSessionChannel" /> または <see cref="T:System.ServiceModel.Channels.IRequestChannel" /> をサポートしません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.OneWayBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">作成するチャネル ファクトリの種類。</typeparam>
+        <param name="context">バインディング要素のコンテキストを提供する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定した種類のチャネル ファクトリを作成できるかどうかを示す値を取得します。</summary>
+        <returns>
+          指定した型のチャネル ファクトリを作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル ファクトリを作成する前にこのメソッドを呼び出す必要があります。  
+  
+ このメソッドは、`true` が `TChannel` である場合は <xref:System.ServiceModel.Channels.IOutputChannel> を返します。また、バインディング スタック内の現在のバインディングより下のバインディングは <xref:System.ServiceModel.Channels.IDuplexSessionChannel> または <xref:System.ServiceModel.Channels.IRequestChannel> です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.OneWayBindingElement.CanBuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">作成するチャネル リスナーの種類。</typeparam>
+        <param name="context">バインディング要素のコンテキストを提供する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定した種類のチャネル リスナーを作成できるかどうかを示す値を取得します。</summary>
+        <returns>
+          指定した型のチャネル リスナーを作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル リスナーを作成する前にこのメソッドを呼び出す必要があります。  
+  
+ このメソッドは、`true` が `TChannel` である場合は <xref:System.ServiceModel.Channels.IInputChannel> を返します。また、バインディング スタック内の現在のバインディングより下のバインディングは <xref:System.ServiceModel.Channels.IDuplexSessionChannel> または <xref:System.ServiceModel.Channels.IReplyChannel> です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelPoolSettings">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.ChannelPoolSettings ChannelPoolSettings { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.ChannelPoolSettings ChannelPoolSettings" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.OneWayBindingElement.ChannelPoolSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.ChannelPoolSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル プール設定を取得します。</summary>
+        <value>このバインド要素に関連付けられたチャネル プールのプロパティを格納する <see cref="T:System.ServiceModel.Channels.ChannelPoolSettings" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElement Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElement Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.OneWayBindingElement.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このクラスのインスタンスを複製します。</summary>
+        <returns>このクラスのこのインスタンスの複製されたコピー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T GetProperty&lt;T&gt; (System.ServiceModel.Channels.BindingContext context) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T GetProperty&lt;class T&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.OneWayBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">プロパティの型。</typeparam>
+        <param name="context">バインディング要素のコンテキストを提供する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>バインディング スタックにプロパティがある場合は、そのプロパティを取得します。</summary>
+        <returns>バインド スタックに <paramref name="T" /> オブジェクトがある場合はそのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、バインディング コンテキストを入力パラメーターとして受信します。これは、バインディング要素のスタックを表します。  
+  
+ スタック内の各バインド要素は、問い合わせをそれ自体で処理することも代行させることも、その 2 つを組み合わせることもできます。 各バインド要素は、問い合わせを代行させる場合、コンテキストを変更できます。 ただし、トランスポート バインド要素は、問い合わせをそれ自体で処理します。  
+  
+ このメソッドは、バインド要素によって、また、ランタイム オブジェクト (<xref:System.ServiceModel.Channels.IChannelFactory>、<xref:System.ServiceModel.Channels.IChannelListener>、および <xref:System.ServiceModel.Channels.IChannel> など) によって実装されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxAcceptedChannels">
+      <MemberSignature Language="C#" Value="public int MaxAcceptedChannels { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxAcceptedChannels" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.OneWayBindingElement.MaxAcceptedChannels" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(10)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>許可されるチャネルの最大数を取得または設定します。</summary>
+        <value>許可されるチャネルの最大数。 既定値は 10 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PacketRoutable">
+      <MemberSignature Language="C#" Value="public bool PacketRoutable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PacketRoutable" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.OneWayBindingElement.PacketRoutable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パケット ルーティングが有効かどうかを示す値を取得または設定します。</summary>
+        <value>
+          パケット ルーティングを有効にする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、変換するメッセージ レベルのプロトコルを使用できます必要に応じて、 `DuplexSessionChannel` / `RequestChannel` / `ReplyChannel`を一方向チャネルができ、変換されたチャネルからメッセージをルーティングできます。 このプロトコルの使用方法は、<xref:System.ServiceModel.Channels.OneWayBindingElement.PacketRoutable%2A> プロパティによって制御されます。  
+  
+ ときに、このプロパティは`true`、時に`DuplexSessionChannel`開始に使用する (たとえば、バッファー TCP や名前付きパイプ)、このクラスは、メッセージ ヘッダーを追加 (MustUnderstand =`false`セキュリティが有効になっている場合は署名) を意味ことを意味"パケット ルーティングこのチャネル"です。 アクセプタ側では、このプロパティが `true` であると、このクラスは、そのチャネルで受信した最初のメッセージでこのヘッダーを探します。 このヘッダーが存在しない場合、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] はそのチャネルをエラーにします。 ヘッダーが存在する場合は、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] が共有入力チャネルに新しいチャネルを通します。  
+  
+ (たとえば、TCP ストリーミングまたは HTTP) は、要求/応答チャネルに変換するときに、このプロパティは`true`要求がパケットをルーティングできることを通知するすべての要求にこのヘッダーを追加します。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)]あることを確認`SendRequest`返します`null`で応答し、`null`サーバーにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeChannelPoolSettings">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeChannelPoolSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeChannelPoolSettings() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.OneWayBindingElement.ShouldSerializeChannelPoolSettings" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このバインド要素に関連付けられたチャネル プールのプロパティをシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />チャネル プールの設定をシリアル化する必要があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy">
+      <MemberSignature Language="C#" Value="void IPolicyExportExtension.ExportPolicy (System.ServiceModel.Description.MetadataExporter exporter, System.ServiceModel.Description.PolicyConversionContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy(class System.ServiceModel.Description.MetadataExporter exporter, class System.ServiceModel.Description.PolicyConversionContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.OneWayBindingElement.System#ServiceModel#Description#IPolicyExportExtension#ExportPolicy(System.ServiceModel.Description.MetadataExporter,System.ServiceModel.Description.PolicyConversionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exporter" Type="System.ServiceModel.Description.MetadataExporter" />
+        <Parameter Name="context" Type="System.ServiceModel.Description.PolicyConversionContext" />
+      </Parameters>
+      <Docs>
+        <param name="exporter">エクスポート プロセスを変更するために使用できる <see cref="T:System.ServiceModel.Description.MetadataExporter" />。</param>
+        <param name="context">カスタム ポリシー アサーションの挿入に使用できる <see cref="T:System.ServiceModel.Description.PolicyConversionContext" />。</param>
+        <summary>一方向のバインド要素を表すカスタム ポリシー アサーションをエクスポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、バインディングに関連するステートメントを、特定のコントラクトによって公開される WSDL 情報に書き込みます。また、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] によって、バインディング スタック内にこのカスタム バインディング要素があることをクライアントに伝えるために使用されます。  
+  
+ このメソッドには、<xref:System.ServiceModel.Description.MetadataExporter> オブジェクトおよび <xref:System.ServiceModel.Description.PolicyConversionContext> オブジェクトの 2 つのパラメーターがあります。 <xref:System.ServiceModel.Description.PolicyConversionContext.GetBindingAssertions%2A>、<xref:System.ServiceModel.Description.PolicyConversionContext.GetMessageBindingAssertions%2A>、および <xref:System.ServiceModel.Description.PolicyConversionContext.GetOperationBindingAssertions%2A> の各メソッドを使用して、既にさまざまなスコープでエクスポートされているポリシー アサーションのコレクションを取得します。 次に、このメソッドを使用して、独自のポリシー アサーションを適切なコレクションに追加します。  
+  
+ <xref:System.ServiceModel.Description.PolicyConversionContext.Contract%2A> プロパティは、エクスポートされるエンドポイントの <xref:System.ServiceModel.Description.ContractDescription> を公開します。 これにより、このメソッドは、エクスポートされたポリシー アサーションを正しく特定できます。 たとえば、コード内のセキュリティ属性は、セキュリティ ポリシー アサーションを追加する必要がある場所を示す<xref:System.ServiceModel.Description.ContractDescription> に動作を追加できます。  
+  
+ カスタム ポリシー アサーションが WSDL 情報に結び付けられると、クライアントは、<xref:System.ServiceModel.Description.IPolicyImportExtension> インターフェイスを実装することによって、カスタム バインディング アサーションを検出し、インポートできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,139 @@
+<Type Name="SoapIncludeAttribute" FullName="System.Xml.Serialization.SoapIncludeAttribute">
+  <TypeSignature Language="C#" Value="public class SoapIncludeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapIncludeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.SoapIncludeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Method | System.AttributeTargets.Interface, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>により、<see cref="T:System.Xml.Serialization.XmlSerializer" />でエンコードされた SOAP XML をシリアル化またはとしてオブジェクトを逆シリアル化時に型を認識します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapIncludeAttribute>クラスが属するファミリ属性を制御する方法、 <xref:System.Xml.Serialization.XmlSerializer> 、シリアル化または逆シリアル化、エンコードされた SOAP XML としてオブジェクト。 結果の XML は、World Wide Web Consortium) (www.w3.org) ドキュメント、「簡易オブジェクト アクセス プロトコル (SOAP) 1.1」のセクション 5 に準拠します。 類似する属性の一覧については、次を参照してください。[でエンコードされた SOAP シリアル化を制御する属性](~/docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)です。  
+  
+ エンコードされた SOAP メッセージとしてオブジェクトをシリアル化、構築する必要があります、<xref:System.Xml.Serialization.XmlSerializer>を使用して、<xref:System.Xml.Serialization.XmlTypeMapping>で作成された、<xref:System.Xml.Serialization.SoapReflectionImporter.ImportTypeMapping%2A>のメソッド、<xref:System.Xml.Serialization.SoapReflectionImporter>クラスです。  
+  
+ 適用するときに、<xref:System.Xml.Serialization.SoapIncludeAttribute>を指定して、<xref:System.Type>派生クラスのです。 ときに、<xref:System.Xml.Serialization.XmlSerializer>基本型と派生クラスでは、両方を含むオブジェクトをシリアル化は両方のオブジェクトの種類を認識することができますし、します。  
+  
+ 使用することができます、 <xref:System.Xml.Serialization.SoapIncludeAttribute> Web サービス記述言語 (WSDL) で記述されているサービスの説明ドキュメントに派生クラスを使用します。 たとえば、メソッドから返された場合、 <xref:System.Object>、適用、<xref:System.Xml.Serialization.SoapIncludeAttribute>メソッドに返される実際の種類を指定します。  
+  
+ WSDL の詳細については、World Wide Web Consortium) (www.w3.org) 仕様、「Web サービス記述言語 (WSDL) 1.1」を参照してください。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、 <xref:System.Xml.Serialization.SoapIncludeAttribute> XML Web サービス メソッドを 2 回クリックします。 型のオブジェクトを返します`Vehicle`(基底クラス)。 <xref:System.Xml.Serialization.SoapIncludeAttribute>から派生したクラスのインスタンスを返す場合、メソッド、`Vehicle`クラスです。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapIncludeAttribute (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapIncludeAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトに含めるオブジェクトの型。</param>
+        <summary>指定された型を使用して、<see cref="T:System.Xml.Serialization.SoapIncludeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のインスタンスの適用、<xref:System.Xml.Serialization.SoapIncludeAttribute>フィールドまたは配列を返すか、オブジェクトのプロパティに、<xref:System.Collections.ArrayList>オブジェクト、または複数の型を返すことができるオブジェクトのコレクションを格納します。 設定、<xref:System.Xml.Serialization.SoapIncludeAttribute.Type%2A>フィールドまたはプロパティを含めるしたい各種類のプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、 <xref:System.Xml.Serialization.SoapIncludeAttribute> 2 回 XML Web サービス メソッドです。 型のオブジェクトを返します`Vehicle`(基底クラス)。 <xref:System.Xml.Serialization.SoapIncludeAttribute>から派生したクラスのインスタンスを返す場合、メソッド、`Vehicle`クラスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.SoapIncludeAttribute.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトを逆シリアル化またはシリアル化するときに使用するオブジェクトの種類を設定します。</summary>
+        <value>オブジェクトに含めるオブジェクトの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のインスタンスの適用、<xref:System.Xml.Serialization.SoapIncludeAttribute>フィールドまたは配列を返すか、オブジェクトのプロパティに、<xref:System.Collections.ArrayList>オブジェクト、または複数の型を返すことができるオブジェクトのコレクションを格納します。 設定、<xref:System.Xml.Serialization.SoapIncludeAttribute.Type%2A>フィールドまたはプロパティを含めるしたい各種類のプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、 <xref:System.Xml.Serialization.SoapIncludeAttribute> 2 回 XML Web サービス メソッドです。 型のオブジェクトを返します`Vehicle`(基底クラス)。 <xref:System.Xml.Serialization.SoapIncludeAttribute>から派生したクラスのインスタンスを返す場合、メソッド、`Vehicle`クラスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

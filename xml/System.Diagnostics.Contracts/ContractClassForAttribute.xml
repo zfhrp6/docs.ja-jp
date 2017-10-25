@@ -1,0 +1,116 @@
+<Type Name="ContractClassForAttribute" FullName="System.Diagnostics.Contracts.ContractClassForAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ContractClassForAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContractClassForAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Contracts.ContractClassForAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスが型のコントラクトであることを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性でマークされた型では、別の型のコード コントラクトを表します。 契約が適用される型は、コンス トラクターで指定されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Diagnostics.Contracts.ContractClassForAttribute>属性を別の型のコントラクトを指定します。 このコード例に示されている例の一部である、<xref:System.Diagnostics.Contracts.ContractClassAttribute>クラスです。  
+  
+ [!code-csharp[ContractExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/contractexample/cs/program.cs#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContractClassForAttribute (Type typeContractsAreFor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type typeContractsAreFor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.ContractClassForAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeContractsAreFor" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeContractsAreFor">現在のクラスの種類は、契約です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.Contracts.ContractClassForAttribute" />クラス、現在のクラスが、コントラクトの型を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例を使用する方法を示しています、<xref:System.Diagnostics.Contracts.ContractClassAttribute.%23ctor%2A>コンス トラクターを型のコントラクトが適用されるように指定する、`IArray`インターフェイスです。 このコード例に示されている例の一部である、<xref:System.Diagnostics.Contracts.ContractClassAttribute>クラスです。  
+  
+ [!code-csharp[ContractExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/contractexample/cs/program.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeContractsAreFor">
+      <MemberSignature Language="C#" Value="public Type TypeContractsAreFor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TypeContractsAreFor" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Contracts.ContractClassForAttribute.TypeContractsAreFor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコード コントラクトが対象の種類を取得します。</summary>
+        <value>このコントラクトに適用される型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,113 @@
+<Type Name="WebHttpSecurityElement" FullName="System.ServiceModel.Configuration.WebHttpSecurityElement">
+  <TypeSignature Language="C#" Value="public sealed class WebHttpSecurityElement : System.ServiceModel.Configuration.ServiceModelConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebHttpSecurityElement extends System.ServiceModel.Configuration.ServiceModelConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.WebHttpSecurityElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Configuration.ServiceModelConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>HTTP 要求を受信するエンドポイントを持つサービスのセキュリティを構成する XML 要素。 このクラスは継承できません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebHttpSecurityElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.WebHttpSecurityElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.WebHttpSecurityElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.WebHttpSecurityMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.WebHttpSecurityMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.WebHttpSecurityElement.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("mode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WebHttpSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本 HTTP サービスのセキュリティ モードを指定する XML 要素を取得します。</summary>
+        <value>トランスポート レベルのセキュリティをエンドポイントで使用するか、セキュリティを使用しないかを示す <see cref="T:System.ServiceModel.WebHttpSecurityMode" /> の値。 既定値は <see cref="F:System.ServiceModel.WebHttpSecurityMode.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.ServiceModel.WebHttpSecurity.Transport%2A> プロパティの設定が有効になるかどうかを決定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が有効な <see cref="T:System.ServiceModel.WebHttpSecurityMode" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.WebHttpSecurityElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transport">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.HttpTransportSecurityElement Transport { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.HttpTransportSecurityElement Transport" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.WebHttpSecurityElement.Transport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("transport")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.HttpTransportSecurityElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP 要求を受信するように構成されたサービス エンドポイントのトランスポート レベルのセキュリティ設定を示す XML 要素を取得します。</summary>
+        <value>トランスポート レベルのセキュリティ設定を指定する <see cref="T:System.ServiceModel.Configuration.WebHttpSecurityElement" />。 既定値の設定は、<see cref="P:System.ServiceModel.HttpTransportSecurity.ClientCredentialType" /> が <see cref="F:System.ServiceModel.HttpClientCredentialType.None" />、<see cref="P:System.ServiceModel.HttpTransportSecurity.ProxyCredentialType" /> が <see cref="F:System.ServiceModel.HttpProxyCredentialType.None" />、および <see cref="P:System.ServiceModel.HttpTransportSecurity.Realm" /> = "" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される <xref:System.ServiceModel.Configuration.WebHttpSecurityElement> オブジェクトを使用して、トランスポート セキュリティのパラメーターを設定します。 <xref:System.ServiceModel.WebHttpSecurityMode> は、<xref:System.ServiceModel.WebHttpSecurityMode.Transport> プロパティで指定される設定に対して <xref:System.ServiceModel.WebHttpSecurityMode.TransportCredentialOnly> または <xref:System.ServiceModel.WebHttpSecurity.Transport%2A> 値に設定して、サービス エンドポイントで有効にする必要があります。 この値は、構成または <xref:System.ServiceModel.WebHttpBinding.%23ctor%28System.ServiceModel.WebHttpSecurityMode%29> コンストラクターで設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

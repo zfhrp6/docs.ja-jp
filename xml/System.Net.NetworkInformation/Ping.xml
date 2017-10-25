@@ -1,0 +1,1876 @@
+<Type Name="Ping" FullName="System.Net.NetworkInformation.Ping">
+  <TypeSignature Language="C#" Value="public class Ping : System.ComponentModel.Component, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Ping extends System.ComponentModel.Component implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.Ping" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Ping</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.MonoTODO("IPv6 support is missing")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>により、アプリケーションがネットワーク経由でリモート コンピューターにアクセスするかどうかを確認します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを使用して、<xref:System.Net.NetworkInformation.Ping>クラスをリモート コンピューターが到達できるかどうかを検出します。  
+  
+ ネットワーク トポロジを決定できるかどうか<xref:System.Net.NetworkInformation.Ping>リモート ホストを正常に接続できます。 存在し、プロキシ、ネットワーク アドレス変換 (NAT) 装置、またはファイアウォールの構成を防ぐことができます<xref:System.Net.NetworkInformation.Ping>が成功します。 正常な<xref:System.Net.NetworkInformation.Ping>ことを示すだけ、リモート ネットワーク上にあるホスト以外の場合はリモート ホストで (Web サーバーなど) の上位レベル サービスの存在が保証されません。  
+  
+ このクラスは、Ping.exe コマンド ライン ツールと同様の機能を提供します。 <xref:System.Net.NetworkInformation.Ping.Send%2A>と<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドは、そのコンピューターからリモート コンピューターと ICMP エコー応答メッセージを待機するインターネット制御メッセージ プロトコル (ICMP) エコー要求メッセージを送信します。 ICMP メッセージの詳細については、RFC 792 で利用可能なを参照してください。 [http://www.ietf.org](http://www.ietf.org/)です。  
+  
+ 次の型を使用、<xref:System.Net.NetworkInformation.Ping>クラスし、後で詳しく説明します。  
+  
+|**型名**|**説明**|  
+|-------------------|---------------------|  
+|<xref:System.Net.NetworkInformation.IPStatus>|デバイスが ICMP エコー要求メッセージの結果を説明するステータス コードを定義します。|  
+|<xref:System.Net.NetworkInformation.PingOptions>|構成することや取得が何回要求パケットを制御する設定を転送することができますを使用できます (<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>)、断片化するかどうかと (<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A> )。|  
+|<xref:System.Net.NetworkInformation.PingReply>|ICMP エコー要求の結果が含まれています。|  
+|<xref:System.Net.NetworkInformation.PingException>|回復不能なエラーが発生した場合にスローされます。|  
+|<xref:System.Net.NetworkInformation.PingCompletedEventArgs>|関連付けられているデータを格納して<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベントは、いつ発生する、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>呼び出しが完了したかが取り消されます。|  
+|<xref:System.Net.NetworkInformation.PingCompletedEventHandler>|コールバック メソッドを提供するデリゲートが呼び出されるときに、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>呼び出しが完了するかは取り消されます。|  
+  
+ <xref:System.Net.NetworkInformation.Ping.Send%2A>と<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>で応答を返し、<xref:System.Net.NetworkInformation.PingReply>オブジェクト。 <xref:System.Net.NetworkInformation.PingReply.Status%2A?displayProperty=nameWithType>プロパティから返される、<xref:System.Net.NetworkInformation.IPStatus>要求の結果を示す値。  
+  
+ 要求を送信するときに、リモート コンピューターを指定する必要があります。 ホスト名の文字列、文字列の形式で IP アドレスを提供することによってこれを行う、または<xref:System.Net.IPAddress>オブジェクト。  
+  
+ 次の種類の情報を指定することもできます。  
+  
+-   要求に付随するデータ。 指定する`buffer`して、リモート ホストおよびネットワーク パスの最大転送単位を移動する特定のサイズのパケットに必要な時間を学習することができます。 (を参照してください、<xref:System.Net.NetworkInformation.Ping.Send%2A>または<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るオーバー ロード、`buffer`パラメーターです)。  
+  
+-   かどうか、ICMP エコー パケットの場合は、転送中に断片化されていることができます。 (を参照してください、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティおよび<xref:System.Net.NetworkInformation.Ping.Send%2A>または<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るオーバー ロード、`options`パラメーターです)。  
+  
+-   回数ルーティング ノードなど、ルーターまたはゲートウェイ、パケットを転送できる変換先のコンピューターに到達したまたは破棄されます。 (を参照してください<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>と<xref:System.Net.NetworkInformation.Ping.Send%2A>または<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るオーバー ロード、`options`パラメーターです)。  
+  
+-   内部で応答を受け取る必要がある制限時間。 (を参照してください、<xref:System.Net.NetworkInformation.Ping.Send%2A>または<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るオーバー ロード、`timeout`パラメーター。  
+  
+ <xref:System.Net.NetworkInformation.Ping>クラスは、要求を送信するための同期および非同期のメソッドを提供します。 場合は、アプリケーションは、応答を待機中にブロックする必要がありますを使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッド; これらのメソッドは同期的です。 場合は、アプリケーションをブロックしないでくださいを使用して、非同期<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドです。 呼び出し<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>スレッド プールから自動的に割り当てられている独自のスレッドで実行します。 場合は、非同期操作の完了が発生、<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベント。 アプリケーションを使用して、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>に対して呼び出されるメソッドを指定するデリゲート<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベント。 追加する必要があります、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>を呼び出す前にイベントのデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>です。 デリゲートのメソッドは受信、<xref:System.Net.NetworkInformation.PingCompletedEventArgs>オブジェクトを含む、<xref:System.Net.NetworkInformation.PingReply>の結果を記述するオブジェクト、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を呼び出します。  
+  
+ 同じインスタンスを使用することはできません、<xref:System.Net.NetworkInformation.Ping>クラスで複数の同時 ICMP エコー要求を生成します。 呼び出す<xref:System.Net.NetworkInformation.Ping.Send%2A>中に、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>コールが進行中か、呼び出し元が<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>複数回以前のすべての呼び出しの原因が完了する前に、<xref:System.InvalidOperationException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.NetworkInformation.Ping>クラスが同期的に処理します。  
+  
+ [!code-cpp[NCLPingSync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclPingSync/CPP/syncping.cpp#1)]
+ [!code-csharp[NCLPingSync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclPingSync/CS/syncping.cs#1)]  
+  
+ 次のコード例では、使用方法を示します、<xref:System.Net.NetworkInformation.Ping>クラス非同期的にします。  
+  
+ [!code-cpp[NCLPingASync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclPingAsync/CPP/asyncping.cpp#1)]
+ [!code-csharp[NCLPingASync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclPingAsync/CS/asyncping.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Ping ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.NetworkInformation.Ping" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例で、<xref:System.Net.NetworkInformation.Ping>インスタンス。 完全な例で使用できる、<xref:System.Net.NetworkInformation.Ping>クラスの概要です。  
+  
+ [!code-cpp[NCLPingAsync#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NclPingAsync/CPP/asyncping.cpp#2)]
+ [!code-csharp[NCLPingAsync#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NclPingAsync/CS/asyncping.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Net.NetworkInformation.Ping" /> オブジェクトによって使用されているアンマネージ リソースを解放します。オプションとして、マネージ リソースを破棄することもできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.ComponentModel.Component.Finalize%2A>メソッドです。 パブリック`Dispose()`メソッドを呼び出して、保護された<xref:System.Net.NetworkInformation.Ping.Dispose%2A>メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.ComponentModel.Component.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターは`true`、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Net.NetworkInformation.Ping>オブジェクトが参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPingCompleted">
+      <MemberSignature Language="C#" Value="protected void OnPingCompleted (System.Net.NetworkInformation.PingCompletedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnPingCompleted(class System.Net.NetworkInformation.PingCompletedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.OnPingCompleted(System.Net.NetworkInformation.PingCompletedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Net.NetworkInformation.PingCompletedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Net.NetworkInformation.PingCompletedEventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary><see cref="E:System.Net.NetworkInformation.Ping.PingCompleted" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラス、<xref:System.Net.NetworkInformation.Ping>クラスに含まれているデータのログ記録などの他のタスクを実行するには、このメソッドをオーバーライドします`e`パラメーター。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Net.NetworkInformation.Ping.OnPingCompleted%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Net.NetworkInformation.Ping.OnPingCompleted(System.Net.NetworkInformation.PingCompletedEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Net.NetworkInformation.Ping.OnPingCompleted(System.Net.NetworkInformation.PingCompletedEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PingCompleted">
+      <MemberSignature Language="C#" Value="public event System.Net.NetworkInformation.PingCompletedEventHandler PingCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Net.NetworkInformation.PingCompletedEventHandler PingCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Net.NetworkInformation.Ping.PingCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PingCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信し、対応する ICMP エコー応答メッセージを受信する非同期操作が完了したかが取り消されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを使用して、<xref:System.Net.NetworkInformation.Ping.PingCompleted>のいずれかへの呼び出しで完了状態とデータに関する情報を取得するイベントが収集された、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドです。 <xref:System.Net.NetworkInformation.PingCompletedEventHandler>デリゲートの呼び出しは、バック メソッドが呼び出されたときに<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>このイベントを発生させます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、コールバック メソッドを指定することを示しています、<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベント。 完全な例で使用できる、<xref:System.Net.NetworkInformation.Ping>クラスの概要です。  
+  
+ [!code-cpp[NCLPingAsync#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NclPingAsync/CPP/asyncping.cpp#2)]
+ [!code-csharp[NCLPingAsync#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NclPingAsync/CS/asyncping.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Send">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>送受信するように、インターネット制御メッセージ プロトコル (ICMP) エコーのメッセージをリモート コンピューターに対応する ICMP エコー、リモート コンピューターからの応答メッセージ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかが返された IP アドレス、<xref:System.Net.NetworkInformation.Ping.Send%2A>オーバー ロードは、悪意のあるリモート コンピューターから取得できます。 これを使用してリモート コンピューターに接続できません。 DNS を使用すると、接続するコンピューターの IP アドレスを確認できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.PingReply Send (System.Net.IPAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.NetworkInformation.PingReply Send(class System.Net.IPAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.Send(System.Net.IPAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PingReply</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address"><see cref="T:System.Net.IPAddress" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。</param>
+        <summary>指定したコンピューターにインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信しようとしています。 <see cref="T:System.Net.IPAddress" />、およびそのコンピューターから対応する ICMP エコー応答メッセージを受信します。</summary>
+        <returns>A<see cref="T:System.Net.NetworkInformation.PingReply" />オブジェクトに関する情報を示す ICMP エコー応答メッセージを受信しましたが、1 つ、またはメッセージが受信されなかった場合に、失敗の理由を説明します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定されているホストに送信`address`32<xref:System.Byte>データ バッファーを ICMP エコー メッセージ。 このメソッドは、ICMP エコー応答メッセージを 5 秒を待ちます。 メソッドを返しますのかどうかは、その期間中に応答を受信ことはできない、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。 パケットまたはパケット フラグメント (断片化) する場合は、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-cpp[NCLPingSampler#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPingSampler/CPP/pingtest.cpp#3)]
+ [!code-csharp[NCLPingSampler#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPingSampler/CS/pingtest.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.PingReply Send (string hostNameOrAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.Send(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PingReply</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">A <see cref="T:System.String" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <summary>送受信するように、インターネット制御メッセージ プロトコル (ICMP) エコーのメッセージを指定したコンピューターに対応する ICMP エコー応答メッセージをそのコンピューターからです。</summary>
+        <returns>A<see cref="T:System.Net.NetworkInformation.PingReply" />メッセージが受信されない場合、受信したか、失敗の理由を提供する場合は ICMP エコー応答メッセージに関する情報を提供するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、32、送信<xref:System.Byte>データ バッファーを ICMP エコー メッセージ。 このメソッドは、ICMP エコー応答メッセージを 5 秒を待ちます。 メソッドを返しますのかどうかは、その期間中に応答を受信ことはできない、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。 パケットまたはパケット フラグメント (断片化) する場合は、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-cpp[NCLPingSampler#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPingSampler/CPP/pingtest.cpp#2)]
+ [!code-csharp[NCLPingSampler#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPingSampler/CS/pingtest.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /><see langword="null" />または空の文字列 ("") です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.PingReply Send (System.Net.IPAddress address, int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.NetworkInformation.PingReply Send(class System.Net.IPAddress address, int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.Send(System.Net.IPAddress,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PingReply</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="address"><see cref="T:System.Net.IPAddress" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。</param>
+        <param name="timeout"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <summary>指定したコンピューターに指定されたデータ バッファーでインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信しようとしています。 <see cref="T:System.Net.IPAddress" />、およびそのコンピューターから対応する ICMP エコー応答メッセージを受信します。 このメソッドでは、操作のタイムアウト値を指定することができます。</summary>
+        <returns>A<see cref="T:System.Net.NetworkInformation.PingReply" />を受信しましたが、1 つ、またはメッセージが受信されない場合、失敗の理由を提供する場合は、ICMP エコー応答メッセージに関する情報を提供するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。  
+  
+ パケットまたはパケット フラグメントは、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 呼び出すことを示す例については、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッドを参照してください、<xref:System.Net.NetworkInformation.Ping>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.PingReply Send (string hostNameOrAddress, int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress, int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.Send(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PingReply</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">A <see cref="T:System.String" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <param name="timeout"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <summary>送受信するように、インターネット制御メッセージ プロトコル (ICMP) エコーのメッセージを指定したコンピューターに対応する ICMP エコー応答メッセージをそのコンピューターからです。 このメソッドでは、操作のタイムアウト値を指定することができます。</summary>
+        <returns>A<see cref="T:System.Net.NetworkInformation.PingReply" />を受信しましたが、1 つ、またはメッセージが受信されない場合、失敗の理由を提供する場合は、ICMP エコー応答メッセージに関する情報を提供するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。 パケットまたはパケット フラグメント (断片化) する場合は、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 呼び出すことを示す例については、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッドを参照してください、<xref:System.Net.NetworkInformation.Ping>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /><see langword="null" />または空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.PingReply Send (System.Net.IPAddress address, int timeout, byte[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.NetworkInformation.PingReply Send(class System.Net.IPAddress address, int32 timeout, unsigned int8[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.Send(System.Net.IPAddress,System.Int32,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PingReply</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="address"><see cref="T:System.Net.IPAddress" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。</param>
+        <param name="timeout"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <param name="buffer">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <summary>指定したコンピューターに指定されたデータ バッファーでインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信しようとしています。 <see cref="T:System.Net.IPAddress" />、およびそのコンピューターから対応する ICMP エコー応答メッセージを受信します。 このオーバー ロードでは、操作のタイムアウト値を指定することができます。</summary>
+        <returns>A<see cref="T:System.Net.NetworkInformation.PingReply" />メッセージが受信されない場合、受信したか、失敗の理由を提供する場合は ICMP エコー応答メッセージに関する情報を提供するオブジェクト。 メソッドが返す<see cref="F:System.Net.NetworkInformation.IPStatus.PacketTooBig" />場合は、パケットは、最大転送単位 (MTU) を超えています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。  
+  
+ パケットまたはパケット フラグメントは、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出す方法を示します。  
+  
+ [!code-cpp[NCLPingSampler#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPingSampler/CPP/pingtest.cpp#6)]
+ [!code-csharp[NCLPingSampler#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPingSampler/CS/pingtest.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">サイズ<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="buffer" /><see langword="null" />、または<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.PingReply Send (string hostNameOrAddress, int timeout, byte[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress, int32 timeout, unsigned int8[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.Send(System.String,System.Int32,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PingReply</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">A <see cref="T:System.String" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <param name="timeout"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <param name="buffer">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <summary>送受信するように指定されたデータ バッファーをインターネット制御メッセージ プロトコル (ICMP) エコーのメッセージを指定したコンピューターに対応する ICMP エコー応答メッセージをそのコンピューターからです。 このオーバー ロードでは、操作のタイムアウト値を指定することができます。</summary>
+        <returns>A<see cref="T:System.Net.NetworkInformation.PingReply" />を受信しましたが、1 つ、またはメッセージが受信されない場合、失敗の理由を提供する場合は、ICMP エコー応答メッセージに関する情報を提供するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。  
+  
+ パケットまたはパケット フラグメントは、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.Send%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 呼び出す方法を示す例については、<xref:System.Net.NetworkInformation.Ping.Send%2A>オーバー ロードを参照してください、<xref:System.Net.NetworkInformation.Ping>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">サイズ<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /><see langword="null" />または空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="buffer" /><see langword="null" />、または<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.PingReply Send (System.Net.IPAddress address, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.NetworkInformation.PingReply Send(class System.Net.IPAddress address, int32 timeout, unsigned int8[] buffer, class System.Net.NetworkInformation.PingOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.Send(System.Net.IPAddress,System.Int32,System.Byte[],System.Net.NetworkInformation.PingOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PingReply</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="options" Type="System.Net.NetworkInformation.PingOptions" />
+      </Parameters>
+      <Docs>
+        <param name="address"><see cref="T:System.Net.IPAddress" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。</param>
+        <param name="timeout"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <param name="buffer">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <param name="options">A<see cref="T:System.Net.NetworkInformation.PingOptions" />断片化と ICMP エコー メッセージ パケットの有効期間の値を制御するために使用します。</param>
+        <summary>指定したコンピューターに指定されたデータ バッファーでインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信しようとしています。<see cref="T:System.Net.IPAddress" />し、そのコンピューターから対応する ICMP エコー応答メッセージを受信します。 このオーバー ロードでは、操作とコントロールの断片化のタイムアウト値と ICMP エコー メッセージ パケットの有効期間の値を指定することができます。</summary>
+        <returns>A<see cref="T:System.Net.NetworkInformation.PingReply" />メッセージが受信されない場合、受信したか、失敗の理由を提供する場合は ICMP エコー応答メッセージに関する情報を提供するオブジェクト。 メソッドが返す<see cref="F:System.Net.NetworkInformation.IPStatus.PacketTooBig" />場合は、パケットは、最大転送単位 (MTU) を超えています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ 場合、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティは`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。  
+  
+ 使用して、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを送信先に到達する前に ICMP エコー メッセージを転送できる時間の最大数を指定します。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出す方法を示します。  
+  
+ [!code-cpp[NCLPingSampler#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPingSampler/CPP/pingtest.cpp#5)]
+ [!code-csharp[NCLPingSampler#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPingSampler/CS/pingtest.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">サイズ<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="buffer" /><see langword="null" />、または<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Send">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.PingReply Send (string hostNameOrAddress, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.NetworkInformation.PingReply Send(string hostNameOrAddress, int32 timeout, unsigned int8[] buffer, class System.Net.NetworkInformation.PingOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.Send(System.String,System.Int32,System.Byte[],System.Net.NetworkInformation.PingOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.PingReply</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="options" Type="System.Net.NetworkInformation.PingOptions" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">A <see cref="T:System.String" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <param name="timeout"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <param name="buffer">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <param name="options">A<see cref="T:System.Net.NetworkInformation.PingOptions" />断片化と ICMP エコー メッセージ パケットの有効期間の値を制御するために使用します。</param>
+        <summary>送受信するように指定されたデータ バッファーをインターネット制御メッセージ プロトコル (ICMP) エコーのメッセージを指定したコンピューターに対応する ICMP エコー応答メッセージをそのコンピューターからです。 このオーバー ロードでは、操作とコントロールの断片化のタイムアウト値と ICMP パケットの有効期間の値を指定することができます。</summary>
+        <returns>A<see cref="T:System.Net.NetworkInformation.PingReply" />を受信しましたが、1 つ、またはメッセージが受信されない場合、失敗の理由を提供する場合は、ICMP エコー応答メッセージに関する情報を提供するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ 場合、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティは`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。  
+  
+ 使用して、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを送信先に到達する前に ICMP エコー メッセージを転送できる時間の最大数を指定します。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出す方法を示します。  
+  
+ [!code-cpp[NCLPingSampler#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPingSampler/CPP/pingtest.cpp#4)]
+ [!code-csharp[NCLPingSampler#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPingSampler/CS/pingtest.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">サイズ<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /><see langword="null" />か、長さ 0 の文字列。  
+  
+ または  
+  
+ <paramref name="buffer" /><see langword="null" />、または<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SendAsync">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>非同期的に、コンピューターにインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信し、そのコンピューターから対応する ICMP エコー応答メッセージの受信を試みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのメソッドでは、アプリケーションのメイン スレッドをブロックは行われません。 ICMP エコー応答メッセージを待機中にブロックする場合は、使用、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッドです。  
+  
+> [!NOTE]
+>  いずれかが返された IP アドレス、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドは、悪意のあるリモート コンピューターから取得できます。 これを使用してリモート コンピューターに接続できません。 DNS を使用すると、接続するコンピューターの IP アドレスを確認できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public void SendAsync (System.Net.IPAddress address, object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsync(class System.Net.IPAddress address, object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendAsync(System.Net.IPAddress,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="address"><see cref="T:System.Net.IPAddress" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。</param>
+        <param name="userToken">非同期操作の完了時に呼び出されるメソッドに渡されるオブジェクト。</param>
+        <summary>非同期的に、指定されたコンピューターにインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信しようとした<see cref="T:System.Net.IPAddress" />、およびそのコンピューターから対応する ICMP エコー応答メッセージを受信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドが非同期的にエコー メッセージを送信し、アプリケーション状態 (正常にまたは正常)、操作の完了を返します。 呼び出す、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドと、アプリケーションをブロックしないでください。 このメソッドに対する各呼び出しは、スレッド プールから自動的に割り当てられている個別のスレッドで実行します。 場合は、非同期操作の完了が発生、<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベント。 ときに呼び出されるメソッドを指定する<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>、イベントを発生させる、追加する必要があります、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>を呼び出す前にイベントのデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>です。 デリゲートのメソッドは受信、<xref:System.Net.NetworkInformation.PingCompletedEventArgs>オブジェクトを含む、<xref:System.Net.NetworkInformation.PingReply>の結果を記述するオブジェクト、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を呼び出します。 <xref:System.Net.NetworkInformation.PingCompletedEventArgs>のオブジェクトの継承、<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>プロパティです。 このプロパティが含まれています、`userToken`にオブジェクトが渡された、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>呼び出します。  
+  
+> [!NOTE]
+>  場合は、アプリケーションは、応答を待機中にブロックする必要がありますのいずれかを使用、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッド; これらのメソッドは同期的です。  
+  
+ このメソッドは、32、送信<xref:System.Byte>データ バッファーを ICMP エコー メッセージ。 このメソッドは、ICMP エコー応答メッセージを 5 秒を待ちます。 メソッドを返しますのかどうかは、その期間中に応答を受信ことはできない、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。  
+  
+ パケットまたはパケット フラグメントは、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 呼び出すことを示すコード例については、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドを参照してください、<xref:System.Net.NetworkInformation.Ping>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し、<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />メソッドが進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="address" />有効な IP アドレスではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public void SendAsync (string hostNameOrAddress, object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsync(string hostNameOrAddress, object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendAsync(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">A <see cref="T:System.String" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <param name="userToken">非同期操作の完了時に呼び出されるメソッドに渡されるオブジェクト。</param>
+        <summary>非同期的に、指定したコンピューターにインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信し、そのコンピューターから対応する ICMP エコー応答メッセージの受信を試みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドが非同期的にエコー メッセージを送信し、アプリケーション状態 (正常にまたは正常)、操作の完了を返します。 呼び出す、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドと、アプリケーションをブロックしないでください。 このメソッドに対する各呼び出しは、スレッド プールから自動的に割り当てられている個別のスレッドで実行します。 場合は、非同期操作の完了が発生、<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベント。 ときに呼び出されるメソッドを指定する<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>、イベントを発生させる、追加する必要があります、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>を呼び出す前にイベントのデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>です。 デリゲートのメソッドは受信、<xref:System.Net.NetworkInformation.PingCompletedEventArgs>オブジェクトを含む、<xref:System.Net.NetworkInformation.PingReply>の結果を記述するオブジェクト、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を呼び出します。 <xref:System.Net.NetworkInformation.PingCompletedEventArgs>のオブジェクトの継承、<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>プロパティです。 このプロパティが含まれています、`userToken`にオブジェクトが渡された、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>呼び出します。  
+  
+> [!NOTE]
+>  場合は、アプリケーションは、応答を待機中にブロックする必要がありますを使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッド; これらのメソッドは同期的です。  
+  
+ このメソッドは、32、送信<xref:System.Byte>データ バッファーを ICMP エコー メッセージ。 このメソッドは、ICMP エコー応答メッセージを 5 秒を待ちます。 その期間中に、応答を受信しなかった場合、メソッドを返しますと<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。  
+  
+ パケットまたはパケット フラグメントは、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 呼び出すことを示すコード例については、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドを参照してください、<xref:System.Net.NetworkInformation.Ping>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /><see langword="null" />または空の文字列 ("") です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="M:System.Net.NetworkInformation.Ping.SendAsync(System.String,System.Object)" />メソッドが進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="hostNameOrAddress" />有効な IP アドレスに解決できませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public void SendAsync (System.Net.IPAddress address, int timeout, object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsync(class System.Net.IPAddress address, int32 timeout, object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendAsync(System.Net.IPAddress,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="address"><see cref="T:System.Net.IPAddress" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。</param>
+        <param name="timeout"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <param name="userToken">非同期操作の完了時に呼び出されるメソッドに渡されるオブジェクト。</param>
+        <summary>非同期的に、指定されたコンピューターにインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信しようとした<see cref="T:System.Net.IPAddress" />、およびそのコンピューターから対応する ICMP エコー応答メッセージを受信します。 このオーバー ロードでは、操作のタイムアウト値を指定することができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドが非同期的にエコー メッセージを送信し、アプリケーション状態 (正常にまたは正常)、操作の完了を返します。 呼び出す、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドと、アプリケーションをブロックしないでください。 各呼び出しは、スレッド プールから自動的に割り当てられている個別のスレッドで実行されます。 場合は、非同期操作の完了が発生、<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベント。 アプリケーションを使用して、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>ときに呼び出されるメソッドを指定するデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>イベントを発生させます。 追加する必要があります、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>を呼び出す前にイベントのデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>です。 デリゲートのメソッドは受信、<xref:System.Net.NetworkInformation.PingCompletedEventArgs>オブジェクトを含む、<xref:System.Net.NetworkInformation.PingReply>の結果を記述するオブジェクト、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を呼び出します。 <xref:System.Net.NetworkInformation.PingCompletedEventArgs>のオブジェクトの継承、<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>プロパティです。 このプロパティが含まれています、`userToken`にオブジェクトが渡された、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>呼び出します。  
+  
+ 場合は、アプリケーションは、応答を待機中にブロックする必要がありますを使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッド; これらのメソッドは同期的です。  
+  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。 パケットまたはパケット フラグメント (断片化) する場合は、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 呼び出すことを示すコード例については、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>オーバー ロードを参照してください、<xref:System.Net.NetworkInformation.Ping>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="M:System.Net.NetworkInformation.Ping.SendAsync(System.Net.IPAddress,System.Int32,System.Byte[],System.Object)" />メソッドが進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="address" />有効な IP アドレスではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public void SendAsync (string hostNameOrAddress, int timeout, object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsync(string hostNameOrAddress, int32 timeout, object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendAsync(System.String,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">A <see cref="T:System.String" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <param name="timeout"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <param name="userToken">非同期操作の完了時に呼び出されるメソッドに渡されるオブジェクト。</param>
+        <summary>非同期的に、指定したコンピューターにインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信し、そのコンピューターから対応する ICMP エコー応答メッセージの受信を試みます。 このオーバー ロードでは、操作のタイムアウト値を指定することができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドが非同期的にエコー メッセージを送信し、アプリケーション状態 (正常にまたは正常)、操作の完了を返します。 呼び出す、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドと、アプリケーションをブロックしないでください。 各呼び出しは、スレッド プールから自動的に割り当てられている個別のスレッドで実行されます。 場合は、非同期操作の完了が発生、<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベント。 アプリケーションを使用して、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>ときに呼び出されるメソッドを指定するデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>イベントを発生させます。 追加する必要があります、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>を呼び出す前にイベントのデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>です。 デリゲートのメソッドは受信、<xref:System.Net.NetworkInformation.PingCompletedEventArgs>オブジェクトを含む、<xref:System.Net.NetworkInformation.PingReply>の結果を記述するオブジェクト、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を呼び出します。 <xref:System.Net.NetworkInformation.PingCompletedEventArgs>のオブジェクトの継承、<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>プロパティです。 このプロパティが含まれています、`userToken`にオブジェクトが渡された、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>呼び出します。  
+  
+ 場合は、アプリケーションは、応答を待機中にブロックする必要がありますを使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッド; これらのメソッドは同期的です。  
+  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。 パケットまたはパケット フラグメント (断片化) する場合は、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 呼び出すことを示すコード例については、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドを参照してください、<xref:System.Net.NetworkInformation.Ping>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /><see langword="null" />または空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="hostNameOrAddress" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="hostNameOrAddress" />有効な IP アドレスに解決できませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public void SendAsync (System.Net.IPAddress address, int timeout, byte[] buffer, object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsync(class System.Net.IPAddress address, int32 timeout, unsigned int8[] buffer, object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendAsync(System.Net.IPAddress,System.Int32,System.Byte[],System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="address"><see cref="T:System.Net.IPAddress" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。</param>
+        <param name="timeout"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <param name="buffer">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <param name="userToken">非同期操作の完了時に呼び出されるメソッドに渡されるオブジェクト。</param>
+        <summary>指定したコンピューターに指定されたデータ バッファーでインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信しようとするは非同期的に<see cref="T:System.Net.IPAddress" />、およびそのコンピューターから対応する ICMP エコー応答メッセージを受信します。 このオーバー ロードでは、操作のタイムアウト値を指定することができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、エコー メッセージを非同期的に送信し、アプリケーションに状態を返します (が正常にまたは正常)、操作の完了します。 呼び出す、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドと、アプリケーションをブロックしないでください。 各呼び出しは、スレッド プールから自動的に割り当てられている個別のスレッドで実行されます。 場合は、非同期操作の完了が発生、<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベント。 ときに呼び出されるメソッドを指定する<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>、イベントを発生させる、追加する必要があります、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>を呼び出す前にイベントのデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>です。 デリゲートのメソッドは受信、<xref:System.Net.NetworkInformation.PingCompletedEventArgs>オブジェクトを含む、<xref:System.Net.NetworkInformation.PingReply>の結果を記述するオブジェクト、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を呼び出します。 <xref:System.Net.NetworkInformation.PingCompletedEventArgs>のオブジェクトの継承、<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>プロパティです。 このプロパティが含まれています、`userToken`にオブジェクトが渡された、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>呼び出します。  
+  
+> [!NOTE]
+>  応答の待機中に、アプリケーションをブロックする場合を使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッド; これらのメソッドは同期的です。  
+  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。 パケットまたはパケット フラグメント (断片化) する場合は、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 呼び出すことを示すコード例については、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>オーバー ロードを参照してください、<xref:System.Net.NetworkInformation.Ping>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="address" />有効な IP アドレスではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ArgumentException">サイズ<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public void SendAsync (string hostNameOrAddress, int timeout, byte[] buffer, object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsync(string hostNameOrAddress, int32 timeout, unsigned int8[] buffer, object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendAsync(System.String,System.Int32,System.Byte[],System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">A <see cref="T:System.String" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <param name="timeout"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <param name="buffer">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <param name="userToken">非同期操作の完了時に呼び出されるメソッドに渡されるオブジェクト。</param>
+        <summary>非同期的に、指定したコンピューターに指定されたデータ バッファーをインターネット制御メッセージ プロトコル (ICMP) エコーのメッセージを送信し、そのコンピューターから対応する ICMP エコー応答メッセージの受信を試みます。 このオーバー ロードでは、操作のタイムアウト値を指定することができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドが非同期的にエコー メッセージを送信し、アプリケーション状態 (正常にまたは正常)、操作の完了を返します。 呼び出す、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドと、アプリケーションをブロックしないでください。 各呼び出しは、スレッド プールから自動的に割り当てられている個別のスレッドで実行されます。 場合は、非同期操作の完了が発生、<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベント。 アプリケーションを使用して、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>ときに呼び出されるメソッドを指定するデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>イベントを発生させます。 追加する必要があります、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>を呼び出す前にイベントのデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>です。 デリゲートのメソッドは受信、<xref:System.Net.NetworkInformation.PingCompletedEventArgs>オブジェクトを含む、<xref:System.Net.NetworkInformation.PingReply>の結果を記述するオブジェクト、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を呼び出します。 <xref:System.Net.NetworkInformation.PingCompletedEventArgs>のオブジェクトの継承、<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>プロパティです。 このプロパティが含まれています、`userToken`にオブジェクトが渡された、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>呼び出します。  
+  
+ 場合は、アプリケーションは、応答を待機中にブロックする必要がありますを使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッド; これらのメソッドは同期的です。  
+  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ このオーバー ロードは、パケットの断片化とパケット転送のための既定の設定を使用します。 ICMP エコー メッセージを含むパケット断片化できる転送中に合計パケット サイズを送信できる最大パケット サイズを超える場合、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでします。 断片化を防ぐためには、いずれかの操作を使用して、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るメソッド、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティを`true`です。 ときに<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>は`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。 パケットまたはパケット フラグメント (断片化) する場合は、破棄される前に、ルーティングのノードで 128 回転送されます。 この設定を変更するには、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を受け取るオーバー ロード、`options`パラメーター、およびセット、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを目的の値にします。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>オーバー ロードを参照してください、<xref:System.Net.NetworkInformation.Ping>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /><see langword="null" />または空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="hostNameOrAddress" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="hostNameOrAddress" />有効な IP アドレスに解決できませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ArgumentException">サイズ<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public void SendAsync (System.Net.IPAddress address, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options, object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsync(class System.Net.IPAddress address, int32 timeout, unsigned int8[] buffer, class System.Net.NetworkInformation.PingOptions options, object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendAsync(System.Net.IPAddress,System.Int32,System.Byte[],System.Net.NetworkInformation.PingOptions,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="options" Type="System.Net.NetworkInformation.PingOptions" />
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="address"><see cref="T:System.Net.IPAddress" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。</param>
+        <param name="timeout"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <param name="buffer">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <param name="options">A<see cref="T:System.Net.NetworkInformation.PingOptions" />断片化と ICMP エコー メッセージ パケットの有効期間の値を制御するために使用します。</param>
+        <param name="userToken">非同期操作の完了時に呼び出されるメソッドに渡されるオブジェクト。</param>
+        <summary>指定したコンピューターに指定されたデータ バッファーでインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信しようとするは非同期的に<see cref="T:System.Net.IPAddress" />、およびそのコンピューターから対応する ICMP エコー応答メッセージを受信します。 このオーバー ロードでは、操作とコントロールの断片化のタイムアウト値と ICMP エコー メッセージ パケットの有効期間の値を指定することができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドが非同期的にエコー メッセージを送信し、アプリケーション状態 (正常にまたは正常)、操作の完了を返します。 呼び出す、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドと、アプリケーションをブロックする必要があります。 各呼び出しは、スレッド プールから自動的に割り当てられている個別のスレッドで実行されます。 場合は、非同期操作の完了が発生、<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベント。 アプリケーションを使用して、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>ときに呼び出されるメソッドを指定するデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>イベントを発生させます。 追加する必要があります、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>を呼び出す前にイベントのデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>です。 デリゲートのメソッドは受信、<xref:System.Net.NetworkInformation.PingCompletedEventArgs>オブジェクトを含む、<xref:System.Net.NetworkInformation.PingReply>の結果を記述するオブジェクト、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を呼び出します。 <xref:System.Net.NetworkInformation.PingCompletedEventArgs>のオブジェクトの継承、<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>プロパティです。 このプロパティが含まれています、`userToken`にオブジェクトが渡された、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>呼び出します。  
+  
+ 応答の待機中に、アプリケーションをブロックする場合を使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッド; これらのメソッドは同期的です。  
+  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ 場合、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティは`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。  
+  
+ 使用して、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを送信先に到達する前に ICMP エコー メッセージを転送できる時間の最大数を指定します。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出す方法を示します。 コールバック メソッドの実装は、次を参照してください。、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッド オーバー ロードの使用例」セクション。  
+  
+ 次のコード例では、次の名前空間が必要です。  
+  
+ [!code-cpp[NCLPingSampler#0](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPingSampler/CPP/pingtest.cpp#0)]
+ [!code-csharp[NCLPingSampler#0](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPingSampler/CS/pingtest.cs#0)]  
+  
+ 次のコード例では、デバイスが ICMP エコー メッセージを非同期的に送信します。  
+  
+ [!code-cpp[NCLPingSampler#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLPingSampler/CPP/pingtest.cpp#7)]
+ [!code-csharp[NCLPingSampler#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLPingSampler/CS/pingtest.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="address" />有効な IP アドレスではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ArgumentException">サイズ<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsync">
+      <MemberSignature Language="C#" Value="public void SendAsync (string hostNameOrAddress, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options, object userToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsync(string hostNameOrAddress, int32 timeout, unsigned int8[] buffer, class System.Net.NetworkInformation.PingOptions options, object userToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendAsync(System.String,System.Int32,System.Byte[],System.Net.NetworkInformation.PingOptions,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="options" Type="System.Net.NetworkInformation.PingOptions" />
+        <Parameter Name="userToken" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">A <see cref="T:System.String" /> ICMP エコー メッセージの送信先となるコンピューターを識別します。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <param name="timeout">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <param name="buffer"><see cref="T:System.Int32" /> (エコー メッセージを送信する) の後のミリ秒単位の最大数を示す値を ICMP エコー応答メッセージを待機します。</param>
+        <param name="options">A<see cref="T:System.Net.NetworkInformation.PingOptions" />断片化と ICMP エコー メッセージ パケットの有効期間の値を制御するために使用します。</param>
+        <param name="userToken">非同期操作の完了時に呼び出されるメソッドに渡されるオブジェクト。</param>
+        <summary>非同期的に、指定したコンピューターに指定されたデータ バッファーをインターネット制御メッセージ プロトコル (ICMP) エコーのメッセージを送信し、そのコンピューターから対応する ICMP エコー応答メッセージの受信を試みます。 このオーバー ロードでは、操作とコントロールの断片化のタイムアウト値と ICMP パケットの有効期間の値を指定することができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドが非同期的にエコー メッセージを送信し、アプリケーション状態 (正常にまたは正常)、操作の完了を返します。 呼び出す、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>メソッドと、アプリケーションをブロックする必要があります。 各呼び出しは、スレッド プールから自動的に割り当てられている個別のスレッドで実行されます。 場合は、非同期操作の完了が発生、<xref:System.Net.NetworkInformation.Ping.PingCompleted>イベント。 アプリケーションを使用して、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>ときに呼び出されるメソッドを指定するデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>イベントを発生させます。 追加する必要があります、<xref:System.Net.NetworkInformation.PingCompletedEventHandler>を呼び出す前にイベントのデリゲート<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>です。 デリゲートのメソッドは受信、<xref:System.Net.NetworkInformation.PingCompletedEventArgs>オブジェクトを含む、<xref:System.Net.NetworkInformation.PingReply>の結果を記述するオブジェクト、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を呼び出します。 <xref:System.Net.NetworkInformation.PingCompletedEventArgs>のオブジェクトの継承、<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>プロパティです。 このプロパティが含まれています、`userToken`にオブジェクトが渡された、<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>呼び出します。  
+  
+ 場合は、アプリケーションは、応答を待機中にブロックする必要がありますを使用して、<xref:System.Net.NetworkInformation.Ping.Send%2A>メソッド; これらのメソッドは同期的です。  
+  
+ 指定された時間内に ICMP エコー応答メッセージが受信されない場合、`timeout`パラメーター、ICMP エコー失敗すると、および<xref:System.Net.NetworkInformation.PingReply.Status%2A>プロパティに設定されている<xref:System.Net.NetworkInformation.IPStatus.TimedOut>です。  
+  
+> [!NOTE]
+>  非常に小さな数値を指定するときに`timeout`、Ping の応答を受信できる場合でも`timeout`ミリ秒が経過しました。  
+  
+ 場合、<xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A>プロパティは`true`合計パケット サイズが送信できるは、ローカルおよびリモート コンピューター間のルーティング ノードのいずれかでパケットの最大サイズを超えると、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>です。  
+  
+ 使用して、<xref:System.Net.NetworkInformation.PingOptions.Ttl%2A>プロパティを送信先に到達する前に ICMP エコー メッセージを転送できる時間の最大数を指定します。 パケットは、送信先を指定した回数だけが転送される後に到達しなかった場合、パケットは破棄され、ICMP エコー要求は失敗します。 この場合、<xref:System.Net.NetworkInformation.PingReply.Status%2A>に設定されている<xref:System.Net.NetworkInformation.IPStatus.TtlExpired>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出す方法を示します。  
+  
+ [!code-cpp[NCLPingAsync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclPingAsync/CPP/asyncping.cpp#1)]
+ [!code-csharp[NCLPingAsync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclPingAsync/CS/asyncping.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /><see langword="null" />または空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendAsync" />が進行中です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="address" />IPv6 アドレスであり、ローカル コンピューターがオペレーティング システムを Windows 2000 より前に実行します。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="hostNameOrAddress" />有効な IP アドレスに解決できませんでした。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ArgumentException">サイズ<paramref name="buffer" />サイズは 65,500 バイトを超えています。</exception>
+        <permission cref="T:System.Net.NetworkInformation.NetworkInformationPermission">デバイスが ICMP エコー メッセージを送信します。  
+  
+ 関連する列挙。<see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Ping" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SendAsyncCancel">
+      <MemberSignature Language="C#" Value="public void SendAsyncCancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendAsyncCancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendAsyncCancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信するすべての保留中の非同期要求をキャンセルし、対応する ICMP エコー応答メッセージを受信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しを終了するには、このメソッドを呼び出す<xref:System.Net.NetworkInformation.Ping.SendAsync%2A>を完了していません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPingAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt; SendPingAsync (System.Net.IPAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.NetworkInformation.PingReply&gt; SendPingAsync(class System.Net.IPAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendPingAsync(System.Net.IPAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address">ICMP エコー メッセージの送信先となるコンピューターを識別する IP アドレスです。</param>
+        <summary>指定したコンピューターに指定されたデータ バッファーでインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信<see cref="T:System.Net.IPAddress" />、非同期操作としては、そのコンピューターから対応する ICMP エコー応答メッセージを送受信します。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>> オブジェクトは、ICMP パケットが送信されているし、応答が受信された後に完了します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendPingAsync" />が進行中です。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="address" />有効な IP アドレスではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPingAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt; SendPingAsync (string hostNameOrAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.NetworkInformation.PingReply&gt; SendPingAsync(string hostNameOrAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendPingAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">ICMP エコー メッセージの送信先となるコンピューター。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <summary>インターネット制御メッセージ プロトコル (ICMP) エコー メッセージ データを指定して、指定したコンピューターにバッファーし、非同期操作としては、そのコンピューターから対応する ICMP エコー応答メッセージを受信を送信します。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>> オブジェクトは、ICMP パケットが送信されているし、応答が受信された後に完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPingAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt; SendPingAsync (System.Net.IPAddress address, int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.NetworkInformation.PingReply&gt; SendPingAsync(class System.Net.IPAddress address, int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendPingAsync(System.Net.IPAddress,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="address">ICMP エコー メッセージの送信先となるコンピューターを識別する IP アドレスです。</param>
+        <param name="timeout">(エコー メッセージを送信する) までのミリ秒の最大数を ICMP エコー応答メッセージを待機します。</param>
+        <summary>指定したコンピューターに指定されたデータ バッファーでインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信<see cref="T:System.Net.IPAddress" />、非同期操作としては、そのコンピューターから対応する ICMP エコー応答メッセージを送受信します。 このオーバー ロードでは、操作のタイムアウト値を指定することができます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>> オブジェクトは、ICMP パケットが送信されているし、応答が受信された後に完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPingAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt; SendPingAsync (string hostNameOrAddress, int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.NetworkInformation.PingReply&gt; SendPingAsync(string hostNameOrAddress, int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendPingAsync(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">ICMP エコー メッセージの送信先となるコンピューター。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <param name="timeout">(エコー メッセージを送信する) までのミリ秒の最大数を ICMP エコー応答メッセージを待機します。</param>
+        <summary>インターネット制御メッセージ プロトコル (ICMP) エコー メッセージ データを指定して、指定したコンピューターにバッファーし、非同期操作としては、そのコンピューターから対応する ICMP エコー応答メッセージを受信を送信します。 このオーバー ロードでは、操作のタイムアウト値を指定することができます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>> オブジェクトは、ICMP パケットが送信されているし、応答が受信された後に完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPingAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt; SendPingAsync (System.Net.IPAddress address, int timeout, byte[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.NetworkInformation.PingReply&gt; SendPingAsync(class System.Net.IPAddress address, int32 timeout, unsigned int8[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendPingAsync(System.Net.IPAddress,System.Int32,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="address">ICMP エコー メッセージの送信先となるコンピューターを識別する IP アドレスです。</param>
+        <param name="timeout">(エコー メッセージを送信する) までのミリ秒の最大数を ICMP エコー応答メッセージを待機します。</param>
+        <param name="buffer">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <summary>指定したコンピューターに指定されたデータ バッファーでインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信<see cref="T:System.Net.IPAddress" />、非同期操作としては、そのコンピューターから対応する ICMP エコー応答メッセージを送受信します。 このオーバー ロードでは、送信を使用して、受信バッファーと、操作のタイムアウト値を指定することができます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>> オブジェクトは、ICMP パケットが送信されているし、応答が受信された後に完了します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendPingAsync" />が進行中です。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="address" />有効な IP アドレスではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ArgumentException">サイズ<paramref name="buffer" />65,500 バイトを超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPingAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt; SendPingAsync (string hostNameOrAddress, int timeout, byte[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.NetworkInformation.PingReply&gt; SendPingAsync(string hostNameOrAddress, int32 timeout, unsigned int8[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendPingAsync(System.String,System.Int32,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">ICMP エコー メッセージの送信先となるコンピューター。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <param name="timeout">(エコー メッセージを送信する) までのミリ秒の最大数を ICMP エコー応答メッセージを待機します。</param>
+        <param name="buffer">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <summary>インターネット制御メッセージ プロトコル (ICMP) エコー メッセージ データを指定して、指定したコンピューターにバッファーし、非同期操作としては、そのコンピューターから対応する ICMP エコー応答メッセージを受信を送信します。 このオーバー ロードでは、送信を使用して、受信バッファーと、操作のタイムアウト値を指定することができます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>> オブジェクトは、ICMP パケットが送信されているし、応答が受信された後に完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPingAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt; SendPingAsync (System.Net.IPAddress address, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.NetworkInformation.PingReply&gt; SendPingAsync(class System.Net.IPAddress address, int32 timeout, unsigned int8[] buffer, class System.Net.NetworkInformation.PingOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendPingAsync(System.Net.IPAddress,System.Int32,System.Byte[],System.Net.NetworkInformation.PingOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="options" Type="System.Net.NetworkInformation.PingOptions" />
+      </Parameters>
+      <Docs>
+        <param name="address">ICMP エコー メッセージの送信先となるコンピューターを識別する IP アドレスです。</param>
+        <param name="timeout">(エコー メッセージを送信する) までのミリ秒の最大数を ICMP エコー応答メッセージを待機します。</param>
+        <param name="buffer">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <param name="options">A<see cref="T:System.Net.NetworkInformation.PingOptions" />断片化と ICMP エコー メッセージ パケットの有効期間の値を制御するために使用します。</param>
+        <summary>指定したコンピューターに指定されたデータ バッファーでインターネット制御メッセージ プロトコル (ICMP) エコー メッセージを送信<see cref="T:System.Net.IPAddress" />、非同期操作としては、そのコンピューターから対応する ICMP エコー応答メッセージを送受信します。 このオーバー ロードを使用すると、操作は、受信、送信に使用するバッファーのタイムアウト値を指定し、断片化と ICMP エコー メッセージ パケットの有効期間の値を制御できます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>> オブジェクトは、ICMP パケットが送信されているし、応答が受信された後に完了します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">呼び出し<see cref="Overload:System.Net.NetworkInformation.Ping.SendPingAsync" />が進行中です。</exception>
+        <exception cref="T:System.Net.NetworkInformation.PingException">ICMP メッセージを送受信するときに例外がスローされました。 スローされた正確な例外の内部例外を参照してください。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="address" />有効な IP アドレスではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ArgumentException">サイズ<paramref name="buffer" />65,500 バイトを超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPingAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt; SendPingAsync (string hostNameOrAddress, int timeout, byte[] buffer, System.Net.NetworkInformation.PingOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.NetworkInformation.PingReply&gt; SendPingAsync(string hostNameOrAddress, int32 timeout, unsigned int8[] buffer, class System.Net.NetworkInformation.PingOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.SendPingAsync(System.String,System.Int32,System.Byte[],System.Net.NetworkInformation.PingOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Ping</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.NetworkInformation.PingReply&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="options" Type="System.Net.NetworkInformation.PingOptions" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">ICMP エコー メッセージの送信先となるコンピューター。 このパラメーターに指定された値には、ホスト名または IP アドレスの文字列形式を指定できます。</param>
+        <param name="timeout">(エコー メッセージを送信する) までのミリ秒の最大数を ICMP エコー応答メッセージを待機します。</param>
+        <param name="buffer">A <see cref="T:System.Byte" /> ICMP エコー メッセージと共に送信され、ICMP エコー応答メッセージで返されるデータを含む配列。 配列は 65,500 バイト以上を含めることはできません。</param>
+        <param name="options">A<see cref="T:System.Net.NetworkInformation.PingOptions" />断片化と ICMP エコー メッセージ パケットの有効期間の値を制御するために使用します。</param>
+        <summary>インターネット制御メッセージ プロトコル (ICMP) エコー メッセージ データを指定して、指定したコンピューターにバッファーし、非同期操作としては、そのコンピューターから対応する ICMP エコー応答メッセージを受信を送信します。 このオーバー ロードを使用すると、操作は、受信、送信に使用するバッファーのタイムアウト値を指定し、断片化と ICMP エコー メッセージ パケットの有効期間の値を制御できます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>> オブジェクトは、ICMP パケットが送信されているし、応答が受信された後に完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.Ping.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,214 @@
+<Type Name="LongValidatorAttribute" FullName="System.Configuration.LongValidatorAttribute">
+  <TypeSignature Language="C#" Value="public sealed class LongValidatorAttribute : System.Configuration.ConfigurationValidatorAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LongValidatorAttribute extends System.Configuration.ConfigurationValidatorAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.LongValidatorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationValidatorAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>宣言によって構成プロパティ、長整数の検証を実行する .NET Framework に指示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Configuration.LongValidatorAttribute>構成プロパティを装飾する属性。 これは、.NET Framework を使用してプロパティを検証するように指示する、<xref:System.Configuration.LongValidator>オブジェクトし、の装飾のパラメーターの値を渡します。  
+  
+ 適用することができます、<xref:System.Configuration.LongValidatorAttribute>属性のプロパティの型のみです。  
+  
+   
+  
+## Examples  
+ 次の例は、カスタムのプロパティを装飾する方法を示します<xref:System.Configuration.ConfigurationSection>オブジェクトを使用して、<xref:System.Configuration.LongValidatorAttribute>属性。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#7)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LongValidatorAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.LongValidatorAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.LongValidatorAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性付きのモデルでこのコンス トラクターを使用すると、関連するプロパティに割り当てられた値が長整数型であることを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExcludeRange">
+      <MemberSignature Language="C#" Value="public bool ExcludeRange { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExcludeRange" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.LongValidatorAttribute.ExcludeRange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を含めるかによって定義された範囲の整数を除外するかどうかを示す値、<see cref="P:System.Configuration.LongValidatorAttribute.MinValue" />と<see cref="P:System.Configuration.LongValidatorAttribute.MaxValue" />プロパティの値。</summary>
+        <value>
+          <see langword="true" />場合は、値を除外する必要があります。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 範囲が含まれますが、<xref:System.Configuration.LongValidatorAttribute.MinValue%2A>と<xref:System.Configuration.LongValidatorAttribute.MaxValue%2A>プロパティの値。 ときに、<xref:System.Configuration.LongValidatorAttribute.ExcludeRange%2A>プロパティの値が`false`、許可されている値は、範囲外です。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.IntegerValidatorAttribute.ExcludeRange%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#7)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxValue">
+      <MemberSignature Language="C#" Value="public long MaxValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.LongValidatorAttribute.MaxValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティに許容される最大値を設定します。</summary>
+        <value>許可される最大値を示す long 整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.LongValidatorAttribute.MaxValue%2A>プロパティ値の許容範囲に含まれます。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.LongValidatorAttribute.MaxValue%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#7)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値より小さい<see cref="P:System.Configuration.LongValidatorAttribute.MinValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MinValue">
+      <MemberSignature Language="C#" Value="public long MinValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MinValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.LongValidatorAttribute.MinValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティに許容される最小値を設定します。</summary>
+        <value>指定できる最小値を示す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.LongValidatorAttribute.MinValue%2A>プロパティ値の許容範囲に含まれます。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.LongValidatorAttribute.MinValue%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationValidatorAttributes#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/CS/ConfigurationValidatorAttributes.cs#7)]
+ [!code-vb[System.Configuration.ConfigurationValidatorAttributes#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationValidatorAttributes/VB/ConfigurationValidatorAttributes.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値がより大きい<see cref="P:System.Configuration.LongValidatorAttribute.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatorInstance">
+      <MemberSignature Language="C#" Value="public override System.Configuration.ConfigurationValidatorBase ValidatorInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationValidatorBase ValidatorInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.LongValidatorAttribute.ValidatorInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationValidatorBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得、<see cref="T:System.Configuration.LongValidator" />クラスです。</summary>
+        <value><see cref="T:System.Configuration.ConfigurationValidatorBase" />バリデーターのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Configuration.LongValidatorAttribute.ValidatorInstance%2A>プロパティの値の文字列の検証を呼び出すことにより実行をその<xref:System.Configuration.LongValidator.Validate%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

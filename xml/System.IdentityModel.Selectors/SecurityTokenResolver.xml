@@ -1,0 +1,393 @@
+<Type Name="SecurityTokenResolver" FullName="System.IdentityModel.Selectors.SecurityTokenResolver">
+  <TypeSignature Language="C#" Value="public abstract class SecurityTokenResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SecurityTokenResolver extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.SecurityTokenResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+  </Interfaces>
+  <Docs>
+    <summary>キー識別子またはキー識別句がある場合にセキュリティ トークンまたはキーを取得可能なユーティリティ クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenResolver> クラスを使用して、キー識別子またはキー識別句がある場合にキーまたはセキュリティ トークンを取得します。 <xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken%2A><xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken%2A>メソッドおよび メソッドは、キー識別子またはキー識別句が存在することを前提にしてトークンを取得します。 <xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveSecurityKey%2A><xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveSecurityKey%2A>メソッドおよび メソッドは、キー識別句が存在することを前提にしてキーを取得します。 取得に失敗すると、プレフィックス `Try` が付いたメソッドは `false` を返し、プレフィックス `Try` が付いていないメソッドは例外をスローします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SecurityTokenResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDefaultSecurityTokenResolver">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Selectors.SecurityTokenResolver CreateDefaultSecurityTokenResolver (System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityToken&gt; tokens, bool canMatchLocalId);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Selectors.SecurityTokenResolver CreateDefaultSecurityTokenResolver(class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Tokens.SecurityToken&gt; tokens, bool canMatchLocalId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.CreateDefaultSecurityTokenResolver(System.Collections.ObjectModel.ReadOnlyCollection{System.IdentityModel.Tokens.SecurityToken},System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenResolver</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokens" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityToken&gt;" />
+        <Parameter Name="canMatchLocalId" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="tokens">セキュリティ トークン リゾルバーでキー識別子およびキー識別句を解決する一連のセキュリティ トークンを格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</param>
+        <param name="canMatchLocalId">
+          SOAP メッセージ内の別の場所にあるセキュリティ キーを参照する <see langword="true" /> キー識別子を解決する場合は <see langword="&lt;SecurityTokenReference&gt;" />、それ以外の場合は  <see langword="false" />。</param>
+        <summary>指定されたセキュリティ トークンの既定のセキュリティ トークン リゾルバーを作成します。</summary>
+        <returns><see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> メソッドと <paramref name="tokens" /> メソッドでは、キー識別句をセキュリティ トークンに解決できない場合の動作が異なります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドから返されるセキュリティ トークン リゾルバーは、指定したセキュリティ トークンに対して <xref:System.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause%2A> メソッドおよび <xref:System.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause%2A> メソッドを使用してキー識別子およびキー識別句を解決します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCustomConfiguration">
+      <MemberSignature Language="C#" Value="public virtual void LoadCustomConfiguration (System.Xml.XmlNodeList nodelist);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LoadCustomConfiguration(class System.Xml.XmlNodeList nodelist) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.LoadCustomConfiguration(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodelist" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="nodelist">カスタム構成要素。</param>
+        <summary>派生クラスでオーバーライドされると、XML からカスタム構成を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、スロー、<xref:System.NotImplementedException>です。 派生クラスでの機能を提供するには、このメソッドをオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveSecurityKey">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityKey ResolveSecurityKey (System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IdentityModel.Tokens.SecurityKey ResolveSecurityKey(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveSecurityKey(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifierClause">A<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />のためキーを取得します。</param>
+        <summary>指定したキー識別句で参照されるキーを取得します。</summary>
+        <returns>指定したキー識別句で参照される <see cref="T:System.IdentityModel.Tokens.SecurityKey" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveSecurityKey%2A> メソッドと <xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveSecurityKey%2A> メソッドでは、キー識別句をキーに解決できない場合の動作が異なります。 <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveSecurityKey%2A> メソッドが `false` を返すのに対して、<xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveSecurityKey%2A> メソッドは例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyIdentifierClause" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="keyIdentifierClause" /> パラメーターに指定したキー識別句に対してキーを取得できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveToken">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityToken ResolveToken (System.IdentityModel.Tokens.SecurityKeyIdentifier keyIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IdentityModel.Tokens.SecurityToken ResolveToken(class System.IdentityModel.Tokens.SecurityKeyIdentifier keyIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken(System.IdentityModel.Tokens.SecurityKeyIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifier" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifier"><see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />セキュリティ トークンを作成します。</param>
+        <summary>指定のキー識別子に含まれるキー識別句のいずれかに一致するセキュリティ トークンを取得します。</summary>
+        <returns>指定したキー識別子を表す <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken%2A> メソッドと <xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken%2A> メソッドでは、キー識別子をセキュリティ トークンに解決できない場合の動作が異なります。 <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken%2A> メソッドが `false` を返すのに対して、<xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken%2A> メソッドは例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyIdentifier" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">指定されたキー識別子に対して作成できないセキュリティ トークン。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveToken">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityToken ResolveToken (System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IdentityModel.Tokens.SecurityToken ResolveToken(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifierClause"><see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />セキュリティ トークンを作成します。</param>
+        <summary>指定されたキー識別句に一致するセキュリティ トークンを取得します。</summary>
+        <returns>指定したキー識別句を表す <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken%2A> メソッドと <xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken%2A> メソッドでは、キー識別句をセキュリティ トークンに解決できない場合の動作が異なります。 <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken%2A> メソッドが `false` を返すのに対して、<xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken%2A> メソッドは例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveSecurityKey">
+      <MemberSignature Language="C#" Value="public bool TryResolveSecurityKey (System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause, out System.IdentityModel.Tokens.SecurityKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryResolveSecurityKey(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause, [out] class System.IdentityModel.Tokens.SecurityKey&amp; key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveSecurityKey(System.IdentityModel.Tokens.SecurityKeyIdentifierClause,System.IdentityModel.Tokens.SecurityKey@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+        <Parameter Name="key" Type="System.IdentityModel.Tokens.SecurityKey&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifierClause">A<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />のためキーを取得します。</param>
+        <param name="key">このメソッドが戻ると、指定のキー識別句内で参照されたキーを含む <see cref="T:System.IdentityModel.Tokens.SecurityKey" /> が含まれます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定したキー識別句で参照されるキーの取得を試みます。</summary>
+        <returns>
+          指定のキー識別句に対してキーを取得できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveSecurityKey%2A> メソッドと <xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveSecurityKey%2A> メソッドでは、キー識別句をキーに解決できない場合の動作が異なります。 <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveSecurityKey%2A> メソッドが `false` を返すのに対して、<xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveSecurityKey%2A> メソッドは例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyIdentifierClause" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveSecurityKeyCore">
+      <MemberSignature Language="C#" Value="protected abstract bool TryResolveSecurityKeyCore (System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause, out System.IdentityModel.Tokens.SecurityKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool TryResolveSecurityKeyCore(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause, [out] class System.IdentityModel.Tokens.SecurityKey&amp; key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveSecurityKeyCore(System.IdentityModel.Tokens.SecurityKeyIdentifierClause,System.IdentityModel.Tokens.SecurityKey@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+        <Parameter Name="key" Type="System.IdentityModel.Tokens.SecurityKey&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifierClause">A<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />のためキーを取得します。</param>
+        <param name="key">このメソッドが戻ると、指定のキー識別句内で参照されたキーを含む <see cref="T:System.IdentityModel.Tokens.SecurityKey" /> が含まれます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定したキー識別句で参照されるキーの取得を試みます。</summary>
+        <returns>
+          指定のキー識別句に対してキーを取得できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveSecurityKeyCore%2A> メソッドは、<xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveSecurityKey%2A> メソッドおよび <xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveSecurityKey%2A> メソッドにより呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveToken">
+      <MemberSignature Language="C#" Value="public bool TryResolveToken (System.IdentityModel.Tokens.SecurityKeyIdentifier keyIdentifier, out System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryResolveToken(class System.IdentityModel.Tokens.SecurityKeyIdentifier keyIdentifier, [out] class System.IdentityModel.Tokens.SecurityToken&amp; token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken(System.IdentityModel.Tokens.SecurityKeyIdentifier,System.IdentityModel.Tokens.SecurityToken@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifier" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifier"><see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />セキュリティ トークンを作成します。</param>
+        <param name="token">このメソッドが戻ると、指定のキー識別子を表す <see cref="T:System.IdentityModel.Tokens.SecurityToken" /> が含まれます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定のキー識別子に含まれるキー識別句のいずれかに一致するセキュリティ トークンの取得を試みます。</summary>
+        <returns>
+          指定のキー識別子に対してセキュリティ トークンを取得できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken%2A> メソッドと <xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken%2A> メソッドでは、キー識別子をセキュリティ トークンに解決できない場合の動作が異なります。 <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken%2A> メソッドが `false` を返すのに対して、<xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken%2A> メソッドは例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyIdentifier" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveToken">
+      <MemberSignature Language="C#" Value="public bool TryResolveToken (System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause, out System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryResolveToken(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause, [out] class System.IdentityModel.Tokens.SecurityToken&amp; token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken(System.IdentityModel.Tokens.SecurityKeyIdentifierClause,System.IdentityModel.Tokens.SecurityToken@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifierClause"><see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />セキュリティ トークンを作成します。</param>
+        <param name="token">このメソッドが戻ると、指定のキー識別句を表す <see cref="T:System.IdentityModel.Tokens.SecurityToken" /> が含まれます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定されたキー識別句に一致するセキュリティ トークンの取得を試みます。</summary>
+        <returns>
+          指定のキー識別句に対してセキュリティ トークンを取得できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken%2A> メソッドと <xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken%2A> メソッドでは、キー識別句をセキュリティ トークンに解決できない場合の動作が異なります。 <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken%2A> メソッドが `false` を返すのに対して、<xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken%2A> メソッドは例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyIdentifierClause" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveTokenCore">
+      <MemberSignature Language="C#" Value="protected abstract bool TryResolveTokenCore (System.IdentityModel.Tokens.SecurityKeyIdentifier keyIdentifier, out System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool TryResolveTokenCore(class System.IdentityModel.Tokens.SecurityKeyIdentifier keyIdentifier, [out] class System.IdentityModel.Tokens.SecurityToken&amp; token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveTokenCore(System.IdentityModel.Tokens.SecurityKeyIdentifier,System.IdentityModel.Tokens.SecurityToken@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifier" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifier"><see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />セキュリティ トークンを作成します。</param>
+        <param name="token">このメソッドが戻ると、指定のキー識別子を表す <see cref="T:System.IdentityModel.Tokens.SecurityToken" /> が含まれます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>派生クラスでオーバーライドされると、指定のキー識別子に含まれる 1 つ以上のキー識別句に一致するセキュリティ トークンの取得を試みます。</summary>
+        <returns>
+          指定のキー識別子に対してセキュリティ トークンを取得できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveTokenCore%2A> メソッドは、<xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken%2A> メソッドおよび <xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken%2A> メソッドにより呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveTokenCore">
+      <MemberSignature Language="C#" Value="protected abstract bool TryResolveTokenCore (System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause, out System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool TryResolveTokenCore(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause, [out] class System.IdentityModel.Tokens.SecurityToken&amp; token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveTokenCore(System.IdentityModel.Tokens.SecurityKeyIdentifierClause,System.IdentityModel.Tokens.SecurityToken@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifierClause"><see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />セキュリティ トークンを作成します。</param>
+        <param name="token">このメソッドが戻ると、指定のキー識別句を表す <see cref="T:System.IdentityModel.Tokens.SecurityToken" /> が含まれます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>派生クラスでオーバーライドされると、指定したキー識別句に一致するセキュリティ トークンの解決を試みます。</summary>
+        <returns>
+          指定のキー識別句に対してセキュリティ トークンを取得できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveTokenCore%2A> メソッドは、<xref:System.IdentityModel.Selectors.SecurityTokenResolver.TryResolveToken%2A> メソッドおよび <xref:System.IdentityModel.Selectors.SecurityTokenResolver.ResolveToken%2A> メソッドにより呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

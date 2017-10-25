@@ -1,0 +1,251 @@
+<Type Name="WebReferenceOptions" FullName="System.Web.Services.Description.WebReferenceOptions">
+  <TypeSignature Language="C#" Value="public class WebReferenceOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebReferenceOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.WebReferenceOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlRoot("webReferenceOptions", Namespace="http://microsoft.com/webReference/")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlType("webReferenceOptions", Namespace="http://microsoft.com/webReference/")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Services.Description.WebReferenceOptions" />クラスは XML テキスト ファイルで指定されたコードの生成オプションを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebReferenceOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReferenceOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.WebReferenceOptions" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeGenerationOptions">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.CodeGenerationOptions CodeGenerationOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Serialization.CodeGenerationOptions CodeGenerationOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReferenceOptions.CodeGenerationOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("codeGenerationOptions")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.CodeGenerationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Xml.Serialization.CodeGenerationOptions" />これに関連付けられている<see cref="T:System.Web.Services.Description.WebReferenceOptions" />です。</summary>
+        <value>この <see cref="T:System.Xml.Serialization.CodeGenerationOptions" /> に関連付けられている <see cref="T:System.Web.Services.Description.WebReferenceOptions" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public static System.Web.Services.Description.WebReferenceOptions Read (System.IO.Stream stream, System.Xml.Schema.ValidationEventHandler validationEventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Services.Description.WebReferenceOptions Read(class System.IO.Stream stream, class System.Xml.Schema.ValidationEventHandler validationEventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReferenceOptions.Read(System.IO.Stream,System.Xml.Schema.ValidationEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.WebReferenceOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="validationEventHandler" Type="System.Xml.Schema.ValidationEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" />コード生成オプションを格納しています。</param>
+        <param name="validationEventHandler"><see cref="T:System.Xml.Schema.ValidationEventHandler" />の新しいインスタンスに関連付ける<see cref="T:System.Web.Services.Description.WebReferenceOptions" />です。</param>
+        <summary>新しいインスタンスを返します<see cref="T:System.Web.Services.Description.WebReferenceOptions" />指定したストリームで説明するコードの生成オプションに基づいています。</summary>
+        <returns>新しいインスタンス<see cref="T:System.Web.Services.Description.WebReferenceOptions" />指定したストリームで説明するコードの生成オプションに基づいています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public static System.Web.Services.Description.WebReferenceOptions Read (System.IO.TextReader reader, System.Xml.Schema.ValidationEventHandler validationEventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Services.Description.WebReferenceOptions Read(class System.IO.TextReader reader, class System.Xml.Schema.ValidationEventHandler validationEventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReferenceOptions.Read(System.IO.TextReader,System.Xml.Schema.ValidationEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.WebReferenceOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.TextReader" />
+        <Parameter Name="validationEventHandler" Type="System.Xml.Schema.ValidationEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.IO.TextReader" />コード生成オプションを格納しています。</param>
+        <param name="validationEventHandler"><see cref="T:System.Xml.Schema.ValidationEventHandler" />の新しいインスタンスに関連付ける<see cref="T:System.Web.Services.Description.WebReferenceOptions" />です。</param>
+        <summary>新しいインスタンスを返します<see cref="T:System.Web.Services.Description.WebReferenceOptions" />コード生成オプションを指定した説明に基づく<see cref="T:System.IO.TextReader" />です。</summary>
+        <returns>新しいインスタンスを<see cref="T:System.Web.Services.Description.WebReferenceOptions" />コード生成オプションを指定した説明に基づく<see cref="T:System.IO.TextReader" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public static System.Web.Services.Description.WebReferenceOptions Read (System.Xml.XmlReader xmlReader, System.Xml.Schema.ValidationEventHandler validationEventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Services.Description.WebReferenceOptions Read(class System.Xml.XmlReader xmlReader, class System.Xml.Schema.ValidationEventHandler validationEventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.WebReferenceOptions.Read(System.Xml.XmlReader,System.Xml.Schema.ValidationEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.WebReferenceOptions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="validationEventHandler" Type="System.Xml.Schema.ValidationEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="xmlReader"><see cref="T:System.Xml.XmlReader" />コード生成オプションを格納しています。</param>
+        <param name="validationEventHandler"><see cref="T:System.Xml.Schema.ValidationEventHandler" />の新しいインスタンスに関連付ける<see cref="T:System.Web.Services.Description.WebReferenceOptions" />です。</param>
+        <summary>新しいインスタンスを返します<see cref="T:System.Web.Services.Description.WebReferenceOptions" />コード生成オプションを指定した説明に基づく<see cref="T:System.Xml.XmlReader" />です。</summary>
+        <returns>新しいインスタンスを<see cref="T:System.Web.Services.Description.WebReferenceOptions" />コード生成オプションを指定した説明に基づく<see cref="T:System.Xml.XmlReader" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlSchema Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Xml.Schema.XmlSchema Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReferenceOptions.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Xml.Schema.XmlSchema" /> に関連付けられている <see cref="T:System.Web.Services.Description.WebReferenceOptions" /> を取得します。</summary>
+        <value>この <see cref="T:System.Xml.Schema.XmlSchema" /> に関連付けられている <see cref="T:System.Web.Services.Description.WebReferenceOptions" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaImporterExtensions">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection SchemaImporterExtensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection SchemaImporterExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReferenceOptions.SchemaImporterExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlArray("schemaImporterExtensions")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlArrayItem("type")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.Specialized.StringCollection" />に関連付けられたスキーマ インポーターの拡張機能を表す<see cref="T:System.Web.Services.Description.WebReferenceOptions" />です。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.StringCollection" />に関連付けられたスキーマ インポーターの拡張機能を表す<see cref="T:System.Web.Services.Description.WebReferenceOptions" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescriptionImportStyle Style { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Description.ServiceDescriptionImportStyle Style" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReferenceOptions.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("style")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionImportStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.Services.Description.ServiceDescriptionImportStyle" />これに関連付けられている<see cref="T:System.Web.Services.Description.WebReferenceOptions" />です。</summary>
+        <value>この <see cref="T:System.Web.Services.Description.ServiceDescriptionImportStyle" /> に関連付けられている <see cref="T:System.Web.Services.Description.WebReferenceOptions" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetNamespace">
+      <MemberSignature Language="C#" Value="public const string TargetNamespace;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string TargetNamespace" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.WebReferenceOptions.TargetNamespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>A<see cref="T:System.String" />のターゲット名前空間を格納している、<see cref="T:System.Web.Services.Description.WebReferenceOptions" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbose">
+      <MemberSignature Language="C#" Value="public bool Verbose { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Verbose" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.WebReferenceOptions.Verbose" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("verbose")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Boolean" />詳細な警告メッセージが、クライアント プロキシまたはサーバーのスタブをコンパイルするときに生成されるかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />詳細な警告メッセージが、クライアント プロキシまたはサーバー スタブ; のコンパイル時に生成される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

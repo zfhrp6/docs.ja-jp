@@ -1,0 +1,613 @@
+<Type Name="ScrollBarRenderer" FullName="System.Windows.Forms.ScrollBarRenderer">
+  <TypeSignature Language="C#" Value="public sealed class ScrollBarRenderer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ScrollBarRenderer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ScrollBarRenderer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Visual スタイルを使用してスクロール バー コントロールを表示するために使用されるメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ScrollBarRenderer>クラスのセットを提供`static`オペレーティング システムの現在の visual スタイルのスクロール バー コントロールを表示するために使用できるメソッドです。 コントロールのレンダリングとは、コントロールのユーザー インターフェイスを描画することを意味します。 これは、現在の visual スタイルの外観を持つカスタム コントロールを描画する場合に便利です。 スクロール バーを描画するには、このクラスでメソッドの組み合わせを使用して、スクロール バーの各部分を表示するためにします。  
+  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルがアプリケーション ウィンドウのクライアント領域に適用されている場合、このクラスのメソッドには、現在の visual スタイルのスクロール バーが描画されます。 それ以外の場合、このクラスのメソッドがスローされます、<xref:System.InvalidOperationException>です。 このクラスのメンバーを使用できるかどうかを判断するのには、値を確認することができます、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティです。  
+  
+ このクラスの機能をラップする、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer?displayProperty=nameWithType>によって公開されている要素のいずれかに設定されている、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar?displayProperty=nameWithType>クラスです。 詳細については、次を参照してください。 [Visual スタイルを使用しているコントロールのレンダリング](~/docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するカスタム コントロールを作成する方法を示しています、<xref:System.Windows.Forms.ScrollBarRenderer>をマウスのクリックに応答するスクロール バーを描画するメソッド。  
+  
+ [!code-cpp[System.Windows.Forms.ScrollBarRenderer#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/cpp/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.ScrollBarRenderer#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.ScrollBarRenderer#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/VB/form1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DrawArrowButton">
+      <MemberSignature Language="C#" Value="public static void DrawArrowButton (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ScrollBarArrowButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawArrowButton(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ScrollBarArrowButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.DrawArrowButton(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ScrollBarArrowButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarArrowButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />スクロール バーの矢印を描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />スクロール矢印の境界を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarArrowButtonState" />スクロール矢印の表示状態を指定する値。</param>
+        <summary>Visual スタイルを使用してスクロール矢印を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ScrollBarRenderer.DrawArrowButton%2A>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>メソッド状態を描画する矢印、マウス ポインターの場所によって決まります。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ScrollBarRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawHorizontalThumb">
+      <MemberSignature Language="C#" Value="public static void DrawHorizontalThumb (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ScrollBarState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawHorizontalThumb(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ScrollBarState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.DrawHorizontalThumb(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ScrollBarState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />スクロール ボックスを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />スクロール ボックスの境界を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarState" />スクロール ボックスの表示状態を指定する値。</param>
+        <summary>Visual スタイルで水平方向のスクロール ボックス (つまみとも呼ばれます) を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ScrollBarRenderer.DrawHorizontalThumb%2A>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>マウス ポインターの場所によって決まります状態でスクロール ボックスを描画するメソッド。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ScrollBarRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawHorizontalThumbGrip">
+      <MemberSignature Language="C#" Value="public static void DrawHorizontalThumbGrip (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ScrollBarState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawHorizontalThumbGrip(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ScrollBarState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.DrawHorizontalThumbGrip(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ScrollBarState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />スクロール ボックスのグリップを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />スクロール ボックスのグリップの境界を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarState" />スクロール ボックスのグリップの表示状態を指定する値。</param>
+        <summary>Visual スタイルで水平方向のスクロール ボックス (つまみとも呼ばれます) のグリップを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ScrollBarRenderer.DrawHorizontalThumbGrip%2A>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>マウス ポインターの場所によって決まります状態でスクロール ボックスのグリップを描画するメソッド。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ScrollBarRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawLeftHorizontalTrack">
+      <MemberSignature Language="C#" Value="public static void DrawLeftHorizontalTrack (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ScrollBarState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawLeftHorizontalTrack(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ScrollBarState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.DrawLeftHorizontalTrack(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ScrollBarState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />スクロール バーのトラックを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />スクロール バーのトラックの境界を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarState" />スクロール バーの表示状態を指定する値を追跡します。</param>
+        <summary>Visual スタイルで水平スクロール バーのトラックを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ScrollBarRenderer.DrawLeftHorizontalTrack%2A>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>押された状態で、スクロール バーの左側にあるを描画するメソッドを追跡します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ScrollBarRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawLowerVerticalTrack">
+      <MemberSignature Language="C#" Value="public static void DrawLowerVerticalTrack (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ScrollBarState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawLowerVerticalTrack(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ScrollBarState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.DrawLowerVerticalTrack(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ScrollBarState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />スクロール バーのトラックを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />スクロール バーのトラックの境界を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarState" />スクロール バーの表示状態を指定する値を追跡します。</param>
+        <summary>Visual スタイルで垂直スクロール バーのトラックを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRightHorizontalTrack">
+      <MemberSignature Language="C#" Value="public static void DrawRightHorizontalTrack (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ScrollBarState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawRightHorizontalTrack(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ScrollBarState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.DrawRightHorizontalTrack(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ScrollBarState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />スクロール バーのトラックを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />スクロール バーのトラックの境界を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarState" />スクロール バーの表示状態を指定する値を追跡します。</param>
+        <summary>Visual スタイルで水平スクロール バーのトラックを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ScrollBarRenderer.DrawRightHorizontalTrack%2A>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>スクロール バーのトラックを描画するメソッド。このコード例に示されている例の一部である、<xref:System.Windows.Forms.ScrollBarRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawSizeBox">
+      <MemberSignature Language="C#" Value="public static void DrawSizeBox (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ScrollBarSizeBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawSizeBox(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ScrollBarSizeBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.DrawSizeBox(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ScrollBarSizeBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarSizeBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />サイズ変更ハンドルを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />サイズ変更ハンドルの境界を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarSizeBoxState" />サイズ変更ハンドルの表示状態を指定する値。</param>
+        <summary>スクロール バーが visual スタイルとサイズ変更ハンドルを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawUpperVerticalTrack">
+      <MemberSignature Language="C#" Value="public static void DrawUpperVerticalTrack (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ScrollBarState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawUpperVerticalTrack(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ScrollBarState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.DrawUpperVerticalTrack(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ScrollBarState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />スクロール バーのトラックを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />スクロール バーのトラックの境界を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarState" />スクロール バーの表示状態を指定する値を追跡します。</param>
+        <summary>Visual スタイルで垂直スクロール バーのトラックを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawVerticalThumb">
+      <MemberSignature Language="C#" Value="public static void DrawVerticalThumb (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ScrollBarState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawVerticalThumb(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ScrollBarState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.DrawVerticalThumb(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ScrollBarState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />スクロール ボックスを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />スクロール ボックスの境界を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarState" />スクロール ボックスの表示状態を指定する値。</param>
+        <summary>Visual スタイルを垂直方向のスクロール ボックス (つまみとも呼ばれます) を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawVerticalThumbGrip">
+      <MemberSignature Language="C#" Value="public static void DrawVerticalThumbGrip (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ScrollBarState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawVerticalThumbGrip(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ScrollBarState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.DrawVerticalThumbGrip(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ScrollBarState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />スクロール ボックスのグリップを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />スクロール ボックスのグリップの境界を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarState" />スクロール ボックスのグリップの表示状態を指定する値。</param>
+        <summary>Visual スタイルを垂直方向のスクロール ボックス (つまみとも呼ばれます) のグリップを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSizeBoxSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size GetSizeBoxSize (System.Drawing.Graphics g, System.Windows.Forms.VisualStyles.ScrollBarState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size GetSizeBoxSize(class System.Drawing.Graphics g, valuetype System.Windows.Forms.VisualStyles.ScrollBarState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.GetSizeBoxSize(System.Drawing.Graphics,System.Windows.Forms.VisualStyles.ScrollBarState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />この操作が使用されます。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarState" />サイズ変更ハンドルの表示状態を指定する値。</param>
+        <summary>サイズ変更ハンドルのサイズを返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />サイズ変更ハンドルのサイズを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイズ変更ハンドルのサイズは、オペレーティング システムの現在の visual スタイルによって決まります。  
+  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetThumbGripSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size GetThumbGripSize (System.Drawing.Graphics g, System.Windows.Forms.VisualStyles.ScrollBarState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size GetThumbGripSize(class System.Drawing.Graphics g, valuetype System.Windows.Forms.VisualStyles.ScrollBarState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollBarRenderer.GetThumbGripSize(System.Drawing.Graphics,System.Windows.Forms.VisualStyles.ScrollBarState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.ScrollBarState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />この操作が使用されます。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.ScrollBarState" />スクロール ボックスのグリップの表示状態を指定する値。</param>
+        <summary>スクロール ボックスのグリップのサイズを返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />スクロール ボックスのグリップのサイズを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スクロール ボックスのグリップのサイズは、オペレーティング システムの現在の visual スタイルによって決まります。  
+  
+ このメソッドを使用する前にする必要があることを確認する、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupported">
+      <MemberSignature Language="C#" Value="public static bool IsSupported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsSupported" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ScrollBarRenderer.IsSupported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.ScrollBarRenderer" />クラスは、visual スタイルを使用してスクロール バーを描画するために使用できます。</summary>
+        <value>
+          <see langword="true" />場合は、ユーザーには、オペレーティング システムで visual スタイルが有効にして、visual スタイル; のアプリケーション ウィンドウのクライアント領域に適用されます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが場合`false`、このクラスのメソッドがスローされます、<xref:System.InvalidOperationException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ScrollBarRenderer.IsSupported%2A>プロパティを使用するかどうかを決定する、<xref:System.Windows.Forms.ScrollBarRenderer>メソッドです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.ScrollBarRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ScrollBarRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ScrollBarRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

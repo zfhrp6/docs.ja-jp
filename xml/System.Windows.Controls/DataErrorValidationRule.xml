@@ -1,0 +1,85 @@
+<Type Name="DataErrorValidationRule" FullName="System.Windows.Controls.DataErrorValidationRule">
+  <TypeSignature Language="C#" Value="public sealed class DataErrorValidationRule : System.Windows.Controls.ValidationRule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataErrorValidationRule extends System.Windows.Controls.ValidationRule" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DataErrorValidationRule" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.ValidationRule</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ソース オブジェクトの <see cref="T:System.ComponentModel.IDataErrorInfo" /> 実装によって発生する、エラーをチェックする規則を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]データ バインディング モデルを使用すると、関連付ける<xref:System.Windows.Data.Binding.ValidationRules%2A>で、<xref:System.Windows.Data.Binding>オブジェクト。 ソース オブジェクトを実装する場合、<xref:System.ComponentModel.IDataErrorInfo>インターフェイス、組み込みの規則を使用する<xref:System.Windows.Controls.DataErrorValidationRule>によって発生したエラーをチェックする、<xref:System.ComponentModel.IDataErrorInfo>実装します。  
+  
+ 設定を別の構文、<xref:System.Windows.Controls.DataErrorValidationRule>は明示的に設定する、<xref:System.Windows.Data.Binding.ValidatesOnDataErrors%2A>プロパティを`true`上、<xref:System.Windows.Data.Binding>または<xref:System.Windows.Data.MultiBinding>オブジェクト。  
+  
+ 派生するクラスを作成することで、カスタム ルールを作成することができます<xref:System.Windows.Controls.ValidationRule>です。 詳細については、データの検証の詳細についてを参照してください[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)です。  
+  
+ <xref:System.Windows.Controls.DataErrorValidationRule>.NET Framework version 3.5 で導入されました。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataErrorValidationRule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataErrorValidationRule.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.DataErrorValidationRule" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.DataErrorValidationRule.%23ctor%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public override System.Windows.Controls.ValidationResult Validate (object value, System.Globalization.CultureInfo cultureInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Controls.ValidationResult Validate(object value, class System.Globalization.CultureInfo cultureInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataErrorValidationRule.Validate(System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ValidationResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">確認する値。</param>
+        <param name="cultureInfo">このルールで使用するカルチャ。</param>
+        <summary>値に対して検証チェックを実行します。</summary>
+        <returns>検証の結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.DataErrorValidationRule.Validate%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

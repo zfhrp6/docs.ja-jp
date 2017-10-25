@@ -1,0 +1,39 @@
+<Type Name="HwndSourceHook" FullName="System.Windows.Interop.HwndSourceHook">
+  <TypeSignature Language="C#" Value="public delegate IntPtr HwndSourceHook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HwndSourceHook extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.HwndSourceHook" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="hwnd" Type="System.IntPtr" />
+    <Parameter Name="msg" Type="System.Int32" />
+    <Parameter Name="wParam" Type="System.IntPtr" />
+    <Parameter Name="lParam" Type="System.IntPtr" />
+    <Parameter Name="handled" Type="System.Boolean&amp;" RefType="ref" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.IntPtr</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="hwnd">ウィンドウ ハンドル。</param>
+    <param name="msg">メッセージ ID。</param>
+    <param name="wParam">メッセージの wParam 値です。</param>
+    <param name="lParam">メッセージの lParam 値です。</param>
+    <param name="handled">メッセージが処理されたかどうかを示す値。 値に設定<see langword="true" />メッセージが処理される、それ以外の場合<see langword="false" />です。</param>
+    <summary>Win32 ウィンドウ メッセージを処理するメソッドを表します。</summary>
+    <returns>適切な戻り値は、特定のメッセージによって異なります。 メッセージのドキュメントの詳細を参照してください、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]処理されるメッセージ。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Interop.HwndSource.AddHook%2A>メッセージを受信するには、このハンドラーを登録します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

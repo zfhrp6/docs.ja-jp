@@ -1,0 +1,416 @@
+<Type Name="ColumnAttribute" FullName="System.Data.Linq.Mapping.ColumnAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ColumnAttribute : System.Data.Linq.Mapping.DataAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ColumnAttribute extends System.Data.Linq.Mapping.DataAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.Mapping.ColumnAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Linq.Mapping.DataAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスをデータベース テーブル内の列に関連付けます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、データベース テーブルの列を表すエンティティ クラスのメンバーを指定するために使用します。 この属性を適用するには任意のフィールドまたはプロパティに`public`、 `private`、または`internal`です。  
+  
+ 列を保存すると識別されたエンティティ クラスのメンバーだけとき[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]データベースに変更を保存します。  
+  
+ コンマを使用して、属性に対して複数のプロパティを区切ります。  
+  
+   
+  
+## Examples  
+  
+```vb  
+<Table(Name:="Employees")>  _  
+Public Class Employees  
+    Private _LastName As String  
+    ' …  
+    <Column(Storage:="_LastName", DbType:="NVarChar(20) NOT NULL", _  
+        CanBeNull:=false)> _  
+    Public Property LastName() As String  
+        Get  
+            Return Me._LastName  
+        End Get  
+        Set  
+            If ((Me._LastName = value) _  
+                = false) Then  
+                Me.OnPropertyChanging("LastName")  
+                Me._LastName = value  
+                Me.OnPropertyChanged("LastName")  
+            End If  
+        End Set  
+    End Property  
+End Class  
+```  
+  
+```csharp  
+[Table(Name="Employees")]  
+public class Employees  
+{  
+    private string _LastName;      
+    // …  
+    [Column(Storage="_LastName", DbType="NVarChar(20) NOT NULL",   
+        CanBeNull=false)]  
+    public string LastName  
+    {  
+        get  
+        {  
+            return this._LastName;  
+        }  
+        set  
+        {  
+            if ((this._LastName != value))  
+            {  
+                this.OnPropertyChanging("LastName");  
+                this._LastName = value;  
+                this.OnPropertyChanged("LastName");  
+            }  
+        }  
+    }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColumnAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Mapping.ColumnAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Linq.Mapping.ColumnAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSync">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.Mapping.AutoSync AutoSync { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Linq.Mapping.AutoSync AutoSync" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.ColumnAttribute.AutoSync" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.AutoSync</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Linq.Mapping.AutoSync" /> 列挙体を取得または設定します。</summary>
+        <value><see cref="T:System.Data.Linq.Mapping.AutoSync" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.ColumnAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/cs/northwind.cs#1)]
+ [!code-vb[System.Data.Linq.Mapping.ColumnAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/vb/northwind.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBeNull">
+      <MemberSignature Language="C#" Value="public bool CanBeNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanBeNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列が null 値を含めることができるかどうかを設定します。</summary>
+        <value>既定値 =<see langword="true" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を設定する場合`false`、対応する列のデータが null 以外であると見なされます。  
+  
+> [!NOTE]
+>  このプロパティが重複している、<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>利便性のためのプロパティです。 <xref:System.Data.Linq.DataContext.CreateDatabase%2A>のみ使用するメソッド、<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>プロパティです。 このため、列の null 値を含めることができるかどうかを指定する必要があります、<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>プロパティもします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.ColumnAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/cs/northwind.cs#2)]
+ [!code-vb[System.Data.Linq.Mapping.ColumnAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/vb/northwind.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbType">
+      <MemberSignature Language="C#" Value="public string DbType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DbType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.ColumnAttribute.DbType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータベース列の型を設定します。</summary>
+        <value>TRANSACT-SQL テーブル宣言内で列を定義する正確なテキストを指定する文字列値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、TRANSACT-SQL テーブル宣言内で列を定義する正確なテキストを指定します。 指定して、<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>プロパティを使用する場合にのみ<xref:System.Data.Linq.DataContext.CreateDatabase%2A>データベースのインスタンスを作成します。  
+  
+ 既定値の<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>メンバーの型から推論されます。 詳細については、次を参照してください。 [SQL-CLR 型マッピング](~/docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.ColumnAttribute#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/cs/northwind.cs#4)]
+ [!code-vb[System.Data.Linq.Mapping.ColumnAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/vb/northwind.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expression">
+      <MemberSignature Language="C#" Value="public string Expression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Expression" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.ColumnAttribute.Expression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列が、データベース内の計算列であるかどうかを設定します。</summary>
+        <value>既定値 = 空。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合は、このプロパティを使用して<xref:System.Data.Linq.DataContext.CreateDatabase%2A>として計算された値を含む列を定義します。  
+  
+ Sql として定義されている列を作成する場合など`InventoryVal AS UnitPrice * UnitsInStock`、次を使用して*式*文字列:`"UnitPrice * UnitsInStock"`です。  
+  
+> [!NOTE]
+>  [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] では、計算列は主キーとしてサポートされません。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.ColumnAttribute#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/cs/northwind.cs#5)]
+ [!code-vb[System.Data.Linq.Mapping.ColumnAttribute#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/vb/northwind.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDbGenerated">
+      <MemberSignature Language="C#" Value="public bool IsDbGenerated { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDbGenerated" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列には、データベースが自動生成の値が含まれるかどうかを設定します。</summary>
+        <value>既定値 =<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A>メンバーは、データの行が挿入され、メンバーは、後に使用後すぐに同期<xref:System.Data.Linq.DataContext.SubmitChanges%2A>が完了します。  
+  
+> [!NOTE]
+>  列が主キーの値を保持しを指定する場合<xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A>として`true`、追加することも必要があります、<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>プロパティを使用して、`IDENTITY`修飾子です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.ColumnAttribute#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/cs/northwind.cs#6)]
+ [!code-vb[System.Data.Linq.Mapping.ColumnAttribute#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/vb/northwind.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDiscriminator">
+      <MemberSignature Language="C#" Value="public bool IsDiscriminator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDiscriminator" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.ColumnAttribute.IsDiscriminator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の識別子の値が列に含まれるかどうか、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]継承階層です。</summary>
+        <value>既定値 =<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`true`、このプロパティは、継承階層の識別子の値を保持すると、クラスのメンバーを識別します。  
+  
+ このプロパティを設定することができます`true`でない場合、最上位に属している必要があります、2 つ以上のメンバーが階層内のクラスをマップします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.ColumnAttribute#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/cs/northwind.cs#7)]
+ [!code-vb[System.Data.Linq.Mapping.ColumnAttribute#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/vb/northwind.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrimaryKey">
+      <MemberSignature Language="C#" Value="public bool IsPrimaryKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrimaryKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.ColumnAttribute.IsPrimaryKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのクラスのメンバーは、テーブルの主キーの一部またはすべての列を表すかどうかを設定します。</summary>
+        <value>既定値 =<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンティティ クラスと仮定した場合、この属性を持つには、少なくとも 1 つのメンバーを指定する必要があり、主キーまたは一意のキーに対応するテーブルまたはビューにマップする必要があります。 この画面の指示を怠る[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]に読み取り専用データベースに変更を送信すると、クラスのインスタンスを考えてみます。  
+  
+ クラスの 1 つ以上のメンバーを指定するには、このプロパティを使用して、キーが関連付けられている列の合成と呼ばれます。  
+  
+> [!NOTE]
+>  [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] では、計算列は主キーとしてサポートされません。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.ColumnAttribute#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/cs/northwind.cs#8)]
+ [!code-vb[System.Data.Linq.Mapping.ColumnAttribute#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/vb/northwind.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVersion">
+      <MemberSignature Language="C#" Value="public bool IsVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.ColumnAttribute.IsVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメンバーの列の型がデータベースのタイムスタンプまたはバージョン番号であるかどうかを設定します。</summary>
+        <value>既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョン番号がインクリメントし、タイムスタンプ列が関連付けられている行が更新されるたびに更新します。 (このプロパティは、通知[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]を新しいバージョンであることを表示する列を更新する必要があります以外の場合は、更新を行ったユーザーなどの情報を記録するものではありません)。  
+  
+ 次に注意してくださいとき`IsVersion`が true:  
+  
+-   使用して<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>バージョン番号またはタイムスタンプ列を指定する正しい修飾子を指定します。 指定しない場合<xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]正しい修飾子を推測します。  
+  
+ バージョン番号がインクリメントし、タイムスタンプ列が関連付けられている行が更新されるたびに更新します。 持つメンバー`IsVersion=true`データ行が更新された後にすぐに同期されます。 新しい値は後に表示されます<xref:System.Data.Linq.DataContext.SubmitChanges%2A>が完了するとします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.ColumnAttribute#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/cs/northwind.cs#9)]
+ [!code-vb[System.Data.Linq.Mapping.ColumnAttribute#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/vb/northwind.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCheck">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.Mapping.UpdateCheck UpdateCheck { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Linq.Mapping.UpdateCheck UpdateCheck" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.UpdateCheck</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する方法[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]オプティミスティック同時実行の競合を検出します。</summary>
+        <value>既定値 =<see cref="F:System.Data.Linq.Mapping.UpdateCheck.Always" />がない限り、<see cref="P:System.Data.Linq.Mapping.ColumnAttribute.IsVersion" />は<see langword="true" />メンバーのです。  
+  
+ その他の値は<see cref="F:System.Data.Linq.Mapping.UpdateCheck.Never" />と<see cref="F:System.Data.Linq.Mapping.UpdateCheck.WhenChanged" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、次の 3 つの列挙型のいずれかの使用は、時に決定方法[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]同時実行の競合を検出します。  
+  
+ として設計されているメンバーがない場合`IsVersion=true`データベースの現在の状態を元のメンバーの値と比較します。  
+  
+ 次の列挙を使用できます。  
+  
+-   `Always`常にこの列を使用して、競合を検出します。  
+  
+-   `Never`競合検出に対してこの列を使用しないでください。  
+  
+-   `WhenChanged`メンバーは、アプリケーションによって変更された場合にのみ、この列を使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.Mapping.ColumnAttribute#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/cs/northwind.cs#10)]
+ [!code-vb[System.Data.Linq.Mapping.ColumnAttribute#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.Mapping.ColumnAttribute/vb/northwind.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

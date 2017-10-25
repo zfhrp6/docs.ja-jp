@@ -1,0 +1,219 @@
+<Type Name="GridViewUpdateEventArgs" FullName="System.Web.UI.WebControls.GridViewUpdateEventArgs">
+  <TypeSignature Language="C#" Value="public class GridViewUpdateEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GridViewUpdateEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.GridViewUpdateEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.GridView.RowUpdating" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.GridView>制御が発生し、<xref:System.Web.UI.WebControls.GridView.RowUpdating>イベント行の更新 ボタンをクリックすると、その前に、<xref:System.Web.UI.WebControls.GridView>コントロールは、行を更新します。 これにより、このイベントが発生するたびに、更新操作の取り消しなどのカスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ A<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs>オブジェクトが、現在の行のインデックスを確認したり、更新操作を取り消す必要があることを示すために、イベント処理メソッドに渡されます。 更新操作をキャンセルするには設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs>オブジェクトを`true`です。 操作することも、 <xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.Keys%2A>、 <xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.OldValues%2A>、および<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.NewValues%2A>コレクション、必要に応じて、値は、データ ソースに渡される前にします。 これらのコレクションを使用する一般的な方法では、データ ソースに格納する前に、ユーザーによって指定された値を HTML エンコードです。 これは、スクリプト インジェクション攻撃を防ぐのに役立ちます。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs>を参照してください、<xref:System.Web.UI.WebControls.GridViewSelectEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs>データ ソースを更新する前に、ユーザーによって提供されるすべての値を HTML エンコードするイベント ハンドラー メソッドに渡されるオブジェクト。  
+  
+ [!code-aspx-csharp[GridViewRowUpdating#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowUpdating/CS/gridviewrowupdatingcs.aspx#1)]
+ [!code-aspx-vb[GridViewRowUpdating#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowUpdating/VB/gridviewrowupdatingvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridViewUpdateEventArgs (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.GridViewUpdateEventArgs.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">更新された行のインデックス。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.GridViewUpdateEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs>クラスの指定した行のインデックスを使用します。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.RowIndex%2A>|含まれる値、`rowIndex`パラメーター。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewUpdateEventArgs.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新する行の主キーを表すフィールドの名前/値ペアのディクショナリを取得します。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.IOrderedDictionary" />を更新する行の主キーを表すフィールドの名前と値のペアを含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.GridView.DataKeyNames%2A>のプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロールの設定を使用して、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.Keys%2A>プロパティ (辞書) を更新する行の主キーの値にアクセスします。  
+  
+> [!NOTE]
+>  非キー フィールドの値にアクセスするには、使用、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.NewValues%2A>または<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.OldValues%2A>プロパティです。 <xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.NewValues%2A>プロパティには、更新された値が含まれています。 中に、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.OldValues%2A>プロパティには、元の値が含まれています。  
+  
+ <xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.Keys%2A>ディクショナリは、フィールドまたはグループで指定されたフィールドの名前/値ペアが設定されます、<xref:System.Web.UI.WebControls.GridView.DataKeyNames%2A>プロパティです。 別個のエントリが追加された複数のフィールドが主キーを形成する場合、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.Keys%2A>キー フィールドごとのディクショナリ。  
+  
+ キー フィールドの名前を確認するには<xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.DictionaryEntry?displayProperty=nameWithType>に含まれているオブジェクト、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.Keys%2A>ディクショナリ。 キー フィールドの値を確認するには<xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewDeleteEventArgs.Keys%2A>プロパティを更新する行のキー フィールドの値にアクセスします。 値は更新されたレコードのログ ファイルに書き込まれます。  
+  
+ [!code-aspx-csharp[GridViewUpdateEventArgsKeys#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewUpdateEventArgsKeys/CS/gridviewupdateeventargskeyscs.aspx#1)]
+ [!code-aspx-vb[GridViewUpdateEventArgsKeys#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewUpdateEventArgsKeys/VB/gridviewupdateeventargskeysvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary NewValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary NewValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewUpdateEventArgs.NewValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新する行のキー以外のフィールドの名前/値ペアの変更後の値を含むディクショナリを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.IOrderedDictionary" />を更新する行のキー以外のフィールドの名前/値ペアの変更後の値を含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.NewValues%2A>プロパティ (辞書) を更新する行で変更された非キー フィールドの値にアクセスします。  
+  
+> [!NOTE]
+>  このディクショナリには、主キー フィールドまたはフィールドが含まれていません。 主キー フィールドまたはフィールドの値にアクセスするには、使用、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.Keys%2A>プロパティです。 行の非キー フィールドの元の値にアクセスするには、使用、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.OldValues%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.NewValues%2A>プロパティは、行の改訂された非キー フィールドの名前/値ペアが設定されます。 別個のエントリを追加、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.NewValues%2A>行の場合は、各非キー フィールドのプロパティです。  
+  
+ エントリのフィールド名を確認するには<xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.DictionaryEntry?displayProperty=nameWithType>に含まれるオブジェクト、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.NewValues%2A>ディクショナリ。 エントリの値を確認するには<xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、 <xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.NewValues%2A> HTML でエンコードのすべての値が、データ ソースを更新する前に、ユーザーが指定するプロパティです。  
+  
+ [!code-aspx-csharp[GridViewRowUpdating#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowUpdating/CS/gridviewrowupdatingcs.aspx#1)]
+ [!code-aspx-vb[GridViewRowUpdating#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowUpdating/VB/gridviewrowupdatingvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary OldValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary OldValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewUpdateEventArgs.OldValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新する行の元のフィールドの名前と値のペアを含むディクショナリを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.IOrderedDictionary" />フィールドの名前と値の元の値を格納しているオブジェクトのペアを更新する行にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.OldValues%2A>プロパティ (辞書) を更新する行のフィールドの元の値にアクセスします。 このディクショナリには、キー フィールド以外の行のすべてのフィールドが含まれています。 キー フィールドが定義されている、<xref:System.Web.UI.WebControls.GridView.DataKeyNames%2A>のプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+> [!NOTE]
+>  使用して、行のキー フィールドにアクセスすることができます、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.Keys%2A>プロパティです。 行の非キー フィールドの改訂後の値にアクセスする、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.NewValues%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.OldValues%2A>プロパティは、行内のすべてのフィールドの名前/値ペアの元の値が設定されます。 別個のエントリを追加、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.OldValues%2A>行の各フィールドのプロパティです。  
+  
+ エントリのフィールド名を確認するには<xref:System.Collections.DictionaryEntry.Key%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.DictionaryEntry?displayProperty=nameWithType>に含まれるオブジェクト、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.OldValues%2A>ディクショナリ。 エントリの値を確認するには<xref:System.Collections.DictionaryEntry.Value%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.OldValues%2A>プロパティを更新する行のフィールドの元の値にアクセスします。 値は更新されたレコードのログ ファイルに書き込まれます。  
+  
+ [!code-aspx-csharp[GridViewUpdateEventArgsOldValues#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewUpdateEventArgsOldValues/CS/gridviewupdateeventargsoldvaluescs.aspx#1)]
+ [!code-aspx-vb[GridViewUpdateEventArgsOldValues#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewUpdateEventArgsOldValues/VB/gridviewupdateeventargsoldvaluesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewUpdateEventArgs.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新された行のインデックスを取得します。</summary>
+        <value>更新された行のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewUpdateEventArgs.RowIndex%2A>プロパティを更新された行のインデックスを確認します。 対応する行を取得する行のインデックスが使用される多くの場合、<xref:System.Web.UI.WebControls.GridView.Rows%2A>のコレクション、<xref:System.Web.UI.WebControls.GridView>コントロールで、行のプロパティにアクセスすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

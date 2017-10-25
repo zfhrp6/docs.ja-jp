@@ -1,0 +1,95 @@
+<Type Name="MenuEventHandler" FullName="System.Web.UI.WebControls.MenuEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void MenuEventHandler(object sender, MenuEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MenuEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.MenuEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.MenuEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.MenuEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.Menu.MenuItemClick" />イベントまたは<see cref="E:System.Web.UI.WebControls.Menu.MenuItemDataBound" />のイベント、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MenuEventHandler>クラスは、次の表にイベントを処理するメソッドを表すために使用します。  
+  
+|イベント|説明|  
+|-----------|-----------------|  
+|<xref:System.Web.UI.WebControls.Menu.MenuItemClick>|メニュー項目がクリックされたときに発生します。 このイベントは、同期するためによく使用、 <xref:System.Web.UI.WebControls.Menu>  ページで別のコントロールでのコントロールです。|  
+|<xref:System.Web.UI.WebControls.Menu.MenuItemDataBound>|メニュー項目がデータにバインドされている場合に発生します。 このイベントは通常使用でレンダリングされる前に、メニュー項目を変更する、<xref:System.Web.UI.WebControls.Menu>コントロール。|  
+  
+ <xref:System.Web.UI.WebControls.MenuEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuEventHandler>をプログラムでのイベント ハンドラーを登録するデリゲート、<xref:System.Web.UI.WebControls.Menu.MenuItemClick>のイベント、<xref:System.Web.UI.WebControls.Menu>コントロール。 この例を正しく動作する Web.sitemap をという名前のファイルに以下のサンプル サイト マップ データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuEventHandler/CS/menueventhandlercs.aspx#1)]
+ [!code-aspx-vb[MenuEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuEventHandler/VB/menueventhandlervb.aspx#1)]  
+  
+ 前の例のサンプル サイト マップ データを次に示します。  
+  
+ `<siteMap>`  
+  
+ `<siteMapNode title="Home"`  
+  
+ `description="Home">`  
+  
+ `<siteMapNode title="Music"`  
+  
+ `description="Music">`  
+  
+ `<siteMapNode title="Classical"`  
+  
+ `description="Classical"/>`  
+  
+ `<siteMapNode title="Rock"`  
+  
+ `description="Rock"/>`  
+  
+ `<siteMapNode title="Jazz"`  
+  
+ `description="Jazz"/>`  
+  
+ `</siteMapNode>`  
+  
+ `<siteMapNode title="Movies"`  
+  
+ `description="Movies">`  
+  
+ `<siteMapNode title="Action"`  
+  
+ `description="Action"/>`  
+  
+ `<siteMapNode title="Drama"`  
+  
+ `description="Drama"/>`  
+  
+ `<siteMapNode title="Musical"`  
+  
+ `description="Musical"/>`  
+  
+ `</siteMapNode>`  
+  
+ `</siteMapNode>`  
+  
+ `</siteMap>`  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

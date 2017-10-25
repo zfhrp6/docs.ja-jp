@@ -1,0 +1,235 @@
+<Type Name="ScrollBarEventArgs" FullName="System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs">
+  <TypeSignature Language="C#" Value="public class ScrollBarEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScrollBarEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パラメーターのオブジェクトとして使用される、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.AxisScrollBarClicked" />ルートの<see cref="T:System.Windows.Forms.DataVisualization.Charting.Chart" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs>としてクラスが公開されている、`e`内のパラメーター、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisScrollBarClicked>イベント。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs>クラスには、次のプロパティが含まれています。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.ChartArea%2A>取得に使用されるプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>のイベントが発生したオブジェクト。 <xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.Name>グラフ領域の名前を取得するプロパティ以外の他のグラフ領域のプロパティを設定することもできます。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.Axis%2A>取得に使用されるプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.Axis>を使用して、スクロール バーが属しているオブジェクト、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.AxisName%2A>プロパティです。 その他の<xref:System.Windows.Forms.DataVisualization.Charting.Axis>プロパティを設定することもできます。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.ButtonType%2A>プロパティで、エンドユーザーがクリックされたスクロール バーのボタンを取得するために使用します。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.IsHandled%2A>場合を決定するプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.Chart>コントロールでは、スクロール バーのボタンの既定の動作をキャンセルでコードの後に、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisScrollBarClicked>イベントの実行が完了します。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.MousePositionX%2A>プロパティをエンドユーザーには、スクロール バーの要素がクリックした時に、マウスのカーソルの X 位置を表します。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.MousePositionY%2A>プロパティをエンドユーザーには、スクロール バーの要素がクリックした時に、マウスのカーソルの Y 位置を表します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScrollBarEventArgs (System.Windows.Forms.DataVisualization.Charting.Axis axis, int x, int y, System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonType buttonType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataVisualization.Charting.Axis axis, int32 x, int32 y, valuetype System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonType buttonType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.#ctor(System.Windows.Forms.DataVisualization.Charting.Axis,System.Int32,System.Int32,System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="axis" Type="System.Windows.Forms.DataVisualization.Charting.Axis" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="buttonType" Type="System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonType" />
+      </Parameters>
+      <Docs>
+        <param name="axis"><see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" />スクロール バーを格納しています。</param>
+        <param name="x">マウス カーソルの X 位置。</param>
+        <param name="y">マウス カーソルの Y 位置。</param>
+        <param name="buttonType">ボタンの種類をクリックします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs" />指定した軸を持つクラス、マウスのカーソルとクリックされたボタンの種類の X と Y の位置。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Axis">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.Axis Axis { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.Axis Axis" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.Axis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.Axis</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" />にスクロール バーが属しているオブジェクト。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" />スクロール バーが属する軸を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisScrollBarClicked>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ このプロパティを使用することができます。  
+  
+-   軸の種類を決定 — X、Y または Y2、X2 — イベントが発生して、使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.AxisName%2A>プロパティです。  
+  
+-   取得し、軸のプロパティを設定します。<xref:System.Windows.Forms.DataVisualization.Charting.Axis.LineColor%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonType ButtonType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonType ButtonType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.ButtonType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドユーザーがクリックされたスクロール バー ボタンの種類を取得します。</summary>
+        <value>A <see cref="T:System.Windows.Forms.DataVisualization.Charting.ScrollBarButtonType" />  ボタンがクリックされたエンドユーザーのスクロール バーの種類を表す列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisScrollBarClicked>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクトし、エンドユーザーがクリックされたスクロール バーのボタンの種類を決定するために使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartArea">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.ChartArea ChartArea { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.ChartArea ChartArea" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.ChartArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.ChartArea</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />にスクロール バーが属しているオブジェクト。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisScrollBarClicked>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.ChartArea%2A>にアクセスすることによって、スクロール バーが属している、グラフ領域を決定するプロパティを使用できます、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.Name>プロパティです。 このプロパティを取得し、グラフ領域のプロパティの設定も使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHandled">
+      <MemberSignature Language="C#" Value="public bool IsHandled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsHandled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.IsHandled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または特定のスクロール バーのイベントの既定の動作をキャンセルするかどうかを示すフラグを設定します。</summary>
+        <value>
+          <see langword="true" />かどうか、イベントの既定の動作取り消す必要がある、それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisScrollBarClicked>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ このプロパティは、特定のスクロール バーのイベントに既定の動作を [キャンセル] を使用できます。  
+  
+ スクロール バーのボタンをクリックすると、ビューの既定の操作が発生します。  
+  
+ 次の一覧には、この既定の動作をまとめたものです。  
+  
+-   ユーザーは、リセット/拡大 ボタンをクリックすると、前のビューが表示されます。  
+  
+-   スクロール バーの背景をクリックした場合は、スクロールのつまみではなくそれ以外の場合と呼ばれるトラッカー — 大きなインクリメントまたはデクリメント スクロール バーの発生によって決定されるインクリメントまたはデクリメントのサイズで、<xref:System.Windows.Forms.DataVisualization.Charting.AxisScaleView.Size%2A>プロパティ。  
+  
+ これらの既定の動作をオフに設定、<xref:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.IsHandled%2A>プロパティを`true`でカスタム ロジックを提供すると、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisScrollBarClicked>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MousePositionX">
+      <MemberSignature Language="C#" Value="public int MousePositionX { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MousePositionX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.MousePositionX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時に、マウスのカーソルの X 位置を取得、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.AxisScrollBarClicked" />イベントが発生しました。</summary>
+        <value><see langword="integer" /> X マウス カーソルの位置を表す値です。 位置は 0, 0 されるグラフ イメージの左上隅をピクセル単位で表されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、エンドユーザーがスクロール バーの要素をクリックすると、X マウスの位置 (ピクセル単位) を取得します。 0, 0 の座標は、グラフの左上隅を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MousePositionY">
+      <MemberSignature Language="C#" Value="public int MousePositionY { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MousePositionY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.MousePositionY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時に、マウスのカーソルの Y 位置を取得、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.AxisScrollBarClicked" />イベントが発生しました。</summary>
+        <value><see langword="integer" /> Y のマウス カーソルの位置を表す値です。 位置は 0, 0 されるグラフ イメージの左上隅をピクセル単位で表されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、エンドユーザーがスクロール バーの要素をクリックすると、Y マウスの位置 (ピクセル単位) を取得します。 0, 0 の座標は、グラフの左上隅を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

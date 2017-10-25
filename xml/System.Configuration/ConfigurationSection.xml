@@ -1,0 +1,439 @@
+<Type Name="ConfigurationSection" FullName="System.Configuration.ConfigurationSection">
+  <TypeSignature Language="C#" Value="public abstract class ConfigurationSection : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ConfigurationSection extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成ファイル内のセクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Configuration.ConfigurationSection>カスタム セクション型を実装するクラス。 拡張、<xref:System.Configuration.ConfigurationSection>カスタム ハンドリングとカスタム構成セクションにプログラムでアクセスを提供するクラス。 方法については、カスタム構成セクションを使用して、参照してください[する方法: 作成するカスタム構成セクションを使用して ConfigurationSection](http://msdn.microsoft.com/library/febaca98-c727-4017-95ed-82e2fb6cf234)です。  
+  
+ セクションでは、その処理の種類を登録のエントリで、`configSections`要素。 例については、例」のセクションに示すように構成ファイルの抜粋を参照してください。  
+  
+> [!NOTE]
+>  構成設定を変更する、.NET Framework の以前のバージョンで使用された構成セクション ハンドラー プログラムでします。 すべての既定の構成セクションが拡張するクラスによって表されるよう、<xref:System.Configuration.ConfigurationSection>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、プログラムによってカスタム セクションを実装する方法を示します。  
+  
+ 実装して、属性付きのモデルを使用して実装されたカスタム セクションを使用する方法を示す完全な例を参照してください。<xref:System.Configuration.ConfigurationElement>です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSection/CS/CustomConfigurationSection.cs#1)]
+ [!code-vb[System.Configuration.ConfigurationSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSection/VB/CustomConfigurationSection.vb#1)]  
+  
+ 次の例は、前の例を適用する際に、構成ファイルの抜粋です。  
+  
+ `<?xml version="1.0" encoding="utf-8"?>`  
+  
+ `<configuration>`  
+  
+ `<configSections>`  
+  
+ `<section name="CustomSection" type="Samples.AspNet. CustomSection, CustomConfigurationSection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" allowDefinition="Everywhere" allowExeDefinition="MachineToApplication" restartOnExternalChanges="true" />`  
+  
+ `</configSections>`  
+  
+ `<CustomSection fileName="default.txt" maxUsers="1000" maxIdleTime="00:15:00" />`  
+  
+ `</configuration>`  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>カスタム構成セクションを作成するのには、プログラムまたは宣言 (属性付き) のコーディング モデルを使用できます。  
+  
+-   プログラムによるモデルです。 このモデルでは、各セクションの属性を取得またはその値を設定し、基になる内部プロパティ バッグに追加のプロパティを作成する必要があります<see cref="T:System.Configuration.ConfigurationElement" />基本クラスです。  
+  
+-   宣言型モデル。 属性付きのモデルとも呼ばれます。 この単純なモデルでは、プロパティを使用して、属性で修飾して、セクション属性を定義することができます。 これらの属性は、プロパティの型とその既定値は、ASP.NET 構成システムを指示します。 リフレクションでは、取得した、この情報では、ASP.NET 構成システムは、セクション プロパティ オブジェクトを作成し、必要な初期化を実行します。  
+  
+ <see cref="T:System.Configuration.Configuration" />クラスは、構成ファイルを編集するためのプログラムによるアクセスを使用できます。 これらのファイルの読み取りまたは書き込みを次のようにアクセスできます。  
+  
+-   読み取り。 使用する<see cref="M:System.Configuration.Configuration.GetSection(System.String)" />または<see cref="M:System.Configuration.Configuration.GetSectionGroup(System.String)" />構成情報を読み取れません。 ユーザーまたはプロセスを読み取るいる必要があります、次の権限に注意してください。  
+  
+    -   現在の構成階層レベルの構成ファイルに対する読み取り権限。  
+  
+    -   すべての親に対する権限の構成ファイルを読み取る。  
+  
+     アプリケーションでは、独自の構成を読み取り専用のアクセスを必要とする場合は、使用するをお勧めしますが、<see cref="Overload:System.Web.Configuration.WebConfigurationManager.GetSection" />オーバー ロードされたメソッドの場合は、Web アプリケーションまたは<see cref="M:System.Configuration.ConfigurationManager.GetSection(System.String)" />クライアント アプリケーションの場合のメソッドです。  
+  
+     これらのメソッドのアクセスを提供する、キャッシュされた構成値を現在のアプリケーションに対してより優れたパフォーマンスは、<see cref="T:System.Configuration.Configuration" />クラスです。  
+  
+ <block subset="none" type="note"><para>  
+ 静的なを使用する場合<see langword="GetSection" />を受け取るメソッド、 <paramref name="path" /> 、パラメーター、<paramref name="path" />パラメーターは、アプリケーション、コードが実行されているですそれ以外の場合、パラメーターは無視されますと、現在実行中の構成情報を参照する必要があります。アプリケーションが返されます。  
+  
+</para></block>  
+  
+-   書き込んでいます。 いずれかを使用する、<see cref="Overload:System.Configuration.Configuration.Save" />構成情報を書き込む方法です。 ユーザーまたはプロセスに書き込み、いる必要があります、次の権限に注意してください。  
+  
+    -   構成ファイルおよび現在の構成階層レベルのディレクトリに対するアクセス許可を記述します。  
+  
+    -   すべての構成ファイルの読み取り権限。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ConfigurationSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Configuration.ConfigurationSection.%23ctor%2A>コンス トラクターは、まずカスタム セクションの型を定義する必要があります。 例については、次を参照してください。、<xref:System.Configuration.ConfigurationSection>クラスの概要です。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Configuration.ConfigurationSection.%23ctor%2A> コンストラクターを使用する方法を示しています。 この例では、という名前のカスタム セクション クラスを作成した`CustomSection`です。 このようなクラスの例は、次を参照してください。、<xref:System.Configuration.ConfigurationSection>クラスの概要です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSection/CS/CustomConfigurationSection.cs#2)]
+ [!code-vb[System.Configuration.ConfigurationSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSection/VB/CustomConfigurationSection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeserializeSection">
+      <MemberSignature Language="C#" Value="protected virtual void DeserializeSection (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void DeserializeSection(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.DeserializeSection(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />オブジェクトで、構成ファイルから読み取ります。</param>
+        <summary>構成ファイルから XML を読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 逆シリアル化は、構成ファイル、リアルタイムのデータに変換およびオブジェクトでその記憶域から XML データの読み取りを参照します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">
+          <paramref name="reader" />構成ファイル内の要素が見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeObject">
+      <MemberSignature Language="C#" Value="protected virtual object GetRuntimeObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance object GetRuntimeObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.GetRuntimeObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、カスタム オブジェクトを返します。</summary>
+        <returns>セクションを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Configuration.Configuration.GetSection%2A>メソッドが実行時に呼び出されると、構成システムは、最初の適切なインスタンスを作成、<xref:System.Configuration.ConfigurationSection>クラスをから取得したオブジェクトを返します、<xref:System.Configuration.ConfigurationSection.GetRuntimeObject%2A>メソッドです。  
+  
+ 既定では、<xref:System.Configuration.ConfigurationSection.GetRuntimeObject%2A>だけを表すオブジェクトを返します、<xref:System.Configuration.ConfigurationSection>から呼び出されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationSection.GetRuntimeObject%2A> メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSection/CS/CustomConfigurationSection.cs#4)]
+ [!code-vb[System.Configuration.ConfigurationSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSection/VB/CustomConfigurationSection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="M:System.Configuration.ConfigurationSection.GetRuntimeObject" />を実行時にカスタムの型を返すメソッド。  
+  
+ 例については、設定のランタイムの変更を制限する、<see cref="T:System.Configuration.ConfigurationSection" />オーバーライドするクラス、<see cref="M:System.Configuration.ConfigurationSection.GetRuntimeObject" />存在する場合に、設定を変更する、制限を強制するカスタム型を返すとします。  
+  
+ ランタイム オブジェクトが内部の場合のみ、これを定義するアセンブリの外側、返されたオブジェクトを使用できません。 派生したオブジェクトを作成する方法の 1 つ<see cref="T:System.Configuration.ConfigurationSection" />し、実行時、アセンブリ内のコードからのみアクセスできる時間を返すメソッドを持つ内部ランタイム オブジェクトを作成するには、<see cref="T:System.Configuration.ConfigurationSection" />実装します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsModified">
+      <MemberSignature Language="C#" Value="protected override bool IsModified ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool IsModified() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.IsModified" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最後に保存、または派生クラスで実装された場合に読み込まれるために、この構成要素が変更されたかどうかを示します。</summary>
+        <returns>
+          要素が変更された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetModified">
+      <MemberSignature Language="C#" Value="protected override void ResetModified ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void ResetModified() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.ResetModified" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Configuration.ConfigurationElement.IsModified" /> メソッドの値が派生クラスに実装されたときに、<see langword="false" /> にリセットします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SectionInformation">
+      <MemberSignature Language="C#" Value="public System.Configuration.SectionInformation SectionInformation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SectionInformation SectionInformation" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSection.SectionInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SectionInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.SectionInformation" />カスタマイズ不可の情報との機能を含むオブジェクト、<see cref="T:System.Configuration.ConfigurationSection" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Configuration.SectionInformation" />カスタマイズ不可の情報との機能を含む、<see cref="T:System.Configuration.ConfigurationSection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.ConfigurationSection.SectionInformation%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-csharp[System.Configuration.ConfigurationSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationSection/CS/CustomConfigurationSection.cs#3)]
+ [!code-vb[System.Configuration.ConfigurationSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationSection/VB/CustomConfigurationSection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializeSection">
+      <MemberSignature Language="C#" Value="protected virtual string SerializeSection (System.Configuration.ConfigurationElement parentElement, string name, System.Configuration.ConfigurationSaveMode saveMode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance string SerializeSection(class System.Configuration.ConfigurationElement parentElement, string name, valuetype System.Configuration.ConfigurationSaveMode saveMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.SerializeSection(System.Configuration.ConfigurationElement,System.String,System.Configuration.ConfigurationSaveMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentElement" Type="System.Configuration.ConfigurationElement" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
+      </Parameters>
+      <Docs>
+        <param name="parentElement"><see cref="T:System.Configuration.ConfigurationElement" />解除マージを実行するときに、親として使用するインスタンス。</param>
+        <param name="name">作成するのには、セクションの名前。</param>
+        <param name="saveMode"><see cref="T:System.Configuration.ConfigurationSaveMode" />文字列への書き込み時に使用するインスタンス。</param>
+        <summary>マージされていないビューを含む XML 文字列を作成、<see cref="T:System.Configuration.ConfigurationSection" />オブジェクト ファイルに書き込む 1 つのセクションとして。</summary>
+        <returns>マージされていないビューを含む XML 文字列、<see cref="T:System.Configuration.ConfigurationSection" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化は、XML 形式とその記憶域の構成ファイルに、オブジェクトに含まれる、リアルタイムのデータの変換を指します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeElementInTargetVersion">
+      <MemberSignature Language="C#" Value="protected virtual bool ShouldSerializeElementInTargetVersion (System.Configuration.ConfigurationElement element, string elementName, System.Runtime.Versioning.FrameworkName targetFramework);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool ShouldSerializeElementInTargetVersion(class System.Configuration.ConfigurationElement element, string elementName, class System.Runtime.Versioning.FrameworkName targetFramework) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.ShouldSerializeElementInTargetVersion(System.Configuration.ConfigurationElement,System.String,System.Runtime.Versioning.FrameworkName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="targetFramework" Type="System.Runtime.Versioning.FrameworkName" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Configuration.ConfigurationElement" />シリアル化の候補となるオブジェクト。</param>
+        <param name="elementName">名前、<see cref="T:System.Configuration.ConfigurationElement" />オブジェクトの XML で発生しています。</param>
+        <param name="targetFramework">ターゲット バージョンの[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</param>
+        <summary>構成オブジェクトの階層が指定されたターゲット バージョンのシリアル化されるときに、指定した要素をシリアル化するかどうかを示す、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="element" />シリアル化された、それ以外にする必要があります<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各構成セクションに作成される、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]以降のバージョンは、このメソッドをオーバーライドされを返す必要があります明示的に`true`が、指定した要素が指定のバージョンの有効な場合にのみ、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 以前のバージョンの用に作成された既存の構成セクションで、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]を変更する必要はありません。  
+  
+ 基本データ型には、常に返す、このメソッドの既定の実装が含まれています。`true`です。 構成セクションを実装し、このメソッドをオーバーライドしていない場合は、既定では構成セクションに含まれているすべての構成要素は用にシリアル化フレームワークのすべてのバージョン。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializePropertyInTargetVersion">
+      <MemberSignature Language="C#" Value="protected virtual bool ShouldSerializePropertyInTargetVersion (System.Configuration.ConfigurationProperty property, string propertyName, System.Runtime.Versioning.FrameworkName targetFramework, System.Configuration.ConfigurationElement parentConfigurationElement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool ShouldSerializePropertyInTargetVersion(class System.Configuration.ConfigurationProperty property, string propertyName, class System.Runtime.Versioning.FrameworkName targetFramework, class System.Configuration.ConfigurationElement parentConfigurationElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.ShouldSerializePropertyInTargetVersion(System.Configuration.ConfigurationProperty,System.String,System.Runtime.Versioning.FrameworkName,System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.Configuration.ConfigurationProperty" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="targetFramework" Type="System.Runtime.Versioning.FrameworkName" />
+        <Parameter Name="parentConfigurationElement" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="property"><see cref="T:System.Configuration.ConfigurationProperty" />シリアル化の候補となるオブジェクト。</param>
+        <param name="propertyName">名前、<see cref="T:System.Configuration.ConfigurationProperty" />オブジェクトの XML で発生しています。</param>
+        <param name="targetFramework">ターゲット バージョンの[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</param>
+        <param name="parentConfigurationElement">プロパティの親要素です。</param>
+        <summary>構成オブジェクトの階層が指定されたターゲット バージョンのシリアル化されるときに、指定したプロパティをシリアル化するかどうかを示す、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="property" />シリアル化された、それ以外にする必要があります<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各構成セクションに作成される、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]以降のバージョンは、このメソッドをオーバーライドされを返す必要があります明示的に`true`が、指定したプロパティが指定のバージョンの有効な場合にのみ、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 以前のバージョンの用に作成された既存の構成セクションで、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]を変更する必要はありません。  
+  
+ 基本データ型には、常に返す、このメソッドの既定の実装が含まれています。`true`です。 構成セクションを実装し、このメソッドをオーバーライドしていない場合は、既定では構成セクションに含まれているすべての構成プロパティはシリアル化すべてのバージョンのフレームワークです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeSectionInTargetVersion">
+      <MemberSignature Language="C#" Value="protected virtual bool ShouldSerializeSectionInTargetVersion (System.Runtime.Versioning.FrameworkName targetFramework);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool ShouldSerializeSectionInTargetVersion(class System.Runtime.Versioning.FrameworkName targetFramework) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.ShouldSerializeSectionInTargetVersion(System.Runtime.Versioning.FrameworkName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetFramework" Type="System.Runtime.Versioning.FrameworkName" />
+      </Parameters>
+      <Docs>
+        <param name="targetFramework">ターゲット バージョンの[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</param>
+        <summary>示すかどうか、現在<see cref="T:System.Configuration.ConfigurationSection" />構成オブジェクトの階層が指定されたターゲット バージョンのシリアル化する場合は、インスタンスをシリアル化される必要があります、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。</summary>
+        <returns>
+          <see langword="true" />現在のセクションをシリアル化する必要があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各構成セクションに作成される、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]以降のバージョンは、このメソッドをオーバーライドされを返す必要があります明示的に`true`、構成セクションが指定のバージョンの有効な場合にのみが、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 以前のバージョンの用に作成された既存の構成セクションで、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]を変更する必要はありません。  
+  
+ 基本データ型には、常に返す、このメソッドの既定の実装が含まれています。`true`です。 構成セクションを実装し、このメソッドをオーバーライドしていない場合は、既定では構成セクションすべてのバージョンのフレームワークはシリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

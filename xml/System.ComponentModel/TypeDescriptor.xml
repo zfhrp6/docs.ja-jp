@@ -1,0 +1,3277 @@
+<Type Name="TypeDescriptor" FullName="System.ComponentModel.TypeDescriptor">
+  <TypeSignature Language="C#" Value="public sealed class TypeDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypeDescriptor extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.TypeDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>属性、プロパティ、イベントなど、コンポーネントの特性に関する情報を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework には、型のメタデータにアクセスする 2 つの方法が用意されています: で提供される API のリフレクション、<xref:System.Reflection?displayProperty=nameWithType>名前空間、および<xref:System.ComponentModel.TypeDescriptor>クラスです。 リフレクションは、すべての種類で使用できる一般的な機構の基盤が確立されるため、<xref:System.Object.GetType%2A>ルート メソッド<xref:System.Object>クラスです。 対象の型のコンパイル後に変更することはできません、型が返されます情報は、拡張可能ではありません。 詳細については、トピックを参照してください。[リフレクション](~/docs/framework/reflection-and-codedom/reflection.md)です。  
+  
+ これに対し、<xref:System.ComponentModel.TypeDescriptor>コンポーネントの拡張可能な検査メカニズム: これらのクラスを実装する、<xref:System.ComponentModel.IComponent>インターフェイスです。 、リフレクションとは異なり、はメソッドを検出します。 <xref:System.ComponentModel.TypeDescriptor>対象コンポーネントの使用可能ないくつかのサービスによって動的に拡張できます。<xref:System.ComponentModel.Component.Site%2A>です。 次の表は、これらのサービスを示します。  
+  
+|サービス名|説明|  
+|------------------|-----------------|  
+|<xref:System.ComponentModel.IExtenderProvider>|などを使用して別のクラス、<xref:System.Windows.Forms.ToolTip>コンポーネントへの追加のプロパティを指定する。|  
+|<xref:System.ComponentModel.Design.ITypeDescriptorFilterService>|コンポーネントによって公開される標準のメタデータを変更する別のオブジェクトを有効にします。|  
+|<xref:System.ComponentModel.ICustomTypeDescriptor>|クラスが完全に、動的に指定の標準的な検査メカニズムを置き換えて、独自のメタデータを有効に<xref:System.ComponentModel.TypeDescriptor>です。|  
+  
+ によって提供される拡張性<xref:System.ComponentModel.TypeDescriptor>、により、実際のランタイム表現を異なるコンポーネントのデザイン時の表示を許可<xref:System.ComponentModel.TypeDescriptor>のデザイン時のインフラストラクチャの構築に役立ちます。  
+  
+ 内のすべてのメソッド<xref:System.ComponentModel.TypeDescriptor>は`static`します。 このクラスのインスタンスを作成することはできませんし、このクラスは継承できません。  
+  
+ プロパティを設定して、イベントの値の 2 つの方法: コンポーネント クラス内の指定や、デザイン時に変更します。 これらを設定できる値のオーバー ロードされたメソッドの 2 つの方法<xref:System.ComponentModel.TypeDescriptor>2 つの異なる型のパラメーターを受け取る: クラス型またはオブジェクト インスタンス。  
+  
+ アクセスするときに<xref:System.ComponentModel.TypeDescriptor>情報とするオブジェクトのインスタンスが存在、およびコンポーネントに対して呼び出されるメソッドを使用します。 オブジェクトのインスタンスがあるない場合にのみ、クラス型に対して呼び出されるメソッドを使用します。  
+  
+ プロパティとイベントがによってキャッシュされる<xref:System.ComponentModel.TypeDescriptor>速度。 通常、これらは定数オブジェクトの有効期間です。 ただし、拡張プロバイダーとデザイナーは、一連のオブジェクトのプロパティを変更できます。 この場合は、次に、<xref:System.ComponentModel.TypeDescriptor.Refresh%2A>キャッシュを更新するメソッドを呼び出す必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddAttributes">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.TypeDescriptionProvider AddAttributes (object instance, params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.TypeDescriptionProvider AddAttributes(object instance, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.AddAttributes(System.Object,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeDescriptionProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="instance">対象コンポーネントのインスタンス。</param>
+        <param name="attributes">配列<see cref="T:System.Attribute" />コンポーネントのクラスに追加するオブジェクト。</param>
+        <summary>対象コンポーネントのインスタンスにクラス レベルの属性を追加します。</summary>
+        <returns>新しく作成された<see cref="T:System.ComponentModel.TypeDescriptionProvider" />指定された属性の追加に使用されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.AddAttributes%28System.Object%2CSystem.Attribute%5B%5D%29>メソッドは、指定したコンポーネントのインスタンスにクラス レベルの属性を追加します。 これを使用してアプリケーションの一般的な要件であるため、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]クラスに既に存在する属性を持つ指定した属性をマージする型説明プロバイダーを作成することで Windows フォーム デザイナーのプロパティ ウィンドウでこのメソッドを提供するショートカットです。 戻り値は、属性を追加するために使用された型説明プロバイダーです。 このプロバイダーに後で渡すことが、<xref:System.ComponentModel.TypeDescriptor.RemoveProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Object%29>メソッドは、追加された属性は不要になったとします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributes">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.TypeDescriptionProvider AddAttributes (Type type, params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.TypeDescriptionProvider AddAttributes(class System.Type type, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.AddAttributes(System.Type,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeDescriptionProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="type">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <param name="attributes">配列<see cref="T:System.Attribute" />コンポーネントのクラスに追加するオブジェクト。</param>
+        <summary>対象コンポーネントの型にクラス レベルの属性を追加します。</summary>
+        <returns>新しく作成された<see cref="T:System.ComponentModel.TypeDescriptionProvider" />指定された属性の追加に使用されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.AddAttributes%28System.Type%2CSystem.Attribute%5B%5D%29>メソッドは、指定したコンポーネントの型にクラス レベルの属性を追加します。 これを使用してアプリケーションの一般的な要件であるため、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]クラスに既に存在する属性を持つ指定した属性をマージする型説明プロバイダーを作成することで Windows フォーム デザイナーのプロパティ ウィンドウでこのメソッドを提供するショートカットです。 戻り値は、属性を追加するために使用された型説明プロバイダーです。 このプロバイダーに後で渡すことが、<xref:System.ComponentModel.TypeDescriptor.RemoveProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Type%29>メソッドは、追加された属性は不要になったとします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEditorTable">
+      <MemberSignature Language="C#" Value="public static void AddEditorTable (Type editorBaseType, System.Collections.Hashtable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddEditorTable(class System.Type editorBaseType, class System.Collections.Hashtable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.AddEditorTable(System.Type,System.Collections.Hashtable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editorBaseType" Type="System.Type" />
+        <Parameter Name="table" Type="System.Collections.Hashtable" />
+      </Parameters>
+      <Docs>
+        <param name="editorBaseType">エディター テーブルを追加する対象のエディター基本型。 この型のテーブルが既存の場合、このメソッドは何もしません。</param>
+        <param name="table">追加する <see cref="T:System.Collections.Hashtable" />。</param>
+        <summary>指定されたエディターの基本型のエディター テーブルを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.AddEditorTable%2A>メソッドは、特定のエディターの基本型のエディター テーブルを追加します。 通常、エディターは、コンポーネントのメタデータとして指定されます。 ただし場合の要求されたエディター基本のメタデータ型が見つからない、関連付けられているコンポーネントに<xref:System.ComponentModel.TypeDescriptor>1 つが見つかった場合に、エディターの種類のエディター テーブルを検索します。 エディター テーブルは、型記述子に追加されると、削除することはできませんし、型記述子が所有します。 型記述子では、次の表を自由に変更可能性があります。  
+  
+ エディター テーブルの形式は、値として、キーおよびエディターとしてのデータ型を使用します。 テーブル内のエントリの値の部分では、エディターのインスタンスを表します。 これは、3 つの値のいずれかを持つことができます。 文字列が含まれているオブジェクトの種類、および、読み込み、型の完全修飾名は、この型記述子を引き継ぎます。 型が含まれている場合はこの型のインスタンスを作成してエディターを取得します。 最後に、値の部分では、実際のエディター インスタンスを含めることがあります。 型記述子では、インスタンスに、エディターを解決する場合は、将来の使用については、表に、インスタンスが格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddProvider">
+      <MemberSignature Language="C#" Value="public static void AddProvider (System.ComponentModel.TypeDescriptionProvider provider, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddProvider(class System.ComponentModel.TypeDescriptionProvider provider, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.AddProvider(System.ComponentModel.TypeDescriptionProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.TypeDescriptionProvider" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="provider">追加する <see cref="T:System.ComponentModel.TypeDescriptionProvider" />。</param>
+        <param name="instance">対象コンポーネントのインスタンス。</param>
+        <summary>コンポーネントの単一インスタンスの型説明の提供元を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.AddProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Object%29>メソッドは、提供がコンポーネントの 1 つのインスタンスの情報を入力する型説明プロバイダーを追加します。 この方法により、プロバイダーのかどうかは、プロバイダーが追加<xref:System.ComponentModel.TypeDescriptor.CreateInstance%2A>インスタンスが既に存在するので、メソッドは呼び出されません。  
+  
+ コンポーネントの完了を妨げることはないために、このメソッドは、コンポーネントへの強い参照を保持できません。  
+  
+ 同じ型またはオブジェクトの複数の型説明プロバイダーを追加することができます。 この場合、最初型説明プロバイダーが発生しました型情報を提供するが排他的に使用されます。 型情報プロバイダーは、スタックに格納される、ために追加された最新のプロバイダーが照会された最初の 1 つになります。 この動作により、<xref:System.ComponentModel.TypeDescriptor.AddProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Object%29>と<xref:System.ComponentModel.TypeDescriptor.RemoveProvider%2A>にプッシュおよびポップを使用する方法の特定のシナリオでの必要に応じて説明のプロバイダーを入力します。  
+  
+ かどうかは成功すると、このメソッドは、<xref:System.ComponentModel.TypeDescriptor.Refresh%28System.Object%29>メソッドを`instance`パラメーター。  
+  
+> [!NOTE]
+>  このメソッドの 2 つのバージョンでは、スコープが異なる結果を生成します。 <xref:System.ComponentModel.TypeDescriptor.AddProvider%2A>を受け取るメソッド、<xref:System.Object>パラメーターが指定されたコンポーネントのインスタンスを 1 つだけに影響します。 これに対し、他のオーバー ロードするを取り、<xref:System.Type>パラメーター、その型によって記述されたコンポーネントのすべてのインスタンスに影響します。  
+  
+ 使用して、<xref:System.ComponentModel.TypeDescriptor.AddProviderTransparent%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Object%29>メソッドを部分的に信頼されたコードから呼び出す必要がある場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddProvider">
+      <MemberSignature Language="C#" Value="public static void AddProvider (System.ComponentModel.TypeDescriptionProvider provider, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddProvider(class System.ComponentModel.TypeDescriptionProvider provider, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.AddProvider(System.ComponentModel.TypeDescriptionProvider,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.TypeDescriptionProvider" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="provider">追加する <see cref="T:System.ComponentModel.TypeDescriptionProvider" />。</param>
+        <param name="type">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>コンポーネント クラスの型説明プロバイダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.AddProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Type%29>メソッドが装置が、指定したクラス、派生クラス、およびこれらの型のすべてのインスタンスの情報を入力する型説明プロバイダーを追加します。  
+  
+> [!NOTE]
+>  `type`パラメーターは、インターフェイスを含む任意の型を指定できます。 たとえば、カスタム型およびすべてのコンポーネントのインスタンス情報を提供するには指定した`typeof(IComponent)`です。 渡す`typeof(object)`が呼び出すプロバイダーからのすべての型の型情報を提供します。  
+  
+ オブジェクトの完了を妨げることはないために、このメソッドは、任意のオブジェクトへの強い参照を保持できません。  
+  
+ 同じ型またはオブジェクトの複数の型説明プロバイダーを追加することができます。 この場合、最初型説明プロバイダーが発生しました型情報を提供するが排他的に使用されます。 型情報プロバイダーが保存されるため、スタックで、追加された最新のプロバイダーが照会された最初の 1 つになります。 この動作により、<xref:System.ComponentModel.TypeDescriptor.AddProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Type%29>と<xref:System.ComponentModel.TypeDescriptor.RemoveProvider%2A>にプッシュおよびポップを使用する方法の特定のシナリオでの必要に応じて説明のプロバイダーを入力します。  
+  
+ かどうかは成功すると、このメソッドは、<xref:System.ComponentModel.TypeDescriptor.Refresh%28System.Type%29>メソッドを`type`パラメーター。  
+  
+> [!NOTE]
+>  このメソッドの 2 つのバージョンでは、スコープが異なる結果を生成します。 <xref:System.ComponentModel.TypeDescriptor.AddProvider%2A>を受け取るメソッド、<xref:System.Object>パラメーターが指定されたコンポーネントのインスタンスを 1 つだけに影響します。 これに対し、他のオーバー ロードするを取り、<xref:System.Type>パラメーター、その型によって記述されたコンポーネントのすべてのインスタンスに影響します。  
+  
+ 使用して、<xref:System.ComponentModel.TypeDescriptor.AddProviderTransparent%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Type%29>メソッドを部分的に信頼されたコードから呼び出す必要がある場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddProviderTransparent">
+      <MemberSignature Language="C#" Value="public static void AddProviderTransparent (System.ComponentModel.TypeDescriptionProvider provider, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddProviderTransparent(class System.ComponentModel.TypeDescriptionProvider provider, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.AddProviderTransparent(System.ComponentModel.TypeDescriptionProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.TypeDescriptionProvider" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="provider">追加する <see cref="T:System.ComponentModel.TypeDescriptionProvider" />。</param>
+        <param name="instance">対象コンポーネントのインスタンス。</param>
+        <summary>コンポーネントの単一インスタンスの型説明の提供元を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、部分的に信頼されたコードから呼び出すことができます。 場合<xref:System.Security.Permissions.TypeDescriptorPermissionFlags.RestrictedRegistrationAccess>が定義されている場合、呼び出し元できますプロバイダーを登録する指定したインスタンスの型が部分的に信頼されたもある場合。  
+  
+ 使用して、<xref:System.ComponentModel.TypeDescriptor.AddProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Object%29>メソッドの場合は、部分的に信頼されたコードから呼び出す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.TypeDescriptorPermission">レジストリのアクセス。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.TypeDescriptorPermissionFlags.RestrictedRegistrationAccess" /></permission>
+        <permission cref="P:System.Reflection.Assembly.PermissionSet">セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連付けられている種類:<see cref="T:System.Security.PermissionSet" />を定義するアセンブリで必要となる、<paramref name="instance" />パラメーターの型。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddProviderTransparent">
+      <MemberSignature Language="C#" Value="public static void AddProviderTransparent (System.ComponentModel.TypeDescriptionProvider provider, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddProviderTransparent(class System.ComponentModel.TypeDescriptionProvider provider, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.AddProviderTransparent(System.ComponentModel.TypeDescriptionProvider,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.TypeDescriptionProvider" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="provider">追加する <see cref="T:System.ComponentModel.TypeDescriptionProvider" />。</param>
+        <param name="type">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>コンポーネント クラスの型説明プロバイダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、部分的に信頼されたコードから呼び出すことができます。 場合<xref:System.Security.Permissions.TypeDescriptorPermissionFlags.RestrictedRegistrationAccess>が定義されている、呼び出し元は、ことができますプロバイダーを登録する指定した型の部分的な信頼でもある場合。  
+  
+ 使用して、<xref:System.ComponentModel.TypeDescriptor.AddProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Type%29>メソッドの場合は、部分的に信頼されたコードから呼び出す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.TypeDescriptorPermission">レジストリのアクセス。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.TypeDescriptorPermissionFlags.RestrictedRegistrationAccess" /></permission>
+        <permission cref="P:System.Reflection.Assembly.PermissionSet">セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連付けられている種類:<see cref="T:System.Security.PermissionSet" />を定義するアセンブリで必要となる<paramref name="type" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ComNativeDescriptorHandler">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.IComNativeDescriptorHandler ComNativeDescriptorHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ComponentModel.IComNativeDescriptorHandler ComNativeDescriptorHandler" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.TypeDescriptor.ComNativeDescriptorHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This property has been deprecated.  Use a type description provider to supply type information for COM types instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComNativeDescriptorHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット コンポーネントの Component Object Model (COM) 型情報のプロバイダーを取得または設定します。</summary>
+        <value>COM 型情報プロバイダーを表す <see cref="T:System.ComponentModel.IComNativeDescriptorHandler" /> インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.ComNativeDescriptorHandler%2A>プロパティおよび<xref:System.ComponentModel.IComNativeDescriptorHandler>インターフェイスは廃止されました。 詳細については、<xref:System.ComponentModel.TypeDescriptor.ComObjectType%2A> プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ComObjectType">
+      <MemberSignature Language="C#" Value="public static Type ComObjectType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Type ComObjectType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.TypeDescriptor.ComObjectType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象となるコンポーネントによって表されるコンポーネント オブジェクト モデル (COM) の型を取得します。</summary>
+        <value>このコンポーネントによって表される COM オブジェクトの <see cref="T:System.Type" />。COM 以外のオブジェクトの場合 <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.ComObjectType%2A>プロパティに渡すことができる型を返します、 <xref:System.ComponentModel.TypeDescriptor.AddProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Type%29> COM 型の型説明プロバイダーを定義するメソッド。  
+  
+ <xref:System.ComponentModel.TypeDescriptor.ComObjectType%2A>プロパティおよびその他のメンバーをこのクラスで廃止された機能を置き換える<xref:System.ComponentModel.IComNativeDescriptorHandler>インターフェイスです。 COM オブジェクトの間のマッピング レイヤーを実装して<xref:System.ComponentModel.TypeDescriptor>、追加、<xref:System.ComponentModel.TypeDescriptionProvider>型を処理する<xref:System.ComponentModel.TypeDescriptor.ComObjectType%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAssociation">
+      <MemberSignature Language="C#" Value="public static void CreateAssociation (object primary, object secondary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CreateAssociation(object primary, object secondary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.CreateAssociation(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primary" Type="System.Object" />
+        <Parameter Name="secondary" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="primary">プライマリ<see cref="T:System.Object" />です。</param>
+        <param name="secondary">セカンダリ<see cref="T:System.Object" />です。</param>
+        <summary>2 つのオブジェクトの間のプライマリとセカンダリの関連付けを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.CreateAssociation%2A>メソッドは、プライマリとセカンダリのオブジェクト間の関連付けを作成します。 関連付けが作成されると、デザイナー、またはその他のフィルター メカニズムは、主要なオブジェクトのプロパティ セットにいずれかのオブジェクトにルーティングするプロパティを追加できます。 主要なオブジェクトに対するプロパティの呼び出しが行われたときに、<xref:System.ComponentModel.TypeDescriptor.GetAssociation%2A>メソッドは、型パラメーターに関連付けられている実際のオブジェクト インスタンスを解決するのには呼び出されます。  
+  
+ A<xref:System.WeakReference>のために使用されるは、プライマリとセカンダリのオブジェクト間の関連付けを維持。 そのため、このメソッドは防止しませんいずれかのオブジェクトされる完了し、ガベージ コレクションによって回収されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="primary" /> と <paramref name="secondary" /> が等価です。</exception>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDesigner">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.Design.IDesigner CreateDesigner (System.ComponentModel.IComponent component, Type designerBaseType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.Design.IDesigner CreateDesigner(class System.ComponentModel.IComponent component, class System.Type designerBaseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.CreateDesigner(System.ComponentModel.IComponent,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.IDesigner</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="designerBaseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="component">デザイナーに関連付けるコンポーネントを指定する <see cref="T:System.ComponentModel.IComponent" />。</param>
+        <param name="designerBaseType">A<see cref="T:System.Type" />を作成するデザイナーの型を表すです。</param>
+        <summary>指定したコンポーネントに関連するデザイナーおよび指定した型のデザイナーのインスタンスを作成します。</summary>
+        <returns>コンポーネントのデザイナーのインスタンスである <see cref="T:System.ComponentModel.Design.IDesigner" />。デザイナーが見つからない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、有効な見つけられない場合<xref:System.ComponentModel.DesignerAttribute>デザイナーのクラス階層を検索します。 返すかどうかは、クラスの階層構造で、デザイナーを見つけられない、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEvent">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EventDescriptor CreateEvent (Type componentType, System.ComponentModel.EventDescriptor oldEventDescriptor, params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EventDescriptor CreateEvent(class System.Type componentType, class System.ComponentModel.EventDescriptor oldEventDescriptor, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.CreateEvent(System.Type,System.ComponentModel.EventDescriptor,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+        <Parameter Name="oldEventDescriptor" Type="System.ComponentModel.EventDescriptor" />
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="componentType">新しいイベントを作成する対象のコンポーネントの種類。</param>
+        <param name="oldEventDescriptor">既存のイベント情報。</param>
+        <param name="attributes">新しい属性。</param>
+        <summary>既存の <see cref="T:System.ComponentModel.EventDescriptor" /> が渡された場合、既存のイベント記述子と同じである新しいイベント記述子を作成します。</summary>
+        <returns>指定されたメタデータ属性と既存のメタデータ属性をマージした新しい <see cref="T:System.ComponentModel.EventDescriptor" />。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">コンポーネントのパブリックでないメンバーを検査する必要です。 リンク要求時アクセスのために必要な<see cref="T:System.Security.Permissions.ReflectionPermissionFlag" />型<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEvent">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EventDescriptor CreateEvent (Type componentType, string name, Type type, params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EventDescriptor CreateEvent(class System.Type componentType, string name, class System.Type type, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.CreateEvent(System.Type,System.String,System.Type,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="componentType">イベントが存在するコンポーネントの型。</param>
+        <param name="name">イベントの名前です。</param>
+        <param name="type">イベントを処理するデリゲートの型。</param>
+        <param name="attributes">このイベントの属性。</param>
+        <summary>型で指定したイベントから記述子情報を動的に生成することによって既存のイベント記述子と同じになる新しいイベント記述子を作成します。</summary>
+        <returns>型にバインドされている <see cref="T:System.ComponentModel.EventDescriptor" />。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">コンポーネントのパブリックでないメンバーを検査する必要です。 リンク要求時アクセスのために必要な<see cref="T:System.Security.Permissions.ReflectionPermissionFlag" />型<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static object CreateInstance (IServiceProvider provider, Type objectType, Type[] argTypes, object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CreateInstance(class System.IServiceProvider provider, class System.Type objectType, class System.Type[] argTypes, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.CreateInstance(System.IServiceProvider,System.Type,System.Type[],System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="objectType" Type="System.Type" />
+        <Parameter Name="argTypes" Type="System.Type[]" />
+        <Parameter Name="args" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.ComponentModel.TypeDescriptionProvider" /> サービスを提供するサービス プロバイダー。 このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <param name="objectType"><see cref="T:System.Type" />を作成するオブジェクト。</param>
+        <param name="argTypes">オブジェクトのコンストラクターに渡されるパラメーターの型の省略可能な配列。 このパラメーターを指定できます<see langword="null" />または長さ 0 の配列。</param>
+        <param name="args">オブジェクトのコンストラクターに渡すパラメーターの値の省略可能な配列。 ない場合<see langword="null" />数の要素の必要がありますと同じである、 <c>argTypes</c>です。</param>
+        <summary>別のデータ型の代わりに使用できるオブジェクトを作成します。</summary>
+        <returns>関連付けられた <see cref="T:System.ComponentModel.TypeDescriptionProvider" /> が検出される場合は代替のデータ型のインスタンス。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.CreateInstance%2A>はメソッドを検索、 <xref:System.ComponentModel.TypeDescriptionProvider> 、指定したに関連付けられている`objectType`データ型。 このメソッドは、最初から型説明プロバイダーを取得を試みます、`provider`パラメーター。 プロバイダーの検索できない場合は、独自の内部テーブル (これらのエントリは、前の呼び出しによって作成された<xref:System.ComponentModel.TypeDescriptor.AddProvider%2A>)。 プロバイダーが検出されると、このメソッドはそのオブジェクトを作成呼び出しを委任します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="objectType" /><see langword="null" />、または<paramref name="args" />は<see langword="null" />とき<paramref name="argTypes" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="argTypes" /> と <paramref name="args" /> の要素数が異なります。</exception>
+        <block subset="none" type="overrides">
+          <para>派生クラスに代替インスタンスが提供していない場合、このメソッドは基本実装を呼び出す必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateProperty">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptor CreateProperty (Type componentType, System.ComponentModel.PropertyDescriptor oldPropertyDescriptor, params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptor CreateProperty(class System.Type componentType, class System.ComponentModel.PropertyDescriptor oldPropertyDescriptor, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.CreateProperty(System.Type,System.ComponentModel.PropertyDescriptor,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+        <Parameter Name="oldPropertyDescriptor" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="componentType"><see cref="T:System.Type" />のメンバーであるプロパティのコンポーネントです。</param>
+        <param name="oldPropertyDescriptor">既存のプロパティ記述子。</param>
+        <param name="attributes">このプロパティの新しい属性。</param>
+        <summary>指定した既存を使用して、既存のプロパティ記述子から新しいプロパティ記述子を作成<see cref="T:System.ComponentModel.PropertyDescriptor" />と属性の配列。</summary>
+        <returns>新しい<see cref="T:System.ComponentModel.PropertyDescriptor" />既存のメタデータ属性のトピックとマージされた指定されたメタデータ属性を持ちます。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">コンポーネントのパブリックでないメンバーを検査する必要です。 リンク要求時アクセスのために必要な<see cref="T:System.Security.Permissions.ReflectionPermissionFlag" />型<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateProperty">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptor CreateProperty (Type componentType, string name, Type type, params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptor CreateProperty(class System.Type componentType, string name, class System.Type type, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.CreateProperty(System.Type,System.String,System.Type,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="componentType"><see cref="T:System.Type" />のメンバーであるプロパティのコンポーネントです。</param>
+        <param name="name">プロパティの名前。</param>
+        <param name="type"><see cref="T:System.Type" />プロパティのです。</param>
+        <param name="attributes">このプロパティの新しい属性。</param>
+        <summary>指定したプロパティ名、型、属性の配列を使用して、プロパティ記述子を作成し、型に動的にバインドします。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptor" />と、指定された型にバインドされた既存のメタデータ属性のトピックとマージされた指定されたメタデータ属性を持ちます。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">コンポーネントのパブリックでないメンバーを検査する必要です。 リンク要求時アクセスのために必要な<see cref="T:System.Security.Permissions.ReflectionPermissionFlag" />型<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAssociation">
+      <MemberSignature Language="C#" Value="public static object GetAssociation (Type type, object primary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetAssociation(class System.Type type, object primary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetAssociation(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="primary" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="type">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <param name="primary">関連付けのプライマリ オブジェクト。</param>
+        <summary>指定されたプライマリ オブジェクトに関連付けられている型のインスタンスを返します。</summary>
+        <returns>関連付けが存在する場合は、プライマリ オブジェクトに関連付けられているセカンダリの型のインスタンスそれ以外の場合、<paramref name="primary" />アソシエーションが存在する場合が指定されていません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以前の関連付けが行われて場合、`type`パラメーターを使用して、 <xref:System.ComponentModel.TypeDescriptor.CreateAssociation%2A> 、メソッド、<xref:System.ComponentModel.TypeDescriptor.GetAssociation%2A>メソッドに対して要求された型を呼び出すための正しいセカンダリ オブジェクトを返します。 それ以外の場合、<xref:System.ComponentModel.TypeDescriptor.GetAssociation%2A>検索を互換性のあるデザイナー`type`し、見つかった場合は、デザイナーを返します。 このメソッドが戻ることはありません`null`です。  
+  
+ A<xref:System.WeakReference>のために使用されるは、プライマリとセカンダリのオブジェクト間の関連付けを維持。 そのため、このメソッドは防止しませんプライマリまたはセカンダリのいずれかのオブジェクトされる完了し、ガベージ コレクションによって回収されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAttributes">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.AttributeCollection GetAttributes (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.AttributeCollection GetAttributes(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetAttributes(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">属性を取得するコンポーネント。</param>
+        <summary>指定されたコンポーネントの属性のコレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.AttributeCollection" />コンポーネントの属性を含むです。 場合<paramref name="component" />は<see langword="null" />、このメソッドは、空のコレクションを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される属性、<xref:System.ComponentModel.TypeDescriptor.GetAttributes%2A>拡張プロバイダーを一覧表示する元のコンポーネントのソースから動的にメソッドを変更することがあります (<xref:System.ComponentModel.IExtenderProvider>)、サービスをフィルター処理 (<xref:System.ComponentModel.Design.ITypeDescriptorFilterService>)、およびフィルターの属性です。  
+  
+ カスタム属性を定義するときに<xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>に設定`true`、オーバーライドする必要があります、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>プロパティを一意になるようにします。 属性のすべてのインスタンスが一意の場合は、オーバーライド<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>属性のオブジェクト id を取得します。 値を返す場合だけ、属性の複数のインスタンスが一意で、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>を等しいかどうかを返すような場合は。 たとえば、いくつかの属性には、一意のキーとして機能するコンス トラクターのパラメーターがあります。 これらの属性からコンス トラクターのパラメーターの値を返す、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!NOTE]
+>  既定の実装<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>の値に関係なく型 id を返します、<xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>プロパティです。 複数のインスタンスを返すために、<xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>属性から、 <xref:System.ComponentModel.AttributeCollection>、属性をオーバーライドする必要があります、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ このメソッドの例は、次を参照してください。、<xref:System.ComponentModel.AttributeCollection.Matches%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAttributes">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.AttributeCollection GetAttributes (Type componentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.AttributeCollection GetAttributes(class System.Type componentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetAttributes(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="componentType">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>指定されたコンポーネントの型の属性のコレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.AttributeCollection" />コンポーネントの型の属性を持つ。 コンポーネントが場合<see langword="null" />、このメソッドは、空のコレクションを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトのインスタンスがあるない場合にのみ、このバージョンのこのメソッドを呼び出します。  
+  
+ 属性の場合<xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>'éý'`true`属性のコレクションが重複するインスタンスを削除します。 これらは、インスタンスを<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>プロパティと等しい値を返します。  
+  
+ カスタム属性を定義するときに<xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>に設定`true`、オーバーライドする必要があります、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>プロパティを一意になるようにします。 属性のすべてのインスタンスが一意の場合は、オーバーライド<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>属性のオブジェクト id を取得します。 値を返す場合だけ、属性の複数のインスタンスが一意で、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>を等しいかどうかを返すような場合は。 たとえば、いくつかの属性には、一意のキーとして機能するコンス トラクターのパラメーターがあります。 これらの属性からコンス トラクターのパラメーターの値を返す、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!NOTE]
+>  既定の実装<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>の値に関係なく型 id を返します、<xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>プロパティです。 複数のインスタンスを返すために、<xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>属性から、 <xref:System.ComponentModel.AttributeCollection>、属性をオーバーライドする必要があります、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAttributes">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.AttributeCollection GetAttributes (object component, bool noCustomTypeDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.AttributeCollection GetAttributes(object component, bool noCustomTypeDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetAttributes(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="noCustomTypeDesc" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component">属性を取得するコンポーネント。</param>
+        <param name="noCustomTypeDesc">
+          <see langword="true" />場合に使用するカスタム型記述子から属性のベースライン セット<c>コンポーネント</c>の種類は<see cref="T:System.ComponentModel.ICustomTypeDescriptor" />、それ以外の<see langword="false" />します。</param>
+        <summary>指定されたコンポーネントの属性のコレクション、およびカスタム型記述子が作成されたことを示すブール値を返します。</summary>
+        <returns><see cref="T:System.ComponentModel.AttributeCollection" />コンポーネントの属性を持つ。 コンポーネントが場合<see langword="null" />、このメソッドは、空のコレクションを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される属性、<xref:System.ComponentModel.TypeDescriptor.GetAttributes%2A>メソッドは、元のコンポーネント拡張プロバイダーを一覧表示する動的に変更される可能性 (<xref:System.ComponentModel.IExtenderProvider>)、サービスをフィルター処理 (<xref:System.ComponentModel.Design.ITypeDescriptorFilterService>)、およびフィルターの属性です。  
+  
+ カスタム属性を定義するときに<xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>に設定`true`、オーバーライドする必要があります、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>プロパティを一意になるようにします。 属性のすべてのインスタンスが一意の場合は、オーバーライド<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>属性のオブジェクト id を取得します。 値を返す場合だけ、属性の複数のインスタンスが一意で、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>を等しいかどうかを返すような場合は。 たとえば、いくつかの属性には、一意のキーとして機能するコンス トラクターのパラメーターがあります。 これらの属性からコンス トラクターのパラメーターの値を返す、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!NOTE]
+>  既定の実装<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>の値に関係なく型 id を返します、<xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>プロパティです。 複数のインスタンスを返すために、<xref:System.AttributeUsageAttribute.AllowMultiple%2A?displayProperty=nameWithType>属性から、 <xref:System.ComponentModel.AttributeCollection>、属性をオーバーライドする必要があります、<xref:System.Attribute.TypeId%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClassName">
+      <MemberSignature Language="C#" Value="public static string GetClassName (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetClassName(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetClassName(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.Object" />必要なクラス名。</param>
+        <summary>既定の型記述子を使用して、指定されたコンポーネントのクラスの名前を返します。</summary>
+        <returns>A<see cref="T:System.String" />指定されたコンポーネントのクラスの名前を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドは、完全を返します<xref:System.Type>の名前、`component`パラメーターの型。 たとえば、ボタンのクラス名は、"System.Windows.Forms.Button"がします。 場合`component`実装<xref:System.ComponentModel.ICustomTypeDescriptor>、代替名を返すことができます。  
+  
+ このメソッドはオーバー ロードされたのと同じ<xref:System.ComponentModel.TypeDescriptor.GetClassName%28System.Object%2CSystem.Boolean%29>メソッドの 2 番目のパラメーターを`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClassName">
+      <MemberSignature Language="C#" Value="public static string GetClassName (Type componentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetClassName(class System.Type componentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetClassName(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="componentType">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>指定した型のクラス名を返します。</summary>
+        <returns>A<see cref="T:System.String" />指定されたコンポーネントの種類のクラスの名前を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定した型のキャッシュされたカスタム型記述子を使用して、関連するクラス名を検出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="componentType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClassName">
+      <MemberSignature Language="C#" Value="public static string GetClassName (object component, bool noCustomTypeDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetClassName(object component, bool noCustomTypeDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetClassName(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="noCustomTypeDesc" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.Object" />必要なクラス名。</param>
+        <param name="noCustomTypeDesc">
+          <see langword="true" />カスタム型説明情報を考慮するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>カスタムの型記述子を使用して、指定されたコンポーネントのクラスの名前を返します。</summary>
+        <returns>A<see cref="T:System.String" />指定されたコンポーネントのクラスの名前を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドは、完全を返します<xref:System.Type>の名前、`component`パラメーターの型。 たとえば、ボタンのクラス名は、"System.Windows.Forms.Button"がします。 場合、`component`パラメーターを実装する<xref:System.ComponentModel.ICustomTypeDescriptor>、代替名を返すことができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetComponentName">
+      <MemberSignature Language="C#" Value="public static string GetComponentName (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetComponentName(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetComponentName(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.Object" />必要なクラス名。</param>
+        <summary>既定の型記述子を使用して、指定されたコンポーネントの名前を返します。</summary>
+        <returns>A <see cref="T:System.String" /> 、指定されたコンポーネントの名前を含むまたは<see langword="null" />コンポーネント名が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドは、1 つが存在する場合、コンポーネントのサイトの名前を返します。 たとえば、ボタンのクラス名は、"System.Windows.Forms.Button"がします。  
+  
+ このメソッドはオーバー ロードされたのと同じ<xref:System.ComponentModel.TypeDescriptor.GetComponentName%28System.Object%2CSystem.Boolean%29>メソッドの 2 番目のパラメーターを`false`です。  
+  
+ このメソッドは、コンポーネントのインスタンスの名前を取得するデザイン時に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetComponentName">
+      <MemberSignature Language="C#" Value="public static string GetComponentName (object component, bool noCustomTypeDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetComponentName(object component, bool noCustomTypeDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetComponentName(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="noCustomTypeDesc" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.Object" />必要なクラス名。</param>
+        <param name="noCustomTypeDesc">
+          <see langword="true" />カスタム型説明情報を考慮するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>カスタムの型記述子を使用して、指定されたコンポーネントの名前を返します。</summary>
+        <returns>指定したコンポーネントのクラスの名前または<see langword="null" />コンポーネント名が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コンポーネントのインスタンスの名前を取得するデザイン時に使用されます。 通常、このメソッドは、1 つが存在する場合、コンポーネントのサイトの名前を返します。 たとえば、ボタンのクラス名は、"System.Windows.Forms.Button"がします。 コンポーネントを実装する場合、<xref:System.ComponentModel.ICustomTypeDescriptor>インターフェイス、その代替名を返すことができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConverter">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.TypeConverter GetConverter (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.TypeConverter GetConverter(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetConverter(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">コンバーターを取得する対象のコンポーネント。</param>
+        <summary>指定したコンポーネントの型の型コンバーターを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter" />指定されたコンポーネント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、適切な型コンバーターを検索を探して、<xref:System.ComponentModel.TypeConverterAttribute>です。 見つからない場合、 <xref:System.ComponentModel.TypeConverterAttribute>、プリミティブ型が見つかるまでは、クラスの基本クラスの階層構造を走査します。  
+  
+ このメソッドはオーバー ロードされたのと同じ<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A>メソッドの 2 番目のパラメーターを`false`です。  
+  
+   
+  
+## Examples  
+ このメソッドを使用しての例は、次を参照してください。、<xref:System.ComponentModel.TypeConverter>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConverter">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.TypeConverter GetConverter (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.TypeConverter GetConverter(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetConverter(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>指定した型の型コンバーターを返します。</summary>
+        <returns>指定した型の <see cref="T:System.ComponentModel.TypeConverter" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトのインスタンスがあるない場合にのみ、このバージョンのこのメソッドを呼び出します。  
+  
+ このメソッドを探して、適切な型コンバーターを検索、<xref:System.ComponentModel.TypeConverterAttribute>です。 見つからない場合、 <xref:System.ComponentModel.TypeConverterAttribute>、プリミティブ型が見つかるまでは、クラスの基本クラスの階層構造を走査します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConverter">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.TypeConverter GetConverter (object component, bool noCustomTypeDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.TypeConverter GetConverter(object component, bool noCustomTypeDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetConverter(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="noCustomTypeDesc" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component">コンバーターを取得する対象のコンポーネント。</param>
+        <param name="noCustomTypeDesc">
+          <see langword="true" />カスタム型説明情報を考慮するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>カスタム型記述子を使用して、指定されたコンポーネントの型の型コンバーターを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter" />指定されたコンポーネント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索することによってこのメソッドは、適切な型コンバーターを検索、<xref:System.ComponentModel.TypeConverterAttribute>です。 見つからない場合、 <xref:System.ComponentModel.TypeConverterAttribute>、プリミティブ型が見つかるまでは、クラスの基本クラスの階層構造を走査します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultEvent">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EventDescriptor GetDefaultEvent (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EventDescriptor GetDefaultEvent(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetDefaultEvent(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">取得するイベントの対象のコンポーネント。</param>
+        <summary>指定したコンポーネントの既定のイベントを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptor" />の既定のイベントを伴うまたは<see langword="null" />イベントがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはオーバー ロードされたのと同じ<xref:System.ComponentModel.TypeDescriptor.GetDefaultEvent%28System.Object%2CSystem.Boolean%29>メソッドの 2 番目のパラメーターを`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultEvent">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EventDescriptor GetDefaultEvent (Type componentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EventDescriptor GetDefaultEvent(class System.Type componentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetDefaultEvent(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="componentType">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>指定した型のコンポーネントの既定のイベントを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptor" />の既定のイベントを伴うまたは<see langword="null" />イベントがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトのインスタンスがあるない場合にのみ、このバージョンのこのメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultEvent">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EventDescriptor GetDefaultEvent (object component, bool noCustomTypeDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EventDescriptor GetDefaultEvent(object component, bool noCustomTypeDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetDefaultEvent(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="noCustomTypeDesc" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component">取得するイベントの対象のコンポーネント。</param>
+        <param name="noCustomTypeDesc">
+          <see langword="true" />カスタム型説明情報を考慮するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>カスタム型記述子を使用して、コンポーネントの既定のイベントを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptor" />の既定のイベントを伴うまたは<see langword="null" />イベントがない場合。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultProperty">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptor GetDefaultProperty (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptor GetDefaultProperty(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetDefaultProperty(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">既定のプロパティを取得するコンポーネント。</param>
+        <summary>指定したコンポーネントの既定のプロパティを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptor" />既定のプロパティ、または<see langword="null" />プロパティがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`component`パラメーターは`null`、このメソッドが戻る`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultProperty">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptor GetDefaultProperty (Type componentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptor GetDefaultProperty(class System.Type componentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetDefaultProperty(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="componentType">A<see cref="T:System.Type" />を表すクラスのプロパティを取得します。</param>
+        <summary>指定した型のコンポーネントの既定のプロパティを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptor" />既定のプロパティ、または<see langword="null" />プロパティがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトのインスタンスがあるない場合にのみ、このバージョンのこのメソッドを呼び出します。  
+  
+ 場合、`componentType`パラメーターは`null`、このメソッドが戻る`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultProperty">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptor GetDefaultProperty (object component, bool noCustomTypeDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptor GetDefaultProperty(object component, bool noCustomTypeDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetDefaultProperty(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="noCustomTypeDesc" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component">既定のプロパティを取得するコンポーネント。</param>
+        <param name="noCustomTypeDesc">
+          <see langword="true" />カスタム型説明情報を考慮するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>カスタム型記述子を使用して、指定したコンポーネントの既定のプロパティを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptor" />既定のプロパティ、または<see langword="null" />プロパティがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`component`パラメーターは`null`、このメソッドが戻る`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditor">
+      <MemberSignature Language="C#" Value="public static object GetEditor (object component, Type editorBaseType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetEditor(object component, class System.Type editorBaseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetEditor(System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="editorBaseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="component">取得するエディターの対象のコンポーネント。</param>
+        <param name="editorBaseType">A<see cref="T:System.Type" />を検索するエディターの基本型を表すです。</param>
+        <summary>指定した基本型を持ち、指定したコンポーネントで使用されるエディターを取得します。</summary>
+        <returns>指定されたエディターの種類にキャストできるエディターのインスタンスまたは<see langword="null" />要求された型のエディターが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型`editorBaseType`は通常<xref:System.Drawing.Design.UITypeEditor>、他の種類を使用することもできますが、(たとえば、<xref:System.ComponentModel.ComponentEditor>と<xref:System.ComponentModel.InstanceCreationEditor>)。  
+  
+ プロパティに対して複数のエディターを定義することができます。 使用するエディターを選択するのにには、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> または <paramref name="editorBaseType" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditor">
+      <MemberSignature Language="C#" Value="public static object GetEditor (Type type, Type editorBaseType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetEditor(class System.Type type, class System.Type editorBaseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetEditor(System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="editorBaseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <param name="editorBaseType">A<see cref="T:System.Type" />検索しようとしているエディターの基本型を表すです。</param>
+        <summary>指定した基本型を持つ、指定した型に関するエディターを返します。</summary>
+        <returns>指定した基本型にキャストできるエディター オブジェクトのインスタンスまたは<see langword="null" />要求された型のエディターが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型`editorBaseType`は通常<xref:System.Drawing.Design.UITypeEditor>、その他の種類を使用することもできますが、(たとえば<xref:System.ComponentModel.ComponentEditor>と<xref:System.ComponentModel.InstanceCreationEditor>)。  
+  
+ 型に対して複数のエディターを定義することができます。 この方法を使用して、使用する 1 つを選択します。  
+  
+ オブジェクトのインスタンスがあるない場合にのみ、このバージョンのこのメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> または <paramref name="editorBaseType" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditor">
+      <MemberSignature Language="C#" Value="public static object GetEditor (object component, Type editorBaseType, bool noCustomTypeDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetEditor(object component, class System.Type editorBaseType, bool noCustomTypeDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetEditor(System.Object,System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="editorBaseType" Type="System.Type" />
+        <Parameter Name="noCustomTypeDesc" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component">取得するエディターの対象のコンポーネント。</param>
+        <param name="editorBaseType">A<see cref="T:System.Type" />を検索するエディターの基本型を表すです。</param>
+        <param name="noCustomTypeDesc">カスタムの型の記述情報を考慮する必要があるかどうかを示すフラグ。</param>
+        <summary>指定したコンポーネント用のカスタムの型記述子が関連付けられている、指定した基本データ型のエディターを返します。</summary>
+        <returns>指定されたエディターの種類にキャストできるエディターのインスタンスまたは<see langword="null" />要求された型のエディターが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型`editorBaseType`は通常<xref:System.Drawing.Design.UITypeEditor>、その他の種類を使用することもできますが、(たとえば<xref:System.ComponentModel.ComponentEditor>と<xref:System.ComponentModel.InstanceCreationEditor>)。  
+  
+ プロパティに対して複数のエディターを定義することができます。 使用するエディターを選択するのにには、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> または <paramref name="editorBaseType" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvents">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EventDescriptorCollection GetEvents (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EventDescriptorCollection GetEvents(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetEvents(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">イベントを取得する対象のコンポーネント。</param>
+        <summary>指定されたコンポーネントのイベントのコレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />このコンポーネントのイベントを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントのコレクションを取得する、指定された`component`パラメーター インスタンスを提供します。 このコレクションとは異なる一連のイベント クラスを提供します。 場合、`component`パラメーターが配置された、サイトを追加またはその他のイベントを削除します。  
+  
+ 場合`component`は`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+   
+  
+## Examples  
+ このメソッドの例は、次を参照してください。、<xref:System.ComponentModel.EventDescriptorCollection.Count%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvents">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EventDescriptorCollection GetEvents (Type componentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EventDescriptorCollection GetEvents(class System.Type componentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetEvents(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="componentType">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>指定されたコンポーネント型のイベントのコレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />このコンポーネントのイベントを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトのインスタンスがあるない場合にのみ、このバージョンのこのメソッドを呼び出します。  
+  
+ 場合、`componentType`パラメーターは`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvents">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EventDescriptorCollection GetEvents (object component, Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EventDescriptorCollection GetEvents(object component, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetEvents(System.Object,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="component">イベントを取得する対象のコンポーネント。</param>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />をフィルターとして使用することができます。</param>
+        <summary>指定された属性配列をフィルターとして使用して、指定されたコンポーネントのイベント コレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />このコンポーネントの指定した属性と一致するイベントを持つ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを`component`パラメーターが、サイトは追加したり、場合にイベントを削除するため、クラスのイベントと異なる場合が、`component`パラメーターが配置されています。  
+  
+ `attributes`配列が混在していることができます<xref:System.Type>と<xref:System.Attribute>オブジェクト。 フィルター処理は、次のルールによって定義されます。  
+  
+-   A <xref:System.Type> ; ワイルドカードとして扱われるイベントをすべてに一致する、<xref:System.Type>属性のセットにします。  
+  
+-   イベントがない場合、<xref:System.Attribute>同じクラスのイベントに含まれていない、返される配列。  
+  
+-   属性がのインスタンスの場合、<xref:System.Attribute>クラス、イベントは、完全に一致する必要がありますまたは返される配列に含まれていません。  
+  
+-   場合、<xref:System.Attribute>インスタンスが指定されて、既定のイベントは、のインスタンスがない場合でも返される配列に含まれている、<xref:System.Attribute>イベント。  
+  
+ 場合`component`は`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvents">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EventDescriptorCollection GetEvents (object component, bool noCustomTypeDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EventDescriptorCollection GetEvents(object component, bool noCustomTypeDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetEvents(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="noCustomTypeDesc" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component">イベントを取得する対象のコンポーネント。</param>
+        <param name="noCustomTypeDesc">
+          <see langword="true" />カスタム型説明情報を考慮するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>カスタム型記述子を持つ、指定されたコンポーネントのイベントのコレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />このコンポーネントのイベントを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、イベントのコレクションを取得する、指定された`component`パラメーター インスタンスを提供します。 一連のイベント クラスは、この異なることができます。 場合、`component`パラメーターが配置された、サイトを追加またはその他のイベントを削除します。  
+  
+ 場合`component`は`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvents">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EventDescriptorCollection GetEvents (Type componentType, Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EventDescriptorCollection GetEvents(class System.Type componentType, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetEvents(System.Type,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="componentType">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />をフィルターとして使用することができます。</param>
+        <summary>指定された属性配列をフィルターとして使用して、指定されたコンポーネント型のイベント コレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />このコンポーネントの指定した属性と一致するイベントを持つ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトのインスタンスがあるない場合にのみ、このバージョンのこのメソッドを呼び出します。  
+  
+ `attributes`パラメーター配列が混在していることができます<xref:System.Type>と<xref:System.Attribute>オブジェクト。 フィルター処理は、次のルールによって定義されます。  
+  
+-   A <xref:System.Type> ; ワイルドカードとして扱われるイベントをすべてに一致する、<xref:System.Type>属性のセットにします。  
+  
+-   イベントがない場合、<xref:System.Attribute>同じクラスのイベントに含まれていない、返される配列。  
+  
+-   属性がのインスタンスの場合、<xref:System.Attribute>クラス、イベントは、完全に一致する必要がありますまたは返される配列に含まれていません。  
+  
+-   場合、<xref:System.Attribute>インスタンスが指定されて、既定のイベントは、のインスタンスがない場合でも返される配列に含まれている、<xref:System.Attribute>イベント。  
+  
+ 場合、`componentType`パラメーターは`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvents">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EventDescriptorCollection GetEvents (object component, Attribute[] attributes, bool noCustomTypeDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EventDescriptorCollection GetEvents(object component, class System.Attribute[] attributes, bool noCustomTypeDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetEvents(System.Object,System.Attribute[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+        <Parameter Name="noCustomTypeDesc" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component">イベントを取得する対象のコンポーネント。</param>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用します。</param>
+        <param name="noCustomTypeDesc">
+          <see langword="true" />カスタム型説明情報を考慮するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定された属性配列をフィルターとして使用し、カスタム型記述子を使用して、指定されたコンポーネントのイベントのコレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />このコンポーネントの指定した属性と一致するイベントを持つ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを`component`パラメーターが、サイトは追加したり、場合にイベントを削除するため、クラスのイベントと異なる場合が、`component`パラメーターが配置されています。  
+  
+ `attributes`パラメーター配列が混在していることができます<xref:System.Type>と<xref:System.Attribute>オブジェクト。 フィルター処理は、次のルールによって定義されます。  
+  
+-   A <xref:System.Type> ; ワイルドカードとして扱われるイベントをすべてに一致する、<xref:System.Type>属性のセットにします。  
+  
+-   イベントがない場合、<xref:System.Attribute>同じクラスのイベントに含まれていない、返される配列。  
+  
+-   属性がのインスタンスの場合、<xref:System.Attribute>クラス、イベントは、完全に一致する必要がありますまたは返される配列に含まれていません。  
+  
+-   場合、<xref:System.Attribute>インスタンスが指定されて、既定のイベントは、のインスタンスがない場合でも返される配列に含まれている、<xref:System.Attribute>イベント。  
+  
+ 場合`component`は`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFullComponentName">
+      <MemberSignature Language="C#" Value="public static string GetFullComponentName (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetFullComponentName(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetFullComponentName(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.Component" />の名前を検索します。</param>
+        <summary>コンポーネントの完全修飾名を返します。</summary>
+        <returns>指定されたコンポーネントの完全修飾名または<see langword="null" />コンポーネントに名前があるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多くの場合、<xref:System.ComponentModel.TypeDescriptor.GetFullComponentName%2A>メソッドは、同じ値を返します、<xref:System.ComponentModel.TypeDescriptor.GetComponentName%2A>メソッドです。 ただし、コンポーネントは、入れ子になったコンテナーに存在するか、入れ子になった他のセマンティクスを持つ場合、は、別の完全修飾名を返す可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptorCollection GetProperties (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptorCollection GetProperties(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetProperties(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">プロパティを取得する対象のコンポーネント。</param>
+        <summary>指定されたコンポーネントのプロパティのコレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />指定されたコンポーネントのプロパティを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネントのプロパティできるとは異なります。 クラスのプロパティから、サイトの追加またはコンポーネントが配置された場合は、プロパティを削除できます。  
+  
+ 場合、`component`パラメーターは`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.ComponentModel.TypeDescriptor.GetProperties%2A>コントロールのプロパティにアクセスするメソッド。 このコード例に示されている例の一部である、<xref:System.ComponentModel.Design.ComponentDesigner>クラスです。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerServices#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerServices/CS/Form1.cs#8)]
+ [!code-vb[System.ComponentModel.Design.DesignerServices#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerServices/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptorCollection GetProperties (Type componentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptorCollection GetProperties(class System.Type componentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetProperties(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="componentType">A<see cref="T:System.Type" />を表すプロパティを取得するコンポーネントです。</param>
+        <summary>指定された型のコンポーネントのプロパティ コレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />コンポーネントの指定した型のプロパティを持つ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトのインスタンスがあるない場合にのみ、このバージョンのこのメソッドを呼び出します。  
+  
+ 場合、`componentType`パラメーターは`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptorCollection GetProperties (object component, Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptorCollection GetProperties(object component, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetProperties(System.Object,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="component">プロパティを取得する対象のコンポーネント。</param>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用します。</param>
+        <summary>指定された属性配列をフィルターとして使用して、指定されたコンポーネントのプロパティのコレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />指定されたコンポーネントの指定した属性と一致するプロパティを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを`component`パラメーターが、サイトは追加したり、場合に、プロパティを削除するため、クラスのプロパティと異なる場合が、`component`パラメーターが配置されています。  
+  
+ `attributes`パラメーター配列は配列をフィルター処理に使用します。 フィルター処理は、次のルールによって定義されます。  
+  
+-   プロパティがない場合、<xref:System.Attribute>同じクラスのプロパティに含まれていない、返される配列。  
+  
+-   属性がのインスタンスの場合、<xref:System.Attribute>クラス、プロパティは完全に一致する必要がありますまたは返される配列に含まれていません。  
+  
+-   場合、<xref:System.Attribute>インスタンスが指定されて、既定のプロパティは、のインスタンスがない場合でも返される配列に含まれている、<xref:System.Attribute>プロパティにします。  
+  
+-   場合`attributes`、既定の属性を持つ、<xref:System.ComponentModel.TypeDescriptor.GetProperties%2A>メソッド、プロパティが適用された属性を持っていない場合に、ケースに一致します。  
+  
+ 場合`component`は`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Windows.Forms.Design.PropertyTab.GetProperties%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.Design.PropertyTab>クラスです。  
+  
+ [!code-cpp[PropertyTabExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/PropertyTabExample/CPP/class1.cpp#2)]
+ [!code-csharp[PropertyTabExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/PropertyTabExample/CS/class1.cs#2)]
+ [!code-vb[PropertyTabExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PropertyTabExample/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptorCollection GetProperties (object component, bool noCustomTypeDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptorCollection GetProperties(object component, bool noCustomTypeDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetProperties(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="noCustomTypeDesc" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component">プロパティを取得する対象のコンポーネント。</param>
+        <param name="noCustomTypeDesc">
+          <see langword="true" />カスタム型説明情報を検討しません。それ以外の場合、<see langword="false" />です。</param>
+        <summary>既定の型記述子を使用して、指定されたコンポーネントのプロパティのコレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />指定されたコンポーネントのプロパティを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを`component`パラメーターが、サイトは追加したり、場合に、プロパティを削除するため、クラスのプロパティと異なる場合が、`component`パラメーターが配置されています。  
+  
+ 場合`component`は`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptorCollection GetProperties (Type componentType, Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptorCollection GetProperties(class System.Type componentType, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetProperties(System.Type,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="componentType" Type="System.Type" />
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="componentType">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用します。</param>
+        <summary>指定された属性配列をフィルターとして使用して、指定されたコンポーネント型のプロパティのコレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />コンポーネントのこの型の指定した属性と一致するプロパティを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトのインスタンスがあるない場合にのみ、このバージョンのこのメソッドを呼び出します。  
+  
+ `attributes`パラメーター配列は配列をフィルター処理に使用します。 フィルター処理は、次のルールによって定義されます。  
+  
+-   プロパティがない場合、<xref:System.Attribute>同じクラスのプロパティに含まれていない、返される配列。  
+  
+-   属性がのインスタンスの場合、<xref:System.Attribute>クラス、プロパティは完全に一致する必要がありますまたは返される配列に含まれていません。  
+  
+-   場合、<xref:System.Attribute>インスタンスが指定されて、既定のプロパティは、のインスタンスがない場合でも返される配列に含まれている、<xref:System.Attribute>プロパティにします。  
+  
+-   場合`attributes`、既定の属性を持つ、<xref:System.ComponentModel.TypeDescriptor.GetProperties%2A>メソッド、プロパティが適用された属性を持っていない場合に、ケースに一致します。  
+  
+ 場合、`componentType`パラメーターは`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Windows.Forms.Design.PropertyTab.GetProperties%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.Design.PropertyTab>クラスです。  
+  
+ [!code-cpp[PropertyTabExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/PropertyTabExample/CPP/class1.cpp#2)]
+ [!code-csharp[PropertyTabExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/PropertyTabExample/CS/class1.cs#2)]
+ [!code-vb[PropertyTabExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PropertyTabExample/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptorCollection GetProperties (object component, Attribute[] attributes, bool noCustomTypeDesc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptorCollection GetProperties(object component, class System.Attribute[] attributes, bool noCustomTypeDesc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetProperties(System.Object,System.Attribute[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+        <Parameter Name="noCustomTypeDesc" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="component">プロパティを取得する対象のコンポーネント。</param>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用します。</param>
+        <param name="noCustomTypeDesc">
+          <see langword="true" />カスタム型説明情報を考慮するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定された属性配列をフィルターとして使用し、カスタム型記述子を使用して、指定されたコンポーネントのプロパティのコレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />指定されたコンポーネントの指定した属性と一致するイベントを持つ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティを`component`サイトは追加したり、場合に、プロパティを削除するために、クラスのプロパティと異なる場合が、`component`が配置されています。  
+  
+ `attributes`パラメーター配列は配列をフィルター処理に使用します。 フィルター処理は、次のルールによって定義されます。  
+  
+-   プロパティがない場合、<xref:System.Attribute>同じクラスのプロパティに含まれていない、返される配列。  
+  
+-   属性がのインスタンスの場合、<xref:System.Attribute>クラス、プロパティは完全に一致する必要がありますまたは返される配列に含まれていません。  
+  
+-   場合、<xref:System.Attribute>インスタンスが指定されて、既定のプロパティは、のインスタンスがない場合でも返される配列に含まれている、<xref:System.Attribute>プロパティにします。  
+  
+-   場合`attributes`、既定の属性を持つ、<xref:System.ComponentModel.TypeDescriptor.GetProperties%2A>メソッド、プロパティが適用された属性を持っていない場合に、ケースに一致します。  
+  
+ 場合、`component`パラメーターは`null`、空のコレクションが返されます。  
+  
+ 返されるコレクションの順序は、呼び出しで同じにするため、常に使用する前に注文は保証されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="component" />プロセス間リモート オブジェクトです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProvider">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.TypeDescriptionProvider GetProvider (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.TypeDescriptionProvider GetProvider(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetProvider(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeDescriptionProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">対象コンポーネントのインスタンス。</param>
+        <summary>指定されたコンポーネントの型説明プロバイダーを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeDescriptionProvider" />指定されたコンポーネントに関連付けられています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.GetProvider%2A>メソッドは、型説明プロバイダーを常に返します。 既定値も<xref:System.ComponentModel.TypeDescriptor>実装が上に構築された、<xref:System.ComponentModel.TypeDescriptionProvider>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="instance" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProvider">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.TypeDescriptionProvider GetProvider (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.TypeDescriptionProvider GetProvider(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetProvider(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeDescriptionProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>指定した型の型説明プロバイダーを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeDescriptionProvider" />指定した型に関連付けられています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.GetProvider%2A>メソッドは、型説明プロバイダーを常に返します。 既定値も<xref:System.ComponentModel.TypeDescriptor>実装が上に構築された、<xref:System.ComponentModel.TypeDescriptionProvider>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReflectionType">
+      <MemberSignature Language="C#" Value="public static Type GetReflectionType (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetReflectionType(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetReflectionType(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">対象コンポーネントのインスタンス。</param>
+        <summary>返します、<see cref="T:System.Type" />オブジェクトを指定するリフレクションの実行に使用できます。</summary>
+        <returns>A<see cref="T:System.Type" />指定したオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.GetReflectionType%2A>メソッドは、低レベルのバージョンのでは、<xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor%2A>メソッドです。 <xref:System.ComponentModel.TypeDescriptor.GetReflectionType%2A>カスタム型記述子が見つからないことのときに、オブジェクトに対する標準のリフレクションを実行する通常使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="instance" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReflectionType">
+      <MemberSignature Language="C#" Value="public static Type GetReflectionType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetReflectionType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.GetReflectionType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>返します、<see cref="T:System.Type" />の実行にリフレクションの場合、クラス型を使用できます。</summary>
+        <returns>A<see cref="T:System.Type" />の指定したクラスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.GetReflectionType%2A>メソッドは、低レベルのバージョンのでは、<xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor%2A>メソッドです。 <xref:System.ComponentModel.TypeDescriptor.GetReflectionType%2A>カスタム型記述子が見つからないことのときに、クラスに対して標準的なリフレクションを実行する通常使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InterfaceType">
+      <MemberSignature Language="C#" Value="public static Type InterfaceType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Type InterfaceType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.TypeDescriptor.InterfaceType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのインターフェイスの種類について型説明のプロバイダーを表す型を取得します。</summary>
+        <value>A<see cref="T:System.Type" />のすべての種類のインターフェイスは、カスタム型説明プロバイダーを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.InterfaceType%2A>プロパティを取得、<xref:System.Type>に渡すことができるオブジェクト、<xref:System.ComponentModel.TypeDescriptor.AddProvider%2A>インターフェイスの型の型説明プロバイダーを定義するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public static void Refresh (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Refresh(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.Refresh(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">プロパティまたはイベントが変更されているコンポーネント。</param>
+        <summary>指定されたコンポーネントのプロパティとイベントをキャッシュからクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティとイベントがによってキャッシュされる<xref:System.ComponentModel.TypeDescriptor>速度。 通常、これらは定数オブジェクトの有効期間です。 ただし、拡張プロバイダーとデザイナーは、一連のオブジェクトのプロパティを変更できます。 場合は、オブジェクトのプロパティとイベント記述子をクリアするには、このメソッドを呼び出す必要があります。 このメソッドは、デザイン時にのみ使用されます。 実行時に使用されません。  
+  
+ このメソッドは、<xref:System.ComponentModel.TypeDescriptor.Refreshed>プロパティまたはコンポーネントのイベントを変更したときにイベント。 前回の呼び出しがあった場合にのみ、このイベントが発生、<xref:System.ComponentModel.TypeDescriptor.GetProperties%2A>または<xref:System.ComponentModel.TypeDescriptor.GetEvents%2A>情報をキャッシュします。  
+  
+   
+  
+## Examples  
+ このメソッドを使用しての例は、次を参照してください。、<xref:System.ComponentModel.RefreshEventHandler>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public static void Refresh (System.Reflection.Assembly assembly);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Refresh(class System.Reflection.Assembly assembly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.Refresh(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="assembly"><see cref="T:System.Reflection.Assembly" />を更新するアセンブリを表すです。 各<see cref="T:System.Type" />このアセンブリ内で更新されます。</param>
+        <summary>指定されたアセンブリのプロパティとイベントをキャッシュからクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティとイベントがによってキャッシュされる<xref:System.ComponentModel.TypeDescriptor>速度。 通常、これらは定数オブジェクトの有効期間です。 ただし、拡張プロバイダーとデザイナーは、一連のオブジェクトのプロパティを変更できます。 場合は、オブジェクトのプロパティとイベント記述子をクリアするには、このメソッドを呼び出す、ことができます。 このメソッドは、デザイン時にのみ使用されます。 実行時に使用されません。  
+  
+ 呼び出しを行う前に、 <xref:System.ComponentModel.TypeDescriptor.Refresh%2A> 、キャッシュを消去するメソッドを呼び出す必要がある、<xref:System.ComponentModel.TypeDescriptor.GetProperties%2A>情報を最初にキャッシュする特定のアセンブリのメソッドです。  
+  
+ このメソッドは、<xref:System.ComponentModel.TypeDescriptor.Refreshed>プロパティがコンポーネントの変更のときに通知する必要があるすべてのクラスを通知するイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public static void Refresh (System.Reflection.Module module);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Refresh(class System.Reflection.Module module) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.Refresh(System.Reflection.Module)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="module" Type="System.Reflection.Module" />
+      </Parameters>
+      <Docs>
+        <param name="module"><see cref="T:System.Reflection.Module" />を表す、モジュールを更新します。 各<see cref="T:System.Type" />このモジュールで更新されます。</param>
+        <summary>指定されたモジュールのプロパティとイベントをキャッシュからクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティとイベントがによってキャッシュされる<xref:System.ComponentModel.TypeDescriptor>速度。 通常、これらは定数オブジェクトの有効期間です。 ただし、拡張プロバイダーとデザイナーは、一連のオブジェクトのプロパティを変更できます。 場合は、オブジェクトのプロパティとイベント記述子をクリアするには、このメソッドを呼び出す、ことができます。 このメソッドは、デザイン時にのみ使用されます。 実行時に使用されません。  
+  
+ 呼び出しを行う前に、 <xref:System.ComponentModel.TypeDescriptor.Refresh%2A> 、キャッシュを消去するメソッドを呼び出す必要がある、<xref:System.ComponentModel.TypeDescriptor.GetProperties%2A>情報を最初にキャッシュする特定のモジュールのメソッドです。  
+  
+ このメソッドは、<xref:System.ComponentModel.TypeDescriptor.Refreshed>プロパティがコンポーネントの変更のときに通知する必要があるすべてのクラスを通知するイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public static void Refresh (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Refresh(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.Refresh(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>コンポーネントの指定された型のプロパティとイベントをキャッシュからクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトのインスタンスがあるない場合にのみ、このバージョンのこのメソッドを呼び出します。  
+  
+ プロパティとイベントがによってキャッシュされる<xref:System.ComponentModel.TypeDescriptor>速度。 通常、これらは定数オブジェクトの有効期間です。 ただし、拡張プロバイダーとデザイナーは、一連のオブジェクトのプロパティを変更できます。 場合は、オブジェクトのプロパティとイベント記述子をクリアするには、このメソッドを呼び出す、ことができます。 このメソッドは、デザイン時にのみ使用されます。 実行時に使用されません。  
+  
+ このメソッドは、<xref:System.ComponentModel.TypeDescriptor.Refreshed>プロパティまたはコンポーネントのイベントを変更したときにイベント。 前回の呼び出しがあった場合にのみ、このイベントが発生、<xref:System.ComponentModel.TypeDescriptor.GetProperties%2A>または<xref:System.ComponentModel.TypeDescriptor.GetEvents%2A>情報をキャッシュします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refreshed">
+      <MemberSignature Language="C#" Value="public static event System.ComponentModel.RefreshEventHandler Refreshed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.RefreshEventHandler Refreshed" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.TypeDescriptor.Refreshed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.RefreshEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントのキャッシュが消去されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ このイベントを使用しての例は、次を参照してください。、<xref:System.ComponentModel.RefreshEventHandler>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAssociation">
+      <MemberSignature Language="C#" Value="public static void RemoveAssociation (object primary, object secondary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveAssociation(object primary, object secondary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.RemoveAssociation(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primary" Type="System.Object" />
+        <Parameter Name="secondary" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="primary">プライマリ<see cref="T:System.Object" />です。</param>
+        <param name="secondary">セカンダリ<see cref="T:System.Object" />です。</param>
+        <summary>2 つのオブジェクトの間の関連付けを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.RemoveAssociation%2A>メソッドによって形成される 2 つのオブジェクト間のアソシエーションの削除、<xref:System.ComponentModel.TypeDescriptor.CreateAssociation%2A>メソッドです。  
+  
+ A<xref:System.WeakReference>にプライマリとセカンダリのオブジェクト間の関連付けを維持。 そのため、このメソッドには影響しませんいずれかのオブジェクトが終了またはガベージ コレクションによって回収されるときにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAssociations">
+      <MemberSignature Language="C#" Value="public static void RemoveAssociations (object primary);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveAssociations(object primary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.RemoveAssociations(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primary" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="primary">プライマリ<see cref="T:System.Object" />アソシエーション。</param>
+        <summary>プライマリ オブジェクトのすべての関連付けを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor.RemoveAssociations%2A>メソッドは、プライマリ オブジェクトとそのすべてのセカンダリ オブジェクトへの呼び出しによって作成される間のすべての関連付けを削除、<xref:System.ComponentModel.TypeDescriptor.CreateAssociation%2A>メソッドです。  
+  
+ A<xref:System.WeakReference>にプライマリとセカンダリのオブジェクト間の関連付けを維持です。 そのため、このメソッドには影響しませんときに 2 番目のオブジェクトのいずれか、プライマリが終了またはガベージ コレクションによって回収されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="primary" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveProvider">
+      <MemberSignature Language="C#" Value="public static void RemoveProvider (System.ComponentModel.TypeDescriptionProvider provider, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveProvider(class System.ComponentModel.TypeDescriptionProvider provider, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.RemoveProvider(System.ComponentModel.TypeDescriptionProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.TypeDescriptionProvider" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="provider">削除する <see cref="T:System.ComponentModel.TypeDescriptionProvider" />。</param>
+        <param name="instance">対象コンポーネントのインスタンス。</param>
+        <summary>指定したオブジェクトに関連付けられている、以前に追加された型説明プロバイダーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、以前に追加された型説明プロバイダーを削除、<xref:System.ComponentModel.TypeDescriptor.AddProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Object%29>メソッドです。 プロバイダーの削除により、<xref:System.ComponentModel.TypeDescriptor.Refreshed>イベントが関連付けられているオブジェクトに対して発生します。  
+  
+ 使用して、<xref:System.ComponentModel.TypeDescriptor.RemoveProviderTransparent%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Object%29>メソッドを部分的に信頼されたコードから呼び出す必要がある場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveProvider">
+      <MemberSignature Language="C#" Value="public static void RemoveProvider (System.ComponentModel.TypeDescriptionProvider provider, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveProvider(class System.ComponentModel.TypeDescriptionProvider provider, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.RemoveProvider(System.ComponentModel.TypeDescriptionProvider,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.TypeDescriptionProvider" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="provider">削除する <see cref="T:System.ComponentModel.TypeDescriptionProvider" />。</param>
+        <param name="type">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>指定した型に関連付けられている、以前に追加された型説明プロバイダーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、以前に追加された型説明プロバイダーを削除、<xref:System.ComponentModel.TypeDescriptor.AddProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Type%29>メソッドです。 プロバイダーの削除により、<xref:System.ComponentModel.TypeDescriptor.Refreshed>に関連付けられている型に対して生成されるイベント。  
+  
+ 使用して、<xref:System.ComponentModel.TypeDescriptor.RemoveProviderTransparent%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Type%29>メソッドを部分的に信頼されたコードから呼び出す必要がある場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveProviderTransparent">
+      <MemberSignature Language="C#" Value="public static void RemoveProviderTransparent (System.ComponentModel.TypeDescriptionProvider provider, object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveProviderTransparent(class System.ComponentModel.TypeDescriptionProvider provider, object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.RemoveProviderTransparent(System.ComponentModel.TypeDescriptionProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.TypeDescriptionProvider" />
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="provider">削除する <see cref="T:System.ComponentModel.TypeDescriptionProvider" />。</param>
+        <param name="instance">対象コンポーネントのインスタンス。</param>
+        <summary>指定したオブジェクトに関連付けられている、以前に追加された型説明プロバイダーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、以前に追加された型説明プロバイダーを削除、<xref:System.ComponentModel.TypeDescriptor.AddProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Object%29>メソッドです。 プロバイダーの削除により、<xref:System.ComponentModel.TypeDescriptor.Refreshed>イベントが関連付けられているオブジェクトに対して発生します。  
+  
+ このメソッドは、部分的に信頼されたコードから呼び出すことができます。 場合<xref:System.Security.Permissions.TypeDescriptorPermissionFlags.RestrictedRegistrationAccess>が定義されている場合、呼び出し元できますプロバイダーを登録する指定したインスタンスの型が部分的に信頼されたもある場合。  
+  
+ 使用して、<xref:System.ComponentModel.TypeDescriptor.RemoveProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Object%29>メソッドの場合は、部分的に信頼されたコードから呼び出す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.TypeDescriptorPermission">レジストリのアクセス。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.TypeDescriptorPermissionFlags.RestrictedRegistrationAccess" /></permission>
+        <permission cref="P:System.Reflection.Assembly.PermissionSet">セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連付けられている種類:<see cref="T:System.Security.PermissionSet" />を定義するアセンブリで必要となる、<paramref name="instance" />パラメーターの型。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveProviderTransparent">
+      <MemberSignature Language="C#" Value="public static void RemoveProviderTransparent (System.ComponentModel.TypeDescriptionProvider provider, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveProviderTransparent(class System.ComponentModel.TypeDescriptionProvider provider, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.RemoveProviderTransparent(System.ComponentModel.TypeDescriptionProvider,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.TypeDescriptionProvider" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="provider">削除する <see cref="T:System.ComponentModel.TypeDescriptionProvider" />。</param>
+        <param name="type">対象コンポーネントの <see cref="T:System.Type" />。</param>
+        <summary>指定した型に関連付けられている、以前に追加された型説明プロバイダーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、以前に追加された型説明プロバイダーを削除、<xref:System.ComponentModel.TypeDescriptor.AddProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Type%29>メソッドです。 プロバイダーの削除により、<xref:System.ComponentModel.TypeDescriptor.Refreshed>に関連付けられている型に対して生成されるイベント。  
+  
+ このメソッドは、部分的に信頼されたコードから呼び出すことができます。 場合<xref:System.Security.Permissions.TypeDescriptorPermissionFlags.RestrictedRegistrationAccess>が定義されている場合、呼び出し元は、登録を解除できます、指定した種類のプロバイダーも部分的に信頼されている場合。  
+  
+ 使用して、<xref:System.ComponentModel.TypeDescriptor.RemoveProvider%28System.ComponentModel.TypeDescriptionProvider%2CSystem.Type%29>メソッドの場合は、部分的に信頼されたコードから呼び出す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">一方または両方のパラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.TypeDescriptorPermission">レジストリのアクセス。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.TypeDescriptorPermissionFlags.RestrictedRegistrationAccess" /></permission>
+        <permission cref="P:System.Reflection.Assembly.PermissionSet">セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連付けられている種類:<see cref="T:System.Security.PermissionSet" />を定義するアセンブリで必要となる<paramref name="type" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SortDescriptorArray">
+      <MemberSignature Language="C#" Value="public static void SortDescriptorArray (System.Collections.IList infos);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SortDescriptorArray(class System.Collections.IList infos) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeDescriptor.SortDescriptorArray(System.Collections.IList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="infos" Type="System.Collections.IList" />
+      </Parameters>
+      <Docs>
+        <param name="infos"><see cref="T:System.Collections.IList" />並べ替える記述子を格納しています。</param>
+        <summary>記述子の名前を使用して、記述子を並べ替えます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="infos" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

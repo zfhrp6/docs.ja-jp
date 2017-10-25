@@ -1,0 +1,723 @@
+<Type Name="WSHttpBindingBase" FullName="System.ServiceModel.WSHttpBindingBase">
+  <TypeSignature Language="C#" Value="public abstract class WSHttpBindingBase : System.ServiceModel.Channels.Binding, System.ServiceModel.Channels.IBindingRuntimePreferences" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WSHttpBindingBase extends System.ServiceModel.Channels.Binding implements class System.ServiceModel.Channels.IBindingRuntimePreferences" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.WSHttpBindingBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.Binding</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IBindingRuntimePreferences</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.WSHttpBinding" /> および <see cref="T:System.ServiceModel.WSFederationHttpBinding" /> に共通のメンバーを持つ基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WSHttpBindingBase> は、安全で信頼できる相互運用可能な Web サービスを構成するために使用されるバインド、たとえば、<xref:System.ServiceModel.WSHttpBinding> によって実装される非双方向サービス コントラクト用のバインド、特に WS-Federation プロトコルをサポートする安全で相互運用可能な <xref:System.ServiceModel.WSFederationHttpBinding> のための基本機能を提供します。  
+  
+ 既定では、これは、メッセージ セキュリティと認証用 WS-Security、メッセージ配信用 HTTP、および Text/XML メッセージ エンコーディングを使用するランタイム スタックを生成します。 信頼性を得るために、WS-ReliableMessaging も使用するように構成できます。  
+  
+ WS-ReliableMessaging を使用するかどうかは、省略可能な `reliableSessionEnabled` パラメーターを使用して設定できます。  
+  
+   
+  
+## Examples  
+ 次の例では、派生クラスである <xref:System.ServiceModel.WSHttpBindingBase> と <xref:System.ServiceModel.WSHttpBinding> を持つ <xref:System.ServiceModel.WSFederationHttpBinding> クラスによって提供される機能の使用方法を示します。  
+  
+ [!code-csharp[WSHttpBindingBase#0](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#0)]
+ [!code-vb[WSHttpBindingBase#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WSHttpBindingBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpBindingBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.WSHttpBindingBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 既定のコンストラクターの使用方法を次の例に示します。  
+  
+ [!code-csharp[WSHttpBindingBase#1](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#1)]
+ [!code-vb[WSHttpBindingBase#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WSHttpBindingBase (bool reliableSessionEnabled);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(bool reliableSessionEnabled) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpBindingBase.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reliableSessionEnabled" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="reliableSessionEnabled">
+          信頼できるセッションが有効な場合は <see langword="true" /> を返します。それ以外の場合は <see langword="false" /> を返します。</param>
+        <summary>信頼できるセッションが有効かどうかを示す値を使用して、<see cref="T:System.ServiceModel.WSHttpBindingBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BypassProxyOnLocal">
+      <MemberSignature Language="C#" Value="public bool BypassProxyOnLocal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BypassProxyOnLocal" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.BypassProxyOnLocal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ローカル アドレスのプロキシ サーバーをバイパスする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターネット リソースは、ローカル アドレスを持つ場合ローカルです。 ローカル アドレスは、同じコンピューター、ローカル LAN、またはイントラネット上にあり、"http://webserver/"、"http://localhost/" などのピリオド (.) を含まない URI により構文的に識別されるアドレスです。  
+  
+ <xref:System.ServiceModel.WSHttpBindingBase.BypassProxyOnLocal%2A> プロパティを設定して、<xref:System.ServiceModel.WSHttpBindingBase> で構成されたエンドポイントがローカル リソースへのアクセス時にプロキシ サーバーを使用するかどうかを決定します。  
+  
+ <xref:System.ServiceModel.WSHttpBindingBase.BypassProxyOnLocal%2A> が `true` の場合、ローカル インターネット リソースへの要求はプロキシ サーバーを使用しません。 <xref:System.ServiceModel.WSHttpBindingBase.BypassProxyOnLocal%2A> が `false` の場合、すべてのインターネット要求はプロキシ サーバー経由で行われます。  
+  
+   
+  
+## Examples  
+  
+ 次の例では、ローカル リソースでプロキシをバイパスするようにこのプロパティを設定しています。  
+  
+ [!code-csharp[WSHttpBindingBase#3](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#3)]
+ [!code-vb[WSHttpBindingBase#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#3)]  
+  
+ このプロパティの値は、構成ファイルでも設定できます。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBindingElements">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElementCollection CreateBindingElements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElementCollection CreateBindingElements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpBindingBase.CreateBindingElements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のバインディングに含まれるバインディング要素の順序付けられたコレクションを返します。</summary>
+        <returns>バインディング用の <see cref="T:System.ServiceModel.Channels.BindingElementCollection" /> を含む <see cref="T:System.ServiceModel.Channels.BindingElement" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインド要素の順序は重要です。 これは、プロトコルおよびトランスポート チャネルが構築され、スタックされる順序を反映します。  
+  
+   
+  
+## Examples  
+ この例では、メッセージの最大サイズを取得する方法について説明します。  
+  
+ [!code-csharp[WSHttpBindingBase#16](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#16)]
+ [!code-vb[WSHttpBindingBase#16](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMessageSecurity">
+      <MemberSignature Language="C#" Value="protected abstract System.ServiceModel.Channels.SecurityBindingElement CreateMessageSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Channels.SecurityBindingElement CreateMessageSecurity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpBindingBase.CreateMessageSecurity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで実装した場合は、現在のバインドから <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> を返します。</summary>
+        <returns>現在のバインドからの <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnvelopeVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EnvelopeVersion EnvelopeVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EnvelopeVersion EnvelopeVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.EnvelopeVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EnvelopeVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドによって処理されるメッセージに使用される SOAP のバージョンを取得します。</summary>
+        <value>このバインディングと共に使用される <see cref="T:System.ServiceModel.EnvelopeVersion" /> の値。 値は、常に SOAP 1.2 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、エンベロープ バージョンの取得方法を示します。  
+  
+ [!code-csharp[WSHttpBindingBase#4](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#4)]
+ [!code-vb[WSHttpBindingBase#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTransport">
+      <MemberSignature Language="C#" Value="protected abstract System.ServiceModel.Channels.TransportBindingElement GetTransport ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Channels.TransportBindingElement GetTransport() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpBindingBase.GetTransport" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.TransportBindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで実装した場合は、現在のバインドからトランスポート バインド要素を返します。</summary>
+        <returns>現在のバインドからの <see cref="T:System.ServiceModel.Channels.TransportBindingElement" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostNameComparisonMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.HostNameComparisonMode HostNameComparisonMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.HostNameComparisonMode HostNameComparisonMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.HostNameComparisonMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.HostNameComparisonMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URI が一致した場合にサービスに到達するためにホスト名を使用するかどうかを示す値を取得または設定します。</summary>
+        <value>URI で一致する場合にサービスに到達するためにホスト名を使用するかどうかを示す <see cref="P:System.ServiceModel.Configuration.WSDualHttpBindingElement.HostNameComparisonMode" /> 値。 既定値は <see cref="F:System.ServiceModel.HostNameComparisonMode.StrongWildcard" /> で、一致しているホスト名を無視します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Configuration.WSDualHttpBindingElement.HostNameComparisonMode%2A> の値を取得する方法を示します。  
+  
+ [!code-csharp[WSHttpBindingBase#5](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#5)]
+ [!code-vb[WSHttpBindingBase#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxBufferPoolSize">
+      <MemberSignature Language="C#" Value="public long MaxBufferPoolSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxBufferPoolSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.MaxBufferPoolSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(524288)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に割り当てられたメモリをバイト単位でこのバインドを使用してエンドポイントによって必要とするバッファーを管理するバッファー マネージャーの最大量。</summary>
+        <value>このバインディングで構成されるエンドポイントによって使用されるバッファーのプールの最大サイズ (バイト単位)。 既定値は 524, 288 バイトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.BufferManager> は、バッファー プールを使用することで、バッファーの使用コストを最小化しようとします。 バッファーは、チャネルから出てくるメッセージをサービスが処理するときに必要です。 メッセージの読み込み処理に十分なメモリがバッファー プールにない場合、<xref:System.ServiceModel.Channels.BufferManager> は、CLR ヒープから追加のメモリを割り当てる必要があります。これにより、ガベージ コレクションのオーバーヘッドが増加します。 CLR ガベージ ヒープから多大な割り当てが行われることは、バッファー プール サイズが小さすぎること、および <xref:System.ServiceModel.WSHttpBindingBase.MaxBufferPoolSize%2A> の制限を緩めて割り当てを増やすとパフォーマンスが向上する可能性があることを示します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.WSHttpBindingBase.MaxBufferPoolSize%2A> の値を取得する方法を示します。  
+  
+ [!code-csharp[WSHttpBindingBase#6](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#6)]
+ [!code-vb[WSHttpBindingBase#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxReceivedMessageSize">
+      <MemberSignature Language="C#" Value="public long MaxReceivedMessageSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxReceivedMessageSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.MaxReceivedMessageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(65536)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、バインディングにより処理可能なメッセージのバイト単位で最大のサイズを設定します。</summary>
+        <value>バインドで処理されるメッセージの最大サイズ (バイト単位)。 既定値は 65,536 バイトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WSHttpBindingBase> を使用するサービスがワイヤ上で受信できるメッセージのサイズは、各メッセージに割り当てられたメモリの大きさに制限されます。 このメッセージ サイズの制限は、サービス拒否 (DoS) を受けないようにするためのものです。  
+  
+   
+  
+## Examples  
+ この例では、メッセージの最大サイズを取得する方法について説明します。  
+  
+ [!code-csharp[WSHttpBindingBase#7](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#7)]
+ [!code-vb[WSHttpBindingBase#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+        <exception cref="T:System.ServiceModel.QuotaExceededException">メッセージが割り当てられた最大サイズを超えました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageEncoding">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.WSMessageEncoding MessageEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.WSMessageEncoding MessageEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.MessageEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WSMessageEncoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージのエンコードに MTOM または Text/XML が使用されるかどうかを取得または設定します。</summary>
+        <value>SOAP メッセージのエンコードで MTOM または Text が使用されるかどうかを示す <see cref="T:System.ServiceModel.WSMessageEncoding" /> の値。 既定値は <see cref="F:System.ServiceModel.WSMessageEncoding.Text" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、メッセージの最大サイズを取得する方法について説明します。  
+  
+ [!code-csharp[WSHttpBindingBase#8](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#8)]
+ [!code-vb[WSHttpBindingBase#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProxyAddress">
+      <MemberSignature Language="C#" Value="public Uri ProxyAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ProxyAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.ProxyAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.UriTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP プロキシの URI アドレスを取得または設定します。</summary>
+        <value>HTTP プロキシのアドレスとして使用できる <see cref="T:System.Uri" />。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WSHttpBindingBase.UseDefaultWebProxy%2A> を `true` に設定した場合、<xref:System.ServiceModel.WSHttpBindingBase.ProxyAddress%2A> の値は無視されます。  
+  
+   
+  
+## Examples  
+ この例では、メッセージの最大サイズを取得する方法について説明します。  
+  
+ [!code-csharp[WSHttpBindingBase#9](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#9)]
+ [!code-vb[WSHttpBindingBase#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReaderQuotas">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDictionaryReaderQuotas ReaderQuotas { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlDictionaryReaderQuotas ReaderQuotas" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.ReaderQuotas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReaderQuotas</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングを使用して設定されるエンドポイントにより処理可能な、SOAP メッセージの複雑さに対する制約を取得または設定します。</summary>
+        <value>複雑さの制約を指定する <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複雑さの制約には、要素の最大深度、メッセージ内の文字列コンテンツの最大長などの項目が含まれます。 複雑さの制約により、メッセージの複雑さを使用してエンドポイント処理リソースを停滞させるサービス拒否 (DOS) 型の攻撃から保護します。  
+  
+   
+  
+## Examples  
+ この例では、メッセージの最大サイズを取得する方法について説明します。  
+  
+ [!code-csharp[WSHttpBindingBase#10](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#10)]
+ [!code-vb[WSHttpBindingBase#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReliableSession">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.OptionalReliableSession ReliableSession { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.OptionalReliableSession ReliableSession" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.ReliableSession" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.OptionalReliableSession</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム指定のバインディングのいずれかを使用したときに使用できる、信頼できるセッションのバインド要素のプロパティにアクセスする便利な方法を提供するオブジェクトを取得します。</summary>
+        <value>システム指定のバインドのいずれかを使用したときに使用できる、信頼できるセッションのバインド要素のプロパティにアクセスする便利な方法を提供する <see cref="T:System.ServiceModel.ReliableSession" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼できるセッションは、<xref:System.ServiceModel.WSHttpBindingBase.%23ctor%28System.Boolean%29> コンストラクターを使用して有効にします。  
+  
+   
+  
+## Examples  
+ 次の例では、信頼できるセッション バイディングのプロパティを取得する方法を示します。  
+  
+ [!code-csharp[WSHttpBindingBase#11](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#11)]
+ [!code-vb[WSHttpBindingBase#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public override string Scheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングで構成されたチャネルとリスナーのための URI トランスポート スキームを取得します。</summary>
+        <value>トランスポート バインド要素のセキュリティ モードが <see cref="F:System.ServiceModel.SecurityMode.None" /> または <see cref="F:System.ServiceModel.SecurityMode.Message" /> に設定されている場合は "http"。セキュリティ モードがそれ以外に設定されている場合は "https"。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、メッセージの最大サイズを取得する方法について説明します。  
+  
+ [!code-csharp[WSHttpBindingBase#12](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#12)]
+ [!code-vb[WSHttpBindingBase#12](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeReaderQuotas">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeReaderQuotas ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeReaderQuotas() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpBindingBase.ShouldSerializeReaderQuotas" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSHttpBindingBase.ReaderQuotas" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSHttpBindingBase.ReaderQuotas" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeReliableSession">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeReliableSession ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeReliableSession() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpBindingBase.ShouldSerializeReliableSession" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSHttpBindingBase.ReliableSession" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSHttpBindingBase.ReliableSession" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTextEncoding">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTextEncoding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTextEncoding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpBindingBase.ShouldSerializeTextEncoding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSHttpBindingBase.TextEncoding" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSHttpBindingBase.TextEncoding" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously">
+      <MemberSignature Language="C#" Value="bool System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.System#ServiceModel#Channels#IBindingRuntimePreferences#ReceiveSynchronously" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信要求を同期処理するか、または非同期処理するかを示す値を取得します。</summary>
+        <value>
+          要求が同期的に処理される場合は <see langword="true" />。非同期的に処理される場合は <see langword="false" />。 既定は <see langword="false" /> で、要求を非同期的に処理します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、ReceiveSynchronously メンバーの使用方法を示します。  
+  
+ [!code-csharp[WSHttpBindingBase#19](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#19)]
+ [!code-vb[WSHttpBindingBase#19](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding TextEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding TextEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.TextEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ServiceModel.Configuration.EncodingConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ テキストに使用される文字エンコーディングを取得または設定します。</summary>
+        <value>使用されている文字エンコードを示す <see cref="T:System.Text.Encoding" />。 既定値は、<see cref="T:System.Text.UTF8Encoding" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、メッセージの最大サイズを取得する方法について説明します。  
+  
+ [!code-csharp[WSHttpBindingBase#13](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#13)]
+ [!code-vb[WSHttpBindingBase#13](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionFlow">
+      <MemberSignature Language="C#" Value="public bool TransactionFlow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TransactionFlow" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.TransactionFlow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングが WS-Transactions のフローをサポートするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          トランザクション フローがサポートされる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、メッセージの最大サイズを取得する方法について説明します。  
+  
+ [!code-csharp[WSHttpBindingBase#14](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#14)]
+ [!code-vb[WSHttpBindingBase#14](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDefaultWebProxy">
+      <MemberSignature Language="C#" Value="public bool UseDefaultWebProxy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDefaultWebProxy" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpBindingBase.UseDefaultWebProxy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用できる場合にシステムの自動構成される HTTP プロキシを使用するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          システムの自動構成される HTTP プロキシを使用する必要がある場合 (利用可能な場合) は、<see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これが `true` で、<xref:System.ServiceModel.WSHttpBindingBase.ProxyAddress%2A> が `null` 以外の場合はエラーです。  
+  
+   
+  
+## Examples  
+ この例では、メッセージの最大サイズを取得する方法について説明します。  
+  
+ [!code-csharp[WSHttpBindingBase#15](~/samples/snippets/csharp/VS_Snippets_CFX/wshttpbindingbase/cs/service.cs#15)]
+ [!code-vb[WSHttpBindingBase#15](~/samples/snippets/visualbasic/VS_Snippets_CFX/wshttpbindingbase/vb/service.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

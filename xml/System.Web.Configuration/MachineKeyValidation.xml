@@ -1,0 +1,229 @@
+<Type Name="MachineKeyValidation" FullName="System.Web.Configuration.MachineKeyValidation">
+  <TypeSignature Language="C#" Value="public enum MachineKeyValidation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MachineKeyValidation extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.MachineKeyValidation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ASP.NET とフォーム認証用のビュー状態データを検証するため、アウト プロセス セッション状態の識別に使用されるハッシュ アルゴリズムを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET で、フォーム認証またはビューの状態に使用されるデータが改ざんされているかどうかを検出するために、ハッシュ ベース メッセージ認証コード (HMAC) を使用します。 状態の表示内容が作成され、後続の要求で HMAC がチェックされて、HMAC が生成されます。 HMAC により、ASP.NET は確認するかどうか、サーバーとクライアント間で送信されるデータが変更されたことがも暗号化されている場合を除き、インターネットを介してやり取りする際、すべてのユーザーがデータを読み取ることができます。 既定では、ビュー ステート検証は暗号化されません。 詳細については、<xref:System.Web.UI.Page.ViewStateEncryptionMode%2A> および <xref:System.Web.UI.Page.RegisterRequiresViewStateEncryption%2A> を参照してください。  
+  
+ <xref:System.Web.Configuration.MachineKeyValidation>列挙型では、ASP.NET を使用して、HMAC を作成するアルゴリズムを指定することができます。 既定値は、HMACSHA256 です。 ASP.NET の値を使用して、 <xref:System.Web.Configuration.MachineKeySection.ValidationKey%2A> HMAC を生成する、選択したアルゴリズムを持つプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.MachineKeyValidation>列挙します。 例では、`configSection`のインスタンスは、<xref:System.Web.Configuration.MachineKeySection>です。このコード例に示されている例の一部である、<xref:System.Web.Configuration.MachineKeySection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.MachineKeySection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.MachineKeySection/CS/machinekeysection.cs#5)]
+ [!code-vb[System.Web.Configuration.MachineKeySection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.MachineKeySection/VB/machinekeysection.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AES">
+      <MemberSignature Language="C#" Value="AES" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.MachineKeyValidation AES = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.MachineKeyValidation.AES" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.MachineKeyValidation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET を使用するように指定、 <see langword="AES" /> (Rijndael) 暗号化アルゴリズムです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web アプリケーションでの表示状態を暗号化する場合は、このオプションを選択します。 このオプションを選択する場合、<xref:System.Web.Configuration.MachineKeySection.DecryptionKey%2A>暗号化と復号化、プロパティが使用されます、`HMACSHA1`で使用されるハッシュ アルゴリズム、<xref:System.Web.Configuration.MachineKeySection.ValidationKey%2A>検証のためのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="Custom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.MachineKeyValidation Custom = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.MachineKeyValidation.Custom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.MachineKeyValidation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET がカスタムのハッシュ アルゴリズムを使用することを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラスでは、カスタムのハッシュ アルゴリズムを実装できます<xref:System.Security.Cryptography.KeyedHashAlgorithm>です。  
+  
+ カスタム アルゴリズムが形式で、要素の検証属性で宣言によって指定された通常`alg:`*アルゴリズム*です。 コードでカスタム アルゴリズムを指定する方法については、次を参照してください。、<xref:System.Web.Configuration.MachineKeySection.ValidationAlgorithm%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HMACSHA256">
+      <MemberSignature Language="C#" Value="HMACSHA256" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.MachineKeyValidation HMACSHA256 = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.MachineKeyValidation.HMACSHA256" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.MachineKeyValidation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET を使用するように指定、<see langword="HMACSHA256" />ハッシュ アルゴリズム。  これが既定値です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HMACSHA256`256 ビットのハッシュ コードを生成する SHA2 ハッシュ アルゴリズムです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HMACSHA384">
+      <MemberSignature Language="C#" Value="HMACSHA384" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.MachineKeyValidation HMACSHA384 = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.MachineKeyValidation.HMACSHA384" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.MachineKeyValidation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET を使用するように指定、<see langword="HMACSHA384" />ハッシュ アルゴリズム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HMACSHA384`384 ビットのハッシュ コードを生成する SHA2 ハッシュ アルゴリズムです。 このオプションは、によって提供されるよりも強力なセキュリティを必要とするアプリケーションの使用、`HMACSHA256`アルゴリズムです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HMACSHA512">
+      <MemberSignature Language="C#" Value="HMACSHA512" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.MachineKeyValidation HMACSHA512 = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.MachineKeyValidation.HMACSHA512" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.MachineKeyValidation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET を使用するように指定、<see langword="HMACSHA512" />ハッシュ アルゴリズム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HMACSHA512`512 ビットのハッシュ コードを生成する SHA2 ハッシュ アルゴリズムです。 このオプションは、によって提供されるよりも強力なセキュリティを必要とするアプリケーションの使用、`HMACSHA384`アルゴリズムです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MD5">
+      <MemberSignature Language="C#" Value="MD5" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.MachineKeyValidation MD5 = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.MachineKeyValidation.MD5" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.MachineKeyValidation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET が、メッセージ ダイジェスト 5 を使用することを指定します (<see langword="MD5" />) ハッシュ アルゴリズム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `MD5`128 ビットのハッシュ値を生成するハッシュ アルゴリズムです。 このオプションは、レガシー目的のために、ASP.NET の旧バージョンと互換性が必要な場合にのみを選択する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SHA1">
+      <MemberSignature Language="C#" Value="SHA1" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.MachineKeyValidation SHA1 = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.MachineKeyValidation.SHA1" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.MachineKeyValidation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET を使用するように指定、<see langword="HMACSHA1" />ハッシュ アルゴリズム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `HMACSHA1`160 ビットのハッシュ値を生成するハッシュ アルゴリズムです。 このオプションは、レガシー目的のために、ASP.NET の旧バージョンと互換性が必要な場合にのみを選択する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TripleDES">
+      <MemberSignature Language="C#" Value="TripleDES" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.MachineKeyValidation TripleDES = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.MachineKeyValidation.TripleDES" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.MachineKeyValidation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET は TripleDES を使用することを指定します (<see langword="3DES" />) 暗号化アルゴリズムです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TripleDES では、ビュー ステートが暗号化されているを指定する場合にのみに使用される暗号化アルゴリズムです。 このオプションは、レガシー目的のために、ASP.NET の旧バージョンと互換性が必要な場合にのみを選択する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

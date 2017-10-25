@@ -1,0 +1,222 @@
+<Type Name="VBMath" FullName="Microsoft.VisualBasic.VBMath">
+  <TypeSignature Language="C#" Value="public sealed class VBMath" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed VBMath extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.VBMath" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>Microsoft.VisualBasic.CompilerServices.StandardModule</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="VbMath" />モジュールには、算術演算の実行に使用されるプロシージャが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモジュールは、乱数を生成するため、Visual Basic 言語のキーワードとランタイム ライブラリ メンバーをサポートします。  
+  
+   
+  
+## Examples  
+ この例では、 `Rnd` 6 ~ 1 の範囲内でランダムな整数値を生成する関数。  
+  
+ [!code-vb[VbVbalrMath#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#21)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Randomize">
+      <MemberSignature Language="C#" Value="public static void Randomize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static void Randomize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBMath.Randomize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>乱数ジェネレーターを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、`Randomize`メソッドは、シード値を取りません。 代わりに、システム タイマーによって返される値は新しいシード値として使用します。  
+  
+ 場合`Randomize`を使用していない、`Rnd`関数 (引数なしで) 同じ数がシードとして使用、初めてこれが呼び出され、それ以降シード値と最後に生成された番号を使用します。  
+  
+> [!NOTE]
+>  ランダムな数のシーケンスを繰り返すを呼び出す`Rnd`を使用する前に、すぐに負の値の引数を持つ`Randomize`数値の引数。  
+  
+> [!IMPORTANT]
+>  `Random`ステートメントおよび`Rnd`関数の先頭にシード値は、有限の範囲内で番号を生成、結果が生成するために使用されるアルゴリズムを知っている人に予測可能な可能性があります。 その結果、`Random`ステートメントおよび`Rnd`関数は暗号化に使用する乱数生成に使用する必要があります。 詳細については、「<xref:System.Security.Cryptography.RandomNumberGenerator>」を参照してください。  
+  
+   
+  
+## Examples  
+ この例では、`Randomize`乱数ジェネレーターを初期化するステートメント。 数値の引数が省略されているため`Randomize`からの戻り値を使用して、`Timer`新しいシード値として機能します。  
+  
+ [!code-vb[VbVbalrMath#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Randomize">
+      <MemberSignature Language="C#" Value="public static void Randomize (double Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void Randomize(float64 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBMath.Randomize(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="Number">省略可能です。 <see langword="Object" />または有効な数値式です。</param>
+        <summary>乱数ジェネレーターを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Randomize`使用して`Number`初期化するために、`Rnd`関数の乱数ジェネレーターは、新しいシード値を指定します。 省略した場合`Number`、システム タイマーによって返される値は、新しいシード値として使用します。  
+  
+ 場合`Randomize`を使用していない、`Rnd`関数 (引数なしで) 同じ数がシードとして使用、初めてこれが呼び出され、それ以降シード値と最後に生成された番号を使用します。  
+  
+> [!NOTE]
+>  ランダムな数のシーケンスを繰り返すを呼び出す`Rnd`を使用する前に、すぐに負の値の引数を持つ`Randomize`数値の引数。 使用して`Randomize`の値が同じ`Number`以前のシーケンスを繰り返しません。  
+  
+> [!IMPORTANT]
+>  `Random`ステートメントおよび`Rnd`関数の先頭にシード値は、有限の範囲内で番号を生成、結果が生成するために使用されるアルゴリズムを知っている人に予測可能な可能性があります。 その結果、`Random`ステートメントおよび`Rnd`関数は暗号化に使用する乱数生成に使用する必要があります。 詳細については、「<xref:System.Security.Cryptography.RandomNumberGenerator>」を参照してください。  
+  
+   
+  
+## Examples  
+ この例では、`Randomize`乱数ジェネレーターを初期化するステートメント。 数値の引数が省略されているため`Randomize`からの戻り値を使用して、`Timer`新しいシード値として機能します。  
+  
+ [!code-vb[VbVbalrMath#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rnd">
+      <MemberSignature Language="C#" Value="public static float Rnd ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static float32 Rnd() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBMath.Rnd" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>型の乱数を返します<see langword="Single" />です。</summary>
+        <returns>[次へ] ランダムな数のシーケンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Rnd`未満である 1 より大きいまたは 0 に等しい値が返されます。  
+  
+ 呼び出しの前に`Rnd`を使用して、`Randomize`システム タイマーに基づいて、乱数ジェネレーターでシードを初期化するために引数を指定しないでステートメントです。  
+  
+ 特定の範囲内の整数の乱数を生成するには、次の数式を使用します。  
+  
+ [!code-vb[VbVbalrMath#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#30)]  
+  
+ ここでは、 `upperbound` 、範囲内の最大値と`lowerbound`範囲の最小数です。  
+  
+> [!NOTE]
+>  ランダムな数のシーケンスを繰り返すを呼び出す`Rnd`を使用する前に、すぐに負の値の引数を持つ`Randomize`数値の引数。  
+  
+> [!IMPORTANT]
+>  `Random`ステートメントおよび`Rnd`関数の先頭にシード値は、有限の範囲内で番号を生成、結果が生成するために使用されるアルゴリズムを知っている人に予測可能な可能性があります。 その結果、`Random`ステートメントおよび`Rnd`関数は暗号化に使用する乱数生成に使用する必要があります。  
+  
+   
+  
+## Examples  
+ この例では、 `Rnd` 6 ~ 1 の範囲内でランダムな整数値を生成する関数。  
+  
+ [!code-vb[VbVbalrMath#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rnd">
+      <MemberSignature Language="C#" Value="public static float Rnd (float Number);" />
+      <MemberSignature Language="ILAsm" Value=".method public static float32 Rnd(float32 Number) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.VBMath.Rnd(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Number" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="Number">省略可能です。 A<see langword="Single" />値も有効な<see langword="Single" />式。</param>
+        <summary>型の乱数を返します<see langword="Single" />です。</summary>
+        <returns>Rnd 生成同じ番号は 0 より小さい場合、番号を使用するたびに<paramref name="Number" />シードとして。 数が 0 より大きい場合は、Rnd は、シーケンス内の次の乱数を生成します。 数値が 0 に等しい場合は、Rnd は最後に生成された番号を生成します。 数が指定されていない場合 Rnd はシーケンスの次の乱数を生成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Rnd`未満である 1 より大きいまたは 0 に等しい値が返されます。  
+  
+ 値`Number`決定方法`Rnd`乱数を生成します。  
+  
+ に生成する番号のシーケンスが同じ初期シードの連続する呼び出しごとに、`Rnd`関数は、シーケンス内の次の番号がシードとして以前に生成された番号を使用します。  
+  
+ 呼び出しの前に`Rnd`を使用して、`Randomize`システム タイマーに基づいて、乱数ジェネレーターでシードを初期化するために引数を指定しないでステートメントです。  
+  
+ 特定の範囲内の整数の乱数を生成するには、次の数式を使用します。  
+  
+ [!code-vb[VbVbalrMath#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#30)]  
+  
+ ここでは、 `upperbound` 、範囲内の最大値と`lowerbound`範囲の最小数です。  
+  
+> [!NOTE]
+>  ランダムな数のシーケンスを繰り返すを呼び出す`Rnd`を使用する前に、すぐに負の値の引数を持つ`Randomize`数値の引数。 使用して`Randomize`の値が同じ`Number`以前のシーケンスを繰り返しません。  
+  
+> [!IMPORTANT]
+>  `Random`ステートメントおよび`Rnd`関数の先頭にシード値は、有限の範囲内で番号を生成、結果が生成するために使用されるアルゴリズムを知っている人に予測可能な可能性があります。 その結果、`Random`ステートメントおよび`Rnd`関数は暗号化に使用する乱数生成に使用する必要があります。  
+  
+   
+  
+## Examples  
+ この例では、 `Rnd` 6 ~ 1 の範囲内でランダムな整数値を生成する関数。  
+  
+ [!code-vb[VbVbalrMath#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMath/VB/Class1.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

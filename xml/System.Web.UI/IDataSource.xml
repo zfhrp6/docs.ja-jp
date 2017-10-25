@@ -1,0 +1,140 @@
+<Type Name="IDataSource" FullName="System.Web.UI.IDataSource">
+  <TypeSignature Language="C#" Value="public interface IDataSource" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataSource" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IDataSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>データ バインド コントロールにバインドする抽象データ ソースを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET には、Web サーバー コントロールの一貫した方法でデータをバインドできるようにするコントロールのデータ バインディング アーキテクチャがサポートされています。 データにバインドする web サーバー コントロールは、データ バインド コントロールとバインディングは、という名前のデータ ソース コントロールを促進するクラスと呼ばれます。 データ ソース コントロールが任意のデータ ソースを表すことができます。 リレーショナル データベース、ファイル、ストリーム、ビジネス オブジェクト、およびなどです。 データ ソースは、ソースまたは基になるデータの形式に関係なく、データ バインド コントロールに一貫した方法でデータ表示を制御します。  
+  
+ 実装する、<xref:System.Web.UI.IDataSource>インターフェイスの独自のカスタム ASP.NET データ ソースの管理を実装するときにします。  
+  
+ 実装するクラス、<xref:System.Web.UI.IDataSource>インターフェイスは、データ ソース コントロール。 <xref:System.Web.UI.IDataSource>インターフェイスとして機能する ASP.NET のすべてのデータ ソースの基盤コントロールし、その 2 つの方法で基本的なデータ バインディング アーキテクチャ概念の 1 つを定義します。、<xref:System.Web.UI.IDataSource.GetView%2A>メソッドおよび<xref:System.Web.UI.IDataSource.GetViewNames%2A>メソッド。 この概念は、すべてのデータ ソース コントロールが、データの 1 つまたは複数の名前付きビューをサポートします。 データ ソース ビュー オブジェクトがに似ていますが、<xref:System.Data.DataView>で抽象化、<xref:System.Data>名前空間: データ バインド可能な並べ替え、フィルター、およびビューを定義するその他のデータ操作用のデータのビューをカスタマイズします。 基本的に、データ ソースは何も制御を超えるデータのビューを取得します。  
+  
+ データ ソース コントロールには、1 つまたは複数の関連するデータ ソース ビュー オブジェクトを持つことができます。 一部のデータ ソースなどのリレーショナル データベースを表すものも含め、コントロール<xref:System.Web.UI.WebControls.SqlDataSource>と<xref:System.Web.UI.WebControls.AccessDataSource>、1 つのビューをサポートします。 その他のデータ ソース コントロールなどの階層的なデータ ソース コントロールを含む<xref:System.Web.UI.WebControls.SiteMapDataSource>、多くのビューをサポートします。 データ ソース ビューでは、データ ソースとサポートしている操作の機能を定義します。  
+  
+ 要約すると、データ ソース コントロールの実装、<xref:System.Web.UI.IDataSource>インターフェイス、いずれかをサポートまたは以上の名前付きを表していると常にそれらが表すデータ ソースからデータの取得をサポートするデータのビューです。 データ ソース コントロールが常に場合など、要求時にデータを取得`DataBind`データ バインド コントロールで呼び出されるとします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クラスがによって定義されたメソッドを実装する方法を示しています、<xref:System.Web.UI.IDataSource>データのデータ バインド コントロールを提供するインターフェイスです。 この例では、データ ソース コントロールでは、コンマ区切り値ファイルでは、上のデータ ソースとして機能し、コンマ区切りのファイル データを表示する、データ バインド コントロールで使用することができます。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#1)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DataSourceChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler DataSourceChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DataSourceChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.IDataSource.DataSourceChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース コントロールがデータ バインド コントロールに影響を与えるいくつかの方法で変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IDataSource.DataSourceChanged>イベントは、データ バインド コントロールとそのデータ間のデータ バインドに影響を与えるいくつかの方法でデータ バインド コントロールまたは基になるデータのプロパティが変更されたとき。 など、イベントは、ファイルの名前プロパティになど、<xref:System.Web.UI.WebControls.AccessDataSource.DataFile%2A>ファイル ベースのデータ ソース コントロールでプロパティが変更されました。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetView">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataSourceView GetView (string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.DataSourceView GetView(string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IDataSource.GetView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewName">取得するビューの名前。</param>
+        <summary>データ ソース コントロールに関連付けられている名前付きのデータ ソース ビューを取得します。</summary>
+        <returns>名前付き返します<see cref="T:System.Web.UI.DataSourceView" />に関連付けられている、<see cref="T:System.Web.UI.IDataSource" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソース コントロール クラスには、その基になるデータの 1 つまたは複数のビューをサポートできます。 これらのビューがのインスタンスによって表される、<xref:System.Web.UI.DataSourceView>クラスです。 データ ソース ビューでは、データ ソース コントロールの機能を定義し、基になるデータ ストアからデータを取得し、並べ替え、挿入、削除、および更新などの操作を実行するために必要なすべての作業を実行します。  
+  
+ データ ソース コントロールを実装するクラス、<xref:System.Web.UI.IDataSource>インターフェイスを実装、<xref:System.Web.UI.IDataSource.GetView%2A>厳密に型を返すメソッドがクラスに関連付けられているオブジェクトを表示します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、データ ソース コントロール クラスを実装する方法を示しています、<xref:System.Web.UI.IDataSource>インターフェイスを実装して、<xref:System.Web.UI.IDataSource.GetView%2A>の厳密に型指定されたインスタンスを返すメソッド、<xref:System.Web.UI.DataSourceView>クラスです。 データ ソース コントロールでは、1 つのビューをサポートするため、名前が無視され、既定のビュー名が指定されたビューを返します。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#3)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewNames">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection GetViewNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection GetViewNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IDataSource.GetViewNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられているビュー オブジェクトの一覧を表す名のコレクションを取得、<see cref="T:System.Web.UI.IDataSource" />インターフェイスです。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />に関連付けられているビューの名前を格納している、<see cref="T:System.Web.UI.IDataSource" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソース コントロール クラスには、その基になるデータの 1 つまたは複数の名前付きビューをサポートできます。 <xref:System.Web.UI.IDataSource.GetViewNames%2A>メソッドは、データ ソース コントロールのインスタンスに関連付けられているビュー名のコレクションを返します。 呼び出し元はビュー名のコレクションを反復処理して、個々 の取得<xref:System.Web.UI.DataSourceView>オブジェクトと、<xref:System.Web.UI.IDataSource.GetView%2A>メソッドです。  
+  
+ データ ソース コントロールを実装するクラス、<xref:System.Web.UI.IDataSource>インターフェイスを実装、<xref:System.Web.UI.IDataSource.GetViewNames%2A>を表すすべてのデータ ソース名のコレクションを返すメソッドは、データ ソース コントロール クラスに関連付けられているオブジェクトを表示します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、データ ソース コントロールを実装する方法を示しています、<xref:System.Web.UI.IDataSource>インターフェイスを実装して、<xref:System.Web.UI.IDataSource.GetViewNames%2A>を返すメソッド、<xref:System.Collections.ICollection>名のコレクション。 データ ソースは、1 つのビューをサポートするため、メソッドは、ビューの既定の名前を使用して 1 つの要素のコレクションを返します。 このコード例に示されている例の一部である、<xref:System.Web.UI.DataSourceControl>クラスです。  
+  
+ [!code-csharp[Urtue.Samples.Alexkr.CsvDataSource_1#4](~/samples/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/CS/csvdatasource.cs#4)]
+ [!code-vb[Urtue.Samples.Alexkr.CsvDataSource_1#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.CsvDataSource_1/VB/csvdatasource.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

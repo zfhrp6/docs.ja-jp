@@ -1,0 +1,74 @@
+<Type Name="XamlSetTypeConverterAttribute" FullName="System.Windows.Markup.XamlSetTypeConverterAttribute">
+  <TypeSignature Language="C#" Value="public sealed class XamlSetTypeConverterAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XamlSetTypeConverterAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XamlSetTypeConverterAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスが型コンバーターを設定する場合に使用するハンドラーを参照して、値を指定する型コンバーターを使用できることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CLR 属性を解釈する XAML の動作では、この属性を使用して、型またはメンバーのすべての型コンバーターの使用法の意図的なコールバックがある場合を判断します。 たとえば、<xref:System.Xaml.XamlServices>の読み込みまたは解析、または<xref:System.Xaml.XamlXmlReader>  /  <xref:System.Xaml.XamlObjectWriter>シーケンスはこの属性を使用して、属性付きと呼び出し先の型コンバーターに基づくオブジェクト ノードを作成するたびに、操作の一部として、名前付きのコールバックを呼び出します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlSetTypeConverterAttribute (string xamlSetTypeConverterHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xamlSetTypeConverterHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlSetTypeConverterAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xamlSetTypeConverterHandler" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xamlSetTypeConverterHandler">型コンバーターを操作の設定に使用するハンドラーの名前。</param>
+        <summary><see cref="T:System.Windows.Markup.XamlSetTypeConverterAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使って名によって参照されるメソッド、`xamlSetTypeConverterHandler`値のジェネリック<xref:System.EventHandler%601>を持つデリゲート<xref:System.Windows.Markup.XamlSetTypeConverterEventArgs>イベント データの制約。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XamlSetTypeConverterHandler">
+      <MemberSignature Language="C#" Value="public string XamlSetTypeConverterHandler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XamlSetTypeConverterHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlSetTypeConverterAttribute.XamlSetTypeConverterHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<paramref name="xamlSetTypeConverterHandler" />で指定された初期値 (ハンドラー名)、<see cref="T:System.Windows.Markup.XamlSetTypeConverterAttribute" />です。</summary>
+        <value><paramref name="xamlSetTypeConverterHandler" />で指定された値、<see cref="T:System.Windows.Markup.XamlSetTypeConverterAttribute" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

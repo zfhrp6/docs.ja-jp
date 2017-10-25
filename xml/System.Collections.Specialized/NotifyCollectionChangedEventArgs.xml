@@ -1,0 +1,555 @@
+<Type Name="NotifyCollectionChangedEventArgs" FullName="System.Collections.Specialized.NotifyCollectionChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class NotifyCollectionChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NotifyCollectionChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.ObjectModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=3.0.0.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyCollectionChangedEventArgs (System.Collections.Specialized.NotifyCollectionChangedAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Collections.Specialized.NotifyCollectionChangedAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Collections.Specialized.NotifyCollectionChangedAction" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントの原因となったアクション。 これに設定する必要があります<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />を記述するクラス、<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyCollectionChangedEventArgs (System.Collections.Specialized.NotifyCollectionChangedAction action, System.Collections.IList changedItems);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Collections.Specialized.NotifyCollectionChangedAction action, class System.Collections.IList changedItems) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Collections.Specialized.NotifyCollectionChangedAction" />
+        <Parameter Name="changedItems" Type="System.Collections.IList" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントの原因となったアクション。 これに設定できる<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset" />、 <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Add" />、または<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Remove" />です。</param>
+        <param name="changedItems">変更の影響を受ける項目。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />複数項目の変更を記述するクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyCollectionChangedEventArgs (System.Collections.Specialized.NotifyCollectionChangedAction action, object changedItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Collections.Specialized.NotifyCollectionChangedAction action, object changedItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Collections.Specialized.NotifyCollectionChangedAction" />
+        <Parameter Name="changedItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントの原因となったアクション。 これに設定できる<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset" />、 <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Add" />、または<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Remove" />です。</param>
+        <param name="changedItem">変更の影響を受ける項目。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />単一項目の変更を記述するクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">場合<paramref name="action" />がリセット、Add、Remove、または<paramref name="action" />はリセットおよび<paramref name="changedItem" />が null でないです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyCollectionChangedEventArgs (System.Collections.Specialized.NotifyCollectionChangedAction action, System.Collections.IList newItems, System.Collections.IList oldItems);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Collections.Specialized.NotifyCollectionChangedAction action, class System.Collections.IList newItems, class System.Collections.IList oldItems) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Collections.IList)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Collections.Specialized.NotifyCollectionChangedAction" />
+        <Parameter Name="newItems" Type="System.Collections.IList" />
+        <Parameter Name="oldItems" Type="System.Collections.IList" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントの原因となったアクション。 これにのみ設定できます<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Replace" />です。</param>
+        <param name="newItems">元の項目を置き換える新しい項目。</param>
+        <param name="oldItems">置き換えられる元の項目。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />を複数の項目を表すクラス<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Replace" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">場合<paramref name="action" />置換ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">場合<paramref name="oldItems" />または<paramref name="newItems" />が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyCollectionChangedEventArgs (System.Collections.Specialized.NotifyCollectionChangedAction action, System.Collections.IList changedItems, int startingIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Collections.Specialized.NotifyCollectionChangedAction action, class System.Collections.IList changedItems, int32 startingIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Collections.Specialized.NotifyCollectionChangedAction" />
+        <Parameter Name="changedItems" Type="System.Collections.IList" />
+        <Parameter Name="startingIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントの原因となったアクション。 これに設定できる<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset" />、 <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Add" />、または<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Remove" />です。</param>
+        <param name="changedItems">変更の影響を受ける項目。</param>
+        <param name="startingIndex">変更が発生したインデックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />複数項目の変更を記述するクラスまたは<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">場合<paramref name="action" />がリセット、追加、削除場合、<paramref name="action" />がリセットされ、いずれかの<paramref name="changedItems" />が null でないまたは<paramref name="startingIndex" />が-1、またはアクションが追加または削除する場合と<paramref name="startingIndex" />-1 未満です。</exception>
+        <exception cref="T:System.ArgumentNullException">場合<paramref name="action" />が Add または Remove と<paramref name="changedItems" />が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyCollectionChangedEventArgs (System.Collections.Specialized.NotifyCollectionChangedAction action, object changedItem, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Collections.Specialized.NotifyCollectionChangedAction action, object changedItem, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Collections.Specialized.NotifyCollectionChangedAction" />
+        <Parameter Name="changedItem" Type="System.Object" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントの原因となったアクション。 これに設定できる<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset" />、 <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Add" />、または<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Remove" />です。</param>
+        <param name="changedItem">変更の影響を受ける項目。</param>
+        <param name="index">変更が発生したインデックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />単一項目の変更を記述するクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">場合<paramref name="action" />がリセット、Add、Remove、または<paramref name="action" />がリセットされ、いずれかの<paramref name="changedItems" />が null でないまたは<paramref name="index" />-1 ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyCollectionChangedEventArgs (System.Collections.Specialized.NotifyCollectionChangedAction action, object newItem, object oldItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Collections.Specialized.NotifyCollectionChangedAction action, object newItem, object oldItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Collections.Specialized.NotifyCollectionChangedAction" />
+        <Parameter Name="newItem" Type="System.Object" />
+        <Parameter Name="oldItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントの原因となったアクション。 これにのみ設定できます<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Replace" />です。</param>
+        <param name="newItem">元の項目を置き換える新しい項目。</param>
+        <param name="oldItem">置き換えられる元の項目。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />単一項目を記述するクラス<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Replace" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">場合<paramref name="action" />置換ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyCollectionChangedEventArgs (System.Collections.Specialized.NotifyCollectionChangedAction action, System.Collections.IList newItems, System.Collections.IList oldItems, int startingIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Collections.Specialized.NotifyCollectionChangedAction action, class System.Collections.IList newItems, class System.Collections.IList oldItems, int32 startingIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Collections.IList,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Collections.Specialized.NotifyCollectionChangedAction" />
+        <Parameter Name="newItems" Type="System.Collections.IList" />
+        <Parameter Name="oldItems" Type="System.Collections.IList" />
+        <Parameter Name="startingIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントの原因となったアクション。 これにのみ設定できます<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Replace" />です。</param>
+        <param name="newItems">元の項目を置き換える新しい項目。</param>
+        <param name="oldItems">置き換えられる元の項目。</param>
+        <param name="startingIndex">置き換えられる項目の最初の項目のインデックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />を複数の項目を表すクラス<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Replace" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">場合<paramref name="action" />置換ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">場合<paramref name="oldItems" />または<paramref name="newItems" />が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyCollectionChangedEventArgs (System.Collections.Specialized.NotifyCollectionChangedAction action, System.Collections.IList changedItems, int index, int oldIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Collections.Specialized.NotifyCollectionChangedAction action, class System.Collections.IList changedItems, int32 index, int32 oldIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Collections.Specialized.NotifyCollectionChangedAction" />
+        <Parameter Name="changedItems" Type="System.Collections.IList" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="oldIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントの原因となったアクション。 これにのみ設定できます<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Move" />です。</param>
+        <param name="changedItems">変化の影響を受ける項目。</param>
+        <param name="index">変化した項目の新しいインデックス。</param>
+        <param name="oldIndex">変化した項目の古いインデックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />を複数の項目を表すクラス<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Move" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">場合<paramref name="action" />が Move でないまたは<paramref name="index" />が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyCollectionChangedEventArgs (System.Collections.Specialized.NotifyCollectionChangedAction action, object changedItem, int index, int oldIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Collections.Specialized.NotifyCollectionChangedAction action, object changedItem, int32 index, int32 oldIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Collections.Specialized.NotifyCollectionChangedAction" />
+        <Parameter Name="changedItem" Type="System.Object" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="oldIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントの原因となったアクション。 これにのみ設定できます<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Move" />です。</param>
+        <param name="changedItem">変更の影響を受ける項目。</param>
+        <param name="index">変更された項目の新しいインデックス。</param>
+        <param name="oldIndex">変更された項目の古いインデックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />単一項目を記述するクラス<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Move" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">場合<paramref name="action" />が Move でないまたは<paramref name="index" />が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NotifyCollectionChangedEventArgs (System.Collections.Specialized.NotifyCollectionChangedAction action, object newItem, object oldItem, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Collections.Specialized.NotifyCollectionChangedAction action, object newItem, object oldItem, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Object,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Collections.Specialized.NotifyCollectionChangedAction" />
+        <Parameter Name="newItem" Type="System.Object" />
+        <Parameter Name="oldItem" Type="System.Object" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="action">イベントの原因となったアクション。 これに設定できる<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Replace" />です。</param>
+        <param name="newItem">元の項目を置き換える新しい項目。</param>
+        <param name="oldItem">置き換えられる元の項目。</param>
+        <param name="index">置き換えられる項目のインデックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />単一項目を記述するクラス<see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Replace" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">場合<paramref name="action" />置換ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.NotifyCollectionChangedAction Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Collections.Specialized.NotifyCollectionChangedAction Action" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NotifyCollectionChangedAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントの原因となったアクションを取得します。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.NotifyCollectionChangedAction" />イベントを発生させたアクションを説明する値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewItems">
+      <MemberSignature Language="C#" Value="public System.Collections.IList NewItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList NewItems" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.NewItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この変更に関係のある新しい項目の一覧を取得します。</summary>
+        <value>この変更に関係のある新しい項目の一覧。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewStartingIndex">
+      <MemberSignature Language="C#" Value="public int NewStartingIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NewStartingIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.NewStartingIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更が発生した位置のインデックスを取得します。</summary>
+        <value>変更が発生した位置の 0 から始まるインデックス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldItems">
+      <MemberSignature Language="C#" Value="public System.Collections.IList OldItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList OldItems" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>影響を受ける項目の一覧を取得、 <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Replace" />、削除、またはアクションに移動します。</summary>
+        <value>影響を受ける項目の一覧、 <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Replace" />、削除、またはアクションに移動します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldStartingIndex">
+      <MemberSignature Language="C#" Value="public int OldStartingIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OldStartingIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldStartingIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックスを取得、 <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Move" />、削除、または Replace アクションが発生しました。</summary>
+        <value>位置の 0 から始まるインデックス、 <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Move" />、削除、または Replace アクションが発生しました。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

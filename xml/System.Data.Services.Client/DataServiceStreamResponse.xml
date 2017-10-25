@@ -1,0 +1,165 @@
+<Type Name="DataServiceStreamResponse" FullName="System.Data.Services.Client.DataServiceStreamResponse">
+  <TypeSignature Language="C#" Value="public sealed class DataServiceStreamResponse : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataServiceStreamResponse extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.DataServiceStreamResponse" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ストリームとしてバイナリ データを格納している WCF Data Services からの応答を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ContentDisposition">
+      <MemberSignature Language="C#" Value="public string ContentDisposition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentDisposition" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceStreamResponse.ContentDisposition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="Content-Disposition" />応答ストリームのヘッダー フィールド。</summary>
+        <value>内容、<see langword="Content-Disposition" />ヘッダー フィールド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、`Content-Disposition`ヘッダーが応答に存在しない、<xref:System.Data.Services.Client.DataServiceStreamResponse.ContentDisposition%2A>プロパティから返される`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public string ContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceStreamResponse.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答ストリームのコンテンツ タイプを取得します。</summary>
+        <value>応答ストリームのコンテンツ タイプ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、`Content-Type`ヘッダーが応答に存在しない、<xref:System.Data.Services.Client.DataServiceStreamResponse.ContentDisposition%2A>プロパティから返される`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceStreamResponse.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceStreamResponse" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceStreamResponse.Dispose%2A> メソッドは、<xref:System.Data.Services.Client.DataServiceStreamResponse> の使用が完了したときに呼び出します。 これは、オブジェクトが保持するリソースを解放します。 必ずこの操作を行って、<xref:System.Data.Services.Client.DataServiceStreamResponse> が保持するリソースを解放する必要があります。そうしないと、ガベージ コレクターが <xref:System.Object.Finalize%2A> オブジェクトで <xref:System.Data.Services.Client.DataServiceStreamResponse> メソッドを呼び出すまで、使用されたリソースは解放されません。  
+  
+ <xref:System.Data.Services.Client.DataServiceStreamResponse.Dispose%2A> メソッドが呼び出され、<xref:System.Data.Services.Client.DataServiceStreamResponse> へのすべての参照が解放されると、使用されていたメモリをガベージ コレクションで再利用できるようになります。  
+  
+ <xref:System.Data.Services.Client.DataServiceStreamResponse> メソッドを呼び出した後に <xref:System.Data.Services.Client.DataServiceStreamResponse.Dispose%2A> を使用することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.Dictionary&lt;string,string&gt; Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, string&gt; Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceStreamResponse.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答からヘッダーのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.Dictionary`2" /> オブジェクトとしての応答メッセージからのヘッダー コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 応答は、応答内の各ヘッダーの文字列のキー/値ペアを格納する <xref:System.Collections.Generic.Dictionary%602> オブジェクトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream Stream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream Stream" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceStreamResponse.Stream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バイナリ プロパティ データをデータ サービスからバイナリ ストリームとして取得します。</summary>
+        <value>バイナリ プロパティ データを格納するストリーム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このストリームからの読み取り中にネットワーク エラーが発生すると、エラーが発生します。  
+  
+ 返された <xref:System.IO.Stream> は読み取り専用です。  
+  
+ <xref:System.Data.Services.Client.DataServiceStreamResponse.Dispose%2A> で <xref:System.Data.Services.Client.DataServiceStreamResponse> メソッドを呼び出すか、<xref:System.IO.Stream.Close%2A> で <xref:System.IO.Stream> メソッドを呼び出す必要があります。 それ以外の場合、ネットワーク接続が開かれたままになり、他のアプリケーションで使用できません。  
+  
+ ストリームへのアクセスには <xref:System.Net.HttpWebResponse.GetResponseStream%2A> メソッドが使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Data.Services.Client.DataServiceStreamResponse" /> が既に破棄されている場合。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

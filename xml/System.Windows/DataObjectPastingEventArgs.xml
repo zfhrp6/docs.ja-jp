@@ -1,0 +1,156 @@
+<Type Name="DataObjectPastingEventArgs" FullName="System.Windows.DataObjectPastingEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class DataObjectPastingEventArgs : System.Windows.DataObjectEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataObjectPastingEventArgs extends System.Windows.DataObjectEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DataObjectPastingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DataObjectEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>引数を格納、<see cref="T:System.Windows.DataObject" />です。<see cref="E:System.Windows.DataObject.Pasting" /> イベントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DataObject.Pasting>貼り付けの操作が、として貼り付けるデータ形式を選択すると、データを貼り付けることは、実際には前にイベントが発生します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataObjectPastingEventArgs (System.Windows.IDataObject dataObject, bool isDragDrop, string formatToApply);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.IDataObject dataObject, bool isDragDrop, string formatToApply) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DataObjectPastingEventArgs.#ctor(System.Windows.IDataObject,System.Boolean,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataObject" Type="System.Windows.IDataObject" />
+        <Parameter Name="isDragDrop" Type="System.Boolean" />
+        <Parameter Name="formatToApply" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataObject">A<see cref="T:System.Windows.DataObject" />を貼り付けるデータを格納します。</param>
+        <param name="isDragDrop">A<see langword="Boolean" />貼り付け、ドラッグ アンド ドロップ操作の一部であるかどうかを示す値。 <see langword="true" />貼り付けがドラッグ アンド ドロップ操作の一部であることを示しますそれ以外の場合、<see langword="false" />です。 このパラメーターに設定されている場合<see langword="true" />、<see cref="E:System.Windows.DataObject.Pasting" />ドロップでイベントが発生しました。</param>
+        <param name="formatToApply">貼り付け操作に使用する、推奨データ形式を指定する文字列。 参照してください、<see cref="T:System.Windows.DataFormats" />一連の定義済みのデータ形式のクラスです。</param>
+        <summary>
+          <see cref="T:System.Windows.DataObjectPastingEventArgs" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.DataObjectPastingEventArgs>オブジェクトは、通常は、貼り付け操作を開始して、アプリケーションによって作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="dataObject" />または<paramref name="formatToApply" />は**null**です。</exception>
+        <exception cref="T:System.ArgumentException">いつ発生する<paramref name="formatToApply" />がで指定されたデータ オブジェクトに存在しないデータ形式を指定<paramref name="dataObject" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DataObject">
+      <MemberSignature Language="C#" Value="public System.Windows.IDataObject DataObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IDataObject DataObject" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DataObjectPastingEventArgs.DataObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IDataObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>推奨設定を取得または<see cref="T:System.Windows.DataObject" />貼り付け操作に使用します。</summary>
+        <value>現在推奨されている<see cref="T:System.Windows.DataObject" />貼り付け操作に使用します。  
+  
+ この値を取得する現在推奨されている返されます<see cref="T:System.Windows.DataObject" />貼り付け操作をします。  
+  
+ この値を設定するように指定、新しい推奨<see cref="T:System.Windows.DataObject" />貼り付け操作に使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初にこのプロパティが含まれています、<xref:System.Windows.DataObject>に格納されているのと同じである、<xref:System.Windows.DataObjectPastingEventArgs.SourceDataObject%2A>プロパティです。 カスタム イベント ハンドラーを貼り付けることは、新しい推奨を指定できます<xref:System.Windows.DataObject>に貼り付けるにはこのプロパティを設定します。  
+  
+ A<xref:System.Windows.DataObject>これに格納されているプロパティは、最初が自動的に適用するには、少なくとも 1 つのデータ形式をいる必要があります、<xref:System.Windows.DataObjectPastingEventArgs.FormatToApply%2A>プロパティがこのプロパティが設定されている場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティを設定しようとしましたがときに発生する**null**です。</exception>
+        <exception cref="T:System.ArgumentException">このプロパティが含まれていないデータ形式のデータ オブジェクトを設定しようと発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatToApply">
+      <MemberSignature Language="C#" Value="public string FormatToApply { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FormatToApply" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DataObjectPastingEventArgs.FormatToApply" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または貼り付け操作に使用する推奨されるデータ形式を指定する文字列を設定します。</summary>
+        <value>貼り付け操作に使用する推奨されるデータ形式を指定する文字列。  
+  
+ この値を取得するには、貼り付け操作に使用する現在推奨されているデータ形式が返されます。  
+  
+ この値を設定するには、貼り付け操作に使用する新しい推奨されるデータ形式を指定します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティを設定しようとしましたがときに発生する**null**です。</exception>
+        <exception cref="T:System.ArgumentException">このプロパティがによって参照されるデータ オブジェクトに存在しないデータ形式を設定しようとしましたがときに発生する、<see cref="P:System.Windows.DataObjectPastingEventArgs.DataObject" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DataObjectPastingEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">To be added.</param>
+        <param name="genericTarget">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceDataObject">
+      <MemberSignature Language="C#" Value="public System.Windows.IDataObject SourceDataObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IDataObject SourceDataObject" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DataObjectPastingEventArgs.SourceDataObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IDataObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>貼り付け操作に関連付けられている元のデータ オブジェクトのコピーを取得します。</summary>
+        <value>貼り付け操作に関連付けられている元のデータ オブジェクトのコピー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

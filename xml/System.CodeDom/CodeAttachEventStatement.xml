@@ -1,0 +1,160 @@
+<Type Name="CodeAttachEventStatement" FullName="System.CodeDom.CodeAttachEventStatement">
+  <TypeSignature Language="C#" Value="public class CodeAttachEventStatement : System.CodeDom.CodeStatement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeAttachEventStatement extends System.CodeDom.CodeStatement" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeAttachEventStatement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeStatement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>イベントにイベント ハンドラーのデリゲートをアタッチするステートメントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeAttachEventStatement>イベントのイベント ハンドラーのデリゲートを追加するステートメントを表すために使用できます。 <xref:System.CodeDom.CodeAttachEventStatement.Event%2A>プロパティは、イベント ハンドラーをアタッチするイベントを示します。 <xref:System.CodeDom.CodeAttachEventStatement.Listener%2A>プロパティが、イベント ハンドラーをアタッチすることを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しますの使用、<xref:System.CodeDom.CodeAttachEventStatement>イベントをイベント ハンドラーをアタッチします。  
+  
+ [!code-cpp[CodeAttachEventStatementExample#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeAttachEventStatementExample/CPP/codeattacheventstatementexample.cpp#3)]
+ [!code-csharp[CodeAttachEventStatementExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeAttachEventStatementExample/CS/codeattacheventstatementexample.cs#3)]
+ [!code-vb[CodeAttachEventStatementExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeAttachEventStatementExample/VB/codeattacheventstatementexample.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeAttachEventStatement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeAttachEventStatement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeAttachEventStatement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeAttachEventStatement (System.CodeDom.CodeEventReferenceExpression eventRef, System.CodeDom.CodeExpression listener);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeEventReferenceExpression eventRef, class System.CodeDom.CodeExpression listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeAttachEventStatement.#ctor(System.CodeDom.CodeEventReferenceExpression,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventRef" Type="System.CodeDom.CodeEventReferenceExpression" />
+        <Parameter Name="listener" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="eventRef">A<see cref="T:System.CodeDom.CodeEventReferenceExpression" />を示す、イベントをイベント ハンドラーをアタッチします。</param>
+        <param name="listener">A<see cref="T:System.CodeDom.CodeExpression" />新しいイベント ハンドラーを示すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeAttachEventStatement" />クラスの指定されたイベントおよびデリゲートを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeAttachEventStatement (System.CodeDom.CodeExpression targetObject, string eventName, System.CodeDom.CodeExpression listener);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression targetObject, string eventName, class System.CodeDom.CodeExpression listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeAttachEventStatement.#ctor(System.CodeDom.CodeExpression,System.String,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetObject" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="eventName" Type="System.String" />
+        <Parameter Name="listener" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="targetObject">A<see cref="T:System.CodeDom.CodeExpression" />を示すイベントを含むオブジェクト。</param>
+        <param name="eventName">イベント ハンドラーをアタッチするイベントの名前。</param>
+        <param name="listener">A<see cref="T:System.CodeDom.CodeExpression" />新しいイベント ハンドラーを示すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeAttachEventStatement" />クラス イベント、イベント名、およびイベント ハンドラーのデリゲートを含む指定したオブジェクトを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Event">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeEventReferenceExpression Event { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeEventReferenceExpression Event" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeAttachEventStatement.Event" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeEventReferenceExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するイベント ハンドラーのデリゲートをアタッチするイベント。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeEventReferenceExpression" />を示す、イベントをイベント ハンドラーをアタッチします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Listener">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression Listener { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression Listener" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeAttachEventStatement.Listener" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントにアタッチする新しいイベント ハンドラーのデリゲートを設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />を示す、新しいイベント ハンドラーをアタッチします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

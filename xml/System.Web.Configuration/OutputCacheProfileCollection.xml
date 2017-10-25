@@ -1,0 +1,488 @@
+<Type Name="OutputCacheProfileCollection" FullName="System.Web.Configuration.OutputCacheProfileCollection">
+  <TypeSignature Language="C#" Value="public sealed class OutputCacheProfileCollection : System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OutputCacheProfileCollection extends System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.OutputCacheProfileCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElementCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Configuration.ConfigurationCollection(typeof(System.Web.Configuration.OutputCacheProfile))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Configuration.OutputCacheProfile" /> オブジェクトのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection>ページやユーザー コントロールで使用される、出力キャッシュ設定の管理を一元化することができます。  
+  
+ プログラムでアクセスして変更することができます、<xref:System.Web.Configuration.OutputCacheProfile>オブジェクトが含まれています。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.OutputCacheProfile>を使用してページに適用できる、`CacheProfile`の属性、 [@ OutputCache](http://msdn.microsoft.com/en-us/28a9e101-fb44-4198-9cb6-b8a52312fec2)ディレクティブです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.OutputCacheProfileCollection>オブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfileCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/CS/OutputCacheProfileCollection.cs#1)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfileCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/VB/OutputCacheProfileCollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OutputCacheProfileCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfileCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.OutputCacheProfileCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Configuration.OutputCacheProfile name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Configuration.OutputCacheProfile name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfileCollection.Add(System.Web.Configuration.OutputCacheProfile)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Web.Configuration.OutputCacheProfile" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.OutputCacheProfile" />コレクションに追加するオブジェクト。</param>
+        <summary><see cref="T:System.Web.Configuration.OutputCacheProfile" /> オブジェクトをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションを含めることはできません、<xref:System.Web.Configuration.OutputCacheProfile>と同じ名前のオブジェクト。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection.Add%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfileCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/CS/OutputCacheProfileCollection.cs#2)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfileCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/VB/OutputCacheProfileCollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException"><see cref="T:System.Web.Configuration.OutputCacheProfile" />オブジェクトがコレクション内に既に存在するか、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllKeys">
+      <MemberSignature Language="C#" Value="public string[] AllKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AllKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfileCollection.AllKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.OutputCacheProfileCollection" />キー。</summary>
+        <value><see langword="string" />コレクションのキーを含む配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfileCollection.AllKeys%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfileCollection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/CS/OutputCacheProfileCollection.cs#9)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfileCollection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/VB/OutputCacheProfileCollection.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfileCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてを削除、<see cref="T:System.Web.Configuration.OutputCacheProfile" />コレクションからオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは挿入、`clear`ディレクティブを対応するファイルのセクションに、構成、上位の構成ファイルで定義されている要素へのすべての参照をクリアします。 現在の構成ファイルの対応するセクションで定義されたすべての要素が削除されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection.Clear%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfileCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/CS/OutputCacheProfileCollection.cs#3)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfileCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/VB/OutputCacheProfileCollection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElement CreateNewElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfileCollection.CreateNewElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.OutputCacheProfile Get (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Configuration.OutputCacheProfile Get(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfileCollection.Get(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.OutputCacheProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see cref="T:System.Web.Configuration.OutputCacheProfileCollection" /> 要素のインデックス。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.Web.Configuration.OutputCacheProfile" /> 要素を取得します。</summary>
+        <returns><see cref="T:System.Web.Configuration.OutputCacheProfile" />指定したインデックス位置にある要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection.Get%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfileCollection#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/CS/OutputCacheProfileCollection.cs#11)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfileCollection#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/VB/OutputCacheProfileCollection.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.OutputCacheProfile Get (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Configuration.OutputCacheProfile Get(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfileCollection.Get(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.OutputCacheProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.OutputCacheProfileCollection" />要素。</param>
+        <summary>取得、<see cref="T:System.Web.Configuration.OutputCacheProfile" />指定した名前を持つ要素。</summary>
+        <returns><see cref="T:System.Web.Configuration.OutputCacheProfile" />指定した名前を持つ要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection.Get%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfileCollection#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/CS/OutputCacheProfileCollection.cs#11)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfileCollection#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/VB/OutputCacheProfileCollection.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementKey">
+      <MemberSignature Language="C#" Value="protected override object GetElementKey (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfileCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="public string GetKey (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetKey(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfileCollection.GetKey(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see cref="T:System.Web.Configuration.OutputCacheProfileCollection" />キーのインデックス。</param>
+        <summary>指定したキーを取得<see cref="T:System.Web.Configuration.OutputCacheProfileCollection" />インデックス。</summary>
+        <returns>指定したキー<see cref="T:System.Web.Configuration.OutputCacheProfileCollection" />インデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection.GetKey%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfileCollection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/CS/OutputCacheProfileCollection.cs#6)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfileCollection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/VB/OutputCacheProfileCollection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.OutputCacheProfile this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.OutputCacheProfile Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfileCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.OutputCacheProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションのインデックス、<see cref="T:System.Web.Configuration.OutputCacheProfile" />オブジェクト</param>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.OutputCacheProfile" />指定したインデックスにあるオブジェクト。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.Web.Configuration.OutputCacheProfile" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfileCollection.Item%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfileCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/CS/OutputCacheProfileCollection.cs#4)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfileCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/VB/OutputCacheProfileCollection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.OutputCacheProfile this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.OutputCacheProfile Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfileCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.OutputCacheProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Web.Configuration.OutputCacheProfile" /> オブジェクトの名前。</param>
+        <summary>指定された名前を持つ <see cref="T:System.Web.Configuration.OutputCacheProfile" /> を取得します。</summary>
+        <value>指定された名前の <see cref="T:System.Web.Configuration.OutputCacheProfile" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.OutputCacheProfileCollection.Item%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfileCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/CS/OutputCacheProfileCollection.cs#5)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfileCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/VB/OutputCacheProfileCollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.OutputCacheProfileCollection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfileCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.OutputCacheProfile" />コレクションから削除する要素。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.OutputCacheProfile" />コレクションから指定した名前を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection.Remove%2A>メソッドの挿入、`remove`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの該当セクションにします。 要素が現在の構成ファイルの該当セクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection.Remove%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfileCollection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/CS/OutputCacheProfileCollection.cs#8)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfileCollection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/VB/OutputCacheProfileCollection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">ない<see cref="T:System.Web.Configuration.OutputCacheProfile" />オブジェクト、コレクション内の指定されたキーに、要素は既に削除されて、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfileCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.Configuration.OutputCacheProfile" />コレクションから削除する要素。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.OutputCacheProfile" />オブジェクトをコレクションから指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection.RemoveAt%2A>メソッドの挿入、`remove`要素を上位の構成ファイルで定義されているいずれかの要素の構成ファイルの対応するセクションにします。 要素が現在の構成ファイルの対応するセクションに定義されている場合、対応するエントリは、構成ファイルから削除します。 削除するオブジェクトは、コレクションに存在する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection.RemoveAt%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.OutputCacheProfileCollection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/CS/OutputCacheProfileCollection.cs#7)]
+ [!code-vb[System.Web.Configuration.OutputCacheProfileCollection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.OutputCacheProfileCollection/VB/OutputCacheProfileCollection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException">ない<see cref="T:System.Web.Configuration.OutputCacheProfile" />オブジェクト、コレクション内の指定されたキーに、要素は既に削除されて、コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public void Set (System.Web.Configuration.OutputCacheProfile user);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Set(class System.Web.Configuration.OutputCacheProfile user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.OutputCacheProfileCollection.Set(System.Web.Configuration.OutputCacheProfile)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.Web.Configuration.OutputCacheProfile" />
+      </Parameters>
+      <Docs>
+        <param name="user"><see cref="T:System.Web.Configuration.OutputCacheProfileCollection" />を設定する要素。</param>
+        <summary>指定した設定<see cref="T:System.Web.Configuration.OutputCacheProfile" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection.Set%2A>メソッドは、変更、既存<xref:System.Web.Configuration.OutputCacheProfileCollection>要素。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.OutputCacheProfileCollection.Set%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.FormsAuthenticationCredentials#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/CS/formsauthenticationcredentials.cs#10)]
+ [!code-vb[System.Web.Configuration.FormsAuthenticationCredentials#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.FormsAuthenticationCredentials/VB/formsauthenticationcredentials.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationException"><see cref="T:System.Web.Configuration.OutputCacheProfileCollection" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

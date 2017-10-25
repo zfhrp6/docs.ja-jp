@@ -1,0 +1,138 @@
+<Type Name="Timeout" FullName="System.Threading.Timeout">
+  <TypeSignature Language="C#" Value="public static class Timeout" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Timeout extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Timeout" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>無限タイムアウト間隔を指定する定数を格納します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのメンバーは、スレッドの操作で無限のタイムアウト間隔を指定に使用されます。 <xref:System.Threading.Timeout.Infinite>整数値をそのまま使用するメソッドによって使用される`millisecondsTimeout`パラメーターなど<xref:System.Threading.Thread.Sleep%28System.Int32%29?displayProperty=nameWithType>、 <xref:System.Threading.Thread.Join%28System.Int32%29?displayProperty=nameWithType>、および<xref:System.Threading.ReaderWriterLock.AcquireReaderLock%28System.Int32%29?displayProperty=nameWithType>です。 <xref:System.Threading.Timeout.InfiniteTimeSpan>受け入れるメソッドで使用される、`timeout`型のパラメーター<xref:System.TimeSpan>など<xref:System.Threading.Thread.Sleep%28System.TimeSpan%29?displayProperty=nameWithType>、 <xref:System.Threading.Thread.Join%28System.TimeSpan%29?displayProperty=nameWithType>、および<xref:System.Threading.ReaderWriterLock.AcquireReaderLock%28System.TimeSpan%29?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例では、無制限の時間にスリープ状態にスレッドの実行中と、その後されるウェイク アップを示します。  
+  
+ [!code-cpp[System.Threading.Thread.Interrupt#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Thread.Interrupt/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Thread.Interrupt#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Thread.Interrupt/CS/source.cs#1)]
+ [!code-vb[System.Threading.Thread.Interrupt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Thread.Interrupt/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Infinite">
+      <MemberSignature Language="C#" Value="public const int Infinite = -1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 Infinite = (-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Timeout.Infinite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>-1</MemberValue>
+      <Docs>
+        <summary>スレッド処理を受け入れるメソッドの無期限の待機期間を指定するために使用する定数、<see cref="T:System.Int32" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッド処理を受け入れるメソッドを`millisecondsTimeout`パラメーターなど<xref:System.Threading.Thread.Sleep%28System.Int32%29?displayProperty=nameWithType>と<xref:System.Threading.Thread.Join%28System.Int32%29?displayProperty=nameWithType>、この値は、スレッドの中断を無期限に使用します。 ただし、ほとんどの場合、使用をお勧めことするその他の<xref:System.Threading?displayProperty=nameWithType>などのクラス<xref:System.Threading.Mutex>、 <xref:System.Threading.Monitor>、 <xref:System.Threading.EventWaitHandle>、または<xref:System.Threading.Semaphore>代わりに同期スレッドまたはリソースを管理します。  
+  
+ このフィールドの値は、-1 (0 xffffffff) です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InfiniteTimeSpan">
+      <MemberSignature Language="C#" Value="public static readonly TimeSpan InfiniteTimeSpan;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.TimeSpan InfiniteTimeSpan" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Timeout.InfiniteTimeSpan" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>そのまま使用するメソッドの無期限の待機期間を指定するために使用する定数を<see cref="T:System.TimeSpan" />パラメーター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッド処理を受け入れるメソッドを`timeout`型のパラメーター<xref:System.TimeSpan>など<xref:System.Threading.Thread.Sleep%28System.TimeSpan%29?displayProperty=nameWithType>と<xref:System.Threading.Thread.Join%28System.TimeSpan%29?displayProperty=nameWithType>、この値は、スレッドの中断を無期限に使用します。 ただし、ほとんどの場合、使用をお勧めことするその他の<xref:System.Threading?displayProperty=nameWithType>などのクラス<xref:System.Threading.Mutex>、 <xref:System.Threading.Monitor>、 <xref:System.Threading.EventWaitHandle>、または<xref:System.Threading.Semaphore>代わりに同期スレッドまたはリソースを管理します。  
+  
+ このフィールドの値は-00:00:00.0010000、または-1 ミリ秒です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

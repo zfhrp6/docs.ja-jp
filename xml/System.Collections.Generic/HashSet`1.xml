@@ -1,0 +1,1803 @@
+<Type Name="HashSet&lt;T&gt;" FullName="System.Collections.Generic.HashSet&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class HashSet&lt;T&gt; : System.Collections.Generic.ICollection&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;, System.Collections.Generic.IReadOnlyCollection&lt;T&gt;, System.Collections.Generic.ISet&lt;T&gt;, System.Runtime.Serialization.IDeserializationCallback, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit HashSet`1&lt;T&gt; extends System.Object implements class System.Collections.Generic.ICollection`1&lt;!T&gt;, class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.Generic.IReadOnlyCollection`1&lt;!T&gt;, class System.Collections.Generic.ISet`1&lt;!T&gt;, class System.Collections.IEnumerable, class System.Runtime.Serialization.IDeserializationCallback, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Generic.HashSet`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IReadOnlyCollection&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ISet&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.IDeserializationCallback</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Count = {Count}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Collections.Generic.HashSetDebugView`1))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="T">ハッシュ セット内の要素の型。</typeparam>
+    <summary>値のセットを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#System.Core/System/Collections/Generic/HashSet.cs#2d265edc718b158b)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ <xref:System.Collections.Generic.HashSet%601>クラスは、高パフォーマンスの集合演算を提供します。 セットが含まれていない重複要素は、コレクションは、要素を持つ任意の順序で、します。  
+  
+> [!NOTE]
+>  <xref:System.Collections.Generic.HashSet%601>実装する、<xref:System.Collections.Generic.IReadOnlyCollection%601>インターフェイスから始まる、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]以外の場合は、.NET Framework の以前のバージョンで、<xref:System.Collections.Generic.HashSet%601>クラスは、このインターフェイスを実装しませんでした。  
+  
+ 容量、<xref:System.Collections.Generic.HashSet%601>オブジェクトは、オブジェクトが保持できる要素の数。 A<xref:System.Collections.Generic.HashSet%601>要素がオブジェクトに追加されたオブジェクトの容量が自動的に増加します。  
+  
+ <xref:System.Collections.Generic.HashSet%601>クラスが、数学的なセットのモデルに基づいており、操作をセットのキーにアクセスするような高パフォーマンスを提供、<xref:System.Collections.Generic.Dictionary%602>または<xref:System.Collections.Hashtable>コレクション。 簡単に言えば、<xref:System.Collections.Generic.HashSet%601>としてのクラスを考えることができます、<xref:System.Collections.Generic.Dictionary%602>コレクションの値はありません。  
+  
+ A<xref:System.Collections.Generic.HashSet%601>コレクションが並べ替えられていないと、重複する要素を含めることはできません。 注文または要素の重複がアプリケーションのパフォーマンスよりも重要の場合は、使用を検討、<xref:System.Collections.Generic.List%601>クラスと共に、<xref:System.Collections.Generic.List%601.Sort%2A>メソッドです。  
+  
+ <xref:System.Collections.Generic.HashSet%601>多く算術減算を設定し、セットの追加 (共用体) などの操作を提供します。 次の表に、指定された一覧<xref:System.Collections.Generic.HashSet%601>操作と同等の数学的です。  
+  
+|(Of T) HashSet 操作|該当するショートカットは数学的|  
+|-------------------------------|-----------------------------|  
+|<xref:System.Collections.Generic.HashSet%601.UnionWith%2A>|共用体であるか設定の追加|  
+|<xref:System.Collections.Generic.HashSet%601.IntersectWith%2A>|積集合|  
+|<xref:System.Collections.Generic.HashSet%601.ExceptWith%2A>|セットの減算|  
+|<xref:System.Collections.Generic.HashSet%601.SymmetricExceptWith%2A>|対称差|  
+  
+ 表示されているセットの操作だけでなく、<xref:System.Collections.Generic.HashSet%601>クラスは、セットの等値をセットの重複を決定するためのメソッドも用意されています。 セットは、サブセットまたは別のセットのスーパー セットであるかどうかとします。  
+  
+ 非常に大きな<xref:System.Collections.Generic.HashSet%601>オブジェクト、設定して、64 ビット システム上の 20億要素に最大の容量を増やすことができます、`enabled`する構成要素の属性`true`実行時環境でします。  
+  
+ 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Collections.Generic.HashSet%601>クラスが実装する、<xref:System.Collections.Generic.ISet%601>インターフェイスです。  
+  
+## <a name="hashset-and-linq-set-operations"></a>HashSet 操作と LINQ セット操作  
+ LINQ へのアクセスを提供する、 `Distinct`、 `Union`、`Intersect`と`Except`を実装する任意のデータ ソースに対する操作の設定、<xref:System.Collections.IEnumerable>または<xref:System.Linq.IQueryable>インターフェイスです。  <xref:System.Collections.Generic.HashSet%601>セット操作のよりも大規模かつより堅牢なコレクションを提供します。 たとえば、<xref:System.Collections.Generic.HashSet%601>などの比較を提供<xref:System.Collections.Generic.HashSet%601.IsSubsetOf%2A>と<xref:System.Collections.Generic.HashSet%601.IsSupersetOf%2A>です。  
+  
+ LINQ の主な違いは、操作を設定し、<xref:System.Collections.Generic.HashSet%601>操作は、LINQ セット操作いつでも新しい<xref:System.Collections.Generic.IEnumerable%601>コレクション、一方、<xref:System.Collections.Generic.HashSet%601>と同等のメソッドは、現在のコレクションを変更します。  
+  
+ 通常、新しいセットを作成する必要がありますか、アプリケーションには、指定されたセットの操作にのみアクセスが必要な場合は、LINQ を使用して設定に対していずれの操作<xref:System.Collections.Generic.IEnumerable%601>コレクションまたは配列では十分です。 ただし、アプリケーションには、一連の追加操作へのアクセスが必要な場合、または望ましくないか、新しいコレクションを作成するために必要でない場合を使用して、<xref:System.Collections.Generic.HashSet%601>クラスです。  
+  
+ 次の表に、<xref:System.Collections.Generic.HashSet%601>操作と、同等の LINQ 操作を設定します。  
+  
+|(Of T) HashSet 操作|LINQ と同等|  
+|-------------------------------|---------------------|  
+|<xref:System.Collections.Generic.HashSet%601.UnionWith%2A>|<xref:System.Linq.Enumerable.Union%2A>|  
+|<xref:System.Collections.Generic.HashSet%601.IntersectWith%2A>|<xref:System.Linq.Enumerable.Intersect%2A>|  
+|<xref:System.Collections.Generic.HashSet%601.ExceptWith%2A>|<xref:System.Linq.Enumerable.Except%2A>|  
+|指定されていません。|<xref:System.Linq.Enumerable.Distinct%2A>|  
+|<xref:System.Collections.Generic.HashSet%601.SymmetricExceptWith%2A>|指定されていません。|  
+|<xref:System.Collections.Generic.HashSet%601.Overlaps%2A>|指定されていません。|  
+|<xref:System.Collections.Generic.HashSet%601.IsSubsetOf%2A>|指定されていません。|  
+|<xref:System.Collections.Generic.HashSet%601.IsProperSubsetOf%2A>|指定されていません。|  
+|<xref:System.Collections.Generic.HashSet%601.IsSupersetOf%2A>|指定されていません。|  
+|<xref:System.Collections.Generic.HashSet%601.IsProperSupersetOf%2A>|指定されていません。|  
+|<xref:System.Collections.Generic.HashSet%601.SetEquals%2A>|指定されていません。|  
+  
+   
+  
+## Examples  
+ 次の例では、次の 2 つの異なるセットをマージする方法を示します。 この例では、2 つ作成されます<xref:System.Collections.Generic.HashSet%601>オブジェクト、およびそれぞれ偶数と奇数の数字にそれらを設定します。 3 番目<xref:System.Collections.Generic.HashSet%601>偶数番号が含まれるセットからオブジェクトを作成します。 この例では、<xref:System.Collections.Generic.HashSet%601.UnionWith%2A>メソッドで、3 番目のセットに奇数の数値のセットを追加します。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_UnionWith#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_UnionWith/cs/Program.cs#01)]
+ [!code-vb[System.Collections.Generic.HashSet_UnionWith#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_UnionWith/vb/Program.vb#01)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HashSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> クラスの新しいインスタンスを初期化します。初期化後のインスタンスの内容は空です。このセット型には既定の等値比較子が使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Generic.HashSet%601>オブジェクトは、オブジェクトが保持できる要素の数。 A<xref:System.Collections.Generic.HashSet%601>要素がオブジェクトに追加されたオブジェクトの容量が自動的に増加します。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次の例を作成し、2 つを設定する方法を示しています<xref:System.Collections.Generic.HashSet%601>オブジェクト。 この例に示されている例の一部である、<xref:System.Collections.Generic.HashSet%601.UnionWith%2A>メソッドです。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_UnionWith#03](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_UnionWith/cs/Program.cs#03)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HashSet (System.Collections.Generic.IEnumerable&lt;T&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.#ctor(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">新しいセットの要素のコピー元となるコレクション。</param>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> クラスの新しいインスタンスを初期化します。このセット型には既定の等値比較子が使用されます。指定されたコレクションからコピーされた要素が格納され、コピー対象の要素数を格納できるだけの十分な容量が確保されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Generic.HashSet%601>オブジェクトは、オブジェクトが保持できる要素の数。 A<xref:System.Collections.Generic.HashSet%601>要素がオブジェクトに追加されたオブジェクトの容量が自動的に増加します。  
+  
+ 場合`collection`重複を含む一意の各要素の 1 つのセットが含まれます。 例外はスローされません。 したがって、結果セットのサイズのサイズと同じではありません`collection`です。  
+  
+ このコンス トラクターは、O (`n`) 操作、場所`n`内の要素の数が、`collection`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Collections.Generic.HashSet%601>既存のセットのコレクション。 この例では 2 つのセットは偶数と奇数の整数値でそれぞれ作成されます。 3 番目<xref:System.Collections.Generic.HashSet%601>も整数値のセットからオブジェクトが作成されます。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_UnionWith#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_UnionWith/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_UnionWith#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_UnionWith/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collection" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HashSet (System.Collections.Generic.IEqualityComparer&lt;T&gt; comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEqualityComparer`1&lt;!T&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.#ctor(System.Collections.Generic.IEqualityComparer{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="comparer">セット内の値を比較する際に使用する <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> の実装。このセット型に、既定の <see cref="T:System.Collections.Generic.EqualityComparer`1" /> の実装を使用する場合は <see langword="null" />。</param>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> クラスの新しいインスタンスを初期化します。初期化後のインスタンスの内容は空です。このセット型には指定した等値比較子が使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Generic.HashSet%601>オブジェクトは、オブジェクトが保持できる要素の数。 A<xref:System.Collections.Generic.HashSet%601>要素がオブジェクトに追加されたオブジェクトの容量が自動的に増加します。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HashSet (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HashSet (System.Collections.Generic.IEnumerable&lt;T&gt; collection, System.Collections.Generic.IEqualityComparer&lt;T&gt; comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; collection, class System.Collections.Generic.IEqualityComparer`1&lt;!T&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="collection">新しいセットの要素のコピー元となるコレクション。</param>
+        <param name="comparer">セット内の値を比較する際に使用する <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> の実装。このセット型に、既定の <see cref="T:System.Collections.Generic.EqualityComparer`1" /> の実装を使用する場合は <see langword="null" />。</param>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> クラスの新しいインスタンスを初期化します。このセット型には指定した等値比較子が使用されます。指定されたコレクションからコピーされた要素が格納され、コピー対象の要素数を格納できるだけの十分な容量が確保されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Generic.HashSet%601>オブジェクトは、オブジェクトが保持できる要素の数。 A<xref:System.Collections.Generic.HashSet%601>要素がオブジェクトに追加されたオブジェクトの容量が自動的に増加します。  
+  
+ 場合`collection`重複を含む一意の各要素の 1 つのセットが含まれます。 例外はスローされません。 したがって、結果セットのサイズのサイズと同じではありません`collection`です。  
+  
+ このコンス トラクターは、O (`n`) 操作、場所`n`内の要素の数が、`collection`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例は、指定された<xref:System.Collections.Generic.IEqualityComparer%601>の要素を区別しない比較を許可する、 <xref:System.Collections.Generic.HashSet%601> vehicle 型のコレクション。  
+  
+ [!code-cpp[System.Collections.Generic.HashSet_ExceptWith#03](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_ExceptWith/cpp/source2.cpp#03)]
+ [!code-csharp[System.Collections.Generic.HashSet_ExceptWith#03](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_ExceptWith/cs/source2.cs#03)]
+ [!code-vb[System.Collections.Generic.HashSet_ExceptWith#03](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_ExceptWith/vb/source2.vb#03)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collection" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HashSet (int capacity, System.Collections.Generic.IEqualityComparer&lt;T&gt; comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, class System.Collections.Generic.IEqualityComparer`1&lt;!T&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.#ctor(System.Int32,System.Collections.Generic.IEqualityComparer{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">To be added.</param>
+        <param name="comparer">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HashSet (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトをシリアル化するために必要な情報を格納している <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクト。</param>
+        <param name="context"><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトに関連付けられているシリアル化ストリームの転送元および転送先を格納する <see cref="T:System.Runtime.Serialization.StreamingContext" /> 構造体。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.Collections.Generic.HashSet`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ストリームを介して送信されるオブジェクトを再構成する逆シリアル化中に呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public bool Add (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Add(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.Add(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item">セットに追加する要素。</param>
+        <summary>指定された要素をセットに追加します。</summary>
+        <returns>
+          要素が <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトに追加された場合は <see langword="true" />。要素が既に存在していた場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Collections.Generic.HashSet%601.Count%2A>の容量と既に同じ、<xref:System.Collections.Generic.HashSet%601>オブジェクトに新しい項目の対応する容量を自動的に調整します。  
+  
+ 場合<xref:System.Collections.Generic.HashSet%601.Count%2A>が小さい内部配列の容量よりも、このメソッドは、o (1) 操作になります。 場合、<xref:System.Collections.Generic.HashSet%601>オブジェクトのサイズを変更する必要があります、このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例を作成し、2 つを設定する方法を示しています<xref:System.Collections.Generic.HashSet%601>オブジェクト。 この例に示されている例の一部である、<xref:System.Collections.Generic.HashSet%601.UnionWith%2A>メソッドです。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_UnionWith#03](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_UnionWith/cs/Program.cs#03)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトからすべての要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.HashSet%601.Count%2A>0 に設定し、コレクションの要素から他のオブジェクトへの参照も解放します。 呼び出すまで、容量が変更されない<xref:System.Collections.Generic.HashSet%601.TrimExcess%2A>が行われます。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例を作成し、設定、<xref:System.Collections.Generic.HashSet%601>コレクション、それをクリアし、コレクションによって参照されるメモリを解放します。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_Clear#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_Clear/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_Clear#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_Clear/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Comparer">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEqualityComparer&lt;T&gt; Comparer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEqualityComparer`1&lt;!T&gt; Comparer" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.HashSet`1.Comparer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEqualityComparer&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セット内の値が等しいかどうかを確認するために使用する <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> オブジェクトを取得します。</summary>
+        <value>セット内の値が等しいかどうかを確認するために使用する <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.Contains(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクト内で検索する要素。</param>
+        <summary>指定した要素が <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトに含まれているかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトに指定された要素が格納されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次の例から値を削除する方法を示します、<xref:System.Collections.Generic.HashSet%601>コレクションを使用して、<xref:System.Collections.Generic.HashSet%601.Remove%2A>メソッドです。 この例では、<xref:System.Collections.Generic.HashSet%601.Contains%2A>メソッドは、セットに、削除する前に、値が含まれていることを確認します。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_RemoveWhere#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_RemoveWhere/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_RemoveWhere#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_RemoveWhere/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (T[] array);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(!T[] array) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.CopyTo(`0[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="T[]" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトからコピーされる要素のコピー先となる 1 次元配列。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトの要素を配列にコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (T[] array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(!T[] array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.CopyTo(`0[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="T[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトからコピーされる要素のコピー先となる 1 次元配列。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="arrayIndex">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>指定された配列インデックスを開始位置として、<see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトの要素を配列にコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="arrayIndex" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="arrayIndex" />変換先の長さより大きい<paramref name="array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (T[] array, int arrayIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(!T[] array, int32 arrayIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.CopyTo(`0[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="T[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトからコピーされる要素のコピー先となる 1 次元配列。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="arrayIndex">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <param name="count">コピーする要素の数<c>配列</c>です。</param>
+        <summary>指定された配列インデックスを開始位置として、<see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトから、指定された数の要素を配列にコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は`count`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="arrayIndex" /> が 0 未満です。  
+  
+ -または-  
+  
+ <paramref name="count" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="arrayIndex" />変換先の長さより大きい<paramref name="array" />です。  
+  
+ または  
+  
+ <paramref name="count" />使用可能な領域よりも大きい、<paramref name="index" />変換先の末尾に<paramref name="array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.HashSet`1.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セットに格納されている要素の数を取得します。</summary>
+        <value>セットに格納されている要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Generic.HashSet%601>オブジェクトは、オブジェクトが保持できる要素の数。 A<xref:System.Collections.Generic.HashSet%601>要素がオブジェクトに追加されたオブジェクトの容量が自動的に増加します。  
+  
+ 容量は、常により大きいまたは等しい<xref:System.Collections.Generic.HashSet%601.Count%2A>です。 場合<xref:System.Collections.Generic.HashSet%601.Count%2A>要素を追加するときに、容量を超えています、容量が前の 2 倍の容量を超える最初の素数を設定します。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+   
+  
+## Examples  
+ 次の例は、作成、設定、および操作を 2 つの方法を示します<xref:System.Collections.Generic.HashSet%601>オブジェクト。 この例では、セットの内容の両方でと<xref:System.Collections.Generic.HashSet%601.Count%2A>をコンソールに表示します。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_UnionWith#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_UnionWith/cs/Program.cs#01)]
+ [!code-vb[System.Collections.Generic.HashSet_UnionWith#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_UnionWith/vb/Program.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSetComparer">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEqualityComparer&lt;System.Collections.Generic.HashSet&lt;T&gt;&gt; CreateSetComparer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEqualityComparer`1&lt;class System.Collections.Generic.HashSet`1&lt;!T&gt;&gt; CreateSetComparer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.CreateSetComparer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEqualityComparer&lt;System.Collections.Generic.HashSet&lt;T&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトの等価テストに使用できる <see cref="T:System.Collections.IEqualityComparer" /> オブジェクトを返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトの深いレベルの等価テストに使用できる <see cref="T:System.Collections.IEqualityComparer" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.IEqualityComparer>オブジェクトが 1 つだけのレベルで等しいかどうかをチェックです。 ただし、連結できます。 より深い等値テストを実行する追加のレベルでの比較子。  
+  
+ このメソッドを呼び出すことは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptWith">
+      <MemberSignature Language="C#" Value="public void ExceptWith (System.Collections.Generic.IEnumerable&lt;T&gt; other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ExceptWith(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトから削除する項目のコレクション。</param>
+        <summary>現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトから、指定されたコレクションに含まれる要素をすべて削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.HashSet%601.ExceptWith%2A>メソッドは、数学的なセット減算に相当します。  
+  
+ このメソッドは、O (`n`) 操作、場所`n`内の要素の数が、`other`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つ作成されます<xref:System.Collections.Generic.HashSet%601>データの重複を含むコレクション。 大規模なセットを使用してからの値の範囲を削除、<xref:System.Collections.Generic.HashSet%601.ExceptWith%2A>メソッドです。  
+  
+ [!code-cpp[System.Collections.Generic.HashSet_ExceptWith#02](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_ExceptWith/cpp/program.cpp#02)]
+ [!code-csharp[System.Collections.Generic.HashSet_ExceptWith#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_ExceptWith/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_ExceptWith#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_ExceptWith/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.HashSet&lt;T&gt;.Enumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Collections.Generic.HashSet`1/Enumerator&lt;!T&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.HashSet&lt;T&gt;+Enumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトを反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトの <see cref="T:System.Collections.Generic.HashSet`1.Enumerator" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `foreach` C# 言語のステートメント (`for each` C++ では、 `For Each` Visual basic) 列挙子の複雑さです。 したがってを使用して`foreach`列挙子を直接操作するのではなくをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 この位置にある、<xref:System.Collections.Generic.HashSet%601.Enumerator.Current%2A>プロパティが定義されていません。 そのため、呼び出す必要があります、<xref:System.Collections.Generic.HashSet%601.Enumerator.MoveNext%2A>メソッドの値を読み取る前に、コレクションの最初の要素に列挙子を進める<xref:System.Collections.Generic.HashSet%601.Enumerator.Current%2A>です。  
+  
+ <xref:System.Collections.Generic.HashSet%601.Enumerator.Current%2A>プロパティまで同じオブジェクトを返します<xref:System.Collections.Generic.HashSet%601.Enumerator.MoveNext%2A>と呼びます。 <xref:System.Collections.Generic.HashSet%601.Enumerator.MoveNext%2A> は、<xref:System.Collections.Generic.HashSet%601.Enumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.Generic.HashSet%601.Enumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.Generic.HashSet%601.Enumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.Generic.HashSet%601.Enumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.Generic.HashSet%601.Enumerator.MoveNext%2A>返される`false`、<xref:System.Collections.Generic.HashSet%601.Enumerator.Current%2A>が定義されていません。 設定することはできません<xref:System.Collections.Generic.HashSet%601.Enumerator.Current%2A>再度、コレクションの最初の要素を作成する必要が新しい列挙子オブジェクト代わりにします。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ <xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間のコレクションの既定の実装は同期されません。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトをシリアル化するために必要な情報を格納している <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクト。</param>
+        <param name="context"><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトに関連付けられているシリアル化ストリームの転送元および転送先を格納する <see cref="T:System.Runtime.Serialization.StreamingContext" /> 構造体。</param>
+        <summary><see cref="T:System.Runtime.Serialization.ISerializable" /> インターフェイスを実装し、<see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトをシリアル化するために必要なデータを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ O は、このメソッドを呼び出す (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IntersectWith">
+      <MemberSignature Language="C#" Value="public void IntersectWith (System.Collections.Generic.IEnumerable&lt;T&gt; other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void IntersectWith(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと比較するコレクション。</param>
+        <summary>現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトを、そのオブジェクトと指定されたコレクションの両方に存在する要素だけが格納されるように変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって表されるコレクションの場合、`other`パラメーターは、<xref:System.Collections.Generic.HashSet%601>現在として同じの等値比較子を持つコレクション<xref:System.Collections.Generic.HashSet%601>オブジェクト、このメソッドは、O (`n`) 操作です。 それ以外の場合、このメソッドは、O (`n` + `m`) 操作、場所`n`は<xref:System.Collections.Generic.HashSet%601.Count%2A>と`m`内の要素の数は、`other`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsProperSubsetOf">
+      <MemberSignature Language="C#" Value="public bool IsProperSubsetOf (System.Collections.Generic.IEnumerable&lt;T&gt; other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsProperSubsetOf(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと比較するコレクション。</param>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトが、指定されたコレクションの真のサブセット (真部分集合) であるかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトが <paramref name="other" /> の真のサブセットである場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空のセットは、その他のコレクションの真のサブセットです。 したがって、このメソッドが返されます`true`場合は、現在によって表されるコレクション<xref:System.Collections.Generic.HashSet%601>オブジェクトが空しない限り、`other`パラメーターが空のセット。  
+  
+ このメソッドは常に返します`false`場合<xref:System.Collections.Generic.HashSet%601.Count%2A>内の要素の数以上`other`です。  
+  
+ によって表されるコレクション場合`other`は、<xref:System.Collections.Generic.HashSet%601>現在として同じの等値比較子を持つコレクション<xref:System.Collections.Generic.HashSet%601>オブジェクト、このメソッドは、O (`n`) 操作です。 それ以外の場合、このメソッドは、O (`n` + `m`) 操作、場所`n`は<xref:System.Collections.Generic.HashSet%601.Count%2A>と`m`内の要素の数は、`other`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する 2 つの異なる<xref:System.Collections.Generic.HashSet%601>オブジェクトし、相互に比較します。 この例では`lowNumbers`は真のサブセットおよびサブセット`allNumbers`まで`allNumbers`を使用して、変更、<xref:System.Collections.Generic.HashSet%601.IntersectWith%2A>は両方のセットに存在する値のみを含むメソッドです。 1 回`allNumbers`と`lowNumbers`同じですが、`lowNumbers`のサブセットではまだ`allNumbers`ですが、真のサブセットではありません。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsProperSupersetOf">
+      <MemberSignature Language="C#" Value="public bool IsProperSupersetOf (System.Collections.Generic.IEnumerable&lt;T&gt; other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsProperSupersetOf(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと比較するコレクション。</param>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトが、指定されたコレクションの真のスーパーセット (真上位集合) であるかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトが <paramref name="other" /> の真のスーパーセットである場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空のセットは、その他のコレクションの真のスーパー セットです。 したがって、このメソッドが返されます`true`によって表されるコレクションの場合、`other`パラメーターが空しない限り、現在<xref:System.Collections.Generic.HashSet%601>コレクションも空です。  
+  
+ このメソッドは常に返します`false`場合<xref:System.Collections.Generic.HashSet%601.Count%2A>内の要素の数以下`other`です。  
+  
+ によって表されるコレクション場合`other`は、<xref:System.Collections.Generic.HashSet%601>現在として同じの等値比較子を持つコレクション<xref:System.Collections.Generic.HashSet%601>オブジェクト、このメソッドは、O (`n`) 操作です。 それ以外の場合、このメソッドは、O (`n` + `m`) 操作、場所`n`内の要素の数は、`other`と`m`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例を作成する 2 つの異なる<xref:System.Collections.Generic.HashSet%601>オブジェクトし、相互に比較します。 この例では`allNumbers`がスーパー セットであり、真のスーパー セット`lowNumbers`まで`allNumbers`を使用して、変更、<xref:System.Collections.Generic.HashSet%601.IntersectWith%2A>メソッド、両方のセットに存在する値のみが含まれます。 1 回`allNumbers`と`lowNumbers`同じですが、`allNumbers`のスーパー セットではまだ`lowNumbers`ですが、真のスーパー セットではありません。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public bool IsSubsetOf (System.Collections.Generic.IEnumerable&lt;T&gt; other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSubsetOf(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと比較するコレクション。</param>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトが、指定されたコレクションのサブセットであるかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトが <paramref name="other" /> のサブセットである場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空のセットは空のセットを含む、他のコレクションのサブセットしたがって、このメソッドが返されます`true`場合は、コレクションが現在によって表される<xref:System.Collections.Generic.HashSet%601>オブジェクトが空、場合でも、`other`パラメーターが空のセット。  
+  
+ このメソッドは常に返します`false`場合<xref:System.Collections.Generic.HashSet%601.Count%2A>内の要素の数よりも大きい`other`です。  
+  
+ によって表されるコレクション場合`other`は、<xref:System.Collections.Generic.HashSet%601>現在として同じの等値比較子を持つコレクション<xref:System.Collections.Generic.HashSet%601>オブジェクト、このメソッドは、O (`n`) 操作です。 それ以外の場合、このメソッドは、O (`n` + `m`) 操作、場所`n`は<xref:System.Collections.Generic.HashSet%601.Count%2A>と`m`内の要素の数は、`other`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する 2 つの異なる<xref:System.Collections.Generic.HashSet%601>オブジェクトし、相互に比較します。 この例では`lowNumbers`は真のサブセットおよびサブセット`allNumbers`まで`allNumbers`を使用して、変更、<xref:System.Collections.Generic.HashSet%601.IntersectWith%2A>は両方のセットに存在する値のみを含むメソッドです。 1 回`allNumbers`と`lowNumbers`同じですが、`lowNumbers`のサブセットではまだ`allNumbers`ですが、真のサブセットではありません。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupersetOf">
+      <MemberSignature Language="C#" Value="public bool IsSupersetOf (System.Collections.Generic.IEnumerable&lt;T&gt; other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSupersetOf(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと比較するコレクション。</param>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトが、指定されたコレクションのスーパーセットであるかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトが <paramref name="other" /> のスーパーセットである場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空のセットを含む、すべてのコレクションは、空のセットのスーパセットです。 したがって、このメソッドが返されます`true`によって表されるコレクションの場合、`other`パラメーターが空で、場合でも、現在<xref:System.Collections.Generic.HashSet%601>オブジェクトが空です。  
+  
+ このメソッドは常に返します`false`場合<xref:System.Collections.Generic.HashSet%601.Count%2A>が内の要素の数より少ない`other`です。  
+  
+ によって表されるコレクション場合`other`は、<xref:System.Collections.Generic.HashSet%601>現在として同じの等値比較子を持つコレクション<xref:System.Collections.Generic.HashSet%601>オブジェクト、このメソッドは、O (`n`) 操作です。 それ以外の場合、このメソッドは、O (`n` + `m`) 操作、場所`n`内の要素の数は、`other`と`m`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例を作成する 2 つの異なる<xref:System.Collections.Generic.HashSet%601>オブジェクトし、相互に比較します。 この例では`allNumbers`がスーパー セットであり、真のスーパー セット`lowNumbers`まで`allNumbers`を使用して、変更、<xref:System.Collections.Generic.HashSet%601.IntersectWith%2A>メソッド、両方のセットに存在する値のみが含まれます。 1 回`allNumbers`と`lowNumbers`同じですが、`allNumbers`のスーパー セットではまだ`lowNumbers`ですが、真のスーパー セットではありません。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeserialization">
+      <MemberSignature Language="C#" Value="public virtual void OnDeserialization (object sender);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnDeserialization(object sender) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.OnDeserialization(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="sender">逆シリアル化イベントのソース。</param>
+        <summary><see cref="T:System.Runtime.Serialization.ISerializable" /> インターフェイスを実装し、逆シリアル化が完了したときに逆シリアル化イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ O は、このメソッドを呼び出す (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトに現在関連付けられている<see cref="T:System.Collections.Generic.HashSet`1" />オブジェクトが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Overlaps">
+      <MemberSignature Language="C#" Value="public bool Overlaps (System.Collections.Generic.IEnumerable&lt;T&gt; other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Overlaps(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと比較するコレクション。</param>
+        <summary>現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと指定されたコレクションとが共通の要素を共有しているかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと <paramref name="other" /> との間に共通する要素が 1 つでも存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`内の要素の数は、`other`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する 2 つの異なる<xref:System.Collections.Generic.HashSet%601>オブジェクトし、互いに比較します。 この例では`allNumbers`と`lowNumbers`を使用して共通の要素を示す、<xref:System.Collections.Generic.HashSet%601.Overlaps%2A>メソッドです。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.Remove(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item">削除する要素。</param>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトから指定された要素を削除します。</summary>
+        <returns>
+          要素が見つかり、正常に削除された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。  このメソッドは、<paramref name="item" /> が <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトに見つからない場合、<see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Collections.Generic.HashSet%601>オブジェクトに指定した要素が含まれていないオブジェクトは変更されません場合、。 例外をスローすることはありません。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次の例から値を削除する方法を示します、<xref:System.Collections.Generic.HashSet%601>コレクションを使用して、<xref:System.Collections.Generic.HashSet%601.Remove%2A>メソッドです。 この例では、0 はから削除任意には、<xref:System.Collections.Generic.HashSet%601>コレクション。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_RemoveWhere#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_RemoveWhere/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_RemoveWhere#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_RemoveWhere/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveWhere">
+      <MemberSignature Language="C#" Value="public int RemoveWhere (Predicate&lt;T&gt; match);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 RemoveWhere(class System.Predicate`1&lt;!T&gt; match) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.RemoveWhere(System.Predicate{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="match" Type="System.Predicate&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="match">削除する要素の条件を定義する <see cref="T:System.Predicate`1" /> デリゲート。</param>
+        <summary>指定の述語によって定義された条件に一致するすべての要素を <see cref="T:System.Collections.Generic.HashSet`1" /> コレクションから削除します。</summary>
+        <returns><see cref="T:System.Collections.Generic.HashSet`1" /> コレクションから削除された要素数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ O は、このメソッドを呼び出す (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例から値を削除する方法を示します、<xref:System.Collections.Generic.HashSet%601>コレクションを使用して、<xref:System.Collections.Generic.HashSet%601.Remove%2A>メソッドです。 この例ではすべて奇数の整数値の削除、<xref:System.Collections.Generic.HashSet%601>で指定されたコレクション、`match`を委任します。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_RemoveWhere#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_RemoveWhere/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_RemoveWhere#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_RemoveWhere/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="match" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetEquals">
+      <MemberSignature Language="C#" Value="public bool SetEquals (System.Collections.Generic.IEnumerable&lt;T&gt; other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SetEquals(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと比較するコレクション。</param>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと指定されたコレクションに同じ要素が存在するかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトが <paramref name="other" /> と等しい場合は <see langword="true" />。それ以外の場合は false。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.Generic.HashSet%601.SetEquals%2A>メソッドは、重複するエントリおよび内の要素の順序は無視されます、`other`パラメーター。  
+  
+ によって表されるコレクション場合`other`は、<xref:System.Collections.Generic.HashSet%601>現在として同じの等値比較子を持つコレクション<xref:System.Collections.Generic.HashSet%601>オブジェクト、このメソッドは、O (`n`) 操作です。 それ以外の場合、このメソッドは、O (`n` + `m`) 操作、場所`n`内の要素の数は、`other`と`m`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例を作成する 2 つの異なる<xref:System.Collections.Generic.HashSet%601>オブジェクトし、互いに比較します。 最初に、2 つのセットが等しくないを使用して説明されている、<xref:System.Collections.Generic.HashSet%601.SetEquals%2A>メソッドです。 `allNumbers` <xref:System.Collections.Generic.HashSet%601>オブジェクトし、変更されると、その後、セットが等しい。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_boolMethods#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_boolMethods/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SymmetricExceptWith">
+      <MemberSignature Language="C#" Value="public void SymmetricExceptWith (System.Collections.Generic.IEnumerable&lt;T&gt; other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SymmetricExceptWith(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと比較するコレクション。</param>
+        <summary>現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトを、そのオブジェクトと指定されたコレクションの (両方に存在するのではなく) どちらか一方に存在する要素だけが格納されるように変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`other`パラメーターは、<xref:System.Collections.Generic.HashSet%601>現在として同じの等値比較子を持つコレクション<xref:System.Collections.Generic.HashSet%601>オブジェクト、このメソッドは、O (`n`) 操作です。 それ以外の場合、このメソッドは、O (`n` + `m`) 操作、場所`n`内の要素の数は、`other`と`m`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つ作成されます<xref:System.Collections.Generic.HashSet%601>データの重複を含むコレクション。 値と低い値を含むセットを変更を使用して、<xref:System.Collections.Generic.HashSet%601.SymmetricExceptWith%2A>は両方のセットに存在しない値のみを含むメソッドです。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_SymmetricExceptWith#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_SymmetricExceptWith/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_SymmetricExceptWith#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_SymmetricExceptWith/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.ICollection&lt;T&gt;.Add">
+      <MemberSignature Language="C#" Value="void ICollection&lt;T&gt;.Add (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.Generic.ICollection&lt;T&gt;.Add(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.System#Collections#Generic#ICollection&lt;T&gt;#Add(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Collections.Generic.ICollection`1" /> オブジェクトに追加するオブジェクト。</param>
+        <summary><see cref="T:System.Collections.Generic.ICollection`1" /> オブジェクトに項目を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Collections.Generic.List%601.Count%2A>はより小さい<xref:System.Collections.Generic.List%601.Capacity%2A>、このメソッドは、o (1) 操作になります。 新しい要素のためには、容量を増やす必要があります、このメソッドが O (`n`) 操作、場所`n`は<xref:System.Collections.Generic.List%601.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.Generic.ICollection`1" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.ICollection&lt;T&gt;.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.Generic.ICollection&lt;T&gt;.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.Generic.ICollection&lt;T&gt;.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Generic.HashSet`1.System#Collections#Generic#ICollection&lt;T&gt;#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          コレクションが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;T&gt; IEnumerable&lt;T&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;!T&gt; System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.System#Collections#Generic#IEnumerable&lt;T&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.Generic.IEnumerator`1" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `foreach` C# 言語のステートメント (`for each` C++ では、 `For Each` Visual basic) 列挙子の複雑さです。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 この位置にある、<xref:System.Collections.Generic.IEnumerator%601.Current%2A>プロパティが定義されていません。 そのため、呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A>メソッドの値を読み取る前に、コレクションの最初の要素に列挙子を進める<xref:System.Collections.Generic.IEnumerator%601.Current%2A>です。  
+  
+ <xref:System.Collections.Generic.IEnumerator%601.Current%2A>プロパティまで同じオブジェクトを返します<xref:System.Collections.IEnumerator.MoveNext%2A>と呼びます。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.Generic.IEnumerator%601.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.Generic.IEnumerator%601.Current%2A>が定義されていません。 設定することはできません<xref:System.Collections.Generic.IEnumerator%601.Current%2A>再度、コレクションの最初の要素を作成する必要が新しい列挙子オブジェクト代わりにします。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。 列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ <xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間のコレクションの既定の実装は同期されません。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `foreach` C# 言語のステートメント (`for each` C++ では、 `For Each` Visual basic) 列挙子の複雑さです。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。  この位置にある、<xref:System.Collections.IEnumerator.Current%2A>プロパティが定義されていません。 そのため、呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A>メソッドの値を読み取る前に、コレクションの最初の要素に列挙子を進める<xref:System.Collections.IEnumerator.Current%2A>です。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A>プロパティでは、同じオブジェクトを取得するまで<xref:System.Collections.IEnumerator.MoveNext%2A>または<xref:System.Collections.IEnumerator.Reset%2A>と呼びます。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ <xref:System.Collections.Generic?displayProperty=nameWithType> 名前空間のコレクションの既定の実装は同期されません。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrimExcess">
+      <MemberSignature Language="C#" Value="public void TrimExcess ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TrimExcess() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.TrimExcess" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトの容量を、そこに格納されている実際の要素数を最も近い実装に固有の値に切り上げて設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Collections.Generic.HashSet%601.TrimExcess%2A>を最小限に抑える方法、<xref:System.Collections.Generic.HashSet%601>要素が追加されないことが判明することは、オブジェクトのメモリ オーバーヘッドが発生します。 完全にオフに、<xref:System.Collections.Generic.HashSet%601>オブジェクトしそれによって参照されるすべてのメモリを解放、通話の後にこのメソッドを呼び出し、<xref:System.Collections.Generic.HashSet%601.Clear%2A>メソッドです。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Generic.HashSet%601.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例を作成し、設定、<xref:System.Collections.Generic.HashSet%601>コレクション、コレクションを削除して、それによって参照されるメモリを解放します。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_Clear#02](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_Clear/cs/Program.cs#02)]
+ [!code-vb[System.Collections.Generic.HashSet_Clear#02](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_Clear/vb/Program.vb#02)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetValue">
+      <MemberSignature Language="C#" Value="public bool TryGetValue (T equalValue, out T actualValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetValue(!T equalValue, [out] !T&amp; actualValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.TryGetValue(`0,`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="equalValue" Type="T" />
+        <Parameter Name="actualValue" Type="T&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="equalValue">To be added.</param>
+        <param name="actualValue">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnionWith">
+      <MemberSignature Language="C#" Value="public void UnionWith (System.Collections.Generic.IEnumerable&lt;T&gt; other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UnionWith(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.HashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトと比較するコレクション。</param>
+        <summary>現在の <see cref="T:System.Collections.Generic.HashSet`1" /> オブジェクトに変更を加えて、そのオブジェクト自体、指定されたコレクション、またはそれら両方に存在するすべての要素を格納するようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作、場所`n`内の要素の数が、`other`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 2 つの異なるセットをマージする方法を示します。 この例では、2 つ作成されます<xref:System.Collections.Generic.HashSet%601>オブジェクト、およびそれぞれ偶数と奇数の数字にそれらを設定します。 3 番目<xref:System.Collections.Generic.HashSet%601>偶数番号が含まれるセットからオブジェクトを作成します。 この例では、<xref:System.Collections.Generic.HashSet%601.UnionWith%2A>メソッドで、3 番目のセットに奇数の数値のセットを追加します。  
+  
+ [!code-csharp[System.Collections.Generic.HashSet_UnionWith#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_UnionWith/cs/Program.cs#01)]
+ [!code-vb[System.Collections.Generic.HashSet_UnionWith#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Generic.HashSet_UnionWith/vb/Program.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

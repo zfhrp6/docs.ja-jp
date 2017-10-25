@@ -1,0 +1,81 @@
+<Type Name="TableLayoutPanelGrowStyle" FullName="System.Windows.Forms.TableLayoutPanelGrowStyle">
+  <TypeSignature Language="C#" Value="public enum TableLayoutPanelGrowStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TableLayoutPanelGrowStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TableLayoutPanelGrowStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定する方法、<see cref="T:System.Windows.Forms.TableLayoutPanel" />後、その既存のセルがいっぱいになる、追加の行または列を取得します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合内のすべてのセル、<xref:System.Windows.Forms.TableLayoutPanel>がいっぱいになると、 <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> FixedSize にプロパティが設定されている、別のコントロールを追加しようとすると、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize>を設定する、<xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A>プロパティを、<xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。  
+  
+ [!code-csharp[System.Windows.Forms.TableLayoutPanel#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel/CS/form1.cs#7)]
+ [!code-vb[System.Windows.Forms.TableLayoutPanel#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TableLayoutPanel/VB/form1.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddColumns">
+      <MemberSignature Language="C#" Value="AddColumns" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.TableLayoutPanelGrowStyle AddColumns = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TableLayoutPanelGrowStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.TableLayoutPanel" />がいっぱいにした後、追加の列を取得します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRows">
+      <MemberSignature Language="C#" Value="AddRows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.TableLayoutPanelGrowStyle AddRows = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.TableLayoutPanelGrowStyle.AddRows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TableLayoutPanelGrowStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.TableLayoutPanel" />がいっぱいにした後、追加の行を取得します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FixedSize">
+      <MemberSignature Language="C#" Value="FixedSize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.TableLayoutPanelGrowStyle FixedSize = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TableLayoutPanelGrowStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.TableLayoutPanel" />いっぱい後は、追加の行または列を行えません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

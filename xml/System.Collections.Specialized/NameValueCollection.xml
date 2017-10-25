@@ -1,0 +1,1161 @@
+<Type Name="NameValueCollection" FullName="System.Collections.Specialized.NameValueCollection">
+  <TypeSignature Language="C#" Value="public class NameValueCollection : System.Collections.Specialized.NameObjectCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit NameValueCollection extends System.Collections.Specialized.NameObjectCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Specialized.NameValueCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Specialized</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Specialized.NameObjectCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.String" /> キーと、このキーまたはインデックスを使用してアクセスできる <see cref="T:System.String" /> 値が関連付けられたコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションの電源がに基づいて、<xref:System.Collections.Specialized.NameObjectCollectionBase>クラスです。 ただしとは異なり、 <xref:System.Collections.Specialized.NameObjectCollectionBase>、このクラスは、1 つのキーの下にある複数の文字列値を格納します。  
+  
+ このクラスは、ヘッダー、クエリ文字列、およびフォームのデータを使用できます。  
+  
+ 各要素は、キー/値のペアです。  
+  
+ この型のコレクションは、要素の順序を保持しないし、特定の順序を保証せず、コレクションを列挙中にします。  
+  
+ 容量、<xref:System.Collections.Specialized.NameValueCollection>要素の数が、<xref:System.Collections.Specialized.NameValueCollection>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Specialized.NameValueCollection>容量を増やすは自動的に再割り当て、必要に応じて。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Specialized.NameValueCollection>です。 既定のハッシュ コード プロバイダーが、<xref:System.Collections.CaseInsensitiveHashCodeProvider>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 既定の比較子は、<xref:System.Collections.CaseInsensitiveComparer>です。  
+  
+ .NET framework バージョン 1.0 では、このクラスは、カルチャに依存した文字列比較を使用します。 ただし、.NET framework version 1.1 以降では、このクラスを使用して<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>文字列を比較するときにします。 比較と並べ替えのカルチャのしくみの詳細については、次を参照してください。[カルチャを認識しない文字列操作の実行](~/docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)です。  
+  
+ `null`キーまたは値としてを許可します。  
+  
+> [!CAUTION]
+>  <xref:System.Collections.Specialized.NameValueCollection.Get%2A>メソッドを区別しません`null`指定したキーが見つからないため、どちらが返されると`null`キーに関連付けられている値が返される`null`です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.Collections.Specialized.NameValueCollection2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Specialized.NameValueCollection2/CPP/nvc.cpp#1)]
+ [!code-csharp[System.Collections.Specialized.NameValueCollection2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Specialized.NameValueCollection2/CS/nvc.cs#1)]
+ [!code-vb[System.Collections.Specialized.NameValueCollection2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.Specialized.NameValueCollection2/VB/nvc.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ この実装は同期済みは提供されません (スレッド セーフな) ラッパーを<see cref="T:System.Collections.Specialized.NameValueCollection" />、派生クラスは、独自の同期されたバージョンを作成できますが、<see cref="T:System.Collections.Specialized.NameValueCollection" />を使用して、<see cref="P:System.Collections.ICollection.SyncRoot" />のプロパティ、<see cref="T:System.Collections.Specialized.NameObjectCollectionBase" />クラスです。  
+  
+ コレクションの列挙は本質的にスレッド セーフな方法です。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NameValueCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>空で、既定の初期量を備え、大文字と小文字を区別しない既定のハッシュ コード プロバイダーと大文字と小文字を区別しない既定の比較子を使用する、<see cref="T:System.Collections.Specialized.NameValueCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Specialized.NameValueCollection>は要素の数を<xref:System.Collections.Specialized.NameValueCollection>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Specialized.NameValueCollection>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Specialized.NameValueCollection>です。 既定のハッシュ コード プロバイダーが、<xref:System.Collections.CaseInsensitiveHashCodeProvider>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 既定の比較子は、<xref:System.Collections.CaseInsensitiveComparer>です。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NameValueCollection (System.Collections.IEqualityComparer equalityComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IEqualityComparer equalityComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.#ctor(System.Collections.IEqualityComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="equalityComparer">2 つのキーが等しいかどうかを判断し、コレクション内のキーのハッシュ コードを生成するために使用する <see cref="T:System.Collections.IEqualityComparer" /> オブジェクト。</param>
+        <summary>空で、既定の初期量を備え、指定した <see cref="T:System.Collections.IEqualityComparer" /> オブジェクトを使用する、<see cref="T:System.Collections.Specialized.NameValueCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Specialized.NameValueCollection>オブジェクトは、要素の数を<xref:System.Collections.Specialized.NameValueCollection>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Specialized.NameValueCollection>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+ <xref:System.Collections.IEqualityComparer>オブジェクトは、比較演算子と、ハッシュ コード プロバイダーを組み合わせたものです。  ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Specialized.NameValueCollection>です。  比較演算子は、2 つのキーが等しいかどうかを判断します。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NameValueCollection (System.Collections.Specialized.NameValueCollection col);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Specialized.NameValueCollection col) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.#ctor(System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="col" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="col">新しい <see cref="T:System.Collections.Specialized.NameValueCollection" /> インスタンスにコピーする <see cref="T:System.Collections.Specialized.NameValueCollection" />。</param>
+        <summary>コピーされるエントリの数と同じ初期量を備え、ソース コレクションと同じハッシュ コード プロバイダーおよび比較子を使用する新しい <see cref="T:System.Collections.Specialized.NameValueCollection" /> に、指定した <see cref="T:System.Collections.Specialized.NameValueCollection" /> からエントリをコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Specialized.NameValueCollection>は要素の数を<xref:System.Collections.Specialized.NameValueCollection>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Specialized.NameValueCollection>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Specialized.NameValueCollection>です。 既定のハッシュ コード プロバイダーが、<xref:System.Collections.CaseInsensitiveHashCodeProvider>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 既定の比較子は、<xref:System.Collections.CaseInsensitiveComparer>です。  
+  
+ 新しい要素<xref:System.Collections.Specialized.NameValueCollection>は、ソースと同じ順序で並べ替えられます<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`内の要素の数は、`col`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="col" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NameValueCollection (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity"><see cref="T:System.Collections.Specialized.NameValueCollection" /> に格納できるエントリ数の初期値。</param>
+        <summary>空で、指定した初期量を備え、大文字と小文字を区別しない既定のハッシュ コード プロバイダーと大文字と小文字を区別しない既定の比較子を使用する、<see cref="T:System.Collections.Specialized.NameValueCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Specialized.NameValueCollection>は要素の数を<xref:System.Collections.Specialized.NameValueCollection>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Specialized.NameValueCollection>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Specialized.NameValueCollection>です。 既定のハッシュ コード プロバイダーが、<xref:System.Collections.CaseInsensitiveHashCodeProvider>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 既定の比較子は、<xref:System.Collections.CaseInsensitiveComparer>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`capacity`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NameValueCollection (System.Collections.IHashCodeProvider hashProvider, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IHashCodeProvider hashProvider, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.#ctor(System.Collections.IHashCodeProvider,System.Collections.IComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Please use NameValueCollection(IEqualityComparer) instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="hashProvider" Type="System.Collections.IHashCodeProvider" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="hashProvider"><see cref="T:System.Collections.Specialized.NameValueCollection" /> 内のすべてのキーのハッシュ コードを提供する <see cref="T:System.Collections.IHashCodeProvider" />。</param>
+        <param name="comparer">2 つのキーが等しいかどうかを判断するために使用する <see cref="T:System.Collections.IComparer" />。</param>
+        <summary>空で、既定の初期量を備え、指定したハッシュ コード プロバイダーと指定した比較子を使用する、<see cref="T:System.Collections.Specialized.NameValueCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Specialized.NameValueCollection>は要素の数を<xref:System.Collections.Specialized.NameValueCollection>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Specialized.NameValueCollection>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Specialized.NameValueCollection>です。 既定のハッシュ コード プロバイダーが、<xref:System.Collections.CaseInsensitiveHashCodeProvider>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 既定の比較子は、<xref:System.Collections.CaseInsensitiveComparer>です。  
+  
+ このコンス トラクターは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NameValueCollection (int capacity, System.Collections.IEqualityComparer equalityComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, class System.Collections.IEqualityComparer equalityComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.#ctor(System.Int32,System.Collections.IEqualityComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="equalityComparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="capacity"><see cref="T:System.Collections.Specialized.NameValueCollection" /> オブジェクトに格納できるエントリ数の初期値。</param>
+        <param name="equalityComparer">2 つのキーが等しいかどうかを判断し、コレクション内のキーのハッシュ コードを生成するために使用する <see cref="T:System.Collections.IEqualityComparer" /> オブジェクト。</param>
+        <summary>空で、指定した初期量を備え、指定した <see cref="T:System.Collections.IEqualityComparer" /> オブジェクトを使用する、<see cref="T:System.Collections.Specialized.NameValueCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Specialized.NameValueCollection>オブジェクトは、要素の数を<xref:System.Collections.Specialized.NameValueCollection>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Specialized.NameValueCollection>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+ <xref:System.Collections.IEqualityComparer>オブジェクトは、比較演算子と、ハッシュ コード プロバイダーを組み合わせたものです。  ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Specialized.NameValueCollection>です。  比較演算子は、2 つのキーが等しいかどうかを判断します。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は、`capacity`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NameValueCollection (int capacity, System.Collections.Specialized.NameValueCollection col);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, class System.Collections.Specialized.NameValueCollection col) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.#ctor(System.Int32,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="col" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="capacity"><see cref="T:System.Collections.Specialized.NameValueCollection" /> に格納できるエントリ数の初期値。</param>
+        <param name="col">新しい <see cref="T:System.Collections.Specialized.NameValueCollection" /> インスタンスにコピーする <see cref="T:System.Collections.Specialized.NameValueCollection" />。</param>
+        <summary>指定した初期量またはコピーされるエントリの数と同じ初期量のうち値が大きい方の初期量を備え、大文字と小文字を区別しない既定のハッシュ コード プロバイダーおよび大文字と小文字を区別しない既定の比較子を使用する新しい <see cref="T:System.Collections.Specialized.NameValueCollection" /> に、指定した <see cref="T:System.Collections.Specialized.NameValueCollection" /> からエントリをコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Specialized.NameValueCollection>は要素の数を<xref:System.Collections.Specialized.NameValueCollection>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Specialized.NameValueCollection>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Specialized.NameValueCollection>です。 既定のハッシュ コード プロバイダーが、<xref:System.Collections.CaseInsensitiveHashCodeProvider>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 既定の比較子は、<xref:System.Collections.CaseInsensitiveComparer>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`capacity`します。  場合内の要素の数`col`がより大きい`capacity`、このコンス トラクターは、O (`n` + `m`) 操作、場所`n`は`capacity`と`m`内の要素の数は、`col`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="col" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected NameValueCollection (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">新しい <see cref="T:System.Collections.Specialized.NameValueCollection" /> インスタンスをシリアル化するために必要な情報を格納する <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクト。</param>
+        <param name="context">新しい <see cref="T:System.Collections.Specialized.NameValueCollection" /> インスタンスに関連付けられているシリアル化ストリームの転送元および転送先を格納する <see cref="T:System.Runtime.Serialization.StreamingContext" /> オブジェクト。</param>
+        <summary>シリアル化でき、指定した <see cref="T:System.Runtime.Serialization.SerializationInfo" /> と <see cref="T:System.Runtime.Serialization.StreamingContext" /> を使用する、<see cref="T:System.Collections.Specialized.NameValueCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NameValueCollection (int capacity, System.Collections.IHashCodeProvider hashProvider, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, class System.Collections.IHashCodeProvider hashProvider, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.#ctor(System.Int32,System.Collections.IHashCodeProvider,System.Collections.IComparer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Please use NameValueCollection(Int32, IEqualityComparer) instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="hashProvider" Type="System.Collections.IHashCodeProvider" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="capacity"><see cref="T:System.Collections.Specialized.NameValueCollection" /> に格納できるエントリ数の初期値。</param>
+        <param name="hashProvider"><see cref="T:System.Collections.Specialized.NameValueCollection" /> 内のすべてのキーのハッシュ コードを提供する <see cref="T:System.Collections.IHashCodeProvider" />。</param>
+        <param name="comparer">2 つのキーが等しいかどうかを判断するために使用する <see cref="T:System.Collections.IComparer" />。</param>
+        <summary>空で、指定した初期量を備え、指定したハッシュ コード プロバイダーと指定した比較子を使用する、<see cref="T:System.Collections.Specialized.NameValueCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 容量、<xref:System.Collections.Specialized.NameValueCollection>は要素の数を<xref:System.Collections.Specialized.NameValueCollection>を保持できます。 要素が追加されるにつれて、<xref:System.Collections.Specialized.NameValueCollection>容量を増やすは自動的に内部の配列を再割り当てによる要求どおりです。  
+  
+ コレクションのサイズを推定できる場合に要素を追加するときにサイズ変更操作の数を実行する必要があるの初期量を指定する、<xref:System.Collections.Specialized.NameValueCollection>です。  
+  
+ ハッシュ コード プロバイダー内のキーのハッシュ コードを管理する、<xref:System.Collections.Specialized.NameValueCollection>です。 既定のハッシュ コード プロバイダーが、<xref:System.Collections.CaseInsensitiveHashCodeProvider>です。  
+  
+ 比較演算子は、2 つのキーが等しいかどうかを判断します。 既定の比較子は、<xref:System.Collections.CaseInsensitiveComparer>です。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`capacity`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Collections.Specialized.NameValueCollection c);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Collections.Specialized.NameValueCollection c) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.Add(System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="c" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="c">現在の <see cref="T:System.Collections.Specialized.NameValueCollection" /> にコピーする <see cref="T:System.Collections.Specialized.NameValueCollection" />。</param>
+        <summary>現在の <see cref="T:System.Collections.Specialized.NameValueCollection" /> に、指定した <see cref="T:System.Collections.Specialized.NameValueCollection" /> 内のエントリをコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合内のキー`c`ターゲットに既に存在する<xref:System.Collections.Specialized.NameValueCollection>インスタンスに関連付けられている値`c`が、ターゲット内の同じキーに関連付けられている値の既存のコンマ区切りリストに追加<xref:System.Collections.Specialized.NameValueCollection>インスタンス。  
+  
+ 場合<xref:System.Collections.Specialized.NameObjectCollectionBase.Count%2A>容量の容量と既に同じ、<xref:System.Collections.Specialized.NameValueCollection>内部の配列を自動的に再割り当てが増加し、新しい要素が追加される前に、既存の要素が新しい配列にコピーされます。  
+  
+ 場合<xref:System.Collections.Specialized.NameObjectCollectionBase.Count%2A>が少なく、容量よりも、このメソッドは、o (1) 操作になります。 容量は、新しい要素を格納するためにする必要があります、このメソッドが O (`n`) 操作、場所`n`は<xref:System.Collections.Specialized.NameObjectCollectionBase.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="c" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual void Add (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加するエントリの <see cref="T:System.String" /> キー。 キーとして <see langword="null" /> を指定できます。</param>
+        <param name="value">追加するエントリの <see cref="T:System.String" /> 値。 値として <see langword="null" /> を指定できます。</param>
+        <summary>指定した名前および値を持つエントリを <see cref="T:System.Collections.Specialized.NameValueCollection" /> に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲットの指定したキーが既に存在する場合<xref:System.Collections.Specialized.NameValueCollection>インスタンス、指定した値が既存のフォーム内の値のコンマ区切りリストに追加`"value1,value2,value3"`です。 値は、ターゲット内の同じキーに関連付けられた<xref:System.Collections.Specialized.NameValueCollection>インスタンス。  
+  
+ 場合<xref:System.Collections.Specialized.NameObjectCollectionBase.Count%2A>容量の容量と既に同じ、<xref:System.Collections.Specialized.NameValueCollection>内部の配列を自動的に再割り当てが増加し、新しい要素が追加される前に、既存の要素が新しい配列にコピーされます。  
+  
+ 場合<xref:System.Collections.Specialized.NameObjectCollectionBase.Count%2A>が少なく、容量よりも、このメソッドは、o (1) 操作になります。 容量は、新しい要素を格納するためにする必要があります、このメソッドが O (`n`) 操作、場所`n`は<xref:System.Collections.Specialized.NameObjectCollectionBase.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllKeys">
+      <MemberSignature Language="C#" Value="public virtual string[] AllKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AllKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.NameValueCollection.AllKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.NameValueCollection" /> 内のすべてのキーを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.NameValueCollection" /> 内のすべてのキーを格納する <see cref="T:System.String" /> 配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションが空の場合、このメソッドは、空を返します<xref:System.String>配列いない`null`です。  
+  
+ によって返された配列<xref:System.Collections.Specialized.NameValueCollection.AllKeys%2A>はパフォーマンス向上のためにキャッシュされ、コレクションが変更されたときに自動的に更新されます。 派生クラスが呼び出すことによって、キャッシュされたバージョンを無効になる<xref:System.Collections.Specialized.NameValueCollection.InvalidateCachedArrays%2A>これにより、強制的に再作成する配列。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Specialized.NameObjectCollectionBase.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キャッシュに保存された配列を無効化し、<see cref="T:System.Collections.Specialized.NameValueCollection" /> からすべてのエントリを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array dest, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Array dest, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dest" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dest"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.Specialized.NameValueCollection" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>dest</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Collections.Specialized.NameValueCollection" /> 全体を、互換性のある 1 次元の <see cref="T:System.Array" /> にコピーします。コピー操作は、コピー先の配列の指定したインデックスから始まる部分に行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された配列は、互換性のある型でなければなりません。  
+  
+ このメソッドを使用して<xref:System.Array.Copy%2A?displayProperty=nameWithType>要素のコピー。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Specialized.NameObjectCollectionBase.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dest" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="dest" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.Specialized.NameValueCollection" /> の要素数が、コピー先 <paramref name="dest" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">コピー元の <see cref="T:System.Collections.Specialized.NameValueCollection" /> の型をコピー先の <paramref name="dest" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public virtual string Get (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Get(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.Get(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから取得する値を格納するエントリの 0 から始まるインデックス。</param>
+        <summary><see cref="T:System.Collections.Specialized.NameValueCollection" /> の指定したインデックスの値をいくつか取得し、1 つのコンマ区切りリストに組み合わせます。</summary>
+        <returns>見つかった場合は、<see cref="T:System.Collections.Specialized.NameValueCollection" /> の指定したインデックスの値で構成されるコンマ区切りのリストを格納する <see cref="T:System.String" />。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は、指定したインデックス位置の値の数。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が、コレクションのインデックスの正しい範囲から外れています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public virtual string Get (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Get(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.Get(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値を格納するエントリの <see cref="T:System.String" /> キー。 キーとして <see langword="null" /> を指定できます。</param>
+        <summary><see cref="T:System.Collections.Specialized.NameValueCollection" /> から指定したキーに関連付けられた値を取得し、1 つのコンマ区切りのリストに組み合わせます。</summary>
+        <returns>見つかった場合は、<see cref="T:System.Collections.Specialized.NameValueCollection" /> から取得した、指定したキーに関連付けられた値のコンマ区切りのリストを格納する <see cref="T:System.String" />。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  このメソッドが戻る`null`次の場合: 1) 場合は、指定したキーが見つかりませんでした。および 2) 指定したキーが見つかったかどうか、その関連付けられている値`null`です。 このメソッドは 2 つのケースによって区別されません。  
+  
+ このメソッドは、O (`n`) 操作、場所`n`指定されたキーに関連付けられている値の数です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="public virtual string GetKey (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetKey(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.GetKey(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから取得するキーの 0 から始まるインデックス。</param>
+        <summary><see cref="T:System.Collections.Specialized.NameValueCollection" /> の指定したインデックスにあるキーを取得します。</summary>
+        <returns>見つかった場合は、<see cref="T:System.Collections.Specialized.NameValueCollection" /> の指定したインデックスにあるキーを格納する <see cref="T:System.String" />。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が、コレクションのインデックスの正しい範囲から外れています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValues">
+      <MemberSignature Language="C#" Value="public virtual string[] GetValues (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetValues(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.GetValues(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから取得する値を格納するエントリの 0 から始まるインデックス。</param>
+        <summary><see cref="T:System.Collections.Specialized.NameValueCollection" /> の指定したインデックスにある値を取得します。</summary>
+        <returns>見つかった場合は、<see cref="T:System.Collections.Specialized.NameValueCollection" /> の指定したインデックスにある値を格納する <see cref="T:System.String" /> 配列。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は、指定したインデックス位置の値の数。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が、コレクションのインデックスの正しい範囲から外れています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValues">
+      <MemberSignature Language="C#" Value="public virtual string[] GetValues (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetValues(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.GetValues(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する値を格納するエントリの <see cref="T:System.String" /> キー。 キーとして <see langword="null" /> を指定できます。</param>
+        <summary>指定したキーに関連付けられている値を <see cref="T:System.Collections.Specialized.NameValueCollection" /> から取得します。</summary>
+        <returns>見つかった場合は、<see cref="T:System.Collections.Specialized.NameValueCollection" /> から取得した、指定したキーに関連付けられた値を格納する <see cref="T:System.String" /> 配列。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  このメソッドが戻る`null`次の場合: 1) 場合は、指定したキーが見つかりませんでした。および 2) 指定したキーが見つかったかどうか、その関連付けられている値`null`です。 このメソッドは 2 つのケースによって区別されません。  
+  
+ このメソッドは、O (`n`) 操作、場所`n`指定されたキーに関連付けられている値の数です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasKeys">
+      <MemberSignature Language="C#" Value="public bool HasKeys ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasKeys() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.HasKeys" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Specialized.NameValueCollection" /> が <see langword="null" /> 以外のキーを格納しているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see cref="T:System.Collections.Specialized.NameValueCollection" /> が <see langword="null" /> 以外のキーを格納している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidateCachedArrays">
+      <MemberSignature Language="C#" Value="protected void InvalidateCachedArrays ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InvalidateCachedArrays() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.InvalidateCachedArrays" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクション内でキャッシュに保存された配列を <see langword="null" /> にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返された配列<xref:System.Collections.Specialized.NameValueCollection.AllKeys%2A>はパフォーマンス向上のためにキャッシュされ、コレクションが変更されたときに自動的に更新されます。 派生クラスが呼び出すことによって、キャッシュされたバージョンを無効になる<xref:System.Collections.Specialized.NameValueCollection.InvalidateCachedArrays%2A>これにより、強制的に再作成する配列。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.NameValueCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションでエントリの位置を示す 0 から始まるインデックス番号。</param>
+        <summary><see cref="T:System.Collections.Specialized.NameValueCollection" /> の指定したインデックスにあるエントリを取得します。</summary>
+        <value>コレクションの指定したインデックスにあるコンマ区切りの値のリストを格納する <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、`myCollection[index]` という構文を使用して、コレクション内の特定の要素にアクセスできます。  
+  
+ このプロパティを設定することはできません。 指定したインデックス位置の値を設定するには、使用`Item[GetKey(index)]`です。  
+  
+ C# 言語キーワードを使用して実装する代わりに、インデクサーの定義、<xref:System.Collections.Specialized.NameValueCollection.Item%2A>プロパティです。 Visual Basic は、<xref:System.Collections.Specialized.NameValueCollection.Item%2A> を既定のプロパティとして実装しており、同様のインデックス機能を提供します。  
+  
+ 指定したインデックス位置の値を取得する場合は、O (`n`) 操作、場所`n`値の数です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が、コレクションのインデックスの正しい範囲から外れています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[string name] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Specialized.NameValueCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するエントリの <see cref="T:System.String" /> キー。 キーとして <see langword="null" /> を指定できます。</param>
+        <summary><see cref="T:System.Collections.Specialized.NameValueCollection" /> 内の指定したキーを持つエントリを取得または設定します。</summary>
+        <value>見つかった場合は、指定したキーに関連付けられたコンマ区切りの値のリストを格納する <see cref="T:System.String" />。それ以外の場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、`myCollection[name]` という構文を使用して、コレクション内の特定の要素にアクセスできます。  
+  
+ コレクション内で指定したキーが既に存在する場合は、指定された値、既存の値のリストを上書きするこのプロパティを設定します。 既存の値の一覧に新しい値を追加するには、使用、<xref:System.Collections.Specialized.NameValueCollection.Add%2A>メソッドです。  
+  
+ コレクション内で指定したキーが存在しない場合は、このプロパティの設定は、指定したキーと、指定された値を使用して、新しいエントリを作成します。  
+  
+> [!CAUTION]
+>  このプロパティを返します`null`次の場合: 1) 場合は、指定したキーが見つかりませんでした。および 2) 指定したキーが見つかったかどうか、その関連付けられている値`null`です。 このプロパティでは、この 2 つのケースが区別されません。  
+  
+ C# 言語キーワードを使用して実装する代わりに、インデクサーの定義、<xref:System.Collections.Specialized.NameValueCollection.Item%2A>プロパティです。 Visual Basic は、<xref:System.Collections.Specialized.NameValueCollection.Item%2A> を既定のプロパティとして実装しており、同様のインデックス機能を提供します。  
+  
+ 取得するか、指定したキーに関連付けられている値の設定は、O (`n`) 操作では、ここで`n`値の数です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用と、操作は、コレクションを変更しようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除するエントリの <see cref="T:System.String" /> キー。 キーとして <see langword="null" /> を指定できます。</param>
+        <summary>指定したキーを持つエントリを <see cref="T:System.Collections.Specialized.NameObjectCollectionBase" /> インスタンスから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Collections.Specialized.NameValueCollection>指定のキーを持つ要素が含まれていない、<xref:System.Collections.Specialized.NameValueCollection>は変更されません。 例外をスローすることはありません。  
+  
+ リストなどの連続する要素のコレクションでは、空白になった位置を埋めるために、削除された要素の後にある要素の位置が繰り上げられます。 コレクションにインデックスがある場合、移動した要素のインデックスも更新されます。 この動作は、要素が概念的にバケットにグループ化されているハッシュ テーブルなどのコレクションには適用されません。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.Specialized.NameObjectCollectionBase.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public virtual void Set (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Set(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Specialized.NameValueCollection.Set(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Specialized</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">新しい値を追加するエントリの <see cref="T:System.String" /> キー。 キーとして <see langword="null" /> を指定できます。</param>
+        <param name="value">指定したエントリに追加する新しい値を表す <see cref="T:System.Object" />。 値として <see langword="null" /> を指定できます。</param>
+        <summary><see cref="T:System.Collections.Specialized.NameValueCollection" /> 内のエントリの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内で指定したキーが既に存在する場合、このメソッドは、指定の値を持つ既存の値のリストを上書きします。 既存の値の一覧に新しい値を追加するには、使用、<xref:System.Collections.Specialized.NameValueCollection.Add%2A>メソッドです。  
+  
+ コレクション内で指定したキーが存在しない場合、このメソッドは、指定したキーと、指定された値を使用して、新しいエントリを作成します。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

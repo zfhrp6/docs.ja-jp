@@ -1,0 +1,66 @@
+<Type Name="IIssuanceSecurityTokenAuthenticator" FullName="System.ServiceModel.Security.Tokens.IIssuanceSecurityTokenAuthenticator">
+  <TypeSignature Language="C#" Value="public interface IIssuanceSecurityTokenAuthenticator" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IIssuanceSecurityTokenAuthenticator" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.Tokens.IIssuanceSecurityTokenAuthenticator" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>クライアントにトークンを発行するカスタム セキュリティ トークン認証システムに実装される必要があるコントラクトを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] が SSLNEGO/SPNEGO `SecurityContextToken` または SecureConversation ベースの `SecurityContextToken` を発行するために使用するトークン認証システムは `IIssuanceSecurityTokenAuthenticator` です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IssuedSecurityTokenHandler">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.Tokens.IssuedSecurityTokenHandler IssuedSecurityTokenHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.Tokens.IssuedSecurityTokenHandler IssuedSecurityTokenHandler" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.IIssuanceSecurityTokenAuthenticator.IssuedSecurityTokenHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.Tokens.IssuedSecurityTokenHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークンが発行されるときのハンドラーを取得または設定します。</summary>
+        <value>トークンが実行されるときにイベントを処理するデリゲート。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenewedSecurityTokenHandler">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.Tokens.RenewedSecurityTokenHandler RenewedSecurityTokenHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.Tokens.RenewedSecurityTokenHandler RenewedSecurityTokenHandler" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.IIssuanceSecurityTokenAuthenticator.RenewedSecurityTokenHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.Tokens.RenewedSecurityTokenHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トークンが更新されるときのハンドラーを取得または設定します。</summary>
+        <value>トークンが更新されるときにイベントを処理するデリゲート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートは、トークン認証システムが発行済みトークンの更新を処理する場合にのみ呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

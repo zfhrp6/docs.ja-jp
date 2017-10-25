@@ -1,0 +1,210 @@
+<Type Name="ComposablePartException" FullName="System.ComponentModel.Composition.Primitives.ComposablePartException">
+  <TypeSignature Language="C#" Value="public class ComposablePartException : Exception" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ComposablePartException extends System.Exception" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{Message}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.ComponentModel.Composition.Primitives.ComposablePartExceptionDebuggerProxy))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドを呼び出すときにエラーが発生した場合にスローされる例外を<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />オブジェクト。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComposablePartException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePartException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComposablePartException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePartException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">説明するメッセージを<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />、または<see langword="null" />を設定する、<see cref="P:System.Exception.Message" />プロパティをその既定値にします。</param>
+        <summary>指定されたエラー メッセージで <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ComposablePartException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePartException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />です。</param>
+        <param name="context">ソースまたは転送先に関するコンテキスト情報を含むオブジェクトです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />クラスに指定したシリアル化データです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">
+          <paramref name="info" />必要な値がありません。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="info" />正しい型にキャストできない値が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComposablePartException (string message, System.ComponentModel.Composition.Primitives.ICompositionElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.ComponentModel.Composition.Primitives.ICompositionElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePartException.#ctor(System.String,System.ComponentModel.Composition.Primitives.ICompositionElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="element" Type="System.ComponentModel.Composition.Primitives.ICompositionElement" />
+      </Parameters>
+      <Docs>
+        <param name="message">説明するメッセージを<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />、または<see langword="null" />を設定する、<see cref="P:System.Exception.Message" />プロパティをその既定値にします。</param>
+        <param name="element">合成要素の原因となった、 <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />、または<see langword="null" />を設定する、<see cref="P:System.ComponentModel.Composition.Primitives.ComposablePartException.Element" />プロパティを<see langword="null" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />クラスを指定したエラー メッセージと例外の原因となった合成要素を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComposablePartException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePartException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">説明するメッセージを<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />、または<see langword="null" />を設定する、<see cref="P:System.Exception.Message" />プロパティをその既定値にします。</param>
+        <param name="innerException">基になるは、例外が発生する、 <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />、または<see langword="null" />を設定する、<see cref="P:System.Exception.InnerException" />プロパティを<see langword="null" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />指定のエラー メッセージおよびこの例外の原因となった例外を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComposablePartException (string message, System.ComponentModel.Composition.Primitives.ICompositionElement element, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.ComponentModel.Composition.Primitives.ICompositionElement element, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePartException.#ctor(System.String,System.ComponentModel.Composition.Primitives.ICompositionElement,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="element" Type="System.ComponentModel.Composition.Primitives.ICompositionElement" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">説明するメッセージを<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />、または<see langword="null" />を設定する、<see cref="P:System.Exception.Message" />プロパティをその既定値にします。</param>
+        <param name="element">合成要素の原因となった、 <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />、または<see langword="null" />を設定する、<see cref="P:System.ComponentModel.Composition.Primitives.ComposablePartException.Element" />プロパティを<see langword="null" />です。</param>
+        <param name="innerException">基になるは、例外が発生する、 <see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />、または<see langword="null" />を設定する、<see cref="P:System.Exception.InnerException" />プロパティを<see langword="null" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />クラス、指定したエラー メッセージと合成要素とこの例外の原因である例外を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Element">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Composition.Primitives.ICompositionElement Element { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Composition.Primitives.ICompositionElement Element" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.ComposablePartException.Element" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Primitives.ICompositionElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外の原因となった合成要素を取得します。</summary>
+        <value>複合要素の原因となった、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePartException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">メソッドを呼び出した後はシリアル化されたオブジェクト データを格納して、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException" />です。</param>
+        <param name="context">メソッドを呼び出した後は、元または転送先に関する文脈情報が含まれています。</param>
+        <summary>例外のシリアル化データを取得します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

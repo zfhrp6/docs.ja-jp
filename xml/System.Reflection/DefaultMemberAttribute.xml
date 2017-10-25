@@ -1,0 +1,127 @@
+<Type Name="DefaultMemberAttribute" FullName="System.Reflection.DefaultMemberAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DefaultMemberAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DefaultMemberAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.DefaultMemberAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Interface)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>によって使用される既定のメンバーである型のメンバーを定義<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティはインデクサーとしてインポートされます (既定では、Visual Basic でのプロパティをインデックス付き) とプロパティは、引数を持つ場合、プロパティまたはアクセサーのいずれかの名前が指定した名前と一致する場合、<xref:System.Reflection.DefaultMemberAttribute>です。 場合、<xref:System.Reflection.DefaultMemberAttribute>が存在しない、含んでいる型の型には、インデクサーはありません。 C# コンパイラで、<xref:System.Reflection.DefaultMemberAttribute>インデクサーを含む任意の型にします。 C# の場合は、エラーを含む型を手動で属性を<xref:System.Reflection.DefaultMemberAttribute>型もインデクサーを宣言する場合。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Reflection.DefaultMemberAttribute>属性を`Age`プロパティの既定のメンバーの`MyClass`クラスです。  
+  
+ [!code-cpp[Type_GetDefaultMembers#1](~/samples/snippets/cpp/VS_Snippets_CLR/Type_GetDefaultMembers/CPP/type_getdefaultmembers.cpp#1)]
+ [!code-csharp[Type_GetDefaultMembers#1](~/samples/snippets/csharp/VS_Snippets_CLR/Type_GetDefaultMembers/CS/type_getdefaultmembers.cs#1)]
+ [!code-vb[Type_GetDefaultMembers#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Type_GetDefaultMembers/VB/type_getdefaultmembers.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultMemberAttribute (string memberName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string memberName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.DefaultMemberAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="memberName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="memberName">A<see langword="String" />呼び出すメンバーの名前を含むです。 これには、コンス トラクター、メソッド、プロパティ、またはフィールドがあります。 メンバーが呼び出されたときに、適切な呼び出し属性を指定する必要があります。 クラスの既定のメンバーは、空を渡すことによって指定できます<see langword="String" />としてメンバーの名前。  
+  
+ マークされている型の既定のメンバー、<see langword="DefaultMemberAttribute" />カスタム属性や通常の方法でマークされている COM です。</param>
+        <summary><see cref="T:System.Reflection.DefaultMemberAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberName">
+      <MemberSignature Language="C#" Value="public string MemberName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MemberName" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.DefaultMemberAttribute.MemberName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性から名前を取得します。</summary>
+        <value>メンバー名を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターに名前を指定する必要がありますので、set アクセサーはありません。 名前は省略できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,399 @@
+<Type Name="WeakReference" FullName="System.WeakReference">
+  <TypeSignature Language="C#" Value="public class WeakReference : System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit WeakReference extends System.Object implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.WeakReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>"弱い参照" を表します。弱い参照は、オブジェクトがガベージ コレクションによるクリアの対象になっている状態のままで、そのオブジェクトを参照します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 弱い参照は、ガベージ コレクターがオブジェクトにアクセスするアプリケーション状態のまま、オブジェクトを収集できます。 オブジェクトにする場合は、強力な参照を取得し、収集されるを防ぐこともできます。 使用して短いおよび長期間の弱い参照する方法の詳細については、次を参照してください。[弱い参照](~/docs/standard/garbage-collection/weak-references.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、アプリケーションのリソースとしてオブジェクトのキャッシュを維持するために、弱い参照を使用する方法を示します。 使用して、キャッシュを構築、<xref:System.Collections.Generic.IDictionary%602>の<xref:System.WeakReference>インデックス値で指定されたオブジェクト。 <xref:System.WeakReference.Target%2A>プロパティを<xref:System.WeakReference>オブジェクトは、データを表すバイト配列内のオブジェクト。  
+  
+ 例では、キャッシュ内のオブジェクトにランダムにアクセスします。 オブジェクトは、ガベージ コレクションのために解放は、新しいデータ オブジェクトが再生成です。それ以外の場合、オブジェクトは、弱い参照のためにアクセスするためです。  
+  
+ [!code-csharp[WeakReference#1](~/samples/snippets/csharp/VS_Snippets_CLR/WeakReference/cs/program.cs#1)]
+ [!code-vb[WeakReference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/WeakReference/vb/Module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す必要なアクセス許可。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WeakReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.WeakReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WeakReference (object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.WeakReference.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="target">追跡するオブジェクトまたは<see langword="null" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.WeakReference" />クラス、指定したオブジェクトを参照します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターへの短い弱い参照を作成する`target`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WeakReference (object target, bool trackResurrection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object target, bool trackResurrection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.WeakReference.#ctor(System.Object,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="trackResurrection" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="target">追跡するオブジェクト。</param>
+        <param name="trackResurrection">オブジェクト追跡の停止時期を示します。 場合<see langword="true" />場合、; 終了後にオブジェクトが追跡<see langword="false" />オブジェクトが終了するまでのみ追跡します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.WeakReference" />クラス、指定したオブジェクトを参照して、指定した再生処理追跡を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`trackResurrection`は`false`、短いの弱い参照を作成します。 場合`trackResurrection`は`true`、長期間の弱い参照を作成します。  
+  
+   
+  
+## Examples  
+ 次の例では、短期間の弱い参照をデータ オブジェクトのキャッシュを作成します。 この例に示されている例の一部である、<xref:System.WeakReference>クラスです。  
+  
+ [!code-csharp[WeakReference#2](~/samples/snippets/csharp/VS_Snippets_CLR/WeakReference/cs/program.cs#2)]
+ [!code-vb[WeakReference#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/WeakReference/vb/Module1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WeakReference (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.WeakReference.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">現在の逆シリアル化または逆シリアル化に必要なすべてのデータを保持するオブジェクト<see cref="T:System.WeakReference" />オブジェクト。</param>
+        <param name="context">(予約済み)ソースとで指定されたシリアル化ストリームの宛先を記述<c>情報</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.WeakReference" />クラス、逆シリアル化されたオブジェクトのデータを指定したシリアル化とストリームを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `context`パラメーターは予約されていると、この操作に現在参加していません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~WeakReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.WeakReference.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在によって表されるターゲットへの参照が破棄<see cref="T:System.WeakReference" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.WeakReference.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">現在の逆シリアル化または逆シリアル化に必要なすべてのデータを保持するオブジェクト<see cref="T:System.WeakReference" />オブジェクト。</param>
+        <param name="context">(予約済み) シリアル化データを格納および取得する位置。</param>
+        <summary>追加、 <see cref="T:System.Runtime.Serialization.SerializationInfo" /> 、現在のシリアル化に必要なすべてのデータを持つオブジェクト<see cref="T:System.WeakReference" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッド内のすべての情報を格納する`info`を現在のシリアル化するために必要な<xref:System.WeakReference>オブジェクト。  
+  
+ `context`パラメーターは予約されており、このメソッドの実行で現在使用されていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAlive">
+      <MemberSignature Language="C#" Value="public virtual bool IsAlive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAlive" />
+      <MemberSignature Language="DocId" Value="P:System.WeakReference.IsAlive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のオブジェクトが参照されているかどうか示す値を取得<see cref="T:System.WeakReference" />オブジェクトがガベージ コレクトされました。</summary>
+        <value>
+          <see langword="true" />現在のオブジェクトが参照されている場合<see cref="T:System.WeakReference" />オブジェクトがガベージ コレクションし、がアクセス可能である、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトがガベージ コレクションの回収される可能性がある可能性がありますので後すぐに、<xref:System.WeakReference.IsAlive%2A>プロパティから返される`true`、このプロパティの使用は使用しないでに対してのみテストしている場合を除き、`false`戻り値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public virtual object Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Target" />
+      <MemberSignature Language="DocId" Value="P:System.WeakReference.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の参照先のオブジェクト (ターゲット) の設定を取得または<see cref="T:System.WeakReference" />オブジェクト。</summary>
+        <value>
+          <see langword="null" />現在のオブジェクトが参照されている場合<see cref="T:System.WeakReference" />オブジェクトがガベージ コレクションされた以外の場合は、現在それ以外の場合、オブジェクトへの参照が参照されている<see cref="T:System.WeakReference" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット オブジェクトにこのプロパティを設定した後、他のオブジェクトへの強力な参照がないことを確認してください。それ以外の場合、それは収集されません。  
+  
+   
+  
+## Examples  
+ 次の例は、弱い参照を持つオブジェクトのキャッシュからオブジェクトを取得しようとします。 オブジェクトは、ガベージ コレクションのために解放された、新しいオブジェクトが生成されます。 この例に示されている例の一部である、<xref:System.WeakReference>クラスです。  
+  
+ [!code-csharp[WeakReference#3](~/samples/snippets/csharp/VS_Snippets_CLR/WeakReference/cs/program.cs#3)]
+ [!code-vb[WeakReference#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/WeakReference/vb/Module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ターゲット オブジェクトへの参照が無効です。 この例外は、値が null 参照の場合か、設定操作中にオブジェクトが終了した場合に、このプロパティを設定するときにスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackResurrection">
+      <MemberSignature Language="C#" Value="public virtual bool TrackResurrection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TrackResurrection" />
+      <MemberSignature Language="DocId" Value="P:System.WeakReference.TrackResurrection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のオブジェクトが参照されているかどうか示す値を取得<see cref="T:System.WeakReference" />が終了した後、オブジェクトを追跡します。</summary>
+        <value>
+          <see langword="true" />場合、オブジェクトの現在の<see cref="T:System.WeakReference" />オブジェクト参照; ファイナライズ後も追跡するまたは<see langword="false" />オブジェクトが終了するまでのみ追跡する場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`、弱い参照は、長期間の弱い参照および`true`が指定されました、`trackResurrection`内のパラメーター、<xref:System.WeakReference>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

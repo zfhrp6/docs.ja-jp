@@ -1,0 +1,345 @@
+<Type Name="MessageQueuePermission" FullName="System.Messaging.MessageQueuePermission">
+  <TypeSignature Language="C#" Value="public sealed class MessageQueuePermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit MessageQueuePermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageQueuePermission" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>メッセージングのアクセス許可をコードに制御をできます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のいくつかのインスタンスを作成する<xref:System.Messaging.MessageQueuePermission>の使用方法と、<xref:System.Messaging.MessageQueuePermission.PermissionEntries%2A>プロパティです。  
+  
+ [!code-csharp[MessageQueuePermission#0](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermission/CS/class1.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueuePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Messaging.MessageQueuePermission" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Messaging.MessageQueuePermission>です。  
+  
+ [!code-csharp[MessageQueuePermission#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermission/CS/class1.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueuePermission (System.Messaging.MessageQueuePermissionEntry[] permissionAccessEntries);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Messaging.MessageQueuePermissionEntry[] permissionAccessEntries) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.#ctor(System.Messaging.MessageQueuePermissionEntry[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAccessEntries" Type="System.Messaging.MessageQueuePermissionEntry[]" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAccessEntries"><see cref="T:System.Messaging.MessageQueuePermissionEntry" /> オブジェクトの配列。 <see cref="P:System.Messaging.MessageQueuePermission.PermissionEntries" />プロパティがこの値に設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.MessageQueuePermission" />指定したアクセス許可のアクセス レベルのエントリを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Messaging.MessageQueuePermission>です。  
+  
+ [!code-csharp[MessageQueuePermission#4](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermission/CS/class1.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueuePermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>指定したアクセス許可状態を使用して、<see cref="T:System.Messaging.MessageQueuePermission" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Messaging.MessageQueuePermission>です。  
+  
+ [!code-csharp[MessageQueuePermission#5](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermission/CS/class1.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueuePermission (System.Messaging.MessageQueuePermissionAccess permissionAccess, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Messaging.MessageQueuePermissionAccess permissionAccess, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.#ctor(System.Messaging.MessageQueuePermissionAccess,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAccess" Type="System.Messaging.MessageQueuePermissionAccess" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAccess"><see cref="T:System.Messaging.MessageQueuePermissionAccess" /> 値のいずれか。</param>
+        <param name="path">によって参照されるキューのパス、<see cref="T:System.Messaging.MessageQueue" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.MessageQueuePermission" />クラスを指定したアクセス レベルと、キューのパス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Messaging.MessageQueuePermission>です。  
+  
+ [!code-csharp[MessageQueuePermission#2](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermission/CS/class1.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueuePermission (System.Messaging.MessageQueuePermissionAccess permissionAccess, string machineName, string label, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Messaging.MessageQueuePermissionAccess permissionAccess, string machineName, string label, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.#ctor(System.Messaging.MessageQueuePermissionAccess,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="permissionAccess" Type="System.Messaging.MessageQueuePermissionAccess" />
+        <Parameter Name="machineName" Type="System.String" />
+        <Parameter Name="label" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="permissionAccess"><see cref="T:System.Messaging.MessageQueuePermissionAccess" /> 値のいずれか。</param>
+        <param name="machineName">メッセージ キューのキューが配置されているコンピューターの名前。</param>
+        <param name="label">キューの説明。</param>
+        <param name="category">キューのカテゴリ (メッセージ キューの種類 id)。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.MessageQueuePermission" />コンピューターを使用して、キューの説明、およびキューのカテゴリを指定したアクセス レベルを持つクラスします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Messaging.MessageQueuePermission>です。  
+  
+ [!code-csharp[MessageQueuePermission#3](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermission/CS/class1.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して、現在のアクセス許可オブジェクトの完全なコピーを返します。</summary>
+        <returns>現在のアクセス許可オブジェクトのコピー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement securityElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement securityElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityElement" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="securityElement">セキュリティ オブジェクトの再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、セキュリティ オブジェクトを再構築します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可オブジェクトと交差するアクセス許可オブジェクトです。 現在のアクセス許可オブジェクトと同じ型でなければなりません。</param>
+        <summary>現在のアクセス許可オブジェクトと指定したアクセス許可オブジェクトの交差部分を表す新しいアクセス許可オブジェクトを返します。</summary>
+        <returns>現在のアクセス許可オブジェクトと指定したアクセス許可オブジェクトの交差部分を表す新しいアクセス許可オブジェクトです。 この新しいアクセス許可オブジェクトが null 参照 (<see langword="Nothing" /> Visual Basic で) 場合は、積集合が空です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセットの関係をテストするのには、アクセス許可オブジェクトです。 このオブジェクトは、現在のアクセス許可オブジェクトと同じ型でなければなりません。</param>
+        <summary>現在のアクセス許可オブジェクトが、指定したアクセス許可オブジェクトのサブセットであるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可オブジェクトが、指定したアクセス許可オブジェクトのサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可のセマンティクスがわからなくて無制限のアクセス許可として表現できるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />アクセス許可として表現できる場合は無制限です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionEntries">
+      <MemberSignature Language="C#" Value="public System.Messaging.MessageQueuePermissionEntryCollection PermissionEntries { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueuePermissionEntryCollection PermissionEntries" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueuePermission.PermissionEntries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueuePermissionEntryCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアクセス許可の要求のアクセス許可エントリのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Messaging.MessageQueuePermissionEntryCollection" />このアクセス許可の要求のアクセス許可エントリを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Messaging.MessageQueuePermission>の値を取得し、<xref:System.Messaging.MessageQueuePermission.PermissionEntries%2A>プロパティです。  
+  
+ [!code-csharp[MessageQueuePermission#6](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueuePermission/CS/class1.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ オブジェクトとその現在の状態の XML エンコードを作成します。</summary>
+        <returns>状態情報のすべてを含む、セキュリティ オブジェクトの XML エンコーディング。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueuePermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可オブジェクトと結合するアクセス許可オブジェクトです。 現在のアクセス許可オブジェクトと同じ型でなければなりません。</param>
+        <summary>現在と指定したアクセス許可オブジェクトの和集合を表す新しいアクセス許可オブジェクトを返します。</summary>
+        <returns>現在のアクセス許可オブジェクトと指定したアクセス許可オブジェクトの和集合を表す新しいアクセス許可オブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

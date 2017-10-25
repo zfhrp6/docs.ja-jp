@@ -1,0 +1,273 @@
+<Type Name="DrawTreeNodeEventArgs" FullName="System.Windows.Forms.DrawTreeNodeEventArgs">
+  <TypeSignature Language="C#" Value="public class DrawTreeNodeEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DrawTreeNodeEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DrawTreeNodeEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.TreeView.DrawNode" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.TreeView.DrawNode>内のノードの外観をカスタマイズするイベント、<xref:System.Windows.Forms.TreeView>オーナー描画を使用して制御します。  
+  
+ <xref:System.Windows.Forms.TreeView.DrawNode>によってイベントが発生した、<xref:System.Windows.Forms.TreeView>タイミングを制御その<xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=nameWithType>プロパティに設定されている<xref:System.Windows.Forms.TreeViewDrawMode?displayProperty=nameWithType>または<xref:System.Windows.Forms.TreeViewDrawMode?displayProperty=nameWithType>され、ノードが表示または更新します。 <xref:System.Windows.Forms.DrawTreeNodeEventArgs>渡されるイベント ハンドラーにノードを描画するためのメソッドを提供するだけでなくを描画するノードに関する情報が含まれています。  
+  
+ 使用して、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.State%2A>または<xref:System.Windows.Forms.DrawTreeNodeEventArgs.Node%2A>を描画するノードに関する情報を取得するプロパティです。 使用して、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.Graphics%2A>プロパティで指定された領域内の実際の描画を行う、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.Bounds%2A>プロパティです。 オペレーティング システムがオーナー描画する必要のないノードを描画するために、設定、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.DrawDefault%2A>プロパティを`true`です。  
+  
+ ときに、<xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=nameWithType>プロパティに設定されている<xref:System.Windows.Forms.TreeViewDrawMode?displayProperty=nameWithType>、によって、領域が示される、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.Bounds%2A>プロパティにのみ、ノードのラベル部分が含まれています。 ときに、<xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=nameWithType>プロパティに設定されている<xref:System.Windows.Forms.TreeViewDrawMode?displayProperty=nameWithType>、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.Bounds%2A>領域のアイコン、チェック ボックス、プラスとマイナス記号、通常使用される領域を含めて、全体のノードが含まれています、線のノードに接続します。  
+  
+   
+  
+## Examples  
+ 次のコード例をカスタマイズする方法を示しています、<xref:System.Windows.Forms.TreeView>オーナー描画を使用して制御します。 <xref:System.Windows.Forms.TreeView>例ではコントロールは、[標準] ノードのラベルの横の省略可能なノードのタグを表示します。 使用してノードのタグが指定されて、<xref:System.Windows.Forms.TreeNode.Tag%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Windows.Forms.TreeView>コントロールも、カスタムの強調表示色を含む、カスタムの色を使用します。  
+  
+ ほとんどをカスタマイズすることができます、<xref:System.Windows.Forms.TreeView>色の設定でカラー プロパティしますが、選択範囲の強調表示色はプロパティとしてではありません。 さらに、既定の選択の強調表示の四角形は、ノードのラベルの周りにのみ拡張します。 ノード タグを描画して、ノード タグを含めるのに十分な大きさ強調表示のカスタマイズされた四角形を描く、オーナー描画を使用する必要があります。  
+  
+ 例では、ハンドラーを<xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>ノード タグとカスタムの選択範囲を手動で強調表示イベントを描画します。 選択されていないノードには、カスタマイズは不要です。 これらの場合、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.DrawDefault%2A>プロパティに設定されている`true`オペレーティング システムによってが描画されるようにします。  
+  
+ さらのハンドラーを<xref:System.Windows.Forms.Control.MouseDown?displayProperty=nameWithType>イベントは、ヒット テストを提供します。 既定では、ラベル付近の領域をクリックするノードを選択することができます。 <xref:System.Windows.Forms.Control.MouseDown?displayProperty=nameWithType>イベント ハンドラーが存在する場合、このリージョン内、またはノード タグ、周囲の領域内に任意の場所クリックされるノードを選択します。  
+  
+ [!code-cpp[TreeViewOwnerDraw#1](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewOwnerDraw/CPP/treeviewownerdraw.cpp#1)]
+ [!code-csharp[TreeViewOwnerDraw#1](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewOwnerDraw/CS/treeviewownerdraw.cs#1)]
+ [!code-vb[TreeViewOwnerDraw#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewOwnerDraw/VB/treeviewownerdraw.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DrawTreeNodeEventArgs (System.Drawing.Graphics graphics, System.Windows.Forms.TreeNode node, System.Drawing.Rectangle bounds, System.Windows.Forms.TreeNodeStates state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics graphics, class System.Windows.Forms.TreeNode node, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.TreeNodeStates state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawTreeNodeEventArgs.#ctor(System.Drawing.Graphics,System.Windows.Forms.TreeNode,System.Drawing.Rectangle,System.Windows.Forms.TreeNodeStates)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="node" Type="System.Windows.Forms.TreeNode" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.TreeNodeStates" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />を描画する画面です。</param>
+        <param name="node">描画する <see cref="T:System.Windows.Forms.TreeNode" />。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />を描画するためにします。</param>
+        <param name="state">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.TreeNodeStates" />の現在の状態を示す値、<see cref="T:System.Windows.Forms.TreeNode" />を描画します。</param>
+        <summary><see cref="T:System.Windows.Forms.DrawTreeNodeEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawTreeNodeEventArgs.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>位置とサイズを取得、<see cref="T:System.Windows.Forms.TreeNode" />を描画します。</summary>
+        <value>A<see cref="T:System.Drawing.Rectangle" />の境界を表す、<see cref="T:System.Windows.Forms.TreeNode" />を描画します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで指定された場所の左上隅にある相対的な<xref:System.Windows.Forms.TreeView>コントロール。  
+  
+ ときに、<xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=nameWithType>プロパティに設定されている<xref:System.Windows.Forms.TreeViewDrawMode.OwnerDrawText>で指定された領域、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.Bounds%2A>プロパティは使用するノードをクリックして選択する領域です。 このヒット テスト領域の外を描画した場合の表示領域がクリックされたときにノードを選択するため、独自のコードを指定する必要があります。 ヒット テストを提供することもコードの場合、<xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=nameWithType>プロパティに設定されている<xref:System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll>です。 このモードでは、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.Bounds%2A>プロパティは、全体の幅にまたがって全体のノードを含む、<xref:System.Windows.Forms.TreeView>だけヒット テスト領域ではなく、制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例をカスタマイズする方法を示しています、<xref:System.Windows.Forms.TreeView>オーナー描画を使用して制御します。 <xref:System.Windows.Forms.TreeView>例ではコントロールは、[標準] ノードのラベルの横の省略可能なノードのタグを表示します。 使用してノードのタグが指定されて、<xref:System.Windows.Forms.TreeNode.Tag%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Windows.Forms.TreeView>コントロールも、カスタムの強調表示色を含む、カスタムの色を使用します。  
+  
+ ほとんどをカスタマイズすることができます、<xref:System.Windows.Forms.TreeView>色の設定でカラー プロパティしますが、選択範囲の強調表示色はプロパティとしてではありません。 さらに、既定の選択の強調表示の四角形は、ノードのラベルの周りにのみ拡張します。 ノード タグを描画して、ノード タグを含めるのに十分な大きさ強調表示のカスタマイズされた四角形を描く、オーナー描画を使用する必要があります。  
+  
+ 例では、ハンドラーを<xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>ノード タグとカスタムの選択範囲を手動で強調表示イベントを描画します。 選択されていないノードには、カスタマイズは不要です。 これらの場合、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.DrawDefault%2A>プロパティに設定されている`true`オペレーティング システムによってが描画されるようにします。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.DrawTreeNodeEventArgs>概要リファレンス トピックです。  
+  
+ [!code-cpp[TreeViewOwnerDraw#3](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewOwnerDraw/CPP/treeviewownerdraw.cpp#3)]
+ [!code-csharp[TreeViewOwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewOwnerDraw/CS/treeviewownerdraw.cs#3)]
+ [!code-vb[TreeViewOwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewOwnerDraw/VB/treeviewownerdraw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawDefault">
+      <MemberSignature Language="C#" Value="public bool DrawDefault { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DrawDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawTreeNodeEventArgs.DrawDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Windows.Forms.TreeNode" />オーナー描画されているのではなく、オペレーティング システムで描画する必要があります。</summary>
+        <value>
+          <see langword="true" />オペレーティング システムによって、ノードを描画する場合<see langword="false" />ノードは、イベント ハンドラーで描画する場合。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`を処理するときにカスタマイズしたくないノードに対して、<xref:System.Windows.Forms.TreeView.DrawNode>イベント。 たとえば、これにより特定の状態にあるノードのみをカスタマイズするときにできます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。 例では、ハンドラーを<xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>イベントは、ノードのタグを描画し、カスタムの強調表示色手動で選択したノード。 選択されていないノードには、カスタマイズは不要です。 選択されていないノードの場合は、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.DrawDefault%2A>プロパティに設定されている`true`ようにするため、オペレーティング システムで描画するカスタマイズされた外観はありません。  
+  
+> [!NOTE]
+>  ノードを描画した場合を手動でも設定、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.DrawDefault%2A>プロパティを`true`、描画するの一部またはすべてが、オペレーティング システムによって上書きされます。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.DrawTreeNodeEventArgs>概要リファレンス トピックです。  
+  
+ [!code-cpp[TreeViewOwnerDraw#3](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewOwnerDraw/CPP/treeviewownerdraw.cpp#3)]
+ [!code-csharp[TreeViewOwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewOwnerDraw/CS/treeviewownerdraw.cs#3)]
+ [!code-vb[TreeViewOwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewOwnerDraw/VB/treeviewownerdraw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Graphics">
+      <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawTreeNodeEventArgs.Graphics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Graphics" />描画に使用するオブジェクト、<see cref="T:System.Windows.Forms.TreeNode" />です。</summary>
+        <value>A<see cref="T:System.Drawing.Graphics" />描画に使用する、<see cref="T:System.Windows.Forms.TreeNode" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Graphics>クラスには、プロパティと、ディスプレイ デバイスに描画するために役立つメソッドが用意されています。  
+  
+   
+  
+## Examples  
+ 次のコード例をカスタマイズする方法を示しています、<xref:System.Windows.Forms.TreeView>オーナー描画を使用して制御します。 <xref:System.Windows.Forms.TreeView>例ではコントロールは、[標準] ノードのラベルの横の省略可能なノードのタグを表示します。 使用してノードのタグが指定されて、<xref:System.Windows.Forms.TreeNode.Tag%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Windows.Forms.TreeView>コントロールも、カスタムの強調表示色を含む、カスタムの色を使用します。  
+  
+ ほとんどをカスタマイズすることができます、<xref:System.Windows.Forms.TreeView>色の設定でカラー プロパティしますが、選択範囲の強調表示色はプロパティとしてではありません。 さらに、既定の選択の強調表示の四角形は、ノードのラベルの周りにのみ拡張します。 ノード タグを描画して、ノード タグを含めるのに十分な大きさ強調表示のカスタマイズされた四角形を描く、オーナー描画を使用する必要があります。  
+  
+ 例では、ハンドラーを<xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>ノード タグとカスタムの選択範囲を手動で強調表示イベントを描画します。 選択されていないノードには、カスタマイズは不要です。 これらの場合、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.DrawDefault%2A>プロパティに設定されている`true`オペレーティング システムによってが描画されるようにします。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.DrawTreeNodeEventArgs>概要リファレンス トピックです。  
+  
+ [!code-cpp[TreeViewOwnerDraw#3](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewOwnerDraw/CPP/treeviewownerdraw.cpp#3)]
+ [!code-csharp[TreeViewOwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewOwnerDraw/CS/treeviewownerdraw.cs#3)]
+ [!code-vb[TreeViewOwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewOwnerDraw/VB/treeviewownerdraw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Node">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode Node { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode Node" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawTreeNodeEventArgs.Node" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.TreeNode" />を描画します。</summary>
+        <value>描画する <see cref="T:System.Windows.Forms.TreeNode" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにアクセスを使用して、<xref:System.Windows.Forms.TreeNode>を描画するオブジェクト。 これによりときに、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.State%2A>プロパティは、ニーズに合わせて十分な情報を提供していません。 <xref:System.Windows.Forms.DrawTreeNodeEventArgs.State%2A>プロパティを使用するなど、ノードが選択されているか、チェック、または、フォーカスされたかどうかを決定する基本的な状態情報のみを提供します。 <xref:System.Windows.Forms.DrawTreeNodeEventArgs.Node%2A>プロパティ、その一方は、すべてのメンバーにアクセスする、<xref:System.Windows.Forms.TreeNode>オブジェクト。 必要があります、ノードに直接アクセスなどの展開状態を確認するときにします。  
+  
+   
+  
+## Examples  
+ 次のコード例をカスタマイズする方法を示しています、<xref:System.Windows.Forms.TreeView>オーナー描画を使用して制御します。 <xref:System.Windows.Forms.TreeView>例ではコントロールは、[標準] ノードのラベルの横の省略可能なノードのタグを表示します。 使用してノードのタグが指定されて、<xref:System.Windows.Forms.TreeNode.Tag%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Windows.Forms.TreeView>コントロールも、カスタムの強調表示色を含む、カスタムの色を使用します。  
+  
+ ほとんどをカスタマイズすることができます、<xref:System.Windows.Forms.TreeView>色の設定でカラー プロパティしますが、選択範囲の強調表示色はプロパティとしてではありません。 さらに、既定の選択の強調表示の四角形は、ノードのラベルの周りにのみ拡張します。 ノード タグを描画して、ノード タグを含めるのに十分な大きさ強調表示のカスタマイズされた四角形を描く、オーナー描画を使用する必要があります。  
+  
+ 例では、ハンドラーを<xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>ノード タグとカスタムの選択範囲を手動で強調表示イベントを描画します。 選択されていないノードには、カスタマイズは不要です。 これらの場合、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.DrawDefault%2A>プロパティに設定されている`true`オペレーティング システムによってが描画されるようにします。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.DrawTreeNodeEventArgs>概要リファレンス トピックです。  
+  
+ [!code-cpp[TreeViewOwnerDraw#3](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewOwnerDraw/CPP/treeviewownerdraw.cpp#3)]
+ [!code-csharp[TreeViewOwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewOwnerDraw/CS/treeviewownerdraw.cs#3)]
+ [!code-vb[TreeViewOwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewOwnerDraw/VB/treeviewownerdraw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNodeStates State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.TreeNodeStates State" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawTreeNodeEventArgs.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNodeStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の状態を取得、<see cref="T:System.Windows.Forms.TreeNode" />を描画します。</summary>
+        <value>ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.TreeNodeStates" />の現在の状態を示す値、<see cref="T:System.Windows.Forms.TreeNode" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して確認するかどうか、<xref:System.Windows.Forms.TreeNode>を描画するオブジェクトが特定の状態にします。 このプロパティは、ノードに関する基本的な状態情報のみを提供します。 このプロパティを使用するには、ノードが選択されているか、チェック、または、フォーカスされたかどうかを決定します。 より理解する必要がある場合を使ってノードを取得、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.Node%2A>プロパティです。 たとえば、ノードが展開されているかどうかを判断するのにノードを取得してくださいチェック、<xref:System.Windows.Forms.TreeNode.IsExpanded%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例をカスタマイズする方法を示しています、<xref:System.Windows.Forms.TreeView>オーナー描画を使用して制御します。 <xref:System.Windows.Forms.TreeView>例ではコントロールは、[標準] ノードのラベルの横の省略可能なノードのタグを表示します。 使用してノードのタグが指定されて、<xref:System.Windows.Forms.TreeNode.Tag%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Windows.Forms.TreeView>コントロールも、カスタムの強調表示色を含む、カスタムの色を使用します。  
+  
+ ほとんどをカスタマイズすることができます、<xref:System.Windows.Forms.TreeView>色の設定でカラー プロパティしますが、選択範囲の強調表示色はプロパティとしてではありません。 さらに、既定の選択の強調表示の四角形は、ノードのラベルの周りにのみ拡張します。 ノード タグを描画して、ノード タグを含めるのに十分な大きさ強調表示のカスタマイズされた四角形を描く、オーナー描画を使用する必要があります。  
+  
+ 例では、ハンドラーを<xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>ノード タグとカスタムの選択範囲を手動で強調表示イベントを描画します。 選択されていないノードには、カスタマイズは不要です。 これらの場合、<xref:System.Windows.Forms.DrawTreeNodeEventArgs.DrawDefault%2A>プロパティに設定されている`true`オペレーティング システムによってが描画されるようにします。  
+  
+ 完了の例では、次を参照してください。、<xref:System.Windows.Forms.DrawTreeNodeEventArgs>概要リファレンス トピックです。  
+  
+ [!code-cpp[TreeViewOwnerDraw#3](~/samples/snippets/cpp/VS_Snippets_Winforms/TreeViewOwnerDraw/CPP/treeviewownerdraw.cpp#3)]
+ [!code-csharp[TreeViewOwnerDraw#3](~/samples/snippets/csharp/VS_Snippets_Winforms/TreeViewOwnerDraw/CS/treeviewownerdraw.cs#3)]
+ [!code-vb[TreeViewOwnerDraw#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/TreeViewOwnerDraw/VB/treeviewownerdraw.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

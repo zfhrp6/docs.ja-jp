@@ -1,0 +1,409 @@
+<Type Name="XamlReader" FullName="System.Xaml.XamlReader">
+  <TypeSignature Language="C#" Value="public abstract class XamlReader : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XamlReader extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>XAML 入力を処理し、XAML ノード ストリームを生成するクラスの基本定義を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlReader>抽象クラスは、実装や作業結果があるすべてのメンバーの定義を提供しません。 メンバーの実装が<xref:System.Xaml.XamlReader>はそのメンバーの「解説」に記載されています。 具体的には、<xref:System.Xaml.XamlReader>いくつかの抽象メンバーを実装する必要がある、いくつかの仮想メンバーです。  
+  
+ 仮想メンバーの<xref:System.Xaml.XamlReader.ReadSubtree%2A>と<xref:System.Xaml.XamlReader.Skip%2A>各ほとんどの場合に適切な既定の実装を提供します。 ただし、<xref:System.Xaml.XamlReader.ReadSubtree%2A>と<xref:System.Xaml.XamlReader.Skip%2A>実装の XAML リーダーの他の予期される動作に依存して既定の実装です。 具体的には、依存している、<xref:System.Xaml.XamlReader.Read%2A>をオーバーライドします。 <xref:System.Xaml.XamlReader.Dispose%2A>作業用の既定の実装を持つ仮想メンバーです。  
+  
+ 次の 2 つのクラスは、.NET Framework XAML サービスと System.Xaml アセンブリに最も関連するかつ実用的な派生クラスです。  
+  
+-   <xref:System.Xaml.XamlObjectReader>、実行時にアプリケーションのアクティブなオブジェクト グラフなど、オブジェクト グラフを読み取ります。  
+  
+-   <xref:System.Xaml.XamlXmlReader>、、[全般] を使用して XML テキスト ファイルの形式で XAML を読み取ります<xref:System.Xml.XmlReader>中間ヘルパー クラスとしてファイルを読み込みます。  
+  
+ その他のフレームワークから他の XAML リーダーは、<xref:System.Windows.Baml2006.Baml2006Reader>と<xref:System.Activities.Debugger.XamlDebuggerXmlReader>です。  
+  
+ <xref:System.Xaml.XamlReader>異なります[!INCLUDE[TLA#tla_xmldom](~/includes/tlasharptla-xmldom-md.md)]と<xref:System.Xml.XmlReader>ためにのデザイン原則<xref:System.Xaml.XamlReader>はありません、`Create`を基になる既定の XAML リーダーの実装を返すメソッド。 代わりに、そのコンス トラクターまたはその他のクラスに固有のヘルパー Api を呼び出すことによって派生の特定の XAML リーダー クラスをインスタンス化する必要があります。  
+  
+## <a name="subtree-readers"></a>サブツリー リーダー  
+ ほとんどの場合を呼び出す<xref:System.Xaml.XamlReader>から派生する特定の XAML リーダー クラスのコンテキストで API<xref:System.Xaml.XamlReader>です。 ただし、特定の 1 つのケースではアクセス<xref:System.Xaml.XamlReader>とパブリックでない派生ではない実用的な XAML リーダー インスタンスの API<xref:System.Xaml.XamlObjectReader>または<xref:System.Xaml.XamlXmlReader>です。 この例を呼び出すときは、 <xref:System.Xaml.XamlReader.ReadSubtree%2A>、返された、<xref:System.Xaml.XamlReader>インスタンス。 既定の実装で、<xref:System.Xaml.XamlReader>は内部クラスは、この API によって返されます。  
+  
+ <xref:System.Xaml.XamlReader>サブツリーの閲覧には、Api の有効なアクションなどを取得した<xref:System.Xaml.XamlReader.Read%2A>と<xref:System.Xaml.XamlReader.NodeType%2A>、それらのアクションが親リーダー クラスに基づいています。 この設計により、内部クラスのサブツリーが入力されたフレームのレベルを追跡するためになります。 機能を実行するサブツリー<xref:System.Xaml.XamlReader>により、現在のノードの位置は、サブツリーの境界外に移動する場合は、特定のサブツリー リーダー ファイルの終端と報告されることを確認または`null`現在のノードにします。  
+  
+ 特定のサブツリー リーダーの使用状況に関する注意事項が含まれている<xref:System.Xaml.XamlReader>Api です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XamlReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlReader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>初期化、<see cref="T:System.Xaml.XamlReader" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlReader.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XAML ノード ストリームを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基底クラスの実装を呼び出す<xref:System.Xaml.XamlReader.Close%2A>呼び出し<xref:System.Xaml.XamlReader.Dispose%2A>で、`isDisposing`パラメーターとして`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlReader.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースを解放するには <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>によって使用されるアンマネージ リソースを解放、 <see cref="T:System.Xaml.XamlReader" />、し、必要に応じて、マネージ リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する基本クラスを呼び出す必要があります<xref:System.Xaml.XamlReader.IsDisposed%2A>  = `true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDisposed">
+      <MemberSignature Language="C#" Value="protected bool IsDisposed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDisposed" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReader.IsDisposed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか<see cref="M:System.Xaml.XamlReader.Dispose(System.Boolean)" />が呼び出されています。</summary>
+        <value>
+          <see cref="M:System.Xaml.XamlReader.Dispose(System.Boolean)" /> が呼び出されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEof">
+      <MemberSignature Language="C#" Value="public abstract bool IsEof { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEof" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReader.IsEof" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合は、リーダーの位置が、ファイルの終端にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />位置が、XAML ノード ストリームの概念ファイルの末尾にある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブツリーのリーダーを呼び出すことができます<xref:System.Xaml.XamlReader.IsEof%2A>、入力されたサブツリーの境界を正しく反映して動作します。 詳細についてを参照してください「サブツリー リーダー」<xref:System.Xaml.XamlReader>を参照してくださいまたは<xref:System.Xaml.XamlReader.ReadSubtree%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Member">
+      <MemberSignature Language="C#" Value="public abstract System.Xaml.XamlMember Member { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlMember Member" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReader.Member" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装された場合、現在のメンバーを取得、リーダーの位置リーダーの位置にある場合、<see cref="F:System.Xaml.XamlNodeType.StartMember" />です。</summary>
+        <value>現在のメンバー。または<see langword="null" />リーダーの位置がメンバーでない場合、します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブツリーのリーダーを呼び出すことができます<xref:System.Xaml.XamlReader.Member%2A>動作の制限があります。 詳細についてを参照してください「サブツリー リーダー」<xref:System.Xaml.XamlReader>を参照してくださいまたは<xref:System.Xaml.XamlReader.ReadSubtree%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public abstract System.Xaml.NamespaceDeclaration Namespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.NamespaceDeclaration Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReader.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.NamespaceDeclaration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合は、現在のノードから XAML 名前空間情報を取得します。</summary>
+        <value>使用可能である場合の XAML 名前空間については、それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この API の設計が null 以外の結果の場合にのみを返すには、<xref:System.Xaml.XamlReader.NodeType%2A>は、現在のノードの<xref:System.Xaml.XamlNodeType.NamespaceDeclaration>します。 プロパティでは、XAML スキーマ コンテキストで解釈されるよう、オブジェクトまたは一般的なスコープの意味、メンバーに適用される XAML 名前空間は報告されません。 アプリケーションが機能しているの情報をキャッシュするための手段を提供する必要がありますのでの XAML 名前空間は、方法、XAML スキーマ コンテキストにレポートをそのライター以外の方法では、その情報が必要な場合、XAML ノードを通過する時間します。 参照してください<xref:System.Xaml.XamlXmlReader.Namespace%2A>参照の実装に関する注意事項にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeType">
+      <MemberSignature Language="C#" Value="public abstract System.Xaml.XamlNodeType NodeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xaml.XamlNodeType NodeType" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReader.NodeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlNodeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合は、現在のノードの種類を取得します。</summary>
+        <value>値、<see cref="T:System.Xaml.XamlNodeType" />列挙します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブツリーのリーダーを呼び出すことができます<xref:System.Xaml.XamlReader.NodeType%2A>動作の制限があります。 詳細についてを参照してください「サブツリー リーダー」<xref:System.Xaml.XamlReader>を参照してくださいまたは<xref:System.Xaml.XamlReader.ReadSubtree%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public abstract bool Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlReader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合は、ノードがある場合、ソースから次の XAML ノードを提供します。</summary>
+        <returns>
+          <see langword="true" />ノードがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブツリーのリーダーを呼び出すことができます<xref:System.Xaml.XamlReader.Read%2A>動作の制限があります。 詳細についてを参照してください「サブツリー リーダー」<xref:System.Xaml.XamlReader>を参照してくださいまたは<xref:System.Xaml.XamlReader.ReadSubtree%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSubtree">
+      <MemberSignature Language="C#" Value="public virtual System.Xaml.XamlReader ReadSubtree ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xaml.XamlReader ReadSubtree() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlReader.ReadSubtree" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xaml.XamlReader" />現在に基づく<see cref="T:System.Xaml.XamlReader" />ここで、返された<see cref="T:System.Xaml.XamlReader" />XAML ノードの構造のサブツリーを反復処理するために使用します。</summary>
+        <returns>サブツリーの新しい XAML リーダー インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを持ち、既定の実装を返す有効な<xref:System.Xaml.XamlReader>します。 返された<xref:System.Xaml.XamlReader>特定を制限する内部クラスは、<xref:System.Xaml.XamlReader>アクション。 制限は次元設定されたサブツリーの XAML ノード セットは、大規模ソースとファイルの終端を返すだけに読み取り目的に設定された一貫性のあるまたは`null`サブツリーが終了したときに、現在のノードにします。  
+  
+ 一般に、最初から現在のノードを確認する必要があります<xref:System.Xaml.XamlReader.Read%2A>サブツリー リーダーが必要かどうかを判断します。 これをチェックする方法があります実装に固有です。ただし、すべてのサブツリーの複数のサブツリー リーダーを作成しないでください。 さらに、特定のノードのケースのサブツリー リーダーの呼び出しを回避する (たとえば、 <xref:System.Xaml.XamlNodeType.NamespaceDeclaration>) ノードのサブツリーを含めることはできません。  
+  
+ サブツリー リーダーを取得した後に呼び出す必要があります<xref:System.Xaml.XamlReader.Read%2A>を現在のノードを取得することで (または呼び出す<xref:System.Xaml.XamlReader.Skip%2A>を次のノードを取得する)。 自動的に取得しない初期ノード位置サブツリー リーダーから作成するときにします。  
+  
+ 呼び出して取得するリーダー<xref:System.Xaml.XamlReader.ReadSubtree%2A>この既定の実装は、内部クラス。 内部クラスに基づいて、その動作、<xref:System.Xaml.XamlReader>実装されている場合に使用<xref:System.Xaml.XamlReader.ReadSubtree%2A>と呼びます。 内部クラスの目的は、ラップする、<xref:System.Xaml.XamlReader.Read%2A>と一般的な走査の各動作します。 走査まま、目的のサブツリー内で追跡することにより<xref:System.Xaml.XamlNodeType.StartMember> / <xref:System.Xaml.XamlNodeType.EndMember>ペアまたは<xref:System.Xaml.XamlNodeType.StartObject> / <xref:System.Xaml.XamlNodeType.EndObject>ペア。 正しく返す`false`の<xref:System.Xaml.XamlReader.Read%2A>と`true`の<xref:System.Xaml.XamlReader.IsEof%2A>ときにリーダーが配置されて、サブツリーの最後のエントリ ポイントで定義されています。 一般に、想定すること、 <xref:System.Xaml.XamlReader> API サブツリー リーダーから呼び出しが、全体的なと同じ実装<xref:System.Xaml.XamlReader>動作を境界の検査を除く。  
+  
+ ただし、<xref:System.Xaml.XamlReader.ReadSubtree%2A>は仮想です。 したがって、特定<xref:System.Xaml.XamlReader>実装とは異なる動作を提供できます、<xref:System.Xaml.XamlReader>内部ラッパーの動作と<xref:System.Xaml.XamlReader>実装でもを無効にできますサブツリー リーダー機能を返すことによって<xref:System.NotImplementedException>またはその他の例外。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaContext">
+      <MemberSignature Language="C#" Value="public abstract System.Xaml.XamlSchemaContext SchemaContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlSchemaContext SchemaContext" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReader.SchemaContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlSchemaContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合は、情報セットの XAML スキーマ コンテキスト情報を提供するオブジェクトを取得します。</summary>
+        <value>については、XAML スキーマ コンテキスト情報を提供するオブジェクトを設定します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Skip">
+      <MemberSignature Language="C#" Value="public virtual void Skip ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Skip() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlReader.Skip" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のノードをスキップし、次のノードにリーダーの位置を進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 回スキップ、 <xref:System.Xaml.XamlReader.Read%2A> 、既定により呼び出されます<xref:System.Xaml.XamlReader.Skip%2A>実装します。 通常呼び出さない<xref:System.Xaml.XamlReader.Skip%2A>と<xref:System.Xaml.XamlReader.Read%2A>順番です。  
+  
+ 既定値で<xref:System.Xaml.XamlReader.Skip%2A>実装では、さまざまなアクションが実行されますに応じて<xref:System.Xaml.XamlReader.NodeType%2A>リーダーの位置が現在オン。 リーダーの位置が現在オンの場合、<xref:System.Xaml.XamlNodeType.StartMember>または<xref:System.Xaml.XamlNodeType.StartObject>、そのメンバーまたはオブジェクトはスキップされます。 その他の<xref:System.Xaml.XamlReader.NodeType%2A>値、何も処理呼び出し以外<xref:System.Xaml.XamlReader.Read%2A>現在の位置から。  
+  
+ サブツリーのリーダーを呼び出すことができます<xref:System.Xaml.XamlReader.Skip%2A>動作の制限があります。 詳細についてを参照してください「サブツリー リーダー」<xref:System.Xaml.XamlReader>を参照してくださいまたは<xref:System.Xaml.XamlReader.ReadSubtree%2A>です。  
+  
+ ノード ツリー動作<xref:System.Xaml.XamlReader.Skip%2A?displayProperty=nameWithType>は同等の XML に基づいて<xref:System.Xml.XmlReader.Skip%2A?displayProperty=nameWithType>です。 に基づいて、<xref:System.Xml.XmlReader.Skip%2A?displayProperty=nameWithType>動作等価<xref:System.Xaml.XamlReader.Skip%2A?displayProperty=nameWithType>ノードとそのサブツリーでは、1 つのエントリのノードだけでなくをスキップします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlReader.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.XamlReader" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public abstract System.Xaml.XamlType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReader.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装された場合、取得、<see cref="T:System.Xaml.XamlType" />現在のノードです。</summary>
+        <value><see cref="T:System.Xaml.XamlType" /> ; 現在のノードのまたは<see langword="null" />現在リーダーが配置されていないオブジェクトの場合は、します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブツリーのリーダーを呼び出すことができます<xref:System.Xaml.XamlReader.Type%2A>動作の制限があります。 詳細についてを参照してください「サブツリー リーダー」<xref:System.Xaml.XamlReader>を参照してくださいまたは<xref:System.Xaml.XamlReader.ReadSubtree%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public abstract object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlReader.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合は、現在のノードの値を取得します。</summary>
+        <value>現在のノードの値または<see langword="null" />、現在のリーダーの位置に含まれていない場合、<see cref="F:System.Xaml.XamlNodeType.Value" />ノードの種類。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

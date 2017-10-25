@@ -1,0 +1,569 @@
+<Type Name="HyperLink" FullName="System.Web.UI.WebControls.HyperLink">
+  <TypeSignature Language="C#" Value="public class HyperLink : System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HyperLink extends System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.HyperLink" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.HyperLinkDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.WebControls.HyperLinkControlBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.DataBindingHandler("System.Web.UI.Design.HyperLinkDataBindingHandler, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:HyperLink runat="server"&gt;HyperLink&lt;/{0}:HyperLink&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>別の Web ページへのリンクを表示するコントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [ユーザー補助](#accessibility)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、<xref:System.Web.UI.WebControls.HyperLink>コントロールを別の Web ページへのリンクを作成します。 <xref:System.Web.UI.WebControls.HyperLink>コントロールは通常、によって指定されたテキストとして表示されます、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>プロパティです。 指定されたイメージとして表示することも、<xref:System.Web.UI.WebControls.HyperLink.ImageUrl%2A>プロパティです。  
+  
+ 両方の<xref:System.Web.UI.WebControls.HyperLink.Text%2A>と<xref:System.Web.UI.WebControls.HyperLink.ImageUrl%2A>プロパティを設定、<xref:System.Web.UI.WebControls.HyperLink.ImageUrl%2A>プロパティが優先されます。 イメージが使用できない場合のテキスト、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>プロパティが表示されます。 ツールヒント機能をサポートするブラウザーで、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>プロパティ、ツールヒントにもなります。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。 詳細については、次を参照してください。[検証サーバー コントロール構文](http://msdn.microsoft.com/en-us/96d2c59e-693c-4079-9b53-b3ff0d9e9133)です。  
+  
+<a name="accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:HyperLink  
+    AccessKey="string"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CssClass="string"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    Height="size"  
+    ID="string"  
+    ImageUrl="uri"  
+    NavigateUrl="uri"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    Target="string|_blank|_parent|_search|_self|_top"  
+    Text="string"  
+    ToolTip="string"  
+    Visible="True|False"  
+    Width="size"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Web.UI.WebControls.HyperLink>別の Web ページにリンクする Web ページで制御します。  
+  
+ [!code-aspx-csharp[Classic HyperLink.NavigateUrl Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HyperLink.NavigateUrl Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HyperLink.NavigateUrl Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HyperLink.NavigateUrl Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HyperLink ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLink.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.HyperLink" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.HyperLink>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例で作成しの新しいインスタンスを初期化する方法、<xref:System.Web.UI.WebControls.HyperLink>クラスです。  
+  
+ [!code-csharp[Classic HyperLink.HyperLink Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HyperLink.HyperLink Example/CS/source.cs#1)]
+ [!code-vb[Classic HyperLink.HyperLink Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HyperLink.HyperLink Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLink.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントで表示する出力ストリーム。</param>
+        <summary>属性を追加、<see cref="T:System.Web.UI.WebControls.HyperLink" />コントロールを表示する出力ストリームにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.WebControls.HyperLink.AddAttributesToRender%2A>カスタム サーバー コントロールできるように、<xref:System.Web.UI.WebControls.HyperLink>テキストが太字のフォントで表示されます。  
+  
+ [!code-csharp[CustomHyperLinkAddAttributesToRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHyperLinkAddAttributesToRender/CS/custom_hyperlink_addattributestorender.cs#2)]
+ [!code-vb[CustomHyperLinkAddAttributesToRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHyperLinkAddAttributesToRender/VB/custom_hyperlink_addattributestorender.vb#2)]  
+  
+ 次の Web フォームでは、カスタム サーバー コントロールを使用して、太字のフォントを持つハイパーリンクを表示します。  
+  
+ [!code-aspx-csharp[CustomHyperLinkAddAttributesToRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHyperLinkAddAttributesToRender/CS/custom_hyperlink_addattributestorendercs.aspx#1)]
+ [!code-aspx-vb[CustomHyperLinkAddAttributesToRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHyperLinkAddAttributesToRender/VB/custom_hyperlink_addattributestorendervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParsedSubObject">
+      <MemberSignature Language="C#" Value="protected override void AddParsedSubObject (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddParsedSubObject(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLink.AddParsedSubObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">解析された要素を表す <see cref="T:System.Object" />。</param>
+        <summary>要素が解析され、要素を追加するコントロールの通知、<see cref="T:System.Web.UI.WebControls.HyperLink" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム コントロールから派生している場合、このメソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.HyperLink>クラスです。  
+  
+ 入力オブジェクトがある場合、 <xref:System.Web.UI.LiteralControl>、および<xref:System.Web.UI.WebControls.HyperLink>コントロールに子コントロールがないし、入力オブジェクトは、設定に使用される、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>コントロールのプロパティです。 それ以外の場合、<xref:System.Web.UI.Control.AddParsedSubObject%2A>メソッド ベースの<xref:System.Web.UI.Control>クラスが呼び出され、指定したオブジェクトに追加、<xref:System.Web.UI.Control.Controls%2A>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.HyperLink.AddParsedSubObject%2A>カスタム メソッド<xref:System.Web.UI.WebControls.HyperLink>サーバーでは制御解析済みのオブジェクトがある場合、解析されたオブジェクトのテキストのプロパティには常に、text プロパティを設定するよう、 <xref:System.Web.UI.WebControls.Literal>、および空の文字列にそれ以外の場合。  
+  
+ [!code-aspx-csharp[CustomHyperLinkAddParsedSubObject#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHyperLinkAddParsedSubObject/CS/custom_hyperlink_addparsedsubobjectcs.aspx#1)]
+ [!code-aspx-vb[CustomHyperLinkAddParsedSubObject#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHyperLinkAddParsedSubObject/VB/custom_hyperlink_addparsedsubobjectvb.aspx#1)]  
+  
+ [!code-csharp[CustomHyperLinkAddParsedSubObject#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHyperLinkAddParsedSubObject/CS/custom_hyperlink_addparsedsubobject.cs#2)]
+ [!code-vb[CustomHyperLinkAddParsedSubObject#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHyperLinkAddParsedSubObject/VB/custom_hyperlink_addparsedsubobject.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageHeight">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.Unit ImageHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit ImageHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLink.ImageHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.WebControls.Unit), "")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ハイパーリンクは、イメージ、ハイパーリンクの高さを設定します。</summary>
+        <value>ハイパーリンクのイメージの高さ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string ImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLink.ImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のパスを表示するイメージ、<see cref="T:System.Web.UI.WebControls.HyperLink" />コントロール。</summary>
+        <value>表示するイメージへのパス、<see cref="T:System.Web.UI.WebControls.HyperLink" />コントロール。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HyperLink>コントロールはテキストまたはイメージとして表示されることができます。 使用して、<xref:System.Web.UI.WebControls.HyperLink.ImageUrl%2A>プロパティを表示するイメージを指定する、<xref:System.Web.UI.WebControls.HyperLink>コントロール。  
+  
+> [!NOTE]
+>  両方の<xref:System.Web.UI.WebControls.HyperLink.Text%2A>と<xref:System.Web.UI.WebControls.HyperLink.ImageUrl%2A>プロパティを設定、<xref:System.Web.UI.WebControls.HyperLink.ImageUrl%2A>プロパティが優先されます。 イメージが使用できない場合のテキスト、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>プロパティが表示されます。 ツールヒント機能をサポートするブラウザーで、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>プロパティ、ツールヒントにもなります。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Web.UI.WebControls.HyperLink.ImageUrl%2A>プロパティを表示するイメージへのパスを指定します。  
+  
+ [!code-aspx-csharp[Classic HyperLink.NavigateUrl Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HyperLink.NavigateUrl Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HyperLink.NavigateUrl Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HyperLink.NavigateUrl Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageWidth">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.Unit ImageWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit ImageWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLink.ImageWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.WebControls.Unit), "")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ハイパーリンクは、イメージ、ハイパーリンクの幅を設定します。</summary>
+        <value>ハイパーリンクのイメージの幅。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLink.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">前に保存された状態を格納するオブジェクト。</param>
+        <summary><see cref="M:System.Web.UI.WebControls.WebControl.SaveViewState" /> メソッドによって保存された前回の要求からビューステート情報を復元します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrl">
+      <MemberSignature Language="C#" Value="public string NavigateUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLink.NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するときにリンクする URL、<see cref="T:System.Web.UI.WebControls.HyperLink" />コントロールをクリックします。</summary>
+        <value>URL にリンクするときに、<see cref="T:System.Web.UI.WebControls.HyperLink" />コントロールをクリックします。 既定値は、空の文字列 (") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HyperLink.NavigateUrl%2A>ときに移動する URL を指定するプロパティ、<xref:System.Web.UI.WebControls.HyperLink>コントロールをクリックします。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Web.UI.WebControls.HyperLink.NavigateUrl%2A>にリンクするときに URL を指定するプロパティ、<xref:System.Web.UI.WebControls.HyperLink>コントロールがクリックされました。  
+  
+ [!code-aspx-csharp[Classic HyperLink.NavigateUrl Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HyperLink.NavigateUrl Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HyperLink.NavigateUrl Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HyperLink.NavigateUrl Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HyperLink.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントで表示する出力ストリーム。</param>
+        <summary>表示、<see cref="T:System.Web.UI.WebControls.HyperLink" />ページ上のコントロールです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.HyperLink.RenderContents%2A>カスタム サーバー内のメソッドを制御するいくつかのテキストを追加できるように、<xref:System.Web.UI.WebControls.HyperLink>コントロール。  
+  
+ [!code-aspx-csharp[CustomHyperLinkRenderContents#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHyperLinkRenderContents/CS/custom_hyperlink_rendercontentscs.aspx#1)]
+ [!code-aspx-vb[CustomHyperLinkRenderContents#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHyperLinkRenderContents/VB/custom_hyperlink_rendercontentsvb.aspx#1)]  
+  
+ [!code-csharp[CustomHyperLinkRenderContents#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHyperLinkRenderContents/CS/custom_hyperlink_rendercontents.cs#2)]
+ [!code-vb[CustomHyperLinkRenderContents#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHyperLinkRenderContents/VB/custom_hyperlink_rendercontents.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDisabledAttribute">
+      <MemberSignature Language="C#" Value="public override bool SupportsDisabledAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDisabledAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLink.SupportsDisabledAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの <see cref="P:System.Web.UI.WebControls.WebControl.IsEnabled" /> プロパティが <see langword="false" /> の場合、レンダリングされた HTML 要素の <see langword="disabled" /> 属性を "無効" に設定するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Web.UI.Control.RenderingCompatibility" />プロパティがより低い ASP.NET のバージョンを示す<c>4.0</c>、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが無効になっているときに ASP.NET がそのコントロールの HTML をどのように描画するかを示します。 場合は、このプロパティは`true`、ASP.NET は表示、`disabled`属性のコントロールを無効にします。 場合は、このプロパティは`false`、ASP.NET は表示、`class`属性のコントロールを無効にします。 詳細については、「<xref:System.Web.UI.WebControls.WebControl.SupportsDisabledAttribute%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLink.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.TargetConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはターゲット ウィンドウまたはフレームを表示するための Web ページの内容がリンクされているを設定すると、<see cref="T:System.Web.UI.WebControls.HyperLink" />コントロールをクリックします。</summary>
+        <value>ターゲット ウィンドウまたはフレームを Web ページを読み込むときにリンクされている、<see cref="T:System.Web.UI.WebControls.HyperLink" />コントロールをクリックします。 値必要がありますは英字で始まる次の表に示す特殊な値を除く (大文字)、a ~ z の範囲内でアンダー スコアで始まる。  
+  
+ <list type="table"><item><term><see langword="_blank" /></term><description>新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。  
+  
+ </description></item><item><term><see langword="_parent" /></term><description>直前のフレーム セットの親に内容を表示します。  
+  
+ </description></item><item><term><see langword="_search" /></term><description>[検索] ウィンドウの内容を表示します。  
+  
+ </description></item><item><term><see langword="_self" /></term><description>フォーカスのあるフレームのコンテンツをレンダリングします。  
+  
+ </description></item><item><term><see langword="_top" /></term><description>フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。  
+  
+ </description></item></list><block subset="none" type="note"><para>  
+ ブラウザーのマニュアルを参照するかどうかを<see langword="_search" />値はサポートされています。  たとえば、Microsoft Internet Explorer 5.0、以降のサポート、<see langword="_search" />ターゲット値。  
+  
+</para></block>  
+  
+ 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.HyperLink.Target%2A>ときにフレームまたは Web ページを表示するウィンドウを指定するプロパティがリンクされている、<xref:System.Web.UI.WebControls.HyperLink>コントロールがクリックされました。 Web ページを設定して指定した、<xref:System.Web.UI.WebControls.HyperLink.NavigateUrl%2A>プロパティです。  
+  
+ このプロパティが設定されていない場合は、ブラウザーまたはフォーカスがあるウィンドウを更新時に、<xref:System.Web.UI.WebControls.HyperLink>コントロールをクリックします。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.HyperLink.Target%2A>としてプロパティを表示、`target`属性。 `target`属性`anchor`要素は、XHTML 1.1 ドキュメント型定義で許可されていません。 設定しないでください、<xref:System.Web.UI.WebControls.HyperLink.Target%2A>プロパティ場合に表示される出力、 <xref:System.Web.UI.WebControls.HyperLink> XHTML 1.1 を準拠にする必要があります。 詳細については、トピックを参照してください[Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+>   
+>  ユーザー補助対応の Web ページを作成するときに使用しないことを強くお勧め、<xref:System.Web.UI.WebControls.HyperLink.Target%2A>を別のウィンドウを対象とするプロパティです。 詳細については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Web.UI.WebControls.HyperLink.Target%2A>ウィンドウまたはフレームに関連付けられているページ表示を指定するプロパティ、<xref:System.Web.UI.WebControls.HyperLink>コントロール。  
+  
+ [!code-aspx-csharp[Classic HyperLink.Target Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HyperLink.Target Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HyperLink.Target Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HyperLink.Target Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public virtual string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HyperLink.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のテキスト キャプション、<see cref="T:System.Web.UI.WebControls.HyperLink" />コントロール。</summary>
+        <value>テキスト キャプション、<see cref="T:System.Web.UI.WebControls.HyperLink" />コントロール。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HyperLink>コントロールはテキストまたはイメージとして表示されることができます。 使用して、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>プロパティを表示するテキストを指定する、<xref:System.Web.UI.WebControls.HyperLink>コントロール。  
+  
+ 両方の<xref:System.Web.UI.WebControls.HyperLink.Text%2A>と<xref:System.Web.UI.WebControls.HyperLink.ImageUrl%2A>プロパティを設定、<xref:System.Web.UI.WebControls.HyperLink.ImageUrl%2A>プロパティが優先されます。 イメージが使用できない場合のテキスト、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>プロパティが表示されます。 ツールヒント機能をサポートするブラウザーで、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>プロパティ、ツールヒントにもなります。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。 詳細については、次を参照してください。[検証サーバー コントロール構文](http://msdn.microsoft.com/en-us/96d2c59e-693c-4079-9b53-b3ff0d9e9133)です。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.HyperLink.Text%2A>プロパティを表示するテキストを指定する、<xref:System.Web.UI.WebControls.HyperLink>コントロール。  
+  
+ [!code-aspx-csharp[Classic HyperLink.Text Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HyperLink.Text Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HyperLink.Text Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HyperLink.Text Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

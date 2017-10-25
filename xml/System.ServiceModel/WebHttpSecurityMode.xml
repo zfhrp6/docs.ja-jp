@@ -1,0 +1,81 @@
+<Type Name="WebHttpSecurityMode" FullName="System.ServiceModel.WebHttpSecurityMode">
+  <TypeSignature Language="C#" Value="public enum WebHttpSecurityMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebHttpSecurityMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.WebHttpSecurityMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>HTTP 要求を受信するサービス エンドポイントを構成するために使用できるセキュリティのモードを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を使用して、HTTP 要求を受信する <xref:System.ServiceModel.WebHttpBinding> で構成されるエンドポイントによってトランスポート レベルのセキュリティが使用されるかどうかを指定します。 既定値は、None、セキュリティが使用されていないことを示します。  
+  
+ によって、トランスポートの値が指定されている場合、 <xref:System.ServiceModel.WebHttpBinding.%23ctor%28System.ServiceModel.WebHttpSecurityMode%29>、によって指定される設定し、<xref:System.ServiceModel.WebHttpSecurity.Transport%2A>プロパティは、サービス エンドポイントを有効になります。 <xref:System.ServiceModel.WebHttpSecurityMode> の値は、これを明示的なパラメーターとする <xref:System.ServiceModel.WebHttpBinding> コンストラクターにのみ設定されます。その値はバインディング インスタンスが作成された後は再び設定できません。  
+  
+ TransportCredentialOnly には、メッセージの整合性と機密性は提供されません。 これは、HTTP ベースのクライアント認証だけを提供します。 このモードを使用するときは、十分に注意する必要があります。 このモードは、トランスポート セキュリティが他の方法で提供され、クライアント認証だけが [!INCLUDE[indigo1](~/includes/indigo1-md.md)] インフラストラクチャで提供されている IPSec などの環境で使用する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.WebHttpSecurityMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.WebHttpSecurityMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WebHttpSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP 要求ではセキュリティが使用されないことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Transport">
+      <MemberSignature Language="C#" Value="Transport" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.WebHttpSecurityMode Transport = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.WebHttpSecurityMode.Transport" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WebHttpSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスポート レベルのセキュリティが HTTP 要求で使用されることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportCredentialOnly">
+      <MemberSignature Language="C#" Value="TransportCredentialOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.WebHttpSecurityMode TransportCredentialOnly = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.WebHttpSecurityMode.TransportCredentialOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WebHttpSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP ベースのクライアント認証だけが提供されることを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

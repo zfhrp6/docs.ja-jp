@@ -1,0 +1,463 @@
+<Type Name="ConnectionOptions" FullName="System.Management.ConnectionOptions">
+  <TypeSignature Language="C#" Value="public class ConnectionOptions : System.Management.ManagementOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectionOptions extends System.Management.ManagementOptions" />
+  <TypeSignature Language="DocId" Value="T:System.Management.ConnectionOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.ManagementOptions</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WMI 接続に必要なすべての設定を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、リモート コンピューターに接続し、リモート コンピューターのオペレーティング システムに関する情報が表示されます。 A<xref:System.Management.ConnectionOptions>が既定の接続オプションを使用してリモート コンピューターへの接続を作成します。  
+  
+ [!code-csharp[wminet_ConnectionOptions#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ConnectionOptions/cs/ConnectionOptions.cs#1)]
+ [!code-vb[wminet_ConnectionOptions#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ConnectionOptions/vb/ConnectionOptions.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ConnectionOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ConnectionOptions" />クラス接続操作は、既定値を使用します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、リモート コンピューターに接続し、リモート コンピューターのオペレーティング システムに関する情報が表示されます。 A<xref:System.Management.ConnectionOptions>が既定の接続オプションを使用してリモート コンピューターへの接続を作成します。  
+  
+ [!code-csharp[wminet_ConnectionOptions#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ConnectionOptions/cs/ConnectionOptions.cs#1)]
+ [!code-vb[wminet_ConnectionOptions#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ConnectionOptions/vb/ConnectionOptions.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionOptions (string locale, string username, System.Security.SecureString password, string authority, System.Management.ImpersonationLevel impersonation, System.Management.AuthenticationLevel authentication, bool enablePrivileges, System.Management.ManagementNamedValueCollection context, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string locale, string username, class System.Security.SecureString password, string authority, valuetype System.Management.ImpersonationLevel impersonation, valuetype System.Management.AuthenticationLevel authentication, bool enablePrivileges, class System.Management.ManagementNamedValueCollection context, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ConnectionOptions.#ctor(System.String,System.String,System.Security.SecureString,System.String,System.Management.ImpersonationLevel,System.Management.AuthenticationLevel,System.Boolean,System.Management.ManagementNamedValueCollection,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="locale" Type="System.String" />
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.Security.SecureString" />
+        <Parameter Name="authority" Type="System.String" />
+        <Parameter Name="impersonation" Type="System.Management.ImpersonationLevel" />
+        <Parameter Name="authentication" Type="System.Management.AuthenticationLevel" />
+        <Parameter Name="enablePrivileges" Type="System.Boolean" />
+        <Parameter Name="context" Type="System.Management.ManagementNamedValueCollection" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="locale">接続に使用するロケール。</param>
+        <param name="username">接続に使用するユーザー名。 Null の場合、現在ログオンしているユーザーの資格情報が使用されます。</param>
+        <param name="password">特定のユーザー名のパスワード。 ユーザー名も null である場合、現在ログオンしているユーザーを使用する資格情報になります。</param>
+        <param name="authority">指定したユーザーの認証に使用する機関です。</param>
+        <param name="impersonation">接続に使用する COM 偽装レベル。</param>
+        <param name="authentication">接続に使用する COM 認証レベル。</param>
+        <param name="enablePrivileges">特殊なユーザー特権を有効にする場合は trueそれ以外の場合は false です。 このパラメーターは、特別な Windows NT ユーザー特権を必要とする操作を実行するときにのみ使用する必要があります。</param>
+        <param name="context">プロバイダーに渡されるプロバイダー固有の名前付きの値のペア オブジェクトです。</param>
+        <param name="timeout">将来使用するために予約されています。</param>
+        <summary>新しい接続オプションを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionOptions (string locale, string username, string password, string authority, System.Management.ImpersonationLevel impersonation, System.Management.AuthenticationLevel authentication, bool enablePrivileges, System.Management.ManagementNamedValueCollection context, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string locale, string username, string password, string authority, valuetype System.Management.ImpersonationLevel impersonation, valuetype System.Management.AuthenticationLevel authentication, bool enablePrivileges, class System.Management.ManagementNamedValueCollection context, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ConnectionOptions.#ctor(System.String,System.String,System.String,System.String,System.Management.ImpersonationLevel,System.Management.AuthenticationLevel,System.Boolean,System.Management.ManagementNamedValueCollection,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="locale" Type="System.String" />
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="authority" Type="System.String" />
+        <Parameter Name="impersonation" Type="System.Management.ImpersonationLevel" />
+        <Parameter Name="authentication" Type="System.Management.AuthenticationLevel" />
+        <Parameter Name="enablePrivileges" Type="System.Boolean" />
+        <Parameter Name="context" Type="System.Management.ManagementNamedValueCollection" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="locale">接続に使用するロケール。</param>
+        <param name="username">接続に使用するユーザー名。 Null の場合、現在ログオンしているユーザーの資格情報が使用されます。</param>
+        <param name="password">特定のユーザー名のパスワード。 ユーザー名も null である場合、現在ログオンしているユーザーを使用する資格情報になります。</param>
+        <param name="authority">指定したユーザーの認証に使用する機関です。</param>
+        <param name="impersonation">接続に使用する COM 偽装レベル。</param>
+        <param name="authentication">接続に使用する COM 認証レベル。</param>
+        <param name="enablePrivileges">
+          <see langword="true" />特殊なユーザー特権を有効にするにはそれ以外の場合、<see langword="false" />です。 このパラメーターは、特別な Windows NT ユーザー特権を必要とする操作を実行するときにのみ使用する必要があります。</param>
+        <param name="context">プロバイダーに渡されるプロバイダー固有の名前付きの値のペア オブジェクトです。</param>
+        <param name="timeout">将来使用するために予約されています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ConnectionOptions" />指定された値を使用して、WMI 接続に使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、リモート コンピューターに接続し、リモート コンピューターのオペレーティング システムに関する情報が表示されます。 A<xref:System.Management.ConnectionOptions>が適切な接続オプションを使用してリモート コンピューターへの接続を作成します。  
+  
+ [!code-csharp[wminet_ConnectionOptions-9#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ConnectionOptions-9/cs/ConnectionOptions-9.cs#1)]
+ [!code-vb[wminet_ConnectionOptions-9#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ConnectionOptions-9/vb/ConnectionOptions-9.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authentication">
+      <MemberSignature Language="C#" Value="public System.Management.AuthenticationLevel Authentication { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Management.AuthenticationLevel Authentication" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ConnectionOptions.Authentication" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.AuthenticationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの接続での操作をするための COM 認証レベルを設定します。</summary>
+        <value>返します、<see cref="T:System.Management.AuthenticationLevel" />ローカル コンピューターまたはリモート コンピューターに接続するための COM 認証レベルを示す列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスが Windows XP の中に、接続レベルの認証を要求する Windows 2000 で、次に、WMI し、パケット レベルの認証を要求する高くします。 クライアントは、特定の認証設定を必要とする場合、この特定の接続の認証レベルを制御するこのプロパティを使用できます。 たとえば、プロパティ設定できます<xref:System.Management.AuthenticationLevel?displayProperty=nameWithType>クライアントで必要なすべての通信を暗号化する場合。  
+  
+## <a name="property-value"></a>プロパティ値  
+ この接続での操作をするための COM 認証レベル。 既定値は<xref:System.Management.AuthenticationLevel?displayProperty=nameWithType>クライアントが、サーバーからの要求の認証レベルを使用する標準の DCOM のネゴシエーション プロセスに従って示します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、リモート コンピューターに接続し、リモート コンピューターのオペレーティング システムに関する情報が表示されます。 A<xref:System.Management.ConnectionOptions>が適切な接続オプションを使用してリモート コンピューターへの接続を作成します。  
+  
+ [!code-csharp[wminet_ConnectionOptions_Authentication#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ConnectionOptions_Authentication/cs/ConnectionOptions_Authentication.cs#1)]
+ [!code-vb[wminet_ConnectionOptions_Authentication#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ConnectionOptions_Authentication/vb/ConnectionOptions_Authentication.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authority">
+      <MemberSignature Language="C#" Value="public string Authority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Authority" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ConnectionOptions.Authority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したユーザーの認証に使用する機関を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />指定したユーザーの認証に使用する証明機関を定義します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティは次のように渡す必要があります。 文字列で始まる場合"Kerberos:"、Kerberos 認証を使用すると、このプロパティは、Kerberos プリンシパル名を含める必要があります。 次に例を示します。  
+  
+```  
+Kerberos:<principal name>  
+```  
+  
+ プロパティの値が文字列で始まる場合"NTLMDOMAIN:"、NTLM 認証を使用して、プロパティは、NTLM ドメイン名を含める必要があります。 次に例を示します。  
+  
+```  
+NTLMDOMAIN:<domain name>  
+```  
+  
+ プロパティが null の場合は、NTLM 認証を使用して、現在のユーザー NTLM ドメインが使用されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ ない場合`null`、このプロパティは、ユーザーの認証を取得する対象の Windows NT または Windows 2000 ドメインの名前を含めることができます。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、リモート コンピューターに接続し、リモート コンピューターのオペレーティング システムに関する情報が表示されます。 A<xref:System.Management.ConnectionOptions>が適切な接続オプションを使用してリモート コンピューターへの接続を作成します。  
+  
+ [!code-csharp[wminet_ConnectionOptions_Authority#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ConnectionOptions_Authority/cs/ConnectionOptions_Authority.cs#1)]
+ [!code-vb[wminet_ConnectionOptions_Authority#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ConnectionOptions_Authority/vb/ConnectionOptions_Authority.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ConnectionOptions.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを返します。</summary>
+        <returns>複製されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnablePrivileges">
+      <MemberSignature Language="C#" Value="public bool EnablePrivileges { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnablePrivileges" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ConnectionOptions.EnablePrivileges" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続操作で有効にするユーザーの特権が必要かどうかを示す値を設定します。 このプロパティは、実行される操作 (たとえば、コンピューターの再起動) 有効にする特定のユーザー特権が必要な場合にのみ使用する必要があります。</summary>
+        <value>返します、<see cref="T:System.Boolean" />ユーザー特権を接続操作を有効にする必要があるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`ユーザー特権を接続操作を有効にする必要がある場合それ以外の場合、`false`です。 既定値は `false` です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Impersonation">
+      <MemberSignature Language="C#" Value="public System.Management.ImpersonationLevel Impersonation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Management.ImpersonationLevel Impersonation" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ConnectionOptions.Impersonation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ImpersonationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの接続での操作に使用する COM 偽装レベルを設定します。</summary>
+        <value>返します、 <see cref="T:System.Management.ImpersonationLevel" /> WMI への接続に使用する偽装レベルを示す列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Management.ImpersonationLevel?displayProperty=nameWithType>設定は、プロバイダーは、信頼されたアプリケーションまたはサービスする場合に便利です。 必要がある、クライアント id の実行に、プロバイダーと、要求された操作に対するアクセス チェックをします。 ただし、何らかの理由により、プロバイダーが信頼できない場合、クライアントを偽装することができる可能性がありますセキュリティが脆弱になります。 このような場合は、ことをお勧めすると、このプロパティがなど、小さい値に、クライアントによって設定する<xref:System.Management.ImpersonationLevel?displayProperty=nameWithType>です。 十分なアクセス許可またはアクセス チェックを実行する機能を利用できない不足によって、要求された操作を実行するプロバイダーの障害が発生に注意してください。  
+  
+## <a name="property-value"></a>プロパティ値  
+ この接続での操作に使用する COM 偽装レベル。 既定値は<xref:System.Management.ImpersonationLevel?displayProperty=nameWithType>、この接続で要求された操作を実行する場合に、WMI プロバイダーが、クライアントを偽装できることを示します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、リモート コンピューターに接続し、リモート コンピューターのオペレーティング システムに関する情報が表示されます。 A<xref:System.Management.ConnectionOptions>が適切な接続オプションを使用してリモート コンピューターへの接続を作成します。  
+  
+ [!code-csharp[wminet_ConnectionOptions_Impersonation#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ConnectionOptions_Impersonation/cs/ConnectionOptions_Impersonation.cs#1)]
+ [!code-vb[wminet_ConnectionOptions_Impersonation#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ConnectionOptions_Impersonation/vb/ConnectionOptions_Impersonation.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Locale">
+      <MemberSignature Language="C#" Value="public string Locale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Locale" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ConnectionOptions.Locale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続操作で使用するロケールを設定します。</summary>
+        <value>返します、 <see cref="T:System.String" /> WMI への接続のロケールで使用される値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Microsoft ロケールの識別子、文字列の形式は"ms _*xxx*"ここで、 *xxx*を示すロケール Id (LCID)。 たとえば、アメリカ英語は"MS_409"として表示される 16 進数形式で文字列をです。  
+  
+## <a name="property-value"></a>プロパティ値  
+ 既定値は、DEFAULTLOCALE です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、リモート コンピューターに接続し、リモート コンピューターのオペレーティング システムに関する情報が表示されます。 A<xref:System.Management.ConnectionOptions>が適切な接続オプションを使用してリモート コンピューターへの接続を作成します。  
+  
+ [!code-csharp[wminet_ConnectionOptions_Locale#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ConnectionOptions_Locale/cs/ConnectionOptions_Locale.cs#1)]
+ [!code-vb[wminet_ConnectionOptions_Locale#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ConnectionOptions_Locale/vb/ConnectionOptions_Locale.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Password">
+      <MemberSignature Language="C#" Value="public string Password { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Password" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ConnectionOptions.Password" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したユーザーのパスワードを設定します。</summary>
+        <value>返します、 <see cref="T:System.String" /> WMI への接続のパスワードを使用する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の文字列 ("")、有効な長さ 0 のパスワードを指定します。  
+  
+ セキュリティの脅威は、パスワードをハードコーディングします。  パスワードの暗号化を設定すると、パスワードのユーザーの入力を求めるなどのセキュリティ予防措置を使用して、<xref:System.Management.ConnectionOptions.Password%2A>プロパティです。  
+  
+## <a name="property-value"></a>プロパティ値  
+ 既定値は `null` です。 ユーザー名も場合`null`、使用される資格情報には、現在ログオンしているユーザーになります。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurePassword">
+      <MemberSignature Language="C#" Value="public System.Security.SecureString SecurePassword { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.SecureString SecurePassword" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ConnectionOptions.SecurePassword" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecureString</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したユーザーのパスワードを設定します。</summary>
+        <value>WMI への接続のパスワードを使用する SecureString 値を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Username">
+      <MemberSignature Language="C#" Value="public string Username { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Username" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ConnectionOptions.Username" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または接続操作で使用するユーザー名を設定します。</summary>
+        <value>返します、 <see cref="T:System.String" /> WMI への接続にユーザー名として使用する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー名は、現在のドメイン以外からは場合、文字列は、円記号で区切られたユーザー名とドメインの名前を含めることがあります。 文字列 'username' ="EnterDomainHere\\\EnterUsernameHere"です。 `strUser`パラメーターが空の文字列にすることはできません。  
+  
+## <a name="property-value"></a>プロパティ値  
+ `null`接続には、現在ログオンしているユーザーが使用する場合それ以外の場合、ユーザー名を表す文字列。 既定値は `null` です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、リモート コンピューターに接続し、リモート コンピューターのオペレーティング システムに関する情報が表示されます。 A<xref:System.Management.ConnectionOptions>が適切な接続オプションを使用してリモート コンピューターへの接続を作成します。  
+  
+ [!code-csharp[wminet_ConnectionOptions_UserName#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ConnectionOptions_UserName/cs/ConnectionOptions_Username.cs#1)]
+ [!code-vb[wminet_ConnectionOptions_UserName#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ConnectionOptions_UserName/vb/ConnectionOptions_Username.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

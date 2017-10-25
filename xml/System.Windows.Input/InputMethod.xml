@@ -1,0 +1,865 @@
+<Type Name="InputMethod" FullName="System.Windows.Input.InputMethod">
+  <TypeSignature Language="C#" Value="public class InputMethod : System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InputMethod extends System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.InputMethod" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>管理および音声と手書き文字などの代替テキスト入力方式のサポートを提供するテキスト サービス フレームワークと対話するための機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputMethod>オブジェクト。  
+  
+ [!code-csharp[languageManager#2](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[languageManager#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanShowConfigurationUI">
+      <MemberSignature Language="C#" Value="public bool CanShowConfigurationUI { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanShowConfigurationUI" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputMethod.CanShowConfigurationUI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この入力方法が構成を表示できるかどうかを示す値を取得[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]です。</summary>
+        <value>**true**場合構成[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]表示されている、それ以外は、 **false**です。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputMethod.CanShowConfigurationUI%2A>プロパティ構成 UI が表示できるかを判断します。  
+  
+ [!code-csharp[languageManager#2](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[languageManager#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanShowRegisterWordUI">
+      <MemberSignature Language="C#" Value="public bool CanShowRegisterWordUI { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanShowRegisterWordUI" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputMethod.CanShowRegisterWordUI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この入力方法であるかどうかを示す値を表示できます取得単語登録[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]です。</summary>
+        <value>**true**場合登録用のワード[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]表示されている、それ以外は、 **false**です。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.InputMethod Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.InputMethod Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputMethod.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコンテキストに関連付けられているすべての現在アクティブな入力メソッドへの参照を取得します。</summary>
+        <value>参照、 <see cref="T:System.Windows.Input.InputMethod" /> 、現在のコンテキストに関連付けられているオブジェクトまたは**null**アクティブな入力方法がない場合。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputMethod.Current%2A>プロパティです。  
+  
+ [!code-csharp[languageManager#2](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[languageManager#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInputScope">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.InputScope GetInputScope (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Input.InputScope GetInputScope(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.GetInputScope(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputScope</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target">入力スコープの取得対象となる依存関係オブジェクト。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.InputScope" /> 添付プロパティの値を返します。</summary>
+        <returns><see cref="T:System.Windows.Input.InputScope" />指定した依存関係オブジェクトの現在の入力スコープを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsInputMethodEnabled">
+      <MemberSignature Language="C#" Value="public static bool GetIsInputMethodEnabled (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsInputMethodEnabled(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.GetIsInputMethodEnabled(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target">値を取得する対象の依存関係オブジェクト<see cref="P:System.Windows.Input.InputMethod.IsInputMethodEnabled" />です。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.IsInputMethodEnabled" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値<see cref="P:System.Windows.Input.InputMethod.IsInputMethodEnabled" />の指定した依存関係オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsInputMethodSuspended">
+      <MemberSignature Language="C#" Value="public static bool GetIsInputMethodSuspended (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsInputMethodSuspended(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.GetIsInputMethodSuspended(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target">値を取得する対象の依存関係オブジェクト<see cref="P:System.Windows.Input.InputMethod.IsInputMethodSuspended" />です。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.IsInputMethodSuspended" /> 添付プロパティの値を返します。</summary>
+        <returns>現在の値<see cref="P:System.Windows.Input.InputMethod.IsInputMethodSuspended" />の指定した依存関係オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredImeConversionMode">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.ImeConversionModeValues GetPreferredImeConversionMode (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Input.ImeConversionModeValues GetPreferredImeConversionMode(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.GetPreferredImeConversionMode(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ImeConversionModeValues</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target">値を取得する対象の依存関係オブジェクト<see cref="P:System.Windows.Input.InputMethod.PreferredImeConversionMode" />です。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.PreferredImeConversionMode" /> 添付プロパティの値を返します。</summary>
+        <returns>メンバー、<see cref="T:System.Windows.Input.ImeConversionModeValues" />現在を指定する列挙体<see cref="P:System.Windows.Input.InputMethod.PreferredImeConversionMode" />の指定した依存関係オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredImeSentenceMode">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.ImeSentenceModeValues GetPreferredImeSentenceMode (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Input.ImeSentenceModeValues GetPreferredImeSentenceMode(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.GetPreferredImeSentenceMode(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ImeSentenceModeValues</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target">値を取得する対象の依存関係オブジェクト<see cref="P:System.Windows.Input.InputMethod.PreferredImeSentenceMode" />です。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.PreferredImeSentenceMode" /> 添付プロパティの値を返します。</summary>
+        <returns>メンバー、<see cref="T:System.Windows.Input.ImeSentenceModeValues" />現在を指定する列挙体<see cref="P:System.Windows.Input.InputMethod.PreferredImeSentenceMode" />の指定した依存関係オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredImeState">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.InputMethodState GetPreferredImeState (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Input.InputMethodState GetPreferredImeState(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.GetPreferredImeState(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputMethodState</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target">値を取得する対象の依存関係オブジェクト<see cref="P:System.Windows.Input.InputMethod.PreferredImeState" />です。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.PreferredImeState" /> 添付プロパティの値を返します。</summary>
+        <returns>メンバー、<see cref="T:System.Windows.Input.InputMethodState" />現在を指定する列挙体<see cref="P:System.Windows.Input.InputMethod.PreferredImeState" />の指定した依存関係オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HandwritingState">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.InputMethodState HandwritingState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.InputMethodState HandwritingState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputMethod.HandwritingState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputMethodState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの入力方法の手書き入力の現在の状態を設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.Input.InputMethodState" />手書き入力の現在の入力方式の状態を指定します。  
+  
+ 既定値は <see cref="F:System.Windows.Input.InputMethodState.Off" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputMethod.Current%2A>プロパティです。  
+  
+ [!code-csharp[languageManager#2](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[languageManager#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImeConversionMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ImeConversionModeValues ImeConversionMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.ImeConversionModeValues ImeConversionMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputMethod.ImeConversionMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ImeConversionModeValues</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの入力方法に関連付けられている入力方式エディターの現在の変換モードを設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.Input.ImeConversionModeValues" />変換モードを指定する列挙です。  
+  
+ 既定値は <see cref="F:System.Windows.Input.ImeConversionModeValues.Alphanumeric" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImeSentenceMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ImeSentenceModeValues ImeSentenceMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.ImeSentenceModeValues ImeSentenceMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputMethod.ImeSentenceMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ImeSentenceModeValues</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの入力方法に関連付けられている入力方式エディターの文の現在のモードを設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.Input.ImeSentenceModeValues" />センテンス モードを指定する列挙体です。  
+  
+ 既定値は <see cref="F:System.Windows.Input.ImeSentenceModeValues.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputMethod.ImeSentenceMode%2A>プロパティです。  
+  
+ [!code-csharp[languageManager#2](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[languageManager#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImeState">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.InputMethodState ImeState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.InputMethodState ImeState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputMethod.ImeState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputMethodState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの入力方法に関連付けられている入力方式エディターの現在の状態を設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.Input.InputMethodState" />この入力方法に関連付けられている input method editor の状態を指定します。  
+  
+ 既定値は <see cref="F:System.Windows.Input.InputMethodState.Off" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputScopeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty InputScopeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty InputScopeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.InputMethod.InputScopeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.InputMethod.InputScope" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInputMethodEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsInputMethodEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsInputMethodEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.InputMethod.IsInputMethodEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.InputMethod.IsInputMethodEnabled" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInputMethodSuspendedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsInputMethodSuspendedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsInputMethodSuspendedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.InputMethod.IsInputMethodSuspendedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.InputMethod.IsInputMethodSuspended" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MicrophoneState">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.InputMethodState MicrophoneState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.InputMethodState MicrophoneState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputMethod.MicrophoneState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputMethodState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの入力方法のマイクの入力の現在の状態を設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.Input.InputMethodState" />マイクの入力の現在の入力方式の状態を指定します。  
+  
+ 既定値は <see cref="F:System.Windows.Input.InputMethodState.Off" /> です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">マイクの状態に関する情報にアクセスします。  関連する列挙値: <see cref="T:System.Security.Permissions.PermissionState" />.**無制限**です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredImeConversionModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PreferredImeConversionModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PreferredImeConversionModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.InputMethod.PreferredImeConversionModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.InputMethod.PreferredImeConversionMode" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredImeSentenceModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PreferredImeSentenceModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PreferredImeSentenceModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.InputMethod.PreferredImeSentenceModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.InputMethod.PreferredImeSentenceMode" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredImeStateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PreferredImeStateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PreferredImeStateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.InputMethod.PreferredImeStateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.InputMethod.PreferredImeState" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetInputScope">
+      <MemberSignature Language="C#" Value="public static void SetInputScope (System.Windows.DependencyObject target, System.Windows.Input.InputScope value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetInputScope(class System.Windows.DependencyObject target, class System.Windows.Input.InputScope value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.SetInputScope(System.Windows.DependencyObject,System.Windows.Input.InputScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Input.InputScope" />
+      </Parameters>
+      <Docs>
+        <param name="target">設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Input.InputMethod.InputScope" />添付プロパティ。</param>
+        <param name="value"><see cref="P:System.Windows.Input.InputMethod.InputScope" /> 添付プロパティの新しい値を表す <see cref="T:System.Windows.Input.InputScope" /> オブジェクト。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.InputScope" /> 添付プロパティの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputMethod.SetInputScope%2A>メソッドを呼び出せば確認、<xref:System.Windows.Input.InputScope>に関連付けられている、<xref:System.Windows.Controls.TextBox>オブジェクト。  
+  
+ [!code-csharp[languageManager#2](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[languageManager#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsInputMethodEnabled">
+      <MemberSignature Language="C#" Value="public static void SetIsInputMethodEnabled (System.Windows.DependencyObject target, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIsInputMethodEnabled(class System.Windows.DependencyObject target, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.SetIsInputMethodEnabled(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="target">設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Input.InputMethod.IsInputMethodEnabled" />添付プロパティ。</param>
+        <param name="value"><see cref="P:System.Windows.Input.InputMethod.IsInputMethodEnabled" /> 添付プロパティの新しい値。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.IsInputMethodEnabled" /> 添付プロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsInputMethodSuspended">
+      <MemberSignature Language="C#" Value="public static void SetIsInputMethodSuspended (System.Windows.DependencyObject target, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIsInputMethodSuspended(class System.Windows.DependencyObject target, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.SetIsInputMethodSuspended(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="target">設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Input.InputMethod.IsInputMethodSuspended" />添付プロパティ。</param>
+        <param name="value"><see cref="P:System.Windows.Input.InputMethod.IsInputMethodSuspended" /> 添付プロパティの新しい値。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.IsInputMethodSuspended" /> 添付プロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPreferredImeConversionMode">
+      <MemberSignature Language="C#" Value="public static void SetPreferredImeConversionMode (System.Windows.DependencyObject target, System.Windows.Input.ImeConversionModeValues value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPreferredImeConversionMode(class System.Windows.DependencyObject target, valuetype System.Windows.Input.ImeConversionModeValues value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.SetPreferredImeConversionMode(System.Windows.DependencyObject,System.Windows.Input.ImeConversionModeValues)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Input.ImeConversionModeValues" />
+      </Parameters>
+      <Docs>
+        <param name="target">設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Input.InputMethod.PreferredImeConversionMode" />添付プロパティ。</param>
+        <param name="value"><see cref="P:System.Windows.Input.InputMethod.PreferredImeConversionMode" /> 添付プロパティの新しい値を表す <see cref="T:System.Windows.Input.ImeConversionModeValues" /> 列挙体のメンバー。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.PreferredImeConversionMode" /> 添付プロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPreferredImeSentenceMode">
+      <MemberSignature Language="C#" Value="public static void SetPreferredImeSentenceMode (System.Windows.DependencyObject target, System.Windows.Input.ImeSentenceModeValues value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPreferredImeSentenceMode(class System.Windows.DependencyObject target, valuetype System.Windows.Input.ImeSentenceModeValues value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.SetPreferredImeSentenceMode(System.Windows.DependencyObject,System.Windows.Input.ImeSentenceModeValues)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Input.ImeSentenceModeValues" />
+      </Parameters>
+      <Docs>
+        <param name="target">設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Input.InputMethod.PreferredImeSentenceMode" />添付プロパティ。</param>
+        <param name="value"><see cref="P:System.Windows.Input.InputMethod.PreferredImeSentenceMode" /> 添付プロパティの新しい値を表す <see cref="T:System.Windows.Input.ImeConversionModeValues" /> 列挙体のメンバー。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.PreferredImeSentenceMode" /> 添付プロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPreferredImeState">
+      <MemberSignature Language="C#" Value="public static void SetPreferredImeState (System.Windows.DependencyObject target, System.Windows.Input.InputMethodState value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPreferredImeState(class System.Windows.DependencyObject target, valuetype System.Windows.Input.InputMethodState value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.SetPreferredImeState(System.Windows.DependencyObject,System.Windows.Input.InputMethodState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Input.InputMethodState" />
+      </Parameters>
+      <Docs>
+        <param name="target">設定する対象の依存関係オブジェクト、<see cref="P:System.Windows.Input.InputMethod.PreferredImeState" />添付プロパティ。</param>
+        <param name="value"><see cref="P:System.Windows.Input.InputMethod.PreferredImeState" /> 添付プロパティの新しい値を表す <see cref="T:System.Windows.Input.ImeConversionModeValues" /> 列挙体のメンバー。</param>
+        <summary>指定した依存関係オブジェクトの <see cref="P:System.Windows.Input.InputMethod.PreferredImeState" /> 添付プロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">いつ発生する<paramref name="target" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowConfigureUI">
+      <MemberSignature Language="C#" Value="public void ShowConfigureUI ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowConfigureUI() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.ShowConfigureUI" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成を表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]現在アクティブなキーボードのテキスト サービスに関連付けられています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowConfigureUI">
+      <MemberSignature Language="C#" Value="public void ShowConfigureUI (System.Windows.UIElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowConfigureUI(class System.Windows.UIElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.ShowConfigureUI(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">A<see cref="T:System.Windows.UIElement" />構成の親要素として使用される[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。  このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <summary>構成を表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]、現在アクティブなキーボード テキスト サービスを使用して、指定したに関連付けられている<see cref="T:System.Windows.UIElement" />構成の親要素として[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowRegisterWordUI">
+      <MemberSignature Language="C#" Value="public void ShowRegisterWordUI ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowRegisterWordUI() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.ShowRegisterWordUI" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表示単語登録[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]現在アクティブなキーボードのテキスト サービスに関連付けられています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowRegisterWordUI">
+      <MemberSignature Language="C#" Value="public void ShowRegisterWordUI (string registeredText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowRegisterWordUI(string registeredText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.ShowRegisterWordUI(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="registeredText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="registeredText">登録する値を指定する文字列。</param>
+        <summary>表示単語登録[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]現在アクティブなキーボードのテキスト サービスに関連付けられています。  登録する既定値として指定した文字列を受け取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値では通常*registeredText*単語登録を事前設定に使用されます[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowRegisterWordUI">
+      <MemberSignature Language="C#" Value="public void ShowRegisterWordUI (System.Windows.UIElement element, string registeredText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShowRegisterWordUI(class System.Windows.UIElement element, string registeredText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputMethod.ShowRegisterWordUI(System.Windows.UIElement,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="registeredText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="element">A<see cref="T:System.Windows.UIElement" />単語登録の親要素として使用される[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。  このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <param name="registeredText">登録する値を指定する文字列。</param>
+        <summary>表示単語登録[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]現在アクティブなキーボードのテキスト サービスに関連付けられています。  既定値を登録して、指定したとして指定した文字列を受け取ります<see cref="T:System.Windows.UIElement" />構成の親要素として[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値では通常*registeredText*単語登録を事前設定に使用されます[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeechMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.SpeechMode SpeechMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.SpeechMode SpeechMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputMethod.SpeechMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.SpeechMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの入力方法の音声モードを設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.Input.SpeechMode" />現在の音声モードを指定する列挙です。  
+  
+ 既定値は <see cref="F:System.Windows.Input.SpeechMode.Indeterminate" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Input.InputMethod.SpeechMode%2A>プロパティです。  
+  
+ [!code-csharp[languageManager#2](~/samples/snippets/csharp/VS_Snippets_Wpf/languageManager/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[languageManager#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/languageManager/visualbasic/window1.xaml.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">音声モードの設定に関する情報にアクセスする権限。  関連する列挙値: <see cref="T:System.Security.Permissions.PermissionState" />.**無制限**です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="StateChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.Input.InputMethodStateChangedEventHandler StateChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Input.InputMethodStateChangedEventHandler StateChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.InputMethod.StateChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputMethodStateChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに入力方式の状態 (によって表される、<see cref="P:System.Windows.Input.InputMethod.ImeState" />プロパティ) の変更。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

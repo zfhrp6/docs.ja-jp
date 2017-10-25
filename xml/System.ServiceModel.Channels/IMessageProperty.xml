@@ -1,0 +1,65 @@
+<Type Name="IMessageProperty" FullName="System.ServiceModel.Channels.IMessageProperty">
+  <TypeSignature Language="C#" Value="public interface IMessageProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMessageProperty" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IMessageProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージに対するプロパティのセットを記述するために実装できるインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスを実装することで、メッセージ プロパティを作成して、実行時にそれをメッセージに添付することができます。  
+  
+ このインターフェイスを実装するオブジェクトを <xref:System.ServiceModel.Channels.Message.Properties%2A> に追加すると、オブジェクトは参照ではなく、値で追加されます。 その後、このメッセージ インスタンスのメッセージ プロパティのユーザーは、すべてのメッセージで単一のオブジェクトを共有するのではなく、複製することで他のメッセージにこのオブジェクトをコピーできます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateCopy">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.IMessageProperty CreateCopy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IMessageProperty CreateCopy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IMessageProperty.CreateCopy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IMessageProperty</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのコピーを作成します。</summary>
+        <returns>A<see cref="T:System.ServiceModel.Channels.IMessageProperty" />現在のインスタンスのコピーであるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、このインターフェイスの実装が作成されるたびに呼び出されます。 これは、このインターフェイスを実装するオブジェクトをカスタム プロパティとして <xref:System.ServiceModel.Channels.Message.Properties%2A> に追加すると、発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

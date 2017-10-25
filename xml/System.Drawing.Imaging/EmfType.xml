@@ -1,0 +1,73 @@
+<Type Name="EmfType" FullName="System.Drawing.Imaging.EmfType">
+  <TypeSignature Language="C#" Value="public enum EmfType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EmfType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.EmfType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>拡張メタファイル (EMF) ファイルに格納されているレコードの種類を指定します。 複数のコンス トラクター内でこの列挙を使用、<see cref="T:System.Drawing.Imaging.Metafile" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ GDI + の強化された Windows メタファイル イメージ形 (EMF) を使用します。 EMF 形式には、メタファイル内のデータを埋め込むためのコメント機構が含まれています。 GDI + EMF ファイル内のレコードを埋め込むためには、このコメント メカニズムが使用されます。 GDI + データを含む EMF ファイルは、EMF + ファイルと呼ばれます。 コメントのデータを認識しないアプリケーションでは、コメント レコードをスキップし、操作を理解しているレコードを表示します。 場合は、EMF + ファイルは再生 GDI + から GDI + のレコードがメタファイルを表示するために使用されます。それ以外の場合、GDI レコード (存在する場合) が使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EmfOnly">
+      <MemberSignature Language="C#" Value="EmfOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EmfType EmfOnly = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EmfType.EmfOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EmfType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタファイル内のすべてのレコードを EMF レコードは、GDI または GDI + で表示できることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EmfPlusDual">
+      <MemberSignature Language="C#" Value="EmfPlusDual" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EmfType EmfPlusDual = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EmfType.EmfPlusDual" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EmfType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>EMF + のすべてのレコード、メタファイルが代替の EMF レコードに関連付けられているを指定します。 型のメタファイル<see cref="F:System.Drawing.Imaging.EmfType.EmfPlusDual" />GDI でまたは GDI + で表示できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EmfPlusOnly">
+      <MemberSignature Language="C#" Value="EmfPlusOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EmfType EmfPlusOnly = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EmfType.EmfPlusOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EmfType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタファイル内のすべてのレコードを EMF + レコード、GDI + では GDI ではなく表示できることを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

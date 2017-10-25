@@ -1,0 +1,168 @@
+<Type Name="CmdLineOptionParser" FullName="Microsoft.JScript.CmdLineOptionParser">
+  <TypeSignature Language="C#" Value="public class CmdLineOptionParser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CmdLineOptionParser extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.CmdLineOptionParser" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コマンド ライン コンパイラ jsc.exe を指定するオプションが正しく書式設定、および存在する場合、引数の読み取り回数が含まれるかどうかを判断します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CmdLineOptionParser ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.CmdLineOptionParser.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.JScript.CmdLineOptionParser" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsArgumentOption">
+      <MemberSignature Language="C#" Value="public static string IsArgumentOption (string option, string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string IsArgumentOption(string option, string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.CmdLineOptionParser.IsArgumentOption(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="option" Type="System.String" />
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="option">ユーザーが指定したコマンド ライン オプションです。</param>
+        <param name="prefix">オプション名。</param>
+        <summary>指定したコマンド ライン オプションの引数を取得します。 1 つだけの名前を持つなどのオプションに適用される<c>/out:&lt;filename&gt;</c>です。</summary>
+        <returns>引数は、""場合は、引数が指定された、または null の場合は、オプションまたは引数形式が正しくありません。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsArgumentOption">
+      <MemberSignature Language="C#" Value="public static string IsArgumentOption (string option, string shortPrefix, string longPrefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string IsArgumentOption(string option, string shortPrefix, string longPrefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.CmdLineOptionParser.IsArgumentOption(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="option" Type="System.String" />
+        <Parameter Name="shortPrefix" Type="System.String" />
+        <Parameter Name="longPrefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="option">ユーザーが指定したコマンド ライン オプションです。</param>
+        <param name="shortPrefix">オプション名の短縮形です。</param>
+        <param name="longPrefix">オプション名の長い形式。</param>
+        <summary>指定したコマンド ライン オプションの引数を取得します。 など、オプション名の短い、または長い形式で指定できるオプションに適用されます<c>/r</c>または<c>/reference</c>の<c>/r [引き渡されます]:&lt;ファイル リスト&gt;</c>.</summary>
+        <returns>引数は、""場合は、引数が指定された、または null の場合は、オプションまたは引数形式が正しくありません。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsBooleanOption">
+      <MemberSignature Language="C#" Value="public static object IsBooleanOption (string option, string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object IsBooleanOption(string option, string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.CmdLineOptionParser.IsBooleanOption(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="option" Type="System.String" />
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="option">ユーザーが指定したコマンド ライン オプションです。</param>
+        <param name="prefix">オプション名。</param>
+        <summary>取得、 <c> + </c>または<c> - </c> 、指定されたコマンド ライン オプションからの引数。 1 つだけの名前を持つなどのオプションに適用される<c>/debug [+ |-]</c>です。</summary>
+        <returns>
+          <see langword="false" />for <c>-</c>;<see langword="true" />の<c> + </c>場合は、引数が指定されていません。 オプションまたは引数を、形式が正しくありません場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsBooleanOption">
+      <MemberSignature Language="C#" Value="public static object IsBooleanOption (string option, string shortPrefix, string longPrefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object IsBooleanOption(string option, string shortPrefix, string longPrefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.CmdLineOptionParser.IsBooleanOption(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="option" Type="System.String" />
+        <Parameter Name="shortPrefix" Type="System.String" />
+        <Parameter Name="longPrefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="option">ユーザーが指定したコマンド ライン オプションです。</param>
+        <param name="shortPrefix">オプション名の短縮形です。</param>
+        <param name="longPrefix">オプション名の長い形式。</param>
+        <summary>取得、 <c> + </c>または<c> - </c> 、指定されたコマンド ライン オプションからの引数。 オプション名の短い、または長い形式で指定できるオプションに適用されます。</summary>
+        <returns>
+          <see langword="false" />for <c>-</c>;<see langword="true" />の<c> + </c>場合は、引数が指定されていません。 オプションまたは引数を、形式が正しくありません場合は null です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsSimpleOption">
+      <MemberSignature Language="C#" Value="public static bool IsSimpleOption (string option, string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsSimpleOption(string option, string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.CmdLineOptionParser.IsSimpleOption(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="option" Type="System.String" />
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="option">ユーザーが指定したコマンド ライン オプションです。</param>
+        <param name="prefix">オプション名。</param>
+        <summary>指定したオプションが正しく書式設定を確認します。</summary>
+        <returns>
+          <see langword="true" />オプションの形式が正しい場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

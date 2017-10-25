@@ -1,0 +1,72 @@
+<Type Name="TemplateInstance" FullName="System.Web.UI.TemplateInstance">
+  <TypeSignature Language="C#" Value="public enum TemplateInstance" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TemplateInstance extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.TemplateInstance" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>テンプレートのインスタンスを作成する回数を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateInstance>列挙体は、テンプレートのインスタンスを作成する回数を示す値を指定します。 Ttribute クラスからの値を使用して、<xref:System.Web.UI.TemplateInstanceAttribute>列挙します。 特に、ttribute です。Single および ttribute です。複数のフィールドは、テンプレートの単一および複数のインスタンスをそれぞれ指定します。 テンプレートの 1 つのインスタンスでは、テンプレート内に含まれるコントロールを参照することができます。  
+  
+ プロパティのメタデータに 1 つの値を使用するコントロールの例を示します、<xref:System.Web.UI.WebControls.WebParts.CatalogZone.ZoneTemplate%2A>のプロパティ、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロール、<xref:System.Web.UI.WebControls.WebParts.EditorZone.ZoneTemplate%2A>のプロパティ、<xref:System.Web.UI.WebControls.WebParts.EditorZone>コントロール、および<xref:System.Web.UI.WebControls.WebParts.WebPartZone.ZoneTemplate%2A>のプロパティ、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.TemplateInstance>列挙と ttribute クラスです。 カスタム<xref:System.Web.UI.WebControls.LoginView>という名前のコントロール`MyLoginView`、オーバーライド、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティと、ttribute クラスの 1 つのインスタンスの指定を使用して、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティを作成します。  
+  
+ [!code-csharp[System.Web.UI.TemplateInstance#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateInstance/cs/templateinstance.cs#1)]
+ [!code-vb[System.Web.UI.TemplateInstance#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateInstance/vb/templateinstance.vb#1)]  
+  
+ 次のコード例は、使用する ASPX ファイル、`MyLoginView`を制御し、アクセスする方法を示します、<xref:System.Web.UI.WebControls.Label>内にあるコントロール、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.TemplateInstance#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateInstance/cs/templateinstance.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.TemplateInstance#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateInstance/vb/templateinstance.aspx#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Multiple">
+      <MemberSignature Language="C#" Value="Multiple" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.TemplateInstance Multiple = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.TemplateInstance.Multiple" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.TemplateInstance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数回インスタンス化されるテンプレートです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Single">
+      <MemberSignature Language="C#" Value="Single" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.TemplateInstance Single = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.TemplateInstance.Single" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.TemplateInstance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンス化された 1 回だけであるテンプレート。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

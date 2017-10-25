@@ -1,0 +1,574 @@
+<Type Name="XmlPreloadedResolver" FullName="System.Xml.Resolvers.XmlPreloadedResolver">
+  <TypeSignature Language="C#" Value="public class XmlPreloadedResolver : System.Xml.XmlResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlPreloadedResolver extends System.Xml.XmlResolver" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Resolvers.XmlPreloadedResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.XmlResolver</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Dtd または XML でキャッシュを事前に設定するために使用するクラスを表すストリーム。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Resolvers.XmlPreloadedResolver>ネットワークに自動の呼び出しが必要ではないかは不可能な場合に、型は、競合回避モジュールとして使用します。 たとえば、キャッシュされた外部 Dtd を読み込むためのこの型を使用できます。 または、使用する場合があります<xref:System.Xml.Resolvers.XmlPreloadedResolver>XHTML 1.0 で定義されている既知の Dtd を事前に読み込む。 よく知られている Dtd を事前読み込みしても、ネットワーク接続は起動しませんこれらの Dtd は既に System.Xml.Utils アセンブリに埋め込まれているため。 現在、 <xref:System.Xml.Resolvers.XmlPreloadedResolver> XHTML 1.0 および RSS 0.91 で定義されている Dtd が含まれています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlPreloadedResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlPreloadedResolver (System.Xml.Resolvers.XmlKnownDtds preloadedDtds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Xml.Resolvers.XmlKnownDtds preloadedDtds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.#ctor(System.Xml.Resolvers.XmlKnownDtds)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="preloadedDtds" Type="System.Xml.Resolvers.XmlKnownDtds" />
+      </Parameters>
+      <Docs>
+        <param name="preloadedDtds">よく知られている Dtd キャッシュに事前に設定する必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />指定したクラスは、よく知られている Dtd をプリロードします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlPreloadedResolver (System.Xml.XmlResolver fallbackResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlResolver fallbackResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.#ctor(System.Xml.XmlResolver)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fallbackResolver" Type="System.Xml.XmlResolver" />
+      </Parameters>
+      <Docs>
+        <param name="fallbackResolver"><see langword="XmlResolver" />、 <see langword="XmlXapResolver" />、または独自のリゾルバー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />指定した代替競合回避モジュールを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlPreloadedResolver (System.Xml.XmlResolver fallbackResolver, System.Xml.Resolvers.XmlKnownDtds preloadedDtds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlResolver fallbackResolver, valuetype System.Xml.Resolvers.XmlKnownDtds preloadedDtds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.#ctor(System.Xml.XmlResolver,System.Xml.Resolvers.XmlKnownDtds)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fallbackResolver" Type="System.Xml.XmlResolver" />
+        <Parameter Name="preloadedDtds" Type="System.Xml.Resolvers.XmlKnownDtds" />
+      </Parameters>
+      <Docs>
+        <param name="fallbackResolver"><see langword="XmlResolver" />、 <see langword="XmlXapResolver" />、または独自のリゾルバー。</param>
+        <param name="preloadedDtds">よく知られている Dtd キャッシュに事前に設定する必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />指定した代替競合回避モジュールでクラスし、よく知られている Dtd をプリロードします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlPreloadedResolver (System.Xml.XmlResolver fallbackResolver, System.Xml.Resolvers.XmlKnownDtds preloadedDtds, System.Collections.Generic.IEqualityComparer&lt;Uri&gt; uriComparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlResolver fallbackResolver, valuetype System.Xml.Resolvers.XmlKnownDtds preloadedDtds, class System.Collections.Generic.IEqualityComparer`1&lt;class System.Uri&gt; uriComparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.#ctor(System.Xml.XmlResolver,System.Xml.Resolvers.XmlKnownDtds,System.Collections.Generic.IEqualityComparer{System.Uri})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fallbackResolver" Type="System.Xml.XmlResolver" />
+        <Parameter Name="preloadedDtds" Type="System.Xml.Resolvers.XmlKnownDtds" />
+        <Parameter Name="uriComparer" Type="System.Collections.Generic.IEqualityComparer&lt;System.Uri&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="fallbackResolver"><see langword="XmlResolver" />、 <see langword="XmlXapResolver" />、または独自のリゾルバー。</param>
+        <param name="preloadedDtds">よく知られている Dtd キャッシュに事前に設定する必要があります。</param>
+        <param name="uriComparer">実装、 <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> Uri を比較するときに使用するジェネリック インターフェイス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />指定フォールバック リゾルバー、事前に読み込むのよく知られている Dtd を持つクラスと URI の等値比較子。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ URI の比較をカスタマイズする場合は、このコンス トラクター オーバー ロードを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (Uri uri, byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Uri uri, unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.Add(System.Uri,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="uri">追加されているデータの URI、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />を格納します。</param>
+        <param name="value">指定された URI に対応するデータのバイト配列。</param>
+        <summary>バイト配列を追加、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />保存し、URI にマップします。 ストアには、同じ URI のマッピングが既に含まれています、既存のマッピングはオーバーライドされます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (Uri uri, System.IO.Stream value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Uri uri, class System.IO.Stream value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.Add(System.Uri,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="value" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="uri">追加されているデータの URI、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />を格納します。</param>
+        <param name="value">A<see cref="T:System.IO.Stream" />指定された URI に対応するデータを使用します。</param>
+        <summary>追加、<see cref="T:System.IO.Stream" />を<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />保存し、URI にマップします。 ストアには、同じ URI のマッピングが既に含まれています、既存のマッピングはオーバーライドされます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (Uri uri, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Uri uri, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.Add(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">追加されているデータの URI、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />を格納します。</param>
+        <param name="value">A<see langword="String" />指定された URI に対応するデータを使用します。</param>
+        <summary>プリロードされているデータに文字列を追加、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />保存し、URI にマップします。 ストアには、同じ URI のマッピングが既に含まれています、既存のマッピングはオーバーライドされます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (Uri uri, byte[] value, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Uri uri, unsigned int8[] value, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.Add(System.Uri,System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="uri">追加されているデータの URI、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />を格納します。</param>
+        <param name="value">指定された URI に対応するデータのバイト配列。</param>
+        <param name="offset">データの開始場所の指定されたバイト配列内のオフセット。</param>
+        <param name="count">指定したオフセットで開始するバイト配列から読み取るバイト数。</param>
+        <summary>バイト配列を追加、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />保存し、URI にマップします。 ストアには、同じ URI のマッピングが既に含まれています、既存のマッピングはオーバーライドされます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が 0 未満です。  
+  
+ または  
+  
+ 長さ、<paramref name="value" />マイナス<paramref name="offset" />はより小さい<paramref name="count." /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public override System.Net.ICredentials Credentials { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials Credentials" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Resolvers.XmlPreloadedResolver.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ICredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になる認証に使用される資格情報を設定<see cref="T:System.Net.WebRequest" />です。</summary>
+        <value>基になる web 要求の認証に使用される資格情報。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntity">
+      <MemberSignature Language="C#" Value="public override object GetEntity (Uri absoluteUri, string role, Type ofObjectToReturn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetEntity(class System.Uri absoluteUri, string role, class System.Type ofObjectToReturn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.GetEntity(System.Uri,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="absoluteUri" Type="System.Uri" />
+        <Parameter Name="role" Type="System.String" />
+        <Parameter Name="ofObjectToReturn" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="absoluteUri"><see cref="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)" /> から返された URI。</param>
+        <param name="role">Silverlight の .NET Framework の現在のバージョンは、Uri を解決するときに、このパラメーターを使用しません。 このパラメーターは将来の拡張のために提供されます。 たとえば、このパラメーターを xlink:role におよびその他のシナリオの実装に固有の引数として使用します。</param>
+        <param name="ofObjectToReturn">返すオブジェクトの型。 <see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />サポート<see cref="T:System.IO.Stream" />オブジェクトおよび<see cref="T:System.IO.TextReader" />オブジェクトとして追加された Uri の<see langword="String" />します。 要求された型が、競合回避モジュールでサポートされない場合、例外がスローされます。 使用して、<see cref="M:System.Xml.Resolvers.XmlPreloadedResolver.SupportsType(System.Uri,System.Type)" />特定かを判断するメソッド<see langword="Type" />この競合回避モジュールでサポートされています。</param>
+        <summary>URI を実際のリソースを格納しているオブジェクトにマップします。</summary>
+        <returns>A<see cref="T:System.IO.Stream" />または<see cref="T:System.IO.TextReader" />実際のソースに対応するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Resolvers.XmlPreloadedResolver>はまずを事前に読み込まれたデータのストア内のリソースを検索します。 検出できない場合、フォールバックのリゾルバーが呼び出されます`GetEntity`メソッドです。 フォールバック競合回避モジュールが提供されなかった場合、<xref:System.Xml.Resolvers.XmlPreloadedResolver>コンス トラクターを例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="absoluteUri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XmlException">渡された URI を解決できない<paramref name="absoluteUri" />です。  
+  
+ または  
+  
+ <paramref name="ofObjectToReturn" />サポートされている型はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntityAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;object&gt; GetEntityAsync (Uri absoluteUri, string role, Type ofObjectToReturn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;object&gt; GetEntityAsync(class System.Uri absoluteUri, string role, class System.Type ofObjectToReturn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.GetEntityAsync(System.Uri,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="absoluteUri" Type="System.Uri" />
+        <Parameter Name="role" Type="System.String" />
+        <Parameter Name="ofObjectToReturn" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="absoluteUri"><see cref="M:System.Xml.XmlResolver.ResolveUri(System.Uri,System.String)" /> から返された URI。</param>
+        <param name="role">Silverlight の .NET Framework の現在のバージョンは、Uri を解決するときに、このパラメーターを使用しません。 このパラメーターは将来の拡張のために提供されます。 たとえば、このパラメーターを xlink:role におよびその他のシナリオの実装に固有の引数として使用します。</param>
+        <param name="ofObjectToReturn">返すオブジェクトの型。 <see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />サポート<see cref="T:System.IO.Stream" />オブジェクトおよび<see cref="T:System.IO.TextReader" />オブジェクトとして追加された Uri の<see langword="String" />します。 要求された型が、競合回避モジュールでサポートされない場合、例外がスローされます。 使用して、<see cref="M:System.Xml.Resolvers.XmlPreloadedResolver.SupportsType(System.Uri,System.Type)" />特定かを判断するメソッド<see langword="Type" />この競合回避モジュールでサポートされています。</param>
+        <summary>URI を実際のリソースを格納しているオブジェクトに非同期にマップします。</summary>
+        <returns>A<see cref="T:System.IO.Stream" />または<see cref="T:System.IO.TextReader" />実際のソースに対応するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreloadedUris">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Uri&gt; PreloadedUris { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Uri&gt; PreloadedUris" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Resolvers.XmlPreloadedResolver.PreloadedUris" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Uri&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリロードされている Uri のコレクションを取得します。</summary>
+        <value>プリロードされている Uri のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.Remove(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">削除するか、データの URI、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />を格納します。</param>
+        <summary>元の URI に対応するデータの削除、<see cref="T:System.Xml.Resolvers.XmlPreloadedResolver" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストア内のデータが存在しない場合、例外はスローされません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveUri">
+      <MemberSignature Language="C#" Value="public override Uri ResolveUri (Uri baseUri, string relativeUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Uri ResolveUri(class System.Uri baseUri, string relativeUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.ResolveUri(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.Uri" />
+        <Parameter Name="relativeUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">相対 URI の解決に使用するベース URI。</param>
+        <param name="relativeUri">解決対象の URI。 URI は絶対 URI でも相対 URI でもかまいません。 かどうか絶対で、この値は効果的に置き換え、 <c>baseUri</c>値。 かどうか、相対それを組み合わせて、 <c>baseUri</c>絶対 URI を作成します。</param>
+        <summary>ベース URI および 相対 URI を解決して絶対 URI を返します。</summary>
+        <returns><see cref="T:System.Uri" />を表す絶対 URI または<see langword="null" />相対 URI を解決できない場合。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsType">
+      <MemberSignature Language="C#" Value="public override bool SupportsType (Uri absoluteUri, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool SupportsType(class System.Uri absoluteUri, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Resolvers.XmlPreloadedResolver.SupportsType(System.Uri,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="absoluteUri" Type="System.Uri" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="absoluteUri">絶対 URI を確認します。</param>
+        <param name="type">取得する <see cref="T:System.Type" />。</param>
+        <summary>その他の競合回避モジュールをサポートするかどうかを決定<see cref="T:System.Type" />より s だけ<see cref="T:System.IO.Stream" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Type" />はサポートされている、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

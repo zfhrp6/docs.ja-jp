@@ -1,0 +1,151 @@
+<Type Name="DataGridCommandEventArgs" FullName="System.Web.UI.WebControls.DataGridCommandEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridCommandEventArgs : System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridCommandEventArgs extends System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataGridCommandEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.CommandEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="E:System.Web.UI.WebControls.DataGrid.CancelCommand" />、 <see cref="E:System.Web.UI.WebControls.DataGrid.DeleteCommand" />、 <see cref="E:System.Web.UI.WebControls.DataGrid.EditCommand" />、 <see cref="E:System.Web.UI.WebControls.DataGrid.ItemCommand" />、および<see cref="E:System.Web.UI.WebControls.DataGrid.UpdateCommand" />のイベント、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGrid.CancelCommand>イベントが発生したときに、[キャンセル] ボタンをクリック内のアイテムを<xref:System.Web.UI.WebControls.DataGrid>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.DeleteCommand>イベントが発生すると削除 ボタンをクリック内のアイテムを<xref:System.Web.UI.WebControls.DataGrid>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.EditCommand>イベントが発生したときに [編集] ボタンをクリック内のアイテムを<xref:System.Web.UI.WebControls.DataGrid>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.ItemCommand>イベント内の項目のいずれかのボタンをクリックしたときに発生、<xref:System.Web.UI.WebControls.DataGrid>コントロールをクリックします。 これにより、プログラムによって特定のコマンド ボタンがクリックされたときのテストし、適切な操作を実行することができます。 このイベントは通常のカスタム コマンド ボタンの処理に使用、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>イベントが発生した更新プログラム内のアイテムをボタンをクリックすると、<xref:System.Web.UI.WebControls.DataGrid>コントロールがクリックされました。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.DataGridCommandEventArgs>を参照してください、<xref:System.Web.UI.WebControls.DataGridCommandEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を指定および用のイベント ハンドラーをコーディングする方法を示します、 <xref:System.Web.UI.WebControls.DataGrid.EditCommand>、 <xref:System.Web.UI.WebControls.DataGrid.CancelCommand>、および<xref:System.Web.UI.WebControls.DataGrid.UpdateCommand>の項目を編集するイベント、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ [!code-aspx-csharp[DataGridEdit2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit2/CS/datagridedit2cs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit2/VB/datagridedit2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridCommandEventArgs (System.Web.UI.WebControls.DataGridItem item, object commandSource, System.Web.UI.WebControls.CommandEventArgs originalArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.DataGridItem item, object commandSource, class System.Web.UI.WebControls.CommandEventArgs originalArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataGridCommandEventArgs.#ctor(System.Web.UI.WebControls.DataGridItem,System.Object,System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.DataGridItem" />
+        <Parameter Name="commandSource" Type="System.Object" />
+        <Parameter Name="originalArgs" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:System.Web.UI.WebControls.DataGridItem" />で選択した項目を表す、<see cref="T:System.Web.UI.WebControls.DataGrid" />です。</param>
+        <param name="commandSource">コマンドのソース。</param>
+        <param name="originalArgs">イベント データを格納している <see cref="T:System.Web.UI.WebControls.CommandEventArgs" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataGridCommandEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DataGridCommandEventArgs>クラスです。  
+  
+ インスタンス<xref:System.Web.UI.WebControls.DataGridCommandEventArgs>作成は、このコンス トラクターを呼び出し、次のプロパティが指定された値に初期化されます。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.DataGridCommandEventArgs.CommandSource%2A>|`commandSource` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.DataGridCommandEventArgs.Item%2A>|`item` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandSource">
+      <MemberSignature Language="C#" Value="public object CommandSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridCommandEventArgs.CommandSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのソースを取得します。</summary>
+        <value>コマンドのソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataGridCommandEventArgs.CommandSource%2A>イベントを発生させたコマンド ソースを決定するプロパティです。 どちらのコマンドは、イベントを発生させたを決定するは、このプロパティは使用が一般的です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のコマンドを使用して、原因を特定する方法を示します、<xref:System.Web.UI.WebControls.DataGridCommandEventArgs.CommandSource%2A>プロパティです。  
+  
+ [!code-aspx-csharp[DataGridCommandEventArgsCommandSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridCommandEventArgsCommandSource/CS/datagridcommandeventargscommandsourcecs.aspx#1)]
+ [!code-aspx-vb[DataGridCommandEventArgsCommandSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridCommandEventArgsCommandSource/VB/datagridcommandeventargscommandsourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataGridItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataGridItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataGridCommandEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataGridItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンド ソースが含まれている項目を取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.DataGridItem" />で選択した項目を表す、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataGridCommandEventArgs.Item%2A>で選択した項目のプロパティにアクセスするプロパティが使用される、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、説明および内の項目の価格を取得する方法を示します、<xref:System.Web.UI.WebControls.DataGrid>制御を使用して、<xref:System.Web.UI.WebControls.DataGridCommandEventArgs.Item%2A>プロパティです。  
+  
+ [!code-aspx-csharp[DataGridEdit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataGridEdit/CS/datagrideditcs.aspx#1)]
+ [!code-aspx-vb[DataGridEdit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataGridEdit/VB/datagrideditvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,209 @@
+<Type Name="KerberosSecurityTokenProvider" FullName="System.IdentityModel.Selectors.KerberosSecurityTokenProvider">
+  <TypeSignature Language="C#" Value="public class KerberosSecurityTokenProvider : System.IdentityModel.Selectors.SecurityTokenProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KerberosSecurityTokenProvider extends System.IdentityModel.Selectors.SecurityTokenProvider" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.KerberosSecurityTokenProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Selectors.SecurityTokenProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP メッセージ送信者の <see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンを提供するセキュリティ トークン プロバイダーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大半の場合、<xref:System.IdentityModel.Selectors.KerberosSecurityTokenProvider> クラスを直接呼び出す必要はありません。このクラスはクライアントが <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken> セキュリティ トークンを必要とする SOAP メッセージを送信するときに呼び出されます。 特に、クライアントは <xref:System.ServiceModel.Description.ClientCredentials> クラスを使用して必要なセキュリティ トークンの種類を指定し、<xref:System.ServiceModel.Description.ClientCredentials> クラスはセキュリティ トークンを取得するために <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> メソッドを呼び出します。 必要なセキュリティ トークンが <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken> セキュリティ トークンである場合、<xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> メソッドは <xref:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.GetTokenCore%28System.TimeSpan%29> メソッドを呼び出します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KerberosSecurityTokenProvider (string servicePrincipalName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string servicePrincipalName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="servicePrincipalName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="servicePrincipalName"><see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンを取得する対象のサービス プリンシパル名。</param>
+        <summary>サービス プリンシパル名を指定して、<see cref="T:System.IdentityModel.Selectors.KerberosSecurityTokenProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、クライアントで許可される偽装レベルを <xref:System.Security.Principal.TokenImpersonationLevel>`Identification` に設定します。 呼び出し元のスレッドの現在のコンテキスト (<xref:System.Net.CredentialCache.DefaultNetworkCredentials%2A>) がクライアント ID として使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="servicePrincipalName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KerberosSecurityTokenProvider (string servicePrincipalName, System.Security.Principal.TokenImpersonationLevel tokenImpersonationLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string servicePrincipalName, valuetype System.Security.Principal.TokenImpersonationLevel tokenImpersonationLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.#ctor(System.String,System.Security.Principal.TokenImpersonationLevel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="servicePrincipalName" Type="System.String" />
+        <Parameter Name="tokenImpersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="servicePrincipalName"><see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンを取得する対象のサービス プリンシパル名。</param>
+        <param name="tokenImpersonationLevel">クライアントの代わりに <see cref="T:System.Security.Principal.TokenImpersonationLevel" /> セキュリティ トークンの受信者が操作できるレベルを指定する <see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" />。</param>
+        <summary>サービス プリンシパル名と、クライアントが  <see cref="T:System.IdentityModel.Selectors.KerberosSecurityTokenProvider" /> セキュリティ トークンの受信者にクライアントの資格情報の偽装を許可するかどうかを指定して、<see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元のスレッドの現在のコンテキスト (<xref:System.Net.CredentialCache.DefaultNetworkCredentials%2A>) がクライアント ID として使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="tokenImpersonationLevel" /> が、<see langword="Identification" /> でも <see langword="Impersonation" /> でもありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="servicePrincipalName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KerberosSecurityTokenProvider (string servicePrincipalName, System.Security.Principal.TokenImpersonationLevel tokenImpersonationLevel, System.Net.NetworkCredential credential);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string servicePrincipalName, valuetype System.Security.Principal.TokenImpersonationLevel tokenImpersonationLevel, class System.Net.NetworkCredential credential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.#ctor(System.String,System.Security.Principal.TokenImpersonationLevel,System.Net.NetworkCredential)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="servicePrincipalName" Type="System.String" />
+        <Parameter Name="tokenImpersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
+        <Parameter Name="networkCredential" Type="System.Net.NetworkCredential" />
+      </Parameters>
+      <Docs>
+        <param name="servicePrincipalName"><see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンを取得する対象のサービス プリンシパル名。</param>
+        <param name="tokenImpersonationLevel">クライアント プロセスの代わりに <see cref="T:System.Security.Principal.TokenImpersonationLevel" /> セキュリティ トークンの受信者が操作できるレベルを指定する <see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" />。</param>
+        <param name="credential">To be added.</param>
+        <summary>サービス プリンシパル名、クライアント ID、およびクライアントが <see cref="T:System.IdentityModel.Selectors.KerberosSecurityTokenProvider" /> セキュリティ トークンの受信者にクライアントの資格情報の偽装を許可するかどうかを指定して、<see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="tokenImpersonationLevel" /> が、<see langword="Identification" /> でも <see langword="Impersonation" /> でもありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="servicePrincipalName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenCore">
+      <MemberSignature Language="C#" Value="protected override System.IdentityModel.Tokens.SecurityToken GetTokenCore (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IdentityModel.Tokens.SecurityToken GetTokenCore(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.GetTokenCore(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">セキュリティ トークンを取得するメッセージのタイムアウト値を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary><see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンを取得します。</summary>
+        <returns>取得するセキュリティ トークンを表す <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントが SOAP メッセージを送信し、<xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> セキュリティ トークンが要求される場合、<xref:System.ServiceModel.Description.ClientCredentials> メソッドが <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken> クラスにより呼び出されます。  
+  
+ <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> メソッドは <xref:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.GetTokenCore%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetworkCredential">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkCredential NetworkCredential { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.NetworkCredential NetworkCredential" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.NetworkCredential" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkCredential</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンの ID を取得します。</summary>
+        <value><see cref="T:System.Net.NetworkCredential" /> の ID を表す <see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.NetworkCredential%2A> プロパティの値が `null` のときに <xref:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.GetTokenCore%2A> メソッドを呼び出すと、呼び出し元のスレッドの現在のコンテキスト (<xref:System.Net.CredentialCache.DefaultNetworkCredentials%2A>) がクライアント ID として使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServicePrincipalName">
+      <MemberSignature Language="C#" Value="public string ServicePrincipalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServicePrincipalName" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.ServicePrincipalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得する <see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンのサービス プリンシパル名を取得します。</summary>
+        <value>取得する <see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンのサービス プリンシパル名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenImpersonationLevel">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.TokenImpersonationLevel TokenImpersonationLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Principal.TokenImpersonationLevel TokenImpersonationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.TokenImpersonationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.TokenImpersonationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントの代わりに <see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンの受信者が操作できるレベルを指定する値を取得します。</summary>
+        <value>クライアントの代わりに <see cref="T:System.Security.Principal.TokenImpersonationLevel" /> セキュリティ トークンの受信者が操作できるレベルを指定する <see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.KerberosSecurityTokenProvider.TokenImpersonationLevel%2A> プロパティは、`Identification` または `Impersonation` のどちらかにする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,88 @@
+<Type Name="RuntimeNamePropertyAttribute" FullName="System.Windows.Markup.RuntimeNamePropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class RuntimeNamePropertyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RuntimeNamePropertyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.RuntimeNamePropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表す型のプロパティを報告する型レベル属性は、XAML にマップ[X:name 属性](~/docs/framework/xaml-services/x-name-directive.md)です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されているプロパティ、<xref:System.Windows.Markup.RuntimeNamePropertyAttribute>型でなければなりません<xref:System.String>読み取り/書き込みをする必要があります。  
+  
+ フレームワークは、XAML 名と同じであるアーキテクチャの基本要素のいずれかの特定のプロパティを属性可能性があります。 これは、実行時に XAML 読み込み時に設定する XAML 名前スコープ内の XAML 名の概念をフレームワークのプログラミング モデルに使用できるようにします。  
+  
+ XAML の名前の値を使用する必要があります、 [XamlName の文法](~/docs/framework/xaml-services/xamlname-grammar.md)です。  
+  
+ .NET Framework の以前のバージョンでは、このクラスは WindowsBase WPF 固有のアセンブリに存在しています。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.RuntimeNamePropertyAttribute>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ 既存のクラスの例[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]場所、<xref:System.Windows.Markup.RuntimeNamePropertyAttribute>が適用されるは<xref:System.Windows.FrameworkElement>します。  <xref:System.Windows.FrameworkElement.Name%2A>プロパティ<xref:System.Windows.FrameworkElement>属性が設定されて<xref:System.Windows.Markup.RuntimeNamePropertyAttribute>、その結果はいずれかで<xref:System.Windows.FrameworkElement>派生クラスを使用しても<xref:System.Windows.FrameworkElement.Name%2A>ランタイム名のプロパティとして。  
+  
+ 一般に、通常必要はありません、新しい実装している場合を除き、WPF では、この属性を適用するまたは<xref:System.Windows.FrameworkElement>-並列フレームワーク レベルのクラスです。 `x:Name`優先順位が、実行時の name プロパティの属性、要素の両方が存在し、XAML プロセッサの実装はここでは一般をスローする場合。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuntimeNamePropertyAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.RuntimeNamePropertyAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">として使用するプロパティの名前、<see langword="x:Name" />クラスに相当します。</param>
+        <summary><see cref="T:System.Windows.Markup.RuntimeNamePropertyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したプロパティが型でなければなりません<xref:System.String>と get および set アクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.RuntimeNamePropertyAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これで指定されているランタイム名のプロパティの名前を取得<see cref="T:System.Windows.Markup.RuntimeNamePropertyAttribute" />です。</summary>
+        <value>プロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

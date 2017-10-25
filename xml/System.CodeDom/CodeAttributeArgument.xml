@@ -1,0 +1,162 @@
+<Type Name="CodeAttributeArgument" FullName="System.CodeDom.CodeAttributeArgument">
+  <TypeSignature Language="C#" Value="public class CodeAttributeArgument" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeAttributeArgument extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeAttributeArgument" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メタデータ属性の宣言で使用される引数を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeAttributeArgument>属性のコンス トラクターの引数を 1 つの値または属性のプロパティの初期化に使用する値のいずれかを表すために使用します。  
+  
+ <xref:System.CodeDom.CodeAttributeArgument.Value%2A>プロパティは、引数の値を示します。 <xref:System.CodeDom.CodeAttributeArgument.Name%2A>プロパティ、使用する場合、値の割り当て先となる属性のプロパティの名前を示します。  
+  
+ 属性の宣言は、実行時に属性のコンス トラクターに渡される引数の数が頻繁に初期化されます。 属性のコンス トラクターに引数を指定するには追加、<xref:System.CodeDom.CodeAttributeArgument>の各引数に対して、<xref:System.CodeDom.CodeAttributeDeclaration.Arguments%2A>のコレクション、<xref:System.CodeDom.CodeAttributeDeclaration>です。 のみ、<xref:System.CodeDom.CodeAttributeArgument.Value%2A>の各プロパティ<xref:System.CodeDom.CodeAttributeArgument>初期化する必要があります。 コレクション内の引数の順序は、属性のコンス トラクターのメソッド シグネチャ内で引数順序に対応する必要があります。  
+  
+ 利用できないコンス トラクターを提供することによって、属性のプロパティを設定することも、<xref:System.CodeDom.CodeAttributeArgument>と共に設定する値を設定するプロパティの名前を示すです。  
+  
+   
+  
+## Examples  
+ 次のコードは、クラスを作成し、クラスがシリアル化可能な古いことを宣言するコード属性を追加します。  
+  
+ [!code-cpp[System.CodeDom.CodeAttributeArgument#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.codedom.codeattributeargument/cpp/source.cpp#1)]
+ [!code-csharp[System.CodeDom.CodeAttributeArgument#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.codedom.codeattributeargument/cs/source.cs#1)]
+ [!code-vb[System.CodeDom.CodeAttributeArgument#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.codedom.codeattributeargument/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeAttributeArgument ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeAttributeArgument.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeAttributeArgument" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeAttributeArgument (System.CodeDom.CodeExpression value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeAttributeArgument.#ctor(System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.CodeDom.CodeExpression" />引数の値を表すです。</param>
+        <summary>値を指定して、<see cref="T:System.CodeDom.CodeAttributeArgument" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeAttributeArgument (string name, System.CodeDom.CodeExpression value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.CodeDom.CodeExpression value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeAttributeArgument.#ctor(System.String,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="name">属性のプロパティ、引数の名前に適用されます。</param>
+        <param name="value">A<see cref="T:System.CodeDom.CodeExpression" />引数の値を表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeAttributeArgument" />クラスの指定した名前と値を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeAttributeArgument.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の名前を取得または設定します。</summary>
+        <value>引数は、属性プロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression Value" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeAttributeArgument.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または属性引数の値を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />属性引数の値を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,317 @@
+<Type Name="TcpClientChannel" FullName="System.Runtime.Remoting.Channels.Tcp.TcpClientChannel">
+  <TypeSignature Language="C#" Value="public class TcpClientChannel : System.Runtime.Remoting.Channels.IChannelSender, System.Runtime.Remoting.Channels.ISecurableChannel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TcpClientChannel extends System.Object implements class System.Runtime.Remoting.Channels.IChannel, class System.Runtime.Remoting.Channels.IChannelSender, class System.Runtime.Remoting.Channels.ISecurableChannel" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Remoting</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.IChannelSender</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.ISecurableChannel</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>リモートの呼び出しのためには、TCP プロトコルを使用してメッセージを送信するクライアント チャネルを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルは、(たとえば、コンピューターまたはアプリケーション ドメイン) のリモート処理境界を越えてメッセージを転送します。 <xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel>クラスは、TCP プロトコルを使用してメッセージを転送します。  
+  
+ チャネルは、リモート呼び出しを転送する、.NET Framework リモート処理インフラストラクチャによって使用されます。 リモート オブジェクトへの呼び出しは、クライアントが、呼び出しは、クライアント チャネルで送信され、サーバー チャネルによって受信されるメッセージにシリアル化されます。 逆シリアル化し、処理されます。 戻り値はすべては、サーバーのチャネルで送信され、クライアント チャネルで受信します。  
+  
+ 実行する追加のクライアント側でメッセージの処理を指定できますの実装、<xref:System.Runtime.Remoting.Channels.IClientChannelSinkProvider>によって処理されるすべてのメッセージを介して、インターフェイス、<xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel>が渡されます。  
+  
+ 既定では、<xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel>クラスでは、バイナリ フォーマッタを使用して、すべてのメッセージをシリアル化します。  
+  
+ A<xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel>オブジェクトで設定できる構成プロパティが関連付けられている構成ファイルのいずれかの実行時間 (静的なを呼び出すことによって<xref:System.Runtime.Remoting.RemotingConfiguration.Configure%2A?displayProperty=nameWithType>メソッド) またはプログラムによって (を渡すことによって、<xref:System.Collections.IDictionary>コレクションに、<xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.%23ctor%2A>コンス トラクター)。 これらの構成プロパティの一覧は、のドキュメントを参照して<xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.%23ctor%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel>をリモートの型を呼び出すクラスです。  
+  
+ [!code-cpp[Remoting_TcpInfo#20](~/samples/snippets/cpp/VS_Snippets_Remoting/Remoting_TcpInfo/CPP/client.cpp#20)]
+ [!code-csharp[Remoting_TcpInfo#20](~/samples/snippets/csharp/VS_Snippets_Remoting/Remoting_TcpInfo/CS/client.cs#20)]  
+  
+ 上記の例と呼ばれるリモート型は、次のコードで定義されます。  
+  
+ [!code-cpp[Remoting_TcpInfo#10](~/samples/snippets/cpp/VS_Snippets_Remoting/Remoting_TcpInfo/CPP/remotable.cpp#10)]
+ [!code-csharp[Remoting_TcpInfo#10](~/samples/snippets/csharp/VS_Snippets_Remoting/Remoting_TcpInfo/CS/remotable.cs#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TcpClientChannel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成プロパティ、<xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel>このコンス トラクターによって返されたインスタンスはすべて、既定値に設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターの使用を示します。  
+  
+ [!code-cpp[Remoting_TcpInfo#21](~/samples/snippets/cpp/VS_Snippets_Remoting/Remoting_TcpInfo/CPP/client.cpp#21)]
+ [!code-csharp[Remoting_TcpInfo#21](~/samples/snippets/csharp/VS_Snippets_Remoting/Remoting_TcpInfo/CS/client.cs#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TcpClientChannel (System.Collections.IDictionary properties, System.Runtime.Remoting.Channels.IClientChannelSinkProvider sinkProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary properties, class System.Runtime.Remoting.Channels.IClientChannelSinkProvider sinkProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.#ctor(System.Collections.IDictionary,System.Runtime.Remoting.Channels.IClientChannelSinkProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+        <Parameter Name="sinkProvider" Type="System.Runtime.Remoting.Channels.IClientChannelSinkProvider" />
+      </Parameters>
+      <Docs>
+        <param name="properties">A<see cref="T:System.Collections.IDictionary" />コレクション チャネルによって使用される構成プロパティの値を指定します。</param>
+        <param name="sinkProvider"><see cref="T:System.Runtime.Remoting.Channels.IServerChannelSinkProvider" />チャネルで使用する実装。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel" />シンクと指定された構成プロパティを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルの構成プロパティの詳細については、次を参照してください。[チャネルとフォーマッタの構成プロパティ](http://msdn.microsoft.com/en-us/226ecf74-ebbd-4ea0-a701-dcf4441deefe)です。  
+  
+ シンクの機能が必要でない場合は、設定、`sinkProvider`パラメーターを`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成するこのコンス トラクターの使用を示しています、<xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel>特定の構成プロパティを持つオブジェクト。  
+  
+ [!code-cpp[Remoting_TcpAuth#31](~/samples/snippets/cpp/VS_Snippets_Remoting/Remoting_TcpAuth/CPP/client.cpp#31)]
+ [!code-csharp[Remoting_TcpAuth#31](~/samples/snippets/csharp/VS_Snippets_Remoting/Remoting_TcpAuth/CS/client.cs#31)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">構成プロパティの形式が正しくありませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TcpClientChannel (string name, System.Runtime.Remoting.Channels.IClientChannelSinkProvider sinkProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Runtime.Remoting.Channels.IClientChannelSinkProvider sinkProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.#ctor(System.String,System.Runtime.Remoting.Channels.IClientChannelSinkProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="sinkProvider" Type="System.Runtime.Remoting.Channels.IClientChannelSinkProvider" />
+      </Parameters>
+      <Docs>
+        <param name="name">チャネルの名前。</param>
+        <param name="sinkProvider"><see cref="T:System.Runtime.Remoting.Channels.IClientChannelSinkProvider" />チャネルで使用する実装。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel" />シンクと指定した名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.ChannelName%2A>プロパティを使用して、`name`パラメーター。 1 つ以上のチャネルを登録する場合は、チャネルごとに一意の名前は必要です。  
+  
+ シンクの機能が必要でない場合は、設定、`sinkProvider`パラメーターを`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel>です。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Tcp.TcpClientChannel#31](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Tcp.TcpClientChannel/CPP/client.cpp#31)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Tcp.TcpClientChannel#31](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Tcp.TcpClientChannel/CS/client.cs#31)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelName">
+      <MemberSignature Language="C#" Value="public string ChannelName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ChannelName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.ChannelName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のチャネルの名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />チャネルの名前を格納しているインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録されている各チャネルは、一意の名前を持ちます。 呼び出すときに、特定のチャネルを取得する名前が使用される<xref:System.Runtime.Remoting.Channels.ChannelServices.GetChannel%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-cpp[Remoting_TcpInfo#22](~/samples/snippets/cpp/VS_Snippets_Remoting/Remoting_TcpInfo/CPP/client.cpp#22)]
+ [!code-csharp[Remoting_TcpInfo#22](~/samples/snippets/csharp/VS_Snippets_Remoting/Remoting_TcpInfo/CS/client.cs#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelPriority">
+      <MemberSignature Language="C#" Value="public int ChannelPriority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ChannelPriority" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.ChannelPriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のチャネルの優先度を取得します。</summary>
+        <value>チャネルに割り当てる優先度を表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 優先順位が競合するクライアントが、特定のエンドポイントに接続する順序を制御します。優先順位の高いチャネルは、低い優先順位のチャネルに接続してください。 既定の優先順位が 1 になります。負の値の優先度が許可されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-cpp[Remoting_TcpInfo#22](~/samples/snippets/cpp/VS_Snippets_Remoting/Remoting_TcpInfo/CPP/client.cpp#22)]
+ [!code-csharp[Remoting_TcpInfo#22](~/samples/snippets/csharp/VS_Snippets_Remoting/Remoting_TcpInfo/CS/client.cs#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMessageSink">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.Messaging.IMessageSink CreateMessageSink (string url, object remoteChannelData, out string objectURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Messaging.IMessageSink CreateMessageSink(string url, object remoteChannelData, [out] string&amp; objectURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.CreateMessageSink(System.String,System.Object,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="remoteChannelData" Type="System.Object" />
+        <Parameter Name="objectURI" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="url">新しいシンク メッセージの配信先の URL です。 指定できます<see langword="null" />です。</param>
+        <param name="remoteChannelData">新しいシンクがメッセージを配信する先のリモート ホストのチャネル データ オブジェクト。 指定できます<see langword="null" />です。</param>
+        <param name="objectURI">このメソッドが戻るとき、指定した URL またはチャネル データ オブジェクトにメッセージを配信する、新しいメッセージのチャネル シンクの URI を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定した URL またはチャネルのデータ オブジェクトにメッセージを配信するチャネル メッセージ シンクを返します。</summary>
+        <returns>指定した URL またはチャネルのデータ オブジェクトにメッセージを配信するチャネル メッセージ シンク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.CreateMessageSink%2A>メソッドは、指定した URL またはチャネルのデータ オブジェクトにメッセージを配信するチャネル メッセージ シンクを返します。 場合、`uri`パラメーターは`null`、`remoteChannelData`シンクのターゲットとして使用されます。 いずれか、`url`または`remoteChannelData`パラメーターを指定できます`null`、両方は使用しません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドの使用を示します。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Tcp.TcpClientChannel#32](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Tcp.TcpClientChannel/CPP/client.cpp#32)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Tcp.TcpClientChannel#32](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Tcp.TcpClientChannel/CS/client.cs#32)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecured">
+      <MemberSignature Language="C#" Value="public bool IsSecured { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecured" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.IsSecured" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を現在のチャネルをセキュリティで保護されているかどうかを示すブール値</summary>
+        <value>現在のインスタンスがセキュリティで保護されたかどうかを示すブール値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public string Parse (string url, out string objectURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Parse(string url, [out] string&amp; objectURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.Parse(System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="objectURI" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="url">Uri の抽出元の URL です。</param>
+        <param name="objectURI">このメソッドが戻るとき、<see cref="T:System.String" />リモートの既知のオブジェクトの URI を保持するインスタンス。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定された URL からチャネル URI と URI のリモートのよく知られているオブジェクトを抽出します。</summary>
+        <returns>チャネル URI です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメソッドの使用を示します。  
+  
+ System.Runtime.Remoting.Channels.Tcp.TcpClientChannel#33  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,389 @@
+<Type Name="LocalizationExtenderProvider" FullName="System.ComponentModel.Design.LocalizationExtenderProvider">
+  <TypeSignature Language="C#" Value="public class LocalizationExtenderProvider : IDisposable, System.ComponentModel.IExtenderProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LocalizationExtenderProvider extends System.Object implements class System.ComponentModel.IExtenderProvider, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.LocalizationExtenderProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IExtenderProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ProvideProperty("Language", typeof(System.Object))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ProvideProperty("LoadLanguage", typeof(System.Object))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ProvideProperty("Localizable", typeof(System.Object))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("This class has been deprecated. Use CodeDomLocalizationProvider instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ローカライズ機能のルート デザイナーのデザイン時サポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.LocalizationExtenderProvider>拡張できます、<xref:System.ComponentModel.Design.IRootDesigner>プロパティと .NET Framework のローカリゼーション アーキテクチャのサポートを提供するメソッドのセットにします。 リソースの使用に関する詳細は、次を参照してください。[ローカリゼーション](~/docs/standard/globalization-localization/localization.md)です。  
+  
+ ローカライズのサポート アーキテクチャでは、さまざまな言語、カルチャに固有のスタイル、動的に構成可能な機能をサポートするために実行時に交換できるリソース ファイルを使用してコンポーネントのプロパティを初期化するためにデザイナーをできます。 このクラスのメソッドを使用して、リソースから読み込み、ローカリゼーション機能を使用した初期化コードをビルドするには、デザイナーとコード生成シリアライザーを有効にすることができます。  
+  
+ Visual Studio に付属する既定のシリアライザーには、既にコンポーネントやコントロールをローカライズする機能が追加するときのみは .NET Framework のローカリゼーション アーキテクチャのサポートが見つかった場合。 ローカライズのサポートの存在を検出するには、シリアル化システムは、パブリックを見つける必要があります<xref:System.Boolean>ルート デザイナー コンポーネントで"Localizable"をという名前のプロパティです。 型のプロパティを検索、シリアライザーには、このプロパティが検出されると、<xref:System.Globalization.CultureInfo>リソースの現在の構成を確認するには、「言語」をという名前です。 既定のシリアライザーでは、プロパティを使用して、場合を判別する場合は、コンポーネントのローカライズ可能なリソースをローカライズする必要がありますので、どのような<xref:System.Globalization.CultureInfo>リソース情報を保存する必要があります形式です。  
+  
+   
+  
+## Examples  
+ 次のコード例では追加、<xref:System.ComponentModel.Design.LocalizationExtenderProvider>コンポーネントにします。  
+  
+ [!code-cpp[LocalizationExtenderProviderExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/LocalizationExtenderProviderExample/CPP/class1.cpp#2)]
+ [!code-csharp[LocalizationExtenderProviderExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/LocalizationExtenderProviderExample/CS/class1.cs#2)]
+ [!code-vb[LocalizationExtenderProviderExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LocalizationExtenderProviderExample/VB/class1.vb#2)]  
+  
+ 次のコード例には、サンプルのコンポーネントとデザイナーが含まれています。 デザイナーを使用して、<xref:System.ComponentModel.Design.LocalizationExtenderProvider>コンポーネントのプロパティのローカライズ サポートを追加します。  
+  
+ [!code-cpp[LocalizationExtenderProviderExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/LocalizationExtenderProviderExample/CPP/class1.cpp#1)]
+ [!code-csharp[LocalizationExtenderProviderExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/LocalizationExtenderProviderExample/CS/class1.cs#1)]
+ [!code-vb[LocalizationExtenderProviderExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LocalizationExtenderProviderExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LocalizationExtenderProvider (System.ComponentModel.ISite serviceProvider, System.ComponentModel.IComponent baseComponent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.ISite serviceProvider, class System.ComponentModel.IComponent baseComponent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LocalizationExtenderProvider.#ctor(System.ComponentModel.ISite,System.ComponentModel.IComponent)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.ComponentModel.ISite" />
+        <Parameter Name="baseComponent" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">指定したコンポーネントのサービス プロバイダー。</param>
+        <param name="baseComponent">ローカライズの基本コンポーネント。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.LocalizationExtenderProvider" />クラスの指定したサービス プロバイダーとベース コンポーネントを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、新しい<xref:System.ComponentModel.Design.LocalizationExtenderProvider>を現在の言語に設定<xref:System.Globalization.CultureInfo.InvariantCulture%2A>、これはジェネリックと既定の言語リソースの設定。 この設定により、汎用言語リソースを参照するコードを生成するデザイナー。 その他の操作を作成することができます<xref:System.Globalization.CultureInfo>に示すその他のオブジェクトは、プログラムが実行時に使用できるリソース データをローカライズします。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.ComponentModel.Design.LocalizationExtenderProvider>オブジェクト。  
+  
+ [!code-cpp[LocalizationExtenderProviderExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/LocalizationExtenderProviderExample/CPP/class1.cpp#2)]
+ [!code-csharp[LocalizationExtenderProviderExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/LocalizationExtenderProviderExample/CS/class1.cs#2)]
+ [!code-vb[LocalizationExtenderProviderExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LocalizationExtenderProviderExample/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanExtend">
+      <MemberSignature Language="C#" Value="public bool CanExtend (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanExtend(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LocalizationExtenderProvider.CanExtend(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">エクステンダー プロパティを受信するオブジェクト。</param>
+        <summary>このオブジェクトが、指定したオブジェクトにエクステンダー プロパティを提供できるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />このオブジェクトは、指定したオブジェクトにエクステンダー プロパティを提供できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LocalizationExtenderProvider.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.LocalizationExtenderProvider" /> で使用されていたリソース (メモリを除く) を解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.LocalizationExtenderProvider.Dispose%2A> を使い終わったら <xref:System.ComponentModel.Design.LocalizationExtenderProvider> を呼び出します。 <xref:System.ComponentModel.Design.LocalizationExtenderProvider.Dispose%2A> メソッドによって、<xref:System.ComponentModel.Design.LocalizationExtenderProvider> は使用不可の状態になります。 呼び出した後<xref:System.ComponentModel.Design.LocalizationExtenderProvider.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.ComponentModel.Design.LocalizationExtenderProvider>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.ComponentModel.Design.LocalizationExtenderProvider>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.LocalizationExtenderProvider.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.ComponentModel.Design.LocalizationExtenderProvider> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.ComponentModel.Design.LocalizationExtenderProvider> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LocalizationExtenderProvider.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ComponentModel.Design.LocalizationExtenderProvider" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.ComponentModel.Design.LocalizationExtenderProvider>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLanguage">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo GetLanguage (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Globalization.CultureInfo GetLanguage(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LocalizationExtenderProvider.GetLanguage(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">リソースの現在のカルチャを取得するオブジェクト。</param>
+        <summary>指定したオブジェクトの現在のリソースのカルチャを取得します。</summary>
+        <returns>A<see cref="T:System.Globalization.CultureInfo" />リソースの種類を示すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定したオブジェクトのリソースのデータにアクセスするため、現在のリソース カルチャを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLoadLanguage">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo GetLoadLanguage (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Globalization.CultureInfo GetLoadLanguage(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LocalizationExtenderProvider.GetLoadLanguage(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignOnly(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">リソースのカルチャを取得するオブジェクト。</param>
+        <summary>デザイン時に、ローカライズされたオブジェクトの値の初期化時に使用する既定のリソースのカルチャを取得します。</summary>
+        <returns>A<see cref="T:System.Globalization.CultureInfo" />を使用して、指定したオブジェクトの値を初期化するリソースのカルチャを示すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocalizable">
+      <MemberSignature Language="C#" Value="public bool GetLocalizable (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetLocalizable(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LocalizationExtenderProvider.GetLocalizable(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">ローカライズ サポートを確認するオブジェクト。</param>
+        <summary>指定したオブジェクトがリソースのローカリゼーションをサポートしているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトは、リソースのローカリゼーションをサポートしている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetLanguage">
+      <MemberSignature Language="C#" Value="public void ResetLanguage (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetLanguage(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LocalizationExtenderProvider.ResetLanguage(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">リソースのカルチャをリセットするオブジェクト。</param>
+        <summary>指定したオブジェクトのリソースのカルチャをリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーの読み込み時に指定したオブジェクトがローカライズされたリソースで初期化される場合、このメソッドは、デザイナーが読み込まれるときに、指定したオブジェクトの値を初期化するために使用されるリソースのカルチャに指定されたオブジェクトのリソースのカルチャを設定します。 リソースの現在のカルチャに設定されている場合は、指定したオブジェクトには、以前のリソースのカルチャ設定があるない、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLanguage">
+      <MemberSignature Language="C#" Value="public void SetLanguage (object o, System.Globalization.CultureInfo language);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLanguage(object o, class System.Globalization.CultureInfo language) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LocalizationExtenderProvider.SetLanguage(System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="language" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="o">リソースのカルチャを設定する基本コンポーネント。</param>
+        <param name="language">A<see cref="T:System.Globalization.CultureInfo" />を使用するリソースのカルチャを示すです。</param>
+        <summary>指定されたリソースのカルチャを指定したオブジェクトの現在のリソースのカルチャを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLocalizable">
+      <MemberSignature Language="C#" Value="public void SetLocalizable (object o, bool localizable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLocalizable(object o, bool localizable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LocalizationExtenderProvider.SetLocalizable(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="localizable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="o">ローカライズできるまたはローカライズできない設定の基本コンポーネント。</param>
+        <param name="localizable">
+          <see langword="true" />オブジェクトは、リソースのローカリゼーションをサポートしている場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>指定したオブジェクトがローカライズされたリソースをサポートするかどうかを示す値を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeLanguage">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeLanguage (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeLanguage(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.LocalizationExtenderProvider.ShouldSerializeLanguage(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">言語を取得するオブジェクトは、永続化フラグをサポートします。</param>
+        <summary>ローカライズ可能な値がリソースに永続化、指定したオブジェクトが必要かどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />リソースのローカライズ可能な値を永続化する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

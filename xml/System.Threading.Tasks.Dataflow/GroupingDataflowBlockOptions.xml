@@ -1,0 +1,103 @@
+<Type Name="GroupingDataflowBlockOptions" FullName="System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions">
+  <TypeSignature Language="C#" Value="public class GroupingDataflowBlockOptions : System.Threading.Tasks.Dataflow.DataflowBlockOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GroupingDataflowBlockOptions extends System.Threading.Tasks.Dataflow.DataflowBlockOptions" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+    <AssemblyVersion>4.6.0.0</AssemblyVersion>
+    <AssemblyVersion>4.6.1.0</AssemblyVersion>
+    <AssemblyVersion>4.6.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Threading.Tasks.Dataflow.DataflowBlockOptions</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>複数のメッセージを 1 つにグループ化するデータフロー ブロックで実行される処理の構成に使用するオプションを提供します。 これらのデータ フロー ブロックはなど、<see cref="T:System.Threading.Tasks.Dataflow.JoinBlock`2" />と<see cref="T:System.Threading.Tasks.Dataflow.BatchBlock`1" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow> 名前空間) は [!INCLUDE[net_v45](~/includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](~/includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
+  
+ <xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions>変更可能であり、そのプロパティを構成することができます。  
+  
+ 特定の構成オプションが設定されていないときに次の既定値が使用されます。  
+  
+|オプション|既定|  
+|-------------|-------------|  
+|TaskScheduler|<xref:System.Threading.Tasks.TaskScheduler.Default%2A>|  
+|CancellationToken|<xref:System.Threading.CancellationToken.None%2A>|  
+|MaxMessagesPerTask|DataflowBlockOptions.Unbounded (-1)|  
+|BoundedCapacity|DataflowBlockOptions.Unbounded (-1)|  
+|MaxNumberOfGroups|GroupingDataflowBlockOptions.Unbounded (-1)|  
+|最長一致|`true`|  
+  
+ データ フロー ブロックは、その構造にあるオプションの状態をキャプチャします。 指定された後の変更<xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions>インスタンスが、データ フロー ブロックの動作に影響はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GroupingDataflowBlockOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions" /> を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Greedy">
+      <MemberSignature Language="C#" Value="public bool Greedy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Greedy" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用して提供のメッセージを貪欲を使用するかどうかを決定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />貪欲を使用するメッセージを提供しますそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxNumberOfGroups">
+      <MemberSignature Language="C#" Value="public long MaxNumberOfGroups { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaxNumberOfGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.MaxNumberOfGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはブロックによって生成される必要があるグループの最大数を設定します。</summary>
+        <value>グループの最大数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

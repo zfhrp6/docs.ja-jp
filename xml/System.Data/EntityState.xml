@@ -1,0 +1,115 @@
+<Type Name="EntityState" FullName="System.Data.EntityState">
+  <TypeSignature Language="C#" Value="public enum EntityState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EntityState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.EntityState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DataAnnotations.BindableType(IsBindable=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>エンティティ オブジェクトの状態です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト コンテキストは、データ ソースに変更を保存し直すために、オブジェクトの状態を認識している必要があります。 <xref:System.Data.Objects.ObjectStateEntry> オブジェクトは <xref:System.Data.EntityState> 情報を格納します。 `SaveChanges` の <xref:System.Data.Objects.ObjectContext> メソッドは、コンテキストにアタッチされているエンティティを処理し、各オブジェクトの <xref:System.Data.EntityState> に応じてデータ ソースを更新します。 詳細については、次を参照してください。[の作成、追加、変更、およびオブジェクトの削除](http://msdn.microsoft.com/en-us/f76f1fad-c553-4b59-820b-89b3dec2fad1)です。  
+  
+ オブジェクト コンテキスト内のオブジェクトの状態は、<xref:System.Data.Objects.ObjectStateManager> で管理されます。 オブジェクトの状態を確認するには、<xref:System.Data.Objects.ObjectStateManager> メソッドである、<xref:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry%2A>、<xref:System.Data.Objects.ObjectStateManager.GetObjectStateEntry%2A>、または <xref:System.Data.Objects.ObjectStateManager.GetObjectStateEntries%2A> のいずれかを呼び出します。 <xref:System.Data.Objects.ObjectStateEntry.State%2A> の <xref:System.Data.Objects.ObjectStateEntry> プロパティが、オブジェクトの状態を定義します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Added">
+      <MemberSignature Language="C#" Value="Added" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.EntityState Added = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.EntityState.Added" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいオブジェクトがオブジェクト コンテキストに追加されています。<see cref="M:System.Data.Objects.ObjectContext.SaveChanges" /> メソッドは呼び出されていません。 変更が保存されると、オブジェクトの状態は <see cref="F:System.Data.EntityState.Unchanged" /> に変更されます。 <see cref="F:System.Data.EntityState.Added" /> 状態にあるオブジェクトは、<see cref="T:System.Data.Objects.ObjectStateEntry" /> に元の値を保持していません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Deleted">
+      <MemberSignature Language="C#" Value="Deleted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.EntityState Deleted = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.EntityState.Deleted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトは、オブジェクト コンテキストから削除されています。 変更が保存されると、オブジェクトの状態は <see cref="F:System.Data.EntityState.Detached" /> に変更されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Detached">
+      <MemberSignature Language="C#" Value="Detached" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.EntityState Detached = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.EntityState.Detached" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトが存在しますが追跡されていません。 エンティティは、作成された直後とオブジェクト コンテキストに追加される直前にこの状態になります。 また、<see cref="M:System.Data.Objects.ObjectContext.Detach(System.Object)" /> メソッドを呼び出してコンテキストから削除された後、または <see cref="F:System.Data.Objects.MergeOption.NoTracking" /><see cref="T:System.Data.Objects.MergeOption" /> を使用して読み込まれる場合にもこの状態になります。 <see cref="T:System.Data.Objects.ObjectStateEntry" /> 状態のオブジェクトに関連付けられた <see cref="F:System.Data.EntityState.Detached" /> インスタンスは存在しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Modified">
+      <MemberSignature Language="C#" Value="Modified" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.EntityState Modified = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.EntityState.Modified" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトのスカラー プロパティのいずれかが変更されています。<see cref="M:System.Data.Objects.ObjectContext.SaveChanges" /> メソッドは呼び出されていません。 変更追跡プロキシを持たない POCO エンティティでは、<see cref="F:System.Data.EntityState.Modified" /> メソッドが呼び出されたときに、変更されているプロパティの状態が <see cref="M:System.Data.Objects.ObjectContext.DetectChanges" /> に変わります。 変更が保存されると、オブジェクトの状態は <see cref="F:System.Data.EntityState.Unchanged" /> に変更されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unchanged">
+      <MemberSignature Language="C#" Value="Unchanged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.EntityState Unchanged = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.EntityState.Unchanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトは、コンテキストにアタッチされた後、または最後に <see cref="M:System.Data.Objects.ObjectContext.SaveChanges" /> メソッドが呼び出されてから変更されていません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

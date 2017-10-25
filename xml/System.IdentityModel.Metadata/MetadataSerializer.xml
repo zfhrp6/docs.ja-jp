@@ -1,0 +1,2195 @@
+<Type Name="MetadataSerializer" FullName="System.IdentityModel.Metadata.MetadataSerializer">
+  <TypeSignature Language="C#" Value="public class MetadataSerializer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MetadataSerializer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Metadata.MetadataSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メタデータのシリアル化のサポートを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Metadata.MetadataSerializer" />既定トークン シリアライザーを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Metadata.MetadataSerializer.CertificateValidationMode%2A> <xref:System.IdentityModel.Metadata.MetadataSerializer.RevocationMode%2A>と<xref:System.IdentityModel.Metadata.MetadataSerializer.TrustedStoreLocation%2A>プロパティは、次の値に初期化されます。 <xref:System.IdentityModel.Configuration.IdentityConfiguration.DefaultCertificateValidationMode?displayProperty=nameWithType>、 <xref:System.IdentityModel.Configuration.IdentityConfiguration.DefaultRevocationMode?displayProperty=nameWithType>、および<xref:System.IdentityModel.Configuration.IdentityConfiguration.DefaultTrustedStoreLocation?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataSerializer (System.IdentityModel.Selectors.SecurityTokenSerializer tokenSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Selectors.SecurityTokenSerializer tokenSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.#ctor(System.IdentityModel.Selectors.SecurityTokenSerializer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tokenSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="tokenSerializer">セキュリティ トークンのシリアル化に使用されるトークン シリアライザー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Metadata.MetadataSerializer" />は指定されたトークン シリアライザーを使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Metadata.MetadataSerializer.CertificateValidationMode%2A> <xref:System.IdentityModel.Metadata.MetadataSerializer.RevocationMode%2A>と<xref:System.IdentityModel.Metadata.MetadataSerializer.TrustedStoreLocation%2A>プロパティは、次の値に初期化されます。 <xref:System.IdentityModel.Configuration.IdentityConfiguration.DefaultCertificateValidationMode?displayProperty=nameWithType>、 <xref:System.IdentityModel.Configuration.IdentityConfiguration.DefaultRevocationMode?displayProperty=nameWithType>、および<xref:System.IdentityModel.Configuration.IdentityConfiguration.DefaultTrustedStoreLocation?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tokenSerializer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CertificateValidationMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.X509CertificateValidationMode CertificateValidationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Security.X509CertificateValidationMode CertificateValidationMode" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.MetadataSerializer.CertificateValidationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.X509CertificateValidationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメタデータ ドキュメントの署名に使用される X.509 証明書の検証モードを設定します。</summary>
+        <value>X.509 証明書検証モードを指定する列挙値の 1 つ。 既定値で指定された<see cref="F:System.IdentityModel.Configuration.IdentityConfiguration.DefaultCertificateValidationMode" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CertificateValidator">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.X509CertificateValidator CertificateValidator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.X509CertificateValidator CertificateValidator" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.MetadataSerializer.CertificateValidator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメタデータ ドキュメントの署名に使用される X.509 証明書の証明書検証コントロールを設定します。</summary>
+        <value>X.509 証明書の証明書検証コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateApplicationServiceInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.ApplicationServiceDescriptor CreateApplicationServiceInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.ApplicationServiceDescriptor CreateApplicationServiceInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateApplicationServiceInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.ApplicationServiceDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーション サービスの記述子を作成します。</summary>
+        <returns>アプリケーション サービスの記述子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateContactPersonInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.ContactPerson CreateContactPersonInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.ContactPerson CreateContactPersonInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateContactPersonInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.ContactPerson</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>連絡先を作成します。</summary>
+        <returns>連絡担当者です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntitiesDescriptorInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.EntitiesDescriptor CreateEntitiesDescriptorInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.EntitiesDescriptor CreateEntitiesDescriptorInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateEntitiesDescriptorInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.EntitiesDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エンティティ記述子を作成します。</summary>
+        <returns>エンティティ記述子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntityDescriptorInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.EntityDescriptor CreateEntityDescriptorInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.EntityDescriptor CreateEntityDescriptorInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateEntityDescriptorInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.EntityDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エンティティ記述子を作成します。</summary>
+        <returns>エンティティ記述子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateIdentityProviderSingleSignOnDescriptorInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor CreateIdentityProviderSingleSignOnDescriptorInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor CreateIdentityProviderSingleSignOnDescriptorInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateIdentityProviderSingleSignOnDescriptorInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>IDPSSO 記述子を作成します。</summary>
+        <returns>IDPSSO 記述子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateIndexedProtocolEndpointInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.IndexedProtocolEndpoint CreateIndexedProtocolEndpointInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.IndexedProtocolEndpoint CreateIndexedProtocolEndpointInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateIndexedProtocolEndpointInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.IndexedProtocolEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インデックス付きのエンドポイントを作成します。</summary>
+        <returns>インデックス付きのエンドポイントです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKeyDescriptorInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.KeyDescriptor CreateKeyDescriptorInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.KeyDescriptor CreateKeyDescriptorInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateKeyDescriptorInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.KeyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キーの記述子を作成します。</summary>
+        <returns>キーの記述子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateLocalizedNameInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.LocalizedName CreateLocalizedNameInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.LocalizedName CreateLocalizedNameInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateLocalizedNameInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.LocalizedName</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ローカライズされた名前を作成します。</summary>
+        <returns>ローカライズされた名前です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateLocalizedUriInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.LocalizedUri CreateLocalizedUriInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.LocalizedUri CreateLocalizedUriInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateLocalizedUriInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.LocalizedUri</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ローカライズされた URI を作成します。</summary>
+        <returns>ローカライズされた URI。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrganizationInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.Organization CreateOrganizationInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.Organization CreateOrganizationInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateOrganizationInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.Organization</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>組織を作成します。</summary>
+        <returns>組織。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateProtocolEndpointInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.ProtocolEndpoint CreateProtocolEndpointInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.ProtocolEndpoint CreateProtocolEndpointInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateProtocolEndpointInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.ProtocolEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エンドポイントを作成します。</summary>
+        <returns>エンドポイント。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSecurityTokenServiceDescriptorInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.SecurityTokenServiceDescriptor CreateSecurityTokenServiceDescriptorInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.SecurityTokenServiceDescriptor CreateSecurityTokenServiceDescriptorInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateSecurityTokenServiceDescriptorInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.SecurityTokenServiceDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ トークン サービス記述子を作成します。</summary>
+        <returns>セキュリティ トークン サービス記述子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateServiceProviderSingleSignOnDescriptorInstance">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor CreateServiceProviderSingleSignOnDescriptorInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor CreateServiceProviderSingleSignOnDescriptorInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.CreateServiceProviderSingleSignOnDescriptorInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>SPSSO 記述子を作成します。</summary>
+        <returns>SPSSO 記述子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadataSigningCertificate">
+      <MemberSignature Language="C#" Value="protected virtual System.Security.Cryptography.X509Certificates.X509Certificate2 GetMetadataSigningCertificate (System.IdentityModel.Tokens.SecurityKeyIdentifier ski);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.Cryptography.X509Certificates.X509Certificate2 GetMetadataSigningCertificate(class System.IdentityModel.Tokens.SecurityKeyIdentifier ski) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.GetMetadataSigningCertificate(System.IdentityModel.Tokens.SecurityKeyIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ski" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="ski">X.509 証明書の作成元のキー識別子。</param>
+        <summary>指定したキー識別子から作成された X.509 証明書を取得します。</summary>
+        <returns>指定したキー識別子から作成された X.509 証明書。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドだけをサポートしている型のキー識別子句<xref:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause>です。 キー識別子句の他の種類をサポートするためにこのメソッドをオーバーライドすることができます。 このメソッドは、<xref:System.IdentityModel.Metadata.MetadataSerializer.ValidateSigningCredential%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ski" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">型のキー識別子句を見つけることができません<see cref="T:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause" />で<paramref name="ski" />です。 既定の動作を他のキー識別子句をサポートするには、このメソッドをオーバーライドすることができます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LanguageAttribute">
+      <MemberSignature Language="C#" Value="public const string LanguageAttribute;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string LanguageAttribute" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Metadata.MetadataSerializer.LanguageAttribute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>言語属性を"xml:lang"を定義する文字列定数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LanguageLocalName">
+      <MemberSignature Language="C#" Value="public const string LanguageLocalName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string LanguageLocalName" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Metadata.MetadataSerializer.LanguageLocalName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>言語のローカル名"lang"を定義する文字列定数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LanguageNamespaceUri">
+      <MemberSignature Language="C#" Value="public const string LanguageNamespaceUri;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string LanguageNamespaceUri" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Metadata.MetadataSerializer.LanguageNamespaceUri" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>言語の名前空間 URI を定義する文字列定数"http://www.w3.org/XML/1998/namespace"です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LanguagePrefix">
+      <MemberSignature Language="C#" Value="public const string LanguagePrefix;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string LanguagePrefix" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Metadata.MetadataSerializer.LanguagePrefix" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"Xml"である言語プレフィックスを定義する文字列定数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadApplicationServiceDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.ApplicationServiceDescriptor ReadApplicationServiceDescriptor (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.ApplicationServiceDescriptor ReadApplicationServiceDescriptor(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadApplicationServiceDescriptor(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.ApplicationServiceDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>アプリケーション サービスの記述子を読み取ります。</summary>
+        <returns>アプリケーション サービスの記述子。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAttribute">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.Saml2Attribute ReadAttribute (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.Saml2Attribute ReadAttribute(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadAttribute(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.Saml2Attribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>読み取り、 &lt;saml:Attribute&gt;要素。</summary>
+        <returns>Saml2 属性です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、属性要素のコンテンツが単純な文字列である必要があります。 複雑なコンテンツまたは xs:string 以外の宣言された単純型のコンテンツを処理するためには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadContactPerson">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.ContactPerson ReadContactPerson (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.ContactPerson ReadContactPerson(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadContactPerson(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.ContactPerson</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>連絡先を読み取ります。</summary>
+        <returns>連絡担当者です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadCustomAttributes&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected virtual void ReadCustomAttributes&lt;T&gt; (System.Xml.XmlReader reader, T target);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ReadCustomAttributes&lt;T&gt;(class System.Xml.XmlReader reader, !!T target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadCustomAttributes``1(System.Xml.XmlReader,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="target" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">読み取られる; メタデータ要素を表す型たとえば、<see cref="T:System.IdentityModel.Metadata.ContactPerson" />です。</typeparam>
+        <param name="reader">XML リーダー。</param>
+        <param name="target">型のオブジェクト<c>T</c>です。</param>
+        <summary>カスタム属性を読み取るための機能拡張ポイントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadCustomElement&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected virtual bool ReadCustomElement&lt;T&gt; (System.Xml.XmlReader reader, T target);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ReadCustomElement&lt;T&gt;(class System.Xml.XmlReader reader, !!T target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadCustomElement``1(System.Xml.XmlReader,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="target" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">読み取られる; メタデータ要素を表す型たとえば、<see cref="T:System.IdentityModel.Metadata.ContactPerson" />です。</typeparam>
+        <param name="reader">XML リーダー。</param>
+        <param name="target">型のオブジェクト<c>T</c>です。</param>
+        <summary>カスタム要素を読み取るための拡張ポイントです。 既定では、次のように返されます。<see langword="false" />です。</summary>
+        <returns>
+          <see langword="true" />型の要素の場合<paramref name="T" />は、読み取り、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadCustomRoleDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual void ReadCustomRoleDescriptor (string xsiType, System.Xml.XmlReader reader, System.IdentityModel.Metadata.EntityDescriptor entityDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ReadCustomRoleDescriptor(string xsiType, class System.Xml.XmlReader reader, class System.IdentityModel.Metadata.EntityDescriptor entityDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadCustomRoleDescriptor(System.String,System.Xml.XmlReader,System.IdentityModel.Metadata.EntityDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xsiType" Type="System.String" />
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="entityDescriptor" Type="System.IdentityModel.Metadata.EntityDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="xsiType">Xsi 型</param>
+        <param name="reader">XML リーダー。</param>
+        <param name="entityDescriptor">ロール記述子を追加するためのエンティティ記述子</param>
+        <summary>カスタム RoleDescriptors を読み取るための機能拡張ポイントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadDisplayClaim">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.DisplayClaim ReadDisplayClaim (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.DisplayClaim ReadDisplayClaim(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadDisplayClaim(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.DisplayClaim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>表示要求を読み取ります。</summary>
+        <returns>表示クレーム。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Metadata.MetadataSerializationException">XML が整形式でない場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadEntitiesDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.EntitiesDescriptor ReadEntitiesDescriptor (System.Xml.XmlReader reader, System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.EntitiesDescriptor ReadEntitiesDescriptor(class System.Xml.XmlReader reader, class System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadEntitiesDescriptor(System.Xml.XmlReader,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.EntitiesDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="tokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <param name="tokenResolver">セキュリティ トークン リゾルバー。</param>
+        <summary>エンティティ記述子を読み取ります。</summary>
+        <returns>エンティティ記述子。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Metadata.MetadataSerializationException">XML が整形式でない場合にスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadEntityDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.EntityDescriptor ReadEntityDescriptor (System.Xml.XmlReader inputReader, System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.EntityDescriptor ReadEntityDescriptor(class System.Xml.XmlReader inputReader, class System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadEntityDescriptor(System.Xml.XmlReader,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.EntityDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="tokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="inputReader">XML リーダー。</param>
+        <param name="tokenResolver">セキュリティ トークン リゾルバー。</param>
+        <summary>エンティティ記述子を読み取ります。</summary>
+        <returns>エンティティ記述子。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="inputReader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadIdentityProviderSingleSignOnDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor ReadIdentityProviderSingleSignOnDescriptor (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor ReadIdentityProviderSingleSignOnDescriptor(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadIdentityProviderSingleSignOnDescriptor(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>IDPSSO 記述子を読み取ります。</summary>
+        <returns>IDPSSO 記述子。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadIndexedProtocolEndpoint">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.IndexedProtocolEndpoint ReadIndexedProtocolEndpoint (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.IndexedProtocolEndpoint ReadIndexedProtocolEndpoint(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadIndexedProtocolEndpoint(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.IndexedProtocolEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>インデックス付きのエンドポイントを読み取ります。</summary>
+        <returns>インデックス付きのエンドポイントです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadKeyDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.KeyDescriptor ReadKeyDescriptor (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.KeyDescriptor ReadKeyDescriptor(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadKeyDescriptor(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.KeyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>キーの記述子を読み取ります。</summary>
+        <returns>キーの記述子。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadLocalizedName">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.LocalizedName ReadLocalizedName (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.LocalizedName ReadLocalizedName(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadLocalizedName(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.LocalizedName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>ローカライズされた名前を読み取ります。</summary>
+        <returns>ローカライズされた名前。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadLocalizedUri">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.LocalizedUri ReadLocalizedUri (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.LocalizedUri ReadLocalizedUri(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadLocalizedUri(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.LocalizedUri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>ローカライズされた URI を読み取ります。</summary>
+        <returns>ローカライズされた URI です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadMetadata">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Metadata.MetadataBase ReadMetadata (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IdentityModel.Metadata.MetadataBase ReadMetadata(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadMetadata(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.MetadataBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み取るストリーム。</param>
+        <summary>エンティティ記述子またはエンティティ記述子を逆シリアル化する指定されたストリームを読み取ります。</summary>
+        <returns>記述子。 インスタンス、<see cref="T:System.IdentityModel.Metadata.EntityDescriptor" />または<see cref="T:System.IdentityModel.Metadata.EntitiesDescriptor" />クラスです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadMetadata">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Metadata.MetadataBase ReadMetadata (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IdentityModel.Metadata.MetadataBase ReadMetadata(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadMetadata(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.MetadataBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取る XML リーダーです。</param>
+        <summary>エンティティ記述子またはエンティティ記述子を逆シリアル化する指定した XML リーダーを読み取ります。</summary>
+        <returns>記述子。 インスタンス、<see cref="T:System.IdentityModel.Metadata.EntityDescriptor" />または<see cref="T:System.IdentityModel.Metadata.EntitiesDescriptor" />クラスです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadMetadata">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Metadata.MetadataBase ReadMetadata (System.Xml.XmlReader reader, System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IdentityModel.Metadata.MetadataBase ReadMetadata(class System.Xml.XmlReader reader, class System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadMetadata(System.Xml.XmlReader,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.MetadataBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="tokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取る XML リーダーです。</param>
+        <param name="tokenResolver">署名トークンを解決するのには、使用するトークン リゾルバー。</param>
+        <summary>エンティティ記述子またはエンティティ記述子を逆シリアル化する指定された XmlReader を参照してください。</summary>
+        <returns>記述子。 インスタンス、<see cref="T:System.IdentityModel.Metadata.EntityDescriptor" />または<see cref="T:System.IdentityModel.Metadata.EntitiesDescriptor" />クラスです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="tokenResolver" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadMetadataCore">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.MetadataBase ReadMetadataCore (System.Xml.XmlReader reader, System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.MetadataBase ReadMetadataCore(class System.Xml.XmlReader reader, class System.IdentityModel.Selectors.SecurityTokenResolver tokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadMetadataCore(System.Xml.XmlReader,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.MetadataBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="tokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <param name="tokenResolver">セキュリティ トークン リゾルバー。</param>
+        <summary>エンティティ記述子またはエンティティ記述子を読み取ります。</summary>
+        <returns>記述子。 インスタンス、<see cref="T:System.IdentityModel.Metadata.EntityDescriptor" />または<see cref="T:System.IdentityModel.Metadata.EntitiesDescriptor" />クラスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IdentityModel.Metadata.MetadataSerializer.ReadMetadata%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="tokenResolver" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Metadata.MetadataSerializationException">リーダーが配置されていない、<see langword="&lt;EntityDescriptor&gt;" />または<see langword="&lt;EntitiesDescriptor&gt;" />要素。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOrganization">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.Organization ReadOrganization (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.Organization ReadOrganization(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadOrganization(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.Organization</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>組織を読み取ります。</summary>
+        <returns>組織。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadProtocolEndpoint">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.ProtocolEndpoint ReadProtocolEndpoint (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.ProtocolEndpoint ReadProtocolEndpoint(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadProtocolEndpoint(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.ProtocolEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>エンドポイントを読み取ります。</summary>
+        <returns>エンドポイント。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadRoleDescriptorAttributes">
+      <MemberSignature Language="C#" Value="protected virtual void ReadRoleDescriptorAttributes (System.Xml.XmlReader reader, System.IdentityModel.Metadata.RoleDescriptor roleDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ReadRoleDescriptorAttributes(class System.Xml.XmlReader reader, class System.IdentityModel.Metadata.RoleDescriptor roleDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadRoleDescriptorAttributes(System.Xml.XmlReader,System.IdentityModel.Metadata.RoleDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="roleDescriptor" Type="System.IdentityModel.Metadata.RoleDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <param name="roleDescriptor">ロール記述子。</param>
+        <summary>ロール記述子の属性を読み取ります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="roleDescriptor" />です。<see langword="null" />  
+  
+ または  
+  
+ <paramref name="roleDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.RoleDescriptor.ProtocolsSupported" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadRoleDescriptorElement">
+      <MemberSignature Language="C#" Value="protected virtual bool ReadRoleDescriptorElement (System.Xml.XmlReader reader, System.IdentityModel.Metadata.RoleDescriptor roleDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ReadRoleDescriptorElement(class System.Xml.XmlReader reader, class System.IdentityModel.Metadata.RoleDescriptor roleDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadRoleDescriptorElement(System.Xml.XmlReader,System.IdentityModel.Metadata.RoleDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="roleDescriptor" Type="System.IdentityModel.Metadata.RoleDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <param name="roleDescriptor">ロール記述子。</param>
+        <summary>ロール記述子要素を読み取ります。</summary>
+        <returns>
+          <see langword="true" />要素が読み取り以外の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="roleDescriptor" />です。<see langword="null" />  
+  
+ または  
+  
+ <paramref name="roleDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.RoleDescriptor.Contacts" /> プロパティが <see langword="null" /> です。  
+  
+ <paramref name="roleDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.RoleDescriptor.Keys" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSecurityTokenServiceDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.SecurityTokenServiceDescriptor ReadSecurityTokenServiceDescriptor (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.SecurityTokenServiceDescriptor ReadSecurityTokenServiceDescriptor(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadSecurityTokenServiceDescriptor(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.SecurityTokenServiceDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>セキュリティ トークン サービス記述子を読み取ります。</summary>
+        <returns>セキュリティ トークン サービス記述子。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadServiceProviderSingleSignOnDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor ReadServiceProviderSingleSignOnDescriptor (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor ReadServiceProviderSingleSignOnDescriptor(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadServiceProviderSingleSignOnDescriptor(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <summary>SPSSO 記述子を読み取ります。</summary>
+        <returns>な SPSSO 記述子。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Metadata.MetadataSerializationException">XML が無効でした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSingleSignOnDescriptorAttributes">
+      <MemberSignature Language="C#" Value="protected virtual void ReadSingleSignOnDescriptorAttributes (System.Xml.XmlReader reader, System.IdentityModel.Metadata.SingleSignOnDescriptor roleDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ReadSingleSignOnDescriptorAttributes(class System.Xml.XmlReader reader, class System.IdentityModel.Metadata.SingleSignOnDescriptor roleDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadSingleSignOnDescriptorAttributes(System.Xml.XmlReader,System.IdentityModel.Metadata.SingleSignOnDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="roleDescriptor" Type="System.IdentityModel.Metadata.SingleSignOnDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <param name="roleDescriptor">SSO ロール記述子。</param>
+        <summary>SSO 記述子属性を読み取ります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="roleDescriptor" />です。<see langword="null" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSingleSignOnDescriptorElement">
+      <MemberSignature Language="C#" Value="protected virtual bool ReadSingleSignOnDescriptorElement (System.Xml.XmlReader reader, System.IdentityModel.Metadata.SingleSignOnDescriptor singleSignOnDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ReadSingleSignOnDescriptorElement(class System.Xml.XmlReader reader, class System.IdentityModel.Metadata.SingleSignOnDescriptor singleSignOnDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadSingleSignOnDescriptorElement(System.Xml.XmlReader,System.IdentityModel.Metadata.SingleSignOnDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="singleSignOnDescriptor" Type="System.IdentityModel.Metadata.SingleSignOnDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <param name="singleSignOnDescriptor">SSO の記述子。</param>
+        <summary>SSO 記述子要素を読み取ります。</summary>
+        <returns>
+          <see langword="true" />要素が読み取り以外の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="singleSignOnDescriptor" />です。<see langword="null" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadWebServiceDescriptorAttributes">
+      <MemberSignature Language="C#" Value="protected virtual void ReadWebServiceDescriptorAttributes (System.Xml.XmlReader reader, System.IdentityModel.Metadata.WebServiceDescriptor roleDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ReadWebServiceDescriptorAttributes(class System.Xml.XmlReader reader, class System.IdentityModel.Metadata.WebServiceDescriptor roleDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadWebServiceDescriptorAttributes(System.Xml.XmlReader,System.IdentityModel.Metadata.WebServiceDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="roleDescriptor" Type="System.IdentityModel.Metadata.WebServiceDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <param name="roleDescriptor">Web サービスの記述子。</param>
+        <summary>Web サービスの記述子属性を読み取ります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="roleDescriptor" />です。<see langword="null" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadWebServiceDescriptorElement">
+      <MemberSignature Language="C#" Value="public virtual bool ReadWebServiceDescriptorElement (System.Xml.XmlReader reader, System.IdentityModel.Metadata.WebServiceDescriptor roleDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ReadWebServiceDescriptorElement(class System.Xml.XmlReader reader, class System.IdentityModel.Metadata.WebServiceDescriptor roleDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ReadWebServiceDescriptorElement(System.Xml.XmlReader,System.IdentityModel.Metadata.WebServiceDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="roleDescriptor" Type="System.IdentityModel.Metadata.WebServiceDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダー。</param>
+        <param name="roleDescriptor">Web サービスの記述子。</param>
+        <summary>Web サービスの記述子の要素を読み取ります。</summary>
+        <returns>
+          <see langword="true" />要素が読み取り以外の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="roleDescriptor" />です。<see langword="null" />  
+  
+ または  
+  
+ <paramref name="roleDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.WebServiceDescriptor.TargetScopes" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="roleDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.WebServiceDescriptor.ClaimTypesOffered" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="roleDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.WebServiceDescriptor.TokenTypesOffered" /> プロパティが <see langword="null" /> です。  
+  
+ パラメーター reader/roleDescriptor/roleDescriptor.TargetScopes/roleDescriptor.TargetScopes/roleDescriptor.TokenTypesOffered が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RevocationMode">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509RevocationMode RevocationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.X509Certificates.X509RevocationMode RevocationMode" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.MetadataSerializer.RevocationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509RevocationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメタデータ ドキュメントの署名に使用される X.509 証明書の失効モードを設定します。</summary>
+        <value>X.509 証明書失効モードを指定する列挙値の 1 つ。 既定値で指定された<see cref="F:System.IdentityModel.Configuration.IdentityConfiguration.DefaultRevocationMode" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenSerializer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.SecurityTokenSerializer SecurityTokenSerializer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.SecurityTokenSerializer SecurityTokenSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.MetadataSerializer.SecurityTokenSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンをシリアル化に現在のインスタンスによって使用されるトークン シリアライザーを取得します。</summary>
+        <value>現在のインスタンスによって使用されるトークン シリアライザー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustedIssuers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;string&gt; TrustedIssuers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;string&gt; TrustedIssuers" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.MetadataSerializer.TrustedIssuers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスによって、メタデータ ドキュメントの署名に信頼されている信頼された発行者の一覧を取得します。</summary>
+        <value>信頼された発行者の一覧。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustedStoreLocation">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.StoreLocation TrustedStoreLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.X509Certificates.StoreLocation TrustedStoreLocation" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.MetadataSerializer.TrustedStoreLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.StoreLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメタデータ ドキュメントの署名に使用される X.509 証明書の信頼されたストアの場所を設定します。</summary>
+        <value>X.509 証明書を指定する列挙値のいずれかのストアの場所。 既定値で指定された<see cref="F:System.IdentityModel.Configuration.IdentityConfiguration.DefaultTrustedStoreLocation" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateIssuer">
+      <MemberSignature Language="C#" Value="protected virtual void ValidateIssuer (System.Security.Cryptography.X509Certificates.X509Certificate2 signingCertificate);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ValidateIssuer(class System.Security.Cryptography.X509Certificates.X509Certificate2 signingCertificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ValidateIssuer(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signingCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="signingCertificate">署名証明書。</param>
+        <summary>指定された信頼された発行者の一覧に対して、メタデータ ドキュメントに署名した X.509 証明書を検証、<see cref="P:System.IdentityModel.Metadata.MetadataSerializer.TrustedIssuers" />プロパティです。 このメソッドは、<see cref="M:System.IdentityModel.Metadata.MetadataSerializer.ValidateSigningCredential(System.IdentityModel.Tokens.SigningCredentials)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドは、検証を行いません。 信頼された発行者の検証を実行する、独自の実装を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateSigningCredential">
+      <MemberSignature Language="C#" Value="protected virtual void ValidateSigningCredential (System.IdentityModel.Tokens.SigningCredentials signingCredentials);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ValidateSigningCredential(class System.IdentityModel.Tokens.SigningCredentials signingCredentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.ValidateSigningCredential(System.IdentityModel.Tokens.SigningCredentials)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signingCredentials" Type="System.IdentityModel.Tokens.SigningCredentials" />
+      </Parameters>
+      <Docs>
+        <param name="signingCredentials">メタデータ ドキュメントの署名に使用された資格情報。</param>
+        <summary>メタデータ ドキュメントの署名資格情報を検証します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="signingCredentials" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteApplicationServiceDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual void WriteApplicationServiceDescriptor (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.ApplicationServiceDescriptor appService);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteApplicationServiceDescriptor(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.ApplicationServiceDescriptor appService) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteApplicationServiceDescriptor(System.Xml.XmlWriter,System.IdentityModel.Metadata.ApplicationServiceDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="appService" Type="System.IdentityModel.Metadata.ApplicationServiceDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="appService">アプリケーション サービスの記述子。</param>
+        <summary>アプリケーション サービスの記述子を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="appService" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="appService" /> の <see cref="P:System.IdentityModel.Metadata.ApplicationServiceDescriptor.Endpoints" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="appService" /> の <see cref="P:System.IdentityModel.Metadata.ApplicationServiceDescriptor.PassiveRequestorEndpoints" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttribute">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAttribute (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.Saml2Attribute data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteAttribute(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.Saml2Attribute data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteAttribute(System.Xml.XmlWriter,System.IdentityModel.Tokens.Saml2Attribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="data" Type="System.IdentityModel.Tokens.Saml2Attribute" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="data">Saml2 属性です。</param>
+        <summary>書き込みます、 &lt;saml:Attribute&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="data" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteContactPerson">
+      <MemberSignature Language="C#" Value="protected virtual void WriteContactPerson (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.ContactPerson contactPerson);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteContactPerson(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.ContactPerson contactPerson) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteContactPerson(System.Xml.XmlWriter,System.IdentityModel.Metadata.ContactPerson)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="contactPerson" Type="System.IdentityModel.Metadata.ContactPerson" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="contactPerson">連絡担当者です。</param>
+        <summary>連絡担当者を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="contactPerson" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="contactPerson" /> の <see cref="P:System.IdentityModel.Metadata.ContactPerson.EmailAddresses" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="contactPerson" /> の <see cref="P:System.IdentityModel.Metadata.ContactPerson.TelephoneNumbers" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteCustomAttributes&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected virtual void WriteCustomAttributes&lt;T&gt; (System.Xml.XmlWriter writer, T source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteCustomAttributes&lt;T&gt;(class System.Xml.XmlWriter writer, !!T source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteCustomAttributes``1(System.Xml.XmlWriter,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="source" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">書き込まれる属性を持つ要素を表す型。 たとえば、<see cref="T:System.IdentityModel.Metadata.ContactPerson" /> などです。</typeparam>
+        <param name="writer">XML ライター。</param>
+        <param name="source">型のソース要素<c>T</c>です。</param>
+        <summary>カスタム属性を書き込む拡張ポイントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteCustomElements&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected virtual void WriteCustomElements&lt;T&gt; (System.Xml.XmlWriter writer, T source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteCustomElements&lt;T&gt;(class System.Xml.XmlWriter writer, !!T source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteCustomElements``1(System.Xml.XmlWriter,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="source" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">書き込まれる要素を表す型。</typeparam>
+        <param name="writer">XML ライター。</param>
+        <param name="source">型のソース要素<c>T</c>です。</param>
+        <summary>カスタム要素を記述する拡張ポイントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteDisplayClaim">
+      <MemberSignature Language="C#" Value="protected virtual void WriteDisplayClaim (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.DisplayClaim claim);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteDisplayClaim(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.DisplayClaim claim) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteDisplayClaim(System.Xml.XmlWriter,System.IdentityModel.Metadata.DisplayClaim)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="claim" Type="System.IdentityModel.Metadata.DisplayClaim" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="claim">書き込む要求の表示。</param>
+        <summary>表示要求を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEntitiesDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual void WriteEntitiesDescriptor (System.Xml.XmlWriter inputWriter, System.IdentityModel.Metadata.EntitiesDescriptor entitiesDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteEntitiesDescriptor(class System.Xml.XmlWriter inputWriter, class System.IdentityModel.Metadata.EntitiesDescriptor entitiesDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteEntitiesDescriptor(System.Xml.XmlWriter,System.IdentityModel.Metadata.EntitiesDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputWriter" Type="System.Xml.XmlWriter" />
+        <Parameter Name="entitiesDescriptor" Type="System.IdentityModel.Metadata.EntitiesDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="inputWriter">XML ライター。</param>
+        <param name="entitiesDescriptor">エンティティ記述子。</param>
+        <summary>エンティティ記述子を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="inputWriter" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="entitiesDescriptor" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="entitiesDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.EntitiesDescriptor.ChildEntities" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="entitiesDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.EntitiesDescriptor.ChildEntityGroups" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEntityDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual void WriteEntityDescriptor (System.Xml.XmlWriter inputWriter, System.IdentityModel.Metadata.EntityDescriptor entityDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteEntityDescriptor(class System.Xml.XmlWriter inputWriter, class System.IdentityModel.Metadata.EntityDescriptor entityDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteEntityDescriptor(System.Xml.XmlWriter,System.IdentityModel.Metadata.EntityDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputWriter" Type="System.Xml.XmlWriter" />
+        <Parameter Name="entityDescriptor" Type="System.IdentityModel.Metadata.EntityDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="inputWriter">XML ライター。</param>
+        <param name="entityDescriptor">エンティティ記述子。</param>
+        <summary>エンティティ記述子を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="inputWriter" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="entityDescriptor" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="entityDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.EntityDescriptor.Contacts" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="entityDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.EntityDescriptor.RoleDescriptors" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteIdentityProviderSingleSignOnDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual void WriteIdentityProviderSingleSignOnDescriptor (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor identityProviderSingleSignOnDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteIdentityProviderSingleSignOnDescriptor(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor identityProviderSingleSignOnDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteIdentityProviderSingleSignOnDescriptor(System.Xml.XmlWriter,System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="identityProviderSingleSignOnDescriptor" Type="System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="identityProviderSingleSignOnDescriptor">IDPSSO 記述子。</param>
+        <summary>IDPSSO 記述子を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="identityProviderSingleSignOnDescriptor" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="identityProviderSingleSignOnDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor.SupportedAttributes" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="identityProviderSingleSignOnDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.IdentityProviderSingleSignOnDescriptor.SingleSignOnServices" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteIndexedProtocolEndpoint">
+      <MemberSignature Language="C#" Value="protected virtual void WriteIndexedProtocolEndpoint (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.IndexedProtocolEndpoint indexedEP, System.Xml.XmlQualifiedName element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteIndexedProtocolEndpoint(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.IndexedProtocolEndpoint indexedEP, class System.Xml.XmlQualifiedName element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteIndexedProtocolEndpoint(System.Xml.XmlWriter,System.IdentityModel.Metadata.IndexedProtocolEndpoint,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="indexedEP" Type="System.IdentityModel.Metadata.IndexedProtocolEndpoint" />
+        <Parameter Name="element" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="indexedEP">インデックス付きのエンドポイントです。</param>
+        <param name="element">XML 修飾要素です。</param>
+        <summary>インデックス付きのエンドポイントを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="indexedEP" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteKeyDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual void WriteKeyDescriptor (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.KeyDescriptor keyDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteKeyDescriptor(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.KeyDescriptor keyDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteKeyDescriptor(System.Xml.XmlWriter,System.IdentityModel.Metadata.KeyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="keyDescriptor" Type="System.IdentityModel.Metadata.KeyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="keyDescriptor">キーの記述子。</param>
+        <summary>キーの記述子を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="keyDescriptor" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLocalizedName">
+      <MemberSignature Language="C#" Value="protected virtual void WriteLocalizedName (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.LocalizedName name, System.Xml.XmlQualifiedName element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteLocalizedName(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.LocalizedName name, class System.Xml.XmlQualifiedName element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteLocalizedName(System.Xml.XmlWriter,System.IdentityModel.Metadata.LocalizedName,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="name" Type="System.IdentityModel.Metadata.LocalizedName" />
+        <Parameter Name="element" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="name">ローカライズされた名前です。</param>
+        <param name="element">Xml 修飾名。</param>
+        <summary>ローカライズされた名前を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="name" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLocalizedUri">
+      <MemberSignature Language="C#" Value="protected virtual void WriteLocalizedUri (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.LocalizedUri uri, System.Xml.XmlQualifiedName element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteLocalizedUri(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.LocalizedUri uri, class System.Xml.XmlQualifiedName element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteLocalizedUri(System.Xml.XmlWriter,System.IdentityModel.Metadata.LocalizedUri,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="uri" Type="System.IdentityModel.Metadata.LocalizedUri" />
+        <Parameter Name="element" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="uri">ローカライズされた URI。</param>
+        <param name="element">Xml 修飾名。</param>
+        <summary>ローカライズされた URI を書き込みます</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="uri" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteMetadata">
+      <MemberSignature Language="C#" Value="public void WriteMetadata (System.IO.Stream stream, System.IdentityModel.Metadata.MetadataBase metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteMetadata(class System.IO.Stream stream, class System.IdentityModel.Metadata.MetadataBase metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteMetadata(System.IO.Stream,System.IdentityModel.Metadata.MetadataBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="metadata" Type="System.IdentityModel.Metadata.MetadataBase" />
+      </Parameters>
+      <Docs>
+        <param name="stream">フェデレーション メタデータの書き込み先のストリーム。</param>
+        <param name="metadata">記述するメタデータ。</param>
+        <summary>フェデレーション メタデータを指定したストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="metadata" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteMetadata">
+      <MemberSignature Language="C#" Value="public void WriteMetadata (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.MetadataBase metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteMetadata(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.MetadataBase metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteMetadata(System.Xml.XmlWriter,System.IdentityModel.Metadata.MetadataBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="metadata" Type="System.IdentityModel.Metadata.MetadataBase" />
+      </Parameters>
+      <Docs>
+        <param name="writer">フェデレーション メタデータを記述する XML ライター</param>
+        <param name="metadata">記述するメタデータ。</param>
+        <summary>フェデレーション メタデータを指定した XML ライターに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="metadata" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteMetadataCore">
+      <MemberSignature Language="C#" Value="protected virtual void WriteMetadataCore (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.MetadataBase metadataBase);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteMetadataCore(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.MetadataBase metadataBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteMetadataCore(System.Xml.XmlWriter,System.IdentityModel.Metadata.MetadataBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="metadataBase" Type="System.IdentityModel.Metadata.MetadataBase" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="metadataBase">基本の SAML メタデータ。 インスタンス、<see cref="T:System.IdentityModel.Metadata.EntityDescriptor" />または<see cref="T:System.IdentityModel.Metadata.EntitiesDescriptor" />クラスです。</param>
+        <summary>メタデータを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="metadataBase" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Metadata.MetadataSerializationException">
+          <paramref name="metadataBase" />割り当てることはできません<see cref="T:System.IdentityModel.Metadata.EntityDescriptor" />または<see cref="T:System.IdentityModel.Metadata.EntitiesDescriptor" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteOrganization">
+      <MemberSignature Language="C#" Value="protected virtual void WriteOrganization (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.Organization organization);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteOrganization(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.Organization organization) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteOrganization(System.Xml.XmlWriter,System.IdentityModel.Metadata.Organization)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="organization" Type="System.IdentityModel.Metadata.Organization" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="organization">組織。</param>
+        <summary>組織を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="organization" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteProtocolEndpoint">
+      <MemberSignature Language="C#" Value="protected virtual void WriteProtocolEndpoint (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.ProtocolEndpoint endpoint, System.Xml.XmlQualifiedName element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteProtocolEndpoint(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.ProtocolEndpoint endpoint, class System.Xml.XmlQualifiedName element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteProtocolEndpoint(System.Xml.XmlWriter,System.IdentityModel.Metadata.ProtocolEndpoint,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="endpoint" Type="System.IdentityModel.Metadata.ProtocolEndpoint" />
+        <Parameter Name="element" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="endpoint">エンドポイント。</param>
+        <param name="element">Xml 修飾名の要素。</param>
+        <summary>エンドポイントを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="endpoint" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteRoleDescriptorAttributes">
+      <MemberSignature Language="C#" Value="protected virtual void WriteRoleDescriptorAttributes (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.RoleDescriptor roleDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteRoleDescriptorAttributes(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.RoleDescriptor roleDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteRoleDescriptorAttributes(System.Xml.XmlWriter,System.IdentityModel.Metadata.RoleDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="roleDescriptor" Type="System.IdentityModel.Metadata.RoleDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="roleDescriptor">ロール記述子。</param>
+        <summary>ロール記述子の属性を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="roleDescriptor" />です。<see langword="null" />  
+  
+ または  
+  
+ <paramref name="roleDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.RoleDescriptor.ProtocolsSupported" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteRoleDescriptorElements">
+      <MemberSignature Language="C#" Value="protected virtual void WriteRoleDescriptorElements (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.RoleDescriptor roleDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteRoleDescriptorElements(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.RoleDescriptor roleDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteRoleDescriptorElements(System.Xml.XmlWriter,System.IdentityModel.Metadata.RoleDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="roleDescriptor" Type="System.IdentityModel.Metadata.RoleDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="roleDescriptor">ロール記述子。</param>
+        <summary>ロール記述子要素を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="roleDescriptor" />です。<see langword="null" />  
+  
+ または  
+  
+ <paramref name="roleDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.RoleDescriptor.Contacts" /> プロパティが <see langword="null" /> です。  
+  
+ <paramref name="roleDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.RoleDescriptor.Keys" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSecurityTokenServiceDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual void WriteSecurityTokenServiceDescriptor (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.SecurityTokenServiceDescriptor securityTokenServiceDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteSecurityTokenServiceDescriptor(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.SecurityTokenServiceDescriptor securityTokenServiceDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteSecurityTokenServiceDescriptor(System.Xml.XmlWriter,System.IdentityModel.Metadata.SecurityTokenServiceDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="securityTokenServiceDescriptor" Type="System.IdentityModel.Metadata.SecurityTokenServiceDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="securityTokenServiceDescriptor">セキュリティ トークン サービス記述子。</param>
+        <summary>セキュリティ トークン サービス記述子を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="securityTokenServiceDescriptor" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="securityTokenServiceDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.SecurityTokenServiceDescriptor.SecurityTokenServiceEndpoints" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="securityTokenServiceDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.SecurityTokenServiceDescriptor.PassiveRequestorEndpoints" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteServiceProviderSingleSignOnDescriptor">
+      <MemberSignature Language="C#" Value="protected virtual void WriteServiceProviderSingleSignOnDescriptor (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor serviceProviderSingleSignOnDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteServiceProviderSingleSignOnDescriptor(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor serviceProviderSingleSignOnDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteServiceProviderSingleSignOnDescriptor(System.Xml.XmlWriter,System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="serviceProviderSingleSignOnDescriptor" Type="System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="serviceProviderSingleSignOnDescriptor">SPSSO 記述子。</param>
+        <summary>SPSSO 記述子を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="serviceProviderSingleSignOnDescriptor" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="serviceProviderSingleSignOnDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor.AssertionConsumerServices" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSingleSignOnDescriptorAttributes">
+      <MemberSignature Language="C#" Value="protected virtual void WriteSingleSignOnDescriptorAttributes (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.SingleSignOnDescriptor singleSignOnDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteSingleSignOnDescriptorAttributes(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.SingleSignOnDescriptor singleSignOnDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteSingleSignOnDescriptorAttributes(System.Xml.XmlWriter,System.IdentityModel.Metadata.SingleSignOnDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="singleSignOnDescriptor" Type="System.IdentityModel.Metadata.SingleSignOnDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="singleSignOnDescriptor">SSO の記述子。</param>
+        <summary>SSO 記述子属性を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="singleSignOnDescriptor" />です。<see langword="null" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSingleSignOnDescriptorElements">
+      <MemberSignature Language="C#" Value="protected virtual void WriteSingleSignOnDescriptorElements (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.SingleSignOnDescriptor singleSignOnDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteSingleSignOnDescriptorElements(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.SingleSignOnDescriptor singleSignOnDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteSingleSignOnDescriptorElements(System.Xml.XmlWriter,System.IdentityModel.Metadata.SingleSignOnDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="singleSignOnDescriptor" Type="System.IdentityModel.Metadata.SingleSignOnDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="singleSignOnDescriptor">SSO の記述子。</param>
+        <summary>SSO 記述子要素を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="singleSignOnDescriptor" />です。<see langword="null" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteWebServiceDescriptorAttributes">
+      <MemberSignature Language="C#" Value="protected virtual void WriteWebServiceDescriptorAttributes (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.WebServiceDescriptor wsDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteWebServiceDescriptorAttributes(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.WebServiceDescriptor wsDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteWebServiceDescriptorAttributes(System.Xml.XmlWriter,System.IdentityModel.Metadata.WebServiceDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="wsDescriptor" Type="System.IdentityModel.Metadata.WebServiceDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="wsDescriptor">Web サービスの記述子。</param>
+        <summary>Web サービスの記述子属性を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="wsDescriptor" />です。<see langword="null" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteWebServiceDescriptorElements">
+      <MemberSignature Language="C#" Value="protected virtual void WriteWebServiceDescriptorElements (System.Xml.XmlWriter writer, System.IdentityModel.Metadata.WebServiceDescriptor wsDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteWebServiceDescriptorElements(class System.Xml.XmlWriter writer, class System.IdentityModel.Metadata.WebServiceDescriptor wsDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.MetadataSerializer.WriteWebServiceDescriptorElements(System.Xml.XmlWriter,System.IdentityModel.Metadata.WebServiceDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="wsDescriptor" Type="System.IdentityModel.Metadata.WebServiceDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ライター。</param>
+        <param name="wsDescriptor">Web サービスの記述子。</param>
+        <summary>Web サービスの記述子要素を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="wsDescriptor" />です。<see langword="null" />  
+  
+ または  
+  
+ <paramref name="wsDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.WebServiceDescriptor.TargetScopes" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="wsDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.WebServiceDescriptor.ClaimTypesOffered" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="wsDescriptor" /> の <see cref="P:System.IdentityModel.Metadata.WebServiceDescriptor.TokenTypesOffered" /> プロパティが <see langword="null" /> です。  
+  
+ パラメーター reader/roleDescriptor/roleDescriptor.TargetScopes/roleDescriptor.TargetScopes/roleDescriptor.TokenTypesOffered が null です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

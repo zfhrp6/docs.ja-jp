@@ -1,0 +1,1296 @@
+<Type Name="BaseDataList" FullName="System.Web.UI.WebControls.BaseDataList">
+  <TypeSignature Language="C#" Value="public abstract class BaseDataList : System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BaseDataList extends System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.BaseDataList" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("SelectedIndexChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("DataSource")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.BaseDataListDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>抽象として機能の基本クラスのデータ一覧コントロールなど<see cref="T:System.Web.UI.WebControls.DataList" />と<see cref="T:System.Web.UI.WebControls.DataGrid" />です。 このクラスは、すべてのデータ一覧コントロールに共通するメソッドとプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList>クラスなど、コントロールを一覧表示するすべてのデータの共通機能を提供<xref:System.Web.UI.WebControls.DataList>と<xref:System.Web.UI.WebControls.DataGrid>です。 など、データ ソースからレコードを表示するリスト コントロールのデータが使用される、<xref:System.Data.DataView?displayProperty=nameWithType>コントロール。 各データ リスト コントロールには、一意な表示スタイルと機能を持つことができます。 <xref:System.Web.UI.WebControls.BaseDataList>が抽象クラスで、このクラスのインスタンスが直接作成されません。 代わりに、メソッドとプロパティすべてのデータをこのクラスからのコントロールをリストに共通のデータ一覧コントロールを継承します。  
+  
+ このクラスの特定のプロパティを設定してコントロールを一覧表示するデータの外観を制御できます。 データ リスト コントロールのセル間のスペースの量を確認するのには、設定、<xref:System.Web.UI.WebControls.BaseDataList.CellSpacing%2A>プロパティです。 セルの内容と、セルの境界線の間のスペースの量を確認するのには、設定、<xref:System.Web.UI.WebControls.BaseDataList.CellPadding%2A>プロパティです。 リスト コントロールを設定してデータの個々 のセルの間の境界線を表示することができます、<xref:System.Web.UI.WebControls.BaseDataList.GridLines%2A>プロパティです。 データのリスト コントロールのセルの内容の水平方向の配置はによって制御されます、<xref:System.Web.UI.WebControls.BaseDataList.HorizontalAlign%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.BaseDataList>クラスには、データ バインディングをサポートするために 2 つのプロパティが用意されています。 実装する任意のコレクションにデータをバインドする、<xref:System.Collections.IEnumerable?displayProperty=nameWithType>インターフェイス (など<xref:System.Data.DataView?displayProperty=nameWithType>または<xref:System.Collections.ArrayList?displayProperty=nameWithType>)、または<xref:System.ComponentModel.IListSource>インターフェイスを使用して、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティをデータ ソースを指定します。 設定すると、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティ、データ バインドを実行するコードを手動で記述する必要があります。 コントロールをデータ ソース コントロールで表されるデータ ソースを一覧表示するデータを自動的にバインドするを使用して、<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティその値を設定、<xref:System.Web.UI.Control.ID%2A>を使用するデータ ソース コントロールのプロパティです。 設定すると、<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティ、コントロールを自動的に一覧表示するデータが、指定したデータ ソース コントロールにバインドします。 そのため、必要はありませんを明示的に呼び出す、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>メソッドです。  
+  
+ によって、データ ソースが指定されている場合、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティには、複数のデータ ソースが含まれています。 を使用して、<xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>プロパティ、コントロールにバインドする特定のソースを指定します。 ある場合など、<xref:System.Data.DataSet?displayProperty=nameWithType>オブジェクト、複数のテーブルをコントロールにバインドするテーブルを指定する必要があります。 使用して、データ ソースを指定したら、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>データ ソースをコントロールにバインドするメソッド。  
+  
+ <xref:System.Web.UI.WebControls.BaseDataList>クラスに含まれる、<xref:System.Web.UI.WebControls.BaseDataList.DataKeys%2A>データ コントロールをリストの各レコード (行として表示されます) のキー フィールドを格納するコレクション。 これにより、キー フィールドをコントロールに表示せずにコントロールを一覧表示するデータを格納できます。 キー フィールドは、データ ソースの特定のレコードを変更する update クエリ文字列の一部としてよく使用します。 指定されたフィールドの値が入ったが、コレクション、<xref:System.Web.UI.WebControls.BaseDataList.DataKeyField%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.BaseDataList>クラスを提供する<xref:System.Web.UI.WebControls.BaseDataList.SelectedIndexChanged>コントロールで選択した項目が変更されたときに発生するイベントです。 これにより、イベントが発生したときに、特定の命令セットを実行するカスタム イベント ハンドラーを作成できます。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Web.UI.WebControls.BaseDataList" /> から継承する場合は、<see cref="M:System.Web.UI.WebControls.BaseDataList.CreateControlHierarchy(System.Boolean)" /> メンバーと <see cref="M:System.Web.UI.WebControls.BaseDataList.PrepareControlHierarchy" /> メンバーをオーバーライドする必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseDataList ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BaseDataList" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.BaseDataList>オブジェクトが直接作成されません。 このコンス トラクターは一般的に定義されたプロパティを初期化するために派生クラスのコンス トラクターでと呼ばれる、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParsedSubObject">
+      <MemberSignature Language="C#" Value="protected override void AddParsedSubObject (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddParsedSubObject(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.AddParsedSubObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">解析された要素を表す <see cref="T:System.Object" />。</param>
+        <summary>要素を XML または HTML のいずれかが解析されたし、その要素をサーバー コントロールのサーバー コントロールに通知<see cref="T:System.Web.UI.ControlCollection" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Caption">
+      <MemberSignature Language="C#" Value="public virtual string Caption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Caption" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.Caption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの HTML caption 要素に表示されるテキストを設定します。 このプロパティは、コントロールを支援テクノロジ デバイスのユーザーにアクセスしやすくものです。</summary>
+        <value>コントロールの HTML caption 要素に表示されるテキストを表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.Caption%2A>プロパティ、コントロール内の HTML caption 要素に表示されるテキストを指定します。 指定したテキストは、支援テクノロジ デバイスのコントロールの説明を提供します。  
+  
+ コントロールのキャプションの HTML 要素の配置を指定するには、使用、<xref:System.Web.UI.WebControls.BaseDataList.CaptionAlign%2A>プロパティです。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaptionAlign">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.TableCaptionAlign CaptionAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.TableCaptionAlign CaptionAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.CaptionAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableCaptionAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのキャプションの HTML 要素の水平方向または垂直方向の位置を設定します。 このプロパティは、コントロールを支援テクノロジ デバイスのユーザーにアクセスしやすくものです。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.TableCaptionAlign" /> 列挙値のいずれか。 既定値は <see langword="NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.CaptionAlign%2A>コントロールのキャプションの HTML 要素の水平方向または垂直方向の位置を指定するプロパティです。 このプロパティは、コントロールを支援テクノロジ デバイスのユーザーにアクセスしやすくものです。  
+  
+ このプロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.TableCaptionAlign>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`NotSet`|Caption 要素の配置が設定されていません。|  
+|`Top`|Caption 要素は、テーブルの上部に揃えられます。|  
+|`Bottom`|Caption 要素は、テーブルの下部に揃えられます。|  
+|`Left`|Caption 要素は、テーブルの左のエッジに揃えられます。|  
+|`Right`|Caption 要素は、テーブルの右の端に揃えられます。|  
+  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.Caption%2A>プロパティ、コントロール内の HTML caption 要素に表示されるテキストを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された型は、のいずれかではない、<see cref="T:System.Web.UI.WebControls.TableCaptionAlign" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CellPadding">
+      <MemberSignature Language="C#" Value="public virtual int CellPadding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CellPadding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.CellPadding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセルの内容と、セルの境界線の間の領域の量を設定します。</summary>
+        <value>までの間隔 (ピクセル単位) のセルの内容とセルの境界線の量。 既定値は、-1 で、このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.CellPadding%2A>セルの内容と、セルの境界線の間の余白を制御するプロパティです。 指定されたパディングの量は、セルの 4 つすべての側面に追加されます。  
+  
+ リスト コントロールのデータの同じ列のすべてのセルは、セルの同一の幅を共有します。 したがって、1 つのセルの内容が同じ列の他のセルの内容よりも長い場合は、余白の量が最も幅の広いセルに適用します。 列の他のすべてのセルは、このセルの幅にも設定されます。  
+  
+ 同様に、同じ行のすべてのセルは、同じ高さを共有します。 余白の量は、行の行内のセルの高さに適用されます。 その他のすべてのセルの行には、このセルの高さに設定されます。 個々 のセルのサイズを指定することはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseDataList.CellPadding%2A>プロパティ セルの内容とセルの境界線間の間隔を指定します。  
+  
+ [!code-aspx-csharp[BaseDataListCellPadding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListCellPadding/CS/basedatalistcellpaddingcs.aspx#1)]
+ [!code-aspx-vb[BaseDataListCellPadding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListCellPadding/VB/basedatalistcellpaddingvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellSpacing">
+      <MemberSignature Language="C#" Value="public virtual int CellSpacing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CellSpacing" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.CellSpacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセル間の領域の量を設定します。</summary>
+        <value>セル間のピクセル単位で空白の量。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.CellSpacing%2A>データ コントロールをリストの隣接するセルの間隔を制御するプロパティです。 この間隔は、垂直および水平方向の両方に適用されます。 セルの間隔は、リスト コントロールのデータ全体の統一されています。 それぞれの行または列の個々 のセルの間隔を指定することはできません。  
+  
+> [!NOTE]
+>  かどうかはこのプロパティを設定する値を超える`0`設定と、<xref:System.Web.UI.WebControls.BaseDataList.GridLines%2A>プロパティ セルの境界線が表示される値、ギャップは隣接するセルの境界線間に表示されます。 このような状況で、<xref:System.Web.UI.WebControls.BaseDataList.CellSpacing%2A>プロパティは、ギャップのサイズを制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseDataList.CellSpacing%2A>隣接するセルの間隔を指定するプロパティです。  
+  
+ [!code-aspx-csharp[BaseDataListCellPadding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListCellPadding/CS/basedatalistcellpaddingcs.aspx#1)]
+ [!code-aspx-vb[BaseDataListCellPadding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListCellPadding/VB/basedatalistcellpaddingvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ControlCollection Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCollection Controls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ControlCollection" />データ リスト コントロールで子コントロールのコレクションを格納するオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.ControlCollection" />データ リスト コントロールで子コントロールのコレクションを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.Controls%2A>データ リスト コントロールに含まれる子コントロールを管理するコレクション。 コントロールを追加、コントロールを削除したり、またはコレクション内のサーバー コントロールを反復処理することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムによってコントロールを追加する方法を示します、<xref:System.Web.UI.WebControls.BaseDataList.Controls%2A>コレクション。  
+  
+ [!code-aspx-csharp[BaseDataListControls#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListControls/CS/basedatalistcontrolscs.aspx#1)]
+ [!code-aspx-vb[BaseDataListControls#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListControls/VB/basedatalistcontrolsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildControls">
+      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.CreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー ステートを使用して子コントロールを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateControlHierarchy">
+      <MemberSignature Language="C#" Value="protected abstract void CreateControlHierarchy (bool useDataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CreateControlHierarchy(bool useDataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.CreateControlHierarchy(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useDataSource" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useDataSource">
+          <see langword="true" />コントロールのデータ ソースを使用するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>派生クラスでオーバーライドされると、データまたは指定されたデータ ソースを使用せずにコントロールをリストのコントロールの階層構造を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.CreateControlHierarchy%2A>メソッドは、そのコントロールの階層構造を作成する派生クラスで使用されるヘルパー メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>データから派生したコントロールのリストを作成するとき<see cref="T:System.Web.UI.WebControls.BaseDataList" />、オーバーライドする必要があります、<see cref="M:System.Web.UI.WebControls.BaseDataList.CreateControlHierarchy(System.Boolean)" />メソッドを派生データ リスト コントロールのコントロールの階層構造を作成します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDataSourceSelectArguments">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.DataSourceSelectArguments CreateDataSourceSelectArguments ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.DataSourceSelectArguments CreateDataSourceSelectArguments() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.CreateDataSourceSelectArguments" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceSelectArguments</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デフォルトが作成<see cref="T:System.Web.UI.DataSourceSelectArguments" />引数が指定されていない場合に、データ バインド コントロールで使用されるオブジェクト。</summary>
+        <returns>A<see cref="T:System.Web.UI.DataSourceSelectArguments" />に初期化<see cref="P:System.Web.UI.DataSourceSelectArguments.Empty" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.CreateDataSourceSelectArguments%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.BaseDataList.SelectArguments%2A>プロパティを既定の<xref:System.Web.UI.DataSourceSelectArguments>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="public override void DataBind ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DataBind() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.DataBind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定したデータ ソースにコントロールとそのすべての子コントロールをバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>で指定されたデータ ソースにバインドするメソッド、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティ リスト コントロールのデータをします。 リスト コントロールのデータをデータ ソースをバインドすることによって、データ ソースの情報は、データ リスト コントロールに表示されます。  
+  
+ <xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>も通常、メソッドは、データ ソースとデータ ソース内の情報が更新された後にコントロールを一覧表示するデータを同期するために使用します。 これにより、データのリスト コントロールにも更新するデータ ソースを変更できます。  
+  
+ によってデータのリスト コントロールのデータ ソースが指定されている場合、<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティ、する必要はありませんを呼び出して、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>メソッドです。 ASP.NET では、指定されたデータ ソース コントロール データにバインドするリスト コントロールに自動的にこのメソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>をデータ ソースにバインドするメソッド、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid Example 2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid Example 2/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid Example 2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid Example 2/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataKeyField">
+      <MemberSignature Language="C#" Value="public virtual string DataKeyField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataKeyField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.DataKeyField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定キー フィールドで指定されたデータ ソース、<see cref="P:System.Web.UI.WebControls.BaseDataList.DataSource" />プロパティです。</summary>
+        <value>指定されたデータ ソース内のキー フィールドの名前<see cref="P:System.Web.UI.WebControls.BaseDataList.DataSource" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.DataKeyField%2A>によって示されるプロパティをデータ ソース内のキー フィールドを指定する、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティです。 指定したフィールドが設定に使用されます、<xref:System.Web.UI.WebControls.BaseDataList.DataKeys%2A>コレクション。 これにより、キー フィールドをコントロールに表示せずにコントロールを一覧表示するデータを格納できます。 キー フィールドは、一般的な用途ハンドラーで、イベントなど`ItemCommand`または`DeleteCommand`更新、データ ソースの特定のレコードを変更するクエリ文字列の一部として。 キー フィールドでは、update クエリ文字列を変更する適切なレコードを識別するのに役立ちます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseDataList.DataKeyField%2A>プロパティをデータ ソースのキー フィールドを指定します。  
+  
+ [!code-aspx-csharp[BaseDataListDataKeys#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListDataKeys/CS/basedatalistdatakeyscs.aspx#1)]
+ [!code-aspx-vb[BaseDataListDataKeys#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListDataKeys/VB/basedatalistdatakeysvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataKeys">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataKeyCollection DataKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataKeyCollection DataKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.DataKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataKeyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.DataKeyCollection" />データ コントロールをリストの各レコードのキー値を格納するオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.DataKeyCollection" />データ コントロールをリストの各レコードのキー値を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.DataKeys%2A>データ コントロールをリストの各レコード (行として表示されます) のキー値にアクセスするコレクション。 これにより、キー フィールドをコントロールに表示せずにコントロールを一覧表示するデータを格納できます。 このコレクションがで指定されたフィールドの値が自動的に入力、<xref:System.Web.UI.WebControls.BaseDataList.DataKeyField%2A>プロパティです。  
+  
+ キー フィールドは、一般的な用途ハンドラーで、イベントなど`ItemCommand`または`DeleteCommand`更新、データ ソースの特定のレコードを変更するクエリ文字列の一部として。 キー フィールドでは、update クエリ文字列を変更する適切なレコードを識別するのに役立ちます。  
+  
+ ASP.NET でのデータにアクセスする方法の詳細については、次を参照してください。 [ASP.NET データ アクセス コンテンツ マップ](http://msdn.microsoft.com/en-us/f9219396-a0fa-481f-894d-e3d9c67d64f2)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseDataList.DataKeys%2A>削除されるレコードのキー フィールドの値を決定するプロパティです。  
+  
+ [!code-aspx-csharp[BaseDataListDataKeys#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListDataKeys/CS/basedatalistdatakeyscs.aspx#1)]
+ [!code-aspx-vb[BaseDataListDataKeys#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListDataKeys/VB/basedatalistdatakeysvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataKeysArray">
+      <MemberSignature Language="C#" Value="protected System.Collections.ArrayList DataKeysArray { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList DataKeysArray" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.DataKeysArray" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ArrayList" />データ リスト コントロール内の各レコードのキー値を含むオブジェクトです。</summary>
+        <value><see cref="T:System.Collections.ArrayList" />データ リスト コントロール内の各レコードのキー値を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.DataKeysArray%2A>プロパティはデータ コントロールをリストの各レコードのキー値を格納する派生クラスによって使用されます。 このプロパティは生成に使用、通常、<xref:System.Web.UI.WebControls.DataKeyCollection>に含まれているオブジェクト、<xref:System.Web.UI.WebControls.BaseDataList.DataKeys%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataMember">
+      <MemberSignature Language="C#" Value="public string DataMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataMember" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.DataMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリスト コントロールのデータにバインドするメンバーのデータ ソースの特定のデータ メンバーを設定します。</summary>
+        <value>メンバーのデータ ソースからのデータ メンバーです。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>プロパティ リスト コントロールにバインドするには、複数メンバーのデータ ソースからメンバーを指定します。 たとえば、データ ソースで指定した 2 つ以上のテーブルがある場合、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティを使用して、<xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>プロパティ リスト コントロールのデータにバインドするテーブルを指定します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>で対象のテーブルを指定するプロパティ、<xref:System.Data.DataSet>バインド先のオブジェクト、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[BaseDataListDataMember#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListDataMember/CS/basedatalistdatamembercs.aspx#1)]
+ [!code-aspx-vb[BaseDataListDataMember#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListDataMember/VB/basedatalistdatamembervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public virtual object DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロール内で項目の作成に使用される値の一覧を含むソースを設定します。</summary>
+        <value><see cref="T:System.Collections.IEnumerable" />または<see cref="T:System.ComponentModel.IListSource" />このコントロールにデータを提供するために使用する値のコレクションを格納します。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティ リスト コントロールのデータにバインドする値のソースを指定します。 データ ソースは、いずれかを実装するコレクションをする必要があります、<xref:System.Collections.IEnumerable?displayProperty=nameWithType>インターフェイス (など<xref:System.Data.DataView?displayProperty=nameWithType>、 <xref:System.Collections.ArrayList?displayProperty=nameWithType>、または<xref:System.Collections.Generic.List%601?displayProperty=nameWithType>) または<xref:System.ComponentModel.IListSource>から派生したコントロールにバインドするインターフェイス、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。 設定すると、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティ、データ バインディングを実行するコードを手動で記述する必要があります。  
+  
+ によって、データ ソースが指定されている場合、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティには、複数のデータ ソースが含まれています。 を使用して、<xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>プロパティ、コントロールにバインドする特定のソースを指定します。 ある場合など、<xref:System.Data.DataSet?displayProperty=nameWithType>オブジェクト、複数のテーブルをコントロールにバインドするテーブルを指定する必要があります。 使用して、データ ソースを指定したら、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>データ ソースをコントロールにバインドするメソッド。  
+  
+ また、使用することができます、<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>自動的にデータ ソース コントロールで表されるデータ ソースにバインドするプロパティです。 設定すると、<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティ、コントロールを自動的に一覧表示するデータが、指定したデータ ソース コントロールにバインドします。 明示的に呼び出しのコードを記述する必要はありません、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>メソッドです。  
+  
+ 両方の値が指定されている場合、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティおよび<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティ ASP.NET は、データ ソースを解決できないと<xref:System.Web.HttpException?displayProperty=nameWithType>例外がスローされます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティをバインドするデータ ソースを指定する、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[Classic DataGrid Example 2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataGrid Example 2/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic DataGrid Example 2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataGrid Example 2/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">両方の値が指定されているために、データ ソースが解決することはできません、<see cref="P:System.Web.UI.WebControls.BaseDataList.DataSource" />プロパティおよび<see cref="P:System.Web.UI.WebControls.BaseDataList.DataSourceID" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentException">データ ソースは、無効な型です。 データ ソースである必要があります<see langword="null" />または実装するか、<see cref="T:System.Collections.IEnumerable" />または<see cref="T:System.ComponentModel.IListSource" />インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceID">
+      <MemberSignature Language="C#" Value="public virtual string DataSourceID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSourceID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.DataSourceID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.IDReferenceProperty(typeof(System.Web.UI.DataSourceControl))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Web.UI.Control.ID" />リスト コントロールのデータがそのデータ ソースの取得に使用するデータ ソース コントロールのプロパティです。</summary>
+        <value>データ ソース コントロールに割り当てられているプログラム id。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティへのアクセスを<xref:System.Web.UI.Control.ID%2A>リスト コントロールのデータがそのデータ ソースの取得に使用するデータ ソース コントロールのプロパティです。 データ ソース コントロールによって参照される、<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティを実装する任意のコントロールにすることができます、<xref:System.Web.UI.IDataSource>インターフェイスです。 データ ソース コントロールは、それを参照するコントロールを一覧表示するデータと同じ名前付けコンテナーまたはデータのリスト コントロールの親コントロールが必要です。 このプロパティの値を指定するときにコントロールを自動的に一覧表示するデータは、指定したデータ ソース コントロールにバインドします。 明示的に呼び出しのコードを記述する必要はありません、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>メソッドです。  
+  
+ また、使用することができます、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティ リスト コントロールのデータにバインドする値のソースを指定します。 データ ソースを実装するコレクションである必要があります、<xref:System.Collections.IEnumerable?displayProperty=nameWithType>インターフェイス (など<xref:System.Data.DataView?displayProperty=nameWithType>、 <xref:System.Collections.ArrayList?displayProperty=nameWithType>、または<xref:System.Collections.Generic.List%601?displayProperty=nameWithType>) または<xref:System.ComponentModel.IListSource>から派生したコントロールにバインドするインターフェイス、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。 設定すると、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティ、データ バインディングを実行するコードを手動で記述する必要があります。  
+  
+ 両方の値が指定されている場合、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>プロパティおよび<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティ ASP.NET は、データ ソースを解決できないと<xref:System.Web.HttpException?displayProperty=nameWithType>例外がスローされます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">両方の値が指定されているために、データ ソースが解決することはできません、<see cref="P:System.Web.UI.WebControls.BaseDataList.DataSource" />プロパティおよび<see cref="P:System.Web.UI.WebControls.BaseDataList.DataSourceID" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureDataBound">
+      <MemberSignature Language="C#" Value="protected void EnsureDataBound ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void EnsureDataBound() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.EnsureDataBound" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リスト コントロールのデータがデータ バインディングに必要なことと、有効なデータ ソース コントロールが呼び出しの前に指定されていることを確認、<see cref="M:System.Web.UI.WebControls.BaseDataList.DataBind" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を指定すると、<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティ、ASP.NET は自動的に指定されたデータ ソース コントロールにコントロールを一覧表示するデータ バインドします。 ASP.NET は、コントロールのデータ バインディングを実行するとが呼び出されて、<xref:System.Web.UI.WebControls.BaseDataList.EnsureDataBound%2A>コントロールがデータに既にバインドされていない有効なデータ ソースを制御することを実装していることを確認するには、最初のメソッド、<xref:System.Web.UI.IDataSource>インターフェイスが指定されてその<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティです。 <xref:System.Web.UI.WebControls.BaseDataList.EnsureDataBound%2A>メソッドを呼び出します、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.IEnumerable GetData ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.IEnumerable GetData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.GetData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、 <see cref="T:System.Collections.IEnumerable" />-データ ソースを表すオブジェクトを実装します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />-データ ソースを表すオブジェクトを実装します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.GetData%2A>メソッドは、派生クラスによって呼び出されるヘルパー メソッド (など<xref:System.Web.UI.WebControls.DataGrid>と<xref:System.Web.UI.WebControls.DataList>) をデータ ソースを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GridLines">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.GridLines GridLines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.GridLines GridLines" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.GridLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.GridLines</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータのリスト コントロールのセルの間の境界線が表示されるかどうかを指定する値を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.GridLines" /> 値のいずれか。 既定値は <see langword="Both" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.GridLines%2A>データ リスト コントロールのセルの間の境界線を表示するかどうかを指定するプロパティです。 このプロパティのいずれかで、<xref:System.Web.UI.WebControls.GridLines>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`None`|セルの枠線は表示されません。|  
+|`Horizontal`|データのリスト コントロール内のセルの上限と下限の境界のみが表示されます。|  
+|`Vertical`|データのリスト コントロール内のセルの左と右の境界線だけが表示されます。|  
+|`Both`|すべてのデータのリスト コントロール内のセルの罫線が表示されます。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseDataList.GridLines%2A>プロパティをデータ バインド コントロールの水平方向および垂直のグリッドの線を表示します。  
+  
+ [!code-aspx-csharp[BaseDataListGridLines#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListGridLines/CS/basedatalistgridlinescs.aspx#1)]
+ [!code-aspx-vb[BaseDataListGridLines#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListGridLines/VB/basedatalistgridlinesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalAlign">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.HorizontalAlign HorizontalAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.HorizontalAlign HorizontalAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.HorizontalAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.HorizontalAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ リスト コンテナー内のコントロールの水平方向の配置を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.HorizontalAlign" /> 値のいずれか。 既定値は <see langword="NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.HorizontalAlign%2A>データ リスト コンテナー内のコントロールの水平方向の配置を指定するプロパティです。 このプロパティのいずれかで、<xref:System.Web.UI.WebControls.HorizontalAlign>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`NotSet`|水平方向の配置が設定されていません。|  
+|`Left`|リスト コントロールのデータは、そのコンテナー内で左揃えです。|  
+|`Center`|リスト コントロールのデータはそのコンテナー内で中央揃えされます。|  
+|`Right`|リスト コントロールのデータは、そのコンテナー内で右揃えです。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseDataList.HorizontalAlign%2A>プロパティ、データ バインド コントロールの水平方向の配置を指定します。  
+  
+ [!code-aspx-csharp[BaseDataListHorizontalAlign#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListHorizontalAlign/CS/basedatalisthorizontalaligncs.aspx#1)]
+ [!code-aspx-vb[BaseDataListHorizontalAlign#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListHorizontalAlign/VB/basedatalisthorizontalalignvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialized">
+      <MemberSignature Language="C#" Value="protected bool Initialized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Initialized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.Initialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールが初期化されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コントロールが初期化されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.Initialized%2A>プロパティは、派生クラスによって使用されます (など<xref:System.Web.UI.WebControls.DataList>と<xref:System.Web.UI.WebControls.DataGrid>) をコントロールが初期化されているかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBindableType">
+      <MemberSignature Language="C#" Value="public static bool IsBindableType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsBindableType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.IsBindableType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />をテストするデータ型を格納します。</param>
+        <summary>指定したデータ型をから派生するリスト コントロールにバインドできるかどうかを判断、<see cref="T:System.Web.UI.WebControls.BaseDataList" />クラスです。</summary>
+        <returns>
+          <see langword="true" />指定されたデータ型から派生するリスト コントロールにバインドすることができる場合、<see cref="T:System.Web.UI.WebControls.BaseDataList" />クラスです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.IsBindableType%2A>静的メソッドから継承するリスト コントロールに指定されたデータ型をバインドできるかどうかを決定する、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。 サポートされているデータ型は、 <xref:System.Boolean?displayProperty=nameWithType>、 <xref:System.Byte?displayProperty=nameWithType>、 <xref:System.SByte?displayProperty=nameWithType>、 <xref:System.Int16?displayProperty=nameWithType>、 <xref:System.UInt16?displayProperty=nameWithType>、 <xref:System.Int32?displayProperty=nameWithType>、 <xref:System.UInt32?displayProperty=nameWithType>、 <xref:System.Int64?displayProperty=nameWithType>、 <xref:System.UInt64?displayProperty=nameWithType>、 <xref:System.Char?displayProperty=nameWithType>、 <xref:System.Double?displayProperty=nameWithType>、 <xref:System.Single?displayProperty=nameWithType>、<xref:System.DateTime?displayProperty=nameWithType>、 <xref:System.Decimal?displayProperty=nameWithType>、および<xref:System.String?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseDataList.IsBindableType%2A>に特定のデータ型の値をバインドできるかどうかを決定するプロパティ、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-aspx-csharp[BaseDataListIsBindableType#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListIsBindableType/CS/basedatalistisbindabletypecs.aspx#1)]
+ [!code-aspx-vb[BaseDataListIsBindableType#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListIsBindableType/VB/basedatalistisbindabletypevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBoundUsingDataSourceID">
+      <MemberSignature Language="C#" Value="protected bool IsBoundUsingDataSourceID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBoundUsingDataSourceID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.IsBoundUsingDataSourceID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Web.UI.WebControls.BaseDataList.DataSourceID" />プロパティを設定します。</summary>
+        <value>
+          <see langword="true" />場合<see cref="P:System.Web.UI.WebControls.BaseDataList.DataSourceID" />以外の値に設定が<see cref="F:System.String.Empty" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.IsBoundUsingDataSourceID%2A>プロパティは、派生クラスによって使用されます (など<xref:System.Web.UI.WebControls.DataList>と<xref:System.Web.UI.WebControls.DataGrid>) をデータ バインド コントロールを ASP.NET のバージョン 2.0 のデータ ソース コントロールにバインドされているかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataBinding">
+      <MemberSignature Language="C#" Value="protected override void OnDataBinding (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDataBinding(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.OnDataBinding(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.Control.DataBinding" />のイベント、<see cref="T:System.Web.UI.WebControls.BaseDataList" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Control.DataBinding>イベントが発生するデータがバインドされている場合、<xref:System.Web.UI.WebControls.BaseDataList>コントロール。 このメソッドは、それに関連付けられているデータのバインド ロジックを実行するコントロールを通知します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.BaseDataList.OnDataBinding%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.BaseDataList.OnDataBinding(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.BaseDataList.OnDataBinding(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataPropertyChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDataPropertyChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDataPropertyChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.OnDataPropertyChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基本のデータ ソースの id プロパティのいずれかの変更されると、そのデータをデータ バインド コントロールを再バインドするときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.OnDataPropertyChanged%2A>データ バインド コントロールをそのデータを再バインドするメソッドが呼び出されたときに、 <xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>、 <xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>、または<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティ ページの後に値が変更された<xref:System.Web.UI.Control.PreRender>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">フェーズでは、データ バインディング コントロールのプロパティの値を変更しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataSourceViewChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDataSourceViewChanged (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDataSourceViewChanged(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.OnDataSourceViewChanged(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.DataSourceView.DataSourceViewChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.OnDataSourceViewChanged%2A>メソッドは、基になるデータ ソースが変更されたことと、コントロールを再バインドする必要があり、必要な作業を実行することに、データ バインド コントロールに通知します。 通常、<xref:System.Web.UI.WebControls.BaseDataList.OnDataSourceViewChanged%2A>データ ソース ビューのプロパティが変更されたときに、メソッドが呼び出されます。  
+  
+ <xref:System.Web.UI.WebControls.BaseDataList>クラスのセット、<xref:System.Web.UI.WebControls.BaseDataList.RequiresDataBinding%2A>プロパティを`true`ときに、<xref:System.Web.UI.DataSourceView.DataSourceViewChanged>イベントが発生します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.BaseDataList.OnDataSourceViewChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.BaseDataList.OnDataSourceViewChanged(System.Object,System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.BaseDataList.OnDataSourceViewChanged(System.Object,System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.BaseDataList" /> コントロールの <see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.OnInit%2A>メソッドは、通知、<xref:System.Web.UI.WebControls.BaseDataList>コントロールを作成し、インスタンスを設定するために必要な初期化の手順を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoad">
+      <MemberSignature Language="C#" Value="protected override void OnLoad (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnLoad(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.OnLoad(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.Load" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.PreRender" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectedIndexChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnSelectedIndexChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSelectedIndexChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.OnSelectedIndexChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.BaseDataList.SelectedIndexChanged" />のイベント、<see cref="T:System.Web.UI.WebControls.BaseDataList" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.SelectedIndexChanged>イベント データをサーバーにポスト間でコントロールをリストの別の項目が選択されているときに発生します。 <xref:System.Web.UI.WebControls.BaseDataList.OnSelectedIndexChanged%2A>メソッドでは、カスタム イベントのハンドラーを作成することができます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.BaseDataList.OnSelectedIndexChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.BaseDataList.OnSelectedIndexChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.BaseDataList.OnSelectedIndexChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareControlHierarchy">
+      <MemberSignature Language="C#" Value="protected abstract void PrepareControlHierarchy ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void PrepareControlHierarchy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.PrepareControlHierarchy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ バインド コントロールのコントロールの階層を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承する場合<xref:System.Web.UI.WebControls.BaseDataList>、実装する必要があります、<xref:System.Web.UI.WebControls.BaseDataList.PrepareControlHierarchy%2A>データ バインド コントロールのコントロールの階層構造を準備する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataList.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A<see cref="T:System.Web.UI.HtmlTextWriter" />クライアントで表示する出力ストリームを格納しています。</param>
+        <summary>指定された HTML ライターにコントロールを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresDataBinding">
+      <MemberSignature Language="C#" Value="protected bool RequiresDataBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresDataBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.RequiresDataBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリスト コントロール データがその指定されたデータ ソースにバインドする必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールがデータ ソースにバインドする必要がある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList>コントロール、<xref:System.Web.UI.WebControls.BaseDataList.RequiresDataBinding%2A>コントロールを呼び出す必要があるかどうかを決定するプロパティ、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>その指定されたデータ ソースにバインドするメソッド。  
+  
+ たびに、`set`いずれかでアクセサーが呼び出されると、 <xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>、 <xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>、または<xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>後に、データ ソースを変更するプロパティ、<xref:System.Web.UI.WebControls.BaseDataList.OnInit%2A>メソッドは既に呼び出されて、ASP.NET の値を自動的に設定する、<xref:System.Web.UI.WebControls.BaseDataList.RequiresDataBinding%2A>プロパティを`true`です。 値、<xref:System.Web.UI.WebControls.BaseDataList.RequiresDataBinding%2A>プロパティに設定されても`true`ときに、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.OnDataSourceChanged%2A>メソッドが呼び出されます。  
+  
+ ASP.NET の値を自動的に設定する、<xref:System.Web.UI.WebControls.Repeater.RequiresDataBinding%2A>プロパティを`false`後すぐに、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>メソッドが呼び出されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectArguments">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.DataSourceSelectArguments SelectArguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataSourceSelectArguments SelectArguments" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.SelectArguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceSelectArguments</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.DataSourceSelectArguments" />データ バインド コントロールをデータ ソース コントロールからデータを取得するときに使用するオブジェクトします。</summary>
+        <value>A<see cref="T:System.Web.UI.DataSourceSelectArguments" />データ バインド コントロールでデータの取得に使用します。 既定では、値を返す<see cref="M:System.Web.UI.WebControls.BaseDataList.CreateDataSourceSelectArguments" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.SelectArguments%2A>プロパティの呼び出し、<xref:System.Web.UI.WebControls.BaseDataList.CreateDataSourceSelectArguments%2A>メソッドを既定値を作成<xref:System.Web.UI.DataSourceSelectArguments>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedIndexChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler SelectedIndexChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SelectedIndexChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.BaseDataList.SelectedIndexChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーへのポスト間の制御を一覧表示するデータの別の項目が選択されているときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataList.SelectedIndexChanged>イベント データをサーバーにポスト間でコントロールをリストの別の項目が選択されているときに発生します。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、イベント ハンドラーを作成して、<xref:System.Web.UI.WebControls.BaseDataList.SelectedIndexChanged>イベント宣言します。  
+  
+ [!code-aspx-csharp[BaseDataListSelectedIndexChanged#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListSelectedIndexChanged/CS/basedatalistselectedindexchangedcs.aspx#1)]
+ [!code-aspx-vb[BaseDataListSelectedIndexChanged#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListSelectedIndexChanged/VB/basedatalistselectedindexchangedvb.aspx#1)]  
+  
+ 次のコード例では、イベント ハンドラーを作成して、<xref:System.Web.UI.WebControls.BaseDataList.SelectedIndexChanged>イベント プログラムでします。  
+  
+ [!code-aspx-csharp[BaseDataListSelectedIndexChanged2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseDataListSelectedIndexChanged2/CS/basedatalistselectedindexchanged2cs.aspx#1)]
+ [!code-aspx-vb[BaseDataListSelectedIndexChanged2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseDataListSelectedIndexChanged2/VB/basedatalistselectedindexchanged2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDisabledAttribute">
+      <MemberSignature Language="C#" Value="public override bool SupportsDisabledAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDisabledAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.SupportsDisabledAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの <see cref="P:System.Web.UI.WebControls.WebControl.IsEnabled" /> プロパティが <see langword="false" /> の場合、レンダリングされた HTML 要素の <see langword="disabled" /> 属性を "無効" に設定するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Web.UI.Control.RenderingCompatibility" />プロパティがより低い ASP.NET のバージョンを示す<c>4.0</c>、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが無効になっているときに ASP.NET がそのコントロールの HTML をどのように描画するかを示します。 場合は、このプロパティは`true`、ASP.NET は表示、`disabled`属性のコントロールを無効にします。 場合は、このプロパティは`false`、ASP.NET は表示、`class`属性のコントロールを無効にします。 詳細については、「<xref:System.Web.UI.WebControls.WebControl.SupportsDisabledAttribute%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAccessibleHeader">
+      <MemberSignature Language="C#" Value="public virtual bool UseAccessibleHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseAccessibleHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataList.UseAccessibleHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリスト コントロールのデータがアクセス可能な形式でのヘッダーをレンダリングするかどうかを示す値を設定します。 このプロパティは、コントロールを支援テクノロジ デバイスのユーザーにアクセスしやすくものです。</summary>
+        <value>
+          <see langword="true" />コントロールのヘッダーではアクセス可能な形式を表示する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseDataList.UseAccessibleHeader%2A>プロパティ リスト コントロールのデータがアクセス可能な形式でのヘッダーをレンダリングするかどうかを指定します。 このプロパティは、コントロールを支援テクノロジ デバイスのユーザーにアクセスしやすくものです。 既定では、このプロパティの値は`false`セル タグの間、コントロールのヘッダーを表示および`<td>`と`</td>`です。 このプロパティの値が場合`true`、テーブル ヘッダー セルのタグの間、コントロールのヘッダーにレンダリング`<th>`と`</th>`です。 さらに、`scope="col"`属性が、ヘッダーが、列内のすべてのセルに適用されることを指定するテーブルのヘッダーに追加します。 既定のレンダリング、`<th>`要素を維持すると、水平方向に太字で中央揃えとしてテキストを表示します。 開発者は、の動作をオーバーライドできる、`<th>`カスケードを使用して要素のスタイル シート (CSS) を設定します。 ただし、スタイル シートの使用を必要とするはお勧めユーザー補助対応の Web ページを作成するときにします。  
+  
+ データ一覧コントロールなどの<xref:System.Web.UI.WebControls.DataList>コントロールと<xref:System.Web.UI.WebControls.DataGrid>から継承されるコントロール、<xref:System.Web.UI.WebControls.BaseDataList>クラスを設定できます、<xref:System.Web.UI.WebControls.BaseDataList.UseAccessibleHeader%2A>プロパティ宣言またはプログラムによってです。 設定した場合、<xref:System.Web.UI.WebControls.BaseDataList.UseAccessibleHeader%2A>プロパティ設定、プログラムで使用してデータをバインドする前に、<xref:System.Web.UI.WebControls.BaseDataList.DataBind%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

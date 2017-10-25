@@ -1,0 +1,33 @@
+<Namespace Name="System.DirectoryServices.AccountManagement">
+  <Docs>
+    <summary><see cref="N:System.DirectoryServices.AccountManagement" />名前空間は複数のプリンシパルのストアの統一されたアクセス、およびユーザー、コンピューター、およびセキュリティ プリンシパルのグループの操作を提供します。 Active Directory ドメイン サービス (AD DS)、Active Directory ライトウェイト ディレクトリ サービス (AD LDS)、およびマシン SAM (MSAM)。 <see cref="N:System.DirectoryServices.AccountManagement" />独立したディレクトリ オブジェクトを管理、<see cref="N:System.DirectoryServices" />名前空間。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 管理対象のディレクトリ サービスのアプリケーションが利用できる、 <xref:System.DirectoryServices.AccountManagement> API ユーザー、コンピューターおよびグループのプリンシパルの管理を簡略化します。 数行のコードで行われます。 ストアまたはユーザーが所属するすべてのグループを検索するなど、長いコードの複雑な知識が必要だったソリューション、 <xref:System.DirectoryServices.AccountManagement> API です。  
+  
+ 次の機能を利用できます、 <xref:System.DirectoryServices.AccountManagement> API:  
+  
+-   作成して、セキュリティ プリンシパルの更新などの基本的なディレクトリ操作を簡素化されます。 アプリケーションでは、これらの操作を実行する基になるストアに関する知識があまり必要があります。  
+  
+-   アプリケーションでは、ディレクトリ オブジェクトの新しい型を含めるためのオブジェクト モデルを拡張できます。  
+  
+-   有効にして、ユーザー アカウントを無効化など、アカウントの管理タスクが簡略化されます。  
+  
+-   ストア間の相互のサポートにより、さまざまな種類のストアからメンバーを含めるには、Active Directory ドメイン サービス (AD DS)、Active Directory ライトウェイト ディレクトリ サービス (AD LDS)、およびマシン SAM (MSAM) データベース内のグループ オブジェクトです。  
+  
+-   使用可能な例を検索してクエリ、<xref:System.DirectoryServices.AccountManagement.PrincipalSearcher>クラス、アプリケーション側でプリンシパル オブジェクトのプロパティを設定し、対応するプロパティ値を含むその他のオブジェクトに対して選択したストアを検索します。  
+  
+-   コンピューター、ユーザーおよびグループのプリンシパル オブジェクトに対する拡張検索により、一致するプリンシパルのオブジェクトの選択したストアを検索するアプリケーションです。  
+  
+-   再帰的な検索、グループのプリンシパル オブジェクトに対して使用可能なにより、アプリケーションにグループを再帰的に検索し、リーフ ノードであるプリンシパルのオブジェクトのみを返します。  
+  
+-   コンピューターの SAM、AD DS および AD %.*ls ストアに対して資格情報の検証が簡素化されます。  
+  
+-   使用可能な場合は、高速同時バインド (FSB) 機能を使用して接続の速度を増加させます。 接続のキャッシュには、使用されるポートの数が小さくなります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

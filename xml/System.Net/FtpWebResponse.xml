@@ -1,0 +1,562 @@
+<Type Name="FtpWebResponse" FullName="System.Net.FtpWebResponse">
+  <TypeSignature Language="C#" Value="public class FtpWebResponse : System.Net.WebResponse" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FtpWebResponse extends System.Net.WebResponse" />
+  <TypeSignature Language="DocId" Value="T:System.Net.FtpWebResponse" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.WebResponse</BaseTypeName>
+  </Base>
+  <Interfaces>
+  </Interfaces>
+  <Docs>
+    <summary>要求へのファイル転送プロトコル (FTP) サーバーの応答をカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス<xref:System.Net.FtpWebResponse>呼び出すことによって取得されて、<xref:System.Net.FtpWebRequest.GetResponse%2A>メソッドです。 返されたオブジェクトをキャストする必要があります、<xref:System.Net.FtpWebResponse>です。 ときに、アプリケーションが必要がなくなった、<xref:System.Net.FtpWebResponse>オブジェクトを呼び出し、<xref:System.Net.FtpWebResponse.Close%2A>によって保持されているリソースを解放するメソッド、<xref:System.Net.FtpWebResponse>です。  
+  
+ <xref:System.Net.FtpWebResponse.StatusCode%2A>プロパティには、サーバーによって返されるステータス コードが含まれています。 および<xref:System.Net.FtpWebResponse.StatusDescription%2A>プロパティは、ステータス コードと状態を説明するメッセージを返します。 これらのプロパティによって返される値は、メッセージは、サーバーによって返されるために変更します。  
+  
+ ファイル名の一覧が返されるなど、要求によって返されるデータ、<xref:System.Net.WebRequestMethods.Ftp.ListDirectory>要求、によって返されるストリームに使用できますが、<xref:System.Net.FtpWebResponse.GetResponseStream%2A>メソッドです。 ストリームのデータの長さを取得できます、<xref:System.Net.FtpWebResponse.ContentLength%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、FTP サーバー上のファイルを削除する要求を送信し、要求に対するサーバーの応答からのステータス メッセージを表示します。 その他の例のメンバーを参照してください、<xref:System.Net.WebRequestMethods.Ftp>と<xref:System.Net.FtpWebRequest>クラスです。  
+  
+ [!code-cpp[NCLFtpClient#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#4)]
+ [!code-csharp[NCLFtpClient#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BannerMessage">
+      <MemberSignature Language="C#" Value="public string BannerMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BannerMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebResponse.BannerMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログオンする前に、接続が確立されたときに、FTP サーバーによって送信されたメッセージを取得します。</summary>
+        <value>A<see cref="T:System.String" />サーバーによって送信されるバナー メッセージを格納している場合は、<see cref="F:System.String.Empty" />メッセージを送信しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NclFtpClient#12](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#12)]
+ [!code-csharp[NclFtpClient#12](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FtpWebResponse.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>応答によって保持されているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebResponse.Close%2A>メソッドは、によって返されるデータ ストリームを閉じ、<xref:System.Net.FtpWebResponse.GetResponseStream%2A>メソッド場合、<xref:System.Net.FtpWebRequest.KeepAlive%2A>プロパティは`false`します。 終了中には、データをコントロール接続でサーバーに送信する可能性があります。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 応答のストリームからデータを読み取る次のコード例は、サーバーからデータをダウンロードして、それを閉じます。  
+  
+ [!code-cpp[NCLFtpClient#9](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#9)]
+ [!code-csharp[NCLFtpClient#9](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentLength">
+      <MemberSignature Language="C#" Value="public override long ContentLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebResponse.ContentLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>FTP サーバーから受信したデータの長さを取得します。</summary>
+        <value><see cref="T:System.Int64" /> FTP サーバーから受信したデータのバイト数を含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ FTP サーバーから応答のストリームが返される、<xref:System.Net.FtpWebResponse.ContentLength%2A>プロパティには、ストリームのバイト数が含まれています。 <xref:System.Net.FtpWebResponse.ContentLength%2A>応答にデータが返されない場合、またはサーバーがコンテンツの長さの情報を送信しなかった場合は-1 を返します。 戻り値は、データまたは返された場合は 0 以上です。 たとえば、要求を使用する、<xref:System.Net.WebRequestMethods.Ftp.ListDirectory>フィールド、<xref:System.Net.FtpWebResponse.ContentLength%2A>プロパティは常に-1 を返します。 要求を使用する、 <xref:System.Net.WebRequestMethods.Ftp.UploadFile> 、メソッド、<xref:System.Net.FtpWebResponse.ContentLength%2A>プロパティは常に 0 です。 要求を使用する、<xref:System.Net.WebRequestMethods.Ftp.DownloadFile>メソッド、プロパティは 0 より大きい場合、ダウンロードしたファイルはデータが含まれてし、空か場合は 0 です。  
+  
+ 要求を使用する、<xref:System.Net.WebRequestMethods.Ftp.GetFileSize>メソッド、<xref:System.Net.FtpWebResponse.ContentLength%2A>サーバー上の指定されたファイルのサイズを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定した FTP サーバー上のファイルをダウンロードします。 このプロパティには、ダウンロードしたファイルのバイト数が含まれています。  
+  
+ [!code-cpp[NCLFtpClient#9](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#9)]
+ [!code-csharp[NCLFtpClient#9](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public override string ContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebResponse.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExitMessage">
+      <MemberSignature Language="C#" Value="public string ExitMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ExitMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebResponse.ExitMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>FTP セッションが終了するときに、サーバーによって送信されたメッセージを取得します。</summary>
+        <value>A<see cref="T:System.String" />サーバーによって送信された終了メッセージを格納している場合は、<see cref="F:System.String.Empty" />メッセージを送信しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebResponse.ExitMessage%2A>プロパティは、サーバーへの接続が閉じられたか、再利用されるまでは使用できません。 場合、<xref:System.Net.FtpWebRequest.KeepAlive%2A>プロパティは`true`、この要求で使用する接続が閉じていないため、サーバーを終了メッセージを送信します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NclFtpClient#17](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#17)]
+ [!code-csharp[NclFtpClient#17](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponseStream">
+      <MemberSignature Language="C#" Value="public override System.IO.Stream GetResponseStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.Stream GetResponseStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.FtpWebResponse.GetResponseStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>FTP サーバーから送信された応答データを格納しているストリームを取得します。</summary>
+        <returns>読み取り可能な<see cref="T:System.IO.Stream" />; 応答にデータを格納しているインスタンスが返されるそれ以外の場合、<see cref="F:System.IO.Stream.Null" />サーバーによって応答データが返されない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データの読み込み後にストリームを閉じる必要があります。 閉じるときに自動的に、ストリームが閉じている、<xref:System.Net.FtpWebResponse>保持するオブジェクト。  
+  
+ 要求メソッドがない限り、例外がスローされます<xref:System.Net.WebRequestMethods.Ftp.DownloadFile>または<xref:System.Net.WebRequestMethods.Ftp.ListDirectory>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しますの応答ストリームを取得する、<xref:System.Net.WebRequestMethods.Ftp.ListDirectory>要求します。  
+  
+ [!code-cpp[NCLFtpClient#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#1)]
+ [!code-csharp[NCLFtpClient#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">応答では、データ ストリームが返されませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public override System.Net.WebHeaderCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebHeaderCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebResponse.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebHeaderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空の <see cref="T:System.Net.WebHeaderCollection" /> オブジェクトを取得します。</summary>
+        <value>空の <see cref="T:System.Net.WebHeaderCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebResponse.Headers%2A>の他の実装と互換性のためだけにプロパティが提供される、<xref:System.Net.WebRequest>と<xref:System.Net.WebResponse>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastModified">
+      <MemberSignature Language="C#" Value="public DateTime LastModified { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastModified" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebResponse.LastModified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>FTP サーバー上のファイルが最後に更新された日時を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />されたファイルの時刻、最終更新日を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpWebResponse.LastModified%2A>によって要求されたデータを返します、<xref:System.Net.WebRequestMethods.Ftp.GetDateTimestamp>メソッドです。 他のメソッドを使用して送信された要求の<xref:System.Net.FtpWebResponse.LastModified%2A>返します<xref:System.DateTime.MinValue>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、FTP サーバー上のファイルが最後に変更された日時が表示されます。  
+  
+ [!code-cpp[NclFtpClient#21](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#21)]
+ [!code-csharp[NclFtpClient#21](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseUri">
+      <MemberSignature Language="C#" Value="public override Uri ResponseUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ResponseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebResponse.ResponseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求に応答を送信した URI を取得します。</summary>
+        <value>A<see cref="T:System.Uri" />この応答に関連付けられているリソースを識別するインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値のリダイレクトなどのサーバーとリソースに固有の動作のため、<xref:System.Net.FtpWebRequest.RequestUri%2A>プロパティは常にによって返される値と同じで、<xref:System.Net.FtpWebResponse.ResponseUri%2A>プロパティです。  
+  
+ 要求を使用する、<xref:System.Net.WebRequestMethods.Ftp.UploadFileWithUniqueName>メソッド、<xref:System.Net.FtpWebResponse.ResponseUri%2A>サーバー上のファイルの名前を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NCLFtpClient#9](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#9)]
+ [!code-csharp[NCLFtpClient#9](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusCode">
+      <MemberSignature Language="C#" Value="public System.Net.FtpStatusCode StatusCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.FtpStatusCode StatusCode" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebResponse.StatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>FTP サーバーから送信された最新のステータス コードを取得します。</summary>
+        <value><see cref="T:System.Net.FtpStatusCode" />この応答に、最新の状態コードを示す値が返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値、<xref:System.Net.FtpWebResponse.StatusCode%2A>でプロパティが含まれている、<xref:System.Net.FtpWebResponse.StatusDescription%2A>プロパティです。 値のデータをダウンロードするときに<xref:System.Net.FtpWebResponse.StatusCode%2A>状態コードは、FTP サーバーによって返されるために変更します。 呼び出した後、<xref:System.Net.FtpWebRequest.GetResponse%2A>メソッド、<xref:System.Net.FtpWebResponse.StatusCode%2A>中間の状態コードが含まれています。 呼び出すと、<xref:System.Net.FtpWebResponse.Close%2A>メソッド、<xref:System.Net.FtpWebResponse.StatusCode%2A>最終的な状態が含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、サーバーにファイルをアップロードし、状態を表示します。  
+  
+ [!code-cpp[NCLFtpClient#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#2)]
+ [!code-csharp[NCLFtpClient#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusDescription">
+      <MemberSignature Language="C#" Value="public string StatusDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StatusDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebResponse.StatusDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>FTP サーバーから送信されたステータス コードを説明するテキストを取得します。</summary>
+        <value>A<see cref="T:System.String" />この応答にステータス コードとメッセージを含むインスタンスが返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるテキスト、<xref:System.Net.FtpWebResponse.StatusDescription%2A>プロパティには、3 桁の数字が含まれています。<xref:System.Net.FtpWebResponse.StatusCode%2A>プロパティの値。 値のデータをダウンロードするときに<xref:System.Net.FtpWebResponse.StatusDescription%2A>状態コードは、FTP サーバーによって返されるために変更します。 呼び出した後、<xref:System.Net.FtpWebRequest.GetResponse%2A>メソッド、<xref:System.Net.FtpWebResponse.StatusDescription%2A>中間の状態コードが含まれています。 呼び出すと、<xref:System.Net.FtpWebResponse.Close%2A>メソッド、<xref:System.Net.FtpWebResponse.StatusDescription%2A>最終的な状態が含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、FTP サーバー上のファイルを削除する要求を送信し、要求に対するサーバーの応答からのステータス メッセージを表示します。  
+  
+ [!code-cpp[NCLFtpClient#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#4)]
+ [!code-csharp[NCLFtpClient#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsHeaders">
+      <MemberSignature Language="C#" Value="public override bool SupportsHeaders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsHeaders" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebResponse.SupportsHeaders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Net.FtpWebResponse.Headers" />でプロパティがサポートされて、<see cref="T:System.Net.FtpWebResponse" />インスタンス。</summary>
+        <value><see cref="T:System.Boolean" /> を返します。  
+  
+ <see langword="true" />場合、<see cref="P:System.Net.FtpWebResponse.Headers" />でプロパティがサポートされて、<see cref="T:System.Net.FtpWebResponse" />インスタンス。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常の true[!INCLUDE[net_v45](~/includes/net-v45-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WelcomeMessage">
+      <MemberSignature Language="C#" Value="public string WelcomeMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string WelcomeMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Net.FtpWebResponse.WelcomeMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証が完了すると、FTP サーバーによって送信されたメッセージを取得します。</summary>
+        <value>A<see cref="T:System.String" />へようこそ に、サーバーによって送信されたメッセージを格納している場合は、<see cref="F:System.String.Empty" />メッセージを送信しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 接続を再利用されている場合 (、<xref:System.Net.FtpWebRequest.KeepAlive%2A>プロパティに設定されている`true`) では、<xref:System.Net.FtpWebResponse.WelcomeMessage%2A>プロパティには、接続を持つ受信最初へようこそ メッセージが返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NclFtpClient#13](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#13)]
+ [!code-csharp[NclFtpClient#13](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

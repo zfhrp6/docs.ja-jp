@@ -1,0 +1,111 @@
+<Type Name="DefaultAutoFieldGenerator" FullName="System.Web.DynamicData.DefaultAutoFieldGenerator">
+  <TypeSignature Language="C#" Value="public class DefaultAutoFieldGenerator : System.Web.UI.IAutoFieldGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DefaultAutoFieldGenerator extends System.Object implements class System.Web.UI.IAutoFieldGenerator" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DefaultAutoFieldGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IAutoFieldGenerator</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>データ バインド コントロールの動的なデータ フィールド (列) を自動的に生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドすることができます、<xref:System.Web.DynamicData.DefaultAutoFieldGenerator>動的なデータがデータ フィールドがどのように生成する方法をカスタマイズするクラス。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultAutoFieldGenerator (System.Web.DynamicData.MetaTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.DynamicData.MetaTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DefaultAutoFieldGenerator.#ctor(System.Web.DynamicData.MetaTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="table" Type="System.Web.DynamicData.MetaTable" />
+      </Parameters>
+      <Docs>
+        <param name="table">動的フィールドを生成するテーブルのメタデータ。</param>
+        <summary><see cref="T:System.Web.DynamicData.DefaultAutoFieldGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DefaultAutoFieldGenerator.%23ctor%2A>コンス トラクターの呼び出し、<xref:System.Web.DynamicData.MetaTable.GetScaffoldColumns%2A>フィールドを動的に生成する方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">テーブルが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.DynamicData.DynamicField CreateField (System.Web.DynamicData.MetaColumn column, System.Web.DynamicData.ContainerType containerType, System.Web.UI.WebControls.DataBoundControlMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.DynamicData.DynamicField CreateField(class System.Web.DynamicData.MetaColumn column, valuetype System.Web.DynamicData.ContainerType containerType, valuetype System.Web.UI.WebControls.DataBoundControlMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DefaultAutoFieldGenerator.CreateField(System.Web.DynamicData.MetaColumn,System.Web.DynamicData.ContainerType,System.Web.UI.WebControls.DataBoundControlMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.DynamicField</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn" />
+        <Parameter Name="containerType" Type="System.Web.DynamicData.ContainerType" />
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+      </Parameters>
+      <Docs>
+        <param name="column">動的フィールドを作成するのには、列のメタデータ。</param>
+        <param name="containerType">動的フィールドを格納するデータ バインド コントロール。</param>
+        <param name="mode">動的フィールドのアクセス モード。</param>
+        <summary>動的なデータ フィールドを生成します。</summary>
+        <returns>作成する動的なフィールドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス モードなどの動的フィールドのオプションをカスタマイズするには、このメソッドをオーバーライドすることができます。 アクセス<xref:System.Web.UI.WebControls.DataBoundControlMode>モードを指定データ フィールドのデータ入力モードなど`ReadOnly`、 `Edit`、および`Insert`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateFields">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection GenerateFields (System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection GenerateFields(class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DefaultAutoFieldGenerator.GenerateFields(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">動的なデータ フィールドを格納するデータ バインドされたコントロール。</param>
+        <summary>生成<see cref="T:System.Web.DynamicData.DynamicField" />オブジェクト テーブルのメタデータ情報をベースにします。</summary>
+        <returns><see cref="T:System.Web.DynamicData.DynamicField" /> オブジェクトのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

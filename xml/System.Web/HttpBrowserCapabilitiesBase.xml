@@ -1,0 +1,2454 @@
+<Type Name="HttpBrowserCapabilitiesBase" FullName="System.Web.HttpBrowserCapabilitiesBase">
+  <TypeSignature Language="C#" Value="public abstract class HttpBrowserCapabilitiesBase : System.Web.UI.IFilterResolutionService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HttpBrowserCapabilitiesBase extends System.Object implements class System.Web.UI.IFilterResolutionService" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpBrowserCapabilitiesBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IFilterResolutionService</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web.Abstractions, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>現在の要求を行ったブラウザーの機能に関する情報をサーバーが収集できるようにするクラスの基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpBrowserCapabilitiesBase>クラスは抽象クラスと同じメンバーを含む、<xref:System.Web.HttpBrowserCapabilities>クラスです。 <xref:System.Web.HttpBrowserCapabilitiesBase>クラスでは、ような派生クラスを作成することができます、<xref:System.Web.HttpBrowserCapabilities>クラス、れていてもカスタマイズできます。 また、ASP.NET パイプライン外での作業をします。 単体テストを実行するときに通常のカスタマイズされた動作をテストするシナリオを伴うメンバーを実装するのに派生クラスを使用します。  
+  
+ <xref:System.Web.HttpBrowserCapabilitiesWrapper> クラスは <xref:System.Web.HttpBrowserCapabilitiesBase> クラスから派生します。 <xref:System.Web.HttpBrowserCapabilitiesWrapper>クラスのラッパーとして機能、<xref:System.Web.HttpBrowserCapabilities>クラスです。 実行時に、通常使用するのインスタンス、<xref:System.Web.HttpBrowserCapabilitiesWrapper>クラスのメンバーを呼び出す、<xref:System.Web.HttpBrowserCapabilities>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HttpBrowserCapabilitiesBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>継承クラス インスタンスによって使用されるクラスを初期化します。 このコンストラクターは、継承クラスによってのみ呼び出すことができます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveXControls">
+      <MemberSignature Language="C#" Value="public virtual bool ActiveXControls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ActiveXControls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.ActiveXControls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラス内でオーバーライドされている場合は、ブラウザーが ActiveX コントロールをサポートできるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが ActiveX コントロールをサポートできる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Adapters">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IDictionary Adapters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Adapters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Adapters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、使用可能なコントロール アダプターのコレクションを取得します。</summary>
+        <value>ブラウザーの登録されたコントロール アダプター。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBrowser">
+      <MemberSignature Language="C#" Value="public virtual void AddBrowser (string browserName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddBrowser(string browserName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesBase.AddBrowser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="browserName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="browserName">追加するブラウザーの名前。</param>
+        <summary>派生クラスでオーバーライドされると、機能が認識されるブラウザーの内部コレクションにエントリを追加するために内部的に使用されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AOL">
+      <MemberSignature Language="C#" Value="public virtual bool AOL { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AOL" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.AOL" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、クライアントが America Online (AOL) のブラウザーであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが AOL ブラウザーである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundSounds">
+      <MemberSignature Language="C#" Value="public virtual bool BackgroundSounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BackgroundSounds" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.BackgroundSounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーを使用してバック グラウンド サウンドの再生をサポートするかどうかを示す値を取得、 <see langword="bgsounds" /> HTML 要素です。</summary>
+        <value>
+          <see langword="true" />ブラウザーがバック グラウンド サウンドの再生; をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Beta">
+      <MemberSignature Language="C#" Value="public virtual bool Beta { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Beta" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Beta" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがベータ バージョンかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがベータ版である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Browser">
+      <MemberSignature Language="C#" Value="public virtual string Browser { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Browser" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Browser" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得、ブラウザー文字列 (存在する場合) 内のブラウザーによって送信された、<see langword="User-Agent" />要求ヘッダー。</summary>
+        <value>内容、<see langword="User-Agent" />ブラウザーによって送信された要求ヘッダー。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Browsers">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ArrayList Browsers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList Browsers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Browsers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、機能が認識されるブラウザーのコレクションを取得します。</summary>
+        <value>機能が認識されるブラウザー。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanCombineFormsInDeck">
+      <MemberSignature Language="C#" Value="public virtual bool CanCombineFormsInDeck { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanCombineFormsInDeck" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.CanCombineFormsInDeck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、別のカードなどの複数フォームを含むデッキをブラウザーがサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />複数のフォームを含むデッキをブラウザーがサポートする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanInitiateVoiceCall">
+      <MemberSignature Language="C#" Value="public virtual bool CanInitiateVoiceCall { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanInitiateVoiceCall" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.CanInitiateVoiceCall" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラス内でオーバーライドされると、ブラウザーのデバイスが音声通話を開始できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーのデバイスが音声通話; を開始できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderAfterInputOrSelectElement">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderAfterInputOrSelectElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderAfterInputOrSelectElement" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.CanRenderAfterInputOrSelectElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが WML の <see langword="select" /> 要素または <see langword="input" /> 要素の後のページ コンテンツをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML に依存しているページのコンテンツをサポートする場合は<see langword="select" />または<see langword="input" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderEmptySelects">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderEmptySelects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderEmptySelects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.CanRenderEmptySelects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが空の HTML <see langword="select" /> 要素をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが空の HTML をサポートする場合は<see langword="select" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderInputAndSelectElementsTogether">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderInputAndSelectElementsTogether { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderInputAndSelectElementsTogether" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.CanRenderInputAndSelectElementsTogether" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが同じカード内での WML の <see langword="input" /> 要素と <see langword="select" /> 要素の共存をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートする場合は<see langword="input" />と<see langword="select" />要素一緒に、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderMixedSelects">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderMixedSelects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderMixedSelects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.CanRenderMixedSelects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラス内でオーバーライドされた場合、<see langword="onpick" /> 属性と <see langword="value" /> 属性の両方を指定する WML <see langword="option" /> 要素をブラウザーがサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートする場合は<see langword="option" />両方を指定する要素<see langword="onpick" />と<see langword="value" />属性です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderOneventAndPrevElementsTogether">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderOneventAndPrevElementsTogether { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderOneventAndPrevElementsTogether" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.CanRenderOneventAndPrevElementsTogether" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが同じカード内の WML <see langword="onevent" /> と <see langword="prev" /> 要素をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートしている場合<see langword="onevent" />と<see langword="prev" />要素が同じ wml カード、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderPostBackCards">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderPostBackCards { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderPostBackCards" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.CanRenderPostBackCards" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがポストバック用の WML カードをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがポストバック用 WML カードをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderSetvarZeroWithMultiSelectionList">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderSetvarZeroWithMultiSelectionList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderSetvarZeroWithMultiSelectionList" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.CanRenderSetvarZeroWithMultiSelectionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが WML をサポートするかどうかを示す値を取得<see langword="setvar" />を持つ要素を<see langword="value" />0 の属性です。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートしている場合<see langword="setvar" />を持つ要素を<see langword="value" />0 の属性です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSendMail">
+      <MemberSignature Language="C#" Value="public virtual bool CanSendMail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSendMail" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.CanSendMail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、HTML <see langword="mailto" /> スキームを使用した電子メール メッセージの送信をブラウザーがサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML を使用して電子メール メッセージの送信をサポートするかどうかは<see langword="mailto" />スキームです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Capabilities">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IDictionary Capabilities { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Capabilities" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Capabilities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーの定義済みの機能を取得する目的で内部的に使用されます。</summary>
+        <value>ブラウザーの定義済みの機能。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CDF">
+      <MemberSignature Language="C#" Value="public virtual bool CDF { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CDF" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.CDF" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、ブラウザーが Web キャスト用のチャンネル定義形式 (CDF) をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが CDF をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClrVersion">
+      <MemberSignature Language="C#" Value="public virtual Version ClrVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version ClrVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.ClrVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、クライアントにインストールされている .NET Framework のバージョンを取得します。</summary>
+        <value>共通言語ランタイム (CLR) のバージョン。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareFilters">
+      <MemberSignature Language="C#" Value="public virtual int CompareFilters (string filter1, string filter2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareFilters(string filter1, string filter2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesBase.CompareFilters(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter1" Type="System.String" />
+        <Parameter Name="filter2" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filter1">比較する最初のフィルター。</param>
+        <param name="filter2">比較する 2 番目のフィルター。</param>
+        <summary>派生クラスでオーバーライドされた場合、フィルターを比較するために内部的に使用されます。</summary>
+        <returns><paramref name="filter1" /> が <paramref name="filter2" /> の親である場合は 1。<paramref name="filter2" /> が <paramref name="filter1" /> の親である場合は -1。<paramref name="filter1" /> と <paramref name="filter2" /> の間に親子関係が存在しない場合は 0。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="public virtual bool Cookies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cookies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Cookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラス内でオーバーライドされると、ブラウザーが Cookie をサポートできるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが cookie をサポートできる場合それ以外の場合、<see langword="false" />です。  
+  
+ <block subset="none" type="note"><para>  
+ このプロパティは示しません cookie をブラウザーで、現在有効にするかどうか、ブラウザーが cookie をサポートできるかどうか。  
+  
+</para></block></value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Crawler">
+      <MemberSignature Language="C#" Value="public virtual bool Crawler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Crawler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Crawler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが Web 検索エンジンかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが、検索エンジンのクローラーである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHtmlTextWriter">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.HtmlTextWriter CreateHtmlTextWriter (System.IO.TextWriter w);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.HtmlTextWriter CreateHtmlTextWriter(class System.IO.TextWriter w) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesBase.CreateHtmlTextWriter(System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlTextWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="w" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="w">作成するオブジェクト</param>
+        <summary>派生クラスでオーバーライドされるの新しいインスタンスを作成、<see cref="T:System.Web.UI.HtmlTextWriter" />ブラウザーにマークアップを表示するために使用するオブジェクト。</summary>
+        <returns>オブジェクトの新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSubmitButtonLimit">
+      <MemberSignature Language="C#" Value="public virtual int DefaultSubmitButtonLimit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultSubmitButtonLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.DefaultSubmitButtonLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、フォームで使用できる [送信] ボタンの最大数を取得します。</summary>
+        <value>フォームで使用できる [送信] ボタンの最大数。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableOptimizedCacheKey">
+      <MemberSignature Language="C#" Value="public virtual void DisableOptimizedCacheKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DisableOptimizedCacheKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesBase.DisableOptimizedCacheKey" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、内部的に使用して、最適化されたキャッシュ キーの使用を無効にします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EcmaScriptVersion">
+      <MemberSignature Language="C#" Value="public virtual Version EcmaScriptVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version EcmaScriptVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.EcmaScriptVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートする ECMAScript (JavaScript) のバージョン番号を取得します。</summary>
+        <value>ブラウザーがサポートする ECMAScript (JavaScript) のバージョン番号。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateFilter">
+      <MemberSignature Language="C#" Value="public virtual bool EvaluateFilter (string filterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool EvaluateFilter(string filterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesBase.EvaluateFilter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filterName">評価するフィルター。</param>
+        <summary>派生クラスでオーバーライドされるとき、フィルターを評価するために内部的に使用します。</summary>
+        <returns>
+          フィルターが正常に評価された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Frames">
+      <MemberSignature Language="C#" Value="public virtual bool Frames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Frames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Frames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが HTML フレームをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがフレームをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GatewayMajorVersion">
+      <MemberSignature Language="C#" Value="public virtual int GatewayMajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 GatewayMajorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.GatewayMajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、サーバーへのアクセスに使用されるワイヤレス ゲートウェイのメジャー バージョン番号を取得します (既知の場合)。</summary>
+        <value>サーバーへのアクセスに使用されるワイヤレス ゲートウェイのメジャー バージョン番号 (既知の場合)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GatewayMinorVersion">
+      <MemberSignature Language="C#" Value="public virtual double GatewayMinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 GatewayMinorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.GatewayMinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、サーバーへのアクセスに使用されるワイヤレス ゲートウェイのマイナー バージョン番号を取得します (既知の場合)。</summary>
+        <value>サーバーへのアクセスに使用されるワイヤレス ゲートウェイのマイナー バージョン番号 (既知の場合)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GatewayVersion">
+      <MemberSignature Language="C#" Value="public virtual string GatewayVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GatewayVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.GatewayVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、サーバーへのアクセスに使用されるワイヤレス ゲートウェイのバージョンを取得します (既知の場合)。</summary>
+        <value>サーバーへのアクセスに使用されるワイヤレス ゲートウェイのバージョン番号 (既知の場合)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClrVersions">
+      <MemberSignature Language="C#" Value="public virtual Version[] GetClrVersions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Version[] GetClrVersions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesBase.GetClrVersions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、クライアントにインストールされている .NET Framework 共通言語ランタイム (CLR) の、すべてのバージョンを取得します。</summary>
+        <returns><see cref="T:System.Version" /> オブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasBackButton">
+      <MemberSignature Language="C#" Value="public virtual bool HasBackButton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasBackButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.HasBackButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、専用の [戻る] ボタンがブラウザーにあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーに、専用 [戻る] ボタンがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HidesRightAlignedMultiselectScrollbars">
+      <MemberSignature Language="C#" Value="public virtual bool HidesRightAlignedMultiselectScrollbars { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HidesRightAlignedMultiselectScrollbars" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.HidesRightAlignedMultiselectScrollbars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると場合を示す値を取得するかどうか、HTML のスクロール バー<see langword="select multiple" />を持つ要素を<see langword="align" />属性の値の<see langword="right" />がレンダリング時に隠されます。</summary>
+        <value>
+          <see langword="true" />場合、HTML のスクロール バー<see langword="select multiple" />を持つ要素を<see langword="align" />属性の値の<see langword="right" />、それ以外のレンダリング時に非表示になる<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlTextWriter">
+      <MemberSignature Language="C#" Value="public virtual string HtmlTextWriter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HtmlTextWriter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.HtmlTextWriter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、マークアップ文字とテキストの記述に使用する、<see cref="T:System.Web.UI.HtmlTextWriter" /> の完全修飾クラス名を取得または設定します。</summary>
+        <value>マークアップ文字とテキストの記述に使用する <see cref="T:System.Web.UI.HtmlTextWriter" /> の完全修飾クラス名。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public virtual string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザー定義ファイルで指定されているブラウザーの内部識別子を取得します。</summary>
+        <value>ブラウザー定義ファイルで指定されているブラウザーの内部識別子。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InputType">
+      <MemberSignature Language="C#" Value="public virtual string InputType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InputType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.InputType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーでサポートされている入力の種類を取得します。</summary>
+        <value>ブラウザーでサポートされている入力の種類。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBrowser">
+      <MemberSignature Language="C#" Value="public virtual bool IsBrowser (string browserName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsBrowser(string browserName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesBase.IsBrowser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="browserName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="browserName">指定されたブラウザー。</param>
+        <summary>派生クラスでオーバーライドされた場合、クライアントのブラウザーが指定のブラウザーと同じかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />クライアントのブラウザーが指定されたブラウザーと同じ場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsColor">
+      <MemberSignature Language="C#" Value="public virtual bool IsColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.IsColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、ブラウザーで色の表示がされるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーにカラー表示がある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMobileDevice">
+      <MemberSignature Language="C#" Value="public virtual bool IsMobileDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMobileDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.IsMobileDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、ブラウザーがモバイル デバイスとして認識されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、ブラウザーは、モバイル デバイスとして認識します。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual string this[string key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得するブラウザー機能の名前。</param>
+        <summary>派生クラスでオーバーライドされた場合、指定したブラウザー機能の値を取得します。 C# では、このプロパティはクラスのインデクサーです。</summary>
+        <value>指定したキー名のブラウザー機能。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="JavaApplets">
+      <MemberSignature Language="C#" Value="public virtual bool JavaApplets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool JavaApplets" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.JavaApplets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが Java をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが Java; をサポートしている場合それ以外の場合、<see langword="false" />です。  
+  
+ <block subset="none" type="note"><para>  
+ このプロパティは、ブラウザーで Java が現在有効になっているかどうかを示すものでない、ブラウザーが Java をサポートできるかどうかを。  
+  
+</para></block></value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="JScriptVersion">
+      <MemberSignature Language="C#" Value="public virtual Version JScriptVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version JScriptVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.JScriptVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートする JScript のバージョンを取得します。</summary>
+        <value>ブラウザーがサポートする JScript のバージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ECMAScript のブラウザーでサポートされているのバージョン番号を参照してください。<xref:System.Web.HttpBrowserCapabilitiesBase.EcmaScriptVersion%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorVersion">
+      <MemberSignature Language="C#" Value="public virtual int MajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MajorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.MajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、ブラウザーのメジャー (整数) バージョン番号を取得します。</summary>
+        <value>ブラウザーのメジャー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumHrefLength">
+      <MemberSignature Language="C#" Value="public virtual int MaximumHrefLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumHrefLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.MaximumHrefLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、文字の最大長を取得、 <see langword="href" /> 、html 属性<see langword="a" />(アンカー) 要素です。</summary>
+        <value>文字の最大数、 <see langword="href" /> 、html 属性<see langword="a" />(アンカー) 要素です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumRenderedPageSize">
+      <MemberSignature Language="C#" Value="public virtual int MaximumRenderedPageSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumRenderedPageSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.MaximumRenderedPageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーに表示できるページの最大長をバイト単位で取得します。</summary>
+        <value>ブラウザーに表示できるバイト単位のページの最大長。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumSoftkeyLabelLength">
+      <MemberSignature Language="C#" Value="public virtual int MaximumSoftkeyLabelLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumSoftkeyLabelLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.MaximumSoftkeyLabelLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、ソフト キーのラベルで表示可能なテキストの最大長を取得します。</summary>
+        <value>ソフト キーのラベルで表示可能なテキストの最大長。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorVersion">
+      <MemberSignature Language="C#" Value="public virtual double MinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MinorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.MinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーのマイナー (小数点付き) 番号を取得します。</summary>
+        <value>ブラウザーのマイナー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorVersionString">
+      <MemberSignature Language="C#" Value="public virtual string MinorVersionString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MinorVersionString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.MinorVersionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされたときに、ブラウザーのマイナー (小数) バージョン番号を文字列として取得します。</summary>
+        <value>ブラウザーのマイナー バージョン番号を表す文字列。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MobileDeviceManufacturer">
+      <MemberSignature Language="C#" Value="public virtual string MobileDeviceManufacturer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MobileDeviceManufacturer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.MobileDeviceManufacturer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、モバイル デバイスの製造元の名前を取得します (既知の場合)。</summary>
+        <value>モバイル デバイスの製造元の名前 (既知の場合)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MobileDeviceModel">
+      <MemberSignature Language="C#" Value="public virtual string MobileDeviceModel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MobileDeviceModel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.MobileDeviceModel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、モバイル デバイスのモデル名 (既知の場合) を取得します。</summary>
+        <value>モバイル デバイスのモデル名 (既知の場合)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MSDomVersion">
+      <MemberSignature Language="C#" Value="public virtual Version MSDomVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version MSDomVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.MSDomVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、ブラウザーがサポートする Microsoft HTML (MSHTML) ドキュメント オブジェクト モデル (DOM) のバージョンを取得します。</summary>
+        <value>ブラウザーがサポートする MSHTML DOM バージョン。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfSoftkeys">
+      <MemberSignature Language="C#" Value="public virtual int NumberOfSoftkeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberOfSoftkeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.NumberOfSoftkeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、モバイル デバイスのソフトキーの数を取得します。</summary>
+        <value>モバイル デバイスでサポートされるソフト キーの数。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Platform">
+      <MemberSignature Language="C#" Value="public virtual string Platform { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Platform" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Platform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされている場合、クライアントが使用するオペレーティング システムの名前 (既知の場合) を取得します。</summary>
+        <value>クライアントが使用するオペレーティング システムの名前 (既知の場合)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredImageMime">
+      <MemberSignature Language="C#" Value="public virtual string PreferredImageMime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredImageMime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.PreferredImageMime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、ブラウザーが通常推奨するイメージ コンテンツの種類の MIME タイプを取得します。</summary>
+        <value>ブラウザーが通常推奨するイメージ コンテンツの種類の MIME タイプ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRenderingMime">
+      <MemberSignature Language="C#" Value="public virtual string PreferredRenderingMime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredRenderingMime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.PreferredRenderingMime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合に、ブラウザーが通常推奨するコンテンツの種類の MIME タイプを取得します。</summary>
+        <value>ブラウザーが通常推奨するイメージ コンテンツの種類の MIME タイプ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRenderingType">
+      <MemberSignature Language="C#" Value="public virtual string PreferredRenderingType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredRenderingType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.PreferredRenderingType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、ブラウザーが推奨するコンテンツの種類の一般名を取得します。</summary>
+        <value>値 "html32" または "chtml10"。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRequestEncoding">
+      <MemberSignature Language="C#" Value="public virtual string PreferredRequestEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredRequestEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.PreferredRequestEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、ブラウザーが推奨する要求のエンコーディングを取得します。</summary>
+        <value>ブラウザーが推奨する要求のエンコーディング。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredResponseEncoding">
+      <MemberSignature Language="C#" Value="public virtual string PreferredResponseEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredResponseEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.PreferredResponseEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、ブラウザーが推奨する応答のエンコーディングを取得します。</summary>
+        <value>ブラウザーが推奨する応答のエンコーディング。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreakBeforeWmlSelectAndInput">
+      <MemberSignature Language="C#" Value="public virtual bool RendersBreakBeforeWmlSelectAndInput { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreakBeforeWmlSelectAndInput" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RendersBreakBeforeWmlSelectAndInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが WML の前に改行を行うかどうかを示す値を取得<see langword="select" />または<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが前に改行を行う場合<see langword="select" />または<see langword="input" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreaksAfterHtmlLists">
+      <MemberSignature Language="C#" Value="public virtual bool RendersBreaksAfterHtmlLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreaksAfterHtmlLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RendersBreaksAfterHtmlLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、ブラウザーがリスト項目要素の後で改行を行うかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがリスト項目要素です。 後で改行する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreaksAfterWmlAnchor">
+      <MemberSignature Language="C#" Value="public virtual bool RendersBreaksAfterWmlAnchor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreaksAfterWmlAnchor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RendersBreaksAfterWmlAnchor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがスタンドアロン WML の後で改行するかどうかを示す値を取得<see langword="a" />(アンカー) 要素です。</summary>
+        <value>
+          <see langword="true" />ブラウザーがスタンドアロン WML の後で改行するかどうかは<see langword="a" />(アンカー) 要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreaksAfterWmlInput">
+      <MemberSignature Language="C#" Value="public virtual bool RendersBreaksAfterWmlInput { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreaksAfterWmlInput" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RendersBreaksAfterWmlInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが WML の後で改行するかどうかを示す値を取得<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML の後で改行するかどうかは<see langword="input" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersWmlDoAcceptsInline">
+      <MemberSignature Language="C#" Value="public virtual bool RendersWmlDoAcceptsInline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersWmlDoAcceptsInline" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RendersWmlDoAcceptsInline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、モバイル デバイスのブラウザーが WML をレンダリングするかどうかを示す値を取得<see langword="do" />form accept コンストラクトをソフトキーのではなくインライン ボタンとして。</summary>
+        <value>
+          <see langword="true" />モバイル デバイス ブラウザーが WML 場合<see langword="do" />form accept コンストラクトをインライン ボタン; としてそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersWmlSelectsAsMenuCards">
+      <MemberSignature Language="C#" Value="public virtual bool RendersWmlSelectsAsMenuCards { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersWmlSelectsAsMenuCards" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RendersWmlSelectsAsMenuCards" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが WML をレンダリングするかどうかを示す値を取得<see langword="select" />要素をメニュー カードとしての代わりに、コンボ ボックス。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML 場合<see langword="select" />要素をメニュー カードとしてそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiredMetaTagNameValue">
+      <MemberSignature Language="C#" Value="public virtual string RequiredMetaTagNameValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequiredMetaTagNameValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiredMetaTagNameValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、一部のブラウザーで必要とされるメタ タグを生成する目的で内部的に使用されます。</summary>
+        <value>一部のブラウザーで必要とされるメタ タグ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresAttributeColonSubstitution">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresAttributeColonSubstitution { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresAttributeColonSubstitution" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresAttributeColonSubstitution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、要素の属性値に含まれるコロンを別の文字に置き換えることが必要なブラウザーであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが別の文字に置き換えられる要素の属性値内のコロンが必要な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresContentTypeMetaTag">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresContentTypeMetaTag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresContentTypeMetaTag" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresContentTypeMetaTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが HTML を必要とするかどうかを示す値を取得<see langword="meta" />要素を<see langword="content-type" />属性を指定します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML が必要な場合<see langword="meta" />要素を<see langword="content-type" />属性が指定されている場合は、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresControlStateInSession">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresControlStateInSession { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresControlStateInSession" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresControlStateInSession" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、ブラウザーでセッションの制御状態を維持する必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザー セッションで保持するコントロールの状態が必要な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresDBCSCharacter">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresDBCSCharacter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresDBCSCharacter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresDBCSCharacter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、ブラウザーが 2 バイト文字セットを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが 2 バイト文字セットです。 必要な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresHtmlAdaptiveErrorReporting">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresHtmlAdaptiveErrorReporting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresHtmlAdaptiveErrorReporting" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresHtmlAdaptiveErrorReporting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、ブラウザーが非標準のエラー メッセージを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーに非標準のエラー メッセージが必要とする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresLeadingPageBreak">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresLeadingPageBreak { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresLeadingPageBreak" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresLeadingPageBreak" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが HTML である Web ページの本文の最初の要素を必要とするかどうかを示す値を取得<see langword="br" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML である Web ページの本文の最初の要素が必要な場合<see langword="br" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresNoBreakInFormatting">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresNoBreakInFormatting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresNoBreakInFormatting" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresNoBreakInFormatting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが HTML をサポートしていないかどうかを示す値を取得<see langword="br" />改行の書式設定する要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートしていない場合<see langword="br" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresOutputOptimization">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresOutputOptimization { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresOutputOptimization" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresOutputOptimization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、サイズが最適化された形式のマークアップ言語タグを含むページをブラウザーが必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />サイズが最適化された形式のマークアップ言語タグを含むページがブラウザーに必要な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresPhoneNumbersAsPlainText">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresPhoneNumbersAsPlainText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresPhoneNumbersAsPlainText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresPhoneNumbersAsPlainText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、ブラウザーがプレーン テキストに基づく電話のダイヤルをサポートしているかどうか、または特殊なマークアップを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがプレーン テキストに基づく電話のダイヤルをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresSpecialViewStateEncoding">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresSpecialViewStateEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresSpecialViewStateEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresSpecialViewStateEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、ブラウザーが特別にエンコードするビューステートの値を必要をするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーには、特殊なエンコードをビュー ステートの値が必要とする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUniqueFilePathSuffix">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresUniqueFilePathSuffix { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUniqueFilePathSuffix" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresUniqueFilePathSuffix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが一意のフォーム アクション URL を必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが一意のフォーム アクション Url を必要とする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUniqueHtmlCheckboxNames">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresUniqueHtmlCheckboxNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUniqueHtmlCheckboxNames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresUniqueHtmlCheckboxNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、値を取得、ブラウザーが必要とするかどうかを示す一意<see langword="name" />の複数の HTML 属性値<see langword="input type=&quot;checkbox&quot;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが一意で必要な場合<see langword="name" />の複数の HTML 属性値<see langword="input type=&quot;checkbox&quot;" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUniqueHtmlInputNames">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresUniqueHtmlInputNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUniqueHtmlInputNames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresUniqueHtmlInputNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、値を取得、ブラウザーが必要とするかどうかを示す一意<see langword="name" />の複数の HTML 属性値<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが一意で必要な場合<see langword="name" />の複数の HTML 属性値<see langword="input" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUrlEncodedPostfieldValues">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresUrlEncodedPostfieldValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUrlEncodedPostfieldValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.RequiresUrlEncodedPostfieldValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、ブラウザーによって送信されるポストバック データが URL エンコードされるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーによって送信されるポストバック データが URL エンコードされる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenBitDepth">
+      <MemberSignature Language="C#" Value="public virtual int ScreenBitDepth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenBitDepth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.ScreenBitDepth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ディスプレイ画面の深度をピクセルあたりのビット数で取得します。</summary>
+        <value>ピクセルあたりのビット単位のディスプレイ画面の深度。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenCharactersHeight">
+      <MemberSignature Language="C#" Value="public virtual int ScreenCharactersHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenCharactersHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.ScreenCharactersHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、文字の行数で、ディスプレイのおおよその高さを取得します。</summary>
+        <value>文字の行数としての、ディスプレイのおおよその高さ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenCharactersWidth">
+      <MemberSignature Language="C#" Value="public virtual int ScreenCharactersWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenCharactersWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.ScreenCharactersWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、ディスプレイ画面のおおよその幅を文字数で取得します。</summary>
+        <value>ディスプレイのおおよその幅を表す文字数。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenPixelsHeight">
+      <MemberSignature Language="C#" Value="public virtual int ScreenPixelsHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenPixelsHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.ScreenPixelsHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、ディスプレイのおおよその高さをピクセル単位で取得します。</summary>
+        <value>ディスプレイのピクセル単位のおおよその高さ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenPixelsWidth">
+      <MemberSignature Language="C#" Value="public virtual int ScreenPixelsWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenPixelsWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.ScreenPixelsWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、ディスプレイ画面のおおよその幅をピクセル単位で取得します。</summary>
+        <value>ディスプレイ画面のおおよその幅 (ピクセル単位)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsAccesskeyAttribute">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsAccesskeyAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsAccesskeyAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsAccesskeyAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートするかどうかを示す値を取得、 <see langword="accesskey" /> HTML の属性<see langword="a" />(アンカー) と<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="accesskey" /> HTML の属性<see langword="a" />(アンカー) と<see langword="input" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsBodyColor">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsBodyColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsBodyColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsBodyColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートするかどうかを示す値を取得、 <see langword="bgcolor" /> html 属性<see langword="body" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="bgcolor" /> html 属性<see langword="body" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsBold">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsBold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsBold" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsBold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが HTML をサポートするかどうかを示す値を取得<see langword="b" />要素による太字テキストを書式設定します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートする場合は<see langword="b" />要素による太字のテキストを書式設定それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsCacheControlMetaTag">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsCacheControlMetaTag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsCacheControlMetaTag" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsCacheControlMetaTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートするかどうかを示す値を取得、<see langword="cache-control" />値を<see langword="http-equiv" />HTML の属性<see langword="meta" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、<see langword="cache-control" />値を<see langword="http-equiv" />HTML の属性<see langword="meta" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsCallback">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsCallback { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、ブラウザーがコールバック スクリプトをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがコールバック スクリプトをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsCss">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsCss { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsCss" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsCss" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、ブラウザーがカスケード スタイル シート (CSS) をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが CSS; をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDivAlign">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsDivAlign { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDivAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsDivAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートするかどうかを示す値を取得、 <see langword="align" /> HTML の属性<see langword="div" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="align" /> HTML の属性<see langword="div" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDivNoWrap">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsDivNoWrap { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDivNoWrap" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsDivNoWrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートするかどうかを示す値を取得、 <see langword="nowrap" /> HTML の属性<see langword="div" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="nowrap" /> HTML<see langword="div" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsEmptyStringInCookieValue">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsEmptyStringInCookieValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsEmptyStringInCookieValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsEmptyStringInCookieValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが Cookie 値内で空の文字列をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが cookie 値内で空の文字列をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsFontColor">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsFontColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsFontColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsFontColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートするかどうかを示す値を取得、 <see langword="color" /> HTML の属性<see langword="font" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="color" /> HTML の属性<see langword="font" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsFontName">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsFontName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsFontName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsFontName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートするかどうかを示す値を取得、 <see langword="name" /> HTML の属性<see langword="font" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="name" /> HTML の属性<see langword="font" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsFontSize">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsFontSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsFontSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsFontSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートするかどうかを示す値を取得、 <see langword="size" /> HTML の属性<see langword="font" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="size" /> HTML の属性<see langword="font" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsImageSubmit">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsImageSubmit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsImageSubmit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsImageSubmit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、ブラウザーが標準のフォーム送信ボタンの代わりにカスタム イメージの使用をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが標準のフォーム送信ボタン; の代わりにカスタム イメージの使用をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsIModeSymbols">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsIModeSymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsIModeSymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsIModeSymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、ブラウザーが iモード記号をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが i モード記号; をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsInputIStyle">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsInputIStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsInputIStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsInputIStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートするかどうかを示す値を取得、 <see langword="istyle" /> HTML の属性<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="istyle" /> HTML の属性<see langword="input" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsInputMode">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsInputMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsInputMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsInputMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートするかどうかを示す値を取得、 <see langword="mode" /> HTML の属性<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="mode" /> HTML の属性<see langword="input" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsItalic">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsItalic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsItalic" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsItalic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが HTML をサポートするかどうかを示す値を取得<see langword="i" />要素による斜体のテキストを書式設定します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートする場合は<see langword="i" />要素による斜体のテキストを書式設定それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsJPhoneMultiMediaAttributes">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsJPhoneMultiMediaAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsJPhoneMultiMediaAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsJPhoneMultiMediaAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが J-Phone のマルチメディア属性をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが J-phone のマルチ メディア属性をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsJPhoneSymbols">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsJPhoneSymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsJPhoneSymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsJPhoneSymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、ブラウザーが J-Phone 固有の絵文字をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが J 固有の画像シンボルをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsQueryStringInFormAction">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsQueryStringInFormAction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsQueryStringInFormAction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsQueryStringInFormAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが内のクエリ文字列をサポートするかどうかを示す値を取得、<see langword="action" />属性の値の HTML<see langword="form" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザー内のクエリ文字列をサポートしている場合、<see langword="action" />属性の値の HTML<see langword="form" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsRedirectWithCookie">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsRedirectWithCookie { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsRedirectWithCookie" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsRedirectWithCookie" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、リダイレクトで Cookie をブラウザーがサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがリダイレクト; で cookie をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsSelectMultiple">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsSelectMultiple { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsSelectMultiple" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsSelectMultiple" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーがサポートするかどうかを示す値を取得、 <see langword="multiple" /> HTML の属性<see langword="select" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="multiple" /> HTML の属性<see langword="select" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsUncheck">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsUncheck { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsUncheck" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsUncheck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得を示す値チェックされた HTML をクリアするかどうか<see langword="input type=&quot;checkbox&quot;" />要素がポストバック データに反映されます。</summary>
+        <value>
+          <see langword="true" />チェックされた HTML が消去される場合<see langword="input type=&quot;checkbox&quot;" />要素は、それ以外のポストバック データに反映される<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsXmlHttp">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsXmlHttp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsXmlHttp" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.SupportsXmlHttp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、HTTP 経由の XML の受信をブラウザーがサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTTP; 経由で受信側の XML をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Tables">
+      <MemberSignature Language="C#" Value="public virtual bool Tables { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Tables" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Tables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーが HTML をサポートするかどうかを示す値を取得<see langword="table" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートする場合は<see langword="table" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TagWriter">
+      <MemberSignature Language="C#" Value="public virtual Type TagWriter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TagWriter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.TagWriter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザー用のタグを記述するために使用されるオブジェクトの型を取得する目的で、内部的に使用されます。</summary>
+        <value>ブラウザー用のタグを記述するために使用されるオブジェクトの型。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public virtual string Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ブラウザーの名前とメジャー (整数) バージョン番号を取得します。</summary>
+        <value>ブラウザーの名前とメジャー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseOptimizedCacheKey">
+      <MemberSignature Language="C#" Value="public virtual bool UseOptimizedCacheKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseOptimizedCacheKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.UseOptimizedCacheKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、最適化されたキャッシュ キーを使用するかどうかを示す値を取得するために内部的に使用されます。</summary>
+        <value>
+          <see langword="true" />最適化されたキャッシュ キー; を使用するにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VBScript">
+      <MemberSignature Language="C#" Value="public virtual bool VBScript { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool VBScript" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.VBScript" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、ブラウザーが VBScript (Visual Basic Scripting Edition) をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが VBScript; をサポートしている場合それ以外の場合、<see langword="false" />です。  
+  
+ <block subset="none" type="note"><para>  
+ このプロパティは、VBScript がブラウザーで、現在有効になっているかどうかを示すものでない、ブラウザーが VBScript をサポートできるかどうかをします。  
+  
+</para></block></value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public virtual string Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるとき、ブラウザーの完全なバージョン番号 (整数と小数) を文字列として取得します。</summary>
+        <value>ブラウザーの完全なバージョン番号 (文字列)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="W3CDomVersion">
+      <MemberSignature Language="C#" Value="public virtual Version W3CDomVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version W3CDomVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.W3CDomVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、ブラウザーがサポートする World Wide Web コンソーシアム (W3C) XML ドキュメント オブジェクト モデル (DOM) のバージョンを取得します。</summary>
+        <value>ブラウザーがサポートする W3C XML DOM のバージョン番号。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Win16">
+      <MemberSignature Language="C#" Value="public virtual bool Win16 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Win16" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Win16" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、クライアントが Win16 ベースのコンピューターかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが Win16 ベースのコンピューターで実行されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Win32">
+      <MemberSignature Language="C#" Value="public virtual bool Win32 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Win32" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesBase.Win32" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、クライアントが Win32 ベースのコンピューターかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />クライアントが Win32 ベースのコンピューターである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">常に。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

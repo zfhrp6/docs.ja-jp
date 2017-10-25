@@ -1,0 +1,160 @@
+<Type Name="SrgsText" FullName="System.Speech.Recognition.SrgsGrammar.SrgsText">
+  <TypeSignature Language="C#" Value="public class SrgsText : System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SrgsText extends System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SrgsGrammar.SrgsText" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Recognition.SrgsGrammar.SrgsElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{DebuggerDisplayString ()}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>World Wide Web Consortium (W3C) で定義されている文法要素のテキスト コンテンツを表す[音声認識の文法の仕様 (SRGS) バージョン 1.0](http://www.w3.org/TR/speech-grammar/)です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.SrgsGrammar.SrgsText>クラスは SRGS 要素タグのセット内で見つかったテキストを表します。 ときに、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>にオブジェクトを構築、<xref:System.String>パラメーターを<xref:System.Speech.Recognition.SrgsGrammar.SrgsText>オブジェクトがで作成されたその<xref:System.Speech.Recognition.SrgsGrammar.SrgsText.Text%2A>プロパティがそのパラメーターの値に初期化します。 <xref:System.Speech.Recognition.SrgsGrammar.SrgsText.Text%2A>にオブジェクトが追加し、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem.Elements%2A>コレクションに、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の c# コード例を使用する方法を示しています、<xref:System.Speech.Recognition.SrgsGrammar.SrgsText>のテキストの内容を変更するクラス<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクト。 例の最初のテキスト値を変更する、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクト (`Large`、 `Larger`、および`Largest`) に`Small`、 `Medium`、および`Large`、それぞれします。  
+  
+```csharp  
+  
+// Create SrgsItem objects and specify their text.  
+SrgsItem smallItem = new SrgsItem("Large");  
+SrgsItem mediumItem = new SrgsItem("Larger");  
+SrgsItem largeItem = new SrgsItem("Largest");  
+  
+SrgsText textOfItem = null;  
+  
+//  Change the text of smallItem.  
+if (smallItem.Elements[0] is SrgsText)  
+{  
+  textOfItem = smallItem.Elements[0] as SrgsText;  
+  textOfItem.Text = "Small";  
+}  
+  
+//  Change the text of mediumItem.  
+if (mediumItem.Elements[0] is SrgsText)  
+{  
+  textOfItem = mediumItem.Elements[0] as SrgsText;  
+  textOfItem.Text = "Medium";  
+}  
+  
+// Change the text of largeItem.  
+if (largeItem.Elements[0] is SrgsText)  
+{  
+  textOfItem = largeItem.Elements[0] as SrgsText;  
+  textOfItem.Text = "Large";  
+}  
+  
+// Create an SrgsOneOf object and add smallItem, mediumItem,   
+// and largeItem as alternatives.  
+SrgsOneOf itemSize = new SrgsOneOf(new SrgsItem[]   
+  { smallItem, mediumItem, largeItem });  
+  
+// Create a new SrgsRule from the SrgsOneOf object, and specifiy its identifier.  
+SrgsRule size = new SrgsRule("Sizes", itemSize);  
+  
+// Create an SrgsDocument object.  
+// Add the SrgsRule object to the collection of rules and make it the root rule.  
+SrgsDocument document = new SrgsDocument();   
+document.Rules.Add(size);  
+document.Root = size;  
+  
+// Write the SrgsDocument to an XML grammar file.  
+string srgsDocumentFile = Path.Combine(Path.GetTempPath(), "srgsDocumentFile.xml");  
+XmlWriter writer = XmlWriter.Create(srgsDocumentFile);  
+document.WriteSrgs(writer);  
+writer.Close();  
+```  
+  
+ 次に示す方法のテキストを変更、<xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>オブジェクトのようになります`item`出力 XML 文法ファイル内の要素。  
+  
+```xml  
+<!-- SRGS XML Fragment -->  
+<one-of>  
+  <item>Small</item>  
+  <item>Medium</item>  
+  <item>Large</item>  
+</one-of>  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsText.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsText" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、既定のコンス トラクター、<xref:System.Speech.Recognition.SrgsGrammar.SrgsText>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsText.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">設定するための値、<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsText.Text" />プロパティを<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsText" />インスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsText" />クラス、インスタンスのテキストを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsText.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に含まれるテキスト、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsText" />クラスのインスタンス。</summary>
+        <value>含まれるテキスト、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsText" />インスタンス。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">設定しようとしましたが<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsText.Text" />に<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

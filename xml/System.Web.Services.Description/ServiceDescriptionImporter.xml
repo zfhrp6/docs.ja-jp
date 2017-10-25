@@ -1,0 +1,392 @@
+<Type Name="ServiceDescriptionImporter" FullName="System.Web.Services.Description.ServiceDescriptionImporter">
+  <TypeSignature Language="C#" Value="public class ServiceDescriptionImporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceDescriptionImporter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.ServiceDescriptionImporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML Web サービスのクライアント プロキシ クラスを生成する方法を公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービスへのインターフェイスは通常、Web サービス記述言語 (WSDL) ファイルについて説明します。 たとえば、ASP.NET を使用して Web サービスの WSDL 記述を取得するに公開される`http://localhost/service.asmx`に移動するだけで`http://localhost/service.asmx?WSDL`です。  
+  
+ <xref:System.Web.Services.Description.ServiceDescriptionImporter>クラスに、WSDL 説明に含まれる情報を簡単にインポートすることができます、<xref:System.CodeDom.CodeCompileUnit?displayProperty=nameWithType>オブジェクト。 値を調整することによって、<xref:System.Web.Services.Description.ServiceDescriptionImporter.Style%2A>パラメーターを指示することで、<xref:System.Web.Services.Description.ServiceDescriptionImporter>インスタンスに透過的に呼び出すことにより、Web サービスの機能を提供するクライアント プロキシ クラスを生成するか、実装しなくても、Web サービスの機能をカプセル化する抽象クラスを生成します。  
+  
+ 表示されたコード<xref:System.CodeDom.CodeCompileUnit>オブジェクトか、直接呼び出すまたはできる任意の言語でエクスポートします。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Web.Services.Description.ServiceDescriptionImporter>を WSDL ファイルで説明されている XML Web サービスを呼び出すプロキシ クライアント コードを生成するクラス。  
+  
+ [!code-cpp[WebServices_Description_Importer#0](~/samples/snippets/cpp/VS_Snippets_Remoting/WebServices_Description_Importer/CPP/import.cpp#0)]
+ [!code-csharp[WebServices_Description_Importer#0](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_Description_Importer/CS/import.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceDescriptionImporter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionImporter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.ServiceDescriptionImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用を示します。  
+  
+ [!code-cpp[WebServices_Description_Importer#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebServices_Description_Importer/CPP/import.cpp#1)]
+ [!code-csharp[WebServices_Description_Importer#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_Description_Importer/CS/import.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddServiceDescription">
+      <MemberSignature Language="C#" Value="public void AddServiceDescription (System.Web.Services.Description.ServiceDescription serviceDescription, string appSettingUrlKey, string appSettingBaseUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddServiceDescription(class System.Web.Services.Description.ServiceDescription serviceDescription, string appSettingUrlKey, string appSettingBaseUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionImporter.AddServiceDescription(System.Web.Services.Description.ServiceDescription,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceDescription" Type="System.Web.Services.Description.ServiceDescription" />
+        <Parameter Name="appSettingUrlKey" Type="System.String" />
+        <Parameter Name="appSettingBaseUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="serviceDescription"><see cref="T:System.Web.Services.Description.ServiceDescription" />をコレクションに追加するインスタンス</param>
+        <param name="appSettingUrlKey">初期値の設定、<see langword="Url" />によって表されるインスタンスから生成されるプロキシ クラスのプロパティ、 <c>serviceDescription</c>パラメーター。 Web.config ファイルから生成する必要がありますを指定<see langword="&lt;appsetting&gt;" />セクションです。</param>
+        <param name="appSettingBaseUrl">初期値の設定、<see langword="Url" />によって表されるインスタンスから生成されるプロキシ クラスのプロパティ、 <c>serviceDescription</c>パラメーター。 このパラメーターとで指定された URL の値の組み合わせから構成する必要があることを指定します、 <see langword="location" /> WSDL ドキュメント内の属性です。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.ServiceDescription" />のコレクションに<see cref="P:System.Web.Services.Description.ServiceDescriptionImporter.ServiceDescriptions" />をインポートする値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して<xref:System.Web.Services.Description.ServiceDescription>インスタンスをインポートするときにコレクションに、<xref:System.Web.Services.Description.ServiceDescriptionImporter.Import%2A>メソッドが呼び出されます。  
+  
+ 2 つの文字列パラメーター、`appSettingUrlKey`と`appSettingBaseUrl`を構築する方法を指定する、`Url`する XML Web サービス プロキシのプロパティ、インポートされたから生成された<xref:System.Web.Services.Description.ServiceDescription>値。 `appSettingUrlKey`パラメーターを指定する、`Url`外、web.config ファイルのプロパティを読み取る必要があります`<appsettings>`構成キーとして、パラメーターの値を使用しています。 場合、`appSettingUrlKey`パラメーターは`null`、空の文字列では、初期値はによって決定されます。 または、 `location` Web サービス記述言語 (WSDL) ドキュメント内の属性です。 場合の値<xref:System.Web.Services.Description.ServiceDescriptionImporter.Style%2A>は`Server`の値を設定しようとすると、エラーが発生、`appSettingUrlKey`パラメーター。  
+  
+ `appSettingBaseUrl`パラメーターは、初期値のことを指定します、`Url`プロパティは、このパラメーター値とで指定された URL の組み合わせから構成する必要があります、 `location` WSDL ドキュメント内の属性です。 `appSettingUrlKey`パラメーターも指定する必要があります。 `Url`プロパティが相対 URL を組み合わせることによって構築された (から構築された、`appSettingBaseUrl`パラメーターと WSDL で指定された URL) を web.config ファイルから読み込まれた URL。 このパラメーターが場合`null`または空の文字列、URL が web.config ファイル内の値から完全に構築します。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Web.Services.Description.ServiceDescriptionImporter.AddServiceDescription%2A>メソッドを使用する場合、<xref:System.Web.Services.Description.ServiceDescriptionImporter>クラスです。  
+  
+ [!code-cpp[WebServices_Description_Importer#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebServices_Description_Importer/CPP/import.cpp#1)]
+ [!code-csharp[WebServices_Description_Importer#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_Description_Importer/CS/import.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeGenerationOptions">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.CodeGenerationOptions CodeGenerationOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Serialization.CodeGenerationOptions CodeGenerationOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ServiceDescriptionImporter.CodeGenerationOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.CodeGenerationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコード生成のためのさまざまなオプションを設定します。</summary>
+        <value>メンバーまたはのメンバーの組み合わせ、<see cref="T:System.Xml.Serialization.CodeGenerationOptions" />列挙します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.ServiceDescriptionImporter.CodeGenerationOptions%2A>プロパティでは、さまざまなを指定できます。 オプションで使用されるときに、<xref:System.Web.Services.Description.ServiceDescriptionImporter.Import%2A>コードを生成するメソッドが呼び出されます。 値の型として WSDL で記述された単純型を生成するかどうかを指定するたとえば、または<xref:System.Data.SqlTypes>名前空間の型、プロパティまたはフィールドとして生成するかどうかとします。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Web.Services.Description.ServiceDescriptionImporter.CodeGenerationOptions%2A>プロパティです。  
+  
+ [!code-cpp[WebServices_Description_Importer#4](~/samples/snippets/cpp/VS_Snippets_Remoting/WebServices_Description_Importer/CPP/import.cpp#4)]
+ [!code-csharp[WebServices_Description_Importer#4](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_Description_Importer/CS/import.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeGenerator">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CodeDomProvider CodeGenerator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.Compiler.CodeDomProvider CodeGenerator" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ServiceDescriptionImporter.CodeGenerator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CodeDomProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービスの説明インポーターによって使用されるコード ジェネレーターを設定します。</summary>
+        <value><see cref="T:System.CodeDom.Compiler.ICodeGenerator" />プロキシ コードを生成するサービスの説明インポーターによって使用されるインターフェイス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateWebReferences">
+      <MemberSignature Language="C#" Value="public static System.Collections.Specialized.StringCollection GenerateWebReferences (System.Web.Services.Description.WebReferenceCollection webReferences, System.CodeDom.Compiler.CodeDomProvider codeProvider, System.CodeDom.CodeCompileUnit codeCompileUnit, System.Web.Services.Description.WebReferenceOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Specialized.StringCollection GenerateWebReferences(class System.Web.Services.Description.WebReferenceCollection webReferences, class System.CodeDom.Compiler.CodeDomProvider codeProvider, class System.CodeDom.CodeCompileUnit codeCompileUnit, class System.Web.Services.Description.WebReferenceOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionImporter.GenerateWebReferences(System.Web.Services.Description.WebReferenceCollection,System.CodeDom.Compiler.CodeDomProvider,System.CodeDom.CodeCompileUnit,System.Web.Services.Description.WebReferenceOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webReferences" Type="System.Web.Services.Description.WebReferenceCollection" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="options" Type="System.Web.Services.Description.WebReferenceOptions" />
+      </Parameters>
+      <Docs>
+        <param name="webReferences">A <see cref="T:System.Web.Services.Description.WebReferenceCollection" /> Web への参照をコンパイルします。</param>
+        <param name="codeProvider">A<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />コード プロバイダーを指定します。</param>
+        <param name="codeCompileUnit">A<see cref="T:System.CodeDom.CodeCompileUnit" />コードをコンパイル単位を指定します。</param>
+        <param name="options">A<see cref="T:System.Web.Services.Description.WebReferenceOptions" />コード生成オプションを指定します。</param>
+        <summary>クライアント プロキシまたはサーバーのスタブを生成するために Web 参照のコレクションをコンパイルします。</summary>
+        <returns>A<see cref="T:System.Collections.Specialized.StringCollection" />コンパイラの警告です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各サービスの説明ドキュメント コレクション<xref:System.Web.Services.Description.WebReference>のメンバー、`webReferences`のみを含める必要がありますコレクション<xref:System.Web.Services.Description.ServiceDescription>と<xref:System.Xml.Schema.XmlSchema>オブジェクト。 このメソッドは、解釈できない<xref:System.Web.Services.Discovery.DiscoveryDocument>オブジェクト。  
+  
+ 任意の XML Web サービスでのメソッドの場合、`webReferences`それらの型が生成されたプロキシ メソッド間で共有されるも、コレクションのカスタム パラメーターを共有または型を返します。 各プロキシは、個別にコンパイルする場合よりも重要な利点は、このような型が相互に運用されない場合、その場合はこれにです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescriptionImportWarnings Import (System.CodeDom.CodeNamespace codeNamespace, System.CodeDom.CodeCompileUnit codeCompileUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Web.Services.Description.ServiceDescriptionImportWarnings Import(class System.CodeDom.CodeNamespace codeNamespace, class System.CodeDom.CodeCompileUnit codeCompileUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionImporter.Import(System.CodeDom.CodeNamespace,System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionImportWarnings</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="codeNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="codeNamespace">名前空間、<see cref="P:System.Web.Services.Description.ServiceDescriptionImporter.ServiceDescriptions" />値をインポートします。</param>
+        <param name="codeCompileUnit"><see cref="T:System.CodeDom.CodeCompileUnit" />でインスタンスを表すコード、<see cref="P:System.Web.Services.Description.ServiceDescriptionImporter.ServiceDescriptions" />値を生成します。</param>
+        <summary>指定したインポート<see cref="P:System.Web.Services.Description.ServiceDescriptionImporter.ServiceDescriptions" />で指定されたコードを生成するには、値、<see cref="P:System.Web.Services.Description.ServiceDescriptionImporter.Style" />プロパティです。</summary>
+        <returns>A <see cref="T:System.Web.Services.Description.ServiceDescriptionImportWarnings" /> ; 発生したエラーを記述する値またはエラーが発生しなかった場合は 0 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したら、<xref:System.Web.Services.Description.ServiceDescriptionImporter.ServiceDescriptions%2A>値をインポートして、<xref:System.Web.Services.Description.ServiceDescriptionImporter.Style%2A>生成、呼び出しコードのプロパティ、<xref:System.Web.Services.Description.Import>コード生成を開始する方法。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Services.Description.Import> メソッドの使用例を次に示します。  
+  
+ [!code-cpp[WebServices_Description_Importer#5](~/samples/snippets/cpp/VS_Snippets_Remoting/WebServices_Description_Importer/CPP/import.cpp#5)]
+ [!code-csharp[WebServices_Description_Importer#5](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_Description_Importer/CS/import.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolName">
+      <MemberSignature Language="C#" Value="public string ProtocolName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProtocolName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ServiceDescriptionImporter.ProtocolName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または説明されている XML Web サービスへのアクセスに使用するプロトコルを設定します。</summary>
+        <value>A<see cref="T:System.String" />をインポートするプロトコルの大文字と小文字の名前を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの有効な値は次のとおりです。  
+  
+-   "Soap"  
+  
+-   "Soap12"  
+  
+-   "HttpPost"  
+  
+-   "HttpGet"  
+  
+-   "HttpSoap"  
+  
+ 既定値には、SOAP 1.1 標準を示す"Soap"です。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Web.Services.Description.ServiceDescriptionImporter.ProtocolName%2A>プロパティを使用する場合、<xref:System.Web.Services.Description.ServiceDescriptionImporter>クラスです。  
+  
+ [!code-cpp[WebServices_Description_Importer#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebServices_Description_Importer/CPP/import.cpp#1)]
+ [!code-csharp[WebServices_Description_Importer#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_Description_Importer/CS/import.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schemas">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlSchemas Schemas { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.XmlSchemas Schemas" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ServiceDescriptionImporter.Schemas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSchemas</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.Serialization.XmlSchemas" />によって使用される、<see cref="P:System.Web.Services.Description.ServiceDescriptionImporter.ServiceDescriptions" />プロパティです。</summary>
+        <value><see cref="T:System.Xml.Serialization.XmlSchemas" />で使用される XML スキーマを格納しているオブジェクト、<see cref="T:System.Web.Services.Description.ServiceDescription" />のインスタンスにある、<see cref="P:System.Web.Services.Description.ServiceDescriptionImporter.ServiceDescriptions" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Web.Services.Description.ServiceDescriptionImporter.Schemas%2A>プロパティです。  
+  
+ [!code-cpp[WebServices_Description_Importer#2](~/samples/snippets/cpp/VS_Snippets_Remoting/WebServices_Description_Importer/CPP/import.cpp#2)]
+ [!code-csharp[WebServices_Description_Importer#2](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_Description_Importer/CS/import.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceDescriptions">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescriptionCollection ServiceDescriptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionCollection ServiceDescriptions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ServiceDescriptionImporter.ServiceDescriptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.Services.Description.ServiceDescription" />をインポートするインスタンス。</summary>
+        <value>A<see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" />インスタンスを含む、<see cref="T:System.Web.Services.Description.ServiceDescription" />インスタンスが、インポートする予定の<see cref="T:System.Web.Services.Description.ServiceDescriptionImporter" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用プロパティを形成するすべてのコレクションと同様、このコレクションから削除またはコレクションで公開されたメソッドを使用して変更のコレクションにメンバーを追加できます。 使用することも、<xref:System.Web.Services.Description.ServiceDescriptionImporter.AddServiceDescription%2A>メソッドをこのコレクションにメンバーを追加します。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Web.Services.Description.ServiceDescriptionImporter.ServiceDescriptions%2A>プロパティです。  
+  
+ [!code-cpp[WebServices_Description_Importer#2](~/samples/snippets/cpp/VS_Snippets_Remoting/WebServices_Description_Importer/CPP/import.cpp#2)]
+ [!code-csharp[WebServices_Description_Importer#2](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_Description_Importer/CS/import.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescriptionImportStyle Style { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Description.ServiceDescriptionImportStyle Style" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ServiceDescriptionImporter.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionImportStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コード (クライアントまたはサーバー) のスタイルを決定する値の設定を取得または時に生成される、<see cref="P:System.Web.Services.Description.ServiceDescriptionImporter.ServiceDescriptions" />値をインポートします。</summary>
+        <value><see cref="T:System.Web.Services.Description.ServiceDescriptionImportStyle" /> 値のいずれか。 既定値は、<see cref="F:System.Web.Services.Description.ServiceDescriptionImportStyle.Client" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Services.Description.ServiceDescriptionImporter.Style%2A>プロパティに設定されている<xref:System.Web.Services.Description.ServiceDescriptionImportStyle.Client>、<xref:System.Web.Services.Description.ServiceDescriptionImporter>で呼び出すことによって説明されている Web サービスの機能を提供するクライアント プロキシ クラスが生成されます。  
+  
+ 場合、<xref:System.Web.Services.Description.ServiceDescriptionImporter.Style%2A>プロパティに設定されている<xref:System.Web.Services.Description.ServiceDescriptionImportStyle.Server>、<xref:System.Web.Services.Description.ServiceDescriptionImporter>インスタンスには、それらを実装しなくても記載されている XML Web サービスの機能を表す抽象クラスが生成されます。 抽象クラスから継承し、関連するメソッドを実装するクラスを記述してそれらを実装することができます。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Web.Services.Description.ServiceDescriptionImporter.Style%2A>プロパティです。  
+  
+ [!code-cpp[WebServices_Description_Importer#3](~/samples/snippets/cpp/VS_Snippets_Remoting/WebServices_Description_Importer/CPP/import.cpp#3)]
+ [!code-csharp[WebServices_Description_Importer#3](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_Description_Importer/CS/import.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

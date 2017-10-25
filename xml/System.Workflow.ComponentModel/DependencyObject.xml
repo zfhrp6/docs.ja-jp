@@ -1,0 +1,769 @@
+<Type Name="DependencyObject" FullName="System.Workflow.ComponentModel.DependencyObject">
+  <TypeSignature Language="C#" Value="public abstract class DependencyObject : IDisposable, System.ComponentModel.IComponent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DependencyObject extends System.Object implements class System.ComponentModel.IComponent, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.DependencyObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IComponent</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer), typeof(System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.Serialization.DependencyObjectCodeDomSerializer), typeof(System.ComponentModel.Design.Serialization.CodeDomSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>依存関係プロパティを持つすべてのオブジェクトの基本クラス。 このクラスは継承する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DependencyObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.ComponentModel.DependencyObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddHandler">
+      <MemberSignature Language="C#" Value="public void AddHandler (System.Workflow.ComponentModel.DependencyProperty dependencyEvent, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddHandler(class System.Workflow.ComponentModel.DependencyProperty dependencyEvent, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.AddHandler(System.Workflow.ComponentModel.DependencyProperty,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyEvent" Type="System.Workflow.ComponentModel.DependencyProperty" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyEvent"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <param name="value">このプロパティの値を表す <see cref="T:System.Object" />。 ここでは <see cref="T:System.Delegate" /> 型。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyObject" /> のイベントを処理するハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、イベントが発生すると必ずイベント ハンドラーが呼び出されます。 同じイベントを処理するデリゲートを重複して追加してもかまいません。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ ハンドラーを追加または削除するには、次のコードを使用します。 このコード例は、SendMailActivity.cs ファイルから抜粋した電子メール送信の SDK サンプルの一部です。 詳細については、次を参照してください。[電子メール送信アクティビティのサンプル](http://msdn.microsoft.com/en-us/bfb5939e-60a9-4037-af4e-2cea9e654669)です。  
+  
+ [!code-csharp[WF_Samples#232](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#232)]
+ [!code-vb[WF_Samples#232](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#232)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">どちらか一方の引数が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="dependencyEvent" /> は非イベント <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> を表しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignMode">
+      <MemberSignature Language="C#" Value="protected bool DesignMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DesignMode" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.DependencyObject.DesignMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスがデザイン モードとランタイム モードのどちらであるかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このインスタンスがデザイン モードである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyObject" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyObject" /> で使用されているアンマネージ リソースを解放します。オプションでマネージ リソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~DependencyObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Object.Finalize" /> に対するオーバーライドとなるもので、どのアンマネージ リソースも確定的にクリーンアップします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは通常、生の HWNDS、Win32 ファイル ハンドラーなどのアンマネージ リソースを解放する場合にのみ必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBinding">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.ActivityBind GetBinding (System.Workflow.ComponentModel.DependencyProperty dependencyProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.ComponentModel.ActivityBind GetBinding(class System.Workflow.ComponentModel.DependencyProperty dependencyProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.GetBinding(System.Workflow.ComponentModel.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityBind</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProperty" Type="System.Workflow.ComponentModel.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProperty"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <summary>特定の <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> に関連付けられている <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> にアクセスできるようにします。</summary>
+        <returns>特定の <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> に関連付けられている <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoundValue">
+      <MemberSignature Language="C#" Value="protected virtual object GetBoundValue (System.Workflow.ComponentModel.ActivityBind bind, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetBoundValue(class System.Workflow.ComponentModel.ActivityBind bind, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.GetBoundValue(System.Workflow.ComponentModel.ActivityBind,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bind" Type="System.Workflow.ComponentModel.ActivityBind" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="bind"><see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</param>
+        <param name="targetType"><see cref="T:System.Type" /> のターゲットの <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</param>
+        <summary><see cref="T:System.Object" /> のサブジェクトである <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> を取得します。</summary>
+        <returns><see cref="T:System.Object" /> のサブジェクトである <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Object> のサブジェクトである <xref:System.Workflow.ComponentModel.ActivityBind>。 派生クラスでオーバーライドすることにより、バインディングの解決方法をカスタマイズできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetType" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInvocationList&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected T[] GetInvocationList&lt;T&gt; (System.Workflow.ComponentModel.DependencyProperty dependencyEvent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance !!T[] GetInvocationList&lt;T&gt;(class System.Workflow.ComponentModel.DependencyProperty dependencyEvent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.GetInvocationList``1(System.Workflow.ComponentModel.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T[]</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="dependencyEvent" Type="System.Workflow.ComponentModel.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">返されたデリゲートの型。</typeparam>
+        <param name="dependencyEvent">指定した <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <summary>指定された <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> のデリゲートを格納する配列を取得します。</summary>
+        <returns>指定した <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> のデリゲートを格納する配列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dependencyEvent" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="dependencyEvent" /> はイベントに対応するものではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (System.Workflow.ComponentModel.DependencyProperty dependencyProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetValue(class System.Workflow.ComponentModel.DependencyProperty dependencyProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.GetValue(System.Workflow.ComponentModel.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProperty" Type="System.Workflow.ComponentModel.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProperty"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の値にアクセスできるようにします。</summary>
+        <returns>指定した <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の値を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは通常、プロパティで、名前付き依存関係の値を取得するために使います。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.DependencyObject.GetValue%2A> を使用して、get および set のコンテキストで名前付き依存関係プロパティで表される値を戻す方法を次のコード例に示します。 このコード例は、SendMailActivity.cs ファイルから抜粋した電子メール送信の SDK サンプルの一部です。 詳細については、次を参照してください。[電子メール送信アクティビティのサンプル](http://msdn.microsoft.com/en-us/bfb5939e-60a9-4037-af4e-2cea9e654669)です。  
+  
+ [!code-csharp[WF_Samples#231](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#231)]
+ [!code-vb[WF_Samples#231](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#231)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueBase">
+      <MemberSignature Language="C#" Value="public object GetValueBase (System.Workflow.ComponentModel.DependencyProperty dependencyProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetValueBase(class System.Workflow.ComponentModel.DependencyProperty dependencyProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.GetValueBase(System.Workflow.ComponentModel.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProperty" Type="System.Workflow.ComponentModel.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProperty">値を取得する <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> のバインドされたオブジェクトにアクセスできるようにし、<see cref="M:System.Workflow.ComponentModel.DependencyObject.GetValue(System.Workflow.ComponentModel.DependencyProperty)" /> オーバーライドを省略します。</summary>
+        <returns><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の、バインドされたオブジェクト。 これはオーバーライドされた <see cref="M:System.Workflow.ComponentModel.DependencyObject.GetValue(System.Workflow.ComponentModel.DependencyProperty)" /> をバイパスします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Workflow.ComponentModel.DependencyObject.GetValue%2A> オーバーライドの実装に有用です。 通常、<xref:System.Workflow.ComponentModel.DependencyObject.GetValue%2A> をオーバーライドするコードでは、<xref:System.Workflow.ComponentModel.DependencyObject.GetValueBase%2A> を呼び出してから追加の処理を行います。  
+  
+ 実装するため、<xref:System.Workflow.ComponentModel.DependencyObject.GetValue%2A>オーバーライド、<xref:System.Workflow.ComponentModel.PropertyMetadata>で使用できる<xref:System.Workflow.ComponentModel.DependencyProperty.Register%2A> / <xref:System.Workflow.ComponentModel.DependencyProperty.RegisterAttached%2A>呼び出しです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dependencyProperty" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeProperties">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.InitializeProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>依存関係プロパティを初期化するメソッドとして、派生クラスでオーバーライドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジンが、アクティビティの初期化の際に呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBindingSet">
+      <MemberSignature Language="C#" Value="public bool IsBindingSet (System.Workflow.ComponentModel.DependencyProperty dependencyProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsBindingSet(class System.Workflow.ComponentModel.DependencyProperty dependencyProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.IsBindingSet(System.Workflow.ComponentModel.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProperty" Type="System.Workflow.ComponentModel.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProperty">テスト対象の <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の値がバインディングとして設定されているかどうかを表します。 「<see cref="M:System.Workflow.ComponentModel.DependencyObject.SetBinding(System.Workflow.ComponentModel.DependencyProperty,System.Workflow.ComponentModel.ActivityBind)" />」を参照してください。</summary>
+        <returns>
+          バインディングとして設定されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dependencyProperty" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MetaEquals">
+      <MemberSignature Language="C#" Value="public bool MetaEquals (System.Workflow.ComponentModel.DependencyObject dependencyObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool MetaEquals(class System.Workflow.ComponentModel.DependencyObject dependencyObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.MetaEquals(System.Workflow.ComponentModel.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObject" Type="System.Workflow.ComponentModel.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObject">比較対象の <see cref="T:System.Workflow.ComponentModel.DependencyObject" />。</param>
+        <summary>この <see langword="metaproperties" /> の <see cref="T:System.Workflow.ComponentModel.DependencyObject" /> が、パラメーター化された <see langword="metaproperties" /> の <see cref="T:System.Workflow.ComponentModel.DependencyObject" /> と等しいかどうかを調べます。</summary>
+        <returns>
+          <see langword="true" /> が等しい場合は <see langword="metaproperties" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プライベート メンバー `==` の型 (`metaproperties`) に対して定義された <xref:System.Collections.IDictionary> 演算子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentDependencyObject">
+      <MemberSignature Language="C#" Value="protected System.Workflow.ComponentModel.DependencyObject ParentDependencyObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.DependencyObject ParentDependencyObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.DependencyObject.ParentDependencyObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyObject" /> グラフにおける親 <see cref="T:System.Workflow.ComponentModel.DependencyObject" /> を取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.DependencyObject" /> グラフにおける親 <see cref="T:System.Workflow.ComponentModel.DependencyObject" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveHandler">
+      <MemberSignature Language="C#" Value="public void RemoveHandler (System.Workflow.ComponentModel.DependencyProperty dependencyEvent, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveHandler(class System.Workflow.ComponentModel.DependencyProperty dependencyEvent, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.RemoveHandler(System.Workflow.ComponentModel.DependencyProperty,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyEvent" Type="System.Workflow.ComponentModel.DependencyProperty" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyEvent"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <param name="value">このプロパティの値を表す <see cref="T:System.Object" />。 ここでは <see cref="T:System.Delegate" /> 型。</param>
+        <summary>関連付けられた <see cref="T:System.EventHandler" /> から <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント デリゲートを直接解放する便法として用意されています。  
+  
+ デリゲートを作成する際には、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、イベントが発生すると必ずイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ ハンドラーを追加または削除するには、次のコードを使用します。 詳細については、次を参照してください。[電子メール送信アクティビティのサンプル](http://msdn.microsoft.com/en-us/bfb5939e-60a9-4037-af4e-2cea9e654669)です。  
+  
+ [!code-csharp[WF_Samples#232](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#232)]
+ [!code-vb[WF_Samples#232](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#232)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">どちらか一方の引数が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="dependencyEvent" /> はイベントではありません。</exception>
+        <exception cref="T:System.Data.ReadOnlyException"><paramref name="value" /> が <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> であり、このインスタンスは <see cref="P:System.Workflow.ComponentModel.DependencyObject.DesignMode" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveProperty">
+      <MemberSignature Language="C#" Value="public bool RemoveProperty (System.Workflow.ComponentModel.DependencyProperty dependencyProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveProperty(class System.Workflow.ComponentModel.DependencyProperty dependencyProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.RemoveProperty(System.Workflow.ComponentModel.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProperty" Type="System.Workflow.ComponentModel.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProperty">削除する <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> から <see cref="T:System.Workflow.ComponentModel.DependencyObject" /> を削除します。</summary>
+        <returns>
+          操作が正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">引数が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBinding">
+      <MemberSignature Language="C#" Value="public void SetBinding (System.Workflow.ComponentModel.DependencyProperty dependencyProperty, System.Workflow.ComponentModel.ActivityBind bind);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetBinding(class System.Workflow.ComponentModel.DependencyProperty dependencyProperty, class System.Workflow.ComponentModel.ActivityBind bind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.SetBinding(System.Workflow.ComponentModel.DependencyProperty,System.Workflow.ComponentModel.ActivityBind)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProperty" Type="System.Workflow.ComponentModel.DependencyProperty" />
+        <Parameter Name="bind" Type="System.Workflow.ComponentModel.ActivityBind" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProperty"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <param name="bind">設定される <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</param>
+        <summary>指定された <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> の <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.DependencyObject.SetValue%2A> は、<xref:System.Workflow.ComponentModel.DependencyProperty> に直接、値を設定します。 同様に、<xref:System.Workflow.ComponentModel.DependencyObject.AddHandler%2A> は、型イベントのプロパティに直接、ハンドラーを追加します。  
+  
+ 同じプロパティに対しては、これらのメソッドのどちらか一方しか呼び出すことができません。 <xref:System.Workflow.ComponentModel.DependencyObject.SetBinding%2A> を呼び出すと、<xref:System.Workflow.ComponentModel.DependencyObject.SetValue%2A> (イベント内の <xref:System.Workflow.ComponentModel.DependencyObject.AddHandler%2A>) を使用して前に設定した値は無視されます。 逆の処理にも同じことが当てはまります。つまり、<xref:System.Workflow.ComponentModel.DependencyObject.SetValue%2A> (<xref:System.Workflow.ComponentModel.DependencyObject.AddHandler%2A>) を呼び出すと、<xref:System.Workflow.ComponentModel.DependencyObject.SetBinding%2A> によって割り当てられたバインドがリセットされます。  
+  
+   
+  
+## Examples  
+ 次のコードは、アクティビティを作成し、その作成したアクティビティを、複合アクティビティに子として追加する方法を示しています。また、この型の <xref:System.Workflow.ComponentModel.CompositeActivity.CanModifyActivities%2A> 許可の設定も行っています。  
+  
+ また、<xref:System.Workflow.ComponentModel.DependencyObject.SetBinding%2A> メソッドの使用方法も示してあります。  
+  
+ このコード例は、ThrowWorkFlow.cs ファイルから抜粋したスローの SDK サンプルの一部です。 詳細については、次を参照してください。 [Throw を使用して](http://msdn.microsoft.com/en-us/aa5b9546-ec95-4e43-8337-20e26f8d71cc)です。  
+  
+ [!code-csharp[WF_Samples#215](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#215)]
+ [!code-vb[WF_Samples#215](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#215)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">どちらか一方の引数が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Workflow.ComponentModel.PropertyMetadata" /> に関連付けられた <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> はバインド不可能です。</exception>
+        <exception cref="T:System.InvalidOperationException">このインスタンスは <see cref="P:System.Workflow.ComponentModel.DependencyObject.DesignMode" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBoundValue">
+      <MemberSignature Language="C#" Value="protected virtual void SetBoundValue (System.Workflow.ComponentModel.ActivityBind bind, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetBoundValue(class System.Workflow.ComponentModel.ActivityBind bind, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.SetBoundValue(System.Workflow.ComponentModel.ActivityBind,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bind" Type="System.Workflow.ComponentModel.ActivityBind" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="bind"><see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</param>
+        <param name="value"><see cref="T:System.Object" /> のターゲットを設定する <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</param>
+        <summary>ターゲット <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> の値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bind" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReadOnlyPropertyValue">
+      <MemberSignature Language="C#" Value="protected void SetReadOnlyPropertyValue (System.Workflow.ComponentModel.DependencyProperty dependencyProperty, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void SetReadOnlyPropertyValue(class System.Workflow.ComponentModel.DependencyProperty dependencyProperty, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.SetReadOnlyPropertyValue(System.Workflow.ComponentModel.DependencyProperty,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProperty" Type="System.Workflow.ComponentModel.DependencyProperty" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProperty"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <param name="value">値を表す <see cref="T:System.Object" /> 値。</param>
+        <summary>読み取り専用である <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="dependencyProperty" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (System.Workflow.ComponentModel.DependencyProperty dependencyProperty, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValue(class System.Workflow.ComponentModel.DependencyProperty dependencyProperty, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.SetValue(System.Workflow.ComponentModel.DependencyProperty,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProperty" Type="System.Workflow.ComponentModel.DependencyProperty" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProperty">設定する <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <param name="value">値が設定される <see cref="T:System.Object" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の値をオブジェクトに設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.DependencyObject.SetBinding%2A> は依存関係プロパティのバインディングを設定します。  
+  
+ <xref:System.Workflow.ComponentModel.DependencyObject.SetValue%2A> は値を直接 <xref:System.Workflow.ComponentModel.DependencyProperty> に設定します (同様に <xref:System.Workflow.ComponentModel.DependencyObject.AddHandler%2A> は、ハンドラーを直接、イベント型のプロパティに追加します)。  
+  
+ 同じプロパティに対しては、これらのメソッドのどちらか一方しか呼び出すことができません。 <xref:System.Workflow.ComponentModel.DependencyObject.SetBinding%2A> を呼び出すと、<xref:System.Workflow.ComponentModel.DependencyObject.SetValue%2A> (イベント内の <xref:System.Workflow.ComponentModel.DependencyObject.AddHandler%2A>) を使用して前に設定した値は無視されます。 逆の処理にも同じことが当てはまります。つまり、<xref:System.Workflow.ComponentModel.DependencyObject.SetValue%2A> (<xref:System.Workflow.ComponentModel.DependencyObject.AddHandler%2A>) を呼び出すと、<xref:System.Workflow.ComponentModel.DependencyObject.SetBinding%2A> によって割り当てられたバインドがリセットされます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.DependencyObject.SetValue%2A> を使用して、依存関係オブジェクト内で依存関係プロパティを設定する方法を次のコードに示します。  
+  
+ [!code-csharp[WF_Samples#166](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#166)]
+ [!code-vb[WF_Samples#166](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#166)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValueBase">
+      <MemberSignature Language="C#" Value="public void SetValueBase (System.Workflow.ComponentModel.DependencyProperty dependencyProperty, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValueBase(class System.Workflow.ComponentModel.DependencyProperty dependencyProperty, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyObject.SetValueBase(System.Workflow.ComponentModel.DependencyProperty,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyProperty" Type="System.Workflow.ComponentModel.DependencyProperty" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyProperty"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> に設定する <see cref="T:System.Object" />。</param>
+        <param name="value"><see cref="T:System.Object" /> の値になる <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> を省略して、<see cref="T:System.Object" /> の値を指定した <see cref="M:System.Workflow.ComponentModel.DependencyObject.SetValue(System.Workflow.ComponentModel.DependencyProperty,System.Object)" /> に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Workflow.ComponentModel.DependencyObject.SetValue%2A> オーバーライドの実装に有用です。 通常、<xref:System.Workflow.ComponentModel.DependencyObject.SetValue%2A> オーバーライド コードでは、<xref:System.Workflow.ComponentModel.DependencyObject.SetValueBase%2A> メソッドを呼び出す前になんらかのカスタム ロジックを実行します。  
+  
+ <xref:System.Workflow.ComponentModel.DependencyObject.SetValue%2A> オーバーライドを設定する場合、<xref:System.Workflow.ComponentModel.PropertyMetadata>、<xref:System.Workflow.ComponentModel.DependencyProperty>、<xref:System.Workflow.ComponentModel.DependencyProperty.Register%2A> の各呼び出しで <xref:System.Workflow.ComponentModel.DependencyProperty.RegisterAttached%2A> を使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dependencyProperty" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Site">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ISite Site { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISite Site" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.DependencyObject.Site" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Workflow.ComponentModel.DependencyObject.Site" /> の <see cref="T:System.Workflow.ComponentModel.DependencyObject" /> コンポーネントの参照を取得または設定します。</summary>
+        <value><see cref="P:System.Workflow.ComponentModel.DependencyObject.Site" /> の <see cref="T:System.Workflow.ComponentModel.DependencyObject" /> コンポーネント。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserData">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary UserData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary UserData" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.DependencyObject.UserData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラス インスタンスにカスタム データを関連付ける <see cref="T:System.Collections.IDictionary" /> を取得します。</summary>
+        <value>デザイン ツールの <see cref="T:System.Workflow.ComponentModel.DependencyObject" /> 宣言を操作し、カスタム データを個々のアクティビティ宣言に関連付けるための、開発者向け拡張フックとして動作するディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、 `metaproperty`、これは変更不可に実行時にします。 `Metaproperties`プロパティは、デザイン時にリテラル値を設定する必要がありますので、実行時にプロパティ インスタンスを作成した後も変わりません。  
+  
+ このプロパティは、Windows Workflow Foundation が提供する既定の <xref:System.Workflow.ComponentModel.Activity> 宣言の実装には使用できません。 このコレクションはシリアル化されていないため、コレクションに含まれるデータはデザイン時から実行時に移行後まで、永続的には維持されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

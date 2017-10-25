@@ -1,0 +1,35 @@
+<Type Name="QueryForConnectionCallback" FullName="System.DirectoryServices.Protocols.QueryForConnectionCallback">
+  <TypeSignature Language="C#" Value="public delegate System.DirectoryServices.Protocols.LdapConnection QueryForConnectionCallback(LdapConnection primaryConnection, LdapConnection referralFromConnection, string newDistinguishedName, LdapDirectoryIdentifier identifier, NetworkCredential credential, long currentUserToken);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed QueryForConnectionCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.QueryForConnectionCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="primaryConnection" Type="System.DirectoryServices.Protocols.LdapConnection" />
+    <Parameter Name="referralFromConnection" Type="System.DirectoryServices.Protocols.LdapConnection" />
+    <Parameter Name="newDistinguishedName" Type="System.String" />
+    <Parameter Name="identifier" Type="System.DirectoryServices.Protocols.LdapDirectoryIdentifier" />
+    <Parameter Name="credential" Type="System.Net.NetworkCredential" />
+    <Parameter Name="currentUserToken" Type="System.Int64" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.DirectoryServices.Protocols.LdapConnection</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="primaryConnection">A<see cref="T:System.DirectoryServices.Protocols.LdapConnection" />プライマリ接続を指定するオブジェクト。</param>
+    <param name="referralFromConnection">A<see cref="T:System.DirectoryServices.Protocols.LdapConnection" />紹介を提供する接続を指定するオブジェクト。</param>
+    <param name="newDistinguishedName">A<see cref="T:System.String" />参照先のサーバーで必要なエントリの識別名 (DN) を指定するオブジェクト。</param>
+    <param name="identifier">A<see cref="T:System.DirectoryServices.Protocols.LdapDirectoryIdentifier" />参照される LDAP ディレクトリの識別子を指定するオブジェクト。</param>
+    <param name="credential">A<see cref="T:System.Net.NetworkCredential" />参照先のサーバーに渡す資格情報を指定するオブジェクト。</param>
+    <param name="currentUserToken">現在のユーザーの LUID です。</param>
+    <summary><see cref="T:System.DirectoryServices.Protocols.QueryForConnectionCallback" />デリゲートが使用可能なキャッシュされた接続があるかどうかを判断します。</summary>
+    <returns>キャッシュされた<see cref="T:System.DirectoryServices.Protocols.LdapConnection" />が利用可能な場合は、返されます。 キャッシュされた接続が使用できない場合<see langword="NULL" />が返されます。</returns>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

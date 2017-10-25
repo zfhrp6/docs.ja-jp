@@ -1,0 +1,688 @@
+<Type Name="TextureBrush" FullName="System.Drawing.TextureBrush">
+  <TypeSignature Language="C#" Value="public sealed class TextureBrush : System.Drawing.Brush" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TextureBrush extends System.Drawing.Brush" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.TextureBrush" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Brush</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>各プロパティ、<see cref="T:System.Drawing.TextureBrush" />クラスは、<see cref="T:System.Drawing.Brush" />図形の内部を塗りつぶすため、イメージを使用するオブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用して新しいビットマップを取得する方法を示しています、<xref:System.Drawing.Image.FromFile%2A>メソッドです。 また、<xref:System.Drawing.TextureBrush>です。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 Button2 をという名前のボタンを含むフォームを作成します。 コードをフォームに貼り付け Button2_Click メソッド ボタンの`Click`イベント。  
+  
+ [!code-cpp[System.Drawing.ImageExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.ImageExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.ImageExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextureBrush (System.Drawing.Image bitmap);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Image bitmap) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.#ctor(System.Drawing.Image)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bitmap" Type="System.Drawing.Image" />
+      </Parameters>
+      <Docs>
+        <param name="bitmap"><see cref="T:System.Drawing.Image" />このオブジェクト<see cref="T:System.Drawing.TextureBrush" />オブジェクトの内部を塗りつぶします。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.TextureBrush" />オブジェクトを指定されたイメージを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用して新しいビットマップを取得する方法を示しています、<xref:System.Drawing.Image.FromFile%2A>メソッドです。 また、<xref:System.Drawing.TextureBrush>です。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 Button2 をという名前のボタンを含むフォームを作成します。 コードをフォームに貼り付け Button2_Click メソッド ボタンの`Click`イベント。  
+  
+ [!code-cpp[System.Drawing.ImageExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.ImageExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.ImageExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextureBrush (System.Drawing.Image image, System.Drawing.Drawing2D.WrapMode wrapMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Image image, valuetype System.Drawing.Drawing2D.WrapMode wrapMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.#ctor(System.Drawing.Image,System.Drawing.Drawing2D.WrapMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="wrapMode" Type="System.Drawing.Drawing2D.WrapMode" />
+      </Parameters>
+      <Docs>
+        <param name="image"><see cref="T:System.Drawing.Image" />このオブジェクト<see cref="T:System.Drawing.TextureBrush" />オブジェクトの内部を塗りつぶします。</param>
+        <param name="wrapMode">A<see cref="T:System.Drawing.Drawing2D.WrapMode" />を指定する列挙この<see cref="T:System.Drawing.TextureBrush" />オブジェクトを並べて表示します。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.TextureBrush" />オブジェクトを指定されたイメージとラップ モードを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextureBrush (System.Drawing.Image image, System.Drawing.Rectangle dstRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Image image, valuetype System.Drawing.Rectangle dstRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.#ctor(System.Drawing.Image,System.Drawing.Rectangle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="dstRect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="image"><see cref="T:System.Drawing.Image" />このオブジェクト<see cref="T:System.Drawing.TextureBrush" />オブジェクトの内部を塗りつぶします。</param>
+        <param name="dstRect">A<see cref="T:System.Drawing.Rectangle" />この外接する四角形を表す構造<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.TextureBrush" />オブジェクトを指定されたイメージと外接する四角形を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextureBrush (System.Drawing.Image image, System.Drawing.RectangleF dstRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Image image, valuetype System.Drawing.RectangleF dstRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.#ctor(System.Drawing.Image,System.Drawing.RectangleF)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="dstRect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="image"><see cref="T:System.Drawing.Image" />このオブジェクト<see cref="T:System.Drawing.TextureBrush" />オブジェクトの内部を塗りつぶします。</param>
+        <param name="dstRect">A<see cref="T:System.Drawing.RectangleF" />この外接する四角形を表す構造<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.TextureBrush" />オブジェクトを指定されたイメージと外接する四角形を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextureBrush (System.Drawing.Image image, System.Drawing.Drawing2D.WrapMode wrapMode, System.Drawing.Rectangle dstRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Image image, valuetype System.Drawing.Drawing2D.WrapMode wrapMode, valuetype System.Drawing.Rectangle dstRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.#ctor(System.Drawing.Image,System.Drawing.Drawing2D.WrapMode,System.Drawing.Rectangle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="wrapMode" Type="System.Drawing.Drawing2D.WrapMode" />
+        <Parameter Name="dstRect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="image"><see cref="T:System.Drawing.Image" />このオブジェクト<see cref="T:System.Drawing.TextureBrush" />オブジェクトの内部を塗りつぶします。</param>
+        <param name="wrapMode">A<see cref="T:System.Drawing.Drawing2D.WrapMode" />を指定する列挙この<see cref="T:System.Drawing.TextureBrush" />オブジェクトを並べて表示します。</param>
+        <param name="dstRect">A<see cref="T:System.Drawing.Rectangle" />この外接する四角形を表す構造<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.TextureBrush" />オブジェクトを指定したイメージ、ラップ モードおよび外接する四角形を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextureBrush (System.Drawing.Image image, System.Drawing.Drawing2D.WrapMode wrapMode, System.Drawing.RectangleF dstRect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Image image, valuetype System.Drawing.Drawing2D.WrapMode wrapMode, valuetype System.Drawing.RectangleF dstRect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.#ctor(System.Drawing.Image,System.Drawing.Drawing2D.WrapMode,System.Drawing.RectangleF)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="wrapMode" Type="System.Drawing.Drawing2D.WrapMode" />
+        <Parameter Name="dstRect" Type="System.Drawing.RectangleF" />
+      </Parameters>
+      <Docs>
+        <param name="image"><see cref="T:System.Drawing.Image" />このオブジェクト<see cref="T:System.Drawing.TextureBrush" />オブジェクトの内部を塗りつぶします。</param>
+        <param name="wrapMode">A<see cref="T:System.Drawing.Drawing2D.WrapMode" />を指定する列挙この<see cref="T:System.Drawing.TextureBrush" />オブジェクトを並べて表示します。</param>
+        <param name="dstRect">A<see cref="T:System.Drawing.RectangleF" />この外接する四角形を表す構造<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.TextureBrush" />オブジェクトを指定したイメージ、ラップ モードおよび外接する四角形を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextureBrush (System.Drawing.Image image, System.Drawing.Rectangle dstRect, System.Drawing.Imaging.ImageAttributes imageAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Image image, valuetype System.Drawing.Rectangle dstRect, class System.Drawing.Imaging.ImageAttributes imageAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.#ctor(System.Drawing.Image,System.Drawing.Rectangle,System.Drawing.Imaging.ImageAttributes)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="dstRect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="imageAttr" Type="System.Drawing.Imaging.ImageAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="image"><see cref="T:System.Drawing.Image" />このオブジェクト<see cref="T:System.Drawing.TextureBrush" />オブジェクトの内部を塗りつぶします。</param>
+        <param name="dstRect">A<see cref="T:System.Drawing.Rectangle" />この外接する四角形を表す構造<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</param>
+        <param name="imageAttr"><see cref="T:System.Drawing.Imaging.ImageAttributes" />オブジェクトで使用されるイメージに関する追加情報を含む<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.TextureBrush" />指定したイメージを外接する四角形、およびイメージ属性を使用するオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextureBrush (System.Drawing.Image image, System.Drawing.RectangleF dstRect, System.Drawing.Imaging.ImageAttributes imageAttr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Image image, valuetype System.Drawing.RectangleF dstRect, class System.Drawing.Imaging.ImageAttributes imageAttr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.#ctor(System.Drawing.Image,System.Drawing.RectangleF,System.Drawing.Imaging.ImageAttributes)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="dstRect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="imageAttr" Type="System.Drawing.Imaging.ImageAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="image"><see cref="T:System.Drawing.Image" />このオブジェクト<see cref="T:System.Drawing.TextureBrush" />オブジェクトの内部を塗りつぶします。</param>
+        <param name="dstRect">A<see cref="T:System.Drawing.RectangleF" />この外接する四角形を表す構造<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</param>
+        <param name="imageAttr"><see cref="T:System.Drawing.Imaging.ImageAttributes" />オブジェクトで使用されるイメージに関する追加情報を含む<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</param>
+        <summary>新しい初期化<see cref="T:System.Drawing.TextureBrush" />指定したイメージを外接する四角形、およびイメージ属性を使用するオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.TextureBrush" /> オブジェクトの同一コピーを作成します。</summary>
+        <returns><see cref="T:System.Drawing.TextureBrush" />このメソッドを作成するオブジェクトとしてキャスト、<see cref="T:System.Object" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 このコードを作成、<xref:System.Drawing.TextureBrush>オブジェクトとそのテクスチャ ブラシの正確なコピーし、コピーを使用して、画面上の四角形の塗りつぶしをします。  
+  
+ [!code-cpp[System.Drawing.ClassicTextureBrushExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.ClassicTextureBrushExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.ClassicTextureBrushExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public System.Drawing.Image Image { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image Image" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.TextureBrush.Image" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Image" />オブジェクトに関連付けられた<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</summary>
+        <value><see cref="T:System.Drawing.Image" />このイメージを表すオブジェクト<see cref="T:System.Drawing.TextureBrush" />オブジェクトは、図形を塗りつぶします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiplyTransform">
+      <MemberSignature Language="C#" Value="public void MultiplyTransform (System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MultiplyTransform(class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.MultiplyTransform(System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix">ジオメトリック変換の乗算に使用する <see cref="T:System.Drawing.Drawing2D.Matrix" /> オブジェクト。</param>
+        <summary>この <see cref="T:System.Drawing.TextureBrush" /> オブジェクトのローカル ジオメトリック変換を表す <see cref="T:System.Drawing.Drawing2D.Matrix" /> オブジェクトに、指定した <see cref="T:System.Drawing.Drawing2D.Matrix" /> オブジェクトを前に適用することによって指定した <see cref="T:System.Drawing.Drawing2D.Matrix" /> オブジェクトを乗算します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換行列、<xref:System.Drawing.TextureBrush>オブジェクトにテクスチャを定義するイメージを変換する方法を指定します。 たとえば、変換行列の右回りに 90 度回転を指定する場合、テクスチャのイメージが右回りに 90 ° 回転します。  
+  
+   
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.TextureBrush> オブジェクトを作成します。  
+  
+-   X 方向の 50 個のユニットの平行移動を指定する新しい行列を作成します。  
+  
+-   テクスチャ ブラシの変換行列の行列を乗算します。  
+  
+-   テクスチャ ブラシを使用して、四角形を格納します。  
+  
+ [!code-cpp[System.Drawing.ClassicTextureBrushExamples#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.ClassicTextureBrushExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.ClassicTextureBrushExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiplyTransform">
+      <MemberSignature Language="C#" Value="public void MultiplyTransform (System.Drawing.Drawing2D.Matrix matrix, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MultiplyTransform(class System.Drawing.Drawing2D.Matrix matrix, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.MultiplyTransform(System.Drawing.Drawing2D.Matrix,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="matrix">ジオメトリック変換の乗算に使用する <see cref="T:System.Drawing.Drawing2D.Matrix" /> オブジェクト。</param>
+        <param name="order">2 つの行列の乗算に使用する順序を指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" /> 列挙体。</param>
+        <summary>指定した順序で、指定した <see cref="T:System.Drawing.Drawing2D.Matrix" /> オブジェクトにより、この <see cref="T:System.Drawing.TextureBrush" /> オブジェクトのローカル ジオメトリック変換を表す <see cref="T:System.Drawing.Drawing2D.Matrix" /> オブジェクトを乗算します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換行列、<xref:System.Drawing.TextureBrush>オブジェクトにテクスチャを定義するイメージを変換する方法を指定します。 たとえば、変換行列の右回りに 90 度回転を指定する場合、テクスチャのイメージが右回りに 90 ° 回転します。  
+  
+   
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.TextureBrush> オブジェクトを作成します。  
+  
+-   X 方向の 50 個のユニットの平行移動を指定する新しい行列を作成します。  
+  
+-   テクスチャ ブラシの変換行列の行列を乗算します。  
+  
+-   テクスチャ ブラシを使用して、四角形を格納します。  
+  
+ [!code-cpp[System.Drawing.ClassicTextureBrushExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.ClassicTextureBrushExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.ClassicTextureBrushExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetTransform">
+      <MemberSignature Language="C#" Value="public void ResetTransform ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetTransform() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.ResetTransform" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.TextureBrush" /> オブジェクトの <see langword="Transform" /> プロパティを ID にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.TextureBrush> オブジェクトを作成します。  
+  
+-   テクスチャのイメージを 90 度回転させます。  
+  
+-   四角形を格納します。  
+  
+-   Id に、変換行列をリセットします。  
+  
+-   2 つ目の四角形を格納します。  
+  
+ [!code-cpp[System.Drawing.ClassicTextureBrushExamples#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CPP/form1.cpp#4)]
+ [!code-csharp[System.Drawing.ClassicTextureBrushExamples#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CS/form1.cs#4)]
+ [!code-vb[System.Drawing.ClassicTextureBrushExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateTransform">
+      <MemberSignature Language="C#" Value="public void RotateTransform (float angle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateTransform(float32 angle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.RotateTransform(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転角度。</param>
+        <summary>指定した量だけこの <see cref="T:System.Drawing.TextureBrush" /> オブジェクトのローカル ジオメトリック変換を回転します。 このメソッドは変換の前に回転を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.TextureBrush> オブジェクトを作成します。  
+  
+-   テクスチャのイメージを 90 度回転させます。  
+  
+-   四角形を格納します。  
+  
+ [!code-cpp[System.Drawing.ClassicTextureBrushExamples#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.ClassicTextureBrushExamples#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.ClassicTextureBrushExamples#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateTransform">
+      <MemberSignature Language="C#" Value="public void RotateTransform (float angle, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateTransform(float32 angle, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.RotateTransform(System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転角度。</param>
+        <param name="order">回転行列を後に適用するか、前に適用するかを指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" /> 列挙値。</param>
+        <summary>指定した順序で、指定した量だけこの <see cref="T:System.Drawing.TextureBrush" /> オブジェクトのローカル ジオメトリック変換を回転します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.TextureBrush> オブジェクトを作成します。  
+  
+-   テクスチャのイメージを 90 度回転させます。  
+  
+-   四角形を格納します。  
+  
+ [!code-cpp[System.Drawing.ClassicTextureBrushExamples#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.ClassicTextureBrushExamples#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.ClassicTextureBrushExamples#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleTransform">
+      <MemberSignature Language="C#" Value="public void ScaleTransform (float sx, float sy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScaleTransform(float32 sx, float32 sy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.ScaleTransform(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sx" Type="System.Single" />
+        <Parameter Name="sy" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="sx">X 軸方向に変換をスケーリングする量。</param>
+        <param name="sy">Y 方向の変換をスケーリングする量。</param>
+        <summary>このローカル ジオメトリック変換をスケーリング<see cref="T:System.Drawing.TextureBrush" />オブジェクト、指定した量だけです。 このメソッドは変換の前にスケーリング行列を適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.TextureBrush> オブジェクトを作成します。  
+  
+-   テクスチャのスケール イメージを 2 回の x 方向です。  
+  
+-   テクスチャ ブラシを使用して、画面上の四角形を格納します。  
+  
+ [!code-cpp[System.Drawing.ClassicTextureBrushExamples#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.ClassicTextureBrushExamples#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.ClassicTextureBrushExamples#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleTransform">
+      <MemberSignature Language="C#" Value="public void ScaleTransform (float sx, float sy, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScaleTransform(float32 sx, float32 sy, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.ScaleTransform(System.Single,System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sx" Type="System.Single" />
+        <Parameter Name="sy" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="sx">X 軸方向に変換をスケーリングする量。</param>
+        <param name="sy">Y 方向の変換をスケーリングする量。</param>
+        <param name="order">スケーリング行列を後に適用するか、前に適用するかを指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" /> 列挙値。</param>
+        <summary>指定した順序で、指定した量だけこの <see cref="T:System.Drawing.TextureBrush" /> オブジェクトのローカル ジオメトリック変換をスケーリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.TextureBrush> オブジェクトを作成します。  
+  
+-   テクスチャのスケール イメージを 2 回の x 方向です。  
+  
+-   テクスチャ ブラシを使用して、画面上の四角形を格納します。  
+  
+ [!code-cpp[System.Drawing.ClassicTextureBrushExamples#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CPP/form1.cpp#8)]
+ [!code-csharp[System.Drawing.ClassicTextureBrushExamples#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CS/form1.cs#8)]
+ [!code-vb[System.Drawing.ClassicTextureBrushExamples#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/VB/form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.Matrix Transform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Drawing2D.Matrix Transform" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.TextureBrush.Transform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.Matrix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のコピー、<see cref="T:System.Drawing.Drawing2D.Matrix" />これに関連付けられているイメージの場合は、ローカル ジオメトリック変換を定義するオブジェクト<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</summary>
+        <value>コピー、<see cref="T:System.Drawing.Drawing2D.Matrix" />これを使用して描画がいっぱいになったにのみ適用されるジオメトリック変換を定義するオブジェクト<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジオメトリック変換は、変換、拡大縮小、回転、またはこのブラシのテクスチャを定義するイメージのずれを使用できます。 マトリックスが返されたため、<xref:System.Drawing.TextureBrush.Transform%2A>プロパティ ブラシのジオメトリック変換のコピーであるが不要になったときに、マトリックスを破棄する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateTransform">
+      <MemberSignature Language="C#" Value="public void TranslateTransform (float dx, float dy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TranslateTransform(float32 dx, float32 dy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.TranslateTransform(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dx" Type="System.Single" />
+        <Parameter Name="dy" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="dx">X 軸方向の変換を平行移動するディメンションです。</param>
+        <param name="dy">Y 方向に変換を平行移動するディメンションです。</param>
+        <summary>指定した寸法でこの <see cref="T:System.Drawing.TextureBrush" /> オブジェクトのローカル ジオメトリック変換を平行移動します。 このメソッドは変換の前に平行移動を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.TextureBrush> オブジェクトを作成します。  
+  
+-   X 方向のテクスチャのイメージ 50 個のユニットを変換します。  
+  
+-   テクスチャ ブラシを使用して、画面上の四角形を格納します。  
+  
+ [!code-cpp[System.Drawing.ClassicTextureBrushExamples#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CPP/form1.cpp#9)]
+ [!code-csharp[System.Drawing.ClassicTextureBrushExamples#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CS/form1.cs#9)]
+ [!code-vb[System.Drawing.ClassicTextureBrushExamples#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/VB/form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateTransform">
+      <MemberSignature Language="C#" Value="public void TranslateTransform (float dx, float dy, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TranslateTransform(float32 dx, float32 dy, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.TextureBrush.TranslateTransform(System.Single,System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dx" Type="System.Single" />
+        <Parameter Name="dy" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="dx">X 軸方向の変換を平行移動するディメンションです。</param>
+        <param name="dy">Y 方向に変換を平行移動するディメンションです。</param>
+        <param name="order">平行移動を適用する順序 (前または後)。</param>
+        <summary>指定した順序で、指定した寸法だけこの <see cref="T:System.Drawing.TextureBrush" /> オブジェクトのローカル ジオメトリック変換を平行移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.TextureBrush> オブジェクトを作成します。  
+  
+-   X 方向のテクスチャのイメージ 50 個のユニットを変換します。  
+  
+-   テクスチャ ブラシを使用して、画面上の四角形を格納します。  
+  
+ [!code-cpp[System.Drawing.ClassicTextureBrushExamples#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CPP/form1.cpp#10)]
+ [!code-csharp[System.Drawing.ClassicTextureBrushExamples#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/CS/form1.cs#10)]
+ [!code-vb[System.Drawing.ClassicTextureBrushExamples#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicTextureBrushExamples/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapMode">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.WrapMode WrapMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.WrapMode WrapMode" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.TextureBrush.WrapMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.WrapMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Drawing.Drawing2D.WrapMode" />をこのラップ モードを示す列挙体<see cref="T:System.Drawing.TextureBrush" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Drawing.Drawing2D.WrapMode" />列挙型を指定する方法がいっぱいになったこれを使用して描画<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />オブジェクトは、並べて表示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用して新しいビットマップを取得する方法を示しています、<xref:System.Drawing.Image.FromFile%2A>メソッドです。 についても示します、<xref:System.Drawing.TextureBrush.WrapMode%2A>プロパティおよび<xref:System.Drawing.Drawing2D.WrapMode>列挙します。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 Button2 をという名前のボタンを含むフォームを作成します。 コードをフォームに貼り付け Button2_Click メソッド ボタンの`Click`イベント。  
+  
+ [!code-cpp[System.Drawing.ImageExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.ImageExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.ImageExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

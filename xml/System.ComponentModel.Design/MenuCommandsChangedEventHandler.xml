@@ -1,0 +1,37 @@
+<Type Name="MenuCommandsChangedEventHandler" FullName="System.ComponentModel.Design.MenuCommandsChangedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void MenuCommandsChangedEventHandler(object sender, MenuCommandsChangedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MenuCommandsChangedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.MenuCommandsChangedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.ComponentModel.Design.MenuCommandsChangedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.Design.MenuCommandsChangedEventArgs" />。</param>
+    <summary><see cref="E:System.ComponentModel.Design.MenuCommandService.MenuCommandsChanged" /> の <see cref="T:System.ComponentModel.Design.MenuCommandService" /> イベントを処理するメソッドを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.ComponentModel.Design.MenuCommandsChangedEventHandler>デリゲート、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

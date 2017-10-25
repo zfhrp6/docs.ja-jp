@@ -1,0 +1,108 @@
+<Type Name="VisualBasicSettings" FullName="Microsoft.VisualBasic.Activities.VisualBasicSettings">
+  <TypeSignature Language="C#" Value="public class VisualBasicSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VisualBasicSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Activities.VisualBasicSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(Microsoft.VisualBasic.Activities.XamlIntegration.VisualBasicSettingsConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(Microsoft.VisualBasic.Activities.XamlIntegration.VisualBasicSettingsValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:Microsoft.VisualBasic.Activities.VisualBasicValue`1" /> インスタンスおよび <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicReference`1" /> インスタンスに含まれている式のソース テキストをコンパイルする際、これらのインスタンスが使用する設定を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらの設定には、式のコンパイルに必要なアセンブリ参照とインポート済みの名前空間が含まれます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VisualBasicSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Activities.VisualBasicSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Activities.VisualBasicSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static Microsoft.VisualBasic.Activities.VisualBasicSettings Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.VisualBasic.Activities.VisualBasicSettings Default" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Activities.VisualBasicSettings.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Activities.VisualBasicSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリ参照とインポート済みの名前空間の既定のセットを含んでいる <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicSettings" /> を取得します。 このセットは、特定の <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicValue`1" /> のすべての <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicReference`1" /> インスタンスと <see cref="T:System.AppDomain" /> インスタンスで使用できます。</summary>
+        <value>アセンブリ参照とインポート済みの名前空間の既定のセットを含んでいる <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicSettings" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、既定のインポート済み名前空間とアセンブリ参照を示します。  
+  
+|インポート済み名前空間|Assembly|  
+|------------------------|--------------|  
+|システム|mscorlib|  
+|システム|システム|  
+|System.Collections|mscorlib|  
+|System.Collections.Generic|mscorlib|  
+|System.Collections.Generic|システム|  
+|System.Activities|System.Activities|  
+|System.Activities.Statements|System.Activities|  
+|System.Activities.Expressions|System.Activities|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportReferences">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ISet&lt;Microsoft.VisualBasic.Activities.VisualBasicImportReference&gt; ImportReferences { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ISet`1&lt;class Microsoft.VisualBasic.Activities.VisualBasicImportReference&gt; ImportReferences" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Activities.VisualBasicSettings.ImportReferences" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ISet&lt;Microsoft.VisualBasic.Activities.VisualBasicImportReference&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリ参照と、そのアセンブリからインポートされた名前空間を表す <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicImportReference" /> オブジェクトのコレクションを取得します。</summary>
+        <value>アセンブリ参照と、そのアセンブリからインポートされた名前空間を表す <see cref="T:Microsoft.VisualBasic.Activities.VisualBasicImportReference" /> オブジェクトのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

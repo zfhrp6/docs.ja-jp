@@ -1,0 +1,230 @@
+<Type Name="LogicalCallContext" FullName="System.Runtime.Remoting.Messaging.LogicalCallContext">
+  <TypeSignature Language="C#" Value="public sealed class LogicalCallContext : ICloneable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit LogicalCallContext extends System.Object implements class System.ICloneable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Messaging.LogicalCallContext" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リモート メソッドの呼び出し中に実行のコード パスで実行されるプロパティのセットを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Messaging.LogicalCallContext>クラスは、バージョンの<xref:System.Runtime.Remoting.Messaging.CallContext>メソッドの中で使用されるクラスがリモート アプリケーション ドメインを呼び出します。 <xref:System.Runtime.Remoting.Messaging.CallContext>は特殊なコレクション オブジェクトをメソッド呼び出しに対してスレッド ローカル ストレージに似ており、実行の各論理スレッドに固有のデータ スロットを提供します。 スロットは、他の論理スレッドで呼び出しのコンテキストでは共有されません。 オブジェクトに追加することができます、<xref:System.Runtime.Remoting.Messaging.CallContext>ダウンし、実行コード パス上に移動し、パスに沿ったさまざまなオブジェクトを検査します。  
+  
+ 別のオブジェクトにリモート メソッド呼び出しが行われたときに<xref:System.AppDomain>、<xref:System.Runtime.Remoting.Messaging.CallContext>クラスが生成されます、<xref:System.Runtime.Remoting.Messaging.LogicalCallContext>リモートの呼び出しと共に移動します。 オブジェクトのみが公開する、<xref:System.Runtime.Remoting.Messaging.ILogicalThreadAffinative>インターフェイスし、に保存される、<xref:System.Runtime.Remoting.Messaging.CallContext>の外部伝達、<xref:System.AppDomain>で、<xref:System.Runtime.Remoting.Messaging.LogicalCallContext>です。 このインターフェイスをサポートしないオブジェクトが転送されない<xref:System.Runtime.Remoting.Messaging.LogicalCallContext>リモート メソッド呼び出しを含んだインスタンス。  
+  
+> [!NOTE]
+>  このクラスは、リンク確認要求を使用します。 SecurityException は直前の呼び出し元がインフラストラクチャのアクセス許可を持たない場合にスローされます。 参照してください[リンク確認要求](~/docs/framework/misc/link-demands.md)詳細についてはします。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.LogicalCallContext.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのコピーである新しいオブジェクトを作成します。</summary>
+        <returns>このインスタンスのコピーである新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Messaging.LogicalCallContext.Clone%2A>メソッドは、現在のディープ コピーを生成<xref:System.Runtime.Remoting.Messaging.LogicalCallContext>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FreeNamedDataSlot">
+      <MemberSignature Language="C#" Value="public void FreeNamedDataSlot (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FreeNamedDataSlot(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.LogicalCallContext.FreeNamedDataSlot(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">空のデータ スロットの名前。</param>
+        <summary>指定した名前のデータ スロットを空にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public object GetData (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetData(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.LogicalCallContext.GetData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">呼び出しのコンテキスト内の項目の名前です。</param>
+        <summary>現在のインスタンスから指定した名前に関連付けられているオブジェクトを取得します。</summary>
+        <returns>指定した名前に関連付けられている論理呼び出しコンテキスト内のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.LogicalCallContext.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">ソースまたはシリアル化の転送先に関する文脈情報。</param>
+        <summary>指定した設定<see cref="T:System.Runtime.Serialization.SerializationInfo" />、現在のシリアル化に必要なデータと<see cref="T:System.Runtime.Remoting.Messaging.LogicalCallContext" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドが提供されている<xref:System.Runtime.Serialization.SerializationInfo>を再作成するために必要なすべてのデータ、<xref:System.Runtime.Remoting.Messaging.LogicalCallContext>です。  
+  
+ 現在のメソッドの実装は、<xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元にするアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="HasInfo">
+      <MemberSignature Language="C#" Value="public bool HasInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Messaging.LogicalCallContext.HasInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、現在<see cref="T:System.Runtime.Remoting.Messaging.LogicalCallContext" />情報が含まれています。</summary>
+        <value>示すブール値かどうか、現在<see cref="T:System.Runtime.Remoting.Messaging.LogicalCallContext" />情報が含まれています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (string name, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetData(string name, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.LogicalCallContext.SetData(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">呼び出しのコンテキスト内の新しい項目を関連付けられる名前です。</param>
+        <param name="data">呼び出しのコンテキストに格納するオブジェクト。</param>
+        <summary>現在のインスタンスで、指定したオブジェクトを格納し、指定した名前に関連付けます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

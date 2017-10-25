@@ -1,0 +1,237 @@
+<Type Name="SrgsToken" FullName="System.Speech.Recognition.SrgsGrammar.SrgsToken">
+  <TypeSignature Language="C#" Value="public class SrgsToken : System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SrgsToken extends System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SrgsGrammar.SrgsToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Recognition.SrgsGrammar.SrgsElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{DebuggerDisplayString ()}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>認識できる短い語句を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メンバーを使用して、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken>クラス、単語の 3 つの形式を指定することができます。<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Display%2A>フォーム、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text%2A>フォーム、およびカスタム<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation%2A>という単語をします。  
+  
+ 複数の単語が 1 つの格納されている場合<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken>オブジェクトを内部的には、結果の別のトークンとして扱われますがそれぞれします。  
+  
+ このクラスを表します、 `token` World Wide Web Consortium (W3C) で定義されている要素[音声認識の文法の仕様 (SRGS) バージョン 1.0。](http://go.microsoft.com/fwlink/?LinkId=201761)です。 については、SRGS`token`要素および System.Speech でのサポートに関する詳細を参照してください。[トークン要素](http://msdn.microsoft.com/en-us/3a9e8d64-7bd4-4188-a6f4-dbf28ea71632)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsToken (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsToken.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">新しいテキスト<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsToken" />クラスのインスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsToken" />クラスし、認識されるようにテキストを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken>オブジェクト<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text%2A>プロパティが最初の値、`text`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="text" /> が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Display">
+      <MemberSignature Language="C#" Value="public string Display { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Display" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsToken.Display" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または読み上げるテキストの表示形式を設定します。</summary>
+        <value>トークンの表現が表示されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、同じ値を表す、ですが、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Display%2A>フォームが異なる場合があります、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text%2A>フォーム上の単語または語句を<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken>です。 たとえば、フォームの表示では頭字語、"USA"などとするテキストを読み上げられる中に可能性があります、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation%2A> 「アメリカ合衆国」には、適用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定しようとしましたが<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsToken.Display" />に<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">空の文字列を代入しよう<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsToken.Display" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pronunciation">
+      <MemberSignature Language="C#" Value="public string Pronunciation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Pronunciation" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトークンの発音を定義する文字列を設定します。</summary>
+        <value>指定された発音記号からの電話を含む文字列を返します<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsDocument.PhoneticAlphabet" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 携帯電話は、文字または音声のサウンドを表す記号です。 System.Speech カスタム発音を指定する 3 つの phonetic アルファベットをサポートしています: ユニバーサル電話設定 (UPS)、Speech API (SAPI) 電話設定 で、および国際音声記号 (IPA)。 指定された電話<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation%2A>で指定された発音記号に一致する必要があります<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.PhoneticAlphabet%2A>です。 参照してください[辞書と音声のアルファベット](http://msdn.microsoft.com/en-us/435e3c6f-6834-4e5a-b0f6-c17b2275dc51)詳細についてはします。  
+  
+ 指定された電話<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation%2A>を示す方法の内容<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text%2A>成功認識用に増大する必要があります。  音声認識エンジンで指定された発音を使用して<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation%2A>音声入力およびに含まれている文字列を返します。 一致する<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text%2A>認識結果にします。  
+  
+ 認識エンジンに含まれる、word の有効な発音として指定された発音を認識しない場合は、携帯電話がスペースで区切られたか、指定した文字列が認識されない電話を含む、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text%2A>です。  
+  
+ 指定された発音<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation%2A>文法または認識エンジンに関連付けられた辞書で指定された発音よりも優先されます。 も、発音、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation%2A>プロパティに含まれる語句の 1 つにのみ適用される<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では文法俗語単語が含まれています、一般的でない単語があります:"whatchamacallit"です。 カスタム、インライン発音を使用して、追加する、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation%2A>のプロパティ、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken>クラスは、"whatchamacallit"もそれを含む語句全体と word の認識の精度を向上させることができます。 例では、携帯電話から、Microsoft Universal 電話設定 (UPS) を使用して、カスタム発音を定義します。  
+  
+```  
+using System;  
+using System.Speech.Recognition;  
+using System.Speech.Recognition.SrgsGrammar;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+  
+    // Initialize an instance of the in-process recognizer.  
+    {  
+      using (SpeechRecognitionEngine recognizer =  
+         new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US")))  
+      {  
+  
+        // Build the SrgsOneOf objects with alternative choices for the slang phrase.  
+        SrgsOneOf gimme = new SrgsOneOf(  
+          new string[] { "give me", "gimme", "hand me", "ha'me" });  
+        SrgsOneOf the = new SrgsOneOf(new string[] { "the", "duh" });  
+  
+        // Build the one-of element that contains the pronunciation.  
+        SrgsItem thing = new SrgsItem("thingamajig");  
+        SrgsItem whatcha = new SrgsItem();  
+        SrgsToken callit = new SrgsToken("whatchamacallit");  
+        callit.Pronunciation = "W AE T CH AE M AE K AA L IH T";  
+        whatcha.Add(callit);  
+        SrgsOneOf what = new SrgsOneOf(new SrgsItem[] {thing, whatcha});  
+  
+        // Create the rule from the SrgsOneOf objects.  
+        SrgsRule slangRule = new SrgsRule("slang", gimme, the, what);  
+  
+        // Build an SrgsDocument object from the rule and set the phonetic alphabet.  
+        SrgsDocument tokenPron = new SrgsDocument(slangRule);  
+        tokenPron.PhoneticAlphabet = SrgsPhoneticAlphabet.Ups;  
+  
+        // Create a Grammar object from the SrgsDocument and load it to the recognizer.  
+        Grammar g_Slang = new Grammar(tokenPron);  
+        g_Slang.Name = ("Slang Pronunciation");  
+        recognizer.LoadGrammarAsync(g_Slang);  
+  
+        // Configure recognizer input.  
+        recognizer.SetInputToDefaultAudioDevice();  
+  
+        // Attach a handler for the SpeechRecognized event.  
+        recognizer.SpeechRecognized +=   
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+  
+        // Start asynchronous recognition.  
+        recognizer.RecognizeAsync();  
+        Console.WriteLine("Starting asynchronous recognition...");  
+  
+        // Keep the console window open.  
+        Console.ReadLine();  
+      }  
+    }  
+  
+    // Handle the SpeechRecognized event.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("Recognized phrase: " + e.Result.Text);  
+      Console.WriteLine("Confidence: " + e.Result.Confidence);  
+      Console.WriteLine("  Word summary: ");  
+      foreach (RecognizedWordUnit word in e.Result.Words)  
+      {  
+        Console.WriteLine(  
+          "    Lexical form ({1})" +  
+          " Pronunciation ({0})" +  
+          " Confidence ({2})",  
+          word.Pronunciation, word.LexicalForm, word.Confidence);  
+      }  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定しようとしましたが<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation" />に<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">空の文字列を代入しよう<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用する単語の記述形式を設定します。</summary>
+        <value>含まれるテキスト、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsToken" />クラスのインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、同じ値を表す、ですが、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text%2A>フォームが異なる場合があります、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Display%2A>フォーム上の単語または語句を<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken>です。 たとえば、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Display%2A>フォームの頭字語、"USA"など、読み上げられるテキストとする可能性があります、 <xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation%2A> 「アメリカ合衆国」には、適用します。  
+  
+ 既定値、<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text%2A>プロパティは、空の文字列:""です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定しようとしましたが<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text" />に<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">空の文字列を代入しよう<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text" />です。</exception>
+        <exception cref="T:System.ArgumentException">しようとしましたが、引用符 (") を表す文字列を割り当てる<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsToken.Text" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

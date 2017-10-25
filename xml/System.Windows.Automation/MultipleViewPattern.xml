@@ -1,0 +1,268 @@
+<Type Name="MultipleViewPattern" FullName="System.Windows.Automation.MultipleViewPattern">
+  <TypeSignature Language="C#" Value="public class MultipleViewPattern : System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MultipleViewPattern extends System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.MultipleViewPattern" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.BasePattern</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>提供し、同じまたは子コントロールのセットの複数の表現の間の切り替えができるようにするコントロール表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のビューを表示するコントロールの例として、リスト ビュー (サムネイル、タイル、アイコン、または詳細としてその内容を表示することができます)、[!INCLUDE[TLA#tla_xl](~/includes/tlasharptla-xl-md.md)]グラフ (円、線、バー、数式を含むセル値)[!INCLUDE[TLA#tla_word](~/includes/tlasharptla-word-md.md)]ドキュメント (通常、Web レイアウト、印刷レイアウト、閲覧レイアウト、アウトライン)[!INCLUDE[TLA#tla_outlook](~/includes/tlasharptla-outlook-md.md)]カレンダー (年、月、週、日) と[!INCLUDE[TLA#tla_wmp](~/includes/tlasharptla-wmp-md.md)]スキンします。 サポートされるビューはコントロールの開発者によって決定され、各コントロールに固有です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cached">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.MultipleViewPattern.MultipleViewPatternInformation Cached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.MultipleViewPattern/MultipleViewPatternInformation Cached" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.MultipleViewPattern.Cached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.MultipleViewPattern+MultipleViewPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Automation.MultipleViewPattern" /> のキャッシュされた [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を取得します。</summary>
+        <value>コントロール パターンのキャッシュされた [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を格納する構造体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュされたプロパティ値必要がありますが要求されていない以前を使用して、<xref:System.Windows.Automation.CacheRequest>です。 使用して<xref:System.Windows.Automation.MultipleViewPattern.Current%2A>プロパティの現在の値を取得します。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.MultipleViewPattern.MultipleViewPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求されたプロパティがキャッシュ内にありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.MultipleViewPattern.MultipleViewPatternInformation Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.MultipleViewPattern/MultipleViewPatternInformation Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.MultipleViewPattern.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.MultipleViewPattern+MultipleViewPatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Automation.MultipleViewPattern" /> の現在の [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を取得します。</summary>
+        <value>コントロール パターンの現在の [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] プロパティ値を格納する構造体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパターンがあります、<xref:System.Windows.Automation.AutomationElement>で、<xref:System.Windows.Automation.AutomationElementMode.Full>の現在の値を取得するために参照します。 場合、<xref:System.Windows.Automation.AutomationElement>を使用して取得された<xref:System.Windows.Automation.AutomationElementMode.None>キャッシュされたデータのみが含まれている、および任意のプロパティの現在の値を取得しようとして例外を発生させます。 使用して<xref:System.Windows.Automation.MultipleViewPattern.Cached%2A>を使用してあらかじめ指定されているプロパティのキャッシュされた値を取得する、<xref:System.Windows.Automation.CacheRequest>です。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.MultipleViewPattern.MultipleViewPatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentViewProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty CurrentViewProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty CurrentViewProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.MultipleViewPattern.CurrentViewProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.MultipleViewPattern.MultipleViewPatternInformation.CurrentView" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.MultipleViewPatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、整数値を取得をサポートするコントロールの現在のビューを表す<xref:System.Windows.Automation.MultipleViewPattern>です。  
+  
+ [!code-csharp[UIAMultipleViewPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/CSharp/UIAMultipleViewPattern_snippets.cs#100)]
+ [!code-vb[UIAMultipleViewPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/VisualBasic/UIAMultipleViewPattern_snippets.vb#100)]  
+[!code-csharp[UIAMultipleViewPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/CSharp/UIAMultipleViewPattern_snippets.cs#103)]
+[!code-vb[UIAMultipleViewPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/VisualBasic/UIAMultipleViewPattern_snippets.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewName">
+      <MemberSignature Language="C#" Value="public string GetViewName (int viewId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetViewName(int32 viewId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.MultipleViewPattern.GetViewName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="viewId">コントロールに固有のビューの識別子です。</param>
+        <summary>コントロールに固有のビューの名前を取得します。</summary>
+        <returns>コントロールに固有のビューの名前を表すローカライズされた文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してビュー識別子を取得できる<xref:System.Windows.Automation.MultipleViewPattern.MultipleViewPatternInformation.GetSupportedViews%2A>です。  
+  
+ コントロールに固有のビュー識別子のコレクションは、インスタンス間で同じです。  
+  
+ ビューの名前は、読み上げ、ブライユ点字、その他のユーザー補助アプリケーションで使用するために適しています。  
+  
+   
+  
+## Examples  
+ 次の例をサポートするコントロールから現在のビューのコントロールに固有の名前を取得<xref:System.Windows.Automation.MultipleViewPattern>です。  
+  
+ [!code-csharp[UIAMultipleViewPattern_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/CSharp/UIAMultipleViewPattern_snippets.cs#105)]
+ [!code-vb[UIAMultipleViewPattern_snip#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/VisualBasic/UIAMultipleViewPattern_snippets.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="viewId" />サポートされているビュー コレクションのメンバーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.MultipleViewPattern.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.MultipleViewPattern" /> コントロール パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.MultipleViewPatternIdentifiers>です。  
+  
+ パターン識別子がなどのメソッドに渡された<xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A>から、指定した目的のコントロール パターンを取得する<xref:System.Windows.Automation.AutomationElement>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.MultipleViewPattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ [!code-csharp[UIAMultipleViewPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/CSharp/UIAMultipleViewPattern_snippets.cs#101)]
+ [!code-vb[UIAMultipleViewPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/VisualBasic/UIAMultipleViewPattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCurrentView">
+      <MemberSignature Language="C#" Value="public void SetCurrentView (int viewId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCurrentView(int32 viewId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.MultipleViewPattern.SetCurrentView(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="viewId">コントロール固有のビュー ID。</param>
+        <summary>現在のコントロールに固有のビューを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してビュー識別子を取得できる<xref:System.Windows.Automation.MultipleViewPattern.MultipleViewPatternInformation.GetSupportedViews%2A>です。  
+  
+ コントロールに固有のビュー識別子のコレクションは、インスタンス間で同じです。  
+  
+   
+  
+## Examples  
+ 次の例では、コントロールの使用可能なビューのコレクションをサポートする、<xref:System.Windows.Automation.MultipleViewPattern>コントロール パターンを取得します。 ビュー識別子のコレクションのメンバーは、後でコントロールの現在のビューを変更するために使用します。  
+  
+ [!code-csharp[UIAMultipleViewPattern_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/CSharp/UIAMultipleViewPattern_snippets.cs#104)]
+ [!code-vb[UIAMultipleViewPattern_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/VisualBasic/UIAMultipleViewPattern_snippets.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="viewId" />サポートされているビュー コレクションのメンバーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedViewsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty SupportedViewsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty SupportedViewsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.MultipleViewPattern.SupportedViewsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールに固有のビューのコレクションを取得するプロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.MultipleViewPatternIdentifiers>です。  
+  
+ このプロパティに存在しない<xref:System.Windows.Automation.MultipleViewPattern.MultipleViewPatternInformation>を使用して取得する必要があります<xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A>または<xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、整数識別子のコレクションを取得をサポートするコントロールに使用できる現在のビューを表す<xref:System.Windows.Automation.MultipleViewPattern>です。  
+  
+ [!code-csharp[UIAMultipleViewPattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/CSharp/UIAMultipleViewPattern_snippets.cs#100)]
+ [!code-vb[UIAMultipleViewPattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/VisualBasic/UIAMultipleViewPattern_snippets.vb#100)]  
+[!code-csharp[UIAMultipleViewPattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/CSharp/UIAMultipleViewPattern_snippets.cs#102)]
+[!code-vb[UIAMultipleViewPattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMultipleViewPattern_snip/VisualBasic/UIAMultipleViewPattern_snippets.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1691 @@
+<Type Name="StreamReader" FullName="System.IO.StreamReader">
+  <TypeSignature Language="C#" Value="public class StreamReader : System.IO.TextReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit StreamReader extends System.IO.TextReader" />
+  <TypeSignature Language="DocId" Value="T:System.IO.StreamReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.TextReader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定のエンコーディングのバイト ストリームから文字を読み込む <see cref="T:System.IO.TextReader" /> を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/io/streamreader.cs#b5fe1efcec14de32)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ <xref:System.IO.StreamReader>特定のエンコーディングで文字の入力用に設計されていますが、<xref:System.IO.Stream>クラスがバイトの入力し、出力のように設計されています。 使用して<xref:System.IO.StreamReader>標準のテキスト ファイルから行の情報を読み取るためです。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ <xref:System.IO.StreamReader>utf-8 エンコードでの現在のシステム ANSI コード ページには、既定ではなく、それ以外の場合、指定しない限り、既定値です。 Utf-8 では、Unicode 文字を正しく処理し、オペレーティング システムのローカライズ版で一貫性のある結果を提供します。 現在の文字エンコーディングを使用して表示される場合、<xref:System.IO.StreamReader.CurrentEncoding%2A>プロパティ値は、信頼性の高いまで、最初より後<xref:System.IO.StreamReader.Read%2A>メソッド、最初の呼び出しまでエンコードの自動検出が実行されないため、<xref:System.IO.StreamReader.Read%2A>メソッドです。  
+  
+ 既定では、<xref:System.IO.StreamReader>はスレッド セーフであります。 参照してください<xref:System.IO.TextReader.Synchronized%2A?displayProperty=nameWithType>スレッド セーフ ラッパー。  
+  
+ <xref:System.IO.StreamReader.Read%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29>と<xref:System.IO.StreamWriter.Write%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29>メソッドのオーバー ロードによって指定された文字数の読み書き、`count`パラメーター。 これらと区別するのには、<xref:System.IO.BufferedStream.Read%2A?displayProperty=nameWithType>と<xref:System.IO.BufferedStream.Write%2A?displayProperty=nameWithType>、によって指定されたバイト数を読み書きする、`count`パラメーター。 使用して、<xref:System.IO.BufferedStream>のみの読み書きにバイトの整数の配列要素のメソッドです。  
+  
+> [!NOTE]
+>  読み取るときに、<xref:System.IO.Stream>ストリームの内部バッファーと同じサイズであるバッファーを使用する方が効率的です。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを使用して<xref:System.IO.StreamReader>ファイルからテキストを読み取れません。 使用するこの例で使用するコンス トラクターはサポートされていません[!INCLUDE[win8_appstore_long](~/includes/win8-appstore-long-md.md)]アプリ。  
+  
+ [!code-cpp[readtextfile#1](~/samples/snippets/cpp/VS_Snippets_CLR/ReadTextFile/CPP/readtextfile.cpp#1)]
+ [!code-csharp[readtextfile#1](~/samples/snippets/csharp/VS_Snippets_CLR/ReadTextFile/CS/readtextfile.cs#1)]
+ [!code-vb[readtextfile#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ReadTextFile/VB/readtextfile.vb#1)]  
+  
+ 次の例のインスタンスを作成、<xref:System.IO.StreamReader>オブジェクトと呼び出しの<xref:System.IO.StreamReader.ReadAsync%2A>を非同期的にファイルを読み取る方法です。  
+  
+ [!code-csharp[System.IO.StreamReader#51](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/asyncex1.cs#51)]
+ [!code-vb[System.IO.StreamReader#51](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/asyncex1.vb#51)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamReader (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み込まれるストリーム。</param>
+        <summary>指定したストリーム用の <see cref="T:System.IO.StreamReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを初期化するエンコーディング<xref:System.Text.UTF8Encoding>、<xref:System.IO.StreamReader.BaseStream%2A>プロパティを使用して、`stream`パラメーター、および内部バッファー サイズを 1024 バイトです。  
+  
+ <xref:System.IO.StreamReader>オブジェクト呼び出し<xref:System.IO.Stream.Dispose>で提供されている<xref:System.IO.Stream>オブジェクトと<xref:System.IO.StreamReader.Dispose%2A?displayProperty=nameWithType>と呼びます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示します<xref:System.IO.StreamReader>コンス トラクターです。  
+  
+ [!code-cpp[strmreader ctor1#1](~/samples/snippets/cpp/VS_Snippets_CLR/StrmReader Ctor1/CPP/strmreader ctor1.cpp#1)]
+ [!code-csharp[strmreader ctor1#1](~/samples/snippets/csharp/VS_Snippets_CLR/StrmReader Ctor1/CS/strmreader ctor1.cs#1)]
+ [!code-vb[strmreader ctor1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StrmReader Ctor1/VB/strmreader ctor1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="stream" />読み取りをサポートしません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamReader (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">読み込まれる完全なファイルパス。</param>
+        <summary>指定したファイル名用の <see cref="T:System.IO.StreamReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全なファイル パスが指定された、`path`パラメーター。 このコンス トラクターを初期化するエンコーディング<xref:System.Text.UTF8Encoding>とバッファー サイズが 1024 バイトにします。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+ `path`パラメーターは必要ありません、ディスクに格納されたファイル ストリームを使用してアクセスをサポートするシステムの一部であることができます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示します<xref:System.IO.StreamReader>コンス トラクターです。  
+  
+ [!code-cpp[strmreader ctor2#1](~/samples/snippets/cpp/VS_Snippets_CLR/StrmReader Ctor2/CPP/strmreader ctor2.cpp#1)]
+ [!code-csharp[strmreader ctor2#1](~/samples/snippets/csharp/VS_Snippets_CLR/StrmReader Ctor2/CS/strmreader ctor2.cs#1)]
+ [!code-vb[strmreader ctor2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StrmReader Ctor2/VB/strmreader ctor2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" />ファイル名、ディレクトリ名、またはボリューム ラベルの正しくないか、無効な構文が含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamReader (System.IO.Stream stream, bool detectEncodingFromByteOrderMarks);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, bool detectEncodingFromByteOrderMarks) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.#ctor(System.IO.Stream,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="detectEncodingFromByteOrderMarks" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み込まれるストリーム。</param>
+        <param name="detectEncodingFromByteOrderMarks">ファイルの先頭にあるバイト順序マークを検索するかどうかを示します。</param>
+        <summary>バイト順マーク検出オプションを設定して、指定したストリーム用の <see cref="T:System.IO.StreamReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを初期化するエンコーディング<xref:System.Text.UTF8Encoding>、<xref:System.IO.StreamReader.BaseStream%2A>プロパティを使用して、`stream`パラメーター、および内部バッファー サイズを 1024 バイトです。  
+  
+ `detectEncodingFromByteOrderMarks`パラメーターは、ストリームの最初の 3 バイトで確認して、エンコーディングを検出します。 Utf-8、リトル エンディアン Unicode が自動的に認識し、ビッグ エンディアン Unicode テキスト ファイルが、適切なバイト順で始まる場合をマークします。 詳細については、<xref:System.Text.Encoding.GetPreamble%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+ <xref:System.IO.StreamReader>オブジェクト呼び出し<xref:System.IO.Stream.Dispose>で提供されている<xref:System.IO.Stream>オブジェクトと<xref:System.IO.StreamReader.Dispose%2A?displayProperty=nameWithType>と呼びます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示します<xref:System.IO.StreamReader>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.StreamReader#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamReader/CPP/streamreadersample.cpp#2)]
+ [!code-csharp[System.IO.StreamReader#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/streamreadersample.cs#2)]
+ [!code-vb[System.IO.StreamReader#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/streamreadersample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="stream" />読み取りをサポートしません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamReader (System.IO.Stream stream, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.#ctor(System.IO.Stream,System.Text.Encoding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み込まれるストリーム。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <summary>文字エンコーディングを設定して、指定したストリーム用の <see cref="T:System.IO.StreamReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって設定は、文字エンコーディング、`encoding`パラメーター、およびバッファー サイズが 1024 バイトに設定されます。 <xref:System.IO.StreamReader>オブジェクトがストリームの最初の 3 バイトで確認して、エンコーディングの検出を試みます。 Utf-8、リトル エンディアン Unicode が自動的に認識し、ビッグ エンディアン Unicode テキスト ファイルが、適切なバイト順で始まる場合をマークします。 それ以外の場合、ユーザー指定のエンコードが使用されます。 詳細については、<xref:System.Text.Encoding.GetPreamble%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+ <xref:System.IO.StreamReader>オブジェクト呼び出し<xref:System.IO.Stream.Dispose>で提供されている<xref:System.IO.Stream>オブジェクトと<xref:System.IO.StreamReader.Dispose%2A?displayProperty=nameWithType>と呼びます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示します<xref:System.IO.StreamReader>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.StreamReader#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamReader/CPP/streamreadersample.cpp#2)]
+ [!code-csharp[System.IO.StreamReader#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/streamreadersample.cs#2)]
+ [!code-vb[System.IO.StreamReader#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/streamreadersample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="stream" />読み取りをサポートしません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamReader (string path, bool detectEncodingFromByteOrderMarks);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, bool detectEncodingFromByteOrderMarks) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="detectEncodingFromByteOrderMarks" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">読み込まれる完全なファイルパス。</param>
+        <param name="detectEncodingFromByteOrderMarks">ファイルの先頭にあるバイト順序マークを検索するかどうかを示します。</param>
+        <summary>指定したバイト順マーク検出オプションを使用して、指定したファイル名用の <see cref="T:System.IO.StreamReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを初期化するエンコーディング<xref:System.Text.UTF8Encoding>、<xref:System.IO.StreamReader.BaseStream%2A>プロパティを使用して、`stream`パラメーター、および内部バッファー サイズを 1024 バイトです。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+ `path`パラメーターは必要ありません、ディスクに格納されたファイル ストリームを使用してアクセスをサポートするシステムの一部であることができます。  
+  
+ `detectEncodingFromByteOrderMarks`パラメーターは、ストリームの最初の 3 バイトで確認して、エンコーディングを検出します。 Utf-8、リトル エンディアン Unicode が自動的に認識し、ビッグ エンディアン Unicode テキスト ファイルが、適切なバイト順で始まる場合をマークします。 それ以外の場合、<xref:System.Text.UTF8Encoding>を使用します。 詳細については、<xref:System.Text.Encoding.GetPreamble%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示します<xref:System.IO.StreamReader>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.StreamReader#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamReader/CPP/streamreadersample.cpp#2)]
+ [!code-csharp[System.IO.StreamReader#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/streamreadersample.cs#2)]
+ [!code-vb[System.IO.StreamReader#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/streamreadersample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" />ファイル名、ディレクトリ名、またはボリューム ラベルの正しくないか、無効な構文が含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamReader (string path, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.#ctor(System.String,System.Text.Encoding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="path">読み込まれる完全なファイルパス。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <summary>文字エンコーディングを設定して、指定したファイル名用の <see cref="T:System.IO.StreamReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで指定されたエンコード、`encoding`パラメーター、および内部バッファー サイズを 1024 バイトです。 <xref:System.IO.StreamReader>オブジェクトがストリームの最初の 3 バイトで確認して、エンコーディングの検出を試みます。 Utf-8、リトル エンディアン Unicode が自動的に認識し、ビッグ エンディアン Unicode テキスト ファイルが、適切なバイト順で始まる場合をマークします。 それ以外の場合、ユーザー指定のエンコードが使用されます。 詳細については、<xref:System.Text.Encoding.GetPreamble%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+ `path`パラメーターは必要ありません、ディスクに格納されたファイル ストリームを使用してアクセスをサポートするシステムの一部であることができます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示します<xref:System.IO.StreamReader>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.StreamReader#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamReader/CPP/streamreadersample.cpp#2)]
+ [!code-csharp[System.IO.StreamReader#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/streamreadersample.cs#2)]
+ [!code-vb[System.IO.StreamReader#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/streamreadersample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />ファイル名、ディレクトリ名、またはボリューム ラベルの正しくないか、無効な構文が含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamReader (System.IO.Stream stream, System.Text.Encoding encoding, bool detectEncodingFromByteOrderMarks);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, class System.Text.Encoding encoding, bool detectEncodingFromByteOrderMarks) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.#ctor(System.IO.Stream,System.Text.Encoding,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="detectEncodingFromByteOrderMarks" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み込まれるストリーム。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <param name="detectEncodingFromByteOrderMarks">ファイルの先頭にあるバイト順序マークを検索するかどうかを示します。</param>
+        <summary>文字エンコーディングとバイト順マーク検出オプションを設定して、指定したストリーム用の <see cref="T:System.IO.StreamReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで指定されたエンコード、 `encoding` 、パラメーター、<xref:System.IO.StreamReader.BaseStream%2A>プロパティを使用して、`stream`パラメーター、および内部バッファー サイズを 1024 バイトです。  
+  
+ `detectEncodingFromByteOrderMarks`パラメーターは、ストリームの最初の 3 バイトで確認して、エンコーディングを検出します。 Utf-8、リトル エンディアン Unicode が自動的に認識し、ビッグ エンディアン Unicode テキスト ファイルが、適切なバイト順で始まる場合をマークします。 それ以外の場合、ユーザー指定のエンコードが使用されます。 詳細については、<xref:System.Text.Encoding.GetPreamble%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+ <xref:System.IO.StreamReader>オブジェクト呼び出し<xref:System.IO.Stream.Dispose>で提供されている<xref:System.IO.Stream>オブジェクトと<xref:System.IO.StreamReader.Dispose%2A?displayProperty=nameWithType>と呼びます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示します<xref:System.IO.StreamReader>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.StreamReader#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamReader/CPP/streamreadersample.cpp#2)]
+ [!code-csharp[System.IO.StreamReader#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/streamreadersample.cs#2)]
+ [!code-vb[System.IO.StreamReader#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/streamreadersample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="stream" />読み取りをサポートしません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamReader (string path, System.Text.Encoding encoding, bool detectEncodingFromByteOrderMarks);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, class System.Text.Encoding encoding, bool detectEncodingFromByteOrderMarks) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.#ctor(System.String,System.Text.Encoding,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="detectEncodingFromByteOrderMarks" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">読み込まれる完全なファイルパス。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <param name="detectEncodingFromByteOrderMarks">ファイルの先頭にあるバイト順序マークを検索するかどうかを示します。</param>
+        <summary>文字エンコーディングとバイト順マーク検出オプションを設定して、指定したファイル名用の <see cref="T:System.IO.StreamReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで指定されたエンコード、`encoding`パラメーター、および内部バッファー サイズを 1024 バイトです。  
+  
+ `detectEncodingFromByteOrderMarks`パラメーターは、ストリームの最初の 3 バイトで確認して、エンコーディングを検出します。 Utf-8、リトル エンディアン Unicode が自動的に認識し、ビッグ エンディアン Unicode テキスト ファイルが、適切なバイト順で始まる場合をマークします。 それ以外の場合、ユーザー指定のエンコードが使用されます。 詳細については、<xref:System.Text.Encoding.GetPreamble%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+ `path`パラメーターは必要ありません、ディスクに格納されたファイル ストリームを使用してアクセスをサポートするシステムの一部であることができます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示します<xref:System.IO.StreamReader>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.StreamReader#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamReader/CPP/streamreadersample.cpp#2)]
+ [!code-csharp[System.IO.StreamReader#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/streamreadersample.cs#2)]
+ [!code-vb[System.IO.StreamReader#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/streamreadersample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />ファイル名、ディレクトリ名、またはボリューム ラベルの正しくないか、無効な構文が含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamReader (System.IO.Stream stream, System.Text.Encoding encoding, bool detectEncodingFromByteOrderMarks, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, class System.Text.Encoding encoding, bool detectEncodingFromByteOrderMarks, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.#ctor(System.IO.Stream,System.Text.Encoding,System.Boolean,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="detectEncodingFromByteOrderMarks" Type="System.Boolean" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み込まれるストリーム。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <param name="detectEncodingFromByteOrderMarks">ファイルの先頭にあるバイト順序マークを検索するかどうかを示します。</param>
+        <param name="bufferSize">最小バッファー サイズ。</param>
+        <summary>文字エンコーディング、バイト順マーク検出オプション、およびバッファー サイズを設定して、指定したストリーム用の <see cref="T:System.IO.StreamReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 16 ビット文字数で、バッファー サイズを設定、`bufferSize`パラメーター。 場合`bufferSize`が小さい最小値の許容サイズ (128 文字) よりも、最小許容サイズを使用します。  
+  
+ このコンス トラクターでは、エンコードから読み取る最初の時間を変更することができます、<xref:System.IO.StreamReader>オブジェクト。 `detectEncodingFromByteOrderMarks`パラメーターは、ストリームの最初の 3 バイトで確認して、エンコーディングを検出します。 Utf-8、リトル エンディアン Unicode が自動的に認識し、ビッグ エンディアン Unicode テキスト ファイルが、適切なバイト順で始まる場合をマークします。 それ以外の場合、ユーザー指定のエンコードが使用されます。 詳細については、<xref:System.Text.Encoding.GetPreamble%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+ <xref:System.IO.StreamReader>オブジェクト呼び出し<xref:System.IO.Stream.Dispose>で提供されている<xref:System.IO.Stream>オブジェクトと<xref:System.IO.StreamReader.Dispose%2A?displayProperty=nameWithType>と呼びます。  
+  
+> [!NOTE]
+>  読み取るときに、<xref:System.IO.Stream>ストリームの内部バッファーと同じサイズであるバッファーを使用する方が効率的です。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示します<xref:System.IO.StreamReader>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.StreamReader#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamReader/CPP/streamreadersample.cpp#2)]
+ [!code-csharp[System.IO.StreamReader#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/streamreadersample.cs#2)]
+ [!code-vb[System.IO.StreamReader#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/streamreadersample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ストリームは読み取りをサポートしません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamReader (string path, System.Text.Encoding encoding, bool detectEncodingFromByteOrderMarks, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, class System.Text.Encoding encoding, bool detectEncodingFromByteOrderMarks, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.#ctor(System.String,System.Text.Encoding,System.Boolean,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="detectEncodingFromByteOrderMarks" Type="System.Boolean" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="path">読み込まれる完全なファイルパス。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <param name="detectEncodingFromByteOrderMarks">ファイルの先頭にあるバイト順序マークを検索するかどうかを示します。</param>
+        <param name="bufferSize">最小バッファーサイズ。単位は、16 ビット文字数です。</param>
+        <summary>文字エンコーディング、バイト順マーク検出オプション、およびバッファー サイズを設定して、指定したファイル名の <see cref="T:System.IO.StreamReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで指定されたエンコード、`encoding`パラメーター。  
+  
+ このコンス トラクターでは、エンコードから読み取る最初の時間を変更することができます、<xref:System.IO.StreamReader>オブジェクト。 `detectEncodingFromByteOrderMarks`パラメーターは、ストリームの最初の 3 バイトで確認して、エンコーディングを検出します。 Utf-8、リトル エンディアン Unicode が自動的に認識し、ビッグ エンディアン Unicode テキスト ファイルが、適切なバイト順で始まる場合をマークします。 それ以外の場合、ユーザー指定のエンコードが使用されます。 詳細については、<xref:System.Text.Encoding.GetPreamble%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+ 16 ビット文字数で、バッファー サイズを設定、`bufferSize`パラメーター。 場合`bufferSize`が小さい最小値の許容サイズ (128 文字) よりも、最小許容サイズを使用します。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+ `path`パラメーターは必要ありません、ディスクに格納されたファイル ストリームを使用してアクセスをサポートするシステムの一部であることができます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示します<xref:System.IO.StreamReader>コンス トラクターです。  
+  
+ [!code-cpp[System.IO.StreamReader#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamReader/CPP/streamreadersample.cpp#2)]
+ [!code-csharp[System.IO.StreamReader#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/streamreadersample.cs#2)]
+ [!code-vb[System.IO.StreamReader#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/streamreadersample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />ファイル名、ディレクトリ名、またはボリューム ラベルの正しくないか、無効な構文が含まれます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="buffersize" /> が 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamReader (System.IO.Stream stream, System.Text.Encoding encoding, bool detectEncodingFromByteOrderMarks, int bufferSize, bool leaveOpen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, class System.Text.Encoding encoding, bool detectEncodingFromByteOrderMarks, int32 bufferSize, bool leaveOpen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.#ctor(System.IO.Stream,System.Text.Encoding,System.Boolean,System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="detectEncodingFromByteOrderMarks" Type="System.Boolean" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="leaveOpen" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み取るストリーム。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <param name="detectEncodingFromByteOrderMarks">
+          ファイルの先頭にあるバイト順序マークを検索する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="bufferSize">最小バッファー サイズ。</param>
+        <param name="leaveOpen">
+          <see cref="T:System.IO.StreamReader" /> オブジェクトを破棄した後にストリームを開いたままにする場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</param>
+        <summary>指定した文字エンコーディング、バイト順マーク検出オプション、およびバッファー サイズに基づいて、指定したストリーム用の <see cref="T:System.IO.StreamReader" /> クラスの新しいインスタンスを初期化し、必要に応じて、ストリームを開いたままにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定しない限り、`leaveOpen`パラメーターを`true`、<xref:System.IO.StreamReader>オブジェクトの呼び出し<xref:System.IO.Stream.Dispose>で提供されている<xref:System.IO.Stream>オブジェクトと<xref:System.IO.StreamReader.Dispose%2A?displayProperty=nameWithType>と呼びます。  
+  
+ 16 ビット文字数で、バッファー サイズを設定、`bufferSize`パラメーター。 場合`bufferSize`が小さい最小値の許容サイズ (128 文字) よりも、最小許容サイズを使用します。  
+  
+ このコンス トラクターでは、エンコードから読み取る最初の時間を変更することができます、<xref:System.IO.StreamReader>オブジェクト。 場合、`detectEncodingFromByteOrderMarks`パラメーターは`true`、コンス トラクターは、ストリームの最初の 3 バイトを確認してエンコーディングを検出します。 Utf-8、リトル エンディアン Unicode が自動的に認識し、ビッグ エンディアン Unicode テキスト ファイルが、適切なバイト順で始まる場合をマークします。 それ以外の場合、ユーザー指定のエンコードが使用されます。 詳細については、<xref:System.Text.Encoding.GetPreamble%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+> [!NOTE]
+>  読み取るときに、<xref:System.IO.Stream>ストリームの内部バッファーと同じサイズであるバッファーを使用する方が効率的です。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得するときに文字が正しく解釈されない可能性があり、例外をスローする可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseStream">
+      <MemberSignature Language="C#" Value="public virtual System.IO.Stream BaseStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream BaseStream" />
+      <MemberSignature Language="DocId" Value="P:System.IO.StreamReader.BaseStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるストリームを返します。</summary>
+        <value>基になるストリーム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基になるストリームにアクセスするのにには、このプロパティを使用します。 <xref:System.IO.StreamReader>クラスのいずれかを呼び出すときの基になるストリームからの入力をバッファー、<xref:System.IO.StreamReader.Read%2A>メソッドです。 バッファーにデータの読み取り後に、基になるストリームの位置を操作する場合、基になるストリームの位置は内部バッファーの位置と一致可能性があります。 内部バッファーをリセットするには、呼び出し、<xref:System.IO.StreamReader.DiscardBufferedData%2A>メソッドです。 ただし、このメソッドは、パフォーマンスが低下し、どうしても必要な場合にのみ呼び出す必要があります。 <xref:System.IO.StreamReader>を持つコンス トラクター、`detectEncodingFromByteOrderMarks`パラメーターが初めてから読み取るエンコードを変更することができます、<xref:System.IO.StreamReader>オブジェクト。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.StreamReader" /> オブジェクトと、その基になるストリームを閉じ、リーダーに関連付けられたすべてのシステム リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IO.TextWriter.Close%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この実装<xref:System.IO.StreamReader.Close%2A>呼び出し、<xref:System.IO.StreamReader.Dispose%2A>メソッド、`true`値。  
+  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません<xref:System.IO.StreamReader.Close%2A>です。 設定<xref:System.IO.StreamWriter.AutoFlush%2A>に`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、ここで、エンコーダーは、隣接する文字または文字列を受信した後にのみ特定の文字をエンコードすることができますに影響します。  
+  
+ 呼び出しに続く<xref:System.IO.StreamReader.Close%2A>リーダーの操作が例外を発生させる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentEncoding">
+      <MemberSignature Language="C#" Value="public virtual System.Text.Encoding CurrentEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding CurrentEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.IO.StreamReader.CurrentEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.IO.StreamReader" /> オブジェクトが使用している現在の文字エンコーディングを取得します。</summary>
+        <value>現在のリーダーが使用している現在の文字エンコーディング。 <see cref="T:System.IO.StreamReader" /> の <see cref="Overload:System.IO.StreamReader.Read" /> メソッドを最初に呼び出した後、現在の文字エンコーディングを示す値が異なる場合があります。これは、<see cref="Overload:System.IO.StreamReader.Read" /> メソッドの最初の呼び出しまでエンコードの自動検出が実行されないためです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定されたエンコーディングを取得<xref:System.IO.StreamReader>オブジェクト。  
+  
+ [!code-cpp[strmreader currentencoding#1](~/samples/snippets/cpp/VS_Snippets_CLR/StrmReader CurrentEncoding/CPP/strmreader currentencoding.cpp#1)]
+ [!code-csharp[strmreader currentencoding#1](~/samples/snippets/csharp/VS_Snippets_CLR/StrmReader CurrentEncoding/CS/strmreader currentencoding.cs#1)]
+ [!code-vb[strmreader currentencoding#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StrmReader CurrentEncoding/VB/strmreader currentencoding.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscardBufferedData">
+      <MemberSignature Language="C#" Value="public void DiscardBufferedData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DiscardBufferedData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.DiscardBufferedData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内部バッファーをクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.StreamReader.DiscardBufferedData%2A>の内部バッファーを再設定する方法、<xref:System.IO.StreamReader>オブジェクト。 このメソッドを呼び出す必要がある場合にのみ内部バッファーの位置と<xref:System.IO.StreamReader.BaseStream%2A>が一致しません。 バッファーにデータを読み取り、基になるストリーム内の新しい位置をシークすると、それらの位置は一致しないなります。 このメソッドは、パフォーマンスが低下し、読み取りの内容の一部にする場合など、どうしても必要な場合にのみ使用する必要があります、<xref:System.IO.StreamReader>オブジェクトも複数回です。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、シナリオを示しています。 ここで、<xref:System.IO.StreamReader.DiscardBufferedData%2A>内部バッファーと基になるストリームを同期するためにメソッドを呼び出す必要があります。 例ではファイルが位置を示すために使用され、テキストから成る`abcdefghijklmnopqrstuvwxyz`です。 呼び出して<xref:System.IO.StreamReader.DiscardBufferedData%2A>データが読み取られた後に例では、正常に動作します。 最初の 15 文字が読み取られ後の位置が 2 のオフセット値にリセットされ、残りのすべての文字が読み取られます。 呼び出しを削除する場合<xref:System.IO.StreamReader.DiscardBufferedData%2A>例では、ときに、想定どおりに動作しません。 最初の 15 文字が読み取られ、ですが、基になるストリームの位置だけがリセットされます。 内部バッファー、<xref:System.IO.StreamReader>オブジェクトがまだ 16 番目の文字です。 したがって、<xref:System.IO.StreamReader.ReadToEnd%2A>バッファーとリセットの位置から基になるストリーム内の文字内のすべての文字を返します。  
+  
+ [!code-csharp[System.IO.StreamReader#30](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/program.cs#30)]
+ [!code-vb[System.IO.StreamReader#30](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/module1.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>基になるストリームを閉じ、<see cref="T:System.IO.StreamReader" /> によって使用されているアンマネージ リソースを解放します。任意でマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック<xref:System.IDisposable.Dispose%2A>メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 <xref:System.IDisposable.Dispose%2A>プロテクト呼び出します<xref:System.IO.StreamReader.Dispose%2A>メソッドを`disposing`パラメーターが true に設定します。 <xref:System.Object.Finalize%2A>呼び出す<xref:System.IO.StreamReader.Dispose%2A>で`disposing`を false に設定します。  
+  
+ ときに、`disposing`パラメーターは`true`、このオブジェクトをマネージ コードで保持されているすべてのリソース メソッドのリリース、<xref:System.IO.StreamReader>オブジェクトが参照されます。 このメソッドは、参照される各オブジェクトの <xref:System.IDisposable.Dispose%2A> メソッドを呼び出します。  
+  
+ 」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>Dispose を他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see cref="M:System.IO.StreamReader.Dispose(System.Boolean)" />の Dispose [cref、...] を以前の呼び出しで既に破棄されたオブジェクトを参照しないように注意、します。実装する方法の詳細についての<see cref="M:System.IO.StreamReader.Dispose(System.Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see cref="M:System.IDisposable.Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndOfStream">
+      <MemberSignature Language="C#" Value="public bool EndOfStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EndOfStream" />
+      <MemberSignature Language="DocId" Value="P:System.IO.StreamReader.EndOfStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のストリームの位置がストリームの末尾かどうかを示す値を取得します。</summary>
+        <value>
+          現在のストリームの位置がストリームの末尾の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">基になるストリームが破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.IO.StreamReader Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.IO.StreamReader Null" />
+      <MemberSignature Language="DocId" Value="F:System.IO.StreamReader.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.StreamReader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空のストリームの <see cref="T:System.IO.StreamReader" /> オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドが呼び出されるを読み取るときに<xref:System.IO.StreamReader.Null>、常に 0 が返されます。 ときに<xref:System.IO.StreamReader.ReadLine%2A>で呼び出される<xref:System.IO.StreamReader.Null>、`null`が返されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Peek">
+      <MemberSignature Language="C#" Value="public override int Peek ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Peek() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.Peek" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用可能な次の文字を返しますが、その文字は使用されません。</summary>
+        <returns>読み取り対象の次の文字を表す整数。読み取り対象の文字が存在しない場合またはストリームがシークをサポートしていない場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.StreamReader.Peek%2A>メソッドは、ファイル、または別のエラーの終了が発生したかどうかを確認するために整数値を返します。 これにより、ユーザーをまず確認かどうか、返される値は-1 にキャストする前に、<xref:System.Char>型です。  
+  
+ このメソッドは<xref:System.IO.TextReader.Peek%2A?displayProperty=nameWithType>します。  
+  
+ 現在の位置、<xref:System.IO.StreamReader>によってオブジェクトが変更されていない<xref:System.IO.StreamReader.Peek%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ファイルの末尾に到達するまでに、ファイルから行を読み取ります。  
+  
+ [!code-cpp[strmreader peek#1](~/samples/snippets/cpp/VS_Snippets_CLR/StrmReader Peek/CPP/strmreader peek.cpp#1)]
+ [!code-csharp[strmreader peek#1](~/samples/snippets/csharp/VS_Snippets_CLR/StrmReader Peek/CS/strmreader peek.cs#1)]
+ [!code-vb[strmreader peek#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StrmReader Peek/VB/strmreader peek.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override int Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入力ストリームから次の文字を読み込み、1 文字分だけ文字位置を進めます。</summary>
+        <returns>入力ストリームの次の文字を <see cref="T:System.Int32" /> オブジェクトで表した値。使用できる文字がない場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.TextReader.Read%2A?displayProperty=nameWithType>します。  
+  
+ このメソッドは、ストリームの末尾に達している場合、-1 を返せるようにに整数を返します。 バッファーにデータの読み取り後に、基になるストリームの位置を操作する場合、基になるストリームの位置は内部バッファーの位置と一致可能性があります。 内部バッファーをリセットするには、呼び出し、<xref:System.IO.StreamReader.DiscardBufferedData%2A>メソッドです。 ただし、このメソッドは、パフォーマンスが低下し、どうしても必要な場合にのみ呼び出す必要があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの単純な使用、<xref:System.IO.StreamReader.Read%2A>メソッドです。  
+  
+ [!code-cpp[strmreader read1#1](~/samples/snippets/cpp/VS_Snippets_CLR/StrmReader Read1/CPP/strmreader read1.cpp#1)]
+ [!code-csharp[strmreader read1#1](~/samples/snippets/csharp/VS_Snippets_CLR/StrmReader Read1/CS/strmreader read1.cs#1)]
+ [!code-vb[strmreader read1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StrmReader Read1/VB/strmreader read1.vb#1)]  
+  
+ 次のコード例に示しますを使用して、単一の文字を読み取り、<xref:System.IO.StreamReader.Read>メソッドのオーバー ロードを ASCII 整数が 10 進数および 16 進数として出力を書式設定します。  
+  
+ [!code-cpp[StrmRdrRead#1](~/samples/snippets/cpp/VS_Snippets_CLR/StrmRdrRead/CPP/strmrdrread.cpp#1)]
+ [!code-csharp[StrmRdrRead#1](~/samples/snippets/csharp/VS_Snippets_CLR/StrmRdrRead/CS/strmrdrread.cs#1)]
+ [!code-vb[StrmRdrRead#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StrmRdrRead/VB/strmrdrread.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override int Read (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read([out] char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.Read(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">このメソッドが戻るときまでの値が指定した文字配列が含まれています。<c>インデックス</c>と (<c>インデックス + 数 - 1</c>)、現在のソースから読み取られた文字に置換します。</param>
+        <param name="index">インデックス<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取り対象の最大文字数。</param>
+        <summary>指定したインデックスを開始位置として、現在のストリームから、指定された最大文字数をバッファー内に読み取ります。</summary>
+        <returns>読み込まれた文字数。ストリームの末尾でデータが読み込まれなかった場合は 0。 この数値は、ストリーム内に使用できるデータがあるかどうかによって異なりますが、<paramref name="count" /> パラメーター以下の数値になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.TextReader.Read%2A?displayProperty=nameWithType>します。  
+  
+ このメソッドは、ストリームの末尾に達している場合、0 を返せるようにに整数を返します。  
+  
+ 使用する場合、<xref:System.IO.StreamReader.Read%2A>メソッド内部バッファーが設定されている、目的のブロック サイズをストリームの内部バッファーと同じサイズであるバッファーを使用して常に読み取りのブロック サイズより小さい方が効率的です。 ストリームの構築時に内部バッファーのサイズを指定しなかった場合は、4 キロバイト (4096 バイト) は、既定値です。 バッファーにデータの読み取り後に、基になるストリームの位置を操作する場合、基になるストリームの位置は内部バッファーの位置と一致可能性があります。 内部バッファーをリセットするには、呼び出し、<xref:System.IO.StreamReader.DiscardBufferedData%2A>メソッドです。 ただし、このメソッドは、パフォーマンスが低下し、どうしても必要な場合にのみ呼び出す必要があります。  
+  
+ このメソッドがどちらで指定された文字の数を返します、`count`パラメーターが読み取られ、またはファイルの末尾に到達します。 <xref:System.IO.TextReader.ReadBlock%2A>ブロックしているバージョンの<xref:System.IO.StreamReader.Read%2A>します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ファイルの末尾に到達するまで、一度に 5 つの文字を読み取ります。  
+  
+ [!code-cpp[strmreader read2#1](~/samples/snippets/cpp/VS_Snippets_CLR/StrmReader Read2/CPP/strmreader read2.cpp#1)]
+ [!code-csharp[strmreader read2#1](~/samples/snippets/csharp/VS_Snippets_CLR/StrmReader Read2/CS/strmreader read2.cs#1)]
+ [!code-vb[strmreader read2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StrmReader Read2/VB/strmreader read2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">バッファーの長さマイナス<paramref name="index" />はより小さい<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.IO.IOException">ストリームが閉じているなど、I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;int&gt; ReadAsync (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadAsync(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.ReadAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">このメソッドが戻るときまでの値が指定した文字配列が含まれています<c>インデックス</c>と (<c>インデックス</c> + <c>カウント</c>- 1) 文字に置き換え。現在のソースからの読み取り。</param>
+        <param name="index">内の位置<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取り対象の最大文字数。 指定された文字数をバッファーに書き込む前にストリームの末尾に到達した場合は現在のメソッドが返ります。</param>
+        <summary>指定した最大文字数を現在のストリームから非同期的に読み取り、バッファーの指定したインデックス位置にそのデータを書き込みます。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、バッファーに読み込まれる文字の合計数が含まれます。 現在使用できる文字数が要求した数より小さい場合、結果の値は要求した文字数より小さくなることがあります。また、ストリームの末尾に到達した場合は 0 になることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスクが完了した後にいずれかで指定された文字の数、`count`パラメーターが読み取りまたはストリームの末尾に到達します。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、ファイルのすべての文字を読み取る方法を示しています、<xref:System.IO.StreamReader.ReadAsync%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29>メソッドです。 インスタンスに文字を追加する前に、アルファベット、数字、または空白文字に各文字かどうかを確認、<xref:System.Text.StringBuilder>クラスです。  
+  
+ [!code-csharp[System.IO.StreamReader#42](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/example42.cs#42)]
+ [!code-vb[System.IO.StreamReader#42](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/example42.vb#42)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="index" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きくなっています。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadBlock">
+      <MemberSignature Language="C#" Value="public override int ReadBlock (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadBlock([out] char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.ReadBlock(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">このメソッドが戻るときまでの値が指定した文字配列が含まれています。<c>インデックス</c>と (<c>インデックス + 数 - 1</c>)、現在のソースから読み取られた文字に置換します。</param>
+        <param name="index">内の位置<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取り対象の最大文字数。</param>
+        <summary>指定した最大文字数を現在のストリームから読み取り、バッファーの指定したインデックス位置にそのデータを書き込みます。</summary>
+        <returns>読み取られた文字数。 この数値は、すべての入力文字が読み取られたかどうかによって異なりますが、<paramref name="count" /> 以下の数値になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基になるストリームの位置に読み取られた文字数による高度な`buffer`します。  
+  
+ メソッド ブロックされるまで、`count`文字が読み取られ、または、ストリームの末尾に達しています。 これは、ブロックしているバージョンの<xref:System.IO.StreamReader.Read%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">バッファーの長さマイナス<paramref name="index" />はより小さい<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.StreamReader" /> が閉じています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadBlockAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;int&gt; ReadBlockAsync (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadBlockAsync(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.ReadBlockAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">このメソッドが戻るときまでの値が指定した文字配列が含まれています<c>インデックス</c>と (<c>インデックス</c> + <c>カウント</c>- 1) 文字に置き換え。現在のソースからの読み取り。</param>
+        <param name="index">内の位置<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取り対象の最大文字数。 指定された文字数をバッファーに書き込む前にストリームの末尾に到達した場合、メソッドは制御を返します。</param>
+        <summary>指定した最大文字数を現在のストリームから非同期的に読み取り、バッファーの指定したインデックス位置にそのデータを書き込みます。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、バッファーに読み込まれる文字の合計数が含まれます。 現在使用できる文字数が要求した数より小さい場合、結果の値は要求した文字数より小さくなることがあります。また、ストリームの末尾に到達した場合は 0 になることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスクが完了しないかまでで指定された文字の数、`count`パラメーターが読み取られ、または、ストリームの末尾に達しています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="index" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きくなっています。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadLine">
+      <MemberSignature Language="C#" Value="public override string ReadLine ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ReadLine() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.ReadLine" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のストリームから 1 行分の文字を読み取り、そのデータを文字列として返します。</summary>
+        <returns>入力ストリームからの次の行。入力ストリームの末尾に到達した場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行は、一連の文字とライン フィード ("\n")、キャリッジ リターン ("\r")、または行の直後にキャリッジ リターンが ("\r\n") をフィードとして定義されます。 返される文字列には、末尾にキャリッジ リターンとライン フィードが含まれていません。 返される値は`null`入力ストリームの末尾に達した場合。  
+  
+ このメソッドは<xref:System.IO.TextReader.ReadLine%2A?displayProperty=nameWithType>します。  
+  
+ 現在のメソッドがスローされた場合、 <xref:System.OutOfMemoryException>、基になるリーダーの位置<xref:System.IO.Stream>オブジェクトがこのメソッドは、読み込むことが文字が、内部に既に読み取られた文字の数で高度な<xref:System.IO.StreamReader.ReadLine%2A>バッファーは破棄されます。 バッファーにデータの読み取り後に、基になるストリームの位置を操作する場合、基になるストリームの位置は内部バッファーの位置と一致可能性があります。 内部バッファーをリセットするには、呼び出し、<xref:System.IO.StreamReader.DiscardBufferedData%2A>メソッドです。 ただし、このメソッドは、パフォーマンスが低下し、どうしても必要な場合にのみ呼び出す必要があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ファイルの末尾に到達するまでに、ファイルから行を読み取ります。  
+  
+ [!code-cpp[strmreader readline#1](~/samples/snippets/cpp/VS_Snippets_CLR/StrmReader ReadLine/CPP/strmreader readline.cpp#1)]
+ [!code-csharp[strmreader readline#1](~/samples/snippets/csharp/VS_Snippets_CLR/StrmReader ReadLine/CS/strmreader readline.cs#1)]
+ [!code-vb[strmreader readline#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StrmReader ReadLine/VB/strmreader readline.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OutOfMemoryException">返却された文字列にバッファーを割り当てるには、メモリが不足しています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadLineAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;string&gt; ReadLineAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;string&gt; ReadLineAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.ReadLineAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のストリームから非同期的に 1 行分の文字を読み取り、そのデータを文字列として返します。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、ストリームの次の行が含まれます。または、すべての文字が読み取られた場合は <see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して、ファイルの最初の行を読み取る方法を示しています、<xref:System.IO.StreamReader.ReadLineAsync>メソッドです。  
+  
+ [!code-csharp[System.IO.StreamReader#41](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/example41.cs#41)]
+ [!code-vb[System.IO.StreamReader#41](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/example41.vb#41)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">次の行の文字数がよりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToEnd">
+      <MemberSignature Language="C#" Value="public override string ReadToEnd ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ReadToEnd() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.ReadToEnd" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストリームの現在位置から末尾までのすべての文字を読み込みます。</summary>
+        <returns>ストリームの現在位置から末尾までの残りの部分 (文字列)。 現在の位置がストリームの末尾である場合は、空の文字列 ("") が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.TextReader.ReadToEnd%2A?displayProperty=nameWithType>します。  
+  
+ <xref:System.IO.StreamReader.ReadToEnd%2A>現在の位置からストリームの末尾に、すべての入力を読み取る必要がある場合は最適です。 文字数が、ストリームから読み取ら経由で詳細に制御が必要な場合を使用して、<xref:System.IO.StreamReader.Read%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29>メソッド オーバー ロードには、パフォーマンスが向上します。  
+  
+ <xref:System.IO.StreamReader.ReadToEnd%2A>末尾に到達したときに、ストリームを知っていることを前提とします。 対話型のプロトコルを要求して、接続を閉じない場合にのみ、サーバー データを送信<xref:System.IO.StreamReader.ReadToEnd%2A>末尾に到達しません避ける必要がありますが、無期限にブロックがあります。  
+  
+ 使用すると、<xref:System.IO.StreamReader.Read%2A>手法は、ストリームの内部バッファーと同じサイズであるバッファーを使用する方が効率的です。 ストリームが構築されている場合、バッファーのサイズを指定しなかった場合は、4 キロバイト (4096 バイト) は、既定値です。  
+  
+ 現在のメソッドがスローされた場合、 <xref:System.OutOfMemoryException>、基になるリーダーの位置<xref:System.IO.Stream>オブジェクトがこのメソッドは、読み込むことが文字が、内部に既に読み取られた文字の数で高度な<xref:System.IO.StreamReader.ReadLine%2A>バッファーは破棄されます。 バッファーにデータの読み取り後に、基になるストリームの位置を操作する場合、基になるストリームの位置は内部バッファーの位置と一致可能性があります。 内部バッファーをリセットするには、呼び出し、<xref:System.IO.StreamReader.DiscardBufferedData%2A>メソッドです。 ただし、このメソッドは、パフォーマンスが低下し、どうしても必要な場合にのみ呼び出す必要があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、1 つの操作でファイルの最後まで読み取ります。  
+  
+ [!code-cpp[strmreader readtoend#1](~/samples/snippets/cpp/VS_Snippets_CLR/StrmReader ReadToEnd/CPP/strmreader readtoend.cpp#1)]
+ [!code-csharp[strmreader readtoend#1](~/samples/snippets/csharp/VS_Snippets_CLR/StrmReader ReadToEnd/CS/strmreader readtoend.cs#1)]
+ [!code-vb[strmreader readtoend#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/StrmReader ReadToEnd/VB/strmreader readtoend.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OutOfMemoryException">返却された文字列にバッファーを割り当てるには、メモリが不足しています。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToEndAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;string&gt; ReadToEndAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;string&gt; ReadToEndAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamReader.ReadToEndAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在位置からストリームの末尾まですべての文字を非同期的に読み取り、1 つの文字列として返します。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、現在位置からストリームの末尾までの文字から成る文字列が含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して、ファイルの内容を読み取る方法を示しています、<xref:System.IO.StreamReader.ReadToEndAsync>メソッドです。  
+  
+ [!code-csharp[System.IO.StreamReader#40](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/example40.cs#40)]
+ [!code-vb[System.IO.StreamReader#40](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/example40.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">文字の数がよりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">リーダーは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,168 @@
+<Type Name="EventSetterHandlerConverter" FullName="System.Windows.Markup.EventSetterHandlerConverter">
+  <TypeSignature Language="C#" Value="public sealed class EventSetterHandlerConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventSetterHandlerConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.EventSetterHandlerConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Set アクセス操作子のイベント ハンドラーの文字列名をデリゲート表現に変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wpf XAML がイベント ハンドラー名を処理する方法の詳細については、次を参照してください。 [XAML の概要 (WPF)](~/docs/framework/wpf/advanced/xaml-overview-wpf.md)です。  
+  
+<a name="xamlTextUsage_EventSetterHandlerConverter"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventSetterHandlerConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.EventSetterHandlerConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.EventSetterHandlerConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.EventSetterHandlerConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="sourceType">A<see cref="T:System.Type" />から変換する型を表すです。</param>
+        <summary>1 つの型のオブジェクトをこのコンバーターが変換できるかどうかを返します、<see cref="T:System.Delegate" />です。</summary>
+        <returns>
+          コンバーターが変換を実行できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る`true`される場合にのみ`sourceType`は、<xref:System.String>型です。 他のすべての`sourceType`戻り値の型`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.EventSetterHandlerConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="destinationType">A<see cref="T:System.Type" />に変換する型を表すです。</param>
+        <summary>このコンバーターが、オブジェクトを指定した型に変換できるかどうかを返します。</summary>
+        <returns>常に <see langword="false" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Globalization.CultureInfo cultureInfo, object source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Globalization.CultureInfo cultureInfo, object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.EventSetterHandlerConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="cultureInfo"><see cref="T:System.Globalization.CultureInfo" />現在のカルチャとして使用します。</param>
+        <param name="source">変換元の文字列。</param>
+        <summary>新しいを指定した文字列を変換<see cref="T:System.Delegate" />イベント ハンドラーにします。</summary>
+        <returns>新しい<see cref="T:System.Delegate" />を表す、参照先のイベント ハンドラー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `typeDescriptorContext`のサービスを提供する必要があります<xref:System.Xaml.IRootObjectProvider>と<xref:System.Windows.Markup.IProvideValueTarget>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">必要なサービスは、ご利用いただけません。  
+  
+ または  
+  
+ 特定の変換を実行できませんでした。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeDescriptorContext" />または<paramref name="source" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Globalization.CultureInfo cultureInfo, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Globalization.CultureInfo cultureInfo, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.EventSetterHandlerConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="cultureInfo"><see cref="T:System.Globalization.CultureInfo" />現在のカルチャとして使用します。</param>
+        <param name="value">変換する値。</param>
+        <param name="destinationType">変換後の型、<c>値</c>へのパラメーターです。</param>
+        <summary>指定された値オブジェクトを指定した型に変換します。 常に例外がスローされます。</summary>
+        <returns>常に例外がスローされます。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">常にスローされます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

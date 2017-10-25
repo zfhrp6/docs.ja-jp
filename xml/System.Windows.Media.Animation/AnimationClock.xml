@@ -1,0 +1,86 @@
+<Type Name="AnimationClock" FullName="System.Windows.Media.Animation.AnimationClock">
+  <TypeSignature Language="C#" Value="public class AnimationClock : System.Windows.Media.Animation.Clock" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AnimationClock extends System.Windows.Media.Animation.Clock" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.AnimationClock" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.Clock</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実行時の状態を維持、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />し、その出力値を処理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Animation.AnimationClock>オブジェクトはから生成される<xref:System.Windows.Media.Animation.AnimationTimeline>オブジェクト。 <xref:System.Windows.Media.Animation.AnimationTimeline>アニメーションの出力値を説明します。 期間、開始時刻が、基本的なアニメーションの時間、およびその他の情報を終了します。 <xref:System.Windows.Media.Animation.AnimationClock>で記述されるアニメーションの値を処理する<xref:System.Windows.Media.Animation.AnimationTimeline>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AnimationClock (System.Windows.Media.Animation.AnimationTimeline animation);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Animation.AnimationTimeline animation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.AnimationClock.#ctor(System.Windows.Media.Animation.AnimationTimeline)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="animation" Type="System.Windows.Media.Animation.AnimationTimeline" />
+      </Parameters>
+      <Docs>
+        <param name="animation">この時計を記述するアニメーションの値とタイミング動作に出力します。</param>
+        <summary><see cref="T:System.Windows.Media.Animation.AnimationClock" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValue">
+      <MemberSignature Language="C#" Value="public object GetCurrentValue (object defaultOriginValue, object defaultDestinationValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetCurrentValue(object defaultOriginValue, object defaultDestinationValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.AnimationClock.GetCurrentValue(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultOriginValue" Type="System.Object" />
+        <Parameter Name="defaultDestinationValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="defaultOriginValue">配信元の値は、アニメーションが独自の開始値を持たないかどうか、クロックに提供します。 この時計がアニメーション化するプロパティのベース値がなりますコンポジション チェーンの最初の場合そうでなければ、チェーン内の前のクロックによって返される値</param>
+        <param name="defaultDestinationValue">アニメーションに独自の変換先の値がない場合、クロックに提供される宛先値。 この時計がアニメーション化するプロパティのベース値がなりますコンポジション チェーンの最初の場合そうでなければ、チェーン内の前のクロックによって返される値</param>
+        <summary>現在の出力値を取得、<see cref="T:System.Windows.Media.Animation.AnimationClock" />です。</summary>
+        <returns>この現在の値<see cref="T:System.Windows.Media.Animation.AnimationClock" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeline">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.AnimationTimeline Timeline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.AnimationTimeline Timeline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.AnimationClock.Timeline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.AnimationTimeline</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.Animation.AnimationTimeline" />クロックの動作を説明します。</summary>
+        <value>この時計の動作を説明するアニメーション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

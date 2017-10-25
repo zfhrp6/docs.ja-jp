@@ -1,0 +1,405 @@
+<Type Name="MenuAdapter" FullName="System.Web.UI.WebControls.Adapters.MenuAdapter">
+  <TypeSignature Language="C#" Value="public class MenuAdapter : System.Web.UI.WebControls.Adapters.WebControlAdapter, System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MenuAdapter extends System.Web.UI.WebControls.Adapters.WebControlAdapter implements class System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Adapters.MenuAdapter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Adapters.WebControlAdapter</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IPostBackEventHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>動作を変更する手段を提供、<see cref="T:System.Web.UI.WebControls.Menu" />特定のブラウザーを制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.Adapters.MenuAdapter>マークアップまたはの動作を変更、<xref:System.Web.UI.WebControls.Menu>一部の機能に対して、特定のブラウザーまたはフィルターとしてブラウザー、または機能のクラスを制御します。  
+  
+ 既定では、<xref:System.Web.UI.WebControls.MenuItem>内のオブジェクト、<xref:System.Web.UI.WebControls.Menu>コントロールはメニュー ナビゲーションに対応するハイパーリンクとしてレンダリングされます。 <xref:System.Web.UI.WebControls.Menu>クラスが実装することで状態を維持、<xref:System.Web.UI.IPostBackEventHandler>インターフェイスに応答し、ポストバック中に特定のイベントを発生させることができるようにします。 拡張することができます、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter>のレンダリングまたは動作をさらにカスタマイズするクラス、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ アダプターの最初の要求では、要求元のブラウザーの特性を指定して、コントロールに割り当てられたアダプターを検索する .NET Framework が原因です。 <xref:System.Web.HttpBrowserCapabilities>をクライアントのブラウザーの特性を識別し、アダプターをブラウザーの種類にマップするクラスがブラウザー定義ファイルを使用します。  
+  
+ ASP.NET でアダプティブのレンダリングに関する詳細については、次を参照してください。[アーキテクチャの概要のアダプティブ動作を制御](http://msdn.microsoft.com/library/4ff05ae9-4109-4352-929e-ad893895dbff)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuAdapter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.MenuAdapter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Adapters.MenuAdapter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アダプターの最初の要求では、要求元のブラウザーの特性を指定して、コントロールに割り当てられたアダプターを検索する .NET Framework が原因です。 コントロールがで割り当てられたアダプター インスタンスへの参照を保持して、アダプターが見つかったら、その<xref:System.Web.UI.Control.Adapter%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.Menu Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Menu Control" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Adapters.MenuAdapter.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Menu</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を厳密に型を取得、<see cref="T:System.Web.UI.WebControls.Menu" />これに関連付けられたコントロール<see cref="T:System.Web.UI.WebControls.Adapters.MenuAdapter" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.Menu" />コントロールに現在関連付けられている<see cref="T:System.Web.UI.WebControls.Adapters.MenuAdapter" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.MenuAdapter.Control%2A>プロパティは、アダプターの対応するコントロールを参照する方法を提供します。 アダプターが特定のコントロールに関連付けられている場合は、.NET Framework はの代わりに、またはコントロールのライフ サイクル メソッドに加えて、アダプターのライフ サイクル メソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.Control%2A>取得するプロパティを<xref:System.Web.UI.WebControls.Menu>親クラスのコントロールです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.Adapters.MenuAdapter#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.MenuAdapter/CS/contosomenuadapter.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.Adapters.MenuAdapter#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.MenuAdapter/VB/contosomenuadapter.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadAdapterControlState">
+      <MemberSignature Language="C#" Value="protected override void LoadAdapterControlState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void LoadAdapterControlState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.MenuAdapter.LoadAdapterControlState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Object" />形式のアダプターの状態情報を格納するディクショナリ。</param>
+        <summary>によって保存されたコントロールの状態情報を読み込み、<see cref="M:System.Web.UI.WebControls.Adapters.MenuAdapter.SaveAdapterControlState" />ページに前の要求中にメソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アダプターは、プライベートな状態情報を保持する必要があります場合、これをオーバーライドできます、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.LoadAdapterControlState%2A>と<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.SaveAdapterControlState%2A>メソッドです。 場合、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter>クラス、表示されたメニュー階層は、以前に選択したによって異なります<xref:System.Web.UI.WebControls.MenuItem>オブジェクト、 `state`  メニューの階層で選択した項目のパスを含む名前/値ペアのディクショナリを提供します。 `state`パラメーターは、<xref:System.Web.UI.Pair>によって保存されるオブジェクト、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.SaveAdapterControlState%2A>ページに前の要求中にします。  
+  
+ コントロールがコントロールの状態に参加する登録されていない場合、アダプターをコントロールの状態を登録する必要があります。 その他のライフ サイクル メソッドとは異なり、コントロールの状態だけでなく、アダプター コントロールの状態が維持されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.MenuAdapter.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" />このイベントに関連付けられたデータ。</param>
+        <summary>関連付けられた登録<see cref="T:System.Web.UI.WebControls.Menu" />コントロールの状態を必要とする 1 つとして制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.MenuAdapter.OnInit%2A>メソッドは、コントロールの状態を必要とする 1 つとして、関連付けられたコントロールを登録します。 既定では、.NET Framework は、Web サーバー コントロールの独自を呼び出します。<xref:System.Web.UI.Control.OnInit%2A>メソッドです。 ただし、後に、<xref:System.Web.UI.Control.Adapter%2A>サーバー コントロールのプロパティが設定されており、.NET Framework でのアダプターの実装を呼び出しますが、<xref:System.Web.UI.Control.OnInit%2A>コントロールの実装ではなくメソッドです。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.OnInit%2A>コントロールでの設定を初期化します。 ポストバックでは、これは、既存のビュー状態データとの対話を管理するために重要な段階です。 詳細については、次を参照してください。[アーキテクチャの概要のアダプティブ動作を制御](http://msdn.microsoft.com/library/4ff05ae9-4109-4352-929e-ad893895dbff)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>アダプターをオーバーライドする場合、<see cref="M:System.Web.UI.WebControls.Adapters.MenuAdapter.OnInit(System.EventArgs)" />メソッドを呼び出す必要があります、対応するメソッド、基本クラスです。 それ以外の場合、コントロール自体の<see cref="E:System.Web.UI.Control.Init" />イベントは発生しません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.MenuAdapter.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" />このイベントに関連付けられたデータ。</param>
+        <summary>処理、<see cref="M:System.Web.UI.Control.OnPreRender(System.EventArgs)" />関連付けられているメソッド<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.MenuAdapter.OnPreRender%2A>メソッドを呼び出す内部`OnPreRender`メソッドで、<xref:System.Web.UI.WebControls.Menu>クラスです。 データ バインディング、スタイル、およびイベントの割り当てを適用するなど、親クラスの場合は、他のすべての事前描画関数は、期待どおりを実行します。  
+  
+ 既定では、.NET Framework の呼び出し、<xref:System.Web.UI.WebControls.Menu>コントロールの<xref:System.Web.UI.WebControls.Menu.OnPreRender%2A>メソッドです。 ただし、後に、<xref:System.Web.UI.Control.Adapter%2A>そのコントロールのプロパティが設定されて、.NET Framework でのアダプターの実装を呼び出しますが、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.OnPreRender%2A>コントロールの実装ではなくメソッドです。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.OnPreRender%2A>メソッドをコントロール内のすべての設定を確定します。 状態を表示するこのフェーズでコントロールのプロパティに加えられた変更は保存されますでの変更、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.Render%2A>メソッドは保存されません。 詳細については、次を参照してください。[アーキテクチャの概要のアダプティブ動作を制御](http://msdn.microsoft.com/library/4ff05ae9-4109-4352-929e-ad893895dbff)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>アダプターをオーバーライドする場合、<see cref="M:System.Web.UI.WebControls.Adapters.MenuAdapter.OnPreRender(System.EventArgs)" />メソッドを呼び出す必要があります、対応するメソッド、基本クラスです。 それ以外の場合、コントロール自体の<see cref="M:System.Web.UI.WebControls.Menu.OnPreRender(System.EventArgs)" />メソッドは発生しません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="protected virtual void RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.MenuAdapter.RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">A <see cref="T:System.String" /> ] メニューの [階層の現在のノードのパスを表すです。</param>
+        <summary>ポストバック イベントが発生したときに、メニューのパスを維持するために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RaisePostBackEvent%2A>メソッドが呼び出されます、<xref:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent%2A>イベントが発生し、メニューのナビゲーション パスを維持するために使用します。 `eventArgument`パラメーターには] メニューの [階層の現在の場所を識別するメニュー項目の区切られた文字列が含まれています。  
+  
+ 値が渡されます`eventArgument`を関連付けられたコントロールの<xref:System.Web.UI.WebControls.Menu.RaisePostBackEvent%2A>メソッドです。 関連付けられた<xref:System.Web.UI.WebControls.Menu>コントロールはポストバックを発生の原因となるマークアップ要素をレンダリングします。 コントロールがポストバック用のクライアント側スクリプトをレンダリングする場合、スクリプトの引数を渡す、`eventArgument`パラメーター。 単純な送信によってポストバックが発生した場合`eventArgument`は`null`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のノードの深さが許容範囲を超えています。 これは、無効な宣言、前回の要求以後の変更、または偽造 (偽装) 要求可能性があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderBeginTag">
+      <MemberSignature Language="C#" Value="protected override void RenderBeginTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderBeginTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderBeginTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />をビルドして、デバイスに固有の出力を表示するメソッドを含むインスタンス。</param>
+        <summary>タグ属性を追加し、コントロールの開始タグのマークアップを、ブラウザーまたはデバイスに出力される出力ストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderBeginTag%2A>メソッドは追加タグの属性し、クライアントのブラウザーの応答ストリームに出力される出力ストリームにコントロールの開始タグのマークアップを書き込みます。 <xref:System.Web.UI.WebControls.MenuItem>オブジェクトは、個別にレンダリングされます、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderContents%2A>メソッドとコントロールは、後続の呼び出しで閉じられます<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderEndTag%2A>メソッドです。  
+  
+ オーバーライド<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderBeginTag%2A>カスタム動作を実装する場合。 たとえばなどのコンテンツのいずれかのコントロールの前に、応答ストリームに複数のタグを記述するメソッドをオーバーライド`<table><tr><td>`です。 使用して、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderBeginTag%2A>メソッドと組み合わせて、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderEndTag%2A>開始タグと終了の出力内のタグの一貫性を確保するためのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">デバイス固有の出力を構築および表示するメソッドを含む <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>関連付けられている関連メニュー項目を書き込みます<see cref="T:System.Web.UI.WebControls.Menu" />ハイパーリンクの系列と出力ストリームを制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderContents%2A>メソッドの書き込み、<xref:System.Web.UI.WebControls.MenuItem>関連付けられているオブジェクト<xref:System.Web.UI.WebControls.Menu>ハイパーリンクとして、出力ストリームを制御します。 <xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderContents%2A>からメソッドを呼び出した、<xref:System.Web.UI.WebControls.Adapters.WebControlAdapter.Render%2A>メソッドは、デバイスのブラウザーに表示されるマークアップのコードに変更を実行するために使用されます。  
+  
+ コントロールのプロパティは、ここで、コントロールのライフ サイクル、および実際のマークアップの作成のみのこのフェーズの前に設定する必要があります。 ライフ サイクルのこの段階で、コントロールに加えられた変更は、状態を表示するのには保存されません。 コントロールに加えられた変更を保存するには、オーバーライド、<xref:System.Web.UI.Control.OnPreRender%2A>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在の項目の深さが許容範囲を超えています。  
+  
+ または  
+  
+ 現在のアイテムは無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderEndTag">
+      <MemberSignature Language="C#" Value="protected override void RenderEndTag (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderEndTag(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderEndTag(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />をビルドして、デバイスに固有の出力を表示するメソッドを含むインスタンス。</param>
+        <summary>最終マークアップを作成し、ブラウザーまたはデバイスに出力される出力ストリームにコントロールの終了タグのマークアップを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderEndTag%2A>メソッドは、クライアントのブラウザーの応答ストリームに出力される出力ストリームにコントロールの終了タグのマークアップを書き込みます。 属性、スタイルの属性、および開始タグが表示されます、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderBeginTag%2A>メソッドです。 <xref:System.Web.UI.WebControls.MenuItem>オブジェクトが個別にレンダリングされる、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderContents%2A>メソッドです。  
+  
+ オーバーライド<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderEndTag%2A>カスタム動作を実装する場合。 たとえば、タグを記述する複数終了応答ストリームへのコントロールのコンテンツの後などのメソッドをオーバーライド`</td></tr></table>`です。 使用して、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderEndTag%2A>メソッドと組み合わせて、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderBeginTag%2A>開始タグと終了の出力内のタグの一貫性を確保するためのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderItem">
+      <MemberSignature Language="C#" Value="protected virtual void RenderItem (System.Web.UI.HtmlTextWriter writer, System.Web.UI.WebControls.MenuItem item, int position);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void RenderItem(class System.Web.UI.HtmlTextWriter writer, class System.Web.UI.WebControls.MenuItem item, int32 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderItem(System.Web.UI.HtmlTextWriter,System.Web.UI.WebControls.MenuItem,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+        <Parameter Name="item" Type="System.Web.UI.WebControls.MenuItem" />
+        <Parameter Name="position" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />をビルドして、デバイスに固有の出力を表示するメソッドを含むインスタンス。</param>
+        <param name="item"><see cref="T:System.Web.UI.WebControls.MenuItem" />応答ストリームに書き込むプロパティを含むオブジェクト。</param>
+        <param name="position">指定した位置<see cref="T:System.Web.UI.WebControls.MenuItem" />] メニューの [階層内のオブジェクト。</param>
+        <summary>単一のメニュー項目をハイパーリンクとしてレンダリングされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderItem%2A>からメソッドを呼び出した、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderContents%2A>スタイルと間隔属性を取得する方法を<xref:System.Web.UI.WebControls.MenuItem>オブジェクトし、新しく作成されたハイパーリンク要素に適用します。 メニューの 階層の走査に、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderContents%2A>メソッドを呼び出すと、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.RenderItem%2A>各項目を表示するためにメソッドです。 各アイテムはハイパーリンクとしてレンダリングされますが、プロパティと、指定のスタイルを継承<xref:System.Web.UI.WebControls.MenuItem>コントロール。 ページに表示されるハイパーリンクでは、次のいずれかです。  
+  
+-   ポストバック イベントを開くか、項目を選択します。  
+  
+-   指定されたターゲットに移動するリンク、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveAdapterControlState">
+      <MemberSignature Language="C#" Value="protected override object SaveAdapterControlState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object SaveAdapterControlState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.MenuAdapter.SaveAdapterControlState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ページがサーバーにポストされた後で発生したアダプターのプライベート コントロールの状態に変更を保存します。</summary>
+        <returns><see cref="T:System.Object" />として、アダプターのコントロールの状態情報を含む、<see cref="T:System.Web.UI.StateBag" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.MenuAdapter.SaveAdapterControlState%2A>メソッドを使用、 <xref:System.Web.UI.WebControls.Menu>  メニューの現在のナビゲーション パスを維持するために状態を制御します。 アダプターは、プライベートな状態情報を保持する必要があります場合、これをオーバーライドできます、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.LoadAdapterControlState%2A>と<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.SaveAdapterControlState%2A>メソッドです。 アダプターは、関連付けられたコントロールの状態とは別の要求間で状態を維持する必要がある複雑な機能がある場合、プライベートなコントロールの状態を維持可能性があります。 アダプターは、中にコントロールの状態を登録する必要があります、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter.OnInit%2A>すべての要求にメソッドの呼び出しです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackEventHandler.RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="void IPostBackEventHandler.RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.MenuAdapter.System#Web#UI#IPostBackEventHandler#RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">A<see cref="T:System.String" />イベント ハンドラーに渡すオプションのイベント引数を格納しています。</param>
+        <summary>により、<see cref="T:System.Web.UI.WebControls.Adapters.MenuAdapter" />ページがサーバーにポストされたときに発生するイベントを処理するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent%2A>メソッドにより、<xref:System.Web.UI.WebControls.Adapters.MenuAdapter>ページがサーバーにポストされたときに発生するイベントを処理するクラス。 渡されます`eventArgument`を<xref:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

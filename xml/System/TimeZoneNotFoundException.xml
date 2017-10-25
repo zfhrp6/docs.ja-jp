@@ -1,0 +1,202 @@
+<Type Name="TimeZoneNotFoundException" FullName="System.TimeZoneNotFoundException">
+  <TypeSignature Language="C#" Value="public class TimeZoneNotFoundException : Exception" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TimeZoneNotFoundException extends System.Exception" />
+  <TypeSignature Language="DocId" Value="T:System.TimeZoneNotFoundException" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Core, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=b77a5c561934e089")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>タイム ゾーンが見つからない場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この例外をスロー、<xref:System.TimeZoneInfo.ConvertTimeBySystemTimeZoneId%2A>と<xref:System.TimeZoneInfo.FindSystemTimeZoneById%2A>方法とタイム ゾーン id が見つかりませんがある場合や、ローカル システムでない特定のタイム ゾーン id に関連付けられたデータ。  
+  
+ レジストリは、Windows XP および Windows Vista でのタイム ゾーン情報のリポジトリとして機能であるために、この例外は、レジストリに特定のタイム ゾーンの情報にないことを示します。 タイム ゾーン情報は、hkey_local_machine NT\CurrentVersion\Time ゾーンのサブキーに格納されます。  
+  
+ アプリケーションが特定のタイム ゾーンと、取得しようとすることがスローされますの存在に依存する場合、<xref:System.TimeZoneNotFoundException>アプリケーションは、2 つの方法のいずれかの例外を処理できます。  
+  
+-   呼び出して、 <xref:System.TimeZoneInfo.FromSerializedString%2A> 、保存した逆シリアル化するメソッド<xref:System.TimeZoneInfo>オブジェクト。  
+  
+-   オーバー ロードのいずれかを呼び出して、<xref:System.TimeZoneInfo.CreateCustomTimeZone%2A>タイム ゾーンを作成します。  
+  
+ 例を参照して、<xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.TimeZoneInfo.AdjustmentRule%5B%5D%2CSystem.Boolean%29?displayProperty=nameWithType>と<xref:System.TimeZoneInfo.FromSerializedString%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TimeZoneNotFoundException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TimeZoneNotFoundException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.TimeZoneNotFoundException" />するシステム提供のメッセージを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、既定のコンス トラクター、<xref:System.TimeZoneNotFoundException>クラスです。 このコンス トラクター、<xref:System.Exception.Message%2A>など、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ"タイム ゾーン '*timeZoneName*'、ローカル コンピューター上に見つかりませんでした"。 このメッセージは、現在のシステムのカルチャにローカライズされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TimeZoneNotFoundException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TimeZoneNotFoundException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外を説明する文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.TimeZoneNotFoundException" />指定したメッセージ文字列を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `message`に文字列が割り当てられている、<xref:System.Exception.Message%2A>プロパティです。 文字列は、現在のカルチャにローカライズする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TimeZoneNotFoundException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TimeZoneNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたデータを格納するオブジェクト。</param>
+        <param name="context">シリアル化されたデータを格納するストリーム。</param>
+        <summary>シリアル化したデータから、<see cref="T:System.TimeZoneNotFoundException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成するようにコードから直接このコンス トラクターは呼び出されません、<xref:System.TimeZoneNotFoundException>オブジェクト。 代わりに、によって呼び出されますが、<xref:System.Runtime.Serialization.IFormatter>オブジェクトの<xref:System.Runtime.Serialization.IFormatter.Deserialize%2A>メソッドを逆シリアル化時に、<xref:System.TimeZoneNotFoundException>ストリームからのオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="context" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TimeZoneNotFoundException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TimeZoneNotFoundException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外を説明する文字列。</param>
+        <param name="innerException">現在の例外の原因となった例外。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.TimeZoneNotFoundException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、これを使用して<xref:System.TimeZoneNotFoundException>で例外を処理するオーバー ロード、`try`しています.`catch` ブロックです。 `innerException`パラメーターで処理される例外オブジェクトへの参照を指定する必要があります、`catch`ブロック、またはそのできます`null`です。 この値を代入し、<xref:System.TimeZoneNotFoundException>オブジェクトの<xref:System.Exception.InnerException%2A>プロパティです。  
+  
+ `message`に文字列が割り当てられている、<xref:System.Exception.Message%2A>プロパティです。 文字列は、現在のカルチャにローカライズする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例をスロー存在しないタイム ゾーンを取得しようとする、<xref:System.TimeZoneNotFoundException>です。 例外ハンドラーは、新しい例外をラップ<xref:System.TimeZoneNotFoundException>オブジェクトで、例外ハンドラーを呼び出し元に返します。 呼び出し元の例外ハンドラーは、外部および内部例外の両方に関する情報を表示します。  
+  
+ [!code-csharp[System.TimeZoneNotFoundException.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZoneNotFoundException.Class/cs/TimeZoneNotFoundException.cs#1)]
+ [!code-vb[System.TimeZoneNotFoundException.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZoneNotFoundException.Class/vb/TimeZoneNotFoundException.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

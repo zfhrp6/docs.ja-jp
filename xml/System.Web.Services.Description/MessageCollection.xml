@@ -1,0 +1,367 @@
+<Type Name="MessageCollection" FullName="System.Web.Services.Description.MessageCollection">
+  <TypeSignature Language="C#" Value="public sealed class MessageCollection : System.Web.Services.Description.ServiceDescriptionBaseCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MessageCollection extends System.Web.Services.Description.ServiceDescriptionBaseCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.MessageCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.ServiceDescriptionBaseCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンスのコレクションを表す、<see cref="T:System.Web.Services.Description.Message" />クラスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[DescriptionNamespaceSample1#9](~/samples/snippets/cpp/VS_Snippets_Remoting/DescriptionNamespaceSample1/CPP/descriptionnamespacesample1.cpp#9)]
+ [!code-csharp[DescriptionNamespaceSample1#9](~/samples/snippets/csharp/VS_Snippets_Remoting/DescriptionNamespaceSample1/CS/descriptionnamespacesample1.cs#9)]
+ [!code-vb[DescriptionNamespaceSample1#9](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DescriptionNamespaceSample1/VB/descriptionnamespacesample1.vb#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.Services.Description.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.Services.Description.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MessageCollection.Add(System.Web.Services.Description.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Web.Services.Description.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">コレクションに追加する <see cref="T:System.Web.Services.Description.Message" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.Message" />の末尾に、<see cref="T:System.Web.Services.Description.MessageCollection" />です。</summary>
+        <returns>0 から始まるインデックス位置、<paramref name="message" />パラメーターが追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[DescriptionNamespaceSample1#7](~/samples/snippets/cpp/VS_Snippets_Remoting/DescriptionNamespaceSample1/CPP/descriptionnamespacesample1.cpp#7)]
+ [!code-csharp[DescriptionNamespaceSample1#7](~/samples/snippets/csharp/VS_Snippets_Remoting/DescriptionNamespaceSample1/CS/descriptionnamespacesample1.cs#7)]
+ [!code-vb[DescriptionNamespaceSample1#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DescriptionNamespaceSample1/VB/descriptionnamespacesample1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.Services.Description.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.Services.Description.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MessageCollection.Contains(System.Web.Services.Description.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Web.Services.Description.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Web.Services.Description.Message" />コレクションのメンバーシップをチェックします。</param>
+        <summary>示す値を返すかどうか、指定した<see cref="T:System.Web.Services.Description.Message" />のメンバーである、<see cref="T:System.Web.Services.Description.MessageCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="message" />パラメーターのメンバーである、 <see cref="T:System.Web.Services.Description.MessageCollection" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `Contains` メソッドの使用例を次に示します。  
+  
+ [!code-cpp[MessageCollection#4](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageCollection/CPP/messagecollection.cpp#4)]
+ [!code-csharp[MessageCollection#4](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageCollection/CS/messagecollection.cs#4)]
+ [!code-vb[MessageCollection#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageCollection/VB/messagecollection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.Services.Description.Message[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.Services.Description.Message[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MessageCollection.CopyTo(System.Web.Services.Description.Message[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.Services.Description.Message[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">型の配列<see cref="T:System.Web.Services.Description.Message" />コピー操作の出力先として機能します。</param>
+        <param name="index">コピーされたコレクションの配置を開始する位置を示す 0 から始まるインデックス。</param>
+        <summary>全体をコピー<see cref="T:System.Web.Services.Description.MessageCollection" />型の場合は、互換性のある 1 次元配列に<see cref="T:System.Web.Services.Description.Message" />対象となる配列の指定した 0 から始まるインデックスで開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `CopyTo` メソッドの使用例を次に示します。  
+  
+ [!code-cpp[MessageCollection#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageCollection/CPP/messagecollection.cpp#1)]
+ [!code-csharp[MessageCollection#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageCollection/CS/messagecollection.cs#1)]
+ [!code-vb[MessageCollection#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageCollection/VB/messagecollection.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="protected override string GetKey (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetKey(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MessageCollection.GetKey(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.Services.Description.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.Services.Description.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MessageCollection.IndexOf(System.Web.Services.Description.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Web.Services.Description.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.Web.Services.Description.Message" />コレクション内で検索します。</param>
+        <summary>指定された検索<see cref="T:System.Web.Services.Description.Message" />し、コレクション内で最初に見つかった位置の 0 から始まるインデックスを返します。</summary>
+        <returns>32 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `IndexOf` メソッドの使用例を次に示します。  
+  
+ [!code-cpp[MessageCollection#5](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageCollection/CPP/messagecollection.cpp#5)]
+ [!code-csharp[MessageCollection#5](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageCollection/CS/messagecollection.cs#5)]
+ [!code-vb[MessageCollection#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageCollection/VB/messagecollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.Services.Description.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.Services.Description.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MessageCollection.Insert(System.Int32,System.Web.Services.Description.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="message" Type="System.Web.Services.Description.Message" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス、<c>メッセージ</c>パラメーター。</param>
+        <param name="message">コレクションに追加する <see cref="T:System.Web.Services.Description.Message" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.Message" />を<see cref="T:System.Web.Services.Description.MessageCollection" />指定した 0 から始まるインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既にコレクション内の項目の数が等しい場合、コレクションの容量は、新しい要素が挿入される前に、内部の配列を自動的に再割り当てすることによって、容量が倍になります。  
+  
+ 場合、`index`パラメーターと等しい<xref:System.Collections.CollectionBase.Count%2A>、`message`パラメーターがの末尾に追加された、<xref:System.Web.Services.Description.MessageCollection>です。  
+  
+ 挿入位置より後に要素が新しい要素のために下に移動します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[DescriptionNamespaceSample1#8](~/samples/snippets/cpp/VS_Snippets_Remoting/DescriptionNamespaceSample1/CPP/descriptionnamespacesample1.cpp#8)]
+ [!code-csharp[DescriptionNamespaceSample1#8](~/samples/snippets/csharp/VS_Snippets_Remoting/DescriptionNamespaceSample1/CS/descriptionnamespacesample1.cs#8)]
+ [!code-vb[DescriptionNamespaceSample1#8](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DescriptionNamespaceSample1/VB/descriptionnamespacesample1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="index" />パラメーターが 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" />パラメーターがより大きい<see cref="P:System.Collections.CollectionBase.Count" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Message this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Message Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MessageCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Web.Services.Description.Message" />値が変更または返されます。</param>
+        <summary>取得または設定の値、<see cref="T:System.Web.Services.Description.Message" />指定した 0 から始まるインデックス位置。</summary>
+        <value><see langword="Message" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例でのメンバーを反復処理する 0 から始まるインデックスを使用する`MessageCollection`です。  
+  
+ [!code-cpp[MessageCollection#2](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageCollection/CPP/messagecollection.cpp#2)]
+ [!code-csharp[MessageCollection#2](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageCollection/CS/messagecollection.cs#2)]
+ [!code-vb[MessageCollection#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageCollection/VB/messagecollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Message this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.Message Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.MessageCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Services.Description.Message" />が返されます。</param>
+        <summary>取得、<see cref="T:System.Web.Services.Description.Message" />名前によって指定します。</summary>
+        <value><see langword="Message" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、取得する文字列の使用、`Message`です。  
+  
+ [!code-cpp[MessageCollection#3](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageCollection/CPP/messagecollection.cpp#3)]
+ [!code-csharp[MessageCollection#3](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageCollection/CS/messagecollection.cs#3)]
+ [!code-vb[MessageCollection#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageCollection/VB/messagecollection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.Services.Description.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Services.Description.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MessageCollection.Remove(System.Web.Services.Description.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Web.Services.Description.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">コレクションから削除する <see cref="T:System.Web.Services.Description.Message" />。</param>
+        <summary>最初に出現する指定した削除<see cref="T:System.Web.Services.Description.Message" />から、<see cref="T:System.Web.Services.Description.MessageCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一方向の検索を実行します。したがって、平均実行時間に比例して<xref:System.Collections.CollectionBase.Count%2A>です。  
+  
+ 削除された後にある要素<xref:System.Web.Services.Description.Message>繰りを上へ移動します。  
+  
+   
+  
+## Examples  
+ `Remove` メソッドの使用例を次に示します。  
+  
+ [!code-cpp[MessageCollection#6](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageCollection/CPP/messagecollection.cpp#6)]
+ [!code-csharp[MessageCollection#6](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageCollection/CS/messagecollection.cs#6)]
+ [!code-vb[MessageCollection#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageCollection/VB/messagecollection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParent">
+      <MemberSignature Language="C#" Value="protected override void SetParent (object value, object parent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetParent(object value, object parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.MessageCollection.SetParent(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="parent" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <param name="parent">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

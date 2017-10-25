@@ -1,0 +1,207 @@
+<Type Name="SecurityContextKeyIdentifierClause" FullName="System.ServiceModel.Security.SecurityContextKeyIdentifierClause">
+  <TypeSignature Language="C#" Value="public class SecurityContextKeyIdentifierClause : System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SecurityContextKeyIdentifierClause extends System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.SecurityContextKeyIdentifierClause" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セキュリティ コンテキスト トークンのキー識別句を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityContextKeyIdentifierClause (System.Xml.UniqueId contextId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.UniqueId contextId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityContextKeyIdentifierClause.#ctor(System.Xml.UniqueId)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+      </Parameters>
+      <Docs>
+        <param name="contextId">セキュリティ コンテキストの一意の ID。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceModel.Security.SecurityContextKeyIdentifierClause" />クラスの指定したコンテキスト識別子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `contextId` パラメーターの詳細については、<xref:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.ContextId%2A> を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityContextKeyIdentifierClause (System.Xml.UniqueId contextId, System.Xml.UniqueId generation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.UniqueId contextId, class System.Xml.UniqueId generation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityContextKeyIdentifierClause.#ctor(System.Xml.UniqueId,System.Xml.UniqueId)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="generation" Type="System.Xml.UniqueId" />
+      </Parameters>
+      <Docs>
+        <param name="contextId">セキュリティ コンテキストのコンテキスト ID を表す <see cref="T:System.Xml.UniqueId" />。</param>
+        <param name="generation">セキュリティ コンテキスト トークンのキー生成を参照する <see cref="T:System.Xml.UniqueId" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceModel.Security.SecurityContextKeyIdentifierClause" />クラスの指定したコンテキスト識別子とジェネレーションを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `contextId` パラメーターの詳細については、<xref:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.ContextId%2A> を参照してください。  
+  
+ `generation` パラメーターの詳細については、<xref:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken.KeyGeneration%2A> を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityContextKeyIdentifierClause (System.Xml.UniqueId contextId, System.Xml.UniqueId generation, byte[] derivationNonce, int derivationLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.UniqueId contextId, class System.Xml.UniqueId generation, unsigned int8[] derivationNonce, int32 derivationLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityContextKeyIdentifierClause.#ctor(System.Xml.UniqueId,System.Xml.UniqueId,System.Byte[],System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="generation" Type="System.Xml.UniqueId" />
+        <Parameter Name="derivationNonce" Type="System.Byte[]" />
+        <Parameter Name="derivationLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="contextId">識別子句のコンテキスト ID パート。</param>
+        <param name="generation">識別子句の生成パート。</param>
+        <param name="derivationNonce">To be added.</param>
+        <param name="derivationLength">派生させるキーの長さ。</param>
+        <summary>値を指定して、<see cref="T:System.ServiceModel.Security.SecurityContextKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `derivationNonce` および `derivationLength` は、暗黙的な派生キーに使用されます。 これは、送信側のみでサポートされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextId">
+      <MemberSignature Language="C#" Value="public System.Xml.UniqueId ContextId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.UniqueId ContextId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityContextKeyIdentifierClause.ContextId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.UniqueId</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ コンテキストの ID を取得します。</summary>
+        <value>セキュリティ コンテキストの一意の ID。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generation">
+      <MemberSignature Language="C#" Value="public System.Xml.UniqueId Generation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.UniqueId Generation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityContextKeyIdentifierClause.Generation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.UniqueId</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成を取得します。</summary>
+        <value>生成。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public override bool Matches (System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Matches(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause keyIdentifierClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityContextKeyIdentifierClause.Matches(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="keyIdentifierClause">比較対象の <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</param>
+        <summary>指定した <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" /> を <see cref="T:System.ServiceModel.Security.SecurityContextKeyIdentifierClause" /> クラスの現在のインスタンスと比較します。</summary>
+        <returns>
+          2 つのインスタンスが等しい場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public bool Matches (System.Xml.UniqueId contextId, System.Xml.UniqueId generation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Matches(class System.Xml.UniqueId contextId, class System.Xml.UniqueId generation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityContextKeyIdentifierClause.Matches(System.Xml.UniqueId,System.Xml.UniqueId)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="generation" Type="System.Xml.UniqueId" />
+      </Parameters>
+      <Docs>
+        <param name="contextId">識別子句のコンテキスト ID パート。</param>
+        <param name="generation">識別子句の生成パート。</param>
+        <summary>指定した比較<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />の現在のインスタンスを<see cref="T:System.ServiceModel.Security.SecurityContextKeyIdentifierClause" />指定したコンテキスト識別子とジェネレーションを持つクラス。</summary>
+        <returns>
+          2 つのインスタンスが等しい場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityContextKeyIdentifierClause.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスのこのインスタンスのテキスト表現を提供します。</summary>
+        <returns>現インスタンスのテキスト表現。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

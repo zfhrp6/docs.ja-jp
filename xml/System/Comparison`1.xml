@@ -1,0 +1,91 @@
+<Type Name="Comparison&lt;T&gt;" FullName="System.Comparison&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public delegate int Comparison&lt;in T&gt;(T x, T y);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Comparison`1&lt;- T&gt; extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Comparison`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="x" Type="T" />
+    <Parameter Name="y" Type="T" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Int32</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <typeparam name="T">比較するオブジェクトの型。</typeparam>
+    <param name="x">比較する最初のオブジェクト。</param>
+    <param name="y">比較する 2 番目のオブジェクト。</param>
+    <summary>型が同じ 2 つのオブジェクトを比較するメソッドを表します。</summary>
+    <returns>
+            <paramref name="x" /> と <paramref name="y" /> の相対値を示す符号付き整数。次の表を参照してください。  
+ 
+  <list type="table"><listheader><term>値  
+ 
+  </term><description>意味  
+ 
+  </description></listheader><item><term>0 より小さい値  
+ 
+  </term><description><paramref name="x" /> は <paramref name="y" /> より小さい値です。  
+ 
+  </description></item><item><term> 0  
+ 
+  </term><description><paramref name="x" /> と <paramref name="y" /> は等しい。  
+ 
+  </description></item><item><term>0 より大きい値  
+ 
+  </term><description><paramref name="x" /> が <paramref name="y" /> より大きくなっています。  
+ 
+</description></item></list></returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートで使用、<xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29>のメソッド オーバー ロード、<xref:System.Array>クラスおよび<xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29>のメソッド オーバー ロード、<xref:System.Collections.Generic.List%601>配列またはリストの要素を並べ替えるクラスです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Comparison%601>を持つデリゲート、<xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29>メソッドのオーバー ロードします。  
+  
+ このコード例は、名前付き文字列に対して代替の比較のメソッドを定義`CompareDinosByLength`です。 この方法は次のように、機能: 比較対照値があるテスト最初に、 `null`、null 参照が null でないより小さいとして扱われます。 次に、文字列の長さが比較され、長い文字列は、大きい値を指定するものと見なされます。 3 番目に、長さが等しい場合は、通常の文字列比較は使用されます。  
+  
+ A<xref:System.Collections.Generic.List%601>の文字列が作成され、任意の順序で、4 つの文字列に設定されます。 一覧は、空の文字列と null 参照にも含まれます。 使用して並べ替えられて、一覧が表示されます、<xref:System.Comparison%601>を表すジェネリック デリゲート、`CompareDinosByLength`メソッドを再び表示されます。  
+  
+ [!code-cpp[List\`1_SortComparison#1](~/samples/snippets/cpp/VS_Snippets_CLR/List`1_SortComparison/cpp/source.cpp#1)]
+ [!code-csharp[List\`1_SortComparison#1](~/samples/snippets/csharp/VS_Snippets_CLR/List`1_SortComparison/cs/source.cs#1)]
+ [!code-vb[List\`1_SortComparison#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/List`1_SortComparison/vb/source.vb#1)]  
+  
+ 次の例では、<xref:System.Comparison%601>デリゲートのコレクションの要素を並べ替える`CityInfo`オブジェクト。 `CityInfo`市区町村とその人口に関する情報を含むアプリケーション定義のクラスです。 例では、3 つのメソッドを定義する`CompareByName`、 `CompareByPopulation`、および`CompareByNames`、順序付けの 3 つの方法を提供する、`CityInfo`オブジェクト。 割り当てられているそれぞれの方法、`comparison`の引数、<xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Comparison%7B%60%600%7D%29?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-csharp[System.Comparison\`1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.comparison`1/cs/comparisont1.cs#1)]
+ [!code-vb[System.Comparison\`1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.comparison`1/vb/comparisont1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

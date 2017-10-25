@@ -1,0 +1,462 @@
+<Type Name="ApplicationId" FullName="System.ApplicationId">
+  <TypeSignature Language="C#" Value="public sealed class ApplicationId" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ApplicationId extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ApplicationId" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マニフェスト ベースのアプリケーションを一意に識別するための情報が含まれています。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション id は、発行者の公開キー、アプリケーションの名前、ターゲット プロセッサ アーキテクチャ、アプリケーションのカルチャ、およびアプリケーションのバージョンで構成されます。 アプリケーション id のプロパティの値は、アプリケーション マニフェストに含まれる情報に対応します。 アプリケーション マニフェストの詳細については、次を参照してください。 [ClickOnce アプリケーション マニフェスト](http://msdn.microsoft.com/library/29570cec-4e53-4660-a850-abc4fa150243)です。  
+  
+ <xref:System.ApplicationId>によって使用される、<xref:System.Security.Policy.ApplicationSecurityInfo>マニフェスト ベースのアプリケーションを識別するクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.ApplicationId>プロパティを取得することによって、<xref:System.ApplicationId>から、<xref:System.Security.Policy.ApplicationSecurityInfo>を使用して作成されたインスタンス、<xref:System.ActivationContext>現在実行されているマニフェスト ベースのアプリケーションです。  
+  
+ [!code-csharp[System.ApplicationIdentity#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ApplicationIdentity/CS/program.cs#1)]
+ [!code-vb[System.ApplicationIdentity#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ApplicationIdentity/VB/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationId (byte[] publicKeyToken, string name, Version version, string processorArchitecture, string culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] publicKeyToken, string name, class System.Version version, string processorArchitecture, string culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ApplicationId.#ctor(System.Byte[],System.String,System.Version,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="publicKeyToken" Type="System.Byte[]" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="version" Type="System.Version" />
+        <Parameter Name="processorArchitecture" Type="System.String" />
+        <Parameter Name="culture" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="publicKeyToken">公開キー生データを表すバイトの配列。</param>
+        <param name="name">アプリケーションの名前。</param>
+        <param name="version">A<see cref="T:System.Version" />アプリケーションのバージョンを指定するオブジェクト。</param>
+        <param name="processorArchitecture">アプリケーションのプロセッサ アーキテクチャです。</param>
+        <param name="culture">アプリケーションのカルチャ。</param>
+        <summary><see cref="T:System.ApplicationId" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、 <xref:System.ApplicationId.Culture%2A>、 <xref:System.ApplicationId.Name%2A>、 <xref:System.ApplicationId.ProcessorArchitecture%2A>、 <xref:System.ApplicationId.PublicKeyToken%2A>、および<xref:System.ApplicationId.Version%2A>のプロパティ、<xref:System.ApplicationId>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="version" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="publicKeyToken" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public ApplicationId Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ApplicationId Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ApplicationId.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ApplicationId</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して、現在のアプリケーション id の完全なコピーを返します。</summary>
+        <returns><see cref="T:System.ApplicationId" />を元の同一コピーを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返される、コピーが元によって裏付けと等しい、<xref:System.ApplicationId.Equals%2A>メソッドです。 元とコピーのハッシュ コードが等しくもします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public string Culture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Culture" />
+      <MemberSignature Language="DocId" Value="P:System.ApplicationId.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのカルチャ情報を表す文字列を取得します。</summary>
+        <value>アプリケーションのカルチャ情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ApplicationId.Culture%2A>値が言語については、たとえば、"EN-US"を含めることができます。  
+  
+ カルチャ値については、次を参照してください。<xref:System.Globalization.CultureInfo>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.ApplicationId.Culture%2A>プロパティを取得することによって、<xref:System.ApplicationId>から、<xref:System.Security.Policy.ApplicationSecurityInfo>を使用して作成されたインスタンス、<xref:System.ActivationContext>現在実行されているマニフェスト ベースのアプリケーションです。  このコード例に示されている例の一部である、<xref:System.ApplicationId>クラスです。  
+  
+ [!code-csharp[System.ApplicationIdentity#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ApplicationIdentity/CS/program.cs#8)]
+ [!code-vb[System.ApplicationIdentity#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ApplicationIdentity/VB/program.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ApplicationId.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o"><see cref="T:System.ApplicationId" />現在と比較するオブジェクト<see cref="T:System.ApplicationId" />です。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.ApplicationId" />オブジェクトが現在<see cref="T:System.ApplicationId" />です。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.ApplicationId" />オブジェクトが現在<see cref="T:System.ApplicationId" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ApplicationId.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアプリケーション id のハッシュ コードを取得します。</summary>
+        <returns>現在のアプリケーション id のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドに対して同じ値を持つ 2 つのオブジェクトに対して同じハッシュ コードを生成する、<xref:System.ApplicationId.Name%2A>と<xref:System.ApplicationId.Version%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ApplicationId.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの名前を取得します。</summary>
+        <value>アプリケーションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ApplicationId.Name%2A>アプリケーションのシンプルで暗号化されていない名前です。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.ApplicationId.Name%2A>プロパティを取得することによって、<xref:System.ApplicationId>から、<xref:System.Security.Policy.ApplicationSecurityInfo>を使用して作成されたインスタンス、<xref:System.ActivationContext>現在実行されているマニフェスト ベースのアプリケーションです。 このコード例に示されている例の一部である、<xref:System.ApplicationId>クラスです。  
+  
+ [!code-csharp[System.ApplicationIdentity#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ApplicationIdentity/CS/program.cs#7)]
+ [!code-vb[System.ApplicationIdentity#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ApplicationIdentity/VB/program.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessorArchitecture">
+      <MemberSignature Language="C#" Value="public string ProcessorArchitecture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProcessorArchitecture" />
+      <MemberSignature Language="DocId" Value="P:System.ApplicationId.ProcessorArchitecture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのターゲット プロセッサ アーキテクチャを取得します。</summary>
+        <value>アプリケーションのプロセッサ アーキテクチャです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な値は"msil"、"x86"、"ia64"と"amd64"です。 既定値は"msil"、または、すべてのアセンブリは、プラットフォームに依存しないことを意味するには、Microsoft intermediate language と共通言語ランタイムはコンパイルには、アプリケーションで必要とするときにします。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.ApplicationId.ProcessorArchitecture%2A>プロパティを取得することによって、<xref:System.ApplicationId>から、<xref:System.Security.Policy.ApplicationSecurityInfo>を使用して作成されたインスタンス、<xref:System.ActivationContext>現在実行されているマニフェスト ベースのアプリケーションです。  このコード例に示されている例の一部である、<xref:System.ApplicationId>クラスです。  
+  
+ [!code-csharp[System.ApplicationIdentity#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ApplicationIdentity/CS/program.cs#9)]
+ [!code-vb[System.ApplicationIdentity#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ApplicationIdentity/VB/program.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicKeyToken">
+      <MemberSignature Language="C#" Value="public byte[] PublicKeyToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] PublicKeyToken" />
+      <MemberSignature Language="DocId" Value="P:System.ApplicationId.PublicKeyToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの公開キー トークンを取得します。</summary>
+        <value>アプリケーションの公開キー トークンを含むバイト配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 公開キー トークンは、アプリケーションが署名されている公開キーの sha-1 ハッシュの最後の 8 バイトで表されます。  
+  
+ 詳細については、「<xref:System.Reflection.AssemblyName.GetPublicKeyToken%2A?displayProperty=nameWithType>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.ApplicationId.PublicKeyToken%2A>プロパティを取得することによって、<xref:System.ApplicationId>から、<xref:System.Security.Policy.ApplicationSecurityInfo>を使用して作成されたインスタンス、<xref:System.ActivationContext>現在実行されているマニフェスト ベースのアプリケーションです。 このコード例に示されている例の一部である、<xref:System.ApplicationId>クラスです。  
+  
+ [!code-csharp[System.ApplicationIdentity#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ApplicationIdentity/CS/program.cs#11)]
+ [!code-vb[System.ApplicationIdentity#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ApplicationIdentity/VB/program.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ApplicationId.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成し、アプリケーション id の文字列表現を返します。</summary>
+        <returns>アプリケーション id の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Object.ToString%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public Version Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version Version" />
+      <MemberSignature Language="DocId" Value="P:System.ApplicationId.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションのバージョンを取得します。</summary>
+        <value>A<see cref="T:System.Version" />アプリケーションのバージョンを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Version?displayProperty=nameWithType>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.ApplicationId.Version%2A>プロパティを取得することによって、<xref:System.ApplicationId>から、<xref:System.Security.Policy.ApplicationSecurityInfo>を使用して作成されたインスタンス、<xref:System.ActivationContext>現在実行されているマニフェスト ベースのアプリケーションです。 このコード例に示されている例の一部である、<xref:System.ApplicationId>クラスです。  
+  
+ [!code-csharp[System.ApplicationIdentity#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ApplicationIdentity/CS/program.cs#10)]
+ [!code-vb[System.ApplicationIdentity#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ApplicationIdentity/VB/program.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

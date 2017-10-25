@@ -1,0 +1,1627 @@
+<Type Name="Mouse" FullName="System.Windows.Input.Mouse">
+  <TypeSignature Language="C#" Value="public static class Mouse" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Mouse extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.Mouse" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>特定のスレッドに対するマウス デバイスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Mouse>クラスには、マウスが用意されています、関連するイベント メソッドと、マウスの状態に関する情報を提供するプロパティです。  
+  
+ 各イベントを<xref:System.Windows.Input.Mouse>添付イベントも再によって公開されている要素の基本クラスとして定義<xref:System.Windows.UIElement>と<xref:System.Windows.ContentElement>として新しいルーティングされたイベント。 これは通常、アプリケーションのマウス イベントを処理する方が便利<xref:System.Windows.UIElement>と<xref:System.Windows.ContentElement>を使用するのではなく、<xref:System.Windows.Input.Mouse>イベント。 詳細については、「[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ 静的メンバー、<xref:System.Windows.Input.Mouse>プライマリ クラス デリゲート<xref:System.Windows.Input.MouseDevice>呼び出し元のスレッドの入力のマネージャーのです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddGotMouseCaptureHandler">
+      <MemberSignature Language="C#" Value="public static void AddGotMouseCaptureHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddGotMouseCaptureHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddGotMouseCaptureHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.GotMouseCapture" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLostMouseCaptureHandler">
+      <MemberSignature Language="C#" Value="public static void AddLostMouseCaptureHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddLostMouseCaptureHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddLostMouseCaptureHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.LostMouseCapture" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMouseDownHandler">
+      <MemberSignature Language="C#" Value="public static void AddMouseDownHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddMouseDownHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddMouseDownHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.MouseDown" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMouseEnterHandler">
+      <MemberSignature Language="C#" Value="public static void AddMouseEnterHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddMouseEnterHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddMouseEnterHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.MouseEnter" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMouseLeaveHandler">
+      <MemberSignature Language="C#" Value="public static void AddMouseLeaveHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddMouseLeaveHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddMouseLeaveHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.MouseLeave" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMouseMoveHandler">
+      <MemberSignature Language="C#" Value="public static void AddMouseMoveHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddMouseMoveHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddMouseMoveHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.MouseMove" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMouseUpHandler">
+      <MemberSignature Language="C#" Value="public static void AddMouseUpHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddMouseUpHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddMouseUpHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.MouseUp" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMouseWheelHandler">
+      <MemberSignature Language="C#" Value="public static void AddMouseWheelHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseWheelEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddMouseWheelHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseWheelEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddMouseWheelHandler(System.Windows.DependencyObject,System.Windows.Input.MouseWheelEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseWheelEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.MouseWheel" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewMouseDownHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewMouseDownHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewMouseDownHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddPreviewMouseDownHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.PreviewMouseDown" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewMouseDownOutsideCapturedElementHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewMouseDownOutsideCapturedElementHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewMouseDownOutsideCapturedElementHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddPreviewMouseDownOutsideCapturedElementHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.PreviewMouseDownOutsideCapturedElement" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewMouseMoveHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewMouseMoveHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewMouseMoveHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddPreviewMouseMoveHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.PreviewMouseMove" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewMouseUpHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewMouseUpHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewMouseUpHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddPreviewMouseUpHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.PreviewMouseUp" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewMouseUpOutsideCapturedElementHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewMouseUpOutsideCapturedElementHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewMouseUpOutsideCapturedElementHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddPreviewMouseUpOutsideCapturedElementHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.PreviewMouseUpOutsideCapturedElement" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewMouseWheelHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewMouseWheelHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseWheelEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewMouseWheelHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseWheelEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddPreviewMouseWheelHandler(System.Windows.DependencyObject,System.Windows.Input.MouseWheelEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseWheelEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.PreviewMouseWheel" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddQueryCursorHandler">
+      <MemberSignature Language="C#" Value="public static void AddQueryCursorHandler (System.Windows.DependencyObject element, System.Windows.Input.QueryCursorEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddQueryCursorHandler(class System.Windows.DependencyObject element, class System.Windows.Input.QueryCursorEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.AddQueryCursorHandler(System.Windows.DependencyObject,System.Windows.Input.QueryCursorEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.QueryCursorEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Input.Mouse.QueryCursor" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Capture">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定された要素に対するマウス入力をキャプチャします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素は、マウスをキャプチャ、ときに、カーソルが境界内にあるかどうかを示す、マウス入力を受け取ります。  
+  
+ 場合、<xref:System.Windows.Input.CaptureMode>が指定されていない、既定値<xref:System.Windows.Input.CaptureMode>は<xref:System.Windows.Input.CaptureMode.Element>します。  
+  
+ マウスのキャプチャを解放する呼び出し<xref:System.Windows.Input.Mouse.Capture%2A>渡す`null`をキャプチャする要素として。  
+  
+ マウスがキャプチャされる場合と、<xref:System.Windows.Input.Mouse.MouseDown>または<xref:System.Windows.Input.Mouse.MouseUp>イベントが発生し、マウスのボタンの下にある要素を入力することはしません<xref:System.Windows.Input.Mouse.PreviewMouseDownOutsideCapturedElement>と<xref:System.Windows.Input.Mouse.PreviewMouseUpOutsideCapturedElement>最初に発生します。  これにより、キャプチャした要素の前にキャプチャを解放する機会、<xref:System.Windows.Input.Mouse.MouseDown>と<xref:System.Windows.Input.Mouse.MouseUp>イベント ルーティングされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Capture">
+      <MemberSignature Language="C#" Value="public static bool Capture (System.Windows.IInputElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Capture(class System.Windows.IInputElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.Capture(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">マウスをキャプチャする要素。</param>
+        <summary>指定された要素に対するマウス入力をキャプチャします。</summary>
+        <returns>
+          要素がマウスをキャプチャできた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素は、マウスをキャプチャ、ときに、カーソルが境界内にあるかどうかを示す、マウス入力を受け取ります。  
+  
+ 場合、<xref:System.Windows.Input.CaptureMode>が指定されていない、既定値<xref:System.Windows.Input.CaptureMode>は<xref:System.Windows.Input.CaptureMode.Element>します。  
+  
+ マウスのキャプチャを解放する呼び出し<xref:System.Windows.Input.Mouse.Capture%2A>渡す`null`をキャプチャする要素として。  
+  
+ マウスがキャプチャされる場合と、<xref:System.Windows.Input.Mouse.MouseDown>または<xref:System.Windows.Input.Mouse.MouseUp>イベントが発生し、マウスのボタンの下にある要素を入力することはしません<xref:System.Windows.Input.Mouse.PreviewMouseDownOutsideCapturedElement>と<xref:System.Windows.Input.Mouse.PreviewMouseUpOutsideCapturedElement>最初に発生します。  これにより、キャプチャした要素の前にキャプチャを解放する機会、<xref:System.Windows.Input.Mouse.MouseDown>と<xref:System.Windows.Input.Mouse.MouseUp>イベント ルーティングされます。  
+  
+   
+  
+## Examples  
+ 次の例を使用して特定の要素にマウスをキャプチャする方法を示しています、<xref:System.Windows.Input.Mouse.Capture%2A>メソッドです。  
+  
+ [!code-csharp[MouseCaptureSample#MouseCapturSampleCaptureElement](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseCaptureSample/CSharp/Window1.xaml.cs#mousecaptursamplecaptureelement)]
+ [!code-vb[MouseCaptureSample#MouseCapturSampleCaptureElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseCaptureSample/visualbasic/window1.xaml.vb#mousecaptursamplecaptureelement)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Capture">
+      <MemberSignature Language="C#" Value="public static bool Capture (System.Windows.IInputElement element, System.Windows.Input.CaptureMode captureMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Capture(class System.Windows.IInputElement element, valuetype System.Windows.Input.CaptureMode captureMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.Capture(System.Windows.IInputElement,System.Windows.Input.CaptureMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.IInputElement" />
+        <Parameter Name="captureMode" Type="System.Windows.Input.CaptureMode" />
+      </Parameters>
+      <Docs>
+        <param name="element">マウスをキャプチャする要素。</param>
+        <param name="captureMode">使用するキャプチャ ポリシー。</param>
+        <summary>指定した <see cref="T:System.Windows.Input.CaptureMode" /> を使用して、指定された要素に対するマウス入力をキャプチャします。</summary>
+        <returns>
+          要素がマウスをキャプチャできた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素は、マウスをキャプチャ、ときに、境界内にカーソルがあるかどうか、マウス入力を受け取ります。  
+  
+ マウスのキャプチャを解放する呼び出し<xref:System.Windows.Input.Mouse.Capture%2A>渡す`null`をキャプチャする要素として。  
+  
+ マウスがキャプチャされる場合と、<xref:System.Windows.Input.Mouse.MouseDown>または<xref:System.Windows.Input.Mouse.MouseUp>イベントが発生し、マウスのボタンの下にある要素を入力することはしません<xref:System.Windows.Input.Mouse.PreviewMouseDownOutsideCapturedElement>と<xref:System.Windows.Input.Mouse.PreviewMouseUpOutsideCapturedElement>最初に発生します。  これにより、キャプチャした要素の前にキャプチャを解放する機会、<xref:System.Windows.Input.Mouse.MouseDown>と<xref:System.Windows.Input.Mouse.MouseUp>イベント ルーティングされます。  
+  
+   
+  
+## Examples  
+ 次の例を使用して特定の要素にマウスをキャプチャする方法を示しています、<xref:System.Windows.Input.Mouse.Capture%2A>メソッドです。  
+  
+ [!code-csharp[MouseCaptureSample#MouseCapturSampleCaptureElement](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseCaptureSample/CSharp/Window1.xaml.cs#mousecaptursamplecaptureelement)]
+ [!code-vb[MouseCaptureSample#MouseCapturSampleCaptureElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseCaptureSample/visualbasic/window1.xaml.vb#mousecaptursamplecaptureelement)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Captured">
+      <MemberSignature Language="C#" Value="public static System.Windows.IInputElement Captured { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.IInputElement Captured" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Mouse.Captured" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスをキャプチャした要素を取得します。</summary>
+        <value>マウスでキャプチャされる要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素は、マウスをキャプチャ、ときに、カーソルが境界内にあるかどうかを示す、マウス入力を受け取ります。 マウスでは、ドラッグ アンド ドロップ操作中にのみ通常このような方法にキャプチャされ、ドラッグ アンド ドロップ操作の削除アクションが発生するまでにキャプチャを保持します。  
+  
+   
+  
+## Examples  
+ 次の例では、マウスのキャプチャを持つ要素を取得する方法を示します。  
+  
+ [!code-csharp[mousecapturesample#MouseCaptureMouseCaptured](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseCaptureSample/CSharp/Window1.xaml.cs#mousecapturemousecaptured)]
+ [!code-vb[mousecapturesample#MouseCaptureMouseCaptured](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseCaptureSample/visualbasic/window1.xaml.vb#mousecapturemousecaptured)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectlyOver">
+      <MemberSignature Language="C#" Value="public static System.Windows.IInputElement DirectlyOver { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.IInputElement DirectlyOver" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Mouse.DirectlyOver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ポインターのすぐ下にある要素を取得します。</summary>
+        <value>マウス ポインターの下にある要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールは、複数の要素で構成されます。 <xref:System.Windows.Input.Mouse.DirectlyOver%2A>上にマウス ポインターが複合コントロールおよびコントロール自体ではなく特定の要素を報告します。 のどの部分に応じてなど、 <xref:System.Windows.Controls.Button> 、上にポインターが、<xref:System.Windows.Input.Mouse.DirectlyOver%2A>プロパティのレポートを<xref:System.Windows.Controls.TextBox>の<xref:System.Windows.Controls.ContentControl.Content%2A>プロパティまたは<xref:Microsoft.Windows.Themes.ButtonChrome>です。  
+  
+ 使用して、<xref:System.Windows.IInputElement.IsMouseOver%2A>プロパティ<xref:System.Windows.UIElement>と<xref:System.Windows.ContentElement>にマウスが要素、そのビジュアル子要素が含まれているかどうかを決定したり複合要素を制御したりします。  
+  
+ 要素にマウスのキャプチャがある場合は、マウス ポインターと見なされます要素のすぐ上の場所に関係なくにマウス ポインターが。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIntermediatePoints">
+      <MemberSignature Language="C#" Value="public static int GetIntermediatePoints (System.Windows.IInputElement relativeTo, System.Windows.Point[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetIntermediatePoints(class System.Windows.IInputElement relativeTo, valuetype System.Windows.Point[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.GetIntermediatePoints(System.Windows.IInputElement,System.Windows.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
+        <Parameter Name="points" Type="System.Windows.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="relativeTo">要素<c>ポイント</c>が関連しています。</param>
+        <param name="points">オブジェクトの配列。</param>
+        <summary>最後のマウス移動イベント以後のマウス ポインターの座標を最大 64 個取得します。</summary>
+        <returns>返されるポイントの数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPosition">
+      <MemberSignature Language="C#" Value="public static System.Windows.Point GetPosition (System.Windows.IInputElement relativeTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Point GetPosition(class System.Windows.IInputElement relativeTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.GetPosition(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="relativeTo">マウス位置の計算に使用する座標空間。</param>
+        <summary>指定した要素に相対的なマウスの位置を取得します。</summary>
+        <returns><paramref name="relativeTo" /> パラメーターに対して相対的なマウスの位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス ポインターの位置は、指定した要素の原点、0, 0 要素の左上隅に対して相対的に計算されます。  
+  
+ ドラッグ アンド ドロップ操作中に、マウスの位置を確実に判定できない<xref:System.Windows.Input.Mouse.GetPosition%2A>です。 これは、基になるによって制御される動作の多くで、削除が完了するまで (キャプチャを含む可能性があります)、マウスの制御は、ドラッグ元要素によって保持されるので、[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]呼び出しです。 代わりに、次の方法を試してください。  
+  
+-   呼び出す、<xref:System.Windows.DragEventArgs.GetPosition%2A>のメソッド、<xref:System.Windows.DragEventArgs>ドラッグ イベントに渡される (<xref:System.Windows.ContentElement.DragEnter>、 <xref:System.Windows.ContentElement.DragOver>、 <xref:System.Windows.ContentElement.DragLeave>)。  
+  
+-   呼び出す[GetCursorPos](http://msdn.microsoft.com/library/default.asp?url=/library/winui/winui/windowsuserinterface/resources/cursors/cursorreference/cursorfunctions/getcursorpos.asp)P/invoke を使用します。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Input.Mouse.GetPosition%2A>マウス ポインターの位置を決定します。  マウス ポインターの位置が格納されている、<xref:System.Windows.Point>構造体。  <xref:System.Windows.Point.X%2A>と<xref:System.Windows.Point.Y%2A>の値、<xref:System.Windows.Point>でオブジェクトを表示、<xref:System.Windows.Controls.TextBox>です。  
+  
+ [!code-csharp[MouseRelatedSnippets#MouseRelatedSnippetsPositionMouse](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseRelatedSnippets/CSharp/Window1.xaml.cs#mouserelatedsnippetspositionmouse)]
+ [!code-vb[MouseRelatedSnippets#MouseRelatedSnippetsPositionMouse](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseRelatedSnippets/visualbasic/window1.xaml.vb#mouserelatedsnippetspositionmouse)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GotMouseCaptureEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent GotMouseCaptureEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent GotMouseCaptureEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.GotMouseCaptureEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.GotMouseCapture" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LeftButton">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.MouseButtonState LeftButton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Input.MouseButtonState LeftButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Mouse.LeftButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの左ボタンの状態を取得します。</summary>
+        <value>マウスの左ボタンの状態。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例があることを確認して、マウスの左ボタンが押されたかどうかを確認する方法を示していますの状態、<xref:System.Windows.Input.Mouse.LeftButton%2A>と等しい、<xref:System.Windows.Input.MouseButtonState>列挙値<xref:System.Windows.Input.MouseButtonState.Pressed>です。  ボタンが押されると、更新プログラムのサンプルでの要素を表示するメソッドが呼び出されます。  
+  
+ [!code-csharp[MouseRelatedSnippets#MouseRelatedSnippetsGetLeftButtonMouse](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseRelatedSnippets/CSharp/Window1.xaml.cs#mouserelatedsnippetsgetleftbuttonmouse)]
+ [!code-vb[MouseRelatedSnippets#MouseRelatedSnippetsGetLeftButtonMouse](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseRelatedSnippets/visualbasic/window1.xaml.vb#mouserelatedsnippetsgetleftbuttonmouse)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LostMouseCaptureEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent LostMouseCaptureEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent LostMouseCaptureEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.LostMouseCaptureEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.LostMouseCapture" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MiddleButton">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.MouseButtonState MiddleButton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Input.MouseButtonState MiddleButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Mouse.MiddleButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの中央ボタンの状態を取得します。</summary>
+        <value>マウスの中央ボタンの状態。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例があることを確認して、マウスの中央ボタンが押されたかどうかを確認する方法を示していますの状態、<xref:System.Windows.Input.Mouse.MiddleButton%2A>と等しい、<xref:System.Windows.Input.MouseButtonState>列挙値<xref:System.Windows.Input.MouseButtonState.Pressed>です。  ボタンが押されると、更新プログラムのサンプルでの要素を表示するメソッドが呼び出されます。  
+  
+ [!code-csharp[MouseRelatedSnippets#MouseRelatedSnippetsGetMiddleButtonMouse](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseRelatedSnippets/CSharp/Window1.xaml.cs#mouserelatedsnippetsgetmiddlebuttonmouse)]
+ [!code-vb[MouseRelatedSnippets#MouseRelatedSnippetsGetMiddleButtonMouse](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseRelatedSnippets/visualbasic/window1.xaml.vb#mouserelatedsnippetsgetmiddlebuttonmouse)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDownEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent MouseDownEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent MouseDownEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.MouseDownEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.MouseDown" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseEnterEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent MouseEnterEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent MouseEnterEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.MouseEnterEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.MouseEnter" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseLeaveEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent MouseLeaveEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent MouseLeaveEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.MouseLeaveEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.MouseLeave" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseMoveEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent MouseMoveEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent MouseMoveEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.MouseMoveEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.MouseMove" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseUpEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent MouseUpEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent MouseUpEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.MouseUpEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.MouseUp" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseWheelDeltaForOneLine">
+      <MemberSignature Language="C#" Value="public const int MouseWheelDeltaForOneLine = 120;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 MouseWheelDeltaForOneLine = (120)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.MouseWheelDeltaForOneLine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>120</MemberValue>
+      <Docs>
+        <summary>1 行スクロールするためにマウス ホイールが回転する単位数を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]、このフィールドの値は 120 です。 フィールドが公開の意図は、おそらくノッチなし自由に回転を表すホイールが含まれる高解像度マウス ホイール、将来のビルドに対応するベンダーのようにすることです。 このようなデバイスが各メッセージに、回転あたりより小さい値を持つ複数のメッセージを送信は予想されます。 この可能性をサポートするために、まで、受信する差分値を追加する必要がありますか、 <xref:System.Windows.Input.Mouse.MouseWheelDeltaForOneLine> (デルタ回転には、同じ応答を取得する) ように量に達すると、またはより頻繁にメッセージに応答の一部の行をスクロールします。 スクロールの単位を選択し、そのデルタに達すると、おそらくマウスの感度のユーザーが制御できるシステム パラメーターの参照やマウス ホイールのデルタのしきい値を推測するまでは、独自のデルタを蓄積する可能性がありますもします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseWheelEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent MouseWheelEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent MouseWheelEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.MouseWheelEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.MouseWheel" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverrideCursor">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.Cursor OverrideCursor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.Cursor OverrideCursor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Mouse.OverrideCursor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション全体のカーソルを取得または設定します。</summary>
+        <value>オーバーライドされたカーソル。<see cref="P:System.Windows.Input.Mouse.OverrideCursor" /> が設定されていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Cursor>を<xref:System.Windows.Input.Mouse.OverrideCursor%2A>がセットには、アプリケーション全体に適用されます。  
+  
+ オーバーライドをオフに<xref:System.Windows.Input.Cursor>設定、<xref:System.Windows.Input.Mouse.OverrideCursor%2A>に`null`です。  
+  
+ 設定<xref:System.Windows.Input.Mouse.OverrideCursor%2A>に<xref:System.Windows.Input.Cursors.None%2A>が強制的に表示されますが、マウス カーソルが、マウス イベントは処理されます。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.Controls.RadioButton>1 つの要素と全体のアプリケーション間でカーソルの変更のスコープを切り替えるために使用されます。  イベントを発生させたコントロールがある場合、 `rbScopeElement` <xref:System.Windows.Controls.RadioButton>、カーソルの変更のスコープを示すフラグが設定されてと<xref:System.Windows.Input.Mouse.OverrideCursor%2A>に設定されている`null`です。  イベントを発生させたコントロールがある場合、 `rbScopeApplication` <xref:System.Windows.Controls.RadioButton>、カーソルの変更のスコープを示すフラグが設定されてと<xref:System.Windows.Input.Mouse.OverrideCursor%2A>に設定されている、<xref:System.Windows.FrameworkElement.Cursor%2A>のプロパティ、<xref:System.Windows.Controls.Border>という名前のコントロール`DisplayArea`です。  
+  
+ [!code-csharp[cursors#CursorsSampleOverrideCursor](~/samples/snippets/csharp/VS_Snippets_Wpf/cursors/CSharp/Window1.xaml.cs#cursorssampleoverridecursor)]
+ [!code-vb[cursors#CursorsSampleOverrideCursor](~/samples/snippets/visualbasic/VS_Snippets_Wpf/cursors/VisualBasic/Window1.xaml.vb#cursorssampleoverridecursor)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseDownEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewMouseDownEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewMouseDownEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.PreviewMouseDownEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.PreviewMouseDown" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseDownOutsideCapturedElementEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewMouseDownOutsideCapturedElementEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewMouseDownOutsideCapturedElementEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.PreviewMouseDownOutsideCapturedElementEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.PreviewMouseDownOutsideCapturedElement" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseMoveEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewMouseMoveEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewMouseMoveEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.PreviewMouseMoveEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.PreviewMouseMove" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseUpEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewMouseUpEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewMouseUpEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.PreviewMouseUpEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.PreviewMouseUp" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseUpOutsideCapturedElementEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewMouseUpOutsideCapturedElementEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewMouseUpOutsideCapturedElementEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.PreviewMouseUpOutsideCapturedElementEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.PreviewMouseUpOutsideCapturedElement" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewMouseWheelEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewMouseWheelEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewMouseWheelEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.PreviewMouseWheelEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.PreviewMouseWheel" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryDevice">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.MouseDevice PrimaryDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.MouseDevice PrimaryDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Mouse.PrimaryDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseDevice</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライマリ マウス デバイスを取得します。</summary>
+        <value>デバイス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、Windows Presentation Foundation インフラストラクチャをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryCursorEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent QueryCursorEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent QueryCursorEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.Mouse.QueryCursorEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.Mouse.QueryCursor" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティング イベントの識別子は、ルーティングされたイベントが登録され、ルーティングされたイベントを登録するクラスのフィールドと、結果が格納されているときに作成されます。 これらの識別子には、識別名、所有者型、ハンドラーの型、ルーティング方法、およびイベントの所有者を追加するためのユーティリティ メソッドが含まれます。 多くの場合、特定のルーティング イベントを識別するのにイベント システム メソッドへのパラメーターとしてこれらの識別子を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveGotMouseCaptureHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveGotMouseCaptureHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveGotMouseCaptureHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemoveGotMouseCaptureHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.GotMouseCapture" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveLostMouseCaptureHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveLostMouseCaptureHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveLostMouseCaptureHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemoveLostMouseCaptureHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.LostMouseCapture" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveMouseDownHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveMouseDownHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveMouseDownHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemoveMouseDownHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.MouseDown" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveMouseEnterHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveMouseEnterHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveMouseEnterHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemoveMouseEnterHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.MouseEnter" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveMouseLeaveHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveMouseLeaveHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveMouseLeaveHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemoveMouseLeaveHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.MouseLeave" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveMouseMoveHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveMouseMoveHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveMouseMoveHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemoveMouseMoveHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.MouseMove" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveMouseUpHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveMouseUpHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveMouseUpHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemoveMouseUpHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.MouseUp" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveMouseWheelHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveMouseWheelHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseWheelEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveMouseWheelHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseWheelEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemoveMouseWheelHandler(System.Windows.DependencyObject,System.Windows.Input.MouseWheelEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseWheelEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.MouseWheel" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewMouseDownHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewMouseDownHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewMouseDownHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemovePreviewMouseDownHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.PreviewMouseDown" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewMouseDownOutsideCapturedElementHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewMouseDownOutsideCapturedElementHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewMouseDownOutsideCapturedElementHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemovePreviewMouseDownOutsideCapturedElementHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.PreviewMouseDownOutsideCapturedElement" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewMouseMoveHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewMouseMoveHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewMouseMoveHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemovePreviewMouseMoveHandler(System.Windows.DependencyObject,System.Windows.Input.MouseEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.PreviewMouseMove" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewMouseUpHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewMouseUpHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewMouseUpHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemovePreviewMouseUpHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.PreviewMouseUp" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewMouseUpOutsideCapturedElementHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewMouseUpOutsideCapturedElementHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseButtonEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewMouseUpOutsideCapturedElementHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseButtonEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemovePreviewMouseUpOutsideCapturedElementHandler(System.Windows.DependencyObject,System.Windows.Input.MouseButtonEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseButtonEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.PreviewMouseUpOutsideCapturedElement" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewMouseWheelHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewMouseWheelHandler (System.Windows.DependencyObject element, System.Windows.Input.MouseWheelEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewMouseWheelHandler(class System.Windows.DependencyObject element, class System.Windows.Input.MouseWheelEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemovePreviewMouseWheelHandler(System.Windows.DependencyObject,System.Windows.Input.MouseWheelEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.MouseWheelEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.PreviewMouseWheel" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveQueryCursorHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveQueryCursorHandler (System.Windows.DependencyObject element, System.Windows.Input.QueryCursorEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveQueryCursorHandler(class System.Windows.DependencyObject element, class System.Windows.Input.QueryCursorEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.RemoveQueryCursorHandler(System.Windows.DependencyObject,System.Windows.Input.QueryCursorEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Input.QueryCursorEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">イベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Input.Mouse.QueryCursor" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightButton">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.MouseButtonState RightButton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Input.MouseButtonState RightButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Mouse.RightButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの右ボタンの状態を取得します。</summary>
+        <value>マウスの右ボタンの状態。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例があることを確認して、マウスの右ボタンが押されたかどうかを確認する方法を示していますの状態、<xref:System.Windows.Input.Mouse.RightButton%2A>と等しい、<xref:System.Windows.Input.MouseButtonState>列挙値<xref:System.Windows.Input.MouseButtonState.Pressed>です。  ボタンが押されると、更新プログラムのサンプルでの要素を表示するメソッドが呼び出されます。  
+  
+ [!code-csharp[MouseRelatedSnippets#MouseRelatedSnippetsGetRightButtonMouse](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseRelatedSnippets/CSharp/Window1.xaml.cs#mouserelatedsnippetsgetrightbuttonmouse)]
+ [!code-vb[MouseRelatedSnippets#MouseRelatedSnippetsGetRightButtonMouse](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseRelatedSnippets/visualbasic/window1.xaml.vb#mouserelatedsnippetsgetrightbuttonmouse)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCursor">
+      <MemberSignature Language="C#" Value="public static bool SetCursor (System.Windows.Input.Cursor cursor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SetCursor(class System.Windows.Input.Cursor cursor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.SetCursor(System.Windows.Input.Cursor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cursor" Type="System.Windows.Input.Cursor" />
+      </Parameters>
+      <Docs>
+        <param name="cursor">マウス ポインターの設定先のカーソル。</param>
+        <summary>指定した <see cref="T:System.Windows.Input.Cursor" /> にマウス ポインターを設定します。</summary>
+        <returns>
+          カーソルが設定された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の要素に設定されているカーソルは適用されませんではなく、アプリケーション全体に適用されます。  したがって、マウス ポインターがカーソルを設定するオブジェクトの上にカーソルを設定した後に、カーソルは一度変更します。  
+  
+ 特定にマウス ポインターを強制的に<xref:System.Windows.Input.Cursor>と強制的に実行する<xref:System.Windows.Input.Cursor>、すべての要素で設定、<xref:System.Windows.Input.Mouse.OverrideCursor%2A>プロパティです。  
+  
+ 特定の要素にカーソルを設定するには、使用、<xref:System.Windows.FrameworkElement.Cursor%2A>いずれかのプロパティ<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>です。  基本要素の詳細については、次を参照してください。、[基本要素の概要](~/docs/framework/wpf/advanced/base-elements-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronize">
+      <MemberSignature Language="C#" Value="public static void Synchronize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Synchronize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.Synchronize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マウスを強制的に再同期します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateCursor">
+      <MemberSignature Language="C#" Value="public static void UpdateCursor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UpdateCursor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Mouse.UpdateCursor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マウス カーソルを強制的に更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XButton1">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.MouseButtonState XButton1 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Input.MouseButtonState XButton1" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Mouse.XButton1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの第 1 拡張ボタンの状態を取得します。</summary>
+        <value>マウスの第 1 拡張ボタンの状態。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、いることを確認して、最初の拡張のマウス ボタンが押されたかどうかを確認する方法を示しています。 の状態<xref:System.Windows.Input.Mouse.XButton1%2A>がと等しい、<xref:System.Windows.Input.MouseButtonState>列挙値<xref:System.Windows.Input.MouseButtonState.Pressed>です。  ボタンが押されると、更新プログラムのサンプルでの要素を表示するメソッドが呼び出されます。  
+  
+ [!code-csharp[MouseRelatedSnippets#MouseRelatedSnippetsGetX1ButtonMouse](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseRelatedSnippets/CSharp/Window1.xaml.cs#mouserelatedsnippetsgetx1buttonmouse)]
+ [!code-vb[MouseRelatedSnippets#MouseRelatedSnippetsGetX1ButtonMouse](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseRelatedSnippets/visualbasic/window1.xaml.vb#mouserelatedsnippetsgetx1buttonmouse)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XButton2">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.MouseButtonState XButton2 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Input.MouseButtonState XButton2" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Mouse.XButton2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseButtonState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの第 2 拡張ボタンの状態を取得します。</summary>
+        <value>マウスの第 2 拡張ボタンの状態。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例があることを確認して 2 番目の拡張のマウス ボタンが押されたかどうかを確認する方法を示していますの状態<xref:System.Windows.Input.Mouse.XButton2%2A>と等しい、<xref:System.Windows.Input.MouseButtonState>列挙値<xref:System.Windows.Input.MouseButtonState.Pressed>です。  ボタンが押されると、更新プログラムのサンプルでの要素を表示するメソッドが呼び出されます。  
+  
+ [!code-csharp[MouseRelatedSnippets#MouseRelatedSnippetsGetX2ButtonMouse](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseRelatedSnippets/CSharp/Window1.xaml.cs#mouserelatedsnippetsgetx2buttonmouse)]
+ [!code-vb[MouseRelatedSnippets#MouseRelatedSnippetsGetX2ButtonMouse](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseRelatedSnippets/visualbasic/window1.xaml.vb#mouserelatedsnippetsgetx2buttonmouse)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

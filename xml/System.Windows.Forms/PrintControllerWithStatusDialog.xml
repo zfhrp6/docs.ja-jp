@@ -1,0 +1,244 @@
+<Type Name="PrintControllerWithStatusDialog" FullName="System.Windows.Forms.PrintControllerWithStatusDialog">
+  <TypeSignature Language="C#" Value="public class PrintControllerWithStatusDialog : System.Drawing.Printing.PrintController" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrintControllerWithStatusDialog extends System.Drawing.Printing.PrintController" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.PrintControllerWithStatusDialog" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Printing.PrintController</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows フォーム アプリケーションからドキュメントを印刷する方法を制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、実装、<xref:System.Drawing.Printing.PrintController>し、[状態] ダイアログ ボックスを追加します。 プリント コント ローラーを指定する方法、<xref:System.Drawing.Printing.PrintDocument>印刷します。  
+  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Windows.Forms.PrintControllerWithStatusDialog.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+ Windows フォームで印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。 Windows Presentation Foundation アプリケーションから印刷する場合は、「、<xref:System.Printing>名前空間。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示しています。<xref:System.Drawing.Printing.PrintController>に割り当てると、<xref:System.Drawing.Printing.PrintController>プロパティです。 この例では追加されていること、<xref:System.Drawing.Printing>名前空間、クラスには、新しいインスタンスを作成した、<xref:System.Drawing.Printing.PrintDocument>として`myDocumentPrinter`です。  
+  
+ [!code-cpp[Classic PrintControllerWithStatusDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic PrintControllerWithStatusDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic PrintControllerWithStatusDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic PrintControllerWithStatusDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic PrintControllerWithStatusDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic PrintControllerWithStatusDialog Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintControllerWithStatusDialog (System.Drawing.Printing.PrintController underlyingController);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Printing.PrintController underlyingController) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintControllerWithStatusDialog.#ctor(System.Drawing.Printing.PrintController)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="underlyingController" Type="System.Drawing.Printing.PrintController" />
+      </Parameters>
+      <Docs>
+        <param name="underlyingController">A<see cref="T:System.Drawing.Printing.PrintController" />をカプセル化します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.PrintControllerWithStatusDialog" />クラス、指定されたラッピング<see cref="T:System.Drawing.Printing.PrintController" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintControllerWithStatusDialog (System.Drawing.Printing.PrintController underlyingController, string dialogTitle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Printing.PrintController underlyingController, string dialogTitle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintControllerWithStatusDialog.#ctor(System.Drawing.Printing.PrintController,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="underlyingController" Type="System.Drawing.Printing.PrintController" />
+        <Parameter Name="dialogTitle" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="underlyingController">A<see cref="T:System.Drawing.Printing.PrintController" />をカプセル化します。</param>
+        <param name="dialogTitle">A<see cref="T:System.String" />ステータス ダイアログ ボックスのタイトルを格納します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.PrintControllerWithStatusDialog" />クラス、指定されたラッピング<see cref="T:System.Drawing.Printing.PrintController" /> ダイアログ ボックスのタイトルを指定するとします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPreview">
+      <MemberSignature Language="C#" Value="public override bool IsPreview { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPreview" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PrintControllerWithStatusDialog.IsPreview" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これを示す値を取得<see cref="T:System.Windows.Forms.PrintControllerWithStatusDialog" />印刷プレビューのために使用します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.PrintControllerWithStatusDialog" />それ以外の場合、印刷プレビューの使用は<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog.IsPreview%2A>チェック、<xref:System.Drawing.Printing.PrintController.IsPreview%2A>基になるコント ローラーのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndPage">
+      <MemberSignature Language="C#" Value="public override void OnEndPage (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintPageEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnEndPage(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintPageEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintPageEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />現在印刷中のドキュメントを表すです。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Drawing.Printing.PrintPageEventArgs" />。</param>
+        <summary>ドキュメントのページを印刷するタイミングと方法を決定する制御シーケンスを完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog>クラスの呼び出し、<xref:System.Drawing.Printing.PrintController.OnEndPage%2A?displayProperty=nameWithType>メソッドをカプセル化された<xref:System.Drawing.Printing.PrintController>です。  
+  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPage%2A>直後後にメソッドが呼び出される、<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。 内部例外がスローされた場合、<xref:System.Drawing.Printing.PrintDocument.PrintPage>のイベント、 <xref:System.Drawing.Printing.PrintDocument>、<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPage%2A>は呼び出されません。  
+  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>メソッドを作成、<xref:System.Drawing.Graphics>プリンターに送信されるオブジェクト。 後に<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>が呼び出される、<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPage%2A>メソッドのセット、 <xref:System.Drawing.Graphics> 1 つのページの図を作成するオブジェクト。 (使用<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPage%2A>ドキュメント内のページを印刷する方法を設定します。 たとえば、ページごとに個別にページの設定を調整できます)。<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPage%2A>をクリア、<xref:System.Drawing.Graphics>オブジェクト中、<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndPrint">
+      <MemberSignature Language="C#" Value="public override void OnEndPrint (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnEndPrint(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPrint(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />現在印刷中のドキュメントを表すです。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Drawing.Printing.PrintPageEventArgs" />。</param>
+        <summary>ドキュメントを印刷するタイミングと方法を決定する制御シーケンスを完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog>クラスの呼び出し、<xref:System.Drawing.Printing.PrintController.OnEndPrint%2A?displayProperty=nameWithType>メソッドをカプセル化された<xref:System.Drawing.Printing.PrintController>です。  
+  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPrint%2A>直後後にメソッドが呼び出される、<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.EndPrint>イベント。  
+  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>メソッドを作成、<xref:System.Drawing.Graphics>プリンターに送信されるオブジェクト。 後に<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>が呼び出される、<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPage%2A>メソッドのセット、 <xref:System.Drawing.Graphics> 1 つのページの図を作成するオブジェクト。 (使用<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>場合およびドキュメントを印刷する方法を決定します。 たとえば、印刷を 30 分の遅延したり、ドキュメントのプリンター設定を調整できます。)<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>オブジェクト、中に<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPrint%2A>オブジェクトの割り当てを解除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStartPage">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Graphics OnStartPage (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintPageEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Drawing.Graphics OnStartPage(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintPageEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPage(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintPageEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Graphics</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintPageEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />現在印刷中のドキュメントを表すです。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Drawing.Printing.PrintPageEventArgs" />。</param>
+        <summary>ドキュメントのページを印刷するタイミングと方法を決定する制御シーケンスを開始します。</summary>
+        <returns>A<see cref="T:System.Drawing.Graphics" />からページを表すオブジェクト、<see cref="T:System.Drawing.Printing.PrintDocument" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog>クラスの呼び出し、<xref:System.Drawing.Printing.PrintController.OnStartPage%2A?displayProperty=nameWithType>メソッドをカプセル化された<xref:System.Drawing.Printing.PrintController>です。  
+  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPage%2A>メソッドは、直前に呼び出されますが、<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.PrintPage>イベント。  
+  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>メソッドを作成、<xref:System.Drawing.Graphics>プリンターに送信されるオブジェクト。 後に<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>が呼び出されると、<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPage%2A>設定、 <xref:System.Drawing.Graphics> 1 つのページの図を作成するオブジェクト。 <xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>オブジェクト中、<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+ 使用して<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPage%2A>ドキュメント内のページを印刷する方法を設定します。 たとえば、ページごとに個別にページの設定を調整できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStartPrint">
+      <MemberSignature Language="C#" Value="public override void OnStartPrint (System.Drawing.Printing.PrintDocument document, System.Drawing.Printing.PrintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnStartPrint(class System.Drawing.Printing.PrintDocument document, class System.Drawing.Printing.PrintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint(System.Drawing.Printing.PrintDocument,System.Drawing.Printing.PrintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Drawing.Printing.PrintDocument" />
+        <Parameter Name="e" Type="System.Drawing.Printing.PrintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="document">A<see cref="T:System.Drawing.Printing.PrintDocument" />現在印刷中のドキュメントを表すです。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Drawing.Printing.PrintEventArgs" />。</param>
+        <summary>ドキュメントを印刷するタイミングと方法を決定する制御シーケンスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog>クラスの呼び出し、<xref:System.Drawing.Printing.PrintController.OnStartPrint%2A?displayProperty=nameWithType>メソッドをカプセル化された<xref:System.Drawing.Printing.PrintController>です。  
+  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>直後後にメソッドが呼び出される、<xref:System.Drawing.Printing.PrintDocument>を生成、<xref:System.Drawing.Printing.PrintDocument.BeginPrint>イベント。  
+  
+ 使用して<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>場合およびドキュメントを印刷する方法を決定します。 たとえば、印刷を 30 分の遅延またはドキュメントのプリンター設定を調整できます。 <xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>作成、<xref:System.Drawing.Graphics>プリンターに送信されるオブジェクト。 後に<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>が呼び出される、<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPage%2A>メソッドのセット、 <xref:System.Drawing.Graphics> 1 つのページの図を作成するオブジェクト。 <xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPage%2A>メソッドをクリア、<xref:System.Drawing.Graphics>オブジェクト中、<xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnEndPrint%2A>メソッド、オブジェクトの割り当てを解除します。  
+  
+ <xref:System.Windows.Forms.PrintControllerWithStatusDialog.OnStartPrint%2A>確認することをお勧め<xref:System.Drawing.Printing.PrinterSettings>は無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

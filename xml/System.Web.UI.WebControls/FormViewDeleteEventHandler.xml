@@ -1,0 +1,47 @@
+<Type Name="FormViewDeleteEventHandler" FullName="System.Web.UI.WebControls.FormViewDeleteEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void FormViewDeleteEventHandler(object sender, FormViewDeleteEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FormViewDeleteEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FormViewDeleteEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.FormViewDeleteEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.FormViewDeleteEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.FormView.ItemDeleting" />のイベント、<see cref="T:System.Web.UI.WebControls.FormView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormView>昇給を制御、<xref:System.Web.UI.WebControls.FormView.ItemDeleting>イベントと削除 ボタン (ボタンがその`CommandName`プロパティが"Delete"に設定) コントロール内でクリックすると、その前に、<xref:System.Web.UI.WebControls.FormView>コントロールには、レコードが削除されます。 これにより、このイベントが発生するたびに、削除する前にレコードを検査するなど、カスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+ <xref:System.Web.UI.WebControls.FormViewDeleteEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムで追加する方法を示します、<xref:System.Web.UI.WebControls.FormViewDeleteEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.FormView.ItemDeleting>のイベント、<xref:System.Web.UI.WebControls.FormView>コントロール。  
+  
+ [!code-aspx-csharp[FormViewDeleteEventHandler2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewDeleteEventHandler2/CS/formviewdeleteeventhandlercs.aspx#1)]
+ [!code-aspx-vb[FormViewDeleteEventHandler2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewDeleteEventHandler2/VB/formviewdeleteeventhandlervb.aspx#1)]  
+  
+ 次の例は、宣言によって追加する方法を示します、<xref:System.Web.UI.WebControls.FormViewDeleteEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.FormView.ItemDeleting>のイベント、<xref:System.Web.UI.WebControls.FormView>コントロール。  
+  
+ [!code-aspx-csharp[FormViewDeleteEventHandlerDeclarative2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewDeleteEventHandlerDeclarative2/CS/formviewdeleteeventhandlerdeclarativecs.aspx#1)]
+ [!code-aspx-vb[FormViewDeleteEventHandlerDeclarative2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewDeleteEventHandlerDeclarative2/VB/formviewdeleteeventhandlerdeclarativevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

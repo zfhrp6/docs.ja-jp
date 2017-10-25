@@ -1,0 +1,87 @@
+<Type Name="ActivityTrackPointCollection" FullName="System.Workflow.Runtime.Tracking.ActivityTrackPointCollection">
+  <TypeSignature Language="C#" Value="public class ActivityTrackPointCollection : System.Collections.Generic.List&lt;System.Workflow.Runtime.Tracking.ActivityTrackPoint&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ActivityTrackPointCollection extends System.Collections.Generic.List`1&lt;class System.Workflow.Runtime.Tracking.ActivityTrackPoint&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.ActivityTrackPointCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Generic.List&lt;System.Workflow.Runtime.Tracking.ActivityTrackPoint&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Workflow.Runtime.Tracking.ActivityTrackPoint</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackPoint" /> オブジェクトのコレクションを含んでいます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPointCollection> は、照合する <xref:System.Workflow.Runtime.Tracking.TrackingProfile> オブジェクトのリストを保持するために <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> で使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackPointCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackPointCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackPointCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、<xref:System.Workflow.Runtime.Tracking.ActivityTrackPointCollection> を空のリストに初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackPointCollection (System.Collections.Generic.IEnumerable&lt;System.Workflow.Runtime.Tracking.ActivityTrackPoint&gt; points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Workflow.Runtime.Tracking.ActivityTrackPoint&gt; points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackPointCollection.#ctor(System.Collections.Generic.IEnumerable{System.Workflow.Runtime.Tracking.ActivityTrackPoint})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="points" Type="System.Collections.Generic.IEnumerable&lt;System.Workflow.Runtime.Tracking.ActivityTrackPoint&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="points"><see cref="T:System.Collections.Generic.IEnumerable`1" /> オブジェクトの <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackPoint" /> リスト。</param>
+        <summary>アクティビティ追跡ポイントのリストを使用して、<see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackPointCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPointCollection> は、<xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> で指定された `points` オブジェクトを含むように初期化されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="points" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

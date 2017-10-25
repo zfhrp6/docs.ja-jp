@@ -1,0 +1,145 @@
+<Type Name="ISoapMessage" FullName="System.Runtime.Serialization.Formatters.ISoapMessage">
+  <TypeSignature Language="C#" Value="public interface ISoapMessage" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISoapMessage" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.Formatters.ISoapMessage" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>名前と、SOAP、RPC (リモート プロシージャ コール) のシリアル化中に必要なパラメーターの型を格納しているオブジェクトのインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスをサポートするオブジェクトにシリアル化グラフのルートがある場合は、RPC 形式で SOAP が生成されます。 <xref:System.Runtime.Serialization.Formatters.ISoapMessage>インターフェイスにはメソッドの呼び出しの逆シリアル化中に使用されるメソッドの呼び出しのパラメーター型が含まれています。  
+  
+ 基づく SOAP RPC 呼び出しをサポートするために、<xref:System.Runtime.Serialization.Formatters.ISoapMessage>インターフェイスし、使用しない、<xref:System.Runtime.Remoting.Messaging.IRemotingFormatter>機能、設定、<xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter.TopObject%2A?displayProperty=nameWithType>をこのインターフェイスをサポートしているオブジェクトのプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Messaging.Header[] Headers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Messaging.Header[] Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.ISoapMessage.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.Header[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメソッド呼び出しの帯域外のデータを設定します。</summary>
+        <value>メソッド呼び出しの帯域外のデータ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodName">
+      <MemberSignature Language="C#" Value="public string MethodName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MethodName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.ISoapMessage.MethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または呼び出されたメソッドの名前を設定します。</summary>
+        <value>呼び出されたメソッドの名前です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParamNames">
+      <MemberSignature Language="C#" Value="public string[] ParamNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] ParamNames" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.ISoapMessage.ParamNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメソッドの呼び出しのパラメーターの名前を設定します。</summary>
+        <value>メソッドの呼び出しのパラメーターの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParamTypes">
+      <MemberSignature Language="C#" Value="public Type[] ParamTypes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] ParamTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.ISoapMessage.ParamTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメソッドの呼び出しのパラメーターの型を設定します。</summary>
+        <value>メソッドの呼び出しのパラメーターの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParamValues">
+      <MemberSignature Language="C#" Value="public object[] ParamValues { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object[] ParamValues" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.ISoapMessage.ParamValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメソッドの呼び出しのパラメーター値を設定します。</summary>
+        <value>メソッドの呼び出しのパラメーター値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlNameSpace">
+      <MemberSignature Language="C#" Value="public string XmlNameSpace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlNameSpace" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.ISoapMessage.XmlNameSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、SOAP、RPC (リモート プロシージャ コール) の XML 名前空間<see cref="P:System.Runtime.Serialization.Formatters.ISoapMessage.MethodName" />要素。</summary>
+        <value>呼び出されたメソッドを格納しているオブジェクトが配置されている XML 名前空間の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

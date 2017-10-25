@@ -1,0 +1,176 @@
+<Type Name="SelectionItemPatternIdentifiers" FullName="System.Windows.Automation.SelectionItemPatternIdentifiers">
+  <TypeSignature Language="C#" Value="public static class SelectionItemPatternIdentifiers" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SelectionItemPatternIdentifiers extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.SelectionItemPatternIdentifiers" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationTypes</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Automation.Provider.ISelectionItemProvider" /> で識別子として使用される値を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらの識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションでの同等のフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPattern>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ElementAddedToSelectionEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationEvent ElementAddedToSelectionEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationEvent ElementAddedToSelectionEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択された項目のコレクションに項目が追加されたときに発生するイベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の結果、<xref:System.Windows.Automation.Provider.ISelectionItemProvider.AddToSelection%2A>呼び出しは単一の選択項目、<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>代わりに発生する必要があります。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPattern>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementRemovedFromSelectionEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationEvent ElementRemovedFromSelectionEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationEvent ElementRemovedFromSelectionEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択した項目のコレクションから項目が削除されたときに発生するイベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の結果、<xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A>呼び出しは単一の選択項目、<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>が代わりに発生します。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPattern>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementSelectedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationEvent ElementSelectedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationEvent ElementSelectedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>単一の項目が選択される (このため、以前に選択したすべての項目が選択解除される) ときに発生するイベントを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合のいずれかの結果、<xref:System.Windows.Automation.Provider.ISelectionItemProvider.AddToSelection%2A>または<xref:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection%2A>呼び出しは 1 つ以上の選択項目、<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>または<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>イベントが発生します。  
+  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPattern>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelectedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty IsSelectedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty IsSelectedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPatternIdentifiers.IsSelectedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.Provider.ISelectionItemProvider.IsSelected" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPattern>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPatternIdentifiers.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.SelectionItemPattern" /> パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPattern>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionContainerProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty SelectionContainerProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty SelectionContainerProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.SelectionItemPatternIdentifiers.SelectionContainerProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationTypes</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.SelectionItemPattern.SelectionItemPatternInformation.SelectionContainer" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション プロバイダーによって使用されます。 UI オートメーション クライアント アプリケーションが同等のフィールドを使用する必要があります<xref:System.Windows.Automation.SelectionItemPattern>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

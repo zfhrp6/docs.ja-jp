@@ -1,0 +1,48 @@
+<Type Name="HttpContinueDelegate" FullName="System.Net.HttpContinueDelegate">
+  <TypeSignature Language="C#" Value="public delegate void HttpContinueDelegate(int StatusCode, WebHeaderCollection httpHeaders);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpContinueDelegate extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Net.HttpContinueDelegate" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="StatusCode" Type="System.Int32" />
+    <Parameter Name="httpHeaders" Type="System.Net.WebHeaderCollection" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="StatusCode">サーバーから HTTP 状態の数値。</param>
+    <param name="httpHeaders">100 と共に返されるヘッダーのサーバーからの応答を続行します。</param>
+    <summary>Continue 応答がクライアントから受信したときに呼び出し元に通知するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Net.HttpContinueDelegate>HTTP 100-continue ときに呼び出されるコールバック メソッドを指定する-サーバーから応答が受信を続行します。 デリゲートが呼び出されると、セットするたびに最初のプロトコルの型の応答<xref:System.Net.HttpStatusCode?displayProperty=nameWithType>を受信します。 これは、version 1.1 の動作から変更フレームワークです。  
+  
+ イベント ハンドラーが同じパラメーターを宣言する必要があります、<xref:System.Net.HttpContinueDelegate>です。  
+  
+> [!NOTE]
+>  `StatusCode`常に<xref:System.Net.HttpStatusCode?displayProperty=nameWithType>です。  
+  
+ これは、機能は、クライアントがサーバーから受信されるデータの状態を表示するときに便利です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

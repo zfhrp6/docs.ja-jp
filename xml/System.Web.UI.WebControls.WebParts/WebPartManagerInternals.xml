@@ -1,0 +1,739 @@
+<Type Name="WebPartManagerInternals" FullName="System.Web.UI.WebControls.WebParts.WebPartManagerInternals">
+  <TypeSignature Language="C#" Value="public sealed class WebPartManagerInternals" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebPartManagerInternals extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartManagerInternals" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によって使用されている別のクラスのメソッドに分離、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />を制御し、コントロールを拡張するけれども、ページの開発者に必要なほとんどの開発者によってオーバーライドされることができます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager>クラスは、Web パーツ コントロール セットの最大のクラスです。 これはも最も重要な Web パーツ クラス間では、Web パーツ コントロールが含まれるすべての Web ページで使用され、調整され、ページ上のすべての Web パーツ コントロールを管理するためです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager>クラスは、頻繁に使用し、一部のメソッドが拡張コントロールの開発者によってほとんどの場合に必要な非常に多くの公開されたメソッドが含まれているため、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>にコントロールが含まれる、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals>クラスです。 この分離に使用頻度の低いメソッドの<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals>クラスの API を簡略化、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>にクラス、および分離メソッドが表示されない、 <xref:System.Web.UI.WebControls.WebParts.WebPartManager> IntelliSense でオブジェクト。  
+  
+ 使用する開発者、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals>クラスする可能性が高いから継承する必要があるシナリオがある、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>を制御し、広範なカスタマイズします。 たとえば、Web ポータルのアプリケーションまたはパッケージ化された一連のカスタム表示モードの Web パーツ コントロールを作成する場合は、カスタム ゾーン、カスタム動詞は、カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、および他の拡張機能の多くの場合 (すべて) をオーバーライドし、一部の拡張する必要があります基本 Web パーツのユーザー インターフェイス (UI) の<xref:System.Web.UI.WebControls.WebParts.WebPartManager>メンバー。 <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals>クラスがシール クラス、カスタムであることから継承することはできませんので<xref:System.Web.UI.WebControls.WebParts.WebPartManager>クラスは、電話の番号にする必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals>ページ上の Web パーツ コントロールを管理するためにメソッドです。  
+  
+> [!NOTE]
+>  同様に、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>クラス、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals>クラスには、UI を持たないをページ上に表示されることはありませんサーバー コントロールが用意されています。 異なり<xref:System.Web.UI.WebControls.WebParts.WebPartManager>、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals>クラスは、ページのマークアップで宣言されていることはありません。 これはバック グラウンド タスクを実行するワーカー オブジェクトでは厳密にします。 使用する際の一般的な方法が示される、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>クラスを使用して、保護された参照<xref:System.Web.UI.WebControls.WebParts.WebPartManager.Internals%2A>プロパティ、参照先のオブジェクトを使用して呼び出すと、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals>メソッドです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals>クラスにメソッドのみが含まれています。 プロパティまたはイベントはありません。 クラス内のすべてのメソッドは、管理を伴う<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、またはコントロール間の接続。  
+  
+ 処理する<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals>に追加するメソッドが含まれます (<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.AddWebPart%2A>)、削除すること<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.RemoveWebPart%2A>)、イベント処理<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.CallOnDeleting%2A>) を取得する、またはとの関係に関する詳細情報をそのゾーンに設定 (など<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.GetZoneID%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetZoneIndex%2A>)、基本的な設定または<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールのプロパティ (たとえば、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsClosed%2A>と<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetHasSharedData%2A>)。  
+  
+ 接続を処理する<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals>削除を行うためのメソッドが含まれています (<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.DeleteConnection%2A>)、設定を使用するには、どのトランスフォーマー オブジェクト (<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetTransformer%2A>) で、設定の接続を共有するかどうかが静的であるかどうか (<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsShared%28System.Web.UI.WebControls.WebParts.WebPartConnection%2CSystem.Boolean%29>と<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsStatic%28System.Web.UI.WebControls.WebParts.WebPartConnection%2CSystem.Boolean%29>)、および使用する接続エラー メッセージの設定 (<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetConnectErrorMessage%2A>)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddWebPart">
+      <MemberSignature Language="C#" Value="public void AddWebPart (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddWebPart(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.AddWebPart(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart"><see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />に追加されている、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールのコントロールのコレクション。</param>
+        <summary>追加、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはサーバー コントロールを<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />のコントロールのコレクション<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />Web ページ上のコントロールです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallOnClosing">
+      <MemberSignature Language="C#" Value="public void CallOnClosing (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CallOnClosing(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.CallOnClosing(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />終了用に選択されています。</param>
+        <summary>呼び出し、<see cref="M:System.Web.UI.WebControls.WebParts.WebPart.OnClosing(System.EventArgs)" />指定されたコントロールのメソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallOnConnectModeChanged">
+      <MemberSignature Language="C#" Value="public void CallOnConnectModeChanged (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CallOnConnectModeChanged(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.CallOnConnectModeChanged(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />入力されたか、接続の表示モードを終了しているがします。</param>
+        <summary>呼び出し、<see cref="M:System.Web.UI.WebControls.WebParts.WebPart.OnConnectModeChanged(System.EventArgs)" />指定されたコントロールのメソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallOnDeleting">
+      <MemberSignature Language="C#" Value="public void CallOnDeleting (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CallOnDeleting(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.CallOnDeleting(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />削除用に選択されています。</param>
+        <summary>呼び出し、<see cref="M:System.Web.UI.WebControls.WebParts.WebPart.OnDeleting(System.EventArgs)" />指定されたコントロールのメソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallOnEditModeChanged">
+      <MemberSignature Language="C#" Value="public void CallOnEditModeChanged (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CallOnEditModeChanged(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.CallOnEditModeChanged(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />が入力または編集表示モードを終了します。</param>
+        <summary>呼び出し、<see cref="M:System.Web.UI.WebControls.WebParts.WebPart.OnEditModeChanged(System.EventArgs)" />指定されたコントロールのメソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionDeleted">
+      <MemberSignature Language="C#" Value="public bool ConnectionDeleted (System.Web.UI.WebControls.WebParts.WebPartConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ConnectionDeleted(class System.Web.UI.WebControls.WebParts.WebPartConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.ConnectionDeleted(System.Web.UI.WebControls.WebParts.WebPartConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Web.UI.WebControls.WebParts.WebPartConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />削除用に選択されています。</param>
+        <summary>示すかどうか、指定した<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />オブジェクトが削除されました。</summary>
+        <returns>接続が削除されたかどうかを示すブール値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObjectFromType">
+      <MemberSignature Language="C#" Value="public object CreateObjectFromType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateObjectFromType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.CreateObjectFromType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />を作成するオブジェクト。</param>
+        <summary>メソッドに渡されるパラメーターに基づくオブジェクトを作成します。</summary>
+        <returns><see cref="T:System.Object" />と同じ型の<paramref name="type" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドを使用して、 <xref:System.CodeDom.Compiler.CodeGenerator> 、代わりに使用するよりも優れたパフォーマンスを提供する型を作成するクラス、<xref:System.Activator.CreateInstance%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteConnection">
+      <MemberSignature Language="C#" Value="public void DeleteConnection (System.Web.UI.WebControls.WebParts.WebPartConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteConnection(class System.Web.UI.WebControls.WebParts.WebPartConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.DeleteConnection(System.Web.UI.WebControls.WebParts.WebPartConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Web.UI.WebControls.WebParts.WebPartConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />削除用に選択されています。</param>
+        <summary>指定した接続オブジェクトが削除されたことを示すためにプロパティを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.DeleteConnection%2A>メソッドは 2 つの既存の接続の終了処理中の 1 つの手順では<xref:System.Web.UI.WebControls.WebParts.WebPart>または Web ページ上の他のサーバー コントロールです。 設定、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.ConnectionDeleted%2A>プロパティの値を`true`ことを示す`connection`を削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetZoneID">
+      <MemberSignature Language="C#" Value="public string GetZoneID (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetZoneID(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.GetZoneID(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />ゾーン内に存在します。</param>
+        <summary>指定されたを含むゾーンの ID を取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはサーバー コントロールです。</summary>
+        <returns>含むゾーンの ID を表す文字列<paramref name="webPart" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.GetZoneID%2A>メソッドによって参照されるコントロールを含むゾーンの ID を返します、`webPart`パラメーター。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.WebParts.WebPart.Zone%2A>プロパティ`webPart`を含む実際のゾーンのオブジェクトを参照`webPart`ゾーンの ID ではないです。 場合`webPart`は現在閉じられての値、<xref:System.Web.UI.WebControls.WebParts.WebPart.Zone%2A>プロパティは`null`、および<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.GetZoneID%2A>メソッドはゾーンで、最後の ID を返します`webPart`閉じられている前のです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadConfigurationState">
+      <MemberSignature Language="C#" Value="public void LoadConfigurationState (System.Web.UI.WebControls.WebParts.WebPartTransformer transformer, object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadConfigurationState(class System.Web.UI.WebControls.WebParts.WebPartTransformer transformer, object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.LoadConfigurationState(System.Web.UI.WebControls.WebParts.WebPartTransformer,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transformer" Type="System.Web.UI.WebControls.WebParts.WebPartTransformer" />
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="transformer">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" />コントロールの接続に使用されます。</param>
+        <param name="savedState"><see cref="T:System.Object" />以前に保存された状態データを格納しています。</param>
+        <summary>負荷の状態データを保存した、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" />コントロール間の接続に参加しているオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveWebPart">
+      <MemberSignature Language="C#" Value="public void RemoveWebPart (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveWebPart(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.RemoveWebPart(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはその他のサーバー コントロールを削除します。</param>
+        <summary>削除、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはその他のサーバー コントロールから、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロールのコントロールのコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除`webPart`現在から<xref:System.Web.UI.WebControls.WebParts.WebPartManager>ページに対して保持されている Web パーツ コントロールのコントロールのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveConfigurationState">
+      <MemberSignature Language="C#" Value="public object SaveConfigurationState (System.Web.UI.WebControls.WebParts.WebPartTransformer transformer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object SaveConfigurationState(class System.Web.UI.WebControls.WebParts.WebPartTransformer transformer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SaveConfigurationState(System.Web.UI.WebControls.WebParts.WebPartTransformer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transformer" Type="System.Web.UI.WebControls.WebParts.WebPartTransformer" />
+      </Parameters>
+      <Docs>
+        <param name="transformer">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" />コントロールの接続に使用されます。</param>
+        <summary>状態のデータの保存、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" />コントロール間の接続に参加しているオブジェクト。</summary>
+        <returns><see cref="T:System.Object" />保存された状態データが含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SaveConfigurationState%2A>メソッドは、ユーザーを構成するときに作成される構成データを保存、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>コントロール間の接続の一部として Web ページ上のコントロールです。 この構成データが毎回を再読み込みされます、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>を使用して、コントロールを表示、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.LoadConfigurationState%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetConnectErrorMessage">
+      <MemberSignature Language="C#" Value="public void SetConnectErrorMessage (System.Web.UI.WebControls.WebParts.WebPart webPart, string connectErrorMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetConnectErrorMessage(class System.Web.UI.WebControls.WebParts.WebPart webPart, string connectErrorMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetConnectErrorMessage(System.Web.UI.WebControls.WebParts.WebPart,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="connectErrorMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />別のコントロールとの接続に参加しています。</param>
+        <param name="connectErrorMessage">エラー メッセージのテキストを含む文字列。</param>
+        <summary>エラー メッセージを確立し、原因、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartChrome" />レンダリングを担当するオブジェクト、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールの内容ではなく、そのメッセージを表示するコントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetConnectErrorMessage%2A>メソッドのエラー メッセージを関連付けることができます、<xref:System.Web.UI.WebControls.WebParts.WebPart>接続に参加しているコントロール。 別のコントロールがによって参照される、コントロールでの接続を形成するときにエラーが発生した場合、`webPart`パラメーターの内容ではなく、ユーザー インターフェイス (UI) にエラー メッセージが表示されます、接続プロセスが失敗した後、`webPart`です。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartChrome>オブジェクトに関連付けられている`webPart`内のエラー メッセージを表示、<xref:System.Web.UI.WebControls.WebParts.WebPartChrome.RenderPartContents%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHasSharedData">
+      <MemberSignature Language="C#" Value="public void SetHasSharedData (System.Web.UI.WebControls.WebParts.WebPart webPart, bool hasSharedData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetHasSharedData(class System.Web.UI.WebControls.WebParts.WebPart webPart, bool hasSharedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetHasSharedData(System.Web.UI.WebControls.WebParts.WebPart,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="hasSharedData" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />または他のサーバー コントロールを共有パーソナル化データを持つことができます。</param>
+        <param name="hasSharedData">示すブール値かどうか<c>webPart</c>がデータを共有します。</param>
+        <summary>プロパティを設定、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはコントロールがパーソナル化データを共有するかどうかを示すその他のサーバー コントロールです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetHasSharedData%2A>メソッドを示すかどうか`webPart`パーソナル化データが共有します。 値、`hasSharedData`には、メソッドに渡されるパラメーターが割り当てられた、`webPart`コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPart.HasSharedData%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHasUserData">
+      <MemberSignature Language="C#" Value="public void SetHasUserData (System.Web.UI.WebControls.WebParts.WebPart webPart, bool hasUserData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetHasUserData(class System.Web.UI.WebControls.WebParts.WebPart webPart, bool hasUserData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetHasUserData(System.Web.UI.WebControls.WebParts.WebPart,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="hasUserData" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはその他のサーバー コントロールをユーザーのパーソナル化データを持つことができます。</param>
+        <param name="hasUserData">示すブール値かどうか<c>webPart</c>がデータを共有します。</param>
+        <summary>プロパティを設定、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはその他のサーバー コントロールのコントロールにユーザーのパーソナル化データがあるかどうかを示すです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetHasUserData%2A>メソッドを示すかどうか`webPart`共有データではなく、個々 のユーザーのパーソナル化データが含まれています。 メソッドの値の代入、`hasUserData`パラメーターを`webPart`コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPart.HasUserData%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsClosed">
+      <MemberSignature Language="C#" Value="public void SetIsClosed (System.Web.UI.WebControls.WebParts.WebPart webPart, bool isClosed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetIsClosed(class System.Web.UI.WebControls.WebParts.WebPart webPart, bool isClosed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsClosed(System.Web.UI.WebControls.WebParts.WebPart,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="isClosed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />このメソッドを設定するため、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.IsClosed" />プロパティです。</param>
+        <param name="isClosed">ブール値を示すかどうか、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />ページで閉じられました。</param>
+        <summary>セット、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.IsClosed" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsClosed%2A>メソッドのセット、<xref:System.Web.UI.WebControls.WebParts.WebPart.IsClosed%2A>プロパティ`webPart`です。 このメソッドが実際に閉じない`webPart`; のみを示すプロパティを設定するかどうか`webPart`が閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SetIsShared">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>セット、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.IsShared" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールまたは<see cref="P:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsShared%2A>メソッドは、コントロールの特定のインスタンスが共有になっているかどうかを示すプロパティを設定する、基底クラスのメソッドを呼び出します。 Web パーツ コントロール セットには、共有コントロールは、ページのすべてのユーザーに表示されているコントロールを意味します。 これは、ページにコントロールを追加した特定のユーザーにのみ表示される、ユーザー単位コントロールとは対照的です。  
+  
+> [!NOTE]
+>  詳細の個人用設定の共有のユーザー単位コントロール サービスを参照してください、 [Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SetIsShared">
+      <MemberSignature Language="C#" Value="public void SetIsShared (System.Web.UI.WebControls.WebParts.WebPart webPart, bool isShared);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetIsShared(class System.Web.UI.WebControls.WebParts.WebPart webPart, bool isShared) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsShared(System.Web.UI.WebControls.WebParts.WebPart,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="isShared" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />このメソッドを設定するため、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.IsShared" />プロパティです。</param>
+        <param name="isShared">示すブール値かどうか<c>webPart</c>共有されます。</param>
+        <summary>セット、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.IsShared" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsShared%2A>メソッドがによって参照されるコントロールを実際には発生しません、 `webPart` ; 共有するパラメーターのみを示すプロパティを設定するかどうか`webPart`現在共有します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsShared">
+      <MemberSignature Language="C#" Value="public void SetIsShared (System.Web.UI.WebControls.WebParts.WebPartConnection connection, bool isShared);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetIsShared(class System.Web.UI.WebControls.WebParts.WebPartConnection connection, bool isShared) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsShared(System.Web.UI.WebControls.WebParts.WebPartConnection,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Web.UI.WebControls.WebParts.WebPartConnection" />
+        <Parameter Name="isShared" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="connection">A <see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" /> 2 つ<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</param>
+        <param name="isShared">示すブール値かどうか<c>接続</c>共有されます。</param>
+        <summary>セット、<see cref="P:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsShared%2A>メソッドがによって参照されるコントロールを実際には発生しません、 `connection` ; 共有するパラメーターのみを示すプロパティを設定するかどうか`connection`現在共有します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsStandalone">
+      <MemberSignature Language="C#" Value="public void SetIsStandalone (System.Web.UI.WebControls.WebParts.WebPart webPart, bool isStandalone);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetIsStandalone(class System.Web.UI.WebControls.WebParts.WebPart webPart, bool isStandalone) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsStandalone(System.Web.UI.WebControls.WebParts.WebPart,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="isStandalone" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />このメソッドを設定するため、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.IsStandalone" />プロパティです。</param>
+        <param name="isStandalone">示すブール値かどうか<c>webPart</c>スタンドアロン コントロールです。</param>
+        <summary>セット、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.IsStandalone" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsStandalone%2A>メソッドのセット、<xref:System.Web.UI.WebControls.WebParts.WebPart.IsStandalone%2A>プロパティです。 このプロパティを設定すると`true`上、<xref:System.Web.UI.WebControls.WebParts.WebPart>内でコントロールが含まれていないことを意味、コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SetIsStatic">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>セット、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.IsStatic" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールまたは<see cref="P:System.Web.UI.WebControls.WebParts.WebPartConnection.IsStatic" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsStatic%2A>メソッドは、コントロールの特定のインスタンスが静的かどうかを示すプロパティを設定する、基底クラスのメソッドを呼び出します。 Web パーツ コントロール セットには、スタティック コントロールは、Web ページのマークアップで宣言されているコントロールです。 これは、ダイナミック コントロールは、プログラムでは、ページに追加またはコントロールのカタログからユーザーが追加されたとは対照的です。 静的なコントロールは、本質的に、共有のコントロールがページのすべてのユーザーに表示されていること、および削除できることはありませんが、ユーザーは、スタティック コントロールを閉じることができます、(完全に削除する) ことです。  
+  
+> [!NOTE]
+>  詳細については、パーソナル化は、静的ダイナミック コントロールは、フィールドと、ユーザー単位コントロールと共有を参照してください[Web パーツのパーソナル化の概要](http://msdn.microsoft.com/library/7dc34f74-52aa-4082-b98d-2bcf9e07e320)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SetIsStatic">
+      <MemberSignature Language="C#" Value="public void SetIsStatic (System.Web.UI.WebControls.WebParts.WebPart webPart, bool isStatic);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetIsStatic(class System.Web.UI.WebControls.WebParts.WebPart webPart, bool isStatic) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsStatic(System.Web.UI.WebControls.WebParts.WebPart,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="isStatic" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">プロパティの値が設定されているコントロール。</param>
+        <param name="isStatic">示すブール値かどうか<c>webPart</c>は静的です。</param>
+        <summary>セット、<see cref="P:System.Web.UI.WebControls.WebParts.WebPart.IsStatic" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsStatic%28System.Web.UI.WebControls.WebParts.WebPart%2CSystem.Boolean%29>メソッドを使用して、設定、<xref:System.Web.UI.WebControls.WebParts.WebPart.IsStatic%2A>によって参照される、コントロールのプロパティの値、`webPart`パラメーター。 場合`webPart`このメソッドは、プロパティ値を設定、Web ページのマークアップで、ゾーン内で宣言された`true`です。 場合`webPart`ページに追加される、プログラムによって、またはユーザーが Web パーツのユーザー インターフェイス (UI) を実行し、このメソッドでは、プロパティの値を設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsStatic">
+      <MemberSignature Language="C#" Value="public void SetIsStatic (System.Web.UI.WebControls.WebParts.WebPartConnection connection, bool isStatic);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetIsStatic(class System.Web.UI.WebControls.WebParts.WebPartConnection connection, bool isStatic) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsStatic(System.Web.UI.WebControls.WebParts.WebPartConnection,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Web.UI.WebControls.WebParts.WebPartConnection" />
+        <Parameter Name="isStatic" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="connection">プロパティ値の設定を接続します。</param>
+        <param name="isStatic">ブール値を示すかどうか<c>接続</c>は静的です。</param>
+        <summary>セット、<see cref="P:System.Web.UI.WebControls.WebParts.WebPartConnection.IsStatic" />のプロパティ、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetIsStatic%28System.Web.UI.WebControls.WebParts.WebPartConnection%2CSystem.Boolean%29>メソッドを使用して、設定、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsStatic%2A>によって参照される接続のプロパティの値、`connection`パラメーター。 場合`connection`はこのメソッドは、プロパティ値を設定、Web ページのマークアップで宣言されて`true`です。 場合`connection`ページに追加される、プログラムによって、またはユーザーが Web パーツのユーザー インターフェイス (UI) を実行し、このメソッドでは、プロパティの値を設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTransformer">
+      <MemberSignature Language="C#" Value="public void SetTransformer (System.Web.UI.WebControls.WebParts.WebPartConnection connection, System.Web.UI.WebControls.WebParts.WebPartTransformer transformer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetTransformer(class System.Web.UI.WebControls.WebParts.WebPartConnection connection, class System.Web.UI.WebControls.WebParts.WebPartTransformer transformer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetTransformer(System.Web.UI.WebControls.WebParts.WebPartConnection,System.Web.UI.WebControls.WebParts.WebPartTransformer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Web.UI.WebControls.WebParts.WebPartConnection" />
+        <Parameter Name="transformer" Type="System.Web.UI.WebControls.WebParts.WebPartTransformer" />
+      </Parameters>
+      <Docs>
+        <param name="connection">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />サーバー コントロール間の接続を作成します。</param>
+        <param name="transformer">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" />と共に使用する<c>接続</c>です。</param>
+        <summary>割り当てます、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" /> 2 つのサーバー コントロール間の接続に使用するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンシューマー コントロール プロバイダー コントロールからのデータを解釈できるように、2 つのサーバー コントロール間の接続がトランスフォーマーを必要とする場合、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetTransformer%2A>メソッドを呼び出して、特定の提供を<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>オブジェクトを<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクト。 によって、オブジェクトが参照された接続は既にに割り当てられます (トランスフォーマーを) がある場合、`transformer`パラメーターが既存の 1 つをオーバーライドします; で参照されるオブジェクトのそれ以外の場合、`transformer`パラメーターを使用します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetTransformer%2A>メソッドを呼び出すたびに、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts%2A>トランスフォーマーを必要とする接続を確立する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetZoneID">
+      <MemberSignature Language="C#" Value="public void SetZoneID (System.Web.UI.WebControls.WebParts.WebPart webPart, string zoneID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetZoneID(class System.Web.UI.WebControls.WebParts.WebPart webPart, string zoneID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetZoneID(System.Web.UI.WebControls.WebParts.WebPart,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="zoneID" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="webPart"><see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />が<c>zoneID</c>プロパティの値が設定されています。</param>
+        <param name="zoneID">ゾーンの ID を表す文字列を<c>webPart</c>に属しています。</param>
+        <summary>有効にするプロパティを設定、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />またはサーバー コントロールに含まれるゾーンの ID を保持します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>タイミングを制御、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、ゾーンに追加されています。 各<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、属しているゾーンの ID を追跡し、このメソッドは、ID 値を保持するプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetZoneIndex">
+      <MemberSignature Language="C#" Value="public void SetZoneIndex (System.Web.UI.WebControls.WebParts.WebPart webPart, int zoneIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetZoneIndex(class System.Web.UI.WebControls.WebParts.WebPart webPart, int32 zoneIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetZoneIndex(System.Web.UI.WebControls.WebParts.WebPart,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="zoneIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">メソッドによりゾーン インデックスが設定された <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> コントロール。</param>
+        <param name="zoneIndex">インデックス<c>webPart</c>ゾーン内の他のコントロールに対して相対的には、そのゾーン内で。</param>
+        <summary>ゾーン内の他の <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> コントロールに相当する、ゾーン内で指定されたコントロールのインデックスを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals.SetZoneIndex%2A>メソッド序数を決定する位置を`webPart`ゾーン内の他のサーバー コントロールを基準とした、そのゾーンを占有します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

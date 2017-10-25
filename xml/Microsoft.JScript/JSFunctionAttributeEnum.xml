@@ -1,0 +1,241 @@
+<Type Name="JSFunctionAttributeEnum" FullName="Microsoft.JScript.JSFunctionAttributeEnum">
+  <TypeSignature Language="C#" Value="public enum JSFunctionAttributeEnum" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed JSFunctionAttributeEnum extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.JSFunctionAttributeEnum" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("BA5ED019-F669-3C35-93AC-3ABF776B62B3")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>JScript コンパイラによって生成される関数の呼び出し規約を指定します。 使用される、<see cref="T:Microsoft.JScript.JSFunctionAttribute" />カスタム属性です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HasArguments、HasEngine、HasThisObject と関連付けられているパラメーターは、暗黙的な関数が JScript コードから呼び出されたときに、JScript ランタイムによって自動的に提供されます。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="ClassicFunction">
+      <MemberSignature Language="C#" Value="ClassicFunction" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum ClassicFunction = int32(35)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.ClassicFunction" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>集計を示す<see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.HasArguments" />、 <see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.HasEngine" />、および<see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject" />です。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ClassicNestedFunction">
+      <MemberSignature Language="C#" Value="ClassicNestedFunction" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum ClassicNestedFunction = int32(47)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.ClassicNestedFunction" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>集計を示す<see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.ClassicFunction" />と<see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.NestedFunction" />です。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HasArguments">
+      <MemberSignature Language="C#" Value="HasArguments" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum HasArguments = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.HasArguments" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の関数の 3 番目のパラメーターが<see langword="Object" />です。 呼び出し元のインスタンスでは通常、JScript 引数オブジェクトを実装するオブジェクトを渡す必要があります<see cref="T:Microsoft.JScript.ArgumentsObject" />です。 JScript ランタイムがいる場合を想定<see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.HasArguments" />が設定されているし、<see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.HasStackFrame" />と<see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject" />も設定されます。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HasEngine">
+      <MemberSignature Language="C#" Value="HasEngine" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum HasEngine = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.HasEngine" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の関数の 2 番目のパラメーターが<see cref="T:Microsoft.JScript.Vsa.VsaEngine" />です。 呼び出し元がのインスタンスに渡す必要があります<see cref="T:Microsoft.JScript.Vsa.VsaEngine" />関数が、ランタイム インフラストラクチャを取得します。 JScript ランタイムがいる場合を想定<see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.HasEngine" />し、設定されている<see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject" />も設定します。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HasStackFrame">
+      <MemberSignature Language="C#" Value="HasStackFrame" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum HasStackFrame = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.HasStackFrame" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関数が呼び出しを行う前に、JScript ランタイムによって保守されるスタック フレーム オブジェクトに、ローカル変数をコピーすることを指定します。変数をコピーしてスタック フレーム オブジェクトからローカルに、関数に制御が返されるとします。 親関数のローカル変数にアクセスする入れ子になった関数を含む関数では、このフラグを設定します。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HasThisObject">
+      <MemberSignature Language="C#" Value="HasThisObject" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum HasThisObject = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の関数の最初のパラメーターが<see langword="Object" />通常という名前と<paramref name="thisob" />です。 呼び出し元で関数が機能するオブジェクトのインスタンスに渡す必要があります。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HasVarArgs">
+      <MemberSignature Language="C#" Value="HasVarArgs" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum HasVarArgs = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.HasVarArgs" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関数が可変個の引数を取ることを指定します。 最後のパラメーターがの配列型は<see langword="Object" />、明示的に指定されている引数を格納します。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsExpandoMethod">
+      <MemberSignature Language="C#" Value="IsExpandoMethod" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum IsExpandoMethod = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.IsExpandoMethod" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関数がプロトタイプ ベースのオブジェクトのコンス トラクター関数であることを指定します。 詳細については、次を参照してください。[オブジェクトのプロトタイプ ベース](http://msdn.microsoft.com/en-us/ef504099-8026-485e-8c70-c5246b548b94)と[expando 修飾子](http://msdn.microsoft.com/en-us/079e089b-a6ab-43f2-8585-78791d7b5c43)です。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsInstanceNestedClassConstructor">
+      <MemberSignature Language="C#" Value="IsInstanceNestedClassConstructor" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum IsInstanceNestedClassConstructor = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.IsInstanceNestedClassConstructor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関数が入れ子になったインスタンス クラスのコンス トラクターであることを指定します。 親クラスのインスタンスが、関数の最初のパラメーターです。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsNested">
+      <MemberSignature Language="C#" Value="IsNested" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum IsNested = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.IsNested" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の JScript 関数で、関数が入れ子になったことを指定します。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NestedFunction">
+      <MemberSignature Language="C#" Value="NestedFunction" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum NestedFunction = int32(44)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.NestedFunction" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>集計を示す<see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.HasStackFrame" />、 <see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.IsNested" />、および<see cref="F:Microsoft.JScript.JSFunctionAttributeEnum.HasEngine" />です。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.JScript.JSFunctionAttributeEnum None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.JSFunctionAttributeEnum.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.JSFunctionAttributeEnum</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ない特殊な呼び出し規則が通常の .NET Framework メソッドを指定します。 通常、JSFunctionAttribute は出力されず、この場合のように使用されません。</summary>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,315 @@
+<Type Name="TemplateDefinition" FullName="System.Web.UI.Design.TemplateDefinition">
+  <TypeSignature Language="C#" Value="public class TemplateDefinition : System.Web.UI.Design.DesignerObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TemplateDefinition extends System.Web.UI.Design.DesignerObject" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.TemplateDefinition" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.DesignerObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web サーバー コントロールのデザイン時にテンプレートの要素を定義するプロパティとメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.TemplateDefinition>クラスから継承し、テンプレート コントロールのデザイン ホストのサポートを提供する場合などに使用するコントロール デザイナー用に拡張できる基本テンプレート定義クラスを提供[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]です。 デザイン ホストでは、プロパティとメソッドを使用して、<xref:System.Web.UI.Design.TemplateDefinition>クラスを作成して、デザイン時テンプレートの編集を容易にします。  
+  
+   
+  
+## Examples  
+ 次のコード例からカスタム クラスを派生させる方法を示します、<xref:System.Web.UI.Design.ControlDesigner>クラスです。 このコントロール デザイナーには、4 つのテンプレートを持つコントロールがサポートしています。  
+  
+ これには、System.Design.dll アセンブリへの参照を追加、コードをコンパイル、次に、設計ではホストなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、デザイン ビューでページを確認します。 コントロールを選択して、変更するテンプレートを選択するアクションの一覧をクリックし、ドラッグ アンド ドロップ機能を使用して、テンプレートにコントロールを移動します。  
+  
+ [!code-csharp[DesignerTemplateGroupSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DesignerTemplateGroupSample/CS/TemplateGroupsSample.cs#1)]
+ [!code-vb[DesignerTemplateGroupSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerTemplateGroupSample/VB/TemplateGroupsSample.vb#1)]  
+[!code-aspx-vb[DesignerTemplateGroupSample#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerTemplateGroupSample/VB/TemplateGroupsSample.aspx#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateDefinition (System.Web.UI.Design.ControlDesigner designer, string name, object templatedObject, string templatePropertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.ControlDesigner designer, string name, object templatedObject, string templatePropertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateDefinition.#ctor(System.Web.UI.Design.ControlDesigner,System.String,System.Object,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Web.UI.Design.ControlDesigner" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="templatedObject" Type="System.Object" />
+        <Parameter Name="templatePropertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="designer">親<see cref="T:System.Web.UI.Design.ControlDesigner" />オブジェクト。</param>
+        <param name="name">テンプレートの名前。</param>
+        <param name="templatedObject">テンプレートを含むオブジェクト。</param>
+        <param name="templatePropertyName">このテンプレートを表すプロパティの名前、**プロパティ**デザイン ホストの一覧です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.TemplateDefinition" />クラス、指定されたデザイナー、テンプレート名、テンプレート、およびプロパティ名を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="designer" />is <see langword="null" />,  
+  
+ または  
+  
+ <paramref name="templatedObject" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateDefinition (System.Web.UI.Design.ControlDesigner designer, string name, object templatedObject, string templatePropertyName, bool serverControlsOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.ControlDesigner designer, string name, object templatedObject, string templatePropertyName, bool serverControlsOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateDefinition.#ctor(System.Web.UI.Design.ControlDesigner,System.String,System.Object,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Web.UI.Design.ControlDesigner" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="templatedObject" Type="System.Object" />
+        <Parameter Name="templatePropertyName" Type="System.String" />
+        <Parameter Name="serverControlsOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="designer">親<see cref="T:System.Web.UI.Design.ControlDesigner" />オブジェクト。</param>
+        <param name="name">テンプレートの名前。</param>
+        <param name="templatedObject">テンプレートを含むオブジェクト。</param>
+        <param name="templatePropertyName">このテンプレートを表すプロパティの名前、**プロパティ**デザイン ホストの一覧です。</param>
+        <param name="serverControlsOnly">テンプレートの内容が Web サーバー コントロールのみを許可するかどうかを示すブール値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.TemplateDefinition" />クラス、指定されたデザイナー、テンプレート名、テンプレート、プロパティ名、および Web サーバー コントロールにテンプレートの内容を制限するかどうかを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="designer" />is <see langword="null" />,  
+  
+ または  
+  
+ <paramref name="templatedObject" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateDefinition (System.Web.UI.Design.ControlDesigner designer, string name, object templatedObject, string templatePropertyName, System.Web.UI.WebControls.Style style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.ControlDesigner designer, string name, object templatedObject, string templatePropertyName, class System.Web.UI.WebControls.Style style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateDefinition.#ctor(System.Web.UI.Design.ControlDesigner,System.String,System.Object,System.String,System.Web.UI.WebControls.Style)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Web.UI.Design.ControlDesigner" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="templatedObject" Type="System.Object" />
+        <Parameter Name="templatePropertyName" Type="System.String" />
+        <Parameter Name="style" Type="System.Web.UI.WebControls.Style" />
+      </Parameters>
+      <Docs>
+        <param name="designer">親<see cref="T:System.Web.UI.Design.ControlDesigner" />オブジェクト。</param>
+        <param name="name">テンプレートの名前。</param>
+        <param name="templatedObject">テンプレートを含むオブジェクト。</param>
+        <param name="templatePropertyName">このテンプレートを表すプロパティの名前、**プロパティ**デザイン ホストの一覧です。</param>
+        <param name="style">A<see cref="T:System.Web.UI.WebControls.Style" />各テンプレートに適用するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.TemplateDefinition" />クラス、指定されたデザイナー、テンプレート名、テンプレート、プロパティ名を使用し、<see cref="T:System.Web.UI.WebControls.Style" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="designer" />is <see langword="null" />,  
+  
+ または  
+  
+ <paramref name="templatedObject" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateDefinition (System.Web.UI.Design.ControlDesigner designer, string name, object templatedObject, string templatePropertyName, System.Web.UI.WebControls.Style style, bool serverControlsOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.ControlDesigner designer, string name, object templatedObject, string templatePropertyName, class System.Web.UI.WebControls.Style style, bool serverControlsOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TemplateDefinition.#ctor(System.Web.UI.Design.ControlDesigner,System.String,System.Object,System.String,System.Web.UI.WebControls.Style,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Web.UI.Design.ControlDesigner" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="templatedObject" Type="System.Object" />
+        <Parameter Name="templatePropertyName" Type="System.String" />
+        <Parameter Name="style" Type="System.Web.UI.WebControls.Style" />
+        <Parameter Name="serverControlsOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="designer">親<see cref="T:System.Web.UI.Design.ControlDesigner" />オブジェクト。</param>
+        <param name="name">テンプレートの名前。</param>
+        <param name="templatedObject">テンプレートを含むオブジェクト。</param>
+        <param name="templatePropertyName">このテンプレートを表すプロパティの名前、**プロパティ**デザイン ホストの一覧です。</param>
+        <param name="style">A<see cref="T:System.Web.UI.WebControls.Style" />各テンプレートに適用するオブジェクト。</param>
+        <param name="serverControlsOnly">テンプレートが Web サーバー コントロールにコンテンツを制限するかどうかを示すブール値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.TemplateDefinition" />クラス、指定されたデザイナー、テンプレート名、テンプレート、プロパティ名を使用して<see cref="T:System.Web.UI.WebControls.Style" />オブジェクト、および Web サーバー コントロールにコンテンツを制限するかどうか。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="designer" />is <see langword="null" />,  
+  
+ または  
+  
+ <paramref name="templatedObject" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowEditing">
+      <MemberSignature Language="C#" Value="public virtual bool AllowEditing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowEditing" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateDefinition.AllowEditing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テンプレートがその内容の編集を有効する必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />編集が許可された場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値を変更するには、派生クラスでオーバーライドする必要があります、<xref:System.Web.UI.Design.TemplateDefinition.AllowEditing%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public virtual string Content { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Content" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateDefinition.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテンプレートの内容を表す HTML マークアップを設定します。</summary>
+        <value>テンプレートのコンテンツの HTML マークアップ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerControlsOnly">
+      <MemberSignature Language="C#" Value="public bool ServerControlsOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ServerControlsOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateDefinition.ServerControlsOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テンプレートがで設定されている、Web サーバー コントロールにコンテンツを制限するかどうかを示す値を取得、<see cref="Overload:System.Web.UI.Design.TemplateDefinition.#ctor" />コンス トラクターです。 このプロパティは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />コンテンツは Web サーバー コントロールに限定される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style Style { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style Style" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateDefinition.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定されているテンプレートに適用されるスタイルを取得、<see cref="Overload:System.Web.UI.Design.TemplateDefinition.#ctor" />コンス トラクターです。 このプロパティは読み取り専用です。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.Style" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ただし、<xref:System.Web.UI.WebControls.Style>プロパティは読み取り専用のプロパティ、<xref:System.Web.UI.WebControls.Style>設定することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDataBinding">
+      <MemberSignature Language="C#" Value="public bool SupportsDataBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDataBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateDefinition.SupportsDataBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテンプレートが、データ バインディングをサポートするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />テンプレートは、データ バインディングをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplatedObject">
+      <MemberSignature Language="C#" Value="public object TemplatedObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TemplatedObject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateDefinition.TemplatedObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テンプレートが存在するコンポーネントを取得します。 このプロパティは読み取り専用です。</summary>
+        <value>としてコンポーネントの設定時にこの<see cref="T:System.Web.UI.Design.TemplateDefinition" />作成されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この<xref:System.Web.UI.Design.TemplateDefinition.TemplatedObject%2A>プロパティは読み取り専用で、プロパティを設定するには、場合<xref:System.Web.UI.Design.TemplateDefinition.AllowEditing%2A>が true の場合、コンテンツを編集することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplatePropertyName">
+      <MemberSignature Language="C#" Value="public string TemplatePropertyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TemplatePropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.TemplateDefinition.TemplatePropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン ホストが、プロパティ グリッドで表示するテンプレートのプロパティ名を取得します。</summary>
+        <value>テンプレートの名前が表示されます、**プロパティ**デザイン ホストの一覧です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

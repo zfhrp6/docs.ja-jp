@@ -1,0 +1,145 @@
+<Type Name="FontStyles" FullName="System.Windows.FontStyles">
+  <TypeSignature Language="C#" Value="public static class FontStyles" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit FontStyles extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FontStyles" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>静的な定義済みのセットを提供<see cref="T:System.Windows.FontStyle" />値。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォント スタイルとフォントの傾斜を指します。 通常、斜体、および斜体です。  
+  
+|フォント スタイル|説明|  
+|----------------|-----------------|  
+|標準|通常、または roman、フォントの文字は垂直です。|  
+|[斜体]|斜体のフォントの文字に正確に傾斜し、デザインされたとおりに表示されます。|  
+|斜投影|斜体フォントの文字が人為的に傾斜されます。|  
+  
+ <xref:System.Windows.FontStyles.Oblique%2A>傾斜は標準フォントの文字を傾斜変換を実行することによって実現します。 真の斜体のフォントがコンピューターまたはプリンターで使用できない場合は、斜投影のスタイルは標準フォントから生成し、斜体のフォントをシミュレートするために使用します。  
+  
+ 次の図は、Palatino Linotype フォントの標準、斜体、および斜体のフォント スタイルを示します。 方法、斜体のフォント スタイルには、詳細をフローさせるより単純にテキストの標準のフォント スタイルのバージョンがゆがめられるによって作成される斜体のフォント スタイルの外観を視覚に訴えるに注意してください。  
+  
+ ![通常、斜体、および斜体のフォント スタイル](~/add/media/fontstyle01.PNG "標準、斜体、および斜体のフォント スタイル")  
+フォント スタイルの例  
+  
+   
+  
+## Examples  
+ 次のコード例で<xref:System.Windows.FontStyles.Normal%2A>、 <xref:System.Windows.FontStyles.Italic%2A>、および<xref:System.Windows.FontStyles.Oblique%2A>のフォント スタイルを定義するために使用、<xref:System.Windows.Controls.TextBlock>オブジェクト。  
+  
+ [!code-xaml[FontSnippets#FontStyleSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontStyleSnippets.xaml#fontstylesnippet1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Italic">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontStyle Italic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontStyle Italic" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontStyles.Italic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>斜体の指定<see cref="T:System.Windows.FontStyle" />です。</summary>
+        <value>斜体を表す値<see cref="T:System.Windows.FontStyle" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 斜体のフォントの文字に正確に傾斜し、デザインされたとおりに表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.FontStyles.Italic%2A>を返すプロパティが使用される、<xref:System.Windows.FontStyle>です。  
+  
+ [!code-csharp[FontSnippets#FontStyleSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontStyleSnippets.xaml.cs#fontstylesnippet3)]
+ [!code-vb[FontSnippets#FontStyleSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontstylesnippets.xaml.vb#fontstylesnippet3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontStyle Normal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontStyle Normal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontStyles.Normal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通常指定<see cref="T:System.Windows.FontStyle" />です。</summary>
+        <value>標準を表す値<see cref="T:System.Windows.FontStyle" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、または roman、フォントの文字は垂直です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.FontStyles.Normal%2A>を返すプロパティが使用される、<xref:System.Windows.FontStyle>です。  
+  
+ [!code-csharp[FontSnippets#FontStyleSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontStyleSnippets.xaml.cs#fontstylesnippet2)]
+ [!code-vb[FontSnippets#FontStyleSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontstylesnippets.xaml.vb#fontstylesnippet2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Oblique">
+      <MemberSignature Language="C#" Value="public static System.Windows.FontStyle Oblique { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.FontStyle Oblique" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.FontStyles.Oblique" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定、斜体<see cref="T:System.Windows.FontStyle" />です。</summary>
+        <value>値を表す、斜体<see cref="T:System.Windows.FontStyle" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 斜体フォントの文字は人為的に傾斜されます。 傾斜は標準フォントの文字を傾斜変換を実行することによって実現されます。 真の斜体のフォントがコンピューターまたはプリンターで使用できない場合は、斜投影のスタイルは標準フォントから生成し、斜体のフォントをシミュレートするために使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.FontStyles.Oblique%2A>を返すプロパティが使用される、<xref:System.Windows.FontStyle>です。  
+  
+ [!code-csharp[FontSnippets#FontStyleSnippet4](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontStyleSnippets.xaml.cs#fontstylesnippet4)]
+ [!code-vb[FontSnippets#FontStyleSnippet4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontstylesnippets.xaml.vb#fontstylesnippet4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

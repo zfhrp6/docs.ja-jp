@@ -1,0 +1,154 @@
+<Type Name="TouchFrameEventArgs" FullName="System.Windows.Input.TouchFrameEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class TouchFrameEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TouchFrameEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.TouchFrameEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Input.Touch.FrameReported" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Touch.FrameReported>でイベントが含まれる[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]Silverlight との互換性をサポートするためにします。 Silverlight との互換性を確保する必要はありません、ように、タッチ イベントを使用して<xref:System.Windows.UIElement.TouchDown>と<xref:System.Windows.UIElement.TouchMove>の<xref:System.Windows.UIElement>、 <xref:System.Windows.UIElement3D>、または<xref:System.Windows.ContentElement>です。  
+  
+ 使用して、<xref:System.Windows.Input.TouchFrameEventArgs>を取得する、<xref:System.Windows.Input.TouchPoint>タッチ イベントに関連する値。 <xref:System.Windows.Input.TouchPoint>、取得することができます、<xref:System.Windows.Input.TouchPoint.Position%2A>タッチのとを特定するかどうか、<xref:System.Windows.Input.TouchAction>が、 <xref:System.Windows.Input.TouchAction.Down>、 <xref:System.Windows.Input.TouchAction.Move>、または<xref:System.Windows.Input.TouchAction.Up>アクション。 使用することも、<xref:System.Windows.Input.TouchPoint>を取得する、<xref:System.Windows.Input.TouchDevice>です。 <xref:System.Windows.Input.TouchDevice>、デバイスを指定できます<xref:System.Windows.Input.TouchDevice.Id%2A>タッチは、要素に関する情報を取得します。  
+  
+   
+  
+## Examples  
+ 次の例のハンドル、<xref:System.Windows.Input.Touch.FrameReported>イベントでタッチ データにアクセスして、<xref:System.Windows.Input.TouchFrameEventArgs>です。 タッチが押されたとき、 <xref:System.Windows.Controls.Canvas>、<xref:System.Windows.Input.TouchDevice>にキャプチャされて、<xref:System.Windows.Controls.Canvas>です。 タッチを持ち上げると、<xref:System.Windows.Input.TouchDevice>を解放します。 タッチをまたいで移動するときに、 <xref:System.Windows.Controls.Canvas>、<xref:System.Windows.Input.TouchDevice.Id%2A>がオンになっています。 最初のタッチの場合は、その場所が記録されます。 2 番目のタッチの場合は、最初のタッチ、位置から 2 番目のタッチの位置に線を描画します。  
+  
+ この例で使用可能なサンプルが大きくの一部である、<xref:System.Windows.Input.Touch>クラスの概要です。  
+  
+ [!code-csharp[TouchFrameSample#110](~/samples/snippets/csharp/VS_Snippets_Wpf/touchframesample/cs/mainwindow.xaml.cs#110)]
+ [!code-vb[TouchFrameSample#110](~/samples/snippets/visualbasic/VS_Snippets_Wpf/touchframesample/vb/mainwindow.xaml.vb#110)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetPrimaryTouchPoint">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.TouchPoint GetPrimaryTouchPoint (System.Windows.IInputElement relativeTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.TouchPoint GetPrimaryTouchPoint(class System.Windows.IInputElement relativeTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.TouchFrameEventArgs.GetPrimaryTouchPoint(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.TouchPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="relativeTo">座標空間を定義する要素。 WPF の絶対座標を使用する指定<c>relativeTo</c>として<see langword="null" />です。</param>
+        <summary>指定した要素に相対的なプライマリ タッチ デバイスの現在のタッチ ポイントを返します。</summary>
+        <returns>プライマリの現在位置<see cref="T:System.Windows.Input.TouchDevice" />指定した要素に対して相対的または<see langword="null" />場合、プライマリ<see cref="T:System.Windows.Input.TouchDevice" />アクティブではありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティブのセットにタッチする最初のデバイスのデバイス<xref:System.Windows.Input.TouchDevice.Activated>プライマリ タッチ デバイスがします。 たとえば、2 本の指が画面に接している場合は、ダウンは、その指がプライマリ タッチ デバイスで表されます。 2 番目の指がまだ停止中に、指がリフトされた場合、プライマリ タッチ デバイスは次のようになります。`null`です。  
+  
+   
+  
+## Examples  
+ 次のコードから取得されるタッチ ポイントを処理する、<xref:System.Windows.Input.TouchFrameEventArgs>です。 タッチが押されたとき、 <xref:System.Windows.Controls.Canvas>、<xref:System.Windows.Input.TouchDevice>にキャプチャされて、<xref:System.Windows.Controls.Canvas>です。 タッチを持ち上げると、<xref:System.Windows.Input.TouchDevice>を解放します。 タッチをまたいで移動するときに、 <xref:System.Windows.Controls.Canvas>、<xref:System.Windows.Input.TouchDevice.Id%2A>がオンになっています。 場合、<xref:System.Windows.Input.TouchDevice.Id%2A>と一致する、<xref:System.Windows.Input.TouchDevice.Id%2A>の最初のタッチを示す、プライマリのタッチ ポイントの場所が記録されます。 2 番目のタッチの場合は、最初のタッチ、位置から 2 番目のタッチの位置に線を描画します。  
+  
+ この例で使用可能なサンプルが大きくの一部である、<xref:System.Windows.Input.Touch>クラスの概要です。  
+  
+ [!code-csharp[TouchFrameSample#120](~/samples/snippets/csharp/VS_Snippets_Wpf/touchframesample/cs/mainwindow.xaml.cs#120)]
+ [!code-vb[TouchFrameSample#120](~/samples/snippets/visualbasic/VS_Snippets_Wpf/touchframesample/vb/mainwindow.xaml.vb#120)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTouchPoints">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.TouchPointCollection GetTouchPoints (System.Windows.IInputElement relativeTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.TouchPointCollection GetTouchPoints(class System.Windows.IInputElement relativeTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.TouchFrameEventArgs.GetTouchPoints(System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.TouchPointCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeTo" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="relativeTo">座標空間を定義する要素。 WPF の絶対座標を使用する指定<c>relativeTo</c>として<see langword="null" />です。</param>
+        <summary>指定した要素に相対的なアクティブなタッチ デバイスごとに現在のタッチ ポイントを含むコレクションを返します。</summary>
+        <returns>現在を含んだコレクション<see cref="T:System.Windows.Input.TouchPoint" />各アクティブ<see cref="T:System.Windows.Input.TouchDevice" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードからタッチ ポイントを取得するプロセス、<xref:System.Windows.Input.TouchFrameEventArgs>です。 キャンバスでタッチが押されたときに、<xref:System.Windows.Input.TouchDevice>がキャンバスにキャプチャします。 タッチが発生したときに、<xref:System.Windows.Input.TouchDevice>を解放します。 タッチがキャンバスをまたがって移動したときに、<xref:System.Windows.Input.TouchDevice.Id%2A>がオンになっています。 場合、<xref:System.Windows.Input.TouchDevice.Id%2A>と一致する、<xref:System.Windows.Input.TouchDevice.Id%2A>の最初のタッチを示す、プライマリのタッチ ポイントの場所が記録されます。 2 番目のタッチの場合は、最初のタッチ、位置から 2 番目のタッチの位置に線を描画します。  
+  
+ この例で使用可能なサンプルが大きくの一部である、<xref:System.Windows.Input.Touch>クラスの概要です。  
+  
+ [!code-csharp[TouchFrameSample#120](~/samples/snippets/csharp/VS_Snippets_Wpf/touchframesample/cs/mainwindow.xaml.cs#120)]
+ [!code-vb[TouchFrameSample#120](~/samples/snippets/visualbasic/VS_Snippets_Wpf/touchframesample/vb/mainwindow.xaml.vb#120)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuspendMousePromotionUntilTouchUp">
+      <MemberSignature Language="C#" Value="public void SuspendMousePromotionUntilTouchUp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SuspendMousePromotionUntilTouchUp() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.TouchFrameEventArgs.SuspendMousePromotionUntilTouchUp" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーが実装されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、Silverlight の互換性のために提供します。 デバイスの実装の違いにより、WPF は実装されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timestamp">
+      <MemberSignature Language="C#" Value="public int Timestamp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Timestamp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.TouchFrameEventArgs.Timestamp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントのタイムスタンプを取得します。</summary>
+        <value>このイベントのタイムスタンプ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

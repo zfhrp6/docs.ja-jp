@@ -1,0 +1,826 @@
+<Type Name="TextPatternRange" FullName="System.Windows.Automation.Text.TextPatternRange">
+  <TypeSignature Language="C#" Value="public class TextPatternRange" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextPatternRange extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Text.TextPatternRange" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Automation.TextPattern" /> コンテナー内の連続するテキストの範囲を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Automation.Text.TextPatternRange>挿入ポイント、サブセット、またはすべてのテキストの表すことができます、<xref:System.Windows.Automation.TextPattern>コンテナーです。  
+  
+ A<xref:System.Windows.Automation.Text.TextPatternRange>は、次のいずれかが発生した場合は無効になります: 内のテキスト、<xref:System.Windows.Automation.TextPattern>いくつかのユーザー アクティビティがあるため、コンテナーの変更、または<xref:System.Windows.Automation.ValuePattern.SetValue%2A>メソッドの<xref:System.Windows.Automation.ValuePattern>をプログラムでのテキストの値を変更するために使用、<xref:System.Windows.Automation.TextPattern>コンテナーです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddToSelection">
+      <MemberSignature Language="C#" Value="public void AddToSelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddToSelection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.AddToSelection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>複数の非結合選択をサポートするテキスト コンテナー内の強調表示されたテキストのコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい選択の領域に、テキスト挿入ポイントに移動します。  
+  
+ 低次元テキスト範囲を提供すると、カーソルが移動します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">テキスト プロバイダーは、複数をサポートしていない場合の非結合選択 (たとえば、<see cref="P:System.Windows.Automation.TextPattern.SupportedTextSelection" />の値が必要<see langword="Multiple" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Text.TextPatternRange Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.Text.TextPatternRange Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Text.TextPatternRange</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>元の <see cref="T:System.Windows.Automation.Text.TextPatternRange" /> と同一で、元のプロパティをすべて継承する新しい <see cref="T:System.Windows.Automation.Text.TextPatternRange" /> を取得します。</summary>
+        <returns>新しいテキスト範囲。 null 参照 ([!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)] では <see langword="Nothing" />) は返されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ また、作成、新しい<xref:System.Windows.Automation.TextPattern.DocumentRange%2A>から、<xref:System.Windows.Automation.TextPattern>し、元のテキスト範囲のエンドポイントに対応する 2 つのエンドポイントを移動します。  
+  
+ 新しい範囲は、元の個別に操作できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1060](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1060)]  
+  
+ [!code-vb[UIATextPattern_snip#2060](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2060)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public bool Compare (System.Windows.Automation.Text.TextPatternRange range);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Compare(class System.Windows.Automation.Text.TextPatternRange range) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.Compare(System.Windows.Automation.Text.TextPatternRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="range" Type="System.Windows.Automation.Text.TextPatternRange" />
+      </Parameters>
+      <Docs>
+        <param name="range">比較するテキスト範囲。</param>
+        <summary>テキスト範囲全体 (<see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start" /> エンドポイントから <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.End" /> エンドポイントまで) が別のテキスト範囲と同じであるかどうかを示す <see cref="T:System.Boolean" /> 値を返します。</summary>
+        <returns>
+          両方のテキスト範囲が同じである場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1061](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1061)]  
+  
+ [!code-vb[UIATextPattern_snip#2061](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2061)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">範囲の比較対象となる場合は、同じテキスト プロバイダーから発生しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareEndpoints">
+      <MemberSignature Language="C#" Value="public int CompareEndpoints (System.Windows.Automation.Text.TextPatternRangeEndpoint endpoint, System.Windows.Automation.Text.TextPatternRange targetRange, System.Windows.Automation.Text.TextPatternRangeEndpoint targetEndpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 CompareEndpoints(valuetype System.Windows.Automation.Text.TextPatternRangeEndpoint endpoint, class System.Windows.Automation.Text.TextPatternRange targetRange, valuetype System.Windows.Automation.Text.TextPatternRangeEndpoint targetEndpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.CompareEndpoints(System.Windows.Automation.Text.TextPatternRangeEndpoint,System.Windows.Automation.Text.TextPatternRange,System.Windows.Automation.Text.TextPatternRangeEndpoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.Windows.Automation.Text.TextPatternRangeEndpoint" />
+        <Parameter Name="targetRange" Type="System.Windows.Automation.Text.TextPatternRange" />
+        <Parameter Name="targetEndpoint" Type="System.Windows.Automation.Text.TextPatternRangeEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">呼び出し元の <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start" /> エンドポイントまたは <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.End" /> エンドポイント。</param>
+        <param name="targetRange">比較対象の範囲。</param>
+        <param name="targetEndpoint">比較対象の <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start" /> エンドポイントまたは <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.End" /> エンドポイント。</param>
+        <summary>2 つのテキスト範囲のエンドポイントが同じかどうかを示す <see cref="T:System.Int32" /> を返します。</summary>
+        <returns>テキストにおいて、呼び出し元のエンドポイントが比較対象のエンドポイントよりも前方にある場合は、負の値を返します。  
+  
+ 呼び出し元のエンドポイントが比較対象のエンドポイントと同じ位置にある場合は、0 を返します。  
+  
+ テキストにおいて、呼び出し元のエンドポイントが比較対象のエンドポイントより後方にある場合は、正の値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じテキスト範囲の開始と終了のエンドポイントを比較することによって、テキスト範囲が逆の場合、または論理テキスト フローの順序で、エンドポイントを識別できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1062](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1062)]  
+  
+ [!code-vb[UIATextPattern_snip#2062](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2062)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">範囲がある場合は null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])。</exception>
+        <exception cref="T:System.ArgumentException">範囲は別のコンテナーです。 場合、</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandToEnclosingUnit">
+      <MemberSignature Language="C#" Value="public void ExpandToEnclosingUnit (System.Windows.Automation.Text.TextUnit unit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExpandToEnclosingUnit(valuetype System.Windows.Automation.Text.TextUnit unit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.ExpandToEnclosingUnit(System.Windows.Automation.Text.TextUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unit" Type="System.Windows.Automation.Text.TextUnit" />
+      </Parameters>
+      <Docs>
+        <param name="unit">テキスト単位。</param>
+        <summary>指定した <see cref="T:System.Windows.Automation.Text.TextUnit" /> にテキスト範囲を拡大します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 範囲が既に指定された単位数が正確である場合は、変更されません。  
+  
+ 順序で、<xref:System.Windows.Automation.Text.TextPatternRange.ExpandToEnclosingUnit%2A>メソッドを正常に実行するバック グラウンドで一連のアクションを実行します。  
+  
+1.  テキスト範囲は正規化されます。低次元テキスト範囲にテキスト範囲を縮小するは、<xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start>エンドポイントを作成、<xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End>エンドポイントは不要です。 この手順は、テキスト範囲にまたがる状況であいまいさをなくすために必要`unit`境界。 たとえば、"{U} RL [http://www.microsoft.com](http://www.microsoft.com)テキストに埋め込まれた"、"{"と"}"がテキスト範囲エンドポイント。  
+  
+2.  結果として得られる範囲は、<xref:System.Windows.Automation.TextPattern.DocumentRange%2A> 内で、要求された `unit` 境界の先頭に向かって後方に移動されます。  
+  
+3.  この範囲は、<xref:System.Windows.Automation.TextPattern.DocumentRange%2A> 内で、`unit` 境界の要求された数だけ、前方または後方に移動されます。  
+  
+4.  その後、この範囲は、要求された 1 つの `unit` 境界の分、<xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> エンドポイントを移動することによって、低次元テキスト範囲の状態から展開されます。  
+  
+ ![Move & ExpandToEnclosingUnit による範囲調整](~/add/media/uia-textpattern-moveandexpand-examples.png "Move & ExpandToEnclosingUnit による範囲調整")  
+テキスト範囲を Move() と ExpandToEnclosingUnit() に対して調整する方法の例  
+  
+> [!NOTE]
+>  完全な単語、文、または挿入ポイントでも仮想カーソル位置にある段落全体を読み取る、スクリーン リーダーの一般的なであるために、これらの手順が必要です。  
+  
+ <xref:System.Windows.Automation.Text.TextPatternRange.ExpandToEnclosingUnit%2A>表示と非表示の両方のテキストを尊重します。 UI オートメーション クライアントが確認できます、<xref:System.Windows.Automation.TextPattern.IsHiddenAttribute>テキスト表示にします。  
+  
+ <xref:System.Windows.Automation.Text.TextPatternRange.ExpandToEnclosingUnit%2A>次に延期最大<xref:System.Windows.Automation.Text.TextUnit>サポートされている場合、指定された<xref:System.Windows.Automation.Text.TextUnit>コントロールでサポートされていません。  
+  
+ 最大値、最小単位からの注文は、以下に記載されています。  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Character>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Format>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Word>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Line>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Paragraph>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Page>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Document>  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1063](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1063)]  
+  
+ [!code-vb[UIATextPattern_snip#2063](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2063)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAttribute">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Text.TextPatternRange FindAttribute (System.Windows.Automation.AutomationTextAttribute attribute, object value, bool backward);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.Text.TextPatternRange FindAttribute(class System.Windows.Automation.AutomationTextAttribute attribute, object value, bool backward) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.FindAttribute(System.Windows.Automation.AutomationTextAttribute,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Text.TextPatternRange</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Windows.Automation.AutomationTextAttribute" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="backward" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">検索対象の属性。</param>
+        <param name="value">検索対象の属性値。 この値は、属性に指定されている型と一致する必要があります。</param>
+        <param name="backward">
+          最初に発生したテキスト範囲ではなく、最後に発生したテキスト範囲を返す必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定された属性の値を持つテキスト範囲のサブセットを返します。</summary>
+        <returns>一致する属性と属性値を持つテキスト範囲。それ以外の場合は null ([!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)] では <see langword="Nothing" />)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示と非表示のテキストの区別はありません。 UI オートメーション クライアントが使用できる<xref:System.Windows.Automation.TextPattern.IsHiddenAttribute>text の可視性を確認します。  
+  
+> [!NOTE]
+>  使用して<xref:System.Windows.Automation.TextPattern.DocumentRange%2A>ドキュメント全体を検索します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1064](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1064)]  
+  
+ [!code-vb[UIATextPattern_snip#2064](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2064)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindText">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Text.TextPatternRange FindText (string text, bool backward, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.Text.TextPatternRange FindText(string text, bool backward, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.FindText(System.String,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Text.TextPatternRange</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="backward" Type="System.Boolean" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="text">検索対象の文字列。</param>
+        <param name="backward">
+          最初に発生したテキスト範囲ではなく、最後に発生したテキスト範囲を返す必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="ignoreCase">
+          大文字と小文字を区別しない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定したテキストを含むテキスト範囲のサブセットを返します。</summary>
+        <returns>指定したテキストと一致するテキスト範囲。それ以外の場合は null ([!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)] では <see langword="Nothing" />)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示と非表示のテキストの区別はありません。 UI オートメーション クライアントが使用できる<xref:System.Windows.Automation.TextPattern.IsHiddenAttribute>text の可視性を確認します。  
+  
+> [!NOTE]
+>  使用して<xref:System.Windows.Automation.TextPattern.DocumentRange%2A>ドキュメント全体を検索します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1065](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1065)]  
+  
+ [!code-vb[UIATextPattern_snip#2065](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2065)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAttributeValue">
+      <MemberSignature Language="C#" Value="public object GetAttributeValue (System.Windows.Automation.AutomationTextAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetAttributeValue(class System.Windows.Automation.AutomationTextAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.GetAttributeValue(System.Windows.Automation.AutomationTextAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Windows.Automation.AutomationTextAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">テキスト属性。</param>
+        <summary>指定した属性の値をテキスト範囲全体から返します。</summary>
+        <returns>指定した属性の値を返します。 たとえば、GetAttributeValue(TextPattern.FontNameAttribute) はテキスト範囲のフォント名が一意の場合にそのフォント名を表す文字列を返し、GetAttributeValue(TextPattern.IsItalicAttribute) はブール値を返します。  
+  
+ 指定した属性の値がテキスト範囲内で異なる場合は <see cref="F:System.Windows.Automation.TextPattern.MixedAttributeValue" /> を返します。  
+  
+ 指定された属性がプロバイダーまたはコントロールによってサポートされない場合は <see cref="F:System.Windows.Automation.AutomationElement.NotSupported" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示と非表示のテキストの区別はありません。 UI オートメーション クライアントが使用できる<xref:System.Windows.Automation.TextPattern.IsHiddenAttribute>text の可視性を確認します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1066](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1066)]  
+  
+ [!code-vb[UIATextPattern_snip#2066](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2066)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した属性が無効な場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoundingRectangles">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect[] GetBoundingRectangles ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Rect[] GetBoundingRectangles() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.GetBoundingRectangles" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト範囲内のテキストの表示されている各行 (全体または一部) に外接する四角形のコレクションを取得します。</summary>
+        <returns>テキスト範囲内の各行 (全体または一部) に外接する四角形の配列。  
+  
+ 低次元テキスト範囲の空の配列。  
+  
+ 完全に画面外となる、スクロール アウトする、または重なったウィンドウによって隠れる画面座標を持つテキスト範囲を表す空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1067](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1067)]  
+  
+ [!code-vb[UIATextPattern_snip#2067](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2067)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildren">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement[] GetChildren ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement[] GetChildren() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.GetChildren" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト範囲内にあるすべての埋め込みオブジェクトのコレクションを取得します。</summary>
+        <returns>範囲内にあるすべての子オブジェクトのコレクション。 範囲と重なっているが完全には範囲に含まれていない子オブジェクトもコレクションに含まれます。  
+  
+ 子オブジェクトが存在しない場合は、空のコレクションを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#StartTarget](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#starttarget)]
+ [!code-vb[UIATextPattern_snip#StartTarget](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#starttarget)]  
+[!code-csharp[UIATextPattern_snip#GetTextElement](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#gettextelement)]
+[!code-vb[UIATextPattern_snip#GetTextElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#gettextelement)]  
+[!code-csharp[UIATextPattern_snip#GetEmbeddedObjects](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#getembeddedobjects)]
+[!code-vb[UIATextPattern_snip#GetEmbeddedObjects](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#getembeddedobjects)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnclosingElement">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement GetEnclosingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement GetEnclosingElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト範囲を囲む最も内側の <see cref="T:System.Windows.Automation.AutomationElement" /> を返します。</summary>
+        <returns>呼び出し元を囲む最も内側の要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 囲んでいる<xref:System.Windows.Automation.AutomationElement>、通常、テキスト範囲を提供するテキスト プロバイダー。 ただし、テキスト プロバイダーがテーブル、ハイパーリンクなどの子要素をサポートする場合は、外側の要素がそのテキスト プロバイダーの子孫である可能性があります。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1069](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1069)]  
+  
+ [!code-vb[UIATextPattern_snip#2069](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2069)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetText">
+      <MemberSignature Language="C#" Value="public string GetText (int maxLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetText(int32 maxLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.GetText(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="maxLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="maxLength">返す文字列の最大長。 使用して<c>-1</c>制限が必要ない場合。</param>
+        <summary>テキスト範囲のプレーンテキストを返します。</summary>
+        <returns>テキスト範囲のプレーンテキスト。指定した <paramref name="maxLength" /> で切り捨てられている可能性があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>表示と非表示の両方のテキストを尊重します。 UI オートメーション クライアントが確認できます、<xref:System.Windows.Automation.TextPattern.IsHiddenAttribute>テキスト表示にします。  
+  
+ 場合`maxLength`長さを超える値は、呼び出し元のテキスト範囲の返される文字列はテキスト範囲のプレーン テキストになります。  
+  
+ <xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>テキスト フロー; 内のエンドポイントの順序に影響はありません。常に論理テキスト フローの順序で、テキスト範囲の開始と終了のエンドポイント間でテキストが返されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1070](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1070)]  
+  
+ [!code-vb[UIATextPattern_snip#2070](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2070)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">場合<paramref name="maxLength" />-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Move">
+      <MemberSignature Language="C#" Value="public int Move (System.Windows.Automation.Text.TextUnit unit, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Move(valuetype System.Windows.Automation.Text.TextUnit unit, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.Move(System.Windows.Automation.Text.TextUnit,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unit" Type="System.Windows.Automation.Text.TextUnit" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="unit">テキスト単位の境界。</param>
+        <param name="count">移動するテキスト単位の数。 正の値はテキスト範囲を前方に移動し、負の値はテキスト範囲を後方に移動します。0 の場合は移動されません。</param>
+        <summary>指定されたテキスト単位数の分、テキスト範囲を移動します。</summary>
+        <returns>実際に移動された単位の数。 移動後のテキスト範囲のエンドポイントのいずれかが <see cref="P:System.Windows.Automation.TextPattern.DocumentRange" /> エンドポイントよりも大きい、または小さい場合、要求した数よりも小さくなる場合があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト範囲の内容を走査する必要がある場合、 <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> メソッドを正常に実行するために、一連の手順がその背後で関係しています。  
+  
+1.  テキスト範囲は正規化されます。つまり、テキスト範囲は <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> エンドポイントで低次元テキスト範囲に縮小されるため、 <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> エンドポイントは不要になります。 この手順は、テキスト範囲にまたがる状況であいまいさをなくすために必要`unit`境界。 たとえば、"{U} RL [http://www.microsoft.com](http://www.microsoft.com)テキストに埋め込まれた"、"{"と"}"がテキスト範囲エンドポイント。  
+  
+2.  結果として得られる範囲は、<xref:System.Windows.Automation.TextPattern.DocumentRange%2A> 内で、要求された `unit` 境界の先頭に向かって後方に移動されます。  
+  
+3.  この範囲は、<xref:System.Windows.Automation.TextPattern.DocumentRange%2A> 内で、`unit` 境界の要求された数だけ、前方または後方に移動されます。  
+  
+4.  その後、この範囲は、要求された 1 つの `unit` 境界の分、<xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> エンドポイントを移動することによって、低次元テキスト範囲の状態から展開されます。  
+  
+ ![Move & ExpandToEnclosingUnit による範囲調整](~/add/media/uia-textpattern-moveandexpand-examples.png "Move & ExpandToEnclosingUnit による範囲調整")  
+テキスト範囲を Move() と ExpandToEnclosingUnit() に対して調整する方法の例  
+  
+ テキスト コンテナーのテキスト コンテンツ (内部テキスト) と埋め込みオブジェクト (ハイパーリンクやテーブルのセルなど) は、連続する単一のテキスト ストリームとして、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューとコンテンツ ビューの両方で公開されます。そのため、オブジェクトの境界は無視されます。 UI オートメーション クライアントがなんらかの方法で列挙、解釈、分析を目的としてテキストを取得している場合、テキスト コンテンツを含むテーブルやその他の埋め込みオブジェクトなど、特殊なケースについて、テキスト範囲を確認する必要があります。 これには、呼び出すことによって<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>を取得する、<xref:System.Windows.Automation.AutomationElement>オブジェクトと呼び出すことで、各埋め込みの<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>; の各要素のテキスト範囲を取得するすべてのテキスト コンテンツが取得されるまで再帰的にはこれは、します。  
+  
+ ![埋め込みオブジェクトにまたがるテキスト範囲。](~/add/media/uia-textpattern-embeddedobjecttextranges.png "埋め込みオブジェクトにまたがるテキスト範囲。")  
+埋め込みオブジェクトとその範囲を含むテキスト ストリームの例  
+  
+ <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A>表示と非表示の両方のテキストを尊重します。 UI オートメーション クライアントが確認できます、<xref:System.Windows.Automation.TextPattern.IsHiddenAttribute>テキスト表示にします。  
+  
+ <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A>次に延期最大<xref:System.Windows.Automation.Text.TextUnit>サポートされている場合、指定された<xref:System.Windows.Automation.Text.TextUnit>コントロールでサポートされていません。  
+  
+ 最大値、最小単位からの注文は、以下に記載されています。  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Character>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Format>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Word>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Line>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Paragraph>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Page>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Document>  
+  
+> [!NOTE]
+>  テキスト範囲では、テキストの別の部分だけにまたがると、テキストは任意の方法で変更されません。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#StartTarget](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#starttarget)]
+ [!code-vb[UIATextPattern_snip#StartTarget](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#starttarget)]  
+[!code-csharp[UIATextPattern_snip#GetTextElement](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#gettextelement)]
+[!code-vb[UIATextPattern_snip#GetTextElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#gettextelement)]  
+[!code-csharp[UIATextPattern_snip#MoveSelection](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#moveselection)]
+[!code-vb[UIATextPattern_snip#MoveSelection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#moveselection)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveEndpointByRange">
+      <MemberSignature Language="C#" Value="public void MoveEndpointByRange (System.Windows.Automation.Text.TextPatternRangeEndpoint endpoint, System.Windows.Automation.Text.TextPatternRange targetRange, System.Windows.Automation.Text.TextPatternRangeEndpoint targetEndpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MoveEndpointByRange(valuetype System.Windows.Automation.Text.TextPatternRangeEndpoint endpoint, class System.Windows.Automation.Text.TextPatternRange targetRange, valuetype System.Windows.Automation.Text.TextPatternRangeEndpoint targetEndpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.MoveEndpointByRange(System.Windows.Automation.Text.TextPatternRangeEndpoint,System.Windows.Automation.Text.TextPatternRange,System.Windows.Automation.Text.TextPatternRangeEndpoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.Windows.Automation.Text.TextPatternRangeEndpoint" />
+        <Parameter Name="targetRange" Type="System.Windows.Automation.Text.TextPatternRange" />
+        <Parameter Name="targetEndpoint" Type="System.Windows.Automation.Text.TextPatternRangeEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">移動するエンドポイント。</param>
+        <param name="targetRange">同じテキスト プロバイダーからの別の範囲。</param>
+        <param name="targetEndpoint">他の範囲にあるエンドポイント。</param>
+        <summary>テキスト範囲の 1 つのエンドポイントを、2 番目のテキスト範囲の指定のエンドポイントに移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 移動中のエンドポイントが同じテキスト範囲の他のエンドポイントを越えるかどうかは、その他のエンドポイントはまた、低次元テキスト範囲し、正しい順序に基づいて、エンドポイントの移動 (つまり、<xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start>は常に以下を<xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End>)。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1072](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1072)]  
+  
+ [!code-vb[UIATextPattern_snip#2072](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2072)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveEndpointByUnit">
+      <MemberSignature Language="C#" Value="public int MoveEndpointByUnit (System.Windows.Automation.Text.TextPatternRangeEndpoint endpoint, System.Windows.Automation.Text.TextUnit unit, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 MoveEndpointByUnit(valuetype System.Windows.Automation.Text.TextPatternRangeEndpoint endpoint, valuetype System.Windows.Automation.Text.TextUnit unit, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.MoveEndpointByUnit(System.Windows.Automation.Text.TextPatternRangeEndpoint,System.Windows.Automation.Text.TextUnit,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.Windows.Automation.Text.TextPatternRangeEndpoint" />
+        <Parameter Name="unit" Type="System.Windows.Automation.Text.TextUnit" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">移動するエンドポイント。</param>
+        <param name="unit">移動するためのテキスト単位。</param>
+        <param name="count">移動する単位の数。 正の数はエンドポイントを前方に移動します。 負の数は後方に移動します。 0 の場合は移動されません。</param>
+        <summary>テキスト範囲の 1 つのエンドポイントを、指定された数の <see cref="T:System.Windows.Automation.Text.TextUnit" /> の分、ドキュメントの範囲内で移動します。</summary>
+        <returns>実際に移動した単位の数。エンドポイントの移動によりドキュメントの先頭または末尾に達した場合は、要求した数よりも小さくなる場合があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト範囲の内容を走査する必要がある場合、 <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> メソッドを正常に実行するために、一連の手順がその背後で関係しています。  
+  
+1.  テキスト範囲は正規化されます。つまり、テキスト範囲は <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> エンドポイントで低次元テキスト範囲に縮小されるため、 <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> エンドポイントは不要になります。 この手順は、テキスト範囲にまたがる状況であいまいさをなくすために必要`unit`境界。 たとえば、"{U} RL [http://www.microsoft.com](http://www.microsoft.com)テキストに埋め込まれた"、"{"と"}"がテキスト範囲エンドポイント。  
+  
+2.  結果として得られる範囲は、<xref:System.Windows.Automation.TextPattern.DocumentRange%2A> 内で、要求された `unit` 境界の先頭に向かって後方に移動されます。  
+  
+3.  その後、この範囲は、要求された 1 つの `unit` 境界の分、<xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> エンドポイントを移動することによって、低次元テキスト範囲の状態から展開されます。  
+  
+ ![Move & ExpandToEnclosingUnit による範囲調整](~/add/media/uia-textpattern-moveandexpand-examples.png "Move & ExpandToEnclosingUnit による範囲調整")  
+テキスト範囲を Move() と ExpandToEnclosingUnit() に対して調整する方法の例  
+  
+ テキスト コンテナーのテキスト コンテンツ (内部テキスト) と埋め込みオブジェクト (ハイパーリンクやテーブルのセルなど) は、連続する単一のテキスト ストリームとして、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] ツリーのコントロール ビューとコンテンツ ビューの両方で公開されます。そのため、オブジェクトの境界は無視されます。 UI オートメーション クライアントがなんらかの方法で列挙、解釈、分析を目的としてテキストを取得している場合、テキスト コンテンツを含むテーブルやその他の埋め込みオブジェクトなど、特殊なケースについて、テキスト範囲を確認する必要があります。 これには、呼び出すことによって<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>を取得する、<xref:System.Windows.Automation.AutomationElement>オブジェクトと呼び出すことで、各埋め込みの<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A>; の各要素のテキスト範囲を取得するすべてのテキスト コンテンツが取得されるまで再帰的にはこれは、します。  
+  
+ ![埋め込みオブジェクトにまたがるテキスト範囲。](~/add/media/uia-textpattern-embeddedobjecttextranges.png "埋め込みオブジェクトにまたがるテキスト範囲。")  
+埋め込みオブジェクトとその範囲を含むテキスト ストリームの例  
+  
+ <xref:System.Windows.Automation.Text.TextPatternRange.MoveEndpointByUnit%2A>次に延期最大<xref:System.Windows.Automation.Text.TextUnit>サポートされている場合、指定された<xref:System.Windows.Automation.Text.TextUnit>コントロールでサポートされていません。  
+  
+ 最大値、最小単位からの注文は、以下に記載されています。  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Character>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Format>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Word>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Line>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Paragraph>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Page>  
+  
+-   <xref:System.Windows.Automation.Text.TextUnit.Document>  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1073](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1073)]  
+  
+ [!code-vb[UIATextPattern_snip#2073](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2073)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveFromSelection">
+      <MemberSignature Language="C#" Value="public void RemoveFromSelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveFromSelection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.RemoveFromSelection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>複数の非結合選択をサポートするテキスト コンテナー内の強調表示されたテキストの既存のコレクションから、呼び出し元のテキスト範囲の <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start" /> エンドポイントおよび <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.End" /> エンドポイントに対応する、強調表示されたセクションを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト挿入ポイントが削除された強調表示の領域に移動します。  
+  
+ 低次元テキスト範囲を提供すると、カーソルが移動します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">テキスト プロバイダーは、複数をサポートしていない場合の非結合選択 (たとえば、<see cref="P:System.Windows.Automation.TextPattern.SupportedTextSelection" />の値が必要<see langword="Multiple" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollIntoView">
+      <MemberSignature Language="C#" Value="public void ScrollIntoView (bool alignToTop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollIntoView(bool alignToTop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.ScrollIntoView(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="alignToTop" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="alignToTop">
+          テキスト範囲をスクロールしてビューポートの上辺と揃える場合は <see langword="true" />。ビューポートの底辺と揃える場合は <see langword="false" /></param>
+        <summary>テキスト範囲がビューポート内に表示されるまで、テキスト コントロールを垂直方向にスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Text.TextPatternRange.ScrollIntoView%2A>表示と非表示の両方のテキストを尊重します。 UI オートメーション クライアントが確認できます、<xref:System.Windows.Automation.TextPattern.IsHiddenAttribute>テキスト表示にします。 テキスト範囲が表示されていない場合、テキスト コントロールは非表示のテキストは、ビューポートのアンカーを持つ場合だけスクロールします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1074](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1074)]  
+  
+ [!code-vb[UIATextPattern_snip#2074](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2074)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">スクロールがコントロールでサポートされていない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public void Select ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Select() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Text.TextPatternRange.Select" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト範囲の <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start" /> エンドポイントおよび <see cref="F:System.Windows.Automation.Text.TextPatternRangeEndpoint.End" /> エンドポイントに対応するテキスト コントロール内のテキストを強調表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 低次元テキスト範囲を指定する場合、テキスト挿入ポイントに移動、<xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start>テキスト範囲のエンドポイント。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1075](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1075)]  
+  
+ [!code-vb[UIATextPattern_snip#2075](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2075)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">テキストの選択がテキスト コントロールによってサポートされていない場合に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TextPattern">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.TextPattern TextPattern { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.TextPattern TextPattern" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Text.TextPatternRange.TextPattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.TextPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト範囲に関連付けられている <see cref="T:System.Windows.Automation.TextPattern" /> を取得します。</summary>
+        <value>テキスト プロバイダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[UIATextPattern_snip#1076](~/samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#1076)]  
+  
+ [!code-vb[UIATextPattern_snip#2076](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#2076)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

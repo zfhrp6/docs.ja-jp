@@ -1,0 +1,65 @@
+<Type Name="ServiceHostFactoryBase" FullName="System.ServiceModel.Activation.ServiceHostFactoryBase">
+  <TypeSignature Language="C#" Value="public abstract class ServiceHostFactoryBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ServiceHostFactoryBase extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activation.ServiceHostFactoryBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>入力メッセージに応答してホスト インスタンスが動的に作成される管理対象ホスト環境の中で、アプリケーション コードがサービス ホストの作成に参加することを可能にする、ファクトリの基本実装を用意します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスをサポートする管理対象ホスト環境は、インターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) です。 これらのホスト環境の中で <xref:System.ServiceModel.ServiceHostBase> のカスタム派生物を実装した場合は、このクラスから派生するファクトリを実装します。 <xref:System.ServiceModel.ServiceHost> のカスタム派生物を実装した場合は、代わりに <xref:System.ServiceModel.Activation.ServiceHostFactory> からの派生を考慮してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ServiceHostFactoryBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.ServiceHostFactoryBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activation.ServiceHostFactoryBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateServiceHost">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.ServiceHostBase CreateServiceHost (string constructorString, Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.ServiceHostBase CreateServiceHost(string constructorString, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.ServiceHostFactoryBase.CreateServiceHost(System.String,System.Uri[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ServiceHostBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constructorString" Type="System.String" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]" />
+      </Parameters>
+      <Docs>
+        <param name="constructorString">ファクトリによって構築される <see cref="T:System.ServiceModel.ServiceHostBase" /> インスタンスに渡される初期化データ。</param>
+        <param name="baseAddresses">ホストのベース アドレスを格納する <see cref="T:System.Array" /> 型の <see cref="T:System.Uri" />。</param>
+        <summary>派生クラスでオーバーライドされた場合は、カスタム開始データを使用するベース アドレスを持つ <see cref="T:System.ServiceModel.ServiceHostBase" /> を作成します。</summary>
+        <returns>指定したベース アドレスを持ち、カスタム開始データで初期化された <see cref="T:System.ServiceModel.ServiceHostBase" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

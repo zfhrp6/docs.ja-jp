@@ -1,0 +1,649 @@
+<Type Name="ContextUtil" FullName="System.EnterpriseServices.ContextUtil">
+  <TypeSignature Language="C#" Value="public sealed class ContextUtil" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContextUtil extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ContextUtil" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>COM + オブジェクト コンテキストに関する情報を取得します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ContextUtil>COM + コンテキスト情報を取得するのに使用する優先クラスです。 このクラスのメンバーはすべてため`static`(`shared` Visual Basic で)、それを使用する前にインスタンス化する必要はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.EnterpriseServices.ContextUtil>トランザクション パブリケーションを作成する<xref:System.EnterpriseServices.ServicedComponent>です。  
+  
+ [!code-cpp[EnterpriseServices_Transaction#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Transaction/CPP/transaction.cpp#1)]
+ [!code-csharp[EnterpriseServices_Transaction#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Transaction/CS/transaction.cs#1)]
+ [!code-vb[EnterpriseServices_Transaction#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Transaction/VB/transaction.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActivityId">
+      <MemberSignature Language="C#" Value="public static Guid ActivityId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Guid ActivityId" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.ActivityId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントが含まれるアクティビティを表す GUID を取得します。</summary>
+        <value>現在のコンテキストです。 アクティビティの一部である場合は、アクティビティの GUIDそれ以外の場合、<see langword="GUID_NULL" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の値を取得する、<xref:System.EnterpriseServices.ContextUtil.ActivityId%2A>プロパティです。  
+  
+ [!code-cpp[EnterpriseServicesContextUtil#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CPP/class1.cpp#1)]
+ [!code-csharp[EnterpriseServicesContextUtil#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CS/class1.cs#1)]
+ [!code-vb[EnterpriseServicesContextUtil#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesContextUtil/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このプラットフォームは、Windows 2000 以降ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationId">
+      <MemberSignature Language="C#" Value="public static Guid ApplicationId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Guid ApplicationId" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.ApplicationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションの GUID を取得します。</summary>
+        <value>現在のアプリケーションの GUID です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-cpp[EnterpriseServices_Pooling#3](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CPP/inspector.cpp#3)]
+ [!code-csharp[EnterpriseServices_Pooling#3](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CS/inspector.cs#3)]
+ [!code-vb[EnterpriseServices_Pooling#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Pooling/VB/inspector.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows XP またはそれ以降。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationInstanceId">
+      <MemberSignature Language="C#" Value="public static Guid ApplicationInstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Guid ApplicationInstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.ApplicationInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーション インスタンスの GUID を取得します。</summary>
+        <value>現在のアプリケーション インスタンスの GUID です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の値を取得する、<xref:System.EnterpriseServices.ContextUtil.ApplicationInstanceId%2A>プロパティです。  
+  
+ [!code-cpp[EnterpriseServicesContextUtil#2](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CPP/class1.cpp#2)]
+ [!code-csharp[EnterpriseServicesContextUtil#2](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CS/class1.cs#2)]
+ [!code-vb[EnterpriseServicesContextUtil#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesContextUtil/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows XP またはそれ以降。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextId">
+      <MemberSignature Language="C#" Value="public static Guid ContextId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Guid ContextId" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.ContextId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコンテキストの GUID を取得します。</summary>
+        <value>現在のコンテキストの GUID です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、この属性の使用を示します。  
+  
+ [!code-cpp[EnterpriseServices_Pooling#3](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CPP/inspector.cpp#3)]
+ [!code-csharp[EnterpriseServices_Pooling#3](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Pooling/CS/inspector.cs#3)]
+ [!code-vb[EnterpriseServices_Pooling#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Pooling/VB/inspector.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このプラットフォームは、Windows 2000 以降ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeactivateOnReturn">
+      <MemberSignature Language="C#" Value="public static bool DeactivateOnReturn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool DeactivateOnReturn" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.DeactivateOnReturn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see langword="done" /> COM + コンテキスト内のビットです。</summary>
+        <value>
+          <see langword="true" />オブジェクトのメソッドが戻るときに非アクティブになる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ COM +`done`ビットがどのくらいの期間、オブジェクトが消えない、処理が完了した後を決定し、トランザクションの期間に影響を与えることができます。 メソッドの呼び出しが戻るとき、COM +、`done`ビットです。 場合、`done`ビットが`true`COM + オブジェクトが非アクティブ化します。 場合、`done`ビットが`false`オブジェクトが非アクティブ化されません。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.EnterpriseServices.ContextUtil.DeactivateOnReturn%2A>いることを確認するプロパティ、<xref:System.EnterpriseServices.ServicedComponent>がメソッド呼び出しの後に非アクティブ化します。  
+  
+ [!code-cpp[EnterpriseServices_Transaction#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Transaction/CPP/transaction.cpp#1)]
+ [!code-csharp[EnterpriseServices_Transaction#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Transaction/CS/transaction.cs#1)]
+ [!code-vb[EnterpriseServices_Transaction#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Transaction/VB/transaction.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このプラットフォームは、Windows 2000 以降ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableCommit">
+      <MemberSignature Language="C#" Value="public static void DisableCommit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisableCommit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ContextUtil.DisableCommit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>両方の設定、<see langword="consistent" />ビットおよび<see langword="done" />ビットを<see langword="false" />COM + コンテキストでします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ COM + コンテキストの現在のトランザクションを中止する投票要求された場合は、メソッドの戻り値のオブジェクトが非アクティブ化されません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.EnterpriseServices.ContextUtil.DisableCommit%2A>メソッドです。  
+  
+ [!code-cpp[EnterpriseServicesContextUtil#3](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CPP/class1.cpp#3)]
+ [!code-csharp[EnterpriseServicesContextUtil#3](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CS/class1.cs#3)]
+ [!code-vb[EnterpriseServicesContextUtil#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesContextUtil/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">COM + コンテキストはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableCommit">
+      <MemberSignature Language="C#" Value="public static void EnableCommit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableCommit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ContextUtil.EnableCommit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see langword="consistent" />ビットを<see langword="true" />と<see langword="done" />ビットを<see langword="false" />COM + コンテキストでします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求されると、COM + コンテキストは、現在のトランザクションをコミットが、メソッドの戻り値のオブジェクトが非アクティブ化されません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.EnterpriseServices.ContextUtil.EnableCommit%2A>メソッドです。  
+  
+ [!code-cpp[EnterpriseServicesContextUtil#4](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CPP/class1.cpp#4)]
+ [!code-csharp[EnterpriseServicesContextUtil#4](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CS/class1.cs#4)]
+ [!code-vb[EnterpriseServicesContextUtil#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesContextUtil/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">COM + コンテキストはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamedProperty">
+      <MemberSignature Language="C#" Value="public static object GetNamedProperty (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetNamedProperty(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ContextUtil.GetNamedProperty(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要求されたプロパティの名前。</param>
+        <summary>COM + コンテキストから名前付きプロパティを返します。</summary>
+        <returns>コンテキストの名前付きのプロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、Active Server Pages (ASP) によって提供されるインターネット インフォメーション サービス (IIS) の組み込みオブジェクトを取得するために役立ちます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このプラットフォームは、Windows 2000 以降ではありません。</exception>
+        <altmember cref="M:System.EnterpriseServices.ContextUtil.SetNamedProperty(System.String,System.Object)" />
+      </Docs>
+    </Member>
+    <Member MemberName="IsCallerInRole">
+      <MemberSignature Language="C#" Value="public static bool IsCallerInRole (string role);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsCallerInRole(string role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ContextUtil.IsCallerInRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="role">確認するロールの名前。</param>
+        <summary>呼び出し元が指定したロールがかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />呼び出し元が指定されたロールの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultContext">
+      <MemberSignature Language="C#" Value="public static bool IsDefaultContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefaultContext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ContextUtil.IsDefaultContext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のコンテキストでサービス コンポーネントがアクティブかどうかを判断します。 既定のコンテキストでは、COM + カタログ情報がないサービスのコンポーネントがアクティブ化します。</summary>
+        <returns>**true**サービス コンポーネントが既定のコンテキスト内でアクティブに、それ以外の場合は**false**です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInTransaction">
+      <MemberSignature Language="C#" Value="public static bool IsInTransaction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsInTransaction" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.IsInTransaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコンテキストがトランザクションかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、現在のコンテキストがトランザクションです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の値を取得する、<xref:System.EnterpriseServices.ContextUtil.IsInTransaction%2A>プロパティです。  
+  
+ [!code-cpp[EnterpriseServicesContextUtil#5](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CPP/class1.cpp#5)]
+ [!code-csharp[EnterpriseServicesContextUtil#5](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CS/class1.cs#5)]
+ [!code-vb[EnterpriseServicesContextUtil#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesContextUtil/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecurityEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsSecurityEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsSecurityEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.IsSecurityEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロールベースのセキュリティは、現在のコンテキストでアクティブにするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在のコンテキストのセキュリティが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の値を取得する、<xref:System.EnterpriseServices.ContextUtil.IsSecurityEnabled%2A>プロパティです。  
+  
+ [!code-cpp[EnterpriseServicesContextUtil#6](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CPP/class1.cpp#6)]
+ [!code-csharp[EnterpriseServicesContextUtil#6](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CS/class1.cs#6)]
+ [!code-vb[EnterpriseServicesContextUtil#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesContextUtil/VB/class1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MyTransactionVote">
+      <MemberSignature Language="C#" Value="public static System.EnterpriseServices.TransactionVote MyTransactionVote { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.EnterpriseServices.TransactionVote MyTransactionVote" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.MyTransactionVote" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.TransactionVote</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see langword="consistent" /> COM + コンテキスト内のビットです。</summary>
+        <value>1 つ、<see cref="T:System.EnterpriseServices.TransactionVote" />値か、<see langword="Commit" />または<see langword="Abort" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.EnterpriseServices.ContextUtil.MyTransactionVote%2A>に設定されている`Commit`、COM +`consistent`に設定されているビット`true`COM + コンテキスト トランザクションをコミットします。 場合<xref:System.EnterpriseServices.ContextUtil.MyTransactionVote%2A>に設定されている`Abort`、`consistent`に設定されているビット`false`し、COM + コンテキスト トランザクションを中止します。 既定値、`consistent`ビットが`true`です。  
+  
+ `consistent`ビットの実行、トランザクション コミットまたは中止に投票をキャストして、`done`ビットは、投票を終了します。 COM +、`consistent`ビットの場合、`done`に設定されているビット`true`メソッドで戻り値を呼び出したり、オブジェクトが非アクティブ化します。 ただし、オブジェクトの`consistent`ビット繰り返し変更できますが、各メソッド呼び出し内で最後の変更数だけです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.EnterpriseServices.ContextUtil.MyTransactionVote%2A>トランザクション パブリケーションを作成するプロパティ<xref:System.EnterpriseServices.ServicedComponent>です。  
+  
+ [!code-cpp[EnterpriseServices_Transaction#1](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Transaction/CPP/transaction.cpp#1)]
+ [!code-csharp[EnterpriseServices_Transaction#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Transaction/CS/transaction.cs#1)]
+ [!code-vb[EnterpriseServices_Transaction#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Transaction/VB/transaction.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このプラットフォームは、Windows 2000 以降ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PartitionId">
+      <MemberSignature Language="C#" Value="public static Guid PartitionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Guid PartitionId" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.PartitionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のパーティションの GUID を取得します。</summary>
+        <value>現在のパーティションの GUID です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">プラットフォームが Windows XP またはそれ以降。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAbort">
+      <MemberSignature Language="C#" Value="public static void SetAbort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetAbort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ContextUtil.SetAbort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see langword="consistent" />ビットを<see langword="false" />と<see langword="done" />ビットを<see langword="true" />COM + コンテキストでします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキストが、現在のトランザクションを中止する投票要求された場合と、オブジェクトがメソッドの戻り値の非アクティブ化します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドの使用方法を示します。  
+  
+ [!code-cpp[EnterpriseServices_Crm#13](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Crm/cpp/crmserver.cpp#13)]
+ [!code-csharp[EnterpriseServices_Crm#13](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Crm/CS/crmserver.cs#13)]
+ [!code-vb[EnterpriseServices_Crm#13](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Crm/VB/crmserver.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetComplete">
+      <MemberSignature Language="C#" Value="public static void SetComplete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetComplete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ContextUtil.SetComplete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see langword="consistent" />ビットおよび<see langword="done" />ビットを<see langword="true" />COM + コンテキストでします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求されると、COM + コンテキストは、現在のトランザクションをコミットし、オブジェクトがメソッドの戻り値の非アクティブ化します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドの使用方法を示します。  
+  
+ [!code-cpp[EnterpriseServices_Crm#13](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Crm/cpp/crmserver.cpp#13)]
+ [!code-csharp[EnterpriseServices_Crm#13](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Crm/CS/crmserver.cs#13)]
+ [!code-vb[EnterpriseServices_Crm#13](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Crm/VB/crmserver.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNamedProperty">
+      <MemberSignature Language="C#" Value="public static void SetNamedProperty (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetNamedProperty(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ContextUtil.SetNamedProperty(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">設定するプロパティの名前。</param>
+        <param name="value">設定するプロパティ値を表すオブジェクト。</param>
+        <summary>COM + コンテキストの名前付きプロパティを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、Active Server Pages (ASP) によって提供されるインターネット インフォメーション サービス (IIS) の組み込みオブジェクトを取得するために役立ちます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このプラットフォームは、Windows 2000 以降ではありません。</exception>
+        <altmember cref="M:System.EnterpriseServices.ContextUtil.GetNamedProperty(System.String)" />
+      </Docs>
+    </Member>
+    <Member MemberName="SystemTransaction">
+      <MemberSignature Language="C#" Value="public static System.Transactions.Transaction SystemTransaction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Transactions.Transaction SystemTransaction" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.SystemTransaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.Transaction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のトランザクション コンテキストを取得します。</summary>
+        <value>A<see cref="T:System.Transactions.Transaction" />を現在のトランザクション コンテキストを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクション コンテキストが存在しない場合このプロパティにアクセスする場合、新しいトランザクション コンテキストが作成され、返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このプラットフォームは、Windows 2000 以降ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transaction">
+      <MemberSignature Language="C#" Value="public static object Transaction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property object Transaction" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.Transaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の COM + DTC トランザクションを表すオブジェクトを取得します。</summary>
+        <value>現在のトランザクションを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトをサポートしている、<xref:System.EnterpriseServices.ITransaction>インターフェイスの場合は、トランザクション、COM + DTC トランザクションです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このプラットフォームは、Windows 2000 以降ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionId">
+      <MemberSignature Language="C#" Value="public static Guid TransactionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Guid TransactionId" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ContextUtil.TransactionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の COM + DTC トランザクションの GUID を取得します。</summary>
+        <value>1 つの場合は、現在の COM + DTC トランザクションを表す GUID が存在します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の値を取得する、<xref:System.EnterpriseServices.ContextUtil.TransactionId%2A>プロパティです。  
+  
+ [!code-cpp[EnterpriseServicesContextUtil#7](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CPP/class1.cpp#7)]
+ [!code-csharp[EnterpriseServicesContextUtil#7](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesContextUtil/CS/class1.cs#7)]
+ [!code-vb[EnterpriseServicesContextUtil#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServicesContextUtil/VB/class1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">使用できる COM+ コンテキストはありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このプラットフォームは、Windows 2000 以降ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

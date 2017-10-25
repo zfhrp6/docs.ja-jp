@@ -1,0 +1,782 @@
+<Type Name="RowDefinitionCollection" FullName="System.Windows.Controls.RowDefinitionCollection">
+  <TypeSignature Language="C#" Value="public sealed class RowDefinitionCollection : System.Collections.Generic.ICollection&lt;System.Windows.Controls.RowDefinition&gt;, System.Collections.Generic.IEnumerable&lt;System.Windows.Controls.RowDefinition&gt;, System.Collections.Generic.IList&lt;System.Windows.Controls.RowDefinition&gt;, System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RowDefinitionCollection extends System.Object implements class System.Collections.Generic.ICollection`1&lt;class System.Windows.Controls.RowDefinition&gt;, class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Controls.RowDefinition&gt;, class System.Collections.Generic.IList`1&lt;class System.Windows.Controls.RowDefinition&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.RowDefinitionCollection" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;System.Windows.Controls.RowDefinition&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Windows.Controls.RowDefinition&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IList&lt;System.Windows.Controls.RowDefinition&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>順序付けられ、厳密に型指定された <see cref="T:System.Windows.Controls.RowDefinition" /> オブジェクトのコレクションへのアクセスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Windows.Controls.RowDefinition value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(class System.Windows.Controls.RowDefinition value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.Add(System.Windows.Controls.RowDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Controls.RowDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="value">識別、<see cref="T:System.Windows.Controls.RowDefinition" />をコレクションに追加します。</param>
+        <summary>追加、<see cref="T:System.Windows.Controls.RowDefinition" />要素を<see cref="T:System.Windows.Controls.RowDefinitionCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Controls.RowDefinitionCollection.Add%2A>を追加するメソッド、<xref:System.Windows.Controls.RowDefinition>を<xref:System.Windows.Controls.RowDefinitionCollection>です。  
+  
+ [!code-csharp[columndefinitionsgrid#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ColumnDefinitionsGrid/CSharp/Window1.xaml.cs#3)]
+ [!code-vb[columndefinitionsgrid#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ColumnDefinitionsGrid/VisualBasic/Window1.xaml.vb#3)]  
+  
+ 完全なサンプルを表示するを参照してください。[する方法: 列の操作とするには、RowDefinitionsCollections 行](~/docs/framework/wpf/controls/manipulate-columns-and-rows-by-using-columndefinitionscollections.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内容を消去、<see cref="T:System.Windows.Controls.RowDefinitionCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Controls.RowDefinitionCollection.Clear%2A>の内容を消去するメソッドを<xref:System.Windows.Controls.RowDefinitionCollection>です。  
+  
+ [!code-csharp[columndefinitionsgrid#4](~/samples/snippets/csharp/VS_Snippets_Wpf/ColumnDefinitionsGrid/CSharp/Window1.xaml.cs#4)]
+ [!code-vb[columndefinitionsgrid#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ColumnDefinitionsGrid/VisualBasic/Window1.xaml.vb#4)]  
+  
+ 完全なサンプルを表示するを参照してください。[する方法: 列の操作とするには、RowDefinitionsCollections 行](~/docs/framework/wpf/controls/manipulate-columns-and-rows-by-using-columndefinitionscollections.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Controls.RowDefinition value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(class System.Windows.Controls.RowDefinition value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.Contains(System.Windows.Controls.RowDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Controls.RowDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="value">識別、<see cref="T:System.Windows.Controls.RowDefinition" />がテストされています。</param>
+        <summary>決定するかどうか、指定された<see cref="T:System.Windows.Controls.RowDefinition" />内に存在する、<see cref="T:System.Windows.Controls.RowDefinitionCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.RowDefinition" />コレクション内に存在する場合は<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Controls.RowDefinitionCollection.Contains%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Windows.Controls.RowDefinition>内に存在する、<xref:System.Windows.Controls.RowDefinitionCollection>です。  
+  
+ [!code-csharp[columndefinitionsgrid#8](~/samples/snippets/csharp/VS_Snippets_Wpf/ColumnDefinitionsGrid/CSharp/Window1.xaml.cs#8)]
+ [!code-vb[columndefinitionsgrid#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ColumnDefinitionsGrid/VisualBasic/Window1.xaml.vb#8)]  
+  
+ 完全なサンプルを表示するを参照してください。[する方法: 列の操作とするには、RowDefinitionsCollections 行](~/docs/framework/wpf/controls/manipulate-columns-and-rows-by-using-columndefinitionscollections.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Windows.Controls.RowDefinition[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Windows.Controls.RowDefinition[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.CopyTo(System.Windows.Controls.RowDefinition[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Windows.Controls.RowDefinition[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Windows.Controls.RowDefinition" /> オブジェクトの配列。</param>
+        <param name="index">内のインデックス位置を識別<c>配列</c>先、<see cref="T:System.Windows.Controls.RowDefinition" />オブジェクトをコピーします。</param>
+        <summary>配列のコピー<see cref="T:System.Windows.Controls.RowDefinition" />内の指定したインデックス位置にオブジェクト、<see cref="T:System.Windows.Controls.RowDefinitionCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.RowDefinitionCollection>システムを使用する 0 から始まるインデックス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.ICollection" /> の要素数が、インデックスからコピー先の配列の末尾までに格納できる数を超えています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinitionCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンス内のアイテムの合計数を取得<see cref="T:System.Windows.Controls.RowDefinitionCollection" />です。</summary>
+        <value>コレクション内の項目の合計数。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.RowDefinitionCollection>システムを使用する 0 から始まるインデックス。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Controls.RowDefinitionCollection.Count%2A>プロパティです。  
+  
+ [!code-csharp[columndefinitionsgrid#7](~/samples/snippets/csharp/VS_Snippets_Wpf/ColumnDefinitionsGrid/CSharp/Window1.xaml.cs#7)]
+ [!code-vb[columndefinitionsgrid#7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ColumnDefinitionsGrid/VisualBasic/Window1.xaml.vb#7)]  
+  
+ 完全なサンプルを表示するを参照してください。[する方法: 列の操作とするには、RowDefinitionsCollections 行](~/docs/framework/wpf/controls/manipulate-columns-and-rows-by-using-columndefinitionscollections.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Controls.RowDefinition value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(class System.Windows.Controls.RowDefinition value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.IndexOf(System.Windows.Controls.RowDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Controls.RowDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Controls.RowDefinition" />インデックス位置を持つが必要です。</param>
+        <summary>インデックス位置を返します、指定された<see cref="T:System.Windows.Controls.RowDefinition" />内で、<see cref="T:System.Windows.Controls.RowDefinitionCollection" />です。</summary>
+        <returns>インデックス<paramref name="value" />コレクション内で見つかった場合は、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Controls.RowDefinitionCollection.IndexOf%2A>のインデックス位置を決定するメソッド、<xref:System.Windows.Controls.RowDefinition>内で、<xref:System.Windows.Controls.RowDefinitionCollection>です。  
+  
+ [!code-csharp[columndefinitionsgrid#9](~/samples/snippets/csharp/VS_Snippets_Wpf/ColumnDefinitionsGrid/CSharp/Window1.xaml.cs#9)]
+ [!code-vb[columndefinitionsgrid#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ColumnDefinitionsGrid/VisualBasic/Window1.xaml.vb#9)]  
+  
+ 完全なサンプルを表示するを参照してください。[する方法: 列の操作とするには、RowDefinitionsCollections 行](~/docs/framework/wpf/controls/manipulate-columns-and-rows-by-using-columndefinitionscollections.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Windows.Controls.RowDefinition value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 index, class System.Windows.Controls.RowDefinition value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.Insert(System.Int32,System.Windows.Controls.RowDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Windows.Controls.RowDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の項目が挿入された位置。</param>
+        <param name="value">挿入する <see cref="T:System.Windows.Controls.RowDefinition" />。</param>
+        <summary>挿入、<see cref="T:System.Windows.Controls.RowDefinition" />内で指定したインデックス位置にある、<see cref="T:System.Windows.Controls.RowDefinitionCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.RowDefinitionCollection>システムを使用する 0 から始まるインデックス。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Controls.RowDefinitionCollection.Insert%2A>を挿入する方法、<xref:System.Windows.Controls.RowDefinition>特定`index`内の位置に、<xref:System.Windows.Controls.RowDefinitionCollection>です。  
+  
+ [!code-csharp[columndefinitionsgrid#9](~/samples/snippets/csharp/VS_Snippets_Wpf/ColumnDefinitionsGrid/CSharp/Window1.xaml.cs#9)]
+ [!code-vb[columndefinitionsgrid#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ColumnDefinitionsGrid/VisualBasic/Window1.xaml.vb#9)]  
+  
+ 完全なサンプルを表示するを参照してください。[する方法: 列の操作とするには、RowDefinitionsCollections 行](~/docs/framework/wpf/controls/manipulate-columns-and-rows-by-using-columndefinitionscollections.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が <see cref="T:System.Collections.IList" /> の有効なインデックスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinitionCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.RowDefinitionCollection" />は読み取り専用です。</summary>
+        <value>
+          <see langword="true" />コレクションが読み取り専用の場合それ以外の場合<see langword="false" />です。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の値を取得する方法を示します、<xref:System.Windows.Controls.RowDefinitionCollection.IsReadOnly%2A>プロパティです。  
+  
+ [!code-csharp[columndefinitionsgrid#10](~/samples/snippets/csharp/VS_Snippets_Wpf/ColumnDefinitionsGrid/CSharp/Window1.xaml.cs#10)]
+ [!code-vb[columndefinitionsgrid#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ColumnDefinitionsGrid/VisualBasic/Window1.xaml.vb#10)]  
+  
+ 完全なサンプルを表示するを参照してください。[する方法: 列の操作とするには、RowDefinitionsCollections 行](~/docs/framework/wpf/controls/manipulate-columns-and-rows-by-using-columndefinitionscollections.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinitionCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかをこのアクセス<see cref="T:System.Windows.Controls.RowDefinitionCollection" />(スレッド セーフである) が同期されています。</summary>
+        <value>
+          <see langword="true" />このコレクションへのアクセスが同期されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理中には、スレッド セーフを確保するには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.RowDefinition this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.RowDefinition Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinitionCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.RowDefinition</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の現在の項目。</param>
+        <summary>内で現在の項目を示す値を取得、<see cref="T:System.Windows.Controls.RowDefinitionCollection" />です。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.RowDefinitionCollection>システムを使用する 0 から始まるインデックス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />有効なインデックス位置で、コレクション内ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.Windows.Controls.RowDefinition value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(class System.Windows.Controls.RowDefinition value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.Remove(System.Windows.Controls.RowDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Controls.RowDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.Windows.Controls.RowDefinition" />。</param>
+        <summary>削除、<see cref="T:System.Windows.Controls.RowDefinition" />から、<see cref="T:System.Windows.Controls.RowDefinitionCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.RowDefinition" />がコレクション内に存在し、削除された、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の位置、<see cref="T:System.Windows.Controls.RowDefinition" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Windows.Controls.RowDefinition" />から、<see cref="T:System.Windows.Controls.RowDefinitionCollection" />指定したインデックス位置にあります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.RowDefinitionCollection>システムを使用する 0 から始まるインデックス。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Controls.RowDefinitionCollection.RemoveAt%2A>を削除する方法、<xref:System.Windows.Controls.RowDefinition>に、<xref:System.Windows.Controls.RowDefinitionCollection>特定で`index`位置。  
+  
+ [!code-csharp[columndefinitionsgrid#5](~/samples/snippets/csharp/VS_Snippets_Wpf/ColumnDefinitionsGrid/CSharp/Window1.xaml.cs#5)]
+ [!code-vb[columndefinitionsgrid#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ColumnDefinitionsGrid/VisualBasic/Window1.xaml.vb#5)]  
+  
+ 完全なサンプルを表示するを参照してください。[する方法: 列の操作とするには、RowDefinitionsCollections 行](~/docs/framework/wpf/controls/manipulate-columns-and-rows-by-using-columndefinitionscollections.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRange">
+      <MemberSignature Language="C#" Value="public void RemoveRange (int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveRange(int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.RemoveRange(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の位置最初<see cref="T:System.Windows.Controls.RowDefinition" />を削除します。</param>
+        <param name="count">合計数<see cref="T:System.Windows.Controls.RowDefinition" />コレクションから削除するオブジェクト。</param>
+        <summary>範囲を削除<see cref="T:System.Windows.Controls.RowDefinition" />オブジェクトから、<see cref="T:System.Windows.Controls.RowDefinitionCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.RowDefinitionCollection>システムを使用する 0 から始まるインデックス。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Controls.RowDefinitionCollection.RemoveRange%2A>の範囲を削除するメソッド<xref:System.Windows.Controls.RowDefinition>からの要素、<xref:System.Windows.Controls.RowDefinitionCollection>です。  
+  
+ [!code-csharp[columndefinitionsgrid#6](~/samples/snippets/csharp/VS_Snippets_Wpf/ColumnDefinitionsGrid/CSharp/Window1.xaml.cs#6)]
+ [!code-vb[columndefinitionsgrid#6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ColumnDefinitionsGrid/VisualBasic/Window1.xaml.vb#6)]  
+  
+ 完全なサンプルを表示するを参照してください。[する方法: 列の操作とするには、RowDefinitionsCollections 行](~/docs/framework/wpf/controls/manipulate-columns-and-rows-by-using-columndefinitionscollections.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinitionCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.RowDefinitionCollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Windows.Controls.RowDefinitionCollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理中には、スレッド セーフを確保するには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;System.Windows.Controls.RowDefinition&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;System.Windows.Controls.RowDefinition&gt; IEnumerable&lt;RowDefinition&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.Windows.Controls.RowDefinition&gt; System.Collections.Generic.IEnumerable&lt;System.Windows.Controls.RowDefinition&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.System#Collections#Generic#IEnumerable&lt;System#Windows#Controls#RowDefinition&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Windows.Controls.RowDefinition&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.Generic.IEnumerable`1" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.RowDefinitionCollection> のインスタンスが <xref:System.Collections.Generic.IEnumerable%601> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Windows.Controls.RowDefinitionCollection" /> からコピーされた項目を受け取る、0 から始まる <see cref="T:System.Array" />。</param>
+        <param name="index">指定した最初の位置<see cref="T:System.Array" />内容のコピーを受信します。</param>
+        <summary>コレクションの要素を <see cref="T:System.Array" /> にコピーします。<see cref="T:System.Array" /> の特定のインデックスからコピーが開始されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.RowDefinitionCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.RowDefinitionCollection> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" /> に追加する <see cref="T:System.Windows.Controls.RowDefinitionCollection" />。</param>
+        <summary>項目をコレクションに追加します。</summary>
+        <returns>新しい要素が挿入された位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.RowDefinitionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Controls.RowDefinitionCollection" /> 内で検索される <see cref="T:System.Object" />。</param>
+        <summary>コレクションに特定の値が格納されているかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.Object" /> が <see cref="T:System.Windows.Controls.RowDefinitionCollection" /> に存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.RowDefinitionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Controls.RowDefinitionCollection" /> 内で検索される <see cref="T:System.Object" />。</param>
+        <summary>コレクション内の特定の項目のインデックスを決定します。</summary>
+        <returns>リストに存在する場合は <paramref name="value" /> のインデックス。それ以外の場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.RowDefinitionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス、<see cref="T:System.Object" />です。</param>
+        <param name="value"><see cref="T:System.Object" />に挿入する、<see cref="T:System.Windows.Controls.RowDefinitionCollection" />です。</param>
+        <summary>指定したインデックス位置をコレクションに項目を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.RowDefinitionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinitionCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合の<see cref="T:System.Windows.Controls.RowDefinitionCollection" />が固定サイズです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.RowDefinitionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.RowDefinitionCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する要素の、0 から始まるインデックス番号。</param>
+        <summary>指定したインデックスにある要素を取得または設定します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、`myCollection[index]` という構文を使用して、コレクション内の特定の要素にアクセスできます。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.RowDefinitionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />有効なインデックス位置で、一覧ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.RowDefinitionCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" /> から削除する <see cref="T:System.Windows.Controls.RowDefinitionCollection" />。</param>
+        <summary>特定のオブジェクトの最初に出現したものをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.RowDefinitionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

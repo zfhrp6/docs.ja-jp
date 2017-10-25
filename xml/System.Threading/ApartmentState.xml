@@ -1,0 +1,127 @@
+<Type Name="ApartmentState" FullName="System.Threading.ApartmentState">
+  <TypeSignature Language="C#" Value="public enum ApartmentState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed ApartmentState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.ApartmentState" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Thread</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アパートメント状態を指定します、<see cref="T:System.Threading.Thread" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アパートメントには、同じスレッド アクセス要件を共有するオブジェクトのプロセス内で論理コンテナーです。 同じアパートメント内のすべてのオブジェクトは、任意のスレッドのアパートメントからの呼び出しを受信できます。 .NET Framework は、アパートメントを使用しない、マネージ オブジェクトは自体、スレッド セーフな方法でのすべての共有リソースの使用を担当します。  
+  
+ COM クラスでは、アパートメントを使用するため、共通言語ランタイムを作成し、COM 相互運用状況では、COM オブジェクトを呼び出すときに、アパートメントを初期化する必要があります。 マネージ スレッドは、作成し、シングル スレッド アパートメント (STA) スレッドの 1 つだけを許可するか、1 つまたは複数のスレッドを含むマルチ スレッド アパートメント (MTA) を入力します。 設定して作成されたアパートメントの種類を制御することができます、<xref:System.Threading.Thread.ApartmentState%2A>の値のいずれかのスレッドのプロパティ、<xref:System.Threading.ApartmentState>列挙します。 特定のスレッドは、COM アパートメントを 1 回初期化することができますのみ、ため、アンマネージ コードの最初の呼び出し後にアパートメントの種類を変更できません。  
+  
+ 詳細については、次を参照してください。 <xref:System.Threading.Thread>、[マネージとアンマネージ スレッド](http://msdn.microsoft.com/en-us/db425c20-4b2f-4433-bf96-76071c7881e5)、および[高度な COM 相互運用性](http://msdn.microsoft.com/en-us/3ada36e5-2390-4d70-b490-6ad8de92f2fb)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、スレッドのアパートメント状態を設定する方法を示します。  
+  
+ [!code-cpp[System.Threading.Thread.ApartmentState#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Thread.ApartmentState/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Thread.ApartmentState#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Thread.ApartmentState/CS/source.cs#1)]
+ [!code-vb[System.Threading.Thread.ApartmentState#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Thread.ApartmentState/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MTA">
+      <MemberSignature Language="C#" Value="MTA" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ApartmentState MTA = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ApartmentState.MTA" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ApartmentState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Threading.Thread" />が作成され、マルチ スレッド アパートメントを入力します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="STA">
+      <MemberSignature Language="C#" Value="STA" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ApartmentState STA = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ApartmentState.STA" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ApartmentState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Threading.Thread" />が作成され、シングル スレッド アパートメントを入力します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.ApartmentState Unknown = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.ApartmentState.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ApartmentState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Threading.Thread.ApartmentState" />プロパティが設定されていません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

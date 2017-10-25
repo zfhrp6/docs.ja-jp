@@ -1,0 +1,808 @@
+<Type Name="Information" FullName="Microsoft.VisualBasic.Information">
+  <TypeSignature Language="C#" Value="public sealed class Information" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Information extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Information" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>Microsoft.VisualBasic.CompilerServices.StandardModule</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="Information" />モジュールを返す、テスト、または情報を確認するために使用する手順について説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモジュールは、Visual Basic 言語のキーワードとエラー情報を提供し、データを検証して、配列の範囲を決定し、データの種類と色の情報を取得、ランタイム ライブラリ メンバーをサポートします。  
+  
+   
+  
+## Examples  
+ 次の例では、`VbTypeName`をいくつかの変数のデータ型の名前を返す関数。  
+  
+```  
+Dim sysDateName As String = "System.DateTime"  
+Dim sysShortName As String = "Int16"  
+Dim sysBadName As String = "Nonsense"  
+Dim testVbName As String  
+testVbName = VbTypeName(sysDateName)   
+' Returns "Date".  
+testVbName = VbTypeName(sysShortName)   
+' Returns "Short".  
+testVbName = VbTypeName(sysBadName)   
+' Returns Nothing.  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Erl">
+      <MemberSignature Language="C#" Value="public static int Erl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Erl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.Erl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最後に実行されたステートメントの行番号を示す整数を返します。 読み取り専用です。</summary>
+        <returns>最後に実行されたステートメントの行番号を示す整数を返します。 読み取り専用です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic に行番号がない場合は、0 を返します。  
+  
+   
+  
+## Examples  
+ この例では、`Erl`行番号を指定するプロパティです。  
+  
+ [!code-vb[VbVbalrErrorHandling#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Err">
+      <MemberSignature Language="C#" Value="public static Microsoft.VisualBasic.ErrObject Err ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static class Microsoft.VisualBasic.ErrObject Err() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.Err" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.ErrObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ランタイム エラーに関する情報を格納します。</summary>
+        <returns>ランタイム エラーに関する情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティ、`Err`オブジェクトがエラーのジェネレーターによって設定されます: Visual Basic、オブジェクト、またはプログラマです。  
+  
+ 実行時エラーが発生すると、プロパティの`Err`オブジェクトは、エラーを一意に識別する情報が格納し、エラー処理に使用することができます。 コードの実行時エラーを生成するには、使用、`Raise`メソッドです。  
+  
+ `Err`オブジェクトのプロパティがゼロまたは長さ 0 の文字列にリセットされます ("") した後、 `Exit Sub`、 `Exit Function`、 `Exit Property`、または`Resume Next`エラー処理ルーチン内のステートメント。 任意の形式を使用して、`Resume`エラー処理ルーチンの外部でのステートメントはリセットされません、`Err`オブジェクトのプロパティです。 使用することができます、`Clear`メソッドを明示的にリセット`Err`です。  
+  
+ 使用して、`Raise`メソッドではなく、`Error`およびモジュールをクラスにシステム エラーの実行時エラーを生成するステートメント。 使用するかどうかについての決定、`Raise`他のコードでメソッドを取得する情報の量によって異なります。  
+  
+ `Err`オブジェクトは、グローバル スコープを持つ組み込みオブジェクトです。 したがって、コードで、そのインスタンスを作成する必要はありません。  
+  
+   
+  
+## Examples  
+ この例のプロパティを使用して、`Err`エラー メッセージ ダイアログ ボックスを作成するオブジェクト。 使用する場合に注意して、`Clear`メソッドと Visual Basic エラーを生成するときに、最初、`Raise`メソッド、Visual Basic の既定値のプロパティになる、`Err`オブジェクト。  
+  
+ [!code-vb[VbVbalrErrorHandling#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsArray">
+      <MemberSignature Language="C#" Value="public static bool IsArray (object VarName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool IsArray(object VarName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.IsArray(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="VarName" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="VarName">必須です。 <see langword="Object" />変数。</param>
+        <summary>返します、<see langword="Boolean" />変数が指す配列にいるかどうかを示す値。</summary>
+        <returns>返します、<see langword="Boolean" />変数が指す配列にいるかどうかを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsArray`返します`True`変数が配列であるを指している場合、返します`False`です。 `IsArray`オブジェクトの配列を含めることができると便利です。  
+  
+   
+  
+## Examples  
+ この例では、`IsArray`関数を配列にいくつかの変数が参照していることを確認します。  
+  
+ [!code-vb[VbVbalrFunctions#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#34)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDate">
+      <MemberSignature Language="C#" Value="public static bool IsDate (object Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool IsDate(object Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.IsDate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 <see langword="Object" />式。</param>
+        <summary>返します、<see langword="Boolean" />値が有効な式を表すかどうかを示す<see langword="Date" />値。</summary>
+        <returns>返します、<see langword="Boolean" />値が有効な式を表すかどうかを示す<see langword="Date" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsDate`返します`True`場合`Expression`は、<xref:System.DateTime>データを入力することもできますを変換後、それ以外を返します`False`です。  
+  
+ <xref:System.DateTime>データ型は、日付の値と時刻の値の両方を保持します。 `IsDate`返します`True`場合`Expression`は有効な日付、有効な時刻や有効な日付と時刻を表します。  
+  
+   
+  
+## Examples  
+ 次の例では、`IsDate`いくつかの変数を表す有効なかどうかを判断する関数<xref:System.DateTime>値。  
+  
+ [!code-vb[VbVbalrFunctions#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#35)]  
+  
+ 前の例で`IsDate`返します`True`の最初の 4 つの呼び出しと`False`最後の呼び出しです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDBNull">
+      <MemberSignature Language="C#" Value="public static bool IsDBNull (object Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool IsDBNull(object Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.IsDBNull(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 <see langword="Object" />式。</param>
+        <summary>返します、<see langword="Boolean" />に式を評価するかどうかを示す値、<see cref="T:System.DBNull" />クラスです。</summary>
+        <returns>返します、<see langword="Boolean" />に式を評価するかどうかを示す値、<see cref="T:System.DBNull" />クラスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsDBNull`返します`True`データ型の場合`Expression`に評価される、<xref:System.DBNull>入力です。 それ以外の場合、`IsDBNull`を返します`False`です。  
+  
+ <xref:System.DBNull?displayProperty=nameWithType>値が示す、`Object`または存在しないデータを表します。 `DBNull`同じではない`Nothing`変数がまだ初期化されてことを示します。 `DBNull`またと同じ長さ 0 の文字列 (`""`)、null 文字列と呼ばします。  
+  
+   
+  
+## Examples  
+ この例では、`IsDBNull`に変数が評価されるかどうかを判断する関数`DBNull`です。  
+  
+ [!code-vb[VbVbalrFunctions#36](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#36)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsError">
+      <MemberSignature Language="C#" Value="public static bool IsError (object Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool IsError(object Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.IsError(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 <see langword="Object" />式。</param>
+        <summary>返します、<see langword="Boolean" />式は、例外の種類であるかどうかを示す値。</summary>
+        <returns>返します、<see langword="Boolean" />式は、例外の種類であるかどうかを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsError`返します`True`式を表す場合、`Object`から派生した変数、<xref:System.Exception>クラス内で、<xref:System>名前空間。  
+  
+ 派生した例外<xref:System.Exception?displayProperty=nameWithType>でキャッチできます、`Try...Catch...Finally`ステートメントです。  
+  
+   
+  
+## Examples  
+ 次の例では、`IsError`かどうかシステムの例外を表す式を確認します。  
+  
+ [!code-vb[VbVbalrFunctions#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#37)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNothing">
+      <MemberSignature Language="C#" Value="public static bool IsNothing (object Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool IsNothing(object Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.IsNothing(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 <see langword="Object" />式。</param>
+        <summary>返します、<see langword="Boolean" />式に割り当てられたオブジェクトがないかどうかを示す値。</summary>
+        <returns>返します、<see langword="Boolean" />式に割り当てられたオブジェクトがないかどうかを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsNothing`返します`True`返すかどうか、式を現在持たないオブジェクトに割り当てられた; それ以外の場合、オブジェクト変数を表す、`False`です。  
+  
+ `IsNothing`参照型で動作するものです。 値型の値を保持することはできず、割り当てる場合は、既定値に戻ります`Nothing`にします。 値の型を指定する場合`Expression`、`IsNothing`は常に返します`False`です。  
+  
+   
+  
+## Examples  
+ 次の例では、`IsNothing`関数オブジェクト変数がオブジェクト インスタンスに関連付けられているかを判断します。  
+  
+ [!code-vb[VbVbalrFunctions#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#38)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNumeric">
+      <MemberSignature Language="C#" Value="public static bool IsNumeric (object Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool IsNumeric(object Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.IsNumeric(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 <see langword="Object" />式。</param>
+        <summary>返します、<see langword="Boolean" />式を数値として評価できるかどうかを示す値。</summary>
+        <returns>返します、<see langword="Boolean" />式を数値として評価できるかどうかを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsNumeric`returns `True` if the data type of `Expression` is `Boolean`, `Byte`, `Decimal`, `Double`, `Integer`, `Long`, `SByte`, `Short`, `Single`, `UInteger`, `ULong`, or `UShort`. 返します`True`場合`Expression`は、 `Char`、 `String`、または`Object`数値に正常に変換します。 `Expression`数字以外の文字を含めることができます。 `IsNumeric`返します`True`場合`Expression`は有効な 16 進数または 8 進数の数値を表す文字列。 `IsNumeric`返されます`True`場合`Expression`で始まる有効な数値式が含まれています、+ または - の文字します。 またはコンマが含まれています。  
+  
+ `IsNumeric`返します`False`場合`Expression`のデータ型は`Date`します。 返します`False`場合`Expression`は、 `Char`、 `String`、または`Object`番号に正常に変換できません。  
+  
+   
+  
+## Examples  
+ 次の例では、`IsNumeric`か変数の内容が数値として評価できるかを調べます。  
+  
+ [!code-vb[VbVbalrFunctions#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#39)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReference">
+      <MemberSignature Language="C#" Value="public static bool IsReference (object Expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool IsReference(object Expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.IsReference(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Expression" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Expression">必須です。 <see langword="Object" />式。</param>
+        <summary>返します、<see langword="Boolean" />式が参照型に評価するかどうかを示す値。</summary>
+        <returns>返します、<see langword="Boolean" />式が参照型に評価するかどうかを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsReference`返します`True`場合`Expression`クラスのインスタンスなどの参照型を表す、`String`型、または任意の型の配列を返しますそれ以外の場合、`False`です。  
+  
+ 参照型には、メモリ内で他の場所に格納されているデータへのポインターが含まれています。 値の型には、独自のデータが含まれています。  
+  
+   
+  
+## Examples  
+ この例では、`IsReference`関数で複数の変数が参照型を参照してくださいかどうかをチェックします。  
+  
+ [!code-vb[VbVbalrFunctions#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#40)]  
+  
+ 上記の例では、最初の 3 つの呼び出しに`IsReference`返す`True`です。 最後の呼び出し`False`ので、`Integer`が値型、参照型ではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LBound">
+      <MemberSignature Language="C#" Value="public static int LBound (Array Array, int Rank = 1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 LBound(class System.Array Array, int32 Rank) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.LBound(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Array" Type="System.Array" />
+        <Parameter Name="Rank" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Array">必須です。 任意のデータ型の配列です。 ディメンションの最も小さいインデックスを検索する配列。</param>
+        <param name="Rank">省略可能です。 <see langword="Integer" />。 最も小さいインデックスが返される次元です。 最初の次元、2 番目、2 1 を使用し、します。 場合<c>ランク</c>は省略すると、1 と見なされます。</param>
+        <summary>指定された配列の次元の使用できる添字の最小値を返します。</summary>
+        <returns>
+          <see langword="Integer" />。 最小値、指定されたディメンションの下付き文字を含めることができます。 <see langword="LBound" />常に同じくらい 0 を返します<paramref name="Array" />が初期化されて、たとえば、長さ 0 の文字列である場合、要素が存在しない場合でもです。 場合<paramref name="Array" />は<see langword="Nothing" />、<see langword="LBound" />スロー、<see cref="T:System.ArgumentNullException" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列の添字は 0 から始まるため、各次元で使用できる添字の最小値は常に 0 です。  
+  
+ 次の次元の配列の`LBound`次の表に、値を返します。  
+  
+```vb  
+Dim a(100, 5, 4) As Byte  
+```  
+  
+|LBound への呼び出し|戻り値|  
+|--------------------|------------------|  
+|`LBound(a, 1)`|0|  
+|`LBound(a, 2)`|0|  
+|`LBound(a, 3)`|0|  
+  
+   
+  
+## Examples  
+ 次の例では、`LBound`関数を配列の指定されたディメンションに対して使用できる添字の最小値を決定します。  
+  
+ [!code-vb[VbVbalrFunctions#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#41)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Array" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.RankException">
+          <paramref name="Rank" />1 より小さい、または<paramref name="Rank" />のランクより大きい<paramref name="Array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="QBColor">
+      <MemberSignature Language="C#" Value="public static int QBColor (int Color);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 QBColor(int32 Color) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.QBColor(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Color" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Color">必須です。 0 ~ 15 の範囲の整数値。</param>
+        <summary>返します、<see langword="Integer" />色を指定された対応する RGB 色コードを表す値の数。</summary>
+        <returns>返します、<see langword="Integer" />色を指定された対応する RGB 色コードを表す値の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降、最下位バイトでは、返される値は、Visual Basic 言語で使用する RGB システムで適切な色を設定するために使用する赤、緑、および青の値を指定します。  
+  
+ `Color`引数がこれらの設定。  
+  
+|数値|色|数値|色|  
+|------------|-----------|------------|-----------|  
+|0|黒|9|灰色|  
+|1|青|9|明るい青色|  
+|2|緑|10|明るい緑|  
+|3|シアン|11|明るいシアン|  
+|4|赤|12|明るい赤|  
+|5|マゼンタ|13|明るい赤紫|  
+|6|黄|14|明るい黄色|  
+|7|白|15|明るいホワイト|  
+  
+   
+  
+## Examples  
+ この例では、`QBColor`で色を変更する関数が示される`colorInteger`です。 `QBColor`0 ~ 15 の範囲の整数値を受け入れます。  
+  
+ [!code-vb[VbVbalrCatRef#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#29)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Color" />0 ~ 15 の包括的な範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RGB">
+      <MemberSignature Language="C#" Value="public static int RGB (int Red, int Green, int Blue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 RGB(int32 Red, int32 Green, int32 Blue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.RGB(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Red" Type="System.Int32" />
+        <Parameter Name="Green" Type="System.Int32" />
+        <Parameter Name="Blue" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Red">必須です。 <see langword="Integer" />0 ~ 255 の範囲内では、色の赤の成分の濃度を表すです。</param>
+        <param name="Green">必須です。 <see langword="Integer" />0 ~ 255 の範囲内では、色の緑の成分の濃度を表すです。</param>
+        <param name="Blue">必須です。 <see langword="Integer" />0 ~ 255 の範囲内では、色の青の成分の濃度を表すです。</param>
+        <summary>返します、<see langword="Integer" />赤、緑、青の色要素のセットから色の RGB 値を表す値です。</summary>
+        <returns>返します、<see langword="Integer" />赤、緑、青の色要素のセットから色の RGB 値を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 色の指定をそのまま使用するアプリケーションのメソッドとプロパティは、RGB を表す数値を指定してカラー値を期待します。 色の RGB 値は、赤、緑、および表示される具体的な色が青の相対強度を指定します。  
+  
+ 場合に渡す引数の値`RGB`255 より大きい 255 を使用します。  
+  
+ 次の表には、一部の標準的な色と含まれる赤、緑、および青の値が一覧表示します。  
+  
+|色|赤の値|緑の値|青の値|  
+|-----------|---------------|-----------------|----------------|  
+|黒|0|0|0|  
+|青|0|0|255|  
+|緑|0|255|0|  
+|シアン|0|255|255|  
+|赤|255|0|0|  
+|マゼンタ|255|0|255|  
+|黄|255|255|0|  
+|白|255|255|255|  
+  
+   
+  
+## Examples  
+ この例では、どのように`RGB`を表す整数を返す関数を使用、`RGB`カラー値。  
+  
+ [!code-vb[VbVbalrCatRef#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Green" />、 <paramref name="Blue" />、または<paramref name="Red" />は 0 ~ 255 の範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemTypeName">
+      <MemberSignature Language="C#" Value="public static string SystemTypeName (string VbName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string SystemTypeName(string VbName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.SystemTypeName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="VbName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="VbName">必須です。 A <see langword="String" /> Visual Basic の型名を含む変数。</param>
+        <summary>返します、<see langword="String" />システム データ型名を含む変数の値。</summary>
+        <returns>返します、<see langword="String" />システム データ型名を含む変数の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SystemTypeName`完全修飾共通言語ランタイム (CLR) 型に対応する名前、Visual Basic の型名を返します。 たとえば場合、 `VbName` 「日」を含む`SystemTypeName`"System.DateTime"を返します。 場合`SystemTypeName`の値を認識しない`VbName`、返します`Nothing`(文字列ではなく"Nothing") です。  
+  
+   
+  
+## Examples  
+ 次の例では、`SystemTypeName`をいくつかの変数のデータ型の名前を返す関数。  
+  
+ [!code-vb[VbVbalrFunctions#49](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#49)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public static string TypeName (object VarName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string TypeName(object VarName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.TypeName(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="VarName" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="VarName">必須です。 <see langword="Object" />変数。 場合<see langword="Option Strict" />は<see langword="Off" />、構造体を除く任意のデータ型の変数を渡すことができます。</param>
+        <summary>返します、<see langword="String" />変数に関するデータ型情報を含む値です。</summary>
+        <returns>返します、<see langword="String" />変数に関するデータ型情報を含む値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、`String`によって返される値`TypeName`のさまざまな内容`VarName`です。  
+  
+|`VarName`内容|返される文字列|  
+|------------------------|---------------------|  
+|16 ビット`True`または`False`値の型|"Boolean"|  
+|8 ビットのバイナリ値の型|「バイト」|  
+|16 ビット文字値の型|"Char"|  
+|64 ビットの日付と時刻の値を入力します。|"Date"|  
+|参照型のデータが存在しないか、存在しないことを示します|"DBNull"|  
+|128 ビットの固定小数点数値型|"Decimal"|  
+|64 ビット浮動小数点数値型|"Double"|  
+|32 ビット整数値の型|「整数」|  
+|特殊化されていないオブジェクトを指す参照型|「オブジェクト」|  
+|クラスから作成された特殊なオブジェクトを指す参照型*objectclass*|"*objectclass*"|  
+|64 ビット整数値の型|"Long"|  
+|オブジェクトが現在割り当てられていない参照型|"Nothing"|  
+|8 ビット符号付き整数値の型|"SByte"|  
+|16 ビット整数値の型|"Short"|  
+|32 ビット浮動小数点数値型|「単一」|  
+|16 ビット文字の文字列を指す参照型|「文字列」|  
+|32 ビット符号なし整数値の型|"UInteger"|  
+|64 ビット符号なし整数値の型|"ULong"|  
+|16 ビット符号なし整数値の型|"UShort"|  
+  
+ 場合`VarName`配列は、返される文字列は空のかっこの前の表に、文字列のいずれかを指定できます。 たとえば場合、 `VarName` 、整数の配列を指す`TypeName`"Integer()"を返します。  
+  
+ ときに`TypeName`参照型の名前を返します、クラスなどのみ名前自体は、修飾名ではなくを返します。 たとえば場合、`VarName`クラスのオブジェクトを指す<xref:System.Drawing.Printing.PaperSource?displayProperty=nameWithType>、 `TypeName` "PaperSource"を返します。 場合は、変数が特定のクラス型に宣言されている必要はありませんに割り当てられたオブジェクト`TypeName`"Nothing"を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、`TypeName`をいくつかの変数に関するデータ型情報を返す関数。  
+  
+ [!code-vb[VbVbalrFunctions#52](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#52)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UBound">
+      <MemberSignature Language="C#" Value="public static int UBound (Array Array, int Rank = 1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 UBound(class System.Array Array, int32 Rank) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.UBound(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Array" Type="System.Array" />
+        <Parameter Name="Rank" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Array">必須です。 任意のデータ型の配列です。 ディメンションの最も大きいインデックスを検索する配列。</param>
+        <param name="Rank">省略可能です。 <see langword="Integer" />。 最も大きいインデックスが返される次元です。 最初の次元、2 番目、2 1 を使用し、します。 場合<c>ランク</c>は省略すると、1 と見なされます。</param>
+        <summary>指定された配列の次元の最も大きいインデックスを返します。</summary>
+        <returns>
+          <see langword="Integer" />。 最も大きい値で指定した次元の下付き文字を含めることができます。 場合<paramref name="Array" />1 つだけの要素を持つ<see langword="UBound" />0 を返します。 場合<paramref name="Array" />長さ 0 の文字列である場合の例については、要素が存在しない<see langword="UBound" />-1 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列の添字は 0 から始まる、ため、次元の長さはそのディメンションの最も大きいインデックスより 1 だけ大きい数値です。  
+  
+ 次の次元の配列の`UBound`次の表に、値を返します。  
+  
+```vb  
+Dim a(100, 5, 4) As Byte  
+```  
+  
+|UBound への呼び出し|戻り値|  
+|--------------------|------------------|  
+|`UBound(a, 1)`|100|  
+|`UBound(a, 2)`|5|  
+|`UBound(a, 3)`|4|  
+  
+ 使用することができます`UBound`合計を計算しますが、配列の要素の数が添字は 0 から始まることをアカウントに返す値を調整する必要があります。 次の例は、配列の合計サイズを計算`a`前の例。  
+  
+```vb  
+Dim total As Integer  
+total = (UBound(A, 1) + 1) * (UBound(A, 2) + 1) * (UBound(A, 3) + 1)  
+```  
+  
+ 値が計算`total`は 3030、101 * 6 * 5 です。  
+  
+   
+  
+## Examples  
+ 次の例では、`UBound`関数を配列の指定された次元の最も大きいインデックスを決定します。  
+  
+ [!code-vb[VbVbalrFunctions#53](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#53)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Array" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.RankException">
+          <paramref name="Rank" />1 より小さい、または<paramref name="Rank" />のランクより大きい<paramref name="Array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VarType">
+      <MemberSignature Language="C#" Value="public static Microsoft.VisualBasic.VariantType VarType (object VarName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static valuetype Microsoft.VisualBasic.VariantType VarType(object VarName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.VarType(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.VariantType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="VarName" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="VarName">必須です。 <see langword="Object" />変数。 場合<see langword="Option Strict" />は<see langword="Off" />、構造体を除く任意のデータ型の変数を渡すことができます。</param>
+        <summary>返します、<see langword="Integer" />変数のデータ型の分類を含む値です。</summary>
+        <returns>返します、<see langword="Integer" />変数のデータ型の分類を含む値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返された整数値`VarType`のメンバーである、<xref:Microsoft.VisualBasic.VariantType>です。  
+  
+ によって返される値を次の表に示します`VarType`の特殊なケースの`VarName`します。  
+  
+|によって表されるデータ型`VarName`|によって返される値`VarType`|  
+|----------------------------------------|---------------------------------|  
+|[Nothing](~/docs/visual-basic/language-reference/nothing.md)|`VariantType.Object`|  
+|<xref:System.DBNull>|`VariantType.Null`|  
+|列挙|基になるデータ型 (`SByte`、 `Byte`、 `Short`、 `UShort`、 `Integer`、 `UInteger`、 `Long`、または`ULong`)|  
+|配列|配列要素の型のビットごとの OR と`VariantType.Array`|  
+|配列の配列|ビットごとの OR`VariantType.Object`と`VariantType.Array`|  
+|構造体 (<xref:System.ValueType?displayProperty=nameWithType>)|`VariantType.UserDefinedType`|  
+|<xref:System.Exception>|`VariantType.Error`|  
+|不明|`VariantType.Object`|  
+  
+   
+  
+## Examples  
+ 次の例では、`VarType`をいくつかの変数に関するデータ型の分類の情報を返す関数。  
+  
+ [!code-vb[VbVbalrFunctions#55](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#55)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VbTypeName">
+      <MemberSignature Language="C#" Value="public static string VbTypeName (string UrtName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string VbTypeName(string UrtName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Information.VbTypeName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="UrtName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="UrtName">必須です。 <see langword="String" />共通言語ランタイムによって使用される型名を含む変数を指定します。</param>
+        <summary>返します、 <see langword="String" /> Visual Basic データ型名を含む変数の値。</summary>
+        <returns>返します、 <see langword="String" /> Visual Basic データ型名を含む変数の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `VbTypeName`共通言語ランタイムの型名に対応する Visual Basic の型名を返します。 たとえば場合、 `UrtName` "Int32"または"System.Int32"を含む`VbTypeName`「整数」が返されます。 場合`VbTypeName`の値を認識しない`UrtName`、返します`Nothing`(文字列ではなく"Nothing") です。  
+  
+ 内の型名`UrtName`からなど、さまざまなソースから取得できます、<xref:System.Reflection.MemberInfo.Name%2A>プロパティに、<xref:System.Reflection.MemberInfo>の配列、<xref:System.Type>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、`VbTypeName`をいくつかの変数のデータ型の名前を返す関数。  
+  
+ [!code-vb[VbVbalrFunctions#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#56)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,662 @@
+<Type Name="DataGridViewComboBoxColumn" FullName="System.Windows.Forms.DataGridViewComboBoxColumn">
+  <TypeSignature Language="C#" Value="public class DataGridViewComboBoxColumn : System.Windows.Forms.DataGridViewColumn" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewComboBoxColumn extends System.Windows.Forms.DataGridViewColumn" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewComboBoxColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridViewColumn</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.DataGridViewComboBoxColumnDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Windows.Forms.DataGridViewComboBoxColumn), "DataGridViewComboBoxColumn.bmp")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>列を表す<see cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスは、特殊な種類の<xref:System.Windows.Forms.DataGridViewColumn>選択肢の一覧から値を選択できるようにするセルを論理的にホストするために使用します。 A<xref:System.Windows.Forms.DataGridViewComboBoxColumn>が関連付けられている<xref:System.Windows.Forms.DataGridViewComboBoxCell>ですべて<xref:System.Windows.Forms.DataGridViewRow>と交差することです。  
+  
+ セルを手動で設定するには設定して、<xref:System.Windows.Forms.DataGridViewCell.Value%2A>プロパティです。 によって示されるデータ ソースに列をバインドする代わりに、<xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.Windows.Forms.DataGridView>データベース テーブルにバインドは、列の設定、<xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A>プロパティをテーブル内の列の名前にします。 場合、<xref:System.Windows.Forms.DataGridView>はオブジェクトのコレクションにバインドされている、設定、<xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A>プロパティ オブジェクトのプロパティの名前にします。  
+  
+ 列のドロップダウン リストを手動で設定するには値を追加することによって、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A>コレクション。 列を設定して、独自のデータ ソースをドロップダウン リストをバインドすることができます<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>プロパティです。 場合は、値は、コレクション内のオブジェクトまたはデータベース テーブル内のレコードには、設定する必要も、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>と<xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>プロパティです。 <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>プロパティは、ドロップダウン リストに表示される値を提供するオブジェクトのプロパティまたはデータベース列を示します。 <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>プロパティでは、どのオブジェクトのプロパティまたはデータベース列は、セルの設定に使用されることを示します<xref:System.Windows.Forms.DataGridViewCell.Value%2A>プロパティです。  
+  
+ 1 つの一般的なシナリオは、バインドする、<xref:System.Windows.Forms.DataGridView>親データベースのテーブルに制御し、ドロップダウン リストを関連する子テーブルにバインドします。 たとえば、バインドする場合があります、<xref:System.Windows.Forms.DataGridView>コントロールを`Orders`を含むテーブル、`ProductID`列およびセット列<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>プロパティを`Products`を含むテーブル`ProductID`と`ProductName`列。 この場合、列を設定すると<xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A>プロパティからそのセルの値を設定するには、"ProductID"を`Orders.ProductID`列です。 ただし、セルとドロップダウン リストで実際の製品名を表示するにはマップするこれらの値を`Products`を設定してテーブル、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>プロパティを"ProductID"は、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>プロパティを"ProductName"です。  
+  
+ ドロップダウン リストの値 (またはの値によって示される、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>プロパティ)、実際のセル値を含める必要がありますまたは<xref:System.Windows.Forms.DataGridView>コントロールは例外をスローします。  
+  
+ 列を設定する<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>、 <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>、および<xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>などの列のプロパティが自動的にすべてのセルの対応するプロパティを設定、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>です。 特定のセルのこれらのプロパティ値をオーバーライドするには、最初に、列のプロパティを設定をセル プロパティを設定できます。  
+  
+ 異なり、<xref:System.Windows.Forms.ComboBox>コントロール、<xref:System.Windows.Forms.DataGridViewComboBoxCell>いない<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>と<xref:System.Windows.Forms.ListControl.SelectedValue%2A>プロパティです。 代わりに、ドロップダウン リストから値を選択するセルを設定します<xref:System.Windows.Forms.DataGridViewCell.Value%2A>プロパティです。  
+  
+ この列の型の既定の並べ替えモードは<xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>にデータを入力するのに役立つ、`TitleOfCourtesy`列です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#0)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#0)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生したときに<see cref="T:System.Windows.Forms.DataGridViewComboBoxColumn" />、派生クラスに新しいプロパティを追加、上書きすることを確認して、<see cref="M:System.Windows.Forms.DataGridViewComboBoxColumn.Clone" />複製操作時に新しいプロパティをコピーします。 基本クラスの呼び出す必要もあります<see cref="M:System.Windows.Forms.DataGridViewComboBoxColumn.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされるようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewComboBoxColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewComboBoxColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewTextBoxColumn" />クラスが既定の状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい初期化するときに<xref:System.Windows.Forms.DataGridViewComboBoxColumn>インスタンスをこのコンス トラクターの設定、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティを新しい<xref:System.Windows.Forms.DataGridViewComboBoxCell>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoComplete">
+      <MemberSignature Language="C#" Value="public bool AutoComplete { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoComplete" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.AutoComplete" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のセルで使用可能な選択肢から 1 つのセルに入力されている文字を一致させるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />オート コンプリートがアクティブにする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.AutoComplete%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.AutoComplete%2A>列のセルはすべてのプロパティです。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CellTemplate">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewCell CellTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCell CellTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCell</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルの作成に使用するテンプレートを取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewCell" />列内のすべてのセルが後にモデル化します。 既定値は、新しい<see cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクター、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスは、新しく作成するには、このプロパティを初期化<xref:System.Windows.Forms.DataGridViewComboBoxCell>です。  
+  
+> [!CAUTION]
+>  セル テンプレートのプロパティの変更はすぐに影響しません、列の既存のセルのユーザー インターフェイス (UI)。 これらの変更のみが明らかな列が再生成 (列を並べ替えることで、たとえば、またはを呼び出すことによって、<xref:System.Windows.Forms.DataGridView.InvalidateColumn%2A?displayProperty=nameWithType>メソッド)。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.DataGridViewColumn.CellTemplate%2A?displayProperty=nameWithType>プロパティで、このプロパティに似ています。 この例で使用できる例の一部である[する方法: Windows フォーム DataGridView コントロール内の列の操作](~/docs/framework/winforms/controls/how-to-manipulate-columns-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#120)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#120)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#120)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">ときにこのプロパティ値を設定するの種類はありません<see cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewComboBoxColumn.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対象の列の同一コピーを作成します。</summary>
+        <returns>複製された <see cref="T:System.Windows.Forms.DataGridViewComboBoxColumn" /> を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セルの列を複製するのにには、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public object DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.AttributeProvider(typeof(System.ComponentModel.IListSource))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックスの選択項目を決定するデータ ソースを取得または設定します。</summary>
+        <value>データ ソースを表すオブジェクト。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>または<xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A>プロパティは、コンボ ボックスのドロップダウン リストに表示される選択データを取得する場所を指定します。 使用する場合、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>既定以外のプロパティまたは列からデータを描画する必要がある場合は、プロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>プロパティは、既定以外のプロパティまたは列の名前に設定する必要があります。  
+  
+ 場合、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>プロパティが文字列の配列に、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>と<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>値および表示の両方の配列内の各文字列を使用するために設定する必要はありません。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.DataSource%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.DataSource%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>にデータを入力するのに役立つ、`TitleOfCourtesy`列です。 <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>のコンボ ボックスのタイトルの選択範囲を設定するプロパティを使用します。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#40)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#40)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayMember">
+      <MemberSignature Language="C#" Value="public string DisplayMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayMember" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Forms.Design.DataMemberFieldConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックスに表示する文字列の取得先となるプロパティまたは列を指定する文字列を取得または設定します。</summary>
+        <value>A<see cref="T:System.String" />で指定されたデータ ソースのプロパティまたは列の名前を指定する、<see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource" />プロパティです。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データの列に格納されている値を<xref:System.Windows.Forms.DataGridViewComboBoxCell>からオブジェクトを取得、<xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>です。 この既定以外のプロパティまたは列、基になる場合、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>プロパティは、必要なプロパティ名または列の名前に設定する必要があります。  
+  
+ セルの値が、ユーザーに表示されない内部値である場合を使用し、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>と<xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>内部セルの値をユーザーが表示できる値にマップします。  
+  
+ ときに、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>プロパティを文字列配列に設定されて、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>プロパティが有効な表示文字列とは、有効な基になる値として、配列内の各文字列を使用するために設定する必要はありません。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.DisplayMember%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.DisplayMember%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>タイトルの列のデータ入力を支援します。 <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>ユーザーが表示できるテキストを含むを担当する、プロパティ名に設定されています。 この例では、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>と同じ値に設定されている<xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>のため、マッピングは必要ありません。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#40)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#40)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewComboBoxDisplayStyle DisplayStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewComboBoxDisplayStyle DisplayStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewComboBoxDisplayStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集時以外にコンボ ボックスを表示する方法を決定する値を取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataGridViewComboBoxDisplayStyle" />コンボ ボックスの外観を示す値。 既定値は、<see cref="F:System.Windows.Forms.DataGridViewComboBoxDisplayStyle.DropDownButton" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A>プロパティは読み取り専用かどうかに関係なく、編集モードでないときに、列のセルの外観に影響します。 セルが編集モードのときは、常のようになります、<xref:System.Windows.Forms.ComboBox>コントロール。  
+  
+ 場合、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyleForCurrentCellOnly%2A>プロパティの値が`false`、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A>プロパティに影響を与えます列にあるすべてのセルそれ以外の場合、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A>プロパティは、現在のセルのみに影響します。  
+  
+ 動作と外観、セルのドロップダウン矢印で示される、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle%2A>プロパティです。  
+  
+ ときに、マウス ポインターがセル上にセルが強調表示を有効に設定すると、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A>プロパティを<xref:System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox>と<xref:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle%2A>プロパティを<xref:System.Windows.Forms.FlatStyle.Popup>です。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.DisplayStyle%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.DisplayStyle%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayStyleForCurrentCellOnly">
+      <MemberSignature Language="C#" Value="public bool DisplayStyleForCurrentCellOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DisplayStyleForCurrentCellOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyleForCurrentCellOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle" />プロパティ値の現在のセルにのみ適用されます、<see cref="T:System.Windows.Forms.DataGridView" />現在のセルがこの列の場合を制御します。</summary>
+        <value>
+          <see langword="true" />現在のセルにのみ表示スタイルが適用される場合それ以外の場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyleForCurrentCellOnly%2A>プロパティの値が`false`、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A>プロパティに影響を与えます列にあるすべてのセルそれ以外の場合、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A>プロパティは、現在のセルのみに影響します。  
+  
+ <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A>プロパティは読み取り専用かどうかに関係なく、編集モードでないときに、列のセルの外観に影響します。 セルが編集モードのときは、常のようになります、<xref:System.Windows.Forms.ComboBox>コントロール。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.DisplayStyleForCurrentCellOnly%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.DisplayStyleForCurrentCellOnly%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownWidth">
+      <MemberSignature Language="C#" Value="public int DropDownWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DropDownWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.DropDownWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックスのドロップダウン リストの幅を取得または設定します。</summary>
+        <value>ドロップダウン リストの幅 (ピクセル単位)。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに対応、<xref:System.Windows.Forms.DataGridViewComboBoxCell.DropDownWidth%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>メンバー。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.DropDownWidth%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.DropDownWidth%2A>列のセルはすべてのプロパティです。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>にデータを入力するのに役立つ、`TitleOfCourtesy`列です。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#40)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#40)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FlatStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.FlatStyle FlatStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.FlatStyle FlatStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列に含まれるセルのフラット スタイルの外観を取得または設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.FlatStyle" />セルの外観を示す値。 既定値は、<see cref="F:System.Windows.Forms.FlatStyle.Standard" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle%2A>プロパティは、この列のセルのドロップダウン矢印の外観と動作に影響します。  
+  
+ 以降で、 [!INCLUDE[net_2015](~/includes/net-2015-md.md)]、ときに、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle%2A>プロパティに設定されている`Flat`または`Popup`app.config ファイルには、次のエントリが含まれている場合に、次のドロップダウン矢印がシステム DPI 設定に合わせてサイズが変更されます。  
+  
+```  
+<appSettings>  
+  <add key="EnableWindowsFormsHighDpiAutoResizing" value="true" />  
+</appSettings>  
+```  
+  
+ ときに、マウス ポインターがセル上にセルが強調表示を有効に設定すると、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A>プロパティを<xref:System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox>と<xref:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle%2A>プロパティを<xref:System.Windows.Forms.FlatStyle.Popup>です。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.FlatStyle%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.FlatStyle%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>にデータを入力するのに役立つ、`TitleOfCourtesy`列です。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#40)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#40)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewComboBoxCell.ObjectCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewComboBoxCell/ObjectCollection Items" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.StringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewComboBoxCell+ObjectCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックスの選択項目として使用されるオブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewComboBoxCell.ObjectCollection" />コンボ ボックスの選択項目を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を返します、<xref:System.Windows.Forms.DataGridViewComboBoxCell.Items%2A>のプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxCell>によって返される、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A>または<xref:System.Windows.Forms.DataGridView.DataSource%2A>プロパティは、コンボ ボックスの選択内容の作成に使用されます。  
+  
+ 文字列に追加する場合<xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A>、続いて、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>と<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>プロパティを値と表示の両方に追加された各文字列を使用するために設定する必要はありません。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.DataGridViewComboBoxColumn>同一の表示値を持つ複数の項目の使用はできません。  
+  
+ 場合、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>プロパティを設定し、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A>は使用できません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>にデータを入力するのに役立つ、`TitleOfCourtesy`列です。 <xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A>のタイトルを選択、コンボ ボックスのドロップダウン リストを設定するプロパティを使用します。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#30](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#30)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#30)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxDropDownItems">
+      <MemberSignature Language="C#" Value="public int MaxDropDownItems { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxDropDownItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.MaxDropDownItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(8)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列内のセルのドロップダウン リストに表示する項目の最大数を取得または設定します。</summary>
+        <value>ドロップダウン リストの項目の最大数 (1 ～ 100)。 既定値は 8 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.MaxDropDownItems%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.MaxDropDownItems%2A>列のセルはすべてのプロパティです。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>にデータを入力するのに役立つ、`TitleOfCourtesy`列です。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#30](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#30)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#30)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Sorted">
+      <MemberSignature Language="C#" Value="public bool Sorted { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Sorted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.Sorted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックス内の項目が並べ替えられたかどうかを示す値を取得または設定します。</summary>
+        <value>
+          コンボ ボックスが並べ替えられている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.Sorted%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.Sorted%2A>列のセルはすべてのプロパティです。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>にデータを入力するのに役立つ、`TitleOfCourtesy`列です。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#30](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#30)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#30)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewComboBoxColumn.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列を説明する文字列を取得します。</summary>
+        <returns>A<see cref="T:System.String" />列を説明します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueMember">
+      <MemberSignature Language="C#" Value="public string ValueMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValueMember" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Forms.Design.DataMemberFieldConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドロップダウン リストの選択項目に対応する値の取得先となる、プロパティまたは列を指定する文字列を取得または設定します。</summary>
+        <value>A<see cref="T:System.String" />プロパティの名前を指定するか、列で使用されて、<see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource" />プロパティです。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照してください<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A>との関係の詳細については<xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>します。  
+  
+ ときに、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A>プロパティを文字列配列に設定されて、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A>プロパティが有効な表示文字列とは、有効な基になる値として、配列内の各文字列を使用するために設定する必要はありません。  
+  
+ 取得するか、このプロパティの設定を取得または設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.ValueMember%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A>プロパティです。 またセットでこのプロパティを設定、<xref:System.Windows.Forms.DataGridViewComboBoxCell.ValueMember%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>にデータを入力するのに役立つ、`TitleOfCourtesy`列です。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#40)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#40)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#40](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#40)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> プロパティの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

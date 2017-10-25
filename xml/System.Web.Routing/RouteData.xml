@@ -1,0 +1,168 @@
+<Type Name="RouteData" FullName="System.Web.Routing.RouteData">
+  <TypeSignature Language="C#" Value="public class RouteData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RouteData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Routing.RouteData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web.Routing, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ルートに関する情報をカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Routing.RouteData>クラスには、要求されたルートの値が含まれています。 通常を取得する、<xref:System.Web.Routing.RouteData>オブジェクトを呼び出して、<xref:System.Web.Routing.RouteCollection.GetRouteData%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RouteData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteData.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Routing.RouteData" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RouteData (System.Web.Routing.RouteBase route, System.Web.Routing.IRouteHandler routeHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.Routing.RouteBase route, class System.Web.Routing.IRouteHandler routeHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteData.#ctor(System.Web.Routing.RouteBase,System.Web.Routing.IRouteHandler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="route" Type="System.Web.Routing.RouteBase" />
+        <Parameter Name="routeHandler" Type="System.Web.Routing.IRouteHandler" />
+      </Parameters>
+      <Docs>
+        <param name="route">ルートを定義するオブジェクト。</param>
+        <param name="routeHandler">要求を処理するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Routing.RouteData" />指定されたルートとルート ハンドラーを使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTokens">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.RouteValueDictionary DataTokens { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Routing.RouteValueDictionary DataTokens" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.RouteData.DataTokens" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteValueDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルート ハンドラーに渡されるが、ASP.NET ルーティングがルートと要求の一致を判別する場合に使用されないカスタム値のコレクションを取得します。</summary>
+        <value>カスタム値を格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、 <xref:System.Web.Routing.RouteData.DataTokens%2A> ASP.NET ルーティングのルートと要求の一致するかどうかを決定するときに使用されていないルートに関連付けられている値を取得するプロパティです。 カスタム ルートのハンドラーは、要求を処理しているときに、これらの値を取得する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequiredString">
+      <MemberSignature Language="C#" Value="public string GetRequiredString (string valueName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetRequiredString(string valueName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.RouteData.GetRequiredString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="valueName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="valueName">取得する値のキー。</param>
+        <summary>指定された識別子を持つ値を取得します。</summary>
+        <returns>内の要素、<see cref="P:System.Web.Routing.RouteData.Values" />プロパティが一致するキーを持つ<paramref name="valueName" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">値がありません<paramref name="valueName" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Route">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.RouteBase Route { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Routing.RouteBase Route" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.RouteData.Route" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートを表すオブジェクトを取得または設定します。</summary>
+        <value>ルート定義を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RouteHandler">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.IRouteHandler RouteHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Routing.IRouteHandler RouteHandler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.RouteData.RouteHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.IRouteHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求されたルートを処理するオブジェクトを取得または設定します。</summary>
+        <value>ルート要求を処理するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.RouteValueDictionary Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Routing.RouteValueDictionary Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.RouteData.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteValueDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートの URL パラメーター値と既定値のコレクションを取得します。</summary>
+        <value>URL と既定値から解析される値を含むオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

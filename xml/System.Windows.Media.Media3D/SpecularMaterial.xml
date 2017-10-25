@@ -1,0 +1,339 @@
+<Type Name="SpecularMaterial" FullName="System.Windows.Media.Media3D.SpecularMaterial">
+  <TypeSignature Language="C#" Value="public sealed class SpecularMaterial : System.Windows.Media.Media3D.Material" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SpecularMaterial extends System.Windows.Media.Media3D.Material" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Media3D.SpecularMaterial" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Media3D.Material</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>同様に、2 D ブラシを許可、<see cref="T:System.Windows.Media.SolidColorBrush" />または<see cref="T:System.Windows.Media.TileBrush" />、スペキュラ 3-D モデルに適用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.SpecularMaterial>減算することよりも、メッシュに適用されるその他の資料に色を追加します。  
+  
+ <xref:System.Windows.Media.Media3D.SpecularMaterial>適用されるモデルの反射の光源が発生する限り、メッシュが強調表示されます。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成する<xref:System.Windows.Media.Media3D.SpecularMaterial>しブラシ プロパティを設定します。  
+  
+ [!code-xaml[hittest3d#_MIL3D_HitTest3D_xaml_n1](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTest3D/CSharp/MyApp.xaml#_mil3d_hittest3d_xaml_n1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SpecularMaterial ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.SpecularMaterial.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Media3D.SpecularMaterial" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.SpecularMaterial>減算することよりも、メッシュに適用されるその他の資料に色を追加します。  
+  
+ <xref:System.Windows.Media.Media3D.SpecularMaterial>適用されるモデルの反射の光源が発生する限り、メッシュが強調表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SpecularMaterial (System.Windows.Media.Brush brush, double specularPower);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Brush brush, float64 specularPower) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.SpecularMaterial.#ctor(System.Windows.Media.Brush,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="brush" Type="System.Windows.Media.Brush" />
+        <Parameter Name="specularPower" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="brush">新しいによって適用されるブラシ<see cref="T:System.Windows.Media.Media3D.SpecularMaterial" />です。</param>
+        <param name="specularPower">反射の効果の指数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Media3D.SpecularMaterial" />指定ブラシと反射の効果の指数部を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.SpecularMaterial>減算することよりも、メッシュに適用されるその他の資料に色を追加します。  
+  
+ <xref:System.Windows.Media.Media3D.SpecularMaterial>適用されるモデルの反射の光源が発生する限り、メッシュが強調表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Brush">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Brush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Brush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.SpecularMaterial.Brush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[TLA#tla_2d](~/includes/tlasharptla-2d-md.md)]スペキュラ点灯に適用するブラシ[!INCLUDE[TLA#tla_3d](~/includes/tlasharptla-3d-md.md)]モデル。</summary>
+        <value>適用するブラシ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テクスチャ座標が指定されていない場合、 <xref:System.Windows.Media.Media3D.MeshGeometry3D>、期待どおりに、その情報が表示されない可能性です。  唯一の例外は、このプロパティを指定すると、<xref:System.Windows.Media.SolidColorBrush>です。 この場合、テクスチャ座標の既定のセットを使用して、マテリアルはレンダリングされます。  
+  
+<a name="dependencyPropertyInfo_BrushProperty"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Media3D.SpecularMaterial.BrushProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成する<xref:System.Windows.Media.Media3D.SpecularMaterial>しブラシ プロパティを設定します。  
+  
+ [!code-xaml[hittest3d#_MIL3D_HitTest3D_xaml_n1](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTest3D/CSharp/MyApp.xaml#_mil3d_hittest3d_xaml_n1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BrushProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BrushProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BrushProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.SpecularMaterial.BrushProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.SpecularMaterial.Brush" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.SpecularMaterial Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Media3D.SpecularMaterial Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.SpecularMaterial.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.SpecularMaterial</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Media3D.SpecularMaterial" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.SpecularMaterial CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Media3D.SpecularMaterial CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.SpecularMaterial.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.SpecularMaterial</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Media3D.SpecularMaterial" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Color">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Color Color { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Color Color" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.SpecularMaterial.Color" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルに適用されるマテリアルの色のプロパティをフィルターする値を設定します。</summary>
+        <value>素材をフィルター処理に使用する色です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、指定された色の値によって、モデルに適用される素材をフィルター処理の効果を持ちます。  たとえば、このプロパティを設定`Colors.Red`青と緑、マテリアルがします。  
+  
+<a name="dependencyPropertyInfo_Color"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Media3D.SpecularMaterial.ColorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ [!code-xaml[hittest3d#_MIL3D_HitTest3D_xaml_n1](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTest3D/CSharp/MyApp.xaml#_mil3d_hittest3d_xaml_n1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ColorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ColorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.SpecularMaterial.ColorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.SpecularMaterial.Color" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Media3D.SpecularMaterial.Color%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.SpecularMaterial.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpecularPower">
+      <MemberSignature Language="C#" Value="public double SpecularPower { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SpecularPower" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.SpecularMaterial.SpecularPower" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 3-D モデルに適用されるマテリアルが輝きとして照明モデルを反映する度合いを示す値を設定します。</summary>
+        <value>として適用される材料の相対的な一致精度、[!INCLUDE[TLA2#tla_2d](~/includes/tla2sharptla-2d-md.md)]にブラシ、[!INCLUDE[TLA2#tla_3d](~/includes/tla2sharptla-3d-md.md)]照明モデルの反射の効果のコンポーネントのモデル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 射光の効果は、光沢のあるまたは強調表示を反映するように傾向がある画面の外観を再現します。 このプロパティは、「光沢」をモデルに適用されるマテリアルの相対パスを示します。  このプロパティの値を増やすには、大きいサイズと材料によって反映される輝きの鮮明度を指定します。  
+  
+<a name="dependencyPropertyInfo_SpecularPowerProperty"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Media3D.SpecularMaterial.SpecularPowerProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成する<xref:System.Windows.Media.Media3D.SpecularMaterial>し、このプロパティを設定します。  
+  
+ [!code-xaml[hittest3d#_MIL3D_HitTest3D_xaml_n1](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTest3D/CSharp/MyApp.xaml#_mil3d_hittest3d_xaml_n1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpecularPowerProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SpecularPowerProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SpecularPowerProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Media3D.SpecularMaterial.SpecularPowerProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Media3D.SpecularMaterial.SpecularPower" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

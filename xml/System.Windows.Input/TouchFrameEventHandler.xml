@@ -1,0 +1,32 @@
+<Type Name="TouchFrameEventHandler" FullName="System.Windows.Input.TouchFrameEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void TouchFrameEventHandler(object sender, TouchFrameEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TouchFrameEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.TouchFrameEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Input.TouchFrameEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary><see cref="E:System.Windows.Input.Touch.FrameReported" /> の <see cref="T:System.Windows.Input.Touch" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.TouchFrameEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

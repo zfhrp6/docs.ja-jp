@@ -1,0 +1,363 @@
+<Type Name="InvalidCastException" FullName="System.InvalidCastException">
+  <TypeSignature Language="C#" Value="public class InvalidCastException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit InvalidCastException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.InvalidCastException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>無効なキャストまたは明示的な変換が発生したときにスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework では、その基本型および派生された型への派生型からだけでなくインターフェイス オブジェクトとの間にインターフェイスを提供する型からの自動変換をサポートします。 また、さまざまなカスタムの変換をサポートするメカニズムも含まれます。 詳細については、次を参照してください。 [.NET Framework における型変換](~/docs/standard/base-types/type-conversion.md)です。  
+  
+ <xref:System.InvalidCastException> 1 つの型のインスタンスの別の型への変換がサポートされていない場合、例外がスローされます。 たとえば、変換中に、<xref:System.Char>値を<xref:System.DateTime>値がスローされます、<xref:System.InvalidCastException>例外。 異なり、 <xref:System.OverflowException> 、1 つの型の間の変換がサポートされているが、ソースの種類の値がターゲット型の範囲外の場合にスローされる例外。  <xref:System.InvalidCastException>例外は開発者のエラーによって発生およびで処理する必要があります、`try/catch`ブロックです。 代わりに、例外の原因を排除する必要があります。  
+  
+ システムでサポートされている変換については、次を参照してください。、<xref:System.Convert>クラスです。 ソースの種類は、値が、大きさがない変換先の型を格納できる場合に発生したエラーの特定のソース値を格納するのに十分なを参照してください、<xref:System.OverflowException>例外。  
+  
+> [!NOTE]
+>  多くの場合は、言語コンパイラは、変換はありませんが、ソースの種類とターゲットの種類が存在し、コンパイラ エラーことを検出します。  
+  
+ 試みた変換がスローされる条件の一部、<xref:System.InvalidCastException>例外は次のセクションで説明します。  
+  
+ [プリミティブ型と IConvertible](#Primitive)   
+ [Convert.ChangeType メソッド](#ChangeType)   
+ [縮小変換と IConvertible の実装](#Narrowing)   
+ [ダウン キャスト](#Downcasting)   
+ [インターフェイスのオブジェクトからの変換](#Interface)   
+ [文字列変換](#String)   
+ [Visual Basic 6.0 の移行](#Migration)  
+  
+ 元の値が指定する必要がありますを成功させるに明示的な参照変換、変換、 `null`、または元の引数が参照されているオブジェクトの種類は、暗黙的な参照変換によって変換先の型に変換可能である必要があります。  
+  
+ 中間言語 (IL) の次の手順をスロー、<xref:System.InvalidCastException>例外。  
+  
+-   `castclass`  
+  
+-   `refanyval`  
+  
+-   `unbox`  
+  
+ <xref:System.InvalidCastException>値は 0x80004002 HRESULT COR_E_INVALIDCAST を使用します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.InvalidCastException>を参照してください、<xref:System.InvalidCastException.%23ctor%2A>コンス トラクターです。  
+  
+<a name="Primitive"></a>   
+## <a name="primitive-types-and-iconvertible"></a>プリミティブ型と IConvertible  
+ 直接または間接的に呼び出す、プリミティブ型の<xref:System.IConvertible>特定の変換をサポートしていない実装します。 たとえば、変換を試みて、<xref:System.Boolean>値を<xref:System.Char>または<xref:System.DateTime>値を<xref:System.Int32>をスロー、<xref:System.InvalidCastException>例外。 次の例では、両方を呼び出します、<xref:System.Boolean.System%23IConvertible%23ToChar%2A?displayProperty=nameWithType>と<xref:System.Convert.ToChar%28System.Boolean%29?displayProperty=nameWithType>を変換するメソッド、<xref:System.Boolean>値を<xref:System.Char>です。 どちらの場合、メソッドの呼び出しがスローされます、<xref:System.InvalidCastException>例外。  
+  
+ [!code-csharp[System.InvalidCastException#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidcastexception/cs/iconvertible1.cs#2)]
+ [!code-vb[System.InvalidCastException#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidcastexception/vb/iconvertible1.vb#2)]  
+  
+ 変換がサポートされていないために、回避策はありません。  
+  
+<a name="ChangeType"></a>   
+## <a name="the-convertchangetype-method"></a>Convert.ChangeType メソッド  
+ 呼び出して、<xref:System.Convert.ChangeType%2A?displayProperty=nameWithType>間、1 つの型が 1 つまたは両方の種類からオブジェクトを変換するメソッドを実装しない、<xref:System.IConvertible>インターフェイスです。  
+  
+ ほとんどの場合、変換がサポートされていないためが回避策はありません。 場合によっては、可能な回避策はのようなプロパティに元の型からプロパティ値を手動で割り当てるには、対象の型。  
+  
+<a name="Narrowing"></a>   
+## <a name="narrowing-conversions-and-iconvertible-implementations"></a>縮小変換と IConvertible の実装  
+ 縮小の演算子は、型によってサポートされている明示的な変換を定義します。  C# のキャスト演算子または`CType`Visual Basic での変換メソッド (場合`Option Strict`に) 変換を実行するために必要なです。  
+  
+ ただしが明示的または自動縮小の 2 つの型間の変換元の型でもターゲット型が定義されている場合、および<xref:System.IConvertible>ソースの種類からターゲット型への変換をサポートしていない 1 つまたは両方の種類の実装、<xref:System.InvalidCastException>例外がスローされます。  
+  
+ ほとんどの場合、変換がサポートされていないためが回避策はありません。  
+  
+<a name="Downcasting"></a>   
+## <a name="downcasting"></a>ダウン キャスト  
+ ダウン キャスト、つまり、その派生型のいずれかの基本型のインスタンスに変換しようとしています。 次の例では、変換を試みて、`Person`オブジェクトを`PersonWithID`オブジェクトが失敗します。  
+  
+ [!code-csharp[System.InvalidCastException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidcastexception/cs/basetoderived1.cs#1)]
+ [!code-vb[System.InvalidCastException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidcastexception/vb/basetoderived1.vb#1)]  
+  
+ 例に示すように、キャストが成功した場合にのみ、`Person`からアップ キャストによってオブジェクトが作成された、`PersonWithId`オブジェクトを`Person`オブジェクト、または、`Person`オブジェクトが`null`です。  
+  
+<a name="Interface"></a>   
+## <a name="conversion-from-an-interface-object"></a>インターフェイスのオブジェクトからの変換  
+ インターフェイス オブジェクトをそのインターフェイスを実装する型に変換しようとしているが、対象の型は、同じ型またはインターフェイス オブジェクトを派生元と最初の型の基底クラスではありません。 次の例をスロー、<xref:System.InvalidCastException>例外に変換しようとしたとき、<xref:System.IFormatProvider>オブジェクトを<xref:System.Globalization.DateTimeFormatInfo>オブジェクト。 に、変換が失敗したが、<xref:System.Globalization.DateTimeFormatInfo>クラスが実装する、<xref:System.IFormatProvider>インターフェイス、<xref:System.Globalization.DateTimeFormatInfo>オブジェクトに関係のない、<xref:System.Globalization.CultureInfo>インターフェイス オブジェクトの派生元クラスです。  
+  
+ [!code-csharp[System.InvalidCastException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidcastexception/cs/Interface1.cs#3)]
+ [!code-vb[System.InvalidCastException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidcastexception/vb/Interface1.vb#3)]  
+  
+ 例外としてメッセージを示します、ここでは、インターフェイス オブジェクトが元の型のインスタンスに変換される場合にのみ、変換が成功すると、<xref:System.Globalization.CultureInfo>です。 変換は、インターフェイス オブジェクトが元の型の基本型のインスタンスに変換される場合も成功します。  
+  
+<a name="String"></a>   
+## <a name="string-conversions"></a>文字列変換  
+ C# でキャスト演算子を使用して、値またはオブジェクトを文字列形式に変換しようとするとします。 次の例では、両方しようとしてキャスト、<xref:System.Char>文字列および文字列 throw を整数にキャストしようとすると、値、<xref:System.InvalidCastException>例外。  
+  
+ [!code-csharp[System.InvalidCastException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidcastexception/cs/ToString1.cs#4)]  
+  
+> [!NOTE]
+>  Visual Basic を使用して`CStr`プリミティブ型の値を文字列に変換する操作は成功します。 操作はスローされません、<xref:System.InvalidCastException>例外。  
+  
+ 任意の型を文字列形式のインスタンスが正常に変換する方法を呼び出す、`ToString`メソッドでは、次の例としてはします。  `ToString`メソッドが存在し、以降では常に、<xref:System.Object.ToString%2A>でメソッドが定義されている、<xref:System.Object>クラスしそのため、継承またはすべてのマネージ型でオーバーライドします。  
+  
+ [!code-csharp[System.InvalidCastException#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidcastexception/cs/ToString2.cs#5)]  
+  
+<a name="Migration"></a>   
+## <a name="visual-basic-60-migration"></a>Visual Basic 6.0 の移行  
+ Visual Basic .net ユーザー コントロールにカスタム イベントの呼び出しで Visual Basic 6.0 アプリケーションをアップグレードして、<xref:System.InvalidCastException>メッセージで例外がスローされます、「指定されたキャストは無効です」 この例外をなくすためには、フォーム内のコード行を変更する (など`Form1`)  
+  
+```  
+Call UserControl11_MyCustomEvent(UserControl11, New UserControl1.MyCustomEventEventArgs(5))  
+```  
+  
+ 次のコード行に置き換えます。  
+  
+```  
+Call UserControl11_MyCustomEvent(UserControl11(0), New UserControl1.MyCustomEventEventArgs(5))  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvalidCastException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.InvalidCastException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.InvalidCastException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.Exception.Message%2A> 「にキャストできませんソースの種類から変換先の型」など、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ <xref:System.InvalidCastException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvalidCastException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.InvalidCastException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.InvalidCastException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Exception.Message%2A?displayProperty=nameWithType>の新しい例外を使用して、プロパティ、`message`パラメーター。 コンテンツ`message`ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ <xref:System.InvalidCastException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InvalidCastException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.InvalidCastException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.InvalidCastException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvalidCastException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.InvalidCastException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.InvalidCastException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A>プロパティをコンス トラクターに渡されるかを返す同じ値を返します`null`場合、<xref:System.Exception.InnerException%2A>プロパティがコンス トラクターには、内部例外値を指定していません。  
+  
+ <xref:System.InvalidCastException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvalidCastException (string message, int errorCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, int32 errorCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.InvalidCastException.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="errorCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の理由を示すメッセージが発生しました。</param>
+        <param name="errorCode">例外に関連付けられているエラー コード (HRESULT) 値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.InvalidCastException" />クラスを指定したメッセージとエラー コード。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Exception.Message%2A?displayProperty=nameWithType>の新しい例外を使用して、プロパティ、`message`パラメーター。 コンテンツ`message`ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ このコンス トラクターの継承元にアクセス可能な HRESULT 値を提供する、<xref:System.InvalidCastException>経由で、保護対象のクラス<xref:System.Exception.HResult%2A>のプロパティ、<xref:System.Exception>クラスです。  
+  
+ <xref:System.InvalidCastException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

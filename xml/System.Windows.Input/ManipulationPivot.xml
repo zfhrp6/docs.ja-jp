@@ -1,0 +1,105 @@
+<Type Name="ManipulationPivot" FullName="System.Windows.Input.ManipulationPivot">
+  <TypeSignature Language="C#" Value="public class ManipulationPivot" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManipulationPivot extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ManipulationPivot" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザー入力の 1 つのポイントと回転を実行する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.ManipulationStartingEventArgs.Pivot%2A?displayProperty=nameWithType>プロパティは、<xref:System.Windows.Input.ManipulationPivot>です。 設定すると<xref:System.Windows.Input.ManipulationStartingEventArgs.Pivot%2A>のイベント ハンドラーで、<xref:System.Windows.UIElement.ManipulationStarting>イベント、操作データが含まれる回転、ユーザーが操作中に 1 本の指を使用する場合。  これは、1 つのテーブルでのペーパーなど、オブジェクトの回転を 1 本の指を使用できる実際の状況をシミュレートします。  場合、<xref:System.Windows.Input.ManipulationStartingEventArgs.Pivot%2A>は`null`ユーザーは、2 本の指を使用して回転させる必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.UIElement.ManipulationStarting>イベントとセット、<xref:System.Windows.Input.ManipulationStartingEventArgs.Pivot%2A?displayProperty=nameWithType>プロパティです。 この例をテストする手順を[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)し、手順 4. でコードをコードに置き換えます。  
+  
+ [!code-csharp[BasicManipulation#ManipulationPivot](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/reportboundaryfeedbackexample.xaml.cs#manipulationpivot)]
+ [!code-vb[BasicManipulation#ManipulationPivot](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/reportboundaryfeedbackexample.xaml.vb#manipulationpivot)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManipulationPivot ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationPivot.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.ManipulationPivot" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManipulationPivot (System.Windows.Point center, double radius);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Point center, float64 radius) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationPivot.#ctor(System.Windows.Point,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="center" Type="System.Windows.Point" />
+        <Parameter Name="radius" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="center">1 つのポイント操作の中心です。</param>
+        <param name="radius">回転と平行移動量を判断するために使用するピボットの周りの領域は、1 箇所の連絡先は、操作を開始したときに発生します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.ManipulationPivot" />単一ポイント操作の指定した点を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Center">
+      <MemberSignature Language="C#" Value="public System.Windows.Point Center { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point Center" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationPivot.Center" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 つのポイント操作の中心を設定します。</summary>
+        <value>1 つのポイント操作の中心です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Radius">
+      <MemberSignature Language="C#" Value="public double Radius { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Radius" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationPivot.Radius" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または回転と変換の単一のポイントは、操作を開始したときの発生量を決定するために使用するピボットの周りの領域を設定します。</summary>
+        <value>回転と平行移動量を判断するために使用するピボットの周りの領域は、1 箇所の連絡先は、操作を開始したときに発生します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,183 @@
+<Type Name="FolderLevelBuildProvider" FullName="System.Web.Configuration.FolderLevelBuildProvider">
+  <TypeSignature Language="C#" Value="public sealed class FolderLevelBuildProvider : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FolderLevelBuildProvider extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.FolderLevelBuildProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用を有効にする構成設定を表す、<see cref="T:System.Web.Compilation.BuildProvider" />特定のフォルダーのクラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET ビルド環境の用途<xref:System.Web.Configuration.FolderLevelBuildProvider>アプリケーションで異なる種類のファイルとサブフォルダーのソース コードを生成するオブジェクト。 派生したクラス、<xref:System.Web.Configuration.FolderLevelBuildProvider>クラスは、Bin、App_GlobalResources、App_LocalResources、App_WebReferences、App_Browsers、テーマなどのフォルダーとその他のカスタム フォルダーのソース コードを生成します。 通常のインスタンスを作成しない、<xref:System.Web.Configuration.FolderLevelBuildProvider>クラスに直接できます。 派生するクラスを実装する代わりに、<xref:System.Web.Compilation.BuildProvider>を適用し、<xref:System.Web.Compilation.FolderLevelBuildProviderAppliesToAttribute>クラス、および ASP.NET ビルド環境で使用するため、派生クラスを構成します。 <xref:System.Web.Compilation.FolderLevelBuildProviderAppliesToAttribute>クラス ファイルではなくフォルダーを対象とします。  
+  
+ インスタンスを使用する、<xref:System.Web.Configuration.FolderLevelBuildProvider>と共にクラス<xref:System.Web.Compilation.AssemblyBuilder>コンパイルされたアセンブリに 1 つまたは複数のファイルをビルドするオブジェクト。 <xref:System.Web.Configuration.FolderLevelBuildProvider>インスタンスは、個々 のファイルに対する適切な言語でソース コードを生成し、<xref:System.Web.Compilation.AssemblyBuilder>オブジェクトがそれぞれから提供されたソース コードをビルド<xref:System.Web.Configuration.FolderLevelBuildProvider>インスタンスを 1 つのアセンブリにします。  
+  
+ <xref:System.Web.Configuration.FolderLevelBuildProvider>でクラスを指定、 `configuration` Web.config ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のビルド プロバイダーを追加する方法を示します`BuildProvider1`Web.config ファイルにします。  
+  
+```  
+<compilation>  
+  <folderLevelBuildProviders>  
+    <add type="BuildProvider1, Assembly1,Version=1.0.0.0,    
+        PublicKeyToken=xxxxx"/>  
+  </folderLevelBuildProviders>  
+</compilation>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FolderLevelBuildProvider (string name, string type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FolderLevelBuildProvider.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">識別子、<see cref="T:System.Web.Compilation.BuildProvider" />を使用します。</param>
+        <param name="type">完全修飾名、<see cref="T:System.Web.Compilation.BuildProvider" />を使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.FolderLevelBuildProvider" />識別子と完全修飾名を使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FolderLevelBuildProvider.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="provider">ビルド プロバイダーは、比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが現在と等しいかどうかを示す値を返します<see cref="T:System.Web.Configuration.FolderLevelBuildProvider" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />指定されたフォルダー レベル プロバイダー オブジェクトを構築する場合は、現在のオブジェクトと等しいそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FolderLevelBuildProvider.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを生成、<see cref="T:System.Web.Configuration.FolderLevelBuildProvider" />オブジェクト。</summary>
+        <returns>ハッシュ コード、<see cref="T:System.Web.Configuration.FolderLevelBuildProvider" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、フォルダー レベルのビルド プロバイダー オブジェクトの識別に使用できる整数を生成します。 このメソッドが継承、<xref:System.Object.GetHashCode%2A>メソッドです。 <xref:System.Object.GetHashCode%2A>メソッドは、ハッシュ テーブルなどのアルゴリズムとデータの構造体のハッシュに適しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FolderLevelBuildProvider.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("name", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.FolderLevelBuildProvider" /> オブジェクトの名前を取得または設定します。</summary>
+        <value>ビルド プロバイダー オブジェクトの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FolderLevelBuildProvider.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FolderLevelBuildProvider.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("type", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ビルド プロバイダーのクラスの完全修飾名。</summary>
+        <value>ビルド プロバイダーのクラスの完全修飾名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

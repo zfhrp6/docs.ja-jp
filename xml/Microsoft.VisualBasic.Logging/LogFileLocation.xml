@@ -1,0 +1,105 @@
+<Type Name="LogFileLocation" FullName="Microsoft.VisualBasic.Logging.LogFileLocation">
+  <TypeSignature Language="C#" Value="public enum LogFileLocation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LogFileLocation extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Logging.LogFileLocation" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>定義済みのパスを判断、<see cref="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />クラスがそのログ ファイルの書き込みに使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つの割り当て、<xref:Microsoft.VisualBasic.Logging.LogFileLocation>列挙の値を<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A>プロパティを定義済みのパスを指定する、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>クラスがそのログ ファイルの書き込みに使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CommonApplicationDirectory">
+      <MemberSignature Language="C#" Value="CommonApplicationDirectory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.Logging.LogFileLocation CommonApplicationDirectory = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Logging.LogFileLocation.CommonApplicationDirectory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.LogFileLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのユーザー間で共有されているアプリケーション データのパスを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="Custom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.Logging.LogFileLocation Custom = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Logging.LogFileLocation.Custom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.LogFileLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列を指定して場合<see cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation" />は空でなく、パスとして使用します。 それ以外の場合、ユーザーのアプリケーション データのパスを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecutableDirectory">
+      <MemberSignature Language="C#" Value="ExecutableDirectory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.Logging.LogFileLocation ExecutableDirectory = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Logging.LogFileLocation.ExecutableDirectory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.LogFileLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションを開始した実行可能ファイルのパスを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalUserApplicationDirectory">
+      <MemberSignature Language="C#" Value="LocalUserApplicationDirectory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.Logging.LogFileLocation LocalUserApplicationDirectory = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Logging.LogFileLocation.LocalUserApplicationDirectory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.LogFileLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーのアプリケーション データのパスを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TempDirectory">
+      <MemberSignature Language="C#" Value="TempDirectory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.Logging.LogFileLocation TempDirectory = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Logging.LogFileLocation.TempDirectory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.LogFileLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のシステムの一時フォルダーのパスを使用します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

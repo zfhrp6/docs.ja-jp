@@ -1,0 +1,41 @@
+<Type Name="LinkLabelLinkClickedEventHandler" FullName="System.Windows.Forms.LinkLabelLinkClickedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void LinkLabelLinkClickedEventHandler(object sender, LinkLabelLinkClickedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LinkLabelLinkClickedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.LinkLabelLinkClickedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.LinkLabelLinkClickedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.LinkLabelLinkClickedEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.LinkLabel.LinkClicked" /> の <see cref="T:System.Windows.Forms.LinkLabel" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.LinkLabelLinkClickedEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除するまで、イベントが発生するたびに、イベント ハンドラーが呼び出されます。 デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.Windows.Forms.LinkLabel>を複数のクラス<xref:System.Windows.Forms.LinkArea>フォームにラベルを表示する、定義されたセクションです。 設定の例を示します、 <xref:System.Windows.Forms.Label.AutoSize%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>、 <xref:System.Windows.Forms.LinkLabel.DisabledLinkColor%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、および<xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>の外観をカスタマイズするプロパティ、<xref:System.Windows.Forms.LinkLabel>です。 最初の<xref:System.Windows.Forms.LinkArea>を使用して指定は、<xref:System.Windows.Forms.LinkLabel.LinkArea%2A?displayProperty=nameWithType>プロパティです。 追加のリンクに追加、<xref:System.Windows.Forms.LinkLabel>を使用して、<xref:System.Windows.Forms.LinkLabel.LinkCollection.Add%2A?displayProperty=nameWithType>メソッドです。 例のハンドル、 <xref:System.Windows.Forms.LinkLabel.LinkClicked> 、ハイパーリンク、Web ブラウザーを開始し、表示するイベント、<xref:System.Windows.Forms.MessageBox>の他のリンク。  
+  
+ [!code-cpp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CPP/linklabel.cpp#1)]
+ [!code-csharp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CS/linklabel.cs#1)]
+ [!code-vb[System.Windows.Forms.LinkLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/VB/linklabel.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

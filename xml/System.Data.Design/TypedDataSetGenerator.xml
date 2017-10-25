@@ -1,0 +1,566 @@
+<Type Name="TypedDataSetGenerator" FullName="System.Data.Design.TypedDataSetGenerator">
+  <TypeSignature Language="C#" Value="public sealed class TypedDataSetGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypedDataSetGenerator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Design.TypedDataSetGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>厳密に型が生成されます<see cref="T:System.Data.DataSet" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.TypedDataSetGenerator>クラスが提供される情報 (たとえば、XML スキーマ) を受け取るし、型指定されたデータセット クラスを作成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="Generate">
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>厳密に型が生成されます<see cref="T:System.Data.DataSet" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 厳密に型が生成されます<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static string Generate (System.Data.DataSet dataSet, System.CodeDom.CodeNamespace codeNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Generate(class System.Data.DataSet dataSet, class System.CodeDom.CodeNamespace codeNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.Generate(System.Data.DataSet,System.CodeDom.CodeNamespace,System.CodeDom.Compiler.CodeDomProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSet" Type="System.Data.DataSet" />
+        <Parameter Name="codeNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+      </Parameters>
+      <Docs>
+        <param name="dataSet">ソース<see cref="T:System.Data.DataSet" />、型指定のメタデータを指定する<see cref="T:System.Data.DataSet" />です。</param>
+        <param name="codeNamespace">名前空間は、型指定のターゲット名前空間を<see cref="T:System.Data.DataSet" />です。</param>
+        <param name="codeProvider">データセットの生成に使用する、言語特有の <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />。</param>
+        <summary>厳密に型が生成されます<see cref="T:System.Data.DataSet" />既存に基づいて<see cref="T:System.Data.DataSet" />です。</summary>
+        <returns>厳密に型指定された<see cref="T:System.Data.DataSet" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 厳密に型が生成されます<xref:System.Data.DataSet>です。 示されている名前空間に、データセットを作成、`codeNamespace`パラメーターとデータセットが生成されている場合に示されているマネージ プログラミング言語で、`codeProvider`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static string Generate (string inputFileContent, System.CodeDom.CodeCompileUnit compileUnit, System.CodeDom.CodeNamespace mainNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Generate(string inputFileContent, class System.CodeDom.CodeCompileUnit compileUnit, class System.CodeDom.CodeNamespace mainNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.Generate(System.String,System.CodeDom.CodeCompileUnit,System.CodeDom.CodeNamespace,System.CodeDom.Compiler.CodeDomProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputFileContent" Type="System.String" />
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="mainNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+      </Parameters>
+      <Docs>
+        <param name="inputFileContent"><see cref="T:System.Data.DataSet" /> の基とする、XML スキーマを表す文字列。</param>
+        <param name="compileUnit"><see cref="T:System.CodeDom.CodeCompileUnit" />に生成されたコードが含まれています。</param>
+        <param name="mainNamespace"><see cref="T:System.CodeDom.CodeNamespace" />生成されたデータセットを格納しています。</param>
+        <param name="codeProvider">データセットの生成に使用する、言語特有の <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />。</param>
+        <summary>指定された入力ファイルに基づいて厳密に型指定された <see cref="T:System.Data.DataSet" /> を生成します。</summary>
+        <returns>厳密に型指定された<see cref="T:System.Data.DataSet" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 厳密に型が生成されます<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static void Generate (string inputFileContent, System.CodeDom.CodeCompileUnit compileUnit, System.CodeDom.CodeNamespace mainNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, System.Collections.Hashtable customDBProviders);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Generate(string inputFileContent, class System.CodeDom.CodeCompileUnit compileUnit, class System.CodeDom.CodeNamespace mainNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, class System.Collections.Hashtable customDBProviders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.Generate(System.String,System.CodeDom.CodeCompileUnit,System.CodeDom.CodeNamespace,System.CodeDom.Compiler.CodeDomProvider,System.Collections.Hashtable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputFileContent" Type="System.String" />
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="mainNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="customDBProviders" Type="System.Collections.Hashtable" />
+      </Parameters>
+      <Docs>
+        <param name="inputFileContent"><see cref="T:System.Data.DataSet" /> の基とする、XML スキーマを表す文字列。</param>
+        <param name="compileUnit"><see cref="T:System.CodeDom.CodeCompileUnit" />に生成されたコードが含まれています。</param>
+        <param name="mainNamespace"><see cref="T:System.CodeDom.CodeNamespace" />生成されたデータセットを格納しています。</param>
+        <param name="codeProvider">特定の言語<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />を使用して、データセットを生成します。</param>
+        <param name="customDBProviders">型指定されたデータセット内の特定のプロバイダーに接続をマップするハッシュ テーブル。</param>
+        <summary>指定された入力ファイルに基づいて厳密に型指定された <see cref="T:System.Data.DataSet" /> を生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 厳密に型が生成されます<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static void Generate (string inputFileContent, System.CodeDom.CodeCompileUnit compileUnit, System.CodeDom.CodeNamespace mainNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, System.Data.Common.DbProviderFactory specifiedFactory);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Generate(string inputFileContent, class System.CodeDom.CodeCompileUnit compileUnit, class System.CodeDom.CodeNamespace mainNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, class System.Data.Common.DbProviderFactory specifiedFactory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.Generate(System.String,System.CodeDom.CodeCompileUnit,System.CodeDom.CodeNamespace,System.CodeDom.Compiler.CodeDomProvider,System.Data.Common.DbProviderFactory)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputFileContent" Type="System.String" />
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="mainNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="specifiedFactory" Type="System.Data.Common.DbProviderFactory" />
+      </Parameters>
+      <Docs>
+        <param name="inputFileContent"><see cref="T:System.Data.DataSet" /> の基とする、XML スキーマを表す文字列。</param>
+        <param name="compileUnit"><see cref="T:System.CodeDom.CodeCompileUnit" />に生成されたコードが含まれています。</param>
+        <param name="mainNamespace"><see cref="T:System.CodeDom.CodeNamespace" />生成されたデータセットを格納しています。</param>
+        <param name="codeProvider">データセットの生成に使用する、言語特有の <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />。</param>
+        <param name="specifiedFactory"><see cref="T:System.Data.Common.DbProviderFactory" />に含まれているプロバイダーをオーバーライドするために、 <c>inputFileContent</c>です。</param>
+        <summary>指定された入力ファイルに基づいて厳密に型指定された <see cref="T:System.Data.DataSet" /> を生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 厳密に型が生成されます<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static string Generate (string inputFileContent, System.CodeDom.CodeCompileUnit compileUnit, System.CodeDom.CodeNamespace mainNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, System.Data.Design.TypedDataSetGenerator.GenerateOption option);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Generate(string inputFileContent, class System.CodeDom.CodeCompileUnit compileUnit, class System.CodeDom.CodeNamespace mainNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, valuetype System.Data.Design.TypedDataSetGenerator/GenerateOption option) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.Generate(System.String,System.CodeDom.CodeCompileUnit,System.CodeDom.CodeNamespace,System.CodeDom.Compiler.CodeDomProvider,System.Data.Design.TypedDataSetGenerator.GenerateOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputFileContent" Type="System.String" />
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="mainNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="option" Type="System.Data.Design.TypedDataSetGenerator+GenerateOption" />
+      </Parameters>
+      <Docs>
+        <param name="inputFileContent"><see cref="T:System.Data.DataSet" /> の基とする、XML スキーマを表す文字列。</param>
+        <param name="compileUnit"><see cref="T:System.CodeDom.CodeCompileUnit" />に生成されたコードが含まれています。</param>
+        <param name="mainNamespace"><see cref="T:System.CodeDom.CodeNamespace" />生成されたデータセットを格納しています。</param>
+        <param name="codeProvider">データセットの生成に使用する、言語特有の <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />。</param>
+        <param name="option"><see cref="T:System.Data.Design.TypedDataSetGenerator.GenerateOption" />を決定する新機能 (ある場合) その他のコンポーネントと型指定されたデータセットを生成するときに作成するメソッド。</param>
+        <summary>指定された入力ファイルに基づいて厳密に型指定された <see cref="T:System.Data.DataSet" /> を生成します。</summary>
+        <returns>厳密に型指定された<see cref="T:System.Data.DataSet" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 厳密に型が生成されます<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static void Generate (string inputFileContent, System.CodeDom.CodeCompileUnit compileUnit, System.CodeDom.CodeNamespace mainNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, System.Collections.Hashtable customDBProviders, System.Data.Design.TypedDataSetGenerator.GenerateOption option);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Generate(string inputFileContent, class System.CodeDom.CodeCompileUnit compileUnit, class System.CodeDom.CodeNamespace mainNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, class System.Collections.Hashtable customDBProviders, valuetype System.Data.Design.TypedDataSetGenerator/GenerateOption option) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.Generate(System.String,System.CodeDom.CodeCompileUnit,System.CodeDom.CodeNamespace,System.CodeDom.Compiler.CodeDomProvider,System.Collections.Hashtable,System.Data.Design.TypedDataSetGenerator.GenerateOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputFileContent" Type="System.String" />
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="mainNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="customDBProviders" Type="System.Collections.Hashtable" />
+        <Parameter Name="option" Type="System.Data.Design.TypedDataSetGenerator+GenerateOption" />
+      </Parameters>
+      <Docs>
+        <param name="inputFileContent"><see cref="T:System.Data.DataSet" /> の基とする、XML スキーマを表す文字列。</param>
+        <param name="compileUnit"><see cref="T:System.CodeDom.CodeCompileUnit" />に生成されたコードが含まれています。</param>
+        <param name="mainNamespace"><see cref="T:System.CodeDom.CodeNamespace" />生成されたデータセットを格納しています。</param>
+        <param name="codeProvider">データセットの生成に使用する、言語特有の <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />。</param>
+        <param name="customDBProviders">型指定されたデータセット内の特定のプロバイダーに接続をマップするハッシュ テーブル。</param>
+        <param name="option"><see cref="T:System.Data.Design.TypedDataSetGenerator.GenerateOption" />を決定する新機能 (ある場合) その他のコンポーネントと型指定されたデータセットを生成するときに作成するメソッド。</param>
+        <summary>指定された入力ファイルに基づいて厳密に型指定された <see cref="T:System.Data.DataSet" /> を生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 厳密に型が生成されます<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static string Generate (string inputFileContent, System.CodeDom.CodeCompileUnit compileUnit, System.CodeDom.CodeNamespace mainNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, System.Data.Design.TypedDataSetGenerator.GenerateOption option, string dataSetNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Generate(string inputFileContent, class System.CodeDom.CodeCompileUnit compileUnit, class System.CodeDom.CodeNamespace mainNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, valuetype System.Data.Design.TypedDataSetGenerator/GenerateOption option, string dataSetNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.Generate(System.String,System.CodeDom.CodeCompileUnit,System.CodeDom.CodeNamespace,System.CodeDom.Compiler.CodeDomProvider,System.Data.Design.TypedDataSetGenerator.GenerateOption,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputFileContent" Type="System.String" />
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="mainNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="option" Type="System.Data.Design.TypedDataSetGenerator+GenerateOption" />
+        <Parameter Name="dataSetNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputFileContent"><see cref="T:System.Data.DataSet" /> の基とする、XML スキーマを表す文字列。</param>
+        <param name="compileUnit"><see cref="T:System.CodeDom.CodeCompileUnit" />に生成されたコードが含まれています。</param>
+        <param name="mainNamespace"><see cref="T:System.CodeDom.CodeNamespace" />生成されたデータセットを格納しています。</param>
+        <param name="codeProvider">データセットの生成に使用する、言語特有の <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />。</param>
+        <param name="option"><see cref="T:System.Data.Design.TypedDataSetGenerator.GenerateOption" />を決定する新機能 (ある場合) その他のコンポーネントと型指定されたデータセットを生成するときに作成するメソッド。</param>
+        <param name="dataSetNamespace">生成されるデータセットの名前空間を格納している文字列。</param>
+        <summary>指定された入力ファイルに基づいて厳密に型指定された <see cref="T:System.Data.DataSet" /> を生成します。</summary>
+        <returns>厳密に型指定された<see cref="T:System.Data.DataSet" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 厳密に型が生成されます<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static void Generate (string inputFileContent, System.CodeDom.CodeCompileUnit compileUnit, System.CodeDom.CodeNamespace mainNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, System.Collections.Hashtable customDBProviders, System.Data.Design.TypedDataSetGenerator.GenerateOption option, string dataSetNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Generate(string inputFileContent, class System.CodeDom.CodeCompileUnit compileUnit, class System.CodeDom.CodeNamespace mainNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, class System.Collections.Hashtable customDBProviders, valuetype System.Data.Design.TypedDataSetGenerator/GenerateOption option, string dataSetNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.Generate(System.String,System.CodeDom.CodeCompileUnit,System.CodeDom.CodeNamespace,System.CodeDom.Compiler.CodeDomProvider,System.Collections.Hashtable,System.Data.Design.TypedDataSetGenerator.GenerateOption,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputFileContent" Type="System.String" />
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="mainNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="customDBProviders" Type="System.Collections.Hashtable" />
+        <Parameter Name="option" Type="System.Data.Design.TypedDataSetGenerator+GenerateOption" />
+        <Parameter Name="dataSetNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputFileContent"><see cref="T:System.Data.DataSet" /> の基とする、XML スキーマを表す文字列。</param>
+        <param name="compileUnit"><see cref="T:System.CodeDom.CodeCompileUnit" />に生成されたコードが含まれています。</param>
+        <param name="mainNamespace"><see cref="T:System.CodeDom.CodeNamespace" />生成されたデータセットを格納しています。</param>
+        <param name="codeProvider">データセットの生成に使用する、言語特有の <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />。</param>
+        <param name="customDBProviders">型指定されたデータセット内の特定のプロバイダーに接続をマップするハッシュ テーブル。</param>
+        <param name="option"><see cref="T:System.Data.Design.TypedDataSetGenerator.GenerateOption" />を決定する新機能 (ある場合) その他のコンポーネントと型指定されたデータセットを生成するときに作成するメソッド。</param>
+        <param name="dataSetNamespace">生成されるデータセットの名前空間を格納している文字列。</param>
+        <summary>指定された入力ファイルに基づいて厳密に型指定された <see cref="T:System.Data.DataSet" /> を生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 厳密に型が生成されます<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static string Generate (string inputFileContent, System.CodeDom.CodeCompileUnit compileUnit, System.CodeDom.CodeNamespace mainNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, System.Data.Design.TypedDataSetGenerator.GenerateOption option, string dataSetNamespace, string basePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Generate(string inputFileContent, class System.CodeDom.CodeCompileUnit compileUnit, class System.CodeDom.CodeNamespace mainNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, valuetype System.Data.Design.TypedDataSetGenerator/GenerateOption option, string dataSetNamespace, string basePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.Generate(System.String,System.CodeDom.CodeCompileUnit,System.CodeDom.CodeNamespace,System.CodeDom.Compiler.CodeDomProvider,System.Data.Design.TypedDataSetGenerator.GenerateOption,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputFileContent" Type="System.String" />
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="mainNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="option" Type="System.Data.Design.TypedDataSetGenerator+GenerateOption" />
+        <Parameter Name="dataSetNamespace" Type="System.String" />
+        <Parameter Name="basePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputFileContent"><see cref="T:System.Data.DataSet" /> の基とする、XML スキーマを表す文字列。</param>
+        <param name="compileUnit"><see cref="T:System.CodeDom.CodeCompileUnit" />に生成されたコードが含まれています。</param>
+        <param name="mainNamespace"><see cref="T:System.CodeDom.CodeNamespace" />生成されたデータセットを格納しています。</param>
+        <param name="codeProvider">データセットの生成に使用する、言語特有の <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />。</param>
+        <param name="option"><see cref="T:System.Data.Design.TypedDataSetGenerator.GenerateOption" />を決定する新機能 (ある場合) その他のコンポーネントと型指定されたデータセットを生成するときに作成するメソッド。</param>
+        <param name="dataSetNamespace">生成されるデータセットの名前空間を格納している文字列。</param>
+        <param name="basePath">データセットの入力ファイルの相対パスに基づくスキーマへのパスを表す文字列。</param>
+        <summary>指定された入力ファイルに基づいて厳密に型指定された <see cref="T:System.Data.DataSet" /> を生成します。</summary>
+        <returns>厳密に型指定された<see cref="T:System.Data.DataSet" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 厳密に型が生成されます<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public static void Generate (string inputFileContent, System.CodeDom.CodeCompileUnit compileUnit, System.CodeDom.CodeNamespace mainNamespace, System.CodeDom.Compiler.CodeDomProvider codeProvider, System.Collections.Hashtable customDBProviders, System.Data.Design.TypedDataSetGenerator.GenerateOption option, string dataSetNamespace, string basePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Generate(string inputFileContent, class System.CodeDom.CodeCompileUnit compileUnit, class System.CodeDom.CodeNamespace mainNamespace, class System.CodeDom.Compiler.CodeDomProvider codeProvider, class System.Collections.Hashtable customDBProviders, valuetype System.Data.Design.TypedDataSetGenerator/GenerateOption option, string dataSetNamespace, string basePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.Generate(System.String,System.CodeDom.CodeCompileUnit,System.CodeDom.CodeNamespace,System.CodeDom.Compiler.CodeDomProvider,System.Collections.Hashtable,System.Data.Design.TypedDataSetGenerator.GenerateOption,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputFileContent" Type="System.String" />
+        <Parameter Name="compileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="mainNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="customDBProviders" Type="System.Collections.Hashtable" />
+        <Parameter Name="option" Type="System.Data.Design.TypedDataSetGenerator+GenerateOption" />
+        <Parameter Name="dataSetNamespace" Type="System.String" />
+        <Parameter Name="basePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputFileContent"><see cref="T:System.Data.DataSet" /> の基とする、XML スキーマを表す文字列。</param>
+        <param name="compileUnit"><see cref="T:System.CodeDom.CodeCompileUnit" />に生成されたコードが含まれています。</param>
+        <param name="mainNamespace"><see cref="T:System.CodeDom.CodeNamespace" />生成されたデータセットを格納しています。</param>
+        <param name="codeProvider">データセットの生成に使用する、言語特有の <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />。</param>
+        <param name="customDBProviders">型指定されたデータセット内の特定のプロバイダーに接続をマップするハッシュ テーブル。</param>
+        <param name="option"><see cref="T:System.Data.Design.TypedDataSetGenerator.GenerateOption" />を決定する新機能 (ある場合) その他のコンポーネントと型指定されたデータセットを生成するときに作成するメソッド。</param>
+        <param name="dataSetNamespace">生成されるデータセットの名前空間を格納している文字列。</param>
+        <param name="basePath">データセットの入力ファイルの相対パスに基づくスキーマへのパスを表す文字列。</param>
+        <summary>指定された入力ファイルに基づいて厳密に型指定された <see cref="T:System.Data.DataSet" /> を生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ 厳密に型が生成されます<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetProviderName">
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定された入力ファイルで見つかった最初のプロバイダー名を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダー名を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetProviderName">
+      <MemberSignature Language="C#" Value="public static string GetProviderName (string inputFileContent);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetProviderName(string inputFileContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.GetProviderName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputFileContent" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputFileContent"><see cref="T:System.Data.DataSet" /> の基とする、XML スキーマを表す文字列。</param>
+        <summary>指定された入力ファイルで見つかった最初のプロバイダー名を返します。</summary>
+        <returns>この特定のプロバイダーを表す文字列<see cref="T:System.Data.DataSet" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ このメソッドでは、最初のプロバイダー名を返します、指定した`inputFileContent`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProviderName">
+      <MemberSignature Language="C#" Value="public static string GetProviderName (string inputFileContent, string tableName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetProviderName(string inputFileContent, string tableName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Design.TypedDataSetGenerator.GetProviderName(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputFileContent" Type="System.String" />
+        <Parameter Name="tableName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputFileContent"><see cref="T:System.Data.DataSet" /> の基とする、XML スキーマを表す文字列。</param>
+        <param name="tableName">プロバイダーの名前を取得するテーブルの名前を表す文字列。</param>
+        <summary>プロバイダー名を返します、<paramref name="tableName" />入力ファイルです。</summary>
+        <returns>特定のテーブルのプロバイダー名を表す文字列に渡し、<paramref name="tableName" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ プロバイダー名を返します、指定された`tableName`で、<xref:System.Data.DataSet>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferencedAssemblies">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.ICollection&lt;System.Reflection.Assembly&gt; ReferencedAssemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.ICollection`1&lt;class System.Reflection.Assembly&gt; ReferencedAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Design.TypedDataSetGenerator.ReferencedAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Reflection.Assembly&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定されたデータセットで参照されるアセンブリのコレクションを設定します。</summary>
+        <value>データセット内のすべての参照先アセンブリを含むコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジェネレーターは、このリストを反復処理し、アセンブリをプロジェクトに追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

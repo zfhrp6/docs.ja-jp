@@ -1,0 +1,344 @@
+<Type Name="ClaimSet" FullName="System.IdentityModel.Claims.ClaimSet">
+  <TypeSignature Language="C#" Value="public abstract class ClaimSet : System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Claims.Claim&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ClaimSet extends System.Object implements class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.Claims.Claim&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Claims.ClaimSet" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Claims.Claim&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract(Namespace="http://schemas.xmlsoap.org/ws/2005/05/identity")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>エンティティと関連付けられたクレームのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Claims.ClaimSet> クラスは、作成した後に変更することはできません。  
+  
+ クレームに基づく承認を使用する場合に、特定の種類のクレームの <xref:System.IdentityModel.Claims.ClaimSet> の内容を調べることは、一般的なタスクです。 特定のクレームが存在するかどうか、<xref:System.IdentityModel.Claims.ClaimSet> を検査するには、<xref:System.IdentityModel.Claims.ClaimSet.FindClaims%2A> メソッドを使用します。 このメソッドでは、<xref:System.IdentityModel.Claims.ClaimSet> を直接繰り返すよりも優れたパフォーマンスが得られます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[c_ClaimSet#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_claimset/cs/service.cs#1)]
+ [!code-vb[c_ClaimSet#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_claimset/vb/myauthorizationpolicy.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClaimSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.ClaimSet.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Claims.ClaimSet" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 将来使用するために予約されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsClaim">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsClaim (System.IdentityModel.Claims.Claim claim);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsClaim(class System.IdentityModel.Claims.Claim claim) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.ClaimSet.ContainsClaim(System.IdentityModel.Claims.Claim)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="claim" Type="System.IdentityModel.Claims.Claim" />
+      </Parameters>
+      <Docs>
+        <param name="claim">検索する <see cref="T:System.IdentityModel.Claims.Claim" />。</param>
+        <summary>指定した <see cref="T:System.IdentityModel.Claims.ClaimSet" /> を <see cref="T:System.IdentityModel.Claims.Claim" /> が含むかどうかを調べます。</summary>
+        <returns>
+          指定したクレームが <see langword="true" /> に含まれる場合は <see cref="T:System.IdentityModel.Claims.ClaimSet" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定のクレームを検索する場合は、<xref:System.IdentityModel.Claims.ClaimSet.FindClaims%28System.String%2CSystem.String%29> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsClaim">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsClaim (System.IdentityModel.Claims.Claim claim, System.Collections.Generic.IEqualityComparer&lt;System.IdentityModel.Claims.Claim&gt; comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsClaim(class System.IdentityModel.Claims.Claim claim, class System.Collections.Generic.IEqualityComparer`1&lt;class System.IdentityModel.Claims.Claim&gt; comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.ClaimSet.ContainsClaim(System.IdentityModel.Claims.Claim,System.Collections.Generic.IEqualityComparer{System.IdentityModel.Claims.Claim})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="claim" Type="System.IdentityModel.Claims.Claim" />
+        <Parameter Name="comparer" Type="System.Collections.Generic.IEqualityComparer&lt;System.IdentityModel.Claims.Claim&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="claim">検索する <see cref="T:System.IdentityModel.Claims.Claim" />。</param>
+        <param name="comparer">比較するために使用する <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.IdentityModel.Claims.ClaimSet" /> オブジェクトを使用して、指定した <see cref="T:System.IdentityModel.Claims.Claim" /> が <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> に含まれるかどうかを調べます。</summary>
+        <returns>
+          指定したクレームが <see langword="true" /> に含まれる場合は <see cref="T:System.IdentityModel.Claims.ClaimSet" />。それ以外の場合は <see langword="false." />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定のクレームを検索する場合は、<xref:System.IdentityModel.Claims.ClaimSet.FindClaims%28System.String%2CSystem.String%29> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public abstract int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.ClaimSet.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、このクレーム セット内のクレームの数を取得します。</summary>
+        <value>この <see cref="T:System.IdentityModel.Claims.ClaimSet" /> 内のクレームの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 個々のクレームを取得するには、<xref:System.IdentityModel.Claims.ClaimSet.Item%2A> プロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindClaims">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Claims.Claim&gt; FindClaims (string resourceType, string right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.Claims.Claim&gt; FindClaims(string resourceType, string right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.ClaimSet.FindClaims(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="claimType" Type="System.String" />
+        <Parameter Name="right" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resourceType">To be added.</param>
+        <param name="right">新しいクレームに関連する権限の URI。 いくつかの権限は、<see cref="T:System.IdentityModel.Claims.Rights" /> クラスの静的なプロパティとして使用できます。</param>
+        <summary>派生クラスでオーバーライドされている場合は、指定されたクレームの種類と権限に一致する <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを、<see cref="T:System.IdentityModel.Claims.ClaimSet" /> で検索します。</summary>
+        <returns>指定した条件と一致するクレームの列挙を可能にする <see cref="T:System.IdentityModel.Claims.Claim" /> 型の <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この <xref:System.IdentityModel.Claims.ClaimSet> にクレームが含まれるかどうかを、クレームを取得しないで調べるには、<xref:System.IdentityModel.Claims.ClaimSet.ContainsClaim%2A> メソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[c_ClaimSet#2](~/samples/snippets/csharp/VS_Snippets_CFX/c_claimset/cs/service.cs#2)]
+ [!code-vb[c_ClaimSet#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_claimset/vb/myauthorizationpolicy.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerator&lt;System.IdentityModel.Claims.Claim&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.IdentityModel.Claims.Claim&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.ClaimSet.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.IdentityModel.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされている場合は、<see cref="T:System.Collections.Generic.IEnumerator`1" /> 内の <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを列挙するために使用できる <see cref="T:System.IdentityModel.Claims.ClaimSet" /> を取得します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerator`1" /> 内の <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを列挙するために使用できる <see cref="T:System.IdentityModel.Claims.ClaimSet" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Issuer">
+      <MemberSignature Language="C#" Value="public abstract System.IdentityModel.Claims.ClaimSet Issuer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Claims.ClaimSet Issuer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.ClaimSet.Issuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.ClaimSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、この <see cref="T:System.IdentityModel.Claims.ClaimSet" /> を発行したエンティティを取得します。</summary>
+        <value>この <see cref="T:System.IdentityModel.Claims.ClaimSet" /> オブジェクトを発行した <see cref="T:System.IdentityModel.Claims.ClaimSet" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Claims.ClaimSet.System%2A> プロパティによって返されるクレーム セットの発行者は <xref:System.IdentityModel.Claims.DefaultClaimSet> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public abstract System.IdentityModel.Claims.Claim this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Claims.Claim Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.ClaimSet.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得するクレームのインデックス。</param>
+        <summary>派生クラスでオーバーライドされている場合、指定したインデックスの <see cref="T:System.IdentityModel.Claims.Claim" /> を取得します。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.IdentityModel.Claims.Claim" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.ClaimSet System { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Claims.ClaimSet System" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.ClaimSet.System" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.ClaimSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが信頼できる発行者を表す <see cref="T:System.IdentityModel.Claims.ClaimSet" /> オブジェクトを取得します。</summary>
+        <value>システム <see cref="T:System.IdentityModel.Claims.ClaimSet" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この種の <xref:System.IdentityModel.Claims.ClaimSet> オブジェクトは、通常、現在のアプリケーションによって発行された <xref:System.IdentityModel.Claims.ClaimSet.Issuer%2A> に対する <xref:System.IdentityModel.Claims.ClaimSet> プロパティの値として使用されます。  
+  
+ たとえば、アプリケーションは、ユーザー名とパスワードを認証すると、<xref:System.IdentityModel.Claims.ClaimSet> プロパティに <xref:System.IdentityModel.Claims.ClaimSet.Issuer%2A> を設定した、ユーザーを表す <xref:System.IdentityModel.Claims.ClaimSet.System%2A> を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.ClaimSet.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.IEnumerator`1" /> 内の <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを列挙するために使用できる <see cref="T:System.IdentityModel.Claims.ClaimSet" /> を取得します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerator`1" /> 内の <see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトを列挙するために使用できる <see cref="T:System.IdentityModel.Claims.ClaimSet" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。 したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Windows">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Claims.ClaimSet Windows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Claims.ClaimSet Windows" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.ClaimSet.Windows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.ClaimSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows のセキュリティ識別子 (SID) を含むクレームのセットを取得します。</summary>
+        <value><see cref="T:System.IdentityModel.Claims.ClaimSet" /> 型のクレームを少なくとも 1 つ含む <see cref="P:System.IdentityModel.Claims.ClaimTypes.Sid" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この種の <xref:System.IdentityModel.Claims.ClaimSet> オブジェクトは、通常、Windows によって発行される <xref:System.IdentityModel.Claims.ClaimSet.Issuer%2A> に対する <xref:System.IdentityModel.Claims.ClaimSet> プロパティの値として使用されます。 たとえば、アプリケーションは、Windows 認証を使用してユーザー名とパスワードを認証してから、<xref:System.IdentityModel.Claims.ClaimSet> プロパティを <xref:System.IdentityModel.Claims.ClaimSet.Issuer%2A> に設定した <xref:System.IdentityModel.Claims.ClaimSet.Windows%2A> を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

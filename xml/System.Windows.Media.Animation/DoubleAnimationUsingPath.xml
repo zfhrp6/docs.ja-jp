@@ -1,0 +1,329 @@
+<Type Name="DoubleAnimationUsingPath" FullName="System.Windows.Media.Animation.DoubleAnimationUsingPath">
+  <TypeSignature Language="C#" Value="public class DoubleAnimationUsingPath : System.Windows.Media.Animation.DoubleAnimationBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DoubleAnimationUsingPath extends System.Windows.Media.Animation.DoubleAnimationBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.DoubleAnimationUsingPath" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.DoubleAnimationBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>値をアニメーション化、<see cref="T:System.Double" />プロパティを使用して 2 つ以上のターゲット値の間、<see cref="T:System.Windows.Media.PathGeometry" />をそれらの値を指定します。 このアニメーションを使用してビジュアル オブジェクトをパスに沿って移動できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>線形補間を使用して経由で、指定した<xref:System.Windows.Media.Animation.Timeline.Duration%2A>です。  
+  
+ <xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>ような<xref:System.Windows.Media.Animation.DoubleAnimation>を使用する点を除いて、<xref:System.Windows.Media.PathGeometry>などの 2 つの値との間ではなく、2 つ以上の値を補間する<xref:System.Windows.Media.Animation.DoubleAnimation>です。 <xref:System.Windows.Media.Animation.DoubleAnimation> Double 型の値に関連するほとんどの単純なアニメーション用の使用は<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>は画面上のオブジェクトの位置をアニメーション化する場合に特に適してします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DoubleAnimationUsingPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.DoubleAnimationUsingPath.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.DoubleAnimationUsingPath" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値はありません<xref:System.Windows.Media.PathGeometry>のため、ユーザーは、いずれかを指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.DoubleAnimationUsingPath Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.DoubleAnimationUsingPath Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.DoubleAnimationUsingPath.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.DoubleAnimationUsingPath</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.DoubleAnimationUsingPath" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.DoubleAnimationUsingPath.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装<see cref="M:System.Windows.Freezable.CreateInstanceCore" />です。</summary>
+        <returns>新しい<see cref="T:System.Windows.Freezable" />を作成します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueCore">
+      <MemberSignature Language="C#" Value="protected override double GetCurrentValueCore (double defaultOriginValue, double defaultDestinationValue, System.Windows.Media.Animation.AnimationClock animationClock);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance float64 GetCurrentValueCore(float64 defaultOriginValue, float64 defaultDestinationValue, class System.Windows.Media.Animation.AnimationClock animationClock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.DoubleAnimationUsingPath.GetCurrentValueCore(System.Double,System.Double,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultOriginValue" Type="System.Double" />
+        <Parameter Name="defaultDestinationValue" Type="System.Double" />
+        <Parameter Name="animationClock" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="defaultOriginValue">アニメーションに独自の明示的な開始値が設定されていない場合に使用される、起点の推奨値。</param>
+        <param name="defaultDestinationValue">アニメーションが独自の明示的な終了値を持たない場合に使用される、終点の推奨値。</param>
+        <param name="animationClock"><see cref="T:System.Windows.Media.Animation.AnimationClock" />を生成する、<see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" />または<see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />アニメーションで使用します。</param>
+        <summary>によって決定されたように、アニメーションを付けるプロパティの現在の値を表す値を計算、<see cref="T:System.Windows.Media.Animation.DoubleAnimationUsingPath" />です。</summary>
+        <returns>現在のアニメーションで決定されたとおりに計算されたプロパティ値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`defaultOriginValue`最初のスナップショット値 (1 つある場合) または基本プロパティ値、複合チェーンでこの値になります。 それ以外の場合この値はチェーンの前のアニメーションによって返される値、<xref:System.Windows.Media.Animation.AnimationClock>外にある<xref:System.Windows.Media.Animation.Clock.Stopped%2A>です。  
+  
+ `defaultDestinationValue`は基本値の場合、プロパティにアニメーションの最初のコンポジション レイヤーには、アニメーションのそれ以外の値はプロパティのアニメーションの前の構成のレイヤーからの出力値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAdditive">
+      <MemberSignature Language="C#" Value="public bool IsAdditive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAdditive" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.DoubleAnimationUsingPath.IsAdditive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象プロパティの現在の値をこのアニメーションの開始値に追加するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />対象プロパティの現在場合は、値がこのアニメーションの開始値に追加する必要があります。それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Additive"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.AnimationTimeline.IsAdditiveProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+> [!NOTE]
+>  この依存関係プロパティは、その識別子のフィールドに由来点で、通常<xref:System.Windows.Media.Animation.AnimationTimeline>、さまざまな派生クラスで共有します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCumulative">
+      <MemberSignature Language="C#" Value="public bool IsCumulative { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCumulative" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.DoubleAnimationUsingPath.IsCumulative" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーションが繰り返されるときに、その値を累計するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />アニメーションがその値を累計する場合とその<see cref="P:System.Windows.Media.Animation.Timeline.RepeatBehavior" />プロパティにより一定時間の再生を繰り返すようにします。 それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定するときに`true`、値のみ蓄積されるときに、アニメーションの出力アニメーションの<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>プロパティにより一定時間の再生を繰り返すようにします。 親が再起動すると、またはそのクロックがから再開されたためにその値が蓄積されない、<xref:System.Windows.Media.Animation.ClockController.Begin%2A>呼び出します。  
+  
+<a name="dependencyPropertyInfo_Cumulative"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.AnimationTimeline.IsCumulativeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+> [!NOTE]
+>  この依存関係プロパティは、その識別子のフィールドに由来点で、通常<xref:System.Windows.Media.Animation.AnimationTimeline>、さまざまな派生クラスで共有します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChanged">
+      <MemberSignature Language="C#" Value="protected override void OnChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.DoubleAnimationUsingPath.OnChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ときに呼び出されますこの<see cref="T:System.Windows.Media.Animation.DoubleAnimationUsingPath" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>参照してください<see cref="M:System.Windows.Freezable.OnChanged" />については、このメソッドをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PathGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PathGeometry PathGeometry { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.PathGeometry PathGeometry" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.DoubleAnimationUsingPath.PathGeometry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアニメーションの出力値の生成に使用されるジオメトリを指定します。</summary>
+        <value>このアニメーションの出力値の生成に使用されるパス。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]パスを記述する特殊な省略構文を使用することができます。  
+  
+ [!code-xaml[PathAnimationGallery_snippet#DoubleAnimationUsingPathAttributeSyntaxExample](~/samples/snippets/csharp/VS_Snippets_Wpf/PathAnimationGallery_snippet/CS/doubleanimationusingpathattributesyntaxexample.xaml#doubleanimationusingpathattributesyntaxexample)] 
+  
+ 詳細については<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath.PathGeometry%2A>マークアップの構文を参照してください[パス マークアップ構文](~/docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)です。 マークアップやコードを使用してパスを作成する例については、次を参照してください。<xref:System.Windows.Media.PathGeometry>です。  
+  
+<a name="dependencyPropertyInfo_PathGeometry"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath.PathGeometryProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathGeometryProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PathGeometryProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PathGeometryProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.DoubleAnimationUsingPath.PathGeometryProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.DoubleAnimationUsingPath.PathGeometry" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.PathAnimationSource Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Animation.PathAnimationSource Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.DoubleAnimationUsingPath.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.PathAnimationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアニメーションの縦横比の設定を取得または<see cref="P:System.Windows.Media.Animation.DoubleAnimationUsingPath.PathGeometry" />出力値を指定します。</summary>
+        <value>このアニメーションの縦横比<see cref="P:System.Windows.Media.Animation.DoubleAnimationUsingPath.PathGeometry" />出力値を指定します。 既定値は <see cref="F:System.Windows.Media.Animation.PathAnimationSource.X" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Source"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath.SourceProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SourceProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SourceProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.DoubleAnimationUsingPath.SourceProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.DoubleAnimationUsingPath.Source" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

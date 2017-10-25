@@ -1,0 +1,87 @@
+<Type Name="TrackingWorkflowTerminatedEventArgs" FullName="System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs">
+  <TypeSignature Language="C#" Value="public class TrackingWorkflowTerminatedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TrackingWorkflowTerminatedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー インスタンスの終了に関連したデータが格納されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs> は、ワークフロー インスタンスが終了するときにランタイム追跡インフラストラクチャによって生成されます。 ワークフロー インスタンスに関連した <xref:System.Workflow.Runtime.Tracking.TrackingProfile> に、<xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint><xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent.Terminated> 用に構成された <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent> が含まれる場合には、ワークフロー追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs> を <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord.EventArgs%2A> 内の <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> に格納して追跡サービスに送ります。  
+  
+ ワークフロー インスタンスは、ホストが <xref:System.Workflow.Runtime.WorkflowInstance.Terminate%2A?displayProperty=nameWithType> を呼び出した場合、ワークフロー インスタンスの内部から <xref:System.Workflow.ComponentModel.TerminateActivity> アクティビティが呼び出された場合、または未処理の例外が発生した場合に終了します。 ホストまたは <xref:System.Workflow.ComponentModel.TerminateActivity> アクティビティによってワークフローが終了した場合、ランタイム追跡インフラストラクチャは <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs.Exception%2A> を <xref:System.Workflow.ComponentModel.WorkflowTerminatedException> に設定し、その <xref:System.Exception.Message%2A> プロパティには終了の理由の説明が設定されます。 ワークフローが未処理の例外によって終了した場合は、ランタイム追跡インフラストラクチャは未処理の例外を <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs.Exception%2A> で渡します。  
+  
+> [!NOTE]
+>  <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs> は、ランタイム追跡サービスが <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> で情報を渡す場合にのみ使用されます。 <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated?displayProperty=nameWithType> イベントのデータは <xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs> で渡されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、`WriteTerminatedEventArgs` を取得する <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs> という名前のメソッドを示しています。 このコードは、<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs.Exception%2A> プロパティが `null` (Visual Basic の場合は `Nothing`) かどうかを確認します。 そうでない場合は、<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs.Exception%2A> プロパティに関連付けられているメッセージをコンソールに書き込みます。 <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs.Exception%2A> が `null` (`Nothing`) の場合は、例外情報はコンソールに書き込まれません。  
+  
+ このコード例は、Program.cs ファイルに含まれている EventArgs 追跡の SDK サンプルの一部です。 詳細については、次を参照してください。 [EventArgs 追跡のサンプル](http://msdn.microsoft.com/en-us/94818da2-c3c4-4a13-b47a-a0fb30dbbf1c)です。  
+  
+ [!code-csharp[WF_Samples#288](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#288)]
+ [!code-vb[WF_Samples#288](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#288)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの終了の原因となった例外を取得します。</summary>
+        <value>ワークフロー インスタンスの終了の原因となった <see cref="T:System.Exception" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスが未処理の例外によって終了する場合は、<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs.Exception%2A> に未処理の例外が格納されます。  
+  
+ ホストが呼び出した <xref:System.Workflow.Runtime.WorkflowInstance.Terminate%2A?displayProperty=nameWithType> または <xref:System.Workflow.ComponentModel.TerminateActivity> アクティビティによってワークフロー インスタンスが終了する場合は、<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs.Exception%2A> に <xref:System.Workflow.ComponentModel.WorkflowTerminatedException> が格納され、その <xref:System.Exception.Message%2A> プロパティには終了の理由に関する説明が設定されます。 ホストによってワークフロー インスタンスが終了された場合、ホストはこの説明を `string` の <xref:System.Workflow.Runtime.WorkflowInstance.Terminate%2A?displayProperty=nameWithType> パラメーターに提供します。<xref:System.Workflow.ComponentModel.TerminateActivity> によってワークフロー インスタンスが終了された場合、説明は <xref:System.Workflow.ComponentModel.TerminateActivity.Error%2A?displayProperty=nameWithType> によって提供されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、`WriteTerminatedEventArgs` を取得する <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs> という名前のメソッドを示しています。 このコードは、<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs.Exception%2A> プロパティが `null` (Visual Basic の場合は `Nothing`) かどうかを確認します。 そうでない場合は、<xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs.Exception%2A> プロパティに関連付けられているメッセージをコンソールに書き込みます。 <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowTerminatedEventArgs.Exception%2A> が `null` (`Nothing`) の場合は、例外情報はコンソールに書き込まれません。  
+  
+ このコード例は、Program.cs ファイルに含まれている EventArgs 追跡の SDK サンプルの一部です。 詳細については、次を参照してください。 [EventArgs 追跡のサンプル](http://msdn.microsoft.com/en-us/94818da2-c3c4-4a13-b47a-a0fb30dbbf1c)です。  
+  
+ [!code-csharp[WF_Samples#288](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#288)]
+ [!code-vb[WF_Samples#288](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#288)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

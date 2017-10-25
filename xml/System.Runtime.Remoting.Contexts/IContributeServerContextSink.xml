@@ -1,0 +1,58 @@
+<Type Name="IContributeServerContextSink" FullName="System.Runtime.Remoting.Contexts.IContributeServerContextSink">
+  <TypeSignature Language="C#" Value="public interface IContributeServerContextSink" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IContributeServerContextSink" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Contexts.IContributeServerContextSink" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバー側リモート処理の呼び出しのコンテキスト境界で傍受シンクを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Contexts.IContributeServerContextSink>コンテキストのプロパティでインターフェイスが実装されている、<xref:System.Runtime.Remoting.Contexts.Context>サーバー側のリモート処理の呼び出しのコンテキストの境界に傍受シンクを投稿するクラス。  
+  
+ サーバー コンテキストのチェーンが実装であるサーバー コンテキストのプロパティから構成される<xref:System.Runtime.Remoting.Contexts.IContributeServerContextSink>を使用して、シンクを投稿して、<xref:System.Runtime.Remoting.Contexts.IContributeServerContextSink.GetServerContextSink%2A>メソッドの呼び出しです。  
+  
+ シリアル化では、このようなコンテキスト プロパティの例を示します。 この場合、メッセージ シンクは、さらに任意の呼び出しを処理する前に同期プリミティブのロックの取得が行われます。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="GetServerContextSink">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Messaging.IMessageSink GetServerContextSink (System.Runtime.Remoting.Messaging.IMessageSink nextSink);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Messaging.IMessageSink GetServerContextSink(class System.Runtime.Remoting.Messaging.IMessageSink nextSink) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.IContributeServerContextSink.GetServerContextSink(System.Runtime.Remoting.Messaging.IMessageSink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nextSink" Type="System.Runtime.Remoting.Messaging.IMessageSink" />
+      </Parameters>
+      <Docs>
+        <param name="nextSink">シンク チェーンがこれまでで構成されます。</param>
+        <summary>これまでに作成されたシンク チェーン内の最初のシンクを受け取るし、既に形成されたチェーンの前にそのメッセージ シンクをチェーンします。</summary>
+        <returns>複合シンク チェーン。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

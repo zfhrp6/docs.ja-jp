@@ -1,0 +1,212 @@
+<Type Name="EventManager" FullName="System.Windows.EventManager">
+  <TypeSignature Language="C#" Value="public static class EventManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit EventManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.EventManager" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クラス所有者のルーティング イベントを登録し、クラス ハンドラーを追加する、イベント関連のユーティリティ メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、新しいルーティング イベントに登録する最もよく使用<xref:System.Windows.EventManager.RegisterRoutedEvent%2A>です。  
+  
+ 2 つ目の最も一般的な[!INCLUDE[TLA2#tla_api](~/includes/tla2sharptla-api-md.md)]使用率が<xref:System.Windows.EventManager.RegisterClassHandler%2A>です。 このメソッドを使用するには、クラスにルーティングされたイベントまたは添付イベントのクラス処理を有効にします。 詳細については、「 [Handled、クラス処理とルーティング イベントをマーク](~/docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)です。  
+  
+   
+  
+## Examples  
+ 次の例がクラス メンバーは、追加をオーバーライドするルーティング イベントの「ラッパー」手法と共に新しいルーティング イベントを登録するこのクラスを使用して実装を削除する方法を示して、[!INCLUDE[TLA2#tla_clr](~/includes/tla2sharptla-clr-md.md)]イベント。  
+  
+ [!code-csharp[DPCustom#EventManagerClass](~/samples/snippets/csharp/VS_Snippets_Wpf/DPCustom/CSharp/default.xaml.cs#eventmanagerclass)]
+ [!code-vb[DPCustom#EventManagerClass](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DPCustom/visualbasic/default.xaml.vb#eventmanagerclass)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetRoutedEvents">
+      <MemberSignature Language="C#" Value="public static System.Windows.RoutedEvent[] GetRoutedEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.RoutedEvent[] GetRoutedEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventManager.GetRoutedEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントのシステムに登録されているルーティング イベントの識別子を返します。</summary>
+        <returns>型の配列<see cref="T:System.Windows.RoutedEvent" />登録済みのオブジェクトを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細<xref:System.Windows.RoutedEvent>オブジェクトを後で登録することができます。 このメソッドは、スナップショットを取得し、ルーティングされたイベントのコレクションは、アプリケーションの有効期間全体で書き込み可能です。 返されるコレクションは、非常に大きくなる可能性があります。 一部となるイベントをカウントのみでも、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_api#plural](~/includes/tla2sharptla-apisharpplural-md.md)]コレクションのカウントが高い百にもはします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRoutedEventsForOwner">
+      <MemberSignature Language="C#" Value="public static System.Windows.RoutedEvent[] GetRoutedEventsForOwner (Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.RoutedEvent[] GetRoutedEventsForOwner(class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventManager.GetRoutedEventsForOwner(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="ownerType">使用して検索を開始する型。 検索では、基本クラスが含まれています。</param>
+        <summary>指定した所有者の種類に登録されているイベントのすべてのルーティング イベントの識別子を検索します。</summary>
+        <returns>ルーティング イベントの識別子と一致するすべての一致が見つかった場合の配列それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterClassHandler">
+      <MemberSignature Language="C#" Value="public static void RegisterClassHandler (Type classType, System.Windows.RoutedEvent routedEvent, Delegate handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterClassHandler(class System.Type classType, class System.Windows.RoutedEvent routedEvent, class System.Delegate handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventManager.RegisterClassHandler(System.Type,System.Windows.RoutedEvent,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="classType" Type="System.Type" />
+        <Parameter Name="routedEvent" Type="System.Windows.RoutedEvent" />
+        <Parameter Name="handler" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="classType">クラス処理を宣言するクラスの型。</param>
+        <param name="routedEvent">処理するイベントのルーティング イベントの識別子です。</param>
+        <param name="handler">クラスのハンドラー実装への参照。</param>
+        <summary>特定のルーティング イベントのクラス ハンドラーを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスの処理は、バックアップするルーティング イベントに実装されている添付イベントを含む、ルーティング イベントに使用される機能です。 クラスのハンドラーは、クラスのすべてのインスタンスが存在する静的なハンドラーに似ています。 ハンドラーが静的では、クラス ハンドラーを直接インスタンス プロパティを変更することはできませんが、を通じてインスタンスにアクセスすることができますので、`sender`パラメーターまたはイベント データ。  
+  
+ インスタンス ハンドラーの前に、クラス ハンドラーが呼び出されます。 イベントを処理済みとしてマークの動作がクラス ハンドラーを実装することができます。 そのため、専用のイベント処理のインスタンス ハンドラーを登録しない限り、クラスで処理されるイベントのハンドラーをインスタンスは呼び出されません。  
+  
+ 多くは、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]基本要素のイベントが仮想メソッドを処理するクラスを提供します。 クラス処理を呼び出さずを実装する基本クラスを継承するクラスでこれらのメソッドをオーバーライドして<xref:System.Windows.EventManager.RegisterClassHandler%2A>静的コンス トラクターでします。 通常、これらのクラス処理メソッドは、入力イベントの存在し、名前が"On"で始まるクラス処理されているイベントの名前で終了します。  
+  
+ クラスの処理の詳細については、次を参照してください。 [Handled、クラス処理とルーティング イベントをマーク](~/docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)です。  
+  
+ この署名を使用して、クラス ハンドラーは、未処理のイベントへの応答でのみ呼び出す登録されます。 呼び出すイベント引数を使用してが処理される、付いている場合でも、クラス ハンドラーを登録することも、<xref:System.Windows.EventManager.RegisterClassHandler%28System.Type%2CSystem.Windows.RoutedEvent%2CSystem.Delegate%2CSystem.Boolean%29>署名と`handledEventsToo`に設定`true`です。  
+  
+   
+  
+## Examples  
+ 次の例では、ハンドラーを<xref:System.Windows.UIElement.PreviewMouseLeftButtonDown>、呼び出し元<xref:System.Windows.EventManager.RegisterClassHandler%2A>です。  
+  
+ [!code-csharp[ClassHandling#StaticAndRegisterClassHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/ClassHandling/CSharp/SDKSampleLibrary/class1.cs#staticandregisterclasshandler)]
+ [!code-vb[ClassHandling#StaticAndRegisterClassHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClassHandling/visualbasic/sdksamplelibrary/class1.vb#staticandregisterclasshandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterClassHandler">
+      <MemberSignature Language="C#" Value="public static void RegisterClassHandler (Type classType, System.Windows.RoutedEvent routedEvent, Delegate handler, bool handledEventsToo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterClassHandler(class System.Type classType, class System.Windows.RoutedEvent routedEvent, class System.Delegate handler, bool handledEventsToo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventManager.RegisterClassHandler(System.Type,System.Windows.RoutedEvent,System.Delegate,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="classType" Type="System.Type" />
+        <Parameter Name="routedEvent" Type="System.Windows.RoutedEvent" />
+        <Parameter Name="handler" Type="System.Delegate" />
+        <Parameter Name="handledEventsToo" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="classType">クラス処理を宣言するクラスの型。</param>
+        <param name="routedEvent">処理するイベントのルーティング イベントの識別子です。</param>
+        <param name="handler">クラスのハンドラー実装への参照。</param>
+        <param name="handledEventsToo">
+          <see langword="true" />ルーティング イベントの引数が指定されている場合でも、このクラスのハンドラーを起動する次のように処理します。<see langword="false" />のすべてのマークで処理されるイベント ハンドラーを呼び出していない既定の動作を保持します。</param>
+        <summary>処理されるイベント データは既に設定されているイベントを処理するためのオプションを特定のルーティング イベントのクラス ハンドラーを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスの処理は、バックアップするルーティング イベントに実装されている添付イベントを含む、ルーティング イベントに使用される機能です。 クラスのハンドラーは、クラスのすべてのインスタンスが存在する静的なハンドラーに似ています。 ハンドラーが静的では、クラス ハンドラーを直接インスタンス プロパティを変更することはできませんが、を通じてインスタンスにアクセスすることができますので、`sender`パラメーターまたはイベント データ。  
+  
+ インスタンス ハンドラーの前に、クラス ハンドラーが呼び出されます。 イベントを処理済みとしてマークの動作がクラス ハンドラーを実装することができます。 そのため、専用のイベント処理のインスタンス ハンドラーを登録しない限り、クラスで処理されるイベントのハンドラーをインスタンスは呼び出されません。  
+  
+ 多くは、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]基本要素のイベントが仮想メソッドを処理するクラスを提供します。 クラス処理を呼び出さずを実装する基本クラスを継承するクラスでこれらのメソッドをオーバーライドして<xref:System.Windows.EventManager.RegisterClassHandler%2A>静的コンス トラクターでします。 通常、これらのクラス処理メソッドは、入力イベントの存在し、名前が"On"で始まるクラス処理されているイベントの名前で終了します。  
+  
+ クラスの処理の詳細については、次を参照してください。 [Handled、クラス処理とルーティング イベントをマーク](~/docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)です。  
+  
+ この署名を使用して、クラス ハンドラーに登録できるを設定して、イベントの処理時に呼び出す`handledEventsToo`'éý'`true`です。 一般に、行う必要がありますこれを回避する、マウスやキーボード イベントから処理入力システムなどして既知の処理に関する問題がある場合にのみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterRoutedEvent">
+      <MemberSignature Language="C#" Value="public static System.Windows.RoutedEvent RegisterRoutedEvent (string name, System.Windows.RoutingStrategy routingStrategy, Type handlerType, Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.RoutedEvent RegisterRoutedEvent(string name, valuetype System.Windows.RoutingStrategy routingStrategy, class System.Type handlerType, class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventManager.RegisterRoutedEvent(System.String,System.Windows.RoutingStrategy,System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="routingStrategy" Type="System.Windows.RoutingStrategy" />
+        <Parameter Name="handlerType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name">ルーティング イベントの名前。 名前、所有者型内で一意である必要がありすることはできません<see langword="null" />または空の文字列。</param>
+        <param name="routingStrategy">列挙体の値としてのイベントのルーティング方法。</param>
+        <param name="handlerType">イベント ハンドラーの型。 これは、デリゲート型でなければならないし、することはできません<see langword="null" />です。</param>
+        <param name="ownerType">ルーティング イベントの所有者のクラス型。 これは、ことはできません<see langword="null" />です。</param>
+        <summary>新しいルーティング イベントを登録、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]イベント システムです。</summary>
+        <returns>新しく登録されたルーティング イベントの識別子。 この識別子のオブジェクトは、クラスに静的フィールドとして格納してイベントにハンドラーをアタッチするメソッドのパラメーターとして使用できるようになりました。 ルーティング イベントの識別子は他のイベント システムにも使用[!INCLUDE[TLA2#tla_api#plural](~/includes/tla2sharptla-apisharpplural-md.md)]です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの戻り値を使用して、一意の静的な宣言を作成する<xref:System.Windows.RoutedEvent>識別子フィールドです。 このフィールドは、所有者型内に格納する必要があります。  
+  
+ 数多くの規則があるとベスト プラクティスがどのようにルーティング イベントに関連付けられている必要がありますしてという名前を登録されると、クラスで公開されています。 詳細については、次を参照してください。[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

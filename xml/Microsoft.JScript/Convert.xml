@@ -1,0 +1,565 @@
+<Type Name="Convert" FullName="Microsoft.JScript.Convert">
+  <TypeSignature Language="C#" Value="public sealed class Convert" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Convert extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.Convert" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを別の 1 つの型に変換します。 これは、ユーティリティ クラスです。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Convert ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.JScript.Convert" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CheckIfDoubleIsInteger">
+      <MemberSignature Language="C#" Value="public static double CheckIfDoubleIsInteger (double d);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 CheckIfDoubleIsInteger(float64 d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.CheckIfDoubleIsInteger(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="d">テスト対象の <see cref="T:System.Double" />。</param>
+        <summary>決定するかどうか、<see cref="T:System.Double" />変数に整数値が含まれています。</summary>
+        <returns>場合<paramref name="d" />整数値を含む<paramref name="d" />が返されます。 それ以外の場合は、例外がスローされます。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CheckIfSingleIsInteger">
+      <MemberSignature Language="C#" Value="public static float CheckIfSingleIsInteger (float s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float32 CheckIfSingleIsInteger(float32 s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.CheckIfSingleIsInteger(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="s">テスト対象の <see cref="T:System.Single" />。</param>
+        <summary>決定するかどうか、<see cref="T:System.Single" />変数に整数値が含まれています。</summary>
+        <returns>場合<paramref name="s" />整数値を含む<paramref name="s" />が返されます。 それ以外の場合は、例外がスローされます。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Coerce">
+      <MemberSignature Language="C#" Value="public static object Coerce (object value, object type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Coerce(object value, object type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.Coerce(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">新しい型に変換する値。</param>
+        <param name="type">変換後の型<c>値</c>にします。</param>
+        <summary>指定した値を指定した型に変換します。</summary>
+        <returns>
+          <paramref name="value" />変換<paramref name="type" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、1.5 を整数に変換するなどの情報の損失が発生する変換は許可されません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Coerce2">
+      <MemberSignature Language="C#" Value="public static object Coerce2 (object value, TypeCode target, bool truncationPermitted);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Coerce2(object value, valuetype System.TypeCode target, bool truncationPermitted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.Coerce2(System.Object,System.TypeCode,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="target" Type="System.TypeCode" />
+        <Parameter Name="truncationPermitted" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">新しい型に変換する値。</param>
+        <param name="target">変換後の型<c>値</c>にします。</param>
+        <param name="truncationPermitted">
+          <see langword="true" />データ損失を許可するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定された、指定された値に変換します<see cref="T:System.TypeCode" />で、必要に応じてデータの損失を許可します。</summary>
+        <returns>
+          <paramref name="value" />変換された、<paramref name="target" />型です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CoerceT">
+      <MemberSignature Language="C#" Value="public static object CoerceT (object value, Type t, bool explicitOK);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CoerceT(object value, class System.Type t, bool explicitOK) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.CoerceT(System.Object,System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="t" Type="System.Type" />
+        <Parameter Name="explicitOK" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">新しい型に変換する値。</param>
+        <param name="t">変換後の型<c>値</c>にします。</param>
+        <param name="explicitOK">
+          <see langword="true" />データ損失を許可するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定された、指定された値に変換します<see cref="T:System.Type" />で、必要に応じてデータの損失を許可します。</summary>
+        <returns>
+          <paramref name="value" />型に変換<paramref name="t" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsBadIndex">
+      <MemberSignature Language="C#" Value="public static bool IsBadIndex (Microsoft.JScript.AST ast);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsBadIndex(class Microsoft.JScript.AST ast) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.IsBadIndex(Microsoft.JScript.AST)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ast" Type="Microsoft.JScript.AST" />
+      </Parameters>
+      <Docs>
+        <param name="ast">テストする変数。</param>
+        <summary>変数が配列のインデックス値を格納するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="ast" />配列のインデックス値が含まれています。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowTypeMismatch">
+      <MemberSignature Language="C#" Value="public static void ThrowTypeMismatch (object val);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ThrowTypeMismatch(object val) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ThrowTypeMismatch(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="val" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="val">例外の原因となったソース コード。</param>
+        <summary>常に例外 <see cref="T:Microsoft.JScript.JScriptException" /> をスローします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToBoolean">
+      <MemberSignature Language="C#" Value="public static bool ToBoolean (double d);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ToBoolean(float64 d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToBoolean(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="d">変換する値。</param>
+        <summary>指定された <see cref="T:System.Double" /> を <see cref="T:System.Boolean" /> に変換します。</summary>
+        <returns>
+          <see langword="false" />場合<paramref name="d" />は 0、それ以外の<see langword="true" />します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToBoolean">
+      <MemberSignature Language="C#" Value="public static bool ToBoolean (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ToBoolean(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToBoolean(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する値。</param>
+        <summary>指定された <see cref="T:System.Object" /> を <see cref="T:System.Boolean" /> に変換します。</summary>
+        <returns>
+          <paramref name="value" />変換された、<see cref="T:System.Boolean" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToBoolean">
+      <MemberSignature Language="C#" Value="public static bool ToBoolean (object value, bool explicitConversion);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ToBoolean(object value, bool explicitConversion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToBoolean(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="explicitConversion" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する値。</param>
+        <param name="explicitConversion">
+          <see langword="true" />データ損失を許可するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定された変換<see cref="T:System.Object" />値を<see cref="T:System.Boolean" />構造体、必要に応じてデータの損失を許可します。</summary>
+        <returns>
+          <paramref name="value" />変換された、<see cref="T:System.Boolean" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToForInObject">
+      <MemberSignature Language="C#" Value="public static object ToForInObject (object value, Microsoft.JScript.Vsa.VsaEngine engine);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToForInObject(object value, class Microsoft.JScript.Vsa.VsaEngine engine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToForInObject(System.Object,Microsoft.JScript.Vsa.VsaEngine)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="engine" Type="Microsoft.JScript.Vsa.VsaEngine" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する値。</param>
+        <param name="engine">スクリプト エンジンへの参照。</param>
+        <summary>指定した値を変換、<see cref="T:System.Object" />のコレクションを表す<see cref="T:Microsoft.JScript.AST" />オブジェクト。</summary>
+        <returns>
+          <paramref name="value" />変換された、<see cref="T:System.Object" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToInt32">
+      <MemberSignature Language="C#" Value="public static int ToInt32 (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ToInt32(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToInt32(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する値。</param>
+        <summary>指定した値を変換、<see cref="T:System.Int32" />です。</summary>
+        <returns>
+          <paramref name="value" />変換された、<see cref="T:System.Int32" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToNativeArray">
+      <MemberSignature Language="C#" Value="public static object ToNativeArray (object value, RuntimeTypeHandle handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToNativeArray(object value, valuetype System.RuntimeTypeHandle handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToNativeArray(System.Object,System.RuntimeTypeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="handle" Type="System.RuntimeTypeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換対象の <see cref="T:Microsoft.JScript.ArrayObject" />。</param>
+        <param name="handle">配列内の要素の型。</param>
+        <summary>指定された変換<see cref="T:Microsoft.JScript.ArrayObject" />型指定された<see cref="T:System.Array" />です。</summary>
+        <returns>
+          <paramref name="value" />変換する<see cref="T:System.Array" />これは、可能なそれ以外の場合<paramref name="value" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToNumber">
+      <MemberSignature Language="C#" Value="public static double ToNumber (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 ToNumber(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToNumber(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する値。</param>
+        <summary>指定された <see cref="T:System.Object" /> を <see cref="T:System.Double" /> に変換します。</summary>
+        <returns>
+          <paramref name="value" />変換された、<see cref="T:System.Double" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToNumber">
+      <MemberSignature Language="C#" Value="public static double ToNumber (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 ToNumber(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToNumber(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">変換する値。</param>
+        <summary>指定された <see cref="T:System.String" /> を <see cref="T:System.Double" /> に変換します。</summary>
+        <returns>
+          <paramref name="str" />変換された、<see cref="T:System.Double" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject">
+      <MemberSignature Language="C#" Value="public static object ToObject (object value, Microsoft.JScript.Vsa.VsaEngine engine);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject(object value, class Microsoft.JScript.Vsa.VsaEngine engine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToObject(System.Object,Microsoft.JScript.Vsa.VsaEngine)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="engine" Type="Microsoft.JScript.Vsa.VsaEngine" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する値。</param>
+        <param name="engine">スクリプト エンジンへの参照。</param>
+        <summary>指定した値を変換、<see cref="T:System.Object" />です。 変換を実行できない場合は、エラーをスローします。</summary>
+        <returns>
+          <paramref name="value" />変換された、<see cref="T:System.Object" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject2">
+      <MemberSignature Language="C#" Value="public static object ToObject2 (object value, Microsoft.JScript.Vsa.VsaEngine engine);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject2(object value, class Microsoft.JScript.Vsa.VsaEngine engine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToObject2(System.Object,Microsoft.JScript.Vsa.VsaEngine)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="engine" Type="Microsoft.JScript.Vsa.VsaEngine" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する値。</param>
+        <param name="engine">スクリプト エンジンへの参照。</param>
+        <summary>指定した値を変換、<see cref="T:System.Object" />です。 変換を実行できない場合は null を返します。</summary>
+        <returns>
+          <paramref name="value" />変換された、<see cref="T:System.Object" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public static string ToString (bool b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToString(bool b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToString(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="b" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="b">変換する値。</param>
+        <summary>指定された <see cref="T:System.Boolean" /> を <see cref="T:System.String" /> に変換します。</summary>
+        <returns>
+          <paramref name="b" />変換された、<see cref="T:System.String" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public static string ToString (double d);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToString(float64 d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToString(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="d">変換する値。</param>
+        <summary>指定された <see cref="T:System.Double" /> を <see cref="T:System.String" /> に変換します。</summary>
+        <returns>
+          <paramref name="d" />変換された、<see cref="T:System.String" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public static string ToString (object value, bool explicitOK);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToString(object value, bool explicitOK) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.Convert.ToString(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="explicitOK" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する値。</param>
+        <param name="explicitOK">
+          <see langword="true" />データ損失を許可するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定された変換<see cref="T:System.Object" />を<see cref="T:System.String" />で、必要に応じてデータの損失を許可します。</summary>
+        <returns>
+          <paramref name="value" />変換された、<see cref="T:System.String" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,96 @@
+<Type Name="NotifyInputEventArgs" FullName="System.Windows.Input.NotifyInputEventArgs">
+  <TypeSignature Language="C#" Value="public class NotifyInputEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NotifyInputEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.NotifyInputEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によって処理される生の入力のデータを提供、<see cref="P:System.Windows.Input.NotifyInputEventArgs.InputManager" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力のステージング領域への入力を処理する[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]イベント。  
+  
+ <xref:System.Windows.Input.NotifyInputEventArgs> は <xref:System.Windows.Input.InputManager.PreNotifyInput> と <xref:System.Windows.Input.InputManager.PostNotifyInput> イベントで使用されます。  
+  
+ 入力が処理される[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォロー段階で。  
+  
+1.  前処理段階。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreProcessInput>イベント。  
+  
+2.  ステージを事前に通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PreNotifyInput>イベント。  
+  
+3.  [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]入力イベントまたはイベントが発生します。  
+  
+4.  後の段階を通知します。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostNotifyInput>イベント。  
+  
+5.  処理後の段階です。  入力マネージャーが発生し、<xref:System.Windows.Input.InputManager.PostProcessInput>イベント。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="InputManager">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.InputManager InputManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.InputManager InputManager" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NotifyInputEventArgs.InputManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力イベントを処理する入力のマネージャーを取得します。</summary>
+        <value>入力マネージャーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つを使用する必要がある<xref:System.Windows.Input.InputManager>スレッドあたりです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">入力のマネージャーを取得する権限。  関連付けられた列挙は:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="StagingItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.StagingAreaInputItem StagingItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.StagingAreaInputItem StagingItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.NotifyInputEventArgs.StagingItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.StagingAreaInputItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力のマネージャーによって処理されるステージング領域の入力項目を取得します。</summary>
+        <value>ステージング領域です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力のステージング領域に生の入力を処理する[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

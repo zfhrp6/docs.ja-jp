@@ -1,0 +1,2200 @@
+<Type Name="Delegate" FullName="System.Delegate">
+  <TypeSignature Language="C#" Value="public abstract class Delegate : ICloneable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi abstract serializable beforefieldinit Delegate extends System.Object implements class System.ICloneable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Delegate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDual)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>静的メソッドまたはクラス インスタンスとそのクラスのインスタンス メソッドを参照するデータ構造体であるデリゲートを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Delegate>クラスはデリゲート型の基本クラスです。 ただし、システムとコンパイラから派生できる明示的に、<xref:System.Delegate>クラスから、または、<xref:System.MulticastDelegate>クラスです。 デリゲート型から新しい型を派生させることではないです。 <xref:System.Delegate>クラス、デリゲート型とは見なされません。 を使用してデリゲート型を派生クラスであります。  
+  
+ ほとんどの言語の実装、`delegate`キーワード、およびそれらの言語のコンパイラから派生することは、<xref:System.MulticastDelegate>クラスです。 したがって、ユーザーが使用する必要があります、 `delegate` 、言語によって提供されるキーワード。  
+  
+> [!NOTE]
+>  共通言語ランタイムが提供する`Invoke`デリゲートと同じシグネチャを持つ各デリゲート型のメソッドです。 ありません c#、Visual Basic または Visual C からこのメソッドを明示的に呼び出すと、コンパイラが自動的に、呼び出すためです。 `Invoke`メソッドは[リフレクション](~/docs/framework/reflection-and-codedom/reflection.md)デリゲートのシグネチャを検索するときにします。  
+  
+ 共通言語ランタイムの各デリゲート型を提供する`BeginInvoke`と`EndInvoke`メソッドは、デリゲートの非同期呼び出しを有効にします。 これらのメソッドの詳細については、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+ デリゲート型の宣言では、1 つまたは複数のメソッドのシグネチャを指定するコントラクトを確立します。 参照を持つデリゲート型のインスタンスをデリゲートには。  
+  
+-   型と、その型に割り当てることができるターゲット オブジェクトのインスタンス メソッドです。  
+  
+-   インスタンス メソッド、型を非表示の`this`仮パラメーター リストで公開されているパラメーターです。 デリゲートは、開いているインスタンス デリゲートと呼ばれます。  
+  
+-   静的メソッド。  
+  
+-   静的メソッドは、メソッドの最初のパラメーターに割り当て可能なターゲット オブジェクト。 デリゲートは、最初の引数を終了すると言います。  
+  
+ デリゲート バインディングの詳細については、次を参照してください。、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.Reflection.MethodInfo%2CSystem.Boolean%29>メソッドのオーバー ロードします。  
+  
+> [!NOTE]
+>  .NET Framework バージョン 1.0 および 1.1 では、デリゲートは、メソッドのシグネチャはデリゲート型で指定されたシグネチャを完全に一致する場合にのみ、メソッドを表すことができます。 したがって、上記の最初と 3 番目の箇条書きのみがサポートされ、最初の箇条書きには、正確な型の一致が必要です。  
+  
+ デリゲートは、最初の引数 (最も一般的なケース) 経由で終了するインスタンス メソッドを表す、ときに、デリゲートは、メソッドのエントリ ポイントへの参照と型のメソッドを定義した型に割り当てることができるは、ターゲットと呼ばれる、オブジェクトへの参照を格納します。 デリゲートは、開いているインスタンス メソッドを表している場合は、メソッドのエントリ ポイントへの参照を格納します。 デリゲートのシグネチャを非表示に含める必要があります`this`; 仮パラメーター リスト内のパラメーターここでは、デリゲートは、ターゲット オブジェクトへの参照がないと、デリゲートが呼び出されたときに、ターゲット オブジェクトを指定する必要があります。  
+  
+ デリゲートは、静的メソッドを表している場合、デリゲートは、メソッドのエントリ ポイントへの参照を格納します。 デリゲートは、最初の引数を閉じている静的メソッドを表している場合、デリゲートは、メソッドのエントリ ポイントへの参照と、メソッドの最初の引数の型に代入のターゲット オブジェクトへの参照を格納します。 デリゲートが呼び出されたときに、静的メソッドの最初の引数はターゲット オブジェクトを受け取ります。  
+  
+ デリゲートの呼び出しリストとは、一覧の各要素が、デリゲートによって表されるメソッドの 1 つだけに呼び出すデリゲートの順序付けされたセットです。 呼び出しリストには、重複したメソッドを含めることができます。 呼び出し中には、メソッドは呼び出しリストに表示される順序で呼び出されます。 デリゲートが、呼び出しリスト内のすべてのメソッドを呼び出すしようとしています。重複部分は、呼び出しリストに表示されるたびに、後に呼び出されます。 デリゲートは不変です。作成されると、デリゲートの呼び出しリストは変わりません。  
+  
+ デリゲートをいいます、マルチキャスト、または組み合わせ可能なデリゲートは 1 つまたは複数のメソッドを呼び出すことができ、操作を組み合わせることで使用できるためです。  
+  
+ など、操作を組み合わせて<xref:System.Delegate.Combine%2A>と<xref:System.Delegate.Remove%2A>、既存のデリゲートを変更しないでください。 代わりに、このような操作は、変更されていないデリゲートを操作の結果を含む新しいデリゲートを返しますまたは`null`です。 結合操作が返されます`null`操作の結果が少なくとも 1 つのメソッドを参照していないするデリゲートの場合。 結合操作は、要求された操作に影響があるない場合に、変更されていないデリゲートを返します。  
+  
+> [!NOTE]
+>  マネージ言語を使用、<xref:System.Delegate.Combine%2A>と<xref:System.Delegate.Remove%2A>デリゲート操作を実装するメソッド。 例としては、`AddHandler`と`RemoveHandler`Visual Basic におけるステートメントと + = および -= の演算子にデリゲート (C#) の型。  
+  
+ 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、汎用デリゲート型は、バリアント型パラメーターを持つことができます。 反変の型パラメーターは、デリゲートのパラメーターの型として使用できるし、共変の型パラメーターは戻り値の型として使用することができます。 この機能により、汎用デリゲート型の割り当てと互換性のある場合は、型引数が、継承関係を持つ参照型で説明したように、同じジェネリック型定義から構築される[共変性と反変性](~/docs/standard/generics/covariance-and-contravariance.md)です。  
+  
+> [!NOTE]
+>  代入互換性のある汎用デリゲートの分散のためには必ずしも combinable できません。 組み合わせ可能にするのには、種類が正確に一致する必要があります。 たとえば、クラスがという名前の`Derived`という名前のクラスから派生した`Base`です。 型のデリゲート`Action<Base>`(`Action(Of Base)` Visual Basic で) 型の変数に代入できます`Action<Derived>`種類が正確に一致しないために、2 つのデリゲートを組み合わせることはできませんが、します。  
+  
+ 呼び出されたメソッドは、例外をスローする場合は、メソッドの実行は停止し、デリゲートの呼び出し元に渡された例外呼び出しリスト内の残りのメソッドは呼び出されません。 呼び出し元で例外をキャッチしても、この動作は変更されません。  
+  
+ デリゲートから呼び出されるメソッドのシグネチャには、戻り値が含まれている場合、デリゲートは、呼び出しリスト内の最後の要素の戻り値を返します。 シグネチャには、参照によって渡されるパラメーターが含まれている場合、パラメーターの最終値は順番に実行して、パラメーターの値の更新の呼び出しリスト内のすべてのメソッドの結果  
+  
+ C または C++ でのデリゲートの最も近いは、関数ポインターです。 デリゲートには、静的メソッドまたはインスタンス メソッドを表すことができます。 デリゲートは、インスタンス メソッドを表している場合、デリゲートは、メソッドのエントリ ポイントへの参照だけでなく、クラスのインスタンスへの参照を格納します。 関数ポインターとは異なり、デリゲートはオブジェクト指向し、タイプ セーフです。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のデリゲートを定義する方法を示しています。`myMethodDelegate`です。 このデリゲートのインスタンスがインスタンス メソッドと、入れ子になったの静的メソッドの作成`mySampleClass`クラスです。 インスタンス メソッドのデリゲートのインスタンスを必要と`mySampleClass`です。 `mySampleClass`インスタンスがという名前の変数に保存`mySC`です。  
+  
+ [!code-cpp[Classic Delegate Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Delegate Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Delegate Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Delegate Example/CS/source.cs#1)]
+ [!code-vb[Classic Delegate Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Delegate Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Delegate (object target, string method);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(object target, string method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.#ctor(System.Object,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="method" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="target">デリゲートを呼び出す対象のクラス インスタンス<c>メソッド</c>です。</param>
+        <param name="method">デリゲートによって表されるインスタンス メソッドの名前。</param>
+        <summary>指定したインスタンス メソッドを指定のクラス インスタンスに対して呼び出すデリゲートを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、アプリケーション コードでは使用できません。 インスタンス メソッドの名前を指定することによって、デリゲートを作成するには、オーバー ロードを使用して、<xref:System.Delegate.CreateDelegate%2A>がメソッド名とターゲット オブジェクトを指定するメソッド。 たとえば、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.String%29>メソッド オーバー ロードは、指定した名前を持つインスタンス メソッドのデリゲートを作成します。  
+  
+ このコンス トラクターのデリゲートのインスタンス メソッドだけを作成します。 インスタンス メソッドがクラスのインスタンスに関連付けられているメソッドです。静的メソッドは、クラス自体に関連付けられている方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="target" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">ターゲット メソッドへのバインドを中のエラーが発生しました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Delegate (Type target, string method);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Type target, string method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.#ctor(System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="target" Type="System.Type" />
+        <Parameter Name="method" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Type" />を定義するクラスを表す<c>メソッド</c>です。</param>
+        <param name="method">デリゲートによって表される静的メソッドの名前。</param>
+        <summary>指定したクラスから指定の静的メソッドを呼び出すデリゲートを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、アプリケーション コードでは使用できません。 静的メソッドの名前を指定することによって、デリゲートを作成するには、オーバー ロードを使用して、<xref:System.Delegate.CreateDelegate%2A>メソッドをメソッドの名前を指定しますが、ターゲット オブジェクトが指定されていません。 たとえば、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Type%2CSystem.String%29>メソッド オーバー ロードは、指定した名前の静的メソッドのデリゲートを作成します。  
+  
+ このコンス トラクターでは、静的メソッドのみのデリゲートを作成します。 インスタンス メソッドがクラスのインスタンスに関連付けられているメソッドです。静的メソッドは、クラス自体に関連付けられている方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="target" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /> が <see langword="RuntimeType" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。  
+  
+ または  
+  
+ <paramref name="target" /> は、オープン ジェネリック型を表します。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デリゲートの簡易コピーを作成します。</summary>
+        <returns>デリゲートの簡易コピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クローンが同じ<xref:System.Type>ターゲット、メソッド、および呼び出し元のデリゲートとして ボックスの一覧です。  
+  
+ シャロー コピーでは、元のオブジェクトと同じ型の新しいインスタンスを作成し、元のオブジェクトの非静的フィールドをコピーします。 フィールドが値型の場合は、フィールドのビットごとのコピーは実行されます。 フィールドが参照型の場合は、参照がコピーが、参照されるオブジェクトはありません。そのため、元のオブジェクト参照と、複製の参照は、同じオブジェクトをポイントします。 これに対し、オブジェクトのディープ コピーでは、直接または間接的には、オブジェクト内のフィールドが参照されるすべて重複しています。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Combine">
+      <MemberSignature Language="C#" Value="public static Delegate Combine (params Delegate[] delegates);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate Combine(class System.Delegate[] delegates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.Combine(System.Delegate[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="delegates" Type="System.Delegate[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="delegates">組み合わせるデリゲートの配列。</param>
+        <summary>デリゲートの配列の呼び出しリストを連結します。</summary>
+        <returns>内のデリゲートの呼び出しリストを連結する呼び出しリストを持つ新しいデリゲート、<paramref name="delegates" />配列。 返します<see langword="null" />場合<paramref name="delegates" />は<see langword="null" />場合は、 <paramref name="delegates" /> 0 個の要素が含まれます場合、またはすべてのエントリが<paramref name="delegates" />は<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`delegates`配列にいるエントリが含まれています`null`、これらのエントリは無視されます。  
+  
+ 呼び出しリストに重複するエントリを含めることができます。同じオブジェクトの同じメソッドを参照するエントリは、します。  
+  
+> [!NOTE]
+>  代入互換性のある汎用デリゲートの分散のためには必ずしも combinable できません。 組み合わせ可能にするのには、種類が正確に一致する必要があります。 たとえば、クラスがという名前の`Derived`という名前のクラスから派生した`Base`です。 型のデリゲート`Action<Base>`(`Action(Of Base)` Visual Basic で) 型の変数に代入できます`Action<Derived>`」の説明に従って、[共変性と反変性](~/docs/standard/generics/covariance-and-contravariance.md)種類が正確に一致しないために、2 つのデリゲートを組み合わせることはできませんが、します。  
+  
+ <xref:System.Delegate.Combine%2A>呼び出しを複数のメソッド、イベントの時刻に発生するイベント ハンドラーを作成するために役立ちます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">すべての null エントリ<paramref name="delegates" />同じデリゲート型のインスタンスであります。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Combine">
+      <MemberSignature Language="C#" Value="public static Delegate Combine (Delegate a, Delegate b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate Combine(class System.Delegate a, class System.Delegate b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.Combine(System.Delegate,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Delegate" />
+        <Parameter Name="b" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="a">連結後のリスト内で前に配置する呼び出しリストを持つデリゲート。</param>
+        <param name="b">連結後のリスト内で後に配置する呼び出しリストを持つデリゲート。</param>
+        <summary>2 つのデリゲートの呼び出しリストを連結します。</summary>
+        <returns><paramref name="a" /> と <paramref name="b" /> の呼び出しリストをこの順番で連結した単一の呼び出しリストを持つ新しいデリゲート。 <paramref name="b" /> が <see langword="null" /> の場合は <paramref name="a" /> を、<paramref name="a" /> が null 参照の場合は <paramref name="b" /> を返します。また、<paramref name="a" /> と <paramref name="b" /> の両方が null 参照の場合は null 参照を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しリストに重複するエントリを含めることができます。同じオブジェクトの同じメソッドを参照するエントリは、します。  
+  
+> [!NOTE]
+>  代入互換性のある汎用デリゲートの分散のためには必ずしも combinable できません。 組み合わせ可能にするのには、種類が正確に一致する必要があります。 たとえば、クラスがという名前の`Derived`という名前のクラスから派生した`Base`です。 型のデリゲート`Action<Base>`(`Action(Of Base)` Visual Basic で) 型の変数に代入できます`Action<Derived>`」の説明に従って、[共変性と反変性](~/docs/standard/generics/covariance-and-contravariance.md)種類が正確に一致しないために、2 つのデリゲートを組み合わせることはできませんが、します。  
+  
+ <xref:System.Delegate.Combine%2A>呼び出しを複数のメソッド、イベントの時刻に発生するイベント ハンドラーを作成するために役立ちます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="a" /> と <paramref name="b" /> の両方が <see langword="null" /> ではなく、<paramref name="a" /> と <paramref name="b" /> が同じデリゲート型のインスタンスではありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CombineImpl">
+      <MemberSignature Language="C#" Value="protected virtual Delegate CombineImpl (Delegate d);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Delegate CombineImpl(class System.Delegate d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.CombineImpl(System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="d">マルチキャスト (組み合わせ可能) は、現在のマルチキャスト (組み合わせ可能) の呼び出しリストの末尾に追加する呼び出しリストを持つデリゲートを委任します。</param>
+        <summary>指定したマルチキャスト (組み合わせ可能) デリゲートと現在のマルチキャスト (組み合わせ可能) デリゲートの呼び出しリストを連結します。</summary>
+        <returns>新しいマルチキャスト (組み合わせ可能) は、呼び出しリストと現在のマルチキャスト (組み合わせ可能) デリゲートの呼び出しリストを連結する呼び出しリストを持つデリゲート<paramref name="d" />、または現在のマルチキャスト (組み合わせ可能) デリゲート場合<paramref name="d" />は<see langword="null" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在のデリゲートはマルチキャスト場合にのみ適用されます (組み合わせ可能)。  
+  
+ 現在の実装は単にスロー、<xref:System.MulticastNotSupportedException>です。  
+  
+ 呼び出しリストに重複するエントリを含めることができます。同じオブジェクトの同じメソッドを参照するエントリは、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MulticastNotSupportedException">常にスローされます。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public static Delegate CreateDelegate (Type type, System.Reflection.MethodInfo method);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate CreateDelegate(class System.Type type, class System.Reflection.MethodInfo method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.CreateDelegate(System.Type,System.Reflection.MethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="method" Type="System.Reflection.MethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するデリゲートの <see cref="T:System.Type" />。</param>
+        <param name="method">デリゲートが表す静的メソッドまたはインスタンス メソッドの情報を記述する <see cref="T:System.Reflection.MethodInfo" />。 .NET Framework Version 1.0 および 1.1 では、静的メソッドのみサポートされます。</param>
+        <summary>指定した静的メソッドを表すために、指定した型のデリゲートを作成します。</summary>
+        <returns>指定した静的メソッドを表すための、指定した型のデリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET framework version 1.0 および 1.1 では、このメソッドのオーバー ロードは、静的メソッドのみのデリゲートを作成します。 .NET framework version 2.0 では、このメソッドのオーバー ロード作成することも開いているインスタンス メソッドのデリゲート。つまり、非表示の最初の引数を明示的に指定するデリゲートはインスタンス メソッドです。 詳細についてより一般的なを参照してください。 <xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.Reflection.MethodInfo%29> 、すべてのインスタンスまたは静的メソッドは、オープンかクローズのデリゲートの組み合わせを作成したり、必要に応じて、最初の引数を指定するメソッドのオーバー ロードします。  
+  
+> [!NOTE]
+>  このメソッドのオーバー ロードする必要があるために、使用、デリゲートは、最初の引数を終了していないときにその場合は多少高速です。  
+  
+ このメソッドはオーバー ロードを呼び出すことと同等、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Reflection.MethodInfo%2CSystem.Boolean%29>メソッドのオーバー ロードを指定して`true`の`throwOnBindFailure`します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、非パブリック メソッドを呼び出し元が許可されている場合にアクセスするために使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メソッドの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+## <a name="compatible-parameter-types-and-return-type"></a>互換性のあるパラメーターの型と戻り値の型  
+ .NET framework version 2.0 では、このメソッドのオーバー ロードを使用して作成されたデリゲートの戻り値の型とパラメーターの型がありますパラメーターの型とデリゲートが表すメソッドの戻り値の型と互換性のあります。型を完全に一致する必要はありません。 これには、.NET Framework version 1.0 および 1.1 では、種類が正確に一致する必要があります、内のバインド動作の緩和を表します。  
+  
+ デリゲートのパラメーターにメソッドのパラメーターよりも限定的な型が指定された場合、両者のパラメーター間に型の互換性があると見なされます。これによって、デリゲートに渡された引数が、メソッドに対して安全に渡されることが保証されます。  
+  
+ 同様に、メソッドの戻り値の型の制限がデリゲートの戻り値の型より多いと、メソッドの戻り値がデリゲートの戻り値の型に安全にキャストされることが保証されるため、デリゲートの戻り値の型とメソッドの戻り値の型には互換性があります。  
+  
+ 型のパラメーターを持つデリゲートなど、<xref:System.Collections.Hashtable>と戻り値の型<xref:System.Object>型のパラメーターを持つメソッドを表すことができる<xref:System.Object>型の値を返す<xref:System.Collections.Hashtable>です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初の例では、このメソッドのオーバー ロードを作成するデリゲートの 2 つの種類: インスタンス メソッドで開き、静的メソッドを開きます。  
+  
+ 2 番目のコード例では、互換性のあるパラメーターの型について説明し、型を返します。  
+  
+ **例 1**  
+  
+ 次のコード例は、のこのオーバー ロードを使用してデリゲートを作成する 2 つの方法を示します、<xref:System.Delegate.CreateDelegate%2A>メソッドです。  
+  
+> [!NOTE]
+>  2 つのオーバー ロードがあります、<xref:System.Delegate.CreateDelegate%2A>メソッドを指定する、<xref:System.Reflection.MethodInfo>最初の引数されませんが、いずれか、バインドするには、失敗した場合にスローするかどうかを指定することができ、もう一方は常にスローする点を除いて、機能は同じです。 このコード例では、両方のオーバー ロードを使用します。  
+  
+ 例では、クラスを宣言して`C`静的メソッドを使用して`M2`とインスタンス メソッド`M1`、2 つのデリゲート型と:`D1`のインスタンスを受け取り`C`および文字列、および`D2`文字列を使用します。  
+  
+ 2 番目のクラスを名前付き`Example`デリゲートを作成するコードが含まれています。  
+  
+-   型のデリゲート`D1`、開いているインスタンス メソッドを表す、インスタンス メソッドの作成は`M1`します。 デリゲートが呼び出されたときに、インスタンスを渡す必要があります。  
+  
+-   型のデリゲート`D2`、オープンな静的メソッドを表す、静的なメソッドの作成は`M2`します。  
+  
+ [!code-csharp[Delegate.CreateDelegateTOM#1](~/samples/snippets/csharp/VS_Snippets_CLR/Delegate.CreateDelegateTOM/cs/openClosedOver.cs#1)]
+ [!code-vb[Delegate.CreateDelegateTOM#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Delegate.CreateDelegateTOM/VB/openClosedOver.vb#1)]  
+  
+ **例 2**  
+  
+ 次のコード例では、パラメーターの型との互換性について説明し、型を返します。  
+  
+ このコード例は、という名前の基本クラスを定義`Base`という名前のクラスと`Derived`から派生した`Base`です。 派生クラスには、 `static` (`Shared` Visual Basic で) という名前のメソッド`MyMethod`型の 1 つのパラメーターを持つ`Base`と戻り値の型`Derived`です。 このコード例もという名前のデリゲートを定義`Example`型の 1 つのパラメーターを持つ`Derived`と戻り値の型`Base`です。  
+  
+ このコード例で、デリゲートがという名前の`Example`、メソッドを表すために使用できる`MyMethod`です。 メソッドは、ために、デリゲートにバインドできます。  
+  
+-   デリゲートのパラメーターの型 (`Derived`) のパラメーターの型より限定的な`MyMethod`(`Base`) できるように、安全にデリゲートの引数を渡すには常に、`MyMethod`です。  
+  
+-   戻り値の型`MyMethod`(`Derived`) デリゲートのパラメーターの型より限定的な (`Base`) デリゲートの戻り値の型をメソッドの戻り値の型をキャストしても安全では常にするようにします。  
+  
+ コード例は、出力を生成されません。  
+  
+ [!code-cpp[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/cpp/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/cpp/source.cpp#1)]
+ [!code-csharp[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/csharp/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/cs/source.cs#1)]
+ [!code-vb[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> は <see cref="T:System.MulticastDelegate" /> を継承しません。  
+  
+ または  
+  
+ <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。  
+  
+ または  
+  
+ <paramref name="method" /> は静的メソッドではなく、.NET Framework バージョンは 1.0 または 1.1 です。  
+  
+ または  
+  
+ <paramref name="method" /> はバインドできません。  
+  
+ または  
+  
+ <paramref name="method" /> が <see langword="RuntimeMethodInfo" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。</exception>
+        <exception cref="T:System.MissingMethodException"><paramref name="type" /> の <see langword="Invoke" /> メソッドが見つかりません。</exception>
+        <exception cref="T:System.MethodAccessException"><paramref name="method" /> へのアクセスに必要なアクセス許可が呼び出し元にありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public static Delegate CreateDelegate (Type type, object firstArgument, System.Reflection.MethodInfo method);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate CreateDelegate(class System.Type type, object firstArgument, class System.Reflection.MethodInfo method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.CreateDelegate(System.Type,System.Object,System.Reflection.MethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="firstArgument" Type="System.Object" />
+        <Parameter Name="method" Type="System.Reflection.MethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するデリゲートの <see cref="T:System.Type" />。</param>
+        <param name="firstArgument">デリゲートのバインド先のオブジェクトまたは<see langword="null" />扱う<c>メソッド</c>として<see langword="static" />(<see langword="Shared" /> Visual Basic で)。</param>
+        <param name="method">デリゲートが表す静的メソッドまたはインスタンス メソッドの情報を記述する <see cref="T:System.Reflection.MethodInfo" />。</param>
+        <summary>指定された静的メソッドまたはインスタンス メソッドを表す、指定した型のデリゲートを、第 1 引数を指定して作成します。</summary>
+        <returns>指定した静的メソッドまたはインスタンス メソッドを表すための、指定した型のデリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことと同じではこのメソッドのオーバー ロードを呼び出して、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.Reflection.MethodInfo%2CSystem.Boolean%29>メソッドのオーバー ロードを指定して`true`の`throwOnBindFailure`します。 これら 2 つのオーバー ロードは、デリゲートを作成する最も柔軟な方法を提供します。 インスタンス メソッド、または静的のデリゲートを作成して、最初の引数を指定するオプションで使用できます。  
+  
+> [!NOTE]
+>  最初の引数を指定しない場合は使用して、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Reflection.MethodInfo%29>パフォーマンス向上のためのメソッドのオーバー ロードします。  
+  
+ デリゲート型と、メソッドには、互換性のある戻り値の型がある場合があります。 戻り値の型は、`method`の戻り値の型に割り当てることがあります`type`です。  
+  
+ 場合`firstArgument`が指定するに渡される`method`たびに、デリゲートが呼び出されます。`firstArgument`デリゲートにバインドすることと、最初の引数を終了するデリゲートを言います。 場合`method`は`static`(`Shared` Visual Basic で) では、引数のデリゲートを呼び出すときに提供される一覧に場合は、先頭を除くすべてのパラメーターが含まれます`method`し、インスタンス メソッドでは、`firstArgument`は非表示のインスタンスのパラメーターに渡されます (によって表される`this`C# の場合、または`Me`Visual Basic で)。  
+  
+ 場合`firstArgument`が指定されている最初のパラメーターの`method`、参照型である必要がありますと`firstArgument`型と一致する必要があります。  
+  
+> [!IMPORTANT]
+>  場合`method`は`static`(`Shared` Visual Basic で) し、その最初のパラメーターの型は<xref:System.Object>または<xref:System.ValueType>、し`firstArgument`値型であることができます。 ここでは`firstArgument`が自動的にボックス化されます。 C# または Visual Basic の関数を呼び出す場合は、自動的なボックス化は他の引数がある場合は発生しません。  
+  
+ 場合`firstArgument`null 参照と`method`インスタンス メソッドでは、結果は、デリゲート型のシグニチャによって異なります`type`および`method`:。  
+  
+-   場合の署名`type`の非表示の最初のパラメーターを明示的に含まれて`method`、開いているインスタンス メソッドを表すため、デリゲートといいます。 デリゲートが呼び出されると、最初の引数、引数リストでは、非表示のインスタンスのパラメーターに渡す`method`です。  
+  
+-   場合の署名`method`と`type`と一致 (つまり、すべてのパラメーター型は互換性のある)、デリゲートが null 参照に対して閉じられていると考えられます。 デリゲートを呼び出すことは、インスタンスでは null、特に便利にすることではないインスタンス メソッドを呼び出すことと似ています。  
+  
+ 場合`firstArgument`null 参照と`method`は静的、結果は、デリゲート型のシグネチャに依存`type`および`method`:  
+  
+-   場合の署名`method`と`type`一致 (つまり、すべてのパラメーター型は互換性のある)、オープンな静的メソッドを表すため、デリゲートといいます。 これは、静的メソッドの最も一般的なケースです。 この例では、わずかですが優れたパフォーマンスを使用して取得できます、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Reflection.MethodInfo%29>メソッドのオーバー ロードします。  
+  
+-   場合の署名`type`の 2 番目のパラメーターで始まる`method`し、その他のパラメーター型に互換性が、デリゲートが null 参照に対して閉じられていると考えられます。 最初のパラメーターに null 参照が渡されたデリゲートが呼び出されると、`method`です。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、非パブリック メソッドを呼び出し元が許可されている場合にアクセスするために使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メソッドの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+## <a name="compatible-parameter-types-and-return-type"></a>互換性のあるパラメーターの型と戻り値の型  
+ パラメーターの型とデリゲートの戻り値の型はパラメーターの型とデリゲートが表すメソッドの戻り値の型と互換性のあるする必要があります。型を完全に一致する必要はありません。  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、種類が完全に一致する必要があります。  
+  
+ デリゲートのパラメーターにメソッドのパラメーターよりも限定的な型が指定された場合、両者のパラメーター間に型の互換性があると見なされます。これによって、デリゲートに渡された引数が、メソッドに対して安全に渡されることが保証されます。  
+  
+ 同様に、メソッドの戻り値の型の制限がデリゲートの戻り値の型より多いと、メソッドの戻り値がデリゲートの戻り値の型に安全にキャストされることが保証されるため、デリゲートの戻り値の型とメソッドの戻り値の型には互換性があります。  
+  
+ 型のパラメーターを持つデリゲートなど、<xref:System.Collections.Hashtable>と戻り値の型<xref:System.Object>型のパラメーターを持つメソッドを表すことができる<xref:System.Object>型の値を返す<xref:System.Collections.Hashtable>です。  
+  
+## <a name="determining-the-methods-a-delegate-can-represent"></a>デリゲートを表すことができる方法を決定します。  
+ このオーバー ロードが提供する柔軟性の検討するもう 1 つの便利な方法<xref:System.Delegate.CreateDelegate%2A>は任意の指定されたデリゲートがメソッドのシグネチャとメソッドの種類 (静的インスタンスではなく) の 4 つの異なる組み合わせを表すことができます。 デリゲートの型について考えます`D`型の 1 つの引数を持つ`C`します。 メソッドを以下に示します`D`表すことのできるすべての場合に一致する必要がありますので、戻り値の型を無視しています。  
+  
+-   `D`型の 1 つの引数を持つ任意のインスタンス メソッドを表すことができる`C`インスタンス メソッドが属するどのような種類に関係なく、します。 ときに<xref:System.Delegate.CreateDelegate%2A>が呼び出されると、`firstArgument`型のインスタンスは、`method`が属している、得られたデリゲートをそのインスタンスを終了するとします。 (普通、`D`場合に null 参照を終了することも`firstArgument`null 参照です)。  
+  
+-   `D`インスタンス メソッドを表すことができる`C`引数を持たない。 ときに<xref:System.Delegate.CreateDelegate%2A>が呼び出されると、 `firstArgument` null 参照です。 そのため、デリゲートを表し、開いているインスタンス メソッドでのインスタンス`C`が呼び出されるたびに指定する必要があります。  
+  
+-   `D`型の 1 つの引数を受け取る静的メソッドを表すことができる`C`、し、メソッドは、任意の型に属することができます。 ときに<xref:System.Delegate.CreateDelegate%2A>が呼び出されると、 `firstArgument` null 参照です。 そのため、デリゲートを表し、オープンな静的メソッドのインスタンス`C`が呼び出されるたびに指定する必要があります。  
+  
+-   `D`型に属している静的メソッドを表すことができる`F`は型の 2 つの引数が`F`および種類`C`です。 ときに<xref:System.Delegate.CreateDelegate%2A>が呼び出されると、`firstArgument`のインスタンスは、`F`です。 得られたデリゲートは、上のインスタンスが閉じられている静的メソッドを表す`F`です。 場合に注意してください。 場所`F`と`C`同じの型は、静的メソッドがその型の 2 つの引数。 (この場合、`D`場合は、null 参照で終了`firstArgument`null 参照です)。  
+  
+   
+  
+## Examples  
+ このセクションには、3 つのコード例が含まれています。 最初の例では、作成できるデリゲートの 4 つの種類: インスタンス メソッドで静的メソッドよりオープンで開いているインスタンス メソッドを終了して、静的メソッドを終了します。  
+  
+ 2 番目のコード例では、互換性のあるパラメーターの型について説明し、型を返します。  
+  
+ 3 番目のコード例では、単一のデリゲート型を定義し、デリゲート型をすべてのメソッドを表すことを示しています。  
+  
+ **例 1**  
+  
+ 次のコード例は、のこのオーバー ロードを使用してデリゲートを作成することができます、4 つの方法を示します、<xref:System.Delegate.CreateDelegate%2A>メソッドです。  
+  
+> [!NOTE]
+>  2 つのオーバー ロードがあります、<xref:System.Delegate.CreateDelegate%2A>メソッドを指定する`firstArgument`と<xref:System.Reflection.MethodInfo>; をバインドするには、失敗した場合にスローするかどうかを指定できますいずれかと、もう一方は常にスローする点を除いて、機能は同じです。 このコード例では、両方のオーバー ロードを使用します。  
+  
+ 例では、クラスを宣言して`C`静的メソッドを持つ`M2`とインスタンス メソッド`M1`、3 つのデリゲート型と:`D1`のインスタンスを受け取り`C`および文字列、`D2`文字列、およびを受け取る`D3`引数がありません。  
+  
+ 2 番目のクラスを名前付き`Example`デリゲートを作成するコードが含まれています。  
+  
+-   型のデリゲート`D2`のインスタンスを終了済み`C`、インスタンス メソッドの作成は`M1`します。 呼び出されることのバインドのインスタンスを示すための異なる文字列と`C`は常に使用します。  
+  
+-   型のデリゲート`D1`、開いているインスタンス メソッドを表す、インスタンス メソッドの作成は`M1`します。 デリゲートが呼び出されたときに、インスタンスを渡す必要があります。  
+  
+-   型のデリゲート`D2`、オープンな静的メソッドを表す、静的なメソッドの作成は`M2`します。  
+  
+-   型のデリゲートを最後に、 `D3`、文字列を閉じ、静的メソッドの作成は`M2`します。 メソッドは、連結文字列を使用することを表示します。  
+  
+ [!code-csharp[Delegate.CreateDelegateTOM#1](~/samples/snippets/csharp/VS_Snippets_CLR/Delegate.CreateDelegateTOM/cs/openClosedOver.cs#1)]
+ [!code-vb[Delegate.CreateDelegateTOM#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Delegate.CreateDelegateTOM/VB/openClosedOver.vb#1)]  
+  
+ **例 2**  
+  
+ 次のコード例では、パラメーターの型との互換性について説明し、型を返します。  
+  
+> [!NOTE]
+>  このコード例では、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Reflection.MethodInfo%29>メソッドのオーバー ロードします。 その他の使用にオーバー ロードを受け取る<xref:System.Reflection.MethodInfo>と似ています。  
+  
+ このコード例は、という名前の基本クラスを定義`Base`という名前のクラスと`Derived`から派生した`Base`です。 派生クラスには、 `static` (`Shared` Visual Basic で) という名前のメソッド`MyMethod`型の 1 つのパラメーターを持つ`Base`と戻り値の型`Derived`です。 このコード例もという名前のデリゲートを定義`Example`型の 1 つのパラメーターを持つ`Derived`と戻り値の型`Base`です。  
+  
+ このコード例で、デリゲートがという名前の`Example`、メソッドを表すために使用できる`MyMethod`です。 メソッドは、ために、デリゲートにバインドできます。  
+  
+-   デリゲートのパラメーターの型 (`Derived`) のパラメーターの型より限定的な`MyMethod`(`Base`) できるように、安全にデリゲートの引数を渡すには常に、`MyMethod`です。  
+  
+-   戻り値の型`MyMethod`(`Derived`) デリゲートのパラメーターの型より限定的な (`Base`) デリゲートの戻り値の型をメソッドの戻り値の型をキャストしても安全では常にするようにします。  
+  
+ コード例は、出力を生成されません。  
+  
+ [!code-cpp[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/cpp/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/cpp/source.cpp#1)]
+ [!code-csharp[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/csharp/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/cs/source.cs#1)]
+ [!code-vb[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/vb/source.vb#1)]  
+  
+ **例 3**  
+  
+ 次のコード例を示しています、すべてのメソッドを使用して、単一のデリゲート型を表すことができます、<xref:System.Delegate.CreateDelegate%2A>デリゲートを作成するメソッド。  
+  
+> [!NOTE]
+>  2 つのオーバー ロードがあります、<xref:System.Delegate.CreateDelegate%2A>メソッドを指定する`firstArgument`と<xref:System.Reflection.MethodInfo>; をバインドするには、失敗した場合にスローするかどうかを指定できますいずれかと、もう一方は常にスローする点を除いて、機能は同じです。 このコード例では、両方のオーバー ロードを使用します。  
+  
+ このコード例は、2 つのクラスを定義`C`と`F`とデリゲート型`D`型の 1 つの引数を持つ`C`します。 クラスには対応する静的メソッドとインスタンス`M1`、 `M3`、および`M4`、およびクラス`C`はインスタンス メソッドもあります`M2`引数を持たない。  
+  
+ 3 番目のクラスを名前付き`Example`デリゲートを作成するコードが含まれています。  
+  
+-   デリゲートがインスタンス メソッドで作成された`M1`型の`C`および種類`F`; それぞれの型のインスタンス上の各が閉じられます。 メソッド`M1`型の`C`が表示されます、`ID`引数およびバインドされたインスタンスのプロパティです。  
+  
+-   メソッドのデリゲートを作成`M2`型の`C`します。 これは、デリゲートの引数が非表示の最初の引数でインスタンス メソッドを表しますが、開いているインスタンス デリゲートです。 メソッドには、その他の引数がありません。 静的メソッドの場合と同様に呼び出されます。  
+  
+-   静的メソッドに対してデリゲートを作成`M3`型の`C`および種類`F`です。 これらは、オープンな静的デリゲート。  
+  
+-   静的メソッドのデリゲートを作成する最後に、`M4`型の`C`および種類`F`; 各メソッドには、最初の引数として宣言する型と型のインスタンスが指定されるため、デリゲートは、第 1 引数経由で閉じられます. メソッド`M4`型の`C`が表示されます、`ID`引数およびバインドされたインスタンスのプロパティです。  
+  
+ [!code-csharp[Delegate.CreateDelegateTOM_2#1](~/samples/snippets/csharp/VS_Snippets_CLR/Delegate.CreateDelegateTOM_2/cs/source.cs#1)]
+ [!code-vb[Delegate.CreateDelegateTOM_2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Delegate.CreateDelegateTOM_2/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> は <see cref="T:System.MulticastDelegate" /> を継承しません。  
+  
+ または  
+  
+ <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。  
+  
+ または  
+  
+ <paramref name="method" /> はバインドできません。  
+  
+ または  
+  
+ <paramref name="method" /> が <see langword="RuntimeMethodInfo" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。</exception>
+        <exception cref="T:System.MissingMethodException"><paramref name="type" /> の <see langword="Invoke" /> メソッドが見つかりません。</exception>
+        <exception cref="T:System.MethodAccessException"><paramref name="method" /> へのアクセスに必要なアクセス許可が呼び出し元にありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public static Delegate CreateDelegate (Type type, object target, string method);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate CreateDelegate(class System.Type type, object target, string method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.CreateDelegate(System.Type,System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="method" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するデリゲートの <see cref="T:System.Type" />。</param>
+        <param name="target">対象のクラス インスタンス<c>メソッド</c>が呼び出されます。</param>
+        <param name="method">デリゲートによって表されるインスタンス メソッドの名前。</param>
+        <summary>指定したクラス インスタンスに対して呼び出す指定したインスタンス メソッドを表す、指定した型のデリゲートを作成します。</summary>
+        <returns>指定したクラス インスタンスに対して呼び出す指定したインスタンス メソッドを表す、指定した型のデリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのデリゲートのインスタンス メソッドだけを作成します。 インスタンス メソッドがクラスのインスタンスに関連付けられているメソッドです。静的メソッドは、クラス自体に関連付けられている方法です。  
+  
+ このメソッドはオーバー ロードを呼び出すことと同等、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%29>メソッド オーバー ロードを指定する`false`の`ignoreCase`と`true`の`throwOnBindFailure`します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、非パブリック メソッドを呼び出し元が許可されている場合にアクセスするために使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メソッドの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="target" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> は <see cref="T:System.MulticastDelegate" /> を継承しません。  
+  
+ または  
+  
+ <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。  
+  
+ または  
+  
+ <paramref name="method" /> はインスタンス メソッドではありません。  
+  
+ または  
+  
+ <paramref name="method" /> をバインドできません (たとえば、これが見つからないなど)。</exception>
+        <exception cref="T:System.MissingMethodException"><paramref name="type" /> の <see langword="Invoke" /> メソッドが見つかりません。</exception>
+        <exception cref="T:System.MethodAccessException"><paramref name="method" /> へのアクセスに必要なアクセス許可が呼び出し元にありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public static Delegate CreateDelegate (Type type, System.Reflection.MethodInfo method, bool throwOnBindFailure);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate CreateDelegate(class System.Type type, class System.Reflection.MethodInfo method, bool throwOnBindFailure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.CreateDelegate(System.Type,System.Reflection.MethodInfo,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="method" Type="System.Reflection.MethodInfo" />
+        <Parameter Name="throwOnBindFailure" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するデリゲートの <see cref="T:System.Type" />。</param>
+        <param name="method">デリゲートが表す静的メソッドまたはインスタンス メソッドの情報を記述する <see cref="T:System.Reflection.MethodInfo" />。</param>
+        <param name="throwOnBindFailure">
+          <see langword="true" />場合に例外をスローする<c>メソッド</c>連結、それ以外にすることはできません<see langword="false" />です。</param>
+        <summary>指定された静的メソッドを表す、指定された型のデリゲートを、バインドに失敗した場合の動作を指定して作成します。</summary>
+        <returns>指定した静的メソッドを表すための、指定した型のデリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードがオープンの静的メソッドのデリゲートを作成し、インスタンス メソッドのデリゲートを開くことができます、つまり、メソッドのインスタンスの非表示の最初の引数を公開するデリゲート。 詳細についてより一般的なを参照してください。<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.Reflection.MethodInfo%2CSystem.Boolean%29>メソッド オーバー ロードを使用すると、インスタンスのすべてのオープンかクローズ デリゲートの組み合わせを作成または静的メソッドです。  
+  
+> [!NOTE]
+>  このメソッドのオーバー ロードする必要があるために、使用、デリゲートは、最初の引数を終了していないときにその場合は多少高速です。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、非パブリック メソッドを呼び出し元が許可されている場合にアクセスするために使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メソッドの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+## <a name="compatible-parameter-types-and-return-type"></a>互換性のあるパラメーターの型と戻り値の型  
+ パラメーターの型とデリゲートの戻り値の型はパラメーターの型とデリゲートが表すメソッドの戻り値の型と互換性のあるする必要があります。型を完全に一致する必要はありません。  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 では、種類が完全に一致する必要があります。  
+  
+ デリゲートのパラメーターにメソッドのパラメーターよりも限定的な型が指定された場合、両者のパラメーター間に型の互換性があると見なされます。これによって、デリゲートに渡された引数が、メソッドに対して安全に渡されることが保証されます。  
+  
+ 同様に、メソッドの戻り値の型の制限がデリゲートの戻り値の型より多いと、メソッドの戻り値がデリゲートの戻り値の型に安全にキャストされることが保証されるため、デリゲートの戻り値の型とメソッドの戻り値の型には互換性があります。  
+  
+ 型のパラメーターを持つデリゲートなど、<xref:System.Collections.Hashtable>と戻り値の型<xref:System.Object>型のパラメーターを持つメソッドを表すことができる<xref:System.Object>型の値を返す<xref:System.Collections.Hashtable>です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初の例では、このメソッドのオーバー ロードを作成するデリゲートの 2 つの種類: インスタンス メソッドで開き、静的メソッドを開きます。  
+  
+ 2 番目のコード例では、互換性のあるパラメーターの型について説明し、型を返します。  
+  
+ **例 1**  
+  
+ 次のコード例は、のこのオーバー ロードを使用してデリゲートを作成する 2 つの方法を示します、<xref:System.Delegate.CreateDelegate%2A>メソッドです。  
+  
+> [!NOTE]
+>  2 つのオーバー ロードがあります、<xref:System.Delegate.CreateDelegate%2A>メソッドを指定する、<xref:System.Reflection.MethodInfo>最初の引数されませんが、いずれか、バインドするには、失敗した場合にスローするかどうかを指定することができ、もう一方は常にスローする点を除いて、機能は同じです。 このコード例では、両方のオーバー ロードを使用します。  
+  
+ 例では、クラスを宣言して`C`静的メソッドを使用して`M2`とインスタンス メソッド`M1`、2 つのデリゲート型と:`D1`のインスタンスを受け取り`C`および文字列、および`D2`文字列を使用します。  
+  
+ 2 番目のクラスを名前付き`Example`デリゲートを作成するコードが含まれています。  
+  
+-   型のデリゲート`D1`、開いているインスタンス メソッドを表す、インスタンス メソッドの作成は`M1`します。 デリゲートが呼び出されたときに、インスタンスを渡す必要があります。  
+  
+-   型のデリゲート`D2`、オープンな静的メソッドを表す、静的なメソッドの作成は`M2`します。  
+  
+ [!code-csharp[Delegate.CreateDelegateTOM#1](~/samples/snippets/csharp/VS_Snippets_CLR/Delegate.CreateDelegateTOM/cs/openClosedOver.cs#1)]
+ [!code-vb[Delegate.CreateDelegateTOM#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Delegate.CreateDelegateTOM/VB/openClosedOver.vb#1)]  
+  
+ **例 2**  
+  
+ 次のコード例では、パラメーターの型との互換性について説明し、型を返します。  
+  
+> [!NOTE]
+>  このコード例では、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Reflection.MethodInfo%29>メソッドのオーバー ロードします。 その他の使用にオーバー ロードを受け取る<xref:System.Reflection.MethodInfo>と似ています。  
+  
+ このコード例は、という名前の基本クラスを定義`Base`という名前のクラスと`Derived`から派生した`Base`です。 派生クラスには、 `static` (`Shared` Visual Basic で) という名前のメソッド`MyMethod`型の 1 つのパラメーターを持つ`Base`と戻り値の型`Derived`です。 このコード例もという名前のデリゲートを定義`Example`型の 1 つのパラメーターを持つ`Derived`と戻り値の型`Base`です。  
+  
+ このコード例で、デリゲートがという名前の`Example`、メソッドを表すために使用できる`MyMethod`です。 メソッドは、ために、デリゲートにバインドできます。  
+  
+-   デリゲートのパラメーターの型 (`Derived`) のパラメーターの型より限定的な`MyMethod`(`Base`) できるように、安全にデリゲートの引数を渡すには常に、`MyMethod`です。  
+  
+-   戻り値の型`MyMethod`(`Derived`) デリゲートのパラメーターの型より限定的な (`Base`) デリゲートの戻り値の型をメソッドの戻り値の型をキャストしても安全では常にするようにします。  
+  
+ コード例は、出力を生成されません。  
+  
+ [!code-cpp[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/cpp/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/cpp/source.cpp#1)]
+ [!code-csharp[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/csharp/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/cs/source.cs#1)]
+ [!code-vb[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> は <see cref="T:System.MulticastDelegate" /> を継承しません。  
+  
+ または  
+  
+ <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。  
+  
+ または  
+  
+ <paramref name="method" /> はバインドできず、<paramref name="throwOnBindFailure" /> は <see langword="true" /> です。  
+  
+ または  
+  
+ <paramref name="method" /> が <see langword="RuntimeMethodInfo" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。</exception>
+        <exception cref="T:System.MissingMethodException"><paramref name="type" /> の <see langword="Invoke" /> メソッドが見つかりません。</exception>
+        <exception cref="T:System.MethodAccessException"><paramref name="method" /> へのアクセスに必要なアクセス許可が呼び出し元にありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public static Delegate CreateDelegate (Type type, Type target, string method);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate CreateDelegate(class System.Type type, class System.Type target, string method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.CreateDelegate(System.Type,System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="target" Type="System.Type" />
+        <Parameter Name="method" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するデリゲートの <see cref="T:System.Type" />。</param>
+        <param name="target"><see cref="T:System.Type" />を実装するクラスを表す<c>メソッド</c>です。</param>
+        <param name="method">デリゲートによって表される静的メソッドの名前。</param>
+        <summary>指定したクラスの指定した静的メソッドを表す、指定した型のデリゲートを作成します。</summary>
+        <returns>指定したクラスの指定した静的メソッドを表す、指定した型のデリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、静的メソッドのみのデリゲートを作成します。 インスタンス メソッドがクラスのインスタンスに関連付けられているメソッドです。静的メソッドは、クラス自体に関連付けられている方法です。  
+  
+ このメソッドはオーバー ロードを呼び出すことと同等、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Type%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%29>メソッド オーバー ロードを指定する`false`の`ignoreCase`と`true`の`throwOnBindFailure`します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、非パブリック メソッドを呼び出し元が許可されている場合にアクセスするために使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メソッドの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="target" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> は <see cref="T:System.MulticastDelegate" /> を継承しません。  
+  
+ または  
+  
+ <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。  
+  
+ または  
+  
+ <paramref name="target" /> が <see langword="RuntimeType" /> ではありません。  
+  
+ または  
+  
+ <paramref name="target" /> はオープン ジェネリック型です。 つまり、その <see cref="P:System.Type.ContainsGenericParameters" /> プロパティは <see langword="true" /> です。  
+  
+ または  
+  
+ <paramref name="method" /> は <see langword="static" /> メソッド (Visual Basic では <see langword="Shared" /> メソッド) ではありません。  
+  
+ または  
+  
+ 見つからないなどの原因により、<paramref name="method" /> をバインドできません。また、<paramref name="throwOnBindFailure" /> が <see langword="true" /> です。</exception>
+        <exception cref="T:System.MissingMethodException"><paramref name="type" /> の <see langword="Invoke" /> メソッドが見つかりません。</exception>
+        <exception cref="T:System.MethodAccessException"><paramref name="method" /> へのアクセスに必要なアクセス許可が呼び出し元にありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public static Delegate CreateDelegate (Type type, object firstArgument, System.Reflection.MethodInfo method, bool throwOnBindFailure);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate CreateDelegate(class System.Type type, object firstArgument, class System.Reflection.MethodInfo method, bool throwOnBindFailure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.CreateDelegate(System.Type,System.Object,System.Reflection.MethodInfo,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="firstArgument" Type="System.Object" />
+        <Parameter Name="method" Type="System.Reflection.MethodInfo" />
+        <Parameter Name="throwOnBindFailure" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するデリゲートの型を表す <see cref="T:System.Type" />。</param>
+        <param name="firstArgument">デリゲートが表すメソッドの第 1 引数である <see cref="T:System.Object" />。 インスタンス メソッドの場合は、そのインスタンスの型との互換性が必要です。</param>
+        <param name="method">デリゲートが表す静的メソッドまたはインスタンス メソッドの情報を記述する <see cref="T:System.Reflection.MethodInfo" />。</param>
+        <param name="throwOnBindFailure">
+          <see langword="true" />場合に例外をスローする<c>メソッド</c>連結、それ以外にすることはできません<see langword="false" />です。</param>
+        <summary>指定された静的メソッドまたはインスタンス メソッドを表す、指定した型のデリゲートを、第 1 引数およびバインドに失敗したときの動作を指定して作成します。</summary>
+        <returns>指定された静的メソッドまたはインスタンス メソッドを表す、指定された型のデリゲート。<paramref name="throwOnBindFailure" /> が <see langword="false" /> で、デリゲートを <paramref name="method" /> にバインドできない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードおよび<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.Reflection.MethodInfo%29>メソッド オーバー ロードを常にバインドするには、失敗した場合にスローすると、デリゲートを作成する最も柔軟な方法を提供します。 最初の引数の有無、またはインスタンス メソッドのいずれかの静的デリゲートを作成するのにには、それらを使用できます。  
+  
+> [!NOTE]
+>  最初の引数を指定しない場合は使用して、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Reflection.MethodInfo%2CSystem.Boolean%29>パフォーマンス向上のためのメソッドのオーバー ロードします。  
+  
+ デリゲート型と、メソッドには、互換性のある戻り値の型がある場合があります。 戻り値の型は、`method`の戻り値の型に割り当てることがあります`type`です。  
+  
+ 場合`firstArgument`が指定するに渡される`method`たびに、デリゲートが呼び出されます。`firstArgument`デリゲートにバインドすることと、最初の引数を終了するデリゲートを言います。 場合`method`は`static`(`Shared` Visual Basic で) では、引数のデリゲートを呼び出すときに提供される一覧に場合は、先頭を除くすべてのパラメーターが含まれます`method`し、インスタンス メソッドでは、`firstArgument`は非表示のインスタンスのパラメーターに渡されます (によって表される`this`C# の場合、または`Me`Visual Basic で)。  
+  
+ 場合`firstArgument`が指定されている最初のパラメーターの`method`、参照型である必要がありますと`firstArgument`型と一致する必要があります。  
+  
+> [!IMPORTANT]
+>  場合`method`は`static`(`Shared` Visual Basic で) し、その最初のパラメーターの型は<xref:System.Object>または<xref:System.ValueType>、し`firstArgument`値型であることができます。 ここでは`firstArgument`が自動的にボックス化されます。 C# または Visual Basic の関数を呼び出す場合は、自動的なボックス化は他の引数がある場合は発生しません。  
+  
+ 場合`firstArgument`null 参照と`method`インスタンス メソッドでは、結果は、デリゲート型のシグニチャによって異なります`type`および`method`:。  
+  
+-   場合の署名`type`の非表示の最初のパラメーターを明示的に含まれて`method`、開いているインスタンス メソッドを表すため、デリゲートといいます。 デリゲートが呼び出されると、最初の引数、引数リストでは、非表示のインスタンスのパラメーターに渡す`method`です。  
+  
+-   場合の署名`method`と`type`と一致 (つまり、すべてのパラメーター型は互換性のある)、デリゲートが null 参照に対して閉じられていると考えられます。 デリゲートを呼び出すことは、インスタンスでは null、特に便利にすることではないインスタンス メソッドを呼び出すことと似ています。  
+  
+ 場合`firstArgument`null 参照と`method`は静的、結果は、デリゲート型のシグネチャに依存`type`および`method`:  
+  
+-   場合の署名`method`と`type`一致 (つまり、すべてのパラメーター型は互換性のある)、オープンな静的メソッドを表すため、デリゲートといいます。 これは、静的メソッドの最も一般的なケースです。 この例では、わずかですが優れたパフォーマンスを使用して取得できます、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Reflection.MethodInfo%2CSystem.Boolean%29>メソッドのオーバー ロードします。  
+  
+-   場合の署名`type`の 2 番目のパラメーターで始まる`method`し、その他のパラメーター型に互換性が、デリゲートが null 参照に対して閉じられていると考えられます。 最初のパラメーターに null 参照が渡されたデリゲートが呼び出されると、`method`です。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、非パブリック メソッドを呼び出し元が許可されている場合にアクセスするために使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メソッドの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+## <a name="compatible-parameter-types-and-return-type"></a>互換性のあるパラメーターの型と戻り値の型  
+ パラメーターの型とデリゲートの戻り値の型はパラメーターの型とデリゲートが表すメソッドの戻り値の型と互換性のあるする必要があります。型を完全に一致する必要はありません。  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 および 1.1 での型が正確に一致する必要があります。  
+  
+ デリゲートのパラメーターにメソッドのパラメーターよりも限定的な型が指定された場合、両者のパラメーター間に型の互換性があると見なされます。これによって、デリゲートに渡された引数が、メソッドに対して安全に渡されることが保証されます。  
+  
+ 同様に、メソッドの戻り値の型の制限がデリゲートの戻り値の型より多いと、メソッドの戻り値がデリゲートの戻り値の型に安全にキャストされることが保証されるため、デリゲートの戻り値の型とメソッドの戻り値の型には互換性があります。  
+  
+ 型のパラメーターを持つデリゲートなど、<xref:System.Collections.Hashtable>と戻り値の型<xref:System.Object>型のパラメーターを持つメソッドを表すことができる<xref:System.Object>型の値を返す<xref:System.Collections.Hashtable>です。  
+  
+## <a name="determining-the-methods-a-delegate-can-represent"></a>デリゲートを表すことができる方法を決定します。  
+ このオーバー ロードが提供する柔軟性の検討するもう 1 つの便利な方法<xref:System.Delegate.CreateDelegate%2A>は任意の指定されたデリゲートがメソッドのシグネチャとメソッドの種類 (静的インスタンスではなく) の 4 つの異なる組み合わせを表すことができます。 デリゲートの型について考えます`D`型の 1 つの引数を持つ`C`します。 メソッドを以下に示します`D`表すことのできるすべての場合に一致する必要がありますので、戻り値の型を無視しています。  
+  
+-   `D`型の 1 つの引数を持つ任意のインスタンス メソッドを表すことができる`C`インスタンス メソッドが属するどのような種類に関係なく、します。 ときに<xref:System.Delegate.CreateDelegate%2A>が呼び出されると、`firstArgument`型のインスタンスは、`method`が属している、得られたデリゲートをそのインスタンスを終了するとします。 (普通、`D`場合に null 参照を終了することも`firstArgument`は`null`)。  
+  
+-   `D`インスタンス メソッドを表すことができる`C`引数を持たない。 ときに<xref:System.Delegate.CreateDelegate%2A>が呼び出されると、 `firstArgument` null 参照です。 そのため、デリゲートを表し、開いているインスタンス メソッドでのインスタンス`C`が呼び出されるたびに指定する必要があります。  
+  
+-   `D`型の 1 つの引数を受け取る静的メソッドを表すことができる`C`、し、メソッドは、任意の型に属することができます。 ときに<xref:System.Delegate.CreateDelegate%2A>が呼び出されると、 `firstArgument` null 参照です。 そのため、デリゲートを表し、オープンな静的メソッドのインスタンス`C`が呼び出されるたびに指定する必要があります。  
+  
+-   `D`型に属している静的メソッドを表すことができる`F`は型の 2 つの引数が`F`および種類`C`です。 ときに<xref:System.Delegate.CreateDelegate%2A>が呼び出されると、`firstArgument`のインスタンスは、`F`です。 得られたデリゲートは、上のインスタンスが閉じられている静的メソッドを表す`F`です。 場合に注意してください。 場所`F`と`C`同じの型は、静的メソッドがその型の 2 つの引数。 (この場合、`D`場合は、null 参照で終了`firstArgument`は`null`)。  
+  
+   
+  
+## Examples  
+ このセクションには、3 つのコード例が含まれています。 最初の例では、作成できるデリゲートの 4 つの種類: インスタンス メソッドで静的メソッドよりオープンで開いているインスタンス メソッドを終了して、静的メソッドを終了します。  
+  
+ 2 番目のコード例では、互換性のあるパラメーターの型について説明し、型を返します。  
+  
+ 3 番目のコード例では、単一のデリゲート型を定義し、デリゲート型をすべてのメソッドを表すことを示しています。  
+  
+ **例 1**  
+  
+ 次のコード例は、のこのオーバー ロードを使用してデリゲートを作成することができます、4 つの方法を示します、<xref:System.Delegate.CreateDelegate%2A>メソッドです。  
+  
+> [!NOTE]
+>  2 つのオーバー ロードがあります、<xref:System.Delegate.CreateDelegate%2A>メソッドを指定する`firstArgument`と<xref:System.Reflection.MethodInfo>; をバインドするには、失敗した場合にスローするかどうかを指定できますいずれかと、もう一方は常にスローする点を除いて、機能は同じです。 このコード例では、両方のオーバー ロードを使用します。  
+  
+ 例では、クラスを宣言して`C`静的メソッドを持つ`M2`とインスタンス メソッド`M1`、3 つのデリゲート型と:`D1`のインスタンスを受け取り`C`および文字列、`D2`文字列、およびを受け取る`D3`引数がありません。  
+  
+ 2 番目のクラスを名前付き`Example`デリゲートを作成するコードが含まれています。  
+  
+-   型のデリゲート`D2`のインスタンスを終了済み`C`、インスタンス メソッドの作成は`M1`します。 呼び出されることのバインドのインスタンスを示すための異なる文字列と`C`は常に使用します。  
+  
+-   型のデリゲート`D1`、開いているインスタンス メソッドを表す、インスタンス メソッドの作成は`M1`します。 デリゲートが呼び出されたときに、インスタンスを渡す必要があります。  
+  
+-   型のデリゲート`D2`、オープンな静的メソッドを表す、静的なメソッドの作成は`M2`します。  
+  
+-   型のデリゲートを最後に、 `D3`、文字列を閉じ、静的メソッドの作成は`M2`します。 メソッドは、連結文字列を使用することを表示します。  
+  
+ [!code-csharp[Delegate.CreateDelegateTOM#1](~/samples/snippets/csharp/VS_Snippets_CLR/Delegate.CreateDelegateTOM/cs/openClosedOver.cs#1)]
+ [!code-vb[Delegate.CreateDelegateTOM#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Delegate.CreateDelegateTOM/VB/openClosedOver.vb#1)]  
+  
+ **例 2**  
+  
+ 次のコード例では、パラメーターの型との互換性について説明し、型を返します。  
+  
+> [!NOTE]
+>  このコード例では、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Reflection.MethodInfo%29>メソッドのオーバー ロードします。 その他の使用にオーバー ロードを受け取る<xref:System.Reflection.MethodInfo>と似ています。  
+  
+ このコード例は、という名前の基本クラスを定義`Base`という名前のクラスと`Derived`から派生した`Base`です。 派生クラスには、 `static` (`Shared` Visual Basic で) という名前のメソッド`MyMethod`型の 1 つのパラメーターを持つ`Base`と戻り値の型`Derived`です。 このコード例もという名前のデリゲートを定義`Example`型の 1 つのパラメーターを持つ`Derived`と戻り値の型`Base`です。  
+  
+ このコード例で、デリゲートがという名前の`Example`、メソッドを表すために使用できる`MyMethod`です。 メソッドは、ために、デリゲートにバインドできます。  
+  
+-   デリゲートのパラメーターの型 (`Derived`) のパラメーターの型より限定的な`MyMethod`(`Base`) できるように、安全にデリゲートの引数を渡すには常に、`MyMethod`です。  
+  
+-   戻り値の型`MyMethod`(`Derived`) デリゲートのパラメーターの型より限定的な (`Base`) デリゲートの戻り値の型をメソッドの戻り値の型をキャストしても安全では常にするようにします。  
+  
+ コード例は、出力を生成されません。  
+  
+ [!code-cpp[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/cpp/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/cpp/source.cpp#1)]
+ [!code-csharp[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/csharp/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/cs/source.cs#1)]
+ [!code-vb[Delegate.CreateDelegate_RelaxedFit#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Delegate.CreateDelegate_RelaxedFit/vb/source.vb#1)]  
+  
+ **例 3**  
+  
+ 次のコード例では、単一のデリゲート型を表すことができるすべてのメソッドを示します。  
+  
+> [!NOTE]
+>  2 つのオーバー ロードがあります、<xref:System.Delegate.CreateDelegate%2A>メソッドを指定する`firstArgument`と<xref:System.Reflection.MethodInfo>; をバインドするには、失敗した場合にスローするかどうかを指定できますいずれかと、もう一方は常にスローする点を除いて、機能は同じです。 このコード例では、両方のオーバー ロードを使用します。  
+  
+ このコード例は、2 つのクラスを定義`C`と`F`とデリゲート型`D`型の 1 つの引数を持つ`C`します。 クラスには対応する静的メソッドとインスタンス`M1`、 `M3`、および`M4`、およびクラス`C`はインスタンス メソッドもあります`M2`引数を持たない。  
+  
+ 3 番目のクラスを名前付き`Example`デリゲートを作成するコードが含まれています。  
+  
+-   デリゲートがインスタンス メソッドで作成された`M1`型の`C`および種類`F`; それぞれの型のインスタンス上の各が閉じられます。 メソッド`M1`型の`C`が表示されます、`ID`引数およびバインドされたインスタンスのプロパティです。  
+  
+-   メソッドのデリゲートを作成`M2`型の`C`します。 これは、デリゲートの引数が非表示の最初の引数でインスタンス メソッドを表しますが、開いているインスタンス デリゲートです。 メソッドには、その他の引数がありません。  
+  
+-   静的メソッドに対してデリゲートを作成`M3`型の`C`および種類`F`です。 これらは、オープンな静的デリゲート。  
+  
+-   静的メソッドのデリゲートを作成する最後に、`M4`型の`C`および種類`F`; 各メソッドには、最初の引数として宣言する型と型のインスタンスが指定されるため、デリゲートは、第 1 引数経由で閉じられます. メソッド`M4`型の`C`が表示されます、`ID`引数およびバインドされたインスタンスのプロパティです。  
+  
+ [!code-csharp[Delegate.CreateDelegateTOM_2#1](~/samples/snippets/csharp/VS_Snippets_CLR/Delegate.CreateDelegateTOM_2/cs/source.cs#1)]
+ [!code-vb[Delegate.CreateDelegateTOM_2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Delegate.CreateDelegateTOM_2/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> は <see cref="T:System.MulticastDelegate" /> を継承しません。  
+  
+ または  
+  
+ <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。  
+  
+ または  
+  
+ <paramref name="method" /> はバインドできず、<paramref name="throwOnBindFailure" /> は <see langword="true" /> です。  
+  
+ または  
+  
+ <paramref name="method" /> が <see langword="RuntimeMethodInfo" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。</exception>
+        <exception cref="T:System.MissingMethodException"><paramref name="type" /> の <see langword="Invoke" /> メソッドが見つかりません。</exception>
+        <exception cref="T:System.MethodAccessException"><paramref name="method" /> へのアクセスに必要なアクセス許可が呼び出し元にありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public static Delegate CreateDelegate (Type type, object target, string method, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate CreateDelegate(class System.Type type, object target, string method, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.CreateDelegate(System.Type,System.Object,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="method" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するデリゲートの <see cref="T:System.Type" />。</param>
+        <param name="target">対象のクラス インスタンス<c>メソッド</c>が呼び出されます。</param>
+        <param name="method">デリゲートによって表されるインスタンス メソッドの名前。</param>
+        <param name="ignoreCase">メソッドの名前を比較するとき大文字と小文字を無視するかどうかを示すブール値。</param>
+        <summary>大文字と小文字の区別方法を指定して、指定したクラス インスタンスに対して呼び出す指定した型のデリゲートを作成します。</summary>
+        <returns>指定したクラス インスタンスに対して呼び出す指定したインスタンス メソッドを表す、指定した型のデリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのデリゲートのインスタンス メソッドだけを作成します。 インスタンス メソッドがクラスのインスタンスに関連付けられているメソッドです。静的メソッドは、クラス自体に関連付けられている方法です。  
+  
+ このメソッドはオーバー ロードを呼び出すことと同等、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%29>メソッド オーバー ロードを指定する`true`の`throwOnBindFailure`します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、非パブリック メソッドを呼び出し元が許可されている場合にアクセスするために使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メソッドの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="target" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> は <see cref="T:System.MulticastDelegate" /> を継承しません。  
+  
+ または  
+  
+ <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。  
+  
+ または  
+  
+ <paramref name="method" /> はインスタンス メソッドではありません。  
+  
+ または  
+  
+ <paramref name="method" /> をバインドできません (たとえば、これが見つからないなど)。</exception>
+        <exception cref="T:System.MissingMethodException"><paramref name="type" /> の <see langword="Invoke" /> メソッドが見つかりません。</exception>
+        <exception cref="T:System.MethodAccessException"><paramref name="method" /> へのアクセスに必要なアクセス許可が呼び出し元にありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public static Delegate CreateDelegate (Type type, Type target, string method, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate CreateDelegate(class System.Type type, class System.Type target, string method, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.CreateDelegate(System.Type,System.Type,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="target" Type="System.Type" />
+        <Parameter Name="method" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するデリゲートの <see cref="T:System.Type" />。</param>
+        <param name="target"><see cref="T:System.Type" />を実装するクラスを表す<c>メソッド</c>です。</param>
+        <param name="method">デリゲートによって表される静的メソッドの名前。</param>
+        <param name="ignoreCase">メソッドの名前を比較するとき大文字と小文字を無視するかどうかを示すブール値。</param>
+        <summary>指定したクラスの指定した静的メソッドを表す、指定した型のデリゲートを、大文字と小文字の区別方法を指定して作成します。</summary>
+        <returns>指定したクラスの指定した静的メソッドを表す、指定した型のデリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、静的メソッドのみのデリゲートを作成します。 インスタンス メソッドがクラスのインスタンスに関連付けられているメソッドです。静的メソッドは、クラス自体に関連付けられている方法です。  
+  
+ このメソッドはオーバー ロードを呼び出すことと同等、<xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Type%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%29>メソッド オーバー ロードを指定する`true`の`throwOnBindFailure`します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、非パブリック メソッドを呼び出し元が許可されている場合にアクセスするために使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メソッドの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="target" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> は <see cref="T:System.MulticastDelegate" /> を継承しません。  
+  
+ または  
+  
+ <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。  
+  
+ または  
+  
+ <paramref name="target" /> が <see langword="RuntimeType" /> ではありません。  
+  
+ または  
+  
+ <paramref name="target" /> はオープン ジェネリック型です。 つまり、その <see cref="P:System.Type.ContainsGenericParameters" /> プロパティは <see langword="true" /> です。  
+  
+ または  
+  
+ <paramref name="method" /> は <see langword="static" /> メソッド (Visual Basic では <see langword="Shared" /> メソッド) ではありません。  
+  
+ または  
+  
+ <paramref name="method" /> をバインドできません (たとえば、これが見つからないなど)。</exception>
+        <exception cref="T:System.MissingMethodException"><paramref name="type" /> の <see langword="Invoke" /> メソッドが見つかりません。</exception>
+        <exception cref="T:System.MethodAccessException"><paramref name="method" /> へのアクセスに必要なアクセス許可が呼び出し元にありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public static Delegate CreateDelegate (Type type, object target, string method, bool ignoreCase, bool throwOnBindFailure);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate CreateDelegate(class System.Type type, object target, string method, bool ignoreCase, bool throwOnBindFailure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.CreateDelegate(System.Type,System.Object,System.String,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="method" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="throwOnBindFailure" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するデリゲートの <see cref="T:System.Type" />。</param>
+        <param name="target">対象のクラス インスタンス<c>メソッド</c>が呼び出されます。</param>
+        <param name="method">デリゲートによって表されるインスタンス メソッドの名前。</param>
+        <param name="ignoreCase">メソッドの名前を比較するとき大文字と小文字を無視するかどうかを示すブール値。</param>
+        <param name="throwOnBindFailure">
+          <see langword="true" />場合に例外をスローする<c>メソッド</c>連結、それ以外にすることはできません<see langword="false" />です。</param>
+        <summary>大文字と小文字の区別方法およびバインドに失敗したときの動作を指定して、指定したクラス インスタンスに対して呼び出す指定した型のデリゲートを作成します。</summary>
+        <returns>指定したクラス インスタンスに対して呼び出す指定したインスタンス メソッドを表す、指定した型のデリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのデリゲートのインスタンス メソッドだけを作成します。 インスタンス メソッドがクラスのインスタンスに関連付けられているメソッドです。静的メソッドは、クラス自体に関連付けられている方法です。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、非パブリック メソッドを呼び出し元が許可されている場合にアクセスするために使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メソッドの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="target" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> は <see cref="T:System.MulticastDelegate" /> を継承しません。  
+  
+ または  
+  
+ <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。  
+  
+ または  
+  
+ <paramref name="method" /> はインスタンス メソッドではありません。  
+  
+ または  
+  
+ 見つからないなどの原因により、<paramref name="method" /> をバインドできません。また、<paramref name="throwOnBindFailure" /> が <see langword="true" /> です。</exception>
+        <exception cref="T:System.MissingMethodException"><paramref name="type" /> の <see langword="Invoke" /> メソッドが見つかりません。</exception>
+        <exception cref="T:System.MethodAccessException"><paramref name="method" /> へのアクセスに必要なアクセス許可が呼び出し元にありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public static Delegate CreateDelegate (Type type, Type target, string method, bool ignoreCase, bool throwOnBindFailure);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate CreateDelegate(class System.Type type, class System.Type target, string method, bool ignoreCase, bool throwOnBindFailure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.CreateDelegate(System.Type,System.Type,System.String,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="target" Type="System.Type" />
+        <Parameter Name="method" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="throwOnBindFailure" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成するデリゲートの <see cref="T:System.Type" />。</param>
+        <param name="target"><see cref="T:System.Type" />を実装するクラスを表す<c>メソッド</c>です。</param>
+        <param name="method">デリゲートによって表される静的メソッドの名前。</param>
+        <param name="ignoreCase">メソッドの名前を比較するとき大文字と小文字を無視するかどうかを示すブール値。</param>
+        <param name="throwOnBindFailure">
+          <see langword="true" />場合に例外をスローする<c>メソッド</c>連結、それ以外にすることはできません<see langword="false" />です。</param>
+        <summary>大文字と小文字の区別方法およびバインドに失敗したときの動作を指定して、指定したクラスの指定した静的メソッドを表す、指定した型のデリゲートを作成します。</summary>
+        <returns>指定したクラスの指定した静的メソッドを表す、指定した型のデリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、静的メソッドのみのデリゲートを作成します。 インスタンス メソッドがクラスのインスタンスに関連付けられているメソッドです。静的メソッドは、クラス自体に関連付けられている方法です。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、非パブリック メソッドを呼び出し元が許可されている場合にアクセスするために使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メソッドの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="target" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="method" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="type" /> は <see cref="T:System.MulticastDelegate" /> を継承しません。  
+  
+ または  
+  
+ <paramref name="type" /> が <see langword="RuntimeType" /> ではありません。 参照してください[リフレクションのランタイム型](http://msdn.microsoft.com/en-us/c1439fb5-cf76-475d-a9d2-fe64ba858858)です。  
+  
+ または  
+  
+ <paramref name="target" /> が <see langword="RuntimeType" /> ではありません。  
+  
+ または  
+  
+ <paramref name="target" /> はオープン ジェネリック型です。 つまり、その <see cref="P:System.Type.ContainsGenericParameters" /> プロパティは <see langword="true" /> です。  
+  
+ または  
+  
+ <paramref name="method" /> は <see langword="static" /> メソッド (Visual Basic では <see langword="Shared" /> メソッド) ではありません。  
+  
+ または  
+  
+ 見つからないなどの原因により、<paramref name="method" /> をバインドできません。また、<paramref name="throwOnBindFailure" /> が <see langword="true" /> です。</exception>
+        <exception cref="T:System.MissingMethodException"><paramref name="type" /> の <see langword="Invoke" /> メソッドが見つかりません。</exception>
+        <exception cref="T:System.MethodAccessException"><paramref name="method" /> へのアクセスに必要なアクセス許可が呼び出し元にありません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DynamicInvoke">
+      <MemberSignature Language="C#" Value="public object DynamicInvoke (params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object DynamicInvoke(object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.DynamicInvoke(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="args">現在のデリゲートが表すメソッドに渡される引数であるオブジェクトの配列。  
+  
+ または  
+  
+ <see langword="null" />、現在のデリゲートによって表されるメソッドに引数が必要としない場合。</param>
+        <summary>現在のデリゲートが表すメソッドを動的に呼び出します (遅延バインディング)。</summary>
+        <returns>デリゲートが表すメソッドによって返されるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Delegate.DynamicInvokeImpl%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">呼び出し元には、デリゲートによって表されるメソッドへのアクセスはありません (たとえば、メソッドがプライベートである)。  
+  
+ または  
+  
+ 数、順序、または型のパラメーターに一覧表示<paramref name="args" />が無効です。</exception>
+        <exception cref="T:System.ArgumentException">デリゲートによって表されるメソッドがオブジェクトまたはサポートしていないクラスで呼び出されます。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">デリゲートによって表されるメソッドはインスタンス メソッドであり、対象のオブジェクトが<see langword="null" />です。  
+  
+ または  
+  
+ カプセル化されるメソッドのいずれかには、例外がスローされます。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DynamicInvokeImpl">
+      <MemberSignature Language="C#" Value="protected virtual object DynamicInvokeImpl (object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object DynamicInvokeImpl(object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.DynamicInvokeImpl(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="args">現在のデリゲートが表すメソッドに渡される引数であるオブジェクトの配列。  
+  
+ または  
+  
+ <see langword="null" />、現在のデリゲートによって表されるメソッドに引数が必要としない場合。</param>
+        <summary>現在のデリゲートが表すメソッドを動的に呼び出します (遅延バインディング)。</summary>
+        <returns>デリゲートが表すメソッドによって返されるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Delegate.DynamicInvoke%2A> メソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">呼び出し元には、デリゲートによって表されるメソッドへのアクセスはありません (たとえば、メソッドがプライベートである)。  
+  
+ または  
+  
+ 数、順序、または型のパラメーターに一覧表示<paramref name="args" />が無効です。</exception>
+        <exception cref="T:System.ArgumentException">デリゲートによって表されるメソッドがオブジェクトまたはサポートしていないクラスで呼び出されます。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">デリゲートによって表されるメソッドはインスタンス メソッドであり、対象のオブジェクトが<see langword="null" />です。  
+  
+ または  
+  
+ カプセル化されるメソッドのいずれかには、例外がスローされます。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のデリゲートと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトと現在のデリゲートが同じ型を持ち、同じターゲット、メソッド、および呼び出しリストを共有しているかどうかを確認します。</summary>
+        <returns>
+          <paramref name="obj" /> と現在のデリゲートが、同じターゲット、メソッド、および呼び出しリストを共有している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じ型の 2 つのデリゲート場合とは見なされません等しい。  
+  
+> [!IMPORTANT]
+>  .NET framework version 1.0 および 1.1 では、2 つのデリゲートが等しいと見なされる場合は、ターゲット、メソッド、および呼び出しリストが等しいか、異なる型のデリゲート場合でもです。  
+  
+ メソッドとターゲット」は、次のように等しいかどうか比較されます。  
+  
+-   比較対象となる 2 つの方法では、どちらも静的で、同じクラス上の同じメソッド場合、メソッドは、等しいと見なされます、ターゲットも等しいと見なさです。  
+  
+-   比較対象となる 2 つの方法では、インスタンス メソッドし、同じオブジェクトに対して同じメソッドである場合、メソッドは、等しいと見なされますターゲットも等しいと見なさです。  
+  
+-   それ以外の場合、メソッドと同じと見なされないやターゲットもいないと見なされますと同じです。  
+  
+ 2 つの呼び出しリストは同じ順序が存在し、2 つの一覧から対応する要素が同じメソッドとターゲットを表す場合にのみ、同一と見なされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">呼び出し元には、デリゲートによって表されるメソッドへのアクセスはありません (たとえば、メソッドがプライベートである)。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デリゲートのハッシュ コードを返します。</summary>
+        <returns>デリゲートのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの戻り値は、2 つの理由の永続化されません必要があります。 最初に、古いハッシュ関数からの値が役に立ちませんレンダリングより優れた分布を生成するクラスのハッシュ関数を変更する可能性があります。 次に、このクラスの既定の実装では、同じ値を別のインスタンスによって返されることは限りません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInvocationList">
+      <MemberSignature Language="C#" Value="public virtual Delegate[] GetInvocationList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Delegate[] GetInvocationList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.GetInvocationList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デリゲートの呼び出しリストを返します。</summary>
+        <returns>現在のデリゲートの呼び出しリストを表すデリゲートの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列内の各デリゲートは、1 つのメソッドを表します。  
+  
+ 配列内のデリゲートの順序は、現在のデリゲートがそれらのデリゲートが表すメソッドを呼び出すが、同じ順序です。  
+  
+   
+  
+## Examples  
+ 次の例は、3 つのメソッドをデリゲートに割り当てます。 呼び出して、 <xref:System.Delegate.GetInvocationList%2A> "File"に、デリゲートを逆の順序で実行して、名前の部分文字列を含めないでくださいメソッドを実行する、デリゲートに割り当てられているメソッドの合計数を取得します。  
+  
+ [!code-csharp[System.Delegate.GetInvocationList#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Delegate.GetInvocationList/cs/GetInvocationList1.cs#1)]
+ [!code-vb[System.Delegate.GetInvocationList#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Delegate.GetInvocationList/vb/GetInvocationList1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodImpl">
+      <MemberSignature Language="C#" Value="protected virtual System.Reflection.MethodInfo GetMethodImpl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Reflection.MethodInfo GetMethodImpl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.GetMethodImpl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のデリゲートによって表される静的メソッドを取得します。</summary>
+        <returns>A<see cref="T:System.Reflection.MethodInfo" />現在のデリゲートによって表される静的メソッドを記述します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在のデリゲートは、静的メソッドを表す場合にのみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">呼び出し元には、デリゲートによって表されるメソッドへのアクセスはありません (たとえば、メソッドがプライベートである)。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">サポートされていません。</param>
+        <param name="context">サポートされていません。</param>
+        <summary>サポートされていません。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドはサポートされていません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Method">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo Method { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo Method" />
+      <MemberSignature Language="DocId" Value="P:System.Delegate.Method" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デリゲートによって表されるメソッドを取得します。</summary>
+        <value>A<see cref="T:System.Reflection.MethodInfo" />デリゲートによって表されるメソッドを記述します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.MemberAccessException">呼び出し元には、デリゲートによって表されるメソッドへのアクセスはありません (たとえば、メソッドがプライベートである)。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (Delegate d1, Delegate d2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Delegate d1, class System.Delegate d2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.op_Equality(System.Delegate,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d1" Type="System.Delegate" />
+        <Parameter Name="d2" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="d1">比較する最初のデリゲート。</param>
+        <param name="d2">比較する 2 番目のデリゲート。</param>
+        <summary>指定したデリゲートが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="d1" /> に等しい場合は <paramref name="d2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じターゲット、メソッド、および呼び出しリストを持つ同じ型の 2 つのデリゲートは、等しいと見なされます。  
+  
+ 同じ型の 2 つのデリゲート場合とは見なされません等しい。  
+  
+> [!IMPORTANT]
+>  .NET framework version 1.0 および 1.1 では、2 つのデリゲートが等しいと見なされる場合は、ターゲット、メソッド、および呼び出しリストが等しいか、異なる型のデリゲート場合でもです。  
+  
+ メソッドとターゲット」は、次のように等しいかどうか比較されます。  
+  
+-   比較対象となる 2 つの方法では、どちらも静的で、同じクラス上の同じメソッド場合、メソッドは、等しいと見なされます、ターゲットも等しいと見なさです。  
+  
+-   比較対象となる 2 つの方法では、インスタンス メソッドし、同じオブジェクトに対して同じメソッドである場合、メソッドは、等しいと見なされますターゲットも等しいと見なさです。  
+  
+-   それ以外の場合、メソッドと同じと見なされないやターゲットもいないと見なされますと同じです。  
+  
+ 2 つの呼び出しリストは同じ順序が存在し、2 つの一覧から対応する要素が同じメソッドとターゲットを表す場合、同一と見なされます。  
+  
+ この演算子を同等の方法は、します。<xref:System.Delegate.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (Delegate d1, Delegate d2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Delegate d1, class System.Delegate d2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.op_Inequality(System.Delegate,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d1" Type="System.Delegate" />
+        <Parameter Name="d2" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="d1">比較する最初のデリゲート。</param>
+        <param name="d2">比較する 2 番目のデリゲート。</param>
+        <summary>指定したデリゲートが等しくないかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="d1" /> と等しくない場合は <paramref name="d2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのデリゲートが等しくないと見なさ型が異なる、または別の方法、ターゲット、または別の呼び出しリストがある場合。  
+  
+ 同じ型の 2 つのデリゲート場合とは見なされません等しい。  
+  
+> [!IMPORTANT]
+>  .NET framework version 1.0 および 1.1 では、2 つのデリゲートが場合に、ターゲット、メソッド、および呼び出しリストが等しいか、異なる型のデリゲート場合でも、等しいと見なされます。  
+  
+ メソッドとターゲット」は、次のように等しいかどうか比較されます。  
+  
+-   比較対象となる 2 つの方法では、どちらも静的で、同じクラス上の同じメソッド場合、メソッドは、等しいと見なされます、ターゲットも等しいと見なさです。  
+  
+-   比較対象となる 2 つの方法では、インスタンス メソッドし、同じオブジェクトに対して同じメソッドである場合、メソッドは、等しいと見なされますターゲットも等しいと見なさです。  
+  
+-   それ以外の場合、メソッドと同じと見なされないやターゲットもいないと見なされますと同じです。  
+  
+ 2 つの呼び出しリストがあれば、サイズが異なる場合は順序が異なる、または 1 つのリストから、少なくとも 1 つの要素は、メソッドまたはその他のリスト内の対応する要素によって表されるとは異なるターゲットを表す場合は等しくありません。  
+  
+ この演算子を同等の方法は、します。<xref:System.Delegate.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public static Delegate Remove (Delegate source, Delegate value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate Remove(class System.Delegate source, class System.Delegate value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.Remove(System.Delegate,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Delegate" />
+        <Parameter Name="value" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="source">呼び出しリストを削除するデリゲート<c>値</c>です。</param>
+        <param name="value">呼び出しリストから削除する呼び出しリストを提供するデリゲート<c>ソース</c>です。</param>
+        <summary>一方のデリゲートの呼び出しリストから、最後に出現した他方のデリゲートの呼び出しリストを削除します。</summary>
+        <returns>呼び出しリストを取得して、呼び出しリストを持つ新しいデリゲートが作成された<paramref name="source" />および最後に見つかった位置の呼び出しリストを削除する<paramref name="value" />場合は、呼び出しリスト<paramref name="value" />の呼び出しリスト内で見つかった<paramref name="source" />です。 返します<paramref name="source" />場合<paramref name="value" />は<see langword="null" />または if の呼び出しリスト<paramref name="value" />の呼び出しリスト内に見つからなかった<paramref name="source" />です。 場合に null 参照を返しますの呼び出しリスト<paramref name="value" />と等しいの呼び出しリストを<paramref name="source" />場合<paramref name="source" />null 参照です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の呼び出しリスト`value`連続した一連の呼び出しリスト内の要素と一致する`source`の呼び出しリストし、`value`の呼び出しリスト内に発生すると言います`source`です。 場合の呼び出しリスト`value`の呼び出しリスト内に 1 回以上発生`source`、最後に見つかった位置を削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">呼び出し元には、デリゲートによって表されるメソッドへのアクセスはありません (たとえば、メソッドがプライベートである)。</exception>
+        <exception cref="T:System.ArgumentException">デリゲート型が一致しません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAll">
+      <MemberSignature Language="C#" Value="public static Delegate RemoveAll (Delegate source, Delegate value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate RemoveAll(class System.Delegate source, class System.Delegate value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.RemoveAll(System.Delegate,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Delegate" />
+        <Parameter Name="value" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="source">呼び出しリストを削除するデリゲート<c>値</c>です。</param>
+        <param name="value">呼び出しリストから削除する呼び出しリストを提供するデリゲート<c>ソース</c>です。</param>
+        <summary>一方のデリゲートの呼び出しリストから、そこに出現する他方のデリゲートの呼び出しリストをすべて削除します。</summary>
+        <returns>呼び出しリストを取得して、呼び出しリストを持つ新しいデリゲートが作成された<paramref name="source" />の呼び出しリストのすべての出現を削除して<paramref name="value" />場合は、呼び出しリスト<paramref name="value" />の呼び出しリスト内で見つかった<paramref name="source" />です。 返します<paramref name="source" />場合<paramref name="value" />は<see langword="null" />または if の呼び出しリスト<paramref name="value" />の呼び出しリスト内に見つからなかった<paramref name="source" />です。 場合に null 参照を返しますの呼び出しリスト<paramref name="value" />と等しいの呼び出しリストを<paramref name="source" />場合は、<paramref name="source" />のみ、一連呼び出しリストには、呼び出しリストにはが含まれています<paramref name="value" />、または<paramref name="source" />null参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の呼び出しリスト`value`連続した一連の呼び出しリスト内の要素と一致する`source`の呼び出しリストし、`value`の呼び出しリスト内に発生すると言います`source`です。 場合の呼び出しリスト`value`の呼び出しリスト内に 1 回以上発生`source`をすべて削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">呼び出し元には、デリゲートによって表されるメソッドへのアクセスはありません (たとえば、メソッドがプライベートである)。</exception>
+        <exception cref="T:System.ArgumentException">デリゲート型が一致しません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveImpl">
+      <MemberSignature Language="C#" Value="protected virtual Delegate RemoveImpl (Delegate d);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Delegate RemoveImpl(class System.Delegate d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Delegate.RemoveImpl(System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="d">現在のデリゲートの呼び出しリストから削除する呼び出しリストを提供するデリゲート。</param>
+        <summary>一方のデリゲートの呼び出しリストから、他方のデリゲートの呼び出しリストを削除します。</summary>
+        <returns>呼び出しリストを持つ新しいデリゲートが現在のデリゲートの呼び出しリストを取得しの呼び出しリストを削除して形成された<paramref name="value" />場合は、呼び出しリスト<paramref name="value" />が現在のデリゲートの呼び出しリスト内で見つかった。 場合は、現在のデリゲートを返します<paramref name="value" />は<see langword="null" />または if の呼び出しリスト<paramref name="value" />は現在のデリゲートの呼び出しリスト内で見つかりませんでした。 返します<see langword="null" />場合の呼び出しリスト<paramref name="value" />が現在のデリゲートの呼び出しリストに等しい。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の呼び出しリスト`value`連続した現在のデリゲートの呼び出しリストでは、次の呼び出しリスト内の要素のセットと一致する`value`現在のデリゲートの呼び出しリスト内で発生すると言います。 場合の呼び出しリスト`value`が複数回出現現在のデリゲートの呼び出しリストに、最後に見つかった位置を削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.MemberAccessException">呼び出し元には、デリゲートによって表されるメソッドへのアクセスはありません (たとえば、メソッドがプライベートである)。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public object Target { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Target" />
+      <MemberSignature Language="DocId" Value="P:System.Delegate.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のデリゲートがインスタンス メソッドを呼び出す対象のクラス インスタンスを取得します。</summary>
+        <value>現在のデリゲートが、デリゲートがインスタンス メソッドを表す場合、インスタンス メソッドを呼び出す対象のオブジェクト<see langword="null" />場合は、デリゲートは、静的メソッドを表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス メソッドがクラスのインスタンスに関連付けられているメソッドです。静的メソッドは、クラス自体に関連付けられている方法です。  
+  
+ デリゲートは 1 つまたは複数のインスタンス メソッドが呼び出される場合、このプロパティは、呼び出しリストにある最後のインスタンス メソッドのターゲットを返します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

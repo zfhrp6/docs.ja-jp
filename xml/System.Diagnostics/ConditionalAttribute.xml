@@ -1,0 +1,171 @@
+<Type Name="ConditionalAttribute" FullName="System.Diagnostics.ConditionalAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ConditionalAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ConditionalAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.ConditionalAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Method, AllowMultiple=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定した条件付きコンパイル シンボルが定義されていない場合、メソッド呼び出しまたは属性を無視するようコンパイラに指示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用することができます、<xref:System.Diagnostics.ConditionalAttribute>メソッドおよびクラス属性します。 ただし、クラスで使用することはから派生した型に対してのみ有効<xref:System.Attribute>です。 <xref:System.Diagnostics.ConditionalAttribute>いずれかが無視されるか、その他の種類に適用する場合、コンパイラの警告またはエラー メッセージが生成されます。  
+  
+ 適用する<xref:System.Diagnostics.ConditionalAttribute>メソッドにコンパイラに指示する、メソッドを呼び出す必要がありますにコンパイルできません Microsoft intermediate language (MSIL) しない限り、条件付きコンパイル シンボルに関連付けられている<xref:System.Diagnostics.ConditionalAttribute>が定義されています。 メソッドは void を返しませんにこの属性を適用する場合、Visual Studio でのコンパイル エラーが表示されます。 適用する<xref:System.Diagnostics.ConditionalAttribute>属性にある属性出力しないメタデータに条件付きコンパイル シンボルが定義されていない場合を示します。 メソッドに渡された引数または属性は、コンパイラによってまだ型チェックします。  
+  
+ 条件付きコンパイル シンボルを定義するのに、次の手法を使用できます。  
+  
+-   コンパイラのコマンド ライン オプションを使用します。たとえば、 **/define: デバッグ**です。  
+  
+-   オペレーティング システムのシェルで環境変数を使用します。たとえば、**デバッグ設定 = 1**です。  
+  
+-   プラグマ、ソース コードで使用します。たとえば、次のようにコンパイル変数を定義します。  
+  
+    ```csharp  
+    #define DEBUG  
+    ```  
+  
+    ```vb  
+    #Const DEBUG=True  
+    ```  
+  
+     変数を未定義にするには、次の手順に従います。  
+  
+    ```csharp  
+    #undef DEBUG  
+    ```  
+  
+    ```vb  
+    #Const DEBUG=False  
+    ```  
+  
+ 共通言語仕様 (CLS) に準拠するいるとするコンパイラの無視が許可されて<xref:System.Diagnostics.ConditionalAttribute>です。 C#、Visual Basic、および C コンパイラ サポート<xref:System.Diagnostics.ConditionalAttribute>; JScript コンパイラは、属性をサポートしていません。  
+  
+> [!NOTE]
+>  Visual Basic では、`AddressOf`演算子は、この属性して影響はありません。 たとえば、`Call CType(AddressOf delegate, Action)`続かなければ`delegate`ですが、`Call delegate()`ない場合があります。  
+  
+ <xref:System.Diagnostics.ConditionalAttribute>定義されているメソッドに適用される、<xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>クラスです。  
+  
+ 属性を使用する方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Diagnostics.ConditionalAttribute> の使い方を示しています。 この例では、条件がで定義されていること、 **/define**コンパイラ オプション。 コンパイラ オプションを変更することによって、異なる結果を得ることができます。 コンパイラ オプションとして指定するのではなく、サンプル コードのプラグマを使用して、条件を定義できます。  
+  
+ [!code-csharp[ConditionalAttributeSample1#7](~/samples/snippets/csharp/VS_Snippets_CLR/ConditionalAttributeSample1/CS/cas.cs#7)]
+ [!code-vb[ConditionalAttributeSample1#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/ConditionalAttributeSample1/VB/cas.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConditionalAttribute (string conditionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string conditionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.ConditionalAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="conditionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="conditionString">属性に関連付けられている大文字小文字を区別の条件付きコンパイル シンボルを指定する文字列。</param>
+        <summary><see cref="T:System.Diagnostics.ConditionalAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.ConditionalAttribute.%23ctor%2A>コンス トラクターです。 この例に示されている例の一部である、<xref:System.Diagnostics.ConditionalAttribute>クラスです。  
+  
+ [!code-csharp[ConditionalAttributeSample1#8](~/samples/snippets/csharp/VS_Snippets_CLR/ConditionalAttributeSample1/CS/cas.cs#8)]
+ [!code-vb[ConditionalAttributeSample1#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/ConditionalAttributeSample1/VB/cas.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionString">
+      <MemberSignature Language="C#" Value="public string ConditionString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConditionString" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.ConditionalAttribute.ConditionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられている条件付きコンパイル シンボルを取得、<see cref="T:System.Diagnostics.ConditionalAttribute" />属性。</summary>
+        <value>関連付けられている大文字小文字を区別の条件付きコンパイル シンボルを指定する文字列、<see cref="T:System.Diagnostics.ConditionalAttribute" />属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

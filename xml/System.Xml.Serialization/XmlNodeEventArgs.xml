@@ -1,0 +1,356 @@
+<Type Name="XmlNodeEventArgs" FullName="System.Xml.Serialization.XmlNodeEventArgs">
+  <TypeSignature Language="C#" Value="public class XmlNodeEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlNodeEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlNodeEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Xml.Serialization.XmlSerializer.UnknownNode" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Xml.Serialization.XmlSerializer.UnknownNode>イベントのみを呼び出すと、<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Xml.Serialization.XmlSerializer.UnknownNode>のイベント、<xref:System.Xml.Serialization.XmlSerializer>を呼び出す際に発生した不明な XML ノードのさまざまなプロパティを印刷する、<xref:System.Xml.Serialization.XmlSerializer>クラスの<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>メソッドです。  
+  
+ [!code-cpp[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LineNumber">
+      <MemberSignature Language="C#" Value="public int LineNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LineNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlNodeEventArgs.LineNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不明な XML ノードの行番号を取得します。</summary>
+        <value>不明な XML ノードの行番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinePosition">
+      <MemberSignature Language="C#" Value="public int LinePosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LinePosition" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlNodeEventArgs.LinePosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不明な XML ノードの行に位置を取得します。</summary>
+        <value>不明な XML ノードの位置番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.UnknownNode Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.UnknownNode Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalName">
+      <MemberSignature Language="C#" Value="public string LocalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlNodeEventArgs.LocalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>逆シリアル化される XML ノードの XML ローカル名を取得します。</summary>
+        <value>XML ノードのローカル名、逆シリアル化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlNodeEventArgs.LocalName%2A>プロパティ XML 修飾名のローカル名 (ローカル部分とも呼ばれます) を返します。 <xref:System.Xml.Serialization.XmlNodeEventArgs.LocalName%2A> 1999 http://www.w3.org 仕様に準拠しているプロパティ`Namespaces in XML`です。  
+  
+   
+  
+## Examples  
+ 次の例の出力、<xref:System.Xml.Serialization.XmlNodeEventArgs.LocalName%2A>を呼び出す際に発生した不明な XML ノードの<xref:System.Xml.Serialization.XmlSerializer>クラスの<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>メソッドです。  
+  
+ [!code-cpp[Classic XmlNodeEventArgs.LocalName Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.LocalName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlNodeEventArgs.LocalName Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.LocalName Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlNodeEventArgs.LocalName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlNodeEventArgs.LocalName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlNodeEventArgs.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>逆シリアル化される XML ノードの名前を取得します。</summary>
+        <value>逆シリアル化されるノードの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の出力の原因となった不明なノードの名前、<xref:System.Xml.Serialization.XmlSerializer.UnknownNode>イベントが発生します。  
+  
+ [!code-cpp[Classic XmlNodeEventArgs.Name Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.Name Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlNodeEventArgs.Name Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.Name Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlNodeEventArgs.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlNodeEventArgs.Name Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceURI">
+      <MemberSignature Language="C#" Value="public string NamespaceURI { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NamespaceURI" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlNodeEventArgs.NamespaceURI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前空間の逆シリアル化された XML ノードに関連付けられている URI を取得します。</summary>
+        <value>名前空間は逆シリアル化された XML ノードに関連付けられている URI であります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、原因となった不明な XML ノードの URI を出力、<xref:System.Xml.Serialization.XmlSerializer.UnknownNode>イベントが発生します。  
+  
+ [!code-cpp[Classic XmlNodeEventArgs.NamespaceURI Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.NamespaceURI Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlNodeEventArgs.NamespaceURI Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.NamespaceURI Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlNodeEventArgs.NamespaceURI Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlNodeEventArgs.NamespaceURI Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeType">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNodeType NodeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlNodeType NodeType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlNodeEventArgs.NodeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNodeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>逆シリアル化された XML ノードの種類を取得します。</summary>
+        <value><see cref="T:System.Xml.XmlNodeType" />逆シリアル化される XML ノードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlNodeType>列挙には、逆シリアル化されるノードの説明が返されます。 たとえば、ノードがコメントである場合、「コメント」を返します。  
+  
+   
+  
+## Examples  
+ 次の例の出力の原因となった不明なノードの説明、<xref:System.Xml.Serialization.XmlSerializer.UnknownNode>イベントが発生します。  
+  
+ [!code-cpp[Classic XmlNodeEventArgs.NodeType Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.NodeType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlNodeEventArgs.NodeType Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.NodeType Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlNodeEventArgs.NodeType Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlNodeEventArgs.NodeType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectBeingDeserialized">
+      <MemberSignature Language="C#" Value="public object ObjectBeingDeserialized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ObjectBeingDeserialized" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlNodeEventArgs.ObjectBeingDeserialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>逆シリアル化されるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Object" />逆シリアル化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、によって返される値を出力、<xref:System.Object.ToString%2A>メソッドときに、<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>メソッドが、不明な XML ノードを検出します。  
+  
+ [!code-cpp[Classic XmlNodeEventArgs.ObjectBeingDeserialized Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.ObjectBeingDeserialized Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlNodeEventArgs.ObjectBeingDeserialized Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.ObjectBeingDeserialized Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlNodeEventArgs.ObjectBeingDeserialized Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlNodeEventArgs.ObjectBeingDeserialized Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlNodeEventArgs.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>逆シリアル化される XML ノードのテキストを取得します。</summary>
+        <value>逆シリアル化された XML ノードのテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、原因となった不明な XML ノードのテキストを出力、<xref:System.Xml.Serialization.XmlSerializer.UnknownNode>イベントが発生します。  
+  
+ [!code-cpp[Classic XmlNodeEventArgs.Text Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.Text Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlNodeEventArgs.Text Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlNodeEventArgs.Text Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlNodeEventArgs.Text Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlNodeEventArgs.Text Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

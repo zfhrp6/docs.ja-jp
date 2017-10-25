@@ -1,0 +1,165 @@
+<Type Name="CodeBinaryOperatorExpression" FullName="System.CodeDom.CodeBinaryOperatorExpression">
+  <TypeSignature Language="C#" Value="public class CodeBinaryOperatorExpression : System.CodeDom.CodeExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeBinaryOperatorExpression extends System.CodeDom.CodeExpression" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeBinaryOperatorExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 つの式はバイナリ演算で構成される式を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeBinaryOperatorExpression>二項演算子を含むコード式を表すために使用できます。 二項演算子の例は、等しいかどうかを示します (`==`)、追加 (`+`)、およびビット (`|`) 演算子。 <xref:System.CodeDom.CodeBinaryOperatorType>列挙体は、多くの言語でサポートされている基本的で一般的に使用される二項演算子のセットを表します。  
+  
+   
+  
+## Examples  
+ この例での使用、<xref:System.CodeDom.CodeBinaryOperatorExpression>を 2 つの数値を一緒に追加します。  
+  
+ [!code-cpp[CodeBinaryOperatorExpression#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeBinaryOperatorExpression/CPP/codebinaryoperatorexpressionexample.cpp#2)]
+ [!code-csharp[CodeBinaryOperatorExpression#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeBinaryOperatorExpression/CS/codebinaryoperatorexpressionexample.cs#2)]
+ [!code-vb[CodeBinaryOperatorExpression#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeBinaryOperatorExpression/VB/codebinaryoperatorexpressionexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeBinaryOperatorExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeBinaryOperatorExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeBinaryOperatorExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeBinaryOperatorExpression (System.CodeDom.CodeExpression left, System.CodeDom.CodeBinaryOperatorType op, System.CodeDom.CodeExpression right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeExpression left, valuetype System.CodeDom.CodeBinaryOperatorType op, class System.CodeDom.CodeExpression right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeBinaryOperatorExpression.#ctor(System.CodeDom.CodeExpression,System.CodeDom.CodeBinaryOperatorType,System.CodeDom.CodeExpression)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="left" Type="System.CodeDom.CodeExpression" />
+        <Parameter Name="op" Type="System.CodeDom.CodeBinaryOperatorType" />
+        <Parameter Name="right" Type="System.CodeDom.CodeExpression" />
+      </Parameters>
+      <Docs>
+        <param name="left"><see cref="T:System.CodeDom.CodeExpression" />演算子の左側にします。</param>
+        <param name="op">A<see cref="T:System.CodeDom.CodeBinaryOperatorType" />演算子の種類を示すです。</param>
+        <param name="right"><see cref="T:System.CodeDom.CodeExpression" />演算子の右側にします。</param>
+        <summary>指定されたパラメーターを使用して、<see cref="T:System.CodeDom.CodeBinaryOperatorExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression Left { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression Left" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeBinaryOperatorExpression.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または演算子の左側のコード式を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />を示す左オペランド。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operator">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeBinaryOperatorType Operator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.CodeDom.CodeBinaryOperatorType Operator" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeBinaryOperatorExpression.Operator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeBinaryOperatorType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または二項演算子式で演算子を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeBinaryOperatorType" />式で演算子の種類を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 二項演算子は、2 つのオペランドの評価を実行します。 二項演算子の例は、等しいかどうかを示します (`==`)、追加 (`+`)、およびビット (`|`) 演算子。 一般的に使用される二項演算子の多くは含まれて、<xref:System.CodeDom.CodeBinaryOperatorType>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeExpression Right { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeExpression Right" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeBinaryOperatorExpression.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または演算子の右側のコード式を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeExpression" />右側のオペランドを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

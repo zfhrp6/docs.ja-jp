@@ -1,0 +1,385 @@
+<Type Name="RadioButtonRenderer" FullName="System.Windows.Forms.RadioButtonRenderer">
+  <TypeSignature Language="C#" Value="public sealed class RadioButtonRenderer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RadioButtonRenderer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.RadioButtonRenderer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オプション ボタン コントロール (オプション ボタンとも呼ばれます) または、visual スタイルを表示するために使用されるメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.RadioButtonRenderer>クラスのセットを提供`static`オプションを表示するために使用できるメソッドをボタン コントロールをクリックします。 コントロールのレンダリングとは、コントロールのユーザー インターフェイスを描画することを意味します。 オプション ボタンを描画するのいずれかの操作を使用して、<xref:System.Windows.Forms.RadioButtonRenderer.DrawRadioButton%2A>メソッドです。 これらのメソッドは、さまざまなテキストの描画やオプション ボタンのイメージなどのオプションを提供します。  
+  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用されている場合<xref:System.Windows.Forms.RadioButtonRenderer.DrawRadioButton%2A>現在の visual スタイルでオプション ボタンを描画します。 それ以外の場合、<xref:System.Windows.Forms.RadioButtonRenderer.DrawRadioButton%2A>クラシック Windows スタイルでオプション ボタンを描画します。 これは、オペレーティング システムの現在の visual スタイル設定を自動的に照合する必要がありますをカスタム コントロールを描画する場合に便利です。  
+  
+ このクラスの機能をラップする、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer?displayProperty=nameWithType>によって公開されている要素のいずれかに設定されている、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Button.RadioButton?displayProperty=nameWithType>クラスです。 詳細については、次を参照してください。 [Visual スタイルを使用しているコントロールのレンダリング](~/docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するカスタム コントロールを記述する方法を示しています、<xref:System.Windows.Forms.RadioButtonRenderer.DrawRadioButton%2A>マウスのクリックに応答するオプション ボタンを描画するメソッド。  
+  
+ [!code-cpp[System.Windows.Forms.RadioButtonRenderer#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.RadioButtonRenderer/cpp/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.RadioButtonRenderer#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RadioButtonRenderer/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.RadioButtonRenderer#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RadioButtonRenderer/VB/form1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DrawParentBackground">
+      <MemberSignature Language="C#" Value="public static void DrawParentBackground (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.Control childControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawParentBackground(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.Control childControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RadioButtonRenderer.DrawParentBackground(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="childControl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />の親の背景を描画するために使用<c>childControl</c>です。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />親コントロールの背景を描画するためにします。 この四角形は、子コントロールの境界内にする必要があります。</param>
+        <param name="childControl">コントロールの親の背景が描画されます。</param>
+        <summary>指定領域にコントロールの親の背景を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用される場合は、このメソッドは現在の visual スタイルでオプション ボタン (オプション ボタンとも呼ばれます) を描画します。 それ以外の場合、このメソッドは、従来の Windows スタイルでオプション ボタンを描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRadioButton">
+      <MemberSignature Language="C#" Value="public static void DrawRadioButton (System.Drawing.Graphics g, System.Drawing.Point glyphLocation, System.Windows.Forms.VisualStyles.RadioButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawRadioButton(class System.Drawing.Graphics g, valuetype System.Drawing.Point glyphLocation, valuetype System.Windows.Forms.VisualStyles.RadioButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RadioButtonRenderer.DrawRadioButton(System.Drawing.Graphics,System.Drawing.Point,System.Windows.Forms.VisualStyles.RadioButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="glyphLocation" Type="System.Drawing.Point" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.RadioButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />オプション ボタンを描画するために使用します。</param>
+        <param name="glyphLocation"><see cref="T:System.Drawing.Point" />にあるオプション ボタンのグリフを描画します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.RadioButtonState" />オプション ボタンの表示状態を指定する値。</param>
+        <summary>指定された状態と位置でオプション ボタン コントロール (オプション ボタンとも呼ばれます) を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用される場合は、このメソッドは現在の visual スタイルでオプション ボタンを描画します。 それ以外の場合、このメソッドは、従来の Windows スタイルでオプション ボタンを描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRadioButton">
+      <MemberSignature Language="C#" Value="public static void DrawRadioButton (System.Drawing.Graphics g, System.Drawing.Point glyphLocation, System.Drawing.Rectangle textBounds, string radioButtonText, System.Drawing.Font font, bool focused, System.Windows.Forms.VisualStyles.RadioButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawRadioButton(class System.Drawing.Graphics g, valuetype System.Drawing.Point glyphLocation, valuetype System.Drawing.Rectangle textBounds, string radioButtonText, class System.Drawing.Font font, bool focused, valuetype System.Windows.Forms.VisualStyles.RadioButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RadioButtonRenderer.DrawRadioButton(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Boolean,System.Windows.Forms.VisualStyles.RadioButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="glyphLocation" Type="System.Drawing.Point" />
+        <Parameter Name="textBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="radioButtonText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.RadioButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />オプション ボタンを描画するために使用します。</param>
+        <param name="glyphLocation"><see cref="T:System.Drawing.Point" />にあるオプション ボタンのグリフを描画します。</param>
+        <param name="textBounds"><see cref="T:System.Drawing.Rectangle" />を描画する<c>radioButtonText</c>にします。</param>
+        <param name="radioButtonText"><see cref="T:System.String" />にオプション ボタンを使用して描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>radioButtonText</c>です。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.RadioButtonState" />オプション ボタンの表示状態を指定する値。</param>
+        <summary>指定された状態と、指定したテキスト、およびオプションでフォーカスを示す四角形の場所でオプション ボタン コントロール (オプション ボタンとも呼ばれます) を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用される場合は、このメソッドは現在の visual スタイルでオプション ボタンを描画します。 それ以外の場合、このメソッドは、従来の Windows スタイルでオプション ボタンを描画します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.RadioButtonRenderer.DrawRadioButton%28System.Drawing.Graphics%2CSystem.Drawing.Point%2CSystem.Drawing.Rectangle%2CSystem.String%2CSystem.Drawing.Font%2CSystem.Boolean%2CSystem.Windows.Forms.VisualStyles.RadioButtonState%29>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>マウス ポインターの場所によって決まります状態のオプション ボタンを描画するメソッド。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.RadioButtonRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.RadioButtonRenderer#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.RadioButtonRenderer/cpp/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.RadioButtonRenderer#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RadioButtonRenderer/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.RadioButtonRenderer#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RadioButtonRenderer/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRadioButton">
+      <MemberSignature Language="C#" Value="public static void DrawRadioButton (System.Drawing.Graphics g, System.Drawing.Point glyphLocation, System.Drawing.Rectangle textBounds, string radioButtonText, System.Drawing.Font font, System.Windows.Forms.TextFormatFlags flags, bool focused, System.Windows.Forms.VisualStyles.RadioButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawRadioButton(class System.Drawing.Graphics g, valuetype System.Drawing.Point glyphLocation, valuetype System.Drawing.Rectangle textBounds, string radioButtonText, class System.Drawing.Font font, valuetype System.Windows.Forms.TextFormatFlags flags, bool focused, valuetype System.Windows.Forms.VisualStyles.RadioButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RadioButtonRenderer.DrawRadioButton(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Windows.Forms.TextFormatFlags,System.Boolean,System.Windows.Forms.VisualStyles.RadioButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="glyphLocation" Type="System.Drawing.Point" />
+        <Parameter Name="textBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="radioButtonText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.RadioButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />オプション ボタンを描画するために使用します。</param>
+        <param name="glyphLocation"><see cref="T:System.Drawing.Point" />にあるオプション ボタンのグリフを描画します。</param>
+        <param name="textBounds"><see cref="T:System.Drawing.Rectangle" />を描画する<c>radioButtonText</c>にします。</param>
+        <param name="radioButtonText"><see cref="T:System.String" />にオプション ボタンを使用して描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>radioButtonText</c>です。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.RadioButtonState" />オプション ボタンの表示状態を指定する値。</param>
+        <summary>指定された状態と位置に、指定したテキストとテキストの書式設定、およびオプションでフォーカスを示す四角形でオプション ボタン コントロール (オプション ボタンとも呼ばれます) を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用される場合は、このメソッドは現在の visual スタイルでオプション ボタンを描画します。 それ以外の場合、このメソッドは、従来の Windows スタイルでオプション ボタンを描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRadioButton">
+      <MemberSignature Language="C#" Value="public static void DrawRadioButton (System.Drawing.Graphics g, System.Drawing.Point glyphLocation, System.Drawing.Rectangle textBounds, string radioButtonText, System.Drawing.Font font, System.Drawing.Image image, System.Drawing.Rectangle imageBounds, bool focused, System.Windows.Forms.VisualStyles.RadioButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawRadioButton(class System.Drawing.Graphics g, valuetype System.Drawing.Point glyphLocation, valuetype System.Drawing.Rectangle textBounds, string radioButtonText, class System.Drawing.Font font, class System.Drawing.Image image, valuetype System.Drawing.Rectangle imageBounds, bool focused, valuetype System.Windows.Forms.VisualStyles.RadioButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RadioButtonRenderer.DrawRadioButton(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Drawing.Image,System.Drawing.Rectangle,System.Boolean,System.Windows.Forms.VisualStyles.RadioButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="glyphLocation" Type="System.Drawing.Point" />
+        <Parameter Name="textBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="radioButtonText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="imageBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.RadioButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />オプション ボタンを描画するために使用します。</param>
+        <param name="glyphLocation"><see cref="T:System.Drawing.Point" />にあるオプション ボタンのグリフを描画します。</param>
+        <param name="textBounds"><see cref="T:System.Drawing.Rectangle" />を描画する<c>radioButtonText</c>にします。</param>
+        <param name="radioButtonText"><see cref="T:System.String" />にオプション ボタンを使用して描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>radioButtonText</c>です。</param>
+        <param name="image"><see cref="T:System.Drawing.Image" />にオプション ボタンを使用して描画します。</param>
+        <param name="imageBounds"><see cref="T:System.Drawing.Rectangle" />を描画する<c>イメージ</c>でします。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.RadioButtonState" />オプション ボタンの表示状態を指定する値。</param>
+        <summary>指定された状態と位置に、指定したテキストとイメージ、およびオプションでフォーカスを示す四角形でオプション ボタン コントロール (オプション ボタンとも呼ばれます) を描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用される場合は、このメソッドは現在の visual スタイルでオプション ボタンを描画します。 それ以外の場合、このメソッドは、従来の Windows スタイルでオプション ボタンを描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawRadioButton">
+      <MemberSignature Language="C#" Value="public static void DrawRadioButton (System.Drawing.Graphics g, System.Drawing.Point glyphLocation, System.Drawing.Rectangle textBounds, string radioButtonText, System.Drawing.Font font, System.Windows.Forms.TextFormatFlags flags, System.Drawing.Image image, System.Drawing.Rectangle imageBounds, bool focused, System.Windows.Forms.VisualStyles.RadioButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawRadioButton(class System.Drawing.Graphics g, valuetype System.Drawing.Point glyphLocation, valuetype System.Drawing.Rectangle textBounds, string radioButtonText, class System.Drawing.Font font, valuetype System.Windows.Forms.TextFormatFlags flags, class System.Drawing.Image image, valuetype System.Drawing.Rectangle imageBounds, bool focused, valuetype System.Windows.Forms.VisualStyles.RadioButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RadioButtonRenderer.DrawRadioButton(System.Drawing.Graphics,System.Drawing.Point,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Windows.Forms.TextFormatFlags,System.Drawing.Image,System.Drawing.Rectangle,System.Boolean,System.Windows.Forms.VisualStyles.RadioButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="glyphLocation" Type="System.Drawing.Point" />
+        <Parameter Name="textBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="radioButtonText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+        <Parameter Name="image" Type="System.Drawing.Image" />
+        <Parameter Name="imageBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="focused" Type="System.Boolean" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.RadioButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />オプション ボタンを描画するために使用します。</param>
+        <param name="glyphLocation"><see cref="T:System.Drawing.Point" />にあるオプション ボタンのグリフを描画します。</param>
+        <param name="textBounds"><see cref="T:System.Drawing.Rectangle" />を描画する<c>radioButtonText</c>にします。</param>
+        <param name="radioButtonText"><see cref="T:System.String" />にオプション ボタンを使用して描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>radioButtonText</c>です。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <param name="image"><see cref="T:System.Drawing.Image" />にオプション ボタンを使用して描画します。</param>
+        <param name="imageBounds"><see cref="T:System.Drawing.Rectangle" />を描画する<c>イメージ</c>でします。</param>
+        <param name="focused">
+          <see langword="true" />フォーカス四角形を描画するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.RadioButtonState" />オプション ボタンの表示状態を指定する値。</param>
+        <summary>指定された状態と位置; でオプション ボタン コントロール (オプション ボタンとも呼ばれます) の描画します。指定したテキスト、テキストの書式設定、およびイメージです。省略可能なフォーカス四角形を持つ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルが現在のアプリケーションに適用される場合は、このメソッドは現在の visual スタイルでオプション ボタンを描画します。 それ以外の場合、このメソッドは、従来の Windows スタイルでオプション ボタンを描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlyphSize">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size GetGlyphSize (System.Drawing.Graphics g, System.Windows.Forms.VisualStyles.RadioButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size GetGlyphSize(class System.Drawing.Graphics g, valuetype System.Windows.Forms.VisualStyles.RadioButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RadioButtonRenderer.GetGlyphSize(System.Drawing.Graphics,System.Windows.Forms.VisualStyles.RadioButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.RadioButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />オプション ボタンを描画するために使用します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.RadioButtonState" />オプション ボタンの表示状態を指定する値。</param>
+        <summary>オプション ボタンをクリックします (オプション ボタンとも呼ばれます) グリフのピクセル単位のサイズを返します。</summary>
+        <returns>A<see cref="T:System.Drawing.Size" />オプション ボタンのグリフのピクセル単位のサイズを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、オペレーティング システムの現在の visual スタイルによって決まります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.RadioButtonRenderer.GetGlyphSize%2A>オプション ボタンのテキストの範囲を調べます。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.RadioButtonRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.RadioButtonRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.RadioButtonRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.RadioButtonRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RadioButtonRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.RadioButtonRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RadioButtonRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBackgroundPartiallyTransparent">
+      <MemberSignature Language="C#" Value="public static bool IsBackgroundPartiallyTransparent (System.Windows.Forms.VisualStyles.RadioButtonState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsBackgroundPartiallyTransparent(valuetype System.Windows.Forms.VisualStyles.RadioButtonState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.RadioButtonRenderer.IsBackgroundPartiallyTransparent(System.Windows.Forms.VisualStyles.RadioButtonState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.RadioButtonState" />
+      </Parameters>
+      <Docs>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.RadioButtonState" />オプション ボタンの表示状態を指定する値。</param>
+        <summary>(オプション ボタンとも呼ばれます) のオプション ボタンの背景が半透明またはアルファ ブレンドを持つかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合は、オプション ボタンの背景がある半透明またはアルファ ブレンドそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderMatchingApplicationState">
+      <MemberSignature Language="C#" Value="public static bool RenderMatchingApplicationState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool RenderMatchingApplicationState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.RadioButtonRenderer.RenderMatchingApplicationState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはレンダラーが表示スタイルを決定するアプリケーションの状態を使用するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />アプリケーションの状態を使用して描画スタイルを決定する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.RadioButtonRenderer.RenderMatchingApplicationState%2A>プロパティは`true`、<xref:System.Windows.Forms.RadioButtonRenderer>から設定を使用して、<xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A?displayProperty=nameWithType>描画スタイルを決定するプロパティです。 場合<xref:System.Windows.Forms.RadioButtonRenderer.RenderMatchingApplicationState%2A>は`false`、常にレンダリングされます visual スタイルを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.RadioButtonRenderer.RenderMatchingApplicationState%2A>描画スタイルを表示するプロパティがアプリケーションの状態に応じて変更します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.RadioButtonRenderer>クラスです。  
+  
+ [!code-csharp[System.Windows.Forms.RadioButtonRenderer#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RadioButtonRenderer/CS/form1.cs#3)]
+ [!code-vb[System.Windows.Forms.RadioButtonRenderer#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RadioButtonRenderer/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

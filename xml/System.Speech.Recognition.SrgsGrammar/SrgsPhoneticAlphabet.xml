@@ -1,0 +1,75 @@
+<Type Name="SrgsPhoneticAlphabet" FullName="System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet">
+  <TypeSignature Language="C#" Value="public enum SrgsPhoneticAlphabet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SrgsPhoneticAlphabet extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>サポートされている phonetic アルファベットを列挙します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Phonetic アルファベット文字、数字、または組み合わせのことがありますの文字で構成された携帯電話で構成されます。 各電話番号には、音声の一意のサウンドがについて説明します。 これは、ラテン語アルファベットと対照的にいずれかの文字が複数の話されたサウンドを表すことがあります。 単語「処理」と「、」で、単語"candy"と「中止」で文字"c"のさまざまな発音または文字の組み合わせのさまざまな発音"th"を検討します。  
+  
+ System.Speech で使用できます phonetic アルファベットの 3 つのカスタム発音を指定する: 国際電話記号 (IPA)、ユニバーサル電話設定 (UPS)、または、SAPI 電話のセット。 指定された発音記号決定のインライン発音の定義に使用される電話セット<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken>オブジェクト。 指定された電話<xref:System.Speech.Recognition.SrgsGrammar.SrgsToken.Pronunciation%2A>で指定された発音記号に一致する必要があります<xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.PhoneticAlphabet%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Ipa">
+      <MemberSignature Language="C#" Value="Ipa" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet Ipa = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet.Ipa" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>国際音声記号音素のセットです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Sapi">
+      <MemberSignature Language="C#" Value="Sapi" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet Sapi = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet.Sapi" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声 API 音素のセットです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Ups">
+      <MemberSignature Language="C#" Value="Ups" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet Ups = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet.Ups" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SrgsGrammar.SrgsPhoneticAlphabet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユニバーサル電話設定音素であるセット ASCII IPA の音素のエンコーディングします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

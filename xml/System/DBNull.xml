@@ -1,0 +1,742 @@
+<Type Name="DBNull" FullName="System.DBNull">
+  <TypeSignature Language="C#" Value="public sealed class DBNull : IConvertible, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DBNull extends System.Object implements class System.IConvertible, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.DBNull" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IConvertible</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>存在しない値を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DBNull>クラスが存在しない値を表します。 データベースでは、たとえば、テーブルの行に列には可能性がありますが含まれていませんデータには。 つまり、列は値を持っていないだけではなく、まったく存在しないと見なされます。 A<xref:System.DBNull>オブジェクトが存在しない列を表します。 さらに、COM 相互運用機能を使用して、<xref:System.DBNull>存在しない値を示す、VT_ バリアント型と指定されていない値を示す VT_EMPTY バリアント型を識別するクラス。  
+  
+ <xref:System.DBNull>型は、1 つだけをつまりシングルトン クラス<xref:System.DBNull>オブジェクトが存在します。 <xref:System.DBNull.Value?displayProperty=nameWithType>メンバーを表す唯一の<xref:System.DBNull>オブジェクト。 <xref:System.DBNull.Value?displayProperty=nameWithType>データベース フィールドに存在しない値を明示的に割り当てるには、ほとんどの ADO.NET データ プロバイダーは、の値を自動的に割り当てるに使用できます<xref:System.DBNull>フィールドがいないときに有効な値です。 データベースのフィールドから取得した値がかどうかを判断できます、<xref:System.DBNull>値には、そのフィールドの値を渡すことによって、`DBNull.Value.Equals`メソッドです。 ただし、一部の言語とデータベース オブジェクト、データベース フィールドの値があるかどうかを判断するが簡単にする方法を提供<xref:System.DBNull.Value?displayProperty=nameWithType>です。 Visual Basic が含まれます`IsDBNull`関数、<xref:System.Convert.IsDBNull%2A?displayProperty=nameWithType>メソッド、<xref:System.Data.DataTableReader.IsDBNull%2A?displayProperty=nameWithType>メソッド、および<xref:System.Data.IDataRecord.IsDBNull%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 概念を混同しないでください`null`とオブジェクト指向プログラミング言語で、<xref:System.DBNull>オブジェクト。 オブジェクト指向のプログラミング言語で`null`オブジェクトへの参照が存在しないことを意味します。 <xref:System.DBNull>初期化されていないバリアントまたは存在しないデータベースの列を表します。  
+  
+   
+  
+## Examples  
+ 次の例では、`DBNull.Value.Equals`連絡先データベースのデータベース フィールドが有効な値を持つかどうかを調べます。 場合は、フィールドの値がラベルに文字列の出力に追加されます。  
+  
+ [!code-csharp[System.DBNull.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.DBNull.Class/cs/DBNullExamples.cs#1)]
+ [!code-vb[System.DBNull.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DBNull.Class/vb/DBNullExamples.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトをシリアル化するために必要な情報を含む、<see cref="T:System.DBNull" />オブジェクト。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />オブジェクト ソースと関連付けられているシリアル化されたストリームの先を含む、<see cref="T:System.DBNull" />オブジェクト。</param>
+        <summary>実装して、<see cref="T:System.Runtime.Serialization.ISerializable" />インターフェイスし、シリアル化に必要なデータを返します、<see cref="T:System.DBNull" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeCode">
+      <MemberSignature Language="C#" Value="public TypeCode GetTypeCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.TypeCode GetTypeCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.GetTypeCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TypeCode</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.TypeCode" />値<see cref="T:System.DBNull" />です。</summary>
+        <returns><see cref="T:System.TypeCode" />値<see cref="T:System.DBNull" />、これは<see cref="F:System.TypeCode.DBNull" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToBoolean">
+      <MemberSignature Language="C#" Value="bool IConvertible.ToBoolean (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.IConvertible.ToBoolean(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToBoolean(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToByte">
+      <MemberSignature Language="C#" Value="byte IConvertible.ToByte (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int8 System.IConvertible.ToByte(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToByte(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToChar">
+      <MemberSignature Language="C#" Value="char IConvertible.ToChar (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance char System.IConvertible.ToChar(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToChar(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDateTime">
+      <MemberSignature Language="C#" Value="DateTime IConvertible.ToDateTime (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.DateTime System.IConvertible.ToDateTime(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToDateTime(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDecimal">
+      <MemberSignature Language="C#" Value="decimal IConvertible.ToDecimal (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.Decimal System.IConvertible.ToDecimal(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToDecimal(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDouble">
+      <MemberSignature Language="C#" Value="double IConvertible.ToDouble (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance float64 System.IConvertible.ToDouble(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToDouble(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt16">
+      <MemberSignature Language="C#" Value="short IConvertible.ToInt16 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int16 System.IConvertible.ToInt16(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToInt16(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt32">
+      <MemberSignature Language="C#" Value="int IConvertible.ToInt32 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.IConvertible.ToInt32(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToInt32(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt64">
+      <MemberSignature Language="C#" Value="long IConvertible.ToInt64 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int64 System.IConvertible.ToInt64(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToInt64(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToSByte">
+      <MemberSignature Language="C#" Value="sbyte IConvertible.ToSByte (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int8 System.IConvertible.ToSByte(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToSByte(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToSingle">
+      <MemberSignature Language="C#" Value="float IConvertible.ToSingle (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance float32 System.IConvertible.ToSingle(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToSingle(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToType">
+      <MemberSignature Language="C#" Value="object IConvertible.ToType (Type type, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.IConvertible.ToType(class System.Type type, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToType(System.Type,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="type">現在の変換先の型<see cref="T:System.DBNull" />するオブジェクトします。</param>
+        <param name="provider">実装するオブジェクト、<see cref="T:System.IFormatProvider" />インターフェイスし、は、変換を拡張するために使用します。 場合<see langword="null" />を指定すると、現在のカルチャの書式情報を取得します。</param>
+        <summary>現在の変換<see cref="T:System.DBNull" />オブジェクトを指定した型にします。</summary>
+        <returns>現在のボックス化された同等<see cref="T:System.DBNull" />オブジェクトをその変換がサポートされている場合、例外をスローおよび値が返されない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の 3 つの変換はサポートされて: 場合、`type`パラメーターを指定<xref:System.Object>または<xref:System.DBNull>、戻り値は、現在<xref:System.DBNull>オブジェクト自体です。 場合、`type`パラメーターを指定<xref:System.String>、戻り値がによって返される文字列、<xref:System.DBNull.ToString%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt16">
+      <MemberSignature Language="C#" Value="ushort IConvertible.ToUInt16 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int16 System.IConvertible.ToUInt16(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToUInt16(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt32">
+      <MemberSignature Language="C#" Value="uint IConvertible.ToUInt32 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int32 System.IConvertible.ToUInt32(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToUInt32(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt64">
+      <MemberSignature Language="C#" Value="ulong IConvertible.ToUInt64 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int64 System.IConvertible.ToUInt64(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.System#IConvertible#ToUInt64(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" /> インターフェイスを実装するオブジェクト。 (このパラメーターは使用されません。<see langword="null" /> を指定してください。)</param>
+        <summary>この変換はサポートされていません。 この変換を試みるとスロー、<see cref="T:System.InvalidCastException" />です。</summary>
+        <returns>なし。 このメンバーの戻り値は使用されません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">この変換はサポートされていません、<see cref="T:System.DBNull" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空の文字列を返します (<see cref="F:System.String.Empty" />)。</summary>
+        <returns>空の文字列 (<see cref="F:System.String.Empty" />)。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DBNull.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IFormatProvider" />戻り値の書式を設定するために使用します。  
+  
+ または  
+  
+ <see langword="null" />オペレーティング システムの現在のロケール設定からの書式情報を取得できます。</param>
+        <summary>指定されたを使用して、空の文字列を返します<see cref="T:System.IFormatProvider" />です。</summary>
+        <returns>空の文字列 (<see cref="F:System.String.Empty" />)。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public static readonly DBNull Value;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.DBNull Value" />
+      <MemberSignature Language="DocId" Value="F:System.DBNull.Value" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DBNull</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>唯一のインスタンスを表す、<see cref="T:System.DBNull" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DBNull>このクラスのインスタンスのみが存在できることを意味するシングルトン クラスです。  
+  
+ 使用することができます、データベース フィールドが不足しているデータにある場合、<xref:System.DBNull.Value?displayProperty=nameWithType>明示的に割り当てるプロパティを<xref:System.DBNull>オブジェクトのフィールドに値。 ただし、ほとんどのデータ プロバイダーはこの自動的にします。  
+  
+ データベース フィールドかどうかをその値を評価する<xref:System.DBNull>、フィールド値を渡すことができます、`DBNull.Value.Equals`メソッドです。 ただし、さまざまな欠損データのデータベース フィールドを評価するには、他の方法があるために、このメソッドは使用ことはほとんどありません。 Visual Basic が含まれます`IsDBNull`関数、<xref:System.Convert.IsDBNull%2A?displayProperty=nameWithType>メソッド、<xref:System.Data.DataTableReader.IsDBNull%2A?displayProperty=nameWithType>メソッドを<xref:System.Data.IDataRecord.IsDBNull%2A?displayProperty=nameWithType>メソッド、およびその他のいくつかの方法です。  
+  
+   
+  
+## Examples  
+ 次の例では、`DBNull.Value.Equals`連絡先データベースのデータベース フィールドが有効な値を持つかどうかを調べます。 場合は、フィールドの値がラベルに文字列の出力に追加されます。  
+  
+ [!code-csharp[System.DBNull.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.DBNull.Class/cs/DBNullExamples.cs#1)]
+ [!code-vb[System.DBNull.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DBNull.Class/vb/DBNullExamples.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

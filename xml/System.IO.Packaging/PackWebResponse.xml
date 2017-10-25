@@ -1,0 +1,241 @@
+<Type Name="PackWebResponse" FullName="System.IO.Packaging.PackWebResponse">
+  <TypeSignature Language="C#" Value="public sealed class PackWebResponse : System.Net.WebResponse" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PackWebResponse extends System.Net.WebResponse" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.PackWebResponse" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.WebResponse</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>応答を表します、<see cref="T:System.IO.Packaging.PackWebRequest" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パック URI プロトコルを使用してを参照できます、パッケージとその部分の要素、パッケージの内部または外部から Web ソースのいずれかからローカルで。  
+  
+ パック URI プロトコル、スラッシュ文字 (//)、埋め込みの[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]はコンマ (,) で表されます。 例:`pack://http:,,www.adatum.com,folder,file.package/images/picture1.jpg`ファイルを参照`/images/picture1.jpg`に含まれる`http://www.adatum.com/folder/file.package`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackWebResponse.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この要求のストリームを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトが使用されている不要になったリソースの枯渇を防ぐようにときを閉じることを確認してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentLength">
+      <MemberSignature Language="C#" Value="public override long ContentLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackWebResponse.ContentLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答のコンテンツの長さを取得します。</summary>
+        <value>コンテンツの長さ (バイト単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  いくつかの状況で必要となるため、応答全体のストリームを読み取ること、パフォーマンスに影響が実際の Web 要求と一致する応答には、このプロパティをチェックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public override string ContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackWebResponse.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA#tla_mime](~/includes/tlasharptla-mime-md.md)]応答ストリームのコンテンツの種類のコンテンツします。</summary>
+        <value>[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]ストリームのコンテンツの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうか、要求のパッケージの一部で指定されませんが返されます、[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]パッケージの種類。  
+  
+ パッケージの一部を指定する要求には、次のいずれかが返されます。  
+  
+1.  要求された部分が含まれている場合、<xref:System.IO.Packaging.PackagePart.ContentType%2A>値、<xref:System.IO.Packaging.PackagePart.ContentType%2A>値が返されます。  
+  
+2.  要求された部分に no が含まれている場合<xref:System.IO.Packaging.PackagePart.ContentType%2A>値が、ストリーム名が、認識されている[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]拡張機能の種類、[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]拡張機能に対応する型が返されます。  
+  
+3.  要求された部分が含まれていない場合、<xref:System.IO.Packaging.PackagePart.ContentType%2A>値も認識[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]拡張機能の種類、<xref:System.IO.Packaging.PackWebResponse.ContentType%2A>空の文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackWebResponse.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponseStream">
+      <MemberSignature Language="C#" Value="public override System.IO.Stream GetResponseStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.Stream GetResponseStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackWebResponse.GetResponseStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.Packaging.PackWebResponse" /> に含まれている応答ストリームを取得します。</summary>
+        <returns>応答ストリーム。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public override System.Net.WebHeaderCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebHeaderCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackWebResponse.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebHeaderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web のコレクションを取得<see cref="P:System.Net.WebResponse.Headers" />この応答をします。</summary>
+        <value>Web 応答のコレクション<see cref="P:System.Net.WebResponse.Headers" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerResponse">
+      <MemberSignature Language="C#" Value="public System.Net.WebResponse InnerResponse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebResponse InnerResponse" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackWebResponse.InnerResponse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebResponse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内部の取得<see cref="T:System.Net.WebResponse" />の応答に対するオブジェクト。</summary>
+        <value>応答データとして、<see cref="T:System.Net.WebResponse" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackWebResponse.InnerResponse%2A>返します`null`がパッケージのキャッシュから応答の場合 (ときに<xref:System.IO.Packaging.PackWebResponse.IsFromCache%2A>は`true`)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFromCache">
+      <MemberSignature Language="C#" Value="public override bool IsFromCache { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFromCache" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackWebResponse.IsFromCache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パッケージのキャッシュとは、Web 要求から応答がかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />パッケージ キャッシュからの応答がある場合<see langword="false" /> Web 要求からの応答がある場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseUri">
+      <MemberSignature Language="C#" Value="public override Uri ResponseUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ResponseUri" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackWebResponse.ResponseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]応答します。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]応答します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

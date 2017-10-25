@@ -1,0 +1,650 @@
+<Type Name="Menu" FullName="System.Windows.Forms.Menu">
+  <TypeSignature Language="C#" Value="public abstract class Menu : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Menu extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Menu" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Windows.Forms")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべてのメニューの基本的な機能を表します。 <see cref="T:System.Windows.Forms.ToolStripDropDown" />と<see cref="T:System.Windows.Forms.ToolStripDropDownMenu" />交換し、する機能を追加、<see cref="T:System.Windows.Forms.Menu" />以前のバージョンでのコントロール<see cref="T:System.Windows.Forms.Menu" />を選択した場合に、旧バージョンとの互換性と将来の使用の両方の保持されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、基本クラスの<xref:System.Windows.Forms.MainMenu>、 <xref:System.Windows.Forms.MenuItem>、および<xref:System.Windows.Forms.ContextMenu>クラスです。 このクラスのインスタンスを作成することはできません。 アプリケーション メッセージ用のメニュー<xref:System.Windows.Forms.MenuItem>オブジェクト。 その他を含めることができますこれら<xref:System.Windows.Forms.MenuItem>サブメニュー項目を表すオブジェクト。 <xref:System.Windows.Forms.MenuItem>でオブジェクトを格納することができます、<xref:System.Windows.Forms.MainMenu>フォームのメニュー全体構造体として表示するため、または<xref:System.Windows.Forms.ContextMenu>ショートカット メニューを表示に使用されます。 このクラスは、すべてのメニュー クラスの共通機能を提供します。  
+  
+ 多くの基本クラスとは異なり、<xref:System.Windows.Forms.Menu>クラスでは、その派生クラスを使用して、多くのプロパティを定義します。 使用することができます、マルチ ドキュメント インターフェイス (MDI) アプリケーションで、メニューを使用している場合、<xref:System.Windows.Forms.Menu.MdiListItem%2A>プロパティを指定する、<xref:System.Windows.Forms.MenuItem>アプリケーションで開いている MDI 子フォームの一覧を表示します。 <xref:System.Windows.Forms.Menu.MenuItems%2A>プロパティの一覧を含む<xref:System.Windows.Forms.MenuItem>メニュー クラスに格納されているオブジェクト。 <xref:System.Windows.Forms.MainMenu>または<xref:System.Windows.Forms.ContextMenu>、このプロパティには、すべてが含まれています、<xref:System.Windows.Forms.MenuItem>表示されるオブジェクトです。 <xref:System.Windows.Forms.MenuItem>、<xref:System.Windows.Forms.Menu.MenuItems%2A>プロパティが関連付けられているサブメニュー項目を表します。  
+  
+ すべてのメニューの派生クラスに用意されているプロパティに加えて、<xref:System.Windows.Forms.Menu>クラスのメソッドも提供など<xref:System.Windows.Forms.Menu.CloneMenu%2A>と<xref:System.Windows.Forms.Menu.MergeMenu%2A>、既存のメニューから新しいメニューの作成に使用してマージの 2 つのメニューが一緒に構造体もします。  
+  
+ <xref:System.Windows.Forms.Menu>クラスは、入れ子になったクラスも定義<xref:System.Windows.Forms.Menu.MenuItemCollection>です。 このクラスのコレクションを定義する<xref:System.Windows.Forms.MenuItem>によって使用されるオブジェクト、<xref:System.Windows.Forms.Menu.MenuItems%2A>プロパティです。 メソッドを使用することができます、<xref:System.Windows.Forms.Menu.MenuItemCollection>クラスを追加してからメニュー項目を削除、 <xref:System.Windows.Forms.MainMenu>、 <xref:System.Windows.Forms.ContextMenu>、または<xref:System.Windows.Forms.MenuItem>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.MenuItem>フォームのメニュー構造を作成します。 追加するコード例、<xref:System.Windows.Forms.MenuItem>トップレベルのメニュー項目を表すため、フォント サイズを選択するためにサブメニュー項目を追加し、そのメニュー項目を表すアプリケーションでさまざまな規模のフォントを選択する 2 つのサブメニュー項目を追加します。 この例があることが必要です、<xref:System.Windows.Forms.MainMenu>という名前のオブジェクト`mainMenu1`と 4 つ<xref:System.Windows.Forms.MenuItem>という名前のオブジェクト`menuItem1`、 `menuItem2`、 `menuItem3`、および`menuItem4`です。  
+  
+ [!code-cpp[Classic Menu Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Menu Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Menu Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Menu Example/CS/source.cs#1)]
+ [!code-vb[Classic Menu Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Menu Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Menu (System.Windows.Forms.MenuItem[] items);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.MenuItem[] items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.#ctor(System.Windows.Forms.MenuItem[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.Windows.Forms.MenuItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="items">型の配列<see cref="T:System.Windows.Forms.MenuItem" />メニューに追加するオブジェクトを格納します。</param>
+        <summary><see cref="T:System.Windows.Forms.Menu" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Menu>抽象クラスは継承するクラスは、メニュー コンス トラクターを呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneMenu">
+      <MemberSignature Language="C#" Value="protected void CloneMenu (System.Windows.Forms.Menu menuSrc);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void CloneMenu(class System.Windows.Forms.Menu menuSrc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.CloneMenu(System.Windows.Forms.Menu)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="menuSrc" Type="System.Windows.Forms.Menu" />
+      </Parameters>
+      <Docs>
+        <param name="menuSrc"><see cref="T:System.Windows.Forms.Menu" />をコピーします。</param>
+        <summary>コピー、<see cref="T:System.Windows.Forms.Menu" />現在にパラメーターとして渡される<see cref="T:System.Windows.Forms.Menu" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのリスト全体をコピーする<xref:System.Windows.Forms.MenuItem>オブジェクト (に格納されている、<xref:System.Windows.Forms.Menu>に渡された`menuSrc`) 現在のメニューにします。 派生クラスでこのメソッドを使用するには複製する<xref:System.Windows.Forms.MenuItem>オブジェクト。 派生したその他のクラスで再を利用し、<xref:System.Windows.Forms.Menu>など<xref:System.Windows.Forms.MainMenu>、 <xref:System.Windows.Forms.ContextMenu>、および<xref:System.Windows.Forms.MenuItem>です。  
+  
+   
+  
+## Examples  
+ この例で、メイン メニュー `mainMenu1`、3 つのメニュー項目と共に: `File`、 `Edit`、および`View`です。 次を使用して、<xref:System.Windows.Forms.Menu.CloneMenu%2A>にコピーする方法`mainMenu1`に`mainMenu2`です。 複製されたメニューは、フォームに割り当てられ、表示されます。 このプログラムは、既に作成したことが必要です、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[CloneMenu#1](~/samples/snippets/cpp/VS_Snippets_Winforms/CloneMenu/CPP/form1.cpp#1)]
+ [!code-csharp[CloneMenu#1](~/samples/snippets/csharp/VS_Snippets_Winforms/CloneMenu/CS/form1.cs#1)]
+ [!code-vb[CloneMenu#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CloneMenu/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMenuHandle">
+      <MemberSignature Language="C#" Value="protected virtual IntPtr CreateMenuHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance native int CreateMenuHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.CreateMenuHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいハンドルを作成、<see cref="T:System.Windows.Forms.Menu" />です。</summary>
+        <returns>メソッドが正常に実行された場合はメニューへのハンドル。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.Menu" /> によって使用されているリソース (メモリを除く) を解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Menu.Dispose%2A> を使い終わったら <xref:System.Windows.Forms.Menu> を呼び出します。 <xref:System.Windows.Forms.Menu.Dispose%2A> メソッドによって、<xref:System.Windows.Forms.Menu> は使用不可の状態になります。 呼び出した後<xref:System.Windows.Forms.Menu.Dispose%2A>、すべての参照を解放する必要があります、<xref:System.Windows.Forms.Menu>が使用していたメモリをガベージ コレクションによって再要求できるようにします。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Menu.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Windows.Forms.Menu> を呼び出してください。 それ以外の場合、リソース、<xref:System.Windows.Forms.Menu>を使用しては解放されませんガベージ コレクション呼び出すまで、<xref:System.Windows.Forms.Menu>オブジェクトのデストラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindHandle">
+      <MemberSignature Language="C#" Value="public const int FindHandle = 0;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 FindHandle = (0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Menu.FindHandle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>0</MemberValue>
+      <Docs>
+        <summary>指定する、<see cref="M:System.Windows.Forms.Menu.FindMenuItem(System.Int32,System.IntPtr)" />ハンドルのメソッドを検索する必要があります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindMenuItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.MenuItem FindMenuItem (int type, IntPtr value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.MenuItem FindMenuItem(int32 type, native int value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.FindMenuItem(System.Int32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Int32" />
+        <Parameter Name="value" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="type">検索に使用する項目の種類、<see cref="T:System.Windows.Forms.MenuItem" />です。</param>
+        <param name="value">検索に使用するアイテム、<see cref="T:System.Windows.Forms.MenuItem" />です。</param>
+        <summary>取得、<see cref="T:System.Windows.Forms.MenuItem" />指定された値を格納しています。</summary>
+        <returns><see cref="T:System.Windows.Forms.MenuItem" />値に一致する、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索する、<xref:System.Windows.Forms.MenuItem>で渡すハンドルを使用して、 <xref:System.Windows.Forms.Menu.FindHandle> 、型、およびのハンドルとしてフィールド、<xref:System.Windows.Forms.MenuItem>を値として検索します。  
+  
+ 検索する、<xref:System.Windows.Forms.MenuItem>で渡すショートカットを使用して、<xref:System.Windows.Forms.Menu.FindShortcut>型、およびショートカット値としてフィールド、<xref:System.Windows.Forms.MenuItem>を値として検索します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出すコントロール。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FindMergePosition">
+      <MemberSignature Language="C#" Value="protected int FindMergePosition (int mergeOrder);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance int32 FindMergePosition(int32 mergeOrder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.FindMergePosition(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mergeOrder" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="mergeOrder">マージするメニュー項目のマージ後の位置。</param>
+        <summary>メニュー項目がメニューに挿入する位置を返します。</summary>
+        <returns>メニュー項目がメニューに挿入する位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メニュー項目をマージする順序は、メニューを構造化する場合、このメニュー項目が前提とする相対位置を指定、<xref:System.Windows.Forms.MenuItem>に含まれるで別に結合されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindShortcut">
+      <MemberSignature Language="C#" Value="public const int FindShortcut = 1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 FindShortcut = (1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.Menu.FindShortcut" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1</MemberValue>
+      <Docs>
+        <summary>指定する、<see cref="M:System.Windows.Forms.Menu.FindMenuItem(System.Int32,System.IntPtr)" />メソッドは、ショートカットを検索します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContextMenu">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ContextMenu GetContextMenu ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.ContextMenu GetContextMenu() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.GetContextMenu" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenu</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ContextMenu" />このメニューを格納しています。</summary>
+        <returns><see cref="T:System.Windows.Forms.ContextMenu" />このメニューを格納しています。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、この参照を取得することができます、<xref:System.Windows.Forms.ContextMenu>にこのメニューが含まれています。 このプロパティを返します`null`に、メニューが含まれていない場合、<xref:System.Windows.Forms.ContextMenu>です。 これに、メニューが含まれている場合に発生することができます、<xref:System.Windows.Forms.MenuItem>または<xref:System.Windows.Forms.MainMenu>、または任意のメニューにメニューが含まれていない場合。 かどうか、メニューは、現在使用中かを判断し、場所を特定するには、このプロパティを使用することができます。  
+  
+   
+  
+## Examples  
+ この例で使用して、<xref:System.Windows.Forms.Menu.GetContextMenu%2A>メソッドは含まれているショートカット メニューへの参照を取得する`menuItem1`または`menuItem2`、し、メッセージ ボックスに、ショートカット メニューの情報を表示します。 2 つの項目でショートカット メニューを作成するプログラムで`New`と`Open`です。 これらのアイテムに、適切なイベント ハンドラーを作成することで機能を追加します。 例を実行するときに、ショートカット メニューを表示するために、フォームを右クリックすることを示すメッセージ ボックスが表示されます。 メニュー項目をクリックすると、どの項目がクリックされ、コンテナーのショートカット メニューで情報を表示を示す別のメッセージを取得します。 この例では、既に作成したことが必要です、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[GetContextMenu2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GetContextMenu2/CPP/form1.cpp#1)]
+ [!code-csharp[GetContextMenu2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GetContextMenu2/CS/form1.cs#1)]
+ [!code-vb[GetContextMenu2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GetContextMenu2/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMainMenu">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.MainMenu GetMainMenu ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.MainMenu GetMainMenu() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.GetMainMenu" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MainMenu</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.MainMenu" />このメニューを格納しています。</summary>
+        <returns><see cref="T:System.Windows.Forms.MainMenu" />このメニューを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、この参照を取得することができます、<xref:System.Windows.Forms.MainMenu>このメニューに配置されています。 このプロパティを返します`null`に、メニューが含まれていない場合、<xref:System.Windows.Forms.MainMenu>です。 これに、メニューが含まれている場合に発生することができます、<xref:System.Windows.Forms.MenuItem>または<xref:System.Windows.Forms.ContextMenu>、または任意のメニューにメニューが含まれていない場合。 かどうか、メニューは、現在使用中かを判断し、場所を特定するには、このプロパティを使用することができます。  
+  
+   
+  
+## Examples  
+ この例で宣言、 <xref:System.Windows.Forms.MainMenu>、 `mainMenu1`、および 4 つのメニュー項目`menuItem1`、 `menuItem2`、 `menuItem3`、および`menuItem4`です。 最初の 3 つのメニュー項目のみに追加されます`mainMenu1`表示用です。 プログラムがかどうかをチェックし、`menuItem3`が使用されている、これは`true`、し、使用されているフォームを決定します。 ホストするフォームの名前を表示するラベルのテキストを使用、<xref:System.Windows.Forms.MainMenu>です。 テストするメニュー項目を変更する場合`menuItem4`、条件の評価が`false`ため`menuItem4`は使用されていません。 この例では、作成済みである必要があります、<xref:System.Windows.Forms.Form>という`MyForm`が含まれている、<xref:System.Windows.Forms.Label>という`label1`です。  
+  
+ [!code-cpp[GetMainMenu#1](~/samples/snippets/cpp/VS_Snippets_Winforms/GetMainMenu/CPP/form1.cpp#1)]
+ [!code-csharp[GetMainMenu#1](~/samples/snippets/csharp/VS_Snippets_Winforms/GetMainMenu/CS/form1.cs#1)]
+ [!code-vb[GetMainMenu#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/GetMainMenu/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー ウィンドウ ハンドルを表す値を取得します。</summary>
+        <value>メニューの HMENU 値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、このクラスまたはその派生クラスによって提供される機能の外部で、メニューに特別な操作を実行するのにメニューへのハンドルを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsParent">
+      <MemberSignature Language="C#" Value="public virtual bool IsParent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsParent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.IsParent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメニューにメニュー項目が含まれるかどうかを示す値を取得します。 このプロパティは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />このメニューが含まれている場合<see cref="T:System.Windows.Forms.MenuItem" />オブジェクト。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用するにはいずれかどうかを判断<xref:System.Windows.Forms.MenuItem>オブジェクトがこのメニューに割り当てられます。 チェックするのと同じ`null`で、<xref:System.Windows.Forms.Menu.MenuItems%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Windows.Forms.MainMenu> 、2 つ<xref:System.Windows.Forms.MenuItem>オブジェクト。 次を使用して、<xref:System.Windows.Forms.Menu.IsParent%2A>を決定するプロパティかどうか`mainMenu1`メニュー項目が含まれています。 条件が評価された場合に`true`、設定、<xref:System.Windows.Forms.MainMenu.RightToLeft%2A>プロパティを`true`し、バインドには、メイン メニュー、<xref:System.Windows.Forms.Form>です。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>作成されたという`Form1`です。  
+  
+ [!code-cpp[IsParent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IsParent/CPP/form1.cpp#1)]
+ [!code-csharp[IsParent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IsParent/CS/form1.cs#1)]
+ [!code-vb[IsParent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IsParent/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MdiListItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.MenuItem MdiListItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.MenuItem MdiListItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.MdiListItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得、<see cref="T:System.Windows.Forms.MenuItem" />マルチ ドキュメント インターフェイス (MDI) 子フォームの一覧を表示に使用されます。</summary>
+        <value>A<see cref="T:System.Windows.Forms.MenuItem" />アプリケーションで開いている MDI 子フォームの一覧を表示するメニュー項目を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 決定するこのプロパティを使用するかどうか、 <xref:System.Windows.Forms.MenuItem> MDI アプリケーションで開いている子ウィンドウの一覧を表示するが指定されています。 固有の仕様を使用する<xref:System.Windows.Forms.MenuItem>MDI リストとして設定、<xref:System.Windows.Forms.MenuItem.MdiList%2A>プロパティに、<xref:System.Windows.Forms.MenuItem>使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MenuItems">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Menu.MenuItemCollection MenuItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Menu/MenuItemCollection MenuItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.MenuItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Menu+MenuItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを示す値を取得<see cref="T:System.Windows.Forms.MenuItem" />メニューに関連付けられているオブジェクト。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Menu.MenuItemCollection" />の一覧を表す<see cref="T:System.Windows.Forms.MenuItem" />メニューに格納されているオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、メニューに現在格納されているメニュー項目のリストへの参照を取得します。 <xref:System.Windows.Forms.MainMenu>と<xref:System.Windows.Forms.ContextMenu>、オブジェクト、<xref:System.Windows.Forms.Menu.MenuItems%2A>プロパティには、コントロール全体のメニュー構造が含まれています。 <xref:System.Windows.Forms.MenuItem>クラス、<xref:System.Windows.Forms.Menu.MenuItems%2A>プロパティに関連付けられているサブメニュー項目の一覧が含まれています、<xref:System.Windows.Forms.MenuItem>です。 (このプロパティによって提供される)、メニューのメニュー項目のコレクションへの参照を追加し、メニュー項目を削除、メニュー項目の合計数を決定したりコレクションからのメニュー項目のリストをクリアします。 詳細については、メニューのメニュー項目のコレクションを維持することに、次を参照してください。、<xref:System.Windows.Forms.Menu.MenuItemCollection?displayProperty=nameWithType>ドキュメント。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスのインスタンスを作成<xref:System.Windows.Forms.MainMenu>、し、追加、<xref:System.Windows.Forms.MenuItem>オブジェクトのコレクションを<xref:System.Windows.Forms.MenuItem>オブジェクト。 この例では、この例で定義されたメソッドがフォームのクラス内にあるし、そのフォーム クラスのメソッドによって呼び出されることが必要です。  
+  
+ [!code-cpp[Classic Menu.MenuItems Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Menu.MenuItems Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Menu.MenuItems Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Menu.MenuItems Example/CS/source.cs#1)]
+ [!code-vb[Classic Menu.MenuItems Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Menu.MenuItems Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeMenu">
+      <MemberSignature Language="C#" Value="public virtual void MergeMenu (System.Windows.Forms.Menu menuSrc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void MergeMenu(class System.Windows.Forms.Menu menuSrc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.MergeMenu(System.Windows.Forms.Menu)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="menuSrc" Type="System.Windows.Forms.Menu" />
+      </Parameters>
+      <Docs>
+        <param name="menuSrc"><see cref="T:System.Windows.Forms.Menu" />メニュー項目であるが、現在のメニューのメニュー項目と共にマージされます。</param>
+        <summary>マージ、<see cref="T:System.Windows.Forms.MenuItem" />現在のメニューとメニューは 1 つのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、マージ<xref:System.Windows.Forms.MenuItem>現在 メニューの 1 つのメニューからのオブジェクト。 <xref:System.Windows.Forms.MenuItem>オブジェクトの値に基づいて結合は、<xref:System.Windows.Forms.MenuItem.MergeType%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.MenuItem.MergeOrder%2A?displayProperty=nameWithType>プロパティです。  
+  
+ メニューのマージは通常、そのアクティブな MDI 子フォームのマルチ ドキュメント インターフェイス (MDI) 親フォームのメニューのマージを行います。 これは、.NET Framework 共通言語ランタイムによって自動的に実行されます。 たとえば、MDI 親フォームには一連ファイルを処理するためのメニューにはが含まれています、MDI 子フォームでは、ファイルに関連するメニュー項目も持っている場合は、メニューを設定は子フォームが MDI 親フォームに表示されるときに設定する 1 つのファイル メニューにマージ自動的にします。  
+  
+ 使用することができます、 <xref:System.Windows.Forms.Menu.MergeMenu%2A> MDI アプリケーションの一部ではない 2 つのメニュー構造をマージする場合はメソッドです。 この実装は、呼び出すことができます、<xref:System.Windows.Forms.MainMenu>または<xref:System.Windows.Forms.ContextMenu>クラスから派生した 2 つ以上のオブジェクトをマージする<xref:System.Windows.Forms.Menu>です。  
+  
+ 2 つのマージを<xref:System.Windows.Forms.MenuItem>オブジェクトによって使用される、<xref:System.Windows.Forms.MenuItem.MergeMenu%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ この例の 2 つのメニュー`mainMenu1`と`mainMenu2`です。 最初のメニューは、1 つを含む<xref:System.Windows.Forms.MenuItem>、 `File`、もう 1 つが含まれている<xref:System.Windows.Forms.MenuItem>、`Edit`です。 使用して、<xref:System.Windows.Forms.Menu.MergeMenu%2A>メソッド、`mainMenu2`をマージして`mainMenu1`です。 表示されたら、 `mainMenu1` 2 つのメニュー項目を含む`File`と`Edit`です。 この例では、作成済みである必要があります、<xref:System.Windows.Forms.Form>という`Form1`です。  
+  
+ [!code-cpp[MergeMenu#1](~/samples/snippets/cpp/VS_Snippets_Winforms/MergeMenu/CPP/form1.cpp#1)]
+ [!code-csharp[MergeMenu#1](~/samples/snippets/csharp/VS_Snippets_Winforms/MergeMenu/CS/form1.cs#1)]
+ [!code-vb[MergeMenu#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MergeMenu/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">メニューをそれ自体をマージしようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.Menu" /> の名前を取得または設定します。</summary>
+        <value>名前を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイン時に、このプロパティは、コントロールのプログラム識別子に設定します。 ただし、このプロパティは影響しません、コントロールの実行時にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessCmdKey">
+      <MemberSignature Language="C#" Value="protected virtual bool ProcessCmdKey (ref System.Windows.Forms.Message msg, System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool ProcessCmdKey(valuetype System.Windows.Forms.Message&amp; msg, valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.ProcessCmdKey(System.Windows.Forms.Message@,System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">A<see cref="T:System.Windows.Forms.Message" />を処理するウィンドウ メッセージを表す、参照によって渡されます。</param>
+        <param name="keyData">処理するキーを表す <see cref="T:System.Windows.Forms.Keys" /> 値の 1 つ。</param>
+        <summary>コマンド キーを処理します。</summary>
+        <returns>
+          文字がコントロールによって処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Menu.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールに関連付けられているユーザー定義のデータを設定します。</summary>
+        <value>データを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Menu.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.String" />を表す、<see cref="T:System.Windows.Forms.Menu" />コントロール。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.Menu" /> を表す <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Menu.ToString%2A>メソッドを返します、<xref:System.String>型と内の項目数が含まれる、<xref:System.Windows.Forms.Menu.MenuItems%2A>コントロールのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,66 @@
+<Type Name="StatusBarPanelStyle" FullName="System.Windows.Forms.StatusBarPanelStyle">
+  <TypeSignature Language="C#" Value="public enum StatusBarPanelStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed StatusBarPanelStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.StatusBarPanelStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定するかどうか、<see cref="T:System.Windows.Forms.StatusBarPanel" />上のオブジェクト、<see cref="T:System.Windows.Forms.StatusBar" />コントロールがオーナー描画またはシステム描画します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の設定をこの列挙体のメンバーを使用して、<xref:System.Windows.Forms.StatusBarPanel.Style%2A>のプロパティ、<xref:System.Windows.Forms.StatusBarPanel>クラスです。 スタイル プロパティを決定する方法、<xref:System.Windows.Forms.StatusBarPanel>が表示されます。 <xref:System.Windows.Forms.StatusBarPanel>オブジェクトでは、単純なテキストを表示したり、オーナー描画することができます。 オーナー描画<xref:System.Windows.Forms.StatusBarPanel>オブジェクトを表示するイメージや、別のフォントの残りの部分からのサポート、<xref:System.Windows.Forms.StatusBarPanel>でオブジェクトを<xref:System.Windows.Forms.StatusBar>コントロール、システム描画 while<xref:System.Windows.Forms.StatusBarPanel>オブジェクトを使用して、テキストのみを表示 (またはテキストおよびアイコンがで指定された場合は、アイコン、<xref:System.Windows.Forms.StatusBarPanel.Icon%2A>のプロパティ、 <xref:System.Windows.Forms.StatusBarPanel>)。 オーナー描画のオーナー描画操作を実行する<xref:System.Windows.Forms.StatusBarPanel>を使用して、<xref:System.Windows.Forms.StatusBar.DrawItem>のイベント、<xref:System.Windows.Forms.StatusBar>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.StatusBarPanel.Style%2A>プロパティ、<xref:System.Windows.Forms.StatusBarDrawItemEventHandler>デリゲート、<xref:System.Windows.Forms.StatusBarDrawItemEventArgs>クラス、<xref:System.Windows.Forms.StatusBarPanelStyle>列挙と<xref:System.Windows.Forms.StatusBarDrawItemEventArgs.Panel%2A?displayProperty=nameWithType>プロパティです。 例を実行するには、次のにおけるフォームを貼り付けます。 呼び出す、`InitializeStatusBarPanels`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.StatusBarDrawItemEventHandler#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.StatusBarDrawItemEventHandler/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.StatusBarDrawItemEventHandler#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.StatusBarDrawItemEventHandler/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.StatusBarDrawItemEventHandler#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.StatusBarDrawItemEventHandler/VB/form1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="OwnerDraw">
+      <MemberSignature Language="C#" Value="OwnerDraw" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.StatusBarPanelStyle OwnerDraw = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.StatusBarPanelStyle.OwnerDraw" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.StatusBarPanelStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.StatusBarPanel" />所有者によって描画します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="Text" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.StatusBarPanelStyle Text = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.StatusBarPanelStyle.Text" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.StatusBarPanelStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.StatusBarPanel" />標準フォントでテキストが表示されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

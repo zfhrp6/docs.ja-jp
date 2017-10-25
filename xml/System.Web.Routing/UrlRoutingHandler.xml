@@ -1,0 +1,233 @@
+<Type Name="UrlRoutingHandler" FullName="System.Web.Routing.UrlRoutingHandler">
+  <TypeSignature Language="C#" Value="public abstract class UrlRoutingHandler : System.Web.IHttpHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit UrlRoutingHandler extends System.Object implements class System.Web.IHttpHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Routing.UrlRoutingHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web.Routing, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET ルーティングが要求を処理する方法をカスタマイズできるようにするクラスの基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 代わりに、特定のルーティング ハンドラーを使用して、ファイル名拡張子をマップすることによって要求がどのように ASP.NET ルーティング処理をカスタマイズすることができます、<xref:System.Web.Routing.UrlRoutingModule>クラスのすべての要求のルーティング ハンドラーとして。  
+  
+ 派生するクラスを作成する特定のファイル名拡張子を持つ URL に対する要求を処理 ASP.NET ルーティング方法をカスタマイズする、<xref:System.Web.Routing.UrlRoutingHandler>クラスです。 たとえば、拡張子を持つファイルの要求を処理するカスタマイズされたルーティング ハンドラーを作成することができます`.abc`です。  
+  
+ 特定のファイル名拡張子のカスタマイズされたハンドラーを登録するには、Web.config ファイルでそのハンドラーを追加する必要があります。 次の例は、IIS 6.0 で実行されている ASP.NET Web サイトのカスタマイズされたハンドラーを登録する方法を示しています。 または[!INCLUDE[iisver](~/includes/iisver-md.md)]クラシック モードでします。  
+  
+```  
+<system.web>  
+  <httpHandlers>  
+    <add verb="*" path="*.abc"   
+        type="Contoso.Routing.CustomRoutingHandler" />  
+  </httpHandlers>  
+</system.web>  
+```  
+  
+ 次の例で実行されている ASP.NET Web サイトの同じハンドラーを登録する方法を示しています。[!INCLUDE[iisver](~/includes/iisver-md.md)]です。  
+  
+```  
+<system.webServer>  
+  <handlers>  
+    <add verb="*" path="*.abc"  
+        type="Contoso.Routing.CustomRoutingHandler"   
+        resourceType="Unspecified" />  
+  </handlers>  
+</system.webServer>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected UrlRoutingHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.UrlRoutingHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Routing.UrlRoutingHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReusable">
+      <MemberSignature Language="C#" Value="protected virtual bool IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.UrlRoutingHandler.IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の要求が使用できるかどうかを示す値を取得、<see cref="T:System.Web.Routing.UrlRoutingHandler" />インスタンス。</summary>
+        <value>常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="protected virtual void ProcessRequest (System.Web.HttpContext httpContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ProcessRequest(class System.Web.HttpContext httpContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.UrlRoutingHandler.ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpContext" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="httpContext">組み込みサーバー オブジェクトへの参照を提供するオブジェクト (たとえば、 <see cref="P:System.Web.HttpContext.Request" />、 <see cref="P:System.Web.HttpContext.Response" />、 <see cref="P:System.Web.HttpContext.Session" />、および<see cref="P:System.Web.HttpContext.Server" />)。</param>
+        <summary>ルートと一致する HTTP 要求を処理します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">要求がどのルートにも一致しません。</exception>
+        <exception cref="T:System.InvalidOperationException">ルートのハンドラーが定義されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="protected virtual void ProcessRequest (System.Web.HttpContextBase httpContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ProcessRequest(class System.Web.HttpContextBase httpContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.UrlRoutingHandler.ProcessRequest(System.Web.HttpContextBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpContext" Type="System.Web.HttpContextBase" />
+      </Parameters>
+      <Docs>
+        <param name="httpContext">組み込みサーバー オブジェクトへの参照を提供するオブジェクト (たとえば、 <see cref="P:System.Web.HttpContext.Request" />、 <see cref="P:System.Web.HttpContext.Response" />、 <see cref="P:System.Web.HttpContext.Session" />、および<see cref="P:System.Web.HttpContext.Server" />)。</param>
+        <summary>ルートと一致する HTTP 要求を処理します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">要求がどのルートにも一致しません。</exception>
+        <exception cref="T:System.InvalidOperationException">ルートのハンドラーが定義されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RouteCollection">
+      <MemberSignature Language="C#" Value="public System.Web.Routing.RouteCollection RouteCollection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Routing.RouteCollection RouteCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.UrlRoutingHandler.RouteCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Routing.RouteCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET アプリケーションに対して定義されているルートのコレクションを取得または設定します。</summary>
+        <value>ルートを格納しているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpHandler.IsReusable">
+      <MemberSignature Language="C#" Value="bool System.Web.IHttpHandler.IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.IHttpHandler.IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Routing.UrlRoutingHandler.System#Web#IHttpHandler#IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の要求が使用できるかどうかを示す値を取得、<see cref="T:System.Web.Routing.UrlRoutingHandler" />インスタンス。</summary>
+        <value>常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.Routing.UrlRoutingHandler> のインスタンスが <xref:System.Web.IHttpHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpHandler.ProcessRequest">
+      <MemberSignature Language="C#" Value="void IHttpHandler.ProcessRequest (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.IHttpHandler.ProcessRequest(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.UrlRoutingHandler.System#Web#IHttpHandler#ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">組み込みサーバー オブジェクトへの参照を提供するオブジェクト (たとえば、 <see cref="P:System.Web.HttpContext.Request" />、 <see cref="P:System.Web.HttpContext.Response" />、 <see cref="P:System.Web.HttpContext.Session" />、および<see cref="P:System.Web.HttpContext.Server" />)。</param>
+        <summary>ルートと一致する HTTP 要求を処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.Routing.UrlRoutingHandler> のインスタンスが <xref:System.Web.IHttpHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyAndProcessRequest">
+      <MemberSignature Language="C#" Value="protected abstract void VerifyAndProcessRequest (System.Web.IHttpHandler httpHandler, System.Web.HttpContextBase httpContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void VerifyAndProcessRequest(class System.Web.IHttpHandler httpHandler, class System.Web.HttpContextBase httpContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Routing.UrlRoutingHandler.VerifyAndProcessRequest(System.Web.IHttpHandler,System.Web.HttpContextBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpHandler" Type="System.Web.IHttpHandler" />
+        <Parameter Name="httpContext" Type="System.Web.HttpContextBase" />
+      </Parameters>
+      <Docs>
+        <param name="httpHandler">HTTP 要求の処理に使用されるオブジェクト。</param>
+        <param name="httpContext">組み込みサーバー オブジェクトへの参照を提供するオブジェクト (たとえば、 <see cref="P:System.Web.HttpContext.Request" />、 <see cref="P:System.Web.HttpContext.Response" />、 <see cref="P:System.Web.HttpContext.Session" />、および<see cref="P:System.Web.HttpContext.Server" />)。</param>
+        <summary>派生クラスでオーバーライドされると、HTTP ハンドラーを検証し、要求を処理するために必要な手順を実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

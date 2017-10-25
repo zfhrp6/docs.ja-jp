@@ -1,0 +1,92 @@
+<Type Name="IComponentConnector" FullName="System.Windows.Markup.IComponentConnector">
+  <TypeSignature Language="C#" Value="public interface IComponentConnector" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComponentConnector" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.IComponentConnector" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>名前付き XAML 要素およびその要素へのイベント ハンドラーのアタッチに対するマークアップのコンパイルとツールのサポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは内部で使用される<xref:System.Windows.Baml2006.Baml2006Reader>です。  
+  
+ 実装<xref:System.Windows.Markup.IComponentConnector.InitializeComponent%2A>は、フレームワークによって提供されるインフラストラクチャの一部として、広く観測可能なオブジェクトやアプリケーションとプログラミング モデルと XAML を使用するテクノロジを組み合わせたです。 たとえば、WPF ページおよびアプリケーション内の XAML ルート要素の生成されたクラスを見ると、ときに表示されます<xref:System.Windows.Markup.IComponentConnector.InitializeComponent%2A>出力で定義されています。 そのメソッドは、コンパイルされたアセンブリに存在し、XAML の解析時では、XAML UI のコンテンツの読み込みの WPF アプリケーションのモデルで役割を果たします。 WPF の統合の詳細については、`InitializeComponent`概念的を参照してください[アプリケーション管理の概要](~/docs/framework/wpf/app-development/application-management-overview.md)または[分離コードと wpf XAML](~/docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)です。  
+  
+ .NET Framework の以前のバージョンでは、このインターフェイスは、WPF 固有の WindowsBase アセンブリに存在します。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.IComponentConnector>は System.Xaml アセンブリにします。 。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+> [!TIP]
+>  解決するのにはエラー<xref:System.Windows.Markup.IComponentConnector>実行しようとしたビルド時に、多くの場合を更新していない、WPF プロジェクト正しくインジケーター。 具体的には、プロジェクトが参照していない対象とするプロジェクトの System.Xaml アセンブリ[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]です。 実行してみてください、`devenv /upgrade`プロジェクトのオプション、または System.Xaml が参照一覧になるように、プロジェクトのアセンブリ参照を調整します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Connect">
+      <MemberSignature Language="C#" Value="public void Connect (int connectionId, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Connect(int32 connectionId, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionId" Type="System.Int32" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="connectionId">呼び出しを区別するための識別子トークン。</param>
+        <param name="target">イベントと名前の接続先のターゲット。</param>
+        <summary>イベントと名前をコンパイルされたコンテンツにアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.IComponentConnector>内部で使用される<xref:System.Windows.Baml2006.Baml2006Reader>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeComponent">
+      <MemberSignature Language="C#" Value="public void InitializeComponent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitializeComponent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.IComponentConnector.InitializeComponent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントのコンパイルされたページを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.IComponentConnector>内部で使用される<xref:System.Windows.Baml2006.Baml2006Reader>です。  
+  
+ 実装<xref:System.Windows.Markup.IComponentConnector.InitializeComponent%2A>は、フレームワークによって提供されるインフラストラクチャの一部として、広く観測可能なオブジェクトやアプリケーションとプログラミング モデルと XAML を使用するテクノロジを組み合わせたです。 たとえば、WPF ページおよびアプリケーション内の XAML ルート要素の生成されたクラスを見ると、ときに表示されます<xref:System.Windows.Markup.IComponentConnector.InitializeComponent%2A>出力で定義されています。 そのメソッドは、コンパイルされたアセンブリに存在し、XAML の解析時では、XAML UI のコンテンツの読み込みの WPF アプリケーションのモデルで役割を果たします。 WPF の統合の詳細については、`InitializeComponent`概念的を参照してください[アプリケーション管理の概要](~/docs/framework/wpf/app-development/application-management-overview.md)または[分離コードと wpf XAML](~/docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

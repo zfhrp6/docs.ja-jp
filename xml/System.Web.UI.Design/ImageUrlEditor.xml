@@ -1,0 +1,97 @@
+<Type Name="ImageUrlEditor" FullName="System.Web.UI.Design.ImageUrlEditor">
+  <TypeSignature Language="C#" Value="public class ImageUrlEditor : System.Web.UI.Design.UrlEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ImageUrlEditor extends System.Web.UI.Design.UrlEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ImageUrlEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.UrlEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イメージを参照する URL を選択するためには、ユーザー インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ImageUrlEditor><xref:System.Drawing.Design.UITypeEditor>イメージを参照する URL プロパティを選択するためのダイアログ ボックスを提供します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[WebUITypeEditorsExample#5](~/samples/snippets/cpp/VS_Snippets_WebNet/WebUITypeEditorsExample/CPP/webcustomcontrol1.cpp#5)]
+ [!code-csharp[WebUITypeEditorsExample#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebUITypeEditorsExample/CS/webcustomcontrol1.cs#5)]
+ [!code-vb[WebUITypeEditorsExample#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebUITypeEditorsExample/VB/webcustomcontrol1.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImageUrlEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ImageUrlEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.ImageUrlEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Caption">
+      <MemberSignature Language="C#" Value="protected override string Caption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Caption" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ImageUrlEditor.Caption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択ダイアログ ウィンドウに表示するキャプションを取得します。</summary>
+        <value>選択ダイアログ ウィンドウに表示するキャプションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="protected override string Filter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ImageUrlEditor.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エディターのファイル名のフィルター文字列を取得します。 この文字列を使用して、ファイル ダイアログ ボックスの一覧に表示される項目が決定されます。</summary>
+        <value>ファイル ダイアログ ボックスの一覧をフィルター処理に使用できるフィルター文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ImageUrlEditor.Filter%2A>プロパティは、次の 2 つのフィルター オプションでフィルター文字列を指定します: 一般的なイメージ ファイル拡張子 (*.gif、*.jpg、*.jpeg、*.bmp、*.wmf, *.png) をすべてのファイルの 1 つ (\*.\*)。  
+  
+ フィルター文字列には、1 つまたは複数のフィルター オプションが含まれています。 各フィルター オプションには、垂直バー (&#124;) を続けて、フィルターの説明が含まれています。 およびフィルター パターン。 異なるフィルター オプションの文字列は、縦棒で区切られます。  
+  
+ 2 つのフィルター オプションを含むフィルター文字列の例を次に示します:"`Bitmap Files (*.bmp)|*.bmp|All Files (*.*)|*.*`"です。  
+  
+ フィルタ パターンをセミコロンで区切りますフィルター オプションで複数のフィルター パターンを指定できます。 最初のフィルター オプションが 3 つのフィルター パターンが指定されたフィルター文字列の例を次に示します:"`Image Files(*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif|All Files (*.*)|*.*`"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

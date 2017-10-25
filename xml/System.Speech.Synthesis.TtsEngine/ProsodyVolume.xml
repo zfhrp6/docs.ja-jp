@@ -1,0 +1,141 @@
+<Type Name="ProsodyVolume" FullName="System.Speech.Synthesis.TtsEngine.ProsodyVolume">
+  <TypeSignature Language="C#" Value="public enum ProsodyVolume" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProsodyVolume extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.TtsEngine.ProsodyVolume" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>値を列挙、<see langword="Volume" />のプロパティ、<see langword="Prosody" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常の合成の音声認識エンジンの出力のメンバーで定義されているボリューム<xref:System.Speech.Synthesis.TtsEngine.ProsodyVolume>最大使用可能な出力ラウドネスの % に対応します。 インスタンスの最大のボリュームの約 80% に読み上げが対応しています。  ただし、何らかの音声合成エンジン実装が指定された値のオーディオ出力を表示する方法を選択可能性があります<xref:System.Speech.Synthesis.TtsEngine.ProsodyVolume.Loud>です。  
+  
+ 基本ボリュームの現在の設定として、カスタムの合成音声認識エンジンが取得された、<xref:System.Speech.Synthesis.TtsEngine.ProsodyVolume>を通じて値、<xref:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.Volume%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.Volume%2A>サイトがそのエンジンを提供します。 <xref:System.Speech.Synthesis.TtsEngine.ProsodyVolume>。  
+  
+ 微調整し、に基づいて特定の出力のボリュームの変調が管理されている<xref:System.Speech.Synthesis.TtsEngine.TextFragment>オブジェクトのメンバーを使用して<xref:System.Speech.Synthesis.TtsEngine.ProsodyVolume>を設定する、<xref:System.Speech.Synthesis.TtsEngine.Prosody.Volume%2A>のインスタンスに<xref:System.Speech.Synthesis.TtsEngine.Prosody.Volume%2A>を作成または変更で使用される、<xref:System.Speech.Synthesis.TtsEngine.FragmentState>のインスタンスのオブジェクト<xref:System.Speech.Synthesis.TtsEngine.TextFragment>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.ProsodyVolume Default = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.ProsodyVolume.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.ProsodyVolume</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって返される値と同じで、現在の既定のボリューム値、<see cref="P:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.Volume" />プロパティを<see cref="T:System.Speech.Synthesis.TtsEngine.ITtsEngineSite" />サイトがそのエンジンを提供します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtraLoud">
+      <MemberSignature Language="C#" Value="ExtraLoud" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.ProsodyVolume ExtraLoud = int32(-7)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.ProsodyVolume.ExtraLoud" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.ProsodyVolume</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最大のボリューム。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtraSoft">
+      <MemberSignature Language="C#" Value="ExtraSoft" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.ProsodyVolume ExtraSoft = int32(-3)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.ProsodyVolume.ExtraSoft" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.ProsodyVolume</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>約 20% の最大のボリューム。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Loud">
+      <MemberSignature Language="C#" Value="Loud" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.ProsodyVolume Loud = int32(-6)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.ProsodyVolume.Loud" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.ProsodyVolume</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>約 80% の最大のボリューム。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Medium">
+      <MemberSignature Language="C#" Value="Medium" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.ProsodyVolume Medium = int32(-5)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.ProsodyVolume.Medium" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.ProsodyVolume</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>約 60% の最大のボリューム。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Silent">
+      <MemberSignature Language="C#" Value="Silent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.ProsodyVolume Silent = int32(-2)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.ProsodyVolume.Silent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.ProsodyVolume</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オフのボリューム</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Soft">
+      <MemberSignature Language="C#" Value="Soft" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.ProsodyVolume Soft = int32(-4)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.ProsodyVolume.Soft" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.ProsodyVolume</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>約 40% の最大のボリューム。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

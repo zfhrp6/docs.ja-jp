@@ -1,0 +1,333 @@
+<Type Name="EventTrigger" FullName="System.Windows.EventTrigger">
+  <TypeSignature Language="C#" Value="public class EventTrigger : System.Windows.TriggerBase, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventTrigger extends System.Windows.TriggerBase implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.EventTrigger" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.TriggerBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Actions")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>イベントへの応答で一連のアクションを適用するトリガーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Trigger>オブジェクトが、 <xref:System.Windows.Trigger.Setters%2A>、 <xref:System.Windows.TriggerBase.EnterActions%2A>、および<xref:System.Windows.TriggerBase.ExitActions%2A>変更や、特定のプロパティの状態に基づいてアクションを適用するプロパティ間<xref:System.Windows.EventTrigger>オブジェクトのセットを開始する<xref:System.Windows.EventTrigger.Actions%2A>指定したルーティング イベントの発生時です。 たとえばが使用する、<xref:System.Windows.EventTrigger>マウス ポインターが特定の一連のアニメーションを開始する[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]コントロール。 異なり<xref:System.Windows.Trigger>、<xref:System.Windows.EventTrigger>イベントを発生させた条件が true で不要になった後、アクションは元に戻すできないため、状態の終了の概念がありません。  
+  
+ 使用すると、<xref:System.Windows.EventTrigger>コントロールの本質的な動作に影響を与えないイベントを選択する必要があります。 などのコントロール<xref:System.Windows.Controls.Button>または<xref:System.Windows.Controls.TextBox>マウス クリックなどのユーザー入力イベントの特定の操作し、キーボード イベント。 たとえば、ボタンのスタイル設定は設定しようとする場合、<xref:System.Windows.Input.Mouse.MouseDown>イベントとして、<xref:System.Windows.EventTrigger.RoutedEvent%2A>の<xref:System.Windows.EventTrigger>、<xref:System.Windows.EventTrigger>イベント最初取得によって処理されるため、ボタンは、適用されることはありません。 代わりに、使用することができます、<xref:System.Windows.Input.Mouse.PreviewMouseDown>イベントまたは別のイベントです。  
+  
+ 使用している場合は、データ バインディングを使用する場合、<xref:System.Windows.Data.Binding.TargetUpdated>設定する必要があります、イベント、<xref:System.Windows.Data.Binding.NotifyOnTargetUpdated%2A>の値、<xref:System.Windows.Data.Binding>オブジェクトを`true`イベントが発生するのです。  
+  
+ 追加する、<xref:System.Windows.TriggerAction>に子、<xref:System.Windows.EventTrigger>オブジェクトが暗黙的に追加して、<xref:System.Windows.TriggerActionCollection>の<xref:System.Windows.EventTrigger>オブジェクト。  
+  
+   
+  
+## Examples  
+ この例では、アニメーション化するスタイルのイベント トリガーを使用して、<xref:System.Windows.UIElement.MouseEnter>と<xref:System.Windows.UIElement.MouseLeave>のイベント、<xref:System.Windows.FrameworkElement>です。 この例では、<xref:System.Windows.Style>が、 <xref:System.Windows.Style.TargetType%2A> 'éý'<xref:System.Windows.Shapes.Rectangle>です。 したがって、修飾する必要はありません、`MouseEnter`と`MouseLeave`イベント名とクラス名。  
+  
+ [!code-xaml[StyleEventTriggerAnimation#EventTriggerSnippet](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleEventTriggerAnimation/CS/Default.xaml#eventtriggersnippet)]
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventTrigger ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventTrigger.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.EventTrigger" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventTrigger (System.Windows.RoutedEvent routedEvent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.RoutedEvent routedEvent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventTrigger.#ctor(System.Windows.RoutedEvent)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="routedEvent" Type="System.Windows.RoutedEvent" />
+      </Parameters>
+      <Docs>
+        <param name="routedEvent"><see cref="T:System.Windows.RoutedEvent" />このトリガーをアクティブにします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.EventTrigger" />クラス イベントを指定しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Actions">
+      <MemberSignature Language="C#" Value="public System.Windows.TriggerActionCollection Actions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TriggerActionCollection Actions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.EventTrigger.Actions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.TriggerActionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生したときに適用するアクションのコレクションを取得します。</summary>
+        <value>既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり<xref:System.Windows.Trigger>、<xref:System.Windows.EventTrigger>イベントを発生させた条件が true で不要になった後、アクションは元に戻すできないため、状態の終了の概念がありません。  
+  
+ 追加する、<xref:System.Windows.TriggerAction>に子、<xref:System.Windows.EventTrigger>オブジェクトが暗黙的に追加して、<xref:System.Windows.TriggerActionCollection>の<xref:System.Windows.EventTrigger>オブジェクト。  
+  
+> [!NOTE]
+>  このプロパティのみ設定できます[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]に示すコレクション構文を使用して、またはコレクション オブジェクトにアクセスして追加などのさまざまなメソッドを使用します。 コレクション オブジェクト自体にアクセスするプロパティは読み取り専用で、コレクション自体は読み取り/書き込みです。  
+  
+<a name="xamlPropertyElementUsage_Actions"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Actions>  
+    OneOrMoreTriggerActions  
+  </object.Actions>  
+</object>  
+```  
+  
+<a name="xamlValues_Actions"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *OneOrMoreTriggerActions*  
+ 1 つまたは複数<xref:System.Windows.TriggerAction>オブジェクト。  
+  
+   
+  
+## Examples  
+ この例は、スタイルのイベント トリガーを使用してアニメーション化する方法を説明します、<xref:System.Windows.UIElement.MouseEnter>と<xref:System.Windows.UIElement.MouseLeave>のイベント、<xref:System.Windows.FrameworkElement>です。 前述のように、追加、<xref:System.Windows.TriggerAction>子を<xref:System.Windows.EventTrigger>オブジェクトが暗黙的に追加して、<xref:System.Windows.TriggerActionCollection>の<xref:System.Windows.EventTrigger>オブジェクト。 そのため、この例で`<EventTrigger.Actions>`は暗黙の型。  
+  
+ [!code-xaml[StyleEventTriggerAnimation#EventTriggerSnippet](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleEventTriggerAnimation/CS/Default.xaml#eventtriggersnippet)]
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="protected virtual void AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventTrigger.AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Windows.TriggerAction" />に追加するオブジェクト、<see cref="P:System.Windows.EventTrigger.Actions" />このトリガーのコレクション。</param>
+        <summary>指定したオブジェクトを追加、<see cref="P:System.Windows.EventTrigger.Actions" />現在のイベントのトリガーのコレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddText">
+      <MemberSignature Language="C#" Value="protected virtual void AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventTrigger.AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">このパラメーターは使用されません。</param>
+        <summary>このメソッドはサポートされていませんし、例外が発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RoutedEvent">
+      <MemberSignature Language="C#" Value="public System.Windows.RoutedEvent RoutedEvent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.RoutedEvent RoutedEvent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.EventTrigger.RoutedEvent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.RoutedEvent" />このトリガーを起動します。</summary>
+        <value>既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.EventTrigger>s は、指定したルーティング イベントが発生したときに、一連のアクションを適用します。 たとえばが使用する<xref:System.Windows.EventTrigger>マウス ポインターが特定の一連のアニメーションを開始する[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]コントロール。  
+  
+ 場合、テンプレート、またはこれを含むスタイル<xref:System.Windows.EventTrigger>はありません、`TargetType`プロパティを指定する必要があります品質のクラス名を使用して、イベント名、`ClassName.EventName`構文です。  
+  
+ <xref:System.Windows.EventTrigger>オブジェクトが削除されているイベントを処理できない<xref:System.Windows.RoutedEventArgs.Handled%2A>です。 などのコントロール<xref:System.Windows.Controls.Button>または<xref:System.Windows.Controls.TextBox>マウス クリックなどのユーザー入力イベントの特定の操作し、キーボード イベント。 たとえば、ボタンのスタイル設定は設定しようとする場合、<xref:System.Windows.Input.Mouse.MouseDown>イベントとして、<xref:System.Windows.EventTrigger.RoutedEvent%2A>の<xref:System.Windows.EventTrigger>、<xref:System.Windows.EventTrigger>イベント最初取得によって処理されるため、ボタンは、適用されることはありません。 代わりに、使用することができます、<xref:System.Windows.Input.Mouse.PreviewMouseDown>イベントまたは別のイベントです。  
+  
+ 使用している場合は、データ バインディングを使用する場合、<xref:System.Windows.Data.Binding.TargetUpdated>設定する必要があります、イベント、<xref:System.Windows.Data.Binding.NotifyOnTargetUpdated%2A>の値、<xref:System.Windows.Data.Binding>を true に、イベントが発生するオブジェクト。  
+  
+   
+  
+## Examples  
+ この例では、アニメーション化するスタイルのイベント トリガーを使用して、<xref:System.Windows.UIElement.MouseEnter>と<xref:System.Windows.UIElement.MouseLeave>のイベント、<xref:System.Windows.FrameworkElement>です。 この例では、<xref:System.Windows.Style>が、 <xref:System.Windows.Style.TargetType%2A> 'éý'<xref:System.Windows.Shapes.Rectangle>です。 したがって、修飾する必要はありません、`MouseEnter`と`MouseLeave`イベント名とクラス名。  
+  
+ [!code-xaml[StyleEventTriggerAnimation#EventTriggerSnippet](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleEventTriggerAnimation/CS/Default.xaml#eventtriggersnippet)]
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Windows.EventTrigger.RoutedEvent" />プロパティを null にすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeActions">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeActions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeActions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventTrigger.ShouldSerializeActions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シリアル化プロセスがこのクラスのインスタンスの <see cref="P:System.Windows.EventTrigger.Actions" /> プロパティの有効値をシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>返します<see langword="true" />場合、<see cref="P:System.Windows.EventTrigger.Actions" />プロパティの値が、それ以外のシリアル化する必要があります<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceName">
+      <MemberSignature Language="C#" Value="public string SourceName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.EventTrigger.SourceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このトリガーをアクティブにするイベントでオブジェクトの名前を取得または設定します。 これは、要素トリガーまたはテンプレート トリガーでのみ使用されます。</summary>
+        <value>既定値は <see langword="null" /> です。 このプロパティの値が場合<see langword="null" />イベントの発生について監視される要素はテンプレートの親または論理ツリー ルートです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Where のスコープ内の要素の名前に、このプロパティを設定することができます、トリガーのコレクション (コレクションこの<xref:System.Windows.EventTrigger>の一部である) を適用します。 これは、これを格納しているテンプレート内にある名前付きの要素では通常<xref:System.Windows.EventTrigger>です。 設定する場合、<xref:System.Windows.FrameworkElement.Triggers%2A>要素を直接そのプロパティは、その親要素のスコープ内で名前を持つ要素。  
+  
+ オブジェクトを使用して、名前を付けることができます、 [X:name ディレクティブ](~/docs/framework/xaml-services/x-name-directive.md)構文です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">後に、<see cref="T:System.Windows.EventTrigger" />は使用中で、変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventTrigger.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する子オブジェクト。</param>
+        <summary>子オブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.EventTrigger> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventTrigger.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.EventTrigger> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

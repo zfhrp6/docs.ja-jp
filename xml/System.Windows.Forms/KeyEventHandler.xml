@@ -1,0 +1,43 @@
+<Type Name="KeyEventHandler" FullName="System.Windows.Forms.KeyEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void KeyEventHandler(object sender, KeyEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed KeyEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.KeyEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Windows.Forms.Control.KeyUp" />または<see cref="E:System.Windows.Forms.Control.KeyDown" />のイベント、<see cref="T:System.Windows.Forms.Control" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.KeyEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 デリゲートでイベントを処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[Windows.Forms.Control Members4#3](~/samples/snippets/cpp/VS_Snippets_Winforms/Windows.Forms.Control Members4/CPP/controlmembers4.cpp#3)]
+ [!code-csharp[Windows.Forms.Control Members4#3](~/samples/snippets/csharp/VS_Snippets_Winforms/Windows.Forms.Control Members4/CS/controlmembers4.cs#3)]
+ [!code-vb[Windows.Forms.Control Members4#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Windows.Forms.Control Members4/VB/controlmembers4.vb#3)]  
+  
+ [!code-cpp[Control.KeyDown#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Control.KeyDown/CPP/form1.cpp#1)]
+ [!code-csharp[Control.KeyDown#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Control.KeyDown/CS/form1.cs#1)]
+ [!code-vb[Control.KeyDown#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Control.KeyDown/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

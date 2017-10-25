@@ -1,0 +1,409 @@
+<Type Name="EncoderValue" FullName="System.Drawing.Imaging.EncoderValue">
+  <TypeSignature Language="C#" Value="public enum EncoderValue" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EncoderValue extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.EncoderValue" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>使用する場合、JPEG または TIFF イメージ エンコーダーに渡されるパラメーター値を指定するため、<see cref="M:System.Drawing.Image.Save(System.String,System.Drawing.Imaging.ImageCodecInfo,System.Drawing.Imaging.EncoderParameters)" />または<see cref="M:System.Drawing.Image.SaveAdd(System.Drawing.Imaging.EncoderParameters)" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと、<xref:System.Drawing.Image.Save%2A>または<xref:System.Drawing.Image.SaveAdd%2A>のメソッド、<xref:System.Drawing.Image>オブジェクトを渡すことによって、イメージ エンコーダーにパラメーターを渡すことができます、<xref:System.Drawing.Imaging.EncoderParameters>オブジェクトを<xref:System.Drawing.Image.Save%2A>または<xref:System.Drawing.Image.SaveAdd%2A>メソッドです。 <xref:System.Drawing.Imaging.EncoderParameters>オブジェクトには配列が含まれています<xref:System.Drawing.Imaging.EncoderParameter>オブジェクト。 各<xref:System.Drawing.Imaging.EncoderParameter>オブジェクトには値の配列と<xref:System.Drawing.Imaging.Encoder>パラメーター カテゴリを指定するプロパティです。 <xref:System.Drawing.Imaging.EncoderValue>列挙体は、TIFF、JPEG に渡すことができる値の一部のイメージ エンコーダー用に名前を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ColorTypeCMYK">
+      <MemberSignature Language="C#" Value="ColorTypeCMYK" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue ColorTypeCMYK = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.ColorTypeCMYK" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GDI + version 1.0 では使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorTypeYCCK">
+      <MemberSignature Language="C#" Value="ColorTypeYCCK" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue ColorTypeYCCK = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.ColorTypeYCCK" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GDI + version 1.0 では使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CompressionCCITT3">
+      <MemberSignature Language="C#" Value="CompressionCCITT3" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue CompressionCCITT3 = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.CompressionCCITT3" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CCITT3 圧縮スキームを指定します。 圧縮カテゴリに属している、パラメーターとして TIFF エンコーダーに渡されることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CompressionCCITT4">
+      <MemberSignature Language="C#" Value="CompressionCCITT4" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue CompressionCCITT4 = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.CompressionCCITT4" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CCITT4 圧縮スキームを指定します。 圧縮カテゴリに属している、パラメーターとして TIFF エンコーダーに渡されることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CompressionLZW">
+      <MemberSignature Language="C#" Value="CompressionLZW" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue CompressionLZW = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.CompressionLZW" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>LZW 圧縮スキームを指定します。 圧縮カテゴリに属している、パラメーターとして TIFF エンコーダーに渡されることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CompressionNone">
+      <MemberSignature Language="C#" Value="CompressionNone" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue CompressionNone = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.CompressionNone" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>圧縮なしを指定します。 圧縮カテゴリに属している、パラメーターとして TIFF エンコーダーに渡されることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CompressionRle">
+      <MemberSignature Language="C#" Value="CompressionRle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue CompressionRle = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.CompressionRle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>RLE 圧縮方式を指定します。 圧縮カテゴリに属している、パラメーターとして TIFF エンコーダーに渡されることができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="Flush" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue Flush = int32(20)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.Flush" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>多重フレームのファイルまたはストリームを閉じる必要がありますを指定します。 保存先に属するパラメーターとして TIFF エンコーダーに渡すことがフラグのカテゴリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameDimensionPage">
+      <MemberSignature Language="C#" Value="FrameDimensionPage" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue FrameDimensionPage = int32(23)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.FrameDimensionPage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フレームがイメージのディメンションのページに追加することを指定します。 保存先に属するパラメーターとして TIFF エンコーダーに渡すことがフラグのカテゴリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameDimensionResolution">
+      <MemberSignature Language="C#" Value="FrameDimensionResolution" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue FrameDimensionResolution = int32(22)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.FrameDimensionResolution" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GDI + version 1.0 では使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameDimensionTime">
+      <MemberSignature Language="C#" Value="FrameDimensionTime" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue FrameDimensionTime = int32(21)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.FrameDimensionTime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GDI + version 1.0 では使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LastFrame">
+      <MemberSignature Language="C#" Value="LastFrame" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue LastFrame = int32(19)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.LastFrame" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>多重フレーム イメージでは、最後のフレームを指定します。 保存先に属するパラメーターとして TIFF エンコーダーに渡すことがフラグのカテゴリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiFrame">
+      <MemberSignature Language="C#" Value="MultiFrame" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue MultiFrame = int32(18)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.MultiFrame" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージが複数のフレーム (ページ) を持つことを指定します。 保存先に属するパラメーターとして TIFF エンコーダーに渡すことがフラグのカテゴリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderNonProgressive">
+      <MemberSignature Language="C#" Value="RenderNonProgressive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue RenderNonProgressive = int32(12)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.RenderNonProgressive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GDI + version 1.0 では使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderProgressive">
+      <MemberSignature Language="C#" Value="RenderProgressive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue RenderProgressive = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.RenderProgressive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GDI + version 1.0 では使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ScanMethodInterlaced">
+      <MemberSignature Language="C#" Value="ScanMethodInterlaced" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue ScanMethodInterlaced = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.ScanMethodInterlaced" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GDI + version 1.0 では使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ScanMethodNonInterlaced">
+      <MemberSignature Language="C#" Value="ScanMethodNonInterlaced" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue ScanMethodNonInterlaced = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.ScanMethodNonInterlaced" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GDI + version 1.0 では使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformFlipHorizontal">
+      <MemberSignature Language="C#" Value="TransformFlipHorizontal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue TransformFlipHorizontal = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.TransformFlipHorizontal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージが、(縦軸) 水平方向に反転されることを指定します。 JPEG エンコーダーに変換カテゴリに属するパラメーターとして渡すことができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformFlipVertical">
+      <MemberSignature Language="C#" Value="TransformFlipVertical" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue TransformFlipVertical = int32(17)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.TransformFlipVertical" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージを (水平軸) 垂直方向に反転されることを指定します。 JPEG エンコーダーに変換カテゴリに属するパラメーターとして渡すことができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformRotate180">
+      <MemberSignature Language="C#" Value="TransformRotate180" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue TransformRotate180 = int32(14)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.TransformRotate180" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージが中心の周りの 180 度回転することを指定します。 JPEG エンコーダーに変換カテゴリに属するパラメーターとして渡すことができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformRotate270">
+      <MemberSignature Language="C#" Value="TransformRotate270" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue TransformRotate270 = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.TransformRotate270" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージが中心の周りを時計回りに 270 度回転することを指定します。 JPEG エンコーダーに変換カテゴリに属するパラメーターとして渡すことができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformRotate90">
+      <MemberSignature Language="C#" Value="TransformRotate90" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue TransformRotate90 = int32(13)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.TransformRotate90" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>画像の中心に時計回りに 90 度回転することを指定します。 JPEG エンコーダーに変換カテゴリに属するパラメーターとして渡すことができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="VersionGif87">
+      <MemberSignature Language="C#" Value="VersionGif87" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue VersionGif87 = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.VersionGif87" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GDI + version 1.0 では使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="VersionGif89">
+      <MemberSignature Language="C#" Value="VersionGif89" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.EncoderValue VersionGif89 = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.EncoderValue.VersionGif89" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.EncoderValue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>GDI + version 1.0 では使用されません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

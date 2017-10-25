@@ -1,0 +1,1218 @@
+<Type Name="BitArray" FullName="System.Collections.BitArray">
+  <TypeSignature Language="C#" Value="public sealed class BitArray : ICloneable, System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit BitArray extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.BitArray" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ブール値として表される、ビット値の小型の配列を管理する場所<see langword="true" />ビットがオン (1) であることを示しますと<see langword="false" />ビットがオフ (0) を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.BitArray>クラスは、コレクション クラスを容量は常に、カウントと同じです。 要素に追加されます、<xref:System.Collections.BitArray>を増やすことで、<xref:System.Collections.BitArray.Length%2A>プロパティです。 短縮することによって要素が削除された、<xref:System.Collections.BitArray.Length%2A>プロパティです。 サイズ、<xref:System.Collections.BitArray>がクライアントによって制御されるインデックスの末尾を越えた、<xref:System.Collections.BitArray>スロー、<xref:System.ArgumentException>です。<xref:System.Collections.BitArray>クラスを一度になどを使用して、フィルターを変更する複数の要素を許可するものも含め、他のコレクションに存在しないメソッドを提供<xref:System.Collections.BitArray.And%2A>、 <xref:System.Collections.BitArray.Or%2A>、 <xref:System.Collections.BitArray.Xor%2A> 、 <xref:System.Collections.BitArray.Not%2A>、および<xref:System.Collections.BitArray.SetAll%2A>です。  
+  
+ <xref:System.Collections.Specialized.BitVector32>クラスと同じ機能を提供する構造体は、 <xref:System.Collections.BitArray>、ですが、パフォーマンスが向上します。 <xref:System.Collections.Specialized.BitVector32>値型であるために、高速化し、したがって一方、スタックに割り当てる<xref:System.Collections.BitArray>は参照型であり、そのため、ヒープに割り当てられています。  
+  
+ <xref:System.Collections.Specialized.BitVector32?displayProperty=nameWithType>32 ビットだけを格納できますが<xref:System.Collections.BitArray>ビット数が変数に格納できます。 <xref:System.Collections.Specialized.BitVector32>ビット フラグと小さい整数、それによってに理想的が公開されていないデータをユーザーの両方を格納します。 ただし、必要なビット フラグの数が不明を変数や 32 より大きい値を使用して<xref:System.Collections.BitArray>代わりにします。  
+  
+ <xref:System.Collections.BitArray><xref:System.Collections>名前空間です。<xref:System.Collections.Specialized.BitVector32>では、<xref:System.Collections.Specialized>名前空間。  
+  
+ このコレクション内の要素は、整数インデックスを使用してアクセスできます。  このコレクションのインデックスは 0 から始まります。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成および初期化する方法を示しています、<xref:System.Collections.BitArray>とその値を印刷する方法です。  
+  
+ [!code-cpp[Classic BitArray Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BitArray Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BitArray Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BitArray Example/CS/source.cs#1)]
+ [!code-vb[Classic BitArray Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BitArray Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ この実装は同期済みは提供されませんの (スレッド セーフな) ラッパーを<see cref="T:System.Collections.BitArray" />です。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitArray (bool[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.#ctor(System.Boolean[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="values" Type="System.Boolean[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">コピーするブール値配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.BitArray" />ビット値を格納するクラスが指定されたブール値の配列からコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`内の要素の数は、`values`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="values" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitArray (byte[] bytes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] bytes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bytes" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="bytes">コピーする値を格納しているバイト配列。各バイトは 8 個の連続ビットを表します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.BitArray" />ビット値を格納するクラスが指定されたバイト配列からコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列の最初のバイトがビット 0 ~ 7 を表し、2 番目のバイトは 8 から 15 ビット ビットを表します。 各バイトの最下位ビットが一番低いインデックス値を表します:" `bytes` [0] (& a) 1" represents ビット 0、" `bytes` [0] & 2" represents ビット 1、" `bytes` [0] (& a) ビット 2、およびに 4" を表します。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`内の要素の数は、`bytes`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bytes" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">長さ<paramref name="bytes" />がより大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitArray (System.Collections.BitArray bits);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.BitArray bits) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.#ctor(System.Collections.BitArray)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bits" Type="System.Collections.BitArray" />
+      </Parameters>
+      <Docs>
+        <param name="bits"><see cref="T:System.Collections.BitArray" />をコピーします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.BitArray" />ビット値を格納するクラスが指定された対象からコピー<see cref="T:System.Collections.BitArray" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`内の要素の数は、`bits`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bits" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitArray (int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="length">新しい <see cref="T:System.Collections.BitArray" /> 内のビット値の数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.BitArray" />クラスに初期設定は、ビット値の指定した数を保持できる<see langword="false" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`length`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="length" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitArray (int[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.#ctor(System.Int32[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="values" Type="System.Int32[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">コピーする値を格納している整数配列。各整数は 32 個の連続ビットを表します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.BitArray" />ビット値を格納するクラスが指定した 32 ビット整数の配列からコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初の番号`values`配列の要素を表すビット 0 ~ 31、配列の 2 番目の数値を表す 32 ビットからビット 63 というようにします。 各整数の最下位ビットが一番低いインデックス値を表す:" `values` [0] (& a) 1" represents ビット 0、" `values` [0] & 2" represents ビット 1、" `values` [0] (& a) ビット 2、およびに 4" を表します。  
+  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`内の要素の数は、`values`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="values" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">長さ<paramref name="values" />がより大きい<see cref="F:System.Int32.MaxValue" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitArray (int length, bool defaultValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 length, bool defaultValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.#ctor(System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="length" Type="System.Int32" />
+        <Parameter Name="defaultValue" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="length">新しい <see cref="T:System.Collections.BitArray" /> 内のビット値の数。</param>
+        <param name="defaultValue">各ビットに代入するブール値。</param>
+        <summary>指定数のビット値を格納できる、<see cref="T:System.Collections.BitArray" /> クラスの新しいインスタンスを初期化します。ビット値は指定値に初期設定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、O (`n`) 操作では、ここで`n`は`length`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="length" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="And">
+      <MemberSignature Language="C#" Value="public System.Collections.BitArray And (System.Collections.BitArray value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.BitArray And(class System.Collections.BitArray value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.And(System.Collections.BitArray)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.BitArray</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Collections.BitArray" />
+      </Parameters>
+      <Docs>
+        <param name="value">ビットごとの AND 演算の実行対象となる配列。</param>
+        <summary>現在の要素間でビットごとの AND 演算を実行<see cref="T:System.Collections.BitArray" />オブジェクトと指定した配列内の対応する要素。 現在<see cref="T:System.Collections.BitArray" />ビットごとの AND 演算の結果を格納するオブジェクトが変更されます。</summary>
+        <returns>現在への参照は、ビットごとの AND 演算の結果を格納する配列<see cref="T:System.Collections.BitArray" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビットごとの AND 演算を返します`true`両方のオペランドが場合`true`、しを返します`false`場合は 1 つまたは両方のオペランドが`false`です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.BitArray.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つの間でビットごとの AND 演算を実行する方法を示しています。<xref:System.Collections.BitArray>オブジェクト。  
+  
+ [!code-cpp[Classic BitArray.And Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BitArray.And Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BitArray.And Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BitArray.And Example/CS/source.cs#1)]
+ [!code-vb[Classic BitArray.And Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BitArray.And Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />現在<see cref="T:System.Collections.BitArray" />は同じ数の要素はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.BitArray" /> の簡易コピーを作成します。</summary>
+        <returns><see cref="T:System.Collections.BitArray" /> の簡易コピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの簡易コピーは、参照型または値の型が参照先のオブジェクトはコピーしないかどうか、コレクションの要素のみをコピーします。 新しいコレクション内の参照は、元のコレクション内の参照をポイントする同じオブジェクトをポイントします。  
+  
+ これに対し、コレクションのディープ コピーされた要素をコピーして、要素が直接または間接的に参照するすべてです。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.BitArray.Count%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.BitArray" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Collections.BitArray" /> 全体を、互換性のある 1 次元の <see cref="T:System.Array" /> にコピーします。コピー操作は、コピー先の配列の指定したインデックスから始まる部分に行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された配列は、互換性のある型でなければなりません。 のみ`bool`、 `int`、および`byte`配列の型はサポートされています。  
+  
+ このメソッドを使用して<xref:System.Array.Copy%2A?displayProperty=nameWithType>要素のコピー。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.BitArray.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例をコピーする方法を示しています、 <xref:System.Collections.BitArray> 1 次元に<xref:System.Array>です。  
+  
+ [!code-cpp[Classic BitArray.CopyTo Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BitArray.CopyTo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BitArray.CopyTo Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BitArray.CopyTo Example/CS/source.cs#1)]
+ [!code-vb[Classic BitArray.CopyTo Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BitArray.CopyTo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ コピー元の <see cref="T:System.Collections.BitArray" /> の要素数が、コピー先 <paramref name="array" /> の <paramref name="index" /> から最後までの使用可能領域を超えています。</exception>
+        <exception cref="T:System.InvalidCastException">コピー元の <see cref="T:System.Collections.BitArray" /> の型をコピー先の <paramref name="array" /> の型に自動的にキャストすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.BitArray.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.BitArray" /> に格納されている要素の数を取得します。</summary>
+        <value><see cref="T:System.Collections.BitArray" /> に格納されている要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.BitArray.Length%2A>および<xref:System.Collections.BitArray.Count%2A>同じ値を返します。 <xref:System.Collections.BitArray.Length%2A>特定の値に設定することができますが、<xref:System.Collections.BitArray.Count%2A>は読み取り専用です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public bool Get (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Get(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.Get(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する値の 0 から始まるインデックス。</param>
+        <summary>特定位置にあるビットの値を取得、<see cref="T:System.Collections.BitArray" />です。</summary>
+        <returns>位置にあるビット値<paramref name="index" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定および特定の要素を取得する方法を示しています、<xref:System.Collections.BitArray>です。  
+  
+ [!code-cpp[Classic BitArray.Get Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BitArray.Get Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BitArray.Get Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BitArray.Get Example/CS/source.cs#1)]
+ [!code-vb[Classic BitArray.Get Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BitArray.Get Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />内の要素の数以上、<see cref="T:System.Collections.BitArray" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.BitArray" /> を反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />全体の<see cref="T:System.Collections.BitArray" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C# 言語の `foreach` ステートメント (Visual Basic の場合は `for each`) を使用することで列挙子の複雑さを回避できます。  したがって、列挙子を直接操作するのではなく、`foreach` を使用することをお勧めします。  
+  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ 最初に、列挙子はコレクション内の 1 番目の要素の前に位置付けられます。 <xref:System.Collections.IEnumerator.Reset%2A> を実行した場合も、列挙子はこの位置に戻されます。  この位置では、<xref:System.Collections.IEnumerator.Current%2A> が未定義です。 そのため、<xref:System.Collections.IEnumerator.MoveNext%2A> の値を読み取る前に、<xref:System.Collections.IEnumerator.Current%2A> を呼び出して列挙子をコレクションの最初の要素に進める必要があります。  
+  
+ <xref:System.Collections.IEnumerator.Current%2A> は、<xref:System.Collections.IEnumerator.MoveNext%2A> または <xref:System.Collections.IEnumerator.Reset%2A> が呼び出されるまでは同じオブジェクトを返します。 <xref:System.Collections.IEnumerator.MoveNext%2A> は、<xref:System.Collections.IEnumerator.Current%2A> を次の要素に設定します。  
+  
+ 場合<xref:System.Collections.IEnumerator.MoveNext%2A>列挙子をコレクションの末尾が、コレクション内の最後の要素の後に配置されているパスと<xref:System.Collections.IEnumerator.MoveNext%2A>返します`false`です。 列挙子がこの位置では、後続の呼び出しの場合<xref:System.Collections.IEnumerator.MoveNext%2A>を返すことも`false`します。 最後の呼び出し場合<xref:System.Collections.IEnumerator.MoveNext%2A>返される`false`、<xref:System.Collections.IEnumerator.Current%2A>が定義されていません。 <xref:System.Collections.IEnumerator.Current%2A> をコレクションの最初の要素にもう一度設定するには、<xref:System.Collections.IEnumerator.Reset%2A> を呼び出してから <xref:System.Collections.IEnumerator.MoveNext%2A> を呼び出します。  
+  
+ コレクションが変更されない限り、列挙子は有効です。 コレクションに対して変更 (要素の追加、変更、削除など) が行われると、列挙子は回復不可能な無効状態になり、その動作は未定義になります。  
+  
+ 列挙子にはコレクションへの排他アクセス権限はないため、コレクションの列挙処理は本質的にスレッド セーフな処理ではありません。  列挙処理でスレッド セーフを確保するには、列挙処理が終わるまでコレクションをロックできます。  コレクションに対し複数のスレッドがアクセスして読み取りや書き込みを行うことができるようにするには、独自に同期化を実装する必要があります。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.BitArray.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.BitArray" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>このプロパティは常に<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.BitArray>実装する、<xref:System.Collections.BitArray.IsReadOnly%2A>プロパティが必要としているため、<xref:System.Collections.IList?displayProperty=nameWithType>インターフェイスです。  
+  
+ 読み取り専用のコレクションでは、コレクション作成後に要素の追加、削除、または変更はできません。  
+  
+ 読み取り専用であるコレクションは、コレクションのコレクションの変更を防止するラッパーです。そのため、基になるコレクションの変更が加えられた、読み取り専用コレクションはそれらの変更を反映します。  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.BitArray.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.BitArray" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>このプロパティは常に<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.BitArray>実装する、<xref:System.Collections.BitArray.IsSynchronized%2A>プロパティが必要としているため、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.BitArray.SyncRoot%2A>列挙中にします。  
+  
+ [!code-cpp[Classic BitArray Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BitArray Example/CPP/source2.cpp#2)]
+ [!code-csharp[Classic BitArray Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BitArray Example/CS/source2.cs#2)]
+ [!code-vb[Classic BitArray Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BitArray Example/VB/source2.vb#2)]  
+  
+ このメソッドは、o (1) 操作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public bool this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.BitArray.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する値の、0 から始まるインデックス番号。</param>
+        <summary>取得またはの特定位置にあるビットの値を設定、<see cref="T:System.Collections.BitArray" />です。</summary>
+        <value>位置にあるビット値<paramref name="index" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、`myCollection[index]` という構文を使用して、コレクション内の特定の要素にアクセスできます。  
+  
+ C# 言語キーワードを使用して実装する代わりに、インデクサーの定義、<xref:System.Collections.BitArray.Item%2A>プロパティです。 Visual Basic は、<xref:System.Collections.BitArray.Item%2A> を既定のプロパティとして実装しており、同様のインデックス機能を提供します。  
+  
+ このプロパティの値を取得する場合は、o (1) 操作です。プロパティの設定は、o (1) 操作ではもです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.BitArray.Count" /> 以上になっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LeftShift">
+      <MemberSignature Language="C#" Value="public System.Collections.BitArray LeftShift (int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.BitArray LeftShift(int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.LeftShift(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.BitArray</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="count">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.BitArray.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の要素の数、<see cref="T:System.Collections.BitArray" />です。</summary>
+        <value><see cref="T:System.Collections.BitArray" /> にある要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.BitArray.Length%2A>および<xref:System.Collections.BitArray.Count%2A>同じ値を返します。 <xref:System.Collections.BitArray.Length%2A>特定の値に設定することができますが、<xref:System.Collections.BitArray.Count%2A>は読み取り専用です。  
+  
+ 場合<xref:System.Collections.BitArray.Length%2A>である値に設定されているより小さい<xref:System.Collections.BitArray.Count%2A>、<xref:System.Collections.BitArray>は切り捨てられますとインデックスの後に要素`value`-1 が削除されます。  
+  
+ 場合<xref:System.Collections.BitArray.Length%2A>よりも大きい値に設定されている<xref:System.Collections.BitArray.Count%2A>、新しい要素に設定`false`です。  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。 このプロパティの設定は、O (`n`) 操作です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Not">
+      <MemberSignature Language="C#" Value="public System.Collections.BitArray Not ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.BitArray Not() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.Not" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.BitArray</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のすべてのビット値を反転<see cref="T:System.Collections.BitArray" />要素に設定できるように、<see langword="true" />に変更されます<see langword="false" />、要素に設定して<see langword="false" />に変更されます<see langword="true" />です。</summary>
+        <returns>ビット値の反転後の現在のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.BitArray.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、適用しないようにする方法を示しています、<xref:System.Collections.BitArray>です。  
+  
+ [!code-cpp[Classic BitArray.Not Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BitArray.Not Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BitArray.Not Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BitArray.Not Example/CS/source.cs#1)]
+ [!code-vb[Classic BitArray.Not Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BitArray.Not Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Or">
+      <MemberSignature Language="C#" Value="public System.Collections.BitArray Or (System.Collections.BitArray value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.BitArray Or(class System.Collections.BitArray value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.Or(System.Collections.BitArray)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.BitArray</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Collections.BitArray" />
+      </Parameters>
+      <Docs>
+        <param name="value">ビットごとの OR 演算の実行対象となる配列。</param>
+        <summary>現在の要素間でビットごとの OR 演算を実行<see cref="T:System.Collections.BitArray" />オブジェクトと指定した配列内の対応する要素。 現在<see cref="T:System.Collections.BitArray" />オブジェクトが変更され、ビットごとの OR 演算の結果を格納します。</summary>
+        <returns>現在への参照は、ビットごとの OR 演算の結果を格納する配列<see cref="T:System.Collections.BitArray" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビットごとの OR 演算を返します`true`場合は 1 つまたは両方のオペランドが`true`、しを返します`false`両方のオペランドが場合`false`です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.BitArray.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つの OR 演算を実行する方法を示しています。<xref:System.Collections.BitArray>オブジェクト。  
+  
+ [!code-cpp[Classic BitArray.Or Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BitArray.Or Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BitArray.Or Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BitArray.Or Example/CS/source.cs#1)]
+ [!code-vb[Classic BitArray.Or Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BitArray.Or Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />現在<see cref="T:System.Collections.BitArray" />は同じ数の要素はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RightShift">
+      <MemberSignature Language="C#" Value="public System.Collections.BitArray RightShift (int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.BitArray RightShift(int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.RightShift(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.BitArray</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="count">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public void Set (int index, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Set(int32 index, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.Set(System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="index">設定するビットの、0 から始まるインデックス番号。</param>
+        <param name="value">ビットに代入するブール値。</param>
+        <summary>特定位置にあるビットを設定、<see cref="T:System.Collections.BitArray" />指定された値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、o (1) 操作です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定および特定の要素を取得する方法を示しています、<xref:System.Collections.BitArray>です。  
+  
+ [!code-cpp[Classic BitArray.Get Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BitArray.Get Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BitArray.Get Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BitArray.Get Example/CS/source.cs#1)]
+ [!code-vb[Classic BitArray.Get Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BitArray.Get Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />内の要素の数以上、<see cref="T:System.Collections.BitArray" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAll">
+      <MemberSignature Language="C#" Value="public void SetAll (bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAll(bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.SetAll(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">すべてのビットに代入するブール値。</param>
+        <summary>のすべてのビットを設定、<see cref="T:System.Collections.BitArray" />指定された値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.BitArray.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定および特定の要素を取得する方法を示しています、<xref:System.Collections.BitArray>です。  
+  
+ [!code-cpp[Classic BitArray.Get Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BitArray.Get Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BitArray.Get Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BitArray.Get Example/CS/source.cs#1)]
+ [!code-vb[Classic BitArray.Get Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BitArray.Get Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.BitArray.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.BitArray" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.BitArray" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスは、独自の同期されたバージョンを指定できます、<xref:System.Collections.BitArray>を使用して、<xref:System.Collections.BitArray.SyncRoot%2A>プロパティです。 同期されたコードで操作を実行する必要があります、<xref:System.Collections.BitArray.SyncRoot%2A>の<xref:System.Collections.BitArray>、上で直接、<xref:System.Collections.BitArray>です。 これにより、他のオブジェクトから派生したコレクションを適切に操作できるようになります。 具体的には、同時に変更する可能性がある別スレッドとの適切な同期を維持、<xref:System.Collections.BitArray>オブジェクト。  
+  
+ コレクションの列挙は、本質的にスレッド セーフなプロシージャではありません。 コレクションの同期がとられている場合でも、別のスレッドによってそのコレクションを変更できるため、変更の結果として列挙子は例外をスローします。 列挙処理を確実にスレッド セーフに行うには、列挙中にコレクションをロックするか、他のスレッドによって行われた変更によってスローされる例外をキャッチします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してコレクションをロックする方法を示しています、<xref:System.Collections.BitArray.SyncRoot%2A>列挙中にします。  
+  
+ [!code-cpp[Classic BitArray Example#2](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BitArray Example/CPP/source2.cpp#2)]
+ [!code-csharp[Classic BitArray Example#2](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BitArray Example/CS/source2.cs#2)]
+ [!code-vb[Classic BitArray Example#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BitArray Example/VB/source2.vb#2)]  
+  
+ このプロパティ値を取得することは、O(1) 操作になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">To be added.</param>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.BitArray.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.BitArray.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.BitArray.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Xor">
+      <MemberSignature Language="C#" Value="public System.Collections.BitArray Xor (System.Collections.BitArray value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.BitArray Xor(class System.Collections.BitArray value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.BitArray.Xor(System.Collections.BitArray)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.BitArray</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Collections.BitArray" />
+      </Parameters>
+      <Docs>
+        <param name="value">ビットごとの排他的 OR 演算の実行対象となる配列。</param>
+        <summary>現在の要素間でビットごとの排他的 or 演算を実行<see cref="T:System.Collections.BitArray" />オブジェクトに対して指定した配列内の対応する要素。 現在<see cref="T:System.Collections.BitArray" />排他的 OR 演算の結果を格納するオブジェクトが変更されます。</summary>
+        <returns>排他的 OR 演算、現在の参照の結果を格納する配列<see cref="T:System.Collections.BitArray" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 排他的 OR 演算を返します`true`ただ 1 つのオペランドが場合`true`、しを返します`false`両方のオペランドのブール値が同じ場合です。  
+  
+ このメソッドは、O (`n`) 操作では、ここで`n`は<xref:System.Collections.BitArray.Count%2A>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つの XOR 演算を実行する方法を示しています。<xref:System.Collections.BitArray>オブジェクト。  
+  
+ [!code-cpp[Classic BitArray.Xor Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic BitArray.Xor Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BitArray.Xor Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic BitArray.Xor Example/CS/source.cs#1)]
+ [!code-vb[Classic BitArray.Xor Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic BitArray.Xor Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />現在<see cref="T:System.Collections.BitArray" />は同じ数の要素はありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

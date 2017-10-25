@@ -1,0 +1,65 @@
+<Type Name="PropertyConditionFlags" FullName="System.Windows.Automation.PropertyConditionFlags">
+  <TypeSignature Language="C#" Value="public enum PropertyConditionFlags" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PropertyConditionFlags extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.PropertyConditionFlags" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティ値をテストする方法を指定する値が含まれています、<see cref="T:System.Windows.Automation.PropertyCondition" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では IgnoreCase で設定されて、<xref:System.Windows.Automation.PropertyConditionFlags.IgnoreCase>です。  
+  
+ [!code-csharp[UIAClient_snip#110](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#110)]
+ [!code-vb[UIAClient_snip#110](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#110)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IgnoreCase">
+      <MemberSignature Language="C#" Value="IgnoreCase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Automation.PropertyConditionFlags IgnoreCase = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.PropertyConditionFlags.IgnoreCase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.PropertyConditionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列プロパティの値と比較の大文字小文字を区別がないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Automation.PropertyConditionFlags None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.PropertyConditionFlags.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.PropertyConditionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の動作 (文字列の比較で大文字小文字を区別) を使用してプロパティの値をテストすることを指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

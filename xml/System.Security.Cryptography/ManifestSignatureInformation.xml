@@ -1,0 +1,163 @@
+<Type Name="ManifestSignatureInformation" FullName="System.Security.Cryptography.ManifestSignatureInformation">
+  <TypeSignature Language="C#" Value="public sealed class ManifestSignatureInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManifestSignatureInformation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.ManifestSignatureInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マニフェストの署名に関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature%2A>を取得するメソッド、<xref:System.Security.Cryptography.ManifestSignatureInformationCollection>署名情報を調べるために使用できるオブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AuthenticodeSignature">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.AuthenticodeSignatureInformation AuthenticodeSignature { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.AuthenticodeSignatureInformation AuthenticodeSignature" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ManifestSignatureInformation.AuthenticodeSignature" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.AuthenticodeSignatureInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マニフェストの Authenticode 署名情報を取得します。</summary>
+        <value><see cref="T:System.Security.Cryptography.X509Certificates.AuthenticodeSignatureInformation" /> 、マニフェストの Authenticode 署名情報を格納しているオブジェクトまたは<see langword="null" />署名がない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Manifest">
+      <MemberSignature Language="C#" Value="public System.Security.ManifestKinds Manifest { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.ManifestKinds Manifest" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ManifestSignatureInformation.Manifest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.ManifestKinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マニフェストの種類を取得します。</summary>
+        <value><see cref="T:System.Security.ManifestKinds" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrongNameSignature">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.StrongNameSignatureInformation StrongNameSignature { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.StrongNameSignatureInformation StrongNameSignature" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ManifestSignatureInformation.StrongNameSignature" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.StrongNameSignatureInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マニフェストの厳密な名前の署名の詳細を取得します。</summary>
+        <value>A <see cref="P:System.Security.Cryptography.ManifestSignatureInformation.StrongNameSignature" /> 、署名を格納しているオブジェクトまたは<see langword="null" />厳密な名前の署名がない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifySignature">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ManifestSignatureInformationCollection VerifySignature (ActivationContext application);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.ManifestSignatureInformationCollection VerifySignature(class System.ActivationContext application) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature(System.ActivationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ManifestSignatureInformationCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="application" Type="System.ActivationContext" />
+      </Parameters>
+      <Docs>
+        <param name="application">マニフェストのアクティベーション コンテキスト。 アクティベーションのコンテキストでは、アプリケーションに所属し、複数のマニフェストを含みます。</param>
+        <summary>収集し、指定したアクティベーション コンテキストに属しているマニフェストの署名に関する情報を確認します。</summary>
+        <returns>格納するコレクション、<see cref="T:System.Security.Cryptography.ManifestSignatureInformation" />検証するマニフェストの各オブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="application" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifySignature">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ManifestSignatureInformationCollection VerifySignature (ActivationContext application, System.Security.ManifestKinds manifests);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.ManifestSignatureInformationCollection VerifySignature(class System.ActivationContext application, valuetype System.Security.ManifestKinds manifests) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature(System.ActivationContext,System.Security.ManifestKinds)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ManifestSignatureInformationCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="application" Type="System.ActivationContext" />
+        <Parameter Name="manifests" Type="System.Security.ManifestKinds" />
+      </Parameters>
+      <Docs>
+        <param name="application">マニフェストのアクティベーション コンテキスト。 アクティベーションのコンテキストでは、アプリケーションに所属し、複数のマニフェストを含みます。</param>
+        <param name="manifests">マニフェストの型。 このパラメーターは、ことを確認するアクティベーション コンテキスト内のどのマニフェストを指定します。</param>
+        <summary>収集し、指定したアクティベーション コンテキストに属しているし、マニフェストの種類をマニフェストの署名に関する情報を確認します。</summary>
+        <returns>格納するコレクション、<see cref="T:System.Security.Cryptography.ManifestSignatureInformation" />検証するマニフェストの各オブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="application" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifySignature">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ManifestSignatureInformationCollection VerifySignature (ActivationContext application, System.Security.ManifestKinds manifests, System.Security.Cryptography.X509Certificates.X509RevocationFlag revocationFlag, System.Security.Cryptography.X509Certificates.X509RevocationMode revocationMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.ManifestSignatureInformationCollection VerifySignature(class System.ActivationContext application, valuetype System.Security.ManifestKinds manifests, valuetype System.Security.Cryptography.X509Certificates.X509RevocationFlag revocationFlag, valuetype System.Security.Cryptography.X509Certificates.X509RevocationMode revocationMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature(System.ActivationContext,System.Security.ManifestKinds,System.Security.Cryptography.X509Certificates.X509RevocationFlag,System.Security.Cryptography.X509Certificates.X509RevocationMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ManifestSignatureInformationCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="application" Type="System.ActivationContext" />
+        <Parameter Name="manifests" Type="System.Security.ManifestKinds" />
+        <Parameter Name="revocationFlag" Type="System.Security.Cryptography.X509Certificates.X509RevocationFlag" />
+        <Parameter Name="revocationMode" Type="System.Security.Cryptography.X509Certificates.X509RevocationMode" />
+      </Parameters>
+      <Docs>
+        <param name="application">マニフェストのアプリケーション コンテキスト。 アクティベーションのコンテキストでは、アプリケーションに所属し、複数のマニフェストを含みます。</param>
+        <param name="manifests">マニフェストの型。 このパラメーターは、ことを確認するアクティベーション コンテキスト内のどのマニフェストを指定します。</param>
+        <param name="revocationFlag">チェーンの証明書を失効の検証を指定する列挙値の 1 つ。 既定値は、<see cref="F:System.Security.Cryptography.X509Certificates.X509RevocationFlag.ExcludeRoot" /> です。</param>
+        <param name="revocationMode">X.509 検証が失効リストをオンラインで検索するかどうかを判断します。</param>
+        <summary>収集し、指定したアクティベーション コンテキストと、マニフェストの種類に属しているマニフェストの署名に関する情報を確認し、により、証明書の取り消しを選択します。</summary>
+        <returns>格納するコレクション、<see cref="T:System.Security.Cryptography.ManifestSignatureInformation" />検証するマニフェストの各オブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="application" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値、<paramref name="revocationFlag" />または<paramref name="revocationMode" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

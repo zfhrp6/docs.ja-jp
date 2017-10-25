@@ -1,0 +1,241 @@
+<Type Name="UrlAttribute" FullName="System.Runtime.Remoting.Activation.UrlAttribute">
+  <TypeSignature Language="C#" Value="public sealed class UrlAttribute : System.Runtime.Remoting.Contexts.ContextAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit UrlAttribute extends System.Runtime.Remoting.Contexts.ContextAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Activation.UrlAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Remoting.Contexts.ContextAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用できる呼び出しサイトで URL を指定して、アクティブ化が発生する属性を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Activation.UrlAttribute>アクティベーション属性の配列をパラメーターとして渡される<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>オブジェクトをアクティブ化を作成するときに、<xref:System.Activator.CreateInstance%2A>メソッドです。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Runtime.Remoting.Activation.UrlAttribute>クライアントでアクティブ化されるリモート処理を設定します。 例では、3 つの部分が含まれています: クライアント、サーバー、および、クライアントとサーバーによって使用されるリモート オブジェクトです。  
+  
+ 次のコード例は、クライアントを示しています。  
+  
+ [!code-cpp[System.Runtime.Remoting.Activation.UrlAttribute#0](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Activation.UrlAttribute/CPP/client.cpp#0)]
+ [!code-csharp[System.Runtime.Remoting.Activation.UrlAttribute#0](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Activation.UrlAttribute/CS/client.cs#0)]  
+  
+ 次のコード例では、このクライアントのサーバーを示しています。  
+  
+ [!code-cpp[System.Runtime.Remoting.Activation.UrlAttribute#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Activation.UrlAttribute/CPP/server.cpp#2)]
+ [!code-csharp[System.Runtime.Remoting.Activation.UrlAttribute#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Activation.UrlAttribute/CS/server.cs#2)]  
+  
+ 次のコード例では、クライアントとサーバーによって使用されるリモート オブジェクトを示します。  
+  
+ [!code-cpp[System.Runtime.Remoting.Activation.UrlAttribute#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Activation.UrlAttribute/CPP/remoteobject.cpp#3)]
+ [!code-csharp[System.Runtime.Remoting.Activation.UrlAttribute#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Activation.UrlAttribute/CS/remoteobject.cs#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UrlAttribute (string callsiteURL);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string callsiteURL) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Activation.UrlAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callsiteURL" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="callsiteURL">呼び出しサイトの URL。</param>
+        <summary><see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Runtime.Remoting.Activation.UrlAttribute>コンス トラクターです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Activation.UrlAttribute#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Activation.UrlAttribute/CPP/client.cpp#1)]
+ [!code-csharp[System.Runtime.Remoting.Activation.UrlAttribute#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Activation.UrlAttribute/CS/client.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="callsiteURL" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Activation.UrlAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">現在と比較するオブジェクト<see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" />です。</param>
+        <summary>指定したオブジェクトを指す URL は、現在のインスタンスと同じかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />オブジェクトがある場合、<see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" />と同じ値です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定値をオーバーライド<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Activation.UrlAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のハッシュ値を返します<see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" />です。</summary>
+        <returns>現在のハッシュ値<see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertiesForNewContext">
+      <MemberSignature Language="C#" Value="public override void GetPropertiesForNewContext (System.Runtime.Remoting.Activation.IConstructionCallMessage ctorMsg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetPropertiesForNewContext(class System.Runtime.Remoting.Activation.IConstructionCallMessage ctorMsg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Activation.UrlAttribute.GetPropertiesForNewContext(System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctorMsg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="ctorMsg"><see cref="T:System.Runtime.Remoting.Activation.IConstructionCallMessage" />サーバー オブジェクトを作成するのです。</param>
+        <summary>強制的に、コンテキストと指定された URL でのコンテキスト内のサーバー オブジェクトを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Activation.UrlAttribute.GetPropertiesForNewContext%2A>コンテキスト、url で指定したコンテキスト内のサーバー オブジェクトの作成を強制的に、リモート処理インフラストラクチャによって使用されるため、新しいコンテキストするすべてのプロパティは含まれません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsContextOK">
+      <MemberSignature Language="C#" Value="public override bool IsContextOK (System.Runtime.Remoting.Contexts.Context ctx, System.Runtime.Remoting.Activation.IConstructionCallMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsContextOK(class System.Runtime.Remoting.Contexts.Context ctx, class System.Runtime.Remoting.Activation.IConstructionCallMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Activation.UrlAttribute.IsContextOK(System.Runtime.Remoting.Contexts.Context,System.Runtime.Remoting.Activation.IConstructionCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.Runtime.Remoting.Contexts.Context" />
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Activation.IConstructionCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="ctx">現在のコンテキストの属性と照合するコンテキスト。</param>
+        <param name="msg">コンストラクション呼び出し、うちパラメーターは、現在のコンテキストを確認する必要があります。</param>
+        <summary>示すブール値を返すかどうか、指定した<see cref="T:System.Runtime.Remoting.Contexts.Context" />を満たしている<see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" />の要件です。</summary>
+        <returns>
+          <see langword="true" />渡されたコンテキストが使用できる場合です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlValue">
+      <MemberSignature Language="C#" Value="public string UrlValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UrlValue" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Activation.UrlAttribute.UrlValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URL の値を取得、<see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" />です。</summary>
+        <value>URL の値、<see cref="T:System.Runtime.Remoting.Activation.UrlAttribute" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Runtime.Remoting.Activation.UrlAttribute.UrlValue%2A>のプロパティ、<xref:System.Runtime.Remoting.Activation.UrlAttribute>です。  
+  
+ [!code-cpp[System.Runtime.Remoting.Activation.UrlAttribute#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Activation.UrlAttribute/CPP/client.cpp#1)]
+ [!code-csharp[System.Runtime.Remoting.Activation.UrlAttribute#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Activation.UrlAttribute/CS/client.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

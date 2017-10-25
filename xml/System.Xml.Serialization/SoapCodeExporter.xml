@@ -1,0 +1,293 @@
+<Type Name="SoapCodeExporter" FullName="System.Xml.Serialization.SoapCodeExporter">
+  <TypeSignature Language="C#" Value="public class SoapCodeExporter : System.Xml.Serialization.CodeExporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapCodeExporter extends System.Xml.Serialization.CodeExporter" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.SoapCodeExporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.Serialization.CodeExporter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WSDL ドキュメントで定義されている SOAP でエンコードされたメッセージ部分の内部型マッピング情報の種類と属性の宣言を生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapCodeExporter>クラスによって使用、 [Web サービス記述言語ツール (Wsdl.exe)](http://msdn.microsoft.com/en-us/b9210348-8bc2-4367-8c91-d1a04b403e88)と<xref:System.Web.Services.Description.ServiceDescriptionImporter>Web サービス記述言語 (WSDL) ドキュメントからクライアント プロキシ クラスまたは抽象 server クラスを生成するときにクラスです。 使用せずに<xref:System.Xml.Serialization.SoapCodeExporter>直接、Wsdl.exe を使用します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapCodeExporter (System.CodeDom.CodeNamespace codeNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeNamespace codeNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapCodeExporter.#ctor(System.CodeDom.CodeNamespace)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="codeNamespace" Type="System.CodeDom.CodeNamespace" />
+      </Parameters>
+      <Docs>
+        <param name="codeNamespace">A<see cref="T:System.CodeDom.CodeNamespace" />生成する型の名前空間を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapCodeExporter" />コード コンパイル ユニットがないと想定し、クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを直接作成する代わりに、<xref:System.Xml.Serialization.SoapCodeExporter>クラス、Wsdl.exe ツールを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapCodeExporter (System.CodeDom.CodeNamespace codeNamespace, System.CodeDom.CodeCompileUnit codeCompileUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeNamespace codeNamespace, class System.CodeDom.CodeCompileUnit codeCompileUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapCodeExporter.#ctor(System.CodeDom.CodeNamespace,System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="codeNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="codeNamespace">A<see cref="T:System.CodeDom.CodeNamespace" />生成する型の名前空間を指定します。</param>
+        <param name="codeCompileUnit">A<see cref="T:System.CodeDom.CodeCompileUnit" />使用したアセンブリ参照を自動的に追加するプログラムのグラフのコンテナーを識別します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapCodeExporter" />クラス、名前空間のパラメーターだけでなく、コード コンパイル単位パラメーターを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを直接作成する代わりに、<xref:System.Xml.Serialization.SoapCodeExporter>クラス、Wsdl.exe ツールを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapCodeExporter (System.CodeDom.CodeNamespace codeNamespace, System.CodeDom.CodeCompileUnit codeCompileUnit, System.Xml.Serialization.CodeGenerationOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeNamespace codeNamespace, class System.CodeDom.CodeCompileUnit codeCompileUnit, valuetype System.Xml.Serialization.CodeGenerationOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapCodeExporter.#ctor(System.CodeDom.CodeNamespace,System.CodeDom.CodeCompileUnit,System.Xml.Serialization.CodeGenerationOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="codeNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="options" Type="System.Xml.Serialization.CodeGenerationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="codeNamespace">A<see cref="T:System.CodeDom.CodeNamespace" />生成する型の名前空間を指定します。</param>
+        <param name="codeCompileUnit">A<see cref="T:System.CodeDom.CodeCompileUnit" />使用したアセンブリ参照を自動的に追加するプログラムのグラフのコンテナーを識別します。</param>
+        <param name="options">A<see cref="T:System.Xml.Serialization.CodeGenerationOptions" />エクスポートしたコードを生成するオプションを指定する列挙です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapCodeExporter" />クラス、コードの名前空間、コード コンパイル単位、およびコード生成オプションを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを直接作成する代わりに、<xref:System.Xml.Serialization.SoapCodeExporter>クラス、Wsdl.exe ツールを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapCodeExporter (System.CodeDom.CodeNamespace codeNamespace, System.CodeDom.CodeCompileUnit codeCompileUnit, System.Xml.Serialization.CodeGenerationOptions options, System.Collections.Hashtable mappings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeNamespace codeNamespace, class System.CodeDom.CodeCompileUnit codeCompileUnit, valuetype System.Xml.Serialization.CodeGenerationOptions options, class System.Collections.Hashtable mappings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapCodeExporter.#ctor(System.CodeDom.CodeNamespace,System.CodeDom.CodeCompileUnit,System.Xml.Serialization.CodeGenerationOptions,System.Collections.Hashtable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="codeNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="options" Type="System.Xml.Serialization.CodeGenerationOptions" />
+        <Parameter Name="mappings" Type="System.Collections.Hashtable" />
+      </Parameters>
+      <Docs>
+        <param name="codeNamespace">A<see cref="T:System.CodeDom.CodeNamespace" />生成する型の名前空間を指定します。</param>
+        <param name="codeCompileUnit">A<see cref="T:System.CodeDom.CodeCompileUnit" />使用したアセンブリ参照を自動的に追加するプログラムのグラフのコンテナーを識別します。</param>
+        <param name="options">A<see cref="T:System.Xml.Serialization.CodeGenerationOptions" />エクスポートしたコードを生成するオプションを指定する列挙です。</param>
+        <param name="mappings"><see cref="T:System.Collections.Hashtable" /> オブジェクトを含む <see cref="T:System.Xml.Serialization.XmlMapping" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapCodeExporter" />クラス、コードの名前空間、コード コンパイル ユニット、コード生成のオプション、およびマッピングを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを直接作成する代わりに、<xref:System.Xml.Serialization.SoapCodeExporter>クラス、Wsdl.exe ツールを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapCodeExporter (System.CodeDom.CodeNamespace codeNamespace, System.CodeDom.CodeCompileUnit codeCompileUnit, System.CodeDom.Compiler.CodeDomProvider codeProvider, System.Xml.Serialization.CodeGenerationOptions options, System.Collections.Hashtable mappings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeNamespace codeNamespace, class System.CodeDom.CodeCompileUnit codeCompileUnit, class System.CodeDom.Compiler.CodeDomProvider codeProvider, valuetype System.Xml.Serialization.CodeGenerationOptions options, class System.Collections.Hashtable mappings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapCodeExporter.#ctor(System.CodeDom.CodeNamespace,System.CodeDom.CodeCompileUnit,System.CodeDom.Compiler.CodeDomProvider,System.Xml.Serialization.CodeGenerationOptions,System.Collections.Hashtable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="codeNamespace" Type="System.CodeDom.CodeNamespace" />
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="codeProvider" Type="System.CodeDom.Compiler.CodeDomProvider" />
+        <Parameter Name="options" Type="System.Xml.Serialization.CodeGenerationOptions" />
+        <Parameter Name="mappings" Type="System.Collections.Hashtable" />
+      </Parameters>
+      <Docs>
+        <param name="codeNamespace">A<see cref="T:System.CodeDom.CodeNamespace" />生成する型の名前空間を指定します。</param>
+        <param name="codeCompileUnit">A<see cref="T:System.CodeDom.CodeCompileUnit" />使用したアセンブリ参照を自動的に追加するプログラムのグラフのコンテナーを識別します。</param>
+        <param name="codeProvider">A<see cref="T:System.CodeDom.Compiler.CodeDomProvider" />コードの作成に使用されます。</param>
+        <param name="options">A<see cref="T:System.Xml.Serialization.CodeGenerationOptions" />エクスポートしたコードを生成するオプションを指定する列挙です。</param>
+        <param name="mappings"><see cref="T:System.Collections.Hashtable" /> オブジェクトを含む <see cref="T:System.Xml.Serialization.XmlMapping" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapCodeExporter" />クラス、コードの名前空間、コード コンパイル ユニット、コード ジェネレーター、コード生成のオプション、およびマッピングを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddMappingMetadata">
+      <MemberSignature Language="C#" Value="public void AddMappingMetadata (System.CodeDom.CodeAttributeDeclarationCollection metadata, System.Xml.Serialization.XmlMemberMapping member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddMappingMetadata(class System.CodeDom.CodeAttributeDeclarationCollection metadata, class System.Xml.Serialization.XmlMemberMapping member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapCodeExporter.AddMappingMetadata(System.CodeDom.CodeAttributeDeclarationCollection,System.Xml.Serialization.XmlMemberMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.CodeDom.CodeAttributeDeclarationCollection" />
+        <Parameter Name="member" Type="System.Xml.Serialization.XmlMemberMapping" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">コレクション<see cref="T:System.CodeDom.CodeAttributeDeclaration" />属性の宣言を追加するメソッドを生成された型のオブジェクト。</param>
+        <param name="member">内部 .NET Framework の型のマッピングの WSDL メッセージ定義の 1 部構成です。</param>
+        <summary>追加、<see cref="T:System.Xml.Serialization.SoapElementAttribute" />を WSDL ドキュメント内の SOAP メッセージの定義の一部の要素に対応するメソッド パラメーターまたは戻り値を宣言します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、WSDL ドキュメントを指定すると SOAP エンコーディング、SOAP 1.1 仕様のセクション 5 で説明したように、Wsdl.exe ツールは使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddMappingMetadata">
+      <MemberSignature Language="C#" Value="public void AddMappingMetadata (System.CodeDom.CodeAttributeDeclarationCollection metadata, System.Xml.Serialization.XmlMemberMapping member, bool forceUseMemberName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddMappingMetadata(class System.CodeDom.CodeAttributeDeclarationCollection metadata, class System.Xml.Serialization.XmlMemberMapping member, bool forceUseMemberName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapCodeExporter.AddMappingMetadata(System.CodeDom.CodeAttributeDeclarationCollection,System.Xml.Serialization.XmlMemberMapping,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.CodeDom.CodeAttributeDeclarationCollection" />
+        <Parameter Name="member" Type="System.Xml.Serialization.XmlMemberMapping" />
+        <Parameter Name="forceUseMemberName" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">コレクション<see cref="T:System.CodeDom.CodeAttributeDeclaration" />属性の宣言を追加するメソッドを生成された型のオブジェクト。</param>
+        <param name="member">内部 .NET Framework の型のマッピングの WSDL メッセージ定義の 1 部構成です。</param>
+        <param name="forceUseMemberName">
+          <see langword="true" />生成される属性の宣言の XML 要素名を含む最初の引数を追加するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>追加、<see cref="T:System.Xml.Serialization.SoapElementAttribute" />を WSDL ドキュメント内の SOAP メッセージの定義の一部の要素に対応するメソッド パラメーターまたは戻り値を宣言します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、WSDL ドキュメントを指定すると SOAP エンコーディング、SOAP 1.1 仕様のセクション 5 で説明したように、Wsdl.exe ツールは使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExportMembersMapping">
+      <MemberSignature Language="C#" Value="public void ExportMembersMapping (System.Xml.Serialization.XmlMembersMapping xmlMembersMapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExportMembersMapping(class System.Xml.Serialization.XmlMembersMapping xmlMembersMapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapCodeExporter.ExportMembersMapping(System.Xml.Serialization.XmlMembersMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlMembersMapping" Type="System.Xml.Serialization.XmlMembersMapping" />
+      </Parameters>
+      <Docs>
+        <param name="xmlMembersMapping">メッセージの WSDL 定義の要素の一部の .NET Framework 型マッピングが内部。</param>
+        <summary>.NET Framework の型と、SOAP メッセージの定義の WSDL ドキュメントに属している部品ごとの属性の宣言を生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、WSDL ドキュメントを指定すると SOAP エンコーディング、SOAP 1.1 仕様のセクション 5 で説明したように、Wsdl.exe ツールは使用します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExportTypeMapping">
+      <MemberSignature Language="C#" Value="public void ExportTypeMapping (System.Xml.Serialization.XmlTypeMapping xmlTypeMapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExportTypeMapping(class System.Xml.Serialization.XmlTypeMapping xmlTypeMapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapCodeExporter.ExportTypeMapping(System.Xml.Serialization.XmlTypeMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlTypeMapping" Type="System.Xml.Serialization.XmlTypeMapping" />
+      </Parameters>
+      <Docs>
+        <param name="xmlTypeMapping">内部 .NET Framework 型のマッピング情報は SOAP ヘッダー要素。</param>
+        <summary>.NET Framework の型と SOAP ヘッダーの属性の宣言を生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、Wsdl.exe ツールによって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

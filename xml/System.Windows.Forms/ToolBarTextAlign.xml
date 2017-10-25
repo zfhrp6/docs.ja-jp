@@ -1,0 +1,68 @@
+<Type Name="ToolBarTextAlign" FullName="System.Windows.Forms.ToolBarTextAlign">
+  <TypeSignature Language="C#" Value="public enum ToolBarTextAlign" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ToolBarTextAlign extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolBarTextAlign" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ツールバーのボタン コントロールのテキストの配置を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体がなどのメンバーによって使用されます<xref:System.Windows.Forms.ToolBar.TextAlign%2A?displayProperty=nameWithType>です。  
+  
+ ツール バー ボタンに表示されるイメージの領域が予約されています。 テキストの配置は、ツール バー ボタンに表示されるイメージに関連しています。 ボタンにイメージが割り当てられていない場合、左側、または表示されるテキストの上に予約した領域が表示されます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.ToolBar>コントロールの共通プロパティの一部を設定し、<xref:System.Windows.Forms.Form>です。 デリゲートにも追加、<xref:System.Windows.Forms.ToolBar.ButtonClick>と<xref:System.Windows.Forms.ToolBar.ButtonDropDown>イベント。 この例では、<xref:System.Windows.Forms.ToolBar>という名前`toolBar1`と<xref:System.Windows.Forms.ImageList>という`imageList1`宣言されています。  
+  
+ [!code-cpp[ToolBar#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ToolBar/CPP/mytoolbar.cpp#1)]
+ [!code-csharp[ToolBar#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolBar/CS/mytoolbar.cs#1)]
+ [!code-vb[ToolBar#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolBar/VB/mytoolbar.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="Right" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ToolBarTextAlign Right = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolBarTextAlign.Right" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolBarTextAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストは、ツールバーのボタンのイメージの右側に配置します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Underneath">
+      <MemberSignature Language="C#" Value="Underneath" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.ToolBarTextAlign Underneath = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolBarTextAlign.Underneath" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolBarTextAlign</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストは、ツールバーのボタンのイメージの下に配置します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

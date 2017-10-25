@@ -1,0 +1,102 @@
+<Type Name="ResourceExposureAttribute" FullName="System.Runtime.Versioning.ResourceExposureAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ResourceExposureAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ResourceExposureAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Versioning.ResourceExposureAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Constructor | System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Field, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.Conditional("RESOURCE_ANNOTATION_WORK")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスのメンバーのリソースの公開を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Versioning.ResourceConsumptionAttribute>を持つメンバーを呼び出すメンバーに属性を適用する必要があります、<xref:System.Runtime.Versioning.ResourceExposureAttribute>属性を適用します。 `Public`メンバーを公開できません<xref:System.Runtime.Versioning.ResourceScope.Assembly>または<xref:System.Runtime.Versioning.ResourceScope.Private>リソース。  持つメンバー<xref:System.Runtime.Versioning.ResourceScope.Assembly>スコープを公開できません。<xref:System.Runtime.Versioning.ResourceScope.Private>リソース。  
+  
+ メソッドのグラフが終了したときに、<xref:System.Runtime.Versioning.ResourceExposureAttribute>のリソースのスコープを持つ属性<xref:System.Runtime.Versioning.ResourceScope.None>メソッドに適用します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceExposureAttribute (System.Runtime.Versioning.ResourceScope exposureLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.Versioning.ResourceScope exposureLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.ResourceExposureAttribute.#ctor(System.Runtime.Versioning.ResourceScope)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="exposureLevel" Type="System.Runtime.Versioning.ResourceScope" />
+      </Parameters>
+      <Docs>
+        <param name="exposureLevel">リソースのスコープです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Versioning.ResourceExposureAttribute" />危険度の指定したレベルを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceExposureLevel">
+      <MemberSignature Language="C#" Value="public System.Runtime.Versioning.ResourceScope ResourceExposureLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Versioning.ResourceScope ResourceExposureLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Versioning.ResourceExposureAttribute.ResourceExposureLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Versioning.ResourceScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースの公開スコープを取得します。</summary>
+        <value><see cref="T:System.Runtime.Versioning.ResourceScope" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

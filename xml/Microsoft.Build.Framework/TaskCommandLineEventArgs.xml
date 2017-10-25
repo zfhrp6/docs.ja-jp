@@ -1,0 +1,123 @@
+<Type Name="TaskCommandLineEventArgs" FullName="Microsoft.Build.Framework.TaskCommandLineEventArgs">
+  <TypeSignature Language="C#" Value="public class TaskCommandLineEventArgs : Microsoft.Build.Framework.BuildMessageEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TaskCommandLineEventArgs extends Microsoft.Build.Framework.BuildMessageEventArgs" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.TaskCommandLineEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Framework.BuildMessageEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:Microsoft.Build.Framework.IEventSource.MessageRaised" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Build.Framework.TaskCommandLineEventArgs>拡張<xref:Microsoft.Build.Framework.BuildMessageEventArgs>基になっているプログラムを実行するタスクによって使用されるコマンドライン文字列は、メッセージとしてログに記録できるようにします。 コマンドライン文字列のログ記録にのみ関連タスクを基になっているプログラムをラップまたはシェル コマンドをエミュレートします。 コマンドラインと同等のないタスクでは、拡張メッセージ イベントは発生する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TaskCommandLineEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.TaskCommandLineEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Framework.TaskCommandLineEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskCommandLineEventArgs (string commandLine, string taskName, Microsoft.Build.Framework.MessageImportance importance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string commandLine, string taskName, valuetype Microsoft.Build.Framework.MessageImportance importance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.TaskCommandLineEventArgs.#ctor(System.String,System.String,Microsoft.Build.Framework.MessageImportance)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandLine" Type="System.String" />
+        <Parameter Name="taskName" Type="System.String" />
+        <Parameter Name="importance" Type="Microsoft.Build.Framework.MessageImportance" />
+      </Parameters>
+      <Docs>
+        <param name="commandLine">基になっているプログラムを実行するタスクによって使用されるコマンドラインです。</param>
+        <param name="taskName">イベントを発生させているタスクの名前。</param>
+        <param name="importance"><see cref="T:Microsoft.Build.Framework.MessageImportance" />メッセージのです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.Build.Framework.TaskCommandLineEventArgs" />指定されたコマンドラインを持つクラスと<see cref="T:Microsoft.Build.Framework.MessageImportance" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskCommandLineEventArgs (string commandLine, string taskName, Microsoft.Build.Framework.MessageImportance importance, DateTime eventTimestamp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string commandLine, string taskName, valuetype Microsoft.Build.Framework.MessageImportance importance, valuetype System.DateTime eventTimestamp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.TaskCommandLineEventArgs.#ctor(System.String,System.String,Microsoft.Build.Framework.MessageImportance,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandLine" Type="System.String" />
+        <Parameter Name="taskName" Type="System.String" />
+        <Parameter Name="importance" Type="Microsoft.Build.Framework.MessageImportance" />
+        <Parameter Name="eventTimestamp" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="commandLine">基になっているプログラムを実行するタスクによって使用されるコマンドラインです。</param>
+        <param name="taskName">イベントを発生させているタスクの名前。</param>
+        <param name="importance"><see cref="T:Microsoft.Build.Framework.MessageImportance" />メッセージのです。</param>
+        <param name="eventTimestamp">イベントが発生した時刻。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:Microsoft.Build.Framework.TaskCommandLineEventArgs" /> 、次のように指定されたコマンド ライン タスク名を持つクラスと<see cref="T:Microsoft.Build.Framework.MessageImportance" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandLine">
+      <MemberSignature Language="C#" Value="public string CommandLine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CommandLine" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.TaskCommandLineEventArgs.CommandLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になっているプログラムを実行するタスクで使用したコマンドラインを取得します。</summary>
+        <value>基になっているプログラムを実行するタスクによって使用されるコマンドラインです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaskName">
+      <MemberSignature Language="C#" Value="public string TaskName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TaskName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.TaskCommandLineEventArgs.TaskName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させたタスクの名前を取得します。</summary>
+        <value>イベントを発生させたタスクの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

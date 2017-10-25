@@ -1,0 +1,228 @@
+<Type Name="IRemoteArgumentDictionaryContract" FullName="System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract">
+  <TypeSignature Language="C#" Value="public interface IRemoteArgumentDictionaryContract : System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRemoteArgumentDictionaryContract implements class System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract, class System.AddIn.Contract.Collections.IRemoteArgumentEnumerableContract, class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.AddIn.Contract.RemoteArgument" />として格納されているオブジェクトのキー/値のペア。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の各要素、<xref:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract>に格納されているキー/値ペアは、<xref:System.AddIn.Contract.Collections.RemoteArgumentDictionaryEntry>オブジェクト。 キー/値の各ペアは、一意キーを持つ必要があります。  
+  
+ <xref:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract>含まれているキーと値を列挙するインターフェイスを使用するが、特定の並べ替え順序を意味しません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.AddIn.Contract.RemoteArgument key, System.AddIn.Contract.RemoteArgument value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(valuetype System.AddIn.Contract.RemoteArgument key, valuetype System.AddIn.Contract.RemoteArgument value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract.Add(System.AddIn.Contract.RemoteArgument,System.AddIn.Contract.RemoteArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.AddIn.Contract.RemoteArgument" />
+        <Parameter Name="value" Type="System.AddIn.Contract.RemoteArgument" />
+      </Parameters>
+      <Docs>
+        <param name="key">追加する要素のキーとして使用する <see cref="T:System.AddIn.Contract.RemoteArgument" />。</param>
+        <param name="value">追加する要素の値として使用する <see cref="T:System.AddIn.Contract.RemoteArgument" />。</param>
+        <summary>指定したキーと値を持つ要素を追加、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">同じキーを持つ要素が、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" /> に既に存在します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" /> からすべての要素を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public bool ContainsKey (System.AddIn.Contract.RemoteArgument key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsKey(valuetype System.AddIn.Contract.RemoteArgument key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract.ContainsKey(System.AddIn.Contract.RemoteArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.AddIn.Contract.RemoteArgument" />
+      </Parameters>
+      <Docs>
+        <param name="key">
+          <see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" /> 内で検索されるキー。</param>
+        <summary>示すかどうか、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" />指定のキーを持つ要素が含まれています。</summary>
+        <returns>
+          指定したキーを持つ要素が <see langword="true" /> に格納されている場合は <see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumeratorContract">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Collections.IRemoteArgumentDictionaryEnumeratorContract GetEnumeratorContract ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Collections.IRemoteArgumentDictionaryEnumeratorContract GetEnumeratorContract() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract.GetEnumeratorContract" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Collections.IRemoteArgumentDictionaryEnumeratorContract</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryEnumeratorContract" />内の要素を反復処理に使用できる、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryEnumeratorContract" />内の要素を反復処理に使用できる、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItem">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.RemoteArgument GetItem (System.AddIn.Contract.RemoteArgument key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.RemoteArgument GetItem(valuetype System.AddIn.Contract.RemoteArgument key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract.GetItem(System.AddIn.Contract.RemoteArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.RemoteArgument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.AddIn.Contract.RemoteArgument" />
+      </Parameters>
+      <Docs>
+        <param name="key">戻り値のキー。</param>
+        <summary>指定したキーを持つ要素の値を返します。</summary>
+        <returns>指定したキーを持つ <see cref="T:System.AddIn.Contract.RemoteArgument" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKeys">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract GetKeys ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract GetKeys() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract.GetKeys" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract" />のキーを格納している、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" />オブジェクト。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract" />のキーを格納している、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValues">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract GetValues ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract GetValues() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract.GetValues" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract" />の値を含む、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" />オブジェクト。</summary>
+        <returns><see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract" />の値を含む、<see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.AddIn.Contract.RemoteArgument key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(valuetype System.AddIn.Contract.RemoteArgument key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract.Remove(System.AddIn.Contract.RemoteArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.AddIn.Contract.RemoteArgument" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除する要素のキー。</param>
+        <summary>指定したキーを持つ要素を <see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" /> から削除します。</summary>
+        <returns>
+          要素が見つかり、正常に削除された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 このメソッドは、<paramref name="key" /> が <see cref="T:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" /> に見つからない場合、<see langword="false" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="public void SetItem (System.AddIn.Contract.RemoteArgument key, System.AddIn.Contract.RemoteArgument value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetItem(valuetype System.AddIn.Contract.RemoteArgument key, valuetype System.AddIn.Contract.RemoteArgument value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract.SetItem(System.AddIn.Contract.RemoteArgument,System.AddIn.Contract.RemoteArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.AddIn.Contract.RemoteArgument" />
+        <Parameter Name="value" Type="System.AddIn.Contract.RemoteArgument" />
+      </Parameters>
+      <Docs>
+        <param name="key">置換対象の値のキー。</param>
+        <param name="value">指定した要素の新しい値。</param>
+        <summary>要素の値を置換します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,321 @@
+<Type Name="UIHintAttribute" FullName="System.ComponentModel.DataAnnotations.UIHintAttribute">
+  <TypeSignature Language="C#" Value="public class UIHintAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UIHintAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.UIHintAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>動的なデータがデータ フィールドの表示に使用するテンプレートまたはユーザー コントロールを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Studio プロジェクトとソース コードは、このトピックで使用可能な:[ダウンロード](http://go.microsoft.com/fwlink/?linkid=158686)です。  
+  
+ MVC を使用して、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>にモデルをデータ フィールドに関連付けるクラスです。 動的なデータを使用して、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>にユーザー コントロールをデータ フィールドに関連付けるクラスです。 動的なデータを使用して、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute.UIHint%2A>プロパティをデータ フィールドを表示するために使用するユーザー コントロールを決定します。  
+  
+ 属性を使用する方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>属性をデータ フィールドの編集と表示を処理するカスタム フィールド テンプレートの名前を指定します。  
+  
+ 完全な例では、次を参照してください。[する方法: データ フィールドの表示、データ モデル内にカスタマイズ](http://msdn.microsoft.com/library/33c2e908-bb52-4656-ba7a-ba55fb04beb2)です。  
+  
+ [!code-csharp[DynamicData.CustomFieldTemplate#5](~/samples/snippets/csharp/VS_Snippets_WebNet/DynamicData.CustomFieldTemplate/CS/Product.cs#5)]
+ [!code-vb[DynamicData.CustomFieldTemplate#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DynamicData.CustomFieldTemplate/VB/Products.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UIHintAttribute (string uiHint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uiHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.UIHintAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uiHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uiHint">データ フィールドの表示に使用するユーザー コントロールです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataAnnotations.UIHintAttribute" />指定されたユーザー コントロールを使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>指定して、このコンス トラクターで作成されるオブジェクトが初期化されて`uiHint`、データ フィールドを表示するために使用するユーザー コントロール (フィールド テンプレート) を指定します。  
+  
+ ASP.NET 動的データは、フィールド テンプレート、ページ テンプレート、およびデータ モデル内のデータ フィールドを表示するためにデータ コントロールを提供します。 これらのテンプレートと、それらをカスタマイズするコントロールを変更するか、カスタム ユーザー コントロールを作成することができます。 使用するカスタム ユーザー コントロールを作成する場合、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute.UIHint%2A>プロパティを使用してデータ フィールドを表示するユーザー コントロールを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UIHintAttribute (string uiHint, string presentationLayer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uiHint, string presentationLayer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.UIHintAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uiHint" Type="System.String" />
+        <Parameter Name="presentationLayer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uiHint">データ フィールドの表示に使用するユーザー コントロール (フィールド テンプレート)。</param>
+        <param name="presentationLayer">クラスを使用して、プレゼンテーション層です。 "HTML"、"Silverlight"、"WPF"または"WinForms"に設定できます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataAnnotations.UIHintAttribute" />クラスの指定されたユーザー コントロールと指定したプレゼンテーション層を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UIHintAttribute (string uiHint, string presentationLayer, params object[] controlParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uiHint, string presentationLayer, object[] controlParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.UIHintAttribute.#ctor(System.String,System.String,System.Object[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uiHint" Type="System.String" />
+        <Parameter Name="presentationLayer" Type="System.String" />
+        <Parameter Name="controlParameters" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="uiHint">データ フィールドの表示に使用するユーザー コントロール (フィールド テンプレート)。</param>
+        <param name="presentationLayer">クラスを使用して、プレゼンテーション層です。 "HTML"、"Silverlight"、"WPF"または"WinForms"に設定できます。</param>
+        <param name="controlParameters">使用しているデータ ソースから値を取得するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataAnnotations.UIHintAttribute" />クラスによって指定されたユーザー コントロール、プレゼンテーション層、および制御パラメーターを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.ComponentModel.DataAnnotations.UIHintAttribute.ControlParameters" /><see langword="null" />制約キーであるか。  
+  
+ または  
+  
+ 値<see cref="P:System.ComponentModel.DataAnnotations.UIHintAttribute.ControlParameters" />文字列ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; ControlParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; ControlParameters" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.UIHintAttribute.ControlParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.DynamicData.DynamicControlParameter" />を使用して任意のデータ ソースから値を取得するオブジェクト。</summary>
+        <value>キーと値のペアのコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.DataAnnotations.UIHintAttribute.ControlParameters%2A>プロパティのデータ モデルからデータを取得することができます、データ モデルに対する更新を追跡および変更のモデルに通知します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.UIHintAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクトまたは<see langword="null" />参照します。</param>
+        <summary>このインスタンスが、指定したオブジェクトと等しいかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがこのインスタンスと等しい場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.UIHintAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>属性の現在のインスタンスのハッシュ コードを取得します。</summary>
+        <returns>属性のインスタンスのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PresentationLayer">
+      <MemberSignature Language="C#" Value="public string PresentationLayer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PresentationLayer" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.UIHintAttribute.PresentationLayer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を使用するプレゼンテーション レイヤー、<see cref="T:System.ComponentModel.DataAnnotations.UIHintAttribute" />クラスです。</summary>
+        <value>このクラスによって使用されるプレゼンテーション層です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用してプレゼンテーション層を表す、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>クラスです。 このプロパティは、"HTML"、"Silverlight"、"WPF"または"WinForms"に設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public override object TypeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TypeId" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.UIHintAttribute.TypeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の一意の識別子を取得します。</summary>
+        <value>属性の一意の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UIHint">
+      <MemberSignature Language="C#" Value="public string UIHint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UIHint" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.UIHintAttribute.UIHint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用してデータ フィールドを表示するフィールド テンプレートの名前を設定します。</summary>
+        <value>データ フィールドを表示するフィールド テンプレートの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 動的データは、データ モデル内のデータ フィールドを表示するためのフィールド テンプレートおよびページ テンプレートを提供します。 フィールド テンプレートは、モデル内のデータ フィールドにマップされているユーザー コントロール (.ascx ファイル) です。 動的データには、既定のユーザー コントロールを変更するか、カスタム ユーザー フィールド テンプレートとして使用するコントロールを作成できます。 使用するカスタム ユーザー コントロールを作成する場合、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute.UIHint%2A>プロパティをプロパティにカスタム ユーザー コントロールを使用して、プロパティを表示できるようにします。 <xref:System.ComponentModel.DataAnnotations.UIHintAttribute.UIHint%2A>プロパティは、特定の列が表示されるときに使用するフィールド テンプレートを指定します。 <xref:System.ComponentModel.DataAnnotations.UIHintAttribute.UIHint%2A>プロパティには、動的データに用意されているテンプレートのいずれかまたはカスタム テンプレートを指定できます。 たとえば、RedText_Edit.ascx をという名前のカスタム フィールド テンプレートを作成しを使用して、 <xref:System.ComponentModel.DataAnnotations.UIHintAttribute.UIHint%2A> RedText_Edit.ascx コントロールを動的データで提供される既定の Text_Edit.ascx テンプレートではなく、指定したデータ フィールドを表示するために使用することを指定するプロパティです。  
+  
+ 次の例では、指定したカスタム フィールド テンプレートを使用して、データベース内の UnitsInStock 列が描画されることを指定する方法を示します。  
+  
+ [!code-csharp[DynamicData.CustomFieldTemplate#5](~/samples/snippets/csharp/VS_Snippets_WebNet/DynamicData.CustomFieldTemplate/CS/Product.cs#5)]
+ [!code-vb[DynamicData.CustomFieldTemplate#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DynamicData.CustomFieldTemplate/VB/Products.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

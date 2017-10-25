@@ -1,0 +1,168 @@
+<Type Name="ConsoleTraceListener" FullName="System.Diagnostics.ConsoleTraceListener">
+  <TypeSignature Language="C#" Value="public class ConsoleTraceListener : System.Diagnostics.TextWriterTraceListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConsoleTraceListener extends System.Diagnostics.TextWriterTraceListener" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.ConsoleTraceListener" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.TextWriterTraceListener</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トレース出力またはデバッグ出力を標準出力または標準エラー ストリームのいずれかを指示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Diagnostics.ConsoleTraceListener>クラスをトレースおよびデバッグのコンソールにメッセージを記述します。 初期化するには、<xref:System.Diagnostics.ConsoleTraceListener>へのトレース メッセージを記述するオブジェクト、<xref:System.Console.Out%2A?displayProperty=nameWithType>ストリームまたは、<xref:System.Console.Error%2A?displayProperty=nameWithType>ストリーム。  
+  
+> [!IMPORTANT]
+>  <xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、`try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ ときにトレースし、デバッグ出力を有効にすると、<xref:System.Diagnostics.ConsoleTraceListener>メッセージが書き込まれるを指定した<xref:System.Console?displayProperty=nameWithType>でメッセージが書き込まれる方法に似ていますが、ストリーム、<xref:System.Console.Write%2A?displayProperty=nameWithType>または<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>メソッドです。 コンソール アプリケーションで、<xref:System.Console?displayProperty=nameWithType>出力とエラー ストリームは、既存のコンソール ウィンドウにメッセージを書き込むまたはに書き込むストリームをリダイレクトすることができます、<xref:System.IO.TextWriter?displayProperty=nameWithType>インスタンス。  
+  
+> [!NOTE]
+>  コンソールが存在しない場合、Windows ベースのアプリケーションと同様に、コンソールに書き込まれたメッセージは表示されません。  
+  
+ 追加、<xref:System.Diagnostics.ConsoleTraceListener>を適切なオブジェクト<xref:System.Diagnostics.Trace.Listeners%2A>メッセージを記述する場合は、コレクション<xref:System.Diagnostics.Trace>、 <xref:System.Diagnostics.TraceSource>、または<xref:System.Diagnostics.Debug>コンソールに書き込まれます。 さらを使用してコンソールに直接メッセージを記述することができます、<xref:System.Diagnostics.Trace.Write%2A?displayProperty=nameWithType>または<xref:System.Diagnostics.Trace.WriteLine%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Diagnostics.Debug>と<xref:System.Diagnostics.Trace>クラスが同じ<xref:System.Diagnostics.TraceListenerCollection>それぞれを介してアクセスされるコレクション`Listeners`プロパティです。 追加する場合、<xref:System.Diagnostics.ConsoleTraceListener>コレクションにオブジェクトをこれらのクラスのいずれかを使用して、その他のクラスが自動的に同じリスナーを使用します。  
+  
+ ほとんどのコンパイラでは、トレースを有効にし、条件付きコンパイル フラグを通じて出力をデバッグします。 トレース出力またはデバッグから書き込まれたメッセージを有効にしていない場合、<xref:System.Diagnostics.Debug?displayProperty=nameWithType>と<xref:System.Diagnostics.Trace?displayProperty=nameWithType>クラスが実質的に無視されます。 トレースを有効にして、デバッグ出力する構文はコンパイラ固有です。以外は、c# または Visual Basic コンパイラを使用する場合は、コンパイラのドキュメントを参照してください。  
+  
+-   C# でのデバッグを有効にするには追加、 **/d:DEBUG**するを追加したり、コードをコンパイルするときに、コンパイラのコマンドラインにフラグ**#define デバッグ**ファイルの先頭にします。 Visual basic では、追加、 **/d:DEBUG = True**フラグをコンパイラ コマンドライン。  
+  
+-   C# でのトレースを有効にするには追加、 **/d:TRACE**フラグを追加したり、コードをコンパイルすると、コンパイラのコマンドライン**#define トレース**ファイルの先頭にします。 Visual basic では、追加、 **/d:TRACE = True**フラグをコンパイラ コマンドライン。  
+  
+ 追加することができます、<xref:System.Diagnostics.ConsoleTraceListener>オブジェクトを<xref:System.Diagnostics.Trace.Listeners%2A>、コード内のコレクションに追加できる、<xref:System.Diagnostics.ConsoleTraceListener>オブジェクトを<xref:System.Diagnostics.Trace.Listeners%2A>を通じて、アプリケーション構成ファイルのコレクション。 追加、<xref:System.Diagnostics.ConsoleTraceListener>特定のコード セクションまたは実行のパスに対してメッセージを書き込むため、コード内のオブジェクト。 追加、<xref:System.Diagnostics.ConsoleTraceListener>アプリケーションの実行中に、コンソールにメッセージのすべてのトレースとデバッグを送信するため、アプリケーション構成ファイル内のオブジェクト。  
+  
+ トレースを作成およびコードの特定のセクションのコンソールにメッセージをデバッグ、初期化、<xref:System.Diagnostics.ConsoleTraceListener>オブジェクトを追加して、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。 使用してメッセージを含むコードのセクションをインストルメントし、<xref:System.Diagnostics.Trace>または<xref:System.Diagnostics.Debug>クラスです。 コードのセクションの最後に、削除、<xref:System.Diagnostics.ConsoleTraceListener>オブジェクトから、<xref:System.Diagnostics.Trace.Listeners%2A>コレクション、および呼び出し、<xref:System.Diagnostics.TextWriterTraceListener.Close%2A>メソッドを<xref:System.Diagnostics.ConsoleTraceListener>です。  
+  
+ すべてのトレースを直接デバッグするメッセージをコンソール アプリケーションを実行しながら、追加、<xref:System.Diagnostics.ConsoleTraceListener>オブジェクトをアプリケーション構成ファイルにします。 アプリケーションの名前に対応する構成ファイルまたは app.config ファイルを編集、[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]プロジェクト。 このファイル内の要素を挿入、<xref:System.Diagnostics.ConsoleTraceListener>です。  
+  
+ 次の例では追加、<xref:System.Diagnostics.ConsoleTraceListener>という名前のオブジェクト`configConsoleListener`を<xref:System.Diagnostics.Trace.Listeners%2A>コレクション。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace autoflush="false" indentsize="4">  
+      <listeners>  
+        <add name="configConsoleListener"            type="System.Diagnostics.ConsoleTraceListener" />  
+      </listeners>  
+    </trace>  
+  </system.diagnostics>  
+ </configuration>  
+```  
+  
+ アプリケーション構成ファイルにトレース リスナーを追加する方法の詳細については、「 [&lt;リスナー&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次の 2 つのパブリック メソッドをクラスで構成されるコンソール アプリケーションを実装します。  
+  
+ `Main`メソッドは、コマンドライン引数を検査し、トレース出力を標準エラー ストリームまたは標準出力ストリームに送られますを決定します。 `Main`作成して初期化、 <xref:System.Diagnostics.ConsoleTraceListener> 、指定されたオブジェクト<xref:System.Console>出力ストリーム、およびトレース リスナー コレクションにこのオブジェクトを追加します。 呼び出して、`WriteEnvironmentInfoToTrace`メソッドで、実行中の環境と、トレース出力をトレース リスナーの構成に関する詳細情報を書き込みます。  
+  
+ 環境およびトレースの構成の詳細がで指定されたコンソール出力ストリームに書き込まれますサンプル アプリケーションを実行すると、<xref:System.Diagnostics.ConsoleTraceListener>オブジェクト。  
+  
+ [!code-csharp[Diagnostics_ConsoleTraceListener#1](~/samples/snippets/csharp/VS_Snippets_CLR/Diagnostics_ConsoleTraceListener/CS/program.cs#1)]
+ [!code-vb[Diagnostics_ConsoleTraceListener#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Diagnostics_ConsoleTraceListener/VB/consoletrace.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConsoleTraceListener ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.ConsoleTraceListener.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.ConsoleTraceListener" />標準出力ストリームに書き込むトレース出力を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.ConsoleTraceListener>にメッセージを書き込むためのオブジェクト、<xref:System.Console.Out%2A?displayProperty=nameWithType>ストリーム。 その<xref:System.Diagnostics.TraceListener.Name%2A>プロパティは、空の文字列に初期化 ("") です。  
+  
+   
+  
+## Examples  
+ 次のコード例の初期化、 <xref:System.Diagnostics.ConsoleTraceListener> 、指定されたオブジェクト<xref:System.Console>ストリームを出力し、トレース リスナー コレクションに追加します。 このコード例に示されている例の一部である、<xref:System.Diagnostics.ConsoleTraceListener>クラスです。  
+  
+ [!code-csharp[Diagnostics_ConsoleTraceListener#2](~/samples/snippets/csharp/VS_Snippets_CLR/Diagnostics_ConsoleTraceListener/CS/program.cs#2)]
+ [!code-vb[Diagnostics_ConsoleTraceListener#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Diagnostics_ConsoleTraceListener/VB/consoletrace.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConsoleTraceListener (bool useErrorStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool useErrorStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.ConsoleTraceListener.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="useErrorStream" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useErrorStream">
+          <see langword="true" />書き込むトレースとデバッグ出力を標準エラー ストリーム。<see langword="false" />トレースとデバッグ出力を標準出力ストリームに書き込めません。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.ConsoleTraceListener" />トレース出力を標準出力ストリームまたは標準エラー ストリームに書き込むオプション クラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Diagnostics.ConsoleTraceListener>いずれかにメッセージを書き込むオブジェクト、<xref:System.Console.Out%2A?displayProperty=nameWithType>または<xref:System.Console.Error%2A?displayProperty=nameWithType>ストリーム。 その<xref:System.Diagnostics.TraceListener.Name%2A>プロパティは、空の文字列に初期化 ("") です。  
+  
+   
+  
+## Examples  
+ 次のコード例の初期化、 <xref:System.Diagnostics.ConsoleTraceListener> 、指定されたオブジェクト<xref:System.Console>ストリームを出力し、トレース リスナー コレクションに追加します。 このコード例に示されている例の一部である、<xref:System.Diagnostics.ConsoleTraceListener>クラスです。  
+  
+ [!code-csharp[Diagnostics_ConsoleTraceListener#2](~/samples/snippets/csharp/VS_Snippets_CLR/Diagnostics_ConsoleTraceListener/CS/program.cs#2)]
+ [!code-vb[Diagnostics_ConsoleTraceListener#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Diagnostics_ConsoleTraceListener/VB/consoletrace.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.ConsoleTraceListener.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このトレース リスナーに指定されたストリームに出力を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この指定されたストリーム<xref:System.Diagnostics.ConsoleTraceListener>インスタンス (どちらか、<xref:System.Console.Out%2A?displayProperty=nameWithType>ストリームまたは<xref:System.Console.Error%2A?displayProperty=nameWithType>ストリーム) が閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

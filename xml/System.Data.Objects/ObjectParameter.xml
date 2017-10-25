@@ -1,0 +1,207 @@
+<Type Name="ObjectParameter" FullName="System.Data.Objects.ObjectParameter">
+  <TypeSignature Language="C#" Value="public sealed class ObjectParameter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ObjectParameter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectParameter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクト クエリに渡されるクエリ パラメーターを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectQuery%601> またはクエリ ビルダー メソッドに渡されるクエリ パラメーターを表します。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+ オブジェクト パラメーターは、名前、型、および値で構成されます。  
+  
+ このクラスは継承できません。 詳細については、「<xref:System.Data.Objects.ObjectParameterCollection>」を参照してください。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、新しいパラメーターをコレクションに追加します。 <xref:System.Data.Objects.ObjectParameterCollection> を反復処理し、コレクション内の各パラメーターの名前、型、および値を表示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Parameters](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_parameters)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Parameters](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_parameters)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectParameter (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectParameter.#ctor(System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。 この名前には、[!INCLUDE[esql](~/includes/esql-md.md)] ステートメントで使用される "@" パラメーター マーカーは含めないでください。実際の名前だけにする必要があります。 式の先頭の文字は、英字にする必要があります。 式の 2 番目以降の文字には、英字、数字、アンダースコア (_) のいずれかを使用してください。</param>
+        <param name="value">パラメーターの初期値 (本質的には型)。</param>
+        <summary>指定した名前および値を使用して、<see cref="T:System.Data.Objects.ObjectParameter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、指定された名前と値からパラメーターを生成します。 パラメーターの型は、値から推論されます。  
+  
+ <xref:System.Data.Objects.ObjectParameterCollection> に追加されたパラメーターの名前は変更できません。 パラメーター値は、<xref:System.Data.Objects.ObjectParameter.Value%2A> プロパティを使用して変更できます。 クエリがコンパイルされた後は、値を変更できません。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、新しいパラメーターをコレクションに追加します。 <xref:System.Data.Objects.ObjectParameterCollection> を反復処理し、コレクション内の各パラメーターの名前、型、および値を表示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Parameters](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_parameters)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Parameters](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_parameters)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いずれかの引数の値が NULL の場合。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">name 引数の値が無効の場合。 パラメーター名は、先頭を英字にする必要があり、英字、数字、およびアンダースコアのみを含めることができます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectParameter (string name, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectParameter.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。 この名前には、[!INCLUDE[esql](~/includes/esql-md.md)] ステートメントで使用される "@" パラメーター マーカーは含めないでください。実際の名前だけにする必要があります。 式の先頭の文字は、英字にする必要があります。 式の 2 番目以降の文字には、英字、数字、アンダースコア (_) のいずれかを使用してください。</param>
+        <param name="type">パラメーターの共通言語ランタイム (CLR) 型。</param>
+        <summary>指定した名前および型を使用して、<see cref="T:System.Data.Objects.ObjectParameter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス化されたパラメーターの名前は変更できません。 パラメーター値は、<xref:System.Data.Objects.ObjectParameter.Value%2A> プロパティを使用して設定または変更できます。 クエリがコンパイルされた後は、値を変更できません。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いずれかの引数の値が NULL の場合。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">name 引数の値が無効の場合。 パラメーター名は、先頭を英字にする必要があり、英字、数字、およびアンダースコアのみを含めることができます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectParameter.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーター名を取得します。パラメーター名は、コンストラクターでのみ設定できます。</summary>
+        <value>パラメーター名。パラメーター名は、コンストラクターでのみ設定できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス化されたパラメーターの名前は変更できません。 パラメーター値は、<xref:System.Data.Objects.ObjectParameter.Value%2A> プロパティを使用して設定または変更できます。 クエリがコンパイルされた後は、値を変更できません。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、新しいパラメーターをコレクションに追加します。 <xref:System.Data.Objects.ObjectParameterCollection> を反復処理し、コレクション内の各パラメーターの名前、型、および値を表示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Parameters](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_parameters)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Parameters](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_parameters)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterType">
+      <MemberSignature Language="C#" Value="public Type ParameterType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ParameterType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectParameter.ParameterType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターの型を取得します。</summary>
+        <value>パラメーターの <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターの型は、コンストラクターでのみ設定できます。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、新しいパラメーターをコレクションに追加します。 <xref:System.Data.Objects.ObjectParameterCollection> を反復処理し、コレクション内の各パラメーターの名前、型、および値を表示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Parameters](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_parameters)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Parameters](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_parameters)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectParameter.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーター値を取得または設定します。</summary>
+        <value>パラメーター値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリがコンパイルされた後は、値を変更できません。 詳細については、次を参照してください。[クエリ ビルダー メソッド](http://msdn.microsoft.com/en-us/05685434-05e6-41c2-8d5e-8933b88a40b0)です。  
+  
+ 新しい値がコンストラクターで宣言された型と互換性がない場合は、ランタイム例外が発生する可能性があります。 プロバイダーは、この値が、宣言された型と互換性があるかどうかを確認する必要があります。 たとえば、初期の型が <xref:System.Int32> で新しい値が <xref:System.Guid> の場合、例外が発生する可能性があります。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、新しいパラメーターをコレクションに追加します。 <xref:System.Data.Objects.ObjectParameterCollection> を反復処理し、コレクション内の各パラメーターの名前、型、および値を表示します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectQuery_Parameters](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectquery_parameters)]
+ [!code-vb[DP ObjectServices Concepts#ObjectQuery_Parameters](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectquery_parameters)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

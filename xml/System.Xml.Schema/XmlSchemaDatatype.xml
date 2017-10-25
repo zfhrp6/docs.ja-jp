@@ -1,0 +1,420 @@
+<Type Name="XmlSchemaDatatype" FullName="System.Xml.Schema.XmlSchemaDatatype">
+  <TypeSignature Language="C#" Value="public abstract class XmlSchemaDatatype" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlSchemaDatatype extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaDatatype" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Xml.Schema.XmlSchemaDatatype" />クラスは、共通言語ランタイム (CLR) 型への XML スキーマ定義言語 (XSD) 型のマッピングの抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Xml.Schema.XmlSchemaDatatype>クラスです。  
+  
+ [!code-cpp[Classic Webdata XmlSchemaDatatype Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic Webdata XmlSchemaDatatype Example/CPP/datatype.cpp#1)]
+ [!code-csharp[Classic Webdata XmlSchemaDatatype Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic Webdata XmlSchemaDatatype Example/CS/datatype.cs#1)]
+ [!code-vb[Classic Webdata XmlSchemaDatatype Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic Webdata XmlSchemaDatatype Example/VB/datatype.vb#1)]  
+  
+ 次の XML ファイルは、前のコード例に使用されます。  
+  
+ [!code-xml[Classic Webdata XmlSchemaDatatype Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic Webdata XmlSchemaDatatype Example/XML/example.xsd#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XmlSchemaDatatype ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaDatatype.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaDatatype" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、この型の状態を初期化するために、派生クラスのコンス トラクターによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeType">
+      <MemberSignature Language="C#" Value="public virtual object ChangeType (object value, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ChangeType(object value, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaDatatype.ChangeType(System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="value">指定された型に変換する入力値。</param>
+        <param name="targetType">代入する値を変換する対象の型。</param>
+        <summary>指定された値を型を持つが、XML スキーマ型の有効な共通言語ランタイム (CLR) 形式のいずれかで表される変換、 <see cref="T:System.Xml.Schema.XmlSchemaDatatype" />、指定された CLR 型にします。</summary>
+        <returns>変換された入力値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする型の詳細については、<xref:System.Xml?displayProperty=nameWithType>クラスと XML データ型の変換を参照してください、 [System.Xml クラスで型をサポート](~/docs/standard/data/xml/type-support-in-the-system-xml-classes.md)トピックです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Object" /> パラメーターまたは <see cref="T:System.Type" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">によって表される型、<see cref="T:System.Xml.Schema.XmlSchemaDatatype" />指定された型に指定された値の型からの変換をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeType">
+      <MemberSignature Language="C#" Value="public virtual object ChangeType (object value, Type targetType, System.Xml.IXmlNamespaceResolver namespaceResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ChangeType(object value, class System.Type targetType, class System.Xml.IXmlNamespaceResolver namespaceResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaDatatype.ChangeType(System.Object,System.Type,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="namespaceResolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="value">指定された型に変換する入力値。</param>
+        <param name="targetType">代入する値を変換する対象の型。</param>
+        <param name="namespaceResolver"><see cref="T:System.Xml.IXmlNamespaceResolver" />名前空間プレフィックスを解決するために使用します。 これにのみ使用する場合、<see cref="T:System.Xml.Schema.XmlSchemaDatatype" />そこから派生した xs:QName 型または型を表します。</param>
+        <summary>指定された値を型を持つが、XML スキーマ型の有効な共通言語ランタイム (CLR) 形式のいずれかで表される変換、<see cref="T:System.Xml.Schema.XmlSchemaDatatype" />を使用して指定された CLR 型に、<see cref="T:System.Xml.IXmlNamespaceResolver" />場合、<see cref="T:System.Xml.Schema.XmlSchemaDatatype" />そこから派生した xs:QName 型または型を表します。</summary>
+        <returns>変換された入力値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする型の詳細については、<xref:System.Xml?displayProperty=nameWithType>クラスと XML データ型の変換を参照してください、 [System.Xml クラスで型をサポート](~/docs/standard/data/xml/type-support-in-the-system-xml-classes.md)トピックです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Object" /> パラメーターまたは <see cref="T:System.Type" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidCastException">によって表される型、<see cref="T:System.Xml.Schema.XmlSchemaDatatype" />指定された型に指定された値の型からの変換をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDerivedFrom">
+      <MemberSignature Language="C#" Value="public virtual bool IsDerivedFrom (System.Xml.Schema.XmlSchemaDatatype datatype);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDerivedFrom(class System.Xml.Schema.XmlSchemaDatatype datatype) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaDatatype.IsDerivedFrom(System.Xml.Schema.XmlSchemaDatatype)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="datatype" Type="System.Xml.Schema.XmlSchemaDatatype" />
+      </Parameters>
+      <Docs>
+        <param name="datatype"><see cref="T:System.Xml.Schema.XmlSchemaDatatype" />。</param>
+        <summary><see cref="M:System.Xml.Schema.XmlSchemaDatatype.IsDerivedFrom(System.Xml.Schema.XmlSchemaDatatype)" />メソッドは常に返します<see langword="false" />です。</summary>
+        <returns>常に <see langword="false" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseValue">
+      <MemberSignature Language="C#" Value="public abstract object ParseValue (string s, System.Xml.XmlNameTable nameTable, System.Xml.IXmlNamespaceResolver nsmgr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ParseValue(string s, class System.Xml.XmlNameTable nameTable, class System.Xml.IXmlNamespaceResolver nsmgr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaDatatype.ParseValue(System.String,System.Xml.XmlNameTable,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="nameTable" Type="System.Xml.XmlNameTable" />
+        <Parameter Name="nsmgr" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="s"><see langword="string" />単純型に対して検証します。</param>
+        <param name="nameTable"><see cref="T:System.Xml.XmlNameTable" />の解析中にアトミック化に使用する、<see langword="string" />この<see cref="T:System.Xml.Schema.XmlSchemaDatatype" />オブジェクト xs:NCName 型を表します。</param>
+        <param name="nsmgr"><see cref="T:System.Xml.IXmlNamespaceResolver" />の解析中に使用するオブジェクト、<see langword="string" />この<see cref="T:System.Xml.Schema.XmlSchemaDatatype" />オブジェクト xs:QName 型を表します。</param>
+        <summary>派生クラスでオーバーライドされると、検証、<see langword="string" />組み込みまたはユーザー定義の単純型に対して指定します。</summary>
+        <returns><see cref="T:System.Object" />によって返される型に安全にキャストできる、<see cref="P:System.Xml.Schema.XmlSchemaDatatype.ValueType" />プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Schema.XmlSchemaDatatype.ParseValue%2A>メソッドは、検証、`string`組み込みまたはユーザー定義の単純型に対して指定します。 たとえば、この<xref:System.Xml.Schema.XmlSchemaDatatype>し、型 xs:date のインスタンスを表す<xref:System.DateTime>が返されます。  
+  
+ 中に実行した手順は、次のとおり、<xref:System.Xml.Schema.XmlSchemaDatatype.ParseValue%2A>メソッドの検証プロセスです。  
+  
+1.  として指定された値を変換、`string`を対応する共通言語ランタイム (CLR) を入力します。  
+  
+2.  値は、単純型に対して定義されているすべてのファセットに違反しないことを確認します。  
+  
+ 変換後の値として返されます、<xref:System.Object>によって返される型に安全にキャストされることができ、<xref:System.Xml.Schema.XmlSchemaDatatype.ValueType%2A>プロパティです。  
+  
+ ときに、<xref:System.Xml.Schema.XmlSchemaDatatype>オブジェクトがリストの種類では、入力を表す`string`値は 1 つまたは複数のオブジェクトの一覧に変換します。 ときに、<xref:System.Xml.Schema.XmlSchemaDatatype>オブジェクトがリストの種類を表す、共用体のメンバーの種類として、入力値を解析する試行します。 解析に失敗した場合、共用体の次のメンバーに、変換が試行まで解析が成功したかその他のメンバーの種類を解析がありません。 解析が成功した場合は、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では取得、`LotteryNumber`として example.xsd ファイルからの単純型、<xref:System.Xml.Schema.XmlSchemaSimpleType>および検証し、`string`の値`5`を使用して、<xref:System.Xml.Schema.XmlSchemaDatatype.ParseValue%2A>メソッドです。  
+  
+ [!code-cpp[Classic Webdata XmlSchemaDatatype Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic Webdata XmlSchemaDatatype Example/CPP/datatype.cpp#1)]
+ [!code-csharp[Classic Webdata XmlSchemaDatatype Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic Webdata XmlSchemaDatatype Example/CS/datatype.cs#1)]
+ [!code-vb[Classic Webdata XmlSchemaDatatype Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic Webdata XmlSchemaDatatype Example/VB/datatype.vb#1)]  
+  
+ 次の XML ファイルは、前のコード例に使用されます。  
+  
+ [!code-xml[Classic Webdata XmlSchemaDatatype Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic Webdata XmlSchemaDatatype Example/XML/example.xsd#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Xml.Schema.XmlSchemaValidationException">入力値は、この W3C XML スキーマ型の有効なインスタンスではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">解析対象の値にすることはできません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenizedType">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.XmlTokenizedType TokenizedType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlTokenizedType TokenizedType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaDatatype.TokenizedType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlTokenizedType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、型を取得、 <see langword="string" /> 1.0 仕様に、World Wide Web Consortium (W3C) XML で指定します。</summary>
+        <value><see cref="T:System.Xml.XmlTokenizedType" />値を<see langword="string" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ により、`string`読み取り専用として特定の XML 型、たとえば、CDATA セクションの型。  
+  
+ 次の表は、トークンの種類を示します。  
+  
+|XmlTokenizedType|説明|  
+|----------------------|-----------------|  
+|`CDATA`|CDATA 型|  
+|`ID`|ID の種類|  
+|`IDREF`|IDREF 型|  
+|`IDREFS`|IDREFS 型|  
+|`ENTITY`|エンティティの種類|  
+|`ENTITIES`|エンティティ型|  
+|`NMTOKEN`|NMTOKEN 型|  
+|`NMTOKENS`|NMTOKENS 型|  
+|`NOTATION`|NOTATION 型|  
+|`ENUMERATION`|列挙型|  
+|`QName`|QName 型|  
+|`NCName`|NCName 型|  
+|`None`|型はありません。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeCode">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.Schema.XmlTypeCode TypeCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Schema.XmlTypeCode TypeCode" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaDatatype.TypeCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlTypeCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.Schema.XmlTypeCode" />単純型の値。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlTypeCode" />単純型の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ W3C XML スキーマの一覧などの xs:ENTITIES、xs:NMTOKENS および xs:IDREFS では表されない、<xref:System.Xml.Schema.XmlTypeCode>列挙します。 によって表されるには、代わりに、<xref:System.Xml.Schema.XmlTypeCode>で xs:ENTITY、xs:NMTOKEN xs:IDREF の各型の値、<xref:System.Xml.Schema.XmlSchemaDatatype.Variety%2A>のプロパティ、<xref:System.Xml.Schema.XmlSchemaDatatype>オブジェクトに設定して<xref:System.Xml.Schema.XmlSchemaDatatypeVariety.List>です。  
+  
+> [!NOTE]
+>  Xs:anySimpleType と xs:anyType の両方の種類は表されない<xref:System.Xml.Schema.XmlTypeCode>列挙します。 表せる、<xref:System.Xml.Schema.XmlSchemaDatatype>オブジェクトを<xref:System.Xml.Schema.XmlTypeCode>値がある<xref:System.Xml.Schema.XmlTypeCode.UntypedAtomic>xs:anySimpleType のまたは<xref:System.Xml.Schema.XmlTypeCode.Item>xs:anyType のです。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Xml.Schema.XmlSchemaDatatype.TypeCode%2A>プロパティを参照してください<xref:System.Xml.Schema.XmlSchemaDatatype>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueType">
+      <MemberSignature Language="C#" Value="public abstract Type ValueType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaDatatype.ValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、項目の共通言語ランタイム (CLR) 型を取得します。</summary>
+        <value>項目の共通言語ランタイム (CLR) 型です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Schema.XmlSchemaDatatype.ValueType%2A>プロパティが項目の CLR 型を取得します。 型の要素など、`xs:int`必要があります、<xref:System.Xml.Schema.XmlSchemaDatatype.ValueType%2A>の<xref:System.Int32>既定です。 ただし、<xref:System.Xml.Schema.XmlSchemaDatatype.ValueType%2A>にマップできる有効な型のいずれかの可能性があります`xs:int`など<xref:System.Int16>または<xref:System.Double>です。  
+  
+ サポートする型の詳細については、<xref:System.Xml?displayProperty=nameWithType>名前空間を参照してください[System.Xml クラスで型をサポート](~/docs/standard/data/xml/type-support-in-the-system-xml-classes.md)です。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Xml.Schema.XmlSchemaDatatype.ValueType%2A>プロパティを参照してください<xref:System.Xml.Schema.XmlSchemaDatatype>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Variety">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.Schema.XmlSchemaDatatypeVariety Variety { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Schema.XmlSchemaDatatypeVariety Variety" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaDatatype.Variety" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaDatatypeVariety</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.Schema.XmlSchemaDatatypeVariety" />単純型の値。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlSchemaDatatypeVariety" />単純型の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

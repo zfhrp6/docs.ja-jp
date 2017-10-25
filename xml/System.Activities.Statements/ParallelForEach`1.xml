@@ -1,0 +1,228 @@
+<Type Name="ParallelForEach&lt;T&gt;" FullName="System.Activities.Statements.ParallelForEach&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public sealed class ParallelForEach&lt;T&gt; : System.Activities.NativeActivity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ParallelForEach`1&lt;T&gt; extends System.Activities.NativeActivity" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Statements.ParallelForEach`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Activities.NativeActivity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Body")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="T"><see cref="P:System.Activities.Statements.ParallelForEach`1.Values" /> コレクションで提供される値の型。</typeparam>
+    <summary>コレクションの要素を列挙し、コレクションの各要素に対して埋め込みステートメントを並列実行します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 埋め込みステートメントはまとめてスケジュールされ、非同期で実行されます。ただし、スケジュール済みのアクティビティ自体が非同期でない場合 (メッセージング アクティビティ、<xref:System.Activities.Statements.InvokeMethod>、<xref:System.Activities.AsyncCodeActivity> から派生するアクティビティなど) を除き、別々のスレッドでは実行されません。したがって、それぞれの継続するアクティビティは、その前のスケジュール済みアクティビティが完了するかアイドル状態になるまで実行されません。  このアクティビティの子アクティビティがどれも非同期ではないか、アイドル状態にならない場合、このアクティビティは <xref:System.Activities.Statements.ForEach%601> アクティビティが実行されるのと同様の方法で実行されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.Statements.ParallelForEach%601> アクティビティを作成するコード サンプルを次に示します。 この例は、[企業の購買プロセス](~/docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)サンプルです。  
+  
+ [!code-csharp[wfs_PurchaseProcess#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_purchaseprocess/cs/purchaseprocessworkflow.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParallelForEach ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.ParallelForEach`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Statements.ParallelForEach`1" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Activities.Statements.ParallelForEach%601> アクティビティを作成するコード サンプルを次に示します。 この例は、[企業の購買プロセス](~/docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)サンプルです。  
+  
+ [!code-csharp[wfs_PurchaseProcess#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_purchaseprocess/cs/purchaseprocessworkflow.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public System.Activities.ActivityAction&lt;T&gt; Body { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.ActivityAction`1&lt;!T&gt; Body" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.ParallelForEach`1.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.ActivityAction&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.ActivityAction" /> コレクションに格納されている値ごとに 1 回実行される、<see cref="P:System.Activities.Statements.ParallelForEach`1.Values" />。</summary>
+        <value>格納されているアクティビティ操作。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Activities.Statements.ParallelForEach%601> アクティビティの Body プロパティを設定するコード サンプルを次に示します。 この例は、[企業の購買プロセス](~/docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)サンプルです。  
+  
+ [!code-csharp[wfs_PurchaseProcess#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_purchaseprocess/cs/purchaseprocessworkflow.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheMetadata">
+      <MemberSignature Language="C#" Value="protected override void CacheMetadata (System.Activities.NativeActivityMetadata metadata);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CacheMetadata(valuetype System.Activities.NativeActivityMetadata metadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.ParallelForEach`1.CacheMetadata(System.Activities.NativeActivityMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Activities.NativeActivityMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompletionCondition">
+      <MemberSignature Language="C#" Value="public System.Activities.Activity&lt;bool&gt; CompletionCondition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Activity`1&lt;bool&gt; CompletionCondition" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.ParallelForEach`1.CompletionCondition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各イテレーションの完了後に評価されます。</summary>
+        <value>完了の式。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `true` であると評価する場合、スケジュールされた保留イテレーションはキャンセルされます。 このプロパティが設定されていない場合、スケジュールされたすべてのステートメントは、完了するまで実行されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="protected override void Execute (System.Activities.NativeActivityContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Execute(class System.Activities.NativeActivityContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.ParallelForEach`1.Execute(System.Activities.NativeActivityContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.NativeActivityContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateDynamicUpdateMap">
+      <MemberSignature Language="C#" Value="protected override void OnCreateDynamicUpdateMap (System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata metadata, System.Activities.Activity originalActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnCreateDynamicUpdateMap(class System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata metadata, class System.Activities.Activity originalActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.ParallelForEach`1.OnCreateDynamicUpdateMap(System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata,System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Activities.DynamicUpdate.NativeActivityUpdateMapMetadata" />
+        <Parameter Name="originalActivity" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">To be added.</param>
+        <param name="originalActivity">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Activities.InArgument&lt;System.Collections.Generic.IEnumerable&lt;T&gt;&gt; Values { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.InArgument`1&lt;class System.Collections.Generic.IEnumerable`1&lt;!T&gt;&gt; Values" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.ParallelForEach`1.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Activities.RequiredArgument</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.InArgument&lt;System.Collections.Generic.IEnumerable&lt;T&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Activities.Statements.ParallelForEach`1.Body" /> に格納されているアクティビティのイテレーションごとに、パラメーターとして使用される値のコレクション。</summary>
+        <value>値のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Activities.Statements.ParallelForEach%601> アクティビティの Values プロパティを設定するコード サンプルを次に示します。 この例は、[企業の購買プロセス](~/docs/framework/windows-workflow-foundation/samples/corporate-purchase-process.md)サンプルです。  
+  
+ [!code-csharp[wfs_PurchaseProcess#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_purchaseprocess/cs/purchaseprocessworkflow.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

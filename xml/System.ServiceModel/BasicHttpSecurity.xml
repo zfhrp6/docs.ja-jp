@@ -1,0 +1,209 @@
+<Type Name="BasicHttpSecurity" FullName="System.ServiceModel.BasicHttpSecurity">
+  <TypeSignature Language="C#" Value="public sealed class BasicHttpSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BasicHttpSecurity extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.BasicHttpSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Http</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see langword="basicHttpBinding" /> バインディングのセキュリティ設定を構成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UEBasicHttpBinding#8](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/snippets.cs#8)]
+ [!code-vb[S_UEBasicHttpBinding#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/snippets.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BasicHttpSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.BasicHttpSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.BasicHttpMessageSecurity Message { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.BasicHttpMessageSecurity Message" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.BasicHttpSecurity.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.BasicHttpMessageSecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="basicHttpBinding" /> バインディングのメッセージ レベルのセキュリティ設定を取得します。</summary>
+        <value>このバインディングのメッセージ レベルのセキュリティ設定を表す <see cref="T:System.ServiceModel.BasicHttpMessageSecurity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のセキュリティ設定は次のとおりです。<xref:System.ServiceModel.BasicHttpMessageSecurity.ClientCredentialType%2A> の <xref:System.ServiceModel.BasicHttpMessageCredentialType.UserName> および <xref:System.ServiceModel.BasicHttpMessageSecurity.AlgorithmSuite%2A> の <xref:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256%2A>。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEBasicHttpBinding#9](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/snippets.cs#9)]
+ [!code-vb[S_UEBasicHttpBinding#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/snippets.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.BasicHttpSecurityMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.BasicHttpSecurityMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.BasicHttpSecurity.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.BasicHttpSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="basicHttpBinding" /> バインディングのセキュリティ モードを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.BasicHttpSecurityMode" /> 列挙値。 このプロパティの既定値は <see cref="F:System.ServiceModel.BasicHttpSecurityMode.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、<xref:System.ServiceModel.BasicHttpSecurity.Transport%2A> または <xref:System.ServiceModel.BasicHttpSecurity.Message%2A> のどの設定が有効になるかに影響します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEBasicHttpBinding#10](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/snippets.cs#10)]
+ [!code-vb[S_UEBasicHttpBinding#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/snippets.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.BasicHttpSecurityMode" /> にとって有効な値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeMessage">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeMessage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeMessage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpSecurity.ShouldSerializeMessage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メッセージの要素をシリアル化するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、メッセージをシリアル化する必要があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTransport">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTransport ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTransport() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpSecurity.ShouldSerializeTransport" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランスポート要素をシリアル化するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />トランスポート要素をシリアル化する必要があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transport">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.HttpTransportSecurity Transport { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.HttpTransportSecurity Transport" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.BasicHttpSecurity.Transport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.HttpTransportSecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="basicHttpBinding" /> バインディングのトランスポート レベルのセキュリティ設定を取得します。</summary>
+        <value>トランスポート レベルのセキュリティ設定、<see langword="basicHttpBinding" />バインドします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが返す <xref:System.ServiceModel.HttpTransportSecurity> オブジェクトには、HTTP トランスポートの認証パラメーターを制御するプロパティが格納されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UEBasicHttpBinding#11](~/samples/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/snippets.cs#11)]
+ [!code-vb[S_UEBasicHttpBinding#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/snippets.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

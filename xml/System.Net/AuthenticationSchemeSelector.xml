@@ -1,0 +1,55 @@
+<Type Name="AuthenticationSchemeSelector" FullName="System.Net.AuthenticationSchemeSelector">
+  <TypeSignature Language="C#" Value="public delegate System.Net.AuthenticationSchemes AuthenticationSchemeSelector(HttpListenerRequest httpRequest);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AuthenticationSchemeSelector extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Net.AuthenticationSchemeSelector" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.HttpListener</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="httpRequest" Type="System.Net.HttpListenerRequest" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Net.AuthenticationSchemes</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="httpRequest"><see cref="T:System.Net.HttpListenerRequest" />認証スキームを選択する対象のインスタンス。</param>
+    <summary>認証スキームを選択、<see cref="T:System.Net.HttpListener" />インスタンス。</summary>
+    <returns>1 つ、<see cref="T:System.Net.AuthenticationSchemes" />の指定されたクライアント要求に使用する認証方法を示す値。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型のデリゲートで使用<xref:System.Net.HttpListener>要求の特性に基づいて、認証方法を選択するインスタンス。  
+  
+ <xref:System.Net.AuthenticationSchemeSelector>デリゲートを渡し、<xref:System.Net.HttpListenerRequest>着信する要求ごとに認証情報を提供していないオブジェクトです。 デリゲートが呼び出されるメソッドを使用して、<xref:System.Net.HttpListenerRequest>オブジェクトとその他の使用可能な情報を必要とする場合は、どの認証方式を決定します。 使用してデリゲートを指定、<xref:System.Net.HttpListener.AuthenticationSchemeSelectorDelegate%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、この型のインスタンスをで設定する、<xref:System.Net.HttpListener.AuthenticationSchemeSelectorDelegate%2A>プロパティです。  
+  
+ [!code-csharp[NCLListener#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLListener/CS/sample.cs#2)]
+ [!code-vb[NCLListener#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLListener/vb/sample.vb#2)]  
+  
+ 次の例では、によって呼び出されるメソッドの実装、<xref:System.Net.AuthenticationSchemeSelector>前の例を委任します。  
+  
+ [!code-csharp[NCLListener#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLListener/CS/sample.cs#1)]
+ [!code-vb[NCLListener#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLListener/vb/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

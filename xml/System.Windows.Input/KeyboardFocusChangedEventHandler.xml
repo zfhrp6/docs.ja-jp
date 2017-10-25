@@ -1,0 +1,58 @@
+<Type Name="KeyboardFocusChangedEventHandler" FullName="System.Windows.Input.KeyboardFocusChangedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void KeyboardFocusChangedEventHandler(object sender, KeyboardFocusChangedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed KeyboardFocusChangedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.KeyboardFocusChangedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Input.KeyboardFocusChangedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary><see cref="E:System.Windows.UIElement.LostKeyboardFocus" /> と <see cref="E:System.Windows.UIElement.GotKeyboardFocus" /> のルーティング イベントだけでなく、関連する添付イベントとプレビュー イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートは、次の添付イベントの使用します。  
+  
+-   <xref:System.Windows.Input.Keyboard.GotKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Input.Keyboard.LostKeyboardFocus?displayProperty=nameWithType>  
+  
+ このデリゲートは、基本要素の次のルーティング イベントにも使用されます。 これらのルーティング イベントがより一般的な要素のモデルにアクセスできるようにする上記のアタッチされたイベントを転送[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。  
+  
+-   <xref:System.Windows.UIElement.GotKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.LostKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.PreviewGotKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.PreviewLostKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.GotKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.LostKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.PreviewGotKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.PreviewLostKeyboardFocus?displayProperty=nameWithType>  
+  
+ 添付イベントおよび基本要素のルーティング イベントは、それぞれのイベント データを共有し、バブルとトンネル ルーティング イベントのバージョンは、イベント データを共有もします。 イベント ルートをたどる際は、イベントの処理の特性に影響することができます。 詳細については、「[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ 場合、<xref:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus>イベントまたは<xref:System.Windows.Input.Keyboard.PreviewLostKeyboardFocus>イベントが処理される (<xref:System.Windows.RoutedEventArgs.Handled%2A>に設定されている`true`イベント データの)、キーボード フォーカスは変わりません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

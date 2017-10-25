@@ -1,0 +1,828 @@
+<Type Name="CountdownEvent" FullName="System.Threading.CountdownEvent">
+  <TypeSignature Language="C#" Value="public class CountdownEvent : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CountdownEvent extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.CountdownEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Initial Count={InitialCount}, Current Count={CurrentCount}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>カウントが 0 になったときに通知される同期プリミティブを表します。</summary>
+    <remarks>To be added.</remarks>
+    <threadsafe>すべてのパブリックおよびプロテクト メンバー<see cref="T:System.Threading.CountdownEvent" />はスレッド セーフであるとする必要がありますのみ Dispose を除き、複数のスレッドから同時に使用することがある場合に使用上の他のすべての操作、<see cref="T:System.Threading.CountdownEvent" />が完了し、リセット、する必要があります場合にのみ使用イベントにアクセスする他のスレッドがありません。  
+  
+ 例  
+  
+ 次の例を使用する方法を示しています、 <see cref="T:System.Threading.CountdownEvent" />:  
+  
+ [!code-csharp[System.Threading.CountdownEvent#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.countdownevent/cs/countdownevent.cs#01)]
+ [!code-vb[System.Threading.CountdownEvent#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.countdownevent/vb/countdownevent.vb#01)]</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CountdownEvent (int initialCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 initialCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="initialCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="initialCount">設定するために必要な最初の通知の数、<see cref="T:System.Threading.CountdownEvent" />です。</param>
+        <summary>新しいインスタンスを初期化<see cref="T:System.Threading.CountdownEvent" />指定した数を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ iI`initialCount`が 0 の場合、イベントがシグナル状態で作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="initialCount" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCount">
+      <MemberSignature Language="C#" Value="public void AddCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.AddCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インクリメント、<see cref="T:System.Threading.CountdownEvent" />のいずれかで現在の数。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のインスタンスは既に設定されています。  
+  
+ または  
+  
+ <see cref="P:System.Threading.CountdownEvent.CurrentCount" /> が <see cref="F:System.Int32.MaxValue" /> 以上になっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCount">
+      <MemberSignature Language="C#" Value="public void AddCount (int signalCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCount(int32 signalCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.AddCount(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signalCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="signalCount">増やす値<see cref="P:System.Threading.CountdownEvent.CurrentCount" />です。</param>
+        <summary>インクリメント、<see cref="T:System.Threading.CountdownEvent" />の値を指定して現在の数。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="signalCount" /> が 0 以下です。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のインスタンスは既に設定されています。  
+  
+ または  
+  
+ <see cref="P:System.Threading.CountdownEvent.CurrentCount" />等しいかより大きい<see cref="F:System.Int32.MaxValue" />カウントがインクリメントされます後<paramref name="signalCount." /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentCount">
+      <MemberSignature Language="C#" Value="public int CurrentCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentCount" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.CountdownEvent.CurrentCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントの設定に必要な残りの通知の数を取得します。</summary>
+        <value>イベントの設定に必要な残りの通知の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.CountdownEvent" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Dispose` を使い終わったら <xref:System.Threading.CountdownEvent> を呼び出します。 `Dispose` メソッドによって、<xref:System.Threading.CountdownEvent> は使用不可の状態になります。 呼び出した後`Dispose`へのすべての参照を解放する必要があります、<xref:System.Threading.CountdownEvent>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Threading.CountdownEvent>占有されていた。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  `Dispose` への最後の参照を解放する前に、必ず <xref:System.Threading.CountdownEvent> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Threading.CountdownEvent> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">マネージ リソースとアンマネージ リソースの両方を解放する場合は true、アンマネージ リソースだけを解放する場合は false。</param>
+        <summary><see cref="T:System.Threading.CountdownEvent" /> が使用しているアンマネージ リソースを解放します。オプションとして、マネージ リソースを解放することもできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのメンバーとは異なり<xref:System.Threading.CountdownEvent>、<xref:System.Threading.CountdownEvent.Dispose%2A>スレッド セーフではないと、このインスタンスの他のメンバーと同時に使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialCount">
+      <MemberSignature Language="C#" Value="public int InitialCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 InitialCount" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.CountdownEvent.InitialCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントの設定に必要な最初の通知の数を取得します。</summary>
+        <value>イベントの設定に必要な最初の通知の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSet">
+      <MemberSignature Language="C#" Value="public bool IsSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSet" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.CountdownEvent.IsSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示すかどうか、<see cref="T:System.Threading.CountdownEvent" />オブジェクトの現在のカウントが 0 に達した.</summary>
+        <value>
+          <see langword="true" />現在のカウントが 0 です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.CountdownEvent>カウントが 0 に達したときに、イベントは発生しません。 代わりに、<xref:System.Threading.CountdownEvent.CurrentCount%2A>プロパティが 0 に等しいと<xref:System.Threading.CountdownEvent.IsSet%2A>プロパティ =`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセット、<see cref="P:System.Threading.CountdownEvent.CurrentCount" />の値に<see cref="P:System.Threading.CountdownEvent.InitialCount" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのメンバーとは異なり<xref:System.Threading.CountdownEvent>リセットがスレッド セーフであるとこのインスタンスの他のメンバーと同時に使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset (int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset(int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Reset(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="count">設定に必要な通知の数、<see cref="T:System.Threading.CountdownEvent" />です。</param>
+        <summary>リセット、<see cref="P:System.Threading.CountdownEvent.InitialCount" />プロパティ値を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、リセット<xref:System.Threading.CountdownEvent.InitialCount%2A>の現在のインスタンスのプロパティの後続のすべてのアクセス。 ほとんどのメンバーとは異なり<xref:System.Threading.CountdownEvent>リセットがスレッド セーフであるとこのインスタンスの他のメンバーと同時に使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスが既にに破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="count" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Signal">
+      <MemberSignature Language="C#" Value="public bool Signal ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Signal() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Signal" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>信号を登録、 <see cref="T:System.Threading.CountdownEvent" />、デクリメント、値の<see cref="P:System.Threading.CountdownEvent.CurrentCount" />します。</summary>
+        <returns>シグナルが 0 になり、イベントの数を原因となった場合は true が設定されました。それ以外の場合は false です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のインスタンスは既に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Signal">
+      <MemberSignature Language="C#" Value="public bool Signal (int signalCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Signal(int32 signalCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Signal(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signalCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="signalCount">登録する通知の数。</param>
+        <summary>複数の信号を登録、 <see cref="T:System.Threading.CountdownEvent" />、デクリメント、値の<see cref="P:System.Threading.CountdownEvent.CurrentCount" />を指定の量。</summary>
+        <returns>信号が 0 になり、イベントの数を原因となった場合は true が設定されました。それ以外の場合は false です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="signalCount" /> が 1 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のインスタンスは既に設定されています。 - または - または<paramref name="signalCount" />がより大きい<see cref="P:System.Threading.CountdownEvent.CurrentCount" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryAddCount">
+      <MemberSignature Language="C#" Value="public bool TryAddCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryAddCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.TryAddCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インクリメントしようとしています。<see cref="P:System.Threading.CountdownEvent.CurrentCount" />でいずれか。</summary>
+        <returns>増分値が成功した場合は true。それ以外の場合は false です。 場合<see cref="P:System.Threading.CountdownEvent.CurrentCount" />が既に 0 にこのメソッドは false を返します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Threading.CountdownEvent.CurrentCount" /> と <see cref="F:System.Int32.MaxValue" /> が等価です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryAddCount">
+      <MemberSignature Language="C#" Value="public bool TryAddCount (int signalCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryAddCount(int32 signalCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.TryAddCount(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signalCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="signalCount">増やす値<see cref="P:System.Threading.CountdownEvent.CurrentCount" />です。</param>
+        <summary>インクリメントしようとしています。<see cref="P:System.Threading.CountdownEvent.CurrentCount" />指定した値です。</summary>
+        <returns>増分値が成功した場合は true。それ以外の場合は false です。 場合<see cref="P:System.Threading.CountdownEvent.CurrentCount" />が 0 の場合は false が返されますに既に存在します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="signalCount" /> が 0 以下です。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のインスタンスは既に設定されています。  
+  
+ または  
+  
+ <see cref="P:System.Threading.CountdownEvent.CurrentCount" /> + <paramref name="signalCount" />等しいかより大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wait">
+      <MemberSignature Language="C#" Value="public void Wait ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Wait() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Wait" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>までの現在のスレッドをブロック、<see cref="T:System.Threading.CountdownEvent" />が設定されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在のインスタンスまで、無期限にブロックの呼び出し元が設定されています。 呼び出し元はかどうか、状態の設定で、イベントが現在はすぐに返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wait">
+      <MemberSignature Language="C#" Value="public bool Wait (int millisecondsTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Wait(int32 millisecondsTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Wait(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="millisecondsTimeout">待機するミリ秒数。無制限に待機する場合は <see cref="F:System.Threading.Timeout.Infinite" /> (-1)。</param>
+        <summary>までの現在のスレッドをブロック、<see cref="T:System.Threading.CountdownEvent" />設定すると、32 ビット符号付き整数を使用して、タイムアウト時間を計測します。</summary>
+        <returns>true の場合、<see cref="T:System.Threading.CountdownEvent" />された設定。 それ以外の場合は false。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="millisecondsTimeout" /> は無限のタイムアウトを表す -1 以外の負の数です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wait">
+      <MemberSignature Language="C#" Value="public void Wait (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Wait(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Wait(System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">観察する <see cref="T:System.Threading.CancellationToken" />。</param>
+        <summary>までの現在のスレッドをブロック、<see cref="T:System.Threading.CountdownEvent" />を観察しながら、設定、<see cref="T:System.Threading.CancellationToken" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在のインスタンスまで、無期限にブロックの呼び出し元が設定されています。 呼び出し元はかどうか、状態の設定で、イベントが現在はすぐに返します。 場合、<xref:System.Threading.CancellationToken>待機操作中に観察が取り消された、<xref:System.OperationCanceledException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OperationCanceledException">
+          <paramref name="cancellationToken" />取り消されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。 - または -、<see cref="T:System.Threading.CancellationTokenSource" />作成<paramref name="cancellationToken" />は既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wait">
+      <MemberSignature Language="C#" Value="public bool Wait (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Wait(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Wait(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">待機するミリ秒数を表す <see cref="T:System.TimeSpan" />。無制限に待機する場合は、-1 ミリ秒を表す <see cref="T:System.TimeSpan" />。</param>
+        <summary>までの現在のスレッドをブロック、<see cref="T:System.Threading.CountdownEvent" />を使用して、設定、<see cref="T:System.TimeSpan" />タイムアウト時間を測定します。</summary>
+        <returns>true の場合、<see cref="T:System.Threading.CountdownEvent" />された設定。 それ以外の場合は false。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" />無限のタイムアウト - または - タイムアウトはよりも大きい値を表す-1 ミリ秒以外の負の数値<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wait">
+      <MemberSignature Language="C#" Value="public bool Wait (int millisecondsTimeout, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Wait(int32 millisecondsTimeout, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Wait(System.Int32,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="millisecondsTimeout">待機するミリ秒数。無制限に待機する場合は <see cref="F:System.Threading.Timeout.Infinite" /> (-1)。</param>
+        <param name="cancellationToken">観察する <see cref="T:System.Threading.CancellationToken" />。</param>
+        <summary>までの現在のスレッドをブロック、<see cref="T:System.Threading.CountdownEvent" />を観察しながら、タイムアウト時間を測定する 32 ビット符号付き整数を使用して、設定、<see cref="T:System.Threading.CancellationToken" />です。</summary>
+        <returns>true の場合、<see cref="T:System.Threading.CountdownEvent" />された設定。 それ以外の場合は false。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.OperationCanceledException">
+          <paramref name="cancellationToken" />取り消されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。 - または -、<see cref="T:System.Threading.CancellationTokenSource" />作成<paramref name="cancellationToken" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="millisecondsTimeout" /> は無限のタイムアウトを表す -1 以外の負の数です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Wait">
+      <MemberSignature Language="C#" Value="public bool Wait (TimeSpan timeout, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Wait(valuetype System.TimeSpan timeout, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.CountdownEvent.Wait(System.TimeSpan,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">待機するミリ秒数を表す <see cref="T:System.TimeSpan" />。無制限に待機する場合は、-1 ミリ秒を表す <see cref="T:System.TimeSpan" />。</param>
+        <param name="cancellationToken">観察する <see cref="T:System.Threading.CancellationToken" />。</param>
+        <summary>までの現在のスレッドをブロック、<see cref="T:System.Threading.CountdownEvent" />を使用して、設定、<see cref="T:System.TimeSpan" />を観察しながら、タイムアウト時間を測定する、<see cref="T:System.Threading.CancellationToken" />です。</summary>
+        <returns>true の場合、<see cref="T:System.Threading.CountdownEvent" />された設定。 それ以外の場合は false。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.OperationCanceledException">
+          <paramref name="cancellationToken" />取り消されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。 - または -、<see cref="T:System.Threading.CancellationTokenSource" />作成<paramref name="cancellationToken" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" />無限のタイムアウト - または - タイムアウトはよりも大きい値を表す-1 ミリ秒以外の負の数値<see cref="F:System.Int32.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitHandle">
+      <MemberSignature Language="C#" Value="public System.Threading.WaitHandle WaitHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.WaitHandle WaitHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.CountdownEvent.WaitHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.WaitHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.WaitHandle" />イベントを設定するを待機するために使用されます。</summary>
+        <value>A<see cref="T:System.Threading.WaitHandle" />イベントを設定するを待機するために使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.CountdownEvent.WaitHandle%2A>指定された WaitHandle に依存するコード ベースとの統合に必要な場合にのみ使用する必要があります。 待機するために必要なすべての場合、<xref:System.Threading.CountdownEvent>を設定する、<xref:System.Threading.CountdownEvent.Wait%2A>メソッドを優先する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

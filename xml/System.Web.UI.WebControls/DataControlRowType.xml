@@ -1,0 +1,131 @@
+<Type Name="DataControlRowType" FullName="System.Web.UI.WebControls.DataControlRowType">
+  <TypeSignature Language="C#" Value="public enum DataControlRowType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataControlRowType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataControlRowType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>データ コントロール内の行の関数をなどを指定します、<see cref="T:System.Web.UI.WebControls.DetailsView" />または<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlRowType>列挙体は、データ コントロール内の行の関数を識別します。 によって使用されている、<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.GridView>インターフェイス ヘッダー行、行区切り記号、ページャー ボタンなどの (UI) 要素のデータを表示する行とその他のユーザーを表示する行を区別するコントロール。  
+  
+ 使用することができます、<xref:System.Web.UI.WebControls.DataControlRowType>列挙体の型を識別する、<xref:System.Web.UI.WebControls.GridViewRow>または<xref:System.Web.UI.WebControls.DetailsViewRow>オブジェクトを列挙するとき、<xref:System.Web.UI.WebControls.GridViewRowCollection>または<xref:System.Web.UI.WebControls.DetailsViewRowCollection>コレクション。 使用することができます、行を作成するデータ コントロールを作成している場合、<xref:System.Web.UI.WebControls.DataControlRowType>コントロール内の異なる行の機能を識別する列挙です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataControlRowType>列挙体を使用する場合は、行の型を確認する、<xref:System.Web.UI.WebControls.GridView>コントロール。 `AuthorsGridView_RowCreated`メソッドにより、<xref:System.Web.UI.WebControls.LinkButton.CommandArgument%2A>のプロパティ、<xref:System.Web.UI.WebControls.LinkButton>コントロールは内のすべてのデータ行に一意、<xref:System.Web.UI.WebControls.GridView>コントロール、ようにと行の<xref:System.Web.UI.WebControls.LinkButton>コントロールがクリックされると、正しく識別されることができます。  
+  
+ [!code-aspx-csharp[GridViewCommandEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewCommandEventArgs/CS/gridviewcommandeventargscs.aspx#1)]
+ [!code-aspx-vb[GridViewCommandEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewCommandEventArgs/VB/gridviewcommandeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DataRow">
+      <MemberSignature Language="C#" Value="DataRow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DataControlRowType DataRow = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataControlRowType.DataRow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ コントロールのデータ行です。 のみ<see cref="F:System.Web.UI.WebControls.DataControlRowType.DataRow" />行がデータ バインドを指定できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EmptyDataRow">
+      <MemberSignature Language="C#" Value="EmptyDataRow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DataControlRowType EmptyDataRow = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataControlRowType.EmptyDataRow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインド コントロールの空の行。 空の行を表示すると、データ バインド コントロールに表示するレコードがあるない場合に、<see langword="EmptyDataTemplate" />テンプレートではありません<see langword="null" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Footer">
+      <MemberSignature Language="C#" Value="Footer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DataControlRowType Footer = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataControlRowType.Footer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ コントロールのフッター行。 フッター行には、データ バインドをすることはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Header">
+      <MemberSignature Language="C#" Value="Header" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DataControlRowType Header = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataControlRowType.Header" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ コントロールのヘッダー行です。 ヘッダー行は、データ バインドをすることはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Pager">
+      <MemberSignature Language="C#" Value="Pager" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DataControlRowType Pager = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataControlRowType.Pager" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページャー ボタンまたはページャー コントロールを表示する行。 ページャー行には、データ バインドをすることはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Separator">
+      <MemberSignature Language="C#" Value="Separator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.DataControlRowType Separator = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.DataControlRowType.Separator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行区切り記号。 行区切り記号は、データ バインドをすることはできません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

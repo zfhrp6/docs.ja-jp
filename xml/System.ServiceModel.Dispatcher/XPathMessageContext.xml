@@ -1,0 +1,259 @@
+<Type Name="XPathMessageContext" FullName="System.ServiceModel.Dispatcher.XPathMessageContext">
+  <TypeSignature Language="C#" Value="public class XPathMessageContext : System.Xml.Xsl.XsltContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi XPathMessageContext extends System.Xml.Xsl.XsltContext" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.XPathMessageContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.Xsl.XsltContext</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ServiceModel.XamlIntegration.XPathMessageContextTypeConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SOAP ドキュメントに対して XPath 式を評価するときに一般的に使用する複数の XPath 関数と名前空間のマッピングを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XPath エンジンは、XPath コンテキストを完全にサポートし、<xref:System.Xml.Xsl.XsltContext> がこのサポートを実装するのと同じ方法で、.NET Framework の <xref:System.Xml.XPath.XPathNavigator> クラスを使用します。 抽象クラスの <xref:System.Xml.Xsl.XsltContext> を使用すると、カスタム XPath 関数ライブラリを実装し、XPath 変数を宣言できます。 <xref:System.Xml.Xsl.XsltContext> は <xref:System.Xml.XmlNamespaceManager> なので、名前空間プレフィックスのマッピングも含んでいます。  
+  
+ フィルター エンジンは、<xref:System.Xml.Xsl.XsltContext> という名前の <xref:System.ServiceModel.Dispatcher.XPathMessageContext> を実装します。 <xref:System.ServiceModel.Dispatcher.XPathMessageContext> では、XPath 式で使用できるカスタム関数が定義され、複数の共通の名前空間プレフィックスのマッピングが宣言されます。 次の表に、によって定義されるカスタム関数<xref:System.ServiceModel.Dispatcher.XPathMessageContext>XPath 式で使用できます。  
+  
+|XPath 関数|説明|  
+|--------------------|-----------------|  
+|body|SOAP のバージョン (1.1 に関係なく、SOAP Body ノードを返します。 または 1.2)。|  
+|ヘッダー|SOAP のバージョン (1.1、1.2) に関係なく、SOAP ヘッダー ノードを返します。|  
+|関連付けデータ|入力文字列を受け取り、関連付けられている相関関係のメッセージ プロパティの値を返します。  ' wsc instanceId' は、コンテキスト ベースの関連付けに使用される予約済みの文字列です。|  
+|メッセージ Id|Ws-addressing の MessageID ヘッダーの値を返します。|  
+|relatesTo|(August2004 または WSA 1.0) のバージョンに関係なく、Ws-addressing RelatesTo ヘッダーの値を返します。|  
+|replyTo|(August2004 または WSA 1.0) のバージョンに関係なく、Ws-addressing の ReplyTo ヘッダーの値を返します。|  
+|from|Ws-addressing ヘッダーの バージョン (August2004 または WSA 1.0) に関係なくの値を返します。|  
+|faultTo|(August2004 または WSA 1.0) のバージョンに関係なく、Ws-addressing FaultTo ヘッダーの値を返します。|  
+|から|値を返しますに Ws-addressing ヘッダーの存在する場合、それ以外を返します匿名です。|  
+|アクション|Ws-addressing アクション ヘッダーの値を返します。|  
+|soap uri|SOAP 名前空間 uri を返します。|  
+|ヘッダーのアクターと|SOAP のアクターの uri を取得し、(1.1、1.2) の SOAP バージョンに関係なく、そのアクターを含むすべてのヘッダーを返します。|  
+|アクター|SOAP のバージョン (1.1、1.2) に関係なく、最初の子ノードの SOAP アクター uri を返します。|  
+|必須|最初の子ノードが SOAP のバージョン (1.1、1.2) に関係なく、必須かどうかを返します。|  
+|アクター next|最初の子ノードの SOAP アクター uri が (1.1、1.2) の SOAP バージョンに関係なく、[次へ] の役割を担いかどうかを返します。|  
+|ultimate アクター受信者-|最初の子ノードの SOAP アクター uri が SOAP のバージョン (1.1、1.2) に関係なく、UltimateReceiver 役割を想定して かどうかを返します。|  
+|日付と時刻|入力日付文字列を受け取り、double 型に変換された値を返します。|  
+|継続時間|入力 timespan 文字列を使用して、日数の合計数の値を返します。|  
+|(utc) のようになりました|値を返します<xref:System.DateTime.UtcNow%2A>です。|  
+  
+ 次の表は、既定の名前空間と名前空間のプレフィックスで宣言されている<xref:System.ServiceModel.Dispatcher.XPathMessageContext>です。  
+  
+|プレフィックス|Namespace|  
+|------------|---------------|  
+|s11|http://schemas.xmlsoap.org/soap/envelope|  
+|s12|http://www.w3.org/2003/05/soap-envelope|  
+|wsaAugust2004|http://schemas.xmlsoap.org/ws/2004/08/addressing|  
+|wsa10|http://www.w3.org/2005/08/addressing|  
+|sm|http://schemas.microsoft.com/serviceModel/2004/05/xpathfunctions|  
+|tempuri|http://tempuri.org|  
+|ser|http://schemas.microsoft.com/2003/10/Serialization|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.Dispatcher.XPathMessageContext" /> のインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageContext (System.Xml.NameTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.NameTable table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageContext.#ctor(System.Xml.NameTable)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="table" Type="System.Xml.NameTable" />
+      </Parameters>
+      <Docs>
+        <param name="table">文字列を格納するために内部的に使用される <see cref="T:System.Xml.NameTable" /> クラス。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Dispatcher.XPathMessageContext" /> を使用して、<see cref="T:System.Xml.NameTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラス、<xref:System.Xml.XmlDocument>、<xref:System.Xml.XmlReader> などのいくつかのクラスは、内部的に <xref:System.Xml.NameTable> クラスを使用して、属性名および要素名を格納します。 要素名または属性名が XML ドキュメントに複数回、出現した場合は、<xref:System.Xml.NameTable> に 1 回だけ格納されます。 名前は、共通言語ランタイム (CLR) オブジェクト型として格納されます。 これにより、負荷の高い文字列比較ではなく、これらの文字列でオブジェクト比較を実行できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareDocument">
+      <MemberSignature Language="C#" Value="public override int CompareDocument (string baseUri, string nextBaseUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 CompareDocument(string baseUri, string nextBaseUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageContext.CompareDocument(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.String" />
+        <Parameter Name="nextBaseUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">比較対象の最初のドキュメントのベース URI。</param>
+        <param name="nextBaseUri">比較対象の 2 番目のドキュメントのベース URI。</param>
+        <summary>ドキュメントが XSLT プロセッサによって読み込まれた順序に基づいて、2 つのドキュメントのベース統一リソース識別子 (URI) を比較します。</summary>
+        <returns>常に 0 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するには、派生クラス内でオーバーライドする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreserveWhitespace">
+      <MemberSignature Language="C#" Value="public override bool PreserveWhitespace (System.Xml.XPath.XPathNavigator node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool PreserveWhitespace(class System.Xml.XPath.XPathNavigator node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageContext.PreserveWhitespace(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="node">現在のコンテキストで維持または除去される空白ノード。</param>
+        <summary>特定のコンテキストについて、空白ノードを保持するか、または除去するかを評価します。</summary>
+        <returns>常に <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するには、派生クラス内でオーバーライドする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveFunction">
+      <MemberSignature Language="C#" Value="public override System.Xml.Xsl.IXsltContextFunction ResolveFunction (string prefix, string name, System.Xml.XPath.XPathResultType[] argTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.Xsl.IXsltContextFunction ResolveFunction(string prefix, string name, valuetype System.Xml.XPath.XPathResultType[] argTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageContext.ResolveFunction(System.String,System.String,System.Xml.XPath.XPathResultType[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.IXsltContextFunction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="argTypes" Type="System.Xml.XPath.XPathResultType[]" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">XPath 式内に示されている、関数のプリフィックス。</param>
+        <param name="name">関数の名前。</param>
+        <param name="argTypes">解決対象の関数の引数型の配列。 この配列を使用すると、同じ名前の複数のメソッド (オーバーロードされたメソッドなど) の中から 1 つ選択できるようになります。</param>
+        <summary>関数の参照を解決し、返します、 [T:System.Xml.Xsl.IXsltContextFunction](ms-help://MS.MSSDK.1033/MS.WinFXSDK.1033/cpref37/html/T_System_Xml_Xsl_IXsltContextFunction.htm)関数を表すです。</summary>
+        <returns>[T:System.Xml.Xsl.IXsltContextFunction](ms-help://MS.MSSDK.1033/MS.WinFXSDK.1033/cpref37/html/T_System_Xml_Xsl_IXsltContextFunction.htm)関数を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [T:System.Xml.Xsl.IXsltContextFunction](ms-help://MS.MSSDK.1033/MS.WinFXSDK.1033/cpref37/html/T_System_Xml_Xsl_IXsltContextFunction.htm)関数を評価する実行時に使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="argTypes" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveVariable">
+      <MemberSignature Language="C#" Value="public override System.Xml.Xsl.IXsltContextVariable ResolveVariable (string prefix, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.Xsl.IXsltContextVariable ResolveVariable(string prefix, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageContext.ResolveVariable(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.IXsltContextVariable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">XPath 式内に示されている、変数のプレフィックス。</param>
+        <param name="name">変数の名前。</param>
+        <summary>変数の参照を解決し、変数を表す <see cref="T:System.Xml.Xsl.IXsltContextVariable" /> を返します。</summary>
+        <returns>実行時の変数を表す <see cref="T:System.Xml.Xsl.IXsltContextVariable" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.IXsltContextVariable> を実行時に使用して、変数の値を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Whitespace">
+      <MemberSignature Language="C#" Value="public override bool Whitespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Whitespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.XPathMessageContext.Whitespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力に空白ノードを含めるかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するには、派生クラス内でオーバーライドする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,947 @@
+<Type Name="OracleParameterCollection" FullName="System.Data.OracleClient.OracleParameterCollection">
+  <TypeSignature Language="C#" Value="public sealed class OracleParameterCollection : System.Data.Common.DbParameterCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleParameterCollection extends System.Data.Common.DbParameterCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleParameterCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.OracleClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbParameterCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Design.DBParametersEditor, Microsoft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>関連するパラメーターのコレクションを表します、<see cref="T:System.Data.OracleClient.OracleCommand" />内の列に対するそれぞれのマッピングだけでなく、<see cref="T:System.Data.DataSet" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きパラメーターを使用する場合は、コレクション内のパラメーターの数は、コマンド テキスト内の名前付きパラメーターの数と等しくする必要があります。 または .NET Framework Data Provider for Oracle でエラーが発生します。  
+  
+ によって呼び出される SQL ステートメントにパラメーターを渡すに、.NET Framework Data Provider for Oracle が疑問符 (?) プレース ホルダーをサポートしない、<xref:System.Data.OracleClient.OracleCommand>の`CommandType.Text`します。 この場合、名前付きパラメーターを使用する必要があります。 例:  
+  
+```  
+SELECT * FROM Customers WHERE CustomerID = :pCustomerID  
+```  
+  
+ 呼び出された SQL ステートメントで名前付きパラメーターを使用してとき、<xref:System.Data.OracleClient.OracleCommand>の`CommandType.Text`パラメーター名にコロン (:) を前に指定する必要があります。 ただし、ストアド プロシージャ、またはコード内の他の場所の名前付きパラメーターを参照する場合 (など、追加するときに<xref:System.Data.OracleClient.OracleParameter>オブジェクトを<xref:System.Data.OracleClient.OracleCommand.Parameters%2A>プロパティ)、コロン (:)、名前付きパラメーターは付けません。 データ プロバイダーでは、コロンを自動的に提供します。  
+  
+   
+  
+## Examples  
+ 次の例の複数のインスタンスを作成する<xref:System.Data.OracleClient.OracleParameter>を通じて、<xref:System.Data.OracleClient.OracleParameterCollection>内で、<xref:System.Data.OracleClient.OracleDataAdapter>です。 これらのパラメーターは、データベース内のデータを選択し、内のデータを配置に使用、<xref:System.Data.DataSet>です。 この例では、<xref:System.Data.DataSet>と<xref:System.Data.OracleClient.OracleDataAdapter>適切なスキーマ、コマンド、および接続で既に作成されています。  
+  
+ [!code-csharp[Classic WebData OracleParameter#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameter/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameter#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameter/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleParameterCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameterCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleParameter Add (System.Data.OracleClient.OracleParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleParameter Add(class System.Data.OracleClient.OracleParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Add(System.Data.OracleClient.OracleParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションに追加する <see cref="T:System.Data.OracleClient.OracleParameter" />。</param>
+        <summary>指定した追加<see cref="T:System.Data.OracleClient.OracleParameter" />を<see cref="T:System.Data.OracleClient.OracleParameterCollection" />です。</summary>
+        <returns>新しいへの参照を<see cref="T:System.Data.OracleClient.OracleParameter" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameterCollection>のインスタンスが追加されます<xref:System.Data.OracleClient.OracleParameter>をコレクションに新しいへの参照を返しますと<xref:System.Data.OracleClient.OracleParameter>です。  
+  
+ [!code-csharp[Classic WebData OracleParameterCollection.Add2#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.Add2/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameterCollection.Add2#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.Add2/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Data.OracleClient.OracleParameter" />で指定されている、<paramref name="value" />これまたは別のパラメーターが既に<see cref="T:System.Data.OracleClient.OracleParameterCollection" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" />パラメーターが null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override int Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションに追加する <see cref="T:System.Data.OracleClient.OracleParameter" /> オブジェクト。</param>
+        <summary>指定された <see cref="T:System.Data.OracleClient.OracleParameter" /> オブジェクトを <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> に追加します。</summary>
+        <returns>新しいインデックス<see cref="T:System.Data.OracleClient.OracleParameter" />コレクション内のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleParameter Add (string parameterName, System.Data.OracleClient.OracleType dataType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleParameter Add(string parameterName, valuetype System.Data.OracleClient.OracleType dataType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Add(System.String,System.Data.OracleClient.OracleType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="dataType" Type="System.Data.OracleClient.OracleType" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="dataType"><see cref="T:System.Data.OracleClient.OracleType" /> 値のいずれか。</param>
+        <summary>追加、<see cref="T:System.Data.OracleClient.OracleParameter" />を<see cref="T:System.Data.OracleClient.OracleParameterCollection" />パラメーター名とデータ型を指定します。</summary>
+        <returns>新しいへの参照を<see cref="T:System.Data.OracleClient.OracleParameter" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameterCollection>のインスタンスが追加されます<xref:System.Data.OracleClient.OracleParameter>をコレクションに新しいへの参照を返しますと<xref:System.Data.OracleClient.OracleParameter>です。  
+  
+ [!code-csharp[Classic WebData OracleParameterCollection.Add2#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.Add2/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameterCollection.Add2#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.Add2/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleParameter Add (string parameterName, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleParameter Add(string parameterName, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Add(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("Add(String parameterName, Object value) has been deprecated.  Use AddWithValue(String parameterName, Object value).  http://go.microsoft.com/fwlink/?linkid=14202", false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="value"><see cref="P:System.Data.OracleClient.OracleParameter.Value" />の<see cref="T:System.Data.OracleClient.OracleParameter" />をコレクションに追加します。</param>
+        <summary>追加、<see cref="T:System.Data.OracleClient.OracleParameter" />を<see cref="T:System.Data.OracleClient.OracleParameterCollection" />パラメーター名と値を指定します。</summary>
+        <returns>新しいへの参照を<see cref="T:System.Data.OracleClient.OracleParameter" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを使用する場合に警告を使用して、<xref:System.Data.OracleClient.OracleParameterCollection.Add%2A>整数パラメーターの値を指定します。 このオーバー ロードはため、`value`型の<xref:System.Object>は整数値を変換する必要があります、<xref:System.Object>次の c# の例に示すように、値が 0 の場合を入力します。  
+  
+```  
+parameters.Add("pname", Convert.ToInt32(0));  
+```  
+  
+ この変換を実行しない場合、コンパイラが前提としていますを呼び出すしようとしている、 `OracleParameterCollection.Add` (`string`、 `OracleType`) オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException"><paramref name="value" />パラメーターではありません、<see cref="T:System.Data.OracleClient.OracleParameter" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleParameter Add (string parameterName, System.Data.OracleClient.OracleType dataType, int size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleParameter Add(string parameterName, valuetype System.Data.OracleClient.OracleType dataType, int32 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Add(System.String,System.Data.OracleClient.OracleType,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="dataType" Type="System.Data.OracleClient.OracleType" />
+        <Parameter Name="size" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="dataType"><see cref="T:System.Data.OracleClient.OracleType" /> 値のいずれか。</param>
+        <param name="size">列の長さ。</param>
+        <summary>追加、<see cref="T:System.Data.OracleClient.OracleParameter" />を<see cref="T:System.Data.OracleClient.OracleParameterCollection" />パラメーター名、データ型、および列の長さを指定します。</summary>
+        <returns>新しいへの参照を<see cref="T:System.Data.OracleClient.OracleParameter" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameterCollection>のインスタンスを追加<xref:System.Data.OracleClient.OracleParameter>をコレクションに新しいへの参照を返しますと<xref:System.Data.OracleClient.OracleParameter>です。  
+  
+ [!code-csharp[Classic WebData OracleParameterCollection.Add3#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.Add3/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameterCollection.Add3#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.Add3/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleParameter Add (string parameterName, System.Data.OracleClient.OracleType dataType, int size, string srcColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleParameter Add(string parameterName, valuetype System.Data.OracleClient.OracleType dataType, int32 size, string srcColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Add(System.String,System.Data.OracleClient.OracleType,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="dataType" Type="System.Data.OracleClient.OracleType" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="srcColumn" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="dataType"><see cref="T:System.Data.OracleClient.OracleType" /> 値のいずれか。</param>
+        <param name="size">列の長さ。</param>
+        <param name="srcColumn">ソース列の名前。</param>
+        <summary>追加、<see cref="T:System.Data.OracleClient.OracleParameter" />を<see cref="T:System.Data.OracleClient.OracleParameterCollection" />パラメーター名、データ型、列の長さ、およびソース列名を指定します。</summary>
+        <returns>新しいへの参照を<see cref="T:System.Data.OracleClient.OracleParameter" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameterCollection>のインスタンスを追加<xref:System.Data.OracleClient.OracleParameter>をコレクションに新しいへの参照を返しますと<xref:System.Data.OracleClient.OracleParameter>です。  
+  
+ [!code-csharp[Classic WebData OracleParameterCollection.Add4#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.Add4/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameterCollection.Add4#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.Add4/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public override void AddRange (Array values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddRange(class System.Array values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.AddRange(System.Array)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Array" />
+      </Parameters>
+      <Docs>
+        <param name="values">追加する <see cref="T:System.Array" /> 値。</param>
+        <summary>値の配列を <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> の末尾に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Data.OracleClient.OracleParameter[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Data.OracleClient.OracleParameter[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.AddRange(System.Data.OracleClient.OracleParameter[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Data.OracleClient.OracleParameter[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">追加する <see cref="T:System.Data.OracleClient.OracleParameter" /> 値。</param>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameter" /> 値の配列を <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> の末尾に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddWithValue">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleParameter AddWithValue (string parameterName, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleParameter AddWithValue(string parameterName, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.AddWithValue(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="value">追加する値。</param>
+        <summary>値を <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> の末尾に追加します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleParameter" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public override void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての削除、<see cref="T:System.Data.OracleClient.OracleParameter" />オブジェクトから、<see cref="T:System.Data.OracleClient.OracleParameterCollection" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Data.OracleClient.OracleParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Data.OracleClient.OracleParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Contains(System.Data.OracleClient.OracleParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Data.OracleClient.OracleParameter" /> 値。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Data.OracleClient.OracleParameter" />では、<see cref="T:System.Data.OracleClient.OracleParameterCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> 、値を含む<see langword="false" />それ以外の場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public override bool Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" /> 値。</param>
+        <summary>指定したオブジェクトがかどうかを判断、<see cref="T:System.Data.OracleClient.OracleParameterCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> 、値を含む<see langword="false" />それ以外の場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public override bool Contains (string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Contains(string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">名前、<see cref="T:System.Data.OracleClient.OracleParameter" />コレクション内で検索します。</param>
+        <summary>示すかどうか、<see cref="T:System.Data.OracleClient.OracleParameter" />指定した名前は、コレクションに含まれています。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Data.OracleClient.OracleParameter" />コレクションには、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public override void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">現在の <see cref="T:System.Array" /> からコピーされる要素のコピー先となる 1 次元の <see cref="T:System.Data.OracleClient.OracleParameterCollection" />。</param>
+        <param name="index">コピー操作の開始位置となる <see cref="T:System.Array" /> 内のインデックスを表す 32 ビット整数。</param>
+        <summary>指定された 1 次元 <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> に現在の <see cref="T:System.Array" /> のすべての要素をコピーします。その際、指定されたコピー先の <see cref="T:System.Array" /> インデックス位置からコピーを開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Data.OracleClient.OracleParameter[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Data.OracleClient.OracleParameter[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.CopyTo(System.Data.OracleClient.OracleParameter[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Data.OracleClient.OracleParameter[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">現在の <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> からコピーされる要素のコピー先となる <see cref="T:System.Data.OracleClient.OracleParameterCollection" />。</param>
+        <param name="index">コピー操作の開始位置となる <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> 内のインデックスを表す 32 ビット整数。</param>
+        <summary>指定された <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> に現在の <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> のすべての要素をコピーします。その際、指定されたコピー先のインデックス位置からコピーを開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public override int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameterCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の要素の数を表す整数を返します、<see cref="T:System.Data.OracleClient.OracleParameterCollection" />です。 読み取り専用です。</summary>
+        <value><see cref="T:System.Data.OracleClient.OracleParameterCollection" /> に含まれる要素の数を表す整数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameterCollection" /> を反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 公開、 <xref:System.Collections.IEnumerable.GetEnumerator%2A> .NET Framework データ プロバイダーによるコレクションに対する単純な反復処理をサポートするメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameter">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbParameter GetParameter (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbParameter GetParameter(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.GetParameter(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameter">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbParameter GetParameter (string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbParameter GetParameter(string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.GetParameter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Data.OracleClient.OracleParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Data.OracleClient.OracleParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.IndexOf(System.Data.OracleClient.OracleParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" />
+      </Parameters>
+      <Docs>
+        <param name="value">検索する <see cref="T:System.Data.OracleClient.OracleParameter" />。</param>
+        <summary>指定した場所を取得<see cref="T:System.Data.OracleClient.OracleParameter" />コレクション内で。</summary>
+        <returns>指定した 0 から始まる場所<see cref="T:System.Data.OracleClient.OracleParameter" />されている、<see cref="T:System.Data.OracleClient.OracleParameter" />コレクション内で。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public override int IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検索する <see cref="T:System.Object" />。</param>
+        <summary>指定した場所を取得<see cref="T:System.Object" />コレクション内で。</summary>
+        <returns>指定した 0 から始まる場所<see cref="T:System.Object" />されている、<see cref="T:System.Data.OracleClient.OracleParameter" />コレクション内で。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public override int IndexOf (string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 IndexOf(string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.IndexOf(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">検索する <see cref="T:System.Data.OracleClient.OracleParameter" /> の名前。大文字と小文字が区別されます。</param>
+        <summary>指定された名前を持つ指定された <see cref="T:System.Data.OracleClient.OracleParameter" /> の場所を取得します。</summary>
+        <returns>指定した 0 から始まる場所<see cref="T:System.Data.OracleClient.OracleParameter" />されている、<see cref="T:System.Data.OracleClient.OracleParameter" />コレクション内で。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Data.OracleClient.OracleParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Data.OracleClient.OracleParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Insert(System.Int32,System.Data.OracleClient.OracleParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" />
+      </Parameters>
+      <Docs>
+        <param name="index">値を挿入する位置を示す、0 から始まるインデックス。</param>
+        <param name="value"><see cref="T:System.Data.OracleClient.OracleParameter" /> に挿入される <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> オブジェクト。</param>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameter" /> オブジェクトを <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> 内の指定されたインデックス位置に挿入します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public override void Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">値を挿入する位置を示す、0 から始まるインデックス。</param>
+        <param name="value">A<see cref="T:System.Object" />に挿入される、<see cref="T:System.Data.OracleClient.OracleParameterCollection" />です。</param>
+        <summary><see cref="T:System.Object" /> を <see cref="T:System.Data.OracleClient.OracleParameterCollection" /> 内の指定されたインデックス位置に挿入します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public override bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameterCollection.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameterCollection" /> で固定サイズが使用されているかどうかを示す値を取得します。</summary>
+        <value>返します<see langword="true" />場合、<see cref="T:System.Data.OracleClient.OracleParameterCollection" />のサイズが固定されて<see langword="false" />それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public override bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameterCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameterCollection" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>返します<see langword="true" />場合、<see cref="T:System.Data.OracleClient.OracleParameterCollection" />は読み取り専用、<see langword="false" />それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public override bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameterCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameterCollection" /> が同期されているかどうかを示す値を取得します。</summary>
+        <value>返します<see langword="true" />場合、<see cref="T:System.Data.OracleClient.OracleParameterCollection" />が同期されている<see langword="false" />それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleParameter this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleParameter Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameterCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得するパラメーターの 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.Data.OracleClient.OracleParameter" /> を取得または設定します。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.Data.OracleClient.OracleParameter" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.OracleClient.OracleParameterCollection>のインスタンスが追加されます<xref:System.Data.OracleClient.OracleParameter>の名前を表示するのには、コレクション、<xref:System.Data.OracleClient.OracleParameter>オブジェクトし、コレクションをクリアします。  
+  
+ [!code-csharp[Classic WebData OracleParameterCollection.Count#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.Count/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameterCollection.Count#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.Count/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定されたインデックスが存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleParameter this[string parameterName] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleParameter Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameterCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleParameter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">取得するパラメーターの名前。</param>
+        <summary>取得または設定、<see cref="T:System.Data.OracleClient.OracleParameter" />指定した名前です。</summary>
+        <value>指定された名前の <see cref="T:System.Data.OracleClient.OracleParameter" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.OracleClient.OracleParameter>と、指定された<xref:System.Data.OracleClient.OracleParameter.ParameterName%2A>内で、<xref:System.Data.OracleClient.OracleParameterCollection>です。 パラメーターが存在する場合の例には、パラメーターのインデックスと名前が表示されます。 パラメーターが存在しない場合は、エラーを表示します。 この例では、<xref:System.Data.OracleClient.OracleParameterCollection>既に作成されています。  
+  
+ [!code-csharp[Classic WebData OracleParameterCollection.this1#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.this1/CS/source.cs#1)]
+ [!code-vb[Classic WebData OracleParameterCollection.this1#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OracleParameterCollection.this1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定された名前は存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Data.OracleClient.OracleParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Data.OracleClient.OracleParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Remove(System.Data.OracleClient.OracleParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Data.OracleClient.OracleParameter" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.Data.OracleClient.OracleParameter" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Data.OracleClient.OracleParameter" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public override void Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.Object" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Data.OracleClient.OracleParameter" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public override void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する <see cref="T:System.Data.OracleClient.OracleParameter" /> オブジェクトの 0 から始まるインデックス。</param>
+        <summary>削除、<see cref="T:System.Data.OracleClient.OracleParameter" />オブジェクトをコレクションから指定したインデックス位置。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public override void RemoveAt (string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RemoveAt(string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.RemoveAt(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">名前、<see cref="T:System.Data.OracleClient.OracleParameter" />削除するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Data.OracleClient.OracleParameter" />コレクションから指定した名前を持つオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParameter">
+      <MemberSignature Language="C#" Value="protected override void SetParameter (int index, System.Data.Common.DbParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetParameter(int32 index, class System.Data.Common.DbParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.SetParameter(System.Int32,System.Data.Common.DbParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Data.Common.DbParameter" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParameter">
+      <MemberSignature Language="C#" Value="protected override void SetParameter (string parameterName, System.Data.Common.DbParameter value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetParameter(string parameterName, class System.Data.Common.DbParameter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleParameterCollection.SetParameter(System.String,System.Data.Common.DbParameter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="value" Type="System.Data.Common.DbParameter" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public override object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleParameterCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.OracleClient.OracleParameterCollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Data.OracleClient.OracleParameterCollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

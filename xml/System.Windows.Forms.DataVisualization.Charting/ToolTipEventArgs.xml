@@ -1,0 +1,180 @@
+<Type Name="ToolTipEventArgs" FullName="System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs">
+  <TypeSignature Language="C#" Value="public class ToolTipEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolTipEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パラメーターのオブジェクトとして使用される、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText" />ルートのイベント<see cref="T:System.Windows.Forms.DataVisualization.Charting.Chart" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ としてこのクラスが公開されている、`e`内のパラメーター、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText>イベント、マウスの位置、ツールヒントのテキスト、存在する場合、詳しい情報を提供する、マウス カーソルが保持されているイベントが発生したときに、グラフ要素に関するとします。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText>イベントは、数秒後、関連するグラフ要素の上でマウス カーソルを保持します。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs>クラスには、次のプロパティが含まれています。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.X%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.Y%2A>プロパティで、マウス座標を取得するために使用します。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.Text%2A>プロパティに対して、イベントが生成されるグラフ要素のツールヒントを取得するために使用します。 持つ多くのグラフ要素に注意してください、 `ToolTip`、 `LegendToolTip`、や`LabelToolTip`にツールヒントを割り当てることができます。 これらの要素は、凡例、注釈、データ ポイント、系列、軸、タイトル、カスタムのラベルを含めるし、ストリップ ライン。 このプロパティは、グラフ要素のツールヒントをオーバーライドするにまたはがないグラフ要素のツールヒントを設定するも使用できます、`ToolTip`プロパティです。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.HitTestResult%2A>プロパティで、イベントが発生したグラフ要素に関する情報を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolTipEventArgs (int x, int y, string text, System.Windows.Forms.DataVisualization.Charting.HitTestResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y, string text, class System.Windows.Forms.DataVisualization.Charting.HitTestResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.#ctor(System.Int32,System.Int32,System.String,System.Windows.Forms.DataVisualization.Charting.HitTestResult)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="result" Type="System.Windows.Forms.DataVisualization.Charting.HitTestResult" />
+      </Parameters>
+      <Docs>
+        <param name="x">マウスの X 座標。</param>
+        <param name="y">マウスの Y 座標。</param>
+        <param name="text">ツールヒントのテキスト。</param>
+        <param name="result"><see cref="T:System.Windows.Forms.DataVisualization.Charting.HitTestResult" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs" /> 、指定したクラス<paramref name="x" />、 <paramref name="y" />、<paramref name="text" />と<paramref name="result" />パラメーター。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTestResult">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.HitTestResult HitTestResult { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.HitTestResult HitTestResult" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.HitTestResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.HitTestResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataVisualization.Charting.HitTestResult" />グラフ要素に関する情報を提供するオブジェクト、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText" />のイベントが発生しました。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.HitTestResult" />要素の情報を表すオブジェクト、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText" />のイベントが発生しました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.HitTestResult%2A>グラフ要素のイベントの種類が、発生したため、イベントが発生したオブジェクトを取得するためにプロパティを使用できます。  詳細については、次を参照してください。、<xref:System.Windows.Forms.DataVisualization.Charting.HitTestResult>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはいずれかのグラフ要素がマウス カーソルを保持する場合に、ツールヒントを設定します。 このプロパティには、このグラフ要素のツールヒントにも設定できます。</summary>
+        <value>A<see langword="string" />要素のツールヒント テキストを表す値、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText" />のイベントが発生しました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.Text%2A>プロパティに対して、イベントが生成されるグラフ要素のツールヒントを取得するために使用します。 持つ多くのグラフ要素に注意してください、 `ToolTip`、 `LegendToolTip`、や`LabelToolTip`にツールヒントを割り当てることができます。 これらの要素は、凡例、注釈、データ ポイント、系列、軸、タイトル、カスタムのラベルを含めるし、ストリップ ライン。  
+  
+-   このプロパティを取得する場合は、長さゼロの文字列をツール ヒントを持たない任意のグラフ要素の項目を常に返します。  
+  
+ このプロパティを設定することができます。  
+  
+-   ツールヒントを割り当てることのできるグラフ要素のいずれかのツール ヒントをオーバーライドします。  
+  
+-   ツール ヒントをサポートしていないグラフ要素にツールヒントを割り当てます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public int X { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 X" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.X" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ときにマウス カーソルが保持されている点の X 座標を取得、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText" />イベントが発生します。</summary>
+        <value><see langword="integer" />をマウスのカーソルの X 座標を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.X%2A>細かく、点の X 画面座標のマウス カーソルを取得するプロパティが保持されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText>イベントが発生します。  
+  
+ X 座標をピクセルを単位で。ポイント (0, 0) は、グラフの左上隅に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public int Y { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Y" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.Y" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ときにマウス カーソルが保持されている点の Y 座標を取得、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText" />イベントが発生します。</summary>
+        <value><see langword="integer" />マウス カーソルの Y 座標を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs.Y%2A>細かく、点の Y 画面座標のマウス カーソルを取得するプロパティが保持されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.GetToolTipText>イベントが発生します。  
+  
+ Y 座標はピクセル単位で表されますポイント (0, 0) は、グラフの左上隅に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,291 @@
+<Type Name="MessageQueueCriteria" FullName="System.Messaging.MessageQueueCriteria">
+  <TypeSignature Language="C#" Value="public class MessageQueueCriteria" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageQueueCriteria extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageQueueCriteria" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フィルターのメッセージ キューを使用してクエリを実行するとき、<see cref="T:System.Messaging.MessageQueue" />クラスの<see cref="M:System.Messaging.MessageQueue.GetPublicQueues" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueue>クラスには、さまざまなネットワーク上のパブリック キューの検索をフィルター処理するためのメソッドが用意されています。 キューのラベル、カテゴリ、またはサーバーの場所でフィルター処理用の特定のメソッドは、 <xref:System.Messaging.MessageQueue.GetPublicQueuesByLabel%2A>、 <xref:System.Messaging.MessageQueue.GetPublicQueuesByCategory%2A>、および<xref:System.Messaging.MessageQueue.GetPublicQueuesByMachine%2A>です。  
+  
+ <xref:System.Messaging.MessageQueueCriteria>クラスを使用すると、<xref:System.Messaging.MessageQueue.GetPublicQueues%2A>メソッドでは、フィルターを調整することができます。 いずれかを使用して実現以外に検索条件を指定することができます、 `GetPublicQueuesBy`* メソッド、または複数の条件でします。 渡すことができます、<xref:System.Messaging.MessageQueueCriteria>インスタンスを<xref:System.Messaging.MessageQueue.GetPublicQueues%2A>検索、たとえば、キューの作成や変更の時間、キューにあるコンピューター、キューのラベルまたはカテゴリ、またはこれらのプロパティの任意の組み合わせによってするためにメソッドです。  
+  
+ 複数のプロパティでフィルター処理、場合に、条件が適用することによって構成されます、`AND`プロパティのセットを操作します。 したがっての値を指定する、<xref:System.Messaging.MessageQueueCriteria.CreatedAfter%2A>プロパティと、<xref:System.Messaging.MessageQueueCriteria.MachineName%2A>プロパティ、要求しているすべてのキューの指定された時間後に作成され、存在する特定のコンピューターにします。  
+  
+ 任意のプロパティを設定するときにプロパティを設定するメソッドも構築がフィルターに含める必要があることを示すフラグを設定します。 検索フィルターから個々 のプロパティを削除することはできません。 代わりに、プロパティを削除するすべてのフィルターから呼び出すことによって<xref:System.Messaging.MessageQueueCriteria.ClearAll%2A>、検索フィルターを構築するプロパティを設定します。 <xref:System.Messaging.MessageQueueCriteria.ClearAll%2A>既定の「設定ではない」状態にすべてのプロパティをリセットします。  
+  
+ それを読み取る前に、プロパティを設定する必要があります。それ以外の場合、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では、メッセージ キューを反復処理し、コンピューター"MyComputer"に存在する最後の日で作成したキューのパスを表示します。  
+  
+ [!code-cpp[MessageQueue.GetMessageQueueEnumerator_criteria#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueue.GetMessageQueueEnumerator_criteria/CPP/mqgetmessagequeueenumerator_criteria.cpp#1)]
+ [!code-csharp[MessageQueue.GetMessageQueueEnumerator_criteria#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueue.GetMessageQueueEnumerator_criteria/CS/mqgetmessagequeueenumerator_criteria.cs#1)]
+ [!code-vb[MessageQueue.GetMessageQueueEnumerator_criteria#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageQueue.GetMessageQueueEnumerator_criteria/VB/mqgetmessagequeueenumerator_criteria.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueueCriteria ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueCriteria.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Messaging.MessageQueueCriteria" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public Guid Category { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Category" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueCriteria.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定カテゴリで、ネットワーク内のキューにフィルターされます。</summary>
+        <value>キューのカテゴリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューのカテゴリには、そのキューを分類するアプリケーションができます。 たとえば、1 つのカテゴリおよび他のすべての順序キューの課金のすべてのキューを配置できます。 <xref:System.Messaging.MessageQueue.Category%2A>プロパティ アプリケーション定義は、メッセージ キューに特別な意味を持ちません。  
+  
+ メソッドを使用することができる場合、カテゴリによってのみのフィルタ リング、ネットワーク上のキューを検索するときに、 <xref:System.Messaging.MessageQueue.GetPublicQueuesByCategory%2A>、この目的用に作られています。 カテゴリを含む複数の条件で検索する場合は、設定<xref:System.Messaging.MessageQueueCriteria.Category%2A>プロパティは、パラメーターに渡すと<xref:System.Messaging.MessageQueue.GetPublicQueues%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アプリケーションが設定されていない、<see cref="P:System.Messaging.MessageQueueCriteria.Category" />ファイルを読み取る前に、プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearAll">
+      <MemberSignature Language="C#" Value="public void ClearAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueCriteria.ClearAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フィルターに組み込まれているからすべてのプロパティをクリアし、「されていません」状態すべてのプロパティ値を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと<xref:System.Messaging.MessageQueueCriteria.ClearAll%2A>、メソッドのそれぞれに関連するフラグを設定する、<xref:System.Messaging.MessageQueueCriteria>プロパティで、アプリケーションは、検索フィルターを作成するときに含まれるプロパティがないことを示します。 <xref:System.Messaging.MessageQueueCriteria.ClearAll%2A>現在の値を持つ既定の「設定ではない」状態にすべてのプロパティをリセットします。 後で変更する任意のプロパティは、論理を使用して結合されます`AND`の新しいフィルターを定義する演算子、<xref:System.Messaging.MessageQueue.GetPublicQueues%2A>メソッドです。 プロパティを変更するときにプロパティを設定するメソッドも構築がフィルターに含める必要があることを示すフラグを設定します。  
+  
+ 検索フィルターから個々 のプロパティを削除することはできません。 代わりに、プロパティを削除するすべてのフィルターから呼び出すことによって<xref:System.Messaging.MessageQueueCriteria.ClearAll%2A>、検索フィルターを構築するプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatedAfter">
+      <MemberSignature Language="C#" Value="public DateTime CreatedAfter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime CreatedAfter" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueCriteria.CreatedAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキューの作成の日付と時刻の下限の境界をネットワーク上のキューにフィルターを設定します。</summary>
+        <value>A<see cref="T:System.DateTime" />キューの作成の日付と時刻の下限の境界を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueCriteria>プロパティは、論理を使用して結合されます`AND`両方を設定するため、<xref:System.Messaging.MessageQueueCriteria.CreatedAfter%2A>と<xref:System.Messaging.MessageQueueCriteria.CreatedBefore%2A>キューの作成の時間間隔を制限します。 のみを設定した場合<xref:System.Messaging.MessageQueueCriteria.CreatedAfter%2A>日付の上限の境界はありません。  
+  
+ 設定しようとする場合<xref:System.Messaging.MessageQueueCriteria.CreatedAfter%2A>それ以降に<xref:System.DateTime>より値<xref:System.Messaging.MessageQueueCriteria.CreatedBefore%2A>、<xref:System.Messaging.MessageQueueCriteria.CreatedBefore%2A>と同じ (新しい) 値にリセット<xref:System.Messaging.MessageQueueCriteria.CreatedAfter%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アプリケーションが設定されていない、<see cref="P:System.Messaging.MessageQueueCriteria.CreatedAfter" />ファイルを読み取る前に、プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatedBefore">
+      <MemberSignature Language="C#" Value="public DateTime CreatedBefore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime CreatedBefore" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueCriteria.CreatedBefore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、ネットワーク上のキューにフィルターをキューの作成の日付と時刻の境界の上限を設定します。</summary>
+        <value>A<see cref="T:System.DateTime" />キューの作成の日付と時刻の上限の境界を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueCriteria>プロパティは、論理を使用して結合されます`AND`両方を設定するため、<xref:System.Messaging.MessageQueueCriteria.CreatedAfter%2A>と<xref:System.Messaging.MessageQueueCriteria.CreatedBefore%2A>キューの作成の時間間隔を制限します。 のみを設定した場合<xref:System.Messaging.MessageQueueCriteria.CreatedBefore%2A>日付に下位の境界はありません。  
+  
+ 設定を試行した場合<xref:System.Messaging.MessageQueueCriteria.CreatedBefore%2A>に以前に<xref:System.DateTime>より値<xref:System.Messaging.MessageQueueCriteria.CreatedAfter%2A>、<xref:System.Messaging.MessageQueueCriteria.CreatedAfter%2A>と同じ (新しい) 値にリセット<xref:System.Messaging.MessageQueueCriteria.CreatedBefore%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アプリケーションが設定されていない、<see cref="P:System.Messaging.MessageQueueCriteria.CreatedBefore" />ファイルを読み取る前に、プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public string Label { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Label" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueCriteria.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはネットワークでキューにフィルターをラベルを設定します。</summary>
+        <value>キューのラベル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューのラベルは、キューのアプリケーション定義の説明です。 メッセージ キューの特別な意味はありません。  
+  
+ メソッドを使用することができる場合、ラベルを使用してのみのフィルタ リング、ネットワーク上のキューを検索するときに、 <xref:System.Messaging.MessageQueue.GetPublicQueuesByLabel%2A>、この目的用に作られています。 ラベルを含む複数の条件で検索する場合は、設定<xref:System.Messaging.MessageQueueCriteria.Label%2A>プロパティは、パラメーターに渡すと<xref:System.Messaging.MessageQueue.GetPublicQueues%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アプリケーションが設定されていない、<see cref="P:System.Messaging.MessageQueueCriteria.Label" />ファイルを読み取る前に、プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineName">
+      <MemberSignature Language="C#" Value="public string MachineName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueCriteria.MachineName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはネットワークでキューにフィルターをコンピューター名を設定します。</summary>
+        <value>キューが存在するコンピューターのサーバー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キューの<xref:System.Messaging.MessageQueue.MachineName%2A>キューが置かれている、前に円記号なしのサーバーの名前が反映されます (\\\\)。  
+  
+ メソッドを使用する場合はコンピューターの名前のみでのフィルタ リング、ネットワーク上のキューを検索するときに、 <xref:System.Messaging.MessageQueue.GetPublicQueuesByMachine%2A>、この目的用に作られています。 コンピューター名を含む複数の条件で検索する場合は、設定<xref:System.Messaging.MessageQueueCriteria.MachineName%2A>プロパティは、パラメーターに渡すと<xref:System.Messaging.MessageQueue.GetPublicQueues%2A>です。  
+  
+ 検索することも、ネットワーク上の専用キュー用のコンピューター名を指定することによって、<xref:System.Messaging.MessageQueue.GetPrivateQueuesByMachine%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アプリケーションが設定されていない、<see cref="P:System.Messaging.MessageQueueCriteria.MachineName" />ファイルを読み取る前に、プロパティです。  
+  
+ または  
+  
+ コンピューター名の構文が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ModifiedAfter">
+      <MemberSignature Language="C#" Value="public DateTime ModifiedAfter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ModifiedAfter" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueCriteria.ModifiedAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキュー変更日付と時刻の下限の境界をネットワーク上のキューにフィルターを設定します。</summary>
+        <value>A<see cref="T:System.DateTime" />キューの最後の変更日付と時刻の下限の境界を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューの変更のフラグが設定されて、キューのプロパティを変更するが、メッセージの読み取りまたはキューに書き込まれるときではなく、します。  
+  
+ <xref:System.Messaging.MessageQueueCriteria>プロパティは、論理を使用して結合されます`AND`ため両方を設定、<xref:System.Messaging.MessageQueueCriteria.ModifiedAfter%2A>と<xref:System.Messaging.MessageQueueCriteria.ModifiedBefore%2A>キューの最後の変更の時間間隔を制限します。 のみを設定した場合<xref:System.Messaging.MessageQueueCriteria.ModifiedAfter%2A>日付の上限の境界はありません。  
+  
+ 設定しようとする場合<xref:System.Messaging.MessageQueueCriteria.ModifiedAfter%2A>それ以降に<xref:System.DateTime>より値<xref:System.Messaging.MessageQueueCriteria.ModifiedBefore%2A>、<xref:System.Messaging.MessageQueueCriteria.ModifiedBefore%2A>と同じ (新しい) 値にリセット<xref:System.Messaging.MessageQueueCriteria.ModifiedAfter%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アプリケーションが設定されていない、<see cref="P:System.Messaging.MessageQueueCriteria.ModifiedAfter" />ファイルを読み取る前に、プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ModifiedBefore">
+      <MemberSignature Language="C#" Value="public DateTime ModifiedBefore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ModifiedBefore" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueCriteria.ModifiedBefore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、キュー更新の日付と時刻の上限の境界をネットワーク上のキューにフィルターします。</summary>
+        <value>A<see cref="T:System.DateTime" />キューの最終変更日時の境界の上限を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューの変更のフラグが設定されて、キューのプロパティを変更するが、メッセージの読み取りまたはキューに書き込まれるときではなく、します。  
+  
+ <xref:System.Messaging.MessageQueueCriteria>プロパティは、論理を使用して結合されます`AND`ため両方を設定、<xref:System.Messaging.MessageQueueCriteria.ModifiedBefore%2A>と<xref:System.Messaging.MessageQueueCriteria.ModifiedAfter%2A>キューの最後の変更の時間間隔を制限します。 のみを設定した場合<xref:System.Messaging.MessageQueueCriteria.ModifiedBefore%2A>日付に下位の境界はありません。  
+  
+ 設定を試行した場合<xref:System.Messaging.MessageQueueCriteria.ModifiedBefore%2A>に以前に<xref:System.DateTime>より値<xref:System.Messaging.MessageQueueCriteria.ModifiedAfter%2A>、<xref:System.Messaging.MessageQueueCriteria.ModifiedAfter%2A>と同じ (新しい) 値にリセット<xref:System.Messaging.MessageQueueCriteria.ModifiedBefore%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アプリケーションが設定されていない、<see cref="P:System.Messaging.MessageQueueCriteria.ModifiedBefore" />ファイルを読み取る前に、プロパティです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

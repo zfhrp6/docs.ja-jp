@@ -1,0 +1,1170 @@
+<Type Name="Pen" FullName="System.Drawing.Pen">
+  <TypeSignature Language="C#" Value="public sealed class Pen : MarshalByRefObject, ICloneable, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Pen extends System.MarshalByRefObject implements class System.ICloneable, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Pen" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>直線および曲線の描画に使用するオブジェクトを定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Drawing.Pen>指定された幅とスタイルの直線を描画します。 使用して、<xref:System.Drawing.Drawing2D.DashStyle>プロパティをいくつかの種類の破線を描画します。 描画される線、<xref:System.Drawing.Pen>さまざまな塗りつぶしスタイル (純色、テクスチャをなど) を入力することができます。 塗りつぶしのスタイルは、ブラシまたはテクスチャ、塗りつぶしオブジェクトとして使用されているかによって異なります。  
+  
+   
+  
+## Examples  
+ 構築する次のコード例を示します、<xref:System.Drawing.Pen>で、<xref:System.Drawing.Pen.Brush%2A>と設定の影響、<xref:System.Drawing.Pen.LineJoin%2A>プロパティを<xref:System.Drawing.Pen>です。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowLineJoin`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.PensExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.PensExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.PensExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.PensExample/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.PensExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.PensExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Pen (System.Drawing.Brush brush);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Brush brush) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.#ctor(System.Drawing.Brush)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="brush" Type="System.Drawing.Brush" />
+      </Parameters>
+      <Docs>
+        <param name="brush">この <see cref="T:System.Drawing.Pen" /> の塗りつぶしプロパティを決定する <see cref="T:System.Drawing.Brush" />。</param>
+        <summary>指定した <see cref="T:System.Drawing.Pen" /> を使用して、<see cref="T:System.Drawing.Brush" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Pen.Brush%2A>プロパティを決定する方法、<xref:System.Drawing.Pen>線を描画します。 塗りつぶされた四角形、指定された特性を持つ場合、線は描画<xref:System.Drawing.Brush>です。  
+  
+ <xref:System.Drawing.Pen.Width%2A>新しいプロパティ<xref:System.Drawing.Pen>が 1 (既定) に設定します。  
+  
+   
+  
+## Examples  
+ 構築する次のコード例を示します、<xref:System.Drawing.Pen>で、<xref:System.Drawing.Pen.Brush%2A>と設定の影響、<xref:System.Drawing.Pen.LineJoin%2A>プロパティを<xref:System.Drawing.Pen>です。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowLineJoin`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.PensExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.PensExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.PensExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.PensExample/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.PensExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.PensExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="brush" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Pen (System.Drawing.Color color);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Color color) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.#ctor(System.Drawing.Color)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="color" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color">この <see cref="T:System.Drawing.Pen" /> の色を示す <see cref="T:System.Drawing.Color" /> 構造体。</param>
+        <summary>指定した色を使用して、<see cref="T:System.Drawing.Pen" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Color>プロパティによって指定された色に設定されて、`color`パラメーター。 <xref:System.Drawing.Pen.Width%2A>プロパティが 1 (既定) に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Pen (System.Drawing.Brush brush, float width);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Brush brush, float32 width) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.#ctor(System.Drawing.Brush,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="brush" Type="System.Drawing.Brush" />
+        <Parameter Name="width" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="brush">この <see cref="T:System.Drawing.Pen" /> の特性を決定する <see cref="T:System.Drawing.Brush" />。</param>
+        <param name="width">新しい <see cref="T:System.Drawing.Pen" /> の幅。</param>
+        <summary>指定された <see cref="T:System.Drawing.Pen" /> と <see cref="T:System.Drawing.Brush" /> を使用して、<see cref="P:System.Drawing.Pen.Width" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Brush>で指定された色に設定されている、 `brush` 、パラメーター、<xref:System.Drawing.Pen.Width%2A>で指定された値に設定されて、`width`パラメーター、および単位が設定されて<xref:System.Drawing.GraphicsUnit.World>です。  
+  
+ なお、`brush`パラメーターも指定、<xref:System.Drawing.Color>このプロパティ<xref:System.Drawing.Pen>です。  
+  
+ A `width` 0 になります、<xref:System.Drawing.Pen>幅が 1 であるかのように描画します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Drawing.Pen>設定の効果を示します、<xref:System.Drawing.Pen.StartCap%2A>と<xref:System.Drawing.Pen.EndCap%2A>プロパティを<xref:System.Drawing.Pen>です。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowStartAndEndCaps`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.ImageExample#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ImageExample/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.ImageExample#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ImageExample/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.ImageExample#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ImageExample/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="brush" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Pen (System.Drawing.Color color, float width);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Color color, float32 width) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.#ctor(System.Drawing.Color,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="color" Type="System.Drawing.Color" />
+        <Parameter Name="width" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="color">この <see cref="T:System.Drawing.Pen" /> の色を示す <see cref="T:System.Drawing.Color" /> 構造体。</param>
+        <param name="width">この <see cref="T:System.Drawing.Pen" /> の幅を示す値。</param>
+        <summary>指定の <see cref="T:System.Drawing.Color" /> プロパティと <see cref="P:System.Drawing.Pen.Width" /> プロパティで <see cref="T:System.Drawing.Pen" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Color>プロパティによって指定された色に設定されて、`color`パラメーター。 <xref:System.Drawing.Pen.Width%2A>で指定された値に設定されて、`width`パラメーター。 A `width` 0 になります、<xref:System.Drawing.Pen>幅が 1 であるかのように描画します。  
+  
+   
+  
+## Examples  
+ 作成するコード例を次に示します、<xref:System.Drawing.Pen>と設定の影響、 <xref:System.Drawing.Pen.DashCap%2A>、 <xref:System.Drawing.Pen.DashPattern%2A>、および<xref:System.Drawing.Graphics.SmoothingMode%2A>プロパティです。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowPensAndSmoothingMode`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>として e を渡すイベント<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.PensExample#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.PensExample/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.PensExample#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.PensExample/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.PensExample#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.PensExample/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Alignment">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.PenAlignment Alignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.PenAlignment Alignment" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.Alignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.PenAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Drawing.Pen" /> の配置を取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> の配置を表す <see cref="T:System.Drawing.Drawing2D.PenAlignment" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを決定する方法、<xref:System.Drawing.Pen>閉じた曲線および多角形を描画します。 <xref:System.Drawing.Drawing2D.PenAlignment>列挙体を 5 つの値を指定します。 ただし、2 つだけの値:<xref:System.Drawing.Drawing2D.PenAlignment.Center>と<xref:System.Drawing.Drawing2D.PenAlignment.Inset>— 描いた線の外観を変更します。 <xref:System.Drawing.Drawing2D.PenAlignment.Center>このプロパティの既定値は、曲線または多角形のアウトライン ペンの幅の中心ことを指定します。 値<xref:System.Drawing.Drawing2D.PenAlignment.Inset>このプロパティは、ペンの幅が、曲線または多角形の輪郭内にあるを指定します。 他の 3 つの値、 <xref:System.Drawing.Drawing2D.PenAlignment.Right>、 <xref:System.Drawing.Drawing2D.PenAlignment.Left>、および<xref:System.Drawing.Drawing2D.PenAlignment.Outset>、中心とするペンになります。  
+  
+ A<xref:System.Drawing.Pen>に設定、アラインメントを持つ<xref:System.Drawing.Drawing2D.PenAlignment.Inset>場合もあります描画埋め込みの位置が、および場合によっては、中央の位置で信頼性の低い結果が生成されます。 また、ペンの複合直線の描画に使用することはできませんで破線を描画することはできません<xref:System.Drawing.Drawing2D.DashCap.Triangle>ダッシュ cap です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定した値がのメンバーではない<see cref="T:System.Drawing.Drawing2D.PenAlignment" />です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.Alignment" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Brush">
+      <MemberSignature Language="C#" Value="public System.Drawing.Brush Brush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Brush Brush" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.Brush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> の属性を決定する <see cref="T:System.Drawing.Brush" /> を取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> の属性を決定する <see cref="T:System.Drawing.Brush" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを割り当てると、塗りつぶされた直線と曲線を描画するペンがさせます。 も優先、<xref:System.Drawing.Color>のプロパティ、<xref:System.Drawing.Pen>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.Brush" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> の同一コピーを作成します。</summary>
+        <returns><see cref="T:System.Drawing.Pen" /> にキャストできる <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.Pen> を作成します。  
+  
+-   そのペンのコピーを作成します。  
+  
+-   ペンのコピーを使用して、画面に線を描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicPenExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.ClassicPenExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.ClassicPenExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Color">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color Color { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color Color" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.Color" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> の色を取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> の色を表す <see cref="T:System.Drawing.Color" /> 構造体。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.Color" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompoundArray">
+      <MemberSignature Language="C#" Value="public float[] CompoundArray { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32[] CompoundArray" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.CompoundArray" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複合ペンを指定する値の配列を取得または設定します。 複合ペンでは、平行線と空白で構成される複合直線を描画します。</summary>
+        <value>複合配列を指定する実数の配列。 この配列内では、0 以上 1 以下の要素を昇順に並べる必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複合直線は、平行線と空白さまざまな幅を代替の構成されます。 配列内の値は、複合直線、ペンの幅に対して相対的の各コンポーネントの開始ポイントを指定します。 配列の最初の値は、ペンの幅にまたがって距離の分数として最初のコンポーネント (行) 開始位置を指定します。 配列内の 2 番目の値は、ペンの幅にまたがって、距離の分数として次のコンポーネント (スペース) の先頭を指定します。 配列内の最後の値は、最後のコンポーネントが終了する位置を指定します。  
+  
+ 2 つの行を区切るスペースの幅が、ペンの 50% がペンの幅の 20% を最初の行の幅がここでは 2 つの並列線を描画するペンをするとします ' s はペンの幅の 30% の幅、および 2 番目の行の幅。 まずを作成して、<xref:System.Drawing.Pen>と実数の配列。 このプロパティに値 0.0、0.2、0.7、および 1.0 を使用して配列を渡すことによって、複合配列を設定します。  
+  
+ このプロパティを設定しない場合、<xref:System.Drawing.Pen>がその<xref:System.Drawing.Pen.Alignment%2A>プロパティに設定<xref:System.Drawing.Drawing2D.PenAlignment.Inset>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.CompoundArray" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomEndCap">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.CustomLineCap CustomEndCap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Drawing2D.CustomLineCap CustomEndCap" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.CustomEndCap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CustomLineCap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> で描画された直線の終点で使用する、カスタム キャップを取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> で描画された直線の終点で使用されたキャップを表す <see cref="T:System.Drawing.Drawing2D.CustomLineCap" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.CustomEndCap" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomStartCap">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.CustomLineCap CustomStartCap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Drawing2D.CustomLineCap CustomStartCap" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.CustomStartCap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CustomLineCap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> で描画された直線の始点で使用する、カスタム キャップを取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> で描画された直線の始点で使用されたキャップを表す <see cref="T:System.Drawing.Drawing2D.CustomLineCap" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.CustomStartCap" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DashCap">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.DashCap DashCap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.DashCap DashCap" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.DashCap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.DashCap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> で描画された破線で構成されるダッシュの終点で使用する、キャップ スタイルを取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> で描画された破線で構成されるダッシュの始点および終点で使用する、キャップ スタイルを表すいずれかの <see cref="T:System.Drawing.Drawing2D.DashCap" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定しないで<xref:System.Drawing.Drawing2D.DashCap.Triangle>場合、<xref:System.Drawing.Pen>がその<xref:System.Drawing.Pen.Alignment%2A>プロパティに設定<xref:System.Drawing.Drawing2D.PenAlignment.Inset>です。  
+  
+   
+  
+## Examples  
+ 作成するコード例を次に示します、<xref:System.Drawing.Pen>と設定の影響、 <xref:System.Drawing.Pen.DashCap%2A>、 <xref:System.Drawing.Pen.DashPattern%2A>、および<xref:System.Drawing.Graphics.SmoothingMode%2A>プロパティです。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowPensAndSmoothingMode`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.PensExample#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.PensExample/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.PensExample#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.PensExample/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.PensExample#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.PensExample/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定した値がのメンバーではない<see cref="T:System.Drawing.Drawing2D.DashCap" />です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.DashCap" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DashOffset">
+      <MemberSignature Language="C#" Value="public float DashOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 DashOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.DashOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>直線の始点からダッシュ パターンの始点までの距離を取得または設定します。</summary>
+        <value>直線の始点からダッシュ パターンの始点までの距離。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.DashOffset" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DashPattern">
+      <MemberSignature Language="C#" Value="public float[] DashPattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32[] DashPattern" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.DashPattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム ダッシュと空白の配列を取得または設定します。</summary>
+        <value>破線内の代替ダッシュと空白の長さを指定する実数の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以外の値を割り当てる`null`このプロパティを設定、<xref:System.Drawing.Drawing2D.DashStyle>プロパティをこの<xref:System.Drawing.Pen>に<xref:System.Drawing.Drawing2D.DashStyle.Custom>です。  
+  
+ 内の要素、`dashArray`配列はダッシュのパターンでは各ダッシュと空白の長さを設定します。 最初の要素をダッシュの長さを設定する、2 番目の要素が空白の長さを設定、3 番目の要素は、ダッシュ、およびなの長さを設定します。 その結果、各要素は 0 以外の正の数値にする必要があります。  
+  
+ 各ダッシュとダッシュのパターンの空白の長さが、配列の要素の値の製品との幅、<xref:System.Drawing.Pen>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定の効果を示します、 <xref:System.Drawing.Pen.DashCap%2A>、 <xref:System.Drawing.Pen.DashPattern%2A>、および<xref:System.Drawing.Graphics.SmoothingMode%2A>プロパティです。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowPensAndSmoothingMode`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.PensExample#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.PensExample/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.PensExample#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.PensExample/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.PensExample#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.PensExample/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.DashPattern" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DashStyle">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.DashStyle DashStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.DashStyle DashStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.DashStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.DashStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> で描画される破線で使用されるスタイルを取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> で描画される破線で使用されるスタイルを表す <see cref="T:System.Drawing.Drawing2D.DashStyle" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Drawing.Drawing2D.DashStyle.Custom>のこのプロパティでのハイフン、スペース、カスタム パターンを定義することを指定します、<xref:System.Drawing.Pen.DashPattern%2A>プロパティは、これで描画された直線の<xref:System.Drawing.Pen>します。 このプロパティの値がある場合<xref:System.Drawing.Drawing2D.DashStyle.Custom>の値、<xref:System.Drawing.Pen.DashPattern%2A>プロパティは`null`ペンが純色の線を描画します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.DashStyle" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Drawing.Pen.Dispose%2A>により、これによって使用されるリソース<xref:System.Drawing.Brush>を他の目的に再割り当てされます。  
+  
+ <xref:System.Drawing.Pen.Dispose%2A> を使い終わったら <xref:System.Drawing.Pen> を呼び出します。 <xref:System.Drawing.Pen.Dispose%2A> メソッドによって、<xref:System.Drawing.Pen> は使用不可の状態になります。 呼び出した後<xref:System.Drawing.Pen.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Drawing.Pen>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Drawing.Pen>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Pen.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Drawing.Pen> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Drawing.Pen> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定の効果を示します、<xref:System.Drawing.Pen.Width%2A>と<xref:System.Drawing.Pen.LineJoin%2A>プロパティを呼び出す方法を示しています、<xref:System.Drawing.Pen.Dispose%2A>のメソッド、<xref:System.Drawing.Pen>です。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowLineJoin`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.PensExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.PensExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.PensExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.PensExample/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.PensExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.PensExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndCap">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.LineCap EndCap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.LineCap EndCap" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.EndCap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.LineCap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> で描画された直線の終点で使用する、キャップ スタイルを取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> で描画された直線の終点で使用されたキャップ スタイルを表すいずれかの <see cref="T:System.Drawing.Drawing2D.LineCap" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、設定の効果を示します、<xref:System.Drawing.Pen.StartCap%2A>と<xref:System.Drawing.Pen.EndCap%2A>プロパティを<xref:System.Drawing.Pen>です。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowStartAndEndCaps`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.PensExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.PensExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.PensExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.PensExample/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.PensExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.PensExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定した値がのメンバーではない<see cref="T:System.Drawing.Drawing2D.LineCap" />です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.EndCap" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~Pen ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineJoin">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.LineJoin LineJoin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.LineJoin LineJoin" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.LineJoin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.LineJoin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> で描画された連続する 2 本の直線の終点の接合スタイルを取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> で描画された、連続する 2 本の直線の終点の接合スタイルを表す <see cref="T:System.Drawing.Drawing2D.LineJoin" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 直線の接合部は、2 本の線の端を満たすことや、重ねてによって形成される一般的な領域です。 3 つの結合線がある: つながる、傾斜、および丸めます。  直線の接合スタイルを指定すると、<xref:System.Drawing.Pen>オブジェクトのいずれかで接続されているすべての行への接合スタイルが適用されること<xref:System.Drawing.Drawing2D.GraphicsPath>そのペンを使用して描画オブジェクトです。次の図は、直線の面取りの結合の例の結果を示します。  
+  
+ ![ペン](~/add/media/pens5.gif "ペン")  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定の効果を示します、<xref:System.Drawing.Pen.Width%2A>と<xref:System.Drawing.Pen.LineJoin%2A>プロパティを<xref:System.Drawing.Pen>です。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowLineJoin`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.PensExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.PensExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.PensExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.PensExample/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.PensExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.PensExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.LineJoin" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MiterLimit">
+      <MemberSignature Language="C#" Value="public float MiterLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 MiterLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.MiterLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マイター隅の接合部の太さの限度を取得または設定します。</summary>
+        <value>マイター隅の接合部の太さの限度。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マイター長とは、結合外部で線の壁の積集合を結合の内側の線の壁の積集合からの距離。 2 本の線の間の角度が小さい場合、マイター長が大きくなることができます。 マイターは、線の幅にマイター長の最大許容比率です。 既定値は 10.0f です。  
+  
+ マイター長の交差部分への参加は、結合の制限を超える場合、結合は交差部分の結合の制限内で保持する傾斜します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.MiterLimit" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiplyTransform">
+      <MemberSignature Language="C#" Value="public void MultiplyTransform (System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MultiplyTransform(class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.MultiplyTransform(System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix">変換行列の乗算に使用する <see cref="T:System.Drawing.Drawing2D.Matrix" /> オブジェクト。</param>
+        <summary>この <see cref="T:System.Drawing.Pen" /> の変換行列と指定の <see cref="T:System.Drawing.Drawing2D.Matrix" /> を乗算します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの前に指定された乗算行列、`matrix`乗算演算の変換行列のパラメーターです。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.Pen> を作成します。  
+  
+-   画面に線を描画します。  
+  
+-   指定した行列を使用して、ペンの変換行列を乗算します。  
+  
+-   変換されたペンを使用して直線を描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicPenExamples#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.ClassicPenExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.ClassicPenExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiplyTransform">
+      <MemberSignature Language="C#" Value="public void MultiplyTransform (System.Drawing.Drawing2D.Matrix matrix, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MultiplyTransform(class System.Drawing.Drawing2D.Matrix matrix, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.MultiplyTransform(System.Drawing.Drawing2D.Matrix,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="matrix">変換行列の乗算に使用する <see cref="T:System.Drawing.Drawing2D.Matrix" />。</param>
+        <param name="order">乗算演算を実行する順序。</param>
+        <summary>この <see cref="T:System.Drawing.Pen" /> の変換行列と指定の <see cref="T:System.Drawing.Drawing2D.Matrix" /> を指定の順序で乗算します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、<xref:System.Drawing.Drawing2D.MatrixOrder>列挙要素 (前または後) で指定した、`order`乗算演算を実行するパラメーターです。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.Pen> を作成します。  
+  
+-   画面に線を描画します。  
+  
+-   指定した行列を使用して、ペンの変換行列を乗算します。  
+  
+-   変換されたペンを使用して直線を描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicPenExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.ClassicPenExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.ClassicPenExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PenType">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.PenType PenType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.PenType PenType" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.PenType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.PenType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> で描画される直線のスタイルを取得します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> で描画される直線のスタイルを指定する <see cref="T:System.Drawing.Drawing2D.PenType" /> 列挙体。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Drawing.Pen>純色の線、塗りつぶし線、またはのメンバーで指定されたスタイルに応じて、テクスチャの線を描画することができます、<xref:System.Drawing.Drawing2D.PenType>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetTransform">
+      <MemberSignature Language="C#" Value="public void ResetTransform ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetTransform() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.ResetTransform" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対象の <see cref="T:System.Drawing.Pen" /> のジオメトリック変換行列を単位行列にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.Pen> を作成します。  
+  
+-   X 軸方向のスケールを 2 回ペンの変換行列を設定します。  
+  
+-   画面に線を描画します。  
+  
+-   Id に、変換行列をリセットします。  
+  
+-   画面に 2 番目の行を描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicPenExamples#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CPP/form1.cpp#4)]
+ [!code-csharp[System.Drawing.ClassicPenExamples#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CS/form1.cs#4)]
+ [!code-vb[System.Drawing.ClassicPenExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateTransform">
+      <MemberSignature Language="C#" Value="public void RotateTransform (float angle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateTransform(float32 angle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.RotateTransform(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転角度。</param>
+        <summary>指定した角度だけローカル ジオメトリック変換を回転します。 このメソッドは変換の前に回転を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ペンの形状は、循環であるため、回転ありません目立った影響ペンが x 軸または y 軸方向に拡大縮小しない限り。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.Pen> を作成します。  
+  
+-   ペンを使用して、四角形を描画します。  
+  
+-   X 軸方向に 2 倍では、ペンを拡大または縮小します。  
+  
+-   ペンを時計回りに 90 度回転します。  
+  
+-   違いを示すために 2 つ目の四角形を描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicPenExamples#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.ClassicPenExamples#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.ClassicPenExamples#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateTransform">
+      <MemberSignature Language="C#" Value="public void RotateTransform (float angle, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateTransform(float32 angle, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.RotateTransform(System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転角度。</param>
+        <param name="order">回転行列を後に適用するか、前に適用するかを指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary>指定した順序で、指定した角度だけローカル ジオメトリック変換を回転します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ペンの形状は、循環であるため、回転ありません目立った影響ペンが x 軸または y 軸方向に拡大縮小しない限り。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.Pen> を作成します。  
+  
+-   X 軸方向に 2 倍では、ペンを拡大または縮小します。  
+  
+-   ペンを使用して、四角形を描画します。  
+  
+-   ペンを時計回りに 90 度回転します。  
+  
+-   違いを示すために 2 つ目の四角形を描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicPenExamples#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.ClassicPenExamples#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.ClassicPenExamples#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleTransform">
+      <MemberSignature Language="C#" Value="public void ScaleTransform (float sx, float sy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScaleTransform(float32 sx, float32 sy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.ScaleTransform(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sx" Type="System.Single" />
+        <Parameter Name="sy" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="sx">x 軸方向に変換をスケーリングする場合の係数。</param>
+        <param name="sy">y 軸方向に変換をスケーリングする場合の係数。</param>
+        <summary>指定した係数だけローカル ジオメトリック変換をスケーリングします。 このメソッドは変換の前にスケーリング行列を適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+ <xref:System.Drawing.Pen> を作成します。  
+  
+ ペンを使用して、四角形を描画します。  
+  
+ X 軸方向に 2 倍では、ペンを拡大または縮小します。  
+  
+ 違いを示すために 2 つ目の四角形を描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicPenExamples#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.ClassicPenExamples#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.ClassicPenExamples#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleTransform">
+      <MemberSignature Language="C#" Value="public void ScaleTransform (float sx, float sy, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScaleTransform(float32 sx, float32 sy, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.ScaleTransform(System.Single,System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sx" Type="System.Single" />
+        <Parameter Name="sy" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="sx">x 軸方向に変換をスケーリングする場合の係数。</param>
+        <param name="sy">y 軸方向に変換をスケーリングする場合の係数。</param>
+        <param name="order">スケーリング行列を後に適用するか、前に適用するかを指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary>指定した順序で、指定した係数だけローカル ジオメトリック変換をスケーリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.Pen> を作成します。  
+  
+-   ペンを使用して、四角形を描画します。  
+  
+-   X 軸方向に 2 倍では、ペンを拡大または縮小します。  
+  
+-   違いを示すために 2 つ目の四角形を描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicPenExamples#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CPP/form1.cpp#8)]
+ [!code-csharp[System.Drawing.ClassicPenExamples#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CS/form1.cs#8)]
+ [!code-vb[System.Drawing.ClassicPenExamples#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/VB/form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLineCap">
+      <MemberSignature Language="C#" Value="public void SetLineCap (System.Drawing.Drawing2D.LineCap startCap, System.Drawing.Drawing2D.LineCap endCap, System.Drawing.Drawing2D.DashCap dashCap);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLineCap(valuetype System.Drawing.Drawing2D.LineCap startCap, valuetype System.Drawing.Drawing2D.LineCap endCap, valuetype System.Drawing.Drawing2D.DashCap dashCap) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.SetLineCap(System.Drawing.Drawing2D.LineCap,System.Drawing.Drawing2D.LineCap,System.Drawing.Drawing2D.DashCap)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="startCap" Type="System.Drawing.Drawing2D.LineCap" />
+        <Parameter Name="endCap" Type="System.Drawing.Drawing2D.LineCap" />
+        <Parameter Name="dashCap" Type="System.Drawing.Drawing2D.DashCap" />
+      </Parameters>
+      <Docs>
+        <param name="startCap">この <see cref="T:System.Drawing.Pen" /> で描画される直線の始点で使用されるキャップ スタイルを表す <see cref="T:System.Drawing.Drawing2D.LineCap" />。</param>
+        <param name="endCap">この <see cref="T:System.Drawing.Pen" /> で描画される直線の終点で使用されるキャップ スタイルを表す <see cref="T:System.Drawing.Drawing2D.LineCap" />。</param>
+        <param name="dashCap">この <see cref="T:System.Drawing.Pen" /> で描画される破線の始点または終点で使用されるキャップ スタイルを表す <see cref="T:System.Drawing.Drawing2D.LineCap" />。</param>
+        <summary>この <see cref="T:System.Drawing.Pen" /> で描画する直線を終了させるとき、使用されるキャップのスタイルを決定する値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 このコードを作成、<xref:System.Drawing.Pen>し、行の先頭に矢印アンカー cap を描画するように設定。  
+  
+ [!code-cpp[System.Drawing.ClassicPenExamples#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CPP/form1.cpp#9)]
+ [!code-csharp[System.Drawing.ClassicPenExamples#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/CS/form1.cs#9)]
+ [!code-vb[System.Drawing.ClassicPenExamples#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicPenExamples/VB/form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartCap">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.LineCap StartCap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.LineCap StartCap" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.StartCap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.LineCap</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> で描画された直線の始点で使用する、キャップ スタイルを取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> で描画された直線の始点で使用されたキャップ スタイルを表すいずれかの <see cref="T:System.Drawing.Drawing2D.LineCap" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、設定の効果を示します、<xref:System.Drawing.Pen.StartCap%2A>と<xref:System.Drawing.Pen.EndCap%2A>プロパティを<xref:System.Drawing.Pen>です。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowStartAndEndCaps`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.PensExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.PensExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.PensExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.PensExample/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.PensExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.PensExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定した値がのメンバーではない<see cref="T:System.Drawing.Drawing2D.LineCap" />です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.StartCap" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.Matrix Transform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Drawing2D.Matrix Transform" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.Transform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.Matrix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> のジオメトリック変換のコピーを取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> のジオメトリック変換を表す <see cref="T:System.Drawing.Drawing2D.Matrix" /> のコピー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、楕円、ペン先端の形を定義します。 この楕円は、変換行列を適用することで、既定の円形から取得されます。 行列の平行移動の部分は無視されることに注意してください。 マトリックスが返されたため、<xref:System.Drawing.Pen.Transform%2A>プロパティは、ペンのジオメトリック変換のコピーが不要になったときに、マトリックスを破棄する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.Transform" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateTransform">
+      <MemberSignature Language="C#" Value="public void TranslateTransform (float dx, float dy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TranslateTransform(float32 dx, float32 dy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.TranslateTransform(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dx" Type="System.Single" />
+        <Parameter Name="dy" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="dx">x 軸方向の平行移動の値。</param>
+        <param name="dy">y 軸方向の平行移動の値。</param>
+        <summary>指定した寸法でローカル ジオメトリック変換を平行移動します。 このメソッドは変換の前に平行移動を行います。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateTransform">
+      <MemberSignature Language="C#" Value="public void TranslateTransform (float dx, float dy, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TranslateTransform(float32 dx, float32 dy, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Pen.TranslateTransform(System.Single,System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dx" Type="System.Single" />
+        <Parameter Name="dy" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="dx">x 軸方向の平行移動の値。</param>
+        <param name="dy">y 軸方向の平行移動の値。</param>
+        <param name="order">平行移動を適用する順序 (前または後)。</param>
+        <summary>指定した順序で、指定した寸法だけローカル ジオメトリック変換を平行移動します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public float Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Pen.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Pen" /> の幅を、描画に使用される <see cref="T:System.Drawing.Graphics" /> オブジェクトの単位で取得または設定します。</summary>
+        <value>この <see cref="T:System.Drawing.Pen" /> の幅。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 長さの単位にアクセスすることができます、<xref:System.Drawing.Graphics>オブジェクトを使用してその<xref:System.Drawing.Graphics.PageUnit%2A>プロパティです。 測定単位は、通常、ピクセルです。 A <xref:System.Drawing.Pen.Width%2A> 0 になります、<xref:System.Drawing.Pen>図面として、<xref:System.Drawing.Pen.Width%2A>された 1 です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定の効果を示します、<xref:System.Drawing.Pen.Width%2A>と<xref:System.Drawing.Pen.LineJoin%2A>プロパティを<xref:System.Drawing.Pen>です。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowLineJoin`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.PensExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.PensExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.PensExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.PensExample/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.PensExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.PensExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Pen.Width" />プロパティが設定されて、変更できない<see cref="T:System.Drawing.Pen" />、によって返されるものなど、<see cref="T:System.Drawing.Pens" />クラスです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

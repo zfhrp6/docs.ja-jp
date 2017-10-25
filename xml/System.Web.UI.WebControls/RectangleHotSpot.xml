@@ -1,0 +1,272 @@
+<Type Name="RectangleHotSpot" FullName="System.Web.UI.WebControls.RectangleHotSpot">
+  <TypeSignature Language="C#" Value="public sealed class RectangleHotSpot : System.Web.UI.WebControls.HotSpot" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RectangleHotSpot extends System.Web.UI.WebControls.HotSpot" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RectangleHotSpot" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.HotSpot</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内の四角形のホット スポット領域を定義、<see cref="T:System.Web.UI.WebControls.ImageMap" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラス定義内の四角形のホット スポット領域、<xref:System.Web.UI.WebControls.ImageMap>コントロール。 領域を定義する、<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト、設定、<xref:System.Web.UI.WebControls.RectangleHotSpot.Left%2A>プロパティに四角形領域の最上位の x 座標を表す値を左上隅にあります。 設定、<xref:System.Web.UI.WebControls.RectangleHotSpot.Top%2A>プロパティに四角形領域の上端の y 座標を表す値を左上隅にあります。 設定、<xref:System.Web.UI.WebControls.RectangleHotSpot.Right%2A>プロパティに四角形領域の右下隅の x 座標を表す値です。 設定、<xref:System.Web.UI.WebControls.RectangleHotSpot.Bottom%2A>プロパティに四角形領域の右下隅の y 座標を表す値です。  
+  
+ ときに、<xref:System.Web.UI.WebControls.RectangleHotSpot>コントロールがクリックされると、ページ URL に移動、サーバーへのポストバックを生成または何も行われません。 <xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティは、この動作を指定します。 URL に移動するには、設定、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティを`HotSpotMode.Navigate`を使用して、<xref:System.Web.UI.WebControls.HotSpot.NavigateUrl%2A>に移動する URL を指定するプロパティです。 サーバーに投稿するには、設定、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティを`HotSpotMode.PostBack`を使用して、<xref:System.Web.UI.WebControls.HotSpot.PostBackValue%2A>プロパティの名前を指定する、<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 この名前は、<xref:System.Web.UI.WebControls.ImageMapEventArgs>イベント データときに、<xref:System.Web.UI.WebControls.RectangleHotSpot>をクリックします。 」を参照してください。 場合は、<xref:System.Web.UI.WebControls.HotSpot>なしは、設定するオブジェクト、<xref:System.Web.UI.WebControls.HotSpot.HotSpotMode%2A>プロパティを`HotSpotMode.Inactive`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 <xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティに設定されている`HotSpotMode.PostBack`、それが原因で、ページにポスト バックするサーバーごとにユーザーをホット スポット領域のいずれかをクリックします。 たびに、ユーザーがクリックしたの 1 つ、 <xref:System.Web.UI.WebControls.RectangleHotSpot> 、オブジェクト、<xref:System.Web.UI.WebControls.RectangleHotSpot.GetCoordinates%2A>メソッドが呼び出され、選択したホット スポットの座標がユーザーに表示されます。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[ImageMapClass2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ImageMapClass2/CS/imagemapclass2cs.aspx#1)]
+ [!code-aspx-vb[ImageMapClass2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ImageMapClass2/VB/imagemapclass2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RectangleHotSpot ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RectangleHotSpot.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.RectangleHotSpot" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.RectangleHotSpot>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つのプログラムで作成する方法を示します<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト、プロパティの設定に追加して、<xref:System.Web.UI.WebControls.ImageMap>コントロールの<xref:System.Web.UI.WebControls.HotSpotCollection>コレクション。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[RectangleHotSpot.Cstr#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RectangleHotSpot.Cstr/CS/rectanglehotspot.cstrcs.aspx#1)]
+ [!code-aspx-vb[RectangleHotSpot.Cstr#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RectangleHotSpot.Cstr/VB/rectanglehotspot.cstrvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bottom">
+      <MemberSignature Language="C#" Value="public int Bottom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Bottom" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RectangleHotSpot.Bottom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって定義された四角形領域の下の辺の y 座標の設定を取得または<see cref="T:System.Web.UI.WebControls.RectangleHotSpot" />オブジェクト。</summary>
+        <value>これによって定義された四角形領域の下の辺の y 座標<see cref="T:System.Web.UI.WebControls.RectangleHotSpot" />オブジェクト。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RectangleHotSpot.Bottom%2A>プロパティを取得または設定をこので定義された四角形領域の下の辺の y 座標を表す値を使用する<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 完全に定義する、<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトをこの値を指定する必要がありますプロパティと、 <xref:System.Web.UI.WebControls.RectangleHotSpot.Left%2A>、 <xref:System.Web.UI.WebControls.RectangleHotSpot.Top%2A>、および<xref:System.Web.UI.WebControls.RectangleHotSpot.Right%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 1 つ<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトを宣言して作成およびなどのプロパティ、<xref:System.Web.UI.WebControls.RectangleHotSpot.Bottom%2A>プロパティを宣言によって設定されます。 他の<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトがプログラムによって作成されたとなどのプロパティ、<xref:System.Web.UI.WebControls.RectangleHotSpot.Bottom%2A>プロパティ、プログラムによって設定されます。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.MobileControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[RectangleHotSpot.Top#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RectangleHotSpot.Top/CS/rectanglehotspot.topcs.aspx#1)]
+ [!code-aspx-vb[RectangleHotSpot.Top#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RectangleHotSpot.Top/VB/rectanglehotspot.topvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCoordinates">
+      <MemberSignature Language="C#" Value="public override string GetCoordinates ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetCoordinates() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RectangleHotSpot.GetCoordinates" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>X を表す文字列を返しますの座標と y 座標の<see cref="T:System.Web.UI.WebControls.RectangleHotSpot" />オブジェクトの左上隅およびその下の x 座標と y の右上隅です。</summary>
+        <returns>X 座標と y 座標を表す文字列、<see cref="T:System.Web.UI.WebControls.RectangleHotSpot" />オブジェクトの左上隅およびその下の x 座標と y の右上隅です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの座標を表す文字列を返します、<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトの左上隅およびその下の座標右上隅です。 このメソッドに割り当てられている値を使用して、<xref:System.Web.UI.WebControls.RectangleHotSpot.Left%2A>と<xref:System.Web.UI.WebControls.RectangleHotSpot.Top%2A>上部の座標を返すプロパティを左上隅にあります。 割り当てられた値を使用して、<xref:System.Web.UI.WebControls.RectangleHotSpot.Right%2A>と<xref:System.Web.UI.WebControls.RectangleHotSpot.Bottom%2A>に一番下の座標を右上隅に返されるプロパティです。  
+  
+ <xref:System.Web.UI.WebControls.RectangleHotSpot.GetCoordinates%2A>メソッドは内部的に ASP.NET で使用されるの座標を使用するテキストを取得する、<xref:System.Web.UI.WebControls.RectangleHotSpot>を表示します。 返される文字列は、ブラウザー、およびマークアップの言語に固有です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 <xref:System.Web.UI.WebControls.ImageMap.HotSpotMode%2A?displayProperty=nameWithType>プロパティに設定されている`HotSpotMode.PostBack`、それが原因で、ページにポスト バックするサーバーごとにユーザーをホット スポット領域のいずれかをクリックします。 たびに、ユーザーがクリックしたの 1 つ、 <xref:System.Web.UI.WebControls.RectangleHotSpot> 、オブジェクト、<xref:System.Web.UI.WebControls.RectangleHotSpot.GetCoordinates%2A>メソッドが呼び出され、選択したホット スポットの座標がユーザーに表示されます。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[RectangleHotSpot.GetCoordinates#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RectangleHotSpot.GetCoordinates/CS/rectanglehotspot.getcoordinatescs.aspx#1)]
+ [!code-aspx-vb[RectangleHotSpot.GetCoordinates#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RectangleHotSpot.GetCoordinates/VB/rectanglehotspot.getcoordinatesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public int Left { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Left" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RectangleHotSpot.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって定義された四角形領域の左側の x 座標を取得または<see cref="T:System.Web.UI.WebControls.RectangleHotSpot" />オブジェクト。</summary>
+        <value>これによって定義された四角形領域の左側の x 座標<see cref="T:System.Web.UI.WebControls.RectangleHotSpot" />オブジェクト。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RectangleHotSpot.Left%2A>プロパティを取得または設定をこので定義された四角形領域の左側の x 座標を表す値を使用する<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 完全に定義する、<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトをこの値を指定する必要がありますプロパティと、 <xref:System.Web.UI.WebControls.RectangleHotSpot.Top%2A>、 <xref:System.Web.UI.WebControls.RectangleHotSpot.Right%2A>、および<xref:System.Web.UI.WebControls.RectangleHotSpot.Bottom%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 1 つ<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトを宣言して作成およびなどのプロパティ、<xref:System.Web.UI.WebControls.RectangleHotSpot.Left%2A>プロパティを宣言によって設定されます。 他の<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトがプログラムによって作成されたとなどのプロパティ、<xref:System.Web.UI.WebControls.RectangleHotSpot.Left%2A>プロパティ、プログラムによって設定されます。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[RectangleHotSpot.Top#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RectangleHotSpot.Top/CS/rectanglehotspot.topcs.aspx#1)]
+ [!code-aspx-vb[RectangleHotSpot.Top#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RectangleHotSpot.Top/VB/rectanglehotspot.topvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkupName">
+      <MemberSignature Language="C#" Value="protected override string MarkupName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MarkupName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RectangleHotSpot.MarkupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public int Right { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Right" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RectangleHotSpot.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって定義された四角形領域の右側の x 座標を取得または<see cref="T:System.Web.UI.WebControls.RectangleHotSpot" />オブジェクト。</summary>
+        <value>これによって定義された四角形領域の右側の x 座標<see cref="T:System.Web.UI.WebControls.RectangleHotSpot" />オブジェクト。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RectangleHotSpot.Right%2A>プロパティを取得または設定をこので定義された四角形領域の右側の x 座標を表す値を使用する<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 完全に定義する、<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトをこのプロパティの値を指定する必要があります、 <xref:System.Web.UI.WebControls.RectangleHotSpot.Left%2A>、 <xref:System.Web.UI.WebControls.RectangleHotSpot.Top%2A>、および<xref:System.Web.UI.WebControls.RectangleHotSpot.Bottom%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 1 つ<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトを宣言して作成およびなどのプロパティ、<xref:System.Web.UI.WebControls.RectangleHotSpot.Right%2A>プロパティを宣言によって設定されます。 他の<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトがプログラムによって作成されたとなどのプロパティ、<xref:System.Web.UI.WebControls.RectangleHotSpot.Right%2A>プロパティ、プログラムによって設定されます。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[RectangleHotSpot.Top#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RectangleHotSpot.Top/CS/rectanglehotspot.topcs.aspx#1)]
+ [!code-aspx-vb[RectangleHotSpot.Top#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RectangleHotSpot.Top/VB/rectanglehotspot.topvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="public int Top { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Top" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RectangleHotSpot.Top" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって定義された四角形領域の上にあるの y 座標の設定を取得または<see cref="T:System.Web.UI.WebControls.RectangleHotSpot" />オブジェクト。</summary>
+        <value>これによって定義された四角形領域の上にあるの y 座標<see cref="T:System.Web.UI.WebControls.RectangleHotSpot" />オブジェクト。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RectangleHotSpot.Top%2A>プロパティを取得または設定をこのによって定義された四角形領域の上にあるの y 座標を表す値を使用する<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 完全に定義する、<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 このプロパティと値を指定する必要があります、 <xref:System.Web.UI.WebControls.RectangleHotSpot.Left%2A>、 <xref:System.Web.UI.WebControls.RectangleHotSpot.Right%2A>、および<xref:System.Web.UI.WebControls.RectangleHotSpot.Bottom%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって作成する方法を示します、<xref:System.Web.UI.WebControls.ImageMap>を含む 2 つのコントロール<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクト。 1 つ<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトを宣言して作成およびなどのプロパティ、<xref:System.Web.UI.WebControls.RectangleHotSpot.Top%2A>プロパティを宣言によって設定されます。 他の<xref:System.Web.UI.WebControls.RectangleHotSpot>オブジェクトがプログラムによって作成されたとなどのプロパティ、<xref:System.Web.UI.WebControls.RectangleHotSpot.Top%2A>プロパティ、プログラムによって設定されます。 この例を正しく実行するには、独自のイメージを指定する必要があります、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティと、アプリケーションが特定できるようににイメージへのパスを適切に更新します。  
+  
+ [!code-aspx-csharp[RectangleHotSpot.Top#1](~/samples/snippets/csharp/VS_Snippets_WebNet/RectangleHotSpot.Top/CS/rectanglehotspot.topcs.aspx#1)]
+ [!code-aspx-vb[RectangleHotSpot.Top#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/RectangleHotSpot.Top/VB/rectanglehotspot.topvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

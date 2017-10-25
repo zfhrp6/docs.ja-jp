@@ -1,0 +1,208 @@
+<Type Name="SqlDataSourceEnumerator" FullName="System.Data.Sql.SqlDataSourceEnumerator">
+  <TypeSignature Language="C#" Value="public sealed class SqlDataSourceEnumerator : System.Data.Common.DbDataSourceEnumerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlDataSourceEnumerator extends System.Data.Common.DbDataSourceEnumerator" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Sql.SqlDataSourceEnumerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbDataSourceEnumerator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ローカル ネットワーク内の SQL Server の使用可能なすべてのインスタンスを列挙するためのメカニズムを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SQL Server 2000 と SQL Server 2005 の両方では行うアプリケーションは現在のネットワーク内の SQL Server インスタンスの存在を確認します。 <xref:System.Data.Sql.SqlDataSourceEnumerator>クラスを提供する、アプリケーションの開発者には、この情報を公開する、<xref:System.Data.DataTable>使用可能なすべてのサーバーに関する情報を格納します。 これは、テーブルには、ユーザーが新しい接続を作成しようとしたときに指定されたリストに一致するサーバー インスタンスの一覧が含まれています。 返される、`Connection Properties`ダイアログ ボックスで、使用可能なすべてのサーバーを含むドロップダウン リストを展開します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetDataSources">
+      <MemberSignature Language="C#" Value="public override System.Data.DataTable GetDataSources ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable GetDataSources() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Sql.SqlDataSourceEnumerator.GetDataSources" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.DataTable" />表示されているすべての SQL Server 2000 または SQL Server 2005 インスタンスに関する情報を格納します。</summary>
+        <returns>返します、<see cref="T:System.Data.DataTable" />表示されている SQL Server インスタンスに関する情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返されるテーブルには、次の列が含まれています。  
+  
+|Column|説明|  
+|------------|-----------------|  
+|**サーバー名**|サーバーの名前。|  
+|**InstanceName**|サーバー インスタンスの名前。 サーバーが既定のインスタンスとして実行されている場合は空白になります。|  
+|**IsClustered**|サーバーがクラスターの一部になっているかどうかを示します。|  
+|**Version**|サーバーのバージョン (SQL Server 2000 の場合は 8.00.x、SQL Server 2005 の場合は 9.00.x)。|  
+  
+> [!NOTE]
+>  メカニズムを使用しての性質の<xref:System.Data.Sql.SqlDataSourceEnumerator>をネットワーク上のデータ ソースを検索するには、メソッドは常に返されません、使用可能なサーバーの完全な一覧と同じすべての呼び出しで、一覧とは限りません。 関数を使用してこのユーザーの一覧からサーバーを選択できるようにする場合は、常にもサーバーの列挙が使用可能なすべてのサーバーを返さない場合に、一覧に含まれていない名前を入力するためのオプションを指定することを確認します。 さらに、このメソッドには、かなりの実行、パフォーマンスが重要な呼び出しについては注意が必要に時間がかかります。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、表示されているすべての SQL Server インスタンスに関する情報を取得し、コンソール ウィンドウに情報を表示します。  
+  
+```vb  
+Imports System.Data.Sql  
+  
+Module Module1  
+  Sub Main()  
+    ' Retrieve the enumerator instance and then the data.  
+    Dim instance As SqlDataSourceEnumerator = _  
+     SqlDataSourceEnumerator.Instance  
+    Dim table As System.Data.DataTable = instance.GetDataSources()  
+  
+    ' Display the contents of the table.  
+    DisplayData(table)  
+  
+    Console.WriteLine("Press any key to continue.")  
+    Console.ReadKey()  
+  End Sub  
+  
+  Private Sub DisplayData(ByVal table As DataTable)  
+    For Each row As DataRow In table.Rows  
+      For Each col As DataColumn In table.Columns  
+        Console.WriteLine("{0} = {1}", col.ColumnName, row(col))  
+      Next  
+      Console.WriteLine("============================")  
+    Next  
+  End Sub  
+End Module  
+```  
+  
+```csharp  
+using System.Data.Sql;  
+  
+class Program  
+{  
+  static void Main()  
+  {  
+    // Retrieve the enumerator instance and then the data.  
+    SqlDataSourceEnumerator instance =  
+      SqlDataSourceEnumerator.Instance;  
+    System.Data.DataTable table = instance.GetDataSources();  
+  
+    // Display the contents of the table.  
+    DisplayData(table);  
+  
+    Console.WriteLine("Press any key to continue.");  
+    Console.ReadKey();  
+  }  
+  
+  private static void DisplayData(System.Data.DataTable table)  
+  {  
+    foreach (System.Data.DataRow row in table.Rows)  
+    {  
+      foreach (System.Data.DataColumn col in table.Columns)  
+      {  
+        Console.WriteLine("{0} = {1}", col.ColumnName, row[col]);  
+      }  
+      Console.WriteLine("============================");  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Instance">
+      <MemberSignature Language="C#" Value="public static System.Data.Sql.SqlDataSourceEnumerator Instance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Data.Sql.SqlDataSourceEnumerator Instance" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Sql.SqlDataSourceEnumerator.Instance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Sql.SqlDataSourceEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得、<see cref="T:System.Data.Sql.SqlDataSourceEnumerator" />を使用して利用可能な SQL Server インスタンスに関する情報を取得することです。</summary>
+        <value>インスタンス、<see cref="T:System.Data.Sql.SqlDataSourceEnumerator" />使用可能な SQL Server インスタンスに関する情報を取得するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Sql.SqlDataSourceEnumerator>クラスは、コンス トラクターを提供しません。 使用して、<xref:System.Data.Sql.SqlDataSourceEnumerator.Instance%2A>代わりに、クラスのインスタンスを取得するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションには、ローカル ネットワーク内で使用可能なすべての SQL Server 2005 インスタンスの一覧が表示されます。 このコードを使用して、<xref:System.Data.DataTable.Select%2A>をによって返されるテーブル内の行をフィルター処理するメソッド、<xref:System.Data.Sql.SqlDataSourceEnumerator.GetDataSources%2A>メソッドです。  
+  
+```vb  
+Imports System.Data.Sql  
+  
+Module Module1  
+  Sub Main()  
+    ' Retrieve the enumerator instance, and  
+    ' then retrieve the data sources.  
+    Dim instance As SqlDataSourceEnumerator = _  
+     SqlDataSourceEnumerator.Instance  
+    Dim table As System.Data.DataTable = instance.GetDataSources()  
+  
+    ' Filter the sources to just show SQL Server 2005 instances.  
+    Dim rows() As DataRow = table.Select("Version LIKE '9%'")  
+    For Each row As DataRow In rows  
+      Console.WriteLine(row("ServerName"))  
+    Next  
+    Console.WriteLine("Press any key to continue.")  
+    Console.ReadKey()  
+  End Sub  
+End Module  
+```  
+  
+```csharp  
+using System.Data.Sql;  
+  
+class Program  
+{  
+  static void Main()  
+  {  
+    // Retrieve the enumerator instance, and  
+    // then retrieve the data sources.  
+    SqlDataSourceEnumerator instance =  
+      SqlDataSourceEnumerator.Instance;  
+    System.Data.DataTable table = instance.GetDataSources();  
+  
+    // Filter the sources to just show SQL Server 2005 instances.  
+    System.Data.DataRow[] rows = table.Select("Version LIKE '9%'");  
+    foreach (System.Data.DataRow row in rows)  
+    {  
+      Console.WriteLine(row["ServerName"]);  
+    }  
+    Console.WriteLine("Press any key to continue.");  
+    Console.ReadKey();  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

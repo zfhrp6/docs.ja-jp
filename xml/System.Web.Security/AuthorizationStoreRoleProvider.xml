@@ -1,0 +1,844 @@
+<Type Name="AuthorizationStoreRoleProvider" FullName="System.Web.Security.AuthorizationStoreRoleProvider">
+  <TypeSignature Language="C#" Value="public class AuthorizationStoreRoleProvider : System.Web.Security.RoleProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthorizationStoreRoleProvider extends System.Web.Security.RoleProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.AuthorizationStoreRoleProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Security.RoleProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ストア内で、承認マネージャー ポリシー XML ファイル、または、Active Directory で Active Directory アプリケーション モード サーバー上で ASP.NET アプリケーションのロール メンバーシップ情報の記憶域を管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは使用、<xref:System.Web.Security.Roles>と<xref:System.Web.Security.RolePrincipal>承認マネージャー ストアを使用して ASP.NET アプリケーションのロール管理サービスを提供するクラス。 ロール管理を使用すると、アプリケーションのさまざまなレベルの権限を指定します。 承認マネージャーは、Microsoft 管理コンソールを使用してアクセスできます。  
+  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider>オブジェクトは、Windows 認証を操作し、フォームの認証モードです。  
+  
+ 構成することができます、 <xref:System.Web.Security.AuthorizationStoreRoleProvider> XML ファイルをローカルまたは Active Directory または Active Directory Application Mode (ADAM) サーバーのいずれかを使用するオブジェクト。 ローカル ファイルを使用する場合、接続文字列は次の例のようになります。  
+  
+```  
+msxml://<path to xml file>  
+```  
+  
+ ローカル ファイルが ASP.NET Web アプリケーションのディレクトリ ツリーで格納されている場合は、チルダを行うこともできます ("~")、ルート ディレクトリを示す文字です。 たとえば、ローカル ファイルが Web アプリケーションのデータ ディレクトリに格納されていることを示すためには、次の例のような接続文字列を使用します。  
+  
+ `msxml://~\App_Data\datafilename.xml`  
+  
+> [!IMPORTANT]
+>  Web アプリケーションのディレクトリに XML データ ファイルを保存すると、潜在的なセキュリティの脅威です。 既定では、IIS と Web の XML データ ファイルは機能します。 ASP.NET アプリケーションでローカル データ ファイルを使用する場合にセキュリティを強化するには、内のデータ ファイルを格納する必要があります、`App_Data`ディレクトリ。 格納されているファイル、 `App_Data` web ディレクトリは提供されません。  
+  
+ ポリシー ストアを Active Directory または ADAM サーバーを使用している場合、接続文字列は次の例のようにする必要があります。  
+  
+ `msldap://myserver/CN=MyAzManStore,OU=MyOU,DC=MyDomain,DC=MyDC,DC=Com`  
+  
+ ドキュメントに示されている例外<xref:System.Web.Security.AuthorizationStoreRoleProvider>オブジェクトのメソッドは例外によって発生する、<xref:System.Web.Security.AuthorizationStoreRoleProvider>オブジェクト。 プロバイダーが、基になる認証マネージャーのランタイムを使用しているため、<xref:System.Runtime.InteropServices.COMException>例外があるたびにスローされた、<xref:System.Web.Security.AuthorizationStoreRoleProvider>オブジェクトは、認証マネージャーのランタイムへのメソッド呼び出しに転送します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.Security.AuthorizationStoreRoleProvider>オブジェクトが部分的に信頼された環境で実行するため、次の要件。  
+>   
+>  ASP.NET アプリケーション、現在の信頼レベルで付与ファイル I/O アクセス許可でファイル ベースのポリシー ストアを使用して決定し、かどうかを読み取る書き込みアクションは、プロバイダーによって許可されます。 ASP.NET アプリケーションでは、読み取り、ポリシー ストアからデータを読み取るファイルに対する権限が必要し、新しい情報を保存するか、ポリシー ストアの既存の情報を更新する書き込み権限が必要です。 既定中程度の信頼ポリシー ファイルには、そのアプリケーション ディレクトリで ASP.NET アプリケーションの読み取り/書き込み権限が与えられます。 既定値の信頼性の低いポリシー ファイルには、読み取りアクセス許可がアプリケーションのディレクトリで ASP.NET アプリケーションのみ与えられます。 さらに、ASP.NET アプリケーションを実行するプロセス id には、読み取り/書き込みポリシー ファイルにファイル システム権限が必要です。  
+>   
+>  ASP.NET アプリケーションにアンマネージ コードのアクセス許可が必要なため、Active Directory または ADAM サーバーを使用する場合、内部<xref:System.Web.Security.AuthorizationStoreRoleProvider>オブジェクト コードは、COM 相互運用機能を使用します。  
+>   
+>  使用する場合、 <xref:System.Web.Security.AuthorizationStoreRoleProvider> ASP.NET の外部でオブジェクトの呼び出し元のコードには、アンマネージ コードのアクセス許可が必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web.config ファイルを使用する設定を示しています、<xref:System.Web.Security.AuthorizationStoreRoleProvider>ロール管理用です。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="AuthorizationServices" connectionString="msxml://~\App_Data\SampleStore.xml" />  
+  </connectionStrings>  
+  
+  <system.web>  
+  
+    <authentication mode="Windows" />  
+    <identity impersonate="true" />  
+  
+    <roleManager defaultProvider="AuthorizationStoreRoleProvider"   
+      enabled="true"  
+      cacheRolesInCookie="true"  
+      cookieName=".ASPROLES"  
+      cookieTimeout="30"  
+      cookiePath="/"  
+      cookieRequireSSL="false"  
+      cookieSlidingExpiration="true"  
+      cookieProtection="All" >  
+      <providers>  
+        <clear />  
+          <add  
+            name="AuthorizationStoreRoleProvider"  
+            type="System.Web.Security.AuthorizationStoreRoleProvider"  
+            connectionStringName="AuthorizationServices"  
+            applicationName="SampleApplication"   
+            cacheRefreshInterval="60"  
+            scopeName="" />  
+      </providers>  
+    </roleManager>  
+  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AuthorizationStoreRoleProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.%23ctor%2A>コンス トラクターがのインスタンスを作成する ASP.NET によって呼び出されます、<xref:System.Web.Security.AuthorizationStoreRoleProvider>アプリケーションの構成で指定したクラスです。 このコンス トラクターは、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddUsersToRoles">
+      <MemberSignature Language="C#" Value="public override void AddUsersToRoles (string[] usernames, string[] roleNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddUsersToRoles(string[] usernames, string[] roleNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.AddUsersToRoles(System.String[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernames" Type="System.String[]" />
+        <Parameter Name="roleNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="usernames">指定したロールに追加するユーザー名の文字列配列。</param>
+        <param name="roleNames">指定されたユーザー名の割り当て先となるロール名の文字列配列。</param>
+        <summary>指定されたロールのそれぞれに指定されたユーザー名を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.AddUsersToRoles%2A>メソッドによって呼び出されます、 <xref:System.Web.Security.Roles> ASP.NET アプリケーションの構成ファイル (Web.config) で指定された承認マネージャーのデータ ストア内の 1 つまたは複数の役割を持つ 1 つまたは複数のユーザーを関連付けるにはクラスです。 このメソッドは、 <xref:System.Web.Security.Roles.AddUserToRole%2A?displayProperty=nameWithType>、 <xref:System.Web.Security.Roles.AddUserToRoles%2A?displayProperty=nameWithType>、 <xref:System.Web.Security.Roles.AddUsersToRole%2A?displayProperty=nameWithType>、および<xref:System.Web.Security.Roles.AddUsersToRoles%2A?displayProperty=nameWithType>のメソッド、<xref:System.Web.Security.Roles>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、1 つまたは複数のユーザーをロールに追加またはロールからユーザーを削除します。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.AuthorizationStoreRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/adduserstorolecs.aspx#3)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/adduserstorolevb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定されたユーザー名のいずれかが<see langword="null" />です。  
+  
+ または  
+  
+ 指定されたロール名のいずれかが<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="usernames" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="roleNames" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">指定されたユーザー名のいずれかにより、空の文字列またはコンマ (,) が含まれています。  
+  
+ または  
+  
+ 指定されたロール名のいずれかにより、空の文字列か、コンマ (,) を含んでいます。  
+  
+ または  
+  
+ <paramref name="usernames" />重複する要素が含まれています。  
+  
+ または  
+  
+ <paramref name="roleNames" />重複する要素が含まれています。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">構成された<see langword="applicationName" />が見つかりませんでした。  
+  
+ または  
+  
+ 構成された<see langword="scopeName" />が見つかりませんでした。  
+  
+ または  
+  
+ 承認マネージャーのランタイムがサーバーにインストールされていません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><see langword="connectionStringName" />属性が存在しないファイルへの接続文字列を参照します。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" />インスタンスは、ファイル ベースのポリシー ストアで構成され、現在の信頼レベルで、ファイルへの読み取りアクセスが許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public override string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を保存し、ロール情報を取得する対象の承認ストア アプリケーションの名前。</summary>
+        <value>ストアを格納およびロール情報を取得する対象のアプリケーションの認証の名前。 既定値は、<see cref="P:System.Web.HttpRequest.ApplicationPath" />プロパティの値を現在の<see cref="P:System.Web.HttpContext.Request" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName%2A>によって使用される、<xref:System.Web.Security.AuthorizationStoreRoleProvider>にユーザーおよびロールを関連付ける別の承認マネージャー アプリケーションは、複数の ASP.NET アプリケーションを同じ承認マネージャー ポリシーを使用できますストアに実行しなくてもロール情報競合重複したロール名の間です。 同じ値を指定することによって、複数の ASP.NET アプリケーションが同じポリシー ストアを使用する代わりに、<xref:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName%2A>プロパティです。 <xref:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName%2A>プロパティをプログラムで設定できるまたはことで設定できます宣言によって、アプリケーションの Web.config ファイルを使用して、`applicationName`属性。  
+  
+ 値が指定されていない場合、 `applicationName` Web.config ファイル内の属性、<xref:System.Web.HttpRequest.ApplicationPath%2A?displayProperty=nameWithType>プロパティの値を現在の<xref:System.Web.HttpContext.Request%2A?displayProperty=nameWithType>オブジェクトを使用します。  
+  
+> [!NOTE]
+>  承認マネージャー アプリケーションの名前に含まれている「/」文字を含めることはできません、<xref:System.Web.HttpRequest.ApplicationPath%2A?displayProperty=nameWithType>プロパティです。 その結果、既定値、<xref:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName%2A>プロパティは、承認マネージャー アプリケーション名として使用できませんし、アプリケーションの Web.config ファイルで指定してください、`applicationName`属性、`provider`構成するのには、<xref:System.Web.Security.AuthorizationStoreRoleProvider>インスタンス。  
+  
+> [!CAUTION]
+>  すべてで処理された要求の 1 つの既定のロール プロバイダーのインスタンスが使用されるため、<xref:System.Web.HttpApplication>オブジェクトを同時に実行して、設定しようとしています。 複数の要求を持つことができます、<xref:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName%2A>プロパティの値。 <xref:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName%2A>プロパティは複数の書き込みでは、安全と変化するスレッドではありません、<xref:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName%2A>アプリケーションの複数のユーザーがある場合に予期しない動作プロパティの値が結果ことができます。 ユーザーに設定できるようにするコードを記述しないことをお勧め、<xref:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName%2A>プロパティする必要がありますしない限り、します。 アプリケーションの例の設定が、<xref:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName%2A>プロパティが必要な可能性がありますは、複数のアプリケーション ロールのデータを管理する管理アプリケーションです。 このようなアプリケーションは、シングル ユーザー アプリケーションと Web アプリケーションではなくにする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例にある要素を示しています、 `system.web` ASP.NET アプリケーションの Web.config ファイルのセクションです。 アプリケーションの指定<xref:System.Web.Security.AuthorizationStoreRoleProvider>インスタンスとセット、<xref:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName%2A>プロパティを`MyApplication`です。  
+  
+```  
+<roleManager defaultProvider="AuthorizationStoreProvider"   
+  enabled="true"  
+  cacheRolesInCookie="true"  
+  cookieName=".ASPROLES"  
+  cookieTimeout="30"  
+  cookiePath="/"  
+  cookieRequireSSL="false"  
+  cookieSlidingExpiration="true"  
+  cookieProtection="All" >  
+  <providers>  
+    <add  
+      name="SqlProvider"  
+      type="System.Web.Security.AuthorizationStoreRoleProvider"  
+      connectionStringName="AuthorizationStoreServices"   
+      scopeName="MyScope"  
+      applicationName="MyApplication" />  
+  </providers>  
+</roleManager>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">設定しようとしましたが、<see cref="P:System.Web.Security.AuthorizationStoreRoleProvider.ApplicationName" />が 256 文字より長い文字列にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheRefreshInterval">
+      <MemberSignature Language="C#" Value="public int CacheRefreshInterval { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CacheRefreshInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.AuthorizationStoreRoleProvider.CacheRefreshInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポリシー ストアのデータのキャッシュの更新間隔を分単位の数を取得します。</summary>
+        <value>キャッシュされたポリシー ストアのデータの更新間隔を分単位の数。 既定値は 60 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRole">
+      <MemberSignature Language="C#" Value="public override void CreateRole (string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CreateRole(string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.CreateRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">作成するロールの名前。</param>
+        <summary>ロールの承認マネージャーのポリシー ストアに新しいロールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.CreateRole%2A>メソッドによって呼び出されます、 <xref:System.Web.Security.Roles> ASP.NET アプリケーションの構成ファイル (Web.config) で指定された承認マネージャーのデータ ストアのロールを作成するクラス。  
+  
+ ロール名では大文字小文字を区別します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、承認マネージャーのポリシー ストアに新しいロールを作成します。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.AuthorizationStoreRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="roleName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="roleName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="roleName" />コンマが含まれています。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">構成された<see langword="applicationName" />が見つかりませんでした。  
+  
+ または  
+  
+ 構成された<see langword="scopeName" />が見つかりませんでした。  
+  
+ または  
+  
+ 承認マネージャーのランタイムがサーバーにインストールされていません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><see langword="connectionStringName" />属性が存在しないファイルへの接続文字列を参照します。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" />インスタンスは、ファイル ベースのポリシー ストアで構成され、現在の信頼レベルで、ファイルへの読み取りアクセスが許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteRole">
+      <MemberSignature Language="C#" Value="public override bool DeleteRole (string roleName, bool throwOnPopulatedRole);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool DeleteRole(string roleName, bool throwOnPopulatedRole) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.DeleteRole(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+        <Parameter Name="throwOnPopulatedRole" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">削除するロールの名前。</param>
+        <param name="throwOnPopulatedRole">場合<see langword="true" />、例外がスロー <c>roleName</c>は 1 つまたは複数のメンバーがあります。</param>
+        <summary>承認マネージャーのポリシー ストアからロールを削除します。</summary>
+        <returns>
+          <see langword="true" />ロールが削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.DeleteRole%2A>メソッドによって呼び出されます、 <xref:System.Web.Security.Roles> ASP.NET アプリケーションの構成ファイル (Web.config) で指定された承認マネージャーのポリシー ストアからロールを削除するクラス。 ロールが削除されると、そのロールに関連付けられているユーザーの一覧をポリシー ストアからも削除されます。 データベース内のユーザー情報には影響しません。  
+  
+ 場合`throwOnPopulatedRole`は`true`し、例外がスローされます、およびロールがによって識別される場合、ロールは削除されません、`roleName`パラメーターが 1 つまたは複数のメンバーです。 場合`throwOnPopulatedRole`は`false`、空であるかどうかどうか、ロールが削除されます。  
+  
+   
+  
+## Examples  
+ 次の例では、承認マネージャーのポリシー ストアからロールを削除します。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.AuthorizationStoreRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/deleterolecs.aspx#2)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/deleterolevb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="roleName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="roleName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="roleName" />コンマが含まれています。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">
+          <paramref name="roleName" />1 つまたは複数のメンバーが存在し、<paramref name="throwOnPopulatedRole" />は<see langword="true" />します。  
+  
+ または  
+  
+ 構成された<see langword="applicationName" />が見つかりませんでした。  
+  
+ または  
+  
+ 構成された<see langword="scopeName" />が見つかりませんでした。  
+  
+ または  
+  
+ 承認マネージャーのランタイムがサーバーにインストールされていません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><see langword="connectionStringName" />属性が存在しないファイルへの接続文字列を参照します。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" />インスタンスは、ファイル ベースのポリシー ストアで構成され、現在の信頼レベルで、ファイルへの読み取りアクセスが許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUsersInRole">
+      <MemberSignature Language="C#" Value="public override string[] FindUsersInRole (string roleName, string usernameToMatch);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] FindUsersInRole(string roleName, string usernameToMatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.FindUsersInRole(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">検索範囲とするロール。</param>
+        <param name="usernameToMatch">検索するユーザー名。</param>
+        <summary>このメソッドは、承認ストアのロール プロバイダーによってサポートされていません。</summary>
+        <returns>ユーザー名と一致するすべてのユーザーの名前を含む文字列配列<paramref name="usernameToMatch" />指定されたロールのメンバーとなっているとします。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotImplementedException">サポートされていないメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllRoles">
+      <MemberSignature Language="C#" Value="public override string[] GetAllRoles ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetAllRoles() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.GetAllRoles" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションのすべてのロールのリストを取得します。</summary>
+        <returns>特定のアプリケーションの承認マネージャーのポリシー ストアに格納されているすべてのロールの名前を含む文字列配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.GetAllRoles%2A>メソッドによって呼び出されます、 <xref:System.Web.Security.Roles> ASP.NET アプリケーションの構成ファイル (Web.config) で指定された承認マネージャーのポリシー ストア内のすべてのロールの一覧を取得するクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Roles.GetAllRoles%2A>メソッドは、アプリケーションの役割の一覧を取得する結果バインドを<xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType>コントロール。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.AuthorizationStoreRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">構成された<see langword="applicationName" />が見つかりませんでした。  
+  
+ または  
+  
+ 構成された<see langword="scopeName" />が見つかりませんでした。  
+  
+ または  
+  
+ 承認マネージャーのランタイムがサーバーにインストールされていません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><see langword="connectionStringName" />属性が存在しないファイルへの接続文字列を参照します。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" />インスタンスは、ファイル ベースのポリシー ストアで構成され、現在の信頼レベルで、ファイルへの読み取りアクセスが許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRolesForUser">
+      <MemberSignature Language="C#" Value="public override string[] GetRolesForUser (string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetRolesForUser(string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.GetRolesForUser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">ロールの一覧を取得するユーザー。</param>
+        <summary>ユーザーに割り当てられたロールのリストを取得します。</summary>
+        <returns>指定ユーザーに割り当てられたすべてのロールの名前を格納している文字列配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.GetRolesForUser%2A>メソッドによって呼び出されます、 <xref:System.Web.Security.Roles> ASP.NET アプリケーションの構成ファイル (Web.config) で指定された承認マネージャーのポリシー ストアから指定したユーザーのロールの一覧を取得するクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Roles.GetRolesForUser%2A>指定されたユーザーのロールの一覧を取得する方法をバインドして、<xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType>コントロール。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.AuthorizationStoreRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/ViewRolescs.aspx#4)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/ViewRolesvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="username" />コンマが含まれています。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">構成された<see langword="applicationName" />が見つかりませんでした。  
+  
+ または  
+  
+ 構成された<see langword="scopeName" />が見つかりませんでした。  
+  
+ または  
+  
+ 承認マネージャーのランタイムがサーバーにインストールされていません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><see langword="connectionStringName" />属性が存在しないファイルへの接続文字列を参照します。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" />インスタンスは、ファイル ベースのポリシー ストアで構成され、現在の信頼レベルで、ファイルへの読み取りアクセスが許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUsersInRole">
+      <MemberSignature Language="C#" Value="public override string[] GetUsersInRole (string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetUsersInRole(string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.GetUsersInRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">ユーザーの一覧を取得するロールの名前。</param>
+        <summary>指定されたロールに属するユーザーのリストを取得します。</summary>
+        <returns>指定されたロールのメンバーであるすべてのユーザーの名前を格納している文字列配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.GetUsersInRole%2A>メソッドによって呼び出されます、 <xref:System.Web.Security.Roles> ASP.NET アプリケーションの構成ファイル (Web.config) で指定された承認マネージャーのポリシー ストアで指定されたロールに関連付けられているユーザーの一覧を取得するクラス。  
+  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.GetUsersInRole%2A>メソッドによって指定される承認マネージャー ロールに直接含まれているユーザー名のみを返します、`roleName`パラメーター。 基になる承認マネージャー API によって呼び出される、<xref:System.Web.Security.AuthorizationStoreRoleProvider.GetUsersInRole%2A>メソッドがグループの展開をサポートしていませんので、入れ子になった NT グループ、入れ子になった承認マネージャー グループ、および LDAP クエリ グループに含まれるユーザーは返されません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Roles.GetUsersInRole%2A>メソッドは、特定のロールのユーザーの一覧を取得する結果バインドを<xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType>コントロール。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.AuthorizationStoreRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/adduserstorolecs.aspx#3)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/adduserstorolevb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="roleName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="roleName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="roleName" />コンマが含まれています。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">構成された<see langword="applicationName" />が見つかりませんでした。  
+  
+ または  
+  
+ 構成された<see langword="scopeName" />が見つかりませんでした。  
+  
+ または  
+  
+ 承認マネージャーのランタイムがサーバーにインストールされていません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><see langword="connectionStringName" />属性が存在しないファイルへの接続文字列を参照します。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" />インスタンスは、ファイル ベースのポリシー ストアで構成され、現在の信頼レベルで、ファイルへの読み取りアクセスが許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="config" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" />インスタンスを初期化します。</param>
+        <param name="config">A<see cref="T:System.Collections.Specialized.NameValueCollection" />名とロール プロバイダーの構成オプションの値を格納しています。</param>
+        <summary>ASP.NET アプリケーションの構成ファイルで指定されたプロパティの値では、承認マネージャー ロール プロバイダーを初期化します。 このメソッドはコードから直接使用するためのものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.Initialize%2A>メソッドの初期化、<xref:System.Web.Security.AuthorizationStoreRoleProvider>プロパティを使用して値が ASP.NET アプリケーション構成ファイル (Web.config) で指定し、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="config" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException"><see langword="connectionStringName" />属性が空かに存在しません、 [connectionStrings 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b6ffbb2e-a4d1-410e-8f7e-9755e92c65de)構成セクション。  
+  
+ または  
+  
+ 構成された<see langword="applicationName" />が 256 文字より長い。  
+  
+ または  
+  
+ この構成<see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" />インスタンスには、認識されない属性が含まれています。</exception>
+        <exception cref="T:System.Web.HttpException">ASP.NET アプリケーションが実行されていない<see cref="F:System.Web.AspNetHostingPermissionLevel.Low" />信頼またはそれ以降。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUserInRole">
+      <MemberSignature Language="C#" Value="public override bool IsUserInRole (string username, string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsUserInRole(string username, string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.IsUserInRole(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">検索するユーザー名。</param>
+        <param name="roleName">検索範囲とするロール。</param>
+        <summary>指定したユーザーが指定したロールに存在するかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定されたユーザー名が指定されたロールの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.IsUserInRole%2A>メソッドによって呼び出されます、<xref:System.Web.Security.Roles>クラスおよび<xref:System.Security.Principal.IPrincipal.IsInRole%2A>のメソッド、<xref:System.Web.UI.Page.User%2A?displayProperty=nameWithType>プロパティをユーザーが、ASP.NET アプリケーションの構成ファイル (Web.config) で指定された承認マネージャーのデータ ストア内のロールに関連付けられているかどうかを判断します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで、ログオン ユーザーがユーザー ロールを表示するユーザーを許可する前に、管理者ロールがかどうかを確認します。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.AuthorizationStoreRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/ViewRolescs.aspx#4)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/ViewRolesvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="roleName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="roleName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="roleName" />コンマが含まれています。  
+  
+ または  
+  
+ <paramref name="username" />コンマが含まれています。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">構成された<see langword="applicationName" />が見つかりませんでした。  
+  
+ または  
+  
+ 構成された<see langword="scopeName" />が見つかりませんでした。  
+  
+ または  
+  
+ 承認マネージャーのランタイムがサーバーにインストールされていません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><see langword="connectionStringName" />属性が存在しないファイルへの接続文字列を参照します。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" />インスタンスは、ファイル ベースのポリシー ストアで構成され、現在の信頼レベルで、ファイルへの読み取りアクセスが許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveUsersFromRoles">
+      <MemberSignature Language="C#" Value="public override void RemoveUsersFromRoles (string[] userNames, string[] roleNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RemoveUsersFromRoles(string[] userNames, string[] roleNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.RemoveUsersFromRoles(System.String[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userNames" Type="System.String[]" />
+        <Parameter Name="roleNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="userNames">指定したロールから削除するユーザー名の文字列配列。</param>
+        <param name="roleNames">指定したユーザー名を削除するロール名の文字列配列。</param>
+        <summary>指定されたユーザー名を指定されたロールから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.RemoveUsersFromRoles%2A>メソッドによって呼び出されます、 <xref:System.Web.Security.Roles> ASP.NET アプリケーションの構成ファイル (Web.config) で指定された承認マネージャーのポリシー ストアの 1 つまたは複数のロールから 1 つまたは複数のユーザーを削除するクラス。 このメソッドは、 <xref:System.Web.Security.Roles.RemoveUserFromRole%2A>、 <xref:System.Web.Security.Roles.RemoveUserFromRoles%2A>、 <xref:System.Web.Security.Roles.RemoveUsersFromRole%2A>、および<xref:System.Web.Security.Roles.RemoveUsersFromRoles%2A>のメソッド、<xref:System.Web.Security.Roles>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、1 つまたは複数のユーザーをロールに追加またはロールからユーザーを削除します。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.AuthorizationStoreRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/adduserstorolecs.aspx#3)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/adduserstorolevb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定されたユーザー名のいずれかが<see langword="null" />です。  
+  
+ または  
+  
+ 指定されたロール名のいずれかが<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="userNames" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="roleNames" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">指定されたユーザー名のいずれかの空の文字列か、コンマが含まれています。  
+  
+ または  
+  
+ 指定されたロールの名前は空の文字列またはコンマが含まれています。  
+  
+ または  
+  
+ <paramref name="userNames" />重複する要素が含まれています。  
+  
+ または  
+  
+ <paramref name="roleNames" />重複する要素が含まれています。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">構成された<see langword="applicationName" />が見つかりませんでした。  
+  
+ または  
+  
+ 構成された<see langword="scopeName" />が見つかりませんでした。  
+  
+ または  
+  
+ 承認マネージャーのランタイムがサーバーにインストールされていません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><see langword="connectionStringName" />属性が存在しないファイルへの接続文字列を参照します。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" />インスタンスは、ファイル ベースのポリシー ストアで構成され、現在の信頼レベルで、ファイルへの読み取りアクセスが許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RoleExists">
+      <MemberSignature Language="C#" Value="public override bool RoleExists (string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool RoleExists(string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.AuthorizationStoreRoleProvider.RoleExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">承認マネージャーのポリシー ストアで検索するロールの名前です。</param>
+        <summary>指定したロール名は、承認マネージャーのポリシー ストアに既に存在するかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />承認マネージャーのポリシー ストア; のロール名が既に存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.RoleExists%2A>メソッドによって呼び出されます、<xref:System.Web.Security.Roles>ロール名が、ASP.NET アプリケーションの構成ファイル (Web.config) で指定された承認マネージャーのデータ ストアに存在するかどうかを決めるクラスをします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Roles.RoleExists%2A>ロールを作成する前に、ロール名が既に存在するかどうかを調べます。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.AuthorizationStoreRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="roleName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="roleName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="roleName" />コンマが含まれています。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">構成された<see langword="applicationName" />が見つかりませんでした。  
+  
+ または  
+  
+ 構成された<see langword="scopeName" />が見つかりませんでした。  
+  
+ または  
+  
+ 承認マネージャーのランタイムがサーバーにインストールされていません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><see langword="connectionStringName" />属性が存在しないファイルへの接続文字列を参照します。</exception>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.Security.AuthorizationStoreRoleProvider" />インスタンスは、ファイル ベースのポリシー ストアで構成され、現在の信頼レベルで、ファイルへの読み取りアクセスが許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ScopeName">
+      <MemberSignature Language="C#" Value="public string ScopeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ScopeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.AuthorizationStoreRoleProvider.ScopeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または承認ストアのスコープ名を設定します。</summary>
+        <value>承認ストアのスコープ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.AuthorizationStoreRoleProvider.ScopeName%2A>を使用してプロパティを設定することができます、`scopeName`でプロバイダーのインスタンスの属性の構成、`providers`構成セクションのセクションでします。  
+  
+> [!CAUTION]
+>  すべてで処理された要求の 1 つの既定のロール プロバイダーのインスタンスが使用されるため、<xref:System.Web.HttpApplication>オブジェクトを同時に実行して、設定しようとしています。 複数の要求を持つことができます、<xref:System.Web.Security.AuthorizationStoreRoleProvider.ScopeName%2A>プロパティの値。 <xref:System.Web.Security.AuthorizationStoreRoleProvider.ScopeName%2A>プロパティは複数の書き込みでは、安全と変化するスレッドではありません、<xref:System.Web.Security.AuthorizationStoreRoleProvider.ScopeName%2A>アプリケーションの複数のユーザーがある場合に予期しない動作プロパティの値が結果ことができます。 ユーザーに設定できるようにするコードを記述しないことをお勧め、<xref:System.Web.Security.AuthorizationStoreRoleProvider.ScopeName%2A>プロパティする必要がありますしない限り、します。 アプリケーションの例の設定が、<xref:System.Web.Security.AuthorizationStoreRoleProvider.ScopeName%2A>プロパティが必要な可能性がありますは、複数のアプリケーション ロールのデータを管理する管理アプリケーションです。 このようなアプリケーションは、シングル ユーザー アプリケーションと Web アプリケーションではなくにする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

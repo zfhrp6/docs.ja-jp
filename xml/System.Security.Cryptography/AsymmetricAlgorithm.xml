@@ -1,0 +1,673 @@
+<Type Name="AsymmetricAlgorithm" FullName="System.Security.Cryptography.AsymmetricAlgorithm">
+  <TypeSignature Language="C#" Value="public abstract class AsymmetricAlgorithm : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AsymmetricAlgorithm extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.AsymmetricAlgorithm" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>非対称アルゴリズムのすべての実装が継承する必要がある、抽象基本クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非対称の暗号アルゴリズムとも呼ばれる公開キー アルゴリズム、送信者と受信者の両方が関連するキーのペアを保持することを必要とします。 秘密キーと公開キー。 両方のキーは、エンティティに固有です。 公開キーが利用できるだれこのキーは受信者に送信されるデータをエンコードするために使用されます。 秘密キー保持する必要がプライベート; 受信側でこのキーは、受信者の公開キーを使用してエンコードされたメッセージをデコードに使用されます。 <xref:System.Security.Cryptography.RSACryptoServiceProvider>クラスは、公開キー アルゴリズムの実装です。 公開キー暗号化アルゴリズムとアルゴリズムの詳しい説明、「公開キー暗号化」セクションを参照してください。 [Cryptographic Services](~/docs/standard/security/cryptographic-services.md)です。 厳密名ツール (Sn.exe) を使用して、キーのペアを作成する方法については、次を参照してください。[する方法: 公開/秘密キー ペアを作成する](~/docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)です。  
+  
+ 公開キー システムを使用すると、デジタル署名を形成します。 デジタル署名は、データの整合性を保護するために使用されます。 たとえばを公開キー システムを使用して、メッセージのデジタル署名、送信者まずハッシュ関数を適用、メッセージ ダイジェストを作成するメッセージ。 送信者は、送信者の個人用の署名を作成する、送信側の秘密キーで、メッセージ ダイジェストを暗号化します。 メッセージと署名を受信したときに、受信者は、メッセージ ダイジェストを復元する送信者の公開キーを使用して署名を復号化され、送信者が使用されるのと同じハッシュ アルゴリズムを使用してメッセージをハッシュします。 受信者が計算メッセージ ダイジェストには、送信者から受け取ったメッセージ ダイジェストが一致すると、受信側はメッセージが転送中に変更されなかったことを想定できます。 送信者の公開キーは、一般的な知識があるため、署名すべてのユーザーを確認できることに注意してください。 この手法ではメッセージを秘密にすることはできません。秘密にするメッセージの場合、必要がありますも暗号化されます。  
+  
+ .NET Framework には、デジタル署名アルゴリズムを実装する次のクラスが用意されています: <xref:System.Security.Cryptography.DSACryptoServiceProvider>、 <xref:System.Security.Cryptography.RSACryptoServiceProvider>、 <xref:System.Security.Cryptography.ECDsa> (基本クラス)、および<xref:System.Security.Cryptography.ECDsaCng>です。  
+  
+ <xref:System.Security.Cryptography>名前空間の具象クラスを提供する<xref:System.Security.Cryptography.RSA>と<xref:System.Security.Cryptography.DSA>のみです。  
+  
+ RSA アルゴリズムを使用して暗号化および XML データの暗号化を解除する方法について説明し、作成して、XML デジタル署名を確認は、次の記事を参照してください。  
+  
+-   [方法: 非対称キーで XML 要素を暗号化する](~/docs/standard/security/how-to-encrypt-xml-elements-with-asymmetric-keys.md)  
+  
+-   [方法: 非対称キーで XML 要素を復号化する](~/docs/standard/security/how-to-decrypt-xml-elements-with-asymmetric-keys.md)  
+  
+-   [方法: デジタル署名で XML ドキュメントに署名する](~/docs/standard/security/how-to-sign-xml-documents-with-digital-signatures.md)  
+  
+-   [方法: XML ドキュメントのデジタル署名を検証する](~/docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md)  
+  
+   
+  
+## Examples  
+ 次のコード例から継承するカスタム非対称アルゴリズムを実装する方法を示します、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラスです。  その他のクラスは、カスタム クラスを使用する方法を説明するものです。  
+  
+ [!code-cpp[System.Security.Cryptography.AsymmetricAlgorithm#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/cpp/customcrypto.cpp#2)]
+ [!code-csharp[System.Security.Cryptography.AsymmetricAlgorithm#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/CS/customcrypto.cs#2)]
+ [!code-vb[System.Security.Cryptography.AsymmetricAlgorithm#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/VB/customcrypto.vb#2)]  
+  
+ カスタム クラスを使用する方法を示す追加のクラスを次に示します。  
+  
+ [!code-cpp[System.Security.Cryptography.AsymmetricAlgorithm#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/cpp/customcryptoimpl.cpp#3)]
+ [!code-csharp[System.Security.Cryptography.AsymmetricAlgorithm#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/CS/customcrypto.cs#3)]
+ [!code-vb[System.Security.Cryptography.AsymmetricAlgorithm#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/VB/customcrypto.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AsymmetricAlgorithm ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象クラスのインスタンスを作成することはできません。 アプリケーション コードでは、派生クラスの新しいインスタンスを作成します。 <xref:System.Security.Cryptography.RSACryptoServiceProvider>と<xref:System.Security.Cryptography.DSACryptoServiceProvider>クラスは、現在サポートされている唯一の実装です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">派生クラスの実装が有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /> クラスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、単純に、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 呼び出す`Dispose`により、リソースで使用される、<xref:System.Security.Cryptography.AsymmetricAlgorithm>を他の目的を再割り当てするクラス。 詳細については`Dispose`を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Security.Cryptography.AsymmetricAlgorithm.Clear%2A>を現在のリソースを解放するメソッド`customCrypto`オブジェクト。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.AsymmetricAlgorithm#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/cpp/customcryptoimpl.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.AsymmetricAlgorithm#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/CS/customcrypto.cs#1)]
+ [!code-vb[System.Security.Cryptography.AsymmetricAlgorithm#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/VB/customcrypto.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.AsymmetricAlgorithm Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.AsymmetricAlgorithm Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.AsymmetricAlgorithm</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非対称アルゴリズムを実行するために使用する既定の暗号オブジェクトを作成します。</summary>
+        <returns>新しい<see cref="T:System.Security.Cryptography.RSACryptoServiceProvider" />インスタンス、既定の設定が変更されていない限り、 [ &lt;cryptoClass&gt;要素](~/docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A>拡張クラスのメソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.AsymmetricAlgorithm#11](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/cpp/customcrypto.cpp#11)]
+ [!code-csharp[System.Security.Cryptography.AsymmetricAlgorithm#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/CS/customcrypto.cs#11)]
+ [!code-vb[System.Security.Cryptography.AsymmetricAlgorithm#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/VB/customcrypto.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.AsymmetricAlgorithm Create (string algName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.AsymmetricAlgorithm Create(string algName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.Create(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.AsymmetricAlgorithm</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algName">使用する非対称アルゴリズムの実装。 次の表に有効な値を示しています、 <c>algName</c>パラメーターおよびそれらの割り当て先のアルゴリズムです。  
+  
+ <list type="table"><listheader><term>パラメーターの値  
+  
+ </term><description>実装  
+  
+ </description></listheader><item><term>System.Security.Cryptography.AsymmetricAlgorithm  
+  
+ </term><description><see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /></description></item><item><term>RSA  
+  
+ </term><description><see cref="T:System.Security.Cryptography.RSA" /></description></item><item><term>System.Security.Cryptography.RSA  
+  
+ </term><description><see cref="T:System.Security.Cryptography.RSA" /></description></item><item><term>DSA  
+  
+ </term><description><see cref="T:System.Security.Cryptography.DSA" /></description></item><item><term>System.Security.Cryptography.DSA  
+  
+ </term><description><see cref="T:System.Security.Cryptography.DSA" /></description></item><item><term>ECDsa  
+  
+ </term><description><see cref="T:System.Security.Cryptography.ECDsa" /></description></item><item><term>ECDsaCng  
+  
+ </term><description><see cref="T:System.Security.Cryptography.ECDsaCng" /></description></item><item><term>System.Security.Cryptography.ECDsaCng  
+  
+ </term><description><see cref="T:System.Security.Cryptography.ECDsaCng" /></description></item><item><term>ECDH  
+  
+ </term><description><see cref="T:System.Security.Cryptography.ECDiffieHellman" /></description></item><item><term>ECDiffieHellman  
+  
+ </term><description><see cref="T:System.Security.Cryptography.ECDiffieHellman" /></description></item><item><term>ECDiffieHellmanCng  
+  
+ </term><description><see cref="T:System.Security.Cryptography.ECDiffieHellmanCng" /></description></item><item><term>System.Security.Cryptography.ECDiffieHellmanCng  
+  
+ </term><description><see cref="T:System.Security.Cryptography.ECDiffieHellmanCng" /></description></item></list></param>
+        <summary>非対称アルゴリズムの指定した実装のインスタンスを作成します。</summary>
+        <returns>指定した非対称アルゴリズムの実装の新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A>拡張クラスのメソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.AsymmetricAlgorithm#12](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/cpp/customcrypto.cpp#12)]
+ [!code-csharp[System.Security.Cryptography.AsymmetricAlgorithm#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/CS/customcrypto.cs#12)]
+ [!code-vb[System.Security.Cryptography.AsymmetricAlgorithm#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/VB/customcrypto.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Dispose` を使い終わったら <xref:System.Security.Cryptography.AsymmetricAlgorithm> を呼び出します。 `Dispose` メソッドによって、<xref:System.Security.Cryptography.AsymmetricAlgorithm> は使用不可の状態になります。 呼び出した後`Dispose`へのすべての参照を解放する必要があります、<xref:System.Security.Cryptography.AsymmetricAlgorithm>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Security.Cryptography.AsymmetricAlgorithm>占有されていた。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  `Dispose` への最後の参照を解放する前に、必ず <xref:System.Security.Cryptography.AsymmetricAlgorithm> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Security.Cryptography.AsymmetricAlgorithm> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /> クラスによって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび`Finalize`メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 `Finalize`呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Security.Cryptography.AsymmetricAlgorithm> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />を以前の呼び出しで既に破棄されているオブジェクトを参照しないように注意、<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see langword="Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXmlString">
+      <MemberSignature Language="C#" Value="public virtual void FromXmlString (string xmlString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void FromXmlString(string xmlString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.FromXmlString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlString"><see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /> オブジェクトの再構築に使用する XML 文字列。</param>
+        <summary>派生クラスでオーバーライドされた場合は、XML 文字列から <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /> オブジェクトを再構築します。 それ以外の場合は、<see cref="T:System.NotImplementedException" /> をスローします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Security.Cryptography.AsymmetricAlgorithm.FromXmlString%2A>を現在の設定に指定された XML 文字列を解析<xref:System.Security.Cryptography.CspParameters>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.AsymmetricAlgorithm#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/cpp/customcrypto.cpp#4)]
+ [!code-csharp[System.Security.Cryptography.AsymmetricAlgorithm#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/CS/customcrypto.cs#4)]
+ [!code-vb[System.Security.Cryptography.AsymmetricAlgorithm#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/VB/customcrypto.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyExchangeAlgorithm">
+      <MemberSignature Language="C#" Value="public virtual string KeyExchangeAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyExchangeAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.AsymmetricAlgorithm.KeyExchangeAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、キー交換アルゴリズムの名前を取得します。 それ以外の場合は、<see cref="T:System.NotImplementedException" /> をスローします。</summary>
+        <value>キー交換アルゴリズムの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Security.Cryptography.AsymmetricAlgorithm.KeyExchangeAlgorithm%2A>キー交換アルゴリズムの名前を取得するプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.AsymmetricAlgorithm#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/cpp/customcrypto.cpp#6)]
+ [!code-csharp[System.Security.Cryptography.AsymmetricAlgorithm#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/CS/customcrypto.cs#6)]
+ [!code-vb[System.Security.Cryptography.AsymmetricAlgorithm#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/VB/customcrypto.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySize">
+      <MemberSignature Language="C#" Value="public virtual int KeySize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeySize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.AsymmetricAlgorithm.KeySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非対称アルゴリズムで使用されるキー モジュラスのサイズをビット単位で取得または設定します。</summary>
+        <value>非対称アルゴリズムで使用するキー モジュラスのサイズ (ビット単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効なキー サイズが非対称アルゴリズムの特定の実装によって指定されに記載されて、<xref:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Security.Cryptography.AsymmetricAlgorithm.KeySize%2A>プロパティをローカルで識別される範囲内にあることを確認してください。`keySizes`メンバー変数。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.AsymmetricAlgorithm#9](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/cpp/customcrypto.cpp#9)]
+ [!code-csharp[System.Security.Cryptography.AsymmetricAlgorithm#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/CS/customcrypto.cs#9)]
+ [!code-vb[System.Security.Cryptography.AsymmetricAlgorithm#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/VB/customcrypto.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">キー モジュールのサイズが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySizeValue">
+      <MemberSignature Language="C#" Value="protected int KeySizeValue;" />
+      <MemberSignature Language="ILAsm" Value=".field family int32 KeySizeValue" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.AsymmetricAlgorithm.KeySizeValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非対称アルゴリズムで使用されるキー モジュラスのサイズをビット単位で表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効なキー サイズが非対称アルゴリズムの特定の実装によって指定されに記載されて、<xref:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes%2A>プロパティです。  
+  
+ このフィールドには、<xref:System.Security.Cryptography.AsymmetricAlgorithm.KeySize%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegalKeySizes">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.KeySizes[] LegalKeySizes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.KeySizes[] LegalKeySizes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非対称アルゴリズムでサポートされているキー サイズを取得します。</summary>
+        <value>非対称アルゴリズムでサポートされているキー サイズを保持している配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非対称アルゴリズムでは、この配列内のエントリに一致するキーのサイズのみをサポートします。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes%2A>取得するプロパティを<xref:System.Security.Cryptography.KeySizes.MinSize%2A>、 <xref:System.Security.Cryptography.KeySizes.MaxSize%2A>、および<xref:System.Security.Cryptography.KeySizes.SkipSize%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.AsymmetricAlgorithm#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/cpp/customcryptoimpl.cpp#10)]
+ [!code-csharp[System.Security.Cryptography.AsymmetricAlgorithm#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/CS/customcrypto.cs#10)]
+ [!code-vb[System.Security.Cryptography.AsymmetricAlgorithm#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/VB/customcrypto.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegalKeySizesValue">
+      <MemberSignature Language="C#" Value="protected System.Security.Cryptography.KeySizes[] LegalKeySizesValue;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Security.Cryptography.KeySizes[] LegalKeySizesValue" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizesValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非対称アルゴリズムでサポートされているキー サイズを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非対称アルゴリズムでは、この配列内のエントリに一致するキーのサイズのみをサポートします。  
+  
+ このフィールドには、<xref:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureAlgorithm">
+      <MemberSignature Language="C#" Value="public virtual string SignatureAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignatureAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.AsymmetricAlgorithm.SignatureAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装された場合、署名アルゴリズムの名前を取得します。 それ以外の場合は常にスロー、<see cref="T:System.NotImplementedException" />です。</summary>
+        <value>署名アルゴリズムの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Security.Cryptography.AsymmetricAlgorithm.SignatureAlgorithm%2A>署名アルゴリズムの名前を取得するプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.AsymmetricAlgorithm#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/cpp/customcrypto.cpp#7)]
+ [!code-csharp[System.Security.Cryptography.AsymmetricAlgorithm#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/CS/customcrypto.cs#7)]
+ [!code-vb[System.Security.Cryptography.AsymmetricAlgorithm#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/VB/customcrypto.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXmlString">
+      <MemberSignature Language="C#" Value="public virtual string ToXmlString (bool includePrivateParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToXmlString(bool includePrivateParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricAlgorithm.ToXmlString(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includePrivateParameters" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="includePrivateParameters">
+          プライベート パラメーターを含める場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>派生クラスでオーバーライドされた場合は、現在の <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /> オブジェクトの XML 文字列形式を作成して返します。 それ以外の場合は、<see cref="T:System.NotImplementedException" /> をスローします。</summary>
+        <returns>現在の <see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /> オブジェクトの XML 文字列エンコーディング。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Security.Cryptography.AsymmetricAlgorithm.ToXmlString%2A>を現在のパラメーターの XML 表現を作成するメソッド<xref:System.Security.Cryptography.AsymmetricAlgorithm>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricAlgorithm>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.AsymmetricAlgorithm#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/cpp/customcrypto.cpp#5)]
+ [!code-csharp[System.Security.Cryptography.AsymmetricAlgorithm#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/CS/customcrypto.cs#5)]
+ [!code-vb[System.Security.Cryptography.AsymmetricAlgorithm#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.AsymmetricAlgorithm/VB/customcrypto.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

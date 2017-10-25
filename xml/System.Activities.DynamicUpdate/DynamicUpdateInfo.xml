@@ -1,0 +1,179 @@
+<Type Name="DynamicUpdateInfo" FullName="System.Activities.DynamicUpdate.DynamicUpdateInfo">
+  <TypeSignature Language="C#" Value="public static class DynamicUpdateInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DynamicUpdateInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DynamicUpdate.DynamicUpdateInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>動的更新情報を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Windows Workflow Foundation のバージョン管理と動的な更新機能をサポートします。 [!INCLUDE[crabout](~/includes/crabout-md.md)] ワークフローのバージョン管理、ワークフロー ID、および動的な更新に詳細については、次のトピックを参照してください。  
+  
+ [ワークフローのバージョン管理](http://go.microsoft.com/fwlink/?LinkID=271561)  
+ [!INCLUDE[net_v45](~/includes/net-v45-md.md)] で導入されたワークフローのバージョン管理機能について説明します。  
+  
+ [動的な更新](http://go.microsoft.com/fwlink/?LinkId=271563)  
+ 動的更新を使用して、永続化されたワークフロー インスタンスのワークフロー定義を更新する方法について説明します。  
+  
+ [WorkflowApplication Id とバージョン管理を使用](http://go.microsoft.com/fwlink/?LinkId=271564)  
+ <xref:System.Activities.WorkflowIdentity> を使用して、ワークフローの複数バージョンを同時にホストする方法について説明します。  
+  
+ [WorkflowServiceHost でサイド バイ サイドのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=271565)  
+ 単一のエンドポイントでワークフローの複数のバージョンをホストする方法について説明します。  
+  
+ [ワークフローの複数のバージョンを同時にホストする方法](http://go.microsoft.com/fwlink/?LinkId=271566)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)ワークフロー定義の更新と同時に新旧両方の定義を使用してワークフローのホスティングを示します。  
+  
+ [実行中のワークフロー インスタンスの定義を更新する方法](http://go.microsoft.com/fwlink/?LinkId=271567)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)新しいワークフロー定義を使用する永続化されたワークフロー インスタンスの更新を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetMapItem">
+      <MemberSignature Language="C#" Value="public static System.Activities.DynamicUpdate.DynamicUpdateMapItem GetMapItem (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.DynamicUpdate.DynamicUpdateMapItem GetMapItem(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateInfo.GetMapItem(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DynamicUpdate.DynamicUpdateMapItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">指定したオブジェクトのインスタンス。</param>
+        <summary>マップ項目を取得、<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateInfo" />です。</summary>
+        <returns>マップ アイテム。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOriginalActivityBuilder">
+      <MemberSignature Language="C#" Value="public static System.Activities.ActivityBuilder GetOriginalActivityBuilder (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.ActivityBuilder GetOriginalActivityBuilder(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateInfo.GetOriginalActivityBuilder(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.ActivityBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">指定したオブジェクトのインスタンス。</param>
+        <summary>元のアクティビティのビルダーを取得、<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateInfo" />です。</summary>
+        <returns>元のアクティビティのビルダー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOriginalDefinition">
+      <MemberSignature Language="C#" Value="public static System.Activities.Activity GetOriginalDefinition (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.Activity GetOriginalDefinition(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateInfo.GetOriginalDefinition(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">指定したオブジェクトのインスタンス。</param>
+        <summary>元の定義を取得、<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateInfo" />です。</summary>
+        <returns>元の定義</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMapItem">
+      <MemberSignature Language="C#" Value="public static void SetMapItem (object instance, System.Activities.DynamicUpdate.DynamicUpdateMapItem mapItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetMapItem(object instance, class System.Activities.DynamicUpdate.DynamicUpdateMapItem mapItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateInfo.SetMapItem(System.Object,System.Activities.DynamicUpdate.DynamicUpdateMapItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="mapItem" Type="System.Activities.DynamicUpdate.DynamicUpdateMapItem" />
+      </Parameters>
+      <Docs>
+        <param name="instance">指定したオブジェクトのインスタンス。</param>
+        <param name="mapItem">設定するマップ項目。</param>
+        <summary>マップ アイテムの設定、<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateInfo" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOriginalActivityBuilder">
+      <MemberSignature Language="C#" Value="public static void SetOriginalActivityBuilder (object instance, System.Activities.ActivityBuilder originalActivityBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetOriginalActivityBuilder(object instance, class System.Activities.ActivityBuilder originalActivityBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateInfo.SetOriginalActivityBuilder(System.Object,System.Activities.ActivityBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="originalActivityBuilder" Type="System.Activities.ActivityBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="instance">指定したオブジェクトのインスタンス。</param>
+        <param name="originalActivityBuilder">設定する元のアクティビティのビルダー。</param>
+        <summary>元のアクティビティ ビルダーを設定、<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateInfo" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOriginalDefinition">
+      <MemberSignature Language="C#" Value="public static void SetOriginalDefinition (object instance, System.Activities.Activity originalDefinition);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetOriginalDefinition(object instance, class System.Activities.Activity originalDefinition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateInfo.SetOriginalDefinition(System.Object,System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="originalDefinition" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="instance">指定したオブジェクトのインスタンス。</param>
+        <param name="originalDefinition">元の定義を設定します。</param>
+        <summary>元の定義を設定、<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateInfo" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,50 @@
+<Type Name="HitTestFilterCallback" FullName="System.Windows.Media.HitTestFilterCallback">
+  <TypeSignature Language="C#" Value="public delegate System.Windows.Media.HitTestFilterBehavior HitTestFilterCallback(DependencyObject potentialHitTestTarget);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HitTestFilterCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.HitTestFilterCallback" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="potentialHitTestTarget" Type="System.Windows.DependencyObject" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Windows.Media.HitTestFilterBehavior</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="potentialHitTestTarget">ヒット テストに対するビジュアル。</param>
+    <summary>ヒット テスト処理で省略するビジュアル ツリーの一部を指定するコールバック メソッドを表します。</summary>
+    <returns>ヒット テストの結果のアクションを表す <see cref="T:System.Windows.Media.HitTestFilterBehavior" />。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヒット テスト フィルターのコールバック メソッドは、ヒット テストの条件の指定したビジュアルから開始し、ビジュアル ツリーの分岐の降順にマップされるすべての visual オブジェクトに対して呼び出されます。 ただし、ヒット テストの結果のコールバック関数で、ビジュアル ツリーの一部の分岐を処理する必要がない場合、これらの分岐を無視できます。 ヒット テスト フィルターのコールバック関数の戻り値によって、ビジュアル オブジェクトの列挙体が実行するアクションの種類が決定されます。 たとえば、次の値を返す<xref:System.Windows.Media.HitTestFilterBehavior.ContinueSkipSelfAndChildren>、ヒット テスト結果の列挙体から現在の visual オブジェクトとその子孫を削除することができます。 つまり、ヒット テスト結果のコールバック メソッドでは、列挙体でこれらのオブジェクトは表示されません。  
+  
+> [!NOTE]
+>  オブジェクトのビジュアル ツリーから余分なものを取り除くと、ヒット テストの結果の列挙体が渡されるときの処理を減らすことができます。  
+  
+ ![ヒット テスト フィルターを使用したビジュアル ツリーの簡略化](~/add/media/filteredvisualtree-01.png "ヒット テスト フィルターを使用したビジュアル ツリーの簡略化")  
+ビジュアル ツリーの簡略化  
+  
+   
+  
+## Examples  
+ 次の例を呼び出す方法を示しています。<xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>を使用して、<xref:System.Windows.Media.HitTestFilterCallback>値。 対応するヒット テストのコールバック メソッドも定義されています。  
+  
+ [!code-csharp[HitTestingOverview#104](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#104)]
+ [!code-vb[HitTestingOverview#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#104)]  
+  
+ 次の例を返す方法を示しています、<xref:System.Windows.Media.HitTestFilterBehavior>ヒット テスト フィルターのコールバック メソッドからの値。  
+  
+ [!code-csharp[HitTestingOverview#106](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#106)]
+ [!code-vb[HitTestingOverview#106](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#106)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

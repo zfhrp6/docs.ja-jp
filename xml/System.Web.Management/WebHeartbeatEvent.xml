@@ -1,0 +1,90 @@
+<Type Name="WebHeartbeatEvent" FullName="System.Web.Management.WebHeartbeatEvent">
+  <TypeSignature Language="C#" Value="public class WebHeartbeatEvent : System.Web.Management.WebManagementEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebHeartbeatEvent extends System.Web.Management.WebManagementEvent" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebHeartbeatEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebManagementEvent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>定期的な間隔で発生した稼働状況の監視イベントを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ ハートビートの状態監視イベントは、ASP.NET の稼働状況の監視システムのタイマーとして機能します。 定義した間隔で発生する、`heartBeatInterval`の属性、`healthMonitoring`構成セクション。 <xref:System.Web.Management.WebHeartbeatEvent>を使用して、<xref:System.Web.Management.WebProcessStatistics>プロセス情報を取得するクラス。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの抜粋の構成を示しています、<xref:System.Web.Management.EventLogWebEventProvider>ハートビート ヘルス イベントを処理できるようにします。  
+  
+> [!NOTE]
+>  <xref:System.Web.Management.EventLogWebEventProvider>を監視するハートビート ヘルス イベントの種類が既定で構成されているとします。 行う必要がある唯一の機能では、ハートビート ヘルス イベントを監視するルールを定義します。 既定では、エラーのみ監査記録することに注意してください。  
+  
+```  
+<healthMonitoring   
+  enabled="true" heartbeatInterval="100">  
+  <rules>  
+    <add name="Heart Beat Events"  
+      eventName="Heartbeats"  
+      provider="EventLogProvider"  
+      profile="Default"  
+      minInterval="00:01:00" />  
+  </rules>  
+</healthMonitoring>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebHeartbeatEvent (string message, int eventCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, int32 eventCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebHeartbeatEvent.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明です。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Management.WebHeartbeatEvent" />指定されたメッセージ、およびイベントのコードを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessStatistics">
+      <MemberSignature Language="C#" Value="public System.Web.Management.WebProcessStatistics ProcessStatistics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Management.WebProcessStatistics ProcessStatistics" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebHeartbeatEvent.ProcessStatistics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.WebProcessStatistics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行中のプロセスに関する重要な情報を提供します。</summary>
+        <value><see cref="T:System.Web.Management.WebProcessStatistics" />の実行中のプロセスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

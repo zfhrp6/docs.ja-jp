@@ -1,0 +1,875 @@
+<Type Name="PagerSettings" FullName="System.Web.UI.WebControls.PagerSettings">
+  <TypeSignature Language="C#" Value="public sealed class PagerSettings : System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PagerSettings extends System.Object implements class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.PagerSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>改ページ調整をサポートするコントロールのページング コントロールのプロパティを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 改ページ調整をサポートするコントロール (など、 <xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.DetailsView>、および<xref:System.Web.UI.WebControls.FormView>コントロール) と呼ばれるコントロールのセットを表示できる*ポケットベル*ユーザー コントロール内でページ間を移動することができます。 <xref:System.Web.UI.WebControls.PagerSettings>クラスを使用してこれらのコントロールをポケットベルのプロパティを表します。 一般に、<xref:System.Web.UI.WebControls.PagerSettings>にオブジェクトが格納されている、`PagerSettings`コントロールのプロパティです。 プロパティを設定して、ポケットベルをカスタマイズすることができます、<xref:System.Web.UI.WebControls.PagerSettings>オブジェクト。  
+  
+ ポケットベルには、いくつかの異なる表示モードがサポートしています。 ポケットベルを表示するためのモードを指定するには、設定、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティです。 次の表では、さまざまなモードについて説明します。  
+  
+|モード|説明|  
+|----------|-----------------|  
+|<xref:System.Web.UI.WebControls.PagerButtons.NextPrevious>|前のページと次のページ ボタン。|  
+|<xref:System.Web.UI.WebControls.PagerButtons.NextPreviousFirstLast>|前のページ、次のページ、最初のページ、および最後のページ ボタン。|  
+|<xref:System.Web.UI.WebControls.PagerButtons.Numeric>|直接アクセス ページへのリンク ボタン番号が付けられます。|  
+|<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>|番号付きのリンク、最初のリンク、および最後のリンク ボタン|  
+  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、 <xref:System.Web.UI.WebControls.PagerButtons.NextPrevious>、 <xref:System.Web.UI.WebControls.PagerButtons.NextPreviousFirstLast>、または<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>値が数値以外のボタンのテキストをカスタマイズするには、次の表に示すようにプロパティを設定します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>|最初のページ ボタンのテキスト。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageText%2A>|前のページ ボタンのテキスト。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.NextPageText%2A>|次のページ ボタンのテキスト。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.LastPageText%2A>|最後のページ ボタンのテキスト。|  
+  
+ 代わりに、次の表に示すようにプロパティを設定して数値以外のボタンのイメージを表示することもできます。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl%2A>|最初のページ ボタンに表示されるイメージの URL。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageImageUrl%2A>|前のページ ボタンに表示されるイメージの URL。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.NextPageImageUrl%2A>|次のページ ボタンに表示されるイメージの URL。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.LastPageImageUrl%2A>|最後のページ ボタンに表示されるイメージの URL。|  
+  
+> [!NOTE]
+>  イメージのプロパティが設定されている場合、対応するテキストのプロパティは、イメージの代替テキストとして機能します。 たとえば、ときに、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl%2A>プロパティは、テキスト設定で指定されている、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>プロパティは、イメージの代替テキストとして表示されます。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.PagerButtons.Numeric>または<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>値を設定して、ポケットベルに表示するページ ボタンの数を指定することができます、<xref:System.Web.UI.WebControls.PagerSettings.PageButtonCount%2A>プロパティです。  
+  
+ 上部、下部、または両方、上部と下部のコントロールのページャーを表示できます。 ページャーの位置を指定するには、設定、<xref:System.Web.UI.WebControls.PagerSettings.Position%2A>プロパティです。 または、ポケットベルを非表示に使用して、<xref:System.Web.UI.WebControls.PagerSettings.Visible%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings>に含まれているオブジェクト、<xref:System.Web.UI.WebControls.GridView.PagerSettings%2A>のページャー行に表示されるボタンのテキストをカスタマイズするプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[PagerSettingsText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsText/CS/PagerSettingsTextcs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsText/VB/PagerSettingsTextvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PagerSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagerSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.PagerSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagerSettings.%23ctor%2A>の新しいインスタンスを作成するコンス トラクター、<xref:System.Web.UI.WebControls.PagerSettings>クラスです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.PagerSettings.%23ctor%2A>コンス トラクター、通常は開発者によって使用コントロール、カスタム コントロールでページング サポートを提供するときにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstPageImageUrl">
+      <MemberSignature Language="C#" Value="public string FirstPageImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FirstPageImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最初のページ ボタンに表示するイメージへの URL を設定します。</summary>
+        <value>最初のページ ボタンに表示されるイメージの URL。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl" />が設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.PagerButtons.NextPreviousFirstLast>または<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>値を使用して、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl%2A>プロパティを最初のページ ボタンに表示するイメージの URL を指定します。  
+  
+> [!NOTE]
+>  代わりに、設定して、最初のページ ボタンのテキストを表示することができます、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>プロパティの代わりに、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl%2A>と<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>プロパティはどちらも設定、画像が表示され、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>イメージの代替テキストとして動作するプロパティです。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl%2A>のページャー行の最初のページ ボタンの画像を表示するプロパティを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[PagerSettingsImages#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsImages/CS/PagerSettingsImagescs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsImages#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsImages/VB/PagerSettingsImagesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstPageText">
+      <MemberSignature Language="C#" Value="public string FirstPageText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FirstPageText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.FirstPageText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("&amp;lt;&amp;lt;")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最初のページ ボタンに表示するテキストを設定します。</summary>
+        <value>最初のページ ボタンに表示するテキストです。 既定値は<c>"&amp;lt;&amp;lt;"</c>、としてレンダリングされる<c>"&lt;&lt;"</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.PagerButtons.NextPreviousFirstLast>または<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>値を使用して、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>プロパティを最初のページ ボタンに表示するテキストを指定します。  
+  
+> [!NOTE]
+>  代わりに、設定して、最初のページ ボタンの画像を表示することができます、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl%2A>プロパティの代わりに、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl%2A>と<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>プロパティはどちらも設定、画像が表示され、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>イメージの代替テキストとして動作するプロパティです。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>のページャー行の最初のページ ボタンに表示されるテキストをカスタマイズするプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[PagerSettingsText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsText/CS/PagerSettingsTextcs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsText/VB/PagerSettingsTextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastPageImageUrl">
+      <MemberSignature Language="C#" Value="public string LastPageImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LastPageImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.LastPageImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最後のページ ボタンに表示するイメージへの URL を設定します。</summary>
+        <value>最後のページ ボタンに表示されるイメージの URL。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.PagerSettings.LastPageImageUrl" />が設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.PagerButtons.NextPreviousFirstLast>または<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>値を使用して、<xref:System.Web.UI.WebControls.PagerSettings.LastPageImageUrl%2A>最後のページ ボタンに表示するイメージの URL を指定するプロパティです。  
+  
+> [!NOTE]
+>  代わりに、単に表示できます、最後のページ ボタンのテキストを設定して、<xref:System.Web.UI.WebControls.PagerSettings.LastPageText%2A>プロパティの代わりに、<xref:System.Web.UI.WebControls.PagerSettings.LastPageImageUrl%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.PagerSettings.LastPageImageUrl%2A>と<xref:System.Web.UI.WebControls.PagerSettings.LastPageText%2A>プロパティはどちらも設定、画像が表示され、<xref:System.Web.UI.WebControls.PagerSettings.LastPageText%2A>イメージの代替テキストとして動作するプロパティです。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.LastPageImageUrl%2A>のページャー行の最後のページ ボタンの画像を表示するプロパティを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[PagerSettingsImages#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsImages/CS/PagerSettingsImagescs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsImages#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsImages/VB/PagerSettingsImagesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastPageText">
+      <MemberSignature Language="C#" Value="public string LastPageText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LastPageText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.LastPageText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("&amp;gt;&amp;gt;")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最後のページ ボタンに表示するテキストを設定します。</summary>
+        <value>最後のページ ボタンに表示するテキストです。 既定値は<c>"&amp;gt;&amp;gt;"</c>、としてレンダリングされる<c>"&gt;&gt;"</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.PagerButtons.NextPreviousFirstLast>または<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>値を使用して、<xref:System.Web.UI.WebControls.PagerSettings.LastPageText%2A>プロパティを最後のページ ボタンに表示するテキストを指定します。  
+  
+> [!NOTE]
+>  代わりに、設定して、最後のページ ボタンの画像を表示することができます、<xref:System.Web.UI.WebControls.PagerSettings.LastPageImageUrl%2A>プロパティの代わりに、<xref:System.Web.UI.WebControls.PagerSettings.LastPageText%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.PagerSettings.LastPageImageUrl%2A>と<xref:System.Web.UI.WebControls.PagerSettings.LastPageText%2A>プロパティはどちらも設定、画像が表示され、<xref:System.Web.UI.WebControls.PagerSettings.LastPageText%2A>イメージの代替テキストとして動作するプロパティです。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.LastPageText%2A>のページャー行の最後のページ ボタンに表示されるテキストをカスタマイズするプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[PagerSettingsText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsText/CS/PagerSettingsTextcs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsText/VB/PagerSettingsTextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.PagerButtons Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.PagerButtons Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.PagerButtons</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または改ページ調整をサポートするコントロールのページャー コントロールを表示するためのモードを設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.PagerButtons" /> 値のいずれか。 既定値は、<see langword="PagerButtons.Numeric" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 改ページ調整をサポートするコントロールは、ページング コントロールを表示するための複数のモードを提供します。 使用して、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>モードを指定するプロパティです。 次の表では、改ページ調整コントロールの種類のモードについて説明します。  
+  
+|モード|説明|  
+|----------|-----------------|  
+|<xref:System.Web.UI.WebControls.PagerButtons.NextPrevious>|前のページと次のページ ボタン。|  
+|<xref:System.Web.UI.WebControls.PagerButtons.NextPreviousFirstLast>|前のページ、次のページ、最初のページ、および最後のページ ボタン。|  
+|<xref:System.Web.UI.WebControls.PagerButtons.Numeric>|直接アクセス ページへのリンク ボタン番号が付けられます。|  
+|<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>|番号付きと最初のリンク、および最後のリンク ボタン。|  
+  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、 <xref:System.Web.UI.WebControls.PagerButtons.NextPrevious>、 <xref:System.Web.UI.WebControls.PagerButtons.NextPreviousFirstLast>、または<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>値では、次の表に示すようにプロパティを設定してカスタム ボタンのテキストを非数値を指定できます。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>|最初のページ ボタンのテキスト。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageText%2A>|前のページ ボタンのテキスト。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.NextPageText%2A>|次のページ ボタンのテキスト。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.LastPageText%2A>|最後のページ ボタンのテキスト。|  
+  
+ 代わりに、次の表に示すようにプロパティを設定して数値以外のボタンのイメージを表示することもできます。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl%2A>|最初のページ ボタンに表示されるイメージの URL。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageImageUrl%2A>|前のページ ボタンに表示されるイメージの URL。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.NextPageImageUrl%2A>|次のページ ボタンに表示されるイメージの URL。|  
+|<xref:System.Web.UI.WebControls.PagerSettings.LastPageImageUrl%2A>|最後のページ ボタンに表示されるイメージの URL。|  
+  
+> [!NOTE]
+>  イメージのプロパティが設定されている場合、対応するテキストのプロパティは、イメージの代替テキストとして機能します。 たとえば、ときに、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageImageUrl%2A>プロパティは、テキスト設定で指定されている、<xref:System.Web.UI.WebControls.PagerSettings.FirstPageText%2A>プロパティは、イメージの代替テキストとして表示されます。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>ページャー行のことを指定するプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロールは、数値のボタンを表示する必要があります。  
+  
+ [!code-aspx-csharp[PagerSettingsNumeric#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsNumeric/CS/PagerSettingsNumericcs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsNumeric#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsNumeric/VB/PagerSettingsNumericvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.WebControls.PagerSettings.Mode" />のいずれかではない値に設定されている、<see cref="T:System.Web.UI.WebControls.PagerButtons" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NextPageImageUrl">
+      <MemberSignature Language="C#" Value="public string NextPageImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NextPageImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.NextPageImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または次のページ ボタンに表示するイメージへの URL を設定します。</summary>
+        <value>次のページ ボタンに表示されるイメージの URL。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.PagerSettings.NextPageImageUrl" />が設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>または<xref:System.Web.UI.WebControls.PagerButtons.NextPrevious>値を使用して、<xref:System.Web.UI.WebControls.PagerSettings.NextPageImageUrl%2A>プロパティを次のページ ボタンに表示するイメージの URL を指定します。  
+  
+> [!NOTE]
+>  代わりに、できるだけで次のページ ボタンのテキストを設定して表示する、<xref:System.Web.UI.WebControls.PagerSettings.NextPageText%2A>プロパティの代わりに、<xref:System.Web.UI.WebControls.PagerSettings.NextPageImageUrl%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.PagerSettings.NextPageImageUrl%2A>と<xref:System.Web.UI.WebControls.PagerSettings.NextPageText%2A>プロパティはどちらも設定、画像が表示され、<xref:System.Web.UI.WebControls.PagerSettings.NextPageText%2A>イメージの代替テキストとして動作するプロパティです。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.NextPageImageUrl%2A>のページャー行で、次のページ ボタンの画像を表示するプロパティを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[PagerSettingsImages#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsImages/CS/PagerSettingsImagescs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsImages#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsImages/VB/PagerSettingsImagesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextPageText">
+      <MemberSignature Language="C#" Value="public string NextPageText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NextPageText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.NextPageText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("&amp;gt;")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または次のページ ボタンに表示するテキストを設定します。</summary>
+        <value>次のページ ボタンに表示するテキストです。 既定値は<c>"&amp;gt;"</c>、としてレンダリングされる<c>"&gt;"</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>または<xref:System.Web.UI.WebControls.PagerButtons.NextPrevious>値を使用して、<xref:System.Web.UI.WebControls.PagerSettings.NextPageText%2A>プロパティを次のページ ボタンに表示するテキストを指定します。  
+  
+> [!NOTE]
+>  代わりに、設定して、次のページ ボタンの画像を表示することができます、<xref:System.Web.UI.WebControls.PagerSettings.NextPageImageUrl%2A>プロパティの代わりに、<xref:System.Web.UI.WebControls.PagerSettings.NextPageText%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.PagerSettings.NextPageImageUrl%2A>と<xref:System.Web.UI.WebControls.PagerSettings.NextPageText%2A>プロパティはどちらも設定、画像が表示され、<xref:System.Web.UI.WebControls.PagerSettings.NextPageText%2A>イメージの代替テキストとして動作するプロパティです。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.NextPageText%2A>のページャー行の次のページ ボタンに表示されるテキストをカスタマイズするプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[PagerSettingsText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsText/CS/PagerSettingsTextcs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsText/VB/PagerSettingsTextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageButtonCount">
+      <MemberSignature Language="C#" Value="public int PageButtonCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageButtonCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.PageButtonCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(10)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポケットベルに表示するページ ボタンの数を取得またはときに、<see cref="P:System.Web.UI.WebControls.PagerSettings.Mode" />プロパティに設定されている、<see cref="F:System.Web.UI.WebControls.PagerButtons.Numeric" />または<see cref="F:System.Web.UI.WebControls.PagerButtons.NumericFirstLast" />値。</summary>
+        <value>ポケットベルに表示するページ ボタンの数。 既定値は 10 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.PagerButtons.Numeric>または<xref:System.Web.UI.WebControls.PagerButtons.NumericFirstLast>値を使用して、<xref:System.Web.UI.WebControls.PagerSettings.PageButtonCount%2A>ポケットベルに表示するページ ボタンの数を指定するプロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.PageButtonCount%2A>のページャー行で一度に 5 つのページ ボタンを表示するプロパティを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[PagerSettingsNumeric#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsNumeric/CS/PagerSettingsNumericcs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsNumeric#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsNumeric/VB/PagerSettingsNumericvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.WebControls.PagerSettings.PageButtonCount" />が 1 未満である値に設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.PagerPosition Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.PagerPosition Position" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.PagerPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはポケットベルを表示する場所の場所を示す値を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.PagerPosition" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.PagerPosition.Bottom" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagerSettings.Position%2A>プロパティをポケットベルを表示する場所を指定します。 次の表では、別の位置について説明します。  
+  
+|位置|場所|  
+|--------------|--------------|  
+|<xref:System.Web.UI.WebControls.PagerPosition.Bottom>|コントロールの下部です。|  
+|<xref:System.Web.UI.WebControls.PagerPosition.Top>|コントロールの上部です。|  
+|<xref:System.Web.UI.WebControls.PagerPosition.TopAndBottom>|両方の上部と下部のコントロールです。|  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.Position%2A>の下部にあるページャー行を表示するプロパティを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[PagerSettingsText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsText/CS/PagerSettingsTextcs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsText/VB/PagerSettingsTextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.WebControls.PagerSettings.Position" />のいずれかではない値に設定されている、<see cref="T:System.Web.UI.WebControls.PagerPosition" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousPageImageUrl">
+      <MemberSignature Language="C#" Value="public string PreviousPageImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreviousPageImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.PreviousPageImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または前のページ ボタンに表示するイメージへの URL を設定します。</summary>
+        <value>前のページ ボタンに表示されるイメージの URL。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.PagerSettings.PreviousPageImageUrl" />が設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.PagerButtons.NextPreviousFirstLast>または<xref:System.Web.UI.WebControls.PagerButtons.NextPrevious>値を使用して、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageImageUrl%2A>前のページ ボタンに表示するイメージの URL を指定するプロパティです。  
+  
+> [!NOTE]
+>  代わりに、設定して、前のページ ボタンのテキストを表示することができます、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageText%2A>プロパティの代わりに、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageImageUrl%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageImageUrl%2A>と<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageText%2A>プロパティはどちらも設定、画像が表示され、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageText%2A>イメージの代替テキストとして動作するプロパティです。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageImageUrl%2A>のページャー行で、前のページ ボタンの画像を表示するプロパティを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[PagerSettingsImages#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsImages/CS/PagerSettingsImagescs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsImages#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsImages/VB/PagerSettingsImagesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousPageText">
+      <MemberSignature Language="C#" Value="public string PreviousPageText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreviousPageText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.PreviousPageText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("&amp;lt;")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または前のページ ボタンに表示するテキストを設定します。</summary>
+        <value>前のページ ボタンに表示するテキスト。 既定値は<c>"&amp;lt;"</c>、としてレンダリングされる<c>"&lt;"</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.PagerSettings.Mode%2A>プロパティに設定されている、<xref:System.Web.UI.WebControls.PagerButtons.NextPreviousFirstLast>または<xref:System.Web.UI.WebControls.PagerButtons.NextPrevious>値を使用して、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageText%2A>プロパティを前のページ ボタンに表示するテキストを指定します。  
+  
+> [!NOTE]
+>  代わりに、設定して、前のページ ボタンの画像を表示することができます、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageImageUrl%2A>プロパティの代わりに、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageText%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageImageUrl%2A>と<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageText%2A>プロパティはどちらも設定、画像が表示され、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageText%2A>イメージの代替テキストとして動作するプロパティです。 ツール ヒントをサポートするブラウザーでは、このテキストは、対応するボタンのツールヒントとしても表示されます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.PreviousPageText%2A>のページャー行の前のページ ボタンに表示されるテキストをカスタマイズするプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[PagerSettingsText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsText/CS/PagerSettingsTextcs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsText/VB/PagerSettingsTextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler PropertyChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PropertyChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.PagerSettings.PropertyChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティのときに発生、<see cref="T:System.Web.UI.WebControls.PagerSettings" />オブジェクトの値を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PagerSettings.PropertyChanged>たびのプロパティをイベントは、<xref:System.Web.UI.WebControls.PagerSettings>オブジェクトの値を変更します。 <xref:System.Web.UI.WebControls.PagerSettings.PropertyChanged>通常イベントが、ポケットベルの設定を変更するときに、コントロールへのデータを再バインドするには、改ページ調整をサポートするデータ バインドされたコントロールによって使用されます。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー コントロールがそのビュー ステートの変化を追跡するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />その状態を保存する場合は、データ ソース ビューがマークされています。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.PagerSettings>にインスタンスをキャスト、<xref:System.Web.UI.IStateManager>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagerSettings.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">状態を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.PagerSettings" />です。</param>
+        <summary>以前に保存したビューステートを読み込みます、<see cref="T:System.Web.UI.WebControls.PagerSettings" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagerSettings.System%23Web%23UI%23IStateManager%23LoadViewState%2A>メソッドの以前に保存したビューステートの読み込みを<xref:System.Web.UI.WebControls.PagerSettings>オブジェクト。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.PagerSettings.System%23Web%23UI%23IStateManager%23LoadViewState%2A>メソッドがプライベートであり、呼び出すことができません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagerSettings.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のビューステートを保存、<see cref="T:System.Web.UI.WebControls.PagerSettings" />オブジェクト。</summary>
+        <returns>保存された状態を格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.PagerSettings" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PagerSettings.System%23Web%23UI%23IStateManager%23SaveViewState%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.PagerSettings>クラス オブジェクトの状態を保存します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.PagerSettings.System%23Web%23UI%23IStateManager%23SaveViewState%2A>メソッドがプライベートであり、呼び出すことができません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagerSettings.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>開始位置を示す追跡とビューステートの保存の変更開始位置をマーク、<see cref="T:System.Web.UI.WebControls.PagerSettings" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PagerSettings.System%23Web%23UI%23IStateManager%23TrackViewState%2A>追跡と保存に変更を開始する開始位置をマークするメソッドをオーバーライドします<xref:System.Web.UI.WebControls.PagerSettings>オブジェクト、オブジェクトのビュー状態の一部として。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.PagerSettings.System%23Web%23UI%23IStateManager%23TrackViewState%2A>メソッドがプライベートであり、呼び出すことができません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagerSettings.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列表現を取得、<see cref="T:System.Web.UI.WebControls.PagerSettings" />オブジェクト。</summary>
+        <returns>空の文字列 ("")。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PagerSettings.ToString%2A>の文字列表現を取得するメソッドが使用される、<xref:System.Web.UI.WebControls.PagerSettings>オブジェクト。 <xref:System.Web.UI.WebControls.PagerSettings.ToString%2A>を常に空の文字列を返すメソッドをオーバーライドされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagerSettings.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または改ページ調整をサポートするコントロールでのページング コントロールが表示されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ポケットベル; を表示するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagerSettings.Visible%2A>改ページ調整をサポートするコントロールでのページング コントロールを表示するかどうかを指定するプロパティです。 ページング コントロールを非表示にするには設定、<xref:System.Web.UI.WebControls.PagerSettings.Visible%2A>プロパティを`false`です。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.PagerSettings.Visible%2A>行の場合に、ポケットベルを非表示にするプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロールが編集モードになっています。  
+  
+ [!code-aspx-csharp[PagerSettingsVisible#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PagerSettingsVisible/CS/PagerSettingsVisiblecs.aspx#1)]
+ [!code-aspx-vb[PagerSettingsVisible#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PagerSettingsVisible/VB/PagerSettingsVisiblevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

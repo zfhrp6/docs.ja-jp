@@ -1,0 +1,128 @@
+<Type Name="MetadataItem" FullName="System.Data.Metadata.Edm.MetadataItem">
+  <TypeSignature Language="C#" Value="public abstract class MetadataItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract MetadataItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Metadata.Edm.MetadataItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ADO.NET メタデータ型階層内のすべてのメタデータの基本項目クラスを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BuiltInTypeKind">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Metadata.Edm.BuiltInTypeKind BuiltInTypeKind { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Metadata.Edm.BuiltInTypeKind BuiltInTypeKind" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.MetadataItem.BuiltInTypeKind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.BuiltInTypeKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型の組み込み型種別を取得します。</summary>
+        <value>この型の組み込み型種別を表す <see cref="T:System.Data.Metadata.Edm.BuiltInTypeKind" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Documentation">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.Documentation Documentation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.Documentation Documentation" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.MetadataItem.Documentation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.Documentation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型に関連付けられているドキュメントを取得または設定します。</summary>
+        <value><see cref="T:System.Data.Metadata.Edm.Documentation" /> オブジェクトは、この型のドキュメントを表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、取得および設定することができます、<xref:System.Data.Metadata.Edm.Documentation>などの概念モデルの構成要素に関連付けられているドキュメントを表すオブジェクト、 <xref:System.Data.Metadata.Edm.EntityContainer>、 <xref:System.Data.Metadata.Edm.EntityType>、 <xref:System.Data.Metadata.Edm.ComplexType>、<xref:System.Data.Metadata.Edm.AssociationType>などです。 Documentation タグは、概念スキーマ定義言語 (CSDL) ファイルおよびストア スキーマ定義言語 (SSDL) ファイルで定義できます。 詳細については、次を参照してください。[ドキュメント要素 (CSDL)](http://msdn.microsoft.com/en-us/d49e7bb9-a6a1-4017-9c7e-7836bf3bef48)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBuiltInType">
+      <MemberSignature Language="C#" Value="public static System.Data.Metadata.Edm.EdmType GetBuiltInType (System.Data.Metadata.Edm.BuiltInTypeKind builtInTypeKind);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Metadata.Edm.EdmType GetBuiltInType(valuetype System.Data.Metadata.Edm.BuiltInTypeKind builtInTypeKind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.MetadataItem.GetBuiltInType(System.Data.Metadata.Edm.BuiltInTypeKind)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EdmType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="builtInTypeKind" Type="System.Data.Metadata.Edm.BuiltInTypeKind" />
+      </Parameters>
+      <Docs>
+        <param name="builtInTypeKind"><see cref="T:System.Data.Metadata.Edm.BuiltInTypeKind" /> 値のいずれか。</param>
+        <summary>いずれかに一致する概念モデルの組み込み型を返します、<see cref="T:System.Data.Metadata.Edm.BuiltInTypeKind" />値。</summary>
+        <returns>EDM の組み込み型を表す <see cref="T:System.Data.Metadata.Edm.EdmType" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGeneralFacetDescriptions">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.FacetDescription&gt; GetGeneralFacetDescriptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Metadata.Edm.FacetDescription&gt; GetGeneralFacetDescriptions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.MetadataItem.GetGeneralFacetDescriptions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Metadata.Edm.FacetDescription&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定された型に対する一般的なファセットの説明の一覧を返します。</summary>
+        <returns>指定された型に対する一般的なファセットの説明の一覧を表す <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MetadataProperties">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.ReadOnlyMetadataCollection&lt;System.Data.Metadata.Edm.MetadataProperty&gt; MetadataProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1&lt;class System.Data.Metadata.Edm.MetadataProperty&gt; MetadataProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.MetadataItem.MetadataProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.ReadOnlyMetadataCollection&lt;System.Data.Metadata.Edm.MetadataProperty&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の型のプロパティの一覧を取得します。</summary>
+        <value>現在の型のプロパティの一覧を格納する <see cref="T:System.Data.Metadata.Edm.ReadOnlyMetadataCollection`1" /> 型のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Data.Metadata.Edm.MetadataProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

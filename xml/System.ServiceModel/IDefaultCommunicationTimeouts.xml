@@ -1,0 +1,162 @@
+<Type Name="IDefaultCommunicationTimeouts" FullName="System.ServiceModel.IDefaultCommunicationTimeouts">
+  <TypeSignature Language="C#" Value="public interface IDefaultCommunicationTimeouts" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDefaultCommunicationTimeouts" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.IDefaultCommunicationTimeouts" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>チャネル、チャネル リスナーやチャネル ファクトリなどのチャネルマネージャー、およびサービスホストによって使用される通信のタイムアウトを指定するインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスには、open、send、receive、および close メソッドの既定のタイムアウト値を指定する 4 つの読み取り専用プロパティがあります。これらのメソッドは通信オブジェクトに対して呼び出すことができます。 各実装は、その実装に適した方法で既定値を取得します。 このインターフェイスは、カスタム チャネルを書き込むための基本実装である <xref:System.ServiceModel.Channels.ChannelBase> と、<xref:System.ServiceModel.Channels.ChannelManagerBase> と <xref:System.ServiceModel.Channels.ChannelFactoryBase> から派生するカスタム チャネル マネージャーを書き込むための基本実装である <xref:System.ServiceModel.Channels.ChannelListenerBase> によって実装されます。 インターフェイスは、<xref:System.ServiceModel.Channels.Binding> クラスによっても実装され、そこから <xref:System.ServiceModel.Channels.CustomBinding> および <xref:System.ServiceModel.BasicHttpBinding> などのシステム指定のバインドによって継承されます。  
+  
+ チャネルを直接使用する場合は、チャネルごと、操作ごと、またはその他のカスタム ベースでタイムアウトを明示的に指定する能力を備える必要があります。 チャネル モデルを使用すると、タイムアウトを制御する必要がある場合のタイムアウトへのアクセスが簡単になります。  
+  
+ 一方、サービス モデルを使用すると、サービスとコントラクトに対するプログラミングが可能であり、タイムアウトをより多くバックグラウンドで処理できます。 タイムアウトは、開発者に代わってタイムアウトをある場所から別の場所に伝達するインフラストラクチャ メカニズムによって制御されます。 <xref:System.ServiceModel.IDefaultCommunicationTimeouts> は、その伝達を提供する 1 つのメカニズムです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CloseTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan CloseTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan CloseTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.IDefaultCommunicationTimeouts.CloseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトによって呼び出された close メソッドがタイムアウトするまでの時間を取得します。</summary>
+        <value>close メソッドがタイムアウトするまで待機する期間を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時間がかかる可能性があるすべての操作にはタイムアウトを設定する必要があります。 明示的なタイムアウトをとらないメソッドは、ブロックする作業を既定のタイムアウトで実行するメソッドに委託するか、一切行わないようにしてください。 タイムアウトは、完了される高いレベルの操作に対する全体的な制限です。したがって、再試行はいずれも、それまでの試行でまだ費やされていない時間内で行うように制限されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan OpenTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan OpenTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.IDefaultCommunicationTimeouts.OpenTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトによって呼び出された open メソッドがタイムアウトするまでの時間を取得します。</summary>
+        <value>open メソッドがタイムアウトするまで待機する期間を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時間がかかる可能性があるすべての操作にはタイムアウトを設定する必要があります。 明示的なタイムアウトをとらないメソッドは、ブロックする作業を既定のタイムアウトで実行するメソッドに委託するか、一切行わないようにしてください。 タイムアウトは、完了される高いレベルの操作に対する全体的な制限です。したがって、再試行はいずれも、それまでの試行でまだ費やされていない時間内で行うように制限されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan ReceiveTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ReceiveTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.IDefaultCommunicationTimeouts.ReceiveTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトによって呼び出された receive メソッドがタイムアウトするまでの時間を取得します。</summary>
+        <value>receive メソッドがタイムアウトするまで待機する期間を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時間がかかる可能性があるすべての操作にはタイムアウトを設定する必要があります。 明示的なタイムアウトをとらないメソッドは、ブロックする作業を既定のタイムアウトで実行するメソッドに委託するか、一切行わないようにしてください。 タイムアウトは、完了される高いレベルの操作に対する全体的な制限です。したがって、再試行はいずれも、それまでの試行でまだ費やされていない時間内で行うように制限されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan SendTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan SendTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.IDefaultCommunicationTimeouts.SendTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通信オブジェクトによって呼び出された送信メソッドがタイムアウトするまでの時間を取得します。</summary>
+        <value>send メソッドがタイムアウトするまで待機する期間を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時間がかかる可能性があるすべての操作にはタイムアウトを設定する必要があります。 明示的なタイムアウトをとらないメソッドは、ブロックする作業を既定のタイムアウトで実行するメソッドに委託するか、一切行わないようにしてください。 タイムアウトは、完了される高いレベルの操作に対する全体的な制限です。したがって、再試行はいずれも、それまでの試行でまだ費やされていない時間内で行うように制限されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

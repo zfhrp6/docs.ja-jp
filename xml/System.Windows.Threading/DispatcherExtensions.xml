@@ -1,0 +1,250 @@
+<Type Name="DispatcherExtensions" FullName="System.Windows.Threading.DispatcherExtensions">
+  <TypeSignature Language="C#" Value="public static class DispatcherExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DispatcherExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Threading.DispatcherExtensions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一連の提供<see langword="static" />を拡張するメソッド、<see cref="T:System.Windows.Threading.Dispatcher" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのメソッドが拡張機能を拡張するメソッドとして定義されている、<xref:System.Windows.Threading.Dispatcher>クラスです。 つまりを呼び出すことができますのインスタンス メソッドと同様にいずれかで<xref:System.Windows.Threading.Dispatcher>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginInvoke">
+      <MemberSignature Language="C#" Value="public static System.Windows.Threading.DispatcherOperation BeginInvoke (this System.Windows.Threading.Dispatcher dispatcher, Action action);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Threading.DispatcherOperation BeginInvoke(class System.Windows.Threading.Dispatcher dispatcher, class System.Action action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherExtensions.BeginInvoke(System.Windows.Threading.Dispatcher,System.Action)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispatcher" Type="System.Windows.Threading.Dispatcher" RefType="this" />
+        <Parameter Name="action" Type="System.Action" />
+      </Parameters>
+      <Docs>
+        <param name="dispatcher">デリゲートを実行するディスパッチャー。</param>
+        <param name="action">引数を使用しないと、値を返さないことを実行するデリゲート。</param>
+        <summary>スレッドで標準の優先順位を持つ指定したデリゲートを非同期的に実行する指定された<see cref="T:System.Windows.Threading.Dispatcher" />に作成されました。</summary>
+        <returns><see cref="T:System.IAsyncResult" />の結果を表すオブジェクト、<see cref="M:System.Windows.Threading.DispatcherExtensions.BeginInvoke(System.Windows.Threading.Dispatcher,System.Action)" />操作します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="action" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInvoke">
+      <MemberSignature Language="C#" Value="public static System.Windows.Threading.DispatcherOperation BeginInvoke (this System.Windows.Threading.Dispatcher dispatcher, Action action, System.Windows.Threading.DispatcherPriority priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Threading.DispatcherOperation BeginInvoke(class System.Windows.Threading.Dispatcher dispatcher, class System.Action action, valuetype System.Windows.Threading.DispatcherPriority priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherExtensions.BeginInvoke(System.Windows.Threading.Dispatcher,System.Action,System.Windows.Threading.DispatcherPriority)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispatcher" Type="System.Windows.Threading.Dispatcher" RefType="this" />
+        <Parameter Name="action" Type="System.Action" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+      </Parameters>
+      <Docs>
+        <param name="dispatcher">デリゲートを実行するディスパッチャー。</param>
+        <param name="action">引数を使用しないと、値を返さないことを実行するデリゲート。</param>
+        <param name="priority">保留中の操作で他のデリゲートの実行の優先順位、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <summary>スレッドに対して指定された優先度で非同期的に指定されたデリゲートを実行する指定した<see cref="T:System.Windows.Threading.Dispatcher" />に作成されました。</summary>
+        <returns><see cref="T:System.IAsyncResult" />の結果を表すオブジェクト、<see cref="M:System.Windows.Threading.DispatcherExtensions.BeginInvoke(System.Windows.Threading.Dispatcher,System.Action,System.Windows.Threading.DispatcherPriority)" />操作します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="action" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" /> は有効な <see cref="T:System.Windows.Threading.DispatcherPriority" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public static void Invoke (this System.Windows.Threading.Dispatcher dispatcher, Action action);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Invoke(class System.Windows.Threading.Dispatcher dispatcher, class System.Action action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherExtensions.Invoke(System.Windows.Threading.Dispatcher,System.Action)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispatcher" Type="System.Windows.Threading.Dispatcher" RefType="this" />
+        <Parameter Name="action" Type="System.Action" />
+      </Parameters>
+      <Docs>
+        <param name="dispatcher">デリゲートを実行するディスパッチャー。</param>
+        <param name="action">引数を使用しないと、値を返さないことを実行するデリゲート。</param>
+        <summary>スレッドで標準の優先度で指定したデリゲートを同期的に実行する、指定した<see cref="T:System.Windows.Threading.Dispatcher" />に作成されました。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="action" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public static void Invoke (this System.Windows.Threading.Dispatcher dispatcher, Action action, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Invoke(class System.Windows.Threading.Dispatcher dispatcher, class System.Action action, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherExtensions.Invoke(System.Windows.Threading.Dispatcher,System.Action,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispatcher" Type="System.Windows.Threading.Dispatcher" RefType="this" />
+        <Parameter Name="action" Type="System.Action" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="dispatcher">デリゲートを実行するディスパッチャー。</param>
+        <param name="action">引数を使用しないと、値を返さないことを実行するデリゲート。</param>
+        <param name="timeout">操作が終了するまで待機する最大時間。</param>
+        <summary>スレッドで同期的に指定したデリゲートを実行する指定された<see cref="T:System.Windows.Threading.Dispatcher" />、上に作成された、指定されたタイムアウト期間後に実行を停止します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="action" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="priority" /> と <see cref="F:System.Windows.Threading.DispatcherPriority.Inactive" /> が等価です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" /> は有効な <see cref="T:System.Windows.Threading.DispatcherPriority" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public static void Invoke (this System.Windows.Threading.Dispatcher dispatcher, Action action, System.Windows.Threading.DispatcherPriority priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Invoke(class System.Windows.Threading.Dispatcher dispatcher, class System.Action action, valuetype System.Windows.Threading.DispatcherPriority priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherExtensions.Invoke(System.Windows.Threading.Dispatcher,System.Action,System.Windows.Threading.DispatcherPriority)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispatcher" Type="System.Windows.Threading.Dispatcher" RefType="this" />
+        <Parameter Name="action" Type="System.Action" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+      </Parameters>
+      <Docs>
+        <param name="dispatcher">デリゲートを実行するディスパッチャー。</param>
+        <param name="action">引数を使用しないと、値を返さないことを実行するデリゲート。</param>
+        <param name="priority">保留中の操作で他のデリゲートの実行の優先順位、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <summary>スレッドに対して指定された優先順位で同期的に指定されたデリゲートを実行する指定した<see cref="T:System.Windows.Threading.Dispatcher" />に作成されました。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="action" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="priority" /> と <see cref="F:System.Windows.Threading.DispatcherPriority.Inactive" /> が等価です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" /> は有効な <see cref="T:System.Windows.Threading.DispatcherPriority" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public static void Invoke (this System.Windows.Threading.Dispatcher dispatcher, Action action, TimeSpan timeout, System.Windows.Threading.DispatcherPriority priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Invoke(class System.Windows.Threading.Dispatcher dispatcher, class System.Action action, valuetype System.TimeSpan timeout, valuetype System.Windows.Threading.DispatcherPriority priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherExtensions.Invoke(System.Windows.Threading.Dispatcher,System.Action,System.TimeSpan,System.Windows.Threading.DispatcherPriority)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispatcher" Type="System.Windows.Threading.Dispatcher" RefType="this" />
+        <Parameter Name="action" Type="System.Action" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="priority" Type="System.Windows.Threading.DispatcherPriority" />
+      </Parameters>
+      <Docs>
+        <param name="dispatcher">デリゲートを実行するディスパッチャー。</param>
+        <param name="action">引数を使用しないと、値を返さないことを実行するデリゲート。</param>
+        <param name="timeout">操作が終了するまで待機する最大時間。</param>
+        <param name="priority">保留中の操作で他のデリゲートの実行の優先順位、<see cref="T:System.Windows.Threading.Dispatcher" />イベント キュー。</param>
+        <summary>スレッドで指定された優先順位で同期的に指定したデリゲートを実行する指定された<see cref="T:System.Windows.Threading.Dispatcher" />、上に作成された、指定されたタイムアウト期間後に実行を停止します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="action" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="priority" /> と <see cref="F:System.Windows.Threading.DispatcherPriority.Inactive" /> が等価です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="priority" /> は有効な <see cref="T:System.Windows.Threading.DispatcherPriority" /> ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

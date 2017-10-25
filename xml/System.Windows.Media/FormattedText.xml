@@ -1,0 +1,1587 @@
+<Type Name="FormattedText" FullName="System.Windows.Media.FormattedText">
+  <TypeSignature Language="C#" Value="public class FormattedText" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormattedText extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.FormattedText" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows Presentation Foundation (WPF) アプリケーションでテキストを描画するためには、低レベルの制御を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.FormattedText>オブジェクトでは、これで、テキスト内の各文字形式指定できる個別に、複数行のテキストを描画することができます。 複数の書式が適用されたテキストを次の例に示します。  
+  
+ ![FormattedText オブジェクトを使用して表示されるテキスト](~/add/media/formattedtext01.jpg "FormattedText オブジェクトを使用して表示されるテキスト")  
+書式設定されたテキスト文字列の例  
+  
+ 内のテキストの特徴の観点から[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、<xref:System.Windows.Media.FormattedText>と見なされます「低」グラフィカル要素としてテキストを処理するためです。 内のテキストの他の側面[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]テキストは専用のコントロールのコンテキストでのテキストを処理 (<xref:System.Windows.Controls.TextBlock>、 <xref:System.Windows.Controls.TextBox>)、フロー ドキュメント モデルを実装する (を参照してください[フロー ドキュメントの概要](~/docs/framework/wpf/advanced/flow-document-overview.md))、またはサポート、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント モデル (を参照してください[WPF のドキュメントの](~/docs/framework/wpf/advanced/documents-in-wpf.md))。  
+  
+ 内の setter メソッドの多くは<xref:System.Windows.Media.FormattedText>でサポートされている添付プロパティの類似点がある<xref:System.Windows.Documents.TextElement>、ですが、<xref:System.Windows.Documents.TextElement>上位レベル テキストに適用される添付プロパティ フローのいずれかをサポートまたは[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Media.FormattedText>オブジェクトをテキストにいくつかの書式スタイルを適用します。  
+  
+ [!code-csharp[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets1)]
+ [!code-vb[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormattedText (string textToFormat, System.Globalization.CultureInfo culture, System.Windows.FlowDirection flowDirection, System.Windows.Media.Typeface typeface, double emSize, System.Windows.Media.Brush foreground);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string textToFormat, class System.Globalization.CultureInfo culture, valuetype System.Windows.FlowDirection flowDirection, class System.Windows.Media.Typeface typeface, float64 emSize, class System.Windows.Media.Brush foreground) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.#ctor(System.String,System.Globalization.CultureInfo,System.Windows.FlowDirection,System.Windows.Media.Typeface,System.Double,System.Windows.Media.Brush)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use the PixelsPerDip override", false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="textToFormat" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="flowDirection" Type="System.Windows.FlowDirection" />
+        <Parameter Name="typeface" Type="System.Windows.Media.Typeface" />
+        <Parameter Name="emSize" Type="System.Double" />
+        <Parameter Name="foreground" Type="System.Windows.Media.Brush" />
+      </Parameters>
+      <Docs>
+        <param name="textToFormat">表示するテキスト。</param>
+        <param name="culture">テキストの特定のカルチャ。</param>
+        <param name="flowDirection">テキストを読み取る方向。</param>
+        <param name="typeface">テキストの書式設定に使用するフォント ファミリ、太さ、スタイル、および伸縮。</param>
+        <param name="emSize">テキストの書式設定に使用するフォント サイズ。</param>
+        <param name="foreground">各グリフの塗りつぶしに使用するブラシ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.FormattedText" />指定したテキスト、カルチャ、フローの方向、タイプフェイス、フォント サイズ、およびブラシを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormattedText (string textToFormat, System.Globalization.CultureInfo culture, System.Windows.FlowDirection flowDirection, System.Windows.Media.Typeface typeface, double emSize, System.Windows.Media.Brush foreground, double pixelsPerDip);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string textToFormat, class System.Globalization.CultureInfo culture, valuetype System.Windows.FlowDirection flowDirection, class System.Windows.Media.Typeface typeface, float64 emSize, class System.Windows.Media.Brush foreground, float64 pixelsPerDip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.#ctor(System.String,System.Globalization.CultureInfo,System.Windows.FlowDirection,System.Windows.Media.Typeface,System.Double,System.Windows.Media.Brush,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="textToFormat" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="flowDirection" Type="System.Windows.FlowDirection" />
+        <Parameter Name="typeface" Type="System.Windows.Media.Typeface" />
+        <Parameter Name="emSize" Type="System.Double" />
+        <Parameter Name="foreground" Type="System.Windows.Media.Brush" />
+        <Parameter Name="pixelsPerDip" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="textToFormat">表示するテキスト。</param>
+        <param name="culture">テキストの特定のカルチャ。</param>
+        <param name="flowDirection">テキストを読み取る方向。</param>
+        <param name="typeface">テキストの書式設定に使用するフォント ファミリ、太さ、スタイル、および伸縮。</param>
+        <param name="emSize">[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)] で指定する、テキストの em 単位のフォント サイズ。</param>
+        <param name="foreground">各グリフの塗りつぶしに使用するブラシ。</param>
+        <param name="pixelsPerDip">スケール ファクターに相当する、ピクセル密度に依存しないピクセルごとの値。 たとえば、画面の DPI が 120 (または 120/96 = 1.25 のため 1.25) の場合は、ピクセル密度に依存しない 1.25 ピクセルが描画されます。 DIP は、デバイスの解像度と DPI に依存しないように WPF が使用する測定単位です。</param>
+        <summary>テキスト、カルチャ、フロー方向、タイプフェイス、フォント サイズ、前景ブラシ、および pixelsPerDip 値を指定して、<see cref="T:System.Windows.Media.FormattedText" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormattedText (string textToFormat, System.Globalization.CultureInfo culture, System.Windows.FlowDirection flowDirection, System.Windows.Media.Typeface typeface, double emSize, System.Windows.Media.Brush foreground, System.Windows.Media.NumberSubstitution numberSubstitution);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string textToFormat, class System.Globalization.CultureInfo culture, valuetype System.Windows.FlowDirection flowDirection, class System.Windows.Media.Typeface typeface, float64 emSize, class System.Windows.Media.Brush foreground, class System.Windows.Media.NumberSubstitution numberSubstitution) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.#ctor(System.String,System.Globalization.CultureInfo,System.Windows.FlowDirection,System.Windows.Media.Typeface,System.Double,System.Windows.Media.Brush,System.Windows.Media.NumberSubstitution)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use the PixelsPerDip override", false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="textToFormat" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="flowDirection" Type="System.Windows.FlowDirection" />
+        <Parameter Name="typeface" Type="System.Windows.Media.Typeface" />
+        <Parameter Name="emSize" Type="System.Double" />
+        <Parameter Name="foreground" Type="System.Windows.Media.Brush" />
+        <Parameter Name="numberSubstitution" Type="System.Windows.Media.NumberSubstitution" />
+      </Parameters>
+      <Docs>
+        <param name="textToFormat">表示するテキスト。</param>
+        <param name="culture">テキストの特定のカルチャ。</param>
+        <param name="flowDirection">テキストを読み取る方向。</param>
+        <param name="typeface">テキストの書式設定に使用するフォント ファミリ、太さ、スタイル、および伸縮。</param>
+        <param name="emSize">[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)] で指定する、テキストの em 単位のフォント サイズ。</param>
+        <param name="foreground">各グリフの塗りつぶしに使用するブラシ。</param>
+        <param name="numberSubstitution">テキストに適用される数字の置換動作します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.FormattedText" />指定したテキスト、カルチャ、フローの方向、タイプフェイス、フォント サイズ、ブラシ、および数字の置換動作を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormattedText (string textToFormat, System.Globalization.CultureInfo culture, System.Windows.FlowDirection flowDirection, System.Windows.Media.Typeface typeface, double emSize, System.Windows.Media.Brush foreground, System.Windows.Media.NumberSubstitution numberSubstitution, double pixelsPerDip);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string textToFormat, class System.Globalization.CultureInfo culture, valuetype System.Windows.FlowDirection flowDirection, class System.Windows.Media.Typeface typeface, float64 emSize, class System.Windows.Media.Brush foreground, class System.Windows.Media.NumberSubstitution numberSubstitution, float64 pixelsPerDip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.#ctor(System.String,System.Globalization.CultureInfo,System.Windows.FlowDirection,System.Windows.Media.Typeface,System.Double,System.Windows.Media.Brush,System.Windows.Media.NumberSubstitution,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="textToFormat" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="flowDirection" Type="System.Windows.FlowDirection" />
+        <Parameter Name="typeface" Type="System.Windows.Media.Typeface" />
+        <Parameter Name="emSize" Type="System.Double" />
+        <Parameter Name="foreground" Type="System.Windows.Media.Brush" />
+        <Parameter Name="numberSubstitution" Type="System.Windows.Media.NumberSubstitution" />
+        <Parameter Name="pixelsPerDip" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="textToFormat">表示するテキスト。</param>
+        <param name="culture">テキストの特定のカルチャ。</param>
+        <param name="flowDirection">テキストを読み取る方向。</param>
+        <param name="typeface">テキストの書式設定に使用するフォント ファミリ、太さ、スタイル、および伸縮。</param>
+        <param name="emSize">[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)] で指定する、テキストの em 単位のフォント サイズ。</param>
+        <param name="foreground">各グリフの塗りつぶしに使用するブラシ。</param>
+        <param name="numberSubstitution">テキスト内の数字の表示方法を指定に基づいて<see cref="T:System.Windows.Media.NumberSubstitution" />です。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="pixelsPerDip">スケール ファクターに相当する、ピクセル密度に依存しないピクセルごとの値。 たとえば、画面の DPI が 120 (または 120/96 = 1.25 のため 1.25) の場合は、ピクセル密度に依存しない 1.25 ピクセルが描画されます。 DIP は、デバイスの解像度と DPI に依存しないように WPF が使用する測定単位です。</param>
+        <summary>テキスト、カルチャ、フロー方向、タイプフェイス、フォント サイズ、前景ブラシ、数字の置換動作、および pixelsPerDip 値を指定して、<see cref="T:System.Windows.Media.FormattedText" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormattedText (string textToFormat, System.Globalization.CultureInfo culture, System.Windows.FlowDirection flowDirection, System.Windows.Media.Typeface typeface, double emSize, System.Windows.Media.Brush foreground, System.Windows.Media.NumberSubstitution numberSubstitution, System.Windows.Media.TextFormattingMode textFormattingMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string textToFormat, class System.Globalization.CultureInfo culture, valuetype System.Windows.FlowDirection flowDirection, class System.Windows.Media.Typeface typeface, float64 emSize, class System.Windows.Media.Brush foreground, class System.Windows.Media.NumberSubstitution numberSubstitution, valuetype System.Windows.Media.TextFormattingMode textFormattingMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.#ctor(System.String,System.Globalization.CultureInfo,System.Windows.FlowDirection,System.Windows.Media.Typeface,System.Double,System.Windows.Media.Brush,System.Windows.Media.NumberSubstitution,System.Windows.Media.TextFormattingMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use the PixelsPerDip override", false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="textToFormat" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="flowDirection" Type="System.Windows.FlowDirection" />
+        <Parameter Name="typeface" Type="System.Windows.Media.Typeface" />
+        <Parameter Name="emSize" Type="System.Double" />
+        <Parameter Name="foreground" Type="System.Windows.Media.Brush" />
+        <Parameter Name="numberSubstitution" Type="System.Windows.Media.NumberSubstitution" />
+        <Parameter Name="textFormattingMode" Type="System.Windows.Media.TextFormattingMode" />
+      </Parameters>
+      <Docs>
+        <param name="textToFormat">表示するテキスト。</param>
+        <param name="culture">テキストの特定のカルチャ。</param>
+        <param name="flowDirection">テキストを読み取る方向。</param>
+        <param name="typeface">テキストの書式設定に使用するフォント ファミリ、太さ、スタイル、および伸縮。</param>
+        <param name="emSize">[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)] で指定する、テキストの em 単位のフォント サイズ。</param>
+        <param name="foreground">各グリフの塗りつぶしに使用するブラシ。</param>
+        <param name="numberSubstitution">テキストに適用される数字の置換動作します。</param>
+        <param name="textFormattingMode"><see cref="T:System.Windows.Media.TextFormattingMode" />テキストに適用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.FormattedText" />指定したテキスト、カルチャ、フローの方向、タイプフェイス、フォント サイズ、ブラシ、数字の置換動作、およびテキスト モードを書式設定を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormattedText (string textToFormat, System.Globalization.CultureInfo culture, System.Windows.FlowDirection flowDirection, System.Windows.Media.Typeface typeface, double emSize, System.Windows.Media.Brush foreground, System.Windows.Media.NumberSubstitution numberSubstitution, System.Windows.Media.TextFormattingMode textFormattingMode, double pixelsPerDip);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string textToFormat, class System.Globalization.CultureInfo culture, valuetype System.Windows.FlowDirection flowDirection, class System.Windows.Media.Typeface typeface, float64 emSize, class System.Windows.Media.Brush foreground, class System.Windows.Media.NumberSubstitution numberSubstitution, valuetype System.Windows.Media.TextFormattingMode textFormattingMode, float64 pixelsPerDip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.#ctor(System.String,System.Globalization.CultureInfo,System.Windows.FlowDirection,System.Windows.Media.Typeface,System.Double,System.Windows.Media.Brush,System.Windows.Media.NumberSubstitution,System.Windows.Media.TextFormattingMode,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="textToFormat" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="flowDirection" Type="System.Windows.FlowDirection" />
+        <Parameter Name="typeface" Type="System.Windows.Media.Typeface" />
+        <Parameter Name="emSize" Type="System.Double" />
+        <Parameter Name="foreground" Type="System.Windows.Media.Brush" />
+        <Parameter Name="numberSubstitution" Type="System.Windows.Media.NumberSubstitution" />
+        <Parameter Name="textFormattingMode" Type="System.Windows.Media.TextFormattingMode" />
+        <Parameter Name="pixelsPerDip" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="textToFormat">表示するテキスト。</param>
+        <param name="culture">テキストの特定のカルチャ。</param>
+        <param name="flowDirection">テキストを読み取る方向。</param>
+        <param name="typeface">テキストの書式設定に使用するフォント ファミリ、太さ、スタイル、および伸縮。</param>
+        <param name="emSize">[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)] で指定する、テキストの em 単位のフォント サイズ。</param>
+        <param name="foreground">各グリフの塗りつぶしに使用するブラシ。</param>
+        <param name="numberSubstitution">テキスト内の数字の表示方法を指定に基づいて<see cref="T:System.Windows.Media.NumberSubstitution" />です。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="textFormattingMode">WPF のテキスト表示方法に影響を与える書式モード。</param>
+        <param name="pixelsPerDip">スケール ファクターに相当する、ピクセル密度に依存しないピクセルごとの値。 たとえば、画面の DPI が 120 (または 120/96 = 1.25 のため 1.25) の場合は、ピクセル密度に依存しない 1.25 ピクセルが描画されます。 DIP は、デバイスの解像度と DPI に依存しないように WPF が使用する測定単位です。</param>
+        <summary>テキスト、カルチャ、フロー方向、タイプフェイス、フォント サイズ、前景ブラシ、数字の置換動作、および pixelsPerDip 値を指定して、<see cref="T:System.Windows.Media.FormattedText" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Baseline">
+      <MemberSignature Language="C#" Value="public double Baseline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Baseline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.Baseline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の行の基準に、最初の行の先頭からの距離を取得、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <value>提供されている最初の行の基準に、最初の行の先頭からの距離[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry BuildGeometry (System.Windows.Point origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Geometry BuildGeometry(valuetype System.Windows.Point origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.BuildGeometry(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="origin" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="origin">結果の形状の左上の元です。</param>
+        <summary>返します、<see cref="T:System.Windows.Media.Geometry" />をすべてのグリフとテキスト装飾を含む、フォーマットされたテキストを表すオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Media.Geometry" />オブジェクトの書式付きの文字列表現。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストに変換するときに、<xref:System.Windows.Media.Geometry>オブジェクト、文字のコレクションではなくなりました: テキスト文字列内の文字を変更することはできません。 ただし、変換されたテキストのストロークおよび塗りつぶしのプロパティを変更することで、テキストの外観を変えることができます。  
+  
+ 次の例では、変換されたテキストの塗りつぶし、ストロークを変更して視覚効果を作成するいくつかの方法を示します。  
+  
+ ![塗りつぶしとストロークを別の色を含むテキスト](~/add/media/outlinedtext03.jpg "塗りつぶしとストロークを別の色を含むテキスト")  
+ストロークと塗りつぶしを別々の色に設定した例  
+  
+ ![ストロークに適用されるイメージ ブラシを含むテキスト](~/add/media/outlinedtext04.jpg "ストロークに適用されるイメージ ブラシを含むテキスト")  
+ストロークに適用したイメージ ブラシの例  
+  
+ 変換され、として表示されるテキスト、<xref:System.Windows.Media.Geometry>オブジェクト見えない場合と同じで直接レンダリング テキストとして。  
+  
+-   テキストに変換する<xref:System.Windows.Media.Geometry>オブジェクトは、ClearType を使用してレンダリングされません。 さらに、変換後のベースラインは全体のディスプレイのピクセルにスナップ化されていません。  
+  
+-   本文テキストでよく使用されるものなどの小さいフォントでは、読みやすさが失われるがぼやける、および外観が変わる可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Media.FormattedText>オブジェクトの書式設定されたテキストと、境界ボックスのジオメトリを取得するとします。  
+  
+ [!code-csharp[OutlineTextControlViewer#CreateText](~/samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs#createtext)]
+ [!code-vb[OutlineTextControlViewer#CreateText](~/samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb#createtext)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildHighlightGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry BuildHighlightGeometry (System.Windows.Point origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Geometry BuildHighlightGeometry(valuetype System.Windows.Point origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.BuildHighlightGeometry(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="origin" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="origin">強調表示領域の原点です。</param>
+        <summary>返します、<see cref="T:System.Windows.Media.Geometry" />フォーマットされたテキストの強調表示の境界ボックスを表すオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Media.Geometry" />フォーマットされたテキストの強調表示の境界ボックスを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 境界ボックス領域には、指定された位置から始まる全体の書式設定テキスト領域が含まれています`origin`です。 返された<xref:System.Windows.Media.Geometry>オブジェクトが強調表示されたテキストの境界ボックスのみを含むし、表示されたテキストは含まれません。  
+  
+ 次の例は、ストロークおよび変換されたテキストの強調表示を変更することによって、視覚効果を作成する方法を示しています。  
+  
+ ![ストロークに適用されるイメージ ブラシを含むテキスト](~/add/media/outlinedtext05.jpg "ストロークに適用されるイメージ ブラシを含むテキスト")  
+ストロークと強調表示に適用したイメージ ブラシの例  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Media.FormattedText>オブジェクトの書式設定されたテキストと、境界ボックスのジオメトリを取得するとします。  
+  
+ [!code-csharp[OutlineTextControlViewer#CreateText](~/samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs#createtext)]
+ [!code-vb[OutlineTextControlViewer#CreateText](~/samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb#createtext)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildHighlightGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry BuildHighlightGeometry (System.Windows.Point origin, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Geometry BuildHighlightGeometry(valuetype System.Windows.Point origin, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.BuildHighlightGeometry(System.Windows.Point,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="origin" Type="System.Windows.Point" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="origin">強調表示領域の原点です。</param>
+        <param name="startIndex">最初の文字のインデックスの強調表示の境界を取得する必要があります。</param>
+        <param name="count">強調表示の境界の文字数を含める必要があります。</param>
+        <summary>返します、<see cref="T:System.Windows.Media.Geometry" />強調表示の境界ボックス指定した部分文字列の書式設定されたテキストを表すオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Media.Geometry" />を書式設定されたテキストの部分文字列の強調表示の境界ボックスを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された<xref:System.Windows.Media.Geometry>オブジェクトが強調表示されたテキストの境界ボックスのみを含むし、表示されたテキストは含まれません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extent">
+      <MemberSignature Language="C#" Value="public double Extent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Extent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.Extent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の行の最上位の描画のピクセルから最後の行の最下位の描画ピクセルまでの距離を取得します。</summary>
+        <value>提供されている最初の行の最上位の描画のピクセルから最後の行の最下位の描画ピクセルまでの距離[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エクステントには、行の高さ、ベースライン、またはオーバー ハングの外に出る可能性がある装飾用の要素を含む、グリフに存在する任意のグラフィック要素が組み込まれています。 この値行上に表示される文字に依存し、したがっては使用されません (およびは使用できません) を行間隔を派生させます。 ただしの上部または下部グラフィック要素、またはヒット テストの段落を整列するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlowDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.FlowDirection FlowDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FlowDirection FlowDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.FlowDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FlowDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.FlowDirection" />の<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <value><see cref="T:System.Windows.FlowDirection" />の書式設定されたテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMaxTextWidths">
+      <MemberSignature Language="C#" Value="public double[] GetMaxTextWidths ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64[] GetMaxTextWidths() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.GetMaxTextWidths" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキストの幅の配列を取得します。 配列内の各要素は、連続したテキスト行のテキストの最大の幅を表します。</summary>
+        <returns>提供される、テキストの最大の幅の配列の各幅[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト行を超える配列内の要素の数と、残りの行の最後の要素の値が使用されます。 長さの配列がない場合`null`、配列の値の<xref:System.Windows.Media.FormattedText.GetMaxTextWidths%2A>の代わりに、<xref:System.Windows.Media.FormattedText.MaxTextWidth%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public double Height { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後の行の下部に、最初の行の先頭からの距離を取得、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <value>提供されている最後の行の下部には、最初の行の先頭からの距離[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineHeight">
+      <MemberSignature Language="C#" Value="public double LineHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 LineHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.LineHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の高さ、またはテキストの行の行間隔を取得します。</summary>
+        <value>指定されたテキストの行の行間隔[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定行の高さが自動的に計算され、パラメーターとして渡されるフォント値に基づく、<xref:System.Windows.Media.FormattedText.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLineCount">
+      <MemberSignature Language="C#" Value="public int MaxLineCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLineCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.MaxLineCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示する行の最大数を設定します。 テキストを超える、<see cref="P:System.Windows.Media.FormattedText.MaxLineCount" />は表示されません。</summary>
+        <value>表示する行の最大数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.FormattedText.Trimming%2A>テキストを超えた場合に省略するとどのようにテキストを制御するプロパティが表される、<xref:System.Windows.Media.FormattedText.MaxLineCount%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxTextHeight">
+      <MemberSignature Language="C#" Value="public double MaxTextHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MaxTextHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.MaxTextHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト列の最大の高さを設定します。</summary>
+        <value>提供される、テキスト列の最大の高さ[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示されるテキストの最後の行は、最終行全体に収まる、<xref:System.Windows.Media.FormattedText.MaxTextHeight%2A>制限または行番号を超えない、<xref:System.Windows.Media.FormattedText.MaxLineCount%2A>プロパティ、先に生じた方です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Media.FormattedText>オブジェクトし、テキストにいくつかの書式スタイルを適用を含む<xref:System.Windows.Media.FormattedText.MaxTextHeight%2A>です。  
+  
+ [!code-csharp[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets1)]
+ [!code-vb[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxTextWidth">
+      <MemberSignature Language="C#" Value="public double MaxTextWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MaxTextWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.MaxTextWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキストの行のテキストの最大幅 (長さ) を設定します。</summary>
+        <value>指定されたテキストの行のテキストの最大幅[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストは折り返さを超えないようにする、<xref:System.Windows.Media.FormattedText.MaxTextWidth%2A>制限します。  
+  
+ グリフ配置端は、行の数の制限内で保た必要があります。 多くのフォントにも配置境界にオーバー ハング若干グリフが含まれているために、行の数を超えるには、少なくとも 1/6 em (フォント サイズ) 余白要求されると、このようなオーバー ハング用に余地を残すにできるようにします。  
+  
+ 行の数の値がゼロは、無制限の行数として扱われます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Media.FormattedText>オブジェクトし、テキストにいくつかの書式スタイルを適用を含む<xref:System.Windows.Media.FormattedText.MaxTextWidth%2A>です。  
+  
+ [!code-csharp[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets1)]
+ [!code-vb[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinWidth">
+      <MemberSignature Language="C#" Value="public double MinWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MinWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.MinWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したテキストの内容を完全に含めることができる最小のテキストの幅を取得します。</summary>
+        <value>提供される、テキストのデータ ソースの最小幅[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図のテキストは、複数の行が表示されるソース テキストの最小値のテキストの幅を使用します。 最小のテキストの幅が最大の幅をされている単語に対応しています: ここでは、単語「ジャンプ」です。 合計幅が最小のテキストの幅を超えない限り、同じ行に複数の単語を表示できることに注意してください。  
+  
+ ![段落の最小幅を使用するテキスト フォーマッタ](~/add/media/textformatter03.png "段落の最小幅を使用するテキスト フォーマッタ")  
+最小のテキストの幅  
+  
+ 値が渡された場合<xref:System.Windows.Media.FormattedText.MaxTextWidth%2A>より大きいかの値に等しい<xref:System.Windows.Media.FormattedText.MinWidth%2A>、省略記号文字なし文字列で書式設定します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.FormattedText.MinWidth%2A>テキストの書式設定された行の最小のテキストの幅を生成するプロパティです。  
+  
+ [!code-csharp[FormattedTextSnippets#FormattedTextSnippets3](~/samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets3)]
+ [!code-vb[FormattedTextSnippets#FormattedTextSnippets3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverhangAfter">
+      <MemberSignature Language="C#" Value="public double OverhangAfter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OverhangAfter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.OverhangAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストの最後の行の最下位から最下位の描画ピクセルまでの距離を取得します。</summary>
+        <value>提供されている最後の行の最下位から最下位のインク付きピクセルまでの距離[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最下位の描画のピクセルが行最下部より下になり、負の値に (上記) 内にある場合は、値が正の値の行。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverhangLeading">
+      <MemberSignature Language="C#" Value="public double OverhangLeading { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OverhangLeading" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.OverhangLeading" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の先頭の描画ピクセルに先頭の配置ポイントからの最大距離を取得します。</summary>
+        <value>先頭の配置からの最大距離がで提供される、行の先頭の描画ピクセルを指す[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 先頭の配置ポイントは、先頭の描画ピクセル前に、ときに、値が負の値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverhangTrailing">
+      <MemberSignature Language="C#" Value="public double OverhangTrailing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OverhangTrailing" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.OverhangTrailing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の末尾の配置ポイントへの後続のインク付きのピクセルから最大距離を取得します。</summary>
+        <value>末尾から最大距離は、入力で提供される、行の末尾の配置ポイントするピクセルをインク[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.FormattedText.OverhangTrailing%2A>際、後続の描画のピクセルを後続の配置位置の前に、値が正の値はなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PixelsPerDip">
+      <MemberSignature Language="C#" Value="public double PixelsPerDip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 PixelsPerDip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.PixelsPerDip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストを表示する PixelsPerDip を取得または設定します。</summary>
+        <value>現在の <see cref="P:System.Windows.Media.FormattedText.PixelsPerDip" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCulture">
+      <MemberSignature Language="C#" Value="public void SetCulture (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCulture(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetCulture(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />テキストの書式設定を使用します。</param>
+        <summary>セット、<see cref="T:System.Globalization.CultureInfo" />内の文字のセット全体の<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureInfo>クラスに関連する言語、サブ言語、国/地域、予定表、および文化的慣習など、カルチャに固有の情報を保持します。 このクラスは、のカルチャに固有のインスタンスへのアクセスも用意されています。 <xref:System.Globalization.DateTimeFormatInfo>、 <xref:System.Globalization.NumberFormatInfo>、 <xref:System.Globalization.CompareInfo>、および<xref:System.Globalization.TextInfo>です。 これらのオブジェクトには、大文字小文字の区別、日付や数値の書式設定文字列を比較するなど、カルチャに固有の操作に必要な情報が含まれています。  
+  
+ このメソッドは、文字列全体のカルチャ情報の値を設定します。 テキスト文字列の一部のカルチャ情報の値を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetCulture%28System.Globalization.CultureInfo%2CSystem.Int32%2CSystem.Int32%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCulture">
+      <MemberSignature Language="C#" Value="public void SetCulture (System.Globalization.CultureInfo culture, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCulture(class System.Globalization.CultureInfo culture, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetCulture(System.Globalization.CultureInfo,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />テキストの書式設定を使用します。</param>
+        <param name="startIndex">変更を適用する最初の文字の開始インデックス。</param>
+        <param name="count">文字数に変更を適用する必要があります。</param>
+        <summary>セット、<see cref="T:System.Globalization.CultureInfo" />内の文字の指定されたサブセットに対して、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureInfo>クラスに関連する言語、サブ言語、国/地域、予定表、および文化的慣習など、カルチャに固有の情報を保持します。 このクラスは、のカルチャに固有のインスタンスへのアクセスも用意されています。 <xref:System.Globalization.DateTimeFormatInfo>、 <xref:System.Globalization.NumberFormatInfo>、 <xref:System.Globalization.CompareInfo>、および<xref:System.Globalization.TextInfo>です。 これらのオブジェクトには、大文字小文字の区別、日付や数値の書式設定文字列を比較するなど、カルチャに固有の操作に必要な情報が含まれています。  
+  
+ 文字列全体のカルチャ情報の値を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetCulture%28System.Globalization.CultureInfo%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontFamily">
+      <MemberSignature Language="C#" Value="public void SetFontFamily (string fontFamily);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontFamily(string fontFamily) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontFamily(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fontFamily" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fontFamily">構築する文字列、<see cref="T:System.Windows.Media.FontFamily" />テキストの書式設定を使用します。 フォールバックが許可されます。詳細については、「<see cref="T:System.Windows.Media.FontFamily" />です。</param>
+        <summary>内の文字のセット全体のフォント ファミリを設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、文字列全体のフォント ファミリの値を設定します。 テキスト文字列のサブセットのフォント ファミリの値を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontFamily%28System.String%2CSystem.Int32%2CSystem.Int32%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontFamily">
+      <MemberSignature Language="C#" Value="public void SetFontFamily (System.Windows.Media.FontFamily fontFamily);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontFamily(class System.Windows.Media.FontFamily fontFamily) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontFamily(System.Windows.Media.FontFamily)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fontFamily" Type="System.Windows.Media.FontFamily" />
+      </Parameters>
+      <Docs>
+        <param name="fontFamily"><see cref="T:System.Windows.Media.FontFamily" />テキストの書式設定を使用します。</param>
+        <summary>設定のフォント ファミリ、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、文字列全体のフォント ファミリの値を設定します。 テキスト文字列のサブセットのフォント ファミリの値を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontFamily%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontFamily">
+      <MemberSignature Language="C#" Value="public void SetFontFamily (string fontFamily, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontFamily(string fontFamily, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontFamily(System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fontFamily" Type="System.String" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="fontFamily">構築する文字列、<see cref="T:System.Windows.Media.FontFamily" />テキストの書式設定を使用します。 フォールバックが許可されます。詳細については、「<see cref="T:System.Windows.Media.FontFamily" />です。</param>
+        <param name="startIndex">フォント ファミリを適用する最初の文字の開始インデックスに変更します。</param>
+        <param name="count">文字数に変更を適用する必要があります。</param>
+        <summary>内の文字の指定したサブセットのフォント ファミリを設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列全体のフォント ファミリの値を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontFamily%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontFamily">
+      <MemberSignature Language="C#" Value="public void SetFontFamily (System.Windows.Media.FontFamily fontFamily, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontFamily(class System.Windows.Media.FontFamily fontFamily, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontFamily(System.Windows.Media.FontFamily,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fontFamily" Type="System.Windows.Media.FontFamily" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="fontFamily"><see cref="T:System.Windows.Media.FontFamily" />テキストの書式設定を使用します。</param>
+        <param name="startIndex">フォント ファミリを適用する最初の文字の開始インデックスに変更します。</param>
+        <param name="count">文字数に変更を適用する必要があります。</param>
+        <summary>内の文字の指定したサブセットのフォント ファミリを設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列全体のフォント ファミリの値を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontFamily%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontSize">
+      <MemberSignature Language="C#" Value="public void SetFontSize (double emSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontSize(float64 emSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontSize(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="emSize" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="emSize">フォント実践 ' で指定したサイズの測定[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</param>
+        <summary>内の文字のセット全体のフォント サイズを設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、文字列全体のフォント サイズの値を設定します。 テキスト文字列のサブセットのフォント サイズの値を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontSize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontSize">
+      <MemberSignature Language="C#" Value="public void SetFontSize (double emSize, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontSize(float64 emSize, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontSize(System.Double,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="emSize" Type="System.Double" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="emSize">フォント実践 ' で指定したサイズの測定[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</param>
+        <param name="startIndex">フォント サイズを適用する最初の文字の開始インデックス。</param>
+        <param name="count">フォント サイズを適用する文字数。</param>
+        <summary>指定した文字のサブセットのフォント サイズを設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列全体のフォント サイズの値を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontSize%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Media.FormattedText>オブジェクトし、テキストにいくつかの書式スタイルを適用を含む<xref:System.Windows.Media.FormattedText.SetFontSize%2A>です。  
+  
+ [!code-csharp[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets1)]
+ [!code-vb[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontStretch">
+      <MemberSignature Language="C#" Value="public void SetFontStretch (System.Windows.FontStretch stretch);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontStretch(valuetype System.Windows.FontStretch stretch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontStretch(System.Windows.FontStretch)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stretch" Type="System.Windows.FontStretch" />
+      </Parameters>
+      <Docs>
+        <param name="stretch">必要な<see cref="T:System.Windows.FontStretch" />テキストの書式設定に使用する値。</param>
+        <summary>内の文字のセット全体のフォントの伸縮値の設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォントの伸縮値は、画面で、フォントの伸縮する度合いを示します。 <xref:System.Windows.FontStretch>型のような変換動作をサポートする静的な値の<xref:System.Windows.FontStretches>クラスを初期化するために使用できます<xref:System.Windows.FontStretch>は、型パラメーターを入力し、<xref:System.Windows.FontStretch>です。 呼び出すこともできます<xref:System.Windows.FontStretch.FromOpenTypeStretch%2A>を適切に初期化された作成<xref:System.Windows.FontStretch>です。  
+  
+ このメソッドは、文字列全体のフォントの伸縮値を設定します。 テキスト文字列のサブセットのフォントの伸縮値を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontStretch%28System.Windows.FontStretch%2CSystem.Int32%2CSystem.Int32%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontStretch">
+      <MemberSignature Language="C#" Value="public void SetFontStretch (System.Windows.FontStretch stretch, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontStretch(valuetype System.Windows.FontStretch stretch, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontStretch(System.Windows.FontStretch,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stretch" Type="System.Windows.FontStretch" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="stretch">必要な<see cref="T:System.Windows.FontStretch" />テキストの書式設定に使用する値。</param>
+        <param name="startIndex">フォントの伸縮を適用する最初の文字の開始インデックス。</param>
+        <param name="count">フォントを適用する文字数にストレッチします。</param>
+        <summary>指定した文字のサブセットのフォントの伸縮値の設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォントの伸縮値は、画面で、フォントの伸縮する度合いを示します。  
+  
+ <xref:System.Windows.FontStretch>型のような変換動作をサポートする静的な値の<xref:System.Windows.FontStretches>クラスを初期化するために使用できます<xref:System.Windows.FontStretch>は、型パラメーターを入力し、<xref:System.Windows.FontStretch>です。 呼び出すこともできます<xref:System.Windows.FontStretch.FromOpenTypeStretch%2A>を適切に初期化された作成<xref:System.Windows.FontStretch>です。  
+  
+ 文字列全体のフォントの伸縮値を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontStretch%28System.Windows.FontStretch%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontStyle">
+      <MemberSignature Language="C#" Value="public void SetFontStyle (System.Windows.FontStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontStyle(valuetype System.Windows.FontStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontStyle(System.Windows.FontStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Windows.FontStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style"><see cref="T:System.Windows.FontStyle" />テキストの書式設定に使用する値。</param>
+        <summary>内の文字のセット全体のフォント スタイルを設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontStyle>型のような変換動作をサポートする静的な値の<xref:System.Windows.FontStyles>クラスを初期化するために使用できます<xref:System.Windows.FontStyle>は、型パラメーターを入力し、<xref:System.Windows.FontStyle>です。  
+  
+ このメソッドは、文字列全体のフォント スタイルを設定します。 テキスト文字列のサブセットのフォント スタイルを設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontStyle%28System.Windows.FontStyle%2CSystem.Int32%2CSystem.Int32%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontStyle">
+      <MemberSignature Language="C#" Value="public void SetFontStyle (System.Windows.FontStyle style, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontStyle(valuetype System.Windows.FontStyle style, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontStyle(System.Windows.FontStyle,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Windows.FontStyle" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="style"><see cref="T:System.Windows.FontStyle" />テキストの書式設定に使用する値。</param>
+        <param name="startIndex">フォント スタイルを適用する最初の文字の開始インデックス。</param>
+        <param name="count">フォント スタイルを適用する文字数。</param>
+        <summary>指定した文字のサブセットのフォント スタイルを設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontStyle>型のような変換動作をサポートする静的な値の<xref:System.Windows.FontStyles>クラスを初期化するために使用できます<xref:System.Windows.FontStyle>は、型パラメーターを入力し、<xref:System.Windows.FontStyle>です。  
+  
+ 文字列全体のフォント スタイルを設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontStyle%28System.Windows.FontStyle%29>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Media.FormattedText>オブジェクトし、テキストにいくつかの書式スタイルを適用を含む<xref:System.Windows.Media.FormattedText.SetFontStyle%2A>です。  
+  
+ [!code-csharp[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets1)]
+ [!code-vb[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontTypeface">
+      <MemberSignature Language="C#" Value="public void SetFontTypeface (System.Windows.Media.Typeface typeface);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontTypeface(class System.Windows.Media.Typeface typeface) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontTypeface(System.Windows.Media.Typeface)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeface" Type="System.Windows.Media.Typeface" />
+      </Parameters>
+      <Docs>
+        <param name="typeface"><see cref="T:System.Windows.Media.Typeface" />テキストの書式設定を使用します。</param>
+        <summary>内の文字のセット全体のフォントの設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Typeface>組み合わせを表す<xref:System.Windows.Media.FontFamily>、 <xref:System.Windows.FontWeight>、 <xref:System.Windows.FontStyle>、および<xref:System.Windows.FontStretch>です。 <xref:System.Windows.Media.Typeface>書体に基づいてどのコンス トラクターの名、別は、不連続の値を複数のコンス トラクターをサポートしている<xref:System.Windows.Media.FontFamily>、 <xref:System.Windows.FontWeight>、 <xref:System.Windows.FontStyle>、および<xref:System.Windows.FontStretch>です。  
+  
+ このメソッドは、文字列全体のフォントを設定します。 テキスト文字列のサブセットのフォントを設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontTypeface%28System.Windows.Media.Typeface%2CSystem.Int32%2CSystem.Int32%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontTypeface">
+      <MemberSignature Language="C#" Value="public void SetFontTypeface (System.Windows.Media.Typeface typeface, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontTypeface(class System.Windows.Media.Typeface typeface, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontTypeface(System.Windows.Media.Typeface,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeface" Type="System.Windows.Media.Typeface" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="typeface"><see cref="T:System.Windows.Media.Typeface" />テキストの書式設定を使用します。</param>
+        <param name="startIndex">タイプフェイスを適用する最初の文字の開始インデックス。</param>
+        <param name="count">タイプフェイスを適用する文字の数。</param>
+        <summary>指定した文字のサブセットのフォントの設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Typeface>組み合わせを表す<xref:System.Windows.Media.FontFamily>、 <xref:System.Windows.FontWeight>、 <xref:System.Windows.FontStyle>、および<xref:System.Windows.FontStretch>です。 <xref:System.Windows.Media.Typeface>書体に基づいてどのコンス トラクターの名、別は、不連続の値を複数のコンス トラクターをサポートしている<xref:System.Windows.Media.FontFamily>、 <xref:System.Windows.FontWeight>、 <xref:System.Windows.FontStyle>、および<xref:System.Windows.FontStretch>です。  
+  
+ 文字列全体のフォントを設定するには、使用、<xref:System.Windows.Media.FormattedText.SetFontTypeface%28System.Windows.Media.Typeface%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontWeight">
+      <MemberSignature Language="C#" Value="public void SetFontWeight (System.Windows.FontWeight weight);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontWeight(valuetype System.Windows.FontWeight weight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontWeight(System.Windows.FontWeight)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="weight" Type="System.Windows.FontWeight" />
+      </Parameters>
+      <Docs>
+        <param name="weight"><see cref="T:System.Windows.FontWeight" />テキストの書式設定を使用します。</param>
+        <summary>内の文字のセット全体のフォントの太さを設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeight>型のような変換動作をサポートする静的な値の<xref:System.Windows.FontWeights>クラスを初期化するために使用できます<xref:System.Windows.FontWeight>は、型パラメーターを入力し、<xref:System.Windows.FontWeight>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFontWeight">
+      <MemberSignature Language="C#" Value="public void SetFontWeight (System.Windows.FontWeight weight, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFontWeight(valuetype System.Windows.FontWeight weight, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetFontWeight(System.Windows.FontWeight,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="weight" Type="System.Windows.FontWeight" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="weight">テキストの書式設定を使用するフォントの太さ。</param>
+        <param name="startIndex">フォントの太さを適用する最初の文字の開始インデックス。</param>
+        <param name="count">フォントの太さを適用する文字の数。</param>
+        <summary>変更、<see cref="T:System.Windows.FontWeight" />内の指定したテキストの<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.FontWeight>型のような変換動作をサポートする静的な値の<xref:System.Windows.FontWeights>クラスを初期化するために使用できます<xref:System.Windows.FontWeight>は、型パラメーターを入力し、<xref:System.Windows.FontWeight>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Media.FormattedText>オブジェクトし、テキストにいくつかの書式スタイルを適用を含む<xref:System.Windows.Media.FormattedText.SetFontWeight%2A>です。  
+  
+ [!code-csharp[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets1)]
+ [!code-vb[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetForegroundBrush">
+      <MemberSignature Language="C#" Value="public void SetForegroundBrush (System.Windows.Media.Brush foregroundBrush);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetForegroundBrush(class System.Windows.Media.Brush foregroundBrush) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetForegroundBrush(System.Windows.Media.Brush)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="foregroundBrush" Type="System.Windows.Media.Brush" />
+      </Parameters>
+      <Docs>
+        <param name="foregroundBrush">テキストの前景色に使用するブラシ。</param>
+        <summary>前景色を変更<see cref="T:System.Windows.Media.Brush" />全体の<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、文字列全体の前景ブラシを設定します。 テキスト文字列のサブセットの前景ブラシを設定するには、使用、<xref:System.Windows.Media.FormattedText.SetForegroundBrush%28System.Windows.Media.Brush%2CSystem.Int32%2CSystem.Int32%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetForegroundBrush">
+      <MemberSignature Language="C#" Value="public void SetForegroundBrush (System.Windows.Media.Brush foregroundBrush, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetForegroundBrush(class System.Windows.Media.Brush foregroundBrush, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetForegroundBrush(System.Windows.Media.Brush,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="foregroundBrush" Type="System.Windows.Media.Brush" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="foregroundBrush">テキストの前景色に使用するブラシ。</param>
+        <param name="startIndex">前景ブラシを適用する最初の文字の開始インデックス。</param>
+        <param name="count">前景ブラシを適用する文字数。</param>
+        <summary>前景色を変更<see cref="T:System.Windows.Media.Brush" />内の指定したテキストの<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列全体の前景ブラシを設定するには、使用、<xref:System.Windows.Media.FormattedText.SetForegroundBrush%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Media.FormattedText>オブジェクトし、テキストにいくつかの書式スタイルを適用を含む<xref:System.Windows.Media.FormattedText.SetForegroundBrush%2A>です。  
+  
+ [!code-csharp[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets1)]
+ [!code-vb[FormattedTextSnippets#FormattedTextSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMaxTextWidths">
+      <MemberSignature Language="C#" Value="public void SetMaxTextWidths (double[] maxTextWidths);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetMaxTextWidths(float64[] maxTextWidths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetMaxTextWidths(System.Double[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="maxTextWidths" Type="System.Double[]" />
+      </Parameters>
+      <Docs>
+        <param name="maxTextWidths">提供される、テキストの最大の幅の配列の各幅[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</param>
+        <summary>内でテキストの最大幅の配列を設定、 <see cref="T:System.Windows.Media.FormattedText" />、行ごとにします。 配列内の各要素は、連続したテキスト行のテキストの最大の幅を表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト行を超える配列内の要素の数と、残りの行に、配列の最後の値が使用されます。 有効な配列を提供する<xref:System.Windows.Media.FormattedText.SetMaxTextWidths%2A>の指定した値よりも優先されます、<xref:System.Windows.Media.FormattedText.MaxTextWidth%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNumberSubstitution">
+      <MemberSignature Language="C#" Value="public void SetNumberSubstitution (System.Windows.Media.NumberSubstitution numberSubstitution);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetNumberSubstitution(class System.Windows.Media.NumberSubstitution numberSubstitution) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetNumberSubstitution(System.Windows.Media.NumberSubstitution)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="numberSubstitution" Type="System.Windows.Media.NumberSubstitution" />
+      </Parameters>
+      <Docs>
+        <param name="numberSubstitution">テキストに適用する数値の置換動作指定できます<see langword="null" />、その場合、テキストのカルチャの既定の数値の置換メソッドを使用します。</param>
+        <summary>内の文字のセット全体の数字の置換動作を設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.NumberSubstitution>クラスは、テキスト内の数字の表示方法を指定します。 このメソッドは、文字列全体の数字の置換動作を設定します。 テキスト文字列のサブセットの数字の置換動作を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetNumberSubstitution%28System.Windows.Media.NumberSubstitution%2CSystem.Int32%2CSystem.Int32%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetNumberSubstitution">
+      <MemberSignature Language="C#" Value="public void SetNumberSubstitution (System.Windows.Media.NumberSubstitution numberSubstitution, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetNumberSubstitution(class System.Windows.Media.NumberSubstitution numberSubstitution, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetNumberSubstitution(System.Windows.Media.NumberSubstitution,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="numberSubstitution" Type="System.Windows.Media.NumberSubstitution" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="numberSubstitution">テキストに適用する数値の置換動作指定できます<see langword="null" />、その場合、テキストのカルチャの既定の数値の置換メソッドを使用します。</param>
+        <param name="startIndex">変更を適用する最初の文字の開始インデックス。</param>
+        <param name="count">文字数に変更を適用する必要があります。</param>
+        <summary>指定したテキスト内の数字の置換動作を設定、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.NumberSubstitution>クラスは、テキスト内の数字の表示方法を指定します。 文字列全体の数字の置換動作を設定するには、使用、<xref:System.Windows.Media.FormattedText.SetNumberSubstitution%28System.Windows.Media.NumberSubstitution%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTextDecorations">
+      <MemberSignature Language="C#" Value="public void SetTextDecorations (System.Windows.TextDecorationCollection textDecorations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetTextDecorations(class System.Windows.TextDecorationCollection textDecorations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetTextDecorations(System.Windows.TextDecorationCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textDecorations" Type="System.Windows.TextDecorationCollection" />
+      </Parameters>
+      <Docs>
+        <param name="textDecorations"><see cref="T:System.Windows.TextDecorationCollection" />テキストに適用します。</param>
+        <summary>セット、<see cref="T:System.Windows.TextDecorationCollection" />内の文字のセット全体の<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.TextDecorationCollection>クラスは、文字の装飾のテキストに適用する種類を指定します。 文字の装飾の 4 つの種類があります: 下線、基準、取り消し線、および上線。 これらは<xref:System.Windows.TextDecorationLocation>内の各項目に設定されている値、<xref:System.Windows.TextDecorationCollection>です。 一般的です、<xref:System.Windows.TextDecorationCollection>コレクションには、1 つだけの装飾が含まれていますが、プロパティが同じテキストに複数の文字装飾を適用することでより高度な装飾の効果を提供する、コレクションを使用します。  
+  
+ 次の図は、文字の装飾のテキストに対して相対的場所を示します。  
+  
+ ![テキスト装飾位置のダイアグラム](~/add/media/textdecoration01.gif "テキスト装飾位置のダイアグラム")  
+テキスト装飾の種類の例  
+  
+ このメソッドを設定、<xref:System.Windows.TextDecorationCollection>全体のテキスト文字列。 設定する、<xref:System.Windows.TextDecorationCollection>テキスト文字列のサブセットを使用して、<xref:System.Windows.Media.FormattedText.SetTextDecorations%28System.Windows.TextDecorationCollection%2CSystem.Int32%2CSystem.Int32%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTextDecorations">
+      <MemberSignature Language="C#" Value="public void SetTextDecorations (System.Windows.TextDecorationCollection textDecorations, int startIndex, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetTextDecorations(class System.Windows.TextDecorationCollection textDecorations, int32 startIndex, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FormattedText.SetTextDecorations(System.Windows.TextDecorationCollection,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textDecorations" Type="System.Windows.TextDecorationCollection" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="textDecorations"><see cref="T:System.Windows.TextDecorationCollection" />テキストに適用します。</param>
+        <param name="startIndex">テキスト装飾を適用する最初の文字の開始インデックス。</param>
+        <param name="count">テキスト装飾を適用する文字数。</param>
+        <summary>セット、<see cref="T:System.Windows.TextDecorationCollection" />内の指定したテキストの<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.TextDecorationCollection>クラスは、文字の装飾のテキストに適用する種類を指定します。 文字の装飾の 4 つの種類があります: 下線、基準、取り消し線、および上線。 これらは<xref:System.Windows.TextDecorationLocation>内の各項目に設定されている値、<xref:System.Windows.TextDecorationCollection>です。 一般的です、<xref:System.Windows.TextDecorationCollection>コレクションには、1 つだけの装飾が含まれていますが、プロパティが同じテキストに複数の文字装飾を適用することでより高度な装飾の効果を提供する、コレクションを使用します。  
+  
+ 次の図は、文字の装飾のテキストに対して相対的場所を示します。  
+  
+ ![テキスト装飾位置のダイアグラム](~/add/media/textdecoration01.gif "テキスト装飾位置のダイアグラム")  
+テキスト装飾の種類の例  
+  
+ 設定する、<xref:System.Windows.TextDecorationCollection>全体のテキスト文字列を使用して、<xref:System.Windows.Media.FormattedText.SetTextDecorations%28System.Windows.TextDecorationCollection%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示されるテキストの文字列を取得します。</summary>
+        <value>表示されるテキストの文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、構成された<xref:System.Windows.Media.FormattedText>オブジェクト。 新しいを構築する必要があります<xref:System.Windows.Media.FormattedText>別のテキストを設定するためにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.TextAlignment TextAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextAlignment TextAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.TextAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のテキストの配置、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</summary>
+        <value>1 つ、<see cref="T:System.Windows.TextAlignment" />内のテキストの配置を指定する値、<see cref="T:System.Windows.Media.FormattedText" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Trimming">
+      <MemberSignature Language="C#" Value="public System.Windows.TextTrimming Trimming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextTrimming Trimming" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.Trimming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextTrimming</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するテキストの省略が示されていることを意味します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.TextTrimming" />テキストの省略が示される方法を指定する値。 既定値は、<see cref="F:System.Windows.TextTrimming.WordEllipsis" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public double Width { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>末尾の空白文字のいずれかを除く、行の先頭および末尾の配置ポイント間の幅を取得します。</summary>
+        <value>末尾の空白文字を除く、行の先頭および末尾の配置ポイント間の幅。 提供される[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数行のテキストの最も長い行が使用される、<xref:System.Windows.Media.FormattedText.Width%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WidthIncludingTrailingWhitespace">
+      <MemberSignature Language="C#" Value="public double WidthIncludingTrailingWhitespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 WidthIncludingTrailingWhitespace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.FormattedText.WidthIncludingTrailingWhitespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>末尾の空白文字の間も含めて、行の先頭および末尾の配置ポイントの幅を取得します。</summary>
+        <value>末尾の空白文字を含めて、行の先頭および末尾の配置ポイント間の幅。 提供される[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数行のテキストの最も長い行が使用される、<xref:System.Windows.Media.FormattedText.WidthIncludingTrailingWhitespace%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

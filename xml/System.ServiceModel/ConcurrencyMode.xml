@@ -1,0 +1,92 @@
+<Type Name="ConcurrencyMode" FullName="System.ServiceModel.ConcurrencyMode">
+  <TypeSignature Language="C#" Value="public enum ConcurrencyMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ConcurrencyMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ConcurrencyMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>サービス クラスがシングルスレッド モードまたはマルチスレッド モードの操作をサポートするかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ConcurrencyMode> は、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> プロパティと組み合わせて使用し、サービス クラスがシングルスレッド モードまたはマルチスレッド モードの操作をサポートするかどうかを指定します。 シングルスレッド操作は、再入可能または非再入可能のどちらも可能です。  
+  
+ 次の表に、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] の設定に応じて、ある操作の進行中に <xref:System.ServiceModel.ConcurrencyMode> が別の操作の呼び出しを許可するかどうかを示します。  
+  
+|ConcurrencyMode 値|新しい操作の呼び出しの可否|  
+|---------------------------|-------------------------------------|  
+|Single|不可|  
+|再入|別のサービスまたはコールバックを呼び出し中のみ可能|  
+|複数|常に。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、異なる単一、再入、および複数の使用を示します。 このサンプルは、その背後に実際の実装がないとコンパイルできませんが、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] によるスレッド保証と、それが操作コードに対して持つ意味を示しています。  
+  
+ [!code-csharp[C_BestPractices-Concurrency#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_bestpractices-concurrency/cs/reentrantandmultiple.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Multiple">
+      <MemberSignature Language="C#" Value="Multiple" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ConcurrencyMode Multiple = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ConcurrencyMode.Multiple" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ConcurrencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス インスタンスはマルチスレッドです。 同期保証は行われません。 サービス オブジェクトは他のスレッドによっていつでも変更される可能性があるため、開発者が同期と状態の整合性を常に処理する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Reentrant">
+      <MemberSignature Language="C#" Value="Reentrant" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ConcurrencyMode Reentrant = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ConcurrencyMode.Reentrant" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ConcurrencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス インスタンスはシングル スレッドであり、再入呼び出しを受け入れます。 再入可能サービスは別のサービスを呼び出したときの呼び出しを受け入れます。したがって、開発者は、オブジェクトの状態をコール アウト前の状態と必ず一致させ、操作のローカル データがコール アウト後も有効であることを確認する必要があります。 サービス インスタンスは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] チャネルを介して別のサービスを呼び出すことによってのみロックを解除されます。 この場合、呼び出されたサービスはコールバック経由で最初のサービスに再入できます。 最初のサービスが再入可能でない場合、以降の呼び出しはデッドロック状態になります。 詳細については、「<see cref="P:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode" />」を参照してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Single">
+      <MemberSignature Language="C#" Value="Single" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ConcurrencyMode Single = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ConcurrencyMode.Single" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ConcurrencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス インスタンスはシングルスレッドであり、再入呼び出しを受け入れません。 <see cref="P:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode" /> プロパティが <see cref="F:System.ServiceModel.InstanceContextMode.Single" /> のときに、インスタンスが呼び出しを処理している間に別のメッセージが到着した場合は、到着したメッセージは、サービスが使用可能になるか、メッセージがタイムアウトするまで待機する必要があります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

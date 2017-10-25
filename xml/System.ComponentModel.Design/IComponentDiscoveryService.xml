@@ -1,0 +1,94 @@
+<Type Name="IComponentDiscoveryService" FullName="System.ComponentModel.Design.IComponentDiscoveryService">
+  <TypeSignature Language="C#" Value="public interface IComponentDiscoveryService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComponentDiscoveryService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IComponentDiscoveryService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時コンポーネントの列挙を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装、<xref:System.ComponentModel.Design.IComponentDiscoveryService>インターフェイス ツールボックスのコンポーネントのデザイン時の列挙を有効にします。  
+  
+ デザイン時に使用可能なその他の種類を列挙するカスタム実装を提供する可能性があります。 など、実装では、特定のデザイナーに存在するコンポーネントを列挙できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.ComponentModel.Design.IComponentDiscoveryService>から派生するすべての型を検索する、<xref:System.Windows.Forms.ScrollableControl>型です。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerServices#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerServices/CS/Form1.cs#13)]
+ [!code-vb[System.ComponentModel.Design.DesignerServices#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerServices/VB/Form1.vb#13)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetComponentTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection GetComponentTypes (System.ComponentModel.Design.IDesignerHost designerHost, Type baseType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection GetComponentTypes(class System.ComponentModel.Design.IDesignerHost designerHost, class System.Type baseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IComponentDiscoveryService.GetComponentTypes(System.ComponentModel.Design.IDesignerHost,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designerHost" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="baseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="designerHost">デザイン時のサービスを提供するデザイナー ホスト。 指定できます<see langword="null" />です。</param>
+        <param name="baseType">取得するコンポーネントに指定する基本型。 指定できます<see langword="null" />です。</param>
+        <summary>使用可能なコンポーネントの種類の一覧を取得します。</summary>
+        <returns>使用可能なコンポーネントの種類の一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.IComponentDiscoveryService.GetComponentTypes%2A>型である使用可能なコンポーネントの種類の一覧を取得するメソッドを実装する、<xref:System.ComponentModel.IComponent>インターフェイスです。 場合、`baseType`パラメーターは`null`、すべてのコンポーネントを取得です。 それ以外の場合、から派生した種類のコンポーネントのみ`baseType`が返されます。  
+  
+ 値を渡す場合、`designerHost`パラメーター、型の解決を対象とする`designerHost`です。 つまり、ある場合、<xref:System.Drawing.Design.ToolboxItem>型を持つディスク上では、グローバル アセンブリ キャッシュ内では、その型がを通じて読み込みに失敗する`designerHost`です。  
+  
+ 渡す場合`null`の`designerHost`、グローバル アセンブリ キャッシュからクエリできるすべての型を返しますまたは、<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.Design.IComponentDiscoveryService.GetComponentTypes%2A>から派生したすべての型を検索するメソッド、<xref:System.Windows.Forms.ScrollableControl>型です。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerServices#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerServices/CS/Form1.cs#13)]
+ [!code-vb[System.ComponentModel.Design.DesignerServices#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerServices/VB/Form1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,2208 @@
+<Type Name="ActiveDirectoryMembershipProvider" FullName="System.Web.Security.ActiveDirectoryMembershipProvider">
+  <TypeSignature Language="C#" Value="public class ActiveDirectoryMembershipProvider : System.Web.Security.MembershipProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActiveDirectoryMembershipProvider extends System.Web.Security.MembershipProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.ActiveDirectoryMembershipProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Security.MembershipProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Active Directory と Active Directory アプリケーション モードのサーバーでの ASP.NET アプリケーションのメンバーシップ情報の記憶域を管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは使用、<xref:System.Web.Security.Membership>と<xref:System.Web.Security.MembershipUser>Active Directory (AD) または Active Directory Application Mode (ADAM) サーバーを使用して ASP.NET アプリケーションのメンバーシップ サービスを提供するクラス。  
+  
+> [!NOTE]
+>  ADAM サーバーを使用するには、特定の構成が必要です。 詳細については、以下の ADAM 構成セクションを参照してください。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスは ASP.NET の完全な信頼ポリシーの既定の構成でのみ動作します。 使用するために、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンス任意の部分的な信頼レベルで、アプリケーションの適切な信頼ポリシー ファイルに変更を加える必要がありますか、GAC に展開されている「サンド ボックス」アセンブリを作成する必要があります。  
+>   
+>  <xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、無制限の必要があります<xref:System.DirectoryServices.DirectoryServicesPermission>を実行する権限です。 このアクセス許可は、ASP.NET で提供される、部分信頼ポリシー ファイルのいずれかには追加されません。 追加することが、<xref:System.DirectoryServices.DirectoryServicesPermission>部分的に信頼ポリシー ファイルへのアクセス許可での使用を有効になります、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>は作成を行って、クラス、<xref:System.DirectoryServices>名前空間のクラスは、ASP.NET ページで実行されている任意のコードで使用可能です。 このオプションは、セキュリティで保護された、ロック ダウン モードで実行する必要があるすべての Web サーバーは推奨されません。  
+>   
+>  代わりに、アセンブリを作成できます、「サンド ボックス」を呼び出す、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスです。 このアセンブリは、メソッドの呼び出しを転送するラッパー クラスを含めることができます、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスまたはクラスから派生した、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスです。 ラッパー クラスをアサートする必要がありますいずれの場合、無制限<xref:System.DirectoryServices.DirectoryServicesPermission>権限です。 GAC にアセンブリをサンド ボックス配置し、使用して、アセンブリをマーク、 <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) 属性です。 これにより、部分的に信頼された ASP.NET コードをラッパー クラスを呼び出すラッパー クラスを内部的にアサート、制限されていないため、<xref:System.DirectoryServices.DirectoryServicesPermission>権限、ラッパー クラスがプロバイダーに正常に連絡することができます  
+  
+ 作成する必要があります、 [connectionStrings 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b6ffbb2e-a4d1-410e-8f7e-9755e92c65de) Active Directory サーバー、Active Directory ドメイン、または ADAM アプリケーション パーティションを使用する識別する Web.config ファイル内のエントリ。 プロバイダーは、ドメイン スコープまたはサブスコープ ドメイン内でのみ動作します。 次の表は、接続文字列および使用するスコープが許可されます。  
+  
+|接続文字列|スコープ|  
+|-----------------------|-----------|  
+|LDAP://\<ドメインまたはサーバー >: [port]<br /><br /> ポート番号は、ADAM のオプションであり、Active Directory の不要です。|プロバイダーは、指定したドメインまたはサーバーに対して実行します。 Ad でユーザーの作成と削除は、既定のユーザー コンテナーで行われます。 すべての検索メソッドを含む、他のすべての操作は、ドメインの既定の名前付けコンテキストでルートされます。<br /><br /> 接続文字列は、特定のサーバーではなく、Active Directory ドメインを指定する場合と<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは`true`では、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスは、常にパスワードの変更が反映され、使用可能な場合に、ことを確認するドメインの PDC の役割を使用してサーバーに接続、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ValidateUser%2A>メソッドが呼び出されます。<br /><br /> この接続文字列がない場合、設定できる ADAM の場合を使用してスローされます、<xref:System.NotSupportedException>です。|  
+|LDAP://\<ドメインまたはサーバー >: [port]/\<コンテナー dn ><br /><br /> ポート番号は、ADAM のオプションであり、Active Directory の不要です。|プロバイダーは、指定したドメインまたはサーバーに対して実行します。 ユーザーの作成と削除は、指定されたコンテナーでのみ行います。 すべての検索メソッドを含む、他のすべての操作は、コンテナーをルートとサブツリー検索を実行します。<br /><br /> ADAM サーバーの場合は、コンテナーは、アプリケーション パーティション、またはアプリケーション パーティション内のコンテナーのルートを指定します。<br /><br /> 接続文字列がパフォーマンスを向上させるために、特定のコンテナーを定義することをお勧めします。|  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンス マップ ディレクトリの属性を<xref:System.Web.Security.ActiveDirectoryMembershipUser>プロパティです。 既定の属性は、Web.config ファイルで属性のマップされていない場合に使用されます。 属性マッピングの詳細については、個々 のプロパティを参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipUser>クラスのドキュメントです。  
+  
+ 次の表、<xref:System.Web.Security.ActiveDirectoryMembershipUser>属性マッピングのプロパティとその既定値です。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは明示的に確認プロバイダー属性が、ディレクトリ内のユーザー オブジェクトの中核となる属性にマップされていないこと。 ディレクトリから機密情報は属性のマッピングでは公開されないことを確認する必要があります。  
+  
+|プロパティ|既定のディレクトリ属性|マップすることができますか。|  
+|--------------|---------------------------------|--------------------|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.ProviderUserKey%2A>|securityIdentifier|いいえ|  
+|<xref:System.Web.Security.MembershipUser.UserName%2A>|userPrincipalName|可、ただし userPrincipalName または sam アカウント名のいずれかにする必要があります。|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.Comment%2A>|コメント|いいえ|  
+|<xref:System.Web.Security.MembershipUser.CreationDate%2A>|whenCreated|いいえ|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.Email%2A>|メール|可、ただし、Unicode 文字列型の単一値属性である必要があります。|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastActivityDate%2A>|適用なし|サポートされていません。<xref:System.Web.Security.ActiveDirectoryMembershipProvider>です。|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate%2A>|適用なし|サポートされていません。<xref:System.Web.Security.ActiveDirectoryMembershipProvider>です。|  
+|<xref:System.Web.Security.MembershipUser.LastPasswordChangedDate%2A>|pwdLastSet|いいえ|  
+|<xref:System.Web.Security.MembershipUser.PasswordQuestion%2A>|none|可、ただし、Unicode 文字列型の単一値属性である必要があります。|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.IsApproved%2A>|ユーザー アカウント制御 (AD)<br /><br /> mDS UserAccountDisabled (ADAM)|いいえ|  
+|<xref:System.Web.Security.MembershipUser.IsLockedOut%2A>|lockoutTime と AD ロックアウト期間 (Windows 2000 で AD) から計算されました。<br /><br /> msDS-ユーザー-アカウントのコントロールの計算 (AD では、Windows Server 2003)<br /><br /> msDS-ユーザー-アカウントのコントロールの計算 (ADAM)|いいえ|  
+|<xref:System.Web.Security.MembershipUser.LastLockoutDate%2A>|ユーザーが不正なパスワードの回数が多すぎるためロックアウト、ロックアウト時刻属性が返されます。<br /><br /> 間違ったパスワード入力の多すぎるため、ユーザーがロックアウトされた場合の試行、によって定義された属性に格納されている値`attributeMapFailedPasswordAnswerLockoutTime`が返されます。<br /><br /> ユーザーが不正なパスワードと不正なパスワードを何度も、最新の日付/時刻値の両方によりロックアウトが返されます。<br /><br /> アカウントがロックアウトされていない場合は、1/1/1754 SQL との互換性を返します。|いいえ|  
+  
+ ときに両方の<xref:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer%2A>と<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは、 `true`、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスでは、パスワード リセットのセキュリティをサポートしてあらかじめ決められた質問に回答する必要はありません。 質問と回答をサポートするを使用して、次の構成属性を設定する必要があります、 [add 要素 (ASP.NET 設定スキーマ) のメンバーシップ プロバイダー](http://msdn.microsoft.com/en-us/8423ec7f-a06d-4606-977e-a46400b2fc18)アプリケーション構成ファイルにします。  
+  
+|属性の構成|属性の型|  
+|-----------------------------|--------------------|  
+|`attributeMapPasswordQuestion`|Unicode 文字列型の単一値属性があります。|  
+|`attributeMapPasswordAnswer`|Unicode 文字列型の単一値属性があります。|  
+|`attributeMapFailedPasswordAnswerCount`|整数型の単一値属性があります。|  
+|`attributeMapFailedPasswordAnswerTime`|大きな整数の間隔の種類の単一値属性があります。|  
+|`attributeMapFailedPasswordAnswerLockoutTime`|大きな整数の間隔の種類の単一値属性があります。|  
+  
+ パスワード リセットのセキュリティを使用する方法については、次を参照してください。、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer%2A>プロパティです。  
+  
+## <a name="active-directory-connections"></a>Active Directory の接続  
+ ときに、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスが、Active Directory や Active Directory Application Mode (ADAM) サーバーへの接続に使用される、`connectionProtection`属性を使用して設定されている、 [(ASP.NET 設定スキーマ) のメンバーシップ プロバイダーの要素を追加](http://msdn.microsoft.com/en-us/8423ec7f-a06d-4606-977e-a46400b2fc18)ファイル、アプリケーションの構成の操作の種類を制限することがあります、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、接続経由で実行できます。 `connectionProtection`属性がメソッドも判断、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスを使用して、Active Directory または ADAM サーバーへの接続を作成します。  
+  
+ 次の表の効果を示しています、 `connectionProtection` Active Directory に接続するときの属性です。  
+  
+|`connectionProtection` の設定|効果|  
+|------------------------------------|------------|  
+|<xref:System.Web.Security.ActiveDirectoryConnectionProtection.None>|<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスはこれらの制限により、Active Directory に接続します。<br /><br /> -パスワードを設定するメソッドは失敗します。 Active Directory では、パスワードを変更するときに、セキュリティで保護された接続が必要です。<br />-を明示的に設定する必要があります、`connectionUsername`と`connectionPassword`属性を使用して、 [add 要素 (ASP.NET 設定スキーマ) のメンバーシップ プロバイダー](http://msdn.microsoft.com/en-us/8423ec7f-a06d-4606-977e-a46400b2fc18)アプリケーション構成ファイルにあるそれ以外の場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスがスローされます、<xref:System.Configuration.Provider.ProviderException>例外。|  
+|`Secure`|<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、SSL を使用して Active Directory に接続しようとしています。 SSL が失敗すると、サインインし、封印を使用して Active Directory への接続に 2 回目の試行が行われます。 両方の試行が失敗する場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスがスローされます、<xref:System.Configuration.Provider.ProviderException>例外。<br /><br /> プロセスの資格情報と明示的な資格情報の両方がサポートされます。|  
+  
+ 次の表の効果を示しています、 `connectionProtection` ADAM サーバーに接続するときの属性です。  
+  
+|`connectionProtection` の設定|効果|  
+|------------------------------------|------------|  
+|<xref:System.Web.Security.ActiveDirectoryConnectionProtection.None>|<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスはこの制限を ADAM サーバーに接続します。<br /><br /> -パスワードを設定するメソッドは、明示的にサーバーを構成する、ADAM が送信され、安全でない接続経由で変更されたパスワードを許可する場合を除き、失敗します。<br /><br /> プロセスの資格情報と明示的な資格情報の両方がサポートされます。|  
+|`Secure`|<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、SSL を使用して、ADAM サーバーに接続しようとしています。 接続を確立できない場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスがスローされます、<xref:System.Configuration.Provider.ProviderException>例外。<br /><br /> プロセスの資格情報と明示的な資格情報の両方がサポートされます。|  
+  
+## <a name="adam-configuration"></a>ADAM 構成  
+ ADAM インスタンスで定義するスキーマを含める必要があります ADAM サーバーを使用する場合、`User`クラスです。 インポートすることができます、`User`の LDIF インポートを使用してクラス、 `MS-User.ldf` ADAM インストール ディレクトリで利用可能なファイルです。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは既定のネットワーク ポートを使用するように構成、ADAM サーバーと連動します。 次の表は、ADAM サーバーで予想される、既定値を示します。  
+  
+|connectionProtection 設定|予期される ADAM ポート|  
+|----------------------------------|------------------------|  
+|<xref:System.Web.Security.ActiveDirectoryConnectionProtection.None>|389|  
+|`Secure`|636|  
+  
+ ADAM サーバーが既定のポートを使用していない場合は、「Active Directory サービスは、SSL 接続経由で安全な承認を要求しない」Q817583 の記事を参照して、、[マイクロソフト サポート技術情報](http://go.microsoft.com/fwlink/?linkid=37115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するように構成、ASP.NET アプリケーションの Web.config ファイルを表示する、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンス。 最初の例では、Active Directory 属性を既定のマッピングを使用し、パスワードのリセットのセキュリティの質問と回答も検索メソッドを呼び出す機能をサポートしていません。 2 番目の例の許可されているすべての属性の設定を示しています、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンス。  
+  
+ 最初の例は、Active Directory の属性の既定のマッピングを使用して単純な構成ファイルです。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,   
+          PublicKeyToken=b03f5f7f11d50a3a" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ この例ではすべてのインスタンスで利用可能な属性の設定の<xref:System.Web.Security.ActiveDirectoryMembershipProvider>します。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership  
+      defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"  
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,  
+          System.Web, Version=1.0.3600, Culture=neutral,  
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          connectionStringName="ADService"  
+          connectionUsername="UserWithAppropriateRights"  
+          connectionPassword="PasswordForUser"  
+          connectionProtection="Secure"  
+          enablePasswordReset="true"  
+          enableSearchMethods="true"  
+          requiresQuestionAndAnswer="true"  
+          applicationName="/"  
+          description="Default AD connection"  
+          requiresUniqueEmail="false"  
+          clientSearchTimeout="30"  
+          serverSearchTimeout="30"  
+          timeoutUnit="Minutes"  
+          attributeMapPasswordQuestion="department"  
+          attributeMapPasswordAnswer="division"  
+          attributeMapFailedPasswordAnswerCount="singleIntAttribute"  
+         attributeMapFailedPasswordAnswerTime="singleLargeIntAttribute"  
+         attributeMapFailedPasswordAnswerLockoutTime="singleLargeIntAttribute"  
+          attributeMapEmail = "mail"  
+          attributeMapUsername = "userPrincipalName"  
+          maxInvalidPasswordAttempts = "5"  
+          passwordAttemptWindow = "10"  
+          passwordAnswerAttemptLockoutDuration = "30"  
+          minRequiredPasswordLength="7"  
+          minRequiredNonalphanumericCharacters="1"  
+          passwordStrengthRegularExpression="  
+          @\"(?=.{6,})(?=(.*\d){1,})(?=(.*\W){1,})" />  
+        />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ `clientSearchTimeout`および`serverSearchTimeout`分に既定値です。 単位を変更するには、設定、 `timeoutUnit` "Days"、"Hours"、"Minutes"、"Seconds"または「(ミリ秒)」のいずれかに属性の値。 属性が指定されていない場合、既定では「分」です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveDirectoryMembershipProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>コンス トラクターがのインスタンスを作成する ASP.NET によって呼び出されます、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>アプリケーションの構成で指定したクラスです。 このコンス トラクターは、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public override string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム メンバーシップ プロバイダーを使用するアプリケーションの名前。</summary>
+        <value>カスタム メンバーシップ プロバイダーを使用するアプリケーションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.ApplicationName%2A>プロパティは、ASP.NET アプリケーションの名前に設定できます。 ただし、アプリケーション名は使用されませんが、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスです。  
+  
+ したがってとは異なり他の<xref:System.Web.Security.MembershipProvider>実装、すべての ASP.NET アプリケーションが、アクセス、同じ Active Directory データ ストアが常に同じユーザー データを共有します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">設定しようとしましたが、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.ApplicationName" />プロパティです。</exception>
+        <exception cref="T:System.InvalidOperationException">アクセスを試みると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.ApplicationName" />プロパティは、前に作成された、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangePassword">
+      <MemberSignature Language="C#" Value="public override bool ChangePassword (string username, string oldPassword, string newPassword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ChangePassword(string username, string oldPassword, string newPassword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.ChangePassword(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="oldPassword" Type="System.String" />
+        <Parameter Name="newPassword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">パスワードを更新するユーザーの名前。</param>
+        <param name="oldPassword">指定したユーザーの現在のパスワード。</param>
+        <param name="newPassword">指定したユーザーの新しいパスワード。</param>
+        <summary>指定したユーザーのパスワードを変更します。</summary>
+        <returns>
+          パスワードが正常に更新された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.ChangePassword%2A>メソッドを使用して Active Directory データ ストア内のユーザーのパスワードを更新します。 資格情報に関係なくを<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスが使用するように構成は、プロバイダーが、Active Directory を使用してサーバーに接続、`username`と`oldPassword`接続の資格情報として使用されるパラメーター。  
+  
+ 場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは`true`彼は、ユーザーが変更できない、または、ユーザーが多く行われるために、アカウントが既にロックされている場合、パスワードがパスワードの質問に回答を試みます。 ユーザーがで指定された分数を待機する必要があります、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration%2A>パスワードを変更する前に、プロパティです。  
+  
+ パスワードの変更が成功した場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは`true`、ユーザーのパスワードが間違って応答トラッキング カウンターはリセットされます。  
+  
+ プロバイダーは、接続文字列で指定された検索の時点で開始したユーザー名のサブツリー検索を実行して更新するユーザー インスタンスを検索します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ Active Directory サーバー上のパスワードを変更する、`connectionProtection`に属性を設定する必要があります<xref:System.Web.Security.ActiveDirectoryConnectionProtection.SignAndSeal>です。  
+  
+ ADAM サーバーを使用する場合、`connectionProtection`に属性を設定することができます<xref:System.Web.Security.ActiveDirectoryConnectionProtection.None>、明示的にセキュリティ保護されていない接続経由でパスワードの変更を許可する ADAM サーバーを構成するときにのみ、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="username" />空、またはユーザー名 (通常は 256 文字) の最大長を超えています。  
+  
+ \- または  
+  
+ <paramref name="username" />コンマが含まれています。  
+  
+ \- または  
+  
+ ユーザーは、マップ先の名前、<see langword="userPrincipalName" />属性および<paramref name="username" />パラメーターには、円記号が含まれています。  
+  
+ \- または  
+  
+ <paramref name="oldPassword" />または<paramref name="newPassword" />は長さ 0 の文字列。  
+  
+ \- または  
+  
+ <paramref name="oldPassword" />または<paramref name="newPassword" />パスワードの最大長 (通常は 128 文字) を超えています。  
+  
+ \- または  
+  
+ <paramref name="newPassword" />指定されたパスワードの最小サイズよりも小さく、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredPasswordLength" />プロパティ  
+  
+ \- または  
+  
+ <paramref name="newPassword" />英字以外の文字で指定された数より少ないが含まれています、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredNonAlphanumericCharacters" />プロパティです。  
+  
+ \- または  
+  
+ <paramref name="newPassword" />定義されている正規表現によって検証が失敗する、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordStrengthRegularExpression" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="oldPassword" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="newPassword" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Web.Security.MembershipPasswordException">
+          <paramref name="newPassword" />Active Directory サーバーによって定義された、複雑さの要件を満たしません。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">Active Directory アプリケーション モード サーバーへ、セキュリティで保護された接続を確立できませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.ChangePassword(System.String,System.String,System.String)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+        <exception cref="T:System.Exception">未処理の例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangePasswordQuestionAndAnswer">
+      <MemberSignature Language="C#" Value="public override bool ChangePasswordQuestionAndAnswer (string username, string password, string newPasswordQuestion, string newPasswordAnswer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ChangePasswordQuestionAndAnswer(string username, string password, string newPasswordQuestion, string newPasswordAnswer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="newPasswordQuestion" Type="System.String" />
+        <Parameter Name="newPasswordAnswer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">パスワードの質問と回答を変更するユーザー。</param>
+        <param name="password">指定したユーザーのパスワード。</param>
+        <param name="newPasswordQuestion">指定したユーザーの新しいパスワードの質問。</param>
+        <param name="newPasswordAnswer">指定したユーザーの新しいパスワードの回答。</param>
+        <summary>パスワードの質問と、Active Directory ストアでユーザーの回答を更新します。</summary>
+        <returns>
+          更新が正常に実行された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 値<see langword="false" />パスワードが正しくないと、ユーザーをロックアウトまたはユーザーが Active Directory データ ストアに存在しませんも返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドを呼び出す、<xref:System.Web.Security.ActiveDirectoryMembershipUser>クラスをパスワードの質問を更新および Active Directory メンバーシップ ストア内のユーザーの回答します。  
+  
+ ユーザーのパスワードをリセットする際に、追加のセキュリティ層を提供するパスワードの質問と回答を必要とします。 ユーザー名を作成するときに、質問と解答を忘れてもパスワードをリセットする後で使用できる、ユーザーが指定できます。 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.ChangePasswordQuestionAndAnswer%2A>メソッドを新しい値は、パスワードの質問とメンバーシップ ユーザーの回答を更新します。  
+  
+ 使用するために、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ChangePasswordQuestionAndAnswer%2A>メソッド、アプリケーションの構成ファイルでこれらの追加属性を設定する必要があります。  
+  
+-   `requiresQuestionAndAnswer`必要があります。`true.`  
+  
+-   `attributeMapPasswordQuestion`および`attributeMapPasswordAnswer`Active Directory スキーマの属性にマップする必要があります。  
+  
+ 上記の条件が満たされない場合、<xref:System.Configuration.Provider.ProviderException>初期化時にスローされます。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンス ストアに接続する、Active Directory データで提供される資格情報を持つ、`username`と`password`ユーザー名/パスワードの組み合わせを検証するパラメーター名。 質問と回答の実際の更新プログラムは、プロバイダーの構成されている接続の資格情報で実行されます。  
+  
+ 正しくないパスワードを指定する場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ChangePasswordQuestionAndAnswer%2A>メソッド、ディレクトリ サーバーには、無効なパスワードの試行回数を追跡するカウンターがインクリメントされます。 これにより、ユーザーにロックされていることができ、ログオンできませんかされるまで、ロックの状態がクリアへの呼び出しによって、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.UnlockUser%2A>メソッドまたはディレクトリのパスで指定されたロック期間。  
+  
+ 質問と回答する更新プログラムが成功した場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは`true`、追跡、ユーザーの無効なパスワードの回答カウンターはリセットされます。  
+  
+ 使用してパスワードの回答が暗号化されて、<xref:System.Web.Security.MembershipProvider.EncryptPassword%2A>メソッドから Active Directory データ ストアに格納します。 暗号化キーとアルゴリズムがで指定された、 [machineKey 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)構成要素。 復号化の属性、 [machineKey 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)要素を指定する必要があります、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスが自動生成された暗号化キーをサポートしていません。  
+  
+ パスワードの質問の最大長は、256 文字です。 パスワードの回答の最大長は、128 文字です。  
+  
+ 除くすべてのパラメーター値から先頭および末尾のスペースがトリミング`password`です。  
+  
+ プロバイダーは、接続文字列で指定された検索の時点で開始したユーザー名のサブツリー検索を実行して更新するユーザー インスタンスを検索します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">管理者は、Active Directory スキーマの属性にパスワードの質問と回答のフィールドをマップしていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="username" />空、またはユーザー名 (通常は 256 文字) の最大長を超えています。  
+  
+ \- または  
+  
+ <paramref name="username" />コンマが含まれています。  
+  
+ \- または  
+  
+ ユーザーは、マップ先の名前、<see langword="userPrincipalName" />属性および<paramref name="username" />パラメーターには、円記号が含まれています。  
+  
+ \- または  
+  
+ <paramref name="password" /> は長さゼロの文字列です。  
+  
+ \- または  
+  
+ <paramref name="password" />パスワードの最大長 (通常は 128 文字) を超えています。  
+  
+ \- または  
+  
+ <paramref name="newPasswordQuestion" />空、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer" />プロパティの値が<see langword="true" />です。  
+  
+ \- または  
+  
+ <paramref name="newPasswordQuestion" />256 文字を超えています。  
+  
+ \- または  
+  
+ <paramref name="newPasswordAnswer" />答えが暗号化された後は、128 文字を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="password" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="newPasswordQuestion" /><see langword="null" />と<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer" />プロパティは<see langword="true" />します。  
+  
+ \- または  
+  
+ <paramref name="newPasswordAnswer" /><see langword="null" />と<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer" />プロパティは<see langword="true" />します。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">[MachineKey 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)構成要素がマシンの自動生成された暗号化キーを示します。 明示的に設定する必要があります、<see langword="decriptionKey" />の属性、 [machineKey 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)でパスワードの解答を格納する要素、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUser">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUser CreateUser (string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, out System.Web.Security.MembershipCreateStatus status);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUser CreateUser(string username, string password, string email, string passwordQuestion, string passwordAnswer, bool isApproved, object providerUserKey, [out] valuetype System.Web.Security.MembershipCreateStatus&amp; status) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="email" Type="System.String" />
+        <Parameter Name="passwordQuestion" Type="System.String" />
+        <Parameter Name="passwordAnswer" Type="System.String" />
+        <Parameter Name="isApproved" Type="System.Boolean" />
+        <Parameter Name="providerUserKey" Type="System.Object" />
+        <Parameter Name="status" Type="System.Web.Security.MembershipCreateStatus&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="username">新しいユーザーのユーザー名。</param>
+        <param name="password">新しいユーザーのパスワード。</param>
+        <param name="email">新しいユーザーの電子メール アドレス。</param>
+        <param name="passwordQuestion">新しいユーザーのパスワードの質問。</param>
+        <param name="passwordAnswer">新しいユーザーのパスワードの回答。</param>
+        <param name="isApproved">新しいユーザーを承認するかどうか。</param>
+        <param name="providerUserKey">メンバーシップ データ ソースでのユーザーの一意の識別子。 このパラメーターを指定する必要があります<see langword="null" />を使用する場合、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />クラスです。</param>
+        <param name="status">このメソッドが戻るときの 1 つを含む、<see cref="T:System.Web.Security.MembershipCreateStatus" />ユーザーが正常に作成されたかどうかを示す列挙値。</param>
+        <summary>Active Directory データ ストアに新しいユーザーを追加します。</summary>
+        <returns><see cref="T:System.Web.Security.ActiveDirectoryMembershipUser" />を新しく作成された、ユーザーに関する情報を含むインスタンスまたは<see langword="null" />ユーザーが正常に作成されていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.CreateUser%2A>メソッドによって呼び出されます、 <xref:System.Web.Security.Membership> Active Directory データ ストアの新しいユーザーを作成するクラス。  
+  
+ Active Directory と Active Directory Application Mode (ADAM) の両方のサーバーでは、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ディレクトリにインスタンスのクラスである必要があります`user`です。 などの別のユーザー クラス`inetOrgPerson`はサポートされていません。  
+  
+ ときにマップされた Active Directory サーバーと、ユーザー名を使用して、`userPrincipalName`属性を<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスにはの 20 文字のランダムなユーザー名が自動的に生成、`sAMAccountName`あなたに代わってパラメーター。  
+  
+ 次の最大長をパラメーターの既定値です。  
+  
+|パラメーター|最大長|  
+|---------------|--------------------|  
+|`username`|64 文字を使用する場合、`userPrincipalName`属性。 使用する場合、`sAMAccountName`属性、一般的な制限が 20 文字以下です。|  
+|`password`|128 文字です。|  
+|`email`|256 文字です。|  
+|`passwordQuestion`|256 文字です。|  
+|`passwordAnswer`|前に、と後の暗号化の 128 文字です。|  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser.Comment%2A>プロパティで返された<xref:System.Web.Security.ActiveDirectoryMembershipUser>インスタンスは 1024 文字に制限されます。  
+  
+ これらの属性の最大許容長を減らすことで、ディレクトリ スキーマが変更された場合、これらの長さが優先されます。  
+  
+ ユーザーを作成する前に、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスと、ユーザー名が一意であることを確認します。 場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスは一意の電子メール アドレスを要求するように構成されても向上電子メール アドレスが一意であることを確認します。  
+  
+ ユーザー名がマップされるときに、GC 検索を実行することによって Active Directory のユーザー名の一意性が適用されます`userPrincipalName`です。 場合`sAMAccountName`を使用するディレクトリが自動的に一意のしてから、 `sAMAccountName` Active Directory ドメインにわたるです。  
+  
+ ADAM サーバーは自動的にユーザー名の一意性、`userPrincipalName`すべてアプリケーション パーティションを対象。  
+  
+ ユーザーが作成されたコンテナーのルートから重複する電子メール アドレスのサブツリー検索を実行することによって、電子メール アドレスの一意性を強制するとします。 これが既定のユーザー コンテナー (Active Directory とコンテナーなしに接続されている場合は、接続文字列で指定) または接続文字列で指定されたコンテナーです。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、接続文字列で指定されたユーザー コンテナーに直接ユーザーを作成します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ Active Directory サーバーで設定するパスワード、`connectionProtection`に属性を設定する必要があります<xref:System.Web.Security.ActiveDirectoryConnectionProtection.SignAndSeal>です。  
+  
+ ADAM サーバーが使用されているときに、`connectionProtection`に属性を設定することができます<xref:System.Web.Security.ActiveDirectoryConnectionProtection.None>、明示的にパスワードがセキュリティ保護されていない接続で変更を許可する ADAM サーバーを構成するときにのみ、します。  
+  
+ 除くすべての文字列パラメーターの値から先頭および末尾のスペースがトリミング`password`です。  
+  
+> [!IMPORTANT]
+>  ドメイン管理者権限が (非推奨) または「子のインスタンスを作成する」のいずれかに、Active Directory サーバーへの接続に使用する資格情報がない限り、新しいユーザーを作成することはできません「子インスタンスの削除」と"パスワードの設定 のアクセス権。 「子インスタンスの削除」アクセス権です。 複数の手順は、ユーザーを作成するため、およびユーザーの作成のいずれかの手順が失敗した場合、必要な、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ユーザー インスタンスを削除ではなく、ディレクトリに部分的に構築されたユーザー インスタンスのままにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="providerUserKey" />パラメーターではありません<see langword="null" />です。</exception>
+        <exception cref="T:System.NotSupportedException">管理者が、Active Directory スキーマ、およびどちらかの属性に、パスワードの質問と回答のフィールドをマップしていない、<paramref name="passwordQuestion" />または<paramref name="passwordAnswer" />パラメーターではありません<see langword="null" />です。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">[MachineKey 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)構成要素がマシンの自動生成された暗号化キーを示します。 明示的に設定する必要があります、<see langword="decriptionKey" />の属性、 [machineKey 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/4b5699a9-bc21-4c4a-85f1-8b3b8ebd2d46)でパスワードの解答を格納する要素、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />です。  
+  
+ \- または  
+  
+ <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />新しいユーザーのパスワードを設定しようとするときにディレクトリへのセキュリティで保護された接続を確立するためにできませんでした。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">ユーザーを作成中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentConnectionProtection">
+      <MemberSignature Language="C#" Value="public System.Web.Security.ActiveDirectoryConnectionProtection CurrentConnectionProtection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Security.ActiveDirectoryConnectionProtection CurrentConnectionProtection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.CurrentConnectionProtection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.ActiveDirectoryConnectionProtection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のサーバーとの通信を保護するために使用されているセキュリティ レベルを取得します。</summary>
+        <value><see cref="T:System.Web.Security.ActiveDirectoryConnectionProtection" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.CurrentConnectionProtection%2A>プロパティは、現在のセキュリティ レベルを示すを<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスが使用するよう構成します。 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.CurrentConnectionProtection%2A>プロパティがに基づいて、`connnectionProtection`属性設定、 [add 要素 (ASP.NET 設定スキーマ) のメンバーシップ プロバイダー](http://msdn.microsoft.com/en-us/8423ec7f-a06d-4606-977e-a46400b2fc18)アプリケーション構成ファイルにします。  
+  
+ `connectionProtection`に属性を設定することができますのみ<xref:System.Web.Security.ActiveDirectoryConnectionProtection.None>または<xref:System.Web.Security.ActiveDirectoryConnectionProtection.SignAndSeal>構成ファイルにします。  
+  
+ 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード例を構成する Web.config エントリを示しています、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider> Active Directory サーバーへの接続に SSL セキュリティ プロトコルを使用するインスタンス。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,  
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          connectionProtection="SignAndSeal" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アクセスを試みると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.CurrentConnectionProtection" />プロパティは、前に作成された、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteUser">
+      <MemberSignature Language="C#" Value="public override bool DeleteUser (string username, bool deleteAllRelatedData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool DeleteUser(string username, bool deleteAllRelatedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.DeleteUser(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="deleteAllRelatedData" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="username">削除するユーザーの名前。</param>
+        <param name="deleteAllRelatedData">このパラメーターは無視されます、<see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.DeleteUser(System.String,System.Boolean)" />メソッドです。</param>
+        <summary>Active Directory データ ストアからユーザーのメンバーシップ情報を削除します。</summary>
+        <returns>
+          <see langword="true" />ユーザーが削除された場合それ以外の場合、<see langword="false" />場合は、ユーザーは、データ ストアにありませんでした。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.DeleteUser%2A>メソッドで識別されたユーザーが直ちに削除され、`username`パラメーター。 Active Directory データ ストアが、ディレクトリの個別の領域でユーザー情報を保存していないため、`deleteAllRelatedData`パラメーターが無視されますが、必要があります設定する必要がいずれかに`true`または`false`を呼び出すときに、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.DeleteUser%2A>メソッドです。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、接続文字列によって決定されるユーザー コンテナーにユーザー名の単一レベルの検索を実行することによって削除するユーザー インスタンスを検索します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ `username`64 文字以下です。  
+  
+> [!IMPORTANT]
+>  Active Directory サーバーへの接続に使用する資格情報は、(推奨しません) かドメイン管理者権限を持っているか、「削除子インスタンス」アクセス権しない限り、ユーザーを削除することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="username" />空、またはユーザー名 (通常は 256 文字) の最大長を超えています。  
+  
+ \- または  
+  
+ <paramref name="username" />コンマが含まれています。  
+  
+ \- または  
+  
+ ユーザーは、マップ先の名前、<see langword="userPrincipalName" />属性および<paramref name="userName" />パラメーターには、円記号が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">ユーザーを削除するときにエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.DeleteUser(System.String,System.Boolean)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnablePasswordReset">
+      <MemberSignature Language="C#" Value="public override bool EnablePasswordReset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnablePasswordReset" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />ユーザーに自分のパスワードのリセットを許可するインスタンスを構成します。</summary>
+        <value>
+          <see langword="true" />パスワードのリセットが許可された; 場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティが使用することができるかどうかを示す、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ResetPassword%2A>ユーザーのパスワードをリセットする方法です。 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは、アプリケーションの構成で設定を使用してファイル、`enablePasswordReset`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素。  
+  
+ のみ設定できます、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティ`true`ときに、次[membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素の設定が行われています。  
+  
+-   `requiresQuestionAndAnswer`必要があります`true`です。  
+  
+-   パスワードの質問と回答、さらにパスワード解答の変更回数の 3 つの追跡フィールドを格納するための属性を含めるには、Active Directory スキーマを変更する必要があります。  
+  
+-   `attributeMapPasswordQuestion`、 `attributeMapPasswordAnswer`、 `attributeMapFailedPasswordAnswerCount`、 `attributeMapFailedPasswordAnswerTime`、および`attributeMapFailedPasswordAnswerLockoutTime`Active Directory スキーマの属性にマップする必要があります。  
+  
+ 上記の条件が満たされない場合、<xref:System.Configuration.Provider.ProviderException>初期化時にスローされます。  
+  
+ アプリケーション構成ファイル内の接続文字列は、特定のサーバーではなく、Active Directory ドメインを指定すると、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスは、常にパスワードの変更が反映され、変更するにはことを確認するドメインの PDC ロールを持っているドメイン コント ローラーに接続、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ValidateUser%2A>メソッドが呼び出されます。  
+  
+> [!NOTE]
+>  場合でも、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは`true`、Active Directory サーバーへの接続に使用する資格情報がドメイン管理者権限が (非推奨) または「パスワードのリセット」アクセス権を持っていない場合、ユーザーのパスワードをリセットすることはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例を構成する Web.config エントリを示しています、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>パスワードのリセットを有効にするインスタンス。 「パスワードのリセット」アクセス権を与えられたユーザーの明示的な資格情報を使用します。  
+  
+> [!IMPORTANT]
+>  Web.config ファイルにユーザーの資格情報を配置するときは、セキュリティ上の潜在的な脅威があります。 Web.config ファイルを含むディレクトリへのアクセス権を持つユーザーでは、ファイルを読み取るでき、したがって、資格情報を表示することができます。 このような脅威から保護する方法の詳細については、「[暗号化の構成情報を使用して保護された構成](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)です。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,   
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          connectionUsername="UserWithResetPasswordRights"  
+          connectionPassword="PasswordForUser"  
+          enablePasswordReset="true"  
+          requiresQuestionAndAnswer="true"  
+          attributeMapPasswordQuestion="PasswordQuestionADAttribute"  
+          attributeMapPasswordAnswer="PasswordAnswerADAttribute"  
+          attributeMapFailedPasswordAnswerCount="AnswerCountADAttribute"  
+          attributeMapFailedPasswordAnswerTime="AnswerTimeADAttribute"  
+          attributeMapFailedPasswordAnswerLockoutTime="LockOutTimeADAttribute" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アクセスを試みると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset" />プロパティは、前に作成された、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnablePasswordRetrieval">
+      <MemberSignature Language="C#" Value="public override bool EnablePasswordRetrieval { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnablePasswordRetrieval" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordRetrieval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Active Directory データ ストアからユーザーのパスワードを取得できるかどうかを示す値を取得します。 このプロパティは常に <see langword="false" /> を返します。</summary>
+        <value>
+          <see langword="false" />によってパスワードの取得がサポートされていないことを示すために、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスがパスワードの取得をサポートしていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アクセスを試みると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordRetrieval" />プロパティは、前に作成された、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableSearchMethods">
+      <MemberSignature Language="C#" Value="public bool EnableSearchMethods { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableSearchMethods" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか検索指向<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />方法を使用できます。</summary>
+        <value>
+          <see langword="true" />検索方法がある場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 可能性のあるリソースを集中的に使用では、Active Directory サーバーを検索ため、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods%2A>プロパティでは、検索方向をオフにすることができます<xref:System.Web.Security.ActiveDirectoryMembershipProvider>メソッドです。 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods%2A>プロパティは、アプリケーションの構成で設定を使用してファイル、`enableSearchMethods`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素。  
+  
+ ときに、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods%2A>プロパティは`false`、次のメソッドは使用できません。  
+  
+-   <xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByName%2A>  
+  
+-   <xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByEmail%2A>  
+  
+-   <xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetAllUsers%2A>  
+  
+ プロバイダーは、サブツリー検索が開始される接続文字列で指定された検索の時点を使用します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ 検索クエリを実行したことを確認するまで、実稼働システムで検索を有効いないことをお勧め、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ディレクトリ サーバーのパフォーマンスに悪影響を及ぼすされません。 以降、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ステートレス Web 環境用に設計された、基になるによって公開されているページングの最適化を使用できない<xref:System.DirectoryServices>Api です。 つまり、大規模なディレクトリに対して検索時のページング操作は非常に手間がかかります避ける必要があります。 検索操作は、常に、接続文字列で構成されているディレクトリ サーバーまたはドメインの接続文字列の場合、自動的に選択したサーバーに対して発行されます。 プロバイダーは、その検索方法のグローバル カタログを使用しません。  
+  
+   
+  
+## Examples  
+ 次のコード例を構成する Web.config エントリを示しています、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスの Active Directory サーバーの検索を有効にします。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,   
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          enableSearchMethods="true" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アクセスを試みると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods" />プロパティは、前に作成された、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUsersByEmail">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUserCollection FindUsersByEmail (string emailToMatch, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUserCollection FindUsersByEmail(string emailToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByEmail(System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="emailToMatch" Type="System.String" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="emailToMatch">電子メール アドレスまたは検索対象の電子メール アドレスの一部。</param>
+        <param name="pageIndex">返される結果ページのインデックス。 <c>pageIndex</c>は 0 から始まる。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">このメソッドが戻るとき、コレクション内のユーザーの合計数を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>ユーザーの電子メール アドレスに基づいた Active Directory データ ストアからメンバーシップ ユーザーのコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUserCollection" />を含む<paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" />インスタンス化を開始位置で指定されたページ<paramref name="pageIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByEmail%2A>メソッドを取得、<xref:System.Web.Security.MembershipUserCollection>と一致するを格納する Active Directory からユーザー レコードを含む、`emailToMatch`パラメーター。 ユーザー レコードが返されます昇順で並べ替えられた電子メール アドレス。  
+  
+ `emailToMatch`パラメーターは 256 文字に制限されます。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、両方を使用して検索を発行する、`clientSearchTimeout`と`serverSearchTimeout`構成値。 以降、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスが 1 ページあたり 512 行のページを使用してディレクトリ サーバーに対して検索を実行する、タイムアウトによってフェッチされた結果の各ページには適用、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスです。 たとえば、1,000 行のデータの検索クエリの結果、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスはデータの 2 つのページとしてこの情報を取得します。 つまり、クライアントと検索のタイムアウトが 0 からカウントを開始するが、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、2 番目のページのデータを要求します。  
+  
+ によって返される結果、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByEmail%2A>メソッドは制約、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を指定<xref:System.Web.Security.MembershipUser>で返されるインスタンス、<xref:System.Web.Security.MembershipUserCollection>です。 `pageIndex`パラメーターを返すには、0 (ゼロ) が最初のページを示す結果のどのページを指定します。  
+  
+ `totalRecords`パラメーターは、 `out` Active Directory データ ストアに一致するメンバーシップ ユーザーの合計数に設定されているパラメーターが見つかりませんでした。 たとえば、構成済みのデータ ストアの 13 人のユーザーがある場合と`pageIndex`値が 1 と、 `pageSize` 5 の<xref:System.Web.Security.MembershipUserCollection>が返されますは 6 ~ 10 番目のユーザーが含まれます。 `totalRecords`パラメーターは 13 に設定するとします。  
+  
+ 設定して、ユーザーの検索を許可するかどうかを制御することができます、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods%2A>プロパティに、アプリケーションの構成ファイルを使用して、`enableSearchMethods`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素。 設定、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods%2A>プロパティを`false`により、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByEmail%2A>をスローするメソッド、<xref:System.NotSupportedException>例外。  
+  
+ プロバイダーは、サブツリー検索が開始される接続文字列で指定された検索の時点を使用します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ 検索クエリを実行したことを確認するまで、実稼働システムで検索を有効いないことをお勧め、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ディレクトリ サーバーのパフォーマンスに悪影響を及ぼすされません。 以降、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ステートレス Web 環境用に設計された、基になるによって公開されているページングの最適化を使用できない<xref:System.DirectoryServices>Api です。 つまり、大規模なディレクトリに対して検索時のページング操作は非常に手間がかかります避ける必要があります。 検索操作は、常に、接続文字列で構成されているディレクトリ サーバーまたはドメインの接続文字列の場合、自動的に選択したサーバーに対して発行されます。 プロバイダーは、その検索方法のグローバル カタログを使用しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByEmail(System.String,System.Int32,System.Int32,System.Int32@)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="emailToMatch" /> が空です。  
+  
+ \- または  
+  
+ <paramref name="emailToMatch" />256 文字を超えています。  
+  
+ \- または  
+  
+ <paramref name="pageIndex" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageSize" /> が 1 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageSize" />乗算<paramref name="pageIndex" />、plus <paramref name="pageSize" />、マイナス 1 がより大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods" /> プロパティが <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUsersByName">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUserCollection FindUsersByName (string usernameToMatch, int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUserCollection FindUsersByName(string usernameToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernameToMatch" Type="System.String" />
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="usernameToMatch">ユーザー名または検索するユーザー名の部分。</param>
+        <param name="pageIndex">返される結果ページのインデックス。 <c>pageIndex</c>は 0 から始まる。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">このメソッドが戻るとき、コレクション内で返されるレコードの合計数を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>ユーザー名に基づいた Active Directory データ ストアからユーザーのコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUserCollection" />を含む<paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" />インスタンス化を開始位置で指定されたページ<paramref name="pageIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByName%2A>メソッドを返します、<xref:System.Web.Security.MembershipUserCollection>インスタンスと一致するすべてのユーザー名の Active Directory データ ストアからユーザー レコードを含む、`userNameToMatch`パラメーター。 レコードがユーザー名でアルファベット順に並べ替えられて返されます。  
+  
+ によって返される結果、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByName%2A>メソッドは制約、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を指定<xref:System.Web.Security.MembershipUser>で返されるインスタンス、<xref:System.Web.Security.MembershipUserCollection>です。 `pageIndex`パラメーターを返すには、0 (ゼロ) が最初のページを示す結果のどのページを指定します。  
+  
+ `totalRecords`パラメーターは、 `out` Active Directory データ ストアに一致するメンバーシップ ユーザーの合計数に設定されているパラメーターが見つかりませんでした。 たとえば、構成済みのデータ ストアの 13 人のユーザーがある場合と`pageIndex`値が 1 と、 `pageSize` 5 の<xref:System.Web.Security.MembershipUserCollection>が返されますは 6 ~ 10 番目のユーザーが含まれます。 `totalRecords`パラメーターは 13 に設定するとします。  
+  
+ 設定して、ユーザーの検索を許可するかどうかを制御することができます、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods%2A>プロパティに、アプリケーションの構成ファイルを使用して、`enableSearchMethods`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素。 設定、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods%2A>プロパティの値を`false`により、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByName%2A>をスローするメソッド、<xref:System.NotSupportedException>例外。  
+  
+ プロバイダーは、サブツリー検索が開始される接続文字列で指定された検索の時点を使用します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ 検索クエリを実行したことを確認するまで、実稼働システムで検索を有効いないことをお勧め、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ディレクトリ サーバーのパフォーマンスに悪影響を及ぼすされません。 以降、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ステートレス Web 環境用に設計された、基になるによって公開されているページングの最適化を使用できない<xref:System.DirectoryServices>Api です。 つまり、大規模なディレクトリに対して検索時のページング操作は非常に手間がかかります避ける必要があります。 検索操作は、常に、接続文字列で構成されているディレクトリ サーバーまたはドメインの接続文字列の場合、自動的に選択したサーバーに対して発行されます。 プロバイダーは、その検索方法のグローバル カタログを使用しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="usernameToMatch" />空、またはユーザー名 (通常は 256 文字) の最大長を超えています。  
+  
+ \- または  
+  
+ <paramref name="usernameToMatch" />コンマが含まれています。  
+  
+ \- または  
+  
+ <paramref name="pageIndex" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="pageSize" /> が 1 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageSize" />乗算<paramref name="pageIndex" />、plus <paramref name="pageSize" />、マイナス 1 がより大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="usernameToMatch" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods" /> プロパティが <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GeneratePassword">
+      <MemberSignature Language="C#" Value="public virtual string GeneratePassword ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GeneratePassword() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.GeneratePassword" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ランダムなパスワードを生成します。</summary>
+        <returns>ランダムなパスワードです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.GeneratePassword%2A>のメソッド、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスの呼び出し、<xref:System.Web.Security.Membership.GeneratePassword%2A>のメソッド、<xref:System.Web.Security.Membership>ランダムなパスワードを取得するクラス。 値に、パスワードの長さが設定されている、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredPasswordLength%2A>プロパティです。 パスワードの長さは、14 未満をすることはできません。  
+  
+ 具体的には呼び出すことができます、<xref:System.Web.Security.Membership.GeneratePassword%2A>メソッドを参照することによって、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスのプロバイダーのプロパティから直接、<xref:System.Web.Security.Membership>クラスです。  
+  
+ 文字の英数字と次の区切り記号のみ生成されたパスワードを含む:! @# $% ^ & * () _-+ = [{}]};: <> &#124;。/?. 生成されたパスワードで非表示または印刷不可能な制御文字が含まれていません。  
+  
+ 生成されたパスワードには少なくともで指定された文字の英数字以外の文字の数、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredNonAlphanumericCharacters%2A>プロパティです。 内の正規表現で生成されたパスワードはテストされません、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordStrengthRegularExpression%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ディレクトリで設定複雑さの要件に一致するパスワードを生成しません。 ディレクトリで設定するパスワードの複雑性ルールが失敗したランダムなパスワードを生成することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllUsers">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUserCollection GetAllUsers (int pageIndex, int pageSize, out int totalRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUserCollection GetAllUsers(int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetAllUsers(System.Int32,System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUserCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageIndex" Type="System.Int32" />
+        <Parameter Name="pageSize" Type="System.Int32" />
+        <Parameter Name="totalRecords" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pageIndex">返される結果ページのインデックス。 <c>pageIndex</c>は 0 から始まる。</param>
+        <param name="pageSize">返される結果ページのサイズ。</param>
+        <param name="totalRecords">このメソッドが戻るとき、コレクション内で返されるレコードの合計数を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>Active Directory のデータ ソースに格納されているすべてのユーザーのコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUserCollection" />を含む<paramref name="pageSize" /><see cref="T:System.Web.Security.MembershipUser" />インスタンス化を開始位置で指定されたページ<paramref name="pageIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、 <xref:System.Web.Security.Membership> ASP.NET アプリケーションの構成ファイルで指定された Active Directory データ ストアからユーザー情報を取得するクラス。  
+  
+ によって返される結果、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetAllUsers%2A>メソッドは制約、`pageIndex`と`pageSize`パラメーター。 `pageSize`パラメーターの最大数を指定<xref:System.Web.Security.MembershipUser>で返されるインスタンス、<xref:System.Web.Security.MembershipUserCollection>コレクション。 `pageIndex`パラメーターを返すには、0 (ゼロ) が最初のページを示す結果のどのページを指定します。  
+  
+ `totalRecords`パラメーターは、 `out` Active Directory データ ストアに一致するメンバーシップ ユーザーの合計数に設定されているパラメーターが見つかりませんでした。 たとえば、構成済みのデータ ストアの 13 人のユーザーがある場合と`pageIndex`値が 1 la と`pageSize`5 の<xref:System.Web.Security.MembershipUserCollection>が返されますは 6 ~ 10 番目のユーザーが含まれます。 `totalRecords`パラメーターは 13 に設定するとします。  
+  
+ 設定してユーザーの検索を許可するかどうかを制御することができます、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods%2A>プロパティに、アプリケーションの構成ファイルを使用して、`enableSearchMethods`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素。 設定、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods%2A>プロパティを`false`により、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetAllUsers%2A>をスローするメソッド、<xref:System.NotSupportedException>例外。  
+  
+ プロバイダーは、サブツリー検索が開始される接続文字列で指定された検索の時点を使用します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ 検索クエリを実行したことを確認するまで、実稼働システムで検索を有効いないことをお勧め、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ディレクトリ サーバーのパフォーマンスに悪影響を及ぼすされません。 以降、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ステートレス Web 環境用に設計された、基になるによって公開されているページングの最適化を使用できない<xref:System.DirectoryServices>Api です。 つまり、大規模なディレクトリに対して検索時のページング操作は非常に手間がかかります避ける必要があります。 検索操作は、常に、接続文字列で構成されているディレクトリ サーバーまたはドメインの接続文字列の場合、自動的に選択したサーバーに対して発行されます。 プロバイダーは、その検索方法のグローバル カタログを使用しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetAllUsers(System.Int32,System.Int32,System.Int32@)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pageIndex" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="pageSize" /> が 1 未満です。  
+  
+ \- または  
+  
+ <paramref name="pageSize" />乗算<paramref name="pageIndex" />、plus <paramref name="pageSize" />、マイナス 1 がより大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods" /> プロパティが <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNumberOfUsersOnline">
+      <MemberSignature Language="C#" Value="public override int GetNumberOfUsersOnline ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetNumberOfUsersOnline() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetNumberOfUsersOnline" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>常に例外 <see cref="T:System.NotSupportedException" /> をスローします。</summary>
+        <returns>常に <see cref="T:System.NotSupportedException" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、オンラインのユーザーの数を返すをサポートしていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">すべての呼び出しに、<see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetNumberOfUsersOnline" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPassword">
+      <MemberSignature Language="C#" Value="public override string GetPassword (string username, string passwordAnswer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetPassword(string username, string passwordAnswer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetPassword(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="passwordAnswer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">パスワードを取得する対象となるユーザー。</param>
+        <param name="passwordAnswer">ユーザーのパスワードの回答。</param>
+        <summary>データベースから指定されたユーザーのパスワードを返します。 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />クラスがこのメソッドをサポートしていません。</summary>
+        <returns>常にスロー、<see cref="T:System.NotSupportedException" />例外。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ユーザーのパスワードを返すことをサポートしていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />はパスワードの取得をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUser">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUser GetUser (object providerUserKey, bool userIsOnline);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUser GetUser(object providerUserKey, bool userIsOnline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerUserKey" Type="System.Object" />
+        <Parameter Name="userIsOnline" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="providerUserKey">ユーザーの一意の識別子。</param>
+        <param name="userIsOnline"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser(System.Object,System.Boolean)" />メソッドには、このパラメーターが無視されます。</param>
+        <summary>指定されたユーザー キーに関連付けられているメンバーシップ ユーザーの情報を取得します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />指定されたユーザーを表すインスタンス。 ユーザーが見つからないかどうか、指定された Active Directory データ ストアに<paramref name="providerUserKey" />値、<see langword="null" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser%2A>メソッドによって呼び出されます、 <xref:System.Web.Security.Membership> Active Directory データ ストアから、指定したユーザーに関する情報を取得するクラス。  
+  
+ 検索は、ユーザー インスタンスの場所、`objectSID`属性と一致する、`providerUserKey`パラメーター。  
+  
+ プロバイダーは、サブツリー検索が開始される接続文字列で指定された検索の時点を使用します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser(System.Object,System.Boolean)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="providerUserKey" /> が <see cref="T:System.Security.Principal.SecurityIdentifier" /> 型ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="providerUserKey" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUser">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipUser GetUser (string username, bool userIsOnline);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.Security.MembershipUser GetUser(string username, bool userIsOnline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipUser</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="userIsOnline" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="username">情報を取得するユーザーの名前。</param>
+        <param name="userIsOnline"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser(System.String,System.Boolean)" />メソッドには、このパラメーターが無視されます。</param>
+        <summary>指定されたユーザー名に関連付けられているメンバーシップ ユーザーの情報を取得します。</summary>
+        <returns>A<see cref="T:System.Web.Security.MembershipUser" />指定されたユーザーを表すインスタンス。 ユーザーが見つからないかどうか、指定された Active Directory データ ストアに<paramref name="username" />値、<see langword="null" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser%2A>メソッドによって呼び出されます、 <xref:System.Web.Security.Membership> Active Directory データ ストアから、指定したユーザーに関する情報を取得するクラス。  
+  
+ プロバイダーは、サブツリー検索が開始される接続文字列で指定された検索の時点を使用します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ 先頭および末尾のスペースがトリミング、`username`パラメーターの値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="username" />空、またはユーザー名 (通常は 256 文字) の最大長を超えています。  
+  
+ \- または  
+  
+ <paramref name="username" />コンマが含まれています。  
+  
+ \- または  
+  
+ ユーザーは、マップ先の名前、<see langword="userPrincipalName" />属性および<paramref name="username" />パラメーターには、円記号が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser(System.String,System.Boolean)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUserNameByEmail">
+      <MemberSignature Language="C#" Value="public override string GetUserNameByEmail (string email);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetUserNameByEmail(string email) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.GetUserNameByEmail(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="email" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="email">検索するメール アドレス。</param>
+        <summary>指定した電子メール アドレスに関連付けられているユーザー名を取得します。</summary>
+        <returns>指定した電子メール アドレスに関連付けられているユーザー名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって呼び出されます、 <xref:System.Web.Security.Membership> Active Directory データ ストアからユーザー名を取得するクラスは、ユーザーの電子メール アドレスに基づいています。  
+  
+ メンバーシップ データ ストア内の 1 つ以上のユーザーは、同じ電子メール アドレスを持っている場合は、最初のユーザー名が返されます。 設定することができます、`requiresUniqueEmail`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素`true`アプリケーション構成ファイルで、データベースの場合は、各電子メール アドレスが一意であることを確認します。  
+  
+ 先頭および末尾のスペースがトリミング、`email`パラメーターの値。 トリミング後の電子メール アドレスが空の場合、<xref:System.ArgumentException>がスローされます。 電子メール アドレスが場合`null`、Active Directory データ ストア内のすべてのユーザー名が検索され、最初のユーザー名が返されます。  
+  
+ 検索クエリを実行したことを確認するまで、実稼働システムで検索を有効いないことをお勧め、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ディレクトリ サーバーのパフォーマンスに悪影響を及ぼすされません。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetUserNameByEmail%2A>メソッドの実行にいる場合でも、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnableSearchMethods%2A>プロパティは`false`します。  
+  
+ 以降、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスは、ステートレス Web 環境用に設計された、基になるによって公開されているページングの最適化を使用できない<xref:System.DirectoryServices>Api です。 つまり、大規模なディレクトリに対して検索時のページング操作は非常に手間がかかります避ける必要があります。 検索操作は、常に、接続文字列で構成されているディレクトリ サーバーまたはドメインの接続文字列の場合、自動的に選択したサーバーに対して発行されます。 プロバイダーは、その検索方法のグローバル カタログを使用しません。  
+  
+ プロバイダーは、サブツリー検索が開始される接続文字列で指定された検索の時点を使用します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="email" />256 文字を超えています  
+  
+ \- または  
+  
+ トリミング後<paramref name="email" />が空です。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">複数のユーザーが電子メール アドレスが同じデータ ストアに存在して、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresUniqueEmail" />プロパティの値が<see langword="true" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">プロバイダーが初期化されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="config" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</param>
+        <param name="config">A<see cref="T:System.Collections.Specialized.NameValueCollection" />名前と、メンバーシップ プロバイダーの構成オプションの値を含むです。</param>
+        <summary>初期化、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />アプリケーションの構成ファイルからプロパティ値を持つインスタンス。 このメソッドは、コードから呼び出されるものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、初期化、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>プロパティ値を持つオブジェクトは、ASP.NET アプリケーション構成ファイル (Web.config) で指定し、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="config" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException"><see langword="applicationName" />アプリケーションの構成で指定された属性は、256 文字を超えています。  
+  
+ \- または  
+  
+ <see langword="connectionStringName" />属性が空か、アプリケーションの構成に存在しません。  
+  
+ \- または  
+  
+ 指定した接続文字列、<see langword="connectionStringName" />アプリケーション構成ファイル内の属性が空か存在しません。  
+  
+ \- または  
+  
+ <see langword="connectionProtection" />属性が以外の値に設定が<see cref="F:System.Web.Security.ActiveDirectoryConnectionProtection.SignAndSeal" />または<see cref="F:System.Web.Security.ActiveDirectoryConnectionProtection.None" />アプリケーション構成ファイルにします。  
+  
+ \- または  
+  
+ <see langword="connectionUsername" />属性は、アプリケーション構成ファイルで指定されたが、その値が空です。  
+  
+ \- または  
+  
+ <see langword="connectionPassword" />属性は、アプリケーション構成ファイルで指定されたが、その値が空です。  
+  
+ \- または  
+  
+ いずれか、<see langword="connectionUsername" />属性または<see langword="connectionPassword" />属性は、アプリケーション構成ファイルでは、両方ではなくで指定します。  
+  
+ \- または  
+  
+ <see langword="clientSearchTimeout" />属性を指定し、正の整数ではありません。  
+  
+ \- または  
+  
+ <see langword="serverSearchTimeout" />属性を指定し、正の整数ではありません。  
+  
+ \- または  
+  
+ <see langword="enableSearchMethods" />属性が指定され、ブール値ではありません。  
+  
+ \- または  
+  
+ <see langword="requiresUniqueEmail" />属性が指定され、ブール値ではありません。  
+  
+ \- または  
+  
+ <see langword="enablePasswordReset" />属性が指定され、ブール値ではありません。  
+  
+ \- または  
+  
+ <see langword="requiresQuestionAndAnswer" />属性が指定され、ブール値ではありません。  
+  
+ \- または  
+  
+ <see langword="minRequiredPasswordLength" />属性を指定して、128 より大きいか負であります。  
+  
+ \- または  
+  
+ <see langword="minRequiredNonalphanumericCharacters" />属性を指定して、128 より大きいか負であります。  
+  
+ \- または  
+  
+ 指定された正規表現、<see langword="passwordStrengthRegularExpression" />アプリケーション構成ファイル内の属性が有効な正規表現ではありません  
+  
+ \- または  
+  
+ <see langword="attributeMapUsername" />属性が指定され、空の文字列であります。  
+  
+ \- または  
+  
+ <see langword="connectionString" />属性が"LDAP"で始まっていません。  
+  
+ \- または  
+  
+ 指定した接続文字列、<see langword="connectionString" />属性は無効です。  
+  
+ \- または  
+  
+ 内の接続文字列、<see langword="connectionString" />属性は、サーバーなしのバインドを指定します。  
+  
+ \- または  
+  
+ <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />ドメインまたはディレクトリのサーバーとの接続を確立できませんでした。  
+  
+ \- または  
+  
+ <see langword="connectionProtection" />属性に設定されている<see cref="F:System.Web.Security.ActiveDirectoryConnectionProtection.SignAndSeal" />がサーバーと、SSL でも符号付きと sealed の接続を確立できます。  
+  
+ \- または  
+  
+ <see langword="connectionProtection" />属性に設定されている<see cref="F:System.Web.Security.ActiveDirectoryConnectionProtection.None" />ですが、<see langword="connectionUsername" />と<see langword="connectionPassword" />属性が設定されていません。  
+  
+ \- または  
+  
+ <see langword="connectionProtection" />属性に設定されている<see cref="F:System.Web.Security.ActiveDirectoryConnectionProtection.SignAndSeal" />ですが、 <see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" /> ADAM サーバーとの SSL 接続を確立できませんでした。  
+  
+ \- または  
+  
+ <see langword="connectionString" />属性は、グローバル カタログ (GC) または SSL グローバル カタログ ポートのいずれかを指定します。  
+  
+ \- または  
+  
+ <see langword="connectionString" />属性は、Active Directory サーバーまたはドメインを指定しますが、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />ドメインの既定の名前付けコンテキストを取得できませんでした。  
+  
+ \- または  
+  
+ <see langword="connectionString" />属性は、Active Directory サーバーまたはドメインを指定しますが、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />既定のユーザー コンテナーを取得できませんでした。  
+  
+ \- または  
+  
+ <see langword="connectionString" /> ADAM サーバーを指定する属性が、アプリケーション パーティションまたはコンテナーは指定しません。  
+  
+ \- または  
+  
+ <see langword="connectionString" />属性は、アプリケーション パーティションまたはコンテナーを指定しますが、指定されたコンテナーが存在しません。  
+  
+ \- または  
+  
+ <see langword="connectionString" />属性は、ユーザー インスタンスを含めることはできません、コンテナーを指定します。  
+  
+ 属性マッピングが指定されますが、その値が空でした。  
+  
+ \- または  
+  
+ 属性のマップは 2 回指定します。  
+  
+ \- または  
+  
+ 属性マッピングが指定されますが、ユーザー インスタンスに属性が存在しません。  
+  
+ \- または  
+  
+ 属性マッピングが指定されますが、ディレクトリ属性は、正しいデータ型の。  
+  
+ \- または  
+  
+ 属性マッピングが指定されていますが、ディレクトリ属性は複数の値。  
+  
+ \- または  
+  
+ <see langword="attributeMapUserName" />属性が指定されていて、どちらにマップされていた、 <c>sAMAccountName</c>も<c>userPrincipalName</c>ディレクトリ属性、Active Directory に接続するとき。  
+  
+ \- または  
+  
+ <see langword="attributeMapUserName" />属性を指定しにマッピングされませんでした、 <c>userPrincipalName</c> ADAM サーバーに接続するときに、ディレクトリ属性です。  
+  
+ \- または  
+  
+ <see langword="enablePasswordReset" />属性は<see langword="true" />と<see langword="requiresQuestionAndAnswer" />属性は<see langword="false" />アプリケーション構成ファイルにします。  
+  
+ \- または  
+  
+ <see langword="maxInvalidPasswordAttempts" />属性が指定されましたが、0 以外の正の整数ではありません。  
+  
+ \- または  
+  
+ <see langword="passwordAttemptWindow" />属性が指定されましたが、0 以外の正の整数ではありません。  
+  
+ \- または  
+  
+ <see langword="passwordAnswerAttemptLockoutDuration" />属性が指定されましたが、0 以外の正の整数ではありません。  
+  
+ \- または  
+  
+ <see langword="enablePasswordReset" />属性は<see langword="true" />のいずれかと、 <see langword="attributeMapFailedPasswordAnswerCount" />、 <see langword="attributeMapFailedPasswordAnswerTime" />、および<see langword="attributeMapFailedPasswordAnswerLockoutTime" />属性は空です。  
+  
+ \- または  
+  
+ <see langword="requiresQuestionAndAnswer" />属性は<see langword="true" />いずれかが、<see langword="attributeMapPasswordQuestion" />または<see langword="attributeMapPasswordAnswer" />属性が空です。  
+  
+ \- または  
+  
+ アプリケーション構成ファイルで指定された属性が正しくありません。</exception>
+        <exception cref="T:System.Web.HttpException">ホストされた環境で、アプリケーションを実行し、<see cref="T:System.Web.AspNetHostingPermissionLevel" />に設定されている<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">ディレクトリの照会中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxInvalidPasswordAttempts">
+      <MemberSignature Language="C#" Value="public override int MaxInvalidPasswordAttempts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxInvalidPasswordAttempts" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.MaxInvalidPasswordAttempts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>失敗した解答の試行、ユーザーがパスワード リセットの質問の数を取得します。</summary>
+        <value>失敗したパスワードの数は、アカウントがロックされるまで、ユーザーが許可される試行を回答します。 既定値は<c>5</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは`true`ユーザーが自分のパスワードをリセットするパスワードの質問に答える必要があります。 ユーザーによって確立された時間枠内の解答の試行の数に制限ができる、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAttemptWindow%2A>プロパティです。 パスワード回答試行の回数がより大きいかに格納されている値に等しい場合は、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.MaxInvalidPasswordAttempts%2A>プロパティ、ユーザーがロックされているさらに試行外に格納されている時間を分単位、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration%2A>プロパティです。  
+  
+> [!NOTE]
+>  このプロパティは、ユーザーがロックアウトされるまでに実行できるログオンに失敗した試行の回数を制御しません。Active Directory サーバーが処理では、ログオン試行に失敗し、このプロパティの値の影響を受けません。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.MaxInvalidPasswordAttempts%2A>プロパティは、アプリケーションの構成で設定を使用してファイル、`maxInvalidPasswordAttempts`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素。 プロパティは、アプリケーションの構成ファイルで設定されていない場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.MaxInvalidPasswordAttempts%2A>プロパティは、既定値に設定の`5`します。  
+  
+   
+  
+## Examples  
+ 次のコード例を構成する Web.config エントリを示しています、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider> 3 つの作成が失敗したユーザーをロックアウトするインスタンスは、10 分間の時間枠でパスワードの回答を入力しようとしています。 ユーザーがロックアウトされた場合それ以上パスワードの質問に答える場合があります試行を 15 分間。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,  
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          maxInvalidPasswordAttempts="3"  
+          passwordAttemptWindow="10"  
+          passwordAnswerAttemptLockoutDuration="15" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アクセスを試みると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.MaxInvalidPasswordAttempts" />プロパティは、前に作成された、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MinRequiredNonAlphanumericCharacters">
+      <MemberSignature Language="C#" Value="public override int MinRequiredNonAlphanumericCharacters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinRequiredNonAlphanumericCharacters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredNonAlphanumericCharacters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効なパスワードに存在する必要がある特殊文字の最小数を取得します。</summary>
+        <value>有効なパスワードに存在する必要がある特殊文字の最小数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredNonAlphanumericCharacters%2A>プロパティが有効なパスワードを作成する入力する必要がある、特別な英数字以外の文字の最小数を返します。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredNonAlphanumericCharacters%2A>プロパティ値がアプリケーションの構成を使用して、設定、`minRequiredNonalphanumericCharacters`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)構成要素。  
+  
+ 英数字以外の文字が対象の文字、<xref:System.Char.IsLetterOrDigit%2A>メソッドを返します。`false`です。  
+  
+   
+  
+## Examples  
+ 次の例は、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)内の構成要素、`system.web`アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>メンバーシップ サービス、およびセットを提供するクラス、`minRequiredNonalphanumericCharacters`属性を 1 つの文字です。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,   
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          minRequiredNonalphanumericCharacters = "1" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredNonAlphanumericCharacters" />プロパティにアクセスする前に、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MinRequiredPasswordLength">
+      <MemberSignature Language="C#" Value="public override int MinRequiredPasswordLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinRequiredPasswordLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredPasswordLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスワードに最低限必要な長さを取得します。</summary>
+        <value>パスワードに最低限必要な長さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredPasswordLength%2A>プロパティが有効なパスワードを作成する入力する必要がありますの文字の最小数を取得します。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredPasswordLength%2A>プロパティ値がアプリケーションの構成を使用して、設定、`minRequiredPasswordLength`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)構成要素。  
+  
+   
+  
+## Examples  
+ 次の例は、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)内の構成要素、`system.web`アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>メンバーシップ サービス、およびセットを提供するクラス、`minRequiredPasswordLength`属性 7 文字をします。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,   
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          minRequiredPasswordLength = "7" />  
+  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredPasswordLength" />プロパティにアクセスする前に、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordAnswerAttemptLockoutDuration">
+      <MemberSignature Language="C#" Value="public int PasswordAnswerAttemptLockoutDuration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PasswordAnswerAttemptLockoutDuration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象のユーザー アカウントをロックアウトする、ユーザーが不正なパスワードの回答を何度も後に時間の長さを取得します。</summary>
+        <value>正しくないパスワードの解答が多すぎるを提供すると、ユーザーがロックアウトを分単位での時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは`true`ユーザーが自分のパスワードをリセットするパスワードの質問に答える必要があります。 正しい解答を提供する、ユーザーが失敗した場合は、連続する回数と等しい、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.MaxInvalidPasswordAttempts%2A>監視で指定された期間内のプロパティ値、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAttemptWindow%2A>プロパティ、ユーザーはこれ以上の試行に含まれている時間を分単位のロック、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration%2A>プロパティです。  
+  
+> [!NOTE]
+>  このプロパティは、有効なパスワードの入力に失敗した後、ユーザーがロックアウト期間を設定していません。 Active Directory サーバーが処理では、ログオン試行に失敗し、このプロパティの値の影響を受けません。 お勧め、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration%2A>プロパティは、非常に指定されたアカウント ロックアウトの期間以上失敗したログオン試行の Active Directory の構成と同じ値に設定します。 これにより、ユーザーかどうか、ロックアウトのログオン試行の失敗のため、または不正なパスワードの解答に関係なく動作に一貫性のある自動ロックアウトが表示されます。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration%2A>プロパティは、アプリケーションの構成で設定を使用してファイル、`passwordAnswerAttemptLockoutDuration`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素。 プロパティは、アプリケーションの構成ファイルで設定されていない場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration%2A>プロパティが既定値の 30 分に設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を構成する Web.config エントリを示しています、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider> 3 つの作成が失敗したユーザーをロックアウトするインスタンスは、10 分間の時間枠でパスワードの回答を入力しようとしています。 ユーザーがロックアウトされた場合それ以上パスワードの質問に答える場合があります試行を 15 分間。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,   
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          maxInvalidPasswordAttempts="3"  
+          passwordAttemptWindow="10"  
+          passwordAnswerAttemptLockoutDuration="15" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アクセスを試みると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration" />プロパティは、前に作成された、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordAttemptWindow">
+      <MemberSignature Language="C#" Value="public override int PasswordAttemptWindow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PasswordAttemptWindow" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAttemptWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効なパスワードまたは有効なパスワードを指定するが連続して失敗した試行中に応答が追跡される時間枠を取得します。</summary>
+        <value>時間枠、分単位で有効なパスワードまたは有効なパスワードを指定するが連続して失敗した試行中に応答が追跡されます。 既定値は、10 分です。 失敗との間の間隔がより大きい場合、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAttemptWindow" />プロパティの設定、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスとして、処理が失敗するたびした最初の試行が失敗します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAttemptWindow%2A>プロパティの動作と組み合わせて、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.MaxInvalidPasswordAttempts%2A>回繰り返し試行のパスワードまたはからメンバーシップ ユーザーのパスワードの回答を推測する必要のないソースから保護するためのプロパティです。 ユーザーへのログイン、パスワードの変更またはパスワードをリセットしようとしていますと、の連続した試行の特定の数だけが、指定された時間内で許可されます。 時間枠の長さがで指定された、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAttemptWindow%2A>プロパティで、無効な試行間の許容時間を分単位を識別します。 ユーザーが自分のリセットに連続した数の試行が失敗した場合、または自分のパスワードに格納されている値に等しい、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.MaxInvalidPasswordAttempts%2A>試行が最後に無効なは分に指定された数よりも少ないためプロパティ、および時間の経過時間、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAttemptWindow%2A>プロパティ、そのユーザー アカウントのロックアウトに含まれている時間を分単位、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration%2A>プロパティです。 現在の失敗した試行と失敗した前回の間隔がより大きい場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAttemptWindow%2A>プロパティを設定すると、現在無効な試行回数は、最初の試行としてカウントされます。 無効な試行の最大数に達する前に、有効なパスワードの回答を指定する場合、無効なパスワードの解答の試行回数は 0 に設定します。 最大数が無効な許可される前に、有効なパスワードが指定される場合は、試行回数に達すると、無効なパスワードの試行回数と無効なパスワードの解答の試行の回数が 0 に設定します。  
+  
+ お勧め、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration%2A>プロパティが同じ値に設定するように、アカウント ロックアウトの期間が指定されている最大数のログオン失敗回数 Active Directory の構成にします。 ログオン試行の失敗のため、または不正なパスワードの解答がロックアウトされたかどうかは、ユーザーに対する一貫性のある自動ロックアウト動作が表示されます。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration%2A>プロパティは、アプリケーションの構成で設定を使用してファイル、`passwordAttemptWindow`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素。 プロパティは、アプリケーションの構成ファイルで設定されていない場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration%2A>プロパティが既定値は 10 分に設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を構成する Web.config エントリを示しています、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider> 3 つの作成が失敗したユーザーをロックアウトするインスタンスは、10 分間の時間枠でパスワードの回答を入力しようとしています。 ユーザーがロックアウトされた場合それ以上パスワードの質問に答える場合があります試行を 15 分間。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,  
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          maxInvalidPasswordAttempts="3"  
+          passwordAttemptWindow="10"  
+        passwordAnswerAttemptLockoutDuration="15" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アクセスを試みると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAttemptWindow" />プロパティは、前に作成された、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordFormat">
+      <MemberSignature Language="C#" Value="public override System.Web.Security.MembershipPasswordFormat PasswordFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Security.MembershipPasswordFormat PasswordFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipPasswordFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Active Directory データ ストア内のパスワードの形式を示す値を取得します。</summary>
+        <value><see cref="T:System.Web.Security.MembershipPasswordFormat" /> 値のいずれか。 <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordFormat" />プロパティは常に返します<see cref="F:System.Web.Security.MembershipPasswordFormat.Hashed" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>プロパティでは、パスワードの取得はサポートされていません。 動作、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>オブジェクトは、その他のプロバイダーの操作と同じ`Hashed`パスワードです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PasswordStrengthRegularExpression">
+      <MemberSignature Language="C#" Value="public override string PasswordStrengthRegularExpression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PasswordStrengthRegularExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordStrengthRegularExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスワードの評価に使用される正規表現を取得します。</summary>
+        <value>パスワードの評価に使用される正規表現。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordStrengthRegularExpression%2A>プロパティは、パスワードの複雑さの評価に使用される正規表現を取得します。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordStrengthRegularExpression%2A>で自動生成されたパスワードを検証するプロパティは使用されません、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ResetPassword%2A>メソッドです。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordStrengthRegularExpression%2A>アプリケーションの構成を使用して、プロパティが設定されて、`passwordStrengthRegularExpression`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)構成要素。  
+  
+   
+  
+## Examples  
+ 次の例は、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)内の構成要素、`system.web`アプリケーションの Web.config ファイルのセクションです。 アプリケーションがのインスタンスを使用することを指定します、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>メンバーシップ サービスとセットを提供するクラス、`passwordStrengthRegularExpression`パスワードが、次の条件を満たしていることを検証する正規表現に属性します。  
+  
+-   7 文字を超えています。  
+  
+-   少なくとも 1 つの桁が含まれています。  
+  
+-   少なくとも 1 つの特殊 (アルファベット以外の) 文字が含まれています。  
+  
+ パスワードがこれらの条件を満たしていない場合、メンバーシップ プロバイダーによって、パスワードは受け入れられません。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,   
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          passwordStrengthRegularExpression=  
+            "@\"(?=.{6,})(?=(.*\d){1,})(?=(.*\W){1,})" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordStrengthRegularExpression" />プロパティにアクセスする前に、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresQuestionAndAnswer">
+      <MemberSignature Language="C#" Value="public override bool RequiresQuestionAndAnswer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresQuestionAndAnswer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーシップ プロバイダーがユーザーの作成時に、パスワードの質問と回答を要求するように構成されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />オブジェクトが、それ以外のパスワードの質問を必要とし、ユーザーの回答するように構成<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer%2A>プロパティは、アプリケーションの構成で設定を使用してファイル、`requiresQuestionAndAnswer`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素。 プロパティは、アプリケーションの構成ファイルで設定されていない場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer%2A>プロパティは、既定値に設定の`false`します。  
+  
+ ときに、`requiresQuestionAndAnswer`属性に設定されている`true`、これらの追加属性を設定することも必要があります。  
+  
+-   `attributeMapPasswordQuestion`および`attributeMapPasswordAnswer`Active Directory スキーマの属性にマップする必要があります。  
+  
+ 上記の条件が満たされない場合、<xref:System.Configuration.Provider.ProviderException>初期化時にスローされます。  
+  
+> [!NOTE]
+>  パスワードの質問と回答が必要、ユーザーを作成するときにできますが、設定、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティを`false`をユーザーが自分のパスワードを変更することを防ぐために、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を構成する Web.config エントリを示しています、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>パスワードのリセットを有効にするインスタンス。 「パスワードのリセット」アクセス権を与えられたユーザーの明示的な資格情報を使用します。  
+  
+> [!IMPORTANT]
+>  Web.config ファイルにユーザーの資格情報を配置するときは、セキュリティ上の潜在的な脅威があります。 Web.config ファイルを含むディレクトリへのアクセス権を持つユーザーでは、ファイルを読み取るでき、したがって、資格情報を表示することができます。 このような脅威から保護する方法の詳細については、「[暗号化の構成情報を使用して保護された構成](http://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)です。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,  
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          connectionUsername="UserWithResetPasswordRights"  
+          connectionPassword="PasswordForUser"  
+          enablePasswordReset="true"  
+          requiresQuestionAndAnswer="true"  
+          attributeMapPasswordQuestion="PasswordQuestionADAttribute"  
+          attributeMapPasswordAnswer="PasswordAnswerADAttribute"  
+          attributeMapFailedPasswordAnswerCount="AnswerCountADAttribute"  
+          attributeMapFailedPasswordAnswerTime="AnswerTimeADAttribute"  
+          attributeMapFailedPasswordAnswerLockoutTime="LockOutTimeADAttribute" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アクセスを試みると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer" />プロパティは、前に作成された、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUniqueEmail">
+      <MemberSignature Language="C#" Value="public override bool RequiresUniqueEmail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUniqueEmail" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresUniqueEmail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Active Directory サーバーに格納されている電子メール アドレスが一意である必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />電子メール アドレスが一意である必要がある場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresUniqueEmail%2A>プロパティは`true`、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスにより、現在内の他のすべてのユーザーが電子メール アドレスが使用されないことスコープのときにいずれか、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.CreateUser%2A>または<xref:System.Web.Security.ActiveDirectoryMembershipProvider.UpdateUser%2A>メソッドが呼び出されます。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresUniqueEmail%2A>プロパティは、アプリケーションの構成で設定を使用してファイル、`requiresUniqueEmail`の属性、 [membership 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b9c1ee8f-33ca-4361-8666-b42a0fe86049)要素。 プロパティは、アプリケーションの構成ファイルで設定されていない場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresUniqueEmail%2A>プロパティは、既定値に設定の`false`します。  
+  
+   
+  
+## Examples  
+ 次のコード例を構成する Web.config エントリを示しています、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>を Active Directory サーバーに格納されているユーザーの一意の電子メール アドレスを必要とするインスタンス。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="ADService" connectionString="LDAP://ldapServer/" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="AspNetActiveDirectoryMembershipProvider">  
+      <providers>  
+        <add name="AspNetActiveDirectoryMembershipProvider"   
+          type="System.Web.Security.ActiveDirectoryMembershipProvider,   
+          System.Web, Version=2.0.3600, Culture=neutral,   
+          PublicKeyToken=b03f5f7f11d50a3a"  
+          requiresUniqueEmail="true" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アクセスを試みると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresUniqueEmail" />プロパティは、前に作成された、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetPassword">
+      <MemberSignature Language="C#" Value="public override string ResetPassword (string username, string passwordAnswer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ResetPassword(string username, string passwordAnswer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.ResetPassword(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="passwordAnswer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">パスワードをリセットするユーザー。</param>
+        <param name="passwordAnswer">指定したユーザーのパスワードの回答。</param>
+        <summary>ユーザーのパスワードをリセットして、自動的に生成された新しいパスワードにします。</summary>
+        <returns>指定したユーザーの新しいパスワード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドを呼び出す、<xref:System.Web.Security.Membership>ランダムに新しい Active Directory データ ストア内のユーザーのパスワードをリセットするクラスが値を生成します。 新しいパスワードが返されます。  
+  
+> [!NOTE]
+>  によって作成されたランダムなパスワード、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ResetPassword%2A>メソッド内の正規表現を渡すは保証されません、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordStrengthRegularExpression%2A>プロパティです。 ただし、ランダムなパスワードがによって確立された条件を満たして、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredPasswordLength%2A>と<xref:System.Web.Security.ActiveDirectoryMembershipProvider.MinRequiredNonAlphanumericCharacters%2A>プロパティです。  
+  
+ 不適切な回答を指定する場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ResetPassword%2A>メソッドは、内部カウンターを無効なパスワードの解答の試行のトラックが 1 ずつ増加します。 これにより、ユーザーにへの呼び出しで、ロックの状態がクリアされるまで、ログオンできなくなることができます、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.UnlockUser%2A>メソッドです。 正しいパスワードの回答を指定し、ユーザーが out、無効なパスワードの試行回数を追跡する内部カウンターし、ロックされていない場合は、0 にリセットされます。 詳細については、次を参照してください。、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.MaxInvalidPasswordAttempts%2A>と<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAttemptWindow%2A>プロパティです。  
+  
+ すべてのパラメーター値は、先頭と末尾のスペースが切り捨てられます。  
+  
+ 呼び出すことができます、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ResetPassword%2A>メソッドへの参照を最初に取得して直接、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスから、<xref:System.Web.Security.Membership.Provider%2A?displayProperty=nameWithType>プロパティです。  
+  
+ プロバイダーは、サブツリー検索が開始される接続文字列で指定された検索の時点を使用します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ Active Directory サーバーでパスワードを設定する、`connectionProtection`に属性を設定する必要があります<xref:System.Web.Security.ActiveDirectoryConnectionProtection.SignAndSeal>です。  
+  
+ ADAM サーバーを使用する場合、`connectionProtection`に属性を設定することができます<xref:System.Web.Security.ActiveDirectoryConnectionProtection.None>、明示的にパスワードがセキュリティ保護されていない接続で変更を許可する ADAM サーバーを構成するときにのみ、します。  
+  
+> [!IMPORTANT]
+>  Active Directory サーバーへの接続に使用する資格情報がドメイン管理者権限が (非推奨) または「パスワードのリセット」アクセス権を持っていない場合、パスワードをリセットすることはできません。  
+  
+ パスワードをリセットするには、次の条件をすべて満たす必要があります。  
+  
+-   <xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティに設定する必要があります`true`です。  
+  
+-   Active Directory スキーマを変更して、パスワードの質問と回答を格納するための属性を含める必要があり、パスワードの 3 つの追跡フィールドの変更に回答します。  
+  
+-   `attributeMapPasswordQuestion`、 `attributeMapPasswordAnswer`、 `attributMapFailedPasswordAnswerCount`、 `attributeMapFailedPasswordAnswerTime`、および`attributeMapFailedPasswordAnswerLockedTime`属性は、アプリケーション構成ファイルで設定する必要があります。  
+  
+-   <xref:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresQuestionAndAnswer%2A>プロパティに設定する必要があります`true`です。  
+  
+-   (プロセスのアカウントまたは明示的な資格情報)、Active Directory のデータ ストアに接続するためのセキュリティ コンテキストはパスワードを変更するための十分な権限が必要です。 Active Directory サーバーへの接続に使用する資格情報は、ドメイン管理者権限が (非推奨) または「パスワードのリセット」アクセス権があります。  
+  
+> [!NOTE]
+>  Active Directory サーバーに設定されたセキュリティ ポリシーが不可能になることを<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ResetPassword%2A>ポリシーを満たしているパスワードを生成する方法です。 既定の実装、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.GeneratePassword%2A>メソッドを Windows Server 2003 SP1 を実行するドメイン コント ローラーで、既定のパスワード ポリシーを満たすパスワードが生成されます。 Active Directory サーバー上のセキュリティ ポリシーにより、パスワードをリセットできない場合、<xref:System.Configuration.Provider.ProviderException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.ResetPassword(System.String,System.String)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset" />プロパティの値が<see langword="false" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="passwordAnswer" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="username" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="passwordAnswer" />トリミング後の  
+  
+ \- または  
+  
+ <paramref name="passwordAnswer" />128 文字を超えています。  
+  
+ \- または  
+  
+ <paramref name="username" />空か、ユーザー名 (通常は 256 文字) の許容最大長を超えています。  
+  
+ \- または  
+  
+ <paramref name="username" />コンマが含まれています。  
+  
+ \- または  
+  
+ ユーザー名をマップ<see langword="userPrincipalName" />ですが、<paramref name="username" />パラメーターには、円記号が含まれています。</exception>
+        <exception cref="T:System.Web.Security.MembershipPasswordException">不適切なログオンの回数が多すぎるため、ユーザーがロックアウトまたは実行しようとしたパスワードの回答が多すぎますが試行回数をリセットします。  
+  
+ \- または  
+  
+ <paramref name="passwordAnswer" />格納されているパスワードの回答と一致しません。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">指定されたユーザー <paramref name="username" /> Active Directory データ ストアに存在しません。  
+  
+ \- または  
+  
+ 生成されたパスワードは、カスタム検証のハンドラーを渡しません。  
+  
+ \- または  
+  
+ 生成されたパスワードは、Active Directory サーバーに設定されたカスタム パスワード ポリシーを満たすほど複雑ではありません。  
+  
+ \- または  
+  
+ セキュリティで保護された接続は、Active Directory アプリケーション モード サーバーに新しいパスワードを設定するにことはできません。</exception>
+        <exception cref="T:System.Exception">未処理の例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnlockUser">
+      <MemberSignature Language="C#" Value="public override bool UnlockUser (string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool UnlockUser(string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.UnlockUser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">ロックを解除するメンバーシップ ユーザーの名前。</param>
+        <summary>メンバーシップ ユーザーを検証できるようにロックを解除します。</summary>
+        <returns>
+          <see langword="true" />メンバーシップ ユーザーの正常にロックがない場合それ以外の場合、<see langword="false" />です。 <see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.UnlockUser(System.String)" />メソッドも返します<see langword="false" />メンバーシップ ユーザーがデータ ストアに存在しないとき。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが最もよくロックアウトし、して検証することはできません、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ValidateUser%2A>メソッドと、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.MaxInvalidPasswordAttempts%2A>で指定された時間内でプロパティを超える、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAttemptWindow%2A>プロパティまたはとき回数が多すぎるに加えられた間違ったパスワードを使用してログオンします。  
+  
+ 場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは`true`ユーザーがある場合、不正なパスワードをリセットのカウンターのロックを解除します。  
+  
+ プロバイダーは、サブツリー検索が開始される接続文字列で指定された検索の時点を使用します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ 先頭および末尾のスペースがトリミング、`username`パラメーターの値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="username" />空か、ユーザー名 (通常は 256 文字) の許容最大長を超えています。  
+  
+ \- または  
+  
+ <paramref name="username" />コンマが含まれています。  
+  
+ \- または  
+  
+ ユーザー名をマップ<see langword="userPrincipalName" />ですが、<paramref name="username" />パラメーターには、円記号が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.UnlockUser(System.String)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateUser">
+      <MemberSignature Language="C#" Value="public override void UpdateUser (System.Web.Security.MembershipUser user);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void UpdateUser(class System.Web.Security.MembershipUser user) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.UpdateUser(System.Web.Security.MembershipUser)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.Web.Security.MembershipUser" />
+      </Parameters>
+      <Docs>
+        <param name="user">A<see cref="T:System.Web.Security.MembershipUser" />ユーザーの更新された情報で更新するユーザーを表すインスタンス。</param>
+        <summary>Active Directory データ ストア内のユーザーに関する情報を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、 <xref:System.Web.Security.Membership> Active Directory データ ストア内のユーザー情報を更新するクラス。 <xref:System.Web.Security.MembershipUser.Email%2A>、 <xref:System.Web.Security.MembershipUser.Comment%2A>、および<xref:System.Web.Security.MembershipUser.IsApproved%2A>プロパティの値が指定されたメンバーシップ ユーザー用に更新されます。 その他のすべてのプロパティは無視されます。  
+  
+ 最大長、`username`パラメーターが 256 文字です。 最大長、<xref:System.Web.Security.MembershipUser.Email%2A>プロパティは、256 文字です。  
+  
+ 使用してメンバーシップ ユーザーのパスワードを更新することはできません、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.UpdateUser%2A>メソッドです。 メンバーシップ ユーザーのパスワードを更新するには、使用、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ChangePassword%2A>メソッドです。  
+  
+ プロバイダーは、サブツリー検索が開始される接続文字列で指定された検索の時点を使用します。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.UpdateUser(System.Web.Security.MembershipUser)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="user" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresUniqueEmail" />プロパティは<see langword="true" />から、指定された電子メール アドレスが、<see cref="T:System.Web.Security.MembershipUser" />インスタンスが<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.Security.MembershipUser.Email" />トリミング後にプロパティが空です。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.Security.MembershipUser.Email" />プロパティは、256 文字を超えています。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.Security.MembershipUser.Comment" />プロパティが 1024 文字を超えています。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.Security.MembershipUser.Comment" />プロパティが空です。  
+  
+ \- または  
+  
+ 指定されたユーザー名<see cref="T:System.Web.Security.MembershipUser" />インスタンスが空、またはユーザー名 (通常は 256 文字) の許容最大長を超えています。  
+  
+ \- または  
+  
+ 指定されたユーザー名<see cref="T:System.Web.Security.MembershipUser" />インスタンスには、コンマが含まれています。  
+  
+ \- または  
+  
+ ユーザー名をマップ<see langword="userPrincipalName" />から、指定されたユーザー名が、<see cref="T:System.Web.Security.MembershipUser" />インスタンスに円記号が含まれています。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">指定されたユーザーは Active Directory データ ストア内で見つかりませんでした。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.Security.ActiveDirectoryMembershipProvider.RequiresUniqueEmail" />プロパティは<see langword="true" />との新しい値、<see cref="P:System.Web.Security.MembershipUser.Email" />プロパティ、既存の電子メール アドレスと重複します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateUser">
+      <MemberSignature Language="C#" Value="public override bool ValidateUser (string username, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ValidateUser(string username, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipProvider.ValidateUser(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">検証するユーザーの名前。</param>
+        <param name="password">指定したユーザーのパスワード。</param>
+        <summary>指定されたユーザー名とパスワードが Active Directory データ ストアに存在することを確認します。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<paramref name="username" />と<paramref name="password" />が有効であるそれ以外の場合、<see langword="false" />です。 指定されたユーザーが、Active Directory データ ストアに存在しない場合、<see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.ValidateUser(System.String,System.String)" />メソッドを返します。<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、 <xref:System.Web.Security.Membership> Active Directory データ ストアに対するユーザーの資格情報を検証するクラス。  
+  
+ 場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは`true`と指定された資格情報は無効ですが、不正なパスワードの回答を得るのため、ユーザーの追跡のカウンターがリセットされます。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider.ValidateUser%2A>メソッドが返す`false`正しい資格情報が入力された場合、次の状況で。  
+  
+1.  ユーザー アカウントがロックされたディレクトリ サーバーによってログオン失敗の回数が多すぎます。 ユーザーは、ディレクトリのロックアウトの期間が経過するまではログオンできません。  
+  
+2.  場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは`true`ユーザーに間違ったパスワード入力回数が多すぎますが指定した場合、ユーザー アカウントがロックされます。 指定された時間後に、ユーザーのアカウントはロックを解除、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.PasswordAnswerAttemptLockoutDuration%2A>プロパティが渡されます。  
+  
+3.  ユーザーは、接続文字列で指定したコンテナーに存在する必要があります。 有効な資格情報は、別のコンテナー、または別のドメインに配置されているユーザー アカウントに対して提供されます。 ユーザーは、接続文字列で指定したコンテナーに存在する必要があります。  
+  
+ ユーザーを検証する場合、プロバイダーは、指定されたユーザー名とパスワードをアプリケーション構成ファイルで構成されている資格情報ではないを使用して、Active Directory データ ストアに接続して、資格情報を検証します。  
+  
+ ただし、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスは次の理由で構成されている資格情報を使用してディレクトリに接続します。  
+  
+-   によって決定された検索のスコープ内で、ユーザーが存在することを確認する、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスの接続文字列。 プロバイダーでは、サブツリー検索が開始される接続文字列で指定された検索の時点を使用して、ユーザーが存在するかどうかを確認します。 ユーザーは、指定されたコンテナーに存在する必要があります。 接続文字列の指定されたコンテナーの外部に有効な資格情報は検証されません。 参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続文字列の詳細については、クラスに関するトピック。  
+  
+-   場合、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.EnablePasswordReset%2A>プロパティは`true`、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスが、そのユーザーにパスワードの回答を変更する多数の試行が失敗が作成されたため、ユーザーはロックアウトされてかどうかを確認するには、そのユーザー インスタンスを読み込むに構成済みの資格情報を使用します。  
+  
+> [!IMPORTANT]
+>  "Guest"アカウントが有効で、Active Directory ドメイン コント ローラーへの接続は、潜在的なセキュリティ脅威です。 による Active Directory ドメイン コント ローラーで、"Guest"アカウントを有効になっているすべての検証の試行は成功します。 Active Directory ドメイン コント ローラーを使用する場合にセキュリティを強化するには、ドメイン コント ローラー"Guest"アカウントを無効にする必要があります。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipProvider>次の条件のいずれかが満たされた場合、インスタンスは Active Directory に対する同時バインドに試みます。  
+  
+-   <xref:System.Web.Security.ActiveDirectoryMembershipProvider.CurrentConnectionProtection%2A> プロパティが <xref:System.Web.Security.ActiveDirectoryConnectionProtection.None> に設定されている。  
+  
+-   <xref:System.Web.Security.ActiveDirectoryMembershipProvider.CurrentConnectionProtection%2A>プロパティに設定されている<xref:System.Web.Security.ActiveDirectoryConnectionProtection.SignAndSeal>SSL で選択し、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>接続をセキュリティで保護するインスタンス。  
+  
+ さらに、同時実行のバインドを行うため、次の条件を満たさなければなりません。  
+  
+-   ディレクトリ サーバーは、Windows Server 2003 で実行されている必要があります。  
+  
+-   実行している Web サーバーのオペレーティング システム、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>インスタンスが同時バインド (たとえば、Windows Server 2003) をサポートする必要があります。  
+  
+ 同時実行のバインドを使用すると、ユーザーの最終日のログオンはディレクトリには更新されません。したがって、<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate%2A>プロパティに依存することはできません。  
+  
+ 先頭および末尾のスペースがトリミング、`username`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.Security.ActiveDirectoryMembershipProvider.ValidateUser(System.String,System.String)" />メソッドは、前に呼び出されます、<see cref="T:System.Web.Security.ActiveDirectoryMembershipProvider" />インスタンスを初期化します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

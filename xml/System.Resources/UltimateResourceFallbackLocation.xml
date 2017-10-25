@@ -1,0 +1,91 @@
+<Type Name="UltimateResourceFallbackLocation" FullName="System.Resources.UltimateResourceFallbackLocation">
+  <TypeSignature Language="C#" Value="public enum UltimateResourceFallbackLocation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed UltimateResourceFallbackLocation extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.UltimateResourceFallbackLocation" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定するかどうか、<see cref="T:System.Resources.ResourceManager" />オブジェクトがメイン アセンブリまたはサテライト アセンブリでのアプリの既定のカルチャのリソースを探します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.UltimateResourceFallbackLocation>列挙体を使用、<xref:System.Resources.NeutralResourcesLanguageAttribute.%23ctor%28System.String%2CSystem.Resources.UltimateResourceFallbackLocation%29?displayProperty=nameWithType>コンス トラクターを指定するかどうか、<xref:System.Resources.ResourceManager>オブジェクトでは、メイン アプリケーション アセンブリ (既定)、またはサテライト アセンブリから、アプリの既定のカルチャのリソースを取得します。 ローカライズされたアプリケーションでの既定のカルチャのリソースは、リソース フォールバック プロセスを使用した後のカルチャに固有のリソースが見つからない場合に使用されます。 詳細については、「 [Packaging and Deploying Resources](~/docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)」の「リソース フォールバック プロセス」セクションを参照してください。  
+  
+ 値がないまたは MainAssembly の値を指定するかどうか、<xref:System.Resources.NeutralResourcesLanguageAttribute>属性およびリソース マネージャーは、既定のカルチャが属するリソース セットを読み込むことができませんが、スローされる、<xref:System.Resources.MissingManifestResourceException>例外。 サテライトの値を指定する場合、<xref:System.Resources.NeutralResourcesLanguageAttribute>リソース マネージャーは、既定のカルチャが属するリソース セットを読み込むことができませんが、スローされると、<xref:System.Resources.MissingSatelliteAssemblyException>例外。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MainAssembly">
+      <MemberSignature Language="C#" Value="MainAssembly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Resources.UltimateResourceFallbackLocation MainAssembly = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Resources.UltimateResourceFallbackLocation.MainAssembly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Resources.UltimateResourceFallbackLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォールバック リソースは、メイン アセンブリに配置されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Satellite">
+      <MemberSignature Language="C#" Value="Satellite" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Resources.UltimateResourceFallbackLocation Satellite = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Resources.UltimateResourceFallbackLocation.Satellite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Resources.UltimateResourceFallbackLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォールバック リソースは、サテライト アセンブリに配置されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

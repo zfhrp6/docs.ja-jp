@@ -1,0 +1,34 @@
+<Type Name="WebPartAuthorizationEventHandler" FullName="System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void WebPartAuthorizationEventHandler(object sender, WebPartAuthorizationEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebPartAuthorizationEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart" />のイベント、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> Web パーツ コントロールが Web パーツ ゾーンに追加する前にイベントが発生します。 イベントの処理方法をカスタマイズすることで、ゾーンにコントロールを追加することがでく Web パーツを指定できます。 指定する方法、<xref:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventHandler>ときにデリゲートが呼び出されて、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart>イベントが発生します。  
+  
+ ページの開発者は、Web パーツのイベントのカスタム ハンドラーを追加することで提供できます、`OnAuthorizeWebPart`属性を`<asp:webpartmanager>`ページ、および属性にカスタム メソッドの名前を割り当てる要素。 カスタム ハンドラーは、プログラムでも割り当てることができます。 プログラムによって、イベント ハンドラーの割り当ての詳細については、次を参照してください。 [NIB: 方法: イベントにイベント ハンドラー メソッドを接続](http://msdn.microsoft.com/en-us/348e9600-22e3-49a2-8864-11c5bb3e98fc)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

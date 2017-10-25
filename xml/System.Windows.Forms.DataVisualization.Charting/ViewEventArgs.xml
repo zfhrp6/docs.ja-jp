@@ -1,0 +1,218 @@
+<Type Name="ViewEventArgs" FullName="System.Windows.Forms.DataVisualization.Charting.ViewEventArgs">
+  <TypeSignature Language="C#" Value="public class ViewEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ViewEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内のパラメーター オブジェクトとして使用されているイベント データを提供、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanged" />と<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanging" />ルートのイベント<see cref="T:System.Windows.Forms.DataVisualization.Charting.Chart" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスとして公開、`e`内のパラメーター、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanged>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanging>イベント。 <xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanging>をクリックすると、グラフ領域にドラッグして、エンドユーザーの結果として、新しいビューが表示される直前にイベントが発生します。 <xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanged>イベントは、新しいビューが作成された直後に発生します。  
+  
+ ビューのサイズと位置を設定することはできないことを確認することが重要、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanged>イベント ビューが既に作成されたこのケースであるためです。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs>クラスには、次のプロパティが含まれています。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.ChartArea%2A>取得に使用されるプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>オブジェクトのビューが表示されます。 <xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.Name%2A>プロパティは、グラフ領域の名前を取得します。 その他のグラフ領域のプロパティが設定することもできます。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.Axis%2A>取得に使用されるプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.Axis>ビューが関連付けられているオブジェクト。 Y、X2 または Y2, を使用できますが、X 軸の種類を決定する、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.AxisName%2A>プロパティです。 その他の軸のプロパティが設定することもできます。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewPosition%2A>プロパティで、ビューの新しい位置を表します。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewSize%2A>プロパティで、ビューの新しいサイズを表します。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewSizeType%2A>プロパティで、ビューのサイズの測定単位を表します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ViewEventArgs (System.Windows.Forms.DataVisualization.Charting.Axis axis, double newPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataVisualization.Charting.Axis axis, float64 newPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.#ctor(System.Windows.Forms.DataVisualization.Charting.Axis,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="axis" Type="System.Windows.Forms.DataVisualization.Charting.Axis" />
+        <Parameter Name="newPosition" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="axis">スケールのビューの軸です。</param>
+        <param name="newPosition">新しいスケール ビューの開始位置。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.DataVisualization.ViewEventArgs" /> 、指定したクラス<paramref name="axis" />と<paramref name="newPosition" />パラメーター。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ViewEventArgs (System.Windows.Forms.DataVisualization.Charting.Axis axis, double newPosition, double newSize, System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType newSizeType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataVisualization.Charting.Axis axis, float64 newPosition, float64 newSize, valuetype System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType newSizeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.#ctor(System.Windows.Forms.DataVisualization.Charting.Axis,System.Double,System.Double,System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="axis" Type="System.Windows.Forms.DataVisualization.Charting.Axis" />
+        <Parameter Name="newPosition" Type="System.Double" />
+        <Parameter Name="newSize" Type="System.Double" />
+        <Parameter Name="newSizeType" Type="System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType" />
+      </Parameters>
+      <Docs>
+        <param name="axis">スケールのビューの軸です。</param>
+        <param name="newPosition">新しいスケール ビューの開始位置。</param>
+        <param name="newSize">新しいスケール ビューのサイズ。</param>
+        <param name="newSizeType">新しいスケール サイズの測定単位を表示します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.DataVisualization.ViewEventArgs" /> 、指定したクラス<paramref name="axis" />、 <paramref name="newPosition" />、<paramref name="newSize" />と<paramref name="newSizeType" />パラメーター。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Axis">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.Axis Axis { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.Axis Axis" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.Axis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.Axis</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" />ビューが属するオブジェクト。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" />ビューが属している、軸を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanged>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanging>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ このプロパティを使用することができます。  
+  
+-   軸の種類を決定 — X、Y または Y2、X2 — イベントが発生して、使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.AxisName%2A>プロパティです。  
+  
+-   取得し、軸のプロパティを設定します。<xref:System.Windows.Forms.DataVisualization.Charting.Axis.LineColor%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartArea">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.ChartArea ChartArea { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.ChartArea ChartArea" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.ChartArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.ChartArea</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />ビューが属するオブジェクト。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />ビューが属している、グラフ領域を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanged>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanging>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ScrollBarEventArgs.ChartArea%2A>プロパティを使用してをグラフ領域にアクセスして、ビューが属していることを確認できます、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.Name>プロパティです。 このプロパティを取得し、グラフ領域のプロパティの設定も使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewPosition">
+      <MemberSignature Language="C#" Value="public double NewPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>軸に沿ったビューの新しい位置を取得します。</summary>
+        <value>A<see langword="double" />軸、垂直方向のビューの下部にあるか、水平方向のビューの左端の位置であるビューの位置を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが公開されている、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanged>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanging>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト、およびビューの新しい位置を表します。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewPosition%2A>に新しい値にプロパティを設定できます、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanging>イベントの新しい値に設定することはできませんが、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanged>イベント ビューが既に作成されたこのケースであるためです。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewPosition%2A>は常に軸の値として測定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSize">
+      <MemberSignature Language="C#" Value="public double NewSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸のビューのサイズを設定します。</summary>
+        <value>A<see langword="double" />軸に沿ったビューのサイズを表す値です。 サイズは、いずれかのビューの垂直方向の高さまたは水平方向のビューの幅です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSizeType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType NewSizeType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType NewSizeType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewSizeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューの新しいサイズの測定単位を取得します。</summary>
+        <value>データ ビューの高さまたは幅を表している <see cref="P:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewSize" /> プロパティの測定単位を表す <see cref="T:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType" /> 列挙値。 既定値は <see cref="F:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto>の測定単位、<xref:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewSize%2A>によってプロパティが自動的に決定、<xref:System.Windows.Forms.DataVisualization.Charting.Chart>を制御して、数または 1 日のいずれかになります。  
+  
+ 注意してください、<xref:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewSize%2A>プロパティは常に軸の値として測定します。 サイズの型を明示的に設定した場合、軸スクロール バーが属すると型に一致することを確認します。 つまり、指定しない<xref:System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Minutes>軸を使用しない場合<xref:System.DateTime>値。  
+  
+ 注意してください、<xref:System.Windows.Forms.DataVisualization.Charting.ViewEventArgs.NewSize%2A>に新しい値にプロパティを設定できます、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanging>イベントの新しい値に設定することはできませんが、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AxisViewChanged>イベント ビューが既に作成されているためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

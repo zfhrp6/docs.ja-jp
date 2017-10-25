@@ -1,0 +1,537 @@
+<Type Name="CallbackBehaviorAttribute" FullName="System.ServiceModel.CallbackBehaviorAttribute">
+  <TypeSignature Language="C#" Value="public sealed class CallbackBehaviorAttribute : Attribute, System.ServiceModel.Description.IEndpointBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CallbackBehaviorAttribute extends System.Attribute implements class System.ServiceModel.Description.IEndpointBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.CallbackBehaviorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Duplex</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IEndpointBehavior</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クライアント アプリケーションでのコールバック サービス実装を構成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.CallbackBehaviorAttribute> 属性を使用して、クライアント アプリケーションでのコールバック コントラクトの実装の実行動作を構成または拡張します。 この属性は、インスタンス化動作とトランザクションの設定を除き、<xref:System.ServiceModel.ServiceBehaviorAttribute> 属性と同じ機能をコールバック クラスに対して実行します。  
+  
+ <xref:System.ServiceModel.CallbackBehaviorAttribute> は、コールバック コントラクトを実装するクラスに適用する必要があります。 双方向以外のコントラクト実装に適用した場合は、実行時に <xref:System.InvalidOperationException> 例外がスローされます。  
+  
+> [!NOTE]
+>  コールバック操作の実装に対して <xref:System.ServiceModel.OperationBehaviorAttribute> 属性を使用することもできます。 ただし、<xref:System.ServiceModel.OperationBehaviorAttribute> をコールバック操作で使用する場合は、<xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> プロパティが <xref:System.ServiceModel.ReleaseInstanceMode.None> でなければなりません。そうでない場合は、実行時に <xref:System.InvalidOperationException> 例外がスローされます。  
+  
+ 使用できるプロパティは次のとおりです。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.AutomaticSessionShutdown%2A> プロパティは、チャネルが閉じられ、残っているすべてのメッセージの処理をコールバックが終了した時点でセッションを自動的に閉じます。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.ConcurrencyMode%2A> プロパティは、内部スレッド モデルを制御して、再入可能またはマルチスレッド コールバック オブジェクトのサポートを有効にします。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.IgnoreExtensionDataObject%2A> プロパティは、メッセージの処理では必要がない余分なシリアル化情報をランタイムが無視できるようにします。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.IncludeExceptionDetailInFaults%2A> プロパティは、サービス内の未処理例外を、デバッグ用に SOAP エラーとしてサービスに返すかどうかを指定します。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.MaxItemsInObjectGraph%2A> プロパティは、シリアル化されるオブジェクト グラフ内の項目数を制限します。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.TransactionIsolationLevel%2A> プロパティは、コントラクトがサポートするトランザクションの分離レベルを指定します。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.TransactionTimeout%2A> プロパティは、トランザクションを完了しなければならない期間を指定します。この期間内に完了しない場合、トランザクションは中止されます。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.UseSynchronizationContext%2A> プロパティは、現在の <xref:System.Threading.SynchronizationContext> オブジェクトを使用して、受信メソッドの呼び出しを同期するかどうかを示します。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.ValidateMustUnderstand%2A> プロパティは、`MustUnderstand` としてマークされた SOAP ヘッダーが間違いなく理解されたことを確認する必要があるかどうかをシステムに通知します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.CallbackBehaviorAttribute> オブジェクトを使用してマーシャリングするスレッドを決定するコールバック オブジェクトの <xref:System.Threading.SynchronizationContext>、メッセージ検証を実施する <xref:System.ServiceModel.CallbackBehaviorAttribute.ValidateMustUnderstand%2A> プロパティ、および例外を <xref:System.ServiceModel.CallbackBehaviorAttribute.IncludeExceptionDetailInFaults%2A> オブジェクトとしてデバッグ用のサービスに返す <xref:System.ServiceModel.FaultException> プロパティのコード例を次に示します。  
+  
+ [!code-csharp[CallbackBehaviorAttribute#3](~/samples/snippets/csharp/VS_Snippets_CFX/callbackbehaviorattribute/cs/client.cs#3)]
+ [!code-vb[CallbackBehaviorAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/callbackbehaviorattribute/vb/client.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CallbackBehaviorAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.CallbackBehaviorAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Duplex</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.CallbackBehaviorAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.CallbackBehaviorAttribute> プロパティの既定の設定は、次のとおりです。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.AutomaticSessionShutdown%2A> プロパティが `true` です。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.ConcurrencyMode%2A> に <xref:System.ServiceModel.ConcurrencyMode.Single> が設定されています。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.IgnoreExtensionDataObject%2A> プロパティが `false` です。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> は `false` です。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.UseSynchronizationContext%2A> は `false` です。  
+  
+-   <xref:System.ServiceModel.CallbackBehaviorAttribute.ValidateMustUnderstand%2A> プロパティが `true` です。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.CallbackBehaviorAttribute> オブジェクトを使用してマーシャリングするスレッドを決定するコールバック オブジェクトの <xref:System.Threading.SynchronizationContext>、メッセージ検証を実施する <xref:System.ServiceModel.CallbackBehaviorAttribute.ValidateMustUnderstand%2A> プロパティ、および例外を <xref:System.ServiceModel.CallbackBehaviorAttribute.IncludeExceptionDetailInFaults%2A> オブジェクトとしてデバッグ用のサービスに返す <xref:System.ServiceModel.FaultException> プロパティのコード例を次に示します。  
+  
+ [!code-csharp[CallbackBehaviorAttribute#3](~/samples/snippets/csharp/VS_Snippets_CFX/callbackbehaviorattribute/cs/client.cs#3)]
+ [!code-vb[CallbackBehaviorAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/callbackbehaviorattribute/vb/client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutomaticSessionShutdown">
+      <MemberSignature Language="C#" Value="public bool AutomaticSessionShutdown { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutomaticSessionShutdown" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CallbackBehaviorAttribute.AutomaticSessionShutdown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Duplex</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが双方向セッションを閉じたときに、セッションを自動的に閉じるかどうかを指定します。</summary>
+        <value>
+          サービスが双方向セッションを閉じたときに、双方向コールバック オブジェクトが自動的にセッションを閉じる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、サービスが双方向セッションを閉じ、コールバックが残っているすべてのメッセージの処理を終了した時点で、コールバックがセッションを閉じます。 クライアントがセッションを自動的に閉じるのを回避するには、<xref:System.ServiceModel.CallbackBehaviorAttribute.AutomaticSessionShutdown%2A> を `false` に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConcurrencyMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.ConcurrencyMode ConcurrencyMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.ConcurrencyMode ConcurrencyMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CallbackBehaviorAttribute.ConcurrencyMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ConcurrencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが、1 つのスレッド、複数のスレッド、または再入呼び出しをサポートするかどうかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.ConcurrencyMode" /> 値の 1 つ。既定値は <see cref="F:System.ServiceModel.ConcurrencyMode.Single" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コールバック オブジェクトのインスタンスが 1 つのスレッドまたは同時に実行する複数のスレッドをサポートするかどうか、およびシングル スレッドの場合は再入をサポートするかどうかを示します。  
+  
+ <xref:System.ServiceModel.ConcurrencyMode> を <xref:System.ServiceModel.ConcurrencyMode.Single> に設定すると、サービスのインスタンスを 1 つずつのスレッド実行に制限するようシステムに指示します。それにより、スレッドの問題に対応することから解放されます。 これが既定値です。 <xref:System.ServiceModel.ConcurrencyMode.Multiple> の値は、サービス オブジェクトを複数のスレッドで一度に実行できることを示します。 この場合は、開発者がスレッド セーフと状態の整合性を保証する必要があります。  
+  
+ <xref:System.ServiceModel.ConcurrencyMode.Reentrant>また、一度に 1 つのスレッドにアクセスを制限します。 ただし、この設定は、実行中のサービス メソッドから呼び出され、実行中のサービスに戻って再入する呼び出しを可能にします。 再入可能呼び出しは異なるマネージ スレッドで実行できますが、その場合は、再入可能呼び出しの有効期間の間、元のスレッドがブロックされます。  
+  
+ 通常、同時実行モードに違反するインスタンスにメッセージが届いた場合は、そのインスタンスが使用可能になるまで、またはタイムアウトになるまで、メッセージは待機します。  
+  
+ さらに、<xref:System.ServiceModel.ConcurrencyMode> が <xref:System.ServiceModel.ConcurrencyMode.Single> に設定され、再入可能呼び出しが、インスタンスが解放されるまで待機する間ブロックされた場合、システムはデッドロックを検出し、例外をスローします。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]同時実行性を参照してください<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A?displayProperty=nameWithType>と[セッション、インスタンス化、および同時実行](~/docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.ConcurrencyMode" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreExtensionDataObject">
+      <MemberSignature Language="C#" Value="public bool IgnoreExtensionDataObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreExtensionDataObject" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CallbackBehaviorAttribute.IgnoreExtensionDataObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不明なシリアル化データをネットワークで送信するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          不明なシリアル化データが送信されない場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイプが <xref:System.Runtime.Serialization.IExtensibleDataObject> インターフェイスを実装している場合は、そのタイプに逆シリアル化するときにネットワークから着信した未知のあらゆる追加データが、そのタイプにより保存されます。 たとえば、タイプ `Person` にメンバー `FirstName` と `LastName` があり、`PhoneNumber` という要素が加わる場合、その要素は保存されます。 後でこのタイプをシリアル化するときに、`PhoneNumber` が再発行されます。 問題は、サービスによってエクスポートされる `Person` のスキーマには `FirstName` と `LastName` だけが含まれているために、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] により、スキーマが無効なインスタンスが生成されることです。 厳しいスキーマ コンプライアンスが重要な場合は、<xref:System.ServiceModel.CallbackBehaviorAttribute.IgnoreExtensionDataObject%2A> を `true` に設定すると、この再発行動作をオフにすることができます。  
+  
+ <xref:System.ServiceModel.CallbackBehaviorAttribute.IgnoreExtensionDataObject%2A> では、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] の設定に関係なく、常に (受信と送信の両方で) 既知のデータを処理し、追加データを受信しても例外をスローしません。  
+  
+ 使用することができます、 [ &lt;callbackDebug&gt; ](~/docs/framework/configure-apps/file-schema/wcf/callbackdebug.md)クライアント アプリケーション構成ファイルでこのプロパティを設定する要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeExceptionDetailInFaults">
+      <MemberSignature Language="C#" Value="public bool IncludeExceptionDetailInFaults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeExceptionDetailInFaults" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CallbackBehaviorAttribute.IncludeExceptionDetailInFaults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一般的な未処理の実行例外を <see cref="T:System.ServiceModel.FaultException`1" /> 型の <see cref="T:System.String" /> に変換してエラー メッセージとして送信するように指定する値を取得または設定します。 この属性は、開発時にサービスのトラブルシューティングを行う場合にのみ、<see langword="true" /> に設定します。</summary>
+        <value>
+          未処理の例外を SOAP エラーとして返す場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 可能な場合に例外情報をデバッグ用にサービスに返すことを有効にするには、<xref:System.ServiceModel.CallbackBehaviorAttribute.IncludeExceptionDetailInFaults%2A> を `true` に設定します。 これは開発専用の機能なので、展開されたサービスで使用しないでください。 これらのエラーは、呼び出し元で <xref:System.ServiceModel.FaultException> オブジェクトとして出現します。  
+  
+> [!IMPORTANT]
+>  設定<xref:System.ServiceModel.CallbackBehaviorAttribute.IncludeExceptionDetailInFaults%2A>に`true`内部クライアント コールバック例外に関する情報を取得するサービスを有効には、双方向クライアント アプリケーションを一時的にデバッグする方法としてのみお勧めします。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.CallbackBehaviorAttribute> オブジェクトを使用してマーシャリングするスレッドを決定するコールバック オブジェクトの <xref:System.Threading.SynchronizationContext>、メッセージ検証を実施する <xref:System.ServiceModel.CallbackBehaviorAttribute.ValidateMustUnderstand%2A> プロパティ、および例外を <xref:System.ServiceModel.CallbackBehaviorAttribute.IncludeExceptionDetailInFaults%2A> オブジェクトとしてデバッグ用のサービスに返す <xref:System.ServiceModel.FaultException> プロパティのコード例を次に示します。  
+  
+ [!code-csharp[CallbackBehaviorAttribute#3](~/samples/snippets/csharp/VS_Snippets_CFX/callbackbehaviorattribute/cs/client.cs#3)]
+ [!code-vb[CallbackBehaviorAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/callbackbehaviorattribute/vb/client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxItemsInObjectGraph">
+      <MemberSignature Language="C#" Value="public int MaxItemsInObjectGraph { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxItemsInObjectGraph" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CallbackBehaviorAttribute.MaxItemsInObjectGraph" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化されるオブジェクトで許可される項目の最大数を取得または設定します。</summary>
+        <value>オブジェクトで許可される最大アイテム数。 既定値は、<see cref="F:System.Int32.MaxValue" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト グラフでシリアル化されるアイテム数を制限する <xref:System.ServiceModel.ServiceBehaviorAttribute.MaxItemsInObjectGraph%2A> プロパティを使用します。 使用することも、 [ &lt;dataContractSerializer&gt; ](~/docs/framework/configure-apps/file-schema/wcf/datacontractserializer.md)クライアント アプリケーション構成ファイルでこの値を設定する要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IEndpointBehavior.AddBindingParameters">
+      <MemberSignature Language="C#" Value="void IEndpointBehavior.AddBindingParameters (System.ServiceModel.Description.ServiceEndpoint endpoint, System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IEndpointBehavior.AddBindingParameters(class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Duplex</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceEndpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">To be added.</param>
+        <param name="parameters">構成されるバインド パラメーターのコレクション。</param>
+        <summary>バインド要素を、コールバック動作をサポートするように構成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior">
+      <MemberSignature Language="C#" Value="void IEndpointBehavior.ApplyClientBehavior (System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Dispatcher.ClientRuntime behavior);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior(class System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, class System.ServiceModel.Dispatcher.ClientRuntime behavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Duplex</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceEndpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="clientRuntime" Type="System.ServiceModel.Dispatcher.ClientRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="serviceEndpoint">属性によって構成されるエンドポイント。</param>
+        <param name="behavior">To be added.</param>
+        <summary>クライアント ランタイムを、コールバック オブジェクトをサポートするように構成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="void IEndpointBehavior.ApplyDispatchBehavior (System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Dispatcher.EndpointDispatcher dispatcher);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior(class System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, class System.ServiceModel.Dispatcher.EndpointDispatcher dispatcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Duplex</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceEndpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="endpointDispatcher" Type="System.ServiceModel.Dispatcher.EndpointDispatcher" />
+      </Parameters>
+      <Docs>
+        <param name="serviceEndpoint">変更対象のエンドポイント。</param>
+        <param name="dispatcher">To be added.</param>
+        <summary><see cref="M:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" /> メソッドの実装。 この実装は、効果がありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IEndpointBehavior.Validate">
+      <MemberSignature Language="C#" Value="void IEndpointBehavior.Validate (System.ServiceModel.Description.ServiceEndpoint serviceEndpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IEndpointBehavior.Validate(class System.ServiceModel.Description.ServiceEndpoint serviceEndpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#Validate(System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Duplex</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceEndpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="serviceEndpoint">検証されるエンドポイント。</param>
+        <summary>ランタイムを構築する前に、エンドポイントの説明を検証します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionIsolationLevel">
+      <MemberSignature Language="C#" Value="public System.Transactions.IsolationLevel TransactionIsolationLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Transactions.IsolationLevel TransactionIsolationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CallbackBehaviorAttribute.TransactionIsolationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションの分離レベルを指定します。</summary>
+        <value>トランザクションの分離レベルを指定する <see cref="T:System.Transactions.IsolationLevel" /> 値。 既定値は、<see cref="F:System.Transactions.IsolationLevel.Unspecified" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションが実行する際の分離レベルにより、他のトランザクションで変更が加えられたときのデータの処理方法、およびこうした変更から保護するためにトランザクションがロックを保持する期間が決定されます。 たとえば、既定値 <xref:System.Transactions.IsolationLevel.Unspecified> は、トランザクションが完了するまで更新または挿入できないことを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.Transactions.IsolationLevel" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionTimeout">
+      <MemberSignature Language="C#" Value="public string TransactionTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TransactionTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CallbackBehaviorAttribute.TransactionTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションを完了する必要がある制限時間を取得または設定します。</summary>
+        <value>トランザクションが完了するか自動的に中止される制限時間を表す <see cref="T:System.TimeSpan" /> オブジェクト。 既定値は <see cref="F:System.TimeSpan.Zero" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、この値はアプリケーション設定ファイルで設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSynchronizationContext">
+      <MemberSignature Language="C#" Value="public bool UseSynchronizationContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseSynchronizationContext" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CallbackBehaviorAttribute.UseSynchronizationContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Duplex</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の同期コンテキストを使用して実行スレッドを選択するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          サービスのすべての呼び出しが、<see langword="true" /> で指定されたスレッドで実行する必要がある場合は <see cref="T:System.Threading.SynchronizationContext" />、それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、一部のアプリケーションに必要なユーザー インターフェイス スレッド アフィニティを提供します。 たとえば、Windows フォーム アプリケーションは、シングルトン サービス オブジェクトとして登録されている可能性があります。 この場合、サービスのすべての呼び出しは、Windows フォーム スレッドで実行する必要があります。 <xref:System.ServiceModel.ServiceBehaviorAttribute.UseSynchronizationContext%2A> が `true` に設定されている既定の場合、サービスのすべての呼び出しを同期して、ユーザー インターフェイス スレッドで実行します。  
+  
+ <xref:System.ServiceModel.DuplexChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> または <xref:System.ServiceModel.DuplexClientBase%601.CreateChannel%2A?displayProperty=nameWithType> が呼び出された場合、使用されるスレッドは現在の同期スレッドであることに注意してください。 Windows Forms アプリケーションの場合、この注意は、<xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> メソッドの呼び出し後にこれらの呼び出しを行う必要があることを意味します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.CallbackBehaviorAttribute> オブジェクトを使用してマーシャリングするスレッドを決定するコールバック オブジェクトの <xref:System.Threading.SynchronizationContext>、メッセージ検証を実施する <xref:System.ServiceModel.CallbackBehaviorAttribute.ValidateMustUnderstand%2A> プロパティ、および例外を <xref:System.ServiceModel.CallbackBehaviorAttribute.IncludeExceptionDetailInFaults%2A> オブジェクトとしてデバッグ用のサービスに返す <xref:System.ServiceModel.FaultException> プロパティのコード例を次に示します。  
+  
+ [!code-csharp[CallbackBehaviorAttribute#3](~/samples/snippets/csharp/VS_Snippets_CFX/callbackbehaviorattribute/cs/client.cs#3)]
+ [!code-vb[CallbackBehaviorAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/callbackbehaviorattribute/vb/client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateMustUnderstand">
+      <MemberSignature Language="C#" Value="public bool ValidateMustUnderstand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateMustUnderstand" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.CallbackBehaviorAttribute.ValidateMustUnderstand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムまたはアプリケーションで SOAP <see langword="MustUnderstand" /> ヘッダー処理を強制的に行うかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          システムが SOAP ヘッダー <see langword="true" /> 処理を実行する場合は <see langword="MustUnderstand" />、それ以外の場合は <see langword="false" />、つまり、アプリケーションがこの処理を実行することを示します。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.CallbackBehaviorAttribute.ValidateMustUnderstand%2A> プロパティを使用して、到達したメッセージ ヘッダーの検証の実施をオフにします。 通常の実行では、メッセージ ヘッダーを <xref:System.ServiceModel.Channels.MessageHeaders.UnderstoodHeaders%2A> プロパティと比較し、到着したヘッダーがコールバック オブジェクトのランタイムによって明示的に処理されることを確認します。 この確認を無効にするには、このプロパティを `false` に設定します。 `false` に設定すると、アプリケーションは、MustUnderstand="true" とマークされたヘッダーがないか確認し、1 つ以上のヘッダーが理解されなかった場合は、エラーを返す必要があります。 これは、コールバックが受信 SOAP メッセージをすべて受け入れ (型指定のあるメッセージとないメッセージを使用する場合など)、カスタム ヘッダー処理を行うことになっている場合に便利です。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.CallbackBehaviorAttribute> オブジェクトを使用してマーシャリングするスレッドを決定するコールバック オブジェクトの <xref:System.Threading.SynchronizationContext>、メッセージ検証を実施する <xref:System.ServiceModel.CallbackBehaviorAttribute.ValidateMustUnderstand%2A> プロパティ、および例外を <xref:System.ServiceModel.CallbackBehaviorAttribute.IncludeExceptionDetailInFaults%2A> オブジェクトとしてデバッグ用のサービスに返す <xref:System.ServiceModel.FaultException> プロパティのコード例を次に示します。  
+  
+ [!code-csharp[CallbackBehaviorAttribute#3](~/samples/snippets/csharp/VS_Snippets_CFX/callbackbehaviorattribute/cs/client.cs#3)]
+ [!code-vb[CallbackBehaviorAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/callbackbehaviorattribute/vb/client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

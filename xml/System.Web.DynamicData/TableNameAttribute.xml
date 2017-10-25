@@ -1,0 +1,82 @@
+<Type Name="TableNameAttribute" FullName="System.Web.DynamicData.TableNameAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TableNameAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TableNameAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.TableNameAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テーブルの表示名を変更する属性を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TableNameAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.TableNameAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">テーブルに表示される名前です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.DynamicData.TableNameAttribute" />テーブルの指定した名前のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.TableNameAttribute>属性は複数のコンテキストからエンティティの名前の競合がある場合、メタデータでエンティティ名の変更に使用します。 <xref:System.Web.DynamicData.TableNameAttribute>属性は、表示名を変更するのには使用できません。 代わりに、使用、<xref:System.ComponentModel.DisplayNameAttribute>表示名を変更する属性。  
+  
+   
+  
+## Examples  
+ 次の例では、テーブル名を設定する方法を示します。 例では、表示されているテーブル名は、"ProductModelProductDescriptions"から"製品モデル Desc"に変更されます。  
+  
+ [!code-csharp[System.Web.DynamicData.TableNameAttribute#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.TableNameAttribute/cs/ProductModelProductDescription.cs#11)]
+ [!code-vb[System.Web.DynamicData.TableNameAttribute#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.DynamicData.TableNameAttribute/vb/ProductModelProductDescription.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.TableNameAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテーブルの名前を設定します。</summary>
+        <value>テーブルに関連付けられている名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、別のデータ コンテキストで別のテーブルが同じ名前を持つ場合、一意の名前に、テーブル名をマップします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

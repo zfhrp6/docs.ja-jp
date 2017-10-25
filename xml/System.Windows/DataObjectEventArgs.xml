@@ -1,0 +1,98 @@
+<Type Name="DataObjectEventArgs" FullName="System.Windows.DataObjectEventArgs">
+  <TypeSignature Language="C#" Value="public abstract class DataObjectEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataObjectEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DataObjectEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連付けられたイベントの抽象基本クラスを提供、<see cref="T:System.Windows.DataObject" />クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CancelCommand">
+      <MemberSignature Language="C#" Value="public void CancelCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DataObjectEventArgs.CancelCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられているコマンドや操作をキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを設定、<xref:System.Windows.DataObjectEventArgs.CommandCancelled%2A>プロパティを`true`です。 イベントが取り消されると後に、再アクティブ化できません。  
+  
+ ドラッグ アンド ドロップ操作でこのメソッドが呼び出されたかどうか (によって示される、<xref:System.Windows.DataObjectEventArgs.IsDragDrop%2A>プロパティ)、全体のドラッグ アンド ドロップ操作が取り消されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandCancelled">
+      <MemberSignature Language="C#" Value="public bool CommandCancelled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CommandCancelled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DataObjectEventArgs.CommandCancelled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコマンドまたは操作がキャンセルされたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コマンドが取り消された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.DataObjectEventArgs.CancelCommand%2A>このプロパティを設定するメソッドを`true`と関連付けられているコマンドや操作をキャンセルします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDragDrop">
+      <MemberSignature Language="C#" Value="public bool IsDragDrop { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDragDrop" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DataObjectEventArgs.IsDragDrop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたイベントがドラッグ アンド ドロップ操作の一部かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />関連付けられたイベントがドラッグ アンド ドロップ操作の一部である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、このプロパティは`true`、<xref:System.Windows.DataObject.Copying>ドラッグが開始されたときにイベントが発生し、<xref:System.Windows.DataObject.Pasting>イベントは、選択範囲が削除されるときに発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

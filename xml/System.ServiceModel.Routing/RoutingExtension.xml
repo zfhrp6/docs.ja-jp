@@ -1,0 +1,98 @@
+<Type Name="RoutingExtension" FullName="System.ServiceModel.Routing.RoutingExtension">
+  <TypeSignature Language="C#" Value="public sealed class RoutingExtension : System.ServiceModel.IExtension&lt;System.ServiceModel.ServiceHostBase&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RoutingExtension extends System.Object implements class System.ServiceModel.IExtension`1&lt;class System.ServiceModel.ServiceHostBase&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Routing.RoutingExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.IExtension&lt;System.ServiceModel.ServiceHostBase&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ルーティング構成の動的な変更を可能にするルーティング サービスへの実行時アクセスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplyConfiguration">
+      <MemberSignature Language="C#" Value="public void ApplyConfiguration (System.ServiceModel.Routing.RoutingConfiguration routingConfiguration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ApplyConfiguration(class System.ServiceModel.Routing.RoutingConfiguration routingConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration(System.ServiceModel.Routing.RoutingConfiguration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="routingConfiguration" Type="System.ServiceModel.Routing.RoutingConfiguration" />
+      </Parameters>
+      <Docs>
+        <param name="routingConfiguration">適用されるルーティング構成。</param>
+        <summary>ルーティング サービスの実行中のインスタンスに新しい <see cref="T:System.ServiceModel.Routing.RoutingConfiguration" /> を適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> を呼び出した後、新しいセッションおよびメッセージにのみ新しい <xref:System.ServiceModel.Routing.RoutingConfiguration> が適用されます。  
+  
+> [!WARNING]
+>  <xref:System.ServiceModel.Routing.RoutingConfiguration> はスレッド セーフの更新または拡張機能を提供しないため、<xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> を呼び出した後は <xref:System.ServiceModel.Routing.RoutingConfiguration> オブジェクトを変更しないでください。  
+>   
+>  それ以降にルーティング構成の更新を実行する必要がある場合は、更新ごとに <xref:System.ServiceModel.Routing.RoutingConfiguration> の新しいインスタンスを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.IExtension&lt;System.ServiceModel.ServiceHostBase&gt;.Attach">
+      <MemberSignature Language="C#" Value="void IExtension&lt;ServiceHostBase&gt;.Attach (System.ServiceModel.ServiceHostBase owner);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.IExtension&lt;System.ServiceModel.ServiceHostBase&gt;.Attach(class System.ServiceModel.ServiceHostBase owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Routing.RoutingExtension.System#ServiceModel#IExtension&lt;System#ServiceModel#ServiceHostBase&gt;#Attach(System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="owner">サービス ホスト ベース。</param>
+        <summary>ランタイムが <see cref="T:System.ServiceModel.ServiceHostBase" /> クラスのインスタンスに拡張機能を関連付けるときに呼び出されます。  内部使用のみ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.IExtension&lt;System.ServiceModel.ServiceHostBase&gt;.Detach">
+      <MemberSignature Language="C#" Value="void IExtension&lt;ServiceHostBase&gt;.Detach (System.ServiceModel.ServiceHostBase owner);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.IExtension&lt;System.ServiceModel.ServiceHostBase&gt;.Detach(class System.ServiceModel.ServiceHostBase owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Routing.RoutingExtension.System#ServiceModel#IExtension&lt;System#ServiceModel#ServiceHostBase&gt;#Detach(System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="owner">サービス ホスト ベース。</param>
+        <summary>ランタイムが <see cref="T:System.ServiceModel.ServiceHostBase" /> クラスのインスタンスへの拡張機能の関連付けを解除するときに呼び出されます。  内部使用のみ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

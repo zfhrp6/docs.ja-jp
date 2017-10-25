@@ -1,0 +1,106 @@
+<Type Name="BindableTemplateBuilder" FullName="System.Web.UI.BindableTemplateBuilder">
+  <TypeSignature Language="C#" Value="public sealed class BindableTemplateBuilder : System.Web.UI.TemplateBuilder, System.Web.UI.IBindableTemplate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BindableTemplateBuilder extends System.Web.UI.TemplateBuilder implements class System.Web.UI.IBindableTemplate, class System.Web.UI.ITemplate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.BindableTemplateBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.TemplateBuilder</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IBindableTemplate</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>テンプレート コンテンツ セクションの ASP.NET データ ソース コントロールに自動的にバインドするデータ バインド コントロールのページが解析をサポートします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.BindableTemplateBuilder>クラスがデータ バインドされたテンプレート内の双方向のバインドされたコントロール プロパティの値の抽出をサポートするためにデザイン時およびコンパイルなしのページを使用します。 <xref:System.Web.UI.BindableTemplateBuilder>オブジェクトを実装するコードを生成する、<xref:System.Web.UI.IBindableTemplate.ExtractValues%2A?displayProperty=nameWithType>テンプレート用のメソッドです。  
+  
+ <xref:System.Web.UI.BindableTemplateBuilder>は、<xref:System.Web.UI.TemplateBuilder>テンプレート コンテンツを含むデータ バインド コントロールのです。 デザイン時またはコンパイルなし ページでは、データ バインド コントロールを使用する場合、<xref:System.Web.UI.IBindableTemplate>インターフェイスを<xref:System.Web.UI.BindableTemplateBuilder>テンプレート コントロール内で双方向データ バインディングの解析に使用します。 データ バインド コントロールは、コンパイルされた場合のインスタンス、<xref:System.Web.UI.CompiledBindableTemplateBuilder>クラスが作成されの値に割り当てられている、<xref:System.Web.UI.IBindableTemplate>オブジェクト。  
+  
+ ASP.NET データ バインド、式、および構文の詳細については、次を参照してください。[データベースへのバインド](http://msdn.microsoft.com/en-us/ab7b2846-975b-4057-a948-45527497c742)と[データ バインド式の概要](http://msdn.microsoft.com/library/14cdd57d-0f82-4667-b503-73e1a96f136a)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindableTemplateBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.BindableTemplateBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.BindableTemplateBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary ExtractValues (System.Web.UI.Control container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Specialized.IOrderedDictionary ExtractValues(class System.Web.UI.Control container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.BindableTemplateBuilder.ExtractValues(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.Web.UI.Control" />名前/値ペアを抽出するため、渡しされる、データ バインド コントロール双方向データ バインディングのシナリオに関連付けられているデータ ソース コントロールにします。</param>
+        <summary>デザイン時およびコンパイルなしのページで、テンプレートのコンテンツ内での双方向の ASP.NET データ バインド構文を使用してバインドされる値の名前/値ペアのセットを取得します。</summary>
+        <returns><see cref="T:System.Collections.Specialized.IOrderedDictionary" />の場所を表すテンプレートのコンテンツ内で連結する最初のパラメーターとして指定されたデータ項目のフィールドの名前、値は双方向の ASP.NET データ バインド構文を使用してバインド プロパティの値の現在の値の名前/値ペア。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.BindableTemplateBuilder.ExtractValues%2A>メソッドは、<xref:System.Web.UI.BindableTemplateBuilder>のクラスの実装、<xref:System.Web.UI.IBindableTemplate.ExtractValues%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAppendToParentBuilder">
+      <MemberSignature Language="C#" Value="public override void OnAppendToParentBuilder (System.Web.UI.ControlBuilder parentBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnAppendToParentBuilder(class System.Web.UI.ControlBuilder parentBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.BindableTemplateBuilder.OnAppendToParentBuilder(System.Web.UI.ControlBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentBuilder" Type="System.Web.UI.ControlBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="parentBuilder"><see cref="T:System.Web.UI.BindableTemplateBuilder" />を現在のビルダーを追加します。</param>
+        <summary>通知、<see cref="T:System.Web.UI.BindableTemplateBuilder" />オブジェクトの親コントロール ビルダーに追加されていること。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロールには、双方向データ バインディングをサポートするテンプレート コンテンツが含まれている場合、<xref:System.Web.UI.BindableTemplateBuilder.OnAppendToParentBuilder%2A>メソッドを呼び出すだけでなく、 <xref:System.Web.UI.ControlBuilder.OnAppendToParentBuilder%2A?displayProperty=nameWithType> 、基底クラスのメソッドものインスタンスを作成、<xref:System.Web.UI.ExtractTemplateValuesMethod>を委任します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

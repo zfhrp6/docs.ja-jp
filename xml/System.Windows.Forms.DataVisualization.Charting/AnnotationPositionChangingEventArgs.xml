@@ -1,0 +1,270 @@
+<Type Name="AnnotationPositionChangingEventArgs" FullName="System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs">
+  <TypeSignature Language="C#" Value="public class AnnotationPositionChangingEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AnnotationPositionChangingEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内のイベントのデータを提供、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Chart" />注釈の位置を変更するコントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs>クラスは、注釈を配置する 2 つのイベント、使用<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanging>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanged>で、<xref:System.Windows.Forms.DataVisualization.Charting.Chart>コントロール。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.Annotation%2A>プロパティが配置されている注釈オブジェクトを取得します。 このクラスには、新しい場所、幅、位置を変更する注釈の高さとアンカー位置を取得するプロパティも含まれます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnnotationPositionChangingEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataVisualization.AnnotationPositionChangingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Annotation">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.Annotation Annotation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.Annotation Annotation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.Annotation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.Annotation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataVisualization.Charting.Annotation" /> オブジェクトを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.Annotation" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.Annotation%2A>プロパティでは、開発者は設定を<xref:System.Windows.Forms.DataVisualization.Charting.Annotation>中にプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanging>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanged>のイベント、<xref:System.Windows.Forms.DataVisualization.Charting.Chart>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewAnchorLocation">
+      <MemberSignature Language="C#" Value="public System.Drawing.PointF NewAnchorLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.PointF NewAnchorLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewAnchorLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.PointF</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または注釈のアンカーの新しい位置を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.PointF" />新しいアンカー位置を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewAnchorLocationX">
+      <MemberSignature Language="C#" Value="public double NewAnchorLocationX { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewAnchorLocationX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewAnchorLocationX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または新しい注釈のアンカー ポイントの X 位置を設定します。</summary>
+        <value>A<see langword="double" />新しい注釈のアンカー ポイントの X 位置を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanging>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanging>イベントが発生する、<xref:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewAnchorLocationX%2A>プロパティは、新しい注釈の X 座標を決定します。 この情報は、データ ポイントに注釈がアンカーされる新しく場合に便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewAnchorLocationY">
+      <MemberSignature Language="C#" Value="public double NewAnchorLocationY { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewAnchorLocationY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewAnchorLocationY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または新しい注釈のアンカー ポイントの Y 位置を設定します。</summary>
+        <value>A<see langword="double" />新しい注釈のアンカー ポイントの Y 位置を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanging>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanged>イベントが発生する、<xref:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewAnchorLocationY%2A>プロパティ注釈の Y 座標の新しいを決定します。 この情報は、データ ポイントに注釈がアンカーされる新しく場合に便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewLocationX">
+      <MemberSignature Language="C#" Value="public double NewLocationX { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewLocationX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewLocationX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または座標位置注釈の X、新しい設定です。</summary>
+        <value>A<see langword="double" />新しい注釈の座標の位置を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanging>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanged>イベントが発生する、<xref:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewLocationX%2A>プロパティの注釈の X 座標位置を定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewLocationY">
+      <MemberSignature Language="C#" Value="public double NewLocationY { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewLocationY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewLocationY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、新しい位置の Y 座標の注釈を設定します。</summary>
+        <value>A<see langword="double" />注釈の位置の新しい Y 座標を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanging>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanged>イベントが発生する、<xref:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewLocationY%2A>プロパティの注釈の Y 座標位置を定義します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewPosition">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF NewPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.RectangleF NewPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または新しい場所と、注釈のサイズを設定します。</summary>
+        <value><see cref="T:System.Drawing.RectangleF" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSizeHeight">
+      <MemberSignature Language="C#" Value="public double NewSizeHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewSizeHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewSizeHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または新しい注釈の高さを設定します。</summary>
+        <value>A<see langword="double" />注釈の新しい高さを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanging>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanged>イベントが発生するを使用して、<xref:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewSizeHeight%2A>注釈の新しい高さを決定するプロパティです。 この情報は、注釈のサイズを変更するときに使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSizeWidth">
+      <MemberSignature Language="C#" Value="public double NewSizeWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewSizeWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewSizeWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または新しい注釈の幅を設定します。</summary>
+        <value>A<see langword="double" />注釈の新しい幅を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanging>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.AnnotationPositionChanged>イベントが発生するを使用して、<xref:System.Windows.Forms.DataVisualization.Charting.AnnotationPositionChangingEventArgs.NewSizeWidth%2A>注釈の新しい幅を決定するプロパティです。 この情報は、注釈のサイズを変更するときに使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

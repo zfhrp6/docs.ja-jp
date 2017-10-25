@@ -1,0 +1,131 @@
+<Type Name="ConvertEventArgs" FullName="System.Windows.Forms.ConvertEventArgs">
+  <TypeSignature Language="C#" Value="public class ConvertEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConvertEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ConvertEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Binding.Format" /> イベントおよび <see cref="E:System.Windows.Forms.Binding.Parse" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ConvertEventArgs>を書式設定しを使用してデータにバインドされている Windows フォーム コントロールによって表示される値をアンフォーマット使用される、<xref:System.Windows.Forms.Binding>オブジェクト。 <xref:System.Windows.Forms.Binding.Format>コントロール プロパティが値にバインドされているときに、イベントが発生し、<xref:System.Windows.Forms.Binding.Parse>バインドされた値が変更されるたびにイベントが発生します。  
+  
+ <xref:System.Windows.Forms.Binding.Format>と<xref:System.Windows.Forms.Binding.Parse>イベントでは、データを表示するためのカスタム形式を作成できます。 たとえば、テーブル内のデータが型の場合<xref:System.Decimal>を設定して、-、現地の通貨形式でデータを表示するかを指定することができます、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>のプロパティ、<xref:System.Windows.Forms.ConvertEventArgs>で書式設定された値を<xref:System.Windows.Forms.Binding.Format>イベント。 その結果に表示される値をアンフォーマットする必要があります、<xref:System.Windows.Forms.Binding.Parse>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Windows.Forms.Binding>、追加、<xref:System.Windows.Forms.ConvertEventHandler>両方にデリゲート、<xref:System.Windows.Forms.Binding.Parse>と<xref:System.Windows.Forms.Binding.Format>イベント、および使用して、<xref:System.Windows.Forms.Control.DataBindings%2A>プロパティを追加する、<xref:System.Windows.Forms.Binding>を<xref:System.Windows.Forms.BindingsCollection>の<xref:System.Windows.Forms.TextBox>コントロール。 `DecimalToCurrencyString`に追加されるイベント デリゲート、<xref:System.Windows.Forms.Binding.Format>イベントを使用して、<xref:System.Decimal.ToString%2A>バインドされた値の書式設定メソッド (、<xref:System.Decimal>型) 通貨として。 `CurrencyStringToDecimal`に追加されるイベント デリゲート、<xref:System.Windows.Forms.Binding.Parse>イベントがコントロールによって表示される値を変換に戻す、<xref:System.Decimal>型です。  
+  
+ [!code-cpp[Classic ConvertEventArgs Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ConvertEventArgs Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ConvertEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ConvertEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic ConvertEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ConvertEventArgs Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConvertEventArgs (object value, Type desiredType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object value, class System.Type desiredType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ConvertEventArgs.#ctor(System.Object,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="desiredType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />現在のプロパティの値を格納します。</param>
+        <param name="desiredType"><see cref="T:System.Type" />の値。</param>
+        <summary><see cref="T:System.Windows.Forms.ConvertEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesiredType">
+      <MemberSignature Language="C#" Value="public Type DesiredType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DesiredType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ConvertEventArgs.DesiredType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>必要な値のデータ型を取得します。</summary>
+        <value><see cref="T:System.Type" />の目的の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ConvertEventArgs.DesiredType%2A>プロパティでは、プロパティに変換される値の型を確認することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ConvertEventArgs.DesiredType%2A>を別の 1 つの型の変換を続行するかどうかを決定するプロパティです。 `DecimalToCurrencyString`メソッド テストするかどうか、<xref:System.Windows.Forms.ConvertEventArgs.DesiredType%2A>文字列です。 ない場合は、コードがメソッドを終了します。 同様に、`CurrencyStringToDecimal`メソッド テストするかどうか、<xref:System.Windows.Forms.ConvertEventArgs.DesiredType%2A>は、 <xref:System.Decimal>、されていない場合に終了して`true`です。  
+  
+ [!code-cpp[Classic ConvertEventArgs.DesiredType Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ConvertEventArgs.DesiredType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ConvertEventArgs.DesiredType Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ConvertEventArgs.DesiredType Example/CS/source.cs#1)]
+ [!code-vb[Classic ConvertEventArgs.DesiredType Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ConvertEventArgs.DesiredType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ConvertEventArgs.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値、<see cref="T:System.Windows.Forms.ConvertEventArgs" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.ConvertEventArgs" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれる値、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>プロパティをイベントに依存、<xref:System.Windows.Forms.ConvertEventArgs>が返されます。 <xref:System.Windows.Forms.ConvertEventArgs>いずれかで返されることができます、<xref:System.Windows.Forms.Binding.Format>イベントまたは<xref:System.Windows.Forms.Binding.Parse>イベント。  
+  
+ ときに、<xref:System.Windows.Forms.ConvertEventArgs>で返される、<xref:System.Windows.Forms.Binding.Format>イベント、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>プロパティには、データ ソースの書式設定されていないプロパティの値が含まれています。 内で、<xref:System.Windows.Forms.Binding.Format>イベント、プロパティ値の読み取り、値を書式設定およびリセット、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>プロパティを新しい (書式設定された) 値に、これにより、データ バインド コントロールに表示される値を設定します。  
+  
+ ときに、<xref:System.Windows.Forms.ConvertEventArgs>で返される、<xref:System.Windows.Forms.Binding.Parse>イベント、プロパティには、データ バインド コントロールのカスタム形式の値が含まれています。 内で、<xref:System.Windows.Forms.Binding.Parse>イベント、する必要があります書式設定された値の読み取り、それを解析して、およびデータ ソースと同じデータ型に変換します。 リセットすることができますし、<xref:System.Windows.Forms.ConvertEventArgs.Value%2A>プロパティを書式設定されていない値に設定して、これにより、データ ソースの値を設定します。 データ ソースの種類を判断するに調べて、<xref:System.Windows.Forms.ConvertEventArgs.DesiredType%2A>プロパティの値。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Windows.Forms.Binding>、追加、<xref:System.Windows.Forms.ConvertEventHandler>両方にデリゲート、<xref:System.Windows.Forms.Binding.Parse>と<xref:System.Windows.Forms.Binding.Format>イベント、および使用して、<xref:System.Windows.Forms.Control.DataBindings%2A>プロパティを追加する、<xref:System.Windows.Forms.Binding>を<xref:System.Windows.Forms.BindingsCollection>の<xref:System.Windows.Forms.TextBox>コントロール。 `DecimalToCurrencyString`に追加されるイベント デリゲート、<xref:System.Windows.Forms.Binding.Format>イベントを使用して、<xref:System.Decimal.ToString%2A>バインドされた値の書式設定メソッド (、<xref:System.Decimal>型) 通貨として。 `CurrencyStringToDecimal`に追加されるイベント デリゲート、<xref:System.Windows.Forms.Binding.Parse>イベントがコントロールによって表示される値を変換に戻す、<xref:System.Decimal>型です。  
+  
+ [!code-cpp[Classic ConvertEventArgs Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ConvertEventArgs Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ConvertEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ConvertEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic ConvertEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ConvertEventArgs Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

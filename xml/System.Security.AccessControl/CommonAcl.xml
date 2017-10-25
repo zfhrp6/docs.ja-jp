@@ -1,0 +1,322 @@
+<Type Name="CommonAcl" FullName="System.Security.AccessControl.CommonAcl">
+  <TypeSignature Language="C#" Value="public abstract class CommonAcl : System.Security.AccessControl.GenericAcl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CommonAcl extends System.Security.AccessControl.GenericAcl" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.CommonAcl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.GenericAcl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アクセス制御リスト (ACL: Access Control List) を表します。このクラスは、<see cref="T:System.Security.AccessControl.DiscretionaryAcl" /> クラスおよび <see cref="T:System.Security.AccessControl.SystemAcl" /> クラスの基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   特定の継承とアクセス マスク フラグの組み合わせが意味のないです。  
+  
+-   任意のアクセスの制御エントリ (ACE) 0 アクセス マスクを持つが削除されます。  
+  
+-   オブジェクトの Acl 内の Ace を継承のみが削除されます。  
+  
+-   <xref:System.Security.AccessControl.PropagationFlags.InheritOnly>、 <xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>、 <xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit>、および<xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit>フラグ リーフ内のすべての Ace をオブジェクトの Acl を消去します。  
+  
+-   Ace を持つ、<xref:System.Security.AccessControl.PropagationFlags.InheritOnly>フラグがない場合、<xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit>または<xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit>フラグは意味がありません。 これらは削除されます。  
+  
+-   <xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>フラグがない場合、<xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit>または<xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit>フラグを削除することができます。  
+  
+-   Ace を持つ、<xref:System.Security.AccessControl.AuditFlags>値<xref:System.Security.AccessControl.AuditFlags.Success>または<xref:System.Security.AccessControl.AuditFlags.Failure>随意アクセス制御リスト (Dacl) を削除します。  
+  
+-   いずれかの監査 ACE のいずれかが指定されていない<xref:System.Security.AccessControl.AuditFlags.Success>または<xref:System.Security.AccessControl.AuditFlags.Failure>を削除します。  
+  
+-   Dacl に SystemAudit と SystemAlarm Ace は削除されます。  
+  
+-   システム アクセス制御リスト (Sacl) に AccessAllowed と AccessDenied Ace は削除されます。  
+  
+ 正規の順序では、次のアルゴリズムに基づいて行われます。  
+  
+-   明示的な Ace 継承された Ace; よりも優先します。このルールは、Dacl と Sacl の両方に適用されます。  
+  
+-   明示的な Ace の間での Dacl でアクセスを拒否する Ace はアクセスを許可する Ace に優先します。 ディレクトリ オブジェクトの Acl の非オブジェクトへの Ace は、オブジェクトの Ace の前にします。  
+  
+-   すべての共通の Ace は、共通でない Ace よりも優先されます。  
+  
+-   継承された Ace は、canonicity 後の相対順序を維持します。  
+  
+-   Dacl と Sacl の両方では、認識されないとカスタムの Ace が許可されていません。  
+  
+-   使用して (明示的な対象として AccessDenied および AccessAllowed Ace Dacl、Sacl のすべての明示的な Ace に) の連続した範囲内での Ace の並べ替え、<xref:System.Security.Principal.SecurityIdentifier.CompareTo%2A>のメソッド、 <xref:System.Security.Principal.SecurityIdentifier> Ace に関連付けられているオブジェクト。  
+  
+ 該当する場合、隣接する Ace が結合されます。  これにより、許可するアクセス制御セマンティクスに影響を与えずに、ACL のサイズが小さきます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BinaryLength">
+      <MemberSignature Language="C#" Value="public override sealed int BinaryLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BinaryLength" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.BinaryLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクトのバイナリ表現の長さ (バイト単位) を取得します。 <see cref="M:System.Security.AccessControl.CommonAcl.GetBinaryForm(System.Byte[],System.Int32)" /> メソッドを使用してアクセス制御リスト (ACL: Access Control List) をバイナリ配列にマーシャリングする前に、この長さを使用する必要があります。</summary>
+        <value>現在の <see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクトのバイナリ表現の長さ (バイト単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public override sealed int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクト内のアクセス制御エントリ (ACE: Access Control Entry) の数を取得します。</summary>
+        <value>現在の <see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクト内の ACE の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBinaryForm">
+      <MemberSignature Language="C#" Value="public override sealed void GetBinaryForm (byte[] binaryForm, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetBinaryForm(unsigned int8[] binaryForm, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonAcl.GetBinaryForm(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binaryForm" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="binaryForm"><see cref="T:System.Security.AccessControl.CommonAcl" /> のコンテンツのマーシャリング先のバイト配列。</param>
+        <param name="offset">マーシャリングの開始位置を表すオフセット。</param>
+        <summary><see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクトのコンテンツを、指定したオフセットを開始位置として、指定したバイト配列にマーシャリングします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCanonical">
+      <MemberSignature Language="C#" Value="public bool IsCanonical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCanonical" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.IsCanonical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクト内のアクセス制御エントリ (ACE) の順序が正規順序であるかどうかを指定するブール値を取得します。</summary>
+        <value>
+          現在の <see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクト内の ACE の順序が正規である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsContainer">
+      <MemberSignature Language="C#" Value="public bool IsContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.IsContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクトがコンテナーであるかどうかを設定します。</summary>
+        <value>
+          現在の <see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクトがコンテナーである場合は <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDS">
+      <MemberSignature Language="C#" Value="public bool IsDS { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDS" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.IsDS" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクトがディレクトリ オブジェクトのアクセス制御リスト (ACL: Access Control List) であるかどうかを設定します。</summary>
+        <value>
+          現在の <see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクトがディレクトリ オブジェクトの ACL である場合は <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override sealed System.Security.AccessControl.GenericAce this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.AccessControl.GenericAce Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.GenericAce</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する <see cref="T:System.Security.AccessControl.CommonAce" /> の、0 から始まるインデックス番号。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.Security.AccessControl.CommonAce" /> を取得または設定します。</summary>
+        <value>指定されたインデックス位置にある <see cref="T:System.Security.AccessControl.CommonAce" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Purge">
+      <MemberSignature Language="C#" Value="public void Purge (System.Security.Principal.SecurityIdentifier sid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Purge(class System.Security.Principal.SecurityIdentifier sid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonAcl.Purge(System.Security.Principal.SecurityIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sid" Type="System.Security.Principal.SecurityIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="sid">確認する対象の <see cref="T:System.Security.Principal.SecurityIdentifier" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Security.Principal.SecurityIdentifier" /> オブジェクトに関連付けられた、この <see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクトに格納されているすべてのアクセス制御エントリ (ACE) を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveInheritedAces">
+      <MemberSignature Language="C#" Value="public void RemoveInheritedAces ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveInheritedAces() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonAcl.RemoveInheritedAces" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Security.AccessControl.CommonAcl" /> オブジェクトからすべての継承されたアクセス制御エントリ (ACE) を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Revision">
+      <MemberSignature Language="C#" Value="public override sealed byte Revision { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Revision" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.Revision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.AccessControl.CommonAcl" /> のリビジョン レベルを取得します。</summary>
+        <value><see cref="T:System.Security.AccessControl.CommonAcl" /> のリビジョン レベルを示すバイト値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

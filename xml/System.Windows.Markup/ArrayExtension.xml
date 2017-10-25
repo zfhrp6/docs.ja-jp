@@ -1,0 +1,278 @@
+<Type Name="ArrayExtension" FullName="System.Windows.Markup.ArrayExtension">
+  <TypeSignature Language="C#" Value="public class ArrayExtension : System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ArrayExtension extends System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.ArrayExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("PresentationFramework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Items")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.MarkupExtensionReturnType(typeof(System.Array))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装して<see langword="x:Array" />.NET Framework XAML サービスのサポート</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.ArrayExtension>実装するクラスには、`x:Array`マークアップ拡張機能の動作と`x:ArrayExtension`[MS-XAML] からの情報項目。 `x:Array`特定のマークアップ拡張機能を有効になっている構文を使用して配列内の任意の子要素を追加できるように、XAML 言語の機能をサポートしています。 マークアップ拡張構文は、明示的な必要<xref:System.Windows.Markup.ArrayExtension.Type%2A>マークアップ拡張機能の使用と内容の構文を指定するための属性、<xref:System.Windows.Markup.ArrayExtension.Items%2A>です。 詳細と、構文の詳細については、次を参照してください。 [X:array のマークアップ拡張機能](~/docs/framework/xaml-services/x-array-markup-extension.md)します。  
+  
+ このクラスは、マークアップ拡張機能の実装です。 マークアップ拡張機能クラスは、XAML プロセッサの実装の一部の側面のインフラストラクチャをサポートするには、主に存在し、マークアップ拡張機能クラスによって公開されるメンバーは、通常ユーザー コードからは呼び出されません。 この拡張機能をサポートしている、 [X:array のマークアップ拡張機能](~/docs/framework/xaml-services/x-array-markup-extension.md)の XAML の .NET Framework XAML サービス実装と、XAML リーダーと XAML ライター XAML から使用量。  
+  
+ .NET Framework の以前のバージョンでは、このクラスは、WPF 固有の PresentationFramework アセンブリに存在します。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.ArrayExtension>は System.Xaml アセンブリにします。 これにより、`x:Array`フレームワークまたはなどのテクノロジを使用法が[!INCLUDE[TLA#tla_workflow](~/includes/tlasharptla-workflow-md.md)].NET Framework XAML サービスに組み込まれています。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+ System.Xaml アセンブリ使用<xref:System.Windows.Markup.XmlnsDefinitionAttribute>から型をマップする、 <xref:System.Windows.Markup> 、XAML 言語の XAML 名前空間に、アセンブリ内の CLR 名前空間 ([!INCLUDE[TLA#tla_xamlxmlnsv1](~/includes/tlasharptla-xamlxmlnsv1-md.md)])。 通常の XAML マークアップでのプレフィックスを宣言する[!INCLUDE[TLA#tla_xamlxmlnsv1](~/includes/tlasharptla-xamlxmlnsv1-md.md)]では、ルート要素のマッピングを使用してプレフィックス`x`です。  
+  
+<a name="xamlTextUsage_ArrayExtension"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArrayExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ArrayExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.ArrayExtension" /> クラスの新しいインスタンスを初期化します。 これにより、空の配列が作成されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArrayExtension (Array elements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Array elements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ArrayExtension.#ctor(System.Array)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="elements" Type="System.Array" />
+      </Parameters>
+      <Docs>
+        <param name="elements">作成された配列のメンバーを追加する配列の内容。</param>
+        <summary>指定された生の配列に基づいて、<see cref="T:System.Windows.Markup.ArrayExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、マークアップ拡張機能の動作をサポートしは通常呼び出されませんユーザー コードにより、ユーザー コードが XAML 処理の動作を実装しない限り、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="elements" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArrayExtension (Type arrayType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type arrayType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ArrayExtension.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="arrayType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="arrayType">新しい配列のオブジェクトの型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.ArrayExtension" />クラスし、配列の型を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、マークアップ拡張機能の動作をサポートしは通常呼び出されませんユーザー コードにより、ユーザー コードが XAML 処理の動作を実装しない限り、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="arrayType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="public void AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ArrayExtension.AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">配列の末尾に追加するオブジェクト。</param>
+        <summary>指定したオブジェクトを配列の末尾に追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、直接呼び出されるものではありませんし、既存の .NET 解釈に参加していない、`x:Array`マークアップ拡張機能の動作です。 配列の Api または言語の機能では、バッキング配列インスタンスへのコード アクセスを行う必要があります。 任意の代替の XAML リーダーまたは XAML ライターの実装する必要があります代わりに、.NET System.Xaml サービス拡張機能を使用など<xref:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod%2A>を呼び出すには、どのような方法を決定または<xref:System.Xaml.XamlType.LookupCollectionKind%2A>と共に、適切なインターフェイスにキャストします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddText">
+      <MemberSignature Language="C#" Value="public void AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ArrayExtension.AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">配列の末尾に追加するテキスト。</param>
+        <summary>新しい配列項目としてテキスト ノードを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、直接呼び出されるものではありませんしの解釈に参加していない、`x:Array`マークアップ拡張機能の動作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Collections.IList Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList Items" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.ArrayExtension.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配列の内容を取得します。 XAML のコレクション構文を使用して XAML で設定可能。</summary>
+        <value>配列の内容。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.ArrayExtension.Items%2A>属性付き XAML コンテンツ プロパティの<xref:System.Windows.Markup.ArrayExtension>します。 XAML コンテンツ プロパティの指定には、標準的な XAML 使用量の xaml オブジェクト要素の子として、配列の項目要素を指定することがサポートされています。 <xref:System.Windows.Markup.ArrayExtension.Items%2A>オブジェクト モデル、およびマークアップ拡張機能の実装に対して公開する、組み込み`ArrayExtension.Items`プロパティ、用に定義されて`x:ArrayExtension`[MS-XAML] にします。  
+  
+ 入力の間の不一致<xref:System.Windows.Markup.ArrayExtension.Type%2A>および内の項目<xref:System.Windows.Markup.ArrayExtension.Items%2A>、またはその他の検証の問題はまで例外として報告されません<xref:System.Windows.Markup.ArrayExtension.ProvideValue%2A>が呼び出されます。 この動作は、XAML マークアップ拡張機能の一般的なデザインの原則と一致します。  
+  
+ XAML の使用状況について、次を参照してください。 [X:array のマークアップ拡張機能](~/docs/framework/xaml-services/x-array-markup-extension.md)します。  
+  
+<a name="xamlTextUsage_Items"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ArrayExtension.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">マークアップ拡張機能のサービスを提供できるオブジェクト。</param>
+        <summary>指定されたオブジェクトの数のサイズが配列を返します、<see cref="P:System.Windows.Markup.ArrayExtension.Items" />値。</summary>
+        <returns>作成された配列、または null。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、マークアップ拡張機能の動作をサポートしは通常呼び出されませんユーザー コードにより、ユーザー コードが XAML 処理の動作を実装しない限り、します。  
+  
+ XAML プロセッサの実装の適切な処理のこのメソッドを使用して`x:Array`要素オブジェクトの作成中にします。 これには、XAML プロセッサの全般的な動作のいずれかを処理するときに<xref:System.Windows.Markup.MarkupExtension>呼び出しとその`ProvideValue`実装します。  
+  
+ この実装は、渡されたに基づくすべてのサービスに依存しない`serviceProvider`です。 ただし、.NET Framework XAML サービスの既定の XAML スキーマ コンテキストを処理中に、拡張機能の使用によって送信されると、CLR の概念に依存には。  
+  
+ マークアップ拡張機能の詳細については、次を参照してください。 [XAML の概要のマークアップ拡張機能](~/docs/framework/xaml-services/markup-extensions-for-xaml-overview.md)します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">有効な提供しなかった配列が処理<see cref="P:System.Windows.Markup.ArrayExtension.Type" />です。  
+  
+ または  
+  
+ 間、宣言された型の不一致がある<see cref="P:System.Windows.Markup.ArrayExtension.Type" />配列および 1 つまたは複数の<see cref="P:System.Windows.Markup.ArrayExtension.Items" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.ArrayExtension.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.ConstructorArgument("type")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出すときに作成される配列の型を取得または<see cref="M:System.Windows.Markup.ArrayExtension.ProvideValue(System.IServiceProvider)" />です。</summary>
+        <value>配列の型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML の使用状況について、次を参照してください。 [X:array のマークアップ拡張機能](~/docs/framework/xaml-services/x-array-markup-extension.md)します。  
+  
+<a name="xamlTextUsage_Type"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

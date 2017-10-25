@@ -1,0 +1,161 @@
+<Type Name="DictationGrammar" FullName="System.Speech.Recognition.DictationGrammar">
+  <TypeSignature Language="C#" Value="public class DictationGrammar : System.Speech.Recognition.Grammar" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DictationGrammar extends System.Speech.Recognition.Grammar" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.DictationGrammar" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Recognition.Grammar</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フリー テキストのディクテーション モードを使用する音声認識の文法を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、話されたユーザーが入力テキストに処理できる定義済みの言語モデルを含むアプリケーションを提供します。 このクラスは、既定およびカスタムの両方をサポートしている<xref:System.Speech.Recognition.DictationGrammar>オブジェクト。 ディクテーション文法の選択については、次を参照してください。、<xref:System.Speech.Recognition.DictationGrammar.%23ctor%28System.String%29>コンス トラクターです。  
+  
+ 既定では、<xref:System.Speech.Recognition.DictationGrammar>言語モデルがコンテキストを解放します。 特定の語句の使用または word の順序を特定し、オーディオ入力の解釈を行いません。 ディクテーション文法にコンテキストを追加するには、使用、<xref:System.Speech.Recognition.DictationGrammar.SetDictationContext%2A>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Speech.Recognition.DictationGrammar>オブジェクトはサポートされない、<xref:System.Speech.Recognition.Grammar.Priority%2A>プロパティです。 <xref:System.Speech.Recognition.DictationGrammar>スロー、<xref:System.NotSupportedException>場合<xref:System.Speech.Recognition.Grammar.Priority%2A>が設定されています。  
+  
+   
+  
+## Examples  
+ 次の例は次の 3 つのディクテーション文法を作成、新しいにそれらを追加<xref:System.Speech.Recognition.SpeechRecognitionEngine>オブジェクト、および新しいオブジェクトを返します。 最初の文法では、既定ディクテーション文法がします。 2 番目の文法では、文章ディクテーションがします。 3 番目の文法では、コンテキストの語句を含む既定ディクテーション文法です。 <xref:System.Speech.Recognition.DictationGrammar.SetDictationContext%2A>メソッドの使用に関連付けるコンテキスト語句ディクテーション文法が読み込まれた後、<xref:System.Speech.Recognition.SpeechRecognitionEngine>オブジェクト。  
+  
+```csharp  
+  
+private SpeechRecognitionEngine LoadDictationGrammars()  
+{  
+  
+  // Create a default dictation grammar.  
+  DictationGrammar defaultDictationGrammar = new DictationGrammar();  
+  defaultDictationGrammar.Name = "default dictation";  
+  defaultDictationGrammar.Enabled = true;  
+  
+  // Create the spelling dictation grammar.  
+  DictationGrammar spellingDictationGrammar =  
+    new DictationGrammar("grammar:dictation#spelling");  
+  spellingDictationGrammar.Name = "spelling dictation";  
+  spellingDictationGrammar.Enabled = true;  
+  
+  // Create the question dictation grammar.  
+  DictationGrammar customDictationGrammar =  
+    new DictationGrammar("grammar:dictation");  
+  customDictationGrammar.Name = "question dictation";  
+  customDictationGrammar.Enabled = true;  
+  
+  // Create a SpeechRecognitionEngine object and add the grammars to it.  
+  SpeechRecognitionEngine recoEngine = new SpeechRecognitionEngine();  
+  recoEngine.LoadGrammar(defaultDictationGrammar);  
+  recoEngine.LoadGrammar(spellingDictationGrammar);  
+  recoEngine.LoadGrammar(customDictationGrammar);  
+  
+  // Add a context to customDictationGrammar.  
+  customDictationGrammar.SetDictationContext("How do you", null);  
+  
+  return recoEngine;  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DictationGrammar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.DictationGrammar.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Speech.Recognition.DictationGrammar" /> Windows デスクトップ音声テクノロジによって提供される既定のディクテーション文法のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のディクテーション文法では、標準ディクテーション プラクティス、句読点を含むをエミュレートします。 単語のスペル チェックはサポートされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DictationGrammar (string topic);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string topic) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.DictationGrammar.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="topic" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="topic">XML に準拠したユニバーサル リソース識別子 (URI) ディクテーション文法をいずれかを指定する<c>文法: ディクテーション</c>または<c>文法: ディクテーション #spelling</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.DictationGrammar" />特定ディクテーション文法を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Speech プラットフォームでは、特殊な URI 構文を使用して、カスタム ディクテーション文法を定義します。 値`grammar:dictation`既定ディクテーション文法を示します。 値`grammar:dictation#spelling`文章ディクテーション モードを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDictationContext">
+      <MemberSignature Language="C#" Value="public void SetDictationContext (string precedingText, string subsequentText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetDictationContext(string precedingText, string subsequentText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.DictationGrammar.SetDictationContext(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="precedingText" Type="System.String" />
+        <Parameter Name="subsequentText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="precedingText">ディクテーション コンテキストの開始を示すテキスト。</param>
+        <param name="subsequentText">ディクテーション コンテキストの終了を示すテキストです。</param>
+        <summary>によって読み込まれているディクテーション文法にコンテキストを追加、<see cref="T:System.Speech.Recognition.SpeechRecognizer" />または<see cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、特定の語句の使用または word の順序を識別およびオーディオ入力を解釈することと、ディクテーション文法はありません。 認識エンジンを使用して、ディクテーション文法にコンテキストを追加するときに、`precedingText`と`subsequentText`ディクテーションと音声を解釈するタイミングを識別します。  
+  
+> [!NOTE]
+>  によって、ディクテーション文法を読み込む必要がある、<xref:System.Speech.Recognition.SpeechRecognizer>または<xref:System.Speech.Recognition.SpeechRecognitionEngine>オブジェクトを使用して<xref:System.Speech.Recognition.DictationGrammar.SetDictationContext%2A>コンテキストを追加します。  
+  
+ 次の表では、認識エンジンが 2 つのパラメーターを使用して、ディクテーション文法を使用するかを判断する方法について説明します。  
+  
+|`precedingText`|`subsequentText`|説明|  
+|---------------------|----------------------|-----------------|  
+|`null` 以外|`null` 以外|認識エンジンは、可能性のある候補語句を囲む用語を使用します。|  
+|`null`|`null` 以外|認識エンジンを使用して、`subsequentText`をディクテーション モードを終了します。|  
+|`null` 以外|`null`|認識エンジンを使用して、`precedingText`をディクテーション モードを開始します。|  
+|`null`|`null`|ディクテーション文法を使用するときに、認識エンジンがコンテキストを使用しません。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,2030 @@
+<Type Name="ControlDesigner" FullName="System.Web.UI.Design.ControlDesigner">
+  <TypeSignature Language="C#" Value="public class ControlDesigner : System.Web.UI.Design.HtmlControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlDesigner extends System.Web.UI.Design.HtmlControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ControlDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.HtmlControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web サーバー コントロールのデザイン モードの動作を拡張するために、基本コントロール デザイナー クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner>クラスから継承してなどのデザイン ホストでの Web サーバー コントロールのデザイン時サポートを提供するように拡張できる基本コントロール デザイナー クラスを提供[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]です。  
+  
+ デザイン時のレンダリングを操作するため、オブジェクト モデルは、以前のバージョン、簡略化されたオブジェクト モデルへのアクセスを提供する次の新しい基底クラスを持つ経由で強化されています。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner>、を新しい、ではありませんが、大幅に改善されました。  
+  
+-   <xref:System.Web.UI.Design.ContainerControlDesigner>。  
+  
+-   <xref:System.Web.UI.Design.WebControls.CompositeControlDesigner>。  
+  
+## <a name="automatic-formatting"></a>自動書式  
+ さまざまなページの開発者がカスタム Web サーバー コントロールに複雑なスタイルの変更を適用するプロセスを簡素化する自動および定義済みの形式を作成することができます。 たとえば、<xref:System.Web.UI.Design.WebControls.TableDesigner>から派生するコントロールを<xref:System.Web.UI.Design.ControlDesigner>クラスを選択する多くの自動形式を提供します。 実装し、カスタム コントロールへのオート フォーマットを行うため、次の機能を使用します。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.AutoFormats%2A> プロパティ。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.OnAutoFormatApplied%2A> メソッド。  
+  
+-   <xref:System.Web.UI.Design.DesignerAutoFormat> クラス  
+  
+-   <xref:System.Web.UI.Design.DesignerAutoFormatStyle> クラス  
+  
+## <a name="action-lists-smart-tags"></a>アクション (スマート タグ) の一覧します。  
+ アクション リストなどのコントロールを使用しているページの開発者がデザイン時のユーザー インターフェイス (UI) で実行できる重要なまたは広く使用されているタスクのメニューは[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]します。 たとえば、コントロールのデザイン時ビューには、利用可能なタスクのメニューを提供できます。 これには、コントロールを自動的に書式設定するタスクが含まれます。 アクションの一覧については、するには、次の機能を起動します。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.ActionLists%2A> プロパティ。  
+  
+-   <xref:System.ComponentModel.Design.DesignerActionList> クラス  
+  
+-   <xref:System.ComponentModel.Design.DesignerActionList.GetSortedActionItems%2A> メソッド。  
+  
+-   <xref:System.ComponentModel.Design.DesignerActionListCollection> クラス  
+  
+-   <xref:System.ComponentModel.Design.DesignerActionMethodItem> クラス  
+  
+-   <xref:System.ComponentModel.Design.DesignerActionPropertyItem> クラス  
+  
+## <a name="control-designer-regions"></a>コントロール デザイナー領域  
+ 領域とは、Web サーバー コントロールのデザイン時ビューの編集可能な領域です。 この機能は、WYSIWYG に近いがデザイン時テンプレートのコンテンツ、内部コントロール、およびプロパティの編集を提供します。 コントロール デザイナー領域にコントロールを作成することが、または、ツールボックスをドラッグ アンド ドロップ領域にコントロールを使用することができます。 領域は、次の機能により管理されます。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.OnClick%2A> メソッド。  
+  
+-   <xref:System.Web.UI.Design.DesignerRegion> クラス  
+  
+-   <xref:System.Web.UI.Design.EditableDesignerRegion> クラス  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.GetEditableDesignerRegionContent%2A> メソッド。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.SetEditableDesignerRegionContent%2A> メソッド。  
+  
+## <a name="templates"></a>テンプレート  
+ デザイン時のようにテンプレートのコントロールの編集用の UI を作成するため、モデル、<xref:System.Web.UI.WebControls.GridView>コントロールを以前のバージョンから大幅に改善されました。 コントロールのさまざまな部分のテンプレートが含まれている複雑なカスタム コントロールを作成することができ、カスタム コントロール デザイナーは、次の機能を持つテンプレートを変更するは、ページ、開発者を支援できます。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A> プロパティ。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.InTemplateMode%2A> プロパティ。  
+  
+-   <xref:System.Web.UI.Design.TemplateGroup> クラス  
+  
+## <a name="design-time-rendering"></a>デザイン時のレンダリング  
+ <xref:System.Web.UI.Design.ControlDesigner>クラスには、Web サーバー コントロールのデザイン時のレンダリングをサポートするために、次の方法です。 これらのメソッドのほとんどは、以前のバージョンと同じです。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A> メソッド。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml%2A> メソッド。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.GetErrorDesignTimeHtml%2A> メソッド。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.UpdateDesignTimeHtml%2A> メソッド。  
+  
+-   <xref:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml%2A> メソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例は、単純なデザイナーから派生するクラスを作成する方法を示します、<xref:System.Web.UI.Design.ControlDesigner>クラスです。 このコントロールのデザイナーは、カスタムをサポートしている`TextControl`クラスし、デザイン時にコントロールのテキストのサイズを変更するコマンドを提供します。 コントロール デザイナーがコントロール デザイナーを指定することによってコントロールに関連付け、<xref:System.ComponentModel.DesignerAttribute>でオブジェクトの宣言、`TextControl`クラスです。 HTML マークアップのコントロール デザイナーから永続化するプロパティの変更にキーが見つかった、`ToggleTextSize`カスタム メソッド`ActionList`クラスです。  
+  
+ この例を実行するには、System.Design.dll アセンブリへの参照を追加し、コードをコンパイルします。  
+  
+ [!code-csharp[ControlDesignerSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlDesignerSample/cs/TextControlDesigner.cs#1)]
+ [!code-vb[ControlDesignerSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlDesignerSample/vb/TextControlDesigner.vb#1)]  
+[!code-aspx-csharp[ControlDesignerSample#8](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlDesignerSample/cs/TextControlDesigner.aspx#8)]
+[!code-aspx-vb[ControlDesignerSample#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlDesignerSample/vb/TextControlDesigner.aspx#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.ControlDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール デザイナーのアクション リスト コレクションを取得します。</summary>
+        <value>コントロール デザイナーの <see cref="T:System.ComponentModel.Design.DesignerActionList" /> 項目を格納する <see cref="T:System.ComponentModel.Design.DesignerActionListCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を持つ単純な複合コントロールを作成する方法を示しています、<xref:System.Web.UI.WebControls.Label>と<xref:System.Web.UI.WebControls.TextBox>コントロール、両方の内部のコントロールにテキストのプロパティを設定するプロパティと共に、さらに、<xref:System.Web.UI.WebControls.WebControl.Width%2A>と<xref:System.Web.UI.WebControls.WebControl.BackColor%2A>プロパティ、<xref:System.Web.UI.WebControls.TextBox>コントロール。 関連付けられたコントロール デザイナー クラスでは、3 つが作成されます<xref:System.ComponentModel.Design.DesignerActionMethodItem>コマンド、それぞれのコントロールで、2 つのプロパティを設定し、デザイン ホストの元に戻す機能をロールバックすることができます。  
+  
+ [!code-csharp[DesignerInvokeTransactedChange#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DesignerInvokeTransactedChange/CS/InvokeTransactedChangeSample.cs#1)]
+ [!code-vb[DesignerInvokeTransactedChange#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerInvokeTransactedChange/VB/InvokeTransactedChangeSample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>アクション リスト メニュー コントロールを追加する、カスタム デザイン ビューで、カスタム コントロール デザイナーがオーバーライドする必要があります、<see cref="P:System.Web.UI.Design.ControlDesigner.ActionLists" />から派生したカスタム コントロール クラスを取得するプロパティ、<see cref="T:System.ComponentModel.Design.DesignerActionList" />クラスです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowResize">
+      <MemberSignature Language="C#" Value="public virtual bool AllowResize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowResize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.AllowResize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時環境でコントロールのサイズを変更できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、コントロールのサイズを変更する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.Design.ControlDesigner.AllowResize%2A>カスタム コントロール デザイナー クラスのプロパティです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>プロパティです。  
+  
+ [!code-csharp[DesignerTemplateGroupSample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/DesignerTemplateGroupSample/CS/TemplateGroupsSample.cs#3)]
+ [!code-vb[DesignerTemplateGroupSample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerTemplateGroupSample/VB/TemplateGroupsSample.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>使用して、<see cref="P:System.Web.UI.Design.ControlDesigner.AllowResize" />プロパティには、派生クラスを有効または無効にページの開発者がデザイン ホストでのコントロールのサイズを変更します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFormats">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.AutoFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerAutoFormatCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一連の定義済みの自動書式で表示するスキームを取得、**オート フォーマット**デザイン時に関連付けられたコントロールのダイアログ ボックス。</summary>
+        <value>コントロールの定義済みスキームを格納している <see cref="T:System.Web.UI.Design.DesignerAutoFormatCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールだけでなくが完全な Web サーバー コントロールに含まれていますが、場合によっては、対応する制御もから派生したデザイナー クラス、<xref:System.Web.UI.Design.ControlDesigner>クラスと書式指定クラスから派生した、<xref:System.Web.UI.Design.DesignerAutoFormat>クラスです。 <xref:System.Web.UI.Design.ControlDesigner.AutoFormats%2A>プロパティは、のインスタンスのコレクション、<xref:System.Web.UI.Design.DesignerAutoFormat>クラスです。 オート フォーマットの実際の例について[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]を参照してください<xref:System.Web.UI.WebControls.Calendar>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Web.UI.Design.ControlDesigner.AutoFormats%2A>カスタム コントロール デザイナー内のプロパティです。 派生コントロールのデザイナーを実装、<xref:System.Web.UI.Design.ControlDesigner.AutoFormats%2A>プロパティから派生したカスタムの自動書式の 3 つのインスタンスを追加することによって、<xref:System.Web.UI.Design.DesignerAutoFormat>クラスです。  
+  
+ [!code-csharp[DesignerAutoFormat#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DesignerAutoFormat/CS/DesignerAutoFormat.cs#1)]
+ [!code-vb[DesignerAutoFormat#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerAutoFormat/VB/DesignerAutoFormat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>[オート フォーマット] を自動的に公開するコントロールは、タスク、形式の一覧とコンテキストのコマンドを取得します。 自動形式を使用しているときに使用して、<see cref="P:System.Web.UI.Design.ControlDesigner.ViewControl" />プロパティをコールバック関数で、プロパティを設定します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateErrorDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected string CreateErrorDesignTimeHtml (string errorMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string CreateErrorDesignTimeHtml(string errorMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.CreateErrorDesignTimeHtml(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="errorMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="errorMessage">生成される HTML マークアップに含めるエラー メッセージ。</param>
+        <summary>デザイン時に指定したエラー メッセージを表示する HTML マークアップを作成します。</summary>
+        <returns>指定されたエラー メッセージを表す HTML マークアップ文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.ControlDesigner.CreateErrorDesignTimeHtml%2A>メソッドをデザイン時にコントロールのエラー メッセージを表示する HTML マークアップを作成します。 値は、`errorMessage`デザイン時にコントロールのユーザーに表示されるローカライズされた文字列を指定します。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner>のクラスの実装、<xref:System.Web.UI.Design.ControlDesigner.CreateErrorDesignTimeHtml%2A>メソッドが次のように 2 つの行を含むテーブルを返します。  
+  
+-   最初の行には、型名とサイトの名前が含まれています、<xref:System.ComponentModel.Design.ComponentDesigner.Component%2A>のプロパティ、<xref:System.Web.UI.Design.ControlDesigner>オブジェクト。  
+  
+-   2 番目の行には、入力エラー メッセージ文字列が含まれています。  
+  
+ 関連付けられている例外のエラー メッセージの HTML マークアップを生成するには、使用、<xref:System.Web.UI.Design.ControlDesigner.CreateErrorDesignTimeHtml%28System.String%2CSystem.Exception%29>オーバー ロードします。 ローカライズされたエラー メッセージを指定せず、例外の HTML マークアップを生成するには、使用、<xref:System.Web.UI.Design.ControlDesigner.GetErrorDesignTimeHtml%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.Design.ControlDesigner.CreateErrorDesignTimeHtml(System.String)" />オーバー ロードは機能的には、通話、 <see cref="M:System.Web.UI.Design.ControlDesigner.CreateErrorDesignTimeHtml(System.String,System.Exception)" /> e に設定を持つメソッド<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateErrorDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected string CreateErrorDesignTimeHtml (string errorMessage, Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string CreateErrorDesignTimeHtml(string errorMessage, class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.CreateErrorDesignTimeHtml(System.String,System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="errorMessage" Type="System.String" />
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="errorMessage">生成された HTML 文字列に含めるエラー メッセージ。</param>
+        <param name="e">生成される HTML 文字列に含める例外。</param>
+        <summary>デザイン時に指定した例外エラー メッセージを表示する HTML マークアップを作成します。</summary>
+        <returns>HTML マークアップを含む、指定した<paramref name="errorMessage" />と<paramref name="e" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.ControlDesigner.CreateErrorDesignTimeHtml%2A>エラーと例外の詳細を表示コントロールのデザイン時に使用できる単純な HTML マークアップを提供するメソッド。 値は、`errorMessage`デザイン時にコントロールのユーザーに表示されるローカライズされた文字列を指定します。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner>のクラスの実装、<xref:System.Web.UI.Design.ControlDesigner.CreateErrorDesignTimeHtml%2A>メソッドが次のように 2 つの行を含むテーブルを返します。  
+  
+-   最初の行には、型名とサイトの名前が含まれています、<xref:System.ComponentModel.Design.ComponentDesigner.Component%2A>のプロパティ、<xref:System.Web.UI.Design.ControlDesigner>オブジェクト。  
+  
+-   2 番目の行には、入力エラー メッセージが含まれています。 および<xref:System.Exception.Message%2A>例外の文字列。  
+  
+ 例外を指定せず、エラー メッセージの HTML マークアップを生成するには、使用、<xref:System.Web.UI.Design.ControlDesigner.CreateErrorDesignTimeHtml%28System.String%29>オーバー ロードします。 ローカライズされたエラー メッセージを指定せず、例外の HTML マークアップを生成するには、使用、<xref:System.Web.UI.Design.ControlDesigner.GetErrorDesignTimeHtml%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.Design.ControlDesigner.CreateErrorDesignTimeHtml(System.String,System.Exception)" />からメソッドを呼び出す必要があります、<see cref="Overload:System.Web.UI.Design.ControlDesigner.GetViewRendering" />または<see cref="M:System.Web.UI.Design.ControlDesigner.GetErrorDesignTimeHtml(System.Exception)" />メソッド例外が発生します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePlaceHolderDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected string CreatePlaceHolderDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string CreatePlaceHolderDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>型とコントロールの ID を表示する単純な四角形のプレース ホルダー表現を提供します。</summary>
+        <returns>コントロールの基本的な情報を提供するデザイン時 HTML マークアップを含む文字列です。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>一般的なデザイン パターンは、関連付けられたコントロールを使用して HTML マークアップを取得し、エラーが発生した場合、呼び出すしようとするが、<see cref="M:System.Web.UI.Design.ControlDesigner.GetErrorDesignTimeHtml(System.Exception)" />メソッドです。 コントロールによってマークアップが返されない場合、<see cref="M:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml" />固有のマークアップを提供するがオーバーライドされていない場合に、<see cref="M:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml" />メソッドの型とコントロールの ID に関する情報を含める必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePlaceHolderDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected string CreatePlaceHolderDesignTimeHtml (string instruction);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string CreatePlaceHolderDesignTimeHtml(string instruction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instruction" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="instruction">テキストと HTML 出力に追加するマークアップを含む文字列です。</param>
+        <summary>種類と、コントロール、およびも追加の手順に従ってまたは情報の ID を表示する単純な四角形のプレース ホルダーの表示を提供します。</summary>
+        <returns>コントロールに関する情報を提供するデザイン時 HTML マークアップを含む文字列です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>テンプレート コントロール デザイナー内のメソッドです。 として文字列が渡されたし、`instruction`への呼び出しのパラメーター、<xref:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml%2A>メソッドで、デザイン時 HTML マークアップを提供します。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.Design.ControlDesigner.TemplateGroups%2A>プロパティです。  
+  
+ [!code-csharp[DesignerTemplateGroupSample#4](~/samples/snippets/csharp/VS_Snippets_WebNet/DesignerTemplateGroupSample/CS/TemplateGroupsSample.cs#4)]
+ [!code-vb[DesignerTemplateGroupSample#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerTemplateGroupSample/VB/TemplateGroupsSample.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>一般的なデザイン パターンは、関連付けられたコントロールを使用して HTML マークアップを取得し、エラーが発生した場合、呼び出すしようとするが、<see cref="M:System.Web.UI.Design.ControlDesigner.GetErrorDesignTimeHtml(System.Exception)" />メソッドです。 コントロールによってマークアップが返されない場合、<see cref="M:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml" />固有のマークアップを提供するがオーバーライドされていない場合に、<see cref="M:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml" />メソッドの型とコントロールの ID に関する情報を含める必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateViewControl">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.Control CreateViewControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.Control CreateViewControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.CreateViewControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールを表示またはデザイン サーフェイスにレンダリングするためのコピーを返します。</summary>
+        <returns>Web サーバー コントロールです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindingsEnabled">
+      <MemberSignature Language="C#" Value="protected virtual bool DataBindingsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DataBindingsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.DataBindingsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールに含まれる領域で、データ バインディングをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、コントロールのコンテナーは、データ バインディングをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerState">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.Design.ControlDesignerState DesignerState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.ControlDesignerState DesignerState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.DesignerState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ControlDesignerState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時に関連付けられたコントロールのデータを保持するために使用できるオブジェクトを取得します。</summary>
+        <value>A<see cref="P:System.Web.UI.Design.ControlDesigner.DesignerState" />プロパティを実装する<see cref="T:System.Collections.IDictionary" />を使用して、<see cref="T:System.ComponentModel.Design.IComponentDesignerStateService" />をデザイン時に関連付けられたコントロールの状態データを保持します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Web.UI.Design.ControlDesigner.DesignerState%2A>ユーザー デザインからソース ビューに切り替えるか、ドキュメントを再読み込みまたはをデザイン ホストが再度開かれます場合でも、プロパティを永続化します。  
+  
+ 取得し、値を使用して、オブジェクトが自動的に保存される IDictionary と同じように、返されたオブジェクトの値を設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignTimeElementView">
+      <MemberSignature Language="C#" Value="protected object DesignTimeElementView { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DesignTimeElementView" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.DesignTimeElementView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Error: This property can no longer be referenced, and is included to support existing compiled applications. The design-time element view architecture is no longer used. http://go.microsoft.com/fwlink/?linkid=14202", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール デザイナーのビュー コントロール オブジェクトを取得します。</summary>
+        <value>
+          <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ControlDesigner.DesignTimeElementView%2A>プロパティは廃止されており、機能に代わる機能はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignTimeHtmlRequiresLoadComplete">
+      <MemberSignature Language="C#" Value="public virtual bool DesignTimeHtmlRequiresLoadComplete { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DesignTimeHtmlRequiresLoadComplete" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.DesignTimeHtmlRequiresLoadComplete" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is SetViewFlags(ViewFlags.DesignTimeHtmlRequiresLoadComplete, true). http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン ホストの前に読み込みが完了する必要があるかどうかを示す値を取得、<see cref="Overload:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml" />メソッドを呼び出すことができます。</summary>
+        <value>
+          <see langword="true" />、読み込みが完了する前に必要がある場合、<see cref="Overload:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml" />と呼ばれる、それ以外のメソッドになる<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装、<xref:System.Web.UI.Design.ControlDesigner.DesignTimeHtmlRequiresLoadComplete%2A>プロパティから返される`false`です。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ControlDesigner.DesignTimeHtmlRequiresLoadComplete%2A> は互換性のために残されています。 使用して、<xref:System.Web.UI.Design.ControlDesigner.SetViewFlags%2A>同等のコントロール デザイナーの機能のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle GetBounds ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle GetBounds() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetBounds" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン画面に表示されるコントロールの境界を表す四角形の座標を取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />ドキュメントではなく、コントロールに対する相対的なデザイン サーフェイス上のコントロールの境界を表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public virtual string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時にコントロールを表すために使用される HTML マークアップを取得します。</summary>
+        <returns>デザイン時にコントロールを表すために使用される HTML マークアップ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>カスタム コントロール デザイナー内のメソッドです。 関連付けられたコントロールのテキスト プロパティが空の場合、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッドの呼び出し、<xref:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml%2A>メソッドです。 それ以外の場合、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッドを作成し、ハイパーリンク コントロールを表示します。  
+  
+ [!code-csharp[System.Web.UI.Design.ControlDesigner_Example#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.ControlDesigner_Example/CS/SimpleControlDesigner.cs#5)]
+ [!code-vb[System.Web.UI.Design.ControlDesigner_Example#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.ControlDesigner_Example/VB/simplecontroldesigner.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタムのコンテナー コントロールを作成する場合は、かどうかに関係なく、デザイン時に、コントロールおよびすべての子コントロールをレンダリングすることを確認してください、<see cref="P:System.Web.UI.Control.Visible" />プロパティに設定されている<see langword="true" />または<see langword="false" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public virtual string GetDesignTimeHtml (System.Web.UI.Design.DesignerRegionCollection regions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetDesignTimeHtml(class System.Web.UI.Design.DesignerRegionCollection regions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="regions" Type="System.Web.UI.Design.DesignerRegionCollection" />
+      </Parameters>
+      <Docs>
+        <param name="regions">関連付けられているコントロールのコントロール デザイナー領域のコレクション。</param>
+        <summary>コントロールを表示する HTML マークアップを取得し、現在のコントロール デザイナー領域をコレクションに設定します。</summary>
+        <returns>すべてのコントロール デザイナー領域を含む、関連付けられているコントロールのデザイン時 HTML マークアップ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイン ホストの呼び出し、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>デザイナー領域のデザイン時 HTML マークアップとコントロールの現在の一覧を取得します。 DesignerRegionCollection を使用すると、デザイン ホストによりを要求各編集可能なコントロール デザイナー領域のマークアップ。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッドは、提供派生コントロール デザイナーでは、ように、<xref:System.Web.UI.Design.WebControls.GridViewDesigner>クラスを呼び出す前に領域の内容を処理する必要があります、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用した HTML マークアップを作成する方法を示しています、<xref:System.Web.UI.Design.DesignerRegionCollection>コレクション。  
+  
+ [!code-csharp[SimpleMultiRegionControlDesigner#5](~/samples/snippets/csharp/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/CS/SimpleMultiRegionControlDesigner.cs#5)]
+ [!code-vb[SimpleMultiRegionControlDesigner#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/VB/SimpleMultiRegionControlDesigner.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeResourceProviderFactory">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.Design.DesignTimeResourceProviderFactory GetDesignTimeResourceProviderFactory (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.Design.DesignTimeResourceProviderFactory GetDesignTimeResourceProviderFactory(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetDesignTimeResourceProviderFactory(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignTimeResourceProviderFactory</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider"><see cref="T:System.IServiceProvider" />グローバルとローカル サービスを取得するオブジェクト。</param>
+        <summary>サイトの構成ファイル内のグローバリゼーション設定に応じて、適切なリソース プロバイダー ファクトリを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.Design.DesignTimeResourceProviderFactory" />オブジェクトのいずれかが、構成ファイルで定義されている、それ以外の場合<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソース プロバイダーのファクトリは、リソース プロバイダーと構成ファイル (グローバルとローカル リソースの両方を Machine.config または Web.config ファイル) の system.web/globalization セクションでは、現在の設定に応じて、リソースのライターを作成します。 グローバリゼーションの設定が見つからない場合、`serviceProvider`を作成するパラメーターを使用、<xref:System.Web.UI.Design.DesignTimeResourceProviderFactory>オブジェクトのデザイン ホストの既定の実装を使用します。  
+  
+ 通常、コントロールの開発者がオーバーライドされない、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeResourceProviderFactory%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditableDesignerRegionContent">
+      <MemberSignature Language="C#" Value="public virtual string GetEditableDesignerRegionContent (System.Web.UI.Design.EditableDesignerRegion region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetEditableDesignerRegionContent(class System.Web.UI.Design.EditableDesignerRegion region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.EditableDesignerRegion" />
+      </Parameters>
+      <Docs>
+        <param name="region"><see cref="T:System.Web.UI.Design.EditableDesignerRegion" />オブジェクトのコンテンツを取得します。</param>
+        <summary>関連付けられたコントロールのデザイン時ビューの編集可能領域の内容を返します。</summary>
+        <returns>コントロール デザイナーが編集可能領域をサポートする場合は領域の永続化された内容。それ以外の場合は空の文字列 ("")。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装、<xref:System.Web.UI.Design.ControlDesigner.GetEditableDesignerRegionContent%2A>メソッドは、空の文字列を返します ("") です。  
+  
+ 派生するクラス、<xref:System.Web.UI.Design.ControlDesigner>クラスは地域ベースのデザイン画面で編集をサポートでき、オーバーライド、<xref:System.Web.UI.Design.ControlDesigner.GetEditableDesignerRegionContent%2A>を指定した領域の内容を返すメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例は、デザイン ホストへの参照を取得し、参照を使用して作成する方法を示しています、<xref:System.Web.UI.Design.ControlParser>の HTML マークアップを作成するオブジェクト`region`とその内容。  
+  
+ [!code-csharp[SimpleMultiRegionControlDesigner#6](~/samples/snippets/csharp/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/CS/SimpleMultiRegionControlDesigner.cs#6)]
+ [!code-vb[SimpleMultiRegionControlDesigner#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/VB/SimpleMultiRegionControlDesigner.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEmptyDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected virtual string GetEmptyDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetEmptyDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行時には視覚的な表示がない Web サーバー コントロールをデザイン時に表すための HTML マークアップを取得します。</summary>
+        <returns>他に視覚的に表示する方法がないコントロールをデザイン時に表すために使用する HTML マークアップ。 既定では、コンポーネントの種類と ID を含んでいる四角形が表示されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作、<xref:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml%2A>メソッドは、コンポーネントの名前を含む文字列を返します。 <xref:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml%2A>の実装でメソッドを呼び出す必要があります、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッド デザイン時 HTML マークアップがない場合。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>カスタム コントロール デザイナー内のメソッドです。 場合、`Text`関連付けられたコントロールのプロパティは空では、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッド呼び出し<xref:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml%2A>メソッドです。 それ以外の場合、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッドを作成し、表示、`Hyperlink`コントロール。  
+  
+ [!code-csharp[System.Web.UI.Design.ControlDesigner_Example#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.ControlDesigner_Example/CS/SimpleControlDesigner.cs#5)]
+ [!code-vb[System.Web.UI.Design.ControlDesigner_Example#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.ControlDesigner_Example/VB/simplecontroldesigner.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected virtual string GetErrorDesignTimeHtml (Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetErrorDesignTimeHtml(class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetErrorDesignTimeHtml(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="e">発生した例外。</param>
+        <summary>指定された例外に関する情報を提供する HTML マークアップを取得します。</summary>
+        <returns>指定された例外のデザイン時の HTML マークアップ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.GetErrorDesignTimeHtml%2A>通常メソッドで例外がスローされた場合、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、エラーが発生したときに、コントロールと呼び出しのデザイン時 HTML マークアップを生成する方法を示します、<xref:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.LoginDesigner#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginDesigner/CS/LoginDesigner.cs#2)]
+ [!code-vb[System.Web.UI.Design.WebControls.LoginDesigner#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.LoginDesigner/VB/LoginDesigner.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>一般的なデザイン パターンは、関連付けられたコントロールを使用して HTML マークアップを取得し、エラーが発生した場合、呼び出すしようとするが、<see cref="M:System.Web.UI.Design.ControlDesigner.GetErrorDesignTimeHtml(System.Exception)" />メソッドです。 コントロールによってマークアップが返されない場合、<see cref="M:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml" />固有のマークアップを提供するがオーバーライドされていない場合に、<see cref="M:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml" />メソッドの型とコントロールの ID に関する情報を含める必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPersistenceContent">
+      <MemberSignature Language="C#" Value="public virtual string GetPersistenceContent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetPersistenceContent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetPersistenceContent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時にコントロールの永続化の内部 HTML マークアップを取得します。</summary>
+        <returns>関連付けられたコントロールの永続化の内部 HTML マークアップを表す文字列。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.ControlDesigner.GetPersistenceContent" />デザイン ホストの内部コンテンツ永続化のカスタム処理を提供するメソッド。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPersistInnerHtml">
+      <MemberSignature Language="C#" Value="public virtual string GetPersistInnerHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetPersistInnerHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetPersistInnerHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is GetPersistenceContent(). http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの永続化の内部 HTML マークアップを取得します。</summary>
+        <returns>コントロールの永続化できる内部 HTML マークアップ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ControlDesigner.GetPersistInnerHtml%2A>メソッドは今後使用しません。 使用して、<xref:System.Web.UI.Design.ControlDesigner.GetPersistenceContent%2A>同等のコントロール デザイナーの機能のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewRendering">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.ViewRendering GetViewRendering ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.Design.ViewRendering GetViewRendering() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetViewRendering" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ViewRendering</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンテンツおよび関連付けられたコントロールの領域のデザイン時のマークアップを格納しているオブジェクトを取得します。</summary>
+        <returns><see cref="T:System.Web.UI.Design.ViewRendering" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewRendering">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.Design.ViewRendering GetViewRendering (System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.Design.ViewRendering GetViewRendering(class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetViewRendering(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ViewRendering</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control"><see cref="T:System.Web.UI.Control" /> オブジェクト。</param>
+        <summary>コンテンツおよび指定されたコントロールの領域のデザイン時のマークアップを格納しているオブジェクトを取得します。</summary>
+        <returns><see cref="T:System.Web.UI.Design.ViewRendering" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewRendering">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.Design.ViewRendering GetViewRendering (System.Web.UI.Design.ControlDesigner designer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.Design.ViewRendering GetViewRendering(class System.Web.UI.Design.ControlDesigner designer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.GetViewRendering(System.Web.UI.Design.ControlDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ViewRendering</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Web.UI.Design.ControlDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="designer">派生したコントロール デザイナー<see cref="T:System.Web.UI.Design.ControlDesigner" />です。</param>
+        <summary>指定したコントロール デザイナーのコンテンツおよび関連付けられたコントロールの領域のデザイン時のマークアップを格納しているオブジェクトを取得します。</summary>
+        <returns><see cref="T:System.Web.UI.Design.ViewRendering" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HidePropertiesInTemplateMode">
+      <MemberSignature Language="C#" Value="protected virtual bool HidePropertiesInTemplateMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HidePropertiesInTemplateMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.HidePropertiesInTemplateMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがテンプレート モードのときに、関連付けられたコントロールのプロパティを非表示にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、コントロールがテンプレート モードであるときに関連付けられたコントロールのプロパティが非表示の場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ID プロパティが必ず表示されます。 <xref:System.Web.UI.Design.ControlDesigner.PreFilterProperties%2A>メソッドを使用、<xref:System.Web.UI.Design.ControlDesigner.HidePropertiesInTemplateMode%2A>かどうか、ID プロパティ以外のプロパティに非表示にする、プロパティ グリッドからコントロールのテンプレート編集モードのときに決定するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ID">
+      <MemberSignature Language="C#" Value="public virtual string ID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.ID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの ID 文字列を設定します。</summary>
+        <value>コントロールの ID 文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.ID%2A>コントロール デザイナー内で、[プロパティ] ウィンドウと対話するため、プロパティは内部的に使用します。 <xref:System.Web.UI.Design.ControlDesigner.ID%2A>プロパティは、実行時間をシャドウ<xref:System.Web.UI.Control.ID%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">デザイン中のコントロールです。</param>
+        <summary>コントロール デザイナーを初期化し、指定したコンポーネントを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.Initialize%2A>メソッドは、次の操作を完了するデザインのホストによって呼び出されます。  
+  
+-   設計するコンポーネントとコントロールのデザイナーを読み込みます。  
+  
+-   使用して、コントロールのビューをセットアップ、<xref:System.Web.UI.Design.ControlDesigner.SetViewFlags%2A>メソッドです。  
+  
+-   関連付けられたコントロールを適切な種類があることを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コントロール クラスとをオーバーライドするコントロール デザイナー クラスを使用する方法を示します、<xref:System.Web.UI.Design.ControlDesigner.Initialize%2A>内部変数を初期化します。  
+  
+ [!code-csharp[System.Web.UI.Design.ControlDesigner_Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.ControlDesigner_Example/CS/SimpleControlDesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.ControlDesigner_Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.ControlDesigner_Example/VB/simplecontroldesigner.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InTemplateMode">
+      <MemberSignature Language="C#" Value="protected bool InTemplateMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InTemplateMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.InTemplateMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがテンプレートの表示または編集デザイン ホストでのモードのいずれかであるかどうかを示す値を取得します。 <see cref="P:System.Web.UI.Design.ControlDesigner.InTemplateMode" />プロパティは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />、コントロールがテンプレートの表示または編集モードのいずれかである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用テンプレートは現在、表示または編集可能なテンプレートをデザイン ホストでなど編集されている、ときにテンプレート モードでは、Web サーバー コントロール[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]です。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner>クラスは、既定値を提供します。<xref:System.Web.UI.Design.ViewEventHandler>を更新するオブジェクト、<xref:System.Web.UI.Design.ControlDesigner.InTemplateMode%2A>関連付けられたコントロールのテンプレート モードが変更されたときの値。 派生したカスタム デザイナー、<xref:System.Web.UI.Design.TemplatedControlDesigner>クラスをオーバーライドして、<xref:System.Web.UI.Design.TemplatedControlDesigner.OnTemplateModeChanged%2A>追加テンプレートの処理時にデザイン ホスト内のコントロールのモードの変更の編集を実行するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Invalidate">
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>デザイン サーフェイスに表示されるようにコントロールを無効にし、デザイン ホストが呼び出す、<see cref="M:System.Web.UI.Design.ControlDesigner.OnPaint(System.Windows.Forms.PaintEventArgs)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Web.UI.Design.ControlDesigner.UpdateDesignTimeHtml%2A>メソッドも呼び出します<xref:System.Web.UI.Design.ControlDesigner.Invalidate%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Invalidate">
+      <MemberSignature Language="C#" Value="public void Invalidate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invalidate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.Invalidate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールを再描画するコントロール デザイナーに通知し、デザイン サーフェイスに表示されるコントロールの領域全体を無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 描画イベントを処理するコントロールのデザイナーを有効にするを使用して、<xref:System.Web.UI.Design.ControlDesigner.SetViewFlags%2A>メソッドで、<xref:System.Web.UI.Design.ControlDesigner.Initialize%2A>メソッドです。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner.Invalidate%2A>メソッドにコントロールを再描画するコントロールのデザイナーを指示する方法とデザイン ホストを提供します。 これは基本的に、呼び出した場合と同じ<xref:System.Web.UI.Design.ControlDesigner.UpdateDesignTimeHtml%2A>メソッド、コントロール全体を再描画されるが発生するためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invalidate">
+      <MemberSignature Language="C#" Value="public void Invalidate (System.Drawing.Rectangle rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invalidate(valuetype System.Drawing.Rectangle rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.Invalidate(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rectangle">A<see cref="T:System.Drawing.Rectangle" />コントロールの左上隅に対して相対的に、無効化する領域を表すオブジェクト。</param>
+        <summary>コントロールを再描画するコントロール デザイナーに通知し、デザイン サーフェイスに表示されるコントロールの指定した領域を無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 描画イベントを処理するコントロールのデザイナーを有効にするを使用して、<xref:System.Web.UI.Design.ControlDesigner.SetViewFlags%2A>メソッドで、<xref:System.Web.UI.Design.ControlDesigner.Initialize%2A>メソッドです。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner.Invalidate%2A>メソッドは、コントロールの特定の部分を再描画するコントロール デザイナーに指示する手段をデザイン ホストを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeTransactedChange">
+      <MemberSignature Language="C#" Value="public static void InvokeTransactedChange (System.ComponentModel.IComponent component, System.Web.UI.Design.TransactedChangeCallback callback, object context, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InvokeTransactedChange(class System.ComponentModel.IComponent component, class System.Web.UI.Design.TransactedChangeCallback callback, object context, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange(System.ComponentModel.IComponent,System.Web.UI.Design.TransactedChangeCallback,System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="callback" Type="System.Web.UI.Design.TransactedChangeCallback" />
+        <Parameter Name="context" Type="System.Object" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="component">コントロール デザイナーに関連付けられているコントロール。</param>
+        <param name="callback">A<see cref="T:System.Web.UI.Design.TransactedChangeCallback" />コントロール デザイナーで、トランザクションの一部として呼び出すには、機能を表すオブジェクト。</param>
+        <param name="context">コールバックの引数を格納するオブジェクト。</param>
+        <param name="description">トランザクションの完了を許可、ユーザー トランザクションをキャンセルする機会を提供する効果の説明です。</param>
+        <summary>一連の変更をロールバックできる、単位としてデザイン ホストの元に戻す機能を指定したパラメーターを使用して、トランザクションをラップします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange%2A>メソッドによって決定されるデザイン ホストに通知、<xref:System.Web.UI.Control.Site%2A>のプロパティ`component`、変更が関連付けられたコントロールで発生しているされ、デザイン ホストで、変更が取り消されていない場合は、指定されたを呼び出してこと`callback`指定して`context`とし、変更が完了したことをデザイン ホストに通知します。  
+  
+ デザイン ホストまたは関連付けられたコントロールは、静的なをスローした場合`Canceled`の例外のフィールド、<xref:System.ComponentModel.Design.CheckoutException>起動せず、例外、トランザクションが取り消された`callback`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を持つ単純な複合コントロールを作成する方法を示しています、<xref:System.Web.UI.WebControls.Label>と<xref:System.Web.UI.WebControls.TextBox>とそのラベルのテキストを設定するプロパティ、コントロールとも、 <xref:System.Web.UI.WebControls.TextBox.Text%2A>、 <xref:System.Web.UI.WebControls.WebControl.Width%2A>、および<xref:System.Web.UI.WebControls.WebControl.BackColor%2A>のプロパティ<xref:System.Web.UI.WebControls.TextBox>コントロール。 関連付けられたコントロール デザイナー クラスでは、3 つが作成されます<xref:System.ComponentModel.Design.DesignerActionMethodItem>コントロールで 2 つのプロパティを設定それぞれコマンド。 使用して、<xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange%2A>メソッド、ようにデザイン ホストの元に戻す機能を使用することができます[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、単位として完了した各トランザクションをロールバックします。  
+  
+ [!code-csharp[DesignerInvokeTransactedChange#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DesignerInvokeTransactedChange/CS/InvokeTransactedChangeSample.cs#1)]
+ [!code-vb[DesignerInvokeTransactedChange#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerInvokeTransactedChange/VB/InvokeTransactedChangeSample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="callback" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeTransactedChange">
+      <MemberSignature Language="C#" Value="public static void InvokeTransactedChange (System.ComponentModel.IComponent component, System.Web.UI.Design.TransactedChangeCallback callback, object context, string description, System.ComponentModel.MemberDescriptor member);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InvokeTransactedChange(class System.ComponentModel.IComponent component, class System.Web.UI.Design.TransactedChangeCallback callback, object context, string description, class System.ComponentModel.MemberDescriptor member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange(System.ComponentModel.IComponent,System.Web.UI.Design.TransactedChangeCallback,System.Object,System.String,System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="callback" Type="System.Web.UI.Design.TransactedChangeCallback" />
+        <Parameter Name="context" Type="System.Object" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="member" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="component">コントロール デザイナーに関連付けられているコントロール。</param>
+        <param name="callback">A<see cref="T:System.Web.UI.Design.TransactedChangeCallback" />コントロール デザイナーで、トランザクションの一部として呼び出すには、機能を表すオブジェクト。</param>
+        <param name="context">コールバックの引数を格納するオブジェクト。</param>
+        <param name="description">トランザクションの完了を許可、ユーザー トランザクションをキャンセルする機会を提供する効果の説明です。</param>
+        <param name="member">A<see cref="T:System.ComponentModel.MemberDescriptor" />オブジェクト (通常は、いずれか、<see cref="T:System.ComponentModel.EventDescriptor" />または<see cref="T:System.ComponentModel.PropertyDescriptor" />オブジェクト) が、トランザクションの一部として呼び出されている関連付けられたコントロールのメンバーの説明です。</param>
+        <summary>一連の変更をロールバックできる、単位としてデザイン ホストの元に戻す機能を指定したパラメーターを使用して、トランザクションをラップします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange%2A>メソッドによって決定されるデザイン ホストに通知、<xref:System.Web.UI.Control.Site%2A>プロパティの`component`を指定された変更が発生している`member`(プロパティまたはメソッド) 関連付けられたコントロールのし、デザイン ホストで、変更が取り消されない場合は、指定された起動`callback`指定して`context`引数としてとし、変更が完了したことをデザイン ホストに通知します。  
+  
+ デザイン ホストまたは関連付けられているコントロールは、静的なをスローした場合`Canceled`の例外のフィールド、<xref:System.ComponentModel.Design.CheckoutException>起動せず、例外、トランザクションが取り消された`callback`です。  
+  
+   
+  
+## Examples  
+ コード例については、「<xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange%28System.ComponentModel.IComponent%2CSystem.Web.UI.Design.TransactedChangeCallback%2CSystem.Object%2CSystem.String%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="callback" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeTransactedChange">
+      <MemberSignature Language="C#" Value="public static void InvokeTransactedChange (IServiceProvider serviceProvider, System.ComponentModel.IComponent component, System.Web.UI.Design.TransactedChangeCallback callback, object context, string description, System.ComponentModel.MemberDescriptor member);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InvokeTransactedChange(class System.IServiceProvider serviceProvider, class System.ComponentModel.IComponent component, class System.Web.UI.Design.TransactedChangeCallback callback, object context, string description, class System.ComponentModel.MemberDescriptor member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange(System.IServiceProvider,System.ComponentModel.IComponent,System.Web.UI.Design.TransactedChangeCallback,System.Object,System.String,System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="callback" Type="System.Web.UI.Design.TransactedChangeCallback" />
+        <Parameter Name="context" Type="System.Object" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="member" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider"><see cref="T:System.IServiceProvider" />コントロールに関連付けられたコントロールのデザイナーのサービスを提供するデザイン ホストを表すオブジェクト。</param>
+        <param name="component">コントロール デザイナーに関連付けられているコントロール。</param>
+        <param name="callback">A<see cref="T:System.Web.UI.Design.TransactedChangeCallback" />コントロール デザイナーで、トランザクションの一部として呼び出すには、機能を表すオブジェクト。</param>
+        <param name="context">コールバックの引数を格納するオブジェクト。</param>
+        <param name="description">トランザクションの完了を許可、ユーザー トランザクションをキャンセルする機会を提供する効果の説明です。</param>
+        <param name="member">A<see cref="T:System.ComponentModel.MemberDescriptor" />オブジェクト (通常、<see cref="T:System.ComponentModel.EventDescriptor" />または<see cref="T:System.ComponentModel.PropertyDescriptor" />オブジェクト) が、トランザクションの一部として呼び出されている関連付けられたコントロールのメンバーを説明します。</param>
+        <summary>一連の変更をロールバックできる、単位としてデザイン ホストの元に戻す機能を指定したパラメーターを使用して、トランザクションをラップします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange%2A>メソッドで表されるデザイン ホストに通知`serviceProvider`を指定された変更が発生している`member`(プロパティまたはメソッド) 関連付けられたコントロールのし、デザイン ホストで、変更が取り消されない場合は、指定された起動`callback`指定して`context`引数としてとし、変更が完了したことをデザイン ホストに通知します。  
+  
+ デザイン ホストまたは関連付けられたコントロールは、静的なをスローした場合`Canceled`の例外のフィールド、<xref:System.ComponentModel.Design.CheckoutException>起動せず、例外、トランザクションが取り消された`callback`です。  
+  
+   
+  
+## Examples  
+ コード例については、「<xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="component" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="callback" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="serviceProvider" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDirty">
+      <MemberSignature Language="C#" Value="public bool IsDirty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDirty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.IsDirty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is to use Tag.SetDirty() and Tag.IsDirty. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web サーバー コントロールが変更されたものとしてマークされているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />、Web サーバー コントロールが最後に永続化、または読み込まれた後に変更された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ControlDesigner.IsDirty%2A> は互換性のために残されています。 使用して、<xref:System.Web.UI.Design.IControlDesignerTag.IsDirty%2A>プロパティおよび<xref:System.Web.UI.Design.IControlDesignerTag.SetDirty%2A>メソッドを<xref:System.Web.UI.Design.ControlDesigner.Tag%2A>同等のコントロール デザイナーの機能のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPropertyBound">
+      <MemberSignature Language="C#" Value="public bool IsPropertyBound (string propName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsPropertyBound(string propName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.IsPropertyBound(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is DataBindings.Contains(string). The DataBindings collection allows more control of the databindings associated with the control. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propName">データ バインディングをテストするプロパティです。</param>
+        <summary>関連付けられたコントロールの指定したプロパティがデータ バインドするかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />、プロパティがデータ バインドされている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ControlDesigner.IsPropertyBound%2A>メソッドは今後使用しません。 使用して、<xref:System.Web.UI.DataBindingCollection.Contains%2A>メソッドを<xref:System.Web.UI.Design.HtmlControlDesigner.DataBindings%2A>同等のコントロール デザイナーの機能のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Localize">
+      <MemberSignature Language="C#" Value="public void Localize (System.Web.UI.Design.IDesignTimeResourceWriter resourceWriter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Localize(class System.Web.UI.Design.IDesignTimeResourceWriter resourceWriter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.Localize(System.Web.UI.Design.IDesignTimeResourceWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resourceWriter" Type="System.Web.UI.Design.IDesignTimeResourceWriter" />
+      </Parameters>
+      <Docs>
+        <param name="resourceWriter">派生したオブジェクト、<see cref="T:System.Web.UI.Design.IDesignTimeResourceWriter" />デザイン時の応答ストリームに書き込むためにリソースに使用されるオブジェクト。</param>
+        <summary>デザイン ホストのリソースに関連付けられたコントロールのローカライズ可能なプロパティを保持するのにには、指定されたリソース ライターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.Localize%2A>デザイン ホストでマークされている各プロパティのリソースのエントリを作成するメソッドを呼び出すとき、<xref:System.ComponentModel.LocalizableAttribute>オブジェクトとプロパティを値として、明示的なリソースの式を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAutoFormatApplied">
+      <MemberSignature Language="C#" Value="public virtual void OnAutoFormatApplied (System.Web.UI.Design.DesignerAutoFormat appliedAutoFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnAutoFormatApplied(class System.Web.UI.Design.DesignerAutoFormat appliedAutoFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.OnAutoFormatApplied(System.Web.UI.Design.DesignerAutoFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appliedAutoFormat" Type="System.Web.UI.Design.DesignerAutoFormat" />
+      </Parameters>
+      <Docs>
+        <param name="appliedAutoFormat">A<see cref="T:System.Web.UI.Design.DesignerAutoFormat" />スタイルを定義するオブジェクト。</param>
+        <summary>定義済みの自動書式指定スキームが関連付けられているコントロールに適用されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.OnAutoFormatApplied%2A>メソッドは、<xref:System.Web.UI.Design.DesignerAutoFormat>オブジェクトが関連付けられたコントロールを定義済みの書式を適用します。 A<xref:System.Web.UI.Design.DesignerAutoFormat>オブジェクトは自動書式指定スキームの名前とスタイルの設定コントロールに適用されるを定義します。  
+  
+ 派生するクラス、<xref:System.Web.UI.Design.ControlDesigner>クラスのオーバーライド、<xref:System.Web.UI.Design.ControlDesigner.OnAutoFormatApplied%2A>自動書式指定スキームが関連付けられているコントロールに適用される場合、追加の処理を実行するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBindingsCollectionChanged">
+      <MemberSignature Language="C#" Value="protected override void OnBindingsCollectionChanged (string propName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnBindingsCollectionChanged(string propName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.OnBindingsCollectionChanged(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is to handle the Changed event on the DataBindings collection. The DataBindings collection allows more control of the databindings associated with the control. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propName">そのバインディング コレクション内の変更をテストするプロパティです。</param>
+        <summary>データ バインディングのコレクションが変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.OnBindingsCollectionChanged%2A>データ バインディングのコレクションが外部の呼び出し元によって変更されたときに、メソッドが呼び出されます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ControlDesigner.OnBindingsCollectionChanged%2A>メソッドは今後使用しません。 使用して、<xref:System.Web.UI.DataBindingCollection.Changed>でイベントを<xref:System.Web.UI.Design.HtmlControlDesigner.DataBindings%2A>同等のコントロール デザイナーの機能のコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClick">
+      <MemberSignature Language="C#" Value="protected virtual void OnClick (System.Web.UI.Design.DesignerRegionMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClick(class System.Web.UI.Design.DesignerRegionMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.OnClick(System.Web.UI.Design.DesignerRegionMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.Design.DesignerRegionMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Web.UI.Design.DesignerRegionMouseEventArgs" />場所と、場合によっては、ユーザーがクリックされたコントロール デザイナー領域を指定するオブジェクト。</param>
+        <summary>ユーザーは、デザイン時に関連付けられたコントロールをクリックしたときに、デザイン ホストによって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.IControlDesignerView.ViewEvent>イベントは、デザイン画面でコントロールの特定のアクションにデザイン ホストで発生します。 たとえば、次の条件に対してイベントが生成します。  
+  
+-   ユーザーがコントロールをクリックします。  
+  
+-   デザイン画面でコントロール デザイナー描画します。  
+  
+-   ユーザーは、入力したか、コントロールのテンプレート編集モードを終了します。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner>クラスは、既定値を処理するデリゲートを提供します。、<xref:System.Web.UI.Design.IControlDesignerView.ViewEvent?displayProperty=nameWithType>イベント。 派生するクラス<xref:System.Web.UI.Design.ControlDesigner>オーバーライド、<xref:System.Web.UI.Design.ControlDesigner.OnClick%2A>ユーザー コントロールがクリックしたときに発生するイベントを処理するメソッド。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner.OnClick%2A>メソッドにより、派生クラスでデリゲートを結び付けずに、イベントを処理します。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ 既定の実装、<xref:System.Web.UI.Design.ControlDesigner.OnClick%2A>メソッドが、処理を実行せずに返します。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドラーを使用する方法を示しています、 <xref:System.Web.UI.Design.ControlDesigner.OnClick%2A> 、使用してコントロールのクリック可能な領域内のイベント、<xref:System.Web.UI.Design.DesignerRegionMouseEventArgs>がクリックしてされている領域を識別するオブジェクト。  
+  
+ このコード例のコード例の一部である、<xref:System.Web.UI.Design.EditableDesignerRegion>クラスです。  
+  
+ [!code-csharp[SimpleMultiRegionControlDesigner#4](~/samples/snippets/csharp/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/CS/SimpleMultiRegionControlDesigner.cs#4)]
+ [!code-vb[SimpleMultiRegionControlDesigner#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/VB/SimpleMultiRegionControlDesigner.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.ControlDesigner.OnClick(System.Web.UI.Design.DesignerRegionMouseEventArgs)" />から派生するクラスのメソッド、<see cref="T:System.Web.UI.Design.ControlDesigner" />デザイン時に処理するクラスがコントロール上のイベントをクリックします。 場合<paramref name="e" />が null でない、クリックした領域で、いずれかが指定されている場合、<see cref="P:System.Web.UI.Design.DesignerRegionMouseEventArgs.Region" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnComponentChanged">
+      <MemberSignature Language="C#" Value="public virtual void OnComponentChanged (object sender, System.ComponentModel.Design.ComponentChangedEventArgs ce);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnComponentChanged(object sender, class System.ComponentModel.Design.ComponentChangedEventArgs ce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.OnComponentChanged(System.Object,System.ComponentModel.Design.ComponentChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="ce" Type="System.ComponentModel.Design.ComponentChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。</param>
+        <param name="ce">イベント データを含んでいる <see cref="T:System.ComponentModel.Design.ComponentChangedEventArgs" /> オブジェクト。</param>
+        <summary>関連付けられたコントロールが変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.OnComponentChanged%2A>関連付けられたコントロールのプロパティが変更されたときに、メソッドが呼び出されます。 これにより、プロパティの変更後に必要となる可能性のある処理を実装できます。 呼び出す、<xref:System.Web.UI.Design.ControlDesigner.OnComponentChanged%2A>メソッドにより、デザイン ホスト、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッドです。 基本実装、<xref:System.Web.UI.Design.ControlDesigner.OnComponentChanged%2A>メソッドもページ マークアップ内のコントロールを保持します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.ControlDesigner.OnComponentChanged(System.Object,System.ComponentModel.Design.ComponentChangedEventArgs)" />コントロールを保持する前に、デザイン時 HTML マークアップを更新する前に、追加の処理を提供するメソッド。  
+  
+ オーバーライドする場合、<see cref="M:System.Web.UI.Design.ControlDesigner.OnComponentChanged(System.Object,System.ComponentModel.Design.ComponentChangedEventArgs)" />派生クラスでメソッドを呼び出すことを確認、<see cref="M:System.Web.UI.Design.ControlDesigner.OnComponentChanged(System.Object,System.ComponentModel.Design.ComponentChangedEventArgs)" />デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnComponentChanging">
+      <MemberSignature Language="C#" Value="public virtual void OnComponentChanging (object sender, System.ComponentModel.Design.ComponentChangingEventArgs ce);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnComponentChanging(object sender, class System.ComponentModel.Design.ComponentChangingEventArgs ce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.OnComponentChanging(System.Object,System.ComponentModel.Design.ComponentChangingEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="ce" Type="System.ComponentModel.Design.ComponentChangingEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソースであるオブジェクト。</param>
+        <param name="ce">イベント データを含んでいる <see cref="T:System.ComponentModel.Design.ComponentChangedEventArgs" /> オブジェクト。</param>
+        <summary>処理するメソッドを表す、<see cref="E:System.ComponentModel.Design.IComponentChangeService.ComponentChanging" />関連付けられたコントロールのイベントです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときにいずれか、<xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange%2A>または<xref:System.Web.UI.Design.ControlDesigner.Localize%2A>メソッドが呼び出されると、<xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanging>イベントは、関連付けられたコントロールをすべての変更が行われる前に発生します。 変更が完了したら、後に、<xref:System.Web.UI.Design.ControlDesigner.OnComponentChanged%2A>メソッドが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnControlResize">
+      <MemberSignature Language="C#" Value="protected virtual void OnControlResize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnControlResize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.OnControlResize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is OnComponentChanged(). OnComponentChanged is called when any property of the control is changed. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられている Web サーバー コントロールがサイズ変更されてデザイン ホストでデザイン時にときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ControlDesigner.OnControlResize%2A>メソッドは今後使用しません。 使用して、<xref:System.Web.UI.Design.ControlDesigner.OnComponentChanged%2A>同等のコントロール デザイナーの機能のメソッドです。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner.OnControlResize%2A>通常メソッドは、デザイン時環境でのみ、ユーザーの操作により、関連付けられている Web サーバー コントロールのサイズを変更します。 <xref:System.Web.UI.Design.ControlDesigner.OnControlResize%2A>メソッドは、サイズ変更が完了する前に、コントロールの更新後のサイズを表示するサイズ変更の処理中に複数回呼び出す可能性がありますできます。 前に、コントロールの幅と高さのプロパティは、更新、<xref:System.Web.UI.Design.ControlDesigner.OnControlResize%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected virtual void OnPaint (System.Windows.Forms.PaintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPaint(class System.Windows.Forms.PaintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.OnPaint(System.Windows.Forms.PaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.PaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.PaintEventArgs" />コントロールの描画に使用するグラフィックスおよび四角形の境界を指定するオブジェクト。</param>
+        <summary>コントロール デザイナーがデザイン サーフェイスに関連付けられたコントロールを描画するときと呼ばれる場合、<see cref="F:System.Web.UI.Design.ViewFlags.CustomPaint" />値は<see langword="true" />します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.IControlDesignerView.ViewEvent>イベントは、デザイン画面でコントロールの特定のアクションにデザイン ホストで発生します。 たとえば、次の条件に対してイベントが生成します。  
+  
+-   ユーザーがコントロールをクリックします。  
+  
+-   デザイン ホスト要求する HTML マークアップをデザイン サーフェイスに関連付けられたコントロールをレンダリングします。  
+  
+-   ユーザーは、入力したか、コントロールのテンプレート編集モードを終了します。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner>クラスは、既定値を処理するデリゲートを提供します。、<xref:System.Web.UI.Design.IControlDesignerView.ViewEvent?displayProperty=nameWithType>イベント。 派生するクラス<xref:System.Web.UI.Design.ControlDesigner>設定する必要があります、<xref:System.Web.UI.Design.ViewFlags?displayProperty=nameWithType>値し、オーバーライド、<xref:System.Web.UI.Design.ControlDesigner.OnPaint%2A>デザイン ホストがデザイン サーフェイスにコントロールを描画するときに発生するイベントを処理するメソッド。  
+  
+ <xref:System.Web.UI.Design.ControlDesigner.OnPaint%2A>メソッドにより、派生クラスでデリゲートを結び付けずに、イベントを処理します。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ 既定の実装、<xref:System.Web.UI.Design.ControlDesigner.OnPaint%2A>メソッドが、処理を実行せずに返します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.ControlDesigner.OnPaint(System.Windows.Forms.PaintEventArgs)" />から派生するクラスのメソッド、<see cref="T:System.Web.UI.Design.ControlDesigner" />デザイン サーフェイスにコントロールの描画イベントを処理するクラス。 ただし、イベント発生場合にのみ、<see cref="F:System.Web.UI.Design.ViewFlags.CustomPaint" />で値が設定されて、<see cref="M:System.Web.UI.Design.ControlDesigner.SetViewFlags(System.Web.UI.Design.ViewFlags,System.Boolean)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">コンポーネントのクラスのプロパティです。</param>
+        <summary>プロパティを追加またはデザイン時にデザイン ホストのプロパティ グリッドからプロパティを削除するか関連付けられたコントロールのプロパティに対応する新しいデザイン時プロパティを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.PreFilterProperties%2A>メソッドを通じてコントロール デザイナーが公開されるプロパティのディクショナリに項目を追加することができます、<xref:System.ComponentModel.TypeDescriptor>オブジェクト。  
+  
+ プロパティのディクショナリのキーは、プロパティの名前です。 オブジェクトの型が<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>プロパティ パラメーターを通じてアクセスするディクショナリを直接変更できますか、そのままにしておくことができます。 オーバーライドする場合、<see cref="M:System.Web.UI.Design.ControlDesigner.PreFilterProperties(System.Collections.IDictionary)" />メソッド、独自のフィルター処理を実行する前に、基本実装を呼び出します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseResizeEvent">
+      <MemberSignature Language="C#" Value="public void RaiseResizeEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RaiseResizeEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.RaiseResizeEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use of this method is not recommended because resizing is handled by the OnComponentChanged() method. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Web.UI.Design.ControlDesigner.OnControlResize" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.RaiseResizeEvent%2A>メソッドは廃止されておりに代わる機能はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is to inherit from ContainerControlDesigner instead and to use an EditableDesignerRegion. Regions allow for better control of the content in the designer. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイン時に、読み取り専用に、コントロールのプロパティかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />、デザイン時に、コントロールのプロパティは読み取り専用の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner>クラスは読み取り専用、本質的にします。 読み取り/書き込み機能が追加することによって提供される、<xref:System.Web.UI.Design.DesignerRegion>オブジェクトまたはなどを使用して、基底クラス、<xref:System.Web.UI.Design.ContainerControlDesigner>クラスです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ControlDesigner.ReadOnly%2A> は互換性のために残されています。 派生、<xref:System.Web.UI.Design.ContainerControlDesigner>クラス デザイナーの編集可能な領域を追加することができますかから、<xref:System.Web.UI.Design.TemplatedControlDesigner>オブジェクトをテンプレートで編集可能なデザイナー領域を作成することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterClone">
+      <MemberSignature Language="C#" Value="public void RegisterClone (object original, object clone);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterClone(object original, object clone) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.RegisterClone(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="original" Type="System.Object" />
+        <Parameter Name="clone" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="original">コントロール デザイナーに関連付けられているコントロール。</param>
+        <param name="clone">関連付けられたコントロールの複製コピー。</param>
+        <summary>複製されたコントロールの内部データを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目が複製されるたびにある可能性があります、内部データ構造など`meta:`コントロール デザイナーによって、複製されたコントロールに含める必要がある属性です。 ページ開発者`meta:`コントロールのマークアップにあり手段も理由が、これらのタグがありますを区別するために、コントロールがあります。 そのため、コントロールのデザイナーは、複雑なプロパティまたは形式をページに変更を適用する前に編集する方法を提供する場合するは、コントロールの複製を作成、これに元のコントロールと、複製の両方を渡します<xref:System.Web.UI.Design.ControlDesigner.RegisterClone%2A>メソッド、タグに、変更は永続化されるとき、およびすべて`meta:`属性も永続化します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="original" /> が null です。  
+  
+ または  
+  
+ <paramref name="clone" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RootDesigner">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.Design.WebFormsRootDesigner RootDesigner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.WebFormsRootDesigner RootDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.RootDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.WebFormsRootDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールを含む Web フォーム ページのコントロール デザイナーを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.Design.WebFormsRootDesigner" />コントロールを含む Web フォーム ページにアクセス コンポーネントをデザイン時に使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.RootDesigner%2A>プロパティは、コントロールを含む Web フォーム ページのコントロール デザイナーを表します。 使用して、<xref:System.Web.UI.Design.ControlDesigner.RootDesigner%2A>プロパティにアクセスし、デザイン時にコントロールを含む Web フォーム ページを操作します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetEditableDesignerRegionContent">
+      <MemberSignature Language="C#" Value="public virtual void SetEditableDesignerRegionContent (System.Web.UI.Design.EditableDesignerRegion region, string content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetEditableDesignerRegionContent(class System.Web.UI.Design.EditableDesignerRegion region, string content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.SetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.EditableDesignerRegion" />
+        <Parameter Name="content" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="region">コントロール内に含まれる編集可能なデザイン領域。</param>
+        <param name="content">編集可能なデザイン領域に割り当てる内容。</param>
+        <summary>デザイン時にコントロールの編集可能領域の内容を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生するクラス、<xref:System.Web.UI.Design.ControlDesigner>クラスは地域ベースのデザイン画面で編集をサポートでき、オーバーライド、<xref:System.Web.UI.Design.ControlDesigner.SetEditableDesignerRegionContent%2A>を指定した領域の内容を設定するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例は、デザイン ホストへの参照を取得し、参照を使用して作成する方法を示しています、<xref:System.Web.UI.Design.ControlParser>オブジェクトに変換する`content`のインスタンスに、<xref:System.Web.UI.ITemplate>インターフェイスと割り当てます、<xref:System.Web.UI.ITemplate>インスタンスを適切なビューです。  
+  
+ [!code-csharp[SimpleMultiRegionControlDesigner#7](~/samples/snippets/csharp/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/CS/SimpleMultiRegionControlDesigner.cs#7)]
+ [!code-vb[SimpleMultiRegionControlDesigner#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/VB/SimpleMultiRegionControlDesigner.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRegionContent">
+      <MemberSignature Language="C#" Value="protected void SetRegionContent (System.Web.UI.Design.EditableDesignerRegion region, string content);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetRegionContent(class System.Web.UI.Design.EditableDesignerRegion region, string content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.SetRegionContent(System.Web.UI.Design.EditableDesignerRegion,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.EditableDesignerRegion" />
+        <Parameter Name="content" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="region">コントロールのデザイン時ビュー内に含まれる編集可能なデザイン領域。</param>
+        <param name="content">編集可能なデザイン領域に割り当てる内容。</param>
+        <summary>コントロールのデザイン時ビューの編集可能な領域の内容を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.Web.UI.Design.ControlDesigner.SetRegionContent%2A>派生デザイナーでメソッドがオーバーライドされていません。 基本クラスにより、デザイン ホスト、<xref:System.Web.UI.Design.ControlDesigner.SetEditableDesignerRegionContent%2A>の地域のメソッドです。 上書き、<xref:System.Web.UI.Design.ControlDesigner.SetRegionContent%2A>メソッドのカスタム データに必要な場合、コントロールを呼び出す前に<xref:System.Web.UI.Design.ControlDesigner.SetEditableDesignerRegionContent%2A>メソッドです。  
+  
+ 使用して、<xref:System.Web.UI.Design.ControlDesigner.SetRegionContent%2A>コントロールの領域に HTML マークアップを挿入するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetViewFlags">
+      <MemberSignature Language="C#" Value="protected void SetViewFlags (System.Web.UI.Design.ViewFlags viewFlags, bool setFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetViewFlags(valuetype System.Web.UI.Design.ViewFlags viewFlags, bool setFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.SetViewFlags(System.Web.UI.Design.ViewFlags,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewFlags" Type="System.Web.UI.Design.ViewFlags" />
+        <Parameter Name="setFlag" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="viewFlags"><see cref="T:System.Web.UI.Design.ViewFlags" /> 値。</param>
+        <param name="setFlag">
+          <see langword="true" />指定されたフラグを設定する<see langword="false" />フラグを削除します。</param>
+        <summary>ビットごとに、指定した割り当てます<see cref="T:System.Web.UI.Design.ViewFlags" />指定したフラグの値を列挙します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定できるフラグがいくつかあります。 たとえば、使用して、<xref:System.Web.UI.Design.ControlDesigner.SetViewFlags%2A>を設定するメソッド、 <xref:System.Web.UI.Design.ViewFlags.DesignTimeHtmlRequiresLoadComplete> 、現在の値<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>廃止されたのではなく、コントロール デザイナーのプロパティ<xref:System.Web.UI.Design.ControlDesigner.DesignTimeHtmlRequiresLoadComplete%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.Design.ControlDesigner.SetViewFlags%2A>メソッド、テンプレートが編集モードであることを示します。  
+  
+ [!code-csharp[DesignerTemplateGroupSample#5](~/samples/snippets/csharp/VS_Snippets_WebNet/DesignerTemplateGroupSample/CS/TemplateGroupsSample.cs#5)]
+ [!code-vb[DesignerTemplateGroupSample#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerTemplateGroupSample/VB/TemplateGroupsSample.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.Design.IControlDesignerTag Tag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.IControlDesignerTag Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IControlDesignerTag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールの HTML マークアップ要素を表すオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.UI.Design.IControlDesignerTag" />を関連付けられたコントロールの HTML マークアップ要素を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.Web.UI.Design.ControlDesigner.Tag%2A>プロパティはデザイン ホストとデザイナーがコントロール デザイナー間の通信にのみ使用し、コントロールの開発者によっては使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateGroups">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.Design.TemplateGroupCollection TemplateGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.TemplateGroupCollection TemplateGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.TemplateGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>それぞれが 1 つまたは複数のテンプレート定義を含む、テンプレート グループのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.UI.Design.TemplateGroup" /> オブジェクトのコレクション。 既定値は空の <see cref="T:System.Web.UI.Design.TemplateGroupCollection" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例から派生したコントロール デザイナー クラスを作成する方法を示します、<xref:System.Web.UI.Design.ControlDesigner>クラスです。 このコントロール デザイナーには、4 つのテンプレートを持つコントロールがサポートしています。  
+  
+ これには、コードをコンパイルしの設計でホストなど[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、デザイン ビューでページを表示します。 コントロールを選択して、変更するテンプレートを選択するアクションの一覧をクリックし、ドラッグ アンド ドロップ機能を使用して、テンプレートにコントロールを移動します。  
+  
+ [!code-csharp[DesignerTemplateGroupSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DesignerTemplateGroupSample/CS/TemplateGroupsSample.cs#1)]
+ [!code-vb[DesignerTemplateGroupSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerTemplateGroupSample/VB/TemplateGroupsSample.vb#1)]  
+[!code-aspx-vb[DesignerTemplateGroupSample#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DesignerTemplateGroupSample/VB/TemplateGroupsSample.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変更することができます、<see cref="P:System.Web.UI.Design.ControlDesigner.TemplateGroups" />コレクションを直接、またはを変更しないままです。 オーバーライドする場合、<see cref="P:System.Web.UI.Design.ControlDesigner.TemplateGroups" />プロパティ、テンプレート グループをコレクションに追加する前に、基底の実装を呼び出します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public virtual void UpdateDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UpdateDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ControlDesigner.UpdateDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出すことによって、関連付けられている Web サーバー コントロールのデザイン時 HTML マークアップを更新、<see cref="Overload:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.UpdateDesignTimeHtml%2A>メソッドは、コントロールが変更されたときなど、デザイン時に関連付けられている Web サーバー コントロールの表示を更新するデザイン ホストによって呼び出されます。 また、コントロール デザイナーが呼び出すことができます、<xref:System.Web.UI.Design.ControlDesigner.UpdateDesignTimeHtml%2A>メソッド コントロールの表示を更新するコントロールの値を変更した後にします。  
+  
+> [!NOTE]
+>  呼び出している場合、<xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanged>イベント、またはを使用して、<xref:System.ComponentModel.PropertyDescriptor>プロパティを設定するオブジェクト、<xref:System.ComponentModel.Design.IComponentChangeService>インターフェイスの呼び出し、<xref:System.Web.UI.Design.ControlDesigner.UpdateDesignTimeHtml%2A>するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例に応答する方法を示します、`Click`多地域コントロール内の領域間でフォーカスを変更し、使用するコントロール デザイナー内のイベント、<xref:System.Web.UI.Design.ControlDesigner.UpdateDesignTimeHtml%2A>にデザイン ホストでコントロールの外観を更新する方法です。  
+  
+ このコード例の例の一部である、<xref:System.Web.UI.Design.EditableDesignerRegion>クラスです。  
+  
+ [!code-csharp[SimpleMultiRegionControlDesigner#4](~/samples/snippets/csharp/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/CS/SimpleMultiRegionControlDesigner.cs#4)]
+ [!code-vb[SimpleMultiRegionControlDesigner#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SimpleMultiRegionControlDesigner/VB/SimpleMultiRegionControlDesigner.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePreviewControl">
+      <MemberSignature Language="C#" Value="protected virtual bool UsePreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.UsePreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール デザイナーが一時プレビュー コントロールを使用してデザイン時 HTML マークアップを生成するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、コントロール デザイナーがデザイン時プレビュー用に、コントロールの一時コピーを使用する場合それ以外の場合、<see langword="false" />コントロール デザイナーで使用する場合、<see cref="P:System.ComponentModel.Design.ComponentDesigner.Component" />コントロール デザイナーに含まれるコントロールのプロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl%2A>プロパティは`true`、<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>プロパティは、コントロールの一時コピーを返します。 ドキュメントには、一時的なコントロールへの変更は保持されません。  
+  
+ 場合、<xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl%2A>プロパティは`false`、<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>プロパティがのインスタンスを返します、<xref:System.ComponentModel.Design.ComponentDesigner.Component%2A>コントロールのプロパティです。 コントロールのインスタンスへの変更が保存されます。  
+  
+ <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>での設定、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>オブジェクトの値を設定するため、<xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl%2A>プロパティです。 したがって、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>設定によって返されるコントロールの種類を決定する、<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>ベースでプロパティ<xref:System.Web.UI.Design.ControlDesigner>クラスです。 場合、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>宣言では、コントロール デザイナーが指定されていない、<xref:System.Web.UI.Design.ControlDesigner>オブジェクトの動作を指定することと同じ、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>プロパティとして`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したカスタム デザイナー、<see cref="T:System.Web.UI.Design.ControlDesigner" />クラスをオーバーライドして、<see cref="P:System.Web.UI.Design.ControlDesigner.UsePreviewControl" />プロパティを無視して、<see cref="T:System.Web.UI.Design.SupportsPreviewControlAttribute" />オブジェクト。 一般に、あることを示す、<see cref="P:System.Web.UI.Design.ControlDesigner.ViewControl" />プロパティは常にコントロールの一時コピーを返します、オーバーライド、<see cref="P:System.Web.UI.Design.ControlDesigner.UsePreviewControl" />を常に返すプロパティ<see langword="true" />です。 示すために、<see cref="P:System.Web.UI.Design.ControlDesigner.ViewControl" />プロパティは常にコントロールのインスタンスを返します、オーバーライド、<see cref="P:System.Web.UI.Design.ControlDesigner.UsePreviewControl" />を常に返すプロパティ<see langword="false" />です。 たとえば、<see cref="T:System.Web.UI.Design.WebControls.PreviewControlDesigner" />クラスから派生、<see cref="T:System.Web.UI.Design.ControlDesigner" />を常に返します<see langword="true" />の<see cref="P:System.Web.UI.Design.ControlDesigner.UsePreviewControl" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewControl">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control ViewControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control ViewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.ViewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイン時 HTML マークアップをプレビューするために使用できる Web サーバー コントロールを設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.Control" />デザイン時 HTML マークアップを生成する基本クラスによって使用されるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>プロパティの使用、<xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl%2A>その戻り値を決定するプロパティです。  
+  
+ 場合、<xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl%2A>プロパティは`true`、<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>プロパティは、コントロールの一時コピーを返します。 一時的なコントロールへの変更は保存されません。  
+  
+ 場合、<xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl%2A>プロパティは`false`、<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>プロパティがのインスタンスを返します、<xref:System.ComponentModel.Design.ComponentDesigner.Component%2A>コントロールのプロパティです。 コントロールのインスタンスへの変更が保存されます。  
+  
+ <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>での設定、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>オブジェクトの値を設定するため、<xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl%2A>プロパティです。 したがって、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>設定によって返されるコントロールの種類を決定する、<xref:System.Web.UI.Design.ControlDesigner.ViewControl%2A>ベースでプロパティ<xref:System.Web.UI.Design.ControlDesigner>クラスです。 場合、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>宣言では、コントロール デザイナーが指定されていない、<xref:System.Web.UI.Design.ControlDesigner>オブジェクトの動作を指定することと同じ、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl%2A>プロパティとして`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用したデザイナーのコントロールをマークする方法を示しています、<xref:System.Web.UI.Design.SupportsPreviewControlAttribute>属性。 コード例では、Web サーバー コントロールから、<xref:System.Web.UI.WebControls.Label>クラスし、コントロールをカスタム コントロールのデザイナーの実装に関連付けます。 コントロール デザイナー クラス宣言が付いて、`SupportsPreviewControl`属性に設定`true`です。 コントロール デザイナーをオーバーライドし、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッド、および、表示、<xref:System.Web.UI.WebControls.Label.Text%2A>デザイン時に斜体でコントロールのプロパティです。  
+  
+ [!code-csharp[System.Web.UI.Design.SupportsPreviewControlAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.SupportsPreviewControlAttribute/CS/supportspreviewdesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.SupportsPreviewControlAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.SupportsPreviewControlAttribute/VB/supportspreviewdesigner.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewControlCreated">
+      <MemberSignature Language="C#" Value="public virtual bool ViewControlCreated { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ViewControlCreated" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.ViewControlCreated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see langword="View" />デザイン サーフェイスでの表示のコントロールが作成されました。</summary>
+        <value>
+          <see langword="true" />、デザイン サーフェイス上に表示するコントロールが作成されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="protected virtual bool Visible { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ControlDesigner.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時にコントロールを表示するかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

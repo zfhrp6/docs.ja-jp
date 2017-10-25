@@ -1,0 +1,151 @@
+<Type Name="AddressingVersion" FullName="System.ServiceModel.Channels.AddressingVersion">
+  <TypeSignature Language="C#" Value="public sealed class AddressingVersion" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AddressingVersion extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.AddressingVersion" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP メッセージに関連付けられている WS-Addressing のバージョン、またはエンドポイントが認識する WS-Addressing のバージョン。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、WS-Addressing には 2004 年 8 月版の WS-Addressing と WS-Addressing 1.0 の 2 つのバージョンがあります。 これらのバージョンは、それぞれ、<xref:System.ServiceModel.Channels.AddressingVersion.WSAddressingAugust2004%2A> プロパティおよび <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A> プロパティを使用して取得できます。 また、WS-Addressing とは関連付けられていないアドレス バージョンも使用できます。これを取得するには、<xref:System.ServiceModel.Channels.AddressingVersion.None%2A> プロパティを使用します。 この値は、WS-Addressing のバージョンが使用されていないことを示します。 これは、主として、ネットワークで SOAP エンベロープを渡さず、したがって WS-Addressing では使用できないトランスポート用です。  
+  
+ アドレス バージョンは、メッセージ バージョンの一部です。特に、<xref:System.ServiceModel.Channels.AddressingVersion> は、<xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> プロパティの戻り値の型を提供します。 <xref:System.ServiceModel.Channels.MessageVersion> はまた、アドレス バージョンの情報に加えて、SOAP エンベロープ バージョンも含みます。 <xref:System.ServiceModel.EnvelopeVersion> は、<xref:System.ServiceModel.Channels.MessageVersion.Envelope%2A> プロパティの戻り値の型を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.AddressingVersion None { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Channels.AddressingVersion None" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.AddressingVersion.None" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.AddressingVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バージョンの Ws-addressing に関連付けられていないアドレス指定のバージョンを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Channels.AddressingVersion" />関連付けられていない Ws-addressing バージョンであります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドレス バージョンは、メッセージ バージョンの一部です。特に、<xref:System.ServiceModel.Channels.AddressingVersion> は、<xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> プロパティの戻り値の型を提供します。 <xref:System.ServiceModel.Channels.MessageVersion> はまた、アドレス バージョンの情報に加えて、SOAP エンベロープ バージョンも含みます。 <xref:System.ServiceModel.EnvelopeVersion> は、<xref:System.ServiceModel.Channels.MessageVersion.Envelope%2A> プロパティの戻り値の型を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.AddressingVersion.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアドレス バージョンの文字列表現を返します。</summary>
+        <returns>現在のアドレス バージョンを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSAddressing10">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.AddressingVersion WSAddressing10 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Channels.AddressingVersion WSAddressing10" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.AddressingVersion.WSAddressing10" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.AddressingVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-Addressing 1.0 に関連付けられているアドレス バージョンの識別子を取得します。</summary>
+        <value>WS-Addressing 1.0 に関連付けられている <see cref="T:System.ServiceModel.Channels.AddressingVersion" /> を識別するシングルトン インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドレス バージョンは、メッセージ バージョンの一部です。特に、<xref:System.ServiceModel.Channels.AddressingVersion> は、<xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> プロパティの戻り値の型を提供します。 <xref:System.ServiceModel.Channels.MessageVersion> はまた、アドレス バージョンの情報に加えて、SOAP エンベロープ バージョンも含みます。 <xref:System.ServiceModel.EnvelopeVersion> は、<xref:System.ServiceModel.Channels.MessageVersion.Envelope%2A> プロパティの戻り値の型を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSAddressingAugust2004">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.AddressingVersion WSAddressingAugust2004 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Channels.AddressingVersion WSAddressingAugust2004" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.AddressingVersion.WSAddressingAugust2004" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.AddressingVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2004 年 8 月版の WS-Addressing に関連付けられている WS-Addressing のバージョンを取得します。</summary>
+        <value>2004 年 8 月版の WS-Addressing に関連付けられている <see cref="T:System.ServiceModel.Channels.AddressingVersion" /> を識別する単一のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドレス バージョンは、メッセージ バージョンの一部です。特に、<xref:System.ServiceModel.Channels.AddressingVersion> は、<xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> プロパティの戻り値の型を提供します。 <xref:System.ServiceModel.Channels.MessageVersion> はまた、アドレス バージョンの情報に加えて、SOAP エンベロープ バージョンも含みます。 <xref:System.ServiceModel.EnvelopeVersion> は、<xref:System.ServiceModel.Channels.MessageVersion.Envelope%2A> プロパティの戻り値の型を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

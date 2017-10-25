@@ -1,0 +1,163 @@
+<Type Name="ExecutionScope" FullName="System.Runtime.CompilerServices.ExecutionScope">
+  <TypeSignature Language="C#" Value="public class ExecutionScope" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExecutionScope extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.ExecutionScope" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("do not use this type", true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>動的に生成されたメソッドの実行時状態を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.CompilerServices.ExecutionScope>型がコンパイラによって使用される、式ツリー、これは内部のコンポーネント、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]式ツリー API、およびによって生成される動的メソッド。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public Delegate CreateDelegate (int indexLambda, object[] locals);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Delegate CreateDelegate(int32 indexLambda, object[] locals) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ExecutionScope.CreateDelegate(System.Int32,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="indexLambda" Type="System.Int32" />
+        <Parameter Name="locals" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="indexLambda">動的メソッドの関連付けられているラムダ式についての情報を格納するオブジェクトのインデックス。</param>
+        <param name="locals">親コンテキストからホイストされたローカル変数を格納する配列。</param>
+        <summary>動的に生成されたメソッドを実行するために使用されるデリゲートを作成します。</summary>
+        <returns>A<see cref="T:System.Delegate" />動的に生成されたメソッドを実行することができます。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHoistedLocals">
+      <MemberSignature Language="C#" Value="public object[] CreateHoistedLocals ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object[] CreateHoistedLocals() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ExecutionScope.CreateHoistedLocals" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ホイストされたローカル変数を格納する配列を作成します。</summary>
+        <returns>ホイストされたローカル変数を格納する配列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Globals">
+      <MemberSignature Language="C#" Value="public object[] Globals;" />
+      <MemberSignature Language="ILAsm" Value=".field public object[] Globals" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.CompilerServices.ExecutionScope.Globals" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>重要な定数と動的に生成されたメソッドで参照されているローカルで実行可能な式を表します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsolateExpression">
+      <MemberSignature Language="C#" Value="public System.Linq.Expressions.Expression IsolateExpression (System.Linq.Expressions.Expression expression, object[] locals);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Linq.Expressions.Expression IsolateExpression(class System.Linq.Expressions.Expression expression, object[] locals) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ExecutionScope.IsolateExpression(System.Linq.Expressions.Expression,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.Linq.Expressions.Expression" />
+        <Parameter Name="locals" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="expression">式ツリーに外部パラメーター参照を解放します。</param>
+        <param name="locals">ホイストされたローカル変数を格納する配列。</param>
+        <summary>現在の値をパラメーターを置き換えることで、外部パラメーター参照の指定した式ツリーを解放します。</summary>
+        <returns>外部パラメーター参照が含まれていない式のツリーです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Locals">
+      <MemberSignature Language="C#" Value="public object[] Locals;" />
+      <MemberSignature Language="ILAsm" Value=".field public object[] Locals" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.CompilerServices.ExecutionScope.Locals" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親コンテキストからホイストされたローカル変数を表します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Runtime.CompilerServices.ExecutionScope Parent;" />
+      <MemberSignature Language="ILAsm" Value=".field public class System.Runtime.CompilerServices.ExecutionScope Parent" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.CompilerServices.ExecutionScope.Parent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.ExecutionScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し元のデリゲートの実行スコープを表します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

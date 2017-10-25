@@ -1,0 +1,108 @@
+<Type Name="ExecutionDataflowBlockOptions" FullName="System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions">
+  <TypeSignature Language="C#" Value="public class ExecutionDataflowBlockOptions : System.Threading.Tasks.Dataflow.DataflowBlockOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExecutionDataflowBlockOptions extends System.Threading.Tasks.Dataflow.DataflowBlockOptions" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+    <AssemblyVersion>4.6.0.0</AssemblyVersion>
+    <AssemblyVersion>4.6.1.0</AssemblyVersion>
+    <AssemblyVersion>4.6.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Threading.Tasks.Dataflow.DataflowBlockOptions</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザー指定デリゲートの呼び出しにより各メッセージを処理するデータフロー ブロックで実行される、処理の構成に使用するオプションを提供します。 これらのデータ フロー ブロックはなど、<see cref="T:System.Threading.Tasks.Dataflow.ActionBlock`1" />と<see cref="T:System.Threading.Tasks.Dataflow.TransformBlock`2" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow> 名前空間) は [!INCLUDE[net_v45](~/includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](~/includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
+  
+ <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions>変更可能であり、そのプロパティを構成することができます。  
+  
+ 特定の構成オプションが設定されていないときに次の既定値が使用されます。  
+  
+|オプション|既定|  
+|-------------|-------------|  
+|TaskScheduler|<xref:System.Threading.Tasks.TaskScheduler.Default%2A>|  
+|CancellationToken|<xref:System.Threading.CancellationToken.None%2A>|  
+|MaxMessagesPerTask|DataflowBlockOptions.Unbounded (-1)|  
+|BoundedCapacity|DataflowBlockOptions.Unbounded (-1)|  
+|MaxDegreeOfParallelism|1|  
+  
+ データ フロー ブロックは、その構造にあるオプションの状態をキャプチャします。 指定された後の変更<xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions>インスタンスが、データ フロー ブロックの動作に影響はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExecutionDataflowBlockOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions" /> を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxDegreeOfParallelism">
+      <MemberSignature Language="C#" Value="public int MaxDegreeOfParallelism { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxDegreeOfParallelism" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.MaxDegreeOfParallelism" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同時に、ブロックによって処理できるメッセージの最大数を取得します。</summary>
+        <value>メッセージの最大数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleProducerConstrained">
+      <MemberSignature Language="C#" Value="public bool SingleProducerConstrained { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SingleProducerConstrained" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.SingleProducerConstrained" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データフロー ブロックを使用するコードが、一度に 1 つのプロデューサーに制約されているかどうかを取得します。</summary>
+        <value><see cref="T:System.Boolean" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは false で、既定でことで、ブロックを同時に複数のプロデューサーによって使用可能性があります。 このプロパティは、ブロックを使用してコードをすることだけで使用される 1 つのプロデューサー保証できる場合は true にのみ設定する必要があります (例: ソースへのリンク、ブロック) 時に、Post、完了、エラー、および OfferMessage などのメソッドは同時に呼び出されませんことを意味します。 いくつかのブロックのみがありますのプロデューサーはで優れたパフォーマンスを実現するために、ナレッジを大文字にすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

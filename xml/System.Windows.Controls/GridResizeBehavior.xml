@@ -1,0 +1,115 @@
+<Type Name="GridResizeBehavior" FullName="System.Windows.Controls.GridResizeBehavior">
+  <TypeSignature Language="C#" Value="public enum GridResizeBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GridResizeBehavior extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.GridResizeBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>行またはによってサイズが変更される列を指定します、<see cref="T:System.Windows.Controls.GridSplitter" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体の値を設定するため、<xref:System.Windows.Controls.GridSplitter.ResizeBehavior%2A>のプロパティ、<xref:System.Windows.Controls.GridSplitter>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BasedOnAlignment">
+      <MemberSignature Language="C#" Value="BasedOnAlignment" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.GridResizeBehavior BasedOnAlignment = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridResizeBehavior.BasedOnAlignment" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.GridResizeBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値に基づく領域が再配布、<see cref="P:System.Windows.FrameworkElement.HorizontalAlignment" />と<see cref="P:System.Windows.FrameworkElement.VerticalAlignment" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、<xref:System.Windows.Controls.GridSplitter.ResizeDirection%2A>プロパティは、領域は行の間、再配布が次のガイドラインを次のことを指定します。  
+  
+-   ときに、<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティに設定されている<xref:System.Windows.VerticalAlignment.Top>、領域は、行に対して指定されている間、<xref:System.Windows.Controls.GridSplitter>し、その行の上にある行。  
+  
+-   ときに、<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティに設定されている<xref:System.Windows.VerticalAlignment.Bottom>、領域は、行に対して指定されている間、<xref:System.Windows.Controls.GridSplitter>し、その行の下にある行。  
+  
+-   ときに、<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティに設定されている<xref:System.Windows.VerticalAlignment.Center>、領域は上にある行と指定されている行の下にある行の間、<xref:System.Windows.Controls.GridSplitter>です。  
+  
+-   ときに、<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>プロパティに設定されている<xref:System.Windows.VerticalAlignment.Stretch>、領域は上にある行と指定されている行の下にある行の間、<xref:System.Windows.Controls.GridSplitter>です。  
+  
+ 場合の値、<xref:System.Windows.Controls.GridSplitter.ResizeDirection%2A>プロパティを指定しない列の間で領域は再配布が次のガイドラインに従います。  
+  
+-   ときに、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>プロパティに設定されている<xref:System.Windows.HorizontalAlignment.Left>、領域は、列に対して指定されている間、<xref:System.Windows.Controls.GridSplitter>および左側にある列です。  
+  
+-   ときに、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>プロパティに設定されている<xref:System.Windows.HorizontalAlignment.Right>、領域は、列に対して指定されている間、<xref:System.Windows.Controls.GridSplitter>と右側にある列です。  
+  
+-   ときに、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>プロパティに設定されている<xref:System.Windows.HorizontalAlignment.Center>、領域が指定されている列の右側および左側にある列の間で再配布、<xref:System.Windows.Controls.GridSplitter>です。  
+  
+-   ときに、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>プロパティに設定されている<xref:System.Windows.VerticalAlignment.Stretch>、領域が指定されている列の右側および左側にある列の間で再配布、<xref:System.Windows.Controls.GridSplitter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentAndNext">
+      <MemberSignature Language="C#" Value="CurrentAndNext" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.GridResizeBehavior CurrentAndNext = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridResizeBehavior.CurrentAndNext" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.GridResizeBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平方向の<see cref="T:System.Windows.Controls.GridSplitter" />、領域は、行に対して指定されている間、<see cref="T:System.Windows.Controls.GridSplitter" />とその下にある次の行。 垂直方向の<see cref="T:System.Windows.Controls.GridSplitter" />、領域は、列に対して指定されている間、<see cref="T:System.Windows.Controls.GridSplitter" />と右側には、次の列です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousAndCurrent">
+      <MemberSignature Language="C#" Value="PreviousAndCurrent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.GridResizeBehavior PreviousAndCurrent = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridResizeBehavior.PreviousAndCurrent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.GridResizeBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平方向の<see cref="T:System.Windows.Controls.GridSplitter" />、領域は、行に対して指定されている間、<see cref="T:System.Windows.Controls.GridSplitter" />とその上には、次の行。 垂直方向の<see cref="T:System.Windows.Controls.GridSplitter" />、領域は、列に対して指定されている間、<see cref="T:System.Windows.Controls.GridSplitter" />および左側には、次の列です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousAndNext">
+      <MemberSignature Language="C#" Value="PreviousAndNext" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.GridResizeBehavior PreviousAndNext = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.GridResizeBehavior.PreviousAndNext" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.GridResizeBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平方向の<see cref="T:System.Windows.Controls.GridSplitter" />、領域は指定されている行の下で、上の行の間、<see cref="T:System.Windows.Controls.GridSplitter" />です。 垂直方向の<see cref="T:System.Windows.Controls.GridSplitter" />、領域が指定されている列の右側および左側にある列の間で再配布、<see cref="T:System.Windows.Controls.GridSplitter" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

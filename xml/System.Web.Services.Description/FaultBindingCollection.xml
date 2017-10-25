@@ -1,0 +1,369 @@
+<Type Name="FaultBindingCollection" FullName="System.Web.Services.Description.FaultBindingCollection">
+  <TypeSignature Language="C#" Value="public sealed class FaultBindingCollection : System.Web.Services.Description.ServiceDescriptionBaseCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FaultBindingCollection extends System.Web.Services.Description.ServiceDescriptionBaseCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.FaultBindingCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.ServiceDescriptionBaseCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンスのコレクションを表す、<see cref="T:System.Web.Services.Description.FaultBinding" />クラスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ImportSample#4](~/samples/snippets/cpp/VS_Snippets_Remoting/Importsample/CPP/importsample.cpp#4)]
+ [!code-csharp[ImportSample#4](~/samples/snippets/csharp/VS_Snippets_Remoting/Importsample/CS/importsample.cs#4)]
+ [!code-vb[ImportSample#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Importsample/VB/importsample.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.Services.Description.FaultBinding bindingOperationFault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.Services.Description.FaultBinding bindingOperationFault) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.FaultBindingCollection.Add(System.Web.Services.Description.FaultBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingOperationFault" Type="System.Web.Services.Description.FaultBinding" />
+      </Parameters>
+      <Docs>
+        <param name="bindingOperationFault">コレクションに追加する <see cref="T:System.Web.Services.Description.FaultBinding" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.FaultBinding" />の末尾に、<see cref="T:System.Web.Services.Description.FaultBindingCollection" />です。</summary>
+        <returns>0 から始まるインデックス位置、<paramref name="bindingOperationFault" />パラメーターが追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[FaultBindingCollection_Add#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FaultBindingCollection_Add/CPP/faultbindingcollection_add.cpp#1)]
+ [!code-csharp[FaultBindingCollection_Add#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FaultBindingCollection_Add/CS/faultbindingcollection_add.cs#1)]
+ [!code-vb[FaultBindingCollection_Add#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FaultBindingCollection_Add/VB/faultbindingcollection_add.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.Services.Description.FaultBinding bindingOperationFault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.Services.Description.FaultBinding bindingOperationFault) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.FaultBindingCollection.Contains(System.Web.Services.Description.FaultBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingOperationFault" Type="System.Web.Services.Description.FaultBinding" />
+      </Parameters>
+      <Docs>
+        <param name="bindingOperationFault"><see cref="T:System.Web.Services.Description.FaultBinding" />コレクションのメンバーシップをチェックします。</param>
+        <summary>示す値を返すかどうか、指定した<see cref="T:System.Web.Services.Description.FaultBinding" />のメンバーである、<see cref="T:System.Web.Services.Description.FaultBindingCollection" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="bindingOperationFault" />パラメーターのメンバーである、 <see langword="FaultBindingCollection" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、`Contains`メソッドです。  
+  
+ [!code-cpp[FaultBindingCollection_Remove#4](~/samples/snippets/cpp/VS_Snippets_Remoting/FaultBindingCollection_Remove/CPP/faultbindingcollection_remove.cpp#4)]
+ [!code-csharp[FaultBindingCollection_Remove#4](~/samples/snippets/csharp/VS_Snippets_Remoting/FaultBindingCollection_Remove/CS/faultbindingcollection_remove.cs#4)]
+ [!code-vb[FaultBindingCollection_Remove#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FaultBindingCollection_Remove/VB/faultbindingcollection_remove.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.Services.Description.FaultBinding[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.Services.Description.FaultBinding[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.FaultBindingCollection.CopyTo(System.Web.Services.Description.FaultBinding[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.Services.Description.FaultBinding[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">型の配列<see cref="T:System.Web.Services.Description.FaultBinding" />コピー操作の出力先として機能します。</param>
+        <param name="index">コピーされたコレクションの配置を開始する位置を示す 0 から始まるインデックス。</param>
+        <summary>全体をコピー<see cref="T:System.Web.Services.Description.FaultBindingCollection" />型の場合は、互換性のある 1 次元配列に<see cref="T:System.Web.Services.Description.FaultBinding" />対象となる配列の指定した 0 から始まるインデックスで開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、`CopyTo`メソッドです。  
+  
+ [!code-cpp[FaultBindingCollection_Remove#2](~/samples/snippets/cpp/VS_Snippets_Remoting/FaultBindingCollection_Remove/CPP/faultbindingcollection_remove.cpp#2)]
+ [!code-csharp[FaultBindingCollection_Remove#2](~/samples/snippets/csharp/VS_Snippets_Remoting/FaultBindingCollection_Remove/CS/faultbindingcollection_remove.cs#2)]
+ [!code-vb[FaultBindingCollection_Remove#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FaultBindingCollection_Remove/VB/faultbindingcollection_remove.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="protected override string GetKey (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetKey(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.FaultBindingCollection.GetKey(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.Services.Description.FaultBinding bindingOperationFault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.Services.Description.FaultBinding bindingOperationFault) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.FaultBindingCollection.IndexOf(System.Web.Services.Description.FaultBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingOperationFault" Type="System.Web.Services.Description.FaultBinding" />
+      </Parameters>
+      <Docs>
+        <param name="bindingOperationFault"><see cref="T:System.Web.Services.Description.FaultBinding" />コレクション内で検索します。</param>
+        <summary>指定された検索<see cref="T:System.Web.Services.Description.FaultBinding" />し、コレクション内で最初に見つかった位置の 0 から始まるインデックスを返します。</summary>
+        <returns>32 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、`IndexOf`メソッドです。  
+  
+ [!code-cpp[FaultBindingCollection_Remove#5](~/samples/snippets/cpp/VS_Snippets_Remoting/FaultBindingCollection_Remove/CPP/faultbindingcollection_remove.cpp#5)]
+ [!code-csharp[FaultBindingCollection_Remove#5](~/samples/snippets/csharp/VS_Snippets_Remoting/FaultBindingCollection_Remove/CS/faultbindingcollection_remove.cs#5)]
+ [!code-vb[FaultBindingCollection_Remove#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FaultBindingCollection_Remove/VB/faultbindingcollection_remove.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.Services.Description.FaultBinding bindingOperationFault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.Services.Description.FaultBinding bindingOperationFault) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.FaultBindingCollection.Insert(System.Int32,System.Web.Services.Description.FaultBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="bindingOperationFault" Type="System.Web.Services.Description.FaultBinding" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス、 <c>bindingOperationFault</c>パラメーター。</param>
+        <param name="bindingOperationFault">コレクションに追加する <see cref="T:System.Web.Services.Description.FaultBinding" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.FaultBinding" />を<see langword="FaultBindingCollection" />指定した 0 から始まるインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既にコレクション内の項目の数が等しい場合、コレクションの容量は、新しい要素が挿入される前に、内部の配列を自動的に再割り当てすることによって、容量が倍になります。  
+  
+ 場合、`index`パラメーターと等しい<xref:System.Collections.CollectionBase.Count%2A>、`bindingOperationFault`パラメーターがの末尾に追加された、<xref:System.Web.Services.Description.FaultBindingCollection>です。  
+  
+ 挿入位置より後に要素が新しい要素のために下に移動します。  
+  
+   
+  
+## Examples  
+ 次の例での一般的な使用、`Insert`メソッドです。  
+  
+ [!code-cpp[FaultBindingCollection_Remove#3](~/samples/snippets/cpp/VS_Snippets_Remoting/FaultBindingCollection_Remove/CPP/faultbindingcollection_remove.cpp#3)]
+ [!code-csharp[FaultBindingCollection_Remove#3](~/samples/snippets/csharp/VS_Snippets_Remoting/FaultBindingCollection_Remove/CS/faultbindingcollection_remove.cs#3)]
+ [!code-vb[FaultBindingCollection_Remove#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FaultBindingCollection_Remove/VB/faultbindingcollection_remove.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.FaultBinding this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.FaultBinding Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.FaultBindingCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.FaultBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Web.Services.Description.FaultBinding" />値が変更または返されます。</param>
+        <summary>取得または設定の値、<see cref="T:System.Web.Services.Description.FaultBinding" />指定した 0 から始まるインデックス位置。</summary>
+        <value><see langword="FaultBinding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、<xref:System.Web.Services.Description.FaultBinding>クラスです。  
+  
+ [!code-cpp[FaultBindingCollection_Add#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FaultBindingCollection_Add/CPP/faultbindingcollection_add.cpp#1)]
+ [!code-csharp[FaultBindingCollection_Add#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FaultBindingCollection_Add/CS/faultbindingcollection_add.cs#1)]
+ [!code-vb[FaultBindingCollection_Add#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FaultBindingCollection_Add/VB/faultbindingcollection_add.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" />パラメーターがより大きい<see cref="P:System.Collections.CollectionBase.Count" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.FaultBinding this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.FaultBinding Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.FaultBindingCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.FaultBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Services.Description.FaultBinding" />が返されます。</param>
+        <summary>取得、<see cref="T:System.Web.Services.Description.FaultBinding" />名前によって指定します。</summary>
+        <value><see langword="FaultBinding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このプロパティの一般的な使用を示します。  
+  
+ [!code-cpp[FaultBindingCollection_Item#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FaultBindingCollection_Item/CPP/faultbindingcollection_item.cpp#1)]
+ [!code-csharp[FaultBindingCollection_Item#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FaultBindingCollection_Item/CS/faultbindingcollection_item.cs#1)]
+ [!code-vb[FaultBindingCollection_Item#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FaultBindingCollection_Item/VB/faultbindingcollection_item.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.Services.Description.FaultBinding bindingOperationFault);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Services.Description.FaultBinding bindingOperationFault) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.FaultBindingCollection.Remove(System.Web.Services.Description.FaultBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bindingOperationFault" Type="System.Web.Services.Description.FaultBinding" />
+      </Parameters>
+      <Docs>
+        <param name="bindingOperationFault">コレクションから削除する <see cref="T:System.Web.Services.Description.FaultBinding" />。</param>
+        <summary>最初に見つかった指定された削除<see cref="T:System.Web.Services.Description.FaultBinding" />から、<see cref="T:System.Web.Services.Description.FaultBindingCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一方向の検索を実行します。したがって、平均実行時間に比例して<xref:System.Collections.CollectionBase.Count%2A>です。  
+  
+ 削除された後にある要素<xref:System.Web.Services.Description.FaultBinding>繰りを上へ移動します。  
+  
+   
+  
+## Examples  
+ 次の例での一般的な使用、`Remove`メソッドです。  
+  
+ [!code-cpp[FaultBindingCollection_Remove#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FaultBindingCollection_Remove/CPP/faultbindingcollection_remove.cpp#1)]
+ [!code-csharp[FaultBindingCollection_Remove#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FaultBindingCollection_Remove/CS/faultbindingcollection_remove.cs#1)]
+ [!code-vb[FaultBindingCollection_Remove#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FaultBindingCollection_Remove/VB/faultbindingcollection_remove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParent">
+      <MemberSignature Language="C#" Value="protected override void SetParent (object value, object parent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetParent(object value, object parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.FaultBindingCollection.SetParent(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="parent" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <param name="parent">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

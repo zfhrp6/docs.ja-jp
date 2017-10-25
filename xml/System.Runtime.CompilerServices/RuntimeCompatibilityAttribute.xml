@@ -1,0 +1,133 @@
+<Type Name="RuntimeCompatibilityAttribute" FullName="System.Runtime.CompilerServices.RuntimeCompatibilityAttribute">
+  <TypeSignature Language="C#" Value="public sealed class RuntimeCompatibilityAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit RuntimeCompatibilityAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.RuntimeCompatibilityAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>派生していない例外をラップするかどうかを指定します、<see cref="T:System.Exception" />クラス、<see cref="T:System.Runtime.CompilerServices.RuntimeWrappedException" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ C++ などの一部の言語を使用すると、任意の型の例外をスローできます。  Microsoft c# および Visual Basic など他の言語では、すべてスローされた例外から派生する必要があります、<xref:System.Exception>クラスです。  派生していないオブジェクトをラップする共通言語ランタイム (CLR) 言語の間の互換性を維持するために<xref:System.Exception>で、<xref:System.Runtime.CompilerServices.RuntimeWrappedException>オブジェクト。  
+  
+ 使用することができます、<xref:System.Runtime.CompilerServices.RuntimeCompatibilityAttribute>クラスがアセンブリの例外を catch ブロックと例外フィルター内にラップされた表示かどうかを指定します。  Microsoft c# および Visual Basic のコンパイラを含む、多くの言語コンパイラでは、この属性を適用既定では、折り返し動作を指定します。  
+  
+ 使用する場合でも、ランタイムがその例外をまだラップことに注意してください、<xref:System.Runtime.CompilerServices.RuntimeCompatibilityAttribute>ことたくないラップそれらを指定するクラス。  この場合、例外は、ラップを catch ブロックまたは例外フィルター内でのみではありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、適用する方法を示します、<xref:System.Runtime.CompilerServices.RuntimeCompatibilityAttribute>をスローするアセンブリにクラス、 <xref:System.String> C++ で例外としてオブジェクトを使用してその例外をキャッチし、<xref:System.Runtime.CompilerServices.RuntimeWrappedException>オブジェクト。  
+  
+ [!code-cpp[System.Runtime.CompilerServices.RuntimeWrappedException#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Runtime.CompilerServices.RuntimeWrappedException/cpp/sample.cpp#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuntimeCompatibilityAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.RuntimeCompatibilityAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.CompilerServices.RuntimeCompatibilityAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例に適用されます、<xref:System.Runtime.CompilerServices.RuntimeCompatibilityAttribute>例外折り返しを無効にするアセンブリへの属性です。  
+  
+ [!code-cpp[System.Runtime.CompilerServices.RuntimeCompatibilityAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Runtime.CompilerServices.RuntimeCompatibilityAttribute/cpp/sample.cpp#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapNonExceptionThrows">
+      <MemberSignature Language="C#" Value="public bool WrapNonExceptionThrows { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WrapNonExceptionThrows" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.CompilerServices.RuntimeCompatibilityAttribute.WrapNonExceptionThrows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生していない例外をラップするかどうかを示す値を取得または、<see cref="T:System.Exception" />クラス、<see cref="T:System.Runtime.CompilerServices.RuntimeWrappedException" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />場合からは派生しません例外、<see cref="T:System.Exception" />クラスでラップされた表示されます、<see cref="T:System.Runtime.CompilerServices.RuntimeWrappedException" />オブジェクト。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例に適用されます、<xref:System.Runtime.CompilerServices.RuntimeCompatibilityAttribute>例外折り返しを無効にするアセンブリへの属性です。  
+  
+ [!code-cpp[System.Runtime.CompilerServices.RuntimeCompatibilityAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Runtime.CompilerServices.RuntimeCompatibilityAttribute/cpp/sample.cpp#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

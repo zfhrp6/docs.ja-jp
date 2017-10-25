@@ -1,0 +1,225 @@
+<Type Name="SoapServerFormatterSink" FullName="System.Runtime.Remoting.Channels.SoapServerFormatterSink">
+  <TypeSignature Language="C#" Value="public class SoapServerFormatterSink : System.Runtime.Remoting.Channels.IServerChannelSink" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapServerFormatterSink extends System.Object implements class System.Runtime.Remoting.Channels.IChannelSinkBase, class System.Runtime.Remoting.Channels.IServerChannelSink" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.SoapServerFormatterSink" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Remoting</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.IServerChannelSink</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>使用するサーバー フォーマッタ シンクの実装を提供、<see cref="T:System.Runtime.Serialization.Formatters.Soap.SoapFormatter" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求のストリームは、適切なフォーマッタ シンクに達するまで、サーバー チャネル シンクを経由してサーバー トランスポート シンクから伝達します。 フォーマッタ シンクは、メッセージを逆シリアル化し、パイプラインを通過します。 特殊なディスパッチ シンクがによってチャネル シンク チェーンの末尾に挿入される<xref:System.Runtime.Remoting.Channels.ChannelServices.CreateServerChannelSinkChain%2A?displayProperty=nameWithType>サーバー チャネル シンク チェーンを作成するサーバーのチャネルによって呼び出されるメソッド。 メッセージには、ディスパッチ シンクに達すると、ディスパッチ シンクは、リモート処理インフラストラクチャ メッセージを渡します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|`includeVersions`|フォーマッタがバージョン管理情報を含めるかどうかを指定します。 値は`true`または`false`です。|  
+|`strictBinding`|完全なバージョン情報がある場合には、受信側のフォーマッタがバージョン情報を含まない型名とアセンブリ名だけを使用して型を識別する前に、完全なバージョン情報を使用して型を識別しようとすることを示します。 値は`true`または`false`です。 システムによって提供される 2 つのフォーマッタの既定値は `false` です。|  
+|`typeFilterLevel`|サーバー チャネルが試みる自動逆シリアル化のレベルを指定する文字列値です。 サポートされる値は`Low`(既定) と`Full`です。 逆シリアル化のレベルについては、次を参照してください[&#91;\< 。topic://cpconAutomaticDeserializationInNETRemoting > & #93 です。](http://msdn.microsoft.com/en-us/313a0e88-5b2b-4a17-8391-0ddf9f7a787b).<br /><br /> このプロパティは、.NET Framework version 1.1、次のプラットフォームでのみサポートされます。 Windows 98、Windows NT 4.0、Windows Millennium Edition、Windows 2000、Windows XP Home Edition、Windows XP Professional、および Windows Server 2003 ファミリ。|  
+  
+> [!IMPORTANT]
+>  セキュリティ上のリスクは、信頼されていないデータまたは安全でないチャネル経由でこのオブジェクトのインスタンスを使用しています。 信頼されたデータだけとセキュリティで保護されたチャネル経由では、このオブジェクトを使用します。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapServerFormatterSink (System.Runtime.Remoting.Channels.SoapServerFormatterSink.Protocol protocol, System.Runtime.Remoting.Channels.IServerChannelSink nextSink, System.Runtime.Remoting.Channels.IChannelReceiver receiver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.Remoting.Channels.SoapServerFormatterSink/Protocol protocol, class System.Runtime.Remoting.Channels.IServerChannelSink nextSink, class System.Runtime.Remoting.Channels.IChannelReceiver receiver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.SoapServerFormatterSink.#ctor(System.Runtime.Remoting.Channels.SoapServerFormatterSink.Protocol,System.Runtime.Remoting.Channels.IServerChannelSink,System.Runtime.Remoting.Channels.IChannelReceiver)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protocol" Type="System.Runtime.Remoting.Channels.SoapServerFormatterSink+Protocol" />
+        <Parameter Name="nextSink" Type="System.Runtime.Remoting.Channels.IServerChannelSink" />
+        <Parameter Name="receiver" Type="System.Runtime.Remoting.Channels.IChannelReceiver" />
+      </Parameters>
+      <Docs>
+        <param name="protocol"><see cref="T:System.Runtime.Remoting.Channels.SoapServerFormatterSink.Protocol" />の現在のインスタンスで使用される<see cref="T:System.Runtime.Remoting.Channels.SoapServerFormatterSink" />です。</param>
+        <param name="nextSink">チャネル シンク チェーン内の次のシンク。</param>
+        <param name="receiver">新しいインスタンスをシリアル化されたメッセージを受信するチャネルを示す<see cref="T:System.Runtime.Remoting.Channels.SoapServerFormatterSink" />です。</param>
+        <summary><see cref="T:System.Runtime.Remoting.Channels.SoapServerFormatterSink" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsyncProcessResponse">
+      <MemberSignature Language="C#" Value="public void AsyncProcessResponse (System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack sinkStack, object state, System.Runtime.Remoting.Messaging.IMessage msg, System.Runtime.Remoting.Channels.ITransportHeaders headers, System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AsyncProcessResponse(class System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack sinkStack, object state, class System.Runtime.Remoting.Messaging.IMessage msg, class System.Runtime.Remoting.Channels.ITransportHeaders headers, class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.SoapServerFormatterSink.AsyncProcessResponse(System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack,System.Object,System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sinkStack" Type="System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMessage" />
+        <Parameter Name="headers" Type="System.Runtime.Remoting.Channels.ITransportHeaders" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="sinkStack">サーバーの転送シンクに戻るまでシンク スタック。</param>
+        <param name="state">情報は、現在のシンクに関連付けられている、要求側で生成されるおよび応答側で必要です。</param>
+        <param name="msg">応答メッセージ。</param>
+        <param name="headers">クライアントに応答メッセージ ヘッダーに追加するヘッダー。</param>
+        <param name="stream">ストリームの見出しは、転送シンクに戻します。</param>
+        <summary>処理に非同期的に送信されるメソッドの呼び出しからの応答の現在のシンクを要求します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResponseStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetResponseStream (System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack sinkStack, object state, System.Runtime.Remoting.Messaging.IMessage msg, System.Runtime.Remoting.Channels.ITransportHeaders headers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream GetResponseStream(class System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack sinkStack, object state, class System.Runtime.Remoting.Messaging.IMessage msg, class System.Runtime.Remoting.Channels.ITransportHeaders headers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.SoapServerFormatterSink.GetResponseStream(System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack,System.Object,System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sinkStack" Type="System.Runtime.Remoting.Channels.IServerResponseChannelSinkStack" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMessage" />
+        <Parameter Name="headers" Type="System.Runtime.Remoting.Channels.ITransportHeaders" />
+      </Parameters>
+      <Docs>
+        <param name="sinkStack">サーバーの転送シンクに戻るまでシンク スタック。</param>
+        <param name="state">情報は、現在のシンクに関連付けられている、要求側で生成されるおよび応答側で必要です。</param>
+        <param name="msg">シリアル化するのには、応答メッセージ。</param>
+        <param name="headers">クライアントへの応答ストリームに記述するヘッダー。</param>
+        <summary>返します、<see cref="T:System.IO.Stream" />シリアル化するのには、指定された応答メッセージにします。</summary>
+        <returns><see cref="T:System.IO.Stream" />シリアル化するのには、指定された応答メッセージにします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 応答ストリームを作成する必要がある場合は、このメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextChannelSink">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Channels.IServerChannelSink NextChannelSink { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Channels.IServerChannelSink NextChannelSink" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.SoapServerFormatterSink.NextChannelSink" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.IServerChannelSink</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次の取得<see cref="T:System.Runtime.Remoting.Channels.IServerChannelSink" />シンク チェーン内の。</summary>
+        <value>次<see cref="T:System.Runtime.Remoting.Channels.IServerChannelSink" />シンク チェーン内の。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessMessage">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Channels.ServerProcessing ProcessMessage (System.Runtime.Remoting.Channels.IServerChannelSinkStack sinkStack, System.Runtime.Remoting.Messaging.IMessage requestMsg, System.Runtime.Remoting.Channels.ITransportHeaders requestHeaders, System.IO.Stream requestStream, out System.Runtime.Remoting.Messaging.IMessage responseMsg, out System.Runtime.Remoting.Channels.ITransportHeaders responseHeaders, out System.IO.Stream responseStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Runtime.Remoting.Channels.ServerProcessing ProcessMessage(class System.Runtime.Remoting.Channels.IServerChannelSinkStack sinkStack, class System.Runtime.Remoting.Messaging.IMessage requestMsg, class System.Runtime.Remoting.Channels.ITransportHeaders requestHeaders, class System.IO.Stream requestStream, [out] class System.Runtime.Remoting.Messaging.IMessage&amp; responseMsg, [out] class System.Runtime.Remoting.Channels.ITransportHeaders&amp; responseHeaders, [out] class System.IO.Stream&amp; responseStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.SoapServerFormatterSink.ProcessMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack,System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders,System.IO.Stream,System.Runtime.Remoting.Messaging.IMessage@,System.Runtime.Remoting.Channels.ITransportHeaders@,System.IO.Stream@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.ServerProcessing</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sinkStack" Type="System.Runtime.Remoting.Channels.IServerChannelSinkStack" />
+        <Parameter Name="requestMsg" Type="System.Runtime.Remoting.Messaging.IMessage" />
+        <Parameter Name="requestHeaders" Type="System.Runtime.Remoting.Channels.ITransportHeaders" />
+        <Parameter Name="requestStream" Type="System.IO.Stream" />
+        <Parameter Name="responseMsg" Type="System.Runtime.Remoting.Messaging.IMessage&amp;" RefType="out" />
+        <Parameter Name="responseHeaders" Type="System.Runtime.Remoting.Channels.ITransportHeaders&amp;" RefType="out" />
+        <Parameter Name="responseStream" Type="System.IO.Stream&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="sinkStack">スタックは、トランスポート、メッセージをシンクします。</param>
+        <param name="requestMsg">このメッセージは、要求が含まれています。</param>
+        <param name="requestHeaders">ヘッダーは、クライアントからの受信メッセージから取得されます。</param>
+        <param name="requestStream">処理され、逆シリアル化シンクに渡す必要があるストリーム。</param>
+        <param name="responseMsg">このメソッドが戻るとき、<see cref="T:System.Runtime.Remoting.Messaging.IMessage" />応答メッセージを保持します。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="responseHeaders">このメソッドが戻るとき、<see cref="T:System.Runtime.Remoting.Channels.ITransportHeaders" />クライアントに応答メッセージ ヘッダーに追加するヘッダーを保持します。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="responseStream">このメソッドが戻るとき、<see cref="T:System.IO.Stream" />転送シンクに見出しはします。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>要求メッセージの現在のシンクから処理します。</summary>
+        <returns>A<see cref="T:System.Runtime.Remoting.Channels.ServerProcessing" />ステータス値をメッセージの処理方法に関する情報を提供します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.SoapServerFormatterSink.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IDictionary" />の現在のチャネル シンクのプロパティです。</summary>
+        <value>A<see cref="T:System.Collections.IDictionary" />の現在のチャネル シンクのプロパティです。 詳細については、次を参照してください。[チャネルとフォーマッタの構成プロパティ](http://msdn.microsoft.com/en-us/226ecf74-ebbd-4ea0-a701-dcf4441deefe)です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeFilterLevel">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Formatters.TypeFilterLevel TypeFilterLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.Formatters.TypeFilterLevel TypeFilterLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.SoapServerFormatterSink.TypeFilterLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.TypeFilterLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="TypeFilterLevel" />自動逆シリアル化の値、<see langword="SoapServerFormatterSink" />を実行します。</summary>
+        <value><see langword="TypeFilterLevel" />を表す現在のレベルで自動逆シリアル化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートされる値は`Low`(既定) と`Full`です。 逆シリアル化のレベルについては、次を参照してください。 [.NET リモート処理での自動逆シリアル化](http://msdn.microsoft.com/en-us/313a0e88-5b2b-4a17-8391-0ddf9f7a787b)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,402 @@
+<Type Name="GridViewRow" FullName="System.Web.UI.WebControls.GridViewRow">
+  <TypeSignature Language="C#" Value="public class GridViewRow : System.Web.UI.WebControls.TableRow, System.Web.UI.IDataItemContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GridViewRow extends System.Web.UI.WebControls.TableRow implements class System.Web.UI.IDataItemContainer, class System.Web.UI.INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.GridViewRow" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.TableRow</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IDataItemContainer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>個々 の行を表す、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.GridViewRow>クラスを使用で、個々 の行を表す、<xref:System.Web.UI.WebControls.GridView>コントロール。 内の行ごと、<xref:System.Web.UI.WebControls.GridView>コントロールが、指定された型を使用して行、<xref:System.Web.UI.WebControls.DataControlRowType>列挙します。 次の表は、別の行の種類を一覧表示します。  
+  
+|行の種類|説明|  
+|--------------|-----------------|  
+|`DataRow`|データ行に、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+|`EmptyDataRow`|空の行、<xref:System.Web.UI.WebControls.GridView>コントロール。 空の行を表示するときに、<xref:System.Web.UI.WebControls.GridView>コントロールに表示するレコードが存在しないと<xref:System.Web.UI.WebControls.GridView.EmptyDataTemplate%2A?displayProperty=nameWithType>テンプレートではありません`null`です。|  
+|`Footer`|内のフッター行、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+|`Header`|ヘッダー行で、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+|`Pager`|ページャー行、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+|`Separator`|区切り記号の行、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+  
+ 行の種類を決定する、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトを使用して、<xref:System.Web.UI.WebControls.GridViewRow.RowType%2A>プロパティです。 A<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトに関連付けられている状態もあります。 状態は、次の表に、値のビットごとの組み合わせを指定できます。  
+  
+|状態の値|説明|  
+|-----------------|-----------------|  
+|`Alternate`|<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトは、代替の行で、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+|`Edit`|<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトが編集モードにします。|  
+|`Normal`|<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトが標準 (既定値) の状態にします。|  
+|`Selected`|<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトを選択します。|  
+  
+ 状態を判断する、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトを使用して、<xref:System.Web.UI.WebControls.GridViewRow.RowState%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.GridView>コントロールは、すべてのでは、そのデータ行を格納、<xref:System.Web.UI.WebControls.GridView.Rows%2A>コレクション。 インデックスを確認する、<xref:System.Web.UI.WebControls.GridViewRow>内のオブジェクト、<xref:System.Web.UI.WebControls.GridView.Rows%2A>収集、使用、<xref:System.Web.UI.WebControls.GridViewRow.RowIndex%2A>プロパティです。  
+  
+ バインドされている基になるデータ オブジェクトのプロパティにアクセスすることができます、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトを使用して、<xref:System.Web.UI.WebControls.GridViewRow.DataItem%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.GridViewRow.DataItem%2A>プロパティは、使用中にのみと後、<xref:System.Web.UI.WebControls.GridView.RowDataBound>のイベント、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ 基になるデータ ソース内のデータ オブジェクトのインデックスを確認するを使用して、<xref:System.Web.UI.WebControls.GridViewRow.DataItemIndex%2A>プロパティです。  
+  
+ 個々 のセルにアクセスすることができます、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトを使用して、<xref:System.Web.UI.WebControls.TableRow.Cells%2A>プロパティです。 セルには、その他のコントロールが含まれている場合から取得できます、コントロールのセルを使用して、<xref:System.Web.UI.Control.Controls%2A>セルのコレクション。 使用することも、<xref:System.Web.UI.Control.FindControl%2A>コントロールがある場合に、コントロールを検索するセルのメソッド、<xref:System.Web.UI.Control.ID%2A>指定します。  
+  
+ フィールドの値を取得する、<xref:System.Web.UI.WebControls.BoundField>フィールドの列またはを使用して、自動的に生成されたフィールドの列、<xref:System.Web.UI.WebControls.TableCell.Text%2A>セルのプロパティです。 フィールドの値が、コントロールにバインドされている他のフィールド列の種類からフィールドの値を取得するには、最初に、該当するセルからコントロールを取得およびコントロールの適切なプロパティにアクセスします。  
+  
+> [!NOTE]
+>  直接データ バインディング式を使用することは、<xref:System.Web.UI.WebControls.TemplateField>コントロールのプロパティに値をバインドせずに、フィールドの列です。 ここでは、フィールドの値が自動的に配置されますで、<xref:System.Web.UI.DataBoundLiteralControl>コントロール。 フィールドの値を取得する必要があります最初に取得して、<xref:System.Web.UI.DataBoundLiteralControl>該当するセルからを制御し、使用してその<xref:System.Web.UI.DataBoundLiteralControl.Text%2A>プロパティです。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.GridViewRow>を参照してください、<xref:System.Web.UI.WebControls.GridViewRow.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewRow>内のセルからフィールド値を取得するオブジェクト、<xref:System.Web.UI.WebControls.GridView>制御し、ページで、値を表示します。  
+  
+ [!code-aspx-csharp[GridViewRow#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRow/CS/gridviewrowcs.aspx#1)]
+ [!code-aspx-vb[GridViewRow#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRow/VB/gridviewrowvb.aspx#1)]  
+  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.GridViewRow>を取得するオブジェクト、<xref:System.Web.UI.WebControls.TextBox>コントロールで宣言、<xref:System.Web.UI.WebControls.TemplateField>フィールド列の項目テンプレートを編集します。 渡されますが、テキスト ボックスの値、<xref:System.Web.UI.WebControls.SqlDataSource>データ ソースを更新するためのコントロールです。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[GridViewRowFindControl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowFindControl/CS/gridviewrowfindcontrolcs.aspx#1)]
+ [!code-aspx-vb[GridViewRowFindControl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowFindControl/VB/gridviewrowfindcontrolvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridViewRow (int rowIndex, int dataItemIndex, System.Web.UI.WebControls.DataControlRowType rowType, System.Web.UI.WebControls.DataControlRowState rowState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 rowIndex, int32 dataItemIndex, valuetype System.Web.UI.WebControls.DataControlRowType rowType, valuetype System.Web.UI.WebControls.DataControlRowState rowState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.GridViewRow.#ctor(System.Int32,System.Int32,System.Web.UI.WebControls.DataControlRowType,System.Web.UI.WebControls.DataControlRowState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="dataItemIndex" Type="System.Int32" />
+        <Parameter Name="rowType" Type="System.Web.UI.WebControls.DataControlRowType" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">インデックス、<see cref="T:System.Web.UI.WebControls.GridViewRow" />内のオブジェクト、<see cref="P:System.Web.UI.WebControls.GridView.Rows" />のコレクション、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</param>
+        <param name="dataItemIndex">インデックス、 <see cref="P:System.Web.UI.WebControls.GridViewRow.DataItem" /> 、基になる<see cref="T:System.Data.DataSet" />です。</param>
+        <param name="rowType"><see cref="T:System.Web.UI.WebControls.DataControlRowType" /> 列挙値のいずれか。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 列挙値のビットごとの組み合わせ。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.GridViewRow" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクト。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.GridViewRow>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.GridViewRow.DataItemIndex%2A>|`dataItemIndex` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.GridViewRow.RowIndex%2A>|`rowIndex` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.GridViewRow.RowState%2A>|`rowState` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.GridViewRow.RowType%2A>|`rowType` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataItem">
+      <MemberSignature Language="C#" Value="public virtual object DataItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRow.DataItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これを基になるデータ オブジェクトを取得、<see cref="T:System.Web.UI.WebControls.GridViewRow" />オブジェクトをバインドします。</summary>
+        <value><see cref="T:System.Object" />を基になるデータ オブジェクトを表す、<see cref="T:System.Web.UI.WebControls.GridViewRow" />オブジェクトをバインドします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewRow.DataItem%2A>を基になるデータ オブジェクトのプロパティにアクセスするプロパティ、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトをバインドします。 <xref:System.Web.UI.WebControls.GridViewRow.DataItem%2A>プロパティは、移行中と後にのみ使用可能な<xref:System.Web.UI.WebControls.GridView.RowDataBound>のイベント、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+> [!NOTE]
+>  このプロパティは、データ行のみに適用されます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewRow.DataItem%2A>フィールドの値を取得するプロパティです。 値が事前に項目を選択して使用して、<xref:System.Web.UI.WebControls.DropDownList>コントロールの行は、編集モードにしたときに表示します。  
+  
+ [!code-aspx-csharp[GridViewRowDataItem#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowDataItem/CS/gridviewrowdataitemcs.aspx#1)]
+ [!code-aspx-vb[GridViewRowDataItem#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowDataItem/VB/gridviewrowdataitemvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataItemIndex">
+      <MemberSignature Language="C#" Value="public virtual int DataItemIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DataItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRow.DataItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックスを取得、 <see cref="P:System.Web.UI.WebControls.GridViewRow.DataItem" /> 、基になる<see cref="T:System.Data.DataSet" />です。</summary>
+        <value>インデックス、<see cref="P:System.Web.UI.WebControls.GridViewRow.DataItem" />基になるデータ ソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewRow.DataItemIndex%2A>のインデックスを決定するプロパティ、 <xref:System.Web.UI.WebControls.GridViewRow.DataItem%2A> 、基になる<xref:System.Data.DataSet>です。  
+  
+> [!NOTE]
+>  このプロパティは、データ行のみに適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBubbleEvent">
+      <MemberSignature Language="C#" Value="protected override bool OnBubbleEvent (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnBubbleEvent(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.GridViewRow.OnBubbleEvent(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>ページの ASP.NET サーバー コントロールの階層構造のイベントを渡すかどうかを判断します。</summary>
+        <returns>
+          イベントがキャンセルされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public virtual int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRow.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックスを取得、<see cref="T:System.Web.UI.WebControls.GridViewRow" />内のオブジェクト、<see cref="P:System.Web.UI.WebControls.GridView.Rows" />のコレクション、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</summary>
+        <value>インデックス、<see cref="T:System.Web.UI.WebControls.GridViewRow" />内のオブジェクト、<see cref="P:System.Web.UI.WebControls.GridView.Rows" />のコレクション、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewRow.RowIndex%2A>のインデックスを決定するプロパティ、<xref:System.Web.UI.WebControls.GridViewRow>内のオブジェクト、<xref:System.Web.UI.WebControls.GridView.Rows%2A>のコレクション、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+> [!NOTE]
+>  このプロパティは、データ行のみに適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowState">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.DataControlRowState RowState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.DataControlRowState RowState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRow.RowState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態を取得、<see cref="T:System.Web.UI.WebControls.GridViewRow" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewRow.RowType%2A>の状態を判断するプロパティ、<xref:System.Web.UI.WebControls.GridViewRow>オブジェクト。 状態は、次の表に、値のビットごとの組み合わせを指定できます。  
+  
+|状態値|説明|  
+|------------------|-----------------|  
+|`DataControlRowState.Alternate`|<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトは、代替の行で、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+|`DataControlRowState.Edit`|<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトが編集モードにします。|  
+|`DataControlRowState.Normal`|<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトが標準 (既定値) の状態にします。|  
+|`DataControlRowState.Selected`|<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトを選択します。|  
+  
+ 操作を実行する前に、行の状態を判断するは、このプロパティは使用が一般的です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewRow.RowState%2A>プロパティを行の編集モードが選択されているかを判断します。 ユーザーがいるときに別の行を選択した場合、<xref:System.Web.UI.WebControls.GridView>コントロールが編集モードでは、<xref:System.Web.UI.WebControls.GridView>終了します。 コントロールが編集モードです。  
+  
+ [!code-aspx-csharp[GridViewRowRowState#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowRowState/CS/gridviewrowrowstatecs.aspx#1)]
+ [!code-aspx-vb[GridViewRowRowState#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowRowState/VB/gridviewrowrowstatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.DataControlRowType RowType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.DataControlRowType RowType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRow.RowType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlRowType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行の型を取得、<see cref="T:System.Web.UI.WebControls.GridViewRow" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.DataControlRowType" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewRow.RowType%2A>の種類を決定するプロパティの行を<xref:System.Web.UI.WebControls.GridViewRow>オブジェクトを表します。 次の表に、別の行型の値を使用して、<xref:System.Web.UI.WebControls.DataControlRowType>列挙します。  
+  
+|行の種類|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataControlRowType.DataRow>|データ行に、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataControlRowType.Footer>|内のフッター行、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataControlRowType.Header>|ヘッダー行で、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataControlRowType.EmptyDataRow>|空の行、<xref:System.Web.UI.WebControls.GridView>コントロール。 空の行を表示するときに<xref:System.Web.UI.WebControls.GridView>コントロールに表示するすべてのレコードがありません。|  
+|<xref:System.Web.UI.WebControls.DataControlRowType.Pager>|ページャー行、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+|<xref:System.Web.UI.WebControls.DataControlRowType.Separator>|区切り記号の行、<xref:System.Web.UI.WebControls.GridView>コントロール。|  
+  
+ 操作を実行する前に、行の種類を決定するは、このプロパティは使用が一般的です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewRow.RowType%2A>プロパティを作成する行がフッター行であるかどうかを確認します。 フッター行を行には、フッター行に列の合計の値が更新されます。  
+  
+ [!code-aspx-csharp[GridViewRowRowType#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewRowRowType/CS/gridviewrowrowtypecs.aspx#1)]
+ [!code-aspx-vb[GridViewRowRowType#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewRowRowType/VB/gridviewrowrowtypevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataItemContainer.DataItem">
+      <MemberSignature Language="C#" Value="object System.Web.UI.IDataItemContainer.DataItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Web.UI.IDataItemContainer.DataItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRow.System#Web#UI#IDataItemContainer#DataItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IDataItemContainer.DataItem" />」をご覧ください。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.GridViewRow.DataItem" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.GridViewRow>にインスタンスをキャスト、<xref:System.Web.UI.IDataItemContainer>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataItemContainer.DataItemIndex">
+      <MemberSignature Language="C#" Value="int System.Web.UI.IDataItemContainer.DataItemIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Web.UI.IDataItemContainer.DataItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRow.System#Web#UI#IDataItemContainer#DataItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IDataItemContainer.DataItemIndex" />」をご覧ください。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.GridViewRow.DataItemIndex" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.GridViewRow>にインスタンスをキャスト、<xref:System.Web.UI.IDataItemContainer>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataItemContainer.DisplayIndex">
+      <MemberSignature Language="C#" Value="int System.Web.UI.IDataItemContainer.DisplayIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Web.UI.IDataItemContainer.DisplayIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewRow.System#Web#UI#IDataItemContainer#DisplayIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IDataItemContainer.DisplayIndex" />」をご覧ください。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.GridViewRow.RowIndex" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.GridViewRow>にインスタンスをキャスト、<xref:System.Web.UI.IDataItemContainer>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

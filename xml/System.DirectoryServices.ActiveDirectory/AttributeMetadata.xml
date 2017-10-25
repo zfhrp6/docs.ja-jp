@@ -1,0 +1,153 @@
+<Type Name="AttributeMetadata" FullName="System.DirectoryServices.ActiveDirectory.AttributeMetadata">
+  <TypeSignature Language="C#" Value="public class AttributeMetadata" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AttributeMetadata extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.AttributeMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.AttributeMetadata" />クラスを使用して、Active Directory ドメイン サービスの属性のレプリケーション メタデータを格納します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="LastOriginatingChangeTime">
+      <MemberSignature Language="C#" Value="public DateTime LastOriginatingChangeTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastOriginatingChangeTime" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.AttributeMetadata.LastOriginatingChangeTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性にどの送信元の最後の変更が行われた時点を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />最後は発信元を格納しているオブジェクトは、この属性の時間を変更します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastOriginatingInvocationId">
+      <MemberSignature Language="C#" Value="public Guid LastOriginatingInvocationId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid LastOriginatingInvocationId" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.AttributeMetadata.LastOriginatingInvocationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後の変更は、この属性に行われたサーバーの呼び出し id を取得します。</summary>
+        <value>A<see cref="T:System.Guid" />識別子を含む構造体。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalChangeUsn">
+      <MemberSignature Language="C#" Value="public long LocalChangeUsn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 LocalChangeUsn" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.AttributeMetadata.LocalChangeUsn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性を最後に変更が適用された移行先サーバーの更新シーケンス番号 (USN) を取得します。</summary>
+        <value><see cref="T:System.Int64" /> USN を含む値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.AttributeMetadata.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の名前を取得します。</summary>
+        <value>LDAP は、属性の名前を表示します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginatingChangeUsn">
+      <MemberSignature Language="C#" Value="public long OriginatingChangeUsn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 OriginatingChangeUsn" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.AttributeMetadata.OriginatingChangeUsn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性を最後に変更が行われた時点の元のサーバーで更新シーケンス番号 (USN) を取得します。</summary>
+        <value><see cref="T:System.Int64" /> USN を含む値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginatingServer">
+      <MemberSignature Language="C#" Value="public string OriginatingServer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OriginatingServer" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.AttributeMetadata.OriginatingServer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のサーバーの名前を取得します。</summary>
+        <value>元のサーバーの識別名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public int Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Version" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.AttributeMetadata.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性のバージョン番号を取得します。</summary>
+        <value>この属性のバージョン番号。 属性のそれぞれの元の変更は、この値を 1 つずつ増加します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

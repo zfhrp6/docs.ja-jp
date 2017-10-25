@@ -1,0 +1,242 @@
+<Type Name="AttributeUsageAttribute" FullName="System.AttributeUsageAttribute">
+  <TypeSignature Language="C#" Value="public sealed class AttributeUsageAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit AttributeUsageAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.AttributeUsageAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>別の属性クラスの使用方法を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用されている配置することで方法を制御するには、独自の属性クラスを定義するとき、<xref:System.AttributeUsageAttribute>属性クラスにします。 指定された属性クラスから派生しなければなりません<xref:System.Attribute>、直接または間接的にします。  
+  
+ 属性クラスには、位置指定引数と名前付きパラメーターがあります。 属性クラスの各パブリック コンス トラクターは、そのクラスの位置指定パラメーターの有効なシーケンスを定義します。 名前付きパラメーターは、非静的、パブリックで、読み取り/書き込みのフィールドまたは属性クラスのプロパティで定義されます。  
+  
+ 3 つのプロパティの<xref:System.AttributeUsageAttribute>次のパラメーターを定義することによって設定されます。  
+  
+-   <xref:System.AttributeUsageAttribute.ValidOn%2A>  
+  
+ この位置指定パラメーターに示された属性を配置できるプログラム要素を指定します。 属性を配置するには すべての可能な要素のセットとして記載されて、<xref:System.AttributeTargets>列挙します。 複数を組み合わせることができます<xref:System.AttributeTargets>値のビットごとの OR 演算を使用して、有効なプログラム要素の目的の組み合わせを取得します。  
+  
+-   <xref:System.AttributeUsageAttribute.AllowMultiple%2A>  
+  
+ この名前付きパラメーターは、示された属性が特定のプログラム要素に対して複数回指定するかどうかを指定します。  
+  
+-   <xref:System.AttributeUsageAttribute.Inherited%2A>  
+  
+ この名前付きパラメーターは、派生クラスまたはオーバーライドするメンバーが示された属性を継承できるかどうかを指定します。  
+  
+ 属性の使用方法の詳細については、次を参照してください。<xref:System.Attribute>と[属性](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AttributeUsageAttribute (AttributeTargets validOn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.AttributeTargets validOn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AttributeUsageAttribute.#ctor(System.AttributeTargets)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="validOn" Type="System.AttributeTargets" />
+      </Parameters>
+      <Docs>
+        <param name="validOn">値のセットは、ビットごとの OR 演算を使用して、プログラム要素が有効であることを示すを結合します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.AttributeUsageAttribute" />の指定されたリストを持つクラス<see cref="T:System.AttributeTargets" />、<see cref="P:System.AttributeUsageAttribute.AllowMultiple" />値、および<see cref="P:System.AttributeUsageAttribute.Inherited" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数を組み合わせることができます<xref:System.AttributeTargets>値のビットごとの OR 演算を使用して、有効なプログラム要素の目的の組み合わせを取得します。  
+  
+ 既定のプロパティ値を参照してください、 <xref:System.AttributeUsageAttribute.ValidOn%2A>、 <xref:System.AttributeUsageAttribute.AllowMultiple%2A>、および<xref:System.AttributeUsageAttribute.Inherited%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ DispId 属性の定義がいくつかを結合するビットごとの OR 演算の使用方法を示します<xref:System.AttributeTargets>値。  
+  
+ [!code-cpp[Classic AttributeUsageAttribute.AttributeUsageAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic AttributeUsageAttribute.AttributeUsageAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic AttributeUsageAttribute.AttributeUsageAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic AttributeUsageAttribute.AttributeUsageAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic AttributeUsageAttribute.AttributeUsageAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic AttributeUsageAttribute.AttributeUsageAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowMultiple">
+      <MemberSignature Language="C#" Value="public bool AllowMultiple { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowMultiple" />
+      <MemberSignature Language="DocId" Value="P:System.AttributeUsageAttribute.AllowMultiple" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を 1 つのプログラム要素に対して示された属性の 1 つ以上のインスタンスを指定できるかどうかを示すブール値。</summary>
+        <value>
+          <see langword="true" />指定できます。 複数のインスタンスが許可された場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プログラム要素に対して複数回指定できる属性を複数回使用する属性と呼びます。 1 回だけ指定可能な属性には、単一使用属性は呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inherited">
+      <MemberSignature Language="C#" Value="public bool Inherited { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Inherited" />
+      <MemberSignature Language="DocId" Value="P:System.AttributeUsageAttribute.Inherited" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示された属性が派生クラスによって継承され、メンバーをオーバーライドするかどうかを決定する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+        <value>
+          属性が派生クラスにより継承され、メンバーをオーバーライドする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AttributeUsageAttribute.Inherited%2A>プロパティを決定します。  
+  
+-   クラスは基底クラスから派生するかどうかを属性でタグ付け、<xref:System.AttributeUsageAttribute>属性が適用される属性を継承します。  
+  
+-   属性を使用したタグ付けのメソッドが基底クラスのメソッドをオーバーライドするクラスを派生するかどうか、<xref:System.AttributeUsageAttribute>属性が適用される属性を継承します。  (クラスは、基底クラスのメンバーを継承している場合にも継承そのメンバーに適用される任意の属性です。)  
+  
+   
+  
+## Examples  
+ 次の例では、する属性間の違い、<xref:System.AttributeUsageAttribute>属性が、<xref:System.AttributeUsageAttribute.Inherited%2A>のプロパティの値`true`が適用されるとする 1 つ<xref:System.AttributeUsageAttribute>属性が、<xref:System.AttributeUsageAttribute.Inherited%2A>のプロパティの値`false`を適用します。 例では、2 つの属性を定義する`InheritedAttribute`と`NotInheritedAttribute`です。 両方の属性は、クラスとメソッドに適用できます。 <xref:System.AttributeUsageAttribute.Inherited%2A>のプロパティ、<xref:System.AttributeUsageAttribute>に適用される属性`InheritedAttribute`は`true`、派生クラスによって継承されているのメンバーが基底クラスのメソッドをオーバーライドするクラスを派生します。  その一方で、ため、<xref:System.AttributeUsageAttribute.Inherited%2A>のプロパティ、<xref:System.AttributeUsageAttribute>に適用される属性`NotInheritedAttribute`は`false`、派生クラスによって継承されていないのメンバーが基底クラスのメソッドをオーバーライドするクラスを派生します。  
+  
+ [!code-csharp[System.AttributeUsageAttribute.Inherited#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.AttributeUsageAttribute.Inherited/cs/Inherited1.cs#1)]
+ [!code-vb[System.AttributeUsageAttribute.Inherited#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.AttributeUsageAttribute.Inherited/vb/Inherited1.vb#1)]  
+  
+ この例は、2 つの基本クラスを定義します。 最初、 `BaseA`、1 つのメソッドを持つ`MethodA`します。  2 番目、 `BaseB`、1 つのメソッドを持つ`MethodB`します。 `BaseA``MethodA`が付けられます、`InheritedAttribute`属性、および`BaseB`と`MethodB`でタグ付け、`NotInheritedAttribute`属性。 `DerivedA`継承`BaseA`オーバーライドとその`MethodA`メソッドです。 `DerivedB`継承`BaseB`オーバーライドとその`MethodB`メソッドです。  
+  
+ [!code-csharp[System.AttributeUsageAttribute.Inherited#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.AttributeUsageAttribute.Inherited/cs/Inherited1.cs#2)]
+ [!code-vb[System.AttributeUsageAttribute.Inherited#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.AttributeUsageAttribute.Inherited/vb/Inherited1.vb#2)]  
+  
+ 例から出力として`DerivedA`と`DerivedA.MethodA`継承、`InheritedAttribute`属性が、`DerivedB`と`DerivedB.MethodB`を継承しません、`NotInheritedAttribute`属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidOn">
+      <MemberSignature Language="C#" Value="public AttributeTargets ValidOn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.AttributeTargets ValidOn" />
+      <MemberSignature Language="DocId" Value="P:System.AttributeUsageAttribute.ValidOn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AttributeTargets</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示された属性を適用できるプログラム要素を識別する値のセットを取得します。</summary>
+        <value>1 つまたは複数<see cref="T:System.AttributeTargets" />値。 既定値は、<see langword="All" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

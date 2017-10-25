@@ -1,0 +1,66 @@
+<Type Name="IAccessibleHandler" FullName="Accessibility.IAccessibleHandler">
+  <TypeSignature Language="C#" Value="public interface IAccessibleHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAccessibleHandler" />
+  <TypeSignature Language="DocId" Value="T:Accessibility.IAccessibleHandler" />
+  <AssemblyInfo>
+    <AssemblyName>Accessibility</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("03022430-ABC4-11D0-BDE2-00AA001A1953")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.TypeLibType(System.Runtime.InteropServices.TypeLibTypeFlags.FHidden | System.Runtime.InteropServices.TypeLibTypeFlags.FOleAutomation)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:Accessibility.IAccessibleHandler" />マネージ ラッパーのコンポーネント オブジェクト モデル (COM) の一部であるすべての公開されているメンバーと<see langword="IAccessibleHandler" />インターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については<xref:Accessibility.IAccessibleHandler>、ドキュメントを参照して、 `IAccessibleHandler::AccessibleObjectFromID` http://msdn.microsoft.com/library の MSDN ライブラリの Microsoft Active Accessibility ドキュメント内のメソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AccessibleObjectFromID">
+      <MemberSignature Language="C#" Value="public void AccessibleObjectFromID (int hwnd, int lObjectID, out Accessibility.IAccessible pIAccessible);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AccessibleObjectFromID([in]int32 hwnd, [in]int32 lObjectID, [out] class Accessibility.IAccessible&amp; pIAccessible) runtime managed" />
+      <MemberSignature Language="DocId" Value="M:Accessibility.IAccessibleHandler.AccessibleObjectFromID(System.Int32,System.Int32,Accessibility.IAccessible@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Accessibility</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwnd" Type="System.Int32" />
+        <Parameter Name="lObjectID" Type="System.Int32" />
+        <Parameter Name="pIAccessible" Type="Accessibility.IAccessible&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="hwnd">IAccessible インターフェイス ポインターを取得する対象のウィンドウのハンドルを指定します。</param>
+        <param name="lObjectID">オブジェクト ID を指定します</param>
+        <param name="pIAccessible">オブジェクトの IAccessible インターフェイスのアドレスを受け取るポインター変数のアドレスを指定します。</param>
+        <summary><see cref="T:Accessibility.IAccessibleHandler" />マネージ ラッパーのコンポーネント オブジェクト モデル (COM) の一部であるすべての公開されているメンバーと<see langword="IAccessibleHandler" />インターフェイスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については<xref:Accessibility.IAccessibleHandler.AccessibleObjectFromID%2A>、ドキュメントを参照して、 `IAccessibleHandler::AccessibleObjectFromID` http://msdn.microsoft.com/library の MSDN ライブラリの Microsoft Active Accessibility ドキュメント内のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

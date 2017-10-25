@@ -1,0 +1,329 @@
+<Type Name="DynamicHyperLink" FullName="System.Web.DynamicData.DynamicHyperLink">
+  <TypeSignature Language="C#" Value="public class DynamicHyperLink : System.Web.UI.WebControls.HyperLink" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicHyperLink extends System.Web.UI.WebControls.HyperLink implements class System.Web.UI.IAttributeAccessor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DynamicHyperLink" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.HyperLink</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Action")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Web.DynamicData.DynamicHyperLink), "DynamicHyperLink.bmp")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>編集、削除、挿入などのテーブル アクションへのリンクを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.DynamicData.DynamicHyperLink>コントロールが動的なデータが有効になっているテーブル操作に基づくへのリンクを作成します。 これらのアクションは、既定のルーティング ルールとして、Global.asax ファイルで定義されます。 ルールは、Edit.aspx List.aspx、やなどの既定のページ テンプレートに関連付けられます。 ユーザーは、リンクをクリックすると、ユーザーがリンクで指定されているアクションを実行できるようにできるページが表示されます。  
+  
+ <xref:System.Web.DynamicData.DynamicHyperLink>コントロールでは、次のリンクを作成することができます。  
+  
+-   "Edit"と"Details"などのデータ項目の特定のアクション リンクのあるテーブルの行データ バインドされたリンク 動的なデータは、テーブルおよび現在の行の主キーを推論します。 これらのリンクの例は、動的データ Web サイトの Edit.aspx ページでです。  
+  
+-   リンク<xref:System.Web.DynamicData.MetaTable>オブジェクトで、さらに、テーブルなどのオブジェクトを指す"List"、"Insert"などの特定のアクション リンクです。 これらのリンクの例は、動的データ Web サイトの Default.aspx ページでです。  
+  
+-   バインドされていないリンク、データ バインド コントロールの外部テーブル アクション リンクを作成します。 これらのリンクの例は、List.aspx ページ テンプレートでの動的データ Web サイトのリンクの挿入です。 これらのリンクは、定義済みのデータ コンテキストを持つデータ バインド コントロールの一部ではないためは、アクセスして、操作を実行するテーブルを指定する必要があります。 アクションとして「編集」または「詳細」を指定する場合は、主キーも用意する必要があります。  
+  
+ <xref:System.Web.DynamicData.DynamicHyperLink>サポートする追加のマークアップの属性を制御し、リンクがアクティブになるとルーティング エンジンに転送することができます。 これは、アイテム固有の非データ バインド コンテキストからリンクする場合に役立ちます。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:DynamicHyperlink  
+    ID="string"  
+    Action="Details|Edit|Insert|List"  
+    ContextTypeName="string"  
+    DataField="string"  
+    TableName="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnPreRender="PreRender event handler"/>  
+```  
+  
+   
+  
+## Examples  
+ Visual Studio プロジェクトとソース コードは、このトピックで使用可能な:[スキャフォールディング動的データ](http://go.microsoft.com/fwlink/?LinkId=168914)です。  
+  
+ 次の例を作成する方法を示して<xref:System.Web.DynamicData.DynamicHyperLink>コレクションは、指定されたアクションを実行して、データ行のコントロールです。  
+  
+ [!code-aspx-csharp[DynamicData.DynamicHyperlinks#1](~/samples/snippets/csharp/VS_Snippets_WebNet/dynamicdata.dynamichyperlinks/cs/dynamicdatadynamichyperlink.aspx#1)]
+ [!code-aspx-vb[DynamicData.DynamicHyperlinks#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/dynamicdata.dynamichyperlinks/vb/dynamicdatadynamichyperlink.aspx#1)]  
+  
+ [!code-csharp[DynamicData.DynamicHyperlinks#2](~/samples/snippets/csharp/VS_Snippets_WebNet/dynamicdata.dynamichyperlinks/cs/dynamicdatadynamichyperlink.aspx.cs#2)]
+ [!code-vb[DynamicData.DynamicHyperlinks#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/dynamicdata.dynamichyperlinks/vb/dynamicdatadynamichyperlink.aspx.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicHyperLink ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicHyperLink.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.DynamicHyperLink" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public string Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicHyperLink.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Navigation")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.DynamicData.ActionConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリンクに関連付けられているアクションを設定します。</summary>
+        <value>リンクに関連付けられているアクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに割り当てることのできる定義済みの値は、"Edit"、"Insert"、"List"および"Details"です。 これらの各値は、ページのテンプレートに関連付けられます。 カスタム値を割り当てることもできます。 カスタム ページ テンプレートでは、カスタム値をサポートする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextTypeName">
+      <MemberSignature Language="C#" Value="public string ContextTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContextTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicHyperLink.ContextTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Navigation")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、リンクが適用されるデータ モデルのデータ コンテキストを設定します。</summary>
+        <value>リンクに適用されるデータ コンテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.DynamicData.DynamicHyperLink>コントロールがデータ バインド コントロールで使用される、既定値は、データ バインド コントロールで使用されるものと同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataField">
+      <MemberSignature Language="C#" Value="public string DataField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicHyperLink.DataField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Navigation")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリンクの表示テキストを設定します。</summary>
+        <value>リンクの表示テキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値が表示リンク表示のテキストが空の場合は、`string`を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataBinding">
+      <MemberSignature Language="C#" Value="protected override void OnDataBinding (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDataBinding(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicHyperLink.OnDataBinding(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Web.UI.Control.DataBinding" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、通知、<xref:System.Web.DynamicData.DynamicHyperLink>制御データをバインドするため、任意のロジックを実行する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">データ バインド中にテーブルとデータ コンテキストを設定しようとしました。  
+  
+ または  
+  
+ バインドが試行されて、<see langword="null" />データ フィールドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicHyperLink.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Web.UI.Control.PreRender" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、通知、<xref:System.Web.DynamicData.DynamicHyperLink>コントロールがビュー状態を保存し、コンテンツをレンダリングする前に、必要な事前描画を実行するようコントロールの手順です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.DynamicData.DynamicHyperLink" />オブジェクトには、データ テーブルにリンクすることはできませんを特定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IAttributeAccessor.GetAttribute">
+      <MemberSignature Language="C#" Value="string IAttributeAccessor.GetAttribute (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.Web.UI.IAttributeAccessor.GetAttribute(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicHyperLink.System#Web#UI#IAttributeAccessor#GetAttribute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得する属性の名前。</param>
+        <summary>適用される指定した属性の値を取得、<see cref="T:System.Web.DynamicData.DynamicHyperLink" />コントロール。</summary>
+        <returns>リンクに適用される指定の属性です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IAttributeAccessor.SetAttribute">
+      <MemberSignature Language="C#" Value="void IAttributeAccessor.SetAttribute (string key, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IAttributeAccessor.SetAttribute(string key, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicHyperLink.System#Web#UI#IAttributeAccessor#SetAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">属性の名前。</param>
+        <param name="value">属性に割り当てられている値。</param>
+        <summary>属性とその値に適用する定義、<see cref="T:System.Web.DynamicData.DynamicHyperLink" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TableName">
+      <MemberSignature Language="C#" Value="public string TableName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TableName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicHyperLink.TableName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Navigation")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリンク アクションのテーブルを設定します。</summary>
+        <value>リンク アクションのテーブルの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

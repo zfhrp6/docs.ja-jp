@@ -1,0 +1,113 @@
+<Type Name="WorkflowTrackPoint" FullName="System.Workflow.Runtime.Tracking.WorkflowTrackPoint">
+  <TypeSignature Language="C#" Value="public sealed class WorkflowTrackPoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WorkflowTrackPoint extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.WorkflowTrackPoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ルート ワークフロー インスタンスの実行パス内で追跡対象となる、ワークフロー ステータス イベントのセットに関連付けられたポイントを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ワークフロー インスタンスのステータスが変わるたびに、ワークフロー インスタンスはいずれかの <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent> の値に基づいてワークフロー ステータス イベントをランタイム追跡インフラストラクチャに送出します。 <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> は、ワークフロー インスタンスの実行中に特定の種類のワークフロー ステータス イベントが発生したすべてのポイントを追跡することを定義します。 <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> を <xref:System.Workflow.Runtime.Tracking.TrackingProfile.WorkflowTrackPoints%2A?displayProperty=nameWithType> に追加すると、ランタイム追跡インフラストラクチャは、指定されたワークフロー ステータス イベントのセットが発生したときに <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> を追跡サービスに送ります。 1 つの <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> は、ワークフロー インスタンス内の複数のポイントで照合可能です。  
+  
+ <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint.MatchingLocation%2A> の照合のためにランタイム追跡インフラストラクチャによって使用されるワークフロー ステータス イベントの種類を指定するには、適切に構成された <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingLocation> を使って <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> を設定します。 <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint.Annotations%2A> に注釈を追加すれば、追跡ポイントの照合時にランタイム追跡インフラストラクチャによって送られる、追跡ポイントに関連した追加情報を指定できます。  
+  
+ このクラスは継承できません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowTrackPoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.WorkflowTrackPoint.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.WorkflowTrackPoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint> が初期化されるとき、注釈と <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint.MatchingLocation%2A> は存在しません。 追跡ポイントの <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint.MatchingLocation%2A> を設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Annotations">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.WorkflowTrackPoint.Annotations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingAnnotationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡ポイントに関連付けられている注釈のコレクションを取得します。</summary>
+        <value>追跡ポイントに関連した注釈を格納する <see cref="T:System.Workflow.Runtime.Tracking.TrackingAnnotationCollection" />。 既定値は空のコレクションです。これは、追跡ポイントに関連した注釈が存在しないことを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint.Annotations%2A> に追加することによって、追跡ポイントを照合するときに追跡サービスに送信される <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord> で返す注釈を指定できます。  
+  
+ 注釈は、追跡ポイントに関連付けられる情報を格納する、ユーザー定義の文字列です。 たとえば、注釈には、この追跡ポイントからのワークフローの実行パスに関する情報を含めたり、ユーザー インターフェイスに表示する情報を含めたりできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchingLocation">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.WorkflowTrackingLocation MatchingLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.WorkflowTrackingLocation MatchingLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.WorkflowTrackPoint.MatchingLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.WorkflowTrackingLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡ポイントに関してランタイム追跡インフラストラクチャによって照合されるワークフロー ステータス イベントを指定する <see cref="T:System.Workflow.Runtime.Tracking.WorkflowTrackingLocation" /> を取得または設定します。</summary>
+        <value>A<see cref="T:System.Workflow.Runtime.Tracking.WorkflowTrackingLocation" />ランタイム追跡追跡ポイントのインフラストラクチャによって照合されるワークフロー ステータス イベントを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡ポイントの <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint.MatchingLocation%2A> を設定する必要があります。 <xref:System.Workflow.Runtime.Tracking.WorkflowTrackPoint.MatchingLocation%2A> は、追跡ポイントの照合のためにランタイム追跡インフラストラクチャによって使用される 1 つ以上の <xref:System.Workflow.Runtime.Tracking.TrackingWorkflowEvent> 値を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

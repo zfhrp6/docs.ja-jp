@@ -1,0 +1,598 @@
+<Type Name="ManagementEventWatcher" FullName="System.Management.ManagementEventWatcher">
+  <TypeSignature Language="C#" Value="public class ManagementEventWatcher : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManagementEventWatcher extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.Management.ManagementEventWatcher" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>に基づいて、指定された一時的なイベント通知をサブスクライブしている*イベント クエリ*です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher/cs/ManagementEventWatcher.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher/vb/ManagementEventWatcher.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementEventWatcher ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementEventWatcher.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.ManagementEventWatcher" /> クラスの新しいインスタンスを初期化します。 さらに初期化のためには、オブジェクトのプロパティを設定します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher/cs/ManagementEventWatcher.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher/vb/ManagementEventWatcher.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementEventWatcher (System.Management.EventQuery query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.EventQuery query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementEventWatcher.#ctor(System.Management.EventQuery)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="query" Type="System.Management.EventQuery" />
+      </Parameters>
+      <Docs>
+        <param name="query"><see cref="T:System.Management.EventQuery" />ウォッチャーが待機するイベントを決定する WMI イベントのクエリを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementEventWatcher" />クラス、WMI が指定されると*イベント クエリ*です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウォッチャーがイベントのリッスンする名前空間は、現在設定されている既定の名前空間です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ このコード例では、クライアントは時のインスタンスの通知を受け取ります。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher-E#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-E/cs/ManagementEventWatcher-E.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher-E#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-E/vb/ManagementEventWatcher-E.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementEventWatcher (string query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementEventWatcher.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="query" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="query">ウォッチャーが待機するイベントを定義 WMI イベント クエリ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementEventWatcher" />クラス、WMI が指定されると*イベント クエリ*文字列の形式でします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウォッチャーがイベントのリッスンする名前空間は、現在設定されている既定の名前空間です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher-S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-S/cs/ManagementEventWatcher-S.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher-S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-S/vb/ManagementEventWatcher-S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementEventWatcher (System.Management.ManagementScope scope, System.Management.EventQuery query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementScope scope, class System.Management.EventQuery query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementEventWatcher.#ctor(System.Management.ManagementScope,System.Management.EventQuery)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Management.ManagementScope" />
+        <Parameter Name="query" Type="System.Management.EventQuery" />
+      </Parameters>
+      <Docs>
+        <param name="scope">A<see cref="T:System.Management.ManagementScope" />ウォッチャーがイベントを待機するスコープ (名前空間) を表すです。</param>
+        <param name="query"><see cref="T:System.Management.EventQuery" />ウォッチャーが待機するイベントを決定する WMI イベントのクエリを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementEventWatcher" />特定の WMI に準拠したイベントをリッスンしているクラス*イベント クエリ*です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ このコード例では、クライアントは時のインスタンスの通知を受け取ります。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher-M_E#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-M_E/cs/ManagementEventWatcher-M_E.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher-M_E#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-M_E/vb/ManagementEventWatcher-M_E.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementEventWatcher (string scope, string query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string scope, string query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementEventWatcher.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scope" Type="System.String" />
+        <Parameter Name="query" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="scope">管理スコープ (名前空間) でウォッチャーはイベントをリッスンします。</param>
+        <param name="query">ウォッチャーが待機するイベントを定義するクエリ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementEventWatcher" />特定の WMI に準拠したイベントをリッスンしているクラス*イベント クエリ*です。 このバリアントでは、クエリとスコープは、文字列として指定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher-S_S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-S_S/cs/ManagementEventWatcher-S_S.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher-S_S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-S_S/vb/ManagementEventWatcher-S_S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementEventWatcher (System.Management.ManagementScope scope, System.Management.EventQuery query, System.Management.EventWatcherOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementScope scope, class System.Management.EventQuery query, class System.Management.EventWatcherOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementEventWatcher.#ctor(System.Management.ManagementScope,System.Management.EventQuery,System.Management.EventWatcherOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scope" Type="System.Management.ManagementScope" />
+        <Parameter Name="query" Type="System.Management.EventQuery" />
+        <Parameter Name="options" Type="System.Management.EventWatcherOptions" />
+      </Parameters>
+      <Docs>
+        <param name="scope">A<see cref="T:System.Management.ManagementScope" />ウォッチャーがイベントを待機するスコープ (名前空間) を表すです。</param>
+        <param name="query"><see cref="T:System.Management.EventQuery" />ウォッチャーが待機するイベントを決定する WMI イベントのクエリを表すです。</param>
+        <param name="options"><see cref="T:System.Management.EventWatcherOptions" />イベントを監視するために使用する追加のオプションを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementEventWatcher" />クラスを指定したオプションに従って、指定した WMI イベント クエリに準拠したイベントを待機します。 このバリアントでは、クエリおよびスコープは、指定したオブジェクトです。 オプション オブジェクトには、タイムアウトとコンテキスト情報などのオプションを指定できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher-M_E_E#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-M_E_E/cs/ManagementEventWatcher-M_E_E.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher-M_E_E#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-M_E_E/vb/ManagementEventWatcher-M_E_E.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementEventWatcher (string scope, string query, System.Management.EventWatcherOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string scope, string query, class System.Management.EventWatcherOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementEventWatcher.#ctor(System.String,System.String,System.Management.EventWatcherOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scope" Type="System.String" />
+        <Parameter Name="query" Type="System.String" />
+        <Parameter Name="options" Type="System.Management.EventWatcherOptions" />
+      </Parameters>
+      <Docs>
+        <param name="scope">管理スコープ (名前空間) でウォッチャーはイベントをリッスンします。</param>
+        <param name="query">ウォッチャーが待機するイベントを定義するクエリ。</param>
+        <param name="options"><see cref="T:System.Management.EventWatcherOptions" />イベントを監視するために使用する追加のオプションを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementEventWatcher" />特定の WMI に準拠したイベントをリッスンしているクラス*イベント クエリ*、指定したオプションに従ってします。 このバリアントでは、クエリとスコープは、文字列として指定されます。 オプション オブジェクトには、タイムアウトとコンテキスト情報などのオプションを指定できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher-S_S_E#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-S_S_E/cs/ManagementEventWatcher-S_S_E.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher-S_S_E#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher-S_S_E/vb/ManagementEventWatcher-S_S_E.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventArrived">
+      <MemberSignature Language="C#" Value="public event System.Management.EventArrivedEventHandler EventArrived;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Management.EventArrivedEventHandler EventArrived" />
+      <MemberSignature Language="DocId" Value="E:System.Management.ManagementEventWatcher.EventArrived" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.EventArrivedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいイベントが到着すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="event-data"></a>イベント データ  
+ イベント ハンドラーは、型の引数<xref:System.Management.EventArrivedEventArgs>このイベントに関連するデータを格納します。 次<xref:System.Management.EventArrivedEventArgs>プロパティは、このイベントに固有の情報を提供します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Management.ManagementEventArgs.Context%2A>(から継承された<xref:System.Management.ManagementEventArgs>)|イベントをトリガーした操作から戻るエコー操作コンテキストを取得します。|  
+|<xref:System.Management.EventArrivedEventArgs.NewEvent%2A>|提供された WMI イベントを取得します。|  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~ManagementEventWatcher ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementEventWatcher.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>未処理の呼び出しがオフになっていることを確認します。 これはオブジェクトのデストラクターです。 C# の場合は、ファイナライザーはデストラクター構文を使用して表現されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.Management.EventWatcherOptions Options { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.EventWatcherOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementEventWatcher.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.EventWatcherOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントの監視に使用するオプションを設定します。</summary>
+        <value>返します、<see cref="T:System.Management.EventWatcherOptions" />イベントを監視するために使用するイベントのオプションを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ イベントを監視するために使用するオプションです。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher_Options#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher_Options/cs/ManagementEventWatcher_Options.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher_Options#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher_Options/vb/ManagementEventWatcher_Options.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Query">
+      <MemberSignature Language="C#" Value="public System.Management.EventQuery Query { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.EventQuery Query" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementEventWatcher.Query" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.EventQuery</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントに適用する条件を設定します。</summary>
+        <value>返します、<see cref="T:System.Management.EventQuery" />イベントに適用するクエリを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ これには、イベントに適用する条件、*イベント クエリ*です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher_Query#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher_Query/cs/ManagementEventWatcher_Query.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher_Query#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher_Query/vb/ManagementEventWatcher_Query.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scope">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementScope Scope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementScope Scope" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementEventWatcher.Scope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または (名前空間またはスコープ) のイベントを監視するためのスコープを設定します。</summary>
+        <value>返します、<see cref="T:System.Management.ManagementScope" />スコープが格納されている、イベントを監視します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ (名前空間またはスコープ) のイベントを監視するためのスコープです。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher_Scope#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher_Scope/cs/ManagementEventWatcher_Scope.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher_Scope#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher_Scope/vb/ManagementEventWatcher_Scope.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementEventWatcher.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定したクエリでイベントをサブスクライブし、それらを配信を非同期的に、<see cref="E:System.Management.ManagementEventWatcher.EventArrived" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementEventWatcher.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>同期または非同期であるかどうかは、サブスクリプションを取り消します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher_Stop#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher_Stop/cs/ManagementEventWatcher_Stop.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher_Stop#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher_Stop/vb/ManagementEventWatcher_Stop.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stopped">
+      <MemberSignature Language="C#" Value="public event System.Management.StoppedEventHandler Stopped;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Management.StoppedEventHandler Stopped" />
+      <MemberSignature Language="DocId" Value="E:System.Management.ManagementEventWatcher.Stopped" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.StoppedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブスクリプションが取り消された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="event-data"></a>イベント データ  
+ イベント ハンドラーは、型の引数<xref:System.Management.StoppedEventArgs>このイベントに関連するデータを格納します。 次<xref:System.Management.StoppedEventArgs>プロパティは、このイベントに固有の情報を提供します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Management.ManagementEventArgs.Context%2A>(から継承された<xref:System.Management.ManagementEventArgs>)|イベントをトリガーした操作から戻るエコー操作コンテキストを取得します。|  
+|<xref:System.Management.StoppedEventArgs.Status%2A>|操作の完了ステータスを取得します。|  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForNextEvent">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementBaseObject WaitForNextEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementBaseObject WaitForNextEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementEventWatcher.WaitForNextEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementBaseObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントを待機次到着すると、指定されたクエリと返しますに一致することです。</summary>
+        <returns>A<see cref="T:System.Management.ManagementBaseObject" />新しく到着したイベントを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントの監視オブジェクトに指定したタイムアウトでオプションが含まれている場合、API は次のイベントのみを待機一定の時間です。それ以外の場合、API は、次のイベントが発生するまでブロックされます。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、クライアントが時のインスタンスの通知を受け取る方法を示しています。 **Win32_Process**イベント クラスであるために作成**_ _instancecreationevent**です。 詳細については、MSDN ライブラリ http://msdn.microsoft.com/library で Windows Management Instrumentation のマニュアルを参照してください。 クライアントは <xref:System.Management.ManagementEventWatcher.WaitForNextEvent%2A> メソッドを呼び出して、イベントを同期的に受信します。 この例は、コード例の実行中にメモ帳などのプロセスを開始することでテストできます。  
+  
+ [!code-csharp[wminet_ManagementEventWatcher_WaitForNextEvent#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher_WaitForNextEvent/cs/ManagementEventWatcher_WaitForNextEvent.cs#1)]
+ [!code-vb[wminet_ManagementEventWatcher_WaitForNextEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementEventWatcher_WaitForNextEvent/vb/ManagementEventWatcher_WaitForNextEvent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

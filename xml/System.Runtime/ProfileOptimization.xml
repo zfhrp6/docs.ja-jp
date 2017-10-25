@@ -1,0 +1,116 @@
+<Type Name="ProfileOptimization" FullName="System.Runtime.ProfileOptimization">
+  <TypeSignature Language="C#" Value="public static class ProfileOptimization" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ProfileOptimization extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.ProfileOptimization" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>以前のコンパイル中に作成されたプロファイルに基づいて、実行すると思われるメソッドのバック グラウンドのコンパイルを実行することによって、・ イン タイム (JIT) コンパイラを必要とするアプリケーションのアプリケーション ドメインの起動時のパフォーマンスが向上します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  最適化のプロファイルには、マルチコア コンピューターが必要です。 メソッドは、他のコンピューターでは無視されます。  
+  
+ アプリケーション ドメインでの最適化のプロファイルを開始するたびに、前回の使用中に作成されたプロファイルが読み取られます。 プロファイルの情報は、スタートアップ時に実行される可能性が最も高いメソッドを識別することによってバック グラウンドのコンパイルに使用されます。 マルチコア コンピューターは、これメソッドである可能性が高くなりますが必要になったとき、メイン アプリケーション スレッドは JIT コンパイラを呼び出す必要があるないようにしてコンパイルされます。  
+  
+ スタートアップ時のメソッドの使用に関する最新の情報を常に含まれるように、それぞれに使用するとき、プロファイル ファイルが上書きされます。  
+  
+ 最適化のプロファイルは、アプリケーション ドメインの起動時に限定されません。 これらは、JIT コンパイラの頻繁に使用が必要になるアクティビティに対して使用できます。 このような各アクティビティに、独自のプロファイルを持つように、アプリケーション ドメインに対して複数のプロファイルを管理できます。  
+  
+ 最適化のプロファイルを使用して、アプリケーション ドメインを呼び出す必要があります、<xref:System.Runtime.ProfileOptimization.SetProfileRoot%2A>メソッド プロファイルが格納先フォルダーを指定します。 フォルダーが既に存在する必要があります。 プロファイルを使用するには、呼び出し、<xref:System.Runtime.ProfileOptimization.StartProfile%2A>メソッド、プロファイルのファイル名を指定します。 場合は、ファイルが以前に記録されませんでした、初回使用時に作成されます。 プロファイルが作成されるパフォーマンス特典、最初の時刻がありません。  
+  
+ 最適化のプロファイルでは、メソッドの実行順序は変更されません。 メソッドは、バック グラウンド スレッドでは実行されません。場合は、メソッドはコンパイルされますが、呼び出されません、これは単に使用されません。 プロファイル ファイルが壊れているか (たとえば、フォルダーが存在しない) ために、指定したフォルダーに書き込めない場合、プログラムの実行が最適化のプロファイルことがなく続行します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="SetProfileRoot">
+      <MemberSignature Language="C#" Value="public static void SetProfileRoot (string directoryPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetProfileRoot(string directoryPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.ProfileOptimization.SetProfileRoot(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directoryPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="directoryPath">現在のアプリケーション ドメインのプロファイルのファイルが格納フォルダーの完全パスです。</param>
+        <summary>現在のアプリケーション ドメインでは、プロファイリングの最適化を有効にし、最適化のプロファイルのファイルの格納先フォルダーを設定します。 コンピューターでは単一コア、メソッドは無視されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す前に、このメソッドを呼び出す必要があります、<xref:System.Runtime.ProfileOptimization.StartProfile%2A>が最初に現在のアプリケーション ドメイン内のメソッドです。 呼び出す場合<xref:System.Runtime.ProfileOptimization.SetProfileRoot%2A>同じアプリケーション ドメインで複数回に 1 つ目後のすべての呼び出しは無視されます。  
+  
+ 指定したフォルダーが既に存在する必要があります。 存在しない場合は、このメソッドを呼び出すことは作成されません、され、プロファイリングは発生しません。  
+  
+ 複数のコアがないコンピューターでこのメソッドは無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="StartProfile">
+      <MemberSignature Language="C#" Value="public static void StartProfile (string profile);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void StartProfile(string profile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.ProfileOptimization.StartProfile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="profile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="profile">使用するプロファイルのファイル名。</param>
+        <summary>バック グラウンド スレッドで、指定したプロファイル ファイルに記録した以前の方法の・ イン タイム (JIT) コンパイルを開始します。 現在メソッドを使用して、後で、指定したプロファイル ファイルを上書きするを記録するプロセスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって指定されたフォルダーに指定されたプロファイルが存在する場合、<xref:System.Runtime.ProfileOptimization.SetProfileRoot%2A>メソッドが、バック グラウンド スレッドでコンパイルされた順序を決定するメソッド、含まれている情報を使用します。 <xref:System.Runtime.ProfileOptimization.StartProfile%2A>が存在せず、メソッドの使用の記録を開始する場合、メソッドが、プロファイルを作成します。  
+  
+ かどうか、バック グラウンド スレッドまたはメイン アプリケーション スレッド上にコンパイルされているに関係なく、実際に呼び出されるメソッドのみが記録されます。 アプリケーションがバック グラウンド スレッドがコンパイルされる前に呼び出す必要がある場合、メソッドは、アプリケーションのメイン スレッドでコンパイルされます。  
+  
+ 記録を実行するコードはあるメソッドはコンパイル、メイン スレッドとバック グラウンド スレッドでコンパイルされるメソッドを含む速度を追跡します。 ときに、レート レベルを下回ったあらかじめ決められた、録音を停止します。 記録は、JIT コンパイルの比率が事前に定義された上限を超えた場合にも停止します。  
+  
+ 場合、 <xref:System.Runtime.ProfileOptimization.SetProfileRoot%2A> 、現在のアプリケーション ドメインのメソッドが呼び出されていないまたはコンピューターに複数のコアがあるない場合、<xref:System.Runtime.ProfileOptimization.StartProfile%2A>メソッドも何も起こりません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

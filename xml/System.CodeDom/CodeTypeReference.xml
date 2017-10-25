@@ -1,0 +1,474 @@
+<Type Name="CodeTypeReference" FullName="System.CodeDom.CodeTypeReference">
+  <TypeSignature Language="C#" Value="public class CodeTypeReference : System.CodeDom.CodeObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeTypeReference extends System.CodeDom.CodeObject" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeTypeReference" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型への参照を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.CodeDom.CodeTypeReference> CodeDOM オブジェクトの型を表すオブジェクトを使用します。 CodeDOM 型がある場合は、`Type`プロパティには、型の<xref:System.CodeDom.CodeTypeReference>します。 たとえば、<xref:System.CodeDom.CodeMemberField.Type%2A?displayProperty=nameWithType>プロパティは、<xref:System.CodeDom.CodeTypeReference>を表すフィールドのデータ型。  
+  
+ A<xref:System.CodeDom.CodeTypeReference>による初期化を行うことができます、<xref:System.Type>オブジェクトまたは文字列です。 使用することは推奨は一般に、<xref:System.Type>いない常に可能性がありますが、これを行うにします。 文字列では、このクラスのインスタンスを初期化する場合は強くお勧めだけ""、コンソールではなく"System.Console"などの完全修飾型を常に使用するすべての言語で名前空間のインポートをサポートするためです。 配列型は、型オブジェクトの配列を渡すかをパラメーターとしてのランクを受け入れるコンス トラクターのいずれかを使用して指定できます。  
+  
+ <xref:System.CodeDom.CodeTypeReference.BaseType%2A>プロパティを参照する型の名前を指定します。 配列型への参照、<xref:System.CodeDom.CodeTypeReference.ArrayElementType%2A>プロパティは、配列の要素の種類を示す、<xref:System.CodeDom.CodeTypeReference.ArrayRank%2A>プロパティ配列の次元数を示します。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.CodeDom.CodeTypeReference>を型への参照を表します。  
+  
+ [!code-cpp[CodeTypeOfExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeTypeOfExample/CPP/codetypeofexample.cpp#2)]
+ [!code-csharp[CodeTypeOfExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeTypeOfExample/CS/codetypeofexample.cs#2)]
+ [!code-vb[CodeTypeOfExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeTypeOfExample/VB/codetypeofexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeTypeReference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、空を作成<xref:System.CodeDom.CodeTypeReference>オブジェクト。  このコンス トラクターを使用する場合は、型参照を確立するためにプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeReference (System.CodeDom.CodeTypeParameter typeParameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeTypeParameter typeParameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeReference.#ctor(System.CodeDom.CodeTypeParameter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeParameter" Type="System.CodeDom.CodeTypeParameter" />
+      </Parameters>
+      <Docs>
+        <param name="typeParameter">A<see cref="T:System.CodeDom.CodeTypeParameter" />型パラメーターの型を表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeTypeReference" />クラスの指定したコードの型パラメーターを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeReference (string typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeReference.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">参照される型の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeTypeReference" />クラスの指定された型名を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`typeName`パラメーター、ジェネリック型を参照して、ジェネリック型の構文表記規則に従う必要があります。 リフレクション署名など、<xref:System.Collections.Generic.Dictionary%602>型、場所`K`文字列と`V`は、<xref:System.Collections.Generic.List%601>の整数には、次のリフレクションで表される、アセンブリ情報と共に削除:``System.Collections.Generic.Dictionary`2[[System.String], [System.Collections.Generic.List`1[[System.Int32]]]]``です。  
+  
+> [!NOTE]
+>  ジェネリック パラメーターを区切るために角かっこ () およびされません、c# 角度っこを使用する必要があります。  
+  
+ 構文を指定する際に間違いを犯す可能性を回避するのには、文字列ではなく、パラメーターとして型を受け取るコンス トラクターの使用を検討します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeReference (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeReference.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />を参照します。</param>
+        <summary>指定された型を使用して、<see cref="T:System.CodeDom.CodeTypeReference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeReference (System.CodeDom.CodeTypeReference arrayType, int rank);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeTypeReference arrayType, int32 rank) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeReference.#ctor(System.CodeDom.CodeTypeReference,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="arrayType" Type="System.CodeDom.CodeTypeReference" />
+        <Parameter Name="rank" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="arrayType">A<see cref="T:System.CodeDom.CodeTypeReference" />を示す、配列の型。</param>
+        <param name="rank">配列の次元の数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeTypeReference" />クラス ランクと指定された配列型を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、入れ子で配列の配列を構築するために使用できる<xref:System.CodeDom.CodeTypeReference>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeReference (string typeName, params System.CodeDom.CodeTypeReference[] typeArguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName, class System.CodeDom.CodeTypeReference[] typeArguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeReference.#ctor(System.String,System.CodeDom.CodeTypeReference[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="typeArguments" Type="System.CodeDom.CodeTypeReference[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="typeName">参照される型の名前。</param>
+        <param name="typeArguments">配列<see cref="T:System.CodeDom.CodeTypeReference" />値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeTypeReference" />クラスの指定した型名と型引数を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeReference (string typeName, System.CodeDom.CodeTypeReferenceOptions codeTypeReferenceOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName, valuetype System.CodeDom.CodeTypeReferenceOptions codeTypeReferenceOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeReference.#ctor(System.String,System.CodeDom.CodeTypeReferenceOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="codeTypeReferenceOption" Type="System.CodeDom.CodeTypeReferenceOptions" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">参照される型の名前。</param>
+        <param name="codeTypeReferenceOption">コードの種類の参照オプションのいずれかの<see cref="T:System.CodeDom.CodeTypeReferenceOptions" />値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeTypeReference" />クラスの指定された型名を使用して、型参照オプションをコードします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeReference (string baseType, int rank);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string baseType, int32 rank) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeReference.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="baseType" Type="System.String" />
+        <Parameter Name="rank" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="baseType">配列の要素の型の名前。</param>
+        <param name="rank">配列の次元の数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeTypeReference" />クラス ランクと指定された配列型の名前を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeReference (Type type, System.CodeDom.CodeTypeReferenceOptions codeTypeReferenceOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, valuetype System.CodeDom.CodeTypeReferenceOptions codeTypeReferenceOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeReference.#ctor(System.Type,System.CodeDom.CodeTypeReferenceOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="codeTypeReferenceOption" Type="System.CodeDom.CodeTypeReferenceOptions" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />を参照します。</param>
+        <param name="codeTypeReferenceOption">コードの種類の参照オプションのいずれかの<see cref="T:System.CodeDom.CodeTypeReferenceOptions" />値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeTypeReference" />クラスの指定の型を使用し、コードの種類の参照。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrayElementType">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReference ArrayElementType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeReference ArrayElementType" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeReference.ArrayElementType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または配列内の要素の型を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeReference" />配列要素の種類を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しない限り、これは無視されます、<xref:System.CodeDom.CodeTypeReference.ArrayRank%2A>プロパティは 1 以上です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrayRank">
+      <MemberSignature Language="C#" Value="public int ArrayRank { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ArrayRank" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeReference.ArrayRank" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または配列の配列のランクを設定します。</summary>
+        <value>配列の次元の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseType">
+      <MemberSignature Language="C#" Value="public string BaseType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BaseType" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeReference.BaseType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または参照される型の名前を設定します。</summary>
+        <value>参照先の型の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列型である場合を除き、このプロパティが型の名前を含む、配列要素の型である場合。  
+  
+> [!NOTE]
+>  プロパティの名前は、誤解を招く可能性があります。 このプロパティには、すべて配列修飾型名だけが含まれています。 またはジェネリック型引数、基本または親の型ではなくと削除予想される場合があります。 たとえば、<xref:System.CodeDom.CodeTypeReference.BaseType%2A>値``System.Collections.Generic.Dictionary`2[[System.String], [System.Collections.Generic.List`1[[System.Int32]]]]``は``System.Collections.Generic.Dictionary`2``します。  
+  
+## <a name="representation-of-generic-types"></a>ジェネリック型の表現  
+ このセクションの情報は、CodeDom プロバイダーの開発者用し、CLS 準拠の言語にのみ適用されます。 戻り値は、ジェネリック型を含めることができます。 アクサン グラーブ続く型の名前を持つジェネリック型の書式 ("'") のジェネリック型引数の数の順です。 ジェネリック型引数は含まれて、<xref:System.CodeDom.CodeTypeReferenceCollection>によって返される、<xref:System.CodeDom.CodeTypeReference.TypeArguments%2A>プロパティです。 によって返される値<xref:System.CodeDom.CodeTypeReference.BaseType%2A>および関連付けられた<xref:System.CodeDom.CodeTypeReference.TypeArguments%2A>リフレクションによって返される型の値と同じコンテンツが含まれています。  
+  
+ たとえば、構築された<xref:System.Collections.Generic.Dictionary%602>場所`K`文字列と`V`が構築された<xref:System.Collections.Generic.List%601>には、次のリフレクションによって表される整数のアセンブリ情報と共に削除します。  
+  
+```  
+System.Collections.Generic.Dictionary`2[[System.String], [System.Collections.Generic.List`1[[System.Int32]]]]  
+```  
+  
+ 再帰的に解析、<xref:System.CodeDom.CodeTypeReference.BaseType%2A>プロパティから、<xref:System.CodeDom.CodeTypeReference>の<xref:System.Collections.Generic.Dictionary%602>リフレクション形式を上記と同じ文字列が生成されます。  
+  
+-   <xref:System.CodeDom.CodeTypeReference.BaseType%2A>親プロパティ<xref:System.CodeDom.CodeTypeReference>次を返します。  
+  
+    ```  
+    System.Collections.Generic.Dictionary`2  
+    ```  
+  
+-   <xref:System.CodeDom.CodeTypeReference.BaseType%2A>最初のプロパティを<xref:System.CodeDom.CodeTypeReference>内のオブジェクト、<xref:System.CodeDom.CodeTypeReference.TypeArguments%2A>コレクションは、次を返します。  
+  
+    ```  
+    System.String  
+    ```  
+  
+-   <xref:System.CodeDom.CodeTypeReference.BaseType%2A> 、2 番目のプロパティ<xref:System.CodeDom.CodeTypeReference>内のオブジェクト、<xref:System.CodeDom.CodeTypeReference.TypeArguments%2A>コレクションは、次を返します。  
+  
+    ```  
+    System.Collections.Generic.List`1  
+    ```  
+  
+-   <xref:System.CodeDom.CodeTypeReference.TypeArguments%2A>プロパティに、<xref:System.CodeDom.CodeTypeReference>オブジェクトに対する``System.Collections.Generic.List`1``次を返します。  
+  
+    ```  
+    System.Int32  
+    ```  
+  
+ 関連付けられた解析の際に、型引数の数を使用する必要があります<xref:System.CodeDom.CodeTypeReference.TypeArguments%2A>値。 一般的な方法は、生成されたコードから型引数の数を削除するが、処理は、特定のコンパイラです。  入れ子にされた型名に含まれる型引数の数が見つかりませんで、その場合で、プラス記号 (「+」) が続くことは重要です。  
+  
+> [!NOTE]
+>  ジェネリック型を作成するときに<xref:System.CodeDom.CodeTypeReference>、として型引数を指定する方法を推奨は、<xref:System.CodeDom.CodeTypeReference>または、オブジェクトを受け取るコンス トラクターを使用して、<xref:System.Type>です。 作成するコンス トラクターの使用、<xref:System.CodeDom.CodeTypeReference>文字列から型引数が未検出エラーにつながることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReferenceOptions Options { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.CodeDom.CodeTypeReferenceOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeReference.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReferenceOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコードの種類の参照 オプションを設定します。</summary>
+        <value><see cref="T:System.CodeDom.CodeTypeReferenceOptions" /> 値のビットごとの組み合わせ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeArguments">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReferenceCollection TypeArguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeReferenceCollection TypeArguments" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeReference.TypeArguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReferenceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のジェネリック型の参照の型引数を取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeReferenceCollection" />現在の型引数を含む<see cref="T:System.CodeDom.CodeTypeReference" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeTypeReference.TypeArguments%2A>プロパティは、型パラメーターへの参照が現在のジェネリック型に置き換えられる型の参照のコレクション。 コレクションには、すべての入れ子にされた型のすべての型引数が含まれています。 例については、次を参照してください。、<xref:System.CodeDom.CodeTypeReference.BaseType%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

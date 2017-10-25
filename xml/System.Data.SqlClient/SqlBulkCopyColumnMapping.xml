@@ -1,0 +1,452 @@
+<Type Name="SqlBulkCopyColumnMapping" FullName="System.Data.SqlClient.SqlBulkCopyColumnMapping">
+  <TypeSignature Language="C#" Value="public sealed class SqlBulkCopyColumnMapping" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlBulkCopyColumnMapping extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlBulkCopyColumnMapping" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlClient</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内の列間のマッピングを定義、<see cref="T:System.Data.SqlClient.SqlBulkCopy" />インスタンスのデータ ソースとインスタンスのコピー先のテーブル内の列です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列マッピングは、データ ソースとターゲット テーブル間のマッピングを定義します。  
+  
+ マッピングが定義されていない場合: は、<xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings%2A>コレクションが空: 列は序数の位置に基づいて暗黙的にマップされます。 これを行うには、ソースとターゲットのスキーマが一致する必要があります。 一致しない場合、<xref:System.InvalidOperationException>がスローされます。  
+  
+ 場合、<xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings%2A>コレクションが空でない、データ ソースに存在ないすべての列を指定します。 コレクションにマップされていない列は無視されます。  
+  
+ ソースとターゲットの列名または序数で参照することができます。 混在していても、同じマッピング コレクション内の序数による列参照が混在させることもできます。  
+  
+   
+  
+## Examples  
+ 次の例を一括でソース テーブルからデータをコピーする、 **AdventureWorks**同じデータベースのレプリケーション先テーブルにサンプル データベース。 コピー先の列の数、ソース内の列の数が一致し、各変換先列が、対応するソース列と同じ序数位置では、列名が一致しません。 <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping>オブジェクトは、一括コピーする列マップの作成に使用されます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ColumnMapping#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMapping/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ColumnMapping#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMapping/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlBulkCopyColumnMapping ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopyColumnMapping.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいを初期化する既定のコンス トラクター<see cref="T:System.Data.SqlClient.SqlBulkCopyColumnMapping" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、マッピングのソースを定義する必要がありますし、このコンス トラクターを使用する場合、<xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.SourceColumn%2A>プロパティまたは<xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.SourceOrdinal%2A>プロパティを使用して、マッピングの送信先を定義し、<xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.DestinationColumn%2A>プロパティまたは<xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.DestinationOrdinal%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を一括でソース テーブルからデータをコピーする、 **AdventureWorks**同じデータベースのレプリケーション先テーブルにサンプル データベース。 コピー先の列の数には、ソース内の列の数が一致すると、列名と序数位置一致していません。 <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping>オブジェクトは、一括コピーする列マップの作成に使用されます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ColumnMapping#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMapping/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ColumnMapping#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMapping/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlBulkCopyColumnMapping (int sourceColumnOrdinal, int destinationOrdinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 sourceColumnOrdinal, int32 destinationOrdinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopyColumnMapping.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sourceColumnOrdinal" Type="System.Int32" />
+        <Parameter Name="destinationOrdinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sourceColumnOrdinal">データ ソース内の基になる列の序数位置。</param>
+        <param name="destinationOrdinal">変換先テーブル内の変換先列の序数位置。</param>
+        <summary>マップ元とコピー先の列を参照する列の序数を使用して、新しい列を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を一括でソース テーブルからデータをコピーする、 **AdventureWorks**同じデータベースのレプリケーション先テーブルにサンプル データベース。 コピー先の列の数には、ソース内の列の数が一致すると、列名と序数位置一致していません。 <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping>オブジェクトは、列の序数位置に基づいて、一括コピーする列マップの作成に使用されます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ColumnMappingOrdinal#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingOrdinal/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ColumnMappingOrdinal#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingOrdinal/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlBulkCopyColumnMapping (int sourceColumnOrdinal, string destinationColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 sourceColumnOrdinal, string destinationColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopyColumnMapping.#ctor(System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sourceColumnOrdinal" Type="System.Int32" />
+        <Parameter Name="destinationColumn" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceColumnOrdinal">データ ソース内の基になる列の序数位置。</param>
+        <param name="destinationColumn">変換先テーブル内の変換先列の名前です。</param>
+        <summary>ソース列と対象列に列名を参照する列の序数を使用して、新しい列マッピングを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を一括でソース テーブルからデータをコピーする、 **AdventureWorks**同じデータベースのレプリケーション先テーブルにサンプル データベース。 コピー先の列の数には、ソース内の列の数が一致すると、列名と序数位置一致していません。 <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping>オブジェクトは、一括コピーする列マップの作成に使用されます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ColumnMappingOrdinalName#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingOrdinalName/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ColumnMappingOrdinalName#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingOrdinalName/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlBulkCopyColumnMapping (string sourceColumn, int destinationOrdinal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sourceColumn, int32 destinationOrdinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopyColumnMapping.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sourceColumn" Type="System.String" />
+        <Parameter Name="destinationOrdinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sourceColumn">データ ソース内の基になる列の名前。</param>
+        <param name="destinationOrdinal">変換先テーブル内の変換先列の序数位置。</param>
+        <summary>基になる列と対象列の序数の列を参照する列名を使用して、新しい列マッピングを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を一括でソース テーブルからデータをコピーする、 **AdventureWorks**同じデータベースのレプリケーション先テーブルにサンプル データベース。 コピー先の列の数には、ソース内の列の数が一致すると、列名と序数位置一致していません。 <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping>オブジェクトは、一括コピーする列マップの作成に使用されます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ColumnMappingNameOrdinal#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingNameOrdinal/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ColumnMappingNameOrdinal#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingNameOrdinal/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlBulkCopyColumnMapping (string sourceColumn, string destinationColumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sourceColumn, string destinationColumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlBulkCopyColumnMapping.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sourceColumn" Type="System.String" />
+        <Parameter Name="destinationColumn" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceColumn">データ ソース内の基になる列の名前。</param>
+        <param name="destinationColumn">変換先テーブル内の変換先列の名前です。</param>
+        <summary>マップ元とコピー先の列を参照する列名を使用して、新しい列を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を一括でソース テーブルからデータをコピーする、 **AdventureWorks**同じデータベースのレプリケーション先テーブルにサンプル データベース。 コピー先の列の数には、ソース内の列の数が一致すると、列名と序数位置一致していません。 <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping>オブジェクトは、一括コピーする列マップの作成に使用されます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ColumnMapping#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMapping/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ColumnMapping#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMapping/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationColumn">
+      <MemberSignature Language="C#" Value="public string DestinationColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DestinationColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlBulkCopyColumnMapping.DestinationColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>転送先データベースのテーブルにマップされている列の名前。</summary>
+        <value>文字列値、<see cref="P:System.Data.SqlClient.SqlBulkCopyColumnMapping.DestinationColumn" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.DestinationColumn%2A>と<xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.DestinationOrdinal%2A>プロパティが相互に排他的です。 最後の値に設定が優先されます。  
+  
+   
+  
+## Examples  
+ 次の例を一括でソース テーブルからデータをコピーする、 **AdventureWorks**同じデータベースのレプリケーション先テーブルにサンプル データベース。 コピー先の列の数には、ソース内の列の数が一致すると、列名と序数位置一致していません。 <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping>オブジェクトは、一括コピーする列マップの作成に使用されます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ColumnMappingDestinationColumn#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingDestinationColumn/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ColumnMappingDestinationColumn#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingDestinationColumn/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DestinationOrdinal">
+      <MemberSignature Language="C#" Value="public int DestinationOrdinal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DestinationOrdinal" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlBulkCopyColumnMapping.DestinationOrdinal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変換先テーブル内の変換先列の序数値。</summary>
+        <value>整数値、<see cref="P:System.Data.SqlClient.SqlBulkCopyColumnMapping.DestinationOrdinal" />プロパティ、またはプロパティが設定されていない場合は-1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.DestinationColumn%2A>と<xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.DestinationOrdinal%2A>プロパティが相互に排他的です。 最後の値に設定が優先されます。  
+  
+   
+  
+## Examples  
+ 次の例を一括でソース テーブルからデータをコピーする、 **AdventureWorks**同じデータベースのレプリケーション先テーブルにサンプル データベース。 コピー先の列の数には、ソース内の列の数が一致すると、列名と序数位置一致していません。 <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping>オブジェクトは、一括コピーする列マップの作成に使用されます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ColumnMappingDestinationOrdinal#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingDestinationOrdinal/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ColumnMappingDestinationOrdinal#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingDestinationOrdinal/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceColumn">
+      <MemberSignature Language="C#" Value="public string SourceColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlBulkCopyColumnMapping.SourceColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースにマップされている列の名前。</summary>
+        <value>文字列値、<see cref="P:System.Data.SqlClient.SqlBulkCopyColumnMapping.SourceColumn" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.SourceColumn%2A>と<xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.SourceOrdinal%2A>プロパティが相互に排他的です。 最後の値に設定が優先されます。  
+  
+   
+  
+## Examples  
+ 次の例を一括でソース テーブルからデータをコピーする、 **AdventureWorks**同じデータベースのレプリケーション先テーブルにサンプル データベース。 コピー先の列の数には、ソース内の列の数が一致すると、列名と序数位置一致していません。 <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping>オブジェクトは、一括コピーする列マップの作成に使用されます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ColumnMappingDestinationColumn#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingDestinationColumn/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ColumnMappingDestinationColumn#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingDestinationColumn/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceOrdinal">
+      <MemberSignature Language="C#" Value="public int SourceOrdinal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SourceOrdinal" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlBulkCopyColumnMapping.SourceOrdinal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース内の基になる列の序数位置。</summary>
+        <value>整数値、<see cref="P:System.Data.SqlClient.SqlBulkCopyColumnMapping.SourceOrdinal" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.SourceColumn%2A>と<xref:System.Data.SqlClient.SqlBulkCopyColumnMapping.SourceOrdinal%2A>プロパティが相互に排他的です。 最後の値に設定が優先されます。  
+  
+   
+  
+## Examples  
+ 次の例を一括でソース テーブルからデータをコピーする、 **AdventureWorks**同じデータベースのレプリケーション先テーブルにサンプル データベース。 コピー先の列の数には、ソース内の列の数が一致すると、列名と序数位置一致していません。 <xref:System.Data.SqlClient.SqlBulkCopyColumnMapping>オブジェクトは、一括コピーする列マップの作成に使用されます。  
+  
+> [!IMPORTANT]
+>  」の説明に従って、作業テーブルを作成していない限り、このサンプルは実行されません[バルク コピー サンプルのセットアップ](~/docs/framework/data/adonet/sql/bulk-copy-example-setup.md)です。 使用する構文を示すためにこのコードが提供される**SqlBulkCopy**のみです。 簡単かつ高速、TRANSACT-SQL の使用には、ソース テーブルと対象テーブルが同じ SQL Server インスタンス内にある場合は、`INSERT … SELECT`ステートメント、データをコピーします。  
+  
+ [!code-csharp[DataWorks SqlBulkCopy.ColumnMappingDestinationOrdinal#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingDestinationOrdinal/CS/source.cs#1)]
+ [!code-vb[DataWorks SqlBulkCopy.ColumnMappingDestinationOrdinal#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.ColumnMappingDestinationOrdinal/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

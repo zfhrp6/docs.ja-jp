@@ -1,0 +1,401 @@
+<Type Name="XmlRootAttribute" FullName="System.Xml.Serialization.XmlRootAttribute">
+  <TypeSignature Language="C#" Value="public class XmlRootAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlRootAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlRootAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum | System.AttributeTargets.Interface | System.AttributeTargets.ReturnValue)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>属性ターゲットを XML ルート要素として XML シリアル化する方法を制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlRootAttribute>を制御する属性のファミリに属するどの<xref:System.Xml.Serialization.XmlSerializer>オブジェクトを逆シリアル化またはシリアル化します。 類似する属性の一覧については、次を参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ 適用することができます、<xref:System.Xml.Serialization.XmlRootAttribute>クラス、構造体、列挙型、またはインターフェイス。 XML Web サービス メソッドの戻り値に属性を適用することもできます。  
+  
+ すべての XML ドキュメントには、その他のすべての要素を含む単一のルート要素が必要です。 <xref:System.Xml.Serialization.XmlRootAttribute>を制御できますが、どのように<xref:System.Xml.Serialization.XmlSerializer>特定のプロパティを設定して、ルート要素が生成されます。 たとえば、設定して、生成される XML 要素の名前を指定、<xref:System.Xml.Serialization.XmlRootAttribute.ElementName%2A>プロパティです。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+> [!NOTE]
+>  語を使用できます`XmlRoot`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlRootAttribute>です。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Xml.Serialization.XmlRootAttribute>クラスにします。 属性が要素名、名前空間を指定するかどうかと、要素を修飾するかどうか、`xsi:nil`属性が、クラスに設定されている場合に生成される`null`です。  
+  
+ [!code-cpp[Classic XmlRootAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlRootAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlRootAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlRootAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlRootAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlRootAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlRootAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlRootAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlRootAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のインスタンスを作成する、<xref:System.Xml.Serialization.XmlRootAttribute>に割り当てます、<xref:System.Xml.Serialization.XmlAttributes.XmlRoot%2A>のプロパティ、<xref:System.Xml.Serialization.XmlAttributes>オブジェクト。 ときに、<xref:System.Xml.Serialization.XmlSerializer>シリアル化、`MyClass`オブジェクトを使用して、<xref:System.Xml.Serialization.XmlRootAttribute>を既定のルート要素を上書きするオブジェクト。  
+  
+ [!code-cpp[Classic XmlRootAttribute.XmlRootAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlRootAttribute.XmlRootAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlRootAttribute.XmlRootAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlRootAttribute.XmlRootAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlRootAttribute.XmlRootAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlRootAttribute.XmlRootAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlRootAttribute (string elementName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string elementName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlRootAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">XML ルート要素の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlRootAttribute" />クラスし、XML ルート要素の名前を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、XmlRootAttribute のインスタンスを作成し、「生徒」という名前のクラスのインスタンスのシリアル化のオーバーライドを使用します。  
+  
+ [!code-cpp[XMLRootAttribute_Constructor#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XMLRootAttribute_Constructor/CPP/xmlrootattribute_constructor.cpp#1)]
+ [!code-csharp[XMLRootAttribute_Constructor#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XMLRootAttribute_Constructor/CS/xmlrootattribute_constructor.cs#1)]
+ [!code-vb[XMLRootAttribute_Constructor#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XMLRootAttribute_Constructor/VB/xmlrootattribute_constructor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataType">
+      <MemberSignature Language="C#" Value="public string DataType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlRootAttribute.DataType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML ルート要素の XSD データ型を設定します。</summary>
+        <value>XSD (XML スキーマ ドキュメント) データ型、World Wide Web Consortium) (www.w3.org) ドキュメントで定義されているでは、「XML スキーマ:: データ型」という名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、.NET の同等の XSD 単純なデータ型を一覧表示します。  
+  
+ Xsd`base64Binary`と`hexBinary`データ型の配列を使用して<xref:System.Byte>構造体、および適用、<xref:System.Xml.Serialization.XmlRootAttribute>で、<xref:System.Xml.Serialization.XmlRootAttribute.DataType%2A>プロパティを"base64Binary"または"hexBinary"、適切に設定します。 Xsd`time`と`date`データ型を使用して、<xref:System.DateTime>入力し、適用、<xref:System.Xml.Serialization.XmlRootAttribute>で、 <xref:System.Xml.Serialization.XmlRootAttribute.DataType%2A> "date"または"time"に設定します。  
+  
+ 文字列にマップされているすべての XSD 型の適用、<xref:System.Xml.Serialization.XmlRootAttribute>でその<xref:System.Xml.Serialization.XmlRootAttribute.DataType%2A>プロパティを XSD 型に設定します。 ただし、メンバーのスキーマだけであり、シリアル化形式は変わりません。  
+  
+> [!NOTE]
+>  プロパティは大文字小文字を区別、XSD データ型の 1 つに正確に設定する必要があります。  
+  
+> [!NOTE]
+>  要素は XML としてバイナリ データを渡すことは、XML 属性として渡すことよりも効率的です。  
+  
+ XML データ型の詳細については、「XML スキーマ パート 2:: データ型」をという名前の World Wide Web Consortium) (www.w3.org) ドキュメントを参照してください。  
+  
+|XSD データ型|.NET データ型|  
+|-------------------|--------------------|  
+|anyURI|<xref:System.String>|  
+|base64Binary|配列<xref:System.Byte>オブジェクト|  
+|boolean|<xref:System.Boolean>|  
+|byte|<xref:System.SByte>|  
+|date|<xref:System.DateTime>|  
+|dateTime|<xref:System.DateTime>|  
+|decimal|<xref:System.Decimal>|  
+|double|<xref:System.Double>|  
+|ENTITY|<xref:System.String>|  
+|エンティティ|<xref:System.String>|  
+|フローティング|<xref:System.Single>|  
+|gDay|<xref:System.String>|  
+|gMonth|<xref:System.String>|  
+|gMonthDay|<xref:System.String>|  
+|gYear|<xref:System.String>|  
+|gYearMonth|<xref:System.String>|  
+|hexBinary|配列<xref:System.Byte>オブジェクト|  
+|ID|<xref:System.String>|  
+|IDREF|<xref:System.String>|  
+|IDREFS|<xref:System.String>|  
+|int|<xref:System.Int32>|  
+|整数|<xref:System.String>|  
+|language|<xref:System.String>|  
+|long|<xref:System.Int64>|  
+|名前|<xref:System.String>|  
+|NCName|<xref:System.String>|  
+|negativeInteger|<xref:System.String>|  
+|NMTOKEN|<xref:System.String>|  
+|NMTOKENS|<xref:System.String>|  
+|normalizedString|<xref:System.String>|  
+|nonNegativeInteger|<xref:System.String>|  
+|nonPositiveInteger|<xref:System.String>|  
+|NOTATION|<xref:System.String>|  
+|positiveInteger|<xref:System.String>|  
+|QName|<xref:System.Xml.XmlQualifiedName>|  
+|recurringDate|<xref:System.String>|  
+|duration|<xref:System.String>|  
+|string|<xref:System.String>|  
+|short|<xref:System.Int16>|  
+|時間|<xref:System.DateTime>|  
+|token|<xref:System.String>|  
+|unsignedByte|<xref:System.Byte>|  
+|unsignedInt|<xref:System.UInt32>|  
+|unsignedLong|<xref:System.UInt64>|  
+|unsignedShort|<xref:System.UInt16>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementName">
+      <MemberSignature Language="C#" Value="public string ElementName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlRootAttribute.ElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または生成され、によって認識される XML 要素の名前を設定、<see cref="T:System.Xml.Serialization.XmlSerializer" />クラスの<see cref="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)" />と<see cref="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)" />メソッド、それぞれします。</summary>
+        <value>生成され、XML ドキュメントのインスタンスでは、認識される XML ルート要素の名前。 既定値は、シリアル化されたクラスの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定して、<xref:System.Xml.Serialization.XmlArrayItemAttribute.ElementName%2A>する場合は、クラス名と異なるに生成された XML 要素の名前。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成する、<xref:System.Xml.Serialization.XmlRootAttribute>クラスとセット、<xref:System.Xml.Serialization.XmlRootAttribute.ElementName%2A>プロパティを新しい値。 作成する、オブジェクトを使用して、<xref:System.Xml.Serialization.XmlAttributeOverrides>オブジェクトを使用してオブジェクトのシリアル化を上書きします。  
+  
+ [!code-cpp[XMLRootAttribute_ElementName#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XMLRootAttribute_ElementName/CPP/xmlrootattribute_elementname.cpp#1)]
+ [!code-csharp[XMLRootAttribute_ElementName#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XMLRootAttribute_ElementName/CS/xmlrootattribute_elementname.cs#1)]
+ [!code-vb[XMLRootAttribute_ElementName#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/XMLRootAttribute_ElementName/VB/xmlrootattribute_elementname.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public bool IsNullable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlRootAttribute.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Xml.Serialization.XmlSerializer" />に設定されているメンバーをシリアル化する必要があります<see langword="null" />に、<see langword="xsi:nil" />属性に設定<see langword="true" />です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Xml.Serialization.XmlSerializer" />生成、<see langword="xsi:nil" />属性です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構造の XML スキーマの仕様では、要素のコンテンツが不足していることを明示的に通知する、XML ドキュメントを許可します。 このような要素には、属性が含まれています。 `xsi:nil` 'éý'`true`です。 詳細については、名前付き http://www.w3.org/TR/xmlschema-1/ 仕様を参照して`XML Schema Part 1: Structures`です。  
+  
+ 場合、<xref:System.Xml.Serialization.XmlRootAttribute.IsNullable%2A>プロパティに設定されている`true`、`xsi:nil`次の XML に示すように属性を生成します。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:nil="true" />  
+```  
+  
+ 場合、<xref:System.Xml.Serialization.XmlRootAttribute.IsNullable%2A>プロパティは`false`、次のコードに示すように、空の要素を作成します。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" />  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 例では、適用、<xref:System.Xml.Serialization.XmlRootAttribute>クラス、およびセットを<xref:System.Xml.Serialization.XmlRootAttribute.IsNullable%2A>プロパティを`false`です。  
+  
+ [!code-cpp[Classic XmlRootAttribute.IsNullable Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlRootAttribute.IsNullable Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlRootAttribute.IsNullable Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlRootAttribute.IsNullable Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlRootAttribute.IsNullable Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlRootAttribute.IsNullable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlRootAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML ルート要素の名前空間を設定します。</summary>
+        <value>XML 要素の名前空間です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlArrayItemAttribute.Namespace%2A>という名前の World Wide Web Consortium) (www.w3.org) 仕様に準拠しているプロパティ`Namespaces in XML`です。  
+  
+ XML ドキュメントでプレフィックスが指定された名前空間を作成するには、作成、<xref:System.Xml.Serialization.XmlSerializerNamespaces>プレフィックスと名前空間のすべてのペアを含むオブジェクトです。 名前空間ごとに設定する<xref:System.Xml.Serialization.XmlArrayAttribute>に含まれる必要があります、<xref:System.Xml.Serialization.XmlSerializerNamespaces>オブジェクト。 ときに、<xref:System.Xml.Serialization.XmlSerializer>ドキュメントを生成配列項目ごとに、要素名を正しくプレフィックスします。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Xml.Serialization.XmlRootAttribute>クラスとセットを<xref:System.Xml.Serialization.XmlRootAttribute.Namespace%2A>プロパティです。  
+  
+ [!code-cpp[Classic XmlRootAttribute.Namespace Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlRootAttribute.Namespace Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlRootAttribute.Namespace Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlRootAttribute.Namespace Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlRootAttribute.Namespace Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlRootAttribute.Namespace Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

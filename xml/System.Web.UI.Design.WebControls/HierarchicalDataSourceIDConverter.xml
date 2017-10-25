@@ -1,0 +1,80 @@
+<Type Name="HierarchicalDataSourceIDConverter" FullName="System.Web.UI.Design.WebControls.HierarchicalDataSourceIDConverter">
+  <TypeSignature Language="C#" Value="public class HierarchicalDataSourceIDConverter : System.Web.UI.Design.WebControls.DataSourceIDConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HierarchicalDataSourceIDConverter extends System.Web.UI.Design.WebControls.DataSourceIDConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.HierarchicalDataSourceIDConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.DataSourceIDConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>階層データ ソース名のユーザーが選択可能な一覧を作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.HierarchicalDataSourceIDConverter>クラスは、<xref:System.ComponentModel.TypeConverter>オブジェクトによって参照される通常の<xref:System.ComponentModel.TypeConverterAttribute>属性。 すべてのメンバーを除く、<xref:System.Web.UI.Design.WebControls.HierarchicalDataSourceIDConverter.IsValidDataSource%2A>から継承されたメソッド、<xref:System.Web.UI.Design.WebControls.DataSourceIDConverter>です。  
+  
+ <xref:System.Web.UI.Design.WebControls.HierarchicalDataSourceIDConverter.IsValidDataSource%2A>メソッドは、指定したコンポーネントを実装するかどうかを示す、<xref:System.Web.UI.IHierarchicalDataSource>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HierarchicalDataSourceIDConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HierarchicalDataSourceIDConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.HierarchicalDataSourceIDConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.HierarchicalDataSourceIDConverter>クラスによってクラスが参照されている場合、<xref:System.ComponentModel.TypeConverterAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidDataSource">
+      <MemberSignature Language="C#" Value="protected override bool IsValidDataSource (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsValidDataSource(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HierarchicalDataSourceIDConverter.IsValidDataSource(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">実装するオブジェクト、<see cref="T:System.ComponentModel.IComponent" />です。</param>
+        <summary>指定したコンポーネントが有効なデータ ソースかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="component" />有効なデータ ソースには、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.HierarchicalDataSourceIDConverter.IsValidDataSource%2A>メソッドでは考慮`component`を実装する場合は、有効なデータ ソース、<xref:System.Web.UI.IHierarchicalDataSource>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

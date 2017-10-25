@@ -1,0 +1,170 @@
+<Type Name="FederatedAuthentication" FullName="System.IdentityModel.Services.FederatedAuthentication">
+  <TypeSignature Language="C#" Value="public static class FederatedAuthentication" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit FederatedAuthentication extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.FederatedAuthentication" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションでフェデレーション認証に関連するすべての HTTP モジュールに関連する状態へのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって公開される静的プロパティ経由で web アプリケーションが構成されているモジュールにアクセスすることができます、<xref:System.IdentityModel.Services.FederatedAuthentication>クラスです。 <xref:System.IdentityModel.Services.FederatedAuthentication.GetHttpModule%2A>メソッド拡張ポイントを提供するモジュールを使用するその他のアプリケーション定義から派生する<xref:System.IdentityModel.Services.HttpModuleBase>し、アプリケーションにアクセスできるために構成されています。  
+  
+ <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティ参照のシングルトン インスタンス<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>HTTP モジュールの構成設定を提供します。 最初にプロパティが HTTP モジュールのいずれかによってアクセスされたとき、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>からインスタンスを初期化、 [ &lt;federationConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)要素で構成ファイルであり、 <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated>モジュールのプロパティを初期化するために使用する前に、構成オブジェクトを変更することをアプリケーションに提供するが発生します。 同じ<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>プロパティの後続アクセスごとにインスタンスが返されます。  
+  
+> [!IMPORTANT]
+>  要求承認マネージャー (<xref:System.Security.Claims.ClaimsAuthorizationManager>) を使用する場合は、要求ベース アクセス チェックを評価に使用される、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>クラスまたは<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>でクラスが構成されて、<xref:System.IdentityModel.Configuration.IdentityConfiguration>を通じて参照フェデレーション構成オブジェクトに設定されているオブジェクト、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティです。 これはかどうかが ASP.NET アプリケーションかすべてのアプリケーションの場合は true です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClaimsAuthorizationModule">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Services.ClaimsAuthorizationModule ClaimsAuthorizationModule { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Services.ClaimsAuthorizationModule ClaimsAuthorizationModule" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.FederatedAuthentication.ClaimsAuthorizationModule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.ClaimsAuthorizationModule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web アプリケーションで使用される要求の認証モジュールを取得します。</summary>
+        <value>要求承認モジュール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FederationConfiguration">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Services.Configuration.FederationConfiguration FederationConfiguration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Services.Configuration.FederationConfiguration FederationConfiguration" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.Configuration.FederationConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シングルトンを取得します<see cref="T:System.IdentityModel.Services.Configuration.FederationConfiguration" />HTTP モジュールは、この web アプリケーションで使用するインスタンス。</summary>
+        <value>フェデレーション構成のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>オブジェクトが作成されから初期化される、 [ &lt;federationConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) HTTP モジュールのいずれかでこのプロパティにアクセスの構成ファイルの最初の時間内の要素。 構成オブジェクトが初期化された後にだけ、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated>イベントは、構成された HTTP モジュールを初期化するために使用する前に、新しく作成された構成オブジェクトを変更することを開発者に提供します。 アクセスできる、<xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType>イベント ハンドラーのプロパティです。  
+  
+ 以降のアクセスでは、同じ構成のインスタンスが返されます。  
+  
+ によって、特定のモジュールが存在かどうか、プロパティ内からアクセスされる次のメソッドの初期化中に: <xref:System.IdentityModel.Services.ClaimsAuthorizationModule.InitializePropertiesFromConfiguration%2A?displayProperty=nameWithType>、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.InitializePropertiesFromConfiguration%2A?displayProperty=nameWithType>、および<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.InitializePropertiesFromConfiguration%2A?displayProperty=nameWithType>です。  
+  
+> [!IMPORTANT]
+>  要求承認マネージャー (<xref:System.Security.Claims.ClaimsAuthorizationManager>) を使用する場合は、要求ベース アクセス チェックを評価に使用される、<xref:System.IdentityModel.Services.ClaimsPrincipalPermission>クラスまたは<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>でクラスが構成されて、<xref:System.IdentityModel.Configuration.IdentityConfiguration>を通じて参照フェデレーション構成オブジェクトに設定されているオブジェクト、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティです。 これはかどうかが ASP.NET アプリケーションかすべてのアプリケーションの場合は true です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration" />プロパティに設定されている<see langword="null" />のイベント ハンドラーによって、<see cref="E:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated" />イベント。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FederationConfigurationCreated">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs&gt; FederationConfigurationCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs&gt; FederationConfigurationCreated" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、 <see cref="P:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration" /> HTTP モジュール、web アプリケーションでは、いずれかで最初にプロパティにアクセスします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated>イベントは、最初の HTTP モジュールが、web アプリケーションを参照する場合に発生<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A>プロパティです。 この最初のアクセス プロパティ原因、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>を作成することから初期化されるオブジェクト、 [ &lt;federationConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)構成ファイル内の要素。 新しく作成されたアクセスできる<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>オブジェクト、<xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType>確認または任意のアプリケーション用に構成された HTTP モジュールの初期化を提供するために使用が前に、変更するために、イベント ハンドラーのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHttpModule&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T GetHttpModule&lt;T&gt; () where T : class, System.Web.IHttpModule;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T GetHttpModule&lt;class (class System.Web.IHttpModule) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederatedAuthentication.GetHttpModule``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.Web.IHttpModule</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">モジュールの型。</typeparam>
+        <summary>Web アプリケーションによって使用されている指定した型の HTTP モジュールを取得します。</summary>
+        <returns>指定した型の HTTP モジュールまたは<see langword="null" />指定した種類のモジュールが見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionAuthenticationModule">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Services.SessionAuthenticationModule SessionAuthenticationModule { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Services.SessionAuthenticationModule SessionAuthenticationModule" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.FederatedAuthentication.SessionAuthenticationModule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.SessionAuthenticationModule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web アプリケーションで使用されるセッションの認証モジュール (SAM) を取得します。</summary>
+        <value>セッションの認証モジュール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSFederationAuthenticationModule">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Services.WSFederationAuthenticationModule WSFederationAuthenticationModule { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Services.WSFederationAuthenticationModule WSFederationAuthenticationModule" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.FederatedAuthentication.WSFederationAuthenticationModule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.WSFederationAuthenticationModule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web アプリケーションで使用される Ws-federation 認証モジュール (WSFAM) を取得します。</summary>
+        <value>Ws-federation 認証モジュールです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

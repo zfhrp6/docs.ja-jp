@@ -1,0 +1,579 @@
+<Type Name="ObjectStateManager" FullName="System.Data.Objects.ObjectStateManager">
+  <TypeSignature Language="C#" Value="public class ObjectStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectStateManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectStateManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクトの状態を維持し、エンティティ型のインスタンスおよびリレーションシップ インスタンスの ID 管理を行います。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectStateManager> は、クエリ結果を追跡し、複数の重複するクエリ結果をマージするためのロジックを提供します。 また、ユーザーがオブジェクトを挿入、削除、変更したときにインメモリの変更追跡を実行したり、更新用の変更セットを提供したりします。 この変更セットは、変更プロセッサが変更を保存する場合に使用します。  
+  
+ このクラスは通常 <xref:System.Data.Objects.ObjectContext> で使用され、アプリケーションでは直接使用されません。  
+  
+   
+  
+## Examples  
+ これらの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。  
+  
+ 次の例では、<xref:System.Data.Objects.ObjectStateManager> から <xref:System.Data.Objects.ObjectContext> を取得し、状態マネージャーを使用してコンテキスト内のオブジェクトにアクセスします。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectStateManager](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectstatemanager)]
+ [!code-vb[DP ObjectServices Concepts#ObjectStateManager](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectstatemanager)]  
+  
+ 次の例では、返された <xref:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry%28System.Data.EntityKey%2CSystem.Data.Objects.ObjectStateEntry%40%29> で <xref:System.Data.Objects.ObjectStateManager> メソッドを使用して、エンティティ キーに基づいてオブジェクトを取得します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ApplyItemUpdates](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#applyitemupdates)]
+ [!code-vb[DP ObjectServices Concepts#ApplyItemUpdates](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#applyitemupdates)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectStateManager (System.Data.Metadata.Edm.MetadataWorkspace metadataWorkspace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Metadata.Edm.MetadataWorkspace metadataWorkspace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.#ctor(System.Data.Metadata.Edm.MetadataWorkspace)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="metadataWorkspace" Type="System.Data.Metadata.Edm.MetadataWorkspace" />
+      </Parameters>
+      <Docs>
+        <param name="metadataWorkspace">マッピング情報とメタデータ情報を提供する <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" />。</param>
+        <summary><see cref="T:System.Data.Objects.ObjectStateManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeObjectState">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry ChangeObjectState (object entity, System.Data.EntityState entityState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry ChangeObjectState(object entity, valuetype System.Data.EntityState entityState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.ChangeObjectState(System.Object,System.Data.EntityState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectStateEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="entityState" Type="System.Data.EntityState" />
+      </Parameters>
+      <Docs>
+        <param name="entity">状態を変更する必要のあるオブジェクト。</param>
+        <param name="entityState">オブジェクトの新しい状態。</param>
+        <summary>特定のオブジェクトの <see cref="T:System.Data.Objects.ObjectStateEntry" /> の状態を、指定された <paramref name="entityState" /> に変更します。</summary>
+        <returns>指定された <paramref name="entity" /> の <see cref="T:System.Data.Objects.ObjectStateEntry" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Data.Objects.ObjectStateManager.ChangeObjectState%2A>にオブジェクトの状態を変更するメソッドを<xref:System.Data.EntityState.Deleted>を削除する制約付きのリレーションシップに関連するオブジェクトは発生しません。  
+  
+ オブジェクトの状態を変更しても、オブジェクト グラフ内の関連オブジェクトには影響しません。  
+  
+ 変更すると、<xref:System.Data.EntityState>するエンティティ オブジェクトのエントリの<xref:System.Data.EntityState.Modified>オブジェクトのすべてのプロパティは現在も元の値に関係なく、変更済みとしてマークされます。  
+  
+ ときに、<xref:System.Data.EntityState>にエントリを変更、エンティティ オブジェクトの<xref:System.Data.EntityState.Added>、 <xref:System.Data.EntityState.Deleted>、または<xref:System.Data.EntityState.Detached>オブジェクトのリレーションシップ エントリが更新されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="entity" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">オブジェクトがデタッチではないと、状態マネージャー内のエントリはありません。  
+  
+ または  
+  
+ 状態を変更しようとすると<see cref="F:System.Data.EntityState.Detached" />から他の<see cref="T:System.Data.EntityState." />  
+  
+ または  
+  
+ ときに<paramref name="state" />が無効です<see cref="T:System.Data.EntityState" />値。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="ChangeRelationshipState">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>2 つのエンティティ オブジェクト間の指定されたリレーションシップの状態を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、外部キーの関連付けに基づくリレーションシップではサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="ChangeRelationshipState">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry ChangeRelationshipState (object sourceEntity, object targetEntity, string navigationProperty, System.Data.EntityState relationshipState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry ChangeRelationshipState(object sourceEntity, object targetEntity, string navigationProperty, valuetype System.Data.EntityState relationshipState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.ChangeRelationshipState(System.Object,System.Object,System.String,System.Data.EntityState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectStateEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceEntity" Type="System.Object" />
+        <Parameter Name="targetEntity" Type="System.Object" />
+        <Parameter Name="navigationProperty" Type="System.String" />
+        <Parameter Name="relationshipState" Type="System.Data.EntityState" />
+      </Parameters>
+      <Docs>
+        <param name="sourceEntity">リレーションシップの一方の端にあるソース エンティティのオブジェクト インスタンスまたは <see cref="T:System.Data.EntityKey" />。</param>
+        <param name="targetEntity">リレーションシップのもう一方の端にあるターゲット エンティティのオブジェクト インスタンスまたは <see cref="T:System.Data.EntityKey" />。</param>
+        <param name="navigationProperty">ナビゲーション プロパティの名前<c>ソース</c>を返す、指定した<c>ターゲット</c>です。</param>
+        <param name="relationshipState">指定リレーションシップに要求する <see cref="T:System.Data.EntityState" />。</param>
+        <summary>関連する 2 つのオブジェクトとナビゲーション プロパティの名前に基づいて、2 つのエンティティ オブジェクト間の指定されたリレーションシップの状態を変更します。</summary>
+        <returns>変更されたリレーションシップの <see cref="T:System.Data.Objects.ObjectStateEntry" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたリレーションシップの両端でオブジェクトのエントリが存在する必要があります、<xref:System.Data.Objects.ObjectStateManager>です。  
+  
+> [!NOTE]
+>  このメソッドは、外部キーの関連付けに基づくリレーションシップではサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="source" />または<paramref name="target" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">以外の状態に関係の状態を変更しようとしています。<see cref="F:System.Data.EntityState.Deleted" />または<see cref="F:System.Data.EntityState.Detached" />ときか、<paramref name="source" />または<paramref name="target" />では、<see cref="F:System.Data.EntityState.Deleted" />状態です。  
+  
+ または  
+  
+ 以外の状態に関係の状態を変更しようとすると<see cref="F:System.Data.EntityState.Added" />または<see cref="F:System.Data.EntityState.Detached" />ときか、<paramref name="source" />または<paramref name="target" />では、<see cref="F:System.Data.EntityState.Added" />状態です。  
+  
+ または  
+  
+ ときに<paramref name="state" />が無効です<see cref="T:System.Data.EntityState" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeRelationshipState">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry ChangeRelationshipState (object sourceEntity, object targetEntity, string relationshipName, string targetRoleName, System.Data.EntityState relationshipState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry ChangeRelationshipState(object sourceEntity, object targetEntity, string relationshipName, string targetRoleName, valuetype System.Data.EntityState relationshipState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.ChangeRelationshipState(System.Object,System.Object,System.String,System.String,System.Data.EntityState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectStateEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceEntity" Type="System.Object" />
+        <Parameter Name="targetEntity" Type="System.Object" />
+        <Parameter Name="relationshipName" Type="System.String" />
+        <Parameter Name="targetRoleName" Type="System.String" />
+        <Parameter Name="relationshipState" Type="System.Data.EntityState" />
+      </Parameters>
+      <Docs>
+        <param name="sourceEntity">リレーションシップの一方の端にあるソース エンティティのオブジェクト インスタンスまたは <see cref="T:System.Data.EntityKey" />。</param>
+        <param name="targetEntity">リレーションシップのもう一方の端にあるターゲット エンティティのオブジェクト インスタンスまたは <see cref="T:System.Data.EntityKey" />。</param>
+        <param name="relationshipName">リレーションシップの名前。</param>
+        <param name="targetRoleName">ロール名、<c>ターゲット</c>はリレーションシップの end。</param>
+        <param name="relationshipState">指定リレーションシップに要求する <see cref="T:System.Data.EntityState" />。</param>
+        <summary>関連する 2 つのオブジェクトとリレーションシップのプロパティに基づいて、2 つのエンティティ オブジェクト間の指定されたリレーションシップの状態を変更します。</summary>
+        <returns>変更されたリレーションシップの <see cref="T:System.Data.Objects.ObjectStateEntry" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたリレーションシップの両端でオブジェクトのエントリが存在する必要があります、<xref:System.Data.Objects.ObjectStateManager>です。  
+  
+> [!NOTE]
+>  このメソッドは、外部キーの関連付けに基づくリレーションシップに対してはサポートされません。 詳細については、次を参照してください[の定義およびリレーションシップの管理。](http://msdn.microsoft.com/en-us/2c92c097-56bd-4145-989e-16d92475ecda)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="source" />または<paramref name="target" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">以外の状態に関係の状態を変更しようとすると<see cref="F:System.Data.EntityState.Deleted" />または<see cref="F:System.Data.EntityState.Detached" />ときか、<paramref name="source" />または<paramref name="target" />では、<see cref="F:System.Data.EntityState.Deleted" />状態です。  
+  
+ または  
+  
+ 以外の状態に関係の状態を変更しようとすると<see cref="F:System.Data.EntityState.Added" />または<see cref="F:System.Data.EntityState.Detached" />ときか、<paramref name="source" />または<paramref name="target" />では、<see cref="F:System.Data.EntityState.Added" />状態です。  
+  
+ または  
+  
+ ときに<paramref name="state" />が無効です<see cref="T:System.Data.EntityState" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeRelationshipState&lt;TEntity&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry ChangeRelationshipState&lt;TEntity&gt; (TEntity sourceEntity, object targetEntity, System.Linq.Expressions.Expression&lt;Func&lt;TEntity,object&gt;&gt; navigationPropertySelector, System.Data.EntityState relationshipState) where TEntity : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry ChangeRelationshipState&lt;class TEntity&gt;(!!TEntity sourceEntity, object targetEntity, class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!!TEntity, object&gt;&gt; navigationPropertySelector, valuetype System.Data.EntityState relationshipState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.ChangeRelationshipState``1(``0,System.Object,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Data.EntityState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectStateEntry</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEntity">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="sourceEntity" Type="TEntity" />
+        <Parameter Name="targetEntity" Type="System.Object" />
+        <Parameter Name="navigationPropertySelector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;TEntity,System.Object&gt;&gt;" />
+        <Parameter Name="relationshipState" Type="System.Data.EntityState" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEntity">エンティティ型、<c>ソース</c>オブジェクト。</typeparam>
+        <param name="sourceEntity">リレーションシップの一方の端にあるソース エンティティのオブジェクト インスタンスまたは <see cref="T:System.Data.EntityKey" />。</param>
+        <param name="targetEntity">リレーションシップのもう一方の端にあるターゲット エンティティのオブジェクト インスタンスまたは <see cref="T:System.Data.EntityKey" />。</param>
+        <param name="navigationPropertySelector">ナビゲーション プロパティを選択する LINQ 式<c>ソース</c>を返す、指定した<c>ターゲット</c>です。</param>
+        <param name="relationshipState">指定リレーションシップに要求する <see cref="T:System.Data.EntityState" />。</param>
+        <summary>関連する 2 つのオブジェクトとナビゲーション プロパティを定義する LINQ 式とに基づいて、2 つのエンティティ オブジェクト間の指定されたリレーションシップの状態を変更します。</summary>
+        <returns>変更されたリレーションシップの <see cref="T:System.Data.Objects.ObjectStateEntry" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたリレーションシップの両端でオブジェクトのエントリが存在する必要があります、<xref:System.Data.Objects.ObjectStateManager>です。  
+  
+> [!NOTE]
+>  このメソッドは、外部キーの関連付けに基づくリレーションシップに対してはサポートされません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="source" />、 <paramref name="target" />、または<paramref name="selector" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="selector" />正しくないか、ナビゲーション プロパティを返すことはできません。</exception>
+        <exception cref="T:System.InvalidOperationException">以外の状態に関係の状態を変更しようとすると<see cref="F:System.Data.EntityState.Deleted" />または<see cref="F:System.Data.EntityState.Detached" />ときか、<paramref name="source" />または<paramref name="target" />では、<see cref="F:System.Data.EntityState.Deleted" />状態です。  
+  
+ または  
+  
+ 以外の状態に関係の状態を変更しようとすると<see cref="F:System.Data.EntityState.Added" />または<see cref="F:System.Data.EntityState.Detached" />ときか、<paramref name="source" />または<paramref name="target" />では、<see cref="F:System.Data.EntityState.Added" />状態です。  
+  
+ または  
+  
+ ときに<paramref name="state" />が無効です<see cref="T:System.Data.EntityState" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectStateEntries">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Data.Objects.ObjectStateEntry&gt; GetObjectStateEntries (System.Data.EntityState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Objects.ObjectStateEntry&gt; GetObjectStateEntries(valuetype System.Data.EntityState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.GetObjectStateEntries(System.Data.EntityState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Data.Objects.ObjectStateEntry&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Data.EntityState" />
+      </Parameters>
+      <Docs>
+        <param name="state">返された <see cref="T:System.Data.EntityState" /> オブジェクトをフィルター選択するために使用する <see cref="T:System.Data.Objects.ObjectStateEntry" />。</param>
+        <summary>指定された状態のオブジェクトまたはリレーションシップの <see cref="T:System.Data.Objects.ObjectStateEntry" /> オブジェクトのコレクションを返します。</summary>
+        <returns>指定された <see cref="T:System.Data.Objects.ObjectStateEntry" /> 内の <see cref="T:System.Data.EntityState" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.EntityState> はビット フィールドであるため、複数の <xref:System.Data.EntityState> 値のビット単位の OR 演算を実行して、複数の状態の状態エントリを 1 回の呼び出しで取得できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ときに<paramref name="state" />は<see cref="F:System.Data.EntityState.Detached" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectStateEntry">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry GetObjectStateEntry (System.Data.EntityKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry GetObjectStateEntry(class System.Data.EntityKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.GetObjectStateEntry(System.Data.EntityKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectStateEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Data.EntityKey" />
+      </Parameters>
+      <Docs>
+        <param name="key"><see cref="T:System.Data.EntityKey" />。</param>
+        <summary>指定されたキーのオブジェクトまたはリレーションシップ エントリの <see cref="T:System.Data.Objects.ObjectStateEntry" /> を返します。</summary>
+        <returns>指定された <see cref="T:System.Data.Objects.ObjectStateEntry" /> に対応する <see cref="T:System.Data.EntityKey" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry%28System.Data.EntityKey%2CSystem.Data.Objects.ObjectStateEntry%40%29>を返すメソッドを<xref:System.Data.Objects.ObjectStateEntry>オブジェクトを処理せず、<xref:System.InvalidOperationException>によって発生した、<xref:System.Data.Objects.ObjectStateManager.GetObjectStateEntry%28System.Data.EntityKey%29>メソッドです。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例では、指定された <xref:System.Data.Objects.ObjectStateEntry> の <xref:System.Data.EntityKey> を <xref:System.Data.Objects.ObjectStateManager> から取得します。 現在の値を取得し、`SalesOrderHeader.PurchaseOrderNumber`プロパティ、プロパティの値を変更し、変更されたプロパティのコレクションを列挙します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectStateEntry](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectstateentry)]
+ [!code-vb[DP ObjectServices Concepts#ObjectStateEntry](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectstateentry)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ときに<paramref name="key" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">ときに、指定した<paramref name="key" />状態マネージャーに見つかりません。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.EntityKey" /> には、指定された <see cref="T:System.Data.Objects.ObjectStateManager" /> のエンティティがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectStateEntry">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry GetObjectStateEntry (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry GetObjectStateEntry(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.GetObjectStateEntry(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.ObjectStateEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity">取得した <see cref="T:System.Object" /> が属する <see cref="T:System.Data.Objects.ObjectStateEntry" />。</param>
+        <summary>指定されたオブジェクトの <see cref="T:System.Data.Objects.ObjectStateEntry" /> を返します。</summary>
+        <returns>指定された <see cref="T:System.Data.Objects.ObjectStateEntry" /> に対応する <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry%28System.Object%2CSystem.Data.Objects.ObjectStateEntry%40%29>を返すメソッドを<xref:System.Data.Objects.ObjectStateEntry>オブジェクトを処理せず、<xref:System.InvalidOperationException>によって発生した、<xref:System.Data.Objects.ObjectStateManager.GetObjectStateEntry%28System.Object%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Object" /> には、指定された <see cref="T:System.Data.Objects.ObjectStateManager" /> のエンティティがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationshipManager">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.DataClasses.RelationshipManager GetRelationshipManager (object entity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.DataClasses.RelationshipManager GetRelationshipManager(object entity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.GetRelationshipManager(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.DataClasses.RelationshipManager</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="entity"><see cref="T:System.Data.Objects.DataClasses.RelationshipManager" /> を返す対象オブジェクト。</param>
+        <summary>指定オブジェクトによって使用される <see cref="T:System.Data.Objects.DataClasses.RelationshipManager" /> を返します。</summary>
+        <returns>指定したオブジェクトの <see cref="T:System.Data.Objects.DataClasses.RelationshipManager" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Data.Objects.ObjectStateManager.GetRelationshipManager%2A>メソッドを呼び出した場合と同じ、<xref:System.Data.Objects.ObjectStateManager.TryGetRelationshipManager%2A>メソッドでは、このメソッドを返す代わりに例外が発生する点を除いて`false`です。  
+  
+ 呼び出す、<xref:System.Data.Objects.ObjectStateManager.TryGetRelationshipManager%2A>処理を回避するため、<xref:System.InvalidOperationException>現象が発生するときに、<xref:System.Data.Objects.DataClasses.RelationshipManager>指定されたエンティティを返すことはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ときに、<see cref="T:System.Data.Objects.DataClasses.RelationshipManager" />返されることはできません、指定された<paramref name="entity" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MetadataWorkspace">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.MetadataWorkspace MetadataWorkspace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.MetadataWorkspace MetadataWorkspace" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectStateManager.MetadataWorkspace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.MetadataWorkspace</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この状態マネージャーに関連付けられている <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> に関連付けられている <see cref="T:System.Data.Objects.ObjectStateManager" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Metadata.Edm.MetadataWorkspace> クラスは、実行時およびアプリケーションのコンテキストで Entity Data Model (EDM) メタデータを操作できるようにする中心的なプログラミング インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectStateManagerChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.CollectionChangeEventHandler ObjectStateManagerChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CollectionChangeEventHandler ObjectStateManagerChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Data.Objects.ObjectStateManager.ObjectStateManagerChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.CollectionChangeEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態マネージャーに対してエンティティの追加または削除が実行されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetObjectStateEntry">
+      <MemberSignature Language="C#" Value="public bool TryGetObjectStateEntry (System.Data.EntityKey key, out System.Data.Objects.ObjectStateEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetObjectStateEntry(class System.Data.EntityKey key, [out] class System.Data.Objects.ObjectStateEntry&amp; entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry(System.Data.EntityKey,System.Data.Objects.ObjectStateEntry@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Data.EntityKey" />
+        <Parameter Name="entry" Type="System.Data.Objects.ObjectStateEntry&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="key">指定された <see cref="T:System.Data.EntityKey" />。</param>
+        <param name="entry">このメソッドから制御が戻った時点で、指定された <see cref="T:System.Data.Objects.ObjectStateEntry" /> の <see cref="T:System.Data.EntityKey" /> が格納されます。このパラメーターは初期化されていない状態で渡されます。</param>
+        <summary>指定された <see cref="T:System.Data.Objects.ObjectStateEntry" /> のオブジェクトまたはリレーションシップに対応する <see cref="T:System.Data.EntityKey" /> の取得を試みます。</summary>
+        <returns>指定された <see cref="T:System.Data.EntityKey" /> に対応する <see cref="T:System.Data.Objects.ObjectStateEntry" /> が存在する場合は <see langword="true" /> のブール値。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry%28System.Data.EntityKey%2CSystem.Data.Objects.ObjectStateEntry%40%29> を使用して、<xref:System.Data.Objects.ObjectStateEntry> メソッドで発生した <xref:System.InvalidOperationException> を処理せずに、<xref:System.Data.Objects.ObjectStateManager.GetObjectStateEntry%28System.Data.EntityKey%29> を返します。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。  
+  
+ この例では、指定された <xref:System.Data.Objects.ObjectStateEntry> に対応する <xref:System.Data.EntityKey> の取得を試みます。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ObjectStateManager](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectstatemanager)]
+ [!code-vb[DP ObjectServices Concepts#ObjectStateManager](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectstatemanager)]  
+  
+ 次の例では、返された <xref:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry%28System.Data.EntityKey%2CSystem.Data.Objects.ObjectStateEntry%40%29> で <xref:System.Data.Objects.ObjectStateManager> メソッドを使用して、エンティティ キーに基づいてオブジェクトを取得します。  
+  
+ [!code-csharp[DP ObjectServices Concepts#ApplyItemUpdates](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#applyitemupdates)]
+ [!code-vb[DP ObjectServices Concepts#ApplyItemUpdates](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#applyitemupdates)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">A <see langword="null" /> (<see langword="Nothing" /> Visual Basic で) に値を指定<paramref name="key" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetObjectStateEntry">
+      <MemberSignature Language="C#" Value="public bool TryGetObjectStateEntry (object entity, out System.Data.Objects.ObjectStateEntry entry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetObjectStateEntry(object entity, [out] class System.Data.Objects.ObjectStateEntry&amp; entry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry(System.Object,System.Data.Objects.ObjectStateEntry@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="entry" Type="System.Data.Objects.ObjectStateEntry&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="entity">取得した <see cref="T:System.Object" /> が属する <see cref="T:System.Data.Objects.ObjectStateEntry" />。</param>
+        <param name="entry">このメソッドから制御が戻った時点で、指定された <see cref="T:System.Data.Objects.ObjectStateEntry" /> の <see cref="T:System.Data.EntityKey" /> が格納されます。このパラメーターは初期化されていない状態で渡されます。</param>
+        <summary>指定された <see cref="T:System.Data.Objects.ObjectStateEntry" /> に対応する <see cref="T:System.Object" /> の取得を試みます。</summary>
+        <returns>指定されたオブジェクトに対応する <see cref="T:System.Data.Objects.ObjectStateEntry" /> が存在する場合は <see langword="true" /> のブール値。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry%28System.Object%2CSystem.Data.Objects.ObjectStateEntry%40%29> メソッドを使用して、<xref:System.Data.Objects.ObjectStateEntry> メソッドで発生した <xref:System.InvalidOperationException> を処理せずに、<xref:System.Data.Objects.ObjectStateManager.GetObjectStateEntry%28System.Object%29> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetRelationshipManager">
+      <MemberSignature Language="C#" Value="public bool TryGetRelationshipManager (object entity, out System.Data.Objects.DataClasses.RelationshipManager relationshipManager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetRelationshipManager(object entity, [out] class System.Data.Objects.DataClasses.RelationshipManager&amp; relationshipManager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.TryGetRelationshipManager(System.Object,System.Data.Objects.DataClasses.RelationshipManager@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entity" Type="System.Object" />
+        <Parameter Name="relationshipManager" Type="System.Data.Objects.DataClasses.RelationshipManager&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="entity"><see cref="T:System.Data.Objects.DataClasses.RelationshipManager" /> を返す対象オブジェクト。</param>
+        <param name="relationshipManager">このメソッドが戻るとき、<see cref="T:System.Data.Objects.DataClasses.RelationshipManager" />の<c>エンティティ</c>です。</param>
+        <summary>指定オブジェクトによって使用される <see cref="T:System.Data.Objects.DataClasses.RelationshipManager" /> を返します。</summary>
+        <returns>
+          指定された <paramref name="entity" /> の <see cref="T:System.Data.Objects.DataClasses.RelationshipManager" /> インスタンスが返された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectStateManager.GetRelationshipManager%2A>を取得するメソッドが使用される、<xref:System.Data.Objects.DataClasses.RelationshipManager>の永続化に依存しないオブジェクト。 オブジェクトの実装と<xref:System.Data.Objects.DataClasses.IEntityWithRelationships>か、それから継承<xref:System.Data.Objects.DataClasses.EntityObject>、<xref:System.Data.Objects.DataClasses.RelationshipManager>からアクセス、<xref:System.Data.Objects.DataClasses.IEntityWithRelationships.RelationshipManager%2A>プロパティです。  
+  
+ <xref:System.Data.Objects.DataClasses.RelationshipManager> 、オブジェクトが場合に返されることはできません、<xref:System.Data.EntityState.Detached>状態です。  
+  
+ 呼び出す、<xref:System.Data.Objects.ObjectStateManager.TryGetRelationshipManager%2A>メソッドを呼び出した場合と同じ、<xref:System.Data.Objects.ObjectStateManager.GetRelationshipManager%2A>メソッド、このメソッドが戻る点を除いて`false`例外を生成する代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

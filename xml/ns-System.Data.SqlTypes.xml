@@ -1,0 +1,35 @@
+<Namespace Name="System.Data.SqlTypes">
+  <Docs>
+    <summary><see cref="N:System.Data.SqlTypes" />名前空間は、SQL Server のネイティブ データ型のクラスを提供します。 これらのクラスは、.NET Framework 共通言語ランタイム (CLR) によって提供されるデータ型より安全で高速代替手段を提供します。 この名前空間のクラスを使用してでは、有効桁数の損失に起因する型変換エラーを防止します。 間に他のデータ型が変換されるため**SqlTypes**背後では、明示的に作成して、この名前空間内のオブジェクトを使用しても高速なコード生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各データ型**SqlTypes**同じ基になるデータ形式を SQL Server で、同等のデータ型を持ちます。 それらの多くも、CLR で同等のデータ型があります。 ただし、 **SqlDateTime**、 **SqlDecimal**、および**SqlString**対応する .NET Framework データ型の基になるデータ構造が異なっています。  
+  
+ 次の表に、マップのメンバー、 **SqlTypes**名前空間に Microsoft[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]データ型のメンバーと、<xref:System.Data.SqlDbType>列挙します。  
+  
+|.NET framework SqlTypes|ネイティブ[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]|.NET framework の SqlDbType|  
+|-----------------------------|------------------------------------------------------------------------|------------------------------|  
+|<xref:System.Data.SqlTypes.SqlBinary>|binary、image、timestamp、varbinary|Binary、Image、TimeStamp、VarBinary|  
+|<xref:System.Data.SqlTypes.SqlBoolean>|bit|ビット|  
+|<xref:System.Data.SqlTypes.SqlByte>|tinyint|TinyInt|  
+|<xref:System.Data.SqlTypes.SqlBytes>|binary、image、timestamp、varbinary|Binary、Image、TimeStamp、VarBinary|  
+|<xref:System.Data.SqlTypes.SqlChars>|char、nchar、テキスト、ntext、nvarchar、varchar|Char、NChar、テキスト、Ntext、NVarChar、VarChar|  
+|<xref:System.Data.SqlTypes.SqlDateTime>|datetime、smalldatetime|DateTime、SmallDateTime|  
+|<xref:System.Data.SqlTypes.SqlDecimal>|10 進数値|Decimal (10 進数型)|  
+|<xref:System.Data.SqlTypes.SqlDouble>|フローティング|Float|  
+|<xref:System.Data.SqlTypes.SqlFileStream>|varbinary|VarBinary|  
+|<xref:System.Data.SqlTypes.SqlGuid>|uniqueidentifier|UniqueIdentifier|  
+|<xref:System.Data.SqlTypes.SqlInt16>|smallint|SmallInt|  
+|<xref:System.Data.SqlTypes.SqlInt32>|int|Int|  
+|<xref:System.Data.SqlTypes.SqlInt64>|bigint|BigInt|  
+|<xref:System.Data.SqlTypes.SqlMoney>|money、smallmoney|Money、SmallMoney|  
+|<xref:System.Data.SqlTypes.SqlSingle>|実数|Real|  
+|<xref:System.Data.SqlTypes.SqlString>|char、nchar、テキスト、ntext、nvarchar、varchar|Char、NChar、テキスト、Ntext、NVarChar、VarChar|  
+|<xref:System.Data.SqlTypes.SqlXml>|xml|Xml|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

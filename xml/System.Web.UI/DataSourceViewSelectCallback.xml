@@ -1,0 +1,30 @@
+<Type Name="DataSourceViewSelectCallback" FullName="System.Web.UI.DataSourceViewSelectCallback">
+  <TypeSignature Language="C#" Value="public delegate void DataSourceViewSelectCallback(IEnumerable data);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataSourceViewSelectCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataSourceViewSelectCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="data" Type="System.Collections.IEnumerable" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="data"><see cref="T:System.Collections.IEnumerable" />データの収集を記録する、<see cref="M:System.Web.UI.DataSourceView.Select(System.Web.UI.DataSourceSelectArguments,System.Web.UI.DataSourceViewSelectCallback)" />と<see cref="M:System.Web.UI.DataSourceView.ExecuteSelect(System.Web.UI.DataSourceSelectArguments)" />メソッドを返します。</param>
+    <summary>非同期のデータの取得のためのデータ ソース ビューにデータ バインド コントロールを提供する非同期コールバック メソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ASP.NET Web ページおよびコントロールの実行が同期されます。 ただし、ASP.NET データ ソース コントロールは、データ操作の非同期データ取得パターンもサポートしています。 非同期で ASP.NET version 2.0 で提供されるデータ ソース コントロールのいずれもが、コントロールの開発者は、非同期データ ソース コントロールを作成できます。 <xref:System.Web.UI.DataSourceView>オブジェクトのサポート、<xref:System.Web.UI.DataSourceView.Select%2A>メソッドが非同期のデータを取得します。 <xref:System.Web.UI.DataSourceViewSelectCallback>デリゲートに渡されますデータ ソース ビューにデータ バインドされたコントロールによって、ビューが非同期処理が完了すると、このデリゲートを呼び出すし、データ バインド コントロールにデータを配信できるようにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

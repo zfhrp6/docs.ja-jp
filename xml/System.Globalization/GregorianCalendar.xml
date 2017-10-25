@@ -1,0 +1,1431 @@
+<Type Name="GregorianCalendar" FullName="System.Globalization.GregorianCalendar">
+  <TypeSignature Language="C#" Value="public class GregorianCalendar : System.Globalization.Calendar" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit GregorianCalendar extends System.Globalization.Calendar" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.GregorianCalendar" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization.Calendars</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Globalization.Calendar</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>グレゴリオ暦を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成のグレゴリオ暦カレンダーは、2 つの時代 (年号) を認識します b. c.。 別、および a. d. または西暦 この実装、<xref:System.Globalization.GregorianCalendar>クラスは、現在の時代 (西暦のみを認識 または 西暦) で変更します。  
+  
+> [!NOTE]
+>  使用方法について、<xref:System.Globalization.GregorianCalendar>クラスと、その他の .NET Framework のクラスを予定表を参照してください[カレンダーの使用](~/docs/standard/datetime/working-with-calendars.md)です。  
+  
+ 構成のグレゴリオ暦カレンダーにおけるうるう年が 100 で割り切れる場合を除き、4 で割り切れる年として定義されます。 400 で割り切れる年がうるう年です。 たとえば、1900 年が閏年ではありませんでしたが、2000 年でした。 共通の年度は 365 日を持ち、うるう年が 366 日。  
+  
+ 構成のグレゴリオ暦カレンダーが 28 ~ 31 日に 12 か月: (31 日) 年 1 月、年 2 月 (28 または 29 日まで)、3 月 (31 日)、年 4 月 (30 日間)、可能性があります (31 日)、年 6 月 (30 日間)、年 7 月 (31 日)、年 8 月 (31 日)、年 9 月 (30 日間)、年 10 月 (31 日)、年 11 月 (30 日間)、および年 12 月 (31 日) です。 年 2 月 29 日、閏年あり平年 28 です。  
+  
+> [!IMPORTANT]
+>  既定では、すべて<xref:System.DateTime>と<xref:System.DateTimeOffset>構成のグレゴリオ暦カレンダーにおける日付と時刻の値が高速です。  
+  
+ 構成のグレゴリオ暦カレンダーがユリウス暦の代わりとして開発されました (で表される、<xref:System.Globalization.JulianCalendar>クラス) と、1582 年 10 月 15日のカルチャの数が少ないで初めて導入されました。 グレゴリオ暦のカルチャの導入前にある履歴の日付を使用する場合は、.NET Framework で使用可能になる場合、元のカレンダーを使用してください。 たとえば、デンマークから変更ユリウス暦構成のグレゴリオ暦カレンダー 2 月 19 日 (ユリウス暦) で、または年 3 月 1 日で構成のグレゴリオ暦カレンダー) 1700 の。 ここでは、グレゴリオ暦の導入より前に、の日付をユリウス暦を使用する必要があります。 ただし、カルチャには、組み込みサポートされません、<xref:System.Globalization.JulianCalendar>クラスです。 使用する必要があります、<xref:System.Globalization.JulianCalendar>スタンドアロンの暦としてクラスです。 詳細については、次を参照してください。  
+  
+ ユリウス暦はデンマークで正式に使用された最後の日であるユリウス暦で、1700 February 18 が 1 日、グレゴリオ暦での 1700 年 3 月 1日より前である次の例を示しています。  
+  
+ [!code-csharp[System.Globalization.GregorianCalendar.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.gregoriancalendar.class/cs/minimum1.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.gregoriancalendar.class/vb/minimum1.vb#1)]  
+  
+ 各<xref:System.Globalization.CultureInfo>予定表のセットをサポートしています。 <xref:System.Globalization.CultureInfo.Calendar%2A>プロパティを返します、カルチャの既定のカレンダーと<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>プロパティは、カルチャでサポートされているすべてのカレンダーを含む配列を返します。 によって使用される暦に変更する、 <xref:System.Globalization.CultureInfo>、アプリケーションで設定できる、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティを新しい<xref:System.Globalization.Calendar>です。  
+  
+ <xref:System.Globalization.DateTimeFormatInfo.GetEra%2A>場合にのみ、省略形の時代 (年号) 名に区切り記号は無視されます、<xref:System.Globalization.GregorianCalendar>で選択した<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType>と、カルチャ「a. d.」 時代 (年号) の名前は、「a. d.」として "AD"に相当します。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますを<xref:System.Globalization.DateTimeFormatInfo>暦はグレゴリオ暦とカルチャ「西暦」時代 (年号) の名前を使用する場合にのみ、時代 (年号) 名には句読点を無視します。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar.GetEra#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetEra/CPP/gregorian_getera.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar.GetEra#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetEra/CS/gregorian_getera.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar.GetEra#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetEra/VB/gregorian_getera.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GregorianCalendar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Globalization.GregorianCalendar" />クラスの既定値を使用して<see cref="T:System.Globalization.GregorianCalendarTypes" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.Globalization.GregorianCalendarTypes>値は<xref:System.Globalization.GregorianCalendarTypes.Localized>します。 場合、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Globalization.CultureInfo>に設定されている、<xref:System.Globalization.GregorianCalendar>このコンス トラクターで作成される、日付と時刻が関連付けられている言語にローカライズされて、<xref:System.Globalization.CultureInfo>です。  
+  
+   
+  
+## Examples  
+ 次のコード例の出力、<xref:System.DateTime>を使用して、<xref:System.Globalization.GregorianCalendar>ローカライズされます。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendarLocalized#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendarLocalized/CPP/gregorianlocalized.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendarLocalized#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendarLocalized/CS/gregorianlocalized.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendarLocalized#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendarLocalized/VB/gregorianlocalized.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GregorianCalendar (System.Globalization.GregorianCalendarTypes type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Globalization.GregorianCalendarTypes type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.#ctor(System.Globalization.GregorianCalendarTypes)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Globalization.GregorianCalendarTypes" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Globalization.GregorianCalendarTypes" />を作成するカレンダーの言語バージョンを示す値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Globalization.GregorianCalendar" />クラス<see cref="T:System.Globalization.GregorianCalendarTypes" />値。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="type" />メンバーではない、<see cref="T:System.Globalization.GregorianCalendarTypes" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMonths">
+      <MemberSignature Language="C#" Value="public override DateTime AddMonths (DateTime time, int months);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime AddMonths(valuetype System.DateTime time, int32 months) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.AddMonths(System.DateTime,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="months" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="time">月数を加算する対象の <see cref="T:System.DateTime" />。</param>
+        <param name="months">追加する月数です。</param>
+        <summary>返します、<see cref="T:System.DateTime" />は、指定した月数から指定した<see cref="T:System.DateTime" />です。</summary>
+        <returns><see cref="T:System.DateTime" />を指定した指定月数を追加した結果生成された<see cref="T:System.DateTime" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 結果の日の部分<xref:System.DateTime>日が結果として得られる結果の年の月の有効な曜日ではない場合に影響します。 結果として得られる結果の年の月の最後の有効な日付に変更されます。 結果の年の部分<xref:System.DateTime>が影響を受けるは、その月が指定した年を超えた場合<xref:System.DateTime>です。 この実装では、現在の時代のみをサポートします。 したがって、<xref:System.ArgumentException>結果の年が指定した時代 (年号) を超えた場合にスローされる<xref:System.DateTime>です。 結果の時刻の部分<xref:System.DateTime>は、指定したのと同じ<xref:System.DateTime>です。  
+  
+ たとえば、指定した月が年 10 月 31 日まである場合、指定した日がの値と、その月の 31 日、`months`パラメーターは、6、結果として得られる、年は 1 つ以上の指定した年、月、年 4 月、日は 4 月の末日である 30 日です。  
+  
+ 場合の値、`months`パラメーターが負の場合、結果として得られる<xref:System.DateTime>指定よりも前か<xref:System.DateTime>です。  
+  
+ <xref:System.DateTime.Kind%2A> 、返されたプロパティ<xref:System.DateTime>常に equals を値<xref:System.DateTimeKind?displayProperty=nameWithType>です。 保持する、<xref:System.DateTime.Kind%2A>のプロパティ、`time`を呼び出してパラメーター、<xref:System.DateTime.SpecifyKind%2A?displayProperty=nameWithType>メソッドを次の例のようにします。  
+  
+ [!code-csharp[System.Globalization.Calendar.AddMethods#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/cs/add1.cs#5)]
+ [!code-vb[System.Globalization.Calendar.AddMethods#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/vb/add1.vb#5)]  
+  
+   
+  
+## Examples  
+ 次のコード例のいくつかのコンポーネントの値を表示する、<xref:System.DateTime>グレゴリオ暦の観点からです。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CPP/gregoriancalendar_addget.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CS/gregoriancalendar_addget.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/VB/gregoriancalendar_addget.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">その結果<see cref="T:System.DateTime" />はサポートされている範囲外です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="months" />小さい-120000 がします。  
+  
+ または  
+  
+ <paramref name="months" />120000 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddYears">
+      <MemberSignature Language="C#" Value="public override DateTime AddYears (DateTime time, int years);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime AddYears(valuetype System.DateTime time, int32 years) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.AddYears(System.DateTime,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="years" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="time">年数を加算する対象の <see cref="T:System.DateTime" />。</param>
+        <param name="years">追加する年の数。</param>
+        <summary>返します、<see cref="T:System.DateTime" />は、指定した年数から指定した<see cref="T:System.DateTime" />です。</summary>
+        <returns><see cref="T:System.DateTime" />を指定した指定年数を追加した結果生成された<see cref="T:System.DateTime" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 結果の日の部分<xref:System.DateTime>日が結果として得られる結果の年の月の有効な曜日ではない場合に影響します。 結果として得られる結果の年の月の最後の有効な日付に変更されます。 結果の月部分<xref:System.DateTime>は、指定したのと同じ<xref:System.DateTime>です。 この実装では、現在の時代のみをサポートします。 したがって、<xref:System.ArgumentException>結果の年が指定した時代 (年号) を超えた場合にスローされる<xref:System.DateTime>です。 結果の時刻の部分<xref:System.DateTime>は、指定したのと同じ<xref:System.DateTime>です。  
+  
+ たとえば、年 2 月が 28 の日を除く平年の場合は 29 日。 指定した日付がうるう年の 2 月 29 日と値の場合`years`1 に設定されて、結果として得られる日付は次の年 2 月 28 日になります。  
+  
+ 場合`years`は負の値、結果として得られる<xref:System.DateTime>指定よりも前か<xref:System.DateTime>です。  
+  
+ <xref:System.DateTime.Kind%2A> 、返されたプロパティ<xref:System.DateTime>常に equals を値<xref:System.DateTimeKind?displayProperty=nameWithType>です。 保持する、<xref:System.DateTime.Kind%2A>のプロパティ、`time`を呼び出してパラメーター、<xref:System.DateTime.SpecifyKind%2A?displayProperty=nameWithType>メソッドを次の例のようにします。  
+  
+ [!code-csharp[System.Globalization.Calendar.AddMethods#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/cs/add1.cs#8)]
+ [!code-vb[System.Globalization.Calendar.AddMethods#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/vb/add1.vb#8)]  
+  
+   
+  
+## Examples  
+ 次のコード例のいくつかのコンポーネントの値を表示する、<xref:System.DateTime>グレゴリオ暦の観点からです。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CPP/gregoriancalendar_addget.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CS/gregoriancalendar_addget.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/VB/gregoriancalendar_addget.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">その結果<see cref="T:System.DateTime" />はサポートされている範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ADEra">
+      <MemberSignature Language="C#" Value="public const int ADEra = 1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ADEra = (1)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.GregorianCalendar.ADEra" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1</MemberValue>
+      <Docs>
+        <summary>現在の時代 (年号) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成のグレゴリオ暦カレンダーは、2 つの時代 (年号) を認識します b. c.。 別、および a. d. または西暦 この実装、<xref:System.Globalization.GregorianCalendar>クラスは、現在の時代 (西暦のみを認識 または 西暦) で変更します。 このフィールドは、常に 1 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlgorithmType">
+      <MemberSignature Language="C#" Value="public override System.Globalization.CalendarAlgorithmType AlgorithmType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Globalization.CalendarAlgorithmType AlgorithmType" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.GregorianCalendar.AlgorithmType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CalendarAlgorithmType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の暦の太陽暦、太陰暦、または両方の組み合わせを示す値を取得します。</summary>
+        <value>常に <see cref="F:System.Globalization.CalendarAlgorithmType.SolarCalendar" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、リフレクションを使用して、各インスタンス化<xref:System.Globalization.Calendar>型と .NET Framework は、の値を表示、<xref:System.Globalization.Calendar.AlgorithmType%2A>プロパティです。  
+  
+ [!code-csharp[System.Globalization.Calendar.AlgorithmType#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.calendar.algorithmtype/cs/algorithmtype1.cs#1)]
+ [!code-vb[System.Globalization.Calendar.AlgorithmType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.calendar.algorithmtype/vb/algorithmtype1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarType">
+      <MemberSignature Language="C#" Value="public virtual System.Globalization.GregorianCalendarTypes CalendarType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Globalization.GregorianCalendarTypes CalendarType" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.GregorianCalendar.CalendarType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.GregorianCalendarTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Globalization.GregorianCalendarTypes" />を現在の言語バージョンを表す値<see cref="T:System.Globalization.GregorianCalendar" />です。</summary>
+        <value>A<see cref="T:System.Globalization.GregorianCalendarTypes" />を現在の言語バージョンを表す値<see cref="T:System.Globalization.GregorianCalendar" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、カルチャでサポートされている GregorianCalendar 言語バージョンを確認する方法を示します。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendarTypes#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendarTypes/CPP/gregoriancalendartypes.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendarTypes#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendarTypes/CS/gregoriancalendartypes.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendarTypes#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendarTypes/VB/gregoriancalendartypes.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で指定された値がのメンバーではない、<see cref="T:System.Globalization.GregorianCalendarTypes" />列挙します。</exception>
+        <exception cref="T:System.InvalidOperationException">セット操作の現在のインスタンスは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Eras">
+      <MemberSignature Language="C#" Value="public override int[] Eras { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32[] Eras" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.GregorianCalendar.Eras" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時代 (年号) の一覧を取得、<see cref="T:System.Globalization.GregorianCalendar" />です。</summary>
+        <value>時代 (年号) を表す整数の配列、<see cref="T:System.Globalization.GregorianCalendar" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成のグレゴリオ暦カレンダーは、2 つの時代 (年号) を認識します b. c.。 別、および a. d. または西暦 この実装、<xref:System.Globalization.GregorianCalendar>クラスは、現在の時代 (西暦のみを認識 または 西暦) で変更します。 このプロパティは、常に 1 つだけの要素を含む配列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDayOfMonth">
+      <MemberSignature Language="C#" Value="public override int GetDayOfMonth (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDayOfMonth(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.GetDayOfMonth(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定された月の日を返します<see cref="T:System.DateTime" />です。</summary>
+        <returns>31、月の日を表す 1 から整数<paramref name="time" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のいくつかのコンポーネントの値を表示する、<xref:System.DateTime>グレゴリオ暦の観点からです。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CPP/gregoriancalendar_addget.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CS/gregoriancalendar_addget.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/VB/gregoriancalendar_addget.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDayOfWeek">
+      <MemberSignature Language="C#" Value="public override DayOfWeek GetDayOfWeek (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DayOfWeek GetDayOfWeek(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.GetDayOfWeek(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DayOfWeek</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定された週の曜日を返します<see cref="T:System.DateTime" />です。</summary>
+        <returns>A<see cref="T:System.DayOfWeek" />における週の日を表す値<paramref name="time" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DayOfWeek>値は日曜日、月曜日、火曜日、水曜日、木曜日、金曜日、土曜日およびです。  
+  
+   
+  
+## Examples  
+ 次のコード例のいくつかのコンポーネントの値を表示する、<xref:System.DateTime>グレゴリオ暦の観点からです。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CPP/gregoriancalendar_addget.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CS/gregoriancalendar_addget.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/VB/gregoriancalendar_addget.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDayOfYear">
+      <MemberSignature Language="C#" Value="public override int GetDayOfYear (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDayOfYear(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.GetDayOfYear(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した <see cref="T:System.DateTime" /> の年間積算日を返します。</summary>
+        <returns>1 から 366 の年の日を表す整数<paramref name="time" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ その年の日付は、その年の最初の日付から日数として定義されます。 たとえば、<xref:System.Globalization.GregorianCalendar.GetDayOfYear%2A>最初の月の最初の日が 1 を返しますと<xref:System.Globalization.GregorianCalendar.GetDayOfYear%2A>先月の最終日は、その年の日数の合計数を返しますの値が同じから返される<xref:System.Globalization.GregorianCalendar.GetDaysInYear%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例のいくつかのコンポーネントの値を表示する、<xref:System.DateTime>グレゴリオ暦の観点からです。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CPP/gregoriancalendar_addget.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CS/gregoriancalendar_addget.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/VB/gregoriancalendar_addget.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDaysInMonth">
+      <MemberSignature Language="C#" Value="public override int GetDaysInMonth (int year, int month, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDaysInMonth(int32 year, int32 month, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.GetDaysInMonth(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="month">月を表す 1 ~ 12 の整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した時代 (年号) の指定された年の指定した月の日数を返します。</summary>
+        <returns>指定した時代 (年号) の指定した年の指定した月の日数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、このメソッドを返します 28 または 29 年 2 月の (`month` = 2) かどうかに応じて、`year`が閏年であります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、それぞれ各時代 (年号) の 5 つの年の 2 番目の月の GetDaysInMonth を呼び出します。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar.GetDaysInMonth#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetDaysInMonth/CPP/gregoriancalendar_getdaysinmonth.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar.GetDaysInMonth#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetDaysInMonth/CS/gregoriancalendar_getdaysinmonth.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar.GetDaysInMonth#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetDaysInMonth/VB/gregoriancalendar_getdaysinmonth.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="era" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="year" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="month" />カレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDaysInYear">
+      <MemberSignature Language="C#" Value="public override int GetDaysInYear (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDaysInYear(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.GetDaysInYear(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した時代 (年号) の指定した年の日数を返します。</summary>
+        <returns>指定した時代 (年号) の指定された年の日数の数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 365 または 366、かどうかに応じて、たとえば、このメソッドが戻る`year`が閏年であります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、各時代 (年号) の 5 年間 GetDaysInYear を呼び出します。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar.GetDaysInYear#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetDaysInYear/CPP/gregoriancalendar_getdaysinyear.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar.GetDaysInYear#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetDaysInYear/CS/gregoriancalendar_getdaysinyear.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar.GetDaysInYear#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetDaysInYear/VB/gregoriancalendar_getdaysinyear.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="era" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="year" />カレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEra">
+      <MemberSignature Language="C#" Value="public override int GetEra (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetEra(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.GetEra(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した、時代 (年号) を返します<see cref="T:System.DateTime" />です。</summary>
+        <returns>時代 (年号) を表す整数<paramref name="time" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成のグレゴリオ暦カレンダーは、2 つの時代 (年号) を認識します b. c.。 別、および a. d. または西暦 この実装、<xref:System.Globalization.GregorianCalendar>クラスは、現在の時代 (西暦のみを認識 または 西暦) で変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例のいくつかのコンポーネントの値を表示する、<xref:System.DateTime>グレゴリオ暦の観点からです。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CPP/gregoriancalendar_addget.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CS/gregoriancalendar_addget.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/VB/gregoriancalendar_addget.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLeapMonth">
+      <MemberSignature Language="C#" Value="public override int GetLeapMonth (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetLeapMonth(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.GetLeapMonth(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">たくさん。</param>
+        <param name="era">時代 (年号)。 いずれかを指定<see cref="F:System.Globalization.GregorianCalendar.ADEra" />または<see langword="GregorianCalendar.Eras[Calendar.CurrentEra]" />です。</param>
+        <summary>指定した年と時代 (年号) の閏月を計算します。</summary>
+        <returns>常に 0 のグレゴリオ暦カレンダーが閏月を認識しないためです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />1 つ構成のグレゴリオ暦カレンダー年から 9999 より大きい値が、構成のグレゴリオ暦カレンダー年未満です。  
+  
+ または  
+  
+ <paramref name="era" /> が、<see cref="F:System.Globalization.GregorianCalendar.ADEra" /> でも <see langword="GregorianCalendar.Eras[Calendar.CurrentEra]" /> でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMonth">
+      <MemberSignature Language="C#" Value="public override int GetMonth (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetMonth(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.GetMonth(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した月を返します<see cref="T:System.DateTime" />です。</summary>
+        <returns>1 から 12 の月を表す整数<paramref name="time" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のいくつかのコンポーネントの値を表示する、<xref:System.DateTime>グレゴリオ暦の観点からです。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CPP/gregoriancalendar_addget.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CS/gregoriancalendar_addget.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/VB/gregoriancalendar_addget.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMonthsInYear">
+      <MemberSignature Language="C#" Value="public override int GetMonthsInYear (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetMonthsInYear(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.GetMonthsInYear(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した時代 (年号) の指定した年、月の数を返します。</summary>
+        <returns>指定した時代 (年号) の指定した年の月数です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、各時代 (年号) の 5 年間 GetMonthsInYear を呼び出します。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar.GetMonthsInYear#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetMonthsInYear/CPP/gregoriancalendar_getmonthsinyear.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar.GetMonthsInYear#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetMonthsInYear/CS/gregoriancalendar_getmonthsinyear.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar.GetMonthsInYear#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.GetMonthsInYear/VB/gregoriancalendar_getmonthsinyear.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="era" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="year" />カレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetYear">
+      <MemberSignature Language="C#" Value="public override int GetYear (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetYear(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.GetYear(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した年が返されます<see cref="T:System.DateTime" />です。</summary>
+        <returns>年を表す整数<paramref name="time" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のいくつかのコンポーネントの値を表示する、<xref:System.DateTime>グレゴリオ暦の観点からです。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CPP/gregoriancalendar_addget.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/CS/gregoriancalendar_addget.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar_AddGet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_AddGet/VB/gregoriancalendar_addget.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLeapDay">
+      <MemberSignature Language="C#" Value="public override bool IsLeapDay (int year, int month, int day, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsLeapDay(int32 year, int32 month, int32 day, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.IsLeapDay(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="day" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="month">月を表す 1 ~ 12 の整数。</param>
+        <param name="day">日を表す 1 から 31 の整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した時代 (年号) の指定した日付が閏日であるかどうかを判断します。</summary>
+        <returns>
+          指定した日が閏日である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成のグレゴリオ暦カレンダーにおけるうるう年は、100 で割り切れるを除く、4 で割り切れる year として定義されます。 400 で割り切れる年がうるう年です。 たとえば、1900 年が閏年ではありませんでしたが、2000 年でした。 共通の年度は 365 日を持ち、うるう年が 366 日。  
+  
+ 閏日は、閏年であるだけで発生する日です。 構成のグレゴリオ暦カレンダーにおける年 2 月の 29 日は唯一の閏日です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、時代 (年号) のそれぞれに 5 年間の 2 番目の月 (2 月) の最後の日の IsLeapDay を呼び出します。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar.IsLeapDay#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.IsLeapDay/CPP/gregoriancalendar_isleapday.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar.IsLeapDay#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.IsLeapDay/CS/gregoriancalendar_isleapday.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar.IsLeapDay#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.IsLeapDay/VB/gregoriancalendar_isleapday.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="era" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="year" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="month" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="day" />カレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLeapMonth">
+      <MemberSignature Language="C#" Value="public override bool IsLeapMonth (int year, int month, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsLeapMonth(int32 year, int32 month, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.IsLeapMonth(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="month">月を表す 1 ~ 12 の整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した時代 (年号) の指定した年の指定した月が閏月かどうかを判断します。</summary>
+        <returns>このメソッドは常に返します<see langword="false" />派生クラスでオーバーライドされない限り、します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成のグレゴリオ暦カレンダーにおけるうるう年は、100 で割り切れるを除く、4 で割り切れる year として定義されます。 400 で割り切れる年がうるう年です。 たとえば、1900 年が閏年ではありませんでしたが、2000 年でした。 共通の年度は 365 日を持ち、うるう年が 366 日。  
+  
+ 閏月は、うるう年でのみ発生する月全体です。 構成のグレゴリオ暦カレンダーには、閏月がありません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在の時代 (年号) の 5 年間でのすべての月 IsLeapMonth を呼び出します。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar.IsLeapMonth#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.IsLeapMonth/CPP/gregoriancalendar_isleapmonth.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar.IsLeapMonth#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.IsLeapMonth/CS/gregoriancalendar_isleapmonth.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar.IsLeapMonth#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.IsLeapMonth/VB/gregoriancalendar_isleapmonth.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="era" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="year" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="month" />カレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLeapYear">
+      <MemberSignature Language="C#" Value="public override bool IsLeapYear (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsLeapYear(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.IsLeapYear(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した時代 (年号) の指定した年が閏年かどうかを確認します。</summary>
+        <returns>
+          指定した年が閏年である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成のグレゴリオ暦カレンダーにおけるうるう年は、100 で割り切れるを除く、4 で割り切れる year として定義されます。 400 で割り切れる年がうるう年です。 たとえば、1900 年が閏年ではありませんでしたが、2000 年でした。 共通の年度は 365 日を持ち、うるう年が 366 日。  
+  
+   
+  
+## Examples  
+ 次のコード例では、5 年間、時代 (年号) の各 IsLeapYear を呼び出します。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar.IsLeapYear#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.IsLeapYear/CPP/gregoriancalendar_isleapyear.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar.IsLeapYear#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.IsLeapYear/CS/gregoriancalendar_isleapyear.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar.IsLeapYear#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar.IsLeapYear/VB/gregoriancalendar_isleapyear.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="era" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="year" />カレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxSupportedDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime MaxSupportedDateTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime MaxSupportedDateTime" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.GregorianCalendar.MaxSupportedDateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最新の日付と時刻でサポートされている取得、<see cref="T:System.Globalization.GregorianCalendar" />型です。</summary>
+        <value>最新の日付と時刻でサポートされている、<see cref="T:System.Globalization.GregorianCalendar" />紀元 9999 年 12 月 31 日の最終瞬間の種類 等価と<see cref="F:System.DateTime.MaxValue" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、最小値と、カレンダーの最大値を取得します。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar_MinMax#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_MinMax/CPP/gregoriancalendar_minmax.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar_MinMax#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_MinMax/CS/gregoriancalendar_minmax.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar_MinMax#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_MinMax/VB/gregoriancalendar_minmax.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinSupportedDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime MinSupportedDateTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime MinSupportedDateTime" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.GregorianCalendar.MinSupportedDateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の日付と時刻でサポートされている取得、<see cref="T:System.Globalization.GregorianCalendar" />型です。</summary>
+        <value>最も古い日付と時刻でサポートされている、<see cref="T:System.Globalization.GregorianCalendar" />西暦 0001、1 月 1 日の最初の瞬間をある型 等価と<see cref="F:System.DateTime.MinValue" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ただしの値、<xref:System.Globalization.GregorianCalendar.MinSupportedDateTime%2A>プロパティは、最初の瞬間 1 月 1 日の西暦 0001、構成のグレゴリオ暦カレンダー、1582、年 10 月 15 日まで導入されなかったおよび大陸と世界中のヨーロッパ言語全体での採用が遅くします。 ヨーロッパ、米国、およびオーストラリアの大陸内のほとんどのカルチャがユリウス暦で表されるを使用して構成のグレゴリオ暦カレンダーを採用するまで、<xref:System.Globalization.JulianCalendar>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、最小値と、カレンダーの最大値を取得します。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendar_MinMax#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_MinMax/CPP/gregoriancalendar_minmax.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendar_MinMax#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_MinMax/CS/gregoriancalendar_minmax.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendar_MinMax#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendar_MinMax/VB/gregoriancalendar_minmax.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime ToDateTime (int year, int month, int day, int hour, int minute, int second, int millisecond, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime ToDateTime(int32 year, int32 month, int32 day, int32 hour, int32 minute, int32 second, int32 millisecond, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="day" Type="System.Int32" />
+        <Parameter Name="hour" Type="System.Int32" />
+        <Parameter Name="minute" Type="System.Int32" />
+        <Parameter Name="second" Type="System.Int32" />
+        <Parameter Name="millisecond" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="month">月を表す 1 ~ 12 の整数。</param>
+        <param name="day">日を表す 1 から 31 の整数。</param>
+        <param name="hour">時間を表す 0 ~ 23 の整数。</param>
+        <param name="minute">分を表す 0 ~ 59 の整数。</param>
+        <param name="second">秒を表す 0 ~ 59 の整数。</param>
+        <param name="millisecond">ミリ秒を表す 0 ~ 999 の整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>返します、<see cref="T:System.DateTime" />指定した日付と時刻を指定した時代 (年号) に設定されています。</summary>
+        <returns><see cref="T:System.DateTime" />指定した日付と現在の時代 (年号) の時刻に設定されています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="era" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="year" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="month" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="day" />カレンダーでサポートされる範囲外です。  
+  
+ または  
+  
+ <paramref name="hour" /> が 0 未満であるか、23 を超えています。  
+  
+ または  
+  
+ <paramref name="minute" />0 以下 59 より大きい。  
+  
+ または  
+  
+ <paramref name="second" />0 以下 59 より大きい。  
+  
+ または  
+  
+ <paramref name="millisecond" />0 か 999 を超えて未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToFourDigitYear">
+      <MemberSignature Language="C#" Value="public override int ToFourDigitYear (int year);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ToFourDigitYear(int32 year) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.GregorianCalendar.ToFourDigitYear(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">変換する年を表す 2 桁または 4 桁の整数。</param>
+        <summary>使用して、指定された年を 4 桁の年に変換、<see cref="P:System.Globalization.GregorianCalendar.TwoDigitYearMax" />プロパティを適切な世紀を決定します。</summary>
+        <returns><paramref name="year" /> の 4 桁表記を保持する整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.GregorianCalendar.TwoDigitYearMax%2A>2 桁の年を表すことができる 100 年の範囲内で最後の年です。 4 桁の年は 2 桁の数字の唯一の検索によって決まります`year`その 100 年の範囲内です。 たとえば場合、<xref:System.Globalization.GregorianCalendar.TwoDigitYearMax%2A>設定は 2029年に 100 年の範囲は 1930年から 2029年します。 そのため、30 の 2 桁の値は 2029 29 の 2 桁の値を解釈中に、1930、として解釈されます。  
+  
+ <xref:System.Globalization.GregorianCalendar.ToFourDigitYear%2A>2 桁または 4 桁の年のいずれかをサポートしています。 値によると 4 桁の値に変換するメソッドを 2 桁の年の値 (100 よりも小さい) を渡すと、<xref:System.Globalization.GregorianCalendar.TwoDigitYearMax%2A>適切な 4 桁の年を表す値です。 アプリケーションがサポートされているカレンダーの範囲内にある 4 桁の年の値が指定した場合<xref:System.Globalization.GregorianCalendar.ToFourDigitYear%2A>、実際の入力値を返します。 アプリケーションはサポートされているカレンダー範囲では、4 桁の値が指定した場合、または負の値が渡された場合は、メソッドは例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />カレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TwoDigitYearMax">
+      <MemberSignature Language="C#" Value="public override int TwoDigitYearMax { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TwoDigitYearMax" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.GregorianCalendar.TwoDigitYearMax" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>年の 2 桁表記で表すことができる 100 年間の範囲内で最後に当たる年を取得または設定します。</summary>
+        <value>年の 2 桁表記で表すことができる 100 年間の範囲内で最後に当たる年。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、2 桁の年を 4 桁の年に適切に変換を使用します。 たとえば、このプロパティが 2029年に設定されている場合、100 年範囲は 1930年 2029 です。 そのため、30 の 2 桁の値は 2029 29 の 2 桁の値を解釈中に、1930、として解釈されます。  
+  
+ このプロパティの初期値は、コントロール パネルの地域と言語のオプション部分の設定から取得されます。 ただし、その情報を変更できますの有効期間中に、<xref:System.AppDomain>です。 <xref:System.Globalization.GregorianCalendar>クラスには、システム設定の変更は検出されません自動的にします。  
+  
+ アプリケーションは、この値を 2 桁の年をそのまま使用することを示す 99 を設定する必要があります。 たとえば、このプロパティが 99 に設定されている場合 100 年の範囲は 0 (ほとんどのカレンダーの有効な値されません) 99 です。 そのため、30 の 2 桁の値は 30 として解釈されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作で指定された値は、99 より小さいです。  
+  
+ または  
+  
+ 設定操作で指定された値がより大きい<see langword="MaxSupportedDateTime.Year" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">セット操作の現在のインスタンスは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

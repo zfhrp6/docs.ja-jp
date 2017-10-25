@@ -1,0 +1,221 @@
+<Type Name="MailAddressCollection" FullName="System.Net.Mail.MailAddressCollection">
+  <TypeSignature Language="C#" Value="public class MailAddressCollection : System.Collections.ObjectModel.Collection&lt;System.Net.Mail.MailAddress&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MailAddressCollection extends System.Collections.ObjectModel.Collection`1&lt;class System.Net.Mail.MailAddress&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Mail.MailAddressCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Mail</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.Collection&lt;System.Net.Mail.MailAddress&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Net.Mail.MailAddress</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メール メッセージに関連付けられているメール アドレスを保管します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.MailMessage.To%2A?displayProperty=nameWithType>、 <xref:System.Net.Mail.MailMessage.CC%2A?displayProperty=nameWithType>、および<xref:System.Net.Mail.MailMessage.Bcc%2A?displayProperty=nameWithType>プロパティはそれぞれの電子メール アドレスを保持するために使用するこのクラスのインスタンスを返します。  
+  
+ サポートされているメール アドレスの形式の詳細について、<xref:System.Net.Mail.MailAddressCollection>クラスを参照してください、<xref:System.Net.Mail.MailAddress>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、電子メール アドレスを<xref:System.Net.Mail.MailAddressCollection>によって返される、<xref:System.Net.Mail.MailMessage.Bcc%2A>プロパティです。  
+  
+ [!code-cpp[NclMailSync#9](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#9)]
+ [!code-csharp[NclMailSync#9](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#9)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MailAddressCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddressCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Mail.MailAddressCollection" /> クラスの空のインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string addresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string addresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddressCollection.Add(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addresses" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="addresses">追加する電子メール アドレス、<see cref="T:System.Net.Mail.MailAddressCollection" />です。 複数の電子メール アドレスをコンマ文字で区切る必要があります (「,」) です。</param>
+        <summary>コレクションへの電子メール アドレスのリストを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数の電子メール アドレスは、セミコロン文字で区切られている場合 (「;」) で渡される、`addresses`パラメーター。 <xref:System.FormatException>例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="addresses" />パラメーターが null です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="addresses" />パラメーターが空の文字列。</exception>
+        <exception cref="T:System.FormatException"><paramref name="addresses" />パラメーターが無効か、サポートされていない電子メール アドレスが含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, System.Net.Mail.MailAddress item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, class System.Net.Mail.MailAddress item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddressCollection.InsertItem(System.Int32,System.Net.Mail.MailAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Net.Mail.MailAddress" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する電子メール アドレス、場所がで指定された<c>項目</c>です。</param>
+        <param name="item">コレクションに挿入する電子メール アドレスです。</param>
+        <summary>電子メール アドレスを挿入、 <see cref="T:System.Net.Mail.MailAddressCollection" />、指定された位置。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="item" />パラメーターが null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, System.Net.Mail.MailAddress item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, class System.Net.Mail.MailAddress item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddressCollection.SetItem(System.Int32,System.Net.Mail.MailAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Net.Mail.MailAddress" />
+      </Parameters>
+      <Docs>
+        <param name="index">要素のインデックス、電子メール アドレスに置き換えられます。</param>
+        <param name="item">コレクション内の要素を置換する電子メール アドレスです。</param>
+        <summary>指定したインデックス位置にある要素を置き換えます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="item" />パラメーターが null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddressCollection.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この電子メール アドレスの文字列形式で返します<see cref="T:System.Net.Mail.MailAddressCollection" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.String" />このコレクション内の電子メール アドレスを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションには、複数のアドレスが格納されている、コンマ文字で区切られます (「,」) です。  
+  
+   
+  
+## Examples  
+ 次の例は、電子メール アドレスを表示、<xref:System.Net.Mail.MailAddressCollection>によって返されること、<xref:System.Net.Mail.MailMessage.Bcc%2A>プロパティです。  
+  
+ [!code-cpp[NclMailSync#9](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#9)]
+ [!code-csharp[NclMailSync#9](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

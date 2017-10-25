@@ -1,0 +1,84 @@
+<Type Name="DefinitionBase" FullName="System.Windows.Controls.DefinitionBase">
+  <TypeSignature Language="C#" Value="public abstract class DefinitionBase : System.Windows.FrameworkContentElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract DefinitionBase extends System.Windows.FrameworkContentElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DefinitionBase" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkContentElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Ignore)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Windows.Controls.ColumnDefinitionCollection" /> および <see cref="T:System.Windows.Controls.RowDefinitionCollection" /> クラスによって使用される共有サイズのグループをサポートするために必要な機能を定義します。 これは抽象クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="SharedSizeGroup">
+      <MemberSignature Language="C#" Value="public string SharedSizeGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SharedSizeGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DefinitionBase.SharedSizeGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を識別する値、<see cref="T:System.Windows.Controls.ColumnDefinition" />または<see cref="T:System.Windows.Controls.RowDefinition" />サイズ変更プロパティを共有する定義済みのグループのメンバーとして。</summary>
+        <value>A<see cref="T:System.String" />共有サイズのグループを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイズの共有に参加している行と列を使用しない<xref:System.Windows.GridUnitType.Star>サイズ変更します。 シナリオでは、サイズの共有、<xref:System.Windows.GridUnitType.Star>サイズ変更として扱われます<xref:System.Windows.GridUnitType.Auto>です。  
+  
+ <xref:System.Windows.Controls.Grid>設定するサイズの共有は動作しない<xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A>に`true`内でリソース テンプレートと定義して<xref:System.Windows.Controls.DefinitionBase.SharedSizeGroup%2A>としてそのテンプレートの外部です。  
+  
+ <xref:System.Windows.Controls.DefinitionBase.SharedSizeGroup%2A>プロパティの値は、次の規則を満たす必要があります。  
+  
+-   空にしないでください。  
+  
+-   必要がありますの文字、数字、アンダー スコア文字のみで構成します。  
+  
+-   数値の値で開始しないでください。  
+  
+<a name="dependencyPropertyInfo_SharedSizeGroup"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DefinitionBase.SharedSizeGroupProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SharedSizeGroupProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SharedSizeGroupProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SharedSizeGroupProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DefinitionBase.SharedSizeGroupProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DefinitionBase.SharedSizeGroup" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

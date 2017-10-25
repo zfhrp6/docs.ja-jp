@@ -1,0 +1,227 @@
+<Type Name="IFormatter" FullName="System.Runtime.Serialization.IFormatter">
+  <TypeSignature Language="C#" Value="public interface IFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IFormatter" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.IFormatter" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>シリアル化されたオブジェクトの書式設定機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、のフォーマッタとして識別される任意のクラスで実装する必要があります、<xref:System.Runtime.Serialization>アーキテクチャ。  
+  
+ オブジェクトを独自のシリアル化を制御できるように実装することによって、<xref:System.Runtime.Serialization.ISerializable>インターフェイスです。 オブジェクトをシリアル化するためには、シリアル化可能なものとしては、そのオブジェクトをマークする必要があります。 クラスをシリアル化可能な属性を適用することで、これを行うことができます。 グラフ内の任意のオブジェクトがシリアル化可能でない場合は、シリアル化は失敗します。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>すべてのフォーマッタは、このインターフェイスを実装する必要があります。 使用して<see cref="M:System.Runtime.Serialization.IFormatter.Serialize(System.IO.Stream,System.Object)" />オブジェクトまたはオブジェクトのグラフをシリアル化します。 使用して<see cref="M:System.Runtime.Serialization.IFormatter.Deserialize(System.IO.Stream)" />ストリームを逆シリアル化し、元のオブジェクトまたはオブジェクトのグラフのクローンを作成します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Binder">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.SerializationBinder Binder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.SerializationBinder Binder" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.IFormatter.Binder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.SerializationBinder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Runtime.Serialization.SerializationBinder" />逆シリアル化中に型の検索を実行します。</summary>
+        <value><see cref="T:System.Runtime.Serialization.SerializationBinder" />逆シリアル化中に型の検索を実行します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに情報から型を解決しようとしてエンコードされたストリーム、フォーマッタで呼び出し、<xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A>メソッドを<xref:System.Runtime.Serialization.SerializationBinder>です。 このメソッドはこれらのパラメーターを解決、<xref:System.Type>オブジェクト。 バインダーを見つけることができます、<xref:System.Type>シリアル化時に、それよりも、別のアセンブリでは逆シリアル化時にします。  
+  
+ このプロパティを設定してもシリアル化中には影響しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.StreamingContext Context { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.StreamingContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.IFormatter.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.StreamingContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Runtime.Serialization.StreamingContext" />シリアル化および逆シリアル化のために使用します。</summary>
+        <value><see cref="T:System.Runtime.Serialization.StreamingContext" />シリアル化および逆シリアル化のために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が実装するオブジェクトに渡される<xref:System.Runtime.Serialization.ISerializable>または<xref:System.Runtime.Serialization.ISerializationSurrogate>です。 <xref:System.Runtime.Serialization.StreamingContext> (シリアル化) の中に、変換先、または (逆シリアル化) の中に、データのソースを示します。 実装するオブジェクト<xref:System.Runtime.Serialization.ISerializable>の値に応じてで送信されたデータを変更することができます、<xref:System.Runtime.Serialization.IFormatter.Context%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (System.IO.Stream serializationStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Deserialize(class System.IO.Stream serializationStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IFormatter.Deserialize(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">逆シリアル化するデータを格納しているストリーム。</param>
+        <summary>指定されたストリーム上のデータを逆シリアル化し、オブジェクトのグラフを再構成します。</summary>
+        <returns>逆シリアル化されたグラフの最上位オブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.IFormatter.Deserialize%2A>メソッドは、ストリームからグラフの情報を読み取るし、元のグラフの複製を再構築します。 グラフのトポロジが保持されます。  
+  
+ 逆シリアル化プロセスを選択し、適切な型の空のオブジェクトを割り当てますで送信されるデータからそのフィールドを再作成、`serializationStream`ストリーム。 ことが重要、コンス トラクターが呼び出されないこと、オブジェクトに逆シリアル化中に注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.Stream serializationStream, object graph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Serialize(class System.IO.Stream serializationStream, object graph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IFormatter.Serialize(System.IO.Stream,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+        <Parameter Name="graph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">フォーマッタがシリアル化されたデータを格納するストリーム。 このストリームは、さまざまな (ファイル、ネットワーク、メモリ、およびなど) などのバッキング ストアを参照できます。</param>
+        <param name="graph">オブジェクト、またはシリアル化する、オブジェクト グラフのルート。 このルート オブジェクトのすべての子オブジェクトは、自動的にシリアル化されます。</param>
+        <summary>オブジェクト、または、指定されたストリームを特定のルートを持つオブジェクトのグラフをシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.IFormatter.Serialize%2A>メソッドが自動的に、指定されたオブジェクトをシリアル化し、すべてのオブジェクト、接続されている、指定されたストリームにします。  
+  
+ 既定では、シリアル化プロセスは、すべてのフィールド (パブリックおよびプライベート) の値を収集することによって、オブジェクトの状態を記録します。 これらのフィールドでその型のアセンブリ修飾名など、オブジェクトに関する情報とストリームに保存されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SurrogateSelector">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.ISurrogateSelector SurrogateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.ISurrogateSelector SurrogateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.IFormatter.SurrogateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ISurrogateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Runtime.Serialization.SurrogateSelector" />現在のフォーマッタで使用します。</summary>
+        <value><see cref="T:System.Runtime.Serialization.SurrogateSelector" />このフォーマッタで使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Runtime.Serialization.ISerializationSurrogate>最適なオブジェクトが特定のオブジェクトまたはオブジェクトのクラスのシリアル化を処理に適したを指定することができます。 実装としてないということ<xref:System.Runtime.Serialization.ISerializable>が別のオブジェクトによって提供されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1257 @@
+<Type Name="LegendItem" FullName="System.Windows.Forms.DataVisualization.Charting.LegendItem">
+  <TypeSignature Language="C#" Value="public class LegendItem : System.Windows.Forms.DataVisualization.Charting.ChartNamedElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LegendItem extends System.Windows.Forms.DataVisualization.Charting.ChartNamedElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.LegendItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataVisualization.Charting.ChartNamedElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Name")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>格納されている凡例項目を表す、<see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendItemsCollection" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.LegendItem>クラスは、既定またはカスタムの項目にすることができます、凡例の項目を表します。  
+  
+-   既定の凡例項目は、データ系列またはデータ ポイントのいずれかの凡例に自動的に挿入されます。 円グラフおよびドーナツ グラフの既定のエントリは、他のすべてのグラフの種類のエントリを表す、系列が描画されるデータ ポイントを表します。 既定では、これらの凡例項目は、記号の色と凡例項目のテキストの系列またはデータ ポイントの名前のデータ ポイントまたは系列の色を使用します。 既定の凡例項目をカスタマイズまたはを使用して実行時に削除することができます、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CustomizeLegend>のイベント、<xref:System.Windows.Forms.DataVisualization.Charting.Chart>コントロール。  
+  
+-   ユーザー定義のテキストや記号の色など、カスタムの凡例項目があります。 既定のエントリとは異なり接続されていないプロットされたデータを使用します。 デザイン時または実行時のいずれかでカスタムの凡例項目を追加することができますを使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Legend.CustomItems%2A>のプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.Legend>オブジェクト。  
+  
+ 凡例のシンボルは、四角形、線、またはに応じてマーカーを指定できます、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.ImageStyle%2A>プロパティの設定、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem>オブジェクト。  
+  
+ カスタムの凡例項目のテキストはによって決定されます、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.Name%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LegendItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.LegendItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem>クラスです。  
+  
+ メモを使用してカスタムの凡例項目を追加することも、`Add`と`Insert`メソッドに関連付けられている、<xref:System.Windows.Forms.DataVisualization.Charting.Legend.CustomItems%2A>の collection プロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.Legend>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LegendItem (string name, System.Drawing.Color color, string image);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Drawing.Color color, string image) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.LegendItem.#ctor(System.String,System.Drawing.Color,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="color" Type="System.Drawing.Color" />
+        <Parameter Name="image" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">凡例項目の名前。</param>
+        <param name="color">凡例項目の色。</param>
+        <param name="image">凡例項目に表示されるイメージのパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendItem" />クラス名、色および画像のパスを指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみ、`image`または`color`パラメーターを指定する必要があります。 両方が指定されている場合、`image`パラメーターが優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackGradientStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.GradientStyle BackGradientStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.GradientStyle BackGradientStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackGradientStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.GradientEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.GradientStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例項目の背景のグラデーションの向きを設定します。 また、グラデーションが使用されているかどうかを判断します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.GradientStyle" />凡例項目の背景のグラデーションの向きを指定する列挙です。 既定値は <see cref="F:System.Windows.Forms.DataVisualization.Charting.GradientStyle.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackGradientStyle%2A>タイトル、グラデーションが表示され、使用されて 1 つの場合は、グラデーションの向きを決定するかどうかを判断するプロパティです。  
+  
+ 場合にのみ、このプロパティが実装、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.ImageStyle%2A>プロパティに設定されている<xref:System.Windows.Forms.DataVisualization.Charting.LegendImageStyle.Rectangle>です。  
+  
+ 使用可能なパターンの一覧についてを参照してください、<xref:System.Windows.Forms.DataVisualization.Charting.GradientStyle>列挙します。  
+  
+ グラデーションの色を使用します。  
+  
+-   使用して、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.Color%2A>基本色を設定するプロパティです。  
+  
+-   使用して、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackGradientStyle%2A>プロパティを 2 番目の色を設定します。  
+  
+-   これを使用して<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackGradientStyle%2A>プロパティを目的のグラデーションのスタイルを設定します。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackHatchStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle BackHatchStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle BackHatchStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackHatchStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.HatchStyleEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例アイテムの陰影のスタイルを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle" />凡例アイテムの陰影のスタイルを指定する列挙です。 既定値は <see cref="F:System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle>列挙型のブラシで使用される陰影パターンを指定する<xref:System.Drawing.Drawing2D.HatchBrush>です。 純色の背景色と線が描かれて、背景の陰影パターンで構成されます。  
+  
+ 使用可能な陰影のスタイルの一覧についてを参照してください、<xref:System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle>列挙します。  
+  
+> [!NOTE]
+>  線の陰影の色はによって決定されます、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackSecondaryColor%2A>プロパティです。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImageTransparentColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackImageTransparentColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackImageTransparentColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackImageTransparentColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または背景画像が描画されるときに、透明色で置き換えられる色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />値が表示されます、透明な背景画像が描画されるときです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackSecondaryColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackSecondaryColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackSecondaryColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackSecondaryColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例項目の 2 番目の色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />の 2 番目の色の背景の陰影またはグラデーションの塗りつぶしに使用される値。 既定値は <see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackSecondaryColor%2A>プロパティは、多くの第 2 背景色を決定するいくつかの関連するプロパティのいずれかの<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクトで、グラデーションの色を適用しているときに使用します。  
+  
+ 場合にのみ、このプロパティが実装、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.ImageStyle%2A>プロパティに設定されている<xref:System.Windows.Forms.DataVisualization.Charting.LegendImageStyle.Rectangle>です。  
+  
+ 設定することができます<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackSecondaryColor%2A>ARGB (アルファ、赤、緑、青) の有効な値にします。  
+  
+ 陰影を使用する場合、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackSecondaryColor%2A>プロパティは、凡例アイテムの陰影線の色を決定します。  
+  
+ 凡例のセルの背景のグラデーションの色を使用します。  
+  
+ グラデーションの色を使用します。  
+  
+-   使用して、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.Color%2A>基本色を設定するプロパティです。  
+  
+-   使用して、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackGradientStyle%2A>プロパティを 2 番目の色を設定します。  
+  
+-   使用して、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackGradientStyle%2A>プロパティを目的のグラデーションのスタイルを設定します。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BorderColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BorderColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.BorderColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "Black")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>凡例項目の境界線の色を取得または設定します。</summary>
+        <value>凡例項目の境界線の色の描画に使用する <see cref="T:System.Drawing.Color" /> 値。 既定の色は <see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意の有効な ARGB (アルファ、赤、緑、青) 値には、このプロパティを設定することができます。  
+  
+> [!NOTE]
+>  場合は、カスタムの凡例項目のマーカーを使用するとします。 このプロパティは、マーカーの罫線の色に設定されます。 ただし場合、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerBorderColor%2A>プロパティが設定されても、その値が優先されます。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderDashStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.ChartDashStyle BorderDashStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.ChartDashStyle BorderDashStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.BorderDashStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.ChartDashStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例アイテムの罫線のスタイルを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartDashStyle" />凡例アイテムの罫線のスタイルを決定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、境界に使用する線のスタイルを決定します。 行には、純色、ピリオドで区切られたなどを指定できます。  
+  
+ その他の境界線スタイルを参照してください、<xref:System.Windows.Forms.DataVisualization.Charting.ChartDashStyle>列挙トピックです。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderWidth">
+      <MemberSignature Language="C#" Value="public int BorderWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BorderWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.BorderWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例アイテムの罫線の幅を設定します。</summary>
+        <value><see langword="integer" /> (ピクセル単位) の凡例アイテムの罫線の幅を決定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BorderWidth%2A>プロパティを使用してでカスタムの凡例項目が表示されるなどとき、に、線の幅を設定することもできます、<xref:System.Windows.Forms.DataVisualization.Charting.LegendImageStyle.Line>スタイル。  
+  
+ **注**のみに適用できる、このプロパティは<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cells">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.LegendCellCollection Cells { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.LegendCellCollection Cells" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.Cells" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.LegendCellCollectionEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.LegendCellCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>凡例項目内のセルのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendCellCollection" />の凡例項目内のセルのコレクションを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 凡例のセルを 1 つまたは複数の凡例項目が構成されているで表される各、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトおよびに格納されている、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellCollection>です。  
+  
+> [!NOTE]
+>  このプロパティは、全体に適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Color">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color Color { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color Color" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.Color" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例項目の色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />凡例項目の描画に使用される値。 既定の色は <see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.Color%2A>プロパティは、複数の 1 つの関連するプロパティを取得または設定の多くのグラフ要素の色以外の任意の ARGB (アルファ、赤、緑、青) 値を設定できます。  
+  
+ このプロパティは、データ ポイントとその系列の両方の設定は、データ ポイントの色は、優先順位があります。 系列の色に独自の色を定義していないデータ ポイントにのみ使用されます。  
+  
+ カスタムの凡例項目は、マーカーを使用する場合、このプロパティは、マーカーの色を決定します。 ただし場合、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerColor%2A>プロパティは、その値を設定し、最も優先順位。  
+  
+ 場合、このプロパティは無視されます、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.Image%2A>プロパティは、凡例項目のシンボルとして使用するイメージを指定します。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.LegendItem.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendItem" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ParenthesizePropertyName(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例項目が有効になっているかどうかを示すフラグを設定します。</summary>
+        <value>
+          <see langword="true" />凡例項目が有効である場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、全体に適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public string Image { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Image" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.Image" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ImageValueEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例項目のシンボルとして表示されるイメージを設定します。</summary>
+        <value>A<see langword="string" />イメージ ファイルの URL を表す値です。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに使用するイメージ ファイルを決定する、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem>シンボル。  
+  
+ パスには、絶対または相対 URL を指定できます。  
+  
+ 背景画像を設定する場合に関係なくそのイメージが表示されます、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.ImageStyle%2A>プロパティの設定。  
+  
+ 設定、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BackImageTransparentColor%2A>を透明に表示するイメージで使用される 1 つの色を有効にするプロパティです。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.LegendImageStyle ImageStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.LegendImageStyle ImageStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.ImageStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Windows.Forms.DataVisualization.Charting.LegendImageStyle), "Rectangle")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ParenthesizePropertyName(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.LegendImageStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例項目のイメージの表示スタイルを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendImageStyle" />凡例項目のイメージの表示スタイルを指定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのスタイルは、項目の対応するシンボルの表示方法を決定します。  
+  
+ A<xref:System.Windows.Forms.DataVisualization.Charting.LegendImageStyle.Line>とスタイルを組み合わせることができます、<xref:System.Windows.Forms.DataVisualization.Charting.LegendImageStyle.Marker>スタイル。 これを行うを最初に設定、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.ImageStyle%2A>プロパティを<xref:System.Windows.Forms.DataVisualization.Charting.LegendImageStyle.Line>です。 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerImage%2A>マーカー画像を指定するプロパティまたは<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerStyle%2A>プロパティ マーカーのスタイルを指定します。 結果として得られるシンボルは、行と画像またはマーカーの組み合わせになります。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Legend">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.Legend Legend { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.Legend Legend" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.Legend" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.Legend</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Legend" />この凡例項目に関連付けられているオブジェクト。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.Legend" />この凡例項目に関連付けられているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerBorderColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color MarkerBorderColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color MarkerBorderColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerBorderColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用する場合に、マーカーの罫線の色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />マーカーの罫線の (アルファ、赤、緑、青) ARGB 色を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マーカーを使用する設定、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerStyle%2A>プロパティ以外の値を<xref:System.Windows.Forms.DataVisualization.Charting.MarkerStyle.None>です。  
+  
+ マーカーは適用されないこと円グラフ、ドーナツ グラフ、およびそのいずれかをメモには、グラフの種類が積み上げられます。  
+  
+ カスタムの凡例について、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BorderColor%2A>プロパティはマーカーの罫線の色を設定してもします。 <xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerBorderColor%2A>プロパティの設定に優先、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.BorderColor%2A>プロパティの設定。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerBorderWidth">
+      <MemberSignature Language="C#" Value="public int MarkerBorderWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MarkerBorderWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerBorderWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用する場合に、マーカーの罫線の幅を設定します。 ピクセル単位で測定されます。</summary>
+        <value><see langword="integer" />マーカーの罫線の幅を表す値です。 既定値は、1 つ (1) ピクセルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color MarkerColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color MarkerColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用する場合に、マーカーの色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />マーカーの色を表す値です。 既定の色は <see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerImage">
+      <MemberSignature Language="C#" Value="public string MarkerImage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MarkerImage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ImageValueEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例項目のマーカーの画像を設定します。</summary>
+        <value>A<see langword="string" />イメージ ファイルの URL を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 絶対パスまたは相対 URL であることができる画像ファイルへのパスを表します。  
+  
+ マーカーを使用する設定、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerStyle%2A>プロパティ以外の値を<xref:System.Windows.Forms.DataVisualization.Charting.MarkerStyle.None>です。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerImage%2A>プロパティよりも優先、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerColor%2A>プロパティです。  
+  
+ マーカーの画像は、アイコンを含む、.NET Framework でサポートされている任意の有効なグラフィックス ファイルを指定できます。  
+  
+ 透過的マーカー画像の 1 つの色の設定を使用して、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerImageTransparentColor%2A>プロパティです。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerImageTransparentColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color MarkerImageTransparentColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color MarkerImageTransparentColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerImageTransparentColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマーカーの画像が描画されるときに、透明色に置き換え、色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />マーカー画像が描画されるときに透明色で置き換えること (アルファ、赤、緑、青) ARGB 色を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerImageTransparentColor%2A>プロパティの使用を透明として表示されるマーカー画像の 1 つの色を選択します。  
+  
+ 任意の有効な ARGB (アルファ、赤、緑、青) 値には、このプロパティを設定することができます。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerSize">
+      <MemberSignature Language="C#" Value="public int MarkerSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MarkerSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(5)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用する場合は、項目のマーカーを凡例のサイズを設定します。</summary>
+        <value><see langword="integer" /> (ピクセル単位) のマーカーのプロット エリアの幅と高さを表す式です。 既定値は、5 ピクセルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マーカーを使用する設定、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerStyle%2A>プロパティ以外の値を<xref:System.Windows.Forms.DataVisualization.Charting.MarkerStyle.None>です。  
+  
+ マーカーが円グラフ、ドーナツ グラフ、および任意の積み上げグラフの種類のデータ ポイントに適用されなかったすることに注意してください。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkerStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.MarkerStyle MarkerStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.MarkerStyle MarkerStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.MarkerStyleEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.MarkerStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例項目のマーカーのスタイルを設定します。 有効にするにまたはマーカーの表示を無効にも使用されます。</summary>
+        <value>A<see cref="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.MarkerStyle" />凡例項目のマーカーのスタイルを指定する整数の列挙。 既定値は <see cref="F:System.Windows.Forms.DataVisualization.Charting.MarkerStyle.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マーカーを無効にするには、このプロパティを設定<xref:System.Windows.Forms.DataVisualization.Charting.MarkerStyle.None>です。  
+  
+> [!NOTE]
+>  このプロパティにのみ適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ParenthesizePropertyName(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例項目の名前を設定します。</summary>
+        <value>A<see langword="string" />の凡例項目の名前を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeparatorColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color SeparatorColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color SeparatorColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.SeparatorColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "Black")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例項目の区切り記号の色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />値、凡例項目の区切り記号の色を描画するために使用します。 既定値は <see cref="P:System.Drawing.Color.Black" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、全体に適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeparatorType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle SeparatorType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle SeparatorType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.SeparatorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle), "None")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例項目の区分線のスタイルを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle" />凡例項目の区分線のスタイルを指定する列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeriesName">
+      <MemberSignature Language="C#" Value="public string SeriesName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SeriesName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.SeriesName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Series" />既定の凡例項目に関連付けられています。</summary>
+        <value>A<see langword="string" />既定の凡例項目に関連付けられた系列の名前を決定する値。 既定値は、長さ 0 の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでのみ使用する必要があります、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CustomizeLegend>を既定の凡例エントリが表すデータ系列を特定のイベントです。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.SeriesName%2A>プロパティ円グラフ、および球のグラフを除くすべてのグラフに適用されます。 データ ポイントをプロットすると、系列をプロットするが、既定の凡例項目に対応しています。 円グラフと球グラフを処理する場合を使用して、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.SeriesPointIndex%2A>プロパティ代わりにします。  
+  
+ このプロパティは、開発者によっていません設定する必要があります。  
+  
+> [!NOTE]
+>  このプロパティは、全体に適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeriesPointIndex">
+      <MemberSignature Language="C#" Value="public int SeriesPointIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SeriesPointIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.SeriesPointIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のインデックス、<see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />既定の凡例項目に関連付けられているオブジェクト。</summary>
+        <value><see langword="integer" />を既定の凡例の場所を表す値の 0 から始まるインデックス内のデータ ポイントに関連します。 すべての円グラフ以外の種類のグラフおよびドーナツ グラフには、負の値が返されます 1 (-1)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでのみ使用する必要があります、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CustomizeLegend>を決定するイベント、<xref:System.Windows.Forms.DataVisualization.Charting.DataPoint>既定円グラフまたは球グラフの凡例項目によって表されるオブジェクト。  
+  
+ 円グラフ以外の種類または球グラフは、負の値を返します (-1)、1 つを既定の凡例項目に対応しているため、系列をプロットし、データ ポイントをプロットされずです。 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.SeriesName%2A>これらのプロパティの種類のグラフします。  
+  
+ このプロパティは、開発者によっていません設定する必要があります。  
+  
+> [!NOTE]
+>  このプロパティは、全体に適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShadowColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ShadowColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ShadowColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.ShadowColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "128,0,0,0")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例アイテムの影の色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />凡例アイテムの影の色を表す値です。 既定の色は <see cref="P:System.Drawing.Color.Black" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつかの影の色のグラフ要素とすることができますを取得または設定の有効な ARGB (アルファ、赤、緑、青) 値を設定します。  
+  
+ アルファ値は、「現実的な」シャドウ効果を実現するために使用できます。影の「128,0,0,0」の色を使用してください。  
+  
+ 影を実装するのには、設定、<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem.ShadowOffset%2A>プロパティを 0 (ゼロ) 以外の値にします。  
+  
+ **注**のみに適用できる、このプロパティは<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShadowOffset">
+      <MemberSignature Language="C#" Value="public int ShadowOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ShadowOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.ShadowOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または (ピクセル単位)、凡例アイテムの影のオフセットを設定します。</summary>
+        <value><see langword="integer" /> (ピクセル単位)、関連するグラフ要素の影のオフセットを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シャドウを実装するのには、0 (ゼロ) 以外の値を使用します。 正の値は、下と右にシフトするシャドウになります。 負の値は、上と左にシフトするシャドウになります。  
+  
+ **注**のみに適用できる、このプロパティは<xref:System.Windows.Forms.DataVisualization.Charting.LegendCell>オブジェクトと、<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType>いずれかの<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.SeriesSymbol>または<xref:System.Windows.Forms.DataVisualization.Charting.LegendCellType.Image>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public string ToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.LegendItem.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または凡例の項目のツールヒントを設定します。</summary>
+        <value>A<see langword="string" />の凡例項目のツールヒントを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、さまざまな種類のグラフに関連するデータを表示する特別なキーワードを設定することができます。 詳細については、次を参照してください。[キーワード &#91; rs_vsDataVis &#93;](http://msdn.microsoft.com/library/8a19d422-4eee-45ff-a5c3-feff7b76fa8c)です。  
+  
+> [!NOTE]
+>  このプロパティは、全体に適用<xref:System.Windows.Forms.DataVisualization.Charting.LegendItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

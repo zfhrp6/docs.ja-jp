@@ -1,0 +1,571 @@
+<Type Name="PropertyValue" FullName="System.Activities.Presentation.PropertyEditing.PropertyValue">
+  <TypeSignature Language="C#" Value="public abstract class PropertyValue : System.ComponentModel.INotifyPropertyChanged" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PropertyValue extends System.Object implements class System.ComponentModel.INotifyPropertyChanged" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.PropertyEditing.PropertyValue" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.INotifyPropertyChanged</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>プロパティ グリッド内のプロパティの値のデータ モデルを保持します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PropertyValue (System.Activities.Presentation.PropertyEditing.PropertyEntry parentProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Activities.Presentation.PropertyEditing.PropertyEntry parentProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.#ctor(System.Activities.Presentation.PropertyEditing.PropertyEntry)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parentProperty" Type="System.Activities.Presentation.PropertyEditing.PropertyEntry" />
+      </Parameters>
+      <Docs>
+        <param name="parentProperty">この <see cref="T:System.Activities.Presentation.PropertyEditing.PropertyEntry" /> に対応する <see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValue" />。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValue" /> parent プロパティが、指定された設定を持つクラス<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyEntry" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFromString">
+      <MemberSignature Language="C#" Value="public abstract bool CanConvertFromString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanConvertFromString" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.CanConvertFromString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合を示す値を取得するかどうか<see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" />文字列から変換することができます。</summary>
+        <value>
+          <see langword="true" />プロパティの値を文字列から変換できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CatchExceptions">
+      <MemberSignature Language="C#" Value="protected virtual bool CatchExceptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CatchExceptions" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.CatchExceptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの値を取得および設定中にスローされる例外がキャッチする必要がありますか、呼び出し元に直接伝達する必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />例外がキャッチされる場合<see langword="false" />場合は、呼び出し元に例外が反映されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、<xref:System.Activities.Presentation.PropertyEditing.PropertyValue.PropertyValueException> イベントに対するサブスクライバーが存在するかどうかに基づいて決定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearValue">
+      <MemberSignature Language="C#" Value="public abstract void ClearValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ClearValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.ClearValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで実装された場合、<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValue" /> をクリアして未設定の状態にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collection">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.PropertyEditing.PropertyValueCollection Collection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.PropertyEditing.PropertyValueCollection Collection" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Collection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.PropertyEditing.PropertyValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装された場合、<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValue" /> によってプロパティがコレクションであることが示されたときに、コレクション内の項目に対応する <see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.IsCollection" /> インスタンスのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValueCollection" />プロパティ値のインスタンスのコレクションであるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertStringToValue">
+      <MemberSignature Language="C#" Value="protected abstract object ConvertStringToValue (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object ConvertStringToValue(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.ConvertStringToValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.String" /> に変換する <see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" /> 値。</param>
+        <summary>派生クラスで実装された場合、指定した <see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.StringValue" /> を <see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" /> に変換します。</summary>
+        <returns><see cref="T:System.Object" /> 値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertValueToString">
+      <MemberSignature Language="C#" Value="protected abstract string ConvertValueToString (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string ConvertValueToString(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.ConvertValueToString(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">文字列に変換する <see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" />。</param>
+        <summary>派生クラスで実装された場合、指定した <see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" /> を <see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.StringValue" /> に変換します。</summary>
+        <returns><see cref="T:System.String" /> の <see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" /> バージョン。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueCore">
+      <MemberSignature Language="C#" Value="protected abstract object GetValueCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object GetValueCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.GetValueCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで実装された場合、<see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" /> を返します。</summary>
+        <returns><see cref="T:System.Object" /> プロパティ値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasSubProperties">
+      <MemberSignature Language="C#" Value="public abstract bool HasSubProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasSubProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.HasSubProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合は、このプロパティの型でサブプロパティがサポートしているかどうかを示す値を取得します。</summary>
+        <value><see cref="T:System.Boolean" /> (この型でサブプロパティがサポートされている場合は <see cref="T:System.Boolean.True" />、それ以外の場合は <see cref="T:System.Boolean.False" />)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な実装では、<xref:System.ComponentModel.TypeConverter> を使用してサブプロパティが存在するかどうかを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCollection">
+      <MemberSignature Language="C#" Value="public abstract bool IsCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.IsCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合を示す値を取得するかどうかこの<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValue" />コレクションです。</summary>
+        <value><see cref="T:System.Boolean" /> (このプロパティ値がコレクションである場合は <see cref="T:System.Boolean.True" />、それ以外の場合は <see cref="T:System.Boolean.False" />)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultValue">
+      <MemberSignature Language="C#" Value="public abstract bool IsDefaultValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.IsDefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合を示す値を取得するかどうか、<see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" />プロパティの既定値です。</summary>
+        <value><see cref="T:System.Boolean" /> (この値が既定値である場合は <see cref="T:System.Boolean.True" />、それ以外の場合は <see cref="T:System.Boolean.False" />)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMixedValue">
+      <MemberSignature Language="C#" Value="public abstract bool IsMixedValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMixedValue" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.IsMixedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合は、複数のオブジェクトがこのプロパティを含めるし、異なる値を持つかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />複数のオブジェクトには、このプロパティが含まれている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `true` の場合、<xref:System.Activities.Presentation.PropertyEditing.PropertyValue.Value%2A> は null を返し、<xref:System.Activities.Presentation.PropertyEditing.PropertyValue.StringValue%2A> は <xref:System.String.Empty> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyRootValueChanged">
+      <MemberSignature Language="C#" Value="protected virtual void NotifyRootValueChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void NotifyRootValueChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.NotifyRootValueChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になる値の型が外部 (デザイン画面など) で変更された場合に、<see cref="E:System.Activities.Presentation.PropertyEditing.PropertyValue.RootValueChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifySubPropertyChanged">
+      <MemberSignature Language="C#" Value="protected void NotifySubPropertyChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void NotifySubPropertyChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.NotifySubPropertyChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このプロパティのいずれかのサブプロパティが変更されたときに、<see cref="E:System.Activities.Presentation.PropertyEditing.PropertyValue.SubPropertyChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnPropertyChanged (System.ComponentModel.PropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPropertyChanged(class System.ComponentModel.PropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.PropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">変更されたプロパティの名前を指定する <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> オブジェクト。</param>
+        <summary>指定した <see cref="E:System.Activities.Presentation.PropertyEditing.PropertyValue.PropertyChanged" /> オブジェクトを使用して、<see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnPropertyChanged (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPropertyChanged(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.OnPropertyChanged(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">変更されたプロパティの名前。</param>
+        <summary>変更されたプロパティの名前を使用する <see cref="E:System.Activities.Presentation.PropertyEditing.PropertyValue.PropertyChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyValueException">
+      <MemberSignature Language="C#" Value="protected virtual void OnPropertyValueException (System.Activities.Presentation.PropertyEditing.PropertyValueExceptionEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPropertyValueException(class System.Activities.Presentation.PropertyEditing.PropertyValueExceptionEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.OnPropertyValueException(System.Activities.Presentation.PropertyEditing.PropertyValueExceptionEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Activities.Presentation.PropertyEditing.PropertyValueExceptionEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">発生した取得または設定エラーについての情報を提供する <see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValueExceptionEventArgs" />。</param>
+        <summary>基になるデータのコレクションで <see cref="E:System.Activities.Presentation.PropertyEditing.PropertyValue.PropertyValueException" /> プロパティの値の取得または設定に失敗した場合に <see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValue" /> イベントを発生させる既定の実装です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentProperty">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.PropertyEditing.PropertyEntry ParentProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.PropertyEditing.PropertyEntry ParentProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.ParentProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.PropertyEditing.PropertyEntry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの実装がホスト環境で行われる場合に、親 <see cref="T:System.Activities.Presentation.PropertyEditing.PropertyEntry" /> を取得します。</summary>
+        <value>A<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyEntry" />親プロパティを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.PropertyChangedEventHandler PropertyChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.PropertyEditing.PropertyValue.PropertyChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときにプロパティまたはのサブプロパティ、<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValue" />オブジェクトが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyValueException">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Activities.Presentation.PropertyEditing.PropertyValueExceptionEventArgs&gt; PropertyValueException;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Activities.Presentation.PropertyEditing.PropertyValueExceptionEventArgs&gt; PropertyValueException" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.PropertyEditing.PropertyValue.PropertyValueException" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Activities.Presentation.PropertyEditing.PropertyValueExceptionEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホスト実装でエラー処理のために使用されるイベントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootValueChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler RootValueChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RootValueChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.PropertyEditing.PropertyValue.RootValueChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" />または<see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.StringValue" />プロパティがの結果として更新、<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValue" />値は変更されています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValueCore">
+      <MemberSignature Language="C#" Value="protected abstract void SetValueCore (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetValueCore(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.SetValueCore(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">基になるデータのコレクションに設定するオブジェクト。</param>
+        <summary>派生クラスで実装された場合、<see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" /> を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.PropertyEditing.PropertyValueSource Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.PropertyEditing.PropertyValueSource Source" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.PropertyEditing.PropertyValueSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装された場合、取得、<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValueSource" />からこのプロパティの値の取得先に関する情報を含むオブジェクト。</summary>
+        <value>プロパティ値のソース情報を含む <see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValueSource" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StringValue">
+      <MemberSignature Language="C#" Value="public string StringValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StringValue" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.StringValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" /> を <see cref="T:System.String" /> として取得または設定します。</summary>
+        <value><see cref="T:System.String" /> の <see cref="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" /> バージョン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubProperties">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Presentation.PropertyEditing.PropertyEntryCollection SubProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.PropertyEditing.PropertyEntryCollection SubProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.SubProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.PropertyEditing.PropertyEntryCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装された場合、<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyEntry" /> インスタンスとしてサブプロパティのコレクションを取得します。</summary>
+        <value>インスタンスの <see cref="T:System.Activities.Presentation.PropertyEditing.PropertyEntryCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubPropertyChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler SubPropertyChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SubPropertyChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Activities.Presentation.PropertyEditing.PropertyValue.SubPropertyChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブプロパティがの結果として更新されたときに発生する、<see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValue" />変更中です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateValue">
+      <MemberSignature Language="C#" Value="protected abstract void ValidateValue (object valueToValidate);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ValidateValue(object valueToValidate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.PropertyValue.ValidateValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="valueToValidate" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="valueToValidate">値が検証されるオブジェクト。</param>
+        <summary>派生クラスで実装された場合、指定した値オブジェクトの検証で無効であることが示されたときに例外をスローします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.PropertyValue.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるプロパティ データのコレクションのプロパティ値を取得または設定します。</summary>
+        <value><see cref="T:System.Object" /> プロパティ値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

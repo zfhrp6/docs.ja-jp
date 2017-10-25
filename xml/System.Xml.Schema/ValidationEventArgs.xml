@@ -1,0 +1,137 @@
+<Type Name="ValidationEventArgs" FullName="System.Xml.Schema.ValidationEventArgs">
+  <TypeSignature Language="C#" Value="public class ValidationEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ValidationEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.ValidationEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連する詳細情報を返します、<see langword="ValidationEventHandler" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、次を参照してください。、<xref:System.Xml.Schema.XmlSchemaCollection.Add%2A>のメソッド、<xref:System.Xml.Schema.XmlSchemaCollection>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaException Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaException Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.ValidationEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaException</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.Schema.XmlSchemaException" />検証イベントに関連付けられています。</summary>
+        <value><see langword="XmlSchemaException" />検証イベントに関連付けられています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.ValidationEventArgs.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証イベントに対応するテキストの説明を取得します。</summary>
+        <value>説明テキストです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Severity">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSeverityType Severity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Schema.XmlSeverityType Severity" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.ValidationEventArgs.Severity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSeverityType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証イベントの重大度を取得します。</summary>
+        <value><see cref="T:System.Xml.Schema.XmlSeverityType" />検証イベントの重大度を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、XML ファイルを検証し、適切なエラーまたは警告が生成されます。  
+  
+ [!code-cpp[ValidationEventArgs.Severity#1](~/samples/snippets/cpp/VS_Snippets_Data/ValidationEventArgs.Severity/CPP/severity.cpp#1)]
+ [!code-csharp[ValidationEventArgs.Severity#1](~/samples/snippets/csharp/VS_Snippets_Data/ValidationEventArgs.Severity/CS/severity.cs#1)]
+ [!code-vb[ValidationEventArgs.Severity#1](~/samples/snippets/visualbasic/VS_Snippets_Data/ValidationEventArgs.Severity/VB/severity.vb#1)]  
+  
+ 前の例では、次の入力ファイルを使用します。  
+  
+ `store.xml`  
+  
+ [!code-xml[ValidationEventArgs.Severity#2](~/samples/snippets/xml/VS_Snippets_Data/ValidationEventArgs.Severity/XML/store.xml#2)]  
+  
+ `books.xsd`  
+  
+ [!code-xml[ValidationEventArgs.Severity#3](~/samples/snippets/xml/VS_Snippets_Data/ValidationEventArgs.Severity/XML/books.xsd#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

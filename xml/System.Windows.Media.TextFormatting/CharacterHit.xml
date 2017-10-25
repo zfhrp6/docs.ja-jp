@@ -1,0 +1,208 @@
+<Type Name="CharacterHit" FullName="System.Windows.Media.TextFormatting.CharacterHit">
+  <TypeSignature Language="C#" Value="public struct CharacterHit : IEquatable&lt;System.Windows.Media.TextFormatting.CharacterHit&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit CharacterHit extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.Media.TextFormatting.CharacterHit&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.TextFormatting.CharacterHit" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Windows.Media.TextFormatting.CharacterHit&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>グリフ実行以内で氷雨文字に関する情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.TextFormatting.CharacterHit>構造は、先頭または末端に関する情報だけでなく、ヒットした最初の文字のインデックスに関する情報を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CharacterHit (int firstCharacterIndex, int trailingLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 firstCharacterIndex, int32 trailingLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterHit.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="firstCharacterIndex" Type="System.Int32" />
+        <Parameter Name="trailingLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="firstCharacterIndex">ヒットした最初の文字のインデックス。</param>
+        <param name="trailingLength">場合は、先頭の端では、この値は 0 です。 末端の場合は、この値は、次の有効なキャレット位置までコード ポイントの数がします。</param>
+        <summary><see cref="T:System.Windows.Media.TextFormatting.CharacterHit" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterHit.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" /> オブジェクトと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが、現在の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" /> オブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <paramref name="obj" /> が現在の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" /> オブジェクトに等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 場合<paramref name="obj" />されませんが、<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" />オブジェクト、<see langword="false" />が返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Media.TextFormatting.CharacterHit obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Windows.Media.TextFormatting.CharacterHit obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterHit.Equals(System.Windows.Media.TextFormatting.CharacterHit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Windows.Media.TextFormatting.CharacterHit" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" />現在と比較する<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" />オブジェクト。</param>
+        <summary>決定するかどうか、<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" />が現在に等しい<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" />オブジェクト。</summary>
+        <returns>
+          <paramref name="obj" /> が現在の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" /> オブジェクトに等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstCharacterIndex">
+      <MemberSignature Language="C#" Value="public int FirstCharacterIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FirstCharacterIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.CharacterHit.FirstCharacterIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒットした最初の文字のインデックスを取得します。</summary>
+        <value><see cref="T:System.Int32" />のインデックスを表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterHit.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" />します。 ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適しています。</summary>
+        <returns><see cref="T:System.Int32" />を現在のオブジェクトのハッシュ コードを表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Media.TextFormatting.CharacterHit left, System.Windows.Media.TextFormatting.CharacterHit right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Media.TextFormatting.CharacterHit left, valuetype System.Windows.Media.TextFormatting.CharacterHit right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterHit.op_Equality(System.Windows.Media.TextFormatting.CharacterHit,System.Windows.Media.TextFormatting.CharacterHit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Media.TextFormatting.CharacterHit" />
+        <Parameter Name="right" Type="System.Windows.Media.TextFormatting.CharacterHit" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" /> の第 1 インスタンス。</param>
+        <param name="right">比較対象の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" /> の第 2 インスタンス。</param>
+        <summary>2 つの比較<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" />文字列の等価性。</summary>
+        <returns>
+          <see langword="true" />ときに、値の<see cref="P:System.Windows.Media.TextFormatting.CharacterHit.FirstCharacterIndex" />と<see cref="P:System.Windows.Media.TextFormatting.CharacterHit.TrailingLength" />プロパティが等しい 2 つのオブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Media.TextFormatting.CharacterHit left, System.Windows.Media.TextFormatting.CharacterHit right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Media.TextFormatting.CharacterHit left, valuetype System.Windows.Media.TextFormatting.CharacterHit right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.CharacterHit.op_Inequality(System.Windows.Media.TextFormatting.CharacterHit,System.Windows.Media.TextFormatting.CharacterHit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Media.TextFormatting.CharacterHit" />
+        <Parameter Name="right" Type="System.Windows.Media.TextFormatting.CharacterHit" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較対象の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" /> の第 1 インスタンス。</param>
+        <param name="right">比較対象の <see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" /> の第 2 インスタンス。</param>
+        <summary>2 つの比較<see cref="T:System.Windows.Media.TextFormatting.CharacterBufferReference" />非等値の文字列。</summary>
+        <returns>
+          <see langword="false" />ときに、値の<see cref="P:System.Windows.Media.TextFormatting.CharacterHit.FirstCharacterIndex" />と<see cref="P:System.Windows.Media.TextFormatting.CharacterHit.TrailingLength" />プロパティが等しい 2 つのオブジェクト。 それ以外の場合、<see langword="true" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrailingLength">
+      <MemberSignature Language="C#" Value="public int TrailingLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TrailingLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.CharacterHit.TrailingLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒットした文字の後続の長さの値を取得します。</summary>
+        <value><see cref="T:System.Int32" />後の長さを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、先頭の端では、この値は 0 です。 末端の場合は、この値は、次の有効なキャレット位置までコード ポイントの数がします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,47 @@
+<Type Name="ObjectDataSourceDisposingEventHandler" FullName="System.Web.UI.WebControls.ObjectDataSourceDisposingEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ObjectDataSourceDisposingEventHandler(object sender, ObjectDataSourceDisposingEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ObjectDataSourceDisposingEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ObjectDataSourceDisposingEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />です。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.ObjectDataSourceView.ObjectDisposing" />のイベント、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.GridView>情報を表示するコントロール。 2 番目のコード例では、最初のコード例を使用する中間層ビジネス オブジェクトの例を提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.GridView>情報を表示するコントロール。 Web ページで実行される各データ操作を作成する (時間またはリソース) 観点から非常に不経済されるビジネス オブジェクトを操作する場合があります。 負荷の高いオブジェクトを使用する方法の 1 つは、1 回、そのインスタンスを作成して、それを作成および操作するたびにデータを破棄する代わりに後続の操作をキャッシュすることです。 この例では、このパターンを示します。 処理することができます、<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreating>オブジェクトは、最初にキャッシュを確認し、いずれかが既にキャッシュされていない場合にのみ、インスタンスを作成するイベントです。 次に、処理、<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing>イベントを破棄するのではなく、将来使用するためのビジネス オブジェクトをキャッシュします。 この例では、<xref:System.ComponentModel.CancelEventArgs.Cancel?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs>クラスに設定されている`true`、送信するため、<xref:System.Web.UI.WebControls.ObjectDataSource>を呼び出していない<xref:System.IDisposable.Dispose%2A>インスタンスでします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_16#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_16/CS/objds16cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_16#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_16/VB/objds16vb.aspx#1)]  
+  
+ 次のコード例では、前のコード例を使用する中間層ビジネス オブジェクトの例を提供します。 コード例は、基本的なビジネス オブジェクトによって定義された、`EmployeeLogic`クラスは、状態を維持し、ビジネス ロジックをカプセル化するクラスです。 、実際の完全な例については、このコードをライブラリとしてコンパイルし、ASP ページからこれらのクラスを使用してください。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ObjectDataSource_16#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_16/CS/northwindemployee16.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.ObjectDataSource_16#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_16/VB/northwindemployee16.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

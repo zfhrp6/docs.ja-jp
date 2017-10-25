@@ -1,0 +1,108 @@
+<Type Name="ButtonDesigner" FullName="System.Web.UI.Design.WebControls.ButtonDesigner">
+  <TypeSignature Language="C#" Value="public class ButtonDesigner : System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ButtonDesigner extends System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.ButtonDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.Design.SupportsPreviewControl(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ビジュアル デザイナーでデザイン時サポートを提供するために使用、 <see cref="T:System.Web.UI.WebControls.Button" /> Web サーバー コントロールです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル デザイナーでソースからデザイン ビューに切り替えたときに、マークアップのソース コードを説明する、<xref:System.Web.UI.WebControls.Button>コントロールは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ソース ビューに切り替えるには、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。  
+  
+   
+  
+## Examples  
+ このセクションでは、2 つのコード例を示します。 最初に拡張する方法を説明、<xref:System.Web.UI.Design.WebControls.ButtonDesigner>クラスです。 2 番目を拡張する方法を示しています、<xref:System.Web.UI.WebControls.Button>クラスし、最初のコード例で作成されるクラスに関連付けます。  
+  
+ 次のコード例を拡張するカスタム デザイナー クラスを作成する方法を示しています、<xref:System.Web.UI.Design.WebControls.ButtonDesigner>クラスおよびオーバーライド、<xref:System.Web.UI.Design.WebControls.ButtonDesigner.GetDesignTimeHtml%2A>メソッドです。 場合、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>プロパティが設定されていない (つまりが、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>フィールドの値) への呼び出し、<xref:System.Web.UI.Design.WebControls.ButtonDesigner.GetDesignTimeHtml%2A>メソッドが 3 つのピクセル単位の幅で青色の点線の枠線を設定し、デザイン サーフェイスに境界線を表示します。 場合、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>プロパティが設定されている場合、既存の罫線プロパティの値が表示されます。  
+  
+ 通常、<xref:System.Web.UI.Design.WebControls.ButtonDesigner.GetDesignTimeHtml%2A>その基本メソッドを呼び出す<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A?displayProperty=nameWithType>に呼び出す、<xref:System.Web.UI.Control.RenderControl%2A?displayProperty=nameWithType>マークアップを生成する関連付けられたコントロールのメソッドです。  
+  
+ [!code-vb[System.Web.UI.Design.WebControls_ButtonDesignerSamples#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls_ButtonDesignerSamples/VB/custombutton.vb#1)]  
+  
+ 次のコード例を拡張するシンプルなクラスを使用する方法を示しています、<xref:System.Web.UI.WebControls.Button>クラスし、関連付けられている、`SampleButtonDesigner`を介して前の例で作成された、クラス、<xref:System.ComponentModel.DesignerAttribute>オブジェクト。  
+  
+ [!code-vb[System.Web.UI.Design.WebControls_ButtonDesignerSamples#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls_ButtonDesignerSamples/VB/custombutton.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ButtonDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ButtonDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.ButtonDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.ButtonDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.WebControls.Button>コントロールまたはそのコントロールをデザイン サーフェイス上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ButtonDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に関連付けられたコントロールを描画するために使用するマークアップを取得します。</summary>
+        <returns>デザイン時に <see cref="T:System.Web.UI.WebControls.Button" /> を表示するために使用するマークアップを格納している <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ButtonDesigner.GetDesignTimeHtml%2A>メソッド置換、<xref:System.Web.UI.WebControls.Button.Text%2A>を持つプロパティ、<xref:System.Web.UI.Control.ID%2A>のプロパティ、<xref:System.Web.UI.WebControls.Button>場合は、制御、<xref:System.Web.UI.WebControls.Button.Text%2A>表示可能な文字が含まれていません。 次に、<xref:System.Web.UI.Design.WebControls.ButtonDesigner.GetDesignTimeHtml%2A>メソッドは、その基本メソッドを呼び出す<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A?displayProperty=nameWithType>を呼び出すが、<xref:System.Web.UI.Control.RenderControl%2A?displayProperty=nameWithType>マークアップを生成するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.Design.WebControls.ButtonDesigner.GetDesignTimeHtml%2A>メソッドで生成されたマークアップを変更します。  
+  
+ 場合、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>プロパティが設定されていない (つまりが、<xref:System.Web.UI.WebControls.BorderStyle.NotSet>フィールドの値) への呼び出し、<xref:System.Web.UI.Design.WebControls.ButtonDesigner.GetDesignTimeHtml%2A>メソッドが 3 つのピクセル単位の幅で青色の点線の枠線を設定し、デザイン サーフェイスに境界線を表示します。 場合、<xref:System.Web.UI.WebControls.WebControl.BorderStyle%2A>プロパティが設定されている場合、既存の罫線プロパティの値が表示されます。  
+  
+ 通常、<xref:System.Web.UI.Design.WebControls.ButtonDesigner.GetDesignTimeHtml%2A>その基本メソッドを呼び出す<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A?displayProperty=nameWithType>に呼び出す、<xref:System.Web.UI.Control.RenderControl%2A?displayProperty=nameWithType>マークアップを生成する関連付けられたコントロールのメソッドです。  
+  
+ [!code-vb[System.Web.UI.Design.WebControls_ButtonDesignerSamples#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls_ButtonDesignerSamples/VB/custombutton.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.Design.WebControls.ButtonDesigner.GetDesignTimeHtml" />メソッド、通常、選択したプロパティの値を変更し、マークアップを生成する基本メソッドを呼び出して、元の値にプロパティを復元します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

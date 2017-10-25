@@ -1,0 +1,130 @@
+<Type Name="EventLogQuery" FullName="System.Diagnostics.Eventing.Reader.EventLogQuery">
+  <TypeSignature Language="C#" Value="public class EventLogQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventLogQuery extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Eventing.Reader.EventLogQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント、イベント ログと、クエリの実行方法を定義する設定で、クエリを実行するどのコンピューター上でのクエリを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ たとえば、このクラスを使用してコードを参照してください[する方法: イベントのクエリの](http://msdn.microsoft.com/en-us/5231a436-4cf2-4539-90d2-a04813aba069)または[How To: アクセスおよびイベント情報の読み取り](http://msdn.microsoft.com/en-us/14db3375-d305-49ae-aa24-aedbe906e76c)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogQuery (string path, System.Diagnostics.Eventing.Reader.PathType pathType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.Diagnostics.Eventing.Reader.PathType pathType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogQuery.#ctor(System.String,System.Diagnostics.Eventing.Reader.PathType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="pathType" Type="System.Diagnostics.Eventing.Reader.PathType" />
+      </Parameters>
+      <Docs>
+        <param name="path">照会する、またはクエリをイベント ログ ファイルへのパスの名前。</param>
+        <param name="pathType">パスのパラメーターで使用する文字列でイベント ログの名前またはイベント ログ ファイルのパスを指定するかどうかを指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogQuery" />クラスをクエリのターゲットを指定します。 ターゲットには、アクティブなイベント ログまたはログ ファイルを指定できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogQuery (string path, System.Diagnostics.Eventing.Reader.PathType pathType, string query);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.Diagnostics.Eventing.Reader.PathType pathType, string query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Eventing.Reader.EventLogQuery.#ctor(System.String,System.Diagnostics.Eventing.Reader.PathType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="pathType" Type="System.Diagnostics.Eventing.Reader.PathType" />
+        <Parameter Name="query" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">照会する、またはクエリをイベント ログ ファイルへのパスの名前。</param>
+        <param name="pathType">パスのパラメーターで使用する文字列でイベント ログの名前またはイベント ログ ファイルのパスを指定するかどうかを指定します。</param>
+        <param name="query">クエリ条件に一致するイベントを取得するために使用するイベントのクエリ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogQuery" />クエリとイベントのクエリの対象を指定することによってクラスです。 ターゲットには、アクティブなイベント ログまたはログ ファイルを指定できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReverseDirection">
+      <MemberSignature Language="C#" Value="public bool ReverseDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReverseDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogQuery.ReverseDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定すると、最も古いイベント ログにイベント ログの最新のイベントからイベントを読み取るかどうかを決定するブール値。</summary>
+        <value>返します<see langword="true" />イベントが読み取られる場合、ログの最新のイベントから最も古いイベント、および返します<see langword="false" />最新のイベントから最も古いイベント ログにイベントが読み取られる場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Session">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.Eventing.Reader.EventLogSession Session { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.Eventing.Reader.EventLogSession Session" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogQuery.Session" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.Reader.EventLogSession</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはローカル コンピューターまたはリモート コンピューターのイベント ログ サービスにアクセスするセッションを設定します。 このオブジェクトを作成することで、リモートのイベント ログにアクセスに設定することができます、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogReader" />オブジェクトまたは<see cref="T:System.Diagnostics.Eventing.Reader.EventLogWatcher" />オブジェクトをこの<see cref="T:System.Diagnostics.Eventing.Reader.EventLogQuery" />オブジェクト。</summary>
+        <value>返します、<see cref="T:System.Diagnostics.Eventing.Reader.EventLogSession" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TolerateQueryErrors">
+      <MemberSignature Language="C#" Value="public bool TolerateQueryErrors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TolerateQueryErrors" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventLogQuery.TolerateQueryErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリにエラーがあるときにイベントを取得する次のクエリは引き続きかどうかを決定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />クエリがいくつかのログでは、クエリが失敗した場合でも、イベントを取得し続けることを示すと<see langword="false" />にこのクエリがない引き続きクエリが失敗したときにイベントを取得することを示します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

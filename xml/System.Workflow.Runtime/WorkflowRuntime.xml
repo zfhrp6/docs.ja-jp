@@ -1,0 +1,1520 @@
+<Type Name="WorkflowRuntime" FullName="System.Workflow.Runtime.WorkflowRuntime">
+  <TypeSignature Language="C#" Value="public class WorkflowRuntime : IDisposable, IServiceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi WorkflowRuntime extends System.Object implements class System.IDisposable, class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.WorkflowRuntime" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー ランタイム エンジンがワークフローに提供する構成可能な実行環境を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime> は、ホスト アプリケーションとサービスがワークフロー ランタイム エンジンを構成および制御するために必要とする機能、およびワークフロー ランタイム エンジンとそのワークフロー インスタンスの両方に対する変更の通知を受けるために必要とする機能を公開します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 ここでは、<xref:System.Workflow.Runtime.WorkflowRuntime.%23ctor%2A> コンストラクター、および <xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A>、<xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A>、<xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime%2A> メソッドの使用方法の例を示しています。 ワークフロー ホストで <xref:System.Workflow.Runtime.WorkflowInstance> メソッドを使用して <xref:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow%2A> オブジェクトを作成する場合の推奨方法も示しています。 また、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowCompleted>、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowIdled>、および <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated> イベントのエベント ハンドラーを設定する方法も示しています。  
+  
+ このコード例は、[のワークフローの取り消し](http://go.microsoft.com/fwlink/?LinkID=157346)サンプルです。  
+  
+ [!code-csharp[WF_Samples#258](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#258)]
+ [!code-vb[WF_Samples#258](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#258)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowRuntime ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowRuntime> は既定のプロパティ値を使用して初期化され、既定のコア サービスを含んでいます。 ワークフロー ランタイム エンジンを追加構成する場合、<xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A> および <xref:System.Workflow.Runtime.WorkflowRuntime.RemoveService%2A> を使用してサービスを追加および削除できます。また、<xref:System.Workflow.Runtime.WorkflowRuntime.Name%2A> を設定することができます。 <xref:System.Workflow.Runtime.WorkflowRuntime> を構成した後、<xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A> を呼び出してワークフロー ランタイム エンジンとそのサービスを開始します。  
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Workflow.Runtime.WorkflowRuntime.Name%2A>|"WorkflowRuntime"|  
+|<xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A>|`false`|  
+  
+ 既定のコア サービスは、<xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> および <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService> です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 ここでは、<xref:System.Workflow.Runtime.WorkflowRuntime.%23ctor%2A> コンストラクターを使用して <xref:System.Workflow.Runtime.WorkflowRuntime> のインスタンスを作成し、そのメソッドとイベントにアクセスする方法の例を示しています。  
+  
+ このコード例は、[のワークフローの取り消し](http://go.microsoft.com/fwlink/?LinkID=157346)サンプルです。  
+  
+ [!code-csharp[WF_Samples#258](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#258)]
+ [!code-vb[WF_Samples#258](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#258)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowRuntime (string configSectionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string configSectionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="configSectionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configSectionName">アプリケーション構成ファイル内の有効な <see langword="workflowSettings" /> セクションの名前。</param>
+        <summary>アプリケーション構成ファイル内の指定したセクションを使用して、<see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowRuntime> は、アプリケーション構成ファイル内の、`configSectionName` で指定したセクションでの設定に従って初期化されます。 `configSectionName`有効なに対応する必要があります`workflowSettings`構成ファイルのセクションです。  
+  
+ ワークフロー ランタイム エンジンがアプリケーション構成ファイルを使用して構成されている場合、読み込んでに示す種類のクラスをインスタンス化、`Services`構成ファイルのセクションです。 これらのクラスを作成するときに、ワークフロー ランタイム エンジンは次のシグネチャのクラス コンストラクターを次の順に検索します。  
+  
+1.  Service(WorkflowRuntime runtime, NameValueCollection parameters)  
+  
+2.  Service(WorkflowRuntime runtime)  
+  
+3.  Service(NameValueCollection parameters)  
+  
+4.  Service()  
+  
+ 構成ファイルから読み込まれるすべてのサービス クラスは、これらのコンストラクター シグネチャのうちの少なくとも 1 つを実装する必要があります。  
+  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeSection>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="configSectionName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException">有効な <see langword="workflowSettings" /> セクションがアプリケーション構成ファイル内に見つかりませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">このアプリケーション ドメインの <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> は既に存在します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowRuntime (System.Workflow.Runtime.Configuration.WorkflowRuntimeSection settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.Runtime.Configuration.WorkflowRuntimeSection settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.#ctor(System.Workflow.Runtime.Configuration.WorkflowRuntimeSection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="settings" Type="System.Workflow.Runtime.Configuration.WorkflowRuntimeSection" />
+      </Parameters>
+      <Docs>
+        <param name="settings"><see cref="T:System.Workflow.Runtime.Configuration.WorkflowRuntimeSection" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> での設定を使用して、<see cref="T:System.Workflow.Runtime.Configuration.WorkflowRuntimeSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、アプリケーション構成ファイルを使用しないホストに、単一メソッド呼び出しを使用したワークフロー ランタイム エンジン構成機構を提供します。 アプリケーション構成ファイルを使用しない理由はさまざまです。 構成ファイルの使用が許可されない環境でホストが実行されることもあります。たとえば、セキュリティ上の理由から、アプリケーション構成ファイルからの読み取りが許可されない信頼される環境でホストが実行される場合です。 また、ホストが独自の構成機構を使用することもあります。たとえば、ホストがワークフロー ランタイム エンジンの構成設定を SQL データベースに格納する場合です。  
+  
+ ワークフロー ランタイム エンジンは、<xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeSection.Services%2A?displayProperty=nameWithType> に格納された型のクラスを読み込んでインスタンス化します。 これらのクラスを作成するときに、ワークフロー ランタイム エンジンは次のシグネチャのクラス コンストラクターを次の順に検索します。  
+  
+1.  Service(WorkflowRuntime runtime, NameValueCollection parameters)  
+  
+2.  Service(WorkflowRuntime runtime)  
+  
+3.  Service(NameValueCollection parameters)  
+  
+4.  Service()  
+  
+ `settings` で指定されたすべてのサービス クラスは、これらのコンストラクター シグネチャのうちの少なくとも 1 つを実装する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="settings" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.InvalidOperationException">このアプリケーション ドメインの <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> は既に存在します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddService">
+      <MemberSignature Language="C#" Value="public void AddService (object service);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddService(object service) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.AddService(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="service" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="service">追加するサービスを表すオブジェクト。</param>
+        <summary>指定したサービスをワークフロー ランタイム エンジンに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コア サービスを追加することによってワークフロー ランタイム エンジンを構成できます。 コア サービスは、サービス基本クラスである <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> クラス、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> クラス、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> クラス、および <xref:System.Workflow.Runtime.Tracking.TrackingService> クラスのいずれかから派生したサービスです。  コア サービスは、ワークフロー ランタイム エンジンが実行されていない場合にのみ追加できます。つまり、<xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A>は`false`します。 <xref:System.Workflow.Runtime.WorkflowRuntime> は、他のワークフロー、またはホストで実行されるアプリケーションが使用できる他のサービスの格納コンテナーとしても使用できます。 <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスから派生した非コア サービスをワークフロー ランタイム エンジンの起動後に追加すると、<xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A> は、そのサービスによって実装された <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> メソッドを呼び出します。  
+  
+> [!NOTE]
+>  <xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A> には同じ <xref:System.Type> のサービスを複数、<xref:System.Workflow.Runtime.WorkflowRuntime> に追加できないという制限があります。 ただし、同じ基本クラスから派生したサービスであれば、複数追加できます。  <xref:System.Workflow.Runtime.WorkflowRuntime> のサービス基本クラスである <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> クラス、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> クラス、および <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> クラスのそれぞれから派生できるサービスは、1 つだけです。  これらのクラスのいずれかから派生した複数のサービス (たとえば 2 つの永続性サービス) を追加すると、<xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A> が <xref:System.InvalidOperationException> をスローします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 ここでは、<xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A> メソッドを使用して、<xref:System.Workflow.Activities.ExternalDataExchangeService> と <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> をワークフロー ランタイム エンジンに追加する方法の例を示しています。  
+  
+ このコード例は、[ワークフローを取り消す](http://go.microsoft.com/fwlink/?LinkId=157346)サンプルです。  
+  
+ [!code-csharp[WF_Samples#258](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#258)]
+ [!code-vb[WF_Samples#258](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#258)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="service" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> は破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="service" /> がワークフロー ランタイム エンジンに既に登録されています。  
+  
+ または  
+  
+ <paramref name="service" />コア サービスは、ワークフロー ランタイム エンジンが既に実行されている (<see cref="P:System.Workflow.Runtime.WorkflowRuntime.IsStarted" />は<see langword="true" />)。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CreateWorkflow">
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したパラメーターを使用して、ワークフロー インスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジンが起動していない場合は、<xref:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow%2A> メソッドによって <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A> が呼び出されます。 使用できる例外のリストについては、<xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A> を参照してください。 ワークフロー インスタンスを作成したら、<xref:System.Workflow.Runtime.WorkflowInstance.Start%2A?displayProperty=nameWithType> メソッドから返された <xref:System.Workflow.Runtime.WorkflowInstance> オブジェクトに対して <xref:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow%2A> を呼び出して実行を開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateWorkflow">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowInstance CreateWorkflow (Type workflowType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.WorkflowInstance CreateWorkflow(class System.Type workflowType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="workflowType">作成するワークフローの <see cref="T:System.Type" />。</param>
+        <summary>指定したワークフローの <see cref="T:System.Type" /> を使用して、新しいワークフロー インスタンスを作成します。</summary>
+        <returns>作成されたワークフロー インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowInstance> の作成前に、ワークフロー インスタンスの検証が実行されます。 検証エラーが発生した場合は、<xref:System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException> がスローされます。 これは単純なシナリオでは正しく動作しますが、サーバー環境では、ワークフローをアクティブにするたびにワークフローの再検証を実行すると、不要なオーバーヘッドが生じることがあります。  
+  
+ 検証を無効にする方法[!INCLUDE[crabout](~/includes/crabout-md.md)]、<xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeSection.ValidateOnCreate%2A> を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフロー ホストで <xref:System.Workflow.Runtime.WorkflowInstance> メソッドを使用して <xref:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow%2A> オブジェクトを作成するための推奨方法を示しています。  
+  
+ このコード例は、[のワークフローの取り消し](http://go.microsoft.com/fwlink/?LinkID=157346)サンプルです。  
+  
+ [!code-csharp[WF_Samples#260](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#260)]
+ [!code-vb[WF_Samples#260](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#260)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="workflowType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWorkflow">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowInstance CreateWorkflow (System.Xml.XmlReader workflowDefinitionReader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.WorkflowInstance CreateWorkflow(class System.Xml.XmlReader workflowDefinitionReader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowDefinitionReader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="workflowDefinitionReader">ワークフロー定義を格納している <see cref="T:System.Xml.XmlReader" />。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlReader" /> を使用して、ワークフロー インスタンスを作成します。</summary>
+        <returns>作成されたワークフロー インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlReader> によって参照される XAML ワークフロー定義ファイルからワークフロー インスタンスが作成されます。  
+  
+ <xref:System.Workflow.Runtime.WorkflowInstance> の作成前に、ワークフロー インスタンスの検証が実行されます。 検証エラーが発生した場合は、<xref:System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException> がスローされます。 これは単純なシナリオでは正しく動作しますが、サーバー環境では、ワークフローをアクティブにするたびにワークフローの再検証を実行すると、不要なオーバーヘッドが生じることがあります。  
+  
+ 検証を無効にする方法[!INCLUDE[crabout](~/includes/crabout-md.md)]、<xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeSection.ValidateOnCreate%2A> を参照してください。  
+  
+   
+  
+## Examples  
+ XAML ベースのワークフロー定義を指定してワークフローを作成する方法を次の例に示します。  
+  
+```  
+static void Main(string[] args)  
+{  
+    using (WorkflowRuntime workflowRuntime = new WorkflowRuntime())  
+    {  
+        AutoResetEvent waitHandle = new AutoResetEvent(false);  
+        workflowRuntime.WorkflowCompleted += delegate(object sender, WorkflowCompletedEventArgs e)  
+        {  
+            waitHandle.Set();  
+        };  
+        workflowRuntime.WorkflowTerminated += delegate(object sender, WorkflowTerminatedEventArgs e)  
+        {  
+            Console.WriteLine(e.Exception.Message);  
+            waitHandle.Set();  
+        };  
+  
+        TypeProvider typeProvider = new TypeProvider(null);  
+        // Add referenced assemblies, if needed  
+        // typeProvider.AddAssembly(...);  
+        workflowRuntime.AddService(typeProvider);  
+  
+        using (XmlReader reader = XmlReader.Create("Workflow1.xoml"))  
+        {  
+            WorkflowInstance instance = workflowRuntime.CreateWorkflow(reader);  
+            instance.Start();  
+        }  
+  
+        waitHandle.WaitOne();  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="workflowDefinitionReader" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> は破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWorkflow">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowInstance CreateWorkflow (Type workflowType, System.Collections.Generic.Dictionary&lt;string,object&gt; namedArgumentValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.WorkflowInstance CreateWorkflow(class System.Type workflowType, class System.Collections.Generic.Dictionary`2&lt;string, object&gt; namedArgumentValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow(System.Type,System.Collections.Generic.Dictionary{System.String,System.Object})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowType" Type="System.Type" />
+        <Parameter Name="namedArgumentValues" Type="System.Collections.Generic.Dictionary&lt;System.String,System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="workflowType">作成するワークフローの <see cref="T:System.Type" />。</param>
+        <param name="namedArgumentValues">ワークフローの引数を表す文字列で指定されたオブジェクトの <see cref="T:System.Collections.Generic.Dictionary`2" />。</param>
+        <summary>指定したワークフローの <see cref="T:System.Type" /> と、指定した <see cref="T:System.Collections.Generic.Dictionary`2" /> に格納されたワークフローの引数を使用して、ワークフロー インスタンスを作成します。</summary>
+        <returns>作成されたワークフロー インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowInstance> の作成前に、ワークフロー インスタンスの検証が実行されます。 検証エラーが発生した場合は、<xref:System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException> がスローされます。 これは単純なシナリオでは正しく動作しますが、サーバー環境では、ワークフローをアクティブにするたびにワークフローの再検証を実行すると、不要なオーバーヘッドが生じることがあります。  
+  
+ 検証を無効にする方法[!INCLUDE[crabout](~/includes/crabout-md.md)]、<xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeSection.ValidateOnCreate%2A> を参照してください。  
+  
+ パラメーターに渡すことの例については`CreateWorkflow`を参照してください[パラメーターのサンプルを含むワークフロー](http://go.microsoft.com/fwlink/?LinkId=157403)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="workflowType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWorkflow">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowInstance CreateWorkflow (Type workflowType, System.Collections.Generic.Dictionary&lt;string,object&gt; namedArgumentValues, Guid instanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.WorkflowInstance CreateWorkflow(class System.Type workflowType, class System.Collections.Generic.Dictionary`2&lt;string, object&gt; namedArgumentValues, valuetype System.Guid instanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow(System.Type,System.Collections.Generic.Dictionary{System.String,System.Object},System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowType" Type="System.Type" />
+        <Parameter Name="namedArgumentValues" Type="System.Collections.Generic.Dictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="instanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="workflowType">作成するワークフローの <see cref="T:System.Type" />。</param>
+        <param name="namedArgumentValues">ワークフローの引数を表す文字列で指定されたオブジェクトの <see cref="T:System.Collections.Generic.Dictionary`2" />。</param>
+        <param name="instanceId">作成する特定の <see cref="T:System.Guid" /> の <see cref="T:System.Workflow.Runtime.WorkflowInstance" />。</param>
+        <summary>指定したパラメーターを使用して、ワークフロー インスタンスを作成します。</summary>
+        <returns>作成されたワークフロー インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowInstance> の作成前に、ワークフロー インスタンスの検証が実行されます。 検証エラーが発生した場合は、<xref:System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException> がスローされます。 これは単純なシナリオでは正しく動作しますが、サーバー環境では、ワークフローをアクティブにするたびにワークフローの再検証を実行すると、不要なオーバーヘッドが生じることがあります。  
+  
+ 検証を無効にする方法[!INCLUDE[crabout](~/includes/crabout-md.md)]、<xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeSection.ValidateOnCreate%2A> を参照してください。  
+  
+ `instanceId` によって読み込まれた実行中のワークフローの <xref:System.Workflow.Runtime.WorkflowRuntime> は、一意でなければなりません。 `instanceId` を渡してワークフローを作成し、実行中のワークフローでその `instanceId` が既に使用されている場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ パラメーターに渡すことの例については`CreateWorkflow`を参照してください[パラメーターのサンプルを含むワークフロー](http://go.microsoft.com/fwlink/?LinkID=157403)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="workflowType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWorkflow">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowInstance CreateWorkflow (System.Xml.XmlReader workflowDefinitionReader, System.Xml.XmlReader rulesReader, System.Collections.Generic.Dictionary&lt;string,object&gt; namedArgumentValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.WorkflowInstance CreateWorkflow(class System.Xml.XmlReader workflowDefinitionReader, class System.Xml.XmlReader rulesReader, class System.Collections.Generic.Dictionary`2&lt;string, object&gt; namedArgumentValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow(System.Xml.XmlReader,System.Xml.XmlReader,System.Collections.Generic.Dictionary{System.String,System.Object})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowDefinitionReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="rulesReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="namedArgumentValues" Type="System.Collections.Generic.Dictionary&lt;System.String,System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="workflowDefinitionReader">ワークフロー定義を格納している <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="rulesReader"><see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="namedArgumentValues">ワークフローの引数を表す文字列で指定されたオブジェクトの <see cref="T:System.Collections.Generic.Dictionary`2" />。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlReader" /> オブジェクトと、指定した <see cref="T:System.Collections.Generic.Dictionary`2" /> に格納された引数を使用して、ワークフロー インスタンスを作成します。</summary>
+        <returns>作成されたワークフロー インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlReader> によって参照されるワークフロー定義と、`namedArgumentValues` によって提供される引数から、ワークフロー インスタンスが作成されます。  
+  
+ <xref:System.Workflow.Runtime.WorkflowInstance> の作成前に、ワークフロー インスタンスの検証が実行されます。 検証エラーが発生した場合は、<xref:System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException> がスローされます。 これは単純なシナリオでは正しく動作しますが、サーバー環境では、ワークフローをアクティブにするたびにワークフローの再検証を実行すると、不要なオーバーヘッドが生じることがあります。  
+  
+ 検証を無効にする方法[!INCLUDE[crabout](~/includes/crabout-md.md)]、<xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeSection.ValidateOnCreate%2A> を参照してください。  
+  
+ パラメーターに渡すことの例については`CreateWorkflow`を参照してください[パラメーターのサンプルを含むワークフロー](http://go.microsoft.com/fwlink/?LinkID=157403)です。  
+  
+ XML で定義されている規則を使用しての例は、次を参照してください。 [Rules サンプル付き IfElse](http://go.microsoft.com/fwlink/?LinkId=157404)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="workflowDefinitionReader" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> は破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWorkflow">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowInstance CreateWorkflow (System.Xml.XmlReader workflowDefinitionReader, System.Xml.XmlReader rulesReader, System.Collections.Generic.Dictionary&lt;string,object&gt; namedArgumentValues, Guid instanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.WorkflowInstance CreateWorkflow(class System.Xml.XmlReader workflowDefinitionReader, class System.Xml.XmlReader rulesReader, class System.Collections.Generic.Dictionary`2&lt;string, object&gt; namedArgumentValues, valuetype System.Guid instanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow(System.Xml.XmlReader,System.Xml.XmlReader,System.Collections.Generic.Dictionary{System.String,System.Object},System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowDefinitionReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="rulesReader" Type="System.Xml.XmlReader" />
+        <Parameter Name="namedArgumentValues" Type="System.Collections.Generic.Dictionary&lt;System.String,System.Object&gt;" />
+        <Parameter Name="instanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="workflowDefinitionReader">ワークフロー定義を格納している <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="rulesReader"><see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="namedArgumentValues">ワークフローの引数を表す文字列で指定されたオブジェクトの <see cref="T:System.Collections.Generic.Dictionary`2" />。</param>
+        <param name="instanceId">作成する特定の <see cref="T:System.Guid" /> の <see cref="T:System.Workflow.Runtime.WorkflowInstance" />。</param>
+        <summary>指定したパラメーターを使用して、ワークフロー インスタンスを作成します。</summary>
+        <returns>作成されたワークフロー インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowInstance> の作成前に、ワークフロー インスタンスの検証が実行されます。 検証エラーが発生した場合は、<xref:System.Workflow.ComponentModel.Compiler.WorkflowValidationFailedException> がスローされます。 これは単純なシナリオでは正しく動作しますが、サーバー環境では、ワークフローをアクティブにするたびにワークフローの再検証を実行すると、不要なオーバーヘッドが生じることがあります。  
+  
+ 検証を無効にする方法[!INCLUDE[crabout](~/includes/crabout-md.md)]、<xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeSection.ValidateOnCreate%2A> を参照してください。  
+  
+ `instanceId` によって読み込まれた実行中のワークフローの <xref:System.Workflow.Runtime.WorkflowRuntime> は、一意でなければなりません。 `instanceId` を渡してワークフローを作成し、実行中のワークフローでその `instanceId` が既に使用されている場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ パラメーターに渡すことの例については`CreateWorkflow`を参照してください[パラメーターのサンプルを含むワークフロー](http://go.microsoft.com/fwlink/?LinkID=157403)です。  
+  
+ XML で定義されている規則を使用しての例は、次を参照してください。 [Rules サンプル付き IfElse](http://go.microsoft.com/fwlink/?LinkID=157404)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="workflowType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> で使用したリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowRuntime> を正常にシャットダウンするには、<xref:System.Workflow.Runtime.WorkflowRuntime.Dispose%2A> を呼び出した後、<xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime%2A> のみを呼び出す必要があります。 <xref:System.Workflow.Runtime.WorkflowRuntime.Dispose%2A> メソッドのみを呼び出すことで、<xref:System.Workflow.Runtime.WorkflowRuntime> を使用できない状態にします。 <xref:System.Workflow.Runtime.WorkflowRuntime.Dispose%2A> により、開いているファイル ハンドルやデータベース接続などが閉じて、ランタイムが使用するリソースが解放されます。ただし、ワークフロー インスタンスのアンロード、サービスの停止、または <xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime%2A> が実行するその他の処理は行われません。  
+  
+ したがって、<xref:System.Workflow.Runtime.WorkflowRuntime.Dispose%2A> を呼び出すのは、リソースがガベージ コレクターによって自動的に解放される前に、ホスト アプリケーションが <xref:System.Workflow.Runtime.WorkflowRuntime> が使用するリソースを解放する必要がある場合だけにしてください。 に関する一般的な情報<xref:System.Workflow.Runtime.WorkflowRuntime.Dispose%2A>を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.Dispose%2A> オブジェクトで <xref:System.Workflow.Runtime.WorkflowRuntime> を呼び出す方法を次の例に示します。 この例では、アプリケーションのメイン フォームのための FormClosing イベント ハンドラーから <xref:System.Workflow.Runtime.WorkflowRuntime.Dispose%2A> メソッドが呼び出されます。こうすることにより、アプリケーションがシャットダウンされるときに、ランタイムによって作成されたオブジェクトが適切にクリーンアップされるようになります。 このサンプルは、[音声アプリケーション サンプル](http://go.microsoft.com/fwlink/?LinkId=157405)です。  
+  
+ [!code-csharp[WF_Samples#108](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#108)]
+ [!code-vb[WF_Samples#108](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#108)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllServices">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;object&gt; GetAllServices (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;object&gt; GetAllServices(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.GetAllServices(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">返されるサービスが実装している必要がある <see cref="T:System.Type" />。</param>
+        <summary>ワークフロー ランタイム エンジンに追加されたサービスのうち、指定した <see cref="T:System.Type" /> を実装したサービスまたはそれから派生したサービスをすべて取得します。</summary>
+        <returns>指定した <see cref="T:System.Type" /> を実装したサービスまたはそれから派生したサービス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> は、指定した <xref:System.Type> を実装したサービスまたはそれから派生したサービスはワークフロー ランタイム エンジンに追加されていないことを示します。  
+  
+   
+  
+## Examples  
+ 指定した型のすべてのサービスを <xref:System.Workflow.Runtime.WorkflowRuntime> オブジェクトから取得する方法を次の例に示します。  
+  
+ [!code-csharp[WF_Samples#19](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#19)]
+ [!code-vb[WF_Samples#19](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> は破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllServices&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;T&gt; GetAllServices&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;!!T&gt; GetAllServices&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.GetAllServices``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">サービスの型。</typeparam>
+        <summary>ワークフロー ランタイム エンジンに追加されたサービスのうち、指定したジェネリック型を実装したサービスまたはそれから派生したサービスをすべて取得します。</summary>
+        <returns>指定したジェネリック型を実装したサービスまたはそれから派生したサービス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> は、指定したジェネリック型を実装したサービスまたはそれから派生したサービスはワークフロー ランタイム エンジンに追加されていないことを示します。  
+  
+   
+  
+## Examples  
+ 指定した型のすべてのサービスを <xref:System.Workflow.Runtime.WorkflowRuntime> オブジェクトから取得する方法を次の例に示します。  
+  
+ [!code-csharp[WF_Samples#6](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#6)]
+ [!code-vb[WF_Samples#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> は破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLoadedWorkflows">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.Runtime.WorkflowInstance&gt; GetLoadedWorkflows ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.Runtime.WorkflowInstance&gt; GetLoadedWorkflows() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.GetLoadedWorkflows" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.Runtime.WorkflowInstance&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メモリに現在読み込まれているすべてのワークフロー インスタンスを格納しているコレクションを取得します。</summary>
+        <returns>メモリに現在読み込まれている各ワークフロー インスタンスの <see cref="T:System.Workflow.Runtime.WorkflowInstance" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.GetWorkflow%2A> とは異なり、このメソッドは、ランタイムが起動されていない場合は <xref:System.InvalidOperationException> をスローしません。  
+  
+   
+  
+## Examples  
+ 読み込まれているワークフローのコレクションを <xref:System.Workflow.Runtime.WorkflowRuntime> オブジェクトから取得する方法を次の例に示します。  
+  
+ [!code-csharp[WF_Samples#18](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#18)]
+ [!code-vb[WF_Samples#18](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> は破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得するサービスの <see cref="T:System.Type" />。</param>
+        <summary>指定した <see cref="T:System.Type" /> のサービスをワークフロー ランタイム エンジンから取得します。</summary>
+        <returns>指定した <see cref="T:System.Type" /> のサービス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した <xref:System.Workflow.Runtime.WorkflowRuntime.GetService%2A> のサービスが複数存在する場合、<xref:System.InvalidOperationException> は <xref:System.Type> をスローします。 したがって、指定した型のサービスが <xref:System.Workflow.Runtime.WorkflowRuntime.GetAllServices%2A> に複数存在する可能性がある場合は、<xref:System.Workflow.Runtime.WorkflowRuntime> のオーバーロードされたメソッドの 1 つを使用する必要があります。 たとえば、ワークフロー ランタイム エンジンに複数の追跡サービスが設定されている場合、 <xref:System.Workflow.Runtime.Tracking.TrackingService> 基本クラスを指定して追跡サービスを要求すると、例外がスローされる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> が既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="serviceType" /> 型のサービスが複数見つかりました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetService&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetService&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.GetService``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">サービスの型。</typeparam>
+        <summary>指定したジェネリック型のサービスをワークフロー ランタイム エンジンから取得します。</summary>
+        <returns>指定したジェネリック型の単一のサービス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したジェネリック型のサービスが複数存在する場合、<xref:System.Workflow.Runtime.WorkflowRuntime.GetService%2A> は <xref:System.InvalidOperationException> をスローします。 したがって、ジェネリック型のサービスが <xref:System.Workflow.Runtime.WorkflowRuntime.GetAllServices%2A> に複数存在する可能性がある場合は、<xref:System.Workflow.Runtime.WorkflowRuntime> のオーバーロードされたメソッドの 1 つを使用する必要があります。 たとえば、ワークフロー ランタイム エンジンに複数の追跡サービスが設定されている場合、 <xref:System.Workflow.Runtime.Tracking.TrackingService> 基本クラスを指定して追跡サービスを要求すると、例外がスローされる可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Workflow.Runtime.WorkflowRuntime> オブジェクトから単一サービス (この場合は <xref:System.Workflow.Runtime.Hosting.ManualWorkflowSchedulerService> 型のサービス) を取得する方法を示しています。 この例は、[ワークフロー スレッド処理サンプル](http://go.microsoft.com/fwlink/?LinkId=157350)です。  
+  
+ [!code-csharp[WF_Samples#28](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#28)]
+ [!code-vb[WF_Samples#28](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> は既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">ジェネリック型のサービスが複数見つかりました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWorkflow">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowInstance GetWorkflow (Guid instanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.WorkflowInstance GetWorkflow(valuetype System.Guid instanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.GetWorkflow(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">ワークフロー インスタンスの <see cref="T:System.Guid" />。</param>
+        <summary>指定した <see cref="T:System.Guid" /> を持つワークフロー インスタンスを取得します。</summary>
+        <returns>指定した <see cref="T:System.Workflow.Runtime.WorkflowInstance" /> を持つ <see cref="T:System.Guid" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `instanceId` によって指定されたワークフロー インスタンスが現在メモリ内にない場合、そのワークフロー インスタンスがメモリに読み込まれて実行がスケジュールされます。 たとえば、ワークフロー インスタンスが中止された後、<xref:System.Workflow.Runtime.WorkflowRuntime.GetWorkflow%2A> を呼び出してワークフロー インスタンスをメモリに再度読み込むことができます。 この場合、永続性サービスによって、ワークフロー インスタンスの最後の永続化状態がメモリに読み込まれます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、`ReloadWorkflow` メソッドを呼び出す <xref:System.Workflow.Runtime.WorkflowRuntime.GetWorkflow%2A> メソッドを示しています。 `ReloadWorkflow` メソッドは、`Runtime` クラスのすべてのメソッド、プロパティ、イベントにアクセスするための <xref:System.Workflow.Runtime.WorkflowRuntime> プロパティを持つ大きいクラスの一部です。  
+  
+ このコード例は、[カスタム永続性サービスのサンプル](http://go.microsoft.com/fwlink/?LinkId=157351)サンプルです。  
+  
+> [!NOTE]
+>  この例では、<xref:System.Workflow.Runtime.WorkflowInstance.Load%2A> および <xref:System.Workflow.Runtime.WorkflowRuntime.GetWorkflow%2A> メソッドが共に、同じヘルパー メソッドを使用してワークフロー インスタンスをメモリに読み込むため、<xref:System.Workflow.Runtime.WorkflowInstance.Load%2A> の呼び出しは冗長となります。  
+  
+ [!code-csharp[WF_Samples#265](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#265)]
+ [!code-vb[WF_Samples#265](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#265)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイムが起動していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStarted">
+      <MemberSignature Language="C#" Value="public bool IsStarted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStarted" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.WorkflowRuntime.IsStarted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー ランタイム エンジンが起動されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ワークフロー ランタイム エンジンが開始された場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A> は、ワークフロー ランタイム エンジンのサービスが実行中であることを示します。 <xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A>`false`ホスト呼び出すまで<xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A>です。 ホストが `true` を呼び出すまで <xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime%2A> のままです。  
+  
+> [!NOTE]
+>  実行中のワークフロー ランタイム エンジンにコア サービスを追加することはできません。 コア サービスは、<xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> クラス、<xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> クラス、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> クラス、および <xref:System.Workflow.Runtime.Tracking.TrackingService> クラスから派生したサービスです。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A> オブジェクトの <xref:System.Workflow.Runtime.WorkflowRuntime> プロパティへのアクセス方法を示しています。 この例では、ランタイムが起動されている場合はコンソールにメッセージが出力されます。  
+  
+ [!code-csharp[WF_Samples#21](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#21)]
+ [!code-vb[WF_Samples#21](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.WorkflowRuntime.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> に関連付けられた名前を取得または設定します。</summary>
+        <value>この <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> に関連付けられている名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することはできません<xref:System.Workflow.Runtime.WorkflowRuntime.Name%2A>中、ワークフロー ランタイム エンジンが実行されている (<xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A>は`true`)。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Workflow.Runtime.WorkflowRuntime.Name%2A> オブジェクトの <xref:System.Workflow.Runtime.WorkflowRuntime> プロパティへのアクセス方法を示しています。 この例では、ランタイムの名前が "Main Runtime" に設定されます。  
+  
+ [!code-csharp[WF_Samples#20](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#20)]
+ [!code-vb[WF_Samples#20](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">破棄されている <see cref="P:System.Workflow.Runtime.WorkflowRuntime.Name" /> に <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> を設定しようとしました。</exception>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンの実行中に <see cref="P:System.Workflow.Runtime.WorkflowRuntime.Name" /> を設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveService">
+      <MemberSignature Language="C#" Value="public void RemoveService (object service);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveService(object service) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.RemoveService(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="service" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="service">削除するサービスを表すオブジェクト。</param>
+        <summary>指定したサービスをワークフロー ランタイム エンジンから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジンが実行されているコア サービスを削除することはできません (<xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A>は`true`)。 コア サービスは、<xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService>クラス、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService>クラス、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService>クラス、または <xref:System.Workflow.Runtime.Tracking.TrackingService> クラスから派生したサービスです。  `service` が <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスから派生している場合、<xref:System.Workflow.Runtime.WorkflowRuntime.RemoveService%2A> は <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> によって実装された `service` メソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> に <xref:System.Workflow.Runtime.WorkflowRuntime> が追加され、それが削除されます。  
+  
+ [!code-csharp[WF_Samples#16](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#16)]
+ [!code-vb[WF_Samples#16](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="service" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> が既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが起動 (<see cref="P:System.Workflow.Runtime.WorkflowRuntime.IsStarted" />は<see langword="true" />) および<paramref name="service" />コア サービスです。  
+  
+ \- または  
+  
+ <paramref name="service" /> がワークフロー ランタイム エンジンに登録されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ServicesExceptionNotHandled">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.ServicesExceptionNotHandledEventArgs&gt; ServicesExceptionNotHandled;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.ServicesExceptionNotHandledEventArgs&gt; ServicesExceptionNotHandled" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.ServicesExceptionNotHandled" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.ServicesExceptionNotHandledEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Hosting.WorkflowRuntimeService" /> クラスから派生したサービスが <see cref="M:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.RaiseServicesExceptionNotHandledEvent(System.Exception,System.Guid)" /> を呼び出すと発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスから派生したサービスは、自身の実行中に処理できなかった例外が発生したことを <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.RaiseServicesExceptionNotHandledEvent%2A> イベントのサブスクライバーに通知するために、<xref:System.Workflow.Runtime.WorkflowRuntime.ServicesExceptionNotHandled> メソッドを呼び出すことができます。 回復機構を実装する目的で、このイベントに定期受信できます。  
+  
+ このイベントは、ワークフロー インスタンスがワークフロー ランタイム エンジンによってまだ作成されていないときに例外が発生すると発生します。 このシナリオでは、例外が発生したことをホスト アプリケーションに通知する方法は、このイベントを発生させる以外にありません。 ただし、ワークフロー ランタイム エンジンは、これを直接呼び出しません。 代わりに、ワークフロー ランタイム エンジンは、例外をワークフロー インスタンスに配信します。インスタンスがない場合は、呼び出し元 (この場合は、実際にはこのイベントを発生させたサービス) にスローバックします。 独自の永続性サービスまたはスケジューラ サービスを作成する場合は、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.RaiseServicesExceptionNotHandledEvent%2A> 基本メソッドを使用して自分でこのイベントを実装する必要があります。  
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.ServicesExceptionNotHandled> イベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowEventArgs> には、サービスを使用していたワークフロー インスタンスの <xref:System.Guid> と、処理できなかった <xref:System.Exception> が格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkID=157352)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.ServicesExceptionNotHandled> をイベント ハンドラーである `OnExceptionNotHandled` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[カスタム永続性サービスのサンプル](http://go.microsoft.com/fwlink/?LinkID=157351)です。  
+  
+ [!code-csharp[WF_Samples#271](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#271)]
+ [!code-vb[WF_Samples#271](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#271)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Started">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowRuntimeEventArgs&gt; Started;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowRuntimeEventArgs&gt; Started" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.Started" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowRuntimeEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー ランタイム エンジンが起動すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A>メソッドを発生させます、 <xref:System.Workflow.Runtime.WorkflowRuntime.Started> 、ワークフロー ランタイム エンジンのコア サービスの構成を検証した後のイベントが呼び出される、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A>各から派生したサービスによって実装されるメソッド、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService>クラス、および設定が<xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A>に`true`です。 <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスから派生した各サービスが開始される順序に関する保証はありません。また、ワークフロー ランタイム エンジンのこれらのサービスによっては、自身の開始タスクを完了するために、これらのサービスのうちの他のサービスが提供する機能に依存する場合があります。 ワークフロー ランタイム エンジンのサービスは、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStarted%2A?displayProperty=nameWithType> イベントが発生したときにワークフロー ランタイム エンジンの他のサービスのサポートを必要とする最終的な開始タスクを実行するように <xref:System.Workflow.Runtime.WorkflowRuntime.Started> メソッドをオーバーライドできます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkID=157352)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Workflow.Runtime.WorkflowRuntime.Started> の <xref:System.Workflow.Runtime.WorkflowRuntime> イベントにイベント ハンドラーが追加されています。 この例では、このハンドラーはコンソールに簡単なメッセージを出力する匿名メソッドです。  
+  
+ [!code-csharp[WF_Samples#15](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#15)]
+ [!code-vb[WF_Samples#15](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartRuntime">
+      <MemberSignature Language="C#" Value="public void StartRuntime ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartRuntime() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.StartRuntime" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワークフロー ランタイム エンジンとワークフロー ランタイム エンジンのサービスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コア サービスの有効なセットが存在することを検証した後に、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> クラスから派生したサービスを開始します。  次のコア サービスのそれぞれの 1 つだけがある必要があります。 ワークフロー`CommitWorkBatch`から派生したサービス、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService>から派生した基底クラスと、スケジューラ サービス、<xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService>基本クラス。  ワークフロー ランタイム エンジンが適切な既定のサービスを提供するか、またはこれら両方のコア サービスが見つからない場合は、:<xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService>ワークフローの`CommitWorkBatch`サービスと<xref:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService>スケジューラ サービス用です。 永続性サービスはオプションですが、存在できる永続性サービスは 1 つまでです。 サービス構成を検証した後、<xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A> は、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start%2A> クラスから派生したすべてのサービスについて <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> を呼び出します。  最後に、ワークフロー ランタイム エンジンは <xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A> を設定し、<xref:System.Workflow.Runtime.WorkflowRuntime.Started> イベントを発生させます。  
+  
+ ワークフロー ランタイム エンジンが起動した後は、コア サービスを追加することも削除することもできません。 コア サービスは、<xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService>クラス、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService>クラス、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService>クラス、または <xref:System.Workflow.Runtime.Tracking.TrackingService> クラスから派生したサービスです。  ワークフロー ランタイム エンジンの実行中に <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A> を呼び出した場合、アクションは何も実行されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードは、<xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A> が <xref:System.Workflow.Runtime.WorkflowRuntime.%23ctor%2A> インスタンスを作成した後に <xref:System.Workflow.Runtime.WorkflowRuntime> を呼び出してサービスをランタイムに追加し、その後 <xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A> を呼び出します。 他の処理が行われる前にも <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime%2A> を呼び出しています。  
+  
+ このコード例は、[のワークフローの取り消し](http://go.microsoft.com/fwlink/?LinkId=157346)サンプルです。  
+  
+ [!code-csharp[WF_Samples#258](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#258)]
+ [!code-vb[WF_Samples#258](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#258)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> は破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">サービスの 1 つ以上のワークフローがある<see langword="CommitWorkBatch" />にこのサービスが登録されている<see cref="T:System.Workflow.Runtime.WorkflowRuntime" />です。  
+  
+ または  
+  
+ この <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> に登録されているスケジューラ サービスが複数あります。  
+  
+ または  
+  
+ この <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> に登録されている永続性サービスが複数あります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Stopped">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowRuntimeEventArgs&gt; Stopped;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowRuntimeEventArgs&gt; Stopped" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.Stopped" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowRuntimeEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー ランタイム エンジンが停止すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime%2A> メソッドは、<xref:System.Workflow.Runtime.WorkflowRuntime.Stopped> クラスから派生したその各サービスによって実装された <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop%2A> メソッドを呼び出した後に、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> イベントを発生させます。  ワークフロー ランタイム エンジンのこれらのサービスが停止する順序に関する保証はありません。また、これらのサービスによっては、他のサービスが依存する機能を、そのサービスが停止するまで保持しておくことが必要な場合があります。 そのようなサービスは、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped%2A?displayProperty=nameWithType> イベントが発生したときに残りのシャットダウン ロジックを実行するように <xref:System.Workflow.Runtime.WorkflowRuntime.Stopped> メソッドをオーバーライドできます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkID=157352)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Workflow.Runtime.WorkflowRuntime.Stopped> の <xref:System.Workflow.Runtime.WorkflowRuntime> イベントにイベント ハンドラーが追加されています。 この例では、このハンドラーはコンソールに簡単なメッセージを出力する匿名メソッドです。  
+  
+ [!code-csharp[WF_Samples#14](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#14)]
+ [!code-vb[WF_Samples#14](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopRuntime">
+      <MemberSignature Language="C#" Value="public void StopRuntime ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StopRuntime() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowRuntime.StopRuntime" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワークフロー ランタイム エンジンとランタイム サービスを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、そのワークフロー インスタンスのアンロード、すべてから派生したそのサービスの停止をワークフロー ランタイム エンジン、<xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService>クラスは、設定<xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted%2A>に`false`、発生させると、<xref:System.Workflow.Runtime.WorkflowRuntime.Stopped>イベント。  
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime> を正常にシャットダウンするには、<xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime%2A> を呼び出す前に、<xref:System.Workflow.Runtime.WorkflowRuntime.Dispose%2A> を呼び出します。  
+  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.Workflow.Runtime.WorkflowRuntime.Dispose%2A> メソッド」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 <xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime%2A> は、ランタイムに関連付けられた他の処理をホストがすべて完了した後に呼び出されます。  
+  
+ このコード例は、[のワークフローの取り消し](http://go.microsoft.com/fwlink/?LinkId=157346)サンプルです。  
+  
+ [!code-csharp[WF_Samples#259](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#259)]
+ [!code-vb[WF_Samples#259](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#259)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> が既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowAborted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowAborted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowAborted" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowAborted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスが中止されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowAborted> が発生するタイミングは、ワークフロー インスタンスのすべての保留中作業がクリアされてからメモリ内のワークフロー インスタンスが無効化されるまでの間です。 <xref:System.Workflow.Runtime.WorkflowInstance.Abort%2A?displayProperty=nameWithType> を呼び出すことによって、ワークフロー インスタンスを中止することができます。  
+  
+ このイベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowEventArgs> にはイベントに関連付けられている <xref:System.Workflow.Runtime.WorkflowInstance> が格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkId=157352)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowAborted> をイベント ハンドラーである `OnWorkflowAborted` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[のワークフローの取り消し](http://go.microsoft.com/fwlink/?LinkID=157346)サンプルです。  
+  
+ [!code-csharp[WF_Samples#141](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#141)]
+ [!code-vb[WF_Samples#141](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#141)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowCompletedEventArgs&gt; WorkflowCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowCompletedEventArgs&gt; WorkflowCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowCompletedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスが完了すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowCompleted> が発生するタイミングは、ワークフロー インスタンスが完了してからメモリ内のインスタンスが無効化されるまでの間です。  
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowPersisted> イベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowCompletedEventArgs> には <xref:System.Workflow.Runtime.WorkflowInstance> とその出力パラメーターが格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkId=157352)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowCompleted> をイベント ハンドラーである `OnWorkflowCompleted` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[のワークフローの取り消し](http://go.microsoft.com/fwlink/?LinkId=157346)サンプルです。  
+  
+ [!code-csharp[WF_Samples#258](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#258)]
+ [!code-vb[WF_Samples#258](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#258)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowCreated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowCreated" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスが作成されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジンが <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowCreated> イベントを発生させるタイミングは、ワークフロー インスタンスが完全に構築されてからアクティビティが処理され始めるまでの間です。 このイベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowEventArgs> にはイベントに関連付けられている <xref:System.Workflow.Runtime.WorkflowInstance> が格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkId=157352)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowCreated> をイベント ハンドラーである `OnWorkflowCreated` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[カスタム永続性サービスのサンプル](http://go.microsoft.com/fwlink/?LinkID=15735)です。  
+  
+ [!code-csharp[WF_Samples#271](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#271)]
+ [!code-vb[WF_Samples#271](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#271)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowIdled">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowIdled;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowIdled" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowIdled" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスがアイドル状態になると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジンは、ワークフロー インスタンスがアイドル状態になると <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowIdled> イベントを発生させます。たとえば、<xref:System.Workflow.Activities.DelayActivity> アクティビティが完了するのをワークフローが待機しているときです。  
+  
+ このイベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowEventArgs> にはイベントに関連付けられている <xref:System.Workflow.Runtime.WorkflowInstance> が格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowIdled> をイベント ハンドラーである `OnWorkflowIdled` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[のワークフローの取り消し](http://go.microsoft.com/fwlink/?LinkID=157346)サンプルです。  
+  
+ [!code-csharp[WF_Samples#258](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#258)]
+ [!code-vb[WF_Samples#258](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#258)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowLoaded">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowLoaded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowLoaded" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowLoaded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスがメモリに読み込まれると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowLoaded> が発生するタイミングは、永続性サービスがワークフロー インスタンスを復元し終えてからワークフロー ランタイム エンジンがアクティビティを実行し始めるまでの間です。  
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowLoaded> イベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowEventArgs> にはイベントに関連付けられている <xref:System.Workflow.Runtime.WorkflowInstance> が格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkID=157352)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowLoaded> をイベント ハンドラーである `OnWorkflowLoad` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[カスタム永続性サービス](http://go.microsoft.com/fwlink/?LinkID=157351)サンプルです。  
+  
+ [!code-csharp[WF_Samples#271](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#271)]
+ [!code-vb[WF_Samples#271](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#271)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowPersisted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowPersisted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowPersisted" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowPersisted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの状態が永続化されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスは、さまざまな理由で永続化される可能性があります。 たとえば、ホストがワークフロー インスタンスに対する <xref:System.Workflow.Runtime.WorkflowInstance.Unload%2A?displayProperty=nameWithType> を呼び出した場合や、インスタンスがアイドル状態になったため、またはアトミックのスコープが完了したために、ワークフロー ランタイム エンジンがワークフロー インスタンスを永続化する場合です。 <xref:System.Workflow.Runtime.WorkflowRuntime> に永続性サービスが存在する場合、ランタイムはワークフロー インスタンスの状態がメモリに保存された後に <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowPersisted> を発生させます。 永続性サービスが存在しない場合、イベントは発生しますが、インスタンスの状態は保存されません。 ワークフロー インスタンスがアンロードされるために <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowPersisted> イベントが発生する場合、このイベントの後に <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowUnloaded> イベントが発生します。  
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowPersisted> イベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowEventArgs> にはイベントに関連付けられている <xref:System.Workflow.Runtime.WorkflowInstance> が格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkID=157352)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowPersisted> をイベント ハンドラーである `OnWorkflowPersisted` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[カスタム永続性サービスのサンプル](http://go.microsoft.com/fwlink/?LinkID=15735)です。  
+  
+ [!code-csharp[WF_Samples#279](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#279)]
+ [!code-vb[WF_Samples#279](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#279)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowResumed">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowResumed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowResumed" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowResumed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの実行が中断後に再開されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジンは、ワークフロー インスタンスがスケジュールされる直前に <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowResumed> イベントを発生させます。 <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowResumed> イベントは通常、<xref:System.Workflow.Runtime.WorkflowInstance.Resume%2A?displayProperty=nameWithType> の明示的呼び出しが理由で発生します。 ただし、ワークフロー ランタイム エンジンは、インスタンスを一時的に中断して、たとえばワークフロー変更を適用するなどの操作を実行できます。 この場合、その操作後にランタイムがワークフロー インスタンスの実行を再開したときに <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowResumed> イベントが発生します。  
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowResumed> イベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowEventArgs> にはイベントに関連付けられている <xref:System.Workflow.Runtime.WorkflowInstance> が格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkID=157352)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowResumed> をイベント ハンドラーである `OnWorkflowResume` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[保留と終了のサンプル](http://go.microsoft.com/fwlink/?LinkId=157402)です。  
+  
+ [!code-csharp[WF_Samples#171](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#171)]
+ [!code-vb[WF_Samples#171](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#171)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowStarted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowStarted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowStarted" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowStarted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスが開始されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジンは、ルート アクティビティの実行スケジュールによってワークフロー インスタンスが開始された後に <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowStarted> イベントを発生させます。 このイベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowEventArgs> にはイベントに関連付けられている <xref:System.Workflow.Runtime.WorkflowInstance> が格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkID=157352)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowStarted> をイベント ハンドラーである `OnWorkflowStarted` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[ホスト通信サンプル](http://go.microsoft.com/fwlink/?LinkId=157406)です。  
+  
+ [!code-csharp[WF_Samples#297](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets38.cs#297)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowSuspended">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowSuspendedEventArgs&gt; WorkflowSuspended;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowSuspendedEventArgs&gt; WorkflowSuspended" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowSuspended" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowSuspendedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスが中断されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスは、ホストによる <xref:System.Workflow.Runtime.WorkflowInstance.Suspend%2A> メソッドの呼び出し、<xref:System.Workflow.ComponentModel.SuspendActivity> アクティビティ、またはワークフロー ランタイム エンジンによる暗黙的な操作によって中断します。 たとえば、ワークフロー ランタイム エンジンは、インスタンスに動的変更を適用するときにインスタンスを一時的に中断します。  
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowSuspended> イベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowSuspendedEventArgs> には、<xref:System.Workflow.Runtime.WorkflowInstance> と、インスタンスが中断した理由を示す文字列が格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkID=157352)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowSuspended> をイベント ハンドラーである `OnWorkflowSuspended` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[保留と終了のサンプル](http://go.microsoft.com/fwlink/?LinkID=157402)です。  
+  
+ [!code-csharp[WF_Samples#170](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#170)]
+ [!code-vb[WF_Samples#170](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#170)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowTerminated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowTerminatedEventArgs&gt; WorkflowTerminated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowTerminatedEventArgs&gt; WorkflowTerminated" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowTerminatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスが終了すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフローは、ホストによる <xref:System.Workflow.Runtime.WorkflowInstance.Terminate%2A> メソッドの呼び出し、または <xref:System.Workflow.ComponentModel.TerminateActivity> アクティビティによって、あるいは未処理の例外が発生したときにワークフロー ランタイム エンジンによって終了します。 ワークフロー ランタイム エンジンが <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated> イベントを発生させるタイミングは、ワークフロー インスタンスが終了し、そのワークフロー インスタンスがメモリ内で無効化されるまでの間です。  
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowPersisted> イベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs> には、<xref:System.Workflow.Runtime.WorkflowInstance> と、インスタンスが終了した理由に関する情報 (<xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs.Exception%2A?displayProperty=nameWithType> プロパティ内) が格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkID=157352)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowCompleted> をイベント ハンドラーである `OnWorkflowCompleted` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[のワークフローの取り消し](http://go.microsoft.com/fwlink/?LinkID=157346)サンプルです。  
+  
+ [!code-csharp[WF_Samples#260](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#260)]
+ [!code-vb[WF_Samples#260](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#260)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowUnloaded">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowUnloaded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Runtime.WorkflowEventArgs&gt; WorkflowUnloaded" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowUnloaded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Workflow.Runtime.WorkflowEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスがメモリからアンロードされると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスは、<xref:System.Workflow.Runtime.WorkflowInstance.Unload%2A> の明示的呼び出し、またはワークフロー ランタイム エンジンによる自身のセマンティクスに基づく暗黙的な操作によって、メモリからアンロードされます。 たとえば、ワークフロー ランタイム エンジンは、ワークフロー インスタンスをアンロードの場合は、インスタンスがアイドルになるし、ランタイムには、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService>を追加<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.UnloadOnIdle%2A>は`true`します。  
+  
+ ワークフロー ランタイム エンジンが   
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowUnloaded> イベントを発生させるタイミングは、ワークフロー インスタンスの状態が正常に永続化されてからメモリ内のインスタンスが無効化されるまでの間です。 したがって、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowPersisted> イベントが <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowUnloaded> イベントより前に発生することになります。  
+  
+ <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowUnloaded> イベントでは、送信元に <xref:System.Workflow.Runtime.WorkflowRuntime> が含まれ、<xref:System.Workflow.Runtime.WorkflowEventArgs> にはイベントに関連付けられている <xref:System.Workflow.Runtime.WorkflowInstance> が格納されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]イベントを処理するを参照してください[イベントの利用](http://go.microsoft.com/fwlink/?LinkID=157352)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフローのホストから <xref:System.Workflow.Runtime.WorkflowRuntime> の機能を使用する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowUnloaded> をイベント ハンドラーである `OnWorkflowUnload` という名前のメソッドに関連付けています。  
+  
+ このコード例は、[カスタム永続性サービスのサンプル](http://go.microsoft.com/fwlink/?LinkID=157351)です。  
+  
+ [!code-csharp[WF_Samples#271](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#271)]
+ [!code-vb[WF_Samples#271](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#271)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

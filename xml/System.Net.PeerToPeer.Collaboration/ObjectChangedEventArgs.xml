@@ -1,0 +1,122 @@
+<Type Name="ObjectChangedEventArgs" FullName="System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class ObjectChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>該当する情報をコールバック メソッドを提供時に、<see cref="E:System.Net.PeerToPeer.Collaboration.PeerObject.ObjectChanged" />イベントが発生します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ PeerObjects は、証明書、画像、アバター、または特定の説明などのアプリケーションに関連付けられている実行時のデータ アイテムです。 これらは、ホスト ピアの登録済みのアプリケーション、オブジェクトが存在する情報と呼ばれる場合も可能性があります。  ときに、<xref:System.Net.PeerToPeer.Collaboration.PeerObject>が変更されると、イベントが発生します。  
+  
+ このメソッドを呼び出す必要があります、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration>セッションを開始します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="PeerChangeType">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerChangeType PeerChangeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.PeerToPeer.Collaboration.PeerChangeType PeerChangeType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs.PeerChangeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerChangeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerChangeType" />に発生した変更の種類を指定する、<see cref="T:System.Net.PeerToPeer.Collaboration.Peer" />または<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />です。</summary>
+        <value>
+          <see cref="T:System.Net.PeerToPeer.Collaboration.PeerChangeType" />発生した変更の種類を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、指定しない限り、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerContact">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerContact PeerContact { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerContact PeerContact" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs.PeerContact" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerContact</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />に関連付けられている、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />どのオブジェクトの情報が変更されています。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />に関連付けられている、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />を<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />情報が変更されています。  場合は、エンドポイントに関連付けられていない連絡先、<see langword="null" />が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerEndPoint">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerEndPoint PeerEndPoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerEndPoint PeerEndPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs.PeerEndPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerEndPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />どのオブジェクトの情報が変更されています。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />を<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />情報が変更されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、指定しない限り、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerObject">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerObject PeerObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerObject PeerObject" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.ObjectChangedEventArgs.PeerObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />を追加、削除または更新します。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerObject" />が追加、削除、または更新されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、指定しない限り、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

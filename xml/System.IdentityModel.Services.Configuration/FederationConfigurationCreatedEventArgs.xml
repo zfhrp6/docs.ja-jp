@@ -1,0 +1,78 @@
+<Type Name="FederationConfigurationCreatedEventArgs" FullName="System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs">
+  <TypeSignature Language="C#" Value="public class FederationConfigurationCreatedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FederationConfigurationCreatedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated?displayProperty=nameWithType>イベントは、web アプリケーションでは、最初の HTTP モジュールを参照する場合、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティです。 この最初のアクセス プロパティ原因、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>オブジェクトを作成および構成から初期化します。 <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated?displayProperty=nameWithType>イベントが発生します。 新しく作成されたアクセスできる<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>オブジェクト、<xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType>確認または変更するために、イベント ハンドラーのプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FederationConfigurationCreatedEventArgs (System.IdentityModel.Services.Configuration.FederationConfiguration config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Services.Configuration.FederationConfiguration config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.#ctor(System.IdentityModel.Services.Configuration.FederationConfiguration)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="config" Type="System.IdentityModel.Services.Configuration.FederationConfiguration" />
+      </Parameters>
+      <Docs>
+        <param name="config">フェデレーションの構成オブジェクト。 A<see cref="T:System.IdentityModel.Services.Configuration.FederationConfiguration" />オブジェクトには、Ws-federation 認証モジュールの構成可能なプロパティが含まれています (<see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />) と、セッションの認証モジュール (<see cref="T:System.IdentityModel.Services.SessionAuthenticationModule" />) web アプリケーションでします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs" />指定されたフェデレーション構成オブジェクトを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化、<xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A>プロパティで指定されたフェデレーション構成オブジェクトを`config`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FederationConfiguration">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Services.Configuration.FederationConfiguration FederationConfiguration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Services.Configuration.FederationConfiguration FederationConfiguration" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.Configuration.FederationConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または構成ファイルから初期化されたフェデレーション構成オブジェクトを設定します。</summary>
+        <value>構成から初期化されたフェデレーション構成オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.Configuration.FederationConfiguration>オブジェクトには、Ws-federation 認証モジュールの構成可能なプロパティが含まれています (<xref:System.IdentityModel.Services.WSFederationAuthenticationModule>) と、セッションの認証モジュール (<xref:System.IdentityModel.Services.SessionAuthenticationModule>) web アプリケーションでします。  
+  
+ 構成設定を変更することができますプロパティを設定して、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>するか、このプロパティによって参照されるオブジェクトが、新しい提供できる<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

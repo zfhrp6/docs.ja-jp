@@ -1,0 +1,253 @@
+<Type Name="HtmlInputControl" FullName="System.Web.UI.HtmlControls.HtmlInputControl">
+  <TypeSignature Language="C#" Value="public abstract class HtmlInputControl : System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HtmlInputControl extends System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlInputControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HtmlControls.HtmlControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての HTML 入力コントロールになどのメソッド、プロパティ、および共通のイベントを定義する抽象基底クラスとして機能、 <see langword="&lt;input type=text&gt;" />、 <see langword="&lt;input type=submit&gt;" />、および<see langword="&lt;input type= file&gt;" />要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成することはできません、<xref:System.Web.UI.HtmlControls.HtmlInputControl>クラスに直接できます。 代わりに、このクラスは、他のクラスによって継承など、 <xref:System.Web.UI.HtmlControls.HtmlInputText>、 <xref:System.Web.UI.HtmlControls.HtmlInputButton>、 <xref:System.Web.UI.HtmlControls.HtmlInputRadioButton>、 <xref:System.Web.UI.HtmlControls.HtmlInputCheckBox>、 <xref:System.Web.UI.HtmlControls.HtmlInputImage>、 <xref:System.Web.UI.HtmlControls.HtmlInputHidden>、および<xref:System.Web.UI.HtmlControls.HtmlInputFile>クラスは、共通の基本的な機能を提供します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.HtmlControls.HtmlInputControl>を参照してください、<xref:System.Web.UI.HtmlControls.HtmlInputControl.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HtmlInputControl (string type);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlInputControl.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">入力コントロールの型。</param>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlInputControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの使用を作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlInputControl>クラスの指定した入力コントロールを使用します。  
+  
+> [!NOTE]
+>  このクラスの新しいインスタンスは直接作成されません。 このコンス トラクターは、このクラスで定義されたプロパティを初期化するために他の HTML コントロールのクラスのコンス トラクターから呼び出されます。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlInputControl>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.HtmlControls.HtmlInputControl.Type%2A>|`type` パラメーターの値。|  
+  
+ 次の表の異なる値`type`です。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|テキスト|データ入力用テキスト ボックスです。|  
+|パスワード|ユーザー入力をマスクするテキスト ボックス。|  
+|チェックボックス|True または false の条件を示すチェック ボックスです。|  
+|ラジオ|相互に排他的な一連のオプション ボタンから選択項目を示すラジオ ボタンをクリックします。|  
+|ボタン|コマンド ボタンをクリックします。|  
+|送信|サーバーにフォームを送信するボタンです。|  
+|リセット|フォームをクリアするボタンです。|  
+|ファイル|ファイルをアップロードするボタンです。|  
+|hidden|サーバーへのポスト間で情報を永続化に使用される Web ページ上に表示されているフィールドです。|  
+|イメージ|イメージのボタンをクリックします。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public virtual string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlInputControl.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の一意の識別子の名前、<see cref="T:System.Web.UI.HtmlControls.HtmlInputControl" />コントロール。</summary>
+        <value>値を表す文字列、<see cref="P:System.Web.UI.Control.UniqueID" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlInputControl.Name%2A>の一意の識別子名を決定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlInputControl>です。 この実装では、`get`アクセサーの値を返します、<xref:System.Web.UI.Control.UniqueID%2A?displayProperty=nameWithType>プロパティです。 ただし、`set`アクセサーはこのプロパティに値を割り当てられません。  
+  
+> [!NOTE]
+>  `set`ために、アクセサーがこのプロパティに値を代入しない、<xref:System.Web.UI.HtmlControls.HtmlInputControl.Name%2A>プロパティと同じ値を持つ必要があります、<xref:System.Web.UI.Control.UniqueID%2A?displayProperty=nameWithType>適切に機能するほとんどのコントロールのプロパティです。  
+  
+ 継承するクラス、<xref:System.Web.UI.HtmlControls.HtmlInputControl>クラスが必要な場合、この実装をオーバーライドできます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlInputControl.Name%2A>プロパティの名前を<xref:System.Web.UI.HtmlControls.HtmlInputControl>がクリックしてされました。  
+  
+ [!code-aspx-csharp[HtmlInputControlName#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlInputControlName/CS/htmlinputcontrolnamecs.aspx#1)]
+ [!code-aspx-vb[HtmlInputControlName#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlInputControlName/VB/htmlinputcontrolnamevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderAttributes">
+      <MemberSignature Language="C#" Value="protected override void RenderAttributes (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderAttributes(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlInputControl.RenderAttributes(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />クライアントに表示する出力ストリームを格納しています。</param>
+        <summary>属性の表示、<see cref="T:System.Web.UI.HtmlControls.HtmlInputControl" />を指定したコントロール<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlInputControl.RenderAttributes%2A>メソッドでの表示、`name`属性と`type`、基本クラスを呼び出す前に属性<xref:System.Web.UI.HtmlControls.HtmlControl.RenderAttributes%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlInputControl.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型を取得、<see cref="T:System.Web.UI.HtmlControls.HtmlInputControl" />です。</summary>
+        <value>型を表す文字列、<see cref="T:System.Web.UI.HtmlControls.HtmlInputControl" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの型を取得するを使用して、<xref:System.Web.UI.HtmlControls.HtmlInputControl>です。  
+  
+ 次の表に、別の値、<xref:System.Web.UI.HtmlControls.HtmlInputControl.Type%2A>プロパティです。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|テキスト|データ入力用テキスト ボックスです。|  
+|パスワード|ユーザー入力をマスクするテキスト ボックス。|  
+|チェックボックス|True または false の条件を示すチェック ボックスです。|  
+|ラジオ|相互に排他的な一連のオプション ボタンから選択項目を示すラジオ ボタンをクリックします。|  
+|ボタン|コマンド ボタンをクリックします。|  
+|送信|サーバーにフォームを送信するボタンです。|  
+|リセット|フォームをクリアするボタンです。|  
+|ファイル|ファイルをアップロードするボタンです。|  
+|hidden|サーバーへのポスト間で情報を永続化に使用される Web ページ上に表示されているフィールドです。|  
+|イメージ|イメージのボタンをクリックします。|  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlInputControl.Type%2A>の種類を決定するプロパティ<xref:System.Web.UI.HtmlControls.HtmlInputControl>がクリックしてされました。  
+  
+ [!code-aspx-csharp[HtmlInputControlType#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlInputControlType/CS/htmlinputcontroltypecs.aspx#1)]
+ [!code-aspx-vb[HtmlInputControlType#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlInputControlType/VB/htmlinputcontroltypevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public virtual string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlInputControl.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられている値、<see cref="T:System.Web.UI.HtmlControls.HtmlInputControl" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.HtmlControls.HtmlInputControl" /> に関連付けられた値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに関連付けられている値の決定を指定するかを使用して、<xref:System.Web.UI.HtmlControls.HtmlInputControl>コントロール。 <xref:System.Web.UI.HtmlControls.HtmlInputControl.Value%2A>プロパティは、 `value` HTML 要素の属性です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlInputControl.Value%2A>プロパティをユーザーが一部のテキスト ボックスに入力したテキストを決定します。  
+  
+ [!code-aspx-csharp[HtmlInputText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlInputText/CS/htmlinputtextcs.aspx#1)]
+ [!code-aspx-vb[HtmlInputText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlInputText/VB/htmlinputtextvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

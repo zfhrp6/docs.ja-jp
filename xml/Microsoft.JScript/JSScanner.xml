@@ -1,0 +1,325 @@
+<Type Name="JSScanner" FullName="Microsoft.JScript.JSScanner">
+  <TypeSignature Language="C#" Value="public sealed class JSScanner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit JSScanner extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.JSScanner" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コードの個々 のユニットを検索する JScript コードをスキャンまたは*トークン*です。 このクラスは、スキャンおよび解析のカテゴリに属します。 スキャンおよび解析の詳細については、次を参照してください。 [、.NET Framework の言語コンパイラを作成する](http://go.microsoft.com/fwlink/?LinkId=110392)です。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JSScanner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.JScript.JSScanner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JSScanner (Microsoft.JScript.Context sourceContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.JScript.Context sourceContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.#ctor(Microsoft.JScript.Context)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sourceContext" Type="Microsoft.JScript.Context" />
+      </Parameters>
+      <Docs>
+        <param name="sourceContext">スキャンするソース コードです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.JScript.JSScanner" />クラス、スキャンするソース コードを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentLine">
+      <MemberSignature Language="C#" Value="public int GetCurrentLine ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetCurrentLine() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.GetCurrentLine" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コード内の現在の行番号を取得します。 これは、コードのスキャンを移動するポインターです。</summary>
+        <returns>コード内の現在の行番号。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentPosition">
+      <MemberSignature Language="C#" Value="public int GetCurrentPosition (bool absolute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetCurrentPosition(bool absolute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.GetCurrentPosition(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="absolute" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="absolute">このパラメーターは無視されます。</param>
+        <summary>コードの文字列内の現在位置を取得します。 これは、コードのスキャンを移動するポインターです。</summary>
+        <returns>コードの文字列の現在の位置。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextToken">
+      <MemberSignature Language="C#" Value="public void GetNextToken ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetNextToken() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.GetNextToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>次のトークン コードをスキャンします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetSourceCode">
+      <MemberSignature Language="C#" Value="public string GetSourceCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetSourceCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.GetSourceCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このスキャナー オブジェクトに関連付けられているソース コードを取得します。</summary>
+        <returns>スキャンするソース コードです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソース コードが指定された、<xref:Microsoft.JScript.JSScanner.%23ctor%28Microsoft.JScript.Context%29>メソッドや、<xref:Microsoft.JScript.JSScanner.SetSource%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetStartLinePosition">
+      <MemberSignature Language="C#" Value="public int GetStartLinePosition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetStartLinePosition() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.GetStartLinePosition" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコードの最初の行の開始場所コード文字列内の位置を取得します。 すべての行のコードは、1 つの文字列に格納されます。 これは、コードのスキャンを移動するポインターです。</summary>
+        <returns>現在のコードの最初の行の開始位置コード文字列内の位置。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetStringLiteral">
+      <MemberSignature Language="C#" Value="public string GetStringLiteral ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetStringLiteral() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.GetStringLiteral" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>スキャンされ、文字列を取得のエスケープ シーケンスがすべて置き換えられます。</summary>
+        <returns>スキャンされ、文字列のエスケープ シーケンスがすべて置き換えられます。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GotEndOfLine">
+      <MemberSignature Language="C#" Value="public bool GotEndOfLine ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GotEndOfLine() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.GotEndOfLine" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>かどうか、行の末尾に達した後、スキャナーをスキャンまたはピーク トークンを示します。</summary>
+        <returns>
+          <see langword="true" />場合は、行の末尾に達しました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyword">
+      <MemberSignature Language="C#" Value="public static bool IsKeyword (Microsoft.JScript.JSToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsKeyword(valuetype Microsoft.JScript.JSToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.IsKeyword(Microsoft.JScript.JSToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="Microsoft.JScript.JSToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">確認トークンです。</param>
+        <summary>指定したトークンが、JScript 言語のキーワードであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、トークンがキーワードです。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsOperator">
+      <MemberSignature Language="C#" Value="public static bool IsOperator (Microsoft.JScript.JSToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsOperator(valuetype Microsoft.JScript.JSToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.IsOperator(Microsoft.JScript.JSToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="Microsoft.JScript.JSToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">確認トークンです。</param>
+        <summary>指定したトークンが、JScript 言語の演算子であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />トークンが演算子の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetAuthoringMode">
+      <MemberSignature Language="C#" Value="public void SetAuthoringMode (bool mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAuthoringMode(bool mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.SetAuthoringMode(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="mode">
+          <see langword="true" />作成モードを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>スキャナーがオーサリング モードで動作しているかどうかを示すフラグを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成モードで動作の例では、ホストがそれを色分けして表示するエディターでコードをスキャンする場合に発生します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetSource">
+      <MemberSignature Language="C#" Value="public void SetSource (Microsoft.JScript.Context sourceContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSource(class Microsoft.JScript.Context sourceContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.SetSource(Microsoft.JScript.Context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceContext" Type="Microsoft.JScript.Context" />
+      </Parameters>
+      <Docs>
+        <param name="sourceContext">スキャンするソース コードです。</param>
+        <summary>スキャンするソース コードを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SkipMultiLineComment">
+      <MemberSignature Language="C#" Value="public int SkipMultiLineComment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 SkipMultiLineComment() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.JSScanner.SkipMultiLineComment" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>複数行にまたがるし、コード内の現在位置を示すポインターを進めるコメントをスキップします。</summary>
+        <returns>コードの文字列の新しい現在位置。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

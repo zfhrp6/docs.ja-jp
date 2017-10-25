@@ -1,0 +1,93 @@
+<Type Name="IExtenderProvider" FullName="System.ComponentModel.IExtenderProvider">
+  <TypeSignature Language="C#" Value="public interface IExtenderProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExtenderProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.IExtenderProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コンテナー内の他のコンポーネントにプロパティを拡張するためのインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張プロバイダーは、他のコンポーネントのプロパティを提供するコンポーネントです。 たとえば、<xref:System.Windows.Forms.ToolTip>コントロール エクステンダー プロバイダーであります。 追加すると、<xref:System.Windows.Forms.ToolTip>コントロールを<xref:System.Windows.Forms.Form>、フォーム上の他のすべてのコントロールが、<xref:System.Windows.Forms.ToolTip>プロパティをプロパティのリストに追加します。  
+  
+ エクステンダー プロパティを提供するコンポーネントを実装する必要があります<xref:System.ComponentModel.IExtenderProvider>です。 ビジュアルなデザイナーが呼び出すことができますし、<xref:System.ComponentModel.IExtenderProvider.CanExtend%2A>を特定のコンテナー内のオブジェクトにエクステンダー プロパティを受け取る必要があります。  
+  
+ 拡張プロバイダーの詳細については、次を参照してください。[する方法: 拡張プロバイダーの実装](http://msdn.microsoft.com/library/d824f40e-b20b-464c-ac22-97974d5ab4fe)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.IExtenderProvider>インターフェイスです。 この例で説明した例の一部である[する方法: HelpLabel Extender プロバイダーを実装する](http://msdn.microsoft.com/library/21e34929-ff78-4f3f-aee8-a16a4ef5ac9d)です。  
+  
+ [!code-csharp[System.Windows.Forms.HelpLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpLabel/CS/HelpLabel.cs#1)]
+ [!code-vb[System.Windows.Forms.HelpLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpLabel/VB/HelpLabel.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanExtend">
+      <MemberSignature Language="C#" Value="public bool CanExtend (object extendee);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanExtend(object extendee) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.IExtenderProvider.CanExtend(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extendee" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="extendee"><see cref="T:System.Object" />エクステンダー プロパティを受信します。</param>
+        <summary>このオブジェクトが、指定したオブジェクトにエクステンダー プロパティを提供できるかどうかを指定します。</summary>
+        <returns>
+          <see langword="true" />このオブジェクトは、指定したオブジェクトにエクステンダー プロパティを提供できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エクステンダー プロパティの詳細については、次を参照してください。[する方法: 拡張プロバイダーの実装](http://msdn.microsoft.com/library/d824f40e-b20b-464c-ac22-97974d5ab4fe)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.ComponentModel.IExtenderProvider.CanExtend%2A>プロパティです。 この例で説明した例の一部である[する方法: HelpLabel Extender プロバイダーを実装する](http://msdn.microsoft.com/library/21e34929-ff78-4f3f-aee8-a16a4ef5ac9d)です。  
+  
+ [!code-csharp[System.Windows.Forms.HelpLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpLabel/CS/HelpLabel.cs#1)]
+ [!code-vb[System.Windows.Forms.HelpLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpLabel/VB/HelpLabel.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

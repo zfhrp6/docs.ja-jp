@@ -1,0 +1,258 @@
+<Type Name="SettingsPropertyValue" FullName="System.Configuration.SettingsPropertyValue">
+  <TypeSignature Language="C#" Value="public class SettingsPropertyValue" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SettingsPropertyValue extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.SettingsPropertyValue" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ロードしてのインスタンスで格納できる設定のプロパティの値を含む<see cref="T:System.Configuration.SettingsBase" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロファイル データの実際の一部のクラスの表現。 A<xref:System.Configuration.SettingsProperty>インスタンスのインスタンス内で格納されている値の説明、<xref:System.Configuration.SettingsPropertyValue>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsPropertyValue (System.Configuration.SettingsProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Configuration.SettingsProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.SettingsPropertyValue.#ctor(System.Configuration.SettingsProperty)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="property" Type="System.Configuration.SettingsProperty" />
+      </Parameters>
+      <Docs>
+        <param name="property">指定します、<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.SettingsPropertyValue" />クラス、指定されたパラメーターを基にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ <xref:System.Configuration.SettingsProperty>オブジェクトによって格納される値に関する情報を説明する、<xref:System.Configuration.SettingsPropertyValue>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialized">
+      <MemberSignature Language="C#" Value="public bool Deserialized { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Deserialized" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsPropertyValue.Deserialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうかの値、<see cref="T:System.Configuration.SettingsProperty" />オブジェクトが逆シリアル化されました。</summary>
+        <value>
+          <see langword="true" />場合の値、<see cref="T:System.Configuration.SettingsProperty" />逆シリアル化された、それ以外のオブジェクトが表示された<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの値の逆シリアル化は要求時にのみ実行されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDirty">
+      <MemberSignature Language="C#" Value="public bool IsDirty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDirty" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsPropertyValue.IsDirty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうかの値、<see cref="T:System.Configuration.SettingsProperty" />オブジェクトが変更されました。</summary>
+        <value>
+          <see langword="true" />場合の値、<see cref="T:System.Configuration.SettingsProperty" />オブジェクトが変更されました。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.SettingsPropertyValue.IsDirty%2A>プロパティは、このクラスが格納されている値が変更されたことを示します。 既定値は、`false` です。 <xref:System.Configuration.SettingsPropertyValue.IsDirty%2A>プロパティに設定されている`true`次の条件下で。  
+  
+1.  含まれる値、<xref:System.Configuration.SettingsPropertyValue>オブジェクトを変更します。  
+  
+2.  含まれる値、<xref:System.Configuration.SettingsPropertyValue>オブジェクトがアクセスされ、値は文字列またはプリミティブ型など`int`、 `float`、 `real`、または`DateTime`です。 値を管理する場合、<xref:System.Configuration.SettingsPropertyValue>オブジェクトは、複雑な型 (たとえば、 <xref:System.Collections.ArrayList>)、方法はありません、<xref:System.Configuration.SettingsPropertyValue>加えられた変更を検出するオブジェクト。 その結果、<xref:System.Configuration.SettingsPropertyValue>オブジェクト排他が想定する複合型はダーティからアクセスした後、<xref:System.Configuration.SettingsPropertyValue.PropertyValue%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsPropertyValue.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているプロパティの名前を取得<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</summary>
+        <value><see cref="T:System.Configuration.SettingsProperty" /> オブジェクトの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Property">
+      <MemberSignature Language="C#" Value="public System.Configuration.SettingsProperty Property { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SettingsProperty Property" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsPropertyValue.Property" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</summary>
+        <value><see cref="T:System.Configuration.SettingsProperty" />を記述するオブジェクト、<see cref="T:System.Configuration.SettingsPropertyValue" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyValue">
+      <MemberSignature Language="C#" Value="public object PropertyValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object PropertyValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsPropertyValue.PropertyValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.SettingsProperty" /> オブジェクトの値を取得または設定します。</summary>
+        <value>値、<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。 この値が設定されている場合、<see cref="P:System.Configuration.SettingsPropertyValue.IsDirty" />プロパティに設定されている<see langword="true" />と<see cref="P:System.Configuration.SettingsPropertyValue.UsingDefaultValue" />に設定されている<see langword="false" />です。  
+  
+ 値が最初からアクセスすると、<see cref="P:System.Configuration.SettingsPropertyValue.PropertyValue" />プロパティに格納されている値が最初にしたかどうかと、<see cref="T:System.Configuration.SettingsPropertyValue" />オブジェクトとしてシリアル化された表現を使用して、<see cref="P:System.Configuration.SettingsPropertyValue.SerializedValue" />プロパティ、<see cref="P:System.Configuration.SettingsPropertyValue.PropertyValue" />プロパティは、基になる値の逆シリアル化をトリガーします。  副作用として、<see cref="P:System.Configuration.SettingsPropertyValue.Deserialized" />プロパティ設定されます<see langword="true" />です。  
+  
+ ASP.NET では、この一連のイベントが発生した場合、および逆シリアル化プロセス中にエラーが発生した場合は、ASP.NET の稼働状況の監視機能を使用して、エラーが記録されます。 既定では、つまり、逆シリアル化エラーが表示されるアプリケーション イベント ログで ASP.NET で実行する場合。 このプロセスは、ASP.NET の外部で発生し、逆シリアル化中にエラーが発生した場合は、エラーが抑制され、逆シリアル化中に、ロジックの残りの部分が発生します。 逆シリアル化のシリアル化された値が存在しない場合と、逆シリアル化を試みると、し<see cref="T:System.Configuration.SettingsPropertyValue" />オブジェクトは代わりにしようと関連付けられたに定義されているいずれかが構成された場合、既定値を返す<see cref="T:System.Configuration.SettingsProperty" />インスタンス。 この例では場合、<see cref="P:System.Configuration.SettingsProperty.DefaultValue" />プロパティが設定されたいずれかに<see langword="null" />、または"[null]"の文字列、<see cref="T:System.Configuration.SettingsPropertyValue" />オブジェクトは初期化、<see cref="P:System.Configuration.SettingsPropertyValue.PropertyValue" />プロパティを<see langword="null" />参照型の場合、または関連付けられている値型の既定値にします。  その一方で場合、<see cref="P:System.Configuration.SettingsProperty.DefaultValue" />プロパティ ("[null 以外]")、有効なオブジェクトの参照または文字列値を保持する、<see cref="P:System.Configuration.SettingsProperty.DefaultValue" />プロパティが返されます。  
+  
+ シリアル化、逆シリアル化が試行され、既定値が指定されていないときに逆シリアル化された値がない場合、空の文字列が文字列型に対して返されます。 呼び出して他のすべての種類では、既定のインスタンスが返されます<see cref="M:System.Activator.CreateInstance(System.Type)" />: 参照型に既定のコンス トラクターを使用してオブジェクト インスタンスを作成するを試行ことを意味します。  この試行が失敗した場合、し<see langword="null" />が返されます。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">既定値を使用しているときに、<see cref="P:System.Configuration.SettingsProperty.DefaultValue" />プロパティ、エラーが発生しました。  変換を試行するか、<see cref="P:System.Configuration.SettingsProperty.DefaultValue" />は有効な型のプロパティは、次の失敗、または結果の値がによって定義された型と互換性がありません<see cref="P:System.Configuration.SettingsProperty.PropertyType" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializedValue">
+      <MemberSignature Language="C#" Value="public object SerializedValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SerializedValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsPropertyValue.SerializedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化された値の取得または設定、<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</summary>
+        <value>シリアル化された値、<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Configuration.SettingsPropertyValue>ことを検出するインスタンス、<xref:System.Configuration.SettingsPropertyValue.PropertyValue%2A>プロパティが前回変更された、<xref:System.Configuration.SettingsPropertyValue.SerializedValue%2A>プロパティが呼び出された、おそれがある<xref:System.Configuration.SettingsPropertyValue.PropertyValue%2A>シリアル化された形式に変換するプロパティです。 使用する特定のシリアル化機構がによって定義された、<xref:System.Configuration.SettingsProperty.SerializeAs%2A>プロパティを<xref:System.Configuration.SettingsProperty>インスタンスに関連付けられている、<xref:System.Configuration.SettingsPropertyValue>インスタンス。 現在サポートされているシリアル化オプションは、オブジェクトを文字列型コンバーターを使用して文字列に変換を使用してシリアル化を<xref:System.Xml.Serialization.XmlSerializer>、またはバイナリのシリアル化を実行します。  
+  
+> [!NOTE]
+>  基になるシリアライザーは、シリアル化プロセス中に例外をスローする可能性があります。  
+  
+ 直前の呼び出し元コードが必要な<xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter>権限 (として利用可能な権限のいずれかの一部<xref:System.Security.Permissions.SecurityPermission>) をこのプロパティの get アクセス操作子または set アクセス操作子を呼び出します。  このアクセス許可を使用した強制は、<xref:System.Security.Permissions.SecurityAction.LinkDemand>列挙値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティのシリアル化オプションには、文字列型コンバーターの使用が示されますが、型コンバーターを使用できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UsingDefaultValue">
+      <MemberSignature Language="C#" Value="public bool UsingDefaultValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsingDefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.SettingsPropertyValue.UsingDefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定するブール値を取得するかどうかの値、<see cref="T:System.Configuration.SettingsPropertyValue" />オブジェクトは既定値で定義されて、 <see cref="P:System.Configuration.SettingsProperty.DefaultValue" /> 、関連するプロパティ値<see cref="T:System.Configuration.SettingsProperty" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />場合の値、<see cref="T:System.Configuration.SettingsProperty" />オブジェクトは、既定値以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

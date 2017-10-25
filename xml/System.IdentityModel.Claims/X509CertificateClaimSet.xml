@@ -1,0 +1,232 @@
+<Type Name="X509CertificateClaimSet" FullName="System.IdentityModel.Claims.X509CertificateClaimSet">
+  <TypeSignature Language="C#" Value="public class X509CertificateClaimSet : System.IdentityModel.Claims.ClaimSet, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509CertificateClaimSet extends System.IdentityModel.Claims.ClaimSet implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Claims.X509CertificateClaimSet" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Claims.ClaimSet</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>X.509 証明書から抽出された、エンティティと関連のあるクレームのコレクションを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509CertificateClaimSet (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.X509CertificateClaimSet.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">クレーム セットに追加する X.509 証明書。</param>
+        <summary>X.509 証明書を指定して、<see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public override int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.X509CertificateClaimSet.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> オブジェクト内にある X.509 証明書クレームの数を取得します。</summary>
+        <value>この <see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> オブジェクト内にある X.509 証明書クレームの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.X509CertificateClaimSet.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Claims.X509CertificateClaimSet.Dispose%2A> メソッドは、<xref:System.IdentityModel.Claims.X509CertificateClaimSet> の使用が完了したときに呼び出します。 <xref:System.IdentityModel.Claims.X509CertificateClaimSet.Dispose%2A> メソッドによって、<xref:System.IdentityModel.Claims.X509CertificateClaimSet> は使用不可の状態になります。 <xref:System.IdentityModel.Claims.X509CertificateClaimSet.Dispose%2A> メソッドを呼び出した後は、<xref:System.IdentityModel.Claims.X509CertificateClaimSet> が使用したメモリをガベージ コレクターが再利用できるように、<xref:System.IdentityModel.Claims.X509CertificateClaimSet> への参照をすべて解放する必要があります。  
+  
+> [!NOTE]
+>  <xref:System.IdentityModel.Claims.X509CertificateClaimSet.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.IdentityModel.Claims.X509CertificateClaimSet> を呼び出してください。 このメソッドを呼び出さないと、<xref:System.IdentityModel.Claims.X509CertificateClaimSet> オブジェクトが使用しているリソースは、ガベージ コレクターがこのオブジェクトの `Finalize` メソッドを呼び出すまで解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpirationTime">
+      <MemberSignature Language="C#" Value="public DateTime ExpirationTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ExpirationTime" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.X509CertificateClaimSet.ExpirationTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> の有効期限を取得します。</summary>
+        <value>この <see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> の有効期限。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindClaims">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Claims.Claim&gt; FindClaims (string claimType, string right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.Claims.Claim&gt; FindClaims(string claimType, string right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="claimType" Type="System.String" />
+        <Parameter Name="right" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="claimType">クレームの種類の URI (Uniform Resource Identifier)。</param>
+        <param name="right">新しいクレームに関連する権限の URI。</param>
+        <summary><see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> で、指定したクレームの種類および権限と一致するクレームを検索します。</summary>
+        <returns>A<see langword="System.Collections.Generic.IEnumerable&lt;Claim&gt;" />オブジェクト、指定した条件に一致するクレームを列挙することができます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IEnumerator&lt;System.IdentityModel.Claims.Claim&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.IdentityModel.Claims.Claim&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.X509CertificateClaimSet.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.IdentityModel.Claims.Claim&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Collections.Generic.IEnumerator`1" /> 内の Windows クレームを列挙するために使用できる <see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> を取得します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerator`1" /> 内の Windows クレームを列挙するために使用できる <see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Issuer">
+      <MemberSignature Language="C#" Value="public override System.IdentityModel.Claims.ClaimSet Issuer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Claims.ClaimSet Issuer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.X509CertificateClaimSet.Issuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.ClaimSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> の発行者を取得します。</summary>
+        <value>この <see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> の発行者。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Claims.X509CertificateClaimSet> の発行者は、X.509 証明書の X.509 チェーンと同じモデルに従います。 たとえば、ルート <xref:System.IdentityModel.Claims.X509CertificateClaimSet> は自己発行であり、証明機関に対応します。 チェーン内の証明書が利用できない場合、ルート <xref:System.IdentityModel.Claims.ClaimSet> は匿名の発行者です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override System.IdentityModel.Claims.Claim this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Claims.Claim Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.X509CertificateClaimSet.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.Claim</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得するクレームのインデックス。</param>
+        <summary>指定したインデックスのクレームを取得します。</summary>
+        <value>指定のインデックスに対するクレーム。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Claims.X509CertificateClaimSet.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> オブジェクト内にある X.509 証明書クレームの数を取得します。</summary>
+        <returns>この <see cref="T:System.IdentityModel.Claims.X509CertificateClaimSet" /> オブジェクト内にある X.509 証明書クレームの数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X509Certificate">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2 X509Certificate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate2 X509Certificate" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.X509CertificateClaimSet.X509Certificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクレーム セットに関連付けられた X.509 証明書を取得します。</summary>
+        <value>このクレーム セットに関連付けられた X.509 証明書。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

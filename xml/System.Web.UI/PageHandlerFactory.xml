@@ -1,0 +1,106 @@
+<Type Name="PageHandlerFactory" FullName="System.Web.UI.PageHandlerFactory">
+  <TypeSignature Language="C#" Value="public class PageHandlerFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PageHandlerFactory extends System.Object implements class System.Web.IHttpHandlerFactory" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.PageHandlerFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>継承するクラスのインスタンスを作成、<see cref="T:System.Web.UI.Page" />クラスし、実装、<see cref="T:System.Web.IHttpHandler" />インターフェイスです。 インスタンスは、ASP.NET files の要求を処理する動的に作成されます。 <see cref="T:System.Web.UI.PageHandlerFactory" />クラスは、ASP.NET ページの既定のハンドラー ファクトリ実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageHandlerFactory>クラスが実装する、 <xref:System.Web.IHttpHandlerFactory> ASP.NET files の既定の HTTP ハンドラーを提供するインターフェイスです。 <xref:System.Web.UI.PageHandlerFactory> ASP.NET コンパイルと、システムが、必要な場合は、コンパイル、URL に対応する正確な型を返すを呼び出すし、その型のインスタンスを作成します。 継承して、ページの種類、<xref:System.Web.UI.Page>クラスと実装、<xref:System.Web.IHttpHandler>インターフェイスです。  
+  
+ カスタムのページ ハンドラー ファクトリをビルドする実装、 <xref:System.Web.IHttpHandlerFactory> 、カスタム コントロールの登録と<xref:System.Web.UI.PageHandlerFactory>でアプリケーションの Web.config ファイル内のクラス、 [httpHandlers 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/24ca01f3-7141-4fdc-acac-71c0733cf6c2)構成セクション。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PageHandlerFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageHandlerFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.PageHandlerFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageHandlerFactory.%23ctor%2A>コンス トラクターは、既定のコンス トラクターし、すべてのフィールドを既定値に初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHandler">
+      <MemberSignature Language="C#" Value="public virtual System.Web.IHttpHandler GetHandler (System.Web.HttpContext context, string requestType, string virtualPath, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.IHttpHandler GetHandler(class System.Web.HttpContext context, string requestType, string virtualPath, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageHandlerFactory.GetHandler(System.Web.HttpContext,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.IHttpHandler</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="requestType" Type="System.String" />
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">インスタンス、 <see cref="T:System.Web.HttpContext" /> HTTP 要求を処理するために使用組み込みサーバー オブジェクト (たとえば、要求、応答、セッション、およびサーバーなど) への参照を提供するクラス。</param>
+        <param name="requestType">HTTP データは、クライアントが使用するメソッド (GET または POST) を転送します。</param>
+        <param name="virtualPath">要求されたリソースへの仮想パス。</param>
+        <param name="path"><see cref="P:System.Web.HttpRequest.PhysicalApplicationPath" />に要求されたリソースのプロパティです。</param>
+        <summary>インスタンスを返します、<see cref="T:System.Web.IHttpHandler" />インターフェイスを要求されたリソースを処理します。</summary>
+        <returns>新しい<see cref="T:System.Web.IHttpHandler" />要求を処理する、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PageHandlerFactory.GetHandler%2A>メソッドは、ASP.NET ランタイムによって呼び出されの有効なインスタンスを返します、<xref:System.Web.IHttpHandler>インターフェイスまたは`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseHandler">
+      <MemberSignature Language="C#" Value="public virtual void ReleaseHandler (System.Web.IHttpHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReleaseHandler(class System.Web.IHttpHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PageHandlerFactory.ReleaseHandler(System.Web.IHttpHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Web.IHttpHandler" />
+      </Parameters>
+      <Docs>
+        <param name="handler"><see cref="T:System.Web.IHttpHandler" />を再利用します。</param>
+        <summary>ハンドラーの既存のインスタンスを再利用するためにファクトリを有効にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

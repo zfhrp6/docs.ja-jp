@@ -1,0 +1,3397 @@
+<Type Name="Chart" FullName="System.Web.UI.DataVisualization.Charting.Chart">
+  <TypeSignature Language="C#" Value="public class Chart : System.Web.UI.WebControls.DataBoundControl, System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Chart extends System.Web.UI.WebControls.DataBoundControl implements class System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.Chart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.DataBoundControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IPostBackEventHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Load")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.DataVisualization.Charting.ChartWebDesigner, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DisplayName("Chart")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Web.UI.DataVisualization.Charting.Chart), "ChartControl.ico")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:Chart runat=server&gt;&lt;Series&gt;&lt;{0}:Series Name="Series1"&gt;&lt;/{0}:Series&gt;&lt;/Series&gt;&lt;ChartAreas&gt;&lt;{0}:ChartArea Name="ChartArea1"&gt;&lt;/{0}:ChartArea&gt;&lt;/ChartAreas&gt;&lt;/{0}:Chart&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.DataVisualization.Charting.Chart" /> コントロールのルート クラスとして使用できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、すべてのプロパティ、メソッド、およびグラフの Web コントロールのイベントを公開します。  
+  
+ 2 つの重要なプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>クラスは、<xref:System.Web.UI.DataVisualization.Charting.Chart.Series%2A>と<xref:System.Web.UI.DataVisualization.Charting.Chart.ChartAreas%2A>プロパティ、コレクションのプロパティは、どちらもします。 <xref:System.Web.UI.DataVisualization.Charting.Chart.Series%2A>コレクション プロパティ ストア<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクトで、そのデータの属性と共に表示されますが、データの格納に使用します。 <xref:System.Web.UI.DataVisualization.Charting.Chart.ChartAreas%2A>コレクション プロパティ ストア<xref:System.Web.UI.DataVisualization.Charting.ChartArea>軸の 1 つのセットを使用して 1 つまたは複数のグラフの描画に使用される、主にオブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Chart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.Chart" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用することができます、<xref:System.Web.UI.DataVisualization.Charting.Chart>実行時にクラスです。  
+  
+ ただし、わかりやすくするため、これはお勧めを作成すること、<xref:System.Web.UI.DataVisualization.Charting.Chart>デザイン時インスタンス。  
+  
+ これは、ルート オブジェクトの<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlignDataPointsByAxisLabel">
+      <MemberSignature Language="C#" Value="public void AlignDataPointsByAxisLabel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AlignDataPointsByAxisLabel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.AlignDataPointsByAxisLabel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>軸ラベルを使用して、X 軸に沿ったデータ ポイントを配置します。 複数の系列はインデックスが作成され、X 値は、文字列の場合に適用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlignDataPointsByAxisLabel">
+      <MemberSignature Language="C#" Value="public void AlignDataPointsByAxisLabel (string series);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AlignDataPointsByAxisLabel(string series) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.AlignDataPointsByAxisLabel(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="series" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="series">データ ポイント軸ラベルを使用して、X 軸に配置されたデータ ポイントを含む一連のコンマ区切り一覧。</param>
+        <summary>軸ラベルを使用して、X 軸に沿った別の系列のデータ ポイントを配置します。 指定した系列のグラフを配置するには、昇順の並べ替え順序を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、軸ラベルを使用して、X 軸に沿った別の系列のデータ ポイントを配置するために使用し、ときに、適用します。  
+  
+-   複数の系列が表示され、インデックスが付けられます。つまり、すべてのデータ ポイントがある、 <xref:System.Web.UI.DataVisualization.Charting.DataPoint.XValue%2A> 0、または<xref:System.Web.UI.DataVisualization.Charting.Series.IsXValueIndexed%2A>プロパティは`true`します。  
+  
+-   すべてのデータ ポイントがある空でない軸のラベルに固有の<xref:System.Web.UI.DataVisualization.Charting.Series>します。 一意ではない場合、例外がスローされます。  
+  
+ データ バインディングが複数の系列の作成時に発生すると、このような状況はよくと`string`x 軸の値の値が使用されます。  
+  
+ 複数のインデックスを作成する 2 つの問題が発生する系列が描画され、X の値が使用して設定された`string`値。  
+  
+-   X 値と同じ文字列で別の系列のデータ ポイントを X 軸に沿って同じインデックスにプロットすることが保証されません。  
+  
+-   最初の系列のデータ ポイントの軸ラベルだけが表示されます、場合でも、軸ラベルがあるその他の系列が同じインデックスでのデータ ポイント。  
+  
+ 既定では、その系列内で格納される順序で描画されるポイントです。 並べ替え順序を指定するには、使用、`AlignDataPointsByAxisLabel`を持つメソッド オーバー ロード、`sortingOrder`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlignDataPointsByAxisLabel">
+      <MemberSignature Language="C#" Value="public void AlignDataPointsByAxisLabel (System.Web.UI.DataVisualization.Charting.PointSortOrder sortingOrder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AlignDataPointsByAxisLabel(valuetype System.Web.UI.DataVisualization.Charting.PointSortOrder sortingOrder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.AlignDataPointsByAxisLabel(System.Web.UI.DataVisualization.Charting.PointSortOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sortingOrder" Type="System.Web.UI.DataVisualization.Charting.PointSortOrder" />
+      </Parameters>
+      <Docs>
+        <param name="sortingOrder">A<see cref="T:System.Web.UI.DataVisualization.Charting.PointSortOrder" />以前同じ軸領域を占有するポイントが表示される順序を決定を昇順または降順の並べ替え順序が軸ラベルに使用されるかどうかを示すオブジェクト。</param>
+        <summary>軸ラベルを使用してデータ ポイントを配置します。 指定した並べ替え順序を使用して、グラフ内のすべての系列を配置します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlignDataPointsByAxisLabel">
+      <MemberSignature Language="C#" Value="public void AlignDataPointsByAxisLabel (string series, System.Web.UI.DataVisualization.Charting.PointSortOrder sortingOrder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AlignDataPointsByAxisLabel(string series, valuetype System.Web.UI.DataVisualization.Charting.PointSortOrder sortingOrder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.AlignDataPointsByAxisLabel(System.String,System.Web.UI.DataVisualization.Charting.PointSortOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="series" Type="System.String" />
+        <Parameter Name="sortingOrder" Type="System.Web.UI.DataVisualization.Charting.PointSortOrder" />
+      </Parameters>
+      <Docs>
+        <param name="series">軸ラベルを使用して配置するシリーズのコンマ区切りの一覧です。</param>
+        <param name="sortingOrder">A<see cref="T:System.Web.UI.DataVisualization.Charting.PointSortOrder" />さらに、同じ軸領域を割り当てられていたポイントが表示される順序を決定する軸ラベルの場合、昇順または降順の並べ替え順序を決定する列挙値が使用されます。</param>
+        <summary>軸ラベルを使用してデータ ポイントを配置します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、軸ラベルを使用して、X 軸に沿った別の系列のデータ ポイントを配置するために使用し、ときに、適用します。  
+  
+-   複数の系列が表示され、インデックスが付けられます。つまり、すべてのデータ ポイントがある、 <xref:System.Web.UI.DataVisualization.Charting.DataPoint.XValue%2A> 0、または<xref:System.Web.UI.DataVisualization.Charting.Series.IsXValueIndexed%2A>プロパティは`true`します。  
+  
+-   すべてのデータ ポイントがある空でない軸のラベルに固有の<xref:System.Web.UI.DataVisualization.Charting.Series>します。 一意ではない場合、例外がスローされます。  
+  
+ データ バインディングが複数の系列の作成時に発生すると、このような状況はよくと`string`x 軸の値の値が使用されます。  
+  
+ 複数のインデックスを作成する 2 つの問題が発生する系列が描画され、X の値が使用して設定された`string`値。  
+  
+-   X 値と同じ文字列で別の系列のデータ ポイントを X 軸に沿って同じインデックスにプロットすることが保証されません。  
+  
+-   最初の系列のデータ ポイントの軸ラベルだけが表示されます、場合でも、軸ラベルがあるその他の系列が同じインデックスでのデータ ポイント。  
+  
+ 既定では、その系列内で格納される順序で描画されるポイントです。 並べ替え順序を指定するには、使用、`AlignDataPointsByAxisLabel`を持つメソッド オーバー ロード、`sortingOrder`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternateText">
+      <MemberSignature Language="C#" Value="public string AlternateText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AlternateText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.AlternateText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に表示される代替テキスト、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />グラフ イメージが使用可能な場合を制御します。</summary>
+        <value>A<see langword="string" />に表示される代替テキストを表す値、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />グラフ イメージが使用可能な場合を制御します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Annotations">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.AnnotationCollection Annotations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.AnnotationCollection Annotations" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.Annotations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.AnnotationCollectionEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.AnnotationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.AnnotationCollection" />オブジェクト グラフの注釈を格納するために使用します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.AnnotationCollection" />オブジェクト グラフの注釈を格納するために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのグラフの注釈は、このコレクションのプロパティに格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AntiAliasing">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.AntiAliasingStyles AntiAliasing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.AntiAliasingStyles AntiAliasing" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.AntiAliasing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.DataVisualization.Charting.AntiAliasingStyles), "All")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.FlagsEnumUITypeEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.AntiAliasingStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキストとグラフィックスが描画されるときに、アンチ エイリアスを使用するかどうかを決定する値を設定します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.AntiAliasingStyles" /> 列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンチ エイリアスは中間の色でピクセルを埋め込むことで、「ギザギザした境界」を滑らか、長方形として表示される以外のグラフの縁を滑らかに特に効果的です。 たとえば、アンチ エイリアス線グラフ、円グラフ、に対して非常に効果的がバーの効果はありませんし、縦棒グラフ。  
+  
+ 四角形、円などのテキストやグラフィックス プリミティブにアンチエイリアシングを適用できます。  
+  
+ アンチ エイリアスはパフォーマンスに影響に注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyPaletteColors">
+      <MemberSignature Language="C#" Value="public void ApplyPaletteColors ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ApplyPaletteColors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.ApplyPaletteColors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に割り当てられている系列とデータ ポイントの色を設定、実行時にプログラムでアクセスを許可します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.DataVisualization.Charting.Chart>色は、実行時に自動的に割り当てられる、グラフの表示する際に時刻より前に、色を知る方法はありません、`Color`は自動的に割り当てられる値のプロパティを返します<xref:System.Drawing.Color.Empty>この時点でします。  
+  
+ 呼び出す場合は、<xref:System.Web.UI.DataVisualization.Charting.Chart.ApplyPaletteColors%2A>メソッド、系列とデータ ポイントの色が設定され、プログラムによってアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "White")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景色、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />グラフ オブジェクトの背景色を表す値です。 既定の色は <see cref="System.Drawing.Color.White" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意の有効な ARGB (アルファ、赤、緑、青) 値には、このプロパティを設定することができます。 注意してください、<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクト、アルファ コンポーネントを 255 以外の値に設定することはできません。 つまり、用、<xref:System.Web.UI.DataVisualization.Charting.Chart>のみ、オブジェクト、<xref:System.Drawing.Color.Transparent%2A>値を使用することはできません。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.Chart.BackColor%2A>値は、背景のグラデーションの色を使用している場合に使用される最初の色になります。  
+  
+ アルファ値は、色の不透明度を制御します。 この色を「透過的な」に設定する場合: は、アルファ値は 0 を使用する場合: に、タイトルの背景色は割り当てられません。 結果として、背景が透明にします。  
+  
+ 次の表に、<xref:System.Web.UI.DataVisualization.Charting.Series>グラデーションをサポートする型。  
+  
+|系列の種類|2D|3D|  
+|------------------|--------|--------|  
+|棒グラフ|X|-|  
+|箱ひげ図|X|X|  
+|バブル チャート|-|-|  
+|ローソク足|X|X|  
+|Column|X|X|  
+|ドーナツ グラフ|X|-|  
+|誤差範囲|-|-|  
+|回線速度|-|-|  
+|高速ポイント|-|-|  
+|じょうご|X|X|  
+|ガント|X|-|  
+|かぎ足|-|-|  
+|行|-|-|  
+|円グラフ|X|-|  
+|ポイント|-|-|  
+|ポイント アンド フィギュア|X|-|  
+|極座標|-|-|  
+|ピラミッド|X|X|  
+|レーダー|X|X|  
+|範囲列|X|-|  
+|練行足|X|-|  
+|スプライン|-|-|  
+|スプライン領域|X|-|  
+|スプライン範囲|X|-|  
+|積み上げ面グラフ|X|-|  
+|100% 積み上げ面|X|-|  
+|積み上げ横棒グラフ|X|-|  
+|積み上げ横 100|X|-|  
+|積み上げ縦棒グラフ|X|-|  
+|100% 積み上げ縦棒|X|-|  
+|ステップ ライン|-|-|  
+|株価|-|-|  
+|新値 3 本足|X|-|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackGradientStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.GradientStyle BackGradientStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.GradientStyle BackGradientStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BackGradientStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.GradientEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.GradientStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景のグラデーションの向き、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。 また、グラデーションが使用されているかどうかを判断します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.GradientStyle" />列挙します。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.GradientStyle.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackGradientStyle%2A>を決定するプロパティかどうか、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールには、グラデーションが表示され、1 つの場合は、グラデーションの向きを決定するが使用されます。  
+  
+ 使用可能なパターンの一覧についてを参照してください、<xref:System.Web.UI.DataVisualization.Charting.GradientStyle>列挙します。  
+  
+ グラデーションの色を使用します。  
+  
+ グラフの背景の色を設定、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackColor%2A>プロパティです。  
+  
+ グラフの背景の 2 番目の色を設定、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackSecondaryColor%2A>プロパティです。  
+  
+ この設定<xref:System.Web.UI.DataVisualization.Charting.Chart.BackGradientStyle%2A>グラデーションのスタイルを希望するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackHatchStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartHatchStyle BackHatchStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartHatchStyle BackHatchStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BackHatchStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.HatchStyleEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartHatchStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の陰影のスタイル、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartHatchStyle" />列挙します。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.ChartHatchStyle.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartHatchStyle>列挙型のブラシで使用される陰影パターンを指定する<xref:System.Drawing.Drawing2D.HatchBrush>です。 純色の背景色と線が描かれて、背景の陰影パターンで構成されます。  
+  
+ 使用可能な陰影のスタイルの一覧についてを参照してください、<xref:System.Web.UI.DataVisualization.Charting.ChartHatchStyle>列挙します。  
+  
+ **注**線の陰影の色はによって決定されます、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackSecondaryColor%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImage">
+      <MemberSignature Language="C#" Value="public string BackImage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BackImage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BackImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.UrlValueEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景イメージ、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <value>A<see langword="string" />イメージ ファイルの URL を表す値です。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの背景画像にパスを定義する、<xref:System.Web.UI.DataVisualization.Charting.Chart>凡例、絶対または相対 URL を指定できます。  
+  
+ 画像の位置を使用して、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackImageAlignment%2A>と<xref:System.Web.UI.DataVisualization.Charting.Chart.BackImageWrapMode%2A>プロパティです。  
+  
+ 設定して、「透過的」とイメージによって表示される色のいずれかを指定することも、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackImageTransparentColor%2A>プロパティです。  
+  
+ イメージは、アイコンを含む、.NET Framework でサポートされている任意の有効なグラフィックス ファイルから取得できます。  
+  
+ 背景画像は、グラデーションの色などの他のバック グラウンド プロパティよりも優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImageAlignment">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartImageAlignmentStyle BackImageAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartImageAlignmentStyle BackImageAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BackImageAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartImageAlignmentStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に使用される背景イメージの配置、<see cref="F:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode.Unscaled" />の描画モード。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.ChartImageAlignmentStyle" /> 列挙値。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.ChartImageAlignmentStyle.TopLeft" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの背景画像の配置を決定する、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールです。 これはのみに適用すると、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackImageWrapMode%2A>プロパティがに設定されている<xref:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode.Unscaled>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImageTransparentColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackImageTransparentColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackImageTransparentColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BackImageTransparentColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の色、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />透明として表示されるコントロールです。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />値が表示されます透明としてグラフ画像が描画されるときです。 既定値は <see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackImageWrapMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartImageWrapMode BackImageWrapMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartImageWrapMode BackImageWrapMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BackImageWrapMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartImageWrapMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景画像の描画モード、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode" /> 列挙値。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode.Tile" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、画像の表示方法、たとえば、タイル、拡大または縮小などを決定します。  
+  
+ イメージをスケーリングすると、グラフの境界内に収まる伸縮されます。 イメージを並べて表示するが繰り返し描画、グラフの左上隅から開始します。  
+  
+ 使用可能な折り返しモードの詳細については、次を参照してください。、<xref:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode>列挙トピックです。  
+  
+ 場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackImageWrapMode%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.ChartImageWrapMode.Unscaled>、イメージの描画位置によって決まります、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackImageAlignment%2A>プロパティの設定。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackSecondaryColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackSecondaryColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackSecondaryColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BackSecondaryColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフの背景の 2 番目の色を設定します。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 値。 既定値は <see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.Chart.BackSecondaryColor%2A>プロパティの多くの第 2 背景色を決定する<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクトし、グラデーションの色を適用しているときに使用します。  
+  
+ 設定することができます<xref:System.Web.UI.DataVisualization.Charting.Chart.BackSecondaryColor%2A>ARGB (アルファ、赤、緑、青) の有効な値にします。  
+  
+ 陰影を使用する場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackSecondaryColor%2A>プロパティは、グラフの陰影の線の色を決定します。  
+  
+ グラフの背景のグラデーションの色を使用。  
+  
+-   基本色を設定、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackColor%2A>プロパティです。  
+  
+-   2 番目の色を設定、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackSecondaryColor%2A>プロパティです。  
+  
+-   設定、<xref:System.Web.UI.DataVisualization.Charting.Chart.BackGradientStyle%2A>グラデーションのスタイルを希望するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BorderColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BorderColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BorderColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフの枠線の色を設定します。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得境界線の色の設定を使用してまたは<xref:System.Web.UI.DataVisualization.Charting.Chart.BorderlineColor%2A>代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderlineColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BorderlineColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BorderlineColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BorderlineColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "White")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ全体のイメージの境界線の色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />グラフ全体のイメージの境界線の色を表すです。 既定値は <see cref="F:System.Drawing.Color.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な ARGB 値 (アルファ、赤、緑、青の値) には、このプロパティを設定することができます。  
+  
+ このプロパティがに似ていますが、<xref:System.Web.UI.DataVisualization.Charting.Chart.BorderColor%2A>プロパティ、されていることが唯一の違い、<xref:System.Web.UI.DataVisualization.Charting.Chart.BorderColor%2A>プロパティは使用できません [プロパティ] ウィンドウからデザイン時にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderlineDashStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartDashStyle BorderlineDashStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartDashStyle BorderlineDashStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BorderlineDashStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartDashStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ全体のイメージの境界線のスタイルを設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartDashStyle" />グラフ イメージの境界線の線のスタイルを決定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、グラフ イメージの境界線に使用される行のスタイルを決定します。 純色、ピリオドで区切られた、およびなどの行を指定できます。  
+  
+ さらにスタイル オプションを参照してください、<xref:System.Web.UI.DataVisualization.Charting.ChartDashStyle>列挙トピックです。  
+  
+ このプロパティがに似ていますが、<xref:System.Web.UI.DataVisualization.Charting.Chart.BorderStyle%2A>プロパティ、されていることが唯一の違い、<xref:System.Web.UI.DataVisualization.Charting.Chart.BorderStyle%2A>プロパティは使用できません [プロパティ] ウィンドウからデザイン時にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderlineWidth">
+      <MemberSignature Language="C#" Value="public int BorderlineWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BorderlineWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BorderlineWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ イメージ全体の枠線の幅を設定します。</summary>
+        <value><see langword="integer" />グラフ イメージの境界線をピクセル単位の幅を決定する値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderSkin">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.BorderSkin BorderSkin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.BorderSkin BorderSkin" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BorderSkin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.LegendConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.BorderSkin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.BorderSkin" />の罫線スキンの機能を提供するオブジェクト、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.BorderSkin" />グラフ コントロールの罫線スキンの機能を提供するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、グラフの罫線スキンを指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderStyle">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.BorderStyle BorderStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.BorderStyle BorderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BorderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.BorderStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の罫線のスタイル、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />です。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.BorderStyle" />グラフのです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderWidth">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit BorderWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit BorderWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BorderWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフの枠線の幅を設定します。</summary>
+        <value><see langword="integer" /> (ピクセル単位)、グラフの罫線の幅を決定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得または罫線の幅を設定を使用して<xref:System.Web.UI.DataVisualization.Charting.Chart.BorderlineWidth%2A>代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildNumber">
+      <MemberSignature Language="C#" Value="public string BuildNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BuildNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.BuildNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビルド番号を取得、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <value>A<see langword="string" />ビルド番号を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartAreas">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartAreaCollection ChartAreas { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.ChartAreaCollection ChartAreas" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.ChartAreas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartCollectionEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartAreaCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り専用の取得<see cref="T:System.Web.UI.DataVisualization.Charting.ChartAreaCollection" />の格納に使用できるオブジェクト<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartAreaCollection" />の格納に使用できるオブジェクト<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクション プロパティではアクセスする、<xref:System.Web.UI.DataVisualization.Charting.ChartAreaCollection>を格納するオブジェクト<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクトし、もメソッドと、コレクションを操作するためのプロパティを提供します。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクトは、1 つまたは複数のグラフのプロットに使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.ImageMapEventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.ImageMapEventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.DataVisualization.Charting.Chart.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ImageMapEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブなイメージ マップ領域がによって定義されたときに発生<see cref="P:System.Web.UI.DataVisualization.Charting.DataPoint.PostBackValue" />上、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロールがクリックされました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compression">
+      <MemberSignature Language="C#" Value="public int Compression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Compression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.Compression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ イメージの圧縮の量を設定します。</summary>
+        <value><see langword="integer" />グラフ イメージ全体の圧縮の量を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 圧縮は; に対する割合で表したたとえば、50% の圧縮を使用するには、50 にこのプロパティを設定します。  
+  
+ 圧縮を使用、すべてのレンダリング方法によって決定される、<xref:System.Web.UI.DataVisualization.Charting.Chart.RenderType%2A>によって指定される JPEG イメージについては、プロパティ、<xref:System.Web.UI.DataVisualization.Charting.ChartImageType.Jpeg>列挙値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentImageLocation">
+      <MemberSignature Language="C#" Value="public string CurrentImageLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrentImageLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.CurrentImageLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のイメージの URL を取得、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロールが表示されます。</summary>
+        <value>A<see langword="string" />を現在のグラフ イメージの URL を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには効果がない場合、<xref:System.Web.UI.DataVisualization.Charting.Chart.ImageStorageMode%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.ImageStorageMode.UseHttpHandler?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Customize">
+      <MemberSignature Language="C#" Value="public event EventHandler Customize;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Customize" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.DataVisualization.Charting.Chart.Customize" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラフ画像が描画される直前に発生します。 すべてのグラフ プロパティが設定されている、すべてのグラフ データが使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントには、次の 2 つの一意な機能があります。  
+  
+-   すべてのグラフ データは使用できません。つまり、系列とデータ ポイントが作成されます。 これは、データを検証して、グラフが描画される直前に調整できるためデータ バインディングを使用する場合に特に便利です。  
+  
+-   「自動」に設定されているプロパティを含め、すべてのグラフ プロパティが設定されました。 つまり、"Auto"プロパティようになりました、自動的に計算値を格納検査、できるグラフを描画する前に変更します。 例としては、<xref:System.Web.UI.DataVisualization.Charting.Axis.Minimum%2A>と<xref:System.Web.UI.DataVisualization.Charting.Axis.Maximum%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Axis>クラスです。  
+  
+ このイベントを使用して、変更またはが描画される前に、グラフ イメージをカスタマイズします。  
+  
+ グラフ領域には、変更が加えられたときなど、軸のスケールをグラフ領域のプロパティ必要があります再計算するグラフを正しく描画するために。 グラフを再計算を呼び出して、<xref:System.Web.UI.DataVisualization.Charting.ChartArea.RecalculateAxesScale%2A>メソッドを変更した後にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomizeLegend">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.DataVisualization.Charting.CustomizeLegendEventArgs&gt; CustomizeLegend;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.DataVisualization.Charting.CustomizeLegendEventArgs&gt; CustomizeLegend" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.DataVisualization.Charting.Chart.CustomizeLegend" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.DataVisualization.Charting.CustomizeLegendEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラフの凡例が描画される直前に発生します。 このイベントを使用すると、グラフの凡例項目をカスタマイズできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.Chart.CustomizeLegend>イベントは、主が描画される直前に凡例のカスタマイズに使用します。 既定とカスタムの凡例項目の両方を削除または変更するには、およびカスタム項目を追加することもできます。 さらに、凡例項目の順序を変更できます。  
+  
+ グラフ イメージは、送信側の引数を使用して描画する前に変更することもできます。  
+  
+ 既定の凡例項目は、データ系列またはデータ ポイントのいずれかに対して作成されたアイテムがカスタムの凡例項目は、グラフのデータを任意の方法で接続されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomizeMapAreas">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.DataVisualization.Charting.CustomizeMapAreasEventArgs&gt; CustomizeMapAreas;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.DataVisualization.Charting.CustomizeMapAreasEventArgs&gt; CustomizeMapAreas" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.DataVisualization.Charting.Chart.CustomizeMapAreas" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.DataVisualization.Charting.CustomizeMapAreasEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラフの画像マップがレンダリングされる直前に発生します。 このイベントを使用すると、マップ領域の項目をカスタマイズできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.CustomizeMapAreasEventArgs.MapAreaItems%2A>のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.CustomizeMapAreasEventArgs>クラスにするために使用することができます。  
+  
+-   削除またはグラフ オブジェクト用に自動的に作成されたマップ項目を変更します。すべてのデータ ポイント、系列を凡例項目またはストリップ ラインを持つオブジェクト空でない`Url`、`MapAreaAttributes`または`ToolTip`プロパティが関連付けられているマップ領域オブジェクトになります。  
+  
+-   ユーザー定義の図形と座標を持つカスタムのマップ領域を追加します。  
+  
+> [!NOTE]
+>  送信側の引数型の<xref:System.Web.UI.DataVisualization.Charting.Chart>は読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindCrossTable">
+      <MemberSignature Language="C#" Value="public void DataBindCrossTable (System.Collections.IEnumerable dataSource, string seriesGroupByField, string xField, string yFields, string otherFields);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DataBindCrossTable(class System.Collections.IEnumerable dataSource, string seriesGroupByField, string xField, string yFields, string otherFields) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.DataBindCrossTable(System.Collections.IEnumerable,System.String,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Collections.IEnumerable" />
+        <Parameter Name="seriesGroupByField" Type="System.String" />
+        <Parameter Name="xField" Type="System.String" />
+        <Parameter Name="yFields" Type="System.String" />
+        <Parameter Name="otherFields" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">グラフのバインド元となるデータ ソース。</param>
+        <param name="seriesGroupByField">データを系列にグループ化するために使用するフィールドの名前。</param>
+        <param name="xField">X 値のフィールド名。</param>
+        <param name="yFields">Y 値のフィールドの名前のコンマ区切りの一覧。</param>
+        <param name="otherFields">バインドできるその他のデータ ポイントのプロパティ。</param>
+        <summary>データは、特定の列の一意の値ごとに作成する 1 つの系列で、グラフを表にバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一意の値の数によっては、グラフに系列は自動的に追加する、指定された`seriesGroupByField`; のデータ ソースの列シリーズの作成を列のグループ化に依存するつまり、します。  
+  
+ データ ソースにすることができます、 <xref:System.Data.OleDb.OleDbDataReader>、<xref:System.Data.SqlClient.SqlDataReader>または<xref:System.Data.DataView>オブジェクト。 実装するすべてのコレクションに注意してください、<xref:System.Collections.IEnumerable>インターフェイスを使用することができます。  
+  
+ その他のデータ ポイントのプロパティも、X と Y 値をバインドすることができます。 形式: PointProperty = [{形式}] のフィールド [、PointProperty = [{形式}] のフィールド] です。 例:"ツールヒント価格 {C1} Href を = = WebSiteName"です。  
+  
+これらのデータ ポイントのプロパティは次のとおりです。 
+
+- <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.AxisLabel%2A?displayProperty=nameWithType>
+- <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.ToolTip%2A?displayProperty=nameWithType>
+- <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.Url%2A?displayProperty=nameWithType>
+- <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.PostBackValue%2A?displayProperty=nameWithType>
+- <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.Label%2A?displayProperty=nameWithType>
+- <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.LegendText%2A?displayProperty=nameWithType>
+- <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.LegendToolTip%2A?displayProperty=nameWithType>
+- <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.CustomProperties%2A?displayProperty=nameWithType>、これは、カスタム プロパティの名前。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindCrossTable">
+      <MemberSignature Language="C#" Value="public void DataBindCrossTable (System.Collections.IEnumerable dataSource, string seriesGroupByField, string xField, string yFields, string otherFields, System.Web.UI.DataVisualization.Charting.PointSortOrder sortingOrder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DataBindCrossTable(class System.Collections.IEnumerable dataSource, string seriesGroupByField, string xField, string yFields, string otherFields, valuetype System.Web.UI.DataVisualization.Charting.PointSortOrder sortingOrder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.DataBindCrossTable(System.Collections.IEnumerable,System.String,System.String,System.String,System.String,System.Web.UI.DataVisualization.Charting.PointSortOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Collections.IEnumerable" />
+        <Parameter Name="seriesGroupByField" Type="System.String" />
+        <Parameter Name="xField" Type="System.String" />
+        <Parameter Name="yFields" Type="System.String" />
+        <Parameter Name="otherFields" Type="System.String" />
+        <Parameter Name="sortingOrder" Type="System.Web.UI.DataVisualization.Charting.PointSortOrder" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">グラフのバインド元となるデータ ソース。</param>
+        <param name="seriesGroupByField">データを系列にグループ化するために使用するフィールドの名前。</param>
+        <param name="xField">X 値のフィールド名。</param>
+        <param name="yFields">Y 値のフィールドの名前のコンマ区切りの一覧。</param>
+        <param name="otherFields">バインドできるその他のデータ ポイントのプロパティ。</param>
+        <param name="sortingOrder">系列は、指定した順序で、グループ フィールドの値で並べ替えられます。</param>
+        <summary>データは、特定の列の一意の値ごとに作成する 1 つの系列で、グラフを表にバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一意の値の数によっては、グラフに系列は自動的に追加する、指定された`seriesGroupByField`; のデータ ソースの列シリーズの作成を列のグループ化に依存するつまり、します。  
+  
+ データ ソースにすることができます、 <xref:System.Data.OleDb.OleDbDataReader>、<xref:System.Data.SqlClient.SqlDataReader>または<xref:System.Data.DataView>オブジェクト。  
+  
+ 実装するすべてのコレクションに注意してください、<xref:System.Collections.IEnumerable>インターフェイスを使用することができます。  
+  
+ その他のデータ ポイントのプロパティも、X と Y 値をバインドすることができます。 形式: PointProperty = [{形式}] のフィールド [、PointProperty = [{形式}] のフィールド] です。 例:"ツールヒント価格 {C1} Href を = = WebSiteName"です。  
+  
+ これらのデータ ポイントのプロパティの一覧を次に示します: <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.AxisLabel%2A>、 <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.ToolTip%2A>、 <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.Url%2A>、 <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.Label%2A>、 <xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.LegendText%2A>、<xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.LegendToolTip%2A>と<xref:System.Web.UI.DataVisualization.Charting.DataPointCustomProperties.CustomProperties%2A>、これは、カスタム プロパティの名前。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindTable">
+      <MemberSignature Language="C#" Value="public void DataBindTable (System.Collections.IEnumerable dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DataBindTable(class System.Collections.IEnumerable dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.DataBindTable(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">いずれかのデータ ソース<see cref="T:System.Collections.IEnumerable" />オブジェクト。</param>
+        <summary>自動的に作成して、指定されたデータ テーブルに系列のデータをバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーブルの各列では、1 列あたり 1 つの系列を使用して、一連の Y 値になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindTable">
+      <MemberSignature Language="C#" Value="public void DataBindTable (System.Collections.IEnumerable dataSource, string xField);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DataBindTable(class System.Collections.IEnumerable dataSource, string xField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.DataBindTable(System.Collections.IEnumerable,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Collections.IEnumerable" />
+        <Parameter Name="xField" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">いずれかのデータ ソース<see cref="T:System.Collections.IEnumerable" />オブジェクト。</param>
+        <param name="xField">フィールドの名前は、系列の X 値を使用します。</param>
+        <summary>自動的に作成し、系列データを指定したデータ テーブルにバインドし、必要に応じて X の値を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーブルの各列では、1 列あたり 1 つの系列を使用して、一連の Y 値になります。  
+  
+ 系列の X 値のフィールドも指定することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataManipulator">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.DataManipulator DataManipulator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.DataManipulator DataManipulator" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.DataManipulator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.DataManipulator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.DataVisualization.Charting.DataManipulator" />データを処理するメソッドとプロパティを提供するオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.DataManipulator" />データを処理するメソッドとプロパティを提供するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行時にこのプロパティを使用します。  
+  
+-   Y 値をコピーします。  
+  
+-   データをフィルター処理します。  
+  
+-   データをグループ化します。  
+  
+-   空のポイントで失われたデータを置き換えます。  
+  
+-   データをエクスポート、<xref:System.Data.DataSet>オブジェクト。  
+  
+-   データを並べ替えます。  
+  
+-   財務式をデータに適用されます。  
+  
+ 参照してください、<xref:System.Web.UI.DataVisualization.Charting.DataManipulator>詳細については、クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public override object DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.ChartDataSourceConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のデータ ソース、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />オブジェクト。</summary>
+        <value><see cref="T:System.Object" />のデータ ソースを表す、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 系列のデータ ポイントを使用して任意のデータ ソースにバインドできます、<xref:System.Web.UI.DataVisualization.Charting.Chart.DataSource%2A>プロパティです。  
+  
+ データ ソースにバインドするようにグラフを強制的に、<xref:System.Web.UI.DataVisualization.Charting.Chart.DataBindTable%2A>メソッドです。  
+  
+ データ ソースとして使用できるオブジェクトの一覧を次に示します。  
+  
+-   DataView  
+  
+-   データ リーダー (SQL、OleDB)  
+  
+-   DataSet  
+  
+-   DataTable  
+  
+-   バインディング ソース  
+  
+-   IDataSource  
+  
+-   配列  
+  
+-   表示内容  
+  
+-   すべての列挙可能なオブジェクト  
+  
+-   SqlCommand/OleDbCommand (DataSource データ バインディングのみ)  
+  
+-   SqlDataAdapter/OleDbDataAdapter (DataSource データ バインディングのみ)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DescriptionUrl">
+      <MemberSignature Language="C#" Value="public string DescriptionUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DescriptionUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.DescriptionUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.UrlValueEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の詳細な説明の場所、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />です。</summary>
+        <value>A<see langword="string" />グラフの詳細な説明の URL を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public override sealed void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトの破棄を使用して、<see cref="T:System.IDisposable" />インターフェイスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see langword="true" />アンマネージ コードとマネージの両方のリソースを解放するには<see langword="false" />アンマネージ リソースだけを解放します。</param>
+        <summary>リリースでは、アンマネージし、オプションでマネージ リソース。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableViewState">
+      <MemberSignature Language="C#" Value="public override bool EnableViewState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.EnableViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または状態管理が有効になっているかどうかを決定するフラグを設定します。</summary>
+        <value>
+          <see langword="true" />状態管理が有効である場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`の状態管理を有効にする、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ 保存されているビュー ステートがいずれかによって決まりますが、<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateContent%2A>または<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData%2A>プロパティです。  
+  
+> [!NOTE]
+>  (、Page_Init またはコンス トラクターは、動作します) Page_Load 前にこのプロパティを設定する必要がありますか、その効果はありません。  
+  
+ 詳細情報を参照して、Visual Studio のマニュアルには、ビュー状態や状態管理をについて説明します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.FontInfo Font { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.FontInfo Font" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.FontInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのフォントのプロパティを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.FontInfo" />コントロールのフォントのプロパティを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のテキストの色、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />グラフのテキストの色を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、このクラスに適用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatNumber">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.DataVisualization.Charting.FormatNumberEventArgs&gt; FormatNumber;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.DataVisualization.Charting.FormatNumberEventArgs&gt; FormatNumber" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.DataVisualization.Charting.Chart.FormatNumber" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.DataVisualization.Charting.FormatNumberEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値を文字列に変換する必要があるときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChartElementOutline">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartElementOutline GetChartElementOutline (object chartElement, System.Web.UI.DataVisualization.Charting.ChartElementType elementType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.ChartElementOutline GetChartElementOutline(object chartElement, valuetype System.Web.UI.DataVisualization.Charting.ChartElementType elementType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.GetChartElementOutline(System.Object,System.Web.UI.DataVisualization.Charting.ChartElementType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartElementOutline</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="chartElement" Type="System.Object" />
+        <Parameter Name="elementType" Type="System.Web.UI.DataVisualization.Charting.ChartElementType" />
+      </Parameters>
+      <Docs>
+        <param name="chartElement">グラフ要素です。</param>
+        <param name="elementType">要素の型。</param>
+        <summary>グラフ要素のアウトラインを返します。</summary>
+        <returns>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartElementOutline" />を含むオブジェクト。  
+  
+-   このグラフ要素のアウトライン マーカーとして使用できる絶対座標の点の配列。  
+  
+-   A<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />このグラフ要素のアウトラインを描画するためのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、 `chartElement` 、グラフの一部ではない、または`elementType`と組み合わせて使用できない`chartElement`結果のポイントのマーカーの空の配列が含まれます。 マーカーのポイントは、時計回りに並べ替えられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHtmlImageMap">
+      <MemberSignature Language="C#" Value="public string GetHtmlImageMap (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetHtmlImageMap(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.GetHtmlImageMap(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">イメージの map タグの名前。</param>
+        <summary>現在表示されているグラフの HTML イメージ マップを返します。 1 つのオーバー ロードされた<c>SaveImage</c>内のメソッド、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />このメソッドを呼び出す前に呼び出す必要があります。</summary>
+        <returns>A <see langword="string" /> HTML イメージ マップを表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">要求されたグラフ サービスの型。</param>
+        <summary>要求されたグラフ サービスを返します。</summary>
+        <returns><see cref="T:System.Object" />サービス型を表すまたは<see langword="null" />サービスが見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit Height" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.WebControls.Unit), "300")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ イメージ全体の高さをピクセル単位で設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Unit" />グラフ イメージ全体のピクセル単位の高さを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーセント記号 (%) またはポイント (pt) 値を指定しません。 それ以外の場合は、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="HitTest">
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>任意の時点に設置されている座標で定義される、指定された X と Y の場合は、グラフ要素を決定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した位置に設置されている、存在する場合は、グラフ要素を決定するには、このメソッドを呼び出します。  
+  
+ このメソッドは、いくつかのマウスに関連するイベントでよく使用されて — MouseDown など — グラフ要素のエンドユーザーを決定するをクリックします。 イベントのパラメーターから取得した X および Y のマウス座標を使用して、`x`と`y`このメソッドの呼び出しのパラメーター値。  
+  
+ 返されたプロパティ<xref:System.Web.UI.DataVisualization.Charting.HitTestResult>オブジェクトのどのグラフ要素がクリックしてされた; 判断に使用できます、<xref:System.Web.UI.DataVisualization.Charting.HitTestResult>オブジェクトは、存在する場合も選択すると、実際のオブジェクトのインスタンスを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.HitTestResult HitTest (int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.HitTestResult HitTest(int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.HitTest(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.HitTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">ユーザーがクリックした点の X 座標の値。</param>
+        <param name="y">ユーザーがクリックした点の Y 座標の値。</param>
+        <summary>任意の時点に設置されている座標で定義される、指定された X と Y の場合は、グラフ要素を決定します。</summary>
+        <returns>A<see cref="T:System.Web.UI.DataVisualization.Charting.HitTestResult" />存在する場合は、グラフ要素をに関する情報を提供するオブジェクトを指定された位置です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフ要素かどうかを指定したポイントに置かれているこのメソッドを呼び出します。  
+  
+> [!IMPORTANT]
+>  このメソッドが正常に動作するための順序で、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>プロパティに設定する必要があります`false`です。  
+  
+ このメソッドを使用できます、<xref:System.Web.UI.DataVisualization.Charting.Chart.Click>ドリル ダウンを実装するときに、サーバー側のイベントです。 ただし、使いやすさのため、ドリル ダウンをクライアント側のイメージ マップを使用することを強くお勧めします。  
+  
+ 返されたプロパティ<xref:System.Web.UI.DataVisualization.Charting.HitTestResult>オブジェクトのどのグラフ要素がクリックしてされた; 判断に使用できます、<xref:System.Web.UI.DataVisualization.Charting.HitTestResult>オブジェクトは、存在する場合も選択すると、実際のオブジェクトのインスタンスを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.HitTestResult HitTest (int x, int y, bool ignoreTransparent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.HitTestResult HitTest(int32 x, int32 y, bool ignoreTransparent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.HitTest(System.Int32,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.HitTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="ignoreTransparent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="x">ユーザーがクリックした点の X 座標の値。</param>
+        <param name="y">ユーザーがクリックした点の Y 座標の値。</param>
+        <param name="ignoreTransparent">透明な要素が無視されるかどうかを決定するフラグ。</param>
+        <summary>ある場所で定義されたポイントにある場合は、グラフ要素を決定 X 座標と Y 座標を指定します。 必要に応じて透過的な要素は無視できます。</summary>
+        <returns>A<see cref="T:System.Web.UI.DataVisualization.Charting.HitTestResult" />存在する場合は、グラフ要素をに関する情報を提供するオブジェクトを指定された位置です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフ要素かどうかを指定したポイントに置かれているこのメソッドを呼び出します。  
+  
+ 透明な要素を無視するのには、設定、`ignoreTransparent`パラメーターを`true`です。  
+  
+> [!IMPORTANT]
+>  このメソッドが正常に動作するための順序で、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>プロパティに設定する必要があります`false`です。  
+  
+ このメソッドを使用できます、<xref:System.Web.UI.DataVisualization.Charting.Chart.Click>ドリル ダウンを実装するときに、サーバー側のイベントです。 ただし、使いやすさのため、ドリル ダウンをクライアント側のイメージ マップを使用することを強くお勧めします。  
+  
+ 返されたプロパティ<xref:System.Web.UI.DataVisualization.Charting.HitTestResult>オブジェクトのどのグラフ要素がクリックしてされた; 判断に使用できます、<xref:System.Web.UI.DataVisualization.Charting.HitTestResult>オブジェクトは、存在する場合も選択すると、実際のオブジェクトのインスタンスを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.HitTestResult HitTest (int x, int y, System.Web.UI.DataVisualization.Charting.ChartElementType requestedElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.HitTestResult HitTest(int32 x, int32 y, valuetype System.Web.UI.DataVisualization.Charting.ChartElementType requestedElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.HitTest(System.Int32,System.Int32,System.Web.UI.DataVisualization.Charting.ChartElementType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.HitTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="requestedElement" Type="System.Web.UI.DataVisualization.Charting.ChartElementType" />
+      </Parameters>
+      <Docs>
+        <param name="x">ユーザーがクリックした点の X 座標の値。</param>
+        <param name="y">ユーザーがクリックした点の Y 座標の値。</param>
+        <param name="requestedElement">テストするグラフ要素の型を決定するフラグ。</param>
+        <summary>特定の種類のグラフ要素があるかどうか、ポイント座標で定義される、指定された X と Y を決定します。</summary>
+        <returns>A<see cref="T:System.Web.UI.DataVisualization.Charting.HitTestResult" />を指定した位置にある場合は、グラフ要素に関する情報を提供するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された種類のグラフ要素が指定したポイントにあるかどうかを判断するには、このメソッドを呼び出します。  
+  
+> [!IMPORTANT]
+>  このメソッドが正常に動作するための順序で、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>プロパティに設定する必要があります`false`です。  
+  
+ このメソッドを使用できます、<xref:System.Web.UI.DataVisualization.Charting.Chart.Click>ドリル ダウンを実装するときに、サーバー側のイベントです。 ただし、使いやすさのため、ドリル ダウンをクライアント側のイメージ マップを使用することを強くお勧めします。  
+  
+ 返されたプロパティ<xref:System.Web.UI.DataVisualization.Charting.HitTestResult>オブジェクトのどのグラフ要素がクリックしてされた; 判断に使用できます、<xref:System.Web.UI.DataVisualization.Charting.HitTestResult>オブジェクトは、存在する場合も選択すると、実際のオブジェクトのインスタンスを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.HitTestResult[] HitTest (int x, int y, bool ignoreTransparent, params System.Web.UI.DataVisualization.Charting.ChartElementType[] requestedElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.HitTestResult[] HitTest(int32 x, int32 y, bool ignoreTransparent, valuetype System.Web.UI.DataVisualization.Charting.ChartElementType[] requestedElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.HitTest(System.Int32,System.Int32,System.Boolean,System.Web.UI.DataVisualization.Charting.ChartElementType[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.HitTestResult[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="ignoreTransparent" Type="System.Boolean" />
+        <Parameter Name="requestedElement" Type="System.Web.UI.DataVisualization.Charting.ChartElementType[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="x">指定したデータ ポイントの X 座標。</param>
+        <param name="y">指定したデータ ポイントの Y 座標。</param>
+        <param name="ignoreTransparent">透明な要素は無視されることを示すフラグ。</param>
+        <param name="requestedElement">結果をフィルター処理するためにテストの種類を指定する <see cref="T:System.Web.UI.DataVisualization.Charting.ChartElementType" /> オブジェクトの配列。 これを省略すると、要素の型のチェックが無視されてすべての要素の型が有効になります。</param>
+        <summary>指定した型のグラフ要素を、指定した X 座標と Y 座標の定義するポイントに配置するかどうかを決定します。</summary>
+        <returns>指定した場所にグラフ要素が見つかった場合は、そのグラフ要素に関する情報を提供する <see cref="T:System.Web.UI.DataVisualization.Charting.HitTestResult" /> オブジェクトの配列。 配列には少なくとも 1 つ要素が含まれますが、<see cref="F:System.Web.UI.DataVisualization.Charting.ChartElementType.Nothing" /> の場合があります。 結果のオブジェクトは、コントロール内の異なるレイヤーを、上から下へとソートされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出して、ゲージ要素かどうかを指定したポイントに置かれています。 多くの場合、このメソッドは、ゲージ、エンドユーザーがクリックした要素を判断するマウス関連のイベントによって、たとえば、MouseDown、使用されます。 イベントのパラメーターから取得した X および Y のマウス座標は、このメソッドの呼び出しの X と Y のパラメーター値が使用されます。  
+  
+ 返されたプロパティ<xref:System.Web.UI.DataVisualization.Charting.HitTestResult>オブジェクトのどのグラフ要素がクリックしてされた; 判断に使用できます、<xref:System.Web.UI.DataVisualization.Charting.HitTestResult>オブジェクトは、存在する場合も選択すると、実際のオブジェクトのインスタンスを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageLocation">
+      <MemberSignature Language="C#" Value="public string ImageLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.ImageLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("ChartPic_#SEQ(300,3)")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ImageValueEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージ ファイルが保存されているときに、場所の設定を取得または<see cref="F:System.Web.UI.DataVisualization.Charting.RenderType.ImageTag" />レンダリングを実行します。</summary>
+        <value>A<see langword="string" />をサーバーにイメージ ファイルが保存されている URL を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには効果がない場合は<xref:System.Web.UI.DataVisualization.Charting.Chart.ImageStorageMode%2A>に設定されている<xref:System.Web.UI.DataVisualization.Charting.ImageStorageMode.UseHttpHandler?displayProperty=nameWithType>です。  
+  
+ グラフ イメージが生成され、サーバーでは、によって決定される形式でディスクに保存し、イメージ タグ メソッドを使用してグラフ イメージをレンダリングするときに、<xref:System.Web.UI.DataVisualization.Charting.ChartImageType>プロパティです。  
+  
+ イメージ ファイルが保存されている URL は、絶対または相対; のいずれかを指定できます。イメージ ファイルはファイル拡張子はによって決まります、<xref:System.Web.UI.DataVisualization.Charting.ChartImageType>プロパティです。  
+  
+ イメージ ファイルは、常に 1 つのファイル名であるハードコーディングすることができますか、ユーザー識別子 (Uid) またはラウンド ロビンと呼ばれる一意の名前付きのファイルの指定した数のいずれかを使用する、「#」記号を使用することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Images">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.NamedImagesCollection Images { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.NamedImagesCollection Images" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.Images" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.NamedImagesCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.DataVisualization.Charting.NamedImagesCollection" />を格納するオブジェクト<see cref="T:System.Web.UI.DataVisualization.Charting.NamedImage" />グラフのオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.NamedImagesCollection" />を格納するオブジェクト<see cref="T:System.Web.UI.DataVisualization.Charting.NamedImage" />グラフのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して追加<xref:System.Web.UI.DataVisualization.Charting.NamedImage>対象のオブジェクトと削除<xref:System.Web.UI.DataVisualization.Charting.NamedImage>オブジェクトから、<xref:System.Web.UI.DataVisualization.Charting.NamedImagesCollection>のオブジェクト、<xref:System.Web.UI.DataVisualization.Charting.Chart>です。 このコレクション プロパティは実行時にのみ使用できます。  
+  
+ イメージ — 型から派生したオブジェクトは、<xref:System.Drawing.Image>など<xref:System.Drawing.Bitmap>、それが動的に作成-このコレクションに格納され、イメージに関連するのには、後で、割り当てられていることができます<xref:System.Web.UI.DataVisualization.Charting.Chart>プロパティなど<xref:System.Web.UI.DataVisualization.Charting.Chart.BackImage%2A>です。  
+  
+ 割り当てると、<xref:System.Web.UI.DataVisualization.Charting.NamedImage>のイメージに関連するプロパティのオブジェクト、<xref:System.Web.UI.DataVisualization.Charting.Chart>クラスの名前を使用して、<xref:System.Web.UI.DataVisualization.Charting.NamedImage>オブジェクトに対して、`string`イメージに関連するプロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageStorageMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ImageStorageMode ImageStorageMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ImageStorageMode ImageStorageMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.ImageStorageMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ImageStorageMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ イメージの表示のストレージ モードを設定します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.ImageStorageMode" /> 列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、グラフ イメージを表示するために使用されるストレージの種類を定義します。 参照してください<xref:System.Web.UI.DataVisualization.Charting.ImageStorageMode>オプション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartImageType ImageType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartImageType ImageType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.ImageType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartImageType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージの種類を取得または設定し、<see cref="F:System.Web.UI.DataVisualization.Charting.RenderType.ImageTag" /> レンダリングが使用されている場合はそこにグラフが表示されます。</summary>
+        <value>グラフが表示されるイメージの種類を指定する <see cref="T:System.Web.UI.DataVisualization.Charting.ChartImageType" /> 列挙値。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.ChartImageType.Jpeg" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、レンダリングに使用されるイメージ ファイルの種類を決定します。  
+  
+ 可能なファイル形式は<xref:System.Web.UI.DataVisualization.Charting.ChartImageType.Bmp>、 <xref:System.Web.UI.DataVisualization.Charting.ChartImageType.Emf>、 <xref:System.Web.UI.DataVisualization.Charting.ChartImageType.Jpeg>、および<xref:System.Web.UI.DataVisualization.Charting.ChartImageType.Png>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMapAreaAttributesEncoded">
+      <MemberSignature Language="C#" Value="public bool IsMapAreaAttributesEncoded { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMapAreaAttributesEncoded" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.IsMapAreaAttributesEncoded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマップ領域属性をエンコードするかどうかを決定するフラグを設定します。 マップ領域属性は、さまざまなデータ ソースからデータを読み込むことができます。 グラフ コントロールはさまざまなデータ ソースから信頼されていないデータを読み込んでから、エンドユーザーを妨げません。 このため、データを検証し、それをエンコードお勧めします。</summary>
+        <value>
+          <see langword="true" />マップ領域属性は、エンコードされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMapEnabled">
+      <MemberSignature Language="C#" Value="public bool IsMapEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMapEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアント側の画像マップが有効になっているかどうかを決定するフラグを設定します。</summary>
+        <value>
+          <see langword="true" />イメージ マップが有効な場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`false`画像マップが無効になります。 これは、次の状況下でも発生します。  
+  
+-   `Url`、 `MapAreaAttributes`、 `LabelMapAreaAttributes`、`LegendMapAreaAttributes`または`ToolTip`グラフ要素のプロパティを設定します。  
+  
+-   A<xref:System.Web.UI.DataVisualization.Charting.MapArea>オブジェクトが追加されて、<xref:System.Web.UI.DataVisualization.Charting.MapAreasCollection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSoftShadows">
+      <MemberSignature Language="C#" Value="public bool IsSoftShadows { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSoftShadows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.IsSoftShadows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または影を描画するときに滑らかなグラデーションが適用されるかどうかを決定するフラグを設定します。</summary>
+        <value>
+          <see langword="true" />影をスムージングを使用して描画する場合<see langword="false" />されていない場合。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、`ShadowOffset`系列のプロパティ、データ ポイント、グラフ領域または凡例がゼロ以外設定する色を使用して、シャドウが適用される、`ShadowColor`プロパティです。  
+  
+ 場合の値、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsSoftShadows%2A>プロパティは`true`影に滑らかなグラデーションが適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Legends">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.LegendCollection Legends { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.LegendCollection Legends" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.Legends" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.LegendCollectionEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.LegendCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.LegendCollection" />すべてを保存するために使用できるオブジェクト<see cref="T:System.Web.UI.DataVisualization.Charting.Legend" />によって使用されるオブジェクト、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.LegendCollection" />すべてを保存するために使用できるオブジェクト<see cref="T:System.Web.UI.DataVisualization.Charting.Legend" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションのプロパティがすべて格納<xref:System.Web.UI.DataVisualization.Charting.Legend>によって使用されるオブジェクト、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadTemplate">
+      <MemberSignature Language="C#" Value="public void LoadTemplate (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadTemplate(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.LoadTemplate(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み込むストリーム。</param>
+        <summary>テンプレートを読み込み、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />をイメージ ストリームからのコントロールです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メモリ ストリーム、ファイル ストリームなどなど、ストリームからテンプレートをロードする場合は、このメソッドを使用します。  
+  
+ 設定することを確認、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsTemplateMode%2A>プロパティを`true`でテンプレートを保存する前に、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Save%2A>メソッドです。  
+  
+ 読み込まれたテンプレートに 2 つのデータ系列がある場合は、グラフに、系列の外観のプロパティが順番に適用されます。 つまり、グラフの最初の系列に最初のテンプレートの系列の外観プロパティが割り当てられている、2 番目のテンプレート系列の外観プロパティは、グラフの 2 番目の系列に適用されますしてから、テンプレートの最初の系列はグラフの 3 番目の系列をもう一度使用されます。 同じグラフ領域、および外観プロパティを持つ他のコレクションの場合は true を保持します。  
+  
+ テンプレートは、カスタム パレットをシミュレートするために使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadTemplate">
+      <MemberSignature Language="C#" Value="public void LoadTemplate (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadTemplate(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.LoadTemplate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">読み込みにテンプレートのファイル名。 ディスクから読み込まれるテンプレートの完全パスを指定する必要があります。</param>
+        <summary>ディスクから指定されたファイル名を持つテンプレートを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `name`パラメーターは、完全なパス、たとえば、C:\MyPic.jpg を使用する必要があります。 ファイルの拡張子を指定する必要がありますも注意してください。  
+  
+ このメソッドが使用して保存したディスクからテンプレートを読み込む、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Save%2A>メソッドです。  
+  
+ 設定することを確認、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.IsTemplateMode%2A>プロパティを`true`でテンプレートを保存する前に、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer.Save%2A>メソッドです。  
+  
+ 読み込まれたテンプレートに 2 つのデータ系列がある場合は、グラフに、系列の外観のプロパティが順番に適用されます。 つまり、グラフの最初の系列に最初のテンプレートの系列の外観プロパティが割り当てられている、2 番目のテンプレート系列の外観プロパティは、グラフの 2 番目の系列に適用されますしてから、テンプレートの最初の系列はグラフの 3 番目の系列をもう一度使用されます。 同じグラフ領域、および外観プロパティを持つ他のコレクションの場合は true を保持します。  
+  
+ テンプレートは、カスタム パレットをシミュレートするために使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元するコントロールの状態を表す <see cref="T:System.Object" />。</param>
+        <summary>によって保存された前回のページ要求からビューステート情報を復元、<see cref="M:System.Web.UI.DataVisualization.Charting.Chart.SaveViewState" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapAreas">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.MapAreasCollection MapAreas { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.MapAreasCollection MapAreas" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.MapAreas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartCollectionEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.MapAreasCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.DataVisualization.Charting.MapAreasCollection" />グラフのマップ領域を格納するオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.MapAreasCollection" />グラフのマップ領域を格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、デザイン時またはグラフにカスタムのマップ領域を追加する時間を実行します。 カスタムのマップ領域、グラフ要素に対応するマップ領域とは異なり、ユーザー定義の図形と座標があります。  
+  
+ イメージ マップとしてグラフを使用するために、<xref:System.Web.UI.DataVisualization.Charting.Chart.IsMapEnabled%2A>ルートのプロパティ<xref:System.Web.UI.DataVisualization.Charting.Chart>に設定する必要があります`true`、既定値です。  
+  
+ バイナリ ストリームとしてグラフを描画する場合は、特別な方法はクライアント側のイメージ マップを実装するために使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClick">
+      <MemberSignature Language="C#" Value="protected virtual void OnClick (System.Web.UI.WebControls.ImageMapEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClick(class System.Web.UI.WebControls.ImageMapEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.OnClick(System.Web.UI.WebControls.ImageMapEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.ImageMapEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータを提供する <see cref="T:System.Web.UI.WebControls.ImageMapEventArgs" /> オブジェクト。</param>
+        <summary><see cref="E:System.Web.UI.DataVisualization.Charting.Chart.Click" /> イベントで登録済みのデリゲートを呼び出します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCustomize">
+      <MemberSignature Language="C#" Value="protected virtual void OnCustomize (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCustomize(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.OnCustomize(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary>データは描画前にカスタマイズする準備ができているすべてのグラフの場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCustomizeLegend">
+      <MemberSignature Language="C#" Value="protected virtual void OnCustomizeLegend (System.Web.UI.DataVisualization.Charting.CustomizeLegendEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCustomizeLegend(class System.Web.UI.DataVisualization.Charting.CustomizeLegendEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.OnCustomizeLegend(System.Web.UI.DataVisualization.Charting.CustomizeLegendEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.DataVisualization.Charting.CustomizeLegendEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを含んでいる <see cref="T:System.Web.UI.DataVisualization.Charting.CustomizeLegendEventArgs" /> オブジェクト。</param>
+        <summary>すべてのグラフの凡例データを描画前にカスタマイズする準備ができたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCustomizeMapAreas">
+      <MemberSignature Language="C#" Value="protected virtual void OnCustomizeMapAreas (System.Web.UI.DataVisualization.Charting.CustomizeMapAreasEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCustomizeMapAreas(class System.Web.UI.DataVisualization.Charting.CustomizeMapAreasEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.OnCustomizeMapAreas(System.Web.UI.DataVisualization.Charting.CustomizeMapAreasEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.DataVisualization.Charting.CustomizeMapAreasEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Web.UI.DataVisualization.Charting.CustomizeMapAreasEventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary>マップ領域のデータがカスタマイズして描画からする準備ができたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFormatNumber">
+      <MemberSignature Language="C#" Value="protected virtual void OnFormatNumber (object caller, System.Web.UI.DataVisualization.Charting.FormatNumberEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnFormatNumber(object caller, class System.Web.UI.DataVisualization.Charting.FormatNumberEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.OnFormatNumber(System.Object,System.Web.UI.DataVisualization.Charting.FormatNumberEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="caller" Type="System.Object" />
+        <Parameter Name="e" Type="System.Web.UI.DataVisualization.Charting.FormatNumberEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="caller">イベントの呼び出し、グラフ画像であることができます、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />または<see cref="T:System.Web.UI.DataVisualization.Charting.Legend" />オブジェクト。</param>
+        <param name="e">イベントの引数を示す <see cref="T:System.Web.UI.DataVisualization.Charting.FormatNumberEventArgs" /> オブジェクト。</param>
+        <summary>数値の値を文字列に変換するときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPostPaint">
+      <MemberSignature Language="C#" Value="protected virtual void OnPostPaint (System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPostPaint(class System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.OnPostPaint(System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs" />イベントのデータを提供するオブジェクト。</param>
+        <summary>グラフ要素が描画後に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPrePaint">
+      <MemberSignature Language="C#" Value="protected virtual void OnPrePaint (System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPrePaint(class System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.OnPrePaint(System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs" />イベントのデータを提供するオブジェクト。</param>
+        <summary>グラフ要素の背景が描画された後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントが描画されるグラフ要素の直前に発生し、、グラフ画像、およびごとに 1 回の 1 回発生、 <xref:System.Web.UI.DataVisualization.Charting.ChartArea>、 <xref:System.Web.UI.DataVisualization.Charting.Legend>、<xref:System.Web.UI.DataVisualization.Charting.Series>と<xref:System.Web.UI.DataVisualization.Charting.DataPoint>グラフ画像内に存在するオブジェクト。 このイベントは発生しません注<xref:System.Web.UI.DataVisualization.Charting.Series>と<xref:System.Web.UI.DataVisualization.Charting.DataPoint>3D グラフのオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="public void Paint (System.Drawing.Graphics graphics, System.Drawing.Rectangle position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Paint(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.Paint(System.Drawing.Graphics,System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="position" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">グラフ イメージを描画する graphics オブジェクト。</param>
+        <param name="position">グラフィックでグラフ イメージの位置。</param>
+        <summary>グラフィックでグラフ イメージを描画します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Palette">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartColorPalette Palette { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartColorPalette Palette" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.Palette" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ColorPaletteEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartColorPalette</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のパレット、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartColorPalette" />使用するパレットを決定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パレットを使用しての両方の次の条件が満たされなかった場合は、データ要素に色を自動的に割り当てます。  
+  
+-   データ ポイント自体には、割り当てられている色がありません。  
+  
+-   また、データ ポイントが属するデータ系列には割り当てられている色はありません。  
+  
+ 使用する色が、グラフの種類に依存系列またはデータ ポイントの色は、明示的に指定しない場合、および<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクトのパレットまたはが指定されている場合、関連する一連のパレット。  
+  
+> [!NOTE]
+>  場合、`Palette`両方のプロパティ、<xref:System.Web.UI.DataVisualization.Charting.Chart>と<xref:System.Web.UI.DataVisualization.Charting.Series>にオブジェクトが設定されている<xref:System.Web.UI.DataVisualization.Charting.ChartColorPalette.None>、関連するデータ系列またはデータ ポイントに色が割り当てられていないと、データ ポイントは描画されませんが、および"empty"領域として表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaletteCustomColors">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color[] PaletteCustomColors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color[] PaletteCustomColors" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.PaletteCustomColors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.ColorArrayConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム パレットの色の配列を設定します。</summary>
+        <value>配列<see cref="T:System.Drawing.Color" />のグラフの系列に使用する色のセットを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 16 を超える色にする必要がありますまたはをグラフに独自の色を適用する場合は、カスタム パレットを定義する必要があります。 カスタム パレットを使用して、グラフに表示する順序で独自の色を追加できます。 この種類のパレットは、グラフの系列の数は、デザイン時に既知ではない場合に特に便利です。  
+  
+ このプロパティが no されるときに有効、<xref:System.Web.UI.DataVisualization.Charting.Chart.Palette%2A>プロパティは*いない*'éý'<xref:System.Web.UI.DataVisualization.Charting.ChartColorPalette.None>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformDataBinding">
+      <MemberSignature Language="C#" Value="protected override void PerformDataBinding (System.Collections.IEnumerable data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PerformDataBinding(class System.Collections.IEnumerable data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.PerformDataBinding(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="data"><see cref="T:System.Collections.IEnumerable" />にグラフ コントロールにバインドされているデータ ソースを表すオブジェクト。</param>
+        <summary>データ バインドに指定されたデータ ソース、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostPaint">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs&gt; PostPaint;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs&gt; PostPaint" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.DataVisualization.Charting.Chart.PostPaint" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラフ要素が描画された後に発生します。 このイベントは要素のように<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />と<see cref="T:System.Web.UI.DataVisualization.Charting.Legend" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrePaint">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs&gt; PrePaint;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs&gt; PrePaint" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.DataVisualization.Charting.Chart.PrePaint" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.DataVisualization.Charting.ChartPaintEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラフ要素の背景を描画した後に発生します。 このイベントは要素のように<see cref="T:System.Web.UI.DataVisualization.Charting.ChartArea" />と<see cref="T:System.Web.UI.DataVisualization.Charting.Legend" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="protected virtual void RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベント引数として、<see langword="string" />オブジェクト。</param>
+        <summary>フォームがサーバーにポストバックされるときに、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" /> コントロールのイベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクト。</param>
+        <summary>表示、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロールを指定した出力パラメーターです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.RenderType RenderType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.RenderType RenderType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.RenderType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.RenderType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ イメージの表示に使用する表示方法を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.RenderType" />グラフ イメージを表示するために使用したレンダリング メソッドを表す列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次に、グラフ イメージをレンダリングできます 3 つの方法を説明します。  
+  
+-   <xref:System.Web.UI.DataVisualization.Charting.RenderType.ImageTag>一時ファイルを保存する種類の原因を表示、サーバーのディスクにします。 使用してクライアント側で、グラフが表示されます、 \<IMG > タグの SRC 属性で指定された URL を設定すると、<xref:System.Web.UI.DataVisualization.Charting.Chart.ImageLocation%2A>プロパティです。  
+  
+-   場合、<xref:System.Web.UI.DataVisualization.Charting.RenderType.BinaryStreaming>表示の種類を指定すると、サーバーに一時イメージ ファイルが存在しません。 代わりに、グラフ イメージは、バイナリ ストリームとして送信されを使用して表示、 \<IMG > タグの SRC 属性をグラフ イメージを生成する役割が別の .aspx ページに設定します。  
+  
+-   A の種類のレンダリング<xref:System.Web.UI.DataVisualization.Charting.RenderType.ImageMap>イメージ マップを作成すると、実際のグラフ イメージの表示が行われませんが、します。 このオプションは、のレンダリングの型を持つイメージ マップを使用する場合のみ実行される<xref:System.Web.UI.DataVisualization.Charting.RenderType.BinaryStreaming>です。  
+  
+ 使用してディスクに保存一時イメージ ファイルを制御できることに注意してください、<xref:System.Web.UI.DataVisualization.Charting.Chart.ImageLocation%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetAutoValues">
+      <MemberSignature Language="C#" Value="public void ResetAutoValues ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetAutoValues() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.ResetAutoValues" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセットには、グラフのプロパティ値"Auto"に自動的に計算されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつかのグラフ プロパティを「自動」に設定することができます: たとえば、 <xref:System.Web.UI.DataVisualization.Charting.Axis.Minimum%2A>; グラフを描画する前にこれらのプロパティが計算されます。 通常、"auto"として表されます、<xref:System.Double.NaN>値。  
+  
+ これらのプロパティを"Auto"を計算される値をリセットするには、このメソッドを呼び出す (<xref:System.Double.NaN>)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeft">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.RightToLeft RightToLeft { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.RightToLeft RightToLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.RightToLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.RightToLeft</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールが右から左 (RTL) の言語に対して右から左に描画するかどうかを示す値を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.RightToLeft" />コントロールが右から左 (RTL) の言語に対して右から左に描画するかどうかを示す列挙値。 既定値は <see cref="T:System.Web.UI.DataVisualization.Charting.RightToLeft.No" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、凡例の色キー方向に影響します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveImage">
+      <MemberSignature Language="C#" Value="public void SaveImage (System.IO.Stream imageStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveImage(class System.IO.Stream imageStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.SaveImage(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="imageStream">イメージのストリーム。</param>
+        <summary>グラフ イメージを指定したストリームに保存します。 プロパティ<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.ImageType" />、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Compression" />およびその他の<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロールのプロパティを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveImage">
+      <MemberSignature Language="C#" Value="public void SaveImage (string imageFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveImage(string imageFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.SaveImage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="imageFileName">イメージ ファイルの名前。</param>
+        <summary>グラフ イメージを指定したファイルに保存します。 プロパティ<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.ImageType" />、<see cref="P:System.Web.UI.DataVisualization.Charting.Chart.Compression" />およびその他の<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロールのプロパティを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveImage">
+      <MemberSignature Language="C#" Value="public void SaveImage (System.IO.Stream imageStream, System.Web.UI.DataVisualization.Charting.ChartImageFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveImage(class System.IO.Stream imageStream, valuetype System.Web.UI.DataVisualization.Charting.ChartImageFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.SaveImage(System.IO.Stream,System.Web.UI.DataVisualization.Charting.ChartImageFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageStream" Type="System.IO.Stream" />
+        <Parameter Name="format" Type="System.Web.UI.DataVisualization.Charting.ChartImageFormat" />
+      </Parameters>
+      <Docs>
+        <param name="imageStream">イメージのストリーム。</param>
+        <param name="format">グラフ イメージの形式です。</param>
+        <summary>グラフ イメージを指定したストリームに保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveImage">
+      <MemberSignature Language="C#" Value="public void SaveImage (string imageFileName, System.Web.UI.DataVisualization.Charting.ChartImageFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveImage(string imageFileName, valuetype System.Web.UI.DataVisualization.Charting.ChartImageFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.SaveImage(System.String,System.Web.UI.DataVisualization.Charting.ChartImageFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imageFileName" Type="System.String" />
+        <Parameter Name="format" Type="System.Web.UI.DataVisualization.Charting.ChartImageFormat" />
+      </Parameters>
+      <Docs>
+        <param name="imageFileName">イメージ ファイルの名前。</param>
+        <param name="format">グラフ イメージの形式です。</param>
+        <summary>グラフ イメージをファイルに保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ページがサーバーにポスト バックされた時間以降に発生した、サーバー コントロールのビューステートの変更を保存します。</summary>
+        <returns><see cref="T:System.Object" />サーバー コントロールの現在のビュー ステートを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveXml">
+      <MemberSignature Language="C#" Value="public void SaveXml (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveXml(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.SaveXml(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">保存するファイル名。</param>
+        <summary>グラフの現在の状態を XML ファイルに保存します。 このメソッドは主に、サポートのために使用します。 スレッドの実行ファイルの書き込みアクセス許可が必要です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serializer">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartSerializer Serializer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.ChartSerializer Serializer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.Serializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.DataVisualization.Charting.ChartSerializer" />グラフのシリアル化に使用されるオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartSerializer" />グラフのシリアル化に使用されるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、デザイン時または時間グラフをシリアル化を実行します。  
+  
+ 詳細については、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer>クラス、クラスの概要を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Series">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.SeriesCollection Series { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.SeriesCollection Series" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.Series" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.SeriesCollectionEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.SeriesCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.DataVisualization.Charting.SeriesCollection" />を含むオブジェクト<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.SeriesCollection" />を含むオブジェクト<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクション プロパティでは、アクセスすることができます、<xref:System.Web.UI.DataVisualization.Charting.SeriesCollection>クラスが格納されている<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクトおよびメソッドとプロパティを使用してこのコレクションを操作にも用意されています。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクトのストア<xref:System.Web.UI.DataVisualization.Charting.DataPoint>オブジェクトとデータの属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressExceptions">
+      <MemberSignature Language="C#" Value="public bool SuppressExceptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SuppressExceptions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.SuppressExceptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または重大でない例外を抑制する必要があるかどうかを決定するフラグを設定します。</summary>
+        <value>
+          <see langword="true" />致命的でない例外を抑制する必要があります。 場合、それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定する場合`true`、致命的でない例外が抑制されます。  
+  
+ ときに、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールは、データとその他の設定を使用してグラフをプロットできません正しく、例外がスローされます。 例外を表示するは、アプリケーションのテスト中に便利ですが、それらが表示されない、アプリケーションが離されるとします。  
+  
+> [!NOTE]
+>  このプロパティを設定`true`ユーザー アプリケーションのソース コードで深刻な問題を非表示にすることがあります。 この設定可能性、グラフ画像を生成する数をデータを偽ることがあります。 このモードにのみで使用されるリリース ビルドがあることを強くお勧めします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackEventHandler.RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="void IPostBackEventHandler.RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.System#Web#UI#IPostBackEventHandler#RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベントの引数として、<see langword="string" />オブジェクト。</param>
+        <summary>フォームがサーバーにポストバックされるときに、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" /> コントロールのイベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAntiAliasingQuality">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.TextAntiAliasingQuality TextAntiAliasingQuality { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.TextAntiAliasingQuality TextAntiAliasingQuality" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.TextAntiAliasingQuality" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.DataVisualization.Charting.TextAntiAliasingQuality), "High")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.TextAntiAliasingQuality</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.TextAntiAliasingQuality" />テキストにアンチエイリアシングを適用するときに使用する型。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.TextAntiAliasingQuality" />テキストにアンチエイリアシングを適用するときに使用する列挙値。 既定値は <see cref="F:System.Web.UI.DataVisualization.Charting.TextAntiAliasingQuality.High" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストをアンチ エイリアスが適用されている場合、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールは、このプロパティを使用して適用するテキストのアンチエイリアシングの種類が判断されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Titles">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.TitleCollection Titles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataVisualization.Charting.TitleCollection Titles" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.Titles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartCollectionEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.TitleCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.TitleCollection" />すべてを格納するオブジェクト<see cref="T:System.Web.UI.DataVisualization.Charting.Title" />によって使用されるオブジェクト、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.TitleCollection" />すべてを格納するオブジェクト<see cref="T:System.Web.UI.DataVisualization.Charting.Title" />によって使用されるオブジェクト、<see cref="T:System.Web.UI.DataVisualization.Charting.Chart" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.Chart.Titles%2A>プロパティがすべて格納<xref:System.Web.UI.DataVisualization.Charting.Title>によって使用されるオブジェクト、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateDataSource">
+      <MemberSignature Language="C#" Value="protected override void ValidateDataSource (object dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ValidateDataSource(object dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.Chart.ValidateDataSource(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">検証するオブジェクト。</param>
+        <summary>バインドするオブジェクトで、データ バインド コントロールを操作できることを確認します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewStateContent">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.SerializationContents ViewStateContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.SerializationContents ViewStateContent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.ViewStateContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.DataVisualization.Charting.SerializationContents), "Default")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.FlagsEnumUITypeEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.SerializationContents</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアントで永続化するビュー ステートを決定する値を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.SerializationContents" />ビュー ステートを表す列挙値。 既定値は<see cref="F:System.Web.UI.DataVisualization.Charting.SerializationContents.Default" />、ビュー ステートがすべてのグラフ プロパティで構成されることを意味します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの状態の表示設定を使用して、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロール。  
+  
+ このプロパティを設定するときにビュー ステートがによって自動的に保存、<xref:System.Web.UI.DataVisualization.Charting.Chart>を制御して、ポストバックが発生したときに自動的に読み込まれますもします。  
+  
+ 使用して、柔軟性を高めるため、<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData%2A>ユーザー定義のビューステートのプロパティです。  
+  
+ 状態管理を有効にするには設定、<xref:System.Web.UI.DataVisualization.Charting.Chart.EnableViewState%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewStateData">
+      <MemberSignature Language="C#" Value="public string ViewStateData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ViewStateData" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("ViewStateData has been deprecated. Please investigate Control.ViewState instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのユーザー定義のビュー状態を設定します。</summary>
+        <value>A<see langword="string" />をクライアント側 Web ドキュメントに埋め込まれているコントロールのビュー ステートを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントに保持するデータを指定するときにこのプロパティ柔軟性の向上と比較して、<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateContent%2A>プロパティです。  
+  
+ ユーザー定義のビューステートが実装された場合、ビュー状態を設定する開発者し、ビューステートとポストバックの利用に発生します。  
+  
+ `Save`と`Load`のメソッド、<xref:System.Web.UI.DataVisualization.Charting.ChartSerializer>ポストバックが発生した場合にビューステートの読み込みに関してもビュー状態を設定するオブジェクトが使用必要に応じてことができます。 この例は、次のサンプル コードを参照してください。  
+  
+ わかりやすいように、指定すると、グラフの状態を保存するを使用して、<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateContent%2A>プロパティで、データや外観のプロパティを設定することができます。  
+  
+ 状態管理を有効にするには設定、<xref:System.Web.UI.DataVisualization.Charting.Chart.EnableViewState%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit Width" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.Chart.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.WebControls.Unit), "300")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフ イメージ全体の幅をピクセル単位で設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Unit" />グラフ イメージ全体のピクセル単位の幅を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーセント記号 (%) またはポイント (pt) 値を指定しません。 それ以外の場合は、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

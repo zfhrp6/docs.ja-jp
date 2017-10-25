@@ -1,0 +1,770 @@
+<Type Name="XPathMessageFilter" FullName="System.ServiceModel.Dispatcher.XPathMessageFilter">
+  <TypeSignature Language="C#" Value="public class XPathMessageFilter : System.ServiceModel.Dispatcher.MessageFilter, System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XPathMessageFilter extends System.ServiceModel.Dispatcher.MessageFilter implements class System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.XPathMessageFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Dispatcher.MessageFilter</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Xml.Serialization.IXmlSerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlRoot("XPathMessageFilter", Namespace="http://schemas.microsoft.com/serviceModel/2004/05/xpathfilter")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlSchemaProvider("StaticGetSchema")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XPath 1.0 の式によって定義された XML ドキュメントのクエリを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> は、XPath 式を使用して、XML ドキュメントに特定の要素、属性、テキスト、その他の XML 構文が含まれているかどうかを判定します。 アプリケーションは通常、エンドポイントで <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> を使用して SOAP メッセージの内容を問い合わせ、その結果に基づいて適切なアクションを実行します。 たとえば、キューの処理では、XPath クエリを使用して既知のヘッダーの優先度要素を検査し、メッセージをキューの先頭に移動するべきかどうかを決定します。  
+  
+ XML パス言語 (XPath) は、XML ドキュメントの部分を処理するための言語を提供します。 XPath の主要な構文構造は、XML ドキュメントの論理構造を移動して XPath データ型を処理または識別する方法を定義している式です。 具体的には、XPath の実装が XML ドキュメントの構造に対して式を評価し、4 つの基本 XPath データ型である文字列、数値、ブール値、ノード セットのいずれかを生成します。 また、XPath データ型を文字列、数値、またはブール値データ型に変換する関数もサポートします。 メソッドがこれら 3 つのデータ型のいずれかを想定する場合は、式の評価の結果は暗黙で型変換されます。 これら 3 つのデータ型はノード セット型に変換できないことに注意してください。 XML パス言語が完全に記載されている、 [W3C XML パス言語 1.0 仕様](http://go.microsoft.com/fwlink/?LinkId=96179)です。  
+  
+ XPath 式の数値は、倍精度の 64 ビット値として表されます。 したがって、有効桁の多い数値の検査を伴う XPath 式は、浮動小数点精度の問題により、正しくない結果を返す場合があります。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][XML Path Language (XPath) Version 1.0 でのセクション 3.5](http://go.microsoft.com/fwlink/?LinkId=96180)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageFilter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>すべての正しい形式の XML ドキュメントと一致する <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の XPath 式を使用して、<xref:System.ServiceModel.Dispatcher.XPathMessageFilter> クラスの新しいインスタンスを初期化します。 空の XPath 式は正しい形式の XML ドキュメントと常に一致するので、すべてのオブジェクトは、空の XPath 式で定義されているフィルターの条件を満たします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageFilter (string xpath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xpath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xpath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xpath">XPath 1.0 の式が格納された <see cref="T:System.String" /> オブジェクト。</param>
+        <summary>フィルターのクエリ条件を指定する XPath 式を使用して、<see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 管理する名前空間がない場合は、このコンストラクターを使用します。  
+  
+ このコンストラクターは、既定の <xref:System.Xml.XmlNamespaceManager> を使用して、<xref:System.ServiceModel.Dispatcher.XPathMessageFilter.Namespaces%2A> プロパティに割り当てられている <xref:System.ServiceModel.Dispatcher.XPathMessageContext> を初期化し、<xref:System.ServiceModel.Dispatcher.XPathMessageContext> で定義されている関数ライブラリに XPath 式がアクセスできるようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xpath" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageFilter (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.Xml.XmlReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XPath 式のストリームを読み取る <see cref="T:System.Xml.XmlReader" />。</param>
+        <summary>指定した XML リーダーでストリーミングされた XPath を読み取って、<see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リーダーは、シリアル化された `XPathMessageFilter` の開始要素に位置づけられているものとします。 要素名は読み取り前に検証されません。 このメソッドが復帰すると、リーダーは、シリアル化された `XPathMessageFilter` の直後に位置づけられます。 また、コンストラクターは、リーダー内でバインドされている XPath 式のすべてのプレフィックスを解決して、名前空間マネージャーも自動的に初期化します。  
+  
+ このメソッドは、<xref:System.ServiceModel.Dispatcher.XPathMessageFilter.WriteXPathTo%2A> メソッドで作成できる任意の XML にアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageFilter (string xpath, System.Xml.XmlNamespaceManager namespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xpath, class System.Xml.XmlNamespaceManager namespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.String,System.Xml.XmlNamespaceManager)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xpath" Type="System.String" />
+        <Parameter Name="namespaces" Type="System.Xml.XmlNamespaceManager" />
+      </Parameters>
+      <Docs>
+        <param name="xpath">XPath 1.0 式。</param>
+        <param name="namespaces"><see cref="T:System.Xml.XmlNamespaceManager" />で名前空間プレフィックスを解決する<c>xpath</c>です。</param>
+        <summary>指定した XPath 式と名前空間マネージャーを使用して、<see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XPath が <xref:System.ServiceModel.Dispatcher.XPathMessageContext> で定義されていないプレフィックスを使用する場合、または独自の <xref:System.Xml.XmlNamespaceManager> を使用する場合は、このコンストラクターを使用します。 <xref:System.ServiceModel.Dispatcher.XPathMessageContext> のインスタンスを作成して、このメソッドに渡すことができます。  
+  
+ このメソッドに提供するインスタンスが <xref:System.Xml.Xsl.XsltContext> の実装の場合は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilter.%23ctor%2A> コンストラクターを呼び出すことと等価です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xpath" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageFilter (string xpath, System.Xml.Xsl.XsltContext namespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xpath, class System.Xml.Xsl.XsltContext namespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.String,System.Xml.Xsl.XsltContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xpath" Type="System.String" />
+        <Parameter Name="context" Type="System.Xml.Xsl.XsltContext" />
+      </Parameters>
+      <Docs>
+        <param name="xpath">フィルターに対する XPath 1.0 の式。</param>
+        <param name="namespaces">To be added.</param>
+        <summary>指定した XPath 式と <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> を使用して、<see cref="T:System.Xml.Xsl.XsltContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageFilter (System.Xml.XmlReader reader, System.Xml.XmlNamespaceManager namespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader reader, class System.Xml.XmlNamespaceManager namespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.Xml.XmlReader,System.Xml.XmlNamespaceManager)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="namespaces" Type="System.Xml.XmlNamespaceManager" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XPath 式のストリームを読み取る <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="namespaces"><see cref="T:System.Xml.XmlNamespaceManager" />からの XPath 式で名前空間プレフィックスを解決する<c>リーダー</c>です。 これは、カスタム関数または変数を定義する <see cref="T:System.Xml.Xsl.XsltContext" /> である場合もあります。</param>
+        <summary>指定した XML リーダーでストリーミングされた XPath を読み取り、指定した名前空間マネージャーを使用して、<see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー固有の <xref:System.Xml.XmlReader> と <xref:System.Xml.XmlNamespaceManager> を使用してフィルターを定義する場合は、このコンストラクターを使用します。  
+  
+ リーダーは、シリアル化された `XPathMessageFilter` の開始要素に位置づけられているものとします。 要素名は読み取り前に検証されません。 このメソッドが復帰すると、リーダーは、シリアル化された `XPathMessageFilter` の直後に位置づけられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="reader" /> が開始要素に配置されていません。</exception>
+        <exception cref="T:System.InvalidOperationException">無効な言語属性が読み取られました。この属性が XPath ではありませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XPathMessageFilter (System.Xml.XmlReader reader, System.Xml.Xsl.XsltContext namespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlReader reader, class System.Xml.Xsl.XsltContext namespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.#ctor(System.Xml.XmlReader,System.Xml.Xsl.XsltContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="context" Type="System.Xml.Xsl.XsltContext" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XPath 式のストリームを読み取る <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="namespaces">To be added.</param>
+        <summary>指定した XML リーダーでストリーミングされた XPath を読み取り、名前空間、カスタム関数、および変数を解決するための <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> を使用して、<see cref="T:System.Xml.Xsl.XsltContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー固有の <xref:System.Xml.XmlReader> と <xref:System.Xml.XmlNamespaceManager> を使用してフィルターを定義する場合は、このコンストラクターを使用します。  
+  
+ リーダーは、シリアル化された `XPathMessageFilter` の開始要素に位置づけられているものとします。 要素名は読み取り前に検証されません。 このメソッドが復帰すると、リーダーは、シリアル化された `XPathMessageFilter` の直後に位置づけられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFilterTable&lt;FilterData&gt;">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Dispatcher.IMessageFilterTable&lt;FilterData&gt; CreateFilterTable&lt;FilterData&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.ServiceModel.Dispatcher.IMessageFilterTable`1&lt;!!FilterData&gt; CreateFilterTable&lt;FilterData&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.CreateFilterTable``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.IMessageFilterTable&lt;FilterData&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="FilterData" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="FilterData">テーブル内のフィルターに関連付けられたデータ。</typeparam>
+        <summary>指定した型のデータが関連付けられている <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilterTable`1" /> を作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Dispatcher.IMessageFilterTable`1" /> に関連付けられたフィルターを追加できる <paramref name="FilterData" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601> によって呼び出されます。 ユーザーは、フィルター テーブルのコンストラクターを呼び出してフィルター テーブルを作成する必要があります。 この実装は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601> のインスタンスを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Match">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>メッセージまたは XML ドキュメントが XPath フィルターのクエリ条件を満たすかどうかを判定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのメソッドは、特定のメッセージを 1 つのフィルターでチェックします。 特定のメッセージを複数のフィルターでチェックする必要がある場合は、それらのフィルターをフィルター テーブルに登録して、同テーブルによって提供されているチェック用メソッドを使用します。  
+  
+ メッセージ本文ではなくメッセージ ヘッダーだけを判定すればよい場合は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilter.Match%2A> メソッドを使用します。  
+  
+ メッセージ本文の一部を判定する必要がある場合は、<xref:System.ServiceModel.Dispatcher.XPathMessageFilter.Match%2A> メソッドを使用します。  
+  
+ XPath クエリを含む判定では、<xref:System.ServiceModel.Dispatcher.XPathMessageFilter.Match%2A> の残りのオーバーロードのいずれかを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public override bool Match (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Match(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.Match(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <summary>指定したメッセージが XPath フィルターの条件を満たすかどうかを検査します。 この形式では、メッセージの本文にはアクセスできません。</summary>
+        <returns>
+          <see langword="true" /> がフィルター条件を満たす場合は <see cref="T:System.ServiceModel.Channels.Message" />、そうでない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 本文の要素の一致を検査するには、<xref:System.ServiceModel.Dispatcher.XPathMessageFilter.Match%2A?displayProperty=nameWithType> メソッドを使用します。 XPath 式を評価するためにエンジンがメッセージ本文にアクセスしようとすると、このメソッドは例外をスローします。 これは、フィルター エンジンが本文ストリームにアクセスしていないことを確認するのに役立ちます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException">XPath 評価がメッセージの本文を検査しようとしました。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException">コンパイル エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public override bool Match (System.ServiceModel.Channels.MessageBuffer messageBuffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Match(class System.ServiceModel.Channels.MessageBuffer messageBuffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.Match(System.ServiceModel.Channels.MessageBuffer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageBuffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+      </Parameters>
+      <Docs>
+        <param name="messageBuffer">テスト対象の <see cref="T:System.ServiceModel.Channels.MessageBuffer" />。</param>
+        <summary>バッファー内のメッセージが XPath フィルターのクエリ条件を満たすかどうかを判定します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="M:System.ServiceModel.Dispatcher.XPathMessageFilter.Match(System.ServiceModel.Channels.MessageBuffer)" />フィルター条件を満たすそれ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.XPathMessageFilter.Match%2A> が利用可能な場合は、<xref:System.ServiceModel.Channels.MessageBuffer> メソッドのこのオーバーロードを使用します。 この形式では、メッセージの本文を検査できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException">コンパイル エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public bool Match (System.ServiceModel.Dispatcher.SeekableXPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Match(class System.ServiceModel.Dispatcher.SeekableXPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.Match(System.ServiceModel.Dispatcher.SeekableXPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.ServiceModel.Dispatcher.SeekableXPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">判定されるデータを提供する <see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" />。</param>
+        <summary>指定した最適化済みの XPath ナビゲーターによって提供される XML ドキュメントが XPath フィルターのクエリ条件を満たすかどうかを判定します。</summary>
+        <returns>
+          <see langword="true" /> からのデータがフィルター条件を満たす場合は <see cref="T:System.ServiceModel.Dispatcher.SeekableXPathNavigator" />、そうでない場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> クラスは、クエリをより効率よく実行するメソッドで <xref:System.Xml.XPath.XPathNavigator> クラスを拡張します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="navigator" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException">コンパイル エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public bool Match (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Match(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.Match(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator">判定されるデータを提供する <see cref="T:System.Xml.XPath.XPathNavigator" />。</param>
+        <summary>指定した XPath ナビゲーターについてフィルターを評価します。</summary>
+        <returns>
+          <see langword="true" /> からのデータがフィルター条件を満たす場合は <see cref="T:System.Xml.XPath.XPathNavigator" />、そうでない場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="navigator" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XPath.XPathException">コンパイル エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespaces">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNamespaceManager Namespaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNamespaceManager Namespaces" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.XPathMessageFilter.Namespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNamespaceManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィルターを定義する XPath 式の名前空間プレフィックスを解決するマネージャーを取得します。</summary>
+        <value>現在の <see cref="T:System.Xml.XmlNamespaceManager" /> の <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.XPathMessageFilter.Namespaces%2A><xref:System.Xml.Xsl.XsltContext>プロパティは、カスタム関数または変数を定義する  である場合もあります。  
+  
+ フィルターを作成した後は、名前空間マネージャーのインスタンスを変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeQuota">
+      <MemberSignature Language="C#" Value="public int NodeQuota { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NodeQuota" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.XPathMessageFilter.NodeQuota" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィルター評価の間に検査する必要のあるノードの最大数を取得または設定します。</summary>
+        <value>フィルター評価の間に検査する必要のあるノードの最大数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルターによっては、評価を行うことにより、非常に高い負荷がかかる場合や実行時間が非常に長くなる場合があります。 フィルターは XML ドキュメントを処理します。したがって、コンピューター処理の制限を設ける最善の方法は、フィルター評価の間に検査が必要なノードの最大数を指定することです。  
+  
+ クォータの初期設定は <xref:System.Int32.MaxValue> です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">クォータがゼロまたは負です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGetSchema">
+      <MemberSignature Language="C#" Value="protected virtual System.Xml.Schema.XmlSchema OnGetSchema ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xml.Schema.XmlSchema OnGetSchema() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.OnGetSchema" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の XML ドキュメントのスキーマを取得します。</summary>
+        <returns>現在のドキュメントを表す <see cref="T:System.Xml.Schema.XmlSchema" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnReadXml">
+      <MemberSignature Language="C#" Value="protected virtual void OnReadXml (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnReadXml(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.OnReadXml(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML ドキュメントを読み込むために使用する <see cref="T:System.Xml.XmlReader" />。</param>
+        <summary>現在の XML ノードを読み取ります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="reader" /> が空の要素を検出しました。</exception>
+        <exception cref="T:System.InvalidOperationException">ノードの内容が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnWriteXml">
+      <MemberSignature Language="C#" Value="protected virtual void OnWriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnWriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.OnWriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">ノードを書き込むために使用する <see cref="T:System.Xml.XmlWriter" />。</param>
+        <summary><paramref name="writer" /> を使用してノードを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXPath">
+      <MemberSignature Language="C#" Value="protected void ReadXPath (System.Xml.XmlReader reader, System.Xml.XmlNamespaceManager namespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ReadXPath(class System.Xml.XmlReader reader, class System.Xml.XmlNamespaceManager namespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.ReadXPath(System.Xml.XmlReader,System.Xml.XmlNamespaceManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="namespaces" Type="System.Xml.XmlNamespaceManager" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XPath フィルターを逆シリアル化するために使用する <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="namespaces">読み取り元の名前空間を管理するために使用されている <see cref="T:System.Xml.XmlNamespaceManager" />。</param>
+        <summary>指定した名前空間マネージャーを使用して指定した XML リーダーから取得した XPath を使用して、<see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" /> の現在のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前空間マネージャーのインスタンスには、関数と変数を解決するために使用する <xref:System.Xml.Xsl.XsltContext> を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StaticGetSchema">
+      <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlSchemaType StaticGetSchema (System.Xml.Schema.XmlSchemaSet schemas);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlSchemaType StaticGetSchema(class System.Xml.Schema.XmlSchemaSet schemas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.StaticGetSchema(System.Xml.Schema.XmlSchemaSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">XML スキーマ定義言語 (XSD: XML Schema Definition Language) スキーマのキャッシュを格納する <see cref="T:System.Xml.Schema.XmLSchemaSet" />。</param>
+        <summary>XPath フィルターをシリアル化するために使用する XML スキーマの型を取得します。</summary>
+        <returns>XPath フィルターをシリアル化するために使用する <see cref="T:System.Xml.Schema.XmLSchemaType" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="schemas" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Xml.Serialization.IXmlSerializable.GetSchema">
+      <MemberSignature Language="C#" Value="System.Xml.Schema.XmlSchema IXmlSerializable.GetSchema ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Xml.Schema.XmlSchema System.Xml.Serialization.IXmlSerializable.GetSchema() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.System#Xml#Serialization#IXmlSerializable#GetSchema" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のスキーマを取得する明示的なインターフェイスの実装。</summary>
+        <returns>現在のドキュメントを表す <see cref="T:System.Xml.Schema.XmlSchema" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Xml.Serialization.IXmlSerializable.ReadXml">
+      <MemberSignature Language="C#" Value="void IXmlSerializable.ReadXml (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Xml.Serialization.IXmlSerializable.ReadXml(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML ドキュメントを読み込むために使用する <see cref="T:System.Xml.XmlReader" />。</param>
+        <summary>現在の XML ノードを読み取る明示的なインターフェイスの実装。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Xml.Serialization.IXmlSerializable.WriteXml">
+      <MemberSignature Language="C#" Value="void IXmlSerializable.WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Xml.Serialization.IXmlSerializable.WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">ノードを書き込むために使用する <see cref="T:System.Xml.XmlWriter" />。</param>
+        <summary><paramref name="writer" /> を使用して XML ノードを書き込む明示的なインターフェイスの実装。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrimToSize">
+      <MemberSignature Language="C#" Value="public void TrimToSize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TrimToSize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.TrimToSize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XPath フィルターを圧縮し、使用していないメモリをすべて解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、未使用の要素がないように配列のサイズを変更することと似ています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXPath">
+      <MemberSignature Language="C#" Value="protected void WriteXPath (System.Xml.XmlWriter writer, System.Xml.IXmlNamespaceResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WriteXPath(class System.Xml.XmlWriter writer, class System.Xml.IXmlNamespaceResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.WriteXPath(System.Xml.XmlWriter,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="resolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XPath フィルターをシリアル化するために使用する <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="resolver">XPath フィルターに関する名前空間の競合を解決するために使用する <see cref="T:System.Xml.IXmlNamespaceResolver" />。</param>
+        <summary>XPath フィルターを <see cref="T:System.Xml.XmlWriter" /> にシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `writer`である必要があります、*開始*状態です。 それ以外の場合は、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXPathTo">
+      <MemberSignature Language="C#" Value="public void WriteXPathTo (System.Xml.XmlWriter writer, string prefix, string localName, string ns, bool writeNamespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXPathTo(class System.Xml.XmlWriter writer, string prefix, string localName, string ns, bool writeNamespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.XPathMessageFilter.WriteXPathTo(System.Xml.XmlWriter,System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="writeNamespaces" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" /> の書き込みに使用する <see cref="T:System.ServiceModel.Dispatcher.XPathMessageFilter" />。</param>
+        <param name="prefix">XPath XML 要素の名前空間プレフィックス。</param>
+        <param name="localName">XPath XML 要素のローカル名。</param>
+        <param name="ns">XML 要素に関連付ける名前空間 URI。</param>
+        <param name="writeNamespaces">
+          名前空間を属性として別にシリアル化する必要がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定した XML ライターで XML XPath 要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `writer`である必要があります、*開始*状態です。 それ以外の場合は、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="localName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="localName" /> の長さが 0 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XPath">
+      <MemberSignature Language="C#" Value="public string XPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XPath" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.XPathMessageFilter.XPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィルターのクエリ条件を定義する XPath 式を取得します。</summary>
+        <value>フィルターに対する XPath の式。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

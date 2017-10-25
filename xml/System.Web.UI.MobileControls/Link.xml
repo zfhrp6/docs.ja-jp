@@ -1,0 +1,220 @@
+<Type Name="Link" FullName="System.Web.UI.MobileControls.Link">
+  <TypeSignature Language="C#" Value="public class Link : System.Web.UI.MobileControls.TextControl, System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Link extends System.Web.UI.MobileControls.TextControl implements class System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.Link" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.MobileControls.TextControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IPostBackEventHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Web.UI.Design.MobileControls.LinkDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem("System.Web.UI.Design.WebControlToolboxItem, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.DataBindingHandler("System.Web.UI.Design.TextDataBindingHandler, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.MobileControls.DesignerAdapter(typeof(System.Web.UI.Design.MobileControls.Adapters.DesignerLinkAdapter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:Link runat=server&gt;Link&lt;/{0}:Link&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>別のハイパーリンクを表す<see cref="P:System.Web.UI.MobileControls.MobileControl.Form" />同じモバイル ページ上、または任意の uri。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このような方法ですべてのデバイスで、リンクが表示されますを<xref:System.Web.UI.MobileControls.TextControl.Text%2A>をユーザーにデバイスのプロパティが表示されます。 ユーザーがリンクを呼び出したとき、ブラウザーを指定した<xref:System.Web.UI.MobileControls.Link.NavigateUrl%2A>プロパティです。 アプリケーションには、リンクが特定のデバイスで参照できることを確認するコードを含める必要があります。 たとえば、リンク http://www.microsoft.com を WML 対応のデバイスは表示できません。  
+  
+ 場合、<xref:System.Web.UI.MobileControls.TextControl.Text%2A>プロパティは、空の値、<xref:System.Web.UI.MobileControls.Link.NavigateUrl%2A>のプロパティを使用しても、<xref:System.Web.UI.MobileControls.TextControl.Text%2A>プロパティです。 具体的には、テキスト ライターは、リンクをレンダリングするときにまず、<xref:System.Web.UI.MobileControls.TextControl.Text%2A>を表示します。 そのプロパティが空の場合、テキストのプロパティの値を表示、<xref:System.Web.UI.MobileControls.Link.NavigateUrl%2A>プロパティです。  
+  
+> [!NOTE]
+>  Cookie なしのセッションに依存したり、アプリケーションが cookie なしのセッションを必要とするデバイスから要求を受信する可能性がある場合、は、チルダを使用して ("~") パスで誤ってにつながる新しいセッションが作成され、セッション データが失われる可能性があります。 など、パスを持つプロパティを設定する ("~/パス") を使用してパスを解決する<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>("~/パス") をプロパティに割り当てる前にします。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Link ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Link.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.MobileControls.Link" /> クラスのインスタンスを作成します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLinkedForms">
+      <MemberSignature Language="C#" Value="public override void AddLinkedForms (System.Collections.IList linkedForms);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddLinkedForms(class System.Collections.IList linkedForms) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Link.AddLinkedForms(System.Collections.IList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="linkedForms" Type="System.Collections.IList" />
+      </Parameters>
+      <Docs>
+        <param name="linkedForms">指定されたコントロールへのリンクが含まれているフォームのセット。</param>
+        <summary>指定されたコントロールへのリンクが含まれるフォームのセットを、提供された一覧に追加します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrl">
+      <MemberSignature Language="C#" Value="public string NavigateUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.Link.NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.Design.MobileControls.Converters.NavigateUrlConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リンクのターゲット URL を設定します。 既定値は、空の文字列 ("") です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>リンクのターゲット URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージへのリンクが指定されていない場合 (、<xref:System.Web.UI.MobileControls.Link.NavigateUrl%2A>プロパティには、空の文字列が含まれています (""))、リンクをインタラクティブにすることはできません。  
+  
+ 場合の値、<xref:System.Web.UI.MobileControls.Link.NavigateUrl%2A>プロパティは、番号記号で始まる (#)、残りの値は現在のフォームの識別子と見なされます<xref:System.Web.UI.MobileControls.MobilePage>です。 それ以外の場合の値、<xref:System.Web.UI.MobileControls.Link.NavigateUrl%2A>プロパティは、URL として扱われます。 基になるテキスト ライターに書き込みますのリンクがレンダリングされると、<xref:System.Web.UI.MobileControls.TextControl.Text%2A>プロパティです。 場合、<xref:System.Web.UI.MobileControls.TextControl.Text%2A>テキスト ライターの書き込みのプロパティが空である、<xref:System.Web.UI.MobileControls.Link.NavigateUrl%2A>プロパティです。  
+  
+> [!NOTE]
+>  Cookie なしのセッションに依存したり、アプリケーションが cookie なしのセッションを必要とするデバイスから要求を受信する可能性がある場合、は、チルダを使用して ("~") パスで誤ってにつながる新しいセッションが作成され、セッション データが失われる可能性があります。 など、パスを持つプロパティを設定する ("~/パス") を使用してパスを解決する<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>("~/パス") をプロパティに割り当てる前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="protected void RaisePostBackEvent (string argument);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaisePostBackEvent(string argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Link.RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="argument"><see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>サーバーへのポストバック時に、<see cref="T:System.Web.UI.MobileControls.Link" /> コントロールのイベントを発生させます。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoftkeyLabel">
+      <MemberSignature Language="C#" Value="public string SoftkeyLabel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SoftkeyLabel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.Link.SoftkeyLabel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソフトキーに表示されるテキストを取得または設定時に、<see cref="T:System.Web.UI.MobileControls.Link" />が、<see cref="P:System.Web.UI.MobileControls.Link.NavigateUrl" />プロパティが定義されています。 既定値は、空の文字列 ("") です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>ソフトキーに表示されるテキストと、<see cref="T:System.Web.UI.MobileControls.Link" />が、<see cref="P:System.Web.UI.MobileControls.Link.NavigateUrl" />プロパティが定義されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはソフトキーをサポートするデバイスに対してのみ使用されます。  
+  
+ このプロパティが空の場合、<xref:System.Web.UI.MobileControls.TextControl.Text%2A>コントロールのプロパティを使用します。 場合、基になる<xref:System.Web.UI.MobileControls.TextControl.Text%2A>プロパティが空か、長さが 9 未満、<xref:System.Web.UI.MobileControls.TextControl.Text%2A>ソフトキー ラベルのプロパティを使用します。 それ以外の場合、word のリンク、またはそれと同等のローカライズ版が表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackEventHandler.RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="void IPostBackEventHandler.RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Link.System#Web#UI#IPostBackEventHandler#RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベント ハンドラーに渡される省略可能なイベント引数。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(System.String)" />」をご覧ください。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.MobileControls.Link> のインスタンスが <xref:System.Web.UI.IPostBackEventHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

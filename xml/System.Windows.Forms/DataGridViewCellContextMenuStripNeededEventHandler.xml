@@ -1,0 +1,55 @@
+<Type Name="DataGridViewCellContextMenuStripNeededEventHandler" FullName="System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DataGridViewCellContextMenuStripNeededEventHandler(object sender, DataGridViewCellContextMenuStripNeededEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataGridViewCellContextMenuStripNeededEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Windows.Forms.DataGridView.CellContextMenuStripNeeded" />のイベント、<see cref="T:System.Windows.Forms.DataGridView" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.CellContextMenuStripNeeded>のみイベントが発生したときに、<xref:System.Windows.Forms.DataGridView>コントロール<xref:System.Windows.Forms.DataGridView.DataSource%2A>プロパティを設定またはその<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>プロパティは`true`します。  
+  
+ 処理するときに、 <xref:System.Windows.Forms.DataGridView.CellContextMenuStripNeeded> 、イベント ハンドラーで指定したショートカット メニューが表示されるたびにユーザーがセルを右クリックします。 これは、現在の状態またはセルの値によって決定されたショートカット メニューを表示するときに便利です。  
+  
+ <xref:System.Windows.Forms.DataGridView.CellContextMenuStripNeeded>イベントが発生するたびの値、<xref:System.Windows.Forms.DataGridViewCell.ContextMenuStrip%2A?displayProperty=nameWithType>プロパティが取得プログラムからまたはユーザーがセルを右クリックします。  
+  
+ 使用することができます、<xref:System.Windows.Forms.DataGridViewCellEventArgs.ColumnIndex%2A>と<xref:System.Windows.Forms.DataGridViewCellEventArgs.RowIndex%2A>状態または、セルの値を決定し、この情報を使用して設定するプロパティ、<xref:System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventArgs.ContextMenuStrip%2A>プロパティです。 このプロパティは、セルの値で初期化<xref:System.Windows.Forms.DataGridViewCell.ContextMenuStrip%2A>プロパティで、イベントの値をオーバーライドします。  
+  
+ 処理、<xref:System.Windows.Forms.DataGridView.CellContextMenuStripNeeded>大量のデータ セルを設定のパフォーマンスの低下を避けるために使用するときにイベント<xref:System.Windows.Forms.DataGridViewCell.ContextMenuStrip%2A>複数のセルの値。 詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ 個々 のセル、行を設定してではなく個別の行のショートカット メニューを指定することも<xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A>プロパティまたは処理、<xref:System.Windows.Forms.DataGridView>コントロールの<xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>イベント。 セル<xref:System.Windows.Forms.DataGridViewCell.ContextMenuStrip%2A>プロパティの設定は、行をオーバーライド<xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A>プロパティの設定、および<xref:System.Windows.Forms.DataGridView.CellContextMenuStripNeeded>イベントの上書き両方、<xref:System.Windows.Forms.DataGridView.RowContextMenuStripNeeded>イベントと、行<xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip%2A>プロパティの設定。 指定できます`null`セルのショートカット メニューのただし、行のショートカット メニューがオーバーライドされないようにします。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では<xref:System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventArgs>行の共有を解除せず、コンテキスト メニューに設定します。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView_SharedRowScenarios#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/CPP/sharedrows.cpp#20)]
+ [!code-csharp[System.Windows.Forms.DataGridView_SharedRowScenarios#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/CS/sharedrows.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridView_SharedRowScenarios#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView_SharedRowScenarios/VB/sharedrows.vb#20)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

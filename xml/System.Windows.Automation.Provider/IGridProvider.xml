@@ -1,0 +1,149 @@
+<Type Name="IGridProvider" FullName="System.Windows.Automation.Provider.IGridProvider">
+  <TypeSignature Language="C#" Value="public interface IGridProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IGridProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IGridProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("b17d6187-0907-464b-a168-0ef17a1572b1")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>子要素のコレクションのコンテナーとして機能するコントロールへの UI オートメーション クライアントのアクセスをサポートするメソッドとプロパティを公開します。 この要素の子を実装する必要があります<see cref="T:System.Windows.Automation.Provider.IGridItemProvider" />走査可能な 2 次元論理座標システムで編成して (は、UI オートメーション クライアントが隣接するコントロールに移動できます)、キーボードを使用しています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする UI オートメーション プロバイダーに実装される、<xref:System.Windows.Automation.GridPattern>コントロール パターン。  
+  
+ <xref:System.Windows.Automation.Provider.IGridProvider> はグリッドのアクティブな操作を有効にしないため、 <xref:System.Windows.Automation.Provider.ITransformProvider> を実装してこの機能を有効にする必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ColumnCount">
+      <MemberSignature Language="C#" Value="public int ColumnCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IGridProvider.ColumnCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グリッド内の列の合計数を取得します。</summary>
+        <value>グリッド内の列の合計数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非表示の行と列、プロバイダーの実装によってで読み込むことができる、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ツリーし、そのために反映されます、<xref:System.Windows.Automation.GridPattern.GridPatternInformation.RowCount%2A>と<xref:System.Windows.Automation.GridPattern.GridPatternInformation.ColumnCount%2A>プロパティです。 非表示の行と列がまだ読み込まれていない場合はカウントされません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、プロパティ値を返します。  
+  
+ [!code-csharp[UIAMiscPatternProviders_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/CSharp/CustomGrid.cs#102)]
+ [!code-vb[UIAMiscPatternProviders_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/visualbasic/customgrid.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.IRawElementProviderSimple GetItem (int row, int column);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Automation.Provider.IRawElementProviderSimple GetItem(int32 row, int32 column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IGridProvider.GetItem(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderSimple</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Int32" />
+        <Parameter Name="column" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="row">目的の行の序数。</param>
+        <param name="column">目的の列の序数。</param>
+        <summary>指定したセルの UI オートメーション プロバイダーを取得します。</summary>
+        <returns>指定したセルの UI オートメーション プロバイダー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   グリッド座標は 0 から始まる、左上 (ロケールによっては右上のセル) 座標 (0, 0 です)。  
+  
+-   セルが空の場合、UI オートメーション プロバイダーも、サポートするために、<xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A>そのセルのプロパティです。 これには、グリッド内の子要素のレイアウトが不調和配列に似ています。  
+  
+ ![Windows エクスプ ローラー ビューが不規則なレイアウトを表示します。] (~/add/media/uia-gridpattern-ragged-array.PNG "Windows エクスプ ローラー ビューを示す不規則なレイアウトです。")  
+空の座標を持つグリッド コントロールの例  
+  
+-   非表示の行と列、プロバイダーの実装によってで読み込むことができる、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ツリーし、そのために反映されます、<xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A>と<xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>プロパティです。 非表示の行と列がまだ読み込まれていない場合はカウントされません。  
+  
+   
+  
+## Examples  
+ 次のコードでは、指定した位置に項目を表すオブジェクトを返す、このメソッドの実装例を示します。  
+  
+ [!code-csharp[UIAMiscPatternProviders_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/CSharp/CustomGrid.cs#101)]
+ [!code-vb[UIAMiscPatternProviders_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/visualbasic/customgrid.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowCount">
+      <MemberSignature Language="C#" Value="public int RowCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IGridProvider.RowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グリッド内の行の合計数を取得します。</summary>
+        <value>グリッド内の行の合計数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非表示の行、プロバイダーの実装によって論理ツリー内に読み込むことができるおよび列に反映されますので、<xref:System.Windows.Automation.GridPattern.GridPatternInformation.RowCount%2A>と<xref:System.Windows.Automation.GridPattern.GridPatternInformation.ColumnCount%2A>プロパティです。 非表示の行と列がまだ読み込まれていない場合はカウントされません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、プロパティ値を返します。  
+  
+ [!code-csharp[UIAMiscPatternProviders_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/CSharp/CustomGrid.cs#103)]
+ [!code-vb[UIAMiscPatternProviders_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/visualbasic/customgrid.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,337 @@
+<Type Name="FaultContractAttribute" FullName="System.ServiceModel.FaultContractAttribute">
+  <TypeSignature Language="C#" Value="public sealed class FaultContractAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FaultContractAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.FaultContractAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サービス操作で処理エラーが発生したときに返される 1 つ以上の SOAP エラーを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービス記述言語 (WSDL) のサービス操作の説明に追加される 1 つ以上の特定の例外条件を、操作によって返される明示的な SOAP エラー メッセージとして宣言する <xref:System.ServiceModel.FaultContractAttribute> 属性を使用して、操作にマークを付けます。  
+  
+ すべてのマネージ アプリケーションで、操作エラーは <xref:System.Exception> オブジェクトにより表されます。 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] アプリケーションなどの SOAP に基づくアプリケーションでは、サービス メソッドは SOAP エラー メッセージを使用して操作エラー情報を通知します。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] アプリケーションは、両方の型のエラー システムで実行されるため、クライアントに送信する必要があるマネージ例外情報は、例外から SOAP エラーに変換される必要があります。 既定のサービス例外動作を使用できます。または、例外をエラー メッセージにマッピングするかどうかとそのマッピング方法を明示的に制御できます。 エラーの例外と SOAP の概要の[!INCLUDE[indigo2](~/includes/indigo2-md.md)]アプリケーションを参照してください[を指定して処理のエラー コントラクトおよびサービスの](~/docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
+  
+ <xref:System.ServiceModel.FaultContractAttribute> を使用して、通常の操作中に受信することをクライアントが想定できるすべての SOAP エラーを正式に指定することをお勧めします。 また、SOAP エラーでは、情報の開示を最小限に抑えるために、クライアントが知る必要がある情報だけを返すことをお勧めします。  
+  
+-   <xref:System.ServiceModel.FaultContractAttribute.Action%2A> プロパティは、エラー メッセージのアクションを制御します。  
+  
+-   <xref:System.ServiceModel.FaultContractAttribute.DetailType%2A> プロパティは、エラー メッセージ内にシリアル化された詳細オブジェクトの型を取得します。  
+  
+-   <xref:System.ServiceModel.FaultContractAttribute.Name%2A> プロパティと <xref:System.ServiceModel.FaultContractAttribute.Namespace%2A> プロパティは、それぞれ、エラー メッセージの名前と名前空間を制御します。  
+  
+-   <xref:System.ServiceModel.FaultContractAttribute.HasProtectionLevel%2A> は、エラー メッセージに保護レベルが指定されるかどうかを示します。指定される場合は、<xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A> プロパティがその保護レベルを制御します。  
+  
+> [!CAUTION]
+>  エラー メッセージの情報でその機密性が高い場合、またはセキュリティの問題につながる可能性がある場合は、<xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A> プロパティを設定することを強くお勧めします。  
+  
+-   <xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A> を <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> または <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> のいずれかに明示的に設定する場合は、<xref:System.ServiceModel.SecurityMode?displayProperty=nameWithType> プロパティによってセキュリティを有効にしたバインドを使用する必要があります。使用しない場合は、例外がスローされます。  
+  
+-   セキュリティを有効にしたバインドを選択し、コントラクト上のどこにも <xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A> プロパティを設定しない場合は、すべてのアプリケーション データが暗号化および署名されます。  
+  
+-   セキュリティを無効にしたバインド (たとえば、<xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> は既定でセキュリティが無効に設定されています) を選択し、<xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A> を明示的に設定しない場合は、すべてのアプリケーション データが保護されません。  
+  
+ ほとんどの場合、エラー メッセージでは、<xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A> を <xref:System.Net.Security.ProtectionLevel.EncryptAndSign> に設定すれば十分です。 詳細については、次を参照してください。[について保護レベル](~/docs/framework/wcf/understanding-protection-level.md)です。  
+  
+ 指定したエラーを <xref:System.ServiceModel.FaultContractAttribute> でマークした操作から返すには、操作中にマネージ例外が発生したときに、<xref:System.ServiceModel.FaultException%601> をスローします (型パラメーターは、シリアル化可能なエラー情報です)。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)]クライアント アプリケーションでは、クライアントの実装でスローされたのと同じ型で SOAP エラーを画面として、 <xref:System.ServiceModel.FaultException%601> (、typeparameter はシリアル化可能なエラー情報)。 <xref:System.ServiceModel.FaultContractAttribute> は、双方向サービス操作と非同期操作のペアで発生する SOAP エラーを指定する場合のみ使用できます。一方向操作では SOAP エラーはサポートされないため、<xref:System.ServiceModel.FaultContractAttribute> もサポートされません。  
+  
+> [!NOTE]
+>  エラー情報を伝えるために、任意のシリアル化可能な型を使用できます。 このバージョンの [!INCLUDE[indigo2](~/includes/indigo2-md.md)] での唯一の制約は、<xref:System.ServiceModel.FaultContractAttribute> に指定する型は、<xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> によってシリアル化可能である必要があるということです。 シリアル化のサポート、<xref:System.Runtime.Serialization.DataContractSerializer>提供を参照してください[データ コントラクト シリアライザー](~/docs/framework/wcf/feature-details/data-contract-serializer.md)です。  
+  
+ たとえば、クライアントが <xref:System.Int32> を含む SOAP エラーの受信を想定できるように指定するには、サービス メソッドの <xref:System.ServiceModel.FaultContractAttribute> に型パラメーターを配置します。  
+  
+> [!NOTE]
+>  次のコード例では、<xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A> プロパティ、<xref:System.ServiceModel.FaultContractAttribute.Name%2A> プロパティ、および <xref:System.ServiceModel.FaultContractAttribute.Namespace%2A> プロパティのいずれも設定しません。  
+  
+ [!code-csharp[C_FCA#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_fca/cs/fcademo.cs#1)]
+ [!code-vb[C_FCA#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_fca/vb/fcademo.vb#1)]  
+  
+ その後、サービス メソッドの中で、型パラメーターがエラー情報を格納する型 (先に説明した例の場合は <xref:System.ServiceModel.FaultException%601>) である新しい <xref:System.Int32> をスローします。 例:  
+  
+ [!code-csharp[C_FCA#2](~/samples/snippets/csharp/VS_Snippets_CFX/c_fca/cs/fcademo.cs#2)]
+ [!code-vb[C_FCA#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_fca/vb/fcademo.vb#2)]  
+  
+ 上の例は非常に基本的な形であり、<xref:System.Int32?displayProperty=nameWithType> コードを使用してあらゆる情報を渡すことができます。したがって、この詳細型は最も有効な型ではありません。 通常、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] アプリケーションでは、クライアントのエラー情報要件に固有の詳細型を使用して SOAP エラーを指定します。 より完全な例については、「使用例」のセクションを参照してください。  
+  
+> [!NOTE]
+>  型パラメーターが <xref:System.ServiceModel.FaultException%601> である <xref:System.String?displayProperty=nameWithType> を指定した場合、クライアント アプリケーションでは文字列値に Detail プロパティが割り当てられ、クライアントは <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType> メソッドを呼び出しても、その文字列を取得できません。 クライアント アプリケーションが <xref:System.Exception.ToString%2A?displayProperty=nameWithType> を呼び出したときにこの文字列値を返すには、操作内で <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> 例外をスローし、この文字列をコンストラクターに渡します。  
+  
+ 例外または <xref:System.ServiceModel.FaultException%601> がスローされるときのアプリケーションの動作を明示的に制御するには、<xref:System.ServiceModel.Dispatcher.IErrorHandler?displayProperty=nameWithType>、<xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>、または <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> で <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> インターフェイスを実装し、これを <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A?displayProperty=nameWithType> プロパティに割り当てます。 <xref:System.ServiceModel.Dispatcher.IErrorHandler>クライアントに送信するかどうかとすると、生成される SOAP エラーを明示的に制御を有効にします。  
+  
+ デバッグを容易にするには設定、<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType>に`true`またはコードで使用できます、<xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType>アプリケーション構成ファイルにします。 有効な場合は、サービスが自動的に例外情報を呼び出し元に返します。 これらのエラーは、<xref:System.ServiceModel.FaultException> 例外としてクライアントに表示されます。  
+  
+> [!IMPORTANT]
+>  マネージ例外が内部アプリケーション情報を開示する可能性があるので、<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> または <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> を `true` に設定すると、個人の身元を確認できる情報またはその他の機密情報を含む内部サービス操作例外に関する情報を [!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアントで取得できます。  
+>   
+>  したがって、<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> または <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> を `true` に設定することは、サービス アプリケーションを一時的にデバッグする方法としてのみお勧めできます。 さらに、このようにして未処理のマネージ例外を返すメソッドの WSDL には、<xref:System.ServiceModel.FaultException%601> 型の <xref:System.String> のコントラクトが含まれません。 クライアントは、デバッグ情報を適切に取得するために、([!INCLUDE[indigo2](~/includes/indigo2-md.md)] オブジェクトとして <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> クライアントに返される) 不明な SOAP エラーの可能性について想定しておく必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.FaultContractAttribute> 操作で `SampleMethod` の詳細な型と共に SOAP エラーを返すことができることを指定するために、`GreetingFault` を使用しています。  
+  
+ [!code-csharp[FaultContractAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#1)]
+ [!code-vb[FaultContractAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#1)]  
+  
+ 次のコード例は、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] の `ISampleService` クライアントが、この SOAP エラーを <xref:System.ServiceModel.FaultException%601> 型の `GreetingFault` として受信することを示しています。  
+  
+ [!code-csharp[FaultContractAttribute#3](~/samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/client.cs#3)]
+ [!code-vb[FaultContractAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/client.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FaultContractAttribute (Type detailType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type detailType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.FaultContractAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="detailType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="detailType">呼び出し元のエラー情報を含むシリアル化可能な型。</param>
+        <summary><see cref="T:System.ServiceModel.FaultContractAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンストラクターは、通常、属性をサービス メソッドに適用し、型を属性の引数として指定することで実行されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.FaultContractAttribute> 操作で `SampleMethod` の詳細な型と共に SOAP エラーを返すことができることを指定するために、`GreetingFault` を使用しています。  
+  
+ [!code-csharp[FaultContractAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#1)]
+ [!code-vb[FaultContractAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="detailType" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public string Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FaultContractAttribute.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作コントラクトの一部として指定された SOAP エラー メッセージのアクションを取得または設定します。</summary>
+        <value>SOAP エラー メッセージのアクションの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP エラー メッセージのアクションを制御するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetailType">
+      <MemberSignature Language="C#" Value="public Type DetailType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DetailType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FaultContractAttribute.DetailType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー情報を含むシリアル化可能なオブジェクトの型を取得します。</summary>
+        <value>シリアル化可能なエラー クラスを表す型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.FaultContractAttribute> 操作で `SampleMethod` の詳細な型と共に SOAP エラーを返すことができることを指定するために、`GreetingFault` を使用しています。  
+  
+ [!code-csharp[FaultContractAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#1)]
+ [!code-vb[FaultContractAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasProtectionLevel">
+      <MemberSignature Language="C#" Value="public bool HasProtectionLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FaultContractAttribute.HasProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP エラー メッセージに保護レベルが割り当てられているかどうかを示す値を取得します。</summary>
+        <value>
+          エラー メッセージに保護レベルがある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.FaultContractAttribute.HasProtectionLevel%2A> プロパティを使用して、SOAP エラー メッセージの暗号化、署名、または両方が必要かどうかを指定します。 詳細については、<xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A> プロパティを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FaultContractAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) でのエラー メッセージの名前を取得または設定します。</summary>
+        <value>エラー メッセージの名前。 既定値は、エラー詳細として使用された型の名前です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FaultContractAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP エラーの名前空間を取得または設定します。</summary>
+        <value>SOAP エラーの名前空間。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionLevel">
+      <MemberSignature Language="C#" Value="public System.Net.Security.ProtectionLevel ProtectionLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Security.ProtectionLevel ProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.FaultContractAttribute.ProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.ProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP エラーがバインドに要求する保護レベルを指定します。</summary>
+        <value><see cref="T:System.Net.Security.ProtectionLevel" /> 値のいずれか。 既定値は、<see cref="F:System.Net.Security.ProtectionLevel.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.FaultDescription.ProtectionLevel%2A?displayProperty=nameWithType> プロパティを使用して、SOAP エラーの送信時に、バインドを行う必要がある暗号化、署名、またはその両方の程度を指定します。 コントラクトのセキュリティ保護レベル要件を、操作のエラーで明示的に決定することを強くお勧めします。 既定の保護レベルは <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> ですが、これは、定義する SOAP エラー メッセージには暗号化もデジタル署名も不要であることを意味します (ただし、バインドを構成することで、これらをサポートすることもできます)。 機密性が高いか、またはセキュリティの問題につながる可能性がある情報がエラー メッセージに含まれる場合は、<xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A> プロパティを <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> に設定することを強くお勧めします。 セキュリティの問題の詳細についてを参照してください。[について保護レベル](~/docs/framework/wcf/understanding-protection-level.md)です。  
+  
+ ランタイム時の保護動作は、階層構造になっている保護レベルのプロパティの組み合わせです。 最も外側の値を設定すると、それより狭いスコープで異なる値を明示的に設定していなければ、より狭いスコープでその既定の設定が定まります。 この場合、外側の値は特に設定された値を除いて、それより狭いすべてのスコープで既定の設定として残ります。  
+  
+ たとえば、<xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType> が <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> に設定されているときに、他のより狭いスコープに保護レベルが設定されていない場合は、操作コントラクト内のエラー メッセージを含むすべてのメッセージが暗号化と署名の対象になります。 ただし、いずれかの操作で <xref:System.ServiceModel.OperationContractAttribute> が <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> に設定されている場合、その操作のメッセージは署名のみの対象になりますが、コントラクト内のエラー メッセージを含む他のすべてのメッセージは、暗号化と署名の対象になります。  
+  
+ こうした値が設定されるスコープは次のとおりです。  
+  
+ <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.OperationContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.MessageContractAttribute.ProtectionLevel%2A?displayProperty=nameWithType>  
+  
+ <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A?displayProperty=nameWithType> の <xref:System.ServiceModel.MessageHeaderAttribute?displayProperty=nameWithType> プロパティ。  
+  
+ <xref:System.ServiceModel.MessageContractMemberAttribute.ProtectionLevel%2A?displayProperty=nameWithType> の <xref:System.ServiceModel.MessageBodyMemberAttribute?displayProperty=nameWithType> プロパティ。  
+  
+ コントラクト上で明示的に指定された保護レベルが存在せず、基になるバインドで (トランスポート レベルまたはメッセージ レベルを問わず) セキュリティをサポートする場合、コントラクト全体の有効な保護レベルは <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> です。 バインドで (<xref:System.ServiceModel.BasicHttpBinding> などの) セキュリティをサポートしない場合、コントラクト全体の有効な <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> は <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> です。 したがって、コントラクトで <xref:System.Net.Security.ProtectionLevel?displayProperty=nameWithType> を指定している場合でも、エンドポイント バインドによってはクライアントが要求するメッセージ レベルまたはトランスポート レベルのセキュリティ保護が異なる場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

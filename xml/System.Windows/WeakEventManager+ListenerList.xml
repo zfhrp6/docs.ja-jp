@@ -1,0 +1,420 @@
+<Type Name="WeakEventManager+ListenerList" FullName="System.Windows.WeakEventManager+ListenerList">
+  <TypeSignature Language="C#" Value="protected class WeakEventManager.ListenerList" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi beforefieldinit WeakEventManager/ListenerList extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.WeakEventManager.ListenerList" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>リスナーを格納するための組み込みコレクションの一覧の提供、<see cref="T:System.Windows.WeakEventManager" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このリストにはで定義されているようなメンバーが含まれていますが<xref:System.Collections.IList>と<xref:System.Collections.ICollection>、このクラスが実装するインターフェイスのどちらにも同様の機能を提供します。  
+  
+ ほとんど<xref:System.Windows.WeakEventManager>派生クラスは、すべてのメンバーを使用する必要はありません<xref:System.Windows.WeakEventManager.ListenerList>です。 <xref:System.Windows.WeakEventManager>メソッド<xref:System.Windows.WeakEventManager.ProtectedAddListener%2A>と<xref:System.Windows.WeakEventManager.ProtectedRemoveListener%2A>、既定値を使用して<xref:System.Windows.WeakEventManager.ListenerList>ごとに内部的には、1 つのリスト`source`です。  
+  
+ のみを呼び出す必要がある<xref:System.Windows.WeakEventManager.ListenerList>メソッド場合、<xref:System.Windows.WeakEventManager>クラスは、同じイベント ソースの組み合わせのイベントの異なる条件に対してアカウントを作成した各リストで複数のリストを保持します。 使わないはここでは、<xref:System.Windows.WeakEventManager.ProtectedAddListener%2A>と<xref:System.Windows.WeakEventManager.ProtectedRemoveListener%2A>、代わりに実装`AddListener`または`RemoveListener`がリスナーに追加したパラメーターに基づいて、通常、内部リスナー リストの 1 つに作用する`AddListener`または`RemoveListener`です。 また、生のイベントを受信するハンドラーの実装は呼び出すことはできませんだけ<xref:System.Windows.WeakEventManager.DeliverEvent%2A>; 代わりのイベントの詳細を追跡し、適切なリストを使用して、のみイベントを配信する必要があります<xref:System.Windows.WeakEventManager.DeliverEventToList%2A>です。  
+  
+ さまざまなメソッド<xref:System.Windows.WeakEventManager.ListenerList>内部リストを使用するようにし、イベントの実際の配布中に、リストの変更を防ぐことができるように用意されています。  
+  
+ この実装方法を使用するクラスの例は、 <xref:System.ComponentModel.PropertyChangedEventManager>、個別のリスナーを維持するの一覧を示します`PropertyChanged`どのプロパティの変更に基づいて。  
+  
+<a name="xamlTextUsage_ListenerList"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このクラスを使用することはできません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListenerList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.WeakEventManager.ListenerList" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListenerList (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">最初のリストに割り当てる必要がある項目の数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.WeakEventManager.ListenerList" />指定した初期容量を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Windows.IWeakEventListener listener);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Windows.IWeakEventListener listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.Add(System.Windows.IWeakEventListener)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listener" Type="System.Windows.IWeakEventListener" />
+      </Parameters>
+      <Docs>
+        <param name="listener">追加するリスナー要素、<see cref="T:System.Windows.WeakEventManager.ListenerList" />です。</param>
+        <summary>追加、<see cref="T:System.Windows.IWeakEventListener" />オブジェクトを<see cref="T:System.Windows.WeakEventManager.ListenerList" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リスナーがある必要がありますを提供するオブジェクト、<xref:System.Windows.DependencyObject>を実装する、<xref:System.Windows.IWeakEventListener>インターフェイスし、動作中のために、<xref:System.Windows.IWeakEventListener.ReceiveWeakEvent%2A>実装します。  
+  
+ 常に呼び出す必要があります<xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting%2A>内容の一覧を変更する前にします。 それ以外の場合、元がロックされているために、イベントの配信中一覧があります。 呼び出す<xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting%2A>入力を変更`list`クローンであるように、<xref:System.Windows.WeakEventManager.ListenerList.Add%2A>呼び出しクローンに作業できます。 場合<xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting%2A>返します`true`、任意のプライベート参照、コードの他の領域で管理するリストを更新する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddHandler">
+      <MemberSignature Language="C#" Value="public void AddHandler (Delegate handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddHandler(class System.Delegate handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.AddHandler(System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="handler">追加するイベント ハンドラー、<see cref="T:System.Windows.WeakEventManager.ListenerList" />です。</param>
+        <summary>イベント ハンドラーを追加、<see cref="T:System.Windows.WeakEventManager.ListenerList" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginUse">
+      <MemberSignature Language="C#" Value="public bool BeginUse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool BeginUse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.BeginUse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一覧が使用中であることを宣言します。 これは、変更できなくなります直接リストにリスト項目のイテレーション中に。</summary>
+        <returns>
+          <see langword="true" />リストが既に使用中である宣言されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.WeakEventManager>実装を呼び出す必要があります<xref:System.Windows.WeakEventManager.ListenerList.BeginUse%2A>前に、をリスナーには、イベントを提供するリストを反復処理して、呼び出す必要があります<xref:System.Windows.WeakEventManager.ListenerList.EndUse%2A>が完了するとします。 これは他の呼び出し元がイベント配信のための反復処理が進行中の実行中に、リストを変更することを防ぎます。 この期間中に、リストを変更する場合は、リストが複製されます。 リストが複製し、場合<xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting%2A>返します`true`、最後の配信に最近リスナーの変更が不足していることを意味します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.WeakEventManager.ListenerList Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.WeakEventManager/ListenerList Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WeakEventManager+ListenerList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この変更可能な複製を作成<see cref="T:System.Windows.WeakEventManager.ListenerList" />です。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="protected void CopyTo (System.Windows.WeakEventManager.ListenerList newList);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void CopyTo(class System.Windows.WeakEventManager/ListenerList newList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.CopyTo(System.Windows.WeakEventManager.ListenerList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newList" Type="System.Windows.WeakEventManager+ListenerList" />
+      </Parameters>
+      <Docs>
+        <param name="newList">コピー先のオブジェクト。</param>
+        <summary>現在のコピー<see cref="T:System.Windows.WeakEventManager.ListenerList" />を指定しました。<see cref="T:System.Windows.WeakEventManager.ListenerList" /></summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.WeakEventManager.ListenerList.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.WeakEventManager.ListenerList" /> に格納されている項目の数を取得します。</summary>
+        <value><see cref="T:System.Windows.WeakEventManager.ListenerList" /> に格納されている項目の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeliverEvent">
+      <MemberSignature Language="C#" Value="public virtual bool DeliverEvent (object sender, EventArgs args, Type managerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool DeliverEvent(object sender, class System.EventArgs args, class System.Type managerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.DeliverEvent(System.Object,System.EventArgs,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="args" Type="System.EventArgs" />
+        <Parameter Name="managerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントを発生させたオブジェクト。</param>
+        <param name="args">イベント データを格納しているオブジェクト。</param>
+        <param name="managerType">型、<see cref="T:System.Windows.WeakEventManager" />このメソッドを呼び出します。</param>
+        <summary>リスナーごとに管理対象のイベントの配信、<see cref="T:System.Windows.WeakEventManager.ListenerList" />です。</summary>
+        <returns>
+          <see langword="true" />内のリスナーのいずれかの場合、<see cref="T:System.Windows.WeakEventManager.ListenerList" />ガベージされているオブジェクトを参照して収集された、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static System.Windows.WeakEventManager.ListenerList Empty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.WeakEventManager/ListenerList Empty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.WeakEventManager.ListenerList.Empty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WeakEventManager+ListenerList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>比較のための空のリストを表す値を取得します。</summary>
+        <value>空のリストの表現。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndUse">
+      <MemberSignature Language="C#" Value="public void EndUse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndUse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.EndUse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって開始されるロックの状態のロックを解除<see cref="M:System.Windows.WeakEventManager.ListenerList.BeginUse" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.WeakEventManager.ListenerList.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>宣言する値を取得するかどうかこの<see cref="T:System.Windows.WeakEventManager.ListenerList" />が空です。</summary>
+        <value>
+          リストが空である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをチェックするかどうか、 <xref:System.Windows.WeakEventManager.ListenerList.Count%2A> 0 の場合は、一覧内の参照のいずれかが古くなったようになりましたかどうかは確認されません。 呼び出して、すべての参照が有効であることを保証する場合<xref:System.Windows.WeakEventManager.ListenerList.Purge%2A>一覧の空の状態を確認する前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Windows.IWeakEventListener this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IWeakEventListener Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.WeakEventManager.ListenerList.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IWeakEventListener</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">リスト内のリスナーの 0 から始まるインデックス。</param>
+        <summary>取得または設定が特定のリスナー項目、<see cref="T:System.Windows.WeakEventManager.ListenerList" />です。</summary>
+        <value>そのインデックス、またはインデックスにある項目がなかった場合は null 参照にある項目。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareForWriting">
+      <MemberSignature Language="C#" Value="public static bool PrepareForWriting (ref System.Windows.WeakEventManager.ListenerList list);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool PrepareForWriting(class System.Windows.WeakEventManager/ListenerList&amp; list) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.PrepareForWriting(System.Windows.WeakEventManager.ListenerList@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="list" Type="System.Windows.WeakEventManager+ListenerList&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="list">ユーザー状態を確認して可能性のあるコピーを一覧します。</param>
+        <summary>指定されたリストが使用中であるかどうかを確認するためのチェックは、元ではなく、そのリストのコピーを一覧の参照パラメーターを設定します。</summary>
+        <returns>
+          <see langword="true" />指定されたリストが呼び出し時に使用されていた場合と、そのため、<paramref name="list" />コピーになるパラメーターの参照がリセットされました。 <see langword="false" />かどうかは指定されたリスト使用されておらず、その場合、<paramref name="list" />パラメーターの参照にはそのまま続行します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された一覧が (つまり、イベントが現在配信中) 使用されている場合は、このメソッドを呼び出す置き換わります入力`list`複製にします。  既存のユーザーには、新しいリストに変更によって影響を及ぼさず、元のリストへのイベント配信が完了します。  
+  
+ メソッドを返す場合`true`、呼び出し元が指定されたリストが最新ではない可能性があるこのため、独自のデータ構造体で、新しいリストを挿入することができます。  
+  
+ このメソッドを呼び出す<xref:System.Windows.WeakEventManager.ListenerList.BeginUse%2A>内部的にしてからすぐに呼び出して<xref:System.Windows.WeakEventManager.ListenerList.EndUse%2A>です。 そのため<xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting%2A>は自体は、一覧でのロックを導入します。 複製のコピーもを呼び出した後にセカンダリ操作として実行されます<xref:System.Windows.WeakEventManager.ListenerList.EndUse%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Purge">
+      <MemberSignature Language="C#" Value="public bool Purge ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Purge() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.Purge" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になる参照先の null 参照リストからすべてのエントリを削除します。</summary>
+        <returns>返します<see langword="true" />パージされた、それ以外のすべてのエントリがあった場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Windows.IWeakEventListener listener);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Windows.IWeakEventListener listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.Remove(System.Windows.IWeakEventListener)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listener" Type="System.Windows.IWeakEventListener" />
+      </Parameters>
+      <Docs>
+        <param name="listener">削除する項目。</param>
+        <summary>最初に見つかったからリスナー項目の削除、<see cref="T:System.Windows.WeakEventManager.ListenerList" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 常に呼び出す必要があります<xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting%2A>内容の一覧を変更する前にします。 それ以外の場合、元がロックされているために、イベントの配信中一覧があります。 呼び出す<xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting%2A>入力を変更`list`クローンであるように、<xref:System.Windows.WeakEventManager.ListenerList.Remove%2A>呼び出しクローンに作業できます。 場合<xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting%2A>返します`true`、任意のプライベート参照、コードの他の領域で管理するリストを更新する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveHandler">
+      <MemberSignature Language="C#" Value="public void RemoveHandler (Delegate handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveHandler(class System.Delegate handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.WeakEventManager.ListenerList.RemoveHandler(System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="handler">削除するイベント ハンドラー、<see cref="T:System.Windows.WeakEventManager.ListenerList" />です。</param>
+        <summary>イベント ハンドラーを削除、<see cref="T:System.Windows.WeakEventManager.ListenerList" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

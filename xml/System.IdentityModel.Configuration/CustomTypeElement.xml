@@ -1,0 +1,134 @@
+<Type Name="CustomTypeElement" FullName="System.IdentityModel.Configuration.CustomTypeElement">
+  <TypeSignature Language="C#" Value="public sealed class CustomTypeElement : System.IdentityModel.Configuration.ConfigurationElementInterceptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CustomTypeElement extends System.IdentityModel.Configuration.ConfigurationElementInterceptor" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Configuration.CustomTypeElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Configuration.ConfigurationElementInterceptor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>要素またはカスタムを指定する属性を表します<see cref="T:System.Type" />構成ファイルにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Configuration.CustomTypeElement>クラスは、属性または構成ファイルでカスタム型を指定する要素を表します。 たとえば、 [ &lt;claimsAuthenticationManager&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthenticationmanager.md)クレーム identity manager の指定に使用される要素が含まれます`type`を指定する属性、<xref:System.Type>の要求認証マネージャーです。`<claimsAuthenticationManager type="MyNamespace.CustomClaimsAuthenticationManager, MyAssembly"/>`. <xref:System.IdentityModel.Configuration.IdentityConfigurationElement.ClaimsAuthenticationManager%2A?displayProperty=nameWithType>プロパティで構成されているようにこの要素を表す、 [ &lt;identityConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)要素を取得および設定のインスタンス<xref:System.IdentityModel.Configuration.CustomTypeElement>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomTypeElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.CustomTypeElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Configuration.CustomTypeElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsConfigured">
+      <MemberSignature Language="C#" Value="public bool IsConfigured { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsConfigured" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.CustomTypeElement.IsConfigured" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素を既定以外の値で構成されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />要素は、既定以外の値で構成されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.CustomTypeElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Resolve&lt;T&gt; (System.IdentityModel.Configuration.CustomTypeElement customTypeElement) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Resolve&lt;class T&gt;(class System.IdentityModel.Configuration.CustomTypeElement customTypeElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Configuration.CustomTypeElement.Resolve``1(System.IdentityModel.Configuration.CustomTypeElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="customTypeElement" Type="System.IdentityModel.Configuration.CustomTypeElement" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T"><see cref="T:System.Type" />をカスタム型の要素を解決するためにします。</typeparam>
+        <param name="customTypeElement">解決するのにはカスタム型の要素。</param>
+        <summary>指定したオブジェクトにカスタム型の要素を解決しようとしています。<see cref="T:System.Type" />です。</summary>
+        <returns>オブジェクト<see cref="T:System.Type" /><paramref name="T" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Configuration.CustomTypeElement.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.TypeNameConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("type", IsKey=true, IsRequired=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Type" />現在のインスタンスによって表されます。</summary>
+        <value>このインスタンスで表される型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

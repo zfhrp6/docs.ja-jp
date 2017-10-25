@@ -1,0 +1,138 @@
+<Type Name="SessionStateStoreData" FullName="System.Web.SessionState.SessionStateStoreData">
+  <TypeSignature Language="C#" Value="public class SessionStateStoreData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SessionStateStoreData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SessionState.SessionStateStoreData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セッションのストアのセッション状態データを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateStoreData>クラスとの間にセッション状態情報を渡すため ASP.NET とカスタム セッション状態ストアの実装で使用、<xref:System.Web.SessionState.SessionStateModule>です。  
+  
+ <xref:System.Web.SessionState.SessionStateStoreData>店舗でセッションのセッション状態データを表すクラスが使用される、<xref:System.Web.SessionState.SessionStateModule>です。 <xref:System.Web.SessionState.SessionStateStoreData>オブジェクトには、セッション状態変数の名前と値、静的オブジェクトの参照が含まれていますと<xref:System.Web.SessionState.SessionStateStoreData.Timeout%2A>現在のセッションの情報です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionStateStoreData (System.Web.SessionState.ISessionStateItemCollection sessionItems, System.Web.HttpStaticObjectsCollection staticObjects, int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.SessionState.ISessionStateItemCollection sessionItems, class System.Web.HttpStaticObjectsCollection staticObjects, int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.SessionStateStoreData.#ctor(System.Web.SessionState.ISessionStateItemCollection,System.Web.HttpStaticObjectsCollection,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sessionItems" Type="System.Web.SessionState.ISessionStateItemCollection" />
+        <Parameter Name="staticObjects" Type="System.Web.HttpStaticObjectsCollection" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sessionItems">セッション変数と、現在のセッションの値。</param>
+        <param name="staticObjects"><see cref="T:System.Web.HttpStaticObjectsCollection" />現在のセッションです。</param>
+        <param name="timeout"><see cref="P:System.Web.SessionState.SessionStateStoreData.Timeout" />現在のセッションです。</param>
+        <summary><see cref="T:System.Web.SessionState.SessionStateStoreData" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateStoreData>店舗でセッションのセッション状態データを表すクラスが使用される、<xref:System.Web.SessionState.SessionStateModule>です。 <xref:System.Web.SessionState.SessionStateStoreData>オブジェクトには、セッション状態変数の名前と値、静的オブジェクトの参照が含まれていますと<xref:System.Web.SessionState.SessionStateStoreData.Timeout%2A>現在のセッションの情報です。  
+  
+ <xref:System.Web.SessionState.SessionStateStoreData>クラスとの間にセッション状態情報を渡すため ASP.NET とカスタム セッション状態ストアの実装で使用、<xref:System.Web.SessionState.SessionStateModule>です。  
+  
+ カスタム セッション ストア実装のコンス トラクター、<xref:System.Web.SessionState.SessionStateStoreData>オブジェクトの実装では、 <xref:System.Web.SessionState.SessionStateStoreProviderBase.GetItem%2A>、 <xref:System.Web.SessionState.SessionStateStoreProviderBase.GetItemExclusive%2A>、および<xref:System.Web.SessionState.SessionStateStoreProviderBase.CreateNewStoreData%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public virtual System.Web.SessionState.ISessionStateItemCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SessionState.ISessionStateItemCollection Items" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.SessionStateStoreData.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.ISessionStateItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション変数と、現在のセッションの値。</summary>
+        <value><see cref="T:System.Web.SessionState.ISessionStateItemCollection" />を現在のセッション変数と値を含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateStoreData.Items%2A>プロパティは、ASP.NET アプリケーションを使用してコードに公開されているセッション状態変数を参照、<xref:System.Web.SessionState.HttpSessionState>を使用してアクセスは、クラス、 <xref:System.Web.HttpContext.Session%2A> 、現在のプロパティ<xref:System.Web.HttpContext>または<xref:System.Web.UI.Page>インスタンス。  
+  
+ 既定では、セッション状態変数を使用して管理、<xref:System.Web.SessionState.SessionStateItemCollection>オブジェクト。 カスタム セッション ストア実装の独自の実装を提供することができます、<xref:System.Web.SessionState.ISessionStateItemCollection>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StaticObjects">
+      <MemberSignature Language="C#" Value="public virtual System.Web.HttpStaticObjectsCollection StaticObjects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpStaticObjectsCollection StaticObjects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.SessionStateStoreData.StaticObjects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpStaticObjectsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>宣言されたオブジェクトのコレクションを取得<see langword="&lt;object Runat=&quot;Server&quot; Scope=&quot;Session&quot;/&gt;" />Global.asax ASP.NET アプリケーションのファイル内のタグ。</summary>
+        <value><see cref="T:System.Web.HttpStaticObjectsCollection" /> Global.asax ファイルで宣言されたオブジェクトを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次に、  
+  
+ <xref:System.Web.SessionState.SessionStateStoreData.StaticObjects%2A>プロパティは、ASP の旧バージョンとの互換性を提供します。  
+  
+ カスタム セッションのストアの実装への参照を取得できます、<xref:System.Web.HttpStaticObjectsCollection>現在のクラス<xref:System.Web.HttpContext>インスタンスを使用して、<xref:System.Web.SessionState.SessionStateUtility.GetSessionStaticObjects%2A>メソッドです。  
+  
+> [!NOTE]
+>  カスタムのオブジェクトに格納されている、<xref:System.Web.SessionState.SessionStateStoreData.StaticObjects%2A>コレクションは、バイナリのシリアル化をサポートする必要があります。 詳細については、次を参照してください。[バイナリのシリアル化](~/docs/standard/serialization/binary-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public virtual int Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.SessionStateStoreData.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得し、セッション状態プロバイダーがセッションを終了する前に、要求間で許可される分単位で、時間を設定します。</summary>
+        <value>タイムアウトの期間 (分)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

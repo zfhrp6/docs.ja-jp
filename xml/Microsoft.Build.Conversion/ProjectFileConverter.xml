@@ -1,0 +1,351 @@
+<Type Name="ProjectFileConverter" FullName="Microsoft.Build.Conversion.ProjectFileConverter">
+  <TypeSignature Language="C#" Value="public sealed class ProjectFileConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProjectFileConverter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Conversion.ProjectFileConverter" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Visual Studio プロジェクト ファイルを Visual Studio 2010 プロジェクト ファイル形式に変換します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProjectFileConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Conversion.ProjectFileConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Conversion.ProjectFileConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConversionSkippedBecauseProjectAlreadyConverted">
+      <MemberSignature Language="C#" Value="public bool ConversionSkippedBecauseProjectAlreadyConverted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConversionSkippedBecauseProjectAlreadyConverted" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Conversion.ProjectFileConverter.ConversionSkippedBecauseProjectAlreadyConverted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロジェクト ファイルが既に最新の形式であるために、前回試みた変換がスキップされたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、プロジェクト ファイルは既に最新の形式であるため、前回試みた変換がスキップされましたそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConversionWarnings">
+      <MemberSignature Language="C#" Value="public string[] ConversionWarnings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] ConversionWarnings" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Conversion.ProjectFileConverter.ConversionWarnings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変換中に生成された警告の一覧を取得します。</summary>
+        <value>変換中に生成された警告を格納している文字列配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public void Convert ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Convert() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Conversion.ProjectFileConverter.Convert" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:Microsoft.Build.Conversion.ProjectFileConverter.OldProjectFile" /> プロパティによって指定されたプロジェクトを変換し、<see cref="P:Microsoft.Build.Conversion.ProjectFileConverter.NewProjectFile" /> プロパティによって指定されたファイルに保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public void Convert (Microsoft.Build.BuildEngine.ProjectLoadSettings projectLoadSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Convert(valuetype Microsoft.Build.BuildEngine.ProjectLoadSettings projectLoadSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Conversion.ProjectFileConverter.Convert(Microsoft.Build.BuildEngine.ProjectLoadSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use parameterless overload instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectLoadSettings" Type="Microsoft.Build.BuildEngine.ProjectLoadSettings" />
+      </Parameters>
+      <Docs>
+        <param name="projectLoadSettings">読み込むときに、存在しない .target ファイルをプロジェクトが無視するかどうかを決定する <see cref="T:Microsoft.Build.BuildEngine.ProjectLoadSettings" /> フラグ。</param>
+        <summary><see cref="P:Microsoft.Build.Conversion.ProjectFileConverter.OldProjectFile" /> プロパティによって指定されたプロジェクトを変換し、<see cref="P:Microsoft.Build.Conversion.ProjectFileConverter.NewProjectFile" /> プロパティによって指定されたファイルに保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public void Convert (string msbuildBinPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Convert(string msbuildBinPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Conversion.ProjectFileConverter.Convert(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use parameterless overload instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msbuildBinPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="msbuildBinPath">MSBuild.exe への完全修飾パス。</param>
+        <summary>プロジェクト ファイル形式を変換するエントリ ポイント メソッドです。 既存の "newProjectFile" がある場合、このメソッドによって上書きされます。したがって、呼び出し元はユーザーに上書きの確認をする必要があります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="ConvertInMemory">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="P:Microsoft.Build.Conversion.ProjectFileConverter.OldProjectFile" /> から新しいプロジェクトをメモリ内に作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換された <xref:Microsoft.Build.BuildEngine.Project> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="ConvertInMemory">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Construction.ProjectRootElement ConvertInMemory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Construction.ProjectRootElement ConvertInMemory() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Conversion.ProjectFileConverter.ConvertInMemory" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Construction.ProjectRootElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:Microsoft.Build.Conversion.ProjectFileConverter.OldProjectFile" /> から新しいプロジェクトをメモリ内に作成します。</summary>
+        <returns>変換された <see cref="T:Microsoft.Build.BuildEngine.Project" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換された <xref:Microsoft.Build.BuildEngine.Project> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertInMemory">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.Project ConvertInMemory (Microsoft.Build.BuildEngine.Engine engine);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.BuildEngine.Project ConvertInMemory(class Microsoft.Build.BuildEngine.Engine engine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Conversion.ProjectFileConverter.ConvertInMemory(Microsoft.Build.BuildEngine.Engine)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use parameterless ConvertInMemory() method instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.Project</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="engine" Type="Microsoft.Build.BuildEngine.Engine" />
+      </Parameters>
+      <Docs>
+        <param name="engine">新しいプロジェクトを作成する <see cref="T:Microsoft.Build.BuildEngine.Engine" />。</param>
+        <summary><see cref="P:Microsoft.Build.Conversion.ProjectFileConverter.OldProjectFile" /> から新しいプロジェクトをメモリ内に作成します。</summary>
+        <returns>変換された <see cref="T:Microsoft.Build.BuildEngine.Project" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertInMemory">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.Project ConvertInMemory (Microsoft.Build.BuildEngine.Engine engine, Microsoft.Build.BuildEngine.ProjectLoadSettings projectLoadSettings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.BuildEngine.Project ConvertInMemory(class Microsoft.Build.BuildEngine.Engine engine, valuetype Microsoft.Build.BuildEngine.ProjectLoadSettings projectLoadSettings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Conversion.ProjectFileConverter.ConvertInMemory(Microsoft.Build.BuildEngine.Engine,Microsoft.Build.BuildEngine.ProjectLoadSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use parameterless ConvertInMemory() method instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.Project</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="engine" Type="Microsoft.Build.BuildEngine.Engine" />
+        <Parameter Name="projectLoadSettings" Type="Microsoft.Build.BuildEngine.ProjectLoadSettings" />
+      </Parameters>
+      <Docs>
+        <param name="engine">新しいプロジェクトを作成する <see cref="T:Microsoft.Build.BuildEngine.Engine" />。</param>
+        <param name="projectLoadSettings">A<see cref="T:Microsoft.Build.BuildEngine.ProjectLoadSettings" />を読み込むときに、プロジェクトが存在しない .target ファイルを無視するかどうかを決定するフラグ。</param>
+        <summary>プロジェクト ファイル形式を変換するエントリ ポイント メソッドです。 このメソッドは新しい MSBuild Project オブジェクトを、ディスクに書き込むのではなく、単にメモリ内に作成します。</summary>
+        <returns>変換された <see cref="T:Microsoft.Build.BuildEngine.Project" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FSharpSpecificConversions">
+      <MemberSignature Language="C#" Value="public bool FSharpSpecificConversions (bool actuallyMakeChanges);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FSharpSpecificConversions(bool actuallyMakeChanges) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Conversion.ProjectFileConverter.FSharpSpecificConversions(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="actuallyMakeChanges" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="actuallyMakeChanges">true の場合は、変更します。それ以外の場合は、実際には何も変更せず、変更するつもりかどうかを返します。</param>
+        <summary>F# プロジェクトへの変換を実行 (VS2008 CTP -&gt; VS2012) と (VS2010 -&gt; VS2012)。  
+  
+ これには、FSharp ターゲットの場所の変更、および 2008CTP では、明示的な mscorlib と FSharp.Core の参照の追加が含まれます。</summary>
+        <returns>何か変更された場合 (変更される予定の場合) は true、それ以外の場合は false を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUserFile">
+      <MemberSignature Language="C#" Value="public bool IsUserFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUserFile" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Conversion.ProjectFileConverter.IsUserFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変換対象のプロジェクト ファイルが .user ファイルであるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />変換対象のプロジェクト ファイルが .user ファイルです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewProjectFile">
+      <MemberSignature Language="C#" Value="public string NewProjectFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NewProjectFile" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Conversion.ProjectFileConverter.NewProjectFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいプロジェクト ファイル名を取得または設定します。</summary>
+        <value>新しいプロジェクト ファイルの名前を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、実行する前に設定する必要があります、<xref:Microsoft.Build.Conversion.ProjectFileConverter.Convert%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldProjectFile">
+      <MemberSignature Language="C#" Value="public string OldProjectFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OldProjectFile" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Conversion.ProjectFileConverter.OldProjectFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>以前のプロジェクト ファイル名を取得または設定します。</summary>
+        <value>以前のプロジェクト ファイル名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、実行する前に設定する必要があります、<xref:Microsoft.Build.Conversion.ProjectFileConverter.Convert%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SolutionFile">
+      <MemberSignature Language="C#" Value="public string SolutionFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SolutionFile" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Conversion.ProjectFileConverter.SolutionFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Conversion.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変換対象のプロジェクトを格納するソリューション ファイルの名前を取得または設定します。</summary>
+        <value>変換対象のプロジェクトを格納するソリューション ファイルの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

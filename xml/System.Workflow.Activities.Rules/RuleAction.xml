@@ -1,0 +1,235 @@
+<Type Name="RuleAction" FullName="System.Workflow.Activities.Rules.RuleAction">
+  <TypeSignature Language="C#" Value="public abstract class RuleAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit RuleAction extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.RuleAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>抽象クラス。これに関連付けられた <see cref="P:System.Workflow.Activities.Rules.Rule.Condition" /> を評価した結果が <see langword="true" /> ならば <see cref="P:System.Workflow.Activities.Rules.Rule.ThenActions" />、<see langword="false" /> ならば <see cref="P:System.Workflow.Activities.Rules.Rule.ElseActions" /> で表されるアクションを定義します。 このクラスは継承する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ (<xref:System.Workflow.Activities.Rules.RuleStatementAction> および <xref:System.Workflow.Activities.Rules.Rule.ThenActions%2A> として使用できる) <xref:System.Workflow.Activities.Rules.Rule.ElseActions%2A> オブジェクトは、通常、アクティビティのいずれか 1 つのプロパティの変数値を設定する、アクティビティのメソッドを呼び出す、参照されているアセンブリ内の型に対して静的メソッドを呼び出す、のいずれかを実行します。  
+  
+ <xref:System.Workflow.Activities.Rules.RuleAction> は、<xref:System.Workflow.Activities.Rules.RuleStatementAction>、<xref:System.Workflow.Activities.Rules.RuleHaltAction>、および <xref:System.Workflow.Activities.Rules.RuleUpdateAction> の各クラスの派生元となる基本型です。 これらのクラスの用途は次のとおりです。  
+  
+-   <xref:System.Workflow.Activities.Rules.RuleStatementAction> は、プロパティを変更するか、メソッドを呼び出します。  
+  
+-   <xref:System.Workflow.Activities.Rules.RuleHaltAction> は、<xref:System.Workflow.Activities.Rules.RuleSet> の実行を停止し、呼び出し元メソッドに制御を返します。  
+  
+-   <xref:System.Workflow.Activities.Rules.RuleUpdateAction> は、ルールが変数を更新していることを明示的に示します。 これにより、影響を受けたすべてのルールが再評価されます。  
+  
+   
+  
+## Examples  
+ ルール セット中で呼び出して使えるアクションを作成するコード例を以下に示します。 アクション名は `Log` で、文字列型の引数を 1 つ取ります。 また、コンソールに文字列を出力します。  
+  
+ このコードを使用するには、クラス ライブラリ プロジェクトにコードを追加し、ワークフロー プロジェクトからそのライブラリを参照します。  
+  
+```csharp  
+using System;  
+using System.CodeDom;  
+using System.Collections.Generic;  
+using System.Text;  
+using System.Workflow.Activities.Rules;  
+using System.Workflow.ComponentModel.Compiler;  
+  
+namespace LogRuleAction  
+{  
+    public class Log : RuleAction  
+    {  
+        CodeExpression message;  
+  
+        public CodeExpression Message  
+        {  
+            get { return message; }  
+            set { message = value; }  
+        }  
+  
+        public Log()  
+        {  
+            // constructor required for deserialization  
+        }  
+  
+        public Log(CodeExpression expression)  
+        {  
+            // constructor required by parser  
+            message = expression;  
+        }  
+  
+        public override bool Validate(RuleValidation validator)  
+        {  
+            ValidationError error;  
+            if (message == null)  
+            {  
+                error = new ValidationError("Message cannot be null", 123);  
+                validator.Errors.Add(error);  
+                return false;  
+            }  
+            else  
+            {  
+                RuleExpressionInfo result = RuleExpressionWalker.Validate(validator, message, false);  
+                if ((result == null) || (result.ExpressionType != typeof(string)))  
+                {  
+                    error = new ValidationError("Message must return string result", 123);  
+                    validator.Errors.Add(error);  
+                    return false;  
+                }  
+            }  
+            return (validator.Errors.Count == 0);  
+        }  
+  
+        public override RuleAction Clone()  
+        {  
+            Log result = new Log();  
+            result.Message = RuleExpressionWalker.Clone(message);  
+            return result;  
+        }  
+  
+        public override void Execute(RuleExecution context)  
+        {  
+            RuleExpressionResult result = RuleExpressionWalker.Evaluate(context, message);  
+            if (result != null)  
+                Console.WriteLine(result.Value);  
+        }  
+  
+        public override ICollection<string> GetSideEffects(RuleValidation validation)  
+        {  
+            RuleAnalysis analysis = new RuleAnalysis(validation, true);  
+            if (message != null)  
+                RuleExpressionWalker.AnalyzeUsage(analysis, message, true, false, null);  
+            return analysis.GetSymbols();  
+        }  
+  
+        public override string ToString()  
+        {  
+            // what should be displayed by the parser  
+            StringBuilder result = new StringBuilder("Log(");  
+            RuleExpressionWalker.Decompile(result, message, null);  
+            result.Append(")");  
+            return result.ToString();  
+        }  
+    }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RuleAction ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleAction.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.Activities.Rules.RuleAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public abstract System.Workflow.Activities.Rules.RuleAction Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Workflow.Activities.Rules.RuleAction Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleAction.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleAction</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.Activities.Rules.RuleAction" /> の詳細コピーを作成します。</summary>
+        <returns>このインスタンスに一致する <see cref="T:System.Workflow.Activities.Rules.RuleAction" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public abstract void Execute (System.Workflow.Activities.Rules.RuleExecution context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Execute(class System.Workflow.Activities.Rules.RuleExecution context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleAction.Execute(System.Workflow.Activities.Rules.RuleExecution)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Workflow.Activities.Rules.RuleExecution" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Workflow.Activities.Rules.RuleAction" /> の実行状態。</param>
+        <summary>指定された <see cref="T:System.Workflow.Activities.Rules.RuleAction" /> インスタンスを使用して <see cref="T:System.Workflow.Activities.Rules.RuleExecution" /> を実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSideEffects">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.ICollection&lt;string&gt; GetSideEffects (System.Workflow.Activities.Rules.RuleValidation validation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.ICollection`1&lt;string&gt; GetSideEffects(class System.Workflow.Activities.Rules.RuleValidation validation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleAction.GetSideEffects(System.Workflow.Activities.Rules.RuleValidation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validation" Type="System.Workflow.Activities.Rules.RuleValidation" />
+      </Parameters>
+      <Docs>
+        <param name="validation">前回、<see cref="T:System.Workflow.Activities.Rules.RuleValidation" /> の呼び出しに使用した <see cref="M:System.Workflow.Activities.Rules.RuleAction.Validate(System.Workflow.Activities.Rules.RuleValidation)" />。</param>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleAction" /> によって更新されたフィールドおよびプロパティを返します。</summary>
+        <returns><see cref="T:System.Workflow.Activities.Rules.RuleAction" /> により更新されたフィールドやプロパティの名前を表す文字列のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public abstract bool Validate (System.Workflow.Activities.Rules.RuleValidation validator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Validate(class System.Workflow.Activities.Rules.RuleValidation validator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleAction.Validate(System.Workflow.Activities.Rules.RuleValidation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validator" Type="System.Workflow.Activities.Rules.RuleValidation" />
+      </Parameters>
+      <Docs>
+        <param name="validator">検証プロセスを管理する <see cref="T:System.Workflow.Activities.Rules.RuleValidation" />。</param>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleAction" /> の構成が適切でエラーがないことを検証します。</summary>
+        <returns>
+          <see langword="true" /> の構成が適切でエラーがない場合は <see cref="T:System.Workflow.Activities.Rules.RuleAction" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.Rules.RuleAction> にエラーが含まれている (`Validate` メソッドが `false` を返す) 場合は、検出されたエラーのリストが <xref:System.Workflow.Activities.Rules.RuleValidation.Errors%2A?displayProperty=nameWithType> に格納されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

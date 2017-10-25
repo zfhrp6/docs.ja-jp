@@ -1,0 +1,1586 @@
+<Type Name="ClientScriptManager" FullName="System.Web.UI.ClientScriptManager">
+  <TypeSignature Language="C#" Value="public sealed class ClientScriptManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ClientScriptManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ClientScriptManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションでクライアント スクリプトを管理するためのメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ClientScriptManager>クライアント スクリプトを管理し、Web アプリケーションに追加するクラスを使用します。 参照を取得することができます、<xref:System.Web.UI.ClientScriptManager>クラス、<xref:System.Web.UI.Page.ClientScript%2A>のプロパティ、<xref:System.Web.UI.Page>オブジェクト。  
+  
+ できるスクリプトを追加するクライアント Web ページに宣言によって、ページの HTML マークアップに、スクリプトを含めることで。 ただし、クライアント スクリプトを動的に追加することが必要な場合もあります。 スクリプトを動的に追加するを使用して、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>メソッド、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A>メソッドを<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>メソッド、または<xref:System.Web.UI.ClientScriptManager.RegisterOnSubmitStatement%2A>スクリプトを追加するタイミングと方法に応じて、メソッド。 詳細については、次を参照してください。[する方法: 追加クライアント スクリプト動的に ASP.NET Web Pages を](http://msdn.microsoft.com/library/e89f1306-e43d-49ae-a66a-e18b71007666)です。  
+  
+ <xref:System.Web.UI.ClientScriptManager>クラスでは、キーにより、スクリプトを一意に識別<xref:System.String>と<xref:System.Type>です。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。 スクリプトの種類を使用して、ページ上で使用可能性のある別のユーザー コントロールからのようなスクリプトの混乱を避けるために役立ちます。  
+  
+ <xref:System.Web.UI.ClientScriptManager>ポストバックを実行せず、クライアントからサーバー コードを実行する必要がある場合の状況でのクライアント コールバックを呼び出すクラスを使用できます。 これは、サーバーへの帯域外のコールバックの実行と呼ばれます。 クライアント コールバックでは、クライアント スクリプト関数は、ASP.NET Web ページへの非同期要求を送信します。 Web ページには、コールバックを処理する通常のライフ サイクルの変更済みバージョンが実行されます。 使用して、<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>呼び出されると、クライアント関数への参照を取得するメソッドは、サーバー イベントへのクライアント コールバックを開始します。 詳細については、次を参照してください。[ポストバックなしクライアント コールバックの実装](http://msdn.microsoft.com/library/dfaaa7d4-e1f2-4322-b2f5-796e0419f185)です。  
+  
+> [!NOTE]
+>  ECMAScript がクライアントで有効になっている必要なし、ドキュメント オブジェクト モデル (DOM) をサポートしていない古いブラウザーでスクリプト コールバックが動作しません。 確認するには、ブラウザーがコールバックをサポートしているかどうかを使用して、<xref:System.Web.Configuration.HttpCapabilitiesBase.SupportsCallback%2A>経由でアクセスできるは、プロパティ、<xref:System.Web.HttpRequest.Browser%2A>組み込みの ASP.NET のプロパティ<xref:System.Web.HttpContext.Request%2A>オブジェクト。  
+  
+ 使用して、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドおよび<xref:System.Web.UI.ClientScriptManager.GetPostBackClientHyperlink%2A>クライアント ポストバック イベントを定義するメソッド。 これらのメソッドは、発生するページへのポストバックをサーバーに、呼び出されたときに、クライアント スクリプト関数を有効にします。 クライアントのポストバック イベントは、Web ページには、クライアントのポストバック イベントをプロセスに通常のライフ サイクルが完了することで、クライアント コールバックと異なります。  
+  
+> [!NOTE]
+>  使用している場合、<xref:System.Web.UI.WebControls.Button>コントロールと<xref:System.Web.UI.WebControls.Button.UseSubmitBehavior%2A>プロパティに設定されている`false`を使用して、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>クライアントを返すメソッドをポストバック イベントを<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.Button.OnClientClick%2A>のプロパティ、<xref:System.Web.UI.WebControls.Button>コントロール、<xref:System.Web.UI.WebControls.ImageButton>コントロール、および<xref:System.Web.UI.WebControls.LinkButton>コントロールは、クライアント スクリプトを実行するために使用できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>のメソッド、<xref:System.Web.UI.ClientScriptManager>クラスです。 2 つのクライアント スクリプトがページで定義されている: `PopupScript`、ページが読み込まれるときに警告メッセージが表示されます、 `ButtonClickScript`、HTML ボタンのクライアントのハンドラーを定義する`onClick`イベント。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetCallbackEventReference">
+      <MemberSignature Language="C#" Value="public string GetCallbackEventReference (System.Web.UI.Control control, string argument, string clientCallback, string context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetCallbackEventReference(class System.Web.UI.Control control, string argument, string clientCallback, string context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetCallbackEventReference(System.Web.UI.Control,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="argument" Type="System.String" />
+        <Parameter Name="clientCallback" Type="System.String" />
+        <Parameter Name="context" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="control">サーバー<see cref="T:System.Web.UI.Control" />クライアント コールバックを処理します。 コントロールを実装する必要があります、<see cref="T:System.Web.UI.ICallbackEventHandler" />インターフェイスし、提供、<see cref="M:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(System.String)" />メソッドです。</param>
+        <param name="argument">クライアント スクリプトから、サーバーに渡される引数  
+  
+ <see cref="M:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(System.String)" /> メソッド</param>
+        <param name="clientCallback">成功したサーバー イベントの結果を受け取るクライアント イベント ハンドラーの名前。</param>
+        <param name="context">コールバックを開始する前に、クライアント上で評価されるクライアント スクリプトです。 スクリプトの結果は、クライアントのイベント ハンドラーに渡されます。</param>
+        <summary>クライアント関数が、呼び出されると、クライアントの開始にコールバックして、サーバー イベントへの参照を取得します。 このオーバー ロードされたメソッドのクライアント機能には、指定したコントロール、引数、クライアント スクリプト、およびコンテキストが含まれています。</summary>
+        <returns>クライアント コールバックを呼び出すクライアント関数の名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%28System.Web.UI.Control%2CSystem.String%2CSystem.String%2CSystem.String%29>メソッドは、ページの通常の有効期間の変更済みバージョンをあるサーバーに、帯域外のコールバックを実行します。 詳細については、次を参照してください。[ポストバックなしクライアント コールバックの実装](http://msdn.microsoft.com/library/dfaaa7d4-e1f2-4322-b2f5-796e0419f185)です。  
+  
+> [!NOTE]
+>  ブラウザーは、Microsoft Internet Explorer (バージョン 5.0 以降) とスクリプトのコールバック機構はよう COM オブジェクトによって実装されブラウザーで ActiveX コントロールの実行を設定する必要があります。 その他のブラウザーでは、ブラウザーのローカル ドキュメント オブジェクト モデル (DOM) を使用して、XMLHttpRequest を使用します。 確認するには、ブラウザーがクライアントのコールバックをサポートしているかどうかを使用して、<xref:System.Web.Configuration.HttpCapabilitiesBase.SupportsCallback%2A>プロパティです。 確認するには、ブラウザーが HTTP 経由での XML をサポートしているかどうかを使用して、<xref:System.Web.Configuration.HttpCapabilitiesBase.SupportsXmlHttp%2A>プロパティです。 両方のプロパティが経由でアクセスできる、<xref:System.Web.HttpRequest.Browser%2A>組み込みの ASP.NET のプロパティ<xref:System.Web.HttpContext.Request%2A>オブジェクト。  
+  
+ <xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>のオーバー ロード、<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>メソッドが HTTP 経由で同期的に XML を使用してコールバックを実行します。 コールバックのシナリオでデータを同期的に送信するとき、同期コールバックはすぐに返すし、ブラウザーはブロックされません。 2 つの同期コールバックをブラウザーで同時に実行することはできます。 1 つは現在保留中、2 つ目の同期コールバックが発生した場合は、2 つ目の同期のコールバックが最初をキャンセルし、2 番目のコールバックのみが返されます。  
+  
+ データを非同期的に送信するを取るオーバー ロードのいずれかの操作を使用して、`useAsync`パラメーターで、ブール値は、この動作を制御する値。 非同期のシナリオでは、保留中の複数のコールバック; を持つことができます。ただし、返される順序は、開始された順序と一致するは保証されません。  
+  
+ さらに、このオーバー ロード、<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>メソッドは、クライアントを処理する関数によって生成されたエラー状態の場合の指定なし、<xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A>メソッドです。 クライアント エラー コールバック ハンドラーを指定するを取るオーバー ロードのいずれかの操作を使用して、`clientErrorCallback`パラメーター。  
+  
+ <xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%28System.Web.UI.Control%2CSystem.String%2CSystem.String%2CSystem.String%29>メソッドは省略可能な文字列を受け取ります`argument`パラメーター文字列を返します。 渡す、または複数の値を受信するには、入力内の値を連結したり、それぞれの文字列を返します。  
+  
+> [!NOTE]
+>  スクリプトのコールバック操作中に更新する必要があるページまたはコントロールのプロパティの実装での表示状態を使用しないでください。 プロパティは、ページ要求からの復旧は、セッション状態を使用することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の 2 つのオーバー ロードを使用する方法を示します、<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>整数値が増加クライアント コールバックを行うメソッドです。  
+  
+ 2 つのコールバック機構が表示されます。これらの違いは、使用、`context`パラメーター。 A`ReceiveServerData1`を使用して、クライアント コールバック関数が提供される、`context`パラメーター。 これに対し、`ReceiveServerData2`でクライアントのコールバック関数が定義されている、 `<script>`  ページでブロックされます。 A<xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A>メソッドは、サーバー ハンドラーに渡される値をインクリメントして、<xref:System.Web.UI.ICallbackEventHandler.GetCallbackResult%2A>メソッドを文字列としてインクリメントされた値を返します。 場合、<xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A>メソッドには、エラーが返されます、`ProcessCallBackError`クライアント関数が呼び出されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/cs/getcallbackeventreference.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/vb/getcallbackeventreference.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <see cref="T:System.Web.UI.Control" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.UI.Control" />指定を実装しません、<see cref="T:System.Web.UI.ICallbackEventHandler" />インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCallbackEventReference">
+      <MemberSignature Language="C#" Value="public string GetCallbackEventReference (System.Web.UI.Control control, string argument, string clientCallback, string context, bool useAsync);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetCallbackEventReference(class System.Web.UI.Control control, string argument, string clientCallback, string context, bool useAsync) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetCallbackEventReference(System.Web.UI.Control,System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="argument" Type="System.String" />
+        <Parameter Name="clientCallback" Type="System.String" />
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="useAsync" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="control">サーバー<see cref="T:System.Web.UI.Control" />クライアント コールバックを処理します。 コントロールを実装する必要があります、<see cref="T:System.Web.UI.ICallbackEventHandler" />インターフェイスし、提供、<see cref="M:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(System.String)" />メソッドです。</param>
+        <param name="argument">クライアント スクリプトから、サーバーに渡される引数  
+  
+ <see cref="M:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(System.String)" /> メソッド</param>
+        <param name="clientCallback">成功したサーバー イベントの結果を受け取るクライアント イベント ハンドラーの名前。</param>
+        <param name="context">コールバックを開始する前に、クライアント上で評価されるクライアント スクリプトです。 スクリプトの結果は、クライアントのイベント ハンドラーに渡されます。</param>
+        <param name="useAsync">
+          <see langword="true" />コールバックを非同期的に実行するには<see langword="false" />コールバックを同期的に実行します。</param>
+        <summary>クライアント関数が、呼び出されると、クライアントが初期化にコールバックするサーバー イベントへの参照を取得します。 このオーバー ロードされたメソッドのクライアント機能には、指定したコントロール、引数、クライアント スクリプト、コンテキスト、およびブール値が含まれています。</summary>
+        <returns>クライアント コールバックを呼び出すクライアント関数の名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>メソッドが必要な`useAsync`パラメーター値を設定して、クライアント コールバックを非同期的に実行することができる`true`です。 このメソッドのオーバー ロード バージョンを必要としない、`useAsync`パラメーターに値を設定する`false`既定です。  
+  
+ このメソッドの詳細については、オーバー ロードは、「解説」を参照してください。<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <see cref="T:System.Web.UI.Control" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.UI.Control" />指定を実装しません、<see cref="T:System.Web.UI.ICallbackEventHandler" />インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCallbackEventReference">
+      <MemberSignature Language="C#" Value="public string GetCallbackEventReference (string target, string argument, string clientCallback, string context, string clientErrorCallback, bool useAsync);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetCallbackEventReference(string target, string argument, string clientCallback, string context, string clientErrorCallback, bool useAsync) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetCallbackEventReference(System.String,System.String,System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.String" />
+        <Parameter Name="argument" Type="System.String" />
+        <Parameter Name="clientCallback" Type="System.String" />
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="clientErrorCallback" Type="System.String" />
+        <Parameter Name="useAsync" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="target">サーバーの名前<see cref="T:System.Web.UI.Control" />クライアント コールバックを処理します。 コントロールを実装する必要があります、<see cref="T:System.Web.UI.ICallbackEventHandler" />インターフェイスし、提供、<see cref="M:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(System.String)" />メソッドです。</param>
+        <param name="argument">クライアント スクリプトから、サーバーに渡される引数  
+  
+ <see cref="M:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(System.String)" /> メソッド</param>
+        <param name="clientCallback">成功したサーバー イベントの結果を受け取るクライアント イベント ハンドラーの名前。</param>
+        <param name="context">コールバックを開始する前に、クライアント上で評価されるクライアント スクリプトです。 スクリプトの結果は、クライアントのイベント ハンドラーに渡されます。</param>
+        <param name="clientErrorCallback">サーバー イベント ハンドラーでエラーが発生したときに、結果を受け取るクライアントのイベント ハンドラーの名前。</param>
+        <param name="useAsync">
+          <see langword="true" />コールバックを非同期的に実行するには<see langword="false" />コールバックを同期的に実行します。</param>
+        <summary>クライアント関数が、呼び出されると、クライアントが初期化にコールバックするサーバー イベントへの参照を取得します。 このオーバー ロードされたメソッドのクライアント機能には、指定されたターゲット、引数、クライアント スクリプト、コンテキスト、エラー ハンドラー、およびブール値が含まれています。</summary>
+        <returns>クライアント コールバックを呼び出すクライアント関数の名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>メソッドは、`target`文字列パラメーターの代わりに、<xref:System.Web.UI.Control>パラメーター。 コールバックを含む文字列以外にする場合は、このオーバー ロードを使用して、<xref:System.Web.UI.Control.UniqueID%2A>コントロールのです。  
+  
+ さらに、このオーバー ロード、<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>メソッドが必要な`useAsync`と`clientErrorCallback`パラメーター。 `useAsync`パラメーター値を設定して、クライアント コールバックを非同期的に実行できます。`true`です。 このメソッドのオーバー ロード バージョンを必要としない、`useAsync`パラメーターに値を設定する`false`既定です。 `clientErrorCallback`パラメーターを使用する場合に呼び出されるクライアント関数の名前を定義するサーバー ハンドラー、<xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A>メソッド、エラーが返されます。 このメソッドのオーバー ロード バージョンを必要としない、`clientErrorCallback`パラメーターは、値を null に設定します。  
+  
+ このメソッドの詳細については、オーバー ロードは、「解説」を参照してください。<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の 2 つのオーバー ロードを使用する方法を示します、<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>整数値が増加クライアント コールバックを行うメソッドです。  
+  
+ 2 つのコールバック機構が表示されます。これらの違いは、使用、`context`パラメーター。 A`ReceiveServerData1`を使用して、クライアント コールバック関数が提供される、`context`パラメーター。 これに対し、`ReceiveServerData2`でクライアントのコールバック関数が定義されている、 `<script>`  ページでブロックされます。 A<xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A>メソッドは、サーバー ハンドラーに渡される値をインクリメントして、<xref:System.Web.UI.ICallbackEventHandler.GetCallbackResult%2A>メソッドを文字列としてインクリメントされた値を返します。 場合、<xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A>メソッドは、エラー、そのクライアント関数を返します。`ProcessCallBackError`と呼びます。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/cs/getcallbackeventreference.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/vb/getcallbackeventreference.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCallbackEventReference">
+      <MemberSignature Language="C#" Value="public string GetCallbackEventReference (System.Web.UI.Control control, string argument, string clientCallback, string context, string clientErrorCallback, bool useAsync);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetCallbackEventReference(class System.Web.UI.Control control, string argument, string clientCallback, string context, string clientErrorCallback, bool useAsync) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetCallbackEventReference(System.Web.UI.Control,System.String,System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="argument" Type="System.String" />
+        <Parameter Name="clientCallback" Type="System.String" />
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="clientErrorCallback" Type="System.String" />
+        <Parameter Name="useAsync" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="control">サーバー<see cref="T:System.Web.UI.Control" />クライアント コールバックを処理します。 コントロールを実装する必要があります、<see cref="T:System.Web.UI.ICallbackEventHandler" />インターフェイスし、提供、<see cref="M:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(System.String)" />メソッドです。</param>
+        <param name="argument">サーバーにクライアント スクリプトから渡される引数<see cref="M:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent(System.String)" />メソッドです。</param>
+        <param name="clientCallback">成功したサーバー イベントの結果を受け取るクライアント イベント ハンドラーの名前。</param>
+        <param name="context">コールバックを開始する前に、クライアント上で評価されるクライアント スクリプトです。 スクリプトの結果は、クライアントのイベント ハンドラーに渡されます。</param>
+        <param name="clientErrorCallback">サーバー イベント ハンドラーでエラーが発生したときに、結果を受け取るクライアントのイベント ハンドラーの名前。</param>
+        <param name="useAsync">
+          <see langword="true" />コールバックを非同期的に実行するには<see langword="false" />コールバックを同期的に実行します。</param>
+        <summary>クライアント関数が、呼び出されると、クライアントが初期化にコールバックするサーバー イベントへの参照を取得します。 このオーバー ロードされたメソッドのクライアント機能には、指定したコントロール、引数、クライアント スクリプト、コンテキスト、エラー ハンドラー、およびブール値が含まれています。</summary>
+        <returns>クライアント コールバックを呼び出すクライアント関数の名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>メソッドが必要な`useAsync`と`clientErrorCallback`パラメーター。 `useAsync`パラメーター値を設定して、クライアント コールバックを非同期的に実行できます。`true`です。 このメソッドのオーバー ロード バージョンを必要としない、`useAsync`パラメーターに値を設定する`false`既定です。 `clientErrorCallback`パラメーターを使用する場合に呼び出されるクライアント関数の名前を定義するサーバー ハンドラー (、<xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A>メソッド) はエラーを返します。 このメソッドのオーバー ロード バージョンを必要としない、`clientErrorCallback`パラメーターは、値を null に設定します。  
+  
+ このメソッドの詳細については、オーバー ロードは、「解説」を参照してください。<xref:System.Web.UI.ClientScriptManager.GetCallbackEventReference%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <see cref="T:System.Web.UI.Control" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.UI.Control" />指定を実装しません、<see cref="T:System.Web.UI.ICallbackEventHandler" />インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPostBackClientHyperlink">
+      <MemberSignature Language="C#" Value="public string GetPostBackClientHyperlink (System.Web.UI.Control control, string argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackClientHyperlink(class System.Web.UI.Control control, string argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackClientHyperlink(System.Web.UI.Control,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="argument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="control">ポストバックを処理するサーバー コントロール。</param>
+        <param name="argument">サーバー コントロールに、パラメーターが渡されます。</param>
+        <summary>参照を取得<see langword="javascript:" />クライアント イベントで指定されたイベント引数を使用して、指定したコントロールのサーバーへのポストバックを使用できるの先頭に追加されます。</summary>
+        <returns>対象のコントロールの ID とイベントの引数を含むポストバック関数に JavaScript の呼び出しを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドを実装するポストバックを処理するコントロールが必要です、<xref:System.Web.UI.IPostBackEventHandler>インターフェイスです。 実装する、<xref:System.Web.UI.IPostBackEventHandler>のためのインターフェイス、<xref:System.Web.UI.Page>ディレクティブを使用します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.GetPostBackClientHyperlink%2A>メソッドです。 カスタム コントロール`MyControl`、実装、<xref:System.Web.UI.IPostBackEventHandler>インターフェイスです。 ページの HTML アンカー要素がクリックされたときに、<xref:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent%2A>カスタム コントロールのメソッドが呼び出されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreferencecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreferencevb.aspx#1)]  
+  
+ 次のコード例は、同じ機能をカスタム コントロールではなく点を除いて、上記の 1 つとして、<xref:System.Web.UI.Page>クラスが実装する、<xref:System.Web.UI.IPostBackEventHandler>インターフェイスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreference2cs.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreference2vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPostBackClientHyperlink">
+      <MemberSignature Language="C#" Value="public string GetPostBackClientHyperlink (System.Web.UI.Control control, string argument, bool registerForEventValidation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackClientHyperlink(class System.Web.UI.Control control, string argument, bool registerForEventValidation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackClientHyperlink(System.Web.UI.Control,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="argument" Type="System.String" />
+        <Parameter Name="registerForEventValidation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="control">ポストバックを処理するサーバー コントロール。</param>
+        <param name="argument">サーバー コントロールに、パラメーターが渡されます。</param>
+        <param name="registerForEventValidation">
+          <see langword="true" />検証のポストバック イベントを登録するには<see langword="false" />に検証のためにポストバック イベントを登録できません。</param>
+        <summary>参照を取得<see langword="javascript:" />を指定したコントロールを指定されたイベント引数とブール値を示す値イベントの検証を通知を登録するかどうかのサーバーにポスト クライアント イベントで使用できるの先頭に追加されます。</summary>
+        <returns>対象のコントロールの ID とイベントの引数を含むポストバック関数に JavaScript の呼び出しを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドを実装するポストバックを処理するコントロールが必要です、<xref:System.Web.UI.IPostBackEventHandler>インターフェイスです。 実装する、<xref:System.Web.UI.IPostBackEventHandler>のためのインターフェイス、<xref:System.Web.UI.Page>ディレクティブを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPostBackEventReference">
+      <MemberSignature Language="C#" Value="public string GetPostBackEventReference (System.Web.UI.PostBackOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackEventReference(class System.Web.UI.PostBackOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackEventReference(System.Web.UI.PostBackOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.Web.UI.PostBackOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.Web.UI.PostBackOptions" />ポストバックを定義します。</param>
+        <summary>サーバーへのポストバックが発生するクライアント イベントで使用できる文字列を返します。 参照文字列が定義されている指定した<see cref="T:System.Web.UI.PostBackOptions" />インスタンス。</summary>
+        <returns>文字列をクライアントでスクリプトとして扱われたときに、クライアントのポストバックを開始します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する、<xref:System.Web.UI.IPostBackEventHandler>のためのインターフェイス、<xref:System.Web.UI.Page>ディレクティブを使用します。  
+  
+ <xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドを使用できます、<xref:System.Web.UI.WebControls.Button>タイミングを制御、<xref:System.Web.UI.WebControls.Button.UseSubmitBehavior%2A>プロパティは`false`します。 このシナリオでは、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドを返しますが、クライアントのポストバック イベントを<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.UI.PostBackOptions" />パラメーターは、<see langword="null" /></exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPostBackEventReference">
+      <MemberSignature Language="C#" Value="public string GetPostBackEventReference (System.Web.UI.Control control, string argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackEventReference(class System.Web.UI.Control control, string argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackEventReference(System.Web.UI.Control,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="argument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="control">サーバー<see cref="T:System.Web.UI.Control" />サーバーにポストバックを処理します。</param>
+        <param name="argument">省略可能なポストバックを処理するコントロールに渡す引数の文字列。</param>
+        <summary>サーバーへのポストバックが発生するクライアント イベントで使用できる文字列を返します。 参照文字列は、ポストバックおよびその他のイベント情報の文字列引数を処理する指定されたコントロールによって定義されます。</summary>
+        <returns>文字列をクライアントでは、スクリプトとして扱われたとき、ポストバックが開始します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する、<xref:System.Web.UI.IPostBackEventHandler>のためのインターフェイス、<xref:System.Web.UI.Page>ディレクティブを使用します。  
+  
+ <xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドを使用できます、<xref:System.Web.UI.WebControls.Button>タイミングを制御、<xref:System.Web.UI.WebControls.Button.UseSubmitBehavior%2A>プロパティは`false`します。 このシナリオでは、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドを返しますが、クライアントのポストバック イベントを<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドです。 カスタム コントロール`MyControl`、実装、<xref:System.Web.UI.IPostBackEventHandler>インターフェイスです。 ページ上のボタンがクリックされたときに、<xref:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent%2A>カスタム コントロールのメソッドが呼び出されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreferencecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreferencevb.aspx#1)]  
+  
+ 次のコード例は、同じ機能をカスタム コントロールではなく点を除いて、上記の 1 つとして、<xref:System.Web.UI.Page>クラスが実装する、<xref:System.Web.UI.IPostBackEventHandler>インターフェイスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreference2cs.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreference2vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <see cref="T:System.Web.UI.Control" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPostBackEventReference">
+      <MemberSignature Language="C#" Value="public string GetPostBackEventReference (System.Web.UI.PostBackOptions options, bool registerForEventValidation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackEventReference(class System.Web.UI.PostBackOptions options, bool registerForEventValidation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackEventReference(System.Web.UI.PostBackOptions,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.Web.UI.PostBackOptions" />
+        <Parameter Name="registerForEventValidation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.Web.UI.PostBackOptions" />ポストバックを定義します。</param>
+        <param name="registerForEventValidation">
+          <see langword="true" />イベントの参照を検証; に登録するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>サーバーへのポストバックが発生するクライアント イベントで使用できる文字列を返します。 参照文字列が定義されている指定した<see cref="T:System.Web.UI.PostBackOptions" />オブジェクト。 必要に応じて、検証のためのイベントの参照を登録します。</summary>
+        <returns>文字列をクライアントでスクリプトとして扱われたときに、クライアントのポストバックを開始します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する、<xref:System.Web.UI.IPostBackEventHandler>のためのインターフェイス、<xref:System.Web.UI.Page>オブジェクト、ディレクティブを使用します。  
+  
+ <xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドを使用できます、<xref:System.Web.UI.WebControls.Button>タイミングを制御、<xref:System.Web.UI.WebControls.Button.UseSubmitBehavior%2A>プロパティは`false`します。 このシナリオでは、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドを返しますが、クライアントのポストバック イベントを<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ 場合`registerForEventValidation`は`true`、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%28System.Web.UI.PostBackOptions%2CSystem.Boolean%29>メソッドの呼び出し、<xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%28System.String%2CSystem.String%29>イベントを生成するクライアントのコントロールを表す一意のコントロール id の検証イベントの参照を登録します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.UI.PostBackOptions" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPostBackEventReference">
+      <MemberSignature Language="C#" Value="public string GetPostBackEventReference (System.Web.UI.Control control, string argument, bool registerForEventValidation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackEventReference(class System.Web.UI.Control control, string argument, bool registerForEventValidation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackEventReference(System.Web.UI.Control,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="argument" Type="System.String" />
+        <Parameter Name="registerForEventValidation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="control">サーバー<see cref="T:System.Web.UI.Control" />サーバーにポストバックを処理します。</param>
+        <param name="argument">渡される省略可能な引数の文字列<c>コントロール</c>です。</param>
+        <param name="registerForEventValidation">
+          <see langword="true" />イベントの参照を検証; に登録するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>サーバーへのポストバックが発生するクライアントのイベントで使用する文字列を返します。 参照文字列は、ポストバックおよびその他のイベント情報の文字列引数を処理する指定されたコントロールによって定義されます。 必要に応じて、検証のためのイベントの参照を登録します。</summary>
+        <returns>文字列をクライアントでは、スクリプトとして扱われたとき、ポストバックが開始します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する、<xref:System.Web.UI.IPostBackEventHandler>のためのインターフェイス、<xref:System.Web.UI.Page>ディレクティブを使用します。  
+  
+ <xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドを使用できます、<xref:System.Web.UI.WebControls.Button>タイミングを制御、<xref:System.Web.UI.WebControls.Button.UseSubmitBehavior%2A>プロパティは`false`します。 このシナリオでは、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドを返しますが、クライアントのポストバック イベントを<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ 場合`registerForEventValidation`が true の場合、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%28System.Web.UI.PostBackOptions%2CSystem.Boolean%29>メソッドの呼び出し、<xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%28System.String%2CSystem.String%29>イベントを生成するクライアントのコントロールを表す一意のコントロール id の検証イベントの参照を登録します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <see cref="T:System.Web.UI.Control" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWebResourceUrl">
+      <MemberSignature Language="C#" Value="public string GetWebResourceUrl (Type type, string resourceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetWebResourceUrl(class System.Type type, string resourceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetWebResourceUrl(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="resourceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">リソースの種類。</param>
+        <param name="resourceName">アセンブリ内のリソースの完全修飾名。</param>
+        <summary>アセンブリ内のリソースへの URL 参照を取得します。</summary>
+        <returns>リソースへの URL 参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ClientScriptManager.GetWebResourceUrl%2A>メソッドは、アセンブリに埋め込まれているリソースへの URL 参照を返します。 返される参照は、エンコードされた URL ではありません。 リソースは、スクリプト ファイル、画像、または、静的ファイルを使用できます。 リソースにアクセスするオブジェクトに基づく種類を指定します。  
+  
+ ページに登録されている Web リソースは、その型と名前によって一意に識別します。 渡された型と名前のペアを持つ 1 つだけのリソースは、ページを登録することができます。 既に登録されているリソースを登録しようとして、登録済みのリソースの複製が作成されることはできません。  
+  
+ <xref:System.Web.UI.ClientScriptManager.GetWebResourceUrl%2A>と共にメソッドが使用される、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptResource%2A>アセンブリに埋め込まれているリソースにアクセスするメソッド。 アプリケーションでリソースの使用の詳細については、次を参照してください。 [ASP.NET Web ページのリソースの概要](http://msdn.microsoft.com/library/0936b3b2-9e6e-4abe-9c06-364efef9dbbd)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.GetWebResourceUrl%2A>メソッドです。 *型*この例ではパラメーターが、リソースを含むアセンブリ内のクラスの種類に設定します。 `resourceName`パラメーターが既定の名前空間を含むリソースへの完全修飾パスで指定されています。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/cs/clientscriptwebresource.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/vb/clientscriptwebresource.aspx#1)]  
+  
+ 次のコード例は、プログラムを適用する方法を示します、<xref:System.Web.UI.WebResourceAttribute>提供されるリソースのアセンブリをマークするメタデータの属性です。 既定の名前空間に設定して、クラス ライブラリでは、次のクラスをコンパイル`Samples.AspNet.CS.Controls`または`Samples.AspNet.VB.Controls`を使用する言語に応じて、します。  
+  
+ [!code-csharp[System.Web.UI.ClientScriptManager4#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/cs/resource.cs#2)]
+ [!code-vb[System.Web.UI.ClientScriptManager4#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/vb/resource.vb#2)]  
+  
+ この例には、名前付き JavaScript ファイルが必要です。`Script_include.js`です。 .Js ファイルが含まれるアセンブリに埋め込まれたリソース、`ClientScriptResourceLabel`オブジェクト。 使用している場合[!INCLUDE[vs_current_short](~/includes/vs-current-short-md.md)]、クラス ライブラリ プロジェクトの [プロパティ] ウィンドウで次のように設定します。**ビルド アクション**に**埋め込まれたリソース**スクリプト ファイルを選択するとします。 コマンドラインでライブラリをコンパイルする場合は、リソースを埋め込むには、スイッチを使用します。  
+  
+```  
+function DoClick() {Form1.Message.value='Text from resource script.'}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Web リソース名が<see langword="null" />です。  
+  
+ \- または  
+  
+ Web リソース名では、長さが 0 を持ちます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClientScriptBlockRegistered">
+      <MemberSignature Language="C#" Value="public bool IsClientScriptBlockRegistered (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsClientScriptBlockRegistered(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索対象のクライアント スクリプト ブロックのキー。</param>
+        <summary>クライアント スクリプト ブロックに登録されているかどうかを判断、<see cref="T:System.Web.UI.Page" />オブジェクトの指定のキーを使用します。</summary>
+        <returns>
+          <see langword="true" />クライアント スクリプト ブロックの場合は登録します。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前に、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>スクリプトが重複する登録を回避するためです。 これは、スクリプトを作成するサーバーのリソースの消費量が必要な場合に特に重要です。  
+  
+ クライアント スクリプトは、そのキーとその型で一意に識別します。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。  
+  
+ このオーバー ロード、<xref:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered%2A>メソッドは、両方を受け取るオーバー ロードを呼び出し、`key`と`type`として、型を持つパラメーターの設定、<xref:System.Web.UI.Page>オブジェクト  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs2.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb2.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClientScriptBlockRegistered">
+      <MemberSignature Language="C#" Value="public bool IsClientScriptBlockRegistered (Type type, string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsClientScriptBlockRegistered(class System.Type type, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">検索対象のクライアント スクリプト ブロックの型。</param>
+        <param name="key">検索対象のクライアント スクリプト ブロックのキー。</param>
+        <summary>クライアント スクリプト ブロックに登録されているかどうかを判断、<see cref="T:System.Web.UI.Page" />オブジェクトのキーおよび種類を使用します。</summary>
+        <returns>
+          <see langword="true" />クライアント スクリプト ブロックの場合は登録します。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前に、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>スクリプトが重複する登録を回避するためです。 これは、スクリプトを作成するサーバーのリソースの消費量が必要な場合に特に重要です。  
+  
+ クライアント スクリプトは、そのキーとその型で一意に識別します。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。 リソースにアクセスするオブジェクトに基づく種類を指定します。 インスタンスを使用する場合、`Page`を指定する、リソースにアクセスするインスタンス、`Page`型です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered%2A>メソッドです。 既存のクライアント スクリプト ブロックを確認するロジックが削除された場合はありません重複しているクライアント スクリプトを 2 つ表示するページの HTML ソース コードのために注意してください、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>メソッドは、重複データをチェックします。 チェックの利点は、不要な計算処理を開始します。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">クライアント スクリプトの種類は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClientScriptIncludeRegistered">
+      <MemberSignature Language="C#" Value="public bool IsClientScriptIncludeRegistered (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsClientScriptIncludeRegistered(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsClientScriptIncludeRegistered(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索するクライアント スクリプトのキーが含まれます。</param>
+        <summary>決定に登録されているが、クライアント スクリプトを含めるかどうか、<see cref="T:System.Web.UI.Page" />オブジェクトの指定のキーを使用します。</summary>
+        <returns>
+          <see langword="true" />クライアント スクリプトに含める場合は登録です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前に、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A>スクリプトが重複する登録を回避するためです。 これは、スクリプトを作成するサーバーのリソースの消費量が必要な場合に特に重要です。  
+  
+ クライアント スクリプトは、そのキーとその型では一意に識別します。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。  
+  
+ このオーバー ロード、<xref:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered%2A>メソッドは、両方を受け取るオーバー ロードを呼び出し、`key`と`type`、型のパラメーターを設定、<xref:System.Web.UI.Page>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClientScriptIncludeRegistered">
+      <MemberSignature Language="C#" Value="public bool IsClientScriptIncludeRegistered (Type type, string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsClientScriptIncludeRegistered(class System.Type type, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsClientScriptIncludeRegistered(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">検索するクライアント スクリプトの種類が含まれます。</param>
+        <param name="key">検索するクライアント スクリプトのキーが含まれます。</param>
+        <summary>決定クライアント スクリプトに含めるかどうかに登録されて、<see cref="T:System.Web.UI.Page" />オブジェクトのキーおよび種類を使用しています。</summary>
+        <returns>
+          <see langword="true" />クライアント スクリプトに含める場合は登録です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前に、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A>重複しているクライアント スクリプトを登録しないようにするメソッドが含まれています。 これは、スクリプトを作成するサーバーのリソースの消費量が必要な場合に特に重要です。  
+  
+ クライアント スクリプトは、そのキーとその型では一意に識別します。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。 リソースにアクセスするオブジェクトに基づく種類を指定します。 たとえば、ページ インスタンスを使用して、リソースにアクセスする、指定した、`Page`型です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.IsClientScriptIncludeRegistered%2A>メソッドです。 既存のクライアント スクリプトに含まれているを確認するロジックが削除された場合はありません重複しているクライアント スクリプトを 2 つ表示するページの HTML ソース コードのために注意してください、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A>メソッドは、重複データをチェックします。 チェックの利点は、不要な計算処理を開始します。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/cs/clientscriptincludes.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/vb/clientscriptincludes.aspx#1)]  
+  
+ この例には、名前付き JavaScript ファイルが必要です。 `Script_include.js`、以下の内容で。  
+  
+```  
+function DoClick() {Form1.Message.value='Text from include script.'}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">クライアント スクリプトに含める型は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOnSubmitStatementRegistered">
+      <MemberSignature Language="C#" Value="public bool IsOnSubmitStatementRegistered (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOnSubmitStatementRegistered(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsOnSubmitStatementRegistered(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索する OnSubmit ステートメントのキー。</param>
+        <summary>OnSubmit ステートメントに登録されているかどうかを判断、<see cref="T:System.Web.UI.Page" />オブジェクトの指定のキーを使用します。</summary>
+        <returns>
+          <see langword="true" />OnSubmit ステートメントは、登録されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前に、 <xref:System.Web.UI.ClientScriptManager.RegisterOnSubmitStatement%2A> OnSubmit ステートメントが重複する登録を回避するためです。 これは、ステートメントを作成するサーバーのリソースの消費量が必要な場合に特に重要です。  
+  
+ ステートメントは、そのキーとその型で一意に識別します。 同じキーと型指定されたステートメントは、重複と見なされます。  
+  
+ このオーバー ロード、<xref:System.Web.UI.ClientScriptManager.IsOnSubmitStatementRegistered%2A>メソッドは、両方を受け取るオーバー ロードを呼び出し、`key`と`type`として、型を持つパラメーターの設定、<xref:System.Web.UI.Page>オブジェクト  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOnSubmitStatementRegistered">
+      <MemberSignature Language="C#" Value="public bool IsOnSubmitStatementRegistered (Type type, string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOnSubmitStatementRegistered(class System.Type type, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsOnSubmitStatementRegistered(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">検索する OnSubmit ステートメントの種類。</param>
+        <param name="key">検索する OnSubmit ステートメントのキー。</param>
+        <summary>OnSubmit ステートメントに登録されているかどうかを判断、<see cref="T:System.Web.UI.Page" />オブジェクトの指定したキーと型を使用します。</summary>
+        <returns>
+          <see langword="true" />OnSubmit ステートメントは、登録されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前に、<xref:System.Web.UI.ClientScriptManager.RegisterOnSubmitStatement%2A>ステートメントが重複する登録を回避するためです。 これは、ステートメントを作成するサーバーのリソースの消費量が必要な場合に特に重要です。  
+  
+ ステートメントは、そのキーとその型で一意に識別します。 同じキーと型指定されたステートメントは、重複と見なされます。 リソースにアクセスするオブジェクトに基づく種類を指定します。 インスタンスを使用する場合、`Page`を指定する、リソースにアクセスするインスタンス、`Page`型です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.IsOnSubmitStatementRegistered%2A>メソッドです。 という名前のスクリプト`OnSubmitScript`に登録されて、<xref:System.Web.UI.Page>ページのフォームが送信されると、スクリプトが呼び出されるようにします。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/cs/clientscriptonsubmit.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/vb/clientscriptonsubmit.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">OnSubmit ステートメントの種類は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStartupScriptRegistered">
+      <MemberSignature Language="C#" Value="public bool IsStartupScriptRegistered (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsStartupScriptRegistered(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索対象のスタートアップ スクリプトのキー。</param>
+        <summary>スタートアップ スクリプトに登録されているかどうかを判断、<see cref="T:System.Web.UI.Page" />オブジェクトの指定のキーを使用します。</summary>
+        <returns>
+          <see langword="true" />スタートアップ スクリプトは、登録されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前に、<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>スクリプトが重複する登録を回避するためです。 これは、スクリプトを作成するサーバーのリソースの消費量が必要な場合に特に重要です。  
+  
+ スタートアップ スクリプトは、そのキーとその型で一意に識別します。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。  
+  
+ このオーバー ロード、<xref:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered%2A>メソッドは、両方の文字列を受け取るオーバー ロードを呼び出す`key`と`type`として、型を持つパラメーターの設定、<xref:System.Web.UI.Page>オブジェクト  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStartupScriptRegistered">
+      <MemberSignature Language="C#" Value="public bool IsStartupScriptRegistered (Type type, string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsStartupScriptRegistered(class System.Type type, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">検索対象のスタートアップ スクリプトの種類。</param>
+        <param name="key">検索対象のスタートアップ スクリプトのキー。</param>
+        <summary>スタートアップ スクリプトに登録されているかどうかを判断、<see cref="T:System.Web.UI.Page" />オブジェクトの指定したキーと型を使用します。</summary>
+        <returns>
+          <see langword="true" />スタートアップ スクリプトは、登録されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前に、<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>スクリプトが重複する登録を回避するためです。 これは、スクリプトを作成するサーバーのリソースの消費量が必要な場合に特に重要です。  
+  
+ クライアントのスタートアップ スクリプトは、そのキーとその型で一意に識別します。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered%2A>メソッドです。 既存の起動スクリプト ブロックを確認するロジックが削除された場合はありません 2 つの重複するスタートアップ スクリプト、レンダリングされるページの HTML ソース コードであるために注意してください、<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>メソッドは、重複データをチェックします。 チェックの利点は、不要な計算処理を開始します。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">スタートアップ スクリプトの種類が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterArrayDeclaration">
+      <MemberSignature Language="C#" Value="public void RegisterArrayDeclaration (string arrayName, string arrayValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterArrayDeclaration(string arrayName, string arrayValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterArrayDeclaration(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrayName" Type="System.String" />
+        <Parameter Name="arrayValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="arrayName">登録する配列の名前。</param>
+        <param name="arrayValue">登録する配列値。</param>
+        <summary>JavaScript 配列宣言を登録、<see cref="T:System.Web.UI.Page" />オブジェクトの配列の名前と配列の値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ClientScriptManager.RegisterArrayDeclaration%2A>で指定された名前と同じ名前で登録されている配列が存在するかどうかを確認するためのチェック、`arrayName`パラメーターで指定された値を追加し、`arrayValue`パラメーター。 基になるストレージ メカニズムに基づいているため、<xref:System.Collections.ArrayList>重複は許可されています。 場合と同じ名前で登録済みの配列、`arrayName`パラメーターが存在しないか、作成および内の値、`arrayValue`パラメーターを追加します。  
+  
+ 結果の JavaScript 配列の文字列リテラルにする場合は、単一引用符 (') を含めたり、二重引用符をエスケープ (\\") で、`arrayValue`パラメーター。 値、`arrayValue`パラメーターが 1 つの要素にする必要があります。 複数の値は、配列に追加する必要がある場合、を使用して複数の呼び出しを行う、<xref:System.Web.UI.ClientScriptManager.RegisterArrayDeclaration%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.RegisterArrayDeclaration%2A>と<xref:System.Web.UI.ClientScriptManager.RegisterHiddenField%2A>メソッドです。 例では、配列と非表示の値を登録しを定義、`OnClick`のイベント、`<input>`配列の 2 つの値と非表示の値の合計を計算するボタンをクリックします。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/cs/clientscriptregisterarray.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/vb/clientscriptregisterarray.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="arrayName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterClientScriptBlock">
+      <MemberSignature Language="C#" Value="public void RegisterClientScriptBlock (Type type, string key, string script);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterClientScriptBlock(class System.Type type, string key, string script) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock(System.Type,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="script" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">登録するクライアント スクリプトの種類。</param>
+        <param name="key">登録するクライアント スクリプトのキー。</param>
+        <param name="script">クライアント スクリプトを登録するリテラルです。</param>
+        <summary>クライアントを使用してスクリプトを登録、<see cref="T:System.Web.UI.Page" />オブジェクトの種類、キー、およびスクリプト リテラルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント スクリプトは、そのキーとその型で一意に識別します。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。 ページには、指定された型とキー ペアを持つ 1 つだけのスクリプトを登録できます。 既に登録されているスクリプトを登録しようとしています。 重複したスクリプトは作成されません。  
+  
+ 呼び出す、<xref:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered%2A>を指定したキーおよび種類のペアでクライアント スクリプトは既に登録されているかどうかを判断し、スクリプトを追加しようとしてが不必要を回避する方法です。  
+  
+ このオーバー ロードで、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>メソッド、する必要がありますでスクリプトが指定されていることを確認して、`script`にパラメーターがラップされて、`<script>`要素ブロックします。  
+  
+ <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>メソッドは、レンダリングされるページの上部にスクリプト ブロックを追加します。 スクリプト ブロックは、登録されている順序で出力されるとは限りません。 スクリプト ブロックの順序が重要な場合を使用して、<xref:System.Text.StringBuilder>オブジェクトを 1 つの文字列で、スクリプトを収集し、それらすべてを 1 つのクライアント スクリプト ブロック内に登録します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>メソッドです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager12#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.clientscriptmanager12/cs/default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager12#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.clientscriptmanager12/vb/default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterClientScriptBlock">
+      <MemberSignature Language="C#" Value="public void RegisterClientScriptBlock (Type type, string key, string script, bool addScriptTags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterClientScriptBlock(class System.Type type, string key, string script, bool addScriptTags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock(System.Type,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="script" Type="System.String" />
+        <Parameter Name="addScriptTags" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">登録するクライアント スクリプトの種類。</param>
+        <param name="key">登録するクライアント スクリプトのキー。</param>
+        <param name="script">クライアント スクリプトを登録するリテラルです。</param>
+        <param name="addScriptTags">スクリプト タグを追加するかどうかを示すブール値。</param>
+        <summary>クライアントを使用してスクリプトを登録、<see cref="T:System.Web.UI.Page" />オブジェクトの種類、キー、スクリプト タグを追加するかどうかを示すスクリプト リテラル、およびブール値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント スクリプトは、そのキーとその型で一意に識別します。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。 ページには、指定された型とキー ペアを持つ 1 つだけのスクリプトを登録できます。 既に登録されているスクリプトを登録しようとしています。 重複したスクリプトは作成されません。  
+  
+ 呼び出す、<xref:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered%2A>メソッドを指定したキーおよび種類のペアでクライアント スクリプトは既に登録されているかどうかを判断します。 これにより、スクリプトを追加しようとしてが不必要に回避できます。  
+  
+ このオーバー ロードで、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>メソッドを示すことができます、スクリプトがで提供されるかどうか、`script`でパラメーターをラップ、`<script>`要素ブロックを使用して、`addScriptTags`パラメーター。 設定`addScriptTags`に`true`スクリプト タグが自動的に追加することを示します。  
+  
+ <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>メソッドは、レンダリングされるページの上部にスクリプト ブロックを追加します。 スクリプト ブロックは、登録されている順序で出力されるとは限りません。 スクリプト ブロックの順序が重要な場合を使用して、<xref:System.Text.StringBuilder>オブジェクトを 1 つの文字列で、スクリプトを収集し、それらすべてを 1 つのクライアント スクリプト ブロック内に登録します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A>メソッドです。 注意してください、`addScriptTags`にパラメーターが設定されている`true`開始タグと終了スクリプト タグに含まれていないため、`script`パラメーター。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">クライアント スクリプト ブロックの型は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterClientScriptInclude">
+      <MemberSignature Language="C#" Value="public void RegisterClientScriptInclude (string key, string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterClientScriptInclude(string key, string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">登録するクライアント スクリプトのキーが含まれます。</param>
+        <param name="url">登録するクライアント スクリプトの URL が含まれます。</param>
+        <summary>クライアントを使用してスクリプトを登録、<see cref="T:System.Web.UI.Page" />オブジェクト キーと、URL では、により、クライアントから呼び出されるスクリプトを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント スクリプトは、そのキーとその型では一意に識別します。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。 ページには、指定された型とキー ペアを持つ 1 つだけのスクリプトを登録できます。 既に登録されているスクリプトを登録しようとしています。 重複したスクリプトは作成されません。  
+  
+ 呼び出す、<xref:System.Web.UI.ClientScriptManager.IsClientScriptIncludeRegistered%2A>クライアント スクリプトを指定したキーに含めるし、型のペアは既に登録されてでスクリプトを追加しようとしてが不必要に回避いるかどうかを調べます。  
+  
+> [!NOTE]
+>  クライアントの URL を解決するを使用して、<xref:System.Web.UI.Control.ResolveClientUrl%2A>メソッドです。 このメソッドは、これが呼び出されるパスを解決するのには、URL のコンテキストを使用します。  
+  
+ このオーバー ロード、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A>メソッド呼び出しを受け取るオーバー ロード、 `key`、 `URL`、および`type`パラメーター。  
+  
+ メソッドは、レンダリングされたページの上部にあるスクリプト ブロックを追加します。  
+  
+   
+  
+## Examples  
+ 関連情報については、構文、使用状況、および、例など、次を参照してください。<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterClientScriptInclude">
+      <MemberSignature Language="C#" Value="public void RegisterClientScriptInclude (Type type, string key, string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterClientScriptInclude(class System.Type type, string key, string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude(System.Type,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">登録するクライアント スクリプトの種類が含まれます。</param>
+        <param name="key">登録するクライアント スクリプトのキーが含まれます。</param>
+        <param name="url">登録するクライアント スクリプトの URL が含まれます。</param>
+        <summary>レジスタとクライアント スクリプトに含める、<see cref="T:System.Web.UI.Page" />オブジェクトの種類、キー、および URL を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A>メソッドは*キー*と*url* 、スクリプトを識別するパラメーターと同様に、`type`クライアント スクリプトの id を指定するパラメーターが含まれます。 リソースにアクセスするオブジェクトに基づく種類を指定します。 インスタンスを使用する場合、`Page`を指定する、リソースにアクセスするインスタンス、`Page`型です。  
+  
+> [!NOTE]
+>  クライアントの URL を解決するを使用して、<xref:System.Web.UI.Control.ResolveClientUrl%2A>メソッドです。 このメソッドは、これが呼び出されるパスを解決するのには、URL のコンテキストを使用します。  
+  
+ このメソッドは、レンダリングされたページの上部にあるスクリプト ブロックを追加します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A>メソッドです。 既存のクライアント スクリプトに含まれているを確認するロジックが削除された場合がありますもされませんになります重複しているクライアント スクリプトをレンダリングされるページのため、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A>メソッドは、重複データをチェックします。 チェックの利点は、不要な計算処理を開始します。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/cs/clientscriptincludes.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/vb/clientscriptincludes.aspx#1)]  
+  
+ この例では、次の内容のようなをという名前の JavaScript ファイルが必要です。  
+  
+```  
+function DoClick() {Form1.Message.value='Text from include script.'}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">クライアント スクリプトに含める型は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">URL は<see langword="null" />します。  
+  
+ \- または  
+  
+ URL が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterClientScriptResource">
+      <MemberSignature Language="C#" Value="public void RegisterClientScriptResource (Type type, string resourceName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterClientScriptResource(class System.Type type, string resourceName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterClientScriptResource(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="resourceName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">リソースの種類、クライアント スクリプトを登録します。</param>
+        <param name="resourceName">登録するクライアント スクリプト リソースの名前。</param>
+        <summary>クライアント スクリプト リソースの登録、<see cref="T:System.Web.UI.Page" />オブジェクトの型およびリソース名を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptResource%2A> WebResource.axd HTTP ハンドラーのアセンブリのコンパイル時のリソースにアクセスするときにメソッドを使用します。 <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptResource%2A>メソッドを使用してスクリプトを登録する、<xref:System.Web.UI.Page>オブジェクトし、重複するスクリプトを防止します。 このメソッドを使用してリソースの URL の内容をラップする、`<script>`要素ブロックします。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.RegisterClientScriptResource%2A>メソッドです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/cs/clientscriptwebresource.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/vb/clientscriptwebresource.aspx#1)]  
+  
+ 次のコード例は、プログラムを適用する方法を示します、<xref:System.Web.UI.WebResourceAttribute>提供されるリソースのアセンブリをマークするメタデータの属性です。  
+  
+ [!code-csharp[System.Web.UI.ClientScriptManager4#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/cs/resource.cs#2)]
+ [!code-vb[System.Web.UI.ClientScriptManager4#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/vb/resource.vb#2)]  
+  
+ この例には、名前付き JavaScript ファイルが必要です。 `Script_include.js`、以下の内容で。  
+  
+```  
+function DoClick() {Form1.Message.value='Text from resource script.'}  
+```  
+  
+ コンパイル、`Script_include.js`ファイル内のリソースとして、`Samples.AspNet.CS.Controls`を含むアセンブリ、`ClientScriptResourceLabel`クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">クライアント リソースの名前は<see langword="null" />します。  
+  
+ \- または  
+  
+ クライアントのリソース名は、長さが 0 を持ちます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterExpandoAttribute">
+      <MemberSignature Language="C#" Value="public void RegisterExpandoAttribute (string controlId, string attributeName, string attributeValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterExpandoAttribute(string controlId, string attributeName, string attributeValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterExpandoAttribute(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlId" Type="System.String" />
+        <Parameter Name="attributeName" Type="System.String" />
+        <Parameter Name="attributeValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="controlId"><see cref="T:System.Web.UI.Control" />カスタム属性を含むページにします。</param>
+        <param name="attributeName">登録するカスタム属性の名前。</param>
+        <param name="attributeValue">カスタム属性の値。</param>
+        <summary>コントロールの ID、属性名、および属性値を指定して指定したコントロールのカスタム (expando) 属性として名前/値ペアを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ClientScriptManager.RegisterExpandoAttribute%2A>メソッドは、指定したカスタム (expando) 属性として名前/値ペアを登録<xref:System.Web.UI.Control>です。 Expando 属性が、レンダリングされたコントロールのマークアップの XHTML 互換性を保つための JavaScript から動的に設定されます。 引用符と円記号のカスタム (expando) 属性の値はエスケープされます。 引用符と円記号をエスケープするためにしたくない場合、<xref:System.Web.UI.ClientScriptManager.RegisterExpandoAttribute%2A>メソッドをオーバー ロードされ、設定、`encode`パラメーターを`false`です。  
+  
+ Expando 属性が見つからない、または expando 属性を追加するコントロールが見つからない場合は、クライアント スクリプトが生成されますが、コントロールには影響しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterExpandoAttribute">
+      <MemberSignature Language="C#" Value="public void RegisterExpandoAttribute (string controlId, string attributeName, string attributeValue, bool encode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterExpandoAttribute(string controlId, string attributeName, string attributeValue, bool encode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterExpandoAttribute(System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlId" Type="System.String" />
+        <Parameter Name="attributeName" Type="System.String" />
+        <Parameter Name="attributeValue" Type="System.String" />
+        <Parameter Name="encode" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="controlId"><see cref="T:System.Web.UI.Control" />カスタム属性を含むページにします。</param>
+        <param name="attributeName">登録するカスタム属性の名前。</param>
+        <param name="attributeValue">カスタム属性の値。</param>
+        <param name="encode">登録するカスタム属性をエンコードするかどうかを示すブール値。</param>
+        <summary>コントロールの ID、属性名、属性値、および属性値をエンコードするかどうかを示すブール値を指定して指定したコントロールのカスタム (expando) 属性として名前/値ペアを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ClientScriptManager.RegisterExpandoAttribute%2A>メソッドは、指定したカスタム (expando) 属性として名前/値ペアを登録<xref:System.Web.UI.Control>です。 Expando 属性が、レンダリングされたコントロールのマークアップの XHTML 互換性を保つための JavaScript から動的に設定されます。 設定、`encode`パラメーターを`true`引用符と expando 属性の値にバック スラッシュをエスケープする必要がある場合。  
+  
+ Expando 属性が見つからない、または expando 属性を追加するコントロールが見つからない場合は、クライアント スクリプトが生成されますが、コントロールには影響しません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.ClientScriptManager.RegisterExpandoAttribute%2A>のメソッド、<xref:System.Web.UI.ClientScriptManager>クラスです。 レンダリングされるページのセット内のクライアント スクリプト、`title`の属性、`<span>`要素。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager6#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager6/cs/clientscriptexpando.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager6#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager6/vb/clientscriptexpando.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterForEventValidation">
+      <MemberSignature Language="C#" Value="public void RegisterForEventValidation (string uniqueId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterForEventValidation(string uniqueId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uniqueId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uniqueId">イベントを生成するクライアントのコントロールを表す一意の ID。</param>
+        <summary>イベントを生成するクライアントのコントロールを表す一意のコントロール ID を検証用のイベントの参照を登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細と例については、次を参照してください。、<xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%2A>メソッドおよび<xref:System.Web.UI.ClientScriptManager.ValidateEvent%2A>検証、およびページからコールバックが送られたことを検証する方法のコールバックを登録するためのメソッドです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager9#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/cs/eventvalidation2cs.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager9#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/vb/eventvalidation2vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterForEventValidation">
+      <MemberSignature Language="C#" Value="public void RegisterForEventValidation (System.Web.UI.PostBackOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterForEventValidation(class System.Web.UI.PostBackOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.Web.UI.PostBackOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.Web.UI.PostBackOptions" />
+      </Parameters>
+      <Docs>
+        <param name="options">A<see cref="T:System.Web.UI.PostBackOptions" />ポストバック イベントを開始するクライアントの JavaScript を生成する方法を指定するオブジェクト。</param>
+        <summary>登録、イベントの参照を使用して検証<see cref="T:System.Web.UI.PostBackOptions" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細と例については、次を参照してください。、<xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterForEventValidation">
+      <MemberSignature Language="C#" Value="public void RegisterForEventValidation (string uniqueId, string argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterForEventValidation(string uniqueId, string argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uniqueId" Type="System.String" />
+        <Parameter Name="argument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uniqueId">イベントを生成するクライアントのコントロールを表す一意の ID。</param>
+        <param name="argument">クライアント イベントにイベント引数に渡されます。</param>
+        <summary>イベントを生成するクライアントのコントロールを表す一意のコントロール ID とイベント引数を使用して、イベントの参照の検証を登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%2A>メソッドおよび<xref:System.Web.UI.ClientScriptManager.ValidateEvent%2A>検証コールバックを登録して、ページからコールバックが送られたことを検証する方法です。 この例に示すように、検証、パフォーマンスを向上するには、検証を変更するでした`argument`id やロールなどのユーザーに固有の情報を格納します。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/cs/EventValidationCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/vb/EventValidationVB.aspx#1)]  
+  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%2A>検証コールバックを登録するメソッド。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager10#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.clientscriptmanager10/cs/default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager10#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.clientscriptmanager10/vb/default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドは前に、<see cref="M:System.Web.UI.Page.Render(System.Web.UI.HtmlTextWriter)" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterHiddenField">
+      <MemberSignature Language="C#" Value="public void RegisterHiddenField (string hiddenFieldName, string hiddenFieldInitialValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterHiddenField(string hiddenFieldName, string hiddenFieldInitialValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterHiddenField(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hiddenFieldName" Type="System.String" />
+        <Parameter Name="hiddenFieldInitialValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hiddenFieldName">登録する隠しフィールドの名前。</param>
+        <param name="hiddenFieldInitialValue">登録するフィールドの初期値。</param>
+        <summary>非表示の値を登録、<see cref="T:System.Web.UI.Page" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ClientScriptManager.RegisterHiddenField%2A>メソッドは、非表示を作成`<input>`レンダリングされた HTML ページ上の要素。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.RegisterArrayDeclaration%2A>と<xref:System.Web.UI.ClientScriptManager.RegisterHiddenField%2A>メソッドです。 例では、配列と非表示の値を登録しを定義、`OnClick`のイベント、`<input>`配列の 2 つの値と非表示の値の合計を計算するボタンをクリックします。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/cs/clientscriptregisterarray.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/vb/clientscriptregisterarray.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hiddenFieldName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterOnSubmitStatement">
+      <MemberSignature Language="C#" Value="public void RegisterOnSubmitStatement (Type type, string key, string script);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterOnSubmitStatement(class System.Type type, string key, string script) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterOnSubmitStatement(System.Type,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="script" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">登録する OnSubmit ステートメントの種類。</param>
+        <param name="key">登録する OnSubmit ステートメントのキー。</param>
+        <param name="script">登録する OnSubmit ステートメントのスクリプト リテラルです。</param>
+        <summary>登録 OnSubmit ステートメントを<see cref="T:System.Web.UI.Page" />オブジェクトの種類、キー、およびスクリプトのリテラルを使用します。 ステートメントを実行したときに、<see cref="T:System.Web.UI.HtmlControls.HtmlForm" />が送信されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ OnSubmit ステートメントは、そのキーとその型で一意に識別します。 同じキーと型指定されたステートメントは、重複と見なされます。 指定された型とキー ペアを持つ 1 つだけのステートメントは、ページを登録することができます。 既に登録されているステートメントを登録しようとしても、ステートメントの重複は作成されません。  
+  
+ 呼び出す、<xref:System.Web.UI.ClientScriptManager.IsOnSubmitStatementRegistered%2A>を OnSubmit ステートメントが指定されたキーと型のペアに既に登録されているかどうかを判断し、スクリプトを追加しようとしてが不必要に回避する方法です。  
+  
+ `script`のパラメーター、<xref:System.Web.UI.ClientScriptManager.RegisterOnSubmitStatement%2A>メソッドは適切にセミコロン (;) で区切られている限り、複数のスクリプト コマンドを含めることができます。  
+  
+ <xref:System.Web.UI.ClientScriptManager.RegisterOnSubmitStatement%2A>ページが送信され、送信を取り消す機会が与えられます前に実行されるスクリプトを追加します。  
+  
+ HTML フォームの詳細については、`OnSubmit`属性を参照してください、 [World Wide Web コンソーシアム (W3C) の Web サイト](http://go.microsoft.com/fwlink/?linkid=37125)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.RegisterOnSubmitStatement%2A>メソッドです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/cs/clientscriptonsubmit.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/vb/clientscriptonsubmit.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterStartupScript">
+      <MemberSignature Language="C#" Value="public void RegisterStartupScript (Type type, string key, string script);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterStartupScript(class System.Type type, string key, string script) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="script" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">登録するスタートアップ スクリプトの種類。</param>
+        <param name="key">登録するスタートアップ スクリプトのキー。</param>
+        <param name="script">スタートアップ スクリプトを登録するリテラルです。</param>
+        <summary>使用してスタートアップ スクリプトを登録、<see cref="T:System.Web.UI.Page" />オブジェクトの種類、キー、およびスクリプトのリテラルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント スクリプトは、そのキーとその型で一意に識別します。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。 ページには、指定された型とキー ペアを持つ 1 つだけのスクリプトを登録できます。 既に登録されているスクリプトを登録しようとしています。 重複したスクリプトは作成されません。  
+  
+ 呼び出す、<xref:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered%2A>を指定したキーおよび種類のペアでスタートアップ スクリプトは既に登録されているかどうかを判断し、スクリプトを追加しようとしてが不必要を回避する方法です。  
+  
+ このオーバー ロードで、<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>メソッド、する必要がありますでスクリプトが指定されていることを確認して、`script`でパラメーターがラップされて、`<script>`要素ブロックします。  
+  
+ によって追加されたスクリプト ブロック、<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>ページ読み込みが完了したときに、ページの前に、メソッドが実行される<xref:System.Web.UI.Control.OnLoad%2A>イベントが発生します。 スクリプト ブロックは、登録されている順序で出力されるとは限りません。 スクリプト ブロックの順序が重要な場合を使用して、<xref:System.Text.StringBuilder>オブジェクトを 1 つの文字列で、スクリプトを収集し、それらすべてを 1 つのクライアント スクリプト ブロック内に登録します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>メソッドです。 ノート内で、開始タグと終了スクリプト タグが含まれている、`script`パラメーター。 追加されたタグを参照してください、追加のパラメーターの設定に基づいて、スクリプトを<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>メソッドです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager11#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.clientscriptmanager11/cs/default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager11#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.clientscriptmanager11/vb/default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterStartupScript">
+      <MemberSignature Language="C#" Value="public void RegisterStartupScript (Type type, string key, string script, bool addScriptTags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterStartupScript(class System.Type type, string key, string script, bool addScriptTags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="script" Type="System.String" />
+        <Parameter Name="addScriptTags" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">登録するスタートアップ スクリプトの種類。</param>
+        <param name="key">登録するスタートアップ スクリプトのキー。</param>
+        <param name="script">スタートアップ スクリプトを登録するリテラルです。</param>
+        <param name="addScriptTags">スクリプト タグを追加するかどうかを示すブール値。</param>
+        <summary>使用してスタートアップ スクリプトを登録、<see cref="T:System.Web.UI.Page" />オブジェクトの種類、キーをスクリプト リテラル、およびスクリプト タグを追加するかどうかを示すブール値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタートアップ スクリプトは、そのキーとその型で一意に識別します。 同じキーおよび種類を使用してスクリプトは、重複と見なされます。 ページには、指定された型とキー ペアを持つ 1 つだけのスクリプトを登録できます。 既に登録されているスクリプトを登録しようとしています。 重複したスクリプトは作成されません。  
+  
+ 呼び出す、<xref:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered%2A>を指定したキーおよび種類のペアでスタートアップ スクリプトは既に登録されているかどうかを判断し、スクリプトを追加しようとしてが不必要を回避する方法です。  
+  
+ このオーバー ロードで、<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>メソッドを示すことができます、スクリプトがで提供されるかどうか、`script`でパラメーターをラップ、`<script>`要素ブロックを使用して、`addScriptTags`パラメーター。 設定`addScriptTags`に`true`スクリプト タグが自動的に追加することを示します。  
+  
+ によって追加されたスクリプト ブロック、<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>ページ読み込みが完了したときに、ページの前に、メソッドが実行される<xref:System.Web.UI.Control.OnLoad%2A>イベントが発生します。 スクリプト ブロックは、登録されている順序で出力されるとは限りません。 スクリプト ブロックの順序が重要な場合を使用して、<xref:System.Text.StringBuilder>オブジェクトを 1 つの文字列で、スクリプトを収集し、それらすべてを 1 つのクライアント スクリプト ブロック内に登録します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A>メソッドです。 なお、`addScriptTags`にパラメーターが設定されている`false`ため、開始タグと終了スクリプト タグに含まれて、`script`パラメーター。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateEvent">
+      <MemberSignature Language="C#" Value="public void ValidateEvent (string uniqueId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ValidateEvent(string uniqueId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.ValidateEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uniqueId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uniqueId">イベントを生成するクライアントのコントロールを表す一意の ID。</param>
+        <summary>イベントの検証を使用するために登録されたクライアント イベントを検証、<see cref="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.String)" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateEvent">
+      <MemberSignature Language="C#" Value="public void ValidateEvent (string uniqueId, string argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ValidateEvent(string uniqueId, string argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.ValidateEvent(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uniqueId" Type="System.String" />
+        <Parameter Name="argument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uniqueId">イベントを生成するクライアントのコントロールを表す一意の ID。</param>
+        <param name="argument">クライアント イベントにイベント引数に渡されます。</param>
+        <summary>イベントの検証を使用するために登録されたクライアント イベントを検証、<see cref="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.String,System.String)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%2A>メソッドおよび<xref:System.Web.UI.ClientScriptManager.ValidateEvent%2A>検証コールバックを登録して、ページからコールバックが送られたことを検証する方法です。 ここで示すように、検証、パフォーマンスを向上するには、検証を変更する可能性があります`argument`id やロールなどのユーザーに固有の情報を格納します。  
+  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/cs/EventValidationCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/vb/EventValidationVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="uniqueId" /> は <see langword="null" /> または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,63 @@
+<Type Name="CorrelationInitializer" FullName="System.ServiceModel.Activities.CorrelationInitializer">
+  <TypeSignature Language="C#" Value="public abstract class CorrelationInitializer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CorrelationInitializer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activities.CorrelationInitializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連付けに使用するプロトコルをランタイムに通知するために使用する関連付け初期化子の抽象基本クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ランタイムを使用して、<xref:System.ServiceModel.Activities.CorrelationInitializer.CorrelationHandle%2A>の関連付けが存在する場合は、それ以外の場合、 **CorrelatesWith**メッセージング アクティビティのプロパティが使用されます。  どちらも使用できない場合は、<xref:System.ServiceModel.Activities.CorrelationScope> によって提供されるアンビエント ハンドルまたはワークフロー サービスが使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CorrelationHandle">
+      <MemberSignature Language="C#" Value="public System.Activities.InArgument&lt;System.ServiceModel.Activities.CorrelationHandle&gt; CorrelationHandle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.InArgument`1&lt;class System.ServiceModel.Activities.CorrelationHandle&gt; CorrelationHandle" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.CorrelationInitializer.CorrelationHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.InArgument&lt;System.ServiceModel.Activities.CorrelationHandle&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付け初期化子の <see cref="T:System.ServiceModel.Activities.CorrelationHandle" /> 引数を取得または設定します。</summary>
+        <value>関連付けハンドル引数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ランタイムを使用して、<xref:System.ServiceModel.Activities.CorrelationInitializer.CorrelationHandle%2A>の関連付けが存在する場合は、それ以外の場合、 **CorrelatesWith**メッセージング アクティビティのプロパティが使用されます。  どちらも使用できない場合は、<xref:System.ServiceModel.Activities.CorrelationScope> によって提供されるアンビエント ハンドルまたはワークフロー サービスが使用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Activities.SendReply> アクティビティで関連付け初期化子を指定する方法を示します。  
+  
+ [!code-csharp[ContentBasedCorrelation#2](~/samples/snippets/csharp/VS_Snippets_CFX/contentbasedcorrelation/cs/service.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

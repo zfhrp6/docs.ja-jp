@@ -1,0 +1,657 @@
+<Type Name="FontFamily" FullName="System.Drawing.FontFamily">
+  <TypeSignature Language="C#" Value="public sealed class FontFamily : MarshalByRefObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FontFamily extends System.MarshalByRefObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.FontFamily" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>基本デザインが同様でスタイルが異なるタイプフェイスのグループを定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、すべてのフォント ファミリを示しています、<xref:System.Drawing.FontFamily.Families%2A>のプロパティ、<xref:System.Drawing.FontFamily>クラスです。 この例は Windows フォームで使用するよう設計されています。 この例を実行するには追加、<xref:System.Windows.Forms.ListBox>という`listBox1`フォームと呼び出しに、`PopulateListBoxWithFonts`フォームのコンス トラクターからのメソッドです。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.MiscExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.MiscExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontFamily (System.Drawing.Text.GenericFontFamilies genericFamily);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Text.GenericFontFamilies genericFamily) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.#ctor(System.Drawing.Text.GenericFontFamilies)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="genericFamily" Type="System.Drawing.Text.GenericFontFamilies" />
+      </Parameters>
+      <Docs>
+        <param name="genericFamily">新しい <see cref="T:System.Drawing.FontFamily" /> の作成元の <see cref="T:System.Drawing.Text.GenericFontFamilies" />。</param>
+        <summary>指定した汎用フォント ファミリから新しい <see cref="T:System.Drawing.FontFamily" /> を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontFamily (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">新しい <see cref="T:System.Drawing.FontFamily" /> の名前。</param>
+        <summary>指定した名前を使用して、新しい <see cref="T:System.Drawing.FontFamily" /> を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 空の文字列を渡すこと ("") の`name`パラメーター例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="name" />アプリケーションを実行しているコンピューターにインストールされていない、フォントを指定します。  
+  
+ または  
+  
+ <paramref name="name" />TrueType フォントではないフォントを指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontFamily (string name, System.Drawing.Text.FontCollection fontCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Drawing.Text.FontCollection fontCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.#ctor(System.String,System.Drawing.Text.FontCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="fontCollection" Type="System.Drawing.Text.FontCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">新しい <see cref="T:System.Drawing.FontFamily" /> の名前を表す <see cref="T:System.String" />。</param>
+        <param name="fontCollection">この <see cref="T:System.Drawing.FontFamily" /> を格納している <see cref="T:System.Drawing.Text.FontCollection" />。</param>
+        <summary>指定した名前を使用して、指定した <see cref="T:System.Drawing.Text.FontCollection" /> の新しい <see cref="T:System.Drawing.FontFamily" /> を初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="name" />アプリケーションを実行しているコンピューターにインストールされていない、フォントを指定します。  
+  
+ または  
+  
+ <paramref name="name" />TrueType フォントではないフォントを指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.FontFamily" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Drawing.FontFamily.Dispose%2A>により、これによって使用されるリソース<xref:System.Drawing.FontFamily>を他の目的に再割り当てされます。  
+  
+ <xref:System.Drawing.FontFamily.Dispose%2A> を使い終わったら <xref:System.Drawing.FontFamily> を呼び出します。 <xref:System.Drawing.FontFamily.Dispose%2A> メソッドによって、<xref:System.Drawing.FontFamily> は使用不可の状態になります。 呼び出した後<xref:System.Drawing.FontFamily.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Drawing.FontFamily>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Drawing.FontFamily>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.FontFamily.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Drawing.FontFamily> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Drawing.FontFamily> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">テストするオブジェクト。</param>
+        <summary>指定したオブジェクトが <see cref="T:System.Drawing.FontFamily" /> であるかどうか、またこの <see cref="T:System.Drawing.FontFamily" /> と同一であるかどうかを示します。</summary>
+        <returns>
+          <paramref name="obj" /> が <see cref="T:System.Drawing.FontFamily" /> であり、この <see cref="T:System.Drawing.FontFamily" /> と同一である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   2 つ作成されます<xref:System.Drawing.Font>オブジェクト。  
+  
+-   それらが等しいかどうかをテストします。  
+  
+-   メッセージ ボックスに、テストの結果を表示します。  
+  
+ [!code-cpp[System.Drawing.ClassicFontFamilyExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.ClassicFontFamilyExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.ClassicFontFamilyExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Families">
+      <MemberSignature Language="C#" Value="public static System.Drawing.FontFamily[] Families { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.FontFamily[] Families" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.FontFamily.Families" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.FontFamily[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のグラフィックス コンテキストに関連付けられている <see cref="T:System.Drawing.FontFamily" /> オブジェクトがすべて含まれている配列を返します。</summary>
+        <value>現在のグラフィックス コンテキストが関連付けられている <see cref="T:System.Drawing.FontFamily" /> オブジェクトの配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、すべてのフォント ファミリを示しています、<xref:System.Drawing.FontFamily.Families%2A>のプロパティ、<xref:System.Drawing.FontFamily>クラスです。 この例は Windows フォームで使用するよう設計されています。 この例を実行するには追加、<xref:System.Windows.Forms.ListBox>という`listBox1`フォームと呼び出しに、`PopulateListBoxWithFonts`フォームのコンス トラクターからのメソッドです。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.MiscExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.MiscExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~FontFamily ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenericMonospace">
+      <MemberSignature Language="C#" Value="public static System.Drawing.FontFamily GenericMonospace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.FontFamily GenericMonospace" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.FontFamily.GenericMonospace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.FontFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>汎用固定幅 <see cref="T:System.Drawing.FontFamily" /> を取得します。</summary>
+        <value>汎用固定幅フォントを表す <see cref="T:System.Drawing.FontFamily" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenericSansSerif">
+      <MemberSignature Language="C#" Value="public static System.Drawing.FontFamily GenericSansSerif { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.FontFamily GenericSansSerif" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.FontFamily.GenericSansSerif" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.FontFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>汎用サン セリフ <see cref="T:System.Drawing.FontFamily" /> オブジェクトを取得します。</summary>
+        <value>汎用サン セリフ フォントを表す <see cref="T:System.Drawing.FontFamily" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenericSerif">
+      <MemberSignature Language="C#" Value="public static System.Drawing.FontFamily GenericSerif { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Drawing.FontFamily GenericSerif" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.FontFamily.GenericSerif" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.FontFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>汎用セリフ <see cref="T:System.Drawing.FontFamily" /> を取得します。</summary>
+        <value>汎用セリフ フォントを表す <see cref="T:System.Drawing.FontFamily" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCellAscent">
+      <MemberSignature Language="C#" Value="public int GetCellAscent (System.Drawing.FontStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetCellAscent(valuetype System.Drawing.FontStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.GetCellAscent(System.Drawing.FontStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Drawing.FontStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">フォントのスタイル情報が格納されている <see cref="T:System.Drawing.FontStyle" />。</param>
+        <summary>指定したスタイルの <see cref="T:System.Drawing.FontFamily" /> のセル アセントをデザイン単位で返します。</summary>
+        <returns>指定した <see cref="T:System.Drawing.FontStyle" /> を使用するこの <see cref="T:System.Drawing.FontFamily" /> のセル アセント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.FontFamily> を作成します。  
+  
+-   そのフォント ファミリのセル アセントを取得します。  
+  
+-   セル アセントの値をテキストとして画面に描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicFontFamilyExamples#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.ClassicFontFamilyExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.ClassicFontFamilyExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCellDescent">
+      <MemberSignature Language="C#" Value="public int GetCellDescent (System.Drawing.FontStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetCellDescent(valuetype System.Drawing.FontStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.GetCellDescent(System.Drawing.FontStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Drawing.FontStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">フォントのスタイル情報が格納されている <see cref="T:System.Drawing.FontStyle" />。</param>
+        <summary>指定したスタイルの <see cref="T:System.Drawing.FontFamily" /> のセル ディセントをデザイン単位で返します。</summary>
+        <returns>指定した <see cref="T:System.Drawing.FontStyle" /> を使用するこの <see cref="T:System.Drawing.FontFamily" /> のセル ディセント メトリック。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.FontFamily> を作成します。  
+  
+-   そのフォント ファミリのセル ディセントを取得します。  
+  
+-   セル ディセントの値をテキストとして画面に描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicFontFamilyExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.ClassicFontFamilyExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.ClassicFontFamilyExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEmHeight">
+      <MemberSignature Language="C#" Value="public int GetEmHeight (System.Drawing.FontStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetEmHeight(valuetype System.Drawing.FontStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.GetEmHeight(System.Drawing.FontStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Drawing.FontStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">em 高の取得対象となる <see cref="T:System.Drawing.FontStyle" />。</param>
+        <summary>指定したスタイルの em 四角形の高さをフォント デザイン単位で取得します。</summary>
+        <returns>em 四角形の高さ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *Em 四角形*はフォントの最も幅の広い文字を文字 M 従来占有する四角形を表す文字体裁用語です。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.FontFamily> を作成します。  
+  
+-   そのフォント ファミリの em 四角形の高さを取得します。  
+  
+-   Em 高の値をテキストとして画面に描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicFontFamilyExamples#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CPP/form1.cpp#4)]
+ [!code-csharp[System.Drawing.ClassicFontFamilyExamples#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CS/form1.cs#4)]
+ [!code-vb[System.Drawing.ClassicFontFamilyExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFamilies">
+      <MemberSignature Language="C#" Value="public static System.Drawing.FontFamily[] GetFamilies (System.Drawing.Graphics graphics);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.FontFamily[] GetFamilies(class System.Drawing.Graphics graphics) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.GetFamilies(System.Drawing.Graphics)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Do not use method GetFamilies, use property Families instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.FontFamily[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.FontFamily" /> オブジェクトを返す <see cref="T:System.Drawing.Graphics" /> オブジェクト。</param>
+        <summary>指定したグラフィックス コンテキストで使用可能な <see cref="T:System.Drawing.FontFamily" /> オブジェクトがすべて含まれている配列を返します。</summary>
+        <returns>指定した <see cref="T:System.Drawing.Graphics" /> オブジェクトで使用可能な <see cref="T:System.Drawing.FontFamily" /> オブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="graphics" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.FontFamily" /> のハッシュ コードを取得します。</summary>
+        <returns>この <see cref="T:System.Drawing.FontFamily" /> のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.FontFamily> を作成します。  
+  
+-   フォント ファミリのハッシュ コードを取得します。  
+  
+-   ハッシュ コードの値をテキストとして画面に描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicFontFamilyExamples#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.ClassicFontFamilyExamples#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.ClassicFontFamilyExamples#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineSpacing">
+      <MemberSignature Language="C#" Value="public int GetLineSpacing (System.Drawing.FontStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetLineSpacing(valuetype System.Drawing.FontStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.GetLineSpacing(System.Drawing.FontStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Drawing.FontStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">適用する <see cref="T:System.Drawing.FontStyle" />。</param>
+        <summary>指定したスタイルの <see cref="T:System.Drawing.FontFamily" /> の行間をデザイン単位で返します。 行間とは、2 つの連続するテキスト行のベース ライン間の垂直距離です。</summary>
+        <returns>連続する 2 つのテキスト行の間隔。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.FontFamily> を作成します。  
+  
+-   フォント ファミリの行間を取得します。  
+  
+-   線の間隔の値をテキストとして画面に描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicFontFamilyExamples#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.ClassicFontFamilyExamples#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.ClassicFontFamilyExamples#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetName">
+      <MemberSignature Language="C#" Value="public string GetName (int language);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetName(int32 language) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.GetName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="language" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="language">返される名前の言語。</param>
+        <summary>この <see cref="T:System.Drawing.FontFamily" /> の名前を指定の言語で返します。</summary>
+        <returns>この <see cref="T:System.Drawing.FontFamily" /> の名前を指定の言語で表す <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ニュートラル言語を指定するには、するには 0 を指定する必要があります、`language`パラメーター。 使用可能な言語と副言語の一覧については、Winnt.h ヘッダー ファイルを参照してください。 使用していれば[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]インストールされている場合、このヘッダー ファイルは通常ありますに対して相対的な[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]インストール ディレクトリに\\\VC\PlatformSDK\Include です。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.FontFamily> を作成します。  
+  
+-   フォント ファミリの名前を取得します。  
+  
+-   フォント ファミリの名前をテキストとして画面に描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicFontFamilyExamples#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CPP/form1.cpp#8)]
+ [!code-csharp[System.Drawing.ClassicFontFamilyExamples#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CS/form1.cs#8)]
+ [!code-vb[System.Drawing.ClassicFontFamilyExamples#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/VB/form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStyleAvailable">
+      <MemberSignature Language="C#" Value="public bool IsStyleAvailable (System.Drawing.FontStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsStyleAvailable(valuetype System.Drawing.FontStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.IsStyleAvailable(System.Drawing.FontStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Drawing.FontStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">テスト対象の <see cref="T:System.Drawing.FontStyle" />。</param>
+        <summary>指定した <see cref="T:System.Drawing.FontStyle" /> 列挙体が使用可能かどうかを示します。</summary>
+        <returns>
+          指定した <see cref="T:System.Drawing.FontStyle" /> を使用できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   <xref:System.Drawing.FontFamily> を作成します。  
+  
+-   斜体のフォントのフォント ファミリが使用できるかどうかをテストします。  
+  
+-   である場合は、画面にテキストを描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicFontFamilyExamples#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CPP/form1.cpp#9)]
+ [!code-csharp[System.Drawing.ClassicFontFamilyExamples#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CS/form1.cs#9)]
+ [!code-vb[System.Drawing.ClassicFontFamilyExamples#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/VB/form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.FontFamily.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.FontFamily" /> の名前を取得します。</summary>
+        <value>この <see cref="T:System.Drawing.FontFamily" /> の名前を表す <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、すべてのフォント ファミリを示しています、<xref:System.Drawing.FontFamily.Families%2A>のプロパティ、<xref:System.Drawing.FontFamily>クラスです。 この例は Windows フォームで使用するよう設計されています。 この例を実行するには追加、<xref:System.Windows.Forms.ListBox>という`listBox1`には、フォーム、および呼び出し、`PopulateListBoxWithFonts`フォームのコンス トラクターからのメソッドです。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.MiscExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.MiscExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.FontFamily.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.FontFamily" /> をユーザーが判読できる文字列形式に変換します。</summary>
+        <returns>この <see cref="T:System.Drawing.FontFamily" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 このコードを作成、<xref:System.Drawing.FontFamily>し、画面にフォント ファミリの文字列表現を描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicFontFamilyExamples#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CPP/form1.cpp#10)]
+ [!code-csharp[System.Drawing.ClassicFontFamilyExamples#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/CS/form1.cs#10)]
+ [!code-vb[System.Drawing.ClassicFontFamilyExamples#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicFontFamilyExamples/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

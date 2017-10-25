@@ -1,0 +1,1247 @@
+<Type Name="DelegatingConfigHost" FullName="System.Configuration.Internal.DelegatingConfigHost">
+  <TypeSignature Language="C#" Value="public class DelegatingConfigHost : System.Configuration.Internal.IInternalConfigHost" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DelegatingConfigHost extends System.Object implements class System.Configuration.Internal.IInternalConfigHost" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Internal.DelegatingConfigHost" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Configuration.Internal.IInternalConfigHost</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>すべてのメンバーを代行、<see cref="T:System.Configuration.Internal.IInternalConfigHost" />ホストの別のインスタンスへのインターフェイスです。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DelegatingConfigHost ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.Internal.DelegatingConfigHost" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateConfigurationContext">
+      <MemberSignature Language="C#" Value="public virtual object CreateConfigurationContext (string configPath, string locationSubPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateConfigurationContext(string configPath, string locationSubPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.CreateConfigurationContext(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+        <Parameter Name="locationSubPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <param name="locationSubPath">場所のサブパスを表す文字列。</param>
+        <summary>新しい構成のコンテキストを作成します。</summary>
+        <returns>A<see cref="T:System.Object" />新しい構成のコンテキストを表すです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDeprecatedConfigContext">
+      <MemberSignature Language="C#" Value="public virtual object CreateDeprecatedConfigContext (string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateDeprecatedConfigContext(string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.CreateDeprecatedConfigContext(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <summary>非推奨の構成のコンテキストを作成します。</summary>
+        <returns>A<see cref="T:System.Object" />非推奨の構成のコンテキストを表すです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptSection">
+      <MemberSignature Language="C#" Value="public virtual string DecryptSection (string encryptedXml, System.Configuration.ProtectedConfigurationProvider protectionProvider, System.Configuration.ProtectedConfigurationSection protectedSection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string DecryptSection(string encryptedXml, class System.Configuration.ProtectedConfigurationProvider protectionProvider, class System.Configuration.ProtectedConfigurationSection protectedSection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.DecryptSection(System.String,System.Configuration.ProtectedConfigurationProvider,System.Configuration.ProtectedConfigurationSection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedXml" Type="System.String" />
+        <Parameter Name="protectionProvider" Type="System.Configuration.ProtectedConfigurationProvider" />
+        <Parameter Name="protectedConfigSection" Type="System.Configuration.ProtectedConfigurationSection" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedXml">構成ファイルの暗号化されたセクションです。</param>
+        <param name="protectionProvider"><see cref="T:System.Configuration.ProtectedConfigurationProvider" /> オブジェクト。</param>
+        <param name="protectedSection">To be added.</param>
+        <summary>暗号化された構成セクションを復号化します。</summary>
+        <returns>復号化された構成セクションを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteStream">
+      <MemberSignature Language="C#" Value="public virtual void DeleteStream (string streamName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DeleteStream(string streamName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.DeleteStream(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptSection">
+      <MemberSignature Language="C#" Value="public virtual string EncryptSection (string encryptedXml, System.Configuration.ProtectedConfigurationProvider protectionProvider, System.Configuration.ProtectedConfigurationSection protectedSection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string EncryptSection(string encryptedXml, class System.Configuration.ProtectedConfigurationProvider protectionProvider, class System.Configuration.ProtectedConfigurationSection protectedSection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.EncryptSection(System.String,System.Configuration.ProtectedConfigurationProvider,System.Configuration.ProtectedConfigurationSection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clearTextXml" Type="System.String" />
+        <Parameter Name="protectionProvider" Type="System.Configuration.ProtectedConfigurationProvider" />
+        <Parameter Name="protectedConfigSection" Type="System.Configuration.ProtectedConfigurationSection" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedXml">To be added.</param>
+        <param name="protectionProvider"><see cref="T:System.Configuration.ProtectedConfigurationProvider" /> オブジェクト。</param>
+        <param name="protectedSection">To be added.</param>
+        <summary>構成オブジェクトのセクションを暗号化します。</summary>
+        <returns>構成オブジェクトの暗号化されたセクションを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetConfigPathFromLocationSubPath">
+      <MemberSignature Language="C#" Value="public virtual string GetConfigPathFromLocationSubPath (string configPath, string locatinSubPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetConfigPathFromLocationSubPath(string configPath, string locatinSubPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.GetConfigPathFromLocationSubPath(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+        <Parameter Name="locationSubPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <param name="locatinSubPath">To be added.</param>
+        <summary>場所サブパスに基づいて構成パスを返します。</summary>
+        <returns>構成パスを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetConfigType">
+      <MemberSignature Language="C#" Value="public virtual Type GetConfigType (string typeName, bool throwOnError);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetConfigType(string typeName, bool throwOnError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.GetConfigType(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">構成の種類を表す文字列。</param>
+        <param name="throwOnError">
+          <see langword="true" />エラーが発生した場合、例外をスローする場合<see langword="false" />場合は、エラーが発生した場合、例外がスローされない必要があります。</param>
+        <summary>返します、<see cref="T:System.Type" />構成の種類を表すです。</summary>
+        <returns>A<see cref="T:System.Type" />構成の種類を表すです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetConfigTypeName">
+      <MemberSignature Language="C#" Value="public virtual string GetConfigTypeName (Type t);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetConfigTypeName(class System.Type t) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.GetConfigTypeName(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="t"><see cref="T:System.Type" /> オブジェクト。</param>
+        <summary>構成オブジェクトの型名を表す文字列を返します。</summary>
+        <returns>構成オブジェクトの型名を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetRestrictedPermissions">
+      <MemberSignature Language="C#" Value="public virtual void GetRestrictedPermissions (System.Configuration.Internal.IInternalConfigRecord configRecord, out System.Security.PermissionSet permissionSet, out bool isHostReady);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetRestrictedPermissions(class System.Configuration.Internal.IInternalConfigRecord configRecord, [out] class System.Security.PermissionSet&amp; permissionSet, [out] bool&amp; isHostReady) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.GetRestrictedPermissions(System.Configuration.Internal.IInternalConfigRecord,System.Security.PermissionSet@,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configRecord" Type="System.Configuration.Internal.IInternalConfigRecord" />
+        <Parameter Name="permissionSet" Type="System.Security.PermissionSet&amp;" RefType="out" />
+        <Parameter Name="isHostReady" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="configRecord"><see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> オブジェクト。</param>
+        <param name="permissionSet"><see cref="T:System.Security.PermissionSet" /> オブジェクト。</param>
+        <param name="isHostReady">
+          <see langword="true" />ホストが初期化を終了した場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>指定したアクセス許可が、そのホスト オブジェクト内で使用可能な場合は、設定を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetStreamName">
+      <MemberSignature Language="C#" Value="public virtual string GetStreamName (string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetStreamName(string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.GetStreamName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <summary>名前を返します、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</summary>
+        <returns>名前を表す文字列、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetStreamNameForConfigSource">
+      <MemberSignature Language="C#" Value="public virtual string GetStreamNameForConfigSource (string streamName, string configSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetStreamNameForConfigSource(string streamName, string configSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.GetStreamNameForConfigSource(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+        <Parameter Name="configSource" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <param name="configSource">構成ソースを表す文字列。</param>
+        <summary>名前を返します、<see cref="T:System.IO.Stream" />構成ソースのタスクの I/O を実行するオブジェクト。</summary>
+        <returns>名前を表す文字列、<see cref="T:System.IO.Stream" />構成ソースのタスクの I/O を実行するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetStreamVersion">
+      <MemberSignature Language="C#" Value="public virtual object GetStreamVersion (string streamName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetStreamVersion(string streamName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.GetStreamVersion(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <summary>返します、<see cref="P:System.Diagnostics.FileVersionInfo.FileVersion" />のバージョンを表すオブジェクト、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</summary>
+        <returns>A<see cref="P:System.Diagnostics.FileVersionInfo.FileVersion" />のバージョンを表すオブジェクト、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Host">
+      <MemberSignature Language="C#" Value="protected System.Configuration.Internal.IInternalConfigHost Host { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.Internal.IInternalConfigHost Host" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Internal.DelegatingConfigHost.Host" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Internal.IInternalConfigHost</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.Internal.IInternalConfigHost" /> オブジェクトを取得または設定します。</summary>
+        <value><see cref="T:System.Configuration.Internal.IInternalConfigHost" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Impersonate">
+      <MemberSignature Language="C#" Value="public virtual IDisposable Impersonate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IDisposable Impersonate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.Impersonate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ホストの権限を借用するよう指示しを返します、<see cref="T:System.IDisposable" />オブジェクト、.NET Framework によって内部的に必要です。</summary>
+        <returns><see cref="T:System.IDisposable" /> 値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public virtual void Init (System.Configuration.Internal.IInternalConfigRoot root, params object[] hostInitParams);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Init(class System.Configuration.Internal.IInternalConfigRoot root, object[] hostInitParams) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.Init(System.Configuration.Internal.IInternalConfigRoot,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configRoot" Type="System.Configuration.Internal.IInternalConfigRoot" />
+        <Parameter Name="hostInitParams" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="root">To be added.</param>
+        <param name="hostInitParams">構成のホストを初期化するために使用される値を含むパラメーター オブジェクトです。</param>
+        <summary>構成のホストを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InitForConfiguration">
+      <MemberSignature Language="C#" Value="public virtual void InitForConfiguration (ref string locationSubPath, out string configPath, out string locationConfigPath, System.Configuration.Internal.IInternalConfigRoot root, params object[] hostInitConfigurationParams);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitForConfiguration(string&amp; locationSubPath, [out] string&amp; configPath, [out] string&amp; locationConfigPath, class System.Configuration.Internal.IInternalConfigRoot root, object[] hostInitConfigurationParams) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.InitForConfiguration(System.String@,System.String@,System.String@,System.Configuration.Internal.IInternalConfigRoot,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="locationSubPath" Type="System.String&amp;" RefType="ref" />
+        <Parameter Name="configPath" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="locationConfigPath" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="configRoot" Type="System.Configuration.Internal.IInternalConfigRoot" />
+        <Parameter Name="hostInitConfigurationParams" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="locationSubPath">(参照渡しで) 位置サブパスを表す文字列。</param>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <param name="locationConfigPath">場所の構成パス。</param>
+        <param name="root">To be added.</param>
+        <param name="hostInitConfigurationParams">ホストを初期化するために使用されるパラメーターを表すパラメーター オブジェクトです。</param>
+        <summary>構成のホストを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsAboveApplication">
+      <MemberSignature Language="C#" Value="public virtual bool IsAboveApplication (string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsAboveApplication(string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.IsAboveApplication(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <summary>構成が、アプリケーションの構成、構成階層の上かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />構成が、構成階層です。 アプリケーションの構成を上回る場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsConfigRecordRequired">
+      <MemberSignature Language="C#" Value="public virtual bool IsConfigRecordRequired (string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsConfigRecordRequired(string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.IsConfigRecordRequired(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <summary>構成のレコードがホストの構成の初期化に必要かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />構成のレコードがホスト構成の初期化に必要な場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefinitionAllowed">
+      <MemberSignature Language="C#" Value="public virtual bool IsDefinitionAllowed (string configPath, System.Configuration.ConfigurationAllowDefinition allowDefinition, System.Configuration.ConfigurationAllowExeDefinition allowExeDefinition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDefinitionAllowed(string configPath, valuetype System.Configuration.ConfigurationAllowDefinition allowDefinition, valuetype System.Configuration.ConfigurationAllowExeDefinition allowExeDefinition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.IsDefinitionAllowed(System.String,System.Configuration.ConfigurationAllowDefinition,System.Configuration.ConfigurationAllowExeDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+        <Parameter Name="allowDefinition" Type="System.Configuration.ConfigurationAllowDefinition" />
+        <Parameter Name="allowExeDefinition" Type="System.Configuration.ConfigurationAllowExeDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <param name="allowDefinition"><see cref="T:System.Configuration.ConfigurationAllowDefinition" /> オブジェクト。</param>
+        <param name="allowExeDefinition"><see cref="T:System.Configuration.ConfigurationAllowExeDefinition" /> オブジェクト。</param>
+        <summary>制限またはホストの構成の定義を許可します。</summary>
+        <returns>
+          <see langword="true" />許可またはホストの構成での定義の制限が成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsFile">
+      <MemberSignature Language="C#" Value="public virtual bool IsFile (string streamName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsFile(string streamName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.IsFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <summary>ファイルのパスを使用するかどうかを示す値を返します、<see cref="T:System.IO.Stream" />オブジェクトの読み取り、構成ファイルが有効なパスをします。</summary>
+        <returns>
+          <see langword="true" />パスが使用する場合、<see cref="T:System.IO.Stream" />オブジェクトの読み取り、構成ファイルが有効なパスをそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsFullTrustSectionWithoutAptcaAllowed">
+      <MemberSignature Language="C#" Value="public virtual bool IsFullTrustSectionWithoutAptcaAllowed (System.Configuration.Internal.IInternalConfigRecord configRecord);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsFullTrustSectionWithoutAptcaAllowed(class System.Configuration.Internal.IInternalConfigRecord configRecord) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.IsFullTrustSectionWithoutAptcaAllowed(System.Configuration.Internal.IInternalConfigRecord)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configRecord" Type="System.Configuration.Internal.IInternalConfigRecord" />
+      </Parameters>
+      <Docs>
+        <param name="configRecord"><see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> オブジェクト。</param>
+        <summary>レベルの構成セクションが完全に信頼されるコード アクセス セキュリティを必要とするかどうかを示す値を返し、許可しない、<see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" />属性を暗黙のリンク確認要求を無効にします。</summary>
+        <returns>
+          <see langword="true" />構成セクションが完全に信頼されるコード アクセス セキュリティ レベルを必要とし、許可しない場合、<see cref="T:System.Security.AllowPartiallyTrustedCallersAttribute" />属性を無効に暗黙的なリンク確認要求です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitDelayed">
+      <MemberSignature Language="C#" Value="public virtual bool IsInitDelayed (System.Configuration.Internal.IInternalConfigRecord configRecord);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsInitDelayed(class System.Configuration.Internal.IInternalConfigRecord configRecord) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.IsInitDelayed(System.Configuration.Internal.IInternalConfigRecord)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configRecord" Type="System.Configuration.Internal.IInternalConfigRecord" />
+      </Parameters>
+      <Docs>
+        <param name="configRecord"><see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> オブジェクト。</param>
+        <summary>遅延構成オブジェクトの初期化を検討するかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />構成オブジェクトの初期化と見なす場合は遅延です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsLocationApplicable">
+      <MemberSignature Language="C#" Value="public virtual bool IsLocationApplicable (string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsLocationApplicable(string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.IsLocationApplicable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <summary>構成オブジェクトが場所タグをサポートするかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />構成オブジェクトには、場所タグがサポートされている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsRemote">
+      <MemberSignature Language="C#" Value="public virtual bool IsRemote { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRemote" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Internal.DelegatingConfigHost.IsRemote" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成はリモートであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、構成はリモートです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecondaryRoot">
+      <MemberSignature Language="C#" Value="public virtual bool IsSecondaryRoot (string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSecondaryRoot(string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.IsSecondaryRoot(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <summary>ルートとして扱うかどうか、構成パスが、[構成] ノードに内容を示す値を返します。</summary>
+        <returns>
+          <see langword="true" />構成パスがルート以外として扱うの内容が構成ノードへの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsTrustedConfigPath">
+      <MemberSignature Language="C#" Value="public virtual bool IsTrustedConfigPath (string configPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsTrustedConfigPath(string configPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.IsTrustedConfigPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <summary>構成パスが信頼されているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />構成パスが信頼されている; 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OpenStreamForRead">
+      <MemberSignature Language="C#" Value="public virtual System.IO.Stream OpenStreamForRead (string streamName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream OpenStreamForRead(string streamName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.OpenStreamForRead(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <summary>開く、<see cref="T:System.IO.Stream" />構成ファイルの読み取りオブジェクト。</summary>
+        <returns>返します、<see cref="T:System.IO.Stream" />で指定されたオブジェクト<paramref name="streamName" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OpenStreamForRead">
+      <MemberSignature Language="C#" Value="public virtual System.IO.Stream OpenStreamForRead (string streamName, bool assertPermissions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream OpenStreamForRead(string streamName, bool assertPermissions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.OpenStreamForRead(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+        <Parameter Name="assertPermissions" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <param name="assertPermissions">
+          <see langword="true" />アクセス許可をアサートするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>開く、<see cref="T:System.IO.Stream" />構成ファイルの読み取りオブジェクト。</summary>
+        <returns>返します、<see cref="T:System.IO.Stream" />で指定されたオブジェクト<paramref name="streamName" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OpenStreamForWrite">
+      <MemberSignature Language="C#" Value="public virtual System.IO.Stream OpenStreamForWrite (string streamName, string templateStreamName, ref object writeContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream OpenStreamForWrite(string streamName, string templateStreamName, object&amp; writeContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.OpenStreamForWrite(System.String,System.String,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+        <Parameter Name="templateStreamName" Type="System.String" />
+        <Parameter Name="writeContext" Type="System.Object&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <param name="templateStreamName">名前、<see cref="T:System.IO.Stream" />ファイル属性は、テンプレートとしてコピーするオブジェクト。</param>
+        <param name="writeContext">書き込みコンテキスト、 <see cref="T:System.IO.Stream" /> (参照によって渡される) オブジェクト。</param>
+        <summary>開く、<see cref="T:System.IO.Stream" />構成ファイルに書き込むためのまたは構成ファイルの作成に使用される一時ファイルに書き込むためのオブジェクト。 により、<see cref="T:System.IO.Stream" />ファイル属性をコピーするためのテンプレートとして指定するオブジェクト。</summary>
+        <returns><see cref="T:System.IO.Stream" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OpenStreamForWrite">
+      <MemberSignature Language="C#" Value="public virtual System.IO.Stream OpenStreamForWrite (string streamName, string templateStreamName, ref object writeContext, bool assertPermissions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream OpenStreamForWrite(string streamName, string templateStreamName, object&amp; writeContext, bool assertPermissions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.OpenStreamForWrite(System.String,System.String,System.Object@,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+        <Parameter Name="templateStreamName" Type="System.String" />
+        <Parameter Name="writeContext" Type="System.Object&amp;" RefType="ref" />
+        <Parameter Name="assertPermissions" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <param name="templateStreamName">名前、<see cref="T:System.IO.Stream" />ファイル属性は、テンプレートとしてコピーするオブジェクト。</param>
+        <param name="writeContext">書き込みコンテキスト、 <see cref="T:System.IO.Stream" /> (参照渡しで) 構成ファイルでタスクの I/O を実行するオブジェクト。</param>
+        <param name="assertPermissions">
+          <see langword="true" />アクセス許可をアサートするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>開く、<see cref="T:System.IO.Stream" />構成ファイルに書き込むためのオブジェクト。 により、<see cref="T:System.IO.Stream" />ファイル属性をコピーするためのテンプレートとして指定するオブジェクト。</summary>
+        <returns>返します、<see cref="T:System.IO.Stream" />で指定されたオブジェクト、<paramref name="streamName" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PrefetchAll">
+      <MemberSignature Language="C#" Value="public virtual bool PrefetchAll (string configPath, string streamName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool PrefetchAll(string configPath, string streamName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.PrefetchAll(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+        <Parameter Name="streamName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <summary>構成ファイル全体を読み取ることがあるかどうかを示す値を返します、指定されたによって<see cref="T:System.IO.Stream" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />構成ファイル全体を読み取ることが場合、<see cref="T:System.IO.Stream" />によって指定されたオブジェクト<paramref name="streamName" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PrefetchSection">
+      <MemberSignature Language="C#" Value="public virtual bool PrefetchSection (string sectionGroupName, string sectionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool PrefetchSection(string sectionGroupName, string sectionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.PrefetchSection(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sectionGroupName" Type="System.String" />
+        <Parameter Name="sectionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sectionGroupName">構成ファイルでセクション グループの名前を表す文字列。</param>
+        <param name="sectionName">構成ファイル内のセクションの名前を表す文字列。</param>
+        <summary>指示、<see cref="T:System.Configuration.Internal.IInternalConfigHost" />オブジェクト、関連付けられている構成ファイルの指定されたセクションを参照します。</summary>
+        <returns>
+          <see langword="true" />構成ファイルのセクションで指定される場合、<paramref name="sectionGroupName" />と<paramref name="sectionName" />でパラメーターを読み取ることができます、<see cref="T:System.IO.Stream" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RequireCompleteInit">
+      <MemberSignature Language="C#" Value="public virtual void RequireCompleteInit (System.Configuration.Internal.IInternalConfigRecord configRecord);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RequireCompleteInit(class System.Configuration.Internal.IInternalConfigRecord configRecord) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.RequireCompleteInit(System.Configuration.Internal.IInternalConfigRecord)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configRecord" Type="System.Configuration.Internal.IInternalConfigRecord" />
+      </Parameters>
+      <Docs>
+        <param name="configRecord"><see cref="T:System.Configuration.Internal.IInternalConfigRecord" /> オブジェクト。</param>
+        <summary>新しい構成レコードが、完全な初期化が必要であることを示します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StartMonitoringStreamForChanges">
+      <MemberSignature Language="C#" Value="public virtual object StartMonitoringStreamForChanges (string streamName, System.Configuration.Internal.StreamChangeCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object StartMonitoringStreamForChanges(string streamName, class System.Configuration.Internal.StreamChangeCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.StartMonitoringStreamForChanges(System.String,System.Configuration.Internal.StreamChangeCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+        <Parameter Name="callback" Type="System.Configuration.Internal.StreamChangeCallback" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <param name="callback">A<see cref="T:System.Configuration.Internal.StreamChangeCallback" />構成ファイル内の変更を表す、返されたデータを受信するオブジェクト。</param>
+        <summary>ホストが関連付けられているを監視するよう指示<see cref="T:System.IO.Stream" />オブジェクトが、構成ファイルで変更されました。</summary>
+        <returns><see cref="T:System.Object" />インスタンスを含む構成設定を変更します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StopMonitoringStreamForChanges">
+      <MemberSignature Language="C#" Value="public virtual void StopMonitoringStreamForChanges (string streamName, System.Configuration.Internal.StreamChangeCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopMonitoringStreamForChanges(string streamName, class System.Configuration.Internal.StreamChangeCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.StopMonitoringStreamForChanges(System.String,System.Configuration.Internal.StreamChangeCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+        <Parameter Name="callback" Type="System.Configuration.Internal.StreamChangeCallback" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <param name="callback"><see cref="T:System.Configuration.Internal.StreamChangeCallback" /> オブジェクト。</param>
+        <summary>関連付けられた監視を停止する、そのホスト オブジェクトに指示<see cref="T:System.IO.Stream" />オブジェクトが、構成ファイルで変更されました。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsChangeNotifications">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsChangeNotifications { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsChangeNotifications" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Internal.DelegatingConfigHost.SupportsChangeNotifications" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストの構成が変更通知をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ホストは、変更通知をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsLocation">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Internal.DelegatingConfigHost.SupportsLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストの構成が場所タグをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ホストが場所タグをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsPath">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsPath" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Internal.DelegatingConfigHost.SupportsPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホスト構成パスをサポートする必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ホストの構成パスをサポートする必要がある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsRefresh">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsRefresh { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsRefresh" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Internal.DelegatingConfigHost.SupportsRefresh" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストの構成が更新をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ホストの構成の更新をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyDefinitionAllowed">
+      <MemberSignature Language="C#" Value="public virtual void VerifyDefinitionAllowed (string configPath, System.Configuration.ConfigurationAllowDefinition allowDefinition, System.Configuration.ConfigurationAllowExeDefinition allowExeDefinition, System.Configuration.Internal.IConfigErrorInfo errorInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void VerifyDefinitionAllowed(string configPath, valuetype System.Configuration.ConfigurationAllowDefinition allowDefinition, valuetype System.Configuration.ConfigurationAllowExeDefinition allowExeDefinition, class System.Configuration.Internal.IConfigErrorInfo errorInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.VerifyDefinitionAllowed(System.String,System.Configuration.ConfigurationAllowDefinition,System.Configuration.ConfigurationAllowExeDefinition,System.Configuration.Internal.IConfigErrorInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configPath" Type="System.String" />
+        <Parameter Name="allowDefinition" Type="System.Configuration.ConfigurationAllowDefinition" />
+        <Parameter Name="allowExeDefinition" Type="System.Configuration.ConfigurationAllowExeDefinition" />
+        <Parameter Name="errorInfo" Type="System.Configuration.Internal.IConfigErrorInfo" />
+      </Parameters>
+      <Docs>
+        <param name="configPath">構成ファイルへのパスを表す文字列。</param>
+        <param name="allowDefinition"><see cref="P:System.Configuration.SectionInformation.AllowDefinition" /> オブジェクト。</param>
+        <param name="allowExeDefinition"><see cref="T:System.Configuration.ConfigurationAllowExeDefinition" /> オブジェクト</param>
+        <param name="errorInfo"><see cref="T:System.Configuration.Internal.IConfigErrorInfo" /> オブジェクト。</param>
+        <summary>構成のレコードの構成の定義が許可されていることを確認します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteCompleted">
+      <MemberSignature Language="C#" Value="public virtual void WriteCompleted (string streamName, bool success, object writeContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteCompleted(string streamName, bool success, object writeContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.WriteCompleted(System.String,System.Boolean,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+        <Parameter Name="success" Type="System.Boolean" />
+        <Parameter Name="writeContext" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <param name="success">
+          <see langword="true" />正常に完了した構成ファイルに書き込む場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="writeContext">書き込みコンテキスト、<see cref="T:System.IO.Stream" />構成ファイルに対するタスクの I/O を実行するオブジェクト。</param>
+        <summary>構成ファイルへのすべての書き込みが完了したことを示します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WriteCompleted">
+      <MemberSignature Language="C#" Value="public virtual void WriteCompleted (string streamName, bool success, object writeContext, bool assertPermissions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteCompleted(string streamName, bool success, object writeContext, bool assertPermissions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Internal.DelegatingConfigHost.WriteCompleted(System.String,System.Boolean,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamName" Type="System.String" />
+        <Parameter Name="success" Type="System.Boolean" />
+        <Parameter Name="writeContext" Type="System.Object" />
+        <Parameter Name="assertPermissions" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="streamName">名前、<see cref="T:System.IO.Stream" />構成ファイルにタスクの I/O を実行するオブジェクト。</param>
+        <param name="success">
+          <see langword="true" />書き込みが正常に完了したことを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <param name="writeContext">書き込みコンテキスト、<see cref="T:System.IO.Stream" />構成ファイルに対するタスクの I/O を実行するオブジェクト。</param>
+        <param name="assertPermissions">
+          <see langword="true" />アクセス許可をアサートするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>構成ファイルへのすべての書き込みが完了し、アクセス許可をアサートする必要があるかどうかを示すことを示します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1245 @@
+<Type Name="ClientBase&lt;TChannel&gt;" FullName="System.ServiceModel.ClientBase&lt;TChannel&gt;">
+  <TypeSignature Language="C#" Value="public abstract class ClientBase&lt;TChannel&gt; : IDisposable, System.ServiceModel.ICommunicationObject where TChannel : class" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ClientBase`1&lt;class TChannel&gt; extends System.Object implements class System.IDisposable, class System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ClientBase`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TChannel">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.ICommunicationObject</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TChannel">サービスに接続するために使用されるチャネル。</typeparam>
+    <summary>Windows Communication Foundation (WCF) クライアントがサービスを呼び出すことができますをオブジェクトを作成するために使用する基本実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ClientBase%601> クラスを拡張して、サービスに接続するために使用できるカスタム [!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアント オブジェクトを作成します。 通常、[!INCLUDE[indigo2](~/includes/indigo2-md.md)]クライアント基本クラスが拡張されているツールを使用してなど、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](~/docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)あなたの代理として。 例については、「使用例」のセクションを参照してください。  
+  
+ <xref:System.ServiceModel.ClientBase%601> は、開発者がインターフェイスと <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> クラスではなくオブジェクトの使用を希望する場合に、容易に使用できるクラスです。 どのような場合でも、このクラスは、<xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> クラスと <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> インターフェイスのメソッドと機能をラップまたは公開します。  
+  
+ <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> クラスを使用しているときは、任意の呼び出しを行うとき、または <xref:System.ServiceModel.ClientBase%601.Open%2A> を呼び出す前に、このクラスを作成して、エンドポイント、チャネル ファクトリ、またはセキュリティ情報を変更できます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][WCF クライアントの概要](~/docs/framework/wcf/wcf-client-overview.md)と[WCF クライアントを使用してサービスにアクセスする](~/docs/framework/wcf/accessing-services-using-a-wcf-client.md)です。  
+  
+ このクラスから派生するマネージ C++ ユーザーに対する特別な注意 :  
+  
+-   クリーンアップ コードは、デストラクターではなく (On)(Begin)Close (または OnAbort のどちらか一方または両方) に置いてください。  
+  
+-   デストラクターは使用しないでください。使用すると、コンパイラが <xref:System.IDisposable> を自動生成します。  
+  
+-   非参照メンバーを使用しないでください。使用すると、コンパイラが <xref:System.IDisposable> を自動生成します。  
+  
+-   ファイナライザーを使用しないでください。使用する場合は、ビルド警告を抑制し、<xref:System.GC.SuppressFinalize%28System.Object%29> を呼び出し、ファイナライザー自体を (On)(Begin)Close (または OnAbort のどちらか一方または両方) から呼び出して、自動生成される <xref:System.IDisposable> の動作をエミュレートする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例に示す方法、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](~/docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)拡張、<xref:System.ServiceModel.ClientBase%601>クラスを作成する、[!INCLUDE[indigo2](~/includes/indigo2-md.md)]クライアント クラスです。  
+  
+ [!code-csharp[ClientBase#1](~/samples/snippets/csharp/VS_Snippets_CFX/clientbase/cs/clientbase.cs#1)]
+ [!code-vb[ClientBase#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/clientbase/vb/clientbase.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション構成ファイル内のエンドポイント情報から [!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアント オブジェクトを作成するために使用します。 コンストラクターの主な機能は、type パラメーターがターゲットのサービス コントラクトの型である <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> を作成することです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーション構成ファイルの既定のターゲット エンドポイントを使用して、<see cref="T:System.ServiceModel.ClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、サービスを起動する [!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアント オブジェクトを作成します。 このコンストラクターは、ターゲット コントラクトとしての型パラメーターと、アプリケーション構成ファイルのバインド情報とアドレス情報を使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、クライアントが `SampleServiceClient` クラスを拡張する <xref:System.ServiceModel.ClientBase%601> クラスの中でこのコンストラクターをどのように使用するかを示しています。  
+  
+ [!code-csharp[ServiceContractAttribute#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicecontractattribute/cs/client.cs#3)]
+ [!code-vb[ServiceContractAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/servicecontractattribute/vb/client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">構成ファイルに既定のエンドポイント情報がないか、複数のエンドポイントがあります。または、構成ファイルがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase (System.ServiceModel.Description.ServiceEndpoint endpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.ServiceEndpoint endpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor(System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">クライアントがサービスを検索してサービスと通信できるようにするサービス エンドポイント。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceModel.ClientBase`1" />クラス<see cref="T:System.ServiceModel.Description.ServiceEndpoint" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase (System.ServiceModel.InstanceContext instance);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.InstanceContext instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor(System.ServiceModel.InstanceContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callbackInstance" Type="System.ServiceModel.InstanceContext" />
+      </Parameters>
+      <Docs>
+        <param name="instance">To be added.</param>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> クラスを双方向通信でのコールバック オブジェクトとして使用する <paramref name="instance" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、サービス コントラクトがコールバック サービス インスタンスを必要とする場合に使用します。 ターゲット エンドポイントは、型パラメーターと、アプリケーション構成ファイルの情報から構築されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このコンストラクターと `SampleDuplexHelloClient` クラスを使用して、サービスから送信されるメッセージをリッスンするコールバック オブジェクトを渡す方法を示しています。  
+  
+ [!code-csharp[CallbackBehaviorAttribute#3](~/samples/snippets/csharp/VS_Snippets_CFX/callbackbehaviorattribute/cs/client.cs#3)]
+ [!code-vb[CallbackBehaviorAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/callbackbehaviorattribute/vb/client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">コールバック インスタンスが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">構成ファイルに既定のエンドポイント情報がないか、複数のエンドポイントがあります。または、構成ファイルがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase (string endpointConfigurationName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string endpointConfigurationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="endpointConfigurationName">アプリケーション構成ファイル内のエンドポイントの名前。</param>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> によるアプリケーション構成ファイルに指定された構成情報を使用して、<paramref name="endpointConfigurationName" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション構成ファイル内で複数のターゲット エンドポイントが存在する場合にこのコンストラクターを使用します。 この値は、`name`クライアントの属性[&lt;エンドポイント&gt;](~/docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定されたエンドポイント情報が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">エンドポイントが見つからないか、エンドポイント コントラクトが有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase (System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.EndpointAddress remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="remoteAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="binding">サービスを呼び出すために使用されるバインディング。</param>
+        <param name="remoteAddress">サービス エンドポイントのアドレス。</param>
+        <summary>指定したバインドとターゲット アドレスを使用して、<see cref="T:System.ServiceModel.ClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">リモート アドレスが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase (System.ServiceModel.InstanceContext instance, System.ServiceModel.Description.ServiceEndpoint endpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.InstanceContext instance, class System.ServiceModel.Description.ServiceEndpoint endpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callbackInstance" Type="System.ServiceModel.InstanceContext" />
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="instance">To be added.</param>
+        <param name="endpoint">クライアントがサービスを検索してサービスと通信できるようにするサービス エンドポイント。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.ClientBase`1" /> オブジェクトと <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトを使用して、<see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase (System.ServiceModel.InstanceContext instance, string endpointConfigurationName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.InstanceContext instance, string endpointConfigurationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callbackInstance" Type="System.ServiceModel.InstanceContext" />
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="instance">To be added.</param>
+        <param name="endpointConfigurationName">アプリケーション構成ファイル内のエンドポイントの名前。</param>
+        <summary>指定したコールバック サービスとエンドポイント構成情報を使用して、<see cref="T:System.ServiceModel.ClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、ターゲットのサービスのコールバック コントラクトを実装するサービス オブジェクトを渡し、クライアント アプリケーション構成ファイルからのターゲット エンドポイント情報を特定します。 見つけることによって、対象の値がある、`name`クライアントの属性[&lt;エンドポイント&gt;](~/docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">エンドポイントが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">エンドポイントが見つからないか、エンドポイント コントラクトが有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase (string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string endpointConfigurationName, class System.ServiceModel.EndpointAddress remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor(System.String,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+        <Parameter Name="remoteAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="endpointConfigurationName">アプリケーション構成ファイル内のエンドポイントの名前。</param>
+        <param name="remoteAddress">サービスのアドレス。</param>
+        <summary>指定したターゲット アドレスとエンドポイント情報を使用して、<see cref="T:System.ServiceModel.ClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、アプリケーション構成ファイル内のエンドポイントの名前からターゲット エンドポイント情報を決定 (を見つけることによって、対象の値がある、`name`クライアントの属性[&lt;エンドポイント&gt;](~/docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)要素) と指定したアドレス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">リモート アドレスが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">エンドポイントが見つからないか、エンドポイント コントラクトが有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase (string endpointConfigurationName, string remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string endpointConfigurationName, string remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+        <Parameter Name="remoteAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="endpointConfigurationName">アプリケーション構成ファイル内のエンドポイントの名前。</param>
+        <param name="remoteAddress">サービスのアドレス。</param>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、アプリケーション構成ファイル内のエンドポイントの名前からターゲット エンドポイント情報を決定 (を見つけることによって、対象の値がある、`name`クライアントの属性[&lt;エンドポイント&gt;](~/docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)要素) と指定したアドレス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">リモート アドレスが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">エンドポイントが見つからないか、エンドポイント コントラクトが有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase (System.ServiceModel.InstanceContext instance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.InstanceContext instance, class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.EndpointAddress remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callbackInstance" Type="System.ServiceModel.InstanceContext" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="remoteAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="instance">To be added.</param>
+        <param name="binding">サービスを呼び出すバインド。</param>
+        <param name="remoteAddress">サービス エンドポイントのアドレス。</param>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">リモート アドレスが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase (System.ServiceModel.InstanceContext instance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.InstanceContext instance, string endpointConfigurationName, class System.ServiceModel.EndpointAddress remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callbackInstance" Type="System.ServiceModel.InstanceContext" />
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+        <Parameter Name="remoteAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="instance">To be added.</param>
+        <param name="endpointConfigurationName">アプリケーション構成ファイル内のエンドポイントの名前。</param>
+        <param name="remoteAddress">サービスのアドレス。</param>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用してターゲット サービス用のコールバック コントラクトを実装するサービス オブジェクトを渡すし、アプリケーション構成ファイル内のエンドポイントの名前からターゲット エンドポイント情報を決定する (を見つけることによって、対象の値がある、`name`クライアントの属性[&lt;エンドポイント&gt;](~/docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)要素) と指定したアドレス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">リモート アドレスが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">エンドポイントが見つからないか、エンドポイント コントラクトが有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ClientBase (System.ServiceModel.InstanceContext instance, string endpointConfigurationName, string remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.InstanceContext instance, string endpointConfigurationName, string remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callbackInstance" Type="System.ServiceModel.InstanceContext" />
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+        <Parameter Name="remoteAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="instance">To be added.</param>
+        <param name="endpointConfigurationName">アプリケーション構成ファイル内のエンドポイントの名前。</param>
+        <param name="remoteAddress">サービスのアドレス。</param>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用してターゲット サービス用のコールバック コントラクトを実装するサービス オブジェクトを渡すし、アプリケーション構成ファイル内のエンドポイントの名前からターゲット エンドポイント情報を決定する (を見つけることによって、対象の値がある、`name`クライアントの属性[&lt;エンドポイント&gt;](~/docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)要素) と指定したアドレス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">リモート アドレスが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">エンドポイントが見つからないか、エンドポイント コントラクトが有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public void Abort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Abort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.Abort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> オブジェクトを、現在の状態から Closed 状態に直ちに遷移させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheSetting">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.CacheSetting CacheSetting { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.ServiceModel.CacheSetting CacheSetting" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ClientBase`1.CacheSetting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.CacheSetting</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュの設定を設定します。</summary>
+        <value>キャッシュの設定です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Channel">
+      <MemberSignature Language="C#" Value="protected TChannel Channel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !TChannel Channel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ClientBase`1.Channel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>さまざまに構成されたサービス エンドポイントにメッセージを送信するために使用する内部チャネルを取得します。</summary>
+        <value>指定された種類のチャネル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelFactory">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.ChannelFactory&lt;TChannel&gt; ChannelFactory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.ChannelFactory`1&lt;!TChannel&gt; ChannelFactory" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ClientBase`1.ChannelFactory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になる <see cref="T:System.ServiceModel.ChannelFactory`1" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.ChannelFactory`1" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスへのチャネルの作成を処理する内部チャネル ファクトリを取得するために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCredentials">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ClientCredentials ClientCredentials { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ClientCredentials ClientCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ClientBase`1.ClientCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ClientCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作を呼び出すために使用されるクライアント資格情報を取得します。</summary>
+        <value>クライアントにより提示される ID の証明を表す <see cref="T:System.ServiceModel.Description.ClientCredentials" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> プロパティを使用して、<xref:System.ServiceModel.ClientBase%601> オブジェクトがサービスに接続するために使用する資格情報を構成します。  
+  
+   
+  
+## Examples  
+ 次のコードは、<xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> プロパティを使用して、サービスを呼び出す前に、ユーザー名とパスワードを設定する方法を示しています。  
+  
+ [!code-csharp[c_ProgrammingSecurity#4](~/samples/snippets/csharp/VS_Snippets_CFX/c_programmingsecurity/cs/source.cs#4)]
+ [!code-vb[c_ProgrammingSecurity#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_programmingsecurity/vb/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.ClientBase`1" /> オブジェクトを、現在の状態から Closed 状態に遷移させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannel">
+      <MemberSignature Language="C#" Value="protected virtual TChannel CreateChannel ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance !TChannel CreateChannel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.CreateChannel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービスへの新しいチャネルを返します。</summary>
+        <returns>サービス コントラクト型のチャネル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部チャネル ファクトリにより作成されたチャネルを返します。 <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> によって例外がスローされる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayInitializationUI">
+      <MemberSignature Language="C#" Value="public void DisplayInitializationUI ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DisplayInitializationUI() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.DisplayInitializationUI" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用前にチャネルを初期化するときにユーザー インターフェイスが必要な場合は、ユーザー インターフェイスを表示するように内部チャネルに指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルを構築する前に、内部チャネルがユーザー操作を必要とする場合は、<xref:System.ServiceModel.ClientBase%601.DisplayInitializationUI%2A> メソッドを呼び出します。 たとえば、チャネルをセキュリティで保護するために、ユーザーがユーザー名とパスワードを入力する必要がある場合は、このメソッドを呼び出すことで、入力用のカスタム <xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer?displayProperty=nameWithType> を呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Endpoint">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint Endpoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ServiceEndpoint Endpoint" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ClientBase`1.Endpoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアントが接続できるサービスのターゲット エンドポイントを取得します。</summary>
+        <value>ターゲット エンドポイント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ClientBase%601.Endpoint%2A> プロパティを使用して、<xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> オブジェクトを使用する前に、検査または変更するための <xref:System.ServiceModel.ClientBase%601> オブジェクトを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultValueForInitialization&lt;T&gt;">
+      <MemberSignature Language="C#" Value="protected T GetDefaultValueForInitialization&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance !!T GetDefaultValueForInitialization&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.GetDefaultValueForInitialization``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">キーワードによって参照または数値として識別される型。</typeparam>
+        <summary>C# の既定のキーワードの動作をレプリケートします。</summary>
+        <returns><see langword="null" /> が参照型の場合は <see langword="T" /><see langword="T" />を返し、 が数値型の場合は 0 を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InnerChannel">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.IClientChannel InnerChannel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.IClientChannel InnerChannel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ClientBase`1.InnerChannel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.IClientChannel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になる <see cref="T:System.ServiceModel.IClientChannel" /> 実装を取得します。</summary>
+        <value>[!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアント オブジェクト用のクライアント チャネル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ClientBase%601.InnerChannel%2A> プロパティを使用して、サービスに接続するために使用される <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeAsync">
+      <MemberSignature Language="C#" Value="protected void InvokeAsync (System.ServiceModel.ClientBase&lt;TChannel&gt;.BeginOperationDelegate beginOperationDelegate, object[] inValues, System.ServiceModel.ClientBase&lt;TChannel&gt;.EndOperationDelegate endOperationDelegate, System.Threading.SendOrPostCallback operationCompletedCallback, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InvokeAsync(class System.ServiceModel.ClientBase`1/BeginOperationDelegate&lt;!TChannel&gt; beginOperationDelegate, object[] inValues, class System.ServiceModel.ClientBase`1/EndOperationDelegate&lt;!TChannel&gt; endOperationDelegate, class System.Threading.SendOrPostCallback operationCompletedCallback, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.InvokeAsync(System.ServiceModel.ClientBase`1.BeginOperationDelegate{`0},System.Object[],System.ServiceModel.ClientBase`1.EndOperationDelegate{`0},System.Threading.SendOrPostCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginOperationDelegate" Type="System.ServiceModel.ClientBase&lt;TChannel&gt;+BeginOperationDelegate" />
+        <Parameter Name="inValues" Type="System.Object[]" />
+        <Parameter Name="endOperationDelegate" Type="System.ServiceModel.ClientBase&lt;TChannel&gt;+EndOperationDelegate" />
+        <Parameter Name="operationCompletedCallback" Type="System.Threading.SendOrPostCallback" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginOperationDelegate">非同期操作を呼び出すために使用されるデリゲート。</param>
+        <param name="inValues">非同期呼び出しに対する入力値。</param>
+        <param name="endOperationDelegate">非同期呼び出しが完了した後、それを終了するために使用されるデリゲート。</param>
+        <param name="operationCompletedCallback">非同期メソッドが完了したときに呼び出されるクライアント提供のコールバック。 コールバックは <see cref="T:System.ServiceModel.ClientBase`1.BeginOperationDelegate" /> に渡されます。</param>
+        <param name="userState"><c>UserState</c>に非同期呼び出しを関連付けるオブジェクト。</param>
+        <summary>イベント ベースの非同期パターンをサポートします。 [!INCLUDE[crabout](~/includes/crabout-md.md)]このパターンを参照してください[イベント ベースの非同期パターン概要](~/docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `userState` の各呼び出しに対して、<xref:System.ServiceModel.ClientBase%601.InvokeAsync%28System.ServiceModel.ClientBase%7B%600%7D.BeginOperationDelegate%2CSystem.Object%5B%5D%2CSystem.ServiceModel.ClientBase%7B%600%7D.EndOperationDelegate%2CSystem.Threading.SendOrPostCallback%2CSystem.Object%29> パラメーターで GUID やハッシュ コードなどの一意な値を指定すると、各操作が完了したときに、どの操作のインスタンスが完了イベントを発生させたのかをイベント ハンドラーが確認できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public void Open ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Open() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.Open" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> オブジェクトを、Created 状態から Opened 状態に遷移させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.CommunicationState State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.CommunicationState State" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ClientBase`1.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.CommunicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> オブジェクトの現在の状態を取得します。</summary>
+        <value>オブジェクトの <see cref="T:System.ServiceModel.CommunicationState" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.IDisposable.Dispose" /> メソッドの明示的な実装です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアント オブジェクトを閉じます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.ICommunicationObject.BeginClose">
+      <MemberSignature Language="C#" Value="IAsyncResult ICommunicationObject.BeginClose (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.IAsyncResult System.ServiceModel.ICommunicationObject.BeginClose(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.System#ServiceModel#ICommunicationObject#BeginClose(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">完了時のコールバックを受信するメソッド。</param>
+        <param name="state">状態データ。</param>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> を閉じるための非同期操作を開始します。</summary>
+        <returns>非同期の close 操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.ICommunicationObject.BeginClose">
+      <MemberSignature Language="C#" Value="IAsyncResult ICommunicationObject.BeginClose (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.IAsyncResult System.ServiceModel.ICommunicationObject.BeginClose(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.System#ServiceModel#ICommunicationObject#BeginClose(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">その時間内に呼び出しを完了する必要がある時間。</param>
+        <param name="callback">操作が完了したときに呼び出されるコールバック オブジェクト。</param>
+        <param name="state">状態データ。</param>
+        <summary>指定したタイムアウトで <see cref="T:System.ServiceModel.ClientBase`1" /> を閉じるための非同期操作を開始します。</summary>
+        <returns>非同期のクローズ開始操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.ICommunicationObject.BeginOpen">
+      <MemberSignature Language="C#" Value="IAsyncResult ICommunicationObject.BeginOpen (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.IAsyncResult System.ServiceModel.ICommunicationObject.BeginOpen(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.System#ServiceModel#ICommunicationObject#BeginOpen(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">完了時のコールバックを受信するメソッド。</param>
+        <param name="state">状態データ。</param>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> オブジェクトを開くための非同期操作を開始します。</summary>
+        <returns>非同期の open 操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.ICommunicationObject.BeginOpen">
+      <MemberSignature Language="C#" Value="IAsyncResult ICommunicationObject.BeginOpen (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.IAsyncResult System.ServiceModel.ICommunicationObject.BeginOpen(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.System#ServiceModel#ICommunicationObject#BeginOpen(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">呼び出しを完了する必要のある時間。</param>
+        <param name="callback">完了時のコールバックを受信するメソッド。</param>
+        <param name="state">状態データ。</param>
+        <summary>指定した時間内で <see cref="T:System.ServiceModel.ClientBase`1" /> オブジェクトを開くための非同期操作を開始します。</summary>
+        <returns>非同期の open 操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.ICommunicationObject.Close">
+      <MemberSignature Language="C#" Value="void ICommunicationObject.Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.ICommunicationObject.Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.System#ServiceModel#ICommunicationObject#Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.ICommunicationObject.Close">
+      <MemberSignature Language="C#" Value="void ICommunicationObject.Close (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.ICommunicationObject.Close(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.System#ServiceModel#ICommunicationObject#Close(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">呼び出しを完了する必要のある時間。</param>
+        <summary>
+          <see cref="T:System.ServiceModel.ClientBase`1" /> オブジェクトを、現在の状態から Closed 状態に遷移させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.ICommunicationObject.EndClose">
+      <MemberSignature Language="C#" Value="void ICommunicationObject.EndClose (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.ICommunicationObject.EndClose(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.System#ServiceModel#ICommunicationObject#EndClose(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">非同期のクローズ操作を完了するために使用される <see cref="T:System.IAsyncResult" />。</param>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> オブジェクトを閉じるための非同期操作を完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.ICommunicationObject.EndOpen">
+      <MemberSignature Language="C#" Value="void ICommunicationObject.EndOpen (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.ICommunicationObject.EndOpen(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.System#ServiceModel#ICommunicationObject#EndOpen(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">非同期のオープン終了操作を完了するために使用される <see cref="T:System.IAsyncResult" />。</param>
+        <summary><see cref="T:System.ServiceModel.ClientBase`1" /> オブジェクトを開くための非同期操作を完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.ICommunicationObject.Open">
+      <MemberSignature Language="C#" Value="void ICommunicationObject.Open ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.ICommunicationObject.Open() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.System#ServiceModel#ICommunicationObject#Open" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.ICommunicationObject.Open">
+      <MemberSignature Language="C#" Value="void ICommunicationObject.Open (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.ICommunicationObject.Open(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ClientBase`1.System#ServiceModel#ICommunicationObject#Open(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">その時間内に呼び出しを完了する必要がある時間。</param>
+        <summary>指定した時間内に、<see cref="T:System.ServiceModel.ClientBase`1" /> オブジェクトを、Created 状態から Opened 状態に遷移させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)]「<xref:System.ServiceModel.Channels.CommunicationObject?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,312 @@
+<Type Name="PersistChildrenAttribute" FullName="System.Web.UI.PersistChildrenAttribute">
+  <TypeSignature Language="C#" Value="public sealed class PersistChildrenAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PersistChildrenAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.PersistChildrenAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバー コントロールに含まれる入れ子になったコンテンツ コントロールや、サーバー コントロールのプロパティの対応するかどうかは、デザイン時を示すために ASP.NET サーバー コントロールによって使用される属性を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PersistChildrenAttribute>と組み合わせて使用されますが、<xref:System.Web.UI.ParseChildrenAttribute>コントロールの入れ子になった内容を決定は解釈されます。 場合<xref:System.Web.UI.PersistChildrenAttribute>は`true`と<xref:System.Web.UI.ParseChildrenAttribute>は`false`、ASP.NET サーバー コントロールに含まれる入れ子になったコンテンツはコントロールとして保存します。 場合<xref:System.Web.UI.PersistChildrenAttribute>は`false`と<xref:System.Web.UI.ParseChildrenAttribute>は`true`、入れ子になったコンテンツは、サーバー コントロールのプロパティとして保存します。 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ このセクションのコード例には、2 つの部分が含まれています。 最初のコード例では、デザイン時に、その入れ子になったコンテンツは、コントロールのプロパティとして保存するようにカスタム コントロールのメタデータを設定する方法を示します。 2 番目のコード例では、ASP.NET ページ内のクラスを使用する方法を示します。  
+  
+ 次のコード例を適用する方法を示しています、<xref:System.Web.UI.PersistChildrenAttribute>属性の入れ子になったコントロールとして、カスタム サーバー コントロールの入れ子になったコントロールの永続化できるようにします。 という名前のカスタム サーバー コントロール`CollectionPropertyControl`が、<xref:System.Web.UI.PersistChildrenAttribute>属性に設定`false`できるように、`Employee`入れ子になった要素として追加されるオブジェクトが保持されます。  
+  
+ [!code-csharp[PersistChildrenAttribute_Sample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/CS/persistchildren_1.cs#1)]
+ [!code-vb[PersistChildrenAttribute_Sample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/VB/persistchildren_1.vb#1)]  
+  
+ 次のコード例を使用する方法を示しています、`CollectionPropertyControl`と`Employee`ASP.NET ページ内のクラスです。  
+  
+ [!code-aspx-csharp[PersistChildrenAttribute_Sample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/CS/persistchildren.aspx#3)]
+ [!code-aspx-vb[PersistChildrenAttribute_Sample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/VB/persistchildren.aspx#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersistChildrenAttribute (bool persist);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool persist) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PersistChildrenAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="persist" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="persist">
+          <see langword="true" />入れ子になったコントロールとして入れ子になったコンテンツを保存するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PersistChildrenAttribute" />クラスを入れ子になったコントロールとして入れ子になったコンテンツを保持するかどうかを示すブール値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を適用する方法を示しています、<xref:System.Web.UI.PersistChildrenAttribute>という名前のカスタム サーバー コントロールの属性`CollectionPropertyControl`です。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.PersistChildrenAttribute>クラスです。  
+  
+ [!code-csharp[PersistChildrenAttribute_Sample#2](~/samples/snippets/csharp/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/CS/persistchildren_1.cs#2)]
+ [!code-vb[PersistChildrenAttribute_Sample#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/VB/persistchildren_1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersistChildrenAttribute (bool persist, bool usesCustomPersistence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool persist, bool usesCustomPersistence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PersistChildrenAttribute.#ctor(System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="persist" Type="System.Boolean" />
+        <Parameter Name="usesCustomPersistence" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="persist">
+          <see langword="true" />入れ子になったコントロールとして入れ子になったコンテンツを保存するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="usesCustomPersistence">
+          <see langword="true" />カスタマイズされた永続性; を使用するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PersistChildrenAttribute" />クラスの 2 つのブール値を使用します。 1 つとして、入れ子になったコントロールおよびその他のカスタムの永続化メソッドを使用するかどうかを示す入れ子になったコンテンツを保存するかどうかを示すです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.PersistChildrenAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.PersistChildrenAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.PersistChildrenAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PersistChildrenAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の属性の状態を示します。 <see cref="F:System.Web.UI.PersistChildrenAttribute.Default" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Web.UI.PersistChildrenAttribute.Default>フィールドは`Yes`デザイン時に入れ子になったコンテンツが保存されることを示すです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PersistChildrenAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" /> が現在のオブジェクトに等しい場合は <paramref name="obj" />。それ以外の場合は、<see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PersistChildrenAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能、<see cref="T:System.Web.UI.PersistChildrenAttribute" />クラスです。</summary>
+        <returns><see cref="T:System.Web.UI.PersistChildrenAttribute" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PersistChildrenAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかの現在のインスタンスの値、<see cref="T:System.Web.UI.PersistChildrenAttribute" />クラスが派生 clss の既定値です。</summary>
+        <returns>
+          <see langword="true" />場合の現在のインスタンスの値、<see cref="T:System.Web.UI.PersistChildrenAttribute" />既定のインスタンスには、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.PersistChildrenAttribute.IsDefaultAttribute%2A>かどうかをメソッドの現在のインスタンス、<xref:System.Web.UI.PersistChildrenAttribute>クラスは、既定のインスタンスと同じです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.PersistChildrenAttribute>クラスです。  
+  
+ [!code-aspx-csharp[PersistChildrenAttribute_Sample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/CS/persistchildren.aspx#3)]
+ [!code-aspx-vb[PersistChildrenAttribute_Sample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/VB/persistchildren.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.PersistChildrenAttribute No;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.PersistChildrenAttribute No" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.PersistChildrenAttribute.No" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PersistChildrenAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入れ子になったコンテンツをデザイン時に入れ子になったコントロールとして保持いないことを示します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.PersistChildrenAttribute.No>フィールドが呼び出されると、サーバー コントロールの内部コンテンツがサーバーではなく、プロパティとして保存されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Persist">
+      <MemberSignature Language="C#" Value="public bool Persist { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Persist" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PersistChildrenAttribute.Persist" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時に、入れ子になったコンテンツが入れ子になったコントロールとして永続化するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />入れ子になったコントロールとして入れ子になったコンテンツを保存するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の値を取得する方法を示します、<xref:System.Web.UI.PersistChildrenAttribute.Persist%2A>プロパティです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.PersistChildrenAttribute>クラスです。  
+  
+ [!code-aspx-csharp[PersistChildrenAttribute_Sample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/CS/persistchildren.aspx#3)]
+ [!code-aspx-vb[PersistChildrenAttribute_Sample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/VB/persistchildren.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsesCustomPersistence">
+      <MemberSignature Language="C#" Value="public bool UsesCustomPersistence { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsesCustomPersistence" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PersistChildrenAttribute.UsesCustomPersistence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー コントロールがデザイン時に入れ子になったコントロールのカスタムの永続性を提供するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />入れ子になったコンテンツ; のカスタムの永続性を提供するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタムの永続化の入れ子になったコンテンツを構成するのには、使用、<xref:System.Web.UI.PersistChildrenAttribute>を受け取るオーバー ロード、`usesCustomPersistence`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の値を取得する方法を示します、<xref:System.Web.UI.PersistChildrenAttribute.UsesCustomPersistence%2A>プロパティです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.PersistChildrenAttribute>クラスです。  
+  
+ [!code-aspx-csharp[PersistChildrenAttribute_Sample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/CS/persistchildren.aspx#3)]
+ [!code-aspx-vb[PersistChildrenAttribute_Sample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PersistChildrenAttribute_Sample/VB/persistchildren.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yes">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.PersistChildrenAttribute Yes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.PersistChildrenAttribute Yes" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.PersistChildrenAttribute.Yes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PersistChildrenAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時にコントロールとして保持する入れ子になったコンテンツを示します。 <see cref="F:System.Web.UI.PersistChildrenAttribute.Yes" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.PersistChildrenAttribute.Yes>フィールドが呼び出されると、入れ子になったコンテンツはコントロールとして保存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

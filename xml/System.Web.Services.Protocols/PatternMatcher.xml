@@ -1,0 +1,86 @@
+<Type Name="PatternMatcher" FullName="System.Web.Services.Protocols.PatternMatcher">
+  <TypeSignature Language="C#" Value="public sealed class PatternMatcher" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PatternMatcher extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.PatternMatcher" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web サービス クライアントの戻り値の HTTP 応答のテキストを検索します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.PatternMatcher>クラスは、HTTP 応答の本体でエンコードされたテキストで Web メソッドの戻り値を検索する正規表現を使用したパターン マッチを実行します。 <xref:System.Web.Services.Protocols.PatternMatcher>クラスは、クライアント側によって呼び出されます。<xref:System.Web.Services.Protocols.TextReturnReader>クラスは、Web サービスの戻り値を逆シリアル化します。  
+  
+ テキストのパターンに一致する Web サービスの XML スキーマ定義にバインドする必要がある XML ドキュメントに変換せず HTML コンテンツを取得するための手段を提供します。 正規表現検索対象が経由で Web サービス記述言語 (WSDL) ドキュメントで指定された`match`内の XML 要素`text`要素。 名前空間 http://microsoft.com/wsdl/mime/textMatching/ に両方の要素が属しています。  
+  
+ ときに`match`Wsdl.exe ツールでは、WSDL ドキュメントの要素を指定<xref:System.Web.Services.Protocols.MatchAttribute>生成される、クライアント プロキシ クラスに対応する Web メソッドの属性です。 A<xref:System.Web.Services.Protocols.MatchAttribute>属性のプロパティの検索基準の確立、<xref:System.Web.Services.Protocols.PatternMatcher>インスタンス。  
+  
+ 開発者は通常不要を直接使用する<xref:System.Web.Services.Protocols.PatternMatcher>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PatternMatcher (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.PatternMatcher.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A <see cref="T:System.Type" /> Web メソッドの戻り値の型を指定します。</param>
+        <summary>作成、<see cref="T:System.Web.Services.Protocols.PatternMatcher" />インスタンス、入力の型に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.PatternMatcher>に基づいて検索対象を作成する正規表現などのインスタンスのプロパティが設定されて<xref:System.Web.Services.Protocols.MatchAttribute>戻り値の型のフィールドに適用される属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public object Match (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Match(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.PatternMatcher.Match(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">これは、HTTP 応答の本文を検索するテキストです。</param>
+        <summary>Web メソッドの戻り値を表すオブジェクトを逆シリアル化する入力テキストを検索します。</summary>
+        <returns>Web メソッドを表すオブジェクトは、値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.PatternMatcher.Match%2A>メソッドの戻り値は、Web メソッドが入力テキストから逆シリアル化された値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

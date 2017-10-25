@@ -1,0 +1,705 @@
+<Type Name="ContentControl" FullName="System.Windows.Controls.ContentControl">
+  <TypeSignature Language="C#" Value="public class ContentControl : System.Windows.Controls.Control, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ContentControl extends System.Windows.Controls.Control implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ContentControl" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Content")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Content")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>任意の型のコンテンツの 1 つの部分とコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ContentControl>共通言語ランタイム オブジェクトの任意の型を含めることができます (文字列など、または<xref:System.DateTime>オブジェクト)、または<xref:System.Windows.UIElement>オブジェクト (など、<xref:System.Windows.Shapes.Rectangle>または<xref:System.Windows.Controls.Panel>)。 これによりなどのコントロールに豊富なコンテンツを追加する<xref:System.Windows.Controls.Button>と<xref:System.Windows.Controls.CheckBox>です。  
+  
+ 次の図に 4 つのボタンが<xref:System.Windows.Controls.ContentControl.Content%2A>プロパティは、次のいずれかに設定します。  
+  
+-   文字列。  
+  
+-   <xref:System.DateTime> オブジェクト。  
+  
+-   <xref:System.Windows.UIElement> オブジェクト。  
+  
+-   A<xref:System.Windows.Controls.Panel>を含むその他のコントロール<xref:System.Windows.UIElement>オブジェクト。  
+  
+ ![4 つのボタン](~/add/media/controlcontentmodelbuttons.PNG "4 つのボタン")  
+さまざまな種類のコンテンツの 4 つのボタン  
+  
+ A<xref:System.Windows.Controls.ContentControl>制限の既定のスタイルがします。 新規に作成することができます、コントロールの外観を向上する場合は、<xref:System.Windows.DataTemplate>です。 詳しくは「 [データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)」をご覧ください。 別の一般的なシナリオは、<xref:System.Windows.Controls.ContentControl>で選択した項目に関する詳細情報を表示、<xref:System.Windows.Controls.ItemsControl>コントロール。 詳細については、次を参照してください。[する方法: コレクションと選択内容に基づいて情報を表示するバインド](~/docs/framework/wpf/data/how-to-bind-to-a-collection-and-display-information-based-on-selection.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+   
+  
+## Examples  
+ 次の例では、「解説」セクションに示すように 4 つのボタンを作成する方法を示します。  
+  
+> [!NOTE]
+>  [!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]バージョンの例を使用、`<Button.Content>`の各ボタンのコンテンツの周囲のタグを必要はありません。 詳細については、次を参照してください。 [XAML の概要 (WPF)](~/docs/framework/wpf/advanced/xaml-overview-wpf.md)です。  
+  
+ [!code-xaml[ControlContentOverviewSnippets#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml#1)]  
+  
+ [!code-csharp[ControlContentOverviewSnippets#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[ControlContentOverviewSnippets#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlContentOverviewSnippets/VisualBasic/Window1.xaml.vb#2)]  
+  
+ 次の例スタイルを作成する方法を示しています、<xref:System.Windows.Controls.ContentControl>コントロールに拡張の外観を持つようにします。  
+  
+ [!code-xaml[ContentControl#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentControl/CSharp/Page1.xaml#1)]  
+[!code-xaml[ContentControl#5](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentControl/CSharp/Page1.xaml#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContentControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ContentControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="protected virtual void AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContentControl.AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加するオブジェクト。</param>
+        <summary>子として、指定したオブジェクトを追加、<see cref="T:System.Windows.Controls.ContentControl" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddText">
+      <MemberSignature Language="C#" Value="protected virtual void AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContentControl.AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">追加する文字列。</param>
+        <summary>指定されたテキスト文字列を追加、<see cref="T:System.Windows.Controls.ContentControl" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public object Content { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Content" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContentControl.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の内容、<see cref="T:System.Windows.Controls.ContentControl" />です。</summary>
+        <value>コントロールのコンテンツを含むオブジェクトです。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ContentControl.Content%2A>プロパティの型は<xref:System.Object>配置することができますに制限はありません、<xref:System.Windows.Controls.ContentControl>です。 <xref:System.Windows.Controls.ContentControl.Content%2A>によって表示される、<xref:System.Windows.Controls.ContentPresenter>には、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.ContentControl>です。  各<xref:System.Windows.Controls.ContentControl>入力[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]が、 <xref:System.Windows.Controls.ContentPresenter> 、既定の<xref:System.Windows.Controls.ControlTemplate>します。  方法の詳細については<xref:System.Windows.Controls.ContentPresenter>表示<xref:System.Windows.Controls.ContentControl.Content%2A>を参照してください<xref:System.Windows.Controls.ContentPresenter>です。  
+  
+<a name="dependencyPropertyInfo_Content"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContentControl.ContentProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+<a name="xamlAttributeUsage_Content"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Content="content"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_Content"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object> content</object>  
+```  
+  
+<a name="xamlValues_Content"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `Content`  
+ テキストまたは 1 つのオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、次の 4 つを作成する方法を示します<xref:System.Windows.Controls.Button>と制御<xref:System.Windows.Controls.ContentControl.Content%2A>次のいずれかに設定します。  
+  
+-   文字列。  
+  
+-   <xref:System.DateTime> オブジェクト。  
+  
+-   <xref:System.Windows.UIElement> オブジェクト。  
+  
+-   A<xref:System.Windows.Controls.Panel>を含むその他のコントロール<xref:System.Windows.UIElement>オブジェクト。  
+  
+> [!NOTE]
+>  [!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]バージョンの例を使用、`<Button.Content>`の各ボタンのコンテンツの周囲のタグを必要はありません。 詳細については、次を参照してください。 [XAML の概要 (WPF)](~/docs/framework/wpf/advanced/xaml-overview-wpf.md)です。  
+  
+ [!code-xaml[ControlContentOverviewSnippets#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml#1)]  
+  
+ [!code-csharp[ControlContentOverviewSnippets#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[ControlContentOverviewSnippets#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlContentOverviewSnippets/VisualBasic/Window1.xaml.vb#2)]  
+  
+ 次の図は、前の例で作成された 4 つのボタンを示します。  
+  
+ ![4 つのボタン](~/add/media/controlcontentmodelbuttons.PNG "4 つのボタン")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContentControl.ContentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContentControl.Content" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentStringFormat">
+      <MemberSignature Language="C#" Value="public string ContentStringFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentStringFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContentControl.ContentStringFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または書式設定する方法を指定する複合文字列を設定、<see cref="P:System.Windows.Controls.ContentControl.Content" />プロパティを文字列として表示されている場合。</summary>
+        <value>書式設定する方法を指定する複合文字列、<see cref="P:System.Windows.Controls.ContentControl.Content" />プロパティを文字列として表示されている場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ContentControl.ContentStringFormat%2A>定義済み、複合、またはカスタムの文字列形式にすることができます。 文字列形式の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  設定した場合、<xref:System.Windows.Controls.ContentControl.ContentTemplate%2A>または<xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A>のプロパティ、 <xref:System.Windows.Controls.ContentControl>、<xref:System.Windows.Controls.ContentControl.ContentStringFormat%2A>プロパティは無視されます。  
+  
+   
+  
+## Examples  
+ 次の例の形式を指定する<xref:System.DateTime>オブジェクトを設定して、<xref:System.Windows.Controls.ContentControl.ContentStringFormat%2A>プロパティに、<xref:System.Windows.Style>を適用して、<xref:System.Windows.Style>を 2 つ<xref:System.Windows.Controls.Label>から継承されるオブジェクト<xref:System.Windows.Controls.ContentControl>です。  
+  
+ [!code-xaml[ContentStringSnippets#ContentControl](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentStringSnippets/CSharp/Window1.xaml#contentcontrol)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentStringFormatProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContentStringFormatProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContentStringFormatProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContentControl.ContentStringFormatProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContentControl.ContentStringFormat" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate ContentTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate ContentTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContentControl.ContentTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のコンテンツを表示するために使用するデータ テンプレート、<see cref="T:System.Windows.Controls.ContentControl" />です。</summary>
+        <value>データ テンプレートです。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定、<xref:System.Windows.DataTemplate>の外観を指定する、<xref:System.Windows.Controls.ContentControl>です。 データ テンプレートの詳細については、次を参照してください。[データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)です。  
+  
+<a name="xamlAttributeUsage_ContentTemplate"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ContentTemplate="{resourceExtension styleResourceKey}"/>  
+```  
+  
+<a name="xamlValues_ContentTemplate"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *resourceExtension*  
+ リソースを参照する、テンプレート、いずれかの方法を識別するマークアップ拡張機能`StaticResource`または`DynamicResource`です。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *styleResourceKey*  
+ 要求されたテンプレート セレクターを識別するキー。 このキーは既存のリソースを<xref:System.Windows.ResourceDictionary>です。  
+  
+> [!NOTE]
+>  プロパティ要素構文は、技術的に可能ですが、推奨されません。 詳細については、次を参照してください。[インライン スタイルとテンプレート](~/docs/framework/wpf/advanced/inline-styles-and-templates.md)です。  
+  
+<a name="dependencyPropertyInfo_ContentTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContentControl.ContentTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、テンプレートのコンテンツを作成し、コンテンツ コントロールに、テンプレートを適用する方法を示します。  
+  
+ [!code-xaml[ContentControl#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentControl/CSharp/Page1.xaml#2)]  
+  
+ [!code-xaml[ContentControl#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentControl/CSharp/Page1.xaml#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContentTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContentTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContentControl.ContentTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContentControl.ContentTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplateSelector">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataTemplateSelector ContentTemplateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataTemplateSelector ContentTemplateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContentControl.ContentTemplateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataTemplateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーション作成者がテンプレートのカスタム選択ロジックを提供するテンプレート セレクターを設定します。</summary>
+        <value>データ テンプレート セレクター。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、作成、 <xref:System.Windows.Controls.DataTemplateSelector> 1 つ以上ある場合<xref:System.Windows.DataTemplate>オブジェクトの同じ型を選択する、独自のロジックを指定する、<xref:System.Windows.DataTemplate>各データ オブジェクトのプロパティに基づいて適用します。 別のオブジェクトがある場合の種類を設定、<xref:System.Windows.DataTemplate.DataType%2A>プロパティを<xref:System.Windows.DataTemplate>です。 実行するかどうかは、作成する必要はありません、<xref:System.Windows.Controls.DataTemplateSelector>です。 さらに、さまざまなプロパティを持つ同じ型のオブジェクトがある場合は、することができますも検討を使用して、<xref:System.Windows.DataTrigger>またはデータ コンバーター。 詳しくは「 [データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)」をご覧ください。  
+  
+ テンプレート セレクターを作成するから継承するクラスを作成<xref:System.Windows.Controls.DataTemplateSelector>をオーバーライドし、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッドです。 クラスを定義した後は、要素のテンプレート セレクター プロパティに、クラスのインスタンスを割り当てることができます。  
+  
+ 両方の<xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A>と<xref:System.Windows.Controls.ContentControl.ContentTemplate%2A>プロパティを設定し、このプロパティは無視されます。  
+  
+<a name="xamlAttributeUsage_ContentTemplateSelector"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ContentTemplateSelector="{ResourceExtension TemplateSelectorKey}"/>  
+```  
+  
+<a name="xamlValues_ContentTemplateSelector"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ResourceExtension*  
+ リソースを参照する、テンプレート、いずれかの方法を識別するマークアップ拡張機能`StaticResource`または`DynamicResource`です。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *TemplateSelectorKey*  
+ 要求されたテンプレート セレクターを識別するキー。 このキーは既存のリソースを<xref:System.Windows.ResourceDictionary>です。  
+  
+<a name="dependencyPropertyInfo_ContentTemplateSelector"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContentControl.ContentTemplateSelectorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A> プロパティを使用する方法を次の例に示します。 次の例で選択した項目のバインド、<xref:System.Windows.Controls.ComboBox>を<xref:System.Windows.Controls.ContentControl.Content%2A>のプロパティ、<xref:System.Windows.Controls.Label>から継承される<xref:System.Windows.Controls.ContentControl>です。  選択された項目の値が黒の四角形に表示されます、ユーザーが 5 未満の値を選択すると、<xref:System.Windows.Controls.Label>です。  上またはをユーザーが 5 である値を選択したときに、緑の楕円に値が表示されます。 例でこれを行う 2 つ作成することで<xref:System.Windows.DataTemplate>オブジェクトおよび<xref:System.Windows.Controls.DataTemplateSelector>に設定されています、<xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A>プロパティし、適切な選択<xref:System.Windows.DataTemplate>選択された項目の値に基づきます。  
+  
+ [!code-xaml[ContentControlTemplateSelector#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentControlTemplateSelector/CSharp/Window1.xaml#1)]  
+[!code-csharp[ContentControlTemplateSelector#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentControlTemplateSelector/CSharp/Window1.xaml.cs#2)]
+[!code-vb[ContentControlTemplateSelector#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContentControlTemplateSelector/VisualBasic/Window1.xaml.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplateSelectorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContentTemplateSelectorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContentTemplateSelectorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContentControl.ContentTemplateSelectorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContentControl.ContentTemplateSelector" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasContent">
+      <MemberSignature Language="C#" Value="public bool HasContent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContentControl.HasContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.ContentControl" />コンテンツが含まれています。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.ContentControl" />それ以外のコンテンツを持つ<see langword="false" />します。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Controls.ContentControl.Content%2A>プロパティは`null`、このプロパティを返します`false`です。  
+  
+<a name="dependencyPropertyInfo_HasContent"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContentControl.HasContentProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.ContentControl.HasContent%2A>コンテンツ コントロールがコンテンツを含むかどうかを決定するプロパティです。  
+  
+ [!code-csharp[ContentControl#4](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentControl/CSharp/Page1.xaml.cs#4)]
+ [!code-vb[ContentControl#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContentControl/VisualBasic/Page1.xaml.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasContentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HasContentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HasContentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContentControl.HasContentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContentControl.HasContent" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContentControl.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツ コントロールの論理子要素に列挙子を取得します。</summary>
+        <value>列挙子。 既定値は <see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContentChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnContentChanged (object oldContent, object newContent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnContentChanged(object oldContent, object newContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContentControl.OnContentChanged(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldContent" Type="System.Object" />
+        <Parameter Name="newContent" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="oldContent"><see cref="P:System.Windows.Controls.ContentControl.Content" /> プロパティの変更前の値。</param>
+        <param name="newContent"><see cref="P:System.Windows.Controls.ContentControl.Content" /> プロパティの新しい値。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.ContentControl.Content" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContentStringFormatChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnContentStringFormatChanged (string oldContentStringFormat, string newContentStringFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnContentStringFormatChanged(string oldContentStringFormat, string newContentStringFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContentControl.OnContentStringFormatChanged(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldContentStringFormat" Type="System.String" />
+        <Parameter Name="newContentStringFormat" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="oldContentStringFormat">古い値<see cref="P:System.Windows.Controls.ContentControl.ContentStringFormat" />です。</param>
+        <param name="newContentStringFormat"><see cref="P:System.Windows.Controls.ContentControl.ContentStringFormat" /> の新しい値。</param>
+        <summary><see cref="P:System.Windows.Controls.ContentControl.ContentStringFormat" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContentTemplateChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnContentTemplateChanged (System.Windows.DataTemplate oldContentTemplate, System.Windows.DataTemplate newContentTemplate);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnContentTemplateChanged(class System.Windows.DataTemplate oldContentTemplate, class System.Windows.DataTemplate newContentTemplate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContentControl.OnContentTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldContentTemplate" Type="System.Windows.DataTemplate" />
+        <Parameter Name="newContentTemplate" Type="System.Windows.DataTemplate" />
+      </Parameters>
+      <Docs>
+        <param name="oldContentTemplate"><see cref="P:System.Windows.Controls.ContentControl.ContentTemplate" /> プロパティの変更前の値。</param>
+        <param name="newContentTemplate"><see cref="P:System.Windows.Controls.ContentControl.ContentTemplate" /> プロパティの新しい値。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.ContentControl.ContentTemplate" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContentTemplateSelectorChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnContentTemplateSelectorChanged (System.Windows.Controls.DataTemplateSelector oldContentTemplateSelector, System.Windows.Controls.DataTemplateSelector newContentTemplateSelector);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnContentTemplateSelectorChanged(class System.Windows.Controls.DataTemplateSelector oldContentTemplateSelector, class System.Windows.Controls.DataTemplateSelector newContentTemplateSelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContentControl.OnContentTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldContentTemplateSelector" Type="System.Windows.Controls.DataTemplateSelector" />
+        <Parameter Name="newContentTemplateSelector" Type="System.Windows.Controls.DataTemplateSelector" />
+      </Parameters>
+      <Docs>
+        <param name="oldContentTemplateSelector"><see cref="P:System.Windows.Controls.ContentControl.ContentTemplateSelector" /> プロパティの変更前の値。</param>
+        <param name="newContentTemplateSelector"><see cref="P:System.Windows.Controls.ContentControl.ContentTemplateSelector" /> プロパティの新しい値。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.ContentControl.ContentTemplateSelector" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeContent">
+      <MemberSignature Language="C#" Value="public virtual bool ShouldSerializeContent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ShouldSerializeContent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContentControl.ShouldSerializeContent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContentControl.Content" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.ContentControl.Content" />プロパティは、それ以外の永続化する必要があります<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Controls.ContentControl.Content%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Controls.ContentControl>やコントロールを組み込む独自の開発、<xref:System.Windows.Controls.ContentControl>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContentControl.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContentControl.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加する文字列。</param>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

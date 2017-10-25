@@ -1,0 +1,206 @@
+<Type Name="BamlLocalizableResourceKey" FullName="System.Windows.Markup.Localizer.BamlLocalizableResourceKey">
+  <TypeSignature Language="C#" Value="public class BamlLocalizableResourceKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BamlLocalizableResourceKey extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ローカライズ可能なリソースを識別するために使用するキーを表す、<see cref="T:System.Windows.Markup.Localizer.BamlLocalizationDictionary" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは内部のローカライズ可能な値を一意に識別できるキーを表す[!INCLUDE[TLA#tla_baml](~/includes/tlasharptla-baml-md.md)]です。 組み合わせを表す、<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>クラス名、およびプロパティ名。  
+  
+ <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>ソースに値を追加する必要があります[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]ファイルを使用するか、 `updateuid` [!INCLUDE[TLA#tla_msbuild](~/includes/tlasharptla-msbuild-md.md)]ターゲット (たとえば、 `msbuild /t:updateuid myproj.proj`)、またはマークアップに手動でします。 [!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]なし、<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>ローカライズすることはできません。 クラス名は、ローカライズ可能なプロパティが含まれている要素の型の名前です。 プロパティ名はローカライズ可能な値を持つプロパティを参照します。 特殊なプロパティと呼ばれる"`$Content`"要素の初期化テキストまたはコンテンツ プロパティの値を表すために使用します。 たとえば、`$Content`プロパティ名は、初期化のテキストに適用される`Click`次の XAML で。  
+  
+ `<TextBlock x:Uid="myBlock">Click </TextBlock>`  
+  
+<a name="xamlTextUsage_BamlLocalizableResourceKey"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey>です。  
+  
+ [!code-csharp[GrabBaml#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GrabBaml/CSharp/GrabBaml.cs#1)]
+ [!code-vb[GrabBaml#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GrabBaml/visualbasic/grabbaml.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BamlLocalizableResourceKey (string uid, string className, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uid, string className, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uid" Type="System.String" />
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uid">ローカライズ可能なリソースを持つ要素の Uid。</param>
+        <param name="className">ローカライズ可能なリソースのクラス名[!INCLUDE[TLA#tla_baml](~/includes/tlasharptla-baml-md.md)]です。</param>
+        <param name="propertyName">ローカライズ可能なリソースのプロパティ名[!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />指定 Uid、クラス名、およびプロパティ名を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyName">
+      <MemberSignature Language="C#" Value="public string AssemblyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssemblyName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.AssemblyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>宣言されているローカライズ可能なリソースの種類を定義するアセンブリの名前を取得、<see cref="P:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.ClassName" />です。</summary>
+        <value>アセンブリの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アセンブリ名が内のリソースを一意に識別する必要はありません[!INCLUDE[TLA2#tla_baml](~/includes/tla2sharptla-baml-md.md)]が含まれるが、便宜を図って、ここです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassName">
+      <MemberSignature Language="C#" Value="public string ClassName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClassName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.ClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラス名の部分を取得<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />です。</summary>
+        <value>このクラス名コンポーネント<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="other">等しいかどうかを比較するオブジェクト。</param>
+        <summary>インスタンスにオブジェクトと比較<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />等しいかどうか。</summary>
+        <returns>
+          2 つのインスタンスが等しい場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Markup.Localizer.BamlLocalizableResourceKey other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(class System.Windows.Markup.Localizer.BamlLocalizableResourceKey other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Equals(System.Windows.Markup.Localizer.BamlLocalizableResourceKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />
+      </Parameters>
+      <Docs>
+        <param name="other">別のインスタンス<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />等しいかどうかを比較します。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />等しいかどうか。</summary>
+        <returns>
+          2 つのインスタンスが等しい場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスを表す整数のハッシュ コードを返します。</summary>
+        <returns>整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyName">
+      <MemberSignature Language="C#" Value="public string PropertyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.PropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの名前部分を取得<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />です。</summary>
+        <value>このプロパティの名前コンポーネント<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uid">
+      <MemberSignature Language="C#" Value="public string Uid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Uid" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これの Uid 部分を取得<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />です。</summary>
+        <value>この Uid コンポーネント<see cref="T:System.Windows.Markup.Localizer.BamlLocalizableResourceKey" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

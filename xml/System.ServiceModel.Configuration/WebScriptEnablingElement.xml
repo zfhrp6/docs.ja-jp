@@ -1,0 +1,158 @@
+<Type Name="WebScriptEnablingElement" FullName="System.ServiceModel.Configuration.WebScriptEnablingElement">
+  <TypeSignature Language="C#" Value="public sealed class WebScriptEnablingElement : System.ServiceModel.Configuration.BehaviorExtensionElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebScriptEnablingElement extends System.ServiceModel.Configuration.BehaviorExtensionElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.WebScriptEnablingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Configuration.BehaviorExtensionElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成によってエンドポイントの <see cref="T:System.ServiceModel.Description.WebScriptEnablingBehavior" /> を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Configuration.WebScriptEnablingElement> は <xref:System.ServiceModel.Configuration.BehaviorExtensionElement> サブタイプであり、構成によってエンドポイントに <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> を含めるために使用できます。 この要素には構成可能なプロパティがありません。  
+  
+ <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> は、<xref:System.ServiceModel.WebHttpBinding> で構成されている場合は、ASP.NET AJAX Web ページからエンドポイントにアクセスできるようにします。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]有効にする方法、[!INCLUDE[indigo2](~/includes/indigo2-md.md)]サービスを ASP.NET AJAX クライアントに応答しを参照してください[ASP.NET AJAX 用の WCF サービスの作成](~/docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、この構成要素を使用して、ASP.NET AJAX Web ページからアクセスできるように [!INCLUDE[indigo2](~/includes/indigo2-md.md)] エンドポイントを構成します。  
+  
+```  
+<system.serviceModel>  
+<services>  
+        <service name="Microsoft.Ajax.Samples.CalculatorService">  
+            <endpoint address=""  
+                behaviorConfiguration="AspNetAjaxBehavior"   
+                binding="webHttpBinding"  
+                contract="Microsoft.Ajax.Samples.ICalculator" />  
+        </service>  
+    </services>  
+    <behaviors>  
+        <endpointBehaviors>  
+            <behavior name="AspNetAjaxBehavior">  
+                <enableWebScript />  
+            </behavior>  
+        </endpointBehaviors>  
+    </behaviors>  
+</system.serviceModel>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebScriptEnablingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.WebScriptEnablingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.WebScriptEnablingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Description.WebScriptEnablingBehavior> 型を返します。  
+  
+```  
+using System;  
+using System.ServiceModel;  
+using System.ServiceModel.Web;  
+using System.ServiceModel.Configuration;  
+  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            WebScriptEnablingElement wSEB = new WebScriptEnablingElement();  
+            Console.WriteLine("The type is: {0}",wSEB.BehaviorType );  
+            Console.WriteLine("Press <ENTER> to terminate the program.");  
+            Console.ReadLine();  
+        }  
+    }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BehaviorType">
+      <MemberSignature Language="C#" Value="public override Type BehaviorType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type BehaviorType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.WebScriptEnablingElement.BehaviorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この構成要素で有効にできる動作の種類を取得します。</summary>
+        <value>構成要素 <see cref="T:System.Type" /> で有効にできる動作の <see cref="T:System.ServiceModel.Description.WebScriptEnablingBehavior" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Description.WebScriptEnablingBehavior> 型を返します。  
+  
+```  
+using System;  
+using System.ServiceModel;  
+using System.ServiceModel.Web;  
+using System.ServiceModel.Configuration;  
+  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            WebScriptEnablingElement wSEB = new WebScriptEnablingElement();  
+            Console.WriteLine("The type is: {0}",wSEB.BehaviorType );  
+            Console.WriteLine("Press <ENTER> to terminate the program.");  
+            Console.ReadLine();  
+        }  
+    }  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBehavior">
+      <MemberSignature Language="C#" Value="protected override object CreateBehavior ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object CreateBehavior() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.WebScriptEnablingElement.CreateBehavior" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

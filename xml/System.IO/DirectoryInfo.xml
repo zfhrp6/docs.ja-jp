@@ -1,0 +1,2424 @@
+<Type Name="DirectoryInfo" FullName="System.IO.DirectoryInfo">
+  <TypeSignature Language="C#" Value="public sealed class DirectoryInfo : System.IO.FileSystemInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DirectoryInfo extends System.IO.FileSystemInfo" />
+  <TypeSignature Language="DocId" Value="T:System.IO.DirectoryInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.FileSystemInfo</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ディレクトリとサブディレクトリを作成、削除、および列挙するためのインスタンス メソッドを公開します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/io/directoryinfo.cs#30fa608717e5ce8e)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ 使用して、<xref:System.IO.DirectoryInfo>コピー、移動、名前変更、作成、およびディレクトリを削除するなどの一般的な操作のクラスです。  
+  
+ オブジェクトを何度も再利用しようとする場合は、インスタンス メソッドを使用することを検討してください<xref:System.IO.DirectoryInfo>の対応する静的メソッドではなく、<xref:System.IO.Directory>クラス、セキュリティ チェックは必ずしも必要であるためです。  
+  
+> [!NOTE]
+>  入力文字列とパスをそのまま使用するメンバー、そのパスは、整形式である必要がありますか、例外が発生します。 たとえば、パスは完全修飾では、スペースで始まり場合、パスは、クラスのメソッドで切り捨てられません。 そのため、パスが正しくないと、例外が発生します。 同様に、パスまたはパスの組み合わせ完全修飾できない 2 回クリックします。 たとえば、"c:\temp c:\windows"では、ほとんどの場合、例外も発生します。 パス文字列を受け取るメソッドを使用する場合、パスが整形式であることを確認します。  
+  
+ パスを受け入れるメンバー ボックスで、パスは、ファイルまたはディレクトリを参照できます。 指定されたパスは相対パスまたは汎用名前付け規則 (UNC) パスのサーバーと共有名にも参照できます。 たとえば、次のすべては、有効なパスは。  
+  
+-   "c:\\\MyDir\\\MyFile.txt"C# の場合、または Visual Basic では、"c:\MyDir\MyFile.txt"です。  
+  
+-   "c:\\\MyDir"C# の場合、または Visual Basic では、"c:\MyDir"です。  
+  
+-   "MyDir\\\MySubdir"C# の場合、または Visual Basic では、"MyDir\MySubDir"です。  
+  
+-   "\\\\\\\MyServer\\\MyShare"C# の場合、または"\\\MyServer\MyShare"Visual Basic でします。  
+  
+ 既定では、新しいディレクトリへの完全な読み取り/書き込みアクセスは、すべてのユーザーに与えられます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、メインのメンバーの一部を示しています、`DirectoryInfo`クラスです。  
+  
+ [!code-cpp[DirInfo Class Example#1](~/samples/snippets/cpp/VS_Snippets_CLR/DirInfo Class Example/CPP/dirinfo class example.cpp#1)]
+ [!code-csharp[DirInfo Class Example#1](~/samples/snippets/csharp/VS_Snippets_CLR/DirInfo Class Example/CS/dirinfo class example.cs#1)]
+ [!code-vb[DirInfo Class Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/DirInfo Class Example/VB/dirinfo class example.vb#1)]  
+  
+ 次の例では、ディレクトリ、およびその内容をコピーする方法を示します。  
+  
+ [!code-csharp[IO.DirectoryInfo-CopyDir#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.DirectoryInfo-CopyDir/cs/copydir.cs#1)]
+ [!code-vb[IO.DirectoryInfo-CopyDir#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.DirectoryInfo-CopyDir/vb/CopyDir.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryInfo (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see langword="DirectoryInfo" /> を作成する対象のパスを指定する文字列。</param>
+        <summary>指定したパスに対する、<see cref="T:System.IO.DirectoryInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターでは、ディレクトリが存在するかどうかはチェックされません。 このコンス トラクターとは、後の操作でディスクにアクセスするために使用される文字列にプレース ホルダーです。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して、指定されたディレクトリとサブディレクトリを作成し、サブディレクトリを格納するディレクトリを削除できないことを示します。  
+  
+ [!code-cpp[DirInfo Ctor#1](~/samples/snippets/cpp/VS_Snippets_CLR/DirInfo Ctor/CPP/dirinfo ctor.cpp#1)]
+ [!code-csharp[DirInfo Ctor#1](~/samples/snippets/csharp/VS_Snippets_CLR/DirInfo Ctor/CS/dirinfo ctor.cs#1)]
+ [!code-vb[DirInfo Ctor#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/DirInfo Ctor/VB/dirinfo ctor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />無効な文字を含む"、 &lt;、 &gt;、または |。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。 指定されたパスかファイル名、またはその両方が長すぎます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りにファイルとディレクトリ。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public void Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ディレクトリを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリが既に存在する場合は、このメソッドは何も行いません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例のチェック指定されたディレクトリが存在するかどうかを作成、ディレクトリが存在しない場合、ディレクトリを削除します。  
+  
+ [!code-cpp[DirInfo Create#1](~/samples/snippets/cpp/VS_Snippets_CLR/DirInfo Create/CPP/dirinfo create.cpp#1)]
+ [!code-csharp[DirInfo Create#1](~/samples/snippets/csharp/VS_Snippets_CLR/DirInfo Create/CS/dirinfo create.cs#1)]
+ [!code-vb[DirInfo Create#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/DirInfo Create/VB/dirinfo create.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">ディレクトリを作成できません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルを出力します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public void Create (System.Security.AccessControl.DirectorySecurity directorySecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Create(class System.Security.AccessControl.DirectorySecurity directorySecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.Create(System.Security.AccessControl.DirectorySecurity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directorySecurity" Type="System.Security.AccessControl.DirectorySecurity" />
+      </Parameters>
+      <Docs>
+        <param name="directorySecurity">ディレクトリに適用するアクセス制御。</param>
+        <summary><see cref="T:System.Security.AccessControl.DirectorySecurity" /> オブジェクトを使用してディレクトリを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードを使用すると、セキュリティが適用される前に、ディレクトリにアクセスできる可能性がないように、アクセス制御のディレクトリを作成します。  
+  
+ ディレクトリが既に存在する場合は、このメソッドは何も行いません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">指定されたディレクトリ<paramref name="path" />は読み取り専用または空ではありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列であるか、空白のみで構成されるか、または <see cref="F:System.IO.Path.InvalidPathChars" /> で定義される 1 つ以上の使用できない文字を含んでいます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが正しくありません。</exception>
+        <exception cref="T:System.NotSupportedException">コロン (:) 文字だけで、ディレクトリを作成しようとしました。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリを作成する権限です。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSubdirectory">
+      <MemberSignature Language="C#" Value="public System.IO.DirectoryInfo CreateSubdirectory (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.DirectoryInfo CreateSubdirectory(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.CreateSubdirectory(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">指定するパス。 異なるディスク ボリュームまたは UNC (Universal Naming Convention) 名は指定できません。</param>
+        <summary>指定したパスに 1 つ以上のサブディレクトリを作成します。 パスは、この <see cref="T:System.IO.DirectoryInfo" /> クラスのインスタンスに対する相対パスで指定できます。</summary>
+        <returns><paramref name="path" /> に指定された最後のディレクトリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されていると、すべてのディレクトリ`path`しない限り、作成の一部`path`が無効です。 `path`ファイル パスではなく、ディレクトリのパスを指定します。 サブディレクトリに既に存在する場合、このメソッドは何も行いません。  
+  
+> [!NOTE]
+>  パス名は 248 文字に制限されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、サブディレクトリを作成するを示します。 この例では、いったん作成された後、作成されたディレクトリが削除されます。 そのため、このサンプルをテストするには、コメント アウト、コード内の行の削除します。  
+  
+ [!code-cpp[directoryinfocreatesub#1](~/samples/snippets/cpp/VS_Snippets_CLR/directoryinfocreatesub/CPP/directoryinfocreatesub.cpp#1)]
+ [!code-csharp[directoryinfocreatesub#1](~/samples/snippets/csharp/VS_Snippets_CLR/directoryinfocreatesub/CS/directoryinfocreatesub.cs#1)]
+ [!code-vb[directoryinfocreatesub#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/directoryinfocreatesub/VB/directoryinfocreatesub.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は有効なファイル パスを指定していないか、または無効な <see langword="DirectoryInfo" /> 文字を含んでいます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが無効です。</exception>
+        <exception cref="T:System.IO.IOException">サブディレクトリを作成できません。  
+  
+ または  
+  
+ <paramref name="path" /> で指定された名前がファイルまたはディレクトリに既にあります。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大文字数を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。 指定されたパスかファイル名、またはその両方が長すぎます。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、ディレクトリを作成するためのコード アクセス許可がありません。  
+  
+ または  
+  
+ 呼び出し元には、返された <see cref="T:System.IO.DirectoryInfo" /> オブジェクトで記述されているディレクトリを読み取るためのコード アクセス許可がありません。  <paramref name="path" /> パラメーターが既存のディレクトリを記述する場合、これが発生する可能性があります。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />ドライブのラベルの一部ではないコロン文字 (:) が含まれています ("c:\\") です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSubdirectory">
+      <MemberSignature Language="C#" Value="public System.IO.DirectoryInfo CreateSubdirectory (string path, System.Security.AccessControl.DirectorySecurity directorySecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.DirectoryInfo CreateSubdirectory(string path, class System.Security.AccessControl.DirectorySecurity directorySecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.CreateSubdirectory(System.String,System.Security.AccessControl.DirectorySecurity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="directorySecurity" Type="System.Security.AccessControl.DirectorySecurity" />
+      </Parameters>
+      <Docs>
+        <param name="path">指定するパス。 異なるディスク ボリュームまたは UNC (Universal Naming Convention) 名は指定できません。</param>
+        <param name="directorySecurity">適用するセキュリティ。</param>
+        <summary>適用するセキュリティを指定して、指定したパスに 1 つ以上のサブディレクトリを作成します。 パスは、この <see cref="T:System.IO.DirectoryInfo" /> クラスのインスタンスに対する相対パスで指定できます。</summary>
+        <returns><paramref name="path" /> に指定された最後のディレクトリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されていると、すべてのディレクトリ`path`しない限り、作成の一部`path`が無効です。 `path`ファイル パスではなく、ディレクトリのパスを指定します。 サブディレクトリに既に存在する場合、このメソッドは何も行いません。  
+  
+> [!NOTE]
+>  パス名は 248 文字に制限されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は有効なファイル パスを指定していないか、または無効な <see langword="DirectoryInfo" /> 文字を含んでいます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが無効です。</exception>
+        <exception cref="T:System.IO.IOException">サブディレクトリを作成できません。  
+  
+ または  
+  
+ <paramref name="path" /> で指定された名前がファイルまたはディレクトリに既にあります。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大文字数を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。 指定されたパスかファイル名、またはその両方が長すぎます。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、ディレクトリを作成するためのコード アクセス許可がありません。  
+  
+ または  
+  
+ 呼び出し元には、返された <see cref="T:System.IO.DirectoryInfo" /> オブジェクトで記述されているディレクトリを読み取るためのコード アクセス許可がありません。  <paramref name="path" /> パラメーターが既存のディレクトリを記述する場合、これが発生する可能性があります。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />ドライブのラベルの一部ではないコロン文字 (:) が含まれています ("c:\\") です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public override void Delete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Delete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.Delete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.DirectoryInfo" /> が空の場合に、そのインスタンスを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、ディレクトリが空でないを削除しようとする場合に例外をスローします。  
+  
+ [!code-cpp[DirInfo Delete1#1](~/samples/snippets/cpp/VS_Snippets_CLR/DirInfo Delete1/CPP/dirinfo delete1.cpp#1)]
+ [!code-csharp[DirInfo Delete1#1](~/samples/snippets/csharp/VS_Snippets_CLR/DirInfo Delete1/CS/dirinfo delete1.cs#1)]
+ [!code-vb[DirInfo Delete1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/DirInfo Delete1/VB/dirinfo delete1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">ディレクトリに読み取り専用のファイルが含まれています。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">この <see cref="T:System.IO.DirectoryInfo" /> オブジェクトによって記述されるディレクトリは存在しないか、または見つかりませんでした。</exception>
+        <exception cref="T:System.IO.IOException">ディレクトリが空ではありません。  
+  
+ -または-  
+  
+ ディレクトリはアプリケーションの現在の作業ディレクトリです。  
+  
+ -または-  
+  
+ ディレクトリに開いているハンドルがあり、オペレーティング システムが Windows XP かそれ以前のバージョンです。 このハンドルが開いている原因は、ディレクトリを列挙したことにある可能性があります。 詳細については、次を参照してください。[する方法: ディレクトリと列挙ファイル](~/docs/standard/io/how-to-enumerate-directories-and-files.md)です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリを作成します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete (bool recursive);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete(bool recursive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.Delete(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="recursive" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="recursive">
+          このディレクトリ、そのサブディレクトリ、およびすべてのファイルを削除する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>中に含まれているサブディレクトリとファイルを削除するかどうかを指定して、<see cref="T:System.IO.DirectoryInfo" /> のインスタンスを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`DirectoryInfo`ファイルやサブディレクトリを含まない、このメソッドは、削除、`DirectoryInfo`場合でも`recursive`は`false`します。 削除しようとすると、`DirectoryInfo`が空でない場合に`recursive`は`false`スロー、<xref:System.IO.IOException>です。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、ディレクトリを削除するを示しています。 ディレクトリが削除されるためコメント アウト、`Delete`ディレクトリが存在するかをテストするには行です。 ディレクトリが正常に削除されたことをテストするコードの同じ行のコメントを解除します。  
+  
+ [!code-cpp[directoryinfodelete#1](~/samples/snippets/cpp/VS_Snippets_CLR/directoryinfodelete/CPP/directoryinfodelete.cpp#1)]
+ [!code-csharp[directoryinfodelete#1](~/samples/snippets/csharp/VS_Snippets_CLR/directoryinfodelete/CS/directoryinfodelete.cs#1)]
+ [!code-vb[directoryinfodelete#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/directoryinfodelete/VB/directoryinfodelete.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">ディレクトリに読み取り専用のファイルが含まれています。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">この <see cref="T:System.IO.DirectoryInfo" /> オブジェクトによって記述されるディレクトリは存在しないか、または見つかりませんでした。</exception>
+        <exception cref="T:System.IO.IOException">ディレクトリが読み取り専用です。  
+  
+ -または-  
+  
+ ディレクトリに 1 つ以上のファイルまたはサブディレクトリが含まれており、かつ <paramref name="recursive" /> が <see langword="false" /> です。  
+  
+ -または-  
+  
+ ディレクトリはアプリケーションの現在の作業ディレクトリです。  
+  
+ -または-  
+  
+ ディレクトリまたはそのファイルのうちの 1 つについて開かれているハンドルがあり、かつオペレーティング システムが Windows XP 以前です。 このハンドルが開いている原因は、ディレクトリおよびファイルを列挙したことにある可能性があります。 詳細については、次を参照してください。[する方法: ディレクトリと列挙ファイル](~/docs/standard/io/how-to-enumerate-directories-and-files.md)です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermissionAccess">書き込み権限の必要なフラグの書き込み、<see langword="DirectoryInfo" />とサブディレクトリを削除します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateDirectories">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.DirectoryInfo&gt; EnumerateDirectories ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.DirectoryInfo&gt; EnumerateDirectories() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.EnumerateDirectories" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.DirectoryInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のディレクトリの列挙可能なディレクトリ情報のコレクションを返します。</summary>
+        <returns>現在のディレクトリ内の列挙可能なディレクトリのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>と<xref:System.IO.DirectoryInfo.GetDirectories%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>のコレクションの列挙を開始する<xref:System.IO.DirectoryInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetDirectories%2A>の配列全体を待つ必要があります<xref:System.IO.DirectoryInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>効率的であることができます。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.DirectoryInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションのメソッドは新しい列挙を開始します。  
+  
+   
+  
+## Examples  
+ 次の例は、C:\Program Files ディレクトリ下のサブディレクトリを列挙しの値をチェックして 2009年以前に作成されたすべてのディレクトリの名前を取得する LINQ クエリを使用して、<xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>プロパティです。  
+  
+ サブディレクトリの名前のみ必要がある場合は、静的なを使用して<xref:System.IO.Directory>パフォーマンス向上のためのクラスです。 例については、次を参照してください。、<xref:System.IO.Directory.EnumerateDirectories%28System.String%29>メソッドです。  
+  
+ [!code-csharp[System.IO.DirectoryInfo.EnumDirs#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directoryinfo.enumdirs/cs/program.cs#1)]
+ [!code-vb[System.IO.DirectoryInfo.EnumDirs#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directoryinfo.enumdirs/vb/module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><see cref="T:System.IO.DirectoryInfo" /> オブジェクト内のカプセル化されたパスが有効ではありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateDirectories">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.DirectoryInfo&gt; EnumerateDirectories (string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.DirectoryInfo&gt; EnumerateDirectories(string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.EnumerateDirectories(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.DirectoryInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ディレクトリの名前と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <summary>指定された検索パターンに一致する列挙可能なディレクトリ情報のコレクションを返します。</summary>
+        <returns><paramref name="searchPattern" /> に一致する列挙可能なディレクトリのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致する文字列|  
+|------------------------|-------------|  
+|* (アスタリスク)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、文字列"* t"、文字"t"で終わるすべての名前を検索します。 ". `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>と<xref:System.IO.DirectoryInfo.GetDirectories%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>のコレクションの列挙を開始する<xref:System.IO.DirectoryInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetDirectories%2A>の配列全体を待つ必要があります<xref:System.IO.DirectoryInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>効率的であることができます。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.DirectoryInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションのメソッドは新しい列挙を開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><see cref="T:System.IO.DirectoryInfo" /> オブジェクト内のカプセル化されたパスが有効ではありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateDirectories">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.DirectoryInfo&gt; EnumerateDirectories (string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.DirectoryInfo&gt; EnumerateDirectories(string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.EnumerateDirectories(System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.DirectoryInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ディレクトリの名前と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <param name="searchOption">検索操作に現在のディレクトリのみを含めるのか、またはすべてのサブディレクトリを含めるのかを指定する列挙値の 1 つ。 既定値は <see cref="F:System.IO.SearchOption.TopDirectoryOnly" /> です。</param>
+        <summary>指定された検索パターンと、サブディレクトリを検索するかどうかを指定するオプションの設定に一致する列挙可能なディレクトリ情報のコレクションを返します。</summary>
+        <returns><paramref name="searchPattern" /> と <paramref name="searchOption" /> に一致する列挙可能なディレクトリのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致する文字列|  
+|------------------------|-------------|  
+|* (アスタリスク)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、文字列"* t"、文字"t"で終わるすべての名前を検索します。 ". `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ <xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>と<xref:System.IO.DirectoryInfo.GetDirectories%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>のコレクションの列挙を開始する<xref:System.IO.DirectoryInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetDirectories%2A>の配列全体を待つ必要があります<xref:System.IO.DirectoryInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateDirectories%2A>効率的であることができます。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.DirectoryInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションのメソッドは新しい列挙を開始します。  
+  
+   
+  
+## Examples  
+ 指定されたディレクトリから次の例では、このメソッドを使用して、<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>開始ディレクトリ内のディレクトリとファイルを列挙し、いずれかの詳細を表示する方法を超えるファイル 10 MB のサイズ。  
+  
+ [!code-csharp[System.IO.DirectoryInfo.EnumerateDirectories#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directoryinfo.enumeratedirectories/cs/program.cs#1)]
+ [!code-vb[System.IO.DirectoryInfo.EnumerateDirectories#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directoryinfo.enumeratedirectories/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は正しい <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><see cref="T:System.IO.DirectoryInfo" /> オブジェクト内のカプセル化されたパスが有効ではありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFiles">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.FileInfo&gt; EnumerateFiles ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.FileInfo&gt; EnumerateFiles() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.EnumerateFiles" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.FileInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のディレクトリに存在するファイル情報の列挙可能なコレクションを返します。</summary>
+        <returns>現在のディレクトリ内の列挙可能なファイルのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>と<xref:System.IO.DirectoryInfo.GetFiles%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>のコレクションの列挙を開始する<xref:System.IO.FileInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetFiles%2A>の配列全体を待つ必要があります<xref:System.IO.FileInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>効率的であることができます。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+-   <xref:System.IO.FileInfo.Length%2A>  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションのメソッドは新しい列挙を開始します。  
+  
+   
+  
+## Examples  
+ 次の例は、指定したディレクトリの下にファイルを列挙しの値をチェックして 2009年以前に作成されたすべてのファイルの名前を取得する LINQ クエリを使用して、<xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>プロパティです。  
+  
+ ファイルの名前のみ必要がある場合、静的なを使用して<xref:System.IO.Directory>パフォーマンス向上のためのクラスです。 例については、次を参照してください。、<xref:System.IO.Directory.EnumerateFiles%28System.String%29?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-csharp[System.IO.DirectoryInfo.EnumFiles#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directoryinfo.enumfiles/cs/program.cs#1)]
+ [!code-vb[System.IO.DirectoryInfo.EnumFiles#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directoryinfo.enumfiles/vb/module1.vb#1)]  
+  
+ 次の例では、別の検索オプションを使用してディレクトリ内のファイルを列挙する方法を示します。 この例では、log1.txt、log2.txt、test1.txt、test2.txt、test3.txt、およびを SubFile.txt をという名前のファイルを持つサブディレクトリをという名前のファイルのあるディレクトリを使用します。  
+  
+ [!code-csharp[System.IO.DirectoryInfo.EnumFiles#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directoryinfo.enumfiles/cs/program2.cs#2)]
+ [!code-vb[System.IO.DirectoryInfo.EnumFiles#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directoryinfo.enumfiles/vb/module2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><see cref="T:System.IO.DirectoryInfo" /> オブジェクト内のカプセル化されたパスが有効ではありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFiles">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.FileInfo&gt; EnumerateFiles (string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.FileInfo&gt; EnumerateFiles(string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.EnumerateFiles(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.FileInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ファイル名と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <summary>検索パターンに一致する列挙可能なファイル情報のコレクションを返します。</summary>
+        <returns><paramref name="searchPattern" /> に一致する列挙可能なファイルのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致する文字列|  
+|------------------------|-------------|  
+|* (アスタリスク)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、文字列"* t"、文字"t"で終わるすべての名前を検索します。 ". `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>と<xref:System.IO.DirectoryInfo.GetFiles%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>のコレクションの列挙を開始する<xref:System.IO.FileInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetFiles%2A>の配列全体を待つ必要があります<xref:System.IO.FileInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>効率的であることができます。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+-   <xref:System.IO.FileInfo.Length%2A>  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションのメソッドは新しい列挙を開始します。  
+  
+   
+  
+## Examples  
+ 次の例では、別の検索オプションを使用してディレクトリ内のファイルを列挙する方法を示します。 この例では、log1.txt、log2.txt、test1.txt、test2.txt、test3.txt、およびを SubFile.txt をという名前のファイルを持つサブディレクトリをという名前のファイルのあるディレクトリを使用します。  
+  
+ [!code-csharp[System.IO.DirectoryInfo.EnumFiles#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directoryinfo.enumfiles/cs/program2.cs#2)]
+ [!code-vb[System.IO.DirectoryInfo.EnumFiles#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directoryinfo.enumfiles/vb/module2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><see cref="T:System.IO.DirectoryInfo" /> オブジェクト内のカプセル化されたパスが有効ではありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFiles">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.FileInfo&gt; EnumerateFiles (string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.FileInfo&gt; EnumerateFiles(string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.EnumerateFiles(System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.FileInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ファイル名と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <param name="searchOption">検索操作に現在のディレクトリのみを含めるのか、またはすべてのサブディレクトリを含めるのかを指定する列挙値の 1 つ。 既定値は <see cref="F:System.IO.SearchOption.TopDirectoryOnly" /> です。</param>
+        <summary>指定された検索パターンと、サブディレクトリを検索するかどうかを指定するオプションの設定に一致する列挙可能なファイル情報のコレクションを返します。</summary>
+        <returns><paramref name="searchPattern" /> と <paramref name="searchOption" /> に一致する列挙可能なファイルのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致する文字列|  
+|------------------------|-------------|  
+|* (アスタリスク)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、文字列"* t"、文字"t"で終わるすべての名前を検索します。 ". `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>と<xref:System.IO.DirectoryInfo.GetFiles%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>のコレクションの列挙を開始する<xref:System.IO.FileInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetFiles%2A>の配列全体を待つ必要があります<xref:System.IO.FileInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>効率的であることができます。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+-   <xref:System.IO.FileInfo.Length%2A>  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションのメソッドは新しい列挙を開始します。  
+  
+   
+  
+## Examples  
+ 次の例では、別の検索オプションを使用してディレクトリ内のファイルを列挙する方法を示します。 この例では、log1.txt、log2.txt、test1.txt、test2.txt、test3.txt、およびを SubFile.txt をという名前のファイルを持つサブディレクトリをという名前のファイルのあるディレクトリを使用します。  
+  
+ [!code-csharp[System.IO.DirectoryInfo.EnumFiles#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directoryinfo.enumfiles/cs/program2.cs#2)]
+ [!code-vb[System.IO.DirectoryInfo.EnumFiles#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directoryinfo.enumfiles/vb/module2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は正しい <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><see cref="T:System.IO.DirectoryInfo" /> オブジェクト内のカプセル化されたパスが有効ではありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFileSystemInfos">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.FileSystemInfo&gt; EnumerateFileSystemInfos ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.FileSystemInfo&gt; EnumerateFileSystemInfos() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.EnumerateFileSystemInfos" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.FileSystemInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のディレクトリ内の列挙可能なファイル システム情報のコレクションを返します。</summary>
+        <returns>現在のディレクトリ内の列挙可能なファイル システム情報のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>と<xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>のコレクションの列挙を開始する<xref:System.IO.FileInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>の配列全体を待つ必要があります<xref:System.IO.FileSystemInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>効率的であることができます。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileSystemInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションのメソッドは新しい列挙を開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><see cref="T:System.IO.DirectoryInfo" /> オブジェクト内のカプセル化されたパスが有効ではありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFileSystemInfos">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.FileSystemInfo&gt; EnumerateFileSystemInfos (string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.FileSystemInfo&gt; EnumerateFileSystemInfos(string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.EnumerateFileSystemInfos(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.FileSystemInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ディレクトリの名前と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <summary>指定された検索パターンに一致する列挙可能なファイル システム情報のコレクションを返します。</summary>
+        <returns><paramref name="searchPattern" /> に一致する列挙可能なファイル システム情報オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致する文字列|  
+|------------------------|-------------|  
+|* (アスタリスク)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、文字列"* t"、文字"t"で終わるすべての名前を検索します。 ". `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ <xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>と<xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>のコレクションの列挙を開始する<xref:System.IO.FileInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>の配列全体を待つ必要があります<xref:System.IO.FileSystemInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>効率的であることができます。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileSystemInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションのメソッドは新しい列挙を開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><see cref="T:System.IO.DirectoryInfo" /> オブジェクト内のカプセル化されたパスが有効ではありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFileSystemInfos">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.FileSystemInfo&gt; EnumerateFileSystemInfos (string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.FileSystemInfo&gt; EnumerateFileSystemInfos(string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.EnumerateFileSystemInfos(System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.FileSystemInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ディレクトリの名前と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <param name="searchOption">検索操作に現在のディレクトリのみを含めるのか、またはすべてのサブディレクトリを含めるのかを指定する列挙値の 1 つ。 既定値は <see cref="F:System.IO.SearchOption.TopDirectoryOnly" /> です。</param>
+        <summary>指定された検索パターンと、サブディレクトリを検索するかどうかを指定するオプションの設定に一致する列挙可能なファイル システム情報のコレクションを返します。</summary>
+        <returns><paramref name="searchPattern" /> および <paramref name="searchOption" /> に一致する列挙可能なファイル システム情報オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致する文字列|  
+|------------------------|-------------|  
+|* (アスタリスク)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、文字列"* t"、文字"t"で終わるすべての名前を検索します。 ". `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ <xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>と<xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>のコレクションの列挙を開始する<xref:System.IO.FileInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetFileSystemInfos%2A>の配列全体を待つ必要があります<xref:System.IO.FileSystemInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateFileSystemInfos%2A>効率的であることができます。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileSystemInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションのメソッドは新しい列挙を開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は正しい <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><see cref="T:System.IO.DirectoryInfo" /> オブジェクト内のカプセル化されたパスが有効ではありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public override bool Exists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Exists" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DirectoryInfo.Exists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリが存在するかどうかを示す値を取得します。</summary>
+        <value>
+          ディレクトリが存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.DirectoryInfo.Exists%2A>プロパティから返される`false`指定したファイルが存在するかどうかを判断するときにエラーが発生した場合。 これは無効な文字または文字が多すぎます、失敗、または見つからないディスクでは、ファイル名を渡すなどの例外が発生する状況で発生する、呼び出し元には、ファイルの読み取りアクセス許可がない場合またはします。  
+  
+   
+  
+## Examples  
+ 次の例での使用、`Exists`ターゲット ディレクトリにコピーして、ソース ディレクトリのコンテキストのプロパティです。  
+  
+ [!code-cpp[DirectoryInfo Usage Example#1](~/samples/snippets/cpp/VS_Snippets_CLR/DirectoryInfo Usage Example/CPP/copydirectory.cpp#1)]
+ [!code-csharp[DirectoryInfo Usage Example#1](~/samples/snippets/csharp/VS_Snippets_CLR/DirectoryInfo Usage Example/CS/copydirectory.cs#1)]
+ [!code-vb[DirectoryInfo Usage Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/DirectoryInfo Usage Example/VB/copydirectory.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullName">
+      <MemberSignature Language="C#" Value="public override string FullName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FullName" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DirectoryInfo.FullName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリの絶対パスを取得します。</summary>
+        <value>絶対パスを含んでいる文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetAccessControl">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>現在のディレクトリのアクセス制御リスト (ACL: Access Control List) エントリを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.IO.DirectoryInfo.GetAccessControl%2A>アクセス権を取得するメソッドが現在のファイルのリスト (ACL) エントリを制御します。  
+  
+ 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetAccessControl">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.DirectorySecurity GetAccessControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.DirectorySecurity GetAccessControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.GetAccessControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.DirectorySecurity</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.AccessControl.DirectorySecurity" /> オブジェクトが示すディレクトリのアクセス制御リスト (ACL) エントリをカプセル化する <see cref="T:System.IO.DirectoryInfo" /> オブジェクトを取得します。</summary>
+        <returns>ディレクトリのアクセス制御規則をカプセル化する <see cref="T:System.Security.AccessControl.DirectorySecurity" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことと同じではこのメソッドのオーバー ロードを呼び出して、<xref:System.IO.Directory.GetAccessControl%2A>メソッドのオーバー ロードと、アクセスを指定するコントロールでのセクションでは<xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType>& #124 です。<xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType> & #124 です。<xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType> (<xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType>`Or`<xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType>`Or`<xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType> in Visual Basic).  
+  
+ 使用して、<xref:System.IO.DirectoryInfo.GetAccessControl%2A>を現在のファイルのアクセス制御リスト (ACL) エントリを取得する方法です。  
+  
+ ACL には、個人、グループ、または権限がない、指定したファイルまたはディレクトリの特定のアクションをユーザーがについて説明します。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.DirectoryInfo.GetAccessControl%2A>と<xref:System.IO.DirectoryInfo.SetAccessControl%2A>メソッドを追加し、削除、アクセス制御リスト (ACL) エントリをディレクトリからです。  
+  
+ [!code-cpp[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/cpp/sample.cpp#1)]
+ [!code-csharp[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/CS/sample.cs#1)]
+ [!code-vb[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.SystemException">ディレクトリが見つからないか、または変更されています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ディレクトリが読み取り専用です。  
+  
+ -または-  
+  
+ この操作は、現在のプラットフォームではサポートされていません。  
+  
+ または  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.IOException">ディレクトリを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows 2000 以降ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリのアクセス制御リスト (ACL) を列挙する権限です。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" />、<see cref="F:System.Security.AccessControl.AccessControlActions.View" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessControl">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.DirectorySecurity GetAccessControl (System.Security.AccessControl.AccessControlSections includeSections);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.DirectorySecurity GetAccessControl(valuetype System.Security.AccessControl.AccessControlSections includeSections) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.GetAccessControl(System.Security.AccessControl.AccessControlSections)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.DirectorySecurity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="includeSections" Type="System.Security.AccessControl.AccessControlSections" />
+      </Parameters>
+      <Docs>
+        <param name="includeSections">取得するアクセス制御リスト (ACL) の情報の型を指定する <see cref="T:System.Security.AccessControl.AccessControlSections" /> 値のいずれか。</param>
+        <summary>現在の <see cref="T:System.Security.AccessControl.DirectorySecurity" /> オブジェクトが示すディレクトリに関する指定された型のアクセス制御リスト (ACL) エントリをカプセル化する <see cref="T:System.IO.DirectoryInfo" /> オブジェクトを取得します。</summary>
+        <returns><see cref="T:System.Security.AccessControl.DirectorySecurity" /> パラメーターによって記述されるファイルのアクセス制御規則をカプセル化する <paramref name="path" /> オブジェクト。  
+  
+ 例外  
+  
+ <list type="table"><listheader><term>例外の種類  
+  
+ </term><description>条件  
+  
+ </description></listheader><item><term><see cref="T:System.SystemException" /></term><description>ディレクトリが見つからないか、変更します。  
+  
+ </description></item><item><term><see cref="T:System.UnauthorizedAccessException" /></term><description>現在のプロセスには、ディレクトリを開きへのアクセスはありません。  
+  
+ </description></item><item><term><see cref="T:System.IO.IOException" /></term><description>ディレクトリを開くときに I/O エラーが発生しました。  
+  
+ </description></item><item><term><see cref="T:System.PlatformNotSupportedException" /></term><description>現在のオペレーティング システムは Microsoft Windows 2000 以降ではありません。  
+  
+ </description></item><item><term><see cref="T:System.UnauthorizedAccessException" /></term><description>ディレクトリは、読み取り専用です。  
+  
+ または  
+  
+ この操作は、現在のプラットフォームではサポートされていません。  
+  
+ または  
+  
+ 呼び出し元に、必要なアクセス許可がありません。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.DirectoryInfo.GetAccessControl%2A>を現在のファイルのアクセス制御リスト (ACL) エントリを取得する方法です。  
+  
+ ACL には、個人、グループ、または権限がない、指定したファイルまたはディレクトリの特定のアクションをユーザーがについて説明します。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリのアクセス制御リスト (ACL) を列挙する権限です。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" />、<see cref="F:System.Security.AccessControl.AccessControlActions.View" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectories">
+      <MemberSignature Language="C#" Value="public System.IO.DirectoryInfo[] GetDirectories ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.DirectoryInfo[] GetDirectories() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.GetDirectories" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のディレクトリのサブディレクトリを返します。</summary>
+        <returns><see cref="T:System.IO.DirectoryInfo" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブディレクトリが存在しない場合、このメソッドは空の配列を返します。 このメソッドは、再帰的ではありません。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.DirectoryInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、ルート ディレクトリ内のすべてのディレクトリを取得し、ディレクトリ名を表示します。  
+  
+ [!code-cpp[directoryinfogetdirectories#1](~/samples/snippets/cpp/VS_Snippets_CLR/directoryinfogetdirectories/CPP/directoryinfogetdirectories.cpp#1)]
+ [!code-csharp[directoryinfogetdirectories#1](~/samples/snippets/csharp/VS_Snippets_CLR/directoryinfogetdirectories/CS/directoryinfogetdirectories.cs#1)]
+ [!code-vb[directoryinfogetdirectories#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/directoryinfogetdirectories/VB/directoryinfogetdirectories.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">カプセル化されたパス、<see cref="T:System.IO.DirectoryInfo" />オブジェクトはマップされていないドライブにあるなど、無効です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectories">
+      <MemberSignature Language="C#" Value="public System.IO.DirectoryInfo[] GetDirectories (string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.DirectoryInfo[] GetDirectories(string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.GetDirectories(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ディレクトリの名前と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <summary>現在の <see cref="T:System.IO.DirectoryInfo" /> 内にあり、指定した検索基準に一致するディレクトリの配列を返します。</summary>
+        <returns><see langword="DirectoryInfo" /> に一致する <paramref name="searchPattern" /> 型の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致する文字列|  
+|------------------------|-------------|  
+|* (アスタリスク)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、文字列"* t"、文字"t"で終わるすべての名前を検索します。 ". `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.DirectoryInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、パス内の指定した文字を含むディレクトリをカウントします。  
+  
+ [!code-cpp[DirInfo GetDirs2#1](~/samples/snippets/cpp/VS_Snippets_CLR/DirInfo GetDirs2/CPP/dirinfo getdirs2.cpp#1)]
+ [!code-csharp[DirInfo GetDirs2#1](~/samples/snippets/csharp/VS_Snippets_CLR/DirInfo GetDirs2/CS/dirinfo getdirs2.cs#1)]
+ [!code-vb[DirInfo GetDirs2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/DirInfo GetDirs2/VB/dirinfo getdirs2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="searchPattern" />によって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><see langword="DirectoryInfo" /> オブジェクト内のカプセル化されたパスが有効ではありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとディレクトリとパスにアクセスするための読み取り。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectories">
+      <MemberSignature Language="C#" Value="public System.IO.DirectoryInfo[] GetDirectories (string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.DirectoryInfo[] GetDirectories(string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.GetDirectories(System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ディレクトリの名前と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <param name="searchOption">検索操作に現在のディレクトリのみを含めるのか、またはすべてのサブディレクトリを含めるのかを指定する列挙値の 1 つ。</param>
+        <summary>現在の <see cref="T:System.IO.DirectoryInfo" /> 内にある、指定した検索条件に一致し、サブディレクトリを検索するかどうかを決定する値を持つディレクトリの配列を返します。</summary>
+        <returns><see langword="DirectoryInfo" /> に一致する <paramref name="searchPattern" /> 型の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致する文字列|  
+|------------------------|-------------|  
+|* (アスタリスク)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、文字列"* t"、文字"t"で終わるすべての名前を検索します。 ". `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ サブディレクトリがないかに一致するサブディレクトリのかどうか、`searchPattern`パラメーター、このメソッドは、空の配列を返します。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.DirectoryInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、すべてのディレクトリおよび文字"c"で始まるファイルを示してで"c:\\"です。  
+  
+ [!code-cpp[System.IO.DirectoryInfo_SearchOptions#00](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.DirectoryInfo_SearchOptions/cpp/searchoption.cpp#00)]
+ [!code-csharp[System.IO.DirectoryInfo_SearchOptions#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DirectoryInfo_SearchOptions/cs/searchoption.cs#00)]
+ [!code-vb[System.IO.DirectoryInfo_SearchOptions#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DirectoryInfo_SearchOptions/vb/searchoption.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="searchPattern" />によって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は正しい <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><see langword="DirectoryInfo" /> オブジェクト内のカプセル化されたパスが有効ではありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとディレクトリとパスにアクセスするための読み取り。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFiles">
+      <MemberSignature Language="C#" Value="public System.IO.FileInfo[] GetFiles ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileInfo[] GetFiles() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.GetFiles" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のディレクトリからファイル一覧を返します。</summary>
+        <returns><see cref="T:System.IO.FileInfo" /> 型の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>と<xref:System.IO.DirectoryInfo.GetFiles%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>のコレクションの列挙を開始する<xref:System.IO.FileInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetFiles%2A>の配列全体を待つ必要があります<xref:System.IO.FileInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>効率的であることができます。  
+  
+ 内のファイルがない場合、 <xref:System.IO.DirectoryInfo>、このメソッドは、空の配列を返します。  
+  
+ 返されるファイル名の順序は保証されません。使用して、<xref:System.Array.Sort%2A>メソッドの特定の並べ替え順序が必要な場合です。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+-   <xref:System.IO.FileInfo.Length%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、別の検索オプションを使用してディレクトリからファイルの一覧を取得する方法を示します。 この例では、log1.txt、log2.txt、test1.txt、test2.txt、test3.txt、およびを SubFile.txt をという名前のファイルを持つサブディレクトリをという名前のファイルのあるディレクトリを使用します。  
+  
+ [!code-csharp[directoryinfogetfiles#2](~/samples/snippets/csharp/VS_Snippets_CLR/directoryinfogetfiles/CS/directoryinfogetfiles2.cs#2)]
+ [!code-vb[directoryinfogetfiles#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/directoryinfogetfiles/VB/directoryinfogetfiles2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、パスが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFiles">
+      <MemberSignature Language="C#" Value="public System.IO.FileInfo[] GetFiles (string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileInfo[] GetFiles(string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.GetFiles(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ファイル名と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <summary>現在のディレクトリから、指定した検索パターンに一致するファイル一覧を返します。</summary>
+        <returns><see cref="T:System.IO.FileInfo" /> 型の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致する文字列|  
+|------------------------|-------------|  
+|* (アスタリスク)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、文字列"* t"、文字"t"で終わるすべての名前を検索します。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>と<xref:System.IO.DirectoryInfo.GetFiles%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>のコレクションの列挙を開始する<xref:System.IO.FileInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetFiles%2A>の配列全体を待つ必要があります<xref:System.IO.FileInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>効率的であることができます。  
+  
+ 内のファイルがない場合、 <xref:System.IO.DirectoryInfo>、このメソッドは、空の配列を返します。  
+  
+ 次のワイルドカードの指定子が許可される、`searchPattern`パラメーター。  
+  
+|ワイルドカード文字|説明|  
+|------------------------|-----------------|  
+|*|0 個以上の文字です。|  
+|?|正確に 0 個または 1 つの文字です。|  
+  
+ 返されるファイル名の順序は保証されません。使用して、<xref:System.Array.Sort%2A>メソッドの特定の並べ替え順序が必要な場合です。  
+  
+ ワイルドカードを使用します。 たとえば、 `searchPattern` "*.txt"検索のすべてのファイル名"txt"の拡張機能を含む文字列します。 `searchPattern`文字列"s\*"すべて"s"で始まる名前のファイルを検索します。 ファイルと一致するファイル、または いいえがある場合、`searchPattern`内の文字列、 <xref:System.IO.DirectoryInfo>、このメソッドは、空の配列を返します。  
+  
+> [!NOTE]
+>  アスタリスクのワイルドカード文字を使用する場合、 `searchPattern` (たとえば、"*.txt")、一致の動作は指定されたファイル拡張子の長さによって異なります。 A`searchPattern`ちょうど 3 文字の拡張機能が最初の 3 文字で指定されたファイル拡張子が一致する 3 つ以上の文字の拡張子を持つファイルを返すファイルを使用して、`searchPattern`です。 A`searchPattern`ファイルを使用して 1 つ、2 つ、または 4 つ以上の文字の拡張機能がその長さだけで指定されたファイル拡張子に一致する拡張子を持つファイルのみを返す、`searchPattern`です。 疑問符 (?) のワイルドカード文字を使用する場合、このメソッドは、指定されたファイル拡張子に一致するファイルのみを返します。 たとえば、2 つのファイル ディレクトリ、"file1.txt"および"file1.txtother"の検索パターンで指定された"ファイルか。txt"には、検索パターンの中に、最初のファイルのみが返されます"ファイル\*.txt"ファイル ファイルの両方を返します。  
+  
+> [!NOTE]
+>  検索パターンに似ていますので、このメソッドは、8.3 ファイル名の形式と長いファイル名の形式の両方でのファイル名をチェックして、"* 1\*.txt"予期しないファイル名を返す可能性があります。 などの検索パターンを使用して"\*1\*.txt"と同等の 8.3 ファイル名の形式が"longf~1.txt"になるので"longfilename.txt"が返されます。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+-   <xref:System.IO.FileInfo.Length%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、別の検索オプションを使用してディレクトリからファイルの一覧を取得する方法を示します。 この例では、log1.txt、log2.txt、test1.txt、test2.txt、test3.txt、およびを SubFile.txt をという名前のファイルを持つサブディレクトリをという名前のファイルのあるディレクトリを使用します。  
+  
+ [!code-csharp[directoryinfogetfiles#2](~/samples/snippets/csharp/VS_Snippets_CLR/directoryinfogetfiles/CS/directoryinfogetfiles2.cs#2)]
+ [!code-vb[directoryinfogetfiles#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/directoryinfogetfiles/VB/directoryinfogetfiles2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="searchPattern" />によって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">パスにファイルとディレクトリからの読み取りにアクセスします。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFiles">
+      <MemberSignature Language="C#" Value="public System.IO.FileInfo[] GetFiles (string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileInfo[] GetFiles(string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.GetFiles(System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ファイル名と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <param name="searchOption">検索操作に現在のディレクトリのみを含めるのか、またはすべてのサブディレクトリを含めるのかを指定する列挙値の 1 つ。</param>
+        <summary>現在のディレクトリから、指定した検索パターンに一致し、サブディレクトリを検索するかどうかを決定する値を持つファイル一覧を返します。</summary>
+        <returns><see cref="T:System.IO.FileInfo" /> 型の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.DirectoryInfo.EnumerateFiles%2A>と<xref:System.IO.DirectoryInfo.GetFiles%2A>メソッドが次のように異なります。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>のコレクションの列挙を開始する<xref:System.IO.FileInfo>オブジェクトのコレクション全体が返される前にします。  
+  
+-   使用すると<xref:System.IO.DirectoryInfo.GetFiles%2A>の配列全体を待つ必要があります<xref:System.IO.FileInfo>配列にアクセスする前に返されるオブジェクト。  
+  
+ そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.DirectoryInfo.EnumerateFiles%2A>効率的であることができます。  
+  
+ 内のファイルがない場合、 <xref:System.IO.DirectoryInfo>、このメソッドは、空の配列を返します。  
+  
+ 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカード文字|説明|  
+|------------------------|-----------------|  
+|* (アスタリスク)|0 個以上の文字です。|  
+|? (疑問符 (?))|正確に 0 個または 1 つの文字です。|  
+  
+ 返されるファイル名の順序は保証されません。使用して、<xref:System.Array.Sort%2A>メソッドの特定の並べ替え順序が必要な場合です。  
+  
+ ワイルドカードを使用します。 たとえば、 `searchPattern` "*.txt"検索のすべてのファイル名"txt"の拡張機能を含む文字列します。 `searchPattern`文字列"s\*"すべて"s"で始まる名前のファイルを検索します。 ファイルと一致するファイル、または いいえがある場合、`searchPattern`内の文字列、 <xref:System.IO.DirectoryInfo>、このメソッドは、空の配列を返します。  
+  
+> [!NOTE]
+>  アスタリスクのワイルドカード文字を使用する場合、 `searchPattern` (たとえば、"*.txt")、一致の動作は指定されたファイル拡張子の長さによって異なります。 A`searchPattern`ちょうど 3 文字の拡張機能が最初の 3 文字で指定されたファイル拡張子が一致する 3 つ以上の文字の拡張子を持つファイルを返すファイルを使用して、`searchPattern`です。 A`searchPattern`ファイルを使用して 1 つ、2 つ、または 4 つ以上の文字の拡張機能がその長さだけで指定されたファイル拡張子に一致する拡張子を持つファイルのみを返す、`searchPattern`です。 疑問符 (?) のワイルドカード文字を使用する場合、このメソッドは、指定されたファイル拡張子に一致するファイルのみを返します。 たとえば、2 つのファイル ディレクトリ、"file1.txt"および"file1.txtother"の検索パターンで指定された"ファイルか。txt"には、検索パターンの中に、最初のファイルのみが返されます"ファイル\*.txt"ファイル ファイルの両方を返します。  
+  
+ 次の一覧の長さが異なるの動作を示しています、`searchPattern`パラメーター。  
+  
+-   "* .abc"、拡張機能 of.abc,.abcd,.abcde,.abcdef を持つファイルを返すにします。  
+  
+-   "*.abcd"では、拡張子 of.abcd を持つファイルのみを返します。  
+  
+-   "*.abcde"では、拡張子 of.abcde を持つファイルのみを返します。  
+  
+-   "*.abcdef"では、拡張子 of.abcdef を持つファイルのみを返します。  
+  
+> [!NOTE]
+>  検索パターンに似ていますので、このメソッドは、8.3 ファイル名の形式と長いファイル名の形式の両方でのファイル名をチェックして、"* 1\*.txt"予期しないファイル名を返す可能性があります。 などの検索パターンを使用して"\*1\*.txt"と同等の 8.3 ファイル名の形式が"longf~1.txt"になるので"longfilename.txt"が返されます。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileInfo>プロパティ。  
+  
+1.  <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+2.  <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+3.  <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+4.  <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+5.  <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+6.  <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+7.  <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+8.  <xref:System.IO.FileInfo.Length%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、別の検索オプションを使用してディレクトリからファイルの一覧を取得する方法を示します。 この例では、log1.txt、log2.txt、test1.txt、test2.txt、test3.txt、およびを SubFile.txt をという名前のファイルを持つサブディレクトリをという名前のファイルのあるディレクトリを使用します。  
+  
+ [!code-csharp[directoryinfogetfiles#2](~/samples/snippets/csharp/VS_Snippets_CLR/directoryinfogetfiles/CS/directoryinfogetfiles2.cs#2)]
+ [!code-vb[directoryinfogetfiles#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/directoryinfogetfiles/VB/directoryinfogetfiles2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="searchPattern" />によって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は有効な <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">パスにファイルとディレクトリからの読み取りにアクセスします。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileSystemInfos">
+      <MemberSignature Language="C#" Value="public System.IO.FileSystemInfo[] GetFileSystemInfos ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileSystemInfo[] GetFileSystemInfos() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.GetFileSystemInfos" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileSystemInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ディレクトリ内のすべてのファイルとサブディレクトリを表す、厳密に型指定された <see cref="T:System.IO.FileSystemInfo" /> エントリの配列を返します。</summary>
+        <returns>厳密に型指定された <see cref="T:System.IO.FileSystemInfo" /> エントリの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルまたはディレクトリがない場合、 <xref:System.IO.DirectoryInfo>、このメソッドは、空の配列を返します。 このメソッドは、再帰的ではありません。  
+  
+ サブディレクトリを<xref:System.IO.FileSystemInfo>このメソッドによって返されるオブジェクトは、派生クラスにキャストできる<xref:System.IO.DirectoryInfo>です。 使用して、<xref:System.IO.FileAttributes>によって返される値、<xref:System.IO.FileSystemInfo.Attributes%2A?displayProperty=nameWithType>プロパティを決定するかどうか、<xref:System.IO.FileSystemInfo>ファイルまたはディレクトリを表します。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileSystemInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、ファイルと、指定したディレクトリの下のディレクトリをカウントします。  
+  
+ [!code-csharp[FSizeSort#1](~/samples/snippets/csharp/VS_Snippets_CLR/FSizeSort/CS/fsizesort.cs#1)]
+ [!code-vb[FSizeSort#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FSizeSort/VB/fsizesort.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.DirectoryNotFoundException">パスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileSystemInfos">
+      <MemberSignature Language="C#" Value="public System.IO.FileSystemInfo[] GetFileSystemInfos (string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileSystemInfo[] GetFileSystemInfos(string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.GetFileSystemInfos(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileSystemInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ディレクトリおよびファイルの名前と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <summary>指定した検索条件に一致するファイルおよびサブディレクトリを表す、厳密に型指定された <see cref="T:System.IO.FileSystemInfo" /> オブジェクトの配列を取得します。</summary>
+        <returns>検索基準に一致する、厳密に型指定された <see langword="FileSystemInfo" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致する文字列|  
+|------------------------|-------------|  
+|* (アスタリスク)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、文字列"* t"、文字"t"で終わるすべての名前を検索します。 ". `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ このメソッドは、再帰的ではありません。  
+  
+ サブディレクトリを<xref:System.IO.FileSystemInfo>このメソッドによって返されるオブジェクトは、派生クラスにキャストできる<xref:System.IO.DirectoryInfo>です。 使用して、<xref:System.IO.FileAttributes>によって返される値、<xref:System.IO.FileSystemInfo.Attributes%2A?displayProperty=nameWithType>プロパティを決定するかどうか、<xref:System.IO.FileSystemInfo>ファイルまたはディレクトリを表します。  
+  
+ ワイルドカードを使用します。 たとえば、`searchPattern`文字列"* t"内のすべてのディレクトリ名の検索`path`文字"t"で終了します。 `searchPattern`文字列"s\*"内のすべてのディレクトリ名の検索`path`"s"で開始します。  
+  
+ 文字列".."でのみ使用できます`searchPattern`指定されている場合、有効なディレクトリ名の一部としてなど、ディレクトリ名に"、。 します。b"です。 ディレクトリ階層を移動する使用することはできません。 ファイルまたはディレクトリ、またはファイルやに一致するディレクトリがある場合、`searchPattern`内の文字列、 <xref:System.IO.DirectoryInfo>、このメソッドは、空の配列を返します。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileSystemInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、ファイルおよび指定した検索パターンに一致するディレクトリをカウントします。  
+  
+ [!code-csharp[DirInfo GetFileSysInfos2#1](~/samples/snippets/csharp/VS_Snippets_CLR/DirInfo GetFileSysInfos2/CS/dirinfo getfilesysinfos2.cs#1)]
+ [!code-vb[DirInfo GetFileSysInfos2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/DirInfo GetFileSysInfos2/VB/dirinfo getfilesysinfos2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="searchPattern" />によって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとディレクトリとパスにアクセスするための読み取り。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileSystemInfos">
+      <MemberSignature Language="C#" Value="public System.IO.FileSystemInfo[] GetFileSystemInfos (string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileSystemInfo[] GetFileSystemInfos(string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.GetFileSystemInfos(System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.FileSystemInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">ディレクトリおよびファイルの名前と照合する検索文字列。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。 既定のパターンは "*" で、すべてのファイルが返されます。</param>
+        <param name="searchOption">検索操作に現在のディレクトリのみを含めるのか、またはすべてのサブディレクトリを含めるのかを指定する列挙値の 1 つ。 既定値は <see cref="F:System.IO.SearchOption.TopDirectoryOnly" /> です。</param>
+        <summary>指定した検索条件に一致するファイルおよびサブディレクトリを表す <see cref="T:System.IO.FileSystemInfo" /> オブジェクトの配列を取得します。</summary>
+        <returns>検索条件に一致するファイル システム エントリの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致する文字列|  
+|------------------------|-------------|  
+|* (アスタリスク)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、文字列"* t"、文字"t"で終わるすべての名前を検索します。 ". `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ サブディレクトリを<xref:System.IO.FileSystemInfo>このメソッドによって返されるオブジェクトは、派生クラスにキャストできる<xref:System.IO.DirectoryInfo>です。 使用して、<xref:System.IO.FileAttributes>によって返される値、<xref:System.IO.FileSystemInfo.Attributes%2A?displayProperty=nameWithType>プロパティを決定するかどうか、<xref:System.IO.FileSystemInfo>ファイルまたはディレクトリを表します。  
+  
+ このメソッドは、次の値を事前に入力<xref:System.IO.FileSystemInfo>プロパティ。  
+  
+-   <xref:System.IO.FileSystemInfo.Attributes%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.CreationTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastAccessTimeUtc%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTime%2A>  
+  
+-   <xref:System.IO.FileSystemInfo.LastWriteTimeUtc%2A>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="searchPattern" />によって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は有効な <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが無効です (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveTo">
+      <MemberSignature Language="C#" Value="public void MoveTo (string destDirName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MoveTo(string destDirName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.MoveTo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destDirName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="destDirName">このディレクトリの移動先の名前とパス。 別のディスク ボリュームまたは同じ名前のディレクトリは移動先として指定できません。 このディレクトリをサブディレクトリとして追加する場合は、既存のディレクトリを指定できます。</param>
+        <summary><see cref="T:System.IO.DirectoryInfo" /> のインスタンスとその内容を新しいパスに移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IO.IOException>場合、たとえば、c:\mydir を c:\public に移動しようとして、c:\public が既に存在します。 指定する必要があります"c:\\\public\\\mydir"として、`destDirName`パラメーターなど、新しいディレクトリ名を指定または"c:\\\newdir"です。  
+  
+ このメソッドは、読み取り専用のディレクトリにディレクトリを移動を許可します。 いずれのディレクトリの読み取り/書き込み属性が影響を受けます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、ディレクトリを移動を示しています。  
+  
+ [!code-cpp[directoryinfomoveto#1](~/samples/snippets/cpp/VS_Snippets_CLR/directoryinfomoveto/CPP/directoryinfomoveto.cpp#1)]
+ [!code-csharp[directoryinfomoveto#1](~/samples/snippets/csharp/VS_Snippets_CLR/directoryinfomoveto/CS/directoryinfomoveto.cs#1)]
+ [!code-vb[directoryinfomoveto#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/directoryinfomoveto/VB/directoryinfomoveto.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destDirName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="destDirName" />空の文字列 ("") です。</exception>
+        <exception cref="T:System.IO.IOException">ディレクトリを別のボリュームに移動しようとしました。  
+  
+ または  
+  
+ <paramref name="destDirName" />既に存在します。  
+  
+ または  
+  
+ このパスへのアクセスが許可されていません。  
+  
+ または  
+  
+ 移動するディレクトリと対象のディレクトリの名前が同じです。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">対象のディレクトリが見つかりません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや書き込みファイルとディレクトリとコピー先ディレクトリにアクセスするためです。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DirectoryInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IO.DirectoryInfo" /> の現在のインスタンスの名前を取得します。</summary>
+        <value>ディレクトリ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、 <xref:System.IO.DirectoryInfo.Name%2A> "Bin"などのディレクトリの名前のみを返します。 "C:\public\Bin"など、完全なパスを取得する、<xref:System.IO.FileSystemInfo.FullName%2A>プロパティです。  
+  
+ <xref:System.IO.DirectoryInfo.Name%2A>のプロパティ、<xref:System.IO.DirectoryInfo>権限は必要ありません (を構築するために必要なディレクトリに読み取りアクセス許可を超える、 <xref:System.IO.DirectoryInfo.Exists%2A>) ディレクトリの名前を与えることができますが、します。 渡す必要がある場合は、out、<xref:System.IO.DirectoryInfo>暗号強度が高い名前を持つ保護されたディレクトリに、信頼されていないコードの使用のダミー ディレクトリを作成します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例には、現在の名前が表示されます。`DirectoryInfo`だけをインスタンス化します。  
+  
+ [!code-cpp[Classic DirectoryInfo.Name Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic DirectoryInfo.Name Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DirectoryInfo.Name Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic DirectoryInfo.Name Example/CS/source.cs#1)]
+ [!code-vb[Classic DirectoryInfo.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic DirectoryInfo.Name Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.IO.DirectoryInfo Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.DirectoryInfo Parent" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DirectoryInfo.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたサブディレクトリの親ディレクトリを取得します。</summary>
+        <value>親ディレクトリ。 または<see langword="null" />パスが null の場合、またはファイル パスがルートを表す場合 (など"\\"、"c:"、または *"\\\server\share") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定したディレクトリの親ディレクトリを参照するを示しています。  
+  
+ [!code-cpp[directoryinfoparent#1](~/samples/snippets/cpp/VS_Snippets_CLR/directoryinfoparent/CPP/directoryinfoparent.cpp#1)]
+ [!code-csharp[directoryinfoparent#1](~/samples/snippets/csharp/VS_Snippets_CLR/directoryinfoparent/CS/directoryinfoparent.cs#1)]
+ [!code-vb[directoryinfoparent#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/directoryinfoparent/VB/directoryinfoparent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとディレクトリとパスにアクセスするための読み取り。 関連する列挙: <see cref="T:System.Security.Permissions.FileIOPermissionAccess" />、<see cref="T:System.Security.Permissions.FileIOPermissionAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Root">
+      <MemberSignature Language="C#" Value="public System.IO.DirectoryInfo Root { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.DirectoryInfo Root" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DirectoryInfo.Root" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリのルート部分を取得します。</summary>
+        <value>ディレクトリのルートを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、指定したディレクトリのルートの場所を表示します。  
+  
+ [!code-csharp[directoryinforoot#2](~/samples/snippets/csharp/VS_Snippets_CLR/directoryinforoot/CS/directoryinforoot2.cs#2)]
+ [!code-vb[directoryinforoot#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/directoryinforoot/VB/directoryinforoot2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとディレクトリとパスにアクセスするための読み取り。 関連する列挙: <see cref="T:System.Security.Permissions.FileIOPermissionAccess" />、<see cref="T:System.Security.Permissions.FileIOPermissionAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAccessControl">
+      <MemberSignature Language="C#" Value="public void SetAccessControl (System.Security.AccessControl.DirectorySecurity directorySecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAccessControl(class System.Security.AccessControl.DirectorySecurity directorySecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.SetAccessControl(System.Security.AccessControl.DirectorySecurity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directorySecurity" Type="System.Security.AccessControl.DirectorySecurity" />
+      </Parameters>
+      <Docs>
+        <param name="directorySecurity">によって記述されるディレクトリに適用する ACL エントリを記述するオブジェクト、<c>パス</c>パラメーター。</param>
+        <summary><see cref="T:System.Security.AccessControl.DirectorySecurity" /> オブジェクトが示すアクセス制御リスト (ACL) エントリを、現在の<see cref="T:System.IO.DirectoryInfo" /> オブジェクトが示すディレクトリに適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス制御リスト (ACL) には、個人、グループ、または権限がない、指定したファイルまたはディレクトリの特定のアクションをユーザーがについて説明します。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+ <xref:System.IO.DirectoryInfo.SetAccessControl%2A>メソッドが継承されない ACL リストを表すファイルに ACL エントリを適用します。  
+  
+> [!CAUTION]
+>  ACL に指定された`directorySecurity`ディレクトリの既存の ACL を置き換えます。 新しいユーザーのアクセス許可を追加するには、使用、<xref:System.IO.DirectoryInfo.GetAccessControl%2A>メソッドを既存の ACL を取得し、それを変更します。  
+  
+ <xref:System.IO.DirectoryInfo.SetAccessControl%2A>メソッドにのみが引き続き発生する<xref:System.Security.AccessControl.DirectorySecurity>オブジェクトがオブジェクトの作成後に変更されました。  場合、<xref:System.Security.AccessControl.DirectorySecurity>オブジェクトが変更されていない、ファイルに永続化はできません。  したがって、取得することはありません、 <xref:System.Security.AccessControl.DirectorySecurity> 1 つのファイルからオブジェクトを別のファイルを同じオブジェクトを再適用します。  
+  
+ ACL の情報を別の 1 つのファイルにコピー: する  
+  
+1.  使用して、<xref:System.IO.DirectoryInfo.GetAccessControl%2A>を取得する方法、<xref:System.Security.AccessControl.DirectorySecurity>ソース ファイルからのオブジェクト。  
+  
+2.  新しい<xref:System.Security.AccessControl.DirectorySecurity>先のファイル オブジェクト。  
+  
+3.  使用して、<xref:System.Security.AccessControl.ObjectSecurity.GetSecurityDescriptorBinaryForm%2A>または<xref:System.Security.AccessControl.ObjectSecurity.GetSecurityDescriptorSddlForm%2A>メソッドのソースの<xref:System.Security.AccessControl.DirectorySecurity>ACL 情報を取得するオブジェクト。  
+  
+4.  使用して、<xref:System.Security.AccessControl.ObjectSecurity.SetSecurityDescriptorBinaryForm%2A>または<xref:System.Security.AccessControl.ObjectSecurity.SetSecurityDescriptorSddlForm%2A>に情報をコピーする方法は、先には、手順 3. で取得<xref:System.Security.AccessControl.DirectorySecurity>オブジェクト。  
+  
+5.  出力先を設定<xref:System.Security.AccessControl.DirectorySecurity>、変換先を使用してファイル オブジェクト、<xref:System.IO.DirectoryInfo.SetAccessControl%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.DirectoryInfo.GetAccessControl%2A>と<xref:System.IO.DirectoryInfo.SetAccessControl%2A>メソッドを追加し、削除、アクセス制御リスト (ACL) エントリをディレクトリからです。  
+  
+ [!code-cpp[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/cpp/sample.cpp#1)]
+ [!code-csharp[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/CS/sample.cs#1)]
+ [!code-vb[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="directorySecurity" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.SystemException">ファイルを検出または変更できませんでした。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">現在のプロセスには、ファイルを開くために必要なアクセス権がありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows 2000 以降ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリのアクセス制御リスト (ACL) を列挙する権限です。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" />、<see cref="F:System.Security.AccessControl.AccessControlActions.View" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DirectoryInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザーから渡された元のパスを返します。</summary>
+        <returns>ユーザーから渡された元のパスを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

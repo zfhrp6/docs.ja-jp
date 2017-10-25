@@ -1,0 +1,276 @@
+<Type Name="InternalsVisibleToAttribute" FullName="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+  <TypeSignature Language="C#" Value="public sealed class InternalsVisibleToAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InternalsVisibleToAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.InternalsVisibleToAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>通常は現在のアセンブリ内でのみ参照できる型が、指定したアセンブリから参照可能であることを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、型およびメンバーで`internal`のスコープ (C# の場合) と`friend`(Visual Basic) のスコープが定義されているアセンブリでのみ表示されます。 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性は、それらの種類にも表示されているフレンド アセンブリと呼ばれる指定したアセンブリ内。  
+  
+ 属性がアセンブリ レベルで適用されます。 つまり、ソース コード ファイルの先頭には追加できますまたは、Visual Studio プロジェクトの AssemblyInfo ファイルに含まれていることができます。 属性を使用すると、内部の型と、現在のアセンブリのメンバーにアクセスできる 1 つのフレンド アセンブリを指定します。 2 つの方法では、複数のフレンド アセンブリを定義できます。 次の例に示すように、個々 のアセンブリ レベル属性として表示されることができます。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cs/multiple1.cs#3)]
+ [!code-vb[System.Runtime.CompilerServices.InternalsVisibleToAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/vb/multiple1.vb#3)]  
+  
+ 個別に表示されます<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>タグが 1 つ`assembly`キーワードとして次の例を示しています。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cs/multiple2.cs#4)]
+ [!code-vb[System.Runtime.CompilerServices.InternalsVisibleToAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/vb/multiple2.vb#4)]  
+  
+ フレンド アセンブリは、によって識別される、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute.%23ctor%2A>コンス トラクターです。 現在のアセンブリとフレンド アセンブリの両方が、署名する必要があるまたは両方のアセンブリを厳密な名前で署名する必要があります。  
+  
+ 両方のアセンブリは符号がない場合、`assemblyName`引数は、ディレクトリのパスまたはファイル名拡張子なしで指定された、フレンド アセンブリの名前で構成されます。  
+  
+ 強力な両方のアセンブリが署名されている場合の名前、引数、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute.%23ctor%2A>コンス トラクターは、ディレクトリ パスまたはファイル名拡張子の付かない、および完全な公開キー (とその公開キー トークンされません)、アセンブリの名前ので構成する必要があります。 厳密な名前のアセンブリの完全な公開キーを取得するには、次を参照してください。、[完全な公開キーの取得](#Key)この記事で後述する「します。 使用しての詳細については<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>厳密な名前付きのアセンブリを参照してください、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ 値を含めないでください、 <xref:System.Reflection.AssemblyName.CultureInfo%2A>、 <xref:System.Reflection.AssemblyName.Version%2A>、または<xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A>引数でフィールド以外の場合は、Visual Basic、c#、および C++ コンパイラはコンパイラ エラーとして処理します。 コンパイラ エラーとして処理されませんを使用するかどうか (など、 [IL アセンブラー (ILAsm.exe)](~/docs/framework/tools/ilasm-exe-il-assembler.md))、アセンブリが厳密な名前、および、<xref:System.MethodAccessException>例外は、指定したフレンド アセンブリを含むアセンブリにアクセスを初めて、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性。  
+  
+ この属性を使用する方法の詳細については、次のトピックを参照してください。  
+  
+-   [フレンド アセンブリ (C++)](http://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd)  
+  
+-   [フレンド アセンブリ](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)  
+  
+<a name="Key"></a>   
+## <a name="getting-the-full-public-key"></a>完全な公開キーの取得  
+ 使用することができます、[厳密名ツール (Sn.exe)](~/docs/framework/tools/sn-exe-strong-name-tool.md)を厳密な名前キー (.snk) ファイルから完全な公開キーを取得します。 これを行うには、次の手順を実行します。  
+  
+1.  別のファイル、厳密な名前キー ファイルから公開キーを抽出します。  
+  
+     **Sn-p***snk_file* *出力ファイル  *  
+  
+2.  完全な公開キーをコンソールに表示します。  
+  
+     **Sn tp***出力ファイル  *  
+  
+3.  コピーし、ソース コードに完全な公開キー値を貼り付けます。  
+  
+## <a name="compiling-the-friend-assembly-with-c"></a>C# を使用してフレンド アセンブリをコンパイルします。  
+ 使用して、出力ファイル (.exe または .dll) の名前を明示的に指定する必要があります、c# コンパイラを使用してフレンド アセンブリをコンパイルする場合、 **/out**コンパイラ オプション。 この指定は必ず行ってください。コンパイラが外部参照にバインドする時点ではまだ、ビルド中のアセンブリの名前が生成されていないためです。 **/Out**コンパイラ オプションは、Visual Basic コンパイラ、および対応する省略可能な**-アウト**または**-o** f# コンパイラでフレンド アセンブリをコンパイルするときに、コンパイラ オプションは使用できません。  
+  
+## <a name="compiling-the-friend-assembly-with-c"></a>C++ でフレンド アセンブリをコンパイルします。  
+ C++ では、内部のメンバーで有効にするために、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>フレンド アセンブリにアクセスできる属性を使用する必要があります、 `as_friend` C++ ディレクティブ内の属性です。 詳細については、次を参照してください。[フレンド アセンブリ (C++)](http://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd)です。  
+  
+   
+  
+## Examples  
+ **署名付きアセンブリ**  
+  
+ 次の例では、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性を`internal`という名前のメソッド`AppendDirectorySeparator`は署名付きアセンブリを別の署名されたアセンブリから参照可能にします。 定義する、`FileUtilities`を含む内部クラス`AppendDirectorySeparator`メソッドです。 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性を含むアセンブリに適用した、`FileUtilities`クラスです。 属性により、という名前のアセンブリ`Friend1`この内部のメンバーにアクセスします。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cs/assembly1.cs#1)]
+ [!code-vb[System.Runtime.CompilerServices.InternalsVisibleToAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/vb/assembly1.vb#1)]  
+  
+ かどうかは次の例は、厳密な名前のアセンブリにコンパイルという名前`Friend1`、`Example.Main`メソッド`Friend1`が正常に呼び出すことができます、`FileUtilities.AppendDirectorySeparator`メソッド、メソッドは内部、`Assembly1`アセンブリ。 C# の場合、コマンドラインからコンパイルする場合を付けることに注意してください、 **/out**コンパイラ スイッチに、コンパイラが外部参照に連結すると、フレンド アセンブリの名前が使用可能なことを確認します。  
+  
+ [!code-cpp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cpp/friend1.cpp#2)]
+ [!code-csharp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cs/friend1.cs#2)]
+ [!code-vb[System.Runtime.CompilerServices.InternalsVisibleToAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/vb/friend1.vb#2)]  
+  
+ **署名のないアセンブリ**  
+  
+ 次の例では、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性を`internal`別に表示される署名のないアセンブリのメンバーには、アセンブリが署名されていません。 属性により、 `internal` `StringLib.IsFirstLetterUpperCase`という名前のアセンブリ内のメソッド`UtilityLib`がという名前のアセンブリ内のコードに表示される`Friend2`です。  UtilityLib.dll のソース コードを次に示します。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cs/utilitylib.cs#5)]
+ [!code-vb[System.Runtime.CompilerServices.InternalsVisibleToAttribute#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/vb/utilitylib.vb#5)]  
+  
+ 次の例のソース コードを提供する、`Friend2`アセンブリ。 C# の場合、コマンドラインからコンパイルする場合を付けることに注意してください、 **/out**コンパイラ スイッチに、コンパイラが外部参照に連結すると、フレンド アセンブリの名前が使用可能なことを確認します。  
+  
+ [!code-cpp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cpp/friend2.cpp#6)]
+ [!code-csharp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cs/friend2.cs#6)]
+ [!code-vb[System.Runtime.CompilerServices.InternalsVisibleToAttribute#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/vb/friend2.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InternalsVisibleToAttribute (string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.InternalsVisibleToAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">フレンド アセンブリの名前。</param>
+        <summary>指定したフレンド アセンブリの名前を使用して <see cref="T:System.Runtime.CompilerServices.InternalsVisibleToAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute.%23ctor%2A>コンス トラクターは内部の型と、現在のアセンブリのメンバーにアクセス権を持つアセンブリをあるフレンド アセンブリを定義します。  
+  
+ 現在のアセンブリとフレンド アセンブリの両方が、署名する必要があるまたは両方を厳密な名前で署名する必要があります。 (厳密な名前付きアセンブリの詳細については、次を参照してください[作成と使用](~/docs/framework/app-domains/create-and-use-strong-named-assemblies.md)。)。署名済み、両方がない場合、`assemblyName`引数は、ディレクトリのパスまたはファイルの拡張子を付けずに指定された、フレンド アセンブリの名前で構成されます。 両方が署名されている場合`assemblyName`ディレクトリ パスまたはファイル名拡張子の付かない、完全な公開キー (ではない公開キー トークン) とフレンド アセンブリの名前で構成されます。 厳密な名前、カルチャ、バージョン、またはプロセッサ アーキテクチャの情報を提供するなどの他のコンポーネントを指定することはできません、`assemblyName`引数。  
+  
+> [!IMPORTANT]
+>  使用して、出力ファイル (.exe または .dll) の名前を明示的に指定する必要があります、c# コンパイラを使用してフレンド アセンブリをコンパイルする場合、 **/out**コンパイラ オプション。 この指定は必ず行ってください。コンパイラが外部参照にバインドする時点ではまだ、ビルド中のアセンブリの名前が生成されていないためです。 **/Out**コンパイラ オプションは、Visual Basic コンパイラ、および対応する省略可能な**-アウト**または**-o** f# コンパイラでフレンド アセンブリをコンパイルするときに、コンパイラ オプションは使用できません。  
+  
+ 使用することができます[Sn.exe (厳密名ツール)](~/docs/framework/tools/sn-exe-strong-name-tool.md)を厳密な名前キー (.snk) ファイルから完全な公開キーを取得します。 これを行うには、次の手順を実行します。  
+  
+1.  別のファイル、厳密な名前キー ファイルから公開キーを抽出します。  
+  
+     **Sn-p***snk_file* *出力ファイル  *  
+  
+2.  完全な公開キーをコンソールに表示します。  
+  
+     **Sn tp***出力ファイル  *  
+  
+3.  コピーし、ソース コードに完全な公開キー値を貼り付けます。  
+  
+ 使用する方法についての詳細、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性を次のトピックを参照してください。  
+  
+-   [フレンド アセンブリ (C++)](http://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd)  
+  
+-   [フレンド アセンブリ](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)  
+  
+   
+  
+## Examples  
+ **署名付きアセンブリ**  
+  
+ 次の例では、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性を`internal`という名前のメソッド`AppendDirectorySeparator`は署名付きアセンブリを別の署名されたアセンブリから参照可能にします。 定義する、`FileUtilities`を含む内部クラス`AppendDirectorySeparator`メソッドです。 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性を含むアセンブリに適用した、`FileUtilities`クラスです。 属性により、という名前のアセンブリ`Friend1`この内部のメンバーにアクセスします。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cs/assembly1.cs#1)]
+ [!code-vb[System.Runtime.CompilerServices.InternalsVisibleToAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/vb/assembly1.vb#1)]  
+  
+ 次の例のという名前、厳密な名前のアセンブリがコンパイル`Friend1`、正常に呼び出すことができます、`FileUtilities.AppendDirectorySeparator`メソッド、メソッドは内部の場合でも、`Assembly1`アセンブリ。 C# の場合、コマンドラインからコンパイルする場合を付けることに注意してください、 **/out**コンパイラ スイッチに、コンパイラが外部参照に連結すると、フレンド アセンブリの名前が使用可能なことを確認します。  
+  
+ [!code-cpp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cpp/friend1.cpp#2)]
+ [!code-csharp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cs/friend1.cs#2)]
+ [!code-vb[System.Runtime.CompilerServices.InternalsVisibleToAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/vb/friend1.vb#2)]  
+  
+ 次の例では、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性を`internal`別に表示される署名のないアセンブリのメンバーには、アセンブリが署名されていません。 属性により、 `internal` `StringLib.IsFirstLetterUpperCase`という名前のアセンブリ内のメソッド`UtilityLib`がという名前のアセンブリ内のコードに表示される`Friend2`です。  UtilityLib.dll のソース コードを次に示します。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cs/utilitylib.cs#5)]
+ [!code-vb[System.Runtime.CompilerServices.InternalsVisibleToAttribute#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/vb/utilitylib.vb#5)]  
+  
+ **署名のないアセンブリ**  
+  
+ 次の例のソース コードを提供する、`Friend2`アセンブリ。 C# の場合、コマンドラインからコンパイルする場合を付けることに注意してください、 **/out**コンパイラ スイッチに、コンパイラが外部参照に連結すると、フレンド アセンブリの名前が使用可能なことを確認します。  
+  
+ [!code-cpp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cpp/friend2.cpp#6)]
+ [!code-csharp[System.Runtime.CompilerServices.InternalsVisibleToAttribute#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/cs/friend2.cs#6)]
+ [!code-vb[System.Runtime.CompilerServices.InternalsVisibleToAttribute#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.internalsvisibletoattribute/vb/friend2.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllInternalsVisible">
+      <MemberSignature Language="C#" Value="public bool AllInternalsVisible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllInternalsVisible" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.CompilerServices.InternalsVisibleToAttribute.AllInternalsVisible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは実装されていません。</summary>
+        <value>このプロパティは値を返しません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyName">
+      <MemberSignature Language="C#" Value="public string AssemblyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssemblyName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.CompilerServices.InternalsVisibleToAttribute.AssemblyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="internal" /> キーワードを使用してマークされている型と型のメンバーをすべて参照できるようにする、フレンド アセンブリの名前を取得します。</summary>
+        <value>フレンド アセンブリの名前を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する方法についての詳細、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性を次のトピックを参照してください。  
+  
+-   [フレンド アセンブリ (C++)](http://msdn.microsoft.com/library/8d55fee0-b7c2-4fbe-a23b-dfe424dc71cd)  
+  
+-   [フレンド アセンブリ](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

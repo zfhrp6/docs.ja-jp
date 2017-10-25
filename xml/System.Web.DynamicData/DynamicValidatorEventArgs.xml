@@ -1,0 +1,105 @@
+<Type Name="DynamicValidatorEventArgs" FullName="System.Web.DynamicData.DynamicValidatorEventArgs">
+  <TypeSignature Language="C#" Value="public class DynamicValidatorEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicValidatorEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DynamicValidatorEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>基本クラス<see cref="T:System.Web.DynamicData.DynamicValidator" />イベント データを含むクラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicValidator>クラスは LINQ to SQL クラスやデータ モデルの Entity Framework メソッドからスローされる例外をキャッチします。 このクラスでは、イベント データは含まれません。 イベントが発生したときに状態情報をイベント ハンドラーに渡さないイベントによって使用されます。 イベント ハンドラーは、状態情報を必要とする場合は、データを保持するには、このクラスから派生クラスを作成する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicValidatorEventArgs (Exception exception, System.Web.DynamicData.DynamicDataSourceOperation operation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Exception exception, valuetype System.Web.DynamicData.DynamicDataSourceOperation operation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicValidatorEventArgs.#ctor(System.Exception,System.Web.DynamicData.DynamicDataSourceOperation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Exception" />
+        <Parameter Name="operation" Type="System.Web.DynamicData.DynamicDataSourceOperation" />
+      </Parameters>
+      <Docs>
+        <param name="exception">発生した例外。</param>
+        <param name="operation">データ ソース、例外の原因となった操作です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.DynamicData.DynamicValidatorEventArgs" />クラス、発生した例外と例外が発生したデータ ソースの操作を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 動的データは、データ ソース オブジェクトで実行できるデータ ソースの操作を提供します。 これらの操作を含める`Delete`、 `Insert`、`Select`と`Update`と`ContextCreate`です。 例外と発生した例外の原因となったデータ ソース操作がによって表される場合は、データ ソース操作中に例外が発生した、<xref:System.Web.DynamicData.DynamicValidatorEventArgs.Operation%2A>と<xref:System.Web.DynamicData.DynamicValidatorEventArgs.Exception%2A>それぞれします。  
+  
+ このコンス トラクターは、の新しいインスタンスを初期化します、<xref:System.Web.DynamicData.DynamicValidatorEventArgs>クラスこれらのプロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicValidatorEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースの操作イベント中に発生する例外を取得します。</summary>
+        <value>データ ソースの操作イベント中に発生した例外。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 動的データは、データ ソース オブジェクトで実行できるデータ ソースの操作を提供します。 これらの操作を含める`Delete`、 `Insert`、`Select`と`Update`と`ContextCreate`です。 例外が発生する場合、<xref:System.Web.DynamicData.DynamicValidator>クラスでは、このプロパティを使用してデータ ソース操作中に発生する例外の種類を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operation">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.DynamicDataSourceOperation Operation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.DynamicData.DynamicDataSourceOperation Operation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicValidatorEventArgs.Operation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.DynamicDataSourceOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作を取得しますデータ ソース内の例外の原因となった、<see cref="T:System.Web.DynamicData.DynamicValidator" />クラスです。</summary>
+        <value>データ ソース、例外の原因となった操作です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 動的データは、データ ソース オブジェクトで実行できるデータ ソースの操作を提供します。 これらの操作を含める`Delete`、 `Insert`、`Select`と`Update`と`ContextCreate`です。 例外が発生する場合、<xref:System.Web.DynamicData.DynamicValidator>クラスでは、このプロパティを使用して、その例外をトリガーした操作を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,885 @@
+<Type Name="SessionAuthenticationModule" FullName="System.IdentityModel.Services.SessionAuthenticationModule">
+  <TypeSignature Language="C#" Value="public class SessionAuthenticationModule : System.IdentityModel.Services.HttpModuleBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SessionAuthenticationModule extends System.IdentityModel.Services.HttpModuleBase" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.SessionAuthenticationModule" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Services.HttpModuleBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WS フェデレーション シナリオでセッション cookie を処理する ASP.NET モジュールを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET パイプラインに存在する場合、 <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) は、WS フェデレーション シナリオでセッション cookie を処理します。 指定されたクッキー ハンドラーを使用して、<xref:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler%2A>を HTTP 要求から未加工のセッションの cookie を読み取り、HTTP 応答への書き込みプロパティです。 使用して、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>に生のセッションの cookie を逆シリアル化するアプリケーション用に構成された<xref:System.IdentityModel.Tokens.SessionSecurityToken>オブジェクト。 セッション セキュリティ トークンにはクレームが含まれています (<xref:System.Security.Claims.Claim>) とプリンシパル (<xref:System.Security.Claims.ClaimsPrincipal>) 要求の処理対象のエンティティに関連付けられています。  
+  
+ SAM 追加その<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest%2A>イベント ハンドラーを<xref:System.Web.HttpApplication.AuthenticateRequest?displayProperty=nameWithType>ASP.NET パイプライン内のイベントです。 このハンドラー サインイン要求をインターセプトし、セッションの cookie がある場合、セッション トークンに逆シリアル化、設定、<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>と<xref:System.Web.HttpContext.User%2A?displayProperty=nameWithType>セッション トークンに含まれる要求プリンシパルのプロパティです。 この処理中、SAM によって公開されている他のメソッドのいくつかを呼び出します。  
+  
+ <xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut%2A> (たとえば、SignOut.aspx.cs 分離コード ファイル) に、セッションからユーザーをサインインするメソッドを呼び出すことができます。  
+  
+ SAM は、その処理パイプラインへのアクセスを提供するいくつかのイベントを公開します。 <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived>と<xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated>cookie からの読み取りまたは処理中に作成されたセッション トークンを変更するイベントが有効にします。 通常、これは追加、削除、または、トークンの要求を変換するか、有効期限を調整する行います。 <xref:System.IdentityModel.Services.SessionAuthenticationModule.SigningOut>、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.SignedOut>、および<xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOutError>イベントは、サインアウト要求の処理にフックを実現します。 多くのシナリオで global.asax.cs ファイルに多くの場合、これらのイベントのハンドラーを追加するだけでは十分です。  
+  
+ 派生できますのより複雑なシナリオは、<xref:System.IdentityModel.Services.SessionAuthenticationModule>カスタム SAM を実装します。 このために、多くの中に呼び出されるメソッド<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest%2A>と<xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut%2A>セッション処理ライフ サイクルの特定の段階でカスタム動作を提供できるように公開されます。  
+  
+ SAM を構成ファイル内の ASP.NET パイプラインに追加するにはいずれかで HTTP モジュールに追加することによって、 `<system.webServer>` IIS 7 以降のバージョンのまたは下にある要素、 `<system.web>` IIS 7 より前のバージョンの要素。 SAM によって使用されるクッキー ハンドラーを構成できます、 [ &lt;cookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)要素。  
+  
+   
+  
+## Examples  
+ [!code-csharp[WifSAM#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifsam/cs/webapplication1/global.asax.cs#1)]  
+  
+ 次の XML では、ASP.NET パイプラインの SAM を構成する方法を示します。 簡略化のためここでは、一般的な構成に存在するその他の多くの要素は省略します。  
+  
+```xml  
+<configuration>  
+  <system.webServer>  
+    <modules>  
+      <!--WIF 4.5 modules -->  
+      <add name="SessionAuthenticationModule" type="System.IdentityModel.Services.SessionAuthenticationModule, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>  
+      <add name="WsFederationAuthenticationModule" type="System.IdentityModel.Services.WSFederationAuthenticationModule, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>  
+    </modules>  
+  </system.webServer>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionAuthenticationModule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Services.SessionAuthenticationModule" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode%2A>プロパティに設定されている`false`と<xref:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler%2A>プロパティは、の既定のインスタンスを初期化、<xref:System.IdentityModel.Services.CookieHandlerElement.ChunkedCookieHandler%2A>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateSessionSecurityToken">
+      <MemberSignature Language="C#" Value="public virtual void AuthenticateSessionSecurityToken (System.IdentityModel.Tokens.SessionSecurityToken sessionToken, bool writeCookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AuthenticateSessionSecurityToken(class System.IdentityModel.Tokens.SessionSecurityToken sessionToken, bool writeCookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.AuthenticateSessionSecurityToken(System.IdentityModel.Tokens.SessionSecurityToken,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sessionToken" Type="System.IdentityModel.Tokens.SessionSecurityToken" />
+        <Parameter Name="writeCookie" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sessionToken">受信 HTTP 要求を認証に使用するセッション セキュリティ トークンです。</param>
+        <param name="writeCookie">
+          <see langword="true" />セッションの cookie を作成するにはそれ以外の場合<see langword="false" />です。</param>
+        <summary>入力方向のセッション トークンを検証することにより、受信要求を認証します。 検証の成功時に更新スレッドのプリンシパルと現在の HTTP コンテキストに、指定した<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.SessionAuthenticationModule.AuthenticateSessionSecurityToken%2A>からメソッドを呼び出した、<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest%2A>メソッドです。 呼び出す、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SetPrincipalFromSessionToken%2A>受信トークンと更新プログラムを検証するメソッド、<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>と<xref:System.Web.HttpContext.User%2A?displayProperty=nameWithType>プロパティ。 場合、`writeCookie`パラメーターは`true`、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.WriteSessionTokenToCookie%2A> cookie にセッション トークンを書き込むメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsSessionTokenCookie">
+      <MemberSignature Language="C#" Value="public bool ContainsSessionTokenCookie (System.Web.HttpCookieCollection httpCookieCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ContainsSessionTokenCookie(class System.Web.HttpCookieCollection httpCookieCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.ContainsSessionTokenCookie(System.Web.HttpCookieCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="httpCookieCollection" Type="System.Web.HttpCookieCollection" />
+      </Parameters>
+      <Docs>
+        <param name="httpCookieCollection">検索する cookie のコレクション。</param>
+        <summary>セッションの cookie が指定された cookie のコレクションかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />セッションの cookie が見つかった場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="httpCookieCollection" />null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextSessionSecurityToken">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SessionSecurityToken ContextSessionSecurityToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SessionSecurityToken ContextSessionSecurityToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SessionAuthenticationModule.ContextSessionSecurityToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SessionSecurityToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブな取得<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />現在の<see cref="T:System.Web.HttpContext" />します。</summary>
+        <value>アクティブなセッション セキュリティ トークンです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieHandler">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Services.CookieHandler CookieHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Services.CookieHandler CookieHandler" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.CookieHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り、書き込み、およびセッション cookie の削除に使用されるクッキー ハンドラーを取得します。</summary>
+        <value>クッキー ハンドラー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler%2A>によってプロパティが初期化されて、<xref:System.IdentityModel.Services.SessionAuthenticationModule.InitializePropertiesFromConfiguration%2A>メソッドです。 このメソッドで指定されたクッキー ハンドラーに基づき、このプロパティは初期化、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration>に設定されているオブジェクト、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティです。 構成ファイルで、クッキー ハンドラーを設定することができます、 [ &lt;cookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSessionSecurityToken">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SessionSecurityToken CreateSessionSecurityToken (System.Security.Claims.ClaimsPrincipal principal, string context, DateTime validFrom, DateTime validTo, bool isPersistent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IdentityModel.Tokens.SessionSecurityToken CreateSessionSecurityToken(class System.Security.Claims.ClaimsPrincipal principal, string context, valuetype System.DateTime validFrom, valuetype System.DateTime validTo, bool isPersistent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.CreateSessionSecurityToken(System.Security.Claims.ClaimsPrincipal,System.String,System.DateTime,System.DateTime,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SessionSecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="principal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="validFrom" Type="System.DateTime" />
+        <Parameter Name="validTo" Type="System.DateTime" />
+        <Parameter Name="isPersistent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="principal">トークンでキャプチャするプリンシパルです。</param>
+        <param name="context">コンテキストのアプリケーションで定義された文字列。</param>
+        <param name="validFrom">このトークンの有効開始時点です。</param>
+        <param name="validTo">このトークンが有効で最後の時点です。</param>
+        <param name="isPersistent">
+          <see langword="true" />ユーザー エージェントによって、値を永続化する場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>作成、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />構成されているセッション トークン ハンドラーを使用して、指定したパラメーターからです。</summary>
+        <returns>セッション トークンです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">有効なセッションのトークン ハンドラーが構成されていません。 (がない<see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" />で構成されている、<see cref="P:System.IdentityModel.Configuration.IdentityConfiguration.SecurityTokenHandlers" />プロパティです)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteSessionTokenCookie">
+      <MemberSignature Language="C#" Value="public void DeleteSessionTokenCookie ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteSessionTokenCookie() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.DeleteSessionTokenCookie" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セッションの cookie を削除し、キャッシュから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたクッキー ハンドラーを使用して、セッションの cookie を削除、<xref:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler%2A>プロパティです。 中にこのメソッドは、サインアウト、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeModule">
+      <MemberSignature Language="C#" Value="protected override void InitializeModule (System.Web.HttpApplication context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InitializeModule(class System.Web.HttpApplication context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.InitializeModule(System.Web.HttpApplication)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpApplication" />
+      </Parameters>
+      <Docs>
+        <param name="context">このモジュールを含む HTTP アプリケーション オブジェクト。</param>
+        <summary>モジュールを初期化し、モジュールからイベントを処理するために準備[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]アプリケーション オブジェクトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加、<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest%2A>と<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnPostAuthenticateRequest%2A>ハンドラーを<xref:System.Web.HttpApplication.AuthenticateRequest?displayProperty=nameWithType>と<xref:System.Web.HttpApplication.PostAuthenticateRequest?displayProperty=nameWithType>で指定されたアプリケーション オブジェクトのイベント、`context`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializePropertiesFromConfiguration">
+      <MemberSignature Language="C#" Value="protected override void InitializePropertiesFromConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InitializePropertiesFromConfiguration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.InitializePropertiesFromConfiguration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成ファイル内の定義に基づくモジュールのプロパティを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化、<xref:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler%2A>プロパティによって構成で指定したハンドラーから、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration?displayProperty=nameWithType>に設定されているオブジェクト、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティです。 クッキー ハンドラーをから構成ファイルで指定することができます、 [ &lt;cookieHandler&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReferenceMode">
+      <MemberSignature Language="C#" Value="public bool IsReferenceMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReferenceMode" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセッションの情報 (要求の値など) をセッションの cookie や参照だけを保存する cookie を使用して、サーバー側でセッションの内容を保存するかどうかに保存するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />発行された cookie の参照モードである場合それ以外の場合、<see langword="false" />です。 既定値は<see langword="false" />cookie を発行したに含まれていない参照モードを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照モードで、<xref:System.IdentityModel.Tokens.SessionSecurityToken>サーバー側のキャッシュに格納されます (オブジェクトから派生した<xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>)。 発行された cookie には、キャッシュからトークンの取得に使用されるコンテキスト識別子にはのみが含まれます。  
+  
+> [!IMPORTANT]
+>  ハンドラーを提供することをお勧め参照モードで動作する、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated?displayProperty=nameWithType> global.asax.cs ファイルと設定でイベント、<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A?displayProperty=nameWithType>に渡されたトークンのプロパティ、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken%2A?displayProperty=nameWithType>プロパティです。 セッション トークンが要求ごとに参照モードで動作し、単なる設定が優先これにより、<xref:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode%2A?displayProperty=nameWithType>セッション認証モジュールのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAuthenticateRequest">
+      <MemberSignature Language="C#" Value="protected virtual void OnAuthenticateRequest (object sender, EventArgs eventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAuthenticateRequest(object sender, class System.EventArgs eventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="eventArgs" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。 これになります、<see cref="T:System.Web.HttpApplication" />オブジェクト。</param>
+        <param name="eventArgs">イベントのデータ。</param>
+        <summary>処理、<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />からイベントを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]パイプライン。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、次のこと。  
+  
+1.  呼び出す、<xref:System.IdentityModel.Services.SessionAuthenticationModule.TryReadSessionTokenFromCookie%2A>を読み取る方法、<xref:System.IdentityModel.Tokens.SessionSecurityToken>が存在する場合、セッション クッキーからです。  
+  
+2.  場合、セッション セキュリティ トークンにすることはできません (ほとんどの場合、セッションが確立されていないため、読み取りを返します。  
+  
+3.  呼び出す、<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSessionSecurityTokenReceived%2A>させる方法、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived>イベント。 これにより、変更する cookie から読み取られたトークンのまたは要求のキャンセルに、営業案件が提供します。 ハンドラーは、トークンを再発行を設定しても指定できます、<xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.ReissueCookie%2A?displayProperty=nameWithType>プロパティです。  
+  
+4.  トークンを再発行する場合は、キャッシュから削除しを呼び出す、<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSessionSecurityTokenCreated%2A>させる方法、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated>イベント。 これは、もう一度変更するトークンの機会を提供します。 設定して再発行動作を変更することも、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.WriteSessionCookie%2A?displayProperty=nameWithType>イベント ハンドラーのプロパティです。  
+  
+5.  呼び出す、<xref:System.IdentityModel.Services.SessionAuthenticationModule.AuthenticateSessionSecurityToken%2A>ユーザーを認証する方法です。 かどうかは成功すると、これは、設定の<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティに含まれているプリンシパルを<xref:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal%2A?displayProperty=nameWithType>着信トークンのプロパティです。  
+  
+6.  セッションの有効期限が切れて場合を呼び出して、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut%2A>メソッドです。  
+  
+ <xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest%2A>メソッドが対応するハンドラーを追加、<xref:System.Web.HttpApplication.AuthenticateRequest?displayProperty=nameWithType>内のイベント、<xref:System.IdentityModel.Services.SessionAuthenticationModule.InitializeModule%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">有効なセッションのトークン ハンドラーが構成されていません。 (がない<see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" />で構成されている、<see cref="P:System.IdentityModel.Configuration.IdentityConfiguration.SecurityTokenHandlers" />プロパティです)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPostAuthenticateRequest">
+      <MemberSignature Language="C#" Value="protected virtual void OnPostAuthenticateRequest (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPostAuthenticateRequest(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.OnPostAuthenticateRequest(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。 これになります、<see cref="T:System.Web.HttpApplication" />オブジェクト。</param>
+        <param name="e">イベントのデータ。</param>
+        <summary>処理、<see cref="E:System.Web.HttpApplication.PostAuthenticateRequest" />からイベントを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]パイプライン。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装は、空です。  
+  
+ <xref:System.IdentityModel.Services.SessionAuthenticationModule.OnPostAuthenticateRequest%2A>にハンドラーは、ハンドラーが追加されて、<xref:System.Web.HttpApplication.PostAuthenticateRequest?displayProperty=nameWithType>内のイベント、<xref:System.IdentityModel.Services.SessionAuthenticationModule.InitializeModule%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSessionSecurityTokenCreated">
+      <MemberSignature Language="C#" Value="protected virtual void OnSessionSecurityTokenCreated (System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSessionSecurityTokenCreated(class System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.OnSessionSecurityTokenCreated(System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出される、<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSessionSecurityTokenReceived">
+      <MemberSignature Language="C#" Value="protected virtual void OnSessionSecurityTokenReceived (System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSessionSecurityTokenReceived(class System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.OnSessionSecurityTokenReceived(System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出される、<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSignedOut">
+      <MemberSignature Language="C#" Value="protected virtual void OnSignedOut (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSignedOut(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.OnSignedOut(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.SessionAuthenticationModule.SignedOut" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されて、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut%2A>サインアウトが実行されているし、セッションの cookie が削除された後にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSigningOut">
+      <MemberSignature Language="C#" Value="protected virtual void OnSigningOut (System.IdentityModel.Services.SigningOutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSigningOut(class System.IdentityModel.Services.SigningOutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.OnSigningOut(System.IdentityModel.Services.SigningOutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.IdentityModel.Services.SigningOutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.SessionAuthenticationModule.SigningOut" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されて、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut%2A>サインアウトを実行するメソッド。セッションの cookie が削除される前に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSignOutError">
+      <MemberSignature Language="C#" Value="protected virtual void OnSignOutError (System.IdentityModel.Services.ErrorEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSignOutError(class System.IdentityModel.Services.ErrorEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.OnSignOutError(System.IdentityModel.Services.ErrorEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.IdentityModel.Services.ErrorEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.SessionAuthenticationModule.SignOutError" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されて、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut%2A>メソッド サインアウト時にエラーが発生した場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSessionTokenFromCookie">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SessionSecurityToken ReadSessionTokenFromCookie (byte[] sessionCookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IdentityModel.Tokens.SessionSecurityToken ReadSessionTokenFromCookie(unsigned int8[] sessionCookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.ReadSessionTokenFromCookie(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SessionSecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sessionCookie" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="sessionCookie">セッション トークンを含む、生の形式でのクッキー。</param>
+        <summary>読み取り、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />指定したセッション cookie からです。</summary>
+        <returns>Cookie から読み取られたセッション トークンです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">有効なセッションのトークン ハンドラーが構成されていません。 (がない<see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" />で構成されている、<see cref="P:System.IdentityModel.Configuration.IdentityConfiguration.SecurityTokenHandlers" />プロパティです)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionSecurityTokenCreated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs&gt; SessionSecurityTokenCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs&gt; SessionSecurityTokenCreated" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションのセキュリティ トークンが作成された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントを使用して、cookie に書き込まれる前に、セッション セキュリティ トークンを変更することができます。  
+  
+ <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated>内からイベントは、<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest%2A>セッション トークンの後にメソッド (<xref:System.IdentityModel.Tokens.SessionSecurityToken>) が作成されました。 これは、場合に発生、たとえば、イベント ハンドラーを<xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived>イベントは、トークンを変更します。  
+  
+ このイベントを使用して、パイプラインに沿ってさらに渡されるして、エンティティ (ユーザー) の要求の認証に使用する前にセッション トークンのプロパティを変更することができます。  
+  
+ イベント ハンドラー内からトークンを表示できます、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken%2A?displayProperty=nameWithType>プロパティです。 変更した後、トークン、ことができますを確認することに書き込まれるバックアップ cookie を設定して、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.WriteSessionCookie%2A?displayProperty=nameWithType>プロパティを`true`です。 異なり、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated>イベント、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated>キャンセル可能なイベントではありません。  
+  
+   
+  
+## Examples  
+ 次のコードのハンドラーを示しています、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated> ASP.NET web アプリケーションの global.asax.cs ファイルで実装するイベントです。 イベントにハンドラーを追加することも必要があります。 完全な例を示します、<xref:System.IdentityModel.Services.SessionAuthenticationModule>概要トピックです。  
+  
+ [!code-csharp[WifSAM#6](~/samples/snippets/csharp/VS_Snippets_Misc/wifsam/cs/webapplication1/global.asax.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionSecurityTokenReceived">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs&gt; SessionSecurityTokenReceived;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs&gt; SessionSecurityTokenReceived" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションのセキュリティ トークンがクッキーから読み取られたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived>内からイベントは、<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest%2A>セッション トークンの後にメソッド (<xref:System.IdentityModel.Tokens.SessionSecurityToken>) セッション cookie から正常に読み取られています。  
+  
+ このイベントを使用して、パイプラインに沿ってさらに渡されるして、エンティティ (ユーザー) の要求の認証に使用する前にセッション トークンのプロパティを変更することができます。 最も一般的なシナリオの 1 つは、セッションの有効期限の時刻を変更 (経由でアクセスできる、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A?displayProperty=nameWithType>プロパティ) によって構成で設定されたセッションの有効期限時刻を上書きする、`lifetime`の属性、 [ &lt;sessionTokenRequirement&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement.md)要素。 要求ごとにこのプロパティを変更するには、スライディング セッションを実装することができます。つまりを有効期間は延長各セッションは、サイト ユーザーのアクセス時間です。  
+  
+ イベント ハンドラー内からトークンを表示できます、<xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.SessionToken%2A?displayProperty=nameWithType>プロパティです。 変更した後、トークン、ことができますを確認することに書き込まれるバックアップ cookie を設定して、<xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.ReissueCookie%2A?displayProperty=nameWithType>に`true`です。 最後に、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived>イベントがキャンセル可能なイベント、および設定することができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs>をさらに、要求の処理を中止します。  
+  
+   
+  
+## Examples  
+ 次のコードのハンドラーを示しています、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived> ASP.NET web アプリケーションの global.asax.cs ファイルで実装するイベントです。 イベントにハンドラーを追加することも必要があります。 完全な例を示します、<xref:System.IdentityModel.Services.SessionAuthenticationModule>概要トピックです。  
+  
+ [!code-csharp[WifSAM#5](~/samples/snippets/csharp/VS_Snippets_Misc/wifsam/cs/webapplication1/global.asax.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPrincipalFromSessionToken">
+      <MemberSignature Language="C#" Value="protected virtual void SetPrincipalFromSessionToken (System.IdentityModel.Tokens.SessionSecurityToken sessionSecurityToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetPrincipalFromSessionToken(class System.IdentityModel.Tokens.SessionSecurityToken sessionSecurityToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.SetPrincipalFromSessionToken(System.IdentityModel.Tokens.SessionSecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sessionSecurityToken" Type="System.IdentityModel.Tokens.SessionSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="sessionSecurityToken">元のプリンシパルを設定するセッション トークンです。</param>
+        <summary>プリンシパルを設定、<see cref="T:System.Web.HttpContext" />と<see cref="T:System.Threading.Thread" />指定したセッション トークンに含まれているプリンシパルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.IdentityModel.Services.SessionAuthenticationModule.ValidateSessionToken%2A>メソッドとセット、<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティおよび<xref:System.Web.HttpContext.User%2A?displayProperty=nameWithType>プロパティ<xref:System.Web.HttpContext.Current%2A?displayProperty=nameWithType>返される id を使用しています。  
+  
+ このメソッドは、<xref:System.IdentityModel.Services.SessionAuthenticationModule.AuthenticateSessionSecurityToken%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignedOut">
+      <MemberSignature Language="C#" Value="public event EventHandler SignedOut;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SignedOut" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.SessionAuthenticationModule.SignedOut" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがサインアウトした後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発生した、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut%2A>メソッド直後、<xref:System.IdentityModel.Services.SessionAuthenticationModule.DeleteSessionTokenCookie%2A>メソッドが呼び出されます。  
+  
+ このイベントは、すべてのセッションに対して呼び出されるようには保証されません。 クライアント側で、cookie を削除する可能性がありますなどの場合は、このとしないイベント セッションを削除するためのサーバー側のイベントが存在しないためです。  
+  
+   
+  
+## Examples  
+ 次のコードのハンドラーを示しています、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.SignedOut> ASP.NET web アプリケーションの global.asax.cs ファイルで実装するイベントです。 イベントにハンドラーを追加することも必要があります。 完全な例を示します、<xref:System.IdentityModel.Services.SessionAuthenticationModule>概要トピックです。  
+  
+ [!code-csharp[WifSAM#3](~/samples/snippets/csharp/VS_Snippets_Misc/wifsam/cs/webapplication1/global.asax.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SigningOut">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.SigningOutEventArgs&gt; SigningOut;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.SigningOutEventArgs&gt; SigningOut" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.SessionAuthenticationModule.SigningOut" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.SigningOutEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サインインしているセッションを削除する前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発生した、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut%2A>メソッド直前に、<xref:System.IdentityModel.Services.SessionAuthenticationModule.DeleteSessionTokenCookie%2A>メソッドが呼び出されます。  
+  
+ このイベントは、すべてのセッションに対して呼び出されるようには保証されません。 クライアント側で、cookie を削除する可能性がありますなどの場合は、このとしないイベント セッションを削除するためのサーバー側のイベントが存在しないためです。  
+  
+   
+  
+## Examples  
+ 次のコードのハンドラーを示しています、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.SigningOut> ASP.NET web アプリケーションの global.asax.cs ファイルで実装するイベントです。 イベントにハンドラーを追加することも必要があります。 完全な例を示します、<xref:System.IdentityModel.Services.SessionAuthenticationModule>概要トピックです。  
+  
+ [!code-csharp[WifSAM#4](~/samples/snippets/csharp/VS_Snippets_Misc/wifsam/cs/webapplication1/global.asax.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public virtual void SignOut ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SignOut() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.SignOut" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のユーザーがサインアウトし、関連するイベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSigningOut%2A>、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.DeleteSessionTokenCookie%2A>、および<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSignedOut%2A>サインアウトを実行するメソッド。例外が発生する場合、<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSignOutError%2A>させるメソッドが呼び出され、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOutError>イベント。 設定することができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.IdentityModel.Services.ErrorEventArgs>サインアウトを取り消すし、例外がクライアントに反映されないようにするには、このイベントのイベント ハンドラーに渡されたオブジェクト。  
+  
+ アプリケーション固有の動作を追加するには、このメソッドをオーバーライドすることができます。  
+  
+   
+  
+## Examples  
+ 次のコードを呼び出すコードを示しています、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut%2A> ASP.NET web アプリケーションで SignOut.aspx ページ (SignOut.aspx.cs) からのメソッドです。 完全な例を示します、<xref:System.IdentityModel.Services.SessionAuthenticationModule>概要トピックです。  
+  
+ [!code-csharp[WifSAM#7](~/samples/snippets/csharp/VS_Snippets_Misc/wifsam/cs/webapplication1/global.asax.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOutError">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.ErrorEventArgs&gt; SignOutError;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.ErrorEventArgs&gt; SignOutError" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.SessionAuthenticationModule.SignOutError" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.ErrorEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サインアウト時にエラーがある場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発生した、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut%2A>メソッド サインアウト時にエラーが発生したときにします。  
+  
+ イベント ハンドラー内から発生するイベントの原因となった例外を取得できます、<xref:System.IdentityModel.Services.ErrorEventArgs.Exception%2A?displayProperty=nameWithType>プロパティです。 さらに設定して、クライアントに例外が伝達されませんの結果のある例外の処理を取り消すことができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.IdentityModel.Services.ErrorEventArgs>に`true`です。  
+  
+ このイベントは、すべてのセッションに対して呼び出されるようには保証されません。 クライアント側で、cookie を削除する可能性がありますなどの場合は、このとしないイベント セッションを削除するためのサーバー側のイベントが存在しないためです。  
+  
+   
+  
+## Examples  
+ 次のコードのハンドラーを示しています、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOutError> ASP.NET web アプリケーションの global.asax.cs ファイルで実装するイベントです。 イベントにハンドラーを追加することも必要があります。 完全な例を示します、<xref:System.IdentityModel.Services.SessionAuthenticationModule>概要トピックです。  
+  
+ [!code-csharp[WifSAM#2](~/samples/snippets/csharp/VS_Snippets_Misc/wifsam/cs/webapplication1/global.asax.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryReadSessionTokenFromCookie">
+      <MemberSignature Language="C#" Value="public bool TryReadSessionTokenFromCookie (out System.IdentityModel.Tokens.SessionSecurityToken sessionToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryReadSessionTokenFromCookie([out] class System.IdentityModel.Tokens.SessionSecurityToken&amp; sessionToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.TryReadSessionTokenFromCookie(System.IdentityModel.Tokens.SessionSecurityToken@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sessionToken" Type="System.IdentityModel.Tokens.SessionSecurityToken&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="sessionToken">このメソッドが戻るときに、セッション クッキーから読み取られたセッションのセキュリティ トークンが含まれています。</param>
+        <summary>読み取ろうとすると、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />セッション クッキーからセッションの cookie が正常に読み取られたかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は、セッションの cookie は要求から正常に読み取られましたそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成されているクッキー ハンドラーを使用して cookie を読み取って、<xref:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler%2A>プロパティが呼び出され、および、 <xref:System.IdentityModel.Services.SessionAuthenticationModule.ReadSessionTokenFromCookie%2A> cookie のトークンを読み取ります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateSessionToken">
+      <MemberSignature Language="C#" Value="protected System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt; ValidateSessionToken (System.IdentityModel.Tokens.SessionSecurityToken sessionSecurityToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Security.Claims.ClaimsIdentity&gt; ValidateSessionToken(class System.IdentityModel.Tokens.SessionSecurityToken sessionSecurityToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.ValidateSessionToken(System.IdentityModel.Tokens.SessionSecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sessionSecurityToken" Type="System.IdentityModel.Tokens.SessionSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="sessionSecurityToken">検証トークンです。</param>
+        <summary>指定された検証<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />し、その id を返します。</summary>
+        <returns>トークンに含まれる id のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IdentityModel.Services.SessionAuthenticationModule.AuthenticateSessionSecurityToken%2A>メソッドです。 呼び出す、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.ValidateToken%2A?displayProperty=nameWithType>トークンを検証し、その id を抽出する構成済みのセッション トークン ハンドラーのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IdentityModel.Services.FederatedSessionExpiredException">トークンの有効期限が切れています。</exception>
+        <exception cref="T:System.IdentityModel.Services.FederationException">トークンの開始時刻はまだ有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">有効なセッションのトークン ハンドラーが構成されていません。 (がない<see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" />で構成されている、<see cref="P:System.IdentityModel.Configuration.IdentityConfiguration.SecurityTokenHandlers" />プロパティです)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSessionTokenToCookie">
+      <MemberSignature Language="C#" Value="public void WriteSessionTokenToCookie (System.IdentityModel.Tokens.SessionSecurityToken sessionToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteSessionTokenToCookie(class System.IdentityModel.Tokens.SessionSecurityToken sessionToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionAuthenticationModule.WriteSessionTokenToCookie(System.IdentityModel.Tokens.SessionSecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sessionToken" Type="System.IdentityModel.Tokens.SessionSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="sessionToken">書き込むセッション セキュリティ トークンです。</param>
+        <summary>指定した書き込み<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />セッション cookie にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成されているクッキー ハンドラーを使用して cookie を書き込みます、<xref:System.IdentityModel.Services.SessionAuthenticationModule.CookieHandler%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sessionToken" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">有効なセッションのトークン ハンドラーが構成されていません。 (がない<see cref="T:System.IdentityModel.Tokens.SessionSecurityTokenHandler" />で構成されている、<see cref="P:System.IdentityModel.Configuration.IdentityConfiguration.SecurityTokenHandlers" />プロパティです)。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

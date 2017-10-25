@@ -1,0 +1,59 @@
+<Type Name="XmlAttributeEventHandler" FullName="System.Xml.Serialization.XmlAttributeEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void XmlAttributeEventHandler(object sender, XmlAttributeEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XmlAttributeEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlAttributeEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Xml.Serialization.XmlAttributeEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Xml.Serialization.XmlAttributeEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Xml.Serialization.XmlSerializer.UnknownAttribute" /></summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Xml.Serialization.XmlAttributeEventHandler>デリゲート、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ <xref:System.Xml.Serialization.XmlSerializer.UnknownAttribute>のみときにオブジェクトが逆シリアル化されるとイベントが発生した、<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例には、という名前のクラスが逆シリアル化`Group`UnknownAttributes.xml をという名前のファイルからです。 要素はクラスでは、対応するメンバーを持たないファイルで検出されると、<xref:System.Xml.Serialization.XmlSerializer.UnknownAttribute>イベントが発生します。 この例を実行するには、UnknownAttributes.xml をという名前のファイルに次の XML コードを貼り付けます。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" GroupType = 'Technical' GroupNumber = '42' GroupBase = 'Red'>  
+  <GroupName>MyGroup</GroupName>  
+</Group>  
+```  
+  
+ [!code-cpp[Classic XmlSerializer.UnknownAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlSerializer.UnknownAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlSerializer.UnknownAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlSerializer.UnknownAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlSerializer.UnknownAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

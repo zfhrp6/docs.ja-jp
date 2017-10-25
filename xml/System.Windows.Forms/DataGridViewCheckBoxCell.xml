@@ -1,0 +1,1327 @@
+<Type Name="DataGridViewCheckBoxCell" FullName="System.Windows.Forms.DataGridViewCheckBoxCell">
+  <TypeSignature Language="C#" Value="public class DataGridViewCheckBoxCell : System.Windows.Forms.DataGridViewCell, System.Windows.Forms.IDataGridViewEditingCell" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewCheckBoxCell extends System.Windows.Forms.DataGridViewCell implements class System.Windows.Forms.IDataGridViewEditingCell" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCheckBoxCell" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridViewCell</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Forms.IDataGridViewEditingCell</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>チェック ボックスをユーザー インターフェイス (UI) で使用するを表示、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell>クラスは、特殊な種類の<xref:System.Windows.Forms.DataGridViewCell> チェック ボックスの UI に表示バイナリまたは 3 項の情報を表示するために使用します。 既定のバイナリ モードでは、セルがの値を保持できる`true`または`false`です。 三項のモードで、セルがのいずれかになります、<xref:System.Windows.Forms.CheckState>値。 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A>プロパティは、バイナリまたは 3 項のモードが有効になっているかどうかを決定します。  
+  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxColumn>は、この種類のセルを保持するために特化した列の型。 既定では、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A?displayProperty=nameWithType>を新しい初期化<xref:System.Windows.Forms.DataGridViewCheckBoxCell>です。 既存の後に、列内のセルのパターンに<xref:System.Windows.Forms.DataGridViewCheckBoxCell>、列の設定<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A>プロパティのパターンとして使用するセルをします。  
+  
+ 列のセルに関連するプロパティは、テンプレートのセルの同様の名前付きプロパティのラッパーです。 テンプレート セルのプロパティの値を変更すると、セルのみ、テンプレートに基づいて、変更後に追加されるが影響されます。 列のセルに関連するプロパティ値を変更するには、ただしはテンプレート セルとその他のすべてのセルの列で、更新し、必要な場合は、列の表示を更新します。  
+  
+ 現在のセルの場合は、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell>、<xref:System.Windows.Forms.DataGridView.IsCurrentCellInEditMode%2A?displayProperty=nameWithType>プロパティは常に`true`です。  
+  
+ 通常は、チェック ボックス セルの値は記憶域は、その他のデータと同様に、または一括操作を実行するものです。 処理することができる場合、ユーザーは、チェック ボックス セルをクリックして、すぐに応答する場合、<xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType>セルの値が更新される前に、イベントでなく、このイベントが発生します。 1 つのオプションは、予期された値を計算する、クリックの時に新しい値を必要がある場合、現在の値に基づいています。 すぐに、変更をコミットし、処理は、別の方法として、<xref:System.Windows.Forms.DataGridView.CellValueChanged?displayProperty=nameWithType>イベントに応答します。 セルがクリックされたときに、変更をコミットするには、処理、<xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged?displayProperty=nameWithType>イベント。 呼び出しでは、ハンドラーを現在のセルがチェック ボックス セルの場合、<xref:System.Windows.Forms.DataGridView.CommitEdit%2A?displayProperty=nameWithType>メソッドを渡します、<xref:System.Windows.Forms.DataGridViewDataErrorContexts.Commit>値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>を従業員がオフィスにいるを追跡します。 列から成る<xref:System.Windows.Forms.DataGridViewCheckBoxCell>オブジェクト。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#20)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#20)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生したときに<see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" />、派生クラスに新しいプロパティを追加、上書きすることを確認して、<see cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.Clone" />複製操作時に新しいプロパティをコピーします。 基本クラスの呼び出す必要もあります<see cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされるようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewCheckBoxCell ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" />クラスを既定の状態にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A>プロパティの値を`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewCheckBoxCell (bool threeState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool threeState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="threeState" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="threeState">
+          <see langword="true" />三項の状態を有効にするには<see langword="false" />バイナリ状態を有効にします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" />クラス、バイナリまたは 3 項の状態を有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの状態では、チェック ボックスの標準の操作: checked と unchecked します。 ときに、`threeState`にパラメーターが設定されている`true`、追加、不確定の状態が許可された、灰色の部分的なチェックで視覚的に示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対象のセルの同一コピーを作成します。</summary>
+        <returns>複製された <see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" /> を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.Clone%2A>メソッドから派生するたびに<xref:System.Windows.Forms.DataGridViewCheckBoxCell>し、派生クラスに新しいプロパティを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.Clone" />呼び出し、基本クラスの派生クラスで<see cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされも、派生クラスに追加されたプロパティの値をコピーすることを確認するようにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentClickUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool ContentClickUnsharesRow (System.Windows.Forms.DataGridViewCellEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ContentClickUnsharesRow(class System.Windows.Forms.DataGridViewCellEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.ContentClickUnsharesRow(System.Windows.Forms.DataGridViewCellEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.DataGridViewCellEventArgs" />マウス クリックに関するデータを格納します。</param>
+        <summary>セルの内容がクリックされたときに、そのセルを含む行を非共有にするかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />セルが編集モードである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ContentClickUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnContentClick%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnContentClick%2A>セルを含む行を非共有の効果があります。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentDoubleClickUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool ContentDoubleClickUnsharesRow (System.Windows.Forms.DataGridViewCellEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ContentDoubleClickUnsharesRow(class System.Windows.Forms.DataGridViewCellEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.ContentDoubleClickUnsharesRow(System.Windows.Forms.DataGridViewCellEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.DataGridViewCellEventArgs" />ダブルクリックに関するデータを格納します。</param>
+        <summary>セルの内容がダブルクリックされたときに、セルを含む行の共有を解除するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />セルが編集モードである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ContentDoubleClickUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnContentDoubleClick%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnContentDoubleClick%2A>セルを含む行を非共有の効果があります。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" /> の新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell.DataGridViewCheckBoxCellAccessibleObject" /> の新しい <see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に <xref:System.Windows.Forms.DataGridViewCheckBoxCell.CreateAccessibilityInstance%2A> メソッドを呼び出さない場合は、<xref:System.Windows.Forms.DataGridViewCell.AccessibilityObject%2A> プロパティが参照されると呼び出されます。  
+  
+> [!NOTE]
+>  取得または設定<xref:System.Windows.Forms.DataGridViewCell.AccessibilityObject%2A>への参照を追加する必要があります、`Accessibility`アセンブリが .NET Framework と共にインストールします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditingCellFormattedValue">
+      <MemberSignature Language="C#" Value="public virtual object EditingCellFormattedValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object EditingCellFormattedValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.EditingCellFormattedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または編集モードにあるときに、セルによってホストされるコントロールの書式設定された値を設定します。</summary>
+        <value><see cref="T:System.Object" />セルの値を表すです。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType" />プロパティの値が<see langword="null" />です。  
+  
+ または  
+  
+ 割り当てられた値が<see langword="null" />によって示される型のか、<see cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType" />プロパティです。  
+  
+ または  
+  
+ 割り当てられた値の種類ではありません<see cref="T:System.Boolean" />も型の<see cref="T:System.Windows.Forms.CheckState" />します。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType" />プロパティの値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EditingCellValueChanged">
+      <MemberSignature Language="C#" Value="public virtual bool EditingCellValueChanged { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EditingCellValueChanged" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.EditingCellValueChanged" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このセルの値が変更されたことを示すフラグを設定します。</summary>
+        <value>
+          <see langword="true" />セルの値が変更された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セルの値が変更されたときに値が保存またはセルがそのデータ ソースからのデータで再初期化するまで変更済みとしてマークされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditType">
+      <MemberSignature Language="C#" Value="public override Type EditType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type EditType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.EditType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルのホストされる編集コントロールの種類を取得します。</summary>
+        <value><see cref="T:System.Type" />基になる編集コントロールのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバーライドされたプロパティは常に返します`null`のためのチェック ボックスのみを許可する選択と選択解除、編集はできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FalseValue">
+      <MemberSignature Language="C#" Value="public object FalseValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object FalseValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルの値に対応する基になる値の設定を取得または<see langword="false" />です。</summary>
+        <value><see cref="T:System.Object" />セルの値に対応する<see langword="false" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>、および<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>プロパティを基になるデータ ソースで発生すると、これらの状態に関連する値を決定します。  
+  
+ 設定、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell> office 光源の状態を追跡します。 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>プロパティに関連付けます「消える」 `false`、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>プロパティは「呼び出すこと」を関連付けます`true`、および<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>プロパティが「不明」不確定に関連付けられます。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp#0)]
+ [!code-csharp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/CS/trivaluevirtualcheckbox.cs#0)]
+ [!code-vb[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/VB/trivaluevirtualcheckbox.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlatStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.FlatStyle FlatStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.FlatStyle FlatStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.FlatStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはチェック ボックスをユーザー インターフェイス (UI) のフラット スタイルの外観を設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.FlatStyle" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.FlatStyle.Standard" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.FlatStyle.Popup>フラット スタイルがこのセルの種類でサポートされていません。  
+  
+ 設定、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FlatStyle%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.FlatStyle%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FlatStyle%2A?displayProperty=nameWithType>プロパティで、このプロパティに似ています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#20)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">このプロパティの設定時に指定した値が、有効な <see cref="T:System.Windows.Forms.FlatStyle" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FormattedValueType">
+      <MemberSignature Language="C#" Value="public override Type FormattedValueType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type FormattedValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルの表示値の型を取得します。</summary>
+        <value>A<see cref="T:System.Type" />セルの表示の種類を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A>プロパティの値が`false`、このプロパティの値は、<xref:System.Boolean>型; 以外の場合は、<xref:System.Windows.Forms.CheckState>型です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A?displayProperty=nameWithType>プロパティ セルの内容の種類を判断します。 この例では、<xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A?displayProperty=nameWithType>セルに含まれるかどうかを決定するプロパティが使用される、<xref:System.String>値に変換する前にします。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.SelectionChanged?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewSelectionSum#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSelectionSum/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridViewSelectionSum#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSelectionSum/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentBounds">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle GetContentBounds (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle GetContentBounds(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.GetContentBounds(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">セルのグラフィックス コンテキスト。</param>
+        <param name="cellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />をセルに適用できます。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>指定されたを使用して計算されるセルの内容領域を囲んだ外接する四角形を返します<see cref="T:System.Drawing.Graphics" />とセル スタイルです。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" />セルの内容領域に外接します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditingCellFormattedValue">
+      <MemberSignature Language="C#" Value="public virtual object GetEditingCellFormattedValue (System.Windows.Forms.DataGridViewDataErrorContexts context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetEditingCellFormattedValue(valuetype System.Windows.Forms.DataGridViewDataErrorContexts context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.GetEditingCellFormattedValue(System.Windows.Forms.DataGridViewDataErrorContexts)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Windows.Forms.DataGridViewDataErrorContexts" />
+      </Parameters>
+      <Docs>
+        <param name="context">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewDataErrorContexts" />書式設定エラーが発生したコンテキストを記述する値。</param>
+        <summary>編集モードにある間は、セルの書式設定された値を取得します。</summary>
+        <returns><see cref="T:System.Object" />を表す、編集セルの書式設定された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`context`が含まれています、<xref:System.Windows.Forms.DataGridViewDataErrorContexts.ClipboardContent>値、このメソッドが戻る、<xref:System.Object>にキャスト可能な<xref:System.String>値の形式です。 このメソッドを返しますそれ以外の場合、<xref:System.Boolean>または<xref:System.Windows.Forms.CheckState>の値に応じて、値、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType" />プロパティの値が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorIconBounds">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle GetErrorIconBounds (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle GetErrorIconBounds(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.GetErrorIconBounds(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">セルのグラフィックス コンテキスト。</param>
+        <param name="cellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />をセルに適用できます。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>セルのエラー アイコンが表示されている場合に、そのエラー アイコンを囲む外接する四角形を返します。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" />いずれかが表示されている、それ以外の場合、セルのエラーのアイコンに外接する<see cref="F:System.Drawing.Rectangle.Empty" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormattedValue">
+      <MemberSignature Language="C#" Value="protected override object GetFormattedValue (object value, int rowIndex, ref System.Windows.Forms.DataGridViewCellStyle cellStyle, System.ComponentModel.TypeConverter valueTypeConverter, System.ComponentModel.TypeConverter formattedValueTypeConverter, System.Windows.Forms.DataGridViewDataErrorContexts context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetFormattedValue(object value, int32 rowIndex, class System.Windows.Forms.DataGridViewCellStyle&amp; cellStyle, class System.ComponentModel.TypeConverter valueTypeConverter, class System.ComponentModel.TypeConverter formattedValueTypeConverter, valuetype System.Windows.Forms.DataGridViewDataErrorContexts context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.GetFormattedValue(System.Object,System.Int32,System.Windows.Forms.DataGridViewCellStyle@,System.ComponentModel.TypeConverter,System.ComponentModel.TypeConverter,System.Windows.Forms.DataGridViewDataErrorContexts)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle&amp;" RefType="ref" />
+        <Parameter Name="valueTypeConverter" Type="System.ComponentModel.TypeConverter" />
+        <Parameter Name="formattedValueTypeConverter" Type="System.ComponentModel.TypeConverter" />
+        <Parameter Name="context" Type="System.Windows.Forms.DataGridViewDataErrorContexts" />
+      </Parameters>
+      <Docs>
+        <param name="value">書式指定される値。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <param name="cellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルに対して有効です。</param>
+        <param name="valueTypeConverter">A<see cref="T:System.ComponentModel.TypeConverter" />書式設定された値型に変換のカスタム値の型に関連付けられているまたは<see langword="null" />場合、このようなカスタムの変換は必要ありません。</param>
+        <param name="formattedValueTypeConverter">A<see cref="T:System.ComponentModel.TypeConverter" />値の型からカスタムの変換を提供する書式設定された値型に関連付けられているまたは<see langword="null" />場合、このようなカスタムの変換は必要ありません。</param>
+        <param name="context">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewDataErrorContexts" />書式設定された値が必要とされるコンテキストを記述する値。</param>
+        <summary>セルのデータの書式設定された値を取得します。</summary>
+        <returns>セルのデータの書式設定が適用された後の値または<see langword="null" />セルがない場合の一部、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView>コントロールがセルの値を同等の表示の値によって示される型に変換するには、このメソッドを呼び出して、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType%2A>プロパティです。 このメソッドにコントロールがセルの値を渡します、`value`パラメーター。  
+  
+ このメソッドは、最初の変換を試みます`value`を<xref:System.Boolean>または<xref:System.Windows.Forms.CheckState>値を使用して、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>、および<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>プロパティが設定されている場合。  
+  
+ 変換が成功した場合、<xref:System.Windows.Forms.DataGridView.DataError?displayProperty=nameWithType>イベントが発生します。 このイベント ハンドラーのセットのハンドラーがない場合、<xref:System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException%2A?displayProperty=nameWithType>プロパティを`true`例外がスローされます。  
+  
+ 変換が成功したかどうか、またはのハンドラーがある、<xref:System.Windows.Forms.DataGridView.DataError>イベントとそのを設定しない、<xref:System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException%2A?displayProperty=nameWithType>プロパティを`true`、<xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType>イベントが発生します。  
+  
+ A<xref:System.Windows.Forms.DataGridView.CellFormatting>イベント ハンドラーは、両方を変更できる`value`と`cellStyle`です。 ハンドラーが設定されていない場合、<xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A?displayProperty=nameWithType>プロパティを`true`、ただし、このメソッドはフォーマット`value`の書式設定のプロパティを使用して、`cellStyle`オブジェクト。 これは、結果、追加<xref:System.Windows.Forms.DataGridView.DataError>イベント。  
+  
+ 書式設定が成功した場合、`context`パラメーターの値が含まれています、<xref:System.Windows.Forms.DataGridViewDataErrorContexts.ClipboardContent>値、このメソッドが戻る、<xref:System.String>書式設定された値をクリップボードにコピーするためのバージョン。 このメソッドがで表示する書式設定された値を返しますそれ以外の場合、<xref:System.Windows.Forms.DataGridView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size GetPreferredSize (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex, System.Drawing.Size constraintSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Size GetPreferredSize(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex, valuetype System.Drawing.Size constraintSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.GetPreferredSize(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32,System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="constraintSize" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />セルを描画するために使用します。</param>
+        <param name="cellStyle">A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルのスタイルを表すです。</param>
+        <param name="rowIndex">セルの 0 から始まる行インデックス番号。</param>
+        <param name="constraintSize">セルの最大許容サイズ。</param>
+        <summary>セルの推奨されるサイズをピクセル単位で計算します。</summary>
+        <returns>A <see cref="T:System.Drawing.Size" /> (ピクセル単位) のセルの推奨されるサイズを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndeterminateValue">
+      <MemberSignature Language="C#" Value="public object IndeterminateValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object IndeterminateValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、不確定に対応する基になる値を設定または<see langword="null" />セルの値。</summary>
+        <value><see cref="T:System.Object" /> 、不確定に対応するまたは<see langword="null" />セルの値。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>、および<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>プロパティを基になるデータ ソースで発生すると、これらの状態に関連する値を決定します。  
+  
+ 設定、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell> office 光源の状態を追跡します。 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>プロパティに関連付けます「消える」 `false`、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>プロパティは「呼び出すこと」を関連付けます`true`、および<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>プロパティが「不明」不確定に関連付けられます。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp#0)]
+ [!code-csharp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/CS/trivaluevirtualcheckbox.cs#0)]
+ [!code-vb[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/VB/trivaluevirtualcheckbox.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyDownUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool KeyDownUnsharesRow (System.Windows.Forms.KeyEventArgs e, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool KeyDownUnsharesRow(class System.Windows.Forms.KeyEventArgs e, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.KeyDownUnsharesRow(System.Windows.Forms.KeyEventArgs,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.KeyEventArgs" />キーを押すに関するデータを格納します。</param>
+        <param name="rowIndex">セルを含む行のインデックス。</param>
+        <summary>セルにフォーカスがあるときにキーが押されたときに、セルを含む行の共有が解除されるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />SPACE キーが押され、ctrl キーを押し、alt キーと SHIFT キーはすべて押されていない状態です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell.KeyDownUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnKeyDown%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnKeyDown%2A>同じ<xref:System.Windows.Forms.KeyEventArgs>引数には、セルを含む行を非共有の効果です。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyUpUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool KeyUpUnsharesRow (System.Windows.Forms.KeyEventArgs e, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool KeyUpUnsharesRow(class System.Windows.Forms.KeyEventArgs e, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.KeyUpUnsharesRow(System.Windows.Forms.KeyEventArgs,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.KeyEventArgs" />キーを押すに関するデータを格納します。</param>
+        <param name="rowIndex">セルを含む行のインデックス。</param>
+        <summary>セルにフォーカスがあるときに、キーが離されたときに、セルを含む行の共有が解除されるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />SPACE キーを放した場合です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell.KeyUpUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnKeyUp%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnKeyUp%2A>同じ<xref:System.Windows.Forms.KeyEventArgs>引数には、セルを含む行を非共有の効果です。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDownUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseDownUnsharesRow (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseDownUnsharesRow(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.MouseDownUnsharesRow(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />マウス クリックに関するデータを格納します。</param>
+        <summary>ポインターがセルの上にあるときに、マウス ボタンが押されたときに、そのセルを含む行を非共有にするかどうかを示します。</summary>
+        <returns>常に <see langword="true" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 常に、マウス ボタンを押すと、この種類のセルを含む行が共有解除されます。  
+  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell.MouseDownUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseDown%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseDown%2A>セルを含む行を非共有の効果があります。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseEnterUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseEnterUnsharesRow (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseEnterUnsharesRow(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.MouseEnterUnsharesRow(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルを含む行のインデックス。</param>
+        <summary>マウス ポインターがセル上に移動したときに、そのセルを含む行を非共有にするかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />セルがマウスを受信する最後のセルをクリックします。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell.MouseUpUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewCell.OnMouseEnter%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewCell.OnMouseEnter%2A>セルを含む行を非共有の効果があります。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseLeaveUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseLeaveUnsharesRow (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseLeaveUnsharesRow(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.MouseLeaveUnsharesRow(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルを含む行のインデックス。</param>
+        <summary>マウス ポインターをセルから離すときに、セルを含む行の共有を解除するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />ボタンが通常の状態にない場合<see langword="false" />ボタンが押された状態がある場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell.MouseLeaveUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseLeave%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseLeave%2A>セルを含む行を非共有の効果があります。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseUpUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseUpUnsharesRow (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseUpUnsharesRow(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.MouseUpUnsharesRow(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />マウス クリックに関するデータを格納します。</param>
+        <summary>離されたときに、マウスのボタンは、ポインターがセル上に、そのセルを含む行を非共有にするかどうかを示します。</summary>
+        <returns>常に <see langword="true" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このセルの種類のセルを含む行にポインターがセル上で常に、マウスのボタンを押した解除します。  
+  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell.MouseUpUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseUp%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseUp%2A>セルを含む行を非共有の効果があります。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContentClick">
+      <MemberSignature Language="C#" Value="protected override void OnContentClick (System.Windows.Forms.DataGridViewCellEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContentClick(class System.Windows.Forms.DataGridViewCellEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnContentClick(System.Windows.Forms.DataGridViewCellEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellEventArgs" />。</param>
+        <summary>セルの内容がクリックされたときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContentDoubleClick">
+      <MemberSignature Language="C#" Value="protected override void OnContentDoubleClick (System.Windows.Forms.DataGridViewCellEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContentDoubleClick(class System.Windows.Forms.DataGridViewCellEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnContentDoubleClick(System.Windows.Forms.DataGridViewCellEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellEventArgs" />。</param>
+        <summary>セルの内容がダブルクリックされたときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Forms.KeyEventArgs e, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Forms.KeyEventArgs e, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnKeyDown(System.Windows.Forms.KeyEventArgs,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.KeyEventArgs" />イベント データを格納しています。</param>
+        <param name="rowIndex">現在のセルまたは行は、セルを所有していない場合は-1 の行インデックス。</param>
+        <summary>セルにフォーカスがある状態で文字キーが押されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Space キーを押してアクティブになると、このメソッドは、セルのユーザー インターフェイス (UI) を更新するをによりします。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.Control.OnKeyDown%2A?displayProperty=nameWithType>メソッドです。 同じ環境での呼び出し、<xref:System.Windows.Forms.Control.KeyDown?displayProperty=nameWithType>イベントが発生しますが、イベントを実際には発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyUp">
+      <MemberSignature Language="C#" Value="protected override void OnKeyUp (System.Windows.Forms.KeyEventArgs e, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyUp(class System.Windows.Forms.KeyEventArgs e, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnKeyUp(System.Windows.Forms.KeyEventArgs,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.KeyEventArgs" />イベント データを格納しています。</param>
+        <param name="rowIndex">現在のセルまたは行は、セルを所有していない場合は-1 の行インデックス。</param>
+        <summary>セルにフォーカスがある状態で文字キーを離したときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SPACE キーをアクティブになったとき (と同等、<xref:System.Windows.Forms.Keys?displayProperty=nameWithType>値)、このメソッドは、セルを更新させ、ユーザー インターフェイス (UI) の<xref:System.Windows.Forms.DataGridView.OnCellClick%2A>で所有しているイベントを<xref:System.Windows.Forms.DataGridView>です。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.Control.OnKeyUp%2A?displayProperty=nameWithType>メソッドです。 同じ環境での呼び出し、<xref:System.Windows.Forms.Control.KeyUp?displayProperty=nameWithType>イベントが発生しますが、イベントを実際には発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLeave">
+      <MemberSignature Language="C#" Value="protected override void OnLeave (int rowIndex, bool throughMouseClick);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLeave(int32 rowIndex, bool throughMouseClick) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnLeave(System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="throughMouseClick" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">現在のセルまたは行は、セルを所有していない場合は-1 の行インデックス。</param>
+        <param name="throughMouseClick">
+          <see langword="true" />プログラムによるセルの変更; ではなく、セルは、ユーザーがマウスの結果として残っていた場合にをクリックします。それ以外の場合、<see langword="false" />です。</param>
+        <summary>フォーカスがセルから離れるときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ボタンが押された状態にある場合は、このメソッドは、セルのユーザー インターフェイス (UI) を更新します。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.Control.OnLeave%2A?displayProperty=nameWithType>メソッドです。 同じ環境での呼び出し、<xref:System.Windows.Forms.Control.Leave?displayProperty=nameWithType>イベントが発生しますが、イベントを実際には発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseDown (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseDown(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseDown(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />。</param>
+        <summary>ポインターがセル上にあるときでマウス ボタンを押したときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セルのユーザー インターフェイス (UI) を更新します。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.Control.OnMouseDown%2A?displayProperty=nameWithType>メソッドです。 同じ環境での呼び出し、<xref:System.Windows.Forms.Control.MouseDown?displayProperty=nameWithType>イベントが発生しますが、イベントを実際には発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeave">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeave (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeave(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseLeave(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">現在のセルまたはセルが行単位で所有していない場合は-1 の行インデックス。</param>
+        <summary>マウス ポインターがセルから離れるときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セルの現在場合<xref:System.Windows.Forms.ButtonState>は通常、このメソッドは、セルのユーザー インターフェイス (UI) を更新します。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.Control.OnMouseLeave%2A>メソッドです。 同じ環境での呼び出し、<xref:System.Windows.Forms.Control.MouseLeave>イベントが発生しますが、イベントを実際には発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseMove">
+      <MemberSignature Language="C#" Value="protected override void OnMouseMove (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseMove(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseMove(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />。</param>
+        <summary>マウス ポインターがセル内で移動すると呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セルのユーザー インターフェイス (UI) を更新します。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.Control.OnMouseMove%2A?displayProperty=nameWithType>メソッドです。 同じ環境での呼び出し、<xref:System.Windows.Forms.Control.MouseMove?displayProperty=nameWithType>イベントが発生しますが、イベントを実際には発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseUp">
+      <MemberSignature Language="C#" Value="protected override void OnMouseUp (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseUp(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseUp(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />。</param>
+        <summary>ポインターがセル上にマウス ボタンが離されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セルのユーザー インターフェイス (UI) を更新します。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.Control.OnMouseUp%2A>メソッドです。 同じ環境での呼び出し、<xref:System.Windows.Forms.Control.MouseUp>イベントが発生しますが、イベントを実際には発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics graphics, System.Drawing.Rectangle clipBounds, System.Drawing.Rectangle cellBounds, int rowIndex, System.Windows.Forms.DataGridViewElementStates elementState, object value, object formattedValue, string errorText, System.Windows.Forms.DataGridViewCellStyle cellStyle, System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, System.Windows.Forms.DataGridViewPaintParts paintParts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Paint(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle clipBounds, valuetype System.Drawing.Rectangle cellBounds, int32 rowIndex, valuetype System.Windows.Forms.DataGridViewElementStates elementState, object value, object formattedValue, string errorText, class System.Windows.Forms.DataGridViewCellStyle cellStyle, class System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, valuetype System.Windows.Forms.DataGridViewPaintParts paintParts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.DataGridViewElementStates,System.Object,System.Object,System.String,System.Windows.Forms.DataGridViewCellStyle,System.Windows.Forms.DataGridViewAdvancedBorderStyle,System.Windows.Forms.DataGridViewPaintParts)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="clipBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="cellBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="elementState" Type="System.Windows.Forms.DataGridViewElementStates" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="formattedValue" Type="System.Object" />
+        <Parameter Name="errorText" Type="System.String" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="advancedBorderStyle" Type="System.Windows.Forms.DataGridViewAdvancedBorderStyle" />
+        <Parameter Name="paintParts" Type="System.Windows.Forms.DataGridViewPaintParts" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />セルの描画に使用します。</param>
+        <param name="clipBounds">A<see cref="T:System.Drawing.Rectangle" />の領域を表す、<see cref="T:System.Windows.Forms.DataGridView" />再描画する必要があります。</param>
+        <param name="cellBounds">A<see cref="T:System.Drawing.Rectangle" />描画されるセルの境界を格納しています。</param>
+        <param name="rowIndex">描画されるセルの行インデックス。</param>
+        <param name="elementState">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />セルの状態を指定する値。</param>
+        <param name="value">描画されるセルのデータです。</param>
+        <param name="formattedValue">描画されるセルの書式設定されたデータ。</param>
+        <param name="errorText">セルに関連付けられたエラー メッセージ。</param>
+        <param name="cellStyle">A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルに関する書式とスタイル情報を格納します。</param>
+        <param name="advancedBorderStyle">A<see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />描画されるセルの境界線スタイルを格納します。</param>
+        <param name="paintParts">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewPaintParts" />セルのどの部分を描画する必要がありますを指定する値。</param>
+        <summary>現在の描画<see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseFormattedValue">
+      <MemberSignature Language="C#" Value="public override object ParseFormattedValue (object formattedValue, System.Windows.Forms.DataGridViewCellStyle cellStyle, System.ComponentModel.TypeConverter formattedValueTypeConverter, System.ComponentModel.TypeConverter valueTypeConverter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ParseFormattedValue(object formattedValue, class System.Windows.Forms.DataGridViewCellStyle cellStyle, class System.ComponentModel.TypeConverter formattedValueTypeConverter, class System.ComponentModel.TypeConverter valueTypeConverter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.ParseFormattedValue(System.Object,System.Windows.Forms.DataGridViewCellStyle,System.ComponentModel.TypeConverter,System.ComponentModel.TypeConverter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formattedValue" Type="System.Object" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="formattedValueTypeConverter" Type="System.ComponentModel.TypeConverter" />
+        <Parameter Name="valueTypeConverter" Type="System.ComponentModel.TypeConverter" />
+      </Parameters>
+      <Docs>
+        <param name="formattedValue">セルの表示値。</param>
+        <param name="cellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルに対して有効です。</param>
+        <param name="formattedValueTypeConverter">A <see cref="T:System.ComponentModel.TypeConverter" /> 、表示値型または<see langword="null" />既定のコンバーターを使用します。</param>
+        <param name="valueTypeConverter">A<see cref="T:System.ComponentModel.TypeConverter" />セルの値型または<see langword="null" />既定のコンバーターを使用します。</param>
+        <summary>表示用に書式設定された値を、実際のセル値に変換します。</summary>
+        <returns>セル値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがセルの値を編集し、変更をコミット時に、<xref:System.Windows.Forms.DataGridView>コントロールが表示されている値から変換するには、このメソッドを呼び出して、<xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A>を<xref:System.Windows.Forms.DataGridViewCell.ValueType%2A>です。 コントロールでは、変換後の値を基になるセルの値またはデータ ソースの値を設定します。  
+  
+ このメソッドは、の値を使用して実際のセル値をセルの表示値を変換、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>、および<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>プロパティが設定されている場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cellStyle" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException"><see cref="P:System.Windows.Forms.DataGridViewCell.FormattedValueType" />プロパティの値が<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="formattedValue" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ 型<paramref name="formattedValue" />によって示される型と一致しません、<see cref="P:System.Windows.Forms.DataGridViewCell.FormattedValueType" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareEditingCellForEdit">
+      <MemberSignature Language="C#" Value="public virtual void PrepareEditingCellForEdit (bool selectAll);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PrepareEditingCellForEdit(bool selectAll) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.PrepareEditingCellForEdit(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="selectAll" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="selectAll">このパラメーターは無視されます。</param>
+        <summary>このメソッドは、この種類の意味がありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 準備するこのセルの種類の必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreeState">
+      <MemberSignature Language="C#" Value="public bool ThreeState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThreeState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはホスト型のチェック ボックス コントロールの三項モードが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />三項モードが有効である場合<see langword="false" />バイナリ モードが有効になっている場合。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 三項モードでは、3 番目の状態は、通常、初期化されていないか、不確定な値を表します。  
+  
+ 設定、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+ 列とは異なり<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A>プロパティ、セル<xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A>プロパティが自動的に更新されない、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>その値を変更するときに関連付けられているセルのスタイルのプロパティです。 セルを変更すると<xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A>プロパティの値を`true`、必ず設定して、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>によって返されるオブジェクトのプロパティ、<xref:System.Windows.Forms.DataGridViewCell.Style%2A>プロパティを<xref:System.Windows.Forms.CheckState.Indeterminate>です。 変更すると、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A>プロパティの値を`false`、必ず設定して、<xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A>プロパティを`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell> office 光源の状態を追跡します。 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>プロパティに関連付けます「消える」 `false`、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>プロパティは「呼び出すこと」を関連付けます`true`、および<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>プロパティが「不明」不確定に関連付けられます。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp#0)]
+ [!code-csharp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/CS/trivaluevirtualcheckbox.cs#0)]
+ [!code-vb[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/VB/trivaluevirtualcheckbox.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セルの文字列表現を返します。</summary>
+        <returns>A<see cref="T:System.String" />の現在のセルを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セルの文字列形式には、行インデックスおよびセルの列のインデックスが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrueValue">
+      <MemberSignature Language="C#" Value="public object TrueValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TrueValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルの値に対応する基になる値の設定を取得または<see langword="true" />です。</summary>
+        <value><see cref="T:System.Object" />セルの値に対応する<see langword="true" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>、および<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>プロパティを基になるデータ ソースで発生すると、これらの状態に関連する値を決定します。  
+  
+ 設定、<xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Windows.Forms.DataGridViewCheckBoxCell> office 光源の状態を追跡します。 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>プロパティに関連付けます「消える」 `false`、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>プロパティは「呼び出すこと」を関連付けます`true`、および<xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A>プロパティが「不明」不確定に関連付けられます。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp#0)]
+ [!code-csharp[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/CS/trivaluevirtualcheckbox.cs#0)]
+ [!code-vb[System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/VB/trivaluevirtualcheckbox.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueType">
+      <MemberSignature Language="C#" Value="public override Type ValueType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.ValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セル内の値のデータ型を取得します。</summary>
+        <value><see cref="T:System.Type" />のセルの基になる値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.DataGridViewCheckBoxCell.ValueType%2A>セルのプロパティが設定されていない、<xref:System.Windows.Forms.DataGridViewColumn.ValueType%2A>プロパティを所有している<xref:System.Windows.Forms.DataGridViewCheckBoxColumn>を使用する場合は、列が存在します。  
+  
+ 所有している列が存在しないかどうかは、このプロパティは、既定の型、モード:<xref:System.Boolean>バイナリ モードと<xref:System.Windows.Forms.CheckState>モードにします。  
+  
+ <xref:System.Windows.Forms.DataGridViewCell.Value%2A> 、セルに含まれる実際のデータ オブジェクトがありますが、<xref:System.Windows.Forms.DataGridViewCell.FormattedValue%2A>プロパティは、このオブジェクトの書式設定された表現です。 <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ValueType%2A>と<xref:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType%2A>プロパティはそれぞれこれらの値のデータ型に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

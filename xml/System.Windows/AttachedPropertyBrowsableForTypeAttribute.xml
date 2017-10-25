@@ -1,0 +1,163 @@
+<Type Name="AttachedPropertyBrowsableForTypeAttribute" FullName="System.Windows.AttachedPropertyBrowsableForTypeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class AttachedPropertyBrowsableForTypeAttribute : System.Windows.AttachedPropertyBrowsableAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AttachedPropertyBrowsableForTypeAttribute extends System.Windows.AttachedPropertyBrowsableAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.AttachedPropertyBrowsableForTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.AttachedPropertyBrowsableAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>添付プロパティが、指定した型から派生した要素に対してのみ参照可能なことを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 用語の意味`browsable`この説明で使用されている[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]の指定された説明に似ています<xref:System.ComponentModel.BrowsableAttribute>、添付プロパティの参照可能な状態のプロパティの情報に特に関連するが、[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]添付プロパティは、主にあるため、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]概念です。  
+  
+ 複数の種類を指定した場合、 <xref:System.Windows.AttachedPropertyBrowsableForTypeAttribute> [!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]プロパティが参照できるは、指定した型が一致する場合 (論理または)。  型には、インターフェイスことができます。  
+  
+ これは、[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]指定<xref:System.AttributeUsageAttribute.AllowMultiple%2A>`true`です。  
+  
+ これは、[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]添付プロパティの定義の get アクセサーでのみ適用する必要があります。 これは適用されません[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]set アクセサーにします。 設定操作の参照可能にすることは直感的に[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]関連の要素が存在して、実際の動作を制御する要素を定義するプロパティの get アクセサーの特性。  
+  
+ 添付プロパティの宣言の概要については、次を参照してください。[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AttachedPropertyBrowsableForTypeAttribute (Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.AttachedPropertyBrowsableForTypeAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="targetType">添付プロパティの使用のスコープとなる目的の型をこの[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]適用されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.AttachedPropertyBrowsableForTypeAttribute" />クラス、使用、提供された<paramref name="targetType" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.AttachedPropertyBrowsableForTypeAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.Windows.AttachedPropertyBrowsableForTypeAttribute" />現在と比較する<see cref="T:System.Windows.AttachedPropertyBrowsableForTypeAttribute" />です。</param>
+        <summary>決定するかどうか、現在<see cref="T:System.Windows.AttachedPropertyBrowsableForTypeAttribute" />[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]が指定したオブジェクトと等しい。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.Windows.AttachedPropertyBrowsableForTypeAttribute" /> と等しい場合は <see cref="T:System.Windows.AttachedPropertyBrowsableForTypeAttribute" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、これによって公開される 1 つの可能な設定可能な値の値の等価性をサポートしている[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]、<xref:System.Windows.AttachedPropertyBrowsableForTypeAttribute.TargetType%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.AttachedPropertyBrowsableForTypeAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このハッシュ コードを返します<see cref="T:System.Windows.AttachedPropertyBrowsableForTypeAttribute" />[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]です。</summary>
+        <returns>32 ビットの符号なし整数値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、これによって公開される 1 つの可能な設定可能な値に基づく複数のハッシュ値をサポートしている[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]、<xref:System.Windows.AttachedPropertyBrowsableForTypeAttribute.TargetType%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetType">
+      <MemberSignature Language="C#" Value="public Type TargetType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TargetType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.AttachedPropertyBrowsableForTypeAttribute.TargetType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>添付プロパティの使用のスコープとなる基本型を取得、この[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]適用されます。</summary>
+        <value>要求された <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、経由でのみ設定可能な[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]宣言によって公開されていると、<xref:System.Windows.AttachedPropertyBrowsableForTypeAttribute>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public override object TypeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TypeId" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.AttachedPropertyBrowsableForTypeAttribute.TypeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この一意の型の識別子を取得<see cref="T:System.Windows.AttachedPropertyBrowsableForTypeAttribute" />[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]です。</summary>
+        <value>オブジェクトの一意の識別子である、<see cref="T:System.Windows.AttachedPropertyBrowsableForTypeAttribute" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、それぞれの一意の値が返されます[!INCLUDE[TLA#tla_netframewkattr](~/includes/tlasharptla-netframewkattr-md.md)]に必要なためこの[!INCLUDE[TLA2#tla_netframewkattr](~/includes/tla2sharptla-netframewkattr-md.md)]を複数使用を許可します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

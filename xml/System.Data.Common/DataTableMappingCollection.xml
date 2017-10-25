@@ -1,0 +1,1345 @@
+<Type Name="DataTableMappingCollection" FullName="System.Data.Common.DataTableMappingCollection">
+  <TypeSignature Language="C#" Value="public sealed class DataTableMappingCollection : MarshalByRefObject, System.Collections.IList, System.Data.ITableMappingCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataTableMappingCollection extends System.MarshalByRefObject implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.Data.ITableMappingCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.DataTableMappingCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Data.ITableMappingCollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Design.DataTableMappingCollectionEditor, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Data.Common.DataTableMapping" /> オブジェクトのコレクション。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Data.OleDb.OleDbDataAdapter>に<xref:System.Data.Common.DataTableMappingCollection.Add%2A><xref:System.Data.Common.DataTableMapping>オブジェクトをその<xref:System.Data.Common.DataAdapter.TableMappings%2A>ソース テーブルのコレクション、および、これらの一覧のマップが表示されます。 この例では、<xref:System.Data.OleDb.OleDbDataAdapter>既に作成されています。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataTableMappingCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DataTableMappingCollection" /> クラスの新しいインスタンスを初期化します。 この新しいインスタンスが空の場合は、まだ含まない<see cref="T:System.Data.Common.DataTableMapping" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.Common.DataTableMappingCollection>、追加<xref:System.Data.Common.DataTableMapping>をコレクションにオブジェクトし、マップされたソース テーブルの一覧を表示します。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.DataTableMappingCollection Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.DataTableMappingCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.DataTableMappingCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.DataTableMappingCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションに追加する <see langword="DataTableMapping" /> オブジェクト。</param>
+        <summary>追加、<see cref="T:System.Object" />は、テーブルへのマッピング コレクションです。</summary>
+        <returns>インデックス、<see langword="DataTableMapping" />オブジェクトのコレクションに追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>コレクション内で。 コレクション内のマッピングが存在する場合は削除されます。 コレクション内のマッピングが存在しない場合は、コレクションに追加され、そのインデックスが表示されます。 例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションと<xref:System.Data.Common.DataTableMapping>作成されているオブジェクト。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Add Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Add Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">渡されたオブジェクトはありませんでした、<see cref="T:System.Data.Common.DataTableMapping" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.Common.DataTableMapping Add (string sourceTable, string dataSetTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Common.DataTableMapping Add(string sourceTable, string dataSetTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DataTableMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceTable" Type="System.String" />
+        <Parameter Name="dataSetTable" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceTable">マップするソース テーブルの名前。</param>
+        <param name="dataSetTable">大文字小文字が区別される名前、<see cref="T:System.Data.DataSet" />にマップするテーブル。</param>
+        <summary>追加、<see cref="T:System.Data.Common.DataTableMapping" />コレクションにオブジェクトをソース テーブル名を指定すると、<see cref="T:System.Data.DataSet" />テーブル名。</summary>
+        <returns><see cref="T:System.Data.Common.DataTableMapping" />をコレクションに追加されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.Common.DataTableMappingCollection>、追加<xref:System.Data.Common.DataTableMapping>をコレクションにオブジェクトし、マップされたソース テーブルの一覧を表示します。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.DataTableMappingCollection Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.DataTableMappingCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.DataTableMappingCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.DataTableMappingCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (Array values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Array values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.AddRange(System.Array)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Array" />
+      </Parameters>
+      <Docs>
+        <param name="values"><see cref="T:System.Array" />のコレクションに追加する値。</param>
+        <summary>指定した要素をコピー<see cref="T:System.Array" />コレクションの末尾にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Data.Common.DataTableMapping[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Data.Common.DataTableMapping[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.AddRange(System.Data.Common.DataTableMapping[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Data.Common.DataTableMapping[]" />
+      </Parameters>
+      <Docs>
+        <param name="values">配列<see cref="T:System.Data.Common.DataTableMapping" />コレクションに追加するオブジェクト。</param>
+        <summary>指定した要素をコピー<see cref="T:System.Data.Common.DataTableMapping" />コレクションの末尾までの配列。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての <see cref="T:System.Data.Common.DataTableMapping" /> オブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Data.Common.DataTableMappingCollection.CopyTo%2A>メソッドの配列にコレクションをエクスポートする<xref:System.Data.Common.DataTableMapping>オブジェクト。 コレクションをクリアし、返します`true`パラメーターが不要になった永続化する場合。 この例では、<xref:System.Data.Common.DataTableMappingCollection>既に作成されています。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Clear Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Clear Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />されている、<see cref="T:System.Data.Common.DataTableMapping" />です。</param>
+        <summary>示す値を取得するかどうか、指定された<see cref="T:System.Data.Common.DataTableMapping" />オブジェクトがコレクション内に存在します。</summary>
+        <returns>
+          <see langword="true" />このコレクションが含まれていますが、指定した場合<see cref="T:System.Data.Common.DataTableMapping" />それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>コレクション内で。 コレクション内のマッピングが存在する場合は削除されます。 コレクション内のマッピングが存在しない場合は、コレクションに追加され、そのインデックスが表示されます。 例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションと<xref:System.Data.Common.DataTableMapping>作成されているオブジェクト。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.Contains1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Contains1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.Contains1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Contains1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">ソース テーブル名を含む、<see cref="T:System.Data.Common.DataTableMapping" />オブジェクト。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Data.Common.DataTableMapping" />指定されたソース テーブル名を持つオブジェクトがコレクション内に存在します。</summary>
+        <returns>
+          <see langword="true" />コレクションが含まれている場合、<see cref="T:System.Data.Common.DataTableMapping" />このソースを持つオブジェクトがそれ以外の名前をテーブル<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>オブジェクト内で指定されたソース テーブル名を持つ、<xref:System.Data.Common.DataTableMappingCollection>コレクション。 場合、<xref:System.Data.Common.DataTableMapping>存在する場合、名前とマッピングのインデックスを表示します。 マッピングが存在しない場合は、エラーを表示します。 この例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションが作成されました。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" />をコピーする、<see cref="T:System.Data.Common.DataTableMappingCollection" />要素。</param>
+        <param name="index">配列の開始インデックス。</param>
+        <summary>要素をコピー、<see cref="T:System.Data.Common.DataTableMappingCollection" />指定した配列にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Data.Common.DataTableMapping[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Data.Common.DataTableMapping[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.CopyTo(System.Data.Common.DataTableMapping[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Data.Common.DataTableMapping[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">A<see cref="T:System.Data.Common.DataTableMapping" />をコピーする、<see cref="T:System.Data.Common.DataTableMappingCollection" />要素。</param>
+        <param name="index">配列の開始インデックス。</param>
+        <summary>要素をコピー、<see cref="T:System.Data.Common.DataTableMapping" />指定した配列にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DataTableMappingCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Data.Common.DataTableMapping" />コレクション内のオブジェクト。</summary>
+        <value>数<see langword="DataTableMapping" />コレクション内のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.Common.DataTableMappingCollection>、追加<xref:System.Data.Common.DataTableMapping>をコレクションにオブジェクトし、マップされたソース テーブルの一覧を表示します。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.Count Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetByDataSetTable">
+      <MemberSignature Language="C#" Value="public System.Data.Common.DataTableMapping GetByDataSetTable (string dataSetTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Common.DataTableMapping GetByDataSetTable(string dataSetTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.GetByDataSetTable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DataTableMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSetTable" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSetTable">大文字小文字が区別される名前、<see cref="T:System.Data.DataSet" />テーブルを検索します。</param>
+        <summary>取得、<see cref="T:System.Data.Common.DataTableMapping" />指定したオブジェクト<see cref="T:System.Data.DataSet" />テーブル名。</summary>
+        <returns><see cref="T:System.Data.Common.DataTableMapping" />指定したオブジェクト<see cref="T:System.Data.DataSet" />テーブル名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>コレクション内で。 オブジェクトが存在する場合が返されます。 例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションと<xref:System.Data.Common.DataTableMapping>作成されているオブジェクト。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.GetByDataSetTable Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.GetByDataSetTable Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.GetByDataSetTable Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.GetByDataSetTable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理できる列挙子を取得します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTableMappingBySchemaAction">
+      <MemberSignature Language="C#" Value="public static System.Data.Common.DataTableMapping GetTableMappingBySchemaAction (System.Data.Common.DataTableMappingCollection tableMappings, string sourceTable, string dataSetTable, System.Data.MissingMappingAction mappingAction);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Common.DataTableMapping GetTableMappingBySchemaAction(class System.Data.Common.DataTableMappingCollection tableMappings, string sourceTable, string dataSetTable, valuetype System.Data.MissingMappingAction mappingAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.GetTableMappingBySchemaAction(System.Data.Common.DataTableMappingCollection,System.String,System.String,System.Data.MissingMappingAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DataTableMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tableMappings" Type="System.Data.Common.DataTableMappingCollection" />
+        <Parameter Name="sourceTable" Type="System.String" />
+        <Parameter Name="dataSetTable" Type="System.String" />
+        <Parameter Name="mappingAction" Type="System.Data.MissingMappingAction" />
+      </Parameters>
+      <Docs>
+        <param name="tableMappings"><see cref="T:System.Data.Common.DataTableMappingCollection" />を検索するコレクション。</param>
+        <param name="sourceTable">マップされたソース テーブルの名前。</param>
+        <param name="dataSetTable">名前、大文字小文字を区別、マップされたのではない<see cref="T:System.Data.DataSet" />テーブル。</param>
+        <param name="mappingAction"><see cref="T:System.Data.MissingMappingAction" /> 値のいずれか。</param>
+        <summary>取得、<see cref="T:System.Data.Common.DataColumnMapping" />テーブル名が指定されたソース オブジェクトと<see cref="T:System.Data.DataSet" />テーブル名を使用して、指定された<see cref="T:System.Data.MissingMappingAction" />です。</summary>
+        <returns><see cref="T:System.Data.Common.DataTableMapping" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.Common.DataTableMapping>が存在する、コレクション内に返されます。  
+  
+ 場合、<xref:System.Data.Common.DataTableMapping>のコレクションに存在しません、指定された<xref:System.Data.MissingMappingAction>次の動作します。  
+  
+|MissingMappingAction|実行されるアクション|  
+|--------------------------|------------------|  
+|`Passthrough`|作成、<xref:System.Data.Common.DataTableMapping>オブジェクトを指定された`sourceTable`ソース テーブル名としてと`dataSetTable`として、<xref:System.Data.DataSet>テーブル名。 作成された<xref:System.Data.Common.DataTableMapping>オブジェクトがコレクションに追加されません。|  
+|`Error`|例外が生成されます。 `dataSetTable`パラメーターは無視されます。|  
+|`Ignore`|取得`null`です。 `dataSetTable`パラメーターは無視されます。|  
+  
+   
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>コレクション内で指定されたソース テーブル名を持つ。 オブジェクトが存在する場合が返されます。 例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションと<xref:System.Data.Common.DataTableMapping>作成されているオブジェクト。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.GetTableMappingBySchemaAction Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.GetTableMappingBySchemaAction Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.GetTableMappingBySchemaAction Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.GetTableMappingBySchemaAction Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="mappingAction" />にパラメーターが設定された<see langword="Error" />マッピングが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />されている、<see cref="T:System.Data.Common.DataTableMapping" />検索するオブジェクト。</param>
+        <summary>指定した場所を取得<see cref="T:System.Data.Common.DataTableMapping" />コレクション内のオブジェクト。</summary>
+        <returns>指定した 0 から始まる場所<see cref="T:System.Data.Common.DataTableMapping" />コレクション内のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>コレクション内で。 コレクション内のマッピングが存在する場合は削除されます。 コレクション内のマッピングが存在しない場合は、コレクションに追加され、そのインデックスが表示されます。 例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションと<xref:System.Data.Common.DataTableMapping>作成されているオブジェクト。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.Contains1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Contains1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.Contains1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Contains1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (string sourceTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(string sourceTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.IndexOf(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceTable" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceTable">ソース テーブルの名前。</param>
+        <summary>場所を取得、<see cref="T:System.Data.Common.DataTableMapping" />指定されたソース テーブル名を持つオブジェクト。</summary>
+        <returns>0 から始まる場所、<see cref="T:System.Data.Common.DataTableMapping" />指定されたソース テーブル名を持つオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>オブジェクト内で指定されたソース テーブル名を持つ、<xref:System.Data.Common.DataTableMappingCollection>コレクション。 場合、<xref:System.Data.Common.DataTableMapping>存在する場合、名前とマッピングのインデックスを表示します。 マッピングが存在しない場合は、エラーを表示します。 この例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションが作成されました。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOfDataSetTable">
+      <MemberSignature Language="C#" Value="public int IndexOfDataSetTable (string dataSetTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOfDataSetTable(string dataSetTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.IndexOfDataSetTable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSetTable" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSetTable">大文字小文字が区別される名前、<see langword="DataSet" />テーブルを検索します。</param>
+        <summary>場所を取得、<see cref="T:System.Data.Common.DataTableMapping" />指定したオブジェクト<see cref="T:System.Data.DataSet" />テーブル名。</summary>
+        <returns>0 から始まる場所、<see cref="T:System.Data.Common.DataTableMapping" />オブジェクトを指定された<see cref="T:System.Data.DataSet" />テーブル名、または-1 の場合、<see cref="T:System.Data.Common.DataTableMapping" />オブジェクトがコレクションに存在しません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>コレクション内で。 オブジェクトが存在する場合が返されます。 例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションと<xref:System.Data.Common.DataTableMapping>作成されているオブジェクト。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.GetByDataSetTable Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.GetByDataSetTable Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.GetByDataSetTable Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.GetByDataSetTable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Data.Common.DataTableMapping value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Data.Common.DataTableMapping value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.Insert(System.Int32,System.Data.Common.DataTableMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Data.Common.DataTableMapping" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Data.Common.DataTableMapping" />挿入するオブジェクト。</param>
+        <param name="value"><see cref="T:System.Data.Common.DataTableMapping" />挿入するオブジェクト。</param>
+        <summary><see cref="T:System.Data.Common.DataTableMapping" /> オブジェクトを <see cref="T:System.Data.Common.DataTableMappingCollection" /> 内の指定されたインデックス位置に挿入します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Data.Common.DataTableMapping" />挿入するオブジェクト。</param>
+        <param name="value"><see cref="T:System.Data.Common.DataTableMapping" />挿入するオブジェクト。</param>
+        <summary><see cref="T:System.Data.Common.DataTableMapping" /> オブジェクトを <see cref="T:System.Data.Common.DataTableMappingCollection" /> 内の指定されたインデックス位置に挿入します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.Common.DataTableMapping this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DataTableMapping Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DataTableMappingCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DataTableMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Data.Common.DataTableMapping" />オブジェクトを返します。</param>
+        <summary>取得または設定、<see cref="T:System.Data.Common.DataTableMapping" />指定したインデックスにあるオブジェクト。</summary>
+        <value>指定したインデックス位置にある <see cref="T:System.Data.Common.DataTableMapping" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、 <xref:System.Data.Common.DataTableMappingCollection> 、コレクションに追加<xref:System.Data.Common.DataTableMapping>をコレクションにオブジェクトし、マップされたソース テーブルの一覧を表示します。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.Count Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.Common.DataTableMapping this[string sourceTable] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DataTableMapping Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DataTableMappingCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DataTableMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceTable" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceTable">ソース テーブルの名前。</param>
+        <summary>取得または設定、<see cref="T:System.Data.Common.DataTableMapping" />指定されたソース テーブル名を持つオブジェクト。</summary>
+        <value><see cref="T:System.Data.Common.DataTableMapping" />指定されたソース テーブル名を持つオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>オブジェクト内で指定されたソース テーブル名を持つ、<xref:System.Data.Common.DataTableMappingCollection>コレクション。 場合、<xref:System.Data.Common.DataTableMapping>存在する場合、名前とマッピングのインデックスを表示します。 マッピングが存在しない場合は、エラーを表示します。 この例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションが作成されました。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Data.Common.DataTableMapping value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Data.Common.DataTableMapping value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.Remove(System.Data.Common.DataTableMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Data.Common.DataTableMapping" />
+      </Parameters>
+      <Docs>
+        <param name="value">削除する <see cref="T:System.Data.Common.DataTableMapping" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Data.Common.DataTableMapping" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">削除する <see cref="T:System.Data.Common.DataTableMapping" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Data.Common.DataTableMapping" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>コレクション内で。 コレクション内のマッピングが存在する場合は削除されます。 コレクション内のマッピングが存在しない場合は、コレクションに追加され、そのインデックスが表示されます。 例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションと<xref:System.Data.Common.DataTableMapping>作成されているオブジェクト。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.Add Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Add Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.Add Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">指定されたオブジェクトが、<see cref="T:System.Data.Common.DataTableMapping" />オブジェクト。</exception>
+        <exception cref="T:System.ArgumentException">指定されたオブジェクトがコレクションではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する <see cref="T:System.Data.Common.DataTableMapping" /> オブジェクトの 0 から始まるインデックス。</param>
+        <summary>削除、<see cref="T:System.Data.Common.DataTableMapping" />コレクションから指定したインデックス位置にあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>オブジェクト内で指定されたソース テーブル名を持つ、<xref:System.Data.Common.DataTableMappingCollection>コレクション。 場合、<xref:System.Data.Common.DataTableMapping>存在する場合、そのマッピングを削除します。 この例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションが作成されました。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.RemoveAt Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.RemoveAt Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.RemoveAt Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.RemoveAt Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">A<see cref="T:System.Data.Common.DataTableMapping" />オブジェクトが、指定したインデックスに存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (string sourceTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(string sourceTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.RemoveAt(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceTable" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceTable">検索するソース テーブル名。</param>
+        <summary>削除、<see cref="T:System.Data.Common.DataTableMapping" />コレクションから指定されたソース テーブル名を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の検索、<xref:System.Data.Common.DataTableMapping>オブジェクト内で指定されたソース テーブル名を持つ、<xref:System.Data.Common.DataTableMappingCollection>コレクション。 場合、<xref:System.Data.Common.DataTableMapping>存在する場合、そのマッピングを削除します。 この例では、<xref:System.Data.Common.DataTableMappingCollection>コレクションが作成されました。  
+  
+ [!code-csharp[Classic WebData DataTableMappingCollection.RemoveAt1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.RemoveAt1 Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMappingCollection.RemoveAt1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMappingCollection.RemoveAt1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">A<see cref="T:System.Data.Common.DataTableMapping" />指定されたソース テーブル名を持つオブジェクトが存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DataTableMappingCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.ICollection" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DataTableMappingCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Collections.ICollection.IsSynchronized%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DataTableMappingCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DataTableMappingCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Collections.ICollection.IsSynchronized%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DataTableMappingCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.IList" /> が固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> が固定サイズの場合は <see cref="T:System.Collections.IList" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DataTableMappingCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Collections.IList.IsFixedSize%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DataTableMappingCollection.System#Collections#IList#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.IList" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Collections.IList" /> が読み取り専用である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DataTableMappingCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Collections.IList.IsReadOnly%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DataTableMappingCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定する項目の 0 から始まるインデックス。</param>
+        <summary>取得または指定したインデックスにあるコレクションから項目を設定します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DataTableMappingCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.ComponentModel.PropertyDescriptorCollection.System%23Collections%23IList%23Item%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.ITableMappingCollection.Add">
+      <MemberSignature Language="C#" Value="System.Data.ITableMapping ITableMappingCollection.Add (string sourceTableName, string dataSetTableName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Data.ITableMapping System.Data.ITableMappingCollection.Add(string sourceTableName, string dataSetTableName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.System#Data#ITableMappingCollection#Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.ITableMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceTableName" Type="System.String" />
+        <Parameter Name="dataSetTableName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceTableName">ソース テーブルの名前。</param>
+        <param name="dataSetTableName">名前、<see cref="T:System.Data.DataSet" />テーブル。</param>
+        <summary>テーブルのマッピングをコレクションに追加します。</summary>
+        <returns>新しくマップへの参照を<see cref="T:System.Data.ITableMapping" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DataTableMappingCollection> のインスタンスが <xref:System.Data.ITableMappingCollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Data.ITableMappingCollection.Add%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.ITableMappingCollection.GetByDataSetTable">
+      <MemberSignature Language="C#" Value="System.Data.ITableMapping ITableMappingCollection.GetByDataSetTable (string dataSetTableName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Data.ITableMapping System.Data.ITableMappingCollection.GetByDataSetTable(string dataSetTableName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DataTableMappingCollection.System#Data#ITableMappingCollection#GetByDataSetTable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.ITableMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSetTableName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSetTableName">名前、<see langword="DataSet" />コレクション内のテーブルです。</param>
+        <summary>指定した tablemapping が見つかりませんオブジェクトを取得<see cref="T:System.Data.DataSet" />テーブル名。</summary>
+        <returns>指定した tablemapping が見つかりませんオブジェクト<see langword="DataSet" />テーブル名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DataTableMappingCollection> のインスタンスが <xref:System.Data.ITableMappingCollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Data.ITableMappingCollection.GetByDataSetTable%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Data.ITableMappingCollection.Item">
+      <MemberSignature Language="C#" Value="object System.Data.ITableMappingCollection.Item[string index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Data.ITableMappingCollection.Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DataTableMappingCollection.System#Data#ITableMappingCollection#Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see langword="SourceTable" />の名前、<see cref="T:System.Data.ITableMapping" />です。</param>
+        <summary>インスタンス取得または設定<see cref="T:System.Data.ITableMapping" />、指定した<see cref="P:System.Data.ITableMapping.SourceTable" />名。</summary>
+        <value>インスタンス<see cref="T:System.Data.ITableMapping" />、指定した<see langword="SourceTable" />名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DataTableMappingCollection> のインスタンスが <xref:System.Data.ITableMappingCollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Data.ITableMappingCollection.Item%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

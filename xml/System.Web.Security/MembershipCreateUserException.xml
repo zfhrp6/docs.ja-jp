@@ -1,0 +1,282 @@
+<Type Name="MembershipCreateUserException" FullName="System.Web.Security.MembershipCreateUserException">
+  <TypeSignature Language="C#" Value="public class MembershipCreateUserException : Exception" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit MembershipCreateUserException extends System.Exception" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.MembershipCreateUserException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web, Version=2.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メンバーシップ プロバイダーがユーザーを正常に作成できない場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.Security.MembershipCreateUserException>クラスには、ときにスローされる、<xref:System.Web.Security.Membership.CreateUser%2A>操作は失敗します。  
+  
+> [!NOTE]
+>  ASP.NET のメンバーシップ機能に慣れていない場合は、次を参照してください。[メンバーシップの概要](http://msdn.microsoft.com/library/79184d17-f4c7-4c9f-a073-cec4f5543980)続行する前にします。 メンバーシップに関連するその他のトピックの一覧は、次を参照してください。[メンバーシップを使用したユーザーを管理する](http://msdn.microsoft.com/library/824c3a24-f0af-427c-a652-0d2d1e9397cd)です。  
+  
+ <xref:System.Web.Security.MembershipCreateUserException.StatusCode%2A>プロパティが適切に処理できるように、例外の理由を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フォーム認証と ASP.NET メンバーシップを使用するように構成、ASP.NET アプリケーション用の新しいユーザーを作成します。 ユーザーが正常に作成されていない場合、コードでキャッチ、<xref:System.Web.Security.MembershipCreateUserException>で指定したメッセージを表示し、<xref:System.Web.Security.MembershipCreateUserException.StatusCode%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/createuser1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.Membership#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/createuser1vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MembershipCreateUserException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipCreateUserException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Security.MembershipCreateUserException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.Security.MembershipCreateUserException>によってクラスがスローされた、<xref:System.Web.Security.Membership.CreateUser%2A?displayProperty=nameWithType>メソッド、ユーザーが作成されていない場合。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Membership.CreateUser%2A?displayProperty=nameWithType>新しいメンバーシップ ユーザーを作成します。 ユーザーの作成に失敗した場合、<xref:System.Web.Security.MembershipCreateUserException>がスローされます。  
+  
+ [!code-csharp[System.Web.Security.MembershipCreateUserException#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipCreateUserException/CS/createuser3cs.aspx#3)]
+ [!code-vb[System.Web.Security.MembershipCreateUserException#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipCreateUserException/VB/createuser3vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MembershipCreateUserException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipCreateUserException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の理由の説明。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Security.MembershipCreateUserException" />クラスとセット、<see cref="P:System.Exception.Message" />プロパティを指定された<paramref name="message" />パラメーター値</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.MembershipCreateUserException>によってクラスがスローされた、<xref:System.Web.Security.Membership.CreateUser%2A?displayProperty=nameWithType>メソッド、ユーザーが作成されていない場合。  
+  
+ 使用することができます、`message`を設定するパラメーター、<xref:System.Exception.Message%2A>例外の理由の説明を例外のプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Membership.CreateUser%2A?displayProperty=nameWithType>新しいメンバーシップ ユーザーを作成します。 ユーザーの作成に失敗した場合、<xref:System.Web.Security.MembershipCreateUserException>に基づいて、メッセージがスローされ、<xref:System.Web.Security.MembershipCreateUserException.StatusCode%2A>によって返される、<xref:System.Web.Security.Membership.CreateUser%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.MembershipCreateUserException#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipCreateUserException/CS/createuser2cs.aspx#2)]
+ [!code-vb[System.Web.Security.MembershipCreateUserException#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipCreateUserException/VB/createuser2vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MembershipCreateUserException (System.Web.Security.MembershipCreateStatus statusCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.Security.MembershipCreateStatus statusCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipCreateUserException.#ctor(System.Web.Security.MembershipCreateStatus)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="statusCode" Type="System.Web.Security.MembershipCreateStatus" />
+      </Parameters>
+      <Docs>
+        <param name="statusCode">A<see cref="T:System.Web.Security.MembershipCreateStatus" />例外の理由を説明する列挙値。</param>
+        <summary>指定した <see cref="P:System.Web.Security.MembershipCreateUserException.StatusCode" /> 値を使用して、<see cref="T:System.Web.Security.MembershipCreateUserException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.MembershipCreateUserException>によってクラスがスローされた、<xref:System.Web.Security.Membership.CreateUser%2A?displayProperty=nameWithType>メソッド、ユーザーが作成されていない場合。  
+  
+ `statusCode`パラメーターを使用する理由を示すために、<xref:System.Web.Security.MembershipCreateUserException>がスローされました。 `statusCode`パラメーターの値がによって公開されている、<xref:System.Web.Security.MembershipCreateUserException.StatusCode%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Membership.CreateUser%2A>新しいメンバーシップ ユーザーを作成します。 ユーザーの作成に失敗した場合、<xref:System.Web.Security.MembershipCreateUserException>がスローされ、<xref:System.Web.Security.MembershipCreateUserException.StatusCode%2A>によって返される、<xref:System.Web.Security.Membership.CreateUser%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.MembershipCreateUserException#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipCreateUserException/CS/createuser1cs.aspx#1)]
+ [!code-vb[System.Web.Security.MembershipCreateUserException#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipCreateUserException/VB/createuser1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MembershipCreateUserException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipCreateUserException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Security.MembershipCreateUserException" />クラスが指定されたシリアル化情報とコンテキストを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の実装を示しています、<xref:System.Web.Security.MembershipCreateUserException>クラスを指定されたシリアル化情報とコンテキストを持つ基本クラスのプロテクト コンス トラクターを呼び出します。  
+  
+ [!code-csharp[System.Web.Security.MembershipCreateUserException#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipCreateUserException/CS/mycreateuserexception.cs#5)]
+ [!code-vb[System.Web.Security.MembershipCreateUserException#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipCreateUserException/VB/mycreateuserexception.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MembershipCreateUserException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipCreateUserException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の理由の説明。</param>
+        <param name="innerException">例外の原因となった、<see cref="T:System.Web.Security.MembershipCreateUserException" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Security.MembershipCreateUserException" />クラスとセット、<see cref="P:System.Exception.Message" />プロパティを指定された<paramref name="message" />と<see cref="P:System.Exception.InnerException" />プロパティを指定された<paramref name="innerException" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.Security.MembershipCreateUserException>によってクラスがスローされた、<xref:System.Web.Security.Membership.CreateUser%2A?displayProperty=nameWithType>メソッド、ユーザーが作成されていない場合。  
+  
+ このオーバー ロードを使用することができます、<xref:System.Web.Security.MembershipCreateUserException>コンス トラクターをユーザーが作成されるときに発生したキャッチされた例外に関する情報を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.Membership.CreateUser%2A>新しいメンバーシップ ユーザーを作成します。 ユーザーの作成に失敗した場合、<xref:System.Web.Security.MembershipCreateUserException>がスローされます。 例外ではない場合、 <xref:System.Web.Security.MembershipCreateUserException>、としてキャッチされた例外が指定された、<xref:System.Exception.InnerException%2A>の<xref:System.Web.Security.MembershipCreateUserException>がスローされます。  
+  
+ [!code-csharp[System.Web.Security.MembershipCreateUserException#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipCreateUserException/CS/createuser4cs.aspx#4)]
+ [!code-vb[System.Web.Security.MembershipCreateUserException#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipCreateUserException/VB/createuser4vb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipCreateUserException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化の転送先を指定する <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、対象のオブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれる任意のオブジェクト、<xref:System.Runtime.Serialization.SerializationInfo>自動的に追跡され、フォーマッタによってシリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusCode">
+      <MemberSignature Language="C#" Value="public System.Web.Security.MembershipCreateStatus StatusCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Security.MembershipCreateStatus StatusCode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.MembershipCreateUserException.StatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipCreateStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外の理由に関する説明を取得します。</summary>
+        <value>A<see cref="T:System.Web.Security.MembershipCreateStatus" />例外の理由を説明する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.MembershipCreateUserException.StatusCode%2A>プロパティでは、原因を特定することができます、<xref:System.Web.Security.MembershipCreateUserException>スローされた、状況に応じて応答します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フォーム認証と ASP.NET メンバーシップを使用するように構成、ASP.NET アプリケーション用の新しいユーザーを作成します。 ユーザーが正常に作成されていない場合、コードでキャッチ、<xref:System.Web.Security.MembershipCreateUserException>で指定したメッセージを表示し、<xref:System.Web.Security.MembershipCreateUserException.StatusCode%2A>プロパティです。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/createuser1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.Membership#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/createuser1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

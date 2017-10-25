@@ -1,0 +1,165 @@
+<Type Name="GlobalProxySelection" FullName="System.Net.GlobalProxySelection">
+  <TypeSignature Language="C#" Value="public class GlobalProxySelection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GlobalProxySelection extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.GlobalProxySelection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("This class has been deprecated. Please use WebRequest.DefaultWebProxy instead to access and set the global default proxy. Use 'null' instead of GetEmptyWebProxy. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての HTTP 要求の既定のグローバル プロキシ インスタンスが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.GlobalProxySelection>既定のプロキシのプロキシ設定を格納する<xref:System.Net.WebRequest>ローカル ネットワークの外のインターネット サイトにアクセスするインスタンスを使用します。 既定のプロキシ設定は、グローバル、またはアプリケーション構成ファイルから初期化し個々 の要求のオーバーライドされたしたりを設定して無効になっている、<xref:System.Net.HttpWebRequest.Proxy%2A?displayProperty=nameWithType>プロパティの結果を<xref:System.Net.GlobalProxySelection.GetEmptyWebProxy%2A>メソッドです。  
+  
+ 格納されているプロキシ設定<xref:System.Net.GlobalProxySelection>いずれかで使用<xref:System.Net.WebRequest>派生プロキシをサポートしており、オブジェクト、<xref:System.Net.WebRequest.Proxy%2A>プロパティ値に設定`null`(既定)。 プロキシはによりサポートされている<xref:System.Net.FtpWebRequest>、 <xref:System.Net.HttpWebRequest>、および<xref:System.Net.WebClient>です。  
+  
+ **注**の変更、 <xref:System.Net.GlobalProxySelection> 、要求が行われた後に反映されません、<xref:System.Net.WebRequest>です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 <xref:System.Net.GlobalProxySelection> HTTP のプロキシのポート 80 で"webproxy"という名前です。  
+  
+ [!code-cpp[Classic GlobalProxySelection Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic GlobalProxySelection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic GlobalProxySelection Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic GlobalProxySelection Example/CS/source.cs#1)]
+ [!code-vb[Classic GlobalProxySelection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic GlobalProxySelection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GlobalProxySelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.GlobalProxySelection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.GlobalProxySelection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEmptyWebProxy">
+      <MemberSignature Language="C#" Value="public static System.Net.IWebProxy GetEmptyWebProxy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IWebProxy GetEmptyWebProxy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.GlobalProxySelection.GetEmptyWebProxy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IWebProxy</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空のプロキシ インスタンスを返します。</summary>
+        <returns><see cref="T:System.Net.IWebProxy" />情報が含まれていません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.GlobalProxySelection.GetEmptyWebProxy%2A>メソッドは、空白を返します<xref:System.Net.IWebProxy>インターネット リソースにアクセスするプロキシが使用されていないことを示すためにインスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Net.WebRequest>プロキシを使用しないインスタンスです。  
+  
+ [!code-cpp[NclEmptyWebProxy#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLEmptyWebProxy/CPP/test.cpp#1)]
+ [!code-csharp[NclEmptyWebProxy#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLEmptyWebProxy/CS/test.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public static System.Net.IWebProxy Select { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.IWebProxy Select" />
+      <MemberSignature Language="DocId" Value="P:System.Net.GlobalProxySelection.Select" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IWebProxy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グローバル HTTP プロキシを取得または設定します。</summary>
+        <value><see cref="T:System.Net.IWebProxy" />をすべての呼び出しに<see cref="M:System.Net.HttpWebRequest.GetResponse" />を使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.GlobalProxySelection.Select%2A>プロパティの設定、プロキシすべて<xref:System.Net.WebRequest>要求がプロキシをサポートし、プロキシが設定されていない使用して明示的にインスタンスを使用して、<xref:System.Net.HttpWebRequest.Proxy%2A>プロパティです。 プロキシはによりサポートされている<xref:System.Net.FtpWebRequest>と<xref:System.Net.HttpWebRequest>です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.GlobalProxySelection.Select%2A>プロパティを空のプロキシです。  
+  
+ [!code-cpp[NclEmptyWebProxy#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLEmptyWebProxy/CPP/test.cpp#1)]
+ [!code-csharp[NclEmptyWebProxy#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLEmptyWebProxy/CS/test.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作が指定された値<see langword="null" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、要求された操作に対するアクセス許可がありません。</exception>
+        <permission cref="T:System.Net.WebPermission">取得またはグローバル HTTP プロキシを設定します。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

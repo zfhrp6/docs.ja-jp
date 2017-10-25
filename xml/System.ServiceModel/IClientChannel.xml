@@ -1,0 +1,276 @@
+<Type Name="IClientChannel" FullName="System.ServiceModel.IClientChannel">
+  <TypeSignature Language="C#" Value="public interface IClientChannel : IDisposable, System.ServiceModel.IContextChannel, System.ServiceModel.IExtensibleObject&lt;System.ServiceModel.IContextChannel&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IClientChannel implements class System.IDisposable, class System.ServiceModel.Channels.IChannel, class System.ServiceModel.ICommunicationObject, class System.ServiceModel.IContextChannel, class System.ServiceModel.IExtensibleObject`1&lt;class System.ServiceModel.IContextChannel&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.IClientChannel" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.IContextChannel</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.IExtensibleObject&lt;System.ServiceModel.IContextChannel&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>クライアント アプリケーションによって使用される送信要求チャネルと要求/応答チャネルの動作を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.IClientChannel> インターフェイスは、<xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> への呼び出しで返されるすべてのチャネルでサポートされる操作を定義します。 <xref:System.ServiceModel.IClientChannel> メソッドとプロパティを使用して、型指定された送信チャネルの検査と変更を行います。 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](~/docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)両方をエクスポート、<xref:System.ServiceModel.ClientBase%601>クラスとターゲットの両方のサービス コントラクトから継承されるコントラクト インターフェイスを作成することでサービス コントラクト インターフェイスと<xref:System.ServiceModel.IClientChannel>サービスにプロキシの両方として、拡張コントラクトを使用して、クライアント チャネルにアクセスできるようにすることです。  
+  
+ 詳細については、次を参照してください。 [WCF クライアント アーキテクチャ](~/docs/framework/wcf/feature-details/client-architecture.md)です。 生成されたクライアント コード ファイルでの外観の例については、次を参照してください。[生成されたクライアント コードを理解する](~/docs/framework/wcf/feature-details/understanding-generated-client-code.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllowInitializationUI">
+      <MemberSignature Language="C#" Value="public bool AllowInitializationUI { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowInitializationUI" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.IClientChannel.AllowInitializationUI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.ServiceModel.IClientChannel.DisplayInitializationUI" /> が <see cref="T:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer" /> プロパティ内の <see cref="P:System.ServiceModel.Dispatcher.ClientRuntime.InteractiveChannelInitializers" /> オブジェクトを呼び出す、またはそのコレクションが空でない場合に例外をスローするかどうかを指示する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> が対話型チャネル初期化子を呼び出すことを許可されている場合は [!INCLUDE[indigo1](~/includes/indigo1-md.md)]。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化ダイアログの表示ではなく、例外をスローする場合は、`false` に設定します。 これは、アプリケーションがダイアログを表示するように構成されている場合でも、ダイアログが表示されないことを保証する中間層のシナリオで役に立ちます。 詳細については、「[にアクセスするサービスの WCF クライアントを使用して](~/docs/framework/wcf/feature-details/accessing-services-using-a-client.md)と<xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginDisplayInitializationUI">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginDisplayInitializationUI (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginDisplayInitializationUI(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.IClientChannel.BeginDisplayInitializationUI(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">このメソッドの完了時に呼び出されるメソッド。</param>
+        <param name="state">チャネルの状態に関する情報。</param>
+        <summary>資格情報を取得するユーザー インターフェイスの使用を開始するための非同期呼び出しです。</summary>
+        <returns>処理が完了したときにコールバックするために使用される <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対話型のチャネルの初期化 (CardSpace カードの選択など) を実行するには、このメソッドを呼び出します。 これは、<xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> の明示的な呼び出しなしでチャネルを使用した場合は自動的に行われるので、多くのアプリケーションでは、この呼び出しはオプションです。  
+  
+ ただし、ユーザーが選択プロセスに長い時間をかけた場合、このメソッドを自動的に呼び出した操作がタイムアウトすることがあります。これを回避するには、<xref:System.ServiceModel.IClientChannel.DisplayInitializationUI%2A>、または <xref:System.ServiceModel.IClientChannel.BeginDisplayInitializationUI%2A> と <xref:System.ServiceModel.IClientChannel.EndDisplayInitializationUI%2A> を明示的に呼び出します。 これらの操作はタイムアウトしないため、このダイアログをアプリケーションのどこで表示するかを正確に制御できます。  
+  
+ このメソッドは、アプリケーションがそのように構成されている場合のみ、ダイアログを表示します。 アプリケーションが CardSpace や別の対話型チャネル初期化子を使用するように構成されていない場合、この呼び出しではアクションが返されません。  
+  
+ このメソッドを明示的に呼び出す場合は、チャネルを使用する前にそれを明示的に開く必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DidInteractiveInitialization">
+      <MemberSignature Language="C#" Value="public bool DidInteractiveInitialization { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DidInteractiveInitialization" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.IClientChannel.DidInteractiveInitialization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>資格情報を取得するためのユーザー インターフェイスへの呼び出しが行われたかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> メソッド (または <see cref="M:System.ServiceModel.IClientChannel.DisplayInitializationUI" /> メソッドと <see cref="M:System.ServiceModel.IClientChannel.BeginDisplayInitializationUI(System.AsyncCallback,System.Object)" /> メソッド) が呼び出された場合は <see cref="M:System.ServiceModel.IClientChannel.EndDisplayInitializationUI(System.IAsyncResult)" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.IClientChannel> と <xref:System.ServiceModel.IClientChannel.DisplayInitializationUI%2A> の呼び出しなしで <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> に対して操作を呼び出した場合、これらのメソッドは自動的に呼び出されます。 詳細については、「[にアクセスするサービスの WCF クライアントを使用して](~/docs/framework/wcf/feature-details/accessing-services-using-a-client.md)と<xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayInitializationUI">
+      <MemberSignature Language="C#" Value="public void DisplayInitializationUI ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DisplayInitializationUI() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.IClientChannel.DisplayInitializationUI" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>資格情報を取得するためのユーザー インターフェイスの呼び出しです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対話型のチャネルの初期化 (CardSpace カードの選択など) を実行するには、このメソッドを呼び出します。 これは、<xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> の明示的な呼び出しなしでチャネルを使用した場合は自動的に行われるので、多くのアプリケーションでは、この呼び出しはオプションです。  
+  
+ ただし、ユーザーが選択プロセスに長い時間をかけた場合、このメソッドを自動的に呼び出した操作がタイムアウトすることがあります。これを回避するには、<xref:System.ServiceModel.IClientChannel.DisplayInitializationUI%2A>、または <xref:System.ServiceModel.IClientChannel.BeginDisplayInitializationUI%2A> と <xref:System.ServiceModel.IClientChannel.EndDisplayInitializationUI%2A> を明示的に呼び出します。 これらの操作はタイムアウトしないため、このダイアログをアプリケーションのどこで表示するかを正確に制御できます。  
+  
+ このメソッドは、アプリケーションがそのように構成されている場合のみ、ダイアログを表示します。 アプリケーションが CardSpace や別の対話型チャネル初期化子を使用するように構成されていない場合、この呼び出しではアクションが返されません。  
+  
+ このメソッドを明示的に呼び出す場合は、チャネルを使用する前にそれを明示的に開く必要があります。  
+  
+ 詳細については、「[にアクセスするサービスの WCF クライアントを使用して](~/docs/framework/wcf/feature-details/accessing-services-using-a-client.md)と<xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndDisplayInitializationUI">
+      <MemberSignature Language="C#" Value="public void EndDisplayInitializationUI (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndDisplayInitializationUI(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.IClientChannel.EndDisplayInitializationUI(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" />。</param>
+        <summary><see cref="M:System.ServiceModel.IClientChannel.BeginDisplayInitializationUI(System.AsyncCallback,System.Object)" /> への呼び出しが終了したときに呼び出します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnknownMessageReceived">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.ServiceModel.UnknownMessageReceivedEventArgs&gt; UnknownMessageReceived;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.ServiceModel.UnknownMessageReceivedEventArgs&gt; UnknownMessageReceived" />
+      <MemberSignature Language="DocId" Value="E:System.ServiceModel.IClientChannel.UnknownMessageReceived" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.ServiceModel.UnknownMessageReceivedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは予約済みイベントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Via">
+      <MemberSignature Language="C#" Value="public Uri Via { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Via" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.IClientChannel.Via" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント チャネルで送信されるメッセージの送信先となるトランスポート アドレスを格納する URI を取得します。</summary>
+        <value>チャネルで送信されるメッセージの送信先となるトランスポート アドレスを格納する <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.EndpointAddress> が指定されていない場合は、<xref:System.ServiceModel.IClientChannel.Via%2A> が、最終的な送信先と物理アドレスの両方として機能します。 <xref:System.ServiceModel.IClientChannel.Via%2A> が指定されている場合は、メッセージが送信される実際の物理アドレス、およびメッセージがその送信先に到達するまでに経由する必要がある物理アドレスとなります。 この値は、<xref:System.ServiceModel.Description.ClientViaBehavior?displayProperty=nameWithType> を使用して、構成ファイルから設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

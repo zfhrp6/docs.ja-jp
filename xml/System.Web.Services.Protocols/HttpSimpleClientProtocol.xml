@@ -1,0 +1,276 @@
+<Type Name="HttpSimpleClientProtocol" FullName="System.Web.Services.Protocols.HttpSimpleClientProtocol">
+  <TypeSignature Language="C#" Value="public abstract class HttpSimpleClientProtocol : System.Web.Services.Protocols.HttpWebClientProtocol" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HttpSimpleClientProtocol extends System.Web.Services.Protocols.HttpWebClientProtocol" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.HttpSimpleClientProtocol" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.HttpWebClientProtocol</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>単純な HTTP GET 要求および HTTP POST プロトコルのバインドを使用して XML Web サービスと通信するための基本クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ほとんどのパラメーターをエンコードし、戻り値を共通の MIME 形式エンコーダーを使用して HTTP 経由で XML Web サービスと通信するための実装を指定します。 派生してこれらのエンコーダ、<xref:System.Web.Services.Protocols.MimeFormatter>クラスです。 既定では、プロキシ クラスから派生する<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol>プレーン XML でアプリケーション/x-www-form-urlencoded MIME の種類と、応答を使用してパラメーターをエンコードします。 使用してカスタム mime フォーマッタを指定することができます、<xref:System.Web.Services.Protocols.HttpMethodAttribute>属性は、ただし、このサービスの説明とプロキシの生成に統合するためのサポートはありません。  
+  
+ `Notes to Inheritors:`このクラスをオーバーライドする場合は、派生クラスでは、XML Web サービスの特定の種類に固有のメソッドを導入できます。 メソッドは単にパラメーターをキャプチャし、サイトとの通信の作業を行うための基本クラスを呼び出します。 導入されたメソッドが非同期の場合は、呼び出し、<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol.BeginInvoke%2A>と<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol.EndInvoke%2A>メソッドです。 導入されたメソッドが同期の場合は、呼び出し、<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol.Invoke%2A>メソッドです。 通常、オーバーライドされるコンス トラクターを設定、<xref:System.Web.Services.Protocols.WebClientProtocol.Url%2A>プロパティを XML Web サービス メソッドの URI。  
+  
+ 派生クラスを生成する Web サービス記述言語ツール (Wsdl.exe)<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol>特定のサービス説明用です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の Wsdl.exe で生成されたプロキシ クラス、`Math`次の XML Web サービスです。 プロキシ クラスの派生元<xref:System.Web.Services.Protocols.HttpGetClientProtocol>、抽象から派生した<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol>クラスです。  
+  
+ [!code-cpp[Classic HttpGetClientProtocol Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpGetClientProtocol Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic HttpGetClientProtocol Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpGetClientProtocol Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpGetClientProtocol Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpGetClientProtocol Example/VB/source.vb#1)]  
+  
+ 次のコード例は、`Math`前述のプロキシ クラスの作成元の XML Web サービスです。  
+  
+ [!code-cpp[Classic HttpSimpleClientProtocol Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic HttpSimpleClientProtocol Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpSimpleClientProtocol Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HttpSimpleClientProtocol ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HttpSimpleClientProtocol.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.HttpSimpleClientProtocol" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInvoke">
+      <MemberSignature Language="C#" Value="protected IAsyncResult BeginInvoke (string methodName, string requestUrl, object[] parameters, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.IAsyncResult BeginInvoke(string methodName, string requestUrl, object[] parameters, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HttpSimpleClientProtocol.BeginInvoke(System.String,System.String,System.Object[],System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="requestUrl" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">XML Web サービス メソッドの名前。</param>
+        <param name="requestUrl">作成するときに使用する URL、<see cref="T:System.Net.WebRequest" />です。</param>
+        <param name="parameters">XML Web サービス メソッドに渡すパラメーターを格納するオブジェクトの配列。 配列内の値の順序は、派生クラスの呼び出し元のメソッド パラメーター順序に対応します。</param>
+        <param name="callback">非同期メソッドの呼び出しが完了したときに呼び出すデリゲート。 場合<c>コールバック</c>は<see langword="null" />デリゲートは呼び出されません。</param>
+        <param name="asyncState">クライアントによって提供される追加情報です。</param>
+        <summary>XML Web サービスのメソッドの非同期呼び出しを開始します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />に渡すこと、 <see cref="M:System.Web.Services.Protocols.HttpSimpleClientProtocol.EndInvoke(System.IAsyncResult)" /> XML Web サービス メソッドから戻り値を取得します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `methodName`パラメーターの型を検索しを呼び出しているメソッドの戻り値パラメーターが使用される、<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol.BeginInvoke%2A>メソッドです。 メソッドに追加されているカスタム属性を見つけることも使用されます。 <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>、 <xref:System.Web.Services.Protocols.SoapRpcMethodAttribute>、および<xref:System.Xml.Serialization.XmlElementAttribute>の派生メソッドは、HTTP プロトコルに必要な追加情報を提供します。  
+  
+ `asyncState`渡される`callback`に含まれています、<xref:System.IAsyncResult>から返された、<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol.BeginInvoke%2A>メソッドです。 非同期の結果の処理への非同期呼び出しのコンテキストから情報を渡すために便利ですが`callback`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、名前付き XML Web サービスを呼び出して、ASP.NET Web フォーム`Math`です。 内で、`EnterBtn_Click`関数の場合、Web フォームが開始しの非同期呼び出しを完了、 `Add` XML Web サービス メソッドです。  
+  
+ [!code-aspx-csharp[Classic HttpSimpleClientProtocol.EndInvoke Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol.EndInvoke Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HttpSimpleClientProtocol.EndInvoke Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol.EndInvoke Example/VB/sourcevb.aspx#1)]  
+  
+ 次のコード例は、Web サービス記述言語ツール (Wsdl.exe) によって生成されたプロキシ クラス、`Math`次の XML Web サービスです。 内で、`BeginAdd`プロキシ クラスのメソッド、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke%2A>メソッドの非同期呼び出しを開始する、 `Add` XML Web サービス メソッドです。  
+  
+ [!code-cpp[Classic HttpSimpleClientProtocol.EndInvoke Example#2](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol.EndInvoke Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic HttpSimpleClientProtocol.EndInvoke Example#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol.EndInvoke Example/CS/source.cs#2)]
+ [!code-vb[Classic HttpSimpleClientProtocol.EndInvoke Example#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol.EndInvoke Example/VB/source.vb#2)]  
+  
+ 次のコード例は、`Math`前述のプロキシ クラスの作成元の XML Web サービスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">要求は、サーバー コンピューターに到達が正常に処理されませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInvoke">
+      <MemberSignature Language="C#" Value="protected object EndInvoke (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object EndInvoke(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HttpSimpleClientProtocol.EndInvoke(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" /> メソッドから返された <see cref="M:System.Web.Services.Protocols.HttpSimpleClientProtocol.BeginInvoke(System.String,System.String,System.Object[],System.AsyncCallback,System.Object)" />。</param>
+        <summary>HTTP を使用して、XML Web サービス メソッドの非同期呼び出しを完了します。</summary>
+        <returns>戻り値と参照渡しでいずれかを含むオブジェクトの配列または<paramref name="out" />パラメーターを XML Web サービス メソッドを提供します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、名前付き XML Web サービスを呼び出して、ASP.NET Web フォーム`Math`です。 内で、`EnterBtn_Click`関数の場合、Web フォームが開始しの非同期呼び出しを完了、 `Add` XML Web サービス メソッドです。  
+  
+ [!code-aspx-csharp[Classic HttpSimpleClientProtocol.EndInvoke Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol.EndInvoke Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HttpSimpleClientProtocol.EndInvoke Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol.EndInvoke Example/VB/sourcevb.aspx#1)]  
+  
+ 次のコード例は、Web サービス記述言語ツール (Wsdl.exe) によって生成されたプロキシ クラス、`Math`次の XML Web サービスです。 内で、`EndAdd`プロキシ クラスのメソッド、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.EndInvoke%2A>メソッドの非同期呼び出しを開始する、 `Add` XML Web サービス メソッドです。  
+  
+ [!code-cpp[Classic HttpSimpleClientProtocol.EndInvoke Example#2](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol.EndInvoke Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic HttpSimpleClientProtocol.EndInvoke Example#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol.EndInvoke Example/CS/source.cs#2)]
+ [!code-vb[Classic HttpSimpleClientProtocol.EndInvoke Example#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpSimpleClientProtocol.EndInvoke Example/VB/source.vb#2)]  
+  
+ 次のコード例は、`Math`上記のプロキシ クラスの作成元の XML Web サービスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" />戻り値ではありません、<see cref="M:System.Web.Services.Protocols.HttpSimpleClientProtocol.BeginInvoke(System.String,System.String,System.Object[],System.AsyncCallback,System.Object)" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="protected object Invoke (string methodName, string requestUrl, object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object Invoke(string methodName, string requestUrl, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HttpSimpleClientProtocol.Invoke(System.String,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="requestUrl" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">呼び出している派生クラスで XML Web サービス メソッドの名前、<see cref="M:System.Web.Services.Protocols.HttpSimpleClientProtocol.Invoke(System.String,System.String,System.Object[])" />メソッドです。</param>
+        <param name="requestUrl">クライアントが要求している XML Web サービス メソッドの URL です。</param>
+        <param name="parameters">リモートの XML Web サービスに渡すパラメーターを含むオブジェクトの配列。 配列内の値の順序は、派生クラスの呼び出し元のメソッド パラメーター順序に対応します。</param>
+        <summary>HTTP を使用して、XML Web サービス メソッドを呼び出します。</summary>
+        <returns>戻り値と、参照渡しを含むオブジェクトの配列または<paramref name="out" />派生クラスのメソッドのパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `methodName`パラメーターの型を検索しを呼び出しているメソッドの戻り値パラメーターが使用される、<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol.Invoke%2A>メソッドです。 メソッドに追加されたカスタム属性を見つけるにも使用されます。 <xref:System.Web.Services.Protocols.HttpMethodAttribute>および<xref:System.Xml.Serialization.XmlElementAttribute>SOAP プロトコルを必要とされる派生メソッドの追加情報を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、名前付き XML Web サービスを呼び出して、ASP.NET Web フォーム`Math`です。 内で、`EnterBtn_Click`関数の場合、Web フォームを同期的に呼び出す、 `Add` XML Web サービス メソッドです。  
+  
+ [!code-csharp[HttpSimpleClientProtocol.Invoke Example#2](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpSimpleClientProtocol.Invoke Example/CS/sourcecs.aspx#2)]
+ [!code-vb[HttpSimpleClientProtocol.Invoke Example#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpSimpleClientProtocol.Invoke Example/VB/sourcevb.aspx#2)]  
+  
+ 次のコード例は、Web サービス記述言語ツール (Wsdl.exe) によって生成されたプロキシ クラス、`Math`次の XML Web サービスです。 内で、`Add`プロキシ クラスのメソッド、<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol.Invoke%2A>メソッドが同期的に呼び出す、 `Add` Web サービスのメソッドです。  
+  
+ [!code-cpp[HttpSimpleClientProtocol.Invoke Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpSimpleClientProtocol.Invoke Example/CPP/source.cpp#1)]
+ [!code-csharp[HttpSimpleClientProtocol.Invoke Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpSimpleClientProtocol.Invoke Example/CS/source.cs#1)]
+ [!code-vb[HttpSimpleClientProtocol.Invoke Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpSimpleClientProtocol.Invoke Example/VB/source.vb#1)]  
+  
+ 次のコード例は、`Math`上記のプロキシ クラスの作成元の XML Web サービスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">要求は、サーバー コンピューターに到達が正常に処理されませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeAsync">
+      <MemberSignature Language="C#" Value="protected void InvokeAsync (string methodName, string requestUrl, object[] parameters, System.Threading.SendOrPostCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InvokeAsync(string methodName, string requestUrl, object[] parameters, class System.Threading.SendOrPostCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HttpSimpleClientProtocol.InvokeAsync(System.String,System.String,System.Object[],System.Threading.SendOrPostCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="requestUrl" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+        <Parameter Name="callback" Type="System.Threading.SendOrPostCallback" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">呼び出すメソッドの名前。</param>
+        <param name="requestUrl">呼び出された web サービスの要求の URL です。</param>
+        <param name="parameters">メソッドに渡すパラメーター。</param>
+        <param name="callback">デリゲートは、メソッドの呼び出しが完了したときに呼び出されます。</param>
+        <summary>指定したメソッドを非同期的に呼び出します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeAsync">
+      <MemberSignature Language="C#" Value="protected void InvokeAsync (string methodName, string requestUrl, object[] parameters, System.Threading.SendOrPostCallback callback, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InvokeAsync(string methodName, string requestUrl, object[] parameters, class System.Threading.SendOrPostCallback callback, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HttpSimpleClientProtocol.InvokeAsync(System.String,System.String,System.Object[],System.Threading.SendOrPostCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="requestUrl" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+        <Parameter Name="callback" Type="System.Threading.SendOrPostCallback" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">呼び出すメソッドの名前。</param>
+        <param name="requestUrl">呼び出された web サービスの要求の URL です。</param>
+        <param name="parameters">メソッドに渡すパラメーター。</param>
+        <param name="callback">デリゲートは、メソッドの呼び出しが完了したときに呼び出されます。</param>
+        <param name="userState">渡される状態情報が関連付けられているを含むオブジェクト、<c>コールバック</c>メソッドが完了したときに委任します。</param>
+        <summary>関連付けられた状態を維持しながら、指定したメソッドを非同期的に呼び出します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

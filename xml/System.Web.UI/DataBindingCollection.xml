@@ -1,0 +1,362 @@
+<Type Name="DataBindingCollection" FullName="System.Web.UI.DataBindingCollection">
+  <TypeSignature Language="C#" Value="public sealed class DataBindingCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataBindingCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataBindingCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクションを提供<see cref="T:System.Web.UI.DataBinding" />ASP.NET サーバー コントロールのオブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションはすべてを含むディクショナリ、 <xref:System.Web.UI.DataBinding> ASP.NET サーバー コントロール上のオブジェクト。 このコレクションに含まれるオブジェクトにアクセスすることができます、<xref:System.Web.UI.Control>のクラスの実装、<xref:System.Web.UI.IDataBindingsAccessor>インターフェイスです。 どの<xref:System.Web.UI.DataBinding>または<xref:System.Web.UI.DataBindingCollection>サーバー コントロールに関連付けられたオブジェクトがデザイン時にのみ存在します。 実行時に存在しないし、そのためしていないアクセス可能な実行時にします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataBindingCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataBindingCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.UI.DataBinding binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.UI.DataBinding binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingCollection.Add(System.Web.UI.DataBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binding" Type="System.Web.UI.DataBinding" />
+      </Parameters>
+      <Docs>
+        <param name="binding">コレクションに追加するデータ バインド オブジェクトです。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.DataBinding" />オブジェクトを<see cref="T:System.Web.UI.DataBindingCollection" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Changed">
+      <MemberSignature Language="C#" Value="public event EventHandler Changed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Changed" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.DataBindingCollection.Changed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときのコレクション<see cref="T:System.Web.UI.DataBinding" />オブジェクトが変更されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更イベントが発生したときに、<xref:System.Web.UI.DataBindingCollection.Add%2A>メソッド、<xref:System.Web.UI.DataBindingCollection.Clear%2A>メソッド、または<xref:System.Web.UI.DataBindingCollection.Remove%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべて削除<see cref="T:System.Web.UI.DataBinding" />オブジェクトから、<see cref="T:System.Web.UI.DataBindingCollection" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">コレクション内で検索するオブジェクトの名前。</param>
+        <summary>データ バインディングのコレクションに、固有の仕様が含まれるかどうかを判断<see cref="T:System.Web.UI.DataBinding" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Web.UI.DataBindingCollection" /> 、指定した要素が含まれる名前です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Web.UI.DataBindingCollection" /> からコピーされる値のコピー先となる 1 次元 <see cref="T:System.Array" />。</param>
+        <param name="index">指定された、配列内のインデックス、<c>配列</c>パラメーター、コピー開始位置。</param>
+        <summary>コピー、<see cref="T:System.Web.UI.DataBindingCollection" />値を 1 次元<see cref="T:System.Array" />で以降、<see cref="T:System.Array" />インデックスで指定されたオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBindingCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Web.UI.DataBinding" />内のオブジェクト、<see cref="T:System.Web.UI.DataBindingCollection" />オブジェクト。</summary>
+        <value>数<see cref="T:System.Web.UI.DataBinding" />内のオブジェクト、<see cref="T:System.Web.UI.DataBindingCollection" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復処理する列挙子を返します、<see cref="T:System.Web.UI.DataBindingCollection" />オブジェクト。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />コレクションのメンバーを格納しています。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBindingCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataBindingCollection" /> コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          コレクションが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBindingCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataBindingCollection" /> コレクションが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataBinding this[string propertyName] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.DataBinding Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBindingCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">検索するプロパティの名前。</param>
+        <summary>取得、<see cref="T:System.Web.UI.DataBinding" />指定したプロパティ名を持つオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.DataBinding" />指定したプロパティ名。 この値は、指定した名前のオブジェクトが存在しない場合<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">プロパティ名に関連付けられている、<see cref="T:System.Web.UI.DataBinding" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Web.UI.DataBinding" />から指定したプロパティ名に関連付けられているオブジェクト、<see cref="T:System.Web.UI.DataBindingCollection" />コレクションに追加し、<see cref="P:System.Web.UI.DataBindingCollection.RemovedBindings" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.DataBinding binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.DataBinding binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingCollection.Remove(System.Web.UI.DataBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="binding" Type="System.Web.UI.DataBinding" />
+      </Parameters>
+      <Docs>
+        <param name="binding"><see cref="T:System.Web.UI.DataBinding" />から削除する、<see cref="T:System.Web.UI.DataBindingCollection" />です。</param>
+        <summary>指定された削除<see cref="T:System.Web.UI.DataBinding" />オブジェクトから、<see cref="T:System.Web.UI.DataBindingCollection" />コレクションに追加し、<see cref="P:System.Web.UI.DataBindingCollection.RemovedBindings" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Web.UI.DataBinding>オブジェクトから、<xref:System.Web.UI.DataBindingCollection>コレクションのこのバージョンを使用して、<xref:System.Web.UI.DataBindingCollection.Remove%2A>メソッドとのインスタンスを指定する、<xref:System.Web.UI.DataBinding>という名前のクラス`myDataBinding1`です。  
+  
+ [!code-cpp[DataBinding#18](~/samples/snippets/cpp/VS_Snippets_CLR/DataBinding/CPP/webcustomcontrol1.cpp#18)]
+ [!code-csharp[DataBinding#18](~/samples/snippets/csharp/VS_Snippets_CLR/DataBinding/CS/webcustomcontrol1.cs#18)]
+ [!code-vb[DataBinding#18](~/samples/snippets/visualbasic/VS_Snippets_CLR/DataBinding/VB/webcustomcontrol1.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string propertyName, bool addToRemovedList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string propertyName, bool addToRemovedList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBindingCollection.Remove(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="addToRemovedList" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">関連付けられているプロパティ、<see cref="T:System.Web.UI.DataBinding" />を削除します。</param>
+        <param name="addToRemovedList">プロパティ名を追加するかどうかを示すブール値、 <see cref="P:System.Web.UI.DataBindingCollection.RemovedBindings" />  ボックスの一覧です。 <see langword="true" />示します、 <c>propertyName</c>にパラメーターを追加する、<see cref="P:System.Web.UI.DataBindingCollection.RemovedBindings" />プロパティ、および<see langword="false" />ことを示します<c>propertyName</c>には追加されません、<see cref="P:System.Web.UI.DataBindingCollection.RemovedBindings" />プロパティです。</param>
+        <summary>削除、<see cref="T:System.Web.UI.DataBinding" />から指定したプロパティ名に関連付けられているオブジェクト、<see cref="T:System.Web.UI.DataBindingCollection" />コレクションへのバインドを追加するかどうかを制御し、 <see cref="P:System.Web.UI.DataBindingCollection.RemovedBindings" />  ボックスの一覧です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovedBindings">
+      <MemberSignature Language="C#" Value="public string[] RemovedBindings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] RemovedBindings" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBindingCollection.RemovedBindings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前の配列を取得、<see cref="T:System.Web.UI.DataBinding" />オブジェクトをコレクションから削除します。</summary>
+        <value>名前の配列、<see cref="T:System.Web.UI.DataBinding" />オブジェクトをコレクションから削除します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBindingCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataBindingCollection" /> コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Object" />コレクションへのアクセスを同期するために使用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

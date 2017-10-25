@@ -1,0 +1,49 @@
+<Type Name="QueryContinueDragEventHandler" FullName="System.Windows.Forms.QueryContinueDragEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void QueryContinueDragEventHandler(object sender, QueryContinueDragEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed QueryContinueDragEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.QueryContinueDragEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.QueryContinueDragEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.QueryContinueDragEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.Control.QueryContinueDrag" /> の <see cref="T:System.Windows.Forms.Control" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.QueryContinueDragEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 デリゲートでイベントを処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つの間でドラッグ アンド ドロップ操作<xref:System.Windows.Forms.ListBox>コントロール。 呼び出しの例、<xref:System.Windows.Forms.Control.DoDragDrop%2A>メソッド ドラッグ操作の開始時にします。 ドラッグ操作の開始、マウスを移動した場合より多く<xref:System.Windows.Forms.SystemInformation.DragSize%2A?displayProperty=nameWithType>中にマウスの位置から、<xref:System.Windows.Forms.Control.MouseDown>イベント。 <xref:System.Windows.Forms.ListBox.IndexFromPoint%2A>メソッドを使用中にドラッグする項目のインデックスを確認して、`MouseDown`イベント。  
+  
+ 例では、ドラッグ アンド ドロップ操作のカスタムのカーソルを使用しても示します。 この例では 2 つカーソル ファイル`3dwarro.cur`と`3dwno.cur`、カスタムのドラッグをアプリケーション ディレクトリ内に存在および非ドロップ カーソルの場合、それぞれします。 場合に使用されるカスタムのカーソル、 `UseCustomCursorsCheck` <xref:System.Windows.Forms.CheckBox>がオンになっています。 カスタムのカーソルが設定されている、<xref:System.Windows.Forms.Control.GiveFeedback>イベント ハンドラー。  
+  
+ キーボードの状態が評価されます、<xref:System.Windows.Forms.Control.DragOver>右のイベント ハンドラーを`ListBox`ドラッグ操作を決定するには、shift キーを押し、CTRL、alt キーを押し、または CTRL キーと ALT キーの状態に基づいて。 内の場所、`ListBox`中にも決定されます、ドロップが発生すると、`DragOver`イベント。 ドロップするデータがない場合、 `String`、続いて、<xref:System.Windows.Forms.DragEventArgs.Effect%2A?displayProperty=nameWithType>に設定されている<xref:System.Windows.Forms.DragDropEffects?displayProperty=nameWithType>です。 削除の状態を表示する最後に、 `DropLocationLabel`<xref:System.Windows.Forms.Label>です。  
+  
+ 右側にドロップするデータ`ListBox`で決定されます、<xref:System.Windows.Forms.Control.DragDrop>イベント ハンドラーと`String`の適切な場所にある値を追加、`ListBox`です。 ドラッグ操作が、フォームの境界の外側に移動しで、ドラッグ アンド ドロップ操作が取り消されたかどうか、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント ハンドラー。  
+  
+ このコードの抜粋では、使用方法を示します、<xref:System.Windows.Forms.QueryContinueDragEventHandler>を持つデリゲート、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント。 参照してください、<xref:System.Windows.Forms.Control.DoDragDrop%2A>完全なコード例のメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.Control.DoDragDrop#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CPP/form1.cpp#6)]
+ [!code-csharp[System.Windows.Forms.Control.DoDragDrop#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CS/form1.cs#6)]
+ [!code-vb[System.Windows.Forms.Control.DoDragDrop#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/VB/form1.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

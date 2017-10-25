@@ -1,0 +1,263 @@
+<Type Name="ArrayTypeMismatchException" FullName="System.ArrayTypeMismatchException">
+  <TypeSignature Language="C#" Value="public class ArrayTypeMismatchException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ArrayTypeMismatchException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.ArrayTypeMismatchException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>誤った型の要素を配列内に格納しようとした場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ArrayTypeMismatchException>システムは、配列で宣言された型に要素を変換できない場合にスローされます。 型の要素など、<xref:System.String>内に格納できない、<xref:System.Int32>配列のこれらの型の間の変換はサポートされていないためです。 アプリケーションがこの例外をスローするため、通常必要はありません。  
+  
+ 次の Microsoft intermediate language (MSIL) の命令をスロー <xref:System.ArrayTypeMismatchException> :  
+  
+-   ldelem です。\<型 >  
+  
+-   ldelema  
+  
+-   stelem です。\<型 >  
+  
+ <xref:System.ArrayTypeMismatchException>値は 0x80131503 HRESULT COR_E_ARRAYTYPEMISMATCH を使用します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.ArrayTypeMismatchException>を参照してください、<xref:System.ArrayTypeMismatchException>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、シナリオを示します、<xref:System.ArrayTypeMismatchException>がスローされます。  
+  
+ [!code-cpp[System.ArrayTypeMismatch#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.ArrayTypeMismatch/CPP/class1.cpp#1)]
+ [!code-csharp[System.ArrayTypeMismatch#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.ArrayTypeMismatch/CS/class1.cs#1)]
+ [!code-vb[System.ArrayTypeMismatch#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.ArrayTypeMismatch/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArrayTypeMismatchException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArrayTypeMismatchException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ArrayTypeMismatchException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.Exception.Message%2A> 「ソース配列の型はターゲット配列の型に割り当てることはできません」. などに、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ <xref:System.ArrayTypeMismatchException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+   
+  
+## Examples  
+ 次の例では、ArrayTypeMismatchException() コンス トラクター、<xref:System.ArrayTypeMismatchException>クラスです。 引数として 2 つの配列を取得し、2 つの配列が同じ型かどうかをチェック関数が含まれています。 場合、配列は、さまざまな種類の新しい<xref:System.ArrayTypeMismatchException>がスローされ、呼び出し元のメソッドでキャッチします。  
+  
+ [!code-cpp[ArrayTypeMisMatch_Constructor1#1](~/samples/snippets/cpp/VS_Snippets_CLR/ArrayTypeMisMatch_Constructor1/CPP/arraytypemismatch_constructor1.cpp#1)]
+ [!code-csharp[ArrayTypeMisMatch_Constructor1#1](~/samples/snippets/csharp/VS_Snippets_CLR/ArrayTypeMisMatch_Constructor1/CS/arraytypemismatch_constructor1.cs#1)]
+ [!code-vb[ArrayTypeMisMatch_Constructor1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ArrayTypeMisMatch_Constructor1/VB/arraytypemismatch_constructor1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArrayTypeMismatchException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArrayTypeMismatchException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明する <see cref="T:System.String" />。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.ArrayTypeMismatchException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `message` パラメーターの内容は、ユーザーが理解できる内容にします。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ <xref:System.ArrayTypeMismatchException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+   
+  
+## Examples  
+ 次の例では、ArrayTypeMismatchException(String) コンス トラクター、<xref:System.ArrayTypeMismatchException>クラスです。 引数として 2 つの配列を取得し、2 つの配列が同じ型かどうかをチェック関数が含まれています。 場合、配列は、さまざまな種類の新しい<xref:System.ArrayTypeMismatchException>がスローされ、呼び出し元のメソッドでキャッチします。  
+  
+ [!code-cpp[ArrayTypeMisMatch_Constructor2#1](~/samples/snippets/cpp/VS_Snippets_CLR/ArrayTypeMisMatch_Constructor2/CPP/arraytypemismatch_constructor2.cpp#1)]
+ [!code-csharp[ArrayTypeMisMatch_Constructor2#1](~/samples/snippets/csharp/VS_Snippets_CLR/ArrayTypeMisMatch_Constructor2/CS/arraytypemismatch_constructor2.cs#1)]
+ [!code-vb[ArrayTypeMisMatch_Constructor2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ArrayTypeMisMatch_Constructor2/VB/arraytypemismatch_constructor2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ArrayTypeMismatchException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArrayTypeMismatchException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.ArrayTypeMismatchException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArrayTypeMismatchException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArrayTypeMismatchException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターが null 参照でないで現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.ArrayTypeMismatchException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`Nothing` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、null 参照 (Visual Basic の場合は <xref:System.Exception.InnerException%2A>) を返します。  
+  
+ <xref:System.ArrayTypeMismatchException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.ArrayTypeMismatchException.%23ctor%2A>のコンス トラクター、<xref:System.ArrayTypeMismatchException>クラスです。 引数として 2 つの配列を取得し、2 つの配列が同じ型かどうかを確認する関数が含まれています。 場合、配列は、さまざまな種類の新しい<xref:System.ArrayTypeMismatchException>がスローされ、呼び出し元のメソッドでキャッチします。  
+  
+ [!code-cpp[ArrayTypeMisMatch_Constructor3#1](~/samples/snippets/cpp/VS_Snippets_CLR/ArrayTypeMisMatch_Constructor3/CPP/arraytypemismatch_constructor3.cpp#1)]
+ [!code-csharp[ArrayTypeMisMatch_Constructor3#1](~/samples/snippets/csharp/VS_Snippets_CLR/ArrayTypeMisMatch_Constructor3/CS/arraytypemismatch_constructor3.cs#1)]
+ [!code-vb[ArrayTypeMisMatch_Constructor3#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ArrayTypeMisMatch_Constructor3/VB/arraytypemismatch_constructor3.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

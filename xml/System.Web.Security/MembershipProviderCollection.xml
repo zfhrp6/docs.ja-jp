@@ -1,0 +1,182 @@
+<Type Name="MembershipProviderCollection" FullName="System.Web.Security.MembershipProviderCollection">
+  <TypeSignature Language="C#" Value="public sealed class MembershipProviderCollection : System.Configuration.Provider.ProviderCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MembershipProviderCollection extends System.Configuration.Provider.ProviderCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.MembershipProviderCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Provider.ProviderCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web, Version=2.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>継承するオブジェクトのコレクション、<see cref="T:System.Web.Security.MembershipProvider" />抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用で、アプリケーションのメンバーシップ プロバイダーが公開されている<xref:System.Web.Security.MembershipProviderCollection>によって、<xref:System.Web.Security.Membership.Providers%2A>のプロパティ、<xref:System.Web.Security.Membership>クラスです。 名前で、コレクション内の特定のメンバーシップ プロバイダーにアクセスしてなど、特定のプロバイダーの型としてキャスト<xref:System.Web.Security.SqlMembershipProvider>です。 これにより、カスタム メンバーシップ プロバイダーのされないされるメンバーにアクセスするだけでなく、単一のアプリケーションで複数のデータ ストアからメンバーシップ情報を管理することの一部、<xref:System.Web.Security.MembershipProvider>抽象クラスです。  
+  
+> [!NOTE]
+>  ASP.NET のメンバーシップ機能に慣れていない場合は、次を参照してください。[メンバーシップの概要](http://msdn.microsoft.com/library/79184d17-f4c7-4c9f-a073-cec4f5543980)続行する前にします。 メンバーシップに関連するその他のトピックの一覧は、次を参照してください。[メンバーシップを使用したユーザーを管理する](http://msdn.microsoft.com/library/824c3a24-f0af-427c-a652-0d2d1e9397cd)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーションとそれらの種類に対して有効なプロバイダーが一覧表示します。  
+  
+ [!code-aspx-csharp[System.Web.Security.Membership#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Membership/CS/Providerscs.aspx#7)]
+ [!code-aspx-vb[System.Web.Security.Membership#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Membership/VB/Providersvb.aspx#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MembershipProviderCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipProviderCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>空のメンバーシップ プロバイダーのコレクションを新規作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Configuration.Provider.ProviderBase provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Configuration.Provider.ProviderBase provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipProviderCollection.Add(System.Configuration.Provider.ProviderBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Configuration.Provider.ProviderBase" />
+      </Parameters>
+      <Docs>
+        <param name="provider">コレクションに追加するメンバーシップ プロバイダー。</param>
+        <summary>メンバーシップ プロバイダーをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="provider" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="provider" />継承する型のではありません、<see cref="T:System.Web.Security.MembershipProvider" />抽象クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.Security.MembershipProvider[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.Security.MembershipProvider[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.MembershipProviderCollection.CopyTo(System.Web.Security.MembershipProvider[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.Security.MembershipProvider[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピーされた要素のコピー先である 1 次元配列、<see cref="T:System.Web.Security.MembershipProviderCollection" />です。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>メンバーシップ プロバイダーのコレクションを 1 次元配列にコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して<xref:System.Collections.ArrayList.CopyTo%2A?displayProperty=nameWithType>ロール プロバイダー オブジェクトを指定した配列にコピーするためです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.MembershipProviderCollection.CopyTo%2A>の内容をコピーする方法、<xref:System.Web.Security.MembershipProviderCollection>の配列を<xref:System.Web.Security.MembershipProvider>オブジェクト。  
+  
+ [!code-csharp[System.Web.Security.MembershipProviderCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipProviderCollection/CS/snippetscs.aspx#3)]
+ [!code-vb[System.Web.Security.MembershipProviderCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipProviderCollection/VB/snippetsvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ ソース配列の要素の数から使用可能な領域を超えています<paramref name="index" />変換先の末尾に<paramref name="array" />です。</exception>
+        <exception cref="T:System.InvalidCastException">ソース配列の型は、変換先の型に自動的にキャストすることはできません<paramref name="array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Security.MembershipProvider this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Security.MembershipProvider Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.MembershipProviderCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.MembershipProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">メンバーシップ プロバイダー名です。</param>
+        <summary>指定されたプロバイダー名によって参照されるコレクションのメンバーシップ プロバイダーを取得します。</summary>
+        <value>継承されるオブジェクト、<see cref="T:System.Web.Security.MembershipProvider" />抽象クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用で、アプリケーションのメンバーシップ プロバイダーが公開されている<xref:System.Web.Security.MembershipProviderCollection>によって、<xref:System.Web.Security.Membership.Providers%2A>のプロパティ、<xref:System.Web.Security.Membership>クラスです。 名前で、コレクション内の特定のメンバーシップ プロバイダーにアクセスしてなど、特定のプロバイダーの型としてキャスト<xref:System.Web.Security.SqlMembershipProvider>です。 これにより、カスタム メンバーシップ プロバイダーのされないされるメンバーにアクセスするだけでなく、単一のアプリケーションで複数のデータ ストアからメンバーシップ情報を管理することの一部、<xref:System.Web.Security.MembershipProvider>抽象クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例へのアクセス、<xref:System.Web.Security.SqlMembershipProvider>からのアプリケーション用に構成された、<xref:System.Web.Security.Membership.Providers%2A>のプロパティ、<xref:System.Web.Security.Membership>クラス名をします。  
+  
+ [!code-csharp[System.Web.Security.MembershipProviderCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.MembershipProviderCollection/CS/snippetscs.aspx#2)]
+ [!code-vb[System.Web.Security.MembershipProviderCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.MembershipProviderCollection/VB/snippetsvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

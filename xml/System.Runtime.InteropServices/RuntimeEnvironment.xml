@@ -1,0 +1,354 @@
+<Type Name="RuntimeEnvironment" FullName="System.Runtime.InteropServices.RuntimeEnvironment">
+  <TypeSignature Language="C#" Value="public class RuntimeEnvironment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RuntimeEnvironment extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.RuntimeEnvironment" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コレクションを提供<see langword="static" />を共通言語ランタイム環境に関する情報を返すメソッド。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例で定義されたメソッドの多くを呼び出す方法を示しています、<xref:System.Runtime.InteropServices.RuntimeEnvironment>クラスです。  
+  
+ [!code-cpp[RuntimeEnvironment#1](~/samples/snippets/cpp/VS_Snippets_CLR/RuntimeEnvironment/cpp/RuntimeEnvironment.cpp#1)]
+ [!code-csharp[RuntimeEnvironment#1](~/samples/snippets/csharp/VS_Snippets_CLR/RuntimeEnvironment/CS/RuntimeEnvironment.cs#1)]
+ [!code-vb[RuntimeEnvironment#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/RuntimeEnvironment/VB/RuntimeEnvironment.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuntimeEnvironment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RuntimeEnvironment.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Do not create instances of the RuntimeEnvironment class.  Call the static methods directly on this type instead", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.RuntimeEnvironment" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromGlobalAccessCache">
+      <MemberSignature Language="C#" Value="public static bool FromGlobalAccessCache (System.Reflection.Assembly a);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool FromGlobalAccessCache(class System.Reflection.Assembly a) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RuntimeEnvironment.FromGlobalAccessCache(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="a">テスト対象のアセンブリ。</param>
+        <summary>指定したアセンブリがグローバル アセンブリ キャッシュに読み込まれているかどうかをテストします。</summary>
+        <returns>
+          <see langword="true" />グローバル アセンブリ キャッシュにアセンブリが読み込まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Runtime.InteropServices.RuntimeEnvironment.FromGlobalAccessCache%2A> メソッドを呼び出す方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.InteropServices.RuntimeEnvironment>クラスです。  
+  
+ [!code-cpp[RuntimeEnvironment#2](~/samples/snippets/cpp/VS_Snippets_CLR/RuntimeEnvironment/cpp/RuntimeEnvironment.cpp#2)]
+ [!code-csharp[RuntimeEnvironment#2](~/samples/snippets/csharp/VS_Snippets_CLR/RuntimeEnvironment/CS/RuntimeEnvironment.cs#2)]
+ [!code-vb[RuntimeEnvironment#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/RuntimeEnvironment/VB/RuntimeEnvironment.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeDirectory">
+      <MemberSignature Language="C#" Value="public static string GetRuntimeDirectory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetRuntimeDirectory() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>共通言語ランタイムがインストールされているディレクトリを返します。</summary>
+        <returns>共通言語ランタイムがインストールされているディレクトリへのパスを含む文字列です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory%2A> メソッドを呼び出す方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.InteropServices.RuntimeEnvironment>クラスです。  
+  
+ [!code-cpp[RuntimeEnvironment#3](~/samples/snippets/cpp/VS_Snippets_CLR/RuntimeEnvironment/cpp/RuntimeEnvironment.cpp#3)]
+ [!code-csharp[RuntimeEnvironment#3](~/samples/snippets/csharp/VS_Snippets_CLR/RuntimeEnvironment/CS/RuntimeEnvironment.cs#3)]
+ [!code-vb[RuntimeEnvironment#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/RuntimeEnvironment/VB/RuntimeEnvironment.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeInterfaceAsIntPtr">
+      <MemberSignature Language="C#" Value="public static IntPtr GetRuntimeInterfaceAsIntPtr (Guid clsid, Guid riid);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native int GetRuntimeInterfaceAsIntPtr(valuetype System.Guid clsid, valuetype System.Guid riid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeInterfaceAsIntPtr(System.Guid,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clsid" Type="System.Guid" />
+        <Parameter Name="riid" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="clsid">目的のクラスの識別子。</param>
+        <param name="riid">目的のインターフェイスの識別子です。</param>
+        <summary>指定したクラスで指定されたインターフェイスを返します。</summary>
+        <returns>要求されたインターフェイスへのアンマネージ ポインター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、このランタイムを表すインターフェイスに対するメソッドの呼び出しに似ています。  
+  
+ 次の表は、サポートされる組み合わせの`clsid`と`riid`です。  
+  
+|`clsid`|`riid`|  
+|-------------|------------|  
+|CLSID_CorMetaDataDispenser|IID_IMetaDataDispenser、IID_IMetaDataDispenserEx|  
+|CLSID_CorMetaDataDispenserRuntime|IID_IMetaDataDispenser、IID_IMetaDataDispenserEx|  
+|CLSID_CorRuntimeHost|IID_CorRuntimeHost|  
+|Clsid_clrruntimehost です。|IID_CLRRuntimeHost (共通言語ランタイムによって提供されるに対しては無効、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)])、IID_CLRRuntimeHost3|  
+|CLSID_TypeNameFactory|IID_TypeNameFactory|  
+|CLSID_CLRStrongName|IID_CLRStrongName|  
+  
+ <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeInterfaceAsIntPtr%2A>に似ていますが、<xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeInterfaceAsObject%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">[Iunknown::queryinterface](http://go.microsoft.com/fwlink/?LinkId=144867)失敗します。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeInterfaceAsObject">
+      <MemberSignature Language="C#" Value="public static object GetRuntimeInterfaceAsObject (Guid clsid, Guid riid);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetRuntimeInterfaceAsObject(valuetype System.Guid clsid, valuetype System.Guid riid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeInterfaceAsObject(System.Guid,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clsid" Type="System.Guid" />
+        <Parameter Name="riid" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="clsid">目的のクラスの識別子。</param>
+        <param name="riid">目的のインターフェイスの識別子です。</param>
+        <summary>ポインターによって、COM オブジェクトを表す型のインスタンスが返されますその<see langword="IUnknown" />インターフェイスです。</summary>
+        <returns>指定したアンマネージ COM オブジェクトを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeInterfaceAsObject%2A>に似ていますが、<xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeInterfaceAsIntPtr%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">[Iunknown::queryinterface](http://go.microsoft.com/fwlink/?LinkId=144867)失敗します。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSystemVersion">
+      <MemberSignature Language="C#" Value="public static string GetSystemVersion ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetSystemVersion() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のプロセスが実行されている共通言語ランタイムのバージョン番号を取得します。</summary>
+        <returns>共通言語ランタイムのバージョン番号を含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion%2A> メソッドを呼び出す方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.InteropServices.RuntimeEnvironment>クラスです。  
+  
+ [!code-cpp[RuntimeEnvironment#4](~/samples/snippets/cpp/VS_Snippets_CLR/RuntimeEnvironment/cpp/RuntimeEnvironment.cpp#4)]
+ [!code-csharp[RuntimeEnvironment#4](~/samples/snippets/csharp/VS_Snippets_CLR/RuntimeEnvironment/CS/RuntimeEnvironment.cs#4)]
+ [!code-vb[RuntimeEnvironment#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/RuntimeEnvironment/VB/RuntimeEnvironment.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemConfigurationFile">
+      <MemberSignature Language="C#" Value="public static string SystemConfigurationFile { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SystemConfigurationFile" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.RuntimeEnvironment.SystemConfigurationFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム構成ファイルへのパスを取得します。</summary>
+        <value>システム構成ファイルへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Runtime.InteropServices.RuntimeEnvironment.SystemConfigurationFile%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Runtime.InteropServices.RuntimeEnvironment>クラスです。  
+  
+ [!code-cpp[RuntimeEnvironment#5](~/samples/snippets/cpp/VS_Snippets_CLR/RuntimeEnvironment/cpp/RuntimeEnvironment.cpp#5)]
+ [!code-csharp[RuntimeEnvironment#5](~/samples/snippets/csharp/VS_Snippets_CLR/RuntimeEnvironment/CS/RuntimeEnvironment.cs#5)]
+ [!code-vb[RuntimeEnvironment#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/RuntimeEnvironment/VB/RuntimeEnvironment.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

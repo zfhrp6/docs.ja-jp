@@ -1,0 +1,1853 @@
+<Type Name="BindingList&lt;T&gt;" FullName="System.ComponentModel.BindingList&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class BindingList&lt;T&gt; : System.Collections.ObjectModel.Collection&lt;T&gt;, System.ComponentModel.IBindingList, System.ComponentModel.ICancelAddNew, System.ComponentModel.IRaiseItemChangedEvents" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit BindingList`1&lt;T&gt; extends System.Collections.ObjectModel.Collection`1&lt;!T&gt; implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.ComponentModel.IBindingList, class System.ComponentModel.ICancelAddNew, class System.ComponentModel.IRaiseItemChangedEvents" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.BindingList`1" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.Collection&lt;T&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">T</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IBindingList</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ICancelAddNew</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IRaiseItemChangedEvents</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T">リスト内の要素の型。</typeparam>
+    <summary>データ バインディングをサポートするジェネリック コレクションを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601>クラスは、双方向データ バインディング機構を作成する、基底クラスとして使用できます。 <xref:System.ComponentModel.BindingList%601>具体的な一般的な実装を提供、<xref:System.ComponentModel.IBindingList>インターフェイスです。 これは、完全な実装する代わりに<xref:System.ComponentModel.IBindingList>間の微妙な相互作用のため困難になることができますインターフェイス<xref:System.ComponentModel.IBindingList>、 <xref:System.ComponentModel.IEditableObject>、および関連付けられた<xref:System.Windows.Forms.CurrencyManager>です。 ただし、一般的な解決策のプログラマがなど、データ バインディング機能を提供するクラスを使用<xref:System.Windows.Forms.BindingSource>、直接使用する代わりに<xref:System.ComponentModel.BindingList%601>です。  
+  
+ <xref:System.ComponentModel.BindingList%601>を介して、拡張可能なファクトリが作成したインスタンスをサポートしている<xref:System.ComponentModel.BindingList%601.AddNew%2A>メソッドです。 (これと同じ種類の拡張機能がなど他のクラスで見つかったも<xref:System.Windows.Forms.BindingSource>) さらに、このクラスを実装するので、<xref:System.ComponentModel.ICancelAddNew>インターフェイスが有効にしてトランザクションのコミットまたはロールバックによって新しいアイテムの<xref:System.ComponentModel.BindingList%601.EndNew%2A>と<xref:System.ComponentModel.BindingList%601.CancelNew%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますへのバインド、<xref:System.ComponentModel.BindingList%601>ビジネス オブジェクトを含むコンポーネント。 これは、完全な例を含む、`Main`メソッドです。  
+  
+ [!code-csharp[System.ComponentModel.BindingListOfTExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/CS/Form1.cs#1)]
+ [!code-vb[System.ComponentModel.BindingListOfTExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定値を使用して <see cref="T:System.ComponentModel.BindingList`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.ComponentModel.BindingList%601.AllowEdit%2A>|`true`|  
+|<xref:System.ComponentModel.BindingList%601.AllowNew%2A>|`true`場合は、リストの型がある既定のコンス トラクターです。それ以外の場合、`false`です。|  
+|<xref:System.ComponentModel.BindingList%601.AllowRemove%2A>|`true`|  
+|<xref:System.ComponentModel.BindingList%601.RaiseListChangedEvents%2A>|`true`|  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.ComponentModel.BindingList%601>です。 完全な例については、<xref:System.ComponentModel.BindingList%601>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.ComponentModel.BindingListOfTExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/CS/Form1.cs#2)]
+ [!code-vb[System.ComponentModel.BindingListOfTExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingList (System.Collections.Generic.IList&lt;T&gt; list);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IList`1&lt;!T&gt; list) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.#ctor(System.Collections.Generic.IList{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="list" Type="System.Collections.Generic.IList&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="list"><see cref="T:System.Collections.Generic.IList`1" />に含まれている項目の<see cref="T:System.ComponentModel.BindingList`1" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.BindingList`1" />指定されたリストを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これを使用して<xref:System.ComponentModel.BindingList%601.%23ctor%2A>を作成する、<xref:System.ComponentModel.BindingList%601>支えられた`list`を変更することを確認`list`に反映されますが、<xref:System.ComponentModel.BindingList%601>です。  
+  
+ <xref:System.ComponentModel.BindingList%601> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.ComponentModel.BindingList%601.AllowEdit%2A>|`true`|  
+|<xref:System.ComponentModel.BindingList%601.AllowNew%2A>|`true`場合は、リストの型がある既定のコンス トラクターです。それ以外の場合、`false`です。|  
+|<xref:System.ComponentModel.BindingList%601.AllowRemove%2A>|`true`|  
+|<xref:System.ComponentModel.BindingList%601.RaiseListChangedEvents%2A>|`true`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddingNew">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.AddingNewEventHandler AddingNew;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.AddingNewEventHandler AddingNew" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.BindingList`1.AddingNew" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AddingNewEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目が一覧に追加される前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.AddingNew>によって表されるコレクションに新しいオブジェクトが追加される前に、イベントが発生した、<xref:System.Collections.ObjectModel.Collection%601.Items%2A>プロパティです。 後にこのイベントは、<xref:System.ComponentModel.BindingList%601.AddNew%2A>メソッドが呼び出されると、新しい項目が作成され、内部リストに追加する前にします。 このイベントを処理することにより、プログラマがカスタム項目の作成を提供できますがないカーソルの動作に追わから派生して、<xref:System.ComponentModel.BindingList%601>クラスです。  
+  
+ 新しい項目のカスタム機能を指定する方法の詳細については、次を参照してください。、<xref:System.ComponentModel.BindingList%601.AddNew%2A>メソッドです。 イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.ComponentModel.BindingList%601.AddingNew>イベント。 完全な例については、<xref:System.ComponentModel.BindingList%601>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.ComponentModel.BindingListOfTExample#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/CS/Form1.cs#3)]
+ [!code-vb[System.ComponentModel.BindingListOfTExample#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNew">
+      <MemberSignature Language="C#" Value="public T AddNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !T AddNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.AddNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい項目をコレクションに追加します。</summary>
+        <returns>リストに追加された項目。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.AddNew%2A>メソッドで表されるコレクションに新しい項目の追加、<xref:System.Collections.ObjectModel.Collection%601.Items%2A>プロパティです。 新しい項目を追加するには、次のロジックを使用します。  
+  
+1.  <xref:System.ComponentModel.BindingList%601.AddingNew>イベントが自動的に発生します。  
+  
+     このイベントは、新しいカスタム項目を構築するためにプログラムで処理できます。 これは、イベント ハンドラーを設定して、<xref:System.ComponentModel.AddingNewEventArgs.NewObject%2A>のプロパティ、<xref:System.ComponentModel.AddingNewEventArgs>新しい項目へのパラメーターです。  
+  
+     それ以外の場合、既定のパブリック コンス トラクターを使用、新しい項目を自動的に作成します。  
+  
+2.  新しい項目の位置を監視しているが、次の条件のいずれかが満たされるまで、一覧には追加されません。  
+  
+    -   項目がへの呼び出しで明示的にコミットされた<xref:System.ComponentModel.BindingList%601.EndNew%2A>です。  
+  
+    -   項目は、挿入、または項目の削除など、リストの内容を変更する他のいくつかの操作によって暗黙的にコミットされます。  
+  
+ これに対し、呼び出し、<xref:System.ComponentModel.BindingList%601.CancelNew%2A>メソッド、アイテムがコミットされる前に、新しい項目を破棄すると、します。  
+  
+ このメソッドを発生させる、<xref:System.ComponentModel.BindingList%601.ListChanged>新しいアイテムがコミットされるときにイベント。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ComponentModel.BindingList%601.AddNew%2A> メソッドの使用方法を示します。 <xref:System.ComponentModel.BindingList%601>。 完全な例については、<xref:System.ComponentModel.BindingList%601>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.ComponentModel.BindingListOfTExample#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/CS/Form1.cs#4)]
+ [!code-vb[System.ComponentModel.BindingListOfTExample#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.BindingSource.AllowNew" /> プロパティが <see langword="false" /> に設定されている。  
+  
+ または  
+  
+ 現在の項目の種類のパブリックの既定のコンス トラクターが見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNewCore">
+      <MemberSignature Language="C#" Value="protected virtual object AddNewCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object AddNewCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.AddNewCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい項目をコレクションの末尾に追加します。</summary>
+        <returns>コレクションに追加された項目。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.AddNewCore%2A>メソッドで表されるコレクションに新しい項目の追加、<xref:System.Collections.ObjectModel.Collection%601.Items%2A>プロパティです。 <xref:System.ComponentModel.BindingList%601.AddNewCore%2A> は、<xref:System.ComponentModel.BindingList%601.AddingNew> イベントを発生させます。 設定して、新しい項目を追加できます、<xref:System.ComponentModel.AddingNewEventArgs.NewObject%2A>のプロパティ、<xref:System.ComponentModel.AddingNewEventArgs>新しい項目へのパラメーターです。 それ以外の場合、既定のパブリック コンス トラクターを使用、新しい項目を自動的に作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">新しいアイテムに含まれるオブジェクトと同じ型ではありません、<see cref="T:System.ComponentModel.BindingList`1" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowEdit">
+      <MemberSignature Language="C#" Value="public bool AllowEdit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowEdit" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.AllowEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリスト内の項目を編集できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />リスト項目を編集できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.AllowEdit%2A>プロパティは通常によって使用その他のコンポーネントを一覧内の項目の編集が許可されたかどうかを判断します。 ときに<xref:System.ComponentModel.BindingList%601.AllowEdit%2A>を新しい値に設定されている、<xref:System.ComponentModel.BindingList%601.ListChanged>型のイベント<xref:System.ComponentModel.ListChangedType.Reset>が発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.ComponentModel.BindingList%601.AllowEdit%2A>プロパティです。 完全な例については、<xref:System.ComponentModel.BindingList%601>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.ComponentModel.BindingListOfTExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/CS/Form1.cs#2)]
+ [!code-vb[System.ComponentModel.BindingListOfTExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowNew">
+      <MemberSignature Language="C#" Value="public bool AllowNew { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowNew" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.AllowNew" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を使用して、一覧に項目を追加するかどうかを示す値、<see cref="M:System.ComponentModel.BindingList`1.AddNew" />メソッドです。</summary>
+        <value>
+          <see langword="true" />使用してリストに項目を追加する場合、<see cref="M:System.ComponentModel.BindingList`1.AddNew" />メソッド以外の場合、<see langword="false" />です。 既定値は、一覧に含まれている基になる型に依存します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.AllowNew%2A>プロパティは通常によって使用その他のコンポーネントを新しい項目の作成が許可されたかどうかを判断します。 <xref:System.ComponentModel.BindingList%601.AllowNew%2A>既定値は`true`一覧に含まれる型が既定のコンス トラクターを持つかどうか、または<xref:System.ComponentModel.BindingList%601.AddingNew>イベントを処理します。 場合、<xref:System.ComponentModel.BindingList%601.AddingNew>イベントが処理されないか、リストの型がない既定のコンス トラクター、<xref:System.ComponentModel.BindingList%601.AllowNew%2A>の既定値は`false`します。  
+  
+ 場合<xref:System.ComponentModel.BindingList%601.AllowNew%2A>が明示的に設定されている、バインドされたオブジェクトで新しい項目を一覧に追加できるかどうかを判断で常に設定された値が使用します。 かどうか<xref:System.ComponentModel.BindingList%601.AllowNew%2A>は`true`または`false`、明示的に呼び出すことによって新しい項目を追加することができます<xref:System.ComponentModel.BindingList%601.AddNew%2A>リストの種類が既定のコンス トラクターを持つ場合、または<xref:System.ComponentModel.BindingList%601.AddingNew>イベントを処理します。 さらに、設定<xref:System.ComponentModel.BindingList%601.AllowNew%2A>により、<xref:System.ComponentModel.BindingList%601.ListChanged>型のイベント<xref:System.ComponentModel.ListChangedType.Reset>を実行します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.ComponentModel.BindingList%601.AllowNew%2A>プロパティです。 完全な例については、<xref:System.ComponentModel.BindingList%601>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.ComponentModel.BindingListOfTExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/CS/Form1.cs#2)]
+ [!code-vb[System.ComponentModel.BindingListOfTExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowRemove">
+      <MemberSignature Language="C#" Value="public bool AllowRemove { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowRemove" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.AllowRemove" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコレクションから項目を削除するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />使用してリストから項目を削除することができる場合、<see cref="M:System.ComponentModel.BindingList`1.RemoveItem(System.Int32)" />メソッドのそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.AllowRemove%2A>プロパティ通常他のコンポーネントによって判別される項目の削除が許可されたかどうか。  
+  
+ ときに<xref:System.ComponentModel.BindingList%601.AllowRemove%2A>を新しい値に設定されている、<xref:System.ComponentModel.BindingList%601.ListChanged>型のイベント<xref:System.ComponentModel.ListChangedType.Reset>に発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.ComponentModel.BindingList%601.AllowRemove%2A>プロパティです。 完全な例については、<xref:System.ComponentModel.BindingList%601>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.ComponentModel.BindingListOfTExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/CS/Form1.cs#2)]
+ [!code-vb[System.ComponentModel.BindingListOfTExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplySortCore">
+      <MemberSignature Language="C#" Value="protected virtual void ApplySortCore (System.ComponentModel.PropertyDescriptor prop, System.ComponentModel.ListSortDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ApplySortCore(class System.ComponentModel.PropertyDescriptor prop, valuetype System.ComponentModel.ListSortDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.ApplySortCore(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="direction" Type="System.ComponentModel.ListSortDirection" />
+      </Parameters>
+      <Docs>
+        <param name="prop">A<see cref="T:System.ComponentModel.PropertyDescriptor" />並べ替えに使用するプロパティを指定します。</param>
+        <param name="direction"><see cref="T:System.ComponentModel.ListSortDirection" /> 値のいずれか。</param>
+        <summary>派生クラスでオーバーライドされた場合は、項目の並べ替えそれ以外の場合、スロー、<see cref="T:System.NotSupportedException" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601>クラスは、並べ替え、そのための基本実装を提供していない<xref:System.ComponentModel.BindingList%601.ApplySortCore%2A>は常にスロー、<xref:System.NotSupportedException>既定です。 派生して並べ替えを有効にする<xref:System.ComponentModel.BindingList%601>し、次のタスクを実行します。  
+  
+-   オーバーライド<xref:System.ComponentModel.BindingList%601.ApplySortCore%2A>させると、並べ替えを実装し、<xref:System.ComponentModel.BindingList%601.ListChanged>並べ替えるときにイベントが完了しました。  
+  
+-   オーバーライド<xref:System.ComponentModel.BindingList%601.RemoveSortCore%2A>および並べ替えの削除を実装します。  
+  
+-   オーバーライド<xref:System.ComponentModel.BindingList%601.SupportsSortingCore%2A>設定と<xref:System.ComponentModel.BindingList%601.SupportsSortingCore%2A>に`true`です。  
+  
+ さらに、することも、補助を実装<xref:System.ComponentModel.BindingList%601.SortDirectionCore%2A>と<xref:System.ComponentModel.BindingList%601.SortPropertyCore%2A>並べ替えのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">メソッドは派生クラスでオーバーライドされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelNew">
+      <MemberSignature Language="C#" Value="public virtual void CancelNew (int itemIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CancelNew(int32 itemIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.CancelNew(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="itemIndex">インデックスの新しい項目を追加します。</param>
+        <summary>保留中の新しい項目を破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.CancelNew%2A>メソッドを介して追加された保留中の新しい項目をロールバック、<xref:System.ComponentModel.BindingList%601.AddNew%2A>メソッドがまだコミットされていません。  
+  
+ 追加して、新しい項目をコミットの詳細については、次を参照してください、<xref:System.ComponentModel.BindingList%601.AddNew%2A>メソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例で使用方法、<xref:System.ComponentModel.BindingList%601.CancelNew%2A>メソッドです。 完全な例については、<xref:System.ComponentModel.BindingList%601>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.ComponentModel.BindingListOfTExample#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/CS/Form1.cs#4)]
+ [!code-vb[System.ComponentModel.BindingListOfTExample#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearItems">
+      <MemberSignature Language="C#" Value="protected override void ClearItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ClearItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.ClearItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.ClearItems%2A>メソッドで表されるコレクションからすべての項目を削除する、<xref:System.Collections.ObjectModel.Collection%601.Items%2A>プロパティです。  
+  
+ <xref:System.ComponentModel.BindingList%601.ClearItems%2A>呼び出し、<xref:System.ComponentModel.BindingList%601.EndNew%2A>メソッドが発生し、コレクションをクリアする前に、<xref:System.ComponentModel.BindingList%601.ListChanged>イベントが削除された後です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndNew">
+      <MemberSignature Language="C#" Value="public virtual void EndNew (int itemIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndNew(int32 itemIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.EndNew(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="itemIndex">追加する新しい項目のインデックス。</param>
+        <summary>保留中の新しい項目をコレクションにコミットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.EndNew%2A>メソッドを介して追加された保留中の新しい項目をコミットする、<xref:System.ComponentModel.BindingList%601.AddNew%2A>メソッドです。 新しい項目のコミットを待機しているがない場合、このメソッドは何です。  
+  
+ 追加して、新しい項目をコミットの詳細については、次を参照してください。、<xref:System.ComponentModel.BindingList%601.AddNew%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindCore">
+      <MemberSignature Language="C#" Value="protected virtual int FindCore (System.ComponentModel.PropertyDescriptor prop, object key);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 FindCore(class System.ComponentModel.PropertyDescriptor prop, object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.FindCore(System.ComponentModel.PropertyDescriptor,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="prop">検索対象の <see cref="T:System.ComponentModel.PropertyDescriptor" />。</param>
+        <param name="key">値<c>プロパティ</c>一致するようにします。</param>
+        <summary>派生クラスで実装されている場合は、指定の値を持つ指定したプロパティ記述子をされている項目のインデックスを検索それ以外の場合、<see cref="T:System.NotSupportedException" />です。</summary>
+        <returns>プロパティ記述子と一致して、指定した値が含まれている項目の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601>クラスは、検索の基本実装を提供しませんので<xref:System.ComponentModel.BindingList%601.FindCore%2A>は常にスロー、<xref:System.NotSupportedException>既定です。 検索を有効にするのにはから派生<xref:System.ComponentModel.BindingList%601>し、次のタスクを実行します。  
+  
+-   オーバーライド<xref:System.ComponentModel.BindingList%601.SupportsSearchingCore%2A>を設定する、<xref:System.ComponentModel.BindingList%601.SupportsSearchingCore%2A>プロパティを`true`です。  
+  
+-   オーバーライド<xref:System.ComponentModel.BindingList%601.FindCore%2A>検索アルゴリズムを実装します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.BindingList%601.FindCore%2A>メンバー。  
+  
+ [!code-csharp[System.Windows.Forms.BindingSourceAndBindingListOfT#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceAndBindingListOfT/CS/Form1.cs#3)]
+ [!code-vb[System.Windows.Forms.BindingSourceAndBindingListOfT#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceAndBindingListOfT/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="M:System.ComponentModel.BindingList`1.FindCore(System.ComponentModel.PropertyDescriptor,System.Object)" />派生クラスでオーバーライドされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, T item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, !T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.InsertItem(System.Int32,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="index">ここで、項目を挿入する 0 から始まるインデックス。</param>
+        <param name="item">リストに挿入する項目。</param>
+        <summary>指定したインデックスにある一覧で指定された項目を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.InsertItem%2A>次の操作を実行します。  
+  
+-   呼び出し<xref:System.ComponentModel.BindingList%601.EndNew%2A>を通じて追加されたすべてのコミットされていない項目をコミットする、<xref:System.ComponentModel.BindingList%601.AddingNew>イベント。  
+  
+-   指定したインデックス位置の項目を挿入します。  
+  
+-   発生させる、<xref:System.ComponentModel.BindingList%601.ListChanged>型のイベント<xref:System.ComponentModel.ListChangedType.ItemAdded>挿入されているアイテムのインデックスを示すです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSortedCore">
+      <MemberSignature Language="C#" Value="protected virtual bool IsSortedCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSortedCore" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.IsSortedCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧を並べ替えるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />リストが並べ替えられている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601>クラスは、並べ替え、そのための基本実装を提供していない<xref:System.ComponentModel.BindingList%601.IsSortedCore%2A>は常に返します`false`既定です。  
+  
+ <xref:System.ComponentModel.BindingList%601>クラスは並べ替えの基本実装を提供しません。 並べ替えを有効にするからクラスを派生<xref:System.ComponentModel.BindingList%601>とします。  
+  
+-   オーバーライド<xref:System.ComponentModel.BindingList%601.ApplySortCore%2A>させると並べ替えを実装し、<xref:System.ComponentModel.BindingList%601.ListChanged>並べ替えるときにイベントが完了しました。  
+  
+-   オーバーライド<xref:System.ComponentModel.BindingList%601.RemoveSortCore%2A>および並べ替えの削除を実装します。  
+  
+-   オーバーライド<xref:System.ComponentModel.BindingList%601.SupportsSortingCore%2A>設定と<xref:System.ComponentModel.BindingList%601.SupportsSortingCore%2A>に`true`です。  
+  
+ さらに、することも、補助を実装<xref:System.ComponentModel.BindingList%601.SortDirectionCore%2A>と<xref:System.ComponentModel.BindingList%601.SortPropertyCore%2A>s 並べ替えのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.ListChangedEventHandler ListChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.ListChangedEventHandler ListChanged" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.BindingList`1.ListChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ListChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストまたはリスト内の項目が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.ListChanged>リスト項目の種類を実装する場合、項目の値の変更に関する通知が発生のみ、<xref:System.ComponentModel.INotifyPropertyChanged>インターフェイスです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例で処理する方法、<xref:System.ComponentModel.BindingList%601.ListChanged>イベント。 完全な例については、<xref:System.ComponentModel.BindingList%601>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.ComponentModel.BindingListOfTExample#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/CS/Form1.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAddingNew">
+      <MemberSignature Language="C#" Value="protected virtual void OnAddingNew (System.ComponentModel.AddingNewEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAddingNew(class System.ComponentModel.AddingNewEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.OnAddingNew(System.ComponentModel.AddingNewEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.AddingNewEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.AddingNewEventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.BindingList`1.AddingNew" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.AddingNew>イベントおよび<xref:System.ComponentModel.BindingList%601.AddNew%2A>メソッドが一覧に追加する項目をカスタム作成を許可します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.ComponentModel.BindingList%601.OnAddingNew%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.ComponentModel.BindingList`1.OnAddingNew(System.ComponentModel.AddingNewEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.ComponentModel.BindingList`1.OnAddingNew(System.ComponentModel.AddingNewEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnListChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnListChanged (System.ComponentModel.ListChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnListChanged(class System.ComponentModel.ListChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.OnListChanged(System.ComponentModel.ListChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.ListChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.ListChangedEventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.BindingList`1.ListChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.OnListChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.ComponentModel.BindingList`1.OnListChanged(System.ComponentModel.ListChangedEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.ComponentModel.BindingList`1.OnListChanged(System.ComponentModel.ListChangedEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseListChangedEvents">
+      <MemberSignature Language="C#" Value="public bool RaiseListChangedEvents { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RaiseListChangedEvents" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.RaiseListChangedEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストが生成内の追加または削除のアイテムかどうかを示す値を取得または<see cref="E:System.ComponentModel.BindingList`1.ListChanged" />イベント。</summary>
+        <value>
+          <see langword="true" />かどうか、追加または削除する項目を発生させます<see cref="E:System.ComponentModel.BindingList`1.ListChanged" />イベントです。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.ComponentModel.BindingList%601.RaiseListChangedEvents%2A>プロパティを`false`を抑制する場合<xref:System.ComponentModel.BindingList%601.ListChanged>から一覧上で発生するイベントです。  
+  
+   
+  
+## Examples  
+ 次のコード例で使用方法、<xref:System.ComponentModel.BindingList%601.RaiseListChangedEvents%2A>メソッドです。 完全な例については、<xref:System.ComponentModel.BindingList%601>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.ComponentModel.BindingListOfTExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/CS/Form1.cs#2)]
+ [!code-vb[System.ComponentModel.BindingListOfTExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BindingListOfTExample/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItem">
+      <MemberSignature Language="C#" Value="protected override void RemoveItem (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RemoveItem(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.RemoveItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス。</param>
+        <summary>指定したインデックスにある項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを発生させる、<xref:System.ComponentModel.BindingList%601.ListChanged>型のイベント<xref:System.ComponentModel.ListChangedType.ItemDeleted>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">新しく追加された項目を削除して<see cref="P:System.ComponentModel.IBindingList.AllowRemove" />に設定されている<see langword="false" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveSortCore">
+      <MemberSignature Language="C#" Value="protected virtual void RemoveSortCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RemoveSortCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.RemoveSortCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>適用されますが、あらゆる種類の削除<see cref="M:System.ComponentModel.BindingList`1.ApplySortCore(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)" />並べ替えが派生クラスで実装されている場合はそれ以外の場合、発生<see cref="T:System.NotSupportedException" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601>クラスは、並べ替え、そのための基本実装を提供していない<xref:System.ComponentModel.BindingList%601.RemoveSortCore%2A>は常にスロー、<xref:System.NotSupportedException>既定です。 並べ替えの詳細については、次を参照してください。、<xref:System.ComponentModel.BindingList%601.ApplySortCore%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">メソッドは派生クラスでオーバーライドされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetBindings">
+      <MemberSignature Language="C#" Value="public void ResetBindings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetBindings() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.ResetBindings" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>発生させる、<see cref="E:System.ComponentModel.BindingList`1.ListChanged" />型のイベント<see cref="F:System.ComponentModel.ListChangedType.Reset" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、 <xref:System.ComponentModel.BindingList%601> 、Windows フォーム コントロールにバインドされて、<xref:System.ComponentModel.BindingList%601.ResetBindings%2A>メソッドを一覧にバインドされているすべてのコントロールの更新が行わします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetItem">
+      <MemberSignature Language="C#" Value="public void ResetItem (int position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetItem(int32 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.ResetItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="position">リセットする項目の 0 から始まるインデックス。</param>
+        <summary>発生させます、<see cref="E:System.ComponentModel.BindingList`1.ListChanged" />型のイベント<see cref="F:System.ComponentModel.ListChangedType.ItemChanged" />の指定した位置にある項目。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、 <xref:System.ComponentModel.BindingList%601> 、Windows フォーム コントロールにバインドされて、<xref:System.ComponentModel.BindingList%601.ResetItem%2A>メソッドは、指定した位置にある項目にバインドされるコントロールを更新します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, T item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, !T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.SetItem(System.Int32,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="index">置換する項目の 0 から始まるインデックス。</param>
+        <param name="item">指定したインデックス位置にある項目の新しい値。 参照型の場合は <see langword="null" /> の値を使用できます。</param>
+        <summary>指定したインデックス位置の項目を、指定した項目で置き換えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目を設定すると、<xref:System.ComponentModel.BindingList%601.SetItem%2A>を発生させます、<xref:System.ComponentModel.BindingList%601.ListChanged>型のイベント<xref:System.ComponentModel.ListChangedType.ItemChanged>に設定されている項目のインデックスを示すです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.ObjectModel.Collection`1.Count" /> より大きくなっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SortDirectionCore">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.ListSortDirection SortDirectionCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.ListSortDirection SortDirectionCore" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.SortDirectionCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ListSortDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストの並べ替え方向を取得します。</summary>
+        <value><see cref="T:System.ComponentModel.ListSortDirection" /> 値のいずれか。 既定値は、<see cref="F:System.ComponentModel.ListSortDirection.Ascending" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601>クラスは、並べ替え、そのための基本実装を提供していない<xref:System.ComponentModel.BindingList%601.SortDirectionCore%2A>は常に返します<xref:System.ComponentModel.ListSortDirection.Ascending>既定です。 並べ替えの詳細については、次を参照してください。、<xref:System.ComponentModel.IBindingList.ApplySort%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortPropertyCore">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.PropertyDescriptor SortPropertyCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptor SortPropertyCore" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.SortPropertyCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>並べ替えが派生クラスで実装されている場合、リストの並べ替えに使用されるプロパティ記述子を取得します返しますそれ以外の場合、<see langword="null" />です。</summary>
+        <value><see cref="T:System.ComponentModel.PropertyDescriptor" />リストを並べ替えるために使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.SortPropertyCore%2A>返します`null`既定であるため、<xref:System.ComponentModel.BindingList%601>クラスは並べ替えの基本実装を提供しません。 並べ替えを有効にするからクラスを派生<xref:System.ComponentModel.BindingList%601>とします。  
+  
+-   オーバーライド<xref:System.ComponentModel.BindingList%601.ApplySortCore%2A>および並べ替えを実装します。  
+  
+-   オーバーライド<xref:System.ComponentModel.BindingList%601.RemoveSortCore%2A>および並べ替えの削除を実装します。  
+  
+-   オーバーライド<xref:System.ComponentModel.BindingList%601.SupportsSortingCore%2A>設定と<xref:System.ComponentModel.BindingList%601.SupportsSortingCore%2A>に`true`です。  
+  
+-   必要に応じて、オーバーライド、<xref:System.ComponentModel.BindingList%601.SortPropertyCore%2A>を返す、<xref:System.ComponentModel.PropertyDescriptor>の並べ替えに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsChangeNotificationCore">
+      <MemberSignature Language="C#" Value="protected virtual bool SupportsChangeNotificationCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsChangeNotificationCore" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.SupportsChangeNotificationCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか<see cref="E:System.ComponentModel.BindingList`1.ListChanged" />イベントを有効にします。</summary>
+        <value>
+          <see langword="true" />場合<see cref="E:System.ComponentModel.BindingList`1.ListChanged" />イベントは、サポートされている、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.SupportsChangeNotificationCore%2A>実装を提供<xref:System.ComponentModel.IBindingList.SupportsChangeNotification%2A>です。 クラスを派生させる<xref:System.ComponentModel.BindingList%601>既定値をオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsSearchingCore">
+      <MemberSignature Language="C#" Value="protected virtual bool SupportsSearchingCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsSearchingCore" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.SupportsSearchingCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧には、検索をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />一覧は、検索をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601>クラスが検索する場合に、そのための基本実装を提供しない<xref:System.ComponentModel.BindingList%601.SupportsSearchingCore%2A>は常に返します`false`既定です。 検索の実装の詳細については、次を参照してください。、<xref:System.ComponentModel.BindingList%601.System%23ComponentModel%23IBindingList%23Find%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.BindingList%601.SupportsSearchingCore%2A>メンバー。  
+  
+ [!code-csharp[System.Windows.Forms.BindingSourceAndBindingListOfT#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceAndBindingListOfT/CS/Form1.cs#3)]
+ [!code-vb[System.Windows.Forms.BindingSourceAndBindingListOfT#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceAndBindingListOfT/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsSortingCore">
+      <MemberSignature Language="C#" Value="protected virtual bool SupportsSortingCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsSortingCore" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.SupportsSortingCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストが並べ替えをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />リストが並べ替えをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.SupportsSortingCore%2A>プロパティを示すかどうか、<xref:System.ComponentModel.BindingList%601>の並べ替えをサポートしている、<xref:System.ComponentModel.BindingList%601.ApplySortCore%2A>メソッドです。  
+  
+ <xref:System.ComponentModel.BindingList%601>クラスは、並べ替え、そのための基本実装を提供していない<xref:System.ComponentModel.BindingList%601.SupportsSortingCore%2A>は常に返します`false`既定です。 並べ替えの実装の詳細については、次を参照してください。、<xref:System.ComponentModel.BindingList%601.ApplySortCore%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.AddIndex">
+      <MemberSignature Language="C#" Value="void IBindingList.AddIndex (System.ComponentModel.PropertyDescriptor prop);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.IBindingList.AddIndex(class System.ComponentModel.PropertyDescriptor prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#AddIndex(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="prop"><see cref="T:System.ComponentModel.PropertyDescriptor" />検索条件として追加します。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.IBindingList.AddIndex(System.ComponentModel.PropertyDescriptor)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの基本実装では、何も行われません。 この機能が必要な場合、派生クラスは、これを実装する必要があります。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.AddNew">
+      <MemberSignature Language="C#" Value="object IBindingList.AddNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.IBindingList.AddNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#AddNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい項目を一覧に追加します。 詳細については、「<see cref="M:System.ComponentModel.IBindingList.AddNew" />」を参照してください。</summary>
+        <returns>リストに追加された項目。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ この実装を呼び出す<xref:System.ComponentModel.BindingList%601.AddNewCore%2A>一覧に新しい項目を追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.AllowEdit">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IBindingList.AllowEdit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IBindingList.AllowEdit" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#AllowEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト内の項目を編集できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />リスト項目を編集できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.AllowEdit%2A>プロパティは通常によって使用その他のコンポーネントを一覧内の項目の編集が許可されたかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.AllowNew">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IBindingList.AllowNew { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IBindingList.AllowNew" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#AllowNew" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用して、一覧に新しい項目を追加できるかどうかを示す値を取得、<see cref="M:System.ComponentModel.BindingList`1.AddNew" />メソッドです。</summary>
+        <value>
+          <see langword="true" />使用してリストに項目を追加する場合、<see cref="M:System.ComponentModel.BindingList`1.AddNew" />メソッド以外の場合、<see langword="false" />です。 既定値は、一覧に含まれている基になる型に依存します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.AllowRemove">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IBindingList.AllowRemove { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IBindingList.AllowRemove" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#AllowRemove" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧から項目を削除できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />使用してリストから項目を削除することができる場合、<see cref="M:System.ComponentModel.BindingList`1.RemoveItem(System.Int32)" />メソッド以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.ApplySort">
+      <MemberSignature Language="C#" Value="void IBindingList.ApplySort (System.ComponentModel.PropertyDescriptor prop, System.ComponentModel.ListSortDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.IBindingList.ApplySort(class System.ComponentModel.PropertyDescriptor prop, valuetype System.ComponentModel.ListSortDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="direction" Type="System.ComponentModel.ListSortDirection" />
+      </Parameters>
+      <Docs>
+        <param name="prop"><see cref="T:System.ComponentModel.PropertyDescriptor" />で並べ替えを行う。</param>
+        <param name="direction"><see cref="T:System.ComponentModel.ListSortDirection" /> 値のいずれか。</param>
+        <summary>基づくリストを並べ替えます、<see cref="T:System.ComponentModel.PropertyDescriptor" />と<see cref="T:System.ComponentModel.ListSortDirection" />です。 このメンバーの詳細については、次を参照してください。<see cref="M:System.ComponentModel.IBindingList.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.Find">
+      <MemberSignature Language="C#" Value="int IBindingList.Find (System.ComponentModel.PropertyDescriptor prop, object key);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.ComponentModel.IBindingList.Find(class System.ComponentModel.PropertyDescriptor prop, object key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#Find(System.ComponentModel.PropertyDescriptor,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="prop"><see cref="T:System.ComponentModel.PropertyDescriptor" />を検索します。</param>
+        <param name="key">値、<c>プロパティ</c>パラメーターを検索します。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.IBindingList.Find(System.ComponentModel.PropertyDescriptor,System.Object)" />」をご覧ください。</summary>
+        <returns>持つ行のインデックス、指定された<see cref="T:System.ComponentModel.PropertyDescriptor" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.IsSorted">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IBindingList.IsSorted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IBindingList.IsSorted" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#IsSorted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.ComponentModel.IBindingList.IsSorted" />」を参照してください。</summary>
+        <value>
+          <see langword="true" />場合<see cref="M:System.ComponentModel.IBindingListView.ApplySort(System.ComponentModel.ListSortDescriptionCollection)" />が呼び出されたと<see cref="M:System.ComponentModel.IBindingList.RemoveSort" />が呼び出される、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.RemoveIndex">
+      <MemberSignature Language="C#" Value="void IBindingList.RemoveIndex (System.ComponentModel.PropertyDescriptor prop);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.IBindingList.RemoveIndex(class System.ComponentModel.PropertyDescriptor prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#RemoveIndex(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="prop">A<see cref="T:System.ComponentModel.PropertyDescriptor" />検索に使用されるインデックスから削除します。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.IBindingList.RemoveIndex(System.ComponentModel.PropertyDescriptor)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの基本実装では、何も行われません。 この機能が必要な場合、派生クラスは、これを実装する必要があります。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.RemoveSort">
+      <MemberSignature Language="C#" Value="void IBindingList.RemoveSort ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.IBindingList.RemoveSort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#RemoveSort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの説明は、次を参照してください。<see cref="M:System.ComponentModel.IBindingList.RemoveSort" /></summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.SortDirection">
+      <MemberSignature Language="C#" Value="System.ComponentModel.ListSortDirection System.ComponentModel.IBindingList.SortDirection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.ListSortDirection System.ComponentModel.IBindingList.SortDirection" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#SortDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ListSortDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.ComponentModel.IBindingList.SortDirection" />」を参照してください。</summary>
+        <value><see cref="T:System.ComponentModel.ListSortDirection" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.SortProperty">
+      <MemberSignature Language="C#" Value="System.ComponentModel.PropertyDescriptor System.ComponentModel.IBindingList.SortProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptor System.ComponentModel.IBindingList.SortProperty" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#SortProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.ComponentModel.IBindingList.SortProperty" />」を参照してください。</summary>
+        <value><see cref="T:System.ComponentModel.PropertyDescriptor" />並べ替えに使用されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.SupportsChangeNotification">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IBindingList.SupportsChangeNotification { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IBindingList.SupportsChangeNotification" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#SupportsChangeNotification" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.ComponentModel.IBindingList.SupportsChangeNotification" />」を参照してください。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="E:System.ComponentModel.IBindingList.ListChanged" />イベントは、一覧が変更されたときに、または項目を変更します。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.SupportsSearching">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IBindingList.SupportsSearching { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IBindingList.SupportsSearching" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#SupportsSearching" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.ComponentModel.IBindingList.SupportsSearching" />」を参照してください。</summary>
+        <value>
+          <see langword="true" />リストが使用した検索をサポートしているか、<see cref="M:System.ComponentModel.IBindingList.Find(System.ComponentModel.PropertyDescriptor,System.Object)" />メソッド以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IBindingList.SupportsSorting">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IBindingList.SupportsSorting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IBindingList.SupportsSorting" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.System#ComponentModel#IBindingList#SupportsSorting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.ComponentModel.IBindingList.SupportsSorting" />」を参照してください。</summary>
+        <value>
+          <see langword="true" />リストが並べ替えをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.ComponentModel.BindingList%601> のインスタンスが <xref:System.ComponentModel.IBindingList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IRaiseItemChangedEvents.RaisesItemChangedEvents">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IRaiseItemChangedEvents.RaisesItemChangedEvents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IRaiseItemChangedEvents.RaisesItemChangedEvents" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindingList`1.System#ComponentModel#IRaiseItemChangedEvents#RaisesItemChangedEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目プロパティの値の変更を発生させるかどうかを示す値を取得<see cref="E:System.ComponentModel.BindingList`1.ListChanged" />の種類のイベント<see cref="F:System.ComponentModel.ListChangedType.ItemChanged" />です。 このメンバーは、派生クラスでオーバーライドされることはできません。</summary>
+        <value>
+          <see langword="true" />リストの種類を実装する場合<see cref="T:System.ComponentModel.INotifyPropertyChanged" />、それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindingList%601.System%23ComponentModel%23IRaiseItemChangedEvents%23RaisesItemChangedEvents%2A>実装するかどうかに表示するリストの種類のチェック、<xref:System.ComponentModel.INotifyPropertyChanged>を発生させることを示すためにインターフェイス<xref:System.ComponentModel.BindingList%601.ListChanged>のイベント<xref:System.ComponentModel.ListChangedType.ItemChanged>個々 のリスト項目でプロパティの値が変更されたとき。 このメンバーは、派生クラスでオーバーライドされることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1278 @@
+<Type Name="Contract" FullName="System.Diagnostics.Contracts.Contract">
+  <TypeSignature Language="C#" Value="public static class Contract" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Contract extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Contracts.Contract" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実行前の状態、実行後の状態、オブジェクトの不変部分などのプログラム コントラクトを表す静的メソッドを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード コントラクト クラスでは、コード内の事前条件、事後条件、およびオブジェクト不変条件を指定できます。 事前条件とは、メソッドやプロパティに入るときに満たされている必要がある要件です。 事後条件は、メソッドやプロパティのコードが終了するときの予測を表します。 オブジェクトの不変部分では、条件の問題を持たないクラスに対して予期される状態について説明します。 事前条件、事後条件、およびオブジェクト不変条件の詳細については、次を参照してください。[コード コントラクト](~/docs/framework/debug-trace-profile/code-contracts.md)です。  
+  
+ コード コントラクトを使用するためのツールおよび詳細な手順については、MSDN DevLabs Web サイトの「[Code Contracts](http://go.microsoft.com/fwlink/?LinkId=152461)」(コード コントラクト) を参照してください。  
+  
+> [!IMPORTANT]
+>  バイナリ リライターを使用すると、コントラクトの実行時の強制を挿入する必要があります。 それ以外の場合、コントラクトなど、<xref:System.Diagnostics.Contracts.Contract.Ensures%2A?displayProperty=nameWithType>メソッドをテストするために静的にし、コントラクトに違反する場合、実行時に例外をスローしませんがします。 バイナリ リライター CCRewrite をダウンロードすることから[コード コントラクト](http://go.microsoft.com/fwlink/?LinkId=152461)MSDN DevLabs Web サイトです。 CCRewrite が付属して、Visual Studio アドインのプロジェクトから実行時のコントラクトの実施をアクティブ化することができます**プロパティ**ページ。 バイナリ リライターと Visual Studio アドインでは付属していません[!INCLUDE[vs_dev10_long](~/includes/vs-dev10-long-md.md)]または Windows SDK。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Assert">
+      <MemberSignature Language="C#" Value="public static void Assert (bool condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Assert(bool condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Assert(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="condition">テストする条件式。</param>
+        <summary>条件をチェックします。条件が場合<see langword="false" />アナライザー用の設定、エスカレーション ポリシーに依存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のエスカレーション ポリシーがコントラクト エラー、アタッチされたデバッガーに通知したり、表示するには、 **Assert**ダイアログ ボックスで、デバッガーがアタッチされていない場合。 必要に応じて、アナライザーは、例外をスローするよう指示できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assert">
+      <MemberSignature Language="C#" Value="public static void Assert (bool condition, string userMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Assert(bool condition, string userMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Assert(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="userMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">テストする条件式。</param>
+        <param name="userMessage">条件が一致しない場合に表示するメッセージ。</param>
+        <summary>条件をチェックします。条件が場合<see langword="false" />アナライザーによって設定された、エスカレーション ポリシーに依存して、指定したメッセージが表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のエスカレーション ポリシーがコントラクト エラー、アタッチされたデバッガーに通知したり、表示するには、 **Assert**ダイアログ ボックスで、デバッガーがアタッチされていない場合。 必要に応じて、アナライザーは、例外をスローするよう指示できます。 `userMessage`パラメーターは、デバッガーの出力に渡されます。 場合`userMessage`定数文字列ではないリテラル、ツールできないことがありますを読むことです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assume">
+      <MemberSignature Language="C#" Value="public static void Assume (bool condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Assume(bool condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Assume(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="condition">条件式と想定する<see langword="true" />です。</param>
+        <summary>指定した条件があると仮定するコード分析ツールに指示<see langword="true" />場合でも、常に静的に証明することはできません、<see langword="true" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行時に、このメソッドを使用すると、<xref:System.Diagnostics.Contracts.Contract.Assert%28System.Boolean%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assume">
+      <MemberSignature Language="C#" Value="public static void Assume (bool condition, string userMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Assume(bool condition, string userMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Assume(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("DEBUG")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="userMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">条件式と想定する<see langword="true" />です。</param>
+        <param name="userMessage">想定が失敗した場合にポストするメッセージ。</param>
+        <summary>条件があると仮定するコード分析ツールに指示<see langword="true" />場合でも、常に静的に証明することはできません、 <see langword="true" />、し、想定が失敗した場合は、メッセージを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`userMessage`リテラルではなく文字列定数、ツールによって、コントラクトを理解できない可能性があります。  
+  
+ 実行時に、このメソッドを使用すると、<xref:System.Diagnostics.Contracts.Contract.Assert%28System.Boolean%2CSystem.String%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractFailed">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Diagnostics.Contracts.ContractFailedEventArgs&gt; ContractFailed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Diagnostics.Contracts.ContractFailedEventArgs&gt; ContractFailed" />
+      <MemberSignature Language="DocId" Value="E:System.Diagnostics.Contracts.Contract.ContractFailed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Diagnostics.Contracts.ContractFailedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントラクトが失敗すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントのイベント情報は、によって提供される、<xref:System.Diagnostics.Contracts.ContractFailedEventArgs?displayProperty=nameWithType>イベント ハンドラーに渡されるオブジェクト。 このイベントは、対話型のインタープリターまたはコントラクトが失敗した Web ブラウザーのホストなどのマネージ アプリケーション環境を通知します。 これを行うには、前に、アプリケーションが適切に処理できるイベントが発生します。 たとえば、テスト フレームワークでコードが実行されている場合は、テストの失敗をログし、テストを終了します。  
+  
+ 既定の実装、<xref:System.Diagnostics.Contracts.Internal.ContractHelper.RaiseContractFailedEvent%2A>に登録されている各ハンドラーを呼び出すには、.NET Framework クラス ライブラリ内のメソッド、<xref:System.Diagnostics.Contracts.Contract.ContractFailed>イベント。 ハンドラーによってスローされた例外は無視されますが、各ハンドラーは、呼び出すことにより、障害を処理するかどうかを示すことができます、<xref:System.Diagnostics.Contracts.ContractFailedEventArgs.SetHandled%2A>メソッド、イベント引数。 このメソッドを返しますのかどうか、いずれかのハンドラーは、処理済みとしてエラーを設定、`null`し、これ以上の操作は実行されません。 代わりに、ハンドラーを呼び出すことができます、<xref:System.Diagnostics.Contracts.ContractFailedEventArgs.SetUnwind%2A>にアンワインド コードを指示するためのメソッドです。 その場合は、すべてのイベント ハンドラーが実行された後に例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="EndContractBlock">
+      <MemberSignature Language="C#" Value="public static void EndContractBlock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EndContractBlock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.EndContractBlock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メソッドのコントラクトには、前提条件のみが含まれている場合、コントラクトのセクションの末尾を示す、 <see langword="if" /> - <see langword="then" /> - <see langword="throw" />フォーム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのコードが既にいくつかの形式でパラメーターの検証を含む`if` - `then` - `throw`コード。 コントラクトのツールを認識`if` - `then` - `throw`ステートメント、ステートメントが、メソッド内で先頭に表示され、このようなステートメントのセット全体が後に、明示的なときに前提条件として<xref:System.Diagnostics.Contracts.Contract>メソッドの呼び出しなど、 <xref:System.Diagnostics.Contracts.Contract.Requires%2A>、 <xref:System.Diagnostics.Contracts.Contract.Ensures%2A>、 <xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow%2A>、または<xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A>です。  
+  
+ ときに`if` - `then` - `throw`コントラクト ツールでは、それらを認識レガシとしてこのフォームで、ステートメントが表示されます-ステートメントを必要とします。 <xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A>フォームを使用して他のコントラクトが後にない場合にのみ、 `if` - `then` - `throw`シーケンスが、まだタグ付けするかレガシとしての必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ensures">
+      <MemberSignature Language="C#" Value="public static void Ensures (bool condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Ensures(bool condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Ensures(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="condition">テストする条件式。 式に含めることがあります<see cref="M:System.Diagnostics.Contracts.Contract.OldValue``1(``0)" />、 <see cref="M:System.Diagnostics.Contracts.Contract.ValueAtReturn``1(``0@)" />、および<see cref="M:System.Diagnostics.Contracts.Contract.Result``1" />値。</param>
+        <summary>外側のメソッドまたはプロパティの実行後の状態のコントラクトを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `condition`パラメーターを指定すると想定されます事後`true`外側のメソッドまたはプロパティには、返されるときに通常します。  
+  
+-   このメソッドの呼び出しは、メソッドまたはその他のコードの前に、プロパティの先頭にする必要があります。  
+  
+-   バイナリ リライターを使用する必要があります (で利用可能な[コード コントラクト](http://go.microsoft.com/fwlink/?LinkId=152461)MSDN DevLabs Web サイトで) この事後条件の適用が実行時にします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Diagnostics.Contracts.Contract.Ensures%2A>想定した値が返されるようにするメソッド。 このコード例に示されている例の一部である、<xref:System.Diagnostics.Contracts.ContractClassAttribute>クラスです。  
+  
+ [!code-csharp[ContractExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/contractexample/cs/program.cs#3)]
+ [!code-vb[ContractExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/contractexample/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ensures">
+      <MemberSignature Language="C#" Value="public static void Ensures (bool condition, string userMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Ensures(bool condition, string userMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Ensures(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="userMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">テストする条件式。 式に含めることがあります<see cref="M:System.Diagnostics.Contracts.Contract.OldValue``1(``0)" />と<see cref="M:System.Diagnostics.Contracts.Contract.Result``1" />値。</param>
+        <param name="userMessage">式がない場合に表示するメッセージ<see langword="true" />です。</param>
+        <summary>指定された終了条件と条件の場合に表示するメッセージの実行後の状態のコントラクトを指定<see langword="false" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `condition`パラメーターを指定すると想定されます事後`true`外側のメソッドまたはプロパティには、返されるときに通常します。  
+  
+-   このメソッドの呼び出しは、メソッドまたはその他のコードの前に、プロパティの先頭にする必要があります。  
+  
+-   このコントラクトはクライアントに公開されます。そのため、外側のメソッドとして少なくともとして表示されている参照メンバーのみが必要があります。  
+  
+-   バイナリ リライターを使用する必要があります (で利用可能な[コード コントラクト](http://go.microsoft.com/fwlink/?LinkId=152461)MSDN DevLabs Web サイトで) この事後条件の適用が実行時にします。  
+  
+-   場合`userMessage`リテラルではなく文字列定数、ツールによって、コントラクトを理解できない可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsuresOnThrow&lt;TException&gt;">
+      <MemberSignature Language="C#" Value="public static void EnsuresOnThrow&lt;TException&gt; (bool condition) where TException : Exception;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnsuresOnThrow&lt;(class System.Exception) TException&gt;(bool condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.EnsuresOnThrow``1(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TException">
+          <Constraints>
+            <BaseTypeName>System.Exception</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TException">実行後の状態のチェックを起動する例外の種類。</typeparam>
+        <param name="condition">テストする条件式。</param>
+        <summary>指定された例外および条件に基づいて、外側のメソッドまたはプロパティに実行後の状態のコントラクトを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `condition`パラメーターを指定すると想定されます事後`true`と外側のメソッドまたはプロパティが異常終了したと型の例外`TException`がスローされます。  
+  
+-   このメソッドの呼び出しは、メソッドまたはその他のコードの前に、プロパティの先頭にする必要があります。  
+  
+-   このコントラクトはクライアントに公開されます。そのため、外側のメソッドとして少なくともとして表示されている参照メンバーのみが必要があります。  
+  
+-   この事後条件の実行時の強制のバイナリ リライターを使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsuresOnThrow&lt;TException&gt;">
+      <MemberSignature Language="C#" Value="public static void EnsuresOnThrow&lt;TException&gt; (bool condition, string userMessage) where TException : Exception;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnsuresOnThrow&lt;(class System.Exception) TException&gt;(bool condition, string userMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.EnsuresOnThrow``1(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TException">
+          <Constraints>
+            <BaseTypeName>System.Exception</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="userMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TException">実行後の状態のチェックを起動する例外の種類。</typeparam>
+        <param name="condition">テストする条件式。</param>
+        <param name="userMessage">式の場合に表示するメッセージ<see langword="false" />です。</param>
+        <summary>実行後の状態のコントラクトおよび条件がの場合に表示するメッセージを指定<see langword="false" />外側のメソッドまたはプロパティには、例外および条件に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `condition`パラメーターを指定すると想定されます事後`true`と外側のメソッドまたはプロパティが異常終了したと型の例外`TException`がスローされます。 `message`パラメーターを指定、条件がある場合に表示するメッセージ`false`です。  
+  
+-   このメソッドの呼び出しは、メソッドまたはその他のコードの前に、プロパティの先頭にする必要があります。  
+  
+-   このコントラクトはクライアントに公開されます。そのため、外側のメソッドとして少なくともとして表示されている参照メンバーのみが必要があります。  
+  
+-   この事後条件の実行時の強制のバイナリ リライターを使用する必要があります。  
+  
+-   場合`userMessage`リテラルではなく文字列定数、ツールによって、コントラクトを理解できない可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public static bool Exists (int fromInclusive, int toExclusive, Predicate&lt;int&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists(int32 fromInclusive, int32 toExclusive, class System.Predicate`1&lt;int32&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Exists(System.Int32,System.Int32,System.Predicate{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fromInclusive" Type="System.Int32" />
+        <Parameter Name="toExclusive" Type="System.Int32" />
+        <Parameter Name="predicate" Type="System.Predicate&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="fromInclusive">最初の整数に渡す<c>述語</c>です。</param>
+        <param name="toExclusive">最後の整数に渡すより 1<c>述語</c>です。</param>
+        <param name="predicate">指定した範囲内の任意の整数値を評価する関数。</param>
+        <summary>ある整数範囲内のすべての整数について指定したテストが true かどうかを判定します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="predicate" />返します<see langword="true" />から任意の整数の<paramref name="fromInclusive" />に<paramref name="toExclusive" />- 1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `toExclusive`パラメーターは 1 つの 0 から始まる整数の範囲の長さを使用して容易にするために最後の整数を超える。 たとえば、整数 0 ~ 4 を 5 に設定するは。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="predicate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="toExclusive" /> は <paramref name="fromInclusive" /> より小さい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static bool Exists&lt;T&gt; (System.Collections.Generic.IEnumerable&lt;T&gt; collection, Predicate&lt;T&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists&lt;T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; collection, class System.Predicate`1&lt;!!T&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Exists``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+        <Parameter Name="predicate" Type="System.Predicate&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">含まれている型<c>コレクション</c>です。</typeparam>
+        <param name="collection">コレクション型の要素から<c>T</c>に渡すが描画される<c>述語</c>です。</param>
+        <param name="predicate">内の要素に対して評価する関数<c>コレクション</c>です。</param>
+        <summary>ある要素のコレクション内の要素が関数内に存在するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合にのみ<paramref name="predicate" />返します<see langword="true" />型のいずれかの要素の<paramref name="T" />で<paramref name="collection" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collection" /> または <paramref name="predicate" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ForAll">
+      <MemberSignature Language="C#" Value="public static bool ForAll (int fromInclusive, int toExclusive, Predicate&lt;int&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ForAll(int32 fromInclusive, int32 toExclusive, class System.Predicate`1&lt;int32&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.ForAll(System.Int32,System.Int32,System.Predicate{System.Int32})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fromInclusive" Type="System.Int32" />
+        <Parameter Name="toExclusive" Type="System.Int32" />
+        <Parameter Name="predicate" Type="System.Predicate&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="fromInclusive">最初の整数に渡す<c>述語</c>です。</param>
+        <param name="toExclusive">最後の整数に渡すより 1<c>述語</c>です。</param>
+        <param name="predicate">指定された範囲の整数の存在を評価する関数。</param>
+        <summary>指定した範囲内のすべての整数について特定の状態が有効かどうかを判定します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="predicate" />返します<see langword="true" />から始まるすべての整数の<paramref name="fromInclusive" />に<paramref name="toExclusive" />- 1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `toExclusive`パラメーターは 1 つの 0 から始まる整数の範囲の長さを使用して容易にするために最後の整数を超える。 たとえば、整数 0 ~ 4 を 5 に設定するは。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.Contracts.Contract.ForAll%2A>配列が null の要素を持つかどうかを調べます。  
+  
+ [!code-csharp[Contract.ForAllExample#1](~/samples/snippets/csharp/VS_Snippets_CLR/contract.forallexample/cs/program.cs#1)]
+ [!code-vb[Contract.ForAllExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/contract.forallexample/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="predicate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="toExclusive" /> は <paramref name="fromInclusive" /> より小さい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ForAll&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static bool ForAll&lt;T&gt; (System.Collections.Generic.IEnumerable&lt;T&gt; collection, Predicate&lt;T&gt; predicate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ForAll&lt;T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; collection, class System.Predicate`1&lt;!!T&gt; predicate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.ForAll``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+        <Parameter Name="predicate" Type="System.Predicate&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">含まれている型<c>コレクション</c>です。</typeparam>
+        <param name="collection">コレクション型の要素から<c>T</c>に渡すが描画される<c>述語</c>です。</param>
+        <param name="predicate">内のすべての要素の存在を評価する関数<c>コレクション</c>です。</param>
+        <summary>コレクション内のすべての要素が関数内に存在するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合にのみ<paramref name="predicate" />返します<see langword="true" />型のすべての要素に対して<paramref name="T" />で<paramref name="collection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Diagnostics.Contracts.Contract.ForAll%2A>コレクションに null 要素があるかどうかを調べます。  
+  
+ [!code-csharp[Contract.ForAllExample#1](~/samples/snippets/csharp/VS_Snippets_CLR/contract.forallexample/cs/program.cs#1)]
+ [!code-vb[Contract.ForAllExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/contract.forallexample/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="collection" /> または <paramref name="predicate" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Invariant">
+      <MemberSignature Language="C#" Value="public static void Invariant (bool condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Invariant(bool condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Invariant(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="condition">テストする条件式。</param>
+        <summary>外側のメソッドまたはプロパティの不変コントラクトを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.Contracts.Contract.Invariant%2A>によって識別されるメソッド内でコントラクトが含まれている、<xref:System.Diagnostics.Contracts.ContractInvariantMethodAttribute>属性以外の場合は、メソッドの名前は通常、`ObjectInvariant`です。  
+  
+-   このコントラクトは、クラスで宣言されている専用のインバリアント メソッドでのみ指定できます。 メソッドは封印されていない場合は、サブクラスは、インバリアントを維持することを確認できるようにプライベート メンバーではなく、プロテクト メンバーにのみ参照する必要があります。  
+  
+-   このコントラクトがクライアントに公開されていません。そのため、外側のメソッドよりも小さく表示されるメンバーを参照して可能性があります。  
+  
+-   このインバリアントの実行時の強制のバイナリ リライターを使用する必要があります。  
+  
+-   不変部分は条件付きで定義されているの存在に基づいて、`CONTRACTS FULL`シンボル。 ランタイム チェックで各パブリック メソッドの最後にチェックされます。 不変式は、同じクラスのパブリック メソッドを示して、通常ならそのパブリック メソッドの最後に行われる不変式のチェックが無効になり、そのクラスの最も外側のメソッド呼び出しの最後にのみチェックします。 別のクラスのメソッドの呼び出しのためにクラスへの再入がなされる場合も同様です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invariant">
+      <MemberSignature Language="C#" Value="public static void Invariant (bool condition, string userMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Invariant(bool condition, string userMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Invariant(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="userMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">テストする条件式。</param>
+        <param name="userMessage">条件の場合に表示するメッセージ<see langword="false" />です。</param>
+        <summary>外側のメソッドまたはプロパティの不変コントラクトを指定し、コントラクトの条件が失敗した場合はメッセージを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.Contracts.Contract.Invariant%2A>によって識別されるメソッド内でコントラクトが含まれている、<xref:System.Diagnostics.Contracts.ContractInvariantMethodAttribute>属性以外の場合は、メソッドの名前は通常、`ObjectInvariant`です。  
+  
+-   このコントラクトは、クラスで宣言されている専用のインバリアント メソッドでのみ指定できます。  
+  
+-   このコントラクトがクライアントに公開されていません。そのため、外側のメソッドよりも小さく表示されるメンバーを参照して可能性があります。  
+  
+-   このインバリアントの実行時の強制のバイナリ リライターを使用する必要があります。  
+  
+-   不変部分がで定義された条件付きで、`CONTRACTS FULL`シンボル。 ランタイム チェックで各パブリック メソッドの最後にチェックされます。 不変式は、同じクラスのパブリック メソッドを示して、通常ならそのパブリック メソッドの最後に行われる不変式のチェックが無効になり、そのクラスの最も外側のメソッド呼び出しの最後にのみチェックします。 別のクラスのメソッドの呼び出しのためにクラスへの再入がなされる場合も同様です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldValue&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T OldValue&lt;T&gt; (T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T OldValue&lt;T&gt;(!!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.OldValue``1(``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">値の型。</typeparam>
+        <param name="value">表す値 (フィールドまたはパラメーター)。</param>
+        <summary>メソッドまたはプロパティの開始時の値を表します。</summary>
+        <returns>メソッドまたはプロパティの開始時のフィールドまたはパラメーターの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを条件付きの式でのみ使用できます、<xref:System.Diagnostics.Contracts.Contract.Ensures%2A>コントラクト。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Diagnostics.Contracts.Contract.OldValue%2A>カウントが更新されたことを確認します。 このコード例に示されている例の一部である、<xref:System.Diagnostics.Contracts.ContractClassAttribute>クラスです。  
+  
+ [!code-csharp[ContractExample#5](~/samples/snippets/csharp/VS_Snippets_CLR/contractexample/cs/program.cs#5)]
+ [!code-vb[ContractExample#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/contractexample/vb/program.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Requires">
+      <MemberSignature Language="C#" Value="public static void Requires (bool condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Requires(bool condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Requires(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="condition">テストする条件式。</param>
+        <summary>外側のメソッドまたはプロパティの実行前の状態のコントラクトを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   このメソッドの呼び出しは、メソッドまたはその他のコードの前に、プロパティの先頭にする必要があります。  
+  
+-   このコントラクトはクライアントに公開されます。そのため、外側のメソッドとして少なくともとして表示されている参照メンバーのみが必要があります。  
+  
+-   代わりにこのメソッドを使用して、<xref:System.Diagnostics.Contracts.Contract.Requires%60%601%28System.Boolean%29?displayProperty=nameWithType>メソッドは旧バージョンとの互換性を強制しません、特定の例外をスローするとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Requires">
+      <MemberSignature Language="C#" Value="public static void Requires (bool condition, string userMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Requires(bool condition, string userMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Requires(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.Conditional("CONTRACTS_FULL")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="userMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="condition">テストする条件式。</param>
+        <param name="userMessage">条件の場合に表示するメッセージ<see langword="false" />です。</param>
+        <summary>外側のメソッドまたはプロパティの実行前の状態のコントラクトを指定し、コントラクトの条件が失敗した場合はメッセージを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   このメソッドの呼び出しは、メソッドまたはその他のコードの前に、プロパティの先頭にする必要があります。  
+  
+-   このコントラクトはクライアントに公開されます。そのため、外側のメソッドとして少なくともとして表示されている参照メンバーのみが必要があります。  
+  
+-   代わりにこのメソッドを使用して、<xref:System.Diagnostics.Contracts.Contract.Requires%60%601%28System.Boolean%2CSystem.String%29?displayProperty=nameWithType>メソッドは旧バージョンとの互換性を強制しません、特定の例外をスローするとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Requires&lt;TException&gt;">
+      <MemberSignature Language="C#" Value="public static void Requires&lt;TException&gt; (bool condition) where TException : Exception;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Requires&lt;(class System.Exception) TException&gt;(bool condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Requires``1(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TException">
+          <Constraints>
+            <BaseTypeName>System.Exception</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TException">条件の場合にスローされる例外<see langword="false" />です。</typeparam>
+        <param name="condition">テストする条件式。</param>
+        <summary>外側のメソッドまたはプロパティの実行前の状態のコントラクトを指定し、コントラクトの条件が失敗した場合は例外をスローします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  実行時に使用するチェックを有効にして、<xref:System.Diagnostics.Contracts.Contract.Requires%2A>メソッドです。 ランタイム チェックがオフの場合は、プロセスは終了されます。 ランタイム チェックするためのツールを入手する[コード コントラクト](http://go.microsoft.com/fwlink/?LinkId=152461)MSDN DevLabs Web サイトです。  
+  
+-   このメソッドの呼び出しは、メソッドまたはその他のコードの前に、プロパティの先頭にする必要があります。  
+  
+-   このコントラクトはクライアントに公開されます。そのため、外側のメソッドとして少なくともとして表示されている参照メンバーのみが必要があります。  
+  
+-   代わりにこのメソッドを使用して、<xref:System.Diagnostics.Contracts.Contract.Requires%28System.Boolean%29?displayProperty=nameWithType>メソッドは、前提条件が失敗した場合に例外をスローするとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Requires&lt;TException&gt;">
+      <MemberSignature Language="C#" Value="public static void Requires&lt;TException&gt; (bool condition, string userMessage) where TException : Exception;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Requires&lt;(class System.Exception) TException&gt;(bool condition, string userMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Requires``1(System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TException">
+          <Constraints>
+            <BaseTypeName>System.Exception</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Boolean" />
+        <Parameter Name="userMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TException">条件の場合にスローされる例外<see langword="false" />です。</typeparam>
+        <param name="condition">テストする条件式。</param>
+        <param name="userMessage">条件の場合に表示するメッセージ<see langword="false" />です。</param>
+        <summary>外側のメソッドまたはプロパティの実行前の状態のコントラクトを指定し、コントラクトの条件が失敗した場合は指定されたメッセージで例外をスローします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   > [!IMPORTANT]
+    >  実行時に使用するチェックを有効にして、<xref:System.Diagnostics.Contracts.Contract.Requires%2A>メソッドです。 ランタイム チェックがオフの場合は、プロセスは終了されます。 ランタイム チェックするためのツールを入手する[コード コントラクト](http://go.microsoft.com/fwlink/?LinkId=152461)MSDN DevLabs Web サイトです。  
+  
+     このメソッドの呼び出しは、メソッドまたはその他のコードの前に、プロパティの先頭にする必要があります。  
+  
+-   このコントラクトはクライアントに公開されます。そのため、外側のメソッドとして少なくともとして表示されている参照メンバーのみが必要があります。  
+  
+-   代わりにこのメソッドを使用して、<xref:System.Diagnostics.Contracts.Contract.Requires%28System.Boolean%2CSystem.String%29?displayProperty=nameWithType>メソッドは、前提条件が失敗した場合に例外をスローするとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Result&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Result&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Result&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.Result``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">外側のメソッドまたはプロパティの戻り値の型。</typeparam>
+        <summary>メソッドまたはプロパティの戻り値を表します。</summary>
+        <returns>外側のメソッドまたはプロパティの戻り値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを条件付きの式でのみ使用できます、<xref:System.Diagnostics.Contracts.Contract.Ensures%2A>コントラクト。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Diagnostics.Contracts.Contract.Result``1*>想定される戻り値を指定します。 このコード例に示されている例の一部である、<xref:System.Diagnostics.Contracts.ContractClassAttribute>クラスです。  
+  
+ [!code-csharp[ContractExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/contractexample/cs/program.cs#3)]
+ [!code-vb[ContractExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/contractexample/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueAtReturn&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T ValueAtReturn&lt;T&gt; (out T value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T ValueAtReturn&lt;T&gt;([out] !!T&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.Contracts.Contract.ValueAtReturn``1(``0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Contracts</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="value" Type="T&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T"><see langword="out" /> パラメーターの型。</typeparam>
+        <param name="value"><see langword="out" />パラメーター。</param>
+        <summary>最後 (出力) 値を表す、<see langword="out" />パラメーター、メソッドから戻るときにします。</summary>
+        <returns>出力値、<see langword="out" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを条件付きの式でのみ使用できます、<xref:System.Diagnostics.Contracts.Contract.Ensures%2A>コントラクト。 <xref:System.Diagnostics.Contracts.Contract.OldValue%2A> メソッドと同様に、コンパイラが型を推論できる場合はジェネリック型パラメーターを省略できます。 このメソッドの呼び出しは、コントラクト リライターによって `out` パラメーターの値に置き換えられます。 <xref:System.Diagnostics.Contracts.Contract.ValueAtReturn%2A> メソッドは事後条件でしか使用できません。 このメソッドの引数は、`out` パラメーターか、構造体の `out` パラメーターのフィールド (構造体コンストラクターの事後条件でフィールドを参照する場合にも便利です) でなければなりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,132 @@
+<Type Name="TextRenderingHint" FullName="System.Drawing.Text.TextRenderingHint">
+  <TypeSignature Language="C#" Value="public enum TextRenderingHint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TextRenderingHint extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Text.TextRenderingHint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>テキストの描画の品質を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 品質の範囲はテキスト (、最も高速なパフォーマンスが最も低い品質) から ClearType テキスト (LCD ディスプレイで最高の品質) をアンチ エイリアス化テキスト (品質が向上、パフォーマンスが低下)。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Drawing.Graphics.TextRenderingHint%2A>と<xref:System.Drawing.Graphics.TextContrast%2A>プロパティおよび<xref:System.Drawing.Text.TextRenderingHint>列挙します。  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ChangeTextRenderingHintAndTextContrast`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.GraphicsProperties#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.GraphicsProperties/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.GraphicsProperties#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.GraphicsProperties/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.GraphicsProperties#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.GraphicsProperties/VB/form1.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AntiAlias">
+      <MemberSignature Language="C#" Value="AntiAlias" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Text.TextRenderingHint AntiAlias = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Text.TextRenderingHint.AntiAlias" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Text.TextRenderingHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒントなしアンチ エイリアス化グリフ ビットマップを使用して、各文字が描画されます。 によりアンチエイリアシング品質が向上します。 ステム幅の違いは、ヒントが無効になって、顕著なことがあります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AntiAliasGridFit">
+      <MemberSignature Language="C#" Value="AntiAliasGridFit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Text.TextRenderingHint AntiAliasGridFit = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Text.TextRenderingHint.AntiAliasGridFit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Text.TextRenderingHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各文字は、ヒントをアンチ エイリアス化グリフ ビットマップを使用して描画されます。 多くの品質が向上アンチエイリアシング、により、パフォーマンス コストが増大します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearTypeGridFit">
+      <MemberSignature Language="C#" Value="ClearTypeGridFit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Text.TextRenderingHint ClearTypeGridFit = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Text.TextRenderingHint.ClearTypeGridFit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Text.TextRenderingHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各文字を描画するには、ヒントでグリフ ClearType ビットマップを使用します。 最高の品質設定します。 ClearType フォント機能を活用するために使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleBitPerPixel">
+      <MemberSignature Language="C#" Value="SingleBitPerPixel" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Text.TextRenderingHint SingleBitPerPixel = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Text.TextRenderingHint.SingleBitPerPixel" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Text.TextRenderingHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各文字は、グリフ ビットマップを使用して描画されます。 ヒントは使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleBitPerPixelGridFit">
+      <MemberSignature Language="C#" Value="SingleBitPerPixelGridFit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Text.TextRenderingHint SingleBitPerPixelGridFit = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Text.TextRenderingHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各文字は、グリフ ビットマップを使用して描画されます。 ヒントは、語幹と曲率で文字の外観を向上させるために使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemDefault">
+      <MemberSignature Language="C#" Value="SystemDefault" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Text.TextRenderingHint SystemDefault = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Text.TextRenderingHint.SystemDefault" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Text.TextRenderingHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム既定のレンダリングのヒントでそのグリフ ビットマップを使用して、各文字が描画されます。 設定を使用してどのようなフォント スムージング機能、ユーザーが選択したシステムのテキストが描画されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

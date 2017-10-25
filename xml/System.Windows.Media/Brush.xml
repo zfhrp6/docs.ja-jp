@@ -1,0 +1,368 @@
+<Type Name="Brush" FullName="System.Windows.Media.Brush">
+  <TypeSignature Language="C#" Value="public abstract class Brush : System.Windows.Media.Animation.Animatable, IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract Brush extends System.Windows.Media.Animation.Animatable implements class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Brush" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.Animatable</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Media.BrushConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Media.Converters.BrushValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>グラフィカル オブジェクトの塗りつぶしに使用するオブジェクトを定義します。 <see cref="T:System.Windows.Media.Brush" /> の派生クラスは、領域を塗りつぶす方法を記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Windows.Media.Brush> 「描画」または「領域は埋め」、その出力します。 さまざまなブラシでは、さまざまな種類の出力があります。 ブラシは、純色、グラデーション、パターン、画像、または描画と他のユーザーで領域を塗りつぶすです。 次のとおりに、さまざまな種類の[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]ブラシ。  
+  
+-   <xref:System.Windows.Media.SolidColorBrush>:、純色で領域を塗りつぶします<xref:System.Windows.Media.Color>です。  
+  
+-   <xref:System.Windows.Media.LinearGradientBrush>: 線形グラデーションで領域を塗りつぶします。  
+  
+-   <xref:System.Windows.Media.RadialGradientBrush>: 放射状グラデーションで領域を塗りつぶします。  
+  
+-   <xref:System.Windows.Media.ImageBrush>: イメージで領域を塗りつぶします (によって表される、<xref:System.Windows.Media.ImageSource>オブジェクト)。  
+  
+-   <xref:System.Windows.Media.DrawingBrush>: を使用して領域を描画する<xref:System.Windows.Media.Drawing>です。 図面には、ベクターとビットマップのオブジェクトが含まれます。  
+  
+-   <xref:System.Windows.Media.VisualBrush>: を使用して領域を描画する<xref:System.Windows.Media.Visual>オブジェクト。 A<xref:System.Windows.Media.VisualBrush>別の領域に、アプリケーションの 1 つの部分からコンテンツを複製することが反射効果を作成し、画面の一部を際立たせるの非常に便利です。  
+  
+## <a name="predefined-brushes"></a>定義済みのブラシ  
+ 使用して、<xref:System.Windows.Media.Brushes>クラスなどの定義済みの純色を使用してオブジェクトのペイントを<xref:System.Windows.Media.Brushes.AliceBlue%2A>または<xref:System.Windows.Media.Brushes.Red%2A>です。  
+  
+## <a name="brushes-in-xaml"></a>XAML でブラシ  
+ 次の表に、異なる一覧<xref:System.Windows.Media.Brush>で使用できる型[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]と構文をサポートします。 特定のブラシの構文の詳細については、そのブラシの種類 ページを参照してください。  
+  
+|クラス|属性の構文|オブジェクト要素構文|  
+|-----------|----------------------|---------------------------|  
+|<xref:System.Windows.Media.SolidColorBrush>|はい|はい|  
+|<xref:System.Windows.Media.DrawingBrush>|いいえ|はい|  
+|<xref:System.Windows.Media.ImageBrush>|いいえ|はい|  
+|<xref:System.Windows.Media.LinearGradientBrush>|いいえ|はい|  
+|<xref:System.Windows.Media.RadialGradientBrush>|いいえ|はい|  
+|<xref:System.Windows.Media.VisualBrush>|いいえ|はい|  
+  
+ すばやくを純色で領域を塗りつぶす方法を示す例は、次を参照してください。[する方法: 純色で領域を塗りつぶす](~/docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-solid-color.md)です。  
+  
+## <a name="freezable-features"></a>Freezable 機能  
+ ブラシの種類は、<xref:System.Windows.Freezable>オブジェクト。 について<xref:System.Windows.Freezable>の凍結と、複製などの機能を参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+<a name="xamlTextUsage_Brush"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください、**解説**セクションです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Windows.Media.Brush" />オーバーライドする必要があります、クラス、<see cref="M:System.Windows.Freezable.CreateInstanceCore" />メソッドです。 クラスの追加の初期化作業を実行する必要がありますかに応じて依存関係のないプロパティのデータ メンバーが含まれています、する必要がありますオーバーライド追加<see cref="T:System.Windows.Freezable" />メソッドです。 継承の詳細については<see cref="T:System.Windows.Freezable" />型を参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Brush ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Brush.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Brush" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Brush Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Brush.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Brush" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Brush CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Brush.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Brush" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Opacity">
+      <MemberSignature Language="C#" Value="public double Opacity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Opacity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Brush.Opacity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の不透明度、<see cref="T:System.Windows.Media.Brush" />です。</summary>
+        <value>値、<see cref="P:System.Windows.Media.Brush.Opacity" />プロパティは、0.0 ~ 1.0 の値として表されます。 既定値は 1.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.Brush.Opacity%2A>値が 0 のでは、値が 1 のブラシが完全に不透明であることを示し、ブラシが完全に透明であることを示します。 値 0.5 は、ブラシが 50% 不透明で、値 0.725 はブラシが 72.5% 不透明を示します。 0 未満の値は 0 として扱われ、1 より大きい値は 1 として扱われます。  
+  
+<a name="dependencyPropertyInfo_Opacity"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Brush.OpacityProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpacityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OpacityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OpacityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Brush.OpacityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Brush.Opacity" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelativeTransform">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Transform RelativeTransform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Transform RelativeTransform" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Brush.RelativeTransform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Transform</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>相対座標を使用して、ブラシに適用される変換を取得または設定します。</summary>
+        <value>相対座標を使用して、ブラシに適用される変換。  既定値は、<see cref="P:System.Windows.Media.Transform.Identity" />変換します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、回転、拡大縮小、傾斜、またはそれ以外の場合、中央のブラシを変換するが、ブラシで描画領域のサイズが不明またはサイズが異なるさまざまな領域を塗りつぶすには、同じブラシを使用しているときに特に便利です。  
+  
+ このプロパティの詳細については、次を参照してください。、[ブラシの変換の概要](~/docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)です。  
+  
+<a name="dependencyPropertyInfo_RelativeTransform"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Brush.RelativeTransformProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelativeTransformProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RelativeTransformProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RelativeTransformProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Brush.RelativeTransformProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Brush.RelativeTransform" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Brush.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する書式。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) の種類に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="provider">値を書式設定するために使用するプロバイダー。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) オペレーティング システムの現在のロケール設定から数値書式指定情報を取得します。</param>
+        <summary>指定された書式を使用して現在のインスタンスの値を書式設定します。</summary>
+        <returns>指定された書式の現在のインスタンスの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Brush.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この文字列表現を返します<see cref="T:System.Windows.Media.Brush" />です。</summary>
+        <returns>このオブジェクトの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Brush.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式設定情報、または<see langword="null" />現在のカルチャの既定の書式設定を使用します。</param>
+        <summary>指定したカルチャに固有の書式情報に基づくこのオブジェクトの文字列表現を作成します。</summary>
+        <returns>このオブジェクトの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Transform Transform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Transform Transform" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Brush.Transform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Transform</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラシに適用される変換を取得または設定します。 ブラシの出力をマップして配置した後に、この変換が適用されます。</summary>
+        <value>ブラシに適用する変換。 既定値は、<see cref="P:System.Windows.Media.Transform.Identity" />変換します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、回転、拡大縮小、傾斜、またはブラシのコンテンツを変換します。 このプロパティの詳細については、次を参照してください。、[ブラシの変換の概要](~/docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TransformProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TransformProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Brush.TransformProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Brush.Transform" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

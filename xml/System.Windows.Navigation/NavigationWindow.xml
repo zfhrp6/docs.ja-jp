@@ -1,0 +1,1211 @@
+<Type Name="NavigationWindow" FullName="System.Windows.Navigation.NavigationWindow">
+  <TypeSignature Language="C#" Value="public class NavigationWindow : System.Windows.Window, System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi NavigationWindow extends System.Windows.Window implements class System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.NavigationWindow" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Window</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IUriContext</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_NavWinCP", Type=typeof(System.Windows.Controls.ContentPresenter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンテンツ ナビゲーションをサポートするウィンドウを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationWindow>派生した<xref:System.Windows.Window>およびに移動し、コンテンツを表示する機能を拡張します。  
+  
+ コンテンツを指定できます[!INCLUDE[TLA2#tla_winfx](~/includes/tla2sharptla-winfx-md.md)]オブジェクトまたは[!INCLUDE[TLA#tla_html](~/includes/tlasharptla-html-md.md)]ファイル。 ただし、一般に、<xref:System.Windows.Controls.Page>オブジェクトは、ナビゲーションのパッケージ コンテンツにすることをお勧めします。  
+  
+ 設定するコンテンツを移動する、<xref:System.Windows.Navigation.NavigationWindow.Source%2A>を持つプロパティ、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]目的のコンテンツ。 さらに、コンテンツに移動するに次のオーバー ロードのいずれかを使用して、<xref:System.Windows.Navigation.NavigationWindow.Navigate%2A>メソッド。  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.Navigate%28System.Uri%29>  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.Navigate%28System.Uri%2CSystem.Object%29>  
+  
+ ときのコンテンツに移動して[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]、<xref:System.Windows.Navigation.NavigationWindow>コンテンツを含むオブジェクトを返します。  
+  
+> [!NOTE]
+>  によるナビゲーション[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]もコンテンツ フラグメントへのナビゲーションをサポートします。 「<xref:System.Windows.Navigation.NavigationWindow.FragmentNavigation>」を参照してください。  
+  
+ いずれかを使用してコンテンツに移動する代わりに、<xref:System.Windows.Navigation.NavigationWindow.Navigate%2A>オブジェクトを受け取るメソッド オーバー ロードします。  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.Navigate%28System.Object%29>  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.Navigate%28System.Object%2CSystem.Object%29>  
+  
+ ナビゲーションの有効期間は、次のイベントを追跡できます。  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.Navigating>  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.Navigated>  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.NavigationProgress>  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.NavigationFailed>  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.NavigationStopped>  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.LoadCompleted>  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.FragmentNavigation>。  
+  
+ すべてのイベントはたびに発生する、ナビゲーションが発生します。(キャンセル、停止、または失敗) は、発生するイベントのセットをナビゲーション (コンテンツまたはコンテンツ フラグメント) に発生して、ナビゲーションの完了方法の種類によって決まります。  
+  
+ 次の図は、これらのイベントを発生させるシーケンスを示しています。  
+  
+ ![ページ ナビゲーションのフロー チャート](~/add/media/navigationoverviewfigure11.png "ページ ナビゲーションのフロー チャート")  
+  
+ 中またはその後、ナビゲーション<xref:System.Windows.Navigation.NavigationWindow>に移動されているコンテンツに関する情報を提供、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]移動先のコンテンツの (<xref:System.Windows.Navigation.NavigationWindow.Source%2A>) では、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の現在のコンテンツ (<xref:System.Windows.Navigation.NavigationWindow.CurrentSource%2A>)、および移動先の内容を格納しているオブジェクト (<xref:System.Windows.Controls.ContentControl.Content%2A>)。  
+  
+ コンテンツの移動、<xref:System.Windows.Navigation.NavigationWindow>ナビゲーション履歴にエントリとしてナビゲーションを記録します。 ナビゲーション履歴のバックアップを作成して呼び出すことによって、どちらか、新しいナビゲーションが発生したときに、エントリが追加、<xref:System.Windows.Navigation.NavigationWindow.Navigate%2A>メソッドを呼び出すことによって、"進む"ナビゲーション履歴内のエントリに移動して<xref:System.Windows.Navigation.NavigationWindow.GoForward%2A>です。 呼び出してナビゲーション履歴に戻るのエントリに移動して"進む"ナビゲーション履歴にエントリが追加された<xref:System.Windows.Navigation.NavigationWindow.GoBack%2A>です。 <xref:System.Windows.Navigation.NavigationWindow.CanGoBack%2A>および<xref:System.Windows.Navigation.NavigationWindow.CanGoForward%2A>があるか前に、"進む"ナビゲーション履歴の場合は、それぞれを報告します。  
+  
+ 最初にその 1 つのコンテンツへの移動が、コンテンツの別の部分から<xref:System.Windows.Navigation.NavigationWindow>ナビゲーションが自動的に表示されます[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]をユーザーに移動することし、ナビゲーション履歴を転送します。 タイミングを構成することができます、ナビゲーション[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]設定で表示されます、<xref:System.Windows.Navigation.NavigationWindow.ShowsNavigationUI%2A>プロパティです。  
+  
+ 最新のエントリに戻るナビゲーション履歴を呼び出すことによって削除されることができます<xref:System.Windows.Navigation.NavigationWindow.RemoveBackEntry%2A>です。  
+  
+ <xref:System.Windows.Navigation.NavigationWindow>ナビゲーション履歴には、コンテンツ オブジェクトのインスタンスは保存されません。 代わりに、<xref:System.Windows.Navigation.NavigationWindow>ナビゲーション履歴を使用して、移動するたびに、コンテンツ オブジェクトの新しいインスタンスを作成します。 この動作は数値が大きいとコンテンツの大きなデータは移動先ときに、過度なメモリ消費を避けるために設計されています。 その結果、次に、コンテンツの状態は 1 つのナビゲーションからに記憶されません。 ただし、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]ナビゲーション履歴にコンテンツの状態の一部を格納する、いくつかの方法を提供します。  
+  
+ 使用して<xref:System.Windows.Navigation.NavigationWindow.AddBackEntry%2A>、単一のページ インスタンスの状態の複数のセットも覚えておいてください。  
+  
+ <xref:System.Windows.Navigation.NavigationWindow>2 つのナビゲーターの 1 つ[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]、もう一方<xref:System.Windows.Controls.Frame>です。 基本的には、ナビゲーターは、ナビゲーションとナビゲーション履歴をサポートするクラスです。 視覚的に、[!INCLUDE[TLA2#tla_xbap#plural](~/includes/tla2sharptla-xbapsharpplural-md.md)]使用[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]として、統合されたユーザー エクスペリエンスを提供するためのナビゲーター。 ただし、[!INCLUDE[TLA2#tla_xbap#plural](~/includes/tla2sharptla-xbapsharpplural-md.md)]を実際に使用<xref:System.Windows.Navigation.NavigationWindow>ナビゲーター; として、<xref:System.Windows.Application.MainWindow%2A>のプロパティ、[!INCLUDE[TLA2#tla_xbap](~/includes/tla2sharptla-xbap-md.md)]で実行されている[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]への参照を返す、<xref:System.Windows.Navigation.NavigationWindow>とで管理されているナビゲーション履歴、<xref:System.Windows.Navigation.NavigationWindow>で管理されているナビゲーション履歴に統合されて[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]です。  
+  
+ **コンテンツ モデル:** <xref:System.Windows.Navigation.NavigationWindow>は、 <xref:System.Windows.Controls.ContentControl>、つまり<xref:System.Windows.Navigation.NavigationWindow>テキスト、画像、またはパネルなどのコンテンツを含めることができます。 また、<xref:System.Windows.Navigation.NavigationWindow>はルート要素であり、その結果、別の要素のコンテンツの一部をすることはできません。 コンテンツ モデルの詳細については<xref:System.Windows.Controls.Button>を参照してください[WPF コンテンツ モデル](~/docs/framework/wpf/controls/wpf-content-model.md)です。  
+  
+## <a name="customizing-the-navigationwindow-control"></a>NavigationWindow コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Navigation.NavigationWindow>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Navigation.NavigationWindow>を参照してください[NavigationWindow スタイルとテンプレート](~/docs/framework/wpf/controls/navigationwindow-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Navigation.NavigationWindow>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Navigation.NavigationWindow> を作成する方法を次のコード サンプルに示します。  
+  
+ [!code-xaml[NavigationWindowSnippets#NavigationWindowAndSource](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationWindowSnippets/CS/mainwindow.xaml#navigationwindowandsource)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NavigationWindow ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Navigation.NavigationWindow" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">安全でないネイティブ メソッドを呼び出すには、このオブジェクトのアクセスを許可します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBackEntry">
+      <MemberSignature Language="C#" Value="public void AddBackEntry (System.Windows.Navigation.CustomContentState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddBackEntry(class System.Windows.Navigation.CustomContentState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.AddBackEntry(System.Windows.Navigation.CustomContentState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Windows.Navigation.CustomContentState" />
+      </Parameters>
+      <Docs>
+        <param name="state">A<see cref="T:System.Windows.Navigation.CustomContentState" />特定のコンテンツに関連付けられているアプリケーション定義の状態を表すオブジェクト。</param>
+        <summary>バックアップが含まれるナビゲーション履歴にエントリを追加、<see cref="T:System.Windows.Navigation.CustomContentState" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.AddBackEntry%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="state" /><see langword="null" />、および<see cref="T:System.Windows.Navigation.CustomContentState" />から返されたオブジェクトがない<see cref="M:System.Windows.Navigation.IProvideCustomContentState.GetContentState" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="protected override void AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する子オブジェクト。</param>
+        <summary>子オブジェクトを追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">このメソッドが呼び出されたとき。 これにより、コンテンツに追加される<see cref="T:System.Windows.Navigation.NavigationWindow" />を使用して[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddText">
+      <MemberSignature Language="C#" Value="protected override void AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにテキストを追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">場合は、テキスト パラメーターの値には、空白以外の文字が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BackStack">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable BackStack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable BackStack" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.BackStack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IEnumerable" />の"戻る"ナビゲーション履歴のエントリの列挙を使用すること、<see cref="T:System.Windows.Navigation.NavigationWindow" />です。</summary>
+        <value>
+          <see cref="T:System.Collections.IEnumerable" />ナビゲーション履歴のバックアップを作成するには、少なくとも 1 つのエントリが追加された場合または<see langword="null" />エントリが存在しない場合、または<see cref="T:System.Windows.Navigation.NavigationWindow" />独自ナビゲーション履歴を所有していません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるエントリ<xref:System.Windows.Navigation.NavigationWindow.BackStack%2A>コンテンツ全体、フラグメント ナビゲーション、およびカスタムの状態が含まれます。  
+  
+<a name="dependencyPropertyInfo_NavigationWindowBackStack"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Navigation.NavigationWindow.BackStack%2A>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackStackProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BackStackProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BackStackProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.BackStackProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Navigation.NavigationWindow.BackStack" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoBack">
+      <MemberSignature Language="C#" Value="public bool CanGoBack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanGoBack" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.CanGoBack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション履歴には、少なくとも 1 つのエントリがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />戻るナビゲーション履歴に少なくとも 1 つのエントリがある場合<see langword="false" />ナビゲーション履歴にエントリがない場合、または<see cref="T:System.Windows.Navigation.NavigationWindow" />独自ナビゲーション履歴を所有していません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.CanGoBack%2A?displayProperty=nameWithType>」を参照してください。  
+  
+<a name="dependencyPropertyInfo_NavigationWindowCanGoBack"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Navigation.NavigationWindow.CanGoBack%2A>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoBackProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanGoBackProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanGoBackProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.CanGoBackProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Navigation.NavigationWindow.CanGoBack" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoForward">
+      <MemberSignature Language="C#" Value="public bool CanGoForward { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanGoForward" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.CanGoForward" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次に進むナビゲーション履歴に少なくとも 1 つのエントリがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />次に進むナビゲーション履歴に少なくとも 1 つのエントリがある場合<see langword="false" /> "進む"ナビゲーション履歴にエントリがない場合、または<see cref="T:System.Windows.Navigation.NavigationWindow" />独自ナビゲーション履歴を所有していません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_NavigationWindowCanGoForward"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Navigation.NavigationWindow.CanGoForward%2A>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoForwardProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanGoForwardProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanGoForwardProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.CanGoForwardProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Navigation.NavigationWindow.CanGoForward" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentSource">
+      <MemberSignature Language="C#" Value="public Uri CurrentSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri CurrentSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.CurrentSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]されたコンテンツを最後に移動されました。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]最後に移動したを使用してに移動する場合、コンテンツを[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationWindow.CurrentSource%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForwardStack">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable ForwardStack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable ForwardStack" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.ForwardStack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IEnumerable" />の"戻る"ナビゲーション履歴のエントリの列挙を使用すること、<see cref="T:System.Windows.Navigation.NavigationWindow" />です。</summary>
+        <value>
+          <see cref="T:System.Collections.IEnumerable" />少なくとも 1 つのエントリが追加された場合に進むナビゲーション履歴、または null にエントリがない場合、または<see cref="T:System.Windows.Navigation.NavigationWindow" />独自ナビゲーション履歴を所有していません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるエントリ<xref:System.Windows.Navigation.NavigationWindow.ForwardStack%2A>コンテンツ全体、フラグメント ナビゲーション、およびカスタムの状態が含まれます。  
+  
+<a name="dependencyPropertyInfo_NavigationWindowForwardStack"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Navigation.NavigationWindow.ForwardStack%2A>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForwardStackProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ForwardStackProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ForwardStackProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.ForwardStackProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Navigation.NavigationWindow.ForwardStack" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FragmentNavigation">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.FragmentNavigationEventHandler FragmentNavigation;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.FragmentNavigationEventHandler FragmentNavigation" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.FragmentNavigation" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.FragmentNavigationEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツ フラグメントへのナビゲーションが開始されると、すぐに、発生する場合は、目的のフラグメントは、現在のコンテンツまたはソースの後に発生した[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]フラグメント場合は、必要な別のコンテンツにコンテンツが読み込まれました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.FragmentNavigation?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GoBack">
+      <MemberSignature Language="C#" Value="public void GoBack ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GoBack() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.GoBack" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ナビゲーション履歴を戻る最新の項目に移動します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Windows.Navigation.NavigationWindow.GoBack" />ナビゲーション履歴にエントリがない場合に呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GoForward">
+      <MemberSignature Language="C#" Value="public void GoForward ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GoForward() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.GoForward" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>次に進むナビゲーション履歴に最新の項目に移動します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Windows.Navigation.NavigationWindow.GoForward" />次に進むナビゲーション履歴にエントリがないとき呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCompleted">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.LoadCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.LoadCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動先のコンテンツが読み込まれ、解析されて、レンダリングが開始されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.LoadCompleted?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public bool Navigate (object content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Navigate(object content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="content"><see cref="T:System.Object" />移動先のコンテンツを格納しています。</param>
+        <summary>オブジェクトによって格納されているコンテンツを非同期に移動します。</summary>
+        <returns>
+          <see langword="true" />ナビゲーションがキャンセルされない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%29?displayProperty=nameWithType>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、オブジェクトに格納されているコンテンツに移動する方法を示します。  
+  
+ [!code-csharp[HOWTONavigationSnippets#NavigateToPageObjCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationSnippets/CSharp/MainWindow.xaml.cs#navigatetopageobjcode)]
+ [!code-vb[HOWTONavigationSnippets#NavigateToPageObjCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/mainwindow.xaml.vb#navigatetopageobjcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public bool Navigate (Uri source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Navigate(class System.Uri source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="source">A<see cref="T:System.Uri" />オブジェクトを初期化して、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]目的のコンテンツ。</param>
+        <summary>指定されているコンテンツを非同期に移動、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。</summary>
+        <returns>
+          <see langword="true" />ナビゲーションがキャンセルされない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%29?displayProperty=nameWithType>」を参照してください。  
+  
+> [!NOTE]
+>  [!INCLUDE[TLA#tla_uri#initcap#plural](~/includes/tlasharptla-urisharpinitcapsharpplural-md.md)]相対パスまたは絶対のいずれかを指定できます。 詳細については、「[WPF におけるパック URI](~/docs/framework/wpf/app-development/pack-uris-in-wpf.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Navigation.NavigationWindow.Navigate%2A>に移動する方法、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。  
+  
+ [!code-csharp[HOWTONavigationSnippets#NavigateToPageNavCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationSnippets/CSharp/MainWindow.xaml.cs#navigatetopagenavcode)]
+ [!code-vb[HOWTONavigationSnippets#NavigateToPageNavCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/mainwindow.xaml.vb#navigatetopagenavcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public bool Navigate (object content, object extraData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Navigate(object content, object extraData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="content" Type="System.Object" />
+        <Parameter Name="extraData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="content"><see cref="T:System.Object" />移動先のコンテンツを格納しています。</param>
+        <param name="extraData">A<see cref="T:System.Object" />ナビゲーション中に処理するために使用するデータを格納しています。</param>
+        <summary>コンテンツは、オブジェクトが含まれ、ナビゲーション中に処理を使用するデータを格納するオブジェクトを渡しますへ非同期的に移動します。</summary>
+        <returns>
+          <see langword="true" />ナビゲーションがキャンセルされない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%2CSystem.Object%29?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public bool Navigate (Uri source, object extraData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Navigate(class System.Uri source, object extraData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Uri,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Uri" />
+        <Parameter Name="extraData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">A<see cref="T:System.Uri" />オブジェクトを初期化して、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]目的のコンテンツ。</param>
+        <param name="extraData">A<see cref="T:System.Object" />ナビゲーション中に処理するために使用するデータを格納しています。</param>
+        <summary>あるソース コンテンツを非同期に移動、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]ナビゲーション中に処理するために使用するデータを格納しているオブジェクトを渡します。</summary>
+        <returns>
+          <see langword="true" />ナビゲーションがキャンセルされない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%2CSystem.Object%29?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigated">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatedEventHandler Navigated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatedEventHandler Navigated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.Navigated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigatedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動先のコンテンツが見つかるとから利用できるときに発生、<see cref="P:System.Windows.Controls.ContentControl.Content" />プロパティ、可能性がありますが、完了していない読み込みがします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.Navigated?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigating">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatingCancelEventHandler Navigating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatingCancelEventHandler Navigating" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.Navigating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigatingCancelEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいナビゲーションが要求されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.Navigating?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigationFailed">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationFailedEventHandler NavigationFailed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationFailedEventHandler NavigationFailed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.NavigationFailed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationFailedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求されたコンテンツにナビゲートするときにエラーが発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.NavigationFailed?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigationProgress">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationProgressEventHandler NavigationProgress;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationProgressEventHandler NavigationProgress" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.NavigationProgress" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationProgressEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション進行状況の情報提供を目的として、ダウンロード中に定期的に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.NavigationProgress?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigationService">
+      <MemberSignature Language="C#" Value="public System.Windows.Navigation.NavigationService NavigationService { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Navigation.NavigationService NavigationService" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.NavigationService" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationService</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Navigation.NavigationService" />これによって使用される<see cref="T:System.Windows.Navigation.NavigationWindow" />そのコンテンツへのナビゲーション サービスを提供します。</summary>
+        <value>これによって使用されるナビゲーション サービス<see cref="T:System.Windows.Navigation.NavigationWindow" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationWindow>使用して、<xref:System.Windows.Navigation.NavigationService>ナビゲーション サービスによってホストされているコンテンツを提供する<xref:System.Windows.Navigation.NavigationWindow>です。 <xref:System.Windows.Navigation.NavigationWindow.NavigationService%2A>プロパティは、カスタム コードの役立ちます<xref:System.Windows.Navigation.NavigationWindow>への参照を取得する、 <xref:System.Windows.Navigation.NavigationService>、たとえばナビゲーション イベントを処理します。  
+  
+ によってホストされているコンテンツ、<xref:System.Windows.Navigation.NavigationWindow>など<xref:System.Windows.Controls.Page>、使用する必要があります、<xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A?displayProperty=nameWithType>メソッドまたは<xref:System.Windows.Controls.Page.NavigationService%2A?displayProperty=nameWithType>への参照を取得するプロパティ、<xref:System.Windows.Navigation.NavigationService>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigationStopped">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationStoppedEventHandler NavigationStopped;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationStoppedEventHandler NavigationStopped" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.NavigationStopped" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationStoppedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="M:System.Windows.Navigation.NavigationWindow.StopLoading" />メソッドを呼び出して、または現在のナビゲーション中に新しいナビゲーションが要求された場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.NavigationStopped?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApplyTemplate">
+      <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.OnApplyTemplate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビジュアル ツリーのテンプレートの世代が作成されるときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosed">
+      <MemberSignature Language="C#" Value="protected override void OnClosed (EventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClosed(class System.EventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.OnClosed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Window.Closed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationWindow.OnClosed%2A>解放、<xref:System.Windows.Navigation.NavigationService>発生させる前に、ナビゲーションの管理に使用されていることをオブジェクト<xref:System.Windows.Window.Closed>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Windows.Automation.Peers.NavigationWindowAutomationPeer" />オブジェクトの<see cref="T:System.Windows.Navigation.NavigationWindow" />します。</summary>
+        <returns>A<see cref="T:System.Windows.Automation.Peers.NavigationWindowAutomationPeer" />オブジェクトの<see cref="T:System.Windows.Navigation.NavigationWindow" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.ContentElement.OnCreateAutomationPeer%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコンテンツを再読み込みします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.Refresh%2A?displayProperty=nameWithType>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を呼び出す方法を示します、<xref:System.Windows.Navigation.NavigationWindow.Refresh%2A>でコンテンツを再読み込みする方法、<xref:System.Windows.Navigation.NavigationWindow>です。  
+  
+ [!code-csharp[HOWTONavigationSnippets#NavigateRefreshCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationSnippets/CSharp/MainWindow.xaml.cs#navigaterefreshcode)]
+ [!code-vb[HOWTONavigationSnippets#NavigateRefreshCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/mainwindow.xaml.vb#navigaterefreshcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveBackEntry">
+      <MemberSignature Language="C#" Value="public System.Windows.Navigation.JournalEntry RemoveBackEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Navigation.JournalEntry RemoveBackEntry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.RemoveBackEntry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.JournalEntry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バックアップ履歴から最新の履歴エントリを削除します。</summary>
+        <returns>最新<see cref="T:System.Windows.Navigation.JournalEntry" />"戻る"ナビゲーション履歴に 1 つを使用する必要がある場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.RemoveBackEntry%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SandboxExternalContent">
+      <MemberSignature Language="C#" Value="public bool SandboxExternalContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SandboxExternalContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.SandboxExternalContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Navigation.NavigationWindow" />分離外部[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)](既定のインターネット ゾーン アクセス許可セット) の部分信頼セキュリティ サンド ボックス内のコンテンツ。</summary>
+        <value>
+          <see langword="true" />コンテンツが、部分信頼セキュリティ サンド ボックス内で分離される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 外部コンテンツが[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]リソース ファイルまたはコンテンツ ファイルのいずれかとしてアプリケーションに含まれていないコンテンツ (詳細については、次を参照してください。 [WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md))。  
+  
+ ときに<xref:System.Windows.Navigation.NavigationWindow.SandboxExternalContent%2A>とのコンテンツが、<xref:System.Windows.Navigation.NavigationWindow>外部[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ファイル、コンテンツが読み込まれて、既定値に限定されている、部分信頼のセキュリティのサンド ボックスにインターネット ゾーン アクセス許可セット。 さらに、外部のコンテンツは、個別のプロセスに読み込まれます。 そのため、外部コンテンツの分離になりはリソース ディクショナリなど、アプリケーション スコープのリソースへのアクセスがありません (詳細については、次を参照してください。 <xref:System.Windows.ResourceDictionary>)。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Navigation.NavigationWindow>外部コンテンツされる場合にのみが含まれています、<xref:System.Windows.Navigation.NavigationWindow.Source%2A>プロパティに設定されている、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]外部の[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ファイル。 <xref:System.Windows.Navigation.NavigationWindow>使用して提供されるコンテンツ、<xref:System.Windows.Controls.ContentControl.Content%2A>プロパティは、内部コンテンツと見なされます、その後は、分離ではありません。  
+  
+<a name="dependencyPropertyInfo_NavigationWindowSandboxExternalContent"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Navigation.NavigationWindow.SandboxExternalContent%2A>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">
+          <see cref="P:System.Windows.Navigation.NavigationWindow.SandboxExternalContent" />アプリケーションが部分信頼で実行するときに設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SandboxExternalContentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SandboxExternalContentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SandboxExternalContentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.SandboxExternalContentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Navigation.NavigationWindow.SandboxExternalContent" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeContent">
+      <MemberSignature Language="C#" Value="public override bool ShouldSerializeContent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ShouldSerializeContent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.ShouldSerializeContent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContentControl.Content" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          プロパティの値が既定値から変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Controls.ContentControl.Content%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 通常このメソッドを呼び出すかをデザイナーを開発している場合、<xref:System.Windows.Navigation.NavigationWindow>やコントロールを組み込む独自の開発、<xref:System.Windows.Navigation.NavigationWindow>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowsNavigationUI">
+      <MemberSignature Language="C#" Value="public bool ShowsNavigationUI { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowsNavigationUI" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.ShowsNavigationUI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、 <see cref="T:System.Windows.Navigation.NavigationWindow" /> 、ナビゲーションを示しています。[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。</summary>
+        <value>
+          <see langword="true" />場合、ナビゲーション[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]が表示されている場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [戻る] と [進む] ナビゲーションを支援するために<xref:System.Windows.Navigation.NavigationWindow>ナビゲーションが自動的に表示されます[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]  
+  
+ ナビゲーション[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]ナビゲーションが発生したかどうかが表示されます。  
+  
+<a name="dependencyPropertyInfo_NavigationWindowShowsNavigationUI"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Navigation.NavigationWindow.ShowsNavigationUI%2A>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowsNavigationUIProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowsNavigationUIProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowsNavigationUIProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.ShowsNavigationUIProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Navigation.NavigationWindow.ShowsNavigationUI" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]の現在のコンテンツまたは[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]現在移動先の新しいコンテンツのです。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の現在の内容またはコンテンツが現在移動先をします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「<xref:System.Windows.Navigation.NavigationService.Source%2A?displayProperty=nameWithType>」を参照してください。  
+  
+> [!NOTE]
+>  [!INCLUDE[TLA#tla_uri#initcap#plural](~/includes/tlasharptla-urisharpinitcapsharpplural-md.md)]相対パスまたは絶対のいずれかを指定できます。 詳細については、「[WPF におけるパック URI](~/docs/framework/wpf/app-development/pack-uris-in-wpf.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_NavigationWindowSource"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Navigation.NavigationWindow.Source%2A>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.Journal%2A>|  
+  
+   
+  
+## Examples  
+ 次の例に移動する方法を示しています、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]を設定して、<xref:System.Windows.Navigation.NavigationWindow.Source%2A>プロパティです。  
+  
+ [!code-csharp[HOWTONavigationSnippets#NavigateToPageSrcCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationSnippets/CSharp/MainWindow.xaml.cs#navigatetopagesrccode)]
+ [!code-vb[HOWTONavigationSnippets#NavigateToPageSrcCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/mainwindow.xaml.vb#navigatetopagesrccode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SourceProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SourceProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.SourceProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Navigation.NavigationWindow.Source" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopLoading">
+      <MemberSignature Language="C#" Value="public void StopLoading ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopLoading() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.StopLoading" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>さらに、現在のナビゲーション要求のコンテンツのダウンロードを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationWindow.StopLoading%2A>要求されたコンテンツのダウンロードを停止し、原因、<xref:System.Windows.Navigation.NavigationWindow.NavigationStopped>イベントが発生します。  
+  
+ 「<xref:System.Windows.Navigation.NavigationService.StopLoading%2A?displayProperty=nameWithType>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を呼び出す方法を示します、<xref:System.Windows.Navigation.NavigationWindow.StopLoading%2A>ダウンロードが完了する前に、コンテンツへの移動を中断します。  
+  
+ [!code-csharp[HOWTONavigationSnippets#NavigateStopLoadingCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationSnippets/CSharp/MainWindow.xaml.cs#navigatestoploadingcode)]
+ [!code-vb[HOWTONavigationSnippets#NavigateStopLoadingCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTONavigationSnippets/visualbasic/mainwindow.xaml.vb#navigatestoploadingcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IUriContext.BaseUri">
+      <MemberSignature Language="C#" Value="Uri System.Windows.Markup.IUriContext.BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri System.Windows.Markup.IUriContext.BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.System#Windows#Markup#IUriContext#BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のコンテキストの基本の uniform resource identifier (URI) を設定します。</summary>
+        <value>現在のコンテキストのベース URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Navigation.NavigationWindow> のインスタンスが <xref:System.Windows.Markup.IUriContext> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

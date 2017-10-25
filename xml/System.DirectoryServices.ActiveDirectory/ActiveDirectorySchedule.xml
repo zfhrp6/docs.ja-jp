@@ -1,0 +1,294 @@
+<Type Name="ActiveDirectorySchedule" FullName="System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule">
+  <TypeSignature Language="C#" Value="public class ActiveDirectorySchedule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActiveDirectorySchedule extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule" />クラスは、Active Directory ドメイン サービス レプリケーションの週単位のスケジュールを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveDirectorySchedule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveDirectorySchedule (System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule schedule);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule schedule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule.#ctor(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schedule" Type="System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule" />
+      </Parameters>
+      <Docs>
+        <param name="schedule">A<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule" />はこのオブジェクトにコピーされるオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule" />クラスを指定して<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="schedule" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RawSchedule">
+      <MemberSignature Language="C#" Value="public bool[,,] RawSchedule { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool[,,] RawSchedule" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule.RawSchedule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean[,,]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す、その週にどのような時にソースがレプリケーションで利用可能である 3 次元の配列。</summary>
+        <value>3 次元の配列の<see cref="T:System.Boolean" />要素がである要素<see langword="true" />ソースがその特定の 15 分間隔の間にレプリケーションで利用可能の場合。 要素が<see langword="false" />ソースがレプリケーションで利用可能でない場合。  
+  
+ 配列は、形式で RawSchedule [&lt;曜日単位&gt;、&lt;時間&gt;、 &lt;15 分間隔&gt;] です。 これらすべての値は 0 から始まると、週の始まりは日曜日の朝、世界協定時刻 00:00 です。  
+  
+ 次は、週の日の有効な値のことです。  
+  
+ <list type="table"><listheader><term>曜日単位の値  
+  
+ </term><description>週の曜日を指定します。  
+  
+ </description></listheader><item><term> 0  
+  
+ </term><description>日曜日  
+  
+ </description></item><item><term> 1  
+  
+ </term><description>月曜日  
+  
+ </description></item><item><term> 2  
+  
+ </term><description>火曜日  
+  
+ </description></item><item><term> 3  
+  
+ </term><description>水曜日  
+  
+ </description></item><item><term> 4  
+  
+ </term><description>木曜日  
+  
+ </description></item><item><term> 5  
+  
+ </term><description>金曜日  
+  
+ </description></item><item><term> 6  
+  
+ </term><description>土曜日  
+  
+ </description></item></list>  
+  
+ 時間、0 から始まる 24 時間形式で指定します。 たとえば、午後 2 14 として指定されます。 有効な値は、0 ~ 23 です。  
+  
+ 15 分間隔では、ソースは、レプリケーションに使用される時間内で、15 分間ブロックを指定します。 次の表は、15 分間隔の使用可能な値を識別します。  
+  
+ <list type="table"><listheader><term>15 分間隔  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term> 0  
+  
+ </term><description>ソースは、0 から 14 分、時間後にレプリケーションで利用可能です。  
+  
+ </description></item><item><term> 1  
+  
+ </term><description>ソースは 29 分、1 時間後 15 からのレプリケーションで利用可能です。  
+  
+ </description></item><item><term> 2  
+  
+ </term><description>ソースは、30 から 44 分、1 時間後のレプリケーションで利用可能です。  
+  
+ </description></item><item><term> 3  
+  
+ </term><description>ソースは 45 毎時後 59 分の間のレプリケーションで利用可能です。  
+  
+ </description></item></list>  
+  
+ 次の c# の例は、このプロパティを使用して、ソースが 15時 50分でのレプリケーションで利用可能であるかを判断する方法を示しています。 火曜日に世界協定時刻。  
+  
+```csharp  
+Boolean isAvailable = scheduleObject.RawSchedule[2, 15, 3];  
+```  
+  
+ 次の c# の例では、このプロパティを使用して、15 分以内で割ることによって実行時に 15 分間の間隔を計算する方法を示します。  
+  
+```csharp  
+Boolean isAvailable = scheduleObject.RawSchedule[2, 15, (Int32)50/15];  
+```</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetSchedule">
+      <MemberSignature Language="C#" Value="public void ResetSchedule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetSchedule() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule.ResetSchedule" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>全体のスケジュールを使用できなくなったにリセットします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDailySchedule">
+      <MemberSignature Language="C#" Value="public void SetDailySchedule (System.DirectoryServices.ActiveDirectory.HourOfDay fromHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour fromMinute, System.DirectoryServices.ActiveDirectory.HourOfDay toHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour toMinute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetDailySchedule(valuetype System.DirectoryServices.ActiveDirectory.HourOfDay fromHour, valuetype System.DirectoryServices.ActiveDirectory.MinuteOfHour fromMinute, valuetype System.DirectoryServices.ActiveDirectory.HourOfDay toHour, valuetype System.DirectoryServices.ActiveDirectory.MinuteOfHour toMinute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule.SetDailySchedule(System.DirectoryServices.ActiveDirectory.HourOfDay,System.DirectoryServices.ActiveDirectory.MinuteOfHour,System.DirectoryServices.ActiveDirectory.HourOfDay,System.DirectoryServices.ActiveDirectory.MinuteOfHour)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fromHour" Type="System.DirectoryServices.ActiveDirectory.HourOfDay" />
+        <Parameter Name="fromMinute" Type="System.DirectoryServices.ActiveDirectory.MinuteOfHour" />
+        <Parameter Name="toHour" Type="System.DirectoryServices.ActiveDirectory.HourOfDay" />
+        <Parameter Name="toMinute" Type="System.DirectoryServices.ActiveDirectory.MinuteOfHour" />
+      </Parameters>
+      <Docs>
+        <param name="fromHour">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.HourOfDay" />をソースがレプリケーションに利用できる最初の 1 時間を指定します。</param>
+        <param name="fromMinute">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.MinuteOfHour" />を最初の 15 分間隔をソースがレプリケーションに使用できることを指定します。</param>
+        <param name="toHour">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.HourOfDay" />メンバーをソースがレプリケーションに利用できる最終時刻を指定します。</param>
+        <param name="toMinute">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.MinuteOfHour" />ソースをレプリケーションで使用される最終的な 15 分間隔を指定するメンバー。</param>
+        <summary>スケジュールに週の日の時刻の範囲を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのパラメーターのすべてに含まれます。  
+  
+ このメソッドは、累積的な既存のスケジュール情報は削除されません。 既存のスケジュールと、新しいスケジュールが重複する場合、結果は累積されます。 クリアするには、スケジュールを使用して、<xref:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule.ResetSchedule%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSchedule">
+      <MemberSignature Language="C#" Value="public void SetSchedule (DayOfWeek day, System.DirectoryServices.ActiveDirectory.HourOfDay fromHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour fromMinute, System.DirectoryServices.ActiveDirectory.HourOfDay toHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour toMinute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSchedule(valuetype System.DayOfWeek day, valuetype System.DirectoryServices.ActiveDirectory.HourOfDay fromHour, valuetype System.DirectoryServices.ActiveDirectory.MinuteOfHour fromMinute, valuetype System.DirectoryServices.ActiveDirectory.HourOfDay toHour, valuetype System.DirectoryServices.ActiveDirectory.MinuteOfHour toMinute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule.SetSchedule(System.DayOfWeek,System.DirectoryServices.ActiveDirectory.HourOfDay,System.DirectoryServices.ActiveDirectory.MinuteOfHour,System.DirectoryServices.ActiveDirectory.HourOfDay,System.DirectoryServices.ActiveDirectory.MinuteOfHour)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="day" Type="System.DayOfWeek" />
+        <Parameter Name="fromHour" Type="System.DirectoryServices.ActiveDirectory.HourOfDay" />
+        <Parameter Name="fromMinute" Type="System.DirectoryServices.ActiveDirectory.MinuteOfHour" />
+        <Parameter Name="toHour" Type="System.DirectoryServices.ActiveDirectory.HourOfDay" />
+        <Parameter Name="toMinute" Type="System.DirectoryServices.ActiveDirectory.MinuteOfHour" />
+      </Parameters>
+      <Docs>
+        <param name="day">1 つ、<see cref="T:System.DayOfWeek" />をソースがレプリケーションに利用できる週の曜日を指定します。</param>
+        <param name="fromHour">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.HourOfDay" />をソースがレプリケーションに利用できる最初の 1 時間を指定します。</param>
+        <param name="fromMinute">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.MinuteOfHour" />を最初の 15 分間隔をソースがレプリケーションに使用できることを指定します。</param>
+        <param name="toHour">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.HourOfDay" />メンバーをソースがレプリケーションに利用できる最終時刻を指定します。</param>
+        <param name="toMinute">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.MinuteOfHour" />ソースをレプリケーションで使用される最終的な 15 分間隔を指定するメンバー。</param>
+        <summary>スケジュールするには、1 日の時間の範囲を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのパラメーターのすべてに含まれます。  
+  
+ このメソッドは、累積的な既存のスケジュール情報は削除されません。 既存のスケジュールと、新しいスケジュールが重複する場合、結果は累積されます。 クリアするには、スケジュールを使用して、<xref:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule.ResetSchedule%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">開始時刻では、終了時刻後です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">1 つまたは複数のパラメーターが正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="days" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSchedule">
+      <MemberSignature Language="C#" Value="public void SetSchedule (DayOfWeek[] days, System.DirectoryServices.ActiveDirectory.HourOfDay fromHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour fromMinute, System.DirectoryServices.ActiveDirectory.HourOfDay toHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour toMinute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSchedule(valuetype System.DayOfWeek[] days, valuetype System.DirectoryServices.ActiveDirectory.HourOfDay fromHour, valuetype System.DirectoryServices.ActiveDirectory.MinuteOfHour fromMinute, valuetype System.DirectoryServices.ActiveDirectory.HourOfDay toHour, valuetype System.DirectoryServices.ActiveDirectory.MinuteOfHour toMinute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule.SetSchedule(System.DayOfWeek[],System.DirectoryServices.ActiveDirectory.HourOfDay,System.DirectoryServices.ActiveDirectory.MinuteOfHour,System.DirectoryServices.ActiveDirectory.HourOfDay,System.DirectoryServices.ActiveDirectory.MinuteOfHour)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="days" Type="System.DayOfWeek[]" />
+        <Parameter Name="fromHour" Type="System.DirectoryServices.ActiveDirectory.HourOfDay" />
+        <Parameter Name="fromMinute" Type="System.DirectoryServices.ActiveDirectory.MinuteOfHour" />
+        <Parameter Name="toHour" Type="System.DirectoryServices.ActiveDirectory.HourOfDay" />
+        <Parameter Name="toMinute" Type="System.DirectoryServices.ActiveDirectory.MinuteOfHour" />
+      </Parameters>
+      <Docs>
+        <param name="days">1 つ、<see cref="T:System.DayOfWeek" />をソースがレプリケーションに利用できる週の曜日を指定します。</param>
+        <param name="fromHour">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.HourOfDay" />をソースがレプリケーションに利用できる最初の 1 時間を指定します。</param>
+        <param name="fromMinute">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.MinuteOfHour" />を最初の 15 分間隔をソースがレプリケーションに使用できることを指定します。</param>
+        <param name="toHour">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.HourOfDay" />メンバーをソースがレプリケーションに利用できる最終時刻を指定します。</param>
+        <param name="toMinute">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.MinuteOfHour" />ソースをレプリケーションで使用される最終的な 15 分間隔を指定するメンバー。</param>
+        <summary>スケジュールを複数の日の時間の範囲を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのパラメーターのすべてに含まれます。  
+  
+ このメソッドは、累積的な既存のスケジュール情報は削除されません。 既存のスケジュールと、新しいスケジュールが重複する場合、結果は累積されます。 クリアするには、スケジュールを使用して、<xref:System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule.ResetSchedule%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">開始時刻では、終了時刻後です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">1 つまたは複数のパラメーターが正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="days" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

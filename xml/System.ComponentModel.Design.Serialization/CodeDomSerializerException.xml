@@ -1,0 +1,181 @@
+<Type Name="CodeDomSerializerException" FullName="System.ComponentModel.Design.Serialization.CodeDomSerializerException">
+  <TypeSignature Language="C#" Value="public class CodeDomSerializerException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeDomSerializerException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.CodeDomSerializerException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>シリアル化エラーの行番号情報がある場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアライザーでエラーが発生したときに、この例外がスローされます。 この例外によって、シリアライザーからエラーの位置や種類に関する情報が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例をスロー、<xref:System.ComponentModel.Design.Serialization.CodeDomSerializerException>メッセージの例で、<xref:System.CodeDom.CodeLinePragma>です。  
+  
+ [!code-cpp[CodeDomSerializerExceptionExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/CodeDomSerializerExceptionExample/CPP/source.cpp#1)]
+ [!code-csharp[CodeDomSerializerExceptionExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/CodeDomSerializerExceptionExample/CS/source.cs#1)]
+ [!code-vb[CodeDomSerializerExceptionExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CodeDomSerializerExceptionExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeDomSerializerException (Exception ex, System.CodeDom.CodeLinePragma linePragma);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Exception ex, class System.CodeDom.CodeLinePragma linePragma) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializerException.#ctor(System.Exception,System.CodeDom.CodeLinePragma)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+        <Parameter Name="linePragma" Type="System.CodeDom.CodeLinePragma" />
+      </Parameters>
+      <Docs>
+        <param name="ex">スローされる例外。</param>
+        <param name="linePragma">A<see cref="T:System.CodeDom.CodeLinePragma" />を示す例外が発生します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializerException" />クラスの指定された例外と行の情報を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeDomSerializerException (Exception ex, System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Exception ex, class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializerException.#ctor(System.Exception,System.ComponentModel.Design.Serialization.IDesignerSerializationManager)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+      </Parameters>
+      <Docs>
+        <param name="ex">スローされる例外。</param>
+        <param name="manager"><see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />コンテキストを抽出する元のオブジェクト。</param>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializerException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Manager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CodeDomSerializerException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializerException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">オブジェクトを逆シリアル化または逆シリアル化に使用されているデータを格納する、<see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializer" />がシリアル化または逆シリアル化します。</param>
+        <param name="context">ソースとそのコンテキストおよび追加の呼び出し元が定義のコンテキストを保持するシリアル化するための手段と同様に、例外を生成したストリームの転送先について説明します。</param>
+        <summary>指定したシリアル化データとコンテキストを使用して、<see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializerException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeDomSerializerException (string message, System.CodeDom.CodeLinePragma linePragma);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.CodeDom.CodeLinePragma linePragma) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializerException.#ctor(System.String,System.CodeDom.CodeLinePragma)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="linePragma" Type="System.CodeDom.CodeLinePragma" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外を説明するメッセージ。</param>
+        <param name="linePragma">A<see cref="T:System.CodeDom.CodeLinePragma" />を示す例外が発生します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializerException" />クラスの指定したメッセージと行の情報を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeDomSerializerException (string message, System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializerException.#ctor(System.String,System.ComponentModel.Design.Serialization.IDesignerSerializationManager)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外を説明するメッセージ。</param>
+        <param name="manager"><see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />コンテキストを抽出する元のオブジェクト。</param>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializerException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="Manager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomSerializerException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">オブジェクトを逆シリアル化または逆シリアル化に使用されているデータを格納する、<see cref="T:System.ComponentModel.Design.Serialization.CodeDomSerializer" />がシリアル化または逆シリアル化します。</param>
+        <param name="context">ソースとそのコンテキストおよび追加の呼び出し元が定義のコンテキストを保持するシリアル化するための手段と同様に、例外を生成したストリームの転送先について説明します。</param>
+        <summary>パラメーター名と追加の例外情報を使用して <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクトを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="info" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LinePragma">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeLinePragma LinePragma { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeLinePragma LinePragma" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.CodeDomSerializerException.LinePragma" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeLinePragma</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、この例外に関連付けられているエラーの行情報を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeLinePragma" />のエラー行情報を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

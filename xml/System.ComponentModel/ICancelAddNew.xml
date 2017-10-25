@@ -1,0 +1,121 @@
+<Type Name="ICancelAddNew" FullName="System.ComponentModel.ICancelAddNew">
+  <TypeSignature Language="C#" Value="public interface ICancelAddNew" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICancelAddNew" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.ICancelAddNew" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>新しい項目をコレクションに追加するときは、トランザクション機能を追加します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.ICancelAddNew>インターフェイス、拡張性のある方法で新しい項目を追加するコレクションを有効にします。 新しい項目は、コミットまたはロールバックする、その後ことができます。 <xref:System.ComponentModel.IBindingList.AddNew%2A>仮される、次の操作を介してトランザクションは、後で、アイテムを追加するコレクションのメソッドを使用します。  
+  
+-   <xref:System.ComponentModel.ICancelAddNew.EndNew%2A>メソッドは保留中の追加を明示的にコミットします。  
+  
+-   挿入、削除、または移動など、別のコレクションの操作を実行すると、保留中の追加は暗黙的にコミットします。  
+  
+-   <xref:System.ComponentModel.ICancelAddNew.CancelNew%2A>メソッドは元に戻す保留中の追加が既にコミットされていない場合。  
+  
+> [!NOTE]
+>  、Windows フォームの複合データ バインディングなど、一部のシナリオで、コレクションが表示される可能性があります<xref:System.ComponentModel.ICancelAddNew.CancelNew%2A>または<xref:System.ComponentModel.ICancelAddNew.EndNew%2A>新しく追加された項目以外のアイテムを呼び出します。 (各項目は通常、データ ビュー内の行) です。これらの呼び出しを無視します。キャンセルまたはその項目のインデックスが指定された場合のみ、新しい項目をコミットします。  
+  
+ 項目をデータ バインドされたコレクションのトランザクションの追加を許可する 2 つのモデルがあります。  
+  
+-   古いモデルを実装するコレクションに直接依存、<xref:System.ComponentModel.IBindingList>インターフェイスとは、データ バインドを使用して直接、<xref:System.Windows.Forms.CurrencyManager?displayProperty=nameWithType>クラスです。 <xref:System.Windows.Forms.CurrencyManager.AddNew%2A>、 <xref:System.Windows.Forms.CurrencyManager.EndCurrentEdit%2A>、および<xref:System.Windows.Forms.CurrencyManager.CancelCurrentEdit%2A>のメソッド、<xref:System.Windows.Forms.CurrencyManager?displayProperty=nameWithType>クラスは新しい項目を追加するためのトランザクションのサポートを担当します。 しかし、この機能を使用してトランザクション動作をサポートするアイテムに依存、<xref:System.ComponentModel.IEditableObject>インターフェイスです。 項目が後続の呼び出しに関係なく、一覧に常に追加する項目はこのインターフェイスをサポートしていない場合<xref:System.Windows.Forms.CurrencyManager.CancelCurrentEdit%2A>です。  
+  
+-   新しいモデルが、ジェネリックをより堅牢なデータ バインディング シナリオをサポートしている<xref:System.ComponentModel.BindingList%601>クラスを実装する、<xref:System.ComponentModel.IBindingList>と<xref:System.ComponentModel.ICancelAddNew>インターフェイスです。 ここでは、トランザクションのサポートで管理されて、<xref:System.ComponentModel.BindingList%601>直接コレクション。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CancelNew">
+      <MemberSignature Language="C#" Value="public void CancelNew (int itemIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CancelNew(int32 itemIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ICancelAddNew.CancelNew(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="itemIndex">コレクションに既に追加されている項目のインデックス。</param>
+        <summary>保留中の新しい項目をコレクションから破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.ICancelAddNew.CancelNew%2A>メソッドは保留中の追加をロールバック (<xref:System.ComponentModel.IBindingList.AddNew%2A>) 位置にあるコレクションに追加したアイテムの`itemIndex`します。 複数の新しい項目が同時に保留されているために、インデックス パラメーターは必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndNew">
+      <MemberSignature Language="C#" Value="public void EndNew (int itemIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndNew(int32 itemIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ICancelAddNew.EndNew(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="itemIndex">コレクションに既に追加されている項目のインデックス。</param>
+        <summary>保留中の新しい項目をコレクションにコミットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.ICancelAddNew.EndNew%2A>コミットの保留中の追加 (<xref:System.ComponentModel.IBindingList.AddNew%2A>) 位置にあるコレクションに追加したアイテムの`itemIndex`します。 複数の新しい項目が同時に保留されているために、インデックス パラメーターは必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

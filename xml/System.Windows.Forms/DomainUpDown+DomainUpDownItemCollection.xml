@@ -1,0 +1,204 @@
+<Type Name="DomainUpDown+DomainUpDownItemCollection" FullName="System.Windows.Forms.DomainUpDown+DomainUpDownItemCollection">
+  <TypeSignature Language="C#" Value="public class DomainUpDown.DomainUpDownItemCollection : System.Collections.ArrayList" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit DomainUpDown/DomainUpDownItemCollection extends System.Collections.ArrayList" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ArrayList</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用するためのオブジェクトのコレクションをカプセル化、<see cref="T:System.Windows.Forms.DomainUpDown" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示するオブジェクトのコレクションを作成する、<xref:System.Windows.Forms.DomainUpDown>コントロールを追加するかを使用して、アイテムを個別に削除、<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A>と<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A>メソッドです。 コレクションへのアクセスは、親コントロールから<xref:System.Windows.Forms.DomainUpDown>により、<xref:System.Windows.Forms.DomainUpDown.Items%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成して、初期化、<xref:System.Windows.Forms.DomainUpDown>コントロール。 この例を使用すると、一部のプロパティを設定し、アップダウン コントロールに表示する文字列のコレクションを作成できます。 コードでは、 <xref:System.Windows.Forms.TextBox>、<xref:System.Windows.Forms.CheckBox>と<xref:System.Windows.Forms.Button>フォームでインスタンス化されました。 例がという名前の 32 ビット符号付き整数として宣言されたクラス レベルのメンバー変数があると想定も`myCounter`します。 テキスト ボックスに文字列を入力しに追加することができます、<xref:System.Windows.Forms.DomainUpDown.Items%2A>ボタンがクリックされたときのコレクション。 チェック ボックスをクリックし、切り替えることができます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティに、アップダウン コントロール内の項目のコレクション内の違いを観察します。  
+  
+ [!code-cpp[Classic DomainUpDown.DomainUpDownItemCollection Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DomainUpDown.DomainUpDownItemCollection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DomainUpDown.DomainUpDownItemCollection Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DomainUpDown.DomainUpDownItemCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic DomainUpDown.DomainUpDownItemCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DomainUpDown.DomainUpDownItemCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override int Add (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Add(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Object" />コレクションの末尾に追加します。</param>
+        <summary>指定したオブジェクトをコレクションの末尾に追加します。</summary>
+        <returns>0 から始まるインデックス値、<see cref="T:System.Object" />コレクションに追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加することも、新しい<xref:System.Object>を使用してコレクションに、<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A>メソッドです。  
+  
+ 削除する、<xref:System.Object>先ほど追加したが、使用して、<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A>または<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成して、初期化、<xref:System.Windows.Forms.DomainUpDown>コントロール。 この例を使用すると、一部のプロパティを設定し、アップダウン コントロールに表示する文字列のコレクションを作成できます。 コードでは、 <xref:System.Windows.Forms.TextBox>、<xref:System.Windows.Forms.CheckBox>と<xref:System.Windows.Forms.Button>フォームでインスタンス化されました。 例がという名前の 32 ビット符号付き整数として宣言されたクラス レベルのメンバー変数があると想定も`myCounter`します。 テキスト ボックスに文字列を入力しに追加することができます、<xref:System.Windows.Forms.DomainUpDown.Items%2A>ボタンがクリックされたときのコレクション。 チェック ボックスをクリックし、切り替えることができます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティに、アップダウン コントロール内の項目のコレクション内の違いを観察します。  
+  
+ [!code-cpp[Classic DomainUpDown.DomainUpDownItemCollection Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DomainUpDown.DomainUpDownItemCollection Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DomainUpDown.DomainUpDownItemCollection Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DomainUpDown.DomainUpDownItemCollection Example/CS/source.cs#1)]
+ [!code-vb[Classic DomainUpDown.DomainUpDownItemCollection Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DomainUpDown.DomainUpDownItemCollection Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public override void Insert (int index, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Insert(int32 index, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックスの位置を挿入するコレクション内で、<see cref="T:System.Object" />です。</param>
+        <param name="item">挿入する <see cref="T:System.Object" />。</param>
+        <summary>指定したオブジェクトをコレクションの指定した位置に挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加することも、新しい<xref:System.Object>を使用してコレクションに、<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A>メソッドです。  
+  
+ 削除する、<xref:System.Object>先ほど追加したが、使用して、<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A>または<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の項目の位置を示すインデックス。</param>
+        <summary>取得またはコレクション内で指定したインデックス位置に項目を設定します。</summary>
+        <value><see cref="T:System.Object" />を表す、指定したインデックス位置にある項目。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の場所に項目を割り当てるかをから取得する、 <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection>、特定のインデックス値を持つコレクション オブジェクトを参照することができます。 インデックス値、 <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> 0 から始まるインデックスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public override void Remove (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Remove(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">コレクションから削除する <see cref="T:System.Object" />。</param>
+        <summary>指定した項目をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除することも、<xref:System.Object>以前を使用して追加した、<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A>メソッドです。  
+  
+ 新しいを追加する<xref:System.Object>、コレクションを使用して、<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A>または<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public override void RemoveAt (int item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RemoveAt(int32 item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="item">位置を示すインデックス、<see cref="T:System.Object" />コレクション内で。</param>
+        <summary>コレクションで指定した場所から項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除することも、<xref:System.Object>以前を使用して追加した、<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A>メソッドです。  
+  
+ 新しいを追加する<xref:System.Object>、コレクションを使用して、<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A>または<xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

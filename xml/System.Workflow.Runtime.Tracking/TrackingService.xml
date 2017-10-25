@@ -1,0 +1,291 @@
+<Type Name="TrackingService" FullName="System.Workflow.Runtime.Tracking.TrackingService">
+  <TypeSignature Language="C#" Value="public abstract class TrackingService : System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TrackingService extends System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.TrackingService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Runtime.Hosting.WorkflowRuntimeService</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>追跡サービスと、ランタイム追跡インフラストラクチャの間の基本的なインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ 追跡サービスは、追跡チャネルと追跡プロファイルをワークフロー ランタイム エンジンに提供します。 ワークフロー ランタイム エンジンは、<xref:System.Workflow.Runtime.Tracking.TrackingChannel> の対象となるワークフロー インスタンスごとに追跡サービスから 1 つの <xref:System.Workflow.Runtime.Tracking.TrackingProfile> を要求します。 ワークフロー ランタイム エンジンはこの <xref:System.Workflow.Runtime.Tracking.TrackingChannel> を使用して、そのワークフロー インスタンスに関連付けられた追跡レコードを送信します。 <xref:System.Workflow.Runtime.Tracking.TrackingProfile> には、ランタイム追跡インフラストラクチャが追跡レコードを送る対象の追跡イベント セットを指定する追跡ポイントが格納されます。 また、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> は、これらの追跡イベントのいずれかが発生したときにワークフロー インスタンスから抽出されるデータを指定する場合もあります。  
+  
+ ランタイム追跡インフラストラクチャは、ワークフロー インスタンスによって出される追跡イベントをフィルター処理するために <xref:System.Workflow.Runtime.Tracking.TrackingProfile> を使用します。 <xref:System.Workflow.Runtime.Tracking.TrackingProfile> 内の追跡ポイントに一致する追跡イベントが出された場合、ランタイム追跡インフラストラクチャは、<xref:System.Workflow.Runtime.Tracking.TrackingProfile> に指定されたすべてのデータをワークフロー インスタンスから抽出して、このデータおよび追跡イベントに関する情報を追跡レコードにカプセル化します。 その後、ワークフロー インスタンスに関連付けられた <xref:System.Workflow.Runtime.Tracking.TrackingChannel> を介してこの追跡レコードが送信されます。 追跡レコードは、次の 3 種類のいずれかになります。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord>  
+  
+ <xref:System.Workflow.Runtime.Tracking.UserTrackingRecord>  
+  
+ <xref:System.Workflow.Runtime.Tracking.WorkflowTrackingRecord>  
+  
+ ホスト アプリケーションは、任意の方法で追跡レコードを使用できます。 たとえば、高度なユーザー インターフェイスを実装するために、ホスト アプリケーションは追跡情報をデータベースに保存して利用することができます。また、なんらかの処置を必要とする状態を管理者に通知するために情報を使用することもできます。 追跡サービスをワークフロー ランタイム エンジンに登録するには、<xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A?displayProperty=nameWithType> を呼び出すか、アプリケーション構成ファイルに適切なエントリを追加します。  
+  
+ すべての追跡サービスは、<xref:System.Workflow.Runtime.Tracking.TrackingService> 抽象クラスから継承する必要があります。 このクラスは、追跡サービスとランタイム追跡インフラストラクチャの間の基本的なインターフェイスを定義します。 ワークフロー ランタイム エンジンは、オーバーロードされた <xref:System.Workflow.Runtime.Tracking.TrackingProfile> メソッドのいずれかまたは <xref:System.Type> メソッドを呼び出すことによって、特定のワークフロー インスタンスまたはワークフロー <xref:System.Workflow.Runtime.Tracking.TrackingService.GetProfile%2A> に関する <xref:System.Workflow.Runtime.Tracking.TrackingService.TryGetProfile%2A> を要求します。 ワークフロー ランタイム エンジンは、<xref:System.Workflow.Runtime.Tracking.TrackingService.GetTrackingChannel%2A> を要求するために <xref:System.Workflow.Runtime.Tracking.TrackingChannel> を呼び出します。  
+  
+ ワークフロー インスタンスが作成される、または永続的ストアから読み込まれるたびに、ワークフロー追跡ランタイムは <xref:System.Workflow.Runtime.Tracking.TrackingService.GetProfile%2A> メソッドと <xref:System.Workflow.Runtime.Tracking.TrackingService.TryGetProfile%2A> メソッドを呼び出します。 このような呼び出しに伴うオーバーヘッドによって、追跡サービスのパフォーマンスに影響が生じる可能性があります (たとえば多数のデータベース呼び出しが発生する場合など)。 このような呼び出しベースのメカニズムを回避するために、<xref:System.Workflow.Runtime.Tracking.IProfileNotification> インターフェイスを追跡サービス内に実装して、イベントを使って <xref:System.Workflow.Runtime.Tracking.TrackingProfile> の変化をワークフロー ランタイム エンジンに通知することができます。 <xref:System.Workflow.Runtime.Tracking.IProfileNotification> インターフェイスを実装する追跡サービスに関して、ワークフロー ランタイム エンジンは、<xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileUpdated> イベントおよび <xref:System.Workflow.Runtime.Tracking.IProfileNotification.ProfileRemoved> イベントに定期受信します。 いずれかの追跡プロファイルが変化したときに、追跡サービスは適切なイベントを出すことができます。 <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> クラスは、このインターフェイスを実装します。  
+  
+ ホストまたはサービスがワークフロー インスタンスの <xref:System.Workflow.Runtime.Tracking.TrackingService.TryReloadProfile%2A> を明示的に呼び出した結果として <xref:System.Workflow.Runtime.Tracking.TrackingProfile> が更新または削除されたかどうか検査するために、ワークフロー ランタイム エンジンは <xref:System.Workflow.Runtime.WorkflowInstance.ReloadTrackingProfiles%2A> メソッドを呼び出します。 この処理により、ホストまたはサービスは、特定のワークフロー インスタンスに使われる追跡プロファイルを動的に変更することができます。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>-   <see cref="T:System.Workflow.Runtime.Tracking.TrackingService" /> から継承する場合は、次のメンバーをオーバーライドする必要があります。<see cref="M:System.Workflow.Runtime.Tracking.TrackingService.GetProfile(System.Guid)" />  
+  
+-   <see cref="M:System.Workflow.Runtime.Tracking.TrackingService.GetProfile(System.Type,System.Version)" />  
+  
+-   <see cref="M:System.Workflow.Runtime.Tracking.TrackingService.TryGetProfile(System.Type,System.Workflow.Runtime.Tracking.TrackingProfile@)" />  
+  
+-   <see cref="M:System.Workflow.Runtime.Tracking.TrackingService.GetTrackingChannel(System.Workflow.Runtime.Tracking.TrackingParameters)" />  
+  
+-   <see cref="M:System.Workflow.Runtime.Tracking.TrackingService.TryReloadProfile(System.Type,System.Guid,System.Workflow.Runtime.Tracking.TrackingProfile@)" /></para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TrackingService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.Runtime.Tracking.TrackingService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、`TerminationTrackingService` から派生した型の、`TrackingService` オブジェクトの新しいインスタンスを作成する方法を示しています。 このサンプルは、終了追跡サービスの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][終了追跡サービスのサンプル](http://msdn.microsoft.com/en-us/29b7c0d7-cece-4bb9-96d0-c5b6c6e14439)です。  
+  
+ [!code-csharp[WF_Samples#111](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#111)]
+ [!code-vb[WF_Samples#111](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#111)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetProfile">
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>派生クラス内でオーバーライドされる必要があります。実装されると、特定のワークフロー インスタンスまたはワークフロー型に関する追跡プロファイルを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡サービスは、特定の種類のワークフローとインスタンスに利用できる追跡プロファイルを管理します。 この管理機能は、どのような方法でも実装できます。 たとえば、すべてのワークフローの <xref:System.Workflow.Runtime.Tracking.TrackingProfile> およびワークフロー インスタンスに対して同じ <xref:System.Type> を返すことができます。また、ワークフロー インスタンス、ワークフローの <xref:System.Type>、および <xref:System.Version> によって参照される追跡プロファイルの保存場所を管理することもできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetProfile">
+      <MemberSignature Language="C#" Value="protected abstract System.Workflow.Runtime.Tracking.TrackingProfile GetProfile (Guid workflowInstanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Workflow.Runtime.Tracking.TrackingProfile GetProfile(valuetype System.Guid workflowInstanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingService.GetProfile(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowInstanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="workflowInstanceId">ワークフロー インスタンスの <see cref="T:System.Guid" />。</param>
+        <summary>派生クラス内でオーバーライドされる必要があります。実装されると、特定のワークフロー インスタンスに関する追跡プロファイルを返します。</summary>
+        <returns>指定したワークフロー インスタンスの追跡プロファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡サービスは、特定の種類のワークフローとインスタンスに利用できる追跡プロファイルを管理します。 この管理機能は、どのような方法でも実装できます。 たとえば、すべてのワークフローの <xref:System.Workflow.Runtime.Tracking.TrackingProfile> およびワークフロー インスタンスに対して同じ <xref:System.Type> を返すことができます。また、ワークフロー インスタンス、ワークフローの <xref:System.Type>、および <xref:System.Version> によって参照される追跡プロファイルの保存場所を管理することもできます。  
+  
+   
+  
+## Examples  
+ `GetProfile` メソッドを実装する例を次に示します。 この例では、`GetProfile` メソッドのいくつかのオーバーロードが 1 つのプライベート `GetProfile` メソッドを呼び出します。このメソッドは、ハードコーディングされた既定の追跡プロファイルを返します。 この例は、終了追跡サービスの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][終了追跡サービスのサンプル](http://msdn.microsoft.com/en-us/29b7c0d7-cece-4bb9-96d0-c5b6c6e14439)です。  
+  
+ [!code-csharp[WF_Samples#115](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#115)]
+ [!code-vb[WF_Samples#115](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#115)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProfile">
+      <MemberSignature Language="C#" Value="protected abstract System.Workflow.Runtime.Tracking.TrackingProfile GetProfile (Type workflowType, Version profileVersionId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Workflow.Runtime.Tracking.TrackingProfile GetProfile(class System.Type workflowType, class System.Version profileVersionId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingService.GetProfile(System.Type,System.Version)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingProfile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowType" Type="System.Type" />
+        <Parameter Name="profileVersionId" Type="System.Version" />
+      </Parameters>
+      <Docs>
+        <param name="workflowType">ワークフローの <see cref="T:System.Type" />。</param>
+        <param name="profileVersionId">追跡プロファイルの <see cref="T:System.Version" />。</param>
+        <summary>派生クラス内でオーバーライドされる必要があります。実装されると、バージョンで修飾された、特定のワークフロー <see cref="T:System.Type" /> に関する追跡プロファイルを返します。</summary>
+        <returns>指定したワークフローの種類の追跡プロファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡サービスは、特定の種類のワークフローとインスタンスに利用できる追跡プロファイルを管理します。 この管理機能は、どのような方法でも実装できます。 たとえば、すべてのワークフローの <xref:System.Workflow.Runtime.Tracking.TrackingProfile> およびワークフロー インスタンスに対して同じ <xref:System.Type> を返すことができます。また、ワークフロー インスタンス、ワークフローの <xref:System.Type>、および <xref:System.Version> によって参照される追跡プロファイルの保存場所を管理することもできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTrackingChannel">
+      <MemberSignature Language="C#" Value="protected abstract System.Workflow.Runtime.Tracking.TrackingChannel GetTrackingChannel (System.Workflow.Runtime.Tracking.TrackingParameters parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Workflow.Runtime.Tracking.TrackingChannel GetTrackingChannel(class System.Workflow.Runtime.Tracking.TrackingParameters parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingService.GetTrackingChannel(System.Workflow.Runtime.Tracking.TrackingParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Workflow.Runtime.Tracking.TrackingParameters" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">ワークフロー インスタンスに関連した <see cref="T:System.Workflow.Runtime.Tracking.TrackingParameters" />。</param>
+        <summary>派生クラス内でオーバーライドされる必要があります。実装されると、追跡レコードを追跡サービスに送るためにランタイム追跡インフラストラクチャが使用するチャネルを返します。</summary>
+        <returns>追跡レコードを追跡サービスに送るために使用される <see cref="T:System.Workflow.Runtime.Tracking.TrackingChannel" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ランタイム追跡インフラストラクチャは、各ワークフロー インスタンスの追跡サービスごとに 1 つの <xref:System.Workflow.Runtime.Tracking.TrackingChannel> を使用します。 ワークフロー ランタイム エンジンは、それぞれの追跡サービスに対して <xref:System.Workflow.Runtime.Tracking.TrackingService.GetTrackingChannel%2A> を呼び出すことにより、そのサービスの <xref:System.Workflow.Runtime.Tracking.TrackingChannel> を取得します。 <xref:System.Workflow.Runtime.Tracking.TrackingParameters> で渡される情報を使用すれば、追跡サービスの <xref:System.Workflow.Runtime.Tracking.TrackingChannel> で送られる追跡データを特定のルート ワークフロー インスタンスに関連付けることができます。  
+  
+   
+  
+## Examples  
+ `GetTrackingChannel` メソッドを実装する例を次に示します。 この例は、終了追跡サービスの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][終了追跡サービスのサンプル](http://msdn.microsoft.com/en-us/29b7c0d7-cece-4bb9-96d0-c5b6c6e14439)です。  
+  
+ [!code-csharp[WF_Samples#113](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#113)]
+ [!code-vb[WF_Samples#113](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#113)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetProfile">
+      <MemberSignature Language="C#" Value="protected abstract bool TryGetProfile (Type workflowType, out System.Workflow.Runtime.Tracking.TrackingProfile profile);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool TryGetProfile(class System.Type workflowType, [out] class System.Workflow.Runtime.Tracking.TrackingProfile&amp; profile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingService.TryGetProfile(System.Type,System.Workflow.Runtime.Tracking.TrackingProfile@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowType" Type="System.Type" />
+        <Parameter Name="profile" Type="System.Workflow.Runtime.Tracking.TrackingProfile&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="workflowType">追跡プロファイルを取得する対象のワークフローの <see cref="T:System.Type" />。</param>
+        <param name="profile">このメソッドから制御が戻るときに、読み込む <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>派生クラス内でオーバーライドされる必要があります。実装されると、特定のワークフロー型 (存在する場合) に関する追跡プロファイルを取得します。</summary>
+        <returns>
+          指定したワークフロー <see langword="true" /> の <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> が存在する場合は <see cref="T:System.Type" />。それ以外の場合は <see langword="false" />。 <see langword="true" /> の場合、<see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> は <paramref name="profile" /> で返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡サービスは、特定の種類のワークフローとインスタンスに利用できる追跡プロファイルを管理します。 この管理機能は、どのような方法でも実装できます。 たとえば、すべてのワークフローの <xref:System.Workflow.Runtime.Tracking.TrackingProfile> およびワークフロー インスタンスに対して同じ <xref:System.Type> を返すことができます。また、ワークフロー インスタンス、ワークフローの <xref:System.Type>、および <xref:System.Version> によって参照される追跡プロファイルの保存場所を管理することもできます。  
+  
+   
+  
+## Examples  
+ プライベート `TryGetProfile` メソッドを呼び出す `GetProfile` メソッドを実装する方法の例を次に示します。 この例は、終了追跡サービスの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][終了追跡サービスのサンプル](http://msdn.microsoft.com/en-us/29b7c0d7-cece-4bb9-96d0-c5b6c6e14439)です。  
+  
+ [!code-csharp[Wf_samples#209](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#209)]
+ [!code-vb[Wf_samples#209](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#209)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryReloadProfile">
+      <MemberSignature Language="C#" Value="protected abstract bool TryReloadProfile (Type workflowType, Guid workflowInstanceId, out System.Workflow.Runtime.Tracking.TrackingProfile profile);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool TryReloadProfile(class System.Type workflowType, valuetype System.Guid workflowInstanceId, [out] class System.Workflow.Runtime.Tracking.TrackingProfile&amp; profile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.TrackingService.TryReloadProfile(System.Type,System.Guid,System.Workflow.Runtime.Tracking.TrackingProfile@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowType" Type="System.Type" />
+        <Parameter Name="workflowInstanceId" Type="System.Guid" />
+        <Parameter Name="profile" Type="System.Workflow.Runtime.Tracking.TrackingProfile&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="workflowType">ワークフロー インスタンスの <see cref="T:System.Type" />。</param>
+        <param name="workflowInstanceId">ワークフロー インスタンスの <see cref="T:System.Guid" />。</param>
+        <param name="profile">このメソッドから制御が戻るときに、読み込む <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>派生クラス内でオーバーライドされる必要があります。実装されると、最後の読み込み以降に追跡プロファイルが変化した場合、特定のワークフロー インスタンスの新しい追跡プロファイルを取得します。</summary>
+        <returns>
+          新しい <see langword="true" /> を読み込む必要がある場合は <see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" />。それ以外の場合は <see langword="false" />。 <see langword="true" /> の場合、<see cref="T:System.Workflow.Runtime.Tracking.TrackingProfile" /> は <paramref name="profile" /> で返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.TrackingService.TryReloadProfile%2A> は、指定したワークフロー インスタンスの新しい <xref:System.Workflow.Runtime.Tracking.TrackingProfile> を読み込むべきかどうか判別するためにランタイム追跡インフラストラクチャによって呼び出されます。 新しい <xref:System.Workflow.Runtime.Tracking.TrackingProfile> が必要な場合、`profile` で返されます。 ランタイム追跡インフラストラクチャにワークフロー インスタンスの追跡を停止させるには、追跡サービスが `true` を返し、`profile` を null 参照 (Visual Basic では `Nothing`) に設定する必要があります。 追跡プロファイルを再読み込みする必要があるかどうかを判別するために、追跡サービスは `workflowType` または `workflowInstanceId` を任意の方法で使用できます。 たとえば、<xref:System.Workflow.Runtime.Tracking.SqlTrackingService> は、追跡プロファイルを再読み込みする必要があるかどうかを判別するために `workflowInstanceId` のみを使用します。 ランタイム追跡インフラストラクチャ独自の追跡セマンティクスに応じて、またはワークフロー インスタンスに対するホストまたはサービスによる <xref:System.Workflow.Runtime.Tracking.TrackingService.TryReloadProfile%2A> 呼び出しの応答として、<xref:System.Workflow.Runtime.WorkflowInstance.ReloadTrackingProfiles%2A?displayProperty=nameWithType> がランタイム追跡インフラストラクチャによって呼び出されます。  
+  
+   
+  
+## Examples  
+ `TryReloadProfile` メソッドの基本実装の例を次に示します。 この例は、終了追跡サービスの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][終了追跡サービスのサンプル](http://msdn.microsoft.com/en-us/29b7c0d7-cece-4bb9-96d0-c5b6c6e14439)です。  
+  
+ [!code-csharp[WF_Samples#116](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#116)]
+ [!code-vb[WF_Samples#116](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#116)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

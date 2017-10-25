@@ -1,0 +1,268 @@
+<Type Name="PageRange" FullName="System.Windows.Controls.PageRange">
+  <TypeSignature Language="C#" Value="public struct PageRange" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit PageRange extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.PageRange" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ページ範囲を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.PageRange>印刷などの操作で処理する必要がありますのあるページの範囲を定義します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageRange (int page);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 page) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.PageRange.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="page" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="page">印刷または処理するページ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Controls.PageRange" />を 1 つの指定したページのみを含むクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `page`パラメーターの値は 1 から始まるはページ番号 1、最初のページです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PageRange (int pageFrom, int pageTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 pageFrom, int32 pageTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.PageRange.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pageFrom" Type="System.Int32" />
+        <Parameter Name="pageTo" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="pageFrom">範囲の最初のページ。</param>
+        <param name="pageTo">範囲の最後のページ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Controls.PageRange" />指定の最初と最後のページを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `pageFrom`と`PageTo`パラメーター値は 1 ベースです。 は、最初のページ、ページ番号は 1 です。  
+  
+ 範囲には、両方が含まれているため、ページの合計数は、「から」、"to"ページ"<xref:System.Windows.Controls.PageRange.PageTo%2A>  -  <xref:System.Windows.Controls.PageRange.PageFrom%2A> + 1" です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.PageRange.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">テスト対象のオブジェクト。</param>
+        <summary>不明な型のオブジェクトがこれに等しいかどうかをテスト<see cref="T:System.Windows.Controls.PageRange" />です。</summary>
+        <returns>
+          <see langword="true" />オブジェクトの型の場合<see cref="T:System.Windows.Controls.PageRange" />、これと同じ<see cref="T:System.Windows.Controls.PageRange" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Controls.PageRange pageRange);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.Controls.PageRange pageRange) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.PageRange.Equals(System.Windows.Controls.PageRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageRange" Type="System.Windows.Controls.PageRange" />
+      </Parameters>
+      <Docs>
+        <param name="pageRange"><see cref="T:System.Windows.Controls.PageRange" />をテストします。</param>
+        <summary>テストするかどうか、<see cref="T:System.Windows.Controls.PageRange" />がこれに等しい<see cref="T:System.Windows.Controls.PageRange" />です。</summary>
+        <returns>
+          2 つの <see cref="T:System.Windows.Controls.PageRange" /> オブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.PageRange.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コード値を取得、<see cref="T:System.Windows.Controls.PageRange" />です。</summary>
+        <returns>ハッシュ コード値、<see cref="T:System.Windows.Controls.PageRange" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Controls.PageRange pr1, System.Windows.Controls.PageRange pr2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Controls.PageRange pr1, valuetype System.Windows.Controls.PageRange pr2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.PageRange.op_Equality(System.Windows.Controls.PageRange,System.Windows.Controls.PageRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pr1" Type="System.Windows.Controls.PageRange" />
+        <Parameter Name="pr2" Type="System.Windows.Controls.PageRange" />
+      </Parameters>
+      <Docs>
+        <param name="pr1">最初の <see cref="T:System.Windows.Controls.PageRange" />。</param>
+        <param name="pr2">第 2 の <see cref="T:System.Windows.Controls.PageRange" />。</param>
+        <summary>指定した 2 つあるかどうか、テスト用「= =」演算子を定義<see cref="T:System.Windows.Controls.PageRange" />オブジェクトが等しい。</summary>
+        <returns>
+          2 つの <see cref="T:System.Windows.Controls.PageRange" /> オブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Windows.Controls.PageRange.Equals*?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Controls.PageRange pr1, System.Windows.Controls.PageRange pr2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Controls.PageRange pr1, valuetype System.Windows.Controls.PageRange pr2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.PageRange.op_Inequality(System.Windows.Controls.PageRange,System.Windows.Controls.PageRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pr1" Type="System.Windows.Controls.PageRange" />
+        <Parameter Name="pr2" Type="System.Windows.Controls.PageRange" />
+      </Parameters>
+      <Docs>
+        <param name="pr1">最初の <see cref="T:System.Windows.Controls.PageRange" />。</param>
+        <param name="pr2">第 2 の <see cref="T:System.Windows.Controls.PageRange" />。</param>
+        <summary>定義、"! ="指定した 2 つあるかどうかをテストするための演算子<see cref="T:System.Windows.Controls.PageRange" />オブジェクトが*いない*等しい。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.Controls.PageRange" />オブジェクトが*いない*と等しい、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法の否定であります。<xref:System.Windows.Controls.PageRange.Equals%2A?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageFrom">
+      <MemberSignature Language="C#" Value="public int PageFrom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageFrom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.PageRange.PageFrom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または範囲の最初のページのページ番号を設定します。</summary>
+        <value>範囲の最初のページのページの 1 から始まる番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.PageRange.PageFrom%2A>プロパティは 1 から始まるはページ番号 1、最初のページです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageTo">
+      <MemberSignature Language="C#" Value="public int PageTo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageTo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.PageRange.PageTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または範囲の最後のページのページ番号を設定します。</summary>
+        <value>範囲の最後のページのページの 1 から始まる番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.PageRange.PageTo%2A>プロパティは 1 から始まるはページ番号 1、最初のページです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.PageRange.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>範囲の文字列表現を取得します。</summary>
+        <returns>形式内のページの範囲を表す文字列"<see cref="P:System.Windows.Controls.PageRange.PageFrom" /><c>-</c><see cref="P:System.Windows.Controls.PageRange.PageTo" />"です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

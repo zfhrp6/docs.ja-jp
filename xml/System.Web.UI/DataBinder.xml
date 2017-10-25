@@ -1,0 +1,493 @@
+<Type Name="DataBinder" FullName="System.Web.UI.DataBinder">
+  <TypeSignature Language="C#" Value="public sealed class DataBinder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataBinder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataBinder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーションの迅速な開発を生成し、データ バインディング式の構文を解析する (RAD) デザイナーのサポートを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロードされた、静的なを使用する<xref:System.Web.UI.DataBinder.Eval%2A>ASP.NET Web ページにデータ バインディングの構文では、このクラスのメソッドです。 これはより標準的なデータ バインディングを使用する簡単な構文を提供します。 ただし、ため`DataBinder.Eval`自動型変換は、パフォーマンスが低下する可能性がします。  
+  
+ ASP.NET データ バインド、式、および構文の詳細については、次を参照してください。[データベースへのバインド](http://msdn.microsoft.com/en-us/ab7b2846-975b-4057-a948-45527497c742)と[データ バインド式の概要](http://msdn.microsoft.com/library/14cdd57d-0f82-4667-b503-73e1a96f136a)です。  
+  
+ .NET Framework 4.5 以降、モデル バインディングを使用して、以前のバージョンでのデータ バインディングを使用して実行する必要があるタスクの一部を簡単にします。 Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+   
+  
+## Examples  
+ 次の例は、静的な<xref:System.Web.UI.DataBinder.GetPropertyValue%2A>のフィールドに設定する方法、<xref:System.Web.UI.WebControls.Repeater>制御を使用して、<xref:System.Collections.ArrayList>の`Product`オブジェクト。 <xref:System.Web.UI.DataBinder.Eval%2A>メソッドは、同じ構文で適用できませんでしたがすぐに実行しません。  
+  
+ この例で使用するカスタム`Product`文字列を公開するクラス`Model`プロパティと、数値`UnitPrice`プロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.DataBinder#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.DataBinder/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.DataBinder#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.DataBinder/VB/Default.aspx#1)]  
+  
+ 次のコードは、カスタム`Product`クラスです。 このコードは、Product.cs または Product.vb など、App_Code ディレクトリに別個のクラス ファイルに含める必要があります。  
+  
+ [!code-csharp[System.Web.UI.DataBinder#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.DataBinder/CS/App_Code/Product.cs#2)]
+ [!code-vb[System.Web.UI.DataBinder#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.DataBinder/VB/App_Code/Product.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataBinder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataBinder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableCaching">
+      <MemberSignature Language="C#" Value="public static bool EnableCaching { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool EnableCaching" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBinder.EnableCaching" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを実行時にデータのキャッシュが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />キャッシュが有効な場合、<see cref="T:System.Web.UI.DataBinder" />クラスです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Eval">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>リフレクションを使用して、解析および実行時にオブジェクトに対して、データ バインディング式を評価します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework 4.5 以降、モデル バインディングを使用して、以前のバージョンでのデータ バインディングを使用して実行する必要があるタスクの一部を簡単にします。 Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Eval">
+      <MemberSignature Language="C#" Value="public static object Eval (object container, string expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Eval(object container, string expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.Eval(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="expression" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="container">式の評価対象となるオブジェクトの参照。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <param name="expression">ナビゲーション パス、<c>コンテナー</c>オブジェクトをバインドされたコントロール プロパティに格納されるパブリック プロパティの値にします。 プロパティまたはフィールド名をなど、ピリオドで区切られた文字列でなければなりません<c>テーブル [0]。既定のビューです。[0]。価格</c>(C#) または<c>Tables(0) です。既定のビューです。(0) です。価格</c>Visual Basic でします。</param>
+        <summary>実行時にデータ バインディング式を評価します。</summary>
+        <returns><see cref="T:System.Object" />データ バインディング式を評価して得た結果インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、`expression`パラメーターは、パブリック プロパティに評価される必要があります。  
+  
+ Visual Studio などのアプリケーションの迅速な development (RAD) デザイナーでのデータ バインドを作成する場合、このメソッドは自動的に呼び出されます。 使用することできますも宣言的テキスト文字列にキャストします。 使用するためには、`<%#  %>`式の構文、標準の ASP.NET データ バインドで使用されています。  
+  
+ このメソッドは、テンプレートの一覧にあるコントロールにデータをバインドするときに特に便利です。  
+  
+> [!NOTE]
+>  このメソッドは、遅延バインディングの評価を実行するため、実行時にリフレクションを使用して生じるパフォーマンス低下の標準の ASP.NET データ バインド構文を比較対象とします。  
+  
+ 一覧のいずれかの Web などのコントロール、 <xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.DetailsView>、 <xref:System.Web.UI.WebControls.DataList>、または<xref:System.Web.UI.WebControls.Repeater>、`container`する必要があります`Container.DataItem`です。 ページで、に対してをバインドする場合`container`する必要があります`Page`です。  
+  
+ .NET Framework 4.5 以降、モデル バインディングを使用して、以前のバージョンでのデータ バインディングを使用して実行する必要があるタスクの一部を簡単にします。 Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示して、`Eval`にデータをバインドするメソッド<xref:System.Web.UI.WebControls.Repeater>コントロール。 製品をという名前のデータ クラスが必要です。  
+  
+ [!code-csharp[System.Web.UI.DataBinder.Eval#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/product.cs#1)]
+ [!code-vb[System.Web.UI.DataBinder.Eval#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/product.vb#1)]  
+  
+ 分離コード ファイルがテスト データを読み込み、そのデータにバインドする<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ [!code-csharp[System.Web.UI.DataBinder.Eval#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts.aspx.cs#2)]
+ [!code-vb[System.Web.UI.DataBinder.Eval#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts.aspx.vb#2)]  
+  
+ 宣言構文で、<xref:System.Web.UI.WebControls.Repeater>コントロールを使用する、<xref:System.Web.UI.DataBinder.Eval%2A>メソッドを`Container.DataItem`の`container`パラメーター。  
+  
+ [!code-aspx-csharp[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts3.aspx#3)]
+ [!code-aspx-vb[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts3.aspx#3)]  
+  
+ 呼び出すか、または、`Eval`関数し、は含まれません、`container`パラメーター。  
+  
+ [!code-aspx-csharp[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts4.aspx#4)]
+ [!code-aspx-vb[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts4.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="expression" /><see langword="null" />トリミング後、または空の文字列。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Eval">
+      <MemberSignature Language="C#" Value="public static string Eval (object container, string expression, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Eval(object container, string expression, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.Eval(System.Object,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="expression" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="container">式の評価対象となるオブジェクトの参照。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <param name="expression">ナビゲーション パス、<c>コンテナー</c>オブジェクトをバインドされたコントロール プロパティに格納されるパブリック プロパティの値にします。 プロパティまたはフィールド名をなど、ピリオドで区切られた文字列でなければなりません<c>テーブル [0]。既定のビューです。[0]。価格</c>(C#) または<c>Tables(0) です。既定のビューです。(0) です。価格</c>Visual Basic でします。</param>
+        <param name="format">.NET Framework 形式文字列 (で使用されるものと同様に<see cref="M:System.String.Format(System.String,System.Object)" />) に変換する、<see cref="T:System.Object" />にデータ バインディング式によって返されるインスタンス、<see cref="T:System.String" />オブジェクト。</param>
+        <summary>実行時にデータ バインディング式を評価し、結果の文字列の書式を設定します。</summary>
+        <returns>A<see cref="T:System.String" />オブジェクト データ バインディング式を評価して、文字列型への変換を実行した結果します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`expression`パブリック プロパティに評価される必要があります。  
+  
+ .NET Framework の書式指定文字列の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ Visual Studio などのアプリケーションの迅速な development (RAD) デザイナーでのデータ バインドを作成する場合、このメソッドは自動的に呼び出されます。 使用することできますも宣言的に変換する、<xref:System.Object>にデータ バインディング式からその結果、<xref:System.String>です。  使用するには、メソッド宣言を使用して、`<%#   %>`式の構文、標準の ASP.NET データ バインドで使用されています。  
+  
+ このメソッドは、テンプレートの一覧にあるコントロールにデータをバインドするときに特に便利です。  
+  
+> [!NOTE]
+>  このメソッドは、遅延バインディングの評価を実行するため、実行時にリフレクションを使用して生じるパフォーマンス低下の標準の ASP.NET データ バインド構文を比較対象とします。 文字列の書式設定する必要がない場合に特に慎重に、このメソッドを使用します。  
+  
+ 一覧のいずれかの Web などのコントロール、 <xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.DetailsView>、 <xref:System.Web.UI.WebControls.DataList>、または<xref:System.Web.UI.WebControls.Repeater>、`container`する必要があります`Container.DataItem`です。 ページで、に対してをバインドする場合`container`する必要があります`Page`です。  
+  
+ .NET Framework 4.5 以降、モデル バインディングを使用して、以前のバージョンでのデータ バインディングを使用して実行する必要があるタスクの一部を簡単にします。 Web フォーム モデル バインディングの使用に関するチュートリアル シリーズは、次を参照してください。[モデル バインディング機能と Web フォーム](http://go.microsoft.com/fwlink/?LinkId=286117)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示して、`Eval`にデータをバインドするメソッド<xref:System.Web.UI.WebControls.Repeater>コントロール。 製品をという名前のデータ クラスが必要です。  
+  
+ [!code-csharp[System.Web.UI.DataBinder.Eval#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/product.cs#1)]
+ [!code-vb[System.Web.UI.DataBinder.Eval#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/product.vb#1)]  
+  
+ 分離コード ファイルがテスト データを読み込み、そのデータにバインドする<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ [!code-csharp[System.Web.UI.DataBinder.Eval#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts.aspx.cs#2)]
+ [!code-vb[System.Web.UI.DataBinder.Eval#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts.aspx.vb#2)]  
+  
+ 宣言構文で、<xref:System.Web.UI.WebControls.Repeater>コントロールを使用する、<xref:System.Web.UI.DataBinder.Eval%2A>メソッドを`Container.DataItem`の`container`パラメーター。  
+  
+ [!code-aspx-csharp[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts3.aspx#3)]
+ [!code-aspx-vb[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts3.aspx#3)]  
+  
+ 呼び出すか、または、`Eval`関数し、は含まれません、`container`パラメーター。  
+  
+ [!code-aspx-csharp[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts4.aspx#4)]
+ [!code-aspx-vb[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts4.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataItem">
+      <MemberSignature Language="C#" Value="public static object GetDataItem (object container);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetDataItem(object container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetDataItem(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="container">式の評価対象となるオブジェクトの参照。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <summary>オブジェクトの宣言されたデータ項目を取得します。</summary>
+        <returns>コンテナーの宣言されたデータ項目を表すオブジェクト。 返します<see langword="null" />データ項目が見つからない場合、またはに評価されると、コンテナー<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Web.UI.DataBinder.GetDataItem%28System.Object%2CSystem.Boolean%40%29>メソッドを無視してその`foundDataItem`パラメーター、結果を返すときにします。  
+  
+ オブジェクトのデータ項目は、2 つの方法のいずれかで識別されます。 コンテナー オブジェクトを実装する場合、 <xref:System.Web.UI.IDataItemContainer> 、インターフェイス、<xref:System.Web.UI.IDataItemContainer.DataItem%2A>プロパティは、データ項目を識別し、その値が返されます。 それ以外の場合、メソッドは、解決するには、"DataItem"という名前のコンテナーのプロパティを取得を試みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataItem">
+      <MemberSignature Language="C#" Value="public static object GetDataItem (object container, out bool foundDataItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetDataItem(object container, [out] bool&amp; foundDataItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetDataItem(System.Object,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="foundDataItem" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="container">式の評価対象となるオブジェクトの参照。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <param name="foundDataItem">データ項目が正常に解決および返されるかどうかを示すブール値。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>成功または失敗を示す、オブジェクトの宣言されたデータ項目を取得します。</summary>
+        <returns>コンテナーの宣言されたデータ項目を表すオブジェクト。 返します<see langword="null" />データ項目が見つからない場合、またはに評価されると、コンテナー<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトのデータ項目では、2 つの方法を識別します。 コンテナー オブジェクトを実装する場合、 <xref:System.Web.UI.IDataItemContainer> 、インターフェイス、<xref:System.Web.UI.IDataItemContainer.DataItem%2A>プロパティは、データ項目を識別しが返されます。 それ以外の場合、メソッドは、解決するには、"DataItem"という名前のコンテナーのプロパティを取得を試みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIndexedPropertyValue">
+      <MemberSignature Language="C#" Value="public static object GetIndexedPropertyValue (object container, string expr);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetIndexedPropertyValue(object container, string expr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetIndexedPropertyValue(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="expr" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="container">オブジェクトの参照を対象となる<c>expr</c>が評価されます。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <param name="expr">ナビゲーション パス、<c>コンテナー</c>オブジェクトをバインドされたコントロール プロパティに配置するパブリック プロパティの値にします。 プロパティまたはフィールド名をなど、ピリオドで区切られた文字列でなければなりません<c>テーブル [0]。既定のビューです。[0]。価格</c>(C#) または<c>Tables(0) です。既定のビューです。(0) です。価格</c>Visual Basic でします。</param>
+        <summary>指定したコンテナーおよびナビゲーション パスのプロパティの値を取得します。</summary>
+        <returns>データ バインディング式を評価して得た結果オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`expr`パブリック プロパティに評価される必要があります。  
+  
+ 一覧のいずれかの Web などのコントロール、 <xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.DetailsView>、 <xref:System.Web.UI.WebControls.DataList>、または<xref:System.Web.UI.WebControls.Repeater>、`container`する必要があります`Container.DataItem`です。 ページで、に対してをバインドする場合`container`する必要があります`Page`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="container" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="expr" /> は <see langword="null" /> または空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="expr" />有効なインデックス付き式ではありません。  
+  
+ \- または  
+  
+ <paramref name="expr" />インデックス付きのアクセスは許可されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIndexedPropertyValue">
+      <MemberSignature Language="C#" Value="public static string GetIndexedPropertyValue (object container, string propName, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetIndexedPropertyValue(object container, string propName, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetIndexedPropertyValue(System.Object,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="propName" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="container">式の評価対象となるオブジェクトの参照。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <param name="propName">取得する値を含むプロパティの名前。</param>
+        <param name="format">結果を表示する形式を指定する文字列。</param>
+        <summary>指定されたコンテナーの指定したプロパティの値を取得し、結果をフォーマットします。</summary>
+        <returns>指定された形式で指定したプロパティの値<paramref name="format" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A>メソッドを呼び出して、<xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A>メソッド、および、使用、<xref:System.String.Format%2A?displayProperty=nameWithType>メソッドで指定された結果を書式設定を`format`パラメーター。 .NET Framework 形式文字列 (で使用されるものと同様に<xref:System.String.Format%2A?displayProperty=nameWithType>) に変換、<xref:System.Object>にデータ バインディング式によって返されるインスタンス、<xref:System.String>オブジェクト。  
+  
+ スローされた例外、<xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A>メソッドを適用する、<xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A>メソッドもします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A>宣言によって、インデックス付きの値にバインドするメソッド。  
+  
+ [!code-aspx-csharp[Classic DataBinder.Eval Example#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataBinder.Eval Example/CS/sourcecs.aspx#2)]
+ [!code-aspx-vb[Classic DataBinder.Eval Example#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataBinder.Eval Example/VB/sourcevb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyValue">
+      <MemberSignature Language="C#" Value="public static object GetPropertyValue (object container, string propName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetPropertyValue(object container, string propName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetPropertyValue(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="propName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="container">プロパティを格納するオブジェクト。</param>
+        <param name="propName">取得する値を含むプロパティの名前。</param>
+        <summary>指定したオブジェクトの指定したプロパティの値を取得します。</summary>
+        <returns>指定したプロパティの値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataBinder.GetPropertyValue%2A>オブジェクト内のプロパティの値を取得するメソッドを使用します。  
+  
+   
+  
+## Examples  
+ 例を<xref:System.Web.UI.DataBinder>このメソッドの使用例を示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="container" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="propName" /> は <see langword="null" /> または空の文字列 ("") です。</exception>
+        <exception cref="T:System.Web.HttpException">内のオブジェクト<paramref name="container" />によって指定されたプロパティを持たない<paramref name="propName" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyValue">
+      <MemberSignature Language="C#" Value="public static string GetPropertyValue (object container, string propName, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPropertyValue(object container, string propName, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetPropertyValue(System.Object,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="propName" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="container">プロパティを格納するオブジェクト。</param>
+        <param name="propName">取得する値を含むプロパティの名前。</param>
+        <param name="format">結果を表示する形式を指定する文字列。</param>
+        <summary>指定したオブジェクトの指定したプロパティの値を取得し、し、結果を書式設定します。</summary>
+        <returns>指定された形式で指定したプロパティの値<paramref name="format" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Web.UI.DataBinder.GetPropertyValue%2A>メソッドを取得し、オブジェクトのプロパティの値の書式を使用します。  
+  
+   
+  
+## Examples  
+ 例を<xref:System.Web.UI.DataBinder>このメソッドの使用例を示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="container" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="propName" /> は <see langword="null" /> または空の文字列 ("") です。</exception>
+        <exception cref="T:System.Web.HttpException">内のオブジェクト<paramref name="container" />によって指定されたプロパティを持たない<paramref name="propName" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBindableType">
+      <MemberSignature Language="C#" Value="public static bool IsBindableType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsBindableType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.IsBindableType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />をテストするデータ型を表すです。</param>
+        <summary>指定したデータ型をバインドできるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />型にすることができますに自動的にコントロールにバインドされたデータそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

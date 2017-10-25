@@ -1,0 +1,97 @@
+<Type Name="MediaPermissionAudio" FullName="System.Security.Permissions.MediaPermissionAudio">
+  <TypeSignature Language="C#" Value="public enum MediaPermissionAudio" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MediaPermissionAudio extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.MediaPermissionAudio" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>オーディオのアクセス許可レベルを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙を使用して、<xref:System.Security.Permissions.MediaPermissionAudio>のプロパティ、<xref:System.Security.Permissions.MediaPermission>クラスです。 既定値は、SafeAudio です。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.MediaPermissionAttribute.Audio%2A>プロパティです。  
+  
+ [!code-csharp[SecurityPermissionsSnippets#MediaPermissionAttribute4](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityPermissionsSnippets/CSharp/Window1.xaml.cs#mediapermissionattribute4)]
+ [!code-vb[SecurityPermissionsSnippets#MediaPermissionAttribute4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SecurityPermissionsSnippets/visualbasic/window1.xaml.vb#mediapermissionattribute4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllAudio">
+      <MemberSignature Language="C#" Value="AllAudio" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.MediaPermissionAudio AllAudio = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.MediaPermissionAudio.AllAudio" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.MediaPermissionAudio</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>無制限のオーディオ再生できるアクセス許可。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoAudio">
+      <MemberSignature Language="C#" Value="NoAudio" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.MediaPermissionAudio NoAudio = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.MediaPermissionAudio.NoAudio" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.MediaPermissionAudio</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのオーディオ再生を拒否する権限です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SafeAudio">
+      <MemberSignature Language="C#" Value="SafeAudio" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.MediaPermissionAudio SafeAudio = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.MediaPermissionAudio.SafeAudio" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.MediaPermissionAudio</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>安全に実行できるアクセス許可には、イメージ ファイルへのストリーム アクセスを拒否することが含まれるオーディオの再生が制限されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SiteOfOriginAudio">
+      <MemberSignature Language="C#" Value="SiteOfOriginAudio" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.MediaPermissionAudio SiteOfOriginAudio = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.MediaPermissionAudio.SiteOfOriginAudio" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.MediaPermissionAudio</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>のみが元のアプリケーションのサイトにあるファイルのオーディオの再生を許可する権限です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

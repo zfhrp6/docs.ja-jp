@@ -1,0 +1,224 @@
+<Type Name="JpegBitmapEncoder" FullName="System.Windows.Media.Imaging.JpegBitmapEncoder">
+  <TypeSignature Language="C#" Value="public sealed class JpegBitmapEncoder : System.Windows.Media.Imaging.BitmapEncoder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit JpegBitmapEncoder extends System.Windows.Media.Imaging.BitmapEncoder" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.JpegBitmapEncoder" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Imaging.BitmapEncoder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Joint Photographics JPEG (Experts Group) 形式のイメージのエンコードに使用されるエンコーダーを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_jpegorg](~/includes/tlasharptla-jpegorg-md.md)]形式のビットマップは、フレーム レベル サムネイルとフレーム レベルのメタデータをサポートします。 プレビュー、グローバルな縮小表示、グローバルなメタデータ、または複数のフレームはサポートしていません。  
+  
+ エンコーディングは、部分信頼では機能しません。 参照してください[WPF 部分信頼セキュリティ](~/docs/framework/wpf/wpf-partial-trust-security.md)については部分的に信頼します。  
+  
+<a name="xamlTextUsage_No"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JpegBitmapEncoder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.JpegBitmapEncoder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Imaging.JpegBitmapEncoder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、初期化、<xref:System.Windows.Media.Imaging.JpegBitmapEncoder>新しいビットマップ イメージのエンコードにします。  
+  
+ [!code-cpp[jpegbitmapdecoderencoder#2](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#2)]
+ [!code-csharp[jpegbitmapdecoderencoder#2](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#2)]
+ [!code-vb[jpegbitmapdecoderencoder#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#2)]  
+[!code-cpp[jpegbitmapdecoderencoder#3](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#3)]
+[!code-csharp[jpegbitmapdecoderencoder#3](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#3)]
+[!code-vb[jpegbitmapdecoderencoder#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlipHorizontal">
+      <MemberSignature Language="C#" Value="public bool FlipHorizontal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FlipHorizontal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.JpegBitmapEncoder.FlipHorizontal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、[!INCLUDE[TLA#tla_jpegorg](~/includes/tlasharptla-jpegorg-md.md)]エンコード中にイメージを水平方向に反転する必要があります。</summary>
+        <value>
+          <see langword="true" />エンコード時にイメージを水平方向に反転させる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_FlipHorizontal"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 水平方向に反転は、元の画像の無損失変換を表し、以前のすべてのロスレス変換が置き換えられます。  
+  
+   
+  
+## Examples  
+ 次の例は、の値を設定する方法を示します、<xref:System.Windows.Media.Imaging.JpegBitmapEncoder.FlipHorizontal%2A>プロパティです。  
+  
+ [!code-cpp[jpegbitmapdecoderencoder#2](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#2)]
+ [!code-csharp[jpegbitmapdecoderencoder#2](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#2)]
+ [!code-vb[jpegbitmapdecoderencoder#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#2)]  
+[!code-cpp[jpegbitmapdecoderencoder#3](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#3)]
+[!code-csharp[jpegbitmapdecoderencoder#3](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#3)]
+[!code-vb[jpegbitmapdecoderencoder#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlipVertical">
+      <MemberSignature Language="C#" Value="public bool FlipVertical { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FlipVertical" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.JpegBitmapEncoder.FlipVertical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、[!INCLUDE[TLA#tla_jpegorg](~/includes/tlasharptla-jpegorg-md.md)]エンコード中にイメージを垂直方向に反転する必要があります。</summary>
+        <value>
+          <see langword="true" />エンコード時にイメージを垂直方向に反転させる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 垂直方向に反転は、元の画像の無損失変換を表し、以前のすべてのロスレス変換が置き換えられます。  
+  
+<a name="XAMLTextUsage_FlipVertical"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+   
+  
+## Examples  
+ 次の例は、の値を設定する方法を示します、<xref:System.Windows.Media.Imaging.JpegBitmapEncoder.FlipVertical%2A>プロパティです。  
+  
+ [!code-cpp[jpegbitmapdecoderencoder#2](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#2)]
+ [!code-csharp[jpegbitmapdecoderencoder#2](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#2)]
+ [!code-vb[jpegbitmapdecoderencoder#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#2)]  
+[!code-cpp[jpegbitmapdecoderencoder#3](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#3)]
+[!code-csharp[jpegbitmapdecoderencoder#3](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#3)]
+[!code-vb[jpegbitmapdecoderencoder#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QualityLevel">
+      <MemberSignature Language="C#" Value="public int QualityLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 QualityLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.JpegBitmapEncoder.QualityLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結果の品質レベルを示す値を取得または[!INCLUDE[TLA#tla_jpegorg](~/includes/tlasharptla-jpegorg-md.md)]イメージ。</summary>
+        <value>品質レベル、[!INCLUDE[TLA2#tla_jpegorg](~/includes/tla2sharptla-jpegorg-md.md)]イメージ。 値の範囲は、100 (最高品質) 包括的に 1 (最も低い品質) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="XAMLTextUsage_QualityLevel"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+   
+  
+## Examples  
+ 次の例は、の値を設定する方法を示します、<xref:System.Windows.Media.Imaging.JpegBitmapEncoder.QualityLevel%2A>プロパティです。  
+  
+ [!code-cpp[jpegbitmapdecoderencoder#2](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#2)]
+ [!code-csharp[jpegbitmapdecoderencoder#2](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#2)]
+ [!code-vb[jpegbitmapdecoderencoder#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#2)]  
+[!code-cpp[jpegbitmapdecoderencoder#3](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#3)]
+[!code-csharp[jpegbitmapdecoderencoder#3](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#3)]
+[!code-vb[jpegbitmapdecoderencoder#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotation">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Imaging.Rotation Rotation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Imaging.Rotation Rotation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.JpegBitmapEncoder.Rotation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.Rotation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する度合いを表す値、[!INCLUDE[TLA#tla_jpegorg](~/includes/tlasharptla-jpegorg-md.md)]イメージを回転します。</summary>
+        <value>イメージを回転する角度です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 回転は、90 ° 刻みでのみサポートされます。  
+  
+ 回転角度は、元の画像の無損失変換を表すし、以前のすべてのロスレス変換を置き換えます。  
+  
+<a name="XAMLTextUsage_Rotation"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+   
+  
+## Examples  
+ 次の例は、の値を設定する方法を示します、<xref:System.Windows.Media.Imaging.JpegBitmapEncoder.Rotation%2A>プロパティです。  
+  
+ [!code-cpp[jpegbitmapdecoderencoder#2](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#2)]
+ [!code-csharp[jpegbitmapdecoderencoder#2](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#2)]
+ [!code-vb[jpegbitmapdecoderencoder#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#2)]  
+[!code-cpp[jpegbitmapdecoderencoder#3](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#3)]
+[!code-csharp[jpegbitmapdecoderencoder#3](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#3)]
+[!code-vb[jpegbitmapdecoderencoder#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

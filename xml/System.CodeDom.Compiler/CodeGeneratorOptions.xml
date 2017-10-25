@@ -1,0 +1,238 @@
+<Type Name="CodeGeneratorOptions" FullName="System.CodeDom.Compiler.CodeGeneratorOptions">
+  <TypeSignature Language="C#" Value="public class CodeGeneratorOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CodeGeneratorOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コード ジェネレーターによって使用されるオプションのセットを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.Compiler.CodeGeneratorOptions>コード生成のメソッドに渡される、<xref:System.CodeDom.Compiler.ICodeGenerator>実装コードの生成中に使用するオプションを指定します。  
+  
+ <xref:System.CodeDom.Compiler.CodeGeneratorOptions.IndentString%2A>プロパティは、各間隔のインデントに使用する文字列を指定します。 <xref:System.CodeDom.Compiler.CodeGeneratorOptions.BracingStyle%2A>プロパティを示すコード ブロックの境界を中かっこの配置スタイルを指定します。 <xref:System.CodeDom.Compiler.CodeGeneratorOptions.ElseOnClosing%2A>プロパティを追加するかどうかを指定します、 `else`、 `catch`、または`finally`それぞれの終了行で、角かっこを含むブロック`if`または`try`ブロックします。 <xref:System.CodeDom.Compiler.CodeGeneratorOptions.BlankLinesBetweenMembers%2A>プロパティでは、メンバー間の空白行を挿入するかどうかを指定します。  
+  
+ <xref:System.CodeDom.Compiler.ICodeGenerator>実装でも、カスタム コードを生成オプションの提供できます設定またはを使用してデータを渡すことができる<xref:System.CodeDom.Compiler.CodeGeneratorOptions.Item%2A>ディクショナリ インデクサーは、追加のコード生成オプションを検索するコード ジェネレーターを探すことができます。  
+  
+> [!NOTE]
+>  このクラスには、リンク確認要求し、すべてのメンバーに適用されるクラス レベルの継承確認要求が含まれています。 A<xref:System.Security.SecurityException>直前の呼び出し元または派生クラスのいずれかに完全信頼アクセス許可がない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[CodeGeneratorOptionsExample#1](~/samples/snippets/cpp/VS_Snippets_CLR/CodeGeneratorOptionsExample/CPP/class1.cpp#1)]
+ [!code-csharp[CodeGeneratorOptionsExample#1](~/samples/snippets/csharp/VS_Snippets_CLR/CodeGeneratorOptionsExample/CS/class1.cs#1)]
+ [!code-vb[CodeGeneratorOptionsExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeGeneratorOptionsExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeGeneratorOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeGeneratorOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BlankLinesBetweenMembers">
+      <MemberSignature Language="C#" Value="public bool BlankLinesBetweenMembers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BlankLinesBetweenMembers" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeGeneratorOptions.BlankLinesBetweenMembers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメンバーの間の空白行を挿入するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />空白行を挿入する場合それ以外の場合、<see langword="false" />です。 既定では、このプロパティの値は<see langword="true" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BracingStyle">
+      <MemberSignature Language="C#" Value="public string BracingStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BracingStyle" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeGeneratorOptions.BracingStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはかっこを使用するスタイルを設定します。</summary>
+        <value>中かっこを使用するスタイルを含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は`Block`、そのコードを示すを生成するか、ステートメントまたは関連付けられている宣言と同じ行に中かっこを開始できるようにします。 プロパティの値`C`関連付けられているステートメントまたは宣言を次の行に中かっこを開始することを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElseOnClosing">
+      <MemberSignature Language="C#" Value="public bool ElseOnClosing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ElseOnClosing" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeGeneratorOptions.ElseOnClosing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または追加するかどうかを示す値を設定、 <see langword="else" />、 <see langword="catch" />、または<see langword="finally" />それぞれ以前の終了行で、角かっこを含むブロック<see langword="if" />または<see langword="try" />ブロックします。</summary>
+        <value>
+          <see langword="true" />場合は、他を追加する必要があります。それ以外の場合、<see langword="false" />です。 このプロパティの既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndentString">
+      <MemberSignature Language="C#" Value="public string IndentString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IndentString" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeGeneratorOptions.IndentString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインデントに使用する文字列を設定します。</summary>
+        <value>インデントに使用する文字を含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は"---//"(4 つのスペース)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeGeneratorOptions.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得するオブジェクトに関連付けられている名前です。</param>
+        <summary>取得または指定したインデックスにあるオブジェクトを設定します。</summary>
+        <value>指定した名前に関連付けられているオブジェクト。 コレクションに指定した名前に関連付けられたオブジェクトが存在しない場合<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このディクショナリは、開発者のコード ジェネレーターのカスタム機能のデータを提供するための機能拡張メカニズムを提供します。 コード ジェネレーターなどの機能を実装し、これを使用するためのディクショナリのチェックをサポートする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerbatimOrder">
+      <MemberSignature Language="C#" Value="public bool VerbatimOrder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool VerbatimOrder" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeGeneratorOptions.VerbatimOrder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメンバーのコレクションで出現する順序でメンバーを生成するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />メンバー コレクションに出現する順序でメンバーを生成するにはそれ以外の場合、<see langword="false" />です。 このプロパティの既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値がたとえば; で、型のメンバーを生成します。フィールド、メンバー、コンス トラクター、またはプロパティを表示します。  コード ジェネレーターが使用できる、<xref:System.CodeDom.Compiler.CodeGeneratorOptions.VerbatimOrder%2A>順序を変更するためのコードに #region ブロックを挿入するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

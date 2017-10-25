@@ -1,0 +1,50 @@
+<Type Name="IModalService" FullName="System.Activities.Presentation.IModalService">
+  <TypeSignature Language="C#" Value="public interface IModalService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IModalService" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.IModalService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ホスト アプリケーションへのモ-ダル ダイアログ ボックスが表示されたことの通知を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のアプリケーションでは、モーダル ダイアログ ボックスの起動時にホスト デザイナーに通知する必要があります。 このようなホストの 1 つの例が、Visual Studio です。 <xref:System.Activities.Presentation.IModalService> インターフェイスにより、現在のモーダルの状態を通信するためのインターフェイスを使用できるようになります。  
+  
+ Windows ワークフロー デザイナーは、<xref:System.Activities.Presentation.IModalService.SetModalState%2A> メソッドを呼び出します。 ときに、`isModal`にパラメーターが設定されている`true`、モーダル ダイアログ ボックスが表示されているホストに通知します。  
+  
+ これは省略可能なサービスです。 ホスト アプリケーションがモーダルの状態に留意しない場合、このサービスを使用する必要はありません。  
+  
+ 現在の実装で、Windows Presentation Foundation (WPF) メッセージ ボックス (モーダル ダイアログ ボックス) が呼び出された場合に、<xref:System.Activities.Presentation.IModalService.SetModalState%2A>は呼び出されません。 ホスト アプリケーションにこの情報が必要な場合は、別の方法を作成する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="SetModalState">
+      <MemberSignature Language="C#" Value="public void SetModalState (bool isModal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetModalState(bool isModal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.IModalService.SetModalState(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isModal" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isModal">場合設定<see langword="true" />、モーダル ダイアログ ボックスが表示されます。</param>
+        <summary>モ-ダル ダイアログ ボックスが表示されたことをホスト アプリケーションに通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

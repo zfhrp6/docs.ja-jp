@@ -1,0 +1,547 @@
+<Type Name="Automation" FullName="System.Windows.Automation.Automation">
+  <TypeSignature Language="C#" Value="public static class Automation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Automation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Automation" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>UI オートメーション クライアント アプリケーションのメソッドとフィールドを格納します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddAutomationEventHandler">
+      <MemberSignature Language="C#" Value="public static void AddAutomationEventHandler (System.Windows.Automation.AutomationEvent eventId, System.Windows.Automation.AutomationElement element, System.Windows.Automation.TreeScope scope, System.Windows.Automation.AutomationEventHandler eventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddAutomationEventHandler(class System.Windows.Automation.AutomationEvent eventId, class System.Windows.Automation.AutomationElement element, valuetype System.Windows.Automation.TreeScope scope, class System.Windows.Automation.AutomationEventHandler eventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.AddAutomationEventHandler(System.Windows.Automation.AutomationEvent,System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.Windows.Automation.AutomationEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventId" Type="System.Windows.Automation.AutomationEvent" />
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="scope" Type="System.Windows.Automation.TreeScope" />
+        <Parameter Name="eventHandler" Type="System.Windows.Automation.AutomationEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="eventId">メソッドを処理するイベントの識別子。</param>
+        <param name="element">[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]イベント ハンドラーに関連付ける要素。</param>
+        <param name="scope">イベントが処理される; のスコープつまり、あるかに自体には、要素またはその先祖および子孫にします。</param>
+        <param name="eventHandler">指定したイベントが発生したときに呼び出すメソッド。</param>
+        <summary>処理するメソッドを登録[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ などのいくつかのクラス<xref:System.Windows.Automation.GridPattern>、公開フィールドをクラスに固有のイベントを識別します。 <xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A>メソッドを使用すると、これらのイベント ハンドラーを登録するメカニズムを備えています。  
+  
+ `eventHandler`インスタンス メソッド、またはメソッドへの参照を指定できます (`AddressOf` Visual Basic で)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAutomationFocusChangedEventHandler">
+      <MemberSignature Language="C#" Value="public static void AddAutomationFocusChangedEventHandler (System.Windows.Automation.AutomationFocusChangedEventHandler eventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddAutomationFocusChangedEventHandler(class System.Windows.Automation.AutomationFocusChangedEventHandler eventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.AddAutomationFocusChangedEventHandler(System.Windows.Automation.AutomationFocusChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventHandler" Type="System.Windows.Automation.AutomationFocusChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="eventHandler">イベントが発生したときに呼び出すメソッド。</param>
+        <summary>フォーカス変更イベントを処理するメソッドを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォーカス変更イベントがシステム全体です。狭いスコープを設定することはできません。  
+  
+ `eventHandler`インスタンス メソッド、またはメソッドへの参照を指定できます (`AddressOf` Visual Basic で)。  
+  
+   
+  
+## Examples  
+ 次の例では、フォーカス変更イベント ハンドラーを追加するために使用されるこのメソッドを示します。  
+  
+ [!code-csharp[UIAClient_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#102)]
+ [!code-vb[UIAClient_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAutomationPropertyChangedEventHandler">
+      <MemberSignature Language="C#" Value="public static void AddAutomationPropertyChangedEventHandler (System.Windows.Automation.AutomationElement element, System.Windows.Automation.TreeScope scope, System.Windows.Automation.AutomationPropertyChangedEventHandler eventHandler, params System.Windows.Automation.AutomationProperty[] properties);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddAutomationPropertyChangedEventHandler(class System.Windows.Automation.AutomationElement element, valuetype System.Windows.Automation.TreeScope scope, class System.Windows.Automation.AutomationPropertyChangedEventHandler eventHandler, class System.Windows.Automation.AutomationProperty[] properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.Windows.Automation.AutomationPropertyChangedEventHandler,System.Windows.Automation.AutomationProperty[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="scope" Type="System.Windows.Automation.TreeScope" />
+        <Parameter Name="eventHandler" Type="System.Windows.Automation.AutomationPropertyChangedEventHandler" />
+        <Parameter Name="properties" Type="System.Windows.Automation.AutomationProperty[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="element">[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]をイベント ハンドラーを関連付ける要素。</param>
+        <param name="scope">イベントが処理される; のスコープつまり、あるかに自体には、要素またはその先祖と子にします。</param>
+        <param name="eventHandler">イベントが発生したときに呼び出すメソッド。</param>
+        <param name="properties">[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]の該当するプロパティです。</param>
+        <summary>プロパティ変更イベントを処理するメソッドを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]で指定された指定した項目[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素で指定されたプロパティはサポートされませんが、`properties`パラメーター。  
+  
+ `eventHandler`インスタンス メソッド、またはメソッドへの参照を指定できます (`AddressOf` Visual Basic で)。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定した要素の有効な状態の変化をリッスンするイベント ハンドラーを追加します。  
+  
+ [!code-csharp[UIAClient_snip#172](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/PropertySnips.cs#172)]
+ [!code-vb[UIAClient_snip#172](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/PropertySnips.vb#172)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddStructureChangedEventHandler">
+      <MemberSignature Language="C#" Value="public static void AddStructureChangedEventHandler (System.Windows.Automation.AutomationElement element, System.Windows.Automation.TreeScope scope, System.Windows.Automation.StructureChangedEventHandler eventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddStructureChangedEventHandler(class System.Windows.Automation.AutomationElement element, valuetype System.Windows.Automation.TreeScope scope, class System.Windows.Automation.StructureChangedEventHandler eventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.AddStructureChangedEventHandler(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.Windows.Automation.StructureChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="scope" Type="System.Windows.Automation.TreeScope" />
+        <Parameter Name="eventHandler" Type="System.Windows.Automation.StructureChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]をイベント ハンドラーを関連付ける要素。</param>
+        <param name="scope">イベントが処理される; のスコープつまり、あるかに自体には、要素またはその先祖および子孫にします。</param>
+        <param name="eventHandler">構造の変更イベントが発生したときに呼び出すメソッド。</param>
+        <summary>構造体変更イベントを処理するメソッドを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `eventHandler`インスタンス メソッド、またはメソッドへの参照を指定できます (`AddressOf` Visual Basic で)。  
+  
+   
+  
+## Examples  
+ 次の例では、呼び出される構造変更イベント ハンドラー デリゲートするたびに、指定のサブツリー<xref:System.Windows.Automation.AutomationElement>変更します。  
+  
+ [!code-csharp[UIAFocusTracker_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFocusTracker_snip/CSharp/FocusTracker.cs#105)]
+ [!code-vb[UIAFocusTracker_snip#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFocusTracker_snip/VisualBasic/FocusTracker.vb#105)]  
+  
+ 次のコード例では、デリゲートのインスタンスを追加します。  
+  
+ [!code-csharp[UIAFocusTracker_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFocusTracker_snip/CSharp/FocusTracker.cs#104)]
+ [!code-vb[UIAFocusTracker_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFocusTracker_snip/VisualBasic/FocusTracker.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public static bool Compare (int[] runtimeId1, int[] runtimeId2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Compare(int32[] runtimeId1, int32[] runtimeId2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.Compare(System.Int32[],System.Int32[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="runtimeId1" Type="System.Int32[]" />
+        <Parameter Name="runtimeId2" Type="System.Int32[]" />
+      </Parameters>
+      <Docs>
+        <param name="runtimeId1">最初の実行時[!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]を比較します。</param>
+        <param name="runtimeId2">2 つ目の実行時[!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]を比較します。</param>
+        <summary>実行時を含む 2 つの整数の配列を比較して[!INCLUDE[TLA#tla_id#plural](~/includes/tlasharptla-idsharpplural-md.md)]コンテンツが同じかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、比較の実行時[!INCLUDE[TLA2#tla_id#plural](~/includes/tla2sharptla-idsharpplural-md.md)]同じを参照してください[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]要素以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかの引数が null 参照 (`Nothing`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])、<xref:System.Windows.Automation.Automation.Compare%2A>スロー、<xref:System.ArgumentNullException>例外。  
+  
+   
+  
+## Examples  
+ 次の関数の例は、実行時かどうかを判断[!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]は実行時の一覧に[!INCLUDE[TLA2#tla_id#plural](~/includes/tla2sharptla-idsharpplural-md.md)]です。  
+  
+ [!code-csharp[UIAFocusTracker_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFocusTracker_snip/CSharp/FocusTracker.cs#103)]
+ [!code-vb[UIAFocusTracker_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFocusTracker_snip/VisualBasic/FocusTracker.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public static bool Compare (System.Windows.Automation.AutomationElement el1, System.Windows.Automation.AutomationElement el2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Compare(class System.Windows.Automation.AutomationElement el1, class System.Windows.Automation.AutomationElement el2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.Compare(System.Windows.Automation.AutomationElement,System.Windows.Automation.AutomationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="el1" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="el2" Type="System.Windows.Automation.AutomationElement" />
+      </Parameters>
+      <Docs>
+        <param name="el1">最初の[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素を比較します。</param>
+        <param name="el2">2 番目[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素を比較します。</param>
+        <summary>比較する 2 つ[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素、返す<see langword="true" />場合は両方とも同じ[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]要素。</summary>
+        <returns>
+          <see langword="true" />場合のランタイム識別子、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]要素は同じです。 それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかの引数が null 参照 (`Nothing`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])、<xref:System.Windows.Automation.Automation.Compare%2A>スロー、<xref:System.ArgumentNullException>例外。  
+  
+ このメソッドは、等値演算子の<xref:System.Windows.Automation.AutomationElement>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentViewCondition">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.Condition ContentViewCondition;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.Condition ContentViewCondition" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.Automation.ContentViewCondition" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Condition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義済みのビューを表す、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]のみを含むツリー[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素コンテンツを含むことができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を含むさまざまな静的条件<xref:System.Windows.Automation.Automation.ContentViewCondition>要素を取得するために使用します。  
+  
+ [!code-csharp[UIAClient_snip#178](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ConditionSnips.cs#178)]
+ [!code-vb[UIAClient_snip#178](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ConditionSnips.vb#178)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlViewCondition">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.Condition ControlViewCondition;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.Condition ControlViewCondition" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.Automation.ControlViewCondition" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Condition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義済みのビューを表す、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]のみを含むツリー[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]コントロールである要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を含むさまざまな静的条件<xref:System.Windows.Automation.Automation.ControlViewCondition>要素を取得するために使用します。  
+  
+ [!code-csharp[UIAClient_snip#178](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ConditionSnips.cs#178)]
+ [!code-vb[UIAClient_snip#178](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ConditionSnips.vb#178)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PatternName">
+      <MemberSignature Language="C#" Value="public static string PatternName (System.Windows.Automation.AutomationPattern pattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string PatternName(class System.Windows.Automation.AutomationPattern pattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.PatternName(System.Windows.Automation.AutomationPattern)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pattern" Type="System.Windows.Automation.AutomationPattern" />
+      </Parameters>
+      <Docs>
+        <param name="pattern">コントロール パターンの識別子。</param>
+        <summary>指定したコントロール パターンの名前を取得します。</summary>
+        <returns>コントロール パターン、または null 参照のフレンドリ名 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) 指定したパターンが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例でサポートされている各コントロール パターンの名前を表示、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+> [!NOTE]
+>  呼び出す<xref:System.Windows.Automation.AutomationElement.GetSupportedPatterns%2A>を照会して大量の処理が必要です、<xref:System.Windows.Automation.AutomationElement>のすべての可能なパターンです。  
+  
+ [!code-csharp[UIAClient_snip#114](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#114)]
+ [!code-vb[UIAClient_snip#114](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#114)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyName">
+      <MemberSignature Language="C#" Value="public static string PropertyName (System.Windows.Automation.AutomationProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string PropertyName(class System.Windows.Automation.AutomationProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.PropertyName(System.Windows.Automation.AutomationProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.Windows.Automation.AutomationProperty" />
+      </Parameters>
+      <Docs>
+        <param name="property">[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]名前付きのプロパティのプロパティの識別子。</param>
+        <summary>指定した名前を取得[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]プロパティです。</summary>
+        <returns>表示名、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]プロパティ、または null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) 場合は、指定した[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]プロパティが見つかりません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例でサポートされている各プロパティの名前を表示、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ [!code-csharp[UIAClient_snip#115](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#115)]
+ [!code-vb[UIAClient_snip#115](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#115)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RawViewCondition">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.Condition RawViewCondition;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.Condition RawViewCondition" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.Automation.RawViewCondition" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Condition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>定義済みのビューを表す、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]すべてを含むツリー[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単独で使用される、この条件は、機能と同じ<xref:System.Windows.Automation.Condition.TrueCondition>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAllEventHandlers">
+      <MemberSignature Language="C#" Value="public static void RemoveAllEventHandlers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveAllEventHandlers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.RemoveAllEventHandlers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>登録されているすべての削除[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]イベント ハンドラー。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAutomationEventHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveAutomationEventHandler (System.Windows.Automation.AutomationEvent eventId, System.Windows.Automation.AutomationElement element, System.Windows.Automation.AutomationEventHandler eventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveAutomationEventHandler(class System.Windows.Automation.AutomationEvent eventId, class System.Windows.Automation.AutomationElement element, class System.Windows.Automation.AutomationEventHandler eventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.RemoveAutomationEventHandler(System.Windows.Automation.AutomationEvent,System.Windows.Automation.AutomationElement,System.Windows.Automation.AutomationEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventId" Type="System.Windows.Automation.AutomationEvent" />
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="eventHandler" Type="System.Windows.Automation.AutomationEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="eventId">イベント識別子。</param>
+        <param name="element">[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]イベント ハンドラーを削除する要素。</param>
+        <param name="eventHandler">ハンドラー メソッドに渡された<see cref="M:System.Windows.Automation.Automation.AddAutomationEventHandler(System.Windows.Automation.AutomationEvent,System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.Windows.Automation.AutomationEventHandler)" />指定されたイベント識別子と[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素。</param>
+        <summary>指定された削除[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]イベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、追加、削除されるイベント ハンドラーを示します。  
+  
+ [!code-csharp[UIAClient_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#101)]
+ [!code-vb[UIAClient_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAutomationFocusChangedEventHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveAutomationFocusChangedEventHandler (System.Windows.Automation.AutomationFocusChangedEventHandler eventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveAutomationFocusChangedEventHandler(class System.Windows.Automation.AutomationFocusChangedEventHandler eventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.RemoveAutomationFocusChangedEventHandler(System.Windows.Automation.AutomationFocusChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventHandler" Type="System.Windows.Automation.AutomationFocusChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="eventHandler">ハンドラー メソッドに渡されました。<see cref="M:System.Windows.Automation.Automation.AddAutomationFocusChangedEventHandler(System.Windows.Automation.AutomationFocusChangedEventHandler)" /></param>
+        <summary>指定したフォーカス変更イベント ハンドラーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のコード例は、追加、削除されるフォーカス変更イベント ハンドラーを示します。  
+  
+ [!code-csharp[UIAClient_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#102)]
+ [!code-vb[UIAClient_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAutomationPropertyChangedEventHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveAutomationPropertyChangedEventHandler (System.Windows.Automation.AutomationElement element, System.Windows.Automation.AutomationPropertyChangedEventHandler eventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveAutomationPropertyChangedEventHandler(class System.Windows.Automation.AutomationElement element, class System.Windows.Automation.AutomationPropertyChangedEventHandler eventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler(System.Windows.Automation.AutomationElement,System.Windows.Automation.AutomationPropertyChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="eventHandler" Type="System.Windows.Automation.AutomationPropertyChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]をイベント ハンドラーを削除する要素。</param>
+        <param name="eventHandler">ハンドラー メソッドに渡された<see cref="M:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.Windows.Automation.AutomationPropertyChangedEventHandler,System.Windows.Automation.AutomationProperty[])" />、指定された[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素。</param>
+        <summary>指定したプロパティ変更イベント ハンドラーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のコード例は、追加、削除されるプロパティ変更イベント ハンドラーを示します。  
+  
+ [!code-csharp[UIAClient_snip#172](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/PropertySnips.cs#172)]
+ [!code-vb[UIAClient_snip#172](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/PropertySnips.vb#172)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveStructureChangedEventHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveStructureChangedEventHandler (System.Windows.Automation.AutomationElement element, System.Windows.Automation.StructureChangedEventHandler eventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveStructureChangedEventHandler(class System.Windows.Automation.AutomationElement element, class System.Windows.Automation.StructureChangedEventHandler eventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Automation.RemoveStructureChangedEventHandler(System.Windows.Automation.AutomationElement,System.Windows.Automation.StructureChangedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="eventHandler" Type="System.Windows.Automation.StructureChangedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]をイベント ハンドラーを削除する要素。</param>
+        <param name="eventHandler">ハンドラー メソッドに渡された<see cref="M:System.Windows.Automation.Automation.AddStructureChangedEventHandler(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.Windows.Automation.StructureChangedEventHandler)" />、指定された[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素。</param>
+        <summary>指定した構造変更イベント ハンドラーを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

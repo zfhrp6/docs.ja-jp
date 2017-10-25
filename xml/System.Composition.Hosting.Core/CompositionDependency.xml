@@ -1,0 +1,214 @@
+<Type Name="CompositionDependency" FullName="System.Composition.Hosting.Core.CompositionDependency">
+  <TypeSignature Language="C#" Value="public class CompositionDependency" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CompositionDependency extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Composition.Hosting.Core.CompositionDependency" />
+  <AssemblyInfo>
+    <AssemblyName>System.Composition.Hosting</AssemblyName>
+    <AssemblyVersion>1.0.31.0</AssemblyVersion>
+    <AssemblyVersion>1.0.32.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実行するために一部が必要な依存関係を表す、<see cref="T:System.Composition.Hosting.Core.ExportDescriptorPromise" />です。 このクラスは、合成エンジンによってない場合に、どのようなエラーを提供して、構成ができるかどうかを判断する初期化中に使用します。</summary>
+    <remarks>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Contract">
+      <MemberSignature Language="C#" Value="public System.Composition.Hosting.Core.CompositionContract Contract { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Composition.Hosting.Core.CompositionContract Contract" />
+      <MemberSignature Language="DocId" Value="P:System.Composition.Hosting.Core.CompositionDependency.Contract" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Hosting.Core.CompositionContract</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係により必要なコントラクトを取得します。</summary>
+        <value>依存関係により必要なコントラクトです。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrerequisite">
+      <MemberSignature Language="C#" Value="public bool IsPrerequisite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrerequisite" />
+      <MemberSignature Language="DocId" Value="P:System.Composition.Hosting.Core.CompositionDependency.IsPrerequisite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係が依存するパーツから取得できる、エクスポートする前に満たす必要がある前提条件であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、依存関係とは、必要な前提条件です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Missing">
+      <MemberSignature Language="C#" Value="public static System.Composition.Hosting.Core.CompositionDependency Missing (System.Composition.Hosting.Core.CompositionContract contract, object site);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Composition.Hosting.Core.CompositionDependency Missing(class System.Composition.Hosting.Core.CompositionContract contract, object site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionDependency.Missing(System.Composition.Hosting.Core.CompositionContract,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Hosting.Core.CompositionDependency</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contract" Type="System.Composition.Hosting.Core.CompositionContract" />
+        <Parameter Name="site" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contract">"&gt;依存関係により必要なコントラクト。</param>
+        <param name="site">依存するパーツの間で個々 の依存関係の識別に使用されるマーカー。</param>
+        <summary>不足している依存関係を表すプレース ホルダーを構築します。</summary>
+        <returns>プレース ホルダーとして機能する依存関係です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不足している依存関係は、エラーです。 不足している依存関係は、オプションの依存関係と異なります。
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Oversupplied">
+      <MemberSignature Language="C#" Value="public static System.Composition.Hosting.Core.CompositionDependency Oversupplied (System.Composition.Hosting.Core.CompositionContract contract, System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.ExportDescriptorPromise&gt; targets, object site);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Composition.Hosting.Core.CompositionDependency Oversupplied(class System.Composition.Hosting.Core.CompositionContract contract, class System.Collections.Generic.IEnumerable`1&lt;class System.Composition.Hosting.Core.ExportDescriptorPromise&gt; targets, object site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionDependency.Oversupplied(System.Composition.Hosting.Core.CompositionContract,System.Collections.Generic.IEnumerable{System.Composition.Hosting.Core.ExportDescriptorPromise},System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Hosting.Core.CompositionDependency</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contract" Type="System.Composition.Hosting.Core.CompositionContract" />
+        <Parameter Name="targets" Type="System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.ExportDescriptorPromise&gt;" />
+        <Parameter Name="site" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contract">依存関係により必要なコントラクトです。</param>
+        <param name="targets">指定された値のコレクション。</param>
+        <param name="site">依存関係のマーカー。</param>
+        <summary>指定された値が多すぎるのある依存関係を表すプレース ホルダーを構築します。</summary>
+        <returns>プレース ホルダーの依存関係。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Satisfied">
+      <MemberSignature Language="C#" Value="public static System.Composition.Hosting.Core.CompositionDependency Satisfied (System.Composition.Hosting.Core.CompositionContract contract, System.Composition.Hosting.Core.ExportDescriptorPromise target, bool isPrerequisite, object site);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Composition.Hosting.Core.CompositionDependency Satisfied(class System.Composition.Hosting.Core.CompositionContract contract, class System.Composition.Hosting.Core.ExportDescriptorPromise target, bool isPrerequisite, object site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionDependency.Satisfied(System.Composition.Hosting.Core.CompositionContract,System.Composition.Hosting.Core.ExportDescriptorPromise,System.Boolean,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Hosting.Core.CompositionDependency</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contract" Type="System.Composition.Hosting.Core.CompositionContract" />
+        <Parameter Name="target" Type="System.Composition.Hosting.Core.ExportDescriptorPromise" />
+        <Parameter Name="isPrerequisite" Type="System.Boolean" />
+        <Parameter Name="site" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="contract">依存関係により必要なコントラクトです。</param>
+        <param name="target">依存関係のターゲットです。 A<see cref="T:System.Composition.Hosting.Core.ExportDescriptorPromise" />このパーツが依存する別の部分からです。</param>
+        <param name="isPrerequisite">
+          <see langword="true" />依存関係がすべてエクスポートする前に満たす必要がある前提条件であることを示す依存パーツ; から取得できます。それ以外の場合、<see langword="false" />です。</param>
+        <param name="site">依存するパーツの間で個々 の依存関係の識別に使用されるマーカー。</param>
+        <summary>指定された対象の依存関係を構築します。</summary>
+        <returns>構築された依存関係です。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Site">
+      <MemberSignature Language="C#" Value="public object Site { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Site" />
+      <MemberSignature Language="DocId" Value="P:System.Composition.Hosting.Core.CompositionDependency.Site" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存するパーツの間の依存関係の識別に使用されるマーカーを取得します。</summary>
+        <value>マーカー。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public System.Composition.Hosting.Core.ExportDescriptorPromise Target { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Composition.Hosting.Core.ExportDescriptorPromise Target" />
+      <MemberSignature Language="DocId" Value="P:System.Composition.Hosting.Core.CompositionDependency.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Hosting.Core.ExportDescriptorPromise</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上の依存関係にあるエクスポート記述子 promise を取得します。</summary>
+        <value>エクスポート記述子約束します。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.CompositionDependency.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Composition.Hosting.Core.CompositionDependency" /> オブジェクトの文字列表現を返します。</summary>
+        <returns><see cref="T:System.Composition.Hosting.Core.CompositionDependency" /> の文字列形式。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,115 @@
+<Type Name="IExtenderProviderService" FullName="System.ComponentModel.Design.IExtenderProviderService">
+  <TypeSignature Language="C#" Value="public interface IExtenderProviderService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExtenderProviderService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IExtenderProviderService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>追加して、デザイン時に拡張プロバイダーを削除するためのインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、コンテナーに追加されているコンポーネントのみ拡張プロバイダーを提供します。 <xref:System.ComponentModel.Design.IExtenderProviderService>コンテナーに含まれていないオブジェクトには、この機能を拡張することができます。  
+  
+   
+  
+## Examples  
+ 次の例 demosntrates の使用、<xref:System.ComponentModel.Design.IExtenderProviderService>を追加および削除のデザイナーから、<xref:System.ComponentModel.IExtenderProvider>実装します。  
+  
+ [!code-cpp[ExtenderServiceExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ExtenderServiceExample/CPP/extenderservicedesigner.cpp#1)]
+ [!code-csharp[ExtenderServiceExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ExtenderServiceExample/CS/extenderservicedesigner.cs#1)]
+ [!code-vb[ExtenderServiceExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ExtenderServiceExample/VB/extenderservicedesigner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddExtenderProvider">
+      <MemberSignature Language="C#" Value="public void AddExtenderProvider (System.ComponentModel.IExtenderProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddExtenderProvider(class System.ComponentModel.IExtenderProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IExtenderProviderService.AddExtenderProvider(System.ComponentModel.IExtenderProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.IExtenderProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">追加する拡張プロバイダー。</param>
+        <summary>指定された拡張プロバイダーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、拡張プロバイダーのデザイン時のセットに拡張プロバイダーを追加するコンポーネント以外のオブジェクトを使用します。 これらの拡張プロバイダーから表示されるすべてのプロパティは、デザイン時にだけとしてマークされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveExtenderProvider">
+      <MemberSignature Language="C#" Value="public void RemoveExtenderProvider (System.ComponentModel.IExtenderProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveExtenderProvider(class System.ComponentModel.IExtenderProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IExtenderProviderService.RemoveExtenderProvider(System.ComponentModel.IExtenderProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.ComponentModel.IExtenderProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">削除する拡張プロバイダー。</param>
+        <summary>指定された拡張プロバイダーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、拡張プロバイダーのデザイン時のセットに拡張プロバイダーを追加するコンポーネント以外のオブジェクトを使用します。 これらの拡張プロバイダーから表示されるすべてのプロパティは、デザイン時にだけとしてマークされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,595 @@
+<Type Name="ECCurve" FullName="System.Security.Cryptography.ECCurve">
+  <TypeSignature Language="C#" Value="public struct ECCurve" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ECCurve extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.ECCurve" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>楕円曲線を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.ECCurve.CurveType>曲線が名前付き曲線または (素数または特性 2 曲線) の明示的な曲線かどうかを決定するフィールドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="A">
+      <MemberSignature Language="C#" Value="public byte[] A;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] A" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECCurve.A" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>明示的な曲線の 1 番目の係数。 <c>A</c>短いワイエスシュトラス、モンゴメリー、およびツイスト Edwards 曲線にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="B">
+      <MemberSignature Language="C#" Value="public byte[] B;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] B" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECCurve.B" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>明示的な曲線の 2 番目の係数。 <c>B</c>短いワイエスシュトラス用と<c>d</c>ツイスト Edwards 曲線にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cofactor">
+      <MemberSignature Language="C#" Value="public byte[] Cofactor;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] Cofactor" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECCurve.Cofactor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>曲線の余因子。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromFriendlyName">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ECCurve CreateFromFriendlyName (string oidFriendlyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Security.Cryptography.ECCurve CreateFromFriendlyName(string oidFriendlyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECCurve.CreateFromFriendlyName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECCurve</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oidFriendlyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="oidFriendlyName">識別子のフレンドリ名。</param>
+        <summary>識別子の指定されたフレンドリ名を使用して名前付き曲線を作成します。</summary>
+        <returns>名前付き曲線を表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="oidFriendlyName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromOid">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ECCurve CreateFromOid (System.Security.Cryptography.Oid curveOid);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Security.Cryptography.ECCurve CreateFromOid(class System.Security.Cryptography.Oid curveOid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECCurve.CreateFromOid(System.Security.Cryptography.Oid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECCurve</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="curveOid" Type="System.Security.Cryptography.Oid" />
+      </Parameters>
+      <Docs>
+        <param name="curveOid">使用するオブジェクトの識別子です。</param>
+        <summary>指定された <see cref="T:System.Security.Cryptography.Oid" /> オブジェクトを使用して名前付き曲線を作成します。</summary>
+        <returns>名前付き曲線を表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromValue">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.ECCurve CreateFromValue (string oidValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Security.Cryptography.ECCurve CreateFromValue(string oidValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECCurve.CreateFromValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECCurve</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oidValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="oidValue">識別子のドット形式の数字。</param>
+        <summary>識別子の指定したドット形式 10 進表現を使用して名前付き曲線を作成します。</summary>
+        <returns>名前付き曲線を表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="oidValue" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurveType">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.ECCurve.ECCurveType CurveType;" />
+      <MemberSignature Language="ILAsm" Value=".field public valuetype System.Security.Cryptography.ECCurve/ECCurveType CurveType" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECCurve.CurveType" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECCurve+ECCurveType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.ECCurve" /> オブジェクトのコンポジションを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="G">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.ECPoint G;" />
+      <MemberSignature Language="ILAsm" Value=".field public valuetype System.Security.Cryptography.ECPoint G" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECCurve.G" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>曲線上の操作のジェネレーターまたは基点。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hash">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Security.Cryptography.HashAlgorithmName&gt; Hash;" />
+      <MemberSignature Language="ILAsm" Value=".field public valuetype System.Nullable`1&lt;valuetype System.Security.Cryptography.HashAlgorithmName&gt; Hash" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECCurve.Hash" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Security.Cryptography.HashAlgorithmName&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ANSI X9.62 生成アルゴリズムで <see cref="F:System.Security.Cryptography.ECCurve.Seed" /> から曲線の係数 (<see cref="F:System.Security.Cryptography.ECCurve.A" /> と <see cref="F:System.Security.Cryptography.ECCurve.B" />) を生成するために使用されたハッシュ アルゴリズムの名前。 明示的な曲線にのみ適用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCharacteristic2">
+      <MemberSignature Language="C#" Value="public bool IsCharacteristic2 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCharacteristic2" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ECCurve.IsCharacteristic2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>曲線の型が明示的な特性 2 曲線を示すかどうかを示す値を取得します。</summary>
+        <value>
+          曲線が明示的な特性 2 曲線である場合は <see langword="true" />。曲線が名前付き特性 2、プライム、または暗黙的な曲線である場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsExplicit">
+      <MemberSignature Language="C#" Value="public bool IsExplicit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsExplicit" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ECCurve.IsExplicit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>曲線の型が明示的な曲線 (プライムまたは特性 2 のいずれか) を示すかどうかを示す値を取得します。</summary>
+        <value>
+          曲線が明示的な曲線 (プライムまたは特性 2 のいずれか) である場合は <see langword="true" />。曲線が名前付きまたは暗黙的な曲線である場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNamed">
+      <MemberSignature Language="C#" Value="public bool IsNamed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNamed" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ECCurve.IsNamed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>曲線の型が名前付き曲線を示すかどうかを示す値を取得します。</summary>
+        <value>
+          曲線が名前付き曲線である場合は <see langword="true" />。曲線が暗黙的または明示的な曲線 (プライムまたは特性 2 のいずれか) である場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrime">
+      <MemberSignature Language="C#" Value="public bool IsPrime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrime" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ECCurve.IsPrime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>曲線の型が明示的なプライム曲線を示すかどうかを示す値を取得します。</summary>
+        <value>
+          曲線が明示的なプライム曲線である場合は <see langword="true" />。曲線が名前付きプライム、特性 2 または暗黙的な曲線である場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Oid">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Oid Oid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Oid Oid" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.ECCurve.Oid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Oid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前付き曲線の識別子を取得します。</summary>
+        <value>名前付き曲線の識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を設定することはできません、<xref:System.Security.Cryptography.ECCurve.Oid%2A>プロパティを直接です。 名前付きの曲線を作成する代わりに、 <xref:System.Security.Cryptography.ECCurve.CreateFromFriendlyName%2A>、 <xref:System.Security.Cryptography.ECCurve.CreateFromOid%2A> 、または<xref:System.Security.Cryptography.ECCurve.CreateFromValue%2A>メソッドです。  
+  
+ 一部のシステムで、<xref:System.Security.Cryptography.Oid.Value%2A?displayProperty=nameWithType>プロパティは使用中に他のユーザーのプライマリ参照識別子が、<xref:System.Security.Cryptography.Oid.FriendlyName%2A?displayProperty=nameWithType>プロパティです。  手動で作成する、<xref:System.Security.Cryptography.Oid>不一致の値を持つオブジェクトが望ましくない結果を生成可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Order">
+      <MemberSignature Language="C#" Value="public byte[] Order;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] Order" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECCurve.Order" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>曲線の順序。 明示的な曲線にのみ適用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.ECCurve.Order>フィールドが G によって生成されるグループの順序を表す = (x, y)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Polynomial">
+      <MemberSignature Language="C#" Value="public byte[] Polynomial;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] Polynomial" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECCurve.Polynomial" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>多項式の曲線。 特性 2 曲線にのみ適用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prime">
+      <MemberSignature Language="C#" Value="public byte[] Prime;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] Prime" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECCurve.Prime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本フィールドを指定するプライム。 プライム曲線のみに適用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seed">
+      <MemberSignature Language="C#" Value="public byte[] Seed;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] Seed" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECCurve.Seed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ANSI X9.62 生成アルゴリズムでの係数生成のシード値。 明示的な曲線にのみ適用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public void Validate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Validate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECCurve.Validate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の曲線の整合性を検証します。 構造体が有効ではない場合は、<see cref="T:System.Security.Cryptography.CryptographicException" /> 例外をスローします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">曲線パラメーターが現在の曲線の型に対して有効ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

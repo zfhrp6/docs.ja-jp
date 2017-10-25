@@ -1,0 +1,80 @@
+<Type Name="IDeviceContext" FullName="System.Drawing.IDeviceContext">
+  <TypeSignature Language="C#" Value="public interface IDeviceContext : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDeviceContext implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.IDeviceContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>取得および Windows デバイス コンテキストへの既存のハンドルを解放するためのメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバイス コンテキストでは、Windows ベースのデバイスに描画するためのグラフィック オブジェクトを定義します。 実装するクラスの例、<xref:System.Drawing.IDeviceContext>インターフェイスは、<xref:System.Drawing.Graphics>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetHdc">
+      <MemberSignature Language="C#" Value="public IntPtr GetHdc ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance native int GetHdc() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.IDeviceContext.GetHdc" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Windows デバイス コンテキストへのハンドルを返します。</summary>
+        <returns><see cref="T:System.IntPtr" />デバイス コンテキストのハンドルを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.IDeviceContext.GetHdc%2A>および<xref:System.Drawing.IDeviceContext.ReleaseHdc%2A>を取得し、Windows ベースのデバイスのためのハンドルを解放できるようにする 2 つのメソッドは、します。 呼び出しを常に従う必要があります<xref:System.Drawing.IDeviceContext.GetHdc%2A>への呼び出しに<xref:System.Drawing.IDeviceContext.ReleaseHdc%2A>終わったら、Windows ハンドルを使用します。  
+  
+ <xref:System.Drawing.IDeviceContext.GetHdc%2A>Windows GDI メソッドを使用して作成されたハンドルを取得するものではありません`CreateDC`または`CreateCompatibleDC`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseHdc">
+      <MemberSignature Language="C#" Value="public void ReleaseHdc ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReleaseHdc() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.IDeviceContext.ReleaseHdc" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Windows デバイス コンテキストのハンドルを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.IDeviceContext.GetHdc%2A>および<xref:System.Drawing.IDeviceContext.ReleaseHdc%2A>を取得し、Windows ベースのデバイスのためのハンドルを解放できるようにする 2 つのメソッドは、します。 呼び出しを常に従う必要があります<xref:System.Drawing.IDeviceContext.GetHdc%2A>への呼び出しに<xref:System.Drawing.IDeviceContext.ReleaseHdc%2A>終わったら、Windows ハンドルを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

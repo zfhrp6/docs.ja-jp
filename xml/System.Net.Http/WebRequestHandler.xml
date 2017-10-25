@@ -1,0 +1,314 @@
+<Type Name="WebRequestHandler" FullName="System.Net.Http.WebRequestHandler">
+  <TypeSignature Language="C#" Value="public class WebRequestHandler : System.Net.Http.HttpClientHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebRequestHandler extends System.Net.Http.HttpClientHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Http.WebRequestHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.Http.HttpClientHandler</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デスクトップに固有の機能は使用できない Windows ストア アプリまたはその他の環境を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、トランスポート ハンドラーを使用して、<xref:System.Net.HttpWebRequest>インスタンスのサーバーに HTTP 要求を送信します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebRequestHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Http.WebRequestHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Http.WebRequestHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowPipelining">
+      <MemberSignature Language="C#" Value="public bool AllowPipelining { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowPipelining" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.WebRequestHandler.AllowPipelining" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット リソースへの要求をパイプライン処理するかどうかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Boolean" /> を返します。  
+  
+ <see langword="true" />場合は、要求パイプラインを設定する必要があります。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを使用して、<xref:System.Net.Http.WebRequestHandler.AllowPipelining%2A>プロパティをパイプライン接続に対する設定を示します。 ときに<xref:System.Net.Http.WebRequestHandler.AllowPipelining%2A>は`true`アプリケーションがパイプライン接続をサポートしているサーバーにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationLevel">
+      <MemberSignature Language="C#" Value="public System.Net.Security.AuthenticationLevel AuthenticationLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Security.AuthenticationLevel AuthenticationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.WebRequestHandler.AuthenticationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.AuthenticationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証し、この要求に対して使用する偽装のレベルを示す値を設定します。</summary>
+        <value><see cref="T:System.Net.Security.AuthenticationLevel" /> を返します。  
+  
+ <see cref="T:System.Net.Security.AuthenticationLevel" /> 値のビットごとの組み合わせ。  既定値は <see cref="F:System.Net.Security.AuthenticationLevel.MutualAuthRequested" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 相互認証では、クライアントとサーバーの両方が、それらの身元を証明する資格情報を提供します。 <xref:System.Net.Security.AuthenticationLevel.MutualAuthRequired> と <xref:System.Net.Security.AuthenticationLevel.MutualAuthRequested> は、Kerberos 認証に関連する値です。 Kerberos 認証は、直接サポートすることも、Negotiate セキュリティ プロトコルを使用して実際のセキュリティ プロトコルを選択する場合に使用することもできます。 認証プロトコルの詳細については、次を参照してください。[インターネット認証](~/docs/framework/network-programming/internet-authentication.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CachePolicy">
+      <MemberSignature Language="C#" Value="public System.Net.Cache.RequestCachePolicy CachePolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Cache.RequestCachePolicy CachePolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.WebRequestHandler.CachePolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Cache.RequestCachePolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要求のキャッシュ ポリシーを取得または設定します。</summary>
+        <value><see cref="T:System.Net.Cache.RequestCachePolicy" /> を返します。  
+  
+ キャッシュ ポリシーを定義する <see cref="T:System.Net.Cache.RequestCachePolicy" /> オブジェクト。 既定値は、<see cref="P:System.Net.WebRequest.DefaultCachePolicy" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のキャッシュ ポリシーが存在している、キャッシュ内で要求されたリソースの応答をキャッシュから取得できるかどうかを決定します。 通常キャッシュされた応答を使用すると、アプリケーションのパフォーマンスが向上がリスクがキャッシュ内の応答が、サーバー上の応答と一致しません。  
+  
+ Machine.config 構成ファイルまたは設定して既定のキャッシュ ポリシーを指定することができます、<xref:System.Net.HttpWebRequest.DefaultCachePolicy%2A>プロパティです。  
+  
+ リソースの応答ストリームが取得され、ストリームの末尾に読み込まれる場合、リソースのコピーはキャッシュに追加だけです。 同じリソースに対して別の要求は、この要求のキャッシュ ポリシー レベルに応じて、キャッシュされたコピーを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCertificates">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509CertificateCollection ClientCertificates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509CertificateCollection ClientCertificates" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.WebRequestHandler.ClientCertificates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509CertificateCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要求に関連付けられているセキュリティ証明書のコレクションを取得または設定します。</summary>
+        <value><see cref="T:System.Security.Cryptography.X509Certificates.X509CertificateCollection" /> を返します。  
+  
+ この要求に関連付けられているセキュリティ証明書のコレクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan ContinueTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ContinueTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.WebRequestHandler.ContinueTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、アプリケーションが 100 を待機時間をミリ秒単位でのデータをアップロードする前に、サーバーから続行します。</summary>
+        <value><see cref="T:System.TimeSpan" /> を返します。  
+  
+ 時間をミリ秒単位でのアプリケーションが待機する 100-データをアップロードする前に、サーバーから継続します。 既定値は、これを 350 ミリ秒です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImpersonationLevel">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.TokenImpersonationLevel ImpersonationLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Principal.TokenImpersonationLevel ImpersonationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.WebRequestHandler.ImpersonationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.TokenImpersonationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求に対する偽装レベルを取得または設定します。</summary>
+        <value><see cref="T:System.Security.Principal.TokenImpersonationLevel" /> を返します。  
+  
+ 要求に対する偽装レベル。 既定値は、<see cref="F:System.Security.Principal.TokenImpersonationLevel.Delegation" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 偽装レベルは、サーバーがクライアントの資格情報を使用する方法を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxResponseHeadersLength">
+      <MemberSignature Language="C#" Value="public int MaxResponseHeadersLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxResponseHeadersLength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.WebRequestHandler.MaxResponseHeadersLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答ヘッダーの許容最大長を取得または設定します。</summary>
+        <value><see cref="T:System.Int32" /> を返します。  
+  
+ 応答ヘッダーの長さ (KB 単位、1 KB = 1024 バイト)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 応答ヘッダーの長さには、応答のステータス行と HTTP プロトコルの一部として受信されるすべての余分な制御文字が含まれています。 値の-1 の場合は、応答ヘッダーに制限は適用されません。値 0 は、すべての要求が失敗することを意味します。  
+  
+ 場合、<xref:System.Net.Http.WebRequestHandler.MaxResponseHeadersLength%2A>プロパティが明示的に設定されていない、既定値はの値、<xref:System.Net.HttpWebRequest.DefaultMaximumResponseHeadersLength%2A>プロパティです。  
+  
+ 受信した応答ヘッダーの長さがの値を超えるかどうか、<xref:System.Net.Http.WebRequestHandler.MaxResponseHeadersLength%2A>プロパティを応答にアクセスする場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadWriteTimeout">
+      <MemberSignature Language="C#" Value="public int ReadWriteTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReadWriteTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.WebRequestHandler.ReadWriteTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはへの要求を記述またはサーバーからの応答を読み取るときに、タイムアウトをミリ秒単位で設定します。</summary>
+        <value><see cref="T:System.Int32" /> を返します。  
+  
+ 書き込みまたは読み取りがタイムアウトするまでのミリ秒単位の時間。既定値は、300,000 ミリ秒 (5 分) です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerCertificateValidationCallback">
+      <MemberSignature Language="C#" Value="public System.Net.Security.RemoteCertificateValidationCallback ServerCertificateValidationCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Security.RemoteCertificateValidationCallback ServerCertificateValidationCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.WebRequestHandler.ServerCertificateValidationCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.RemoteCertificateValidationCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー証明書を検証するコールバック メソッドを取得または設定します。</summary>
+        <value><see cref="T:System.Net.Security.RemoteCertificateValidationCallback" /> を返します。  
+  
+ サーバー証明書を検証するコールバック メソッド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Net.Http.WebRequestHandler.ServerCertificateValidationCallback%2A>は`null`、標準のよく知られている証明書機関を使用してサーバー証明書が検証されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafeAuthenticatedConnectionSharing">
+      <MemberSignature Language="C#" Value="public bool UnsafeAuthenticatedConnectionSharing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UnsafeAuthenticatedConnectionSharing" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.WebRequestHandler.UnsafeAuthenticatedConnectionSharing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http.WebRequest</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>高速 NTLM 認証された接続共有を許可するかどうかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Boolean" /> を返します。  
+  
+ <see langword="true" />開いている; 認証された接続を維持するにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は`false`、それが原因で、現在の接続要求が完了した後、終了します。 アプリケーションを通過する認証シーケンスは新しい要求を発行するたびにします。このプロパティ設定されている場合`true`認証が行われた後、応答を取得するための接続が開いたままです。 このプロパティに設定があることを要求他の例では、`true`再認証なしで接続を使用することがあります。 つまり、ユーザー A の接続が認証されたユーザー B 可能性がありますを再利用 A の接続です。ユーザー B の要求がユーザー A の資格情報に基づく  
+  
+> [!CAUTION]
+>  ないこと脆弱性の管理システム内このプロパティを設定するときに確認する必要があります、アプリケーションを認証なしの接続を使用することは、ため`true`です。 アプリケーションは、複数のユーザーの要求を送信する場合 (複数のユーザー アカウントの権限を借用) し、依存するリソースを保護する認証にはこのプロパティを設定`true`以下に示すように接続グループを使用する場合を除き、します。  
+  
+ 場合にこのメカニズムを有効化の検討することも、パフォーマンスの問題が発生し、アプリケーションが統合 Windows 認証を使用した Web サーバーで実行されています。  
+  
+ この設定を有効にするには、セキュリティ上のリスクにシステムが表示されます。 設定した場合、<xref:System.Net.HttpWebRequest.UnsafeAuthenticatedConnectionSharing%2A>プロパティを`true`は次の予防措置を講じてください。  
+  
+-   有効な接続の悪用を回避できるように、保護された環境でアプリケーションを実行します。  
+  
+ バック エンド サーバーを制御する場合、別の方法として可能性がありますを考慮する認証の永続化を無効にすること。 これほど、パフォーマンスが向上ほうが安全です。 詳細については、MSDN ライブラリで AuthPersistence 検索[http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

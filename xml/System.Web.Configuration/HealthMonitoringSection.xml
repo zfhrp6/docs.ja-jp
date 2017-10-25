@@ -1,0 +1,495 @@
+<Type Name="HealthMonitoringSection" FullName="System.Web.Configuration.HealthMonitoringSection">
+  <TypeSignature Language="C#" Value="public sealed class HealthMonitoringSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HealthMonitoringSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HealthMonitoringSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET の構成方法の稼働状況の監視イベントを特定のプロファイルは、イベント プロバイダーに送信されます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスに対応して、`<healthMonitoring>`構成ファイルの要素。  
+  
+> [!NOTE]
+>  中程度の信頼イベントを発生させる以降が必要です。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの抜粋を指定する方法を示しています、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+```  
+<healthMonitoring  
+  enabled="true"  
+  heartBeatInterval="0">  
+  <bufferModes>  
+    <add name="Critical Notification"  
+      maxBufferSize="100"  
+      maxFlushSize="20"  
+      urgentFlushThreshold="1"  
+      regularFlushInterval="Infinite"  
+      urgentFlushInterval="00:01:00"  
+      maxBufferThreads="1"  
+    />  
+    <add name="Notification"  
+      maxBufferSize="300"  
+      maxFlushSize="20"  
+      urgentFlushThreshold="1"  
+      regularFlushInterval="Infinite"  
+      urgentFlushInterval="00:01:00"  
+      maxBufferThreads="1"  
+    />  
+    <add name="Analysis"  
+      maxBufferSize="1000"  
+      maxFlushSize="100"  
+      urgentFlushThreshold="100"  
+      regularFlushInterval="00:05:00"  
+      urgentFlushInterval="00:01:00"  
+      maxBufferThreads="1"  
+    />  
+    <add name="Logging"  
+      maxBufferSize="1000"  
+      maxFlushSize="200"  
+      urgentFlushThreshold="800"  
+      regularFlushInterval="00:30:00"  
+      urgentFlushInterval="00:05:00"  
+      maxBufferThreads="1"  
+    />  
+  </bufferModes>  
+  <providers>  
+    <add name="CriticalMailEventProvider"  
+      type="System.Web.Management.SimpleMailWebEventProvider, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"  
+      from="sender address"  
+      to="bob@contoso.com"  
+      cc="stella@contoso.com"  
+      bcc="joe@contoso.com"  
+      priority="High"  
+      bodyHeader="Warning!"  
+      bodyFooter="Please investigate ASAP."  
+      subjectPrefix="Action required."  
+      buffer="true"  
+      bufferMode="Critical Notification"  
+      maxEventLength="4096"  
+      maxSize="4096"  
+      maxMessagesPerNotification="1"  
+    />  
+    <add name="EventLogProvider"  
+      type="System.Web.Management.EventLogWebEventProvider, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"  
+      buffer="true"  
+      bufferMode="Logging"  
+    />  
+    <add name="SqlWebEventProvider"  
+      type="System.Web.Management.SqlWebEventProvider, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"  
+      connectionStringName="LocalSqlServer"  
+      maxEventDetailsLength="1073741823"  
+      buffer="true"  
+      bufferMode="Analysis"  
+    />  
+    <add name="WmiWebEventProvider"  
+      type="System.Web.Management.WmiWebEventProvider, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"  
+      buffer="true"  
+      bufferMode="Notification"  
+    />  
+  </providers>  
+  <eventMappings>  
+    <add name="All Events"  
+      type="System.Web.Management.WebBaseEvent, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+    />  
+    <add name="HeartBeats"  
+      type="System.Web.Management.WebHeartbeatEvent, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+    />  
+    <add name="Application Lifetime Events"  
+      type="System.Web.Management.WebApplicationLifetimeEvent, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+    />  
+    <add name="Request Processing Events"  
+      type="System.Web.Management.WebRequestEvent, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+    />  
+    <add name="All Errors"  
+      type="System.Web.Management.WebBaseErrorEvent, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+    />  
+    <add name="Infrastructure Errors"  
+      type="System.Web.Management.WebErrorEvent, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+    />  
+    <add name="Request Processing Errors"  
+      type="System.Web.Management.WebRequestErrorEvent, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+    />  
+    <add name="All Audits"  
+      type="System.Web.Management.WebAuditEvent, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+    />  
+    <add name="Failure Audits"  
+      type="System.Web.Management.WebFailureAuditEvent, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+    />  
+    <add name="Success Audits"  
+      type="System.Web.Management.WebSuccessAuditEvent, System.Web, Version=%ASSEMBLY_VERSION%, Culture=neutral, PublicKeyToken=%MICROSOFT_PUBLICKEY%"   
+    />  
+  </eventMappings>  
+  <profiles>  
+    <add name="Default"  
+      minInstances="1"  
+      maxLimit="Infinite"  
+      minInterval="00:10:00"  
+    />  
+    <add name="Critical"  
+      minInstances="1"  
+      maxLimit="1024"  
+      minInterval="00:00:00"  
+    />  
+  </profiles>  
+  <rules>  
+    <add name="All Errors Default"  
+      eventName="All Errors"  
+      provider="EventLogProvider"  
+      profile="Default"  
+      minInterval="00:01:00"   
+    />  
+    <add name="All Audits Default"  
+      eventName="All Audits"  
+      provider="SqlWebEventProvider"  
+      profile="Default"  
+      minInterval="00:00:30"   
+    />  
+    <add name="Failure Audits Default"  
+      eventName="Failure Audits"  
+      provider="WmiWebEventProvider"  
+      profile="Critical"  
+      minInterval="00:00:30"   
+     />  
+     <add name="Request Processing Errors"  
+       eventName="Request Processing Errors"  
+       provider="CriticalMailEventProvider"  
+       profile="Default"  
+     />  
+     <add name="Infrastructure Notifications"  
+      eventName="Infrastructure Errors"  
+      provider="CriticalMailEventProvider"  
+      profile="Critical"  
+    />  
+  </rules>  
+</healthMonitoring>   
+```  
+  
+ <xref:System.Web.Configuration.HealthMonitoringSection> クラスを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#1)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HealthMonitoringSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HealthMonitoringSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Web.Configuration.HealthMonitoringSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、コードから直接使用するものではありません。  
+  
+ 次の表は、このコンス トラクターに使用される既定の設定を示します。  
+  
+|設定|既定値|  
+|-------------|-------------------|  
+|<xref:System.Web.Configuration.HealthMonitoringSection.Enabled%2A>|`true`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BufferModes">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.BufferModesCollection BufferModes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.BufferModesCollection BufferModes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HealthMonitoringSection.BufferModes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("bufferModes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.BufferModesCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッファー モードの設定を指定するオブジェクトのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.Configuration.BufferModesCollection" />のコレクション<see cref="T:System.Web.Configuration.BufferModeSettings" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、コレクションの<xref:System.Web.Configuration.BufferModeSettings>を稼働状況の監視イベント バッファーに格納できる発生前にする方法を定義するオブジェクト。  
+  
+ このプロパティの既定値は、空<xref:System.Web.Configuration.BufferModesCollection>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HealthMonitoringSection.BufferModes%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#4)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HealthMonitoringSection.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または正常性の監視が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />正常性の監視が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例から現在の値を取得する方法を示します、<xref:System.Web.Configuration.HealthMonitoringSection.Enabled%2A>プロパティと、このプロパティの値を設定して正常性の監視を無効にする方法`false`です。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#2)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventMappings">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.EventMappingSettingsCollection EventMappings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.EventMappingSettingsCollection EventMappings" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HealthMonitoringSection.EventMappings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("eventMappings")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.EventMappingSettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.EventMappingSettingsCollection" />のコレクション<see cref="T:System.Web.Configuration.EventMappingSettings" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.Configuration.EventMappingSettingsCollection" />のコレクション<see cref="T:System.Web.Configuration.EventMappingSettings" />オブジェクト。 既定値は、空<see cref="T:System.Web.Configuration.EventMappingSettingsCollection" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HealthMonitoringSection.EventMappings%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#5)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeartbeatInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan HeartbeatInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan HeartbeatInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HealthMonitoringSection.HeartbeatInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.TimeSpanSecondsConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("heartbeatInterval", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="24.20:31:23", MinValueString="00:00:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Management.WebHeartbeatEvent" /> イベントを発生させるときに、アプリケーション ドメインによって使用される間隔を取得または設定します。</summary>
+        <value><see cref="T:System.Web.Management.WebHeartbeatEvent" /> イベントを発生させるときに、アプリケーション ドメインによって使用される間隔。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.TimeSpan>値は、0 ティックいいえ<xref:System.Web.Management.WebHeartbeatEvent>イベントが発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HealthMonitoringSection.HeartbeatInterval%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#3)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Profiles">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ProfileSettingsCollection Profiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ProfileSettingsCollection Profiles" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HealthMonitoringSection.Profiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("profiles")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ProfileSettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.ProfileSettingsCollection" />のコレクション<see cref="T:System.Web.Configuration.ProfileSettings" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.Configuration.ProfileSettingsCollection" />のコレクション<see cref="T:System.Web.Configuration.ProfileSettings" />オブジェクト。 既定値は、空<see cref="T:System.Web.Configuration.ProfileSettingsCollection" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HealthMonitoringSection.Profiles%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#6)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HealthMonitoringSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public System.Configuration.ProviderSettingsCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ProviderSettingsCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HealthMonitoringSection.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("providers")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ProviderSettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.ProviderSettingsCollection" />のコレクション<see cref="T:System.Configuration.ProviderSettings" />オブジェクト。</summary>
+        <value><see cref="T:System.Configuration.ProviderSettingsCollection" /> コレクション。 既定値は、空<see cref="T:System.Configuration.ProviderSettingsCollection" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HealthMonitoringSection.Providers%2A>で定義されたイベントのうちのどのプロバイダーが使用されるプロパティの指定、<xref:System.Web.Configuration.HealthMonitoringSection.EventMappings%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HealthMonitoringSection.Providers%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#7)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rules">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.RuleSettingsCollection Rules { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.RuleSettingsCollection Rules" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HealthMonitoringSection.Rules" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("rules")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.RuleSettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.RuleSettingsCollection" />のコレクション<see cref="T:System.Web.Configuration.RuleSettings" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.Configuration.RuleSettingsCollection" /> コレクション。 既定値は、空<see cref="T:System.Web.Configuration.RuleSettingsCollection" />コレクション</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Web.Configuration.RuleSettings>オブジェクトで定義されているイベントの間の接続を定義する、<xref:System.Web.Configuration.HealthMonitoringSection.EventMappings%2A>プロパティおよびイベント プロバイダーで定義されている、<xref:System.Web.Configuration.HealthMonitoringSection.Providers%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.HealthMonitoringSection.Rules%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.HealthMonitoringSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.HealthMonitoringSection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/CS/healthmonitoringsection.cs#8)]
+ [!code-vb[System.Web.Configuration.HealthMonitoringSection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.HealthMonitoringSection/VB/healthmonitoringsection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

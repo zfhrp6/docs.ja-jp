@@ -1,0 +1,66 @@
+<Type Name="ArrayWrapper" FullName="Microsoft.JScript.ArrayWrapper">
+  <TypeSignature Language="C#" Value="public class ArrayWrapper : Microsoft.JScript.ArrayObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ArrayWrapper extends Microsoft.JScript.ArrayObject" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.ArrayWrapper" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.ArrayObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>配列を作成、JScript<see cref="T:Microsoft.JScript.ArrayObject" />です。 このクラスは、.NET Framework のいずれか、ラップ<see cref="T:System.Array" />オブジェクトや、JScript<see cref="T:Microsoft.JScript.ArrayObject" />オブジェクト。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Type GetType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ArrayWrapper.GetType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>配列の型を取得します。</summary>
+        <returns>型<see cref="T:System.Array" />または<see cref="T:Microsoft.JScript.ArrayObject" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="length">
+      <MemberSignature Language="C#" Value="public override object length { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object length" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.ArrayWrapper.length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配列の長さを取得します。</summary>
+        <value>配列の長さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティをスロー、<xref:Microsoft.JScript.JSError.AssignmentToReadOnly>設定しようとする場合に例外です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

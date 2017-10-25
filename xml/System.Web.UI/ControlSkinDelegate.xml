@@ -1,0 +1,38 @@
+<Type Name="ControlSkinDelegate" FullName="System.Web.UI.ControlSkinDelegate">
+  <TypeSignature Language="C#" Value="public delegate System.Web.UI.Control ControlSkinDelegate(Control control);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ControlSkinDelegate extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ControlSkinDelegate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="control" Type="System.Web.UI.Control" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Web.UI.Control</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="control"><see cref="T:System.Web.UI.Control" />テーマ スキンを適用します。</param>
+    <summary>指定したコントロールに正しいコントロール スキンを適用するメソッドを表します。</summary>
+    <returns><see cref="T:System.Web.UI.Control" />コントロール スキンが適用されると、メソッドに渡されました。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページおよびコントロールの開発者は使用しないで、 <xref:System.Web.UI.ControlSkinDelegate>、 <xref:System.Web.UI.ControlSkin>、または<xref:System.Web.UI.PageTheme>直接クラスです。 これらのクラスが、サーバー側のプロパティと ASP.NET のテーマと特定の種類のコントロールにコントロール スキン ファイルで定義されているカスケード スタイル シートの定義を適用する ASP.NET ページ フレームワークによって内部的に使用されます。  
+  
+ <xref:System.Web.UI.ControlSkinDelegate>デリゲートに関連付けられている、<xref:System.Web.UI.ControlSkin.ApplySkin%2A>のメソッド、<xref:System.Web.UI.ControlSkin>クラスです。 <xref:System.Web.UI.ControlSkin>クラスを表しますが、ASP.NET のテーマのコンポーネントは、ASP.NET コントロール スキンはによって表される、<xref:System.Web.UI.PageTheme>オブジェクト。 ASP.NET のテーマの詳細については、次を参照してください。 [ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

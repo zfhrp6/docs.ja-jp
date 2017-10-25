@@ -1,0 +1,1144 @@
+<Type Name="PagesSection" FullName="System.Web.Configuration.PagesSection">
+  <TypeSignature Language="C#" Value="public sealed class PagesSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PagesSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.PagesSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成ファイルのセクションにプログラムでアクセスを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.PagesSection>クラスは、プログラムからアクセスし、構成ファイルのセクションの内容を変更する方法を提供します。 この構成セクションでは、構成ファイルのスコープ内のページとコントロールをすべてに対してグローバルに ASP.NET ページおよびコントロール ディレクティブの特定の設定をサポートします。 これが含まれています、`@ Page`ディレクティブ、`@ Import`を通じてディレクティブ、<xref:System.Web.Configuration.PagesSection.Namespaces%2A>コレクション プロパティおよび`@ Register`を通じてディレクティブ、<xref:System.Web.Configuration.PagesSection.Controls%2A>コレクション プロパティです。 実行時にタグの種類を他のタグの種類にマップするためのサポートも提供、<xref:System.Web.Configuration.PagesSection.TagMapping%2A>コレクション プロパティです。  
+  
+ ディレクティブは、ASP.NET Web フォーム ページ (.aspx) およびユーザー コントロール (.ascx) ファイルを処理するときに、ページおよびユーザー コントロールのコンパイラで使用される設定を指定します。  
+  
+   
+  
+## Examples  
+ この例は、宣言の複数の属性の値を指定する方法を示します、`pages`セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+ 次の構成ファイルの例では、セクションの宣言の値を指定する方法を示します。  
+  
+```  
+<system.web>  
+  <pages buffer="true"   
+    enableSessionState="true"   
+    enableViewState="true"  
+    enableViewStateMac="true"   
+    autoEventWireup="true"   
+    validateRequest="true"  
+    asyncTimeout="45"  
+    maintainScrollPositionOnPostBack = "False"  
+    viewStateEncryptionMode = "Auto">  
+    <namespaces>  
+      <add namespace="System" />  
+      <add namespace="System.Collections" />  
+      <add namespace="System.Collections.Specialized" />  
+      <add namespace="System.ComponentModel" />  
+      <add namespace="System.Configuration" />  
+      <add namespace="System.Web" />  
+    </namespaces>  
+    <controls>  
+      <clear />  
+      <remove tagPrefix="MyTags" />  
+      <!—- Searches all linked assemblies for the namespace -->  
+      <add tagPrefix="MyTags1" namespace=" MyNameSpace "/>  
+      <!-- Uses a specified assembly -->  
+      <add tagPrefix="MyTags2" namespace="MyNameSpace"   
+        assembly="MyAssembly"/>  
+      <!-- Uses the specified source for the user control -->  
+      <add tagprefix="MyTags3" tagname="MyCtrl"       
+        src="MyControl.ascx"/>  
+    </controls>  
+    <tagMapping>  
+      <clear />  
+      <add  
+        tagTypeName=  
+          "System.Web.UI.WebControls.WebParts.WebPartManager"  
+        mappedTagTypeName=  
+          "Microsoft.Sharepoint.WebPartPartManager,   
+          MSPS.Web.dll, Version='2.0.0.0'"   
+      />  
+      <remove tagTypeName="SomeOtherNS.Class, Assemblyname" />  
+    </tagMapping>  
+  </pages>  
+</system.web>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.PagesSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#1)]
+ [!code-vb[System.Web.Configuration.PagesSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PagesSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.PagesSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Web.Configuration.PagesSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.PagesSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.PagesSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsyncTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan AsyncTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan AsyncTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.AsyncTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.TimeSpanSecondsConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("asyncTimeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:00:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または非同期のハンドラーを非同期ページ処理中に完了するまで待機する秒数を示す値を設定します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />非同期のハンドラーを非同期ページ処理中に完了するまで待機する秒単位で時間を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、45 秒です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoEventWireup">
+      <MemberSignature Language="C#" Value="public bool AutoEventWireup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoEventWireup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.AutoEventWireup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("autoEventWireup", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET ページのイベントがイベント処理関数に自動的に接続されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ASP.NET ページのイベントがイベント処理の関数に自動的に接続されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Web.Configuration.PagesSection.AutoEventWireup%2A>は`true`、ASP.NET は明示的にバインドするイベント ハンドラー ページ イベントなど<xref:System.Web.UI.Control.Load>です。  
+  
+ ときに<xref:System.Web.Configuration.PagesSection.AutoEventWireup%2A>は`false`メソッドにイベントを明示的にバインドする必要があります。 ある場合など、`Page_Load`メソッドのコードにページのメソッドが呼び出されるへの応答、<xref:System.Web.UI.Control.Load>コードをそのような次の例で作成する場合にのみイベント (に注意してください、 `Handles` Visual Basic および C# の場合、イベント ハンドラーのコード内のステートメント)。  
+  
+```vb  
+Partial Class AutoEventWireupExample  
+    Inherits System.Web.UI.Page  
+    Protected Sub Page_Load(ByVal sender As Object, _  
+            ByVal e As System.EventArgs) Handles Me.Load  
+        Response.Write("Executing Page_Load")  
+    End Sub  
+End Class  
+```  
+  
+```csharp  
+public partial class AutoEventWireupExample : System.Web.UI.Page  
+{   
+    protected void Page_Load(object sender, System.EventArgs e)  
+    {  
+        Response.Write("Executing Page_Load");  
+    }  
+    override protected void OnInit(EventArgs e)  
+    {  
+        this.Load += new System.EventHandler(this.Page_Load);  
+    }  
+}  
+```  
+  
+ ときに<xref:System.Web.Configuration.PagesSection.AutoEventWireup%2A>は`true`ハンドラーがイベントにその名前とシグネチャに基づいて実行時に自動的にバインドされます。 各イベントに対して、ASP.NET はパターンに従って、という名前のメソッドを検索`Page_` *eventname*など`Page_Load`または`Page_Init`です。 ASP.NET は、一般的なイベント ハンドラーのシグネチャを持つオーバー ロードをまずチェック (つまり、指定<xref:System.Object>と<xref:System.EventArgs>パラメーター)。 この署名を持つイベント ハンドラーが見つからない場合、ASP.NET は、パラメーターがないオーバー ロードを確認します。  
+  
+ ときに<xref:System.Web.Configuration.PagesSection.AutoEventWireup%2A>は`false`、前の例で示すように、イベントにイベント ハンドラーにバインドすることに明示的にする必要があります。 その場合は、メソッド名は、パターンに従う必要はありません。  
+  
+ 既定値は`true`場合<xref:System.Web.Configuration.PagesSection.AutoEventWireup%2A>で指定されていない、`@ Page`ディレクティブです。 Visual Studio には、分離コード ファイルの作成時に属性が自動的に含まれます。 C# で記述された ASP.NET ページ、Visual Studio 値を設定`true`です。 Visual Basic、Visual Studio 値を設定`false`ハンドラーがイベント ハンドラーの生成時に Visual Studio によって自動的に挿入されると、キーワードを使用してイベントにバインドされているためです。 設定した場合<xref:System.Web.Configuration.PagesSection.AutoEventWireup%2A>に`true`キーワードを省略 (または削除) にすることができます。  
+  
+ 設定しない<xref:System.Web.Configuration.PagesSection.AutoEventWireup%2A>に`true`パフォーマンスが重要な考慮事項である場合。 自動イベント ワイヤアップを有効にすると、ASP.NET はメソッドとイベントを照合する 15、30 回の試行間で行う必要があります。  
+  
+ イベントにイベント ハンドラーのバインドについては、次に注意してください。  
+  
+-   設定した場合<xref:System.Web.Configuration.PagesSection.AutoEventWireup%2A>に`true`、ことも手動でアタッチしないページ イベント ハンドラーのイベントを確認してください。 場合は、ハンドラーは複数回呼び出す可能性があります。  
+  
+-   自動バインドは、ページ上のコントロールのイベントではなく、ページのイベントに対してのみ実行されます。  
+  
+-   ハンドラーにイベントをバインドする代わりに、オーバーライドすることができます、 `On` *eventname*ページまたはコントロールのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定または読み取れる方法を示しています、<xref:System.Web.Configuration.PagesSection.AutoEventWireup%2A>コード内のプロパティです。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#9)]
+ [!code-vb[System.Web.Configuration.PagesSection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#9)]  
+  
+ 次の例では、メソッドのシグネチャのページのイベントに自動的に関連付けられている 2 つの形式と<xref:System.Web.Configuration.PagesSection.AutoEventWireup%2A>は`true`します。  
+  
+ [!code-aspx-csharp[System.Web.Configuration.PagesSection#50](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/Default.aspx#50)]
+ [!code-csharp[System.Web.Configuration.PagesSection#50](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/Default2.aspx.cs#50)]
+ [!code-aspx-vb[System.Web.Configuration.PagesSection#50](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/Default.aspx#50)]
+ [!code-vb[System.Web.Configuration.PagesSection#50](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/Default2.aspx.vb#50)]
+  
+ 次の例は、イベントを明示的に接続するための方法を示しています。 ときに<xref:System.Web.Configuration.PagesSection.AutoEventWireup%2A>は`false`します。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#51](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/Default.aspx.cs#51)]
+ [!code-vb[System.Web.Configuration.PagesSection#51](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/Default.aspx.vb#51)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Buffer">
+      <MemberSignature Language="C#" Value="public bool Buffer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Buffer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.Buffer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("buffer", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうかの .aspx ページや .ascx コントロール バッファリングを使用して応答を指定する値。</summary>
+        <value>
+          <see langword="true" />.aspx ページや .ascx コントロールは、応答バッファー処理です。 使用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 応答バッファリングがオンにすると、ページ全体が終了するまで、ページまたはコントロールの出力がバッファリングされるまたはコントロールを処理します。 設定しない<xref:System.Web.Configuration.PagesSection.Buffer%2A>に`true`パフォーマンスが重要な考慮事項である場合。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.Buffer%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#16](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#16)]
+ [!code-vb[System.Web.Configuration.PagesSection#16](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientIDMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ClientIDMode ClientIDMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.ClientIDMode ClientIDMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.ClientIDMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("clientIDMode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ClientIDMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールの識別子を生成するために使用される既定のアルゴリズムを設定します。</summary>
+        <value>示す値方法の値、<see cref="P:System.Web.UI.Control.ClientID" />プロパティを生成します。 既定値は <see cref="F:System.Web.UI.ClientIDMode.Predictable" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Web.Configuration.PagesSection.ClientIDMode%2A>プロパティを Web サイト全体の既定値を設定します。 個々 の Web ページまたは個々 のコントロールは、この値をオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompilationMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.CompilationMode CompilationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.CompilationMode CompilationMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.CompilationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("compilationMode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.CompilationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または .aspx ページや .ascx コントロールをコンパイルする方法を決定する値を設定します。</summary>
+        <value>値のいずれか、<see cref="P:System.Web.Configuration.PagesSection.CompilationMode" />プロパティを .aspx ページや .ascx コントロールをコンパイルする方法を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は <xref:System.Web.UI.CompilationMode.Always> です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.CompilationMode%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#6)]
+ [!code-vb[System.Web.Configuration.PagesSection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlRenderingCompatibilityVersion">
+      <MemberSignature Language="C#" Value="public Version ControlRenderingCompatibilityVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version ControlRenderingCompatibilityVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.ControlRenderingCompatibilityVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.Configuration.VersionConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("controlRenderingCompatibilityVersion", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationValidator(typeof(System.Web.Configuration.VersionValidator))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET のバージョンがレンダリングされる HTML がいずれかと互換性がありますを指定する値を設定します。</summary>
+        <value>ASP.NET のバージョンがレンダリングされる HTML がいずれかと互換性があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値によって設定されます、`controlRenderingCompatibilityVersion`の属性、 `pages` Web.config ファイル内の要素。 このプロパティの値が既定値を<xref:System.Web.UI.Control.RenderingCompatibility%2A?displayProperty=nameWithType>プロパティです。 使用方法については、次を参照してください。、<xref:System.Web.UI.Control.RenderingCompatibility%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティを設定しようとしましたが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.TagPrefixCollection Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.TagPrefixCollection Controls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("controls")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.TagPrefixCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.TagPrefixInfo" /> オブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.Configuration.TagPrefixCollection" /> オブジェクトの <see cref="T:System.Web.Configuration.TagPrefixInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TagPrefixInfo>オブジェクトに対応して、 `@ Register` ASP.NET ページにします。 `@ Register`ディレクティブでは、ユーザー コントロールのタグ プレフィックスを指定することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.Controls%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#12)]
+ [!code-vb[System.Web.Configuration.PagesSection#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeserializeSection">
+      <MemberSignature Language="C#" Value="protected override void DeserializeSection (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DeserializeSection(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.PagesSection.DeserializeSection(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableEventValidation">
+      <MemberSignature Language="C#" Value="public bool EnableEventValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableEventValidation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.EnableEventValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableEventValidation", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントの検証が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />イベントの検証が有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.PagesSection.EnableEventValidation%2A>属性は、イベントの検証を実行するかどうかを示します。 既定値は `true` です。 Web アプリケーションは、.NET Framework のバージョン 1.0 の動作に戻すには、イベントの検証を無効にできます必要に応じて。  
+  
+ 基本コントロールでは、イベントを検証するかどうかを決定するには、この属性を確認します。 派生したコントロールはこの基本コントロール属性を継承していないと、これは既定では、イベントの検証から除外します。 まだ追加して派生コントロール イベントの検証を実行する ASP.NET に指示する、<xref:System.Web.Configuration.PagesSection.EnableEventValidation%2A>自体に設定して、派生したコントロールに属性`true`です。  
+  
+> [!NOTE]
+>  イベントの検証には、ポストバックで不正な要求とコールバックのリスクが軽減されます。 要求のポストバックまたはコールバック中に、コントロールで発生するイベントのみを検証するように指示します。 このモデルでは、レンダリング時にイベントを登録し、イベントをポストバックまたはコールバックの処理中に検証です。 ASP.NET のすべてのイベント ドリブン コントロールは、既定ではこの機能を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableSessionState">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.PagesEnableSessionState EnableSessionState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.PagesEnableSessionState EnableSessionState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.EnableSessionState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableSessionState", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.PagesEnableSessionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセッション状態が有効、無効になっている、または読み取り専用かどうかを指定する値を設定します。</summary>
+        <value>値のいずれか、<see cref="P:System.Web.Configuration.PagesSection.EnableSessionState" />プロパティをセッションの状態が有効、無効になっている、または読み取り専用かどうかを指定します。 既定値は<see cref="F:System.Web.Configuration.PagesEnableSessionState.True" />、セッション状態を示しますが有効になっています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.EnableSessionState%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#14](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#14)]
+ [!code-vb[System.Web.Configuration.PagesSection#14](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">値が有効な<see cref="T:System.Web.Configuration.PagesEnableSessionState" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableViewState">
+      <MemberSignature Language="C#" Value="public bool EnableViewState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.EnableViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableViewState", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビュー ステートを有効または無効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ビュー ステートが有効である場合<see langword="false" />ビュー ステートが無効になっている場合。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.EnableViewState%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#5)]
+ [!code-vb[System.Web.Configuration.PagesSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableViewStateMac">
+      <MemberSignature Language="C#" Value="public bool EnableViewStateMac { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableViewStateMac" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.EnableViewStateMac" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enableViewStateMac", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアントからページがポストされるときに、ページのビュー ステートを ASP.NET が、メッセージ認証コード (MAC) を実行する必要があるかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />ASP.NET は、クライアントからページがポストされるときに、ページのビュー ステートのメッセージ認証コード (MAC) を実行する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビュー ステート MAC は、ページがブラウザーに送信されるときに、ページのビュー状態が保存されている非表示の変数の暗号化されたバージョンです。 このプロパティに設定するときに`true`、暗号化されたビュー ステートがオンになっていることが改ざんされていないクライアントのことを確認します。  
+  
+> [!IMPORTANT]
+>  この属性設定しないで`false`実稼働 Web サイトで、アプリケーションまたはページがビュー ステートを使用していない場合でもです。 Viewstate MAC ビュー ステートに加えその他の ASP.NET 機能のセキュリティの確保に役立ちます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.EnableViewStateMac%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#8)]
+ [!code-vb[System.Web.Configuration.PagesSection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreDeviceFilters">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.IgnoreDeviceFilterElementCollection IgnoreDeviceFilters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.IgnoreDeviceFilterElementCollection IgnoreDeviceFilters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.IgnoreDeviceFilters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("ignoreDeviceFilters")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.IgnoreDeviceFilterElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET は、ページがレンダリングされるときに無視する必要がありますデバイス タグのコレクションを取得します。</summary>
+        <value>ASP.NET を無視するデバイスのタグのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバイスのタグを無視するのには、ASP.NET によって処理されることがなく、ブラウザーにいるときに渡す必要がある HTML 名前空間プレフィックスとして指定されます。 例としては、 `sys` Microsoft Ajax 要素に使用されるプレフィックス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaintainScrollPositionOnPostBack">
+      <MemberSignature Language="C#" Value="public bool MaintainScrollPositionOnPostBack { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MaintainScrollPositionOnPostBack" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.MaintainScrollPositionOnPostBack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maintainScrollPositionOnPostBack", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはポストバック後に、サーバーから戻ったときに、ページのスクロール位置を維持する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ポストバック後にページのスクロール位置を維持する必要がある場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MasterPageFile">
+      <MemberSignature Language="C#" Value="public string MasterPageFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MasterPageFile" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.MasterPageFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("masterPageFile", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションのマスター ページへの参照を設定します。</summary>
+        <value>アプリケーションのマスター ページへの参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値には、相対パスまたは絶対パスのいずれかを指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.MasterPageFile%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#15](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#15)]
+ [!code-vb[System.Web.Configuration.PagesSection#15](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPageStateFieldLength">
+      <MemberSignature Language="C#" Value="public int MaxPageStateFieldLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxPageStateFieldLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.MaxPageStateFieldLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxPageStateFieldLength", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 つのビュー状態フィールドを含めることができる文字の最大数を設定します。</summary>
+        <value>1 つのビュー状態フィールドを含めることができる文字の最大数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページまたはコントロールが表示される場合、ページおよびコントロールのビュー ステートが非表示のビュー状態フィールドに格納されます。 格納されたデータの長さを超えた場合、<xref:System.Web.Configuration.PagesSection.MaxPageStateFieldLength%2A>値、複数のビュー状態フィールドの間でデータを分割し、します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.MaxPageStateFieldLength%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#10)]
+ [!code-vb[System.Web.Configuration.PagesSection#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespaces">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.NamespaceCollection Namespaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.NamespaceCollection Namespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.Namespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("namespaces")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.NamespaceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.NamespaceInfo" /> オブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.Configuration.NamespaceCollection" /> オブジェクトの <see cref="T:System.Web.Configuration.NamespaceInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TagPrefixInfo>オブジェクトに対応して、 `@ Import` ASP.NET ページにします。 `Import`ディレクティブでは、アプリケーションのすべてのページに自動的にインポートされる名前空間を指定することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.Namespaces%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#2)]
+ [!code-vb[System.Web.Configuration.PagesSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageBaseType">
+      <MemberSignature Language="C#" Value="public string PageBaseType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PageBaseType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.PageBaseType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("pageBaseType", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または .aspx ページが既定で継承する分離コード クラスを指定する値を設定します。</summary>
+        <value>.Aspx ページが既定で継承する分離コード クラスを指定する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.PageBaseType%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#18](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#18)]
+ [!code-vb[System.Web.Configuration.PagesSection#18](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageParserFilterType">
+      <MemberSignature Language="C#" Value="public string PageParserFilterType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PageParserFilterType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.PageParserFilterType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("pageParserFilterType", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパーサーのフィルターの種類を指定する値を設定します。</summary>
+        <value>パーサーのフィルターの種類を指定する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーサーのフィルター、インスタンスの<xref:System.Web.UI.PageParserFilter>クラス、実行時にソース コードに変更を許可するように解析の手順の前にページ コンパイル プロセスによって呼び出されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.PageParserFilterType%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#3)]
+ [!code-vb[System.Web.Configuration.PagesSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderAllHiddenFieldsAtTopOfForm">
+      <MemberSignature Language="C#" Value="public bool RenderAllHiddenFieldsAtTopOfForm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RenderAllHiddenFieldsAtTopOfForm" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.RenderAllHiddenFieldsAtTopOfForm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("renderAllHiddenFieldsAtTopOfForm", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフォームの上部にあるシステムによって生成されたすべての隠しフィールドを表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />システムによって生成された非表示フィールドがフォームの上部に表示される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true." /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.Configuration.PagesSection.RenderAllHiddenFieldsAtTopOfForm%2A>プロパティをいくつかのシステムによって生成された非表示フィールドがフォームの最後に表示されることを指定します。  
+  
+ ASP.NET がいくつかの非表示フィールドを表示する、.NET Framework 3.5 SP1 より前のバージョンの ASP.NET (たとえば、 `__VIEWSTATE`) フォームの上部にあります。 他の非表示フィールド (たとえば、 `__EVENTVALIDATION`) 終了の直前に、フォームの下部に表示される`</div>`タグ。 既定では ASP.NET 3.5 SP1 ではシステムによって生成されたすべての隠しフィールドは、ページの上部に表示されます。 これにより、ページの読み込みが終了する前に、ポストバックが実行された場合でも、サーバーにこれらのフィールドに情報を送信することです。 場合<xref:System.Web.Configuration.PagesSection.RenderAllHiddenFieldsAtTopOfForm%2A>に設定されている`false`ページの読み込みが終了する前に、ポストバックを実行すると、「無効なポストバックまたはコールバック引数」エラーが発生することができます。  
+  
+> [!NOTE]
+>  プロパティ名では、「すべての隠しフィールド」ことを示して、ユーザーが作成した非表示フィールドはこのプロパティの設定によって受けません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReadOnly">
+      <MemberSignature Language="C#" Value="protected override void SetReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.PagesSection.SetReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SmartNavigation">
+      <MemberSignature Language="C#" Value="public bool SmartNavigation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SmartNavigation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.SmartNavigation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("smartNavigation", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスマート ナビゲーションが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          スマート移動が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  スマート ナビゲーションには、Microsoft Internet Explorer 5.5 以降が必要です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.SmartNavigation%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#19](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#19)]
+ [!code-vb[System.Web.Configuration.PagesSection#19](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StyleSheetTheme">
+      <MemberSignature Language="C#" Value="public string StyleSheetTheme { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StyleSheetTheme" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.StyleSheetTheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("styleSheetTheme", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET のスタイル シートのテーマの名前を設定します。</summary>
+        <value>ASP.NET スタイル シートのテーマの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.StyleSheetTheme%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#13)]
+ [!code-vb[System.Web.Configuration.PagesSection#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagMapping">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.TagMapCollection TagMapping { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.TagMapCollection TagMapping" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.TagMapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("tagMapping")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.TagMapCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.TagMapInfo" /> オブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.Configuration.TagMapCollection" /> オブジェクトの <see cref="T:System.Web.Configuration.TagMapInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TagPrefixInfo>オブジェクト ASP.NET ページに対応するディレクティブがありません。 <xref:System.Web.Configuration.TagPrefixInfo>オブジェクトを使用すると、コンパイル時に他の種類名をタグの種類名を再マップします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.TagMapping%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#17](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#17)]
+ [!code-vb[System.Web.Configuration.PagesSection#17](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Theme">
+      <MemberSignature Language="C#" Value="public string Theme { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Theme" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.Theme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("theme", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET ページのテーマの名前を設定します。</summary>
+        <value>ASP.NET ページのテーマの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.Theme%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#4)]
+ [!code-vb[System.Web.Configuration.PagesSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserControlBaseType">
+      <MemberSignature Language="C#" Value="public string UserControlBaseType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserControlBaseType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.UserControlBaseType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("userControlBaseType", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザー コントロールが既定で継承する分離コード クラスを指定する値を設定します。</summary>
+        <value>ユーザー コントロールが既定で継承する分離コード ファイルを指定する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.UserControlBaseType%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#11)]
+ [!code-vb[System.Web.Configuration.PagesSection#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateRequest">
+      <MemberSignature Language="C#" Value="public bool ValidateRequest { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateRequest" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.ValidateRequest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("validateRequest", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET が危険性のある値のブラウザーからの入力を検査するかどうかを決定する値を設定します。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。</summary>
+        <value>
+          <see langword="true" />ASP.NET が危険性のある値のブラウザーからの入力を検査する場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求の検証は、危険性のある値の一覧にすべての入力データを比較することによって実行されます。 ASP.NET には、一致が発生した場合、<xref:System.Web.HttpRequestValidationException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.PagesSection.ValidateRequest%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#7)]
+ [!code-vb[System.Web.Configuration.PagesSection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewStateEncryptionMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ViewStateEncryptionMode ViewStateEncryptionMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.ViewStateEncryptionMode ViewStateEncryptionMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.PagesSection.ViewStateEncryptionMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("viewStateEncryptionMode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ViewStateEncryptionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を保持する場合、ASP.NET が使用して暗号化モード<see langword="ViewState" />値。</summary>
+        <value>A<see cref="T:System.Web.UI.ViewStateEncryptionMode" />かを示す列挙値、<see langword="ViewState" />の値を暗号化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 考えられる<xref:System.Web.UI.Page.ViewStateEncryptionMode%2A>列挙値は`Always`、 `Auto`、および`Never`です。 既定値は `Auto` です。 場合<xref:System.Web.UI.Page.ViewStateEncryptionMode%2A>プロパティに設定されている`Auto`、`ViewState`コントロールが要求した時に暗号化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

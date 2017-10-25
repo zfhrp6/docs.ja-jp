@@ -1,0 +1,121 @@
+<Type Name="HideDisabledControlAdapter" FullName="System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter">
+  <TypeSignature Language="C#" Value="public class HideDisabledControlAdapter : System.Web.UI.WebControls.Adapters.WebControlAdapter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HideDisabledControlAdapter extends System.Web.UI.WebControls.Adapters.WebControlAdapter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Adapters.WebControlAdapter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>特定のブラウザーの既定のマークアップを変更する関連付けられた Web コントロールの表示機能や動作を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter>クラスに関連付けられた適応<xref:System.Web.UI.WebControls.WebControl>既定マークアップまたは特定のブラウザーの動作を変更するコントロール。 拡張することができます、<xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter>のレンダリングをさらにカスタマイズするクラス、<xref:System.Web.UI.WebControls.WebControl>コントロール。  
+  
+ アダプターは、ページまたはコントロールのライフ サイクルに 1 つ以上のステージを引き継ぐコンパイル済みの .NET Framework コンポーネントです。 拡張、<xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter>クラスは、のライフ サイクルの段階へのアクセスを提供する、<xref:System.Web.UI.WebControls.WebControl>コントロール。 詳細については、次を参照してください。[アーキテクチャの概要のアダプティブ動作を制御](http://msdn.microsoft.com/library/4ff05ae9-4109-4352-929e-ad893895dbff)です。  
+  
+ アダプターの最初の要求では、要求元のブラウザーの特性を指定して、コントロールに割り当てられたアダプターを検索する .NET Framework が原因です。 ブラウザー定義ファイルで使用されます、<xref:System.Web.HttpBrowserCapabilities>をクライアントのブラウザーの特性を確認し、アダプターをブラウザーの種類にマッピングするクラス。 詳細については、次を参照してください。[アーキテクチャの概要のアダプティブ動作を制御](http://msdn.microsoft.com/library/4ff05ae9-4109-4352-929e-ad893895dbff)です。  
+  
+ ASP.NET およびコントロール アダプターを実装し、コントロールにマップする方法を示す詳細なチュートリアルのアダプティブ レンダリング アーキテクチャの説明は、"オーサリング ASP.NET サーバー コントロール アダプター:: An Introduction"で、MSDN ライブラリを参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、拡張する方法を示します、<xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter>を表示するクラス、<xref:System.Web.UI.WebControls.Label>コントロールの有効化および無効の状態。 この例には、3 つの部分が含まれています。  
+  
+-   アダプターから派生した、<xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter>クラスです。  
+  
+-   .Aspx ファイルが組み込まれた、<xref:System.Web.UI.WebControls.Label>コントロールおよびデバイス固有のコンテンツ。  
+  
+-   デバイスの種類にアダプターをリンクするブラウザー ファイルです。  
+  
+ 次のコード例を拡張する方法を示しています、<xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter/CS/hidedisabledcontrolcontosoadapter.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter/VB/hidedisabledcontrolcontosoadapter.vb#1)]  
+  
+ 次のコード例では、宣言、<xref:System.Web.UI.WebControls.Label>デバイス固有のコンテンツを持つコントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter/CS/implcs.aspx#3)]
+ [!code-aspx-vb[System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter/VB/implvb.aspx#3)]  
+  
+ 次のコード例にリンクする方法を示しています、 <xref:System.Web.UI.WebControls.Label> Windows CE .NET で実行されているブラウザーのカスタム アダプターを制御します。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HideDisabledControlAdapter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework のインスタンスを作成する、<xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter>クラスです。 アダプターの最初の要求では、要求元のブラウザーの特性を指定して、コントロールに割り当てられたアダプターを検索する .NET Framework が原因です。 コントロールを保持で割り当てられたアダプター インスタンスへの参照を見つけると、その<xref:System.Web.UI.Control.Adapter%2A>プロパティです。 アダプターのマッピングとのブラウザー定義ファイルについては、次を参照してください。[アーキテクチャの概要のアダプティブ動作を制御](http://msdn.microsoft.com/library/4ff05ae9-4109-4352-929e-ad893895dbff)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">デバイス固有の出力を構築および表示するメソッドを含む <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>出力ストリームに関連付けられた Web コントロールを HTML として書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter.Render%2A>メソッドは、関連付けられている書き込みます<xref:System.Web.UI.WebControls.WebControl>html 形式で出力ストリームを制御します。  
+  
+ 既定では、.NET Framework は、Web サーバー コントロールの独自の呼び出します<xref:System.Web.UI.Control.Render%2A>メソッドです。 ただし、いったん、<xref:System.Web.UI.Control.Adapter%2A>そのコントロールのプロパティが設定されて、.NET Framework は、アダプターの実装を実行、<xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter.Render%2A>経由で関連付けられたコントロールのイベントです。  
+  
+ <xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter.Render%2A>イベントがデバイスのブラウザーに表示されるマークアップのコードに変更を実行するために使用します。 コントロールのプロパティは、ここで、コントロールのライフ サイクルと実際のマークアップの作成のみのこのフェーズの前に設定する必要があります。 ライフ サイクルのこの段階で、コントロールに加えられた変更は、状態を表示するのには保存されません。 コントロールに加えられた変更を保存するには、オーバーライド、<xref:System.Web.UI.Adapters.ControlAdapter.OnPreRender%2A>イベント。  
+  
+ <xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter.Render%2A>イベントでは、派生クラスが派生クラスでイベントを処理するための手法をお勧めするデリゲートを結び付けずに、イベントを処理することもできます。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter.Render%2A>メソッドに渡す、<xref:System.Web.UI.HtmlTextWriter>オブジェクトに関連付けられているコントロールが有効になっている場合に表示するため、親コントロールです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter/CS/hidedisabledcontrolcontosoadapter.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Adapters.HideDisabledControlAdapter/VB/hidedisabledcontrolcontosoadapter.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

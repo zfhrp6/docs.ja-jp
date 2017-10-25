@@ -1,0 +1,150 @@
+<Type Name="UriTemplateEquivalenceComparer" FullName="System.UriTemplateEquivalenceComparer">
+  <TypeSignature Language="C#" Value="public class UriTemplateEquivalenceComparer : System.Collections.Generic.IEqualityComparer&lt;UriTemplate&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UriTemplateEquivalenceComparer extends System.Object implements class System.Collections.Generic.IEqualityComparer`1&lt;class System.UriTemplate&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.UriTemplateEquivalenceComparer" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEqualityComparer&lt;System.UriTemplate&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.UriTemplate" /> インスタンスを構造の等価 (参照の等価ではなく) について比較するために使用するクラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriTemplate> インスタンスは、既定では参照の等価を使用して比較されます。 <xref:System.UriTemplateEquivalenceComparer> クラスは、既定の参照等価検査ではなく、<xref:System.UriTemplate.IsEquivalentTo%28System.UriTemplate%29> を使用して等価性を評価します。 このクラスは、厳密な参照の等価の代わりに、URI を基に 2 つの <xref:System.UriTemplate> インスタンスを比較する場合に便利です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、参照の等価と構造の等価の違いを示しています。 また、<xref:System.UriTemplateEquivalenceComparer> をディクショナリ内で比較子として使用する方法も示します。  
+  
+ [!code-csharp[UriTemplateEquivalenceComparer#0](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplateequivalencecomparer/cs/program.cs#0)]
+ [!code-vb[UriTemplateEquivalenceComparer#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplateequivalencecomparer/vb/program.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriTemplateEquivalenceComparer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriTemplateEquivalenceComparer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.UriTemplateEquivalenceComparer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このクラスのコンストラクターを呼び出す方法を次のコード例に示します。  
+  
+ [!code-csharp[UriTemplateEquivalenceComparer#1](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplateequivalencecomparer/cs/program.cs#1)]
+ [!code-vb[UriTemplateEquivalenceComparer#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplateequivalencecomparer/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (UriTemplate x, UriTemplate y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.UriTemplate x, class System.UriTemplate y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriTemplateEquivalenceComparer.Equals(System.UriTemplate,System.UriTemplate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.UriTemplate" />
+        <Parameter Name="y" Type="System.UriTemplate" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.UriTemplate" /> のインスタンス。</param>
+        <param name="y"><see cref="T:System.UriTemplate" /> のインスタンス。</param>
+        <summary>2 つの <see cref="T:System.UriTemplate" /> インスタンスの等価性を比較します。</summary>
+        <returns>2 つの <see cref="T:System.UriTemplate" /> が等価であるかどうかを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドが直接呼び出されることはありません。 このメソッドは、2 つの <xref:System.UriTemplate> インスタンスを比較する別のクラスによって呼び出されます。  
+  
+   
+  
+## Examples  
+ <xref:System.UriTemplateEquivalenceComparer.Equals%2A> メソッドを呼び出す方法を次のコード例に示します。  
+  
+ [!code-csharp[UriTemplateEquivalenceComparer#2](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplateequivalencecomparer/cs/snippets.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public int GetHashCode (UriTemplate obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetHashCode(class System.UriTemplate obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriTemplateEquivalenceComparer.GetHashCode(System.UriTemplate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.UriTemplate" />
+      </Parameters>
+      <Docs>
+        <param name="obj"><see cref="T:System.UriTemplate" /> インスタンス。</param>
+        <summary>指定した <see cref="T:System.UriTemplate" /> インスタンスのハッシュ コードを取得します。</summary>
+        <returns>ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドが直接呼び出されることはありません。 このメソッドは、2 つの <xref:System.UriTemplate> インスタンスのハッシュを必要とする別のクラスによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,598 @@
+<Type Name="SocketPermission" FullName="System.Net.SocketPermission">
+  <TypeSignature Language="C#" Value="public sealed class SocketPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SocketPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Net.SocketPermission" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>作成およびトランスポート アドレスで接続を受け入れる権限を制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.SocketPermission>インスタンスの接続を受け入れるかを開始するアクセス許可を制御する<xref:System.Net.Sockets.Socket>接続します。 A<xref:System.Net.Sockets.Socket>ホスト名または IP アドレス、ポート番号、およびトランスポート プロトコルに対してアクセス許可を設定できます。  
+  
+> [!NOTE]
+>  これらの名前を IP アドレスに解決する必要があるし、スタックを妨げる可能性があるこのホスト名を使用して、ソケットのアクセス許可を作成しないでください。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Net.SocketPermission>設定、変更、およびさまざまなソケットのアクセス制限を適用するクラス。  
+  
+ [!code-cpp[SocketPermissionExample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SocketPermissionExample/CPP/source.cpp#1)]
+ [!code-csharp[SocketPermissionExample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SocketPermissionExample/CS/source.cs#1)]
+ [!code-vb[SocketPermissionExample#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SocketPermissionExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SocketPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.SocketPermission" />無制限のアクセスを許可するクラス、<see cref="T:System.Net.Sockets.Socket" />へのアクセスを許可または禁止、<see cref="T:System.Net.Sockets.Socket" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Net.SocketPermission>でインスタンスが作成、`Unrestricted`値から<xref:System.Security.Permissions.PermissionState>、<xref:System.Net.SocketPermission>インスタンスは、すべての要求を渡します。 その他の値の`state`結果、<xref:System.Net.SocketPermission>とトランスポート アドレスのアクセス許可を追加しない限り、すべての要求が失敗したインスタンス<xref:System.Net.SocketPermission.AddPermission%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Net.SocketPermission>を使用して、<xref:System.Security.Permissions.PermissionState>列挙値。  
+  
+ [!code-cpp[dateClient_SocketPermission_Constructor#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CPP/dateclient_socketpermission_constructor.cpp#1)]
+ [!code-csharp[dateClient_SocketPermission_Constructor#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CS/dateclient_socketpermission_constructor.cs#1)]
+ [!code-vb[dateClient_SocketPermission_Constructor#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/VB/dateclient_socketpermission_constructor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SocketPermission (System.Net.NetworkAccess access, System.Net.TransportType transport, string hostName, int portNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.NetworkAccess access, valuetype System.Net.TransportType transport, string hostName, int32 portNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermission.#ctor(System.Net.NetworkAccess,System.Net.TransportType,System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="access" Type="System.Net.NetworkAccess" />
+        <Parameter Name="transport" Type="System.Net.TransportType" />
+        <Parameter Name="hostName" Type="System.String" />
+        <Parameter Name="portNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="access"><see cref="T:System.Net.NetworkAccess" /> 値のいずれか。</param>
+        <param name="transport"><see cref="T:System.Net.TransportType" /> 値のいずれか。</param>
+        <param name="hostName">トランスポート アドレスのホスト名。</param>
+        <param name="portNumber">トランスポート アドレスのポート番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.SocketPermission" />指定した権限を持つ指定したトランスポート アドレスのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Net.SocketPermission>を指定したアクセスを制御する`hostName`と`portNumber`指定して`transport`です。  
+  
+ `hostName` DNS 名、IP アドレス、または 192.168.1.* など、指定された IP サブネットを指定できます。  
+  
+ `portNumber`トランスポートによって定義されている任意の有効なポート番号を指定できますまたは<xref:System.Net.SocketPermission?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Net.SocketPermission>を使用して、<xref:System.Net.NetworkAccess>列挙値を<xref:System.Net.TransportType>値、ホスト名、およびポート番号を列挙します。  
+  
+ [!code-cpp[dateClient_SocketPermission_Constructor#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CPP/dateclient_socketpermission_constructor.cpp#1)]
+ [!code-csharp[dateClient_SocketPermission_Constructor#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CS/dateclient_socketpermission_constructor.cs#1)]
+ [!code-vb[dateClient_SocketPermission_Constructor#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/VB/dateclient_socketpermission_constructor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptList">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator AcceptList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator AcceptList" />
+      <MemberSignature Language="DocId" Value="P:System.Net.SocketPermission.AcceptList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧を取得<see cref="T:System.Net.EndpointPermission" />権限このインスタンス下で許可されるエンドポイントを識別するインスタンス。</summary>
+        <value>実装するインスタンス、<see cref="T:System.Collections.IEnumerator" />を含むインターフェイス<see cref="T:System.Net.EndpointPermission" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Net.SocketPermission.AcceptList%2A>エンドポイントの一覧を取得するプロパティを特権が与えられるを受け入れるようにします。  
+  
+ [!code-cpp[SocketPermissionExample#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SocketPermissionExample/CPP/source.cpp#2)]
+ [!code-csharp[SocketPermissionExample#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SocketPermissionExample/CS/source.cs#2)]
+ [!code-vb[SocketPermissionExample#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SocketPermissionExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPermission">
+      <MemberSignature Language="C#" Value="public void AddPermission (System.Net.NetworkAccess access, System.Net.TransportType transport, string hostName, int portNumber);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPermission(valuetype System.Net.NetworkAccess access, valuetype System.Net.TransportType transport, string hostName, int32 portNumber) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermission.AddPermission(System.Net.NetworkAccess,System.Net.TransportType,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="access" Type="System.Net.NetworkAccess" />
+        <Parameter Name="transport" Type="System.Net.TransportType" />
+        <Parameter Name="hostName" Type="System.String" />
+        <Parameter Name="portNumber" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="access"><see cref="T:System.Net.NetworkAccess" /> 値のいずれか。</param>
+        <param name="transport"><see cref="T:System.Net.TransportType" /> 値のいずれか。</param>
+        <param name="hostName">トランスポート アドレスのホスト名。</param>
+        <param name="portNumber">トランスポート アドレスのポート番号。</param>
+        <summary>トランスポートのアドレスに対する権限のセットにアクセス許可を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `hostName` DNS 名、IP アドレス、または 192.168.1.* など、指定された IP サブネットを指定できます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.SocketPermission.AddPermission%2A>指定したホストに接続のアクセス許可を追加します。  
+  
+ [!code-cpp[dateClient_SocketPermission_Constructor#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CPP/dateclient_socketpermission_constructor.cpp#1)]
+ [!code-csharp[dateClient_SocketPermission_Constructor#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CS/dateclient_socketpermission_constructor.cs#1)]
+ [!code-vb[dateClient_SocketPermission_Constructor#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/VB/dateclient_socketpermission_constructor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllPorts">
+      <MemberSignature Language="C#" Value="public const int AllPorts = -1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AllPorts = (-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.SocketPermission.AllPorts" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>-1</MemberValue>
+      <Docs>
+        <summary>すべてのポートを表す定数を定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは読み取り専用です。 このフィールドの値は-1 です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.SocketPermission.AllPorts>プロパティをすべてのポートがリソースへの接続のアクセス許可を提供します。  
+  
+ [!code-cpp[DateClient_SocketPermission_Constructor#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CPP/dateclient_socketpermission_constructor.cpp#1)]
+ [!code-csharp[DateClient_SocketPermission_Constructor#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CS/dateclient_socketpermission_constructor.cs#1)]
+ [!code-vb[DateClient_SocketPermission_Constructor#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/VB/dateclient_socketpermission_constructor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectList">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator ConnectList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator ConnectList" />
+      <MemberSignature Language="DocId" Value="P:System.Net.SocketPermission.ConnectList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧を取得<see cref="T:System.Net.EndpointPermission" />を下にあるこのアクセス許可のインスタンスに接続できるエンドポイントを識別するインスタンス。</summary>
+        <value>実装するインスタンス、<see cref="T:System.Collections.IEnumerator" />を含むインターフェイス<see cref="T:System.Net.EndpointPermission" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Net.SocketPermission.ConnectList%2A>プロパティをどの接続権限が与えられるエンドポイントの一覧を返します。  
+  
+ [!code-cpp[dateClient_SocketPermission_ToXml#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DateClient_SocketPermission_ToXml/CPP/dateclient_socketpermission_toxml.cpp#1)]
+ [!code-csharp[dateClient_SocketPermission_ToXml#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DateClient_SocketPermission_ToXml/CS/dateclient_socketpermission_toxml.cs#1)]
+ [!code-vb[dateClient_SocketPermission_ToXml#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DateClient_SocketPermission_ToXml/VB/dateclient_socketpermission_toxml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.SocketPermission" /> インスタンスのコピーを作成します。</summary>
+        <returns>新しいインスタンス、<see cref="T:System.Net.SocketPermission" />現在のインスタンスのコピーであるクラスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返されるオブジェクトでは、現在のインスタンスと同じレベルのアクセスを表します。 このメソッドは<xref:System.Security.CodeAccessPermission.Copy%2A>サポートするために実装されると、<xref:System.Security.IPermission>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Net.SocketPermission> 、既存のコピーを作成して<xref:System.Net.SocketPermission>です。  
+  
+ [!code-cpp[SocketPermissionExample#4](~/samples/snippets/cpp/VS_Snippets_Remoting/SocketPermissionExample/CPP/source.cpp#4)]
+ [!code-csharp[SocketPermissionExample#4](~/samples/snippets/csharp/VS_Snippets_Remoting/SocketPermissionExample/CS/source.cs#4)]
+ [!code-vb[SocketPermissionExample#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SocketPermissionExample/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement securityElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement securityElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityElement" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="securityElement">再構築に使用する XML エンコード、<see cref="T:System.Net.SocketPermission" />インスタンス。</param>
+        <summary>再構築、 <see cref="T:System.Net.SocketPermission" /> XML エンコーディング用のインスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.SocketPermission.FromXml%2A>メソッドの再構築、<xref:System.Net.SocketPermission>によって定義された XML エンコードからのインスタンス、<xref:System.Security.SecurityElement>クラスです。  
+  
+ 使用して、<xref:System.Net.SocketPermission.ToXml%2A>のエンコード方法、<xref:System.Net.SocketPermission>を XML で、状態情報を含むインスタンス。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.SocketPermission.FromXml%2A>でエンコードされたにデータを XML に変換するメソッド、<xref:System.Net.SocketPermission>インスタンス。  
+  
+ [!code-cpp[dateClient_SocketPermission_Constructor#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CPP/dateclient_socketpermission_constructor.cpp#1)]
+ [!code-csharp[dateClient_SocketPermission_Constructor#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CS/dateclient_socketpermission_constructor.cs#1)]
+ [!code-vb[dateClient_SocketPermission_Constructor#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/VB/dateclient_socketpermission_constructor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="securityElement" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="securityElement" />この種類のアクセス許可要素ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Net.SocketPermission" />現在のインスタンスと交差するインスタンス。</param>
+        <summary>2 つの論理積を返します<see cref="T:System.Net.SocketPermission" />インスタンス。</summary>
+        <returns><see cref="T:System.Net.SocketPermission" />を 2 つの交差部分を表すインスタンス<see cref="T:System.Net.SocketPermission" />インスタンス。 このメソッドを返しますの積集合が空<see langword="null" />です。 場合、<paramref name="target" />パラメーターが null 参照の場合、メソッドが返されます<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可の積集合は、リソースと両方のアクセス許可によって保護されている操作を保護するアクセス許可がします。 具体的には、両方のアクセス許可に適合するすべての要求では、それぞれの積集合もが成功するように、最小限のアクセス許可を表します。 このメソッドは<xref:System.Security.CodeAccessPermission.Intersect%2A>サポートするために実装されると、<xref:System.Security.IPermission>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.SocketPermission.Intersect%2A>メソッドは 2 つの論理積集合を取得する<xref:System.Net.SocketPermission>インスタンス。  
+  
+ [!code-cpp[DateClient_SocketPermission_Constructor#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CPP/dateclient_socketpermission_constructor.cpp#1)]
+ [!code-csharp[DateClient_SocketPermission_Constructor#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/CS/dateclient_socketpermission_constructor.cs#1)]
+ [!code-vb[DateClient_SocketPermission_Constructor#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DateClient_SocketPermission_Constructor/VB/dateclient_socketpermission_constructor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません、<see cref="T:System.Net.SocketPermission" />です。</exception>
+        <exception cref="T:System.Security.SecurityException">
+          <see cref="T:System.Net.DnsPermission" />メソッドの呼び出し元に付与されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">A<see cref="T:System.Net.SocketPermission" />サブセットの関係をテストすることができます。</param>
+        <summary>現在のアクセス許可が指定したアクセス許可のサブセットであるかどうかを判断します。</summary>
+        <returns>場合<paramref name="target" />は<see langword="null" />、このメソッドが戻る<see langword="true" />; のアクセス許可を定義する、現在のインスタンスがいない場合それ以外の場合、<see langword="false" />です。 場合<paramref name="target" />は<see langword="null" />、このメソッドが戻る<see langword="true" />場合は、現在のインスタンスのサブセットを定義する<paramref name="target" />アクセス許可、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、現在のアクセス許可を指定した権限によって完全に含まれる一連の操作を指定する場合、指定したアクセス許可のサブセットです。  
+  
+ たとえば、192.168.1.1:80 へのアクセスを表すアクセス許可は、192.168.1.1:Any へのアクセスを表すアクセス許可のサブセットです。 このメソッドが戻る場合`true`、現在のアクセス許可は、アクセスは保護されたリソースには、指定した権限を表します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Net.SocketPermission.IsSubsetOf%2A>メソッドを 1 つを呼び出せば確認<xref:System.Net.SocketPermission>別のサブセットです。  
+  
+ [!code-cpp[SocketPermissionExample#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SocketPermissionExample/CPP/source.cpp#2)]
+ [!code-csharp[SocketPermissionExample#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SocketPermissionExample/CS/source.cs#2)]
+ [!code-vb[SocketPermissionExample#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SocketPermissionExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /> が <see cref="T:System.Net.Sockets.SocketException" /> ではありません。</exception>
+        <exception cref="T:System.Security.SecurityException">
+          <see cref="T:System.Net.DnsPermission" />メソッドの呼び出し元に付与されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトの全体的なアクセス許可の状態を確認します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Net.SocketPermission" />でインスタンスが作成、<see langword="Unrestricted" />値から<see cref="T:System.Security.Permissions.PermissionState" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のチェック、<xref:System.Net.SocketPermission.IsUnrestricted%2A>プロパティかどうかを指定した<xref:System.Net.SocketPermission>が制限されます。  
+  
+ [!code-cpp[dateClient_SocketPermission_ToXml#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DateClient_SocketPermission_ToXml/CPP/dateclient_socketpermission_toxml.cpp#1)]
+ [!code-csharp[dateClient_SocketPermission_ToXml#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DateClient_SocketPermission_ToXml/CS/dateclient_socketpermission_toxml.cs#1)]
+ [!code-vb[dateClient_SocketPermission_ToXml#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DateClient_SocketPermission_ToXml/VB/dateclient_socketpermission_toxml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML エンコードを作成、<see cref="T:System.Net.SocketPermission" />インスタンスと、現在の状態。</summary>
+        <returns>A<see cref="T:System.Security.SecurityElement" />インスタンスの XML でエンコードされた表現を含む、<see cref="T:System.Net.SocketPermission" />状態情報を含むインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.SocketPermission.ToXml%2A>メソッドを作成、<xref:System.Security.SecurityElement>の表現をエンコードするインスタンス、<xref:System.Net.SocketPermission>を XML で、状態情報を含むインスタンス。  
+  
+ 使用して、<xref:System.Net.SocketPermission.FromXml%2A>から状態情報を復元する方法、<xref:System.Security.SecurityElement>インスタンス。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.SocketPermission.ToXml%2A>に変換する方法、<xref:System.Net.SocketPermission>を XML にします。  
+  
+ [!code-cpp[dateClient_SocketPermission_ToXml#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DateClient_SocketPermission_ToXml/CPP/dateclient_socketpermission_toxml.cpp#1)]
+ [!code-csharp[dateClient_SocketPermission_ToXml#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DateClient_SocketPermission_ToXml/CS/dateclient_socketpermission_toxml.cs#1)]
+ [!code-vb[dateClient_SocketPermission_ToXml#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DateClient_SocketPermission_ToXml/VB/dateclient_socketpermission_toxml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Net.SocketPermission" />インスタンスを現在のインスタンスに結合します。</param>
+        <summary>2 つの論理的な和集合を返します<see cref="T:System.Net.SocketPermission" />インスタンス。</summary>
+        <returns><see cref="T:System.Net.SocketPermission" /> 2 つの和集合を表すインスタンス<see cref="T:System.Net.SocketPermission" />インスタンス。 場合<paramref name="target" />パラメーターは<see langword="null" />、現在のインスタンスのコピーを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの結果<xref:System.Net.SocketPermission.Union%2A>すべてへのアクセスを表すアクセス許可は、<xref:System.Net.Sockets.Socket>によって表される、アクセスと同様に、現在のインスタンスによって表される接続`target`です。 現在のいずれかのインスタンスに適合するすべての要求または`target`共用体を渡します。 このメソッドは<xref:System.Security.CodeAccessPermission.Union%2A>サポートするために実装されると、<xref:System.Security.IPermission>インターフェイスです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.SocketPermission.Union%2A>を既存の 2 つの論理的な和集合を返すメソッドを<xref:System.Net.SocketPermission>インスタンス。  
+  
+ [!code-cpp[SocketPermissionExample#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SocketPermissionExample/CPP/source.cpp#2)]
+ [!code-csharp[SocketPermissionExample#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SocketPermissionExample/CS/source.cs#2)]
+ [!code-vb[SocketPermissionExample#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SocketPermissionExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /> が <see cref="T:System.Net.SocketPermission" /> ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1468 @@
+<Type Name="FileSystemWatcher" FullName="System.IO.FileSystemWatcher">
+  <TypeSignature Language="C#" Value="public class FileSystemWatcher : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileSystemWatcher extends System.ComponentModel.Component implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.IO.FileSystemWatcher" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Changed")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.IO.IODescription("")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ファイル システムの変更通知を待機し、ディレクトリまたはディレクトリ内のファイルが変更されたときにイベントを発生させます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#System/services/io/system/io/FileSystemWatcher.cs#a9eb0249dc928b09)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ 使用して<xref:System.IO.FileSystemWatcher>指定したディレクトリ内の変更を監視します。 指定したディレクトリのファイルとサブディレクトリ内の変更を確認できます。 ローカル コンピューター、ネットワーク ドライブ、またはリモート コンピューター上のファイルを監視するコンポーネントを作成することができます。  
+  
+ すべてのファイルに変更をウォッチするには設定、<xref:System.IO.FileSystemWatcher.Filter%2A>プロパティを空の文字列 ("") またはワイルドカードを使用して ("*.\*")。 特定のファイルをウォッチする、<xref:System.IO.FileSystemWatcher.Filter%2A>プロパティをファイル名。 たとえば、MyDoc.txt ファイル内の変更をウォッチする次のように設定します。、<xref:System.IO.FileSystemWatcher.Filter%2A>プロパティを"MyDoc.txt"です。 特定の種類のファイルでの変更のウォッチできます。 たとえば、テキスト ファイルの変更をウォッチする次のように設定します。、<xref:System.IO.FileSystemWatcher.Filter%2A>プロパティを"\*.txt"です。  
+  
+ ディレクトリまたはファイルを見ることができますの変更のいくつかの種類があります。 などの変化を監視することができます`Attributes`、`LastWrite`日付と時刻、または`Size`ファイルまたはディレクトリのです。 これは、設定で、<xref:System.IO.FileSystemWatcher.NotifyFilter%2A>プロパティのいずれかを<xref:System.IO.NotifyFilters>値。 監視できる変更の種類の詳細については、次を参照してください。<xref:System.IO.NotifyFilters>です。  
+  
+ 名前変更、削除、またはファイルまたはディレクトリの作成を確認できます。 たとえば、テキスト ファイルの名前を変更するをウォッチする次のように設定します。、<xref:System.IO.FileSystemWatcher.Filter%2A>プロパティを「*.txt」、および呼び出し、<xref:System.IO.FileSystemWatcher.WaitForChanged%2A>メソッドを、<xref:System.IO.WatcherChangeTypes.Renamed>そのパラメーターに指定します。  
+  
+ Windows オペレーティング システム、コンポーネントによって作成されたバッファー内のファイルの変更を通知する、<xref:System.IO.FileSystemWatcher>です。 短期間に多数の変更がある場合、バッファーがオーバーフローすることができます。 これにより、コンポーネントは、ディレクトリ内の変更の追跡とブランケットの通知のみ提供されます。 含むバッファーのサイズを増やすと、<xref:System.IO.FileSystemWatcher.InternalBufferSize%2A>プロパティが高コスト、大きなおいてとして小さなバッファーをまだディスクにスワップ アウトできない非ページ メモリから渡される見逃さない任意のファイルに十分な数の変更イベント。 バッファー オーバーフローを避けるためを使用して、<xref:System.IO.FileSystemWatcher.NotifyFilter%2A>と<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A>プロパティ フィルターで除外できます不要なので変更通知します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.IO.FileSystemWatcher>を参照してください、<xref:System.IO.FileSystemWatcher.%23ctor%2A>コンス トラクターです。  
+  
+ 使用する場合は、次に注意してください、<xref:System.IO.FileSystemWatcher>クラスです。  
+  
+-   隠しファイルは無視されません。  
+  
+-   一部のシステムで<xref:System.IO.FileSystemWatcher>短い 8.3 ファイル名の形式を使用してファイルへの変更を報告します。 たとえば、"LongFileName.LongExtension"への変更として報告する"LongFil ~ です。Lon"です。  
+  
+-   このクラスには、リンク確認要求し、すべてのメンバーに適用されるクラス レベルの継承確認要求が含まれています。 A<xref:System.Security.SecurityException>直前の呼び出し元または派生クラスのいずれかに完全信頼アクセス許可がない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)です。  
+  
+-   設定できる最大サイズ、<xref:System.IO.FileSystemWatcher.InternalBufferSize%2A>ネットワーク経由でディレクトリを監視するためのプロパティは、64 KB です。  
+  
+> [!NOTE]
+>  実行している<xref:System.IO.FileSystemWatcher>Windows 98 ではサポートされていません。  
+  
+## <a name="copying-and-moving-folders"></a>コピーとフォルダーを移動  
+ オペレーティング システムと<xref:System.IO.FileSystemWatcher>オブジェクトは、カット アンド ペースト操作または移動アクションのフォルダーとその内容の名前変更アクションとしてを解釈します。 切り取りし、ファイルとフォルダーを監視対象フォルダーに貼り付ける場合、<xref:System.IO.FileSystemWatcher>オブジェクトをレポートとして、新しいフォルダーのみがその内容は、本質的にだけ名前を変更するためです。  
+  
+ フォルダーの内容が移動または監視フォルダーにコピーされることを通知する、提供<xref:System.IO.FileSystemWatcher.OnChanged%2A>と<xref:System.IO.FileSystemWatcher.OnRenamed%2A>次の表で指定されたイベント ハンドラーのメソッドです。  
+  
+|イベント ハンドラー|イベント処理|実行します|  
+|-------------------|--------------------|--------------|  
+|<xref:System.IO.FileSystemWatcher.OnChanged%2A>|<xref:System.IO.FileSystemWatcher.Changed>、<xref:System.IO.FileSystemWatcher.Created>、<xref:System.IO.FileSystemWatcher.Deleted>|属性は、作成されたファイル、および削除されたファイルの変更を報告します。|  
+|<xref:System.IO.FileSystemWatcher.OnRenamed%2A>|<xref:System.IO.FileSystemWatcher.Renamed>|パスを一覧表示、古いマスター_キーと新しい名前が変更されたファイルとフォルダーのために必要な場合は再帰的に、展開します。|  
+  
+## <a name="events-and-buffer-sizes"></a>イベントとバッファー サイズ  
+ 次の説明に従ってことに注意いくつかの要因に影響するファイル システムの変更イベントが発生します。  
+  
+-   一般的なファイル システム操作では、1 つ以上のイベントを発生させる可能性があります。 たとえば、移動した場合、ファイル別に、いくつかの 1 つのディレクトリから<xref:System.IO.FileSystemWatcher.OnChanged%2A>といくつか<xref:System.IO.FileSystemWatcher.OnCreated%2A>と<xref:System.IO.FileSystemWatcher.OnDeleted%2A>イベントを発生させる可能性があります。 複数のイベントを発生させるためファイルが複数の単純な操作で構成される複雑な操作を移動するには、します。 同様に、一部のアプリケーション (ウイルス対策ソフトウェアなど) がによって検出された追加のファイル システムのイベントを発生可能性があります<xref:System.IO.FileSystemWatcher>です。  
+  
+-   <xref:System.IO.FileSystemWatcher>切り替えされたり削除しない限り、ディスクを見ることができます。 <xref:System.IO.FileSystemWatcher>イベントを発生させない Cd および Dvd のタイムスタンプとプロパティを変更できないためです。 リモート コンピューターは、正常に機能するコンポーネントのインストールされている必要なプラットフォームのいずれかが必要です。  
+  
+-   複数<xref:System.IO.FileSystemWatcher>Windows XP Service Pack 1 以前で UNC パスと同じを視聴しているオブジェクトまたは Windows 2000 SP2 またはオブジェクトの以前のバージョンのいずれかでイベントが発生します。 Windows XP SP1 を実行しているコンピューターで以降では Windows 2000 SP3 以降または Windows Server 2003 では、すべて<xref:System.IO.FileSystemWatcher>オブジェクトが適切なイベントを発生させます。  
+  
+ なお、<xref:System.IO.FileSystemWatcher>バッファー サイズを超えたときにイベントを見逃す可能性があります。 イベントの欠落を回避するには、次のガイドラインに従います。  
+  
+-   設定してバッファー サイズを増やす、<xref:System.IO.FileSystemWatcher.InternalBufferSize%2A>プロパティです。  
+  
+-   長いファイル名が、バッファーがいっぱいに貢献ため長いファイル名、ファイルの監視を使用しないでください。 短い名前を使用してこれらのファイルの名前を変更することを検討してください。  
+  
+-   イベントの処理コードをできるだけ短くしてください。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.IO.FileSystemWatcher>実行時に指定されたディレクトリを監視します。 変更を監視するコンポーネントを設定`LastWrite`と`LastAccess`時、作成、削除、または、ディレクトリ内のテキスト ファイルの名前を変更します。 場合は、ファイルは、変更、作成、または削除は、ファイルへのパスは、コンソールに出力します。 ファイルの名前が変更されると、新旧のパスは、コンソールに出力します。  
+  
+ 使用して、<xref:System.Diagnostics>と<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
+ [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">派生させるため、<see cref="T:System.Diagnostics.ProcessStartInfo" />クラスです。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。名前付き権限セット:<see langword="FullTrust" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileSystemWatcher ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.FileSystemWatcher" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows NT または Windows 2000 がないリモート コンピューターを監視することはできません。 Windows NT 4.0 のコンピューターからリモートの Windows NT 4.0 コンピューターを監視することはできません。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.IO.FileSystemWatcher>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.IO.FileSystemWatcher.NotifyFilter%2A>|ビットごとの OR の組み合わせ`LastWrite`、 `FileName`、および`DirectoryName`|  
+|<xref:System.IO.FileSystemWatcher.EnableRaisingEvents%2A>|`false`|  
+|<xref:System.IO.FileSystemWatcher.Filter%2A>|"*.\*"(すべてのファイルを監視します)。|  
+|<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A>|`false`|  
+|<xref:System.IO.FileSystemWatcher.InternalBufferSize%2A>|8192|  
+|<xref:System.IO.FileSystemWatcher.Path%2A>|空の文字列 ("")|  
+  
+> [!NOTE]
+>  コンポーネントは、指定したディレクトリまでを視聴しません、<xref:System.IO.FileSystemWatcher.Path%2A>が設定されていると<xref:System.IO.FileSystemWatcher.EnableRaisingEvents%2A>は`true`します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.IO.FileSystemWatcher>実行時に指定されたディレクトリを監視するオブジェクト。 <xref:System.IO.FileSystemWatcher>オブジェクトの変更は、監視`LastWrite`と`LastAccess`時刻、および作成するため、削除、テキストの名前を変更するファイルまたはディレクトリにします。 ファイルは、変更、作成、または削除は、ファイルへのパスをコンソールに表示します。 ファイルの名前が変更されると、新旧のパスは、コンソールに表示します。  
+  
+ この例では、<xref:System.Diagnostics>と<xref:System.IO>名前空間。  
+  
+ [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
+ [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileSystemWatcher (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">標準表記または UNC (Universal Naming Convention) 表記での監視するディレクトリ。</param>
+        <summary>監視するディレクトリを指定して、<see cref="T:System.IO.FileSystemWatcher" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  コンポーネントは、指定したディレクトリまでを視聴しません、<xref:System.IO.FileSystemWatcher.Path%2A>が設定されていると<xref:System.IO.FileSystemWatcher.EnableRaisingEvents%2A>は`true`します。  
+  
+ コンポーネントは、パーソナル コンピューター、ネットワーク ドライブ、またはリモート コンピューター上のファイルを見ることができます。  
+  
+ Windows NT または Windows 2000 がないリモート コンピューターを監視することはできません。 Windows NT 4.0 のコンピューターからリモートの Windows NT 4.0 コンピューターを監視することはできません。 <xref:System.IO.FileSystemWatcher.Filter%2A>プロパティが既定ですべてのファイルを監視します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> パラメーターが空の文字列 ("") です。  
+  
+ または  
+  
+ 指定されたパス、<paramref name="path" />パラメーターが存在しません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">
+          <paramref name="path" />長すぎます。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileSystemWatcher (string path, string filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, string filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="filter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">標準表記または UNC (Universal Naming Convention) 表記での監視するディレクトリ。</param>
+        <param name="filter">ウォッチするファイルの種類。 たとえば、すべてのテキスト ファイルの変更をウォッチするには、"*.txt" に設定します。</param>
+        <summary><see cref="T:System.IO.FileSystemWatcher" /> クラスの新しいインスタンスを、監視するディレクトリとファイルの種類を指定して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  コンポーネントは、指定したディレクトリまでを視聴しません、<xref:System.IO.FileSystemWatcher.Path%2A>が設定されていると<xref:System.IO.FileSystemWatcher.EnableRaisingEvents%2A>は`true`します。  
+  
+ コンポーネントは、パーソナル コンピューター、ネットワーク ドライブ、またはリモート コンピューター上のファイルを見ることができます。  
+  
+ Windows NT または Windows 2000 がないリモート コンピューターを監視することはできません。 Windows NT 4.0 のコンピューターからリモートの Windows NT 4.0 コンピューターを監視することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="filter" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> パラメーターが空の文字列 ("") です。  
+  
+ または  
+  
+ 指定されたパス、<paramref name="path" />パラメーターが存在しません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">
+          <paramref name="path" />長すぎます。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フォームまたは別のコンポーネントで使用する <see cref="T:System.IO.FileSystemWatcher" /> の初期化を開始します。 初期化は実行時に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]デザイン環境では、このメソッドを使用して、コンポーネントの初期化を開始フォームまたは別のコンポーネントを使用します。 <xref:System.IO.FileSystemWatcher.EndInit%2A>メソッドが初期化を終了します。 使用して、<xref:System.IO.FileSystemWatcher.BeginInit%2A>と<xref:System.IO.FileSystemWatcher.EndInit%2A>メソッド使用されないように、コントロールが完全に初期化される前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Changed">
+      <MemberSignature Language="C#" Value="public event System.IO.FileSystemEventHandler Changed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.IO.FileSystemEventHandler Changed" />
+      <MemberSignature Language="DocId" Value="E:System.IO.FileSystemWatcher.Changed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.IO.IODescription("Occurs when a file/directory change matches the filter")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.FileSystemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した <see cref="P:System.IO.FileSystemWatcher.Path" /> のファイルまたはディレクトリが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileSystemWatcher.Changed>イベントが発生するは、サイズが変更されたときに、システム属性では、最終書き込み時刻、最終アクセス時刻、またはファイルまたはディレクトリのセキュリティ アクセス許可で監視されているディレクトリ。  
+  
+> [!NOTE]
+>  一般的なファイル システム操作では、1 つ以上のイベントを発生させる可能性があります。 たとえば、移動した場合、ファイル別に、いくつかの 1 つのディレクトリから<xref:System.IO.FileSystemWatcher.OnChanged%2A>といくつか<xref:System.IO.FileSystemWatcher.OnCreated%2A>と<xref:System.IO.FileSystemWatcher.OnDeleted%2A>イベントを発生させる可能性があります。 複数のイベントを発生させるためファイルが複数の単純な操作で構成される複雑な操作を移動するには、します。 同様に、一部のアプリケーション (ウイルス対策ソフトウェアなど) がによって検出された追加のファイル システムのイベントを発生可能性があります<xref:System.IO.FileSystemWatcher>です。  
+  
+ 使用して<xref:System.IO.FileSystemWatcher.NotifyFilter%2A>をこのイベントが処理されるときに発生する通知の数を制限します。  
+  
+> [!NOTE]
+>  <xref:System.IO.FileSystemWatcher.Changed>イベントは、予期しないファイルの名前を変更がディレクトリの名前が変更されるには発生しません。 名前を変更するをウォッチするを使用して、<xref:System.IO.FileSystemWatcher.Renamed>イベント。  
+  
+> [!NOTE]
+>  順序、<xref:System.IO.FileSystemWatcher.Changed>イベントは、他の関連<xref:System.IO.FileSystemWatcher>イベントが変更可能性があります、<xref:System.IO.FileSystemWatcher.SynchronizingObject%2A>プロパティは使用されません`null`です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.FileSystemWatcher.Changed>ウォッチ対象のファイルが変更されるたびに、ファイルのパスをコンソールに表示するイベントです。  
+  
+ [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
+ [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Created">
+      <MemberSignature Language="C#" Value="public event System.IO.FileSystemEventHandler Created;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.IO.FileSystemEventHandler Created" />
+      <MemberSignature Language="DocId" Value="E:System.IO.FileSystemWatcher.Created" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.IO.IODescription("Occurs when a file/directory creation matches the filter")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.FileSystemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した <see cref="P:System.IO.FileSystemWatcher.Path" /> のファイルまたはディレクトリが作成されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルまたはディレクトリにコピーまたは移動など、いくつかの一般的な状況は、イベントに直接対応していないが発生しないでくださいイベントが発生します。 ファイルまたはディレクトリをコピーすると、システムを発生させます、<xref:System.IO.FileSystemWatcher.Created>コピー先となるファイルが、そのディレクトリが監視されている場合、ディレクトリ内のイベントです。 コピー元となるディレクトリを別のインスタンスで監視対象がかどうか<xref:System.IO.FileSystemWatcher>イベントは生成されません。 たとえば、2 つのインスタンスを作成する<xref:System.IO.FileSystemWatcher>です。 "C:\My Documents"を監視する FileSystemWatcher1 が設定され、"C:\Your Documents"を監視する FileSystemWatcher2 が設定されます。 「マイ ドキュメント」から"Your Documents"にファイルをコピーする場合、 <xref:System.IO.FileSystemWatcher.Created> FileSystemWatcher2 でイベントを発生させるが FileSystemWatcher1 のイベントは生成されません。 コピーとは異なりファイルまたはディレクトリの移動が発生させる 2 つのイベントです。 「マイ ドキュメント」から"Your Documents"にファイルを移動する場合、前の例から、 <xref:System.IO.FileSystemWatcher.Created> FileSystemWatcher2 でイベントを発生させると、 <xref:System.IO.FileSystemWatcher.Deleted> FileSystemWatcher1 によってイベントが生成されます。  
+  
+> [!NOTE]
+>  一般的なファイル システム操作では、1 つ以上のイベントを発生させる可能性があります。 たとえば、移動した場合、ファイル別に、いくつかの 1 つのディレクトリから<xref:System.IO.FileSystemWatcher.OnChanged%2A>といくつか<xref:System.IO.FileSystemWatcher.OnCreated%2A>と<xref:System.IO.FileSystemWatcher.OnDeleted%2A>イベントを発生させる可能性があります。 複数のイベントを発生させるためファイルが複数の単純な操作で構成される複雑な操作を移動するには、します。 同様に、一部のアプリケーション (ウイルス対策ソフトウェアなど) がによって検出された追加のファイル システムのイベントを発生可能性があります<xref:System.IO.FileSystemWatcher>です。  
+  
+> [!NOTE]
+>  順序、<xref:System.IO.FileSystemWatcher.Created>イベントは、他の関連<xref:System.IO.FileSystemWatcher>イベントが変更可能性があります、<xref:System.IO.FileSystemWatcher.SynchronizingObject%2A>プロパティは使用されません`null`です。  
+  
+ <xref:System.IO.FileSystemWatcher.OnCreated%2A>ファイルが作成されるとすぐにイベントが発生します。 ファイルの中の場合コピーしたり、監視対象のディレクトリに転送したり、<xref:System.IO.FileSystemWatcher.OnCreated%2A>イベントを発生させる、すぐに続く 1 つ以上<xref:System.IO.FileSystemWatcher.OnChanged%2A>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.FileSystemWatcher.Created>ウォッチ対象のファイルが作成されるたびに、ファイルのパスをコンソールに表示するイベントです。  
+  
+ [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
+ [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deleted">
+      <MemberSignature Language="C#" Value="public event System.IO.FileSystemEventHandler Deleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.IO.FileSystemEventHandler Deleted" />
+      <MemberSignature Language="DocId" Value="E:System.IO.FileSystemWatcher.Deleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.IO.IODescription("Occurs when a file/directory deletion matches the filter")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.FileSystemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した <see cref="P:System.IO.FileSystemWatcher.Path" /> のファイルまたはディレクトリが削除されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルまたはディレクトリにコピーまたは移動など、いくつかの一般的な状況は、イベントに直接対応していないが発生しないでくださいイベントが発生します。 ファイルまたはディレクトリをコピーすると、システムを発生させます、<xref:System.IO.FileSystemWatcher.Created>コピー先となるファイルが、そのディレクトリが監視されている場合、ディレクトリ内のイベントです。 コピー元となるディレクトリを別のインスタンスで監視対象がかどうか<xref:System.IO.FileSystemWatcher>イベントは生成されません。 たとえば、2 つのインスタンスを作成する<xref:System.IO.FileSystemWatcher>です。 "C:\My Documents"を監視する FileSystemWatcher1 が設定され、"C:\Your Documents"を監視する FileSystemWatcher2 が設定されます。 「マイ ドキュメント」から"Your Documents"にファイルをコピーする場合、 <xref:System.IO.FileSystemWatcher.Created> FileSystemWatcher2 でイベントを発生させるが FileSystemWatcher1 のイベントは生成されません。 コピーとは異なりファイルまたはディレクトリの移動が発生させる 2 つのイベントです。 「マイ ドキュメント」から"Your Documents"にファイルを移動する場合、前の例から、 <xref:System.IO.FileSystemWatcher.Created> FileSystemWatcher2 でイベントを発生させると、 <xref:System.IO.FileSystemWatcher.Deleted> FileSystemWatcher1 によってイベントが生成されます。  
+  
+> [!NOTE]
+>  一般的なファイル システム操作では、1 つ以上のイベントを発生させる可能性があります。 たとえば、移動した場合、ファイル別に、いくつかの 1 つのディレクトリから<xref:System.IO.FileSystemWatcher.OnChanged%2A>といくつか<xref:System.IO.FileSystemWatcher.OnCreated%2A>と<xref:System.IO.FileSystemWatcher.OnDeleted%2A>イベントを発生させる可能性があります。 複数のイベントを発生させるためファイルが複数の単純な操作で構成される複雑な操作を移動するには、します。 同様に、一部のアプリケーション (ウイルス対策ソフトウェアなど) がによって検出された追加のファイル システムのイベントを発生可能性があります<xref:System.IO.FileSystemWatcher>です。  
+  
+> [!NOTE]
+>  順序、<xref:System.IO.FileSystemWatcher.Deleted>イベントは、他の関連<xref:System.IO.FileSystemWatcher>イベントが変更可能性があります、<xref:System.IO.FileSystemWatcher.SynchronizingObject%2A>プロパティは使用されません`null`です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.FileSystemWatcher.Deleted>ウォッチ対象のファイルを削除するたびに、ファイルのパスをコンソールに表示するイベントです。  
+  
+ [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
+ [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.FileSystemWatcher" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック<xref:System.ComponentModel.Component.Dispose%2A>メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 <xref:System.ComponentModel.Component.Dispose%2A>プロテクト呼び出します<xref:System.IO.FileSystemWatcher.Dispose%2A>メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す<xref:System.IO.FileSystemWatcher.Dispose%2A>で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.IO.Compression.DeflateStream> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの <xref:System.ComponentModel.Component.Dispose%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.ComponentModel.Component.Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see cref="M:System.IO.FileSystemWatcher.Dispose(System.Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see cref="M:System.ComponentModel.Component.Dispose" />です。 実装する方法の詳細についての<see cref="M:System.IO.FileSystemWatcher.Dispose(System.Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see cref="M:System.ComponentModel.Component.Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableRaisingEvents">
+      <MemberSignature Language="C#" Value="public bool EnableRaisingEvents { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableRaisingEvents" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemWatcher.EnableRaisingEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.IO.IODescription("Flag to indicate if this instance is active")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントが有効かどうかを示す値を取得または設定します。</summary>
+        <value>
+          コンポーネントが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。 [!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)] のデザイナーでコンポーネントを使用している場合、既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定しない限り、コンポーネントはイベントを発生させないは<xref:System.IO.FileSystemWatcher.EnableRaisingEvents%2A>に`true`です。  
+  
+> [!NOTE]
+>  コンポーネントは、指定したディレクトリまでを視聴しません、<xref:System.IO.FileSystemWatcher.Path%2A>プロパティが設定されていると<xref:System.IO.FileSystemWatcher.EnableRaisingEvents%2A>は`true`します。  
+  
+ <xref:System.IO.FileSystemWatcher.WaitForChanged%2A>メソッドにより、イベント ハンドラーをこのプロパティ設定されている場合でも、ファイルの変更に応答するに呼び出せる`false`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.IO.FileSystemWatcher>実行時に指定されたディレクトリを監視します。 変更を監視するコンポーネントを設定`LastWrite`と`LastAccess`時、作成、削除、または、ディレクトリ内のテキスト ファイルの名前を変更します。 場合は、ファイルは、変更、作成、または削除は、ファイルへのパスは、コンソールに出力します。 ファイルの名前が変更されると、新旧のパスは、コンソールに出力します。  
+  
+ 使用して、<xref:System.Diagnostics>と<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
+ [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.IO.FileSystemWatcher" />オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Microsoft Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定されたディレクトリ<see cref="P:System.IO.FileSystemWatcher.Path" />で見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.IO.FileSystemWatcher.Path" />設定されていないか、無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フォームまたは別のコンポーネントで使用する <see cref="T:System.IO.FileSystemWatcher" /> の初期化を終了します。 初期化は実行時に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]デザイン環境では、このメソッドを使用して、コンポーネントの初期化を終了フォームまたは別のコンポーネントを使用します。 <xref:System.IO.FileSystemWatcher.BeginInit%2A>メソッドは、初期化を開始します。 使用して、<xref:System.IO.FileSystemWatcher.BeginInit%2A>と<xref:System.IO.FileSystemWatcher.EndInit%2A>メソッド使用されないように、コントロールが完全に初期化される前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="public event System.IO.ErrorEventHandler Error;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.IO.ErrorEventHandler Error" />
+      <MemberSignature Language="DocId" Value="E:System.IO.FileSystemWatcher.Error" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.ErrorEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IO.FileSystemWatcher" /> のインスタンスが変更の監視を続けられない場合、または内部バッファー オーバーフローの場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、問題を防止するたびに、<xref:System.IO.FileSystemWatcher>オブジェクトからの変更の監視します。 たとえば、オブジェクトがリモート ディレクトリ内の変更を監視し、そのディレクトリへの接続が失われる、<xref:System.IO.FileSystemWatcher.Error>イベントが発生します。  
+  
+ システムでは、ファイルの変更、ユーザーに通知し、その変更をコンポーネントを作成し、Api に渡すバッファーに格納します。 短期間に多数の変更がある場合、バッファーがオーバーフローすることができます。 これにより、コンポーネントは、ディレクトリ内の変更の追跡とブランケットの通知のみ提供されます。 バッファーのサイズを増やす、負荷が高い、以外のものであるためにページは維持する、ディスクにスワップ アウトできないメモリ バッファーをできるだけ小さくします。 バッファー オーバーフローを避けるためを使用して、 <xref:System.IO.FileSystemWatcher.NotifyFilter%2A>、 <xref:System.IO.FileSystemWatcher.Filter%2A>、および<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A>望ましくないを除外するプロパティの変更通知します。  
+  
+> [!NOTE]
+>  一般的なファイル システム操作では、1 つ以上のイベントを発生させる可能性があります。 たとえば、移動した場合、ファイル別に、いくつかの 1 つのディレクトリから<xref:System.IO.FileSystemWatcher.OnChanged%2A>といくつか<xref:System.IO.FileSystemWatcher.OnCreated%2A>と<xref:System.IO.FileSystemWatcher.OnDeleted%2A>イベントを発生させる可能性があります。 複数のイベントを発生させるためファイルが複数の単純な操作で構成される複雑な操作を移動するには、します。 同様に、一部のアプリケーション (ウイルス対策ソフトウェアなど) がによって検出された追加のファイル システムのイベントを発生可能性があります<xref:System.IO.FileSystemWatcher>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public string Filter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Filter" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemWatcher.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("*.*")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RecommendedAsConfigurable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.StringValueConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.IO.IODescription("File name filter pattern")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリで監視するファイルを決定するために使用するフィルター文字列を取得または設定します。</summary>
+        <value>フィルター文字列。 既定値は"* です。\*"(すべてのファイルを監視します)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのファイルの変更をウォッチする、<xref:System.IO.FileSystemWatcher.Filter%2A>プロパティを空の文字列 ("") です。 特定のファイルをウォッチする、<xref:System.IO.FileSystemWatcher.Filter%2A>プロパティをファイル名。 たとえば、MyDoc.txt ファイル内の変更をウォッチする次のように設定します。、<xref:System.IO.FileSystemWatcher.Filter%2A>プロパティを"MyDoc.txt"です。 特定の種類のファイルでの変更のウォッチできます。 たとえば、任意のテキスト ファイルの変更をウォッチする次のように設定します。、<xref:System.IO.FileSystemWatcher.Filter%2A>プロパティを"*.txt"です。 などの複数のフィルターの使用"\*.txt &#124;\*です。doc"はサポートされていません。  
+  
+ <xref:System.IO.FileSystemWatcher.Filter%2A>プロパティは、後に変更することができます、<xref:System.IO.FileSystemWatcher>オブジェクトがイベントの受信を開始します。  
+  
+ 不必要な通知をフィルター処理の詳細については、次を参照してください。、 <xref:System.IO.FileSystemWatcher.NotifyFilter%2A>、 <xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A>、および<xref:System.IO.FileSystemWatcher.InternalBufferSize%2A>プロパティです。  
+  
+ <xref:System.IO.FileSystemWatcher.Filter%2A>次の例に示すように、一致するファイルのワイルドカードを受け付けます。  
+  
+|フィルター文字列|次のファイルを監視します。|  
+|-------------------|---------------------------------|  
+|*.\*|すべてのファイル (既定値)。 空の文字列 ("") もすべてのファイルを監視します。|  
+|「*.txt」|"Txt"拡張子を持つすべてのファイル。|  
+|*recipe.doc|"Doc"拡張子を持つには、「料理」で終わるすべてのファイル。|  
+|win*.xml|"Xml"拡張子が"win"で始まるすべてのファイル。|  
+|Sales * 200 ですか。xls|次に一致します。<br /><br /> 販売年 7 月 2001.xlsSales Aug 2002.xlsSales 年 3 月 2004.xls<br /><br /> 一致しません。<br /><br /> 販売 Nov 1999.xls|  
+|MyReport.Doc|MyReport.doc のみを監視します。|  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.IO.FileSystemWatcher>実行時に指定されたディレクトリを監視します。 変更を監視するコンポーネントを設定`LastWrite`と`LastAccess`時、作成、削除、または、ディレクトリ内のテキスト ファイルの名前を変更します。 場合は、ファイルは、変更、作成、または削除は、ファイルへのパスは、コンソールに出力します。 ファイルの名前が変更されると、新旧のパスは、コンソールに出力します。  
+  
+ 使用して、<xref:System.Diagnostics>と<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
+ [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~FileSystemWatcher ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeSubdirectories">
+      <MemberSignature Language="C#" Value="public bool IncludeSubdirectories { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeSubdirectories" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemWatcher.IncludeSubdirectories" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.IO.IODescription("Flag to indicate we want to watch subdirectories")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したパスのサブディレクトリを監視するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          サブディレクトリを監視する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A>に`true`ファイルとディレクトリを指定したディレクトリ内に含まれる変更通知を監視する場合、<xref:System.IO.FileSystemWatcher.Path%2A>プロパティ、およびそのサブディレクトリです。 設定、<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A>プロパティを`false`内部バッファーに送信された通知の数を削減できます。 不必要な通知をフィルター処理の詳細については、次を参照してください。、<xref:System.IO.FileSystemWatcher.NotifyFilter%2A>と<xref:System.IO.FileSystemWatcher.InternalBufferSize%2A>プロパティです。  
+  
+ ときに`true`、<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A>は直下の子ディレクトリだけでなく、全体のサブ ツリーを再帰的です。 内のファイルまたはサブツリー内のディレクトリへの相対パスを返します、<xref:System.IO.FileSystemEventArgs.Name%2A>プロパティの<xref:System.IO.FileSystemEventArgs>と<xref:System.IO.RenamedEventArgs.OldName%2A>プロパティの<xref:System.IO.RenamedEventArgs>を試聴している変更に応じて、します。 完全修飾パスを取得することができます、<xref:System.IO.FileSystemEventArgs.FullPath%2A>プロパティの<xref:System.IO.FileSystemEventArgs>と<xref:System.IO.RenamedEventArgs.OldFullPath%2A>のプロパティ<xref:System.IO.RenamedEventArgs>を試聴している変更に応じて、します。  
+  
+ 試聴しているディレクトリのサブ ツリーで、ディレクトリが作成された場合と<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A>は`true`、そのディレクトリが自動的に監視します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalBufferSize">
+      <MemberSignature Language="C#" Value="public int InternalBufferSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 InternalBufferSize" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemWatcher.InternalBufferSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(8192)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内部バッファーのサイズ (バイト単位) を取得または設定します。</summary>
+        <value>内部バッファー サイズ (バイト単位)。 既定値は 8192 (8 KB) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 4 KB 以上では、バッファーを設定することができますが、64 KB を超えない必要があります。 設定を試行した場合、<xref:System.IO.FileSystemWatcher.InternalBufferSize%2A>プロパティにより小さい 4096 (バイト単位)、値は破棄されます、<xref:System.IO.FileSystemWatcher.InternalBufferSize%2A>プロパティが 4096 バイトに設定します。 パフォーマンスを得るには、Intel ベース コンピューター上で 4 KB の倍数を使用します。  
+  
+ システム ファイルの変更のコンポーネントに通知し、その変更をコンポーネントを作成し、Api に渡すバッファーに格納します。 各イベントには、最大 16 バイトのファイル名を含まない、メモリを使用できます。 短期間に多数の変更がある場合、バッファーがオーバーフローすることができます。 これにより、コンポーネントは、ディレクトリ内の変更の追跡とブランケットの通知のみ提供されます。 バッファーのサイズを増やすことを防ぐことができます変更イベントをファイル システムがありません。 ただし、バッファー サイズを増やすことは、コストがディスクに保管しておいてバッファー可能な限り小さくスワップ アウトできない非ページ メモリのものであるためです。 バッファー オーバーフローを避けるためを使用して、<xref:System.IO.FileSystemWatcher.NotifyFilter%2A>と<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A>望ましくないを除外するプロパティの変更通知します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyFilter">
+      <MemberSignature Language="C#" Value="public System.IO.NotifyFilters NotifyFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.NotifyFilters NotifyFilter" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemWatcher.NotifyFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.IO.IODescription("Flag to indicate which change event we want to monitor")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.NotifyFilters</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウォッチする変更の種類を取得または設定します。</summary>
+        <value><see cref="T:System.IO.NotifyFilters" /> 値の 1 つ。 既定値は <see langword="LastWrite" />、<see langword="FileName" />、および <see langword="DirectoryName" /> のビットごとの OR の組み合わせです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メンバーを組み合わせることができます、<xref:System.IO.NotifyFilters>列挙型を一度に変更の 1 つ以上の種類を監視します。 たとえば、ファイルのサイズの変更との変更を見ることができます、`LastWrite`時間。 これは、イベントを発生させますが、ファイルまたはフォルダーのサイズの変更や、`LastWrite`ファイルまたはフォルダーの時間。  
+  
+ これは、不必要な通知をフィルター処理する方法の 1 つです。 不必要な通知をフィルター処理の詳細については、次を参照してください。、 <xref:System.IO.FileSystemWatcher.Filter%2A>、 <xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A>、および<xref:System.IO.FileSystemWatcher.InternalBufferSize%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.IO.FileSystemWatcher>実行時に指定されたディレクトリを監視します。 変更を監視するコンポーネントを設定`LastWrite`と`LastAccess`時、作成、削除、または、ディレクトリ内のテキスト ファイルの名前を変更します。 場合は、ファイルは、変更、作成、または削除は、ファイルへのパスは、コンソールに出力します。 ファイルの名前が変更されると、新旧のパスは、コンソールに出力します。  
+  
+ 使用して、<xref:System.Diagnostics>と<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
+ [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値は、有効なビットごとの OR の組み合わせではない、<see cref="T:System.IO.NotifyFilters" />値。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">設定されている値が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChanged">
+      <MemberSignature Language="C#" Value="protected void OnChanged (System.IO.FileSystemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnChanged(class System.IO.FileSystemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.OnChanged(System.IO.FileSystemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.IO.FileSystemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.IO.FileSystemEventArgs" />。</param>
+        <summary><see cref="E:System.IO.FileSystemWatcher.Changed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileSystemWatcher.OnChanged%2A>サイズ、システム属性、最終書き込み時刻、最終アクセス時刻、または、ファイルまたはディレクトリの監視されているディレクトリのセキュリティ アクセス許可に変更が加えられたときに呼び出されます。  
+  
+ 使用して、<xref:System.IO.FileSystemWatcher.NotifyFilter%2A>いつ発生するイベントの数を制限するプロパティ、<xref:System.IO.FileSystemWatcher.Changed>イベントを処理します。  
+  
+ <xref:System.IO.FileSystemWatcher.OnCreated%2A>ファイルが作成されるとすぐにイベントが発生します。 ファイルの中の場合コピーしたり、監視対象のディレクトリに転送したり、<xref:System.IO.FileSystemWatcher.OnCreated%2A>イベントを発生させる、すぐに続く 1 つ以上<xref:System.IO.FileSystemWatcher.OnChanged%2A>イベント。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.IO.FileSystemWatcher.OnChanged(System.IO.FileSystemEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.IO.FileSystemWatcher.OnChanged(System.IO.FileSystemEventArgs)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreated">
+      <MemberSignature Language="C#" Value="protected void OnCreated (System.IO.FileSystemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnCreated(class System.IO.FileSystemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.OnCreated(System.IO.FileSystemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.IO.FileSystemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.IO.FileSystemEventArgs" />。</param>
+        <summary><see cref="E:System.IO.FileSystemWatcher.Created" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileSystemWatcher.OnCreated%2A>ファイルまたはディレクトリが監視されているディレクトリに作成されたときに呼び出されます。  
+  
+ ファイルまたはディレクトリにコピーまたは移動など、いくつかの一般的な状況は、イベントに直接対応していないが発生しないでくださいイベントが発生します。 ファイルまたはディレクトリをコピーすると、システムを発生させます、<xref:System.IO.FileSystemWatcher.Created>コピー先となるファイルが、そのディレクトリが監視されている場合、ディレクトリ内のイベントです。 コピー元となるディレクトリを別のインスタンスで監視対象がかどうか<xref:System.IO.FileSystemWatcher>イベントは生成されません。 たとえば、2 つのインスタンスを作成する<xref:System.IO.FileSystemWatcher>です。 "C:\My Documents"を監視する FileSystemWatcher1 が設定され、"C:\Your Documents"を監視する FileSystemWatcher2 が設定されます。 「マイ ドキュメント」からファイルをコピーし、"Your Documents"に貼り付ける場合、 <xref:System.IO.FileSystemWatcher.Created> FileSystemWatcher2 でイベントを発生させるが FileSystemWatcher1 のイベントは生成されません。 、コピーとは異なり、ファイルまたはディレクトリの移動にも 2 つのイベントを発生させます。 「マイ ドキュメント」から"Your Documents"にファイルを移動する場合、前の例から、 <xref:System.IO.FileSystemWatcher.Created> FileSystemWatcher2 でイベントを発生させると、 <xref:System.IO.FileSystemWatcher.Deleted> FileSystemWatcher1 でイベントを発生させるとします。  
+  
+ <xref:System.IO.FileSystemWatcher.OnCreated%2A>ファイルが作成されるとすぐにイベントが発生します。 ファイルの中の場合コピーしたり、監視対象のディレクトリに転送したり、<xref:System.IO.FileSystemWatcher.OnCreated%2A>イベントを発生させる、すぐに続く 1 つ以上<xref:System.IO.FileSystemWatcher.OnChanged%2A>イベント。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.IO.FileSystemWatcher.OnCreated(System.IO.FileSystemEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.IO.FileSystemWatcher.OnCreated(System.IO.FileSystemEventArgs)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeleted">
+      <MemberSignature Language="C#" Value="protected void OnDeleted (System.IO.FileSystemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnDeleted(class System.IO.FileSystemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.OnDeleted(System.IO.FileSystemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.IO.FileSystemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.IO.FileSystemEventArgs" />。</param>
+        <summary><see cref="E:System.IO.FileSystemWatcher.Deleted" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileSystemWatcher.OnDeleted%2A>ファイルまたは、監視されているディレクトリ内のディレクトリが削除されると呼び出されます。  
+  
+ ファイルまたはディレクトリにコピーまたは移動など、いくつかの一般的な状況は、イベントに直接対応していないが発生しないでくださいイベントが発生します。 ファイルまたはディレクトリをコピーすると、システムを発生させます、<xref:System.IO.FileSystemWatcher.Created>コピー先となるファイルが、そのディレクトリが監視されている場合、ディレクトリ内のイベントです。 コピー元となるディレクトリを別のインスタンスで監視対象がかどうか<xref:System.IO.FileSystemWatcher>イベントは生成されません。 たとえば、2 つのインスタンスを作成する<xref:System.IO.FileSystemWatcher>です。 "C:\My Documents"を監視する FileSystemWatcher1 が設定され、"C:\Your Documents"を監視する FileSystemWatcher2 が設定されます。 「マイ ドキュメント」から"Your Documents"にファイルをコピーする場合、 <xref:System.IO.FileSystemWatcher.Created> FileSystemWatcher2 でイベントを発生させるが FileSystemWatcher1 のイベントは生成されません。 、コピーとは異なり、ファイルまたはディレクトリの移動にも 2 つのイベントを発生させます。 「マイ ドキュメント」から"Your Documents"にファイルを移動する場合、前の例から、 <xref:System.IO.FileSystemWatcher.Created> FileSystemWatcher2 でイベントを発生させると、 <xref:System.IO.FileSystemWatcher.Deleted> FileSystemWatcher1 によってイベントが生成されます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.IO.FileSystemWatcher.OnDeleted(System.IO.FileSystemEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.IO.FileSystemWatcher.OnDeleted(System.IO.FileSystemEventArgs)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnError">
+      <MemberSignature Language="C#" Value="protected void OnError (System.IO.ErrorEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnError(class System.IO.ErrorEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.OnError(System.IO.ErrorEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.IO.ErrorEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.IO.ErrorEventArgs" />。</param>
+        <summary><see cref="E:System.IO.FileSystemWatcher.Error" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileSystemWatcher.OnError%2A>エラーが発生すると呼び出されます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.IO.FileSystemWatcher.OnError(System.IO.ErrorEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.IO.FileSystemWatcher.OnError(System.IO.ErrorEventArgs)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRenamed">
+      <MemberSignature Language="C#" Value="protected void OnRenamed (System.IO.RenamedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnRenamed(class System.IO.RenamedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.OnRenamed(System.IO.RenamedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.IO.RenamedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.IO.RenamedEventArgs" />。</param>
+        <summary><see cref="E:System.IO.FileSystemWatcher.Renamed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileSystemWatcher.OnRenamed%2A>ファイルまたは監視されているディレクトリ内のディレクトリの名前を変更すると呼び出されます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.IO.FileSystemWatcher.OnRenamed(System.IO.RenamedEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.IO.FileSystemWatcher.OnRenamed(System.IO.RenamedEventArgs)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemWatcher.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Diagnostics.Design.FSWPathEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RecommendedAsConfigurable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.StringValueConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.IO.IODescription("The directory to monitor")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウォッチするディレクトリのパスを取得または設定します。</summary>
+        <value>監視するパス。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、ディレクトリへの完全修飾パスです。 場合、<xref:System.IO.FileSystemWatcher.IncludeSubdirectories%2A>プロパティは`true`、このディレクトリは、システムが変更を監視するルートです。 それ以外の場合は、のみのディレクトリを監視します。 特定のファイルをウォッチする、<xref:System.IO.FileSystemWatcher.Path%2A>プロパティを完全修飾、正しいディレクトリと<xref:System.IO.FileSystemWatcher.Filter%2A>プロパティをファイル名。  
+  
+ <xref:System.IO.FileSystemWatcher.Path%2A>プロパティは、汎用名前付け規則 (UNC) パスをサポートします。  
+  
+> [!NOTE]
+>  コンポーネントの変更を監視できる前に、このプロパティを設定する必要があります。  
+  
+ ディレクトリの名前が変更される、<xref:System.IO.FileSystemWatcher>自動的にそれ自体が再接続されると、新しく名前を変更した項目にします。 設定する場合など、<xref:System.IO.FileSystemWatcher.Path%2A>プロパティ"C:\My Documents"を"C:\Your Documents"にディレクトリを手動で変更し、コンポーネントは、新しく名前を変更したディレクトリの変更通知を待機してが続行されます。 ただし、ときに問い合わせる必要が、<xref:System.IO.FileSystemWatcher.Path%2A>プロパティ、古いパスが含まれています。 これは、コンポーネントがウォッチするディレクトリを判断されるため、ディレクトリの名前ではなく、ハンドルに基づきます。 名前を変更しても、ハンドルは影響しません。 したがって、コンポーネントを破棄し、更新することがなく再作成する場合、<xref:System.IO.FileSystemWatcher.Path%2A>プロパティ、アプリケーションは、ディレクトリが存在しないために失敗します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.IO.FileSystemWatcher>実行時に指定されたディレクトリを監視します。 変更を監視するコンポーネントを設定`LastWrite`と`LastAccess`時、作成、削除、または、ディレクトリ内のテキスト ファイルの名前を変更します。 場合は、ファイルは、変更、作成、または削除は、ファイルへのパスは、コンソールに出力します。 ファイルの名前が変更されると、新旧のパスは、コンソールに出力します。  
+  
+ 使用して、<xref:System.Diagnostics>と<xref:System.IO>この例の名前空間。  
+  
+ [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
+ [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたパスは存在しないか、見つかりませんでした。  
+  
+ または  
+  
+ 指定されたパスには、ワイルドカード文字が含まれています。  
+  
+ または  
+  
+ 指定されたパスには、無効なパス文字が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Renamed">
+      <MemberSignature Language="C#" Value="public event System.IO.RenamedEventHandler Renamed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.IO.RenamedEventHandler Renamed" />
+      <MemberSignature Language="DocId" Value="E:System.IO.FileSystemWatcher.Renamed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.IO.IODescription("Occurs when a file/directory rename matches the filter")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.RenamedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した <see cref="P:System.IO.FileSystemWatcher.Path" /> のファイルまたはディレクトリの名前が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウォッチするディレクトリの名前を変更する場合は、通知は発生しません。 通知を試聴しているディレクトリ内のエントリに対してのみ発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.FileSystemWatcher.Renamed>ウォッチ対象のファイルの名前が変更されるたびに、ファイルのパスをコンソールに表示するイベントです。  
+  
+ [!code-cpp[Classic NotifyFilters Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NotifyFilters Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NotifyFilters Example/CS/source.cs#1)]
+ [!code-vb[Classic NotifyFilters Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NotifyFilters Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Site">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.ISite Site { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISite Site" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemWatcher.Site" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.ISite" /> の <see cref="T:System.IO.FileSystemWatcher" /> を取得または設定します。</summary>
+        <value><see cref="T:System.ComponentModel.ISite" /> の <see cref="T:System.IO.FileSystemWatcher" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サイトのバインド、<xref:System.ComponentModel.Component>を<xref:System.ComponentModel.Design.IDesignerHost.Container%2A>とそれらの間で通信を有効にするだけでなく、コンテナーは、そのコンポーネントを管理するための手段を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SynchronizingObject">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISynchronizeInvoke SynchronizingObject" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileSystemWatcher.SynchronizingObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.IO.IODescription("The object used to marshal the event handler calls resulting from a directory change")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISynchronizeInvoke</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリ変更の結果として発行されるイベント ハンドラー呼び出しをマーシャリングするために使用するオブジェクトを取得または設定します。</summary>
+        <value>ディレクトリ変更の結果として発行されるイベント ハンドラー呼び出しをマーシャリングするために使用するオブジェクトを表す <see cref="T:System.ComponentModel.ISynchronizeInvoke" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.IO.FileSystemWatcher.SynchronizingObject%2A>は`null`、処理方法、 <xref:System.IO.FileSystemWatcher.Changed>、 <xref:System.IO.FileSystemWatcher.Created>、<xref:System.IO.FileSystemWatcher.Deleted>と<xref:System.IO.FileSystemWatcher.Renamed>イベントがシステムのスレッド プールのスレッドで呼び出されます。 システム スレッド プールの詳細については、次を参照してください。<xref:System.Threading.ThreadPool>です。  
+  
+ ときに、 <xref:System.IO.FileSystemWatcher.Changed>、 <xref:System.IO.FileSystemWatcher.Created>、 <xref:System.IO.FileSystemWatcher.Deleted>、および<xref:System.IO.FileSystemWatcher.Renamed>ようイベントを Windows フォームのビジュアル コンポーネントによって処理される、 <xref:System.Windows.Forms.Button>、システム スレッド プールを介したコンポーネントへのアクセスが機能しない、または例外が発生する可能性があります。 設定してこれを回避する<xref:System.IO.FileSystemWatcher.SynchronizingObject%2A>を処理するメソッドを停止する Windows フォームのコンポーネントを<xref:System.IO.FileSystemWatcher.Changed>、 <xref:System.IO.FileSystemWatcher.Created>、 <xref:System.IO.FileSystemWatcher.Deleted>、および<xref:System.IO.FileSystemWatcher.Renamed>コンポーネントが作成されたスレッドと同じスレッドで呼び出されるイベント。  
+  
+ 場合、<xref:System.IO.FileSystemWatcher>内で使用する[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]、Windows フォーム デザイナーで<xref:System.IO.FileSystemWatcher.SynchronizingObject%2A>を含むコントロールに自動的に設定、<xref:System.IO.FileSystemWatcher>です。 配置する場合など、 <xref:System.IO.FileSystemWatcher> Form1 のデザイナー上 (から継承される<xref:System.Windows.Forms.Form>)、<xref:System.IO.FileSystemWatcher.SynchronizingObject%2A>プロパティの<xref:System.IO.FileSystemWatcher>Form1 のインスタンスに設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForChanged">
+      <MemberSignature Language="C#" Value="public System.IO.WaitForChangedResult WaitForChanged (System.IO.WatcherChangeTypes changeType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.IO.WaitForChangedResult WaitForChanged(valuetype System.IO.WatcherChangeTypes changeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.WaitForChanged(System.IO.WatcherChangeTypes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.WaitForChangedResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="changeType" Type="System.IO.WatcherChangeTypes" />
+      </Parameters>
+      <Docs>
+        <param name="changeType">ウォッチする <see cref="T:System.IO.WatcherChangeTypes" />。</param>
+        <summary>監視する変更の種類を指定して、発生した変更についての固有な情報を格納する構造体を返す同期メソッド。</summary>
+        <returns>発生した変更についての固有な情報を格納する <see cref="T:System.IO.WaitForChangedResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、最初の変更が発生し、返しますまで無期限に待機します。 これは、使用する場合と同じ<xref:System.IO.FileSystemWatcher.WaitForChanged%2A>で、`timeout`パラメーターが-1 に設定します。  
+  
+> [!NOTE]
+>  このメソッドに応答ファイルの変更の場合でも呼び出されるイベント ハンドラーを使用する、<xref:System.IO.FileSystemWatcher.EnableRaisingEvents%2A>プロパティに設定されている`false`です。  
+  
+ 一部のシステムで<xref:System.IO.FileSystemWatcher>短い 8.3 ファイル名の形式を使用してファイルへの変更を報告します。 たとえば、"LongFileName.LongExtension"への変更として報告する"LongFi ~ です。Lon"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForChanged">
+      <MemberSignature Language="C#" Value="public System.IO.WaitForChangedResult WaitForChanged (System.IO.WatcherChangeTypes changeType, int timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.IO.WaitForChangedResult WaitForChanged(valuetype System.IO.WatcherChangeTypes changeType, int32 timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileSystemWatcher.WaitForChanged(System.IO.WatcherChangeTypes,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.Watcher</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.WaitForChangedResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="changeType" Type="System.IO.WatcherChangeTypes" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="changeType">ウォッチする <see cref="T:System.IO.WatcherChangeTypes" />。</param>
+        <param name="timeout">タイムアウトまでの待機時間 (ミリ秒単位)。</param>
+        <summary>監視する変更の種類とタイムアウトまでの待機時間 (ミリ秒単位) を指定して、発生した変更についての固有な情報を格納する構造体を返す同期メソッド。</summary>
+        <returns>発生した変更についての固有な情報を格納する <see cref="T:System.IO.WaitForChangedResult" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、変更が発生したかがタイムアウトするまで待機します。達すると-1 の値、`timeout`パラメーターは、無期限に待機することを意味します。  
+  
+> [!NOTE]
+>  このメソッドに応答ファイルの変更の場合でも呼び出されるイベント ハンドラーを使用する、<xref:System.IO.FileSystemWatcher.EnableRaisingEvents%2A>プロパティに設定されている`false`です。  
+  
+ 一部のシステムで<xref:System.IO.FileSystemWatcher>短い 8.3 ファイル名の形式を使用してファイルへの変更を報告します。 たとえば、"LongFileName.LongExtension"への変更として報告する"LongFi ~ です。Lon"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

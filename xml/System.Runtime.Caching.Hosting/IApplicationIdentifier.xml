@@ -1,0 +1,53 @@
+<Type Name="IApplicationIdentifier" FullName="System.Runtime.Caching.Hosting.IApplicationIdentifier">
+  <TypeSignature Language="C#" Value="public interface IApplicationIdentifier" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IApplicationIdentifier" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.Hosting.IApplicationIdentifier" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>キャッシュの実装は、ホスト環境との対話に使用できるアプリケーション ドメインの識別子を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] ASP.NET などのホスト環境が使用して、<xref:System.Runtime.Caching.Hosting.IApplicationIdentifier>個々 のアプリケーション ドメインを識別する文字列を定義するインターフェイスです。 ホスト環境を実装して、<xref:System.Runtime.Caching.Hosting.IApplicationIdentifier>インターフェイスです。 このインターフェイスは、使用できる、<xref:System.Runtime.Caching.ObjectCache>実装を介して、<xref:System.Runtime.Caching.ObjectCache.Host%2A>プロパティです。  
+  
+ キャッシュ実装では、この参照を使用して、アプリケーション ドメインの識別子を取得します。 ASP.NET では、キャッシュの実装は、キャッシュ パフォーマンス カウンターの識別子を構築するためにアプリケーションの識別子を使用します。 これは、パフォーマンスの名前に、複数のアプリケーション ドメインを実行しているときに、アプリケーション ドメイン間で区別できるカウンターのインスタンスを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetApplicationId">
+      <MemberSignature Language="C#" Value="public string GetApplicationId ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetApplicationId() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.Hosting.IApplicationIdentifier.GetApplicationId" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーション ドメインの識別子を取得します。</summary>
+        <returns>現在のアプリケーション ドメインの一意の識別子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.Hosting.IApplicationIdentifier.GetApplicationId%2A>メソッドは通常によって実装され、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ホスト環境のアプリケーション識別子を構築するために、<xref:System.Runtime.Caching.ObjectCache>実装します。 A<xref:System.Runtime.Caching.ObjectCache>実装では、この情報を使用して、現在実行されているアプリケーション ドメインを識別します。  
+  
+ たとえば、ASP.NET では、キャッシュ識別子を使用してアプリケーション キャッシュ パフォーマンス カウンターの識別子を構築します。 キャッシュの呼び出し、<xref:System.Runtime.Caching.Hosting.IApplicationIdentifier.GetApplicationId%2A>ホスト環境と、ホストによって実装されるメソッドの識別子を取得します。 これは、パフォーマンスの名前に、複数のアプリケーション ドメインを実行しているときに、アプリケーション ドメイン間で区別できるカウンターのインスタンスを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

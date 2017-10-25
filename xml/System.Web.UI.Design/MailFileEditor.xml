@@ -1,0 +1,89 @@
+<Type Name="MailFileEditor" FullName="System.Web.UI.Design.MailFileEditor">
+  <TypeSignature Language="C#" Value="public class MailFileEditor : System.Web.UI.Design.UrlEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MailFileEditor extends System.Web.UI.Design.UrlEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.MailFileEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.UrlEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>選択し、デザイン時に、プロパティのメールのファイル名を編集するためには、ユーザー インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.MailFileEditor>クラスは、<xref:System.Drawing.Design.UITypeEditor>を選択し、文字列としてメール ファイル名を編集するデザイン時に使用することができ、コントロールのプロパティに文字列を代入するオブジェクト。 たとえば、<xref:System.Web.UI.WebControls.EmbeddedMailObject>コントロール、<xref:System.Web.UI.Design.MailFileEditor>デザイン時の値を設定するクラス、<xref:System.Web.UI.WebControls.EmbeddedMailObject.Path%2A>プロパティです。  
+  
+ 使用して、<xref:System.ComponentModel.EditorAttribute>属性に関連付けるには、<xref:System.Web.UI.Design.MailFileEditor>プロパティを設定します。 デザイン サーフェイスに関連付けられたプロパティを編集すると、デザイナー ホスト呼び出し、<xref:System.Web.UI.Design.UrlEditor.EditValue%2A>メソッドです。 <xref:System.Web.UI.Design.UrlEditor.EditValue%2A>メソッドは、ファイルのフィルター選択された一覧からメール ファイル名を選択するためのダイアログ ボックスを表示し、ユーザーが選択されているファイル名を返します。 <xref:System.Web.UI.Design.UrlEditor.GetEditStyle%2A>メソッドは、ユーザー インターフェイスの表示スタイルを示します。  
+  
+ クラスを派生、<xref:System.Web.UI.Design.MailFileEditor>メール ファイル名のプロパティ用のカスタム エディターを定義します。 たとえば、派生クラスをオーバーライドできます、<xref:System.Web.UI.Design.UrlEditor.EditValue%2A>メソッド、および表示、<xref:System.Windows.Forms.OpenFileDialog>カスタム メール ファイル フィルターまたはタイトルを持つインスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスに関連付ける方法を示します、<xref:System.Web.UI.Design.MailFileEditor>カスタム コントロール内に含まれるプロパティを持つクラス。 デザイン画面でコントロールのプロパティを編集する際に、<xref:System.Web.UI.Design.MailFileEditor>クラスを選択し、プロパティ値のメールのファイル名を編集するユーザー インターフェイスを提供します。  
+  
+ [!code-csharp[System.Web.UI.Design.FileEditor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.FileEditor/CS/simplecontrolwithfilename.cs#1)]
+ [!code-vb[System.Web.UI.Design.FileEditor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.FileEditor/VB/simplecontrolwithfilename.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MailFileEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.MailFileEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.MailFileEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Caption">
+      <MemberSignature Language="C#" Value="protected override string Caption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Caption" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.MailFileEditor.Caption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エディターのダイアログ ボックスのキャプションを取得します。</summary>
+        <value>デザイン時 ダイアログ ボックスのキャプション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="protected override string Filter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.MailFileEditor.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(「*.Txt」) など、ダイアログ ボックスのファイルのフィルター文字列を取得します。</summary>
+        <value>デザイン時 ダイアログ ボックスでファイルを選択するためのフィルターです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

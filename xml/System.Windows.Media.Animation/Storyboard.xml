@@ -1,0 +1,2401 @@
+<Type Name="Storyboard" FullName="System.Windows.Media.Animation.Storyboard">
+  <TypeSignature Language="C#" Value="public class Storyboard : System.Windows.Media.Animation.ParallelTimeline" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Storyboard extends System.Windows.Media.Animation.ParallelTimeline" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.Storyboard" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.ParallelTimeline</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>子アニメーションのオブジェクトやプロパティの対象化情報を提供するコンテナ タイムライン。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="interactively-controlling-storyboards"></a>ストーリー ボードが対話的に制御します。  
+ 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをマークアップで制御するためには、指定した、<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>のプロパティ、<xref:System.Windows.Media.Animation.BeginStoryboard>以外のオブジェクトを作成する例については、次を参照してください。[する方法: イベント トリガーを使用して、ストーリー ボードの後に開始を制御する](~/docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)です。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+## <a name="data-binding-and-animating-timelines"></a>データ バインディングとタイムラインがアニメーション化  
+ ほとんどのタイムラインのプロパティは、データ バインドまたはアニメーション化します。ただし、タイミング システムが動作するしくみ、により、他のデータと同様に動作しない場合はバインドされている、またはアニメーションのタイムライン データはバインドされているか、オブジェクトをアニメーション化します。 その動作を理解するのには、タイムラインのアクティブ化意味を理解するのに役立ちます。  
+  
+ タイムラインをアクティブになると、タイムラインとその子タイムラインのコピーが作成されます。 これらのコピーが固定されている (読み取り専用に変更) と<xref:System.Windows.Media.Animation.Clock>そこからオブジェクトが作成されます。 これらのクロックは、ターゲット プロパティをアニメーション化する実際の作業を実行します。 タイムラインは、データ バインディングまたはアニメーション化されている現在の値のスナップショットが行われますそのクロックが作成されるときです。 元のタイムライン可能性があります、継続的に変更する場合でもそのクロックされていません。  
+  
+ データ バインディングまたはアニメーションの変更を反映するためにタイムラインは、その時計を再作成する必要があります。 クロックがない再が自動的に作成します。 タイムラインの変更を適用するいくつかの方法を次に示します。  
+  
+-   タイムラインがまたはに属している場合、 <xref:System.Windows.Media.Animation.Storyboard>、ストーリー ボードを使用して、再適用して変更を反映してこれを行うことができます、<xref:System.Windows.Media.Animation.BeginStoryboard>または<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドです。 これには、アニメーションが再起動されるという副作用があります。 コードでは、使用することができます、<xref:System.Windows.Media.Animation.Storyboard.Seek%2A>ストーリー ボードを進める方法は、前の位置にバックアップします。  
+  
+-   プロパティを使用して、直接には、アニメーションを適用したかどうか、<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドを呼び出し、<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A>メソッドを再度変更されているアニメーションを渡すとします。  
+  
+-   クロック レベルで直接作業している場合は、作成し、クロックの新しいセットを適用し、使用して作成済みのクロックの前のセットを置き換えます。  
+  
+ データの例には、アニメーションがバインドされているを参照してください[キー スプライン アニメーション サンプル](http://go.microsoft.com/fwlink/?LinkID=160011)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Storyboard ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.Storyboard" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Begin">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>これに関連付けられているアニメーションのセットを開始する<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />ターゲットにして開始します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">このストーリーボードのアニメーションのターゲットと同じ名前のスコープ内に含まれるオブジェクト。 アニメーションせず、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />ターゲットにして開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象のプロパティが既にアニメーション化されてには置き換えを使用して、<xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace>ハンドオフ動作します。  
+  
+ このメソッドを使用して開始されたストーリー ボードは、一時停止、再開されると、またはそれ以外の場合は、起動された後に対話的に制御することはできません。 ストーリー ボードを制御するためを使用して、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>または<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドです。  
+  
+ ストーリー ボードのトリガーを開始、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、ストーリーを使用して、<xref:System.Windows.Media.TextEffect>です。 <xref:System.Windows.Media.TextEffect>内に含まれる、<xref:System.Windows.FrameworkContentElement>のスコープの名前を付けます。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementStoryboardExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementStoryboardExample.cs#frameworkcontentelementstoryboardexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementStoryboardExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementstoryboardexample.vb#frameworkcontentelementstoryboardexampleusingwholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">このストーリーボードのアニメーションのターゲットと同じ名前のスコープ内に含まれるオブジェクト。 アニメーションせず、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />ターゲットにして開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象のプロパティが既にアニメーション化されてには置き換えを使用して、<xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace>ハンドオフ動作します。  
+  
+ このメソッドを使用して開始されたストーリー ボードは、一時停止、再開されると、またはそれ以外の場合は、起動された後に対話的に制御することはできません。 ストーリー ボードを制御するためを使用して、<xref:System.Windows.Media.Animation.Storyboard.Begin%28System.Windows.FrameworkElement%2CSystem.Boolean%29>または<xref:System.Windows.Media.Animation.Storyboard.Begin%28System.Windows.FrameworkElement%2CSystem.Windows.Media.Animation.HandoffBehavior%2CSystem.Boolean%29>メソッドです。  
+  
+ ストーリー ボードのトリガーを開始、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkContentElement containingObject, bool isControllable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkContentElement containingObject, bool isControllable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+        <Parameter Name="isControllable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">このストーリーボードのアニメーションのターゲットと同じ名前のスコープ内に含まれるオブジェクト。 アニメーションせず、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <param name="isControllable">
+          <see langword="true" />場合は、ストーリー ボードが対話的に制御する必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />ターゲットにして開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象のプロパティが既にアニメーション化されてには置き換えを使用して、<xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace>ハンドオフ動作します。  
+  
+ このストーリー ボードを対話的に制御する必要がありますを指定する同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときに  
+  
+ このメソッドが呼び出されると、<xref:System.Windows.Media.Animation.Clock>ストーリー ボードとが含まれているすべてのタイムラインに対してオブジェクトを作成します。 これらのクロックは`containingObject`します。  
+  
+ ストーリー ボードのトリガーを開始、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、制御可能なストーリーを使用して、<xref:System.Windows.Media.TextEffect>です。 <xref:System.Windows.Media.TextEffect>内に含まれる、<xref:System.Windows.FrameworkContentElement>のスコープの名前を付けます。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementControlStoryboardExample.cs#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementcontrolstoryboardexample.vb#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkContentElement containingObject, System.Windows.Media.Animation.HandoffBehavior handoffBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkContentElement containingObject, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Windows.Media.Animation.HandoffBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">このストーリーボードのアニメーションのターゲットと同じ名前のスコープ内に含まれるオブジェクト。 アニメーションせず、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <param name="handoffBehavior">新しいアニメーションの動作は、現在のアニメーションとの対話に使用してください。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />、ターゲットに指定して、それらを開始し、<see cref="T:System.Windows.Media.Animation.HandoffBehavior" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用すると、 <xref:System.Windows.Media.Animation.Storyboard>、 <xref:System.Windows.Media.Animation.AnimationTimeline>、または<xref:System.Windows.Media.Animation.AnimationClock>を使用してプロパティを<xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>、any<xref:System.Windows.Media.Animation.Clock>以前そのプロパティに関連付けられているオブジェクトがシステム リソースを消費引き続き; タイミング システムがこれらの時計を自動的に削除されません。  
+  
+ 使用してクロックの数が多いを適用するときに、パフォーマンスの問題を回避する<xref:System.Windows.Media.Animation.HandoffBehavior.Compose>、完了した後、アニメーションのプロパティから作成クロックを削除する必要があります。 クロックを削除する方法はいくつかあります。  
+  
+-   プロパティからすべてのクロックを削除するには、使用、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29>アニメーション オブジェクトのメソッドです。 最初のパラメーターとしてアニメーション化されているプロパティを指定し、 `null` 2 つ目として。 これにより、すべてのアニメーション クロックが、プロパティから削除します。  
+  
+-   固有の仕様を削除する<xref:System.Windows.Media.Animation.AnimationClock>にクロックのリストを使用して、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.Animation.AnimationClock>を取得する、<xref:System.Windows.Media.Animation.ClockController>を呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。 これは、通常、<xref:System.Windows.Media.Animation.Clock.Completed>クロックのイベント ハンドラー。 唯一のルート クロックできますで制御されることに注意してください、 <xref:System.Windows.Media.Animation.ClockController>;<xref:System.Windows.Media.Animation.Clock.Controller%2A>子クロックのプロパティを返します`null`です。 なお、<xref:System.Windows.Media.Animation.Clock.Completed>イベントは、クロックの有効期間が forever の場合は呼び出されません。  その場合は、ユーザーを決定する必要がありますを呼び出すときに<xref:System.Windows.Media.Animation.ClockController.Remove%2A>です。  
+  
+ これは主に、有効期間が長いオブジェクトでのアニメーションの問題です。  オブジェクトがガベージ コレクションである場合は、そのクロックが切断されても、ガベージ コレクションします。  
+  
+ クロック オブジェクトに関する詳細については、次を参照してください。[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace> <xref:System.Windows.Media.Animation.HandoffBehavior>ユーザーを左クリックしたときにアニメーション化する、および<xref:System.Windows.Media.Animation.HandoffBehavior.Compose><xref:System.Windows.Media.Animation.HandoffBehavior>ときにユーザーを右クリックします。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementStoryboardWithHandoffBehaviorExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementStoryboardWithHandoffBehaviorExample.cs#frameworkcontentelementstoryboardwithhandoffbehaviorexamplewholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementStoryboardWithHandoffBehaviorExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementstoryboardwithhandoffbehaviorexample.vb#frameworkcontentelementstoryboardwithhandoffbehaviorexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkElement containingObject, bool isControllable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkElement containingObject, bool isControllable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="isControllable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">このストーリーボードのアニメーションのターゲットと同じ名前のスコープ内に含まれるオブジェクト。 アニメーションせず、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <param name="isControllable">
+          <see langword="true" />場合は、ストーリー ボードが対話的に制御する必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />ターゲットにして開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象のプロパティが既にアニメーション化されてには置き換えを使用して、<xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace>ハンドオフ動作します。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーター  
+  
+ このメソッドが呼び出されると、<xref:System.Windows.Media.Animation.Clock>ストーリー ボードとが含まれているすべてのタイムラインに対してオブジェクトを作成します。 これらのクロックは`containingObject`します。  
+  
+ ストーリー ボードのトリガーを開始、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkElement containingObject, System.Windows.FrameworkTemplate frameworkTemplate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkElement containingObject, class System.Windows.FrameworkTemplate frameworkTemplate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Windows.FrameworkTemplate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="frameworkTemplate" Type="System.Windows.FrameworkTemplate" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">オブジェクトを指定した<c>frameworkTemplate</c>適用されています。 アニメーションせず、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <param name="frameworkTemplate">アニメーション化するテンプレートです。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />指定されたテンプレート内で、ターゲットにして開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象のプロパティが既にアニメーション化されてには置き換えを使用して、<xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace>ハンドオフ動作します。  
+  
+ このメソッドが呼び出されると、<xref:System.Windows.Media.Animation.Clock>ストーリー ボードとが含まれているすべてのタイムラインに対してオブジェクトを作成します。 これらのクロックは`containingObject`します。  
+  
+ ストーリー ボードのトリガーを開始、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkElement containingObject, System.Windows.Media.Animation.HandoffBehavior handoffBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkElement containingObject, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Windows.Media.Animation.HandoffBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">このストーリーボードのアニメーションのターゲットと同じ名前のスコープ内に含まれるオブジェクト。 指定せずアニメーション<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <param name="handoffBehavior">新しいアニメーションの動作は、現在のアニメーションとの対話に使用してください。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />、ターゲットに指定して、それらを開始し、<see cref="T:System.Windows.Media.Animation.HandoffBehavior" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、 <xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace> <xref:System.Windows.Media.Animation.HandoffBehavior>ユーザーを左クリックしたときにアニメーション化する、および<xref:System.Windows.Media.Animation.HandoffBehavior.Compose><xref:System.Windows.Media.Animation.HandoffBehavior>ときにユーザーを右クリックします。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#GraphicsMMFrameworkElementStoryboardHandoffBehaviorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkElementStoryboardHandoffBehaviorExample.cs#graphicsmmframeworkelementstoryboardhandoffbehaviorexample)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#GraphicsMMFrameworkElementStoryboardHandoffBehaviorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkelementstoryboardhandoffbehaviorexample.vb#graphicsmmframeworkelementstoryboardhandoffbehaviorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkContentElement containingObject, System.Windows.Media.Animation.HandoffBehavior handoffBehavior, bool isControllable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkContentElement containingObject, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior, bool isControllable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Windows.Media.Animation.HandoffBehavior,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+        <Parameter Name="isControllable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">このストーリーボードのアニメーションのターゲットと同じ名前のスコープ内に含まれるオブジェクト。 指定せずアニメーション<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <param name="handoffBehavior">新しいアニメーションの動作は、現在のアニメーションとの対話に使用してください。</param>
+        <param name="isControllable">アニメーションが制御可能かどうかを宣言 (一時停止できる) 1 回開始されます。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />、ターゲットに指定して、それらを開始し、<see cref="T:System.Windows.Media.Animation.HandoffBehavior" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象のプロパティが既にアニメーション化されている場合は、指定したハンドオフ動作を使用してに置換されます。  
+  
+ このストーリー ボードを対話的に制御する必要がありますを指定する同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときに  
+  
+ このメソッドが呼び出されると、<xref:System.Windows.Media.Animation.Clock>ストーリー ボードとが含まれているすべてのタイムラインに対してオブジェクトを作成します。 これらのクロックは`containingObject`します。  
+  
+ ストーリー ボードのトリガーを開始、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+## <a name="using-the-compose-handoffbehavior"></a>使用して、HandoffBehavior の作成  
+ 適用すると、 <xref:System.Windows.Media.Animation.Storyboard>、 <xref:System.Windows.Media.Animation.AnimationTimeline>、または<xref:System.Windows.Media.Animation.AnimationClock>を使用してプロパティを<xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>、any<xref:System.Windows.Media.Animation.Clock>以前そのプロパティに関連付けられているオブジェクトがシステム リソースを消費引き続き; タイミング システムがこれらの時計を自動的に削除されません。  
+  
+ 使用してクロックの数が多いを適用するときに、パフォーマンスの問題を回避する<xref:System.Windows.Media.Animation.HandoffBehavior.Compose>、完了した後、アニメーションのプロパティから作成クロックを削除する必要があります。 クロックを削除する方法はいくつかあります。  
+  
+-   プロパティからすべてのクロックを削除するには、使用、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29>アニメーション オブジェクトのメソッドです。 最初のパラメーターとしてアニメーション化されているプロパティを指定し、 `null` 2 つ目として。 これにより、すべてのアニメーション クロックが、プロパティから削除します。  
+  
+-   固有の仕様を削除する<xref:System.Windows.Media.Animation.AnimationClock>にクロックのリストを使用して、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.Animation.AnimationClock>を取得する、<xref:System.Windows.Media.Animation.ClockController>を呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。 これは、通常、<xref:System.Windows.Media.Animation.Clock.Completed>クロックのイベント ハンドラー。 唯一のルート クロックできますで制御されることに注意してください、 <xref:System.Windows.Media.Animation.ClockController>;<xref:System.Windows.Media.Animation.Clock.Controller%2A>子クロックのプロパティを返します`null`です。 なお、<xref:System.Windows.Media.Animation.Clock.Completed>イベントは、クロックの有効期間が forever の場合は呼び出されません。  その場合は、ユーザーを決定する必要がありますを呼び出すときに<xref:System.Windows.Media.Animation.ClockController.Remove%2A>です。  
+  
+ これは主に、有効期間が長いオブジェクトでのアニメーションの問題です。  オブジェクトがガベージ コレクションである場合は、そのクロックが切断されても、ガベージ コレクションします。  
+  
+ クロック オブジェクトに関する詳細については、次を参照してください。[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、制御可能なストーリーを使用して、<xref:System.Windows.Media.TextEffect>です。 <xref:System.Windows.Media.TextEffect>内に含まれる、<xref:System.Windows.FrameworkContentElement>のスコープの名前を付けます。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementControlStoryboardExample.cs#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementcontrolstoryboardexample.vb#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]  
+  
+ 次の例では、 <xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace> <xref:System.Windows.Media.Animation.HandoffBehavior>ユーザーを左クリックしたときにアニメーション化する、および<xref:System.Windows.Media.Animation.HandoffBehavior.Compose><xref:System.Windows.Media.Animation.HandoffBehavior>ときにユーザーを右クリックします。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementStoryboardWithHandoffBehaviorExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementStoryboardWithHandoffBehaviorExample.cs#frameworkcontentelementstoryboardwithhandoffbehaviorexamplewholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementStoryboardWithHandoffBehaviorExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementstoryboardwithhandoffbehaviorexample.vb#frameworkcontentelementstoryboardwithhandoffbehaviorexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkElement containingObject, System.Windows.FrameworkTemplate frameworkTemplate, bool isControllable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkElement containingObject, class System.Windows.FrameworkTemplate frameworkTemplate, bool isControllable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Windows.FrameworkTemplate,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="frameworkTemplate" Type="System.Windows.FrameworkTemplate" />
+        <Parameter Name="isControllable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">オブジェクトを指定した<c>frameworkTemplate</c>適用されています。  アニメーションせず、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <param name="frameworkTemplate">アニメーション化するテンプレートです。</param>
+        <param name="isControllable">
+          <see langword="true" />場合は、ストーリー ボードが対話的に制御する必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />指定されたテンプレート内で、ターゲットにして開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象のプロパティが既にアニメーション化されてには置き換えを使用して、<xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace>ハンドオフ動作します。  
+  
+ このストーリー ボードを対話的に制御する必要がありますを指定する同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときに  
+  
+ このメソッドが呼び出されると、<xref:System.Windows.Media.Animation.Clock>ストーリー ボードとが含まれているすべてのタイムラインに対してオブジェクトを作成します。 これらのクロックは`containingObject`します。  
+  
+ ストーリー ボードのトリガーを開始、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkElement containingObject, System.Windows.FrameworkTemplate frameworkTemplate, System.Windows.Media.Animation.HandoffBehavior handoffBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkElement containingObject, class System.Windows.FrameworkTemplate frameworkTemplate, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Windows.FrameworkTemplate,System.Windows.Media.Animation.HandoffBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="frameworkTemplate" Type="System.Windows.FrameworkTemplate" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">オブジェクトを指定した<c>frameworkTemplate</c>適用されています。 アニメーションせず、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <param name="frameworkTemplate">アニメーション化するテンプレートです。</param>
+        <param name="handoffBehavior">新しいアニメーションの動作は、現在のアニメーションとの対話に使用してください。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />指定されたテンプレート内で、ターゲットにして開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、<xref:System.Windows.Media.Animation.Clock>ストーリー ボードとが含まれているすべてのタイムラインに対してオブジェクトを作成します。 これらのクロックは`containingObject`します。  
+  
+ ストーリー ボードのトリガーを開始、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+## <a name="using-the-compose-handoffbehavior"></a>使用して、HandoffBehavior の作成  
+ 適用すると、 <xref:System.Windows.Media.Animation.Storyboard>、 <xref:System.Windows.Media.Animation.AnimationTimeline>、または<xref:System.Windows.Media.Animation.AnimationClock>を使用してプロパティを<xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>、any<xref:System.Windows.Media.Animation.Clock>以前そのプロパティに関連付けられているオブジェクトがシステム リソースを消費引き続き; タイミング システムがこれらの時計を自動的に削除されません。  
+  
+ 使用してクロックの数が多いを適用するときに、パフォーマンスの問題を回避する<xref:System.Windows.Media.Animation.HandoffBehavior.Compose>、完了した後、アニメーションのプロパティから作成クロックを削除する必要があります。 クロックを削除する方法はいくつかあります。  
+  
+-   プロパティからすべてのクロックを削除するには、使用、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29>アニメーション オブジェクトのメソッドです。 最初のパラメーターとしてアニメーション化されているプロパティを指定し、 `null` 2 つ目として。 これにより、すべてのアニメーション クロックが、プロパティから削除します。  
+  
+-   固有の仕様を削除する<xref:System.Windows.Media.Animation.AnimationClock>にクロックのリストを使用して、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.Animation.AnimationClock>を取得する、<xref:System.Windows.Media.Animation.ClockController>を呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。 これは、通常、<xref:System.Windows.Media.Animation.Clock.Completed>クロックのイベント ハンドラー。 唯一のルート クロックできますで制御されることに注意してください、 <xref:System.Windows.Media.Animation.ClockController>;<xref:System.Windows.Media.Animation.Clock.Controller%2A>子クロックのプロパティを返します`null`です。 なお、<xref:System.Windows.Media.Animation.Clock.Completed>イベントは、クロックの有効期間が forever の場合は呼び出されません。  その場合は、ユーザーを決定する必要がありますを呼び出すときに<xref:System.Windows.Media.Animation.ClockController.Remove%2A>です。  
+  
+ これは主に、有効期間が長いオブジェクトでのアニメーションの問題です。  オブジェクトがガベージ コレクションである場合は、そのクロックが切断されても、ガベージ コレクションします。  
+  
+ クロック オブジェクトに関する詳細については、次を参照してください。[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkElement containingObject, System.Windows.Media.Animation.HandoffBehavior handoffBehavior, bool isControllable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkElement containingObject, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior, bool isControllable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Windows.Media.Animation.HandoffBehavior,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+        <Parameter Name="isControllable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">このストーリーボードのアニメーションのターゲットと同じ名前のスコープ内に含まれるオブジェクト。 指定せずアニメーション<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <param name="handoffBehavior">新しいアニメーションの動作は、現在のアニメーションとの対話に使用してください。</param>
+        <param name="isControllable">アニメーションが制御可能かどうかを宣言 (一時停止できる) 1 回開始されます。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />ターゲットにして開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーター  
+  
+ このメソッドが呼び出されると、<xref:System.Windows.Media.Animation.Clock>ストーリー ボードとが含まれているすべてのタイムラインに対してオブジェクトを作成します。 これらのクロックは`containingObject`します。  
+  
+ ストーリー ボードのトリガーを開始、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+## <a name="using-the-compose-handoffbehavior"></a>使用して、HandoffBehavior の作成  
+ 適用すると、 <xref:System.Windows.Media.Animation.Storyboard>、 <xref:System.Windows.Media.Animation.AnimationTimeline>、または<xref:System.Windows.Media.Animation.AnimationClock>を使用してプロパティを<xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>、any<xref:System.Windows.Media.Animation.Clock>以前そのプロパティに関連付けられているオブジェクトがシステム リソースを消費引き続き; タイミング システムがこれらの時計を自動的に削除されません。  
+  
+ 使用してクロックの数が多いを適用するときに、パフォーマンスの問題を回避する<xref:System.Windows.Media.Animation.HandoffBehavior.Compose>、完了した後、アニメーションのプロパティから作成クロックを削除する必要があります。 クロックを削除する方法はいくつかあります。  
+  
+-   プロパティからすべてのクロックを削除するには、使用、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29>アニメーション オブジェクトのメソッドです。 最初のパラメーターとしてアニメーション化されているプロパティを指定し、 `null` 2 つ目として。 これにより、すべてのアニメーション クロックが、プロパティから削除します。  
+  
+-   固有の仕様を削除する<xref:System.Windows.Media.Animation.AnimationClock>にクロックのリストを使用して、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.Animation.AnimationClock>を取得する、<xref:System.Windows.Media.Animation.ClockController>を呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。 これは、通常、<xref:System.Windows.Media.Animation.Clock.Completed>クロックのイベント ハンドラー。 唯一のルート クロックできますで制御されることに注意してください、 <xref:System.Windows.Media.Animation.ClockController>;<xref:System.Windows.Media.Animation.Clock.Controller%2A>子クロックのプロパティを返します`null`です。 なお、<xref:System.Windows.Media.Animation.Clock.Completed>イベントは、クロックの有効期間が forever の場合は呼び出されません。  その場合は、ユーザーを決定する必要がありますを呼び出すときに<xref:System.Windows.Media.Animation.ClockController.Remove%2A>です。  
+  
+ これは主に、有効期間が長いオブジェクトでのアニメーションの問題です。  オブジェクトがガベージ コレクションである場合は、そのクロックが切断されても、ガベージ コレクションします。  
+  
+ クロック オブジェクトに関する詳細については、次を参照してください。[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、制御可能なストーリー ボードを作成する方法を示します。  
+  
+ [!code-csharp[animation_ovws_procedural_snip#ControllableStoryboardExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_procedural_snip/CSharp/ControllableStoryboardExample.cs#controllablestoryboardexamplewholepage)]
+ [!code-vb[animation_ovws_procedural_snip#ControllableStoryboardExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws_procedural_snip/visualbasic/controllablestoryboardexample.vb#controllablestoryboardexamplewholepage)]  
+  
+ 次の例では、 <xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace> <xref:System.Windows.Media.Animation.HandoffBehavior>ユーザーを左クリックしたときにアニメーション化する、および<xref:System.Windows.Media.Animation.HandoffBehavior.Compose><xref:System.Windows.Media.Animation.HandoffBehavior>ときにユーザーを右クリックします。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#GraphicsMMFrameworkElementStoryboardHandoffBehaviorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkElementStoryboardHandoffBehaviorExample.cs#graphicsmmframeworkelementstoryboardhandoffbehaviorexample)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#GraphicsMMFrameworkElementStoryboardHandoffBehaviorExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkelementstoryboardhandoffbehaviorexample.vb#graphicsmmframeworkelementstoryboardhandoffbehaviorexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin (System.Windows.FrameworkElement containingObject, System.Windows.FrameworkTemplate frameworkTemplate, System.Windows.Media.Animation.HandoffBehavior handoffBehavior, bool isControllable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin(class System.Windows.FrameworkElement containingObject, class System.Windows.FrameworkTemplate frameworkTemplate, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior, bool isControllable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Windows.FrameworkTemplate,System.Windows.Media.Animation.HandoffBehavior,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="frameworkTemplate" Type="System.Windows.FrameworkTemplate" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+        <Parameter Name="isControllable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">オブジェクトを指定した<c>frameworkTemplate</c>適用されています。 アニメーションせず、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />に適用される<c>containingObject</c>です。</param>
+        <param name="frameworkTemplate">アニメーション化するテンプレートです。</param>
+        <param name="handoffBehavior">新しいアニメーションの動作は、現在のアニメーションとの対話に使用してください。</param>
+        <param name="isControllable">
+          <see langword="true" />場合は、ストーリー ボードが対話的に制御する必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <summary>これに関連付けられているアニメーションを適用<see cref="T:System.Windows.Media.Animation.Storyboard" />指定されたテンプレート内で、ターゲットにして開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このストーリー ボードを対話的に制御する必要がありますを指定する同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときに  
+  
+ このメソッドが呼び出されると、<xref:System.Windows.Media.Animation.Clock>ストーリー ボードとが含まれているすべてのタイムラインに対してオブジェクトを作成します。 これらのクロックは`containingObject`します。  
+  
+ ストーリー ボードのトリガーを開始、<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+## <a name="using-the-compose-handoffbehavior"></a>使用して、HandoffBehavior の作成  
+ 適用すると、 <xref:System.Windows.Media.Animation.Storyboard>、 <xref:System.Windows.Media.Animation.AnimationTimeline>、または<xref:System.Windows.Media.Animation.AnimationClock>を使用してプロパティを<xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>、any<xref:System.Windows.Media.Animation.Clock>以前そのプロパティに関連付けられているオブジェクトがシステム リソースを消費引き続き; タイミング システムがこれらの時計を自動的に削除されません。  
+  
+ 使用してクロックの数が多いを適用するときに、パフォーマンスの問題を回避する<xref:System.Windows.Media.Animation.HandoffBehavior.Compose>、完了した後、アニメーションのプロパティから作成クロックを削除する必要があります。 クロックを削除する方法はいくつかあります。  
+  
+-   プロパティからすべてのクロックを削除するには、使用、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29>アニメーション オブジェクトのメソッドです。 最初のパラメーターとしてアニメーション化されているプロパティを指定し、 `null` 2 つ目として。 これにより、すべてのアニメーション クロックが、プロパティから削除します。  
+  
+-   固有の仕様を削除する<xref:System.Windows.Media.Animation.AnimationClock>にクロックのリストを使用して、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.Animation.AnimationClock>を取得する、<xref:System.Windows.Media.Animation.ClockController>を呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。 これは、通常、<xref:System.Windows.Media.Animation.Clock.Completed>クロックのイベント ハンドラー。 唯一のルート クロックできますで制御されることに注意してください、 <xref:System.Windows.Media.Animation.ClockController>;<xref:System.Windows.Media.Animation.Clock.Controller%2A>子クロックのプロパティを返します`null`です。 なお、<xref:System.Windows.Media.Animation.Clock.Completed>イベントは、クロックの有効期間が forever の場合は呼び出されません。  その場合は、ユーザーを決定する必要がありますを呼び出すときに<xref:System.Windows.Media.Animation.ClockController.Remove%2A>です。  
+  
+ これは主に、有効期間が長いオブジェクトでのアニメーションの問題です。  オブジェクトがガベージ コレクションである場合は、そのクロックが切断されても、ガベージ コレクションします。  
+  
+ クロック オブジェクトに関する詳細については、次を参照してください。[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.Storyboard Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.Storyboard Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Storyboard</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.Storyboard" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.Storyboard" /> クラスの新しいインスタンスを作成します。</summary>
+        <returns>新しい <see cref="T:System.Windows.Media.Animation.Storyboard" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは内部で<xref:System.Windows.Freezable.CreateInstance%2A>の新しいインスタンスを作成するときに、<xref:System.Windows.Media.Animation.Storyboard>複製メソッドでさまざまなクラス (など<xref:System.Windows.Freezable.Clone%2A>と<xref:System.Windows.Freezable.CloneCurrentValue%2A>)。  
+  
+   
+  
+## Examples  
+ 次の例は、の一般的な実装を示しています。<xref:System.Windows.Freezable.CreateInstanceCore%2A>です。  
+  
+ [!code-csharp[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#createinstancecoreexample)]
+ [!code-vb[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#createinstancecoreexample)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>各<see cref="T:System.Windows.Media.Animation.Storyboard" />サブクラスは、このメソッドを実装する必要があります。 一般的な実装では、クラスの既定のコンス トラクターを呼び出し、結果を返すだけです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetCurrentGlobalSpeed">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentGlobalSpeed" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クロックの<xref:System.Windows.Media.Animation.Clock.CurrentGlobalSpeed%2A>速度は、現実世界の時間と比較したをその時間の現在の進行速度。  
+  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetCurrentGlobalSpeed">
+      <MemberSignature Language="C#" Value="public double GetCurrentGlobalSpeed ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 GetCurrentGlobalSpeed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentGlobalSpeed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentGlobalSpeed" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>現在グローバル速度、または、クロックが停止している場合は 0 です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentGlobalSpeed">
+      <MemberSignature Language="C#" Value="public Nullable&lt;double&gt; GetCurrentGlobalSpeed (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Nullable`1&lt;float64&gt; GetCurrentGlobalSpeed(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentGlobalSpeed(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentGlobalSpeed" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>現在のグローバル速度または<see langword="null" />クロックが停止している場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クロックの<xref:System.Windows.Media.Animation.Clock.CurrentGlobalSpeed%2A>速度は、現実世界の時間と比較したをその時間の現在の進行速度。  
+  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentGlobalSpeed">
+      <MemberSignature Language="C#" Value="public Nullable&lt;double&gt; GetCurrentGlobalSpeed (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Nullable`1&lt;float64&gt; GetCurrentGlobalSpeed(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentGlobalSpeed(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentGlobalSpeed" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>現在のグローバル速度または<see langword="null" />クロックが停止している場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クロックの<xref:System.Windows.Media.Animation.Clock.CurrentGlobalSpeed%2A>速度は、現実世界の時間と比較したをその時間の現在の進行速度。  
+  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentIteration">
+      <MemberSignature Language="C#" Value="public int GetCurrentIteration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetCurrentIteration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentIteration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentIteration" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>その現在のアクティブな期間内でのクロックの現在のイテレーションまたは<see langword="null" />このクロックが停止している場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クロックの最初のイテレーションでは、1 の値を持ちます。  
+  
+ このストーリー ボードがある場合、<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>設定`true`前方リバースのペアで構成全体の反復処理、セグメントを次のいずれかだけでなく、します。  
+  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentIteration">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; GetCurrentIteration (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Nullable`1&lt;int32&gt; GetCurrentIteration(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentIteration(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentIteration" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>その現在のアクティブな期間内でのクロックの現在のイテレーションまたは<see langword="null" />このクロックが停止している場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クロックの最初のイテレーションでは、1 の値を持ちます。  
+  
+ このストーリー ボードがある場合、<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>設定`true`前方リバースのペアで構成全体の反復処理、セグメントを次のいずれかだけでなく、します。  
+  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentIteration">
+      <MemberSignature Language="C#" Value="public Nullable&lt;int&gt; GetCurrentIteration (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Nullable`1&lt;int32&gt; GetCurrentIteration(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentIteration(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentIteration" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>その現在のアクティブな期間内でのクロックの現在のイテレーションまたは<see langword="null" />このクロックが停止している場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クロックの最初のイテレーションでは、1 の値を持ちます。  
+  
+ この時計のタイムラインがある場合、<xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>設定`true`前方リバースのペアで構成全体の反復処理、セグメントを次のいずれかだけでなく、します。  
+  
+ 現在のイテレーションに関係なくクロックをシークの現在のイテレーション 1 を返します。 1 に現在の反復を返しますもクロックを再起動します。  
+  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentProgress">
+      <MemberSignature Language="C#" Value="public double GetCurrentProgress ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64 GetCurrentProgress() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentProgress" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>
+          <see langword="null" />このクロックが場合<see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />、またはこのクロックがアクティブな場合、0.0 とその<see cref="P:System.Windows.Media.Animation.Clock.Timeline" />が、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" />の<see cref="P:System.Windows.Duration.Forever" />以外の場合、0.0 ~ 1.0 の現在のイテレーションにおけるこのクロックの現在の進行状況を示す値。 値が 0.0 のない進行状況を示し、値が 1.0 の時計が、現在のイテレーションの終了値であります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentProgress">
+      <MemberSignature Language="C#" Value="public Nullable&lt;double&gt; GetCurrentProgress (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Nullable`1&lt;float64&gt; GetCurrentProgress(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentProgress(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>
+          <see langword="null" />このクロックが場合<see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />、またはこのクロックがアクティブな場合、0.0 とその<see cref="P:System.Windows.Media.Animation.Clock.Timeline" />が、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" />の<see cref="P:System.Windows.Duration.Forever" />以外の場合、0.0 ~ 1.0 の現在のイテレーションにおけるこのクロックの現在の進行状況を示す値。 値が 0.0 のない進行状況を示し、値が 1.0 の時計が、現在のイテレーションの終了値であります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentProgress">
+      <MemberSignature Language="C#" Value="public Nullable&lt;double&gt; GetCurrentProgress (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Nullable`1&lt;float64&gt; GetCurrentProgress(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentProgress(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>
+          <see langword="null" />このクロックが場合<see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />、またはこのクロックがアクティブな場合、0.0 とその<see cref="P:System.Windows.Media.Animation.Clock.Timeline" />が、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" />の<see cref="P:System.Windows.Duration.Forever" />以外の場合、0.0 ~ 1.0 の現在のイテレーションにおけるこのクロックの現在の進行状況を示す値。 値が 0.0 のない進行状況を示し、値が 1.0 の時計が、現在のイテレーションの終了値であります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentState">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.ClockState GetCurrentState ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Media.Animation.ClockState GetCurrentState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.ClockState</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentState" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>このストーリー ボードの作成、クロックの現在の状態: <see cref="F:System.Windows.Media.Animation.ClockState.Active" />、 <see cref="F:System.Windows.Media.Animation.ClockState.Filling" />、または<see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが決まるわけでは、ストーリー ボードが一時停止しているかどうか。 ストーリー ボードが一時停止しているかどうかを判断するのには、使用、<xref:System.Windows.Media.Animation.Storyboard.GetIsPaused%2A>メソッドです。  
+  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentState">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.ClockState GetCurrentState (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Media.Animation.ClockState GetCurrentState(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentState(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.ClockState</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentState" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>このストーリー ボードの作成、クロックの現在の状態: <see cref="F:System.Windows.Media.Animation.ClockState.Active" />、 <see cref="F:System.Windows.Media.Animation.ClockState.Filling" />、または<see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが決まるわけでは、ストーリー ボードが一時停止しているかどうか。 ストーリー ボードが一時停止しているかどうかを判断するのには、使用、<xref:System.Windows.Media.Animation.Storyboard.GetIsPaused%2A>メソッドです。  
+  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentState">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.ClockState GetCurrentState (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Media.Animation.ClockState GetCurrentState(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentState(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.ClockState</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentState" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>このストーリー ボードの作成、クロックの現在の状態: <see cref="F:System.Windows.Media.Animation.ClockState.Active" />、 <see cref="F:System.Windows.Media.Animation.ClockState.Filling" />、または<see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが決まるわけでは、ストーリー ボードが一時停止しているかどうか。 ストーリー ボードが一時停止しているかどうかを判断するのには、使用、<xref:System.Windows.Media.Animation.Storyboard.GetIsPaused%2A>メソッドです。  
+  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentTime">
+      <MemberSignature Language="C#" Value="public TimeSpan GetCurrentTime ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.TimeSpan GetCurrentTime() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentTime" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>
+          <see langword="null" />このストーリー ボードの時計が場合<see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />以外の場合、ストーリー ボードのクロックの現在の時刻。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentTime">
+      <MemberSignature Language="C#" Value="public Nullable&lt;TimeSpan&gt; GetCurrentTime (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; GetCurrentTime(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentTime(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>
+          <see langword="null" />このストーリー ボードの時計が場合<see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />以外の場合、ストーリー ボードのクロックの現在の時刻。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentTime">
+      <MemberSignature Language="C#" Value="public Nullable&lt;TimeSpan&gt; GetCurrentTime (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; GetCurrentTime(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetCurrentTime(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" />の<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <returns>
+          <see langword="null" />このストーリー ボードの時計が場合<see cref="F:System.Windows.Media.Animation.ClockState.Stopped" />以外の場合、ストーリー ボードのクロックの現在の時刻。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsPaused">
+      <MemberSignature Language="C#" Value="public bool GetIsPaused ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetIsPaused() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetIsPaused" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />が一時停止します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成<see cref="T:System.Windows.Media.Animation.Storyboard" />が一時停止中です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsPaused">
+      <MemberSignature Language="C#" Value="public bool GetIsPaused (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetIsPaused(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetIsPaused(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />が一時停止します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成<see cref="T:System.Windows.Media.Animation.Storyboard" />が一時停止中です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsPaused">
+      <MemberSignature Language="C#" Value="public bool GetIsPaused (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetIsPaused(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetIsPaused(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />が一時停止します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成<see cref="T:System.Windows.Media.Animation.Storyboard" />が一時停止中です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、ストーリー ボードのクロックに関する情報を取得して、ストーリー ボードを制御する必要があります。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTarget">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyObject GetTarget (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyObject GetTarget(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetTarget(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">取得する対象のタイムライン、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />です。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Storyboard.Target" />の指定された値<see cref="T:System.Windows.Media.Animation.Timeline" />です。</summary>
+        <returns>依存関係オブジェクトの対象となる<paramref name="element" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.Storyboard.Target%2A>添付プロパティをアニメーション タイムラインを対象にするオブジェクトを示すために使用します。 ストーリー ボードが対象とするしくみの詳細については、次を参照してください。<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>です。 添付プロパティの機能の詳細については、次を参照してください。[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTargetName">
+      <MemberSignature Language="C#" Value="public static string GetTargetName (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetTargetName(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetTargetName(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">取得する対象のタイムライン、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />です。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" />の指定された値<see cref="T:System.Windows.Media.Animation.Timeline" />です。</summary>
+        <returns>対象となる依存関係オブジェクトの名前<paramref name="element" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、取得、<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>指定したオブジェクトのプロパティを添付します。 ストーリー ボードが対象とするしくみの詳細については、次を参照してください。<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>です。 添付プロパティの機能の詳細については、次を参照してください。[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTargetProperty">
+      <MemberSignature Language="C#" Value="public static System.Windows.PropertyPath GetTargetProperty (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.PropertyPath GetTargetProperty(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.GetTargetProperty(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.PropertyPath</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">取得元の依存関係オブジェクト、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetProperty" />です。</param>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.Storyboard.TargetProperty" />の指定された値<see cref="T:System.Windows.Media.Animation.Timeline" />です。</summary>
+        <returns>対象となるプロパティ<paramref name="element" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、取得、<xref:System.Windows.Media.Animation.Storyboard.TargetProperty%2A>指定したオブジェクトのプロパティを添付します。 ストーリー ボードが対象とするしくみの詳細については、次を参照してください。<xref:System.Windows.Media.Animation.Storyboard.TargetProperty%2A>添付プロパティ。 添付プロパティの機能の詳細については、次を参照してください。[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)です。  
+  
+ されている場合、<xref:System.Windows.Media.Animation.Storyboard.TargetProperty%2A>設定が、マークアップでは、このメソッドは、空を返します。<xref:System.Windows.PropertyPath>プロパティの参照を解決して、解析時に内部的に格納されているためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pause">
+      <MemberSignature Language="C#" Value="public void Pause ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Pause() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Pause" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一時停止、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ストーリー ボードを一時停止、アクティブまたは現在一時停止ではない場合は、目に見える効果がありません。 副作用として関連付けられているすべての子はまた一時停止します。  
+  
+ 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+## <a name="beginning-a-paused-storyboard"></a>一時停止しているストーリー ボードの開始  
+ ときに、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>が一時停止されているストーリー ボードを再開し、再起動に表示されます。 ただしは実際には発生しません。 <xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドが実際に置き換える、一時停止した<xref:System.Windows.Media.Animation.Storyboard>新しい一時停止されていないバージョンです。 毎回、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドが呼び出されると、ストーリー ボードに対してクロック オブジェクトを作成します。 これらのクロックは、アニメーション化するプロパティに分散されます。 ときに、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドが呼び出される、もう一度そのクロックは再起動されません以外の場合は新しいクロックをそれらに置き換えます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pause">
+      <MemberSignature Language="C#" Value="public void Pause (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Pause(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Pause(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>一時停止、<see cref="T:System.Windows.Media.Animation.Clock" />の指定した<see cref="T:System.Windows.FrameworkContentElement" />これに関連付けられている<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ストーリー ボードを一時停止、アクティブまたは現在一時停止ではない場合は、目に見える効果がありません。 副作用として関連付けられているすべての子はまた一時停止します。  
+  
+ 一時停止しているストーリー ボードのシークは再開されません。 一時停止しているストーリー ボードを再開する唯一の方法が使用するには、<xref:System.Windows.Media.Animation.Storyboard.Resume%2A>メソッドです。 呼び出す、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドでは、再開の外観を持つ新しい 1 つに、一時停止中のストーリー ボードをもう一度置き換えます。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 顧客から受け取った例を参照してください[する方法: ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ストーリー ボードのクロックを一時停止、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+## <a name="beginning-a-paused-storyboard"></a>一時停止しているストーリー ボードの開始  
+ ときに、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>が一時停止されているストーリー ボードを再開し、再起動に表示されます。 ただしは実際には発生しません。 <xref:System.Windows.Media.Animation.Storyboard.Begin%2A>実際には、します。 毎回、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドが呼び出されると、ストーリー ボードに対してクロック オブジェクトを作成します。 これらのクロックは、アニメーション化するプロパティに分散されます。 ときに、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドが呼び出される、もう一度そのクロックは再起動されません以外の場合は新しいクロックをそれらに置き換えます。  
+  
+   
+  
+## Examples  
+ 次の例では、制御可能なストーリーを使用して、<xref:System.Windows.Media.TextEffect>です。 <xref:System.Windows.Media.TextEffect>内に含まれる、<xref:System.Windows.FrameworkContentElement>のスコープの名前を付けます。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementControlStoryboardExample.cs#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementcontrolstoryboardexample.vb#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pause">
+      <MemberSignature Language="C#" Value="public void Pause (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Pause(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Pause(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>一時停止、<see cref="T:System.Windows.Media.Animation.Clock" />の指定した<see cref="T:System.Windows.FrameworkElement" />これに関連付けられている<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ストーリー ボードを一時停止、アクティブまたは現在一時停止ではない場合は、目に見える効果がありません。 副作用として関連付けられているすべての子はまた一時停止します。  
+  
+ 一時停止しているストーリー ボードのシークは再開されません。 一時停止しているストーリー ボードを再開する唯一の方法が使用するには、<xref:System.Windows.Media.Animation.Storyboard.Resume%2A>メソッドです。 呼び出す、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドでは、再開の外観を持つ新しい 1 つに、一時停止中のストーリー ボードをもう一度置き換えます。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ストーリー ボードのクロックを一時停止、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+## <a name="beginning-a-paused-storyboard"></a>一時停止しているストーリー ボードの開始  
+ ときに、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>が一時停止されているストーリー ボードを再開し、再起動に表示されます。 ただしは実際には発生しません。 <xref:System.Windows.Media.Animation.Storyboard.Begin%2A>実際には、します。 毎回、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドが呼び出されると、ストーリー ボードに対してクロック オブジェクトを作成します。 これらのクロックは、アニメーション化するプロパティに分散されます。 ときに、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドが呼び出される、もう一度そのクロックは再起動されません以外の場合は新しいクロックをそれらに置き換えます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Remove" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>削除、<see cref="T:System.Windows.Media.Animation.Clock" />用に作成されたオブジェクト<see cref="T:System.Windows.Media.Animation.Storyboard" />です。 これに属するアニメーション<see cref="T:System.Windows.Media.Animation.Storyboard" />、いったんアニメーション化された、プロパティの影響を受けなくに関係なく、<see cref="P:System.Windows.Media.Animation.Timeline.FillBehavior" />設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ 行われたすべての対話型操作、 <xref:System.Windows.Media.Animation.Clock>、およびでも、 <xref:System.Windows.Media.Animation.Storyboard>、[次へ] のレンダリングの直前に発生するタイミング エンジンの次のタイマー刻みで発生します。 つまり、<xref:System.Windows.Media.Animation.Storyboard.Remove%2A>メソッドは、この時点までのアニメーションのプロパティをまだに影響します。 つまり、フレームが表示されたら、[次へ] の時刻、ストーリー ボードが削除されます。 この時刻より前に、プロパティのアニメーションの関連付けを解除する必要がある場合、<xref:System.Windows.UIElement.BeginAnimation%2A>メソッドを`animation`のパラメーター値`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Remove(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Windows.Media.Animation.Clock" />用に作成されたオブジェクト<see cref="T:System.Windows.Media.Animation.Storyboard" />です。 これに属するアニメーション<see cref="T:System.Windows.Media.Animation.Storyboard" />、いったんアニメーション化された、プロパティの影響を受けなくに関係なく、<see cref="P:System.Windows.Media.Animation.Timeline.FillBehavior" />設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ストーリー ボードのクロックのトリガーを削除する、<xref:System.Windows.Media.Animation.Timeline.RemoveRequested>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Remove(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Windows.Media.Animation.Clock" />用に作成されたオブジェクト<see cref="T:System.Windows.Media.Animation.Storyboard" />です。 これに属するアニメーション<see cref="T:System.Windows.Media.Animation.Storyboard" />、いったんアニメーション化された、プロパティの影響を受けなくに関係なく、<see cref="P:System.Windows.Media.Animation.Timeline.FillBehavior" />設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ストーリー ボードのクロックのトリガーを削除する、<xref:System.Windows.Media.Animation.Timeline.RemoveRequested>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resume">
+      <MemberSignature Language="C#" Value="public void Resume ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Resume() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Resume" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>再開されます、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resume">
+      <MemberSignature Language="C#" Value="public void Resume (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Resume(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Resume(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>再開されます、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一時停止されていないストーリー ボードを再開しても効果はありません。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ 一時停止しているストーリー ボードのシークは再開されません。 一時停止しているストーリー ボードを再開する唯一の方法が使用するには、<xref:System.Windows.Media.Animation.Storyboard.Resume%2A>メソッドです。 呼び出す、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>ストーリー ボードが開始された後に再開の外観を持つ古いストーリー ボードが置き換えられます。  
+  
+ 一時停止したストーリー ボードのクロックの再開、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、制御可能なストーリーを使用して、<xref:System.Windows.Media.TextEffect>です。 <xref:System.Windows.Media.TextEffect>内に含まれる、<xref:System.Windows.FrameworkContentElement>のスコープの名前を付けます。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementControlStoryboardExample.cs#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementcontrolstoryboardexample.vb#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resume">
+      <MemberSignature Language="C#" Value="public void Resume (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Resume(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Resume(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>再開されます、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一時停止されていないストーリー ボードを再開しても効果はありません。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ 一時停止しているストーリー ボードのシークは再開されません。 一時停止しているストーリー ボードを再開する唯一の方法が使用するには、<xref:System.Windows.Media.Animation.Storyboard.Resume%2A>メソッドです。 呼び出す、<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>ストーリー ボードが開始された後に再開の外観を持つ古いストーリー ボードが置き換えられます。  
+  
+ 一時停止したストーリー ボードのクロックの再開、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public void Seek (TimeSpan offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Seek(valuetype System.TimeSpan offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Seek(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="offset">これによって、タイムラインが前方または後方広さを表す正または負の値。</param>
+        <summary>このシーク<see cref="T:System.Windows.Media.Animation.Storyboard" />指定した位置にします。 <see cref="T:System.Windows.Media.Animation.Storyboard" />実行 [次へ] のクロック ティックが発生したときに、要求されたシークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シーク操作では、ストーリー ボードの受け取らない<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>または<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>アカウントに設定します。 ストーリー ボードがものとして扱われます、 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> 1 およびいない<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>です。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public void Seek (TimeSpan offset, System.Windows.Media.Animation.TimeSeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Seek(valuetype System.TimeSpan offset, valuetype System.Windows.Media.Animation.TimeSeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Seek(System.TimeSpan,System.Windows.Media.Animation.TimeSeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.TimeSpan" />
+        <Parameter Name="origin" Type="System.Windows.Media.Animation.TimeSeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="offset">正または負の値で、これによって、タイムラインが前方または後方から、指定した量を示します<c>原点</c>です。</param>
+        <param name="origin">元の位置<c>オフセット</c>を適用します。</param>
+        <summary>このシーク<see cref="T:System.Windows.Media.Animation.Storyboard" />指定した位置にします。 <see cref="T:System.Windows.Media.Animation.Storyboard" />実行 [次へ] のクロック ティックが発生したときに、要求されたシークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シーク操作では、ストーリー ボードの受け取らない<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>または<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>アカウントに設定します。 ストーリー ボードがものとして扱われます、 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> 1 およびいない<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>です。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public void Seek (System.Windows.FrameworkContentElement containingObject, TimeSpan offset, System.Windows.Media.Animation.TimeSeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Seek(class System.Windows.FrameworkContentElement containingObject, valuetype System.TimeSpan offset, valuetype System.Windows.Media.Animation.TimeSeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Seek(System.Windows.FrameworkContentElement,System.TimeSpan,System.Windows.Media.Animation.TimeSeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+        <Parameter Name="offset" Type="System.TimeSpan" />
+        <Parameter Name="origin" Type="System.Windows.Media.Animation.TimeSeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <param name="offset">正または負の値で、これによって、タイムラインが前方または後方から、指定した量を示します<c>原点</c>です。</param>
+        <param name="origin">元の位置<c>オフセット</c>を適用します。</param>
+        <summary>このシーク<see cref="T:System.Windows.Media.Animation.Storyboard" />指定した位置にします。 <see cref="T:System.Windows.Media.Animation.Storyboard" />実行 [次へ] のクロック ティックが発生したときに、要求されたシークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シーク操作では、ストーリー ボードの受け取らない<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>または<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>アカウントに設定します。 ストーリー ボードがものとして扱われます、 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> 1 およびいない<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>です。  
+  
+ このメソッドは、ストーリー ボード クロックの変更<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>に<xref:System.Windows.Media.Animation.ClockState.Active>です。 このメソッドには、次のチェック マークが処理されるまで、タイミング ツリーに影響はありません。 の副作用として、適切なイベントも発生しないそれまでの間です。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ストーリーのシーク、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>イベント。  
+  
+   
+  
+## Examples  
+ 次の例はどちらも、<xref:System.Windows.Media.Animation.Storyboard.Seek%2A>と<xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>メソッドです。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementSeekExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementSeekExample.cs#frameworkcontentelementseekexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementSeekExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementseekexample.vb#frameworkcontentelementseekexampleusingwholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public void Seek (System.Windows.FrameworkElement containingObject, TimeSpan offset, System.Windows.Media.Animation.TimeSeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Seek(class System.Windows.FrameworkElement containingObject, valuetype System.TimeSpan offset, valuetype System.Windows.Media.Animation.TimeSeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Seek(System.Windows.FrameworkElement,System.TimeSpan,System.Windows.Media.Animation.TimeSeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="offset" Type="System.TimeSpan" />
+        <Parameter Name="origin" Type="System.Windows.Media.Animation.TimeSeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <param name="offset">正または負の値で、これによって、タイムラインが前方または後方から、指定した量を示します<c>原点</c>です。</param>
+        <param name="origin">元の位置<c>オフセット</c>を適用します。</param>
+        <summary>このシーク<see cref="T:System.Windows.Media.Animation.Storyboard" />指定した位置にします。 <see cref="T:System.Windows.Media.Animation.Storyboard" />実行 [次へ] のクロック ティックが発生したときに、要求されたシークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シーク操作では、ストーリー ボードの受け取らない<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>または<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>アカウントに設定します。 ストーリー ボードがものとして扱われます、 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> 1 およびいない<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>です。  
+  
+ このメソッドは、ストーリー ボード クロックの変更<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>に<xref:System.Windows.Media.Animation.ClockState.Active>です。 このメソッドには、次のチェック マークが処理されるまで、タイミング ツリーに影響はありません。 の副作用として、適切なイベントも発生しないそれまでの間です。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、制御することが行われた場合に削除されます。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ストーリーのシーク、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、ストーリー ボードを開始した後、1 秒間を (スキップ) を検索する方法を示します。  
+  
+ [!code-csharp[timingbehaviors_procedural_snip#SeekStoryboardExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp/SeekStoryboardExample.cs#seekstoryboardexamplewholepage)]
+ [!code-vb[timingbehaviors_procedural_snip#SeekStoryboardExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_procedural_snip/visualbasic/seekstoryboardexample.vb#seekstoryboardexamplewholepage)]  
+  
+ 両方の次の例を示しています、<xref:System.Windows.Media.Animation.Storyboard.Seek%2A>と<xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>メソッドです。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#SeekExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/SeekExample.cs#seekexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#SeekExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/seekexample.vb#seekexampleusingwholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeekAlignedToLastTick">
+      <MemberSignature Language="C#" Value="public void SeekAlignedToLastTick (TimeSpan offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SeekAlignedToLastTick(valuetype System.TimeSpan offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="offset">これによって、タイムラインが前方または後方広さを表す正または負の値。</param>
+        <summary>このシーク<see cref="T:System.Windows.Media.Animation.Storyboard" />をすぐに新しい位置 (同期)。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>検索する時間を配置、<xref:System.Windows.Media.Animation.Storyboard>最後のクロック刻みで。 値は直ちに期限への変更を反映するように更新される<xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>画面が画面の更新まで変更内容を反映していない場合でも、します。  
+  
+ シーク操作では、ストーリー ボードの受け取らない<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>または<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>アカウントに設定します。 ストーリー ボードがものとして扱われます、 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> 1 およびいない<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>です。  
+  
+ ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeekAlignedToLastTick">
+      <MemberSignature Language="C#" Value="public void SeekAlignedToLastTick (TimeSpan offset, System.Windows.Media.Animation.TimeSeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SeekAlignedToLastTick(valuetype System.TimeSpan offset, valuetype System.Windows.Media.Animation.TimeSeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick(System.TimeSpan,System.Windows.Media.Animation.TimeSeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.TimeSpan" />
+        <Parameter Name="origin" Type="System.Windows.Media.Animation.TimeSeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="offset">正または負の値で、これによって、タイムラインが前方または後方から、指定した量を示します<c>原点</c>です。</param>
+        <param name="origin">元の位置<c>オフセット</c>を適用します。</param>
+        <summary>このシーク<see cref="T:System.Windows.Media.Animation.Storyboard" />をすぐに新しい位置 (同期)。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>検索する時間を配置、<xref:System.Windows.Media.Animation.Storyboard>最後のクロック刻みで。 値は直ちに期限への変更を反映するように更新される<xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>画面が画面の更新まで変更内容を反映していない場合でも、します。  
+  
+ シーク操作では、ストーリー ボードの受け取らない<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>または<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>アカウントに設定します。 ストーリー ボードがものとして扱われます、 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> 1 およびいない<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>です。  
+  
+ ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeekAlignedToLastTick">
+      <MemberSignature Language="C#" Value="public void SeekAlignedToLastTick (System.Windows.FrameworkContentElement containingObject, TimeSpan offset, System.Windows.Media.Animation.TimeSeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SeekAlignedToLastTick(class System.Windows.FrameworkContentElement containingObject, valuetype System.TimeSpan offset, valuetype System.Windows.Media.Animation.TimeSeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick(System.Windows.FrameworkContentElement,System.TimeSpan,System.Windows.Media.Animation.TimeSeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+        <Parameter Name="offset" Type="System.TimeSpan" />
+        <Parameter Name="origin" Type="System.Windows.Media.Animation.TimeSeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <param name="offset">正または負の値で、これによって、タイムラインが前方または後方から、指定した量を示します<c>原点</c>です。</param>
+        <param name="origin">元の位置<c>オフセット</c>を適用します。</param>
+        <summary>このシーク<see cref="T:System.Windows.Media.Animation.Storyboard" />をすぐに新しい位置 (同期)。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>検索する時間を配置、<xref:System.Windows.Media.Animation.Storyboard>最後のクロック刻みで。 値は直ちに期限への変更を反映するように更新される<xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>画面が画面の更新まで変更内容を反映していない場合でも、します。  
+  
+ シーク操作では、ストーリー ボードの受け取らない<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>または<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>アカウントに設定します。 ストーリー ボードがものとして扱われます、 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> 1 およびいない<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>です。  
+  
+ このメソッドは、ストーリー ボード クロックの変更<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>に  
+  
+ <xref:System.Windows.Media.Animation.ClockState.Active>。  
+  
+ ストーリーのシーク、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>イベント。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+   
+  
+## Examples  
+ 次の例はどちらも、<xref:System.Windows.Media.Animation.Storyboard.Seek%2A>と<xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>メソッドです。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementSeekExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementSeekExample.cs#frameworkcontentelementseekexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementSeekExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementseekexample.vb#frameworkcontentelementseekexampleusingwholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeekAlignedToLastTick">
+      <MemberSignature Language="C#" Value="public void SeekAlignedToLastTick (System.Windows.FrameworkElement containingObject, TimeSpan offset, System.Windows.Media.Animation.TimeSeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SeekAlignedToLastTick(class System.Windows.FrameworkElement containingObject, valuetype System.TimeSpan offset, valuetype System.Windows.Media.Animation.TimeSeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick(System.Windows.FrameworkElement,System.TimeSpan,System.Windows.Media.Animation.TimeSeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="offset" Type="System.TimeSpan" />
+        <Parameter Name="origin" Type="System.Windows.Media.Animation.TimeSeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <param name="offset">正または負の値で、これによって、タイムラインが前方または後方から、指定した量を示します<c>原点</c>です。</param>
+        <param name="origin">元の位置<c>オフセット</c>を適用します。</param>
+        <summary>このシーク<see cref="T:System.Windows.Media.Animation.Storyboard" />をすぐに新しい位置 (同期)。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>検索する時間を配置、<xref:System.Windows.Media.Animation.Storyboard>最後のクロック刻みで。 値は直ちに期限への変更を反映するように更新される<xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>画面が画面の更新まで変更内容を反映していない場合でも、します。  
+  
+ シーク操作では、ストーリー ボードの受け取らない<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>または<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>アカウントに設定します。 ストーリー ボードがものとして扱われます、 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> 1 およびいない<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>です。  
+  
+ このメソッドは、ストーリー ボード クロックの変更<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>に  
+  
+ <xref:System.Windows.Media.Animation.ClockState.Active>。  
+  
+ ストーリーのシーク、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>イベント。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+   
+  
+## Examples  
+ 次の例はどちらも、<xref:System.Windows.Media.Animation.Storyboard.Seek%2A>と<xref:System.Windows.Media.Animation.Storyboard.SeekAlignedToLastTick%2A>メソッドです。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#SeekExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/SeekExample.cs#seekexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#SeekExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/seekexample.vb#seekexampleusingwholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSpeedRatio">
+      <MemberSignature Language="C#" Value="public void SetSpeedRatio (double speedRatio);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSpeedRatio(float64 speedRatio) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SetSpeedRatio(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="speedRatio" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="speedRatio">ストーリーボードの新しい対話型速度比である 0 より大きい有限値。 この値は、ストーリー ボードの乗算<see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" />ストーリー ボードの実効速度を決定する値。 この値は、ストーリー ボードを上書きしない<see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" />プロパティです。 たとえば、このメソッドを呼び出すのあるストーリー ボードで、対話型速度比を 3 を指定する、 <see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" /> 0.5 は、ストーリー ボードの実効速度は 1.5 です。</param>
+        <summary>対話型速度比を設定、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSpeedRatio">
+      <MemberSignature Language="C#" Value="public void SetSpeedRatio (System.Windows.FrameworkContentElement containingObject, double speedRatio);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSpeedRatio(class System.Windows.FrameworkContentElement containingObject, float64 speedRatio) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SetSpeedRatio(System.Windows.FrameworkContentElement,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+        <Parameter Name="speedRatio" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <param name="speedRatio">ストーリーボードの新しい対話型速度比である 0 より大きい有限値。 この値は、ストーリー ボードの乗算<see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" />ストーリー ボードの実効速度を決定する値。 この値は、ストーリー ボードを上書きしない<see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" />プロパティです。 たとえば、このメソッドを呼び出すのあるストーリー ボードで、対話型速度比を 3 を指定する、 <see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" /> 0.5 は、ストーリー ボードの実効速度は 1.5 です。</param>
+        <summary>対話型速度比を設定、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ このメソッドの呼び出しをトリガー、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、制御可能なストーリーを使用して、<xref:System.Windows.Media.TextEffect>です。 <xref:System.Windows.Media.TextEffect>内に含まれる、<xref:System.Windows.FrameworkContentElement>のスコープの名前を付けます。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementControlStoryboardExample.cs#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementcontrolstoryboardexample.vb#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSpeedRatio">
+      <MemberSignature Language="C#" Value="public void SetSpeedRatio (System.Windows.FrameworkElement containingObject, double speedRatio);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSpeedRatio(class System.Windows.FrameworkElement containingObject, float64 speedRatio) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SetSpeedRatio(System.Windows.FrameworkElement,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="speedRatio" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <param name="speedRatio">ストーリーボードの新しい対話型速度比である 0 より大きい有限値。 この値は、ストーリー ボードの乗算<see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" />ストーリー ボードの実効速度を決定する値。 この値は、ストーリー ボードを上書きしない<see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" />プロパティです。 たとえば、このメソッドを呼び出すのあるストーリー ボードで、対話型速度比を 3 を指定する、 <see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" /> 0.5 は、ストーリー ボードの実効速度は 1.5 です。</param>
+        <summary>対話型速度比を設定、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ このメソッドの呼び出しをトリガー、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTarget">
+      <MemberSignature Language="C#" Value="public static void SetTarget (System.Windows.DependencyObject element, System.Windows.DependencyObject value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetTarget(class System.Windows.DependencyObject element, class System.Windows.DependencyObject value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SetTarget(System.Windows.DependencyObject,System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.Media.Animation.Timeline" />指定した依存関係オブジェクトを対象とする必要があります。</param>
+        <param name="value">ターゲットへの依存関係オブジェクト。</param>
+        <summary>により指定された<see cref="T:System.Windows.Media.Animation.Timeline" />依存関係オブジェクトを対象とします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを設定、<xref:System.Windows.Media.Animation.Storyboard.Target%2A>指定したオブジェクトのプロパティを添付します。 ストーリー ボードが対象とするしくみの詳細については、次を参照してください。<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>です。 添付プロパティの機能の詳細については、次を参照してください。[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Media.Animation.Storyboard.Target%2A>ので、プロパティはシリアル化可能ないずれかに設定することができます<xref:System.Windows.DependencyObject>です。 このオブジェクトを正しく XAML から参照できることは保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTargetName">
+      <MemberSignature Language="C#" Value="public static void SetTargetName (System.Windows.DependencyObject element, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetTargetName(class System.Windows.DependencyObject element, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SetTargetName(System.Windows.DependencyObject,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.Media.Animation.Timeline" />指定した依存関係オブジェクトを対象とする必要があります。</param>
+        <param name="name">対象とする依存関係オブジェクトの名前。</param>
+        <summary>により指定された<see cref="T:System.Windows.Media.Animation.Timeline" />指定の名前を持つ依存関係オブジェクトを対象とします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを設定、<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>指定したオブジェクトのプロパティを添付します。 ストーリー ボードが対象とするしくみの詳細については、次を参照してください。<xref:System.Windows.Media.Animation.Storyboard.TargetName%2A>です。 添付プロパティの機能の詳細については、次を参照してください。[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTargetProperty">
+      <MemberSignature Language="C#" Value="public static void SetTargetProperty (System.Windows.DependencyObject element, System.Windows.PropertyPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetTargetProperty(class System.Windows.DependencyObject element, class System.Windows.PropertyPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SetTargetProperty(System.Windows.DependencyObject,System.Windows.PropertyPath)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="path" Type="System.Windows.PropertyPath" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.Media.Animation.Timeline" />を指定した依存関係プロパティを関連付けます。</param>
+        <param name="path">アニメーション化する依存関係プロパティを示すパス。</param>
+        <summary>により指定された<see cref="T:System.Windows.Media.Animation.Timeline" />ターゲット指定した依存関係プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを設定、<xref:System.Windows.Media.Animation.Storyboard.TargetProperty%2A>指定したオブジェクトのプロパティを添付します。 ストーリー ボードが対象とするしくみの詳細については、次を参照してください。<xref:System.Windows.Media.Animation.Storyboard.TargetProperty%2A>です。 添付プロパティの機能の詳細については、次を参照してください。[添付プロパティの概要](~/docs/framework/wpf/advanced/attached-properties-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipToFill">
+      <MemberSignature Language="C#" Value="public void SkipToFill ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SkipToFill() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SkipToFill" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このストーリー ボードの現在の時間を進める<see cref="T:System.Windows.Media.Animation.Clock" />アクティブな期間の終了にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipToFill">
+      <MemberSignature Language="C#" Value="public void SkipToFill (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SkipToFill(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SkipToFill(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>このストーリー ボードの現在の時間を進める<see cref="T:System.Windows.Media.Animation.Clock" />アクティブな期間の終了にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを進める、ストーリー ボードのアクティブな期間の末尾に現在の時刻この時点で、ストーリー ボードの動作がで指定されたその<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>設定します。 場合<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>に設定されている<xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>、プロパティ設定されている場合、ストーリー ボードを塗りつぶします; <xref:System.Windows.Media.Animation.FillBehavior.Stop>、ストーリー ボードが停止します。  
+  
+ 無限の期間のあるストーリー ボードでこのメソッドを呼び出すと、無限回の繰り返しは影響しません。 非アクティブなストーリー ボードこのメソッドを呼び出しても効果はありません。  
+  
+ 期間のトリガーをその fill に時計を進める、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>イベント。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、制御可能なストーリーを使用して、<xref:System.Windows.Media.TextEffect>です。 <xref:System.Windows.Media.TextEffect>内に含まれる、<xref:System.Windows.FrameworkContentElement>のスコープの名前を付けます。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementControlStoryboardExample.cs#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementcontrolstoryboardexample.vb#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipToFill">
+      <MemberSignature Language="C#" Value="public void SkipToFill (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SkipToFill(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.SkipToFill(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>このストーリー ボードの現在の時間を進める<see cref="T:System.Windows.Media.Animation.Clock" />アクティブな期間の終了にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを進める、ストーリー ボードのアクティブな期間の末尾に現在の時刻この時点で、ストーリー ボードの動作がで指定されたその<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>設定します。 場合<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>に設定されている<xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>、プロパティ設定されている場合、ストーリー ボードを塗りつぶします; <xref:System.Windows.Media.Animation.FillBehavior.Stop>、ストーリー ボードが停止します。  
+  
+ 無限の期間のあるストーリー ボードでこのメソッドを呼び出すと、無限回の繰り返しは影響しません。 非アクティブなストーリー ボードこのメソッドを呼び出しても効果はありません。  
+  
+ 期間のトリガーをその fill に時計を進める、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>イベント。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>停止、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストーリー ボードを停止するには起動しません、<xref:System.Windows.Media.Animation.Timeline.Completed>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop (System.Windows.FrameworkContentElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop(class System.Windows.FrameworkContentElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Stop(System.Windows.FrameworkContentElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkContentElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkContentElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>停止、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.Animation.ClockState.Stopped>ストーリー ボードは、そのターゲットのプロパティを不要になったに影響します。 前回の値にアニメーション化されたプロパティを元に戻します。  
+  
+ クロックを停止する、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>イベント、ではなく、<xref:System.Windows.Media.Animation.Timeline.Completed>イベント。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、制御可能なストーリーを使用して、<xref:System.Windows.Media.TextEffect>です。 <xref:System.Windows.Media.TextEffect>内に含まれる、<xref:System.Windows.FrameworkContentElement>のスコープの名前を付けます。  
+  
+ [!code-csharp[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/CSharp/FrameworkContentElementControlStoryboardExample.cs#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]
+ [!code-vb[StoryboardBeginAnimation_procedural_snip#FrameworkContentElementControlStoryboardExampleUsingWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StoryboardBeginAnimation_procedural_snip/visualbasic/frameworkcontentelementcontrolstoryboardexample.vb#frameworkcontentelementcontrolstoryboardexampleusingwholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop (System.Windows.FrameworkElement containingObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop(class System.Windows.FrameworkElement containingObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Storyboard.Stop(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containingObject" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="containingObject">指定されたオブジェクト、<see cref="M:System.Windows.Media.Animation.Storyboard.Begin(System.Windows.FrameworkElement,System.Boolean)" />メソッドが呼び出されました。 このオブジェクトが含まれています、<see cref="T:System.Windows.Media.Animation.Clock" />このストーリー ボードとその子の作成されたオブジェクト。</param>
+        <summary>停止、<see cref="T:System.Windows.Media.Animation.Clock" />ために作成された<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.Animation.ClockState.Stopped>ストーリー ボードは、そのターゲットのプロパティを不要になったに影響します。 前回の値にアニメーション化されたプロパティを元に戻します。  
+  
+ クロックを停止する、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>イベント、ではなく、<xref:System.Windows.Media.Animation.Timeline.Completed>イベント。  
+  
+ このストーリー ボードを対話的に制御を行う必要があります同じ`containingObject`ストーリー ボードを開始するために使用する対話型のメソッドを呼び出すときのパラメーターです。 制御可能なストーリーできますを一時停止、再開、シーク、停止、削除するとします。 ストーリー ボードをコードに制御するためには、ストーリー ボードの適切なオーバー ロードを使用する必要があります<xref:System.Windows.Media.Animation.Storyboard.Begin%2A>メソッドを指定して`true`制御可能にします。 例については、次を参照してください。[する方法:、ストーリー ボードの後に開始制御](~/docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetNameProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TargetNameProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TargetNameProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Storyboard.TargetNameProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.Storyboard.TargetName" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TargetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TargetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Storyboard.TargetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.Storyboard.Target" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetPropertyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TargetPropertyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TargetPropertyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.Storyboard.TargetPropertyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.Storyboard.TargetProperty" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

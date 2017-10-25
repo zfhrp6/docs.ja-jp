@@ -1,0 +1,453 @@
+<Type Name="ActivityTrackingLocation" FullName="System.Workflow.Runtime.Tracking.ActivityTrackingLocation">
+  <TypeSignature Language="C#" Value="public sealed class ActivityTrackingLocation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ActivityTrackingLocation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ルート ワークフロー インスタンスの実行パス内のアクティビティ ステータス イベントに対応する、アクティビティで修飾された場所を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ アクティビティの実行ステータスが変わるたびに、ワークフロー インスタンスはアクティビティ ステータス イベントをランタイム追跡インフラストラクチャに送信します。 ランタイム追跡インフラストラクチャは、アクティビティ ステータス イベントが発生するたびに <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> を追跡サービスに送信できます。 通常は、追跡サービスはワークフロー インスタンスで発生するすべてのアクティビティ ステータス イベントは追跡せず、ワークフロー インスタンスの指定された場所で発生した特定の種類のアクティビティに関連付けられているアクティビティ ステータス イベントのみ追跡します。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> は、そのような場所の照合パラメーターを定義します。これらのパラメーターを定義するには、参照アクティビティ タイプ、アクティビティ ステータス変更イベントのセット、および参照アクティビティ タイプのインスタンスをより厳密に限定できる条件のセットを指定します。  
+  
+> [!NOTE]
+>  1 つの <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> がワークフロー インスタンスの実行パスにおける実際の場所を複数参照する場合があります。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> 内の <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.MatchingLocations%2A> の照合パラメーターを定義するには、<xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.ExcludedLocations%2A> オブジェクトを <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> および <xref:System.Workflow.Runtime.Tracking.TrackingProfile> に追加します。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A> または <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A> を設定して、照合する参照アクティビティ タイプを指定する必要があります。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.MatchDerivedTypes%2A> を設定して、参照アクティビティ タイプから派生したアクティビティを追跡するかどうかを指定できます。  
+  
+ 照合するアクティビティ ステータス イベントを指定するには、<xref:System.Workflow.ComponentModel.ActivityExecutionStatus> の値を <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents%2A> に追加します。  
+  
+ 特定の条件を満たす参照アクティビティ タイプのみ追跡するには、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition> オブジェクトを <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A> に追加します。 たとえば、参照アクティビティ タイプの特定の名前のインスタンスのみ追跡するように指定できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingLocation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターを使用するときに、コード内で明示的に <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A> または <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A> を設定しない場合、後から追跡プロファイルに対して <xref:System.Workflow.Runtime.Tracking.TrackingProfileSerializer> を使用すると、例外がスローされます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A>|null 参照 (`Nothing`)。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A>|空の <xref:System.Workflow.Runtime.Tracking.TrackingConditionCollection>。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents%2A>|空の <xref:System.Collections.Generic.List%601>。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.MatchDerivedTypes%2A>|`false`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingLocation (string activityTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string activityTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activityTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="activityTypeName">アクティビティの共通言語ランタイム (CLR) 型の非修飾名。</param>
+        <summary>指定したアクティビティ名を使用して、<see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照アクティビティ タイプの非修飾名を指定する必要があります。 たとえば、<xref:System.Workflow.Activities.CodeActivity> アクティビティの CLR 型の非修飾名は "CodeActivity" です。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A> が `activityTypeName` に設定されます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A>|参照アクティビティ タイプの `activityTypeName` で指定された非修飾名。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A>|null 参照 (`Nothing`)。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A>|空の <xref:System.Workflow.Runtime.Tracking.TrackingConditionCollection>。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents%2A>|空の <xref:System.Collections.Generic.List%601>。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.MatchDerivedTypes%2A>|`false`。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activityTypeName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingLocation (Type activityType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type activityType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activityType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="activityType">アクティビティの <see cref="T:System.Type" />。</param>
+        <summary>指定した参照アクティビティ タイプを使用して、<see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A> が `activityType` に設定されます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A>|`activityType` で指定された参照アクティビティ タイプ。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A>|空の <xref:System.Workflow.Runtime.Tracking.TrackingConditionCollection>。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents%2A>|空の <xref:System.Collections.Generic.List%601>。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.MatchDerivedTypes%2A>|`false`。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activityType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingLocation (string activityTypeName, System.Collections.Generic.IEnumerable&lt;System.Workflow.ComponentModel.ActivityExecutionStatus&gt; executionStatusEvents);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string activityTypeName, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Workflow.ComponentModel.ActivityExecutionStatus&gt; executionStatusEvents) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Workflow.ComponentModel.ActivityExecutionStatus})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activityTypeName" Type="System.String" />
+        <Parameter Name="executionStatusEvents" Type="System.Collections.Generic.IEnumerable&lt;System.Workflow.ComponentModel.ActivityExecutionStatus&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="activityTypeName">アクティビティの共通言語ランタイム (CLR) 型の非修飾名。</param>
+        <param name="executionStatusEvents">1 つ以上の <see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" /> の値を含むコレクション。</param>
+        <summary>指定した非修飾名の参照アクティビティ タイプを持ち、指定したアクティビティ実行ステータス イベントを照合する <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照アクティビティ タイプの非修飾名を指定する必要があります。 たとえば、<xref:System.Workflow.Activities.CodeActivity> アクティビティの CLR 型の非修飾名は "CodeActivity" です。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A>|参照アクティビティ タイプの `activityTypeName` で指定された非修飾名。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A>|null 参照 (`Nothing`)。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A>|空の <xref:System.Workflow.Runtime.Tracking.TrackingConditionCollection>。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents%2A>|<xref:System.Collections.Generic.List%601> で指定された <xref:System.Workflow.ComponentModel.ActivityExecutionStatus> の値を含む `ExecutionStatusEvents`。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.MatchDerivedTypes%2A>|`false`。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activityTypeName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。  
+  
+ または  
+  
+ <paramref name="executionStatusEvents" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingLocation (Type activityType, System.Collections.Generic.IEnumerable&lt;System.Workflow.ComponentModel.ActivityExecutionStatus&gt; executionStatusEvents);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type activityType, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Workflow.ComponentModel.ActivityExecutionStatus&gt; executionStatusEvents) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.#ctor(System.Type,System.Collections.Generic.IEnumerable{System.Workflow.ComponentModel.ActivityExecutionStatus})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activityType" Type="System.Type" />
+        <Parameter Name="executionStatusEvents" Type="System.Collections.Generic.IEnumerable&lt;System.Workflow.ComponentModel.ActivityExecutionStatus&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="activityType">アクティビティの <see cref="T:System.Type" />。</param>
+        <param name="executionStatusEvents">1 つ以上の <see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" /> の値を含むコレクション。</param>
+        <summary>指定した参照アクティビティ タイプを持ち、指定したアクティビティ実行ステータス イベントを照合する <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A>|null 参照 (`Nothing`)。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A>|`activityType` で指定された参照アクティビティ タイプ。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A>|空の <xref:System.Workflow.Runtime.Tracking.TrackingConditionCollection>。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents%2A>|<xref:System.Collections.Generic.List%601> で指定された <xref:System.Workflow.ComponentModel.ActivityExecutionStatus> の値を含む `executionStatusEvents`。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.MatchDerivedTypes%2A>|`false`。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activityType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。  
+  
+ または  
+  
+ <paramref name="executionStatusEvents" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingLocation (string activityTypeName, bool matchDerivedTypes, System.Collections.Generic.IEnumerable&lt;System.Workflow.ComponentModel.ActivityExecutionStatus&gt; executionStatusEvents);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string activityTypeName, bool matchDerivedTypes, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Workflow.ComponentModel.ActivityExecutionStatus&gt; executionStatusEvents) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.#ctor(System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.Workflow.ComponentModel.ActivityExecutionStatus})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activityTypeName" Type="System.String" />
+        <Parameter Name="matchDerivedTypes" Type="System.Boolean" />
+        <Parameter Name="executionStatusEvents" Type="System.Collections.Generic.IEnumerable&lt;System.Workflow.ComponentModel.ActivityExecutionStatus&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="activityTypeName">アクティビティの共通言語ランタイム (CLR) 型の非修飾名。</param>
+        <param name="matchDerivedTypes">
+          参照アクティビティ タイプから派生したアクティビティを照合する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="executionStatusEvents">1 つ以上の <see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" /> の値を含むコレクション。</param>
+        <summary>指定した非修飾名の参照アクティビティ タイプを持ち、参照アクティビティ タイプから派生するアクティビティを照合するかどうか指定し、指定したアクティビティ実行ステータス イベントを照合する、<see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照アクティビティ タイプの非修飾名を指定する必要があります。 たとえば、<xref:System.Workflow.Activities.CodeActivity> アクティビティの CLR 型の非修飾名は "CodeActivity" です。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A>|参照アクティビティ タイプの `activityTypeName` で指定された非修飾名。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A>|null 参照 (`Nothing`)。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A>|空の <xref:System.Workflow.Runtime.Tracking.TrackingConditionCollection>。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents%2A>|<xref:System.Collections.Generic.List%601> で指定された <xref:System.Workflow.ComponentModel.ActivityExecutionStatus> の値を含む `executionStatusEvents`。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.MatchDerivedTypes%2A>|`matchDerivedTypes` で指定された値。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activityTypeName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。  
+  
+ または  
+  
+ <paramref name="executionStatusEvents" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackingLocation (Type activityType, bool matchDerivedTypes, System.Collections.Generic.IEnumerable&lt;System.Workflow.ComponentModel.ActivityExecutionStatus&gt; executionStatusEvents);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type activityType, bool matchDerivedTypes, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Workflow.ComponentModel.ActivityExecutionStatus&gt; executionStatusEvents) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.#ctor(System.Type,System.Boolean,System.Collections.Generic.IEnumerable{System.Workflow.ComponentModel.ActivityExecutionStatus})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activityType" Type="System.Type" />
+        <Parameter Name="matchDerivedTypes" Type="System.Boolean" />
+        <Parameter Name="executionStatusEvents" Type="System.Collections.Generic.IEnumerable&lt;System.Workflow.ComponentModel.ActivityExecutionStatus&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="activityType">アクティビティの <see cref="T:System.Type" />。</param>
+        <param name="matchDerivedTypes">
+          参照アクティビティ タイプから派生したアクティビティを照合する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="executionStatusEvents">1 つ以上の <see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" /> の値を含むコレクション。</param>
+        <summary>指定した参照アクティビティ タイプを持ち、参照アクティビティ タイプから派生するアクティビティを照合するかどうか指定し、指定したアクティビティ実行ステータス イベントを照合する、<see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A>|null 参照 (`Nothing`)。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A>|`activityType` で指定された参照アクティビティ タイプ。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A>|空の <xref:System.Workflow.Runtime.Tracking.TrackingConditionCollection>。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents%2A>|<xref:System.Collections.Generic.List%601> で指定された <xref:System.Workflow.ComponentModel.ActivityExecutionStatus> の値を含む `executionStatusEvents`。|  
+|<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.MatchDerivedTypes%2A>|`matchDerivedTypes` で指定された値。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activityType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。  
+  
+ または  
+  
+ <paramref name="executionStatusEvents" /> が null 参照 (<see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivityType">
+      <MemberSignature Language="C#" Value="public Type ActivityType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ActivityType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>照合対象の参照アクティビティの共通言語ランタイム (CLR) 型を取得または設定します。</summary>
+        <value>アクティビティの <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A> に対して <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A> または <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> のどちらかを指定する必要があります。 バージョンに依存しない方法で参照アクティビティ タイプを指定する場合は、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivityTypeName">
+      <MemberSignature Language="C#" Value="public string ActivityTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActivityTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>場所の参照アクティビティ タイプの非修飾名を取得または設定します。</summary>
+        <value>参照アクティビティ タイプの非修飾名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照アクティビティ タイプの非修飾名を指定する必要があります。 たとえば、<xref:System.Workflow.Activities.CodeActivity> アクティビティの非修飾名を指定するには、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A> を "CodeActivity" に設定します。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A> を使用すると、プロファイルを XML で直接作成するときに、参照アクティビティ タイプを簡単に指定できます。 また、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A> では、バージョンに依存しない方法で参照アクティビティ タイプを参照することもできます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A> に対して <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityType%2A> または <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> のどちらかを指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Conditions">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.TrackingConditionCollection Conditions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.TrackingConditionCollection Conditions" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingConditionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡するアクティビティを限定するための条件のコレクションを取得します。</summary>
+        <value>追跡するアクティビティを限定するための条件が格納された <see cref="T:System.Workflow.Runtime.Tracking.TrackingConditionCollection" />。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A> を使用して、照合する参照アクティビティ タイプのインスタンスをより正確に定義できます。 たとえば、<xref:System.Workflow.Activities.CodeActivity> が "MyCode" である <xref:System.Workflow.ComponentModel.Activity.Name%2A?displayProperty=nameWithType> アクティビティだけを照合するには、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ActivityTypeName%2A> を "CodeActivity" に設定し、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingCondition> を <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A> に追加して、アクティビティ インスタンスの <xref:System.Workflow.ComponentModel.Activity.Name%2A?displayProperty=nameWithType> プロパティを "MyCode" に指定します。  
+  
+ <xref:System.Workflow.Runtime.Tracking.TrackingCondition> を照合するには、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A> のすべての `true` が <xref:System.Workflow.ComponentModel.ActivityExecutionStatus> で、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents%2A> の <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> の値のいずれかを照合する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecutionStatusEvents">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Workflow.ComponentModel.ActivityExecutionStatus&gt; ExecutionStatusEvents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;valuetype System.Workflow.ComponentModel.ActivityExecutionStatus&gt; ExecutionStatusEvents" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Workflow.ComponentModel.ActivityExecutionStatus&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この場所に関して照合できるアクティビティ ステータス イベントのリストを取得します。</summary>
+        <value>1 つ以上の <see cref="T:System.Collections.Generic.IList`1" /> の値を含む <see cref="T:System.Workflow.ComponentModel.ActivityExecutionStatus" />。 既定値は空のリストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents%2A> では、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> を照合するアクティビティ ステータス イベントを指定します。 <xref:System.Workflow.ComponentModel.ActivityExecutionStatus> を照合するには、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.ExecutionStatusEvents%2A> 内のいずれかの <xref:System.Workflow.Runtime.Tracking.TrackingCondition> 値を照合し、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.Conditions%2A> 内のすべての `true` が <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> でなければなりません。 リストが空の場合は、照合されるイベントはありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchDerivedTypes">
+      <MemberSignature Language="C#" Value="public bool MatchDerivedTypes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MatchDerivedTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackingLocation.MatchDerivedTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照アクティビティ タイプから派生したアクティビティを照合するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          場所の参照アクティビティ タイプから派生したアクティビティを照合する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

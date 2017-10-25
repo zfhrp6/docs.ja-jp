@@ -1,0 +1,177 @@
+<Type Name="RequestedProofToken" FullName="System.IdentityModel.Protocols.WSTrust.RequestedProofToken">
+  <TypeSignature Language="C#" Value="public class RequestedProofToken" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RequestedProofToken extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Protocols.WSTrust.RequestedProofToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Wst:RequestedProofToken 要素の内容を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:RequestedProofToken 要素の内容は、クリア テキストで、暗号化されたキーまたはキーのいずれかを指定できます。 このような場合は、のいずれかで、<xref:System.IdentityModel.Protocols.WSTrust.RequestedProofToken.ProtectedKey%2A>プロパティには、キーが含まれています。 セキュリティ トークンが、SCT などの通常のトークンの場合、セッション キーは暗号化された取得される情報になります。 Wst:RequestedProofToken では、結合エントロピは、場合に、wst:ComputedKey 要素のみが含まれている場合、<xref:System.IdentityModel.Protocols.WSTrust.RequestedProofToken.ComputedKeyAlgorithm%2A>プロパティはその内容を保持します。  
+  
+ このクラスが表す要素の詳細については、自分のシナリオに適用される Ws-trust 仕様のバージョンを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestedProofToken (byte[] secret);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] secret) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="secret" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="secret">配列<see cref="T:System.Byte" />キー マテリアルを格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestedProofToken" />クラス、指定されたキー マテリアルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーがプレーン テキストの場合は、このコンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestedProofToken (System.IdentityModel.Protocols.WSTrust.ProtectedKey protectedKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Protocols.WSTrust.ProtectedKey protectedKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.IdentityModel.Protocols.WSTrust.ProtectedKey)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protectedKey" Type="System.IdentityModel.Protocols.WSTrust.ProtectedKey" />
+      </Parameters>
+      <Docs>
+        <param name="protectedKey">A<see cref="T:System.IdentityModel.Protocols.WSTrust.ProtectedKey" />を表す、キーは、バイナリ シークレットまたは暗号化されたキーのいずれかを指定できます。</param>
+        <summary>指定した <see cref="T:System.IdentityModel.Protocols.WSTrust.ProtectedKey" /> オブジェクトを使用して、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestedProofToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="protectedKey" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestedProofToken (string computedKeyAlgorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string computedKeyAlgorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="computedKeyAlgorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="computedKeyAlgorithm">組み合わせたエントロピの場合も、セッション キーの計算に使用するアルゴリズムを示す URI を含む文字列です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestedProofToken" />クラスの指定された計算されたキーのアルゴリズムを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 結合されたエントロピの場合、このコンス トラクターを使用すると、セッション キーを計算に使用するアルゴリズムを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="computedKeyAlgorithm" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestedProofToken (byte[] secret, System.IdentityModel.Tokens.EncryptingCredentials wrappingCredentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] secret, class System.IdentityModel.Tokens.EncryptingCredentials wrappingCredentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.Byte[],System.IdentityModel.Tokens.EncryptingCredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="secret" Type="System.Byte[]" />
+        <Parameter Name="wrappingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+      </Parameters>
+      <Docs>
+        <param name="secret">配列<see cref="T:System.Byte" />キー マテリアルを格納しています。</param>
+        <param name="wrappingCredentials">A<see cref="T:System.IdentityModel.SecurityTokenService.EncryptingCredentials" />キー マテリアルの暗号化に使用する資格情報を表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestedProofToken" />クラスの指定されたキー マテリアルを使用して、資格情報を暗号化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーが暗号化されている場合は、このコンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputedKeyAlgorithm">
+      <MemberSignature Language="C#" Value="public string ComputedKeyAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ComputedKeyAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestedProofToken.ComputedKeyAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用して組み合わせたエントロピ ケース内のセッション キーを計算計算されたキー アルゴリズムを取得します。</summary>
+        <value>計算されたキー アルゴリズムを示す URI を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wst:ComputedKey 要素の内容を表します。 この要素には、キーを計算する必要があります。 場合に使用される計算のキー アルゴリズムを示す URI が含まれています。たとえばでは、結合エントロピ場合、リクエスターと発行者エントロピを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectedKey">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.ProtectedKey ProtectedKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.ProtectedKey ProtectedKey" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestedProofToken.ProtectedKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.ProtectedKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Wst:RequestedProofToken 要素には、キーが含まれている場合は、場合、キーを取得します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Protocols.WSTrust.ProtectedKey" />を表す、キーは、暗号化された、あるいはクリア テキスト型であることができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素には、(、wst:ComputedKeyElement ではなく)、キーが含まれている場合は、wst:RequestedProofToken 要素の内容を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

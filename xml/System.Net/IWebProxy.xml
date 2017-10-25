@@ -1,0 +1,183 @@
+<Type Name="IWebProxy" FullName="System.Net.IWebProxy">
+  <TypeSignature Language="C#" Value="public interface IWebProxy" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebProxy" />
+  <TypeSignature Language="DocId" Value="T:System.Net.IWebProxy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>に対するプロキシ アクセスを実装するための基底インターフェイスを提供、<see cref="T:System.Net.WebRequest" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IWebProxy>メソッドとプロパティに必要なインターフェイスが用意されています、<xref:System.Net.WebRequest>プロキシ サーバーにアクセスするクラス。  
+  
+ <xref:System.Net.WebProxy>クラスの基本実装されて、<xref:System.Net.IWebProxy>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="M:System.Net.IWebProxy.GetProxy(System.Uri)" />送信先 URI に基づいてプロキシの使用方法を制御するメソッドを使用できます。 使用して、<see cref="M:System.Net.IWebProxy.IsBypassed(System.Uri)" />メソッドを移行先サーバーに到達するプロキシを使用しないことを示します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public System.Net.ICredentials Credentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials Credentials" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IWebProxy.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ICredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証用のプロキシ サーバーに送信するための資格情報。</summary>
+        <value><see cref="T:System.Net.ICredentials" />プロキシ サーバーに要求を認証するために必要な資格情報を格納しているインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IWebProxy.Credentials%2A>プロパティは、 <xref:System.Net.ICredentials> 407 (プロキシ認証) の HTTP ステータス コードへの応答でプロキシ サーバーに送信する承認資格情報を格納しているインスタンス。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.WebProxy.Credentials%2A>プロパティを認証用のプロキシ サーバーに送信するための資格情報を設定します。  
+  
+ [!code-cpp[IWebProxy_Interface#1](~/samples/snippets/cpp/VS_Snippets_Remoting/IWebProxy_Interface/CPP/iwebproxy_interface.cpp#1)]
+ [!code-csharp[IWebProxy_Interface#1](~/samples/snippets/csharp/VS_Snippets_Remoting/IWebProxy_Interface/CS/iwebproxy_interface.cs#1)]
+ [!code-vb[IWebProxy_Interface#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IWebProxy_Interface/VB/iwebproxy_interface.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProxy">
+      <MemberSignature Language="C#" Value="public Uri GetProxy (Uri destination);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Uri GetProxy(class System.Uri destination) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IWebProxy.GetProxy(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="destination">A<see cref="T:System.Uri" />要求するインターネット リソースを指定します。</param>
+        <summary>プロキシの URI を返します。</summary>
+        <returns>A<see cref="T:System.Uri" />にお問い合わせに使用するプロキシの URI を格納するインスタンス<paramref name="destination" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IWebProxy.GetProxy%2A>メソッドがで指定されているインターネット リソースへの要求を処理するプロキシ サーバーの URI を返します、`destination`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.Net.WebProxy.GetProxy%2A> URI を返すメソッドを<xref:System.Net.WebRequest>インターネット リソースへのアクセスを使用します。  
+  
+ [!code-cpp[IWebProxy_Interface#4](~/samples/snippets/cpp/VS_Snippets_Remoting/IWebProxy_Interface/CPP/iwebproxy_interface.cpp#4)]
+ [!code-csharp[IWebProxy_Interface#4](~/samples/snippets/csharp/VS_Snippets_Remoting/IWebProxy_Interface/CS/iwebproxy_interface.cs#4)]
+ [!code-vb[IWebProxy_Interface#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IWebProxy_Interface/VB/iwebproxy_interface.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBypassed">
+      <MemberSignature Language="C#" Value="public bool IsBypassed (Uri host);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsBypassed(class System.Uri host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IWebProxy.IsBypassed(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.Uri" />プロキシを確認するには、ホストの使用します。</param>
+        <summary>指定したホストのプロキシを使用しないことを示します。</summary>
+        <returns>
+          <see langword="true" />プロキシ サーバーを使用しない必要がある場合<paramref name="host" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IWebProxy.IsBypassed%2A>メソッドで指定されているホストへのアクセスにプロキシ サーバーを使用するかどうかを示します、`host`パラメーター。 場合<xref:System.Net.IWebProxy.IsBypassed%2A>は`true`ホストにアクセスするのには、プロキシは使用されませんし、要求がサーバーに直接渡されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.WebProxy.IsBypassed%2A>プロパティを指定したホストのプロキシ サーバーを使用するかどうかを決定します。  
+  
+ [!code-cpp[IWebProxy_Interface#4](~/samples/snippets/cpp/VS_Snippets_Remoting/IWebProxy_Interface/CPP/iwebproxy_interface.cpp#4)]
+ [!code-csharp[IWebProxy_Interface#4](~/samples/snippets/csharp/VS_Snippets_Remoting/IWebProxy_Interface/CS/iwebproxy_interface.cs#4)]
+ [!code-vb[IWebProxy_Interface#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IWebProxy_Interface/VB/iwebproxy_interface.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

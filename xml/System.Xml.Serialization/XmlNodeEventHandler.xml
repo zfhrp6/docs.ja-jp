@@ -1,0 +1,52 @@
+<Type Name="XmlNodeEventHandler" FullName="System.Xml.Serialization.XmlNodeEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void XmlNodeEventHandler(object sender, XmlNodeEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XmlNodeEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlNodeEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Xml.Serialization.XmlNodeEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Xml.Serialization.XmlNodeEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Xml.Serialization.XmlSerializer.UnknownNode" />のイベント、<see cref="T:System.Xml.Serialization.XmlSerializer" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Xml.Serialization.XmlNodeEventHandler>デリゲート、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ <xref:System.Xml.Serialization.XmlSerializer.UnknownNode>イベント発生のみを呼び出すと、<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Xml.Serialization.XmlSerializer>、イベント ハンドラーを追加、<xref:System.Xml.Serialization.XmlSerializer.UnknownNode>イベント、およびオブジェクトを逆シリアル化します。  
+  
+ [!code-cpp[Classic XmlNodeEventHandler Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlNodeEventHandler Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlNodeEventHandler Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlNodeEventHandler Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlNodeEventHandler Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlNodeEventHandler Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

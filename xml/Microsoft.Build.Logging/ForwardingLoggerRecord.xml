@@ -1,0 +1,75 @@
+<Type Name="ForwardingLoggerRecord" FullName="Microsoft.Build.Logging.ForwardingLoggerRecord">
+  <TypeSignature Language="C#" Value="public class ForwardingLoggerRecord" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ForwardingLoggerRecord extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Logging.ForwardingLoggerRecord" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マルチプロセッサ ログ出力で使用されている中央/転送 logger のペアを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ForwardingLoggerRecord (Microsoft.Build.Framework.ILogger centralLogger, Microsoft.Build.Logging.LoggerDescription forwardingLoggerDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Framework.ILogger centralLogger, class Microsoft.Build.Logging.LoggerDescription forwardingLoggerDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Logging.ForwardingLoggerRecord.#ctor(Microsoft.Build.Framework.ILogger,Microsoft.Build.Logging.LoggerDescription)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="centralLogger" Type="Microsoft.Build.Framework.ILogger" />
+        <Parameter Name="forwardingLoggerDescription" Type="Microsoft.Build.Logging.LoggerDescription" />
+      </Parameters>
+      <Docs>
+        <param name="centralLogger">中心ロガー。</param>
+        <param name="forwardingLoggerDescription">転送 logger の説明です。</param>
+        <summary>転送 logger を作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CentralLogger">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ILogger CentralLogger { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ILogger CentralLogger" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Logging.ForwardingLoggerRecord.CentralLogger" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ILogger</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>中央 logger を取得します。</summary>
+        <value>中央 logger を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForwardingLoggerDescription">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Logging.LoggerDescription ForwardingLoggerDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Logging.LoggerDescription ForwardingLoggerDescription" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Logging.ForwardingLoggerRecord.ForwardingLoggerDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Logging.LoggerDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>転送の取得ロガーの説明。</summary>
+        <value>転送 logger を返しますの説明。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

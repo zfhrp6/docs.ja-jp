@@ -1,0 +1,328 @@
+<Type Name="SpeechAudioFormatInfo" FullName="System.Speech.AudioFormat.SpeechAudioFormatInfo">
+  <TypeSignature Language="C#" Value="public class SpeechAudioFormatInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SpeechAudioFormatInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.AudioFormat.SpeechAudioFormatInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オーディオ形式に関する情報を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SpeechAudioFormatInfo (int samplesPerSecond, System.Speech.AudioFormat.AudioBitsPerSample bitsPerSample, System.Speech.AudioFormat.AudioChannel channel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 samplesPerSecond, valuetype System.Speech.AudioFormat.AudioBitsPerSample bitsPerSample, valuetype System.Speech.AudioFormat.AudioChannel channel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.AudioFormat.SpeechAudioFormatInfo.#ctor(System.Int32,System.Speech.AudioFormat.AudioBitsPerSample,System.Speech.AudioFormat.AudioChannel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="samplesPerSecond" Type="System.Int32" />
+        <Parameter Name="bitsPerSample" Type="System.Speech.AudioFormat.AudioBitsPerSample" />
+        <Parameter Name="channel" Type="System.Speech.AudioFormat.AudioChannel" />
+      </Parameters>
+      <Docs>
+        <param name="samplesPerSecond">1 秒あたりのサンプルの値です。</param>
+        <param name="bitsPerSample">サンプルごとのビットの値です。</param>
+        <param name="channel">メンバー、<see cref="T:System.Speech.AudioFormat.AudioChannel" />列挙 (を示す<c>モノラル</c>または<c>ステレオ</c>)。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.AudioFormat.SpeechAudioFormatInfo" />クラスし、2 番目、ビット/サンプル、およびチャネルの数ごとのサンプルを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、一般的な使用<xref:System.Speech.AudioFormat.SpeechAudioFormatInfo.%23ctor%2A>WAV ファイルに出力するオーディオの形式を指定します。 <xref:System.Speech.AudioFormat.SpeechAudioFormatInfo.%23ctor%2A>インスタンスが引数、<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveFile%2A>メソッドです。  
+  
+```csharp  
+using System;  
+using System.IO;  
+using System.Speech.Synthesis;  
+using System.Speech.AudioFormat;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToWaveFile(@"C:\temp\test.wav",   
+          new SpeechAudioFormatInfo(32000, AudioBitsPerSample.Sixteen, AudioChannel.Mono));  
+  
+        // Create a SoundPlayer instance to play output audio file.  
+        System.Media.SoundPlayer m_SoundPlayer =   
+          new System.Media.SoundPlayer(@"C:\temp\test.wav");  
+  
+        // Build a prompt.  
+        PromptBuilder builder = new PromptBuilder();  
+        builder.AppendText("This is sample output to a WAVE file.");  
+  
+        // Speak the prompt.  
+        synth.Speak(builder);  
+        m_SoundPlayer.Play();  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SpeechAudioFormatInfo (System.Speech.AudioFormat.EncodingFormat encodingFormat, int samplesPerSecond, int bitsPerSample, int channelCount, int averageBytesPerSecond, int blockAlign, byte[] formatSpecificData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Speech.AudioFormat.EncodingFormat encodingFormat, int32 samplesPerSecond, int32 bitsPerSample, int32 channelCount, int32 averageBytesPerSecond, int32 blockAlign, unsigned int8[] formatSpecificData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.AudioFormat.SpeechAudioFormatInfo.#ctor(System.Speech.AudioFormat.EncodingFormat,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="encodingFormat" Type="System.Speech.AudioFormat.EncodingFormat" />
+        <Parameter Name="samplesPerSecond" Type="System.Int32" />
+        <Parameter Name="bitsPerSample" Type="System.Int32" />
+        <Parameter Name="channelCount" Type="System.Int32" />
+        <Parameter Name="averageBytesPerSecond" Type="System.Int32" />
+        <Parameter Name="blockAlign" Type="System.Int32" />
+        <Parameter Name="formatSpecificData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="encodingFormat">エンコード形式です。</param>
+        <param name="samplesPerSecond">1 秒あたりのサンプルの値です。</param>
+        <param name="bitsPerSample">サンプルごとのビットの値です。</param>
+        <param name="channelCount">チャネルの数の値です。</param>
+        <param name="averageBytesPerSecond">1 秒あたりの平均バイト数の値です。</param>
+        <param name="blockAlign">BlockAlign の値です。</param>
+        <param name="formatSpecificData">形式に固有のデータを含むバイト配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.AudioFormat.SpeechAudioFormatInfo" />クラスし、エンコード形式、1 秒あたりのサンプル、サンプル、チャネルの数、2 番目、ブロックのアラインメント値、および形式に固有のデータを格納する配列あたりの平均バイト数ごとのビットを指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AverageBytesPerSecond">
+      <MemberSignature Language="C#" Value="public int AverageBytesPerSecond { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AverageBytesPerSecond" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.AudioFormat.SpeechAudioFormatInfo.AverageBytesPerSecond" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオの 1 秒あたりの平均バイト数を取得します。</summary>
+        <value>1 秒あたりの平均バイト数の値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BitsPerSample">
+      <MemberSignature Language="C#" Value="public int BitsPerSample { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BitsPerSample" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.AudioFormat.SpeechAudioFormatInfo.BitsPerSample" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオのサンプルごとのビットを取得します。</summary>
+        <value>サンプルごとのビットの値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BlockAlign">
+      <MemberSignature Language="C#" Value="public int BlockAlign { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BlockAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.AudioFormat.SpeechAudioFormatInfo.BlockAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得し、ブロックのアラインメントをバイト単位で設定します。</summary>
+        <value>ブロックのアラインメントの値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 再生やオーディオの録音用のソフトウェアは、ブロック内のオーディオ データを処理します。 これらのブロックのサイズは次の値の倍数、<xref:System.Speech.AudioFormat.SpeechAudioFormatInfo.BlockAlign%2A>プロパティです。 ブロックのアラインメント値は、特定の形式のオーディオのアトミック単位 (ブロック) 内のバイト数です。 パルス符号変調 (PCM) 形式の場合、計算ブロックのアラインメントの式のとおりです。  
+  
+-   配置をブロックするチャネルの x のサンプル数ごとのバイト数を =  
+  
+ たとえば、16 ビット PCM モノラル オーディオの設定のブロックのアラインメント値には 2 (サンプル x 1 チャネルあたり 2 バイト) です。 16 ビット PCM ステレオ オーディオの設定、ブロックのアラインメント値は 4 です。  
+  
+ デバイスからの読み取りし、書き込みのデータは必要があります、ブロックの先頭に必ず開始します。 たとえば、サンプル (ブロック揃えられていない境界に意味) の途中で PCM データの再生を開始することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelCount">
+      <MemberSignature Language="C#" Value="public int ChannelCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ChannelCount" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.AudioFormat.SpeechAudioFormatInfo.ChannelCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオのチャネルの数を取得します。</summary>
+        <value>チャネルの数の値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodingFormat">
+      <MemberSignature Language="C#" Value="public System.Speech.AudioFormat.EncodingFormat EncodingFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.AudioFormat.EncodingFormat EncodingFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.AudioFormat.SpeechAudioFormatInfo.EncodingFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.AudioFormat.EncodingFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーディオのエンコード形式を取得します。</summary>
+        <value>オーディオのエンコード形式です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.AudioFormat.SpeechAudioFormatInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較されるオブジェクト。</param>
+        <summary>指定したオブジェクトがのインスタンスであるかどうかを返します<see cref="T:System.Speech.AudioFormat.SpeechAudioFormatInfo" />し、値の現在のインスタンスに<see cref="T:System.Speech.AudioFormat.SpeechAudioFormatInfo" />です。</summary>
+        <returns>現在の <see cref="T:System.Speech.AudioFormat.SpeechAudioFormatInfo" /> のインスタンスと <paramref name="obj" /> の引数から取得したものが等しい場合に <see langword="true" /> を返します。それ以外の場合は <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを返します`false`場合、<xref:System.Object>によって提供される、`obj`に引数をキャストできません<xref:System.Speech.AudioFormat.SpeechAudioFormatInfo>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatSpecificData">
+      <MemberSignature Language="C#" Value="public byte[] FormatSpecificData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] FormatSpecificData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.AudioFormat.SpeechAudioFormatInfo.FormatSpecificData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオーディオ形式のファイル形式に固有のデータを返します。</summary>
+        <returns>形式に固有のデータを含むバイト配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.AudioFormat.SpeechAudioFormatInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオーディオ形式のハッシュ コードを返します。</summary>
+        <returns>ハッシュ コードの値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SamplesPerSecond">
+      <MemberSignature Language="C#" Value="public int SamplesPerSecond { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SamplesPerSecond" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.AudioFormat.SpeechAudioFormatInfo.SamplesPerSecond" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオーディオ形式の 1 秒あたりのサンプルを取得します。</summary>
+        <value>1 秒あたりのサンプルの値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

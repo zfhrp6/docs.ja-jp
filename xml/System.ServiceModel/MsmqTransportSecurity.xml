@@ -1,0 +1,178 @@
+<Type Name="MsmqTransportSecurity" FullName="System.ServiceModel.MsmqTransportSecurity">
+  <TypeSignature Language="C#" Value="public sealed class MsmqTransportSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MsmqTransportSecurity extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MsmqTransportSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.MsmqTransportSecurity" /> クラスは、キューに置かれているトランスポートのセキュリティ設定をカプセル化します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqTransportSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqTransportSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MsmqTransportSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqTransportSecurity (System.ServiceModel.MsmqTransportSecurity other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.MsmqTransportSecurity other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqTransportSecurity.#ctor(System.ServiceModel.MsmqTransportSecurity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="other" Type="System.ServiceModel.MsmqTransportSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="other">新しいインスタンスの初期化で使用される、<see cref="T:System.ServiceModel.MsmqTransportSecurity" /> クラスの既存のインスタンス。</param>
+        <summary>既存のインスタンスを使用して、<see cref="T:System.ServiceModel.MsmqTransportSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MsmqAuthenticationMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MsmqAuthenticationMode MsmqAuthenticationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.MsmqAuthenticationMode MsmqAuthenticationMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MsmqAuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MsmqAuthenticationMode" /> クラスのこのインスタンスに関連付けられた <see cref="T:System.ServiceModel.MsmqTransportSecurity" /> を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.MsmqAuthenticationMode" /> クラスのこのインスタンスに関連付けられている <see cref="T:System.ServiceModel.MsmqTransportSecurity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ MSMQ は、認証を要求するメッセージ キューに送信されるメッセージを認証できます。または、メッセージが明示的に認証を要求することもできます。 既定の認証モードは <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain> です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.MsmqAuthenticationMode" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MsmqEncryptionAlgorithm">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MsmqEncryptionAlgorithm MsmqEncryptionAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.MsmqEncryptionAlgorithm MsmqEncryptionAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqTransportSecurity.MsmqEncryptionAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MsmqEncryptionAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MsmqEncryptionAlgorithm" /> クラスのこのインスタンスに関連付けられた <see cref="T:System.ServiceModel.MsmqTransportSecurity" /> を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.MsmqEncryptionAlgorithm" /> クラスのこのインスタンスに関連付けられている <see cref="T:System.ServiceModel.MsmqTransportSecurity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ キュー マネージャー間でメッセージを転送するときに、MSMQ はネットワーク上でメッセージを暗号化できます。 既定の暗号化アルゴリズムは <xref:System.ServiceModel.MsmqEncryptionAlgorithm.RC4Stream> です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.MsmqEncryptionAlgorithm" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MsmqProtectionLevel">
+      <MemberSignature Language="C#" Value="public System.Net.Security.ProtectionLevel MsmqProtectionLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Security.ProtectionLevel MsmqProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.ProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.Security.ProtectionLevel" /> クラスのこのインスタンスに関連付けられた <see cref="T:System.ServiceModel.MsmqTransportSecurity" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Net.Security.ProtectionLevel" /> クラスのこのインスタンスに関連付けられている <see cref="T:System.ServiceModel.MsmqTransportSecurity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の保護レベルは <xref:System.Net.Security.ProtectionLevel.Sign> です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.Net.Security.ProtectionLevel" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MsmqSecureHashAlgorithm">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MsmqSecureHashAlgorithm MsmqSecureHashAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.MsmqSecureHashAlgorithm MsmqSecureHashAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqTransportSecurity.MsmqSecureHashAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MsmqSecureHashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MsmqSecureHashAlgorithm" /> クラスのこのインスタンスに関連付けられた <see cref="T:System.ServiceModel.MsmqTransportSecurity" /> を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.MsmqSecureHashAlgorithm" /> クラスのこのインスタンスに関連付けられている <see cref="T:System.ServiceModel.MsmqTransportSecurity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のハッシュ アルゴリズムは <xref:System.ServiceModel.MsmqSecureHashAlgorithm.SHA1> です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.MsmqSecureHashAlgorithm" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

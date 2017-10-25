@@ -1,0 +1,176 @@
+<Type Name="Label" FullName="System.Windows.Controls.Label">
+  <TypeSignature Language="C#" Value="public class Label : System.Windows.Controls.ContentControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Label extends System.Windows.Controls.ContentControl" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Label" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.ContentControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Label)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロールのテキスト ラベルを表し、アクセス キーのサポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、アクセス キー (ニーモニックとも呼ばれます) の機能や外観の両方のサポートを提供します。 アクセスを有効にクイック キーボード コントロールなどでよく使用される、<xref:System.Windows.Controls.TextBox>です。 割り当てる、<xref:System.Windows.Controls.Label>を<xref:System.Windows.Controls.Control>、設定されて、<xref:System.Windows.Controls.Label.Target%2A>プロパティをコントロールをユーザーがアクセス キーを押すとフォーカスを取得する必要があります。 ターゲット設定が原因も[!INCLUDE[TLA#tla_uiautomation](~/includes/tlasharptla-uiautomation-md.md)]ラベルのテキストを対象となるコントロールの名前として使用します。 詳細については、次を参照してください。[アクセシビリティ](~/docs/framework/ui-automation/index.md)です。  
+  
+ アクセス キーを設定するには、アクセス キーにする必要のある文字の前にアンダー スコアを追加します。 最初の 1 つだけが、アクセス キーに変換されます、コンテンツに複数のアンダー スコア文字がある場合は、その他のアンダー スコアは、通常のテキストとして表示されます。 アクセス キーに変換するアンダー スコアが最初のアンダー スコアでない場合は、変換する前にあるすべてのアンダー スコアを 2 つの連続するアンダー スコアを使用します。 たとえば、次のコードのアクセス キーが含まれています、_hello**W**指定。  
+  
+```  
+<Label>__Hello_World</Label>   
+```  
+  
+ H の前にアンダー スコアが double 型であるため、W キーはアクセス キーとして登録します。  
+  
+ ラベルがフォーカスを設定して、タブの停止になっていません。 詳細については、「[フォーカス概要](~/docs/framework/wpf/advanced/focus-overview.md)です。  
+  
+ A<xref:System.Windows.Controls.Label>は、 <xref:System.Windows.Controls.ContentControl>、任意の型 (文字列、画像、パネルなど) の 1 つのオブジェクトに含めることを意味します。 詳細については、<xref:System.Windows.Controls.ContentControl> クラスを参照してください。  
+  
+## <a name="customizing-the-label-control"></a>ラベル コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.Label>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.Label>を参照してください[ラベルのスタイルとテンプレート](~/docs/framework/wpf/controls/label-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.Label>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Controls.Label>バインディングを使用してターゲットを設定します。  
+  
+ [!code-xaml[LabelSnippet#1](~/samples/snippets/csharp/VS_Snippets_Wpf/LabelSnippet/CS/Pane1.xaml#1)]   
+  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Controls.Label>アクセス キーがあり、テキストの折り返しをサポートします。  
+  
+ [!code-xaml[LabelSnippet#4](~/samples/snippets/csharp/VS_Snippets_Wpf/LabelSnippet/CS/Pane1.xaml#4)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Label ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Label.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Label" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Label.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>適切な提供<see cref="T:System.Windows.Automation.Peers.LabelAutomationPeer" />の一部として、このコントロールの実装、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]インフラストラクチャです。</summary>
+        <returns>型固有の <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 実装。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public System.Windows.UIElement Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.UIElement Target" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Label.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Markup.NameReferenceConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがラベルのアクセス キーを押すと、フォーカスを受け取る要素を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.UIElement" />アクセス キーを押すとフォーカスを受け取る。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 提供することによりアクセス キーをサポートしていない要素にキーボード ショートカットを提供することができます、<xref:System.Windows.Controls.Label>アクセス キーと、このプロパティを設定します。 アクセス キーとして機能する文字の直前にアンダー スコアを配置することでラベルにアクセス キーを指定します。 アクセス キーを指定することができます、<xref:System.Windows.Controls.ContentControl.Content%2A>プロパティかを設定して<xref:System.Windows.Controls.ContentControl.Content%2A>を<xref:System.Windows.Controls.AccessText>オブジェクト。  
+  
+ このプロパティは定義を使用することはできません、<xref:System.Windows.UIElement>です。 たとえば、次のコンパイルは機能しません。`<object.Target><UIElement../></object.Target>`です。 このプロパティは、アプリケーションで既に定義されている要素への参照を提供します。  
+  
+<a name="dependencyPropertyInfo_Target"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Label.TargetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+<a name="xamlAttributeUsage_Target"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<Label Target=" nameOfExistingElement"/>  
+  
+```  
+  
+<a name="xamlPropertyElementUsage_Target"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+<a name="xamlValues_Target"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `nameOfExistingElement`  
+ 名前<xref:System.Windows.UIElement>アクセス キーが押されたときにフォーカスを受け取る。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.Label.Target%2A> の <xref:System.Windows.Controls.Label> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-xaml[LabelSnippet#1](~/samples/snippets/csharp/VS_Snippets_Wpf/LabelSnippet/CS/Pane1.xaml#1)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TargetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TargetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Label.TargetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Label.Target" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

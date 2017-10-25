@@ -1,0 +1,55 @@
+<Type Name="ComponentEventHandler" FullName="System.ComponentModel.Design.ComponentEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ComponentEventHandler(object sender, ComponentEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ComponentEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ComponentEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.ComponentModel.Design.ComponentEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.Design.ComponentEventArgs" />。</param>
+    <summary>処理するメソッドを表す、 <see cref="E:System.ComponentModel.Design.IComponentChangeService.ComponentAdding" />、 <see cref="E:System.ComponentModel.Design.IComponentChangeService.ComponentAdded" />、 <see cref="E:System.ComponentModel.Design.IComponentChangeService.ComponentRemoving" />、および<see cref="E:System.ComponentModel.Design.IComponentChangeService.ComponentRemoved" />コンポーネント レベルのイベントの発生するイベントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.ComponentEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例での登録、<xref:System.ComponentModel.Design.ComponentEventHandler>と処理、 <xref:System.ComponentModel.Design.IComponentChangeService.ComponentAdded>、 <xref:System.ComponentModel.Design.IComponentChangeService.ComponentAdding>、<xref:System.ComponentModel.Design.IComponentChangeService.ComponentRemoved>と<xref:System.ComponentModel.Design.IComponentChangeService.ComponentRemoving>イベント。  
+  
+ [!code-cpp[ComponentEventHandlerExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ComponentEventHandlerExample/CPP/componenteventhandlerexample.cpp#1)]
+ [!code-csharp[ComponentEventHandlerExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ComponentEventHandlerExample/CS/componenteventhandlerexample.cs#1)]
+ [!code-vb[ComponentEventHandlerExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ComponentEventHandlerExample/VB/componenteventhandlerexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

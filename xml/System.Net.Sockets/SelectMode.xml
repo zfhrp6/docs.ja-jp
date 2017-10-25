@@ -1,0 +1,122 @@
+<Type Name="SelectMode" FullName="System.Net.Sockets.SelectMode">
+  <TypeSignature Language="C#" Value="public enum SelectMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SelectMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.SelectMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ポーリング モードを定義、<see cref="M:System.Net.Sockets.Socket.Poll(System.Int32,System.Net.Sockets.SelectMode)" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.SelectMode>列挙体を渡すことができるポーリング モードを定義する、<xref:System.Net.Sockets.Socket.Poll%2A?displayProperty=nameWithType>メソッドです。 SelectRead 値を使用して、リッスンしている場合を判断<xref:System.Net.Sockets.Socket>着信接続要求があります。 SelectWrite 値かどうかを使用して、<xref:System.Net.Sockets.Socket>は書き込み可能です。 上に存在エラー条件があるかどうかを判断する SelectError 値を使用して、<xref:System.Net.Sockets.Socket>です。 Writeability、読みやすさ、およびエラー条件が存在するは、説明を参照してください、<xref:System.Net.Sockets.Socket.Poll%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例の状態を確認する、 <xref:System.Net.Sockets.Socket> 3 つすべてを使用して<xref:System.Net.Sockets.SelectMode>列挙値。 呼び出し<xref:System.Net.Sockets.Socket.Poll%2A?displayProperty=nameWithType>SelectWrite 列挙値を使用して返す必要があります`true`です。  
+  
+ [!code-cpp[SelectModeExample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SelectModeExample/CPP/source.cpp#1)]
+ [!code-csharp[SelectModeExample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SelectModeExample/CS/source.cs#1)]
+ [!code-vb[SelectModeExample#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SelectModeExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="SelectError">
+      <MemberSignature Language="C#" Value="SelectError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.SelectMode SelectError = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.SelectMode.SelectError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SelectMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー状態のモードです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectRead">
+      <MemberSignature Language="C#" Value="SelectRead" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.SelectMode SelectRead = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.SelectMode.SelectRead" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SelectMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態の読み取りモードです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectWrite">
+      <MemberSignature Language="C#" Value="SelectWrite" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.SelectMode SelectWrite = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.SelectMode.SelectWrite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SelectMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態のモードを記述します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

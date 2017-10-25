@@ -1,0 +1,52 @@
+<Type Name="IEasingFunction" FullName="System.Windows.Media.Animation.IEasingFunction">
+  <TypeSignature Language="C#" Value="public interface IEasingFunction" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEasingFunction" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.IEasingFunction" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>イージング関数の基本機能を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスを使用すると、正規化されたイージング関数を作成する時間 (0 ~ 1 の値) を目的の値を返します。  
+  
+ このインターフェイスは、正規化された時間 (進行状況) の変換を表します。 アニメーションは、その進行状況の変換に使用します。 このインターフェイスを実装するクラスには、アニメーションの実行速度を制御できます。  
+  
+ 派生して、<xref:System.Windows.Media.Animation.EasingFunctionBase>関数を独自のカスタム イージングを実装するクラス。  
+  
+> [!NOTE]
+>  イージング関数の WPF 実装は、Silverlight の実装と互換性が。 XAML を 1 つのテクノロジにイージング関数を使用した場合は、他の変更なしで使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Ease">
+      <MemberSignature Language="C#" Value="public double Ease (double normalizedTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance float64 Ease(float64 normalizedTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.IEasingFunction.Ease(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="normalizedTime" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="normalizedTime">アニメーションの正規化された時間 (進行状況)。</param>
+        <summary>変換では、アニメーションの速度を制御する時間を正規化します。</summary>
+        <returns>変換された進行状況。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

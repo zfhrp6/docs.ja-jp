@@ -1,0 +1,111 @@
+<Type Name="ArrayShape" FullName="System.Reflection.Metadata.ArrayShape">
+  <TypeSignature Language="C#" Value="public struct ArrayShape" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ArrayShape extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.Metadata.ArrayShape" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection.Metadata</AssemblyName>
+    <AssemblyVersion>1.4.1.0</AssemblyVersion>
+    <AssemblyVersion>1.4.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>配列型の図形を表します。</summary>
+    <remarks>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArrayShape (int rank, System.Collections.Immutable.ImmutableArray&lt;int&gt; sizes, System.Collections.Immutable.ImmutableArray&lt;int&gt; lowerBounds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 rank, valuetype System.Collections.Immutable.ImmutableArray`1&lt;int32&gt; sizes, valuetype System.Collections.Immutable.ImmutableArray`1&lt;int32&gt; lowerBounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Metadata.ArrayShape.#ctor(System.Int32,System.Collections.Immutable.ImmutableArray{System.Int32},System.Collections.Immutable.ImmutableArray{System.Int32})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Metadata</AssemblyName>
+        <AssemblyVersion>1.4.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rank" Type="System.Int32" />
+        <Parameter Name="sizes" Type="System.Collections.Immutable.ImmutableArray&lt;System.Int32&gt;" />
+        <Parameter Name="lowerBounds" Type="System.Collections.Immutable.ImmutableArray&lt;System.Int32&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="rank">配列の次元の数。</param>
+        <param name="sizes">各次元のサイズ。</param>
+        <param name="lowerBounds">各次元の下限値です。</param>
+        <summary><see cref="T:System.Reflection.Metadata.ArrayShape" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LowerBounds">
+      <MemberSignature Language="C#" Value="public System.Collections.Immutable.ImmutableArray&lt;int&gt; LowerBounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Collections.Immutable.ImmutableArray`1&lt;int32&gt; LowerBounds" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Metadata.ArrayShape.LowerBounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Metadata</AssemblyName>
+        <AssemblyVersion>1.4.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての次元の下限を取得します。 長さは、後続のディメンションが下限を指定しない場合は入力がランクよりも小さい可能性があります。</summary>
+        <value>下限の配列。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rank">
+      <MemberSignature Language="C#" Value="public int Rank { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Rank" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Metadata.ArrayShape.Rank" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Metadata</AssemblyName>
+        <AssemblyVersion>1.4.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配列の次元数を取得します。</summary>
+        <value>ディメンションの数。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sizes">
+      <MemberSignature Language="C#" Value="public System.Collections.Immutable.ImmutableArray&lt;int&gt; Sizes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Collections.Immutable.ImmutableArray`1&lt;int32&gt; Sizes" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Metadata.ArrayShape.Sizes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Metadata</AssemblyName>
+        <AssemblyVersion>1.4.1.0</AssemblyVersion>
+        <AssemblyVersion>1.4.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Immutable.ImmutableArray&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての次元のサイズを取得します。</summary>
+        <value>サイズの配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される配列の要素の数は、配列の型 (ランク) の次元数よりも小さい可能性があります。 その場合は、後続のディメンションには、サイズが指定されません。
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

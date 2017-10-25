@@ -1,0 +1,109 @@
+<Type Name="ActivityDesignerOptionsAttribute" FullName="System.Activities.Presentation.ActivityDesignerOptionsAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ActivityDesignerOptionsAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ActivityDesignerOptionsAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.ActivityDesignerOptionsAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Flowcharts など、アクティビティの作成に使用する <see cref="T:system.Activities.Presentation.ActivityDesigner" /> のドリルダウンとノード表示モードを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ UI 要素へのドリル ダウンは既定で許可されています。 設定で禁止できます、<xref:System.Activities.Presentation.ActivityDesignerOptionsAttribute.AllowDrillIn%2A>プロパティを`false`です。 子ノードが既定では、常に折りたたまれていない、設定で常に折りたたまれるように設定することが、<xref:System.Activities.Presentation.ActivityDesignerOptionsAttribute.AlwaysCollapseChildren%2A>プロパティを`true`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityDesignerOptionsAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.ActivityDesignerOptionsAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Activities.Presentation.ActivityDesignerOptionsAttribute" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターによって割り当てられている既定値は`true`の<xref:System.Activities.Presentation.ActivityDesignerOptionsAttribute.AllowDrillIn%2A>プロパティおよび`false`の<xref:System.Activities.Presentation.ActivityDesignerOptionsAttribute.AlwaysCollapseChildren%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowDrillIn">
+      <MemberSignature Language="C#" Value="public bool AllowDrillIn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowDrillIn" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.ActivityDesignerOptionsAttribute.AllowDrillIn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:system.Activities.Presentation.ActivityDesigner" /> に 1 レベルドリル ダウンすることが許可されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />UI 要素へのドリル インが許可された場合です。それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlwaysCollapseChildren">
+      <MemberSignature Language="C#" Value="public bool AlwaysCollapseChildren { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AlwaysCollapseChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.ActivityDesignerOptionsAttribute.AlwaysCollapseChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子ノードが常に折りたたまれるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />子ノードが常に折りたたまれている場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutlineViewIconProvider">
+      <MemberSignature Language="C#" Value="public Func&lt;System.Activities.Presentation.Model.ModelItem,System.Windows.Media.DrawingBrush&gt; OutlineViewIconProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;class System.Activities.Presentation.Model.ModelItem, class System.Windows.Media.DrawingBrush&gt; OutlineViewIconProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.ActivityDesignerOptionsAttribute.OutlineViewIconProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Activities.Presentation.Model.ModelItem,System.Windows.Media.DrawingBrush&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアウトライン表示アイコンのプロバイダーの機能を設定します。</summary>
+        <value>アウトライン表示アイコンのプロバイダーの関数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

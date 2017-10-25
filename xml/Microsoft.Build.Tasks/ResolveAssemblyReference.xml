@@ -1,0 +1,1145 @@
+<Type Name="ResolveAssemblyReference" FullName="Microsoft.Build.Tasks.ResolveAssemblyReference">
+  <TypeSignature Language="C#" Value="public class ResolveAssemblyReference : Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ResolveAssemblyReference extends Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.ResolveAssemblyReference" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Tasks.TaskExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>実装して、 <c>ResolveAssemblyReference</c>タスク。 使用して、 <c>ResolveAssemblyReference</c>作成してこのタスクを実行するのには、プロジェクト ファイル内の要素。 使用法とパラメーターについては、次を参照してください。 [ResolveAssemblyReference タスク](http://msdn.microsoft.com/library/4d56d848-b29b-4dff-86a2-0a96c9e4a170)です。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResolveAssemblyReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ResolveAssemblyReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.ResolveAssemblyReference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AllowedAssemblyExtensions">
+      <MemberSignature Language="C#" Value="public string[] AllowedAssemblyExtensions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AllowedAssemblyExtensions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AllowedAssemblyExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照の解決時に考慮されるアセンブリの拡張子を取得または設定します。</summary>
+        <value>参照の解決時に考慮されるアセンブリの拡張子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の拡張子は .dll と .exe はします。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AllowedRelatedFileExtensions">
+      <MemberSignature Language="C#" Value="public string[] AllowedRelatedFileExtensions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AllowedRelatedFileExtensions" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AllowedRelatedFileExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連するファイルを検索するときに考慮される拡張機能を取得または設定します。</summary>
+        <value>関連するファイルを検索するときに考慮される拡張機能。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の拡張子は、.pdb と .xml です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AppConfigFile">
+      <MemberSignature Language="C#" Value="public string AppConfigFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AppConfigFile" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AppConfigFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>App.Config ファイルのパスを取得または設定します。</summary>
+        <value>App.config ファイルのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが指定されている場合、<xref:Microsoft.Build.Tasks.ResolveAssemblyReference.AutoUnify%2A>プロパティを false にする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Assemblies">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] Assemblies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] Assemblies" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.Assemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全パスに解決し、依存関係の対象を見つけるためのアセンブリ名を取得または設定します。</summary>
+        <value>完全パスに解決し、依存関係の対象を見つけるためのアセンブリ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アセンブリ名は簡易または厳密な名前になります。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] AssemblyFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] AssemblyFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AssemblyFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係を見つけるためのアセンブリの完全修飾パスの一覧を取得または設定します。</summary>
+        <value>依存関係を見つけるためのアセンブリの完全修飾パスの一覧。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AutoUnify">
+      <MemberSignature Language="C#" Value="public bool AutoUnify { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoUnify" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AutoUnify" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に渡される App.Config ファイルがあった場合、自動的に結果の依存関係グラフが扱うかどうかを指定するブール値、<see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AppConfigFile" />プロパティです。</summary>
+        <value>
+          <see langword="true" />生成された依存関係グラフが自動的として扱われますに渡される App.Config ファイルがあった場合、<see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AppConfigFile" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `false` です。  
+  
+ このプロパティの詳細については、次を参照してください[ResolveAssemblyReference タスク。](http://msdn.microsoft.com/library/4d56d848-b29b-4dff-86a2-0a96c9e4a170)  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CandidateAssemblyFiles">
+      <MemberSignature Language="C#" Value="public string[] CandidateAssemblyFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] CandidateAssemblyFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.CandidateAssemblyFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索および解決プロセスで使用するアセンブリのリストを取得または設定します。アセンブリは、絶対ファイル名またはプロジェクトの相対ファイル名である必要があります。</summary>
+        <value>検索および解決プロセスで使用するアセンブリのリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合にこの一覧のアセンブリが考慮されますが、<xref:Microsoft.Build.Tasks.ResolveAssemblyReference.SearchPaths%2A>プロパティには、考慮するパスの 1 つとして {candidateassemblyfiles} が含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CopyLocalDependenciesWhenParentReferenceInGac">
+      <MemberSignature Language="C#" Value="public bool CopyLocalDependenciesWhenParentReferenceInGac { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CopyLocalDependenciesWhenParentReferenceInGac" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.CopyLocalDependenciesWhenParentReferenceInGac" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または依存関係の決定方法と、依存関係がローカルにコピーするかどうかを決定するスイッチを設定します。</summary>
+        <value>場合 true を返す依存関係をコピーする必要がある場合を判断するときにローカルで実行されるチェックのいずれかのプロジェクト ファイルに Private メタデータが含まれている場合は、親が参照では、かを設定します。 メタデータが設定された場合、使用にも依存関係のです。  
+  
+ メタデータが設定されていない場合、依存関係が親の参照と同じチェックを変わります。 これらのチェックの 1 つでは、その参照が GAC 内にあるかどうかが確認されます。 参照が GAC 内にある場合、コピーしません、ローカル対象のコンピューターの gac になることが前提とします。 こののみに適用する特定の参照とその依存関係ありません。  
+  
+ これは、プロジェクト ファイルで参照できますが、GAC であるためは、依存関係可能性がありますもローカルにコピーする、GAC 内ではないためにことを意味します。 これは RAR の既定の動作でありが true にするのには、このプロパティの既定値。  
+  
+ まだ、GAC 内にある場合に表示するプロジェクト ファイルの参照を確認すると、そのコピーのローカル状態を適宜設定は、false を返します。  
+  
+ ただしの依存関係のおいないだけが確認するかどうかは、それらは、GAC 内がおが確認することも、プロジェクト ファイルから親参照が GAC 内かどうかを参照してください。  
+  
+ プロジェクト ファイルから親参照が GAC に場合、依存関係をローカルでないコピーおは。  
+  
+ <block subset="none" type="note"><para>  
+ 複数の親参照が存在し、それらのいずれかが GAC から発生しない場合、おはコピー ローカル true に設定します。  
+  
+</para></block></value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CopyLocalFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] CopyLocalFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] CopyLocalFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.CopyLocalFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのファイルが返されます、 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.ResolvedFiles" />、 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.ResolvedDependencyFiles" />、 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.RelatedFiles" />、 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.SatelliteFiles" />、および<see cref="T:Microsoft.Build.Tasks.ResolveAssemblyReference" />を持つプロパティ、 <c>CopyLocal</c>の値を持つ項目メタデータ<see langword="true" />です。</summary>
+        <value>すべてのファイル、 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.ResolvedFiles" />、 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.ResolvedDependencyFiles" />、 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.RelatedFiles" />、 <see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.SatelliteFiles" />、および<see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.ScatterFiles" />を持つプロパティ、 <c>CopyLocal</c>の値を持つ項目メタデータ<see langword="true" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override bool Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.ResolveAssemblyReference.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行、 <c>ResolveAssemblyReference</c>タスク。</summary>
+        <returns>
+          タスクの実行が成功した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FilesWritten">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] FilesWritten { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] FilesWritten" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.FilesWritten" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスクに書き込む項目を取得または設定します。</summary>
+        <value>ディスクに書き込む項目。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FindDependencies">
+      <MemberSignature Language="C#" Value="public bool FindDependencies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FindDependencies" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.FindDependencies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の依存関係を検索するかどうかを指定するブール値 (<see langword="true" />) か、プライマリ参照のみが検出されます (<see langword="false" />)。</summary>
+        <value>
+          <see langword="true" />依存関係が検索される場合<see langword="false" />のみ場合、プライマリ参照が検索されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `true` です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FindRelatedFiles">
+      <MemberSignature Language="C#" Value="public bool FindRelatedFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FindRelatedFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.FindRelatedFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.pdb ファイルおよび .xml ファイルなどの関連ファイルを検索するかどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />.pdb ファイルおよび .xml ファイルなどの関連ファイルが検索される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `true` です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FindSatellites">
+      <MemberSignature Language="C#" Value="public bool FindSatellites { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FindSatellites" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.FindSatellites" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サテライト アセンブリが検索されるかどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />サテライト アセンブリが検索される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `true.`  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FindSerializationAssemblies">
+      <MemberSignature Language="C#" Value="public bool FindSerializationAssemblies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FindSerializationAssemblies" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.FindSerializationAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化アセンブリが検索されるかどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />シリアル化アセンブリが検索される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `true` です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FullFrameworkAssemblyTables">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] FullFrameworkAssemblyTables { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] FullFrameworkAssemblyTables" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.FullFrameworkAssemblyTables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロファイルのフレームワーク全体を含む XML ファイルを表す項目の一覧を設定します。</summary>
+        <value>プロファイルのフレームワーク全体を含む XML ファイルを表す項目の一覧を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ここで通常何も渡されますが、これは、完全なフレームワークの xml ファイルの場所がない場合、RedistList フォルダーの下のです。  
+  
+ ファイルの形式は次のような: などです。  
+  
+```  
+<FileList Redist="MatchingRedistListName" >  
+  <File AssemblyName="System" Version="2.0.0.0"  
+    PublicKeyToken="b77a5c561934e089" Culture="neutral"  
+    ProcessorArchitecture="MSIL" FileVersion="2.0.40824.0" InGAC="true"  
+  />  
+// etc.  
+</FileList>  
+```  
+  
+ この一覧の項目に再頒布リストを特定のフレームワーク ディレクトリに関連付ける"FrameworkDirectory"メタデータを指定する必要があります。 関連付けは、エラーを行っていない場合ログに記録されます。 その理由は、RAR のロジックと見なされます、FrameworkDirectory が設定されていない対象のフレームワーク ディレクトリが使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FullFrameworkFolders">
+      <MemberSignature Language="C#" Value="public string[] FullFrameworkFolders { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] FullFrameworkFolders" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.FullFrameworkFolders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定 example:%programfiles%\reference assemblies\microsoft\framework\v4.0 用の特定のクライアント プロファイルでは、フレームワーク全体を表す RedistList ディレクトリが含まれるフォルダーの一覧</summary>
+        <value>指定されたクライアント プロファイルのフレームワーク全体を表す RedistList ディレクトリが含まれるフォルダーの一覧を返します</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FullTargetFrameworkSubsetNames">
+      <MemberSignature Language="C#" Value="public string[] FullTargetFrameworkSubsetNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] FullTargetFrameworkSubsetNames" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.FullTargetFrameworkSubsetNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたターゲット フレームワークのサブセットの名前を表す文字列。</summary>
+        <value>サブセットの名前を含む文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TargetFrameworkSubset 一覧に表示される場合、無視するように TargetFrameworkSubsets を一連の名前を提供します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreDefaultInstalledAssemblySubsetTables">
+      <MemberSignature Language="C#" Value="public bool IgnoreDefaultInstalledAssemblySubsetTables { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreDefaultInstalledAssemblySubsetTables" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.IgnoreDefaultInstalledAssemblySubsetTables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、タスクの検索し、インストールされているその他のアセンブリ サブセット テーブル (とも呼ばれるサブセット リスト) を指定された、TargetFrameworkDirectories の下の SubsetList ディレクトリを使用するかどうかを指定するブール値を設定します。</summary>
+        <value>
+          <see langword="true" />追加のアセンブリ サブセット テーブルが使用されます。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreDefaultInstalledAssemblyTables">
+      <MemberSignature Language="C#" Value="public bool IgnoreDefaultInstalledAssemblyTables { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreDefaultInstalledAssemblyTables" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.IgnoreDefaultInstalledAssemblyTables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定するブール値を設定するかどうか、 <c>ResolveAssemblyReference</c>タスクは、下にある指定された RedistList ディレクトリで見つかったインストールされた追加のアセンブリ テーブルを無視する<see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.TargetFrameworkDirectories" />(<see langword="true" />) またはを検索し、インストールされているアセンブリのこれらのテーブルを使用 (<see langword="false" />)。</summary>
+        <value>
+          <see langword="true" />タスクは、インストールされているその他のアセンブリ テーブルを無視する場合<see langword="false" />場合は、タスクの検索し、インストールされているその他のアセンブリ テーブルを使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreTargetFrameworkAttributeVersionMismatch">
+      <MemberSignature Language="C#" Value="public bool IgnoreTargetFrameworkAttributeVersionMismatch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreTargetFrameworkAttributeVersionMismatch" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.IgnoreTargetFrameworkAttributeVersionMismatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうかをフレームワーク属性を無視する場合は、アセンブリをチェックするときに、対象の framework と互換性を示すフラグ。</summary>
+        <value>フラグを返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreVersionForFrameworkReferences">
+      <MemberSignature Language="C#" Value="public bool IgnoreVersionForFrameworkReferences { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreVersionForFrameworkReferences" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.IgnoreVersionForFrameworkReferences" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または framework アセンブリのバージョン情報を無視して、実際には、現在のターゲット フレームワークから framework アセンブリを解決するかどうかを示すフラグを設定します。 フラグは、プライマリ参照がフレームワーク アセンブリである場合に適用されます。</summary>
+        <value>フラグを返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InstalledAssemblySubsetTables">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] InstalledAssemblySubsetTables { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] InstalledAssemblySubsetTables" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.InstalledAssemblySubsetTables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Framework.ITaskItem" />ターゲットのサブセットであると予想されるアセンブリを含む XML ファイルの一覧を表すです。</summary>
+        <value><see cref="T:Microsoft.Build.Framework.ITaskItem" /> XML ファイルの一覧です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、ファイルの形式です。  
+  
+```  
+<FileList Redist="ClientSubset" >  
+    <File AssemblyName="System" Version="2.0.0.0"   
+      PublicKeyToken="b77a5c561934e089" Culture="neutral"   
+      ProcessorArchitecture="MSIL" FileVersion="2.0.40824.0"   
+      InGAC="true" />  
+    etc.  
+</FileList>  
+```  
+  
+ この一覧の項目に、InstalledAssemblySubsetTable を特定のフレームワーク ディレクトリに関連付ける"FrameworkDirectory"メタデータを必要に応じて指定可能性があります。 TargetFrameworkDirectories 要素を 1 つだけがある場合、"FrameworkDirectory"メタデータがない項目がこの一覧に扱われます、TargetFrameworkDirectories に渡される唯一の (一意の) 値に、メタデータが設定されているものとして。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InstalledAssemblyTables">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] InstalledAssemblyTables { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] InstalledAssemblyTables" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.InstalledAssemblyTables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット コンピューターにインストールすることが求められるアセンブリを含む XML ファイルの一覧を取得または設定します。</summary>
+        <value>ターゲット コンピューターにインストールすることが求められるアセンブリを含む XML ファイルの一覧。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LatestTargetFrameworkDirectories">
+      <MemberSignature Language="C#" Value="public string[] LatestTargetFrameworkDirectories { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] LatestTargetFrameworkDirectories" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.LatestTargetFrameworkDirectories" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンピューター上のターゲットとなる最新のフレームワークの再領布リストを含むディレクトリの一覧を設定します。</summary>
+        <value>コンピューター上のターゲットとなる最新のフレームワークの再領布リストを含むディレクトリの一覧を返します。  これが設定されていない場合は、最上位のフレームワークを検索は指定されたターゲット フレームワーク識別子のマシンにインストールされ、それを使用します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ProfileName">
+      <MemberSignature Language="C#" Value="public string ProfileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProfileName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.ProfileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のターゲット フレームワーク プロファイル対象としているクライアント、Web、またはネットワークなどの名前</summary>
+        <value>ターゲット フレームワーク プロファイル対象としているクライアント、Web、またはネットワークなどの名前を返します</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RelatedFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] RelatedFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] RelatedFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.RelatedFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連のあるファイルを取得します。たとえば、基本名が同じ .xml と .pdb ファイルを参照として取得します。</summary>
+        <value>関連のあるファイル。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvedDependencyFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] ResolvedDependencyFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] ResolvedDependencyFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.ResolvedDependencyFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 * n*番目のパスの依存関係にします。</summary>
+        <value>* n*番目のパスの依存関係にします。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvedFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] ResolvedFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] ResolvedFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.ResolvedFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全パスに解決されるすべてのプライマリ参照の一覧を取得します。</summary>
+        <value>完全パスに解決されるすべてのプライマリ参照の一覧。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ResolvedSDKReferences">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] ResolvedSDKReferences { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] ResolvedSDKReferences" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.ResolvedSDKReferences" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Sdk 名であり、sdk の場所とターゲットの構成が含まれている解決済みの SDK の参照の一覧。  
+  
+ これらの場所は、参照が付属している sdk 名メタデータを持つ場合にのみ検索されます。</summary>
+        <value><see cref="T:Microsoft.Build.Framework.ITaskItem" /> を返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SatelliteFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] SatelliteFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] SatelliteFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.SatelliteFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検出されるすべてのサテライト ファイルを取得します。</summary>
+        <value>検出されるすべてのサテライト ファイル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サテライト ファイルにが、`CopyLocal`の値を持つ項目メタデータ`true`参照またはこのアイテムが存在する原因となった機能に依存しているかどうかも、`CopyLocal`設定される項目メタデータ`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ScatterFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] ScatterFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] ScatterFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.ScatterFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したアセンブリのいずれかに関連付けられている散布図ファイルを取得します。</summary>
+        <value>指定したアセンブリのいずれかに関連付けられている散布図ファイル。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SearchPaths">
+      <MemberSignature Language="C#" Value="public string[] SearchPaths { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] SearchPaths" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.SearchPaths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリを表すディスク上のファイルを探すために検索されるディレクトリまたは特別な場所を指定します。</summary>
+        <value>アセンブリを表すディスク上のファイルを探すために検索されるディレクトリまたは特別な場所。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SerializationAssemblyFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] SerializationAssemblyFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] SerializationAssemblyFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.SerializationAssemblyFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化アセンブリを取得します。</summary>
+        <value>シリアル化アセンブリ。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Silent">
+      <MemberSignature Language="C#" Value="public bool Silent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Silent" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.Silent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージをログに記録するかどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />メッセージは記録されません。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StateFile">
+      <MemberSignature Language="C#" Value="public string StateFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StateFile" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.StateFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このタスクの中間ビルド状態の保存場所を示すファイル名を取得または設定します。</summary>
+        <value>このタスクの中間ビルド状態の保存場所を示すファイル名。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SuggestedRedirects">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] SuggestedRedirects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] SuggestedRedirects" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.SuggestedRedirects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値に関係なく、すべて個別の競合するアセンブリ id の 1 つの項目を取得、<see cref="P:Microsoft.Build.Tasks.ResolveAssemblyReference.AutoUnify" />プロパティです。</summary>
+        <value>一意の競合するアセンブリ ID に対応する項目。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カルチャと PKT が見つかりましたとアプリケーション構成ファイルに適切な bindingRedirect エントリを格納していない項目が含まれます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TargetedRuntimeVersion">
+      <MemberSignature Language="C#" Value="public string TargetedRuntimeVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetedRuntimeVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.TargetedRuntimeVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または対象としている、ランタイム、たとえば、2.0.57027 の名前を設定します。</summary>
+        <value>たとえば、2.0.57027 対象としているランタイムの名前を返します。 "V"は、名前にプレフィックスとして付けることがあります。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFrameworkDirectories">
+      <MemberSignature Language="C#" Value="public string[] TargetFrameworkDirectories { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] TargetFrameworkDirectories" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.TargetFrameworkDirectories" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象のフレームワーク ディレクトリへのパスを取得または設定します。</summary>
+        <value>対象のフレームワーク ディレクトリへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが指定された、`CopyLocal`結果として得られる項目のステータス。  
+  
+ このプロパティが指定されていない場合、結果として得られる項目は必要ありません、`CopyLocal`の値`true`がある明示的になければ、`Private`メタデータの値の`true`ソース アイテムにします。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFrameworkMoniker">
+      <MemberSignature Language="C#" Value="public string TargetFrameworkMoniker { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetFrameworkMoniker" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.TargetFrameworkMoniker" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または存在する場合に、対象となっているターゲット フレームワーク モニカーを設定します。</summary>
+        <value>存在する場合は、対象となっているターゲット フレームワーク モニカーを返します。 既定では、空の文字列を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これはログ記録目的で使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFrameworkMonikerDisplayName">
+      <MemberSignature Language="C#" Value="public string TargetFrameworkMonikerDisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetFrameworkMonikerDisplayName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.TargetFrameworkMonikerDisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または存在する場合に、対象となっているターゲット フレームワーク モニカーの表示名を設定します。</summary>
+        <value>存在する場合は、対象となっているターゲット フレームワーク モニカーの表示名を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、ログに対してのみ使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFrameworkSubsets">
+      <MemberSignature Language="C#" Value="public string[] TargetFrameworkSubsets { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] TargetFrameworkSubsets" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.TargetFrameworkSubsets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット フレームワーク ディレクトリ内の検索がターゲット フレームワークのサブセット名の一覧。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFrameworkVersion">
+      <MemberSignature Language="C#" Value="public string TargetFrameworkVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetFrameworkVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.TargetFrameworkVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または参照のフィルター処理に使用されるプロジェクトのターゲット フレームワーク バージョンを設定します。</summary>
+        <value>プロジェクト ターゲット フレームワークのバージョンの参照をフィルター処理に使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は空の文字列です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TargetProcessorArchitecture">
+      <MemberSignature Language="C#" Value="public string TargetProcessorArchitecture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetProcessorArchitecture" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.TargetProcessorArchitecture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグローバル アセンブリ キャッシュ (GAC) 参照を解決するために使用される推奨されるターゲット プロセッサ アーキテクチャを設定、値を持つことができる<c>x86</c>、 <c>IA64</c>、または<c>AMD64</c>です。</summary>
+        <value>グローバル アセンブリ キャッシュ (GAC) 参照の解決に使用される、推奨されるターゲット プロセッサ アーキテクチャ。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="WarnOrErrorOnTargetArchitectureMismatch">
+      <MemberSignature Language="C#" Value="public string WarnOrErrorOnTargetArchitectureMismatch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string WarnOrErrorOnTargetArchitectureMismatch" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.ResolveAssemblyReference.WarnOrErrorOnTargetArchitectureMismatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはターゲット プロセッサ アーキテクチャとプライマリ参照のアーキテクチャが一致したときの動作を指定する文字列値を設定します。 "Error"の場合はの不一致エラーが記録されます。 これは、"Warning"との不一致、警告が記録されます。 これが、"None"が、エラーまたは警告がログに記録されませんの不一致です。</summary>
+        <value>「エラー」、「警告」または"None"の文字列値を返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

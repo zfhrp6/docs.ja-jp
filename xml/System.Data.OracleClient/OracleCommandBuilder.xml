@@ -1,0 +1,752 @@
+<Type Name="OracleCommandBuilder" FullName="System.Data.OracleClient.OracleCommandBuilder">
+  <TypeSignature Language="C#" Value="public sealed class OracleCommandBuilder : System.Data.Common.DbCommandBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleCommandBuilder extends System.Data.Common.DbCommandBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleCommandBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.OracleClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbCommandBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("OracleCommandBuilder has been deprecated. http://go.microsoft.com/fwlink/?LinkID=144260", false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>加えられた変更を調整するために使用される単一テーブル コマンドを自動的に生成、<see cref="T:System.Data.DataSet" />データベースに関連付けられました。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型は廃止されており、.NET Framework の将来のバージョンで削除される予定です。 詳細については、次を参照してください。 [Oracle および ADO.NET](~/docs/framework/data/adonet/oracle-and-adonet.md)です。  
+  
+ <xref:System.Data.OracleClient.OracleDataAdapter>に加えられた変更を調整するために必要な SQL ステートメントを自動的に生成しない、<xref:System.Data.DataSet>データベースに関連付けられています。 ただし、作成することができます、<xref:System.Data.OracleClient.OracleCommandBuilder>を設定して 1 つのテーブルの更新プログラムの SQL ステートメントを生成するオブジェクト、<xref:System.Data.OracleClient.OracleDataAdapter.SelectCommand%2A>のプロパティ、<xref:System.Data.OracleClient.OracleDataAdapter>です。 次に、<xref:System.Data.OracleClient.OracleCommandBuilder>を設定しない追加の SQL ステートメントが生成されます。  
+  
+ 間のリレーションシップ、<xref:System.Data.OracleClient.OracleDataAdapter>とそれに対応する<xref:System.Data.OracleClient.OracleCommandBuilder>1 対 1 では常にします。 この対応関係を作成するに設定する、<xref:System.Data.OracleClient.OracleDataAdapter>のプロパティ、<xref:System.Data.OracleClient.OracleCommandBuilder>オブジェクト。 これにより、<xref:System.Data.OracleClient.OracleCommandBuilder>自体の出力が生成されるリスナーとして登録する<xref:System.Data.OracleClient.OracleDataAdapter.RowUpdating>に影響するイベント、<xref:System.Data.DataSet>です。  
+  
+ INSERT、UPDATE、または DELETE のステートメントを生成する、<xref:System.Data.OracleClient.OracleCommandBuilder>を使用して、<xref:System.Data.OracleClient.OracleDataAdapter.SelectCommand%2A>必要な一連のメタデータを取得するプロパティです。  
+  
+ <xref:System.Data.OracleClient.OracleCommandBuilder>も使用して、 <xref:System.Data.OracleClient.OracleCommand.Connection%2A>、および<xref:System.Data.OracleClient.OracleCommand.Transaction%2A>プロパティによって参照される、<xref:System.Data.OracleClient.OracleDataAdapter.SelectCommand%2A>です。  
+  
+ 呼び出す場合<xref:System.Data.Common.DbDataAdapter.Dispose%2A>、<xref:System.Data.OracleClient.OracleCommandBuilder>関連付けが解除され、 <xref:System.Data.OracleClient.OracleDataAdapter>、され、生成されたコマンドは使用されなくです。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Data.OracleClient.OracleCommand>、と共に<xref:System.Data.OracleClient.OracleDataAdapter>と<xref:System.Data.OracleClient.OracleConnection>、データベースから行を選択します。 例が初期化された渡された<xref:System.Data.DataSet>、接続文字列、クエリ文字列では、SQL SELECT ステートメント、およびデータベースのテーブルの名前を表す文字列。 作成し、<xref:System.Data.OracleClient.OracleCommandBuilder>です。  
+  
+```vb  
+Private Function SelectOracleRows(connection As String, queryString As String, tableName As String) As DataSet  
+  
+   Dim connection As New OracleConnection(connection)  
+   Dim dataAdapter As New OracleDataAdapter()  
+   Dim dataSet As DataSet = New DataSet  
+  
+   dataAdapter.SelectCommand = New OracleCommand(queryString, connection)  
+  
+   Dim cmdBuilder As OracleCommandBuilder = New OracleCommandBuilder(dataAdapter)  
+  
+   connection.Open()  
+   dataAdapter.Fill(dataSet, tableName)  
+      ' Code to modify data in DataSet here   
+      ' Without the OracleCommandBuilder this line would fail.  
+   dataAdapter.Update(dataSet, tableName)  
+   connection.Close()  
+End Function  
+```  
+  
+```csharp  
+public static DataSet SelectOracleSrvRows(string myConnection, string mySelectQuery, string myTableName)  
+{  
+   OracleConnection myConn = new OracleConnection(myConnection);  
+   OracleDataAdapter myDataAdapter = new OracleDataAdapter();  
+   myDataAdapter.SelectCommand = new OracleCommand(mySelectQuery, myConn);  
+   OracleCommandBuilder cb = new OracleCommandBuilder(myDataAdapter);  
+  
+   myConn.Open();  
+   DataSet ds = new DataSet();  
+   myDataAdapter.Fill(ds, myTableName);  
+  
+   //Code to modify data in DataSet goes here...  
+  
+   //Without the OracleCommandBuilder this line would fail.  
+   myDataAdapter.Update(ds, myTableName);  
+   myConn.Close();  
+   return ds;  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleCommandBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Data.OracleClient.OracleCommandBuilder" />の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleCommandBuilder>自体のリスナーとして登録<xref:System.Data.OracleClient.OracleDataAdapter.RowUpdating>によって生成されるイベント、<xref:System.Data.OracleClient.OracleDataAdapter>このプロパティで指定します。  
+  
+ 新しいインスタンスを作成する場合<xref:System.Data.OracleClient.OracleCommandBuilder>、既存<xref:System.Data.OracleClient.OracleCommandBuilder>これに関連付けられている<xref:System.Data.OracleClient.OracleDataAdapter>を解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleCommandBuilder (System.Data.OracleClient.OracleDataAdapter adapter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.OracleClient.OracleDataAdapter adapter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.#ctor(System.Data.OracleClient.OracleDataAdapter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="adapter" Type="System.Data.OracleClient.OracleDataAdapter" />
+      </Parameters>
+      <Docs>
+        <param name="adapter"><see cref="T:System.Data.OracleClient.OracleDataAdapter" />オブジェクトに関連付けられているこの<see cref="T:System.Data.OracleClient.OracleCommandBuilder" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Data.OracleClient.OracleCommandBuilder" /> 、関連付けられているクラス<see cref="T:System.Data.OracleClient.OracleDataAdapter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleCommandBuilder>自体のリスナーとして登録<xref:System.Data.OracleClient.OracleDataAdapter.RowUpdating>によって生成されるイベント、<xref:System.Data.OracleClient.OracleDataAdapter>このプロパティで指定します。  
+  
+ 新しいインスタンスを作成する場合<xref:System.Data.OracleClient.OracleCommandBuilder>、既存<xref:System.Data.OracleClient.OracleCommandBuilder>これに関連付けられている<xref:System.Data.OracleClient.OracleDataAdapter>を解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyParameterInfo">
+      <MemberSignature Language="C#" Value="protected override void ApplyParameterInfo (System.Data.Common.DbParameter parameter, System.Data.DataRow datarow, System.Data.StatementType statementType, bool whereClause);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ApplyParameterInfo(class System.Data.Common.DbParameter parameter, class System.Data.DataRow datarow, valuetype System.Data.StatementType statementType, bool whereClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.ApplyParameterInfo(System.Data.Common.DbParameter,System.Data.DataRow,System.Data.StatementType,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Data.Common.DbParameter" />
+        <Parameter Name="datarow" Type="System.Data.DataRow" />
+        <Parameter Name="statementType" Type="System.Data.StatementType" />
+        <Parameter Name="whereClause" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">To be added.</param>
+        <param name="datarow">To be added.</param>
+        <param name="statementType">To be added.</param>
+        <param name="whereClause">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CatalogLocation">
+      <MemberSignature Language="C#" Value="public override System.Data.Common.CatalogLocation CatalogLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Common.CatalogLocation CatalogLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommandBuilder.CatalogLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.CatalogLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.Common.CatalogLocation" />のインスタンスの<see cref="T:System.Data.Common.DbCommandBuilder" />クラスです。</summary>
+        <value><see cref="T:System.Data.Common.CatalogLocation" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CatalogSeparator">
+      <MemberSignature Language="C#" Value="public override string CatalogSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CatalogSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommandBuilder.CatalogSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスのカタログの区切り記号として使用する文字列を取得または設定、<see cref="T:System.Data.Common.DbCommandBuilder" />クラスです。</summary>
+        <value>インスタンスで使用するカタログの区切り記号を示す文字列、<see cref="T:System.Data.Common.DbCommandBuilder" />クラスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataAdapter">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleDataAdapter DataAdapter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleDataAdapter DataAdapter" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommandBuilder.DataAdapter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleDataAdapter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.OracleClient.OracleDataAdapter" />対象のオブジェクト<see cref="T:System.Data.OracleClient.OracleCommandBuilder" />オブジェクトが SQL ステートメントを生成します。</summary>
+        <value><see cref="T:System.Data.OracleClient.OracleDataAdapter" />これに関連付けられているオブジェクト<see cref="T:System.Data.OracleClient.OracleCommandBuilder" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleCommandBuilder>自体のリスナーとして登録<xref:System.Data.OracleClient.OracleDataAdapter.RowUpdating>によって生成されるイベント、<xref:System.Data.OracleClient.OracleDataAdapter>このプロパティで指定します。  
+  
+ 新しいインスタンスを作成する場合<xref:System.Data.OracleClient.OracleCommandBuilder>、既存<xref:System.Data.OracleClient.OracleCommandBuilder>これに関連付けられている<xref:System.Data.OracleClient.OracleDataAdapter>を解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeriveParameters">
+      <MemberSignature Language="C#" Value="public static void DeriveParameters (System.Data.OracleClient.OracleCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DeriveParameters(class System.Data.OracleClient.OracleCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.DeriveParameters(System.Data.OracleClient.OracleCommand)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.Data.OracleClient.OracleCommand" />
+      </Parameters>
+      <Docs>
+        <param name="command"><see cref="T:System.Data.OracleClient.OracleCommand" />が、パラメーター情報の派生元となるストアド プロシージャを参照します。 派生パラメーターに追加されます、<see cref="P:System.Data.OracleClient.OracleCommand.Parameters" />のコレクション、<see cref="T:System.Data.OracleClient.OracleCommand" />です。</param>
+        <summary>指定されたストアド プロシージャからパラメーター情報を取得、<see cref="T:System.Data.OracleClient.OracleCommand" />取り込んで、<see cref="P:System.Data.OracleClient.OracleCommand.Parameters" />の指定されたコレクション<see cref="T:System.Data.OracleClient.OracleCommand" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OracleClient.OracleCommandBuilder.DeriveParameters%2A>既存のパラメーター情報を上書き、<xref:System.Data.OracleClient.OracleCommand>です。  
+  
+ <xref:System.Data.OracleClient.OracleCommandBuilder.DeriveParameters%2A>情報を取得するデータベースに追加の呼び出しが必要です。 パラメーター情報が事前にわかっている場合は、情報を明示的に設定して、パラメーター コレクションを設定する方が効率的です。  
+  
+ 使用できるだけ<xref:System.Data.OracleClient.OracleCommandBuilder.DeriveParameters%2A>ストアド プロシージャを使用します。 使用することはできません<xref:System.Data.OracleClient.OracleCommandBuilder.DeriveParameters%2A>を設定する、<xref:System.Data.OracleClient.OracleParameterCollection>パラメーター化された SELECT ステートメントなど、任意の TRANSACT-SQL ステートメントを使用します。  
+  
+ 詳細については、次を参照してください。[構成パラメーターとパラメーターのデータ型](~/docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コマンド テキストが有効なストアド プロシージャ名、または<see cref="T:System.Data.CommandType" />でした指定<see cref="F:System.Data.CommandType.StoredProcedure" />です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetDeleteCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OracleClient.OracleCommand" />オブジェクト、データベースの削除を実行するために必要です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OracleClient.OracleCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>値に設定してで明示的に設定する、<xref:System.Data.OracleClient.OracleDataAdapter>です。  
+  
+ SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetDeleteCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleCommand GetDeleteCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleCommand GetDeleteCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OracleClient.OracleCommand" />オブジェクト、データベースの削除を実行するために必要です。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OracleClient.OracleCommand" />削除を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OracleClient.OracleCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>値に設定してで明示的に設定する、<xref:System.Data.OracleClient.OracleDataAdapter>です。  
+  
+ SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDeleteCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleCommand GetDeleteCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleCommand GetDeleteCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">True の場合は、可能な場合は、列名を一致するパラメーター名を生成します。 False の場合、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OracleClient.OracleCommand" />オブジェクト、データベースの削除を実行するために必要です。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OracleClient.OracleCommand" />削除を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OracleClient.OracleCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>値に設定してで明示的に設定する、<xref:System.Data.OracleClient.OracleDataAdapter>です。  
+  
+ SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.OracleClient.OracleCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターでは、強制的にすることができます、<xref:System.Data.Common.DbCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 」を参照してください。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>が指定されている、生成されたパラメーター名以上の長さ。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>正規表現。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>を指定します。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetInsertCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OracleClient.OracleCommand" />データベースでの挿入を実行するために必要なオブジェクトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OracleClient.OracleCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>値に設定してで明示的に設定する、<xref:System.Data.OracleClient.OracleDataAdapter>です。  
+  
+ SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetInsertCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleCommand GetInsertCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleCommand GetInsertCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OracleClient.OracleCommand" />データベースでの挿入を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OracleClient.OracleCommand" />挿入を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OracleClient.OracleCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>値に設定してで明示的に設定する、<xref:System.Data.OracleClient.OracleDataAdapter>です。  
+  
+ SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInsertCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleCommand GetInsertCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleCommand GetInsertCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">True の場合は、可能な場合は、列名を一致するパラメーター名を生成します。 False の場合、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OracleClient.OracleCommand" />データベースでの挿入を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OracleClient.OracleCommand" />挿入を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OracleClient.OracleCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>値に設定してで明示的に設定する、<xref:System.Data.OracleClient.OracleDataAdapter>です。  
+  
+ SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.OracleClient.OracleCommandBuilder.GetInsertCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターでは、強制的にすることができます、<xref:System.Data.Common.DbCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 」を参照してください。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>が指定されている、生成されたパラメーター名以上の長さ。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>正規表現。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>を指定します。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterName">
+      <MemberSignature Language="C#" Value="protected override string GetParameterName (int parameterOrdinal);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterName(int32 parameterOrdinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.GetParameterName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterOrdinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterOrdinal">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterName">
+      <MemberSignature Language="C#" Value="protected override string GetParameterName (string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterName(string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.GetParameterName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterPlaceholder">
+      <MemberSignature Language="C#" Value="protected override string GetParameterPlaceholder (int parameterOrdinal);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterPlaceholder(int32 parameterOrdinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.GetParameterPlaceholder(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterOrdinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterOrdinal">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetUpdateCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OracleClient.OracleCommand" />オブジェクト、データベースに対する更新を実行するために必要です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OracleClient.OracleCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>値に設定してで明示的に設定する、<xref:System.Data.OracleClient.OracleDataAdapter>です。  
+  
+ SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetUpdateCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleCommand GetUpdateCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleCommand GetUpdateCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OracleClient.OracleCommand" />オブジェクト、データベースに対する更新を実行するために必要です。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OracleClient.OracleCommand" />オブジェクトの更新を実行するために必要です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OracleClient.OracleCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>値に設定してで明示的に設定する、<xref:System.Data.OracleClient.OracleDataAdapter>です。  
+  
+ SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUpdateCommand">
+      <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleCommand GetUpdateCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.OracleClient.OracleCommand GetUpdateCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">True の場合は、可能な場合は、列名を一致するパラメーター名を生成します。 False の場合、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.OracleClient.OracleCommand" />オブジェクト、データベースに対する更新を実行するために必要です。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.OracleClient.OracleCommand" />オブジェクトの更新を実行するために必要です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.OracleClient.OracleCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.OracleClient.OracleCommand.CommandText%2A>値に設定してで明示的に設定する、<xref:System.Data.OracleClient.OracleDataAdapter>です。  
+  
+ SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.OracleClient.OracleCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターでは、強制的にすることができます、<xref:System.Data.Common.DbCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 」を参照してください。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>が指定されている、生成されたパラメーター名以上の長さ。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>正規表現。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>を指定します。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuoteIdentifier">
+      <MemberSignature Language="C#" Value="public override string QuoteIdentifier (string unquotedIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string QuoteIdentifier(string unquotedIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.QuoteIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unquotedIdentifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="unquotedIdentifier">元の囲まれていない識別子です。</param>
+        <summary>特定の正しいカタログ ケースで囲まれていない識別子を返します、正しい識別子に埋め込まれた引用符を正しくエスケープを含め、その識別子の形式を引用符で囲まれました。</summary>
+        <returns>引用符で囲まれた識別子のバージョンです。 Id 内に埋め込まれた引用符が適切にエスケープします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaSeparator">
+      <MemberSignature Language="C#" Value="public override string SchemaSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SchemaSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleCommandBuilder.SchemaSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスキーマ識別子とその他の id の間の区切り記号に使用する文字を設定します。</summary>
+        <value>スキーマの区切り記号として使用する文字。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、データベース サーバーは、いくつかの文字を持つ id からスキーマ名を区切ることによって、識別子のスキーマを示します。 たとえば、SQL Server は、コロン、Person: CustomerName、"Person"、スキーマ名があり、識別子は、"CustomerName"などの完全な識別子を作成します。 このプロパティを設定すると、この動作を変更する開発者ができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRowUpdatingHandler">
+      <MemberSignature Language="C#" Value="protected override void SetRowUpdatingHandler (System.Data.Common.DbDataAdapter adapter);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetRowUpdatingHandler(class System.Data.Common.DbDataAdapter adapter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.SetRowUpdatingHandler(System.Data.Common.DbDataAdapter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="adapter" Type="System.Data.Common.DbDataAdapter" />
+      </Parameters>
+      <Docs>
+        <param name="adapter">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnquoteIdentifier">
+      <MemberSignature Language="C#" Value="public override string UnquoteIdentifier (string quotedIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string UnquoteIdentifier(string quotedIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleCommandBuilder.UnquoteIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="quotedIdentifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="quotedIdentifier">埋め込まれた引用符が削除される id。</param>
+        <summary>引用符で囲まれた識別子では、指定したには、埋め込まれた引用符など、正しくエスケープされていないと、その id の正しい囲まれていない形式を返します、識別子にします。</summary>
+        <returns>正しくエスケープされていない埋め込み文字を引用符で囲まれていない識別子です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

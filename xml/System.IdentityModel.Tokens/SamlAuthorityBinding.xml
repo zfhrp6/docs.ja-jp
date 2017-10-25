@@ -1,0 +1,282 @@
+<Type Name="SamlAuthorityBinding" FullName="System.IdentityModel.Tokens.SamlAuthorityBinding">
+  <TypeSignature Language="C#" Value="public class SamlAuthorityBinding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlAuthorityBinding extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SamlAuthorityBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> セキュリティ トークンのサブジェクトに関する追加情報を取得する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorityBinding> クラスを使用して、<xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークン内の認証されたサブジェクトに関する追加情報の取得方法を指定します。 <xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンは、SAML アサーションを使用してそれぞれのクレームを指定します。SAML アサーションで、サブジェクトが認証された時間を指定できます。 SAML アサーション内でクレームは、SAML ステートメントにより表されます。 SAML 仕様では、一連の SAML ステートメントの種類を定義します。また、これらの種類の 1 つが <xref:System.IdentityModel.Tokens.SamlAuthenticationStatement> です。 <xref:System.IdentityModel.Tokens.SamlAuthenticationStatement> は、ステートメントのサブジェクトが特定の時刻に特定の手段によって認証されたことをアサートします。 <xref:System.IdentityModel.Tokens.SamlAuthenticationStatement> には、オプションの <xref:System.IdentityModel.Tokens.SamlAuthorityBinding> もあります。これは、認証されたサブジェクトに関する追加情報の取得方法を指定します。  
+  
+ <xref:System.IdentityModel.Tokens.SamlAuthorityBinding.Location%2A>、<xref:System.IdentityModel.Tokens.SamlAuthorityBinding.AuthorityKind%2A>、および <xref:System.IdentityModel.Tokens.SamlAuthorityBinding.Binding%2A> の各プロパティを使用して、認証されたサブジェクトに関する追加情報の取得方法を指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAuthorityBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorityBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlAuthorityBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAuthorityBinding (System.Xml.XmlQualifiedName kind, string binding, string location);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlQualifiedName kind, string binding, string location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorityBinding.#ctor(System.Xml.XmlQualifiedName,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="authorityKind" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="binding" Type="System.String" />
+        <Parameter Name="location" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="kind">To be added.</param>
+        <param name="binding">サブジェクトに関する追加情報を持つ SAML 証明機関と通信するときに使用する SAML プロトコル バインドを識別する URI 参照。</param>
+        <param name="location">サブジェクトに関する追加情報を持つ SAML 証明機関の検索および通信方法を記述する URI 参照。</param>
+        <summary>指定したクエリの型、プロトコル バインド、および SAML 証明機関の場所を使用して、<see cref="T:System.IdentityModel.Tokens.SamlAuthorityBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorityKind">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName AuthorityKind { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlQualifiedName AuthorityKind" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthorityBinding.AuthorityKind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブジェクトに関する追加情報を持つ SAML 証明機関が応答するクエリの型を取得または設定します。</summary>
+        <value>サブジェクトに関する追加情報を持つ SAML 証明機関が応答するクエリの型を表す <see cref="T:System.Xml.XmlQualifiedName" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorityBinding.AuthorityKind%2A> プロパティは、OASIS SAML 仕様のアサーションおよびプロトコルで定義されている `AuthorityKind` 要素の `<AuthorityBinding>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlAuthorityBinding.AuthorityKind" />プロパティが設定され、<see cref="P:System.IdentityModel.Tokens.SamlAuthorityBinding.IsReadOnly" />プロパティは<see langword="true" />します。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.IdentityModel.Tokens.SamlAuthorityBinding.AuthorityKind" /> プロパティが <see langword="null" /> に設定されている。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Binding">
+      <MemberSignature Language="C#" Value="public string Binding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Binding" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthorityBinding.Binding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブジェクトに関する追加情報を持つ SAML 証明機関と通信するときに使用する SAML プロトコル バインドを取得または識別します。</summary>
+        <value>サブジェクトに関する追加情報を持つ SAML 証明機関と通信するときに使用する SAML プロトコル バインドを識別する URI 参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorityBinding.Binding%2A> プロパティは、OASIS SAML 仕様のアサーションおよびプロトコルで定義されている `Binding` 要素の `<AuthorityBinding>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlAuthorityBinding.Binding" />プロパティが設定され、<see cref="P:System.IdentityModel.Tokens.SamlAuthorityBinding.IsReadOnly" />プロパティは<see langword="true" />します。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.IdentityModel.Tokens.SamlAuthorityBinding.Binding" /> プロパティが <see langword="null" /> に設定されている。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthorityBinding.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスのプロパティが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          このインスタンスのプロパティが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorityBinding> クラスのこのインスタンスを読み取り専用にするために、<xref:System.IdentityModel.Tokens.SamlAuthorityBinding.MakeReadOnly%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public string Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Location" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthorityBinding.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.DataMember</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブジェクトに関する追加情報を持つ SAML 証明機関の検索および通信方法を取得または設定します。</summary>
+        <value>サブジェクトに関する追加情報を持つ SAML 証明機関の検索および通信方法を記述する URI 参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorityBinding.Location%2A> プロパティは、OASIS SAML 仕様のアサーションおよびプロトコルで定義されている `Location` 要素の `<AuthorityBinding>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlAuthorityBinding.Location" />プロパティが設定され、<see cref="P:System.IdentityModel.Tokens.SamlAuthorityBinding.IsReadOnly" />プロパティは<see langword="true" />します。</exception>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.IdentityModel.Tokens.SamlAuthorityBinding.Location" /> プロパティが <see langword="null" /> に設定されている。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public void MakeReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorityBinding.MakeReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスを読み取り専用にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorityBinding.MakeReadOnly%2A> メソッドが呼び出されると、<xref:System.IdentityModel.Tokens.SamlAuthorityBinding.IsReadOnly%2A> プロパティが `true` に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public virtual void ReadXml (System.Xml.XmlDictionaryReader reader, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer, System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReadXml(class System.Xml.XmlDictionaryReader reader, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer, class System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorityBinding.ReadXml(System.Xml.XmlDictionaryReader,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+        <Parameter Name="outOfBandTokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlDictionaryReader" /> 要素を読み取るための <see langword="&lt;AuthorityBinding&gt;" />。</param>
+        <param name="samlSerializer">SAML 仕様で定義されている SAML アサーション内の XML 要素の読み取りができる <see cref="T:System.IdentityModel.Tokens.SamlSerializer" />。</param>
+        <param name="keyInfoSerializer">デジタル署名の <see cref="T:System.IdentityModel.Selectors.SecurityTokenSerializer" /> 句を読み取る <see langword="KeyInfo" />。</param>
+        <param name="outOfBandTokenResolver">デジタル署名を作成したセキュリティ トークンを調べる <see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />。</param>
+        <summary>指定した XML リーダーから <see langword="&lt;AuthorityBinding&gt;" /> 要素を読み取ります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException"><see langword="&lt;AuthorityBinding&gt;" /> 要素が、<see langword="AuthorityKind" />、<see langword="Location" />、および <see langword="Binding" /> 属性のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public virtual void WriteXml (System.Xml.XmlDictionaryWriter writer, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteXml(class System.Xml.XmlDictionaryWriter writer, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorityBinding.WriteXml(System.Xml.XmlDictionaryWriter,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlDictionaryWriter" /> 要素を書き込む <see langword="&lt;AuthorityBinding&gt;" />。</param>
+        <param name="samlSerializer">SAML 仕様で定義されている SAML アサーション内の XML 要素の書き込みができる <see cref="T:System.IdentityModel.Tokens.SamlSerializer" />。</param>
+        <param name="keyInfoSerializer"><see cref="T:System.IdentityModel.Selectors.SecurityTokenSerializer" /> 句を書き込むことができる <see langword="KeyInfo" />。</param>
+        <summary>指定した XML シリアライザーに <see langword="&lt;AuthorityBinding&gt;" /> 要素を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

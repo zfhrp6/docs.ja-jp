@@ -1,0 +1,359 @@
+<Type Name="MetafileHeader" FullName="System.Drawing.Imaging.MetafileHeader">
+  <TypeSignature Language="C#" Value="public sealed class MetafileHeader" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit MetafileHeader extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.MetafileHeader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連付けられた属性を含む<see cref="T:System.Drawing.Imaging.Metafile" />です。 継承はできません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.MetafileHeader.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Drawing.Rectangle" />領域に外接する、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <value>A<see cref="T:System.Drawing.Rectangle" />領域に外接する、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DpiX">
+      <MemberSignature Language="C#" Value="public float DpiX { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 DpiX" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.MetafileHeader.DpiX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているのインチあたりのドットで水平方向の解像度を取得<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <value>関連付けられているのインチあたりのドットで水平方向の解像度<see cref="T:System.Drawing.Imaging.Metafile" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DpiY">
+      <MemberSignature Language="C#" Value="public float DpiY { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 DpiY" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.MetafileHeader.DpiY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているのインチあたりのドットで垂直方向の解像度を取得<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <value>垂直方向の解像度、関連付けられているのインチあたりのドット<see cref="T:System.Drawing.Imaging.Metafile" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmfPlusHeaderSize">
+      <MemberSignature Language="C#" Value="public int EmfPlusHeaderSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EmfPlusHeaderSize" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.MetafileHeader.EmfPlusHeaderSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>拡張メタファイルとヘッダー ファイルのバイト単位のサイズを取得します。</summary>
+        <value>拡張メタファイルとヘッダー ファイルのバイト単位のサイズ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDisplay">
+      <MemberSignature Language="C#" Value="public bool IsDisplay ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsDisplay() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.MetafileHeader.IsDisplay" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />デバイスは、依存します。</summary>
+        <returns>
+          <see langword="true" />場合、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />デバイスは、依存して、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmf">
+      <MemberSignature Language="C#" Value="public bool IsEmf ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsEmf() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.MetafileHeader.IsEmf" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />Windows 拡張メタファイル形式では、します。</summary>
+        <returns>
+          <see langword="true" />場合、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />は Windows 拡張メタファイル形式では、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmfOrEmfPlus">
+      <MemberSignature Language="C#" Value="public bool IsEmfOrEmfPlus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsEmfOrEmfPlus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.MetafileHeader.IsEmfOrEmfPlus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />Windows 拡張メタファイル形式または Windows メタファイルと形式には、します。</summary>
+        <returns>
+          <see langword="true" />場合、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />Windows 拡張メタファイル形式または Windows メタファイルと形式には、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmfPlus">
+      <MemberSignature Language="C#" Value="public bool IsEmfPlus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsEmfPlus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.MetafileHeader.IsEmfPlus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />では、Windows のメタファイルと形式です。</summary>
+        <returns>
+          <see langword="true" />場合、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />では、Windows のメタファイルと形式は、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmfPlusDual">
+      <MemberSignature Language="C#" Value="public bool IsEmfPlusDual ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsEmfPlusDual() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.MetafileHeader.IsEmfPlusDual" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />デュアル拡張メタファイル形式では、します。 この形式は、プラス形式の拡張と拡張の両方をサポートします。</summary>
+        <returns>
+          <see langword="true" />場合、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />はデュアル拡張メタファイル形式では、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmfPlusOnly">
+      <MemberSignature Language="C#" Value="public bool IsEmfPlusOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsEmfPlusOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.MetafileHeader.IsEmfPlusOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />だけで、Windows の拡張メタファイルと形式をサポートしています。</summary>
+        <returns>
+          <see langword="true" />場合、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />だけで、Windows の拡張メタファイルと形式をサポートしていますそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWmf">
+      <MemberSignature Language="C#" Value="public bool IsWmf ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsWmf() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.MetafileHeader.IsWmf" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />Windows メタファイルの形式では、します。</summary>
+        <returns>
+          <see langword="true" />場合、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />は、Windows のメタファイル形式では、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWmfPlaceable">
+      <MemberSignature Language="C#" Value="public bool IsWmfPlaceable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsWmfPlaceable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.MetafileHeader.IsWmfPlaceable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうか、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />Windows メタファイル配置可能な形式では、します。</summary>
+        <returns>
+          <see langword="true" />場合、関連付けられている<see cref="T:System.Drawing.Imaging.Metafile" />Windows メタファイル配置可能な形式では、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalDpiX">
+      <MemberSignature Language="C#" Value="public int LogicalDpiX { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LogicalDpiX" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.MetafileHeader.LogicalDpiX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドット/インチ、関連付けられている論理の水平方向の解像度を取得<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <value>ドット/インチ、関連付けられているので、論理水平方向の解像度<see cref="T:System.Drawing.Imaging.Metafile" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalDpiY">
+      <MemberSignature Language="C#" Value="public int LogicalDpiY { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LogicalDpiY" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.MetafileHeader.LogicalDpiY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドット/インチ、関連付けられている論理の垂直方向の解像度を取得<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <value>ドット/インチ、関連付けられているので、垂直方向の解像度論理<see cref="T:System.Drawing.Imaging.Metafile" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MetafileSize">
+      <MemberSignature Language="C#" Value="public int MetafileSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MetafileSize" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.MetafileHeader.MetafileSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイズを取得します (バイト単位)、関連する<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <value>サイズ (バイト単位)、関連する<see cref="T:System.Drawing.Imaging.Metafile" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Drawing.Imaging.MetafileType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Imaging.MetafileType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.MetafileHeader.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.MetafileType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられている型を取得<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <value>A<see cref="T:System.Drawing.Imaging.MetafileType" />関連付けられている型を表す列挙<see cref="T:System.Drawing.Imaging.Metafile" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public int Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Version" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.MetafileHeader.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているのバージョン番号を取得<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <value>関連付けられているのバージョン番号<see cref="T:System.Drawing.Imaging.Metafile" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WmfHeader">
+      <MemberSignature Language="C#" Value="public System.Drawing.Imaging.MetaHeader WmfHeader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Imaging.MetaHeader WmfHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.MetafileHeader.WmfHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.MetaHeader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられている Windows のメタファイル (WMF) ヘッダー ファイルを取得<see cref="T:System.Drawing.Imaging.Metafile" />です。</summary>
+        <value>A <see cref="T:System.Drawing.Imaging.MetaHeader" /> 、関連付けられているため、WMF ヘッダー ファイルを格納している<see cref="T:System.Drawing.Imaging.Metafile" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

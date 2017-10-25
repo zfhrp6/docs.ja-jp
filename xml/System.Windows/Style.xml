@@ -1,0 +1,658 @@
+<Type Name="Style" FullName="System.Windows.Style">
+  <TypeSignature Language="C#" Value="public class Style : System.Windows.Threading.DispatcherObject, System.Windows.Markup.IAddChild, System.Windows.Markup.INameScope, System.Windows.Markup.IQueryAmbient" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Style extends System.Windows.Threading.DispatcherObject implements class System.Windows.Markup.IAddChild, class System.Windows.Markup.INameScope, class System.Windows.Markup.IQueryAmbient" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Style" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.INameScope</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IQueryAmbient</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Ignore)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Setters")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.DictionaryKeyProperty("TargetType")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティ、リソース、およびイベント ハンドラーの型のインスタンス間で共有できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます、<xref:System.Windows.Style>から派生した任意の要素で<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>です。 スタイルが最もよく内にリソースとして宣言されている、<xref:System.Windows.Application.Resources%2A>セクションです。 スタイルは、リソースであるため、すべてのリソースに適用されるスコープの規則に従いますスタイルを適用できるに影響を宣言する場合は。 アプリケーション定義のルート要素にスタイルを宣言するインスタンスの場合は、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ファイル、スタイルは、アプリケーションのどこでも使用できます。 ナビゲーション アプリケーションを作成するし、スタイルのアプリケーションのいずれかで宣言[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]をでのみファイル、スタイルが使用できる[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ファイル。 リソースのルールのスコープの詳細については、次を参照してください。 [XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ Style 宣言から成る、<xref:System.Windows.Style>を 1 つまたは複数のコレクションを含むオブジェクト<xref:System.Windows.Setter>オブジェクト。 各<xref:System.Windows.Setter>から成る、<xref:System.Windows.Setter.Property%2A>と<xref:System.Windows.Setter.Value%2A>です。 プロパティは、要素のスタイルのプロパティの名前に適用します。 スタイルがリソースとして宣言されると、後に、他のリソースと同じように、参照できます。  
+  
+> [!NOTE]
+>  同じ set アクセス操作子コレクションの 1 つ以上の set アクセス操作子があるかどうか<xref:System.Windows.Setter.Property%2A>プロパティ値、宣言されている set アクセス操作子が最終が使用されます。 同様と設定した場合、同じプロパティ値をスタイルで要素に直接、直接要素で設定された値が優先されます。  
+  
+ [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]スタイルとテンプレートのモデルでは、メンテナンスとプレゼンテーションとロジックの分離を参照して共有します。 スタイルとテンプレートのモデルにはカスタマイズするための機能のセットが含まれています、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。 この一連機能にはが含まれています、<xref:System.Windows.Style>だけでなく、次のクラスします。  
+  
+-   <xref:System.Windows.Trigger>  
+  
+-   <xref:System.Windows.EventTrigger> および <xref:System.Windows.Media.Animation.Storyboard>  
+  
+-   <xref:System.Windows.Controls.ControlTemplate>  
+  
+-   <xref:System.Windows.DataTemplate>  
+  
+ 詳しくは、「 [スタイルとテンプレート](~/docs/framework/wpf/controls/styling-and-templating.md)」をご覧ください。  
+  
+   
+  
+## Examples  
+ 次の例は、スタイルの宣言に影響を与える、<xref:System.Windows.Controls.Control.Background%2A>のプロパティ、<xref:System.Windows.Controls.Control>です。  
+  
+ [!code-xaml[StyleOvw01#StyleSimple](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#stylesimple)]   
+  
+ 上記のスタイルを適用するには、次の操作を行います。  
+  
+ [!code-xaml[StyleOvw01#StyleSimpleApplied](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#stylesimpleapplied)]
+  
+ 使用して、指定された型のすべての要素にスタイルを適用することもできます、<xref:System.Windows.Style.TargetType%2A>プロパティです。 ターゲット タイプのスタイルを追加すればに設定するプロパティを完全に修飾する必要が不要になった、`ClassName.PropertyName`構文です。 次の例では、適用されるたびにスタイル<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[PhotoStoreDemoStyled#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#1)]   
+  
+> [!NOTE]
+>  多く[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]コントロールは、他の組み合わせで構成されます[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]型のすべてのコントロールに適用するスタイルを作成するためのコントロールは、広い範囲に影響を持つことができます。 インスタンスを対象とするスタイルを作成する場合、<xref:System.Windows.Controls.TextBlock>コントロールで、 <xref:System.Windows.Controls.Canvas>、スタイルをすべて適用<xref:System.Windows.Controls.TextBlock>、キャンバス内のコントロール場合でも、<xref:System.Windows.Controls.TextBlock>など、他のコントロールの一部である、<xref:System.Windows.Controls.ListBox>です。  
+  
+ 拡張または定義済みのスタイルを継承する方法については、次を参照してください。、<xref:System.Windows.Style.BasedOn%2A>ページ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Style ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Style" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの呼び出しの遅延検証を必要と<xref:System.Windows.Style.TargetType%2A>と<xref:System.Windows.Style.BasedOn%2A>型のスタイルを設定します。 これはパーサーのコンテキスト外に使用する場合の動作は定義されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Style (Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="targetType">スタイルを適用する型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Style" />指定で使用するクラス<see cref="T:System.Type" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Style (Type targetType, System.Windows.Style basedOn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type targetType, class System.Windows.Style basedOn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.#ctor(System.Type,System.Windows.Style)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="basedOn" Type="System.Windows.Style" />
+      </Parameters>
+      <Docs>
+        <param name="targetType">スタイルを適用する型。</param>
+        <param name="basedOn">このスタイルの基にスタイルです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Style" />指定で使用するクラス<see cref="T:System.Type" />に基づいて、指定されたと<see cref="T:System.Windows.Style" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BasedOn">
+      <MemberSignature Language="C#" Value="public System.Windows.Style BasedOn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style BasedOn" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Style.BasedOn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のスタイルの基盤となっている定義済みのスタイルを設定します。</summary>
+        <value>現在のスタイルの基盤となっている定義済みのスタイル。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各スタイルのみをサポートしている 1 つ<xref:System.Windows.Style.BasedOn%2A>値。  
+  
+<a name="xamlAttributeUsage_BasedOn"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object BasedOn="myStyle" .../>  
+```  
+  
+<a name="xamlValues_BasedOn"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *myStyle*  
+ 既存のスタイル。 通常、使用して、[マークアップ拡張機能と WPF XAML](~/docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)に既存のスタイルを参照してください。  
+  
+   
+  
+## Examples  
+ いくつかの方法でスタイルを[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]拡張または継承されたことができます。 スタイルは、このプロパティを介して他のスタイルに基づいていることができます。 このプロパティを使用するときに、新しいスタイルは、新しいスタイルで明示的に再定義しないする元のスタイルの値を継承します。 次の例では、`Style2`継承、<xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType>の値`Yellow`、し、追加、<xref:System.Windows.Controls.Control.Foreground%2A?displayProperty=nameWithType>の値`Blue`です。  
+  
+ [!code-xaml[StyleOvw01#ExtendingStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#extendingstyle)]   
+  
+ 同様に、スタイルに基づいて、既存のスタイル[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]要素は、新しいスタイルがのスタイルをに基づいて次の例のように、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[PhotoStoreDemoStyled#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#2)]   
+  
+> [!NOTE]
+>  使用するスタイルを作成する場合、<xref:System.Windows.Style.TargetType%2A>プロパティと、別のスタイルをベースも定義、<xref:System.Windows.Style.TargetType%2A>プロパティ、派生したスタイルの対象の型と同じである必要があります、または基準スタイルの型から派生します。  
+  
+ 特定の種類に対して定義されているスタイルは、次の例のように、その他のスタイルにも基づいてことができます。  
+  
+ [!code-xaml[StyleOvw01#ExtendingStyleTargetType](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#extendingstyletargettype)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Style" /> のハッシュ コードを返します。</summary>
+        <returns>この <see cref="T:System.Windows.Style" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSealed">
+      <MemberSignature Language="C#" Value="public bool IsSealed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSealed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Style.IsSealed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイルは読み取り専用と、変更することはできないかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、スタイルがシールされています。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のスタイルの基になるとき、または最初に適用された場合に、スタイルはシールされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterName">
+      <MemberSignature Language="C#" Value="public void RegisterName (string name, object scopedElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterName(string name, object scopedElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.RegisterName(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="scopedElement" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録する名前。</param>
+        <param name="scopedElement">オブジェクトを指定したマップを<c>名前</c>です。</param>
+        <summary>現在の名前スコープに新しい名前とオブジェクトのペアを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resources">
+      <MemberSignature Language="C#" Value="public System.Windows.ResourceDictionary Resources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.ResourceDictionary Resources" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Style.Resources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResourceDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのスタイルのスコープ内で使用できるリソースのコレクションを設定します。</summary>
+        <value>このスタイルのスコープ内で使用できるリソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlPropertyElementUsage_Resources"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Resources>  
+    oneOrMoreResourceElements  
+  </object.Resources>  
+</object>  
+- or -   
+<object>  
+  <object.Resources>  
+    <ResourceDictionary Source="externalDictionarySource"/>  
+  </object.Resources>  
+</object>  
+```  
+  
+<a name="xamlValues_Resources"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreResourceElements*  
+ 1 つまたは複数のリソース要素です。 いずれかで後で参照されている[StaticResource マークアップ拡張機能](~/docs/framework/wpf/advanced/staticresource-markup-extension.md)または[DynamicResource マークアップ拡張機能](~/docs/framework/wpf/advanced/dynamicresource-markup-extension.md)構文[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、リソース要素があります、`x:Key`属性。  
+  
+ \<ResourceDictionary ソース =" *externalDictionarySource*"/>  
+ 外部ディクショナリ ソース。 詳細については、「[リソース ディクショナリのトピックとマージ](~/docs/framework/wpf/advanced/merged-resource-dictionaries.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seal">
+      <MemberSignature Language="C#" Value="public void Seal ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Seal() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.Seal" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更することはできませんので、このスタイルとファクトリとトリガーをロックします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Setters">
+      <MemberSignature Language="C#" Value="public System.Windows.SetterBaseCollection Setters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.SetterBaseCollection Setters" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Style.Setters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.SetterBaseCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Setter" />と<see cref="T:System.Windows.EventSetter" />オブジェクト。</summary>
+        <value>コレクション<see cref="T:System.Windows.Setter" />と<see cref="T:System.Windows.EventSetter" />オブジェクト。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Style.Setters%2A>のプロパティ、<xref:System.Windows.Style>オブジェクトがオブジェクトに割り当てることののみで構成できます<xref:System.Windows.SetterBase>です。 追加する、<xref:System.Windows.SetterBase>に子、<xref:System.Windows.Style>オブジェクトが暗黙的に追加して、<xref:System.Windows.SetterBaseCollection>の<xref:System.Windows.Style>オブジェクト。  
+  
+ 明示的にプロパティ要素の使用の<xref:System.Windows.Style.Setters%2A>も比較的一般的です。 これは、マークアップ スタイルの判断に役立つ場合がありますを区別<xref:System.Windows.Style.Setters%2A>から<xref:System.Windows.Style.Resources%2A>と<xref:System.Windows.Style.Triggers%2A>複雑なスタイル内の項目。 例:  
+  
+```  
+<Style>  
+  <Style.Setters>  
+    <!--one or more SetterBase derived object elements here-->  
+  </Style.Setters>  
+</Style>  
+```  
+  
+<a name="xamlPropertyElementUsage_Setters"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  oneOrMoreSetters  
+</object>  
+```  
+  
+<a name="xamlValues_Setters"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreSetters*  
+ 1 つまたは複数<xref:System.Windows.Setter>または<xref:System.Windows.EventSetter>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用する方法を示します。  
+  
+ [!code-csharp[listboxitemstyle#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxItemStyle/CSharp/Pane1.xaml.cs#1)]
+ [!code-vb[listboxitemstyle#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListBoxItemStyle/VisualBasic/Pane1.xaml.vb#1)]  
+  
+ 追加する、<xref:System.Windows.SetterBase>に子、<xref:System.Windows.Style>オブジェクトが暗黙的に追加して、<xref:System.Windows.SetterBaseCollection>の<xref:System.Windows.Style>オブジェクト。 次<xref:System.Windows.EventSetter>に暗黙的に追加されて、<xref:System.Windows.SetterBaseCollection>スタイルの。  
+  
+ [!code-xaml[eventovwsupport#XAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/page2.xaml#xaml2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する子オブジェクト。</param>
+        <summary>子オブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Style> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Style> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.INameScope.FindName">
+      <MemberSignature Language="C#" Value="object INameScope.FindName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Windows.Markup.INameScope.FindName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.System#Windows#Markup#INameScope#FindName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">要求されたオブジェクトの名前の識別子。</param>
+        <summary>指定された識別名を持つオブジェクトを返します。</summary>
+        <returns>見つかった場合はオブジェクト。 返します<see langword="null" />その名前のオブジェクトが見つからなかった場合です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Style> のインスタンスが <xref:System.Windows.Markup.INameScope> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable">
+      <MemberSignature Language="C#" Value="bool IQueryAmbient.IsAmbientPropertyAvailable (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.System#Windows#Markup#IQueryAmbient#IsAmbientPropertyAvailable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">要求されたアンビエント プロパティの名前。</param>
+        <summary>指定されたアンビエント プロパティは、現在のスコープで使用するかどうかを照会します。</summary>
+        <returns>
+          <see langword="true" />要求されたアンビエント プロパティがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetType">
+      <MemberSignature Language="C#" Value="public Type TargetType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TargetType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Style.TargetType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのスタイルの対象となる型を設定します。</summary>
+        <value>このスタイルのターゲットの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生した任意の要素のスタイルを設定することができます<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>です。 したがって、対象の型は、それらの要素のいずれかのことはできます。 ただし、使用するスタイルを作成する場合、<xref:System.Windows.Style.TargetType%2A>プロパティと、別のスタイルをベースも定義、<xref:System.Windows.Style.TargetType%2A>プロパティ、派生したスタイルの対象の型と同じである必要があります、または基本スタイルの対象の型から派生します。  
+  
+ 指定しない場合、<xref:System.Windows.Style.TargetType%2A>を指定する必要があります、`x:Key`の<xref:System.Windows.Style>しても、スタイルのクラス名のプロパティを修飾します。  
+  
+<a name="xamlAttributeUsage_TargetType"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object  TargetType="{x:Type typeName}"/>  
+-or-  
+<object  TargetType="typeName"/>  
+```  
+  
+<a name="xamlValues_TargetType"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `{x:Type ...}`  
+ [X:type マークアップ拡張機能](~/docs/framework/xaml-services/x-type-markup-extension.md)マークアップ拡張機能を使用します。  
+  
+ *型名*  
+ クラスの型名。  
+  
+   
+  
+## Examples  
+ 次の例のすべてのインスタンスに適用されるスタイルの定義、<xref:System.Windows.Controls.TextBlock>要素。  
+  
+ [!code-xaml[PhotoStoreDemoStyled#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#1)]   
+  
+ 設定、<xref:System.Windows.Style.TargetType%2A>プロパティを<xref:System.Windows.Controls.TextBlock>設定がない型を`x:Key`が暗黙的に設定、`x:Key`に`{x:Type TextBlock}`です。 つまり、上記を提供する場合<xref:System.Windows.Style>、`x:Key`の以外の任意の値`{x:Type TextBlock}`、<xref:System.Windows.Style>すべてには適用されません<xref:System.Windows.Controls.TextBlock>要素に自動的にします。 代わりに、スタイルを適用する必要があります、<xref:System.Windows.Controls.TextBlock>要素に明示的にします。  
+  
+ 多く[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]コントロールは、他の組み合わせで構成されます[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]型のすべてのコントロールに適用するスタイルを作成するためのコントロールは、広い範囲に影響を持つことができます。 インスタンスを対象とするスタイルを作成する場合、<xref:System.Windows.Controls.TextBox>コントロールで、 <xref:System.Windows.Controls.Canvas>、スタイルをすべて適用<xref:System.Windows.Controls.TextBox>、キャンバス内のコントロール場合でも、<xref:System.Windows.Controls.TextBox>など、他のコントロールの一部である、<xref:System.Windows.Controls.ComboBox>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Triggers">
+      <MemberSignature Language="C#" Value="public System.Windows.TriggerCollection Triggers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TriggerCollection Triggers" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Style.Triggers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.TriggerCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.TriggerBase" />指定した条件に基づいて、オブジェクト プロパティの値を適用します。</summary>
+        <value><see cref="T:System.Windows.TriggerBase" /> オブジェクトのコレクション。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]スタイルとテンプレートのモデルでは、内でトリガーを指定することができます、<xref:System.Windows.Style>です。 トリガーを有効にするときに特定の変更を適用するオブジェクトは、基本的には、条件 (特定のプロパティの値に変わったらなど`true`、イベント発生時または) がなければです。  
+  
+<a name="xamlPropertyElementUsage_Triggers"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Triggers>  
+    oneOrMoreTriggers  
+  </object.Triggers>  
+</object>  
+```  
+  
+<a name="xamlValues_Triggers"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreTriggers*  
+ 派生するクラスは、0 個以上のオブジェクトの要素<xref:System.Windows.TriggerBase>です。  
+  
+   
+  
+## Examples  
+ 次の例は、名前付き<xref:System.Windows.Style>できる<xref:System.Windows.Controls.Button>コントロール。 <xref:System.Windows.Style>定義、<xref:System.Windows.Trigger>要素を変更する、<xref:System.Windows.Controls.Control.Foreground%2A>ボタンのプロパティと、<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>プロパティは`true`します。  
+  
+ [!code-xaml[BtnStyles#2](~/samples/snippets/csharp/VS_Snippets_Wpf/BtnStyles/CS/app.xaml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterName">
+      <MemberSignature Language="C#" Value="public void UnregisterName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UnregisterName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.UnregisterName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除するマッピングの名前。</param>
+        <summary>名前スコープから名前とオブジェクトのマッピングを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

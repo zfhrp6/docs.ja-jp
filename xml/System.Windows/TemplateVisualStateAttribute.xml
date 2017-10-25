@@ -1,0 +1,120 @@
+<Type Name="TemplateVisualStateAttribute" FullName="System.Windows.TemplateVisualStateAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TemplateVisualStateAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TemplateVisualStateAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.TemplateVisualStateAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロールの特定の状態にできることを指定します、 <see cref="T:System.Windows.VisualState" /> 、コントロールの予想<see cref="T:System.Windows.Controls.ControlTemplate" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールの作成者では、この属性を使用して、<xref:System.Windows.VisualState>と<xref:System.Windows.VisualStateGroup>オブジェクト、コントロールの属する<xref:System.Windows.Controls.ControlTemplate>です。  たとえば、という 2 つの表示状態を持つ新しいコントロールを作成すること`Focused`と`Unfocused`、両方のでは、<xref:System.Windows.VisualStateGroup>という名前`FocusStates`です。  指定する<xref:System.Windows.Controls.ControlTemplate>これら visual の状態を使用できることを作成者が 2 つを追加<xref:System.Windows.TemplateVisualStateAttribute>属性をコントロールのクラスのシグネチャにします。  指定する、<xref:System.Windows.TemplateVisualStateAttribute.GroupName%2A>プロパティは`FocusStates`ことと、<xref:System.Windows.TemplateVisualStateAttribute.Name%2A>プロパティは`Focused`のいずれかと`Unfocused`他のです。  
+  
+   
+  
+## Examples  
+ 次の例のクラスのシグネチャを示しています、`NumericUpDown`コントロール。  この例を指定する、`NumericUpDown`コントロールは次の 4 つの表示状態を使用します。  という名前の 2 つの状態`Positive`と`Negative`には、<xref:System.Windows.VisualStateGroup>という`ValueStates`です。  名前を他の 2 つの状態、`Focused`と`Unfocused`では、<xref:System.Windows.VisualStateGroup>という名前`FocusedStates`です。  全体の例では、次を参照してください。[を作成する、コントロールに外観をカスタマイズできる](~/docs/framework/wpf/controls/creating-a-control-that-has-a-customizable-appearance.md)です。  
+  
+ [!code-csharp[VSMCustomControl#ClassAttributes](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#classattributes)]
+ [!code-vb[VSMCustomControl#ClassAttributes](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#classattributes)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateVisualStateAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.TemplateVisualStateAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.TemplateVisualStateAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupName">
+      <MemberSignature Language="C#" Value="public string GroupName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GroupName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TemplateVisualStateAttribute.GroupName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または状態が属するグループの名前を設定します。</summary>
+        <value>名前、<see cref="T:System.Windows.VisualStateGroup" />に状態が属しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.TemplateVisualStateAttribute.GroupName%2A>プロパティに対応して、<xref:System.Windows.VisualStateGroup.Name%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Windows.VisualStateGroup>オブジェクト。 内容を指定する<xref:System.Windows.VisualStateGroup>、<xref:System.Windows.VisualState>が属している、設定、<xref:System.Windows.TemplateVisualStateAttribute.GroupName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例のクラスのシグネチャを示しています、`NumericUpDown`コントロール。  この例を指定する、`NumericUpDown`コントロールは次の 4 つの表示状態を使用します。  という名前の 2 つの状態`Positive`と`Negative`には、<xref:System.Windows.VisualStateGroup>という`ValueStates`です。  名前を他の 2 つの状態、`Focused`と`Unfocused`では、<xref:System.Windows.VisualStateGroup>という名前`FocusedStates`です。  全体の例では、次を参照してください。[を作成する、コントロールに外観をカスタマイズできる](~/docs/framework/wpf/controls/creating-a-control-that-has-a-customizable-appearance.md)です。  
+  
+ [!code-csharp[VSMCustomControl#ClassAttributes](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#classattributes)]
+ [!code-vb[VSMCustomControl#ClassAttributes](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#classattributes)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TemplateVisualStateAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールすることができる状態の名前を設定します。</summary>
+        <value>コントロールすることができる状態の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.TemplateVisualStateAttribute.Name%2A?displayProperty=nameWithType>プロパティに対応して、<xref:System.Windows.VisualState.Name%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Windows.VisualState>です。 内容を指定する<xref:System.Windows.VisualState>コントロールの属する<xref:System.Windows.Controls.ControlTemplate>、設定、<xref:System.Windows.TemplateVisualStateAttribute.Name%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例のクラスのシグネチャを示しています、`NumericUpDown`コントロール。  この例を指定する、`NumericUpDown`コントロールは次の 4 つの表示状態を使用します。  という名前の 2 つの状態`Positive`と`Negative`には、<xref:System.Windows.VisualStateGroup>という`ValueStates`です。  名前を他の 2 つの状態、`Focused`と`Unfocused`では、<xref:System.Windows.VisualStateGroup>という名前`FocusedStates`です。  全体の例では、次を参照してください。[を作成する、コントロールに外観をカスタマイズできる](~/docs/framework/wpf/controls/creating-a-control-that-has-a-customizable-appearance.md)です。  
+  
+ [!code-csharp[VSMCustomControl#ClassAttributes](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#classattributes)]
+ [!code-vb[VSMCustomControl#ClassAttributes](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#classattributes)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

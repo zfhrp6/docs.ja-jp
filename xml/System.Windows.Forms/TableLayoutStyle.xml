@@ -1,0 +1,91 @@
+<Type Name="TableLayoutStyle" FullName="System.Windows.Forms.TableLayoutStyle">
+  <TypeSignature Language="C#" Value="public abstract class TableLayoutStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TableLayoutStyle extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TableLayoutStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.TableLayoutSettings/StyleConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テーブル レイアウトの動作と外観を表す基本機能を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutStyle>クラスは、共通の基本クラスの<xref:System.Windows.Forms.ColumnStyle>と<xref:System.Windows.Forms.RowStyle>列と行の動作と外観を記述するクラスでそれぞれ、<xref:System.Windows.Forms.TableLayoutPanel>です。  
+  
+ 集計される、一連のスタイルを現在の列とテーブルの現在のレイアウト内の行を表す、<xref:System.Windows.Forms.TableLayoutColumnStyleCollection>と<xref:System.Windows.Forms.TableLayoutRowStyleCollection>、それぞれします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TableLayoutStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutStyle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.TableLayoutStyle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、既定のコンス トラクター、<xref:System.Windows.Forms.TableLayoutStyle>クラスです。 実質的に設定、<xref:System.Windows.Forms.SizeType>プロパティを<xref:System.Windows.Forms.SizeType.AutoSize>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.SizeType SizeType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.SizeType SizeType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TableLayoutStyle.SizeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.SizeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、どの行または列のサイズは、そのを含むテーブルに関連を示すフラグを設定します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Forms.SizeType" />コンテナーを基準としてどの行または列のユーザー インターフェイス (UI) 要素を指定する値のサイズを設定する必要があります。 既定値は、<see cref="F:System.Windows.Forms.SizeType.AutoSize" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーブルのレイアウト エンジンは、次の方法のいずれかで行または列をサイズします。  
+  
+-   絶対ピクセル数で (<xref:System.Windows.Forms.SizeType.Absolute>)。  
+  
+-   親コンテナーの割合として (<xref:System.Windows.Forms.SizeType.Percent>)。  
+  
+-   その他のユーザーと等しい領域を共有する (<xref:System.Windows.Forms.SizeType.AutoSize>)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

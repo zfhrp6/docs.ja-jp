@@ -1,0 +1,133 @@
+<Type Name="ExportDescriptorProvider" FullName="System.Composition.Hosting.Core.ExportDescriptorProvider">
+  <TypeSignature Language="C#" Value="public abstract class ExportDescriptorProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ExportDescriptorProvider extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Composition.Hosting.Core.ExportDescriptorProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Composition.Hosting</AssemblyName>
+    <AssemblyVersion>1.0.31.0</AssemblyVersion>
+    <AssemblyVersion>1.0.32.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンポジション エンジンに既知のパーツのエクスポートの説明を提供します。</summary>
+    <remarks>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ExportDescriptorProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.ExportDescriptorProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Composition.Hosting.Core.ExportDescriptorProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、派生クラスからのみ呼び出すことの protected コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExportDescriptors">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.ExportDescriptorPromise&gt; GetExportDescriptors (System.Composition.Hosting.Core.CompositionContract contract, System.Composition.Hosting.Core.DependencyAccessor descriptorAccessor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Composition.Hosting.Core.ExportDescriptorPromise&gt; GetExportDescriptors(class System.Composition.Hosting.Core.CompositionContract contract, class System.Composition.Hosting.Core.DependencyAccessor descriptorAccessor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Hosting.Core.ExportDescriptorProvider.GetExportDescriptors(System.Composition.Hosting.Core.CompositionContract,System.Composition.Hosting.Core.DependencyAccessor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.ExportDescriptorPromise&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contract" Type="System.Composition.Hosting.Core.CompositionContract" />
+        <Parameter Name="descriptorAccessor" Type="System.Composition.Hosting.Core.DependencyAccessor" />
+      </Parameters>
+      <Docs>
+        <param name="contract">別のコンポーネントで必要なエクスポート キー。</param>
+        <param name="descriptorAccessor">コンポジション内の他の記述子のアクセサー。</param>
+        <summary>取得では、指定したエクスポート キーのエクスポート記述子を約束します。</summary>
+        <returns>新しいエクスポート記述子の promise のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダーは、エクスポートの一意キーごとに 1 回のみ照会はします。 記述子のアクセサーのみ照会できます直ちに約束されている記述子がアダプターにように設定されている場合<see cref="Lazy{T}"/>です。 それ以外の場合のみに提供される関数の実行中に依存関係を照会する必要があります、<xref:System.Composition.Hosting.Core.ExportDescriptorPromise>です。 このメソッドによって提供される実際の記述子で終了するか、ガベージ コレクトされない構造を妨げるこれに応じて、依存関係/promise 構造のすべての側面を参照する必要がありますされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoDependencies">
+      <MemberSignature Language="C#" Value="protected static readonly Func&lt;System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.CompositionDependency&gt;&gt; NoDependencies;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly class System.Func`1&lt;class System.Collections.Generic.IEnumerable`1&lt;class System.Composition.Hosting.Core.CompositionDependency&gt;&gt; NoDependencies" />
+      <MemberSignature Language="DocId" Value="F:System.Composition.Hosting.Core.ExportDescriptorProvider.NoDependencies" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.CompositionDependency&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>依存関係の不足を示します。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoExportDescriptors">
+      <MemberSignature Language="C#" Value="protected static readonly System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.ExportDescriptorPromise&gt; NoExportDescriptors;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly class System.Collections.Generic.IEnumerable`1&lt;class System.Composition.Hosting.Core.ExportDescriptorPromise&gt; NoExportDescriptors" />
+      <MemberSignature Language="DocId" Value="F:System.Composition.Hosting.Core.ExportDescriptorProvider.NoExportDescriptors" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Composition.Hosting.Core.ExportDescriptorPromise&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エクスポート記述子が不足していることを示します。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoMetadata">
+      <MemberSignature Language="C#" Value="protected static readonly System.Collections.Generic.IDictionary&lt;string,object&gt; NoMetadata;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly class System.Collections.Generic.IDictionary`2&lt;string, object&gt; NoMetadata" />
+      <MemberSignature Language="DocId" Value="F:System.Composition.Hosting.Core.ExportDescriptorProvider.NoMetadata" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Hosting</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータが不足していることを示します。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

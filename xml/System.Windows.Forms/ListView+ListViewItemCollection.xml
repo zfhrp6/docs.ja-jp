@@ -1,0 +1,1225 @@
+<Type Name="ListView+ListViewItemCollection" FullName="System.Windows.Forms.ListView+ListViewItemCollection">
+  <TypeSignature Language="C#" Value="public class ListView.ListViewItemCollection : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit ListView/ListViewItemCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ListView.ListViewItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内の項目のコレクションを表す、<see cref="T:System.Windows.Forms.ListView" />制御またはに割り当てられている、<see cref="T:System.Windows.Forms.ListViewGroup" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.ListView.ListViewItemCollection>に表示される項目を格納、<xref:System.Windows.Forms.ListView>制御またはに割り当てられている、<xref:System.Windows.Forms.ListViewGroup>です。 内で定義されているその他の 2 つのコレクションがある、<xref:System.Windows.Forms.ListView>内でどのような項目が選択されているかを決定できるクラス、<xref:System.Windows.Forms.ListView>コントロール。 <xref:System.Windows.Forms.ListView.SelectedListViewItemCollection>クラスには、プロパティとでどのような項目が選択を確認するためのメソッドが用意されています、<xref:System.Windows.Forms.ListView>コントロール、中に、<xref:System.Windows.Forms.ListView.SelectedIndexCollection>クラスでは、内でインデックスを決定することができます、<xref:System.Windows.Forms.ListView.ListViewItemCollection>の<xref:System.Windows.Forms.ListView>コントロールを選択します。 選択範囲のコレクション クラス, だけでなくも使用すると、どのような項目がチェックを決定する 2 つのクラス (ときに、<xref:System.Windows.Forms.ListView.CheckBoxes%2A>のプロパティ、<xref:System.Windows.Forms.ListView>コントロールに設定されて`true`) このコレクション内で。  
+  
+ コレクションに項目を追加する方法の数があります。 <xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>メソッドでは、1 つの項目をコレクションに追加します。 コレクションに項目の数を追加するにする項目の配列を作成するのに渡すと、<xref:System.Windows.Forms.ListView.ListViewItemCollection.AddRange%2A>メソッドです。 コレクション内の特定の場所に項目を挿入する場合は、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>メソッドです。 項目を削除する、いずれかを使用できる、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Remove%2A>メソッドまたは<xref:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt%2A>メソッド、項目がコレクション内にある場所がわかっている場合。 <xref:System.Windows.Forms.ListView.ListViewItemCollection.Clear%2A>メソッドを使用せずにコレクションからすべての項目を削除することができます、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Remove%2A>一度に 1 つの項目を削除する方法です。  
+  
+ メソッドとプロパティを追加して、項目を削除するのに加え、<xref:System.Windows.Forms.ListView.ListViewItemCollection>項目を検索するコレクション内のメソッドも提供します。 <xref:System.Windows.Forms.ListView.ListViewItemCollection.Contains%2A>メソッドでは、項目がコレクションのメンバーであるかどうかを判別することができます。 使用することができます、項目がコレクション内にあることがわかったら、<xref:System.Windows.Forms.ListView.ListViewItemCollection.IndexOf%2A>項目がコレクション内にある場所を調べます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、項目を追加する、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。 なお、<xref:System.Windows.Forms.ListView.Items%2A>のプロパティ`ListView1`の種類は<xref:System.Windows.Forms.ListView.ListViewItemCollection>します。 この例を実行するを含むフォームに次のコードを貼り付けます、<xref:System.Windows.Forms.ListView>という名前のオブジェクト`ListView1`と<xref:System.Windows.Forms.TextBox>という`TextBox1`です。 呼び出す、`InitializeListView`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。  
+  
+ [!code-cpp[System.Windows.Forms.ListView1#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView1/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListView1#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView1/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListView1#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView1/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItemCollection (System.Windows.Forms.ListView owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListView owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.#ctor(System.Windows.Forms.ListView)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.ListView" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.ListView" />コレクションを所有しています。</param>
+        <summary><see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの使用を避けてください。 代わりに、アクセス、<xref:System.Windows.Forms.ListView.ListViewItemCollection>を通じて、<xref:System.Windows.Forms.ListView.Items%2A>のプロパティ、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ListViewItem Add (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.ListViewItem Add(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Add(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">アイテムの表示テキストです。</param>
+        <summary>指定されたテキストで項目を作成し、コレクションに追加します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />をコレクションに追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンを使用することができます、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>メソッドを作成、新しい<xref:System.Windows.Forms.ListViewItem>に追加する、<xref:System.Windows.Forms.ListView>コントロール。 新しいテキスト<xref:System.Windows.Forms.ListViewItem>に追加されたコントロールがに基づいて、`text`パラメーター。 項目のイメージを指定する場合は、バージョンを使用して、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>をイメージのインデックスをパラメーターとして受け取るメソッド。 既にある場合<xref:System.Windows.Forms.ListViewItem>をコレクションに追加のバージョンを使用すること、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>を受け取るメソッドを<xref:System.Windows.Forms.ListViewItem>パラメーターとして。  
+  
+ 場合、<xref:System.Windows.Forms.ListView.Sorting%2A?displayProperty=nameWithType>プロパティが以外の値に設定<xref:System.Windows.Forms.SortOrder?displayProperty=nameWithType>場合や、<xref:System.Windows.Forms.ListView.ListViewItemSorter%2A>プロパティが設定されて、項目が追加された後に、一覧が並べ替えられます。 それ以外の場合、項目は、リストの末尾に挿入されます。 使用することができます、リストが並べ替えられていない場合、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>に項目を挿入するメソッド、<xref:System.Windows.Forms.ListView>特定の位置にします。 単一の操作で、コントロールには、一連の項目を追加するには、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.AddRange%2A>メソッドです。 使用する場合、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>をコントロールに多数のアイテムを追加する方法、<xref:System.Windows.Forms.ListView.BeginUpdate%2A>と<xref:System.Windows.Forms.ListView.EndUpdate%2A>ようにする方法、<xref:System.Windows.Forms.ListView>すべての項目が追加されるまで再描画するからです。 項目を追加するときに、 <xref:System.Windows.Forms.ListView>、最初の項目を並べ替えるし、新しい項目を追加する方が効率的です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ListViewItem Add (System.Windows.Forms.ListViewItem value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.ListViewItem Add(class System.Windows.Forms.ListViewItem value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Add(System.Windows.Forms.ListViewItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.ListViewItem" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションに追加する <see cref="T:System.Windows.Forms.ListViewItem" />。</param>
+        <summary>追加、既存<see cref="T:System.Windows.Forms.ListViewItem" />をコレクションにします。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />をコレクションに追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンを使用することができます、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>既存を追加するメソッドを<xref:System.Windows.Forms.ListViewItem>をコレクションにします。 このバージョンの<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>を他の項目を再利用するメソッドが使用される通常<xref:System.Windows.Forms.ListView>コントロール場合や、<xref:System.Windows.Forms.ListViewItem>をコレクションに追加する前に手動で作成しました。 新規作成する場合は、<xref:System.Windows.Forms.ListViewItem>既存の項目を使用する代わりに、その他のバージョンを使用して、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>メソッドです。  
+  
+ 場合、<xref:System.Windows.Forms.ListView.Sorting%2A?displayProperty=nameWithType>プロパティが以外の値に設定<xref:System.Windows.Forms.SortOrder?displayProperty=nameWithType>場合や、<xref:System.Windows.Forms.ListView.ListViewItemSorter%2A>プロパティが設定されて、項目が追加された後に、一覧が並べ替えられます。 それ以外の場合、項目は、リストの末尾に挿入されます。 使用することができます、リストが並べ替えられていない場合、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>に項目を挿入するメソッド、<xref:System.Windows.Forms.ListView>特定の位置にします。 単一の操作で、コントロールには、一連の項目を追加するには、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.AddRange%2A>メソッドです。 使用する場合、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>をコントロールに多数のアイテムを追加する方法、<xref:System.Windows.Forms.ListView.BeginUpdate%2A>と<xref:System.Windows.Forms.ListView.EndUpdate%2A>ようにする方法、<xref:System.Windows.Forms.ListView>すべての項目が追加されるまで再描画するからです。 項目を追加するときに、 <xref:System.Windows.Forms.ListView>、最初の項目を並べ替えるし、新しい項目を追加する方が効率的です。  
+  
+ このバージョンの<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>を割り当てるメソッドを使用しても、<xref:System.Windows.Forms.ListViewItem>を<xref:System.Windows.Forms.ListViewGroup>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ListViewItem Add (string text, int imageIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.ListViewItem Add(string text, int32 imageIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Add(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="text">項目のテキストです。</param>
+        <param name="imageIndex">アイテムに関して表示するイメージのインデックス。</param>
+        <summary>指定したテキストとイメージの項目を作成し、コレクションに追加します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />をコレクションに追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンを使用することができます、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>メソッドを作成、新しい<xref:System.Windows.Forms.ListViewItem>に追加する、<xref:System.Windows.Forms.ListView>コントロール。 新しいテキスト<xref:System.Windows.Forms.ListViewItem>に追加されたコントロールがに基づいて、`text`パラメーター。 インデックスを渡すことによって、項目のイメージを指定することも、<xref:System.Windows.Forms.ImageList>に割り当てられている、<xref:System.Windows.Forms.ListView.LargeImageList%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.ListView.SmallImageList%2A?displayProperty=nameWithType>プロパティを`imageIndex`パラメーター。 (通常、<xref:System.Windows.Forms.ListView.LargeImageList%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.ListView.SmallImageList%2A?displayProperty=nameWithType>プロパティでは、同じインデックス位置を使用して、関連するイメージを表示します)。項目のイメージのインデックスを指定しない場合は、バージョンを使用して、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>をパラメーターとして文字列だけを受け取るメソッド。 既にある場合<xref:System.Windows.Forms.ListViewItem>をコレクションに追加のバージョンを使用すること、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>を受け取るメソッドを<xref:System.Windows.Forms.ListViewItem>パラメーターとして。  
+  
+ 場合、<xref:System.Windows.Forms.ListView.Sorting%2A?displayProperty=nameWithType>プロパティが以外の値に設定<xref:System.Windows.Forms.SortOrder?displayProperty=nameWithType>場合や、<xref:System.Windows.Forms.ListView.ListViewItemSorter%2A>プロパティが設定されて、項目が追加された後に、一覧が並べ替えられます。 それ以外の場合、項目は、リストの末尾に挿入されます。 使用することができます、リストが並べ替えられていない場合、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>に項目を挿入するメソッド、<xref:System.Windows.Forms.ListView>特定の位置にします。 単一の操作で、コントロールには、一連の項目を追加するには、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.AddRange%2A>メソッドです。 使用する場合、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>をコントロールに多数のアイテムを追加する方法、<xref:System.Windows.Forms.ListView.BeginUpdate%2A>と<xref:System.Windows.Forms.ListView.EndUpdate%2A>ようにする方法、<xref:System.Windows.Forms.ListView>すべての項目が追加されるまで再描画するからです。 項目を追加するときに、 <xref:System.Windows.Forms.ListView>、最初の項目を並べ替えるし、新しい項目を追加する方が効率的です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ListViewItem Add (string text, string imageKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.ListViewItem Add(string text, string imageKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">項目のテキストです。</param>
+        <param name="imageKey">アイテムに関して表示するイメージのキー。</param>
+        <summary>指定したテキストとイメージの項目を作成し、コレクションに追加します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />コレクションに追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.ListView>は、並べ替え、アイテムが正しく並べ替えの順序で追加された以外の場合はそれ以外の場合、コレクションの末尾に追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ListViewItem Add (string key, string text, int imageIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.ListViewItem Add(string key, string text, int32 imageIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Add(System.String,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="key">項目の名前。</param>
+        <param name="text">項目のテキストです。</param>
+        <param name="imageIndex">アイテムに関して表示するイメージのインデックス。</param>
+        <summary>指定されたキー、テキスト、イメージと項目を作成し、コレクションに項目を追加します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />コレクションに追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.ListView>は、並べ替え、アイテムが正しく並べ替えの順序で追加された以外の場合はそれ以外の場合、コレクションの末尾に追加されます。 <xref:System.Windows.Forms.ListViewItem.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.ListViewItem>で、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。  
+  
+ <xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>メソッドのセット、<xref:System.Windows.Forms.ListViewItem.Name%2A>プロパティを指定したキーのインデックスまたはキーで、項目を取得できるようにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">含まれている<see cref="T:System.Windows.Forms.ListView" />が仮想モードにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ListViewItem Add (string key, string text, string imageKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.ListViewItem Add(string key, string text, string imageKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Add(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">項目の名前。</param>
+        <param name="text">項目のテキストです。</param>
+        <param name="imageKey">アイテムに関して表示するイメージのキー。</param>
+        <summary>指定されたキー、テキスト、イメージと項目を作成し、コレクションに追加します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />コレクションに追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewItem.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.ListViewItem>で、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。  
+  
+ 場合、<xref:System.Windows.Forms.ListView>は、並べ替え、アイテムが正しく並べ替えの順序で追加された以外の場合はそれ以外の場合、コレクションの末尾に追加されます。 <xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>メソッドのセット、 <xref:System.Windows.Forms.ListViewItem.Name%2A> 、指定したキーのインデックスまたはキーで、項目を取得できるようにする項目のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Windows.Forms.ListView.ListViewItemCollection items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Windows.Forms.ListView/ListViewItemCollection items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.AddRange(System.Windows.Forms.ListView.ListViewItemCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="items" Type="System.Windows.Forms.ListView+ListViewItemCollection" />
+      </Parameters>
+      <Docs>
+        <param name="items">コレクションに追加する <see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />。</param>
+        <summary>コレクションに項目のコレクションを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合を含む、<xref:System.Windows.Forms.ListView>が並べ替えられて、<xref:System.Windows.Forms.ListView.ListViewItemCollection.AddRange%2A>メソッドは、並べ替え順序で項目を追加します。 それ以外の場合、コレクションの末尾に追加、されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="items" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">含まれている<see cref="T:System.Windows.Forms.ListView" />が仮想モードにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Windows.Forms.ListViewItem[] items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Windows.Forms.ListViewItem[] items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.AddRange(System.Windows.Forms.ListViewItem[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="items" Type="System.Windows.Forms.ListViewItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="items">配列<see cref="T:System.Windows.Forms.ListViewItem" />コレクションに追加するオブジェクト。</param>
+        <summary>配列を追加<see cref="T:System.Windows.Forms.ListViewItem" />をコレクションにオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用するには、別のアイテムを再利用する<xref:System.Windows.Forms.ListView>コントロール。 1 つを追加したい場合<xref:System.Windows.Forms.ListViewItem>を使用して、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>メソッドです。 使用することも、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>メソッドを 1 つを追加する場合<xref:System.Windows.Forms.ListViewItem>コレクション内の特定位置にします。  
+  
+ 複数の割り当てにこのメソッドを使用することもできます。<xref:System.Windows.Forms.ListViewItem>オブジェクトを、<xref:System.Windows.Forms.ListViewGroup>です。  
+  
+ 場合、<xref:System.Windows.Forms.ListView.Sorting%2A?displayProperty=nameWithType>プロパティが以外の値に設定<xref:System.Windows.Forms.SortOrder?displayProperty=nameWithType>場合や、<xref:System.Windows.Forms.ListView.ListViewItemSorter%2A>プロパティが設定されて、項目を追加した後に、一覧が並べ替えられます。 それ以外の場合、項目はリストの末尾に挿入されます。 使用することができます、リストが並べ替えられていない場合、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>に項目を挿入するメソッドを<xref:System.Windows.Forms.ListView>特定の位置にあります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Forms.ListView>を 3 つのコントロール<xref:System.Windows.Forms.ListViewItem>指定されたオブジェクトと 3 つ<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクトの各項目に指定します。 例でも作成<xref:System.Windows.Forms.ColumnHeader>詳細ビューで、サブ項目を表示するオブジェクト。 2 つ<xref:System.Windows.Forms.ImageList>オブジェクトは用のイメージを提供するコード例では作成も、<xref:System.Windows.Forms.ListViewItem>オブジェクト。 これら<xref:System.Windows.Forms.ImageList>オブジェクトに追加されます、<xref:System.Windows.Forms.ListView.LargeImageList%2A>と<xref:System.Windows.Forms.ListView.SmallImageList%2A>プロパティです。 例では、作成するのには、次のプロパティを使用して、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+-   <xref:System.Windows.Forms.ListView.View%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.LabelEdit%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.AllowColumnReorder%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.CheckBoxes%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.FullRowSelect%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.GridLines%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.Sorting%2A>  
+  
+ この例では、コードを追加されていることが必要です、<xref:System.Windows.Forms.Form>コンス トラクターまたは、フォーム上の別の方法の例で作成したメソッドを呼び出すとします。 また、例ではイメージがという名前の必要があります`MySmallImage1`、 `MySmallImage2`、 `MyLargeImage1`、および`MyLargeImage2`は C ドライブのルート ディレクトリにあります  
+  
+ [!code-cpp[ListViewExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ListViewExample/CPP/form1.cpp#1)]
+ [!code-csharp[ListViewExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewExample/CS/form1.cs#1)]
+ [!code-vb[ListViewExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="items" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションから項目を削除するときに削除された項目についての情報は失われます。 1 つの項目をコレクションから削除するには、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Remove%2A>または<xref:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Forms.ListViewItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Windows.Forms.ListViewItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Contains(System.Windows.Forms.ListViewItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Windows.Forms.ListViewItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:System.Windows.Forms.ListViewItem" />コレクション内で検索する項目を表すです。</param>
+        <summary>指定した項目がコレクション内にあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />項目がコレクションに含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView.ListViewItemCollection.Contains%2A>を判断するメソッドを使用するかどうか、<xref:System.Windows.Forms.ListViewItem>コレクションのメンバーであります。 コレクション内に項目がわかったら、行うこともできます、<xref:System.Windows.Forms.ListView.ListViewItemCollection.IndexOf%2A>コレクション内のアイテムの位置を調べます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.ContainsKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索対象の項目の名前。</param>
+        <summary>コレクションに、指定されたキーに項目が含まれているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />コレクションを示すために、指定したキーを持つ項目が含まれています。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの比較は区別されません。 <xref:System.Windows.Forms.ListViewItem.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.ListViewItem>で、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array dest, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array dest, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dest" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="dest"><see cref="T:System.Array" />をコレクションの内容をコピー先の配列を表すです。</param>
+        <param name="index">コレクションから項目をコピーするコピー先の配列内の位置。</param>
+        <summary>配列内の指定位置にある既存の配列にコレクション全体をコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、単一の配列に複数のコレクションから選択した項目を組み合わせて使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListView.ListViewItemCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の項目の数を取得します。</summary>
+        <value>コレクション内の項目数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、内の項目の数を決定することができます、<xref:System.Windows.Forms.ListView>です。 この値は、コレクションの値をループすると、ループの反復回数を指定する必要があります。 場合に使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItem[] Find (string key, bool searchAllSubItems);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.ListViewItem[] Find(string key, bool searchAllSubItems) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Find(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="searchAllSubItems" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索する項目の名前。</param>
+        <param name="searchAllSubItems">
+          <see langword="true" />サブ項目を検索するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>必要に応じてサブ項目を検索、指定したキーに一致する項目を検索します。</summary>
+        <returns>配列<see cref="T:System.Windows.Forms.ListViewItem" />項目を含む、一致するか、空の配列項目はありませんが一致したオブジェクトします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの比較は区別されません。 <xref:System.Windows.Forms.ListViewItem.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.ListViewItem>で、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用して項目のコレクションを反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />を表す項目のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、所有者<xref:System.Windows.Forms.ListView>が仮想モードでを列挙することはできません、<xref:System.Windows.Forms.ListView.ListViewItemCollection>列挙子または呼び出しを使用して<xref:System.Windows.Forms.ListView.ListViewItemCollection.GetEnumerator%2A>です。 代わりに、使用、<xref:System.Windows.Forms.ListView.Items%2A?displayProperty=nameWithType>インデックス値によって項目にアクセスするプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">所有者<see cref="T:System.Windows.Forms.ListView" />が仮想モードにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Forms.ListViewItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Windows.Forms.ListViewItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.IndexOf(System.Windows.Forms.ListViewItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Windows.Forms.ListViewItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:System.Windows.Forms.ListViewItem" />コレクション内で検索する項目を表すです。</param>
+        <summary>指定した項目のコレクション内のインデックスを返します。</summary>
+        <returns>コレクション内のアイテムの位置の 0 から始まるインデックスコレクション内の項目が配置されていない場合、それ以外の場合は-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView.ListViewItemCollection.IndexOf%2A>メソッドでは、コレクション内のアイテムの位置を決定することができます。 このメソッドを呼び出す前に、コレクション内の項目が含まれているかどうかを判断するのには、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Contains%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOfKey">
+      <MemberSignature Language="C#" Value="public virtual int IndexOfKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOfKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.IndexOfKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">コレクション内で検索する項目の名前。</param>
+        <summary>指定したキーを持つ項目のインデックスを取得します。</summary>
+        <returns>指定したキーを持つ項目の最初に見つかった位置の 0 から始まるインデックス場合が見つかりました。それ以外の場合、-1 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Forms.ListView.ListViewItemCollection.IndexOfKey%2A>と呼ばれる順次、最後のインデックスを最初に、キーの一致のチェックは、検索は、コレクションの先頭から開始一致が存在しない場合に返されます。  
+  
+ <xref:System.Windows.Forms.ListViewItem.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.ListViewItem>で、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。  
+  
+ キーの比較は区別されません。 場合、`key`パラメーターは`null`または空の文字列、 <xref:System.Windows.Forms.ListView.ListViewItemCollection.IndexOfKey%2A> -1 を返します`.`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItem Insert (int index, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.ListViewItem Insert(int32 index, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Insert(System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目を挿入する、0 から始まるインデックス位置。</param>
+        <param name="text">アイテムの表示テキストです。</param>
+        <summary>新しい項目を作成し、コレクション内の指定したインデックス位置に挿入します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />がコレクションに挿入します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>メソッドでは、特定位置にある新しい項目を挿入することができます、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。 指定したテキスト、`text`パラメーターの作成に使用する新しい<xref:System.Windows.Forms.ListViewItem>に挿入する、<xref:System.Windows.Forms.ListView.ListViewItemCollection>指定された位置。  
+  
+> [!NOTE]
+>  場合、<xref:System.Windows.Forms.ListView.Sorting%2A?displayProperty=nameWithType>プロパティが以外の値に設定<xref:System.Windows.Forms.SortOrder?displayProperty=nameWithType>場合や、<xref:System.Windows.Forms.ListView.ListViewItemSorter%2A>プロパティが設定されて、項目を挿入した後に、一覧が並べ替えられます。  
+  
+ コレクション内の特定の位置を指定せずには、項目を追加するには、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>メソッドです。 項目の配列をコレクションに追加する場合は、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.AddRange%2A>メソッドです。 既存の項目のコレクションに新しい項目を挿入する場合は、このメソッドを使用することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満かの値よりも大きい、<see cref="P:System.Windows.Forms.ListView.ListViewItemCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItem Insert (int index, System.Windows.Forms.ListViewItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.ListViewItem Insert(int32 index, class System.Windows.Forms.ListViewItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Insert(System.Int32,System.Windows.Forms.ListViewItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Windows.Forms.ListViewItem" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目を挿入する、0 から始まるインデックス位置。</param>
+        <param name="item"><see cref="T:System.Windows.Forms.ListViewItem" />を挿入する項目を表すです。</param>
+        <summary>既存の挿入<see cref="T:System.Windows.Forms.ListViewItem" />コレクション内の指定したインデックス位置。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />がコレクションに挿入します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>メソッドを使用すると、既存の挿入<xref:System.Windows.Forms.ListViewItem>の特定位置にある、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Windows.Forms.ListView.Sorting%2A?displayProperty=nameWithType>プロパティが以外の値に設定<xref:System.Windows.Forms.SortOrder?displayProperty=nameWithType>場合や、<xref:System.Windows.Forms.ListView.ListViewItemSorter%2A>プロパティが設定されて、項目を挿入した後に、一覧が並べ替えられます。  
+  
+ 項目を追加するコレクション内の特定の位置を指定せずには、項目を追加するには、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>メソッドです。 項目の配列をコレクションに追加する場合は、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.AddRange%2A>メソッドです。 既存の項目のコレクションに新しい項目を挿入する場合は、このメソッドを使用することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満かの値よりも大きい、<see cref="P:System.Windows.Forms.ListView.ListViewItemCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItem Insert (int index, string text, int imageIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.ListViewItem Insert(int32 index, string text, int32 imageIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Insert(System.Int32,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目を挿入する、0 から始まるインデックス位置。</param>
+        <param name="text">アイテムの表示テキストです。</param>
+        <param name="imageIndex">アイテムに関して表示するイメージのインデックス。</param>
+        <summary>指定したイメージのインデックスを持つ新しい項目を作成し、コレクション内の指定したインデックス位置に挿入します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />がコレクションに挿入します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンの<xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>メソッドでは、特定位置にある新しい項目を挿入することができます、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。 指定したテキスト、`text`パラメーターの作成に使用する新しい<xref:System.Windows.Forms.ListViewItem>に挿入する、<xref:System.Windows.Forms.ListView.ListViewItemCollection>指定された位置。  
+  
+> [!NOTE]
+>  場合、<xref:System.Windows.Forms.ListView.Sorting%2A?displayProperty=nameWithType>プロパティが以外の値に設定<xref:System.Windows.Forms.SortOrder?displayProperty=nameWithType>場合や、<xref:System.Windows.Forms.ListView.ListViewItemSorter%2A>プロパティが設定されて、項目を挿入した後に、一覧が並べ替えられます。  
+  
+ このバージョンを使用することもできます、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>のインデックスを渡すことによって、項目のイメージを指定するメソッド、<xref:System.Windows.Forms.ImageList>に割り当てられている、<xref:System.Windows.Forms.ListView.LargeImageList%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.ListView.SmallImageList%2A?displayProperty=nameWithType>プロパティを`imageIndex`パラメーター。 (通常、<xref:System.Windows.Forms.ListView.LargeImageList%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.ListView.SmallImageList%2A?displayProperty=nameWithType>プロパティでは、同じインデックス位置を使用して、関連するイメージを表示します)。項目のイメージのインデックスを指定しない場合は、他のバージョンを使用して、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>メソッド パラメーターとして文字列を受け取る。  
+  
+ コレクション内の特定の位置を指定せずには、項目を追加するには、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Add%2A>メソッドです。 項目の配列をコレクションに追加する場合は、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.AddRange%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満かの値よりも大きい、<see cref="P:System.Windows.Forms.ListView.ListViewItemCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItem Insert (int index, string text, string imageKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.ListViewItem Insert(int32 index, string text, string imageKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Insert(System.Int32,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目を挿入する、0 から始まるインデックス位置。</param>
+        <param name="text"><see cref="T:System.Windows.Forms.ListViewItem" /> のテキスト。</param>
+        <param name="imageKey">アイテムに関して表示するイメージのキー。</param>
+        <summary>指定されたテキストおよびイメージを新しい項目を作成し、コレクション内の指定したインデックスに挿入します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />コレクションに追加します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満かの値よりも大きい、<see cref="P:System.Windows.Forms.ListView.ListViewItemCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ListViewItem Insert (int index, string key, string text, int imageIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.ListViewItem Insert(int32 index, string key, string text, int32 imageIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Insert(System.Int32,System.String,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目を挿入する位置の 0 から始まるインデックス場所</param>
+        <param name="key"><see cref="P:System.Windows.Forms.ListViewItem.Name" />項目の。</param>
+        <param name="text">項目のテキストです。</param>
+        <param name="imageIndex">アイテムに関して表示するイメージのインデックス。</param>
+        <summary>指定されたキー、テキスト、およびイメージを新しい項目を作成し、コレクション内の指定したインデックスに挿入します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />コレクションに追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>メソッドのセット、 <xref:System.Windows.Forms.ListViewItem.Name%2A> 、指定したキーのインデックスまたはキーで、項目を取得できるようにする項目のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満かの値よりも大きい、<see cref="P:System.Windows.Forms.ListView.ListViewItemCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ListViewItem Insert (int index, string key, string text, string imageKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.ListViewItem Insert(int32 index, string key, string text, string imageKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Insert(System.Int32,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目を挿入する、0 から始まるインデックス位置。</param>
+        <param name="key"><see cref="P:System.Windows.Forms.ListViewItem.Name" />項目の。</param>
+        <param name="text">項目のテキストです。</param>
+        <param name="imageKey">アイテムに関して表示するイメージのキー。</param>
+        <summary>指定されたキー、テキスト、およびイメージを新しい項目を作成し、コレクション内の指定したインデックス位置に追加します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />コレクションに追加します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView.ListViewItemCollection.Insert%2A>メソッドのセット、 <xref:System.Windows.Forms.ListViewItem.Name%2A> 、指定したキーのインデックスまたはキーで、項目を取得できるようにする項目のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満かの値よりも大きい、<see cref="P:System.Windows.Forms.ListView.ListViewItemCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListView.ListViewItemCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          コレクションが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に`false`このコレクションにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ListViewItem this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListViewItem Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListView.ListViewItemCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定するコレクション内の項目のインデックス。</param>
+        <summary>取得またはコレクション内の指定したインデックス位置の項目を設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ListViewItem" />コレクション内で指定したインデックス位置にある項目を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用させることができます、<xref:System.Windows.Forms.ListViewItem>コレクション内の特定の場所に格納されています。 コレクション内の特定の項目のインデックスを確認するには<xref:System.Windows.Forms.ListView.ListViewItemCollection.IndexOf%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満またはより大きい、またはの値と等しい、<see cref="P:System.Windows.Forms.ListView.ListViewItemCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.ListViewItem this[string key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListViewItem Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListView.ListViewItemCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得するアイテムの名前。</param>
+        <summary>指定したキーを持つ項目を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.ListViewItem" />が<see cref="P:System.Windows.Forms.ListViewItem.Name" />プロパティが指定したキーに一致します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの比較は区別されません。 <xref:System.Windows.Forms.ListViewItem.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.ListViewItem>で、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (System.Windows.Forms.ListViewItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(class System.Windows.Forms.ListViewItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.Remove(System.Windows.Forms.ListViewItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Windows.Forms.ListViewItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:System.Windows.Forms.ListViewItem" />コレクションから削除する項目を表すです。</param>
+        <summary>指定した項目をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションから項目を削除するときにコレクション内の後続の項目のインデックスを変更します。 削除された項目に関するすべての情報が削除されます。 このメソッドを使用すると、コレクションから削除するのに実際の項目を指定することによって特定の項目を削除します。 項目自体ではなく削除する項目のインデックスを指定するには、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt%2A>メソッドです。 コレクションからすべての項目を削除するには、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Clear%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Windows.Forms.ListViewItem" />に割り当てられている、<paramref name="item" />パラメーターは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public virtual void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス。</param>
+        <summary>コレクション内の指定したインデックス位置にある項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションから項目を削除するときにコレクション内の後続の項目のインデックスを変更します。 削除された項目に関するすべての情報が削除されます。 このメソッドを使用すると、特定の項目をコレクションから削除するのに項目のインデックスを指定してコレクションから削除します。 項目のインデックスではなく削除する項目を指定する、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Remove%2A>メソッドです。 コレクションからすべての項目を削除するには、使用、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Clear%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満またはより大きい、またはの値と等しい、<see cref="P:System.Windows.Forms.ListView.ListViewItemCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveByKey">
+      <MemberSignature Language="C#" Value="public virtual void RemoveByKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveByKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.RemoveByKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">コレクションから削除する項目の名前。</param>
+        <summary>指定されたキーに項目をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの比較は区別されません。 <xref:System.Windows.Forms.ListViewItem.Name%2A>プロパティのキーに対応する<xref:System.Windows.Forms.ListViewItem>で、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListView.ListViewItemCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListView.ListViewItemCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのコレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>コレクションを同期するために使用するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">コレクションに追加するオブジェクト。</param>
+        <summary>既存のオブジェクトをコレクションに追加します。</summary>
+        <returns>コレクションに追加された場合は、オブジェクトの場所を示す 0 から始まるインデックスそれ以外の場合、-1 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `item`パラメーターは、任意の型を指定できます。 場合`item`は、<xref:System.Windows.Forms.ListViewItem>に追加されて、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。 場合`item`別の型は、新しい<xref:System.Windows.Forms.ListViewItem>から文字列を含む作成、<xref:System.Object.ToString%2A>メソッドの`item`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">コレクション内で検索する項目を表すオブジェクト。</param>
+        <summary>指定した項目がコレクション内にあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定した項目がコレクション内にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:System.Windows.Forms.ListViewItem" />コレクション内で検索する項目を表すです。</param>
+        <summary>指定した項目のコレクション内のインデックスを返します。</summary>
+        <returns>コレクション内にある場合は、項目の 0 から始まるインデックスそれ以外の場合、-1 を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目を挿入する、0 から始まるインデックス位置。</param>
+        <param name="item">挿入する項目を表すオブジェクト。</param>
+        <summary>コレクション内の指定したインデックス位置にオブジェクトを挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `item`パラメーターは、任意の型を指定できます。 場合`item`は、<xref:System.Windows.Forms.ListViewItem>に追加されて、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。 場合`item`別の型は、新しい<xref:System.Windows.Forms.ListViewItem>から文字列を含む作成、<xref:System.Object.ToString%2A>メソッドの`item`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">インデックス パラメーターが 0 未満かの値よりも大きい、<see cref="P:System.Windows.Forms.ListView.ListViewItemCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListView.ListViewItemCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが固定サイズかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListView.ListViewItemCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する要素の 0 から始まるインデックス。</param>
+        <summary>取得または設定、<see cref="T:System.Windows.Forms.ListViewItem" />コレクション内の指定したインデックス位置。</summary>
+        <value>コレクション内の指定したインデックスにある項目を表す <see cref="T:System.Windows.Forms.ListViewItem" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `item`任意の型パラメーターを設定することができます。 場合`item`は、<xref:System.Windows.Forms.ListViewItem>に追加されて、<xref:System.Windows.Forms.ListView.ListViewItemCollection>です。 場合`item`別の型は、新しい<xref:System.Windows.Forms.ListViewItem>から文字列を含む作成、<xref:System.Object.ToString%2A>メソッドの`item`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">インデックス パラメーターが 0 未満またはより大きい、かの値と等しい、<see cref="P:System.Windows.Forms.ListView.ListViewItemCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListView.ListViewItemCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">A<see cref="T:System.Windows.Forms.ListViewItem" />を表すコレクションから削除する項目。</param>
+        <summary>指定した項目をコレクションから削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

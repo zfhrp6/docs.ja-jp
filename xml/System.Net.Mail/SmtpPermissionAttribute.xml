@@ -1,0 +1,129 @@
+<Type Name="SmtpPermissionAttribute" FullName="System.Net.Mail.SmtpPermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SmtpPermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SmtpPermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Mail.SmtpPermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>簡易メール転送プロトコル (SMTP) サーバーへのアクセスを制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.SmtpPermission>と<xref:System.Net.Mail.SmtpPermissionAttribute>クラスは、SMTP ホストのコンピューターへのアクセスを制御します。 <xref:System.Net.Mail.SmtpClient>クラスの要求、<xref:System.Net.Mail.SmtpPermission>配信のための SMTP ホストに電子メールを送信するときにします。  
+  
+ <xref:System.Net.Mail.SmtpAccess>列挙体は、このアクセス許可のインスタンスによって制御されるアクセスのレベルを指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SmtpPermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action">1 つ、<see cref="T:System.Security.Permissions.SecurityAction" />アクセス許可の動作を指定する値。</param>
+        <summary><see cref="T:System.Net.Mail.SmtpPermissionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ アクションは、呼び出し元が権限を持っているを定義します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="action" /> は有効な <see cref="T:System.Security.Permissions.SecurityAction" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Access">
+      <MemberSignature Language="C#" Value="public string Access { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Access" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.SmtpPermissionAttribute.Access" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または属性によって制御される SMTP サーバーへのアクセス レベルを設定します。</summary>
+        <value><see cref="T:System.String" /> 値。 有効な値は「接続」および"None です"。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定するときに、無効な値を指定する場合、<xref:System.Net.Mail.SmtpPermissionAttribute.CreatePermission%2A>メソッドがスローされます、<xref:System.ArgumentException>システムによって呼び出されるとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>格納できるアクセス許可オブジェクトを作成、<see cref="T:System.Security.Permissions.SecurityAction" />アセンブリのメタデータにします。</summary>
+        <returns><see cref="T:System.Net.Mail.SmtpPermission" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードからではなく、セキュリティ システムによってのみ呼び出す必要があります。  
+  
+ コンパイル時に、属性はセキュリティ宣言に変換され、Microsoft intermediate language (MSIL) のメタデータに格納します。 実行時に、メタデータにセキュリティ宣言は、メタデータで記述されている状態にマップするアクセス許可オブジェクトの作成に使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,189 @@
+<Type Name="PreparingEnlistment" FullName="System.Transactions.PreparingEnlistment">
+  <TypeSignature Language="C#" Value="public class PreparingEnlistment : System.Transactions.Enlistment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PreparingEnlistment extends System.Transactions.Enlistment" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.PreparingEnlistment" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Transactions.Enlistment</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トランザクションの準備フェーズ中に、登録済みのトランザクション参加要素と、トランザクション マネージャー間の通信を容易になります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期確認中に (準備) フェーズ、トランザクションのトランザクション マネージャーがこの型に、リソース マネージャーを呼び出して、<xref:System.Transactions.IEnlistmentNotification.Prepare%2A>トランザクション上のリソースの投票を取得します。 リソース マネージャーの実装を呼び出す必要があるかどうかをコミットまたはロールバック、投票、に応じて、<xref:System.Transactions.PreparingEnlistment.Prepared%2A>または<xref:System.Transactions.PreparingEnlistment.ForceRollback%2A>この型のメソッドです。  
+  
+ リソース マネージャーを呼び出すことも、<xref:System.Transactions.Enlistment.Done%2A>呼び出したメソッドの前にいつでもで、<xref:System.Transactions.PreparingEnlistment.Prepared%2A>メソッドです。 これにより、参加リストをキャスト、読み取り専用の決定、つまりことは、トランザクションのコミットの投票なく最終結果を受信する必要はありません。  
+  
+ 持続性のあるリソース マネージャーがある情報を取得できますから再登録リストのトランザクション マネージャーによって必要になる、<xref:System.Transactions.PreparingEnlistment.RecoveryInformation%2A>プロパティです。 回復の詳細については、次を参照してください。[を実行する回復](http://msdn.microsoft.com/en-us/d342c5c7-da64-4a4c-8e63-b52f4fbf2691)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[Tx_Enlist#2](~/samples/snippets/csharp/VS_Snippets_CFX/tx_enlist/cs/enlist.cs#2)]
+ [!code-vb[Tx_Enlist#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/tx_enlist/vb/enlist.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="ForceRollback">
+      <MemberSignature Language="C#" Value="public void ForceRollback ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ForceRollback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.PreparingEnlistment.ForceRollback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクションをロールバックする必要があることを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装、<xref:System.Transactions.IEnlistmentNotification.Prepare%2A>のメソッド、<xref:System.Transactions.IEnlistmentNotification>インターフェイスが、トランザクションをロールバックする必要があることを示すためには、このメソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[Tx_Enlist#2](~/samples/snippets/csharp/VS_Snippets_CFX/tx_enlist/cs/enlist.cs#2)]
+ [!code-vb[Tx_Enlist#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/tx_enlist/vb/enlist.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceRollback">
+      <MemberSignature Language="C#" Value="public void ForceRollback (Exception ex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ForceRollback(class System.Exception ex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.PreparingEnlistment.ForceRollback(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="ex">To be added.</param>
+        <summary>トランザクションをロールバックする必要があることを示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prepared">
+      <MemberSignature Language="C#" Value="public void Prepared ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Prepared() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.PreparingEnlistment.Prepared" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクションをコミットすることを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初の (準備) を実装するリソース マネージャー、2 フェーズ コミットのフェーズ、<xref:System.Transactions.IEnlistmentNotification.Prepare%2A>のメソッド、<xref:System.Transactions.IEnlistmentNotification>インターフェイスでは、トランザクションをコミットすることを示すためにこのメソッドを呼び出します。  
+  
+ リソース マネージャーを呼び出すことができます、<xref:System.Transactions.Enlistment.Done%2A>より前にメソッドがこのメソッドを呼び出されます。  これにより、参加リストをキャスト、読み取り専用の決定、つまりことは、トランザクションのコミットの投票なく最終結果を受信する必要はありません。  
+  
+ 参加リストでこのメソッドが呼び出され、返されると前、に、考えられるその他のスレッドまたはこの同じスレッドでしたように同じ参加メソッドの呼び出しなど<xref:System.Transactions.IEnlistmentNotification.Rollback%2A>ロールバックを実行します。 これは、結果、リソース マネージャーの実装がリソース ロックを解放していないこのメソッドから制御が戻ると、デッドロック状態にします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[Tx_Enlist#2](~/samples/snippets/csharp/VS_Snippets_CFX/tx_enlist/cs/enlist.cs#2)]
+ [!code-vb[Tx_Enlist#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/tx_enlist/vb/enlist.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecoveryInformation">
+      <MemberSignature Language="C#" Value="public byte[] RecoveryInformation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] RecoveryInformation() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Transactions.PreparingEnlistment.RecoveryInformation" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>参加リストの回復情報を取得します。</summary>
+        <returns>参加リストの回復情報。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">任意の回復情報を生成しません揮発性参加リスト内の回復情報を取得しようとしました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

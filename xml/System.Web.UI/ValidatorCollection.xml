@@ -1,0 +1,373 @@
+<Type Name="ValidatorCollection" FullName="System.Web.UI.ValidatorCollection">
+  <TypeSignature Language="C#" Value="public sealed class ValidatorCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ValidatorCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ValidatorCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>配列を公開する<see cref="T:System.Web.UI.IValidator" />参照します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Web.UI.ValidatorCollection>参照は、要求されたページに含まれている検証サーバー コントロールに関連付けられています。 これらのコントロールをこのコレクションに追加時に、<xref:System.Web.UI.Control.Init>のイベント、<xref:System.Web.UI.Page>オブジェクトを処理します。 それ自体を削除するときに、<xref:System.Web.UI.Control.Unload>のイベント、<xref:System.Web.UI.Page>オブジェクトを処理します。 <xref:System.Web.UI.Page>クラスを継承からこれらのメソッドの両方、<xref:System.Web.UI.Control>クラスです。  
+  
+ このコレクションで、そのメソッドとを通じてそのプロパティにアクセスすることができます、<xref:System.Web.UI.Page.Validators%2A?displayProperty=nameWithType>プロパティです。 このコレクション内の任意の検証のテスト条件に失敗した場合、<xref:System.Web.UI.Page.IsValid%2A?displayProperty=nameWithType>プロパティに設定されている`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例をコレクションにアクセスする方法を示します、<xref:System.Web.UI.Page.Validators%2A?displayProperty=nameWithType>プロパティと使用、<xref:System.Web.UI.ValidatorCollection.GetEnumerator%2A>値を反復処理するメソッド。  
+  
+ [!code-csharp[ValidatorCollection_GetEnumerator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidatorCollection_GetEnumerator/CS/validatorcollection_getenumerator.cs.aspx#1)]
+ [!code-vb[ValidatorCollection_GetEnumerator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidatorCollection_GetEnumerator/VB/validatorcollection_getenumerator.vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidatorCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ValidatorCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ValidatorCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.UI.IValidator validator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.UI.IValidator validator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ValidatorCollection.Add(System.Web.UI.IValidator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validator" Type="System.Web.UI.IValidator" />
+      </Parameters>
+      <Docs>
+        <param name="validator">検証サーバーは、追加するコントロール。</param>
+        <summary>指定された検証サーバー コントロールを追加、<see cref="T:System.Web.UI.ValidatorCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加すると、<xref:System.Web.UI.ValidatorCollection>のコレクション、<xref:System.Web.UI.Page>オブジェクト、<xref:System.Web.UI.Page.Validators%2A>プロパティ、<xref:System.Web.UI.IValidator>実装では、検証の一部です。 その<xref:System.Web.UI.IValidator.Validate%2A>と共にメソッドは、<xref:System.Web.UI.IValidator.Validate%2A>他のすべての検証コントロールのメソッドです。 すべての検証コントロールが、共有を決定するかどうか、<xref:System.Web.UI.Page>全体が有効ではオブジェクトです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.UI.ValidatorCollection.Add%2A> メソッドの使用方法を示します。  
+  
+ [!code-csharp[ValidatorCollection_Add#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidatorCollection_Add/CS/validatorcollection_add.cs#1)]
+ [!code-vb[ValidatorCollection_Add#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidatorCollection_Add/VB/validatorcollection_add.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.IValidator validator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.IValidator validator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ValidatorCollection.Contains(System.Web.UI.IValidator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validator" Type="System.Web.UI.IValidator" />
+      </Parameters>
+      <Docs>
+        <param name="validator">チェックする検証サーバー コントロール。</param>
+        <summary>指定された検証サーバー コントロールがページの内に含まれるかどうかを判断<see cref="T:System.Web.UI.ValidatorCollection" />コレクション。</summary>
+        <returns>
+          <see langword="true" />検証サーバー コントロールがコレクション内にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.UI.ValidatorCollection.Contains%2A> メソッドの使用方法を示します。  
+  
+ [!code-csharp[ValidatorCollection_Contains_Remove#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidatorCollection_Contains_Remove/CS/validatorcollection_contains_remove.cs#1)]
+ [!code-vb[ValidatorCollection_Contains_Remove#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidatorCollection_Contains_Remove/VB/validatorcollection_contains_remove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ValidatorCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">検証サーバー コントロールを追加するコレクション。</param>
+        <param name="index">検証サーバー コントロールのコピー先インデックスです。</param>
+        <summary>検証コレクションを指定した位置から、指定した配列にコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ValidatorCollection.CopyTo%2A>メソッドです。  
+  
+ [!code-csharp[ValidatorCollection_CopyTo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidatorCollection_CopyTo/CS/validatorcollection_copyto.cs.aspx#1)]
+ [!code-vb[ValidatorCollection_CopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidatorCollection_CopyTo/VB/validatorcollection_copyto.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ValidatorCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の参照の数を取得します。</summary>
+        <value>ページの 検証の数を制御<see cref="T:System.Web.UI.ValidatorCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ValidatorCollection.Count%2A>プロパティです。  
+  
+ [!code-csharp[ValidatorCollection_Constructor_Count#2](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidatorCollection_Constructor_Count/CS/validatorcollection_constructor_count.cs.aspx#2)]
+ [!code-vb[ValidatorCollection_Constructor_Count#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidatorCollection_Constructor_Count/VB/validatorcollection_constructor_count.vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ValidatorCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IEnumerator" />インスタンスの場合、<see cref="T:System.Web.UI.ValidatorCollection" />コレクション。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、作成、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>できます反復簡単各項目を取得するインスタンス、<xref:System.Web.UI.ValidatorCollection>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ValidatorCollection.GetEnumerator%2A>メソッドです。  
+  
+ [!code-csharp[ValidatorCollection_GetEnumerator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidatorCollection_GetEnumerator/CS/validatorcollection_getenumerator.cs.aspx#1)]
+ [!code-vb[ValidatorCollection_GetEnumerator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidatorCollection_GetEnumerator/VB/validatorcollection_getenumerator.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ValidatorCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ValidatorCollection" /> コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          コレクションが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ValidatorCollection.IsReadOnly%2A>プロパティです。  
+  
+ [!code-csharp[ValidatorCollection_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidatorCollection_3/CS/validatorcollection_3.cs.aspx#1)]
+ [!code-vb[ValidatorCollection_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidatorCollection_3/VB/validatorcollection_3.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ValidatorCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.ValidatorCollection" />コレクションが同期されています。</summary>
+        <value>
+          <see langword="true" />コレクションが同期されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションが同期されている場合は、スレッド セーフです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ValidatorCollection.IsSynchronized%2A>プロパティです。  
+  
+ [!code-csharp[ValidatorCollection_3#2](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidatorCollection_3/CS/validatorcollection_3.cs.aspx#2)]
+ [!code-vb[ValidatorCollection_3#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidatorCollection_3/VB/validatorcollection_3.vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.IValidator this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.IValidator Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ValidatorCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IValidator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">返される検証コントロールのインデックス。</param>
+        <summary>指定したインデックス位置にある検証サーバー コントロールを取得、<see cref="T:System.Web.UI.ValidatorCollection" />コレクション。</summary>
+        <value>指定した検証コントロールの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ValidatorCollection.Item%2A>プロパティです。  
+  
+ [!code-csharp[ValidatorCollection_Item#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidatorCollection_Item/CS/validatorcollection_item.cs.aspx#1)]
+ [!code-vb[ValidatorCollection_Item#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidatorCollection_Item/VB/validatorcollection_item.vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.IValidator validator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.IValidator validator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ValidatorCollection.Remove(System.Web.UI.IValidator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="validator" Type="System.Web.UI.IValidator" />
+      </Parameters>
+      <Docs>
+        <param name="validator">検証サーバーは、コレクションから削除するコントロール。</param>
+        <summary>指定された検証サーバー コントロールをページから削除<see cref="T:System.Web.UI.ValidatorCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.UI.ValidatorCollection.Remove%2A> メソッドの使用方法を示します。  
+  
+ [!code-csharp[ValidatorCollection_Contains_Remove#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidatorCollection_Contains_Remove/CS/validatorcollection_contains_remove.cs#1)]
+ [!code-vb[ValidatorCollection_Contains_Remove#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidatorCollection_Contains_Remove/VB/validatorcollection_contains_remove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ValidatorCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同期するために使用できるオブジェクトを取得、<see cref="T:System.Web.UI.ValidatorCollection" />コレクション。</summary>
+        <value><see cref="T:System.Object" />を使用して、コレクションを同期します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.ValidatorCollection.SyncRoot%2A>プロパティです。  
+  
+ [!code-csharp[ValidatorCollection_3#2](~/samples/snippets/csharp/VS_Snippets_WebNet/ValidatorCollection_3/CS/validatorcollection_3.cs.aspx#2)]
+ [!code-vb[ValidatorCollection_3#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ValidatorCollection_3/VB/validatorcollection_3.vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

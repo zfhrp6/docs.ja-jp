@@ -1,0 +1,202 @@
+<Type Name="Prompt" FullName="System.Speech.Synthesis.Prompt">
+  <TypeSignature Language="C#" Value="public class Prompt" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Prompt extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.Prompt" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{_text}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表される、テキストまたはオーディオ ファイルのいずれかでに関する情報を表します、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Speech.Synthesis.Prompt>オブジェクトがプレーン テキスト、マークアップ言語、またはオーディオ ファイルでフォーマットされたテキストを含めることができます。  
+  
+ 空<xref:System.Speech.Synthesis.Prompt>の新しいインスタンスごとにオブジェクトが作成される<xref:System.Speech.Synthesis.PromptBuilder>です。  <xref:System.Speech.Synthesis.PromptBuilder>クラスに空のテキスト、SSML マークアップ、ブックマーク、および (.wav ファイルなど)、オーディオ録音済みのファイルを含むコンテンツを追加するメソッドを提供<xref:System.Speech.Synthesis.Prompt>含まれているオブジェクト。 通常、アプリケーションでは使用<xref:System.Speech.Synthesis.PromptBuilder>ではなく、<xref:System.Speech.Synthesis.Prompt>を画面の指示を作成し、コンテンツを設定して、オブジェクトです。  
+  
+ 内容から音声を生成する、<xref:System.Speech.Synthesis.Prompt>オブジェクトを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Prompt (System.Speech.Synthesis.PromptBuilder promptBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Speech.Synthesis.PromptBuilder promptBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.Prompt.#ctor(System.Speech.Synthesis.PromptBuilder)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="promptBuilder" Type="System.Speech.Synthesis.PromptBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="promptBuilder">読み上げるコンテンツ。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Speech.Synthesis.Prompt" />クラス、<see cref="T:System.Speech.Synthesis.PromptBuilder" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Prompt (string textToSpeak);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string textToSpeak) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.Prompt.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">読み上げるテキスト。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Speech.Synthesis.Prompt" />クラスし、読み上げるテキストを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.Prompt>文字列からオブジェクトへの引数として、オブジェクトを渡すと、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>メソッドです。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a prompt from a string.  
+        Prompt color = new Prompt("What is your favorite color?");  
+  
+        // Speak the contents of the prompt synchronously.  
+        synth.Speak(color);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Prompt (string textToSpeak, System.Speech.Synthesis.SynthesisTextFormat media);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string textToSpeak, valuetype System.Speech.Synthesis.SynthesisTextFormat media) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.Prompt.#ctor(System.String,System.Speech.Synthesis.SynthesisTextFormat)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+        <Parameter Name="media" Type="System.Speech.Synthesis.SynthesisTextFormat" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">読み上げるテキスト。</param>
+        <param name="media">テキストの形式を指定する値。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Speech.Synthesis.Prompt" />クラスし、読み上げるテキスト、およびその形式がプレーン テキストかマークアップ言語を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、`textToSpeak`パラメーターを含める必要があります、`speak`要素に従っている必要があります、[音声合成マークアップ言語 (SSML) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201763)です。 詳細については、次を参照してください。[音声合成マークアップ言語リファレンス](http://msdn.microsoft.com/en-us/0c51279e-84d2-4f73-a924-8832039abf94)です。  
+  
+   
+  
+## Examples  
+ 次の例は、SSML マークアップを格納すると、作成される文字列を構築、<xref:System.Speech.Synthesis.Prompt>オブジェクト、文字列から、メッセージを読みます。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Build an SSML prompt in a string.  
+        string fileName = "<speak version=\"1.0\" ";  
+        fileName += "xmlns=\"http://www.w3.org/2001/10/synthesis\" ";  
+        fileName += "xml:lang=\"en-US\">";  
+        fileName += "Say a name for the new file <mark name=\"fileName\" />.";  
+        fileName += "</speak>";  
+  
+        // Create a Prompt object from the string.  
+        Prompt ssmlFile = new Prompt(fileName, SynthesisTextFormat.Ssml);  
+  
+        // Speak the contents of the SSML prompt.  
+        synth.Speak(ssmlFile);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCompleted">
+      <MemberSignature Language="C#" Value="public bool IsCompleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompleted" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.Prompt.IsCompleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか、<see cref="T:System.Speech.Synthesis.Prompt" />再生が完了します。</summary>
+        <value>返します<see langword="true" />、プロンプトが完了している場合は、それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

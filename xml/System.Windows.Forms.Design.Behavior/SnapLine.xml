@@ -1,0 +1,426 @@
+<Type Name="SnapLine" FullName="System.Windows.Forms.Design.Behavior.SnapLine">
+  <TypeSignature Language="C#" Value="public sealed class SnapLine" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SnapLine extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.Behavior.SnapLine" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンテナー内のコントロールのデザイン時にレイアウト操作を支援するために、ユーザー インターフェイス (UI) に動的に作成される水平の線分と垂直の線分を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表には、配置や、デザイン サーフェイス上のコントロールをサイズ変更に役立つビジュアル デ ザイン ツールをサポートする共通のモードが一覧表示します。  
+  
+|モード|説明|  
+|----------|-----------------|  
+|自由形式|コントロールを自由にレイアウトできます。|  
+|グリッド|コントロールにレイアウトを支援する静的なオーバーレイ グリッドを表示します。|  
+|スナップ線|互いを基準として、コンテナーのコントロールにレイアウトに役立つガイドの線を表示します。 スナップ ガイドラインは、コントロールおよびそのコンテナーから発生します。|  
+  
+ <xref:System.Windows.Forms.Design.Behavior.SnapLine>クラスと関連する種類のヘルプ、スナップ線モードをサポートします。  
+  
+ スナップ線が動的に生成し、コントロールとしてエッジ近くの別のコントロールまたはコンテナーの境界付近します。 これは、コントロールをツールボックスから追加または移動またはマウス操作またはキーボード コマンドの幅を変更するときに発生します。 コントロールが定義されている。 水平および垂直方向の両方のスナップ線を通常があります。四角形のコントロールでは、これら通常から延長する 4 つすべてのエッジ。  
+  
+ <xref:System.Windows.Forms.Design.Behavior.SnapLine>クラスは、次の表に示すように、各スナップ線を記述するいくつかのプロパティのみを使用します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Windows.Forms.Design.Behavior.SnapLine.SnapLineType%2A>|関連付けられたコントロールに対する行の方向と場所を指定します。 通常、類似した種類のスナップ線のみが自動整列互いにします。|  
+|<xref:System.Windows.Forms.Design.Behavior.SnapLine.Offset%2A>|スナップ線の開始位置を (ピクセル単位) は、コントロールの左上隅で、原点からの距離を指定します。|  
+|<xref:System.Windows.Forms.Design.Behavior.SnapLine.Priority%2A>|スナップ線の相対的な重要度を指定します。 特定のレイアウトを決定するまでの中にのみ、スナップ線がアクティブになっていて、最高の優先順位が表示されます。|  
+|<xref:System.Windows.Forms.Design.Behavior.SnapLine.Filter%2A>|スナップ線のカスタム カテゴリを定義します。 これは、省略可能な文字列です。|  
+|<xref:System.Windows.Forms.Design.Behavior.SnapLine.IsHorizontal%2A> および <xref:System.Windows.Forms.Design.Behavior.SnapLine.IsVertical%2A>|スナップ線が水平または垂直方向の向きをそれぞれ持つかどうかを示します。|  
+  
+ <xref:System.Windows.Forms.Design.ControlDesigner>クラスは、対応するコントロールの種類のためのスナップ線を格納、<xref:System.Windows.Forms.Design.ControlDesigner.SnapLines%2A>プロパティです。 定義しているために、ほとんどのコントロールのスナップ線の場合は、この基本クラス処理で十分、 <xref:System.Windows.Forms.Design.Behavior.SnapLineType.Left>、 <xref:System.Windows.Forms.Design.Behavior.SnapLineType.Right>、 <xref:System.Windows.Forms.Design.Behavior.SnapLineType.Top>、および<xref:System.Windows.Forms.Design.Behavior.SnapLineType.Bottom>スナップ ガイドラインは、コントロールの端に揃えられます。 この既定の組織が十分ではない場合、カスタム コントロールを開発する際は、上書き、<xref:System.Windows.Forms.Design.ControlDesigner.SnapLines%2A>から派生したクラスのプロパティ<xref:System.Windows.Forms.Design.ControlDesigner>です。 たとえば、上部と (コントロールの上部と下部エッジ) ではなくテキストのベース ラインを使用して、ラベルなどのテキスト ベースのコントロールの水平方向のスナップ線を配置する可能性があります。  
+  
+ <xref:System.Windows.Forms.Design.Behavior.SnapLine.SnapLineType%2A>からクラスを派生することはできません。  
+  
+ Visual Studio では、この機能の広範なサポートを参照してください[チュートリアル: Windows フォームを使用するスナップ線上のコントロールの配置](~/docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 置き換えるか、ビジュアル デザイナーによって提供される既定のスナップ動作を補足するスナップ線を作成する必要があります明示的にのみです。 スナップ線を作成するには、スナップ線をインスタンス化とに追加する必要があります、<xref:System.Windows.Forms.Design.ControlDesigner.SnapLines%2A>のプロパティ、<xref:System.Windows.Forms.Design.ControlDesigner>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SnapLine (System.Windows.Forms.Design.Behavior.SnapLineType type, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.Design.Behavior.SnapLineType type, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.SnapLine.#ctor(System.Windows.Forms.Design.Behavior.SnapLineType,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Windows.Forms.Design.Behavior.SnapLineType" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成する <see cref="T:System.Windows.Forms.Design.Behavior.SnapLineType" />。 スナップ線の相対的な位置と方向を表します。</param>
+        <param name="offset">所有しているコントロールの左上隅の原点に対する、スナップ線のピクセル単位の位置。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />クラス、指定したスナップ線の種類とオフセットを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.Windows.Forms.Design.Behavior.SnapLine.Filter%2A>プロパティを`null`と<xref:System.Windows.Forms.Design.Behavior.SnapLine.Priority%2A>プロパティを<xref:System.Windows.Forms.Design.Behavior.SnapLinePriority.Low>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SnapLine (System.Windows.Forms.Design.Behavior.SnapLineType type, int offset, string filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.Design.Behavior.SnapLineType type, int32 offset, string filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.SnapLine.#ctor(System.Windows.Forms.Design.Behavior.SnapLineType,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Windows.Forms.Design.Behavior.SnapLineType" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="filter" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成する <see cref="T:System.Windows.Forms.Design.Behavior.SnapLineType" />。 スナップ線の相対的な位置と方向を表します。</param>
+        <param name="offset">所有しているコントロールの左上隅の原点に対する、スナップ線のピクセル単位の位置。</param>
+        <param name="filter">A<see cref="T:System.String" />スナップ線のプログラマが定義したカテゴリを指定するために使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />クラスの指定したスナップ線の種類、オフセット、およびフィルター名を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.Windows.Forms.Design.Behavior.SnapLine.Priority%2A>プロパティを<xref:System.Windows.Forms.Design.Behavior.SnapLinePriority.Low>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SnapLine (System.Windows.Forms.Design.Behavior.SnapLineType type, int offset, System.Windows.Forms.Design.Behavior.SnapLinePriority priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.Design.Behavior.SnapLineType type, int32 offset, valuetype System.Windows.Forms.Design.Behavior.SnapLinePriority priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.SnapLine.#ctor(System.Windows.Forms.Design.Behavior.SnapLineType,System.Int32,System.Windows.Forms.Design.Behavior.SnapLinePriority)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Windows.Forms.Design.Behavior.SnapLineType" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="priority" Type="System.Windows.Forms.Design.Behavior.SnapLinePriority" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成する <see cref="T:System.Windows.Forms.Design.Behavior.SnapLineType" />。 スナップ線の相対的な位置と方向を表します。</param>
+        <param name="offset">所有しているコントロールの左上隅の原点に対する、スナップ線のピクセル単位の位置。</param>
+        <param name="priority"><see cref="T:System.Windows.Forms.Design.Behavior.SnapLinePriority" />スナップ線のです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />クラスの指定したスナップ線の種類、オフセット、および優先順位を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.Windows.Forms.Design.Behavior.SnapLine.Filter%2A>プロパティを`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SnapLine (System.Windows.Forms.Design.Behavior.SnapLineType type, int offset, string filter, System.Windows.Forms.Design.Behavior.SnapLinePriority priority);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.Design.Behavior.SnapLineType type, int32 offset, string filter, valuetype System.Windows.Forms.Design.Behavior.SnapLinePriority priority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.SnapLine.#ctor(System.Windows.Forms.Design.Behavior.SnapLineType,System.Int32,System.String,System.Windows.Forms.Design.Behavior.SnapLinePriority)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Windows.Forms.Design.Behavior.SnapLineType" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="filter" Type="System.String" />
+        <Parameter Name="priority" Type="System.Windows.Forms.Design.Behavior.SnapLinePriority" />
+      </Parameters>
+      <Docs>
+        <param name="type">作成する <see cref="T:System.Windows.Forms.Design.Behavior.SnapLineType" />。 スナップ線の相対的な位置と方向を表します。</param>
+        <param name="offset">所有しているコントロールの左上隅の原点に対する、スナップ線のピクセル単位の位置。</param>
+        <param name="filter">A<see cref="T:System.String" />スナップ線のプログラマが定義したカテゴリを指定するために使用します。</param>
+        <param name="priority"><see cref="T:System.Windows.Forms.Design.Behavior.SnapLinePriority" />スナップ線のです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />クラス、指定したスナップ線の種類、オフセット、フィルター名、および優先順位を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、プログラマが指定した値をすべてのスナップ線のプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdjustOffset">
+      <MemberSignature Language="C#" Value="public void AdjustOffset (int adjustment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AdjustOffset(int32 adjustment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.SnapLine.AdjustOffset(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="adjustment" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="adjustment">スナップ線のオフセットを変更するためのピクセル数。</param>
+        <summary>調整、<see cref="P:System.Windows.Forms.Design.Behavior.SnapLine.Offset" />スナップ線のプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スナップ線のオフセットは、距離 (ピクセル単位)、スナップ線が関連付けられているコントロールの左上隅の原点からあることです。 オフセットは、任意の整数値を設定できますが、通常、スナップ線が含まれる空間リレーションシップ、<xref:System.Windows.Forms.Design.Behavior.SnapLine.SnapLineType%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public string Filter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.Behavior.SnapLine.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このスナップ線に関連付けられている、プログラマが定義したフィルター カテゴリを取得します。</summary>
+        <value>A<see cref="T:System.String" />フィルター カテゴリを定義します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.SnapLine.Filter%2A>スナップ線のカスタム カテゴリを定義するプロパティを使用します。 同じフィルターの名前を持つスナップ線のみが相互に合わせることができます。 このプロパティは、コントロールの状態または実行中の操作の種類に応じてスナップ線のさまざまなカテゴリを公開するカスタム コントロールのデザイナーで使用できます。 たとえば、角の丸いコントロールでは、"Center"のフィルター値を持つカスタムのスナップ線を提供でした。  
+  
+ このプロパティは、構築時に初期化され、それ以降は変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHorizontal">
+      <MemberSignature Language="C#" Value="public bool IsHorizontal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsHorizontal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.Behavior.SnapLine.IsHorizontal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スナップ線が水平方向かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、スナップ線が水平方向です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のスナップ線の種類は水平方向: <xref:System.Windows.Forms.Design.Behavior.SnapLineType.Top>、 <xref:System.Windows.Forms.Design.Behavior.SnapLineType.Bottom>、 <xref:System.Windows.Forms.Design.Behavior.SnapLineType.Horizontal>、および<xref:System.Windows.Forms.Design.Behavior.SnapLineType.Baseline>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsVertical">
+      <MemberSignature Language="C#" Value="public bool IsVertical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsVertical" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.Behavior.SnapLine.IsVertical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スナップ線が垂直方向かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、スナップ線は縦方向です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のスナップ線の種類は垂直: <xref:System.Windows.Forms.Design.Behavior.SnapLineType.Left>、 <xref:System.Windows.Forms.Design.Behavior.SnapLineType.Right>、および<xref:System.Windows.Forms.Design.Behavior.SnapLineType.Vertical>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public int Offset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.Behavior.SnapLine.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールの原点からのスナップ線のオフセットをピクセル数で取得します。</summary>
+        <value>スナップ線のオフセット (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールの原点は、コントロールの左上隅ポイントです。 垂直方向のスナップ線は、スナップ線の水平方向には、0 以外の y 軸はしか含める一方、0 以外の x 軸、オフセットのみ可能性があるために、単一のオフセットは、スナップ線の位置を記述できますオフセットします。  
+  
+ <xref:System.Windows.Forms.Design.Behavior.SnapLine.Offset%2A>プロパティは、構築時に初期化しますでその後、変更することができます、<xref:System.Windows.Forms.Design.Behavior.SnapLine.AdjustOffset%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Design.Behavior.SnapLinePriority Priority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Design.Behavior.SnapLinePriority Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.Behavior.SnapLine.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.Behavior.SnapLinePriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スナップ線の相対的な優先順位を示す値を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Design.Behavior.SnapLinePriority" />スナップ線の優先順位カテゴリを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.SnapLine.Priority%2A>プロパティがカテゴリのコントロールに関連付けられているスナップ線の重要度を確立します。  
+  
+ Windows フォーム デザイナーでは、このプロパティを使用して、コントロールの追加中に表示するスナップ線のサイズ変更、または移動操作を決定します。 詳細については、<xref:System.Windows.Forms.Design.Behavior.SnapLinePriority> 列挙型のページをご覧ください。  
+  
+ このプロパティは、構築時に初期化され、それ以降は変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSnap">
+      <MemberSignature Language="C#" Value="public static bool ShouldSnap (System.Windows.Forms.Design.Behavior.SnapLine line1, System.Windows.Forms.Design.Behavior.SnapLine line2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ShouldSnap(class System.Windows.Forms.Design.Behavior.SnapLine line1, class System.Windows.Forms.Design.Behavior.SnapLine line2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.SnapLine.ShouldSnap(System.Windows.Forms.Design.Behavior.SnapLine,System.Windows.Forms.Design.Behavior.SnapLine)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="line1" Type="System.Windows.Forms.Design.Behavior.SnapLine" />
+        <Parameter Name="line2" Type="System.Windows.Forms.Design.Behavior.SnapLine" />
+      </Parameters>
+      <Docs>
+        <param name="line1">指定した <see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />。</param>
+        <param name="line2"><see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />を指定した<see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />スナップが必要です。</param>
+        <summary>示す値を返すかどうか、指定した<see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />別に合わせる必要があります<see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="line1" />に合わせるか<paramref name="line2" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SnapLineType">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Design.Behavior.SnapLineType SnapLineType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Design.Behavior.SnapLineType SnapLineType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.Behavior.SnapLine.SnapLineType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Design.Behavior.SnapLineType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>大まかな位置と方向を示す、スナップ線の種類を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.Design.Behavior.SnapLineType" />方向とスナップ線の上でコントロールの端を基準との一般的な場所を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアルなデザイナーを使用して、<xref:System.Windows.Forms.Design.Behavior.SnapLine.SnapLineType%2A>スナップ配置操作を送信するためのプロパティです。 通常は、同様にスナップ線のみが相互にスナップできます。 たとえば、次の 2 つスナップ線の種類の<xref:System.Windows.Forms.Design.Behavior.SnapLineType.Horizontal>、一緒に合わせることができますが、<xref:System.Windows.Forms.Design.Behavior.SnapLineType.Horizontal>と<xref:System.Windows.Forms.Design.Behavior.SnapLineType.Vertical>スナップ線をできません。  
+  
+ このプロパティは、構築時に初期化され、それ以降は変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.SnapLine.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のスナップ線の文字列形式を返します。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.Design.Behavior.SnapLine" /> を表す <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、型、オフセット、優先度、およびスナップ線のフィルター値に関する詳細を含む文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,95 @@
+<Type Name="EnlistmentOptions" FullName="System.Transactions.EnlistmentOptions">
+  <TypeSignature Language="C#" Value="public enum EnlistmentOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EnlistmentOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.EnlistmentOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトが準備フェーズ中に参加させるかどうかを判断します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体に渡される、<xref:System.Transactions.Transaction.EnlistVolatile%2A>と<xref:System.Transactions.Transaction.EnlistDurable%2A>およびリソース マネージャーが準備フェーズ中に別の参加リストを作成する必要があるかどうかをトランザクション マネージャーに通知するメソッド。 参加リストの詳細については、次を参照してください。[リソースをトランザクションの参加者として参加](http://msdn.microsoft.com/en-us/7bf66ce7-4190-4910-89d7-df4ad43e9f31)です。  
+  
+ EnlistDuringPrepareRequired は参加処理中に指定する場合、リソース マネージャーでは、通知を準備する新しい参加リストがトランザクションの許可が必要であることを示します。 バックエンド データベースなどの別の持続性のあるリソースのキャッシュとして機能するリソース マネージャーでは、参加処理中には、このオプションを使用可能性があります。 キャッシュのリソースでは、その準備通知を取得、ときに、持続性のあるリソースへのコンテンツを転送します。 これにより、永続的なリソースは、2 フェーズ コミット (2 pc) プロトコルの参加者がトランザクションに参加します。 以前は、キャッシュのリソース (持続性のあるリソースではなく) のみが参加します。  
+  
+ 指定されていない場合、参加リストは、2 pc で新しい参加リストを作成するには遅すぎますまで準備通知を受信はことを示します。 この前のシナリオではキャッシュ リソース参加中に、このオプションを指定して準備通知中にそのキャッシュをフラッシュしようとすると、持続性のあるリソースを取得例外は遅すぎますためにを参加させることを試みるときにします。  
+  
+ 既定では、[なし] を使用してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EnlistDuringPrepareRequired">
+      <MemberSignature Language="C#" Value="EnlistDuringPrepareRequired" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.EnlistmentOptions EnlistDuringPrepareRequired = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.EnlistmentOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトは、コミット プロセスの最初のフェーズ中に参加する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.EnlistmentOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Transactions.EnlistmentOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.EnlistmentOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトには、コミット プロセスの初期フェーズの間の登録は不要です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

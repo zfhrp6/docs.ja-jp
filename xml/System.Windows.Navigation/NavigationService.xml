@@ -1,0 +1,1040 @@
+<Type Name="NavigationService" FullName="System.Windows.Navigation.NavigationService">
+  <TypeSignature Language="C#" Value="public sealed class NavigationService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NavigationService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.NavigationService" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メソッド、プロパティ、およびナビゲーションをサポートするためにイベントが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationService>ブラウザー スタイルのナビゲーションのコンテキスト内でコンテンツをダウンロードする機能をカプセル化します。  
+  
+ コンテンツできる任意の種類の[!INCLUDE[TLA2#tla_winfx](~/includes/tla2sharptla-winfx-md.md)]オブジェクトおよび[!INCLUDE[TLA#tla_html](~/includes/tlasharptla-html-md.md)]ファイル。 一般は、ページがナビゲーションのパッケージ コンテンツにする方法として推奨される (を参照してください<xref:System.Windows.Controls.Page>)。  
+  
+ オブジェクトのインスタンスを提供することのオーバー ロードを呼び出すことによりにコンテンツを移動する、<xref:System.Windows.Navigation.NavigationService.Navigate%2A>メソッド、オブジェクトを受け取る。  
+  
+-   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%29?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%2CSystem.Object%29?displayProperty=nameWithType>  
+  
+ また、コンテンツもあります相対パスを渡すことによってに移動または絶対[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]のいずれかに、<xref:System.Windows.Navigation.NavigationService.Navigate%2A>メソッドのオーバー ロードを受け付ける、 [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]:  
+  
+-   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%29?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%2CSystem.Object%29?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%2CSystem.Object%2CSystem.Boolean%29?displayProperty=nameWithType>  
+  
+ ときのコンテンツに移動して[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]、<xref:System.Windows.Navigation.NavigationService>コンテンツを含むオブジェクトを返します。  
+  
+ ナビゲーションの有効期間は、次のイベントを追跡できます。  
+  
+-   <xref:System.Windows.Navigation.NavigationService.Navigating>  
+  
+-   <xref:System.Windows.Navigation.NavigationService.Navigated>  
+  
+-   <xref:System.Windows.Navigation.NavigationService.NavigationProgress>  
+  
+-   <xref:System.Windows.Navigation.NavigationService.NavigationFailed>  
+  
+-   <xref:System.Windows.Navigation.NavigationService.NavigationStopped>  
+  
+-   <xref:System.Windows.Navigation.NavigationService.LoadCompleted>  
+  
+-   <xref:System.Windows.Navigation.NavigationService.FragmentNavigation>。  
+  
+ すべてのイベントはたびに発生する、ナビゲーションが発生します。(キャンセル、停止、または失敗) は、発生するイベントのセットをナビゲーション (コンテンツまたはコンテンツ フラグメント) に発生して、ナビゲーションの完了方法の種類によって決まります。  
+  
+ 次の図は、これらのイベントが発生するシーケンスを示しています。  
+  
+ ![ページ ナビゲーションのフロー チャート](~/add/media/navigationoverviewfigure11.png "ページ ナビゲーションのフロー チャート")  
+  
+ 中またはその後、ナビゲーション<xref:System.Windows.Navigation.NavigationService>に移動されているコンテンツに関する情報を提供、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]移動先のコンテンツの (<xref:System.Windows.Navigation.NavigationService.Source%2A>) では、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の現在のコンテンツ (<xref:System.Windows.Navigation.NavigationService.CurrentSource%2A>)、および移動先の内容を格納しているオブジェクト (<xref:System.Windows.Navigation.NavigationService.Content%2A>)。  
+  
+ コンテンツの移動、<xref:System.Windows.Navigation.NavigationService>ナビゲーション履歴にエントリとしてナビゲーションを記録します。 ナビゲーション履歴のバックアップを作成して呼び出すことによって、どちらか、新しいナビゲーションが発生したときに、エントリが追加、<xref:System.Windows.Navigation.NavigationService.Navigate%2A>メソッドを呼び出すことによって、"進む"ナビゲーション履歴内のエントリに移動して<xref:System.Windows.Navigation.NavigationService.GoForward%2A>です。 呼び出してナビゲーション履歴に戻るのエントリに移動して"進む"ナビゲーション履歴にエントリが追加された<xref:System.Windows.Navigation.NavigationService.GoBack%2A>です。 <xref:System.Windows.Navigation.NavigationService.CanGoBack%2A>および<xref:System.Windows.Navigation.NavigationService.CanGoForward%2A>があるか前に、"進む"ナビゲーション履歴の場合は、それぞれを報告します。 また、最新のエントリに戻るナビゲーション履歴を呼び出すことによって削除されることができます<xref:System.Windows.Navigation.NavigationService.RemoveBackEntry%2A>です。  
+  
+ 既定では、<xref:System.Windows.Navigation.NavigationService>ナビゲーション履歴には、コンテンツ オブジェクトのインスタンスは格納されません。 代わりに、<xref:System.Windows.Navigation.NavigationService>ナビゲーション履歴を使用して、移動するたびに、コンテンツ オブジェクトの新しいインスタンスを作成します。 この動作は数値が大きいとコンテンツの大きなデータは移動先ときに、過度なメモリ消費を避けるために設計されています。 その結果、次に、コンテンツの状態は 1 つのナビゲーションからに記憶されません。 ただし、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]ナビゲーション履歴にコンテンツの状態の一部を格納する、いくつかの方法を提供します。  
+  
+ 使用して<xref:System.Windows.Navigation.NavigationService.AddBackEntry%2A>、単一のページ インスタンスの状態の複数のセットも覚えておいてください。  
+  
+ <xref:System.Windows.Navigation.NavigationService>`sealed`クラスし、そのため、インスタンス化できません。 代わりに、<xref:System.Windows.Navigation.NavigationService>ナビゲーターでナビゲーションを有効にするために使用します。 [!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]、2 つのナビゲーターがある: <xref:System.Windows.Navigation.NavigationWindow>、<xref:System.Windows.Controls.Frame>です。  
+  
+ 視覚的に、[!INCLUDE[TLA2#tla_xbap#plural](~/includes/tla2sharptla-xbapsharpplural-md.md)]使用[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]として、統合されたユーザー エクスペリエンスを提供するためのナビゲーター。 物理的に、ただし、[!INCLUDE[TLA2#tla_xbap#plural](~/includes/tla2sharptla-xbapsharpplural-md.md)]を実際に使用<xref:System.Windows.Navigation.NavigationWindow>ナビゲーター; として、<xref:System.Windows.Application.MainWindow%2A>のプロパティ、[!INCLUDE[TLA2#tla_xbap](~/includes/tla2sharptla-xbap-md.md)]で実行されている[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]への参照を返す、<xref:System.Windows.Navigation.NavigationWindow>とで管理されているナビゲーション履歴、<xref:System.Windows.Navigation.NavigationWindow>で管理されているナビゲーション履歴に統合されて[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]次の方法で。  
+  
+-   ときにコンテンツへの移動が呼び出すことによって<xref:System.Windows.Navigation.NavigationService.Navigate%2A>、 <xref:System.Windows.Navigation.NavigationService.GoBack%2A>、および<xref:System.Windows.Navigation.NavigationService.GoForward%2A>内から、[!INCLUDE[TLA2#tla_xbap](~/includes/tla2sharptla-xbap-md.md)]関連ナビゲーション履歴エントリにも追加[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]ナビゲーション履歴。  
+  
+-   ときのエントリ、[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]ナビゲーション[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]が選択されている[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]により<xref:System.Windows.Navigation.NavigationService>バックアップまたは転送をこれらのエントリに関連付けられているコンテンツに移動します。  
+  
+> [!NOTE]
+>  A<xref:System.Windows.Controls.Frame>独自ナビゲーション履歴を提供したり、そのホストであるナビゲーターのナビゲーション履歴を使用します。 場合<xref:System.Windows.Controls.Frame>独自ナビゲーション履歴を提供表示できるように、独自のナビゲーション[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]ナビゲーション履歴にエントリを移動するホスト ナビゲーターのナビゲーション履歴にこれらのエントリは追加されません (<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>、 [!INCLUDE[TLA2#tla_iegeneric](~/includes/tla2sharptla-iegeneric-md.md)]) と、その結果のナビゲーションに移動することはできません[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]各 (を参照してください<xref:System.Windows.Controls.Frame.JournalOwnership%2A>)。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddBackEntry">
+      <MemberSignature Language="C#" Value="public void AddBackEntry (System.Windows.Navigation.CustomContentState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddBackEntry(class System.Windows.Navigation.CustomContentState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.AddBackEntry(System.Windows.Navigation.CustomContentState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Windows.Navigation.CustomContentState" />
+      </Parameters>
+      <Docs>
+        <param name="state">A<see cref="T:System.Windows.Navigation.CustomContentState" />特定のコンテンツに関連付けられているアプリケーション定義の状態を表すオブジェクト。</param>
+        <summary>バックアップが含まれるナビゲーション履歴にエントリを追加、<see cref="T:System.Windows.Navigation.CustomContentState" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationService.AddBackEntry%2A>、 <xref:System.Windows.Navigation.CustomContentState>、および<xref:System.Windows.Navigation.IProvideCustomContentState>、現在のコンテンツの状態のセットを複数記憶のために使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="state" /><see langword="null" />、および<see cref="T:System.Windows.Navigation.CustomContentState" />から返されたオブジェクトがない<see cref="M:System.Windows.Navigation.IProvideCustomContentState.GetContentState" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoBack">
+      <MemberSignature Language="C#" Value="public bool CanGoBack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanGoBack" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationService.CanGoBack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション履歴には、少なくとも 1 つのエントリがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />戻るナビゲーション履歴に少なくとも 1 つのエントリがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationService.CanGoBack%2A>ナビゲーション履歴には、少なくとも 1 つのエントリがあるかどうかを確認します。 このプロパティを呼び出す前に検査する必要があります<xref:System.Windows.Navigation.NavigationService.GoBack%2A>以外の場合は<xref:System.Windows.Navigation.NavigationService.GoBack%2A>が呼び出された"戻る"ナビゲーション履歴にエントリがないと、<xref:System.InvalidOperationException>がスローされます。  
+  
+> [!NOTE]
+>  ナビゲーション履歴が複数のナビゲーターで共有される場合 (<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>)、最も最近エントリ背面にナビゲーション履歴が追加されていないによって、<xref:System.Windows.Navigation.NavigationService>の現在のナビゲーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoForward">
+      <MemberSignature Language="C#" Value="public bool CanGoForward { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanGoForward" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationService.CanGoForward" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次に進むナビゲーション履歴に少なくとも 1 つのエントリがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />次に進むナビゲーション履歴に少なくとも 1 つのエントリがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationService.CanGoForward%2A>次に進むナビゲーション履歴に少なくとも 1 つのエントリがあるかどうかを確認します。 このプロパティを呼び出す前に検査する必要があります<xref:System.Windows.Navigation.NavigationService.GoForward%2A>以外の場合は<xref:System.Windows.Navigation.NavigationService.GoForward%2A>が呼び出された"進む"ナビゲーション履歴にエントリがないと、<xref:System.InvalidOperationException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public object Content { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Content" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationService.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のコンテンツを含むオブジェクトへの参照を設定します。</summary>
+        <value>現在のコンテンツを含むオブジェクトへの参照であるオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツは、2 つの方法で設定できます。  
+  
+-   オブジェクトへの参照を設定します。  
+  
+-   呼び出すことによって、直接<xref:System.Windows.Navigation.NavigationService.Navigate%2A>、 <xref:System.Windows.Navigation.NavigationService.GoBack%2A>、または<xref:System.Windows.Navigation.NavigationService.GoForward%2A>です。  
+  
+ 設定<xref:System.Windows.Navigation.NavigationService>ナビゲーションは、非同期なので、新しいナビゲーション; を開始する<xref:System.Windows.Navigation.NavigationService.Content%2A>直後に設定されていることを検査は場合、値は返されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentSource">
+      <MemberSignature Language="C#" Value="public Uri CurrentSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri CurrentSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationService.CurrentSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]されたコンテンツを最後に移動されました。</summary>
+        <value>A<see cref="T:System.Uri" />最後に移動したを使用してに移動する場合、コンテンツを[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Windows.Navigation.NavigationService.CurrentSource%2A>まで、別のナビゲーション プロパティは変更されません[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]が正常に完了します。  
+  
+ <xref:System.Windows.Navigation.NavigationService.CurrentSource%2A>フラグメントのみで設定できる[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FragmentNavigation">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.FragmentNavigationEventHandler FragmentNavigation;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.FragmentNavigationEventHandler FragmentNavigation" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.FragmentNavigation" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.FragmentNavigationEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツ フラグメントへのナビゲーションが開始されると、すぐに、発生する場合は、目的のフラグメントは、現在のコンテンツまたはソースの後に発生した[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]フラグメント場合は、必要な別のコンテンツにコンテンツが読み込まれました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、コンテンツ フラグメントは、コンテンツに含まれている名前付き<xref:System.Windows.UIElement>、これは、<xref:System.Windows.UIElement>が<xref:System.Windows.FrameworkElement.Name%2A>属性が設定されて例。  
+  
+```  
+<TextBlock Name="FragmentName">...</TextBlock>  
+```  
+  
+ 移動すると、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]フラグメントを提供することによって、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]を次の形式でのサフィックス。  
+  
+ \#*FragmentName*  
+  
+ 次の例を示しています、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]コンテンツ フラグメントへ参照します。  
+  
+ `http://www.microsoft.com/targetpage.xaml#FragmentName`  
+  
+ ソース ページが読み込まれると (後<xref:System.Windows.Navigation.NavigationService.LoadCompleted>イベントが発生した)、フラグメント ナビゲーションが開始され、<xref:System.Windows.Navigation.NavigationService>特定しようと、[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]フラグメント。 場合、[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]フラグメントが見つかると、<xref:System.Windows.Navigation.NavigationService>コンテンツ ナビゲーターに指示 (<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>) フラグメントを表示します。 この動作を変更する必要がある場合を処理できます<xref:System.Windows.Navigation.NavigationService.FragmentNavigation>独自フラグメント ナビゲーション動作を提供します。 <xref:System.Windows.Navigation.NavigationService.FragmentNavigation>渡される、<xref:System.Windows.Navigation.FragmentNavigationEventArgs>は、この目的のための便利なプロパティを公開するパラメーターを含みます。  
+  
+-   このナビゲーション サービスを所有しているナビゲーター (<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>)。  
+  
+-   フラグメントの名前です。  
+  
+ 処理できる<xref:System.Windows.Navigation.NavigationService.FragmentNavigation>を既定値をオーバーライドする[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]フラグメント、独自のカスタム実装を使用して実装します。 設定する必要がある場合はこれを行うと、<xref:System.Windows.Navigation.FragmentNavigationEventArgs.Handled%2A>に`true`、それ以外の既定値[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]フラグメント処理動作を適用します。  
+  
+ 内からナビゲーションを直接開始を避ける必要があります、<xref:System.Windows.Navigation.NavigationService.FragmentNavigation>イベント ハンドラー。 <xref:System.Windows.Navigation.NavigationService.FragmentNavigation>から新しいナビゲーションを開始する、既存の移動中に発生した、<xref:System.Windows.Navigation.NavigationService.FragmentNavigation>イベント ハンドラーを引き起こす可能性のある入れ子になったナビゲーションを作成、<xref:System.ExecutionEngineException>がスローされます。 代わりに、直接開始できましていないナビゲーション項目を使用して、非同期操作を作成することで、<xref:System.Windows.Threading.Dispatcher>です。  
+  
+> [!NOTE]
+>  ときに<xref:System.Windows.Navigation.NavigationService>を発生させます<xref:System.Windows.Navigation.NavigationService.FragmentNavigation>もを発生させます<xref:System.Windows.Application.FragmentNavigation?displayProperty=nameWithType>でイベントを<xref:System.Windows.Application>オブジェクト。  
+  
+> [!IMPORTANT]
+>  フラグメント ナビゲーションはサポートされていません疎[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ページ (マークアップのみ[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ファイルが`Page`ルート要素として) 次の場合。  
+>   
+>  •、緩やかにフラグメントに移動するとき[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ページ。  
+>   
+>  •、Loose から移動する際に[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]厳密でない別のフラグメントにページ[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ページ。  
+>   
+>  ただし、loose[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]ページは、独自のフラグメントに移動できます。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示しています。<xref:System.Windows.Navigation.NavigationService.FragmentNavigation>カスタム フラグメント ナビゲーション動作を提供します。 ここでは、エラーの表示例では、 [!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]  ページで、ソースでフラグメント[!INCLUDE[TLA2#tla_titlexaml](~/includes/tla2sharptla-titlexaml-md.md)]ページが見つかりません。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowFragmentNavigationCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindowfragmentnavigationcode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowFragmentNavigationCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindowfragmentnavigationcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNavigationService">
+      <MemberSignature Language="C#" Value="public static System.Windows.Navigation.NavigationService GetNavigationService (System.Windows.DependencyObject dependencyObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Navigation.NavigationService GetNavigationService(class System.Windows.DependencyObject dependencyObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.GetNavigationService(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationService</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObject" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObject"><see cref="T:System.Windows.DependencyObject" />ナビゲーターによってホストされているコンテンツでします。</param>
+        <summary>参照を取得、<see cref="T:System.Windows.Navigation.NavigationService" />の内容が含まれていますが、指定された、ナビゲーターの<see cref="T:System.Windows.DependencyObject" />します。</summary>
+        <returns>参照、<see cref="T:System.Windows.Navigation.NavigationService" />の内容が含まれていますが、指定された、ナビゲーターの<see cref="T:System.Windows.DependencyObject" />; できる<see langword="null" />場合によってはします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ナビゲーターは、<xref:System.Windows.Navigation.NavigationService>コンテンツ ナビゲーションを処理します。 [!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]2 つのナビゲーター:<xref:System.Windows.Navigation.NavigationWindow>と<xref:System.Windows.Controls.Frame>です。 ナビゲーション要求を処理し、ナビゲーションの有効期間を管理、ナビゲーターを使用して、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]として実装されているナビゲーション サービス、<xref:System.Windows.Navigation.NavigationService>クラスです。 ナビゲーターによってホストされているコンテンツがナビゲーターへの参照を取得できます<xref:System.Windows.Navigation.NavigationService>を呼び出して、<xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A>メソッドです。  
+  
+ <xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A>返します`null`ときに、 `dependencyObject`:  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow>です。  
+  
+-   <xref:System.Windows.Controls.Frame>です。  
+  
+    1.  別のナビゲーターによってホストされます。  
+  
+    2.  その<xref:System.Windows.Controls.Frame.JournalOwnership%2A>プロパティに設定<xref:System.Windows.Navigation.JournalOwnership.UsesParentJournal>です。  
+  
+-   ナビゲーターによってホストされているコンテンツの一部ではありません。  
+  
+ [!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]2 つのショートカットへの参照を取得するためには、 <xref:System.Windows.Navigation.NavigationService>:  
+  
+-   <xref:System.Windows.Navigation.NavigationService>へのナビゲーションを処理する、<xref:System.Windows.Controls.Page>からアクセスできる、<xref:System.Windows.Controls.Page>自体の値を取得することによってその<xref:System.Windows.Controls.Page.NavigationService%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   <xref:System.Windows.Navigation.NavigationService>によって使用される、<xref:System.Windows.Controls.Frame>ナビゲーションを処理するの値を取得することによってアクセスできる、<xref:System.Windows.Controls.Frame.NavigationService%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 例を次にどのように、<xref:System.Windows.Controls.UserControl>ナビゲーション サービスを呼び出すことによって取得できます<xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A>です。  
+  
+ [!code-csharp[NSGetNavigationServiceSnippets#GetNavigationServiceCODE1](~/samples/snippets/csharp/VS_Snippets_Wpf/NSGetNavigationServiceSnippets/CSharp/ContentUserControl.xaml.cs#getnavigationservicecode1)]
+ [!code-vb[NSGetNavigationServiceSnippets#GetNavigationServiceCODE1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NSGetNavigationServiceSnippets/visualbasic/contentusercontrol.xaml.vb#getnavigationservicecode1)]  
+[!code-csharp[NSGetNavigationServiceSnippets#GetNavigationServiceCODE2](~/samples/snippets/csharp/VS_Snippets_Wpf/NSGetNavigationServiceSnippets/CSharp/ContentUserControl.xaml.cs#getnavigationservicecode2)]
+[!code-vb[NSGetNavigationServiceSnippets#GetNavigationServiceCODE2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NSGetNavigationServiceSnippets/visualbasic/contentusercontrol.xaml.vb#getnavigationservicecode2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="dependencyObject" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GoBack">
+      <MemberSignature Language="C#" Value="public void GoBack ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GoBack() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.GoBack" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最新のエントリに移動戻るナビゲーション履歴に 1 つを使用する必要がある場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの前に<xref:System.Windows.Navigation.NavigationService.GoBack%2A>、<xref:System.Windows.Navigation.NavigationService.CanGoBack%2A>ナビゲーション履歴にエントリがあるかどうかを決定するプロパティを検査することができます。  
+  
+   
+  
+## Examples  
+ 次の例、最新のエントリに移動背面にナビゲーション履歴に存在する場合。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowBackCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindowbackcode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowBackCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindowbackcode)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Windows.Navigation.NavigationService.GoBack" />ナビゲーション履歴にエントリがない場合に呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GoForward">
+      <MemberSignature Language="C#" Value="public void GoForward ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GoForward() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.GoForward" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>1 つを使用する必要がある場合は、次に進むナビゲーション履歴に最新のエントリに移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの前に<xref:System.Windows.Navigation.NavigationService.GoForward%2A>、 <xref:System.Windows.Navigation.NavigationService.CanGoForward%2A> "進む"ナビゲーション履歴にエントリがあるかどうかを決定するプロパティを検査することができます。  
+  
+   
+  
+## Examples  
+ 次の例は、1 つが存在する場合に進むナビゲーション履歴の最新のエントリに移動します。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowForwardCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindowforwardcode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowForwardCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindowforwardcode)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Windows.Navigation.NavigationService.GoForward" />次に進むナビゲーション履歴にエントリがないとき呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCompleted">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.LoadCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.LoadCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動先のコンテンツが読み込まれ、解析されて、レンダリングが開始されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理する<xref:System.Windows.Navigation.NavigationService.LoadCompleted>読み込み完了したときに、ナビゲーション要求に関する情報を確認する必要がある場合。 この情報は、<xref:System.Windows.Navigation.NavigationEventArgs>に渡されるオブジェクト、 <xref:System.Windows.Navigation.NavigationService.LoadCompleted> 、イベント ハンドラーが含まれています。  
+  
+-   コンテンツとその[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。  
+  
+-   ナビゲーター (<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>)。  
+  
+-   追加のデータは、ナビゲーションがいずれかを呼び出すことによって開始された場合、<xref:System.Windows.Navigation.NavigationService.Navigate%2A>または<xref:System.Windows.Navigation.NavigationService.Navigate%2A>です。  
+  
+-   応答の詳細 (を使用して、<xref:System.Net.WebResponse>オブジェクト)。  
+  
+ <xref:System.Windows.Navigation.NavigationService.LoadCompleted>ときに、元のページが見つからないか、読み込まれている場合は発生しません<xref:System.Windows.Navigation.NavigationService.NavigationFailed>が発生します。  
+  
+> [!NOTE]
+>  ときに<xref:System.Windows.Navigation.NavigationService>を発生させます<xref:System.Windows.Navigation.NavigationService.LoadCompleted>もを発生させます<xref:System.Windows.Application.LoadCompleted?displayProperty=nameWithType>でイベントを<xref:System.Windows.Application>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示しています。<xref:System.Windows.Navigation.NavigationService.LoadCompleted>です。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowLoadCompletedCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindowloadcompletedcode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowLoadCompletedCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindowloadcompletedcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public bool Navigate (object root);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Navigate(object root) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Navigate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="root" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="root">移動先のコンテンツを格納するオブジェクト。</param>
+        <summary>オブジェクトによって格納されているコンテンツを非同期的に移動します。</summary>
+        <returns>
+          <see langword="true" />ナビゲーションがキャンセルされない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationService.Navigate%2A>移動、<xref:System.Object>によって指定された`root`次の条件に該当する場合。  
+  
+-   <xref:System.Windows.Navigation.NavigationService.Navigating>イベントは取り消されません。  
+  
+-   Web 要求 (を参照してください<xref:System.Windows.Navigation.NavigationService.Navigating>) を作成できます。  
+  
+ 場合`root`は`null`、既存のコンテンツ (<xref:System.Windows.Navigation.NavigationService.Content%2A>) がオフになっています。  
+  
+> [!NOTE]
+>  Web コンテンツをダウンロードするときに、Web の例外が表示される可能性があります (たとえば、404: ファイルが見つかりません)。 このような例外を処理できる<xref:System.Windows.Navigation.NavigationService.NavigationFailed>です。  
+  
+   
+  
+## Examples  
+ 次の例に移動する方法を示しています、<xref:System.Windows.Controls.Page>ソースのコンテンツ ツリーを含むオブジェクト。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowNavigateObjectCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindownavigateobjectcode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowNavigateObjectCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindownavigateobjectcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public bool Navigate (Uri source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Navigate(class System.Uri source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="source">A<see cref="T:System.Uri" />オブジェクトを初期化して、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]目的のコンテンツ。</param>
+        <summary>指定されているコンテンツを非同期に移動して、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。</summary>
+        <returns>
+          <see langword="true" />ナビゲーションがキャンセルされない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`source`Web を指定できます[!INCLUDE[TLA#tla_url](~/includes/tlasharptla-url-md.md)]または、有効なパック[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)](を参照してください[WPF のパック Uri](~/docs/framework/wpf/app-development/pack-uris-in-wpf.md))。  
+  
+ <xref:System.Windows.Navigation.NavigationService.Navigate%2A>移動、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]によって指定された`source`次の条件に該当する場合。  
+  
+-   <xref:System.Windows.Navigation.NavigationService.Navigating>イベントは取り消されません。  
+  
+-   Web 要求 (を参照してください<xref:System.Windows.Navigation.NavigationService.Navigating>) を作成できます。  
+  
+ 場合`source`は`null`、既存のコンテンツ (<xref:System.Windows.Navigation.NavigationService.Content%2A>) がオフになっています。  
+  
+> [!NOTE]
+>  Web コンテンツをダウンロードするときに、Web の例外が表示される可能性があります (たとえば、404: ファイルが見つかりません)。 このような例外を処理できる<xref:System.Windows.Navigation.NavigationService.NavigationFailed>です。  
+  
+ 使用することができます<xref:System.Windows.Navigation.NavigationService.Navigate%2A>コンテンツ フラグメントに移動します。 によってコンテンツが識別される場合、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]現在はコンテンツでは、再ダウンロードされません。  
+  
+   
+  
+## Examples  
+ 次の例に移動する方法を示しています、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowNavigateCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindownavigatecode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowNavigateCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindownavigatecode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public bool Navigate (object root, object navigationState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Navigate(object root, object navigationState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Navigate(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="root" Type="System.Object" />
+        <Parameter Name="navigationState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="root">移動先のコンテンツを格納するオブジェクト。</param>
+        <param name="navigationState">ナビゲーション中に処理するために使用するデータを格納するオブジェクト。</param>
+        <summary>オブジェクトが格納されているコンテンツを非同期に移動し、ナビゲーション中に処理するために使用するデータを格納しているオブジェクトを渡します。</summary>
+        <returns>
+          <see langword="true" />ナビゲーションがキャンセルされない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドと同じ動作<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>の代わりに、オブジェクトが渡されますが、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次の例に移動する方法を示しています、<xref:System.Windows.Controls.Page>オブジェクトのソース コンテンツが含まれていると、ナビゲーション状態を渡すことです。  
+  
+ [!code-csharp[NavigationServiceNavigateObjectStateSnippets#MainWindowCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceNavigateObjectStateSnippets/CSharp/MainWindow.xaml.cs#mainwindowcode)]
+ [!code-vb[NavigationServiceNavigateObjectStateSnippets#MainWindowCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceNavigateObjectStateSnippets/visualbasic/mainwindow.xaml.vb#mainwindowcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public bool Navigate (Uri source, object navigationState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Navigate(class System.Uri source, object navigationState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Uri" />
+        <Parameter Name="navigationState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">A<see cref="T:System.Uri" />オブジェクトを初期化して、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]目的のコンテンツ。</param>
+        <param name="navigationState">ナビゲーション中に処理するために使用するデータを格納するオブジェクト。</param>
+        <summary>あるソース コンテンツを非同期に移動して、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]ナビゲーション中に処理するために使用するデータを格納しているオブジェクトを渡します。</summary>
+        <returns>
+          <see langword="true" />ナビゲーションがキャンセルされない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ナビゲーションは非同期にあるために、複数のナビゲーションで同時に進行中である可能性があります。 たとえば、1 ページに 2 つの子フレームがある場合両方のフレームは移動可能性があります。 この場合、によって発生するさまざまなナビゲーション イベント<xref:System.Windows.Navigation.NavigationService>複数回、それぞれの移動、コンテンツの 1 つ発生しては限りませんようにするためのナビゲーションを要求した可能性があります。 したがって、特定のナビゲーション要求は、個々 の要求に固有のデータを処理する場合、すべてのナビゲーション要求に使用可能なデータは使用できません。 使用する代わりに、`navigationState`ナビゲーション処理は 1 つのナビゲーション要求に固有のデータを渡すことです。  
+  
+ 次のイベント引数は、ナビゲーション状態へのアクセスを提供します。  
+  
+-   <xref:System.Windows.Navigation.NavigatingCancelEventArgs.ExtraData%2A>(に渡される、<xref:System.Windows.Navigation.NavigationService.Navigating>イベント)。  
+  
+-   <xref:System.Windows.Navigation.NavigationEventArgs.ExtraData%2A>(に渡される、 <xref:System.Windows.Navigation.NavigationService.Navigated>、 <xref:System.Windows.Navigation.NavigationService.NavigationStopped>、<xref:System.Windows.Navigation.NavigationService.LoadCompleted>イベント ハンドラー)。  
+  
+   
+  
+## Examples  
+ 次の例に移動することを示しています、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ナビゲーション状態を渡します。  
+  
+ [!code-csharp[NavigationServiceNavigateUriStateSnippets#MainWindowCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceNavigateUriStateSnippets/CSharp/MainWindow.xaml.cs#mainwindowcode)]
+ [!code-vb[NavigationServiceNavigateUriStateSnippets#MainWindowCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceNavigateUriStateSnippets/visualbasic/mainwindow.xaml.vb#mainwindowcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public bool Navigate (Uri source, object navigationState, bool sandboxExternalContent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Navigate(class System.Uri source, object navigationState, bool sandboxExternalContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Uri" />
+        <Parameter Name="navigationState" Type="System.Object" />
+        <Parameter Name="sandboxExternalContent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="source">A<see cref="T:System.Uri" />オブジェクトを初期化して、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]目的のコンテンツ。</param>
+        <param name="navigationState">ナビゲーション中に処理するために使用するデータを格納するオブジェクト。</param>
+        <param name="sandboxExternalContent">部分信頼セキュリティ サンド ボックスにコンテンツをダウンロード (インターネット既定値は、権限のセットがゾーンに場合<see langword="true" />です。 既定値は、<see langword="false" /> です。</param>
+        <summary>あるソース コンテンツを非同期に移動して、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]ナビゲーション、およびサンド ボックスの中に、コンテンツを処理するためのナビゲーション状態を含むオブジェクトを渡します。</summary>
+        <returns>
+          <see langword="true" />ナビゲーションがキャンセルされない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはスタンドアロン アプリケーションののみと[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]コンテンツ。  
+  
+ このメソッドと同じ動作が発生<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>、部分信頼セキュリティ サンド ボックスにダウンロードされているコンテンツが配置されるようにすることでそれを拡張し、(権限での既定のインターネット ゾーン セットで、次を参照してください。 [WPF 部分信頼セキュリティ](~/docs/framework/wpf/wpf-partial-trust-security.md))。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigated">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatedEventHandler Navigated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatedEventHandler Navigated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.Navigated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigatedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動先のコンテンツが見つかるとから利用できるときに発生、<see cref="P:System.Windows.Navigation.NavigationService.Content" />プロパティ、可能性がありますが、完了していない読み込みがします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理する<xref:System.Windows.Navigation.NavigationService.Navigated>ダウンロードの開始時に、ナビゲーション要求に関する情報を確認する必要がある場合。 この情報は、<xref:System.Windows.Navigation.NavigationEventArgs>に渡されるオブジェクト、 <xref:System.Windows.Navigation.NavigationService.Navigated> 、イベント ハンドラーが含まれています。  
+  
+-   元のページです。 ときに<xref:System.Windows.Navigation.NavigationService.Navigated>発生すると、元のページの一部には、少なくとも[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]ツリーを解析し、対象のコンテンツ コントロールにアタッチされています。  
+  
+-   要求された [!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]。  
+  
+-   ナビゲーター (<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>)。  
+  
+-   追加のデータは、ナビゲーションがいずれかを呼び出すことによって開始された場合、<xref:System.Windows.Navigation.NavigationService.Navigate%2A>または<xref:System.Windows.Navigation.NavigationService.Navigate%2A>です。  
+  
+-   応答の詳細 (を使用して、<xref:System.Net.WebResponse>オブジェクト)。  
+  
+ <xref:System.Windows.Navigation.NavigationService.Navigated>ときに、元のページが見つからないか、読み込まれている場合は発生しません<xref:System.Windows.Navigation.NavigationService.NavigationFailed>が発生します。  
+  
+> [!NOTE]
+>  ときに<xref:System.Windows.Navigation.NavigationService>を発生させます<xref:System.Windows.Navigation.NavigationService.NavigationFailed>もを発生させます<xref:System.Windows.Application.NavigationFailed?displayProperty=nameWithType>でイベントを<xref:System.Windows.Application>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示しています。<xref:System.Windows.Navigation.NavigationService.Navigated>です。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowNavigatedCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindownavigatedcode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowNavigatedCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindownavigatedcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigating">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatingCancelEventHandler Navigating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatingCancelEventHandler Navigating" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.Navigating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigatingCancelEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいナビゲーションが要求されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationService.Navigating>新しいナビゲーションが要求されるを含め、コンテンツが要求されたソースの前に。  
+  
+-   <xref:System.Windows.Navigation.NavigationService.Navigate%2A> が呼ばれたとき。  
+  
+-   <xref:System.Windows.Navigation.NavigationService.GoBack%2A>または<xref:System.Windows.Navigation.NavigationService.GoForward%2A>と呼びます (またはナビゲーションのエントリが選択されて[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)])。  
+  
+-   コンテンツ フラグメントに移動します。  
+  
+ 処理する<xref:System.Windows.Navigation.NavigationService.Navigating>ナビゲーションが開始する前に、ナビゲーション要求に関する情報を確認する必要がある場合。 この情報は、<xref:System.Windows.Navigation.NavigatingCancelEventArgs>に渡されるオブジェクト、<xref:System.Windows.Navigation.NavigationService.Navigating>イベント ハンドラー。  
+  
+ A<xref:System.Net.WebRequest>ナビゲーションが作成されから使用可能なオブジェクト、<xref:System.Windows.Navigation.NavigatingCancelEventArgs>パラメーターであるため、実際の要求は、この時点で化されていないを再構成できます、<xref:System.Net.WebRequest>オブジェクトを必要な場合です。  
+  
+ 処理も<xref:System.Windows.Navigation.NavigatingCancelEventArgs>設定で、必要な場合、ナビゲーションをキャンセルする<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>true に設定します。 ナビゲーションをキャンセルすると、その他のナビゲーション イベントは発生しません。  
+  
+> [!NOTE]
+>  アプリケーションがブラウザーでホストされている場合は、取り消すと、アプリケーションから移動からユーザーを防ぐことはできません、<xref:System.Windows.Navigation.NavigationService.Navigating>イベント。  
+  
+ コンテンツの最初の部分がナビゲーターによってに移動した後 (<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>)、それぞれからコンテンツがナビゲーション履歴に追加されます。 切り替えを移動するコンテンツに関する状態情報を保存する必要がある場合する状態そのコンテンツのジャーナル エントリを設定して追加できます<xref:System.Windows.Navigation.NavigatingCancelEventArgs.ContentStateToSave%2A>で、<xref:System.Windows.Navigation.CustomContentState>オブジェクト。  
+  
+> [!NOTE]
+>  ときに<xref:System.Windows.Navigation.NavigationService>を発生させます<xref:System.Windows.Navigation.NavigationService.Navigating>もを発生させます<xref:System.Windows.Application.Navigating?displayProperty=nameWithType>でイベントを<xref:System.Windows.Application>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示しています。<xref:System.Windows.Navigation.NavigationService.Navigating>場合は、要求をキャンセルすると静的コンテンツを更新する要求が行われたかどうかを検出します。  
+  
+ <xref:System.Windows.Navigation.NavigationService.Navigating>。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowNavigatingCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindownavigatingcode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowNavigatingCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindownavigatingcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigationFailed">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationFailedEventHandler NavigationFailed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationFailedEventHandler NavigationFailed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.NavigationFailed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationFailedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求されたコンテンツへの移動中にエラーが発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときにいずれか、<xref:System.Net.WebException>または<xref:System.IO.IOException>、ナビゲーション中にスローされた、<xref:System.Windows.Navigation.NavigationService.NavigationFailed>イベントが発生します。 <xref:System.Windows.Navigation.NavigationService.NavigationFailed>渡される、<xref:System.Windows.Navigation.NavigationFailedEventArgs>例外と例外の原因となったナビゲーションの詳細の両方の情報をカプセル化します。  
+  
+ 例外は、障害が発生したナビゲーションの結果し、が処理されない、この順で、次のイベントが発生します。  
+  
+-   <xref:System.Windows.Navigation.NavigationService.NavigationFailed?displayProperty=nameWithType>。  
+  
+-   <xref:System.Windows.Controls.Frame.NavigationFailed?displayProperty=nameWithType> または <xref:System.Windows.Navigation.NavigationWindow.NavigationFailed?displayProperty=nameWithType>。  
+  
+-   <xref:System.Windows.Application.NavigationFailed?displayProperty=nameWithType>。  
+  
+-   <xref:System.Windows.Application.DispatcherUnhandledException>。  
+  
+ 場合、ナビゲーター (<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>) が 1 つ以上のナビゲーターによってホストされる`NavigationFailed`のうちのどれでもは発生しません。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示しています。<xref:System.Windows.Navigation.NavigationService.NavigationFailed>です。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowNavigationFailedCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindownavigationfailedcode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowNavigationFailedCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindownavigationfailedcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigationProgress">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationProgressEventHandler NavigationProgress;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationProgressEventHandler NavigationProgress" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.NavigationProgress" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationProgressEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション進行状況の情報提供を目的として、ダウンロード中に定期的に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationService.NavigationProgress>渡される、<xref:System.Windows.Navigation.NavigationProgressEventArgs>次の進行状況に関する情報を公開します。  
+  
+-   これまでにダウンロードされたバイト数 (<xref:System.Windows.Navigation.NavigationProgressEventArgs.BytesRead%2A>)。  
+  
+-   ダウンロードする合計バイト数 (<xref:System.Windows.Navigation.NavigationProgressEventArgs.MaxBytes%2A>)。  
+  
+ <xref:System.Windows.Navigation.NavigationService.NavigationProgress>コンテンツの 1024 バイトごとにダウンロードされると、および 1 回以上の残りのバイト数が 1024 バイト未満であることが発生します。 このため、処理<xref:System.Windows.Navigation.NavigationService.NavigationProgress>追跡および現在のダウンロードの進行状況を表示する便利な方法を提供します。  
+  
+ <xref:System.Windows.Navigation.NavigationService.NavigationProgress>場合によっては、コンテンツの同じ部分に移動するときや、ときに、コンテンツ フラグメントへの移動が現在読み込まれているコンテンツになどで発生しません (つまりの値、<xref:System.Windows.Navigation.NavigationService.Content%2A>プロパティ)。  
+  
+ コンパイルされた XAML リソースでは、最後に移動するとき<xref:System.Windows.Navigation.NavigationService.NavigationProgress>イベントを発生させることがない可能性があります。 つまり、ダウンロードの最後に、最後に報告している<xref:System.Windows.Navigation.NavigationProgressEventArgs.BytesRead%2A>値が等しくない場合があります、<xref:System.Windows.Navigation.NavigationProgressEventArgs.MaxBytes%2A>値。 処理、<xref:System.Windows.Navigation.NavigationService.LoadCompleted>ナビゲーションを終えたときに通知するイベントです。  
+  
+> [!NOTE]
+>  ときに<xref:System.Windows.Navigation.NavigationService>を発生させます<xref:System.Windows.Navigation.NavigationService.NavigationProgress>もを発生させます<xref:System.Windows.Application.NavigationProgress?displayProperty=nameWithType>でイベントを<xref:System.Windows.Application>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示しています。<xref:System.Windows.Navigation.NavigationService.NavigationProgress>です。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowNavigationProgressCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindownavigationprogresscode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowNavigationProgressCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindownavigationprogresscode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigationStopped">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationStoppedEventHandler NavigationStopped;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationStoppedEventHandler NavigationStopped" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.NavigationStopped" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigationStoppedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="M:System.Windows.Navigation.NavigationService.StopLoading" />メソッドを呼び出して、または現在のナビゲーション中に新しいナビゲーションが要求された場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理する<xref:System.Windows.Navigation.NavigationService.NavigationStopped>かどうかは、ダウンロードを停止すると、ナビゲーション要求に関する情報を確認する必要があります。 この情報は、<xref:System.Windows.Navigation.NavigationEventArgs>に渡されるオブジェクト、 <xref:System.Windows.Navigation.NavigationService.NavigationStopped> 、イベント ハンドラーが含まれています。  
+  
+-   要求された [!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]。  
+  
+-   ナビゲーター (<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>)。  
+  
+-   追加のデータは、ナビゲーションがいずれかを呼び出すことによって開始された場合、<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>または<xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  ときに<xref:System.Windows.Navigation.NavigationService>を発生させます<xref:System.Windows.Navigation.NavigationService.NavigationStopped>もを発生させます<xref:System.Windows.Application.NavigationStopped?displayProperty=nameWithType>でイベントを<xref:System.Windows.Application>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示しています。<xref:System.Windows.Navigation.NavigationService.NavigationStopped>です。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowNavigationStoppedCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindownavigationstoppedcode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowNavigationStoppedCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindownavigationstoppedcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコンテンツを再読み込みします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、現在のコンテンツ (の値で指定された、<xref:System.Windows.Navigation.NavigationService.Source%2A>プロパティ)、もう一度への移動が<xref:System.Windows.Navigation.NavigationService>コンテンツが再度ダウンロードしません。 強制的に<xref:System.Windows.Navigation.NavigationService>コンテンツに再度移動するを呼び出す<xref:System.Windows.Navigation.NavigationService.Refresh%2A>です。  
+  
+ 注意してください。 現在のコンテンツへの移動がもう一度、かどうかを呼び出して<xref:System.Windows.Navigation.NavigationService.Navigate%2A>または<xref:System.Windows.Navigation.NavigationService.Refresh%2A>、ナビゲーション履歴に新しいエントリが追加されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveBackEntry">
+      <MemberSignature Language="C#" Value="public System.Windows.Navigation.JournalEntry RemoveBackEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Navigation.JournalEntry RemoveBackEntry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.RemoveBackEntry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.JournalEntry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バックアップ履歴から最新の履歴エントリを削除します。</summary>
+        <returns>最新<see cref="T:System.Windows.Navigation.JournalEntry" />"戻る"ナビゲーション履歴に 1 つを使用する必要がある場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は 2 つ以上のナビゲーター (<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>) 同じナビゲーション履歴を共有するには、1 つのナビゲーター<xref:System.Windows.Navigation.NavigationService.RemoveBackEntry%2A>を別のナビゲーターで行われたナビゲーションの [戻る] ナビゲーション履歴のエントリを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationService.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]の現在のコンテンツまたは[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]現在移動先の新しいコンテンツのです。</summary>
+        <value>A<see cref="T:System.Uri" />を格納している、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の現在の内容またはコンテンツが現在移動先をします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のサーバーに対するこのプロパティを設定する場合[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]よりも、現在表示されているナビゲーター (<xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>) を指定した移動[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。  
+  
+ <xref:System.Windows.Navigation.NavigationService.Source%2A>読み込まれているコンテンツに設定されている、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ナビゲーションが取り消された場合を除きに移動します。  
+  
+ <xref:System.Windows.Navigation.NavigationService.Source%2A>フラグメントのみで設定できる[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]に設定することができます`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopLoading">
+      <MemberSignature Language="C#" Value="public void StopLoading ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StopLoading() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.StopLoading" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>さらに、現在のナビゲーション要求のコンテンツのダウンロードを停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationService.StopLoading%2A>呼び出すことができる限り早い時点に<xref:System.Windows.Navigation.NavigationService.Navigate%2A>から制御が戻るし、子フレームで進行中のナビゲーションを停止します。  
+  
+ (<xref:System.Windows.Controls.Frame>).  
+  
+ 呼び出す、<xref:System.Windows.Navigation.NavigationService.StopLoading%2A>メソッドが発生し、<xref:System.Windows.Navigation.NavigationService.NavigationStopped>イベント。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Navigation.NavigationService.StopLoading%2A>ナビゲーションを開始したのと同じスレッドで呼び出す必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、読み込みを停止する方法を示します。  
+  
+ [!code-csharp[NavigationServiceSnippets#MainWindowStopLoadingCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationServiceSnippets/CSharp/MainWindow.xaml.cs#mainwindowstoploadingcode)]
+ [!code-vb[NavigationServiceSnippets#MainWindowStopLoadingCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationServiceSnippets/visualbasic/mainwindow.xaml.vb#mainwindowstoploadingcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,267 @@
+<Type Name="Decorator" FullName="System.Windows.Controls.Decorator">
+  <TypeSignature Language="C#" Value="public class Decorator : System.Windows.FrameworkElement, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Decorator extends System.Windows.FrameworkElement implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Decorator" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Ignore, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Child")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>または、1 つの子要素の周囲に効果を適用するなどの要素の基本クラスを提供<see cref="T:System.Windows.Controls.Border" />または<see cref="T:System.Windows.Controls.Viewbox" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Windows.Controls.Decorator> 、1 つを含む<xref:System.Windows.UIElement>で指定される、<xref:System.Windows.Controls.Decorator.Child%2A>プロパティです。 <xref:System.Windows.Controls.Decorator>に影響するか、装飾、<xref:System.Windows.UIElement>です。  <xref:System.Windows.Controls.Decorator>可能性がありますまたは外観がない可能性があります。  たとえば、<xref:System.Windows.Controls.Border>配置 a が、コントロール周囲の四角形を<xref:System.Windows.Controls.Viewbox>visual プレゼンスがありません。  
+  
+   
+  
+## Examples  
+ 次の例では追加、 <xref:System.Windows.Controls.TextBox> 、<xref:System.Windows.Controls.Decorator.Child%2A>のプロパティ、<xref:System.Windows.Controls.Border>です。  
+  
+ **注**、[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]バージョンの例を使用、`<Border.Child>`タグの内容を囲む、 <xref:System.Windows.Controls.Border>、必要はありませんが、ため、<xref:System.Windows.Controls.Decorator>適用、<xref:System.Windows.Markup.ContentPropertyAttribute>を<xref:System.Windows.Controls.Decorator.Child%2A>プロパティです。 詳細については、次を参照してください。 [XAML の概要 (WPF)](~/docs/framework/wpf/advanced/xaml-overview-wpf.md)です。  
+  
+ [!code-xaml[Border_snip#SimpleBorderWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/Border_snip/CS/simpleborder.xaml#simpleborderwholepage)]  
+  
+ [!code-csharp[Border_Procedural_snip#BasicBorderCodeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/Border_Procedural_snip/CSharp/BasicBorderExample.cs#basicbordercodeexamplewholepage)]
+ [!code-vb[Border_Procedural_snip#BasicBorderCodeExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Border_Procedural_snip/visualbasic/basicborderexample.vb#basicbordercodeexamplewholepage)]  
+  
+ 前の例では、次の図のような出力を生成します。  
+  
+ ![境界線が黒の TextBox](~/add/media/layout-border-around-textbox.png "境界線が黒の TextBox")  
+テキスト ボックスの周りの境界線  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Decorator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Decorator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Decorator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Decorator.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeSize"><see cref="T:System.Windows.Size" />この要素を使用してその子コンテンツを整列します。</param>
+        <summary><see cref="T:System.Windows.Controls.Decorator" /> 要素のコンテンツを配置します。</summary>
+        <returns>この <see cref="T:System.Windows.Controls.Decorator" /> 要素とその子の配置のサイズを表す <see cref="T:System.Windows.Size" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Child">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.UIElement Child { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.UIElement Child" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Decorator.Child" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の 1 つの子要素、<see cref="T:System.Windows.Controls.Decorator" />です。</summary>
+        <value>1 つの子要素、<see cref="T:System.Windows.Controls.Decorator" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Decorator>子コンテンツの強力なコンテンツ モデルを適用します。 <xref:System.Windows.Controls.Decorator.Child%2A>のプロパティ、 <xref:System.Windows.Controls.Decorator> 、1 つにする必要があります<xref:System.Windows.UIElement>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVisualChild">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Visual GetVisualChild (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.Visual GetVisualChild(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Decorator.GetVisualChild(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">子要素のインデックス位置。</param>
+        <summary>子を取得します<see cref="T:System.Windows.Media.Visual" />、指定した位置にある要素<paramref name="index" />位置。</summary>
+        <returns>指定した位置にある子要素<paramref name="index" />位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Decorator.Child%2A>のみ 0 または 1 に等しいことができますを指定する、`index`位置 1 より大きいまたは 0 よりも小さいか、<xref:System.ArgumentOutOfRangeException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />子ビジュアル要素の数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Decorator.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>論理子要素を反復処理に使用できる列挙子を取得、<see cref="T:System.Windows.Controls.Decorator" />です。</summary>
+        <value>論理子要素を反復処理に使用できる列挙子、<see cref="T:System.Windows.Controls.Decorator" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Decorator.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">上限<see cref="T:System.Windows.Size" />を超えていない必要があります。</param>
+        <summary>子要素の測定、<see cref="T:System.Windows.Controls.Decorator" />間に、配置を準備する、<see cref="M:System.Windows.Controls.Decorator.ArrangeOverride(System.Windows.Size)" />渡します。</summary>
+        <returns>ターゲット<see cref="T:System.Windows.Size" />要素のです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.Decorator>プロパティ、余白、および要求されたサイズの子要素を分析して必要なサイズのサイズ変更を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Decorator.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Decorator.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加する文字列。</param>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualChildrenCount">
+      <MemberSignature Language="C#" Value="protected override int VisualChildrenCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 VisualChildrenCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Decorator.VisualChildrenCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Controls.Decorator" /> のインスタンスのビジュアルな子要素の数に相当する値を取得します。</summary>
+        <value>ビジュアル子要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Decorator>はその子コレクション内の 1 つだけの子オブジェクトを持つ、このプロパティは、常に 0 または 1 に報告します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

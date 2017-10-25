@@ -1,0 +1,380 @@
+<Type Name="PartialCachingAttribute" FullName="System.Web.UI.PartialCachingAttribute">
+  <TypeSignature Language="C#" Value="public sealed class PartialCachingAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PartialCachingAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.PartialCachingAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web フォームのユーザー コントロール (.ascx ファイル) を指定する場合に使用するメタデータ属性とその出力がキャッシュされる方法を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PartialCachingAttribute>属性クラスは、フラグメントがキャッシュをサポートするユーザー コントロール (.ascx ファイル) をマークし、ASP.NET コントロールをキャッシュ中で使用されるキャッシュの設定をカプセル化します。 ページおよびコントロールの開発者が使用して、<xref:System.Web.UI.PartialCachingAttribute>分離コード ファイル内のユーザー コントロールのキャッシュを有効にする属性を出力します。  
+  
+ 使用して、<xref:System.Web.UI.PartialCachingAttribute>が有効にすることがいくつかの方法のいずれかの出力キャッシュします。 次の一覧では、出力キャッシュの有効化に使用できる方法について説明します。  
+  
+-   ディレクティブを使用して、出力は、宣言型のシナリオでキャッシュを有効にします。  
+  
+-   使用して、<xref:System.Web.UI.PartialCachingAttribute>分離コード ファイル内のユーザー コントロールのキャッシュを有効にします。  
+  
+-   使用して、<xref:System.Web.UI.ControlCachePolicy>クラスを使用しているプログラムのシナリオでプログラムによってキャッシュの設定を指定する<xref:System.Web.UI.BasePartialCachingControl>インスタンス。  
+  
+ ユーザー コントロール、ディレクティブを含む、または場合、 <xref:System.Web.UI.PartialCachingAttribute> ASP.NET パーサーが生成を適用するのインスタンス、<xref:System.Web.UI.PartialCachingControl>ユーザー コントロールをラップするクラス。  
+  
+ ASP.NET のキャッシュの詳細については、次を参照してください。[キャッシュ](http://msdn.microsoft.com/library/ac11c8ea-df5d-4de8-b315-9ccf1048b0ce)です。 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.PartialCachingAttribute>です。 この例では、3 つの部分があります。  
+  
+-   部分クラス`ctlMine`から継承する、<xref:System.Web.UI.UserControl>基底クラスとする、<xref:System.Web.UI.PartialCachingAttribute>属性を適用します。  
+  
+-   ユーザー コントロールで使用される、`ctlMine`部分クラスです。  
+  
+-   ユーザー コントロールをホストする Web フォーム ページです。  
+  
+ 例では、最初の部分を部分クラスから継承されるを示しています、<xref:System.Web.UI.UserControl>基底クラスとする、<xref:System.Web.UI.PartialCachingAttribute>属性を適用します。 この例では、属性は、ユーザー コントロールが 20 秒間にキャッシュすることを指定します。  
+  
+ [!code-csharp[PartialCachingAttribute_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PartialCachingAttribute_1/CS/partialcache.cs.ascx.cs#1)]
+ [!code-vb[PartialCachingAttribute_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PartialCachingAttribute_1/VB/partialcache.vb.ascx.vb#1)]  
+  
+ この例の 2 番目の部分では、ユーザー コントロールのキャッシュを示すために、前の例で使用されるユーザー コントロールを示します。  
+  
+ [!code-aspx-csharp[PartialCachingAttribute_1#5](~/samples/snippets/csharp/VS_Snippets_WebNet/PartialCachingAttribute_1/CS/partialcache.cs.ascx#5)]
+ [!code-aspx-vb[PartialCachingAttribute_1#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PartialCachingAttribute_1/VB/partialcache.vb.ascx#5)]  
+  
+ この例の 3 番目の部分では、ユーザー コントロールをホストする Web フォーム ページを示します。  
+  
+ [!code-aspx-csharp[PartialCachingAttribute_1#6](~/samples/snippets/csharp/VS_Snippets_WebNet/PartialCachingAttribute_1/CS/partialcache.cs.aspx#6)]
+ [!code-aspx-vb[PartialCachingAttribute_1#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PartialCachingAttribute_1/VB/partialcache.vb.aspx#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PartialCachingAttribute (int duration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PartialCachingAttribute.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="duration" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="duration">時間を秒単位でユーザー コントロールは、出力キャッシュに残ります必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PartialCachingAttribute" />キャッシュに保存するユーザー コントロールに割り当てられている指定された期間を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示していますが、どのように<xref:System.Web.UI.PartialCachingAttribute.%23ctor%28System.Int32%29>コンス トラクターは、ユーザー コントロールに適用できます。 例では、キャッシュの存続期間を指定して、ユーザー コントロールをキャッシュできることを示すために、コンス トラクターが使用されます。 このコード例に示されている例の一部である、<xref:System.Web.UI.PartialCachingAttribute>クラスです。  
+  
+ [!code-csharp[PartialCachingAttribute_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/PartialCachingAttribute_1/CS/partialcache.cs.ascx.cs#2)]
+ [!code-vb[PartialCachingAttribute_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PartialCachingAttribute_1/VB/partialcache.vb.ascx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PartialCachingAttribute (int duration, string varyByParams, string varyByControls, string varyByCustom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 duration, string varyByParams, string varyByControls, string varyByCustom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PartialCachingAttribute.#ctor(System.Int32,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="duration" Type="System.Int32" />
+        <Parameter Name="varyByParams" Type="System.String" />
+        <Parameter Name="varyByControls" Type="System.String" />
+        <Parameter Name="varyByCustom" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="duration">ユーザー コントロールをキャッシュする秒単位での時間数。</param>
+        <param name="varyByParams">出力キャッシュの変更に使用される文字列のセミコロンで区切った一覧。 既定では、これらの文字列には、GET メソッドの属性で送信されるクエリ文字列の値または POST メソッドを使用して送信されるパラメーターが対応しています。 この属性が複数のパラメーターに設定されている場合、出力キャッシュには、指定したパラメーターごとに、要求されたドキュメントの別のバージョンが含まれています。 指定できる値は"none"、"*"と有効なクエリ文字列またはポスト パラメーターの名前。</param>
+        <param name="varyByControls">出力キャッシュの変更に使用される文字列のセミコロンで区切った一覧。 これらの文字列は、ユーザー コントロールのプロパティの完全修飾名を表します。 このパラメーターは、ユーザー コントロールで使用すると、ユーザー コントロールの出力は指定されたユーザー コントロールの各プロパティのキャッシュに変化します。</param>
+        <param name="varyByCustom">ユーザー設定を表すテキストには、キャッシュ要件を出力します。 このパラメーターは"browser"の値を指定して、ブラウザーの名前とメジャー バージョン情報によって、キャッシュは切り替えられます。 オーバーライドする必要があります、カスタムの文字列が入力した場合、<see cref="M:System.Web.HttpApplication.GetVaryByCustomString(System.Web.HttpContext,System.String)" />アプリケーションの Global.asax ファイル内のメソッドです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PartialCachingAttribute" />クラス、キャッシュの存続期間、任意 GET と POST の値、コントロール名、およびカスタムの出力キャッシュのキャッシュを指定するための要件を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示していますが、どのように<xref:System.Web.UI.PartialCachingAttribute.%23ctor%28System.Int32%2CSystem.String%2CSystem.String%2CSystem.String%29>コンス トラクターは、ユーザー コントロールに適用できます。 例では、20 秒に、キャッシュの存続期間を指定するコンス トラクターを使用して、ユーザー コントロールをキャッシュできることを指定し、という名前のコントロールの指定`state`ユーザー コントロールの出力を変更するためです。  
+  
+ [!code-csharp[PartialCachingAttribute_2_Resubmit#2](~/samples/snippets/csharp/VS_Snippets_WebNet/PartialCachingAttribute_2_Resubmit/CS/partialcache_1cs.ascx.cs#2)]
+ [!code-vb[PartialCachingAttribute_2_Resubmit#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PartialCachingAttribute_2_Resubmit/VB/partialcache_1vb.ascx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PartialCachingAttribute (int duration, string varyByParams, string varyByControls, string varyByCustom, bool shared);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 duration, string varyByParams, string varyByControls, string varyByCustom, bool shared) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PartialCachingAttribute.#ctor(System.Int32,System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="duration" Type="System.Int32" />
+        <Parameter Name="varyByParams" Type="System.String" />
+        <Parameter Name="varyByControls" Type="System.String" />
+        <Parameter Name="varyByCustom" Type="System.String" />
+        <Parameter Name="shared" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="duration">ユーザー コントロールをキャッシュする秒単位での時間数。</param>
+        <param name="varyByParams">出力キャッシュの変更に使用される文字列のセミコロンで区切った一覧。 既定では、これらの文字列はと共に送信されるクエリ文字列の値に対応<see langword="GET" />メソッドの属性、またはパラメーターを使用して送信、<see langword="POST" />メソッドです。 この属性が複数のパラメーターに設定されている場合、出力キャッシュには、指定したパラメーターごとに、要求されたドキュメントの別のバージョンが含まれています。 指定できる値は"none"、"*"、および任意の有効なクエリ文字列または<see langword="POST" />パラメーターの名前。</param>
+        <param name="varyByControls">出力キャッシュの変更に使用される文字列のセミコロンで区切った一覧。 これらの文字列は、ユーザー コントロールのプロパティの完全修飾名を表します。 このパラメーターは、ユーザー コントロールで使用すると、ユーザー コントロールの出力は指定されたユーザー コントロールの各プロパティのキャッシュに変化します。</param>
+        <param name="varyByCustom">ユーザー設定を表すテキストには、キャッシュ要件を出力します。 このパラメーターは"browser"の値を指定して、ブラウザーの名前とメジャー バージョン情報によって、キャッシュは切り替えられます。 オーバーライドする必要があります、カスタムの文字列が入力した場合、<see cref="M:System.Web.HttpApplication.GetVaryByCustomString(System.Web.HttpContext,System.String)" />アプリケーションの Global.asax ファイル内のメソッドです。</param>
+        <param name="shared">
+          <see langword="true" />ユーザー コントロールの出力を複数のページで共有できることを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PartialCachingAttribute" />指定して、キャッシュの存続期間、<see langword="GET" />と<see langword="POST" />値、コントロール名、カスタム出力キャッシュの変更に使用されるキャッシュの要件およびユーザー コントロールを出力するかどうかは、複数のページと共有できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PartialCachingAttribute (int duration, string varyByParams, string varyByControls, string varyByCustom, string sqlDependency, bool shared);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 duration, string varyByParams, string varyByControls, string varyByCustom, string sqlDependency, bool shared) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PartialCachingAttribute.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="duration" Type="System.Int32" />
+        <Parameter Name="varyByParams" Type="System.String" />
+        <Parameter Name="varyByControls" Type="System.String" />
+        <Parameter Name="varyByCustom" Type="System.String" />
+        <Parameter Name="sqlDependency" Type="System.String" />
+        <Parameter Name="shared" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="duration">ユーザー コントロールをキャッシュする秒単位での時間数。</param>
+        <param name="varyByParams">出力キャッシュの変更に使用される文字列のセミコロンで区切った一覧。 既定では、これらの文字列はと共に送信されるクエリ文字列の値に対応<see langword="GET" />メソッドの属性、またはパラメーターを使用して送信、<see langword="POST" />メソッドです。 この属性が複数のパラメーターに設定されている場合、出力キャッシュには、指定したパラメーターごとに、要求されたドキュメントの別のバージョンが含まれています。 指定できる値は"none"、"*"、および任意の有効なクエリ文字列または<see langword="POST" />パラメーターの名前。</param>
+        <param name="varyByControls">出力キャッシュの変更に使用される文字列のセミコロンで区切った一覧。 これらの文字列は、ユーザー コントロールのプロパティの完全修飾名を表します。 このパラメーターは、ユーザー コントロールで使用すると、ユーザー コントロールの出力は指定されたユーザー コントロールの各プロパティのキャッシュに変化します。</param>
+        <param name="varyByCustom">ユーザー設定を表すテキストには、キャッシュ要件を出力します。 このパラメーターは"browser"の値を指定して、ブラウザーの名前とメジャー バージョン情報によって、キャッシュは切り替えられます。 オーバーライドする必要があります、カスタムの文字列が入力した場合、<see cref="M:System.Web.HttpApplication.GetVaryByCustomString(System.Web.HttpContext,System.String)" />アプリケーションの Global.asax ファイル内のメソッドです。</param>
+        <param name="sqlDependency">データベース名とテーブルの区切られた一覧された名前を変更されたときに、ASP.NET のキャッシュ内のキャッシュ エントリを明示的に期限切れです。 これらのデータベース名は、Web 構成セクションで識別された、SQL Server キャッシュの依存関係と一致します。</param>
+        <param name="shared">
+          <see langword="true" />ユーザー コントロールの出力を複数のページで共有できることを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PartialCachingAttribute" />指定して、キャッシュの存続期間、<see langword="GET" />と<see langword="POST" />値、コントロール名、カスタム出力キャッシュ、データベースの依存関係の変更に使用されるキャッシュの要件およびユーザー コントロールを出力するかどうかは、複数のページと共有できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public int Duration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Duration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PartialCachingAttribute.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュされたアイテムが出力キャッシュに維持される時間を秒単位での量を取得します。</summary>
+        <value>時間を秒単位でユーザー コントロールは、出力キャッシュに残ります必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示していますが、どのように<xref:System.Web.UI.PartialCachingAttribute.%23ctor%28System.Int32%29>コンス トラクターは、ユーザー コントロールに適用できます。 属性は、ユーザー コントロールがキャッシュできるキャッシュの存続期間 20 秒を指定することを示します。 このコード例に示されている例の一部である、<xref:System.Web.UI.PartialCachingAttribute>クラスです。  
+  
+ [!code-csharp[PartialCachingAttribute_1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/PartialCachingAttribute_1/CS/partialcache.cs.ascx.cs#2)]
+ [!code-vb[PartialCachingAttribute_1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PartialCachingAttribute_1/VB/partialcache.vb.ascx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public string ProviderName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PartialCachingAttribute.ProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連付けられたコントロールの出力キャッシュ データを格納するために使用するプロバイダーの名前を設定します。</summary>
+        <value>プロバイダーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 宣言または属性を使用して、このプロパティを設定することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shared">
+      <MemberSignature Language="C#" Value="public bool Shared { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Shared" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PartialCachingAttribute.Shared" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー コントロールの出力を複数のページと共有できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ユーザー コントロールの出力は、複数のページ間で共有できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定する場合`true`、キャッシュされたユーザー コントロールの出力は、複数の Web フォーム ページからアクセスできます。 設定しない場合`true`既定の動作は、1 つのバージョンのユーザー コントロールを含む各ページのユーザー コントロールの出力をキャッシュします。 このプロパティを有効にすると大量のメモリを保存することができます可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SqlDependency">
+      <MemberSignature Language="C#" Value="public string SqlDependency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SqlDependency" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PartialCachingAttribute.SqlDependency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つまたは複数データベースとテーブル名のペア、キャッシュされたユーザー コントロールが依存するを識別する区切り文字列を取得します。</summary>
+        <value>一連のユーザー コントロールのキャッシュ エントリが依存するデータベースとテーブルの名前を識別する区切り文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PartialCachingAttribute.SqlDependency%2A>データベース、構成で SQL Server のキャッシュ依存の名前に従ってテーブル名を識別する文字列 (通常を使用して追加、`sqlcachedependency`構成要素)。 SQL Server 2005 を使用する場合は、設定、<xref:System.Web.UI.PartialCachingAttribute.SqlDependency%2A>プロパティを"CommandNotification"は、現在の ASP.NET ページのコンテキスト内で発行されたすべての SQL コマンドの行レベルの依存関係を作成するように指示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByControls">
+      <MemberSignature Language="C#" Value="public string VaryByControls { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByControls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PartialCachingAttribute.VaryByControls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力キャッシュを使用してユーザー コントロールを変更するユーザー コントロールのプロパティの一覧を取得します。</summary>
+        <value>ユーザー コントロールのプロパティの一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示していますが、どのように<xref:System.Web.UI.PartialCachingAttribute.%23ctor%28System.Int32%2CSystem.String%2CSystem.String%2CSystem.String%29>コンス トラクターは、ユーザー コントロールに適用できます。 ユーザー コントロールをキャッシュすることを示すために、20 秒間にキャッシュの存続期間を指定する、という名前のコントロールを指定する例では、コンス トラクターが使用される`state`ユーザー コントロールの出力を変更するためです。  
+  
+ [!code-csharp[PartialCachingAttribute_2_Resubmit#2](~/samples/snippets/csharp/VS_Snippets_WebNet/PartialCachingAttribute_2_Resubmit/CS/partialcache_1cs.ascx.cs#2)]
+ [!code-vb[PartialCachingAttribute_2_Resubmit#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PartialCachingAttribute_2_Resubmit/VB/partialcache_1vb.ascx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByCustom">
+      <MemberSignature Language="C#" Value="public string VaryByCustom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByCustom" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PartialCachingAttribute.VaryByCustom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー コントロールを変更するため、出力キャッシュに使用するカスタム文字列の一覧を取得します。</summary>
+        <value>カスタム文字列のリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、"browser"を指定すると、ユーザー コントロールはブラウザーの種類とメジャー バージョン番号が変更されます。 このプロパティを使用して、出力キャッシュは、コントロールのユーザーの応答を識別する値を拡張することができますも。  
+  
+   
+  
+## Examples  
+ 次のコード例を示していますが、どのように<xref:System.Web.UI.PartialCachingAttribute.%23ctor%28System.Int32%2CSystem.String%2CSystem.String%2CSystem.String%29>コンス トラクターは、ユーザー コントロールに適用できます。 例では、ユーザー コントロールをキャッシュすることを示すために、キャッシュ エントリは、ブラウザーの種類とメジャー バージョン番号に依存することを指定して、コンス トラクターが使用されます。  
+  
+ [!code-csharp[PartialCachingAttribute_4#2](~/samples/snippets/csharp/VS_Snippets_WebNet/PartialCachingAttribute_4/CS/partialcache_3cs.ascx.cs#2)]
+ [!code-vb[PartialCachingAttribute_4#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PartialCachingAttribute_4/VB/partialcache_3vb.ascx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByParams">
+      <MemberSignature Language="C#" Value="public string VaryByParams { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByParams" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PartialCachingAttribute.VaryByParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリ文字列またはフォームの一覧を取得<see langword="POST" />パラメーター ユーザー コントロールを変更するため、出力キャッシュに使用します。</summary>
+        <value>クエリ文字列またはフォームの一覧<see langword="POST" />パラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示していますが、どのように<xref:System.Web.UI.PartialCachingAttribute.%23ctor%28System.Int32%2CSystem.String%2CSystem.String%2CSystem.String%29>コンス トラクターは、ユーザー コントロールに適用できます。 例では、キャッシュ エントリが依存しているパラメーターを指定して、ユーザー コントロールをキャッシュできることを示すために、コンス トラクターが使用されます。  
+  
+ [!code-csharp[PartialCachingAttribute_3#2](~/samples/snippets/csharp/VS_Snippets_WebNet/PartialCachingAttribute_3/CS/partialcache_2cs.ascx.cs#2)]
+ [!code-vb[PartialCachingAttribute_3#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PartialCachingAttribute_3/VB/partialcache_2vb.ascx.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

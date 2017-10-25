@@ -1,0 +1,381 @@
+<Type Name="ActiveDirectoryRole" FullName="System.Workflow.Activities.ActiveDirectoryRole">
+  <TypeSignature Language="C#" Value="public sealed class ActiveDirectoryRole : System.Workflow.Activities.WorkflowRole, IDisposable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ActiveDirectoryRole extends System.Workflow.Activities.WorkflowRole implements class System.IDisposable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.ActiveDirectoryRole" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Activities.WorkflowRole</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows Workflow Foundation ホスト環境の Active Directory ロールを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ 通常は、Active Directory を使用して組織の人事情報を格納します。 <xref:System.Workflow.Activities.ActiveDirectoryRole> の主な目的は、ビジネス上の理由でこうした組織情報をクエリすることです。  
+  
+ Active Directory ロールは、通常、組織のコンテキスト内の職務、役職、または職能に対応します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetAllReports">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.ActiveDirectoryRole GetAllReports ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Activities.ActiveDirectoryRole GetAllReports() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRole.GetAllReports" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.ActiveDirectoryRole</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のロールに直接または間接的に従属するすべてのロールを格納している <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> を返します。</summary>
+        <returns>現在のロールに直接または間接的に従属するすべてのロールを格納している <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.ActiveDirectoryRole.GetAllReports%2A> は、現在のノードの下にあるすべてのノードを返します。 現在のノードのすぐ下にあるノードだけを返すには、<xref:System.Workflow.Activities.ActiveDirectoryRole.GetDirectReports%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectReports">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.ActiveDirectoryRole GetDirectReports ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Activities.ActiveDirectoryRole GetDirectReports() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRole.GetDirectReports" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.ActiveDirectoryRole</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のロールに直接従属するすべてのロールを格納している <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> を返します。</summary>
+        <returns>現在のロールに直接従属するすべてのロールを格納している <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.ActiveDirectoryRole.GetDirectReports%2A> は、現在のノードのすぐ下にあるノードだけを返します。 現在のノードの下にあるすべてのノードを返すには、<xref:System.Workflow.Activities.ActiveDirectoryRole.GetAllReports%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntries">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.DirectoryServices.DirectoryEntry&gt; GetEntries ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.ICollection`1&lt;class System.DirectoryServices.DirectoryEntry&gt; GetEntries() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRole.GetEntries" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.DirectoryServices.DirectoryEntry&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.DirectoryServices.DirectoryEntry" /> に関連付けられたすべての <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> オブジェクトを格納しているジェネリック コレクションを返します。</summary>
+        <returns>現在の <see cref="T:System.DirectoryServices.DirectoryEntry" /> に関連付けられた <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> のジェネリック コレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ロールは、セキュリティ オブジェクトの一般的なコレクションです。 そのため、ロールには複数の ID を格納でき、たとえば、<xref:System.Workflow.Activities.ActiveDirectoryRole.GetEntries%2A> を使用して、そのロールに関連付けられたすべてのディレクトリ オブジェクトを返すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIdentities">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IList&lt;string&gt; GetIdentities ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IList`1&lt;string&gt; GetIdentities() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRole.GetIdentities" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> に関連付けられた Windows NT アカウントのジェネリック リストを取得します。</summary>
+        <returns><see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> に関連付けられた Windows NT アカウントを表す値のジェネリック リスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.ActiveDirectoryRole.GetIdentities%2A> は、<xref:System.Security.Principal.SecurityIdentifier> に関連付けられたすべての <xref:System.Workflow.Activities.ActiveDirectoryRole> オブジェクトを取得し、その各オブジェクトを文字列値に変換します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetManager">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.ActiveDirectoryRole GetManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Activities.ActiveDirectoryRole GetManager() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRole.GetManager" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.ActiveDirectoryRole</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> のマネージャーに関する情報を格納している Active Directory ロールを返します。</summary>
+        <returns>現在のロールのマネージャーに関する情報を格納している <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.ActiveDirectoryRole.GetManager%2A> は、現在のロールの直属のマネージャーを返します。 現在のノードの上にあるすべてのロールを返すには、<xref:System.Workflow.Activities.ActiveDirectoryRole.GetManagerialChain%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetManagerialChain">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.ActiveDirectoryRole GetManagerialChain ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Activities.ActiveDirectoryRole GetManagerialChain() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRole.GetManagerialChain" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.ActiveDirectoryRole</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> に関連付けられたマネージャーのチェーンに関する情報を格納している Active Directory ロールを返します。</summary>
+        <returns>現在のロールに関連付けられたマネージャーのチェーンに関する情報を格納している <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.ActiveDirectoryRole.GetManagerialChain%2A> は、現在のロールの上にあるすべてのノードを返します。 現在のロールの直属のマネージャーだけを返すには、<xref:System.Workflow.Activities.ActiveDirectoryRole.GetManager%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPeers">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.ActiveDirectoryRole GetPeers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Activities.ActiveDirectoryRole GetPeers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRole.GetPeers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.ActiveDirectoryRole</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> のマネージャーによって管理されるすべてのディレクトリ操作に関する情報を格納している Active Directory ロールを返します。</summary>
+        <returns>現在の <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> のマネージャーによって管理されるすべてのディレクトリ操作に関する情報を格納している <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.Workflow.Activities.ActiveDirectoryRole> は、このロールのマネージャーによって管理されるすべてのオブジェクトからの情報を格納していますが、現在のロールからのこの情報は格納していません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSecurityIdentifiers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Security.Principal.SecurityIdentifier&gt; GetSecurityIdentifiers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Security.Principal.SecurityIdentifier&gt; GetSecurityIdentifiers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRole.GetSecurityIdentifiers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Security.Principal.SecurityIdentifier&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.Principal.SecurityIdentifier" /> に関連付けられた <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> オブジェクトのジェネリック リストを返します。</summary>
+        <returns>現在の <see cref="T:System.Security.Principal.SecurityIdentifier" /> に関連付けられた <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> オブジェクトのジェネリック リスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.ActiveDirectoryRole.GetSecurityIdentifiers%2A> は、<xref:System.DirectoryServices.DirectoryEntry> メソッドによって返される各 <xref:System.Workflow.Activities.ActiveDirectoryRole.GetEntries%2A> をチェックし、エントリの <xref:System.DirectoryServices.DirectoryEntry.Properties%2A> コレクションにセキュリティ識別子が存在するかどうかを確認します。 <xref:System.DirectoryServices.DirectoryEntry> にこのようなプロパティがある場合、<xref:System.Workflow.Activities.ActiveDirectoryRole.GetSecurityIdentifiers%2A> は、返すリストに <xref:System.Security.Principal.SecurityIdentifier> を追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludesIdentity">
+      <MemberSignature Language="C#" Value="public override bool IncludesIdentity (string identity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IncludesIdentity(string identity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRole.IncludesIdentity(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identity">検索対象の ID。</param>
+        <summary><see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> が指定された ID を格納しているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> に <paramref name="identity" /> が存在する場合は <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ロールは 1 つ以上のオブジェクトの汎化なので、1 つのロールによって複数の ID が記述される場合があります。 指定された ID がこのロールに含まれているかをテストするには、<xref:System.Workflow.Activities.ActiveDirectoryRole.IncludesIdentity%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ActiveDirectoryRole.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Active Directory ロール名を取得または設定します。</summary>
+        <value>Active Directory ロール名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この名前はロールを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootEntry">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntry RootEntry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.DirectoryEntry RootEntry" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ActiveDirectoryRole.RootEntry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> に関連付けられた Active Directory のルート ノードを取得します。</summary>
+        <value><see cref="T:System.DirectoryServices.DirectoryEntry" /> に関連付けられた Active Directory のルート ノードを表す <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルート エントリは、マネージャーのないロールのチェーンの上にあるロールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRole.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.Activities.ActiveDirectoryRole" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ActiveDirectoryRole.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化の対象 <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、ターゲット オブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.ActiveDirectoryRole.System%23Runtime%23Serialization%23ISerializable%23GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)> の実装によって、このオブジェクトをシリアル化することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

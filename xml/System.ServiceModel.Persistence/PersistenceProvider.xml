@@ -1,0 +1,603 @@
+<Type Name="PersistenceProvider" FullName="System.ServiceModel.Persistence.PersistenceProvider">
+  <TypeSignature Language="C#" Value="public abstract class PersistenceProvider : System.ServiceModel.Channels.CommunicationObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PersistenceProvider extends System.ServiceModel.Channels.CommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Persistence.PersistenceProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.WorkflowServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.CommunicationObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The WF3 types are deprecated.  Instead, please use the new WF4 types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての永続性サービスの永続化プロバイダーの派生元となる抽象基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、このタイプから派生したクラスを作成して、サードパーティ データベース、ファイル システム、またはリモートでアクセスされるストレージ システムなど、カスタム永続性ストアを使用する永続性サービスの永続化プロバイダーを作成することができます。 このタイプで永続化ストアとして Microsoft SQL Server を使用するシステム提供の実装を作成するには、<xref:System.ServiceModel.Persistence.SqlPersistenceProviderFactory> のトピックを参照してください。  
+  
+> [!NOTE]
+>  永続化プロバイダーの実装を生成する場合は、新しいプロバイダーのメソッド (<xref:System.ServiceModel.Persistence.PersistenceProvider.Load%2A> など) にあるスレッドの元の ID を保持することが重要です。 そうでない場合、操作が誤った ID の下で実行されるため、セキュリティの抜け道が生成される可能性があります。  
+  
+   
+  
+## Examples  
+ このタイプで永続化ストアとしてファイル システムを使用する実装については、DurableServiceFactory の SDK サンプルにある FilePersistenceProviderFactory.cs ファイルを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PersistenceProvider (Guid id);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.#ctor(System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="id">保存されているサービス状態データの一意の識別子。</param>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.ServiceModel.Persistence.PersistenceProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider> コンストラクターを使用する方法を次のコード例に示します。 このコード例は、FilePersistenceProviderFactory.cs ファイルから抜粋した DurableServiceFactory の SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]DurableServiceFactory の SDK サンプルです。  
+  
+ [!code-csharp[PersistenceProvider#0](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginCreate">
+      <MemberSignature Language="C#" Value="public abstract IAsyncResult BeginCreate (object instance, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginCreate(object instance, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.BeginCreate(System.Object,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">実際のインスタンスの状態。</param>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <param name="callback">操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">この特定の非同期操作を他の操作と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>派生クラスとして実装された場合、作成フェーズの開始を表します。 作成フェーズは、サービス インスタンス レコードが永続化ストアで最初に作成される場合に発生します。</summary>
+        <returns><see cref="M:System.ServiceModel.Persistence.PersistenceProvider.BeginCreate(System.Object,System.TimeSpan,System.AsyncCallback,System.Object)" /> 非同期メソッド呼び出しの状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.BeginCreate%2A> メソッドを実装する方法を次のコード例に示します。  
+  
+ [!code-csharp[PersistenceProvider#14](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginDelete">
+      <MemberSignature Language="C#" Value="public abstract IAsyncResult BeginDelete (object instance, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginDelete(object instance, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.BeginDelete(System.Object,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">実際のインスタンスの状態。</param>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <param name="callback">操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">この特定の非同期操作を他の操作と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>派生クラスとして実装された場合、削除フェーズの開始を表します。 削除フェーズは、サービス状態データが永続化ストアから永続的に削除した場合に発生します。</summary>
+        <returns><see cref="M:System.ServiceModel.Persistence.PersistenceProvider.BeginDelete(System.Object,System.TimeSpan,System.AsyncCallback,System.Object)" /> 非同期メソッド呼び出しの状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `BeginDelete` メソッドを実装する方法を次のコード例に示します。 このコード例は、FilePersistenceProviderFactory.cs ファイルから抜粋した DurableServiceFactory の SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]DurableServiceFactory の SDK サンプルです。  
+  
+ [!code-csharp[PersistenceProvider#6](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginLoad">
+      <MemberSignature Language="C#" Value="public abstract IAsyncResult BeginLoad (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginLoad(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.BeginLoad(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <param name="callback">操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">この特定の非同期操作を他の操作と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>派生クラスとして実装された場合、読み込みフェーズの開始を表します。 読み込みフェーズは、状態データが永続化ストアから永続化プロバイダーに読み込まれた場合に発生します。</summary>
+        <returns><see cref="M:System.ServiceModel.Persistence.PersistenceProvider.BeginLoad(System.TimeSpan,System.AsyncCallback,System.Object)" /> 非同期メソッド呼び出しの状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `BeginLoad` メソッドを実装する方法を次のコード例に示します。 このコード例は、FilePersistenceProviderFactory.cs ファイルから抜粋した DurableServiceFactory の SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]DurableServiceFactory の SDK サンプルです。  
+  
+ [!code-csharp[PersistenceProvider#7](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginLoadIfChanged">
+      <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginLoadIfChanged (TimeSpan timeout, object instanceToken, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginLoadIfChanged(valuetype System.TimeSpan timeout, object instanceToken, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.BeginLoadIfChanged(System.TimeSpan,System.Object,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="instanceToken" Type="System.Object" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <param name="instanceToken">直前の <see cref="M:System.ServiceModel.Persistence.PersistenceProvider.Create(System.Object,System.TimeSpan)" /> または <see cref="M:System.ServiceModel.Persistence.PersistenceProvider.Update(System.Object,System.TimeSpan)" /> から返されたトークン。呼び出し元で保持されている現在の状態を表します。</param>
+        <param name="callback">操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">この特定の非同期操作を他の操作と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>派生クラスとして実装された場合、LoadIfChanged フェーズの開始を表します。 LoadIfChanged フェーズは、状態データが永続化ストアから永続化プロバイダーに読み込まれ、永続化ストアの状態データが変更されている場合に発生します。</summary>
+        <returns><see cref="M:System.ServiceModel.Persistence.PersistenceProvider.BeginLoadIfChanged(System.TimeSpan,System.Object,System.AsyncCallback,System.Object)" /> 非同期メソッド呼び出しの状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.BeginLoadIfChanged%2A> メソッドを実装する方法を次のコード例に示します。  
+  
+ [!code-csharp[PersistenceProvider#11](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginUpdate">
+      <MemberSignature Language="C#" Value="public abstract IAsyncResult BeginUpdate (object instance, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginUpdate(object instance, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.BeginUpdate(System.Object,System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">実際のインスタンスの状態。</param>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <param name="callback">操作が完了した時点で呼び出すメソッド。</param>
+        <param name="state">この特定の非同期操作を他の操作と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>派生クラスとして実装された場合、更新フェーズの開始を表します。 更新フェーズは、サービス状態データが永続化ストアで更新しる場合に発生します。</summary>
+        <returns><see cref="M:System.ServiceModel.Persistence.PersistenceProvider.BeginUpdate(System.Object,System.TimeSpan,System.AsyncCallback,System.Object)" /> 非同期メソッド呼び出しの状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.BeginUpdate%2A> メソッドを実装する方法を次のコード例に示します。  
+  
+ [!code-csharp[PersistenceProvider#17](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public abstract object Create (object instance, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Create(object instance, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.Create(System.Object,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="instance">実際のインスタンスの状態。</param>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <summary>派生クラスとして実装された場合、永続化ストアでサービス状態レコードを作成します。</summary>
+        <returns>保存された状態に対応しているインスタンス トークン。 これを <see cref="M:System.ServiceModel.Persistence.PersistenceProvider.LoadIfChanged(System.TimeSpan,System.Object,System.Object@)" /> に渡して、永続化ストアの状態が Create が呼び出されたときの状態と異なっていないかどうかを判別できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.Create%2A> メソッドを実装する方法を次のコード例に示します。  
+  
+ [!code-csharp[PersistenceProvider#15](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public abstract void Delete (object instance, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Delete(object instance, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.Delete(System.Object,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="instance">実際のインスタンスの状態。</param>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <summary>派生クラスとして実装された場合、永続化ストアからサービス状態情報を完全に削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.Delete%2A> メソッドを実装する方法を次のコード例に示します。 このコード例は、FilePersistenceProviderFactory.cs ファイルから抜粋した DurableServiceFactory の SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]DurableServiceFactory の SDK サンプルです。  
+  
+ [!code-csharp[PersistenceProvider#9](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndCreate">
+      <MemberSignature Language="C#" Value="public abstract object EndCreate (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object EndCreate(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.EndCreate(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">操作の結果への参照。</param>
+        <summary>派生クラスとして実装された場合、作成フェーズの終了を表します。 作成フェーズは、サービス状態レコードが永続化ストアで最初に作成される場合に発生します。</summary>
+        <returns>保存された状態に対応しているインスタンス トークン。 これを <see cref="M:System.ServiceModel.Persistence.PersistenceProvider.LoadIfChanged(System.TimeSpan,System.Object,System.Object@)" /> に渡して、永続化ストアの状態が Create が呼び出されたときの状態と異なっていないかどうかを判別できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.EndCreate%2A> メソッドを実装する方法を次のコード例に示します。  
+  
+ [!code-csharp[PersistenceProvider#16](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndDelete">
+      <MemberSignature Language="C#" Value="public abstract void EndDelete (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndDelete(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.EndDelete(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">操作の結果への参照。</param>
+        <summary>派生クラスとして実装された場合、削除フェーズの終了を表します。 削除フェーズは、状態データが永続化ストアから永続的に削除しる場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.EndDelete%2A> メソッドを実装する方法を次のコード例に示します。 このコード例は、FilePersistenceProviderFactory.cs ファイルから抜粋した DurableServiceFactory の SDK サンプルの一部です。 詳細については、DurableServiceFactory の SDK サンプルを参照してください。  
+  
+ [!code-csharp[PersistenceProvider#5](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndLoad">
+      <MemberSignature Language="C#" Value="public abstract object EndLoad (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object EndLoad(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.EndLoad(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">操作の結果への参照。</param>
+        <summary>派生クラスとして実装された場合、読み込みフェーズの終了を表します。 読み込みフェーズは、状態データが永続化ストアから永続化プロバイダーに読み込まれた場合に発生します。</summary>
+        <returns>サービス状態情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `EndLoad` メソッドを使用する方法を次のコード例に示します。 このコード例は、FilePersistenceProviderFactory.cs ファイルから抜粋した DurableServiceFactory の SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]DurableServiceFactory の SDK サンプルです。  
+  
+ [!code-csharp[PersistenceProvider#1](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndLoadIfChanged">
+      <MemberSignature Language="C#" Value="public virtual bool EndLoadIfChanged (IAsyncResult result, out object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool EndLoadIfChanged(class System.IAsyncResult result, [out] object&amp; instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.EndLoadIfChanged(System.IAsyncResult,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+        <Parameter Name="instance" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="result">操作の結果への参照。</param>
+        <param name="instance">実際のインスタンスの状態。</param>
+        <summary>派生クラスとして実装された場合、LoadIfChanged フェーズの終了を表します。 LoadIfChanged フェーズは、状態データが永続化ストアから永続化プロバイダーに読み込まれ、永続化ストアの状態データが変更されている場合に発生します。</summary>
+        <returns>
+          <see langword="true" />場合、インスタンス<see langword="out" />パラメーターが、永続化ストアから最新のコピーに設定されています。<see langword="false" />場合は、ローカルにキャッシュされたが既に最新です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.EndLoadIfChanged%2A> メソッドを実装する方法を次のコード例に示します。  
+  
+ [!code-csharp[PersistenceProvider#12](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndUpdate">
+      <MemberSignature Language="C#" Value="public abstract object EndUpdate (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object EndUpdate(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.EndUpdate(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">操作の結果への参照。</param>
+        <summary>更新フェーズの終了を表します。 更新フェーズは、サービス状態レコードが永続化ストアで更新される場合に発生します。</summary>
+        <returns>保存された状態に対応しているインスタンス トークン。 これを <see cref="M:System.ServiceModel.Persistence.PersistenceProvider.LoadIfChanged(System.TimeSpan,System.Object,System.Object@)" /> に渡して、永続化ストアの状態が Create が呼び出されたときの状態と異なっていないかどうかを判別できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.EndUpdate%2A> メソッドを実装する方法を次のコード例に示します。  
+  
+ [!code-csharp[PersistenceProvider#19](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public Guid Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Id" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Persistence.PersistenceProvider.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスに関連付けられている <see cref="T:System.Guid" /> を表します。</summary>
+        <value>このインスタンスに関連付けられている GUID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.Id%2A> プロパティを使用する方法を次のコード例に示します。  
+  
+ [!code-csharp[PersistenceProvider#10](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public abstract object Load (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Load(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.Load(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <summary>派生クラスとして実装された場合、永続化ストアからサービス状態情報を読み込みます。</summary>
+        <returns>この読み込まれたインスタンスの状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.Load%2A> メソッドのセキュリティ トークンに行われた変更が元の状態に戻らない場合は、メッセージ処理の残りの部分は有効のままになります。 つまり、サービス操作のユーザー コード、ディスパッチャーを介した応答メッセージ パスだけでなく、どのエラー パスでも、変更されたセキュリティ コンテキストで実行されます。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.Load%2A> メソッドを実装する方法を次のコード例に示します。 このコード例は、FilePersistenceProviderFactory.cs ファイルから抜粋した DurableServiceFactory の SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]DurableServiceFactory の SDK サンプルです。  
+  
+ [!code-csharp[PersistenceProvider#3](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadIfChanged">
+      <MemberSignature Language="C#" Value="public virtual bool LoadIfChanged (TimeSpan timeout, object instanceToken, out object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool LoadIfChanged(valuetype System.TimeSpan timeout, object instanceToken, [out] object&amp; instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.LoadIfChanged(System.TimeSpan,System.Object,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="instanceToken" Type="System.Object" />
+        <Parameter Name="instance" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <param name="instanceToken">呼び出し元で保持される現在の状態を表す直前の <see cref="M:System.ServiceModel.Persistence.PersistenceProvider.Create(System.Object,System.TimeSpan)" /> または <see cref="M:System.ServiceModel.Persistence.PersistenceProvider.Update(System.Object,System.TimeSpan)" /> で返されるトークン。</param>
+        <param name="instance">実際のインスタンスの状態。</param>
+        <summary>派生クラスとして実装された場合、そのデータが変更されていれば永続化ストアからサービス状態情報を読み込みます。</summary>
+        <returns>
+          <see langword="true" />場合、 <paramref name="instance" /> <see langword="out" />パラメーターが、永続化ストアから最新のコピーに設定されています。<see langword="false" />ローカルにキャッシュされた状態が最新の状態で既に場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.LoadIfChanged%2A> メソッドを実装する方法を次のコード例に示します。  
+  
+ [!code-csharp[PersistenceProvider#13](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public abstract object Update (object instance, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Update(object instance, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Persistence.PersistenceProvider.Update(System.Object,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="instance">実際のインスタンスの状態。</param>
+        <param name="timeout">永続化プロバイダーがこの試行を中止してからの期間。</param>
+        <summary>派生クラスとして実装された場合、永続化ストアでサービス状態レコードを更新します。</summary>
+        <returns>保存された状態に対応しているインスタンス トークン。 これを <see cref="M:System.ServiceModel.Persistence.PersistenceProvider.LoadIfChanged(System.TimeSpan,System.Object,System.Object@)" /> に渡して、永続化ストアの状態が Create が呼び出されたときの状態と異なっていないかどうかを判別できます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Persistence.PersistenceProvider.Update%2A> メソッドを実装する方法を次のコード例に示します。  
+  
+ [!code-csharp[PersistenceProvider#18](~/samples/snippets/csharp/VS_Snippets_CFX/persistenceprovider/cs/filepersistenceprovider.cs#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

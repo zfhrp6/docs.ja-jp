@@ -1,0 +1,154 @@
+<Type Name="ConnectionManagementElement" FullName="System.Net.Configuration.ConnectionManagementElement">
+  <TypeSignature Language="C#" Value="public sealed class ConnectionManagementElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ConnectionManagementElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Configuration.ConnectionManagementElement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>リモート コンピューターへの接続の最大数を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスに対応して、 [&lt;追加&gt;connectionManagement (ネットワーク設定) の要素](~/docs/framework/configure-apps/file-schema/network/add-element-for-connectionmanagement-network-settings.md)構成要素。  
+  
+ このクラスは、リモート コンピューターへの同時接続の最大数を指定する使用されます。  
+  
+ このクラスは、構成ファイルに格納できる情報にプログラムでアクセスを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionManagementElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Configuration.ConnectionManagementElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Configuration.ConnectionManagementElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionManagementElement (string address, int maxConnection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string address, int32 maxConnection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Configuration.ConnectionManagementElement.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.String" />
+        <Parameter Name="maxConnection" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="address">リモート コンピューターのアドレスを識別する文字列。</param>
+        <param name="maxConnection">許可される接続の最大数を識別する整数<c>アドレス</c>ローカル コンピューターからです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Configuration.ConnectionManagementElement" />指定されたアドレスと接続の制限の情報を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを設定、<xref:System.Net.Configuration.ConnectionManagementElement.Address%2A>プロパティを`address`と<xref:System.Net.Configuration.ConnectionManagementElement.MaxConnection%2A>プロパティを`maxConnection`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public string Address { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Address" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.ConnectionManagementElement.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("address", Options=System.Configuration.ConfigurationPropertyOptions.IsRequired | System.Configuration.ConfigurationPropertyOptions.IsKey)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリモート コンピューターのアドレスを設定します。</summary>
+        <value>IP アドレスまたは DNS 名を記述する正規表現を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アスタリスク (*) を使用して指定されていないコンピューターの接続の既定の数を設定するこのプロパティを設定することができます。  
+  
+ このプロパティは、1 つまたは複数のリモート コンピューターを識別し、<xref:System.Net.Configuration.ConnectionManagementElement.MaxConnection%2A>プロパティは、ローカル コンピューターとリモート コンピューター間でどのように多数の同時接続が許可されているを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxConnection">
+      <MemberSignature Language="C#" Value="public int MaxConnection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConnection" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.ConnectionManagementElement.MaxConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxconnection", DefaultValue=Mono.Cecil.CustomAttributeArgument, Options=System.Configuration.ConfigurationPropertyOptions.IsRequired)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリモート コンピューターに可能な接続の最大数を設定します。</summary>
+        <value>接続の最大数を指定する整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ローカル コンピューターとリモート コンピューターの間でどのように多数の同時接続が許可されているを指定します。 使用して、リモート コンピューターを指定、<xref:System.Net.Configuration.ConnectionManagementElement.Address%2A>プロパティです。  
+  
+ <xref:System.Net.Configuration.ConnectionManagementElement.MaxConnection%2A>プロパティはごと<xref:System.Net.WebRequest.ConnectionGroupName%2A?displayProperty=nameWithType>です。 アプリケーションに変化がない場合<xref:System.Net.WebRequest.ConnectionGroupName%2A?displayProperty=nameWithType>、既定値から、<xref:System.Net.Configuration.ConnectionManagementElement.MaxConnection%2A>プロパティ全体のアプリケーション ドメインに適用されます。 1 つのアプリケーション ドメインが、アプリケーションで実行されている場合のみ、<xref:System.Net.Configuration.ConnectionManagementElement.MaxConnection%2A>プロパティの設定は、アプリケーション全体です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.ConnectionManagementElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

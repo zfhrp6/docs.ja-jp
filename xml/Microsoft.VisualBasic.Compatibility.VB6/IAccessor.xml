@@ -1,0 +1,176 @@
+<Type Name="IAccessor" FullName="Microsoft.VisualBasic.Compatibility.VB6.IAccessor">
+  <TypeSignature Language="C#" Value="public interface IAccessor" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAccessor" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.IAccessor" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("0c733a8c-2a1c-11ce-ade5-00aa0044773d")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>OLE DB の実装を提供<see langword="IAccessor" />Visual Basic 6.0 からアップグレードしたアプリケーションで使用するためのインターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddRefAccessor">
+      <MemberSignature Language="C#" Value="public void AddRefAccessor (int hAccessor, out int cRefCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void AddRefAccessor([in]int32 hAccessor, [out] int32&amp; cRefCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IAccessor.AddRefAccessor(System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hAccessor" Type="System.Int32" />
+        <Parameter Name="cRefCount" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="hAccessor">参照カウントをインクリメントするアクセサーのハンドル。</param>
+        <param name="cRefCount">アクセサー ハンドルの参照カウントを返すメモリへのポインター。 場合<c>cRefCount</c> null ポインター、参照カウントは返されません。</param>
+        <summary>既存のアクセサーには、参照カウントを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessor">
+      <MemberSignature Language="C#" Value="public void CreateAccessor (int accessorFlags, int cBindings, Microsoft.VisualBasic.Compatibility.VB6.DBBINDING[] bindings, int cbRowSize, out int hAccessor, IntPtr pBindStatus);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void CreateAccessor([in]int32 accessorFlags, [in]int32 cBindings, [in]valuetype Microsoft.VisualBasic.Compatibility.VB6.DBBINDING[] bindings, [in]int32 cbRowSize, [out] int32&amp; hAccessor, [in]native int pBindStatus) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IAccessor.CreateAccessor(System.Int32,System.Int32,Microsoft.VisualBasic.Compatibility.VB6.DBBINDING[],System.Int32,System.Int32@,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="accessorFlags" Type="System.Int32" />
+        <Parameter Name="cBindings" Type="System.Int32" />
+        <Parameter Name="bindings" Type="Microsoft.VisualBasic.Compatibility.VB6.DBBINDING[]" />
+        <Parameter Name="cbRowSize" Type="System.Int32" />
+        <Parameter Name="hAccessor" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="pBindStatus" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="accessorFlags">アクセサーとその使用方法のプロパティを記述するビットマスク。</param>
+        <param name="cBindings">アクセサー内のバインドの数。</param>
+        <param name="bindings">配列<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.DBBINDING" />構造体。</param>
+        <param name="cbRowSize">コンシューマーのバッファー内のパラメーターまたは条件の値の 1 つのセットに割り当てられたバイト数。</param>
+        <param name="hAccessor">作成したアクセサーのハンドルを返すメモリへのポインター。</param>
+        <param name="pBindStatus">配列へのポインター<see langword="DBBINDSTATUS" />値。</param>
+        <summary>バインドのセットからアクセサーを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBindings">
+      <MemberSignature Language="C#" Value="public void GetBindings (int hAccessor, out int accessorFlags, out int cBindings, out IntPtr rgBindings);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void GetBindings([in]int32 hAccessor, [out] int32&amp; accessorFlags, [out] int32&amp; cBindings, [out] native int&amp; rgBindings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IAccessor.GetBindings(System.Int32,System.Int32@,System.Int32@,System.IntPtr@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hAccessor" Type="System.Int32" />
+        <Parameter Name="accessorFlags" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="cBindings" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="rgBindings" Type="System.IntPtr&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="hAccessor">バインディングを返すアクセサーのハンドル。</param>
+        <param name="accessorFlags">アクセサーとどのように使用するものではのプロパティを説明するビットマスクを返すメモリへのポインター。</param>
+        <param name="cBindings">アクセサー内のバインドの数を返すメモリへのポインター。</param>
+        <param name="rgBindings">配列を返すメモリへのポインター<see langword="DBBINDSTATUS" />構造体。</param>
+        <summary>アクセサーのバインディングを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseAccessor">
+      <MemberSignature Language="C#" Value="public void ReleaseAccessor (int hAccessor, out int cRefCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void ReleaseAccessor([in]int32 hAccessor, [out] int32&amp; cRefCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IAccessor.ReleaseAccessor(System.Int32,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hAccessor" Type="System.Int32" />
+        <Parameter Name="cRefCount" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="hAccessor">解放するアクセサーのハンドル。</param>
+        <param name="cRefCount">アクセサー ハンドルの残りの参照カウントを返すメモリへのポインター。</param>
+        <summary>アクセサーを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

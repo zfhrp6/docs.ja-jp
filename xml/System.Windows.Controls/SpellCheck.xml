@@ -1,0 +1,340 @@
+<Type Name="SpellCheck" FullName="System.Windows.Controls.SpellCheck">
+  <TypeSignature Language="C#" Value="public sealed class SpellCheck" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SpellCheck extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.SpellCheck" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>など、テキスト編集コントロールにリアルタイムのスペル チェック機能の提供<see cref="T:System.Windows.Controls.TextBox" />と<see cref="T:System.Windows.Controls.RichTextBox" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スペル チェックを有効にするには設定、<xref:System.Windows.Controls.SpellCheck.IsEnabled%2A?displayProperty=nameWithType>プロパティを`true`テキスト編集コントロールにします。 このスペル チェックを有効にすると、スペル ミスに下線を付ける赤色の波線を使用して、次の図に示すようにします。 スペル チェック機能がサポートされてのみ WPF には、既定の辞書が用意されています。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]WPF では、英語、フランス語、ドイツ語、およびスペイン語の辞書が用意されています。  
+  
+ ![スペル &#45; を含む Textbox チェック](~/add/media/editing-textbox-with-spellchecking.png "スペル チェックを含む Textbox")  
+  
+ カスタム辞書を追加するには、辞書ファイルの場所を追加、<xref:System.Windows.Controls.SpellCheck.CustomDictionaries%2A>コレクション。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CustomDictionaries">
+      <MemberSignature Language="C#" Value="public System.Collections.IList CustomDictionaries { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList CustomDictionaries" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.SpellCheck.CustomDictionaries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>辞書のコレクションにカスタムのスペル チェックに使用されるファイルの場所を取得します。</summary>
+        <value>辞書ファイルの場所のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー辞書は、辞書のファイルは、.lex 拡張子を持つテキスト ファイルを使用します。 辞書ファイルの各行には、正当なスペルとして承認された 1 つの単語が含まれています。 ファイルの最初の行には、辞書に適用されるロケール識別子 (LCID) を指定できます。 ロケールが指定されていない場合は、すべての言語にディクショナリが適用されます。 詳細については、次を参照してください。[ロケール Id](http://go.microsoft.com/fwlink/?LinkId=165561)です。 次の例では、英語の辞書ファイルの最初の数行を示します。  
+  
+```  
+#LID 1033  
+TextBlock  
+TextBox  
+ListBox  
+```  
+  
+ 1 つまたは複数のカスタム辞書を指定する、<xref:System.Windows.Controls.TextBox>または任意のクラスから派生した<xref:System.Windows.Controls.Primitives.TextBoxBase>、ファイルの URI を追加することで、辞書ファイルの場所を指定、<xref:System.Windows.Controls.SpellCheck.CustomDictionaries%2A>コレクション。  
+  
+> [!NOTE]
+>  使用して<xref:System.Collections.IList.Insert%2A>にファイルを追加する、<xref:System.Windows.Controls.SpellCheck.CustomDictionaries%2A>コレクション、例外が発生します。 代わりに、<xref:System.Collections.IList.Add%2A>と<xref:System.Collections.IList.Remove%2A>コレクションを更新します。  
+  
+ 辞書のファイルを含めることができます、ローカル コンピューターにインストールされているコンテンツのファイルまたはローカルにコンパイルされたリソース ファイルとして、アプリケーションでアセンブリを参照します。 パック Uri を使用してファイルを参照することができます。 詳細については、「[WPF におけるパック URI](~/docs/framework/wpf/app-development/pack-uris-in-wpf.md)」を参照してください。  
+  
+ スペル チェックを有効にするには設定、<xref:System.Windows.Controls.SpellCheck.IsEnabled%2A?displayProperty=nameWithType>プロパティを`true`上、<xref:System.Windows.Controls.TextBox>または任意のクラスから派生した<xref:System.Windows.Controls.Primitives.TextBoxBase>です。 そのため、すべてのユーザー辞書<xref:System.Windows.Controls.TextBox>既定スペル チェック機能と共に使用されます。 スペル チェックの詳細については、次を参照してください。<xref:System.Windows.Controls.SpellCheck>です。  
+  
+   
+  
+## Examples  
+ 次の例を次の 2 つのカスタム辞書を追加する方法を示しています、<xref:System.Windows.Controls.RichTextBox>です。 XAML では、最初のカスタム辞書 (customwords.lex) が追加されます。 ファイルは、コンテンツ ファイルとしてアプリケーションに含まれ、出力ディレクトリにコピーします。 使用する、<xref:System.Uri>要素、システム名前空間を含める必要があります。  
+  
+ `xmlns:sys="clr-namespace:System;assembly=System"`  
+  
+ 2 番目のカスタム辞書 (customwords2.lex) が追加された、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント ハンドラー。 ファイルは、リソース ファイルとして含まれており、WPFCustomDictionary をという名前のアプリケーション アセンブリにコンパイルします。  
+  
+ [!code-xaml[WpfCustomDictionary#1](~/samples/snippets/csharp/VS_Snippets_Wpf/wpfcustomdictionary/cs/window1.xaml#1)]  
+  
+ [!code-csharp[WpfCustomDictionary#2](~/samples/snippets/csharp/VS_Snippets_Wpf/wpfcustomdictionary/cs/window1.xaml.cs#2)]
+ [!code-vb[WpfCustomDictionary#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/wpfcustomdictionary/vb/mainwindow.xaml.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomDictionariesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CustomDictionariesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CustomDictionariesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.SpellCheck.CustomDictionariesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.SpellCheck.CustomDictionaries" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomDictionaries">
+      <MemberSignature Language="C#" Value="public static System.Collections.IList GetCustomDictionaries (System.Windows.Controls.Primitives.TextBoxBase textBoxBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IList GetCustomDictionaries(class System.Windows.Controls.Primitives.TextBoxBase textBoxBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.SpellCheck.GetCustomDictionaries(System.Windows.Controls.Primitives.TextBoxBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textBoxBase" Type="System.Windows.Controls.Primitives.TextBoxBase" />
+      </Parameters>
+      <Docs>
+        <param name="textBoxBase">辞書ファイルのコレクションを取得するテキスト編集コントロール。</param>
+        <summary>指定されたテキスト編集コントロールでのカスタムのスペル チェックに使用される辞書のファイルの場所のコレクションを取得します。</summary>
+        <returns>辞書ファイルの場所のコレクションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー辞書は、辞書のファイルは、.lex 拡張子を持つ単純なテキスト ファイルを使用します。 辞書ファイルの各行には、正当なスペルとして承認された 1 つの単語が含まれています。 ファイルの最初の行には、辞書に適用されるロケール識別子 (LCID) を指定できます。 ロケールが指定されていない場合は、すべての言語にディクショナリが適用されます。 詳細については、次を参照してください。[ロケール Id](http://go.microsoft.com/fwlink/?LinkId=165561)です。 次の例では、英語の辞書ファイルの最初の数行を示します。  
+  
+```  
+#LID 1033  
+TextBlock  
+TextBox  
+ListBox  
+```  
+  
+ 1 つまたは複数のカスタム辞書を指定する、<xref:System.Windows.Controls.TextBox>または任意のクラスから派生した<xref:System.Windows.Controls.Primitives.TextBoxBase>、ファイルの URI を追加することで、辞書ファイルの場所を指定、<xref:System.Collections.IList>によって返される、<xref:System.Windows.Controls.SpellCheck.GetCustomDictionaries%2A>メソッドです。  
+  
+ スペル チェックを有効にするには設定、<xref:System.Windows.Controls.SpellCheck.IsEnabled%2A?displayProperty=nameWithType>プロパティを`true`上、<xref:System.Windows.Controls.TextBox>または任意のクラスから派生した<xref:System.Windows.Controls.Primitives.TextBoxBase>です。 そのため、すべてのユーザー辞書<xref:System.Windows.Controls.TextBox>既定スペル チェック機能と共に使用されます。 スペル チェックの詳細については、次を参照してください。<xref:System.Windows.Controls.SpellCheck>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="textBoxBase" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsEnabled">
+      <MemberSignature Language="C#" Value="public static bool GetIsEnabled (System.Windows.Controls.Primitives.TextBoxBase textBoxBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsEnabled(class System.Windows.Controls.Primitives.TextBoxBase textBoxBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.SpellCheck.GetIsEnabled(System.Windows.Controls.Primitives.TextBoxBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textBoxBase" Type="System.Windows.Controls.Primitives.TextBoxBase" />
+      </Parameters>
+      <Docs>
+        <param name="textBoxBase">テキスト編集コントロールを確認します。 コントロールの例は、<see cref="T:System.Windows.Controls.TextBox" />と<see cref="T:System.Windows.Controls.RichTextBox" />です。</param>
+        <summary>指定されたテキスト編集コントロールでスペル チェッカーが有効になっているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />テキスト編集コントロールでスペル チェッカーが有効になっている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="textBoxBase" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public bool IsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.SpellCheck.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スペル チェックがなどこのテキスト編集コントロールで有効にするかどうかを決定する値の設定を取得または<see cref="T:System.Windows.Controls.TextBox" />または<see cref="T:System.Windows.Controls.RichTextBox" />です。</summary>
+        <value>
+          <see langword="true" />コントロールでスペル チェッカーが有効になっている場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この依存関係プロパティには、特殊な書き込み専用添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロパティを設定するための構文は`<` *textBoxBaseClass* **SpellCheck.IsEnabled**`="`*boolValue*`" .../>`ここで、 *textBoxBaseClass*から派生したクラスのオブジェクトの要素は、 <xref:System.Windows.Controls.Primitives.TextBoxBase>、および*boolValue*か`true`または`false`(大文字と小文字)。 プロパティを設定すると、コードで添付プロパティとしてを参照してください、<xref:System.Windows.Controls.SpellCheck.SetIsEnabled%2A>メソッドです。 一致がない`GetIsEnabled`アクセサー。 値を取得するには、現在を取得<xref:System.Windows.Controls.SpellCheck>オブジェクトから、<xref:System.Windows.Controls.Primitives.TextBoxBase.SpellCheck%2A?displayProperty=nameWithType>プロパティの値を取得し、<xref:System.Windows.Controls.SpellCheck.IsEnabled%2A>からプロパティ<xref:System.Windows.Controls.SpellCheck>です。  
+  
+<a name="xamlTextUsage_IsEnabled"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 「解説」を参照してください。  
+  
+<a name="dependencyPropertyInfo_IsEnabled"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.SpellCheck.IsEnabledProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.SpellCheck.IsEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.SpellCheck.IsEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsEnabled">
+      <MemberSignature Language="C#" Value="public static void SetIsEnabled (System.Windows.Controls.Primitives.TextBoxBase textBoxBase, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIsEnabled(class System.Windows.Controls.Primitives.TextBoxBase textBoxBase, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.SpellCheck.SetIsEnabled(System.Windows.Controls.Primitives.TextBoxBase,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textBoxBase" Type="System.Windows.Controls.Primitives.TextBoxBase" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="textBoxBase">スペル チェックを有効または無効にするテキスト編集コントロール。 コントロールの例は、<see cref="T:System.Windows.Controls.TextBox" />と<see cref="T:System.Windows.Controls.RichTextBox" />です。</param>
+        <param name="value">テキスト編集コントロールでスペル チェックを有効にするかどうかを指定するブール値。</param>
+        <summary>有効またはなど、指定されたテキスト編集コントロールで、スペル チェックを無効に<see cref="T:System.Windows.Controls.TextBox" />または<see cref="T:System.Windows.Controls.RichTextBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによりの添付プロパティの使用、<xref:System.Windows.Controls.SpellCheck.IsEnabled%2A>プロパティ[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 次の例は、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSpellingReform">
+      <MemberSignature Language="C#" Value="public static void SetSpellingReform (System.Windows.Controls.Primitives.TextBoxBase textBoxBase, System.Windows.Controls.SpellingReform value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetSpellingReform(class System.Windows.Controls.Primitives.TextBoxBase textBoxBase, valuetype System.Windows.Controls.SpellingReform value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.SpellCheck.SetSpellingReform(System.Windows.Controls.Primitives.TextBoxBase,System.Windows.Controls.SpellingReform)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textBoxBase" Type="System.Windows.Controls.Primitives.TextBoxBase" />
+        <Parameter Name="value" Type="System.Windows.Controls.SpellingReform" />
+      </Parameters>
+      <Docs>
+        <param name="textBoxBase">スペル チェックを適用するテキスト編集コントロール。 コントロールの例は、<see cref="T:System.Windows.Controls.TextBox" />と<see cref="T:System.Windows.Controls.RichTextBox" />です。</param>
+        <param name="value"><see cref="P:System.Windows.Controls.SpellCheck.SpellingReform" />スペリング改善ルールを決定する値。</param>
+        <summary>スペル チェックで使用するスペリング改善ルールを決定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによってアクセスされるスペリング改善ルールは、1990 年代のフランス語とドイツ語のスペリング改善を参照してください。 他の言語で使用される場合は、このメソッドを指定しても効果はありません。  
+  
+ このメソッドによりの添付プロパティの使用、<xref:System.Windows.Controls.SpellCheck.SpellingReform%2A>プロパティ[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpellingReform">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.SpellingReform SpellingReform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.SpellingReform SpellingReform" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.SpellCheck.SpellingReform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.SpellingReform</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スペル チェックが使用するスペリング改善ルールを取得または設定します。</summary>
+        <value>スペル チェックが使用するスペリング改善ルール。 既定値は<see cref="F:System.Windows.Controls.SpellingReform.PreAndPostreform" />フランス語の場合と<see cref="F:System.Windows.Controls.SpellingReform.Postreform" />ドイツ語用です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって決定されるスペリング改善ルールは、フランス語とドイツ語のスペリング改善を参照してください。 このプロパティは、他の言語で使われた場合。  
+  
+ この依存関係プロパティには、特殊な書き込み専用添付プロパティの使用方法もあります。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロパティを設定するための構文は`<` *textBoxBaseClass* **SpellCheck.SpellingReform**`="`*enumValue*`" .../>`ここで、 *textBoxBaseClass*から派生したクラスのオブジェクトの要素は、<xref:System.Windows.Controls.Primitives.TextBoxBase>と*enumValue*の値の文字列名には、<xref:System.Windows.Controls.SpellingReform>列挙します。 プロパティを設定すると、コードで添付プロパティとしてを参照してください、<xref:System.Windows.Controls.SpellCheck.SetSpellingReform%2A>メソッドです。 一致がない`GetSpellingReform`アクセサー。 値を取得するには、現在を取得<xref:System.Windows.Controls.SpellCheck>オブジェクトから、<xref:System.Windows.Controls.Primitives.TextBoxBase.SpellCheck%2A?displayProperty=nameWithType>プロパティの値を取得し、<xref:System.Windows.Controls.SpellCheck.SpellingReform%2A>からプロパティ<xref:System.Windows.Controls.SpellCheck>です。  
+  
+<a name="xamlTextUsage_SpellingReform"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 「解説」を参照してください。  
+  
+<a name="dependencyPropertyInfo_SpellingReform"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.SpellCheck.SpellingReformProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpellingReformProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SpellingReformProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SpellingReformProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.SpellCheck.SpellingReformProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.SpellCheck.SpellingReform" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,160 @@
+<Type Name="ListViewCommandEventArgs" FullName="System.Web.UI.WebControls.ListViewCommandEventArgs">
+  <TypeSignature Language="C#" Value="public class ListViewCommandEventArgs : System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewCommandEventArgs extends System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListViewCommandEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.CommandEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.ListView.ItemCommand" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView.ItemCommand>イベントは、ボタン、<xref:System.Web.UI.WebControls.ListView>コントロールをクリックします。 これにより、このイベントが発生するたびに、カスタム ルーチンを実行するイベント処理メソッドを提供できます。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.ListView>コントロールがまた特定のボタンがクリックされたときに、その他のイベントを発生させます (たとえば、ボタン、`CommandName`プロパティが"Delete"、"Update"または「ページ」に設定)。 これらのボタンのいずれかを使用する場合、いずれかのように、コントロールによって提供される特殊なイベントを処理できる、<xref:System.Web.UI.WebControls.ListView.ItemDeleted>または<xref:System.Web.UI.WebControls.ListView.ItemDeleting>イベント。  
+  
+ A<xref:System.Web.UI.WebControls.ListViewCommandEventArgs>オブジェクトがクリックしてされたボタンのコマンドの引数とコマンドの名前を決定することにより、イベント処理メソッドに渡されます。 コマンド名の使用状況を確認、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>プロパティを調べるには、コマンド引数、使用して、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>プロパティです。 使用してイベントを発生させたボタン コントロールにアクセスすることも、<xref:System.Web.UI.WebControls.ListViewCommandEventArgs.CommandSource%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.ListViewCommandEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.ListViewCommandEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewCommandEventArgs>イベント ハンドラーに渡されるオブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListViewItemCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewItemCommand/CS/ListViewItemCommandCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListViewItemCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewItemCommand/VB/ListViewItemCommandVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewCommandEventArgs (System.Web.UI.WebControls.ListViewItem item, object commandSource, System.Web.UI.WebControls.CommandEventArgs originalArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.ListViewItem item, object commandSource, class System.Web.UI.WebControls.CommandEventArgs originalArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewCommandEventArgs.#ctor(System.Web.UI.WebControls.ListViewItem,System.Object,System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.ListViewItem" />
+        <Parameter Name="commandSource" Type="System.Object" />
+        <Parameter Name="originalArgs" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="item">元の項目、<see cref="T:System.Web.UI.WebControls.ListView" />のコマンドの発行を制御します。</param>
+        <param name="commandSource">コマンドのソース。</param>
+        <param name="originalArgs">イベントのデータ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.ListViewCommandEventArgs" />コマンドとイベントの引数の指定したソースを使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.ListViewCommandEventArgs>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させる場合にコントロールの開発者によって、主に使用します。  
+  
+ <xref:System.Web.UI.WebControls.ListViewCommandEventArgs> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>|値、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandEventArgs>に含まれているオブジェクト、`originalArgs`パラメーター。|  
+|<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>|値、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>のプロパティ、<xref:System.Web.UI.WebControls.CommandEventArgs>に含まれているオブジェクト、`originalArgs`パラメーター。|  
+|<xref:System.Web.UI.WebControls.GridViewCommandEventArgs.CommandSource%2A>|含まれているオブジェクト、`commandSource`パラメーター。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandSource">
+      <MemberSignature Language="C#" Value="public object CommandSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewCommandEventArgs.CommandSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのソースを取得します。</summary>
+        <value>コマンドのソース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewCommandEventArgs.CommandSource%2A>コマンドのソースを表すオブジェクトのプロパティにアクセスするプロパティです。 <xref:System.Web.UI.WebControls.ListViewCommandEventArgs>オブジェクト、コマンドのソースは、<xref:System.Web.UI.WebControls.ListView>ユーザーがボタンを含むコントロールをクリックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handled">
+      <MemberSignature Language="C#" Value="public bool Handled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Handled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewCommandEventArgs.Handled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールがイベントを処理するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />データ バインドされたイベントのコードがスキップされましたまたは終了それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`ことを指定するイベント ハンドラーで、<xref:System.Web.UI.WebControls.ListView>コードで処理するため、コントロールはイベントを処理しない必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ListViewItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ListViewItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewCommandEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドが実行されたデータ項目を取得します。</summary>
+        <value>データ項目を<see cref="T:System.Web.UI.WebControls.ListView" />のコマンドの発行を制御します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewCommandEventArgs>イベント ハンドラーに渡されるオブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListViewItemCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewItemCommand/CS/ListViewItemCommandCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListViewItemCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListViewItemCommand/VB/ListViewItemCommandVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

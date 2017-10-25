@@ -1,0 +1,67 @@
+<Type Name="IBindingRuntimePreferences" FullName="System.ServiceModel.Channels.IBindingRuntimePreferences">
+  <TypeSignature Language="C#" Value="public interface IBindingRuntimePreferences" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBindingRuntimePreferences" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IBindingRuntimePreferences" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>バインドが実装すると、受信した要求をサービスが同期または非同期のどちらで処理するかを指定できるようになるオプションのコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 状況によっては、バインドが同期方式の <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A> メソッドまたは <xref:System.ServiceModel.Channels.IRequestChannel.Request%2A> メソッドを使用してメッセージを処理する方が効率的な場合があります。 この方法が望ましいことを呼び出し側に示すために、<xref:System.ServiceModel.Channels.Binding> クラスでは、必要に応じて、<xref:System.ServiceModel.Channels.IBindingRuntimePreferences> を実装できます。  
+  
+ バインディングが <xref:System.ServiceModel.Channels.IBindingRuntimePreferences> を実装しないと、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] のサービス モデル ランタイム層は、既定で、非同期バージョンの `Receive` メソッドおよび `Request` メソッドを使用します。 バインディングが <xref:System.ServiceModel.Channels.IBindingRuntimePreferences> を実装した場合は、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] のサービス モデル ランタイム層は、<xref:System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously%2A> の値を調べて、同期バージョンのメソッド (<xref:System.ServiceModel.Channels.IInputChannel.Receive%2A> または <xref:System.ServiceModel.Channels.IRequestChannel.Request%2A>) を呼び出すのか、または非同期バージョン (<xref:System.ServiceModel.Channels.IInputChannel.BeginReceive%2A> と <xref:System.ServiceModel.Channels.IInputChannel.EndReceive%28System.IAsyncResult%29> または <xref:System.ServiceModel.Channels.IRequestChannel.BeginRequest%2A> と <xref:System.ServiceModel.Channels.IRequestChannel.EndRequest%28System.IAsyncResult%29>) を呼び出すのかを決定します。 バインディングが <xref:System.ServiceModel.Channels.IBindingRuntimePreferences> を実装していて、`true` プロパティが <xref:System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously%2A> を返す場合は、同期方式の <xref:System.ServiceModel.Channels.IInputChannel.Receive%2A> メソッドと <xref:System.ServiceModel.Channels.IRequestChannel.Request%2A> メソッドを使用して、チャネルからメッセージを受信することをお勧めします。 バインディングが <xref:System.ServiceModel.Channels.IBindingRuntimePreferences> を実装していない場合、または `false` プロパティから <xref:System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously%2A> が返される場合は、非同期方式の <xref:System.ServiceModel.Channels.IInputChannel.BeginReceive%2A> メソッドと <xref:System.ServiceModel.Channels.IInputChannel.EndReceive%28System.IAsyncResult%29> メソッド、または <xref:System.ServiceModel.Channels.IRequestChannel.BeginRequest%2A> メソッドと <xref:System.ServiceModel.Channels.IRequestChannel.EndRequest%28System.IAsyncResult%29> メソッドを使用することをお勧めします。  
+  
+ <xref:System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously%2A> プロパティが返す値に関係なく、すべてのバインディングは、実装されている特定のチャネルの種類に対し、`Receive` メソッドの同期および非同期の両バージョンの有効な実装を提供する必要があります。 カスタム チャネルの実装の詳細については、次を参照してください。[開発チャネル](~/docs/framework/wcf/extending/developing-channels.md)です。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Channels.IBindingRuntimePreferences> インターフェイスを実装するバインドの実装例を次に示します。 このコードはから取得、 [Chunking チャネル](~/docs/framework/wcf/samples/chunking-channel.md)サンプル。  
+  
+ [!code-csharp[S_UE_ChunkingChannel#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_chunkingchannel/cs/tcpchunkingbinding.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ReceiveSynchronously">
+      <MemberSignature Language="C#" Value="public bool ReceiveSynchronously { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReceiveSynchronously" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.IBindingRuntimePreferences.ReceiveSynchronously" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信した要求を処理するには同期と非同期のどちらの方が効率的かを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />要求をより効率的に同期的に処理する場合それ以外の場合<see langword="false" />です。 既定は <see langword="false" /> で、要求を非同期的に処理します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] が提供する標準 (システム提供) のバインディングでは、このインターフェイスが実装されており、一部のケースについて、受信メッセージを同期的に処理するよう、既定値がオーバーライドされています。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ChunkingChannel#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_chunkingchannel/cs/tcpchunkingbinding.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

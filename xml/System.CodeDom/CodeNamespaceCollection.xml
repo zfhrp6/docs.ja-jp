@@ -1,0 +1,466 @@
+<Type Name="CodeNamespaceCollection" FullName="System.CodeDom.CodeNamespaceCollection">
+  <TypeSignature Language="C#" Value="public class CodeNamespaceCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeNamespaceCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeNamespaceCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.CodeDom.CodeNamespace" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeNamespaceCollection> クラスには、一連の <xref:System.CodeDom.CodeNamespace> オブジェクトの格納に使用できる単純なコレクション オブジェクトが用意されています。  
+  
+   
+  
+## Examples  
+ <xref:System.CodeDom.CodeNamespaceCollection> クラスを使用する方法を次の例に示します。 例では、クラスの新しいインスタンスを作成使用して、いくつかの方法ステートメント、コレクションに追加、インデックスを返すと追加または特定のインデックス位置にある属性を削除します。  
+  
+ [!code-cpp[CodeNamespaceCollectionExample#1](~/samples/snippets/cpp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CPP/class1.cpp#1)]
+ [!code-csharp[CodeNamespaceCollectionExample#1](~/samples/snippets/csharp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CS/class1.cs#1)]
+ [!code-vb[CodeNamespaceCollectionExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeNamespaceCollectionExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeNamespaceCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeNamespaceCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、空のインスタンスを作成する方法を示します、<xref:System.CodeDom.CodeNamespaceCollection>クラスです。  
+  
+ [!code-cpp[CodeNamespaceCollectionExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CPP/class1.cpp#2)]
+ [!code-csharp[CodeNamespaceCollectionExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CS/class1.cs#2)]
+ [!code-vb[CodeNamespaceCollectionExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeNamespaceCollectionExample/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeNamespaceCollection (System.CodeDom.CodeNamespace[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeNamespace[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceCollection.#ctor(System.CodeDom.CodeNamespace[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeNamespace[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">配列<see cref="T:System.CodeDom.CodeNamespace" />コレクションの初期化に使用するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeNamespaceCollection" />クラスの指定した配列を含む<see cref="T:System.CodeDom.CodeNamespace" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">配列内の 1 つまたは複数のオブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeNamespaceCollection (System.CodeDom.CodeNamespaceCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeNamespaceCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceCollection.#ctor(System.CodeDom.CodeNamespaceCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeNamespaceCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.CodeDom.CodeNamespaceCollection" />コレクションを初期化するときに使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeNamespaceCollection" />指定したソース コレクションの要素を格納します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.CodeDom.CodeNamespace value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.CodeDom.CodeNamespace value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceCollection.Add(System.CodeDom.CodeNamespace)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeNamespace" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する <see cref="T:System.CodeDom.CodeNamespace" />。</param>
+        <summary>指定した <see cref="T:System.CodeDom.CodeNamespace" /> オブジェクトをコレクションに追加します。</summary>
+        <returns>新しい要素の挿入位置のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeNamespaceCollection.Add%2A>を追加するメソッド、<xref:System.CodeDom.CodeNamespace>オブジェクトを<xref:System.CodeDom.CodeNamespaceCollection>インスタンス。  
+  
+ [!code-cpp[CodeNamespaceCollectionExample#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CPP/class1.cpp#3)]
+ [!code-csharp[CodeNamespaceCollectionExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CS/class1.cs#3)]
+ [!code-vb[CodeNamespaceCollectionExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeNamespaceCollectionExample/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.CodeDom.CodeNamespace[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.CodeDom.CodeNamespace[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceCollection.AddRange(System.CodeDom.CodeNamespace[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeNamespace[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の配列<see cref="T:System.CodeDom.CodeNamespace" />コレクションに追加するオブジェクトを格納しています。</param>
+        <summary>指定した要素をコピー<see cref="T:System.CodeDom.CodeNamespace" />コレクションの末尾までの配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeNamespaceCollection.AddRange%28System.CodeDom.CodeNamespaceCollection%29>のメンバーを追加するメソッドのオーバー ロード、<xref:System.CodeDom.CodeNamespace>配列を<xref:System.CodeDom.CodeNamespaceCollection>です。  
+  
+ [!code-cpp[CodeNamespaceCollectionExample#4](~/samples/snippets/cpp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CPP/class1.cpp#4)]
+ [!code-csharp[CodeNamespaceCollectionExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CS/class1.cs#4)]
+ [!code-vb[CodeNamespaceCollectionExample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeNamespaceCollectionExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.CodeDom.CodeNamespaceCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.CodeDom.CodeNamespaceCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceCollection.AddRange(System.CodeDom.CodeNamespaceCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeNamespaceCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.CodeDom.CodeNamespaceCollection" />コレクションに追加するオブジェクトを格納しています。</param>
+        <summary>指定した内容を追加<see cref="T:System.CodeDom.CodeNamespaceCollection" />コレクションの末尾にオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeNamespaceCollection.AddRange%28System.CodeDom.CodeNamespaceCollection%29>メソッドのオーバー ロードを追加する<xref:System.CodeDom.CodeNamespace>から 1 つのオブジェクト<xref:System.CodeDom.CodeNamespaceCollection>別<xref:System.CodeDom.CodeNamespaceCollection>です。  
+  
+ [!code-cpp[CodeNamespaceCollectionExample#4](~/samples/snippets/cpp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CPP/class1.cpp#4)]
+ [!code-csharp[CodeNamespaceCollectionExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CS/class1.cs#4)]
+ [!code-vb[CodeNamespaceCollectionExample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeNamespaceCollectionExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.CodeDom.CodeNamespace value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.CodeDom.CodeNamespace value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceCollection.Contains(System.CodeDom.CodeNamespace)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeNamespace" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.CodeDom.CodeNamespace" />コレクション内で検索します。</param>
+        <summary>コレクションを含む、指定したかどうかを示す値を取得<see cref="T:System.CodeDom.CodeNamespace" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.CodeDom.CodeNamespace" /> 、それ以外のコレクションに含まれている<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.CodeDom.CodeNamespaceCollection.Contains%2A>を検索するメソッド、<xref:System.CodeDom.CodeNamespace>内のオブジェクト、<xref:System.CodeDom.CodeNamespaceCollection>です。  
+  
+ [!code-cpp[CodeNamespaceCollectionExample#5](~/samples/snippets/cpp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CPP/class1.cpp#5)]
+ [!code-csharp[CodeNamespaceCollectionExample#5](~/samples/snippets/csharp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CS/class1.cs#5)]
+ [!code-vb[CodeNamespaceCollectionExample#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeNamespaceCollectionExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.CodeDom.CodeNamespace[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.CodeDom.CodeNamespace[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceCollection.CopyTo(System.CodeDom.CodeNamespace[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.CodeDom.CodeNamespace[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />の値がコレクションからコピー先であること。</param>
+        <param name="index">挿入を開始する位置を示す配列のインデックス。</param>
+        <summary>オブジェクトをコレクションに、1 次元コピー<see cref="T:System.Array" />インスタンス、指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeNamespaceCollection.CopyTo%2A>の内容をコピーする方法、<xref:System.CodeDom.CodeNamespaceCollection>オブジェクトを指定したインデックス値で始まる、配列にします。  
+  
+ [!code-cpp[CodeNamespaceCollectionExample#6](~/samples/snippets/cpp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CPP/class1.cpp#6)]
+ [!code-csharp[CodeNamespaceCollectionExample#6](~/samples/snippets/csharp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CS/class1.cs#6)]
+ [!code-vb[CodeNamespaceCollectionExample#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeNamespaceCollectionExample/VB/class1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コピー先の配列が多次元です。  
+  
+ または  
+  
+ 内の要素の数、<see cref="T:System.CodeDom.CodeNamespaceCollection" />がで指定されたターゲット配列のインデックスの間で使用可能な領域よりも大きい、<paramref name="index" />パラメーターと対象となる配列の末尾。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターは、ターゲット配列の最小のインデックス値より小さくします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.CodeDom.CodeNamespace value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.CodeDom.CodeNamespace value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceCollection.IndexOf(System.CodeDom.CodeNamespace)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeNamespace" />
+      </Parameters>
+      <Docs>
+        <param name="value">検索する <see cref="T:System.CodeDom.CodeNamespace" />。</param>
+        <summary>指定したインデックスを取得<see cref="T:System.CodeDom.CodeNamespace" />内のオブジェクト、<see cref="T:System.CodeDom.CodeNamespaceCollection" />コレクション内に存在する場合は、します。</summary>
+        <returns>指定したインデックス<see cref="T:System.CodeDom.CodeNamespace" />見つかった場合は、コレクションに、それ以外の場合、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、特定の存在を検索<xref:System.CodeDom.CodeNamespace>を使用して、<xref:System.CodeDom.CodeNamespaceCollection.IndexOf%2A>が検出されたインデックス値を取得します。  
+  
+ [!code-cpp[CodeNamespaceCollectionExample#5](~/samples/snippets/cpp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CPP/class1.cpp#5)]
+ [!code-csharp[CodeNamespaceCollectionExample#5](~/samples/snippets/csharp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CS/class1.cs#5)]
+ [!code-vb[CodeNamespaceCollectionExample#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeNamespaceCollectionExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.CodeDom.CodeNamespace value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.CodeDom.CodeNamespace value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceCollection.Insert(System.Int32,System.CodeDom.CodeNamespace)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.CodeDom.CodeNamespace" />
+      </Parameters>
+      <Docs>
+        <param name="index">新しい項目を挿入する位置の 0 から始まるインデックス。</param>
+        <param name="value">挿入する <see cref="T:System.CodeDom.CodeNamespace" />。</param>
+        <summary>指定した挿入<see cref="T:System.CodeDom.CodeNamespace" />オブジェクトをコレクション内の指定したインデックス位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeNamespaceCollection.Insert%2A>を挿入する方法、<xref:System.CodeDom.CodeNamespace>オブジェクトに、<xref:System.CodeDom.CodeNamespaceCollection>です。  
+  
+ [!code-cpp[CodeNamespaceCollectionExample#8](~/samples/snippets/cpp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CPP/class1.cpp#8)]
+ [!code-csharp[CodeNamespaceCollectionExample#8](~/samples/snippets/csharp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CS/class1.cs#8)]
+ [!code-vb[CodeNamespaceCollectionExample#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeNamespaceCollectionExample/VB/class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeNamespace this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeNamespace Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeNamespaceCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeNamespace</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">アクセスするコレクションのインデックス。</param>
+        <summary>取得または設定、<see cref="T:System.CodeDom.CodeNamespaceCollection" />オブジェクト、コレクション内の指定したインデックス位置。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeNamespace" />有効な各インデックスにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コレクションへのアクセスに使用できるインデクサーです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> パラメーターが、コレクションのインデックスの有効範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.CodeDom.CodeNamespace value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.CodeDom.CodeNamespace value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceCollection.Remove(System.CodeDom.CodeNamespace)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeNamespace" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.CodeDom.CodeNamespace" />。</param>
+        <summary>指定した <see cref="T:System.CodeDom.CodeNamespace" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeNamespaceCollection.Remove%2A>を削除する方法、<xref:System.CodeDom.CodeNamespace>オブジェクトから、<xref:System.CodeDom.CodeNamespaceCollection>です。  
+  
+ [!code-cpp[CodeNamespaceCollectionExample#9](~/samples/snippets/cpp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CPP/class1.cpp#9)]
+ [!code-csharp[CodeNamespaceCollectionExample#9](~/samples/snippets/csharp/VS_Snippets_CLR/CodeNamespaceCollectionExample/CS/class1.cs#9)]
+ [!code-vb[CodeNamespaceCollectionExample#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeNamespaceCollectionExample/VB/class1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したオブジェクトがコレクション内に見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

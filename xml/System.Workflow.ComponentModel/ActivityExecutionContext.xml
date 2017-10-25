@@ -1,0 +1,326 @@
+<Type Name="ActivityExecutionContext" FullName="System.Workflow.ComponentModel.ActivityExecutionContext">
+  <TypeSignature Language="C#" Value="public sealed class ActivityExecutionContext : IDisposable, IServiceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ActivityExecutionContext extends System.Object implements class System.IDisposable, class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.ActivityExecutionContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> の実行環境を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Activity> の実行環境を表します。 このクラスは、ワークフロー ランタイム機能と個々のアクティビティに対するサービスを選択的に公開します。 このクラスは継承できません。  
+  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)][アクティビティ実行コンテキストについて](http://msdn.microsoft.com/en-us/60a032ef-4c51-482f-9aa8-fce406856b29)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Activity">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Activity Activity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Activity Activity" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.ActivityExecutionContext.Activity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行コンテキスト内で現在実行中の <see cref="T:System.Workflow.ComponentModel.Activity" /> を取得します。</summary>
+        <value>この実行コンテキストに関連付けられた <see cref="T:System.Workflow.ComponentModel.Activity" />。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">このインスタンスは、ガベージ コレクションの対象としてマークされています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelActivity">
+      <MemberSignature Language="C#" Value="public void CancelActivity (System.Workflow.ComponentModel.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelActivity(class System.Workflow.ComponentModel.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityExecutionContext.CancelActivity(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">取り消された <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>複合アクティビティが、子アクティビティの取り消し処理をスケジュールするために呼び出します。 <see cref="E:System.Workflow.ComponentModel.Activity.Executing" /> 状態の子アクティビティを取り消すことはできません。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activity" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="activity" /> が <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> の有効な子ではありません。 これは、引数が対応する <see cref="P:System.Workflow.ComponentModel.ActivityExecutionContext.Activity" /> に等しいか、引数がコメントされた状態ではなく、この <see cref="P:System.Workflow.ComponentModel.ActivityExecutionContext.Activity" /> に対応する <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> の子であることを意味します。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> は破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="activity" /> が <see cref="E:System.Workflow.ComponentModel.Activity.Executing" /> 状態ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseActivity">
+      <MemberSignature Language="C#" Value="public void CloseActivity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CloseActivity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityExecutionContext.CloseActivity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワークフロー ランタイムに対し、現在実行中のアクティビティを <see cref="E:System.Workflow.ComponentModel.Activity.Closed" /> 状態に遷移させなければならない旨を通知します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">関連付けられている <see cref="P:System.Workflow.ComponentModel.ActivityExecutionContext.Activity" /> の状態は、<see cref="E:System.Workflow.ComponentModel.Activity.Executing" /> でも、<see cref="E:System.Workflow.ComponentModel.Activity.Canceling" /> でも、<see cref="E:System.Workflow.ComponentModel.Activity.Compensating" /> でも、<see cref="E:System.Workflow.ComponentModel.Activity.Closed" /> でもありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">破棄された <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" />。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextGuid">
+      <MemberSignature Language="C#" Value="public Guid ContextGuid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ContextGuid" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.ActivityExecutionContext.ContextGuid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられた <see langword="ContextID" /> の <see cref="T:System.Workflow.ComponentModel.Activity" /> を取得します。</summary>
+        <value>関連付けられた <see langword="ContextID" /> の <see cref="T:System.Workflow.ComponentModel.Activity" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentExceptionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty CurrentExceptionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty CurrentExceptionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.ComponentModel.ActivityExecutionContext.CurrentExceptionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの実行中に発生する例外を表します。 このプロパティが値を持つのは、アクティビティがフォールト状態の場合のみです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteActivity">
+      <MemberSignature Language="C#" Value="public void ExecuteActivity (System.Workflow.ComponentModel.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExecuteActivity(class System.Workflow.ComponentModel.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityExecutionContext.ExecuteActivity(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">実行された <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>複合アクティビティが、子アクティビティの実行をスケジュールするために呼び出します。 初期化済み状態でない子アクティビティを実行することはできません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 状態が <xref:System.Workflow.ComponentModel.Activity.Closed> であれば、<xref:System.Workflow.ComponentModel.Activity> は初期化、実行済みです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activity" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="activity" /> が <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> の有効な子ではありません。 これは、引数が対応する <see cref="P:System.Workflow.ComponentModel.ActivityExecutionContext.Activity" /> に等しいか、引数がコメントされた状態ではなく、この <see cref="P:System.Workflow.ComponentModel.ActivityExecutionContext.Activity" /> に対応する <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> の子であることを意味します。</exception>
+        <exception cref="T:System.InvalidOperationException">初期化済み状態でも <see cref="E:System.Workflow.ComponentModel.Activity.Closed" /> 状態でもありません。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> は破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecutionContextManager">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.ActivityExecutionContextManager ExecutionContextManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.ActivityExecutionContextManager ExecutionContextManager" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.ActivityExecutionContext.ExecutionContextManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionContextManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスに関連付けられている <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContextManager" /> を取得します。</summary>
+        <value>このインスタンスに関連付けられている <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContextManager" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityExecutionContext.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">サービスの <see cref="T:System.Type" />。</param>
+        <summary>指定した型のサービスを返します。</summary>
+        <returns>指定した <see cref="T:System.Object" /> のサービス <see cref="T:System.Type" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> は破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetService&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetService&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityExecutionContext.GetService``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">取得するプロバイダーの型を指定します。</typeparam>
+        <summary>指定された <see cref="T:System.Type" /> のサービス プロバイダーを返します。</summary>
+        <returns>指定した <see cref="T:System.Object" /> のサービス プロバイダー <see cref="T:System.Type" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> は破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityExecutionContext.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.ComponentModel.ActivityExecutionContext" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackData">
+      <MemberSignature Language="C#" Value="public void TrackData (object userData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TrackData(object userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityExecutionContext.TrackData(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="userData">追跡するデータを指定するオブジェクト。</param>
+        <summary>関連付けられた <see cref="P:System.Workflow.ComponentModel.ActivityExecutionContext.Activity" /> の追跡メソッドを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡ルーチンは、各アクティビティによって提供されるインターフェイスの一部として定義されます。 ユーザー指定のカスタム コードのコメントを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="userData" /> が null 参照 (Visual Basic では <see langword="Nothing" />)。</exception>
+        <exception cref="T:System.ObjectDisposedException">このインスタンスに対応する <see cref="T:System.Workflow.ComponentModel.Activity" /> が null 参照 (<see langword="Nothing" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackData">
+      <MemberSignature Language="C#" Value="public void TrackData (string userDataKey, object userData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TrackData(string userDataKey, object userData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityExecutionContext.TrackData(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userDataKey" Type="System.String" />
+        <Parameter Name="userData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="userDataKey">メンバー <c>userData</c>を追跡します。</param>
+        <param name="userData">追跡するデータ。</param>
+        <summary>関連付けられた <see cref="P:System.Workflow.ComponentModel.ActivityExecutionContext.Activity" /> の追跡メソッドを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡ルーチンは、各アクティビティによって提供されるインターフェイスの一部として定義されます。 これはユーザー指定のカスタム コードです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="userData" /> が null 参照 (Visual Basic では <see langword="Nothing" />)。</exception>
+        <exception cref="T:System.ObjectDisposedException">このインスタンスに対応する <see cref="T:System.Workflow.ComponentModel.Activity" /> が null 参照 (<see langword="Nothing" />)。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

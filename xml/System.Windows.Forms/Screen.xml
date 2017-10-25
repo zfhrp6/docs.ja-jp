@@ -1,0 +1,512 @@
+<Type Name="Screen" FullName="System.Windows.Forms.Screen">
+  <TypeSignature Language="C#" Value="public class Screen" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Screen extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Screen" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ディスプレイ デバイスまたは 1 つのシステム上の複数のディスプレイ デバイスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオブジェクトのコンス トラクターがパブリックでないため、明示的に作成することはできません、<xref:System.Windows.Forms.Screen>オブジェクト。 オブジェクトは、そのパブリック メソッドを呼び出すときに作成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、各種のメソッドとプロパティを使用する方法を示しています、<xref:System.Windows.Forms.Screen>クラスです。 呼び出しの例、<xref:System.Windows.Forms.Screen.AllScreens%2A>システムに接続されているすべての画面の配列を取得するプロパティです。 返される各<xref:System.Windows.Forms.Screen>、例では、デバイス名、境界、種類、作業領域、および追加する画面をプライマリ、<xref:System.Windows.Forms.ListBox>です。 例を使用するのには、追加、<xref:System.Windows.Forms.ListBox>と<xref:System.Windows.Forms.Button>フォームにし、追加、<xref:System.Windows.Forms.Control.Click>ボタンのイベント ハンドラー。  
+  
+ [!code-cpp[Screen Object Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Screen Object Example/CPP/form1.cpp#1)]
+ [!code-csharp[Screen Object Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Screen Object Example/CS/form1.cs#1)]
+ [!code-vb[Screen Object Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Screen Object Example/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllScreens">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Screen[] AllScreens { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Screen[] AllScreens" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Screen.AllScreens" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Screen[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム上のすべてのディスプレイの配列を取得します。</summary>
+        <value>型の配列<see cref="T:System.Windows.Forms.Screen" />システム上のすべてのディスプレイを格納します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BitsPerPixel">
+      <MemberSignature Language="C#" Value="public int BitsPerPixel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BitsPerPixel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Screen.BitsPerPixel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 ピクセルのデータに関連付けられているメモリのビット数を取得します。</summary>
+        <value>1 ピクセルのデータに関連付けられているメモリのビット数</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、画面のピクセルあたりのビット数は、ビットマップを操作するときに便利ですです。 ビットマップの詳細については、次を参照してください。[型のビットマップ](~/docs/framework/winforms/advanced/types-of-bitmaps.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Screen.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイの範囲を取得します。</summary>
+        <value>A<see cref="T:System.Drawing.Rectangle" />ディスプレイの範囲を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeviceName">
+      <MemberSignature Language="C#" Value="public string DeviceName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeviceName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Screen.DeviceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイに関連付けられているデバイス名を取得します。</summary>
+        <value>ディスプレイに関連付けられているデバイスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この文字列は、印刷不可能な文字を含めることがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">これと比較するオブジェクト<see cref="T:System.Windows.Forms.Screen" />です。</param>
+        <summary>指定したオブジェクトがこれに等しいかどうかを示す値を取得または<see langword="Screen" />です。</summary>
+        <returns>
+          指定したオブジェクトがこの <see langword="true" /> に等しい場合は <see cref="T:System.Windows.Forms.Screen" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromControl">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Screen FromControl (System.Windows.Forms.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.Screen FromControl(class System.Windows.Forms.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.FromControl(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Screen</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">A<see cref="T:System.Windows.Forms.Control" />を取得する、<see cref="T:System.Windows.Forms.Screen" />です。</param>
+        <summary>取得、<see cref="T:System.Windows.Forms.Screen" />を指定したコントロールの最大の部分を含む表示用です。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Screen" />を指定したコントロールの最大領域を含む表示用です。 コントロールを保持する表示が複数ディスプレイ環境では、指定したコントロールに最も近いディスプレイが返されません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromHandle">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Screen FromHandle (IntPtr hwnd);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.Screen FromHandle(native int hwnd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.FromHandle(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Screen</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwnd" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hwnd">取得する対象のウィンドウ ハンドル、<see cref="T:System.Windows.Forms.Screen" />です。</param>
+        <summary>取得、<see cref="T:System.Windows.Forms.Screen" />オブジェクトの最大の部分を保持するディスプレイのによって参照される指定のハンドル。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Screen" />オブジェクトの最大領域を含む表示用です。 指定されたウィンドウの任意の部分を保持する表示が複数ディスプレイ環境では、オブジェクトに最も近いディスプレイが返されません。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">Win32 ハンドルからオブジェクトを取得します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FromPoint">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Screen FromPoint (System.Drawing.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.Screen FromPoint(valuetype System.Drawing.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.FromPoint(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Screen</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">A<see cref="T:System.Drawing.Point" />を取得する場所を指定する、<see cref="T:System.Windows.Forms.Screen" />です。</param>
+        <summary>取得、<see cref="T:System.Windows.Forms.Screen" />指定したポイントを含む表示用です。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Screen" />ポイントを含む表示用です。 ポイントを保持する表示が複数ディスプレイ環境では、指定したポイントに最も近いディスプレイが返されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Windows.Forms.Screen.FromPoint%2A> メソッドを使用するコード例を次に示します。 この例で作成、<xref:System.Drawing.Point>を参照する、<xref:System.Drawing.Point.X%2A>と<xref:System.Drawing.Point.Y%2A>によって渡された座標、 <xref:System.Windows.Forms.MouseEventArgs>、しを使用して、<xref:System.Windows.Forms.Screen.FromPoint%2A>がプライマリ画面上に、ポイントがクリックされたかどうかを決定するメソッド。  
+  
+ [!code-cpp[Screen.FromPoint#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Screen.FromPoint/CPP/form1.cpp#1)]
+ [!code-csharp[Screen.FromPoint#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Screen.FromPoint/CS/form1.cs#1)]
+ [!code-vb[Screen.FromPoint#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Screen.FromPoint/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromRectangle">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Screen FromRectangle (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.Screen FromRectangle(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.FromRectangle(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Screen</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.Rectangle" />表示を取得する対象の領域を指定します。</param>
+        <summary>取得、<see cref="T:System.Windows.Forms.Screen" />四角形の最大の部分を含む表示用です。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Screen" />を指定した四角形の最大領域を含む表示用です。 四角形を保持する表示が複数ディスプレイ環境では、四角形に最も近いディスプレイが返されません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Rectangle GetBounds (System.Drawing.Point pt);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Rectangle GetBounds(valuetype System.Drawing.Point pt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.GetBounds(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pt">A<see cref="T:System.Drawing.Point" />ディスプレイの範囲を取得する対象の座標を指定します。</param>
+        <summary>指定したポイントを含むディスプレイの範囲を取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />指定したポイントを含むディスプレイの範囲を指定します。 指定したポイントを保持する表示が複数ディスプレイ環境では、ポイントに最も近いディスプレイが返されません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Rectangle GetBounds (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Rectangle GetBounds(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.GetBounds(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect">ディスプレイの範囲の取得条件となる領域を指定する <see cref="T:System.Drawing.Rectangle" />。</param>
+        <summary>指定した四角形の最大の部分を含むディスプレイの範囲を取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />を指定した四角形を含むディスプレイの範囲を指定します。 指定した四角形を保持するモニターが複数ディスプレイ環境では、四角形に最も近いモニターが返されません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Rectangle GetBounds (System.Windows.Forms.Control ctl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Rectangle GetBounds(class System.Windows.Forms.Control ctl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.GetBounds(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="ctl"><see cref="T:System.Windows.Forms.Control" />ディスプレイの範囲を取得します。</param>
+        <summary>指定されたコントロールの最大の部分を含むディスプレイの範囲を取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />を指定したコントロールを含むディスプレイの範囲を指定します。 指定したコントロールを保持する表示が複数ディスプレイ環境では、コントロールに最も近いディスプレイが返されません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>計算し、オブジェクトのハッシュ コードを取得します。</summary>
+        <returns>オブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Object> メソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWorkingArea">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Rectangle GetWorkingArea (System.Drawing.Point pt);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Rectangle GetWorkingArea(valuetype System.Drawing.Point pt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.GetWorkingArea(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pt">A<see cref="T:System.Drawing.Point" />作業領域を取得する対象の座標を指定します。</param>
+        <summary>指定したポイントに最も近い作業領域を取得します。 作業領域は、タスク バー、ドッキング ウィンドウは、ドッキング ツール バーを除く、ディスプレイのデスクトップ領域です。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />作業領域を指定します。 指定したポイントを保持する表示が複数ディスプレイ環境では、ポイントに最も近いディスプレイが返されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します<xref:System.Windows.Forms.Screen.PrimaryScreen%2A>プロパティおよび<xref:System.Windows.Forms.Screen.GetWorkingArea%2A>メソッドです。 このメソッドには、という名前のボタンを含むフォームが必要です。`Button1`  
+  
+ [!code-cpp[System.Windows.Forms.ScreenExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ScreenExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ScreenExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ScreenExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ScreenExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ScreenExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWorkingArea">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Rectangle GetWorkingArea (System.Drawing.Rectangle rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Rectangle GetWorkingArea(valuetype System.Drawing.Rectangle rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.GetWorkingArea(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rect"><see cref="T:System.Drawing.Rectangle" />作業領域を取得する対象の領域を指定します。</param>
+        <summary>指定した四角形の最大の部分を保持するディスプレイの作業領域を取得します。 作業領域は、タスク バー、ドッキング ウィンドウは、ドッキング ツール バーを除く、ディスプレイのデスクトップ領域です。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />作業領域を指定します。 指定した四角形を保持する表示が複数ディスプレイ環境では、四角形に最も近いディスプレイが返されません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWorkingArea">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Rectangle GetWorkingArea (System.Windows.Forms.Control ctl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Rectangle GetWorkingArea(class System.Windows.Forms.Control ctl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.GetWorkingArea(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="ctl"><see cref="T:System.Windows.Forms.Control" />作業領域を取得します。</param>
+        <summary>指定されたコントロールの最大領域を保持するディスプレイの作業領域を取得します。 作業領域は、タスク バー、ドッキング ウィンドウは、ドッキング ツール バーを除く、ディスプレイのデスクトップ領域です。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />作業領域を指定します。 指定したコントロールを保持する表示が複数ディスプレイ環境では、コントロールに最も近いディスプレイが返されません。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Primary">
+      <MemberSignature Language="C#" Value="public bool Primary { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Primary" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Screen.Primary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のディスプレイがプライマリ デバイスかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />この表示は、プライマリである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryScreen">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Screen PrimaryScreen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Screen PrimaryScreen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Screen.PrimaryScreen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Screen</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライマリ ディスプレイを取得します。</summary>
+        <value>プライマリ ディスプレイです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのディスプレイ システムでは、プライマリ ディスプレイはディスプレイのみです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します<xref:System.Windows.Forms.Screen.PrimaryScreen%2A>プロパティおよび<xref:System.Windows.Forms.Screen.GetWorkingArea%2A>メソッドです。 このメソッドには、という名前のボタンを含むフォームが必要です。`Button1`です。  
+  
+ [!code-cpp[System.Windows.Forms.ScreenExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ScreenExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ScreenExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ScreenExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ScreenExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ScreenExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Screen.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトを表す文字列を取得します。</summary>
+        <returns>オブジェクトの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkingArea">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle WorkingArea { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle WorkingArea" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Screen.WorkingArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイ画面の作業領域を取得します。 作業領域は、タスク バー、ドッキング ウィンドウは、ドッキング ツール バーを除く、ディスプレイのデスクトップ領域です。</summary>
+        <value>A<see cref="T:System.Drawing.Rectangle" />ディスプレイの作業領域を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作業領域は、タスク バー、ドッキング ウィンドウは、ドッキング ツール バーを除く、ディスプレイのデスクトップ領域です。  
+  
+ <xref:System.Windows.Forms.Screen.WorkingArea%2A>Windows タスク バーかどうか、タスク バーは、現在表示されているかに関係なく自動的に隠すに設定されている場合、画面の領域全体を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,270 @@
+<Type Name="CompilerResults" FullName="System.CodeDom.Compiler.CompilerResults">
+  <TypeSignature Language="C#" Value="public class CompilerResults" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CompilerResults extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.CompilerResults" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンパイラから返されるコンパイルの結果を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスには、コンパイルの結果に関する次の情報が含まれています、<xref:System.CodeDom.Compiler.ICodeCompiler>インターフェイスの実装。  
+  
+-   <xref:System.CodeDom.Compiler.CompilerResults.CompiledAssembly%2A>プロパティは、コンパイルされたアセンブリを示します。  
+  
+-   <xref:System.CodeDom.Compiler.CompilerResults.Evidence%2A>プロパティは、アセンブリのセキュリティ証拠を示します。  
+  
+-   <xref:System.CodeDom.Compiler.CompilerResults.PathToAssembly%2A>プロパティは、メモリ内にのみが生成されなかった場合に、コンパイルされたアセンブリへのパスを示します。  
+  
+-   <xref:System.CodeDom.Compiler.CompilerResults.Errors%2A>プロパティは、コンパイラ エラーと警告を示します。  
+  
+-   <xref:System.CodeDom.Compiler.CompilerResults.Output%2A>プロパティには、コンパイラ出力メッセージが含まれています。  
+  
+-   <xref:System.CodeDom.Compiler.CompilerResults.NativeCompilerReturnValue%2A>プロパティは、コンパイラによって返される結果コード値を示します。  
+  
+-   <xref:System.CodeDom.Compiler.CompilerResults.TempFiles%2A>プロパティは、コンパイルおよびリンク中に生成された一時ファイルを示します。  
+  
+> [!NOTE]
+>  このクラスには、すべてのメンバーに適用されるクラス レベルの継承確認要求が含まれています。 A<xref:System.Security.SecurityException>派生クラスに完全信頼アクセス許可があるない場合にスローされます。 継承確認要求の詳細については、「[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[CompilerResultsExample#1](~/samples/snippets/cpp/VS_Snippets_CLR/CompilerResultsExample/CPP/class1.cpp#1)]
+ [!code-csharp[CompilerResultsExample#1](~/samples/snippets/csharp/VS_Snippets_CLR/CompilerResultsExample/CS/class1.cs#1)]
+ [!code-vb[CompilerResultsExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CompilerResultsExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompilerResults (System.CodeDom.Compiler.TempFileCollection tempFiles);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.Compiler.TempFileCollection tempFiles) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CompilerResults.#ctor(System.CodeDom.Compiler.TempFileCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tempFiles" Type="System.CodeDom.Compiler.TempFileCollection" />
+      </Parameters>
+      <Docs>
+        <param name="tempFiles">コンパイル時に生成された中間ファイルへの参照を管理し格納する <see cref="T:System.CodeDom.Compiler.TempFileCollection" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.Compiler.CompilerResults" />を指定された一時ファイルを使用するクラス。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CompiledAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly CompiledAssembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Assembly CompiledAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerResults.CompiledAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイル済みのアセンブリを設定します。</summary>
+        <value><see cref="T:System.Reflection.Assembly" />コンパイルされたアセンブリを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  `get`アクセサーを<xref:System.CodeDom.Compiler.CompilerResults.CompiledAssembly%2A>プロパティの呼び出し、<xref:System.AppDomain.Load%2A>を現在のアプリケーション ドメイン、コンパイルされたアセンブリを読み込みます。  呼び出した後、`get`アクセサー、まで、現在、コンパイルされたアセンブリを削除することはできません<xref:System.AppDomain>が読み込まれていません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Errors">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CompilerErrorCollection Errors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.Compiler.CompilerErrorCollection Errors" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerResults.Errors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerErrorCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイラ エラーと警告のコレクションを取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />を示すエラーと警告のコンパイルの結果存在する場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルと行番号情報がそれぞれに関連付けられている<xref:System.CodeDom.Compiler.CompilerError>、検索可能であれば、エラーまたは警告を生成するコードを表示するユーザー コードを実装できるようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evidence">
+      <MemberSignature Language="C#" Value="public System.Security.Policy.Evidence Evidence { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Policy.Evidence Evidence" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerResults.Evidence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.Evidence</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証拠オブジェクトを表す、コンパイルされたアセンブリのセキュリティ ポリシーのアクセス許可を示します。</summary>
+        <value><see cref="T:System.Security.Policy.Evidence" />コンパイルされたアセンブリのセキュリティ ポリシーのアクセス許可を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠を制御する権限です。 アクセス許可の値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="NativeCompilerReturnValue">
+      <MemberSignature Language="C#" Value="public int NativeCompilerReturnValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NativeCompilerReturnValue" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerResults.NativeCompilerReturnValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイラの戻り値を設定します。</summary>
+        <value>コンパイラの戻り値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、実装されている場合、コマンド ライン コンパイラをによって返される数値の終了コードが含まれています。 値が 0 のでは、成功を示し、0 以外の値がエラーを示す、します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Output">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection Output { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection Output" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerResults.Output" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンパイラの出力メッセージを取得します。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.StringCollection" />出力メッセージを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンパイラには、メッセージが返されませんが、このプロパティの値が空のコレクションになります。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="PathToAssembly">
+      <MemberSignature Language="C#" Value="public string PathToAssembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PathToAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerResults.PathToAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンパイル済みのアセンブリのパスを設定します。</summary>
+        <value>アセンブリのパスまたは<see langword="null" />アセンブリがメモリ内で生成された場合。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TempFiles">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.TempFileCollection TempFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.Compiler.TempFileCollection TempFiles" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CompilerResults.TempFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.TempFileCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用する一時ファイルのコレクションを設定します。</summary>
+        <value>コンパイル時に生成された中間ファイルへの参照を管理し格納する <see cref="T:System.CodeDom.Compiler.TempFileCollection" />。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

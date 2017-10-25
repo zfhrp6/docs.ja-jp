@@ -1,0 +1,183 @@
+<Type Name="ScriptMethodAttribute" FullName="System.Web.Script.Services.ScriptMethodAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ScriptMethodAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ScriptMethodAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Script.Services.ScriptMethodAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッド、および応答の形式を呼び出すために使用する HTTP 動詞を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性を使用してをクライアント スクリプトから呼び出すことができるメソッドについてを指定します。 属性を使用して、メソッドを呼び出すに使用できる HTTP 動詞 (GET または POST) を指定できます。 また、JavaScript Object Notation (JSON) または XML を使用して、応答が書式設定するかどうかを指定することもできます。  
+  
+ <xref:System.Web.Script.Services.ScriptMethodAttribute> 属性は省略できます。 (ただし、クライアント スクリプトから呼び出すことができるメソッドがあります、<xref:System.Web.Services.WebMethodAttribute?displayProperty=nameWithType>属性を適用します。)。 メソッドでマークされていない場合<xref:System.Web.Script.Services.ScriptMethodAttribute>、HTTP POST コマンドを使用して、メソッドが呼び出され、応答を JSON としてシリアル化されます。 スクリプトからは、この設定を上書きすることはできません。  
+  
+ <xref:System.Web.Script.Services.ScriptMethodAttribute>名前付きパラメーターのみを受け取ります。 プロパティは、次のとおり、<xref:System.Web.Script.Services.ScriptMethodAttribute>名前付きパラメーターとして使用できるクラスです。  
+  
+-   <xref:System.Web.Script.Services.ScriptMethodAttribute.UseHttpGet%2A>  
+  
+     HTTP GET コマンドを使用して、メソッドが呼び出されるかどうかを指定します。 既定値は、`false` です。  
+  
+    > [!IMPORTANT]
+    >  設定、<xref:System.Web.Script.Services.ScriptMethodAttribute.UseHttpGet%2A>プロパティを`true`機密データまたはトランザクションで作業している場合、アプリケーションのセキュリティ上のリスクを引き起こす可能性がします。 GET 要求では、メッセージは、ブラウザーによって URL にエンコードされ、改ざんの簡単なターゲットであるため。 GET と POST の両方の要求の機密性の高いデータを保護するセキュリティ ガイドラインに従ってください。  
+  
+-   <xref:System.Web.Script.Services.ScriptMethodAttribute.ResponseFormat%2A>  
+  
+     形式として JSON または XML として、応答をシリアル化にするかどうかを指定します。 既定値は、`Json` です。 <xref:System.Web.Script.Services.ScriptMethodAttribute.ResponseFormat%2A>プロパティ、メソッドが戻るときに、戻り値の型としての XML を指定すると便利です、<xref:System.Xml.XmlDocument>または<xref:System.Xml.XmlElement>オブジェクト。  
+  
+-   <xref:System.Web.Script.Services.ScriptMethodAttribute.XmlSerializeString%2A>  
+  
+     文字列型など、戻り値のすべての型が XML としてシリアル化するかどうかを指定します。 値、<xref:System.Web.Script.Services.ScriptMethodAttribute.XmlSerializeString%2A>応答が JSON としてシリアル化する場合、プロパティは無視されます。  
+  
+ 属性を使用する方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、適用する方法を示しています。<xref:System.Web.Script.Services.ScriptMethodAttribute>を、`GetXmlDocument`と`EchoStringAndDate`メソッドを使用すると、応答形式を指定する HTTP 動詞を指定します。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptMethodAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Services.ScriptMethodAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Script.Services.ScriptMethodAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseFormat">
+      <MemberSignature Language="C#" Value="public System.Web.Script.Services.ResponseFormat ResponseFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Script.Services.ResponseFormat ResponseFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Script.Services.ScriptMethodAttribute.ResponseFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Script.Services.ResponseFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメソッドの応答の形式を設定します。</summary>
+        <value><see cref="T:System.Web.Script.Services.ResponseFormat" /> 値のいずれか。 既定値は、<see langword="Json" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.Script.Services.ScriptMethodAttribute.ResponseFormat%2A>プロパティの戻り値の型の形式として XML を指定するときにします。 これにより、メソッドが戻るとき、<xref:System.Xml.XmlDocument>または<xref:System.Xml.XmlElement>オブジェクト。  
+  
+ ときに、<xref:System.Web.Script.Services.ScriptMethodAttribute.ResponseFormat%2A>プロパティに設定されている`Xml`、パブリック フィールドと、戻り値の型を持つプロパティ、<xref:System.Web.Script.Serialization.ScriptIgnoreAttribute>適用された属性は無視されません。 これは、それらを使用してシリアル化するため、<xref:System.Xml.Serialization.XmlSerializer>オブジェクトの代わりに、<xref:System.Web.Script.Serialization.JavaScriptSerializer>オブジェクト。 適用する必要があります、<xref:System.Xml.Serialization.XmlIgnoreAttribute>属性を<xref:System.Xml.Serialization.XmlSerializer>無視、またはこれらのパブリック フィールドと戻り値の型のプロパティをスキップします。  
+  
+   
+  
+## Examples  
+ 次の例に適用する方法を示しています、<xref:System.Web.Script.Services.ScriptMethodAttribute>属性を持つ Web メソッドを<xref:System.Web.Script.Services.ScriptMethodAttribute.ResponseFormat%2A>プロパティに設定`Xml`です。 メソッドの戻り値が XML としてシリアル化し、型のオブジェクトとして、成功のコールバック関数に送信される<xref:System.Xml.XmlDocument>です。 このコード例に示されている例の一部である、<xref:System.Web.Script.Services.ScriptMethodAttribute>クラスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseHttpGet">
+      <MemberSignature Language="C#" Value="public bool UseHttpGet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseHttpGet" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Script.Services.ScriptMethodAttribute.UseHttpGet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTTP GET を使用して、メソッドを呼び出すかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />HTTP GET コマンドを使用して、メソッドが呼び出された場合<see langword="false" /> HTTP POST コマンドを使用して、メソッドが呼び出された場合。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントのように ECMAScript (JavaScript) からこのプロパティをオーバーライドすることはできません。 このプロパティ設定されている場合`true`、スクリプトからは、メソッドの呼び出しは常に HTTP GET を使用します。  
+  
+ このプロパティに設定するときに`true`、クライアント プロキシ コードで HTTP GET を使用して、Web サービスを呼び出します。 メソッドの入力パラメーターは、Web メソッドの呼び出しに使用される URL のクエリ パラメーターとして表示されます。 パラメーター値の JavaScript Object Notation (JSON) シリアル化と、パラメーターの値の URL エンコードを取得します。  
+  
+ Web サービス メソッドを呼び出すための HTTP GET を使用では、他の Web の対話のため、同じガイドラインに従います。 機微なデータが公開されていないと、サーバーの処理に副作用があるない場合にのみ操作の HTTP GET を使用する必要があります。  
+  
+> [!IMPORTANT]
+>  設定、<xref:System.Web.Script.Services.ScriptMethodAttribute.UseHttpGet%2A>プロパティを`true`機密データまたはトランザクションで作業している場合、アプリケーションのセキュリティ上のリスクを引き起こす可能性がします。 GET 要求では、メッセージは、ブラウザーによって URL にエンコードされ、改ざんの簡単なターゲットであるため。  
+  
+   
+  
+## Examples  
+ 次の例は、適用する方法を示しています。<xref:System.Web.Script.Services.ScriptMethodAttribute>を持つ Web メソッドに、<xref:System.Web.Script.Services.ScriptMethodAttribute.UseHttpGet%2A>プロパティに設定`true`です。 このコード例に示されている例の一部である、<xref:System.Web.Script.Services.ScriptMethodAttribute>クラスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlSerializeString">
+      <MemberSignature Language="C#" Value="public bool XmlSerializeString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool XmlSerializeString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Script.Services.ScriptMethodAttribute.XmlSerializeString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはすべての戻り値の型が文字列型を含む XML としてシリアル化するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />すべての戻り値の型が XML としてシリアル化される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定するときに`false`、すべての戻り値の型が XML マークアップとして解釈されますが、文字列を除く、XML としてシリアル化します。 値が場合`false`、シリアル化された文字列が可能になっている場合、戻り値の型は、文字列であり、その結果が成功コールバック関数が呼び出される、文字列に整形式 XML ドキュメントに対応する XML マークアップが含まれていない場合`null`です。  
+  
+ 値<xref:System.Web.Script.Services.ScriptMethodAttribute.XmlSerializeString%2A>は無視されます、<xref:System.Web.Script.Services.ScriptMethodAttribute.ResponseFormat%2A>プロパティに設定されている`Json`です。  
+  
+   
+  
+## Examples  
+ 次の例は、適用する方法を示しています。<xref:System.Web.Script.Services.ScriptMethodAttribute>を持つ Web メソッドに、<xref:System.Web.Script.Services.ScriptMethodAttribute.XmlSerializeString%2A>プロパティに設定`true`です。 このコード例に示されている例の一部である、<xref:System.Web.Script.Services.ScriptMethodAttribute>クラスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

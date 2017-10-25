@@ -1,0 +1,344 @@
+<Type Name="CallContext" FullName="System.Runtime.Remoting.Messaging.CallContext">
+  <TypeSignature Language="C#" Value="public sealed class CallContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit CallContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Messaging.CallContext" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実行コード パスで実行されるプロパティのセットを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Messaging.CallContext>メソッド呼び出しに対してスレッド ローカル ストレージのような特別なコレクション オブジェクトは、実行の各論理スレッドに固有のデータ スロットを提供します。 スロットは、他の論理スレッドで呼び出しのコンテキストでは共有されません。 オブジェクトに追加することができます、<xref:System.Runtime.Remoting.Messaging.CallContext>実行コード パスを停止してを移動し、パスに沿ったさまざまなオブジェクトを検査します。  
+  
+ 別のオブジェクトにリモート メソッド呼び出しが行われたときに<xref:System.AppDomain>、<xref:System.Runtime.Remoting.Messaging.CallContext>クラスが生成されます、<xref:System.Runtime.Remoting.Messaging.LogicalCallContext>リモートの呼び出しと共に移動するインスタンス。 オブジェクトのみが公開する、<xref:System.Runtime.Remoting.Messaging.ILogicalThreadAffinative>インターフェイスし、に保存される、<xref:System.Runtime.Remoting.Messaging.CallContext>の外部伝達、<xref:System.AppDomain>で、<xref:System.Runtime.Remoting.Messaging.LogicalCallContext>です。 このインターフェイスをサポートしないオブジェクトが転送されない<xref:System.Runtime.Remoting.Messaging.LogicalCallContext>リモート メソッド呼び出しを含んだインスタンス。  
+  
+> [!NOTE]
+>  すべてのメソッド<xref:System.Runtime.Remoting.Messaging.CallContext>は静的と現在の呼び出しのコンテキストで動作<xref:System.Threading.Thread>です。  
+  
+> [!NOTE]
+>  このクラスは、リンク確認要求を使用します。 A`SecurityException`が、直前の呼び出し元がインフラストラクチャのアクセス許可を持たない場合にスローされます。 参照してください[リンク確認要求](~/docs/framework/misc/link-demands.md)詳細についてはします。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Remoting.Messaging.CallContext>を送信するクラス[プリンシパル オブジェクトと Id オブジェクト](~/docs/standard/security/principal-and-identity-objects.md)をリモートの場所を識別します。 コードを表示する、`LogicalCallContextData`このサンプルで使用されるクラスの例を参照してください、<xref:System.Runtime.Remoting.Messaging.ILogicalThreadAffinative>インターフェイスです。 コードを表示する、`HelloServiceClass`このサンプルで使用されるクラスの例を参照してください、<xref:System.Runtime.Remoting.Messaging.CallContext.GetData%2A>メソッドです。 このサンプルで使用されるサーバー クラスのコードを表示するには、例を参照してください。、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A>クラスです。  
+  
+ [!code-cpp[CallContext#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CallContext/CPP/client.cpp#1)]
+ [!code-csharp[CallContext#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CallContext/CS/client.cs#1)]
+ [!code-vb[CallContext#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/CallContext/VB/client.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName="FreeNamedDataSlot">
+      <MemberSignature Language="C#" Value="public static void FreeNamedDataSlot (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void FreeNamedDataSlot(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.CallContext.FreeNamedDataSlot(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">空のデータ スロットの名前。</param>
+        <summary>指定した名前のデータ スロットを空にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、名前付きデータ スロットを作成する論理のスレッドから返されたし、その名前付きデータ スロットを解放する名前付きデータ スロットの値を表示するリモート オブジェクトでメソッドを呼び出すクライアントを示します。  
+  
+ [!code-cpp[CallContext_GetHeaders#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CallContext_GetHeaders/CPP/callcontext_client.cpp#1)]
+ [!code-csharp[CallContext_GetHeaders#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CallContext_GetHeaders/CS/callcontext_client.cs#1)]
+ [!code-vb[CallContext_GetHeaders#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/CallContext_GetHeaders/VB/callcontext_client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public static object GetData (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetData(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.CallContext.GetData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">呼び出しのコンテキスト内の項目の名前です。</param>
+        <summary>指定した名前のオブジェクトを取得、<see cref="T:System.Runtime.Remoting.Messaging.CallContext" />です。</summary>
+        <returns>指定した名前に関連付けられている呼び出しのコンテキスト内のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Remoting.Messaging.CallContext.GetData%2A>送信[プリンシパル オブジェクトと Id オブジェクト](~/docs/standard/security/principal-and-identity-objects.md)識別用のリモートの場所にします。 コードを表示する、`LogicalCallContextData`このサンプルで使用されるクラスの例を参照してください、<xref:System.Runtime.Remoting.Messaging.ILogicalThreadAffinative>インターフェイスです。 このサンプルで使用されるクライアント クラスのコードを表示するには、例を参照してください。、<xref:System.Runtime.Remoting.Messaging.CallContext>クラスです。 このサンプルで使用されるサーバー クラスのコードを表示するには、例を参照してください。、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A>クラスです。  
+  
+ [!code-cpp[CallContext#3](~/samples/snippets/cpp/VS_Snippets_Remoting/CallContext/CPP/service.cpp#3)]
+ [!code-csharp[CallContext#3](~/samples/snippets/csharp/VS_Snippets_Remoting/CallContext/CS/service.cs#3)]
+ [!code-vb[CallContext#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/CallContext/VB/service.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHeaders">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Messaging.Header[] GetHeaders ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Messaging.Header[] GetHeaders() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.CallContext.GetHeaders" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.Header[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メソッドの呼び出しと共に送信されるヘッダーを返します。</summary>
+        <returns>メソッドの呼び出しと共に送信されるヘッダー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、リモート メソッドにヘッダーを送信し、リモートのメソッドが戻るときにコンソールにこれらのヘッダーの内容を出力します。  
+  
+ [!code-cpp[CallContext_GetHeaders#2](~/samples/snippets/cpp/VS_Snippets_Remoting/CallContext_GetHeaders/CPP/callcontext_client.cpp#2)]
+ [!code-csharp[CallContext_GetHeaders#2](~/samples/snippets/csharp/VS_Snippets_Remoting/CallContext_GetHeaders/CS/callcontext_client.cs#2)]
+ [!code-vb[CallContext_GetHeaders#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/CallContext_GetHeaders/VB/callcontext_client.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="HostContext">
+      <MemberSignature Language="C#" Value="public static object HostContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property object HostContext" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Messaging.CallContext.HostContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のスレッドに関連付けられたホスト コンテキストを設定します。</summary>
+        <value>現在のスレッドに関連付けられたホスト コンテキスト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalGetData">
+      <MemberSignature Language="C#" Value="public static object LogicalGetData (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object LogicalGetData(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.CallContext.LogicalGetData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">論理呼び出しコンテキスト内の項目の名前。</param>
+        <summary>論理呼び出しコンテキストから指定した名前を持つオブジェクトを取得します。</summary>
+        <returns>指定した名前に関連付けられている論理呼び出しコンテキスト内のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalSetData">
+      <MemberSignature Language="C#" Value="public static void LogicalSetData (string name, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void LogicalSetData(string name, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.CallContext.LogicalSetData(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">論理呼び出しコンテキストに新しい項目を関連付けられる名前です。</param>
+        <param name="data">論理呼び出しコンテキスト、このオブジェクトに格納するオブジェクトをシリアル化可能にする必要があります。</param>
+        <summary>論理呼び出しコンテキストに指定されたオブジェクトを格納し、指定した名前に関連付けます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public static void SetData (string name, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetData(string name, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.CallContext.SetData(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">呼び出しのコンテキスト内の新しい項目を関連付けられる名前です。</param>
+        <param name="data">呼び出しのコンテキストに格納するオブジェクト。</param>
+        <summary>指定したオブジェクトを格納し、指定した名前に関連付けます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Remoting.Messaging.CallContext.SetData%2A>送信[プリンシパル オブジェクトと Id オブジェクト](~/docs/standard/security/principal-and-identity-objects.md)識別用のリモートの場所にします。 コードを表示する、`LogicalCallContextData`このサンプルで使用されるクラスの例を参照してください、<xref:System.Runtime.Remoting.Messaging.ILogicalThreadAffinative>インターフェイスです。 コードを表示する、`HelloServiceClass`このサンプルで使用されるクラスの例を参照してください、<xref:System.Runtime.Remoting.Messaging.CallContext.GetData%2A>メソッドです。 このサンプルで使用されるサーバー クラスのコードを表示するには、例を参照してください。、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A>クラスです。  
+  
+ [!code-cpp[CallContext#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CallContext/CPP/client.cpp#1)]
+ [!code-csharp[CallContext#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CallContext/CS/client.cs#1)]
+ [!code-vb[CallContext#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/CallContext/VB/client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHeaders">
+      <MemberSignature Language="C#" Value="public static void SetHeaders (System.Runtime.Remoting.Messaging.Header[] headers);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetHeaders(class System.Runtime.Remoting.Messaging.Header[] headers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Messaging.CallContext.SetHeaders(System.Runtime.Remoting.Messaging.Header[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="headers" Type="System.Runtime.Remoting.Messaging.Header[]" />
+      </Parameters>
+      <Docs>
+        <param name="headers">A<see cref="T:System.Runtime.Remoting.Messaging.Header" />メソッドの呼び出しと共に送信するのには、ヘッダーの配列。</param>
+        <summary>メソッドの呼び出しと共に送信されるヘッダーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、簡単に使用するヘッダーは、論理スレッドに配置を示します。  
+  
+ [!code-cpp[CallContext_GetHeaders#3](~/samples/snippets/cpp/VS_Snippets_Remoting/CallContext_GetHeaders/CPP/callcontext_share.cpp#3)]
+ [!code-csharp[CallContext_GetHeaders#3](~/samples/snippets/csharp/VS_Snippets_Remoting/CallContext_GetHeaders/CS/callcontext_share.cs#3)]
+ [!code-vb[CallContext_GetHeaders#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/CallContext_GetHeaders/VB/callcontext_share.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

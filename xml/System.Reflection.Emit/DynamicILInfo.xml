@@ -1,0 +1,538 @@
+<Type Name="DynamicILInfo" FullName="System.Reflection.Emit.DynamicILInfo">
+  <TypeSignature Language="C#" Value="public class DynamicILInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicILInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.DynamicILInfo" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Microsoft intermediate language (MSIL) を生成する別の方法のサポートとメタデータ トークンを作成し、コード、例外処理、およびローカル変数シグネチャ blob を挿入するためのメソッドを含む、動的メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Emit.DynamicILInfo>クラスにより、使用する代わりに、独自の MSIL ジェネレーターを記述する開発者<xref:System.Reflection.Emit.ILGenerator>です。  
+  
+ 他の型のインスタンスを作成、メソッド、およびなを呼び出し、生成する MSIL はそれらのエンティティのためにトークンを含める必要があります。 <xref:System.Reflection.Emit.DynamicILInfo>のいくつかのオーバー ロードがクラスに用意されています、<xref:System.Reflection.Emit.DynamicILInfo.GetTokenFor%2A>メソッドで、現在のスコープで有効なトークンを返す<xref:System.Reflection.Emit.DynamicILInfo>です。 オーバー ロードを呼び出す必要がある場合など、<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>メソッドを取得できます、<xref:System.RuntimeMethodHandle>オーバー ロードに渡すとするため、 <xref:System.Reflection.Emit.DynamicILInfo.GetTokenFor%2A> MSIL に埋め込むには、トークンを取得します。  
+  
+ 作成した後<xref:System.Byte>ローカル変数シグネチャ、例外、およびコードの本体の配列、行うこともできます、 <xref:System.Reflection.Emit.DynamicILInfo.SetCode%2A>、 <xref:System.Reflection.Emit.DynamicILInfo.SetExceptions%2A>、および<xref:System.Reflection.Emit.DynamicILInfo.SetLocalSignature%2A>にそれらを挿入するメソッド、<xref:System.Reflection.Emit.DynamicMethod>に関連付けられている、<xref:System.Reflection.Emit.DynamicILInfo>オブジェクト。  
+  
+ 独自のメタデータと MSIL を生成するには、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」に関する知識が必要です。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+> [!NOTE]
+>  使用しないでください<xref:System.Reflection.Emit.DynamicILInfo>デリゲート コンス トラクターを直接呼び出すことによって他の動的メソッドにデリゲートを作成するコードを生成します。 代わりに、使用、<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>デリゲートを作成します。 デリゲート コンス トラクターで作成されるデリゲートには、対象の動的メソッドへの参照がありません。 動的メソッドは、デリゲートは使用されているときに、ガベージ コレクションによるクリア可能性があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DynamicMethod">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.DynamicMethod DynamicMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Emit.DynamicMethod DynamicMethod" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicILInfo.DynamicMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.DynamicMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>本体を持つが、現在のインスタンスによって生成される動的メソッドを取得します。</summary>
+        <value>A<see cref="T:System.Reflection.Emit.DynamicMethod" />対象の動的メソッドを表すオブジェクトを現在<see cref="T:System.Reflection.Emit.DynamicILInfo" />オブジェクトには、コードを生成します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Reflection.Emit.DynamicILInfo>オブジェクトは、動的メソッドに関連付けられたは常にします。 目的、<xref:System.Reflection.Emit.DynamicILInfo>開発者向けでは、MSIL を生成を使用せずに、動的メソッドの MSIL ストリーム、例外処理、およびローカル変数シグネチャを挿入する別の方法を提供するクラスは、<xref:System.Reflection.Emit.ILGenerator>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenFor">
+      <MemberSignature Language="C#" Value="public int GetTokenFor (byte[] signature);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetTokenFor(unsigned int8[] signature) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.GetTokenFor(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signature" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="signature">署名を格納する配列。</param>
+        <summary>現在のスコープでは有効で、トークンを取得<see cref="T:System.Reflection.Emit.DynamicILInfo" />、関連付けられている動的メソッドのシグネチャを表すです。</summary>
+        <returns>メタデータと関連付けられている動的メソッドの MSIL ストリームで埋め込むことができるトークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シグネチャ blob については、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」を参照してください。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenFor">
+      <MemberSignature Language="C#" Value="public int GetTokenFor (System.Reflection.Emit.DynamicMethod method);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetTokenFor(class System.Reflection.Emit.DynamicMethod method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.GetTokenFor(System.Reflection.Emit.DynamicMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.Reflection.Emit.DynamicMethod" />
+      </Parameters>
+      <Docs>
+        <param name="method">動的に呼び出すメソッド。</param>
+        <summary>現在のスコープでは有効で、トークンを取得<see cref="T:System.Reflection.Emit.DynamicILInfo" />、関連付けられたメソッドから呼び出される動的メソッドを表すです。</summary>
+        <returns>MSIL 命令の対象として、関連付けられている動的メソッドの MSIL ストリームに埋め込むことができるトークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードによって返されるトークンを使用すると、動的メソッドに現在関連付けられている動的メソッドから呼び出す<xref:System.Reflection.Emit.DynamicILInfo>オブジェクト。 再帰的に関連付けられている動的メソッドを呼び出すには、値を渡す、<xref:System.Reflection.Emit.DynamicILInfo.DynamicMethod%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenFor">
+      <MemberSignature Language="C#" Value="public int GetTokenFor (RuntimeFieldHandle field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetTokenFor(valuetype System.RuntimeFieldHandle field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.GetTokenFor(System.RuntimeFieldHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.RuntimeFieldHandle" />
+      </Parameters>
+      <Docs>
+        <param name="field">アクセスされるフィールド。</param>
+        <summary>現在のスコープでは有効で、トークンを取得<see cref="T:System.Reflection.Emit.DynamicILInfo" />、関連付けられている動的メソッドからアクセスされるフィールドを表すです。</summary>
+        <returns>現在のスコープ内のフィールドにアクセスする MSIL 命令のオペランドとして使用できるトークン<see cref="T:System.Reflection.Emit.DynamicILInfo" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在関連付けられている動的メソッドでアクセスされる任意のフィールドのトークンを取得する必要があります<xref:System.Reflection.Emit.DynamicILInfo>オブジェクト。 使用して、<xref:System.Type.GetField%2A?displayProperty=nameWithType>取得するメソッド、<xref:System.Reflection.FieldInfo>にアクセスする、フィールドを使用して、<xref:System.Reflection.FieldInfo.FieldHandle%2A>を取得するプロパティ、<xref:System.RuntimeFieldHandle>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenFor">
+      <MemberSignature Language="C#" Value="public int GetTokenFor (RuntimeMethodHandle method);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetTokenFor(valuetype System.RuntimeMethodHandle method) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.GetTokenFor(System.RuntimeMethodHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.RuntimeMethodHandle" />
+      </Parameters>
+      <Docs>
+        <param name="method">アクセスするメソッド。</param>
+        <summary>現在のスコープでは有効で、トークンを取得<see cref="T:System.Reflection.Emit.DynamicILInfo" />、関連付けられている動的メソッドからアクセスするメソッドを表すです。</summary>
+        <returns>など、メソッドにアクセスする MSIL 命令のオペランドとして使用できるトークン<see cref="F:System.Reflection.Emit.OpCodes.Call" />または<see cref="F:System.Reflection.Emit.OpCodes.Ldtoken" />、現在のスコープで<see cref="T:System.Reflection.Emit.DynamicILInfo" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在関連付けられている動的メソッドでアクセスされる任意のメソッドのトークンを取得する必要があります<xref:System.Reflection.Emit.DynamicILInfo>オブジェクト。 使用して、<xref:System.Type.GetMethod%2A?displayProperty=nameWithType>取得するメソッド、<xref:System.Reflection.MethodInfo>にアクセスし、使用する方法を<xref:System.Reflection.MethodBase.MethodHandle%2A>を取得するプロパティ、<xref:System.RuntimeMethodHandle>です。  
+  
+> [!NOTE]
+>  ジェネリック型に属しているメソッドを使用して、<xref:System.Reflection.Emit.DynamicILInfo.GetTokenFor%28System.RuntimeMethodHandle%2CSystem.RuntimeTypeHandle%29>メソッド オーバー ロードして、指定、<xref:System.RuntimeTypeHandle>ジェネリック型のです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenFor">
+      <MemberSignature Language="C#" Value="public int GetTokenFor (RuntimeTypeHandle type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetTokenFor(valuetype System.RuntimeTypeHandle type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.GetTokenFor(System.RuntimeTypeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.RuntimeTypeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="type">使用する型。</param>
+        <summary>現在のスコープでは有効で、トークンを取得<see cref="T:System.Reflection.Emit.DynamicILInfo" />、関連付けられている動的メソッドで使用する型を表すです。</summary>
+        <returns>現在のスコープ内の型を必要とする MSIL 命令のオペランドとして使用できるトークン<see cref="T:System.Reflection.Emit.DynamicILInfo" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードによって返されるトークンを使用すると、ローカル変数の型を定義しに現在関連付けられている動的メソッドの型のインスタンスを作成する MSIL を生成<xref:System.Reflection.Emit.DynamicILInfo>オブジェクト。  
+  
+ 取得する、<xref:System.RuntimeTypeHandle>型を表すを使用して、<xref:System.Type.TypeHandle%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenFor">
+      <MemberSignature Language="C#" Value="public int GetTokenFor (string literal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetTokenFor(string literal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.GetTokenFor(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="literal" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="literal">使用する文字列。</param>
+        <summary>現在のスコープでは有効で、トークンを取得<see cref="T:System.Reflection.Emit.DynamicILInfo" />、関連付けられている動的メソッドで使用されるリテラル文字列を表すです。</summary>
+        <returns>現在のスコープ内の文字列を必要とする MSIL 命令のオペランドとして使用できるトークン<see cref="T:System.Reflection.Emit.DynamicILInfo" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenFor">
+      <MemberSignature Language="C#" Value="public int GetTokenFor (RuntimeFieldHandle field, RuntimeTypeHandle contextType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetTokenFor(valuetype System.RuntimeFieldHandle field, valuetype System.RuntimeTypeHandle contextType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.GetTokenFor(System.RuntimeFieldHandle,System.RuntimeTypeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.RuntimeFieldHandle" />
+        <Parameter Name="contextType" Type="System.RuntimeTypeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="field">アクセスされるフィールド。</param>
+        <param name="contextType">フィールドが属するジェネリック型。</param>
+        <summary>現在のスコープでは有効で、トークンを取得<see cref="T:System.Reflection.Emit.DynamicILInfo" />、関連付けられている動的メソッドからアクセスされるフィールドを表すフィールドが指定されたジェネリック型です。</summary>
+        <returns>現在のスコープ内のフィールドにアクセスする MSIL 命令のオペランドとして使用できるトークン<see cref="T:System.Reflection.Emit.DynamicILInfo" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在関連付けられている動的メソッドでアクセスされる任意のフィールドのトークンを取得する必要があります<xref:System.Reflection.Emit.DynamicILInfo>オブジェクト。 使用して、<xref:System.Type.GetField%2A?displayProperty=nameWithType>取得するメソッド、<xref:System.Reflection.FieldInfo>にアクセスし、使用するフィールド、<xref:System.Reflection.FieldInfo.FieldHandle%2A>を取得するプロパティ、<xref:System.RuntimeFieldHandle>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenFor">
+      <MemberSignature Language="C#" Value="public int GetTokenFor (RuntimeMethodHandle method, RuntimeTypeHandle contextType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetTokenFor(valuetype System.RuntimeMethodHandle method, valuetype System.RuntimeTypeHandle contextType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.GetTokenFor(System.RuntimeMethodHandle,System.RuntimeTypeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="method" Type="System.RuntimeMethodHandle" />
+        <Parameter Name="contextType" Type="System.RuntimeTypeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="method">メソッド。</param>
+        <param name="contextType">メソッドが属するジェネリック型。</param>
+        <summary>現在のスコープでは有効で、トークンを取得<see cref="T:System.Reflection.Emit.DynamicILInfo" />、ジェネリック型でメソッドを表すです。</summary>
+        <returns>など、メソッドにアクセスする MSIL 命令のオペランドとして使用できるトークン<see cref="F:System.Reflection.Emit.OpCodes.Call" />または<see cref="F:System.Reflection.Emit.OpCodes.Ldtoken" />、現在のスコープで<see cref="T:System.Reflection.Emit.DynamicILInfo" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在関連付けられている動的メソッドで呼び出されるメソッドのトークンを取得する必要があります<xref:System.Reflection.Emit.DynamicILInfo>オブジェクト。 使用して、<xref:System.Type.GetMethod%2A?displayProperty=nameWithType>取得するメソッド、 <xref:System.Reflection.MethodInfo> 、メソッドを呼び出すと、し、使用する、<xref:System.Reflection.MethodBase.MethodHandle%2A>を取得するプロパティ、<xref:System.RuntimeMethodHandle>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCode">
+      <MemberSignature Language="C#" Value="public void SetCode (byte[] code, int maxStackSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCode(unsigned int8[] code, int32 maxStackSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.SetCode(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="code" Type="System.Byte[]" />
+        <Parameter Name="maxStackSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="code">MSIL ストリームを格納する配列。</param>
+        <param name="maxStackSize">メソッドを実行するときに、オペランド スタック上の項目の最大数。</param>
+        <summary>関連付けられている動的メソッドのコードの本文を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ MSIL ストリームでは、有効性のチェックは行われません。  
+  
+ このメソッドを呼び出すと、2 回目と 2 番目、最初の MSIL ストリームが置き換えられます。  
+  
+ 独自のメタデータと MSIL を生成するには、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」に関する知識が必要です。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCode">
+      <MemberSignature Language="C#" Value="public void SetCode (byte* code, int codeSize, int maxStackSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCode(unsigned int8* code, int32 codeSize, int32 maxStackSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.SetCode(System.Byte*,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="code" Type="System.Byte*" />
+        <Parameter Name="codeSize" Type="System.Int32" />
+        <Parameter Name="maxStackSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="code">MSIL ストリームを格納するバイト配列へのポインター。</param>
+        <param name="codeSize">MSIL ストリームのバイト数。</param>
+        <param name="maxStackSize">メソッドを実行するときに、オペランド スタック上の項目の最大数。</param>
+        <summary>関連付けられている動的メソッドのコードの本文を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ MSIL ストリームでは、有効性のチェックは行われません。  
+  
+ このメソッドを呼び出すと、2 回目と 2 番目、最初の MSIL ストリームが置き換えられます。  
+  
+ 共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」の知識が必要です独自のメタデータと MSIL を生成する、"Partition III: CIL 命令セット。" ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:System.Reflection.Emit.DynamicILInfo.SetCode(System.Byte[],System.Int32)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="code" /><see langword="null" />と<paramref name="codeSize" />が 0 より大きい。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="codeSize" /> が 0 未満です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetExceptions">
+      <MemberSignature Language="C#" Value="public void SetExceptions (byte[] exceptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetExceptions(unsigned int8[] exceptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.SetExceptions(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exceptions" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="exceptions">例外のメタデータを格納する配列。</param>
+        <summary>関連付けられている動的メソッドの例外のメタデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドの例外のメタデータは、すべてのサイズと場所を定義します。 `try`、 `catch`、 `finally`、フィルター、およびフォールト ブロックします。 このメタデータのレイアウトについては、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」を参照してください。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetExceptions">
+      <MemberSignature Language="C#" Value="public void SetExceptions (byte* exceptions, int exceptionsSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetExceptions(unsigned int8* exceptions, int32 exceptionsSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.SetExceptions(System.Byte*,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exceptions" Type="System.Byte*" />
+        <Parameter Name="exceptionsSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="exceptions">例外のメタデータを格納するバイト配列へのポインター。</param>
+        <param name="exceptionsSize">例外のメタデータのバイト数。</param>
+        <summary>関連付けられている動的メソッドの例外のメタデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドの例外のメタデータは、すべてのサイズと場所を定義します。 `try`、 `catch`、 `finally`、フィルター、およびフォールト ブロックします。 このメタデータのレイアウトについては、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」を参照してください。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:System.Reflection.Emit.DynamicILInfo.SetExceptions(System.Byte[])" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="exceptions" /><see langword="null" />と<paramref name="exceptionSize" />が 0 より大きい。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="exceptionSize" /> が 0 未満です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLocalSignature">
+      <MemberSignature Language="C#" Value="public void SetLocalSignature (byte[] localSignature);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLocalSignature(unsigned int8[] localSignature) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.SetLocalSignature(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localSignature" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="localSignature">関連付けられているローカル変数のレイアウトを含む配列<see cref="T:System.Reflection.Emit.DynamicMethod" />です。</param>
+        <summary>関連付けられている動的メソッドのローカル変数のレイアウトを記述するローカル変数シグネチャを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカル変数シグネチャでは、メソッドのローカル変数のレイアウトについて説明します。 ローカル変数シグネチャの構築を簡略化を使用して、 `static` (`Shared` Visual Basic で)<xref:System.Reflection.Emit.SignatureHelper.GetLocalVarSigHelper%2A?displayProperty=nameWithType>取得するメソッド、<xref:System.Reflection.Emit.SignatureHelper>ローカル シグネチャのです。  
+  
+ ローカル変数署名については、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」を参照してください。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLocalSignature">
+      <MemberSignature Language="C#" Value="public void SetLocalSignature (byte* localSignature, int signatureSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetLocalSignature(unsigned int8* localSignature, int32 signatureSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicILInfo.SetLocalSignature(System.Byte*,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="localSignature" Type="System.Byte*" />
+        <Parameter Name="signatureSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="localSignature">関連付けられているローカル変数のレイアウトを含む配列<see cref="T:System.Reflection.Emit.DynamicMethod" />です。</param>
+        <param name="signatureSize">シグネチャのバイト数。</param>
+        <summary>関連付けられている動的メソッドのローカル変数のレイアウトを記述するローカル変数シグネチャを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカル変数シグネチャでは、メソッドのローカル変数のレイアウトについて説明します。 ローカル変数シグネチャの構築を簡略化を使用して、 `static` (`Shared` Visual Basic で)<xref:System.Reflection.Emit.SignatureHelper.GetLocalVarSigHelper%2A?displayProperty=nameWithType>取得するメソッド、<xref:System.Reflection.Emit.SignatureHelper>ローカル シグネチャのです。  
+  
+ ローカル変数署名については、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」を参照してください。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:System.Reflection.Emit.DynamicILInfo.SetLocalSignature(System.Byte[])" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="localSignature" /><see langword="null" />と<paramref name="signatureSize" />が 0 より大きい。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="signatureSize" /> が 0 未満です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

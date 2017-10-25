@@ -1,0 +1,56 @@
+<Type Name="XmlHierarchicalDataSourceView" FullName="System.Web.UI.WebControls.XmlHierarchicalDataSourceView">
+  <TypeSignature Language="C#" Value="public class XmlHierarchicalDataSourceView : System.Web.UI.HierarchicalDataSourceView" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlHierarchicalDataSourceView extends System.Web.UI.HierarchicalDataSourceView" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.XmlHierarchicalDataSourceView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HierarchicalDataSourceView</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML ノードまたはの XML ノードのコレクションでのデータ ビューを表す、<see cref="T:System.Web.UI.WebControls.XmlDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.XmlDataSource>コントロールは、それを連結する Web サーバー コントロールにテーブルと階層の両方の形式でその基になるデータを表示することができます。 などのコントロール<xref:System.Web.UI.WebControls.GridView>または<xref:System.Web.UI.WebControls.DropDownList>を使用して、 <xref:System.Web.UI.WebControls.XmlDataSource> XML データにバインドをリストまたは表形式では、コントロールから派生するときに、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスなど<xref:System.Web.UI.WebControls.TreeView>し、XML データにバインドを階層形式で提示します。  
+  
+ <xref:System.Web.UI.WebControls.XmlDataSource>を異なるコード パスで内部的に各ビューの種類を作成します。 場合、<xref:System.Web.UI.IDataSource.GetView%2A>でメソッドが呼び出さ、<xref:System.Web.UI.WebControls.XmlDataSource>コントロール、<xref:System.Web.UI.WebControls.XmlDataSourceView>オブジェクトによって作成されて、<xref:System.Web.UI.WebControls.XmlDataSource>コントロール。 場合、<xref:System.Web.UI.WebControls.XmlDataSource.GetHierarchicalView%2A>メソッドが呼び出されると、<xref:System.Web.UI.WebControls.XmlHierarchicalDataSourceView>オブジェクトを作成します。 <xref:System.Web.UI.WebControls.XmlDataSourceView>から派生する Web サーバー コントロールのクラスが用意されて<xref:System.Web.UI.WebControls.DataBoundControl>とリストと表形式のデータにバインド中に、<xref:System.Web.UI.WebControls.XmlHierarchicalDataSourceView>から派生する Web サーバー コントロールの指定された<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>階層データをバインドします。 内部的には、<xref:System.Web.UI.WebControls.DataBoundControl>と<xref:System.Web.UI.WebControls.CompositeDataBoundControl>クラスの呼び出し、<xref:System.Web.UI.WebControls.XmlDataSourceView.Select%2A>メソッドの<xref:System.Web.UI.WebControls.XmlDataSourceView>オブジェクトのクラスから派生したときに、データ ソースからデータを取得するビュー<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>呼び出し、<xref:System.Web.UI.WebControls.XmlHierarchicalDataSourceView.Select%2A>メソッドです。  
+  
+ などのすべて<xref:System.Web.UI.HierarchicalDataSourceView>ヘルパー オブジェクト、<xref:System.Web.UI.WebControls.XmlHierarchicalDataSourceView>データ ソースを基になるデータで実行できる操作を定義します。 <xref:System.Web.UI.WebControls.XmlHierarchicalDataSourceView>クラスのオーバーライドのみ、<xref:System.Web.UI.WebControls.XmlHierarchicalDataSourceView.Select%2A>メソッドは、関連付けられた<xref:System.Web.UI.WebControls.XmlDataSource>コントロールはサポートされない並べ替え式、またはを実行、削除、または更新操作。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.IHierarchicalEnumerable Select ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.IHierarchicalEnumerable Select() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.XmlHierarchicalDataSourceView.Select" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchicalEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になるデータ ソースからデータ項目の一覧を取得します。</summary>
+        <returns><see cref="T:System.Web.UI.IHierarchicalEnumerable" />データ項目のコレクションが現在のビューの階層のレベルに基づいています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IHierarchicalEnumerable>によって返される<xref:System.Web.UI.HierarchicalDataSourceView.Select%2A>は、<xref:System.Xml.XmlNodeList>いずれかのように使用することができます、<xref:System.Collections.IEnumerable>コレクション。 呼び出す、<xref:System.Collections.IEnumerable.GetEnumerator%2A>取得するメソッド、<xref:System.Collections.IEnumerator>のコレクションを反復処理<xref:System.Xml.XmlNode>ノード、または使用`foreach`(C# の場合) または`For Each`(Visual Basic の場合)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

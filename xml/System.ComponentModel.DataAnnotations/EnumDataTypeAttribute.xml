@@ -1,0 +1,158 @@
+<Type Name="EnumDataTypeAttribute" FullName="System.ComponentModel.DataAnnotations.EnumDataTypeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EnumDataTypeAttribute : System.ComponentModel.DataAnnotations.DataTypeAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EnumDataTypeAttribute extends System.ComponentModel.DataAnnotations.DataTypeAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.EnumDataTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.DataAnnotations.DataTypeAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>.NET Framework の列挙型をデータ列にマップできるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、対応する列挙定数名を列の基になる値をマップできます。 これにより、データベースの値に対応するわかりやすい値を含む列挙体を定義し、データが表示されるときに、データベース内の値ではなく列挙定数の名前を使用できます。  
+  
+   
+  
+## Examples  
+ 次の例では、対応する宣言で列挙型の数値の値を置き換える方法を示します。  
+  
+```csharp  
+public enum eReorderLvl {  
+        zero = 0,  
+        five = 5,  
+        ten=10,  
+        fifteen=15,  
+        twenty=20,  
+        twenty_five=25,  
+        thirty=30  
+    }  
+    [MetadataType(typeof(Product_MD))]  
+    public partial class Product {  
+        public class Product_MD {  
+            [EnumDataType(typeof(eReorderLvl))]  
+            public object ReorderLevel { get; set; }  
+        }  
+    }  
+```  
+  
+```vb  
+Imports Public Enum eReorderLvl  
+    zero = 0  
+    five = 5  
+    ten = 10  
+    fifteen = 15  
+    twenty = 20  
+    twenty_five = 25  
+    thirty = 30  
+End Enum  
+<MetadataType(GetType(Product_MD))>  _  
+Public Class Product  
+    Public Class Product_MD  
+        <EnumDataType(GetType(eReorderLvl))>  _  
+        Public Property ReorderLevel As Object  
+        End Property  
+    End Class  
+End Class  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EnumDataTypeAttribute (Type enumType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type enumType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">列挙体の型。</param>
+        <summary><see cref="T:System.ComponentModel.DataAnnotations.EnumDataTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumType">
+      <MemberSignature Language="C#" Value="public Type EnumType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type EnumType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.EnumType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列挙型を設定します。</summary>
+        <value>列挙型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public override bool IsValid (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsValid(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.EnumDataTypeAttribute.IsValid(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証するデータ フィールドの値。</param>
+        <summary>データ フィールドの値が有効なことを確認します。</summary>
+        <returns>
+          <see langword="true" />データ フィールドの値が無効である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,171 @@
+<Type Name="ScrollEventType" FullName="System.Windows.Controls.Primitives.ScrollEventType">
+  <TypeSignature Language="C#" Value="public enum ScrollEventType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ScrollEventType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.ScrollEventType" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>原因となった動作について説明します、<see cref="E:System.Windows.Controls.Primitives.ScrollBar.Scroll" />イベントを<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページのボタンは、ボタンとして表示されませんが、間の空白を占める、<xref:System.Windows.Controls.Primitives.Thumb>と<xref:System.Windows.Controls.Primitives.RepeatButton>コントロールの先頭または末尾に、<xref:System.Windows.Controls.Primitives.ScrollBar>です。 間でマウスの左ボタンをクリックすると、ページのボタンをクリックして、<xref:System.Windows.Controls.Primitives.Thumb>と<xref:System.Windows.Controls.Primitives.RepeatButton>です。 このアクションの結果が移動するには、<xref:System.Windows.Controls.Primitives.Thumb>のページ ボタンの方向にします。 ページのボタンの影響の詳細については、LargeIncrement と LargeDecrement メンバーの説明を参照してください。 次の図の要素、<xref:System.Windows.Controls.Primitives.ScrollBar>ページのボタンを含むです。  
+  
+ ![スクロール バーのさまざまな部分](~/add/media/scrollbarpagebutton.png "スクロール バーのさまざまな部分")  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EndScroll">
+      <MemberSignature Language="C#" Value="EndScroll" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.Primitives.ScrollEventType EndScroll = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollEventType.EndScroll" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.ScrollEventType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Thumb" />を新しい位置にドラッグし、不要になったユーザーがドラッグされているようになりました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="First">
+      <MemberSignature Language="C#" Value="First" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.Primitives.ScrollEventType First = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollEventType.First" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.ScrollEventType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Thumb" />に移動、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Minimum" />の位置、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。 垂直方向の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、この移動は、CTRL + ホーム キーが押されたときに発生します。 この移動は、<see cref="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToTopCommand" />垂直方向に<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />と<see cref="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToLeftEndCommand" />水平方向に<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LargeDecrement">
+      <MemberSignature Language="C#" Value="LargeDecrement" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.Primitives.ScrollEventType LargeDecrement = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollEventType.LargeDecrement" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.ScrollEventType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Thumb" />移動の値によって決定される、指定された距離<see cref="P:System.Windows.Controls.Primitives.RangeBase.LargeChange" />、水平方向の左側に<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />または垂直方向の上向き<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。 垂直方向の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、この移動ときに発生ページ ボタンを上、<see cref="T:System.Windows.Controls.Primitives.Thumb" />が押されたか、キー ページを押すに対応する、<see cref="F:System.Windows.Controls.Primitives.ScrollBar.PageUpCommand" />です。 水平方向の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、この移動が発生したページの左側にボタンをクリックすると、<see cref="T:System.Windows.Controls.Primitives.Thumb" />が押されに対応する、<see cref="F:System.Windows.Controls.Primitives.ScrollBar.PageLeftCommand" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LargeIncrement">
+      <MemberSignature Language="C#" Value="LargeIncrement" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.Primitives.ScrollEventType LargeIncrement = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollEventType.LargeIncrement" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.ScrollEventType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Thumb" />移動の値によって決定される、指定された距離<see cref="P:System.Windows.Controls.Primitives.RangeBase.LargeChange" />、水平方向の右側に<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />または垂直方向の下降<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。 垂直方向の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、ページ ボタンが低い場合にこの移動が発生した、<see cref="T:System.Windows.Controls.Primitives.Thumb" />が押されたときに、ページの下キーが押され、に対応する、または、<see cref="F:System.Windows.Controls.Primitives.ScrollBar.PageDownCommand" />です。 水平方向の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、この移動が発生したページの右側にボタンをクリックすると、<see cref="T:System.Windows.Controls.Primitives.Thumb" />が押されに対応する、<see cref="F:System.Windows.Controls.Primitives.ScrollBar.PageRightCommand" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Last">
+      <MemberSignature Language="C#" Value="Last" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.Primitives.ScrollEventType Last = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollEventType.Last" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.ScrollEventType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Thumb" />に移動、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Maximum" />の位置、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。 垂直方向の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、この移動は、ctrl キーを押しながら END キーが押されたときに発生します。 この移動は、<see cref="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToEndCommand" />垂直方向に<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />と<see cref="F:System.Windows.Controls.Primitives.ScrollBar.ScrollToRightEndCommand" />水平方向に<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallDecrement">
+      <MemberSignature Language="C#" Value="SmallDecrement" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.Primitives.ScrollEventType SmallDecrement = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollEventType.SmallDecrement" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.ScrollEventType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Thumb" />の値によって決定される、わずかな間隔を移動<see cref="P:System.Windows.Controls.Primitives.RangeBase.SmallChange" />、水平方向の左側に<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />または垂直方向の上向き<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。 垂直方向の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、この移動が発生したときに、上限<see cref="T:System.Windows.Controls.Primitives.RepeatButton" />が押されたか、上矢印キーを押すに対応しています、<see cref="F:System.Windows.Controls.Primitives.ScrollBar.LineUpCommand" />です。 水平方向の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、この移動が発生したときに、左<see cref="T:System.Windows.Controls.Primitives.RepeatButton" />が押されに対応する、<see cref="F:System.Windows.Controls.Primitives.ScrollBar.LineLeftCommand" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallIncrement">
+      <MemberSignature Language="C#" Value="SmallIncrement" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.Primitives.ScrollEventType SmallIncrement = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollEventType.SmallIncrement" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.ScrollEventType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Thumb" />の値によって決定される、わずかな間隔を移動<see cref="P:System.Windows.Controls.Primitives.RangeBase.SmallChange" />、水平方向の右側に<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />または垂直方向の下降<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。 垂直方向の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />が低いときに、この移動が発生した<see cref="T:System.Windows.Controls.Primitives.RepeatButton" />が押されたか、下矢印キーを押すに対応する、<see cref="F:System.Windows.Controls.Primitives.ScrollBar.LineDownCommand" />です。 水平方向の<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />、この移動が発生したときに、右<see cref="T:System.Windows.Controls.Primitives.RepeatButton" />が押されに対応する、<see cref="F:System.Windows.Controls.Primitives.ScrollBar.LineRightCommand" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ThumbPosition">
+      <MemberSignature Language="C#" Value="ThumbPosition" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.Primitives.ScrollEventType ThumbPosition = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollEventType.ThumbPosition" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.ScrollEventType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Thumb" /> 、ユーザーが選択されているために、新しい位置に移動された**スクロールここ**のショートカット メニューを開き、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。 この移動は、<see cref="F:System.Windows.Controls.Primitives.ScrollBar.ScrollHereCommand" />です。 上にポインターがときに、ショートカット メニューを表示する、マウスを右クリックし、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ThumbTrack">
+      <MemberSignature Language="C#" Value="ThumbTrack" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.Primitives.ScrollEventType ThumbTrack = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.ScrollEventType.ThumbTrack" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.ScrollEventType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Thumb" />がドラッグ アンド ドロップの原因となった、<see cref="E:System.Windows.UIElement.MouseMove" />イベント。 A<see cref="E:System.Windows.Controls.Primitives.ScrollBar.Scroll" />このイベント<see cref="T:System.Windows.Controls.Primitives.ScrollEventType" />可能性がありますに複数出現ときに 1 回、<see cref="T:System.Windows.Controls.Primitives.Thumb" />でドラッグ、<see cref="T:System.Windows.Controls.Primitives.ScrollBar" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

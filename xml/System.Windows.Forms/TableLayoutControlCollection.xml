@@ -1,0 +1,129 @@
+<Type Name="TableLayoutControlCollection" FullName="System.Windows.Forms.TableLayoutControlCollection">
+  <TypeSignature Language="C#" Value="public class TableLayoutControlCollection : System.Windows.Forms.Control.ControlCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TableLayoutControlCollection extends System.Windows.Forms.Control/ControlCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TableLayoutControlCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Control+ControlCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer("System.Windows.Forms.Design.TableLayoutControlCollectionCodeDomSerializer, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.ComponentModel.Design.Serialization.CodeDomSerializer, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テーブル レイアウト コンテナーに含まれる子コントロールのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutControlCollection>クラスがすべての子コントロールのコレクションを表す、<xref:System.Windows.Forms.TableLayoutPanel>コントロール。 このコレクションは、によって公開される、<xref:System.Windows.Forms.TableLayoutPanel.Controls%2A>のプロパティ、<xref:System.Windows.Forms.TableLayoutPanel>クラスです。 管理およびを介してテーブル レイアウト パネルのメンバーを個別に操作できる、<xref:System.Windows.Forms.TableLayoutControlCollection>によって公開される<xref:System.Windows.Forms.TableLayoutPanel.Controls%2A>です。  
+  
+ <xref:System.Windows.Forms.TableLayoutControlCollection>クラスは、軽微な特殊化した、<xref:System.Windows.Forms.Control.ControlCollection>基本クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TableLayoutControlCollection (System.Windows.Forms.TableLayoutPanel container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.TableLayoutPanel container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutControlCollection.#ctor(System.Windows.Forms.TableLayoutPanel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="container" Type="System.Windows.Forms.TableLayoutPanel" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.Windows.Forms.TableLayoutPanel" />コントロール コレクションを格納しているコントロール。</param>
+        <summary><see cref="T:System.Windows.Forms.TableLayoutControlCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、アプリケーション プログラマが直接のインスタンスを作成、<xref:System.Windows.Forms.TableLayoutControlCollection>クラスです。 代わりに、既存への参照を<xref:System.Windows.Forms.TableLayoutControlCollection>によって返される、<xref:System.Windows.Forms.TableLayoutPanel.Controls%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual void Add (System.Windows.Forms.Control control, int column, int row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(class System.Windows.Forms.Control control, int32 column, int32 row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TableLayoutControlCollection.Add(System.Windows.Forms.Control,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+        <Parameter Name="column" Type="System.Int32" />
+        <Parameter Name="row" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="control">追加するコントロール。</param>
+        <param name="column">列を<c>コントロール</c>配置されます。</param>
+        <param name="row">これで、行<c>コントロール</c>配置されます。</param>
+        <summary>コレクションに指定されたコントロールを追加し、指定されたセルに移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TableLayoutControlCollection.Add%2A>のセルの位置を指定できます`control`です。 割り当てることができます`control`両方を提供することによって特定のセルに、`column`と`row`パラメーター、またはすることができますの行または列の値を指定してさせて、<xref:System.Windows.Forms.TableLayoutPanel.LayoutEngine%2A>配置`control`オープンの次のセルにします。 これは、コントロールの通知と呼ばれます*フロー*内での位置を<xref:System.Windows.Forms.TableLayoutPanel>コントロール。  
+  
+ 設定`column`たい場合は-1 に`control`固定の行位置を占めるようにします。  
+  
+ 設定`row`たい場合は-1 に`control`固定列の位置を占めるようにします。  
+  
+ どちらの場合`column`も`row`-1 で、`control`によって指定された絶対位置に追加されます (`column`、 `row`)。  
+  
+ 両方を設定する場合`column`と`row`-1`control`によって定義された特定のフローの動作で、最初の開いている位置に移動、<xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A?displayProperty=nameWithType>値。 これを使用すると、<xref:System.Windows.Forms.Control.ControlCollection.Add%2A?displayProperty=nameWithType>メソッドです。  
+  
+ コントロールの実際の現在位置を取得する、<xref:System.Windows.Forms.TableLayoutPanel.GetPositionFromControl%2A?displayProperty=nameWithType>メソッドです。 このメソッドは考慮に入れて全体<xref:System.Windows.Forms.TableLayoutPanel>列または行のまたがりメモリ割り当てをなど、コントロールの状態とタイミング、<xref:System.Windows.Forms.TableLayoutPanel.LayoutEngine%2A?displayProperty=nameWithType>を持つコントロールが配置されてその`Column`と`Row`プロパティが-1 に設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">いずれか<paramref name="column" />または<paramref name="row" />-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Container">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TableLayoutPanel Container { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TableLayoutPanel Container" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TableLayoutControlCollection.Container" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TableLayoutPanel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親を取得します<see cref="T:System.Windows.Forms.TableLayoutPanel" />コレクション内のコントロールを格納しています。</summary>
+        <value><see cref="T:System.Windows.Forms.TableLayoutPanel" />現在のコレクション内のコントロールを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ、<xref:System.Windows.Forms.TableLayoutControlCollection.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

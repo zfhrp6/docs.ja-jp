@@ -1,0 +1,111 @@
+<Type Name="DynamicUpdateMapQuery" FullName="System.Activities.DynamicUpdate.DynamicUpdateMapQuery">
+  <TypeSignature Language="C#" Value="public class DynamicUpdateMapQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicUpdateMapQuery extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DynamicUpdate.DynamicUpdateMapQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>動的更新マップ クエリを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Windows Workflow Foundation のバージョン管理と動的な更新機能をサポートします。 [!INCLUDE[crabout](~/includes/crabout-md.md)] ワークフローのバージョン管理、ワークフロー ID、および動的な更新に詳細については、次のトピックを参照してください。  
+  
+ [ワークフローのバージョン管理](http://go.microsoft.com/fwlink/?LinkID=271561)  
+ [!INCLUDE[net_v45](~/includes/net-v45-md.md)] で導入されたワークフローのバージョン管理機能について説明します。  
+  
+ [動的な更新](http://go.microsoft.com/fwlink/?LinkId=271563)  
+ 動的更新を使用して、永続化されたワークフロー インスタンスのワークフロー定義を更新する方法について説明します。  
+  
+ [WorkflowApplication Id とバージョン管理を使用](http://go.microsoft.com/fwlink/?LinkId=271564)  
+ <xref:System.Activities.WorkflowIdentity> を使用して、ワークフローの複数バージョンを同時にホストする方法について説明します。  
+  
+ [WorkflowServiceHost でサイド バイ サイドのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=271565)  
+ 単一のエンドポイントでワークフローの複数のバージョンをホストする方法について説明します。  
+  
+ [ワークフローの複数のバージョンを同時にホストする方法](http://go.microsoft.com/fwlink/?LinkId=271566)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)ワークフロー定義の更新と同時に新旧両方の定義を使用してワークフローのホスティングを示します。  
+  
+ [実行中のワークフロー インスタンスの定義を更新する方法](http://go.microsoft.com/fwlink/?LinkId=271567)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)新しいワークフロー定義を使用する永続化されたワークフロー インスタンスの更新を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanApplyUpdateWhileRunning">
+      <MemberSignature Language="C#" Value="public bool CanApplyUpdateWhileRunning (System.Activities.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanApplyUpdateWhileRunning(class System.Activities.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateMapQuery.CanApplyUpdateWhileRunning(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">現在のアクティビティ。</param>
+        <summary>指定するかどうか、<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateMapQuery" />実行中に更新できます。</summary>
+        <returns>
+          <see langword="True" />場合、<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateMapQuery" />実行中、それ以外の中に更新できます<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindMatch">
+      <MemberSignature Language="C#" Value="public System.Activities.Activity FindMatch (System.Activities.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Activity FindMatch(class System.Activities.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateMapQuery.FindMatch(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">一致するものを検索するアクティビティ。</param>
+        <summary>一致を検索<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateMapQuery" />指定したアクティビティを使用します。</summary>
+        <returns>アクティビティに一致します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindMatch">
+      <MemberSignature Language="C#" Value="public System.Activities.Variable FindMatch (System.Activities.Variable variable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Variable FindMatch(class System.Activities.Variable variable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.DynamicUpdateMapQuery.FindMatch(System.Activities.Variable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Variable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="variable" Type="System.Activities.Variable" />
+      </Parameters>
+      <Docs>
+        <param name="variable">一致するものを検索する変数です。</param>
+        <summary>一致を検索<see cref="T:System.Activities.DynamicUpdate.DynamicUpdateMapQuery" />指定した変数を使用します。</summary>
+        <returns>変数に一致します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

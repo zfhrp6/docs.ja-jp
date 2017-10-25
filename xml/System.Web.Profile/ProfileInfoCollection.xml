@@ -1,0 +1,350 @@
+<Type Name="ProfileInfoCollection" FullName="System.Web.Profile.ProfileInfoCollection">
+  <TypeSignature Language="C#" Value="public sealed class ProfileInfoCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ProfileInfoCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileInfoCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Web.Profile.ProfileInfo" /> オブジェクトのコレクション。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Profile.ProfileInfoCollection>オブジェクトを含む<xref:System.Web.Profile.ProfileInfo>をデータ ソースからのユーザー プロファイルを表すオブジェクト。 A<xref:System.Web.Profile.ProfileInfoCollection>から返される、 <xref:System.Web.Profile.ProfileProvider.GetAllProfiles%2A>、 <xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles%2A>、 <xref:System.Web.Profile.ProfileProvider.FindProfilesByUserName%2A>、および<xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A>のメソッド、<xref:System.Web.Profile.ProfileProvider>です。  
+  
+ A<xref:System.Web.Profile.ProfileInfoCollection>を指定すると、<xref:System.Web.Profile.ProfileProvider.DeleteProfiles%2A>メソッドは、データ ソースからのプロファイル情報およびプロパティを削除します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してプロファイルを検索するユーザーの許可、<xref:System.Web.Profile.SqlProfileProvider.FindProfilesByUserName%2A>と<xref:System.Web.Profile.SqlProfileProvider.FindInactiveProfilesByUserName%2A>メソッドです。 ユーザーが渡すことができます、<xref:System.Web.Profile.ProfileInfoCollection>によって返される、`find`メソッドを<xref:System.Web.Profile.SqlProfileProvider.DeleteProfiles%2A>メソッドは、データ ソースから関連するプロファイルを削除します。  
+  
+ [!code-aspx-csharp[System.Web.Profile.SqlProfileProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.SqlProfileProvider/CS/DeleteInactiveProfilescs.aspx#4)]
+ [!code-aspx-vb[System.Web.Profile.SqlProfileProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.SqlProfileProvider/VB/DeleteInactiveProfilesvb.aspx#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileInfoCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileInfoCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい空の作成<see cref="T:System.Web.Profile.ProfileInfoCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Profile.ProfileInfoCollection>プロファイル プロバイダーの実装によって作成されから返される、 <xref:System.Web.Profile.ProfileProvider.GetAllProfiles%2A>、 <xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles%2A>、 <xref:System.Web.Profile.ProfileProvider.FindProfilesByUserName%2A>、および<xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A>のメソッド、<xref:System.Web.Profile.ProfileProvider>抽象クラスです。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Web.Profile.ProfileProvider>実装を作成する、<xref:System.Web.Profile.ProfileInfoCollection>データ ストア内のユーザー プロファイルを参照してください。[プロファイル プロバイダーを実装する](http://msdn.microsoft.com/library/58de6e99-31a7-41b9-93ed-51b9b4a67e98)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Profile.ProfileInfo profileInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Profile.ProfileInfo profileInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileInfoCollection.Add(System.Web.Profile.ProfileInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="profileInfo" Type="System.Web.Profile.ProfileInfo" />
+      </Parameters>
+      <Docs>
+        <param name="profileInfo">コレクションに追加する <see cref="T:System.Web.Profile.ProfileInfo" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Web.Profile.ProfileInfo" /> オブジェクトをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileInfoCollection.Add%2A>を設定するメソッドは通常使用プロファイル プロバイダーの実装によって、<xref:System.Web.Profile.ProfileInfoCollection>から返される、 <xref:System.Web.Profile.ProfileProvider.GetAllProfiles%2A>、 <xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles%2A>、 <xref:System.Web.Profile.ProfileProvider.FindProfilesByUserName%2A>、または<xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName%2A>のメソッド、<xref:System.Web.Profile.ProfileProvider>抽象クラスです。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Web.Profile.ProfileProvider>実装を作成する、<xref:System.Web.Profile.ProfileInfoCollection>データ ストア内のユーザー プロファイルを参照してください。[プロファイル プロバイダーを実装する](http://msdn.microsoft.com/library/58de6e99-31a7-41b9-93ed-51b9b4a67e98)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="profileInfo" /> と同じ <see cref="P:System.Web.Profile.ProfileInfo.UserName" /> 値を持つ <see cref="T:System.Web.Profile.ProfileInfo" /> オブジェクトが､既にコレクション内に存在します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="profileInfo" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="profileInfo" /> の <see cref="P:System.Web.Profile.ProfileInfo.UserName" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileInfoCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての <see cref="T:System.Web.Profile.ProfileInfo" /> オブジェクトを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileInfoCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />からコピーした要素のコピー先は、<see cref="T:System.Web.Profile.ProfileInfoCollection" />です。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">コピーの開始位置となる、配列の 0 から始まるインデックス。</param>
+        <summary>コピー、<see cref="T:System.Web.Profile.ProfileInfoCollection" />を 1 次元配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して<xref:System.Collections.ArrayList.CopyTo%2A?displayProperty=nameWithType>をコピーする<xref:System.Web.Profile.ProfileInfo>を指定したオブジェクト<xref:System.Array>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.Profile.ProfileInfo[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.Profile.ProfileInfo[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileInfoCollection.CopyTo(System.Web.Profile.ProfileInfo[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.Profile.ProfileInfo[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Web.Profile.ProfileInfoCollection" /> からコピーされる要素のコピー先である <see cref="T:System.Web.Profile.ProfileInfo" /> 型の 1 次元配列。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">内の 0 から始まるインデックス、<c>配列</c>コピーの開始位置。</param>
+        <summary>コピー、<see cref="T:System.Web.Profile.ProfileInfoCollection" />型の 1 次元配列に<see cref="T:System.Web.Profile.ProfileInfo" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して<xref:System.Collections.ArrayList.CopyTo%2A?displayProperty=nameWithType>をコピーする<xref:System.Web.Profile.ProfileInfo>指定した配列にオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileInfoCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Web.Profile.ProfileInfo" />コレクション内のオブジェクト。</summary>
+        <value>数<see cref="T:System.Web.Profile.ProfileInfo" />コレクション内のオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileInfoCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復処理できる列挙子を取得、<see cref="T:System.Web.Profile.ProfileInfoCollection" />です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />全体の<see cref="T:System.Web.Profile.ProfileInfoCollection" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子は、コレクション内のデータの読み取りのみ許可します。 列挙子を使用して、基になるコレクションを変更することはできません。 詳細については、「<xref:System.Collections.IEnumerator>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileInfoCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>安全なプロファイル情報のコレクションがスレッドであるかどうかを示す値を取得します。</summary>
+        <value>常に<see langword="false" />、スレッド セーフなプロファイル情報のコレクションがサポートされていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション コードでは、このプロパティは通常使用しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Profile.ProfileInfo this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Profile.ProfileInfo Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileInfoCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="P:System.Web.Profile.ProfileInfo.UserName" />の<see cref="T:System.Web.Profile.ProfileInfo" />コレクションから取得するオブジェクト。</param>
+        <summary>取得、 <see cref="T:System.Web.Profile.ProfileInfo" /> 、指定したによって参照されるコレクション内のオブジェクト<see cref="P:System.Web.Profile.ProfileInfo.UserName" />です。</summary>
+        <value>A<see cref="T:System.Web.Profile.ProfileInfo" />指定されたユーザー名のオブジェクト。 名前は、コレクション内で見つからない場合<see langword="null" />が返されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileInfoCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="P:System.Web.Profile.ProfileInfo.UserName" />の<see cref="T:System.Web.Profile.ProfileInfo" />コレクションから削除するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.Profile.ProfileInfo" />コレクションから指定されたユーザー名を持つオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReadOnly">
+      <MemberSignature Language="C#" Value="public void SetReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Profile.ProfileInfoCollection.SetReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内容、<see cref="T:System.Web.Profile.ProfileInfoCollection" />読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileInfoCollection.SetReadOnly%2A>メソッド マーク、<xref:System.Web.Profile.ProfileInfoCollection>読み取り専用とように<xref:System.Web.Profile.ProfileInfo>オブジェクトを追加またはコレクションから削除することはできません。 呼び出した後、<xref:System.Web.Profile.ProfileInfoCollection.SetReadOnly%2A>変更することはできません、メソッド、<xref:System.Web.Profile.ProfileInfoCollection>読み取り/書き込みにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Profile.ProfileInfoCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同期ルートを取得します。</summary>
+        <value>常に<see langword="this" />(<see langword="Me" /> Visual Basic で) ため、同期の<see cref="T:System.Web.Profile.ProfileInfoCollection" />オブジェクトはサポートされていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション コードでは、このプロパティは通常使用しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

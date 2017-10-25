@@ -1,0 +1,409 @@
+<Type Name="MarkupProperty" FullName="System.Windows.Markup.Primitives.MarkupProperty">
+  <TypeSignature Language="C#" Value="public abstract class MarkupProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MarkupProperty extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.Primitives.MarkupProperty" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティとその値へのアクセスをカプセル化するマークアップへの書き込み中に使用されるプロパティの説明を提供する抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティは、文字列または項目のリストとして表されます。  
+  
+ プロパティを文字列として表現できる場合は<xref:System.Windows.Markup.Primitives.MarkupProperty.IsComposite%2A>は`false`します。  
+  
+ 場合<xref:System.Windows.Markup.Primitives.MarkupProperty.IsComposite%2A>は`true`プロパティが項目の一覧を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public abstract System.ComponentModel.AttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.AttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、これに関連付けられている属性を取得<see cref="T:System.Windows.Markup.Primitives.MarkupProperty" />です。</summary>
+        <value>属性のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependencyProperty">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.DependencyProperty DependencyProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DependencyProperty DependencyProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.DependencyProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得、<see cref="T:System.Windows.DependencyProperty" />プロパティが依存関係プロパティとして実装されている場合は、マークアップ プロパティの識別子</summary>
+        <value>依存関係プロパティの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作を返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAttached">
+      <MemberSignature Language="C#" Value="public virtual bool IsAttached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAttached" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.IsAttached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、かどうかこの<see cref="T:System.Windows.Markup.Primitives.MarkupProperty" />添付は<see cref="T:System.Windows.DependencyProperty" />します。</summary>
+        <value>
+          <see langword="true" />プロパティが添付場合<see cref="T:System.Windows.DependencyProperty" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作では、`false` が返されます。  
+  
+ ときに<xref:System.Windows.Markup.Primitives.MarkupProperty.IsAttached%2A>は`true`、<xref:System.Windows.Markup.Primitives.MarkupProperty.DependencyProperty%2A>は`null`と<xref:System.Windows.Markup.Primitives.MarkupProperty.PropertyDescriptor%2A>できます`null`にする必要はありませんが、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsComposite">
+      <MemberSignature Language="C#" Value="public virtual bool IsComposite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsComposite" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.IsComposite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、かどうかこの<see cref="T:System.Windows.Markup.Primitives.MarkupProperty" />複合プロパティです。</summary>
+        <value>
+          <see langword="true" />このプロパティは複合プロパティです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作では、`false` が返されます。  
+  
+ 場合<xref:System.Windows.Markup.Primitives.MarkupProperty.IsComposite%2A>は`false`、プロパティを文字列として表すことができ、<xref:System.Windows.Markup.Primitives.MarkupProperty.Value%2A>と<xref:System.Windows.Markup.Primitives.MarkupProperty.StringValue%2A>を使用する有効なです。  
+  
+ 場合<xref:System.Windows.Markup.Primitives.MarkupProperty.IsComposite%2A>は`true`、プロパティが 1 つまたは複数の項目と<xref:System.Windows.Markup.Primitives.MarkupProperty.Items%2A>を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsConstructorArgument">
+      <MemberSignature Language="C#" Value="public virtual bool IsConstructorArgument { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsConstructorArgument" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.IsConstructorArgument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、かどうかこの<see cref="T:System.Windows.Markup.Primitives.MarkupProperty" />コンス トラクターの引数を表します。</summary>
+        <value>
+          <see langword="true" />このプロパティは、コンス トラクター引数を表す場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作に戻り値は`false`します。  
+  
+ ときに<xref:System.Windows.Markup.Primitives.MarkupProperty.IsConstructorArgument%2A>は`true`、<xref:System.Windows.Markup.Primitives.MarkupProperty.PropertyDescriptor%2A>と<xref:System.Windows.Markup.Primitives.MarkupProperty.DependencyProperty%2A>が両方とも`null`です。  
+  
+ のみを使用して XAML<xref:System.Windows.Markup.Primitives.MarkupProperty.IsConstructorArgument%2A>のインスタンスのコンス トラクターの引数を表すため<xref:System.Windows.Markup.MarkupExtension>です。 参照してください[マークアップ拡張機能と WPF XAML](~/docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsContent">
+      <MemberSignature Language="C#" Value="public virtual bool IsContent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.IsContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、かどうかこの<see cref="T:System.Windows.Markup.Primitives.MarkupProperty" />を表しますが、コレクションの内容をダイレクトします。</summary>
+        <value>
+          <see langword="true" />プロパティは、直接の内容を表す場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作では、`false` が返されます。  
+  
+ ときに<xref:System.Windows.Markup.Primitives.MarkupProperty.IsContent%2A>は`true`、<xref:System.Windows.Markup.Primitives.MarkupProperty.PropertyDescriptor%2A>と<xref:System.Windows.Markup.Primitives.MarkupProperty.DependencyProperty%2A>が両方とも`null`です。  
+  
+ 決定するときに、辞書が含まれますかどうかこの<xref:System.Windows.Markup.Primitives.MarkupProperty>コンテンツに指示を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKey">
+      <MemberSignature Language="C#" Value="public virtual bool IsKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.IsKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、かどうかこの<see cref="T:System.Windows.Markup.Primitives.MarkupProperty" />で使用されるキーを表す、<see cref="T:System.Windows.Markup.Primitives.MarkupObject" />ディクショナリに項目を格納します。</summary>
+        <value>
+          <see langword="true" />このプロパティを表すキーである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作では、`false` が返されます。  
+  
+ ときに<xref:System.Windows.Markup.Primitives.MarkupProperty.IsKey%2A>は`true`、<xref:System.Windows.Markup.Primitives.MarkupProperty.PropertyDescriptor%2A>と<xref:System.Windows.Markup.Primitives.MarkupProperty.DependencyProperty%2A>は`null`します。  
+  
+ XAML として識別されたプロパティを使用して、`x:Key`属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValueAsString">
+      <MemberSignature Language="C#" Value="public virtual bool IsValueAsString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsValueAsString" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.IsValueAsString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、かどうかこの<see cref="T:System.Windows.Markup.Primitives.MarkupProperty" />プロパティのインスタンスを作成する型コンバーターに渡されるテキストを表す場合や、コンス トラクターを使用する必要があります。</summary>
+        <value>
+          <see langword="true" />、この場合<see cref="T:System.Windows.Markup.Primitives.MarkupProperty" />文字列を表します。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作を返すには`false.`  
+  
+ ときに<xref:System.Windows.Markup.Primitives.MarkupProperty.IsValueAsString%2A>は`true`、<xref:System.Windows.Markup.Primitives.MarkupProperty.PropertyDescriptor%2A>と<xref:System.Windows.Markup.Primitives.MarkupProperty.DependencyProperty%2A>が両方とも`null`です。  
+  
+ プロパティがによって提供される場合<xref:System.Windows.Markup.Primitives.MarkupObject.Properties%2A>と<xref:System.Windows.Markup.Primitives.MarkupProperty.IsValueAsString%2A>は`true`型は、専用のプロパティになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;System.Windows.Markup.Primitives.MarkupObject&gt; Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Markup.Primitives.MarkupObject&gt; Items" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Markup.Primitives.MarkupObject&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、このプロパティの値を構成する項目を取得します。</summary>
+        <value>このプロパティの値を構成する項目。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの列挙体は、1 つの項目が返されます。  
+  
+ プロパティが列挙体、または列挙可能な場合、すべての項目が返されます。  
+  
+ 少なくとも 1 つの項目が常に返されたため<xref:System.Windows.Markup.Primitives.MarkupObject>は作成されません、<xref:System.Windows.Markup.Primitives.MarkupProperty>の項目のないプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public abstract string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、診断結果とエラー報告に使用される名前を取得します。</summary>
+        <value>識別子のプロパティ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアライザーでは、この値は使用しないでください。 これを使用する必要があります、<xref:System.Windows.Markup.Primitives.MarkupProperty.PropertyDescriptor%2A>や<xref:System.Windows.Markup.Primitives.MarkupProperty.DependencyProperty%2A>代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyDescriptor">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.PropertyDescriptor PropertyDescriptor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptor PropertyDescriptor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.PropertyDescriptor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得、<see cref="T:System.ComponentModel.PropertyDescriptor" />マークアップ プロパティです。</summary>
+        <value>プロパティ記述子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作を返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyType">
+      <MemberSignature Language="C#" Value="public abstract Type PropertyType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type PropertyType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.PropertyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、プロパティの CLR 型を取得します。</summary>
+        <value>CLR 型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StringValue">
+      <MemberSignature Language="C#" Value="public abstract string StringValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StringValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.StringValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、この文字列値を取得<see cref="T:System.Windows.Markup.Primitives.MarkupProperty" />です。</summary>
+        <value>文字列値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeReferences">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;Type&gt; TypeReferences { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Type&gt; TypeReferences" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.TypeReferences" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Type&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、取得した型のセットをこの<see cref="T:System.Windows.Markup.Primitives.MarkupProperty" />を文字列としてその値をシリアル化時に参照されます。</summary>
+        <value>型のセット。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.Primitives.MarkupProperty.TypeReferences%2A>除外のシリアライザーは、これらの型への参照の文字列形式からに変換するための十分な情報を持つようにするためのシリアライザーを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public abstract object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupProperty.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、値を取得、現在この<see cref="T:System.Windows.Markup.Primitives.MarkupProperty" />です。</summary>
+        <value>現在の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

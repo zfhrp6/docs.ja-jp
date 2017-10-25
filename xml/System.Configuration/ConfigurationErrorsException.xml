@@ -1,0 +1,627 @@
+<Type Name="ConfigurationErrorsException" FullName="System.Configuration.ConfigurationErrorsException">
+  <TypeSignature Language="C#" Value="public class ConfigurationErrorsException : System.Configuration.ConfigurationException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ConfigurationErrorsException extends System.Configuration.ConfigurationException" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationErrorsException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成エラーが発生した場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationErrorsException>構成情報の中にエラーが発生したときに例外がスローされます読み取りまたは書き込まれます。  
+  
+   
+  
+## Examples  
+ 次のコード例はカスタム セクションを作成し、生成、<xref:System.Configuration.ConfigurationErrorsException>そのプロパティを変更するときに例外です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationErrorsException#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationErrorsException/CS/ConfigurationErrorsException.cs#1)]
+ [!code-vb[System.Configuration.ConfigurationErrorsException#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationErrorsException/VB/ConfigurationErrorsException.vb#1)]  
+  
+ 次の例は、前の例で使用される構成の抜粋です。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+  <configSections>  
+    <section name="CustomSection" type="Samples.AspNet.CustomSection,   
+      ConfigurationErrorsException, Version=1.0.0.0, Culture=neutral,   
+      PublicKeyToken=null" allowDefinition="Everywhere"   
+      allowExeDefinition="MachineToApplication"   
+      restartOnExternalChanges="true" />  
+  </configSections>  
+  <CustomSection fileName="default.txt" maxUsers="10" />  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationErrorsException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.ConfigurationErrorsException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationErrorsException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">その理由を説明するメッセージをこの<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationErrorsException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ConfigurationErrorsException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">逆シリアル化情報を保持するオブジェクト。</param>
+        <param name="context">ソースまたは転送先に関する文脈情報。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationErrorsException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">現在の型が、<see cref="T:System.Configuration.ConfigurationException" />または<see cref="T:System.Configuration.ConfigurationErrorsException" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationErrorsException (string message, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">その理由を説明するメッセージをこの<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</param>
+        <param name="inner">この原因となった例外<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationErrorsException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationErrorsException (string message, System.Xml.XmlNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Xml.XmlNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.#ctor(System.String,System.Xml.XmlNode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="message">その理由を説明するメッセージをこの<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</param>
+        <param name="node"><see cref="T:System.Xml.XmlNode" />この原因となったオブジェクト<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationErrorsException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationErrorsException (string message, System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.#ctor(System.String,System.Xml.XmlReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="message">その理由を説明するメッセージをこの<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</param>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />この原因となったオブジェクト<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationErrorsException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationErrorsException (string message, Exception inner, System.Xml.XmlNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner, class System.Xml.XmlNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.#ctor(System.String,System.Exception,System.Xml.XmlNode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="message">その理由を説明するメッセージをこの<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</param>
+        <param name="inner">この原因となった内部例外<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <param name="node"><see cref="T:System.Xml.XmlNode" />この原因となったオブジェクト<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationErrorsException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationErrorsException (string message, Exception inner, System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner, class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.#ctor(System.String,System.Exception,System.Xml.XmlReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="message">その理由を説明するメッセージをこの<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</param>
+        <param name="inner">この原因となった内部例外<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />この原因となったオブジェクト<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationErrorsException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationErrorsException (string message, string filename, int line);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, string filename, int32 line) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.#ctor(System.String,System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="line" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">その理由を説明するメッセージをこの<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</param>
+        <param name="filename">この原因となった構成ファイルのパスを<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <param name="line">この構成ファイル内の行番号<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</param>
+        <summary><see cref="T:System.Configuration.ConfigurationErrorsException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationErrorsException (string message, Exception inner, string filename, int line);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner, string filename, int32 line) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.#ctor(System.String,System.Exception,System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="line" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">その理由を説明するメッセージをこの<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</param>
+        <param name="inner">この原因となった内部例外<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <param name="filename">この原因となった構成ファイルのパスを<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <param name="line">この構成ファイル内の行番号<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</param>
+        <summary>
+          <see cref="T:System.Configuration.ConfigurationErrorsException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BareMessage">
+      <MemberSignature Language="C#" Value="public override string BareMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BareMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationErrorsException.BareMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この構成の例外がスローされた理由の説明を取得します。</summary>
+        <value>理由の説明この<see cref="T:System.Configuration.ConfigurationErrorsException" />がスローされました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationErrorsException.BareMessage%2A>プロパティに、構成ファイルまたはこので行番号の名前が含まれていない<xref:System.Configuration.ConfigurationErrorsException>例外が発生しました。 場合は、構成ファイルと、メッセージと共に、行番号の名前を含むメッセージを使用して、<xref:System.Configuration.ConfigurationErrorsException.Message%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Configuration.ConfigurationErrorsException.BareMessage%2A>プロパティの値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationErrorsException#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationErrorsException/CS/ConfigurationErrorsException.cs#6)]
+ [!code-vb[System.Configuration.ConfigurationErrorsException#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationErrorsException/VB/ConfigurationErrorsException.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Errors">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection Errors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Errors" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationErrorsException.Errors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この理由について詳しく説明するエラーのコレクションを取得<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</summary>
+        <value><see cref="T:System.Collections.ICollection" />これの原因を特定のエラーを格納しているオブジェクト<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationErrorsException.Errors%2A>プロパティは、構成ファイルの読み取りなど、操作中に発生する可能性がある、できる限り多くのエラーを収集します。 スローされた例外は、最初のエラーのみを示しています。 アクセスできる<xref:System.Configuration.ConfigurationErrorsException.Errors%2A>発行されたすべてのエラーを表示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filename">
+      <MemberSignature Language="C#" Value="public override string Filename { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Filename" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationErrorsException.Filename" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この構成の例外をスローする原因となった構成ファイルへのパスを取得します。</summary>
+        <value>この原因となった構成ファイルのパスを<see cref="T:System.Configuration.ConfigurationErrorsException" />がスローされます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Configuration.ConfigurationErrorsException.Filename%2A>プロパティの値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationErrorsException#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationErrorsException/CS/ConfigurationErrorsException.cs#4)]
+ [!code-vb[System.Configuration.ConfigurationErrorsException#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationErrorsException/VB/ConfigurationErrorsException.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFilename">
+      <MemberSignature Language="C#" Value="public static string GetFilename (System.Xml.XmlNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetFilename(class System.Xml.XmlNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.GetFilename(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Xml.XmlNode" />この原因となったオブジェクト<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <summary>元の構成ファイルへのパスを取得、内部<see cref="T:System.Xml.XmlNode" />オブジェクトが読み込まれたはこの構成の例外がスローされたとき。</summary>
+        <returns>元の構成ファイルへのパス、内部<see cref="T:System.Xml.XmlNode" />オブジェクトが読み込まれたはこの構成の例外がスローされたとき。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationErrorsException.GetFilename%2A>メソッドを含む構成ファイルの名前を返します、<xref:System.Xml.XmlNode>オブジェクトの例外が発生したときに解析します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFilename">
+      <MemberSignature Language="C#" Value="public static string GetFilename (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetFilename(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.GetFilename(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />この原因となったオブジェクト<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <summary>構成ファイルへのパスを取得、内部<see cref="T:System.Xml.XmlReader" />読み取りこの構成の例外がスローされました。</summary>
+        <returns>構成のパスは、内部ファイル<see cref="T:System.Xml.XmlReader" />オブジェクトは、例外が発生したときにアクセスしていた。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationErrorsException.GetFilename%2A>メソッドの名前を返します、構成ファイルを<xref:System.Xml.XmlReader>オブジェクトは、例外が発生したときにアクセスしていた。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineNumber">
+      <MemberSignature Language="C#" Value="public static int GetLineNumber (System.Xml.XmlNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetLineNumber(class System.Xml.XmlNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.GetLineNumber(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Xml.XmlNode" />この原因となったオブジェクト<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <summary>構成ファイル内の行番号を取得、内部<see cref="T:System.Xml.XmlNode" />この構成の例外がスローされたときに表されるオブジェクト。</summary>
+        <returns>含む構成ファイル内の行番号、<see cref="T:System.Xml.XmlNode" />オブジェクトのこの構成の例外がスローされたときに解析します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationErrorsException.GetFilename%2A>メソッドを含む構成ファイルの名前を返します、<xref:System.Xml.XmlNode>オブジェクトの例外が発生したときに解析します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLineNumber">
+      <MemberSignature Language="C#" Value="public static int GetLineNumber (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetLineNumber(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.GetLineNumber(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />この原因となったオブジェクト<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされます。</param>
+        <summary>構成ファイル内の行番号を取得、内部<see cref="T:System.Xml.XmlReader" />オブジェクトがこの構成の例外がスローされたときに処理されました。</summary>
+        <returns>ファイルの構成内の行番号、<see cref="T:System.Xml.XmlReader" />オブジェクトは、例外が発生したときにアクセスしていた。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationErrorsException.GetLineNumber%2A>メソッドの名前を返します、構成ファイルを<xref:System.Xml.XmlReader>オブジェクトは、例外が発生したときにアクセスしていた。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationErrorsException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化情報を保持するオブジェクト。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>セット、<see cref="T:System.Runtime.Serialization.SerializationInfo" />この構成の例外が発生したファイル名と行番号を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ConfigurationErrorsException.GetObjectData%2A>メソッドのセット、<xref:System.Runtime.Serialization.SerializationInfo>でこのファイル名と行番号を持つオブジェクト<xref:System.Configuration.ConfigurationErrorsException>例外が発生しました。 逆シリアル化中に、<xref:System.Configuration.ConfigurationErrorsException>から例外が再構成、<xref:System.Runtime.Serialization.SerializationInfo>ストリームで送信されるオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Line">
+      <MemberSignature Language="C#" Value="public override int Line { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Line" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationErrorsException.Line" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この構成の例外がスローされました、構成ファイル内の行番号を取得します。</summary>
+        <value>この構成ファイル内の行番号<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Configuration.ConfigurationErrorsException.Line%2A>プロパティの値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationErrorsException#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationErrorsException/CS/ConfigurationErrorsException.cs#5)]
+ [!code-vb[System.Configuration.ConfigurationErrorsException#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationErrorsException/VB/ConfigurationErrorsException.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public override string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationErrorsException.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この構成の例外がスローされた原因の説明を取得します。</summary>
+        <value>理由の詳細説明この<see cref="T:System.Configuration.ConfigurationErrorsException" />例外がスローされました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Configuration.ConfigurationErrorsException.Message%2A>プロパティの値。  
+  
+ [!code-csharp[System.Configuration.ConfigurationErrorsException#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationErrorsException/CS/ConfigurationErrorsException.cs#3)]
+ [!code-vb[System.Configuration.ConfigurationErrorsException#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationErrorsException/VB/ConfigurationErrorsException.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

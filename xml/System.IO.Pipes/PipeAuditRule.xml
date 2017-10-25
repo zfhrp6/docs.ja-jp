@@ -1,0 +1,144 @@
+<Type Name="PipeAuditRule" FullName="System.IO.Pipes.PipeAuditRule">
+  <TypeSignature Language="C#" Value="public sealed class PipeAuditRule : System.Security.AccessControl.AuditRule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PipeAuditRule extends System.Security.AccessControl.AuditRule" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Pipes.PipeAuditRule" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.AuditRule</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パイプの監査規則を定義するアクセス制御エントリ (ACE) の抽象化を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 監査規則は、システム オブジェクトで実行されるアクションが記録されるタイミングと方法を決定します。  
+  
+ <xref:System.IO.Pipes.PipeAuditRule>クラスを表します (読み取り、書き込み、およびなど) を提供するアクセスの種類、ユーザー アカウントを指定する基になるアクセス制御エントリ (ACE) の抽象化および監査を実行するかどうか。 このクラスは、監査規則から継承された方法およびオブジェクトへの反映方法を指定できます。  
+  
+ ファイルが Windows NT または以降のオペレーティング システムを実行しているコンピューター上で監査できるように、アクセス セキュリティの監査ポリシーを有効にする必要があります。既定では、このポリシーに設定**監査しない**です。  
+  
+ 監査アクセス セキュリティ ポリシーを有効にするには、次の手順を実行します。  
+  
+1.  クリックして、**開始**ボタンをクリックし、順にポイント**すべてのプログラム**です。 指す**管理ツール**をクリックし、**ローカル セキュリティ ポリシー**です。  
+  
+2.  ローカル セキュリティ設定 ウィンドウで、ローカル ポリシー フォルダーを展開し、監査ポリシー フォルダーをクリックします。  
+  
+3.  ダブルクリックして、**オブジェクト アクセスの監査**エントリを表示するローカル セキュリティ設定 ウィンドウの右側のペインで、**オブジェクト アクセスのプロパティを Audit**  ダイアログ ボックス。  
+  
+4.  選択、**成功**または**エラー**  ボックスに、成功または失敗を記録します。  
+  
+ ユーザー アカウントの監査規則、同じユーザー アカウントの対応するアクセス規則が必要であることを注意してください。  
+  
+ 使用して、<xref:System.IO.Pipes.PipeAuditRule>新しい監査規則を作成するクラス。 このルールを使用して永続化することができます、<xref:System.IO.Pipes.PipeSecurity>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PipeAuditRule (System.Security.Principal.IdentityReference identity, System.IO.Pipes.PipeAccessRights rights, System.Security.AccessControl.AuditFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.IO.Pipes.PipeAccessRights rights, valuetype System.Security.AccessControl.AuditFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeAuditRule.#ctor(System.Security.Principal.IdentityReference,System.IO.Pipes.PipeAccessRights,System.Security.AccessControl.AuditFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="rights" Type="System.IO.Pipes.PipeAccessRights" />
+        <Parameter Name="flags" Type="System.Security.AccessControl.AuditFlags" />
+      </Parameters>
+      <Docs>
+        <param name="identity"><see cref="T:System.Security.Principal.IdentityReference" />ユーザー アカウントへの参照をカプセル化するオブジェクト。</param>
+        <param name="rights">1 つ、<see cref="T:System.IO.Pipes.PipeAccessRights" />アクセス規則に関連付けられている操作の種類を指定する値。</param>
+        <param name="flags">1 つ、<see cref="T:System.Security.AccessControl.AuditFlags" />監査を実行するかを指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.PipeAuditRule" />クラスで指定されたユーザー アカウントで、<see cref="T:System.Security.Principal.IdentityReference" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して永続化できる監査規則を作成するこのコンス トラクターを使用して、<xref:System.IO.Pipes.PipeSecurity>クラスです。 監査規則は、システム オブジェクトで実行されるアクションが記録されるタイミングと方法を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PipeAuditRule (string identity, System.IO.Pipes.PipeAccessRights rights, System.Security.AccessControl.AuditFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string identity, valuetype System.IO.Pipes.PipeAccessRights rights, valuetype System.Security.AccessControl.AuditFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Pipes.PipeAuditRule.#ctor(System.String,System.IO.Pipes.PipeAccessRights,System.Security.AccessControl.AuditFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+        <Parameter Name="rights" Type="System.IO.Pipes.PipeAccessRights" />
+        <Parameter Name="flags" Type="System.Security.AccessControl.AuditFlags" />
+      </Parameters>
+      <Docs>
+        <param name="identity">ユーザー アカウントの名前。</param>
+        <param name="rights">1 つ、<see cref="T:System.IO.Pipes.PipeAccessRights" />アクセス規則に関連付けられている操作の種類を指定する値。</param>
+        <param name="flags">1 つ、<see cref="T:System.Security.AccessControl.AuditFlags" />監査を実行するかを指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Pipes.PipeAuditRule" />名前付きユーザー アカウントのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して永続化できる監査規則を作成するこのコンス トラクターを使用して、<xref:System.IO.Pipes.PipeSecurity>クラスです。 監査規則は、システム オブジェクトで実行されるアクションが記録されるタイミングと方法を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PipeAccessRights">
+      <MemberSignature Language="C#" Value="public System.IO.Pipes.PipeAccessRights PipeAccessRights { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Pipes.PipeAccessRights PipeAccessRights" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Pipes.PipeAuditRule.PipeAccessRights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Pipes.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Pipes.PipeAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IO.Pipes.PipeAccessRights" />に現在関連付けられているフラグ<see cref="T:System.IO.Pipes.PipeAuditRule" />オブジェクト。</summary>
+        <value><see cref="T:System.IO.Pipes.PipeAccessRights" /> 値のビットごとの組み合わせ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

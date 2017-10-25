@@ -1,0 +1,161 @@
+<Type Name="SizeChangedInfo" FullName="System.Windows.SizeChangedInfo">
+  <TypeSignature Language="C#" Value="public class SizeChangedInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SizeChangedInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.SizeChangedInfo" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連する値の変更の詳細の報告、<see cref="T:System.Windows.Size" />です。 これは、パラメーターとして使用<see cref="M:System.Windows.UIElement.OnRenderSizeChanged(System.Windows.SizeChangedInfo)" />をオーバーライドします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、メンバーの一部に対応して<xref:System.Windows.SizeChangedEventArgs>のイベント データをレポートに使用されるクラス<xref:System.Windows.FrameworkElement.SizeChanged>が、2 つのクラスが別の目的を果たします。  <xref:System.Windows.SizeChangedInfo>具体的には使用が<xref:System.Windows.UIElement.OnRenderSizeChanged%2A>のパブリック イベントとして公開されないイベントに対するクラス処理を提供する上書き[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。 詳細については、「<xref:System.Windows.UIElement.OnRenderSizeChanged%2A>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SizeChangedInfo (System.Windows.UIElement element, System.Windows.Size previousSize, bool widthChanged, bool heightChanged);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.UIElement element, valuetype System.Windows.Size previousSize, bool widthChanged, bool heightChanged) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.SizeChangedInfo.#ctor(System.Windows.UIElement,System.Windows.Size,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="previousSize" Type="System.Windows.Size" />
+        <Parameter Name="widthChanged" Type="System.Boolean" />
+        <Parameter Name="heightChanged" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">サイズが変更されている要素です。</param>
+        <param name="previousSize">以前のサイズ変更の前にします。</param>
+        <param name="widthChanged">
+          <see langword="true" />場合は、サイズの幅コンポーネントが変更されました。</param>
+        <param name="heightChanged">
+          <see langword="true" />場合は、サイズの高さコンポーネントが変更されました。</param>
+        <summary><see cref="T:System.Windows.SizeChangedInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのブール値パラメーターとしてこれらを報告する必要がありますに注意してください`true`値の変更がレンダリング、にとって重要か、既存の値を読み取る場合は、ような値を解釈する必要がある場合にのみです。 軽微な変更のサイズの値の場合は、精度副作用のため特に数学関数は、倍精度値に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeightChanged">
+      <MemberSignature Language="C#" Value="public bool HeightChanged { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HeightChanged" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SizeChangedInfo.HeightChanged" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Windows.SizeChangedInfo" />高さコンポーネントに大幅な変更が含まれるサイズ変更を報告します。</summary>
+        <value>
+          <see langword="true" />重要な高さコンポーネントの変更; がある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用と、最初にのみ設定できます<xref:System.Windows.SizeChangedInfo>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSize">
+      <MemberSignature Language="C#" Value="public System.Windows.Size NewSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Size NewSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SizeChangedInfo.NewSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>報告されている新しいサイズを取得します。</summary>
+        <value>新しいサイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用、および初期を通じてのみ設定できます<xref:System.Windows.SizeChangedInfo>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousSize">
+      <MemberSignature Language="C#" Value="public System.Windows.Size PreviousSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Size PreviousSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SizeChangedInfo.PreviousSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更されたものとして報告されるサイズに関連する値の前のサイズを取得します。</summary>
+        <value>前のサイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用で、直接設定することはできません、いくつかのインスタンスで、実際の値から報告されるされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WidthChanged">
+      <MemberSignature Language="C#" Value="public bool WidthChanged { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WidthChanged" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.SizeChangedInfo.WidthChanged" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイズの幅コンポーネントが変更されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は幅が変更されています。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用、および初期を通じてのみ設定できます<xref:System.Windows.SizeChangedInfo>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

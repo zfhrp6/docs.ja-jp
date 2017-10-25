@@ -1,0 +1,226 @@
+<Type Name="DynamicFieldDesigner" FullName="System.Web.DynamicData.Design.DynamicFieldDesigner">
+  <TypeSignature Language="C#" Value="public class DynamicFieldDesigner : System.Web.UI.Design.WebControls.DataControlFieldDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicFieldDesigner extends System.Web.UI.Design.WebControls.DataControlFieldDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.Design.DynamicFieldDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.DataControlFieldDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビジュアル デザイナーでデザイン時サポートを提供、<see cref="T:System.Web.DynamicData.DynamicField" />オブジェクト。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicFieldDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.Design.DynamicFieldDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.Design.DynamicFieldDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.DataControlField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.WebControls.DataControlField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.Design.DynamicFieldDesigner.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空の <see cref="T:System.Web.DynamicData.DynamicField" /> オブジェクトを作成します。</summary>
+        <returns>空のフィールド オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.Design.DynamicFieldDesigner.CreateField>デザイナーがフィールドに関するスキーマ情報を持っていない場合に、メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.DataControlField CreateField (System.Web.UI.Design.IDataSourceFieldSchema fieldSchema);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.WebControls.DataControlField CreateField(class System.Web.UI.Design.IDataSourceFieldSchema fieldSchema) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.Design.DynamicFieldDesigner.CreateField(System.Web.UI.Design.IDataSourceFieldSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fieldSchema" Type="System.Web.UI.Design.IDataSourceFieldSchema" />
+      </Parameters>
+      <Docs>
+        <param name="fieldSchema">データ フィールドの構造を含むスキーマの情報です。</param>
+        <summary>新たに作成<see cref="T:System.Web.DynamicData.DynamicField" />指定データ フィールドの情報を使用してオブジェクト。</summary>
+        <returns>新しいフィールド オブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTemplateField">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.TemplateField CreateTemplateField (System.Web.UI.WebControls.DataControlField dataControlField, System.Web.UI.WebControls.DataBoundControl dataBoundControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.WebControls.TemplateField CreateTemplateField(class System.Web.UI.WebControls.DataControlField dataControlField, class System.Web.UI.WebControls.DataBoundControl dataBoundControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.Design.DynamicFieldDesigner.CreateTemplateField(System.Web.UI.WebControls.DataControlField,System.Web.UI.WebControls.DataBoundControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TemplateField</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataControlField" Type="System.Web.UI.WebControls.DataControlField" />
+        <Parameter Name="dataBoundControl" Type="System.Web.UI.WebControls.DataBoundControl" />
+      </Parameters>
+      <Docs>
+        <param name="dataControlField">フィールドのデータ オブジェクト。</param>
+        <param name="dataBoundControl">データ フィールド オブジェクトを含むデータ バインドされたコントロール。</param>
+        <summary>作成、<see cref="T:System.Web.UI.WebControls.TemplateField" />指定データ フィールドに対応するフィールドです。</summary>
+        <returns>新しいテンプレートのフィールドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.Design.DynamicFieldDesigner.CreateTemplateField%2A>メソッドは、デザイナーにデータ コントロール フィールドを変換するとき、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultNodeText">
+      <MemberSignature Language="C#" Value="public override string DefaultNodeText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultNodeText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.Design.DynamicFieldDesigner.DefaultNodeText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドのエディターでのデータ フィールドの表示される既定のテキストを取得します。</summary>
+        <value>フィールドのエディターでのデータ フィールドに表示される既定のテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNodeText">
+      <MemberSignature Language="C#" Value="public override string GetNodeText (System.Web.UI.WebControls.DataControlField dataControlField);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetNodeText(class System.Web.UI.WebControls.DataControlField dataControlField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.Design.DynamicFieldDesigner.GetNodeText(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataControlField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="dataControlField">フィールドのデータ オブジェクト。</param>
+        <summary>フィールドのエディターでのデータ フィールドの表示される名前を取得します。</summary>
+        <returns>フィールドのエディターでのデータ フィールドに表示される名前です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTemplateContent">
+      <MemberSignature Language="C#" Value="public string GetTemplateContent (System.Web.UI.WebControls.DataControlField dataControlField, System.Web.UI.WebControls.DataBoundControlMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetTemplateContent(class System.Web.UI.WebControls.DataControlField dataControlField, valuetype System.Web.UI.WebControls.DataBoundControlMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.Design.DynamicFieldDesigner.GetTemplateContent(System.Web.UI.WebControls.DataControlField,System.Web.UI.WebControls.DataBoundControlMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataControlField" Type="System.Web.UI.WebControls.DataControlField" />
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+      </Parameters>
+      <Docs>
+        <param name="dataControlField">フィールドのデータ オブジェクト。</param>
+        <param name="mode">指定したデータ フィールドの表示モード。</param>
+        <summary>[テンプレート] フィールドの内容を取得します。</summary>
+        <returns>[テンプレート] フィールドの内容。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public override bool IsEnabled (System.Web.UI.WebControls.DataBoundControl parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsEnabled(class System.Web.UI.WebControls.DataBoundControl parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.Design.DynamicFieldDesigner.IsEnabled(System.Web.UI.WebControls.DataBoundControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Web.UI.WebControls.DataBoundControl" />
+      </Parameters>
+      <Docs>
+        <param name="parent">データ コントロール フィールド、データ バインド コントロールが変更されています。</param>
+        <summary>フィールドのエディターで、データ フィールドが有効になっているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />データ フィールドがフィールド エディターで有効になっている場合<see langword="false" />データ フィールドはフィールド エディターに表示されない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.DynamicData.Design.DynamicFieldDesigner.IsEnabled%2A>メソッドを返します。 `false`、データ フィールドは、フィールドのエディターでは表示されません。 データ バインド コントロールにフィールドが含まれていない場合にこれが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsesSchema">
+      <MemberSignature Language="C#" Value="public override bool UsesSchema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsesSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.Design.DynamicFieldDesigner.UsesSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スキーマ情報はデータ フィールドの読み込みに使用されているかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

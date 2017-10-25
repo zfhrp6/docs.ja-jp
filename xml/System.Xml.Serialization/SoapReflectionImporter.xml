@@ -1,0 +1,534 @@
+<Type Name="SoapReflectionImporter" FullName="System.Xml.Serialization.SoapReflectionImporter">
+  <TypeSignature Language="C#" Value="public class SoapReflectionImporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapReflectionImporter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.SoapReflectionImporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>.NET Framework の型または Web サービスのメソッド情報から SOAP でエンコードされたメッセージにマッピングを生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapReflectionImporter> Web サービス記述言語 (WSDL) ドキュメントで定義されているクラスは、SOAP でエンコードされたメッセージ部分へ型のマッピングを提供します。 Web サービス場合にのみ、使用はまたはクライアントが SOAP 1.1 仕様のセクション 5 で記述されている SOAP エンコーディングを指定します。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスをシリアル化`Group`です。 シリアル化、`GroupName`と`IgnoreThis`フィールドおよびのメンバー、`GroupType`列挙型が上書きされます。 `CreateOverrideSerializer` 、メソッド、<xref:System.Xml.Serialization.SoapAttributeOverrides>が作成され、オーバーライドされたメンバーまたは列挙体ごとに、<xref:System.Xml.Serialization.SoapAttributes>が適切なプロパティ設定に追加で作成された、<xref:System.Xml.Serialization.SoapAttributeOverrides>です。 <xref:System.Xml.Serialization.XmlTypeMapping>を使用して作成されて、 <xref:System.Xml.Serialization.SoapAttributeOverrides>、および<xref:System.Xml.Serialization.XmlTypeMapping>作成に使用される、<xref:System.Xml.Serialization.XmlSerializer>既定のシリアル化をオーバーライドします。  
+  
+ [!code-cpp[SoapAttributesOverrides#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapAttributesOverrides/CPP/soapover.cpp#1)]
+ [!code-csharp[SoapAttributesOverrides#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapAttributesOverrides/CS/soapover.cs#1)]
+ [!code-vb[SoapAttributesOverrides#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapAttributesOverrides/VB/SoapOver.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapReflectionImporter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.SoapReflectionImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapReflectionImporter (string defaultNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string defaultNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="defaultNamespace">使用する既定の XML 名前空間は、型のマッピングをインポートします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapReflectionImporter" />クラス、インポートされた型のマッピングの既定の XML 名前空間を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapReflectionImporter (System.Xml.Serialization.SoapAttributeOverrides attributeOverrides);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Serialization.SoapAttributeOverrides attributeOverrides) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.#ctor(System.Xml.Serialization.SoapAttributeOverrides)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="attributeOverrides" Type="System.Xml.Serialization.SoapAttributeOverrides" />
+      </Parameters>
+      <Docs>
+        <param name="attributeOverrides">A<see cref="T:System.Xml.Serialization.SoapAttributeOverrides" />オブジェクトをオーバーライドする方法、<see cref="T:System.Xml.Serialization.XmlSerializer" />クラス SOAP エンコーディングを使用して、マップされた型をシリアル化します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapReflectionImporter" />クラス、XML シリアル化のオーバーライドを指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapReflectionImporter (System.Xml.Serialization.SoapAttributeOverrides attributeOverrides, string defaultNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Serialization.SoapAttributeOverrides attributeOverrides, string defaultNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.#ctor(System.Xml.Serialization.SoapAttributeOverrides,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="attributeOverrides" Type="System.Xml.Serialization.SoapAttributeOverrides" />
+        <Parameter Name="defaultNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="attributeOverrides">A<see cref="T:System.Xml.Serialization.SoapAttributeOverrides" />オブジェクトをオーバーライドする方法、<see cref="T:System.Xml.Serialization.XmlSerializer" />クラス SOAP エンコーディングを使用して、マップされた型をシリアル化します。</param>
+        <param name="defaultNamespace">使用する既定の XML 名前空間は、型のマッピングをインポートします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.SoapReflectionImporter" />クラス、XML シリアル化のオーバーライドを指定して、既定の XML 名前空間。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportMembersMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlMembersMapping ImportMembersMapping (string elementName, string ns, System.Xml.Serialization.XmlReflectionMember[] members);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Serialization.XmlMembersMapping ImportMembersMapping(string elementName, string ns, class System.Xml.Serialization.XmlReflectionMember[] members) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlMembersMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="members" Type="System.Xml.Serialization.XmlReflectionMember[]" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">XML 要素名は、Web サービス メソッドから生成されます。</param>
+        <param name="ns">XML 要素名前空間は、Web サービス メソッドから生成されます。</param>
+        <param name="members">Web サービス メソッドに属している .NET Framework コードのエンティティの配列。</param>
+        <summary>Web サービス メソッドから収集される情報の内部の型マッピングを生成します。</summary>
+        <returns>内部 .NET Framework 型のメッセージの WSDL 定義の要素の部分にマッピングします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapReflectionImporter.ImportMembersMapping%2A>初期化 Web サービスまたはクライアント、または Web サービスを反映中にメソッドが呼び出されます。 これを直接呼び出す必要はありません。  
+  
+ 次のリストに指定できる値の説明、`members`パラメーター。  
+  
+-   Web サービス メソッドの入力パラメーターです。  
+  
+-   Web サービス メソッドの出力パラメーターおよび戻り値の型 void でない場合にインデックス 0。  
+  
+-   入力の SOAP ヘッダー。  
+  
+-   出力の SOAP ヘッダー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportMembersMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlMembersMapping ImportMembersMapping (string elementName, string ns, System.Xml.Serialization.XmlReflectionMember[] members, bool hasWrapperElement, bool writeAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Serialization.XmlMembersMapping ImportMembersMapping(string elementName, string ns, class System.Xml.Serialization.XmlReflectionMember[] members, bool hasWrapperElement, bool writeAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlMembersMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="members" Type="System.Xml.Serialization.XmlReflectionMember[]" />
+        <Parameter Name="hasWrapperElement" Type="System.Boolean" />
+        <Parameter Name="writeAccessors" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">XML 要素名は、Web サービス メソッドから生成されます。</param>
+        <param name="ns">XML 要素名前空間は、Web サービス メソッドから生成されます。</param>
+        <param name="members">Web サービス メソッドに属している .NET Framework コードのエンティティの配列。</param>
+        <param name="hasWrapperElement">
+          <see langword="true" />示す、SOAP メッセージ内の余分なラッパー要素の WSDL メッセージ部分に対応する要素を囲む必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <param name="writeAccessors">
+          <see langword="true" />は、RPC スタイルの Web サービス バインディングを示すために<see langword="false" />ドキュメントのスタイルの Web サービスのバインドまたは SOAP ヘッダーを示します。</param>
+        <summary>Web サービス メソッドから収集される情報の内部の型マッピングを生成します。</summary>
+        <returns>内部 .NET Framework 型のメッセージの WSDL 定義の要素の部分にマッピングします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapReflectionImporter.ImportMembersMapping%2A>初期化 Web サービスまたはクライアント、または Web サービスを反映中にメソッドが呼び出されます。 これを直接呼び出す必要はありません。  
+  
+ 次のリストに指定できる値の説明、`members`パラメーター。  
+  
+-   Web サービス メソッドの入力パラメーターです。  
+  
+-   Web サービス メソッドの出力パラメーターおよび戻り値の型 void でない場合にインデックス 0。  
+  
+-   入力の SOAP ヘッダー。  
+  
+-   出力の SOAP ヘッダー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportMembersMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlMembersMapping ImportMembersMapping (string elementName, string ns, System.Xml.Serialization.XmlReflectionMember[] members, bool hasWrapperElement, bool writeAccessors, bool validate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Serialization.XmlMembersMapping ImportMembersMapping(string elementName, string ns, class System.Xml.Serialization.XmlReflectionMember[] members, bool hasWrapperElement, bool writeAccessors, bool validate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlMembersMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="members" Type="System.Xml.Serialization.XmlReflectionMember[]" />
+        <Parameter Name="hasWrapperElement" Type="System.Boolean" />
+        <Parameter Name="writeAccessors" Type="System.Boolean" />
+        <Parameter Name="validate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">XML 要素名は、Web サービス メソッドから生成されます。</param>
+        <param name="ns">XML 要素名前空間は、Web サービス メソッドから生成されます。</param>
+        <param name="members">Web サービス メソッドに属している .NET Framework コードのエンティティの配列。</param>
+        <param name="hasWrapperElement">
+          <see langword="true" />示す、SOAP メッセージ内の余分なラッパー要素の WSDL メッセージ部分に対応する要素を囲む必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <param name="writeAccessors">
+          <see langword="true" />は、RPC スタイルの Web サービス バインディングを示すために<see langword="false" />ドキュメントのスタイルの Web サービスのバインドまたは SOAP ヘッダーを示します。</param>
+        <param name="validate">
+          <see langword="true" />ラッパー要素の予期される修飾名の生成のデシリアライザーを確認することを示すためにそれ以外の場合、<see langword="false" />です。 このパラメーターの値は、該当する場合にのみ、 <c>hasWrapperElement</c>パラメーターの値が<see langword="true" />です。</param>
+        <summary>Web サービス メソッドから収集される情報の内部の型マッピングを生成します。</summary>
+        <returns>内部 .NET Framework 型のメッセージの WSDL 定義の要素の部分にマッピングします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapReflectionImporter.ImportMembersMapping%2A>初期化 Web サービスまたはクライアント、または Web サービスを反映中にメソッドが呼び出されます。 これを直接呼び出す必要はありません。  
+  
+ 次のリストに指定できる値の説明、`members`パラメーター。  
+  
+-   Web サービス メソッドの入力パラメーターです。  
+  
+-   Web サービス メソッドの出力パラメーターおよび戻り値の型 void でない場合にインデックス 0。  
+  
+-   入力の SOAP ヘッダー。  
+  
+-   出力の SOAP ヘッダー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportMembersMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlMembersMapping ImportMembersMapping (string elementName, string ns, System.Xml.Serialization.XmlReflectionMember[] members, bool hasWrapperElement, bool writeAccessors, bool validate, System.Xml.Serialization.XmlMappingAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Serialization.XmlMembersMapping ImportMembersMapping(string elementName, string ns, class System.Xml.Serialization.XmlReflectionMember[] members, bool hasWrapperElement, bool writeAccessors, bool validate, valuetype System.Xml.Serialization.XmlMappingAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean,System.Boolean,System.Xml.Serialization.XmlMappingAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlMembersMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="members" Type="System.Xml.Serialization.XmlReflectionMember[]" />
+        <Parameter Name="hasWrapperElement" Type="System.Boolean" />
+        <Parameter Name="writeAccessors" Type="System.Boolean" />
+        <Parameter Name="validate" Type="System.Boolean" />
+        <Parameter Name="access" Type="System.Xml.Serialization.XmlMappingAccess" />
+      </Parameters>
+      <Docs>
+        <param name="elementName">XML 要素名は、Web サービス メソッドから生成されます。</param>
+        <param name="ns">XML 要素名前空間は、Web サービス メソッドから生成されます。</param>
+        <param name="members">Web サービス メソッドに属している .NET Framework コードのエンティティの配列。</param>
+        <param name="hasWrapperElement">
+          <see langword="true" />示す、SOAP メッセージ内の余分なラッパー要素の WSDL メッセージ部分に対応する要素を囲む必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <param name="writeAccessors">
+          <see langword="true" />は、RPC スタイルの Web サービス バインディングを示すために<see langword="false" />ドキュメントのスタイルの Web サービスのバインドまたは SOAP ヘッダーを示します。</param>
+        <param name="validate">
+          <see langword="true" />ラッパー要素の予期される修飾名の生成のデシリアライザーを確認することを示すためにそれ以外の場合、<see langword="false" />です。 このパラメーターの値は、該当する場合にのみ、 <c>hasWrapperElement</c>パラメーターの値が<see langword="true" />です。</param>
+        <param name="access"><see cref="T:System.Xml.Serialization.XmlMappingAccess" /> 値のいずれか。</param>
+        <summary>Web サービス メソッドから収集される情報の内部の型マッピングを生成します。</summary>
+        <returns>内部 .NET Framework 型のメッセージの WSDL 定義の要素の部分にマッピングします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.SoapReflectionImporter.ImportMembersMapping%2A>初期化 Web サービスまたはクライアント、または Web サービスを反映中にメソッドが呼び出されます。 これを直接呼び出す必要はありません。  
+  
+ 次のリストに指定できる値の説明、`members`パラメーター。  
+  
+-   Web サービス メソッドの入力パラメーターです。  
+  
+-   Web サービス メソッドの出力パラメーターおよび戻り値の型 void でない場合にインデックス 0。  
+  
+-   入力の SOAP ヘッダー。  
+  
+-   出力の SOAP ヘッダー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportTypeMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlTypeMapping ImportTypeMapping (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Serialization.XmlTypeMapping ImportTypeMapping(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.ImportTypeMapping(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlTypeMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">型のマッピングを生成する対象の .NET Framework の型。</param>
+        <summary>.NET Framework 型の XML スキーマの要素へのマッピングを生成します。</summary>
+        <returns>XML スキーマ要素には、タイプの内部の .NET Framework マッピングです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP エンコーディングを使用して、XML スキーマ要素がシリアル化されます。  
+  
+ 呼び出す必要はありません、<xref:System.Xml.Serialization.SoapReflectionImporter.ImportTypeMapping%2A>メソッドを直接です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportTypeMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlTypeMapping ImportTypeMapping (Type type, string defaultNamespace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Serialization.XmlTypeMapping ImportTypeMapping(class System.Type type, string defaultNamespace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.ImportTypeMapping(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlTypeMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="defaultNamespace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type">型のマッピングを生成する対象の .NET Framework の型。</param>
+        <param name="defaultNamespace">使用する既定の XML 名前空間。</param>
+        <summary>.NET Framework 型の XML スキーマの要素へのマッピングを生成します。</summary>
+        <returns>XML スキーマ要素には、タイプの内部の .NET Framework マッピングです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP エンコーディングを使用して、XML スキーマ要素がシリアル化されます。  
+  
+ 呼び出す必要はありません、<xref:System.Xml.Serialization.SoapReflectionImporter.ImportTypeMapping%2A>メソッドを直接です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeType">
+      <MemberSignature Language="C#" Value="public void IncludeType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void IncludeType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.IncludeType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">型マッピング情報を保存する対象の .NET Framework の型。</param>
+        <summary>配置内の型のマッピング、<see cref="T:System.Xml.Serialization.SoapReflectionImporter" />インポート メソッドが呼び出されたときに後で使用できるインスタンスのコンテキスト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要はありません、<xref:System.Xml.Serialization.SoapReflectionImporter.IncludeType%2A>メソッドを直接です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeTypes">
+      <MemberSignature Language="C#" Value="public void IncludeTypes (System.Reflection.ICustomAttributeProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void IncludeTypes(class System.Reflection.ICustomAttributeProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapReflectionImporter.IncludeTypes(System.Reflection.ICustomAttributeProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Reflection.ICustomAttributeProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.Reflection.ICustomAttributeProvider" />リフレクション オブジェクトから派生したカスタム属性を含む、<see cref="T:System.Xml.Serialization.SoapIncludeAttribute" />属性。</param>
+        <summary>派生型マッピングの配置、<see cref="T:System.Xml.Serialization.SoapReflectionImporter" />インポート メソッドが呼び出されたときに後で使用できるインスタンスのコンテキスト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

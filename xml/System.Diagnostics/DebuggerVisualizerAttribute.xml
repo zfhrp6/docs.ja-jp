@@ -1,0 +1,427 @@
+<Type Name="DebuggerVisualizerAttribute" FullName="System.Diagnostics.DebuggerVisualizerAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DebuggerVisualizerAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DebuggerVisualizerAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.DebuggerVisualizerAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct, AllowMultiple=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型の型のビジュアライザーであるを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、アセンブリ レベルで使用できます。 通常属性コンス トラクターは、2 つの型を取ります。  2 つの型は、ビジュアライザー ビジュアライザー オブジェクト ソース、またはアセンブリの完全修飾型名の種類として指定します。 含むアセンブリによって参照されていることのビジュアライザーのアセンブリが必要ないように、2 番目のオプションが提供される、<xref:System.Diagnostics.DebuggerVisualizerAttribute>です。 これにより、デバッグ時にのみ呼び出される DLL にビジュアライザーを出荷するコンポーネントの作成者です。 <xref:System.Diagnostics.DebuggerVisualizerAttribute.Description%2A>プロパティは、ドロップダウン ボックスに表示されるビジュアライザーの説明を指定します。 ターゲット パラメーターでは、ビジュアライザーの対象である型を指定します。 ビジュアライザーの詳細については、次を参照してください。[カスタム ビジュアライザーの作成](http://msdn.microsoft.com/library/c24c006f-f2ac-429f-89db-677fc0c6e1ea)です。  
+  
+> [!NOTE]
+>  ビジュアライザーとビジュアライザー オブジェクトのソースの実装は、ホスティングのデバッガーに依存します。  ビジュアライザーを作成する方法について[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]を参照してください[する方法: ビジュアライザーを記述](http://msdn.microsoft.com/library/625a0d4f-abcc-43f2-9f8c-31c131a4378e)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DebuggerVisualizerAttribute (string visualizerTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string visualizerTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DebuggerVisualizerAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visualizerTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="visualizerTypeName">ビジュアライザーの完全修飾型名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.DebuggerVisualizerAttribute" />クラス、ビジュアライザーの型名を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DebuggerVisualizerAttribute>アセンブリ、クラス、および構造体に適用できます。 この属性の使用については、次を参照してください。[する方法: ビジュアライザーを記述](http://msdn.microsoft.com/library/625a0d4f-abcc-43f2-9f8c-31c131a4378e)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DebuggerVisualizerAttribute (Type visualizer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type visualizer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DebuggerVisualizerAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visualizer" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="visualizer">ビジュアライザーの型。</param>
+        <summary>ビジュアライザーの型を指定して、<see cref="T:System.Diagnostics.DebuggerVisualizerAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DebuggerVisualizerAttribute>アセンブリ、クラス、および構造体に適用できます。 この属性の使用については、次を参照してください。[する方法: ビジュアライザーを記述](http://msdn.microsoft.com/library/625a0d4f-abcc-43f2-9f8c-31c131a4378e)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="visualizer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DebuggerVisualizerAttribute (string visualizerTypeName, string visualizerObjectSourceTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string visualizerTypeName, string visualizerObjectSourceTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DebuggerVisualizerAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visualizerTypeName" Type="System.String" />
+        <Parameter Name="visualizerObjectSourceTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="visualizerTypeName">ビジュアライザーの完全修飾型名。</param>
+        <param name="visualizerObjectSourceTypeName">ビジュアライザー オブジェクト ソースの完全修飾型名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.DebuggerVisualizerAttribute" />クラス、ビジュアライザーの型名とビジュアライザー オブジェクト ソースの型名を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DebuggerVisualizerAttribute>アセンブリ、クラス、および構造体に適用できます。 この属性の使用については、次を参照してください。[する方法: ビジュアライザーを記述](http://msdn.microsoft.com/library/625a0d4f-abcc-43f2-9f8c-31c131a4378e)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DebuggerVisualizerAttribute (string visualizerTypeName, Type visualizerObjectSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string visualizerTypeName, class System.Type visualizerObjectSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DebuggerVisualizerAttribute.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visualizerTypeName" Type="System.String" />
+        <Parameter Name="visualizerObjectSource" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="visualizerTypeName">ビジュアライザーの完全修飾型名。</param>
+        <param name="visualizerObjectSource">ビジュアライザー オブジェクト ソースの型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.DebuggerVisualizerAttribute" />ビジュアライザーとビジュアライザー オブジェクト ソースの種類の型名を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DebuggerVisualizerAttribute>アセンブリ、クラス、および構造体に適用できます。 この属性の使用については、次を参照してください。[する方法: ビジュアライザーを記述](http://msdn.microsoft.com/library/625a0d4f-abcc-43f2-9f8c-31c131a4378e)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="visualizerObjectSource" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DebuggerVisualizerAttribute (Type visualizer, string visualizerObjectSourceTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type visualizer, string visualizerObjectSourceTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DebuggerVisualizerAttribute.#ctor(System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visualizer" Type="System.Type" />
+        <Parameter Name="visualizerObjectSourceTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="visualizer">ビジュアライザーの型。</param>
+        <param name="visualizerObjectSourceTypeName">ビジュアライザー オブジェクト ソースの完全修飾型名。</param>
+        <summary>ビジュアライザーの型とビジュアライザー オブジェクト ソースの型名を指定して、<see cref="T:System.Diagnostics.DebuggerVisualizerAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DebuggerVisualizerAttribute>アセンブリ、クラス、および構造体に適用できます。 この属性の使用については、次を参照してください。[する方法: ビジュアライザーを記述](http://msdn.microsoft.com/library/625a0d4f-abcc-43f2-9f8c-31c131a4378e)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="visualizer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DebuggerVisualizerAttribute (Type visualizer, Type visualizerObjectSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type visualizer, class System.Type visualizerObjectSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.DebuggerVisualizerAttribute.#ctor(System.Type,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visualizer" Type="System.Type" />
+        <Parameter Name="visualizerObjectSource" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="visualizer">ビジュアライザーの型。</param>
+        <param name="visualizerObjectSource">ビジュアライザー オブジェクト ソースの型。</param>
+        <summary>ビジュアライザーの型とビジュアライザー オブジェクト ソースの型を指定して、<see cref="T:System.Diagnostics.DebuggerVisualizerAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.DebuggerVisualizerAttribute>アセンブリ、クラス、および構造体に適用できます。 この属性の使用については、次を参照してください。[する方法: ビジュアライザーを記述](http://msdn.microsoft.com/library/625a0d4f-abcc-43f2-9f8c-31c131a4378e)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="visualizerObjectSource" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DebuggerVisualizerAttribute.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビジュアライザーの説明を設定します。</summary>
+        <value>ビジュアライザーの説明です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public Type Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Target" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DebuggerVisualizerAttribute.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または属性がアセンブリ レベルで適用されるときに、対象の型を設定します。</summary>
+        <value>ビジュアライザーの対象となっている型。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">なっているために、値を設定できません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetTypeName">
+      <MemberSignature Language="C#" Value="public string TargetTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DebuggerVisualizerAttribute.TargetTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または属性がアセンブリ レベルで適用されるときに、完全修飾型名を設定します。</summary>
+        <value>対象の型の完全修飾型名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される名前には、ターゲットは、型によって (名前ではなく型) に指定されている場合、<xref:System.Type.AssemblyQualifiedName%2A>対象の型のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualizerObjectSourceTypeName">
+      <MemberSignature Language="C#" Value="public string VisualizerObjectSourceTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VisualizerObjectSourceTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DebuggerVisualizerAttribute.VisualizerObjectSourceTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト ソース ビジュアライザーの完全修飾型名を取得します。</summary>
+        <value>ビジュアライザー オブジェクト ソースの完全修飾型名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアライザー オブジェクト ソースが、その型で指定された場合、戻り値は、<xref:System.Type.AssemblyQualifiedName%2A>ビジュアライザー オブジェクト ソースの種類のプロパティです。  
+  
+ ビジュアライザー オブジェクト ソースの作成の[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]から継承する必要があります、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]クラス`VisualizerObjectSource`クラスです。 ビジュアライザーを作成する方法については、次を参照してください。[する方法: ビジュアライザーを記述](http://msdn.microsoft.com/library/625a0d4f-abcc-43f2-9f8c-31c131a4378e)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualizerTypeName">
+      <MemberSignature Language="C#" Value="public string VisualizerTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VisualizerTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DebuggerVisualizerAttribute.VisualizerTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Debug</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビジュアライザーの完全修飾型名を取得します。</summary>
+        <value>ビジュアライザーの完全修飾型名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアライザーは、その型で指定した場合、戻り値は、<xref:System.Type.AssemblyQualifiedName%2A>ビジュアライザーの型のプロパティです。  
+  
+ ビジュアライザーを作成する方法については、次を参照してください。[する方法: ビジュアライザーを記述](http://msdn.microsoft.com/library/625a0d4f-abcc-43f2-9f8c-31c131a4378e)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

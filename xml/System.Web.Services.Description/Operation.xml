@@ -1,0 +1,307 @@
+<Type Name="Operation" FullName="System.Web.Services.Description.Operation">
+  <TypeSignature Language="C#" Value="public sealed class Operation : System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Operation extends System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.Operation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.NamedItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtensionPoint("Extensions")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML Web サービスによってサポートされるアクションの抽象定義を提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.Operation>クラスが Web サービス記述言語 (WSDL) に対応しています`operation`要素で囲ま、`portType`要素。 WSDL の詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例での一般的な使用、<xref:System.Web.Services.Description.Operation>クラスです。 この例では、<xref:System.Web.Services.Description.ServiceDescription>を持たない、 <xref:System.Web.Services.Description.PortType> HTTP POST プロトコルをサポートします。 追加、<xref:System.Web.Services.Description.PortType>インスタンスを POST をサポートし、新しい WSDL コントラクトを書き込みます。  
+  
+ [!code-cpp[Operation_5#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Operation_5/CPP/operation_5.cpp#1)]
+ [!code-csharp[Operation_5#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Operation_5/CS/operation_5.cs#1)]
+ [!code-vb[Operation_5#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Operation_5/VB/operation_5.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Operation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.Operation.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.Operation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public override System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Operation.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> に関連付けられている <see cref="T:System.Web.Services.Description.Operation" /> を取得します。</summary>
+        <value>この <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> に関連付けられている <see cref="T:System.Web.Services.Description.Operation" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Faults">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.OperationFaultCollection Faults { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.OperationFaultCollection Faults" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Operation.Faults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("fault")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationFaultCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー、またはエラー メッセージ、現在の定義のコレクションを取得<see cref="T:System.Web.Services.Description.Operation" />です。</summary>
+        <value>エラー、または現在の操作によって定義されている、エラー メッセージのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[Operation_Faults#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Operation_Faults/CPP/operation_faults.cpp#1)]
+ [!code-csharp[Operation_Faults#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Operation_Faults/CS/operation_faults.cs#1)]
+ [!code-vb[Operation_Faults#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Operation_Faults/VB/operation_faults.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBoundBy">
+      <MemberSignature Language="C#" Value="public bool IsBoundBy (System.Web.Services.Description.OperationBinding operationBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsBoundBy(class System.Web.Services.Description.OperationBinding operationBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.Operation.IsBoundBy(System.Web.Services.Description.OperationBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="operationBinding" Type="System.Web.Services.Description.OperationBinding" />
+      </Parameters>
+      <Docs>
+        <param name="operationBinding"><see cref="T:System.Web.Services.Description.OperationBinding" />と一致するかどうかを確認する、<see cref="T:System.Web.Services.Description.Operation" />です。</param>
+        <summary>示す値を返すかどうか、指定した<see cref="T:System.Web.Services.Description.OperationBinding" />と一致する、<see cref="T:System.Web.Services.Description.Operation" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Web.Services.Description.Operation" />一致をインスタンス化、<paramref name="operationBinding" />パラメーターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、<xref:System.Web.Services.Description.Operation.IsBoundBy%2A>メソッドです。  
+  
+ [!code-cpp[Operation_IsBoundBy#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Operation_IsBoundBy/CPP/operation_isboundby.cpp#1)]
+ [!code-csharp[Operation_IsBoundBy#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Operation_IsBoundBy/CS/operation_isboundby.cs#1)]
+ [!code-vb[Operation_IsBoundBy#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Operation_IsBoundBy/VB/operation_isboundby.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Messages">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.OperationMessageCollection Messages { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.OperationMessageCollection Messages" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Operation.Messages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("output", typeof(System.Web.Services.Description.OperationOutput))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("input", typeof(System.Web.Services.Description.OperationInput))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationMessageCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスのコレクションを取得、<see cref="T:System.Web.Services.Description.Message" />現在によって定義されるクラス<see cref="T:System.Web.Services.Description.Operation" />です。</summary>
+        <value>インスタンスのコレクション、<see cref="T:System.Web.Services.Description.Message" />現在によって定義されるクラス<see cref="T:System.Web.Services.Description.Operation" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.Operation>ただ 1 つに関連付けられた<xref:System.Web.Services.Description.OperationInput>と 1 つだけ<xref:System.Web.Services.Description.OperationOutput>ごとの 1 つだけのインスタンスは、このコレクションのメンバーであることができます、したがって、コレクションは、最大で 2 つのメンバーを持つことができます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[Operation_5#3](~/samples/snippets/cpp/VS_Snippets_Remoting/Operation_5/CPP/operation_5.cpp#3)]
+ [!code-csharp[Operation_5#3](~/samples/snippets/csharp/VS_Snippets_Remoting/Operation_5/CS/operation_5.cs#3)]
+ [!code-vb[Operation_5#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Operation_5/VB/operation_5.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterOrder">
+      <MemberSignature Language="C#" Value="public string[] ParameterOrder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] ParameterOrder" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Operation.ParameterOrder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に含まれる要素の配列、<see cref="P:System.Web.Services.Description.Operation.ParameterOrderString" />です。</summary>
+        <value>名前の配列<see cref="T:System.Web.Services.Description.MessagePart" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この配列の要素は、のものと同じ、<xref:System.Web.Services.Description.Operation.ParameterOrderString%2A>スペースで区切られた文字列ではなく配列で収容以外のプロパティです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[Operation_2#2](~/samples/snippets/cpp/VS_Snippets_Remoting/Operation_2/CPP/operation_2.cpp#2)]
+ [!code-csharp[Operation_2#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Operation_2/CS/operation_2.cs#2)]
+ [!code-vb[Operation_2#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Operation_2/VB/operation_2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterOrderString">
+      <MemberSignature Language="C#" Value="public string ParameterOrderString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ParameterOrderString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Operation.ParameterOrderString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("parameterOrder")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求-応答または送信請求-応答操作の仕様を順序付けをする、省略可能なリモート プロシージャ コール (RPC) 署名を設定します。</summary>
+        <value>名前の一覧、<see cref="T:System.Web.Services.Description.MessagePart" />インスタンスが 1 つのスペースで区切られました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付き<xref:System.Web.Services.Description.MessagePart>インスタンスは、次の規則に従う必要があります。  
+  
+-   名前付きの順序<xref:System.Web.Services.Description.MessagePart>インスタンスは、操作、その入力と出力パラメーター、結果を返しますおよび例外を処理するように求められます可能性がありますの名前は、RPC (リモート プロシージャ コール) の署名では、パラメーターの順序を反映します。  
+  
+-   戻り値が一覧にないです。  
+  
+-   場合、<xref:System.Web.Services.Description.MessagePart>入力と出力の両方のメッセージに表示される名前は、`in/out`パラメーター。  
+  
+-   場合、<xref:System.Web.Services.Description.MessagePart>名が、入力メッセージにのみ表示されますが、`in`パラメーター。  
+  
+-   場合、<xref:System.Web.Services.Description.MessagePart>名が、出力メッセージにのみ表示されますが、`out`パラメーター。  
+  
+ このパラメーターの一覧が必要でないことに注意してください。 場合でも、 <xref:System.Web.Services.Description.Operation> RPC スタイルで使用するには、<xref:System.Web.Services.Description.Binding>です。 呼び出す必要はありません<xref:System.Web.Services.Description.Operation.ParameterOrderString%2A>直接です。 このメソッドは、XML シリアル化の内部使用のみされます。 パラメーター リストの使用を返す<xref:System.Web.Services.Description.Operation.ParameterOrder%2A>です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[Operation_2#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Operation_2/CPP/operation_2.cpp#1)]
+ [!code-csharp[Operation_2#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Operation_2/CS/operation_2.cs#1)]
+ [!code-vb[Operation_2#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Operation_2/VB/operation_2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PortType">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.PortType PortType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.PortType PortType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Operation.PortType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.PortType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Services.Description.PortType" />うち、<see cref="T:System.Web.Services.Description.Operation" />メンバーであります。</summary>
+        <value><see cref="T:System.Web.Services.Description.PortType" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ Operation_&#5;5  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

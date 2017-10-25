@@ -1,0 +1,152 @@
+<Type Name="TrueTypeFontMode" FullName="System.Printing.TrueTypeFontMode">
+  <TypeSignature Language="C#" Value="public enum TrueTypeFontMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TrueTypeFontMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.TrueTypeFontMode" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>プリンターが TrueType フォントでフォーマットされたテキストを処理する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TrueType フォントは、*ベクター*フォントで、プリンター ドライバーとドライバーの画面の文字の形状を描画し、それらを入力する方法を指示します。 比較してベクター フォント*ラスター*フォントをリストするだけであります。 ラスター フォントには、各使用可能なフォント サイズの各文字の一覧と、リストを確認する、文字のすべてのピクセルの出力かどうか。  
+  
+ 拡大またはベクター フォントをほぼすべてのポイント サイズを減らすことができます。ただし、ベクター フォントでは、大量のプリンターのメモリを占有するために印刷が遅くなることができます。 また、一部のプリンターは TrueType フォントをサポートしていません。  
+  
+ 新しいプリンターは、通常、次の手順を実行してこれらの問題を回避します。  
+  
+-   TrueType フォントをジェネリック ベクター フォントをアウトライン フォントに変換しています。 TrueType フォントをサポートしない多くのプリンター アウトライン フォントをサポートします。  
+  
+-   TrueType フォントように見えます一時ラスター フォントを作成します。 プリンターには、ドキュメントで使用されるフォント サイズごとに別々 の一時ラスター フォントを作成する必要があります。 そのため、印刷ジョブは、多数のフォント サイズを使用している場合、プリンターを使用しているメモリの総量可能性がありますより大きくする TrueType フォントの使用新機能。  
+  
+-   グラフィックとして、ドキュメント内の各テキスト領域を処理します。 デバイスは、ほとんどのテキストを含むドキュメントを印刷する必要がある場合、は、グラフィックとしてテキストをダウンロードするとフォントをダウンロードするよりもプリンター メモリを使用できます。  
+  
+ 次の目的でこの型の値を使用します。  
+  
+-   メンバーとして、<xref:System.Printing.PrintCapabilities.TrueTypeFontModeCapability%2A>プロパティには、コレクションの<xref:System.Printing.PrintCapabilities>、これらの値は、上記の方法のうちが特定のプリンターで使用できることを示すです。 多くのプリンターは、これらの手法の 1 つ以上をサポートします。  
+  
+-   値として、<xref:System.Printing.PrintTicket.TrueTypeFontMode%2A>のプロパティ、<xref:System.Printing.PrintTicket>値、プリンターに TrueType フォントを特定の方法で処理するように指示します。  
+  
+ **不明な**のプロパティで値が使われていない<xref:System.Printing.PrintCapabilities>オブジェクト。  
+  
+ 設定する必要がありますしない、<xref:System.Printing.PrintTicket>プロパティを**不明な**します。 その他の場合<xref:System.Printing.PrintTicket>生成したアプリケーションが作成、 *PrintTicket ドキュメント*TrueType フォントの処理機能を認識できないオプションを設定する (で定義されていない、オプションは、[印刷スキーマ](http://go.microsoft.com/fwlink/?LinkId=186397)、<xref:System.Printing.PrintTicket>そのドキュメントに作成されますが、アプリケーションのオブジェクトになります**不明な**の値として、<xref:System.Printing.PrintTicket.TrueTypeFontMode%2A>プロパティです。  
+  
+ <xref:System.Printing.PrintTicket>と<xref:System.Printing.PrintCapabilities>クラスは継承できません、拡張することができます、[印刷スキーマ](http://go.microsoft.com/fwlink/?LinkId=186397)では考慮されません印刷デバイスの機能を認識するように、<xref:System.Printing.PrintTicket>または<xref:System.Printing.PrintCapabilities>クラスです。 詳細については、次を参照してください。[ビルド内にありません: 方法: 印刷スキーマと新しい印刷システム クラスを作成する拡張](http://msdn.microsoft.com/en-us/a3600218-1ea5-478a-9853-6560464f2885)です。  
+  
+   
+  
+## Examples  
+ 次の例では、プリンターの機能をテストして、それらを活用するために、印刷ジョブを構成する方法を示します。  
+  
+ [!code-cpp[XpsCreate#PrinterCapabilities](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#printercapabilities)]
+ [!code-csharp[XpsCreate#PrinterCapabilities](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#printercapabilities)]
+ [!code-vb[XpsCreate#PrinterCapabilities](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#printercapabilities)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Automatic">
+      <MemberSignature Language="C#" Value="Automatic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.TrueTypeFontMode Automatic = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.TrueTypeFontMode.Automatic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.TrueTypeFontMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンター ドライバーでは、TrueType フォントを処理するための最適な方法を決定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadAsNativeTrueTypeFont">
+      <MemberSignature Language="C#" Value="DownloadAsNativeTrueTypeFont" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.TrueTypeFontMode DownloadAsNativeTrueTypeFont = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.TrueTypeFontMode.DownloadAsNativeTrueTypeFont" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.TrueTypeFontMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンター ドライバーでは、TrueType フォントをダウンロードします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadAsOutlineFont">
+      <MemberSignature Language="C#" Value="DownloadAsOutlineFont" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.TrueTypeFontMode DownloadAsOutlineFont = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.TrueTypeFontMode.DownloadAsOutlineFont" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.TrueTypeFontMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンター ドライバーでは、アウトライン フォントとして TrueType フォントをダウンロードします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DownloadAsRasterFont">
+      <MemberSignature Language="C#" Value="DownloadAsRasterFont" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.TrueTypeFontMode DownloadAsRasterFont = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.TrueTypeFontMode.DownloadAsRasterFont" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.TrueTypeFontMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンター ドライバーでは、各サイズし、それらをすべてダウンロード TrueType フォントのラスター フォントを作成します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderAsBitmap">
+      <MemberSignature Language="C#" Value="RenderAsBitmap" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.TrueTypeFontMode RenderAsBitmap = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.TrueTypeFontMode.RenderAsBitmap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.TrueTypeFontMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンター ドライバーでは、グラフィックとしてテキストの各領域をダウンロードします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Printing.TrueTypeFontMode Unknown = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Printing.TrueTypeFontMode.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.TrueTypeFontMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>機能 (オプションはこの列挙体によって表されます) は、定義されていないオプションに設定されます。 [印刷スキーマ](http://go.microsoft.com/fwlink/?LinkId=186397)です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

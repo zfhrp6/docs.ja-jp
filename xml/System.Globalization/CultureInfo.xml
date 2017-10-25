@@ -1,0 +1,2972 @@
+<Type Name="CultureInfo" FullName="System.Globalization.CultureInfo">
+  <TypeSignature Language="C#" Value="public class CultureInfo : ICloneable, IFormatProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable beforefieldinit CultureInfo extends System.Object implements class System.ICloneable, class System.IFormatProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.CultureInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IFormatProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定のカルチャに関する情報を提供 (と呼ばれる、*ロケール*アンマネージ コードの開発)。 この情報には、カルチャの名前、表記体系、使用する暦、文字列の並べ替え順序、および日付と数値の書式が含まれます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/globalization/cultureinfo.cs#e319c6636909012f)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ <xref:System.Globalization.CultureInfo>クラスなど、言語、サブ言語、国/地域、予定表、および特定のカルチャに関連付けられている規則のカルチャに固有の情報を提供します。 このクラスは、のカルチャに固有のインスタンスへのアクセスも用意されています。、 <xref:System.Globalization.DateTimeFormatInfo>、 <xref:System.Globalization.NumberFormatInfo>、 <xref:System.Globalization.CompareInfo>、および<xref:System.Globalization.TextInfo>オブジェクト。 これらのオブジェクトには、大文字小文字の区別、日付や数値の書式設定文字列を比較するなど、カルチャに固有の操作に必要な情報が含まれています。 <xref:System.Globalization.CultureInfo>クラスは、使用直接的または間接的に書式設定、解析、またはなど、カルチャに固有のデータを操作するクラスによって<xref:System.String>、 <xref:System.DateTime>、 <xref:System.DateTimeOffset>、および数値型。  
+  
+ このセクションの内容:  
+  
+ [カルチャ名と識別子](#CultureNames)   
+ [インバリアント、中間色、および特定のカルチャ](#Invariant)   
+ [カスタム カルチャ](#Custom)   
+ [動的なカルチャ データ](#Dynamic)   
+ [現在のカルチャおよび現在の UI カルチャ](#Current)   
+ [すべてのカルチャを取得します。](#GetAll)   
+ [カルチャとスレッド](#Threads)   
+ [カルチャとアプリケーション ドメイン](#AppDomain)   
+ [カルチャとタスク ベースの非同期操作](#Async)   
+ [CultureInfo オブジェクトのシリアル化](#Serialization)   
+ [コントロール パネルのオーバーライド](#CPanel)   
+ [代替の並べ替え順序](#AlternateSort)   
+ [カルチャと Windows アプリ](#Windows)  
+  
+<a name="CultureNames"></a>   
+## <a name="culture-names-and-identifiers"></a>カルチャ名と識別子  
+ <xref:System.Globalization.CultureInfo>クラスは RFC 4646 に基づく、カルチャごとに一意の名前を指定します。 名前は、言語に関連付けられている ISO 639 2 文字の小文字のカルチャ コードと、ISO 3166 2 文字大文字となり、国または地域に関連付けられているの組み合わせです。 さらに、対象とするアプリの[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]またはそれ以降を実行している Windows 10 の下にあるか、後で、タグがサポートされている有効な bcp-47 言語に対応するカルチャ名。  
+  
+> [!NOTE]
+>  カルチャ名が渡されたときに、クラス コンス トラクターまたはメソッドになど<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A>または<xref:System.Globalization.CultureInfo>ケースが重要ではありません。  
+  
+ RFC 4646 に基づくカルチャ名の形式は*languagecode2*>-*country/regioncode2*ここで、 *languagecode2* 2 文字の言語コードと*country/regioncode2* 2 文字となりです。 例には、英語 (米国) の日本語 (日本) と EN-US JA-JP が含まれます。 2 文字の言語コードが使用できない場合、ISO 639-2 から派生した 3 文字コードが使用されます。  
+  
+ ある一部のカルチャ名も 15924 ISO に注意してください。 たとえば、というはキリル文字を指定し、Latn がラテン文字を指定します。 スクリプトを含むカルチャ名パターンを使用して*languagecode2*-*scripttag*-*country/regioncode2*です。 この種類のカルチャ名の例は、ウズベク語 (ウズベキスタン、キリル文字) に対応するよりです。 スクリプトを含むカルチャ名が、パターンを使用する Windows Vista より前に、の Windows オペレーティング システムで*languagecode2*-*country/regioncode2*-*scripttag*より-より-というウズベク語 (ウズベキスタン、キリル文字)。  
+  
+ 2 文字の小文字の言語コードだけがニュートラル カルチャを指定します。 たとえば、fr がフランス語のニュートラル カルチャを指定し、de がドイツ語のニュートラル カルチャを指定します。  
+  
+> [!NOTE]
+>  このルールに矛盾する 2 つのカルチャ名があります。 中国語 (簡体字)、zh Hans、という名前と中国語 (繁体字)、それをという名前のカルチャがニュートラル カルチャです。 カルチャ名では、現在の標準を表すし、古い名前 ZH-CHS および ZH-CHT を使用するための理由がない場合に使用する必要があります。  
+  
+ カルチャ識別子は、標準国際省略ではインストールされているカルチャのいずれかを一意に識別するために必要なコンポーネントがあります。 アプリケーションでは、定義済みのカルチャ識別子を使用したり、カスタムの識別子を定義することができます。  
+  
+ 定義済みの特定のカルチャの名前と識別子は、この and の他のクラスで使用される、<xref:System.Globalization?displayProperty=nameWithType>名前空間。 詳細なカルチャ情報に表示されます、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。  
+  
+ カルチャの名前および識別子が特定のコンピューターに含まれているカルチャのサブセットのみを表すことに注意してください。 Windows のバージョンまたは service pack は、使用可能なカルチャを変更できます。 アプリケーションを使用してカスタムのカルチャは追加、<xref:System.Globalization.CultureAndRegionInfoBuilder>クラスです。 ユーザーは、Microsoft ロケール ビルダー ツールを使用して、独自のカスタム カルチャを追加します。 Microsoft ロケール ビルダーが使用してマネージ コードで記述された、`CultureAndRegionInfoBuilder`クラスです。  
+  
+ いくつかの種類の名前は、カルチャ、特に、次のクラス メンバーに関連付けられている名前と密接に関連します。  
+  
+-   <xref:System.Globalization.CultureInfo.ToString%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Globalization.CultureInfo.Name%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Globalization.CompareInfo.Name%2A?displayProperty=nameWithType>  
+  
+<a name="Invariant"></a>   
+## <a name="invariant-neutral-and-specific-cultures"></a>インバリアント、中間色、および特定のカルチャ  
+ カルチャは 3 つのセットにグループ化、通常: インバリアント カルチャ、ニュートラル カルチャ、および特定のカルチャ。  
+  
+ インバリアント カルチャがカルチャに依存しません。 アプリケーションでは、空の文字列を使用して名前でインバリアント カルチャを指定 ("") またはその識別子。 <xref:System.Globalization.CultureInfo.InvariantCulture%2A>インバリアント カルチャのインスタンスを定義します。 関連付けられているすべての国/地域ではなくが、英語の言語を使用します。 ほとんどのメソッドで使用されている、`Globalization`カルチャを必要とする名前空間。  
+  
+ ニュートラル カルチャは、関連付けられているカルチャの言語には、国/地域使用できません。 特定のカルチャは、言語および国/地域に関連付けられているカルチャです。 たとえば、fr は、ニュートラル カルチャの名前、フランス語、および FR-FR が特定のフランス語 (フランス) カルチャの名前。 中国語 (簡体字)、中国語 (繁体字) がもと見なされるのニュートラル カルチャに注意してください。  
+  
+ インスタンスを作成する、<xref:System.Globalization.CompareInfo>クラスが含まれているデータが任意にあるため、ニュートラル カルチャはお勧めできません。 表示したり、データの並べ替えするには、言語および地域の両方を指定します。 さらに、<xref:System.Globalization.CompareInfo.Name%2A>のプロパティ、<xref:System.Globalization.CompareInfo>オブジェクトがニュートラル カルチャという国のみを返すし、領域は含まれません用に作成します。  
+  
+ 定義されたカルチャには、階層を特定のカルチャの親がニュートラル カルチャは、ニュートラル カルチャの親は、インバリアント カルチャがあります。 <xref:System.Globalization.CultureInfo.Parent%2A>プロパティには、特定のカルチャに関連付けられているニュートラル カルチャが含まれています。 カスタムのカルチャを定義する必要があります、<xref:System.Globalization.CultureInfo.Parent%2A>プロパティこのパターンに準拠しています。  
+  
+ 特定のカルチャのリソースが、オペレーティング システムで利用できない場合は、関連付けられているニュートラル カルチャのリソースが使用されます。 ニュートラル カルチャのリソースが利用できない場合は、メイン アセンブリに埋め込まれたリソースが使用されます。 リソース フォールバック プロセスの詳細については、次を参照してください。[パッケージ化と配置リソース](~/docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)です。  
+  
+ Windows API のロケールの一覧は、.NET Framework でサポートされるカルチャの一覧から若干異なります。 Windows と相互運用性が必要な場合など、プラットフォーム呼び出しのメカニズムによりアプリケーションする必要がありますを使用してが定義されている特定のカルチャ オペレーティング システムのです。 特定のカルチャの使用と同じであるロケール識別子で識別される同等の Windows ロケールと一貫性を確保する<xref:System.Globalization.CultureInfo.LCID%2A>です。  
+  
+ A<xref:System.Globalization.DateTimeFormatInfo>または<xref:System.Globalization.NumberFormatInfo>を特定のカルチャまたはニュートラル カルチャではなく、インバリアント カルチャにのみ作成できます。  
+  
+ 場合<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType>は、<xref:System.Globalization.TaiwanCalendar>ですが、<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>に設定されていない、ZH-TW、 <xref:System.Globalization.DateTimeFormatInfo.NativeCalendarName%2A?displayProperty=nameWithType>、 <xref:System.Globalization.DateTimeFormatInfo.GetEraName%2A?displayProperty=nameWithType>、および<xref:System.Globalization.DateTimeFormatInfo.GetAbbreviatedEraName%2A?displayProperty=nameWithType>空の文字列を返します ("") です。  
+  
+<a name="Custom"></a>   
+## <a name="custom-cultures"></a>カスタム カルチャ  
+ Windows オペレーティング システムと .NET Framework でサポートされている定義済みのカルチャだけでなく、.NET Framework には、カスタム カルチャの 3 種類がサポートされています。  
+  
+-   Windows または .NET Framework で使用可能なカルチャを補足するものを新しいカルチャ。 たとえば、アプリケーションをインストールできなかった、 <xref:System.Globalization.CultureInfo> FJ-FJ を表します (または Fijan (フィジー)) が、システムのカルチャ オブジェクト。  
+  
+-   置換カルチャがプロパティを持つ、標準の Windows と .NET Framework でサポートされているカルチャのプロパティと異なります。  
+  
+-   ユーザーの標準カルチャをオーバーライドします。 ユーザーを使用できます、**地域と言語**アプリケーション**コントロール パネルの **既存のカルチャのプロパティの値をカスタマイズします。  
+  
+> [!NOTE]
+>  使用することができます、<xref:System.Globalization.CultureAndRegionInfoBuilder>クラスを定義する、保存、および補足または既存のカルチャを置換するカスタムのカルチャの登録をします。 <xref:System.Globalization.CultureAndRegionInfoBuilder.Save%2A?displayProperty=nameWithType>メソッドは、ターゲット システムにカスタム カルチャをインストールするために使用するロケール データ マークアップ言語 (LDML) ファイルを作成します。 使用方法の手順について順を追って、<xref:System.Globalization.CultureAndRegionInfoBuilder>を新規作成するクラスまたは置換カルチャを参照してください、<xref:System.Globalization.CultureAndRegionInfoBuilder>クラスに関するトピック。  
+  
+ .NET Framework では、カスタムのカルチャをサポートするため、カルチャに固有のデータを操作するときに、次を考慮してください。  
+  
+-   カスタム カルチャでは、定義済みのカルチャの範囲を超える値を持つことができます。 たとえば、一部のカルチャは、異常に長い月の名前、予期しない日付または時刻形式、またはその他の異常なデータがあります。  
+  
+-   ユーザー インターフェイスのカルチャに固有のデータを表示するには、ユーザーのカスタマイズ内容を遵守する必要があります。など、ユーザーは、24 時間制または yyyymmdd 形式で指定の日付形式先可能性があります。  
+  
+-   カスタムのカルチャが既定値をオーバーライドすることに注意してください。 そのため、安定しているデータをカルチャを考慮することはできません。 国名、数値と日付の書式、およびスペルが将来変更可能性があります。 日付と時刻の関数の解析中に渡される日付と時刻の文字列などのカルチャに依存したデータをシリアル化する場合は、インバリアント カルチャまたは特定を使用する必要があります。  
+  
+ <xref:System.Globalization.CultureInfo.CultureTypes%2A>システムにインストールされているカスタムのカルチャのプロパティの値が含まれています、<xref:System.Globalization.CultureTypes?displayProperty=nameWithType>フラグ、およびカスタムのカルチャが割り当てられている、<xref:System.Globalization.CultureInfo.LCID%2A>のプロパティの値`LOCALE_CUSTOM_UNSPECIFIED`(0x1000、または 4096)。 、Windows 10 以降では、この値も割り当てられているカルチャの完全なデータが不足しているシステム定義のカルチャに注意してください。  
+  
+<a name="Dynamic"></a>   
+## <a name="dynamic-culture-data"></a>動的なカルチャ データ  
+ を除き、インバリアント カルチャのデータは動的です。 これは、定義済みのカルチャについても同様です。 やなどの国や地域の通貨が新しく導入変更、その単語のスペルまたは変更、使用する暦、カルチャの定義に変更を追跡します。  カスタム カルチャが通知することがなく変更され、特定のカルチャは置換カスタム カルチャでオーバーライドされる可能性があります。 また、次のとおり、個々 のユーザーはカルチャの設定をオーバーライドできます。 常にアプリケーションは、カルチャ データを取得する、実行時にする必要があります。  
+  
+> [!CAUTION]
+>  データを保存するときに、アプリケーションは、インバリアント カルチャ、バイナリ形式、または特定のカルチャに依存しない形式を使用する必要があります。 インバリアント カルチャ以外の特定のカルチャに関連付けられている現在の値に従って保存されたデータは読みにくくなる可能性があります。 またはそのカルチャが変更された場合意味的に変更する可能性があります。  
+  
+<a name="Current"></a>   
+## <a name="the-current-culture-and-current-ui-culture"></a>現在のカルチャおよび現在の UI カルチャ  
+ .NET Framework アプリケーションですべてのスレッドは、現在のカルチャおよび現在の UI カルチャを持っています。 現在のカルチャでは、日付、時刻、数字、および通貨の値、テキスト、大文字と小文字の表記規則、および文字列の比較方法の並べ替え順序の書式指定規則を決定します。 現在の UI カルチャを使用して、実行時にカルチャ固有のリソースを取得します。  
+  
+> [!NOTE]
+>  スレッドごとに、現在と現在の UI カルチャを決定する方法については、次を参照してください。、[カルチャとスレッド](#Threads)セクションです。 スレッドで、現在と現在の UI カルチャを決定する方法については、新しいアプリケーション ドメイン内およびアプリケーション ドメインの境界を越えることのスレッドで実行するを参照してください、[カルチャとアプリケーション ドメイン](#AppDomain)セクションです。 タスク ベースの非同期操作を実行するスレッドの現在と現在を決定する方法については、次を参照してください。、[カルチャとタスク ベースの非同期操作](#Async)セクションです。  
+  
+ 詳細については、現在のカルチャを参照してください、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティのトピックです。 詳細については、現在の UI カルチャを参照してください、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>プロパティのトピックです。  
+  
+### <a name="retrieving-the-current-and-current-ui-cultures"></a>現在、現在の UI カルチャを取得します。  
+ 取得することができます、<xref:System.Globalization.CultureInfo>を 2 つの方法のいずれかで現在のカルチャを表すオブジェクト。  
+  
+-   値を取得することによって、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   値を取得することによって、 [Thread.CurrentThread.CurrentCulture](<xref:System.Threading.Thread.CurrentCulture>)プロパティです。  
+  
+ 次の例では、両方のプロパティ値を取得、比較ことを示しますそれらが等しいか、現在のカルチャの名前を表示します。  
+  
+ [!code-csharp[System.Globalization.CultureInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Globalization.CultureInfo/cs/Current1.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Globalization.CultureInfo/vb/Current1.vb#1)]  
+  
+ 取得することができます、<xref:System.Globalization.CultureInfo>を 2 つの方法のいずれかで現在の UI カルチャを表すオブジェクト。  
+  
+-   値を取得することによって、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   値を取得することによって、 [Thread.CurrentThread.CurrentUICulture](<xref:System.Threading.Thread.CurrentUICulture>)プロパティです。  
+  
+ 次の例では、両方のプロパティ値を取得、比較ことを示しますそれらが等しいか、現在の UI カルチャの名前を表示します。  
+  
+ [!code-csharp[System.Globalization.CultureInfo#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Globalization.CultureInfo/cs/CurrentUI1.cs#2)]
+ [!code-vb[System.Globalization.CultureInfo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Globalization.CultureInfo/vb/CurrentUI1.vb#2)]  
+  
+### <a name="setting-the-current-and-current-ui-cultures"></a>現在、現在の UI カルチャの設定  
+ カルチャとをスレッドの UI カルチャを変更するには、次の操作を行います。  
+  
+1.  インスタンスを作成、<xref:System.Globalization.CultureInfo>カルチャを表すオブジェクトを呼び出すことによって、<xref:System.Globalization.CultureInfo>クラス コンス トラクターとカルチャの名前を渡します。 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29>コンス トラクターをインスタンス化、<xref:System.Globalization.CultureInfo>新しいカルチャは、Windows の現在のカルチャと同じ場合にユーザーを反映するオブジェクトがオーバーライドされます。   <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29>コンス トラクターでは、指定することができるかどうか、新しくインスタンス化された<xref:System.Globalization.CultureInfo>オブジェクトに反映された新しいカルチャは、Windows の現在のカルチャと同じ場合にユーザーが上書きされます。  
+  
+2.  割り当てる、<xref:System.Globalization.CultureInfo>オブジェクトを<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>または<xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType>プロパティです。 さらに、デスクトップの .NET Framework の 4.6 以降のバージョンを実行して、アプリに割り当てることも、<xref:System.Globalization.CultureInfo>オブジェクトを<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>または<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 次の例では、現在のカルチャを取得します。 、フランス語 (フランス) カルチャ以外のものである場合、現在のカルチャをフランス語 (フランス) に変更します。 それ以外の場合、現在のカルチャをフランス語 (ルクセンブルク) に変わります。  
+  
+ [!code-csharp[System.Globalization.CultureInfo#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Globalization.CultureInfo/cs/Change1.cs#3)]
+ [!code-vb[System.Globalization.CultureInfo#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Globalization.CultureInfo/vb/Change1.vb#3)]  
+  
+ 次の例では、現在のカルチャを取得します。 その他のものである場合、スロベニア語 (スロベニア) カルチャ スロベニア語 (スロベニア) を現在のカルチャを変更します。 それ以外の場合、現在のカルチャをクロアチア語 (クロアチア) に変わります。  
+  
+ [!code-csharp[System.Globalization.CultureInfo#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Globalization.CultureInfo/cs/ChangeUI1.cs#4)]
+ [!code-vb[System.Globalization.CultureInfo#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Globalization.CultureInfo/vb/ChangeUI1.vb#4)]  
+  
+<a name="GetAll"></a>   
+## <a name="getting-all-cultures"></a>すべてのカルチャを取得します。  
+ または、ローカル コンピューターで使用可能なすべてのカルチャのカルチャの配列特定カテゴリを取得するには呼び出すことによって、<xref:System.Globalization.CultureInfo.GetCultures%2A>メソッドです。 たとえば、単独または組み合わせでは、カスタムのカルチャ、特定のカルチャまたはニュートラル カルチャを取得できます。  
+  
+ 次の例では、<xref:System.Globalization.CultureInfo.GetCultures%2A>メソッドを 2 回、最初に、<xref:System.Globalization.CultureTypes?displayProperty=nameWithType>列挙体メンバーをすべてのカスタム カルチャを取得し、使用して、<xref:System.Globalization.CultureTypes?displayProperty=nameWithType>列挙体メンバーを置換するすべてのカルチャを取得します。  
+  
+ [!code-csharp[System.Globalization.CultureInfo#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Globalization.CultureInfo/cs/GetCultures1.cs#5)]
+ [!code-vb[System.Globalization.CultureInfo#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Globalization.CultureInfo/vb/GetCultures1.vb#5)]  
+  
+<a name="Threads"></a>   
+## <a name="culture-and-threads"></a>カルチャとスレッド  
+ 新しいアプリケーションのスレッドが開始されると、その現在のカルチャおよび UI カルチャの現在は定義されて、現在のシステム カルチャによって現在のスレッド カルチャではありません。 この違いを次の例に示します。 フランス語 (フランス) カルチャ (FR-FR)、現在のカルチャと、アプリケーションのスレッドの現在の UI カルチャに設定します。 現在のカルチャが既に FR-FR の場合、英語 (米国) カルチャ (EN-US) を例では、設定します。 通貨値として 3 つの乱数を表示し、さらに、通貨の値として 3 つのよりランダムな数値を表示する新しいスレッドを作成します。 例から出力として、新しいスレッドに表示される通貨の値は反映されておらず、アプリケーションのメイン スレッドからの出力とは異なり、フランス語 (フランス) カルチャの書式指定規則。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.Class.Thread#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.thread/cs/defaultthread1.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.Class.Thread#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.thread/vb/defaultthread1.vb#1)]  
+  
+ 前に .NET Framework のバージョンでは、 [!INCLUDE[net_v45](~/includes/net-v45-md.md)]、最もアプリケーション全体のカルチャの名前を渡すには、メイン アプリケーション スレッドが他のすべてのワーカー スレッドと同じカルチャを共有することを確認する一般的な方法または<xref:System.Globalization.CultureInfo>にアプリケーション全体のカルチャを表すオブジェクト、<xref:System.Threading.ParameterizedThreadStart?displayProperty=nameWithType>を委任します。 次の例では、このアプローチを使用して、2 つのスレッドに表示される通貨の値が同じカルチャの書式指定規則を反映することを確認してください。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.Class.Thread#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.thread/cs/perthread1.cs#2)]
+ [!code-vb[System.Globalization.CultureInfo.Class.Thread#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.thread/vb/perthread1.vb#2)]  
+  
+ 設定できますカルチャおよび UI カルチャのスレッドのプールのスレッドと同様の方法で呼び出すことによって、<xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%2CSystem.Object%29?displayProperty=nameWithType>メソッドです。  
+  
+ 以降で、 [!INCLUDE[net_v45](~/includes/net-v45-md.md)]、設定できますカルチャと UI カルチャのすべてのスレッドのアプリケーション ドメインで割り当てることでより直接的、<xref:System.Globalization.CultureInfo>にカルチャを表すオブジェクト、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>と<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>プロパティです。 次の例では、これらのプロパティを使用して、既定のアプリケーション ドメインのすべてのスレッドが同じカルチャを共有することを確認してください。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.Class.Thread#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.thread/cs/setthreads1.cs#3)]
+ [!code-vb[System.Globalization.CultureInfo.Class.Thread#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.thread/vb/setthreads1.vb#3)]  
+  
+> [!WARNING]
+>  <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>と<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>プロパティは、静的メンバーを既定のカルチャと既定の UI カルチャは、これらのプロパティ値が設定された時刻に最新のアプリケーション ドメインをのみを定義します。 詳細については、次のセクションを参照してください。[カルチャとアプリケーション ドメイン](#AppDomain)です。  
+  
+ 値を割り当てると、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>と<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>プロパティ、カルチャ、およびアプリケーション ドメイン内のスレッドの UI カルチャを変更もそれらが明示的に割り当てられていない場合、カルチャ。 ただし、これらのスレッドは、現在のアプリケーション ドメインで、実行中にのみ、新しいカルチャ設定を反映します。 これらのスレッドは、別のアプリケーション ドメインで実行して、そのカルチャがそのアプリケーション ドメインに対して定義されている既定のカルチャになります。 その結果、ことをお勧め、メイン アプリケーション スレッドのカルチャは常に設定し、依存しないこと、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>と<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>プロパティを変更します。  
+  
+<a name="AppDomain"></a>   
+## <a name="culture-and-application-domains"></a>カルチャとアプリケーション ドメイン  
+ <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A><xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>のみが、プロパティ値を設定または取得時に現在のアプリケーション ドメインの既定のカルチャを明示的に定義する静的プロパティです。 次の例は、既定のアプリケーション ドメインで、既定のカルチャと既定の UI カルチャをフランス語 (フランス) に設定しを使用して、<xref:System.AppDomainSetup>クラスおよび<xref:System.AppDomainInitializer>ロシア語 (ロシア) に、新しいアプリケーション ドメインで、既定のカルチャおよび UI カルチャを設定するデリゲート。 1 つのスレッドは、アプリケーション ドメインごとに、2 つのメソッドを実行します。 スレッドのカルチャおよび UI カルチャが明示的に設定されていないことです。 注意してください。既定のカルチャと UI カルチャのスレッドを実行しているアプリケーション ドメインから派生しています。 なお、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>と<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>プロパティが既定値を返す<xref:System.Globalization.CultureInfo>がメソッドの呼び出しが行われたときに現在のアプリケーション ドメインの値。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.Class.AppDomain#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.appdomain/cs/appdomainex1.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.Class.AppDomain#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.appdomain/vb/appdomainex1.vb#1)]  
+  
+ カルチャおよびアプリケーションの詳細については、トピックの「アプリケーション ドメインとスレッド」セクションを参照してください。  
+  
+<a name="Async"></a>   
+## <a name="culture-and-task-based-asynchronous-operations"></a>カルチャとタスク ベースの非同期操作  
+ [タスク ベースの非同期プログラミング パターン](~/docs/standard/parallel-programming/task-based-asynchronous-programming.md)使用<xref:System.Threading.Tasks.Task>と<xref:System.Threading.Tasks.Task%601>プールのスレッドのスレッドでデリゲートを非同期的に実行するオブジェクト。 特定のタスクが実行されている特定のスレッドは、事前にわからないが、実行時にのみ決定されます。  
+  
+ 対象とするアプリに対して、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]またはそれ以降のバージョン、カルチャ、非同期操作のコンテキストの一部であります。 つまり、以降でアプリをターゲットとする、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、既定で非同期操作の値を継承する、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>と<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>起動元のスレッドのプロパティです。 現在のカルチャまたは現在の UI カルチャと異なる場合、システムのカルチャ、現在のカルチャがスレッドの境界を越えるし、非同期操作を実行しているスレッド プールのスレッドの現在のカルチャになります。  
+  
+ 簡単な例を次に示します。 使用して、<xref:System.Runtime.Versioning.TargetFrameworkAttribute>属性ターゲットを[!INCLUDE[net_v46](~/includes/net-v46-md.md)]です。 定義されています、<xref:System.Func%601>デリゲート`formatDelegate`通貨値として書式設定されたいくつかの数値を返します。 例では、フランス語 (フランス) に、現在のシステムのカルチャを変更する場合、または、フランス語 (フランス) が既に現在のカルチャでは、英語 (米国) です。 その後:  
+  
+-   メイン アプリケーション スレッドで同期的に実行されるようにデリゲートを直接呼び出します。  
+  
+-   スレッド プールのスレッドでデリゲートを非同期的に実行するタスクを作成します。  
+  
+-   呼び出して、メイン アプリケーション スレッドでデリゲートを同期的に実行されるタスクを作成、<xref:System.Threading.Tasks.Task.RunSynchronously%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 例からの出力では、現在のカルチャをフランス語 (フランス) に変更されたときの元のタスクは非同期で呼び出されるスレッドの現在のカルチャは非同期操作の現在のカルチャになります。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.Class.Async#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/cs/asyncculture1.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.Class.Async#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/vb/asyncculture1.vb#1)]  
+  
+ 前のバージョンの .NET Framework のバージョンを対象とするアプリに対して、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、または特定のバージョン、.NET Framework の対象としないアプリの場合は、呼び出し元のスレッドのカルチャは、タスクのコンテキストの一部です。 代わりに、明示的に定義されている場合を除き、既定では新しいスレッドのカルチャには、システムのカルチャです。 次の例では、前の例に点がない、<xref:System.Runtime.Versioning.TargetFrameworkAttribute>属性、これを示します。 例が実行されるシステムのシステムのカルチャが英語 (米国) であるため、スレッド プールのスレッドで非同期的に実行されるタスクのカルチャは EN-US fr-fr などです。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.Class.Async#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/cs/asyncculture2.cs#2)]
+ [!code-vb[System.Globalization.CultureInfo.Class.Async#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/vb/asyncculture2.vb#2)]  
+  
+ .NET Framework のバージョンを対象とするアプリの[!INCLUDE[net_v45](~/includes/net-v45-md.md)]後で、前に、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、使用することができます、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>と<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>プール スレッドのスレッドで実行される非同期タスクの呼び出し元のスレッドのカルチャが使用されるようにするプロパティです。 使用する点を除いて、次の例は、前の例と同じ、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>があるメイン アプリケーションのスレッドと同じカルチャのプロパティをそのスレッド プールのスレッドをことを確認します。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.Class.Async#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/cs/asyncculture3.cs#3)]
+ [!code-vb[System.Globalization.CultureInfo.Class.Async#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/vb/asyncculture3.vb#3)]  
+  
+ <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>および<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>アプリごとのドメインのプロパティは、既定のカルチャを確立するは、すべてのスレッドに明示的に特定のアプリケーション ドメイン内のカルチャが割り当てられているためです。 ただし、対象とするアプリの場合は、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]後で、呼び出し元のスレッドのカルチャもそのまま残ります非同期タスクのコンテキストの一部のタスクは、アプリ ドメインの境界を越えるか。  
+  
+ 次の例では、タスクを実行しているメソッドは、アプリケーション ドメインの境界を越える場合でもすること、呼び出し元スレッドのカルチャは、タスク ベースの非同期操作の現在のカルチャを引き続きを示します。 クラスを定義`DataRetriever`、単一のメソッドと`GetFormattedNumber`1 ~ 1,000 通貨値として書式設定でランダムな倍精度浮動小数点数を返します。 最初のタスクが実行されるだけでインスタンス化、`DataRetriever`インスタンスとの呼び出し、`GetFormattedNumber`メソッドです。 2 番目のタスクの現在のアプリケーション ドメインを報告、新しいアプリケーション ドメインを作成、インスタンス化、`DataRetriever`新しいアプリケーション ドメインと呼び出しのインスタンス、`GetFormattedNumber`メソッドです。 出力の例では、現在のカルチャが同じまま呼び出し元のスレッド、最初のタスクと 2 番目のタスクでメイン アプリケーションと 2 つ目のアプリケーション ドメインでこれを実行したときにします。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.Class.Async#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/cs/asyncculture4.cs#4)]
+ [!code-vb[System.Globalization.CultureInfo.Class.Async#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/vb/asyncculture4.vb#4)]  
+  
+<a name="Serialization"></a>   
+## <a name="cultureinfo-object-serialization"></a>CultureInfo オブジェクトのシリアル化  
+ ときに、<xref:System.Globalization.CultureInfo>オブジェクトをシリアル化、実際に格納されているは<xref:System.Globalization.CultureInfo.Name%2A>と<xref:System.Globalization.CultureInfo.UseUserOverride%2A>です。 環境でのみ正常にシリアル化解除は場所を<xref:System.Globalization.CultureInfo.Name%2A>同じ意味を持ちます。 次の 3 つの例は、これがない理由を表示する場合。  
+  
+-   場合、<xref:System.Globalization.CultureInfo.CultureTypes%2A>プロパティの値が<xref:System.Globalization.CultureTypes?displayProperty=nameWithType>、し、そのカルチャは、Windows Vista または Windows オペレーティング システムの以降のバージョンで初めて導入された場合、は、Windows XP で逆シリアル化することはできません。 同様に、カルチャは、Windows XP Service Pack 2 で初めて導入された場合、カルチャがインストールされていない Windows XP システムをシリアル化を解除することはできません。  
+  
+-   場合、<xref:System.Globalization.CultureInfo.CultureTypes%2A>値は<xref:System.Globalization.CultureTypes?displayProperty=nameWithType>とは逆シリアル化されたコンピューターにインストールされているこのユーザーのカスタム カルチャいない、逆シリアル化することはできません。  
+  
+-   場合、<xref:System.Globalization.CultureInfo.CultureTypes%2A>値は<xref:System.Globalization.CultureTypes?displayProperty=nameWithType>が逆シリアル化されたコンピューターがこの置換カルチャと、同じ特性を持つ全体ではなく、同じ名前をシリアル化解除します。 たとえば、EN-US がコンピューター B ではなくが、コンピューター A では、置換カルチャである場合や、<xref:System.Globalization.CultureInfo>転送のカルチャのカスタムの特性のいずれもコンピューター A でシリアル化され、コンピューター B で逆シリアル化がこのカルチャを参照するオブジェクトします。 カルチャには、異なる意味を持つが、正常に逆シリアル化されます。  
+  
+<a name="CPanel"></a>   
+## <a name="control-panel-overrides"></a>コントロール パネルのオーバーライド  
+ ユーザーは、Windows のコントロール パネルの地域と言語のオプション部分での現在のカルチャに関連付けられている値の一部をオーバーライドすることもできます。 たとえば、ユーザーは、別の形式で日付を表示するか、カルチャの既定値とは異なる通貨を使用することもできます。 一般に、アプリケーションでは、ユーザーによるオーバーライドを受け入れる必要があります。  
+  
+ 場合<xref:System.Globalization.CultureInfo.UseUserOverride%2A>は`true`と指定したカルチャには、Windows の現在のカルチャが一致する、<xref:System.Globalization.CultureInfo>プロパティのユーザー設定を含む、それらの上書きを使用して、<xref:System.Globalization.DateTimeFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティ、およびプロパティの<xref:System.Globalization.NumberFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>など、選択したカレンダーは、のいずれかでがない場合、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>メソッドの結果と、プロパティの値が定義されていません。  
+  
+<a name="AlternateSort"></a>   
+## <a name="alternate-sort-orders"></a>代替の並べ替え順序  
+ 一部のカルチャでは、複数の並べ替え順序がサポートされています。 例:  
+  
+-   スペイン語 (スペイン) のカルチャが 2 つの並べ替え順序: 既定の国際対応の並べ替え順序、および従来の並べ替え順序。 インスタンス化するときに、 <xref:System.Globalization.CultureInfo> ES-ES カルチャの名前を持つオブジェクトの国際対応の並べ替え順序を使用します。 インスタンス化するときに、 <xref:System.Globalization.CultureInfo> es ES-tradnl カルチャ名でオブジェクトです。 従来の並べ替え順序を使用します。  
+  
+-   ZH-CN (中国語 (簡体字、中国)) のカルチャには、2 つの並べ替え順序がサポートされています: 画数とによって発音 (既定)。 インスタンス化するときに、 <xref:System.Globalization.CultureInfo> ZH-CN カルチャの名前を持つオブジェクトの既定の並べ替え順序を使用します。 インスタンス化するときに、 <xref:System.Globalization.CultureInfo> 0x00020804 のローカル識別子を持つオブジェクトの文字列は画数によって並べ替えられます。  
+  
+ 代替の並べ替え順序をサポートするカルチャと、各カルチャの既定の並べ替え順序および代替の並べ替え順序の識別子を次の表に示します。  
+  
+|カルチャ名|カルチャ|既定の並べ替え名と識別子|代替の並べ替え名と識別子|  
+|------------------|-------------|--------------------------------------|----------------------------------------|  
+|es-ES|スペイン語 (スペイン)|International: 0x00000C0A|Traditional: 0x0000040A|  
+|zh-TW|中国語 (台湾)|Stroke Count: 0x00000404|Bopomofo: 0x00030404|  
+|zh-CN|中国語 (中国)|Pronunciation: 0x00000804|Stroke Count: 0x00020804|  
+|zh-HK|中国語 (香港特別行政区)|Stroke Count: 0x00000c04|Stroke Count: 0x00020c04|  
+|zh-SG|中国語 (シンガポール)|Pronunciation: 0x00001004|Stroke Count: 0x00021004|  
+|zh-MO|中国語 (マカオ)|Pronunciation: 0x00001404|Stroke Count: 0x00021404|  
+|ja-JP|日本語 (日本)|Default: 0x00000411|Unicode: 0x00010411|  
+|ko-KR|韓国語 (韓国)|Default: 0x00000412|Korean Xwansung - Unicode: 0x00010412|  
+|de-DE|ドイツ語 (ドイツ)|Dictionary: 0x00000407|Phone Book Sort DIN: 0x00010407|  
+|hu-HU|ハンガリー語 (ハンガリー)|Default: 0x0000040e|Technical Sort: 0x0001040e|  
+|ka-GE|グルジア語 (グルジア共和国)|Traditional: 0x00000437|Modern Sort: 0x00010437|  
+  
+<a name="Windows"></a>   
+## <a name="the-current-culture-and-uwp-apps"></a>現在のカルチャおよび UWP アプリ  
+ ユニバーサル Windows プラットフォーム (UWP) アプリで、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>と<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>プロパティでは読み取り/書き込み、.NET Framework と .NET Core のアプリに属しています。 ただし、UWP アプリは、1 つのカルチャを認識します。 <xref:System.Globalization.CultureInfo.CurrentCulture%2A>と<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>プロパティ マップの最初の値を[Windows.ApplicationModel.Resources.Core.ResourceManager.DefaultContext.Languages](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcecontext#properties_)コレクション。  
+
+アプリでは .NET Framework と .NET Core、現在のカルチャがスレッドごとの設定、および<xref:System.Globalization.CultureInfo.CurrentCulture%2A>と<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>カルチャと UI カルチャの現在のスレッドのみのプロパティに反映します。 UWP アプリでは、現在のカルチャをマップ、 [Windows.ApplicationModel.Resources.Core.ResourceManager.DefaultContext.Languages](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcecontext#properties_) 、グローバル設定であるコレクション。 設定、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>または<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>プロパティ変更は、アプリ全体のカルチャ以外のスレッド単位でカルチャを設定することはできません。
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Globalization.CultureInfo>別の国際対応の並べ替えとスペイン語 (スペイン) のオブジェクト<xref:System.Globalization.CultureInfo>トラディショナル ソートを持つオブジェクト。  
+  
+ [!code-cpp[System.Globalization.CultureInfo_esES#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/CPP/spanishspain.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo_esES#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/CS/spanishspain.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo_esES#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/VB/spanishspain.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CultureInfo (int culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="culture">定義済みの <see cref="T:System.Globalization.CultureInfo" /> 識別子、既存の <see cref="T:System.Globalization.CultureInfo" /> オブジェクトの <see cref="P:System.Globalization.CultureInfo.LCID" /> プロパティ、または Windows 専用カルチャ識別子。</param>
+        <summary>カルチャ識別子によって指定するカルチャに基づいて、<see cref="T:System.Globalization.CultureInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みのカルチャ識別子は、「、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。  
+  
+ ほとんどの場合、`culture`パラメーターは、対応するサポート NLS (National Language) ロケール識別子にマップされます。 値、`culture`パラメーターの値になります、<xref:System.Globalization.CultureInfo.LCID%2A>新しいプロパティ<xref:System.Globalization.CultureInfo>です。  
+  
+ ロケール名コンス トラクターを呼び出すことをお勧め<xref:System.Globalization.CultureInfo.%23ctor%2A?displayProperty=nameWithType>ロケール名は Lcid を置き換えるため、します。 カスタム ロケール、ロケール名が必要です。  
+  
+ ユーザーは、Windows のコントロール パネルの地域と言語のオプション部分での現在のカルチャに関連付けられている値の一部をオーバーライドすることもできます。 たとえば、ユーザーは、別の形式で日付を表示するか、カルチャの既定値とは異なる通貨を使用することもできます。 指定されたカルチャ識別子には、Windows の現在のカルチャのカルチャ識別子が一致すると、このコンス トラクターを作成、<xref:System.Globalization.CultureInfo>プロパティのユーザー設定を含む、それらの上書きを使用して、<xref:System.Globalization.DateTimeFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティ、およびプロパティの<xref:System.Globalization.NumberFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、 <xref:System.Globalization.CultureInfo> (選択したカレンダーは、のいずれかでがない場合など、 <xref:System.Globalization.CultureInfo.OptionalCalendars%2A>) メソッドの結果と、プロパティの値が定義されていません。  
+  
+ このコンス トラクターを作成している指定されたカルチャ識別子に Windows の現在のカルチャの識別子が一致しない場合、<xref:System.Globalization.CultureInfo>指定されたカルチャの既定値を使用します。  
+  
+ <xref:System.Globalization.CultureInfo.UseUserOverride%2A>プロパティは常に設定`true`です。  
+  
+ たとえば、アラビア語 (サウジアラビア) は、Windows の現在のカルチャをユーザーが、予定表の Hijri からグレゴリオ暦に変更したとします。  
+  
+-   `CultureInfo("0x0401")` (カルチャ名 AR-SA)、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.GregorianCalendar>(これはユーザーの設定です) と<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`true`です。  
+  
+-   `CultureInfo("0x041E")` (カルチャ名 th 番目)、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.ThaiBuddhistCalendar>(th 番目の既定の暦は) および<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`true`です。  
+  
+ ユーロを使用するカルチャでは、.NET Framework および Windows XP はユーロの通貨として既定の通貨を設定します。 ただし、古いバージョンの Windows がありません。 したがって、古いバージョンの Windows のユーザーがコントロール パネルの地域と言語に関するオプションを使用して通貨の設定を変更しない場合、通貨できない可能性があります正しかった。 通貨の .NET Framework の既定の設定を使用するアプリケーションを使用する必要があります、<xref:System.Globalization.CultureInfo>を受け入れるコンス トラクター オーバー ロード、`useUserOverride`パラメーターには、設定と`false`です。  
+  
+> [!NOTE]
+>  旧バージョンと互換性、カルチャを使用して構築、`culture`パラメーターとしてそれぞれ 0x0004 または 0x7c04 を使用して、 <xref:System.Globalization.CultureInfo.Name%2A> ZH-CHS、ZH-CHT のプロパティそれぞれします。 代わりに、古い名前を使用する理由がない限り、現在の標準カルチャの名前または、それを使用してカルチャを構築するために優先する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="culture" /> が 0 未満です。</exception>
+        <exception cref="T:System.Globalization.CultureNotFoundException">
+          <paramref name="culture" />有効なカルチャ識別子ではありません。 詳細については、「呼び出し時の注意」をご覧ください。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]以前のバージョンをスローし、<see cref="T:System.ArgumentException" />場合<paramref name="culture" />有効なカルチャ識別子ではありません。 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、このコンス トラクターをスロー、<see cref="T:System.Globalization.CultureNotFoundException" />です。 以降で動作するアプリケーションで、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]後で Windows 7 以降で、メソッドの取得を試みますか、<see cref="T:System.Globalization.CultureInfo" />オブジェクト識別子を持つ<paramref name="culture" />オペレーティング システムはそのカルチャをサポートしていない場合、オペレーティング システムから、メソッドがスローされます、<see cref="T:System.Globalization.CultureNotFoundException" />例外。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CultureInfo (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">定義済みの <see cref="T:System.Globalization.CultureInfo" /> 名、既存の <see cref="T:System.Globalization.CultureInfo" /> の <see cref="P:System.Globalization.CultureInfo.Name" />、または Windows 専用カルチャ名。 <c>名前</c>小文字は区別されません。</param>
+        <summary>名前で指定するカルチャに基づいて、<see cref="T:System.Globalization.CultureInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みカルチャ名の一覧は、次を参照してください。、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。 さらに、Windows 10 で始まる`name`任意の有効な bcp-47 の言語タグを指定できます。  
+  
+ 場合`name`は<xref:System.String?displayProperty=nameWithType>、コンス トラクターは、インバリアント カルチャのインスタンスを作成する以外の値を取得するのと同じ、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>プロパティです。  
+  
+ ユーザーは、Windows のコントロール パネルの地域と言語のオプション部分での現在のカルチャに関連付けられている値の一部をオーバーライドすることもできます。 たとえば、ユーザーは、別の形式で日付を表示するか、カルチャの既定値とは異なる通貨を使用することもできます。 カルチャ識別子に関連付けられている場合`name`と一致する現在の Windows カルチャ、このコンス トラクターのカルチャ識別子を作成、<xref:System.Globalization.CultureInfo>プロパティのユーザー設定を含む、それらの上書きを使用するオブジェクト、<xref:System.Globalization.DateTimeFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティ、およびプロパティの<xref:System.Globalization.NumberFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>など、選択したカレンダーは、のいずれかでがない場合、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>メソッドの結果と、プロパティの値が定義されていません。  
+  
+ カルチャ識別子に関連付けられている場合`name`Windows の現在のカルチャこのコンス トラクターのカルチャ識別子の作成と一致しないのは、<xref:System.Globalization.CultureInfo>オブジェクトを指定されたカルチャの既定値を使用します。  
+  
+ <xref:System.Globalization.CultureInfo.UseUserOverride%2A>プロパティは常に設定`true`です。  
+  
+ たとえば、アラビア語 (サウジアラビア) は、Windows の現在のカルチャをユーザーは、グレゴリオ暦にイスラム暦のカレンダーを変更します。  
+  
+-   `CultureInfo("ar-SA")`、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.GregorianCalendar>(これはユーザーの設定です) と<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`true`です。  
+  
+-   `CultureInfo("th-TH")`、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.ThaiBuddhistCalendar>(th 番目の既定の暦は) および<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`true`です。  
+  
+ <xref:System.Globalization.CultureInfo.LCID%2A>新しいプロパティ<xref:System.Globalization.CultureInfo>が指定した名前に関連付けられているカルチャ識別子に設定します。  
+  
+ ユーロを使用するカルチャでは、.NET Framework および Windows XP はユーロの通貨として既定の通貨を設定します。 ただし、古いバージョンの Windows はこのしないでください。 したがって、古いバージョンの Windows のユーザーがコントロール パネルの地域と言語に関するオプションを使用して通貨の設定を変更しない場合、通貨できない可能性があります正しかった。 通貨の .NET Framework の既定の設定を使用するアプリケーションを使用する必要があります、<xref:System.Globalization.CultureInfo>を受け入れるコンス トラクター オーバー ロード、`useUserOverride`パラメーターには、設定と`false`です。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のカルチャを取得します。 呼び出し、フランス語 (フランス) カルチャ以外のものである場合、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29>をインスタンス化するコンス トラクター、<xref:System.Globalization.CultureInfo>フランス語 (フランス) カルチャを表すし、現在のスレッド カルチャを使用するオブジェクト。 それ以外の場合をインスタンス化、<xref:System.Globalization.CultureInfo>フランス語 (ルクセンブルク) のカルチャを表すし、現在のカルチャを使用するオブジェクト。  
+  
+ [!code-csharp[System.Globalization.CultureInfo#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Globalization.CultureInfo/cs/Change1.cs#3)]
+ [!code-vb[System.Globalization.CultureInfo#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Globalization.CultureInfo/vb/Change1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が null です。</exception>
+        <exception cref="T:System.Globalization.CultureNotFoundException">
+          <paramref name="name" />有効なカルチャ名ではありません。 詳細については、「呼び出し時の注意」をご覧ください。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]以前のバージョンをスローし、<see cref="T:System.ArgumentException" />場合<paramref name="name" />有効なカルチャ名ではありません。 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、このコンス トラクターをスロー、<see cref="T:System.Globalization.CultureNotFoundException" />です。 以降で動作するアプリケーションで、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]後で Windows 7 以降で、メソッドの取得を試みますか、<see cref="T:System.Globalization.CultureInfo" />オブジェクト識別子を持つ<paramref name="name" />オペレーティング システムから、オペレーティング システムはそのカルチャをサポートしていない場合、<paramref name="name" />補助または置換カルチャで、メソッドでのスローの名ではなく、<see cref="T:System.Globalization.CultureNotFoundException" />例外。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CultureInfo (int culture, bool useUserOverride);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 culture, bool useUserOverride) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.#ctor(System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Int32" />
+        <Parameter Name="useUserOverride" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="culture">定義済みの <see cref="T:System.Globalization.CultureInfo" /> 識別子、既存の <see cref="T:System.Globalization.CultureInfo" /> オブジェクトの <see cref="P:System.Globalization.CultureInfo.LCID" /> プロパティ、または Windows 専用カルチャ識別子。</param>
+        <param name="useUserOverride">ユーザーが選択したカルチャ設定 (<see langword="true" />) または既定のカルチャ設定 (<see langword="false" />) のいずれを使用するかを示すブール値。</param>
+        <summary>カルチャ識別子で指定したカルチャと、システムからユーザーが選択したカルチャを使用するかどうかを指定するブール値に基づいて、<see cref="T:System.Globalization.CultureInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みのカルチャ識別子は、「、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。  
+  
+ ほとんどの場合、`culture`パラメーターは、対応するサポート NLS (National Language) ロケール識別子にマップされます。 値、`culture`パラメーターの値になります、<xref:System.Globalization.CultureInfo.LCID%2A>新しいプロパティ<xref:System.Globalization.CultureInfo>です。  
+  
+ ロケール名コンス トラクターを呼び出すことをお勧め<xref:System.Globalization.CultureInfo.%23ctor%2A?displayProperty=nameWithType>ロケール名は Lcid を置き換えるため、します。 カスタム ロケール、ロケール名が必要です。  
+  
+ ユーザーは、Windows のコントロール パネルの地域と言語のオプション部分での現在のカルチャに関連付けられている値の一部をオーバーライドすることもできます。 たとえば、ユーザーは、別の形式で日付を表示するか、カルチャの既定値とは異なる通貨を使用することもできます。  
+  
+ アプリケーションは通常は許可ユーザー オーバーライド。 オーバーライドを禁止自体が保証されません。 データの安定性に注意してください。ブログ記事を参照してください[カルチャ データを (インバリアントな) を除く安定して考慮するべきではありません](http://go.microsoft.com/fwlink/?LinkId=156850)です。  
+  
+ 場合、<xref:System.Globalization.CultureInfo.UseUserOverride%2A>プロパティに設定されている`true`指定されたカルチャ識別子には、Windows の現在のカルチャの識別子が一致して、このコンス トラクターを作成、<xref:System.Globalization.CultureInfo>プロパティのユーザー設定を含む、それらの上書きを使用して、<xref:System.Globalization.DateTimeFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティ、およびプロパティの<xref:System.Globalization.NumberFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>など、選択したカレンダーは、のいずれかでがない場合、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>メソッドの結果と、プロパティの値が定義されていません。  
+  
+ それ以外の場合、このコンス トラクターを作成、<xref:System.Globalization.CultureInfo>指定されたカルチャの既定値を使用します。  
+  
+ 値、`useUserOverride`パラメーターの値になります、<xref:System.Globalization.CultureInfo.UseUserOverride%2A>プロパティです。  
+  
+ たとえば、アラビア語 (サウジアラビア) は、Windows の現在のカルチャをユーザーが、予定表の Hijri からグレゴリオ暦に変更したとします。  
+  
+-   `CultureInfo("0x0401", true)` (カルチャ名 AR-SA)、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.GregorianCalendar>(これはユーザーの設定です) と<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`true`です。  
+  
+-   `CultureInfo("0x0401", false)` (カルチャ名 AR-SA)、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.HijriCalendar>(AR-SA の既定の暦は) および<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`false`です。  
+  
+-   `CultureInfo("0x041E", true)` (カルチャ名 th 番目)、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.ThaiBuddhistCalendar>(th 番目の既定の暦は) および<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`true`です。  
+  
+-   `CultureInfo("0x041E", false)` (カルチャ名 th 番目)、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.ThaiBuddhistCalendar>(th 番目の既定の暦は) および<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`false`です。  
+  
+ ユーロを使用するカルチャでは、.NET Framework および Windows XP はユーロの通貨として既定の通貨を設定します。 ただし、古いバージョンの Windows がありません。 したがって、古いバージョンの Windows のユーザーがコントロール パネルの地域と言語に関するオプションを使用して通貨の設定を変更しない場合、通貨できない可能性があります正しかった。 通貨の .NET Framework の既定の設定を使用するアプリケーションに設定する必要があります、`useUserOverride`パラメーターを`false`です。  
+  
+> [!NOTE]
+>  旧バージョンと互換性、カルチャを使用して構築、`culture`パラメーターとしてそれぞれ 0x0004 または 0x7c04 を使用して、 <xref:System.Globalization.CultureInfo.Name%2A> ZH-CHS、ZH-CHT のプロパティそれぞれします。 代わりに、古い名前を使用する理由がない限り、現在の標準カルチャの名前または、それを使用してカルチャを構築するために優先する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="culture" /> が 0 未満です。</exception>
+        <exception cref="T:System.Globalization.CultureNotFoundException">
+          <paramref name="culture" />有効なカルチャ識別子ではありません。 詳細については、「呼び出し時の注意」をご覧ください。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]以前のバージョンをスローし、<see cref="T:System.ArgumentException" />場合<paramref name="culture" />有効なカルチャ識別子ではありません。 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、このコンス トラクターをスロー、<see cref="T:System.Globalization.CultureNotFoundException" />です。 以降で動作するアプリケーションで、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]後で Windows 7 以降で、メソッドの取得を試みますか、<see cref="T:System.Globalization.CultureInfo" />オブジェクト識別子を持つ<paramref name="culture" />オペレーティング システムはそのカルチャをサポートしていない場合、オペレーティング システムから、メソッドがスローされます、<see cref="T:System.Globalization.CultureNotFoundException" />例外。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CultureInfo (string name, bool useUserOverride);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, bool useUserOverride) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="useUserOverride" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">定義済みの <see cref="T:System.Globalization.CultureInfo" /> 名、既存の <see cref="T:System.Globalization.CultureInfo" /> の <see cref="P:System.Globalization.CultureInfo.Name" />、または Windows 専用カルチャ名。 <c>名前</c>小文字は区別されません。</param>
+        <param name="useUserOverride">ユーザーが選択したカルチャ設定 (<see langword="true" />) または既定のカルチャ設定 (<see langword="false" />) のいずれを使用するかを示すブール値。</param>
+        <summary>名前で指定したカルチャと、システムからユーザーが選択したカルチャ設定を使用するかどうかを指定するブール値に基づいて、<see cref="T:System.Globalization.CultureInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みカルチャ名の一覧は、次を参照してください。、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。 さらに、Windows 10 で始まる`name`任意の有効な bcp-47 の言語タグを指定できます。  
+  
+ 場合`name`は<xref:System.String?displayProperty=nameWithType>、コンス トラクターは、インバリアント カルチャのインスタンスを作成する以外の値を取得するのと同じ、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>プロパティです。  
+  
+ ユーザーは、一部のコントロール パネルの地域と言語のオプション部分では、現在の Windows カルチャに関連付けられている値をオーバーライドすることもできます。 たとえば、ユーザーは、別の形式で日付を表示するか、カルチャの既定値とは異なる通貨を使用することもできます。  
+  
+ アプリケーションは通常は許可ユーザー オーバーライド。 オーバーライドを禁止自体が保証されません。 データの安定性に注意してください。ブログ記事を参照してください[カルチャ データを (インバリアントな) を除く安定して考慮するべきではありません](http://go.microsoft.com/fwlink/?LinkId=156850)です。  
+  
+ 場合、<xref:System.Globalization.CultureInfo.UseUserOverride%2A>プロパティに設定されている`true`指定されたカルチャ名に関連付けられているカルチャ識別子には、Windows の現在のカルチャのカルチャ識別子が一致して、このコンス トラクターを作成、<xref:System.Globalization.CultureInfo>プロパティのユーザー設定を含む、それらの上書きを使用して、<xref:System.Globalization.DateTimeFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティ、およびプロパティの<xref:System.Globalization.NumberFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>など、選択したカレンダーは、のいずれかでがない場合、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>メソッドの結果と、プロパティの値が定義されていません。  
+  
+ それ以外の場合、このコンス トラクターを作成、<xref:System.Globalization.CultureInfo>指定されたカルチャの既定値を使用します。  
+  
+ 値、`useUserOverride`パラメーターの値になります、<xref:System.Globalization.CultureInfo.UseUserOverride%2A>プロパティです。  
+  
+ たとえば、アラビア語 (サウジアラビア) は、Windows の現在のカルチャをユーザーは、グレゴリオ暦にイスラム暦のカレンダーを変更します。  
+  
+-   `CultureInfo("ar-SA", true)`、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.GregorianCalendar>(これはユーザーの設定です) と<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`true`です。  
+  
+-   `CultureInfo("ar-SA", false)`、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.HijriCalendar>(AR-SA の既定の暦は) および<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`false`です。  
+  
+-   `CultureInfo("th-TH", true)`、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.ThaiBuddhistCalendar>(th 番目の既定の暦は) および<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`true`です。  
+  
+-   `CultureInfo("th-TH", false)`、<xref:System.Globalization.CultureInfo.Calendar%2A>に設定されている<xref:System.Globalization.ThaiBuddhistCalendar>(th 番目の既定の暦は) および<xref:System.Globalization.CultureInfo.UseUserOverride%2A>に設定されている`false`です。  
+  
+ <xref:System.Globalization.CultureInfo.LCID%2A>新しいプロパティ<xref:System.Globalization.CultureInfo>が指定した名前に関連付けられているカルチャ識別子に設定します。  
+  
+ ユーロを使用するカルチャでは、.NET Framework および Windows XP はユーロの通貨として既定の通貨を設定します。 ただし、古いバージョンの Windows はこのしないでください。 したがって、古いバージョンの Windows のユーザーがコントロール パネルの地域と言語に関するオプションを使用して通貨の設定を変更しない場合、通貨できない可能性があります正しかった。 通貨の .NET Framework の既定の設定を使用するアプリケーションに設定する必要があります、`useUserOverride`パラメーターを`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が null です。</exception>
+        <exception cref="T:System.Globalization.CultureNotFoundException">
+          <paramref name="name" />有効なカルチャ名ではありません。 詳細については、「呼び出し時の注意」をご覧ください。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]以前のバージョンをスローし、<see cref="T:System.ArgumentException" />場合<paramref name="name" />有効なカルチャ名ではありません。 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、このコンス トラクターをスロー、<see cref="T:System.Globalization.CultureNotFoundException" />です。 以降で動作するアプリケーションで、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]後で Windows 7 以降で、メソッドの取得を試みますか、<see cref="T:System.Globalization.CultureInfo" />オブジェクト識別子を持つ<paramref name="name" />オペレーティング システムから、オペレーティング システムはそのカルチャをサポートしていない場合、<paramref name="name" />補助または置換カルチャで、メソッドでのスローの名ではなく、<see cref="T:System.Globalization.CultureNotFoundException" />例外。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Calendar">
+      <MemberSignature Language="C#" Value="public virtual System.Globalization.Calendar Calendar { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.Calendar Calendar" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.Calendar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.Calendar</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャで使用する既定の暦を取得します。</summary>
+        <value>カルチャで使用する既定の暦を表す <see cref="T:System.Globalization.Calendar" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、Windows のコントロール パネルの地域と言語のオプション部分での現在のカルチャに関連付けられている値の一部をオーバーライドすることもできます。 たとえば、ユーザーは、別の形式で日付を表示するか、カルチャの既定値とは異なる通貨を使用することもできます。  
+  
+ 場合<xref:System.Globalization.CultureInfo.UseUserOverride%2A>は`true`と指定したカルチャには、Windows の現在のカルチャが一致する、<xref:System.Globalization.CultureInfo>プロパティのユーザー設定を含む、それらの上書きを使用して、<xref:System.Globalization.DateTimeFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティ、およびプロパティの<xref:System.Globalization.NumberFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>など、選択したカレンダーは、のいずれかでがない場合、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>メソッドの結果と、プロパティの値が定義されていません。  
+  
+ したがって場合、<xref:System.Globalization.CultureInfo.UseUserOverride%2A>は`true`、このプロパティの値は、カルチャで使用される既定の暦と異なる場合があります。  
+  
+ アプリケーションを変更し、現在使用する暦<xref:System.Globalization.CultureInfo>を設定して、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティ<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>のインスタンスは、<xref:System.Globalization.DateTimeFormatInfo>クラス。 新しい予定表は、予定表に一覧表示のいずれかを指定する必要があります<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>です。 <xref:System.Globalization.CultureInfo.DateTimeFormat%2A>日付と時刻の書式設定に関連付けられているをカスタマイズするその他のプロパティがあります<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearCachedData">
+      <MemberSignature Language="C#" Value="public void ClearCachedData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearCachedData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.ClearCachedData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キャッシュされたカルチャ関連情報を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のカルチャおよび書式パターンなどの情報には、初めて要求がキャッシュされます。 有効期間中に情報を変更できること、 <xref:System.AppDomain>、たとえば、ユーザーがコントロール パネルの地域と言語のオプション部分を変更とします。 ただし、<xref:System.Globalization.CultureInfo>システム設定 で変更がクラスに自動的に検出されることはできません。  
+  
+ <xref:System.Globalization.CultureInfo.ClearCachedData%2A>メソッドのキャッシュをクリアする<xref:System.Globalization.CultureInfo>によって作成されたオブジェクト<xref:System.Globalization.CultureInfo.GetCultureInfo%2A>で情報を更新し、 <xref:System.Globalization.CultureInfo.CurrentCulture%2A>、 <xref:System.Globalization.CultureInfo.CurrentUICulture%2A>、および<xref:System.Globalization.RegionInfo.CurrentRegion%2A>プロパティ、現在のシステム設定に基づきます。  
+  
+ <xref:System.Globalization.CultureInfo.ClearCachedData%2A>メソッドでの情報が更新されない、<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>既存のスレッドのプロパティです。 ただし、将来のスレッドがいずれかの新しい<xref:System.Globalization.CultureInfo>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureInfo" /> のコピーを作成します。</summary>
+        <returns>現在の <see cref="T:System.Globalization.CultureInfo" /> のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クローンが書き込み可能な場合でも、元の<xref:System.Globalization.CultureInfo>は読み取り専用です。 そのため、複製のプロパティを変更できます。  
+  
+ オブジェクトのシャロー コピーのみのオブジェクトのコピーであります。 オブジェクトに他のオブジェクトへの参照が含まれている場合でも、シャロー コピーでは、参照されるオブジェクトのコピーは作成されません。 元のオブジェクトを代わりに参照します。 これに対し、オブジェクトのディープ コピーは、オブジェクトのコピーとそのオブジェクトが直接または間接的に参照するすべてのコピーを作成します。  
+  
+ <xref:System.Globalization.CultureInfo.Clone%2A>メソッドは拡張簡易コピーを作成します。 によって返されるオブジェクト、 <xref:System.Globalization.CultureInfo.NumberFormat%2A>、 <xref:System.Globalization.CultureInfo.DateTimeFormat%2A>、 <xref:System.Globalization.CultureInfo.TextInfo%2A>、および<xref:System.Globalization.CultureInfo.Calendar%2A>プロパティがコピーされます。 そのため、複製された<xref:System.Globalization.CultureInfo>オブジェクトは、元の影響を与えずにそのコピーしたプロパティを変更することができます<xref:System.Globalization.CultureInfo>オブジェクト。  
+  
+   
+  
+## Examples  
+ CultureInfo.Clone が複製も次のコード例を示しています、<xref:System.Globalization.DateTimeFormatInfo>と<xref:System.Globalization.NumberFormatInfo>インスタンスに関連付けられている、<xref:System.Globalization.CultureInfo>です。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.Clone#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Clone/CPP/yslin_cultureinfo_clone.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.Clone#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Clone/CS/yslin_cultureinfo_clone.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.Clone#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Clone/VB/yslin_cultureinfo_clone.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareInfo">
+      <MemberSignature Language="C#" Value="public virtual System.Globalization.CompareInfo CompareInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CompareInfo CompareInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.CompareInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CompareInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャの文字列を比較する方法を定義する <see cref="T:System.Globalization.CompareInfo" /> を取得します。</summary>
+        <value>カルチャの文字列を比較する方法を定義する <see cref="T:System.Globalization.CompareInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureInfo.CompareInfo%2A>プロパティから返される、<xref:System.Globalization.CompareInfo>カルチャに依存した並べ替えおよび文字列比較操作で使用されるカルチャに固有の情報を提供するオブジェクト。  
+  
+ ユーザーは、Windows のコントロール パネルの地域と言語のオプション部分での現在のカルチャに関連付けられている値の一部をオーバーライドすることもできます。 たとえば、ユーザーは、別の形式で日付を表示するか、カルチャの既定値とは異なる通貨を使用することもできます。  
+  
+ 場合<xref:System.Globalization.CultureInfo.UseUserOverride%2A>は`true`と指定したカルチャには、Windows の現在のカルチャが一致する、<xref:System.Globalization.CultureInfo>プロパティのユーザー設定を含む、それらの上書きを使用して、<xref:System.Globalization.DateTimeFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティ、およびプロパティの<xref:System.Globalization.NumberFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>など、選択したカレンダーは、のいずれかでがない場合、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>メソッドの結果と、プロパティの値が定義されていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Globalization.CultureInfo>スペイン語 (スペイン) 別の国際対応の並べ替えと<xref:System.Globalization.CultureInfo>従来の並べ替え を使用します。  
+  
+ [!code-cpp[System.Globalization.CultureInfo_esES#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/CPP/spanishspain.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo_esES#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/CS/spanishspain.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo_esES#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/VB/spanishspain.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSpecificCulture">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo CreateSpecificCulture (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.CultureInfo CreateSpecificCulture(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.CreateSpecificCulture(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">定義済みの <see cref="T:System.Globalization.CultureInfo" /> の名前または既存の <see cref="T:System.Globalization.CultureInfo" /> オブジェクトの名前。 <c>名前</c>小文字は区別されません。</param>
+        <summary>指定した名前に関連付けられている特定のカルチャを表す <see cref="T:System.Globalization.CultureInfo" /> を作成します。</summary>
+        <returns>次のものを表す <see cref="T:System.Globalization.CultureInfo" /> オブジェクト。  
+  
+ インバリアント カルチャ (<paramref name="name" /> が空の文字列 ("") の場合)。  
+  
+ または  
+  
+ <paramref name="name" /> に関連付けられた特定のカルチャ (<paramref name="name" /> がニュートラル カルチャの場合)。  
+  
+ または  
+  
+ <paramref name="name" /> で指定されたカルチャ (<paramref name="name" /> が既に特定のカルチャの場合)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A>メソッドへの呼び出しをラップする、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29>コンス トラクターです。  
+  
+> [!NOTE]
+>  定義済みカルチャ名の一覧は、次を参照してください。、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。 さらに、Windows 10 で始まる`name`任意の有効な bcp-47 の言語タグを指定できます。  
+  
+ カルチャは、3 つのセットにグループ化されます。 インバリアント カルチャ、ニュートラル カルチャ、および特定のカルチャ。 詳細については、の説明を参照して、<xref:System.Globalization.CultureInfo>クラスです。  
+  
+ このメソッドによって返される特定のカルチャのカルチャ識別子には、Windows の現在のカルチャのカルチャ識別子が一致すると、このメソッドを作成、 <xref:System.Globalization.CultureInfo> Windows カルチャを使用するオブジェクトをオーバーライドします。 上書きのプロパティのユーザーの設定を含める、<xref:System.Globalization.DateTimeFormatInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティおよび<xref:System.Globalization.NumberFormatInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 インスタンスを作成、<xref:System.Globalization.CultureInfo>オブジェクトの既定のカルチャ設定、ユーザーの上書きではなくを呼び出すこと、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29>の値を持つコンス トラクター`false`の`useUserOverride`引数。  
+  
+ ただし、<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A>メソッド名には、「特定」という用語が含まれています、バージョン間でまたはカスタムのカルチャのため、またはユーザーによるオーバーライドによって、カルチャのデータを変更できることに注意してください。 データを保存するには、インバリアント カルチャまたはバイナリまたは固定のフォームを使用します。  
+  
+   
+  
+## Examples  
+ 次の例の配列を取得する<xref:System.Globalization.CultureInfo>からのニュートラル カルチャを表すオブジェクト、<xref:System.Globalization.CultureInfo.GetCultures%2A>メソッドし、配列を並べ替えます。 配列内の要素を反復処理にするときに各ニュートラル カルチャの名前に渡します、<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A>メソッドおよびメソッドによって返される特定のカルチャの名前が表示されます。  
+  
+> [!NOTE]
+>  この例では、ZH-CHS および ZH-CHT のカルチャ名を使用します。 ただし、アプリケーションを対象に Windows Vista 以降を使用して zh Hans ZH-CHS および ZH-CHT の代わりにそれを代わりにします。 zh Hans とそれは、現在の標準を表し、古い名前を使用する理由がないために使用する必要があります。  
+>   
+>  中国語 (繁体字) ニュートラル カルチャ (zh、ZH-CHT、またはそれ) の入力が ZH-TW を返す、台湾の Windows のインストールの例の結果が異なる場合があることにも注意してください。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.CreateSpecificCulture2#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.CreateSpecificCulture2/CS/createspecificculture2.cs#2)]
+ [!code-vb[System.Globalization.CultureInfo.CreateSpecificCulture2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.CreateSpecificCulture2/VB/createspecificculture2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Globalization.CultureNotFoundException">
+          <paramref name="name" />有効なカルチャ名ではありません。  
+  
+ または  
+  
+ 指定したカルチャ<paramref name="name" />関連付けられている特定のカルチャではありません。</exception>
+        <exception cref="T:System.NullReferenceException">
+          <paramref name="name" /> が null です。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]以前のバージョンをスローし、<see cref="T:System.ArgumentException" />場合<paramref name="name" />有効なカルチャ名ではありません。 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、このメソッドは、<see cref="T:System.Globalization.CultureNotFoundException" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureTypes">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureTypes CultureTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Globalization.CultureTypes CultureTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.CultureTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureInfo" /> オブジェクトに関するカルチャ タイプを取得します。</summary>
+        <value>1 つ以上の <see cref="T:System.Globalization.CultureTypes" /> 値のビットごとの組み合わせ。 既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Globalization.CultureTypes>列挙型、および<xref:System.Globalization.CultureInfo.CultureTypes%2A>プロパティです。  
+  
+ [!code-cpp[system.globalization.cultureTypes#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.globalization.cultureTypes/cpp/ct.cpp#1)]
+ [!code-csharp[system.globalization.cultureTypes#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureTypes/cs/ct.cs#1)]
+ [!code-vb[system.globalization.cultureTypes#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureTypes/vb/ct.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentCulture">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo CurrentCulture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.CultureInfo CurrentCulture" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.CurrentCulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドで使用するカルチャを表す <see cref="T:System.Globalization.CultureInfo" /> オブジェクトを取得または設定します。</summary>
+        <value>現在のスレッドで使用するカルチャを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureInfo>日付の既定の形式、時間、数値、通貨の値、テキストの順序を並べ替え、規則、大文字小文字の区別を確認し、文字列比較をこのプロパティによって返されるオブジェクトとその関連オブジェクト。  
+  
+ 現在のカルチャは、静的なによって返される実行中のスレッドのプロパティ<xref:System.Threading.Thread.CurrentThread%2A?displayProperty=nameWithType>プロパティです。 値、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティの値に対応、<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>プロパティです。 値を取得、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティを取得するのには、<xref:System.Globalization.CultureInfo>によって返されるオブジェクト、`Thread.CurrentThread.CurrentCulture`プロパティです。 以降で、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]の値を設定、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティは現在のスレッド カルチャも変更します。  
+  
+> [!NOTE]
+>  .NET Framework 4.5.2 以前のバージョンで、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>プロパティは読み取り専用です。 つまり、プロパティの値を取得することができますが、設定することはできません。 現在のカルチャを変更するを割り当てる、<xref:System.Globalization.CultureInfo>に新しいカルチャを表すオブジェクト、`Thread.CurrentThread.CurrentCulture`プロパティです。 以降で、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>プロパティは読み取り/書き込み以外の両方を設定して、プロパティの値を取得します。 プロパティの値を設定場合、 <xref:System.Globalization.CultureInfo> 、新しいカルチャの値を表すオブジェクト、`Thread.CurrentThread.CurrentCulture`プロパティも変更します。  
+  
+ このセクションの内容:  
+  
+ [スレッドのカルチャを決定する方法](#ThreadCulture)   
+ [現在のカルチャを取得します。](#Getting)   
+ [CurrentCulture プロパティを明示的に設定](#ExplicitSetting)   
+ [現在のカルチャおよびユーザーのオーバーライド](#Overrides)   
+ [カルチャと Windows アプリ](#WindowsAndCurr)  
+  
+<a name="ThreadCulture"></a>   
+## <a name="how-a-threads-culture-is-determined"></a>スレッドのカルチャを決定する方法  
+ スレッドが開始されると、そのカルチャは、最初にように決定されます。  
+  
+-   指定されたカルチャを取得することによって、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>スレッドを実行している、プロパティ値がない場合、アプリケーション ドメインでプロパティ`null`です。  
+  
+-   スレッドがタスク ベースの非同期操作や、アプリケーションが対象を実行しているスレッド プールのスレッドである場合、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]またはそのカルチャである .NET Framework の以降のバージョンは、呼び出し元のスレッドのカルチャによって決まります。  次の例では、ポルトガル語 (ブラジル) を現在のカルチャを変更し、それぞれは、スレッド ID、そのタスク ID、およびその現在のカルチャが表示されます。 6 つのタスクを起動します。 それぞれのタスク (スレッド) が呼び出し元のスレッドのカルチャを継承しています。  
+  
+     [!code-csharp[System.Globalization.CultureInfo.CurrentCulture#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentculture/cs/Async1.cs#14)]
+     [!code-vb[System.Globalization.CultureInfo.CurrentCulture#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentculture/vb/Async1.vb#14)]  
+  
+     詳細については、「カルチャとタスク ベースの非同期操作」セクションを参照して、<xref:System.Globalization.CultureInfo>トピックです。  
+  
+-   Windows を呼び出すことによって`GetUserDefaultLocaleName`関数。  
+  
+ システムにインストールされているカルチャやユーザーの優先カルチャとは異なる特定のカルチャを設定して、アプリケーションが複数のスレッドを開始、それらのスレッドの現在のカルチャがされることによって返されるカルチャに注意してください、`GetUserDefaultLocaleName`関数、カルチャを割り当てない限り、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>スレッドを実行しているアプリケーション ドメインのプロパティです。  
+  
+ スレッドのカルチャを決定する方法の詳細については、「カルチャとスレッド」セクションを参照して、<xref:System.Globalization.CultureInfo>リファレンス ページ。  
+  
+<a name="Getting"></a>   
+## <a name="getting-the-current-culture"></a>現在のカルチャを取得します。  
+ <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティは、スレッドごとの設定です。 つまり、各スレッドが、独自のカルチャを持つことができます。 値を取得することによって、現在のスレッドのカルチャを取得する、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティ、次の例として示します。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.CurrentCulture#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentculture/cs/Get1.cs#5)]
+ [!code-vb[System.Globalization.CultureInfo.CurrentCulture#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentculture/vb/Get1.vb#5)]  
+  
+ 現在のスレッドのカルチャの値を取得することも、<xref:System.Threading.Thread.CurrentThread%2A?displayProperty=nameWithType>プロパティです。  
+  
+<a name="ExplicitSetting"></a>   
+## <a name="explicitly-setting-the-currentculture-property"></a>CurrentCulture プロパティを明示的に設定  
+ 直接、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]既存のスレッドによって使用されるカルチャを変更するを設定する、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティを新しいカルチャ。 これで、変更されるスレッドのカルチャを明示的に変更する場合は、スレッドは、アプリケーション ドメインの境界を越える場合に永続化します。 次の例では、現在のスレッド カルチャをオランダ語 (オランダ) に変更します。 またすること、現在のスレッドは、アプリケーション ドメインの境界を越えている場合に、現在のカルチャを引き続き変更を示します。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.CurrentCulture#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentculture/cs/changeculture11.cs#11)]
+ [!code-vb[System.Globalization.CultureInfo.CurrentCulture#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentculture/vb/changeculture11.vb#11)]  
+  
+> [!NOTE]
+>  使用して、カルチャを変更する、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティが必要です、<xref:System.Security.Permissions.SecurityPermission>して権限を<xref:System.Security.Permissions.SecurityPermissionFlag.ControlThread>値のセット。 スレッドの操作は、スレッドに関連付けられているセキュリティ状態であるため危険です。 したがって、信頼できるコードにのみ、し、必要な場合だけは、このアクセス許可を付与する必要があります。 信頼度の低いコード内のスレッド カルチャを変更することはできません。  
+  
+ 以降で、 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]、フランス語 (カナダ)) などの特定のカルチャまたはニュートラル カルチャ (フランス語) などのいずれかに現在のスレッド カルチャを明示的に変更できます。 ときに、<xref:System.Globalization.CultureInfo>オブジェクトがニュートラル カルチャの値を表す<xref:System.Globalization.CultureInfo>などのプロパティ<xref:System.Globalization.CultureInfo.Calendar%2A>、 <xref:System.Globalization.CultureInfo.CompareInfo%2A>、 <xref:System.Globalization.CultureInfo.DateTimeFormat%2A>、 <xref:System.Globalization.CultureInfo.NumberFormat%2A>、および<xref:System.Globalization.CultureInfo.TextInfo%2A>ニュートラル カルチャに関連付けられている特定のカルチャを反映します。 たとえば、英語版のニュートラル カルチャの主要なカルチャは英語 (米国)ドイツのカルチャの主要なカルチャは、ドイツ語 (ドイツ) です。 次の例は、フランス語、現在のカルチャが特定のカルチャ、フランス語 (カナダ)、およびがニュートラル カルチャに設定されているときに書式設定の違いを示しています。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.CurrentCulture#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentculture/cs/specific12.cs#12)]
+ [!code-vb[System.Globalization.CultureInfo.CurrentCulture#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentculture/vb/specific12.vb#12)]  
+  
+ 使用することも、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティと共に、<xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType>プロパティを設定、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>をユーザーに ASP.NET アプリケーションのプロパティは、次の例に示すように、カルチャの優先します。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.CurrentCulture#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentculture/cs/aspculture13.cs#13)]
+ [!code-vb[System.Globalization.CultureInfo.CurrentCulture#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentculture/vb/aspculture13.vb#13)]  
+  
+<a name="Overrides"></a>   
+## <a name="the-current-culture-and-user-overrides"></a>現在のカルチャおよびユーザーのオーバーライド  
+ Windows では、ユーザーの標準的プロパティ値を上書き、<xref:System.Globalization.CultureInfo>オブジェクトとその関連オブジェクトを使用して**地域と言語のオプション**コントロール パネルの します。 <xref:System.Globalization.CultureInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>プロパティは、次の場合、これらのユーザーがオーバーライドが反映されます。  
+  
+-   現在のスレッド カルチャを Windows によって暗黙的に設定かどうか`GetUserDefaultLocaleName`関数。  
+  
+-   現在のスレッド カルチャがによって定義されている場合、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>プロパティは、現在の Windows システムのカルチャに対応します。  
+  
+-   かどうか、現在のスレッドのカルチャがによって返されるカルチャを明示的に設定されて、<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A>メソッド、およびカルチャが、現在の Windows システムのカルチャに対応しています。  
+  
+-   かどうか、現在のスレッドのカルチャがによってインスタンス化のカルチャに明示的に設定されて、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29>コンス トラクター、およびカルチャが、現在の Windows システムのカルチャに対応しています。  
+  
+ 場合によっては、特に、サーバー アプリケーション用に、現在のカルチャを設定、<xref:System.Globalization.CultureInfo>ユーザー オーバーライドを反映するオブジェクトが望ましくない可能性があります。 代わりに、現在のスレッド カルチャを設定、<xref:System.Globalization.CultureInfo>ユーザーが反映されていないオブジェクトが次のようにオーバーライドします。  
+  
+-   呼び出して、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29>の値を持つコンス トラクター`false`の`useUserOverride`引数。  
+  
+-   呼び出して、<xref:System.Globalization.CultureInfo.GetCultureInfo%2A>メソッド、キャッシュされた読み取り専用<xref:System.Globalization.CultureInfo>オブジェクト。  
+  
+<a name="WindowsAndCurr"></a>   
+## <a name="the-current-culture-and-uwp-apps"></a>現在のカルチャおよび UWP アプリ  
+ ユニバーサル Windows プラットフォーム (UWP) アプリで、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>プロパティ読み取り/書き込み、.NET Framework と .NET Core のアプリでは同様です。 取得すると、現在のカルチャを設定するの両方に使用することができます。 ただし、UWP アプリは、現在のカルチャと、現在の UI カルチャ間によって区別されません。 <xref:System.Globalization.CultureInfo.CurrentCulture%2A>と<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>プロパティ マップの最初の値を[Windows.ApplicationModel.Resources.Core.ResourceManager.DefaultContext.Languages](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcecontext#properties_)コレクション。  
+
+.NET Framework と .NET Core のアプリで、現在のカルチャがスレッドごとの設定、および<xref:System.Globalization.CultureInfo.CurrentCulture%2A>プロパティには、現在のスレッドのみのカルチャが反映されます。 UWP アプリでは、現在のカルチャをマップ、 [Windows.ApplicationModel.Resources.Core.ResourceManager.DefaultContext.Languages](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcecontext#properties_)プロパティで、グローバル設定です。 設定、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>プロパティ変更は、アプリ全体のカルチャ以外のスレッド単位でカルチャを設定することはできません。
+  
+## Examples  
+ 次の例を変更する方法を示しています、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>と<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>現在のスレッド。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.CurrentCulture2#11](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.CurrentCulture2/CPP/currentculture.cpp#11)]
+ [!code-csharp[System.Globalization.CultureInfo.CurrentCulture2#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.CurrentCulture2/CS/currentculture.cs#11)]
+ [!code-vb[System.Globalization.CultureInfo.CurrentCulture2#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.CurrentCulture2/VB/currentculture.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティが <see langword="null" /> に設定されています。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">現在のカルチャを設定します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentUICulture">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo CurrentUICulture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.CultureInfo CurrentUICulture" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.CurrentUICulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行時にカルチャ固有のリソースを参照するためにリソース マネージャーによって使用される現在のユーザー インターフェイスのカルチャを表す <see cref="T:System.Globalization.CultureInfo" /> オブジェクトを取得または設定します。</summary>
+        <value>実行時にカルチャ固有のリソースを検索するためにリソース マネージャーで使用されるカルチャ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の UI カルチャは、スレッドごとのプロパティです。 各スレッドは、独自の現在の UI カルチャ。 このプロパティを取得するまたは、以降では、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、設定、<xref:System.Globalization.CultureInfo>に割り当てられているオブジェクト、`System.Threading.Thread.CurrentThread.CurrentUICulture`プロパティです。 スレッドが開始されると、その UI カルチャが最初にように決定されます。  
+  
+-   指定されたカルチャを取得することによって、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>スレッドを実行している、プロパティ値がない場合、アプリケーション ドメインでプロパティ`null`です。  
+  
+-   スレッドがタスク ベースの非同期操作や、アプリケーションが対象を実行しているスレッド プールのスレッドである場合、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]または .NET Framework は、その UI カルチャの以降のバージョンは、呼び出し元のスレッドの UI カルチャによって決まります。  次の例では、ポルトガル語 (ブラジル) に、現在の UI カルチャを変更し、それぞれは、スレッド ID、そのタスク ID、およびその現在の UI カルチャが表示されます。 6 つのタスクを起動します。 それぞれのタスク (スレッド) が呼び出し元のスレッドの UI カルチャを継承しています。  
+  
+     [!code-csharp[System.Globalization.CultureInfo.CurrentUICulture#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentuiculture/cs/Async1.cs#14)]
+     [!code-vb[System.Globalization.CultureInfo.CurrentUICulture#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentuiculture/vb/Async1.vb#14)]  
+  
+     詳細については、「カルチャとタスク ベースの非同期操作」セクションを参照して、<xref:System.Globalization.CultureInfo>トピックです。  
+  
+-   Windows を呼び出すことによって`GetUserDefaultUILanguage`関数。  
+  
+> [!NOTE]
+>  [!INCLUDE[Compact](~/includes/compact-md.md)]、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>プロパティは読み取り専用です。 現在の UI カルチャは、システムの地域設定によって決まります、プログラムで変更することはできません。  
+  
+ 以降で、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、スレッドで使用されるユーザー インターフェイス カルチャを変更するの設定、<xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType>プロパティを新しいカルチャ。 これで、変更されるスレッドの UI カルチャを明示的に変更する場合は、スレッドは、アプリケーション ドメインの境界を越える場合に永続化します。  
+  
+> [!NOTE]
+>  .NET Framework 4.5.2 以前のバージョンで、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>プロパティは読み取り専用です。 つまり、プロパティの値を取得することができますが、設定することはできません。 現在の UI カルチャを変更するを割り当てる、<xref:System.Globalization.CultureInfo>に新しい UI カルチャを表すオブジェクト、`Thread.CurrentThread.CurrentUICulture`プロパティです。 以降で、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>プロパティは読み取り/書き込み以外の両方を設定して、プロパティの値を取得します。 プロパティの値を設定場合、 <xref:System.Globalization.CultureInfo> 、新しいカルチャの値を表すオブジェクト、`Thread.CurrentThread.CurrentCulture`プロパティも変更します。  
+  
+ このセクションの内容:  
+  
+ [現在の UI カルチャを取得します。](#Getting)   
+ [現在の UI カルチャを明示的に設定します。](#Explicit)   
+ [現在の UI カルチャの暗黙的な設定](#Implicit)   
+ [セキュリティに関する考慮事項](#Security)   
+ [現在の UI カルチャ、および Windows アプリ](#WindowsAndCurrUI)  
+  
+<a name="Getting"></a>   
+## <a name="getting-the-current-ui-culture"></a>現在の UI カルチャを取得します。  
+ <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>プロパティは、スレッドごとの設定です。 つまり、各スレッドが、独自の UI カルチャを持つことができます。 値を取得することによって、現在のスレッド UI カルチャを取得する、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>プロパティ、次の例として示します。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.CurrentUICulture#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentuiculture/cs/Get1.cs#5)]
+ [!code-vb[System.Globalization.CultureInfo.CurrentUICulture#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentuiculture/vb/Get1.vb#5)]  
+  
+ 現在のスレッドの UI カルチャの値を取得することも、<xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType>プロパティです。  
+  
+<a name="Explicit"></a>   
+## <a name="explicitly-setting-the-current-ui-culture"></a>現在の UI カルチャを明示的に設定します。  
+ 以降で、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、割り当てることによって、現在の UI カルチャを変更することができます、<xref:System.Globalization.CultureInfo>に新しいカルチャを表すオブジェクト、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>プロパティです。 (EN-US、DE-DE など) 特定のカルチャまたはニュートラル カルチャ (en、de など) に、現在の UI カルチャを設定できます。 次の例では、現在の UI カルチャを FR-FR またはフランス語 (フランス) に設定します。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.CurrentUICulture#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentuiculture/cs/currentuiculture1.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.CurrentUICulture#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.currentuiculture/vb/currentuiculture1.vb#1)]  
+  
+ マルチ スレッド アプリケーションで明示的に設定できますの任意のスレッド UI カルチャを割り当てることによって、<xref:System.Globalization.CultureInfo>スレッドのカルチャを表すオブジェクト<xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType>プロパティです。 スレッドのカルチャを設定するには、現在のスレッドが、新しいカルチャを割り当てることができます、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>プロパティです。 スレッドの UI カルチャが明示的に設定すると、別のアプリケーション ドメイン内のコード実行およびアプリケーション ドメインの境界を越える場合でも、スレッドが同じカルチャを保持します。  
+  
+<a name="Implicit"></a>   
+## <a name="implicitly-setting-the-current-ui-culture"></a>現在の UI カルチャの暗黙的な設定  
+ 既定では、現在の UI カルチャが次のように設定されているを作成、メイン アプリケーション スレッドを含む、スレッドが最初の場合。  
+  
+-   定義されているカルチャを使用して、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>プロパティ値がない場合は、現在のアプリケーション ドメインのプロパティを`null`です。  
+  
+-   使用して、システムの既定のカルチャ。 Windows オペレーティング システムを使用するシステムで、共通言語ランタイムは、Windows を呼び出して`GetUserDefaultUILanguage`現在の UI カルチャを設定します。 `GetUserDefaultUILanguage`ユーザー設定の既定の UI カルチャを返します。 ユーザーが既定の UI 言語を設定していない場合、システムで最初にインストールされたカルチャを返します。  
+  
+ 別のアプリケーション ドメインでコードを実行するスレッドがアプリケーション境界を越える場合は、新しく作成されたスレッドのと同じ方法でそのカルチャが決定されます。  
+  
+ システムにインストールされている UI カルチャとは異なる特定の UI カルチャを設定するまたはユーザーの UI カルチャを優先し、アプリケーションが複数のスレッドを開始、それらのスレッドの現在の UI カルチャがされることによって返されるカルチャに注意してください、`GetUserDefaultUILanguage`関数、カルチャを割り当てない限り、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>スレッドを実行しているアプリケーション ドメインのプロパティです。  
+  
+<a name="Security"></a>   
+## <a name="security-considerations"></a>セキュリティの考慮事項  
+ 現在のスレッドのカルチャを変更する必要があります、<xref:System.Security.Permissions.SecurityPermission>して権限を<xref:System.Security.Permissions.SecurityPermissionFlag.ControlThread>値のセット。  
+  
+> [!CAUTION]
+>  スレッドの操作は、スレッドに関連付けられているセキュリティ状態であるため危険です。 したがって、信頼できるコードにのみ、し、必要な場合だけは、このアクセス許可を付与する必要があります。 信頼度の低いコード内のスレッド カルチャを変更することはできません。  
+  
+<a name="WindowsAndCurrUI"></a>   
+## <a name="the-current-ui-culture-and-uwp-apps"></a>現在の UI カルチャと UWP アプリ  
+ 
+ユニバーサル Windows プラットフォーム (UWP) アプリで、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>プロパティ読み取り/書き込み、.NET Framework と .NET Core のアプリでは同様です。 取得すると、現在のカルチャを設定するの両方に使用することができます。 ただし、UWP アプリは、現在のカルチャと、現在の UI カルチャ間によって区別されません。 <xref:System.Globalization.CultureInfo.CurrentCulture%2A>と<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>プロパティ マップの最初の値を[Windows.ApplicationModel.Resources.Core.ResourceManager.DefaultContext.Languages](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcecontext#properties_)コレクション。
+
+.NET Framework と .NET Core のアプリの場合、現在の UI カルチャがスレッドごとの設定、および<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>プロパティは、現在のスレッドのみの UI カルチャを反映します。 UWP アプリでは、現在のカルチャをマップ、 [Windows.ApplicationModel.Resources.Core.ResourceManager.DefaultContext.Languages](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.resources.core.resourcecontext#properties_)プロパティで、グローバル設定です。 設定、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>プロパティ変更は、アプリ全体のカルチャ以外のスレッド単位でカルチャを設定することはできません。    
+  
+## Examples  
+ 次のコード例を変更する方法を示しています、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>と<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>現在のスレッド。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.CurrentCulture2#11](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.CurrentCulture2/CPP/currentculture.cpp#11)]
+ [!code-csharp[System.Globalization.CultureInfo.CurrentCulture2#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.CurrentCulture2/CS/currentculture.cs#11)]
+ [!code-vb[System.Globalization.CultureInfo.CurrentCulture2#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.CurrentCulture2/VB/currentculture.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティが <see langword="null" /> に設定されています。</exception>
+        <exception cref="T:System.ArgumentException">プロパティが、リソース ファイルの検索に使用できないカルチャ名に設定されています。 リソース ファイル名に使用できるのは、文字、数字、ハイフン、またはアンダースコアのみです。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">現在の UI カルチャを設定します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DateTimeFormat">
+      <MemberSignature Language="C#" Value="public virtual System.Globalization.DateTimeFormatInfo DateTimeFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.DateTimeFormatInfo DateTimeFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.DateTimeFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DateTimeFormatInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャに対応する、日時の表示形式を定義する <see cref="T:System.Globalization.DateTimeFormatInfo" /> を取得または設定します。</summary>
+        <value>カルチャに対応する、日時の表示形式を定義する <see cref="T:System.Globalization.DateTimeFormatInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="overrides"></a>Overrides  
+ ユーザーは、Windows のコントロール パネルの地域と言語のオプション部分での現在のカルチャに関連付けられている値の一部をオーバーライドすることもできます。 たとえば、ユーザーは、別の形式で日付を表示するか、カルチャの既定値とは異なる通貨を使用することもできます。  
+  
+ 場合<xref:System.Globalization.CultureInfo.UseUserOverride%2A>は`true`と指定したカルチャには、Windows の現在のカルチャが一致する、<xref:System.Globalization.CultureInfo>プロパティのユーザー設定を含む、それらの上書きを使用して、<xref:System.Globalization.DateTimeFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティ、およびプロパティの<xref:System.Globalization.NumberFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>など、選択したカレンダーは、のいずれかでがない場合、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>メソッドの結果と、プロパティの値が定義されていません。  
+  
+ 値、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティおよび<xref:System.Globalization.CultureInfo.NumberFormat%2A>アプリケーション プロパティにアクセスするまで、プロパティは計算されません。 かどうかはユーザーを変更できる、現在のカルチャ新しいカルチャにアプリケーションが実行されていて、アプリケーションにアクセスし、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>または<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティ、アプリケーションが元のカルチャのオーバーライドではなく新しいカルチャの既定値を取得します。 元の現在のカルチャのオーバーライドを保持するために、アプリケーションにアクセスする必要があります、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>と<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティ、現在のカルチャを変更する前にします。  
+  
+   
+  
+## Examples  
+ CultureInfo.Clone が複製も次のコード例を示しています、<xref:System.Globalization.DateTimeFormatInfo>と<xref:System.Globalization.NumberFormatInfo>インスタンスに関連付けられている、<xref:System.Globalization.CultureInfo>です。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.Clone#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Clone/CPP/yslin_cultureinfo_clone.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.Clone#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Clone/CS/yslin_cultureinfo_clone.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.Clone#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Clone/VB/yslin_cultureinfo_clone.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティが null に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Globalization.CultureInfo.DateTimeFormat" /> プロパティまたは <see cref="T:System.Globalization.DateTimeFormatInfo" /> プロパティのいずれかが設定されており、<see cref="T:System.Globalization.CultureInfo" /> は読み取り専用です。</exception>
+        <block subset="none" type="usage">
+          <para>場合<see cref="P:System.Globalization.DateTimeFormatInfo.Calendar" />は、<see cref="T:System.Globalization.TaiwanCalendar" />ですが、<see cref="P:System.Threading.Thread.CurrentCulture" />中国語 (台湾)、し、ZH-TW をという名前に設定されていない<see cref="P:System.Globalization.DateTimeFormatInfo.NativeCalendarName" />、 <see cref="M:System.Globalization.DateTimeFormatInfo.GetEraName(System.Int32)" />、および<see cref="M:System.Globalization.DateTimeFormatInfo.GetAbbreviatedEraName(System.Int32)" />空の文字列を返します ("") です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultThreadCurrentCulture">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo DefaultThreadCurrentCulture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.CultureInfo DefaultThreadCurrentCulture" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.DefaultThreadCurrentCulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーション ドメインのスレッドの既定のカルチャを取得または設定します。</summary>
+        <value>現在のアプリケーション ドメインのスレッドの既定のカルチャ、または現在のシステム カルチャがアプリケーション ドメインの既定のスレッド カルチャの場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]以前のバージョンでは、既定では、すべてのスレッドのカルチャに設定されて、Windows システムのカルチャ。 現在のカルチャの既定のシステムのカルチャが異なるアプリケーションでこの動作は多くの場合、望ましくありません。 [!INCLUDE[net_v45](~/includes/net-v45-md.md)]、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>プロパティにより、アプリケーションをアプリケーション ドメイン内のすべてのスレッドの既定のカルチャを定義します。  
+  
+> [!IMPORTANT]
+>  カルチャが明示的に設定していない場合、既存のスレッドの設定、アプリケーション ドメインでの実行、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>プロパティもこれらのスレッドのカルチャを変更します。 ただし、これらのスレッドは、別のアプリケーション ドメインで実行して、そのカルチャによって定義されます、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>そのアプリケーション ドメインのプロパティまたは、既定値は定義されていない場合、既定のシステムのカルチャでします。 このため、常に明示的に、アプリケーションのメイン スレッドのカルチャを設定し、依存しないことをお勧め、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>メイン アプリケーション スレッドのカルチャを定義するプロパティです。  
+  
+ 設定しない限りは、明示的の値、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>プロパティは`null`、明示的なカルチャが割り当てられていないアプリケーション ドメイン内のスレッドのカルチャは、既定の Windows システムのカルチャによって定義されます。  
+  
+ カルチャ、スレッド、およびアプリケーション ドメインの詳細についてを参照してください「カルチャとスレッド"と"カルチャとアプリケーション ドメイン"のセクションでは、、<xref:System.Globalization.CultureInfo>リファレンス ページ。  
+  
+   
+  
+## Examples  
+ 次の例は、新しいスレッドの現在のカルチャを定義する .NET Framework の既定の動作を示しています。 起動時に、例では、現在のカルチャと設定、現在の UI カルチャをフランス語 (フランス) システムの既定のカルチャを既にフランス語 (フランス) ものを除くすべてのシステムでします。 既定のシステムのカルチャがフランス語 (フランス) で既に場合、コードは、現在のカルチャおよび現在の UI カルチャを英語 (米国) に設定します。 呼び出して、`DisplayRandomNumbers`ルーチンでは、次の 3 つの乱数を生成し、それらを通貨値として表示します。 次に、実行も、新しいスレッドを作成、`DisplayRandomNumbers`ルーチンです。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.DefaultThreadCurrentCulture#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.defaultthreadcurrentculture/cs/defaultculture1.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.DefaultThreadCurrentCulture#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.defaultthreadcurrentculture/vb/defaultculture1.vb#1)]  
+  
+ システムのカルチャが英語 (米国) のコンピューターでこの例を実行するときに、例からの出力に示す、メイン スレッドは、フランス語 (フランス) カルチャの書式指定規則を使用して、通貨の値を表示します。 ただし、派生するため、ワーカー スレッドのカルチャがアプリケーションの現在のカルチャではなく、現在の Windows システムのカルチャから、作業スレッドには、英語 (米国) カルチャの書式指定規則を使用して、通貨の値が表示されます。  
+  
+ 次の例では、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>と<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>現在のカルチャと、新しいアプリケーションのスレッドの現在の UI カルチャを定義するプロパティです。 起動時に、例では、現在のカルチャと設定、現在の UI カルチャをフランス語 (フランス) システムの既定のカルチャを既にフランス語 (フランス) ものを除くすべてのシステムでします。 既定のシステムのカルチャがフランス語 (フランス) で既に場合は、英語 (米国) を現在のカルチャと、現在の UI カルチャに設定します。 呼び出して、`DisplayRandomNumbers`ルーチンでは、次の 3 つの乱数を生成し、それらを通貨値として表示します。 次に、実行も、新しいスレッドを作成、`DisplayRandomNumbers`ルーチンです。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.DefaultThreadCurrentCulture#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.defaultthreadcurrentculture/cs/defaultculture2.cs#2)]
+ [!code-vb[System.Globalization.CultureInfo.DefaultThreadCurrentCulture#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.defaultthreadcurrentculture/vb/defaultculture2.vb#2)]  
+  
+ システムのカルチャが英語 (米国) のコンピューターでこの例を実行するときに、例からの出力に示すメイン スレッドとワーカー スレッドの両方は、フランス語 (フランス) カルチャの書式指定規則を使用して通貨値を表示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultThreadCurrentUICulture">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo DefaultThreadCurrentUICulture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.CultureInfo DefaultThreadCurrentUICulture" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーション ドメイン内のスレッドの既定 UI カルチャを取得または設定します。</summary>
+        <value>現在のアプリケーション ドメイン内のスレッドの既定 UI カルチャ、または現在のシステム UI カルチャがアプリケーション ドメイン内の既定スレッド UI カルチャである場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]以前のバージョンでは、既定では、すべてのスレッド UI カルチャに設定されて、Windows システムのカルチャ。 現在の UI カルチャは、既定のシステムのカルチャによって異なります。 アプリケーションでこの動作は多くの場合、望ましくありません。 [!INCLUDE[net_v45](~/includes/net-v45-md.md)]、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>プロパティを使用して、アプリケーション ドメイン内のすべてのスレッドの既定の UI カルチャを定義できます。  
+  
+> [!IMPORTANT]
+>  UI カルチャを明示的に設定していない場合、既存のスレッドの設定、アプリケーション ドメインでの実行、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>プロパティもこれらのスレッドのカルチャを変更します。 ただし、これらのスレッドは、別のアプリケーション ドメインで実行して、そのカルチャによって定義されます、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>そのアプリケーション ドメインのプロパティまたは、既定値は定義されていない場合、既定のシステムのカルチャでします。 このため、常に明示的に、アプリケーションのメイン スレッドのカルチャを設定しているに依存しないことをお勧め、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>メイン アプリケーション スレッドのカルチャを定義するプロパティです。  
+  
+ 設定しない限りは、明示的の値、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>プロパティは`null`、明示的なカルチャが割り当てられていない、アプリケーション ドメイン内のすべてのスレッドの現在のカルチャは、既定の Windows システムのカルチャによって定義されます。  
+  
+ カルチャ、スレッド、およびアプリケーション ドメインの詳細についてを参照してください「カルチャとスレッド"と"カルチャとアプリケーション ドメイン"のセクションでは、、<xref:System.Globalization.CultureInfo>リファレンス ページ。  
+  
+   
+  
+## Examples  
+ 次の例は、新しいスレッドの現在のカルチャを定義する .NET Framework の既定の動作を示しています。 英語とロシア語の言語のリソースを使用します。 GreetingStrings.txt をという名前の次のテキスト ファイルには、英語の言語リソースが含まれています。  
+  
+```  
+greeting =Hello again!  
+newGreeting=Hello!  
+```  
+  
+ 使用して GreetingStrings.resources をという名前のバイナリ .resources ファイルにコンパイル、[リソース ファイル ジェネレーター](~/docs/framework/tools/resgen-exe-resource-file-generator.md)次のコマンドを使用します。  
+  
+```  
+resgen greetingstrings.txt  
+```  
+  
+ GreetingStrings.ru RU.txt をという名前の次のテキスト ファイルには、ロシア語の言語リソースが含まれています。  
+  
+```  
+greeting=Еще раз привет!  
+newGreeting=Привет!  
+```  
+  
+ 使用して GreetingStrings.ru RU.resources をという名前のバイナリ .resources ファイルにコンパイル、[リソース ファイル ジェネレーター](~/docs/framework/tools/resgen-exe-resource-file-generator.md)次のコマンドを使用します。  
+  
+```  
+resgen greetingstrings.ru-RU.txt  
+```  
+  
+ 以下は、アプリケーションのコードでは、Example1.vb または Example1.cs という名前のファイルに存在します。 Visual Basic コンパイラに対して、次のコマンドを使用して、実行可能ファイルにコンパイルします。  
+  
+```  
+vbc Example1.vb /resource:GreetingStrings.resources  
+```  
+  
+ C# コンパイラのコマンドと同様です。  
+  
+```  
+csc /resource:GreetingStrings.resources Example1.cs  
+```  
+  
+ これにより、そのフォールバック カルチャのリソースと一緒に例の実行可能コードを含むアセンブリが作成されます。 使用することも、[アセンブリ リンカー](~/docs/framework/tools/al-exe-assembly-linker.md)を次のコマンドを使用して、ロシア語 (ロシア) カルチャのリソース ファイルを作成します。  
+  
+```  
+>al /embed:greetingstrings.ru-RU.resources /c:ru-RU /template:example1.exe /out:ru-RU\Example1.resources.dll  
+```  
+  
+ 起動時に、例では、現在のカルチャと、現在の UI カルチャに設定ロシア語 (ロシア) を既定のシステムのカルチャはロシア語既にものを除くすべてのシステムで (ロシア) です。 既定のシステムのカルチャが既にある場合ロシア語 (ロシア)、コードのセットを現在のカルチャおよび現在の UI カルチャ英語 (米国) にします。 呼び出して、`ShowGreeting`ルーチンで、後続のメソッド呼び出しで初めて呼び出された単純な文字列と若干異なる文字列が表示されます。 次に、実行も、新しいスレッドを作成、`ShowGreeting`ルーチンです。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.DefaultThreadCurrentUICulture#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.defaultthreadcurrentuiculture/cs/example1.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.DefaultThreadCurrentUICulture#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.defaultthreadcurrentuiculture/vb/example1.vb#1)]  
+  
+ システムのカルチャが英語 (米国) のコンピューターでこの例を実行するときに、例からの出力に示す、メイン スレッドはロシア語での最初の文字列を表示します。 ただし、派生するため、ワーカー スレッドのカルチャがアプリケーションの現在のカルチャではなく、現在の Windows システムのカルチャから、ワーカー スレッドは英語でその文字列を表示します。  
+  
+ 次の例では、<xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A>と<xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A>現在のカルチャと、新しいアプリケーションのスレッドの現在の UI カルチャを定義するプロパティです。  
+  
+ 例では、前の例として、同じリソース ファイルを使用します。 実行可能アセンブリの名前を変更する点を除いてをコンパイルして、ロシア語のローカライズされたリソースをサテライト アセンブリに埋め込むには、コマンドが同じでもします。  
+  
+ 起動時に、例では、現在のカルチャと、現在の UI カルチャに設定ロシア語 (ロシア) を既定のシステムのカルチャはロシア語既にものを除くすべてのシステムで (ロシア) です。 既定のシステムのカルチャはロシア語は既に場合 (ロシア) 設定、現在のカルチャと、現在の UI カルチャを英語 (米国) にします。 呼び出して、`ShowGreeting`ルーチンで、後続のメソッド呼び出しで初めて呼び出された単純な文字列と若干異なる文字列が表示されます。 次に、実行も、新しいスレッドを作成、`ShowGreeting`ルーチンです。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.DefaultThreadCurrentUICulture#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.defaultthreadcurrentuiculture/cs/example2.cs#2)]
+ [!code-vb[System.Globalization.CultureInfo.DefaultThreadCurrentUICulture#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.defaultthreadcurrentuiculture/vb/example2.vb#2)]  
+  
+ システムのカルチャが英語 (米国) のコンピューターでこの例を実行するときに、例からの出力が示すようメイン スレッドとワーカー スレッドの両方に、文字列に表示ロシア語の言語です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定操作で、<see cref="P:System.Globalization.CultureInfo.Name" /> プロパティ値が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public virtual string DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全にローカライズされたカルチャ名を取得します。</summary>
+        <value>形式で完全にローカライズされたカルチャ名*languagefull* [*国/regionfull*] ここで、 *languagefull*言語の完全な名前と*国/regionfull*国/地域の完全名です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのローカライズされた名前を表す、<xref:System.Globalization.CultureInfo>オブジェクト。  
+  
+ カルチャ名は、スクリプトや書式設定規則により異なる場合があります。 返された名前を表示を使用して、それを解析しようとしていない必要があります。  
+  
+ カスタム カルチャが作成されている場合、<xref:System.Globalization.CultureAndRegionInfoBuilder>クラス、<xref:System.Globalization.CultureInfo.DisplayName%2A>プロパティは、の値に初期化、<xref:System.Globalization.CultureInfo.NativeName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ニュートラル カルチャのいくつかのプロパティを表示します。  
+  
+> [!NOTE]
+>  この例では、それぞれをカルチャ識別子としてそれぞれ 0x0004 と 0x7c04 を使用して、ZH-CHS および ZH-CHT のカルチャを表示します。 ただし、Windows Vista アプリケーションでは、ZH-CHS および ZH-CHT の代わりにそれ名ではなく zh Hans 名を使用する必要があります。 Zh Hans とそれ名は、現在の標準を表すし、古い名前を使用する理由がないために使用する必要があります。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CPP/getcultures.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CS/getcultures.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/VB/getcultures.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnglishName">
+      <MemberSignature Language="C#" Value="public virtual string EnglishName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EnglishName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.EnglishName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式のカルチャ名を取得*languagefull* [*国/regionfull*] 英語でします。</summary>
+        <value>形式のカルチャ名*languagefull* [*国/regionfull*] 英語で*languagefull*言語の完全な名前と*国/regionfull*国/地域の完全名です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、<xref:System.Globalization.CultureInfo.EnglishName%2A>特定のカルチャ名 EN-US では、「英語 (米国)」です。  
+  
+ このプロパティの値は、.NET Framework の言語バージョンに関係なく同じです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ニュートラル カルチャのいくつかのプロパティを表示します。  
+  
+> [!NOTE]
+>  この例では、zh-CHS および zh-CHT の古いカルチャ名を、カルチャ識別子としてそれぞれ 0x0004 と 0x7C04 を使用して表示します。 ただし、Windows Vista アプリケーションでは、ZH-CHS および ZH-CHT の代わりにそれ名ではなく zh Hans 名を使用する必要があります。 Zh Hans とそれ名は、現在の標準を表すし、古い名前を使用する理由がないために使用する必要があります。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CPP/getcultures.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CS/getcultures.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/VB/getcultures.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在の <see cref="T:System.Globalization.CultureInfo" /> と比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが現在の <see cref="T:System.Globalization.CultureInfo" /> と同じカルチャかどうかを判断します。</summary>
+        <returns>
+          <paramref name="value" /> が現在の <see cref="T:System.Globalization.CultureInfo" /> と同じカルチャの場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+ 2 つ<xref:System.Globalization.CultureInfo>場合、オブジェクトが等しいかどうかと見なされます、<xref:System.Globalization.CultureInfo.Name%2A>と<xref:System.Globalization.CultureInfo.CompareInfo%2A>のプロパティは等価です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConsoleFallbackUICulture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo GetConsoleFallbackUICulture ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Globalization.CultureInfo GetConsoleFallbackUICulture() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.GetConsoleFallbackUICulture" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>グラフィック ユーザー インターフェイスの既定のカルチャが不適切な場合、コンソール アプリケーションに適した代替のユーザー インターフェイス カルチャを取得します。</summary>
+        <returns>コンソール上のテキストの読み取りおよび表示に使用する代替カルチャ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アラビア語、ヘブライ語、ウルドゥ語、およびシリア語などの言語は、双方向のテキストに基づきます。 Windows のアプリケーションは、グラフィカル ユーザー インターフェイスを持つは、双方向言語をサポートします。 ただし、オペレーティング システム コンソールのユーザー インターフェイスのテキストを使用しているため、コンソール アプリケーションでは、双方向サポートは提供しません。 したがって、アラビア語やヘブライ語にコンソール アプリケーションをローカライズする場合、アプリケーションはコンソール画面に読み取り不可能なテキストを表示します。  
+  
+ ユーザー インターフェイスのカルチャでは、アプリケーションがユーザー入力と出力をサポートする必要があるし、既定では、オペレーティング システムのカルチャと同じリソースを指定します。 たとえば、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>プロパティは、アラビア語のオペレーティング システムのアラビア語のカルチャを返します。 使用して、<xref:System.Globalization.CultureInfo.GetConsoleFallbackUICulture%2A>コンソール アプリケーションのユーザー インターフェイスの適切なカルチャを取得します。 アプリケーションでは、代替のユーザー インターフェイスのカルチャを取得、後にする必要がありますに割り当てることが、カルチャ、現在のスレッドの現在のユーザー インターフェイス カルチャ。 詳細についてを参照してください「明示的に設定の現在の UI カルチャ」の<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>プロパティです。  
+  
+ 定義済みカルチャ名から別のフォールバック ユーザー インターフェイス カルチャの名前を持つ定義済みのカルチャを次に示します。  
+  
+|定義済みのカルチャ|カルチャ名|代替のユーザー インターフェイス カルチャ名|  
+|------------------------|------------------|------------------------------------------|  
+|アムハラ語|am|en-US|  
+|アムハラ語 (エチオピア)|am-ET|en-US|  
+|(ニュートラル アラビア語)|ar|en-US|  
+|アラビア語 (アラブ首長国連邦)|ar AE|en-US|  
+|アラビア語 (バーレーン)|ar BH|en-US|  
+|アラビア語 (アルジェリア)|ar DZ|fr-FR|  
+|アラビア語 (エジプト)|ar 例|en-US|  
+|アラビア語 (イラク)|ar IQ|en-US|  
+|アラビア語 (ヨルダン)|ar 高|en-US|  
+|アラビア語 (クウェート)|ar KW|en-US|  
+|アラビア語 (レバノン)|ar LB|en-US|  
+|アラビア語 (リビア)|ar には|en-US|  
+|アラビア語 (モロッコ)|ar MA|fr-FR|  
+|アラビア語 (オマーン)|ar OM|en-US|  
+|アラビア語 (カタール)|ar QA|en-US|  
+|アラビア語 (サウジアラビア)|ar SA|en-US|  
+|アラビア語 (シリア)|ar SY|en-US|  
+|アラビア語 (チュニジア)|ar TN|fr-FR|  
+|アラビア語 (イエメン)|ar-たぁ|en-US|  
+|アッサム|as|en-US|  
+|アッサム語 (インド)|IN として|en-US|  
+|ベンガル語|bn|en-US|  
+|ベンガル語 (バングラデシュ)|bn BD|en-US|  
+|ベンガル語 (インド)|bn IN|en-US|  
+|チベット語|バッファー オーバーラン|en-US|  
+|チベット語 (PRC)|bo CN|en-US|  
+|ディベヒ語|dv|en-US|  
+|ディベヒ語 (インド)|dv MV|en-US|  
+|ペルシャ語|fa|en-US|  
+|ペルシア語 (イラン)|fa IR|en-US|  
+|グジャラート語|gu|en-US|  
+|グジャラート語 (インド)|gu IN|en-US|  
+|ヘブライ語|he|en-US|  
+|ヘブライ語 (イスラエル)|彼は IL|en-US|  
+|ヒンディー語|こんにちは|en-US|  
+|ヒンディー語 (インド)|やあイン|en-US|  
+|イ語|ii|en-US|  
+|イ語 (PRC)|ii CN|en-US|  
+|イヌクティトット語音節文字|iu Cans|en-US|  
+|イヌクティトット語音節文字 (カナダ)|iu Cans CA|en-US|  
+|クメール語|km|en-US|  
+|クメール語 (カンボジア)|km KH|en-US|  
+|カナラ語|kn|en-US|  
+|カンナダ語 (インド)|kn IN|en-US|  
+|コーンクニー語|kok|en-US|  
+|コーンクニー語 (インド)|kok IN|en-US|  
+|ラオス語|lo|en-US|  
+|ラオス語 (ラオス P.D.R.)|lo-LA|en-US|  
+|マラヤーラム語|ml|en-US|  
+|マラヤーラム語 (インド)|ml 内|en-US|  
+|モホーク語|moh|en-US|  
+|モホーク語 (カナダ)|moh CA|en-US|  
+|マラーティー語|mr|en-US|  
+|マラーティー語 (インド)|mr IN|en-US|  
+|ネパール語|ne|en-US|  
+|ネパール語 (ネパール)|ne NP|en-US|  
+|ノルウェー語|no|nb-NO|  
+|オリヤー語|または|en-US|  
+|オリヤー語 (インド)|または IN|en-US|  
+|パンジャブ語|pa|en-US|  
+|パンジャーブ語 (インド)|pa 内|en-US|  
+|ダリー語|pr|en-US|  
+|ダリー語 (アフガニスタン)|pr AF|en-US|  
+|パシュトゥー語|ps|en-US|  
+|パシュトゥー語 (アフガニスタン)|ps AF|en-US|  
+|サンスクリット語|sa|en-US|  
+|サンスクリット語 (インド)|sa 内|en-US|  
+|シンハラ語|si|en-US|  
+|シンハラ語 (スリランカ)|si LK|en-US|  
+|シリア語|syr|en-US|  
+|シリア語 (シリア)|syr SY|en-US|  
+|タミール語|ta|en-US|  
+|タミール語 (インド)|ta イン|en-US|  
+|テルグ語|te|en-US|  
+|テルグ語 (インド)|te IN|en-US|  
+|タイ語|th|en-US|  
+|タイ語 (タイ)|th Th|en-US|  
+|ウイグル語|ug|en-US|  
+|ウイグル語 (PRC)|ug CN|en-US|  
+|ウルドゥ語|あなたの|en-US|  
+|ウルドゥ語 (パキスタン)|PK your|en-US|  
+|ベトナム語|vi|en-US|  
+|ベトナム語 (ベトナム)|vi VN|en-US|  
+  
+ アプリケーションで使用できる<xref:System.Globalization.CultureAndRegionInfoBuilder>用を作成する代わりに、カルチャ、およびそのカルチャは、独自のコンソール フォールバック カルチャを持つことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、カルチャ オブジェクトに関連付けられた代替のユーザー インターフェイスのカルチャが表示されます。  
+  
+ [!code-cpp[sys.glob.ci.getCFUIC#1](~/samples/snippets/cpp/VS_Snippets_CLR/sys.glob.ci.getCFUIC/cpp/cfuic.cpp#1)]
+ [!code-csharp[sys.glob.ci.getCFUIC#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.ci.getCFUIC/CS/cfuic.cs#1)]
+ [!code-vb[sys.glob.ci.getCFUIC#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.ci.getCFUIC/VB/cfuic.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCultureInfo">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo GetCultureInfo (int culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.CultureInfo GetCultureInfo(int32 culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.GetCultureInfo(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="culture">ロケール識別子 (LCID)。</param>
+        <summary>指定されたカルチャ識別子を使用して、カルチャのキャッシュされた読み取り専用インスタンスを取得します。</summary>
+        <returns>読み取り専用の <see cref="T:System.Globalization.CultureInfo" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの文字列のオーバー ロードを使用することをお勧め (<xref:System.Globalization.CultureInfo.GetCultureInfo%28System.String%29>)、Lcid の代わりに、ロケール名を使用する必要があります。 カスタム ロケール、ロケール名が必要です。  
+  
+ 場合`culture`が返された現在のカルチャのロケール識別子<xref:System.Globalization.CultureInfo>オブジェクトはユーザーの上書きが反映されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="culture" /> が 0 未満です。</exception>
+        <exception cref="T:System.Globalization.CultureNotFoundException">
+          <paramref name="culture" />サポートされていないカルチャを指定します。 詳細については、「呼び出し時の注意」をご覧ください。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]以前のバージョンをスローし、<see cref="T:System.ArgumentException" />場合<paramref name="culture" />有効なカルチャ識別子ではありません。 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、このメソッドは、<see cref="T:System.Globalization.CultureNotFoundException" />です。 以降で動作するアプリケーションで、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]後で Windows 7 以降で、メソッドの取得を試みますか、<see cref="T:System.Globalization.CultureInfo" />オブジェクト識別子を持つ<paramref name="culture" />オペレーティング システムはそのカルチャをサポートしていない場合、オペレーティング システムから、メソッドがスローされます、<see cref="T:System.Globalization.CultureNotFoundException" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCultureInfo">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo GetCultureInfo (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.CultureInfo GetCultureInfo(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.GetCultureInfo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">カルチャの名前。 <c>名前</c>小文字は区別されません。</param>
+        <summary>指定されたカルチャ名を使用して、カルチャのキャッシュされた読み取り専用インスタンスを取得します。</summary>
+        <returns>読み取り専用の <see cref="T:System.Globalization.CultureInfo" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みカルチャ名の一覧は、次を参照してください。、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。 さらに、Windows 10 で始まる`name`任意の有効な bcp-47 の言語タグを指定できます。  
+  
+ <xref:System.Globalization.CultureInfo.GetCultureInfo%2A>メソッドは、取得、キャッシュされた読み取り専用<xref:System.Globalization.CultureInfo>オブジェクト。 対応する呼び出しよりも優れたパフォーマンスを提供、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+ 場合`name`、返された現在のカルチャの名前を指定<xref:System.Globalization.CultureInfo>オブジェクトはユーザーの上書きが反映されません。 これにより、メソッドのサーバー アプリケーションまたはツール、システム上で、実際のユーザー アカウントがないと、複数のカルチャの読み込みを効率的にする必要があるに適したです。  
+  
+ 場合`name`は<xref:System.String.Empty?displayProperty=nameWithType>、インバリアント カルチャを返します。 値を取得するのと同じ、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が null です。</exception>
+        <exception cref="T:System.Globalization.CultureNotFoundException">
+          <paramref name="name" />サポートされていないカルチャを指定します。 詳細については、「呼び出し時の注意」をご覧ください。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]以前のバージョンをスローし、<see cref="T:System.ArgumentException" />場合<paramref name="name" />有効なカルチャ名ではありません。 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、このメソッドは、<see cref="T:System.Globalization.CultureNotFoundException" />です。 以降で動作するアプリケーションで、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]後で Windows 7 以降で、メソッドの取得を試みますか、<see cref="T:System.Globalization.CultureInfo" />オブジェクト識別子を持つ<paramref name="name" />オペレーティング システムから、オペレーティング システムはそのカルチャをサポートしていない場合、<paramref name="name" />補助または置換カルチャで、メソッドでのスローの名ではなく、<see cref="T:System.Globalization.CultureNotFoundException" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCultureInfo">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo GetCultureInfo (string name, string altName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.CultureInfo GetCultureInfo(string name, string altName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.GetCultureInfo(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="altName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">カルチャの名前。 <c>名前</c>小文字は区別されません。</param>
+        <param name="altName">提供するカルチャの名前、<see cref="T:System.Globalization.TextInfo" />と<see cref="T:System.Globalization.CompareInfo" />初期化するために使用されるオブジェクト<c>名前</c>です。 <c>別名</c>小文字は区別されません。</param>
+        <summary>カルチャのキャッシュされた読み取り専用インスタンスを取得します。 パラメーターは、別のカルチャで指定された <see cref="T:System.Globalization.TextInfo" /> オブジェクトおよび <see cref="T:System.Globalization.CompareInfo" /> オブジェクトで初期化されたカルチャを指定します。</summary>
+        <returns>読み取り専用の <see cref="T:System.Globalization.CultureInfo" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みカルチャ名の一覧は、次を参照してください。、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。 さらに、Windows 10 で始まる`name`任意の有効な bcp-47 の言語タグを指定できます。  
+  
+ <xref:System.Globalization.CultureInfo.GetCultureInfo%2A>メソッドは、取得、キャッシュされた読み取り専用<xref:System.Globalization.CultureInfo>オブジェクト。 対応する呼び出しよりもパフォーマンスが向上する<xref:System.Globalization.CultureInfo.%23ctor%2A>コンス トラクターです。 指定されているのと同じカルチャを作成するメソッドが使用される、`name`ルールを異なる並べ替えと大文字小文字の区別がパラメーター。  
+  
+ 場合`name`または`altName`名前は、現在のカルチャの返されたオブジェクトは反映されておらずユーザーの上書きします。 場合`name`は<xref:System.String.Empty?displayProperty=nameWithType>、インバリアント カルチャを返します。 値を取得するのと同じ、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>プロパティです。 場合`altName`は<xref:System.String.Empty?displayProperty=nameWithType>、書記体系と比較メソッドを使用して、インバリアント カルチャで指定された規則。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> または <paramref name="altName" /> が null です。</exception>
+        <exception cref="T:System.Globalization.CultureNotFoundException">
+          <paramref name="name" />または<paramref name="altName" />サポートされていないカルチャを指定します。 詳細については、「呼び出し時の注意」をご覧ください。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]以前のバージョンをスローし、<see cref="T:System.ArgumentException" />場合<paramref name="name" />または<paramref name="altName" />有効なカルチャ名ではありません。 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、このメソッドは、<see cref="T:System.Globalization.CultureNotFoundException" />です。 以降で動作するアプリケーションで、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]後で Windows 7 以降で、メソッドの取得を試みますか、<see cref="T:System.Globalization.CultureInfo" />オブジェクト識別子を持つ<paramref name="name" />オペレーティング システムから、オペレーティング システムはそのカルチャをサポートしていない場合、<paramref name="name" />補助または置換カルチャで、メソッドでのスローの名ではなく、<see cref="T:System.Globalization.CultureNotFoundException" />例外。 以降で動作するアプリケーションで、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]後で Windows 7 以降で、メソッドの取得を試みますか、<see cref="T:System.Globalization.CultureInfo" />オブジェクト識別子を持つ<paramref name="name" />オペレーティング システムから、オペレーティング システムはそのカルチャをサポートしていない場合、<paramref name="name" />補助または置換カルチャで、メソッドでのスローの名ではなく、<see cref="T:System.Globalization.CultureNotFoundException" />例外。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCultureInfoByIetfLanguageTag">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo GetCultureInfoByIetfLanguageTag (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.CultureInfo GetCultureInfoByIetfLanguageTag(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.GetCultureInfoByIetfLanguageTag(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">RFC 4646 標準で指定された言語の名前。</param>
+        <summary>使用しないでください。 指定された RFC 4646 言語タグで示される言語特性を持つ、読み取り専用 <see cref="T:System.Globalization.CultureInfo" /> オブジェクトを取得します。</summary>
+        <returns>読み取り専用の <see cref="T:System.Globalization.CultureInfo" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このメソッドと<xref:System.Globalization.CultureInfo.IetfLanguageTag%2A>プロパティは推奨されなくなりました。 これらの要素を使用する代わりに、アプリケーションする必要がありますを使用して、新しい<xref:System.Globalization.CultureInfo>オブジェクトを呼び出すと、<xref:System.Globalization.CultureInfo.Name%2A>プロパティです。 IETF タグおよび名と同じです。  
+  
+ インターネット技術標準化委員会 (IETF) によって管理されている RFC 4646 標準では、言語を識別する uniform 手段を提供する IETF 言語タグを定義します。 IETF 言語タグの形式がによって返されるカルチャ名と同じ、<xref:System.Globalization.CultureInfo.Name%2A>プロパティは、カルチャを一意に識別しません。 別のカルチャは、これらのカルチャの言語特性が同じ場合に、同じ IETF 言語タグを共有します。 カルチャの言語の特性に含まれている、<xref:System.Globalization.TextInfo>オブジェクトに関連付けられている、<xref:System.Globalization.CultureInfo>オブジェクト。  
+  
+ IETF 言語タグは、必須の言語識別子、オプションのスクリプトの識別子と省略可能な地域識別子で構成されます。  
+  
+ アプリケーションは、取得されたカルチャを使用して、スペルや文法チェックの管理など、言語固有のタスクを制御する必要があります。 アプリケーションでは、テキストの並べ替えまたは時刻の書式設定や日付など、カルチャに固有のタスクを制御するのに取得されたカルチャを使用する必要があります。  
+  
+ 詳細については、RFC 4646、「タグを識別する言語、」および最新ドラフト標準、ドラフトのプラス-langtags-05.txt でを参照してください[http://go.microsoft.com/fwlink/?LinkId=100231](http://go.microsoft.com/fwlink/?LinkId=100231)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が null です。</exception>
+        <exception cref="T:System.Globalization.CultureNotFoundException">
+          <paramref name="name" />サポートされるカルチャに対応していません。</exception>
+        <block subset="none" type="usage">
+          <para>[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]以前のバージョンをスローし、<see cref="T:System.ArgumentException" />場合<paramref name="name" />サポートされるカルチャの名前に対応していません。 以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、このメソッドは、<see cref="T:System.Globalization.CultureNotFoundException" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCultures">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo[] GetCultures (System.Globalization.CultureTypes types);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.CultureInfo[] GetCultures(valuetype System.Globalization.CultureTypes types) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.GetCultures(System.Globalization.CultureTypes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="types" Type="System.Globalization.CultureTypes" />
+      </Parameters>
+      <Docs>
+        <param name="types">取得するカルチャへのフィルターとして使用する列挙値のビットごとの組み合わせ。</param>
+        <summary>サポートされているカルチャを、指定した <see cref="T:System.Globalization.CultureTypes" /> パラメーターでフィルター処理した結果のリストを取得します。</summary>
+        <returns><paramref name="types" /> パラメーターで指定されたカルチャを格納する配列。 カルチャの配列が並べ替えられていません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureInfo.GetCultures%2A>メソッドが呼び出された最もよく、`types`パラメーターは、次の値に設定します。  
+  
+-   <xref:System.Globalization.CultureTypes.SpecificCultures>、特定のすべてのカルチャが返されます。  
+  
+-   <xref:System.Globalization.CultureTypes.NeutralCultures>、すべてのニュートラル カルチャと、インバリアント カルチャが返されます。  
+  
+-   <xref:System.Globalization.CultureTypes.AllCultures>、すべてのニュートラル カルチャまたは特定のカルチャ、Windows システムにインストールされているカルチャと、ユーザーによって作成されたカスタムのカルチャが返されます。  
+  
+-   <xref:System.Globalization.CultureTypes.UserCustomCulture>、によって登録されているものなど、すべてのカスタム カルチャが返されます、<xref:System.Globalization.CultureAndRegionInfoBuilder>クラスです。 Windows 10 より前に、の Windows のバージョンで、<xref:System.Globalization.CultureTypes.UserCustomCulture>値ユーザー定義のカスタム カルチャのすべてに適用されます。 Windows 10 以降に適用されるカルチャの完全なデータがないし、ローカルの一意の識別子を持っていないのシステム カルチャが示すとおり、<xref:System.Globalization.CultureInfo.LCID%2A>プロパティの値。 その結果、次のようなコードでは、Windows 10 および Windows の以前のバージョンを実行と異なる結果が返すされます。  
+  
+     [!code-csharp[System.Globalization.CultureInfo.GetCultures#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CS/getcultures3.cs#2)]
+     [!code-vb[System.Globalization.CultureInfo.GetCultures#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/VB/getcultures3.vb#2)]  
+  
+   
+  
+## Examples  
+ 次のコード例では、ニュートラル カルチャのいくつかのプロパティを表示します。  
+  
+> [!NOTE]
+>  この例では、それぞれをカルチャ識別子としてそれぞれ 0x0004 と 0x7c04 を使用して、ZH-CHS および ZH-CHT のカルチャを表示します。 ただし、Windows Vista アプリケーションでは、ZH-CHS および ZH-CHT の代わりにそれ名ではなく zh Hans 名を使用する必要があります。 Zh Hans とそれ名は、現在の標準を表すし、古い名前を使用する理由がないために使用する必要があります。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CPP/getcultures.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CS/getcultures.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/VB/getcultures.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="types" />無効な組み合わせを示す<see cref="T:System.Globalization.CultureTypes" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormat">
+      <MemberSignature Language="C#" Value="public virtual object GetFormat (Type formatType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetFormat(class System.Type formatType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.GetFormat(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="formatType">書式指定オブジェクトを取得する <see cref="T:System.Type" />。 このメソッドは、<see cref="T:System.Globalization.NumberFormatInfo" /> 型と <see cref="T:System.Globalization.DateTimeFormatInfo" /> 型だけをサポートしています。</param>
+        <summary>指定した型に書式指定する方法を定義するオブジェクトを取得します。</summary>
+        <returns><see cref="P:System.Globalization.CultureInfo.NumberFormat" /> プロパティの値。<paramref name="formatType" /> が <see cref="T:System.Globalization.NumberFormatInfo" /> クラスの <see cref="T:System.Type" /> オブジェクトの場合は、現在の <see cref="T:System.Globalization.CultureInfo" /> の既定の数値書式情報が格納された <see cref="T:System.Globalization.NumberFormatInfo" /> です。  
+  
+ または  
+  
+ <see cref="P:System.Globalization.CultureInfo.DateTimeFormat" /> プロパティの値。<paramref name="formatType" /> が <see cref="T:System.Globalization.DateTimeFormatInfo" /> クラスの <see cref="T:System.Type" /> オブジェクトの場合は、現在の <see cref="T:System.Globalization.CultureInfo" /> の既定の日付および時刻の形式に関する情報が格納された <see cref="T:System.Globalization.DateTimeFormatInfo" /> です。  
+  
+ または  
+  
+ <paramref name="formatType" /> がその他のオブジェクトである場合は null。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureInfo.GetFormat%2A> は、<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> を実装します。  
+  
+ `NumberFormatInfo`基本データ型の形式のメソッドと組み合わせて使用するカルチャ固有の数値書式を提供します。 `DateTimeFormatInfo`日付と時刻の値が特定のカルチャの書式設定方法を制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureInfo" /> のハッシュ関数として機能します。ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適しています。</summary>
+        <returns>現在の <see cref="T:System.Globalization.CultureInfo" /> のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>します。  
+  
+ このメソッドは、<xref:System.Globalization.CultureInfo.Equals%2A> メソッドによって等しいと評価された 2 つのオブジェクトに対して同じハッシュ コードを生成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IetfLanguageTag">
+      <MemberSignature Language="C#" Value="public string IetfLanguageTag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IetfLanguageTag" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.IetfLanguageTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用しないでください。 言語の RFC 4646 標準 ID を取得します。</summary>
+        <value>言語の RFC 4646 標準 ID を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このプロパティおよび<xref:System.Globalization.CultureInfo.GetCultureInfoByIetfLanguageTag%2A>メソッドは推奨されなくなりました。 代わりに、使用する必要があります、<xref:System.Globalization.CultureInfo.Name%2A?displayProperty=nameWithType>プロパティです。 IETF タグおよび名と同じです。  
+  
+ インターネット技術標準化委員会 (IETF) によって管理されている RFC 4646 標準では、言語を識別する uniform 手段を提供する IETF 言語タグを定義します。 IETF 言語タグの形式がによって返されるカルチャ名のような<xref:System.Globalization.CultureInfo.Name%2A>プロパティは、カルチャを一意に識別しません。 つまり、異なるカルチャは、そのカルチャの言語特性が同じ場合、同じ IETF 言語タグを共有します。 カルチャの言語の特性に含まれている、<xref:System.Globalization.TextInfo>オブジェクトに関連付けられている、<xref:System.Globalization.CultureInfo>オブジェクト。  
+  
+ IETF 言語タグは、必須の言語識別子、オプションのスクリプトの識別子と省略可能な地域識別子で構成されます。  
+  
+ 詳細については、次を参照してください。 [RFC 5646"の特定の言語タグ](http://go.microsoft.com/fwlink/?LinkId=230876)です。 サブタグの一覧は、次を参照してください。 [IANA 言語サブタグ レジストリ](http://go.microsoft.com/fwlink/?LinkId=230877)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstalledUICulture">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo InstalledUICulture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.CultureInfo InstalledUICulture" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.InstalledUICulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムと共にインストールされたカルチャを表す <see cref="T:System.Globalization.CultureInfo" /> を取得します。</summary>
+        <value>オペレーティング システムと共にインストールされたカルチャを表す <see cref="T:System.Globalization.CultureInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows での日本語版など、ローカライズされたオペレーティング システムでは、このプロパティは、オペレーティング システムのカルチャを返します。 このプロパティは、それと同等の`GetSystemDefaultUILanguage`Windows api。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvariantCulture">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo InvariantCulture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.CultureInfo InvariantCulture" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.InvariantCulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャに依存しない (インバリアントな) <see cref="T:System.Globalization.CultureInfo" /> オブジェクトを取得します。</summary>
+        <value>カルチャに依存しない (インバリアントな) オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インバリアント カルチャがカルチャに依存しません。関連付けられているすべての国/地域ではなくが、英語の言語を使用します。 名前を空の文字列を使用して、インバリアント カルチャを指定して ("") の呼び出しで、<xref:System.Globalization.CultureInfo>インスタンス メソッドです。 <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>また、インバリアント カルチャのインスタンスを取得します。 ほぼすべてのメソッドで使用できます、<xref:System.Globalization>カルチャを必要とする名前空間。 などのプロパティによって返されるオブジェクト<xref:System.Globalization.CultureInfo.CompareInfo%2A>、 <xref:System.Globalization.CultureInfo.DateTimeFormat%2A>、および<xref:System.Globalization.CultureInfo.NumberFormat%2A>も反映文字列の比較とインバリアント カルチャの規則を書式設定します。  
+  
+ カルチャに依存するデータ、ユーザーのカスタマイズか、.NET Framework またはオペレーティング システムの更新によって変更される可能性があるとは異なりインバリアント カルチャ データ安定した時間の経過と共におよびインストールされているカルチャ間で、ユーザーがカスタマイズすることはできません。 これにより、インバリアント カルチャを書式設定および解析を永続化操作は、データ、または並べ替えと順序付けのデータがカルチャに関係なく一定の順序で表示されることが必要な操作を書式設定など、カルチャに依存しない結果を必要とする操作に特に便利です。  
+  
+## <a name="string-operations"></a>文字列操作  
+ カルチャに依存した文字列操作の現在のスレッド カルチャの規則によって影響を受けるいないおよびするがカルチャ間で一貫のインバリアント カルチャを使用できます。 たとえば、一定の順序で表示または現在のスレッド カルチャに関係なく文字列に大文字と小文字の表記規則の標準セットを適用する並べ替え済みのデータをする可能性があります。 これを行うを渡す、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>オブジェクトを持つメソッドを<xref:System.Globalization.CultureInfo>パラメーターなど<xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.Boolean%2CSystem.Globalization.CultureInfo%29>と<xref:System.String.ToUpper%28System.Globalization.CultureInfo%29>です。  
+  
+## <a name="persisting-data"></a>データの永続化  
+ <xref:System.Globalization.CultureInfo.InvariantCulture%2A>カルチャに依存しない形式でデータを保持するプロパティを使用できます。 これにより、既知の形式およびカルチャ間でデータを逆シリアル化に使用できるし、する変更されません。 データが逆シリアル化後、形式指定できる、現在のユーザーのカルチャの規則に基づいて、適切な。  
+  
+ たとえば、文字列の形式で日付と時刻のデータを保持する場合を渡すことができます、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>オブジェクトを<xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>または<xref:System.DateTimeOffset.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>メソッドを作成して、文字列を渡すことができます、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>オブジェクトを<xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>または<xref:System.DateTimeOffset.Parse%28System.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType>文字列を日付と時刻の値に変換します。 この方法により、基になる日付と時刻の値は、データの読み取りまたは別のカルチャのユーザーによって作成されたときは変更されません。  
+  
+ 次の例は、インバリアント カルチャを使用して永続化する、<xref:System.DateTime>を文字列として値。 文字列を解析し、フランス語 (フランス) とドイツ語 (ドイツ) のカルチャの書式指定規則を使用して、その値を表示します。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.InvariantCulture#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.invariantculture/cs/persist1.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.InvariantCulture#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.invariantculture/vb/persist1.vb#1)]  
+  
+## <a name="security-decisions"></a>セキュリティ上の決定  
+ (システム リソースへのアクセスを許可するかどうか) などのセキュリティに関する決定を行う場合、文字列の比較またはケース変更の結果に基づき、する必要がありますいないインバリアント カルチャを使用します。 代わりに、行う必要がありますまたは区別しない序数に基づく比較を含むメソッドを呼び出すことによって、<xref:System.StringComparison>パラメーターをいずれかを指定すること<xref:System.StringComparison?displayProperty=nameWithType>または<xref:System.StringComparison?displayProperty=nameWithType>を引数として。 カルチャに依存した文字列の操作を実行するコードで、現在のカルチャが変更された場合、またはコードを実行しているコンピューター上のカルチャ コードをテストに使用されるカルチャと異なる場合、セキュリティの脆弱性が生じる場合があります。 これに対し、序数に基づく比較は、比較する文字のバイナリ値にのみ依存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNeutralCulture">
+      <MemberSignature Language="C#" Value="public virtual bool IsNeutralCulture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNeutralCulture" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.IsNeutralCulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureInfo" /> がニュートラル カルチャを表しているかどうかを示す値を取得します。</summary>
+        <value>
+          現在の <see cref="T:System.Globalization.CultureInfo" /> がニュートラル カルチャを表している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ニュートラル カルチャは、関連付けられているカルチャを国または地域ではなく、言語にします。 両方の言語と国または地域に関連付けられているカルチャは、特定のカルチャと異なっています。 たとえば、fr はフランス語のニュートラル カルチャの名前、FR-FR はフランスのフランス語のカルチャの名前。  
+  
+ このプロパティを返す場合`false`カルチャは、特定のカルチャまたはインバリアント カルチャのいずれか。  
+  
+   
+  
+## Examples  
+ 次のコード例では、中国語の言語を使用して、どのカルチャがニュートラル カルチャを決定します。  
+  
+> [!NOTE]
+>  この例では、zh-CHS および zh-CHT の古いカルチャ名を、カルチャ識別子としてそれぞれ 0x0004 と 0x7C04 を使用して表示します。 ただし、Windows Vista アプリケーションでは、ZH-CHS および ZH-CHT の代わりにそれ名ではなく zh Hans 名を使用する必要があります。 Zh Hans とそれ名は、現在の標準を表すし、古い名前を使用する理由がないために使用する必要があります。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.IsNeutralCulture2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.IsNeutralCulture2/CPP/neutralculture.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.IsNeutralCulture2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.IsNeutralCulture2/CS/neutralculture.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.IsNeutralCulture2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.IsNeutralCulture2/VB/neutralculture.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureInfo" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          現在の <see cref="T:System.Globalization.CultureInfo" /> が読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Globalization.CultureInfo>は読み取り専用、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>と<xref:System.Globalization.CultureInfo.NumberFormat%2A>インスタンスは、また読み取り専用です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますを<xref:System.Globalization.CultureInfo.IsReadOnly%2A>も保護、<xref:System.Globalization.DateTimeFormatInfo>と<xref:System.Globalization.NumberFormatInfo>に関連付けられたインスタンス、<xref:System.Globalization.CultureInfo>です。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.ReadOnly#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.ReadOnly/CPP/yslin_cultureinfo_readonly.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.ReadOnly#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.ReadOnly/CS/yslin_cultureinfo_readonly.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.ReadOnly#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.ReadOnly/VB/yslin_cultureinfo_readonly.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyboardLayoutId">
+      <MemberSignature Language="C#" Value="public virtual int KeyboardLayoutId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeyboardLayoutId" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.KeyboardLayoutId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブな入力ロケール識別子を取得します。</summary>
+        <value>入力ロケール識別子を指定する 32 ビットの符号付き数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力ロケール識別子には、キーボード レイアウトと呼んでいました。 入力ロケール識別子は、キーボード レイアウトより広範な概念音声からテキストへのコンバーター、入力方式エディター (IME)、またはその他の入力の形式も指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LCID">
+      <MemberSignature Language="C#" Value="public virtual int LCID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LCID" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.LCID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureInfo" /> のカルチャ識別子を取得します。</summary>
+        <value>現在の <see cref="T:System.Globalization.CultureInfo" /> のカルチャ識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどの場合、カルチャ識別子が、対応する NLS ロケール識別子にマップされます。  
+  
+ バージョンの Windows 10、ロケール識別子の前に Windows `LOCALE_CUSTOM_UNSPECIFIED` (0x1000、または 4096) は、ユーザーが作成したカスタム カルチャに割り当てられます。 Windows 10 以降では、固有のロケール識別子がない、完全なシステム指定のデータが存在しない任意のカルチャに割り当てられます。 その結果、カルチャを反復処理しを持つを取得するコードを<xref:System.Globalization.CultureInfo.LCID%2A>値`LOCALE_CUSTOM_UNSPECIFIED`の大きなサブセットを返します<xref:System.Globalization.CultureInfo>オブジェクトを Windows 10 で実行する場合。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Globalization.CultureInfo>スペイン語 (スペイン) 別の国際対応の並べ替え順序との<xref:System.Globalization.CultureInfo>従来の並べ替え順序で。  
+  
+ [!code-cpp[System.Globalization.CultureInfo_esES#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/CPP/spanishspain.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo_esES#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/CS/spanishspain.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo_esES#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/VB/spanishspain.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public virtual string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>形式のカルチャ名を取得*languagecode2*-*country/regioncode2*です。</summary>
+        <value>形式のカルチャ名*languagecode2*-*country/regioncode2*です。 *languagecode2*は小文字の 2 文字コードを ISO 639-1 から派生します。 *country/regioncode2*は ISO 3166 から派生し、通常の 2 つの大文字または bcp-47 の言語タグで構成されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みカルチャ名と識別子の一覧についてを<xref:System.Globalization.CultureInfo.Name%2A>プロパティが返すことができますを参照してください、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。 さらに、Windows 10 で始まる`name`任意の有効な bcp-47 の言語タグを指定できます。 カルチャ名が、変更される可能性がおよびこともできますを反映するカスタムのカルチャの名前に注意してください。  
+  
+ <xref:System.Globalization.CultureInfo.Name%2A?displayProperty=nameWithType>プロパティがで提供される命名標準に従い、<xref:System.Globalization.CultureInfo>クラスに関するトピック。 代替の並べ替え順序の兆候を除外するカルチャ名の短い形式を返します。 たとえば、インスタンス化する場合、 <xref:System.Globalization.CultureInfo> 、代替の並べ替え順序を反映するように文字列"de-de_phoneb"を使用して、オブジェクト、 <xref:System.Globalization.CultureInfo.Name%2A> "DE-DE"を返します。  
+  
+ カルチャの完全な名前を取得する必要がありますを使用する、 <xref:System.Globalization.CultureInfo.DisplayName%2A>、 <xref:System.Globalization.CultureInfo.EnglishName%2A>、または<xref:System.Globalization.CultureInfo.NativeName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ニュートラル カルチャのいくつかのプロパティを表示します。  
+  
+> [!NOTE]
+>  この例では、zh-CHS および zh-CHT の古いカルチャ名を、カルチャ識別子としてそれぞれ 0x0004 と 0x7C04 を使用して表示します。 ただし、Windows Vista アプリケーションでは、ZH-CHS および ZH-CHT の代わりにそれ名ではなく zh Hans 名を使用する必要があります。 Zh Hans とそれ名は、現在の標準を表すし、古い名前を使用する理由がないために使用する必要があります。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CPP/getcultures.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CS/getcultures.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/VB/getcultures.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NativeName">
+      <MemberSignature Language="C#" Value="public virtual string NativeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NativeName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.NativeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャの表示設定である、言語、国/地域、およびオプションのスクリプトで構成されるカルチャ名を取得します。</summary>
+        <value>カルチャ名。 言語の完全名、国/地域の完全名、およびオプションのスクリプトで構成されます。 形式については、<see cref="T:System.Globalization.CultureInfo" /> クラスの説明を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、.NET Framework の言語バージョンに関係なく同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberFormat">
+      <MemberSignature Language="C#" Value="public virtual System.Globalization.NumberFormatInfo NumberFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.NumberFormatInfo NumberFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.NumberFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberFormatInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値、通貨、および割合を表示する、カルチャに対応する書式を定義する <see cref="T:System.Globalization.NumberFormatInfo" /> を取得または設定します。</summary>
+        <value>数値、通貨、および割合を表示する、カルチャに対応する書式を定義する <see cref="T:System.Globalization.NumberFormatInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="overrides"></a>Overrides  
+ ユーザーは、Windows のコントロール パネルの地域と言語のオプション部分での現在のカルチャに関連付けられている値の一部をオーバーライドすることもできます。 たとえば、ユーザーは、別の形式で日付を表示するか、カルチャの既定値とは異なる通貨を使用することもできます。  
+  
+ 場合<xref:System.Globalization.CultureInfo.UseUserOverride%2A>は`true`と指定したカルチャには、Windows の現在のカルチャが一致する、<xref:System.Globalization.CultureInfo>プロパティのユーザー設定を含む、それらの上書きを使用して、<xref:System.Globalization.DateTimeFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティ、およびプロパティの<xref:System.Globalization.NumberFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>など、選択したカレンダーは、のいずれかでがない場合、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>メソッドの結果と、プロパティの値が定義されていません。  
+  
+ 値、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティおよび<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティは、ユーザー プロパティにアクセスするまで計算されません。 ユーザーは、アプリケーションを実行し、アクセス中に、新しいカルチャに現在のカルチャを変更する、コントロール パネルを使用している場合、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>または<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティ、アプリケーションが新しいカルチャの既定値を取得します。 元のカルチャのオーバーライドされません。 元の現在のカルチャのオーバーライドを保持するために、アプリケーションにアクセスする必要があります、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>と<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティ、現在のカルチャを変更する前にします。  
+  
+   
+  
+## Examples  
+ CultureInfo.Clone が複製も次のコード例を示しています、<xref:System.Globalization.DateTimeFormatInfo>と<xref:System.Globalization.NumberFormatInfo>インスタンスに関連付けられている、<xref:System.Globalization.CultureInfo>です。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.Clone#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Clone/CPP/yslin_cultureinfo_clone.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.Clone#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Clone/CS/yslin_cultureinfo_clone.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.Clone#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Clone/VB/yslin_cultureinfo_clone.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティが null に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Globalization.CultureInfo.NumberFormat" /> プロパティまたは <see cref="T:System.Globalization.NumberFormatInfo" /> プロパティのいずれかが設定されており、<see cref="T:System.Globalization.CultureInfo" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OptionalCalendars">
+      <MemberSignature Language="C#" Value="public virtual System.Globalization.Calendar[] OptionalCalendars { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.Calendar[] OptionalCalendars" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.OptionalCalendars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.Calendar[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャで使用できる暦の一覧を取得します。</summary>
+        <value>現在の <see cref="T:System.Globalization.CultureInfo" /> が表すカルチャで使用できる暦を表す <see cref="T:System.Globalization.Calendar" /> 型の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを変更し、現在使用する暦<xref:System.Globalization.CultureInfo>を設定して、<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>プロパティ<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>のインスタンスは、<xref:System.Globalization.DateTimeFormatInfo>クラス。 新しい予定表は、予定表に一覧表示のいずれかを指定する必要があります<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>です。 <xref:System.Globalization.CultureInfo.DateTimeFormat%2A>日付と時刻の書式設定に関連付けられているをカスタマイズするその他のプロパティがあります<xref:System.Globalization.DateTimeFormatInfo.Calendar%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を確認する方法を示しています、<xref:System.Globalization.GregorianCalendar>カルチャでサポートされるバージョンです。  
+  
+ [!code-cpp[System.Globalization.GregorianCalendarTypes#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendarTypes/CPP/gregoriancalendartypes.cpp#1)]
+ [!code-csharp[System.Globalization.GregorianCalendarTypes#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.GregorianCalendarTypes/CS/gregoriancalendartypes.cs#1)]
+ [!code-vb[System.Globalization.GregorianCalendarTypes#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.GregorianCalendarTypes/VB/gregoriancalendartypes.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public virtual System.Globalization.CultureInfo Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureInfo" /> の親カルチャを表す <see cref="T:System.Globalization.CultureInfo" /> を取得します。</summary>
+        <value>現在の <see cref="T:System.Globalization.CultureInfo" /> の親カルチャを表す <see cref="T:System.Globalization.CultureInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カルチャは、階層を持つがニュートラル カルチャの親は、特定のカルチャの親がニュートラル カルチャを<xref:System.Globalization.CultureInfo.InvariantCulture%2A>との親、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>自体インバリアント カルチャします。 親カルチャには、その子の間で共通する情報のセットのみが含まれます。  
+  
+ 特定のカルチャのリソースがシステムで利用できない場合は、ニュートラル カルチャのリソースが使用されます。 ニュートラル カルチャのリソースが利用できない場合は、メイン アセンブリに埋め込まれたリソースが使用されます。 リソース フォールバック プロセスの詳細については、次を参照してください。[パッケージ化と配置リソース](~/docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、中国語の言語を使用して特定の各カルチャの親カルチャを決定します。  
+  
+> [!NOTE]
+>  この例では、zh-CHS および zh-CHT の古いカルチャ名を、カルチャ識別子としてそれぞれ 0x0004 と 0x7C04 を使用して表示します。 ただし、Windows Vista アプリケーションでは、ZH-CHS および ZH-CHT の代わりにそれ名ではなく zh Hans 名を使用する必要があります。 Zh Hans とそれ名は、現在の標準を表すし、古い名前を使用する理由がないために使用する必要があります。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.Parent#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Parent/CPP/parentculture.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.Parent#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Parent/CS/parentculture.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.Parent#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.Parent/VB/parentculture.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo ReadOnly (System.Globalization.CultureInfo ci);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.CultureInfo ReadOnly(class System.Globalization.CultureInfo ci) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.ReadOnly(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ci" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="ci">ラップする <see cref="T:System.Globalization.CultureInfo" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Globalization.CultureInfo" /> オブジェクトをラップする読み取り専用のラッパーを返します。</summary>
+        <returns><paramref name="ci" /> をラップする読み取り専用の <see cref="T:System.Globalization.CultureInfo" /> ラッパー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このラッパーを`ci`、によって返されるオブジェクト、または、 `ci`.<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>と`ci`.<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を<xref:System.Globalization.CultureInfo.ReadOnly%2A>メソッドでは、保護するのに役立ちます、<xref:System.Globalization.DateTimeFormatInfo>と<xref:System.Globalization.NumberFormatInfo>インスタンスに関連付けられている、<xref:System.Globalization.CultureInfo>です。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.ReadOnly#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.ReadOnly/CPP/yslin_cultureinfo_readonly.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.ReadOnly#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.ReadOnly/CS/yslin_cultureinfo_readonly.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.ReadOnly#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.ReadOnly/VB/yslin_cultureinfo_readonly.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ci" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TextInfo">
+      <MemberSignature Language="C#" Value="public virtual System.Globalization.TextInfo TextInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.TextInfo TextInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.TextInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.TextInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャに関連付けられている書記体系を定義する <see cref="T:System.Globalization.TextInfo" /> を取得します。</summary>
+        <value>カルチャに関連付けられている書記体系を定義する <see cref="T:System.Globalization.TextInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.CultureInfo.TextInfo%2A>プロパティ文字列のカルチャに固有の大文字と小文字の情報を提供します。 カルチャを認識しない大文字と小文字を実行するアプリケーションを使用する必要があります、<xref:System.Globalization.CultureInfo.TextInfo%2A>プロパティ<xref:System.Globalization.CultureInfo.InvariantCulture%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Globalization.CultureInfo>スペイン語 (スペイン) 別の国際対応の並べ替え順序との<xref:System.Globalization.CultureInfo>従来の並べ替え順序で。  
+  
+ [!code-cpp[System.Globalization.CultureInfo_esES#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/CPP/spanishspain.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo_esES#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/CS/spanishspain.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo_esES#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo_esES/VB/spanishspain.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreeLetterISOLanguageName">
+      <MemberSignature Language="C#" Value="public virtual string ThreeLetterISOLanguageName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThreeLetterISOLanguageName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.ThreeLetterISOLanguageName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureInfo" /> の言語に対する ISO 639-2 の 3 桁の文字コードを取得します。</summary>
+        <value>現在の <see cref="T:System.Globalization.CultureInfo" /> の言語に対する ISO 639-2 の 3 桁文字コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、英語の 3 文字の省略形は"eng です"。  
+  
+> [!NOTE]
+>  間の通信を処理するか、これは通常、データの永続化は、完全を使用するより高い場合<xref:System.Globalization.CultureInfo.Name%2A?displayProperty=nameWithType>です。 言語だけを使用して、コンテキストとデータを失います。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ニュートラル カルチャのいくつかのプロパティを表示します。  
+  
+> [!NOTE]
+>  この例では、zh-CHS および zh-CHT の古いカルチャ名を、カルチャ識別子としてそれぞれ 0x0004 と 0x7C04 を使用して表示します。 ただし、Windows Vista アプリケーションでは、ZH-CHS および ZH-CHT の代わりにそれ名ではなく zh Hans 名を使用する必要があります。 Zh Hans とそれ名は、現在の標準を表すし、古い名前を使用する理由がないために使用する必要があります。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CPP/getcultures.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CS/getcultures.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/VB/getcultures.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreeLetterWindowsLanguageName">
+      <MemberSignature Language="C#" Value="public virtual string ThreeLetterWindowsLanguageName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThreeLetterWindowsLanguageName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.ThreeLetterWindowsLanguageName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows API の定義に従って、言語に対する 3 文字コードを取得します。</summary>
+        <value>Windows API で定義されている言語に対する 3 文字のコード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、Windows API のメソッドと同じ値を返します`GetLocaleInfo`はします。 たとえば、英語 (米国) は、Windows API で定義されているの 3 文字コードは、"enu"です。  
+  
+> [!NOTE]
+>  間の通信を処理するか、これは通常、データの永続化は、完全を使用するより高い場合<xref:System.Globalization.CultureInfo.Name%2A?displayProperty=nameWithType>です。 言語だけを使用して、コンテキストとデータを失います。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ニュートラル カルチャのいくつかのプロパティを表示します。  
+  
+> [!NOTE]
+>  この例では、zh-CHS および zh-CHT の古いカルチャ名を、カルチャ識別子としてそれぞれ 0x0004 と 0x7C04 を使用して表示します。 ただし、Windows Vista アプリケーションでは、ZH-CHS および ZH-CHT の代わりにそれ名ではなく zh Hans 名を使用する必要があります。 Zh Hans とそれ名は、現在の標準を表すし、古い名前を使用する理由がないために使用する必要があります。  
+  
+ [!code-cpp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CPP/getcultures.cpp#1)]
+ [!code-csharp[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/CS/getcultures.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.GetCultures#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.CultureInfo.GetCultures/VB/getcultures.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.CultureInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の名前を含む文字列を返します<see cref="T:System.Globalization.CultureInfo" />形式で*languagecode2*-*country/regioncode2*です。</summary>
+        <returns>現在の <see cref="T:System.Globalization.CultureInfo" /> の名前を格納している文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.ToString%2A?displayProperty=nameWithType>します。 渡されるカルチャ名の正規化されたバージョンを返します、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29>または<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29>コンス トラクターまたは、<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A>または<xref:System.Globalization.CultureInfo.GetCultureInfo%28System.String%29>メソッドです。 内の文字を変換することで、結果の文字列を正規化が*languagecode2*への変換、小文字の文字に*country/regioncode2*を必要に応じてを大文字に変換します。  
+  
+ 定義済みのカルチャの名前にある、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center のページです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TwoLetterISOLanguageName">
+      <MemberSignature Language="C#" Value="public virtual string TwoLetterISOLanguageName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TwoLetterISOLanguageName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.TwoLetterISOLanguageName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureInfo" /> の言語に対する ISO 639-1 の 2 桁の文字コードを取得します。</summary>
+        <value>現在の <see cref="T:System.Globalization.CultureInfo" /> の言語に対する ISO 639-1 の 2 桁文字コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、英語の 2 文字コードは"en"です。 <xref:System.Globalization.CultureInfo.TwoLetterISOLanguageName%2A>インバリアント カルチャのプロパティの値は"iv"です。  
+  
+> [!NOTE]
+>  間の通信を処理するか、これは通常、データの永続化は、完全を使用するより高い場合<xref:System.Globalization.CultureInfo.Name%2A?displayProperty=nameWithType>です。 言語だけを使用して、コンテキストとデータを失います。  
+  
+ ISO 639-1 では、特定のカルチャの 2 文字の言語コードが定義されていない場合、<xref:System.Globalization.CultureInfo.TwoLetterISOLanguageName%2A>プロパティの 3 文字以上で構成される文字列を返します。 詳細については、例を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、カルチャの表示が<xref:System.Globalization.CultureInfo.TwoLetterISOLanguageName%2A>プロパティが 2 文字の言語コードの構成がありません。  
+  
+ [!code-csharp[System.Globalization.CultureInfo.TwoLetterISOLanguageName#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.twoletterisolanguagename/cs/twoletterisolanguagename1.cs#1)]
+ [!code-vb[System.Globalization.CultureInfo.TwoLetterISOLanguageName#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.twoletterisolanguagename/vb/twoletterisolanguagename1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseUserOverride">
+      <MemberSignature Language="C#" Value="public bool UseUserOverride { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseUserOverride" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.CultureInfo.UseUserOverride" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.CultureInfo" /> オブジェクトでユーザーが選択したカルチャ設定を使用するかどうかを示す値を取得します。</summary>
+        <value>
+          現在の <see cref="T:System.Globalization.CultureInfo" /> でユーザーが選択したカルチャ設定を使用する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、Windows のコントロール パネルの地域と言語のオプション部分での現在のカルチャに関連付けられている値の一部をオーバーライドすることもできます。 たとえば、ユーザーは、別の形式で日付を表示するか、カルチャの既定値とは異なる通貨を使用することもできます。  
+  
+ 場合<xref:System.Globalization.CultureInfo.UseUserOverride%2A>は`true`と指定したカルチャには、Windows の現在のカルチャが一致する、<xref:System.Globalization.CultureInfo>プロパティのユーザー設定を含む、それらの上書きを使用して、<xref:System.Globalization.DateTimeFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.DateTimeFormat%2A>プロパティ、およびプロパティの<xref:System.Globalization.NumberFormatInfo>によって返されるインスタンス、<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>など、選択したカレンダーは、のいずれかでがない場合、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>メソッドの結果と、プロパティの値が定義されていません。  
+  
+ 場合、このプロパティが設定、<xref:System.Globalization.CultureInfo>を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

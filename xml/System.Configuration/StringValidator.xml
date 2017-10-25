@@ -1,0 +1,224 @@
+<Type Name="StringValidator" FullName="System.Configuration.StringValidator">
+  <TypeSignature Language="C#" Value="public class StringValidator : System.Configuration.ConfigurationValidatorBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StringValidator extends System.Configuration.ConfigurationValidatorBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.StringValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationValidatorBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字列の検証を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.StringValidator>文字列が特定の条件を満たしていることを確認するクラスを使用します。 インスタンスの検証の基準が確立される、<xref:System.Configuration.StringValidator>クラスを作成します。 3 つのコンス トラクター オーバー ロードがあります、<xref:System.Configuration.StringValidator>クラスです。 <xref:System.Configuration.StringValidator.%23ctor%28System.Int32%29?displayProperty=nameWithType> 1 つのパラメーターを持つコンス トラクターが、許容される最小長の文字列が検証されるを確認します。 <xref:System.Configuration.StringValidator.%23ctor%28System.Int32%2CSystem.Int32%29?displayProperty=nameWithType> 2 つのパラメーターを持つコンス トラクター、文字列が検証されているが、最小および最大長の両方に準拠していることを確認します。 <xref:System.Configuration.StringValidator.%23ctor%28System.Int32%2CSystem.Int32%2CSystem.String%29?displayProperty=nameWithType> 3 つのパラメーターを持つコンス トラクターは、最小値と特定の文字が検証対象文字列内に存在するかどうかも、検証されている文字列の最大長の値の両方を確認します。  
+  
+ <xref:System.Configuration.StringValidator.CanValidate%2A>メソッドでは、オブジェクトの種類の検証中に、予期された型が一致するかどうかを判断します。 検証されるオブジェクトのパラメーターとして渡されます、<xref:System.Configuration.StringValidator.Validate%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Configuration.StringValidator>型です。  
+  
+ [!code-csharp[System.Configuration.StringValidator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.StringValidator/CS/StringValidator.cs#1)]
+ [!code-vb[System.Configuration.StringValidator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.StringValidator/VB/StringValidator.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringValidator (int minLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 minLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.StringValidator.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="minLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="minLength">文字列値の最小の長さを指定する整数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.StringValidator" />クラス、指定されたパラメーターに基づいて。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.StringValidator.%23ctor%2A>コンス トラクターが、許容される最小長の文字列が検証されるを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringValidator (int minLength, int maxLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 minLength, int32 maxLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.StringValidator.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="minLength" Type="System.Int32" />
+        <Parameter Name="maxLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="minLength">文字列値の最小の長さを指定する整数。</param>
+        <param name="maxLength">文字列値の最大長を指定する整数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.StringValidator" />クラス、指定されたパラメーターを基にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Configuration.StringValidator.%23ctor%2A>コンス トラクター、文字列が検証されているが、最小および最大長の両方に準拠していることを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StringValidator (int minLength, int maxLength, string invalidCharacters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 minLength, int32 maxLength, string invalidCharacters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.StringValidator.#ctor(System.Int32,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="minLength" Type="System.Int32" />
+        <Parameter Name="maxLength" Type="System.Int32" />
+        <Parameter Name="invalidCharacters" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="minLength">文字列値の最小の長さを指定する整数。</param>
+        <param name="maxLength">文字列値の最大長を指定する整数。</param>
+        <param name="invalidCharacters">無効な文字を表す文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.StringValidator" />クラス、指定されたパラメーターを基にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Configuration.StringValidator.%23ctor%2A>コンス トラクターにより、検証対象の文字列が最小と最大の長さの両方に準拠し、特定の文字が文字列で除外されているようになります。  
+  
+   
+  
+## Examples  
+ 次の例は、これを使用する方法を示します<xref:System.Configuration.StringValidator.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Configuration.StringValidator>クラスです。  
+  
+ [!code-csharp[System.Configuration.StringValidator#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.StringValidator/CS/StringValidator.cs#2)]
+ [!code-vb[System.Configuration.StringValidator#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.StringValidator/VB/StringValidator.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidate">
+      <MemberSignature Language="C#" Value="public override bool CanValidate (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanValidate(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.StringValidator.CanValidate(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型。</param>
+        <summary>型に基づくオブジェクトを検証できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="type" />文字列に一致するパラメーターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Configuration.StringValidator.CanValidate%2A> メソッドの使用方法を次の例に示します。 このコード例に示されている例の一部である、<xref:System.Configuration.StringValidator>クラスです。  
+  
+ [!code-csharp[System.Configuration.StringValidator#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.StringValidator/CS/StringValidator.cs#3)]
+ [!code-vb[System.Configuration.StringValidator#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.StringValidator/VB/StringValidator.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public override void Validate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Validate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.StringValidator.Validate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">オブジェクトの値。</param>
+        <summary>オブジェクトの値が有効かどうかを判断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.StringValidator>クラスには、文字列オブジェクトを検証するために必要な条件が含まれています。 インスタンスの場合に、基準が確立されて、<xref:System.Configuration.StringValidator>クラスを作成します。 検証対象のオブジェクトがのパラメーターとして渡される、<xref:System.Configuration.StringValidator.Validate%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ <xref:System.Configuration.StringValidator.Validate%2A> メソッドの使用方法を次の例に示します。 このコード例に示されている例の一部である、<xref:System.Configuration.StringValidator>クラスです。  
+  
+ [!code-csharp[System.Configuration.StringValidator#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.StringValidator/CS/StringValidator.cs#4)]
+ [!code-vb[System.Configuration.StringValidator#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.StringValidator/VB/StringValidator.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />より小さい<paramref name="minValue" />以上<paramref name="maxValue" />コンス トラクターで定義されています。  
+  
+ \- または  
+  
+ <paramref name="value" />無効な文字が含まれています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

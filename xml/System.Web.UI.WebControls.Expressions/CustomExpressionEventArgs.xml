@@ -1,0 +1,75 @@
+<Type Name="CustomExpressionEventArgs" FullName="System.Web.UI.WebControls.Expressions.CustomExpressionEventArgs">
+  <TypeSignature Language="C#" Value="public class CustomExpressionEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomExpressionEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Expressions.CustomExpressionEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベントのデータを表す、<see cref="T:System.Web.UI.WebControls.Expressions.CustomExpression" />クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomExpressionEventArgs (System.Linq.IQueryable source, System.Collections.Generic.IDictionary&lt;string,object&gt; values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Linq.IQueryable source, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Expressions.CustomExpressionEventArgs.#ctor(System.Linq.IQueryable,System.Collections.Generic.IDictionary{System.String,System.Object})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+        <Parameter Name="values" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="source">使用するデータ ソース オブジェクト。</param>
+        <param name="values">評価された値のパラメーター コレクションから、<see cref="T:System.Web.UI.WebControls.Expressions.CustomExpression" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.Expressions.CustomExpressionEventArgs" />データ ソース オブジェクトとの辞書を使用してパラメーター値を評価します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Query">
+      <MemberSignature Language="C#" Value="public System.Linq.IQueryable Query { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.IQueryable Query" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Expressions.CustomExpressionEventArgs.Query" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ソース オブジェクトを設定します。</summary>
+        <value>データ ソース オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Expressions.CustomExpressionEventArgs.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の評価された値、<see cref="T:System.Web.UI.WebControls.ParameterCollection" />のインスタンス、<see cref="T:System.Web.UI.WebControls.Expressions.CustomExpression" />オブジェクト。</summary>
+        <value>評価された値から、<see cref="T:System.Web.UI.WebControls.ParameterCollection" />のインスタンス、<see cref="T:System.Web.UI.WebControls.Expressions.CustomExpression" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

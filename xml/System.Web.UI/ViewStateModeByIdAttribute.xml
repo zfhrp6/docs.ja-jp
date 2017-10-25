@@ -1,0 +1,63 @@
+<Type Name="ViewStateModeByIdAttribute" FullName="System.Web.UI.ViewStateModeByIdAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ViewStateModeByIdAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ViewStateModeByIdAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ViewStateModeByIdAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メタデータ属性を定義するには、その ASP.NET サーバー コントロールを使用してそれらのビュー状態の情報の読み込み中に参加するかどうかを指定<see cref="P:System.Web.UI.Control.ID" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ViewStateModeByIdAttribute>クラスを使用してのビューステートの読み込みを必要とするコントロールを指定を<xref:System.Web.UI.Control.ID%2A>です。 既定のビューステートの読み込み動作は、ページのコントロール ツリー内のインデックスで、コントロールのビュー ステート情報を読み込むには ASP.NET 用です。 ビュー ステート情報を読み込むためのパフォーマンス コストは<xref:System.Web.UI.Control.ID%2A>のためがビュー状態情報を読み込む前に、具体的には、コントロールのページ コントロールのツリーを検索する必要があります。  
+  
+ 場合、<xref:System.Web.UI.ViewStateModeByIdAttribute>クラスは、カスタム コントロールのクラス、メタデータの属性として使用  
+  
+ <xref:System.Web.UI.Control.LoadViewStateByID%2A>コントロールのプロパティを返します`true`です。 場合、<xref:System.Web.UI.ViewStateModeByIdAttribute>クラスを使用しない、<xref:System.Web.UI.Control.LoadViewStateByID%2A>コントロールのプロパティの既定値を返します`false`、コントロールがそのビュー状態の情報を読み込めなかったことを意味する<xref:System.Web.UI.Control.ID%2A>です。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ <xref:System.Web.UI.ViewStateModeByIdAttribute>クラスは、コントロールのビュー ステート情報を保存するのには適用されません。  
+  
+ <xref:System.Web.UI.ViewStateModeByIdAttribute>クラス メタデータの属性がクラス宣言でのみ有効です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ViewStateModeByIdAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ViewStateModeByIdAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ViewStateModeByIdAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用する、<xref:System.Web.UI.ViewStateModeByIdAttribute>コントロール クラスを意味コントロールがによって読み込まれたビュー ステート情報を持つ<xref:System.Web.UI.Control.ID%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

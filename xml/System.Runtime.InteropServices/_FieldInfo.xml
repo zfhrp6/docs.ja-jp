@@ -1,0 +1,1157 @@
+<Type Name="_FieldInfo" FullName="System.Runtime.InteropServices._FieldInfo">
+  <TypeSignature Language="C#" Value="public interface _FieldInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract _FieldInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices._FieldInfo" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CLSCompliant(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("8A7C1442-A9FB-366B-80D8-4939FFA6DBE0")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.TypeLibImportClass(typeof(System.Reflection.FieldInfo))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>パブリック メンバーを公開、<see cref="T:System.Reflection.FieldInfo" />アンマネージ コードにクラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、アンマネージ コードからマネージ クラスには、アクセスをマネージ コードから呼び出すことはできません。  
+  
+ このインターフェイスの vtable 順序の維持、<xref:System.Reflection.FieldInfo?displayProperty=nameWithType>アンマネージ COM オブジェクトでアクセスできるメンバーのクラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.Reflection.FieldAttributes Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.FieldAttributes Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.Attributes" />プロパティです。</summary>
+        <value><see cref="T:System.Reflection.FieldAttributes" />このフィールドにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.Attributes%2A>プロパティは、このフィールドに関連付けられている属性を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeclaringType">
+      <MemberSignature Language="C#" Value="public Type DeclaringType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DeclaringType" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.DeclaringType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.MemberInfo.DeclaringType" />プロパティです。</summary>
+        <value><see cref="T:System.Type" />このメンバーを宣言するクラスのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.MemberInfo.DeclaringType%2A>プロパティは、このメンバーを宣言するクラスを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (object other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(object other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の <see cref="T:System.Object" /> と比較する <see cref="T:System.Object" />。</param>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Object.Equals(System.Object)" />メソッドです。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.Object" /> と等しい場合は <see cref="T:System.Object" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Object.Equals%2A>メソッドを判断するかどうか、指定した<xref:System.Object>が現在に等しい<xref:System.Object>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldHandle">
+      <MemberSignature Language="C#" Value="public RuntimeFieldHandle FieldHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.RuntimeFieldHandle FieldHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.FieldHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeFieldHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.FieldHandle" />プロパティです。</summary>
+        <value>フィールドの内部メタデータ表現へのハンドル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.FieldHandle%2A>プロパティを取得、 <xref:System.RuntimeFieldHandle>、これは、フィールドの内部メタデータ表現へのハンドル。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldType">
+      <MemberSignature Language="C#" Value="public Type FieldType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type FieldType" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.FieldType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.FieldType" />プロパティです。</summary>
+        <value>このフィールド オブジェクトの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.FieldType%2A>プロパティは、このフィールド オブジェクトの種類を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetCustomAttributes">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="Overload:System.Reflection.MemberInfo.GetCustomAttributes" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.MemberInfo.GetCustomAttributes%2A>メソッドは、このメンバーに適用されるすべての属性を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public object[] GetCustomAttributes (bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] GetCustomAttributes(bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.GetCustomAttributes(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inherit">このメンバーの継承チェーンを検索して属性を見つけるかどうかを指定します。</param>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Reflection.MemberInfo.GetCustomAttributes(System.Boolean)" />メソッドです。</summary>
+        <returns>すべてのカスタム属性を含む配列。 または属性が定義されていない場合は 0 要素の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.MemberInfo.GetCustomAttributes%2A>メソッドは、すべてのカスタム属性を含む配列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public object[] GetCustomAttributes (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] GetCustomAttributes(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.GetCustomAttributes(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">検索する属性の種類。 この型に代入可能な属性だけが返されます。</param>
+        <param name="inherit">このメンバーの継承チェーンを検索して属性を見つけるかどうかを指定します。</param>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Reflection.MemberInfo.GetCustomAttributes(System.Type,System.Boolean)" />メソッドです。</summary>
+        <returns>このメンバーに適用されるカスタム属性の配列。 または属性が適用されていない場合はゼロ (0) 要素の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.MemberInfo.GetCustomAttributes%2A>メソッドによって識別されるカスタム属性の配列を返します<xref:System.Type>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Object.GetHashCode" />メソッドです。</summary>
+        <returns>現在のインスタンスのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Object.GetHashCode%2A>メソッドは、特定の型のハッシュ関数として機能します。 <xref:System.Object.GetHashCode%2A> は、ハッシュ アルゴリズムや、ハッシュ テーブルなどのデータ構造での使用に適しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIDsOfNames">
+      <MemberSignature Language="C#" Value="public void GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" />
+        <Parameter Name="cNames" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="rgszNames">マッピング対象として渡される名前の配列。</param>
+        <param name="cNames">マッピングされる名前のカウント。</param>
+        <param name="lcid">名前を解釈するロケール コンテキスト。</param>
+        <param name="rgDispId">名前に対応する ID を受け取る、呼び出し元割り当て済み配列。</param>
+        <summary>一連の名前を対応する一連のディスパッチ識別子に割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetIDsOfNames`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.GetType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Object.GetType" />メソッドです。</summary>
+        <returns><see cref="T:System.Type" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Object.GetType%2A>メソッドは、現在のインスタンスの型を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeInfo">
+      <MemberSignature Language="C#" Value="public void GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTInfo" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="iTInfo">返される型情報。</param>
+        <param name="lcid">型情報のロケール ID。</param>
+        <param name="ppTInfo">要求された型情報オブジェクトへのポインターを取得します。</param>
+        <summary>オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfo`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeInfoCount">
+      <MemberSignature Language="C#" Value="public void GetTypeInfoCount (out uint pcTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.GetTypeInfoCount(System.UInt32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcTInfo" Type="System.UInt32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pcTInfo">オブジェクトにより提供される型タイプ情報インターフェイスの数を受け取る場所を指定します。</param>
+        <summary>オブジェクトが提供する型情報インターフェイスの数 (0 または 1) を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfoCount`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetValue(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.GetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">フィールド値が返されるオブジェクト。</param>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Reflection.FieldInfo.GetValue(System.Object)" />メソッドです。</summary>
+        <returns>このインスタンスがリフレクションするフィールドの値を保持しているオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.GetValue%2A>メソッドは、特定のオブジェクトでサポートされているフィールドの値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueDirect">
+      <MemberSignature Language="C#" Value="public object GetValueDirect (TypedReference obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetValueDirect(valuetype System.TypedReference obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.GetValueDirect(System.TypedReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.TypedReference" />
+      </Parameters>
+      <Docs>
+        <param name="obj">A<see cref="T:System.TypedReference" />を場所とその場所に保存されている型のランタイム表現マネージ ポインターをカプセル化します。</param>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Reflection.FieldInfo.GetValueDirect(System.TypedReference)" />メソッドです。</summary>
+        <returns><see cref="T:System.Object" />フィールドの値を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.GetValueDirect%2A>メソッドは、特定のオブジェクトでサポートされているフィールドの値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public void Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispIdMember" Type="System.UInt32" />
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="wFlags" Type="System.Int16" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="dispIdMember">メンバーを識別します。</param>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="lcid">引数を解釈する対象のロケール コンテキスト。</param>
+        <param name="wFlags">呼び出しのコンテキストを記述するフラグ。</param>
+        <param name="pDispParams">引数の配列、名前付き引数の DISPID の配列、配列内の要素数のカウントを格納している構造体へのポインター。</param>
+        <param name="pVarResult">結果が格納される場所へのポインター。</param>
+        <param name="pExcepInfo">例外情報を格納する構造体へのポインター。</param>
+        <param name="puArgErr">エラーが存在する最初の引数のインデックス。</param>
+        <summary>オブジェクトによって公開されたプロパティおよびメソッドへのアクセスを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::Invoke`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAssembly">
+      <MemberSignature Language="C#" Value="public bool IsAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsAssembly" />プロパティです。</summary>
+        <value>
+          <see langword="true" />フィールドの場合、<see langword="Assembly" />属性の設定、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsAssembly%2A>プロパティは、このフィールドがあるかどうかを示す値を取得`Assembly`可視性のレベルです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefined">
+      <MemberSignature Language="C#" Value="public bool IsDefined (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDefined(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.IsDefined(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType"><see cref="T:System.Type" />のカスタム属性が適用されるオブジェクトします。</param>
+        <param name="inherit">このメンバーの継承チェーンを検索して属性を見つけるかどうかを指定します。</param>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Reflection.MemberInfo.IsDefined(System.Type,System.Boolean)" />メソッドです。</summary>
+        <returns>
+          <see langword="true" />場合 1 つ以上のインスタンス<paramref name="attributeType" />は、このメンバーに適用されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.MemberInfo.IsDefined%2A>メソッドを示しますか 1 つ以上のインスタンス`attributeType`はこのメンバーに適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFamily">
+      <MemberSignature Language="C#" Value="public bool IsFamily { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsFamily" />プロパティです。</summary>
+        <value>
+          <see langword="true" />フィールドの場合、<see langword="Family" />属性の設定、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsFamily%2A>プロパティは、このフィールドがあるかどうかを示す値を取得`Family`可視性のレベルです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFamilyAndAssembly">
+      <MemberSignature Language="C#" Value="public bool IsFamilyAndAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFamilyAndAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsFamilyAndAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsFamilyAndAssembly" />プロパティです。</summary>
+        <value>
+          <see langword="true" />フィールドの場合、<see langword="FamANDAssem" />属性の設定、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsFamilyAndAssembly%2A>プロパティは、このフィールドがあるかどうかを示す値を取得`FamilyAndAssembly`可視性のレベルです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFamilyOrAssembly">
+      <MemberSignature Language="C#" Value="public bool IsFamilyOrAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFamilyOrAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsFamilyOrAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsFamilyOrAssembly" />プロパティです。</summary>
+        <value>
+          <see langword="true" />フィールドの場合、<see langword="FamORAssem" />属性の設定、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsFamilyOrAssembly%2A>プロパティは、このフィールドがあるかどうかを示す値を取得`FamilyOrAssembly`可視性のレベルです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitOnly">
+      <MemberSignature Language="C#" Value="public bool IsInitOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInitOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsInitOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsInitOnly" />プロパティです。</summary>
+        <value>
+          <see langword="true" />フィールドの場合、<see langword="InitOnly" />属性の設定、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsInitOnly%2A>プロパティは、フィールドには、コンス トラクターの本体でのみ設定するかどうかを示す値を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLiteral">
+      <MemberSignature Language="C#" Value="public bool IsLiteral { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLiteral" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsLiteral" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsLiteral" />プロパティです。</summary>
+        <value>
+          <see langword="true" />フィールドの場合、<see langword="Literal" />属性の設定、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsLiteral%2A>プロパティは、値がコンパイル時に書き込まれ、変更することはできないかどうかを示す値を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNotSerialized">
+      <MemberSignature Language="C#" Value="public bool IsNotSerialized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNotSerialized" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsNotSerialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsNotSerialized" />プロパティです。</summary>
+        <value>
+          <see langword="true" />フィールドの場合、<see langword="NotSerialized" />属性の設定、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsNotSerialized%2A>プロパティは、このフィールドがあるかどうかを示す値を取得、`NotSerialized`属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPinvokeImpl">
+      <MemberSignature Language="C#" Value="public bool IsPinvokeImpl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPinvokeImpl" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsPinvokeImpl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsPinvokeImpl" />プロパティです。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="PinvokeImpl" />属性では設定<see cref="T:System.Reflection.FieldAttributes" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsPinvokeImpl%2A>プロパティを示す値を取得するかどうか、対応する`PinvokeImpl`属性では設定<xref:System.Reflection.FieldAttributes>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrivate">
+      <MemberSignature Language="C#" Value="public bool IsPrivate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrivate" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsPrivate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsPrivate" />プロパティです。</summary>
+        <value>
+          <see langword="true" />場合は、このフィールドはプライベートです。それ以外の場合です。<see langword="false" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsPrivate%2A>プロパティは、フィールドはプライベートであるかどうかを示す値を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPublic">
+      <MemberSignature Language="C#" Value="public bool IsPublic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPublic" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsPublic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsPublic" />プロパティです。</summary>
+        <value>
+          <see langword="true" />このフィールドがパブリックの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsPublic%2A>プロパティは、フィールドがパブリックであるかどうかを示す値を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSpecialName">
+      <MemberSignature Language="C#" Value="public bool IsSpecialName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSpecialName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsSpecialName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsSpecialName" />プロパティです。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="SpecialName" />属性では設定<see cref="T:System.Reflection.FieldAttributes" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsSpecialName%2A>プロパティを示す値を取得するかどうか、対応する`SpecialName`属性の設定、<xref:System.Reflection.FieldAttributes>列挙子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStatic">
+      <MemberSignature Language="C#" Value="public bool IsStatic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStatic" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.IsStatic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.IsStatic" />プロパティです。</summary>
+        <value>
+          <see langword="true" />場合、このフィールドは静的です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.IsStatic%2A>プロパティは、このフィールドは静的かどうかを示す値を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberType">
+      <MemberSignature Language="C#" Value="public System.Reflection.MemberTypes MemberType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MemberTypes MemberType" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.MemberType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.FieldInfo.MemberType" />プロパティです。</summary>
+        <value>このメンバーがフィールドであることを示す <see cref="T:System.Reflection.MemberTypes" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.MemberType%2A>プロパティを取得、<xref:System.Reflection.MemberTypes>このメンバーがフィールドであることを示す値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.MemberInfo.Name" />プロパティです。</summary>
+        <value>A<see cref="T:System.String" />このメンバーの名前を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.MemberInfo.Name%2A>プロパティは、現在のメンバーの名前を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectedType">
+      <MemberSignature Language="C#" Value="public Type ReflectedType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ReflectedType" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices._FieldInfo.ReflectedType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="P:System.Reflection.MemberInfo.ReflectedType" />プロパティです。</summary>
+        <value><see cref="T:System.Type" />このオブジェクトが取得されたオブジェクトします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、アンマネージ コードからマネージ クラスには、アクセスと、マネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.MemberInfo.ReflectedType%2A>プロパティのこのインスタンスの取得に使用されたクラス オブジェクトを取得する<xref:System.Reflection.MemberInfo>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SetValue">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="Overload:System.Reflection.FieldInfo.SetValue" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.SetValue%2A>メソッドは、特定の値に指定されたオブジェクトのフィールドの値を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (object obj, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(object obj, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.SetValue(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">フィールド値が設定されるオブジェクト。</param>
+        <param name="value">フィールドに代入する値。</param>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Reflection.FieldInfo.SetValue(System.Object,System.Object)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.SetValue%2A>メソッドが、指定されたオブジェクトでサポートされているフィールドの値を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (object obj, object value, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(object obj, object value, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.SetValue(System.Object,System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="obj">フィールド値が設定されるオブジェクト。</param>
+        <param name="value">フィールドに代入する値。</param>
+        <param name="invokeAttr">フィールド<see cref="T:System.Reflection.Binder" />が必要なバインドの種類を指定する (たとえば、<see langword="Binder.CreateInstance" />または<see langword="Binder.ExactBinding" />)。</param>
+        <param name="binder">一連のプロパティをバインディング、引数型の強制変換、リフレクションによるメンバーの呼び出しを有効にします。 場合<c>バインダー</c>は<see langword="null" />、し<see langword="Binder.DefaultBinding" />を使用します。</param>
+        <param name="culture">特定のカルチャのソフトウェア環境を設定します。</param>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Reflection.PropertyInfo.SetValue(System.Object,System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.PropertyInfo.SetValue%2A>メソッドが、指定されたオブジェクトでサポートされているフィールドの値を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValueDirect">
+      <MemberSignature Language="C#" Value="public void SetValueDirect (TypedReference obj, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValueDirect(valuetype System.TypedReference obj, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.SetValueDirect(System.TypedReference,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.TypedReference" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">フィールド値が設定されるオブジェクト。</param>
+        <param name="value">フィールドに代入する値。</param>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Reflection.FieldInfo.SetValueDirect(System.TypedReference,System.Object)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ <xref:System.Reflection.FieldInfo.SetValueDirect%2A>メソッドが、指定されたオブジェクトでサポートされているフィールドの値を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices._FieldInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>COM オブジェクトを提供するバージョンに依存しないアクセス権を持つ、<see cref="M:System.Object.ToString" />メソッドです。</summary>
+        <returns>現在の <see cref="T:System.Object" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

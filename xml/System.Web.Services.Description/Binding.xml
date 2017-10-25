@@ -1,0 +1,189 @@
+<Type Name="Binding" FullName="System.Web.Services.Description.Binding">
+  <TypeSignature Language="C#" Value="public sealed class Binding : System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Binding extends System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.Binding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.NamedItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtensionPoint("Extensions")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>具体的なデータ形式と XML Web サービスで使用されるプロトコルを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Binding`クラスが Web サービス記述言語 (WSDL) に対応しています`<binding>`要素で囲まれたルート`<definitions>`要素。 WSDL の詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例での一般的な使用、`Binding`クラスです。  
+  
+ [!code-cpp[BindingCollectionsample1#3](~/samples/snippets/cpp/VS_Snippets_Remoting/BindingCollectionsample1/CPP/bindingcollectionsample1.cpp#3)]
+ [!code-csharp[BindingCollectionsample1#3](~/samples/snippets/csharp/VS_Snippets_Remoting/BindingCollectionsample1/CS/bindingcollectionsample1.cs#3)]
+ [!code-vb[BindingCollectionsample1#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/BindingCollectionsample1/VB/bindingcollectionsample1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Binding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.Binding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.Binding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public override System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Binding.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML Web サービスで使用される機能拡張要素のコレクションを取得します。</summary>
+        <value>A <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> XML Web サービスで使用される機能拡張要素のコレクションを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、`Extensions`プロパティです。  
+  
+ [!code-cpp[BindingCollectionSample2#4](~/samples/snippets/cpp/VS_Snippets_Remoting/BindingCollectionSample2/CPP/bindingcollectionsample2.cpp#4)]
+ [!code-csharp[BindingCollectionSample2#4](~/samples/snippets/csharp/VS_Snippets_Remoting/BindingCollectionSample2/CS/bindingcollectionsample2.cs#4)]
+ [!code-vb[BindingCollectionSample2#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/BindingCollectionSample2/VB/bindingcollectionsample2.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operations">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.OperationBindingCollection Operations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.OperationBindingCollection Operations" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Binding.Operations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("operation")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationBindingCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データの形式と XML Web サービスによってサポートされているアクションで使用されるメッセージ プロトコルの仕様のコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.Services.Description.OperationBindingCollection" />データ形式と XML Web サービスによってサポートされているアクションで使用されるメッセージ プロトコルの仕様のコレクションを格納しているオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、`Operations`プロパティです。  
+  
+ [!code-cpp[BindingCollectionSample2#5](~/samples/snippets/cpp/VS_Snippets_Remoting/BindingCollectionSample2/CPP/bindingcollectionsample2.cpp#5)]
+ [!code-csharp[BindingCollectionSample2#5](~/samples/snippets/csharp/VS_Snippets_Remoting/BindingCollectionSample2/CS/bindingcollectionsample2.cs#5)]
+ [!code-vb[BindingCollectionSample2#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/BindingCollectionSample2/VB/bindingcollectionsample2.vb#5)]  
+[!code-cpp[BindingCollectionSample2#8](~/samples/snippets/cpp/VS_Snippets_Remoting/BindingCollectionSample2/CPP/bindingcollectionsample2.cpp#8)]
+[!code-csharp[BindingCollectionSample2#8](~/samples/snippets/csharp/VS_Snippets_Remoting/BindingCollectionSample2/CS/bindingcollectionsample2.cs#8)]
+[!code-vb[BindingCollectionSample2#8](~/samples/snippets/visualbasic/VS_Snippets_Remoting/BindingCollectionSample2/VB/bindingcollectionsample2.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceDescription">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescription ServiceDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescription ServiceDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Binding.ServiceDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Services.Description.ServiceDescription" />うち、<see cref="T:System.Web.Services.Description.Binding" />メンバーであります。</summary>
+        <value>A<see cref="T:System.Web.Services.Description.ServiceDescription" />うち、<see cref="T:System.Web.Services.Description.Binding" />メンバーであります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlQualifiedName Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.Binding.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("type")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前空間で修飾された名前を表す値、<see cref="T:System.Web.Services.Description.PortType" />いる、<see langword="Binding" />が関連付けられています。</summary>
+        <value><see cref="T:System.Xml.XmlQualifiedName" />の<see cref="T:System.Web.Services.Description.PortType" />いる、<see langword="Binding" />が関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、空の文字列 ("") です。  
+  
+   
+  
+## Examples  
+ 次の例での使用、`Type`プロパティです。  
+  
+ [!code-cpp[BindingCollectionSample2#3](~/samples/snippets/cpp/VS_Snippets_Remoting/BindingCollectionSample2/CPP/bindingcollectionsample2.cpp#3)]
+ [!code-csharp[BindingCollectionSample2#3](~/samples/snippets/csharp/VS_Snippets_Remoting/BindingCollectionSample2/CS/bindingcollectionsample2.cs#3)]
+ [!code-vb[BindingCollectionSample2#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/BindingCollectionSample2/VB/bindingcollectionsample2.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

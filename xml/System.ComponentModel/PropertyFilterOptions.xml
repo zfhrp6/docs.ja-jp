@@ -1,0 +1,128 @@
+<Type Name="PropertyFilterOptions" FullName="System.ComponentModel.PropertyFilterOptions">
+  <TypeSignature Language="C#" Value="public enum PropertyFilterOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PropertyFilterOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.PropertyFilterOptions" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティを具体的には型記述子で報告するかを指定します、<see cref="M:System.ComponentModel.TypeDescriptor.GetProperties(System.Object)" />メソッドです。 この列挙体がの値の指定に使用される、<see cref="P:System.ComponentModel.PropertyFilterAttribute.Filter" />プロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィルター機構は、カスタム<xref:System.ComponentModel.DependencyPropertyDescriptor>の<xref:System.Windows.DependencyObject>します。  
+  
+ 無効または有効なは、添付プロパティに対してのみ適用されます。 プロパティの有効性は、次の属性の操作によって決定されます。 <xref:System.Windows.AttachedPropertyBrowsableForChildrenAttribute> 、 <xref:System.Windows.AttachedPropertyBrowsableForTypeAttribute>、<xref:System.Windows.AttachedPropertyBrowsableWhenAttributePresentAttribute>を定義する添付プロパティの目的のスコープのオブジェクト ツリーで 1 回、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]が読み込まれます。 プロパティ グリッドを設定し、グリッド内の添付プロパティを追加するデザイナー アプリケーションには、値と、これらの属性が存在する添付プロパティを"所有"する親または子のいずれかの要素に対する現在の要素の相対位置を調べる必要があります。 属性の値と共に所有者 setter リレーションシップと<xref:System.ComponentModel.PropertyFilterOptions>要素に設定されている特定の接続プロパティが有効か無効かどうかが定義されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.PropertyFilterOptions All = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.PropertyFilterOptions.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyFilterOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのプロパティを返します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Invalid">
+      <MemberSignature Language="C#" Value="Invalid" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.PropertyFilterOptions Invalid = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.PropertyFilterOptions.Invalid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyFilterOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの現在のコンテキストが指定された場合に、無効なプロパティのみを返します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.PropertyFilterOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.PropertyFilterOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyFilterOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティを返しません</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValues">
+      <MemberSignature Language="C#" Value="SetValues" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.PropertyFilterOptions SetValues = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.PropertyFilterOptions.SetValues" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyFilterOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル値が現在設定されているプロパティのみを返します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsetValues">
+      <MemberSignature Language="C#" Value="UnsetValues" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.PropertyFilterOptions UnsetValues = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.PropertyFilterOptions.UnsetValues" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyFilterOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル値が設定されていないプロパティか、またはプロパティが外部の式ストア (バインディングや遅延リソースなど) に設定されていないプロパティだけを返します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Valid">
+      <MemberSignature Language="C#" Value="Valid" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ComponentModel.PropertyFilterOptions Valid = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.PropertyFilterOptions.Valid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyFilterOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスコープにあるオブジェクトで有効なすべてのプロパティを返します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

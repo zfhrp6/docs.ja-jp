@@ -1,0 +1,456 @@
+<Type Name="ValueTask&lt;TResult&gt;" FullName="System.Threading.Tasks.ValueTask&lt;TResult&gt;">
+  <TypeSignature Language="C#" Value="public struct ValueTask&lt;TResult&gt; : IEquatable&lt;System.Threading.Tasks.ValueTask&lt;TResult&gt;&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ValueTask`1&lt;TResult&gt; extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Threading.Tasks.ValueTask`1&lt;!TResult&gt;&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.ValueTask`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TResult" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Threading.Tasks.ValueTask&lt;TResult&gt;&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.AsyncMethodBuilder(typeof(System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <typeparam name="TResult">結果。</typeparam>
+    <summary>値の型をラップする提供、<see cref="T:Task{TResult}" />と<typeparamref name="TResult" />、1 つだけのために使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[ 
+
+## Remarks  
+メソッドの場合、その操作の結果に利用可能な同期をとってなりとすると想定がこの値の型のインスタンスが呼び出されたら頻繁に割り当てる新しいコストを返す可能性があります<xref:System.Threading.Tasks.Task%601>の各呼び出しは非常に大きいされます。   
+
+使用するトレードオフがある、<xref:System.Threading.Tasks.ValueTask%601>の代わりに、<xref:System.Threading.Tasks.Task%601>です。 などの<xref:System.Threading.Tasks.ValueTask%601>一方も 2 つのフィールドを含むが、成功した結果が利用可能な同期の場合、割り当てを防ぐことができます、<xref:System.Threading.Tasks.Task%601>参照として型は 1 つのフィールドです。 つまり、メソッドの呼び出しを返すことではなく、1 つのデータの価値がある 2 つのフィールドは多くのデータをコピーします。 する場合を返すメソッド、<xref:System.Threading.Tasks.ValueTask%601>非同期メソッドで、ステート マシン内で 1 つの参照ではなく 2 つのフィールドを含む構造体を格納する必要がありますので、非同期メソッドがサイズが大きくなるは待機します。   
+
+使用して、非同期操作の結果を消費して以外の使用が await の<xref:System.Threading.Tasks.ValueTask%601>を複数の割り当てを必要とする複雑なプログラミング モデルにつながることができます。 たとえば、いずれかを返す可能性のあるメソッド、<xref:System.Threading.Tasks.Task%601>一般的な結果として、キャッシュされたタスクで、または<xref:System.Threading.Tasks.ValueTask%601>です。 結果のコンシューマーとして使用するかどうか、<xref:System.Threading.Tasks.Task%601>のようなメソッドで<xref:System.Threading.Tasks.Task.WhenAll%2A>または<xref:System.Threading.Tasks.Task.WhenAny%2A>、<xref:System.Threading.Tasks.ValueTask%601>最初に変換する必要があります、<xref:System.Threading.Tasks.Task%601>を使用して<xref:System.Threading.Tasks.ValueTask%601.AsTask%2A>、先頭は回避できた場合は、割り当てに、キャッシュされた<xref:System.Threading.Tasks.Task%601>のため、最初に使用されていた。   
+
+返す非同期メソッドの既定の選択肢は、ような場合、<xref:System.Threading.Tasks.Task>または<xref:System.Threading.Tasks.Task%601>です。 パフォーマンス分析の身元を証明価値のある場合にのみにする必要があります、<xref:System.Threading.Tasks.ValueTask%601>の代わりに使用する、<xref:System.Threading.Tasks.Task%601>です。 非ジェネリック バージョンが存在しない<xref:System.Threading.Tasks.ValueTask%601>、として、<xref:System.Threading.Tasks.Task.CompletedTask>プロパティは、メソッドを返す場合は、正常に完了した場合は、シングルトンを送り返すを使用することがあります、<xref:System.Threading.Tasks.Task>同期および正常に完了します。   
+
+> [!NOTE]
+>  使用、<see cref="ValueTask{TResult}"/>種類は、7 (C#) で始まるがサポートされ、任意のバージョンの Visual Basic ではサポートされていません。
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValueTask (System.Threading.Tasks.Task&lt;TResult&gt; task);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.Tasks.Task`1&lt;!TResult&gt; task) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.#ctor(System.Threading.Tasks.Task{`0})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="task" Type="System.Threading.Tasks.Task&lt;TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="task">タスクです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:ValueTask{TResult}" />クラス、操作を表す指定されたタスクを使用します。</summary>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="task" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValueTask (TResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(!TResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.#ctor(`0)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="result" Type="TResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">結果。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:ValueTask{TResult}" />クラス操作の成功の指定された結果を使用します。</summary>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AsTask">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; AsTask ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; AsTask() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.AsTask" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:Task{TResult}" />これを表すオブジェクト<see cref="T:ValueTask{TResult}" />です。</summary>
+        <returns><see cref="T:Task{TResult}" />オブジェクトでラップされる<see cref="T:ValueTask{TResult}" />1 つ存在する場合、または、新しい<see cref="T:Task{TResult}" />結果を表すオブジェクト。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigureAwait">
+      <MemberSignature Language="C#" Value="public System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable&lt;TResult&gt; ConfigureAwait (bool continueOnCapturedContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1&lt;!TResult&gt; ConfigureAwait(bool continueOnCapturedContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.ConfigureAwait(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="continueOnCapturedContext" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="continueOnCapturedContext">
+          <see langword="true" />継続をキャプチャされたコンテキストにマーシャ リングするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>この値の awaiter を構成します。</summary>
+        <returns>構成された awaiter です。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAsyncMethodBuilder">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder&lt;TResult&gt; CreateAsyncMethodBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1&lt;!TResult&gt; CreateAsyncMethodBuilder() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.CreateAsyncMethodBuilder" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期のメソッドをメソッドのビルダーを使用してを作成します。</summary>
+        <returns>作成したビルダー。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          指定したオブジェクトが現在のオブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />です。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Threading.Tasks.ValueTask&lt;TResult&gt; other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Threading.Tasks.ValueTask`1&lt;!TResult&gt; other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.Equals(System.Threading.Tasks.ValueTask{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Threading.Tasks.ValueTask&lt;TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>決定するかどうか、指定した<see cref="T:ValueTask{TResult}" />オブジェクトが現在<see cref="T:ValueTask{TResult}" />オブジェクト。</summary>
+        <returns>
+          指定したオブジェクトが現在のオブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />です。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAwaiter">
+      <MemberSignature Language="C#" Value="public System.Runtime.CompilerServices.ValueTaskAwaiter&lt;TResult&gt; GetAwaiter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Runtime.CompilerServices.ValueTaskAwaiter`1&lt;!TResult&gt; GetAwaiter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.GetAwaiter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.ValueTaskAwaiter&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この値の awaiter を作成します。</summary>
+        <returns>Awaiter です。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>現在のオブジェクトのハッシュ コード。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCanceled">
+      <MemberSignature Language="C#" Value="public bool IsCanceled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCanceled" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ValueTask`1.IsCanceled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクトが取り消された操作を表すかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このオブジェクトが、取り消された操作を表している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCompleted">
+      <MemberSignature Language="C#" Value="public bool IsCompleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompleted" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ValueTask`1.IsCompleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクトが完了した操作を表すかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このオブジェクトが完了した操作を表している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCompletedSuccessfully">
+      <MemberSignature Language="C#" Value="public bool IsCompletedSuccessfully { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompletedSuccessfully" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ValueTask`1.IsCompletedSuccessfully" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクトが正常に完了した操作を表すかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このオブジェクトを正常に完了した操作を表している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFaulted">
+      <MemberSignature Language="C#" Value="public bool IsFaulted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFaulted" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ValueTask`1.IsFaulted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このオブジェクトが失敗した操作を表すかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このオブジェクトが失敗した操作を表している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Threading.Tasks.ValueTask&lt;TResult&gt; left, System.Threading.Tasks.ValueTask&lt;TResult&gt; right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Threading.Tasks.ValueTask`1&lt;!TResult&gt; left, valuetype System.Threading.Tasks.ValueTask`1&lt;!TResult&gt; right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.op_Equality(System.Threading.Tasks.ValueTask{`0},System.Threading.Tasks.ValueTask{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Threading.Tasks.ValueTask&lt;TResult&gt;" />
+        <Parameter Name="right" Type="System.Threading.Tasks.ValueTask&lt;TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の値です。</param>
+        <param name="right">比較する 2 番目の値です。</param>
+        <summary>2 つの値が等しいかどうかを比較します。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:ValueTask{TResult}" />値が等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Threading.Tasks.ValueTask&lt;TResult&gt; left, System.Threading.Tasks.ValueTask&lt;TResult&gt; right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Threading.Tasks.ValueTask`1&lt;!TResult&gt; left, valuetype System.Threading.Tasks.ValueTask`1&lt;!TResult&gt; right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.op_Inequality(System.Threading.Tasks.ValueTask{`0},System.Threading.Tasks.ValueTask{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Threading.Tasks.ValueTask&lt;TResult&gt;" />
+        <Parameter Name="right" Type="System.Threading.Tasks.ValueTask&lt;TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初の値です。</param>
+        <param name="right">比較する seconed 値。</param>
+        <summary>2 つあるかどうかを決定<see cref="T:ValueTask{TResult}" />値が等しくないです。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:ValueTask{TResult}" />値が等しくない。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public TResult Result { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !TResult Result" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ValueTask`1.Result" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結果を取得します。</summary>
+        <value>結果。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+## Remarks  
+ この場合<xref:System.Threading.Tasks.ValueTask%601>成功した結果、このプロパティは、それを直接返しますをラップします。
+
+ これをラップする場合、<xref:System.Threading.Tasks.Task%601>の動作<xref:System.Threading.Tasks.ValueTask%601.Result%2A>へのアクセスの動作に似ています<xref:System.Threading.Tasks.Task%601.Result%2A>ラップされたタスクで: タスクが完了していない場合、プロパティにアクセスする、呼び出しスレッドがブロックです完了するまで、タスクが完了した場合。プロパティが正常に結果を返すタスクは、エラーが発生したか、cancellecd が、プロパティにアクセスする、例外がスローされます。 スローされた例外にラップされていない、<xref:System.AggregateException>とは別の動作から<xref:System.Threading.Tasks.Task%601.Result%2A>同じ状況でします。
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ValueTask`1.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

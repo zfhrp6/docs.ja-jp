@@ -1,0 +1,182 @@
+<Type Name="RecipientInfo" FullName="System.Security.Cryptography.Pkcs.RecipientInfo">
+  <TypeSignature Language="C#" Value="public abstract class RecipientInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit RecipientInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Pkcs.RecipientInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />クラス CMS/PKCS #7 メッセージの受信者に関する情報を表します。 <see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />クラスは抽象クラスによって継承、<see cref="T:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo" />と<see cref="T:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、抽象クラスをインスタンス化することはできません。  によって継承されている、<xref:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo>と<xref:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EncryptedKey">
+      <MemberSignature Language="C#" Value="public abstract byte[] EncryptedKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] EncryptedKey" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.RecipientInfo.EncryptedKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.EncryptedKey" />抽象プロパティは、暗号化された受信者キー生成情報を取得します。</summary>
+        <value>受信者の暗号化されたキー マテリアルを含んでいるバイト値の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、抽象プロパティによってオーバーライド<xref:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo>と<xref:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyEncryptionAlgorithm">
+      <MemberSignature Language="C#" Value="public abstract System.Security.Cryptography.Pkcs.AlgorithmIdentifier KeyEncryptionAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Pkcs.AlgorithmIdentifier KeyEncryptionAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.RecipientInfo.KeyEncryptionAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Pkcs.AlgorithmIdentifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.KeyEncryptionAlgorithm" />抽象プロパティをキーを確立の実行に使用するアルゴリズムを取得します。</summary>
+        <value><see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />発信元と CMS/PKCS #7 メッセージの受信者の間でキーを確立するために使用するアルゴリズムの値を含むオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、抽象プロパティによってオーバーライド<xref:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo>と<xref:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecipientIdentifier">
+      <MemberSignature Language="C#" Value="public abstract System.Security.Cryptography.Pkcs.SubjectIdentifier RecipientIdentifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Pkcs.SubjectIdentifier RecipientIdentifier" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.RecipientInfo.RecipientIdentifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Pkcs.SubjectIdentifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.RecipientIdentifier" />抽象プロパティは、受信者の識別子を取得します。</summary>
+        <value>A<see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifier" />受信者の識別子を含むオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、抽象プロパティによってオーバーライド<xref:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo>と<xref:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Pkcs.RecipientInfoType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.Pkcs.RecipientInfoType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.RecipientInfo.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Pkcs.RecipientInfoType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.Type" />プロパティは、受信者の種類を取得します。 受信者の種類は、その発行者と、CMS/PKCS #7 メッセージの受信者の間でキーを確立に使用される 2 つの主要なプロトコルを決定します。</summary>
+        <value>値、<see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoType" />受信者の種類を定義する列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public abstract int Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Version" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.RecipientInfo.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.RecipientInfo.Version" />抽象プロパティは、受信者の情報のバージョンを取得します。 派生クラスは、それらのオブジェクトに対してこのプロパティを自動的に設定され、値は、かどうか使用されている PKCS #7 または Cryptographic Message Syntax (CMS) メッセージを保護することを示します。 バージョンまたことを意味するかどうか、<see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />オブジェクトがキーの承諾アルゴリズムまたはキー トランスポート アルゴリズムで暗号化キーを確立します。</summary>
+        <value><see cref="T:System.Int32" />のバージョンを表す値、<see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、抽象プロパティによってオーバーライド<xref:System.Security.Cryptography.Pkcs.KeyAgreeRecipientInfo>と<xref:System.Security.Cryptography.Pkcs.KeyTransRecipientInfo>です。  
+  
+ バージョンは、メッセージが PKCS #7 メッセージまたは CMS メッセージであるかどうかを判断します。 CMS は、PKCS #7 の新しいスーパー セットです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

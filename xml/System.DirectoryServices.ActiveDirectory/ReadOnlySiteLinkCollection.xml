@@ -1,0 +1,122 @@
+<Type Name="ReadOnlySiteLinkCollection" FullName="System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection">
+  <TypeSignature Language="C#" Value="public class ReadOnlySiteLinkCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ReadOnlySiteLinkCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection" /> クラスは、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" /> オブジェクトを格納する読み取り専用のコレクションです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection.Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="link" Type="System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />
+      </Parameters>
+      <Docs>
+        <param name="link"><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />検索するオブジェクト。</param>
+        <summary>指定した <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" /> オブジェクトがこのコレクション内にあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySite" /> ; このコレクション内のオブジェクトがそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="link" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink[] links, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink[] links, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection.CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="links" Type="System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="links"><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />をこのコレクションの要素を受け取る配列。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">内の 0 から始まるインデックス<c>リンク</c>このメソッドがこのコレクションのコピーを開始します。</param>
+        <summary>このコレクション内のすべての <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" /> オブジェクトを、特定の配列にコピーします。コピー先の配列の指定したインデックスからコピーが開始されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">コピー先の配列のサイズが不十分、ソース コレクションのサイズに基づいて、<paramref name="index" />指定します。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="links" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した <paramref name="index" /> はコピー先の配列の範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection.IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="link" Type="System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />
+      </Parameters>
+      <Docs>
+        <param name="link"><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />このコレクション内で検索するオブジェクト。</param>
+        <summary>最初に見つかった位置の指定した 0 から始まるインデックスを返します<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />このコレクション内のオブジェクト。</summary>
+        <returns>最初に一致するオブジェクトの 0 から始まるインデックス。 このコレクションにメンバーを持たない場合、-1 を返しますが、指定したのと同じ<paramref name="link" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="link" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" /> オブジェクトの 0 から始まるインデックス。</param>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />このコレクション内のオブジェクト。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />指定したインデックス位置に存在するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />が指定されたコレクションの範囲外です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

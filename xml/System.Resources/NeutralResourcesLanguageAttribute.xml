@@ -1,0 +1,281 @@
+<Type Name="NeutralResourcesLanguageAttribute" FullName="System.Resources.NeutralResourcesLanguageAttribute">
+  <TypeSignature Language="C#" Value="public sealed class NeutralResourcesLanguageAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NeutralResourcesLanguageAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.NeutralResourcesLanguageAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリの既定のカルチャのリソース マネージャーに通知します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="desktop-apps"></a>デスクトップ アプリ  
+ デスクトップ アプリで、<xref:System.Resources.NeutralResourcesLanguageAttribute>属性は、アプリの既定のカルチャのリソース マネージャーとそのリソースの場所を通知します。 既定では、リソースがメインのアプリ アセンブリに埋め込まれているし、次のように属性を使用することができます。 このステートメントでは、英語 (米国) には、アプリの既定のカルチャを指定します。  
+  
+ [!code-csharp[System.Resources.NeutralResourcesLanguageAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.neutralresourceslanguageattribute/cs/example1.cs#1)]
+ [!code-vb[System.Resources.NeutralResourcesLanguageAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.neutralresourceslanguageattribute/vb/example1.vb#1)]  
+  
+ 使用することも、<xref:System.Resources.NeutralResourcesLanguageAttribute>位置を示す属性<xref:System.Resources.ResourceManager>により既定のカルチャのリソースを見つけることができます、<xref:System.Resources.UltimateResourceFallbackLocation>属性ステートメント内の列挙値。 リソースがサテライト アセンブリ内にあることを示すためにこれは最も一般的です。 たとえば、次のステートメントは、英語 (米国) がアプリの既定値またはニュートラル カルチャであると、そのリソースがサテライト アセンブリ内にあることを指定します。 <xref:System.Resources.ResourceManager> EN-US という名前のサブディレクトリにそれらのオブジェクトが検索されます。  
+  
+ [!code-csharp[System.Resources.NeutralResourcesLanguageAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.neutralresourceslanguageattribute/cs/example2.cs#2)]
+ [!code-vb[System.Resources.NeutralResourcesLanguageAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.neutralresourceslanguageattribute/vb/example2.vb#2)]  
+  
+> [!TIP]
+>  必ず使用することをお勧め、<xref:System.Resources.NeutralResourcesLanguageAttribute>アプリの既定のカルチャを定義する属性。  
+  
+ 属性には、2 つのロールを実行します。  
+  
+-   既定のカルチャのリソースがアプリのメイン アセンブリに埋め込まれている場合と<xref:System.Resources.ResourceManager>既定のカルチャと同じカルチャに属しているリソースを取得するが、<xref:System.Resources.ResourceManager>サテライト アセンブリを検索する代わりにメイン アセンブリにあるリソースを自動的に使用します。 これにより、通常のアセンブリのプローブをバイパスする、読み込んで、ワーキング セットを減らすことができますの最初のリソースに対する検索のパフォーマンスが向上します。 参照してください[パッケージ化と配置リソース](~/docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)プロセスの<xref:System.Resources.ResourceManager>リソース ファイルを探すために使用します。  
+  
+-   既定のカルチャのリソースがある場合、メイン アプリケーション アセンブリではなく、サテライト アセンブリに、<xref:System.Resources.NeutralResourcesLanguageAttribute>属性は、カルチャと、ランタイムがリソースを読み込むことができます、ディレクトリを指定します。  
+  
+## <a name="includewin8appnamelongincludeswin8-appname-long-mdmd-apps"></a>[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリ  
+ [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]アプリのリソースが読み込まれを使用して取得、<xref:System.Resources.ResourceManager>クラス、<xref:System.Resources.NeutralResourcesLanguageAttribute>属性は、ニュートラル カルチャのリソースが使わ、失敗するプローブが発生した場合を定義します。 リソースの場所は指定しません。 既定では、<xref:System.Resources.ResourceManager>アプリのパッケージ リソース インデックス (PRI) ファイルを使用して、既定のカルチャのリソースを検索します。 ニュートラル カルチャで定義されている、<xref:System.Resources.NeutralResourcesLanguageAttribute>属性がこの特殊効果をシミュレートするために UI 言語の一覧の末尾に追加します。  
+  
+ ロードを使用してリソースを取得する場合、 [!INCLUDE[wrt](~/includes/wrt-md.md)] [Windows.ApplicationModel.Resources.ResourceLoader](http://go.microsoft.com/fwlink/p/?LinkId=238182)クラスまたは内の型、 [Windows.ApplicationModel.Resources.Core](http://go.microsoft.com/fwlink/p/?LinkId=238194)名前空間、<xref:System.Resources.NeutralResourcesLanguageAttribute>属性は無視されます。  
+  
+   
+  
+## Examples  
+ 次の例の使用方法を説明する簡単な"Hello World"アプリを使用して、<xref:System.Resources.NeutralResourcesLanguageAttribute>既定またはフォールバック カルチャを定義する属性。 英語 (en)、英語 (米国) (EN-US)、およびフランス語 (フランス) (FR-FR) の別のリソース ファイルの作成が必要なカルチャ。 ExampleResources.txt イギリスのカルチャの名前が付いたテキスト ファイルの内容を次に示します。  
+  
+```  
+# Resources for the default (en) culture.  
+Greeting=Hello  
+```  
+  
+ アプリ内のリソース ファイルを使用するには、使用する必要があります、テキスト (.txt) の形式からファイルを次のようにバイナリ (.resources) 形式に変換します。  
+  
+```  
+resgen ExampleResources.txt  
+```  
+  
+ アプリのコンパイル時にバイナリ リソース ファイルは、メイン アプリケーション アセンブリに埋め込まれます。  
+  
+ 英語 (米国) カルチャのリソースを提供する ExampleResources.en US.txt をという名前のテキスト ファイルの内容を次に示します。  
+  
+```  
+# Resources for the en-US culture.  
+Greeting=Hi  
+```  
+  
+ 使用して、テキスト ファイルをバイナリ リソース ファイルに変換できる、次のように行目では、コマンド。  
+  
+```  
+resgen ExampleResources.en-US.txt ExampleResources.en-US.resources  
+```  
+  
+ バイナリ リソース ファイルを使用してアセンブリにコンパイルし、次のコマンドを発行することで、アプリのディレクトリの EN-US サブディレクトリに配置し、必要があります。  
+  
+```  
+al /t:lib /embed:ExampleResources.en-US.resources /culture:en-US /out:en-us\Example.resources.dll  
+```  
+  
+ フランス語 (フランス) カルチャのリソースを提供する ExampleResources.fr FR.txt をという名前のテキスト ファイルの内容を次に示します。  
+  
+```  
+# Resources for the fr-FR culture.  
+Greeting=Bonjour  
+```  
+  
+ テキスト ファイルは、次のように、コマンドラインで ResGen.exe を使用してバイナリ リソース ファイルに変換できます。  
+  
+```  
+resgen ExampleResources.fr-FR.txt ExampleResources.fr-FR.resources  
+```  
+  
+ バイナリ リソース ファイルのアセンブリ リンカーを使用してアセンブリにコンパイルして、次のコマンドを発行することで、FR-FR、アプリのディレクトリのサブディレクトリ内に配置し、必要があります。  
+  
+```  
+al /t:lib /embed:ExampleResources.fr-FR.resources /culture:fr-FR /out:fr-FR\Example.resources.dll  
+```  
+  
+ 次の例では、現在のカルチャ設定、ユーザーの名前の入力を求めるおよびローカライズされた文字列を表示する実行可能コードを提供します。  
+  
+ [!code-csharp[System.Globalization.NeutralResourcesLanguageAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.neutralresourceslanguageattribute/cs/example.cs#1)]
+ [!code-vb[System.Globalization.NeutralResourcesLanguageAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.neutralresourceslanguageattribute/vb/example.vb#1)]  
+  
+ Visual Basic では、次のコマンドを使用してコンパイルできます。  
+  
+```  
+vbc Example.vb /resource:ExampleResources.resources  
+```  
+  
+ または、次を使用して c# ではコマンドします。  
+  
+```  
+csc Example.cs /resource:ExampleResources.resources  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NeutralResourcesLanguageAttribute (string cultureName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string cultureName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.NeutralResourcesLanguageAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cultureName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cultureName">現在のアセンブリのニュートラル リソースがで記述されているカルチャの名前。</param>
+        <summary><see cref="T:System.Resources.NeutralResourcesLanguageAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カルチャ名の詳細な一覧についてを参照してください。 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="cultureName" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NeutralResourcesLanguageAttribute (string cultureName, System.Resources.UltimateResourceFallbackLocation location);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string cultureName, valuetype System.Resources.UltimateResourceFallbackLocation location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.NeutralResourcesLanguageAttribute.#ctor(System.String,System.Resources.UltimateResourceFallbackLocation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cultureName" Type="System.String" />
+        <Parameter Name="location" Type="System.Resources.UltimateResourceFallbackLocation" />
+      </Parameters>
+      <Docs>
+        <param name="cultureName">現在のアセンブリのニュートラル リソースがで記述されているカルチャの名前。</param>
+        <param name="location">ニュートラル フォールバック リソースを取得する対象の場所を示す列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Resources.NeutralResourcesLanguageAttribute" />指定の最終リソース フォールバック位置を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Resources.NeutralResourcesLanguageAttribute>を持つコンス トラクター、<xref:System.Resources.UltimateResourceFallbackLocation>列挙型を指定するかどうか、<xref:System.Resources.ResourceManager>クラスは、メイン アプリケーション アセンブリ (既定)、またはによって指定されたサテライト アセンブリにニュートラル フォールバック リソースを取得する、<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>と<xref:System.Resources.ResourceManager.FallbackLocation%2A>プロパティです。  
+  
+ カルチャ名の詳細な一覧についてを参照してください。 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cultureName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="location" />メンバーではない<see cref="T:System.Resources.UltimateResourceFallbackLocation" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CultureName">
+      <MemberSignature Language="C#" Value="public string CultureName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CultureName" />
+      <MemberSignature Language="DocId" Value="P:System.Resources.NeutralResourcesLanguageAttribute.CultureName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャ名を取得します。</summary>
+        <value>メイン アセンブリの既定のカルチャの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カルチャ名の詳細な一覧についてを参照してください。 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public System.Resources.UltimateResourceFallbackLocation Location { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Resources.UltimateResourceFallbackLocation Location" />
+      <MemberSignature Language="DocId" Value="P:System.Resources.NeutralResourcesLanguageAttribute.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Resources.UltimateResourceFallbackLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>場所を取得、<see cref="T:System.Resources.ResourceManager" />クラスを使用してニュートラル リソースを取得するために、[リソース フォールバック プロセス](~/docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)です。</summary>
+        <value>ニュートラル リソースの取得元の場所 (メイン アセンブリまたはサテライト) を示す列挙値の 1 つ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

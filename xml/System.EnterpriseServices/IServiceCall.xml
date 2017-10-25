@@ -1,0 +1,63 @@
+<Type Name="IServiceCall" FullName="System.EnterpriseServices.IServiceCall">
+  <TypeSignature Language="C#" Value="public interface IServiceCall" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IServiceCall" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.IServiceCall" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("BD3E2E12-42DD-40f4-A09A-95A50C58304B")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装によって作成されたアクティビティを通じて送信されるバッチ作業<see cref="T:System.EnterpriseServices.Activity" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.EnterpriseServices.IServiceCall>それらのサービスを使用して具体的にはコンポーネントを作成せずに COM + サービスを使用するバッチ操作を実行します。 インターネット インフォメーション サービス (IIS) や ASP.NET などのスクリプト環境では、COM + コンポーネントを作成するのに必要がない COM + サービスを利用するのに、このインターフェイスを使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="OnCall">
+      <MemberSignature Language="C#" Value="public void OnCall ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnCall() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.IServiceCall.OnCall" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドに実装されているバッチ作業の実行を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって作成されたアクティビティのコンテキストとスレッドのアパートメントで実行されますが、このメソッドで実行されるバッチ作業<xref:System.EnterpriseServices.Activity>です。 このメソッドでバッチ処理がいずれかへの呼び出しによって実行される<xref:System.EnterpriseServices.Activity.SynchronousCall%2A?displayProperty=nameWithType>または<xref:System.EnterpriseServices.Activity.AsynchronousCall%2A?displayProperty=nameWithType>です。  
+  
+> [!CAUTION]
+>  このメソッドは、スレッド セーフで、アクティビティのオブジェクトが作成される状況であることを確認する必要があります<xref:System.EnterpriseServices.Activity>を多く呼び出すこのような状況であるために、同期されたコンテキストで作成されておらず<xref:System.EnterpriseServices.IServiceCall.OnCall%2A>同時に実行できます。  
+  
+ システムから最適なパフォーマンスを得るには、アクティビティのコンテキストの構成がによって作成された<xref:System.EnterpriseServices.Activity>によって実行されるバッチ作業に一致する必要があります、<xref:System.EnterpriseServices.IServiceCall.OnCall%2A>メソッドです。 たとえば、バッチ作業、<xref:System.EnterpriseServices.IServiceCall.OnCall%2A>メソッドによって作成された活動、プール オブジェクトを使用して<xref:System.EnterpriseServices.Activity>マルチ スレッド アパートメント (MTA) を使用するように構成する必要があります。  
+  
+ プールのオブジェクトについては、「要件のプール内のオブジェクト」MSDN のプラットフォーム SDK を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,2468 @@
+<Type Name="TaskFactory&lt;TResult&gt;" FullName="System.Threading.Tasks.TaskFactory&lt;TResult&gt;">
+  <TypeSignature Language="C#" Value="public class TaskFactory&lt;TResult&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TaskFactory`1&lt;TResult&gt; extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.TaskFactory`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TResult" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="TResult">このクラスのメソッドによって作成される <see cref="T:System.Threading.Tasks.Task`1" /> オブジェクトの戻り値。</typeparam>
+    <summary><see cref="T:System.Threading.Tasks.Task`1" /> オブジェクトを作成およびスケジュールするためのサポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework には、2 つのファクトリの作成とタスクのスケジュールが用意されています。  
+  
+-   <xref:System.Threading.Tasks.TaskFactory>を作成するクラス<xref:System.Threading.Tasks.Task>と<xref:System.Threading.Tasks.Task%601>オブジェクト。  
+  
+-   <xref:System.Threading.Tasks.TaskFactory%601>を作成するクラス<xref:System.Threading.Tasks.Task%601>オブジェクト。  
+  
+ <xref:System.Threading.Tasks.TaskFactory%601>クラスでは、以下を実行することができます。  
+  
+-   タスクを作成し、それを呼び出すことによってすぐに開始、<xref:System.Threading.Tasks.TaskFactory.StartNew%2A>メソッドです。 作成し、既定以外の引数が必要なタスクを実行するには、このメソッドのオーバー ロードを呼び出すことができます。  
+  
+    > [!WARNING]
+    >  以降で、 [!INCLUDE[net_v45](~/includes/net-v45-md.md)]、<xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType>メソッドは構成値を既定値はタスクを作成し、それをすぐに開始する最も簡単な方法を提供します。  
+  
+-   配列内のタスクのいずれかが呼び出すことによって完了したときに起動するタスクを作成、<xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A>または<xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A>メソッドです。  
+  
+-   配列内のすべてのタスクが呼び出すことによって完了したときに起動するタスクを作成、<xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A>または<xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A>メソッドです。  
+  
+ 静的な<xref:System.Threading.Tasks.Task%601.Factory%2A?displayProperty=nameWithType>プロパティは、既定値を返します<xref:System.Threading.Tasks.TaskFactory%601>オブジェクト。 いずれかを呼び出すことができます、<xref:System.Threading.Tasks.TaskFactory%601>クラスのコンス トラクターを構成するのには<xref:System.Threading.Tasks.Task%601>オブジェクトを<xref:System.Threading.Tasks.TaskFactory%601>クラスを作成します。 次の例は、新しい構成<xref:System.Threading.Tasks.TaskFactory%601>を持つ指定されたキャンセル トークン、タスク作成オプション、継続オプション、およびカスタマイズのタスク スケジューラのタスクを作成するオブジェクト。  
+  
+ [!code-csharp[TPL_Factories#2](~/samples/snippets/csharp/VS_Snippets_Misc/tpl_factories/cs/factoriestresult.cs#2)]
+ [!code-vb[TPL_Factories#2](~/samples/snippets/visualbasic/VS_Snippets_Misc/tpl_factories/vb/factoriestresult.vb#2)]  
+  
+ ほとんどの場合は、新しいインスタンスを作成する必要はありません<xref:System.Threading.Tasks.TaskFactory%601>インスタンス。 静的なを使用する代わりに、<xref:System.Threading.Tasks.Task%601.Factory%2A?displayProperty=nameWithType>プロパティで、既定値を使用するファクトリ オブジェクトを返します。 新しいタスクを開始または継続タスクを定義するには、そのメソッドを呼び出すことができます。 具体的な例を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例は、静的な<xref:System.Threading.Tasks.Task%601.Factory%2A>プロパティを 2 つの呼び出しを行う、<xref:System.Threading.Tasks.TaskFactory%601.StartNew%2A?displayProperty=nameWithType>メソッドです。 最初のタスクは、2 つ目は、ユーザーのマイ ドキュメント ディレクトリのサブディレクトリの名前が設定された文字列配列を返します中に、ユーザーのマイ ドキュメント ディレクトリ内のファイル名が設定された文字列配列を返します。 呼び出して、<xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%28System.Threading.Tasks.Task%5B%5D%2CSystem.Action%7BSystem.Threading.Tasks.Task%5B%5D%7D%29?displayProperty=nameWithType>メソッドの実行が完了した後、2 つのタスクによって返される配列内のファイルとディレクトリの数に関する情報を表示します。  
+  
+ [!code-csharp[System.Threading.Tasks.Task.Factory#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.task.factory/cs/factory2.cs#2)]
+ [!code-vb[System.Threading.Tasks.Task.Factory#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.task.factory/vb/factory2.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>すべてのパブリックおよびプロテクト メンバー<see cref="T:System.Threading.Tasks.TaskFactory`1" />スレッド セーフでは、複数のスレッドから同時に使用される可能性があります。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の構成を使用して、<see cref="T:System.Threading.Tasks.TaskFactory`1" /> インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Threading.Tasks.TaskFactory%601>既定の構成を持つインスタンス。 <xref:System.Threading.Tasks.TaskCreationOptions>にプロパティが初期化されて<xref:System.Threading.Tasks.TaskCreationOptions.None>、<xref:System.Threading.Tasks.TaskContinuationOptions>プロパティに初期化<xref:System.Threading.Tasks.TaskContinuationOptions.None>、および<xref:System.Threading.Tasks.TaskScheduler>プロパティは、現在のスケジューラに初期化 (を参照してください<xref:System.Threading.Tasks.TaskScheduler.Current%2A>)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskFactory (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.#ctor(System.Threading.CancellationToken)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">ファクトリ メソッドの呼び出し時に他の取り消しトークンが明示的に指定されていない場合に、この <see cref="T:System.Threading.Tasks.TaskFactory" /> によって作成されたタスクに割り当てられる既定の取り消しトークン。</param>
+        <summary>既定の構成を使用して、<see cref="T:System.Threading.Tasks.TaskFactory`1" /> インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Threading.Tasks.TaskFactory%601>既定の構成を持つインスタンス。 <xref:System.Threading.Tasks.TaskCreationOptions>にプロパティが初期化されて<xref:System.Threading.Tasks.TaskCreationOptions.None>、<xref:System.Threading.Tasks.TaskContinuationOptions>プロパティに初期化<xref:System.Threading.Tasks.TaskContinuationOptions.None>、および<xref:System.Threading.Tasks.TaskScheduler>プロパティは、現在のスケジューラに初期化 (を参照してください<xref:System.Threading.Tasks.TaskScheduler.Current%2A>)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskFactory (System.Threading.Tasks.TaskScheduler scheduler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.#ctor(System.Threading.Tasks.TaskScheduler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+      </Parameters>
+      <Docs>
+        <param name="scheduler">この <see cref="T:System.Threading.Tasks.TaskFactory`1" /> を使用して作成されたタスクをスケジュールするときに使用するスケジューラー。 null 値は、現在の <see cref="T:System.Threading.Tasks.TaskScheduler" /> を使用することを示します。</param>
+        <summary>指定された構成を使用して、<see cref="T:System.Threading.Tasks.TaskFactory`1" /> インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで、<xref:System.Threading.Tasks.TaskCreationOptions>にプロパティを初期化<xref:System.Threading.Tasks.TaskCreationOptions.None>では、<xref:System.Threading.Tasks.TaskContinuationOptions>にプロパティを初期化<xref:System.Threading.Tasks.TaskContinuationOptions.None>、および<xref:System.Threading.Tasks.TaskScheduler>にプロパティを初期化`scheduler`されている場合、 `null`、現在のスケジューラにプロパティが初期化されている場合 (を参照してください<xref:System.Threading.Tasks.TaskScheduler.Current%2A>)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskFactory (System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.#ctor(System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="creationOptions">この <see cref="T:System.Threading.Tasks.TaskFactory`1" /> を使用してタスクを作成するときに使用する既定のオプション。</param>
+        <param name="continuationOptions">この <see cref="T:System.Threading.Tasks.TaskFactory`1" /> を使用して継続タスクを作成するときに使用する既定のオプション。</param>
+        <summary>指定された構成を使用して、<see cref="T:System.Threading.Tasks.TaskFactory`1" /> インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを持つ、<xref:System.Threading.Tasks.TaskCreationOptions>にプロパティを初期化`creationOptions`、<xref:System.Threading.Tasks.TaskContinuationOptions>プロパティに初期化`continuationOptions`、および<xref:System.Threading.Tasks.TaskScheduler>プロパティは、現在のスケジューラに初期化 (を参照してください<xref:System.Threading.Tasks.TaskScheduler.Current%2A>)。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="creationOptions" />または<paramref name="continuationOptions" />に無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskFactory (System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.#ctor(System.Threading.CancellationToken,System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">ファクトリ メソッドの呼び出し時に他の取り消しトークンが明示的に指定されていない場合に、この <see cref="T:System.Threading.Tasks.TaskFactory" /> によって作成されたタスクに割り当てられる既定の取り消しトークン。</param>
+        <param name="creationOptions">この <see cref="T:System.Threading.Tasks.TaskFactory`1" /> を使用してタスクを作成するときに使用する既定のオプション。</param>
+        <param name="continuationOptions">この <see cref="T:System.Threading.Tasks.TaskFactory`1" /> を使用して継続タスクを作成するときに使用する既定のオプション。</param>
+        <param name="scheduler">この <see cref="T:System.Threading.Tasks.TaskFactory`1" /> を使用して作成されたタスクをスケジュールするときに使用する既定のスケジューラー。 null 値は <see cref="P:System.Threading.Tasks.TaskScheduler.Current" /> を使用する必要があることを示します。</param>
+        <summary>指定された構成を使用して、<see cref="T:System.Threading.Tasks.TaskFactory`1" /> インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで、<xref:System.Threading.Tasks.TaskCreationOptions>にプロパティを初期化`creationOptions`では、<xref:System.Threading.Tasks.TaskContinuationOptions>にプロパティを初期化`continuationOptions`、および<xref:System.Threading.Tasks.TaskScheduler>にプロパティを初期化`scheduler`されている場合、 `null`、現在のスケジューラにプロパティが初期化されている場合 (を参照してください<xref:System.Threading.Tasks.TaskScheduler.Current%2A>)。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="creationOptions" />または<paramref name="continuationOptions" />に無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CancellationToken">
+      <MemberSignature Language="C#" Value="public System.Threading.CancellationToken CancellationToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.CancellationToken CancellationToken" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskFactory`1.CancellationToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.CancellationToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このタスク ファクトリの既定のキャンセル トークンを取得します。</summary>
+        <value>このタスク ファクトリの既定のキャンセル トークン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、別のキャンセル トークンの値がタスク ファクトリ メソッドへの呼び出し中に明示的に指定されていない限り、このファクトリによって作成されたすべてのタスクに割り当てられる既定のキャンセル トークンを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinuationOptions">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.TaskContinuationOptions ContinuationOptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.Tasks.TaskContinuationOptions ContinuationOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskFactory`1.ContinuationOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このタスク ファクトリの <see cref="T:System.Threading.Tasks.TaskContinuationOptions" /> 列挙値を取得します。</summary>
+        <value>このタスク ファクトリの既定の継続オプションを示す列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、このファクトリの継続のオプションに既定値を返します。 その他のオプションは、このファクトリのメソッドへの呼び出し中に明示的に指定されていない限り、すべての継続タスクを作成するが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAll">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task[],TResult&gt; continuationFunction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAll(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task[], !TResult&gt; continuationFunction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAll(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task[],`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task[],TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="tasks">継続タスクの配列。</param>
+        <param name="continuationFunction">場合のすべてのタスクで非同期的に実行する関数デリゲート、<c>タスク</c>配列が完了します。</param>
+        <summary>指定された一連のタスクの完了時に開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tasks" />配列が<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列が null 値が含まれるか空であります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAll">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task[],TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAll(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task[], !TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAll(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task[],`0},System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task[],TResult&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="tasks">継続タスクの配列。</param>
+        <param name="continuationFunction">場合のすべてのタスクで非同期的に実行する関数デリゲート、<c>タスク</c>配列が完了します。</param>
+        <param name="cancellationToken">新しい継続タスクに割り当てられる取り消しトークン。</param>
+        <summary>指定された一連のタスクの完了時に開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。  
+  
+ または  
+  
+ <see cref="T:System.Threading.CancellationTokenSource" />作成<paramref name="cancellationToken" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列が null 値が含まれるか空であります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAll">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task[],TResult&gt; continuationFunction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAll(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task[], !TResult&gt; continuationFunction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAll(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task[],`0},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task[],TResult&gt;" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="tasks">継続タスクの配列。</param>
+        <param name="continuationFunction">場合のすべてのタスクで非同期的に実行する関数デリゲート、<c>タスク</c>配列が完了します。</param>
+        <param name="continuationOptions">作成された継続タスクの動作を制御する列挙値のいずれか。 NotOn* または OnlyOn* の値が無効です。</param>
+        <summary>指定された一連のタスクの完了時に開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="continuationOptions" />引数が無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列が null 値が含まれるか空であります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAll">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task[],TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAll(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task[], !TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAll(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task[],`0},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task[],TResult&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+      </Parameters>
+      <Docs>
+        <param name="tasks">継続タスクの配列。</param>
+        <param name="continuationFunction">場合のすべてのタスクで非同期的に実行する関数デリゲート、<c>タスク</c>配列が完了します。</param>
+        <param name="cancellationToken">新しい継続タスクに割り当てられる取り消しトークン。</param>
+        <param name="continuationOptions">作成された継続タスクの動作を制御する列挙値のいずれか。 NotOn* または OnlyOn* の値が無効です。</param>
+        <param name="scheduler">作成された継続タスクをスケジュールするときに使用するスケジューラー。</param>
+        <summary>指定された一連のタスクの完了時に開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="scheduler" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列が null 値が含まれるか空であります。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="continuationOptions" />無効な値を指定します。</exception>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。  
+  
+ または  
+  
+ <see cref="T:System.Threading.CancellationTokenSource" />作成<paramref name="cancellationToken" />は既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAll&lt;TAntecedentResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt; continuationFunction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAll&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[], !TResult&gt; continuationFunction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAll``1(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0}[],`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TAntecedentResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TAntecedentResult">継続元の結果の型<c>タスク</c>です。</typeparam>
+        <param name="tasks">継続タスクの配列。</param>
+        <param name="continuationFunction">場合のすべてのタスクで非同期的に実行する関数デリゲート、<c>タスク</c>配列が完了します。</param>
+        <summary>指定された一連のタスクの完了時に開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列が null 値が含まれるか空であります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAll&lt;TAntecedentResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAll&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[], !TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAll``1(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0}[],`0},System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TAntecedentResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TAntecedentResult">継続元の結果の型<c>タスク</c>です。</typeparam>
+        <param name="tasks">継続タスクの配列。</param>
+        <param name="continuationFunction">場合のすべてのタスクで非同期的に実行する関数デリゲート、<c>タスク</c>配列が完了します。</param>
+        <param name="cancellationToken">新しい継続タスクに割り当てられる取り消しトークン。</param>
+        <summary>指定された一連のタスクの完了時に開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。  
+  
+ または  
+  
+ <see cref="T:System.Threading.CancellationTokenSource" />作成<paramref name="cancellationToken" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列が null 値が含まれるか空であります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAll&lt;TAntecedentResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt; continuationFunction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAll&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[], !TResult&gt; continuationFunction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAll``1(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0}[],`0},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TAntecedentResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt;" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TAntecedentResult">継続元の結果の型<c>タスク</c>です。</typeparam>
+        <param name="tasks">継続タスクの配列。</param>
+        <param name="continuationFunction">場合のすべてのタスクで非同期的に実行する関数デリゲート、<c>タスク</c>配列が完了します。</param>
+        <param name="continuationOptions">作成された継続タスクの動作を制御する列挙値のいずれか。 NotOn* または OnlyOn* の値が無効です。</param>
+        <summary>指定された一連のタスクの完了時に開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="continuationOptions" />引数が無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列が null 値が含まれるか空であります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAll&lt;TAntecedentResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAll&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[], !TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAll``1(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0}[],`0},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TAntecedentResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TAntecedentResult">継続元の結果の型<c>タスク</c>です。</typeparam>
+        <param name="tasks">継続タスクの配列。</param>
+        <param name="continuationFunction">場合のすべてのタスクで非同期的に実行する関数デリゲート、<c>タスク</c>配列が完了します。</param>
+        <param name="cancellationToken">新しい継続タスクに割り当てられる取り消しトークン。</param>
+        <param name="continuationOptions">作成された継続タスクの動作を制御する列挙値のいずれか。 NotOn* または OnlyOn* の値が無効です。</param>
+        <param name="scheduler">作成された継続タスクをスケジュールするときに使用するスケジューラー。</param>
+        <summary>指定された一連のタスクの完了時に開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="scheduler" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列が null 値が含まれるか空であります。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="continuationOptions" />引数が無効な値を指定します。</exception>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。  
+  
+ または  
+  
+ <see cref="T:System.Threading.CancellationTokenSource" />作成<paramref name="cancellationToken" />は既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAny">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task,TResult&gt; continuationFunction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAny(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task, !TResult&gt; continuationFunction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAny(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task,`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="tasks">いずれかのタスクが完了したときに開始される継続タスクの配列。</param>
+        <param name="continuationFunction">いずれかのタスクを非同期的に実行する関数デリゲート、<c>タスク</c>配列を完了します。</param>
+        <summary>指定された一連のタスクのうち任意のタスクが完了したときに開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列が null 値が含まれるか空であります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAny">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task,TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAny(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task, !TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAny(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task,`0},System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,TResult&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="tasks">いずれかのタスクが完了したときに開始される継続タスクの配列。</param>
+        <param name="continuationFunction">いずれかのタスクを非同期的に実行する関数デリゲート、<c>タスク</c>配列を完了します。</param>
+        <param name="cancellationToken">新しい継続タスクに割り当てられる取り消しトークン。</param>
+        <summary>指定された一連のタスクのうち任意のタスクが完了したときに開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。  
+  
+ または  
+  
+ <see cref="T:System.Threading.CancellationTokenSource" />作成<paramref name="cancellationToken" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" />配列が null です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が null です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列に null 値が含まれています。  
+  
+ または  
+  
+ <paramref name="tasks" /> 配列が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAny">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task,TResult&gt; continuationFunction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAny(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task, !TResult&gt; continuationFunction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAny(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task,`0},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,TResult&gt;" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="tasks">いずれかのタスクが完了したときに開始される継続タスクの配列。</param>
+        <param name="continuationFunction">いずれかのタスクを非同期的に実行する関数デリゲート、<c>タスク</c>配列を完了します。</param>
+        <param name="continuationOptions">作成された継続タスクの動作を制御する列挙値のいずれか。 <see langword="NotOn*" /> または <see langword="OnlyOn*" /> の値が無効です。</param>
+        <summary>指定された一連のタスクのうち任意のタスクが完了したときに開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="continuationOptions" />引数が無効な列挙値を指定します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列に null 値が含まれています。  
+  
+ または  
+  
+ <paramref name="tasks" /> 配列が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAny">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task,TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAny(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task, !TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAny(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task,`0},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task,TResult&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+      </Parameters>
+      <Docs>
+        <param name="tasks">いずれかのタスクが完了したときに開始される継続タスクの配列。</param>
+        <param name="continuationFunction">いずれかのタスクを非同期的に実行する関数デリゲート、<c>タスク</c>配列を完了します。</param>
+        <param name="cancellationToken">新しい継続タスクに割り当てられる取り消しトークン。</param>
+        <param name="continuationOptions">作成された継続タスクの動作を制御する列挙値のいずれか。 <see langword="NotOn*" /> または <see langword="OnlyOn*" /> の値が無効です。</param>
+        <param name="scheduler">作成された継続タスクをスケジュールするときに使用するタスク スケジューラー。</param>
+        <summary>指定された一連のタスクのうち任意のタスクが完了したときに開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="scheduler" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列に null 値が含まれています。  
+  
+ または  
+  
+ <paramref name="tasks" /> 配列が空です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="continuationOptions" />引数を指定、無効な<see cref="T:System.Threading.Tasks.TaskContinuationOptions" />値。</exception>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。  
+  
+ または  
+  
+ <see cref="T:System.Threading.CancellationTokenSource" />作成<paramref name="cancellationToken" />は既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAny&lt;TAntecedentResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt; continuationFunction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAny&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;, !TResult&gt; continuationFunction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAny``1(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0},`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TAntecedentResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TAntecedentResult">継続元の結果の型<c>タスク</c>です。</typeparam>
+        <param name="tasks">いずれかのタスクが完了したときに開始される継続タスクの配列。</param>
+        <param name="continuationFunction">いずれかのタスクを非同期的に実行する関数デリゲート、<c>タスク</c>配列を完了します。</param>
+        <summary>指定された一連のタスクのうち任意のタスクが完了したときに開始される継続タスクを作成します。</summary>
+        <returns>新しい継続 <see cref="T:System.Threading.Tasks.Task`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列に null 値が含まれています。  
+  
+ または  
+  
+ <paramref name="tasks" /> 配列が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAny&lt;TAntecedentResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAny&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;, !TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAny``1(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0},`0},System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TAntecedentResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TAntecedentResult">継続元の結果の型<c>タスク</c>です。</typeparam>
+        <param name="tasks">いずれかのタスクが完了したときに開始される継続タスクの配列。</param>
+        <param name="continuationFunction">いずれかのタスクを非同期的に実行する関数デリゲート、<c>タスク</c>配列を完了します。</param>
+        <param name="cancellationToken">新しい継続タスクに割り当てられる取り消しトークン。</param>
+        <summary>指定された一連のタスクのうち任意のタスクが完了したときに開始される継続タスクを作成します。</summary>
+        <returns>新しい継続タスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。  
+  
+ または  
+  
+ <see cref="T:System.Threading.CancellationTokenSource" />作成<paramref name="cancellationToken" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列に null 値が含まれています。  
+  
+ または  
+  
+ <paramref name="tasks" /> 配列が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAny&lt;TAntecedentResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt; continuationFunction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAny&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;, !TResult&gt; continuationFunction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAny``1(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0},`0},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TAntecedentResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt;" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TAntecedentResult">継続元の結果の型<c>タスク</c>です。</typeparam>
+        <param name="tasks">いずれかのタスクが完了したときに開始される継続タスクの配列。</param>
+        <param name="continuationFunction">いずれかのタスクを非同期的に実行する関数デリゲート、<c>タスク</c>配列を完了します。</param>
+        <param name="continuationOptions">作成された継続タスクの動作を制御する列挙値のいずれか。 <see langword="NotOn*" /> または <see langword="OnlyOn*" /> の値が無効です。</param>
+        <summary>指定された一連のタスクのうち任意のタスクが完了したときに開始される継続タスクを作成します。</summary>
+        <returns>新しい継続 <see cref="T:System.Threading.Tasks.Task`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="continuationOptions" />引数が無効な列挙値を指定します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列に null 値が含まれています。  
+  
+ または  
+  
+ <paramref name="tasks" /> 配列が空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueWhenAny&lt;TAntecedentResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; ContinueWhenAny&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;, !TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.ContinueWhenAny``1(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0},`0},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TAntecedentResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="tasks" Type="System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]" />
+        <Parameter Name="continuationFunction" Type="System.Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="continuationOptions" Type="System.Threading.Tasks.TaskContinuationOptions" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TAntecedentResult">継続元の結果の型<c>タスク</c>です。</typeparam>
+        <param name="tasks">いずれかのタスクが完了したときに開始される継続タスクの配列。</param>
+        <param name="continuationFunction">いずれかのタスクを非同期的に実行する関数デリゲート、<c>タスク</c>配列を完了します。</param>
+        <param name="cancellationToken">新しい継続タスクに割り当てられる取り消しトークン。</param>
+        <param name="continuationOptions">作成された継続タスクの動作を制御する列挙値のいずれか。 <see langword="NotOn*" /> または <see langword="OnlyOn*" /> の値が無効です。</param>
+        <param name="scheduler">作成された継続 <see cref="T:System.Threading.Tasks.TaskScheduler" /> をスケジュールするときに使用する <see cref="T:System.Threading.Tasks.Task`1" />。</param>
+        <summary>指定された一連のタスクのうち任意のタスクが完了したときに開始される継続タスクを作成します。</summary>
+        <returns>新しい継続 <see cref="T:System.Threading.Tasks.Task`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完了したら、タスクがこれらの状態のいずれかの: <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>、 <xref:System.Threading.Tasks.TaskStatus.Faulted>、または<xref:System.Threading.Tasks.TaskStatus.Canceled>状態です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="tasks" /> 配列が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="continuationFunction" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="scheduler" /> 引数が null です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="tasks" />配列に null 値が含まれています。  
+  
+ または  
+  
+ <paramref name="tasks" /> 配列が空です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="continuationOptions" />引数が無効な TaskContinuationOptions 値を指定します。</exception>
+        <exception cref="T:System.ObjectDisposedException"><paramref name="tasks" /> 配列の要素の 1 つは破棄されました。  
+  
+ または  
+  
+ <see cref="T:System.Threading.CancellationTokenSource" />作成<paramref name="cancellationToken" />は既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreationOptions">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.TaskCreationOptions CreationOptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.Tasks.TaskCreationOptions CreationOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskFactory`1.CreationOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskCreationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このタスク ファクトリの <see cref="T:System.Threading.Tasks.TaskCreationOptions" /> 列挙値を取得します。</summary>
+        <value>このタスク ファクトリの既定の作成オプションを示す列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、このファクトリの作成オプションに既定値を返します。 その他のオプションは、このファクトリのメソッドへの呼び出し中に明示的に指定されていない限り、すべてのタスクを作成するが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync (IAsyncResult asyncResult, Func&lt;IAsyncResult,TResult&gt; endMethod);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; FromAsync(class System.IAsyncResult asyncResult, class System.Func`2&lt;class System.IAsyncResult, !TResult&gt; endMethod) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.FromAsync(System.IAsyncResult,System.Func{System.IAsyncResult,`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+        <Parameter Name="endMethod" Type="System.Func&lt;System.IAsyncResult,TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />完了時の処理をトリガーする必要があります、<c>で</c>です。</param>
+        <param name="endMethod">完成したを処理する関数デリゲート<c>asyncResult</c>です。</param>
+        <summary>指定された <see cref="T:System.IAsyncResult" /> の完了時に終了メソッド関数を実行するタスクを作成します。</summary>
+        <returns>非同期操作を表す <see cref="T:System.Threading.Tasks.Task`1" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endMethod" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync (Func&lt;AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; FromAsync(class System.Func`3&lt;class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !TResult&gt; endMethod, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.FromAsync(System.Func{System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,`0},System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginMethod" Type="System.Func&lt;System.AsyncCallback,System.Object,System.IAsyncResult&gt;" />
+        <Parameter Name="endMethod" Type="System.Func&lt;System.IAsyncResult,TResult&gt;" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="beginMethod">非同期操作を開始するデリゲート。</param>
+        <param name="endMethod">非同期操作を終了するデリゲート。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、 <c>beginMethod</c>を委任します。</param>
+        <summary>非同期プログラミング モデルのパターンに準拠した開始メソッドと終了メソッドの組み合わせを表すタスクを作成します。</summary>
+        <returns>非同期操作を表す作成されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによってスローされた例外をスローする、`beginMethod`です。 例外を`endmethod`返されるタスクを待機しているときにスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="beginMethod" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endMethod" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync (IAsyncResult asyncResult, Func&lt;IAsyncResult,TResult&gt; endMethod, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; FromAsync(class System.IAsyncResult asyncResult, class System.Func`2&lt;class System.IAsyncResult, !TResult&gt; endMethod, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.FromAsync(System.IAsyncResult,System.Func{System.IAsyncResult,`0},System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+        <Parameter Name="endMethod" Type="System.Func&lt;System.IAsyncResult,TResult&gt;" />
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />完了時の処理をトリガーする必要があります、<c>で</c>です。</param>
+        <param name="endMethod">完成したを処理する関数デリゲート<c>asyncResult</c>です。</param>
+        <param name="creationOptions">作成されたタスクの動作を制御する列挙値のいずれか。</param>
+        <summary>指定された <see cref="T:System.IAsyncResult" /> の完了時に終了メソッド関数を実行するタスクを作成します。</summary>
+        <returns>非同期操作を表すタスク。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endMethod" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="creationOptions" />引数が無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync (Func&lt;AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; FromAsync(class System.Func`3&lt;class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !TResult&gt; endMethod, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.FromAsync(System.Func{System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,`0},System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="beginMethod" Type="System.Func&lt;System.AsyncCallback,System.Object,System.IAsyncResult&gt;" />
+        <Parameter Name="endMethod" Type="System.Func&lt;System.IAsyncResult,TResult&gt;" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="beginMethod">非同期操作を開始するデリゲート。</param>
+        <param name="endMethod">非同期操作を終了するデリゲート。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、 <c>beginMethod</c>を委任します。</param>
+        <param name="creationOptions">作成されたタスクの動作を制御する列挙値のいずれか。</param>
+        <summary>非同期プログラミング モデルのパターンに準拠した開始メソッドと終了メソッドの組み合わせを表すタスクを作成します。</summary>
+        <returns>非同期操作を表す作成された <see cref="T:System.Threading.Tasks.Task`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによってスローされた例外をスローする、`beginMethod`です。 例外を`endmethod`返されるタスクを待機しているときにスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="beginMethod" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endMethod" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="creationOptions" />引数が無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync (IAsyncResult asyncResult, Func&lt;IAsyncResult,TResult&gt; endMethod, System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; FromAsync(class System.IAsyncResult asyncResult, class System.Func`2&lt;class System.IAsyncResult, !TResult&gt; endMethod, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.FromAsync(System.IAsyncResult,System.Func{System.IAsyncResult,`0},System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+        <Parameter Name="endMethod" Type="System.Func&lt;System.IAsyncResult,TResult&gt;" />
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />完了時の処理をトリガーする必要があります、<c>で</c>です。</param>
+        <param name="endMethod">完成したを処理する関数デリゲート<c>asyncResult</c>です。</param>
+        <param name="creationOptions">作成されたタスクの動作を制御する列挙値のいずれか。</param>
+        <param name="scheduler">終了メソッドを実行するタスクをスケジュールするときに使用するタスク スケジューラー。</param>
+        <summary>指定された <see cref="T:System.IAsyncResult" /> の完了時に終了メソッド関数を実行するタスクを作成します。</summary>
+        <returns>非同期操作を表す作成されたタスク。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endMethod" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="scheduler" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="creationOptions" />パラメーターが無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAsync&lt;TArg1&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1&gt; (Func&lt;TArg1,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; FromAsync&lt;TArg1&gt;(class System.Func`4&lt;!!TArg1, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !TResult&gt; endMethod, !!TArg1 arg1, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.FromAsync``1(System.Func{``0,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,`0},``0,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TArg1" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="beginMethod" Type="System.Func&lt;TArg1,System.AsyncCallback,System.Object,System.IAsyncResult&gt;" />
+        <Parameter Name="endMethod" Type="System.Func&lt;System.IAsyncResult,TResult&gt;" />
+        <Parameter Name="arg1" Type="TArg1" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TArg1">渡される最初の引数の型、 <c>beginMethod</c>を委任します。</typeparam>
+        <param name="beginMethod">非同期操作を開始するデリゲート。</param>
+        <param name="endMethod">非同期操作を終了するデリゲート。</param>
+        <param name="arg1">渡される最初の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、 <c>beginMethod</c>を委任します。</param>
+        <summary>非同期プログラミング モデルのパターンに準拠した開始メソッドと終了メソッドの組み合わせを表すタスクを作成します。</summary>
+        <returns>非同期操作を表す作成されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによってスローされた例外をスローする、`beginMethod`です。 例外を`endmethod`返されるタスクを待機しているときにスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="beginMethod" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endMethod" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAsync&lt;TArg1&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1&gt; (Func&lt;TArg1,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; FromAsync&lt;TArg1&gt;(class System.Func`4&lt;!!TArg1, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !TResult&gt; endMethod, !!TArg1 arg1, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.FromAsync``1(System.Func{``0,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,`0},``0,System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TArg1" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="beginMethod" Type="System.Func&lt;TArg1,System.AsyncCallback,System.Object,System.IAsyncResult&gt;" />
+        <Parameter Name="endMethod" Type="System.Func&lt;System.IAsyncResult,TResult&gt;" />
+        <Parameter Name="arg1" Type="TArg1" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TArg1">渡される最初の引数の型、 <c>beginMethod</c>を委任します。</typeparam>
+        <param name="beginMethod">非同期操作を開始するデリゲート。</param>
+        <param name="endMethod">非同期操作を終了するデリゲート。</param>
+        <param name="arg1">渡される最初の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、 <c>beginMethod</c>を委任します。</param>
+        <param name="creationOptions">作成されたタスクの動作を制御する列挙値のいずれか。</param>
+        <summary>非同期プログラミング モデルのパターンに準拠した開始メソッドと終了メソッドの組み合わせを表すタスクを作成します。</summary>
+        <returns>非同期操作を表す作成されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによってスローされた例外をスローする、`beginMethod`です。 例外を`endmethod`返されるタスクを待機しているときにスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="beginMethod" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endMethod" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="creationOptions" />パラメーターが無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAsync&lt;TArg1,TArg2&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1,TArg2&gt; (Func&lt;TArg1,TArg2,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, TArg2 arg2, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; FromAsync&lt;TArg1, TArg2&gt;(class System.Func`5&lt;!!TArg1, !!TArg2, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !TResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.FromAsync``2(System.Func{``0,``1,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,`0},``0,``1,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TArg1" />
+        <TypeParameter Name="TArg2" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="beginMethod" Type="System.Func&lt;TArg1,TArg2,System.AsyncCallback,System.Object,System.IAsyncResult&gt;" />
+        <Parameter Name="endMethod" Type="System.Func&lt;System.IAsyncResult,TResult&gt;" />
+        <Parameter Name="arg1" Type="TArg1" />
+        <Parameter Name="arg2" Type="TArg2" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TArg1">2 番目の引数の型に渡される<c>beginMethod</c>を委任します。</typeparam>
+        <typeparam name="TArg2">渡される最初の引数の型、 <c>beginMethod</c>を委任します。</typeparam>
+        <param name="beginMethod">非同期操作を開始するデリゲート。</param>
+        <param name="endMethod">非同期操作を終了するデリゲート。</param>
+        <param name="arg1">渡される最初の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="arg2">渡される 2 番目の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、 <c>beginMethod</c>を委任します。</param>
+        <summary>非同期プログラミング モデルのパターンに準拠した開始メソッドと終了メソッドの組み合わせを表すタスクを作成します。</summary>
+        <returns>非同期操作を表す作成されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによってスローされた例外をスローする、`beginMethod`です。 例外を`endmethod`返されるタスクを待機しているときにスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="beginMethod" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endMethod" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAsync&lt;TArg1,TArg2&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1,TArg2&gt; (Func&lt;TArg1,TArg2,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, TArg2 arg2, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; FromAsync&lt;TArg1, TArg2&gt;(class System.Func`5&lt;!!TArg1, !!TArg2, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !TResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.FromAsync``2(System.Func{``0,``1,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,`0},``0,``1,System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TArg1" />
+        <TypeParameter Name="TArg2" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="beginMethod" Type="System.Func&lt;TArg1,TArg2,System.AsyncCallback,System.Object,System.IAsyncResult&gt;" />
+        <Parameter Name="endMethod" Type="System.Func&lt;System.IAsyncResult,TResult&gt;" />
+        <Parameter Name="arg1" Type="TArg1" />
+        <Parameter Name="arg2" Type="TArg2" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TArg1">2 番目の引数の型に渡される<c>beginMethod</c>を委任します。</typeparam>
+        <typeparam name="TArg2">渡される最初の引数の型、 <c>beginMethod</c>を委任します。</typeparam>
+        <param name="beginMethod">非同期操作を開始するデリゲート。</param>
+        <param name="endMethod">非同期操作を終了するデリゲート。</param>
+        <param name="arg1">渡される最初の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="arg2">渡される 2 番目の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、 <c>beginMethod</c>を委任します。</param>
+        <param name="creationOptions">作成された <see cref="T:System.Threading.Tasks.Task`1" /> の動作を制御するオブジェクト。</param>
+        <summary>非同期プログラミング モデルのパターンに準拠した開始メソッドと終了メソッドの組み合わせを表すタスクを作成します。</summary>
+        <returns>非同期操作を表す作成されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによってスローされた例外をスローする、`beginMethod`です。 例外を`endmethod`返されるタスクを待機しているときにスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="beginMethod" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endMethod" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="creationOptions" />パラメーターが無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAsync&lt;TArg1,TArg2,TArg3&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1,TArg2,TArg3&gt; (Func&lt;TArg1,TArg2,TArg3,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, TArg2 arg2, TArg3 arg3, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; FromAsync&lt;TArg1, TArg2, TArg3&gt;(class System.Func`6&lt;!!TArg1, !!TArg2, !!TArg3, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !TResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, !!TArg3 arg3, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.FromAsync``3(System.Func{``0,``1,``2,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,`0},``0,``1,``2,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TArg1" />
+        <TypeParameter Name="TArg2" />
+        <TypeParameter Name="TArg3" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="beginMethod" Type="System.Func&lt;TArg1,TArg2,TArg3,System.AsyncCallback,System.Object,System.IAsyncResult&gt;" />
+        <Parameter Name="endMethod" Type="System.Func&lt;System.IAsyncResult,TResult&gt;" />
+        <Parameter Name="arg1" Type="TArg1" />
+        <Parameter Name="arg2" Type="TArg2" />
+        <Parameter Name="arg3" Type="TArg3" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TArg1">2 番目の引数の型に渡される<c>beginMethod</c>を委任します。</typeparam>
+        <typeparam name="TArg2">渡される 3 番目の引数の型<c>beginMethod</c>を委任します。</typeparam>
+        <typeparam name="TArg3">渡される最初の引数の型、 <c>beginMethod</c>を委任します。</typeparam>
+        <param name="beginMethod">非同期操作を開始するデリゲート。</param>
+        <param name="endMethod">非同期操作を終了するデリゲート。</param>
+        <param name="arg1">渡される最初の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="arg2">渡される 2 番目の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="arg3">渡される 3 番目の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、 <c>beginMethod</c>を委任します。</param>
+        <summary>非同期プログラミング モデルのパターンに準拠した開始メソッドと終了メソッドの組み合わせを表すタスクを作成します。</summary>
+        <returns>非同期操作を表す作成されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによってスローされた例外をスローする、`beginMethod`です。 例外を`endmethod`返されるタスクを待機しているときにスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="beginMethod" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endMethod" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAsync&lt;TArg1,TArg2,TArg3&gt;">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1,TArg2,TArg3&gt; (Func&lt;TArg1,TArg2,TArg3,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, TArg2 arg2, TArg3 arg3, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; FromAsync&lt;TArg1, TArg2, TArg3&gt;(class System.Func`6&lt;!!TArg1, !!TArg2, !!TArg3, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !TResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, !!TArg3 arg3, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.FromAsync``3(System.Func{``0,``1,``2,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,`0},``0,``1,``2,System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TArg1" />
+        <TypeParameter Name="TArg2" />
+        <TypeParameter Name="TArg3" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="beginMethod" Type="System.Func&lt;TArg1,TArg2,TArg3,System.AsyncCallback,System.Object,System.IAsyncResult&gt;" />
+        <Parameter Name="endMethod" Type="System.Func&lt;System.IAsyncResult,TResult&gt;" />
+        <Parameter Name="arg1" Type="TArg1" />
+        <Parameter Name="arg2" Type="TArg2" />
+        <Parameter Name="arg3" Type="TArg3" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TArg1">2 番目の引数の型に渡される<c>beginMethod</c>を委任します。</typeparam>
+        <typeparam name="TArg2">渡される 3 番目の引数の型<c>beginMethod</c>を委任します。</typeparam>
+        <typeparam name="TArg3">渡される最初の引数の型、 <c>beginMethod</c>を委任します。</typeparam>
+        <param name="beginMethod">非同期操作を開始するデリゲート。</param>
+        <param name="endMethod">非同期操作を終了するデリゲート。</param>
+        <param name="arg1">渡される最初の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="arg2">渡される 2 番目の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="arg3">渡される 3 番目の引数、 <c>beginMethod</c>を委任します。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、 <c>beginMethod</c>を委任します。</param>
+        <param name="creationOptions">作成されたタスクの動作を制御するオブジェクト。</param>
+        <summary>非同期プログラミング モデルのパターンに準拠した開始メソッドと終了メソッドの組み合わせを表すタスクを作成します。</summary>
+        <returns>非同期操作を表す作成されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによってスローされた例外をスローする、`beginMethod`です。 例外を`endmethod`返されるタスクを待機しているときにスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="beginMethod" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endMethod" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="creationOptions" />パラメーターが無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheduler">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.TaskScheduler Scheduler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.TaskScheduler Scheduler" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskFactory`1.Scheduler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskScheduler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このタスク ファクトリのタスク スケジューラーを取得します。</summary>
+        <value>このタスク ファクトリのタスク スケジューラー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、このファクトリの既定のスケジューラを返します。 別のスケジューラがこのファクトリのメソッドへの呼び出し中に明示的に指定されていない限り、すべてのタスクをスケジュールに使用されます。  
+  
+ このプロパティを返す場合`null`、<xref:System.Threading.Tasks.TaskScheduler.Current%2A>使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartNew">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew (Func&lt;TResult&gt; function);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; StartNew(class System.Func`1&lt;!TResult&gt; function) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.StartNew(System.Func{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="function" Type="System.Func&lt;TResult&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="function">タスクを通じて取得される結果を返す関数デリゲート。</param>
+        <summary>タスクを作成して開始します。</summary>
+        <returns>開始されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`StartNew`機能的のいずれかを使用してタスクを作成するのには、<xref:System.Threading.Tasks.Task%601>コンス トラクター、および、通話、<xref:System.Threading.Tasks.Task.Start%2A>メソッドの実行スケジュールを設定します。  
+  
+ ただし、作成とスケジュール設定を区切る必要があります、しない限り、`StartNew`簡潔性とパフォーマンスの両方の方法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="function" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartNew">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew (Func&lt;object,TResult&gt; function, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; StartNew(class System.Func`2&lt;object, !TResult&gt; function, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.StartNew(System.Func{System.Object,`0},System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="function" Type="System.Func&lt;System.Object,TResult&gt;" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="function">タスクを通じて取得される結果を返す関数デリゲート。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、<c>関数</c>を委任します。</param>
+        <summary>タスクを作成して開始します。</summary>
+        <returns>開始されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`StartNew`機能的のいずれかを使用してタスクを作成するのには、<xref:System.Threading.Tasks.Task%601>コンス トラクターと、呼び出し元、<xref:System.Threading.Tasks.Task.Start%2A>メソッドの実行スケジュールを設定します。  
+  
+ ただし、作成とスケジュール設定を区切る必要があります、しない限り、`StartNew`簡潔性とパフォーマンスの両方の方法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="function" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartNew">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew (Func&lt;TResult&gt; function, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; StartNew(class System.Func`1&lt;!TResult&gt; function, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.StartNew(System.Func{`0},System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="function" Type="System.Func&lt;TResult&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="function">タスクを通じて取得される結果を返す関数デリゲート。</param>
+        <param name="cancellationToken">新しいタスクに割り当てられる取り消しトークン。</param>
+        <summary>タスクを作成して開始します。</summary>
+        <returns>開始されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`StartNew`機能的のいずれかを使用してタスクを作成するのには、<xref:System.Threading.Tasks.Task%601>コンス トラクターと、呼び出し元、<xref:System.Threading.Tasks.Task.Start%2A>メソッドの実行スケジュールを設定します。  
+  
+ ただし、作成とスケジュール設定を区切る必要があります、しない限り、`StartNew`簡潔性とパフォーマンスの両方の方法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">キャンセル トークン ソースを作成した<paramref name="cancellationToken" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="function" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartNew">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew (Func&lt;TResult&gt; function, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; StartNew(class System.Func`1&lt;!TResult&gt; function, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.StartNew(System.Func{`0},System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="function" Type="System.Func&lt;TResult&gt;" />
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="function">タスクを通じて取得される結果を返す関数デリゲート。</param>
+        <param name="creationOptions">作成されたタスクの動作を制御する列挙値のいずれか。</param>
+        <summary>タスクを作成して開始します。</summary>
+        <returns>開始された <see cref="T:System.Threading.Tasks.Task`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`StartNew`機能的のいずれかを使用してタスクを作成するのには、<xref:System.Threading.Tasks.Task%601>コンス トラクターと、呼び出し元、<xref:System.Threading.Tasks.Task.Start%2A>メソッドの実行スケジュールを設定します。  
+  
+ ただし、作成とスケジュール設定を区切る必要があります、しない限り、`StartNew`簡潔性とパフォーマンスの両方の方法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="function" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="creationOptions" />パラメーターが無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartNew">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew (Func&lt;object,TResult&gt; function, object state, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; StartNew(class System.Func`2&lt;object, !TResult&gt; function, object state, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.StartNew(System.Func{System.Object,`0},System.Object,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="function" Type="System.Func&lt;System.Object,TResult&gt;" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="function">タスクを通じて取得される結果を返す関数デリゲート。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、<c>関数</c>を委任します。</param>
+        <param name="cancellationToken">新しいタスクに割り当てられる取り消しトークン。</param>
+        <summary>タスクを作成して開始します。</summary>
+        <returns>開始されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`StartNew`機能的のいずれかを使用してタスクを作成するのには、<xref:System.Threading.Tasks.Task%601>コンス トラクターと、呼び出し元、<xref:System.Threading.Tasks.Task.Start%2A>メソッドの実行スケジュールを設定します。  
+  
+ ただし、作成とスケジュール設定を区切る必要があります、しない限り、`StartNew`簡潔性とパフォーマンスの両方の方法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">キャンセル トークン ソースを作成した<paramref name="cancellationToken" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="function" /> 引数が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartNew">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew (Func&lt;object,TResult&gt; function, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; StartNew(class System.Func`2&lt;object, !TResult&gt; function, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.StartNew(System.Func{System.Object,`0},System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="function" Type="System.Func&lt;System.Object,TResult&gt;" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+      </Parameters>
+      <Docs>
+        <param name="function">タスクを通じて取得される結果を返す関数デリゲート。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、<c>関数</c>を委任します。</param>
+        <param name="creationOptions">作成されたタスクの動作を制御する列挙値のいずれか。</param>
+        <summary>タスクを作成して開始します。</summary>
+        <returns>開始されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`StartNew`機能的のいずれかを使用してタスクを作成するのには、<xref:System.Threading.Tasks.Task%601>コンス トラクターと、呼び出し元、<xref:System.Threading.Tasks.Task.Start%2A>メソッドの実行スケジュールを設定します。  
+  
+ ただし、作成とスケジュール設定を区切る必要があります、しない限り、`StartNew`簡潔性とパフォーマンスの両方の方法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="function" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="creationOptions" />パラメーターが無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartNew">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew (Func&lt;TResult&gt; function, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; StartNew(class System.Func`1&lt;!TResult&gt; function, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.StartNew(System.Func{`0},System.Threading.CancellationToken,System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="function" Type="System.Func&lt;TResult&gt;" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+      </Parameters>
+      <Docs>
+        <param name="function">タスクを通じて取得される結果を返す関数デリゲート。</param>
+        <param name="cancellationToken">新しいタスクに割り当てられる取り消しトークン。</param>
+        <param name="creationOptions">作成されたタスクの動作を制御する列挙値のいずれか。</param>
+        <param name="scheduler">作成されたタスクをスケジュールするときに使用するタスク スケジューラー。</param>
+        <summary>タスクを作成して開始します。</summary>
+        <returns>開始されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`StartNew`機能的のいずれかを使用してタスクを作成するのには、<xref:System.Threading.Tasks.Task%601>コンス トラクターと、呼び出し元、<xref:System.Threading.Tasks.Task.Start%2A>メソッドの実行スケジュールを設定します。  
+  
+ ただし、作成とスケジュール設定を区切る必要があります、しない限り、`StartNew`簡潔性とパフォーマンスの両方の方法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">キャンセル トークン ソースを作成した<paramref name="cancellationToken" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="function" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="scheduler" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="creationOptions" />パラメーターが無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartNew">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew (Func&lt;object,TResult&gt; function, object state, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!TResult&gt; StartNew(class System.Func`2&lt;object, !TResult&gt; function, object state, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory`1.StartNew(System.Func{System.Object,`0},System.Object,System.Threading.CancellationToken,System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="function" Type="System.Func&lt;System.Object,TResult&gt;" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+        <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
+        <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
+      </Parameters>
+      <Docs>
+        <param name="function">タスクを通じて取得される結果を返す関数デリゲート。</param>
+        <param name="state">によって使用されるデータを格納しているオブジェクト、<c>関数</c>を委任します。</param>
+        <param name="cancellationToken">新しいタスクに割り当てられる取り消しトークン。</param>
+        <param name="creationOptions">作成されたタスクの動作を制御する列挙値のいずれか。</param>
+        <param name="scheduler">作成されたタスクをスケジュールするときに使用するタスク スケジューラー。</param>
+        <summary>タスクを作成して開始します。</summary>
+        <returns>開始されたタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`StartNew`機能的のいずれかを使用してタスクを作成するのには、<xref:System.Threading.Tasks.Task%601>コンス トラクターと、呼び出し元、<xref:System.Threading.Tasks.Task.Start%2A>メソッドの実行スケジュールを設定します。  
+  
+ ただし、作成とスケジュール設定を区切る必要があります、しない限り、`StartNew`簡潔性とパフォーマンスの両方の方法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">キャンセル トークン ソースを作成した<paramref name="cancellationToken" />は既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="function" /> 引数が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="scheduler" /> 引数が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="creationOptions" />パラメーターが無効な値を指定します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

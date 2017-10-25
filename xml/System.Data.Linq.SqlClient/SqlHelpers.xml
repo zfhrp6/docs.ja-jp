@@ -1,0 +1,120 @@
+<Type Name="SqlHelpers" FullName="System.Data.Linq.SqlClient.SqlHelpers">
+  <TypeSignature Language="C#" Value="public static class SqlHelpers" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SqlHelpers extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.SqlClient.SqlHelpers" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字列のパターンに一致する操作のヘルパー メソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="GetStringContainsPattern">
+      <MemberSignature Language="C#" Value="public static string GetStringContainsPattern (string text, char escape);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetStringContainsPattern(string text, char escape) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.SqlClient.SqlHelpers.GetStringContainsPattern(System.String,System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="escape" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="text">検索パターン文字列に挿入する文字列。</param>
+        <param name="escape">ワイルドカード文字をエスケープするために使用する文字。</param>
+        <summary>前に、その後に、指定したテキストでその他のテキストに持つことができます検索パターン文字列を作成します。</summary>
+        <returns>前に、と後に、指定した文字列と '%' 文字を含む検索パターン文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetStringEndsWithPattern">
+      <MemberSignature Language="C#" Value="public static string GetStringEndsWithPattern (string text, char escape);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetStringEndsWithPattern(string text, char escape) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.SqlClient.SqlHelpers.GetStringEndsWithPattern(System.String,System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="escape" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="text">検索パターン文字列に挿入する文字列。</param>
+        <param name="escape">ワイルドカード文字をエスケープするために使用する文字。</param>
+        <summary>指定したテキストが後にないが、その前に、その他のテキストを持つことができます、検索パターン文字列を作成します。</summary>
+        <returns>指定した文字列の後に '%' 文字を含む検索パターン文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetStringStartsWithPattern">
+      <MemberSignature Language="C#" Value="public static string GetStringStartsWithPattern (string text, char escape);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetStringStartsWithPattern(string text, char escape) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.SqlClient.SqlHelpers.GetStringStartsWithPattern(System.String,System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="escape" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="text">検索パターン文字列に挿入する文字列。</param>
+        <param name="escape">ワイルドカード文字をエスケープするために使用する文字。</param>
+        <summary>前にないが、その後に、指定したテキストでその他のテキストに持つことができます、検索パターン文字列を作成します。</summary>
+        <returns>'%' 文字が続く指定された文字列を含む検索パターン文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateVBLikePattern">
+      <MemberSignature Language="C#" Value="public static string TranslateVBLikePattern (string pattern, char escape);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string TranslateVBLikePattern(string pattern, char escape) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.SqlClient.SqlHelpers.TranslateVBLikePattern(System.String,System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pattern" Type="System.String" />
+        <Parameter Name="escape" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="pattern">[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] <see langword="Like" />検索パターンに変換する、 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] <see langword="LIKE" />検索パターン。</param>
+        <param name="escape">SQL の特殊文字またはエスケープ文字をエスケープするために使用する文字。</param>
+        <summary>検索パターンの変換、 [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] <see langword="Like" />演算子の検索パターンを[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]<see langword="LIKE" />演算子。</summary>
+        <returns>検索パターン、 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] <see langword="LIKE" />を指定された対応する演算子[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]<see langword="Like" />検索パターン。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

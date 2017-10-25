@@ -1,0 +1,278 @@
+<Type Name="CipherReference" FullName="System.Security.Cryptography.Xml.CipherReference">
+  <TypeSignature Language="C#" Value="public sealed class CipherReference : System.Security.Cryptography.Xml.EncryptedReference" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CipherReference extends System.Security.Cryptography.Xml.EncryptedReference" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.CipherReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.Xml.EncryptedReference</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="&lt;CipherReference&gt;" /> XML 暗号化要素です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを表します、 `<CipherReference>` XML 暗号化要素です。 ソースを識別するには、処理されると、暗号化されたデータが得られます。  
+  
+ 実際の暗号化されたデータによって参照される、`<CipherReference>`次のプロセスを取得します。 `<CipherReference> URI`プロパティには、Uniform Resource Identifier () が逆参照するが含まれています。 場合、`<CipherReference>`要素には、変換チェーンも含まれています、URI の逆参照されるデータを変換、暗号化されたデータを生成するために指定します。 たとえば、暗号化されたデータが base64 でエンコードされた XML ドキュメント内の場合、変換は、base64 をデコードして暗号化されたデータを抽出するための後に、XPath 式を指定します。  
+  
+ URI および変換の構文は、XML デジタル署名のことに似ています。  ただしで XML デジタル署名の生成と検証処理の両方、同じソース データで開始し、同じ順序で変換を実行します。 XML 暗号化、復号化するアプリケーションは、暗号化されたデータのみと指定された変換にあります。 これらの変換は、暗号化されたデータを取得するために必要な順序で列挙されます。  
+  
+ **注**既定では、逆参照できません、Web サイトからのファイルなどの不明なソースを持つドキュメントからの暗号参照のため、<xref:System.Security.Cryptography.Xml.EncryptedXml.DocumentEvidence%2A>プロパティは**null**です。 たとえば、しようとするを格納するファイルを復号化、 `<CipherReference>` 、Web 上のファイルを参照する要素、<xref:System.Security.SecurityException>スローされると、完全に信頼されたアセンブリによって、要求が行われた場合でもです。  
+  
+ 暗号化を解除するドキュメントを信頼できる場合は、次のコードを使用して完全に信頼されたアプリケーションの動作を変更できます。  
+  
+```  
+Evidence ev = new Evidence();  
+ev.AddHost (new Zone(SecurityZone.MyComputer));  
+EncryptedXml exml = new EncryptedXml(doc, ev);  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Security.Cryptography.Xml.CipherReference>です。  
+  
+ [!code-cpp[cryptography.Xml.CipherReference#1](~/samples/snippets/cpp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CPP/example.cpp#1)]
+ [!code-csharp[cryptography.Xml.CipherReference#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CS/example.cs#1)]
+ [!code-vb[cryptography.Xml.CipherReference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.Xml.CipherReference/VB/example.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.CipherReference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Security.Cryptography.Xml.CipherReference>に関するリファレンス情報を提供するオブジェクト、<xref:System.Security.Cryptography.Xml.CipherData>オブジェクト。 リファレンス情報は、暗号化されたデータの場所を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CipherReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.CipherReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.CipherReference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Security.Cryptography.Xml.CipherReference>に関するリファレンス情報を提供するオブジェクト、<xref:System.Security.Cryptography.Xml.CipherData>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Security.Cryptography.Xml.CipherReference>です。  
+  
+ [!code-cpp[cryptography.Xml.CipherReference#1](~/samples/snippets/cpp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CPP/example.cpp#1)]
+ [!code-csharp[cryptography.Xml.CipherReference#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CS/example.cs#1)]
+ [!code-vb[cryptography.Xml.CipherReference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.Xml.CipherReference/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CipherReference (string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.CipherReference.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">UNIFORM Resource Identifier ()、暗号化されたデータをポイントします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.CipherReference" />クラス、指定された Uniform Resource Identifier () を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Security.Cryptography.Xml.CipherReference>オブジェクトの Uniform Resource Identifier ()、暗号化されたデータを指すを使用します。 に関するリファレンス情報を提供する、オブジェクトを使用して、<xref:System.Security.Cryptography.Xml.CipherData>オブジェクト。  
+  
+ 暗号化されたデータを含む XML ファイルを指定するのに URI を使用できます。 例:  
+  
+ `String uri = "http://www.woodgrovebank.com/document.xml";`  
+  
+ 部分的な URI を使用して、XML ドキュメントの一部のみが暗号化することを指定することができますも。 たとえば、2 つ document.xml を名前付き XML ドキュメントが含まれている`MyForm`要素の次の XML コード例に示すようにします。  
+  
+ `<MyForm Id='Form1'>`  
+  
+ `<! -- Form data here -->`  
+  
+ `</MyForm>`  
+  
+ `<MyForm Id='Form2'>`  
+  
+ `<! -- Form data here -->`  
+  
+ `</MyForm>`  
+  
+ コンテンツのみを暗号化することができます`Form2`次などの URI を使用します。  
+  
+ `String uri = "http://www.woodgrovebank.com/document.xml#Form2";`  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Security.Cryptography.Xml.CipherReference>です。  
+  
+ [!code-cpp[cryptography.Xml.CipherReference#1](~/samples/snippets/cpp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CPP/example.cpp#1)]
+ [!code-csharp[cryptography.Xml.CipherReference#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CS/example.cs#1)]
+ [!code-vb[cryptography.Xml.CipherReference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.Xml.CipherReference/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CipherReference (string uri, System.Security.Cryptography.Xml.TransformChain tc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uri, class System.Security.Cryptography.Xml.TransformChain tc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.CipherReference.#ctor(System.String,System.Security.Cryptography.Xml.TransformChain)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+        <Parameter Name="transformChain" Type="System.Security.Cryptography.Xml.TransformChain" />
+      </Parameters>
+      <Docs>
+        <param name="uri">UNIFORM Resource Identifier ()、暗号化されたデータをポイントします。</param>
+        <param name="tc">To be added.</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.CipherReference" />クラスの指定 (Uniform Resource Identifier) と変換チェーンの情報を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Security.Cryptography.Xml.CipherReference>オブジェクトを暗号化されたデータを示します (Uniform Resource Identifier) と変換のチェーンを使用します。 に関するリファレンス情報を提供する、オブジェクトを使用して、<xref:System.Security.Cryptography.Xml.CipherData>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成<xref:System.Security.Cryptography.Xml.CipherReference>です。  
+  
+ [!code-cpp[cryptography.Xml.CipherReference#1](~/samples/snippets/cpp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CPP/example.cpp#1)]
+ [!code-csharp[cryptography.Xml.CipherReference#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.Xml.CipherReference/CS/example.cs#1)]
+ [!code-vb[cryptography.Xml.CipherReference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.Xml.CipherReference/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlElement GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlElement GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.CipherReference.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML 表現を返します、<see cref="T:System.Security.Cryptography.Xml.CipherReference" />オブジェクト。</summary>
+        <returns><see cref="T:System.Xml.XmlElement" />を表す、 <see langword="&lt;CipherReference&gt;" /> XML 暗号化要素です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、出力、 `<CipherReference>` XML 内の要素。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する 1 つの方法を示しています、<xref:System.Security.Cryptography.Xml.CipherReference.GetXml%2A>メソッドです。  
+  
+ [!code-cpp[CipherReference2#1](~/samples/snippets/cpp/VS_Snippets_CLR/CipherReference2/CPP/example.cpp#1)]
+ [!code-csharp[CipherReference2#1](~/samples/snippets/csharp/VS_Snippets_CLR/CipherReference2/CS/example.cs#1)]
+ [!code-vb[CipherReference2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CipherReference2/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><see cref="T:System.Security.Cryptography.Xml.CipherReference" /> 値は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadXml">
+      <MemberSignature Language="C#" Value="public override void LoadXml (System.Xml.XmlElement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadXml(class System.Xml.XmlElement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.CipherReference.LoadXml(System.Xml.XmlElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Xml.XmlElement" />参照として使用する XML 要素を表すオブジェクト。</param>
+        <summary>XML の情報を読み込み、 <see langword="&lt;CipherReference&gt;" /> XML 暗号化要素です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用してに既存の XML 要素を読み込み、<xref:System.Security.Cryptography.Xml.CipherReference>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" />提供は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

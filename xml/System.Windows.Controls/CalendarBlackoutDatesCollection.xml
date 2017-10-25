@@ -1,0 +1,271 @@
+<Type Name="CalendarBlackoutDatesCollection" FullName="System.Windows.Controls.CalendarBlackoutDatesCollection">
+  <TypeSignature Language="C#" Value="public sealed class CalendarBlackoutDatesCollection : System.Collections.ObjectModel.ObservableCollection&lt;System.Windows.Controls.CalendarDateRange&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CalendarBlackoutDatesCollection extends System.Collections.ObjectModel.ObservableCollection`1&lt;class System.Windows.Controls.CalendarDateRange&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.CalendarBlackoutDatesCollection" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.ObservableCollection&lt;System.Windows.Controls.CalendarDateRange&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Windows.Controls.CalendarDateRange</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Controls.Calendar" /> 内の選択できない日付のコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.CalendarBlackoutDatesCollection>含む<xref:System.Windows.Controls.CalendarDateRange>ユーザーが複数の日付を指定するオブジェクトを選択することはできません。 過去の日付のすべてありません選択できるように、するを使用できます、<xref:System.Windows.Controls.CalendarBlackoutDatesCollection.AddDatesInPast%2A>メソッドです。  
+  
+<a name="xamlPropertyElementUsage_CalendarBlackoutDatesCollection"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.property>  
+    oneOrMoreCalendarDateRanges  
+  </object.property>  
+</object>  
+  
+```  
+  
+<a name="xamlValues_CalendarBlackoutDatesCollection"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreCalendarDateRanges*  
+ 型の 1 つまたは複数のオブジェクト要素<xref:System.Windows.Controls.CalendarDateRange>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.Calendar>コードとマークアップを選択できない日付を持つのです。  
+  
+ [!code-csharp[CalendarSnippets#3](~/samples/snippets/csharp/VS_Snippets_Wpf/calendarsnippets/csharp/window1.xaml.cs#3)]
+ [!code-vb[CalendarSnippets#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/calendarsnippets/visualbasic/window1.xaml.vb#3)]
+ [!code-xaml[CalendarSnippets#3](~/samples/snippets/xaml/VS_Snippets_Wpf/calendarsnippets/xaml/window1.xaml#3)]  
+  
+ 前の例では、次の図のような出力を生成します。  
+  
+ ![選択できない日付を含むカレンダーです。](~/add/media/ndp-calendarblackout.png "選択できない日付を含むカレンダーです。")  
+選択できない日付を含むカレンダー  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CalendarBlackoutDatesCollection (System.Windows.Controls.Calendar owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Controls.Calendar owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.CalendarBlackoutDatesCollection.#ctor(System.Windows.Controls.Calendar)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Controls.Calendar" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Controls.Calendar" />が日付をこのオブジェクトを表します。</param>
+        <summary><see cref="T:System.Windows.Controls.CalendarBlackoutDatesCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDatesInPast">
+      <MemberSignature Language="C#" Value="public void AddDatesInPast ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddDatesInPast() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.CalendarBlackoutDatesCollection.AddDatesInPast" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加する前にすべての日付<see cref="P:System.DateTime.Today" />をコレクションにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが過去の日付を選択することを防止するのにには、このメソッドを使用します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.Calendar>が含まれている、<xref:System.Windows.FrameworkElement.Loaded>イベント ハンドラー。  
+  
+ [!code-xaml[CalendarSnippets#6](~/samples/snippets/xaml/VS_Snippets_Wpf/calendarsnippets/xaml/window1.xaml#6)]  
+  
+ 次の例は、<xref:System.Windows.FrameworkElement.Loaded>イベント ハンドラー。 イベント ハンドラーの呼び出し、<xref:System.Windows.Controls.CalendarBlackoutDatesCollection.AddDatesInPast%2A>メソッドをそれ以降のみが選択可能な日付します。  
+  
+ [!code-csharp[CalendarSnippets#7](~/samples/snippets/csharp/VS_Snippets_Wpf/calendarsnippets/csharp/window1.xaml.cs#7)]
+ [!code-vb[CalendarSnippets#7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/calendarsnippets/visualbasic/window1.xaml.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearItems">
+      <MemberSignature Language="C#" Value="protected override void ClearItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ClearItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.CalendarBlackoutDatesCollection.ClearItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (DateTime date);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(valuetype System.DateTime date) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.CalendarBlackoutDatesCollection.Contains(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="date" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="date">日付を検索します。</param>
+        <summary>このコレクションは、指定した日付を含むかどうかを表す値を返します。</summary>
+        <returns>
+          <see langword="true" />コレクションには、指定した日付が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (DateTime start, DateTime end);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(valuetype System.DateTime start, valuetype System.DateTime end) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.CalendarBlackoutDatesCollection.Contains(System.DateTime,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="start" Type="System.DateTime" />
+        <Parameter Name="end" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="start">日付の範囲の開始。</param>
+        <param name="end">日付の範囲の終了。</param>
+        <summary>このコレクションに指定された日付の範囲があるかどうかを表す値を返します。</summary>
+        <returns>
+          <see langword="true" />コレクション内の範囲内のすべての日付が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsAny">
+      <MemberSignature Language="C#" Value="public bool ContainsAny (System.Windows.Controls.CalendarDateRange range);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ContainsAny(class System.Windows.Controls.CalendarDateRange range) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.CalendarBlackoutDatesCollection.ContainsAny(System.Windows.Controls.CalendarDateRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="range" Type="System.Windows.Controls.CalendarDateRange" />
+      </Parameters>
+      <Docs>
+        <param name="range">検索する日付の範囲。</param>
+        <summary>このコレクションには、指定された日付の範囲内のいずれかの日付が含まれて かどうかを表す値を返します。</summary>
+        <returns>
+          <see langword="true" />コレクション内の範囲のいずれかの日付が含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, System.Windows.Controls.CalendarDateRange item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, class System.Windows.Controls.CalendarDateRange item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.CalendarBlackoutDatesCollection.InsertItem(System.Int32,System.Windows.Controls.CalendarDateRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Windows.Controls.CalendarDateRange" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <param name="item">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItem">
+      <MemberSignature Language="C#" Value="protected override void RemoveItem (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RemoveItem(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.CalendarBlackoutDatesCollection.RemoveItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, System.Windows.Controls.CalendarDateRange item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, class System.Windows.Controls.CalendarDateRange item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.CalendarBlackoutDatesCollection.SetItem(System.Int32,System.Windows.Controls.CalendarDateRange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Windows.Controls.CalendarDateRange" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <param name="item">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

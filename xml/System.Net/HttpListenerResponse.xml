@@ -1,0 +1,1038 @@
+<Type Name="HttpListenerResponse" FullName="System.Net.HttpListenerResponse">
+  <TypeSignature Language="C#" Value="public sealed class HttpListenerResponse : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpListenerResponse extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.HttpListenerResponse" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.HttpListener</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>によって処理される要求に応答を表します、<see cref="T:System.Net.HttpListener" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって処理される場合は、クライアントがリソースの要求、<xref:System.Net.HttpListener>オブジェクト内のアプリケーションで利用できる要求と応答、<xref:System.Net.HttpListenerContext>オブジェクト。 要求がによって表される、<xref:System.Net.HttpListenerRequest>オブジェクトし、で使用可能な<xref:System.Net.HttpListenerContext.Request%2A?displayProperty=nameWithType>プロパティです。 応答がによって表される、<xref:System.Net.HttpListenerResponse>オブジェクトし、で使用可能な<xref:System.Net.HttpListenerContext.Response%2A?displayProperty=nameWithType>プロパティです。  
+  
+ など、さまざまなプロパティの設定によって、応答をカスタマイズすることができます<xref:System.Net.HttpListenerResponse.StatusCode%2A>、 <xref:System.Net.HttpListenerResponse.StatusDescription%2A>、および<xref:System.Net.HttpListenerResponse.Cookies%2A>です。 使用して、<xref:System.Net.HttpListenerResponse.OutputStream%2A?displayProperty=nameWithType>を取得するプロパティ、<xref:System.IO.Stream>インスタンスを応答にデータを書き込むことができます。 最後に、呼び出すことによって応答データをクライアントに送信、<xref:System.Net.HttpListenerResponse.Close%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、クライアント要求に応答を示しています。  
+  
+ [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public void Abort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerResponse.Abort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>応答を送信せず、クライアントへの接続を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既に閉じられているオブジェクトでこのメソッドを呼び出しても効果はありません。 このメソッドは、関連付けられた閉じます応答が終了されていない場合<xref:System.Net.HttpListenerRequest>と<xref:System.Net.HttpListenerContext>オブジェクト。 関係なく、閉じている、クライアントへの接続も、<xref:System.Net.HttpListenerRequest.KeepAlive%2A>クライアント要求のプロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddHeader">
+      <MemberSignature Language="C#" Value="public void AddHeader (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddHeader(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerResponse.AddHeader(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">設定する HTTP ヘッダーの名前。</param>
+        <param name="value">値、<c>名前</c>ヘッダー。</param>
+        <summary>この応答の HTTP ヘッダーに指定されたヘッダーと値を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことと同じではこのメソッドを呼び出す、<xref:System.Net.WebHeaderCollection.Set%2A>メソッドによって返されるコレクションを<xref:System.Net.HttpListenerResponse.Headers%2A>プロパティです。  
+  
+ ヘッダーで指定される場合`name`がありません。 このメソッドに新しいヘッダーを挿入する、<xref:System.Net.HttpListenerResponse.Headers%2A>プロパティのコレクション。 場合`name`は既存の値をこのメソッドの置換、コレクション内にある`value`です。 既存の値を置き換えることがなく、既存のヘッダーに値を追加するには、使用、<xref:System.Net.HttpListenerResponse.AppendHeader%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用してヘッダーを追加することを示します。  
+  
+ [!code-csharp[Net_Listener_Basic#26](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#26)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> または空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentException">指定したヘッダーの値を指定することはできません。  
+  
+ または  
+  
+ <paramref name="name" />または<paramref name="value" />無効な文字が含まれています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">長さ<paramref name="value" />が 65,535 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendCookie">
+      <MemberSignature Language="C#" Value="public void AppendCookie (System.Net.Cookie cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendCookie(class System.Net.Cookie cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerResponse.AppendCookie(System.Net.Cookie)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookie" Type="System.Net.Cookie" />
+      </Parameters>
+      <Docs>
+        <param name="cookie">この応答で送信されるコレクションに追加する <see cref="T:System.Net.Cookie" />。</param>
+        <summary>指定した <see cref="T:System.Net.Cookie" /> をこの応答のクッキーのコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことと同じではこのメソッドを呼び出す、<xref:System.Net.CookieCollection.Add%2A>メソッドによって返されるコレクションを<xref:System.Net.HttpListenerResponse.Cookies%2A>プロパティです。  
+  
+ 指定された cookie が存在しない場合、<xref:System.Net.HttpListenerResponse.Cookies%2A>プロパティのコレクション、`cookie`を追加します。 クッキーが、コレクション内に存在する場合は`cookie`に置き換えられます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、応答に cookie を追加することを示します  
+  
+ [!code-csharp[Net_Listener_Basic#20](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cookie" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendHeader">
+      <MemberSignature Language="C#" Value="public void AppendHeader (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendHeader(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerResponse.AppendHeader(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加する HTTP ヘッダーの名前<c>値</c>にします。</param>
+        <param name="value">追加する値、<c>名前</c>ヘッダー。</param>
+        <summary>この応答で送信される指定した HTTP ヘッダーに値を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことと同じではこのメソッドを呼び出す、<xref:System.Net.WebHeaderCollection.Add%2A>メソッドによって返されるコレクションを<xref:System.Net.HttpListenerResponse.Headers%2A>プロパティです。  
+  
+ ヘッダーで指定される場合`header`がありません。 このメソッドに新しいヘッダーを挿入する、<xref:System.Net.HttpListenerResponse.Headers%2A>プロパティのコレクション。 場合`header`は、コレクション内にある、このメソッドは、追加`value`既存の値にします。 既存のヘッダーの値を置き換えるを使用して、<xref:System.Net.HttpListenerResponse.AddHeader%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> は <see langword="null" /> または空の文字列 ("") です。  
+  
+ または  
+  
+ 指定したヘッダーの値を指定することはできません。  
+  
+ または  
+  
+ <paramref name="name" />または<paramref name="value" />無効な文字が含まれています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">長さ<paramref name="value" />が 65,535 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerResponse.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントに応答を送信し、これによって保持されているリソースを解放<see cref="T:System.Net.HttpListenerResponse" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、応答ストリームを閉じ、<xref:System.Net.HttpListenerRequest>応答に関連付けられています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、送信するには、このメソッドを呼び出すことを示しています、 <xref:System.Net.HttpStatusCode.Forbidden> (403)、クライアントに応答します。  
+  
+ [!code-csharp[NclListener#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLListener/CS/sample.cs#5)]
+ [!code-vb[NclListener#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLListener/vb/sample.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close (byte[] responseEntity, bool willBlock);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close(unsigned int8[] responseEntity, bool willBlock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerResponse.Close(System.Byte[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="responseEntity" Type="System.Byte[]" />
+        <Parameter Name="willBlock" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="responseEntity">A<see cref="T:System.Byte" />をクライアントに送信する応答を格納する配列。</param>
+        <param name="willBlock">
+          <see langword="true" />クライアントにストリームのフラッシュ中に実行をブロックするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>クライアントに指定したバイト配列を返し、これによって保持されているリソースを解放<see cref="T:System.Net.HttpListenerResponse" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ として送信するこのメソッドを使用するには、応答本文のデータを送信する場合、<xref:System.Byte>本文データの書き込みではなく配列、<xref:System.Net.HttpListenerResponse.OutputStream%2A>プロパティは、通話、<xref:System.Net.HttpListenerResponse.Close%2A>メソッドです。  
+  
+ このメソッドは、応答ストリームを閉じ、<xref:System.Net.HttpListenerRequest>応答に関連付けられています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-csharp[Net_Listener_Basic#24](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#24)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="responseEntity" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding ContentEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding ContentEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.ContentEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Text.Encoding" />この応答の<see cref="P:System.Net.HttpListenerResponse.OutputStream" />します。</summary>
+        <value><see cref="T:System.Text.Encoding" />オブジェクト内のデータで使用するのに適した、<see cref="P:System.Net.HttpListenerResponse.OutputStream" />プロパティ、または<see langword="null" />エンコーディングが指定されていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.Encoding>バイト シーケンスを文字セット (コード ページ) と文字をバイト シーケンスに変換するオブジェクトを使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの使用方法を示します。  
+  
+ [!code-csharp[NclListener#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLListener/CS/sample.cs#5)]
+ [!code-vb[NclListener#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLListener/vb/sample.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentLength64">
+      <MemberSignature Language="C#" Value="public long ContentLength64 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength64" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.ContentLength64" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または応答に含める本文データのバイト数を設定します。</summary>
+        <value>応答の値<see langword="Content-Length" />ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Content-Length`ヘッダーは応答の本文データの長さ、(バイト単位) を表します。 ときに、データの送信は無効な形式を使用してチャンク raw、設定することも必要があります、<xref:System.Net.HttpListenerResponse.ContentLength64%2A>プロパティです。 そうしない場合、<xref:System.Net.HttpListener>応答データを送信しません。  
+  
+ 応答ヘッダーの完全な一覧を参照してください、<xref:System.Net.HttpResponseHeader>列挙します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の設定を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作は指定された値が 0 未満です。</exception>
+        <exception cref="T:System.InvalidOperationException">応答は既に送信されています。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public string ContentType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または返されるコンテンツの MIME の種類を設定します。</summary>
+        <value>A<see cref="T:System.String" />の応答のテキストを含むインスタンス<see langword="Content-Type" />ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以外の任意のコンテンツ タイプを返すときにこのプロパティを設定する Web ブラウザーで通信しているときに明示的にする必要があります`text/html`です。  
+  
+ 応答ヘッダーの完全な一覧を参照してください、<xref:System.Net.HttpResponseHeader>列挙します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作に指定された値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">設定操作は、空の文字列に指定された値 ("") です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="public System.Net.CookieCollection Cookies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.CookieCollection Cookies" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.Cookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.CookieCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または応答で返されるクッキーのコレクションを設定します。</summary>
+        <value>A<see cref="T:System.Net.CookieCollection" />に添える応答のクッキーを格納しています。 コレクションは、空の場合は、応答に cookie が追加されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Cookie とは、ローカル (クライアント) コンピューターに格納されている Web サーバーから名前/値のテキスト データです。 次の cookie の形式がサポートされます: Netscape、RFC 2109 および RFC 2965 です。 Netscape の cookie の仕様は http://wp.netscape.com/newsref/std/cookie_spec.html;RFC ドキュメントはいただけます[http://www.rfc-editor.org](http://www.rfc-editor.org)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、cookie の要求をチェックし、要求 1 つ付いていない場合は、応答には新しいクッキーを返します。  
+  
+ [!code-csharp[Net_Listener_Basic#20](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFrom">
+      <MemberSignature Language="C#" Value="public void CopyFrom (System.Net.HttpListenerResponse templateResponse);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyFrom(class System.Net.HttpListenerResponse templateResponse) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerResponse.CopyFrom(System.Net.HttpListenerResponse)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templateResponse" Type="System.Net.HttpListenerResponse" />
+      </Parameters>
+      <Docs>
+        <param name="templateResponse"><see cref="T:System.Net.HttpListenerResponse" />コピー対象のインスタンス。</param>
+        <summary>指定された対象からプロパティをコピー<see cref="T:System.Net.HttpListenerResponse" />この応答にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい値の固定セットをその既定値から定期的に多くのプロパティを変更する場合を使用すると便利です、<xref:System.Net.HttpListenerResponse>をテンプレートとしてのインスタンス。 1 回、それぞれの応答を個別に構成する代わりに、テンプレートの応答をカスタマイズする、呼び出し、<xref:System.Net.HttpListenerResponse.CopyFrom%2A>テンプレート応答内のプロパティ値に基づいて、新しい応答を構成する方法です。  
+  
+ 次のプロパティからコピーされる`templateResponse`現在のインスタンスにします。  
+  
+-   <xref:System.Net.HttpListenerResponse.Headers%2A>  
+  
+-   <xref:System.Net.HttpListenerResponse.ContentLength64%2A>  
+  
+-   <xref:System.Net.HttpListenerResponse.StatusCode%2A>  
+  
+-   <xref:System.Net.HttpListenerResponse.StatusDescription%2A>  
+  
+-   <xref:System.Net.HttpListenerResponse.KeepAlive%2A>  
+  
+-   <xref:System.Net.HttpListenerResponse.ProtocolVersion%2A>  
+  
+   
+  
+## Examples  
+ 次のコード例では、応答をテンプレートをコピーして、応答を作成するを示します。  
+  
+ [!code-csharp[NCLListener#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLListener/CS/sample.cs#5)]
+ [!code-vb[NCLListener#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLListener/vb/sample.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.Net.WebHeaderCollection Headers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebHeaderCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebHeaderCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバーによって返されるヘッダーの名前/値ペアのコレクションを設定します。</summary>
+        <value>A<see cref="T:System.Net.WebHeaderCollection" />インスタンスすべてを含む、応答に含まれる HTTP ヘッダーを明示的に設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 応答ヘッダーには、日付と、応答時間、応答側のサーバーと、応答本文に含まれるデータの MIME の種類の id などのメタデータ情報が格納します。  
+  
+ 応答ヘッダーの完全な一覧を参照してください、<xref:System.Net.HttpResponseHeader>列挙します。  
+  
+> [!NOTE]
+>  コンテンツの長さを設定しようとする場合、Keep Alive Transfer-encoding、またはヘッダーのプロパティ、例外を使用して、Www-authenticate ヘッダーがスローされます。 使用して、<xref:System.Net.HttpListenerResponse.KeepAlive%2A>または<xref:System.Net.HttpListenerResponse.ContentLength64%2A>これらのヘッダーを設定するプロパティです。 転送エンコードまたは WWW 認証ヘッダーを手動で設定することはできません。  
+  
+   
+  
+## Examples  
+ 内のヘッダーを表示する次のコード例に示します、<xref:System.Net.WebHeaderCollection>です。  
+  
+ [!code-csharp[Net_Listener_Basic#23](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#23)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Net.WebHeaderCollection" />で指定された設定操作の応答を有効なインスタンス。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepAlive">
+      <MemberSignature Language="C#" Value="public bool KeepAlive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepAlive" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.KeepAlive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバーが永続的な接続を要求するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />サーバーは、永続的な接続を要求する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、HTTP クライアントとサーバーを短時間で複数回データを交換する、永続的な接続、通信速度を各メッセージ用の TCP 接続を開いたり、閉じたりするために必要なオーバーヘッドを回避することによりします。 永続的な接続は、最近の Web ブラウザーと Web サーバー間の通信で広く使用されています。  
+  
+ 永続的な接続は、http/1.1 プロトコル仕様 (RFC 2616) RTF Editor の Web サイトで利用可能なで詳しく説明 ([http://www.rfc-editor.org](http://www.rfc-editor.org))。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の設定を示します。  
+  
+ [!code-csharp[NclListener#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLListener/CS/sample.cs#7)]
+ [!code-vb[NclListener#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLListener/vb/sample.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream OutputStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream OutputStream" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.OutputStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IO.Stream" />オブジェクトの応答を書き込むことができます。</summary>
+        <value>A<see cref="T:System.IO.Stream" />オブジェクトの応答を書き込むことができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListenerResponse.ContentLength64%2A>プロパティは、返されたに書き込む前に明示的に設定する必要があります<xref:System.IO.Stream>オブジェクト。  
+  
+> [!NOTE]
+>  要求を終了しても、このプロパティによって返されたストリームは閉じられません。 ストリームが不要になったときに、Close メソッドを呼び出すことで閉じる必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-csharp[Net_Listener_Basic#3](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolVersion">
+      <MemberSignature Language="C#" Value="public Version ProtocolVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version ProtocolVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.ProtocolVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または応答に使用する HTTP バージョンを設定します。</summary>
+        <value>A<see cref="T:System.Version" />クライアントに応答する場合に使用される HTTP のバージョンを示すオブジェクト。 このプロパティは使用されなくなりましたことに注意してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ さまざまな HTTP バージョンの機能は、http://www.ietf.org で利用可能なドキュメントで指定されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の設定を示します。  
+  
+ [!code-csharp[NclListener#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLListener/CS/sample.cs#5)]
+ [!code-vb[NclListener#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLListener/vb/sample.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作に指定された値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">設定操作がありませんでした。 指定された値をその<see cref="P:System.Version.Major" />プロパティを 1 に設定かがない、<see cref="P:System.Version.Minor" />プロパティを 0 または 1 に設定します。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Redirect">
+      <MemberSignature Language="C#" Value="public void Redirect (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Redirect(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerResponse.Redirect(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">クライアントが要求されたリソースの検索に使用する URL です。</param>
+        <summary>指定された URL にクライアントをリダイレクトする応答を構成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListenerResponse.Redirect%2A>メソッドを使用してリソースを新しい場所にクライアントをリダイレクトします。 このメソッドは、応答を設定`Location`ヘッダーを`url`、<xref:System.Net.HttpListenerResponse.StatusCode%2A>プロパティを<xref:System.Net.HttpStatusCode.Redirect>、および<xref:System.Net.HttpListenerResponse.StatusDescription%2A>プロパティを「検出」します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-csharp[Net_Listener_Basic#27](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#27)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectLocation">
+      <MemberSignature Language="C#" Value="public string RedirectLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RedirectLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.RedirectLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP の値の設定を取得または<see langword="Location" />この応答のヘッダー。</summary>
+        <value>A<see cref="T:System.String" />でクライアントに送信される絶対 URL を格納している、<see langword="Location" />ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Location`ヘッダーは、クライアントが要求されたリソースを見つける宛ての URL を指定します。  
+  
+> [!NOTE]
+>  このプロパティは自動的に設定されていない設定、<xref:System.Net.HttpListenerResponse.StatusCode%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの設定を示しています。  
+  
+ [!code-csharp[Net_Listener_Basic#25](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#25)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">設定操作は、空の文字列に指定された値 ("") です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendChunked">
+      <MemberSignature Language="C#" Value="public bool SendChunked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SendChunked" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.SendChunked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、応答でチャンク転送エンコードが使用するかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />チャンク転送エンコード; を使用する応答が設定されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャンク メッセージの本文は、一連のチャンクで構成されます。 各チャンクは、2 つの部分は構成されています: チャンク データと実際のデータのサイズ。 設定すると、応答を true を使用して送信はチャンク転送エンコードです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCookie">
+      <MemberSignature Language="C#" Value="public void SetCookie (System.Net.Cookie cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCookie(class System.Net.Cookie cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerResponse.SetCookie(System.Net.Cookie)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookie" Type="System.Net.Cookie" />
+      </Parameters>
+      <Docs>
+        <param name="cookie">A<see cref="T:System.Net.Cookie" />この応答をします。</param>
+        <summary>追加または更新、<see cref="T:System.Net.Cookie" />この応答に送信されたクッキーのコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの cookie が場合でも同じと見なされますの値、 <xref:System.Net.Cookie.Name%2A>、 <xref:System.Net.Cookie.Domain%2A>、および<xref:System.Net.Cookie.Path%2A>プロパティは同じです。 これら 3 つの情報が同じ場合、メソッドは、クッキーを更新しようとします。 名前とドメインの比較は、大文字と小文字が区別されませんが、パスの比較、大文字小文字を区別。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-csharp[Net_Listener_Basic#28](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#28)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cookie" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">クッキーは既にコレクションに存在し、置き換えられませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusCode">
+      <MemberSignature Language="C#" Value="public int StatusCode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StatusCode" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.StatusCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアントに返される HTTP ステータス コードを設定します。</summary>
+        <value><see cref="T:System.Int32" />要求されたリソースに対する HTTP ステータス コードを指定する値。 既定値は<see cref="F:System.Net.HttpStatusCode.OK" />サーバーが正常にクライアントの要求を処理し、応答本文に要求されたリソースを含めることを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントは、続行するのに方法を決定するのに、サーバーによって返されるステータス コードを使用します。 値<xref:System.Net.HttpStatusCode.OK>サーバーが正常にクライアントの要求を処理し、応答本文に要求されたリソースを含めることを示します。 その他の一般的なステータス コードを含める<xref:System.Net.HttpStatusCode.NotFound>、サーバーで、要求されたリソースが見つからなかったことを示すと<xref:System.Net.HttpStatusCode.NotModified>が最新では、クライアントは、リソースのコピーをキャッシュされたのために、応答本文に要求されたリソースを返す必要がないことを示すです。  
+  
+ 可能な状態コードの完全な一覧を参照してください、<xref:System.Net.HttpStatusCode>列挙します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の設定を示します。  
+  
+ [!code-csharp[Net_Listener_Basic#7](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトが閉じられます。</exception>
+        <exception cref="T:System.Net.ProtocolViolationException">設定操作に指定された値が正しくありません。 有効な値は、100 ~ 999 の範囲です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusDescription">
+      <MemberSignature Language="C#" Value="public string StatusDescription { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StatusDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerResponse.StatusDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアントに返される HTTP ステータス コードの説明テキストを設定します。</summary>
+        <value>クライアントに返される HTTP ステータス コードの説明文です。 既定値は RFC 2616 の説明、<see cref="P:System.Net.HttpListenerResponse.StatusCode" />プロパティ値または空の文字列 ("")、RFC 2616 説明が存在しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ステータスの説明が通常を説明する詳細情報を提供、<xref:System.Net.HttpListenerResponse.StatusCode%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の設定を示します。  
+  
+ [!code-csharp[NclListener#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLListener/CS/sample.cs#7)]
+ [!code-vb[NclListener#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLListener/vb/sample.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作に指定された値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">設定操作に指定された値には、印刷できない文字が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerResponse.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Net.HttpListenerResponse" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Net.HttpListenerResponse.Close%2A> 、応答を送信し、保持しているリソースを解放するメソッド、<xref:System.Net.HttpListenerResponse>です。 応答を破棄して、このインスタンスによって保持されているリソースを解放を使用して、<xref:System.Net.HttpListenerResponse.Abort%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

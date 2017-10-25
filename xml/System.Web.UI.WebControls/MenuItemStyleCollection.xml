@@ -1,0 +1,381 @@
+<Type Name="MenuItemStyleCollection" FullName="System.Web.UI.WebControls.MenuItemStyleCollection">
+  <TypeSignature Language="C#" Value="public sealed class MenuItemStyleCollection : System.Web.UI.StateManagedCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MenuItemStyleCollection extends System.Web.UI.StateManagedCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.MenuItemStyleCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.StateManagedCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.Menu" /> コントロールに含まれる <see cref="T:System.Web.UI.WebControls.MenuItemStyle" /> オブジェクトのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MenuItemStyleCollection>を格納および管理のコレクション クラスが使用される<xref:System.Web.UI.WebControls.MenuItemStyle>内のオブジェクト、<xref:System.Web.UI.WebControls.Menu>コントロール。 <xref:System.Web.UI.WebControls.Menu>コントロール、<xref:System.Web.UI.WebControls.MenuItemStyleCollection>クラスの基になるデータ型として、<xref:System.Web.UI.WebControls.Menu.LevelMenuItemStyles%2A>と<xref:System.Web.UI.WebControls.Menu.LevelSelectedStyles%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.Menu.LevelMenuItemStyles%2A>と<xref:System.Web.UI.WebControls.Menu.LevelSelectedStyles%2A>プロパティは、代わりに個々 のスタイル プロパティ (など<xref:System.Web.UI.WebControls.Menu.StaticMenuItemStyle%2A>)。 これらのプロパティは、メニュー、メニュー項目のレベルに基づいて、標準のメニュー項目と選択されたメニュー項目にそれぞれ適用されます。 コレクション内の最初のスタイルは、メニューの最初のレベルのメニュー項目スタイルに対応します。 コレクション内の 2 番目のスタイルは、メニューのおよびなどの第 2 レベルのメニュー項目スタイルに対応します。 <xref:System.Web.UI.WebControls.Menu.LevelMenuItemStyles%2A>と<xref:System.Web.UI.WebControls.Menu.LevelSelectedStyles%2A>プロパティが最もよく使用されるメニューを生成する特定のレベルにあるメニュー項目とサブメニューがあるかどうかに関係なく、同じ外観があります。  
+  
+ <xref:System.Web.UI.WebControls.MenuItemStyleCollection>クラスからそのメンバーのほとんどの継承、<xref:System.Web.UI.StateManagedCollection>クラスです。 継承されたメンバーの詳細については、次を参照してください。<xref:System.Web.UI.StateManagedCollection>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemStyleCollection>クラス内のメニュー項目のスタイルの設定を指定する、<xref:System.Web.UI.WebControls.Menu>コントロール、メニュー項目のレベルに基づきます。 この例では、<xref:System.Web.UI.WebControls.Menu.LevelMenuItemStyles%2A>プロパティを宣言によって、作成し、1 つ<xref:System.Web.UI.WebControls.MenuItemStyle>オブジェクトが削除されに追加されたほか、<xref:System.Web.UI.WebControls.MenuItemStyleCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[MenuItemStyleCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemStyleCollection/CS/menuitemstylecollectioncs.aspx#1)]
+ [!code-aspx-vb[MenuItemStyleCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemStyleCollection/VB/menuitemstylecollectionvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.UI.WebControls.MenuItemStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.UI.WebControls.MenuItemStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemStyleCollection.Add(System.Web.UI.WebControls.MenuItemStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Web.UI.WebControls.MenuItemStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style"><see cref="T:System.Web.UI.WebControls.MenuItemStyle" />現在のコレクションの末尾に追加します。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />現在のコレクションの末尾にオブジェクト。</summary>
+        <returns>追加の 0 から始まるインデックス<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItemStyleCollection.Add%2A>メソッドを指定した追加<xref:System.Web.UI.WebControls.MenuItemStyle>コレクションの末尾にオブジェクト。 代わりに、挿入することができます、<xref:System.Web.UI.WebControls.MenuItemStyle>オブジェクトを特定のインデックスを使用してコレクションに、<xref:System.Web.UI.WebControls.MenuItemStyleCollection.Insert%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemStyleCollection>クラス内のメニュー項目のスタイルの設定を指定する、<xref:System.Web.UI.WebControls.Menu>コントロール、メニュー項目のレベルに基づきます。 この例では、<xref:System.Web.UI.WebControls.Menu.LevelMenuItemStyles%2A>プロパティを宣言によって、作成し、1 つ<xref:System.Web.UI.WebControls.MenuItemStyle>オブジェクトが削除されに追加されたほか、<xref:System.Web.UI.WebControls.MenuItemStyleCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[MenuItemStyleCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemStyleCollection/CS/menuitemstylecollectioncs.aspx#1)]
+ [!code-aspx-vb[MenuItemStyleCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemStyleCollection/VB/menuitemstylecollectionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.MenuItemStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.MenuItemStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemStyleCollection.Contains(System.Web.UI.WebControls.MenuItemStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Web.UI.WebControls.MenuItemStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">検索する <see cref="T:System.Web.UI.WebControls.MenuItemStyle" />。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />オブジェクトがコレクション内にします。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />、それ以外のコレクションに含まれている<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItemStyleCollection.Contains%2A>メソッドを呼び出せば確認するかどうか、<xref:System.Web.UI.WebControls.MenuItemStyle>オブジェクトがコレクションに含まれています。 このメソッドは通常の存在をテストする使用、<xref:System.Web.UI.WebControls.MenuItemStyle>オブジェクトに対して追加または削除するメニュー項目スタイル コレクションなどのタスクを実行する前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.MenuItemStyle[] styleArray, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.MenuItemStyle[] styleArray, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemStyleCollection.CopyTo(System.Web.UI.WebControls.MenuItemStyle[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="styleArray" Type="System.Web.UI.WebControls.MenuItemStyle[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="styleArray">0 から始まる配列<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />からコピーされた項目を受信したオブジェクト、<see cref="T:System.Web.UI.WebControls.MenuItemStyleCollection" />です。</param>
+        <param name="index">コピーされた内容の受信を開始する位置を示す、ターゲット配列内の位置。</param>
+        <summary>すべての項目をコピー、<see cref="T:System.Web.UI.WebControls.MenuItemStyleCollection" />オブジェクトの場合は、互換性のある 1 次元配列を<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />オブジェクト、ターゲット配列の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItemStyleCollection.CopyTo%2A>の内容をコピーする方法、<xref:System.Web.UI.WebControls.MenuItemStyleCollection>オブジェクトの指定した 0 から始まる配列を<xref:System.Web.UI.WebControls.MenuItemStyle>オブジェクト。 項目をコピーするには、対象となる配列の指定したインデックスから始まります。 配列は、コレクション内の項目にアクセスし、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKnownType">
+      <MemberSignature Language="C#" Value="protected override object CreateKnownType (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object CreateKnownType(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemStyleCollection.CreateKnownType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKnownTypes">
+      <MemberSignature Language="C#" Value="protected override Type[] GetKnownTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Type[] GetKnownTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemStyleCollection.GetKnownTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.MenuItemStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.MenuItemStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemStyleCollection.IndexOf(System.Web.UI.WebControls.MenuItemStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Web.UI.WebControls.MenuItemStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">検索する <see cref="T:System.Web.UI.WebControls.MenuItemStyle" />。</param>
+        <summary>指定したインデックスを決定<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />コレクション内のオブジェクト。</summary>
+        <returns>指定した最初に見つかった位置の 0 から始まるインデックス<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />、それ以外の場合は、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItemStyleCollection.IndexOf%2A>メソッドの指定した 0 から始まるインデックスを確認する<xref:System.Web.UI.WebControls.MenuItemStyle>コレクション内のオブジェクト。 コレクション内のノードは、このメソッドは-1 を返します。  
+  
+> [!NOTE]
+>  場合、指定した<xref:System.Web.UI.WebControls.MenuItemStyle>オブジェクトでは、コレクション内で複数回表示され、最初に見つかった位置のインデックスが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.UI.WebControls.MenuItemStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.UI.WebControls.MenuItemStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemStyleCollection.Insert(System.Int32,System.Web.UI.WebControls.MenuItemStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="style" Type="System.Web.UI.WebControls.MenuItemStyle" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置を示す 0 から始まるインデックス位置、<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />です。</param>
+        <param name="style">挿入する <see cref="T:System.Web.UI.WebControls.MenuItemStyle" />。</param>
+        <summary>指定した挿入<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />オブジェクトを指定したインデックス位置にあるコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItemStyleCollection.Insert%2A>メソッドを指定された挿入<xref:System.Web.UI.WebControls.MenuItemStyle>オブジェクトをコレクション内の指定した 0 から始まるインデックス位置にします。  
+  
+ 代わりに、追加することができます、<xref:System.Web.UI.WebControls.MenuItemStyle>を使って、コレクションの末尾にオブジェクト、<xref:System.Web.UI.WebControls.MenuItemStyleCollection.Add%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.MenuItemStyle this[int i] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.MenuItemStyle Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItemStyleCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.MenuItemStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">0 から始まるインデックス、<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />を取得します。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />オブジェクトをコレクションから指定したインデックス位置。</summary>
+        <value>コレクション内の指定したインデックス位置の <see cref="T:System.Web.UI.WebControls.MenuItemStyle" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーへのアクセスを使用して、<xref:System.Web.UI.WebControls.MenuItemStyle>配列表記を使用して指定したインデックスでコレクションからのオブジェクト。 インデクサーを使用すると、アクセス、変更、または置換、<xref:System.Web.UI.WebControls.MenuItemStyle>直接コレクション内のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInsert">
+      <MemberSignature Language="C#" Value="protected override void OnInsert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInsert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemStyleCollection.OnInsert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.WebControls.MenuItemStyle style);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.WebControls.MenuItemStyle style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemStyleCollection.Remove(System.Web.UI.WebControls.MenuItemStyle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="style" Type="System.Web.UI.WebControls.MenuItemStyle" />
+      </Parameters>
+      <Docs>
+        <param name="style">削除する <see cref="T:System.Web.UI.WebControls.MenuItemStyle" />。</param>
+        <summary>指定した <see cref="T:System.Web.UI.WebControls.MenuItemStyle" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItemStyleCollection.Remove%2A>メソッドを指定された削除<xref:System.Web.UI.WebControls.MenuItemStyle>オブジェクトをコレクションからです。 そのメニュー項目スタイルに続くすべての項目は、空いた位置を埋める移動されます。 移動した項目のインデックスも更新します。  
+  
+ 代わりに、削除することができます、<xref:System.Web.UI.WebControls.MenuItemStyle>を使用して特定のインデックス位置にオブジェクト、<xref:System.Web.UI.WebControls.MenuItemStyleCollection.RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemStyleCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス位置、<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Web.UI.WebControls.MenuItemStyle" />コレクションから指定したインデックス位置にあるオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItemStyleCollection.RemoveAt%2A>を削除する方法、<xref:System.Web.UI.WebControls.MenuItemStyle>コレクションから指定した 0 から始まるインデックス位置にあるオブジェクト。 そのノードに続くすべての項目は、空いた位置を埋める移動されます。 移動した項目のインデックスも更新します。  
+  
+ 代わりに、特定を削除することができます<xref:System.Web.UI.WebControls.MenuItemStyle>オブジェクトを使用して、<xref:System.Web.UI.WebControls.MenuItemStyleCollection.Remove%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuItemStyleCollection>クラス内のメニュー項目のスタイルの設定を指定する、<xref:System.Web.UI.WebControls.Menu>コントロール、メニュー項目のレベルに基づきます。 この例では、<xref:System.Web.UI.WebControls.Menu.LevelMenuItemStyles%2A>プロパティを宣言によって、作成し、1 つ<xref:System.Web.UI.WebControls.MenuItemStyle>オブジェクトが削除されに追加されたほか、<xref:System.Web.UI.WebControls.MenuItemStyleCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[MenuItemStyleCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemStyleCollection/CS/menuitemstylecollectioncs.aspx#1)]
+ [!code-aspx-vb[MenuItemStyleCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemStyleCollection/VB/menuitemstylecollectionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDirtyObject">
+      <MemberSignature Language="C#" Value="protected override void SetDirtyObject (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetDirtyObject(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItemStyleCollection.SetDirtyObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

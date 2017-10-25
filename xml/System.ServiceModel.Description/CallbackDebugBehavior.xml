@@ -1,0 +1,233 @@
+<Type Name="CallbackDebugBehavior" FullName="System.ServiceModel.Description.CallbackDebugBehavior">
+  <TypeSignature Language="C#" Value="public class CallbackDebugBehavior : System.ServiceModel.Description.IEndpointBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CallbackDebugBehavior extends System.Object implements class System.ServiceModel.Description.IEndpointBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.CallbackDebugBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IEndpointBehavior</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>サービスが Windows Communication Foundation (WCF) コールバック オブジェクトのデバッグを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション構成ファイルまたはプログラムから、<xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> プロパティを `true` に設定して、デバッグするために、クライアント コールバック オブジェクト内のマネージ例外情報がサービスに戻るフローを有効にします。  
+  
+> [!CAUTION]
+>  マネージ例外情報をサービスに戻すことは、セキュリティ リスクになり得ます。これは、例外の詳細が、非承認のサービスで使用可能な内部クライアントの実装についての情報を公開するからです。 さらに、<xref:System.ServiceModel.Description.CallbackDebugBehavior> プロパティをプログラムで設定することはできますが、配置するときに <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> を無効にすることを忘れがちになります。  
+  
+ セキュリティの問題にかかわるので、以下を強くお勧めします。  
+  
+-   <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> プロパティの値を `true` に設定するには、アプリケーション構成ファイルを使用します。  
+  
+-   これは、制御されたデバッグ シナリオの場合に限って行います。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]マネージ例外情報に関連するセキュリティの問題を参照してください[を指定して処理のエラー コントラクトおよびサービスの](~/docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
+  
+ 使用して、この属性の値を設定することも、 [ &lt;callbackDebug&gt; ](~/docs/framework/configure-apps/file-schema/wcf/callbackdebug.md)クライアント アプリケーション構成ファイル内の要素。  
+  
+   
+  
+## Examples  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に、SOAP メッセージのクライアント コールバック オブジェクトからマネージ例外情報を返すように指示するクライアント構成ファイルを次のコード例に示します。  
+  
+ [!code-xml[SCA.CallbackContract#4](~/samples/snippets/csharp/VS_Snippets_CFX/sca.callbackcontract/cs/client.exe.config#4)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CallbackDebugBehavior (bool includeExceptionDetailInFaults);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool includeExceptionDetailInFaults) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.CallbackDebugBehavior.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="includeExceptionDetailInFaults" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="includeExceptionDetailInFaults">[!INCLUDE[indigo2](~/includes/indigo2-md.md)] コールバック オブジェクトが、サービスに返される SOAP エラーの詳細にマネージ例外情報を含めるかどうかを制御します。</param>
+        <summary><see cref="T:System.ServiceModel.Description.CallbackDebugBehavior" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.ServiceModel.Description.CallbackDebugBehavior> オブジェクトを作成します。このオブジェクトの <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> プロパティの値は `includeExceptionDetailInFaults` の値になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeExceptionDetailInFaults">
+      <MemberSignature Language="C#" Value="public bool IncludeExceptionDetailInFaults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeExceptionDetailInFaults" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント コールバック オブジェクトが SOAP エラー内のマネージ例外情報をサービスに返すかどうかを制御する値を取得または設定します。</summary>
+        <value>
+          双方向通信で、<see langword="true" /> がサービス デバッグのために SOAP エラーのマネージ クライアント コールバック例外情報を返す場合は [!INCLUDE[indigo2](~/includes/indigo2-md.md)]。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション構成ファイルまたはプログラムから、<xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> プロパティを `true` に設定して、デバッグするために、クライアント コールバック オブジェクト内のマネージ例外情報がサービスに戻るフローを有効にします。  
+  
+> [!CAUTION]
+>  マネージ例外情報をサービスに戻すことは、セキュリティ リスクになり得ます。これは、例外の詳細が、非承認のサービスで使用可能な内部クライアントの実装についての情報を公開するからです。 さらに、<xref:System.ServiceModel.Description.CallbackDebugBehavior> プロパティをプログラムで設定することはできますが、配置するときに <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> を無効にすることを忘れがちになります。  
+  
+ セキュリティの問題にかかわるので、以下を強くお勧めします。  
+  
+-   <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> プロパティの値を `true` に設定するには、アプリケーション構成ファイルを使用します。  
+  
+-   これは、制御されたデバッグ シナリオの場合に限って行います。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]マネージ例外情報に関連するセキュリティの問題を参照してください[を指定して処理のエラー コントラクトおよびサービスの](~/docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
+  
+### <a name="to-enable-or-disable-a-feature-of-callbackdebugbehavior-using-a-configuration-file"></a>構成ファイルを使用して CallbackDebugBehavior の機能を有効または無効にするには  
+  
+1.  追加、`behaviorConfiguration`属性をクライアントに[\<エンドポイント >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素を[!INCLUDE[indigo2](~/includes/indigo2-md.md)]クライアント アプリケーション。 <xref:System.ServiceModel.Description.CallbackDebugBehavior> 動作はエンドポイントの動作です。 エンドポイントの動作が構成されている`<endpoint>`要素以外のサービスでの動作が構成されて[&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)要素。  
+  
+2.  追加または作成し、 [ &lt;endpointBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)セクションし、追加、 [&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)要素をに一致する名前を持つ`behaviorConfiguration`手順 1. から属性の値。 クライアントで使用するエンドポイント ビヘイビアーが追加された[\<エンドポイント >](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)要素を使用して、 [ &lt;endpointBehaviors&gt; ](~/docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)要素。  
+  
+3.  追加、 [ &lt;callbackDebug&gt; ](~/docs/framework/configure-apps/file-schema/wcf/callbackdebug.md)要素を[&lt;動作&gt;](~/docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)手順 2 から要素を有効または無効にするさまざまなプロパティが適切なシナリオです。  
+  
+ 個々の例については、「使用例」のセクションを参照してください。 使用して、この属性の値を設定することも、 [ &lt;callbackDebug&gt; ](~/docs/framework/configure-apps/file-schema/wcf/callbackdebug.md)クライアント アプリケーション構成ファイル内の要素。  
+  
+   
+  
+## Examples  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に、SOAP メッセージのクライアント コールバック オブジェクトからマネージ例外情報を返すように指示するクライアント構成ファイルを次のコード例に示します。  
+  
+ [!code-xml[SCA.CallbackContract#4](~/samples/snippets/csharp/VS_Snippets_CFX/sca.callbackcontract/cs/client.exe.config#4)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IEndpointBehavior.AddBindingParameters">
+      <MemberSignature Language="C#" Value="void IEndpointBehavior.AddBindingParameters (System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Channels.BindingParameterCollection bindingParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IEndpointBehavior.AddBindingParameters(class System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, class System.ServiceModel.Channels.BindingParameterCollection bindingParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.CallbackDebugBehavior.System#ServiceModel#Description#IEndpointBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceEndpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="bindingParameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="serviceEndpoint">変更するエンドポイント。</param>
+        <param name="bindingParameters">動作をサポートするためにバインド要素が要求するオブジェクト。</param>
+        <summary><see cref="M:System.ServiceModel.Description.IEndpointBehavior.AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)" /> メソッドを実装して動作をサポートします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior">
+      <MemberSignature Language="C#" Value="void IEndpointBehavior.ApplyClientBehavior (System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Dispatcher.ClientRuntime behavior);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior(class System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, class System.ServiceModel.Dispatcher.ClientRuntime behavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.CallbackDebugBehavior.System#ServiceModel#Description#IEndpointBehavior#ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceEndpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="behavior" Type="System.ServiceModel.Dispatcher.ClientRuntime" />
+      </Parameters>
+      <Docs>
+        <param name="serviceEndpoint">カスタマイズ対象のエンドポイント。</param>
+        <param name="behavior">カスタマイズ対象のクライアント ランタイム。</param>
+        <summary><see cref="M:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)" /> を実装して動作をサポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を割り当てます、<xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A>プロパティを<xref:System.ServiceModel.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="void IEndpointBehavior.ApplyDispatchBehavior (System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Dispatcher.EndpointDispatcher endpointDispatcher);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior(class System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, class System.ServiceModel.Dispatcher.EndpointDispatcher endpointDispatcher) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.CallbackDebugBehavior.System#ServiceModel#Description#IEndpointBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceEndpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="endpointDispatcher" Type="System.ServiceModel.Dispatcher.EndpointDispatcher" />
+      </Parameters>
+      <Docs>
+        <param name="serviceEndpoint">コントラクトを公開するエンドポイント。</param>
+        <param name="endpointDispatcher">変更または拡張対象のエンドポイント ディスパッチャー。</param>
+        <summary><see cref="M:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" /> を実装して動作をサポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.InvalidOperationException?displayProperty=nameWithType> をスローします。この動作は、クライアント アプリケーションでのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IEndpointBehavior.Validate">
+      <MemberSignature Language="C#" Value="void IEndpointBehavior.Validate (System.ServiceModel.Description.ServiceEndpoint serviceEndpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IEndpointBehavior.Validate(class System.ServiceModel.Description.ServiceEndpoint serviceEndpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.CallbackDebugBehavior.System#ServiceModel#Description#IEndpointBehavior#Validate(System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceEndpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="serviceEndpoint">検証対象のエンドポイント。</param>
+        <summary><see cref="M:System.ServiceModel.Description.IEndpointBehavior.Validate(System.ServiceModel.Description.ServiceEndpoint)" /> を実装して動作をサポートします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

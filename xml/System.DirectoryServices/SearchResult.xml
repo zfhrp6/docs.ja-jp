@@ -1,0 +1,430 @@
+<Type Name="SearchResult" FullName="System.DirectoryServices.SearchResult">
+  <TypeSignature Language="C#" Value="public class SearchResult" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SearchResult extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.SearchResult" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.SearchResult" />クラス全体を検索中に返される、Active Directory ドメイン サービス階層内のノードをカプセル化<see cref="T:System.DirectoryServices.DirectorySearcher" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.DirectoryServices.SearchResult>クラスは、のインスタンスに非常に似ています<xref:System.DirectoryServices.DirectoryEntry>クラスです。 ある重要な相違点、<xref:System.DirectoryServices.DirectoryEntry>クラス情報を取得、Active Directory ドメイン サービス階層から、新しいオブジェクトがアクセスされるたびに一方のデータを<xref:System.DirectoryServices.SearchResult>に表示されています、<xref:System.DirectoryServices.SearchResultCollection>に対して実行されるクエリから返されるを取得、<xref:System.DirectoryServices.DirectorySearcher>クラスです。 使用して指定するプロパティだけ、<xref:System.DirectoryServices.DirectorySearcher.PropertiesToLoad%2A?displayProperty=nameWithType>コレクション、クエリではから利用できます<xref:System.DirectoryServices.SearchResult>です。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.DirectoryServices.DirectoryEntry>オブジェクトを使用して目的のパス、<xref:System.DirectoryServices.DirectorySearcher.FindOne%2A>検索を開始するメソッド。 この例では、検索を実行した後、<xref:System.DirectoryServices.SearchResult.GetDirectoryEntry%2A>検索結果で識別されるライブ ディレクトリ エントリを取得する方法です。  
+  
+```vb  
+Imports System  
+Imports System.DirectoryServices  
+Imports Microsoft.VisualBasic  
+  
+Public Class MySample  
+   Public Shared Sub Main()  
+      Dim myLDAPPath As String = ""  
+      Try  
+         ' Create a 'DirectoryEntry' object to search.  
+         Console.WriteLine("Enter the path ( Ex : 'LDAP://MyServer')")  
+         myLDAPPath = Console.ReadLine()  
+         Dim mySearchRoot As New DirectoryEntry(myLDAPPath)  
+  
+         Dim myDirectorySearcher As New DirectorySearcher(mySearchRoot)  
+  
+         ' Get the first entry of the search.  
+         Dim mySearchResult As SearchResult = myDirectorySearcher.FindOne()  
+         If Not (mySearchResult Is Nothing) Then  
+            ' Get the 'DirectoryEntry' that corresponds to 'mySearchResult'.  
+            Dim myDirectoryEntry As DirectoryEntry = mySearchResult.GetDirectoryEntry()  
+            Console.WriteLine(ControlChars.Newline + "The name of the 'myDirectoryEntry' " + _  
+                        "directory entry that corresponds to the " + _  
+                        "'mySearchResult' search result is : {0}" + _  
+                        ControlChars.Newline, myDirectoryEntry.Name)  
+            Dim mySearchResultPath As String = mySearchResult.Path  
+            Console.WriteLine("The path for the 'mySearchResult' search result is : {0}" + _  
+                              ControlChars.Newline, mySearchResultPath)  
+            ' Get the properties of the 'mySearchResult'.  
+            Dim myResultPropColl As ResultPropertyCollection  
+            myResultPropColl = mySearchResult.Properties  
+            Console.WriteLine("The properties of the 'mySearchResult' are :")  
+            Dim myKey As String  
+            For Each myKey In  myResultPropColl.PropertyNames  
+               Dim tab1 As String = "    "  
+               Console.WriteLine(myKey + " = ")  
+               Dim myCollection As Object  
+               For Each myCollection In  myResultPropColl(myKey)  
+                  Console.WriteLine(tab1 + myCollection)  
+               Next myCollection  
+            Next myKey  
+            myDirectoryEntry.Dispose()  
+            mySearchRoot.Dispose()  
+         Else  
+            Console.WriteLine("The '" + myLDAPPath + "' path not found.")  
+         End If  
+      Catch e As Exception  
+         Console.WriteLine("The '" + myLDAPPath + "' path not found.")  
+         Console.WriteLine("Exception : " & e.Message)  
+      End Try  
+   End Sub 'Main  
+End Class 'MySample  
+```  
+  
+```csharp  
+using System;  
+using System.DirectoryServices;  
+  
+public class MySample  
+{  
+    public static void Main()  
+    {  
+        string myLDAPPath = "";  
+        try  
+        {  
+            // Create a 'DirectoryEntry' object to search.  
+            Console.WriteLine("Enter the path ( Ex : 'LDAP://MyServer')");  
+            myLDAPPath = Console.ReadLine();  
+  
+            DirectoryEntry mySearchRoot = new DirectoryEntry(myLDAPPath);  
+            DirectorySearcher myDirectorySearcher =   
+                    new DirectorySearcher(mySearchRoot);  
+  
+            // Get the first entry of the search.  
+            SearchResult mySearchResult = myDirectorySearcher.FindOne();  
+  
+            if ( mySearchResult != null )  
+            {  
+                // Get the 'DirectoryEntry' that corresponds to 'mySearchResult'.  
+                DirectoryEntry myDirectoryEntry =   
+                mySearchResult.GetDirectoryEntry();  
+                Console.WriteLine("\nThe name of the 'myDirectoryEntry' " +  
+                        "directory entry that corresponds to the " +  
+                        "'mySearchResult' search result is : {0}\n",  
+                        myDirectoryEntry.Name);  
+                string mySearchResultPath = mySearchResult.Path;  
+                Console.WriteLine("The path for the 'mySearchResult' search "  
+                        + "result is : {0}\n", mySearchResultPath);  
+  
+                // Get the properties of the 'mySearchResult'.  
+                ResultPropertyCollection myResultPropColl;  
+                myResultPropColl = mySearchResult.Properties;  
+                Console.WriteLine("The properties of the " +   
+                        "'mySearchResult' are :");  
+  
+                foreach( string myKey in myResultPropColl.PropertyNames)  
+                {  
+                    string tab = "    ";  
+                    Console.WriteLine(myKey + " = ");  
+                    foreach( Object myCollection in myResultPropColl[myKey])  
+                    {  
+                        Console.WriteLine(tab + myCollection);  
+                    }  
+                }  
+                mySearchRoot.Dispose();  
+                myDirectoryEntry.Dispose();  
+            }  
+            else  
+            {  
+                Console.WriteLine("The '" + myLDAPPath + "' path not found.");  
+            }  
+        }  
+        catch(Exception e)  
+        {  
+            Console.WriteLine("The '" + myLDAPPath + "' path not found.");  
+            Console.WriteLine("Exception : " + e.Message);  
+        }  
+    }  
+  
+}  
+```  
+  
+```cpp#  
+#using <mscorlib.dll>  
+#using <System.dll>  
+#using <System.Directoryservices.dll>  
+  
+using namespace System;  
+using namespace System::Collections;  
+using namespace System::DirectoryServices;  
+using namespace stdcli::language;  
+  
+int main()   
+{  
+    String^ myLDAPPath = "";  
+    try   
+    {  
+        // Create a 'DirectoryEntry' object to search.  
+        Console::WriteLine("Enter the path ( Ex : 'LDAP://MyServer')");  
+        myLDAPPath = Console::ReadLine();  
+        DirectoryEntry^ mySearchRoot = gcnew DirectoryEntry(myLDAPPath);  
+  
+        DirectorySearcher^ myDirectorySearcher = gcnew DirectorySearcher(mySearchRoot);  
+  
+        // Get the first entry of the search.  
+        SearchResult^ mySearchResult = myDirectorySearcher->FindOne();  
+        if (mySearchResult)   
+        {  
+            // Get the 'DirectoryEntry' that corresponds to 'mySearchResult'.  
+            DirectoryEntry^ myDirectoryEntry = mySearchResult->GetDirectoryEntry();  
+            Console::WriteLine(  
+                String::Concat("\nThe name of the 'myDirectoryEntry' ",  
+                "directory entry that corresponds to the ",  
+                "'mySearchResult' search result is : {0}\n"),  
+                myDirectoryEntry->Name);  
+  
+            String^ mySearchResultPath = mySearchResult->Path;  
+            Console::WriteLine("The path for the 'mySearchResult' search result is :  
+                    {0}\n", mySearchResultPath);  
+  
+            // Get the properties of the 'mySearchResult'.  
+            ResultPropertyCollection^ myResultPropColl = mySearchResult->Properties;  
+            Console::WriteLine("The properties of the 'mySearchResult' are :");  
+            IEnumerator^ myEnum = myResultPropColl->PropertyNames->GetEnumerator();  
+            while (myEnum->MoveNext())   
+            {  
+                String^ myKey = safe_cast<String^>(myEnum->Current);  
+                Console::WriteLine("{0} = ", myKey);  
+                IEnumerator^ myEnum = myResultPropColl->Item[myKey]->GetEnumerator();  
+                while (myEnum->MoveNext())   
+                {  
+                    Console::WriteLine("\t{0}", myEnum->Current);  
+                }  
+            }  
+            myDirectoryEntry->Dispose();  
+            mySearchRoot->Dispose();   
+        }   
+        else   
+        {  
+            Console::WriteLine("The '{0}' path not found.", myLDAPPath);  
+        }  
+    }   
+    catch (Exception^ e)   
+    {  
+        Console::WriteLine("The '{0}' path not found.",  myLDAPPath);  
+        Console::WriteLine("Exception : {0}", e->Message);  
+    }  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+      <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+    </permission>
+  </Docs>
+  <Members>
+    <Member MemberName="GetDirectoryEntry">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntry GetDirectoryEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.DirectoryEntry GetDirectoryEntry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.SearchResult.GetDirectoryEntry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.DirectoryServices.DirectoryEntry" />に対応する、 <see cref="T:System.DirectoryServices.SearchResult" /> Active Directory ドメイン サービス階層からです。</summary>
+        <returns><see cref="T:System.DirectoryServices.DirectoryEntry" />に対応する、<see cref="T:System.DirectoryServices.SearchResult" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.DirectoryServices.SearchResult.GetDirectoryEntry%2A>を通じて返されたエントリではなくライブのエントリを確認する場合<xref:System.DirectoryServices.DirectorySearcher>、返されたオブジェクトでメソッドを呼び出すしたい場合またはします。  
+  
+> [!NOTE]
+>  呼び出す<xref:System.DirectoryServices.SearchResult.GetDirectoryEntry%2A>各<xref:System.DirectoryServices.SearchResult>を通じて返さ<xref:System.DirectoryServices.DirectorySearcher>速度が低下することができます。  
+  
+   
+  
+## Examples  
+ 次の例は例では、抜粋<xref:System.DirectoryServices.SearchResult>です。 元の例では、作成、新しい<xref:System.DirectoryServices.DirectoryEntry>オブジェクトを使用して目的のパス、<xref:System.DirectoryServices.DirectorySearcher.FindOne%2A>検索を開始するメソッド。 この例では、検索を実行した後、<xref:System.DirectoryServices.SearchResult.GetDirectoryEntry%2A>検索結果で指定されているライブのディレクトリ エントリを取得する方法です。  
+  
+```vb  
+' Get the 'DirectoryEntry' that corresponds to 'mySearchResult'.  
+Dim myDirectoryEntry As DirectoryEntry = mySearchResult.GetDirectoryEntry()  
+Console.WriteLine(ControlChars.Newline + "The name of the 'myDirectoryEntry' " + _  
+            "directory entry that corresponds to the " + _  
+            "'mySearchResult' search result is : {0}" + _  
+            ControlChars.Newline, myDirectoryEntry.Name)  
+  
+```  
+  
+```csharp  
+// Get the 'DirectoryEntry' that corresponds to 'mySearchResult'.  
+DirectoryEntry myDirectoryEntry =   
+                           mySearchResult.GetDirectoryEntry();  
+Console.WriteLine("\nThe name of the 'myDirectoryEntry' " +  
+                  "directory entry that corresponds to the " +  
+                  "'mySearchResult' search result is : {0}\n",  
+                  myDirectoryEntry.Name);  
+  
+```  
+  
+```cpp#  
+// Get the 'DirectoryEntry' that corresponds to 'mySearchResult'.  
+DirectoryEntry^ myDirectoryEntry = mySearchResult->GetDirectoryEntry();  
+Console::WriteLine(  
+    String::Concat("\nThe name of the 'myDirectoryEntry' ",  
+    "directory entry that corresponds to the ",  
+    "'mySearchResult' search result is : {0}\n"),  
+    myDirectoryEntry->Name);  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.SearchResult.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このパスを取得<see cref="T:System.DirectoryServices.SearchResult" />です。</summary>
+        <value><see cref="T:System.DirectoryServices.SearchResult" /> のパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.SearchResult.Path%2A>プロパティが Active Directory ドメイン サービス階層内のこのエントリを一意に識別します。 常にこのパスを使用して、エントリを取得できます。  
+  
+   
+  
+## Examples  
+ 次の例は例では、抜粋<xref:System.DirectoryServices.SearchResult>です。 元の例では、作成、新しい<xref:System.DirectoryServices.DirectoryEntry>オブジェクトを使用して目的のパス、<xref:System.DirectoryServices.DirectorySearcher.FindOne%2A>検索を開始するメソッド。 この例では、検索を実行した後、<xref:System.DirectoryServices.SearchResult.GetDirectoryEntry%2A>検索結果で指定されているライブのディレクトリ エントリを取得する方法です。  
+  
+ この例では、解析、<xref:System.DirectoryServices.SearchResult.Path%2A>検索結果からのプロパティです。  
+  
+```vb  
+Dim mySearchResultPath As String = mySearchResult.Path  
+Console.WriteLine("The path for the 'mySearchResult' search result is : {0}" + _  
+                  ControlChars.Newline, mySearchResultPath)  
+  
+```  
+  
+```csharp  
+string mySearchResultPath = mySearchResult.Path;  
+Console.WriteLine("The path for the 'mySearchResult' search "  
+                  + "result is : {0}\n", mySearchResultPath);  
+```  
+  
+```cpp#  
+String^ mySearchResultPath = mySearchResult->Path;  
+Console::WriteLine("The path for the 'mySearchResult' search result is : {0}\n", mySearchResultPath);  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ResultPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ResultPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.SearchResult.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ResultPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.DirectoryServices.ResultPropertyCollection" />このオブジェクトのプロパティのコレクション。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ResultPropertyCollection" />プロパティがこのオブジェクトに設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションには、を通じて明示的に要求されたプロパティにはのみが含まれます。<xref:System.DirectoryServices.DirectorySearcher.PropertiesToLoad%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例は例では、抜粋<xref:System.DirectoryServices.SearchResult>です。 元の例では、作成、新しい<xref:System.DirectoryServices.DirectoryEntry>オブジェクトを使用して目的のパス、<xref:System.DirectoryServices.DirectorySearcher.FindOne%2A>検索を開始するメソッド。 この例では、検索を実行した後、<xref:System.DirectoryServices.SearchResult.GetDirectoryEntry%2A>検索結果で指定されているライブのディレクトリ エントリを取得する方法です。  
+  
+ この例では、検索結果に配置する<xref:System.DirectoryServices.ResultPropertyCollection>です。 次に、各プロパティは、コンソール ウィンドウに表示されます。  
+  
+```vb  
+' Get the properties for 'mySearchResult'.  
+Dim myResultPropColl As ResultPropertyCollection  
+myResultPropColl = mySearchResult.Properties  
+Console.WriteLine("The properties of the 'mySearchResult' are :")  
+Dim myKey As String  
+For Each myKey In  myResultPropColl.PropertyNames  
+   Dim tab1 As String = "    "  
+   Console.WriteLine(myKey + " = ")  
+   Dim myCollection As Object  
+   For Each myCollection In  myResultPropColl(myKey)  
+      Console.WriteLine(tab1 + myCollection)  
+   Next myCollection  
+Next myKey  
+  
+```  
+  
+```csharp  
+// Get the properties for 'mySearchResult'.  
+ResultPropertyCollection myResultPropColl;  
+myResultPropColl = mySearchResult.Properties;  
+Console.WriteLine("The properties of the " +   
+                  "'mySearchResult' are :");  
+foreach( string myKey in myResultPropColl.PropertyNames)  
+{  
+   string tab = "    ";  
+   Console.WriteLine(myKey + " = ");  
+   foreach( Object myCollection in myResultPropColl[myKey])  
+   {  
+      Console.WriteLine(tab + myCollection);  
+   }  
+}  
+  
+```  
+  
+```cpp#  
+// Get the properties for 'mySearchResult'.  
+ResultPropertyCollection^ myResultPropColl = mySearchResult->Properties;  
+Console::WriteLine("The properties of the 'mySearchResult' are :");  
+IEnumerator^ myEnum = myResultPropColl->PropertyNames->GetEnumerator();  
+while (myEnum->MoveNext())   
+{  
+    String^ myKey = safe_cast<String^>(myEnum->Current);  
+    Console::WriteLine("{0} = ", myKey);  
+    IEnumerator^ myEnum = myResultPropColl->Item[myKey]->GetEnumerator();  
+    while (myEnum->MoveNext())   
+    {  
+        Console::WriteLine("\t{0}", myEnum->Current);  
+    }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

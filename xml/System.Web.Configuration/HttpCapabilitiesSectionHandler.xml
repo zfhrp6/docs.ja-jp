@@ -1,0 +1,86 @@
+<Type Name="HttpCapabilitiesSectionHandler" FullName="System.Web.Configuration.HttpCapabilitiesSectionHandler">
+  <TypeSignature Language="C#" Value="public class HttpCapabilitiesSectionHandler : System.Configuration.IConfigurationSectionHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpCapabilitiesSectionHandler extends System.Object implements class System.Configuration.IConfigurationSectionHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HttpCapabilitiesSectionHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Configuration.IConfigurationSectionHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>読み取り中に支援、<see langword="&lt;browserCaps&gt;" />のセクションの構成ファイルとのインスタンスを作成する、<see cref="T:System.Web.HttpBrowserCapabilities" />クライアント ブラウザーの機能の情報を含むクラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesSectionHandler>クラスと、対応する`<browserCaps>`は .NET Framework version 2.0 で廃止された構成セクション。 使用するには、コンパイルのブラウザー定義ファイルでは、ブラウザーの機能を管理するための推奨される方法、<xref:System.Web.Configuration.BrowserCapabilitiesFactory>クラスです。 両方の構成方法の目標は、のインスタンスを生成する、<xref:System.Web.HttpBrowserCapabilities>クラスからアクセスできる、<xref:System.Web.HttpRequest.Browser%2A>のプロパティ、<xref:System.Web.HttpRequest>クラスです。  
+  
+ ブラウザー定義ファイルを使用して、ブラウザーの機能を格納する恩恵を代わりにします。 ブラウザーの定義については、XML 構成ファイルから解析され、事前のクラスにコンパイルするため、パフォーマンスの向上を提供します。 ブラウザー定義ファイルは簡単に維持します。  
+  
+-   定義は階層形式であり、したがってブラウザー機能を確認する正規表現にあまり依存します。  
+  
+-   定義は、管理しやすいように、複数のファイルに編成できます。  
+  
+-   定義は、Machine.config レベルまたは特定のアプリケーション レベルで、任意のレベルで定義できます。 これにより、特定のブラウザーの機能をオーバーライドするために定義のセット全体をコピーする必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpCapabilitiesSectionHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesSectionHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.HttpCapabilitiesSectionHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public object Create (object parent, object configurationContext, System.Xml.XmlNode section);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Create(object parent, object configurationContext, class System.Xml.XmlNode section) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesSectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Object" />
+        <Parameter Name="configurationContext" Type="System.Object" />
+        <Parameter Name="section" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="parent">親構成ノードです。</param>
+        <param name="configurationContext">現在の構成ファイルの構成のコンテキスト。</param>
+        <param name="section">情報を含む構成ファイルのセクションです。</param>
+        <summary>インスタンスを作成、<see cref="T:System.Web.HttpBrowserCapabilities" />クライアント ブラウザーの機能の情報を含むクラスです。</summary>
+        <returns>インスタンス<see cref="T:System.Web.HttpBrowserCapabilities" />クライアント ブラウザーの機能の情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの派生、ブラウザーの定義のデータを`<browserCaps>`構成セクション。 .NET Framework version 2.0 では、このセクションでは推奨されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

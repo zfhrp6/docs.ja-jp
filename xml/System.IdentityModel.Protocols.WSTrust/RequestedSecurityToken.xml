@@ -1,0 +1,144 @@
+<Type Name="RequestedSecurityToken" FullName="System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken">
+  <TypeSignature Language="C#" Value="public class RequestedSecurityToken" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RequestedSecurityToken extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>要求された (発行された) セキュリティ トークンを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トークンは、通常、トークンの要求元に対して非透過的です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestedSecurityToken (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken.#ctor(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">A<see cref="T:System.IdentityModel.Tokens.SecurityToken" />要求されたセキュリティ トークンを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken" />クラス、発行されたトークンを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは通常、トークン発行者によって使用されます。  
+  
+ 次の表は、新しいインスタンスのプロパティを示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken.SecurityToken%2A>|`token` パラメーターの値。|  
+|<xref:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken.SecurityTokenXml%2A>|`null`。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="token" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestedSecurityToken (System.Xml.XmlElement tokenAsXml);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlElement tokenAsXml) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken.#ctor(System.Xml.XmlElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tokenAsXml" Type="System.Xml.XmlElement" />
+      </Parameters>
+      <Docs>
+        <param name="tokenAsXml"><see cref="T:System.Xml.XmlElement" />要求されたセキュリティ トークンの XML 表現を格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken" />クラス トークンの XML を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは通常、受信側で使用します。  
+  
+ 次の表は、新しいインスタンスのプロパティを示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken.SecurityToken%2A>|`null`。|  
+|<xref:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken.SecurityTokenXml%2A>|`tokenAsXml` パラメーターの値。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tokenAsXml" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityToken">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityToken SecurityToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityToken SecurityToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken.SecurityToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発行されたセキュリティ トークンと取得、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken" />自体トークンを使用してインスタンスの作成します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SecurityToken" />発行されたセキュリティ トークンを表すです。 <see langword="null" />場合、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken" />インスタンスは、トークンの XML を使用して作成されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発行されたセキュリティ トークンと取得、<xref:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken>自体トークンを使用してオブジェクトが作成された (によって表される、<xref:System.IdentityModel.Tokens.SecurityToken>オブジェクト)。 プロパティの値は`null`トークンの XML を使用して、インスタンスが作成された場合。 ここでは、トークンの XML はからアクセスできる、<xref:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken.SecurityTokenXml%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenXml">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement SecurityTokenXml { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlElement SecurityTokenXml" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken.SecurityTokenXml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発行されたセキュリティの XML 表現をいつでトークンを取得、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken" />インスタンスは、トークンの XML を使用して作成されました。</summary>
+        <value><see cref="T:System.Xml.XmlElement" />セキュリティ トークンの XML 表現を格納しています。 <see langword="null" />場合、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken" />インスタンスが使用して作成された、<see cref="T:System.IdentityModel.Tokens.SecurityToken" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発行されたセキュリティ トークンと取得、 <xref:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken> XML トークンです。 プロパティの値は`null`自体トークンを使用して、インスタンスが作成された場合 (によって表される、<xref:System.IdentityModel.Tokens.SecurityToken>オブジェクト)。 ここでは、トークンはからアクセスできる、<xref:System.IdentityModel.Protocols.WSTrust.RequestedSecurityToken.SecurityToken%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

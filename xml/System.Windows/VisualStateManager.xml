@@ -1,0 +1,406 @@
+<Type Name="VisualStateManager" FullName="System.Windows.VisualStateManager">
+  <TypeSignature Language="C#" Value="public class VisualStateManager : System.Windows.DependencyObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VisualStateManager extends System.Windows.DependencyObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.VisualStateManager" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>状態とコントロールの状態を遷移のロジックを管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.VisualStateManager>特定の状態にあるとき、およびコントロールの状態が変更されたときに、コントロール、コントロールの外観の状態を指定することができます。 たとえば、<xref:System.Windows.Controls.Button>が押されていない場合よりもそれが押されたとき、少し異なる外観を持つ可能性があります。 2 つの状態を<xref:System.Windows.Controls.Button>定義が押されたときに対応 (`"Pressed"`)、されていないと (`"Normal"`)。 によって、状態にある場合にコントロールの外観が定義されている、<xref:System.Windows.VisualState>です。 A<xref:System.Windows.VisualState>のコレクションを格納<xref:System.Windows.Media.Animation.Storyboard>コントロールがその状態のときに、コントロールの外観がどのように変化するかを指定するオブジェクト。 表示状態管理を追加するを設定して、`VisualStateManager.VisualStateGroups`コントロールのプロパティを添付します。 各<xref:System.Windows.VisualStateGroup>のコレクションを格納<xref:System.Windows.VisualState>相互に排他的であるオブジェクト。 つまり、コントロールは常に 1 つだけ状態のそれぞれに<xref:System.Windows.VisualStateGroup>です。  
+  
+ <xref:System.Windows.VisualStateManager>コントロールが特定の状態に入ったときを指定することもできます。 状態の変更を呼び出す必要のあるメソッドは、シナリオによって異なります。 使用するコントロールを作成する場合、<xref:System.Windows.VisualStateManager>でその<xref:System.Windows.Controls.ControlTemplate>を呼び出し、<xref:System.Windows.VisualStateManager.GoToState%2A>メソッドです。 作成する方法の詳細についてはコントロールを使用する、<xref:System.Windows.VisualStateManager>を参照してください[を作成する、コントロールのある外観をカスタマイズできる](~/docs/framework/wpf/controls/creating-a-control-that-has-a-customizable-appearance.md)です。 使用する場合、<xref:System.Windows.VisualStateManager>の外部、 <xref:System.Windows.Controls.ControlTemplate> (を使用する場合など、<xref:System.Windows.VisualStateManager>で、<xref:System.Windows.Controls.UserControl>または 1 つの要素に)、呼び出す、<xref:System.Windows.VisualStateManager.GoToElementState%2A>メソッドです。 どちらの場合、<xref:System.Windows.VisualStateManager>適切に開始および停止関係する状態に関連付けられているストーリー ボードに必要なロジックを実行します。 たとえば、コントロールが、状態を定義する`State1`と`State2`、それぞれが関連付けられているストーリー ボードを持ちます。 場合は、コントロールが`State1`して渡す`State2`に<xref:System.Windows.VisualStateManager.GoToState%2A>または<xref:System.Windows.VisualStateManager.GoToElementState%2A>、<xref:System.Windows.VisualStateManager>でストーリー ボードを起動`State2`でストーリー ボードを停止して`State1`です。  
+  
+ コントロールに含まれている[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]を使用して、<xref:System.Windows.VisualStateManager>表示状態を変更します。 作成するときに、<xref:System.Windows.Controls.ControlTemplate>に含まれているコントロールの[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]、追加することができます<xref:System.Windows.VisualState>オブジェクトをコントロールの<xref:System.Windows.Controls.ControlTemplate>をある状態でコントロールの外観を指定します。 含まれているコントロールの視覚的な状態の名前を検索する[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]を参照してください[コントロールのスタイルとテンプレート](~/docs/framework/wpf/controls/control-styles-and-templates.md)です。 コントロールのロジックのハンドルが以外の何もする必要はありませんので、状態を遷移を定義、 <xref:System.Windows.VisualState> 、新しいオブジェクト<xref:System.Windows.Controls.ControlTemplate>です。 既存のコントロールのコントロール テンプレートを作成する方法の詳細については、次を参照してください。 [、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+ 継承する必要がありますの状態を遷移するためのロジックを実装する場合は、 <xref:System.Windows.VisualStateManager>、オーバーライド、<xref:System.Windows.VisualStateManager.GoToStateCore%2A>メソッド、およびセット、<xref:System.Windows.VisualStateManager.CustomVisualStateManager%2A?displayProperty=nameWithType>カスタム ロジックを使用するコントロールのプロパティを添付します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Shapes.Rectangle>し、追加、<xref:System.Windows.VisualStateGroup>という`CommonStates`を`VisualStateManager.VisualStatesGroups`添付プロパティ。 例では、定義、`MouseOver`と`Normal`<xref:System.Windows.VisualState>内のオブジェクト、 `CommonStates`<xref:System.Windows.VisualStateGroup>です。 ユーザーが経由でマウス ポインターを移動するときに、 <xref:System.Windows.Shapes.Rectangle>、赤に変わる緑 over 0.5 秒です。 四角形からマウスを動かしたときに、<xref:System.Windows.Controls.Grid>赤に変更がすぐにバックアップします。 なお、`Normal`状態が定義されていません、<xref:System.Windows.Media.Animation.Storyboard>です。 A<xref:System.Windows.Media.Animation.Storyboard>ため必要はないときに、<xref:System.Windows.Shapes.Rectangle>から遷移、`MouseOver`状態、 `Normal` 、状態、<xref:System.Windows.Media.Animation.Storyboard>の`MouseOver`が停止していると<xref:System.Windows.Media.SolidColorBrush.Color%2A>プロパティを<xref:System.Windows.Media.SolidColorBrush>を返します赤。  
+  
+ [!code-xaml[VSMCustomControl#VSMNoTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#vsmnotemplate)]  
+  
+ 次の例では、イベント ハンドラーの呼び出しと前の例で定義されている、<xref:System.Windows.VisualStateManager.GoToElementState%2A>状態間を遷移します。 前の例で、四角形の一部であったかどうか、 <xref:System.Windows.Controls.ControlTemplate>、例を呼び出す必要があります、<xref:System.Windows.VisualStateManager.GoToState%2A>メソッドです。  
+  
+ [!code-csharp[VSMCustomControl#GoToElementState](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml.cs#gotoelementstate)]
+ [!code-vb[VSMCustomControl#GoToElementState](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/window1.xaml.vb#gotoelementstate)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public VisualStateManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.VisualStateManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomVisualStateManagerProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CustomVisualStateManagerProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CustomVisualStateManagerProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.VisualStateManager.CustomVisualStateManagerProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.VisualStateManager.CustomVisualStateManager" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomVisualStateManager">
+      <MemberSignature Language="C#" Value="public static System.Windows.VisualStateManager GetCustomVisualStateManager (System.Windows.FrameworkElement obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.VisualStateManager GetCustomVisualStateManager(class System.Windows.FrameworkElement obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.GetCustomVisualStateManager(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.VisualStateManager</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="obj">取得する要素、<see cref="P:System.Windows.VisualStateManager.CustomVisualStateManager" />からプロパティを添付します。</param>
+        <summary>取得、<see cref="P:System.Windows.VisualStateManager.CustomVisualStateManager" />添付プロパティ。</summary>
+        <returns>コントロールの状態間を遷移する表示状態マネージャー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVisualStateGroups">
+      <MemberSignature Language="C#" Value="public static System.Collections.IList GetVisualStateGroups (System.Windows.FrameworkElement obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IList GetVisualStateGroups(class System.Windows.FrameworkElement obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.GetVisualStateGroups(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="obj">取得する要素、<see cref="P:System.Windows.VisualStateManager.VisualStateGroups" />からプロパティを添付します。</param>
+        <summary>取得、<see cref="P:System.Windows.VisualStateManager.VisualStateGroups" />添付プロパティ。</summary>
+        <returns>コレクション<see cref="T:System.Windows.VisualStateGroup" />指定したオブジェクトに関連付けられているオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GoToElementState">
+      <MemberSignature Language="C#" Value="public static bool GoToElementState (System.Windows.FrameworkElement stateGroupsRoot, string stateName, bool useTransitions);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GoToElementState(class System.Windows.FrameworkElement stateGroupsRoot, string stateName, bool useTransitions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.GoToElementState(System.Windows.FrameworkElement,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stateGroupsRoot" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="stateName" Type="System.String" />
+        <Parameter Name="useTransitions" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stateGroupsRoot">ルート要素を含む、<see cref="T:System.Windows.VisualStateManager" />です。</param>
+        <param name="stateName">切り替え先の状態。</param>
+        <param name="useTransitions">
+          <see langword="true" />使用する、<see cref="T:System.Windows.VisualTransition" />オブジェクトの状態間を遷移するそれ以外の場合、<see langword="false" />です。</param>
+        <summary>2 つの状態間の要素を移行します。 このメソッドを使用して、コントロールによって定義されているのではなく、アプリケーションによって定義されている遷移状態にします。</summary>
+        <returns>
+          <see langword="true" />コントロールが正常に新しい状態に遷移した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.VisualStateManager.GoToElementState%2A>上の外部要素を変更する方法を示す、 <xref:System.Windows.Controls.ControlTemplate> (を使用する場合など、<xref:System.Windows.VisualStateManager>で、<xref:System.Windows.DataTemplate>または<xref:System.Windows.Window>)。 呼び出す、<xref:System.Windows.VisualStateManager.GoToState%2A>メソッドを使用するコントロールの状態を変更する場合は、<xref:System.Windows.VisualStateManager>でその<xref:System.Windows.Controls.ControlTemplate>です。  
+  
+   
+  
+## Examples  
+ 次の例では、1 ~ 100 の範囲の数値を推測するように求める、アプリケーションを作成します。  数値を入力すると、アプリケーションは推定値が高すぎる、不足、または正しいかどうかを示します。  次[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、アプリケーションのユーザー インターフェイスを作成し、4 つの状態の定義: `TooLow`、 `TooHigh`、 `Correct`、および`Guessing`です。 アプリケーションの開始時に、`Guessing`状態です。 。  
+  
+ [!code-xaml[VSMGoToElementState#GoToElementStateXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmgotoelementstate/csharp/mainwindow.xaml#gotoelementstatexaml)]  
+  
+ 次のコードは、アプリケーションのロジックを示しています。  ユーザーは、数値を入力、ボタンをクリックすると、アプリケーションが呼び出す<xref:System.Windows.VisualStateManager.GoToElementState%2A>に移行する`TooHigh`、 `TooLow`、または`Correct`推定値についてユーザーにフィードバックを提供します。  この例には、呼び出し、`GenerateNumber`メソッド、アプリケーションの開始時にします。  
+  
+ [!code-csharp[VSMGoToElementState#GoToElementStateCode](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmgotoelementstate/csharp/mainwindow.xaml.cs#gotoelementstatecode)]
+ [!code-vb[VSMGoToElementState#GoToElementStateCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmgotoelementstate/visualbasic/mainwindow.xaml.vb#gotoelementstatecode)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stateGroupsRoot" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="stateName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GoToState">
+      <MemberSignature Language="C#" Value="public static bool GoToState (System.Windows.FrameworkElement control, string stateName, bool useTransitions);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GoToState(class System.Windows.FrameworkElement control, string stateName, bool useTransitions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.GoToState(System.Windows.FrameworkElement,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="stateName" Type="System.String" />
+        <Parameter Name="useTransitions" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="control">状態間を遷移するコントロール。</param>
+        <param name="stateName">切り替え先の状態。</param>
+        <param name="useTransitions">
+          <see langword="true" />使用する、<see cref="T:System.Windows.VisualTransition" />オブジェクトの状態間を遷移するそれ以外の場合、<see langword="false" />です。</param>
+        <summary>コントロールを 2 つの状態間で切り替えます。 このメソッドを持つコントロールの状態の遷移を使用して、<see cref="T:System.Windows.Controls.ControlTemplate" />です。</summary>
+        <returns>
+          <see langword="true" />コントロールが正常に新しい状態に遷移した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.VisualStateManager.GoToState%2A>メソッドを使用するコントロールの状態を変更する場合は、<xref:System.Windows.VisualStateManager>でその<xref:System.Windows.Controls.ControlTemplate>です。 呼び出す、<xref:System.Windows.VisualStateManager.GoToElementState%2A>上の外部要素を変更する方法を示す、 <xref:System.Windows.Controls.ControlTemplate> (を使用する場合など、<xref:System.Windows.VisualStateManager>で、<xref:System.Windows.Controls.UserControl>または 1 つの要素)。  
+  
+   
+  
+## Examples  
+ 次の例で使用するコントロールを<xref:System.Windows.VisualStateManager.GoToState%2A>状態間を遷移します。 全体の例では、次を参照してください。[を作成する、コントロールに外観をカスタマイズできる](~/docs/framework/wpf/controls/creating-a-control-that-has-a-customizable-appearance.md)です。  
+  
+ [!code-csharp[VSMCustomControl#UpdateStates](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/numericupdown.cs#updatestates)]
+ [!code-vb[VSMCustomControl#UpdateStates](~/samples/snippets/visualbasic/VS_Snippets_Wpf/vsmcustomcontrol/visualbasic/numericupdown.vb#updatestates)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="control" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="stateName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GoToStateCore">
+      <MemberSignature Language="C#" Value="protected virtual bool GoToStateCore (System.Windows.FrameworkElement control, System.Windows.FrameworkElement stateGroupsRoot, string stateName, System.Windows.VisualStateGroup group, System.Windows.VisualState state, bool useTransitions);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool GoToStateCore(class System.Windows.FrameworkElement control, class System.Windows.FrameworkElement stateGroupsRoot, string stateName, class System.Windows.VisualStateGroup group, class System.Windows.VisualState state, bool useTransitions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.GoToStateCore(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.String,System.Windows.VisualStateGroup,System.Windows.VisualState,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="stateGroupsRoot" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="stateName" Type="System.String" />
+        <Parameter Name="group" Type="System.Windows.VisualStateGroup" />
+        <Parameter Name="state" Type="System.Windows.VisualState" />
+        <Parameter Name="useTransitions" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="control">状態間を遷移するコントロール。</param>
+        <param name="stateGroupsRoot">ルート要素を含む、<see cref="T:System.Windows.VisualStateManager" />です。</param>
+        <param name="stateName">遷移先の状態の名前。</param>
+        <param name="group"><see cref="T:System.Windows.VisualStateGroup" />に状態が属しています。</param>
+        <param name="state">遷移先の状態の表現。</param>
+        <param name="useTransitions">
+          <see langword="true" />使用する、<see cref="T:System.Windows.VisualTransition" />オブジェクトの状態間を遷移するそれ以外の場合、<see langword="false" />です。</param>
+        <summary>コントロールの状態を移行します。</summary>
+        <returns>
+          <see langword="true" />コントロールが正常に新しい状態に遷移した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.VisualStateManager.GoToStateCore%2A>メソッドが適切に開始および遷移に関連付けられているストーリー ボードを停止するために必要なロジックを実行します。 コントロールを呼び出すと<xref:System.Windows.VisualStateManager.GoToState%2A>の状態を変更する、<xref:System.Windows.VisualStateManager>は次の実行します。  
+  
+-   最初に、if、<xref:System.Windows.VisualState>コントロールが遷移することが、 <xref:System.Windows.Media.Animation.Storyboard>、ストーリー ボードを開始します。 場合はその後、<xref:System.Windows.VisualState>が、コントロールがから送信されたこと、 <xref:System.Windows.Media.Animation.Storyboard>、ストーリー ボードが終了します。  
+  
+-   コントロールになっている場合、`stateName`状態、<xref:System.Windows.VisualStateManager.GoToState%2A>は何も処理し、返します`true`です。  
+  
+-   場合`stateName`に存在しません、<xref:System.Windows.Controls.ControlTemplate>の`control`、<xref:System.Windows.VisualStateManager.GoToState%2A>は何も処理し、返します`false`です。  
+  
+ 独自に実装することができます<xref:System.Windows.VisualStateManager>ロジックを提供する別の状態を遷移します。 たとえば、前に説明したロジックを変更することができます。 またはカスタム アニメーションの種類間を遷移するロジックを指定できます。  実装する、<xref:System.Windows.VisualStateManager>から継承するクラスを作成する<xref:System.Windows.VisualStateManager>をオーバーライドし、<xref:System.Windows.VisualStateManager.GoToStateCore%2A>メソッドです。 カスタム クラスを使用する設定、<xref:System.Windows.VisualStateManager.CustomVisualStateManager%2A>プロパティをカスタム型のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseCurrentStateChanged">
+      <MemberSignature Language="C#" Value="protected void RaiseCurrentStateChanged (System.Windows.VisualStateGroup stateGroup, System.Windows.VisualState oldState, System.Windows.VisualState newState, System.Windows.FrameworkElement control, System.Windows.FrameworkElement stateGroupsRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseCurrentStateChanged(class System.Windows.VisualStateGroup stateGroup, class System.Windows.VisualState oldState, class System.Windows.VisualState newState, class System.Windows.FrameworkElement control, class System.Windows.FrameworkElement stateGroupsRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.RaiseCurrentStateChanged(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stateGroup" Type="System.Windows.VisualStateGroup" />
+        <Parameter Name="oldState" Type="System.Windows.VisualState" />
+        <Parameter Name="newState" Type="System.Windows.VisualState" />
+        <Parameter Name="control" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="stateGroupsRoot" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="stateGroup">オブジェクトを<see cref="E:System.Windows.VisualStateGroup.CurrentStateChanging" />でイベントが発生しました。</param>
+        <param name="oldState">コントロールが遷移状態です。</param>
+        <param name="newState">状態に遷移するコントロールです。</param>
+        <param name="control">状態が遷移を制御します。</param>
+        <param name="stateGroupsRoot">ルート要素を含む、<see cref="T:System.Windows.VisualStateManager" />です。</param>
+        <summary>発生させる、<see cref="E:System.Windows.VisualStateGroup.CurrentStateChanging" />指定したイベント<see cref="T:System.Windows.VisualStateGroup" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.VisualStateGroup>に設定されている、 <xref:System.Windows.Controls.ControlTemplate> 、コントロールの`control`を所有するコントロールにパラメーターが設定されている<xref:System.Windows.Controls.ControlTemplate>です。  ときに、<xref:System.Windows.VisualStateGroup>に設定されている、 <xref:System.Windows.FrameworkElement>、`control`は`null`必要がありますを使用して、`stateGroupsRoot`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stateGroupsRoot" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="newState" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.VisualStateManager.RaiseCurrentStateChanged(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.VisualStateManager.RaiseCurrentStateChanged(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseCurrentStateChanging">
+      <MemberSignature Language="C#" Value="protected void RaiseCurrentStateChanging (System.Windows.VisualStateGroup stateGroup, System.Windows.VisualState oldState, System.Windows.VisualState newState, System.Windows.FrameworkElement control, System.Windows.FrameworkElement stateGroupsRoot);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseCurrentStateChanging(class System.Windows.VisualStateGroup stateGroup, class System.Windows.VisualState oldState, class System.Windows.VisualState newState, class System.Windows.FrameworkElement control, class System.Windows.FrameworkElement stateGroupsRoot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.RaiseCurrentStateChanging(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stateGroup" Type="System.Windows.VisualStateGroup" />
+        <Parameter Name="oldState" Type="System.Windows.VisualState" />
+        <Parameter Name="newState" Type="System.Windows.VisualState" />
+        <Parameter Name="control" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="stateGroupsRoot" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="stateGroup">オブジェクトを<see cref="E:System.Windows.VisualStateGroup.CurrentStateChanging" />でイベントが発生しました。</param>
+        <param name="oldState">コントロールが遷移状態です。</param>
+        <param name="newState">状態に遷移するコントロールです。</param>
+        <param name="control">状態が遷移を制御します。</param>
+        <param name="stateGroupsRoot">ルート要素を含む、<see cref="T:System.Windows.VisualStateManager" />です。</param>
+        <summary>発生させる、<see cref="E:System.Windows.VisualStateGroup.CurrentStateChanging" />指定したイベント<see cref="T:System.Windows.VisualStateGroup" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.VisualStateGroup>に設定されている、 <xref:System.Windows.Controls.ControlTemplate> 、コントロールの`control`を所有するコントロールにパラメーターが設定されている<xref:System.Windows.Controls.ControlTemplate>です。  ときに、<xref:System.Windows.VisualStateGroup>に設定されている、 <xref:System.Windows.FrameworkElement>、`control`は`null`必要がありますを使用して、`stateGroupsRoot`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stateGroupsRoot" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="newState" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.VisualStateManager.RaiseCurrentStateChanging(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.VisualStateManager.RaiseCurrentStateChanging(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCustomVisualStateManager">
+      <MemberSignature Language="C#" Value="public static void SetCustomVisualStateManager (System.Windows.FrameworkElement obj, System.Windows.VisualStateManager value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCustomVisualStateManager(class System.Windows.FrameworkElement obj, class System.Windows.VisualStateManager value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.SetCustomVisualStateManager(System.Windows.FrameworkElement,System.Windows.VisualStateManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="value" Type="System.Windows.VisualStateManager" />
+      </Parameters>
+      <Docs>
+        <param name="obj">プロパティを設定するオブジェクト。</param>
+        <param name="value">コントロールの状態間を遷移する表示状態マネージャー。</param>
+        <summary><see cref="P:System.Windows.VisualStateManager.CustomVisualStateManager" /> 添付プロパティを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualStateGroupsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VisualStateGroupsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VisualStateGroupsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.VisualStateManager.VisualStateGroupsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.VisualStateManager.VisualStateGroups" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

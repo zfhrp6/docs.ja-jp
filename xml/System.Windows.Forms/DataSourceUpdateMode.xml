@@ -1,0 +1,86 @@
+<Type Name="DataSourceUpdateMode" FullName="System.Windows.Forms.DataSourceUpdateMode">
+  <TypeSignature Language="C#" Value="public enum DataSourceUpdateMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DataSourceUpdateMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataSourceUpdateMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>バインドされたコントロールが変更された場合に、データ ソースが更新された日時を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してデータ ソースにコントロールをバインドするときに、<xref:System.Windows.Forms.Binding>オブジェクト、データ ソースに更新プログラムが使用して発生するを指定することができます、<xref:System.Windows.Forms.DataSourceUpdateMode>列挙します。  
+  
+ 更新モードがなしの場合を使用して更新するデータ ソースを強制することができます、<xref:System.Windows.Forms.Binding.WriteValue%2A>メソッドです。  
+  
+> [!NOTE]
+>  更新モードは、無期限に設定されている場合でも、データ ソースは、バインディングの作成時に最初を少なくとも 1 つの更新では常に実行するように更新されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Never">
+      <MemberSignature Language="C#" Value="Never" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataSourceUpdateMode Never = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataSourceUpdateMode.Never" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataSourceUpdateMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースは更新されず、値、コントロールに入力は解析、検証も再フォーマットします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="OnPropertyChanged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataSourceUpdateMode OnPropertyChanged = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataSourceUpdateMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのプロパティの値が変更されるたびに、データ ソースが更新されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidation">
+      <MemberSignature Language="C#" Value="OnValidation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataSourceUpdateMode OnValidation = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataSourceUpdateMode.OnValidation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataSourceUpdateMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのプロパティが検証されると、データ ソースの更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証が、コントロールのプロパティの値は再フォーマットできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,757 @@
+<Type Name="Control+ControlCollection" FullName="System.Windows.Forms.Control+ControlCollection">
+  <TypeSignature Language="C#" Value="public class Control.ControlCollection : System.Windows.Forms.Layout.ArrangedElementCollection, ICloneable, System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit Control/ControlCollection extends System.Windows.Forms.Layout.ArrangedElementCollection implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Control.ControlCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Layout.ArrangedElementCollection</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.Control" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.ControlCollection.Add%2A>、 <xref:System.Windows.Forms.Control.ControlCollection.Remove%2A>、および<xref:System.Windows.Forms.Control.ControlCollection.RemoveAt%2A>メソッドでは、追加し、コレクションから個々 のコントロールを削除することができます。 使用することも、<xref:System.Windows.Forms.Control.ControlCollection.AddRange%2A>または<xref:System.Windows.Forms.Control.ControlCollection.Clear%2A>メソッドを追加またはコレクションからすべてのコントロールを削除します。  
+  
+ かを判別できます、<xref:System.Windows.Forms.Control>に制御を渡すことによって、コレクションのメンバーである、<xref:System.Windows.Forms.Control.ControlCollection.Contains%2A>メソッドです。 場所のインデックス値を取得する、 <xref:System.Windows.Forms.Control> 、コレクション内に制御を渡す、<xref:System.Windows.Forms.Control.ControlCollection.IndexOf%2A>メソッドです。 呼び出して、コレクションを配列にコピーすること、<xref:System.Windows.Forms.Layout.ArrangedElementCollection.CopyTo%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Windows.Forms.Control>から、 <xref:System.Windows.Forms.Control.ControlCollection> 、派生クラスの<xref:System.Windows.Forms.Panel>コレクションのメンバーである場合。 例では、作成済みである必要があります、 <xref:System.Windows.Forms.Panel>、 <xref:System.Windows.Forms.Button>、少なくとも 1 つと<xref:System.Windows.Forms.RadioButton>の control 権限、<xref:System.Windows.Forms.Form>です。 <xref:System.Windows.Forms.RadioButton>にコントロールを追加、<xref:System.Windows.Forms.Panel>コントロール、および<xref:System.Windows.Forms.Panel>に追加したコントロール、<xref:System.Windows.Forms.Form>です。 ラジオ ボタンの名前、ボタンがクリックされたときに`radioButton2`から削除されて、<xref:System.Windows.Forms.Control.ControlCollection>です。  
+  
+ [!code-cpp[ControlCollection#4](~/samples/snippets/cpp/VS_Snippets_Winforms/ControlCollection/CPP/controlcollection.cpp#4)]
+ [!code-csharp[ControlCollection#4](~/samples/snippets/csharp/VS_Snippets_Winforms/ControlCollection/CS/controlcollection.cs#4)]
+ [!code-vb[ControlCollection#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ControlCollection/VB/controlcollection.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlCollection (System.Windows.Forms.Control owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Control owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.#ctor(System.Windows.Forms.Control)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="owner">A<see cref="T:System.Windows.Forms.Control" />コントロール コレクションを所有しているコントロールを表すです。</param>
+        <summary><see cref="T:System.Windows.Forms.Control.ControlCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual void Add (System.Windows.Forms.Control value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(class System.Windows.Forms.Control value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.Add(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Forms.Control" />コントロール コレクションに追加します。</param>
+        <summary>コントロール コレクションに指定されたコントロールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.ControlCollection.Add%2A>メソッドでは、追加することができます<xref:System.Windows.Forms.Control>コントロール コレクションの末尾にオブジェクト。  
+  
+ 追加することも新しい<xref:System.Windows.Forms.Control>オブジェクトを使用して、コレクション、<xref:System.Windows.Forms.Control.ControlCollection.AddRange%2A>メソッドです。  
+  
+ 削除する、<xref:System.Windows.Forms.Control>以前に追加して、使用して、 <xref:System.Windows.Forms.Control.ControlCollection.Remove%2A>、 <xref:System.Windows.Forms.Control.ControlCollection.RemoveAt%2A>、または<xref:System.Windows.Forms.Control.ControlCollection.Clear%2A>メソッドです。  
+  
+> [!NOTE]
+>  A<xref:System.Windows.Forms.Control>いずれかにのみ割り当てることができます<xref:System.Windows.Forms.Control.ControlCollection>一度にです。 場合、<xref:System.Windows.Forms.Control>が既に別のコントロールに追加される前に、のコントロールから削除される別のコントロールの子です。  
+  
+   
+  
+## Examples  
+ 次のコード例では追加、<xref:System.Windows.Forms.Control>を<xref:System.Windows.Forms.Control.ControlCollection>、派生クラスの<xref:System.Windows.Forms.Panel>します。 例では、作成済みである必要があります、<xref:System.Windows.Forms.Panel>コントロールと<xref:System.Windows.Forms.Button>の control 権限、<xref:System.Windows.Forms.Form>です。 ボタンがクリックされたときに、<xref:System.Windows.Forms.TextBox>コントロール パネルの<xref:System.Windows.Forms.Control.ControlCollection>します。  
+  
+ [!code-cpp[ControlCollection#2](~/samples/snippets/cpp/VS_Snippets_Winforms/ControlCollection/CPP/controlcollection.cpp#2)]
+ [!code-csharp[ControlCollection#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ControlCollection/CS/controlcollection.cs#2)]
+ [!code-vb[ControlCollection#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ControlCollection/VB/controlcollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">指定されたコントロールがトップレベル コントロールでは、またはこのコントロールは、コントロール コレクションに追加された場合に、コントロールの循環参照になります。</exception>
+        <exception cref="T:System.ArgumentException">割り当てられているオブジェクト、<paramref name="value" />パラメーターではありません、<see cref="T:System.Windows.Forms.Control" />です。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.Control.ControlCollection.Add(System.Windows.Forms.Control)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.Control.ControlCollection.Add(System.Windows.Forms.Control)" />メソッドをコントロールが、コレクションに追加されていることを確認してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public virtual void AddRange (System.Windows.Forms.Control[] controls);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddRange(class System.Windows.Forms.Control[] controls) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.AddRange(System.Windows.Forms.Control[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controls" Type="System.Windows.Forms.Control[]" />
+      </Parameters>
+      <Docs>
+        <param name="controls">配列<see cref="T:System.Windows.Forms.Control" />コレクションに追加するオブジェクト。</param>
+        <summary>コントロール オブジェクトの配列をコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control>に含まれるオブジェクト、`controls`配列は、コレクションの末尾に追加されます。  
+  
+ 使用することができます、<xref:System.Windows.Forms.Control.ControlCollection.AddRange%2A>のグループをすばやく追加するメソッドを<xref:System.Windows.Forms.Control>オブジェクトを手動で追加するのではなくコレクション<xref:System.Windows.Forms.Control>を使用してコレクションに、<xref:System.Windows.Forms.Control.ControlCollection.Add%2A>メソッドです。  
+  
+ 削除する、<xref:System.Windows.Forms.Control>以前に追加して、使用して、 <xref:System.Windows.Forms.Control.ControlCollection.Remove%2A>、 <xref:System.Windows.Forms.Control.ControlCollection.RemoveAt%2A>、または<xref:System.Windows.Forms.Control.ControlCollection.Clear%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つ追加<xref:System.Windows.Forms.Control>オブジェクトを<xref:System.Windows.Forms.Control.ControlCollection>、派生クラスの<xref:System.Windows.Forms.Panel>します。 例では、作成済みである必要があります、<xref:System.Windows.Forms.Panel>コントロールと<xref:System.Windows.Forms.Button>の control 権限、<xref:System.Windows.Forms.Form>です。 ときに、ボタンがクリックされた、2 つ<xref:System.Windows.Forms.RadioButton>にパネルのコントロールを追加<xref:System.Windows.Forms.Control.ControlCollection>です。  
+  
+ [!code-cpp[ControlCollection#3](~/samples/snippets/cpp/VS_Snippets_Winforms/ControlCollection/CPP/controlcollection.cpp#3)]
+ [!code-csharp[ControlCollection#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ControlCollection/CS/controlcollection.cs#3)]
+ [!code-vb[ControlCollection#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ControlCollection/VB/controlcollection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.Control.ControlCollection.AddRange(System.Windows.Forms.Control[])" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.Control.ControlCollection.AddRange(System.Windows.Forms.Control[])" />コレクションへのコントロールを追加することを確認します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべてのコントロールを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.Control.ControlCollection.Clear%2A>親コントロールからコントロールのコレクション全体を削除する方法です。  
+  
+ コレクションから個々 のコントロールを削除するには、使用、<xref:System.Windows.Forms.Control.ControlCollection.Remove%2A>または<xref:System.Windows.Forms.Control.ControlCollection.RemoveAt%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  呼び出す、<xref:System.Windows.Forms.Control.ControlCollection.Clear%2A>メソッドには、メモリからコントロール ハンドルは削除されません。 明示的に呼び出す必要があります、<xref:System.Windows.Forms.Control.Dispose%2A>メモリを回避するためのリークが発生します。  
+  
+ 新規に追加する<xref:System.Windows.Forms.Control>をコレクションにオブジェクトを使用して、<xref:System.Windows.Forms.Control.ControlCollection.Add%2A>または<xref:System.Windows.Forms.Control.ControlCollection.AddRange%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、すべてを削除、<xref:System.Windows.Forms.Control>内のオブジェクト、 <xref:System.Windows.Forms.Control.ControlCollection> 、派生クラスの<xref:System.Windows.Forms.Panel>します。 例では、作成済みである必要があります、 <xref:System.Windows.Forms.Panel>、 <xref:System.Windows.Forms.Button>、および他のコントロールには、少なくとも 1 つ、<xref:System.Windows.Forms.Form>です。 他のコントロールを追加、<xref:System.Windows.Forms.Panel>コントロール、および<xref:System.Windows.Forms.Panel>に追加された、<xref:System.Windows.Forms.Form>です。 パネルに含まれているすべてのコントロールがから削除 ボタンがクリックされたときに、<xref:System.Windows.Forms.Control.ControlCollection>です。  
+  
+ [!code-cpp[ControlCollection#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ControlCollection/CPP/controlcollection.cpp#1)]
+ [!code-csharp[ControlCollection#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ControlCollection/CS/controlcollection.cs#1)]
+ [!code-vb[ControlCollection#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ControlCollection/VB/controlcollection.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.Control.ControlCollection.Clear" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.Control.ControlCollection.Clear" />メソッドをコレクションからすべてのコントロールが削除されたことを確認してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Forms.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Windows.Forms.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.Contains(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">コレクション内で検索する <see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary>指定したコントロール コレクションのメンバーであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.Control" />コレクションのメンバーである、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、確認するかどうか、<xref:System.Windows.Forms.Control>に対して操作を実行する前に、コレクションのメンバーである、<xref:System.Windows.Forms.Control>です。 確認するため、このメソッドを使用することができます、<xref:System.Windows.Forms.Control>に追加されたかが、コレクションのメンバーであります。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Windows.Forms.Control>から、 <xref:System.Windows.Forms.Control.ControlCollection> 、派生クラスの<xref:System.Windows.Forms.Panel>コレクションのメンバーである場合。 例では、作成済みである必要があります、 <xref:System.Windows.Forms.Panel>、 <xref:System.Windows.Forms.Button>、少なくとも 1 つと<xref:System.Windows.Forms.RadioButton>の control 権限、<xref:System.Windows.Forms.Form>です。 <xref:System.Windows.Forms.RadioButton>にコントロールを追加、<xref:System.Windows.Forms.Panel>コントロール、および<xref:System.Windows.Forms.Panel>に追加したコントロール、<xref:System.Windows.Forms.Form>です。 ラジオ ボタンの名前、ボタンがクリックされたときに`removeButton`から削除されて、<xref:System.Windows.Forms.Control.ControlCollection>です。  
+  
+ [!code-cpp[ControlCollection#4](~/samples/snippets/cpp/VS_Snippets_Winforms/ControlCollection/CPP/controlcollection.cpp#4)]
+ [!code-csharp[ControlCollection#4](~/samples/snippets/csharp/VS_Snippets_Winforms/ControlCollection/CS/controlcollection.cs#4)]
+ [!code-vb[ControlCollection#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ControlCollection/VB/controlcollection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.ContainsKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">
+          <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 内で検索されるキー。</param>
+        <summary>指定するかどうか、<see cref="T:System.Windows.Forms.Control.ControlCollection" />指定のキーを持つ項目が含まれています。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 、指定した項目を含むキー、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.Name%2A>のプロパティ、<xref:System.Windows.Forms.Control>のキーに対応する、<xref:System.Windows.Forms.Control>で、<xref:System.Windows.Forms.Control.ControlCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Find">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control[] Find (string key, bool searchAllChildren);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.Control[] Find(string key, bool searchAllChildren) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.Find(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="searchAllChildren" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="key">
+          <see cref="T:System.Windows.Forms.Control.ControlCollection" /> 内で検索されるキー。</param>
+        <param name="searchAllChildren">
+          <see langword="true" />すべての子コントロールを検索するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>コントロールを検索、<see cref="P:System.Windows.Forms.Control.Name" />プロパティと一致するすべてのコントロールの配列をビルドします。</summary>
+        <returns>型の配列<see cref="T:System.Windows.Forms.Control" />一致するを含むを制御します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="key" />パラメーターは<see langword="null" />または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildIndex">
+      <MemberSignature Language="C#" Value="public int GetChildIndex (System.Windows.Forms.Control child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetChildIndex(class System.Windows.Forms.Control child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.GetChildIndex(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="child"><see cref="T:System.Windows.Forms.Control" />コントロール コレクション内で検索します。</param>
+        <summary>コントロールのコレクション内の指定した子コントロールのインデックスを取得します。</summary>
+        <returns>コントロールのコレクション内の指定した子コントロールの位置を表す 0 から始まるインデックス値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Z オーダーの先頭に 0 のインデックス値を持つコントロールが、数値が大きいほど、下部に近い場所です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="child" /> <see cref="T:System.Windows.Forms.Control" />に含まれていない、<see cref="T:System.Windows.Forms.Control.ControlCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildIndex">
+      <MemberSignature Language="C#" Value="public virtual int GetChildIndex (System.Windows.Forms.Control child, bool throwException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetChildIndex(class System.Windows.Forms.Control child, bool throwException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.GetChildIndex(System.Windows.Forms.Control,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.Forms.Control" />
+        <Parameter Name="throwException" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="child"><see cref="T:System.Windows.Forms.Control" />コントロール コレクション内で検索します。</param>
+        <param name="throwException">
+          <see langword="true" />場合に例外をスローする、<see cref="T:System.Windows.Forms.Control" />で指定されている、<c>子</c>パラメーターは内のコントロールではありません、 <see cref="T:System.Windows.Forms.Control.ControlCollection" />、それ以外の<see langword="false" />します。</param>
+        <summary>指定した子コントロール、コントロール コレクション内のインデックスを取得し、オプションで指定されたコントロールがコントロールのコレクション内にない場合に例外を発生させます。</summary>
+        <returns>コントロール コレクション内の指定した子コントロールの位置を表す 0 から始まるインデックス値それ以外の場合は-1 の場合、指定した<see cref="T:System.Windows.Forms.Control" />に載っていない、<see cref="T:System.Windows.Forms.Control.ControlCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Z オーダーの先頭に 0 のインデックス値を持つコントロールが、数値が大きいほど、下部に近い場所です。 戻り値-1 の場合にのみが返されます、`throwException`パラメーターは`false`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="child" /> <see cref="T:System.Windows.Forms.Control" />に含まれていない、 <see cref="T:System.Windows.Forms.Control.ControlCollection" />、および<paramref name="throwException" />パラメーター値が<see langword="true" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復処理に使用される列挙子オブジェクトへの参照を取得、<see cref="T:System.Windows.Forms.Control.ControlCollection" />です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Forms.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Windows.Forms.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.IndexOf(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">コレクション内で検索する <see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary>コントロールのコレクションで指定されたコントロールのインデックスを取得します。</summary>
+        <returns>指定された位置を表す 0 から始まるインデックス値<see cref="T:System.Windows.Forms.Control" />で、<see cref="T:System.Windows.Forms.Control.ControlCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールは、コレクション内で見つからない場合、<xref:System.Windows.Forms.Control.ControlCollection.IndexOf%2A>メソッドの戻り値は-1。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOfKey">
+      <MemberSignature Language="C#" Value="public virtual int IndexOfKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOfKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.IndexOfKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索するコントロールの名前。</param>
+        <summary>コレクション内の指定した項目の最初に見つかった位置のインデックスを取得します。</summary>
+        <returns>コレクション内の指定した名前を持つコントロールの最初に見つかった位置の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Forms.Control.ControlCollection.IndexOfKey%2A>と呼ばれる順次、最後のインデックスを最初に、キーの一致のチェックは、検索は、コレクションの先頭から開始一致が存在しない場合に返されます。  
+  
+ キーの比較は区別されません。 場合、`key`パラメーターは`null`または空の文字列、または指定した項目キーが見つからなかった場合<xref:System.Windows.Forms.Control.ControlCollection.IndexOfKey%2A>-1 を返します。  
+  
+ <xref:System.Windows.Forms.Control.Name%2A>のプロパティ、<xref:System.Windows.Forms.Control>のキーに対応する、<xref:System.Windows.Forms.Control>で、<xref:System.Windows.Forms.Control.ControlCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.Control this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コントロール コレクションから取得するコントロールのインデックス。</param>
+        <summary>示します、<see cref="T:System.Windows.Forms.Control" />インデックス内の指定したコレクション内の場所を作成します。</summary>
+        <value><see cref="T:System.Windows.Forms.Control" />コントロール コレクション内の指定したインデックス位置にあります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、<xref:System.Windows.Forms.Control>から、 <xref:System.Windows.Forms.Control.ControlCollection>、特定のインデックス値を持つコレクション オブジェクトを参照します。 インデックス値、 <xref:System.Windows.Forms.Control.ControlCollection> 0 から始まるインデックスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />値が 0 より小さいか、コレクション内のコントロールの数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.Control this[string key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">コントロール コレクションから取得するコントロールの名前。</param>
+        <summary>示します、<see cref="T:System.Windows.Forms.Control" />コレクション内の指定されたキーにします。</summary>
+        <value><see cref="T:System.Windows.Forms.Control" />内の指定したキーを持つ、<see cref="T:System.Windows.Forms.Control.ControlCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.Name%2A>のプロパティ、<xref:System.Windows.Forms.Control>のキーに対応する、<xref:System.Windows.Forms.Control>で、<xref:System.Windows.Forms.Control.ControlCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Control.ControlCollection.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これを所有しているコントロールを取得<see cref="T:System.Windows.Forms.Control.ControlCollection" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.Control" />を所有しているこの<see cref="T:System.Windows.Forms.Control.ControlCollection" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove (System.Windows.Forms.Control value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(class System.Windows.Forms.Control value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.Remove(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Windows.Forms.Control" /> から削除する <see cref="T:System.Windows.Forms.Control.ControlCollection" />。</param>
+        <summary>コントロール コレクションから指定されたコントロールを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.Control>が削除されるコレクション内の 1 つの位置をコントロール コレクションから後続のすべてのコントロールの移動します。  
+  
+ 削除することも、<xref:System.Windows.Forms.Control>を使用して、<xref:System.Windows.Forms.Control.ControlCollection.RemoveAt%2A>メソッド、または削除のすべてのコントロールを使用して、<xref:System.Windows.Forms.Control.ControlCollection.Clear%2A>メソッドです。  
+  
+ 新規に追加する<xref:System.Windows.Forms.Control>をコレクションにオブジェクトを使用して、<xref:System.Windows.Forms.Control.ControlCollection.Add%2A>または<xref:System.Windows.Forms.Control.ControlCollection.AddRange%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Windows.Forms.Control>から、 <xref:System.Windows.Forms.Control.ControlCollection> 、派生クラスの<xref:System.Windows.Forms.Panel>コレクションのメンバーである場合。 例では、作成済みである必要があります、 <xref:System.Windows.Forms.Panel>、 <xref:System.Windows.Forms.Button>、および 1 つまたは複数<xref:System.Windows.Forms.RadioButton>コントロールに対して、<xref:System.Windows.Forms.Form>です。 <xref:System.Windows.Forms.RadioButton>にコントロールを追加、<xref:System.Windows.Forms.Panel>コントロール、および<xref:System.Windows.Forms.Panel>にコントロールを追加、<xref:System.Windows.Forms.Form>です。 ラジオ ボタンの名前、ボタンがクリックされたときに`radioButton2`から削除されて、<xref:System.Windows.Forms.Control.ControlCollection>です。  
+  
+ [!code-cpp[ControlCollection#4](~/samples/snippets/cpp/VS_Snippets_Winforms/ControlCollection/CPP/controlcollection.cpp#4)]
+ [!code-csharp[ControlCollection#4](~/samples/snippets/csharp/VS_Snippets_Winforms/ControlCollection/CS/controlcollection.cs#4)]
+ [!code-vb[ControlCollection#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ControlCollection/VB/controlcollection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.Control.ControlCollection.Remove(System.Windows.Forms.Control)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.Control.ControlCollection.Remove(System.Windows.Forms.Control)" />メソッドをコレクションから、コントロールが削除されたことを確認してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス値、<see cref="T:System.Windows.Forms.Control" />を削除します。</param>
+        <summary>指定したインデックス位置にあるコントロールのコレクションから、コントロールを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.Control>が削除されるコレクション内の 1 つの位置をコントロール コレクションから後続のすべてのコントロールの移動します。  
+  
+ 削除することも、<xref:System.Windows.Forms.Control>を使用して追加した、<xref:System.Windows.Forms.Control.ControlCollection.Remove%2A>または<xref:System.Windows.Forms.Control.ControlCollection.Clear%2A>メソッドです。  
+  
+ 新規に追加する<xref:System.Windows.Forms.Control>をコレクションにオブジェクトを使用して、<xref:System.Windows.Forms.Control.ControlCollection.Add%2A>または<xref:System.Windows.Forms.Control.ControlCollection.AddRange%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、最初を削除<xref:System.Windows.Forms.Control>で、 <xref:System.Windows.Forms.Control.ControlCollection> 、派生クラスの<xref:System.Windows.Forms.Panel>コレクションの数が 0 より大きい場合。 例では、作成済みである必要があります、 <xref:System.Windows.Forms.Panel>、 <xref:System.Windows.Forms.Button>、および他のコントロールには、少なくとも 1 つ、<xref:System.Windows.Forms.Form>です。 他のコントロールを追加、<xref:System.Windows.Forms.Panel>コントロール、および<xref:System.Windows.Forms.Panel>に追加したコントロール、<xref:System.Windows.Forms.Form>です。 パネルに含まれる最初のコントロールが削除された、ボタンがクリックされたときに、<xref:System.Windows.Forms.Control.ControlCollection>です。  
+  
+ [!code-cpp[ControlCollection#5](~/samples/snippets/cpp/VS_Snippets_Winforms/ControlCollection/CPP/controlcollection.cpp#5)]
+ [!code-csharp[ControlCollection#5](~/samples/snippets/csharp/VS_Snippets_Winforms/ControlCollection/CS/controlcollection.cs#5)]
+ [!code-vb[ControlCollection#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ControlCollection/VB/controlcollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveByKey">
+      <MemberSignature Language="C#" Value="public virtual void RemoveByKey (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveByKey(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.RemoveByKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除する子コントロールの名前。</param>
+        <summary>指定したキーを子コントロールを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.Name%2A>のプロパティ、<xref:System.Windows.Forms.Control>のキーに対応する、<xref:System.Windows.Forms.Control>で、<xref:System.Windows.Forms.Control.ControlCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetChildIndex">
+      <MemberSignature Language="C#" Value="public virtual void SetChildIndex (System.Windows.Forms.Control child, int newIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetChildIndex(class System.Windows.Forms.Control child, int32 newIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.SetChildIndex(System.Windows.Forms.Control,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Windows.Forms.Control" />
+        <Parameter Name="newIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="child"><c>子</c><see cref="T:System.Windows.Forms.Control" />を検索します。</param>
+        <param name="newIndex">コントロールの新しいインデックス値。</param>
+        <summary>指定したインデックス値をコレクションの指定した子コントロールのインデックスを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Forms.Control.ControlCollection.SetChildIndex%2A>が呼び出されたが、<xref:System.Windows.Forms.Control>によって参照される、`child`パラメーターが指定した位置に移動`newIndex`と、その他の<xref:System.Windows.Forms.Control>では、参照、<xref:System.Windows.Forms.Control.ControlCollection>移動に合わせて並べ替えられます。 Z オーダーの先頭に 0 のインデックス値を持つコントロールが、数値が大きいほど、下部に近い場所です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="child" />コントロールに含まれていない、<see cref="T:System.Windows.Forms.Control.ControlCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object control);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="control">To be added.</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.Add(System.Object)" />」をご覧ください。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Control.ControlCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object control);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="control">To be added.</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.Remove(System.Object)" />」を参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Control.ControlCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Control.ControlCollection.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ICloneable.Clone" />」を参照してください。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.Control.ControlCollection> のインスタンスが <xref:System.ICloneable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,200 @@
+<Type Name="AuthorizationContext" FullName="System.IdentityModel.Policy.AuthorizationContext">
+  <TypeSignature Language="C#" Value="public abstract class AuthorizationContext : System.IdentityModel.Policy.IAuthorizationComponent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AuthorizationContext extends System.Object implements class System.IdentityModel.Policy.IAuthorizationComponent" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Policy.AuthorizationContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IdentityModel.Policy.IAuthorizationComponent</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>送信されたメッセージ内のトークンから、および <see cref="M:System.ServiceModel.ServiceAuthorizationManager.GetAuthorizationPolicies(System.ServiceModel.OperationContext)" /> メソッドを呼び出すことによって取得できる、すべての承認ポリシーを評価した結果。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 承認マネージャー内のすべての承認ポリシーを評価した結果は、<xref:System.IdentityModel.Claims.ClaimSet> オブジェクトのセットになります。 これらのオブジェクトが、承認コンテキストを構成します。  
+  
+ 承認コンテキストには、クレーム セット オブジェクトのセット、承認コンテキストの有効期間を指定する有効期限、および一意の識別子が含まれます。  
+  
+ 現在の操作に対する <xref:System.IdentityModel.Policy.AuthorizationContext> には、<xref:System.ServiceModel.ServiceSecurityContext.AuthorizationContext%2A> プロパティを通してアクセスできます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[C_IAuthorizationPolicy#4](~/samples/snippets/csharp/VS_Snippets_CFX/c_iauthorizationpolicy/cs/service.cs#4)]
+ [!code-vb[C_IAuthorizationPolicy#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_iauthorizationpolicy/vb/myauthorizationpolicy.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AuthorizationContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Policy.AuthorizationContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Policy.AuthorizationContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、何も行いません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimSets">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Claims.ClaimSet&gt; ClaimSets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Claims.ClaimSet&gt; ClaimSets" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Policy.AuthorizationContext.ClaimSets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Claims.ClaimSet&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>承認ポリシーに関連付けられたクレーム セットを取得します。</summary>
+        <value>クレーム セットを格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Claims.ClaimSet" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 承認ポリシーによって追加されたクレーム セットを取得するには、<xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> プロパティを使用します。 <xref:System.ServiceModel.ServiceAuthorizationManager> から派生するクラスは、クレームを使用して、承認に関する決定を行うことができます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[C_IAuthorizationPolicy#5](~/samples/snippets/csharp/VS_Snippets_CFX/c_iauthorizationpolicy/cs/service.cs#5)]
+ [!code-vb[C_IAuthorizationPolicy#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_iauthorizationpolicy/vb/myauthorizationpolicy.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDefaultAuthorizationContext">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Policy.AuthorizationContext CreateDefaultAuthorizationContext (System.Collections.Generic.IList&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; policies);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Policy.AuthorizationContext CreateDefaultAuthorizationContext(class System.Collections.Generic.IList`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; policies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Policy.AuthorizationContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="authorizationPolicies" Type="System.Collections.Generic.IList&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="policies">To be added.</param>
+        <summary>指定されたすべての承認ポリシーを評価し、<see cref="T:System.IdentityModel.Policy.AuthorizationContext" /> を作成します。</summary>
+        <returns>指定したすべての承認ポリシーの評価結果が格納された <see cref="T:System.IdentityModel.Policy.AuthorizationContext" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext%2A> メソッドはインフラストラクチャによってのみ使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpirationTime">
+      <MemberSignature Language="C#" Value="public abstract DateTime ExpirationTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ExpirationTime" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Policy.AuthorizationContext.ExpirationTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Policy.AuthorizationContext" /> オブジェクトが有効ではなくなる日時を取得します。</summary>
+        <value>この <see cref="T:System.DateTime" /> オブジェクトが有効ではなくなる日時を示す <see cref="T:System.IdentityModel.Policy.AuthorizationContext" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Policy.AuthorizationContext.ExpirationTime%2A> プロパティでは、世界協定時刻 (UTC) が使用されています。  
+  
+> [!NOTE]
+>  [!INCLUDE[indigo2](~/includes/indigo2-md.md)] のサービス モデルは、<xref:System.IdentityModel.Policy.AuthorizationContext.ExpirationTime%2A> プロパティの値をチェックしません。 このプロパティは、承認コンテキストの基になっているセキュリティ トークンの [!INCLUDE[indigo2](~/includes/indigo2-md.md)] プロパティを使用して、<xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> が設定します。 ただし、<xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A> プロパティは [!INCLUDE[indigo2](~/includes/indigo2-md.md)] によってチェックされます。 承認コンテキストの有効期限は、期限が切れるときに承認ポリシーが何らかのアクションを実行する必要があるようなシナリオのために用意されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public abstract string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Policy.AuthorizationContext.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Policy.AuthorizationContext" /> オブジェクトの一意の識別子を取得します。</summary>
+        <value><see cref="T:System.IdentityModel.Policy.AuthorizationContext" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.IdentityModel.Policy.AuthorizationContext.Id%2A> プロパティは GUID です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IDictionary&lt;string,object&gt; Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Properties" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Policy.AuthorizationContext.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Policy.AuthorizationContext" /> オブジェクトと関連付けられているクレーム以外のプロパティのコレクションを取得します。</summary>
+        <value>非クレームプロパティのコレクションを指定する <see cref="T:System.Collections.Generic.Dictionary`2" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsindigo](~/includes/vsindigo-md.md)]2 つのプロパティを予約:`Identities`と`Principal`です。 `Identities` は、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> プロパティを使用して、<xref:System.Collections.Generic.IList%601> に関係する 1 つ以上の ID の <xref:System.IdentityModel.Policy.AuthorizationContext> を指定します。 `Principal` は、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> プロパティを使用して、<xref:System.Security.Principal.IPrincipal> と関連付けられている <xref:System.IdentityModel.Policy.AuthorizationContext> を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

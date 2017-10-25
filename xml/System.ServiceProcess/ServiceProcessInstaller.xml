@@ -1,0 +1,310 @@
+<Type Name="ServiceProcessInstaller" FullName="System.ServiceProcess.ServiceProcessInstaller">
+  <TypeSignature Language="C#" Value="public class ServiceProcessInstaller : System.Configuration.Install.ComponentInstaller" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceProcessInstaller extends System.Configuration.Install.ComponentInstaller" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceProcess.ServiceProcessInstaller" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceProcess</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Install.ComponentInstaller</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>拡張するクラスを含む実行可能ファイルをインストール<see cref="T:System.ServiceProcess.ServiceBase" />です。 このクラスは、サービス アプリケーションをインストールするときに、InstallUtil.exe などのインストール ユーティリティによって呼び出されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceProcessInstaller>実行可能ファイルのすべてのサービスに共通するように機能します。 インストールするサービスに関連するレジストリ値を書き込んだりインストール ユーティリティによって使用されます。  
+  
+ サービスをインストールするには、継承されたプロジェクト インストーラー クラスを作成<xref:System.Configuration.Install.Installer>、設定と、<xref:System.ComponentModel.RunInstallerAttribute>クラスに対し、`true`です。 プロジェクト内で 1 つのインスタンスを作成<xref:System.ServiceProcess.ServiceProcessInstaller>サービス アプリケーションと、1 つごとにインスタンス<xref:System.ServiceProcess.ServiceInstaller>アプリケーション内の各サービスのインスタンス。 最後に、追加、<xref:System.ServiceProcess.ServiceProcessInstaller>インスタンスおよび<xref:System.ServiceProcess.ServiceInstaller>プロジェクト インストーラー クラスのインスタンス。  
+  
+ InstallUtil.exe を実行すると、ユーティリティは、サービス アセンブリにクラス、 <xref:System.ComponentModel.RunInstallerAttribute> 'éý'`true`です。 追加することによって、サービス アセンブリにクラスを追加、<xref:System.Configuration.Install.Installer.Installers%2A>プロジェクト インストーラーに関連付けられているコレクション。 場合<xref:System.ComponentModel.RunInstallerAttribute>は`false`、インストール ユーティリティ プロジェクト インストーラーは無視されます。  
+  
+ インスタンスの<xref:System.ServiceProcess.ServiceProcessInstaller>、ログオン ユーザーとは別のアカウントでサービス アプリケーションを実行することを指定するプロパティ変更できますにはが含まれます。 特定を指定する<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>と<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>ペアをサービスを実行する必要があります、または使用することができます<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>をコンピューターのシステム アカウント、ローカルまたはネットワーク サービス アカウント、またはユーザー アカウントでサービスを実行することを指定します。  
+  
+> [!NOTE]
+>  コンピューターのシステム アカウントは、管理者アカウントと同じではありません。  
+  
+ 通常、呼び出すことはありません、メソッドで<xref:System.ServiceProcess.ServiceInstaller>; コード内で一般的にして呼び出されただけインストール ユーティリティです。 インストール ユーティリティを自動的に呼び出して、<xref:System.ServiceProcess.ServiceProcessInstaller.Install%2A?displayProperty=nameWithType>と<xref:System.ServiceProcess.ServiceInstaller.Install%2A?displayProperty=nameWithType>インストール プロセス中にメソッドです。 バックアップ障害、out、必要に応じて呼び出すことによって<xref:System.ServiceProcess.ServiceProcessInstaller.Rollback%2A>(または<xref:System.ServiceProcess.ServiceInstaller.Rollback%2A?displayProperty=nameWithType>) 以前にインストールされたすべてのコンポーネントにします。  
+  
+ アプリケーションのインストールが自動的にコンポーネントについては、既にインストールされているプロジェクト インストーラーの使用を維持<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType>です。 この状態が継続的に情報として、<xref:System.ServiceProcess.ServiceProcessInstaller>インスタンスとその各<xref:System.ServiceProcess.ServiceInstaller>ユーティリティによってインスタンスがインストールされています。 通常、コードのこの状態情報を明示的に変更する必要はありません。  
+  
+ インスタンス化する、<xref:System.ServiceProcess.ServiceProcessInstaller>基底クラス コンス トラクターと、 <xref:System.Configuration.Install.ComponentInstaller.%23ctor%2A>、呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例から継承される MyProjectInstaller と呼ばれるプロジェクト インストーラー<xref:System.Configuration.Install.Installer>です。 2 つのサービスでは、"Hello World Service 1"を含むサービス実行可能ファイルがあると見なされますと"2" Hello World サービス。 (これは、インストール ユーティリティによって呼び出されます) MyProjectInstaller のコンス トラクター内で<xref:System.ServiceProcess.ServiceInstaller>各サービスに対してオブジェクトを作成し、<xref:System.ServiceProcess.ServiceProcessInstaller>実行可能ファイルが作成されます。 有効なインストーラーとして MyProjectInstaller を認識できるようにインストール ユーティリティ、<xref:System.ComponentModel.RunInstallerAttribute>属性に設定されている`true`です。  
+  
+ 省略可能なプロパティが設定、プロセスのインストーラーをサービスのインストーラーにインストーラーが追加されるまで、<xref:System.Configuration.Install.Installer.Installers%2A>コレクション。 オブジェクトを追加インストール ユーティリティ、MyProjectInstaller にアクセスするときに、<xref:System.Configuration.Install.Installer.Installers%2A>を呼び出すことによってコレクション<xref:System.Configuration.Install.InstallerCollection.Add%2A?displayProperty=nameWithType>順番でインストールされています。 処理中は、インストーラーは、ため、各オブジェクトのバックアップさらにでインストール エラーが発生した場合、インストールされているどのオブジェクトを示す状態情報を保持します。  
+  
+ 通常は、するはいないプロジェクト インストーラー クラス明示的にインスタンス化します。 これを作成し、追加すると、<xref:System.ComponentModel.RunInstallerAttribute>がインストール ユーティリティが実際を呼び出すし、そのためインスタンス化のクラスです。  
+  
+ [!code-cpp[Classic ServiceInstaller Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ServiceInstaller Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ServiceInstaller Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ServiceInstaller Example/CS/source.cs#1)]
+ [!code-vb[Classic ServiceInstaller Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ServiceInstaller Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceProcessInstaller ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceProcessInstaller.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceProcess.ServiceProcessInstaller" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Account">
+      <MemberSignature Language="C#" Value="public System.ServiceProcess.ServiceAccount Account { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceProcess.ServiceAccount Account" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceProcessInstaller.Account" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ServiceProcess.ServiceProcessDescription("ServiceProcessInstallerAccount")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceProcess.ServiceAccount</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのサービス アプリケーションを実行するアカウントの種類を設定します。</summary>
+        <value>A<see cref="T:System.ServiceProcess.ServiceAccount" />システムがこのサービスを実行するアカウントの種類を定義します。 既定値は、<see langword="User" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>プロパティは`User`、<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>と<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>プロパティを使用して、サービス アプリケーションを実行するアカウントを定義します。  
+  
+ <xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>と<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>ペアにより、システム アカウント以外のアカウントで実行するサービスです。 ユーザーがログオンしていないときの再起動時に自動的に開始するサービスを許可するこのことができますなどです。 いずれかのままにする場合、<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>または<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>空で、設定<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>に`User`、有効なユーザー名およびインストール時にパスワードを求められます。  
+  
+ 指定することもを実行、ローカル システム アカウントまたはローカル サービスまたはサービスのネットワークします。 参照してください、<xref:System.ServiceProcess.ServiceAccount>アカウントの種類の詳細を列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFromComponent">
+      <MemberSignature Language="C#" Value="public override void CopyFromComponent (System.ComponentModel.IComponent comp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyFromComponent(class System.ComponentModel.IComponent comp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceProcessInstaller.CopyFromComponent(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comp" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="comp"><see cref="T:System.ComponentModel.IComponent" />サービス プロセスを表すです。</param>
+        <summary>基本クラスを実装する<see cref="M:System.Configuration.Install.ComponentInstaller.CopyFromComponent(System.ComponentModel.IComponent)" />のないメソッド<see cref="T:System.ServiceProcess.ServiceProcessInstaller" />クラス固有の動作です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コード内で呼び出すことはできません。 基底クラス メソッド<xref:System.Configuration.Install.ComponentInstaller>は`abstract`ので、ここで、派生クラスで実装されます。 ただし、あるありません<xref:System.ServiceProcess.ServiceProcessInstaller>クラスに固有のメソッドの実装で処理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpText">
+      <MemberSignature Language="C#" Value="public override string HelpText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpText" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceProcessInstaller.HelpText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスのインストール オプションに表示されるテキストのヘルプを取得します。</summary>
+        <value>ヘルプ テキスト、特定のアカウントでサービスを実行するために、ユーザー名とパスワードを設定するための手順の説明を提供します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このヘルプ テキストは、サービスが手動で開始すると、使用できます。 示します、ユーザーにユーザー名とパスワード情報を入力する方法。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Install">
+      <MemberSignature Language="C#" Value="public override void Install (System.Collections.IDictionary stateSaver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Install(class System.Collections.IDictionary stateSaver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceProcessInstaller.Install(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stateSaver" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="stateSaver"><see cref="T:System.Collections.IDictionary" />インストールに関連付けられているコンテキスト情報を格納します。</param>
+        <summary>サービス アプリケーションの情報をレジストリに書き込みます。 このメソッドは、自動的に適切なメソッドを呼び出して、インストール ツールで使用することはできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、呼び出すことはありません、メソッドで<xref:System.ServiceProcess.ServiceProcessInstaller>; コード内で一般的にして呼び出されただけインストール ユーティリティです。 インストール ユーティリティを自動的に呼び出して、<xref:System.ServiceProcess.ServiceProcessInstaller.Install%2A?displayProperty=nameWithType>インストール プロセス中にメソッドです。 バックアップ障害、out、必要に応じて呼び出すことによって<xref:System.ServiceProcess.ServiceProcessInstaller.Rollback%2A>以前インストールされているすべてのコンポーネントにします。 このメソッドは、基底クラスへのインストールを渡します<xref:System.Configuration.Install.Installer.Install%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 通常がないメソッドを呼び出す、 <xref:System.ServiceProcess.ServiceInstaller> ; コード内で一般的にして呼び出されただけインストール ユーティリティです。 インストール ユーティリティを自動的に呼び出して、<xref:System.ServiceProcess.ServiceProcessInstaller.Install%2A?displayProperty=nameWithType>と<xref:System.ServiceProcess.ServiceInstaller.Install%2A?displayProperty=nameWithType>インストール プロセス中にメソッドです。 バックアップ障害、out、必要に応じて呼び出すことによって<xref:System.ServiceProcess.ServiceProcessInstaller.Rollback%2A>(または<xref:System.ServiceProcess.ServiceInstaller.Rollback%2A?displayProperty=nameWithType>) 以前にインストールされたすべてのコンポーネントについて  
+  
+ アプリケーションのインストールが自動的にコンポーネントについては、既にインストールされているプロジェクト インストーラーの使用を維持<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType>です。 この状態情報が渡された<xref:System.ServiceProcess.ServiceProcessInstaller.Install%2A>として、`stateSaver`パラメーターでは継続的に更新、<xref:System.ServiceProcess.ServiceProcessInstaller>インスタンスとその各<xref:System.ServiceProcess.ServiceInstaller>ユーティリティによってインスタンスがインストールされています。 通常、コードのこの状態情報を明示的に変更する必要はありません。  
+  
+ <xref:System.ServiceProcess.ServiceProcessInstaller.Install%2A>基本クラスのメソッドによってスローされた例外を呼び出し元のメソッドに渡してまたは<xref:System.Configuration.Install.Installer.BeforeInstall>  /  <xref:System.Configuration.Install.Installer.AfterInstall>イベント ハンドラー。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="stateSaver" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Password">
+      <MemberSignature Language="C#" Value="public string Password { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Password" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceProcessInstaller.Password" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービス アプリケーションを実行するユーザー アカウントに関連付けられているパスワードを設定します。</summary>
+        <value>サービスを実行するアカウントに関連付けられているパスワードです。 既定値は、空の文字列 ("") です。 プロパティがパブリックでないはシリアル化することはありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>と<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>ペアにより、システム アカウント以外のアカウントで実行するサービスです。 ユーザーがログオンしていないときの再起動時に自動的に開始するサービスを許可するこのことができますなどです。  
+  
+ <xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>および<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>決してシリアル化またはインストールの状態が保存される点で、安全な方法で処理されます (プロジェクト インストーラーの<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType>) またはパブリック アクセス権を持つ他の場所。  
+  
+ 設定、<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>と<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>インストール時に、サービスに自動的に関連するアカウントを使用します。 いずれかのままにする場合、<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>または<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>空で、設定<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>に`User`、有効なユーザー名およびインストール時にパスワードを求められます。  
+  
+ 別のアカウントでサービスを実行するための別のオプションは、コンピューターのシステム アカウントを使用するがします。 管理者アカウントとは異なりますが、このアカウントには、パスワードは必要ありません。 システム アカウントの特権は、現在ログインしているユーザーを超える可能性があります。 ユーザー アカウントがアクセス許可が不足しているユーザーから生じる問題を回避するのではなく、システム アカウントで実行されているサービスが必要です。  
+  
+ 場合<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>以外の任意の値は、 `User`、指定されたアカウント (ローカルまたはネットワーク サービス、またはローカル システム) を使用すると、場合でも、<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>と<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>プロパティが設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rollback">
+      <MemberSignature Language="C#" Value="public override void Rollback (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Rollback(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceProcess.ServiceProcessInstaller.Rollback(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Collections.IDictionary" />インストールに関連付けられているコンテキスト情報を格納します。</param>
+        <summary>インストール プロシージャによって、レジストリに書き込まれるサービス アプリケーションの情報をロールバックします。 このメソッドは、インストールのツールは、適切なメソッドを自動的に処理で使用することはできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、呼び出すことはありません、メソッドで<xref:System.ServiceProcess.ServiceProcessInstaller>; コード内で一般的にして呼び出されただけインストール ユーティリティです。 インストール ユーティリティを自動的に呼び出して、<xref:System.ServiceProcess.ServiceProcessInstaller.Install%2A?displayProperty=nameWithType>インストール プロセス中にメソッドです。 バックアップ障害、out、必要に応じて呼び出すことによって<xref:System.ServiceProcess.ServiceProcessInstaller.Rollback%2A>例外を生成するオブジェクト。  
+  
+ アプリケーションのインストールが自動的にコンポーネントについては、既にインストールされているプロジェクト インストーラーの使用を維持<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType>です。 この状態情報が渡された<xref:System.ServiceProcess.ServiceProcessInstaller.Rollback%2A>として、`savedState`パラメーターでは継続的に更新、<xref:System.ServiceProcess.ServiceProcessInstaller>インスタンスとその各<xref:System.ServiceProcess.ServiceInstaller>ユーティリティによってインスタンスがインストールされています。 通常、コードのこの状態情報を明示的に変更する必要はありません。  
+  
+ <xref:System.ServiceProcess.ServiceProcessInstaller.Rollback%2A>基本クラスのメソッドによってスローされた例外を呼び出し元のメソッドに渡してまたは<xref:System.Configuration.Install.Installer.BeforeInstall>  /  <xref:System.Configuration.Install.Installer.AfterInstall>イベント ハンドラー。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="savedState" /> が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="savedState" />破損しているか、存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Username">
+      <MemberSignature Language="C#" Value="public string Username { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Username" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceProcess.ServiceProcessInstaller.Username" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceProcess</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.StringValueConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービス アプリケーションを実行するユーザー アカウントを設定します。</summary>
+        <value>サービスを実行するアカウント。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>と<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>ペアにより、システム アカウント以外のアカウントで実行するサービスです。 ユーザーがログオンしていないときの再起動時に自動的に開始するサービスを許可するこのことができますなどです。  
+  
+ <xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>および<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>決してシリアル化またはインストールの状態が保存される点で、安全な方法で処理されます (プロジェクト インストーラーの<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType>) またはパブリック アクセス権を持つ他の場所。  
+  
+ 設定、<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>と<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>インストール時に、サービスに自動的に関連するアカウントを使用します。 いずれかのままにする場合、<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>または<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>空で、設定<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>に`User`、有効なユーザー名およびインストール時にパスワードを求められます。  
+  
+ 別のアカウントでサービスを実行するための別のオプションは、コンピューターのシステム アカウントを使用するがします。 管理者アカウントとは異なりますが、このアカウントには、パスワードは必要ありません。 システム アカウントの特権は、現在ログインしているユーザーを超える可能性があります。 ユーザー アカウントがアクセス許可が不足しているユーザーから生じる問題を回避するのではなく、システム アカウントで実行されているサービスが必要です。  
+  
+ 場合<xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A>以外の任意の値は、 `User`、指定されたアカウント (ローカルまたはネットワーク サービス、またはローカル システム) を使用する場合でも、<xref:System.ServiceProcess.ServiceProcessInstaller.Username%2A>と<xref:System.ServiceProcess.ServiceProcessInstaller.Password%2A>プロパティが設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,127 @@
+<Type Name="FormsAuthenticationEventArgs" FullName="System.Web.Security.FormsAuthenticationEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class FormsAuthenticationEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FormsAuthenticationEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.FormsAuthenticationEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 **FormsAuthentication_OnAuthenticate**イベント。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthenticationEventArgs>イベント値を提供するクラスが使用されます、 **FormsAuthentication_OnAuthenticate**イベントを有効にすると、現在の要求に対するカスタム id を指定するとします。  
+  
+ <xref:System.Web.Security.FormsAuthenticationModule>構築、<xref:System.Web.Security.FormsAuthenticationEventArgs>オブジェクト現在を使用して<xref:System.Web.HttpContext>に渡します、 **FormsAuthentication_OnAuthenticate**イベント。  
+  
+ 使用することができます、<xref:System.Web.Security.FormsAuthenticationEventArgs.User%2A>プロパティを設定、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>をカスタム<xref:System.Security.Principal.IPrincipal>オブジェクト。  
+  
+ 値を指定しない場合、<xref:System.Web.Security.FormsAuthenticationEventArgs.User%2A>中にプロパティ、 **FormsAuthentication_OnAuthenticate**イベントは、クッキーまたは URL でフォーム認証チケットが提供する id を使用します。  
+  
+ **FormsAuthentication_OnAuthenticate**イベントは、いつ発生する認証<xref:System.Web.Configuration.AuthenticationSection.Mode%2A>に設定されている<xref:System.Web.Configuration.AuthenticationMode.Forms>と<xref:System.Web.Security.FormsAuthenticationModule>アプリケーションのアクティブな HTTP モジュールは、します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 **FormsAuthentication_OnAuthenticate**設定イベントが、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>を<xref:System.Security.Principal.GenericPrincipal>をカスタム オブジェクト<xref:System.Security.Principal.IPrincipal.Identity%2A>です。  
+  
+ [!code-csharp[System.Web.Security.FormsAuthenticationModule#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthenticationModule/CS/global.asax#1)]
+ [!code-vb[System.Web.Security.FormsAuthenticationModule#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthenticationModule/VB/global.asax#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormsAuthenticationEventArgs (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthenticationEventArgs.#ctor(System.Web.HttpContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">イベントのコンテキスト。</param>
+        <summary><see cref="T:System.Web.Security.FormsAuthenticationEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthenticationModule>構築、<xref:System.Web.Security.FormsAuthenticationEventArgs>オブジェクト、指定されたを使用して`context`の値として、<xref:System.Web.Security.FormsAuthenticationEventArgs.Context%2A>プロパティです。 これは、後、渡します、<xref:System.Web.Security.FormsAuthenticationEventArgs>オブジェクトを**FormsAuthentication_OnAuthenticate**イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Web.HttpContext Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthenticationEventArgs.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の HTTP 要求に対する <see cref="T:System.Web.HttpContext" /> オブジェクトを取得します。</summary>
+        <value>現在の HTTP 要求に対する <see cref="T:System.Web.HttpContext" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpContext>へのアクセスを提供<xref:System.Web.HttpContext.Request%2A>、 <xref:System.Web.HttpContext.Response%2A>、および<xref:System.Web.HttpContext.User%2A>現在の要求オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="User">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.IPrincipal User { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IPrincipal User" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthenticationEventArgs.User" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Security.Principal.IPrincipal" />現在の要求に関連するオブジェクト。</summary>
+        <value><see cref="T:System.Security.Principal.IPrincipal" />現在の要求に関連するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.Security.FormsAuthenticationEventArgs.User%2A>プロパティを設定、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>をカスタム<xref:System.Security.Principal.IPrincipal>オブジェクト。  
+  
+ 値を指定しない場合、<xref:System.Web.Security.FormsAuthenticationEventArgs.User%2A>中にプロパティ、 **FormsAuthentication_OnAuthenticate**イベントは、クッキーまたは URL でフォーム認証チケットが提供する id を使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、 **FormsAuthentication_OnAuthenticate**設定イベントが、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>を<xref:System.Security.Principal.GenericPrincipal>をカスタム オブジェクト<xref:System.Security.Principal.IPrincipal.Identity%2A>です。  
+  
+ [!code-csharp[System.Web.Security.FormsAuthenticationModule#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthenticationModule/CS/global.asax#1)]
+ [!code-vb[System.Web.Security.FormsAuthenticationModule#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthenticationModule/VB/global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

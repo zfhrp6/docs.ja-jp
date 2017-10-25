@@ -1,0 +1,96 @@
+<Type Name="OdbcRowUpdatedEventArgs" FullName="System.Data.Odbc.OdbcRowUpdatedEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class OdbcRowUpdatedEventArgs : System.Data.Common.RowUpdatedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OdbcRowUpdatedEventArgs extends System.Data.Common.RowUpdatedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Odbc.OdbcRowUpdatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Odbc</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.RowUpdatedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Data.Odbc.OdbcDataAdapter.RowUpdated" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcDataAdapter.RowUpdated>イベントは、行の更新が完了したときに発生します。  
+  
+ 使用する場合、`Update`メソッド、更新の各データ行で発生する 2 つのイベントがある:<xref:System.Data.Odbc.OdbcDataAdapter.RowUpdating>と<xref:System.Data.Odbc.OdbcDataAdapter.RowUpdated>です。 実行の順序、<xref:System.Data.Common.DbDataAdapter.Update%2A>のとおりです。  
+  
+1.  内の値、<xref:System.Data.DataRow>パラメーターの値に移動されます。  
+  
+2.  <xref:System.Data.Common.DbDataAdapter.OnRowUpdating%2A> イベントが発生します。  
+  
+3.  コマンドを実行します。  
+  
+4.  コマンドが FirstReturnedRecord に設定されているかどうかは、最初に返された結果が配置されます、<xref:System.Data.DataRow>です。  
+  
+5.  配置される出力パラメーターがある場合、<xref:System.Data.DataRow>です。  
+  
+6.  <xref:System.Data.Common.DbDataAdapter.OnRowUpdated%2A> イベントが発生します。  
+  
+7.  <xref:System.Data.DataRow.AcceptChanges%2A> が呼ばれたとき。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcRowUpdatedEventArgs (System.Data.DataRow row, System.Data.IDbCommand command, System.Data.StatementType statementType, System.Data.Common.DataTableMapping tableMapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.DataRow row, class System.Data.IDbCommand command, valuetype System.Data.StatementType statementType, class System.Data.Common.DataTableMapping tableMapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcRowUpdatedEventArgs.#ctor(System.Data.DataRow,System.Data.IDbCommand,System.Data.StatementType,System.Data.Common.DataTableMapping)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="row" Type="System.Data.DataRow" />
+        <Parameter Name="command" Type="System.Data.IDbCommand" />
+        <Parameter Name="statementType" Type="System.Data.StatementType" />
+        <Parameter Name="tableMapping" Type="System.Data.Common.DataTableMapping" />
+      </Parameters>
+      <Docs>
+        <param name="row"><see langword="DataRow" />更新操作で送信します。</param>
+        <param name="command"><see cref="T:System.Data.Odbc.OdbcCommand" />実行すると実行<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />と呼びます。</param>
+        <param name="statementType">1 つ、<see cref="T:System.Data.StatementType" />実行されるクエリの種類を指定する値。</param>
+        <param name="tableMapping"><see cref="T:System.Data.Common.DataTableMapping" />経由で送信<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />です。</param>
+        <summary><see cref="T:System.Data.Odbc.OdbcRowUpdatedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcCommand Command { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Odbc.OdbcCommand Command" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcRowUpdatedEventArgs.Command" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcCommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Data.Odbc.OdbcCommand" />実行すると実行<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />と呼びます。</summary>
+        <value><see cref="T:System.Data.Odbc.OdbcCommand" />実行すると実行<see cref="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />と呼びます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

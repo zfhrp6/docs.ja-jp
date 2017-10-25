@@ -1,0 +1,265 @@
+<Type Name="KeyBinding" FullName="System.Windows.Input.KeyBinding">
+  <TypeSignature Language="C#" Value="public class KeyBinding : System.Windows.Input.InputBinding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyBinding extends System.Windows.Input.InputBinding" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.KeyBinding" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.InputBinding</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>バインド、<see cref="T:System.Windows.Input.KeyGesture" />を<see cref="T:System.Windows.Input.RoutedCommand" />(または別<see cref="T:System.Windows.Input.ICommand" />実装)。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Input.KeyBinding>関連付けます、<xref:System.Windows.Input.KeyGesture>で、 <xref:System.Windows.Input.ICommand>、ように、<xref:System.Windows.Input.RoutedCommand>です。 <xref:System.Windows.Input.RoutedCommand>プライマリの実装、<xref:System.Windows.Input.ICommand>のためのインターフェイス、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]システムのコマンドを実行します。  通常、<xref:System.Windows.Input.KeyGesture>が実行されるコマンドが呼び出されるコマンドの動作は、さらに影響を受けるコマンド固有の要因によってなどが、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>値。  コマンド実行の詳細については、次を参照してください。、[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)です。  
+  
+ ファンクション キーと、テンキーのキーを有効なを除き<xref:System.Windows.Input.KeyGesture>1 つだけ含める必要があります<xref:System.Windows.Input.Key>と 1 つまたは複数<xref:System.Windows.Input.ModifierKeys>です。  ファンクション キーおよびテンキーのキーは必要ありません修飾子キーを有効にするのに<xref:System.Windows.Input.KeyGesture>です。 無効なを指定することは<xref:System.Windows.Input.KeyGesture>と<xref:System.Windows.Input.KeyBinding>関連付けジェスチャを使用するか、無効な[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]またはコード。 インスタンスを作成してバインドを妨げる検証は行われません、<xref:System.Windows.Input.KeyGesture>修飾子がキーなし、またはのみ以外キーのみを格納しています。 このような<xref:System.Windows.Input.KeyBinding>その関連付けられたコマンドを呼び出すことはありませんを試みます。  
+  
+ 定義するときに、<xref:System.Windows.Input.KeyBinding>で[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]2 つの方法を指定する、<xref:System.Windows.Input.KeyGesture>です。 確立するために最初の方法、<xref:System.Windows.Input.KeyBinding>で[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]を定義するのには、<xref:System.Windows.Input.KeyBinding.Gesture%2A>の属性、<xref:System.Windows.Input.KeyBinding>要素は、キーと修飾子を 1 つの文字列、たとえば"CTRL + P"として指定する構文を使用します。 2 番目の方法は、定義する、<xref:System.Windows.Input.KeyBinding.Key%2A>属性および<xref:System.Windows.Input.KeyBinding.Modifiers%2A>の属性、<xref:System.Windows.Input.KeyBinding>要素。 設定のどちらの方法、<xref:System.Windows.Input.KeyGesture>は同じと同一の基になるオブジェクトの変更がある場合は、両方の競合が使用されます。  場合と、 <xref:System.Windows.Input.KeyBinding.Key%2A>、 <xref:System.Windows.Input.KeyBinding.Modifiers%2A>、および<xref:System.Windows.Input.KeyBinding.Gesture%2A>属性は、すべての設定、定義されている属性最後が使用されますの<xref:System.Windows.Input.KeyGesture>です。 場所などの状況を可能性がありますが、<xref:System.Windows.Input.KeyBinding.Key%2A>セット最後はジェスチャを前のキー コンポーネントだけを上書きしますが、同じジェスチャの修飾子のままにします。 一般に、お勧めのみに使用する、<xref:System.Windows.Input.KeyBinding.Gesture%2A>属性から[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 このあいまいさを避ける、最も簡潔な構文、説明およびシリアル化の最も簡単な表現を提供します。  
+  
+ A<xref:System.Windows.Input.KeyBinding>登録することによって特定のオブジェクトで、またはクラス レベルで定義できます、<xref:System.Windows.Input.CommandManager.RegisterClassInputBinding%2A>上、<xref:System.Windows.Input.CommandManager>クラスです。 定義する最も一般的な方法、<xref:System.Windows.Input.KeyBinding>コントロール テンプレートの設定では、<xref:System.Windows.UIElement.InputBindings%2A>プロパティ[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]1 つまたは複数を宣言することによって<xref:System.Windows.Input.MouseBinding>または<xref:System.Windows.Input.KeyBinding>要素。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.KeyBinding>に追加し、<xref:System.Windows.Input.InputBindingCollection>ルート ウィンドウのです。  
+  
+ [!code-xaml[commandWithHandler#CommandHandlerKeyBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml#commandhandlerkeybinding)]  
+  
+ [!code-csharp[CommandHandlerProcedural#CommandHandlerKeyBindingCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandHandlerProcedural/CSharp/Window1.xaml.cs#commandhandlerkeybindingcodebehind)]
+ [!code-vb[CommandHandlerProcedural#CommandHandlerKeyBindingCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandHandlerProcedural/visualbasic/window1.xaml.vb#commandhandlerkeybindingcodebehind)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.KeyBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.KeyBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyBinding (System.Windows.Input.ICommand command, System.Windows.Input.KeyGesture gesture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.ICommand command, class System.Windows.Input.KeyGesture gesture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.KeyBinding.#ctor(System.Windows.Input.ICommand,System.Windows.Input.KeyGesture)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="command" Type="System.Windows.Input.ICommand" />
+        <Parameter Name="gesture" Type="System.Windows.Input.KeyGesture" />
+      </Parameters>
+      <Docs>
+        <param name="command">関連付けるコマンド<c>ジェスチャ</c>です。</param>
+        <param name="gesture">キーの組み合わせに関連付ける<c>コマンド</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.KeyBinding" />クラス<see cref="T:System.Windows.Input.ICommand" />と<see cref="T:System.Windows.Input.KeyGesture" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="command" /> または <paramref name="gesture" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyBinding (System.Windows.Input.ICommand command, System.Windows.Input.Key key, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.ICommand command, valuetype System.Windows.Input.Key key, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.KeyBinding.#ctor(System.Windows.Input.ICommand,System.Windows.Input.Key,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="command" Type="System.Windows.Input.ICommand" />
+        <Parameter Name="key" Type="System.Windows.Input.Key" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="command">呼び出すコマンド。</param>
+        <param name="key">関連付けられるキー<c>コマンド</c>です。</param>
+        <param name="modifiers">関連付けられる修飾子<c>コマンド</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.KeyBinding" />クラス<see cref="T:System.Windows.Input.ICommand" />と、指定した<see cref="T:System.Windows.Input.Key" />と<see cref="T:System.Windows.Input.ModifierKeys" />に変換される<see cref="T:System.Windows.Input.KeyGesture" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.KeyBinding.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを作成、<see cref="T:System.Windows.Input.KeyBinding" />です。</summary>
+        <returns>新しいオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gesture">
+      <MemberSignature Language="C#" Value="public override System.Windows.Input.InputGesture Gesture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.InputGesture Gesture" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.KeyBinding.Gesture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Input.KeyGestureConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Input.KeyGestureValueSerializer))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられたジェスチャ<see cref="T:System.Windows.Input.KeyBinding" />です。</summary>
+        <value>キーのシーケンス。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファンクション キーと、テンキーを除いて、<xref:System.Windows.Input.KeyGesture>含める必要があります、<xref:System.Windows.Input.Key>と 1 つまたは複数<xref:System.Windows.Input.ModifierKeys>です。  
+  
+   
+  
+## Examples  
+ 次の例は、バインドする方法を示しています、<xref:System.Windows.Input.KeyGesture>を<xref:System.Windows.Input.RoutedCommand>を使用して、 <xref:System.Windows.Input.KeyBinding> (マークアップおよびコードの例は、異なるキーを指定するただし、それ以外の場合と同じ)。  
+  
+ [!code-xaml[commandWithHandler#CommandHandlerKeyBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml#commandhandlerkeybinding)]  
+  
+ [!code-csharp[commandlibrarysnippets#KeyBindingWithKeyAndModifiers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#keybindingwithkeyandmodifiers)]
+ [!code-vb[commandlibrarysnippets#KeyBindingWithKeyAndModifiers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#keybindingwithkeyandmodifiers)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値<paramref name="gesture" />に設定されているが、<see cref="T:System.Windows.Input.KeyGesture" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Key Key { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.Key Key" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.KeyBinding.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Key</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Input.Key" />の<see cref="T:System.Windows.Input.KeyGesture" />これに関連付けられている<see cref="T:System.Windows.Input.KeyBinding" />です。</summary>
+        <value>重要な部分、<see cref="T:System.Windows.Input.KeyGesture" />です。 既定値は <see cref="F:System.Windows.Input.Key.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファンクション キーと、テンキーを除いて、<xref:System.Windows.Input.KeyGesture>含める必要があります、<xref:System.Windows.Input.Key>と 1 つまたは複数<xref:System.Windows.Input.ModifierKeys>です。  
+  
+ 定義するときに、<xref:System.Windows.Input.KeyBinding>で[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]2 つの方法を指定する、<xref:System.Windows.Input.KeyGesture>です。 確立するために最初の方法、<xref:System.Windows.Input.KeyBinding>で[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]を定義するのには、<xref:System.Windows.Input.KeyBinding.Gesture%2A>の属性、<xref:System.Windows.Input.KeyBinding>要素は、キーと修飾子を 1 つの文字列、たとえば"CTRL + P"として指定する構文を使用します。 2 番目の方法は、定義する、<xref:System.Windows.Input.KeyBinding.Key%2A>属性および<xref:System.Windows.Input.KeyBinding.Modifiers%2A>の属性、<xref:System.Windows.Input.KeyBinding>要素。 設定のどちらの方法、<xref:System.Windows.Input.KeyGesture>は同じと同一の基になるオブジェクトの変更がある場合は、両方の競合が使用されます。  場合と、 <xref:System.Windows.Input.KeyBinding.Key%2A>、 <xref:System.Windows.Input.KeyBinding.Modifiers%2A>、および<xref:System.Windows.Input.KeyBinding.Gesture%2A>属性は、すべての設定、定義されている属性最後が使用されますの<xref:System.Windows.Input.KeyGesture>です。 場所などの状況を可能性がありますが、<xref:System.Windows.Input.KeyBinding.Key%2A>セット最後はジェスチャを前のキー コンポーネントだけを上書きしますが、同じジェスチャの修飾子のままにします。 一般に、お勧めのみに使用する、<xref:System.Windows.Input.KeyBinding.Gesture%2A>属性から[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 このあいまいさを避ける、最も簡潔な構文、説明およびシリアル化の最も簡単な表現を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty KeyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty KeyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.KeyBinding.KeyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.KeyBinding.Key" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modifiers">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ModifierKeys Modifiers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.ModifierKeys Modifiers" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.KeyBinding.Modifiers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ModifierKeys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Input.ModifierKeys" />の<see cref="T:System.Windows.Input.KeyGesture" />これに関連付けられている<see cref="T:System.Windows.Input.KeyBinding" />です。</summary>
+        <value>修飾子キー、<see cref="T:System.Windows.Input.KeyGesture" />です。  既定値は <see cref="F:System.Windows.Input.ModifierKeys.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファンクション キーと、テンキーを除いて、<xref:System.Windows.Input.KeyGesture>含める必要があります、<xref:System.Windows.Input.Key>と 1 つまたは複数<xref:System.Windows.Input.ModifierKeys>です。  
+  
+ 定義するときに、<xref:System.Windows.Input.KeyBinding>で[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]2 つの方法を指定する、<xref:System.Windows.Input.KeyGesture>です。 確立するために最初の方法、<xref:System.Windows.Input.KeyBinding>で[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]を定義するのには、<xref:System.Windows.Input.KeyBinding.Gesture%2A>の属性、<xref:System.Windows.Input.KeyBinding>要素は、キーと修飾子を 1 つの文字列、たとえば"CTRL + P"として指定する構文を使用します。 2 番目の方法は、定義する、<xref:System.Windows.Input.KeyBinding.Key%2A>属性および<xref:System.Windows.Input.KeyBinding.Modifiers%2A>の属性、<xref:System.Windows.Input.KeyBinding>要素。 設定のどちらの方法、<xref:System.Windows.Input.KeyGesture>は同じと同一の基になるオブジェクトの変更がある場合は、両方の競合が使用されます。  場合と、 <xref:System.Windows.Input.KeyBinding.Key%2A>、 <xref:System.Windows.Input.KeyBinding.Modifiers%2A>、および<xref:System.Windows.Input.KeyBinding.Gesture%2A>属性は、すべての設定、定義されている属性最後が使用されますの<xref:System.Windows.Input.KeyGesture>です。 場所などの状況を可能性がありますが、<xref:System.Windows.Input.KeyBinding.Key%2A>セット最後はジェスチャを前のキー コンポーネントだけを上書きしますが、同じジェスチャの修飾子のままにします。 一般に、お勧めのみに使用する、<xref:System.Windows.Input.KeyBinding.Gesture%2A>属性から[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 このあいまいさを避ける、最も簡潔な構文、説明およびシリアル化の最も簡単な表現を提供します。  
+  
+<a name="xamlAttributeUsage_Modifiers"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Modifiers="oneOrMoreModifierKeys"/>  
+  
+```  
+  
+<a name="xamlValues_Modifiers"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreModifierKeys*  
+ によって定義された 1 つまたは複数の修飾子キー、<xref:System.Windows.Input.ModifierKeys>列挙型、「+」文字で区切られます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModifiersProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ModifiersProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ModifiersProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.KeyBinding.ModifiersProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.KeyBinding.Modifiers" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

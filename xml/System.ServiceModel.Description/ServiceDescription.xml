@@ -1,0 +1,369 @@
+<Type Name="ServiceDescription" FullName="System.ServiceModel.Description.ServiceDescription">
+  <TypeSignature Language="C#" Value="public class ServiceDescription" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceDescription extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.ServiceDescription" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("ServiceType={serviceType}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サービスのすべてのエンドポイントと、各エンドポイントのアドレス、バインディング、コントラクト、および動作の指定を含む、メモリ内の完全なサービスの説明を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceDescription> に含まれる情報は、サービスの実行時コンポーネントを構築するために [!INCLUDE[indigo1](~/includes/indigo1-md.md)] システムによって使用されます。  
+  
+ カスタム動作を追加するときにこのメソッドを使用して、<xref:System.ServiceModel.ServiceHost> を拡張します。 プログラムにより、<xref:System.Collections.ObjectModel.Collection%601.Add%28%600%29> オブジェクトで <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> メソッドを呼び出すより前に、<xref:System.ServiceModel.ICommunicationObject.Open%2A> を実行して、カスタム サービス動作を <xref:System.ServiceModel.ServiceHost> に追加する必要があります。  
+  
+ <xref:System.ServiceModel.Description.ServiceDescription.GetService%28System.Object%29> メソッドと <xref:System.ServiceModel.Description.ServiceDescription.GetService%28System.Type%29> メソッドは、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] を独自のホスティング メカニズムと置き換える場合に、<xref:System.ServiceModel.ServiceHostBase> プログラミング モデルを使用する動作に反映させるために使用できます。  
+  
+ <xref:System.ServiceModel.Description.ServiceEndpoint> をパラメーターとして <xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoint%28System.ServiceModel.Description.ServiceEndpoint%29> に渡すことにより、サービス エンドポイントについてのメタデータをエクスポートします。 このメソッドまたは <xref:System.ServiceModel.Description.WsdlExporter> によって提供される他のエクスポート メソッドのいずれかを呼び出した後で、<xref:System.ServiceModel.Description.WsdlExporter.GeneratedWsdlDocuments%2A> プロパティを使用して <xref:System.Web.Services.Description.ServiceDescription> オブジェクトのコレクションを返します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.ServiceDescription> オブジェクトをインスタンス化するさまざまな方法を次の例に示します。  
+  
+ [!code-csharp[S_UE_ServiceDescription#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/program.cs#0)]
+ [!code-vb[S_UE_ServiceDescription#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/program.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceDescription ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceDescription.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.ServiceDescription" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceDescription#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/program.cs#1)]
+ [!code-vb[S_UE_ServiceDescription#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceDescription (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ServiceEndpoint&gt; endpoints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt; endpoints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceDescription.#ctor(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ServiceEndpoint})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpoints" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ServiceEndpoint&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="endpoints">サービスの説明を初期化するために使用される <see cref="T:System.Collections.Generic.IEnumerable`1" /> 型の <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</param>
+        <summary>指定したサービス エンドポイントの列挙体から、<see cref="T:System.ServiceModel.Description.ServiceDescription" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceDescription#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/program.cs#2)]
+ [!code-vb[S_UE_ServiceDescription#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="endpoints" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Behaviors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.KeyedByTypeCollection&lt;System.ServiceModel.Description.IServiceBehavior&gt; Behaviors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.KeyedByTypeCollection`1&lt;class System.ServiceModel.Description.IServiceBehavior&gt; Behaviors" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDescription.Behaviors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.KeyedByTypeCollection&lt;System.ServiceModel.Description.IServiceBehavior&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスに関連付けられている動作を取得します。</summary>
+        <value>サービスに関連付けられている動作を含む <see cref="T:System.Collections.Generic.KeyedByTypeCollection`1" /> 型の <see cref="T:System.ServiceModel.Description.IServiceBehavior" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム動作を追加するときにこのメソッドを使用して、<xref:System.ServiceModel.ServiceHost> を拡張します。 プログラムにより、<xref:System.Collections.ObjectModel.Collection%601.Add%28%600%29> オブジェクトで <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> メソッドを呼び出すより前に、<xref:System.ServiceModel.ICommunicationObject.Open%2A> を実行して、カスタム サービス動作を <xref:System.ServiceModel.ServiceHost> に追加する必要があります。  
+  
+ 説明階層からアクセスできる動作の型は、特定のレベルに限定されます。 <xref:System.ServiceModel.Description.ServiceDescription> から、<xref:System.ServiceModel.Description.IServiceBehavior> にアクセスできます。  
+  
+ 代わりに、エンドポイントに関連付けられた <xref:System.ServiceModel.Description.IEndpointBehavior> にアクセスする場合は、<xref:System.ServiceModel.Description.ServiceDescription.Endpoints%2A> プロパティを使用してサービスのエンドポイントを取得します。 取得し、<xref:System.ServiceModel.Description.ServiceEndpoint>をコレクションから、<xref:System.ServiceModel.Description.ServiceEndpointCollection.Find%2A>基準を使用して、関連する検索の呼び出しメソッド、<xref:System.ServiceModel.Description.ServiceEndpoint.Behaviors%2A>のコレクションを取得するプロパティ、<xref:System.ServiceModel.Description.IEndpointBehavior>オブジェクト。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceDescription#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/program.cs#3)] 
+ [!code-csharp[S_UE_ServiceDescription#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/snippets.cs#3)]   
+ [!code-vb[S_UE_ServiceDescription#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/program.vb#3)] 
+ [!code-vb[S_UE_ServiceDescription#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/snippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigurationName">
+      <MemberSignature Language="C#" Value="public string ConfigurationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConfigurationName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDescription.ConfigurationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の名前、 &lt; <see langword="service" /> &gt;構成要素。</summary>
+        <value>名前、 [&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)サービスを構成するために使用する構成要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この名前は、構成モデルに結合されていません。 これは、サービスを接続するためにサービス ホスト ベースによって使用されます。 構成名は必須の文字列属性を[&lt;サービス&gt;](~/docs/framework/configure-apps/file-schema/wcf/service.md)構成要素。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceDescription#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/program.cs#4)]
+ [!code-vb[S_UE_ServiceDescription#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/program.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Endpoints">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpointCollection Endpoints { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.ServiceEndpointCollection Endpoints" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDescription.Endpoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceEndpointCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスの説明からエンドポイントのコレクションを取得します。</summary>
+        <value>サービスに定義されたエンドポイントを含む <see cref="T:System.ServiceModel.Description.ServiceEndpointCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返される <xref:System.ServiceModel.Description.ServiceEndpointCollection> に含まれるエンドポイントには、サービスとの通信に必要なアドレス、バインディング、コントラクト、および動作の情報がそれぞれ含まれます。 この情報にアクセスするには、関連する検索基準を使用して <xref:System.ServiceModel.Description.ServiceEndpoint> メソッドを実行して、コレクションから <xref:System.ServiceModel.Description.ServiceEndpointCollection.Find%2A> を取得する必要があります。 その後、<xref:System.ServiceModel.Description.ServiceEndpoint> プロパティを使用して情報にアクセスします。 たとえば、<xref:System.ServiceModel.Description.ContractDescription> プロパティを使用して <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A> にアクセスできます。  
+  
+ <xref:System.ServiceModel.Description.ServiceEndpoint> をパラメーターとして <xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoint%28System.ServiceModel.Description.ServiceEndpoint%29> に渡すことにより、サービス エンドポイントについてのメタデータをエクスポートします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceDescription#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/program.cs#5)]
+ [!code-vb[S_UE_ServiceDescription#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/program.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceDescription GetService (object serviceImplementation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceDescription GetService(object serviceImplementation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceDescription.GetService(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceImplementation" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serviceImplementation">サービスを実装する <see cref="T:System.Object" />。</param>
+        <summary>指定したサービス オブジェクトを使用して初期化されたサービスの説明を返します。</summary>
+        <returns>提供されたサービス オブジェクトの <see cref="T:System.ServiceModel.Description.ServiceDescription" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] を独自のホスティング メカニズムと置き換える場合は、このメソッドを使用して、<xref:System.ServiceModel.ServiceHostBase> プログラミング モデルを使用する動作に反映させます。  
+  
+ <xref:System.ServiceModel.Description.ServiceDescription.GetService%28System.Object%29> は、<xref:System.ServiceModel.Description.ServiceDescription.Name%2A>、<xref:System.ServiceModel.Description.ServiceDescription.Namespace%2A>、および <xref:System.ServiceModel.Description.ServiceDescription.ConfigurationName%2A> の各プロパティを初期化します。また、<xref:System.ServiceModel.ServiceBehaviorAttribute> がサービスに結び付けられ、関連するサービスの動作が <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> に追加されることを保証します。  
+  
+   
+  
+## Examples  
+ サービスの説明に含まれるサービスの動作を反復処理する方法を次の例に示します。  
+  
+ [!code-csharp[S_UE_ServiceDescription#9](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/program.cs#9)]
+ [!code-csharp[S_UE_ServiceDescription#9](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/snippets.cs#9)]
+ [!code-vb[S_UE_ServiceDescription#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/program.vb#9)]
+ [!code-vb[S_UE_ServiceDescription#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/snippets.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceImplementation" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceDescription GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceDescription GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.ServiceDescription.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">サービスの <see cref="T:System.Type" />。</param>
+        <summary>指定したサービス型を使用して初期化されたサービスの説明を返します。</summary>
+        <returns>提供されたサービス型の <see cref="T:System.ServiceModel.Description.ServiceDescription" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] を独自のホスティング メカニズムと置き換える場合は、このメソッドを使用して、<xref:System.ServiceModel.ServiceHostBase> プログラミング モデルを使用する動作に反映させます。  
+  
+ <xref:System.ServiceModel.Description.ServiceDescription.GetService%28System.Type%29> は、<xref:System.ServiceModel.Description.ServiceDescription.Name%2A>、<xref:System.ServiceModel.Description.ServiceDescription.Namespace%2A>、および <xref:System.ServiceModel.Description.ServiceDescription.ConfigurationName%2A> プロパティを初期化し、<xref:System.ServiceModel.ServiceBehaviorAttribute> オブジェクトの型に反映させてそれらを <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> に追加し、<xref:System.ServiceModel.ServiceBehaviorAttribute> がサービスに結び付けられていることを確認します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceDescription#10](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/snippets.cs#10)]
+ [!code-vb[S_UE_ServiceDescription#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/snippets.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDescription.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスの名前を取得または設定します。</summary>
+        <value>サービスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前が `null` の場合、このプロパティはサービス型の名前を返します。 サービス型も `null` の場合は、既定のサービス名を返します。  
+  
+ WSDL メタデータをエクスポートするときに、<xref:System.ServiceModel.Description.ServiceDescription.Name%2A>マップ Web サービスの開発言語 (WSDL) を <`service`> (修飾) の要素のローカル名部分`name`属性。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceDescription#6](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/program.cs#6)]
+ [!code-vb[S_UE_ServiceDescription#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/program.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDescription.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスの名前空間を取得または設定します。</summary>
+        <value>サービスの名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WSDL メタデータをエクスポートするときに、<xref:System.ServiceModel.Description.ServiceDescription.Namespace%2A>マップ Web サービスの開発言語 (WSDL) を <`service`> 要素の名前空間名の部分 (修飾) の`name`属性。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceDescription#7](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/program.cs#7)]
+ [!code-vb[S_UE_ServiceDescription#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/program.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceType">
+      <MemberSignature Language="C#" Value="public Type ServiceType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ServiceType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.ServiceDescription.ServiceType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスの型を取得します。</summary>
+        <value>サービスを実装する <see cref="T:System.Type" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_ServiceDescription#8](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_servicedescription/cs/program.cs#8)]
+ [!code-vb[S_UE_ServiceDescription#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_ue_servicedescription/vb/program.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

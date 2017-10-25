@@ -1,0 +1,355 @@
+<Type Name="SamlAuthenticationClaimResource" FullName="System.IdentityModel.Tokens.SamlAuthenticationClaimResource">
+  <TypeSignature Language="C#" Value="public class SamlAuthenticationClaimResource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlAuthenticationClaimResource extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SamlAuthenticationClaimResource" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.IdentityModel.Tokens.SamlAuthenticationStatement" /> から作成されるクレームのリソース型を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthenticationClaimResource> クラスを使用して、<xref:System.IdentityModel.Claims.Claim> 認証クレームの <xref:System.IdentityModel.Tokens.SamlSecurityToken> インスタンスを作成します。 <xref:System.IdentityModel.Claims.Claim> クラスにはリソースを必要とするコンストラクターがあり、このクラスを渡すことができます。  
+  
+ <xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンは、SAML アサーションを使用してそれぞれのクレームを指定します。SAML アサーションで、サブジェクトが認証された時間を指定できます。 SAML アサーション内でクレームは、SAML ステートメントにより表されます。 SAML 仕様では、一連の SAML ステートメントの種類を定義します。また、これらの種類の 1 つが <xref:System.IdentityModel.Tokens.SamlAuthenticationStatement> です。 <xref:System.IdentityModel.Tokens.SamlAuthenticationStatement> は、ステートメントのサブジェクトが特定の時刻に特定の手段によって認証されたことをアサートします。 <xref:System.IdentityModel.Tokens.SamlAuthenticationClaimResource> クラスは、<xref:System.IdentityModel.Tokens.SamlAuthenticationStatement> のクレーム リソースを表します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAuthenticationClaimResource (DateTime authenticationInstant, string authenticationMethod, string dnsAddress, string ipAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTime authenticationInstant, string authenticationMethod, string dnsAddress, string ipAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.#ctor(System.DateTime,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="authenticationInstant" Type="System.DateTime" />
+        <Parameter Name="authenticationMethod" Type="System.String" />
+        <Parameter Name="dnsAddress" Type="System.String" />
+        <Parameter Name="ipAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationInstant">サブジェクトが認証された時間を指定する <see cref="T:System.DateTime" />。</param>
+        <param name="authenticationMethod">サブジェクトが認証された方法を指定する URI リファレンス。</param>
+        <param name="dnsAddress">サブジェクトを認証したコンピューターが存在する DNS ドメイン名。</param>
+        <param name="ipAddress">サブジェクトを認証したコンピューターの IP アドレス。</param>
+        <summary>指定した有効期間、認証方法、DNS ドメイン名、および IP アドレスを使用して、<see cref="T:System.IdentityModel.Tokens.SamlAuthenticationClaimResource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一連の認証メソッドは拡張可能ですが、SAML 仕様で定義されている一連の認証メソッドを次の表に示します。  
+  
+|認証メソッド|URI|  
+|---------------------------|---------|  
+|パスワード|urn:oasis:names:tc:SAML:1.0:am:password|  
+|Kerberos|urn: ietf:rfc:1510|  
+|セキュア リモート パスワード (SRP)|urn: ietf:rfc:2945|  
+|ハードウェア トークン|URI:urn:oasis:names:tc:SAML:1.0:am:HardwareToken|  
+|SSL/TLS 証明書ベースのクライアント認証|urn: ietf:rfc:2246|  
+|PGP 公開キー|urn:oasis:names:tc:SAML:1.0:am:PGP|  
+|SPKI 公開キー|urn:oasis:names:tc:SAML:1.0:am:SPKI|  
+|XKMS 公開キー|urn:oasis:names:tc:SAML:1.0:am:XKMS|  
+|XML デジタル署名|urn:ietf:rfc:3075|  
+|指定されていません。|urn:oasis:names:tc:SAML:1.0:am:unspecified|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAuthenticationClaimResource (DateTime authenticationInstant, string authenticationMethod, string dnsAddress, string ipAddress, System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlAuthorityBinding&gt; authorityBindings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTime authenticationInstant, string authenticationMethod, string dnsAddress, string ipAddress, class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.Tokens.SamlAuthorityBinding&gt; authorityBindings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.#ctor(System.DateTime,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.IdentityModel.Tokens.SamlAuthorityBinding})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="authenticationInstant" Type="System.DateTime" />
+        <Parameter Name="authenticationMethod" Type="System.String" />
+        <Parameter Name="dnsAddress" Type="System.String" />
+        <Parameter Name="ipAddress" Type="System.String" />
+        <Parameter Name="authorityBindings" Type="System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlAuthorityBinding&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationInstant">サブジェクトが認証された時間を指定する <see cref="T:System.DateTime" />。</param>
+        <param name="authenticationMethod">サブジェクトが認証された方法を指定する URI リファレンス。</param>
+        <param name="dnsAddress">サブジェクトを認証したコンピューターが存在する DNS ドメイン名。</param>
+        <param name="ipAddress">サブジェクトを認証したコンピューターの IP アドレス。</param>
+        <param name="authorityBindings">サブジェクトに関する追加情報を格納する <see cref="T:System.Collections.Generic.IEnumerable`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SamlAuthorityBinding" />。</param>
+        <summary>指定した有効期間、認証方法、DNS ドメイン名、IP アドレス、および追加情報への参照を使用して、<see cref="T:System.IdentityModel.Tokens.SamlAuthenticationClaimResource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一連の認証メソッドは拡張可能ですが、SAML 仕様で定義されている一連の認証メソッドを次の表に示します。  
+  
+|認証メソッド|URI|  
+|---------------------------|---------|  
+|パスワード|urn:oasis:names:tc:SAML:1.0:am:password|  
+|Kerberos|urn: ietf:rfc:1510|  
+|セキュア リモート パスワード (SRP)|urn: ietf:rfc:2945|  
+|ハードウェア トークン|URI:urn:oasis:names:tc:SAML:1.0:am:HardwareToken|  
+|SSL/TLS 証明書ベースのクライアント認証|urn: ietf:rfc:2246|  
+|PGP 公開キー|urn:oasis:names:tc:SAML:1.0:am:PGP|  
+|SPKI 公開キー|urn:oasis:names:tc:SAML:1.0:am:SPKI|  
+|XKMS 公開キー|urn:oasis:names:tc:SAML:1.0:am:XKMS|  
+|XML デジタル署名|urn:ietf:rfc:3075|  
+|指定されていません。|urn:oasis:names:tc:SAML:1.0:am:unspecified|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="authorityBindings" /> は、<see langword="null" /> であるメンバーを含みます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAuthenticationClaimResource (DateTime authenticationInstant, string authenticationMethod, string dnsAddress, string ipAddress, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SamlAuthorityBinding&gt; authorityBindings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DateTime authenticationInstant, string authenticationMethod, string dnsAddress, string ipAddress, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Tokens.SamlAuthorityBinding&gt; authorityBindings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.#ctor(System.DateTime,System.String,System.String,System.String,System.Collections.ObjectModel.ReadOnlyCollection{System.IdentityModel.Tokens.SamlAuthorityBinding})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="authenticationInstant" Type="System.DateTime" />
+        <Parameter Name="authenticationMethod" Type="System.String" />
+        <Parameter Name="dnsAddress" Type="System.String" />
+        <Parameter Name="ipAddress" Type="System.String" />
+        <Parameter Name="authorityBindings" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SamlAuthorityBinding&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="authenticationInstant">サブジェクトが認証された時間を指定する <see cref="T:System.DateTime" />。</param>
+        <param name="authenticationMethod">サブジェクトが認証された方法を指定する URI リファレンス。</param>
+        <param name="dnsAddress">サブジェクトを認証したコンピューターが存在する DNS ドメイン名。</param>
+        <param name="ipAddress">サブジェクトを認証したコンピューターの IP アドレス。</param>
+        <param name="authorityBindings">サブジェクトに関する追加情報を格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SamlAuthorityBinding" />。</param>
+        <summary>指定した有効期間、認証方法、DNS ドメイン名、IP アドレス、および追加情報への参照を使用して、<see cref="T:System.IdentityModel.Tokens.SamlAuthenticationClaimResource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一連の認証メソッドは拡張可能ですが、SAML 仕様で定義されている一連の認証メソッドを次の表に示します。  
+  
+|認証メソッド|URI|  
+|---------------------------|---------|  
+|パスワード|urn:oasis:names:tc:SAML:1.0:am:password|  
+|Kerberos|urn: ietf:rfc:1510|  
+|セキュア リモート パスワード (SRP)|urn: ietf:rfc:2945|  
+|ハードウェア トークン|URI:urn:oasis:names:tc:SAML:1.0:am:HardwareToken|  
+|SSL/TLS 証明書ベースのクライアント認証|urn: ietf:rfc:2246|  
+|PGP 公開キー|urn:oasis:names:tc:SAML:1.0:am:PGP|  
+|SPKI 公開キー|urn:oasis:names:tc:SAML:1.0:am:SPKI|  
+|XKMS 公開キー|urn:oasis:names:tc:SAML:1.0:am:XKMS|  
+|XML デジタル署名|urn:ietf:rfc:3075|  
+|指定されていません。|urn:oasis:names:tc:SAML:1.0:am:unspecified|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="authorityBindings" /> は、<see langword="null" /> であるメンバーを含みます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationInstant">
+      <MemberSignature Language="C#" Value="public DateTime AuthenticationInstant { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime AuthenticationInstant" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.AuthenticationInstant" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブジェクトが認証された時間を取得します。</summary>
+        <value>サブジェクトが認証された時間を指定する <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.AuthenticationInstant%2A> プロパティは、『Assertions and Protocol for the OASIS Security Assertion Markup Language (SAML)』の仕様で定義されている `AuthenticationInstant` 要素の `<AuthenticationStatement>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationMethod">
+      <MemberSignature Language="C#" Value="public string AuthenticationMethod { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AuthenticationMethod" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.AuthenticationMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブジェクトを認証するために使用されたメソッドを取得または設定します。</summary>
+        <value>サブジェクトを認証するために使用されたメソッド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一連の認証メソッドは拡張可能ですが、SAML 仕様で定義されている一連の認証メソッドを次の表に示します。  
+  
+|認証メソッド|URI|  
+|---------------------------|---------|  
+|パスワード|urn:oasis:names:tc:SAML:1.0:am:password|  
+|Kerberos|urn: ietf:rfc:1510|  
+|セキュア リモート パスワード (SRP)|urn: ietf:rfc:2945|  
+|ハードウェア トークン|URI:urn:oasis:names:tc:SAML:1.0:am:HardwareToken|  
+|SSL/TLS 証明書ベースのクライアント認証|urn: ietf:rfc:2246|  
+|PGP 公開キー|urn:oasis:names:tc:SAML:1.0:am:PGP|  
+|SPKI 公開キー|urn:oasis:names:tc:SAML:1.0:am:SPKI|  
+|XKMS 公開キー|urn:oasis:names:tc:SAML:1.0:am:XKMS|  
+|XML デジタル署名|urn:ietf:rfc:3075|  
+|指定されていません。|urn:oasis:names:tc:SAML:1.0:am:unspecified|  
+  
+ <xref:System.IdentityModel.Tokens.SamlAuthenticationStatement.AuthenticationMethod%2A> プロパティは、『Assertions and Protocol for the OASIS Security Assertion Markup Language (SAML)』の仕様で定義されている `AuthenticationMethod` 要素の `<AuthenticationStatement>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorityBindings">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SamlAuthorityBinding&gt; AuthorityBindings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Tokens.SamlAuthorityBinding&gt; AuthorityBindings" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.AuthorityBindings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SamlAuthorityBinding&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブジェクトについての追加情報を取得します。</summary>
+        <value>サブジェクトに関する追加情報を格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SamlAuthorityBinding" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.AuthorityBindings%2A> プロパティは、OASIS Security Assertion Markup Language (SAML) 仕様のアサーションおよびプロトコルで定義されている `<AuthorityBinding>` 要素の一連の `<AuthenticationStatement>` 子要素に対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DnsAddress">
+      <MemberSignature Language="C#" Value="public string DnsAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DnsAddress" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.DnsAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブジェクトを認証した コンピューターが存在する DNS ドメイン名を取得します。</summary>
+        <value>サブジェクトを認証したコンピューターが存在する DNS ドメイン名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.DnsAddress%2A> プロパティは、『Assertions and Protocol for the OASIS Security Assertion Markup Language (SAML)』の仕様で定義されている `DNSAddress` 要素の `<SubjectLocality>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト。</param>
+        <summary>このインスタンスが、指定したオブジェクトに等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="obj" /> でこのインスタンスと同じ値を保持している場合は <see cref="T:System.IdentityModel.Tokens.SamlAuthenticationClaimResource" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlAuthenticationClaimResource" /> のハッシュ コードを返します。</summary>
+        <returns><see cref="T:System.IdentityModel.Tokens.SamlAuthenticationClaimResource" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IPAddress">
+      <MemberSignature Language="C#" Value="public string IPAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string IPAddress" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.IPAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブジェクトを認証した コンピューターの IP アドレスを取得または設定します。</summary>
+        <value>サブジェクトを認証したコンピューターの IP アドレス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthenticationClaimResource.IPAddress%2A> プロパティは、『Assertions and Protocol for the OASIS Security Assertion Markup Language (SAML)』の仕様で定義されている `IPAddress` 要素の `<SubjectLocality>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

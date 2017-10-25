@@ -1,0 +1,3685 @@
+<Type Name="HttpCapabilitiesBase" FullName="System.Web.Configuration.HttpCapabilitiesBase">
+  <TypeSignature Language="C#" Value="public class HttpCapabilitiesBase : System.Web.UI.IFilterResolutionService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpCapabilitiesBase extends System.Object implements class System.Web.UI.IFilterResolutionService" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.HttpCapabilitiesBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IFilterResolutionService</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>クライアントのブラウザーの機能に関する詳細情報へのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase>元の基本クラス、<xref:System.Web.HttpBrowserCapabilities>クラスが派生します。 <xref:System.Web.Configuration.HttpCapabilitiesBase>多くのブラウザーの機能の辞書にタイプ セーフなアクセスを提供する読み取り専用のプロパティを提供します。 アクセスすることができます、<xref:System.Web.HttpBrowserCapabilities>クラスを通じて、 <xref:System.Web.HttpRequest.Browser%2A> 、ASP.NET によって公開されるプロパティ<xref:System.Web.HttpRequest.Browser%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、ブラウザー情報にアクセスする方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase/VB/sample_vb.aspx#1)]
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpCapabilitiesBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.HttpCapabilitiesBase" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveXControls">
+      <MemberSignature Language="C#" Value="public bool ActiveXControls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ActiveXControls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.ActiveXControls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが ActiveX コントロールをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが ActiveX コントロールをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが ActiveX コントロールをサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.ActiveXControls#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.ActiveXControls/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.ActiveXControls#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.ActiveXControls/VB/sample_vb.aspx#1)]
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Adapters">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Adapters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Adapters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Adapters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用可能なコントロール アダプターのコレクションを返します。</summary>
+        <value>登録されたコントロール アダプターのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBrowser">
+      <MemberSignature Language="C#" Value="public void AddBrowser (string browserName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddBrowser(string browserName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesBase.AddBrowser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="browserName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="browserName">追加するブラウザーの名前。</param>
+        <summary>機能が認識されるブラウザーの内部コレクションにエントリを追加するために内部的に使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AOL">
+      <MemberSignature Language="C#" Value="public bool AOL { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AOL" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.AOL" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが America Online (AOL) ブラウザーであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが AOL ブラウザーである場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが AOL ブラウザーであるかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.AOL#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.AOL/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.AOL#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.AOL/VB/sample_vb.aspx#1)]
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundSounds">
+      <MemberSignature Language="C#" Value="public bool BackgroundSounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BackgroundSounds" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.BackgroundSounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが使用してバック グラウンド サウンドの再生をサポートしているかどうかを示す値を取得、 <see langword="&lt;bgsounds&gt;" /> HTML 要素です。</summary>
+        <value>
+          <see langword="true" />ブラウザーがバック グラウンド サウンドの再生; をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーがバック グラウンド サウンドの再生をサポートしているかどうかを確認する方法を示しています。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.BackgroundSounds#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.BackgroundSounds/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.BackgroundSounds#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.BackgroundSounds/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Beta">
+      <MemberSignature Language="C#" Value="public bool Beta { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Beta" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Beta" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがベータ版であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがベータ版である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベータ版のブラウザーでは、予期しない動作を示すことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーがベータ版であるかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.Beta#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.Beta/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.Beta#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.Beta/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Browser">
+      <MemberSignature Language="C#" Value="public string Browser { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Browser" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Browser" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="User-Agent" /> 要求ヘッダー内のブラウザーによって送信されたブラウザー文字列を取得します (存在する場合)。</summary>
+        <value>ブラウザーによって送信された <see langword="User-Agent" /> 要求ヘッダーのコンテンツ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を確認する方法を示しています、`User-Agent`ブラウザーによって送信された要求ヘッダー。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.Browser#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.Browser/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.Browser#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.Browser/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BrowserCapabilitiesProvider">
+      <MemberSignature Language="C#" Value="public static System.Web.Configuration.HttpCapabilitiesProvider BrowserCapabilitiesProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Configuration.HttpCapabilitiesProvider BrowserCapabilitiesProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.BrowserCapabilitiesProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.HttpCapabilitiesProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.HttpCapabilitiesProvider" />の現在のブラウザーのオブジェクト。</summary>
+        <value><see cref="T:System.Web.Configuration.HttpCapabilitiesProvider" />の現在のブラウザーのオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Browsers">
+      <MemberSignature Language="C#" Value="public System.Collections.ArrayList Browsers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList Browsers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Browsers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ArrayList" />でブラウザーの<see cref="P:System.Web.Configuration.HttpCapabilitiesBase.Capabilities" />ディクショナリ。</summary>
+        <value><see cref="T:System.Collections.ArrayList" />でブラウザーの<see cref="P:System.Web.Configuration.HttpCapabilitiesBase.Capabilities" />ディクショナリ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanCombineFormsInDeck">
+      <MemberSignature Language="C#" Value="public virtual bool CanCombineFormsInDeck { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanCombineFormsInDeck" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.CanCombineFormsInDeck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別のカードなど、複数のフォームを含むデッキをブラウザーがサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />複数のフォームを含むデッキをブラウザーがサポートする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.CanCombineFormsInDeck%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。 True の場合、アダプターは、可能な限り、1 つのデッキのカードと同じページから複数のフォームを出力できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、別のカードなど、複数のフォームを含むデッキをブラウザーがサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.CanCombineFormsInDeck#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.CanCombineFormsInDeck/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.CanCombineFormsInDeck#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.CanCombineFormsInDeck/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanInitiateVoiceCall">
+      <MemberSignature Language="C#" Value="public virtual bool CanInitiateVoiceCall { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanInitiateVoiceCall" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.CanInitiateVoiceCall" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーのデバイスが音声通話を開始できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーのデバイスが音声通話; を開始できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.CanInitiateVoiceCall%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーのデバイスが音声通話を開始できるかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.CanInitiateVoiceCall#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.CanInitiateVoiceCall/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.CanInitiateVoiceCall#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.CanInitiateVoiceCall/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderAfterInputOrSelectElement">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderAfterInputOrSelectElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderAfterInputOrSelectElement" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.CanRenderAfterInputOrSelectElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次のページの内容をブラウザーがサポートしているかどうかを示す値を取得 WML<see langword="&lt;select&gt;" />または<see langword="&lt;input&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがページの次の HTML コンテンツをサポートする場合は<see langword="&lt;select&gt;" />または<see langword="&lt;input&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.CanRenderAfterInputOrSelectElement%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、次の HTML コンテンツ ページをブラウザーがサポートするかどうかを確認する方法を示しています。`<select>`または`<input>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.CanRenderAfterInputOrSelectElement#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderAfterInputOrSelectElement/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.CanRenderAfterInputOrSelectElement#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderAfterInputOrSelectElement/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderEmptySelects">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderEmptySelects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderEmptySelects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.CanRenderEmptySelects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが空の HTML をサポートするかどうかを示す値を取得<see langword="&lt;select&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが空の HTML をサポートする場合は<see langword="&lt;select&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーが空の HTML をサポートしているかどうかを確認する方法を示しています。`<select>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.CanRenderEmptySelects#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderEmptySelects/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.CanRenderEmptySelects#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderEmptySelects/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderInputAndSelectElementsTogether">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderInputAndSelectElementsTogether { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderInputAndSelectElementsTogether" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.CanRenderInputAndSelectElementsTogether" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが WML をサポートするかどうかを示す値を取得<see langword="INPUT" />と<see langword="SELECT" />要素の同じカードに共存します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートする場合は<see langword="&lt;input&gt;" />と<see langword="&lt;select&gt;" />要素一緒に、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.CanRenderInputAndSelectElementsTogether%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーが HTML をサポートしているかどうかを確認する方法を示しています。`<input>`と`<select>`要素の共存します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.CanRenderInputAndSelectElementsTogether#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderInputAndSelectElementsTogether/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.CanRenderInputAndSelectElementsTogether#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderInputAndSelectElementsTogether/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderMixedSelects">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderMixedSelects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderMixedSelects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.CanRenderMixedSelects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが WML をサポートするかどうかを示す値を取得<see langword="&lt;option&gt;" />両方を指定する要素<see langword="onpick" />と<see langword="value" />属性。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートする場合は<see langword="&lt;option&gt;" />両方を指定する要素<see langword="onpick" />と<see langword="value" />属性です。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.CanRenderMixedSelects%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+ 場合`false`、`onpick`値がハイパーリンクとして表示されると`value`属性が必要、`<do>`ポストバック用の要素。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーが HTML をサポートしているかどうかを確認する方法を示しています。`<option>`両方を指定する要素`onpick`と`value`属性。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.CanRenderMixedSelects#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderMixedSelects/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.CanRenderMixedSelects#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderMixedSelects/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderOneventAndPrevElementsTogether">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderOneventAndPrevElementsTogether { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderOneventAndPrevElementsTogether" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.CanRenderOneventAndPrevElementsTogether" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが WML をサポートするかどうかを示す値を取得<see langword="&lt;onevent&gt;" />と<see langword="&lt;prev&gt;" />同じ WML カード内で共存する要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートする場合は<see langword="&lt;onevent&gt;" />と<see langword="&lt;prev&gt;" />; 同じ WML カード内でそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.CanRenderOneventAndPrevElementsTogether%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+ 場合`false`、WML`<onevent>`と`<prev>`同じ WML カード内で要素が正しく表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーが WML をサポートしているかどうかを確認する方法を示しています。`<onevent>`と`<prev>`同じ WML カード内で共存する要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.CanRenderOneventAndPrevElementsTogether#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderOneventAndPrevElementsTogether/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.CanRenderOneventAndPrevElementsTogether#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderOneventAndPrevElementsTogether/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderPostBackCards">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderPostBackCards { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderPostBackCards" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.CanRenderPostBackCards" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがポストバック用の WML カードをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがポストバック用 WML カードをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.CanRenderPostBackCards%2A>プロパティ WML と互換性のあるモバイル デバイスのブラウザーにのみ適用されます。  
+  
+ 場合`false`ポストバック、ブラウザーによってカードが正しく表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーがポストバック用の WML カードをサポートしているかどうかを確認する方法を示しています。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.CanRenderPostBackCards#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderPostBackCards/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.CanRenderPostBackCards#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderPostBackCards/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderSetvarZeroWithMultiSelectionList">
+      <MemberSignature Language="C#" Value="public virtual bool CanRenderSetvarZeroWithMultiSelectionList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderSetvarZeroWithMultiSelectionList" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.CanRenderSetvarZeroWithMultiSelectionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが WML をサポートするかどうかを示す値を取得<see langword="&lt;setvar&gt;" />を持つ要素を<see langword="value" />0 の属性です。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートする場合は<see langword="&lt;setvar&gt;" />要素を<see langword="value" />の属性<see langword="0" />、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.CanRenderSetvarZeroWithMultiSelectionList%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+ 場合`false`、HTML`<setvar>`要素を`value`の属性`0`正しく表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーが WML をサポートしているかどうかを確認する方法を示しています。`<setvar>`を持つ要素を`value`0 の属性です。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.CanRenderSetvarZeroWithMultiSelectionList#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderSetvarZeroWithMultiSelectionList/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.CanRenderSetvarZeroWithMultiSelectionList#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.CanRenderSetvarZeroWithMultiSelectionList/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSendMail">
+      <MemberSignature Language="C#" Value="public virtual bool CanSendMail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSendMail" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.CanSendMail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML を使用して、電子メールの送信をサポートするかどうかを示す値を取得<see langword="&lt;mailto&gt;" />電子メール アドレスを表示するための要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML を使用して、電子メールの送信をサポートするかどうかは<see langword="&lt;mailto&gt;" />電子メール アドレスを表示するための要素それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーが HTML を使用して、電子メールの送信をサポートするかどうかを確認する方法を示しています。`<mailto>`電子メール アドレスを表示するための要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.CanSendMail#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.CanSendMail/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.CanSendMail#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.CanSendMail/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Capabilities">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Capabilities { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Capabilities" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Capabilities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーの定義済みの機能を取得する目的で内部的に使用されます。</summary>
+        <value>ブラウザーの定義済みの機能。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CDF">
+      <MemberSignature Language="C#" Value="public bool CDF { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CDF" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.CDF" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが web キャスト用のチャンネル定義形式 (CDF) をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが CDF をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが CDF をサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.CDF#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.CDF/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.CDF#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.CDF/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClrVersion">
+      <MemberSignature Language="C#" Value="public Version ClrVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version ClrVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.ClrVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントにインストールされている .NET Framework のバージョンを取得します。</summary>
+        <value>共通言語ランタイム<see cref="T:System.Version" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.ClrVersion%2A>プロパティは、ブラウザーが Internet Explorer 5.0 以降のバージョンである場合にのみサポートされています。  
+  
+ 返されるバージョンの要素の値には、クライアントで、.NET Framework がインストールされていない場合`0, 0,-1,-1`です。  
+  
+ クライアントでは、.NET Framework の 1 つ以上のバージョンがインストールされている場合、<xref:System.Web.Configuration.HttpCapabilitiesBase.ClrVersion%2A>プロパティは、最新のバージョンを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="public bool Cookies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cookies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Cookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが cookie をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが cookie をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.Cookies%2A>プロパティは、ブラウザー アプリケーションが cookie をサポートしているかどうかを示します。 ユーザーがそのアプリケーション内の cookie を無効にする場合、<xref:System.Web.Configuration.HttpCapabilitiesBase.Cookies%2A>プロパティは影響を受けません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーが cookie をサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.Cookies#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.Cookies/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.Cookies#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.Cookies/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Crawler">
+      <MemberSignature Language="C#" Value="public bool Crawler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Crawler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Crawler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが Web 検索エンジンかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、ブラウザーが検索エンジンです。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、クライアントが Web 検索エンジンであるかどうかを判別する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.Crawler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.Crawler/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.Crawler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.Crawler/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHtmlTextWriter">
+      <MemberSignature Language="C#" Value="public System.Web.UI.HtmlTextWriter CreateHtmlTextWriter (System.IO.TextWriter w);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.HtmlTextWriter CreateHtmlTextWriter(class System.IO.TextWriter w) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesBase.CreateHtmlTextWriter(System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlTextWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="w" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="w">
+          <see cref="T:System.IO.TextWriter" />作成します。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.UI.HtmlTextWriter" />使用します。</summary>
+        <returns>新しいインスタンス、<see cref="T:System.Web.UI.HtmlTextWriter" />使用します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Exception">インスタンスを作成するメソッドが失敗した<see cref="T:System.Web.UI.HtmlTextWriter" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSubmitButtonLimit">
+      <MemberSignature Language="C#" Value="public virtual int DefaultSubmitButtonLimit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultSubmitButtonLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.DefaultSubmitButtonLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームに許容される [送信] ボタンの最大数を返します。</summary>
+        <value>フォームに許容される [送信] ボタンの最大数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.DefaultSubmitButtonLimit%2A>プロパティは、主に WML と互換性のあるモバイル デバイスに使用されるソフト キーの数を表します。  
+  
+ モバイル デバイスを含めることができるは、web フォーム ページ、<xref:System.Web.UI.MobileControls.SelectionList>オブジェクトと 1 つ以上<xref:System.Web.UI.MobileControls.Command>コントロール。 <xref:System.Web.Configuration.HttpCapabilitiesBase.DefaultSubmitButtonLimit%2A>の中から選択することができます、<xref:System.Web.UI.MobileControls.Command>コントロールは、複数のソフト キーを持つデバイスでソフト キーに割り当てる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableOptimizedCacheKey">
+      <MemberSignature Language="C#" Value="public void DisableOptimizedCacheKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DisableOptimizedCacheKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesBase.DisableOptimizedCacheKey" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内部的に使用して、最適化されたキャッシュ キーの使用を無効にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EcmaScriptVersion">
+      <MemberSignature Language="C#" Value="public Version EcmaScriptVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version EcmaScriptVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.EcmaScriptVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートする ECMAScript のバージョン番号を取得します。</summary>
+        <value>ブラウザーがサポートする ECMAScript のバージョン番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ECMAScript のメジャー バージョン番号が 1 より大きい値をブラウザーがサポートしているかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.EcmaScriptVersion#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.EcmaScriptVersion/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.EcmaScriptVersion#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.EcmaScriptVersion/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Frames">
+      <MemberSignature Language="C#" Value="public bool Frames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Frames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Frames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML フレームをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがフレームをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが HTML フレームをサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.Frames#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.Frames/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.Frames#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.Frames/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GatewayMajorVersion">
+      <MemberSignature Language="C#" Value="public virtual int GatewayMajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 GatewayMajorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.GatewayMajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の場合、サーバーにアクセスするために使用するワイヤレス ゲートウェイのメジャー バージョン番号を取得します。</summary>
+        <value>既知の場合、サーバーにアクセスするために使用するワイヤレス ゲートウェイのメジャー バージョン番号。 既定値は、<see langword="0" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpUnhandledException">ワイヤレス ゲートウェイのメジャー バージョン番号を解析できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GatewayMinorVersion">
+      <MemberSignature Language="C#" Value="public virtual double GatewayMinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 GatewayMinorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.GatewayMinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の場合、サーバーにアクセスするために使用するワイヤレス ゲートウェイのマイナー バージョン番号を取得します。</summary>
+        <value>既知の場合、サーバーにアクセスするために使用するワイヤレス ゲートウェイのマイナー バージョン番号。 既定値は、<see langword="0" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpUnhandledException">ワイヤレス ゲートウェイのマイナー バージョン番号を解析できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GatewayVersion">
+      <MemberSignature Language="C#" Value="public virtual string GatewayVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GatewayVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.GatewayVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の場合、サーバーにアクセスするために使用するワイヤレス ゲートウェイのバージョンを取得します。</summary>
+        <value>既知の場合、サーバーにアクセスするために使用するワイヤレス ゲートウェイのバージョン番号。 既定値は、<see langword="None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ゲートウェイは、かどうかを確認する方法を示しています、`UP`ゲートウェイ。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.GatewayVersion#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.GatewayVersion/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.GatewayVersion#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.GatewayVersion/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClrVersions">
+      <MemberSignature Language="C#" Value="public Version[] GetClrVersions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Version[] GetClrVersions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesBase.GetClrVersions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントにインストールされている .NET Framework 共通言語ランタイムのすべてのバージョンを返します。</summary>
+        <returns><see cref="T:System.Version" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.GetClrVersions%2A>メソッドは、ブラウザーが Internet Explorer 5.0 以降のバージョンである場合にのみサポートされています。 プロパティが 1 つを含む配列を返す場合は、共通言語ランタイムは、クライアントにインストールされていない、<xref:System.Version>値を持つオブジェクトの 0、0、-1、-1。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConfigCapabilities">
+      <MemberSignature Language="C#" Value="public static System.Web.Configuration.HttpCapabilitiesBase GetConfigCapabilities (string configKey, System.Web.HttpRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Configuration.HttpCapabilitiesBase GetConfigCapabilities(string configKey, class System.Web.HttpRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesBase.GetConfigCapabilities(System.String,System.Web.HttpRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.HttpCapabilitiesBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configKey" Type="System.String" />
+        <Parameter Name="request" Type="System.Web.HttpRequest" />
+      </Parameters>
+      <Docs>
+        <param name="configKey">ブラウザーの機能を構成する構成セクションの名前。</param>
+        <param name="request"><see cref="T:System.Web.HttpRequest" />機能を返すし、現在は通常のブラウザーによって生成された<see cref="T:System.Web.HttpRequest" />です。</param>
+        <summary>インスタンスを返すために内部的に使用<see cref="T:System.Web.Configuration.HttpCapabilitiesBase" />生成、指定したブラウザーを表す<see cref="T:System.Web.HttpRequest" />です。</summary>
+        <returns>インスタンス<see cref="T:System.Web.Configuration.HttpCapabilitiesBase" />生成、指定したブラウザーを表す<see cref="T:System.Web.HttpRequest" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasBackButton">
+      <MemberSignature Language="C#" Value="public virtual bool HasBackButton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasBackButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.HasBackButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが専用かどうかを示す値を取得**戻る**ボタンをクリックします。</summary>
+        <value>
+          <see langword="true" />ブラウザーに専用**戻る**ボタンをクリックします。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`false`、リンク コントロールがありますに必要なときに、**戻る**ボタンは使用できません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーに専用かどうかを確認する方法を示しています。**戻る**ボタンをクリックします。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.HasBackButton#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.HasBackButton/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.HasBackButton#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.HasBackButton/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HidesRightAlignedMultiselectScrollbars">
+      <MemberSignature Language="C#" Value="public virtual bool HidesRightAlignedMultiselectScrollbars { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HidesRightAlignedMultiselectScrollbars" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.HidesRightAlignedMultiselectScrollbars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、HTML のスクロール バー<see langword="&lt;select multiple&gt;" />を持つ要素、<see langword="align" />属性の値の<see langword="right" />レンダリング時に隠されています。</summary>
+        <value>
+          <see langword="true" />場合、HTML のスクロール バー<see langword="&lt;select multiple&gt;" />を持つ要素、<see langword="align" />属性の値の<see langword="right" />、それ以外のレンダリング時に非表示になる<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが複数選択の要素を右揃えのスクロール バー不明になるかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.HidesRightAlignedMultiselectScrollbars#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.HidesRightAlignedMultiselectScrollbars/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.HidesRightAlignedMultiselectScrollbars#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.HidesRightAlignedMultiselectScrollbars/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlTextWriter">
+      <MemberSignature Language="C#" Value="public string HtmlTextWriter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HtmlTextWriter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.HtmlTextWriter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の完全修飾クラス名、<see cref="T:System.Web.UI.HtmlTextWriter" />を使用します。</summary>
+        <value>完全修飾クラス名、<see cref="T:System.Web.UI.HtmlTextWriter" />を使用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザー定義ファイルで指定されているブラウザーの内部識別子を取得します。</summary>
+        <value>ブラウザー定義ファイルで指定されているブラウザーの内部識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="protected virtual void Init ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Init() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesBase.Init" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値の内部のセットを初期化するために内部的に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputType">
+      <MemberSignature Language="C#" Value="public virtual string InputType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InputType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.InputType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーでサポートされている入力の型を返します。</summary>
+        <value>ブラウザーでサポートされている入力の型。 既定値は<c>telephoneKeypad</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は次のとおりです。  
+  
+-   `virtualKeyboard`  
+  
+-   `telephoneKeypad`  
+  
+-   `keyboard`  
+  
+   
+  
+## Examples  
+ 次のコード例では、サポートされている入力の種類を決定する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.InputType#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.InputType/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.InputType#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.InputType/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBrowser">
+      <MemberSignature Language="C#" Value="public bool IsBrowser (string browserName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsBrowser(string browserName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesBase.IsBrowser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="browserName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="browserName">指定されたブラウザー。</param>
+        <summary>クライアントのブラウザーが指定されたブラウザーと同じであるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />クライアントのブラウザーが指定されたブラウザーと同じ場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.IsBrowser%2A>メソッドも返します`true`クライアント ブラウザーの定義を指定したブラウザーから継承する場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsColor">
+      <MemberSignature Language="C#" Value="public virtual bool IsColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.IsColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーにカラー表示があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーにカラー表示がある場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、クライアントのブラウザーに色がサポートしているかどうかを示します。 返される値は、ブラウザーに送信する適切な画像を決定するためにでした。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.IsColor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.IsColor/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.IsColor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.IsColor/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMobileDevice">
+      <MemberSignature Language="C#" Value="public virtual bool IsMobileDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMobileDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.IsMobileDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがモバイル デバイスとして認識するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、ブラウザーは、モバイル デバイスとして認識します。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーがモバイル デバイスであるかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.IsMobileDevice#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.IsMobileDevice/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.IsMobileDevice#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.IsMobileDevice/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual string this[string key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得するブラウザー機能の名前。</param>
+        <summary>指定したブラウザー機能の値を取得します。 C# では、このプロパティはクラスのインデクサーです。</summary>
+        <value>指定したキー名のブラウザー機能。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ JScript では、型によって定義された既定のインデックス付きプロパティを使用することができますが明示的に、自分を定義できません。 ただしを指定する、`expando`クラスの属性の型を持つ既定のインデックス付きプロパティを自動的に提供する`Object`とインデックスの種類の`String`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JavaApplets">
+      <MemberSignature Language="C#" Value="public bool JavaApplets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool JavaApplets" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.JavaApplets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが Java をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが Java; をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが Java をサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.JavaApplets#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.JavaApplets/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.JavaApplets#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.JavaApplets/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JavaScript">
+      <MemberSignature Language="C#" Value="public bool JavaScript { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool JavaScript" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.JavaScript" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is the EcmaScriptVersion property. A Major version value greater than or equal to 1 implies JavaScript support. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが JavaScript をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが JavaScript; をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ブラウザーが JavaScript をサポートしていますが、セキュリティの設定でスクリプトが無効になっている場合、<xref:System.Web.Configuration.HttpCapabilitiesBase.JavaScript%2A>が返される`true`ブラウザーでスクリプトが実行されません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーが JavaScript をサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.JavaScript#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.JavaScript/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.JavaScript#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.JavaScript/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JScriptVersion">
+      <MemberSignature Language="C#" Value="public Version JScriptVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version JScriptVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.JScriptVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートする JScript バージョンを取得します。</summary>
+        <value><see cref="T:System.Version" />ブラウザーがサポートする JScript のです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorVersion">
+      <MemberSignature Language="C#" Value="public int MajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MajorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.MajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーのメジャー (整数) バージョン番号を取得します。</summary>
+        <value>ブラウザーのメジャー バージョン番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、メジャーを追加し、ブラウザーのバージョンのマイナー (整数と小数) 値が数値結果をブラウザーに送信します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.MajorVersion#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.MajorVersion/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.MajorVersion#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.MajorVersion/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">メジャー バージョンの値は、整数ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumHrefLength">
+      <MemberSignature Language="C#" Value="public virtual int MaximumHrefLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumHrefLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.MaximumHrefLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列の最大長を取得、 <see langword="href" /> 、html 属性<see langword="&lt;a&gt;" />(アンカー) 要素です。</summary>
+        <value>文字の最大数、 <see langword="href" /> 、html 属性<see langword="&lt;a&gt;" />(アンカー) 要素です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumRenderedPageSize">
+      <MemberSignature Language="C#" Value="public virtual int MaximumRenderedPageSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumRenderedPageSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.MaximumRenderedPageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーに表示できるバイト数で、ページの最大長を取得します。</summary>
+        <value>ブラウザーに表示できるバイト数で、ページの最大長。 既定値は<c>2000</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中間ゲートウェイによる処理は、ブラウザーに到達するバイト数を変更できます。 ASP.NET では、ページ サイズでこの制限は適用されません。  
+  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.MaximumRenderedPageSize%2A>モバイル クライアントのブラウザーを使用する場合、主に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumSoftkeyLabelLength">
+      <MemberSignature Language="C#" Value="public virtual int MaximumSoftkeyLabelLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumSoftkeyLabelLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.MaximumSoftkeyLabelLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソフト キー ラベルに表示できるテキストの最大長を返します。</summary>
+        <value>ソフト キー ラベルに表示できるテキストの最大長。 既定値は、<see langword="5" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.MaximumSoftkeyLabelLength%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーのソフト キー ラベルの最大の長さを決定する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.MaximumSoftkeyLabelLength#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.MaximumSoftkeyLabelLength/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.MaximumSoftkeyLabelLength#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.MaximumSoftkeyLabelLength/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorVersion">
+      <MemberSignature Language="C#" Value="public double MinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MinorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.MinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マイナーの取得 (つまり、10 進数)、ブラウザーのバージョン番号。</summary>
+        <value>ブラウザーのマイナー バージョン番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーのマイナー バージョンを返します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.MinorVersion#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.MinorVersion/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.MinorVersion#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.MinorVersion/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpUnhandledException">ヘッダーのマイナー バージョン番号が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorVersionString">
+      <MemberSignature Language="C#" Value="public string MinorVersionString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MinorVersionString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.MinorVersionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーのマイナー (小数) バージョン番号を文字列として取得します。</summary>
+        <value>ブラウザーのマイナー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MobileDeviceManufacturer">
+      <MemberSignature Language="C#" Value="public virtual string MobileDeviceManufacturer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MobileDeviceManufacturer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.MobileDeviceManufacturer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の場合は、モバイル デバイスの製造元の名前を返します。</summary>
+        <value>モバイル デバイスの製造元の名前 (既知の場合)。 既定値は、<see langword="Unknown" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MobileDeviceModel">
+      <MemberSignature Language="C#" Value="public virtual string MobileDeviceModel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MobileDeviceModel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.MobileDeviceModel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の場合は、モバイル デバイスのモデル名を取得します。</summary>
+        <value>モバイル デバイスのモデル名 (既知の場合)。 既定値は、<see langword="Unknown" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MSDomVersion">
+      <MemberSignature Language="C#" Value="public Version MSDomVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version MSDomVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.MSDomVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートする Microsoft HTML (MSHTML) ドキュメント オブジェクト モデル (DOM) のバージョンを取得します。</summary>
+        <value>ブラウザーがサポートする MSHTML DOM バージョンの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーがサポートする MSHTML DOM メジャー バージョン 1 より大きいかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.MSDomVersion#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.MSDomVersion/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.MSDomVersion#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.MSDomVersion/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfSoftkeys">
+      <MemberSignature Language="C#" Value="public virtual int NumberOfSoftkeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberOfSoftkeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.NumberOfSoftkeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モバイル デバイスでソフト キーの数を返します。</summary>
+        <value>モバイル デバイスでサポートされるソフト キーの数。 既定値は、<see langword="0" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.NumberOfSoftkeys%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+ ソフト キーは、カスタム タスクに割り当てることのできるアプリケーション特殊なキーです。 ソフト キーのテキストは、左下および右下隅に画面に表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Platform">
+      <MemberSignature Language="C#" Value="public string Platform { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Platform" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Platform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>わかっている場合は、クライアントが使用するプラットフォームの名前を取得します。</summary>
+        <value>クライアントを使用することがわかっている場合、オペレーティング システム、それ以外の場合、値に設定<see langword="Unknown" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 可能な値の一部、<xref:System.Web.Configuration.HttpCapabilitiesBase.Platform%2A>プロパティには次のようにします。  
+  
+-   `Unknown`  
+  
+-   `Win95`  
+  
+-   `Win98`  
+  
+-   `Windows NT 5.0`(Windows 2000)  
+  
+-   `Windows NT 5.1`(Windows XP)  
+  
+-   `WinNT`すべての他のバージョンの Windows NT)  
+  
+-   `Win16`  
+  
+-   `WinCE`  
+  
+-   `Mac68K`  
+  
+-   `MacPPC`  
+  
+-   `UNIX`  
+  
+-   `WebTV`  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーが、Windows NT プラットフォームで実行されているかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.Platform#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.Platform/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.Platform#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.Platform/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredImageMime">
+      <MemberSignature Language="C#" Value="public virtual string PreferredImageMime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredImageMime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.PreferredImageMime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが通常推奨するイメージ コンテンツの種類の MIME の種類を返します。</summary>
+        <value>ブラウザーが通常推奨するイメージ コンテンツの種類の MIME タイプ。 既定値は、<see langword="image/gif" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが推奨するイメージの種類を決定する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.PreferredImageMime#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.PreferredImageMime/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.PreferredImageMime#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.PreferredImageMime/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRenderingMime">
+      <MemberSignature Language="C#" Value="public virtual string PreferredRenderingMime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredRenderingMime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.PreferredRenderingMime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが通常推奨するコンテンツの種類の MIME の種類を返します。</summary>
+        <value>ブラウザーが通常推奨するコンテンツの種類の MIME タイプ。 既定値は、<see langword="text/html" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが通常推奨する MIME の種類を決定する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.PreferredRenderingMime#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.PreferredRenderingMime/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.PreferredRenderingMime#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.PreferredRenderingMime/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRenderingType">
+      <MemberSignature Language="C#" Value="public virtual string PreferredRenderingType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredRenderingType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.PreferredRenderingType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが推奨するコンテンツの種類の一般名を取得します。</summary>
+        <value>
+          <see langword="html32" /> または <see langword="chtml10" />。 既定値は、<see langword="html32" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが推奨するコンテンツの種類を決定する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.PreferredRenderingType#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.PreferredRenderingType/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.PreferredRenderingType#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.PreferredRenderingType/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRequestEncoding">
+      <MemberSignature Language="C#" Value="public virtual string PreferredRequestEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredRequestEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.PreferredRequestEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが推奨する要求のエンコーディングを取得します。</summary>
+        <value>ブラウザーが推奨する要求のエンコーディング。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredResponseEncoding">
+      <MemberSignature Language="C#" Value="public virtual string PreferredResponseEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredResponseEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.PreferredResponseEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが推奨する応答のエンコーディングを取得します。</summary>
+        <value>ブラウザーで優先される応答のエンコード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreakBeforeWmlSelectAndInput">
+      <MemberSignature Language="C#" Value="public virtual bool RendersBreakBeforeWmlSelectAndInput { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreakBeforeWmlSelectAndInput" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RendersBreakBeforeWmlSelectAndInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが前に改行を行うかどうかを示す値を取得<see langword="&lt;select&gt;" />または<see langword="&lt;input&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが前に改行を行う場合<see langword="&lt;select&gt;" />または<see langword="&lt;input&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.RendersBreakBeforeWmlSelectAndInput%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+ 場合`true`、コンテンツ次`<select>`または`<input>`要素は、新しい行に自動的に配置されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーにする前に改行がレンダリングされるかどうかを確認する方法を示しています。`<select>`または`<input>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RendersBreakBeforeWmlSelectAndInput#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersBreakBeforeWmlSelectAndInput/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RendersBreakBeforeWmlSelectAndInput#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersBreakBeforeWmlSelectAndInput/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreaksAfterHtmlLists">
+      <MemberSignature Language="C#" Value="public virtual bool RendersBreaksAfterHtmlLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreaksAfterHtmlLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RendersBreaksAfterHtmlLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがリスト項目要素の後で改行するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがリスト項目要素です。 後で改行する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`、コンテンツのリスト項目要素の後に自動的には、新しい行にします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーがリスト項目要素の後で改行するかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RendersBreaksAfterHtmlLists#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersBreaksAfterHtmlLists/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RendersBreaksAfterHtmlLists#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersBreaksAfterHtmlLists/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreaksAfterWmlAnchor">
+      <MemberSignature Language="C#" Value="public virtual bool RendersBreaksAfterWmlAnchor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreaksAfterWmlAnchor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RendersBreaksAfterWmlAnchor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがスタンドアロンの HTML の後で改行するかどうかを示す値を取得<see langword="&lt;a&gt;" />(アンカー) 要素です。</summary>
+        <value>
+          <see langword="true" />ブラウザーがスタンドアロンの HTML の後で改行するかどうかは<see langword="&lt;a&gt;" />(アンカー) 要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.RendersBreaksAfterWmlAnchor%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+ 場合`true`、次のスタンドアロンの HTML コンテンツ`<a>`(アンカー) 要素は、新しい行に自動的に配置されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーがスタンドアロン WML 後で改行するかどうかを確認する方法を示しています。 `<a>` (アンカー) 要素です。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RendersBreaksAfterWmlAnchor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersBreaksAfterWmlAnchor/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RendersBreaksAfterWmlAnchor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersBreaksAfterWmlAnchor/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreaksAfterWmlInput">
+      <MemberSignature Language="C#" Value="public virtual bool RendersBreaksAfterWmlInput { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreaksAfterWmlInput" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RendersBreaksAfterWmlInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML の後で改行するかどうかを示す値を取得<see langword="&lt;input&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML の後で改行するかどうかは<see langword="&lt;input&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.RendersBreaksAfterWmlInput%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+ 場合`true`、次の HTML コンテンツ`<input>`要素は、新しい行に自動的に配置されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーが HTML の後で改行するかどうかを確認する方法を示しています。`<input>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RendersBreaksAfterWmlInput#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersBreaksAfterWmlInput/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RendersBreaksAfterWmlInput#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersBreaksAfterWmlInput/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersWmlDoAcceptsInline">
+      <MemberSignature Language="C#" Value="public virtual bool RendersWmlDoAcceptsInline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersWmlDoAcceptsInline" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RendersWmlDoAcceptsInline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モバイル デバイスのブラウザーが WML をレンダリングするかどうかを示す値を取得<see langword="do" />-に基づいて form accept コンストラクトをソフト キーではなくインライン ボタンとして。</summary>
+        <value>
+          <see langword="true" />モバイル デバイス ブラウザーが WML 場合<see langword="do" />-ベース form accept コンストラクトをインライン ボタン; としてそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.RendersWmlDoAcceptsInline%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーが WML をレンダリングするかどうかを確認する方法を示しています。 `do`-ベース form accept コンストラクトをインライン ボタンとして。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RendersWmlDoAcceptsInline#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersWmlDoAcceptsInline/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RendersWmlDoAcceptsInline#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersWmlDoAcceptsInline/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersWmlSelectsAsMenuCards">
+      <MemberSignature Language="C#" Value="public virtual bool RendersWmlSelectsAsMenuCards { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersWmlSelectsAsMenuCards" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RendersWmlSelectsAsMenuCards" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが WML をレンダリングするかどうかを示す値を取得<see langword="&lt;select&gt;" />コンボ ボックスではなくメニュー カードとして要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML 場合<see langword="&lt;select&gt;" />要素をメニュー カードとしてそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.RendersWmlSelectsAsMenuCards%2A>プロパティ WML と互換性のあるモバイル デバイスにのみ適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーが WML をレンダリングするかどうかを確認する方法を示しています。`<select>`要素をメニュー カードとして。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RendersWmlSelectsAsMenuCards#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersWmlSelectsAsMenuCards/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RendersWmlSelectsAsMenuCards#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RendersWmlSelectsAsMenuCards/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiredMetaTagNameValue">
+      <MemberSignature Language="C#" Value="public virtual string RequiredMetaTagNameValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequiredMetaTagNameValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiredMetaTagNameValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一部のブラウザーで必要とされるメタ タグを生成するために内部的に使用します。</summary>
+        <value>一部のブラウザーで必要なメタ タグ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部使用のみを目的としています。 一部のブラウザーでは、正しく表示するためにブラウザーの次のようなメタ タグが必要です。  
+  
+```  
+<META NAME="NAME" CONTENT="VALUE">  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresAttributeColonSubstitution">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresAttributeColonSubstitution { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresAttributeColonSubstitution" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresAttributeColonSubstitution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが別の文字に置き換えられる要素の属性値内のコロンを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーにコロンを含む要素の属性値を別の文字に置き換えることが必要とする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のブラウザーでは、要素の属性値のコロンが認識されません。 場合`true`、別の文字がレンダリングの代わりに使用し、ポストバック データに返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーが別の文字に置き換えられる要素の属性値内のコロンを必要とするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresAttributeColonSubstitution#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresAttributeColonSubstitution/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresAttributeColonSubstitution#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresAttributeColonSubstitution/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresContentTypeMetaTag">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresContentTypeMetaTag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresContentTypeMetaTag" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresContentTypeMetaTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML を必要とするかどうかを示す値を取得<see langword="&lt;meta&gt;" />要素を<see langword="content-type" />属性を指定します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML が必要な場合<see langword="&lt;meta&gt;" />要素を<see langword="content-type" />属性が指定されている場合は、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`、サーバー コントロール アダプターが次のタグを HTML に挿入`<head>`Web ページの要素。  
+  
+```  
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT=""; CHARSET="">  
+```  
+  
+ この例では`CONTENT`によって返される値は、<xref:System.Web.Configuration.HttpCapabilitiesBase.PreferredRenderingMime%2A>プロパティ、および`charset`が使用する文字エンコーディングします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーが HTML を必要とするかどうかを確認する方法を示しています。`<meta>`要素を、`content-type`属性を指定します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresContentTypeMetaTag#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresContentTypeMetaTag/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresContentTypeMetaTag#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresContentTypeMetaTag/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresControlStateInSession">
+      <MemberSignature Language="C#" Value="public bool RequiresControlStateInSession { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresControlStateInSession" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresControlStateInSession" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザー セッションで保持するコントロールの状態を必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザー セッションで保持するコントロールの状態が必要な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザー セッションで保持するコントロールの状態を必要とするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresControlStateInSession#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresControlStateInSession/CS/browsercaps.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresControlStateInSession#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresControlStateInSession/VB/browsercaps_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresDBCSCharacter">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresDBCSCharacter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresDBCSCharacter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresDBCSCharacter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが 2 バイト文字セットを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが 2 バイト文字セットです。 必要な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが 2 バイト文字セットを必要とするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresDBCSCharacter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresDBCSCharacter/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresDBCSCharacter#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresDBCSCharacter/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresHtmlAdaptiveErrorReporting">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresHtmlAdaptiveErrorReporting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresHtmlAdaptiveErrorReporting" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresHtmlAdaptiveErrorReporting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが非標準のエラー メッセージを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーに非標準のエラー メッセージが必要とする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`ブラウザーが HTTP エラー メッセージを正しく表示されません。 これを修正するには、サーバー コントロール アダプターは、ブラウザー用のカスタム エラー ページを生成します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーに非標準のエラー メッセージが必要とするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresHtmlAdaptiveErrorReporting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresHtmlAdaptiveErrorReporting/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresHtmlAdaptiveErrorReporting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresHtmlAdaptiveErrorReporting/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresLeadingPageBreak">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresLeadingPageBreak { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresLeadingPageBreak" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresLeadingPageBreak" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML である Web ページの本文の最初の要素を必要とするかどうかを示す値を取得<see langword="&lt;br&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML である Web ページの本文の最初の要素が必要な場合<see langword="BR" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`、サーバー コントロール アダプターの挿入、追加`<br>`直後の要素、 `<body>` Web ページ内のタグ。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーが HTML である Web ページの本文の最初の要素を必要とするかどうかを確認する方法を示しています。`<br>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresLeadingPageBreak#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresLeadingPageBreak/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresLeadingPageBreak#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresLeadingPageBreak/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresNoBreakInFormatting">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresNoBreakInFormatting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresNoBreakInFormatting" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresNoBreakInFormatting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML をサポートしていないかどうかを示す値を取得<see langword="&lt;br&gt;" />改行の書式設定する要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートしていない場合<see langword="&lt;br&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`、ブラウザーが HTML を含むページを正しく表示できない`<br>`要素。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーが HTML をサポートしていないかどうかを確認する方法を示しています。`<br>`改行の書式設定する要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresNoBreakInFormatting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresNoBreakInFormatting/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresNoBreakInFormatting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresNoBreakInFormatting/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresOutputOptimization">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresOutputOptimization { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresOutputOptimization" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresOutputOptimization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが、サイズが最適化された形式のマークアップ言語タグが含まれるページを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />サイズが最適化された形式のマークアップ言語タグを含むページがブラウザーに必要な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`、サーバー コントロール アダプターが結果ページのサイズを縮小する最小限の出力を生成します。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.HttpCapabilitiesBase.RequiresOutputOptimization%2A>プロパティから返される`true`i モード: 互換性のあるブラウザーの場合。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーが、サイズが最適化された形式のマークアップ言語タグが含まれるページを必要とするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresOutputOptimization#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresOutputOptimization/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresOutputOptimization#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresOutputOptimization/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresPhoneNumbersAsPlainText">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresPhoneNumbersAsPlainText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresPhoneNumbersAsPlainText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresPhoneNumbersAsPlainText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがプレーン テキストに基づく電話のダイヤルをサポートするかどうか、または特殊なマークアップを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがプレーン テキストのみに基づく電話のダイヤルをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.RequiresPhoneNumbersAsPlainText%2A>プロパティが対象のブラウザーにのみ適用されます、<xref:System.Web.Configuration.HttpCapabilitiesBase.CanInitiateVoiceCall%2A>プロパティは`true`します。  
+  
+   
+  
+## Examples  
+ または、ブラウザーに電話のダイヤル操作がサポートしているかどうかを決定するプレーン テキストに基づく方法特殊なマークアップを必要とするかどうか、次のコード例に示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresPhoneNumbersAsPlainText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresPhoneNumbersAsPlainText/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresPhoneNumbersAsPlainText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresPhoneNumbersAsPlainText/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresSpecialViewStateEncoding">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresSpecialViewStateEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresSpecialViewStateEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresSpecialViewStateEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが必要かどうかを示す値を取得<see langword="VIEWSTATE" />特殊なエンコード値。</summary>
+        <value>
+          <see langword="true" />ブラウザーが必要な場合<see langword="VIEWSTATE" />特別にエンコードされた、それ以外の値<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP はステートレス プロトコルと`VIEWSTATE`は、1 つのメカニズムが複数の要求でクライアントの変更を保持するために使用します。 Web ページ上の各コントロールが含まれています、<xref:System.Web.UI.Control.ViewState%2A>プロパティで、クライアントによって行われた変更はすべての蓄積を表します。 Web フォーム ページでこれらの変更がポストバック データとしてエンコードされた、 `value` 、html`<input>`を持つ要素を`type`の属性`hidden`です。 例:  
+  
+```  
+<input type="hidden" name="__VIEWSTATE" value="t0PH_u56?cDxleHQ7P=" />  
+```  
+  
+ 場合`true`、アルファベット以外の文字、`VIEWSTATE`値が正しく送信されず、ブラウザーによっても、中間のゲートウェイでします。 これを修正するサーバー コントロール アダプターがで英数字以外の文字を置き換える、`VIEWSTATE`値 HTTP 要求でのエンコードを必要としないものとします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーが必要かどうかを確認する方法を示しています。`VIEWSTATE`特殊なエンコード値。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresSpecialViewStateEncoding#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresSpecialViewStateEncoding/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresSpecialViewStateEncoding#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresSpecialViewStateEncoding/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUniqueFilePathSuffix">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresUniqueFilePathSuffix { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUniqueFilePathSuffix" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresUniqueFilePathSuffix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが一意のフォーム アクション Url を必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが一意のフォーム アクション Url を必要とする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自己参照 HTML`<form>`要素は対象の 1 つ、`action`属性は、独自の URL を指定します。 場合`true`、自己参照フォームは、正しい結果を返しません。 これは、ブラウザーまたは中間ゲートウェイによってキャッシュのためです。 これを修正するサーバー コントロール アダプターが既定のクエリ文字列を追加 (`__ufps=``uniquefilepathsuffix`) フォームの自己参照のフォーム アクション URL 値にします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーが一意のフォーム アクション Url を必要とするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresUniqueFilePathSuffix#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresUniqueFilePathSuffix/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresUniqueFilePathSuffix#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresUniqueFilePathSuffix/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUniqueHtmlCheckboxNames">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresUniqueHtmlCheckboxNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUniqueHtmlCheckboxNames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresUniqueHtmlCheckboxNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが必要かどうかを示す値を一意に取得<see langword="name" />属性の複数の HTML 値<see langword="&lt;input type=&quot;checkbox&quot;&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが一意で必要な場合<see langword="name" />属性の複数の HTML 値<see langword="&lt;input type=&quot;checkbox&quot;&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が一意で、ブラウザーが必要かどうかを決定する方法を示します`NAME`属性の複数の HTML 値`<input type="checkbox">`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresUniqueHtmlCheckboxNames#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresUniqueHtmlCheckboxNames/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresUniqueHtmlCheckboxNames#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresUniqueHtmlCheckboxNames/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUniqueHtmlInputNames">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresUniqueHtmlInputNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUniqueHtmlInputNames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresUniqueHtmlInputNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが必要かどうかを示す値を一意に取得<see langword="name" />属性の複数の HTML 値<see langword="&lt;input&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが一意で必要な場合<see langword="name" />属性の複数の HTML 値<see langword="&lt;input&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が一意で、ブラウザーが必要かどうかを決定する方法を示します`name`属性の複数の HTML 値`<input>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresUniqueHtmlInputNames#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresUniqueHtmlInputNames/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresUniqueHtmlInputNames#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresUniqueHtmlInputNames/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUrlEncodedPostfieldValues">
+      <MemberSignature Language="C#" Value="public virtual bool RequiresUrlEncodedPostfieldValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUrlEncodedPostfieldValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.RequiresUrlEncodedPostfieldValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーによって送信されるポストバック データがあるかどうかを示す値を取得<see langword="UrlEncoded" />です。</summary>
+        <value>
+          <see langword="true" />ブラウザーによって送信されるポストバック データになる場合<see langword="UrlEncoded" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を確認する方法を示して かどうか、ブラウザー`UrlEncodes`のポストバック データ。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.RequiresUrlEncodedPostfieldValues#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresUrlEncodedPostfieldValues/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.RequiresUrlEncodedPostfieldValues#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.RequiresUrlEncodedPostfieldValues/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenBitDepth">
+      <MemberSignature Language="C#" Value="public virtual int ScreenBitDepth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenBitDepth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.ScreenBitDepth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピクセルあたりのビットで、画面の深度を返します。</summary>
+        <value>ディスプレイ画面の深度 (ピクセルあたりのビット数)。 既定値は、<see langword="1" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenCharactersHeight">
+      <MemberSignature Language="C#" Value="public virtual int ScreenCharactersHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenCharactersHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.ScreenCharactersHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字の行数で、ディスプレイのおおよその高さを返します。</summary>
+        <value>文字の行数としての、ディスプレイのおおよその高さ。 既定値は、<see langword="6" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値は、文字の推定サイズと実際の画面のピクセル サイズから派生できます。 高さを決定するためのアルゴリズムでは、既定のフォント サイズ (.config ファイルを含む) から、ブラウザーに固有のサイズ (ここでも、.config ファイルの場合) と、ブラウザーによって送信された明示的なヘッダーの組み合わせを使用します。 一部のブラウザーは、内部の既定値は、実際の高さのおおよその値に依存可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenCharactersWidth">
+      <MemberSignature Language="C#" Value="public virtual int ScreenCharactersWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenCharactersWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.ScreenCharactersWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイのおおよその幅を文字数で返します。</summary>
+        <value>ディスプレイのおおよその幅 (文字数)。 既定値は、<see langword="12" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値は、文字の推定サイズと実際の画面のピクセル サイズから派生できます。 幅を決定するためのアルゴリズムでは、既定のフォント サイズ (.config ファイルを含む) から、デバイスに固有のサイズ (ここでも、.config ファイルの場合) と、デバイスによって送信される明示的なヘッダーの組み合わせを使用します。 これらの値は必ずしも正確ではありません (可変幅フォントの場合は、特に、これらの値は概算) です。 一部のデバイスは、内部の既定値は、実際の幅のおおよその値に依存可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenPixelsHeight">
+      <MemberSignature Language="C#" Value="public virtual int ScreenPixelsHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenPixelsHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.ScreenPixelsHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイのおおよその高さをピクセル単位で返します。</summary>
+        <value>ディスプレイ画面のおおよその高さ (ピクセル単位)。 既定値は、<see langword="72" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値は、文字の推定サイズと文字の高さから派生できます。 ピクセルの高さを決定するためのアルゴリズムでは、既定のフォント サイズ (.config ファイルを含む) から、デバイスに固有のサイズ (ここでも、.config ファイルの場合) と、デバイスによって送信される明示的なヘッダーの組み合わせを使用します。 これらの値は、必ずしも正確ではありません。 一部のデバイスは、内部の既定値は、実際の高さのおおよその値に依存可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenPixelsWidth">
+      <MemberSignature Language="C#" Value="public virtual int ScreenPixelsWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenPixelsWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.ScreenPixelsWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイのおおよその幅をピクセル単位で返します。</summary>
+        <value>ディスプレイ画面のおおよその幅 (ピクセル単位)。 既定値は、<see langword="96" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値は、文字の推定サイズと文字の幅から派生できます。 ピクセル幅を決定するためのアルゴリズムでは、既定のフォント サイズ (.config ファイルを含む) から、デバイスに固有のサイズ (ここでも、.config ファイルの場合) と、デバイスによって送信される明示的なヘッダーの組み合わせを使用します。 これらの値は必ずしも正確ではありません (可変幅フォントの場合は、特に、これらの値は概算) です。 一部のデバイスは、内部の既定値は、実際の幅のおおよその値に依存可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsAccesskeyAttribute">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsAccesskeyAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsAccesskeyAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsAccesskeyAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="ACCESSKEY" /> HTML の属性<see langword="&lt;a&gt;" />(アンカー) と<see langword="&lt;input&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="accesskey" /> HTML の属性<see langword="&lt;a&gt;" />(アンカー) と<see langword="&lt;input&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `accesskey`属性では、モバイルおよびアクセス可能なプラットフォームに Web ページ上のフォームとリンクのコントロールを拡張ソフト キーまたは HTML と対話するデバイス上の他のコント ローラーを割り当てることによって`<a>`(アンカー) と`<input>`要素。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーがサポートするかどうかを確認する方法を示しています、 `accesskey` HTML の属性`<a>`(アンカー) と`<input>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsAccesskeyAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsAccesskeyAttribute/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsAccesskeyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsAccesskeyAttribute/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsBodyColor">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsBodyColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsBodyColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsBodyColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="bgcolor" /> html 属性<see langword="&lt;body&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="bgcolor" /> html 属性<see langword="&lt;body&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーがサポートするかどうかを確認する方法を示しています、 `bgcolor` html 属性`<body>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsBodyColor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsBodyColor/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsBodyColor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsBodyColor/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsBold">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsBold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsBold" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsBold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML をサポートするかどうかを示す値を取得<see langword="&lt;b&gt;" />要素による太字テキストを書式設定します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートする場合は<see langword="&lt;b&gt;" />要素による太字のテキストを書式設定それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーが HTML をサポートしているかどうかを確認する方法を示しています。`<b>`要素による太字テキストを書式設定します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsBold#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsBold/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsBold#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsBold/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsCacheControlMetaTag">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsCacheControlMetaTag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsCacheControlMetaTag" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsCacheControlMetaTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、<see langword="cache-control" />値を<see langword="http-equiv" />HTML の属性<see langword="&lt;meta&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、<see langword="cache-control" />値を<see langword="http-equiv" />HTML の属性<see langword="&lt;meta&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `cache-control`値を`http-equiv`HTML の属性`<meta>`要素により、クライアントを制御のキャッシュ Web ページが含まれているコンテンツをダウンロードします。 次の HTML フラグメントは、例を示します。  
+  
+```  
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE"/>  
+```  
+  
+ 場合`true`でこのタグを含めること、 `<head>` Web ページの要素がブラウザーでサーバーからコンテンツを再読み込みを強制する必要があります。  
+  
+ 場合`false`、サーバー コントロール アダプターが既定のクエリ文字列を追加 (`__ufps=``uniquefilepathsuffix`) を既に持っていないリンク URL の値にします。 これにより、ブラウザーでサーバーからコンテンツを再読み込みされます。  
+  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.SupportsCacheControlMetaTag%2A>プロパティは、HTTP ヘッダー、同等のフォームにも適用されます。  
+  
+```  
+CACHE-CONTROL: NO-CACHE  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーがサポートするかどうかを確認する方法を示しています、`cache-control`値を`http-equiv`HTML の属性`<meta>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsCacheControlMetaTag#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsCacheControlMetaTag/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsCacheControlMetaTag#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsCacheControlMetaTag/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsCallback">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsCallback { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがコールバック スクリプトをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがコールバック スクリプトをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーがコールバック スクリプトをサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsCallback#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsCallback/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsCallback#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsCallback/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsCss">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsCss { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsCss" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsCss" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがカスケード スタイル シート (CSS) をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが CSS; をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが CSS をサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsCss#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsCss/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsCss#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsCss/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDivAlign">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsDivAlign { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDivAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsDivAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="align" /> HTML の属性<see langword="&lt;div&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="align" /> HTML の属性<see langword="&lt;div&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML `<div>` CSS スタイルは、全体に適用できるように、複数の HTML 要素をグループ化する要素を使用します。 `align`属性の水平方向の配置の設定、 `<div>` Web ページにグループ化します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーがサポートするかどうかを確認する方法を示しています、 `align` HTML の属性`<div>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsDivAlign#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsDivAlign/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsDivAlign#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsDivAlign/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDivNoWrap">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsDivNoWrap { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDivNoWrap" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsDivNoWrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="nowrap" /> HTML の属性<see langword="&lt;div&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="nowrap" /> HTML の属性<see langword="&lt;div&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML `<div>` CSS スタイルは、全体に適用できるように、複数の HTML 要素をグループ化する要素を使用します。 `nowrap`属性は、内の要素が含まれていることを指定します、`<div>`グループの新しい行の折り返しをしないで互いに隣接ままにする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーがサポートするかどうかを確認する方法を示しています、 `nowrap` HTML の属性`<div>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsDivNoWrap#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsDivNoWrap/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsDivNoWrap#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsDivNoWrap/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsEmptyStringInCookieValue">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsEmptyStringInCookieValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsEmptyStringInCookieValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsEmptyStringInCookieValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが空かどうかを示す値を取得 (<see langword="null" />) cookie 値内での文字列。</summary>
+        <value>
+          <see langword="true" />ブラウザーが空サポートしている場合 (<see langword="null" />) cookie 値内で文字列それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーが空かどうかを確認する方法を示しています (`null`) cookie 値内での文字列。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsEmptyStringInCookieValue#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsEmptyStringInCookieValue/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsEmptyStringInCookieValue#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsEmptyStringInCookieValue/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsFontColor">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsFontColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsFontColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsFontColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="color" /> HTML の属性<see langword="&lt;font&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="color" /> HTML の属性<see langword="&lt;font&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーがサポートするかどうかを確認する方法を示しています、 `color` HTML の属性`<font>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsFontColor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsFontColor/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsFontColor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsFontColor/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsFontName">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsFontName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsFontName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsFontName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="name" /> HTML の属性<see langword="&lt;font&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="name" /> HTML の属性<see langword="&lt;font&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーがサポートするかどうかを確認する方法を示しています、 `name` HTML の属性`<font>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsFontName#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsFontName/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsFontName#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsFontName/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsFontSize">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsFontSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsFontSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsFontSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="size" /> HTML の属性<see langword="&lt;font&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="size" /> HTML の属性<see langword="&lt;font&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーがサポートするかどうかを確認する方法を示しています、 `size` HTML の属性`<font>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsFontSize#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsFontSize/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsFontSize#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsFontSize/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsImageSubmit">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsImageSubmit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsImageSubmit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsImageSubmit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが標準のフォーム送信ボタンの代わりにカスタム イメージの使用をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />標準のフォーム送信ボタン; の代わりにカスタム イメージを使用して、ブラウザーがサポートされている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーが標準のフォーム送信ボタンの代わりにカスタム イメージの使用をサポートしているかどうかを確認する方法を示しています。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsImageSubmit#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsImageSubmit/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsImageSubmit#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsImageSubmit/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsIModeSymbols">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsIModeSymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsIModeSymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsIModeSymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが i モード記号をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが i モード記号; をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.SupportsInputMode%2A>プロパティのみに i モード: 互換性のあるデバイスに適用されます。  
+  
+ 使用して i 固有の絵文字を互換モード i - ブラウザーの設定、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーが i モード記号をサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsIModeSymbols#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsIModeSymbols/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsIModeSymbols#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsIModeSymbols/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsInputIStyle">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsInputIStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsInputIStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsInputIStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="istyle" /> HTML の属性<see langword="&lt;input&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="istyle" /> HTML の属性<see langword="&lt;input&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.SupportsInputMode%2A>プロパティのみに i モード: 互換性のあるデバイスに適用されます。  
+  
+ `istyle`属性が i モード互換のブラウザーで入力テキスト入力フィールドのスタイルを設定するために使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーがサポートするかどうかを確認する方法を示しています、 `istyle` HTML の属性`<input>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsInputIStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsInputIStyle/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsInputIStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsInputIStyle/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsInputMode">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsInputMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsInputMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsInputMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="mode" /> HTML の属性<see langword="&lt;input&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="mode" /> HTML の属性<see langword="&lt;input&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.SupportsInputMode%2A>プロパティのみに i モード: 互換性のあるデバイスに適用されます。  
+  
+ `MODE`属性が i モード互換のブラウザーで、テキスト入力フィールドの入力モードを設定するために使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーがサポートするかどうかを確認する方法を示しています、 `mode` HTML の属性`<input>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsInputMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsInputMode/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsInputMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsInputMode/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsItalic">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsItalic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsItalic" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsItalic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML をサポートするかどうかを示す値を取得<see langword="&lt;i&gt;" />要素による斜体のテキストを書式設定します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートする場合は<see langword="&lt;i&gt;" />要素による斜体のテキストを書式設定それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーが HTML をサポートしているかどうかを確認する方法を示しています。`<i>`要素による斜体のテキストを書式設定します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsItalic#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsItalic/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsItalic#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsItalic/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsJPhoneMultiMediaAttributes">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsJPhoneMultiMediaAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsJPhoneMultiMediaAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsJPhoneMultiMediaAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが J-phone のマルチ メディア属性をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが J-phone のマルチ メディア属性をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.SupportsJPhoneMultiMediaAttributes%2A>プロパティ J Phone – 互換性のあるモバイル デバイスにのみ適用されます。  
+  
+ J-phone は、HTML、に基づいて J 互換ブラウザー、マークアップ言語仕様です。 場合`true`、ブラウザーが HTML の追加の属性をサポートする`<a>`(アンカー) と`<select>`要素。 サポートされるその他の属性は次のとおりです。  
+  
+-   `src`  
+  
+-   `soundstart`  
+  
+-   `loop`  
+  
+-   `volume`  
+  
+-   `vibration`  
+  
+-   `viblength`  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーが J-phone のマルチ メディア属性をサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsJPhoneMultiMediaAttributes#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsJPhoneMultiMediaAttributes/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsJPhoneMultiMediaAttributes#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsJPhoneMultiMediaAttributes/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsJPhoneSymbols">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsJPhoneSymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsJPhoneSymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsJPhoneSymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが J 固有の絵文字をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが J 固有の画像シンボルをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.SupportsJPhoneSymbols%2A>プロパティ J Phone – 互換性のあるモバイル デバイスにのみ適用されます。  
+  
+ 使用して J 固有の絵文字を J 互換ブラウザーの設定、<xref:System.Web.UI.WebControls.Image.ImageUrl%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーが J 固有の絵文字をサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsJPhoneSymbols#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsJPhoneSymbols/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsJPhoneSymbols#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsJPhoneSymbols/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsQueryStringInFormAction">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsQueryStringInFormAction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsQueryStringInFormAction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsQueryStringInFormAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のクエリ文字列をブラウザーがサポートしているかどうかを示す値を取得、<see langword="action" />属性の値の HTML<see langword="&lt;form&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザー内のクエリ文字列をサポートしている場合、<see langword="action" />属性の値の HTML<see langword="&lt;form&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`false`、HTML としてのポストバック データにクエリ文字列パラメーターから送信される`<input>`要素を`type`属性に設定`hidden`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ブラウザーがの値のクエリ文字列をサポートしているかどうかを確認する方法を示しています、 `action` HTML の属性`<form>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsQueryStringInFormAction#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsQueryStringInFormAction/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsQueryStringInFormAction#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsQueryStringInFormAction/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsRedirectWithCookie">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsRedirectWithCookie { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsRedirectWithCookie" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsRedirectWithCookie" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがリダイレクトで cookie をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがリダイレクト; で cookie をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用します。ブラウザー 4.1 またはアップします。ブラウザー 3.2、<xref:System.Web.HttpResponse.Redirect%2A>メソッドの動作としての値、<xref:System.Web.Configuration.HttpCapabilitiesBase.SupportsRedirectWithCookie%2A>のプロパティ、<xref:System.Web.HttpBrowserCapabilities>オブジェクトが`false`がない限り、<xref:System.Web.Configuration.SessionStateSection.Cookieless%2A>プロパティに、 <xref:System.Web.Configuration.SystemWebSectionGroup.SessionState%2A> Web.config のセクションが明示的に設定されて`true`です。  
+  
+ ASP.NET 1.1 では、この設定のオプションは`true`または`false`が ASP.NET 2.0 では、選択肢を展開すると、および<xref:System.Web.HttpCookieMode.AutoDetect>既定の設定になります。 Web アプリケーションがある場合、`cookieless`の属性、`<sessionState>`はブール値に設定する Web.config ファイルでセクション<xref:System.Web.HttpResponse.Redirect%2A>これらのブラウザーの期待通りに動作します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ブラウザーがリダイレクトで cookie をサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsRedirectWithCookie#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsRedirectWithCookie/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsRedirectWithCookie#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsRedirectWithCookie/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsSelectMultiple">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsSelectMultiple { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsSelectMultiple" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsSelectMultiple" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="multiple" /> HTML の属性<see langword="&lt;select&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="multiple" /> HTML の属性<see langword="&lt;select&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーがサポートするかどうかを確認する方法を示しています、 `multiple` HTML の属性`<select>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsSelectMultiple#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsSelectMultiple/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsSelectMultiple#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsSelectMultiple/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsUncheck">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsUncheck { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsUncheck" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsUncheck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかチェックされた HTML の消去<see langword="&lt;input type=checkbox&gt;" />要素がポストバック データに反映されます。</summary>
+        <value>
+          <see langword="true" />場合チェックされた HTML の消去<see langword="&lt;input type=checkbox&gt;" />要素は、それ以外のポストバック データに反映される<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`false`の値、 `checked` HTML の属性`<input type=checkbox>`ポストバック データから要素を省略するとします。  
+  
+   
+  
+## Examples  
+ 次のコード例を確認する方法を示して かどうかチェックされた HTML の消去`<input type=checkbox>`要素がポストバック データに反映されます。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsUncheck#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsUncheck/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsUncheck#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsUncheck/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsXmlHttp">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsXmlHttp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsXmlHttp" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsXmlHttp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTTP 経由での XML の受信をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTTP; 経由で受信側の XML をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーが HTTP 経由での XML の受信をサポートしているかどうかを確認する方法を示しています。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.SupportsXmlHttp#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsXmlHttp/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.SupportsXmlHttp#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.SupportsXmlHttp/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IFilterResolutionService.CompareFilters">
+      <MemberSignature Language="C#" Value="int IFilterResolutionService.CompareFilters (string filter1, string filter2);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Web.UI.IFilterResolutionService.CompareFilters(string filter1, string filter2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesBase.System#Web#UI#IFilterResolutionService#CompareFilters(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter1" Type="System.String" />
+        <Parameter Name="filter2" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filter1">比較する最初のフィルター。</param>
+        <param name="filter2">比較する 2 番目のフィルター。</param>
+        <summary>フィルターを比較する目的で内部的に使用されます。</summary>
+        <returns>場合は、1<paramref name="filter1" />の親である<paramref name="filter2" />; 場合は-1<paramref name="filter2" />の親である<paramref name="filter1" />。 0 との間の親子リレーションシップがない場合<paramref name="filter1" />と<paramref name="filter2" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IFilterResolutionService.EvaluateFilter">
+      <MemberSignature Language="C#" Value="bool IFilterResolutionService.EvaluateFilter (string filterName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Web.UI.IFilterResolutionService.EvaluateFilter(string filterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.HttpCapabilitiesBase.System#Web#UI#IFilterResolutionService#EvaluateFilter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filterName">評価するフィルター。</param>
+        <summary>フィルターを評価する目的で内部的に使用されます。</summary>
+        <returns>
+          フィルターが正常に評価された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tables">
+      <MemberSignature Language="C#" Value="public bool Tables { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Tables" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Tables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML をサポートするかどうかを示す値を取得<see langword="&lt;table&gt;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートする場合は<see langword="&lt;table&gt;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ブラウザーが HTML をサポートしているかどうかを確認する方法を示しています。`<table>`要素。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.Tables#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.Tables/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.Tables#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.Tables/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagWriter">
+      <MemberSignature Language="C#" Value="public Type TagWriter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TagWriter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.TagWriter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザー用のタグを記述するために使用されるオブジェクトの型を取得する目的で、内部的に使用されます。</summary>
+        <value><see cref="T:System.Type" />のブラウザーのタグを書き込むために使用するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpUnhandledException">解析エラーがあります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーの名前およびメジャー (整数) バージョン番号を取得します。</summary>
+        <value>ブラウザーの名前とメジャー バージョン番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが Internet Explorer version 6 であるかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.Type#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.Type/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.Type#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.Type/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseOptimizedCacheKey">
+      <MemberSignature Language="C#" Value="public bool UseOptimizedCacheKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseOptimizedCacheKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.UseOptimizedCacheKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最適化されたキャッシュ キーを使用するかどうかを示す値を取得するには、内部的に使用します。</summary>
+        <value>
+          <see langword="true" />最適化されたキャッシュ キー; を使用するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VBScript">
+      <MemberSignature Language="C#" Value="public bool VBScript { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool VBScript" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.VBScript" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが Visual Basic Scripting edition (VBScript) をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが VBScript; をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが VBScript をサポートするかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.VBScript#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.VBScript/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.VBScript#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.VBScript/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public string Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーの完全なバージョン番号 (整数と小数) を文字列として取得します。</summary>
+        <value>ブラウザーの完全なバージョン番号 (文字列)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase.Version%2A>プロパティ文字列を返します。 一部のシナリオで、<xref:System.Web.Configuration.HttpCapabilitiesBase.Version%2A>ブラウザーまたはクライアント デバイスの場合などです"ベータ版であるとプロパティがアルファベット文字を含める可能性があります。 正しくバージョンを取得する、数値の比較で使用できるデータ型として、連結、<xref:System.Web.Configuration.HttpCapabilitiesBase.MajorVersion%2A>と<xref:System.Web.Configuration.HttpCapabilitiesBase.MinorVersion%2A>プロパティの値。  
+  
+   
+  
+## Examples  
+ 次のコード例を確認する方法を示しています、<xref:System.Web.Configuration.HttpCapabilitiesBase.Version%2A>ブラウザーのです。 <xref:System.Web.Configuration.HttpCapabilitiesBase.MajorVersion%2A>プロパティおよび<xref:System.Web.Configuration.HttpCapabilitiesBase.MinorVersion%2A>プロパティを連結して、結果を使用してブラウザーのバージョンが 5.01 より大きいかどうかを判断します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.Version#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.Version/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.Version#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.Version/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="W3CDomVersion">
+      <MemberSignature Language="C#" Value="public Version W3CDomVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version W3CDomVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.W3CDomVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートする World Wide Web コンソーシアム (W3C) XML ドキュメント オブジェクト モデル (DOM) のバージョンを取得します。</summary>
+        <value>ブラウザーがサポートする W3C XML DOM のバージョン番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザー W3C XML DOM のバージョンが 1 より大きいかどうかを判断する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.W3CDomVersion#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.W3CDomVersion/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.W3CDomVersion#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.W3CDomVersion/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Win16">
+      <MemberSignature Language="C#" Value="public bool Win16 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Win16" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Win16" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが Win16 ベースのコンピューターであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが Win16 ベースのコンピューターで実行されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、ブラウザーが Win16 ベースのコンピューターで実行されているかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.Win16#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.Win16/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.Win16#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.Win16/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Win32">
+      <MemberSignature Language="C#" Value="public bool Win32 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Win32" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.HttpCapabilitiesBase.Win32" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが Win32 ベースのコンピューターであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />クライアントが Win32 ベースのコンピューターである場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、クライアントが Win32 ベースのコンピューターかどうかを判断する方法を示します。  
+  
+ [!code-aspx-csharp[HttpCapabilitiesBase.Win32#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpCapabilitiesBase.Win32/CS/sample_cs.aspx#1)]
+ [!code-aspx-vb[HttpCapabilitiesBase.Win32#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpCapabilitiesBase.Win32/VB/sample_vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

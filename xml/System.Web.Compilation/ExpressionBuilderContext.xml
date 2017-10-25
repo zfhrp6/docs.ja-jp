@@ -1,0 +1,107 @@
+<Type Name="ExpressionBuilderContext" FullName="System.Web.Compilation.ExpressionBuilderContext">
+  <TypeSignature Language="C#" Value="public sealed class ExpressionBuilderContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ExpressionBuilderContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ExpressionBuilderContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンテキストを提供する<see cref="T:System.Web.Compilation.ExpressionBuilder" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ExpressionBuilderContext>仮想パスを取得するオブジェクトが使用される通常または<xref:System.Web.UI.Control.TemplateControl%2A>式ビルダーで使用するためのプロパティです。 詳細については、「<xref:System.Web.Configuration.ExpressionBuilder>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpressionBuilderContext (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ExpressionBuilderContext.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">指定したに関連付けられているファイルの仮想パス<see cref="T:System.Web.Compilation.ExpressionBuilder" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Compilation.ExpressionBuilderContext" />クラスの指定した仮想パスを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpressionBuilderContext (System.Web.UI.TemplateControl templateControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.TemplateControl templateControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ExpressionBuilderContext.#ctor(System.Web.UI.TemplateControl)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="templateControl" Type="System.Web.UI.TemplateControl" />
+      </Parameters>
+      <Docs>
+        <param name="templateControl"><see cref="T:System.Web.UI.TemplateControl" />を指定して使用する<see cref="T:System.Web.Compilation.ExpressionBuilder" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Compilation.ExpressionBuilderContext" />クラスの指定したテンプレート コントロールを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateControl">
+      <MemberSignature Language="C#" Value="public System.Web.UI.TemplateControl TemplateControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.TemplateControl TemplateControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ExpressionBuilderContext.TemplateControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.TemplateControl</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>提供、<see cref="T:System.Web.Compilation.ExpressionBuilder" />オブジェクトへの参照を<see cref="T:System.Web.UI.TemplateControl" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.TemplateControl" />この式を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 式ビルダーは、評価、または解析の式の値を含むページに関する追加情報を必要があります。  
+  
+ これは、ようにすると、<xref:System.Web.Compilation.ExpressionBuilder>必要になる可能性があるページに関する情報を持つオブジェクト。 コントロールのインスタンスが、コントロール テンプレートの一部である、<xref:System.Web.Compilation.ExpressionBuilderContext.TemplateControl%2A>プロパティに含まれるコントロールへの参照が含まれています。 詳細については、「<xref:System.Web.UI.TemplateControl>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualPath">
+      <MemberSignature Language="C#" Value="public string VirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ExpressionBuilderContext.VirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているファイルへの仮想パスを返します、<see cref="T:System.Web.Compilation.ExpressionBuilderContext" />オブジェクト。</summary>
+        <value>関連付けられているファイルの仮想パス、<see cref="T:System.Web.Compilation.ExpressionBuilderContext" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

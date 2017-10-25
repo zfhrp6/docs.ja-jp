@@ -1,0 +1,157 @@
+<Type Name="ProtectedData" FullName="System.Security.Cryptography.ProtectedData">
+  <TypeSignature Language="C#" Value="public sealed class ProtectedData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProtectedData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.ProtectedData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.ProtectedData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データの暗号化と暗号化解除のためのメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、データ保護 API (DPAPI) Microsoft Windows 2000 以降のオペレーティング システムで使用可能なにアクセスを提供します。 これは、サービスは、オペレーティング システムによって提供され、追加のライブラリが不要です。 暗号化またはデータの暗号化を解除するユーザーまたはコンピューターの資格情報を使用して保護を提供します。  
+  
+ クラスから成る 2 つのラッパー、アンマネージの DPAPI の<xref:System.Security.Cryptography.ProtectedData.Protect%2A>と<xref:System.Security.Cryptography.ProtectedData.Unprotect%2A>です。 これら 2 つのメソッドは、暗号化し、パスワード、キー、および接続文字列などのデータを復号化に使用できます。  
+  
+ 権限借用中にこれらのメソッドを使用する場合は、次のエラーを発生する可能性があります:「指定された状態で使用するキーは無効です」 これは、DPAPI がユーザー プロファイルで主要なデータを格納するために発生します。 プロファイルが読み込まれていない場合は、DPAPI を復号化を実行することはできません。 このエラーを回避するには、いずれかのメソッドを呼び出す前に権限を借用するユーザーのプロファイルを読み込みます。 権限借用で DPAPI を使用して重大な問題が発生する可能性し、慎重に設計の選択肢が必要です。  
+  
+   
+  
+## Examples  
+ 次の例では、データ保護を使用する方法を示します。  
+  
+ [!code-cpp[Cryptography.DataProtectionSample#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.DataProtectionSample/CPP/dataprotectionsample.cpp#1)]
+ [!code-csharp[Cryptography.DataProtectionSample#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.DataProtectionSample/CS/dataprotectionsample.cs#1)]
+ [!code-vb[Cryptography.DataProtectionSample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.DataProtectionSample/vb/dataprotectionsample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Protect">
+      <MemberSignature Language="C#" Value="public static byte[] Protect (byte[] userData, byte[] optionalEntropy, System.Security.Cryptography.DataProtectionScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] Protect(unsigned int8[] userData, unsigned int8[] optionalEntropy, valuetype System.Security.Cryptography.DataProtectionScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[],System.Security.Cryptography.DataProtectionScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.ProtectedData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userData" Type="System.Byte[]" />
+        <Parameter Name="optionalEntropy" Type="System.Byte[]" />
+        <Parameter Name="scope" Type="System.Security.Cryptography.DataProtectionScope" />
+      </Parameters>
+      <Docs>
+        <param name="userData">暗号化するデータを格納するバイト配列。</param>
+        <param name="optionalEntropy">省略可能な追加のバイト配列を使用して、暗号化の複雑さを増やすか<see langword="null" />なしの複雑さのです。</param>
+        <param name="scope">暗号化のスコープを指定する列挙値のいずれか。</param>
+        <summary>指定されたバイト配列のデータを暗号化し、暗号化されたデータを含むバイト配列を返します。</summary>
+        <returns>暗号化されたデータを表すバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パスワード、キー、または接続文字列などのデータの暗号化に使用できます。 `optionalEntropy`パラメーターの暗号化の複雑性を向上させるデータを追加することができます。 指定`null`のない複雑さが増大します。 指定した場合、この情報も使わなければならないを使用してデータを復号化するときに、<xref:System.Security.Cryptography.ProtectedData.Unprotect%2A>メソッドです。  
+  
+> [!NOTE]
+>  権限借用中にこのメソッドを使用する場合は、次のエラーを発生する可能性があります:「指定された状態で使用するキーは無効です」 このエラーを回避するには、メソッドを呼び出す前に権限を借用するユーザーのプロファイルを読み込みます。  
+  
+   
+  
+## Examples  
+ 次の例では、データ保護を使用する方法を示します。  
+  
+ [!code-cpp[Cryptography.DataProtectionSample#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.DataProtectionSample/CPP/dataprotectionsample.cpp#1)]
+ [!code-csharp[Cryptography.DataProtectionSample#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.DataProtectionSample/CS/dataprotectionsample.cs#1)]
+ [!code-vb[Cryptography.DataProtectionSample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.DataProtectionSample/vb/dataprotectionsample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="userData" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">暗号化に失敗しました。</exception>
+        <exception cref="T:System.NotSupportedException">オペレーティング システムは、このメソッドをサポートしていません。</exception>
+        <exception cref="T:System.OutOfMemoryException">システムは、データの暗号化中にメモリ不足になりました。</exception>
+        <permission cref="T:System.Security.Permissions.DataProtectionPermission">関連付けられている<see cref="P:System.Security.Permissions.DataProtectionPermissionAttribute.ProtectData" />データを保護するアクセス許可のフラグ。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Unprotect">
+      <MemberSignature Language="C#" Value="public static byte[] Unprotect (byte[] encryptedData, byte[] optionalEntropy, System.Security.Cryptography.DataProtectionScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] Unprotect(unsigned int8[] encryptedData, unsigned int8[] optionalEntropy, valuetype System.Security.Cryptography.DataProtectionScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ProtectedData.Unprotect(System.Byte[],System.Byte[],System.Security.Cryptography.DataProtectionScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.ProtectedData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedData" Type="System.Byte[]" />
+        <Parameter Name="optionalEntropy" Type="System.Byte[]" />
+        <Parameter Name="scope" Type="System.Security.Cryptography.DataProtectionScope" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedData">使用して暗号化されたデータを格納するバイト配列、<see cref="M:System.Security.Cryptography.ProtectedData.Protect(System.Byte[],System.Byte[],System.Security.Cryptography.DataProtectionScope)" />メソッドです。</param>
+        <param name="optionalEntropy">データの暗号化に使用された後、省略可能な追加のバイト配列または<see langword="null" />場合は、追加のバイト配列は使用されませんでした。</param>
+        <param name="scope">データの暗号化に使用されたデータ保護のスコープを指定する列挙値のいずれか。</param>
+        <summary>指定されたバイト配列のデータの暗号化を解除し、暗号化解除されたデータを含むバイト配列を返します。</summary>
+        <returns>暗号化解除されたデータを表すバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して暗号化されたデータの保護を解除するために使用できます、<xref:System.Security.Cryptography.ProtectedData.Protect%2A>メソッドです。 場合、`optionalEntropy`暗号化中に使用されたパラメーター、データの暗号化を解除することを指定する必要があります。  
+  
+> [!NOTE]
+>  権限借用中にこのメソッドを使用する場合は、次のエラーを発生する可能性があります:「指定された状態で使用するキーは無効です」 このエラーを回避するには、メソッドを呼び出す前に権限を借用するユーザーのプロファイルを読み込みます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、データ保護を使用する方法を示します。  
+  
+ [!code-cpp[Cryptography.DataProtectionSample#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.DataProtectionSample/CPP/dataprotectionsample.cpp#1)]
+ [!code-csharp[Cryptography.DataProtectionSample#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.DataProtectionSample/CS/dataprotectionsample.cs#1)]
+ [!code-vb[Cryptography.DataProtectionSample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.DataProtectionSample/vb/dataprotectionsample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="encryptedData" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">復号化に失敗しました。</exception>
+        <exception cref="T:System.NotSupportedException">オペレーティング システムは、このメソッドをサポートしていません。</exception>
+        <exception cref="T:System.OutOfMemoryException">メモリが不足しています。</exception>
+        <permission cref="T:System.Security.Permissions.DataProtectionPermission">関連付けられている<see cref="P:System.Security.Permissions.DataProtectionPermissionAttribute.UnprotectData" />データの保護を解除するアクセス許可のフラグ。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

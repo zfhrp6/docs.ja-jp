@@ -1,0 +1,43 @@
+<Namespace Name="System.Speech.Synthesis">
+  <Docs>
+    <summary><c>N:System.Speech.Synthesis</c>名前空間には、初期化して、イベントに応答して、音声を変更するための音声を生成するためのプロンプトを作成するための音声合成エンジンを構成するためのクラスが含まれています。特性です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **初期化し、構成**  
+  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>クラスは、ホスト コンピューターにインストールされている音声合成エンジンの機能へのアクセスを提供します。 音声合成エンジンが、音声、たとえば Microsoft Anna によって表されるをインストールします。 A<xref:System.Speech.Synthesis.SpeechSynthesizer>既定の音声にインスタンスを初期化します。 構成するのには<xref:System.Speech.Synthesis.SpeechSynthesizer>インスタンスが、その他のインストールされている声、呼び出しのいずれかを使用する、<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice%2A>または<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints%2A>メソッドです。 音声のインストールに関する情報を取得する、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドです。  
+  
+ 出力をルーティングすることができます、<xref:System.Speech.Synthesis.SpeechSynthesizer>ストリーム、ファイル、既定のオーディオ デバイスまたはメソッドのいずれかを使用して null デバイス、<xref:System.Speech.Synthesis.SpeechSynthesizer>クラスで始まる名前"`SetOutputTo`"です。  
+  
+ **プロンプトを作成します。**  
+  
+ 1 つのメソッドを使用して、<xref:System.Speech.Synthesis.PromptBuilder>クラスで始まる名前"`Append`"のプロンプト テキスト、音声合成マークアップ言語 (SSML) からコンテンツを含むファイルのテキストまたは SSML マークアップ、またはオーディオ録音済みのファイルをビルドします。  
+  
+ 参照してください[複雑なメッセージを構築する](http://msdn.microsoft.com/en-us/552cb356-7344-473e-b0f2-7a9983f8c1a4)で、[システム音声プログラミング ガイド .NET Framework 4.0 用](http://msdn.microsoft.com/en-us/610116c7-3817-40ff-857b-5d41e8511043)詳細と例についてはします。  
+  
+ **音声を生成します。**  
+  
+ 文字列からまたは音声の生成に、<xref:System.Speech.Synthesis.Prompt>または<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>メソッドです。 SSML マークアップから音声を生成するには、使用、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>メソッドです。 参照してください[音声合成マークアップ言語リファレンス](http://msdn.microsoft.com/en-us/0c51279e-84d2-4f73-a924-8832039abf94)SSML マークアップをガイドします。  
+  
+ 使用して単語の発音をガイドすることができます、<xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithHint%2A>または<xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithPronunciation%2A>メソッドとの辞書を切り替えることにより、<xref:System.Speech.Synthesis.SpeechSynthesizer>インスタンスを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.AddLexicon%2A>と<xref:System.Speech.Synthesis.SpeechSynthesizer.RemoveLexicon%2A>メソッドです。  
+  
+ **イベントに応答します。**  
+  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>クラスには、音声アプリケーションに通知されるイベントが含まれること、<xref:System.Speech.Synthesis.SpeechSynthesizer>によって報告されたプロンプトで、特定の機能が発生しました、 <xref:System.Speech.Synthesis.SpeakProgressEventArgs>、 <xref:System.Speech.Synthesis.BookmarkReachedEventArgs>、 <xref:System.Speech.Synthesis.PhonemeReachedEventArgs>、および<xref:System.Speech.Synthesis.VisemeReachedEventArgs>クラスです。  
+  
+ 先頭と末尾のプロンプトを話すの情報を取得する、<xref:System.Speech.Synthesis.SpeechSynthesizer>を使用して、<xref:System.Speech.Synthesis.SpeakStartedEventArgs>と<xref:System.Speech.Synthesis.SpeakCompletedEventArgs>クラスです。  
+  
+ 参照してください[音声合成イベントを使用した](http://msdn.microsoft.com/en-us/09bf41e6-b88c-4ff2-9287-e42bfd38d836)で、[システム音声プログラミング ガイド .NET Framework 4.0 用](http://msdn.microsoft.com/en-us/610116c7-3817-40ff-857b-5d41e8511043)詳細と例についてはします。  
+  
+ **音声の特性を変更します。**  
+  
+ <xref:System.Speech.Synthesis.PromptStyle>クラスと<xref:System.Speech.Synthesis.PromptBuilder.StartStyle%2A>と<xref:System.Speech.Synthesis.PromptBuilder.AppendText%2A>メソッドでは、特性を変更できます。、<xref:System.Speech.Synthesis.SpeechSynthesizer>音声を使用して<xref:System.Speech.Synthesis.PromptStyle.Emphasis%2A>、 <xref:System.Speech.Synthesis.PromptStyle.Rate%2A>、および<xref:System.Speech.Synthesis.PromptStyle.Volume%2A>パラメーター。 カルチャ、年齢、性別など、音声の特性を変更するには、いずれかを使用、<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>のメソッド、<xref:System.Speech.Synthesis.PromptBuilder>クラスまたは<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints%2A>のメソッド、<xref:System.Speech.Synthesis.SpeechSynthesizer>クラスです。  
+  
+ 参照してください[音声属性の制御](http://msdn.microsoft.com/en-us/0fa3f10d-2696-4701-9735-68c59ffe4816)で、[システム音声プログラミング ガイド .NET Framework 4.0 用](http://msdn.microsoft.com/en-us/610116c7-3817-40ff-857b-5d41e8511043)詳細についてはします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

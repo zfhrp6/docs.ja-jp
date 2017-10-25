@@ -1,0 +1,130 @@
+<Type Name="CheckedListBox+ObjectCollection" FullName="System.Windows.Forms.CheckedListBox+ObjectCollection">
+  <TypeSignature Language="C#" Value="public class CheckedListBox.ObjectCollection : System.Windows.Forms.ListBox.ObjectCollection" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit CheckedListBox/ObjectCollection extends System.Windows.Forms.ListBox/ObjectCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.CheckedListBox.ObjectCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ListBox+ObjectCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.CheckedListBox" /> 内の項目のコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションへのアクセスは、親コントロールから<xref:System.Windows.Forms.CheckedListBox>により、<xref:System.Windows.Forms.CheckedListBox.Items%2A>プロパティです。 表示するオブジェクトのコレクションを作成する、<xref:System.Windows.Forms.CheckedListBox>コントロールを追加するかを使用して、アイテムを個別に削除、<xref:System.Windows.Forms.CheckedListBox.ObjectCollection.Add%2A>と<xref:System.Windows.Forms.ListBox.ObjectCollection.Remove%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、内の項目を列挙、<xref:System.Windows.Forms.CheckedListBox>し、リスト内の他のすべての項目を確認します。 この例では、使用方法を示します、<xref:System.Windows.Forms.CheckedListBox.Items%2A>を取得するプロパティ、<xref:System.Windows.Forms.CheckedListBox.ObjectCollection>を取得する、<xref:System.Windows.Forms.ListBox.ObjectCollection.Count%2A>項目の。  
+  
+ この例を使用して、<xref:System.Windows.Forms.CheckedListBox.SetItemCheckState%2A>と<xref:System.Windows.Forms.CheckedListBox.SetItemChecked%2A>項目のチェックの状態を設定する方法。 チェックするその他のすべての項目について<xref:System.Windows.Forms.CheckedListBox.SetItemCheckState%2A>を設定するために呼び出される、<xref:System.Windows.Forms.CheckState>に`Indeterminate`、中に<xref:System.Windows.Forms.CheckedListBox.SetItemChecked%2A>チェックされた状態を設定するその他の項目が呼び出された`Checked`です。  
+  
+ [!code-cpp[CheckedListBox#3](~/samples/snippets/cpp/VS_Snippets_Winforms/CheckedListBox/CPP/source.cpp#3)]
+ [!code-csharp[CheckedListBox#3](~/samples/snippets/csharp/VS_Snippets_Winforms/CheckedListBox/CS/source.cs#3)]
+ [!code-vb[CheckedListBox#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/CheckedListBox/VB/source.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectCollection (System.Windows.Forms.CheckedListBox owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.CheckedListBox owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.ObjectCollection.#ctor(System.Windows.Forms.CheckedListBox)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.CheckedListBox" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.CheckedListBox" />コレクションを所有しています。</param>
+        <summary><see cref="T:System.Windows.Forms.CheckedListBox.ObjectCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (object item, bool isChecked);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(object item, bool isChecked) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.ObjectCollection.Add(System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="isChecked" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="item">コレクションに追加する項目を表すオブジェクト。</param>
+        <param name="isChecked">
+          <see langword="true" />アイテムを確認するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>項目のリストに項目を追加、 <see cref="T:System.Windows.Forms.CheckedListBox" />、追加するオブジェクトとがチェックするかどうかを指定します。</summary>
+        <returns>新しく追加された項目のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一覧に項目を追加します。 一覧については、項目は、既存の項目のリストの末尾に追加されます。 並べ替えられたチェックされたリスト ボックスでは、アイテムの並べ替えの位置に従って一覧が挿入されます。 A`SystemException`新しい項目を格納できる十分な領域がある場合に発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.CheckedListBox>コントロールを設定して、 <xref:System.Windows.Forms.CheckedListBox.CheckOnClick%2A>、 <xref:System.Windows.Forms.CheckedListBox.SelectionMode%2A>、および<xref:System.Windows.Forms.CheckedListBox.ThreeDCheckBoxes%2A>プロパティです。 例では、設定、<xref:System.Windows.Forms.CheckedListBox>コントロールとセット、<xref:System.Windows.Forms.CheckedListBox.DisplayMember%2A>を<xref:System.Windows.Forms.Control.Name%2A?displayProperty=nameWithType>コントロールのプロパティです。  
+  
+ 例を実行するを含むフォームで、次のコードを貼り付けます、 <xref:System.Windows.Forms.CheckedListBox> CheckedListBox1 と呼び出しをという名前の`InitializeCheckListBox`フォームのコンス トラクターからメソッドまたは`Load`メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.PropertyGridExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PropertyGridExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (object item, System.Windows.Forms.CheckState check);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(object item, valuetype System.Windows.Forms.CheckState check) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.CheckedListBox.ObjectCollection.Add(System.Object,System.Windows.Forms.CheckState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="check" Type="System.Windows.Forms.CheckState" />
+      </Parameters>
+      <Docs>
+        <param name="item">コレクションに追加する項目を表すオブジェクト。</param>
+        <param name="check">初期<see cref="T:System.Windows.Forms.CheckState" />部分では、項目のチェック。</param>
+        <summary>項目のリストに項目を追加、 <see cref="T:System.Windows.Forms.CheckedListBox" />、追加するオブジェクトと初期チェック値を指定します。</summary>
+        <returns>新しく追加された項目のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、チェックされたリスト ボックスに項目を追加します。 チェックされたリストが並べ替えられていないボックスは、項目は、既存の項目のリストの末尾に追加されます。 並べ替えられたチェックされたリスト ボックスでは、アイテムの並べ替えの位置に従って一覧が挿入されます。 A`SystemException`新しい項目を格納できる十分な領域がある場合に発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="check" />パラメーターが有効な 1 つ<see cref="T:System.Windows.Forms.CheckState" />値。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

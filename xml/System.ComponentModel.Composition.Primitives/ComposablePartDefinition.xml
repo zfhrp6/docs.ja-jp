@@ -1,0 +1,141 @@
+<Type Name="ComposablePartDefinition" FullName="System.ComponentModel.Composition.Primitives.ComposablePartDefinition">
+  <TypeSignature Language="C#" Value="public abstract class ComposablePartDefinition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ComposablePartDefinition extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンポーザブル パーツ定義に、について説明しの作成を有効にするための抽象基本クラスを定義<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />オブジェクト。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ComposablePartDefinition ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePart">
+      <MemberSignature Language="C#" Value="public abstract System.ComponentModel.Composition.Primitives.ComposablePart CreatePart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Composition.Primitives.ComposablePart CreatePart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.CreatePart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Composition.Primitives.ComposablePart</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パートの新しいインスタンスを作成、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />について説明します。</summary>
+        <returns>作成されたパート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドする派生型の新しいインスタンスを返す必要があります、<xref:System.ComponentModel.Composition.Primitives.ComposablePart>オブジェクト、メソッドが呼び出され、返りませんされるたびに`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportDefinitions">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.ExportDefinition&gt; ExportDefinitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.ComponentModel.Composition.Primitives.ExportDefinition&gt; ExportDefinitions" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.ExportDefinitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.ExportDefinition&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" />これによって定義されている部分によってエクスポートされたオブジェクトを記述するオブジェクト<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />オブジェクト。</summary>
+        <value>コレクション<see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" />によって提供される、エクスポートされたオブジェクトを記述するオブジェクト<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />によって作成されたオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのオーバーライドが返りません`null`です。 場合、<xref:System.ComponentModel.Composition.Primitives.ComposablePart>によって作成されたオブジェクト、<xref:System.ComponentModel.Composition.Primitives.ComposablePartDefinition>エクスポートされたオブジェクトの提供はなく、空を返す<xref:System.Collections.Generic.IEnumerable%601>コレクション代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportDefinitions">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.ImportDefinition&gt; ImportDefinitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.ComponentModel.Composition.Primitives.ImportDefinition&gt; ImportDefinitions" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.ImportDefinitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.ImportDefinition&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />これによって定義されている部分で必要な imports を記述するオブジェクト<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />オブジェクト。</summary>
+        <value>コレクション<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />で必要な imports を記述するオブジェクト<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />によって作成されたオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのオーバーライドが返りません`null`です。 場合、<xref:System.ComponentModel.Composition.Primitives.ComposablePart>によって作成されたオブジェクト、<xref:System.ComponentModel.Composition.Primitives.ComposablePartDefinition>操作がありませんインポートは、空を返す<xref:System.Collections.Generic.IEnumerable%601>コレクション代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Metadata">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IDictionary&lt;string,object&gt; Metadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Metadata" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.Metadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメタデータのコレクションを取得<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />オブジェクト。</summary>
+        <value>メタデータを格納するコレクション、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePartDefinition" />です。 既定値は、空、読み取り専用<see cref="T:System.Collections.Generic.IDictionary`2" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのオーバーライドが読み取り専用に返す必要があります<xref:System.Collections.Generic.IDictionary%602>などの大文字と小文字、非言語的な比較演算子でオブジェクト<xref:System.StringComparer.Ordinal%2A>、返す必要がありますしない`null`です。 場合、<xref:System.ComponentModel.Composition.Primitives.ComposablePartDefinition>にありませんメタデータを含む、空を返す<xref:System.Collections.Generic.IDictionary%602>オブジェクトの代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

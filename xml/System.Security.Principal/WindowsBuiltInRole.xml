@@ -1,0 +1,246 @@
+<Type Name="WindowsBuiltInRole" FullName="System.Security.Principal.WindowsBuiltInRole">
+  <TypeSignature Language="C#" Value="public enum WindowsBuiltInRole" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed WindowsBuiltInRole extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Principal.WindowsBuiltInRole" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用する一般的なロールが指定<see cref="M:System.Security.Principal.WindowsPrincipal.IsInRole(System.String)" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのロールは、Windows NT、Windows 2000 および Windows XP のほとんどのインストールに共通のローカル Windows グループを表します。  
+  
+> [!NOTE]
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 管理特権が必要なタスクを実行しようとすると、同意を求めるダイアログ ボックスを使用して、ロールを動的に昇格できます。 実行するコード、<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>メソッドでは、[同意] ダイアログ ボックスが表示されません。 コードは、組み込みの Administrators グループにいる場合でも、標準ユーザー ロールの場合は false を返します。 アプリケーション アイコンを右クリックし、管理者として実行することを示すコードを実行する前に、ユーザーの権限を昇格させることができます。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.Security.Principal.WindowsBuiltInRole>列挙します。  
+  
+ [!code-cpp[System.Security.Principal.WindowsBuiltInRole Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CPP/source.cpp#1)]
+ [!code-csharp[System.Security.Principal.WindowsBuiltInRole Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CS/source.cs#1)]
+ [!code-vb[System.Security.Principal.WindowsBuiltInRole Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AccountOperator">
+      <MemberSignature Language="C#" Value="AccountOperator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.WindowsBuiltInRole AccountOperator = int32(548)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.WindowsBuiltInRole.AccountOperator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsBuiltInRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アカウントのオペレーターは、コンピューターまたはドメイン ユーザー アカウントを管理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Administrator">
+      <MemberSignature Language="C#" Value="Administrator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.WindowsBuiltInRole Administrator = int32(544)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.WindowsBuiltInRole.Administrator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsBuiltInRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>管理者には、コンピューターまたはドメインに完全なアクセス権があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BackupOperator">
+      <MemberSignature Language="C#" Value="BackupOperator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.WindowsBuiltInRole BackupOperator = int32(551)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.WindowsBuiltInRole.BackupOperator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsBuiltInRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バックアップ オペレーターは、バックアップまたは復元するファイルの唯一の目的のセキュリティの制限を上書きできます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Guest">
+      <MemberSignature Language="C#" Value="Guest" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.WindowsBuiltInRole Guest = int32(546)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.WindowsBuiltInRole.Guest" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsBuiltInRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ゲストは、ユーザーよりもより制限されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PowerUser">
+      <MemberSignature Language="C#" Value="PowerUser" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.WindowsBuiltInRole PowerUser = int32(547)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.WindowsBuiltInRole.PowerUser" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsBuiltInRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パワー ユーザーは、いくつかの制限とほとんどの管理者権限を所有します。 したがって、パワー ユーザーは、認定されたアプリケーションだけでなく、レガシ アプリケーションを実行できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintOperator">
+      <MemberSignature Language="C#" Value="PrintOperator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.WindowsBuiltInRole PrintOperator = int32(550)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.WindowsBuiltInRole.PrintOperator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsBuiltInRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷演算子は、プリンターの制御を奪わことができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Replicator">
+      <MemberSignature Language="C#" Value="Replicator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.WindowsBuiltInRole Replicator = int32(552)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.WindowsBuiltInRole.Replicator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsBuiltInRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複製物作成会社は、ドメイン内のファイルのレプリケーションをサポートします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemOperator">
+      <MemberSignature Language="C#" Value="SystemOperator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.WindowsBuiltInRole SystemOperator = int32(549)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.WindowsBuiltInRole.SystemOperator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsBuiltInRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム演算子では、特定のコンピューターを管理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="User">
+      <MemberSignature Language="C#" Value="User" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Principal.WindowsBuiltInRole User = int32(545)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Principal.WindowsBuiltInRole.User" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsBuiltInRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーから偶発的または意図的なシステム全体の変更を加えることはできません。 したがって、ユーザーは、認定済みのアプリケーションが、ほとんどのレガシ アプリケーションを実行できます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

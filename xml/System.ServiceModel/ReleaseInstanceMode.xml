@@ -1,0 +1,102 @@
+<Type Name="ReleaseInstanceMode" FullName="System.ServiceModel.ReleaseInstanceMode">
+  <TypeSignature Language="C#" Value="public enum ReleaseInstanceMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ReleaseInstanceMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ReleaseInstanceMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>システムが操作呼び出しプロセスの中でサービス オブジェクトをいつリサイクルするかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ReleaseInstanceMode> を <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> プロパティと共に使用して、現在のサービス オブジェクトを呼び出しプロセスの特定の時点でリサイクルする必要があることを [!INCLUDE[indigo1](~/includes/indigo1-md.md)] に通知します。 既定の動作では、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> 値に従ってサービス オブジェクトをリサイクルします。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.ReleaseInstanceMode> を使用して呼び出しの前後にサービス オブジェクトをリサイクルするコード例を次に示します。  
+  
+ [!code-csharp[OBA.ReleaseInstanceMode#1](~/samples/snippets/csharp/VS_Snippets_CFX/oba.releaseinstancemode/cs/services.cs#1)]
+ [!code-vb[OBA.ReleaseInstanceMode#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/oba.releaseinstancemode/vb/services.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AfterCall">
+      <MemberSignature Language="C#" Value="AfterCall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ReleaseInstanceMode AfterCall = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ReleaseInstanceMode.AfterCall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReleaseInstanceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトを操作の完了後にリサイクルします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeAndAfterCall">
+      <MemberSignature Language="C#" Value="BeforeAndAfterCall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ReleaseInstanceMode BeforeAndAfterCall = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ReleaseInstanceMode.BeforeAndAfterCall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReleaseInstanceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトを操作を呼び出す前と操作の完了後にリサイクルします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeCall">
+      <MemberSignature Language="C#" Value="BeforeCall" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ReleaseInstanceMode BeforeCall = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ReleaseInstanceMode.BeforeCall" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReleaseInstanceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトを操作を呼び出す前にリサイクルします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.ReleaseInstanceMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.ReleaseInstanceMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReleaseInstanceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトを <see cref="P:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode" /> 値に従ってリサイクルします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

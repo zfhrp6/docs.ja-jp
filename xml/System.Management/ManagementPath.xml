@@ -1,0 +1,586 @@
+<Type Name="ManagementPath" FullName="System.Management.ManagementPath">
+  <TypeSignature Language="C#" Value="public class ManagementPath : ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManagementPath extends System.Object implements class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Management.ManagementPath" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Management.ManagementPathConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>解析を WMI オブジェクトへのパスを構築するため、ラッパーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例でどのように<xref:System.Management.ManagementPath>クラスは、WMI オブジェクトへのパスを解析します。  例では解析されるパスは、クラスのインスタンスへのパスです。  
+  
+ [!code-csharp[wminet_ManagementPath#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementPath/cs/ManagementPath.cs#1)]
+ [!code-vb[wminet_ManagementPath#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementPath/vb/ManagementPath.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementPath.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.ManagementPath" /> クラスの新しい空のインスタンスを初期化します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementPath (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementPath.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">オブジェクト パス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementPath" />指定されたパスのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Management.ManagementPath>クラスは、WMI オブジェクトへのパスを解析します。  例では解析されるパスは、クラスのインスタンスへのパスです。  
+  
+ [!code-csharp[wminet_ManagementPath-S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementPath-S/cs/ManagementPath-S.cs#1)]
+ [!code-vb[wminet_ManagementPath-S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementPath-S/vb/ManagementPath-S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassName">
+      <MemberSignature Language="C#" Value="public string ClassName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClassName" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementPath.ClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパスのクラスの部分を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />パスのクラスの部分を保持する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ クラスの名前を含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Management.ManagementPath>クラスは、WMI オブジェクトへのパスを解析します。 例では解析されるパスは、クラスのインスタンスへのパスです。  
+  
+ [!code-csharp[wminet_ManagementPath_ClassName#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementPath_ClassName/cs/ManagementPath_ClassName.cs#1)]
+ [!code-vb[wminet_ManagementPath_ClassName#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementPath_ClassName/vb/ManagementPath_ClassName.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementPath Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementPath Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementPath.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コピーを返します、<see cref="T:System.Management.ManagementPath" />です。</summary>
+        <returns>複製されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPath">
+      <MemberSignature Language="C#" Value="public static System.Management.ManagementPath DefaultPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Management.ManagementPath DefaultPath" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementPath.DefaultPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスコープが指定されていないときに使用する既定のスコープ パスを設定します。 既定のスコープは\\ \\.\root\cimv2、され、このプロパティを設定して変更できます。</summary>
+        <value>返します、<see cref="T:System.Management.ManagementPath" />スコープが指定されていないときに使用する既定のスコープ (名前空間) パスを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 既定では、スコープの値は\\ \\.\root\cimv2、または既定値が変更された場合は、別のスコープ パス。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClass">
+      <MemberSignature Language="C#" Value="public bool IsClass { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClass" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementPath.IsClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクラス パスであるかどうかを示す値を設定します。</summary>
+        <value>返します、<see cref="T:System.Boolean" />クラス パスであるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`これがパスの場合、クラスです。それ以外の場合、`false`です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Management.ManagementPath>クラスは、WMI オブジェクトへのパスを解析します。 例では解析されるパスは、クラスのインスタンスへのパスです。  
+  
+ [!code-csharp[wminet_ManagementPath_IsClass#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementPath_IsClass/cs/ManagementPath_IsClass.cs#1)]
+ [!code-vb[wminet_ManagementPath_IsClass#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementPath_IsClass/vb/ManagementPath_IsClass.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInstance">
+      <MemberSignature Language="C#" Value="public bool IsInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementPath.IsInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインスタンスのパスであるかどうかを示す値を設定します。</summary>
+        <value>返します、<see cref="T:System.Boolean" />インスタンス パスであるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`場合、これは、インスタンスのパスです。それ以外の場合、`false`です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Management.ManagementPath>クラスは、WMI オブジェクトへのパスを解析します。 例では解析されるパスは、クラスのインスタンスへのパスです。  
+  
+ [!code-csharp[wminet_ManagementPath_IsInstance#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementPath_IsInstance/cs/ManagementPath_IsInstance.cs#1)]
+ [!code-vb[wminet_ManagementPath_IsInstance#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementPath_IsInstance/vb/ManagementPath_IsInstance.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSingleton">
+      <MemberSignature Language="C#" Value="public bool IsSingleton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSingleton" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementPath.IsSingleton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはかどうかを示す値を設定、*シングルトン*インスタンスのパス。</summary>
+        <value>返します、<see cref="T:System.Boolean" />シングルトン インスタンス パスであるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`場合、これは、シングルトン インスタンスのパスです。それ以外の場合、`false`です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespacePath">
+      <MemberSignature Language="C#" Value="public string NamespacePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NamespacePath" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementPath.NamespacePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパスの名前空間の一部を設定します。 別に取得できるサーバー名は含まれませんことに注意してください。</summary>
+        <value>返します、<see cref="T:System.String" />パスの名前空間の部分を含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ このオブジェクトで表されるパスの名前空間の部分を含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Management.ManagementPath>クラスは、WMI オブジェクトへのパスを解析します。  例では解析されるパスは、クラスのインスタンスへのパスです。  
+  
+ [!code-csharp[wminet_ManagementPath_NamespacePath#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementPath_NamespacePath/cs/ManagementPath_NamespacePath.cs#1)]
+ [!code-vb[wminet_ManagementPath_NamespacePath#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementPath_NamespacePath/vb/ManagementPath_NamespacePath.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementPath.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトの完全なパスの文字列形式を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />完全パスを含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ このオブジェクトで表される完全なパスを含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Management.ManagementPath>クラスは、WMI オブジェクトへのパスを解析します。  例では解析されるパスは、クラスのインスタンスへのパスです。  
+  
+ [!code-csharp[wminet_ManagementPath_Path#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementPath_Path/cs/ManagementPath_Path.cs#1)]
+ [!code-vb[wminet_ManagementPath_Path#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementPath_Path/vb/ManagementPath_Path.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelativePath">
+      <MemberSignature Language="C#" Value="public string RelativePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelativePath" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementPath.RelativePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>相対パス取得または設定します。 クラス名とキーのみです。</summary>
+        <value>返します、<see cref="T:System.String" />相対パスを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ このオブジェクトで表される (サーバーと名前空間の部分を含まない) 相対パスを含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Management.ManagementPath>クラスは、WMI オブジェクトへのパスを解析します。  例では解析されるパスは、クラスのインスタンスへのパスです。  
+  
+ [!code-csharp[wminet_ManagementPath_RelativePath#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementPath_RelativePath/cs/ManagementPath_RelativePath.cs#1)]
+ [!code-vb[wminet_ManagementPath_RelativePath#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementPath_RelativePath/vb/ManagementPath_RelativePath.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Server">
+      <MemberSignature Language="C#" Value="public string Server { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Server" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementPath.Server" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパスのサーバー部分を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />サーバー名を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ このオブジェクトで表されるパスから、サーバー名を含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Management.ManagementPath>クラスは、WMI オブジェクトへのパスを解析します。  例では解析されるパスは、クラスのインスタンスへのパスです。  
+  
+ [!code-csharp[wminet_ManagementPath_Server#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementPath_Server/cs/ManagementPath_Server.cs#1)]
+ [!code-vb[wminet_ManagementPath_Server#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementPath_Server/vb/ManagementPath_Server.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAsClass">
+      <MemberSignature Language="C#" Value="public void SetAsClass ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAsClass() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementPath.SetAsClass" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいパスをクラスとしてのパスを設定します。 つまり、パスがクラス名がある、キー値がない必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAsSingleton">
+      <MemberSignature Language="C#" Value="public void SetAsSingleton ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAsSingleton() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementPath.SetAsSingleton" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パスが、新しい設定*シングルトン*オブジェクト パス。 つまり、インスタンスへのパスであるが、キーの値はありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementPath.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのコピーである新しいオブジェクトを作成します。</summary>
+        <returns>このインスタンスのコピーである新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementPath.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列の形式として、オブジェクトの完全パスを返します。</summary>
+        <returns>このオブジェクトによって表されるオブジェクトの完全パスを含む文字列。 値に相当する値、<see cref="P:System.Management.ManagementPath.Path" />プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

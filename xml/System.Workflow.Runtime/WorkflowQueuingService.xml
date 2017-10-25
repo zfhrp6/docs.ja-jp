@@ -1,0 +1,222 @@
+<Type Name="WorkflowQueuingService" FullName="System.Workflow.Runtime.WorkflowQueuingService">
+  <TypeSignature Language="C#" Value="public class WorkflowQueuingService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowQueuingService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.WorkflowQueuingService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Runtime.WorkflowQueue" /> オブジェクトの管理のためのサービスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.WorkflowQueuingService> は、ワークフロー インスタンスに関連付けられたワークフロー キューを管理するために使用できるメソッドを提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、`CreateQueue` という名前のメソッドを示しています。このメソッドは、<xref:System.Workflow.Runtime.WorkflowQueuingService> メソッドを呼び出して <xref:System.Workflow.ComponentModel.ActivityExecutionContext.GetService%2A?displayProperty=nameWithType> オブジェクトを初期化します。 コードでは、初期化後に <xref:System.Workflow.Runtime.WorkflowQueuingService.Exists%2A> メソッドを使用して、指定した名前の <xref:System.Workflow.Runtime.WorkflowQueue> が存在するかどうかを確認します。 存在しない場合は、<xref:System.Workflow.Runtime.WorkflowQueuingService.CreateWorkflowQueue%2A> メソッドを呼び出します。存在する場合は <xref:System.Workflow.Runtime.WorkflowQueuingService.GetWorkflowQueue%2A> メソッドを呼び出します。  
+  
+ このコード例は、FileSystemEvent.cs ファイルに含まれている、ファイル監視アクティビティの SDK サンプルの一部です。 詳細については、次を参照してください。[ファイル システムの監視活動](http://msdn.microsoft.com/en-us/5442b63a-bdad-43d0-b7cf-f0b5d8b56a99)です。  
+  
+ [!code-csharp[WF_Samples#223](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#223)]
+ [!code-vb[WF_Samples#223](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#223)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateWorkflowQueue">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowQueue CreateWorkflowQueue (IComparable queueName, bool transactional);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.WorkflowQueue CreateWorkflowQueue(class System.IComparable queueName, bool transactional) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowQueuingService.CreateWorkflowQueue(System.IComparable,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowQueue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueName" Type="System.IComparable" />
+        <Parameter Name="transactional" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="queueName">キューの名前。</param>
+        <param name="transactional">現在のトランザクション スコープの範囲外で <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> が可視かどうかを指定する値。</param>
+        <summary>指定した名前およびトランザクション スコープを使用して、<see cref="T:System.Workflow.Runtime.WorkflowQueue" /> を作成します。</summary>
+        <returns><see cref="T:System.Workflow.Runtime.WorkflowQueue" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した <xref:System.Workflow.Runtime.WorkflowQueue> を使用して `queueName` が作成されます。 transactional が `true` の場合、<xref:System.Workflow.Runtime.WorkflowQueue> は現在のトランザクションの範囲内でのみ可視です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、`CreateQueue` という名前のメソッドを示しています。このメソッドは、<xref:System.Workflow.Runtime.WorkflowQueuingService> メソッドを呼び出して <xref:System.Workflow.ComponentModel.ActivityExecutionContext.GetService%2A?displayProperty=nameWithType> オブジェクトを初期化します。 コードでは、初期化後に <xref:System.Workflow.Runtime.WorkflowQueuingService.Exists%2A> メソッドを使用して、指定した名前の <xref:System.Workflow.Runtime.WorkflowQueue> が存在するかどうかを確認します。 存在しない場合は、<xref:System.Workflow.Runtime.WorkflowQueuingService.CreateWorkflowQueue%2A> メソッドを呼び出します。存在する場合は <xref:System.Workflow.Runtime.WorkflowQueuingService.GetWorkflowQueue%2A> メソッドを呼び出します。  
+  
+ このコード例は、FileSystemEvent.cs ファイルに含まれている、ファイル監視アクティビティの SDK サンプルの一部です。 詳細については、次を参照してください。[ファイル システムの監視活動](http://msdn.microsoft.com/en-us/5442b63a-bdad-43d0-b7cf-f0b5d8b56a99)です。  
+  
+ [!code-csharp[WF_Samples#223](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#223)]
+ [!code-vb[WF_Samples#223](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#223)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="queueName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Workflow.Runtime.WorkflowQueue" /> で指定した名前を持つ <paramref name="queueName" /> が既に存在します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteWorkflowQueue">
+      <MemberSignature Language="C#" Value="public void DeleteWorkflowQueue (IComparable queueName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteWorkflowQueue(class System.IComparable queueName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowQueuingService.DeleteWorkflowQueue(System.IComparable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueName" Type="System.IComparable" />
+      </Parameters>
+      <Docs>
+        <param name="queueName">削除する <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> の名前。</param>
+        <summary>指定した <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、文字列をコンソールに書き出し、<xref:System.Workflow.Runtime.WorkflowQueuingService> メソッドを呼び出して <xref:System.Workflow.ComponentModel.ActivityExecutionContext.GetService%2A?displayProperty=nameWithType> のインスタンスを作成するメソッドを示しています。 このコードは最後に <xref:System.Workflow.Runtime.WorkflowQueuingService.DeleteWorkflowQueue%2A> メソッドを呼び出して、現在のワークフローの `QueueName` プロパティに関連付けられたキューを削除します。  
+  
+ このコード例は、FileSystemEvent.cs ファイルに含まれている、ファイル監視アクティビティの SDK サンプルの一部です。 詳細については、次を参照してください。[ファイル システムの監視活動](http://msdn.microsoft.com/en-us/5442b63a-bdad-43d0-b7cf-f0b5d8b56a99)です。  
+  
+ [!code-csharp[WF_Samples#224](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#224)]
+ [!code-vb[WF_Samples#224](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#224)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="queueName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public bool Exists (IComparable queueName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Exists(class System.IComparable queueName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowQueuingService.Exists(System.IComparable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueName" Type="System.IComparable" />
+      </Parameters>
+      <Docs>
+        <param name="queueName"><see cref="T:System.Workflow.Runtime.WorkflowQueue" /> の名前。</param>
+        <summary>指定した <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> が存在するかどうかをテストします。</summary>
+        <returns>
+          <see langword="true" /> が存在する場合は <see cref="T:System.Workflow.Runtime.WorkflowQueue" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、`CreateQueue` という名前のメソッドを示しています。このメソッドは、<xref:System.Workflow.Runtime.WorkflowQueuingService> メソッドを呼び出して <xref:System.Workflow.ComponentModel.ActivityExecutionContext.GetService%2A?displayProperty=nameWithType> オブジェクトを初期化します。 コードでは、初期化後に <xref:System.Workflow.Runtime.WorkflowQueuingService.Exists%2A> メソッドを使用して、指定した名前の <xref:System.Workflow.Runtime.WorkflowQueue> が存在するかどうかを確認します。 存在しない場合は、<xref:System.Workflow.Runtime.WorkflowQueuingService.CreateWorkflowQueue%2A> メソッドを呼び出します。存在する場合は <xref:System.Workflow.Runtime.WorkflowQueuingService.GetWorkflowQueue%2A> メソッドを呼び出します。  
+  
+ このコード例は、FileSystemEvent.cs ファイルに含まれている、ファイル監視アクティビティの SDK サンプルの一部です。 詳細については、次を参照してください。[ファイル システムの監視活動](http://msdn.microsoft.com/en-us/5442b63a-bdad-43d0-b7cf-f0b5d8b56a99)です。  
+  
+ [!code-csharp[WF_Samples#223](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#223)]
+ [!code-vb[WF_Samples#223](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#223)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="queueName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWorkflowQueue">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowQueue GetWorkflowQueue (IComparable queueName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.WorkflowQueue GetWorkflowQueue(class System.IComparable queueName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowQueuingService.GetWorkflowQueue(System.IComparable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowQueue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueName" Type="System.IComparable" />
+      </Parameters>
+      <Docs>
+        <param name="queueName">取得する <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> の名前。</param>
+        <summary>指定した <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> を取得します。</summary>
+        <returns><see cref="T:System.Workflow.Runtime.WorkflowQueue" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、`CreateQueue` という名前のメソッドを示しています。このメソッドは、<xref:System.Workflow.Runtime.WorkflowQueuingService> メソッドを呼び出して <xref:System.Workflow.ComponentModel.ActivityExecutionContext.GetService%2A?displayProperty=nameWithType> オブジェクトを初期化します。 コードでは、初期化後に <xref:System.Workflow.Runtime.WorkflowQueuingService.Exists%2A> メソッドを使用して、指定した名前の <xref:System.Workflow.Runtime.WorkflowQueue> が存在するかどうかを確認します。 存在しない場合は、<xref:System.Workflow.Runtime.WorkflowQueuingService.CreateWorkflowQueue%2A> メソッドを呼び出します。存在する場合は <xref:System.Workflow.Runtime.WorkflowQueuingService.GetWorkflowQueue%2A> メソッドを呼び出します。  
+  
+ このコード例は、FileSystemEvent.cs ファイルに含まれている、ファイル監視アクティビティの SDK サンプルの一部です。 詳細については、次を参照してください。[ファイル システムの監視活動](http://msdn.microsoft.com/en-us/5442b63a-bdad-43d0-b7cf-f0b5d8b56a99)です。  
+  
+ [!code-csharp[WF_Samples#223](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#223)]
+ [!code-vb[WF_Samples#223](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#223)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="queueName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.InvalidOperationException">指定した <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PendingMessagesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty PendingMessagesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty PendingMessagesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Runtime.WorkflowQueuingService.PendingMessagesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Workflow.Runtime.WorkflowQueuingService" /> に関連付けられたワークフロー キュー内の未処理項目を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスが完了または終了すると、この <xref:System.Workflow.Runtime.WorkflowQueuingService> に関連付けられたそのワークフロー キュー内のすべての未処理項目が <xref:System.Workflow.Runtime.WorkflowQueuingService.PendingMessagesProperty> に移されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

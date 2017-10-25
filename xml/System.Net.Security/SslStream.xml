@@ -1,0 +1,3276 @@
+<Type Name="SslStream" FullName="System.Net.Security.SslStream">
+  <TypeSignature Language="C#" Value="public class SslStream : System.Net.Security.AuthenticatedStream" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SslStream extends System.Net.Security.AuthenticatedStream implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Security.SslStream" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.Security.AuthenticatedStream</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Secure Socket Layer (SSL) セキュリティ プロトコルを使用し、サーバーと、オプションでクライアントを認証するクライアント サーバー通信に使用されるストリームを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSL プロトコルは、機密性と整合性チェックを使用して送信されるメッセージを提供するのに役立ちます、<xref:System.Net.Security.SslStream>です。 によって提供される、SSL 接続<xref:System.Net.Security.SslStream>、通信して、クライアントとサーバー間で機密情報をする場合に使用する必要があります。 使用して、<xref:System.Net.Security.SslStream>から読み取りや、ネットワーク上を転送中にある間に情報が改ざんできないようにするために役立ちます。  
+  
+ <xref:System.Net.Security.SslStream>インスタンスで作成するときに指定するストリームを使用してデータを転送、<xref:System.Net.Security.SslStream>です。 指定するオプションがあるこの基になるストリームを指定するときに終了するかどうか、<xref:System.Net.Security.SslStream>も、基になるストリームを閉じます。 通常、<xref:System.Net.Security.SslStream>クラスが使用されて、<xref:System.Net.Sockets.TcpClient>と<xref:System.Net.Sockets.TcpListener>クラスです。 <xref:System.Net.Sockets.TcpClient.GetStream%2A>メソッドには、<xref:System.Net.Sockets.NetworkStream>で使用するのに適した、<xref:System.Net.Security.SslStream>クラスです。  
+  
+ 作成した後、<xref:System.Net.Security.SslStream>サーバーと、必要に応じて、クライアントを認証する必要があります。 X509 を提供する必要があります、サーバー証明書をその id を確立しするクライアントもように要求できます。 使用して情報を送信する前に認証を実行する必要があります、<xref:System.Net.Security.SslStream>です。 クライアントは、同期を使用して認証を開始<xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>メソッドで、認証が完了するまでブロック、または非同期<xref:System.Net.Security.SslStream.BeginAuthenticateAsClient%2A>メソッドで、認証が完了するための待機をブロックしません。 サーバーは、同期を使用して認証を開始<xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>または非同期<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドです。 クライアントとサーバーの両方が認証を行う必要があります。  
+  
+ 認証は、セキュリティ サポート プロバイダー (SSPI) チャネル プロバイダーによって処理されます。 クライアントを指定することで、サーバーの証明書の検証を制御する機会が与えられます、<xref:System.Net.Security.RemoteCertificateValidationCallback>デリゲートを作成するとき、<xref:System.Net.Security.SslStream>です。 サーバーでは検証を指定することによっても制御できます、<xref:System.Net.Security.RemoteCertificateValidationCallback>を委任します。 デリゲートによって参照されるメソッドには、リモート パーティの証明書および証明書の検証中に発生した SSPI エラーが含まれます。 サーバーは、デリゲートを指定した場合、デリゲートのメソッドが呼び出されること、サーバーがクライアント認証を要求するかどうかに関係なくに注意してください。 サーバーがクライアント認証を要求していない場合、サーバーのデリゲート メソッドは、null の証明書と証明書のエラーの空の配列を受け取ります。  
+  
+ サーバーは、クライアント認証を必要とする場合、クライアントは認証用の 1 つまたは複数の証明書を指定する必要があります。 クライアントが提供できるクライアントに複数の証明書がある場合、<xref:System.Net.Security.LocalCertificateSelectionCallback>デリゲートをサーバーの正しい証明書を選択します。 クライアントの証明書は、現在のユーザーの"My"証明書ストアにある必要があります。 証明書を使用してクライアント認証はサポートされていません、 <xref:System.Security.Authentication.SslProtocols.Ssl2> SSL バージョン 2 プロトコル。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、および<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ サーバー (および必要に応じて、クライアント) の id を確立、SSL ハンドシェイクとも呼ばれる、認証プロセスが成功した場合、および<xref:System.Net.Security.SslStream>メッセージを交換するクライアントとサーバーで使用できます。 情報を送受信する前に、クライアントとサーバーくださいセキュリティ サービスとレベルによって提供される、<xref:System.Net.Security.SslStream>プロトコル、アルゴリズム、およびオン長所が整合性および機密性が実現するための要件を満たしているかどうかを判断します。 現在の設定が十分なされていない場合は、ストリームが閉じている必要があります。 によって提供されるセキュリティ サービスを確認することができます、<xref:System.Net.Security.SslStream>を使用して、<xref:System.Net.Security.SslStream.IsEncrypted%2A>と<xref:System.Net.Security.SslStream.IsSigned%2A>プロパティです。 次の表は、認証、暗号化、およびデータの署名に使用される暗号化の設定を報告する要素を示しています。  
+  
+|要素|メンバー|  
+|-------------|-------------|  
+|サーバーと、必要に応じて、クライアントを認証するために使用するセキュリティ プロトコルです。|<xref:System.Net.Security.SslStream.SslProtocol%2A>プロパティおよび関連付けられた<xref:System.Security.Authentication.SslProtocols>列挙します。|  
+|キー交換アルゴリズムです。|<xref:System.Net.Security.SslStream.KeyExchangeAlgorithm%2A>プロパティおよび関連付けられた<xref:System.Security.Authentication.ExchangeAlgorithmType>列挙します。|  
+|メッセージの整合性アルゴリズムです。|<xref:System.Net.Security.SslStream.HashAlgorithm%2A>プロパティおよび関連付けられた<xref:System.Security.Authentication.HashAlgorithmType>列挙します。|  
+|メッセージの機密性アルゴリズムです。|<xref:System.Net.Security.SslStream.CipherAlgorithm%2A>プロパティおよび関連付けられた<xref:System.Security.Authentication.CipherAlgorithmType>列挙します。|  
+|選択したアルゴリズムの強度です。|<xref:System.Net.Security.SslStream.KeyExchangeStrength%2A>、 <xref:System.Net.Security.SslStream.HashStrength%2A>、および<xref:System.Net.Security.SslStream.CipherStrength%2A>プロパティです。|  
+  
+ 認証が成功した後、同期を使用してデータを送信することができます<xref:System.Net.Security.SslStream.Write%2A>または非同期<xref:System.Net.Security.SslStream.BeginWrite%2A>メソッドです。 同期を使用してデータを受信できる<xref:System.Net.Security.SslStream.Read%2A>または非同期<xref:System.Net.Security.SslStream.BeginRead%2A>メソッドです。  
+  
+ 指定した場合、<xref:System.Net.Security.SslStream.%23ctor%2A>基になるストリームを開いたままにすることが完了したら、そのストリームを終了する必要が使用することです。  
+  
+> [!NOTE]
+>  かどうか、アプリケーションを作成する、<xref:System.Net.Security.SslStream>通常のユーザーの資格情報を持つオブジェクトが実行され、アプリケーションはアクセス許可が明示的に指定されてユーザーにこれを行う場合を除き、ローカル コンピューター ストアにインストールされている証明書にアクセスできません。  
+  
+ <xref:System.Net.Security.SslStream>いるものと、タイムアウト時間と共に、他の<xref:System.IO.IOException>内部ストリームからスローされた 1 つは処理されます、致命的な呼び出し元によってです。 再利用して、<xref:System.Net.Security.SslStream>後、タイムアウト時間はガベージを返します。 アプリケーションにする必要があります<xref:System.IO.Stream.Close%2A>、<xref:System.Net.Security.SslStream>このような場合に例外をスローします。  
+  
+ .NET Framework 4.6 には、安全性の低い暗号およびハッシュ アルゴリズムの接続をブロックする新しいセキュリティ機能が含まれています。 HttpClient、HttpWebRequest、FTPClient、SmtpClient、SslStream などの Api を介した TLS と SSL を使用して、.NET Framework 4.6 を対象とするアプリケーションでは、既定では、セキュリティが強化された動作を取得します。  
+  
+ 開発者は、既存 SSL3 サービスまたは TLS で RC4 サービスと相互運用性を維持するために、この動作を除外する必要あります。 [この記事](https://support.microsoft.com/kb/3069494)新しい動作を無効にするように、コードを変更する方法について説明します。  
+  
+ TLS バージョンを指定しないが、代わりにシステムの既定値として定義されている TLS バージョンを使用する SslStreams を認証するメソッドの新しいオーバー ロードを追加する .NET Framework 4.7 [SCHANNEL](https://msdn.microsoft.com/library/windows/desktop/aa380123.aspx)です。 後で、長期にわたって TLS バージョンのベスト プラクティスの変更として、既定の設定を変更できる手段として、アプリでこれらのメソッドを使用リビルドして、アプリを再配置する必要はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例で、<xref:System.Net.Sockets.TcpListener>を使用して、<xref:System.Net.Security.SslStream>クライアントと通信するクラス。  
+  
+ [!code-cpp[NclSslServerSync#0](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#0)]
+ [!code-csharp[NclSslServerSync#0](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#0)]  
+  
+ 次のコード例では、作成するを示します、<xref:System.Net.Sockets.TcpClient>を使用して、<xref:System.Net.Security.SslStream>サーバーと通信するクラス。  
+  
+ [!code-cpp[NclSslClientSync#0](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslClientSync/CPP/clientsync.cpp#0)]
+ [!code-csharp[NclSslClientSync#0](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslClientSync/CS/clientsync.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Net.Security.SslStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 防ぐために、<xref:System.Net.Security.SslStream>から指定したストリームを閉じると、使用して、<xref:System.Net.Security.SslStream.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SslStream (System.IO.Stream innerStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream innerStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="innerStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="innerStream">A<see cref="T:System.IO.Stream" />によって使用されるオブジェクト、<see cref="T:System.Net.Security.SslStream" />のデータを送受信します。</param>
+        <summary><see cref="T:System.Net.Security.SslStream" /> を指定して <see cref="T:System.IO.Stream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗号化ポリシーですの構成ファイルで値が指定されていない場合、<xref:System.Net.Security.EncryptionPolicy>の既定値は<xref:System.Net.Security.EncryptionPolicy?displayProperty=nameWithType>の<xref:System.Net.Security.SslStream>を構築するインスタンス。  
+  
+ 暗号化ポリシーが に設定されているときに Null 暗号の使用する必要が<xref:System.Net.Security.EncryptionPolicy?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="innerStream" />読み取りができません。  
+  
+ または  
+  
+ <paramref name="innerStream" />書き込みができません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="innerStream" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="innerStream" /> と <see cref="F:System.IO.Stream.Null" /> が等価です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SslStream (System.IO.Stream innerStream, bool leaveInnerStreamOpen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream innerStream, bool leaveInnerStreamOpen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.#ctor(System.IO.Stream,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="innerStream" Type="System.IO.Stream" />
+        <Parameter Name="leaveInnerStreamOpen" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="innerStream">A<see cref="T:System.IO.Stream" />によって使用されるオブジェクト、<see cref="T:System.Net.Security.SslStream" />のデータを送受信します。</param>
+        <param name="leaveInnerStreamOpen">クロージャ動作を示すブール値、<see cref="T:System.IO.Stream" />によって使用されるオブジェクト、<see cref="T:System.Net.Security.SslStream" />のデータを送受信します。 このパラメーターは、内部ストリームが開いたままかどうかを示します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Security.SslStream" />クラスの指定して<see cref="T:System.IO.Stream" />およびクロージャの動作をストリーミングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定すると`true`の`leaveStreamOpen`パラメーター、閉じる、<xref:System.Net.Security.SslStream>に影響を与えません、`innerStream`ストリーム; 明示的に閉じる必要があります`innerStream`が不要になったときにします。  
+  
+ 暗号化ポリシーですの構成ファイルで値が指定されていない場合、<xref:System.Net.Security.EncryptionPolicy>の既定値は<xref:System.Net.Security.EncryptionPolicy?displayProperty=nameWithType>の<xref:System.Net.Security.SslStream>を構築するインスタンス。  
+  
+ 暗号化ポリシーが に設定されているときに Null 暗号の使用する必要が<xref:System.Net.Security.EncryptionPolicy?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NclSslServerSync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#1)]
+ [!code-csharp[NclSslServerSync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="innerStream" />読み取りができません。  
+  
+ または  
+  
+ <paramref name="innerStream" />書き込みができません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="innerStream" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="innerStream" /> と <see cref="F:System.IO.Stream.Null" /> が等価です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SslStream (System.IO.Stream innerStream, bool leaveInnerStreamOpen, System.Net.Security.RemoteCertificateValidationCallback userCertificateValidationCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream innerStream, bool leaveInnerStreamOpen, class System.Net.Security.RemoteCertificateValidationCallback userCertificateValidationCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.#ctor(System.IO.Stream,System.Boolean,System.Net.Security.RemoteCertificateValidationCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="innerStream" Type="System.IO.Stream" />
+        <Parameter Name="leaveInnerStreamOpen" Type="System.Boolean" />
+        <Parameter Name="userCertificateValidationCallback" Type="System.Net.Security.RemoteCertificateValidationCallback" />
+      </Parameters>
+      <Docs>
+        <param name="innerStream">A<see cref="T:System.IO.Stream" />によって使用されるオブジェクト、<see cref="T:System.Net.Security.SslStream" />のデータを送受信します。</param>
+        <param name="leaveInnerStreamOpen">クロージャ動作を示すブール値、<see cref="T:System.IO.Stream" />によって使用されるオブジェクト、<see cref="T:System.Net.Security.SslStream" />のデータを送受信します。 このパラメーターは、内部ストリームが開いたままかどうかを示します。</param>
+        <param name="userCertificateValidationCallback">A<see cref="T:System.Net.Security.RemoteCertificateValidationCallback" />リモート パーティによって提供された証明書を検証します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Security.SslStream" />クラス<see cref="T:System.IO.Stream" />クロージャの動作をストリーム配信、および証明書の検証のデリゲート。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定すると`true`の`leaveStreamOpen`パラメーター、閉じる、<xref:System.Net.Security.SslStream>に影響を与えません、`innerStream`ストリーム; 明示的に閉じる必要があります`innerStream`が不要になったときにします。  
+  
+ `userCertificateValidationCallback`デリゲートの`certificateErrors`引数には、チャネルのセキュリティ サポート プロバイダー インターフェイス (SSPI) によって返される Windows エラー コードが含まれています。 によって呼び出されるメソッドの戻り値、`userCertificateValidationCallback`デリゲートは、認証が成功したかどうかを決定します。  
+  
+ セキュリティ プロトコルおよび暗号アルゴリズムが既に選択されているときに、`userCertificateValidationCallback`デリゲートのメソッドが呼び出されます。 メソッドを使用すると、選択した暗号アルゴリズムと長所がアプリケーションのための十分なのかを判断します。 場合は、メソッドが返す必要があります、`false`を防ぐために、<xref:System.Net.Security.SslStream>作成されません。  
+  
+ 暗号化ポリシーですの構成ファイルで値が指定されていない場合、<xref:System.Net.Security.EncryptionPolicy>の既定値は<xref:System.Net.Security.EncryptionPolicy?displayProperty=nameWithType>の<xref:System.Net.Security.SslStream>を構築するインスタンス。  
+  
+ 暗号化ポリシーが に設定されているときに Null 暗号の使用する必要が<xref:System.Net.Security.EncryptionPolicy?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  フレームワークでは、SSL セッションを作成するときはキャッシュ、可能であれば、新しい要求のキャッシュされているセッションを再利用しようとします。 フレームワークでの最初の要素を使用するときに、SSL セッションを再利用する、 <xref:System.Net.HttpWebRequest.ClientCertificates%2A> (かどうかがある 1 つ)、匿名のセッションを再利用を試みる<xref:System.Net.HttpWebRequest.ClientCertificates%2A>が空です。  
+  
+> [!NOTE]
+>  SSL バージョン 2 プロトコルでは、クライアント証明書はサポートされていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Net.Security.SslStream>し、認証のクライアント部分を開始します。  
+  
+ [!code-cpp[NclSslClientSync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslClientSync/CPP/clientsync.cpp#4)]
+ [!code-csharp[NclSslClientSync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslClientSync/CS/clientsync.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="innerStream" />読み取りができません。  
+  
+ または  
+  
+ <paramref name="innerStream" />書き込みができません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="innerStream" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="innerStream" /> と <see cref="F:System.IO.Stream.Null" /> が等価です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SslStream (System.IO.Stream innerStream, bool leaveInnerStreamOpen, System.Net.Security.RemoteCertificateValidationCallback userCertificateValidationCallback, System.Net.Security.LocalCertificateSelectionCallback userCertificateSelectionCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream innerStream, bool leaveInnerStreamOpen, class System.Net.Security.RemoteCertificateValidationCallback userCertificateValidationCallback, class System.Net.Security.LocalCertificateSelectionCallback userCertificateSelectionCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.#ctor(System.IO.Stream,System.Boolean,System.Net.Security.RemoteCertificateValidationCallback,System.Net.Security.LocalCertificateSelectionCallback)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="innerStream" Type="System.IO.Stream" />
+        <Parameter Name="leaveInnerStreamOpen" Type="System.Boolean" />
+        <Parameter Name="userCertificateValidationCallback" Type="System.Net.Security.RemoteCertificateValidationCallback" />
+        <Parameter Name="userCertificateSelectionCallback" Type="System.Net.Security.LocalCertificateSelectionCallback" />
+      </Parameters>
+      <Docs>
+        <param name="innerStream">A<see cref="T:System.IO.Stream" />によって使用されるオブジェクト、<see cref="T:System.Net.Security.SslStream" />のデータを送受信します。</param>
+        <param name="leaveInnerStreamOpen">クロージャ動作を示すブール値、<see cref="T:System.IO.Stream" />によって使用されるオブジェクト、<see cref="T:System.Net.Security.SslStream" />のデータを送受信します。 このパラメーターは、内部ストリームが開いたままかどうかを示します。</param>
+        <param name="userCertificateValidationCallback">A<see cref="T:System.Net.Security.RemoteCertificateValidationCallback" />リモート パーティによって提供された証明書を検証します。</param>
+        <param name="userCertificateSelectionCallback">A<see cref="T:System.Net.Security.LocalCertificateSelectionCallback" />書を認証に使用する証明書を選択します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Security.SslStream" />クラス<see cref="T:System.IO.Stream" />クロージャの動作、ストリーム、証明書検証デリゲート証明書の選択のデリゲート。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定すると`true`の`leaveStreamOpen`パラメーター、閉じる、<xref:System.Net.Security.SslStream>に影響を与えません、`innerStream`ストリーム; 明示的に閉じる必要があります`innerStream`が不要になったときにします。  
+  
+ `userCertificateValidationCallback`デリゲートの`certificateErrors`引数には、チャネルのセキュリティ サポート プロバイダー インターフェイス (SSPI) によって返される Windows エラー コードが含まれています。 によって呼び出されるメソッドの戻り値、`userCertificateValidationCallback`デリゲートは、認証が成功したかどうかを決定します。  
+  
+ セキュリティ プロトコルおよび暗号アルゴリズムが既に選択されているときに、`userCertificateValidationCallback`デリゲートのメソッドが呼び出されます。 メソッドを使用すると、選択した暗号アルゴリズムと長所がアプリケーションのための十分なのかを判断します。 場合は、メソッドが返す必要があります、`false`を防ぐために、<xref:System.Net.Security.SslStream>作成されません。  
+  
+ `userCertificateSelectionCallback`デリゲートは、アプリケーションが複数の証明書と証明書を動的に選択する必要がある場合に便利です。 "MY"ストアに証明書は、デリゲートが呼び出されるメソッドに渡されます。  
+  
+ 暗号化ポリシーですの構成ファイルで値が指定されていない場合、<xref:System.Net.Security.EncryptionPolicy>の既定値は<xref:System.Net.Security.EncryptionPolicy?displayProperty=nameWithType>の<xref:System.Net.Security.SslStream>を構築するインスタンス。  
+  
+ 暗号化ポリシーが に設定されているときに Null 暗号の使用する必要が<xref:System.Net.Security.EncryptionPolicy?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  フレームワークでは、SSL セッションを作成するときはキャッシュ、可能であれば、新しい要求のキャッシュされているセッションを再利用しようとします。 フレームワークが P:System.Net.HttpWebRequest.ClientCertificates (存在する場合) の最初の要素を使用するときに、SSL セッションを再利用する、または P:System.Net.HttpWebRequest.ClientCertificates がある場合は、匿名のセッションを再利用する試行が空です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。 この例に示されている例の一部である、<xref:System.Net.Security.SslStream>クラスです。  
+  
+ [!code-cpp[NclSslClientAsync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslClientAsync/CPP/NclSslClientAsync.cpp#6)]
+ [!code-csharp[NclSslClientAsync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslClientAsync/CS/clientasync.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="innerStream" />読み取りができません。  
+  
+ または  
+  
+ <paramref name="innerStream" />書き込みができません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="innerStream" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="innerStream" /> と <see cref="F:System.IO.Stream.Null" /> が等価です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SslStream (System.IO.Stream innerStream, bool leaveInnerStreamOpen, System.Net.Security.RemoteCertificateValidationCallback userCertificateValidationCallback, System.Net.Security.LocalCertificateSelectionCallback userCertificateSelectionCallback, System.Net.Security.EncryptionPolicy encryptionPolicy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream innerStream, bool leaveInnerStreamOpen, class System.Net.Security.RemoteCertificateValidationCallback userCertificateValidationCallback, class System.Net.Security.LocalCertificateSelectionCallback userCertificateSelectionCallback, valuetype System.Net.Security.EncryptionPolicy encryptionPolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.#ctor(System.IO.Stream,System.Boolean,System.Net.Security.RemoteCertificateValidationCallback,System.Net.Security.LocalCertificateSelectionCallback,System.Net.Security.EncryptionPolicy)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoLimitation("encryptionPolicy is ignored")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="innerStream" Type="System.IO.Stream" />
+        <Parameter Name="leaveInnerStreamOpen" Type="System.Boolean" />
+        <Parameter Name="userCertificateValidationCallback" Type="System.Net.Security.RemoteCertificateValidationCallback" />
+        <Parameter Name="userCertificateSelectionCallback" Type="System.Net.Security.LocalCertificateSelectionCallback" />
+        <Parameter Name="encryptionPolicy" Type="System.Net.Security.EncryptionPolicy" />
+      </Parameters>
+      <Docs>
+        <param name="innerStream">A<see cref="T:System.IO.Stream" />によって使用されるオブジェクト、<see cref="T:System.Net.Security.SslStream" />のデータを送受信します。</param>
+        <param name="leaveInnerStreamOpen">クロージャ動作を示すブール値、<see cref="T:System.IO.Stream" />によって使用されるオブジェクト、<see cref="T:System.Net.Security.SslStream" />のデータを送受信します。 このパラメーターは、内部ストリームが開いたままかどうかを示します。</param>
+        <param name="userCertificateValidationCallback">A<see cref="T:System.Net.Security.RemoteCertificateValidationCallback" />リモート パーティによって提供された証明書を検証します。</param>
+        <param name="userCertificateSelectionCallback">A<see cref="T:System.Net.Security.LocalCertificateSelectionCallback" />書を認証に使用する証明書を選択します。</param>
+        <param name="encryptionPolicy">使用する <see cref="T:System.Net.Security.EncryptionPolicy" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Security.SslStream" />クラス<see cref="T:System.IO.Stream" /></summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Null 暗号の使用が必要なときに、`encryptionPolicy`にパラメーターが設定されている<xref:System.Net.Security.EncryptionPolicy?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="innerStream" />読み取りができません。  
+  
+ または  
+  
+ <paramref name="innerStream" />書き込みができません。  
+  
+ または  
+  
+ <paramref name="encryptionPolicy" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="innerStream" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="innerStream" /> と <see cref="F:System.IO.Stream.Null" /> が等価です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsClient">
+      <MemberSignature Language="C#" Value="public virtual void AuthenticateAsClient (string targetHost);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AuthenticateAsClient(string targetHost) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsClient(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetHost" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetHost">この <see cref="T:System.Net.Security.SslStream" /> を共有するサーバーの名前。</param>
+        <summary>サーバーおよび必要に応じてクライアントとサーバー間の接続にあるクライアントを認証するために、クライアントによって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Security.Authentication.SslProtocols.Default>します。 認証では、クライアント証明書は使用されません。 証明書失効リストは、認証時にチェックされません。 指定された値`targetHost`サーバーの証明書の名前が一致する必要があります。  
+  
+ 認証が成功した場合、確認する必要があります、<xref:System.Net.Security.SslStream.IsEncrypted%2A>と<xref:System.Net.Security.SslStream.IsSigned%2A>プロパティを確認してどのようなセキュリティ サービスがによって使用される、<xref:System.Net.Security.SslStream>です。 チェック、<xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A>相互認証が行われたかどうかを決定するプロパティです。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetHost" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するサーバーの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsClient">
+      <MemberSignature Language="C#" Value="public virtual void AuthenticateAsClient (string targetHost, System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, bool checkCertificateRevocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AuthenticateAsClient(string targetHost, class System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, bool checkCertificateRevocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsClient(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetHost" Type="System.String" />
+        <Parameter Name="clientCertificates" Type="System.Security.Cryptography.X509Certificates.X509CertificateCollection" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="targetHost">この <see cref="T:System.Net.Security.SslStream" /> を共有するサーバーの名前。</param>
+        <param name="clientCertificates">クライアント証明書を格納している <see cref="T:System.Security.Cryptography.X509Certificates.X509CertificateCollection" />。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <summary>サーバーおよび必要に応じてクライアントとサーバー間の接続にあるクライアントを認証するために、クライアントによって呼び出されます。 認証プロセスでは、指定された証明書コレクション、およびシステムの既定の SSL プロトコルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証が成功した場合、確認する必要があります、<xref:System.Net.Security.SslStream.IsEncrypted%2A>と<xref:System.Net.Security.SslStream.IsSigned%2A>プロパティを確認してどのようなセキュリティ サービスがによって使用される、<xref:System.Net.Security.SslStream>です。 チェック、<xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A>相互認証が行われたかどうかを決定するプロパティです。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+> [!NOTE]
+>  SSL バージョン 2 プロトコルでは、クライアント証明書はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsClient">
+      <MemberSignature Language="C#" Value="public virtual void AuthenticateAsClient (string targetHost, System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AuthenticateAsClient(string targetHost, class System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, valuetype System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsClient(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Security.Authentication.SslProtocols,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetHost" Type="System.String" />
+        <Parameter Name="clientCertificates" Type="System.Security.Cryptography.X509Certificates.X509CertificateCollection" />
+        <Parameter Name="enabledSslProtocols" Type="System.Security.Authentication.SslProtocols" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="targetHost">この <see cref="T:System.Net.Security.SslStream" /> を共有するサーバーの名前。</param>
+        <param name="clientCertificates">クライアント証明書を格納している <see cref="T:System.Security.Cryptography.X509Certificates.X509CertificateCollection" />。</param>
+        <param name="enabledSslProtocols"><see cref="T:System.Security.Authentication.SslProtocols" />認証に使用されるプロトコルを表す値です。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <summary>サーバーおよび必要に応じてクライアントとサーバー間の接続にあるクライアントを認証するために、クライアントによって呼び出されます。 認証プロセスでは、指定された証明書のコレクションと SSL プロトコルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証が成功した場合、確認する必要があります、<xref:System.Net.Security.SslStream.IsEncrypted%2A>と<xref:System.Net.Security.SslStream.IsSigned%2A>プロパティを確認してどのようなセキュリティ サービスがによって使用される、<xref:System.Net.Security.SslStream>です。 チェック、<xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A>相互認証が行われたかどうかを決定するプロパティです。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+> [!NOTE]
+>  SSL バージョン 2 プロトコルでは、クライアント証明書はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsClientAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task AuthenticateAsClientAsync (string targetHost);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task AuthenticateAsClientAsync(string targetHost) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsClientAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetHost" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetHost">この <see cref="T:System.Net.Security.SslStream" /> を共有するサーバーの名前。</param>
+        <summary>サーバーおよび必要に応じて非同期操作としてクライアントとサーバー間の接続にあるクライアントを認証するために、クライアントによって呼び出されます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Security.Authentication.SslProtocols.Default>します。 認証では、クライアント証明書は使用されません。 証明書失効リストは、認証時にチェックされません。 指定された値`targetHost`サーバーの証明書の名前が一致する必要があります。  
+  
+ 認証が成功した場合、確認する必要があります、<xref:System.Net.Security.SslStream.IsEncrypted%2A>と<xref:System.Net.Security.SslStream.IsSigned%2A>プロパティを確認してどのようなセキュリティ サービスがによって使用される、<xref:System.Net.Security.SslStream>です。 チェック、<xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A>相互認証が行われたかどうかを決定するプロパティです。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetHost" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するサーバーの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsClientAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task AuthenticateAsClientAsync (string targetHost, System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, bool checkCertificateRevocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task AuthenticateAsClientAsync(string targetHost, class System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, bool checkCertificateRevocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsClientAsync(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetHost" Type="System.String" />
+        <Parameter Name="clientCertificates" Type="System.Security.Cryptography.X509Certificates.X509CertificateCollection" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="targetHost">この <see cref="T:System.Net.Security.SslStream" /> を共有するサーバーの名前。</param>
+        <param name="clientCertificates">クライアント証明書を格納している <see cref="T:System.Security.Cryptography.X509Certificates.X509CertificateCollection" />。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <summary>サーバーおよび必要に応じて非同期操作としてクライアントとサーバー間の接続にあるクライアントを認証するために、クライアントによって呼び出されます。 認証プロセスでは、指定された証明書コレクション、およびシステムの既定の SSL プロトコルを使用します。</summary>
+        <returns>非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証が成功した場合、確認する必要があります、<xref:System.Net.Security.SslStream.IsEncrypted%2A>と<xref:System.Net.Security.SslStream.IsSigned%2A>プロパティを確認してどのようなセキュリティ サービスがによって使用される、<xref:System.Net.Security.SslStream>です。 チェック、<xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A>相互認証が行われたかどうかを決定するプロパティです。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+> [!NOTE]
+>  SSL バージョン 2 プロトコルでは、クライアント証明書はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsClientAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task AuthenticateAsClientAsync (string targetHost, System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task AuthenticateAsClientAsync(string targetHost, class System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, valuetype System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsClientAsync(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Security.Authentication.SslProtocols,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetHost" Type="System.String" />
+        <Parameter Name="clientCertificates" Type="System.Security.Cryptography.X509Certificates.X509CertificateCollection" />
+        <Parameter Name="enabledSslProtocols" Type="System.Security.Authentication.SslProtocols" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="targetHost">この <see cref="T:System.Net.Security.SslStream" /> を共有するサーバーの名前。</param>
+        <param name="clientCertificates">クライアント証明書を格納している <see cref="T:System.Security.Cryptography.X509Certificates.X509CertificateCollection" />。</param>
+        <param name="enabledSslProtocols"><see cref="T:System.Security.Authentication.SslProtocols" />認証に使用されるプロトコルを表す値です。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <summary>サーバーおよび必要に応じて非同期操作としてクライアントとサーバー間の接続にあるクライアントを認証するために、クライアントによって呼び出されます。 認証プロセスでは、指定された証明書のコレクションと SSL プロトコルを使用します。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証が成功した場合、確認する必要があります、<xref:System.Net.Security.SslStream.IsEncrypted%2A>と<xref:System.Net.Security.SslStream.IsSigned%2A>プロパティを確認してどのようなセキュリティ サービスがによって使用される、<xref:System.Net.Security.SslStream>です。 チェック、<xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A>相互認証が行われたかどうかを決定するプロパティです。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+> [!NOTE]
+>  SSL バージョン 2 プロトコルでは、クライアント証明書はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsServer">
+      <MemberSignature Language="C#" Value="public virtual void AuthenticateAsServer (System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AuthenticateAsServer(class System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsServer(System.Security.Cryptography.X509Certificates.X509Certificate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+      </Parameters>
+      <Docs>
+        <param name="serverCertificate">サーバーの認証に使用される証明書。</param>
+        <summary>サーバーと、必要に応じて指定された証明書を使用するクライアントとサーバー接続でクライアントを認証するサーバーによって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Security.Authentication.SslProtocols.Default>します。 証明書失効リストは、認証時にチェックされません。 クライアントは、認証用証明書を提供する必要はありません。  
+  
+ このメソッドは、操作が完了するまでブロックします。 操作が完了するまでブロックを防ぐためには、いずれかの操作を使用して、<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドのオーバー ロードします。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serverCertificate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するクライアントの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Windows 95、Windows 98、および Windows ME (Millennium Edition) では、<see cref="Overload:System.Net.Security.SslStream.AuthenticateAsServer" /> メソッドはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsServer">
+      <MemberSignature Language="C#" Value="public virtual void AuthenticateAsServer (System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, bool checkCertificateRevocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AuthenticateAsServer(class System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, bool checkCertificateRevocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsServer(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+        <Parameter Name="clientCertificateRequired" Type="System.Boolean" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serverCertificate">サーバーの認証に使用される X509Certificate。</param>
+        <param name="clientCertificateRequired">認証用の証明書をクライアントに要求するかどうかを指定する <see cref="T:System.Boolean" /> 値。 これは単なる要求であり、証明書が提供されなくても、サーバーは接続要求を受け入れることに注意してください。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <summary>指定された証明書と要件、およびシステムの既定のセキュリティ プロトコルを使用して、サーバーおよび必要に応じてクライアントとサーバー間の接続にあるクライアントを認証するために、サーバーによって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、操作が完了するまでブロックします。 操作が完了するまでブロックを防ぐためには、いずれかの操作を使用して、<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドのオーバー ロードします。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serverCertificate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するクライアントの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Windows 95、Windows 98、および Windows ME (Millennium Edition) では、<see cref="Overload:System.Net.Security.SslStream.AuthenticateAsServer" /> メソッドはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsServer">
+      <MemberSignature Language="C#" Value="public virtual void AuthenticateAsServer (System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AuthenticateAsServer(class System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, valuetype System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsServer(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Security.Authentication.SslProtocols,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+        <Parameter Name="clientCertificateRequired" Type="System.Boolean" />
+        <Parameter Name="enabledSslProtocols" Type="System.Security.Authentication.SslProtocols" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serverCertificate">サーバーの認証に使用される X509Certificate。</param>
+        <param name="clientCertificateRequired">認証用の証明書をクライアントに要求するかどうかを指定する <see cref="T:System.Boolean" /> 値。 これは単なる要求であり、証明書が提供されなくても、サーバーは接続要求を受け入れることに注意してください。</param>
+        <param name="enabledSslProtocols"><see cref="T:System.Security.Authentication.SslProtocols" />認証に使用されるプロトコルを表す値です。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <summary>指定された証明書、要件、およびセキュリティ プロトコルを使用して、サーバーおよび必要に応じてクライアントとサーバー間の接続にあるクライアントを認証するために、サーバーによって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、操作が完了するまでブロックします。 操作が完了するまでブロックを防ぐためには、いずれかの操作を使用して、<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドのオーバー ロードします。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serverCertificate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enabledSslProtocols" /> は有効な <see cref="T:System.Security.Authentication.SslProtocols" /> 値ではありません。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するクライアントの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Windows 95、Windows 98、および Windows ME (Millennium Edition) では、<see cref="Overload:System.Net.Security.SslStream.AuthenticateAsServer" /> メソッドはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsServerAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task AuthenticateAsServerAsync (System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task AuthenticateAsServerAsync(class System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsServerAsync(System.Security.Cryptography.X509Certificates.X509Certificate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+      </Parameters>
+      <Docs>
+        <param name="serverCertificate">サーバーの認証に使用される証明書。</param>
+        <summary>サーバーと、必要に応じて、非同期操作として指定された証明書を使用するクライアントとサーバー接続でクライアントを認証するサーバーによって呼び出されます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Security.Authentication.SslProtocols.Default>します。 証明書失効リストは、認証時にチェックされません。 クライアントは、認証用証明書を提供する必要はありません。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serverCertificate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するクライアントの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Windows 95、Windows 98、および Windows ME (Millennium Edition) では、<see cref="Overload:System.Net.Security.SslStream.AuthenticateAsServerAsync" /> メソッドはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsServerAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task AuthenticateAsServerAsync (System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, bool checkCertificateRevocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task AuthenticateAsServerAsync(class System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, bool checkCertificateRevocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsServerAsync(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+        <Parameter Name="clientCertificateRequired" Type="System.Boolean" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serverCertificate">サーバーの認証に使用される X509Certificate。</param>
+        <param name="clientCertificateRequired">認証用の証明書をクライアントに要求するかどうかを指定する <see cref="T:System.Boolean" /> 値。 これは単なる要求であり、証明書が提供されなくても、サーバーは接続要求を受け入れることに注意してください。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <summary>指定された証明書、要件、およびセキュリティ プロトコルを使用して、サーバーおよび必要に応じてクライアントとサーバー間の接続にあるクライアントを認証するために、非同期操作としてサーバーによって呼び出されます。</summary>
+        <returns>非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticateAsServerAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task AuthenticateAsServerAsync (System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task AuthenticateAsServerAsync(class System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, valuetype System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.AuthenticateAsServerAsync(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Security.Authentication.SslProtocols,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+        <Parameter Name="clientCertificateRequired" Type="System.Boolean" />
+        <Parameter Name="enabledSslProtocols" Type="System.Security.Authentication.SslProtocols" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serverCertificate">サーバーの認証に使用される X509Certificate。</param>
+        <param name="clientCertificateRequired">認証用の証明書をクライアントに要求するかどうかを指定する <see cref="T:System.Boolean" /> 値。 これは単なる要求であり、証明書が提供されなくても、サーバーは接続要求を受け入れることに注意してください。</param>
+        <param name="enabledSslProtocols"><see cref="T:System.Security.Authentication.SslProtocols" />認証に使用されるプロトコルを表す値です。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <summary>指定された証明書、要件、およびセキュリティ プロトコルを使用して、サーバーおよび必要に応じてクライアントとサーバー間の接続にあるクライアントを認証するために、非同期操作としてサーバーによって呼び出されます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="BeginAuthenticateAsClient">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>クライアント サーバー接続のクライアント側を認証するための操作を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証が進行中は、このメソッドのオーバー ロードはブロックしません。 認証を完了を待っている間にブロックするには、いずれかを使用、<xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="BeginAuthenticateAsClient">
+      <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginAuthenticateAsClient (string targetHost, AsyncCallback asyncCallback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAuthenticateAsClient(string targetHost, class System.AsyncCallback asyncCallback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.BeginAuthenticateAsClient(System.String,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetHost" Type="System.String" />
+        <Parameter Name="asyncCallback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetHost">この <see cref="T:System.Net.Security.SslStream" /> を共有するサーバーの名前。</param>
+        <param name="asyncCallback">認証完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="asyncState">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、 <c>asyncCallback</c>操作の完了時に委任します。</param>
+        <summary>クライアントがサーバーを認証する非同期操作を開始して、必要に応じて、クライアントによって呼び出されます。</summary>
+        <returns>非同期操作のステータスを示す <see cref="T:System.IAsyncResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Security.Authentication.SslProtocols.Default>します。 認証では、クライアント証明書は使用されません。 証明書失効リストは、認証時にチェックされません。  
+  
+ 指定された値`targetHost`サーバーの証明書の名前が一致する必要があります。  
+  
+ 呼び出しで、認証の非同期操作を完了する必要があります、<xref:System.Net.Security.SslStream.EndAuthenticateAsClient%2A>メソッドです。 通常、このメソッドはによって、`asyncCallback`を委任します。  
+  
+ このメソッドは、操作が完了するにはブロックされません。 操作が完了するまでブロックするには、いずれかを使用、<xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>メソッドのオーバー ロードします。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください[同期のメソッドを非同期に呼び出す。](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+  
+ 表示された場合、 <xref:System.Security.Authentication.AuthenticationException>、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetHost" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するサーバーの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAuthenticateAsClient">
+      <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginAuthenticateAsClient (string targetHost, System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, bool checkCertificateRevocation, AsyncCallback asyncCallback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAuthenticateAsClient(string targetHost, class System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, bool checkCertificateRevocation, class System.AsyncCallback asyncCallback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.BeginAuthenticateAsClient(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Boolean,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetHost" Type="System.String" />
+        <Parameter Name="clientCertificates" Type="System.Security.Cryptography.X509Certificates.X509CertificateCollection" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+        <Parameter Name="asyncCallback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetHost">この <see cref="T:System.Net.Security.SslStream" /> を共有するサーバーの名前。</param>
+        <param name="clientCertificates">クライアント証明書を含んでいる <see cref="T:System.Security.Cryptography.X509Certificates.X509CertificateCollection" />。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <param name="asyncCallback">認証完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="asyncState">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、 <c>asyncCallback</c>操作の完了時に委任します。</param>
+        <summary>指定された証明書およびシステムの既定のセキュリティ プロトコルを使用して、サーバー、および必要に応じてクライアントを認証する非同期操作を開始するために、クライアントによって呼び出されます。</summary>
+        <returns>非同期操作のステータスを示す <see cref="T:System.IAsyncResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値`targetHost`サーバーの証明書の名前が一致する必要があります。  
+  
+ 呼び出しで、認証の非同期操作を完了する必要があります、<xref:System.Net.Security.SslStream.EndAuthenticateAsClient%2A>メソッドです。 通常、このメソッドはによって、`asyncCallback`を委任します。  
+  
+ このメソッドは、操作が完了するにはブロックされません。 操作が完了するまでブロックするには、いずれかを使用、<xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>メソッドのオーバー ロードします。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください[同期のメソッドを非同期に呼び出す。](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+  
+ 表示された場合、 <xref:System.Security.Authentication.AuthenticationException>、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+> [!NOTE]
+>  SSL バージョン 2 プロトコルでは、クライアント証明書はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetHost" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するサーバーの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAuthenticateAsClient">
+      <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginAuthenticateAsClient (string targetHost, System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation, AsyncCallback asyncCallback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAuthenticateAsClient(string targetHost, class System.Security.Cryptography.X509Certificates.X509CertificateCollection clientCertificates, valuetype System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation, class System.AsyncCallback asyncCallback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.BeginAuthenticateAsClient(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Security.Authentication.SslProtocols,System.Boolean,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetHost" Type="System.String" />
+        <Parameter Name="clientCertificates" Type="System.Security.Cryptography.X509Certificates.X509CertificateCollection" />
+        <Parameter Name="enabledSslProtocols" Type="System.Security.Authentication.SslProtocols" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+        <Parameter Name="asyncCallback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetHost">この <see cref="T:System.Net.Security.SslStream" /> を共有するサーバーの名前。</param>
+        <param name="clientCertificates">クライアント証明書を含んでいる <see cref="T:System.Security.Cryptography.X509Certificates.X509CertificateCollection" />。</param>
+        <param name="enabledSslProtocols"><see cref="T:System.Security.Authentication.SslProtocols" />認証に使用されるプロトコルを表す値です。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <param name="asyncCallback">認証完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="asyncState">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、 <c>asyncCallback</c>操作の完了時に委任します。</param>
+        <summary>クライアントがサーバーを認証する非同期操作を開始して、必要に応じて、指定された証明書およびセキュリティ プロトコルを使用して、クライアントによって呼び出されます。</summary>
+        <returns>非同期操作のステータスを示す <see cref="T:System.IAsyncResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値`targetHost`サーバーの証明書の名前が一致する必要があります。  
+  
+ 呼び出しで、認証の非同期操作を完了する必要があります、<xref:System.Net.Security.SslStream.EndAuthenticateAsClient%2A>メソッドです。 通常、このメソッドはによって、`asyncCallback`を委任します。  
+  
+ このメソッドは、操作が完了するにはブロックされません。 操作が完了するまでブロックするには、いずれかを使用、<xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>メソッドのオーバー ロードします。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください[同期のメソッドを非同期に呼び出す。](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+  
+ 表示された場合、 <xref:System.Security.Authentication.AuthenticationException>、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+> [!NOTE]
+>  SSL バージョン 2 プロトコルでは、クライアント証明書はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetHost" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enabledSslProtocols" /> は有効な <see cref="T:System.Security.Authentication.SslProtocols" /> 値ではありません。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するサーバーの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="BeginAuthenticateAsServer">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>クライアントとサーバーの接続を認証するためのサーバー側の処理を非同期操作を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証が進行中は、このメソッドのオーバー ロードはブロックしません。 認証を完了を待っている間にブロックするには、いずれかを使用、<xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="BeginAuthenticateAsServer">
+      <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginAuthenticateAsServer (System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, AsyncCallback asyncCallback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAuthenticateAsServer(class System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, class System.AsyncCallback asyncCallback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.BeginAuthenticateAsServer(System.Security.Cryptography.X509Certificates.X509Certificate,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+        <Parameter Name="asyncCallback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serverCertificate">サーバーの認証に使用される X509Certificate。</param>
+        <param name="asyncCallback">認証完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="asyncState">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、 <c>asyncCallback</c>操作の完了時に委任します。</param>
+        <summary>クライアントを認証する非同期操作を開始するサーバーと必要に応じてクライアント サーバー接続で、サーバーによって呼び出されます。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期操作の状態を示すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Security.Authentication.SslProtocols.Default>します。 証明書失効リストは、認証時にチェックされません。 クライアントは、認証用証明書を提供する必要はありません。  
+  
+ 呼び出しで、認証の非同期操作を完了する必要があります、<xref:System.Net.Security.SslStream.EndAuthenticateAsClient%2A>メソッドです。 通常、このメソッドはによって、`asyncCallback`を委任します。  
+  
+ このメソッドは、操作が完了するにはブロックされません。 操作が完了するまでブロックするには、いずれかを使用、<xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>メソッドのオーバー ロードします。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください[同期のメソッドを非同期に呼び出す。](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+  
+ 表示された場合、 <xref:System.Security.Authentication.AuthenticationException>、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serverCertificate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するクライアントの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Windows 95、Windows 98、および Windows ME (Millennium Edition) では、<see cref="Overload:System.Net.Security.SslStream.BeginAuthenticateAsServer" /> メソッドはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAuthenticateAsServer">
+      <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginAuthenticateAsServer (System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, bool checkCertificateRevocation, AsyncCallback asyncCallback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAuthenticateAsServer(class System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, bool checkCertificateRevocation, class System.AsyncCallback asyncCallback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.BeginAuthenticateAsServer(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Boolean,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+        <Parameter Name="clientCertificateRequired" Type="System.Boolean" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+        <Parameter Name="asyncCallback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serverCertificate">サーバーの認証に使用される X509Certificate。</param>
+        <param name="clientCertificateRequired">認証用の証明書をクライアントに要求するかどうかを指定する <see cref="T:System.Boolean" /> 値。 これは単なる要求であり、証明書が提供されなくても、サーバーは接続要求を受け入れることに注意してください。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <param name="asyncCallback">認証完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="asyncState">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、 <c>asyncCallback</c>操作の完了時に委任します。</param>
+        <summary>指定された証明書と要件、およびシステムの既定のセキュリティ プロトコルを使用して、サーバー、および必要に応じてクライアントを認証する非同期操作を開始するために、サーバーによって呼び出されます。</summary>
+        <returns>非同期操作のステータスを示す <see cref="T:System.IAsyncResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しで、認証の非同期操作を完了する必要があります、<xref:System.Net.Security.SslStream.EndAuthenticateAsServer%2A>メソッドです。 通常、このメソッドはによって、`asyncCallback`を委任します。  
+  
+ このメソッドは、操作が完了するにはブロックされません。 操作が完了するまでブロックするには、いずれかを使用、<xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>メソッドのオーバー ロードします。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください[同期のメソッドを非同期に呼び出す。](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+  
+ 表示された場合、 <xref:System.Security.Authentication.AuthenticationException>、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serverCertificate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するサーバーの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Windows 95、Windows 98、および Windows ME (Millennium Edition) では、<see cref="Overload:System.Net.Security.SslStream.BeginAuthenticateAsServer" /> メソッドはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAuthenticateAsServer">
+      <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginAuthenticateAsServer (System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation, AsyncCallback asyncCallback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAuthenticateAsServer(class System.Security.Cryptography.X509Certificates.X509Certificate serverCertificate, bool clientCertificateRequired, valuetype System.Security.Authentication.SslProtocols enabledSslProtocols, bool checkCertificateRevocation, class System.AsyncCallback asyncCallback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.BeginAuthenticateAsServer(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Security.Authentication.SslProtocols,System.Boolean,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serverCertificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+        <Parameter Name="clientCertificateRequired" Type="System.Boolean" />
+        <Parameter Name="enabledSslProtocols" Type="System.Security.Authentication.SslProtocols" />
+        <Parameter Name="checkCertificateRevocation" Type="System.Boolean" />
+        <Parameter Name="asyncCallback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serverCertificate">サーバーの認証に使用される X509Certificate。</param>
+        <param name="clientCertificateRequired">認証用の証明書をクライアントに要求するかどうかを指定する <see cref="T:System.Boolean" /> 値。 これは単なる要求であり、証明書が提供されなくても、サーバーは接続要求を受け入れることに注意してください。</param>
+        <param name="enabledSslProtocols"><see cref="T:System.Security.Authentication.SslProtocols" />認証に使用されるプロトコルを表す値です。</param>
+        <param name="checkCertificateRevocation">認証時に証明書失効リストをオンにするかどうかを指定する <see cref="T:System.Boolean" /> 値。</param>
+        <param name="asyncCallback">認証完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="asyncState">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、 <c>asyncCallback</c>操作の完了時に委任します。</param>
+        <summary>指定された証明書、要件、およびセキュリティ プロトコルを使用して、サーバー、および必要に応じてクライアントを認証する非同期操作を開始するために、サーバーによって呼び出されます。</summary>
+        <returns>非同期操作のステータスを示す <see cref="T:System.IAsyncResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しで、認証の非同期操作を完了する必要があります、<xref:System.Net.Security.SslStream.EndAuthenticateAsServer%2A>メソッドです。 通常、このメソッドはによって、`asyncCallback`を委任します。  
+  
+ このメソッドは、操作が完了するにはブロックされません。 操作が完了するまでブロックするには、いずれかを使用、<xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>メソッドのオーバー ロードします。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください[同期のメソッドを非同期に呼び出す。](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+  
+ 表示された場合、 <xref:System.Security.Authentication.AuthenticationException>、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serverCertificate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enabledSslProtocols" /> は有効な <see cref="T:System.Security.Authentication.SslProtocols" /> 値ではありません。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が既に発生しました。  
+  
+ または  
+  
+ この <see cref="T:System.Net.Security.SslStream" /> を使用するサーバーの認証は以前に試行されました。  
+  
+ または  
+  
+ 認証が既に実行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Windows 95、Windows 98、および Windows ME (Millennium Edition) では、<see cref="Overload:System.Net.Security.SslStream.BeginAuthenticateAsServer" /> メソッドはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginRead">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] buffer, int offset, int count, AsyncCallback asyncCallback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback asyncCallback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="asyncCallback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">A<see cref="T:System.Byte" />ストリームから読み取ったバイトを受け取る配列。</param>
+        <param name="offset">内の 0 から始まる場所<c>バッファー</c>このストリームから読み取ったデータの格納を開始する位置。</param>
+        <param name="count">ストリームから読み取るバイトの最大数。</param>
+        <param name="asyncCallback"><see cref="T:System.AsyncCallback" />読み取り操作の完了時に呼び出すメソッドを参照するデリゲート。</param>
+        <param name="asyncState">読み取り操作に関する情報を含むユーザー定義のオブジェクト。 このオブジェクトは、 <c>asyncCallback</c>操作の完了時に委任します。</param>
+        <summary>ストリームからデータを読み取り、指定した配列に格納する非同期読み取り操作を開始します。</summary>
+        <returns>非同期操作のステータスを示す <see cref="T:System.IAsyncResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗号化や署名が有効になっている場合、読み取り操作が基になるストリームからデータを読み取り、データの整合性をチェックおよび復号化できます。 非同期の読み取り操作を呼び出すことによって完了する必要があります、<xref:System.Net.Security.SslStream.EndRead%2A>メソッドです。 通常、このメソッドはによって、`asyncCallback`を委任します。  
+  
+ このメソッドは、操作が完了するにはブロックされません。 操作が完了するまでをブロックするを使用して、<xref:System.Net.Security.SslStream.Read%2A>メソッドです。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください[同期のメソッドを非同期に呼び出す。](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+  
+ <xref:System.Net.Security.SslStream>クラスが複数の同時読み取り操作をサポートしていません。  
+  
+ 正常に認証が完了するまでは、このメソッドを呼び出すことはできません。 いずれかの呼び出しを認証するために、 <xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>、または<xref:System.Net.Security.SslStream.BeginAuthenticateAsClient%2A>、 <xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>、<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、非同期読み取り操作の開始を示します。  
+  
+ [!code-cpp[NclSslClientAsync#8](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslClientAsync/CPP/NclSslClientAsync.cpp#8)]
+ [!code-csharp[NclSslClientAsync#8](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslClientAsync/CS/clientasync.cs#8)]  
+  
+ [!code-cpp[NclSslClientAsync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslClientAsync/CPP/NclSslClientAsync.cpp#4)]
+ [!code-csharp[NclSslClientAsync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslClientAsync/CS/clientasync.cs#4)]  
+  
+ 次のメソッドは、読み取りが完了するときに呼び出されます。  
+  
+ [!code-cpp[NclSslClientAsync#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslClientAsync/CPP/NclSslClientAsync.cpp#5)]
+ [!code-csharp[NclSslClientAsync#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslClientAsync/CS/clientasync.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="offset" />
+          <paramref name="&lt;" />
+          <paramref name="0" />.  
+  
+ <paramref name="-or-" /><paramref name="offset" />&gt;の長さ<paramref name="buffer" />です。  
+  
+ または  
+  
+ <paramref name="offset" />+ count&gt;の長さ<paramref name="buffer" />です。</exception>
+        <exception cref="T:System.IO.IOException">読み取り操作が失敗しました。  
+  
+ または  
+  
+ 使用して、暗号化していますが、データの暗号化を解除できませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">実行中の読み取り操作が既に存在します。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が行われていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginWrite">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] buffer, int offset, int count, AsyncCallback asyncCallback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback asyncCallback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="asyncCallback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">A<see cref="T:System.Byte" />をストリームに書き込まれるバイト数を提供します。</param>
+        <param name="offset">内の 0 から始まる場所<c>バッファー</c>ストリームに書き込まれるバイトの読み取りを開始する位置。</param>
+        <param name="count"><see cref="T:System.Int32" />から読み取るバイト数を指定する値<c>バッファー</c>です。</param>
+        <param name="asyncCallback"><see cref="T:System.AsyncCallback" />書き込み操作の完了時に呼び出すメソッドを参照するデリゲート。</param>
+        <param name="asyncState">書き込み操作に関する情報を含むユーザー定義のオブジェクト。 このオブジェクトは、 <c>asyncCallback</c>操作の完了時に委任します。</param>
+        <summary>書き込む非同期の書き込み操作を開始<see cref="T:System.Byte" />ストリームに指定されたバッファーからの秒。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期操作の状態を示すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-cpp[NclSslServerAsync#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerAsync/CPP/NclSslServerAsync.cpp#5)]
+ [!code-csharp[NclSslServerAsync#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerAsync/CS/serverasync.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="offset" />
+          <paramref name="&lt;" />
+          <paramref name="0" />.  
+  
+ <paramref name="-or-" /><paramref name="offset" />&gt;の長さ<paramref name="buffer" />です。  
+  
+ または  
+  
+ <paramref name="offset" />+ count&gt;の長さ<paramref name="buffer" />です。</exception>
+        <exception cref="T:System.IO.IOException">書き込み操作に失敗しました。</exception>
+        <exception cref="T:System.NotSupportedException">実行中の書き込み操作が既に存在します。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が行われていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public override bool CanRead { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRead" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.CanRead" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />を基になるストリームが読み取り可能かどうかを示す値。</summary>
+        <value>
+          <see langword="true" />認証が行われ、基になるストリームが読み取り可能な場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 成功した認証が発生した場合、このプロパティは呼び出しによって返される値を返します<xref:System.IO.Stream.CanRead%2A>基になるストリーム。  
+  
+ インスタンスを作成するときに、基になるストリームが指定されている、<xref:System.Net.Security.SslStream>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSslServerSync#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#5)]
+ [!code-csharp[NclSslServerSync#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSeek">
+      <MemberSignature Language="C#" Value="public override bool CanSeek { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSeek" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.CanSeek" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />を基になるストリームがシーク可能かどうかを示す値。</summary>
+        <value>このプロパティは常に <see langword="false" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 位置を設定しないでください、<xref:System.Net.Security.SslStream>オブジェクトまたはその基になるストリーム。  
+  
+ インスタンスを作成するときに、基になるストリームが指定されている、<xref:System.Net.Security.SslStream>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanTimeout">
+      <MemberSignature Language="C#" Value="public override bool CanTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.CanTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />基になるストリームがタイムアウトをサポートするかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />基になるストリームがタイムアウトをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを呼び出すことによって返される値を返します<xref:System.IO.Stream.CanTimeout%2A>基になるストリーム。  
+  
+ インスタンスを作成するときに、基になるストリームが指定されている、<xref:System.Net.Security.SslStream>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSslServerSync#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#5)]
+ [!code-csharp[NclSslServerSync#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWrite">
+      <MemberSignature Language="C#" Value="public override bool CanWrite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWrite" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.CanWrite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />を基になるストリームが書き込み可能かどうかを示す値。</summary>
+        <value>
+          <see langword="true" />認証が行われ、基になるストリームが書き込み可能な場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 成功した認証が発生した場合、このプロパティは呼び出しによって返される値を返します<xref:System.IO.Stream.CanWrite%2A>基になるストリーム。  
+  
+ インスタンスを作成するときに、基になるストリームが指定されている、<xref:System.Net.Security.SslStream>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSslServerSync#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#5)]
+ [!code-csharp[NclSslServerSync#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckCertRevocationStatus">
+      <MemberSignature Language="C#" Value="public virtual bool CheckCertRevocationStatus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CheckCertRevocationStatus" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.CheckCertRevocationStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />証明書の検証プロセス中に証明書失効リストを確認するかどうかを示す値。</summary>
+        <value>
+          証明書失効リストが照合される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証明書失効リストには、発行元によって失効した証明書が含まれています。 悪影響を及ぼす一覧を確認すると、パフォーマンスに影響を与えますが、アプリケーションのセキュリティが向上します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSslServerSync#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#5)]
+ [!code-csharp[NclSslServerSync#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CipherAlgorithm">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Authentication.CipherAlgorithmType CipherAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Authentication.CipherAlgorithmType CipherAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.CipherAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.CipherAlgorithmType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって使用される一括暗号化アルゴリズムを識別する値を取得<see cref="T:System.Net.Security.SslStream" />です。</summary>
+        <value><see cref="T:System.Security.Authentication.CipherAlgorithmType" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Security.Authentication.CipherAlgorithmType.Null>に必要な<xref:System.Net.Security.SslStream.CipherAlgorithm%2A>プロパティと、<xref:System.Net.Security.EncryptionPolicy.NoEncryption>列挙値が構築するために使用される、<xref:System.Net.Security.SslStream>インスタンス。  
+  
+ [!INCLUDE[winxpsvr](~/includes/winxpsvr-md.md)]および[!INCLUDE[winxp](~/includes/winxp-md.md)]サポートしていない、<xref:System.Security.Authentication.CipherAlgorithmType.Null>値。 場合でも、<xref:System.Security.Authentication.CipherAlgorithmType.Null>値が構築するために使用される、 <xref:System.Net.Security.SslStream> 、インスタンス、<xref:System.Net.Security.EncryptionPolicy>プロパティになります<xref:System.Security.Authentication.CipherAlgorithmType.None>です。 <xref:System.Security.Authentication.CipherAlgorithmType.Null> Windows Vista 以降でのみ値が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定したストリーム用の暗号化設定を表示します。  
+  
+ [!code-cpp[NclSslServerSync#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#3)]
+ [!code-csharp[NclSslServerSync#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Net.Security.SslStream.CipherAlgorithm" />認証プロセスや、認証プロセスの完了前にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CipherStrength">
+      <MemberSignature Language="C#" Value="public virtual int CipherStrength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CipherStrength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.CipherStrength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これで使用される暗号アルゴリズムの強度を識別する値を取得<see cref="T:System.Net.Security.SslStream" />です。</summary>
+        <value><see cref="T:System.Int32" />アルゴリズムの強度をビット単位で指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証が行われるまで、このプロパティの値は 0 です。  
+  
+ このプロパティは、次の値のいずれかを返します。  
+  
+-   0  
+  
+-   40  
+  
+-   56  
+  
+-   80  
+  
+-   128  
+  
+-   168  
+  
+-   192  
+  
+-   256  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定したストリーム用の暗号化設定を表示します。  
+  
+ [!code-cpp[NclSslServerSync#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#3)]
+ [!code-csharp[NclSslServerSync#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Net.Security.SslStream" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Net.Security.SslStream>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndAuthenticateAsClient">
+      <MemberSignature Language="C#" Value="public virtual void EndAuthenticateAsClient (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndAuthenticateAsClient(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.EndAuthenticateAsClient(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />への呼び出しによって返されるインスタンス<see cref="Overload:System.Net.Security.SslStream.BeginAuthenticateAsServer" />です。</param>
+        <summary>保留中の非同期サーバー認証操作を開始する以前の呼び出しが終了<see cref="Overload:System.Net.Security.SslStream.BeginAuthenticateAsServer" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作が完了していない場合、このメソッドはそれまでブロックします。 認証が成功した場合、確認する必要があります、<xref:System.Net.Security.SslStream.IsEncrypted%2A>と<xref:System.Net.Security.SslStream.IsSigned%2A>プロパティを確認してどのようなセキュリティ サービスがによって使用される、<xref:System.Net.Security.SslStream>です。 チェック、<xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A>相互認証が行われたかどうかを決定するプロパティです。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ この操作を同期的に実行するには、いずれかの操作を使用して、<xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" />呼び出しによって作成されていない<see cref="Overload:System.Net.Security.SslStream.BeginAuthenticateAsServer" />です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">保留中のサーバー認証が完了することはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndAuthenticateAsServer">
+      <MemberSignature Language="C#" Value="public virtual void EndAuthenticateAsServer (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndAuthenticateAsServer(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.EndAuthenticateAsServer(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />への呼び出しによって返されるインスタンス<see cref="Overload:System.Net.Security.SslStream.BeginAuthenticateAsClient" />です。</param>
+        <summary>前の呼び出しで保留中の非同期クライアントの認証操作が開始された終了<see cref="Overload:System.Net.Security.SslStream.BeginAuthenticateAsClient" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作が完了していない場合、このメソッドはそれまでブロックします。 認証が成功した場合、確認する必要があります、<xref:System.Net.Security.SslStream.IsEncrypted%2A>と<xref:System.Net.Security.SslStream.IsSigned%2A>プロパティを確認してどのようなセキュリティ サービスがによって使用される、<xref:System.Net.Security.SslStream>です。 チェック、<xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A>相互認証が行われたかどうかを決定するプロパティです。  
+  
+ 受信した認証に失敗した場合、 <xref:System.Security.Authentication.AuthenticationException>、され、この<xref:System.Net.Security.SslStream>使用できなくします。 このオブジェクトを閉じるし、ガベージ コレクターによって収集できるように、すべての参照を削除する必要があります。  
+  
+ この操作を同期的に実行するには、いずれかの操作を使用して、<xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" />呼び出しによって作成されていない<see cref="Overload:System.Net.Security.SslStream.BeginAuthenticateAsClient" />です。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">認証に失敗し、このオブジェクトが使用できない状態のままになっています。</exception>
+        <exception cref="T:System.InvalidOperationException">保留中のクライアント認証が完了することはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndRead">
+      <MemberSignature Language="C#" Value="public override int EndRead (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 EndRead(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.EndRead(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />への呼び出しによって返されるインスタンス<see cref="M:System.Net.Security.SslStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /></param>
+        <summary>非同期読み取り操作の開始前の呼び出しで終了<see cref="M:System.Net.Security.SslStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />です。</summary>
+        <returns>A<see cref="T:System.Int32" />基になるストリームから読み取ったバイト数を指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作が完了していない場合、このメソッドはそれまでブロックします。  
+  
+ この操作を同期的に実行するを使用して、<xref:System.Net.Security.SslStream.Read%2A>メソッドです。  
+  
+ 正常に認証が完了するまでは、このメソッドを呼び出すことはできません。 いずれかの呼び出しを認証するために、 <xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>、または<xref:System.Net.Security.SslStream.BeginAuthenticateAsClient%2A>、 <xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>、<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、読み取り操作の非同期の終了を示します。  
+  
+ [!code-cpp[NclSslClientAsync#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslClientAsync/CPP/NclSslClientAsync.cpp#5)]
+ [!code-csharp[NclSslClientAsync#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslClientAsync/CS/clientasync.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" />呼び出しによって作成されていない<see cref="M:System.Net.Security.SslStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が行われていません。</exception>
+        <exception cref="T:System.IO.IOException">読み取り操作が失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndWrite">
+      <MemberSignature Language="C#" Value="public override void EndWrite (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndWrite(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.EndWrite(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />への呼び出しによって返されるインスタンス<see cref="M:System.Net.Security.SslStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /></param>
+        <summary>非同期の書き込み操作の開始前の呼び出しで終了<see cref="M:System.Net.Security.SslStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作が完了していない場合、このメソッドはそれまでブロックします。  
+  
+ アプリケーションは、正常に認証が完了するまで、このメソッドを呼び出すことはできません。 を認証するには、のいずれかを呼び出して、 <xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>、または<xref:System.Net.Security.SslStream.BeginAuthenticateAsClient%2A>、 <xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>、<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドです。  
+  
+ この操作を同期的に実行するを使用して、<xref:System.Net.Security.SslStream.Write%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、非同期の書き込み操作の終了を示します。  
+  
+ [!code-cpp[NclSslServerAsync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerAsync/CPP/NclSslServerAsync.cpp#4)]
+ [!code-csharp[NclSslServerAsync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerAsync/CS/serverasync.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" />呼び出しによって作成されていない<see cref="M:System.Net.Security.SslStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が行われていません。</exception>
+        <exception cref="T:System.IO.IOException">書き込み操作に失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になるデバイスに書き込まれるバッファー内のデータが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出して<xref:System.IO.Stream.Flush%2A>基になるストリーム。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-cpp[NclSslClientSync#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslClientSync/CPP/clientsync.cpp#5)]
+ [!code-csharp[NclSslClientSync#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslClientSync/CS/clientsync.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlushAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task FlushAsync (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task FlushAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.FlushAsync(System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HashAlgorithm">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Authentication.HashAlgorithmType HashAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Authentication.HashAlgorithmType HashAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.HashAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.HashAlgorithmType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ認証コード (Mac) を生成するために使用されるアルゴリズムを取得します。</summary>
+        <value><see cref="T:System.Security.Authentication.HashAlgorithmType" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ認証アルゴリズムは、メッセージのハッシュと改ざんとフォージェリを検出するために使用する署名を生成します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定したストリーム用の暗号化設定を表示します。  
+  
+ [!code-cpp[NclSslServerSync#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#3)]
+ [!code-csharp[NclSslServerSync#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Net.Security.SslStream.HashAlgorithm" />認証プロセスや、認証プロセスの完了前にプロパティがアクセスされました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HashStrength">
+      <MemberSignature Language="C#" Value="public virtual int HashStrength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 HashStrength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.HashStrength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスで使用されるハッシュ アルゴリズムの強度を識別する値を取得します。</summary>
+        <value><see cref="T:System.Int32" />の強さを示す値、<see cref="T:System.Security.Authentication.HashAlgorithmType" />ビット単位のアルゴリズムです。 有効な値は 128 160 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証が行われるまで、このプロパティの値は 0 です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定したストリーム用の暗号化設定を表示します。  
+  
+ [!code-cpp[NclSslServerSync#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#3)]
+ [!code-csharp[NclSslServerSync#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAuthenticated">
+      <MemberSignature Language="C#" Value="public override bool IsAuthenticated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAuthenticated" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.IsAuthenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />認証が成功したかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />認証成功した場合です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントの認証を呼び出して、<xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>または<xref:System.Net.Security.SslStream.BeginAuthenticateAsClient%2A>メソッドです。 呼び出してサーバーに認証、<xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>または<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSslServerSync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#4)]
+ [!code-csharp[NclSslServerSync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEncrypted">
+      <MemberSignature Language="C#" Value="public override bool IsEncrypted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEncrypted" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.IsEncrypted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />を示す値かどうかこの<see cref="T:System.Net.Security.SslStream" />データの暗号化を使用します。</summary>
+        <value>
+          <see langword="true" />データがネットワーク経由で送信される前に暗号化および復号化する場合に着いたときに、リモート エンドポイントです。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗号化は、データのプライバシーを保護すること、つまり役に立つことデータは、転送中は、サード パーティが解読できないことを確認してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSslServerSync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#4)]
+ [!code-csharp[NclSslServerSync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMutuallyAuthenticated">
+      <MemberSignature Language="C#" Value="public override bool IsMutuallyAuthenticated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMutuallyAuthenticated" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.IsMutuallyAuthenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />サーバーとクライアントの両方が認証されているかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />サーバーが認証されている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 相互認証は、サーバーが、クライアント認証証明書を提供するときに、サーバーによって指定されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSslServerSync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#4)]
+ [!code-csharp[NclSslServerSync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsServer">
+      <MemberSignature Language="C#" Value="public override bool IsServer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsServer" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.IsServer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />この接続のローカル側が使用するかどうかを示す値<see cref="T:System.Net.Security.SslStream" />サーバーとして認証されました。</summary>
+        <value>
+          <see langword="true" />場合は、ローカル エンドポイントは、認証された接続のサーバー側として正常に認証されましたそれ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証失敗または発生しなかった、このプロパティを返します`false`です。  
+  
+ サーバーで、認証に呼び出して、<xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>または<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSslServerSync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#4)]
+ [!code-csharp[NclSslServerSync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSigned">
+      <MemberSignature Language="C#" Value="public override bool IsSigned { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSigned" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.IsSigned" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />をこのストリームを使用して送信されるデータが署名されているかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />送信する前に、データが署名されている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 署名によって、データの整合性を保護するデータ、つまりなります、受信者、データが転送中に改ざんされているかどうかを特定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclSslServerSync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#4)]
+ [!code-csharp[NclSslServerSync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyExchangeAlgorithm">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Authentication.ExchangeAlgorithmType KeyExchangeAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Authentication.ExchangeAlgorithmType KeyExchangeAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.KeyExchangeAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExchangeAlgorithmType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって使用されるキー交換アルゴリズムを取得<see cref="T:System.Net.Security.SslStream" />です。</summary>
+        <value><see cref="T:System.Security.Authentication.ExchangeAlgorithmType" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が<xref:System.Security.Authentication.ExchangeAlgorithmType.None>認証が行われるまでです。  
+  
+ キー交換アルゴリズムは、共有キーを生成するための情報を保護します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定したストリーム用の暗号化設定を表示します。  
+  
+ [!code-cpp[NclSslServerSync#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#3)]
+ [!code-csharp[NclSslServerSync#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyExchangeStrength">
+      <MemberSignature Language="C#" Value="public virtual int KeyExchangeStrength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeyExchangeStrength" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.KeyExchangeStrength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスで使用されるキー交換アルゴリズムの強度を識別する値を取得します。</summary>
+        <value><see cref="T:System.Int32" />の強さを示す値、<see cref="T:System.Security.Authentication.ExchangeAlgorithmType" />ビット単位のアルゴリズムです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証が行われるまで、このプロパティの値は 0 です。  
+  
+ 一般的なシナリオでこのプロパティの値とは、次のいずれかです。  
+  
+-   512  
+  
+-   768  
+  
+-   1024  
+  
+-   2048  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定したストリーム用の暗号化設定を表示します。  
+  
+ [!code-cpp[NclSslServerSync#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#3)]
+ [!code-csharp[NclSslServerSync#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public override long Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるストリームの長さを取得します。</summary>
+        <value><see cref="T:System.Int64" />  
+  
+ 基になるストリームの長さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを呼び出すことによって返される値を返します<xref:System.IO.Stream.Length%2A>基になるストリーム。 基になるストリームがシーク可能でない場合は、このメソッドは通常、例外をスローします。 基になるストリームの実行時の型では、スローされる例外の実行時の型を決定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このプロパティの値を取得することはできません基になるストリームが、<see cref="T:System.Net.Sockets.NetworkStream" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalCertificate">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.X509Certificates.X509Certificate LocalCertificate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate LocalCertificate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.LocalCertificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル エンドポイントの認証に使用する証明書を取得します。</summary>
+        <value>認証に指定された証明書を表す X509Certificate オブジェクトまたは<see langword="null" />証明書が指定されていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティによって返された証明書を表示するを示します。  
+  
+ [!code-cpp[NclSslServerSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#6)]
+ [!code-csharp[NclSslServerSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">認証が失敗したかが発生していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public override long Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Position" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または基になるストリーム内の現在位置を設定します。</summary>
+        <value><see cref="T:System.Int64" />  
+  
+ 基になるストリームの現在の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを呼び出すことによって返される値を返します<xref:System.IO.Stream.Position%2A>基になるストリーム。 基になるストリームがシーク可能でない場合は、このメソッドは通常、例外をスローします。 基になるストリームの実行時の型では、スローされる例外の実行時の型を決定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このプロパティを設定することはできません。  
+  
+ または  
+  
+ このプロパティの値を取得することはできません基になるストリームが、<see cref="T:System.Net.Sockets.NetworkStream" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override int Read (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.Read(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">A<see cref="T:System.Byte" />このストリームから読み取ったバイトを受け取る配列。</param>
+        <param name="offset">A<see cref="T:System.Int32" />内の 0 から始まる位置を表す<c>バッファー</c>このストリームから読み取ったデータの格納を開始する位置。</param>
+        <param name="count">A<see cref="T:System.Int32" />を現在のストリームから読み取るバイト数の最大数を格納しています。</param>
+        <summary>このストリームからデータを読み取り、指定した配列に格納します。</summary>
+        <returns>A<see cref="T:System.Int32" />読み取られたバイト数を指定する値。 読み取られるデータがある場合は、0 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、最大数を読み取ります`count`ストリームからバイトに格納`buffer`始点`offset`です。 複数の同時読み取り操作を行うことはできません。  
+  
+ 正常に認証が完了するまでは、このメソッドを呼び出すことはできません。 いずれかの呼び出しを認証するために、 <xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>、または<xref:System.Net.Security.SslStream.BeginAuthenticateAsClient%2A>、 <xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>、<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドです。  
+  
+ この操作を非同期的に実行するを使用して、<xref:System.Net.Security.SslStream.BeginRead%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますからの読み取り、<xref:System.Net.Security.SslStream>です。  
+  
+ [!code-cpp[NclSslClientSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslClientSync/CPP/clientsync.cpp#6)]
+ [!code-csharp[NclSslClientSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslClientSync/CS/clientsync.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="offset" />
+          <paramref name="&lt;" />
+          <paramref name="0" />.  
+  
+ <paramref name="-or-" /><paramref name="offset" />&gt;の長さ<paramref name="buffer" />です。  
+  
+ または  
+  
+ <paramref name="offset" />+ count&gt;の長さ<paramref name="buffer" />です。</exception>
+        <exception cref="T:System.IO.IOException">読み取り操作が失敗しました。 エラーの原因を特定するのには存在する場合は、内部例外を確認します。</exception>
+        <exception cref="T:System.NotSupportedException">実行中の読み取り操作が既に存在します。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が行われていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadTimeout">
+      <MemberSignature Language="C#" Value="public override int ReadTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReadTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.ReadTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または読み取り操作がブロックのデータ待機時間を設定します。</summary>
+        <value>A<see cref="T:System.Int32" />同期読み取り操作が失敗する前に経過した時間の大きさを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを呼び出すことによって返される値を返します<xref:System.IO.Stream.ReadTimeout%2A>基になるストリーム。 このプロパティを設定すると、<xref:System.IO.Stream.ReadTimeout%2A>基になるストリームの値が指定した値に設定します。  
+  
+ 基になるストリームがある場合、 <xref:System.Net.Sockets.NetworkStream>、 <xref:System.Net.Security.SslStream.ReadTimeout%2A> (ミリ秒単位) があり設定されて<xref:System.Threading.Timeout.Infinite>既定では読み取ることの操作はタイムアウトにならないようにします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の設定を示します。  
+  
+ [!code-cpp[NclSslServerSync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#1)]
+ [!code-csharp[NclSslServerSync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoteCertificate">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.X509Certificates.X509Certificate RemoteCertificate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate RemoteCertificate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.RemoteCertificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リモート エンドポイントの認証に使用する証明書を取得します。</summary>
+        <value>認証に指定された証明書を表す X509Certificate オブジェクトまたは<see langword="null" />証明書が指定されていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティによって返された証明書を表示するを示します。  
+  
+ [!code-cpp[NclSslServerSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#6)]
+ [!code-csharp[NclSslServerSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">認証が失敗したかが発生していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public override long Seek (long offset, System.IO.SeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 Seek(int64 offset, valuetype System.IO.SeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.Seek(System.Int64,System.IO.SeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="origin" Type="System.IO.SeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="offset">この値は無視されます。</param>
+        <param name="origin">この値は無視されます。</param>
+        <summary><see cref="T:System.NotSupportedException" /> をスローします。</summary>
+        <returns>常に <see cref="T:System.NotSupportedException" /> をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出さないでください。 関数は、継承されますでサポートされていない、<xref:System.Net.Security.SslStream>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">シークはサポートされていない<see cref="T:System.Net.Security.SslStream" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLength">
+      <MemberSignature Language="C#" Value="public override void SetLength (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetLength(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.SetLength(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Int64" />ストリームの長さを指定する値。</param>
+        <summary>基になるストリームの長さを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出して<xref:System.IO.Stream.SetLength%2A?displayProperty=nameWithType>ときに指定した基になるストリームこの<xref:System.Net.Security.SslStream>作成されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task ShutdownAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task ShutdownAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.ShutdownAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この SslStream を終了します。</summary>
+        <returns>非同期操作を表すタスク オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SslProtocol">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Authentication.SslProtocols SslProtocol { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Authentication.SslProtocols SslProtocol" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.SslProtocol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.SslProtocols</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この接続の認証に使用されるセキュリティ プロトコルを示す値を取得します。</summary>
+        <value><see cref="T:System.Security.Authentication.SslProtocols" />認証に使用されるプロトコルを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートされているセキュリティ プロトコルが指定されたときに、<xref:System.Net.Security.SslStream>を作成します。 使用してインスタンスを作成する場合は、コンス トラクターに渡されたセキュリティ プロトコルはありません、<xref:System.Security.Authentication.SslProtocols.Default>です。 クライアントとサーバーでサポートされるプロトコルに基づく認証に使用される実際のプロトコルが選択されます。  
+  
+   
+  
+## Examples  
+ 次の例では、指定したストリームのセキュリティ プロパティを表示します。  
+  
+ [!code-cpp[NclSslServerSync#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#3)]
+ [!code-csharp[NclSslServerSync#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportContext">
+      <MemberSignature Language="C#" Value="public System.Net.TransportContext TransportContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.TransportContext TransportContext" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.TransportContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.TransportContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.TransportContext" />拡張保護を使用する認証のために使用します。</summary>
+        <value><see cref="T:System.Net.TransportContext" />拡張保護のために使用するチャネル バインディング トークン (CBT) を含むオブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (byte[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int8[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.Write(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">A<see cref="T:System.Byte" />をストリームに書き込まれたバイトを提供します。</param>
+        <summary>このストリームに指定されたデータを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、操作が完了するまでブロックします。 操作が完了するまでブロックを回避するには<xref:System.Net.Security.SslStream.BeginWrite%2A>メソッドです。  
+  
+ 正常に認証が完了するまでは、このメソッドを呼び出すことはできません。 いずれかの呼び出しを認証するために、 <xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>、または<xref:System.Net.Security.SslStream.BeginAuthenticateAsClient%2A>、 <xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>、<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドです。  
+  
+ <xref:System.Net.Security.SslStream>クラスが複数の同時書き込み操作をサポートしていません。  
+  
+   
+  
+## Examples  
+ 次のコード例に示します認証への書き込み<xref:System.Net.Security.SslStream>です。  
+  
+ [!code-cpp[NclSslServerSync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#1)]
+ [!code-csharp[NclSslServerSync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">書き込み操作に失敗しました。</exception>
+        <exception cref="T:System.NotSupportedException">実行中の書き込み操作が既に存在します。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が行われていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Security.SslStream.Write(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">A<see cref="T:System.Byte" />をストリームに書き込まれたバイトを提供します。</param>
+        <param name="offset">A<see cref="T:System.Int32" />内の 0 から始まる位置を表す<c>バッファー</c>ストリームに書き込まれるバイトの読み取りを開始する位置。</param>
+        <param name="count">A<see cref="T:System.Int32" />から読み取るバイト数が含まれる<c>バッファー</c>です。</param>
+        <summary>指定した数を書き込む<see cref="T:System.Byte" />指定されたバッファーとオフセットを使用して、基になるストリームにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、操作が完了するまでブロックします。 操作は、操作を完了するまでブロックされないように、完了すると、使用して、<xref:System.Net.Security.SslStream.BeginWrite%2A>メソッドです。  
+  
+ 正常に認証が完了するまでは、このメソッドを呼び出すことはできません。 いずれかの呼び出しを認証するために、 <xref:System.Net.Security.SslStream.AuthenticateAsClient%2A>、または<xref:System.Net.Security.SslStream.BeginAuthenticateAsClient%2A>、 <xref:System.Net.Security.SslStream.AuthenticateAsServer%2A>、<xref:System.Net.Security.SslStream.BeginAuthenticateAsServer%2A>メソッドです。  
+  
+ <xref:System.Net.Security.SslStream>クラスが複数の同時書き込み操作をサポートしていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="offset" />
+          <paramref name="&lt;" />
+          <paramref name="0" />.  
+  
+ <paramref name="-or-" /><paramref name="offset" />&gt;の長さ<paramref name="buffer" />です。  
+  
+ または  
+  
+ <paramref name="offset" />+ count&gt;の長さ<paramref name="buffer" />です。</exception>
+        <exception cref="T:System.IO.IOException">書き込み操作に失敗しました。</exception>
+        <exception cref="T:System.NotSupportedException">実行中の書き込み操作が既に存在します。</exception>
+        <exception cref="T:System.ObjectDisposedException">このオブジェクトは閉じられました。</exception>
+        <exception cref="T:System.InvalidOperationException">認証が行われていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTimeout">
+      <MemberSignature Language="C#" Value="public override int WriteTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 WriteTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Security.SslStream.WriteTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または書き込み操作がブロックのデータ待機時間を設定します。</summary>
+        <value>A<see cref="T:System.Int32" />同期書き込み操作が失敗する前に経過した時間の大きさを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを呼び出すことによって返される値を返します<xref:System.IO.Stream.WriteTimeout%2A>基になるストリーム。 指定された値の設定、集合演算、<xref:System.IO.Stream.WriteTimeout%2A>基になるストリームの値。  
+  
+ 基になるストリームがある場合、 <xref:System.Net.Sockets.NetworkStream>、 <xref:System.Net.Security.SslStream.WriteTimeout%2A> (ミリ秒単位) に設定されている<xref:System.Threading.Timeout.Infinite>既定では書き込み操作はタイムアウトにならないようにします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値の設定を示します。  
+  
+ [!code-cpp[NclSslServerSync#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclSslServerSync/CPP/NclSslServerSync.cpp#1)]
+ [!code-csharp[NclSslServerSync#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclSslServerSync/CS/serversync.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

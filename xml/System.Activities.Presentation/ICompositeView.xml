@@ -1,0 +1,189 @@
+<Type Name="ICompositeView" FullName="System.Activities.Presentation.ICompositeView">
+  <TypeSignature Language="C#" Value="public interface ICompositeView" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICompositeView" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.ICompositeView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクトのコピー、切り取り、移動、削除、貼り付けを行うメソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanPasteItems">
+      <MemberSignature Language="C#" Value="public bool CanPasteItems (System.Collections.Generic.List&lt;object&gt; itemsToPaste);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanPasteItems(class System.Collections.Generic.List`1&lt;object&gt; itemsToPaste) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.ICompositeView.CanPasteItems(System.Collections.Generic.List{System.Object})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemsToPaste" Type="System.Collections.Generic.List&lt;System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="itemsToPaste">貼り付ける項目の一覧。</param>
+        <summary>指定したオブジェクトを貼り付けできるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトを貼り付けできる; 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DroppingTypeResolvingOptions">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.View.TypeResolvingOptions DroppingTypeResolvingOptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Presentation.View.TypeResolvingOptions DroppingTypeResolvingOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.ICompositeView.DroppingTypeResolvingOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.View.TypeResolvingOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.Presentation.View.TypePresenter" /> で使用される、型を解決するオブジェクトを取得または設定します。</summary>
+        <value><see cref="T:System.Activities.Presentation.View.TypePresenter" /> で使用される、型を解決するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultContainer">
+      <MemberSignature Language="C#" Value="public bool IsDefaultContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDefaultContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.ICompositeView.IsDefaultContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のデザイナーが既定のコンテナーかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、現在のデザイナーが既定のコンテナーです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemMoved">
+      <MemberSignature Language="C#" Value="public void OnItemMoved (System.Activities.Presentation.Model.ModelItem modelItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnItemMoved(class System.Activities.Presentation.Model.ModelItem modelItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.ICompositeView.OnItemMoved(System.Activities.Presentation.Model.ModelItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelItem" Type="System.Activities.Presentation.Model.ModelItem" />
+      </Parameters>
+      <Docs>
+        <param name="modelItem">移動する項目。</param>
+        <summary>移動操作開始後に呼び出され、指定した項目の移動を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsCopied">
+      <MemberSignature Language="C#" Value="public object OnItemsCopied (System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt; itemsToCopy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object OnItemsCopied(class System.Collections.Generic.List`1&lt;class System.Activities.Presentation.Model.ModelItem&gt; itemsToCopy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.ICompositeView.OnItemsCopied(System.Collections.Generic.List{System.Activities.Presentation.Model.ModelItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemsToCopy" Type="System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="itemsToCopy">コピーする項目。</param>
+        <summary>コピー操作開始後に呼び出され、指定した項目のコピーを完了します。</summary>
+        <returns>指定の項目から複製された項目。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsCut">
+      <MemberSignature Language="C#" Value="public object OnItemsCut (System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt; itemsToCut);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object OnItemsCut(class System.Collections.Generic.List`1&lt;class System.Activities.Presentation.Model.ModelItem&gt; itemsToCut) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.ICompositeView.OnItemsCut(System.Collections.Generic.List{System.Activities.Presentation.Model.ModelItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemsToCut" Type="System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="itemsToCut">切り取る項目。</param>
+        <summary>切り取り操作開始後に呼び出され、指定した項目の切り取りを完了します。</summary>
+        <returns>指定の項目から複製された項目。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsDelete">
+      <MemberSignature Language="C#" Value="public void OnItemsDelete (System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt; itemsToDelete);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnItemsDelete(class System.Collections.Generic.List`1&lt;class System.Activities.Presentation.Model.ModelItem&gt; itemsToDelete) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.ICompositeView.OnItemsDelete(System.Collections.Generic.List{System.Activities.Presentation.Model.ModelItem})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemsToDelete" Type="System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="itemsToDelete">削除する項目。</param>
+        <summary>削除操作開始後に呼び出され、指定した項目の削除を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsPasted">
+      <MemberSignature Language="C#" Value="public void OnItemsPasted (System.Collections.Generic.List&lt;object&gt; itemsToPaste, System.Collections.Generic.List&lt;object&gt; metadata, System.Windows.Point pastePoint, System.Activities.Presentation.WorkflowViewElement pastePointReference);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnItemsPasted(class System.Collections.Generic.List`1&lt;object&gt; itemsToPaste, class System.Collections.Generic.List`1&lt;object&gt; metadata, valuetype System.Windows.Point pastePoint, class System.Activities.Presentation.WorkflowViewElement pastePointReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.ICompositeView.OnItemsPasted(System.Collections.Generic.List{System.Object},System.Collections.Generic.List{System.Object},System.Windows.Point,System.Activities.Presentation.WorkflowViewElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemsToPaste" Type="System.Collections.Generic.List&lt;System.Object&gt;" />
+        <Parameter Name="metadata" Type="System.Collections.Generic.List&lt;System.Object&gt;" />
+        <Parameter Name="pastePoint" Type="System.Windows.Point" />
+        <Parameter Name="pastePointReference" Type="System.Activities.Presentation.WorkflowViewElement" />
+      </Parameters>
+      <Docs>
+        <param name="itemsToPaste">貼り付ける項目。</param>
+        <param name="metadata">貼り付ける項目に関連付けられたメタデータ。</param>
+        <param name="pastePoint">項目を貼り付ける場所。</param>
+        <param name="pastePointReference">貼り付け場所への参照。</param>
+        <summary>貼り付け操作開始後に呼び出され、指定した項目の貼り付けを完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

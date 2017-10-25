@@ -1,0 +1,73 @@
+<Type Name="Rights" FullName="System.IdentityModel.Claims.Rights">
+  <TypeSignature Language="C#" Value="public static class Rights" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Rights extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Claims.Rights" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトと関連付けることのできる権限の事前定義の種類を定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public static string Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Identity" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.Rights.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>権限が ID を表すことを指定する文字列を取得します。</summary>
+        <value>ID を表す権限。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Claims.Rights.Identity%2A> プロパティによって返される文字列は、http://schemas.xmlsoap.org/ws/2005/05/identity/right/Identity です。  
+  
+ 一般に、標準的な <xref:System.IdentityModel.Claims.ClaimSet> には、<xref:System.IdentityModel.Claims.Rights.Identity%2A> 権限を持つ 1 つのクレームが含まれます。 このクレームは、<xref:System.IdentityModel.Claims.ClaimSet> の ID を表します。 たとえば、<xref:System.IdentityModel.Claims.WindowsClaimSet> には、ユーザーの SID を表す SID クレームがあります。 同様に、<xref:System.IdentityModel.Claims.X509CertificateClaimSet> には、X.509 証明書と関連付けられた ID を表す <xref:System.IdentityModel.Claims.ClaimTypes.Thumbprint%2A> クレームがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PossessProperty">
+      <MemberSignature Language="C#" Value="public static string PossessProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string PossessProperty" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Claims.Rights.PossessProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クレームと関連付けられたエンティティが所有するプロパティを権限が表すことを指定する文字列を取得します。</summary>
+        <value><see cref="T:System.IdentityModel.Claims.Claim" /> オブジェクトと関連付けられたエンティティが所有するプロパティを表す権限。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> プロパティによって返される文字列は、http://schemas.xmlsoap.org/ws/2005/05/identity/right/PossessProperty です。  
+  
+ 値 <xref:System.IdentityModel.Claims.ClaimTypes.Name%2A> に対する権限 <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> を持つ `Martin` 型のクレームは、そのようなクレームが関連付けられているエンティティは値が `Name` の `Martin` プロパティを所有することを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

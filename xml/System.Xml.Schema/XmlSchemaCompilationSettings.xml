@@ -1,0 +1,126 @@
+<Type Name="XmlSchemaCompilationSettings" FullName="System.Xml.Schema.XmlSchemaCompilationSettings">
+  <TypeSignature Language="C#" Value="public sealed class XmlSchemaCompilationSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlSchemaCompilationSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaCompilationSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スキーマのコンパイル オプションを提供、<see cref="T:System.Xml.Schema.XmlSchemaSet" />クラスがこのクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Schema.XmlSchemaCompilationSettings>クラスのスキーマのコンパイル オプションの提供、<xref:System.Xml.Schema.XmlSchemaSet>クラスです。 たとえば、<xref:System.Xml.Schema.XmlSchemaCompilationSettings.EnableUpaCheck%2A>プロパティを指定する、<xref:System.Xml.Schema.XmlSchemaSet>一意のパーティクル属性 (UPA) 違反をチェックする必要がありますと内のスキーマ、<xref:System.Xml.Schema.XmlSchemaSet>コンパイルされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSchemaCompilationSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaCompilationSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaCompilationSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableUpaCheck">
+      <MemberSignature Language="C#" Value="public bool EnableUpaCheck { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableUpaCheck" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaCompilationSettings.EnableUpaCheck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Xml.Schema.XmlSchemaSet" />一意のパーティクル属性 (UPA) 違反をチェックする必要があります。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Xml.Schema.XmlSchemaSet" /> ; 一意のパーティクル属性 (UPA) 違反が確認すべきそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Xml.Schema.XmlSchemaCompilationSettings.EnableUpaCheck%2A>プロパティに設定されている`false`検証は、次の規則に基づいて実行されます。  
+  
+1.  厳密な型と、ワイルドカードの選択肢がある場合、<xref:System.Xml.Schema.XmlSchemaSet>は、次のスキーマと Xml の例に示すように厳密な型のパーティクルを取得します。  
+  
+ `<xs:sequence>`  
+  
+ `<xs:any namespace="##any"/>`  
+  
+ `<xs:element name="A" type="xs:string" minOccurs="0"/>`  
+  
+ `</xs:sequence>`  
+  
+ 次の Xml で、`A`要素が関連付けられる`<xs:element name="A" type="xs:string" minOccurs="0"/>`スキーマです。  
+  
+ `<A>some text</A>`  
+  
+1.  2 つの厳密に型指定された要素の間、選択肢がある場合、<xref:System.Xml.Schema.XmlSchemaSet>最初の 1 つを選択します。  
+  
+ `<xs:sequence>`  
+  
+ `<xs:element name="A" type="xs:string"/>`  
+  
+ `<xs:element name="B" type="xs:string" minOccurs="0"/>`  
+  
+ `<xs:element name="B" type="xs:string"/>`  
+  
+ `</xs:sequence>`  
+  
+ 次の Xml で、`B`要素が関連付けられる`<xs:element name="B" type="xs:string" minOccurs="0"/>`スキーマです。  
+  
+ `<A/>`  
+  
+ `<B/>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

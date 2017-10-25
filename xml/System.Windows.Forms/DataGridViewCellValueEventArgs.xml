@@ -1,0 +1,165 @@
+<Type Name="DataGridViewCellValueEventArgs" FullName="System.Windows.Forms.DataGridViewCellValueEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridViewCellValueEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewCellValueEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCellValueEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.DataGridView.CellValueNeeded" />と<see cref="E:System.Windows.Forms.DataGridView.CellValuePushed" />のイベント、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Windows.Forms.DataGridView.CellValueNeeded>と<xref:System.Windows.Forms.DataGridView.CellValuePushed>での仮想モードを実装するために、<xref:System.Windows.Forms.DataGridView>コントロール。 仮想モードの詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールでの仮想モード](~/docs/framework/winforms/controls/virtual-mode-in-the-windows-forms-datagridview-control.md)です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.DataGridView.CellValuePushed>データ ストア オブジェクトに更新し、新しいエントリを格納するイベントです。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A?displayProperty=nameWithType>リファレンス トピックを参照します。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView._Virtual#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CPP/virtual.cpp#10)]
+ [!code-csharp[System.Windows.Forms.DataGridView._Virtual#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CS/virtual.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView._Virtual#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/VB/virtual.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewCellValueEventArgs (int columnIndex, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 columnIndex, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCellValueEventArgs.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="columnIndex" Type="System.Int32" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="columnIndex">イベントが発生したセルを含む列のインデックス。</param>
+        <param name="rowIndex">イベントが発生したセルを含む行のインデックス。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewCellValueEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="columnIndex" /> が 0 未満です。  
+  
+ -または-  
+  
+ <paramref name="rowIndex" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnIndex">
+      <MemberSignature Language="C#" Value="public int ColumnIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellValueEventArgs.ColumnIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生したセルの列インデックスを示す値を取得します。</summary>
+        <value>イベントが発生したセルを含む列のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオフセットを使用して、<xref:System.Windows.Forms.DataGridView.Columns%2A>イベントが発生したセルを参照するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCellValueEventArgs.ColumnIndex%2A>データ ストアからのセルの値を取得するプロパティです。 この例で示されている例の一部である[する方法: Windows フォーム DataGridView コントロールで仮想モードを実装する](~/docs/framework/winforms/controls/how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control.md)です。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#120](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#120)]
+ [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#120](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#120)]
+ [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#120](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#120)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellValueEventArgs.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生したセルの行インデックスを示す値を取得します。</summary>
+        <value>イベントが発生したセルを含む行のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオフセットを使用して、<xref:System.Windows.Forms.DataGridView.Rows%2A>イベントが発生したセルを参照するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.DataGridView.CellValuePushed>データ ストア オブジェクトに更新し、新しいエントリを格納するイベントです。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A?displayProperty=nameWithType>リファレンス トピックを参照します。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView._Virtual#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CPP/virtual.cpp#10)]
+ [!code-csharp[System.Windows.Forms.DataGridView._Virtual#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CS/virtual.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView._Virtual#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/VB/virtual.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCellValueEventArgs.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントが発生したセルの値を設定します。</summary>
+        <value><see cref="T:System.Object" />セルの値を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを処理するときに、セルの値を検査するか、イベントを作成する場合は、セルの現在の値を通信するためには、このプロパティを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.DataGridView.CellValuePushed>データ ストア オブジェクトに更新し、新しいエントリを格納するイベントです。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A?displayProperty=nameWithType>リファレンス トピックを参照します。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView._Virtual#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CPP/virtual.cpp#10)]
+ [!code-csharp[System.Windows.Forms.DataGridView._Virtual#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CS/virtual.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridView._Virtual#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/VB/virtual.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

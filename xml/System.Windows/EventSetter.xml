@@ -1,0 +1,194 @@
+<Type Name="EventSetter" FullName="System.Windows.EventSetter">
+  <TypeSignature Language="C#" Value="public class EventSetter : System.Windows.SetterBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventSetter extends System.Windows.SetterBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.EventSetter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.SetterBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スタイル内で、イベント セッターを表します。 イベント セッターは、イベントへの応答で指定されたイベント ハンドラーを呼び出します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント セッターが指定されたイベント ハンドラーを参照するすべての要素に適用されますが、ルーティングされたイベントに応答を呼び出し、<xref:System.Windows.Style>されなくても各要素にインスタンス ハンドラーをアタッチします。 のみ<xref:System.Windows.Style.Setters%2A?displayProperty=nameWithType>サポート<xref:System.Windows.EventSetter>オブジェクト。  
+  
+ ルーティング イベントのイベントのイベント セッターのみ宣言できます。 バブル イベント、またはイベントをトンネリングは、直接ルーティング方法では、使用するルーティング イベントのイベントの set アクセス操作子を宣言できます。  
+  
+ インスタンス、<xref:System.Windows.EventSetter>クラスは、通常を介して作成[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]スタイル内でオブジェクト要素の定義に従って、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 <xref:System.Windows.EventSetter>コードからもインスタンス化される可能性があります。  
+  
+ テーマのリソース ディクショナリに含まれているスタイルでは、イベント セッターを使用できません。 これは、実行時にテーマのリソース ディクショナリが厳密でないことが多いため[!INCLUDE[TLA#tla_baml](~/includes/tlasharptla-baml-md.md)]ファイル、およびが含まれないスコープ定義のハンドラーを定義する分離コードに付属していることができますが存在します。  
+  
+ クラスのイベントのハンドラー後およびインスタンス ハンドラーの後も、イベント セッターを通じてアタッチされているハンドラーが呼び出されます。 その結果、クラス ハンドラーまたはインスタンス ハンドラーがその引数で処理されるイベントをマークした場合、イベント セッターで宣言済みのハンドラーは呼び出されません、イベント セッターを具体的には設定しない限り、 <xref:System.Windows.EventSetter.HandledEventsToo%2A> `true`です。  
+  
+ イベント セッター可能性がありますからも取得できます<xref:System.Windows.Style.BasedOn%2A>スタイル。 Set アクセス操作子からイベント ハンドラーとして指定されたスタイル<xref:System.Windows.Style.BasedOn%2A>即時スタイルのハンドラーの後に呼び出されます。  
+  
+ 注だけである<xref:System.Windows.Style.Setters%2A?displayProperty=nameWithType>サポート<xref:System.Windows.EventSetter>オブジェクト。 トリガー (<xref:System.Windows.TriggerBase>と派生クラス) をサポートしていない<xref:System.Windows.EventSetter>です。  
+  
+   
+  
+## Examples  
+ 次の例は、1 つを確立<xref:System.Windows.EventSetter>ページレベル スタイル内で。  
+  
+ [!code-xaml[EventOvwSupport#XAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/page2.xaml#xaml2)]  
+  
+ 次に示します例では、イベント ハンドラー。  
+  
+ [!code-csharp[EventOvwSupport#EventSetterRef](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/page2.xaml.cs#eventsetterref)]
+ [!code-vb[EventOvwSupport#EventSetterRef](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EventOvwSupport/visualbasic/page2.xaml.vb#eventsetterref)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventSetter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventSetter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.EventSetter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventSetter (System.Windows.RoutedEvent routedEvent, Delegate handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.RoutedEvent routedEvent, class System.Delegate handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.EventSetter.#ctor(System.Windows.RoutedEvent,System.Delegate)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="routedEvent" Type="System.Windows.RoutedEvent" />
+        <Parameter Name="handler" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="routedEvent"><see cref="T:System.Windows.EventSetter" /> が応答する、特定のルーティング イベント。</param>
+        <param name="handler">このセッターで割り当てるハンドラー。</param>
+        <summary>提供されたイベントとハンドラー パラメーターを使用して、<see cref="T:System.Windows.EventSetter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この署名は通常場合に使用を作成する、<xref:System.Windows.EventSetter>または分離コードで作成するコードで、<xref:System.Windows.EventSetter>既存スタイルの前に、使用を拡張します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Event">
+      <MemberSignature Language="C#" Value="public System.Windows.RoutedEvent Event { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.RoutedEvent Event" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.EventSetter.Event" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.EventSetter" /> が応答する、特定のルーティング イベントを取得または設定します。</summary>
+        <value>ルーティング イベントの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 回、スタイルを含む、このプロパティを設定できません、<xref:System.Windows.EventSetter>使用し、したがって封印されています。 コードでこのプロパティを設定すると、スタイルが使用されている可能性があるの値を確認、<xref:System.Windows.SetterBase.IsSealed%2A>プロパティを<xref:System.Windows.EventSetter>インスタンスを設定しようとする前に<xref:System.Windows.EventSetter.Event%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Windows.EventSetter.Event%2A>プロパティの一部として、<xref:System.Windows.EventSetter>マークアップ スタイルでします。  
+  
+ [!code-xaml[EventOvwSupport#XAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/page2.xaml#xaml2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">シールされた <see cref="T:System.Windows.EventSetter" /> でこのプロパティを設定しようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HandledEventsToo">
+      <MemberSignature Language="C#" Value="public bool HandledEventsToo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HandledEventsToo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.EventSetter.HandledEventsToo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントがイベント データ内で処理されるマークされている場合でも、かどうか、set アクセス操作子に割り当てられているハンドラーが呼び出されるを決定する値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ハンドラーが呼び出されますもする必要があります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  設定、<xref:System.Windows.RoutedEventHandlerInfo.InvokeHandledEventsToo%2A>イベントのハンドラーの呼び出し方法の特性は、指定する方法がないことの一般的な方針に従って、コードで常に実行する必要があります<xref:System.Windows.RoutedEventHandlerInfo.InvokeHandledEventsToo%2A>内のイベントに直接インスタンスの定義済みのイベント ハンドラーを割り当てるときに名前付き[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]属性構文です。 この値を設定するが[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、その結果、コンパイル時エラーを生成しません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]スタイルを使用すると、実行時に例外が生成されます。  
+  
+<a name="xamlTextUsage_HandledEventsToo"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ このプロパティでは使用できません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 「解説」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handler">
+      <MemberSignature Language="C#" Value="public Delegate Handler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Delegate Handler" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.EventSetter.Handler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Markup.EventSetterHandlerConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または setter でルーティング イベントのハンドラーへの参照を設定します。</summary>
+        <value>これによって接続されているハンドラーへの参照を<see cref="T:System.Windows.EventSetter" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のセット、<xref:System.Windows.EventSetter.Handler%2A>プロパティの一部として、<xref:System.Windows.EventSetter>マークアップ スタイルでします。  
+  
+ [!code-xaml[EventOvwSupport#XAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/page2.xaml#xaml2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

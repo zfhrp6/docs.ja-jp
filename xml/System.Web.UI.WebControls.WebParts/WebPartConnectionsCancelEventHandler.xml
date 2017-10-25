@@ -1,0 +1,38 @@
+<Type Name="WebPartConnectionsCancelEventHandler" FullName="System.Web.UI.WebControls.WebParts.WebPartConnectionsCancelEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void WebPartConnectionsCancelEventHandler(object sender, WebPartConnectionsCancelEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebPartConnectionsCancelEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartConnectionsCancelEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.WebParts.WebPartConnectionsCancelEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.WebParts.WebPartConnectionsCancelEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnecting" />イベントまたは<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting" />のイベント、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnecting>によってイベントが発生した、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsConnecting%2A>メソッド、し、接続プロセスが開始したことを通知に (たとえば、ユーザーがコントロールを選択および connect 動詞がクリックされた) がまだ完了していません。 イベントは、完了する前に、接続をキャンセルする機会を提供します。 このイベントが続く場合は、接続が正常に完了しました、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected>イベント。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting>によってイベントが発生した、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsDisconnecting%2A>メソッド、およびその事実を通知します。 ユーザーによって切断動詞がクリックしたこと、または<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts%2A>メソッドが呼び出されたそれ以外の場合。 イベントは、完了する前に、接続を終了するプロセスをキャンセルする機会を提供します。 接続が正常に終了した場合、このイベントが続いて、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected>イベント。  
+  
+ 指定する方法、<xref:System.Web.UI.WebControls.WebParts.WebPartConnectionsCancelEventHandler>デリゲートが呼び出されます、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnecting>または<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting>イベントが発生します。  
+  
+ ページの開発者は、追加することで、イベントのカスタム ハンドラーを追加できます、`OnWebPartsDisconnecting`と`OnWebPartsConnecting`属性を`<asp:webpartmanager>`要素、および属性にカスタム メソッドの名前を割り当てます。 カスタム ハンドラーは、プログラムでも割り当てることができます。 プログラムによって、イベント ハンドラーの割り当ての詳細については、次を参照してください。 [NIB: 方法: イベントにイベント ハンドラー メソッドを接続](http://msdn.microsoft.com/en-us/348e9600-22e3-49a2-8864-11c5bb3e98fc)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

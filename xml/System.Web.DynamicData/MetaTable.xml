@@ -1,0 +1,1504 @@
+<Type Name="MetaTable" FullName="System.Web.DynamicData.MetaTable">
+  <TypeSignature Language="C#" Value="public class MetaTable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MetaTable extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.MetaTable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>動的なデータ ページで使用するためのテーブルを記述するメタデータを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、Insert.aspx ページのテンプレートの分離コード ファイルの一部です。 <xref:System.Web.DynamicData.MetaTable>でインスタンスを初期化、`Page_Load`メソッドです。 ページのタイトルが、テーブルに設定されている`DisplayName`プロパティです。  
+  
+```csharp  
+public partial class Insert : System.Web.UI.Page {  
+    protected MetaTable table;     
+  
+    protected void Page_Load(object sender, EventArgs e) {  
+        table = DetailsDataSource.GetTable();  
+        Title = table.DisplayName;  
+    }  
+}  
+```  
+  
+```vb  
+Partial Class Insert  
+    Inherits System.Web.UI.Page  
+  
+    Protected table As MetaTable      
+  
+    Protected Sub Page_Load(ByVal sender As Object, _  
+            ByVal e As EventArgs)  
+        table = DetailsDataSource.GetTable  
+        Title = table.DisplayName  
+    End Sub  
+End Class  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetaTable (System.Web.DynamicData.MetaModel metaModel, System.Web.DynamicData.ModelProviders.TableProvider tableProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.DynamicData.MetaModel metaModel, class System.Web.DynamicData.ModelProviders.TableProvider tableProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.#ctor(System.Web.DynamicData.MetaModel,System.Web.DynamicData.ModelProviders.TableProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="metaModel" Type="System.Web.DynamicData.MetaModel" />
+        <Parameter Name="tableProvider" Type="System.Web.DynamicData.ModelProviders.TableProvider" />
+      </Parameters>
+      <Docs>
+        <param name="metaModel">エンティティのメタ モデル。</param>
+        <param name="tableProvider">エンティティ モデル プロバイダー。</param>
+        <summary><see cref="T:System.Web.DynamicData.MetaTable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `tableProvider`パラメーターは初期化するために使用、<xref:System.Web.DynamicData.MetaTable.DataContextPropertyName%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.AttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.AttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルに関連付けられている属性を取得します。</summary>
+        <value>テーブルの属性を含むコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildAttributeCollection">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.AttributeCollection BuildAttributeCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ComponentModel.AttributeCollection BuildAttributeCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.BuildAttributeCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>属性のコレクションを作成します。</summary>
+        <returns>属性のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanDelete">
+      <MemberSignature Language="C#" Value="public virtual bool CanDelete (System.Security.Principal.IPrincipal principal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanDelete(class System.Security.Principal.IPrincipal principal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.CanDelete(System.Security.Principal.IPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="principal" Type="System.Security.Principal.IPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="principal">ユーザーのセキュリティ コンテキスト。</param>
+        <summary>指定したユーザーが削除操作を実行できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />実行するユーザーが許可された場合は削除操作です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパル オブジェクトは、コードが実行されている対象をそのユーザーの id を含む、ユーザーとが所属するすべての役割のセキュリティ コンテキストを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanInsert">
+      <MemberSignature Language="C#" Value="public virtual bool CanInsert (System.Security.Principal.IPrincipal principal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanInsert(class System.Security.Principal.IPrincipal principal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.CanInsert(System.Security.Principal.IPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="principal" Type="System.Security.Principal.IPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="principal">ユーザーのセキュリティ コンテキスト。</param>
+        <summary>指定したユーザーが挿入操作を実行できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />ユーザーの実行が許可された場合は挿入操作です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパル オブジェクトは、コードが実行されている対象をそのユーザーの id を含む、ユーザーとが所属するすべての役割のセキュリティ コンテキストを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public virtual bool CanRead (System.Security.Principal.IPrincipal principal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanRead(class System.Security.Principal.IPrincipal principal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.CanRead(System.Security.Principal.IPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="principal" Type="System.Security.Principal.IPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="principal">ユーザーのセキュリティ コンテキスト。</param>
+        <summary>読み取り操作を実行する指定されたユーザーが許可されるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />ユーザーの実行が許可された場合読み取り操作です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパル オブジェクトは、コードが実行されている対象をそのユーザーの id を含む、ユーザーとが所属するすべての役割のセキュリティ コンテキストを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanUpdate">
+      <MemberSignature Language="C#" Value="public virtual bool CanUpdate (System.Security.Principal.IPrincipal principal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanUpdate(class System.Security.Principal.IPrincipal principal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.CanUpdate(System.Security.Principal.IPrincipal)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="principal" Type="System.Security.Principal.IPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="principal">ユーザーのセキュリティ コンテキスト。</param>
+        <summary>指定したユーザーが更新操作を実行できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />更新操作を実行するユーザーが許可された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プリンシパル オブジェクトは、コードが実行されている対象をそのユーザーの id を含む、ユーザーとが所属するすべての役割のセキュリティ コンテキストを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Columns">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Web.DynamicData.MetaColumn&gt; Columns { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Web.DynamicData.MetaColumn&gt; Columns" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.Columns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Web.DynamicData.MetaColumn&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルの列のコレクションを取得します。</summary>
+        <value>テーブルの列を含むコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.DynamicData.MetaTable.Columns%2A> プロパティを使用する方法を次の例に示します。 例には、動的なデータ ページのテンプレートを AdventureWorksLT データベースの ProductDescription テーブルをカスタムの表示を提供する \DynamicData\CustomPages\ProductDescriptions フォルダーにコピーされています。 追加する Insert.aspx ファイルのマークアップが変更された、`OnDataBound`という名前のイベント ハンドラー`DetailsView1_DataBound`です。 イベント ハンドラーで、<xref:System.Web.DynamicData.DynamicDataExtensions.FindMetaTable%2A>メソッドはメタ テーブルの検索に使用します。 <xref:System.Web.DynamicData.MetaTable.Columns%2A>プロパティは、テーブルの列の数を表示するために使用します。  
+  
+ [!code-csharp[System.Web.DynamicData.DynamicDataExtensions#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataExtensions/cs/Insert.aspx.cs#1)]  
+[!code-aspx-csharp[System.Web.DynamicData.DynamicDataExtensions#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataExtensions/cs/Insert.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildrenColumn">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.DynamicData.MetaChildrenColumn CreateChildrenColumn (System.Web.DynamicData.ModelProviders.ColumnProvider columnProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.DynamicData.MetaChildrenColumn CreateChildrenColumn(class System.Web.DynamicData.ModelProviders.ColumnProvider columnProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.CreateChildrenColumn(System.Web.DynamicData.ModelProviders.ColumnProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaChildrenColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnProvider" Type="System.Web.DynamicData.ModelProviders.ColumnProvider" />
+      </Parameters>
+      <Docs>
+        <param name="columnProvider">列のプロバイダー。</param>
+        <summary>新しい <see cref="T:System.Web.DynamicData.MetaChildrenColumn" /> オブジェクトを作成します。</summary>
+        <returns>新しい子メタコラム オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドして、派生型を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateColumn">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.DynamicData.MetaColumn CreateColumn (System.Web.DynamicData.ModelProviders.ColumnProvider columnProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.DynamicData.MetaColumn CreateColumn(class System.Web.DynamicData.ModelProviders.ColumnProvider columnProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.CreateColumn(System.Web.DynamicData.ModelProviders.ColumnProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnProvider" Type="System.Web.DynamicData.ModelProviders.ColumnProvider" />
+      </Parameters>
+      <Docs>
+        <param name="columnProvider">列のプロバイダー。</param>
+        <summary>
+          <see cref="T:System.Web.DynamicData.MetaColumn" /> オブジェクトを作成します。</summary>
+        <returns>新しいメタコラム オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドして、派生型を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateContext">
+      <MemberSignature Language="C#" Value="public virtual object CreateContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateContext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.CreateContext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テーブルのデータ コンテキストを返します。</summary>
+        <returns>テーブルのデータ コンテキスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ コンテキストを呼び出すことによってインスタンス化する新しいコンテキストから取得、<xref:System.Web.DynamicData.MetaTable.CreateContext%2A?displayProperty=nameWithType>メソッドです。 詳細については、次を参照してください。、<xref:System.Web.DynamicData.MetaTable?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateForeignKeyColumn">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.DynamicData.MetaForeignKeyColumn CreateForeignKeyColumn (System.Web.DynamicData.ModelProviders.ColumnProvider columnProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.DynamicData.MetaForeignKeyColumn CreateForeignKeyColumn(class System.Web.DynamicData.ModelProviders.ColumnProvider columnProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.CreateForeignKeyColumn(System.Web.DynamicData.ModelProviders.ColumnProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaForeignKeyColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnProvider" Type="System.Web.DynamicData.ModelProviders.ColumnProvider" />
+      </Parameters>
+      <Docs>
+        <param name="columnProvider">列のプロバイダー。</param>
+        <summary>外部キーのメタデータを格納しているオブジェクトを作成します。</summary>
+        <returns>外部キーのメタデータを格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドして、派生型を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTable">
+      <MemberSignature Language="C#" Value="public static System.Web.DynamicData.MetaTable CreateTable (System.ComponentModel.ICustomTypeDescriptor typeDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.DynamicData.MetaTable CreateTable(class System.ComponentModel.ICustomTypeDescriptor typeDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.CreateTable(System.ComponentModel.ICustomTypeDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptor" Type="System.ComponentModel.ICustomTypeDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptor">テーブルの型に関する情報です。</param>
+        <summary>指定されたテーブルのメタデータを作成します。</summary>
+        <returns>テーブルのメタデータを格納するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTable">
+      <MemberSignature Language="C#" Value="public static System.Web.DynamicData.MetaTable CreateTable (Type entityType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.DynamicData.MetaTable CreateTable(class System.Type entityType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.CreateTable(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="entityType">メタデータを生成する対象のテーブルの型。</param>
+        <summary>指定されたテーブルのメタデータを作成します。</summary>
+        <returns>テーブルのメタデータを格納するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataContextPropertyName">
+      <MemberSignature Language="C#" Value="public string DataContextPropertyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataContextPropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.DataContextPropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルの名前を取得します。</summary>
+        <value>テーブルの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前の由来、<xref:System.Web.DynamicData.MetaTable.DataContextType%2A>テーブルが属するオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataContextType">
+      <MemberSignature Language="C#" Value="public Type DataContextType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DataContextType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.DataContextType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルに関連付けられているデータ コンテキストの種類を取得します。</summary>
+        <value>データ コンテキストの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。、<xref:System.Data.Linq.DataContext?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayColumn">
+      <MemberSignature Language="C#" Value="public virtual System.Web.DynamicData.MetaColumn DisplayColumn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaColumn DisplayColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.DisplayColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このテーブルのエントリは、外部キー リレーションシップの親として使用される値の表示に使用されている列を取得します。</summary>
+        <value>このテーブルのエントリは、外部キー リレーションシップの親として使用される値の表示に使用される列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される列は、この順序で選択されます。  
+  
+1.  使用して指定されている列、<xref:System.ComponentModel.DataAnnotations.DisplayColumnAttribute>属性。  
+  
+2.  最初の列、主キーに含まれていない文字列します。  
+  
+3.  最初の列で主キーである文字列します。  
+  
+4.  主キー内にある最初の文字列ではない列。  
+  
+5.  最初の列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public virtual string DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>わかりやすい形式でテーブルの名前を取得します。</summary>
+        <value>テーブルのわかりやすい名前を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値にこのプロパティの値が既定で、<xref:System.Web.DynamicData.MetaTable.Name%2A>プロパティです。 このプロパティの値を使用してカスタマイズすることができます、<xref:System.ComponentModel.DisplayNameAttribute?displayProperty=nameWithType>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntityType">
+      <MemberSignature Language="C#" Value="public Type EntityType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type EntityType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.EntityType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルを表すエンティティ型を取得します。</summary>
+        <value>エンティティを表す型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeignKeyColumnsNames">
+      <MemberSignature Language="C#" Value="public string ForeignKeyColumnsNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ForeignKeyColumnsNames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.ForeignKeyColumnsNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外部キー名のコンマ区切りの一覧を取得します。</summary>
+        <value>外部キー名のコンマ区切りの一覧です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetActionPath">
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定された行のアクションのパスを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクション パスは、特定のエンティティのアクションの URL です。 詳細については、次を参照してください。、<xref:System.Web.DynamicData.PageAction?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetActionPath">
+      <MemberSignature Language="C#" Value="public string GetActionPath (string action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetActionPath(string action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetActionPath(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">アクションの名前です。</param>
+        <summary>現在のテーブルと、指定されたアクションのアクションのパスを返します。</summary>
+        <returns>指定されたアクションのアクションのパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ アクション パスは、特定のエンティティのアクションの URL です。 詳細については、次を参照してください。、<xref:System.Web.DynamicData.PageAction?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetActionPath">
+      <MemberSignature Language="C#" Value="public string GetActionPath (string action, System.Collections.Generic.IList&lt;object&gt; primaryKeyValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetActionPath(string action, class System.Collections.Generic.IList`1&lt;object&gt; primaryKeyValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetActionPath(System.String,System.Collections.Generic.IList{System.Object})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="primaryKeyValues" Type="System.Collections.Generic.IList&lt;System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="action">アクションの名前です。</param>
+        <param name="primaryKeyValues">主キーを構成する列の値の一覧。</param>
+        <summary>現在のテーブル、指定したアクション、および指定したプライマリ キーのアクションのパスを返します。</summary>
+        <returns>指定したアクションと主キーのアクションのパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクション パスは、特定のエンティティのアクションの URL です。 詳細については、次を参照してください。、<xref:System.Web.DynamicData.PageAction?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetActionPath">
+      <MemberSignature Language="C#" Value="public string GetActionPath (string action, object row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetActionPath(string action, object row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetActionPath(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="row" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="action">アクションの名前です。</param>
+        <param name="row">アクションのパスを取得する行。</param>
+        <summary>アクションの名前を使用して、指定された行のアクションのパスを返します。</summary>
+        <returns>指定された行のアクションのパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクション パスは、特定のエンティティのアクションの URL です。 アクションのパスには、クエリ文字列のフィルターに使用できる主キー列名が含まれています。  
+  
+ 詳細については、次を参照してください。、<xref:System.Web.DynamicData.PageAction?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetActionPath">
+      <MemberSignature Language="C#" Value="public string GetActionPath (string action, System.Web.Routing.RouteValueDictionary routeValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetActionPath(string action, class System.Web.Routing.RouteValueDictionary routeValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetActionPath(System.String,System.Web.Routing.RouteValueDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="routeValues" Type="System.Web.Routing.RouteValueDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="action">アクションの名前です。</param>
+        <param name="routeValues">アクションのルートの一覧。</param>
+        <summary>現在のテーブルと、指定されたアクションおよびルート アクションのパスを返します。</summary>
+        <returns>指定したアクションとルートのアクションのパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクション パスは、特定のエンティティのアクションの URL です。 詳細については、次を参照してください。、<xref:System.Web.DynamicData.PageAction?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetActionPath">
+      <MemberSignature Language="C#" Value="public string GetActionPath (string action, System.Collections.Generic.IList&lt;object&gt; primaryKeyValues, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetActionPath(string action, class System.Collections.Generic.IList`1&lt;object&gt; primaryKeyValues, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetActionPath(System.String,System.Collections.Generic.IList{System.Object},System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="primaryKeyValues" Type="System.Collections.Generic.IList&lt;System.Object&gt;" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">アクションの名前です。</param>
+        <param name="primaryKeyValues">主キーを構成する列の値の一覧。</param>
+        <param name="path">アクションの仮想パス。</param>
+        <summary>指定したプライマリ キーと仮想パスに基づき、アクションのパスにクエリ文字列を追加します。</summary>
+        <returns>指定したプライマリ キーとクエリ文字列値が追加された仮想パスのアクションのパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクション パスは、特定のエンティティのアクションの URL です。 詳細については、次を参照してください。、<xref:System.Web.DynamicData.PageAction?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetActionPath">
+      <MemberSignature Language="C#" Value="public string GetActionPath (string action, object row, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetActionPath(string action, object row, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetActionPath(System.String,System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="row" Type="System.Object" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action">アクションの名前です。</param>
+        <param name="row">アクションのパスの行を格納するオブジェクト。</param>
+        <param name="path">アクションの仮想パス。</param>
+        <summary>アクションの名前と、アクションの仮想パスを使用して、指定された行のアクションのパスを返します。</summary>
+        <returns>指定された行のアクションのパス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクション パスは、特定のエンティティのアクションの URL です。 詳細については、次を参照してください。、<xref:System.Web.DynamicData.PageAction?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumn">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaColumn GetColumn (string columnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.DynamicData.MetaColumn GetColumn(string columnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetColumn(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaColumn</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">メタデータを取得する列の名前です。</param>
+        <summary>指定した列のメタデータを返します。</summary>
+        <returns>列のメタデータ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumnValuesFromRoute">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; GetColumnValuesFromRoute (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; GetColumnValuesFromRoute(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetColumnValuesFromRoute(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">指定された Web 要求のコンテキスト。</param>
+        <summary>列の値のコレクションを取得します。</summary>
+        <returns>列の値のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataKeyFromRoute">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataKey GetDataKeyFromRoute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.WebControls.DataKey GetDataKeyFromRoute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetDataKeyFromRoute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataKey</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ルートの値からエンティティの主キーを取得します。</summary>
+        <returns>見つかった場合は、エンティティの主キー値それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルートの値は、通常、要求 URL クエリ文字列から取得されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDisplayString">
+      <MemberSignature Language="C#" Value="public virtual string GetDisplayString (object row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetDisplayString(object row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetDisplayString(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="row">表示文字列を取得する行。</param>
+        <summary>行を外部キー リレーションシップに使用する場合は、行のインスタンスの表示文字列として使用する値を返します。</summary>
+        <returns>行のインスタンスの表示名。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行がある場合`null`、空の文字列が返されます。 エンティティ クラスには、オーバーライドが含まれている場合、<xref:System.Web.DynamicData.MetaTable.ToString%2A>メソッドをオーバーライドされた<xref:System.Web.DynamicData.MetaTable.ToString%2A>値が返されます。 メソッドを返しますそれ以外の場合、`ToString`の値の表現、<xref:System.Web.DynamicData.MetaTable.DisplayColumn%2A>指定された行のプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFilteredColumns">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Web.DynamicData.MetaColumn&gt; GetFilteredColumns ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.DynamicData.MetaColumn&gt; GetFilteredColumns() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetFilteredColumns" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.DynamicData.MetaColumn&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フィルター適用不可能である列の一覧を取得します。</summary>
+        <returns>フィルター適用不可能である列の一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列の注釈が付いている場合は、フィルター処理が、<xref:System.ComponentModel.DataAnnotations.DisplayColumnAttribute>属性および`Enabled`のプロパティ、<xref:System.Web.Mvc.FilterAttribute>に列の属性が設定されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrimaryKeyDictionary">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; GetPrimaryKeyDictionary (object row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; GetPrimaryKeyDictionary(object row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetPrimaryKeyDictionary(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="row">行。</param>
+        <summary>指定された行の主キーの名前と値のディクショナリを取得します。</summary>
+        <returns>主キーの名前と値のディクショナリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、主キーの辞書を作成する方法を示します。  
+  
+```csharp  
+private RouteValueDictionary GetRouteValues(MetaTable table, object row) {  
+    RouteValueDictionary routeValues = GetRouteValues();  
+    foreach (var pk in table.GetPrimaryKeyDictionary(row)) {  
+        routeValues[pk.Key] = pk.Value;  
+    }  
+    return routeValues;  
+}   
+```  
+  
+```vb  
+Private Function GetRouteValues(ByVal table As MetaTable, _  
+        ByVal row As Object) As RouteValueDictionary   
+    Dim routeValues As RouteValueDictionary = GetRouteValues()   
+    For Each pk In table.GetPrimaryKeyDictionary(row)   
+        routeValues(pk.Key) = pk.Value   
+    Next   
+    Return routeValues   
+End Function   
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrimaryKeyString">
+      <MemberSignature Language="C#" Value="public string GetPrimaryKeyString (System.Collections.Generic.IList&lt;object&gt; primaryKeyValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetPrimaryKeyString(class System.Collections.Generic.IList`1&lt;object&gt; primaryKeyValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetPrimaryKeyString(System.Collections.Generic.IList{System.Object})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="primaryKeyValues" Type="System.Collections.Generic.IList&lt;System.Object&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="primaryKeyValues">主キーを構成する列の値の一覧。</param>
+        <summary>指定された行の主キーを表す列の値のコンマ区切りの一覧を返します。</summary>
+        <returns>列の値のコンマ区切りの一覧です。 リストが空の場合は、空の文字列が返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrimaryKeyString">
+      <MemberSignature Language="C#" Value="public string GetPrimaryKeyString (object row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetPrimaryKeyString(object row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetPrimaryKeyString(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="row">主キーを取得する行。</param>
+        <summary>指定された行の主キーを表す列の値のコンマ区切りの一覧を返します。</summary>
+        <returns>行の主キーを表す列値のコンマ区切りの一覧です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrimaryKeyValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;object&gt; GetPrimaryKeyValues (object row);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;object&gt; GetPrimaryKeyValues(object row) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetPrimaryKeyValues(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="row">主キーを取得する行。</param>
+        <summary>指定された行の主キーを表す列の値のコレクションを返します。</summary>
+        <returns>行の主キーを表す列値のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQuery">
+      <MemberSignature Language="C#" Value="public System.Linq.IQueryable GetQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Linq.IQueryable GetQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Linq.IQueryable" />テーブルを表すエンティティ型のインスタンス。</summary>
+        <returns><see cref="T:System.Linq.IQueryable" />エンティティ型のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQuery">
+      <MemberSignature Language="C#" Value="public virtual System.Linq.IQueryable GetQuery (object context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Linq.IQueryable GetQuery(object context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetQuery(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">コンテキスト、<see cref="T:System.Web.DynamicData.MetaTable" />オブジェクト。</param>
+        <summary>返します、<see cref="T:System.Linq.IQueryable" />データ コンテキストを使用して、テーブルを表すエンティティ型のインスタンス。</summary>
+        <returns><see cref="T:System.Linq.IQueryable" />データ コンテキストでテーブルを表すエンティティ型のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`context`パラメーターは`null`、このメソッドを呼び出して新しいコンテキストを作成する、<xref:System.Web.DynamicData.MetaTable.CreateContext%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScaffoldColumns">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Web.DynamicData.MetaColumn&gt; GetScaffoldColumns (System.Web.UI.WebControls.DataBoundControlMode mode, System.Web.DynamicData.ContainerType containerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.DynamicData.MetaColumn&gt; GetScaffoldColumns(valuetype System.Web.UI.WebControls.DataBoundControlMode mode, valuetype System.Web.DynamicData.ContainerType containerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetScaffoldColumns(System.Web.UI.WebControls.DataBoundControlMode,System.Web.DynamicData.ContainerType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.DynamicData.MetaColumn&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+        <Parameter Name="containerType" Type="System.Web.DynamicData.ContainerType" />
+      </Parameters>
+      <Docs>
+        <param name="mode">データ バインド コントロールのモード。</param>
+        <param name="containerType">個別のエンティティまたはエンティティの一覧の一部としてテーブルを表示するかどうかを示す値。</param>
+        <summary>スキャフォールディングを使用して表示する列の一覧を返します。</summary>
+        <returns>スキャフォールディングを使用して表示する列の一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、すべての列を返しますが<xref:System.ComponentModel.DataAnnotations.ScaffoldColumnAttribute>プロパティに設定されている`true`次は除きます。  
+  
+-   文字列長の列の列が<xref:System.Web.DynamicData.MetaColumn.IsLongString%2A>プロパティに設定されている`true`と持つ`containerType`パラメーターが`true`です。  
+  
+-   子列が<xref:System.Web.UI.WebControls.DataBoundControlMode>に値が設定されている<xref:System.Web.UI.WebControls.DataBoundControlMode.Insert>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTable">
+      <MemberSignature Language="C#" Value="public static System.Web.DynamicData.MetaTable GetTable (Type entityType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.DynamicData.MetaTable GetTable(class System.Type entityType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.GetTable(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="entityType">エンティティの型。</param>
+        <summary>指定した型に関連付けられている metatable を取得します。</summary>
+        <returns>指定した型に関連付けられている metatable です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Web.DynamicData.MetaTable.TryGetTable%28System.Type%2CSystem.Web.DynamicData.MetaTable%40%29> を呼び出します。 場合<xref:System.Web.DynamicData.MetaTable.TryGetTable%28System.Type%2CSystem.Web.DynamicData.MetaTable%40%29>返します`false`、<xref:System.InvalidOperationException>例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Web.DynamicData.MetaTable.TryGetTable(System.Type,System.Web.DynamicData.MetaTable@)" />このメソッドによって呼び出されたメソッドから返された<see langword="false" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasPrimaryKey">
+      <MemberSignature Language="C#" Value="public bool HasPrimaryKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasPrimaryKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.HasPrimaryKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルに主キーがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />テーブルに主キーである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected virtual void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用できないコンス トラクターが呼び出されたときにデータを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Web.DynamicData.MetaColumn.Initialize%2A>メソッドの各列に対して、<xref:System.Web.DynamicData.MetaTable>インスタンス。 このメソッドは、直接呼び出すことはできません。 初期化をカスタマイズするには、このクラスから派生し、オーバーライドすることができます、、<xref:System.Web.DynamicData.MetaColumn.Initialize%2A>メソッドです。 このメソッドをオーバーライドする場合は、基本コントロールを呼び出す`Initialize`メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、オーバーライドする方法を示します、<xref:System.Web.DynamicData.MetaColumn.Initialize%2A>初期化プロセスをカスタマイズするためにメソッドです。  
+  
+```csharp  
+protected  override void Initialize() {  
+    base.Initialize();  
+    MyOverridenInit();  
+}  
+```  
+  
+```vb  
+Protected Overloads Overrides Sub Initialize()   
+    MyBase.Initialize()   
+    MyOverridenInit()   
+End Sub  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />テーブルが読み取り専用の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListActionPath">
+      <MemberSignature Language="C#" Value="public string ListActionPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ListActionPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.ListActionPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルの一覧のアクションのアクションのパスを取得します。</summary>
+        <value>テーブルの一覧のアクションのアクションのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクション パスは、特定のエンティティのアクションの URL です。 詳細については、次を参照してください。、<xref:System.Web.DynamicData.PageAction?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Model">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaModel Model { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaModel Model" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.Model" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaModel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このテーブルに所属メタ モデルを取得します。</summary>
+        <value>このテーブルに所属するメタ モデル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。、<xref:System.Data.Linq.Mapping.MetaModel?displayProperty=nameWithType>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルの一意の名前を取得します。</summary>
+        <value>テーブルの一意の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryKeyColumns">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Web.DynamicData.MetaColumn&gt; PrimaryKeyColumns { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Web.DynamicData.MetaColumn&gt; PrimaryKeyColumns" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.PrimaryKeyColumns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Web.DynamicData.MetaColumn&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>主キーを定義する列のコレクションを取得します。</summary>
+        <value>主キー列を含むコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.ModelProviders.TableProvider Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.ModelProviders.TableProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.ModelProviders.TableProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルのプロバイダーを取得します。</summary>
+        <value>テーブルのプロバイダーです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetMetadata">
+      <MemberSignature Language="C#" Value="public void ResetMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetMetadata() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.ResetMetadata" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テーブルのキャッシュされたメタデータをリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュされたテーブルのメタデータは、組み込みの列に関するメタデータおよびデータ モデルの属性から取得される情報で構成されます。 メタデータ キャッシュには、次回のメタデータが要求されたが再構築されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootEntityType">
+      <MemberSignature Language="C#" Value="public Type RootEntityType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type RootEntityType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.RootEntityType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティの継承階層のルート型を取得します。</summary>
+        <value>エンティティの継承階層のルート型です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 種類は、継承階層の最上部かがない親の型、エンティティ型が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scaffold">
+      <MemberSignature Language="C#" Value="public virtual bool Scaffold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Scaffold" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.Scaffold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテーブルを表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />テーブルを表示する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortColumn">
+      <MemberSignature Language="C#" Value="public virtual System.Web.DynamicData.MetaColumn SortColumn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaColumn SortColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.SortColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.DynamicData.MetaColumn" />がテーブルに並べ替えて値。</summary>
+        <value>テーブルに並べ替えて列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortDescending">
+      <MemberSignature Language="C#" Value="public virtual bool SortDescending { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SortDescending" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaTable.SortDescending" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外部キー リレーションシップの親として使用されている場合、エントリを降順で並べ替えるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />エントリを降順に並べ替える場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して並べ替え順序を指定することができます、<xref:System.ComponentModel.DataAnnotations.DisplayColumnAttribute?displayProperty=nameWithType>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テーブルの名前を返します。</summary>
+        <returns>テーブルの名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetColumn">
+      <MemberSignature Language="C#" Value="public bool TryGetColumn (string columnName, out System.Web.DynamicData.MetaColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetColumn(string columnName, [out] class System.Web.DynamicData.MetaColumn&amp; column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.TryGetColumn(System.String,System.Web.DynamicData.MetaColumn@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+        <Parameter Name="column" Type="System.Web.DynamicData.MetaColumn&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">検索する列の名前。</param>
+        <param name="column">このメソッドが戻るとき、<see langword="MetaColumn" />オブジェクトに対する<c>columnName</c>です。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定した列が存在するかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は、指定した列です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`columnName`パラメーターが null で、<xref:System.InvalidOperationException>例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetTable">
+      <MemberSignature Language="C#" Value="public static bool TryGetTable (Type entityType, out System.Web.DynamicData.MetaTable table);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGetTable(class System.Type entityType, [out] class System.Web.DynamicData.MetaTable&amp; table) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaTable.TryGetTable(System.Type,System.Web.DynamicData.MetaTable@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="entityType" Type="System.Type" />
+        <Parameter Name="table" Type="System.Web.DynamicData.MetaTable&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="entityType">エンティティの型。</param>
+        <param name="table">このメソッドが戻るとき、指定した型に関連付けられている metatable が含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定された型およびテーブルに関連付けられている metatable を取得します。</summary>
+        <returns>関連付けられている metatable、指定されたを指定し、テーブルです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="entityType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

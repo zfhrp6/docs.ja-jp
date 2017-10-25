@@ -1,0 +1,521 @@
+<Type Name="ExceptionHandlingClause" FullName="System.Reflection.ExceptionHandlingClause">
+  <TypeSignature Language="C#" Value="public class ExceptionHandlingClause" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi beforefieldinit ExceptionHandlingClause extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.ExceptionHandlingClause" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>構造化例外処理ブロック内の句を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.ExceptionHandlingClause>クラス内の句に関する情報を提供する、`try`しています.`catch`…`finally` ブロック (`Try`.`Catch`…`Finally` Visual basic の場合)。 メソッドで例外処理句の一覧を取得、取得、<xref:System.Reflection.MethodInfo>メソッドを表すです。 使用して、<xref:System.Reflection.MethodBase.GetMethodBody%2A>を取得するメソッド、<xref:System.Reflection.MethodBody>オブジェクト、および使用して、<xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A>句の一覧を取得するプロパティです。  
+  
+> [!NOTE]
+>  例外処理句の使用には、メタデータと Microsoft intermediate language (MSIL) の命令の形式の確実な理解が必要です。 情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`、そのローカル変数の情報と例外処理句が表示されます。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。 <xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A>の一覧を取得するプロパティが使用される<xref:System.Reflection.ExceptionHandlingClause>オブジェクトし、そのプロパティを表示します。  
+  
+ Ildasm.exe を使用すると、オフセットおよび長さの計算方法を表示するのにコンパイル済みのコード例では、MSIL をチェックします。  
+  
+> [!NOTE]
+>  すべてのコンピューター言語を生成できます<xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=nameWithType>句。 Visual Basic の例は、Visual Basic を使用して、フィルター句を示しています。`When`式で、他の言語の例は省略します。  
+  
+ このコード例にあるは、<xref:System.Reflection.MethodBody>クラスに関するトピック。  
+  
+ [!code-cpp[MethodBody#2](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#2)]
+ [!code-csharp[MethodBody#2](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#2)]
+ [!code-vb[MethodBody#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#2)]  
+[!code-cpp[MethodBody#4](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#4)]
+[!code-csharp[MethodBody#4](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#4)]
+[!code-vb[MethodBody#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#4)]  
+[!code-cpp[MethodBody#5](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#5)]
+[!code-csharp[MethodBody#5](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#5)]
+[!code-vb[MethodBody#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#5)]  
+[!code-cpp[MethodBody#7](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#7)]
+[!code-csharp[MethodBody#7](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#7)]
+[!code-vb[MethodBody#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ExceptionHandlingClause ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.ExceptionHandlingClause.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Reflection.ExceptionHandlingClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構築中にこのコンス トラクターが派生クラスによって呼び出された<xref:System.Reflection.ExceptionHandlingClause>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CatchType">
+      <MemberSignature Language="C#" Value="public virtual Type CatchType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type CatchType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ExceptionHandlingClause.CatchType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この句によって処理される例外の種類を取得します。</summary>
+        <value>A<see cref="T:System.Type" />この句によって処理される例外の種類を表すオブジェクトまたは<see langword="null" />場合、<see cref="P:System.Reflection.ExceptionHandlingClause.Flags" />プロパティは<see cref="F:System.Reflection.ExceptionHandlingClauseOptions.Filter" />または<see cref="F:System.Reflection.ExceptionHandlingClauseOptions.Finally" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  例外処理句の使用には、メタデータと Microsoft intermediate language (MSIL) の命令の形式の確実な理解が必要です。 情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`、そのローカル変数の情報と例外処理句が表示されます。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。 <xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A>の一覧を取得するプロパティが使用される<xref:System.Reflection.ExceptionHandlingClause>オブジェクトし、そのプロパティを表示します。  
+  
+> [!NOTE]
+>  すべてのコンピューター言語を生成できます<xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=nameWithType>句。 Visual Basic の例は、Visual Basic を使用して、フィルター句を示しています。`When`式で、他の言語の例は省略します。  
+  
+ このコード例にあるは、<xref:System.Reflection.MethodBody>クラスに関するトピック。  
+  
+ [!code-cpp[MethodBody#2](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#2)]
+ [!code-csharp[MethodBody#2](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#2)]
+ [!code-vb[MethodBody#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#2)]  
+[!code-cpp[MethodBody#4](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#4)]
+[!code-csharp[MethodBody#4](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#4)]
+[!code-vb[MethodBody#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#4)]  
+[!code-cpp[MethodBody#5](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#5)]
+[!code-csharp[MethodBody#5](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#5)]
+[!code-vb[MethodBody#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#5)]  
+[!code-cpp[MethodBody#7](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#7)]
+[!code-csharp[MethodBody#7](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#7)]
+[!code-vb[MethodBody#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">プロパティのオブジェクトの現在の状態を使用するが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterOffset">
+      <MemberSignature Language="C#" Value="public virtual int FilterOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FilterOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ExceptionHandlingClause.FilterOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(バイト単位)、ユーザー指定のフィルターのコードのメソッド本体内のオフセットを取得します。</summary>
+        <value>メソッドの本体内で、(バイト単位)、ユーザー指定のフィルターのコードのオフセット。 このプロパティの値には意味がない場合、<see cref="P:System.Reflection.ExceptionHandlingClause.Flags" />プロパティ以外の任意の値を持つ<see cref="F:System.Reflection.ExceptionHandlingClauseOptions.Filter" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルター句には、ユーザー suppliedMicrosoft intermediate language (MSIL この句によって、例外を処理するかどうかを決定する) が含まれています。 たとえば、Visual Basic の含む句`When`キーワードは、<xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=nameWithType>句。  
+  
+> [!NOTE]
+>  例外処理句の使用には、メタデータと MSIL 命令の形式の確実な理解が必要です。 情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">例外処理句がフィルターではないために、オフセットを取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Flags">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.ExceptionHandlingClauseOptions Flags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.ExceptionHandlingClauseOptions Flags" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ExceptionHandlingClause.Flags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ExceptionHandlingClauseOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外処理句があるかどうかを示す値を取得、finally 句や型フィルターの句では、ユーザー フィルター句。</summary>
+        <value><see cref="T:System.Reflection.ExceptionHandlingClauseOptions" />どのようなアクションのこの句が実行を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  例外処理句の使用には、メタデータと Microsoft intermediate language (MSIL) の命令の形式の確実な理解が必要です。 情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`、そのローカル変数の情報と例外処理句が表示されます。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。 <xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A>の一覧を取得するプロパティが使用される<xref:System.Reflection.ExceptionHandlingClause>オブジェクトし、そのプロパティを表示します。  
+  
+> [!NOTE]
+>  すべてのコンピューター言語を生成できます<xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=nameWithType>句。 Visual Basic の例は、Visual Basic を使用して、フィルター句を示しています。`When`式で、他の言語の例は省略します。  
+  
+ このコード例にあるは、<xref:System.Reflection.MethodBody>クラスに関するトピック。  
+  
+ [!code-cpp[MethodBody#2](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#2)]
+ [!code-csharp[MethodBody#2](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#2)]
+ [!code-vb[MethodBody#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#2)]  
+[!code-cpp[MethodBody#4](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#4)]
+[!code-csharp[MethodBody#4](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#4)]
+[!code-vb[MethodBody#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#4)]  
+[!code-cpp[MethodBody#5](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#5)]
+[!code-csharp[MethodBody#5](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#5)]
+[!code-vb[MethodBody#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#5)]  
+[!code-cpp[MethodBody#7](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#7)]
+[!code-csharp[MethodBody#7](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#7)]
+[!code-vb[MethodBody#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandlerLength">
+      <MemberSignature Language="C#" Value="public virtual int HandlerLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 HandlerLength" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ExceptionHandlingClause.HandlerLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外処理句の本体のバイト単位の長さを取得します。</summary>
+        <value>この例外処理句の本体を形成する MSIL の長さ、(バイト単位) を表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  例外処理句の使用には、メタデータと Microsoft intermediate language (MSIL) の命令の形式の確実な理解が必要です。 情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`、そのローカル変数の情報と例外処理句が表示されます。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。 <xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A>の一覧を取得するプロパティが使用される<xref:System.Reflection.ExceptionHandlingClause>オブジェクトし、そのプロパティを表示します。  
+  
+> [!NOTE]
+>  すべてのコンピューター言語を生成できます<xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=nameWithType>句。 Visual Basic の例は、Visual Basic を使用して、フィルター句を示しています。`When`式で、他の言語の例は省略します。  
+  
+ このコード例にあるは、<xref:System.Reflection.MethodBody>クラスに関するトピック。  
+  
+ [!code-cpp[MethodBody#2](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#2)]
+ [!code-csharp[MethodBody#2](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#2)]
+ [!code-vb[MethodBody#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#2)]  
+[!code-cpp[MethodBody#4](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#4)]
+[!code-csharp[MethodBody#4](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#4)]
+[!code-vb[MethodBody#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#4)]  
+[!code-cpp[MethodBody#5](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#5)]
+[!code-csharp[MethodBody#5](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#5)]
+[!code-vb[MethodBody#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#5)]  
+[!code-cpp[MethodBody#7](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#7)]
+[!code-csharp[MethodBody#7](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#7)]
+[!code-vb[MethodBody#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandlerOffset">
+      <MemberSignature Language="C#" Value="public virtual int HandlerOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 HandlerOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ExceptionHandlingClause.HandlerOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外処理句のバイト単位のメソッド本体内のオフセットを取得します。</summary>
+        <value>メソッド本体をバイト単位でこの例外処理句のオフセットを表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  例外処理句の使用には、メタデータと Microsoft intermediate language (MSIL) の命令の形式の確実な理解が必要です。 情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`、そのローカル変数の情報と例外処理句が表示されます。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。 <xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A>の一覧を取得するプロパティが使用される<xref:System.Reflection.ExceptionHandlingClause>オブジェクトし、そのプロパティを表示します。  
+  
+> [!NOTE]
+>  すべてのコンピューター言語を生成できます<xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=nameWithType>句。 Visual Basic の例は、Visual Basic を使用して、フィルター句を示しています。`When`式で、他の言語の例は省略します。  
+  
+ このコード例にあるは、<xref:System.Reflection.MethodBody>クラスに関するトピック。  
+  
+ [!code-cpp[MethodBody#2](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#2)]
+ [!code-csharp[MethodBody#2](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#2)]
+ [!code-vb[MethodBody#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#2)]  
+[!code-cpp[MethodBody#4](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#4)]
+[!code-csharp[MethodBody#4](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#4)]
+[!code-vb[MethodBody#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#4)]  
+[!code-cpp[MethodBody#5](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#5)]
+[!code-csharp[MethodBody#5](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#5)]
+[!code-vb[MethodBody#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#5)]  
+[!code-cpp[MethodBody#7](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#7)]
+[!code-csharp[MethodBody#7](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#7)]
+[!code-vb[MethodBody#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.ExceptionHandlingClause.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>例外処理句の文字列形式。</summary>
+        <returns>フィルター句の型の適切なプロパティ値を一覧表示する文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryLength">
+      <MemberSignature Language="C#" Value="public virtual int TryLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TryLength" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ExceptionHandlingClause.TryLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外処理句を含む try ブロックのバイト単位の合計長。</summary>
+        <value>この例外処理句を含む try ブロックのバイト単位の合計長。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 合計長 (バイト単位) でこの例外処理句を含む try ブロックを表す整数。  
+  
+> [!NOTE]
+>  例外処理句の使用には、メタデータと Microsoft intermediate language (MSIL) の命令の形式の確実な理解が必要です。 情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`、そのローカル変数の情報と例外処理句が表示されます。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。 <xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A>の一覧を取得するプロパティが使用される<xref:System.Reflection.ExceptionHandlingClause>オブジェクトし、そのプロパティを表示します。  
+  
+> [!NOTE]
+>  すべてのコンピューター言語を生成できます<xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=nameWithType>句。 Visual Basic の例は、Visual Basic を使用して、フィルター句を示しています。`When`式で、他の言語の例は省略します。  
+  
+ このコード例にあるは、<xref:System.Reflection.MethodBody>クラスに関するトピック。  
+  
+ [!code-cpp[MethodBody#2](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#2)]
+ [!code-csharp[MethodBody#2](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#2)]
+ [!code-vb[MethodBody#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#2)]  
+[!code-cpp[MethodBody#4](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#4)]
+[!code-csharp[MethodBody#4](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#4)]
+[!code-vb[MethodBody#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#4)]  
+[!code-cpp[MethodBody#5](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#5)]
+[!code-csharp[MethodBody#5](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#5)]
+[!code-vb[MethodBody#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#5)]  
+[!code-cpp[MethodBody#7](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#7)]
+[!code-csharp[MethodBody#7](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#7)]
+[!code-vb[MethodBody#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryOffset">
+      <MemberSignature Language="C#" Value="public virtual int TryOffset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TryOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.ExceptionHandlingClause.TryOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この例外処理句を含む try ブロックのバイト単位で、メソッド内のオフセット。</summary>
+        <value>この例外処理句を含む try ブロックのバイト単位で、メソッド内のオフセットを表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  例外処理句の使用には、メタデータと Microsoft intermediate language (MSIL) の命令の形式の確実な理解が必要です。 情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」と「Partition III: CIL Instruction Set」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のテスト メソッドを定義`MethodBodyExample`、そのローカル変数の情報と例外処理句が表示されます。 <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType>を取得するメソッドが使用される、<xref:System.Reflection.MethodBody>テスト メソッドのオブジェクト。 <xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A>の一覧を取得するプロパティが使用される<xref:System.Reflection.ExceptionHandlingClause>オブジェクトし、そのプロパティを表示します。  
+  
+> [!NOTE]
+>  すべてのコンピューター言語を生成できます<xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=nameWithType>句。 Visual Basic の例は、Visual Basic を使用して、フィルター句を示しています。`When`式で、他の言語の例は省略します。  
+  
+ このコード例にあるは、<xref:System.Reflection.MethodBody>クラスに関するトピック。  
+  
+ [!code-cpp[MethodBody#2](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#2)]
+ [!code-csharp[MethodBody#2](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#2)]
+ [!code-vb[MethodBody#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#2)]  
+[!code-cpp[MethodBody#4](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#4)]
+[!code-csharp[MethodBody#4](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#4)]
+[!code-vb[MethodBody#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#4)]  
+[!code-cpp[MethodBody#5](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#5)]
+[!code-csharp[MethodBody#5](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#5)]
+[!code-vb[MethodBody#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#5)]  
+[!code-cpp[MethodBody#7](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#7)]
+[!code-csharp[MethodBody#7](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#7)]
+[!code-vb[MethodBody#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/MethodBody/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

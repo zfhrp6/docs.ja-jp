@@ -1,0 +1,146 @@
+<Type Name="TiffCompressOption" FullName="System.Windows.Media.Imaging.TiffCompressOption">
+  <TypeSignature Language="C#" Value="public enum TiffCompressOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TiffCompressOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.TiffCompressOption" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>可能な圧縮スキーム ビットマップ画像のファイル形式 TIFF (Tagged Image) を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Ccitt3、Ccitt4、および Rle を必要とする、<xref:System.Windows.Media.PixelFormat>値に設定する<xref:System.Windows.Media.PixelFormats.BlackWhite%2A>です。 設定、<xref:System.Windows.Media.PixelFormat>その他の値にリセット、<xref:System.Windows.Media.Imaging.TiffBitmapEncoder.Compression%2A>プロパティ値を既定値です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Media.Imaging.TiffBitmapEncoder.Compression%2A>プロパティです。  
+  
+ [!code-cpp[tiffbitmapdecoderencoder#3](~/samples/snippets/cpp/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/CPP/TiffEncoderDecoder.cpp#3)]
+ [!code-csharp[tiffbitmapdecoderencoder#3](~/samples/snippets/csharp/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/CSharp/TiffEncoderDecoder.cs#3)]
+ [!code-vb[tiffbitmapdecoderencoder#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TiffBitmapDecoderEncoder/VB/TiffEncoderDecoder.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Ccitt3">
+      <MemberSignature Language="C#" Value="Ccitt3" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Imaging.TiffCompressOption Ccitt3 = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Imaging.TiffCompressOption.Ccitt3" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.TiffCompressOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CCITT3 圧縮スキーマが使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Ccitt4">
+      <MemberSignature Language="C#" Value="Ccitt4" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Imaging.TiffCompressOption Ccitt4 = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Imaging.TiffCompressOption.Ccitt4" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.TiffCompressOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CCITT4 圧縮スキーマが使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Imaging.TiffCompressOption Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Imaging.TiffCompressOption.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.TiffCompressOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Imaging.TiffBitmapEncoder" />エンコーダーは、最適な圧縮可能なスキーマで、ビットマップを保存しようとしています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Lzw">
+      <MemberSignature Language="C#" Value="Lzw" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Imaging.TiffCompressOption Lzw = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Imaging.TiffCompressOption.Lzw" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.TiffCompressOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>LZW 圧縮スキーマが使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Imaging.TiffCompressOption None = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Imaging.TiffCompressOption.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.TiffCompressOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)]イメージは圧縮されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rle">
+      <MemberSignature Language="C#" Value="Rle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Imaging.TiffCompressOption Rle = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Imaging.TiffCompressOption.Rle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.TiffCompressOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>RLE 圧縮スキーマが使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Zip">
+      <MemberSignature Language="C#" Value="Zip" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Imaging.TiffCompressOption Zip = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Imaging.TiffCompressOption.Zip" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.TiffCompressOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Zip 圧縮スキーマが使用されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

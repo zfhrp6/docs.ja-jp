@@ -1,0 +1,89 @@
+<Type Name="WebBrowserPermissionLevel" FullName="System.Security.Permissions.WebBrowserPermissionLevel">
+  <TypeSignature Language="C#" Value="public enum WebBrowserPermissionLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebBrowserPermissionLevel extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.WebBrowserPermissionLevel" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Web ブラウザーのアクセス許可レベルを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙を使用して、<xref:System.Security.Permissions.WebBrowserPermission.Level%2A>のプロパティ、<xref:System.Security.Permissions.WebBrowserPermission>クラスです。  
+  
+ 安全なアクセス許可レベルは、次の Web ブラウザーの操作を制限します。  
+  
+-   ポップアップ ウィンドウは、Web ブラウザー コントロールを作成できません。  
+  
+-   Web ブラウザー コントロールは、その元のサイトにのみ移動できます。  
+  
+-   Web ブラウザー コントロールのセキュリティ設定が削減されます。  
+  
+   
+  
+## Examples  
+ 次の例では、呼び出し元のコードが Web ブラウザー コントロールを作成するアクセス許可を制限なくことを要求する方法を示します。  
+  
+ [!code-csharp[WebBrowserPermissionsSnippets#WebBrowserPermissionAttribute3](~/samples/snippets/csharp/VS_Snippets_Wpf/WebBrowserPermissionsSnippets/CSharp/Window1.xaml.cs#webbrowserpermissionattribute3)]
+ [!code-vb[WebBrowserPermissionsSnippets#WebBrowserPermissionAttribute3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WebBrowserPermissionsSnippets/visualbasic/window1.xaml.vb#webbrowserpermissionattribute3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.WebBrowserPermissionLevel None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.WebBrowserPermissionLevel.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.WebBrowserPermissionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web ブラウザーを HTML のフレームを移動することはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Safe">
+      <MemberSignature Language="C#" Value="Safe" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.WebBrowserPermissionLevel Safe = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.WebBrowserPermissionLevel.Safe" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.WebBrowserPermissionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web ブラウザーをいくつかの制限がありますが、html のフレームを安全に移動することができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unrestricted">
+      <MemberSignature Language="C#" Value="Unrestricted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.WebBrowserPermissionLevel Unrestricted = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.WebBrowserPermissionLevel.Unrestricted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.WebBrowserPermissionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web ブラウザーを制限なく移動できます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,103 @@
+<Type Name="SaveChangesOptions" FullName="System.Data.Services.Client.SaveChangesOptions">
+  <TypeSignature Language="C#" Value="public enum SaveChangesOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SaveChangesOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.SaveChangesOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="M:System.Data.Services.Client.DataServiceContext.SaveChanges" /> の呼び出し時に変更オプションを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ContinueOnError オプションが設定されている場合、エラーが発生した後もそれ以降の操作が引き続き試さです。  
+  
+ バッチ処理を使用しない場合は、<xref:System.Data.Services.Client.DataServiceResponse.BatchHeaders%2A> インスタンスの <xref:System.Data.Services.Client.DataServiceResponse.BatchHeaders%2A> プロパティによって空のコレクションが返され、<xref:System.Data.Services.Client.DataServiceResponse.BatchStatusCode%2A> プロパティが 0 になります。  
+  
+ 同時にバッチと ContinueOnError の両方を設定することはできません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Batch">
+      <MemberSignature Language="C#" Value="Batch" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Services.Client.SaveChangesOptions Batch = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Services.Client.SaveChangesOptions.Batch" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.SaveChangesOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>保留中のすべての変更は 1 つのバッチ要求で保存されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ContinueOnError">
+      <MemberSignature Language="C#" Value="ContinueOnError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Services.Client.SaveChangesOptions ContinueOnError = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Services.Client.SaveChangesOptions.ContinueOnError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.SaveChangesOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーへの複数の要求を使用して、保留中の変更を保存します。エラーが発生しても、操作は継続されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Services.Client.SaveChangesOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Services.Client.SaveChangesOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.SaveChangesOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーへの複数の要求を使用して、保留中の変更を保存します。ただし、最初にエラーが発生した時点で操作が停止されます (既定)。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplaceOnUpdate">
+      <MemberSignature Language="C#" Value="ReplaceOnUpdate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Services.Client.SaveChangesOptions ReplaceOnUpdate = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Services.Client.SaveChangesOptions.ReplaceOnUpdate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.SaveChangesOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>保留中の更新は、これは既定の動作 (HTTP MERGE)、変更された値の更新だけではなく (HTTP PUT) 更新されたエンティティの値を持つデータ ソース内のエンティティのすべての値を置き換えることで行われます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

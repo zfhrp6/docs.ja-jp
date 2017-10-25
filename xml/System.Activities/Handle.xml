@@ -1,0 +1,156 @@
+<Type Name="Handle" FullName="System.Activities.Handle">
+  <TypeSignature Language="C#" Value="public abstract class Handle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Handle extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Handle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>有効期間がワークフロー ランタイムによって制御される型を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Handle> から派生し、有効期間がワークフロー ランタイムによって制御される型。 ハンドル型のワークフロー変数の場合、ランタイムは環境の初期化時に、必須の既定コンストラクターを使用して型のインスタンスを作成し、そのインスタンスを <xref:System.Activities.Variable> に割り当てて、<xref:System.Activities.Handle.OnInitialize%2A> を呼び出します。 変数がスコープ外になると、<xref:System.Activities.Handle.OnUninitialize%2A> が呼び出されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Handle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Handle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Handle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Handle> から派生するクラスが、既定のコンストラクターを提供する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecutionPropertyName">
+      <MemberSignature Language="C#" Value="public string ExecutionPropertyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ExecutionPropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Handle.ExecutionPropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティの実行プロパティに追加されるときにこの <see cref="T:System.Activities.Handle" /> によって使用される名前を取得します。</summary>
+        <value><see cref="P:System.Type.FullName" /> によって提供される派生型の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInitialize">
+      <MemberSignature Language="C#" Value="protected virtual void OnInitialize (System.Activities.HandleInitializationContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnInitialize(class System.Activities.HandleInitializationContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Handle.OnInitialize(System.Activities.HandleInitializationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.HandleInitializationContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">ハンドルを作成中である環境。</param>
+        <summary><see cref="T:System.Activities.Handle" /> を含んでいる環境が初期化されると、ワークフロー ランタイムによって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUninitialize">
+      <MemberSignature Language="C#" Value="protected virtual void OnUninitialize (System.Activities.HandleInitializationContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnUninitialize(class System.Activities.HandleInitializationContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Handle.OnUninitialize(System.Activities.HandleInitializationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.HandleInitializationContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">ハンドルが作成された環境。</param>
+        <summary><see cref="T:System.Activities.Variable" /> の <see cref="T:System.Activities.Handle" /> がスコープ外になると、ワークフロー ランタイムによって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Activities.ActivityInstance Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.ActivityInstance Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Handle.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.ActivityInstance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.ActivityInstance" /> を含んでいる <see cref="T:System.Activities.Variable" /> を含んでいる <see cref="T:System.Activities.Handle" /> を取得します。</summary>
+        <value><see cref="T:System.Activities.Variable" /> を含んでいる <see cref="T:System.Activities.Handle" /> を含んでいるアクティビティ インスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowIfUninitialized">
+      <MemberSignature Language="C#" Value="protected void ThrowIfUninitialized ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ThrowIfUninitialized() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Handle.ThrowIfUninitialized" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.InvalidOperationException" /> がまだ初期化されていない場合は、<see cref="T:System.Activities.Handle" /> がスローされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Handle.ThrowIfUninitialized%2A> は、<xref:System.Activities.Handle> が初期化されていないと有効にならない派生クラスの任意のメソッドまたはプロパティから呼び出すための便利なメソッドをカスタム ハンドルの派生クラス作成者に提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

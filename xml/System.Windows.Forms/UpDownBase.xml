@@ -1,0 +1,1719 @@
+<Type Name="UpDownBase" FullName="System.Windows.Forms.UpDownBase">
+  <TypeSignature Language="C#" Value="public abstract class UpDownBase : System.Windows.Forms.ContainerControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit UpDownBase extends System.Windows.Forms.ContainerControl" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.UpDownBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ContainerControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.UpDownBaseDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>スピン ボックス (アップダウン コントロール) に必要な基本的な機能を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スピン ボックスでは、テキスト ボックスおよび小規模の垂直スクロール バー、スピン ボタン コントロールとも呼ばれます。 <xref:System.Windows.Forms.UpDownBase>クラスは、2 つのコントロールをリンクし、上矢印をクリックして下矢印ボタンまたはテキスト ボックスに直接値の適切な型を入力して、テキスト ボックスに表示を変更することができます。 ユーザーが値のリストを制限する必要がある場合に、スピン ボックスを使用して選択できますが、リスト ボックスまたはコンボ ボックスに似ています。 スピン ボックスを使用する利点は、表示するリストの種類によっては、一度に 1 つの項目の追加ではなく、有効な値の範囲をすばやく設定ようにです。 クラスを派生させる場合は、データ型を制限することができますは、スピン ボックスを実装するとテキスト ボックスより小さいデータの検証が必要な<xref:System.Windows.Forms.UpDownBase>します。 この例は、<xref:System.Windows.Forms.NumericUpDown>クラスでは、数値型に値を制限し、使用して、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>と<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>データを検証するプロパティです。  
+  
+ スピン ボックスの内容を変更する、方向キーを使用するユーザーを許可する設定、<xref:System.Windows.Forms.UpDownBase.InterceptArrowKeys%2A>プロパティを`true`です。 指定した値にユーザーを制限する設定、<xref:System.Windows.Forms.UpDownBase.ReadOnly%2A>プロパティを`true`です。 スピン ボックスのテキストの配置を制御する設定、<xref:System.Windows.Forms.UpDownBase.TextAlign%2A>プロパティです。 上向きと下向きの矢印ボタン コントロールのテキスト ボックスの部分との関連の配置を設定するには、設定、<xref:System.Windows.Forms.UpDownBase.UpDownAlign%2A>プロパティを<xref:System.Windows.Forms.LeftRightAlignment.Left>または<xref:System.Windows.Forms.LeftRightAlignment.Right>です。  
+  
+ <xref:System.Windows.Forms.UpDownBase.UpButton%2A>と<xref:System.Windows.Forms.UpDownBase.DownButton%2A>メソッド、オーバーライドされた場合、処理の上矢印または下矢印ボタンをクリックします。 オーバーライドされた場合、<xref:System.Windows.Forms.UpDownBase.ValidateEditText%2A>と<xref:System.Windows.Forms.UpDownBase.UpdateEditText%2A>(いずれかの選択または入力された) 値の検証メソッドとスピン ボックスに表示されるテキストを更新します。 値には、検証が失敗した場合を使用して、<xref:System.Windows.Forms.UpDownBase.Select%2A>メソッドが無効なテキストを選択します。 これにより、ユーザーが迅速に手動で選択するか、既存のテキストを削除することがなく、新しい値を入力するだけで、テキストを修正します。  
+  
+ 以降で、 [!INCLUDE[net_2015](~/includes/net-2015-md.md)]、<xref:System.Windows.Forms.UpDownBase>コントロールは、app.config ファイルには、次のエントリが含まれている場合は、システム DPI 設定に基づいてサイズ変更されます。  
+  
+```  
+<appSettings>  
+  <add key="EnableWindowsFormsHighDpiAutoResizing" value="true" />  
+</appSettings>  
+  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.NumericUpDown>一部から派生したそのプロパティを設定して<xref:System.Windows.Forms.UpDownBase>です。 このコードが必要です、<xref:System.Windows.Forms.NumericUpDown>という名前のコントロール`numericUpDown1`、2 つ<xref:System.Windows.Forms.ComboBox>という名前のコントロール`comboBox1`と`comboBox2`、3 つおよび<xref:System.Windows.Forms.CheckBox>という名前のコントロール`checkBox1`、 `checkBox2`、および`checkBox2`フォーム上に作成します。 次の項目を追加`comboBox1`: `None`、 `Fixed3D`、および`FixedSingle`です。 次の項目を追加`comboBox2`: `Left`、 `Right`、および`Center`です。  
+  
+ コードを使用すると、実行時にプロパティの値を変更して、スピン ボックスの動作と外観それぞれに影響する方法を確認できます。  
+  
+ [!code-cpp[Classic UpDownBase Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic UpDownBase Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UpDownBase Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic UpDownBase Example/CS/source.cs#1)]
+ [!code-vb[Classic UpDownBase Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic UpDownBase Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Windows.Forms.UpDownBase" />、次のメンバーをオーバーライドする必要があります: <see cref="M:System.Windows.Forms.UpDownBase.DownButton" />、 <see cref="M:System.Windows.Forms.UpDownBase.UpButton" />、 <see cref="M:System.Windows.Forms.UpDownBase.UpdateEditText" />、および<see cref="M:System.Windows.Forms.UpDownBase.ValidateEditText" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UpDownBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.UpDownBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoScroll">
+      <MemberSignature Language="C#" Value="public override bool AutoScroll { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoScroll" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.AutoScroll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナーで、表示されている境界の外にあるコントロールにユーザーがスクロールできるかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownBase>コントロールが使用しない、<xref:System.Windows.Forms.UpDownBase.AutoScroll%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoScrollMargin">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size AutoScrollMargin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size AutoScrollMargin" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.AutoScrollMargin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>自動スクロールのマージンのサイズを取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Size" />自動スクロールのマージンのピクセル単位の幅と高さを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownBase>コントロールが使用しない、<xref:System.Windows.Forms.UpDownBase.AutoScrollMargin%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Size.Height" />または<see cref="P:System.Drawing.Size.Width" />が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoScrollMinSize">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size AutoScrollMinSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size AutoScrollMinSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.AutoScrollMinSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>自動スクロール領域の最小サイズを取得または設定します。</summary>
+        <value>A <see cref="T:System.Drawing.Size" /> (ピクセル単位)、スクロール バーの幅と高さの最小値を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownBase>コントロールが使用しない、<xref:System.Windows.Forms.UpDownBase.AutoScrollMinSize%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSize">
+      <MemberSignature Language="C#" Value="public override bool AutoSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.AutoSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内容のサイズに合わせてコントロールのサイズを自動調整するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コントロールのサイズを自動調整を示すためにその内容に基づくそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSizeChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler AutoSizeChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler AutoSizeChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.UpDownBase.AutoSizeChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.UpDownBase.AutoSize" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.UpDownBase.AutoSizeChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.UpDownBase>、ように、<xref:System.Windows.Forms.NumericUpDown>または<xref:System.Windows.Forms.DomainUpDown>です。 インスタンスを名前`UpDownBase1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.UpDownBase.AutoSizeChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#380](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#380)]
+ [!code-vb[System.Windows.Forms.EventExamples#380](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#380)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) のテキスト ボックスの部分の背景色を取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />スピン ボックスのテキスト ボックスの部分の背景色を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImage">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Image BackgroundImage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image BackgroundImage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.BackgroundImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景画像、<see cref="T:System.Windows.Forms.UpDownBase" />です。</summary>
+        <value>背景画像、<see cref="T:System.Windows.Forms.UpDownBase" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownBase.BackgroundImage%2A>プロパティがの外観に影響を与えません、<xref:System.Windows.Forms.UpDownBase>制御。 そのため、非表示にされて、デザイナーでは IntelliSense からです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.UpDownBase.BackgroundImageChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.UpDownBase.BackgroundImage" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayout">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ImageLayout BackgroundImageLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ImageLayout BackgroundImageLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.BackgroundImageLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImageLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のレイアウト、<see cref="P:System.Windows.Forms.UpDownBase.BackgroundImage" />の<see cref="T:System.Windows.Forms.UpDownBase" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.ImageLayout" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownBase.BackgroundImageLayout%2A>プロパティがの外観に影響を与えません、<xref:System.Windows.Forms.UpDownBase>制御。 そのため、非表示にされて、デザイナーでは IntelliSense からです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayoutChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageLayoutChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageLayoutChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.UpDownBase.BackgroundImageLayoutChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.UpDownBase.BackgroundImageLayout" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BorderStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BorderStyle BorderStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.BorderStyle BorderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.BorderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(-504)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BorderStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) の境界線スタイルを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.BorderStyle" /> 値のいずれか。 既定値は <see cref="F:System.Windows.Forms.BorderStyle.Fixed3D" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.TextBoxBase.BorderStyle%2A>ふちなしとフラットを作成するプロパティは既定の 3 次元コントロールだけでなくを制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.NumericUpDown>一部から派生したそのプロパティを設定して<xref:System.Windows.Forms.UpDownBase>です。 このコードが必要です、<xref:System.Windows.Forms.NumericUpDown>という名前のコントロール`numericUpDown1`、2 つ<xref:System.Windows.Forms.ComboBox>という名前のコントロール`comboBox1`と`comboBox2`、3 つおよび<xref:System.Windows.Forms.CheckBox>という名前のコントロール`checkBox1`、 `checkBox2`、および`checkBox2`フォーム上に作成します。 次の項目を追加`comboBox1`: `None`、 `Fixed3D`、および`FixedSingle`です。 次の項目を追加`comboBox2`: `Left`、 `Right`、および`Center`です。  
+  
+ コードを使用すると、実行時にプロパティの値を変更して、スピン ボックスの動作と外観それぞれに影響する方法を確認できます。  
+  
+ [!code-cpp[Classic UpDownBase Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic UpDownBase Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UpDownBase Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic UpDownBase Example/CS/source.cs#1)]
+ [!code-vb[Classic UpDownBase Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic UpDownBase Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられている値は、のいずれかではありません、<see cref="T:System.Windows.Forms.BorderStyle" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangingText">
+      <MemberSignature Language="C#" Value="protected bool ChangingText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ChangingText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.ChangingText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト プロパティがその親クラスによって内部で変更されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Forms.UpDownBase.Text" />プロパティがによって内部的に変更されている、<see cref="T:System.Windows.Forms.UpDownBase" />クラスです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownBase.ChangingText%2A>プロパティのフラグとして機能、<xref:System.Windows.Forms.UpDownBase>クラスです。 このプロパティは、クラスが現在を変更するときを示すために、派生クラスによって使用<xref:System.Windows.Forms.UpDownBase.Text%2A>プロパティ内部的にします。 このプロパティ設定されている場合`false`、コントロールは、ユーザーが変更される必要があります、<xref:System.Windows.Forms.UpDownBase.Text%2A>プロパティを設定し、<xref:System.Windows.Forms.UpDownBase.UserEdit%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenu">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ContextMenu ContextMenu { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ContextMenu ContextMenu" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.ContextMenu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenu</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) に関連付けられるショートカット メニューを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ContextMenu" />スピン ボックスに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツリー ノードにショートカット メニューを関連付けることをお勧め、<xref:System.Windows.Forms.UpDownBase.ContextMenuStrip%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuStrip">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ContextMenuStrip ContextMenuStrip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ContextMenuStrip ContextMenuStrip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.ContextMenuStrip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenuStrip</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) のショートカット メニューを取得または設定します。</summary>
+        <value>コントロールに関連付けられた <see cref="T:System.Windows.Forms.ContextMenuStrip" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スピン ボックスを右クリックしたときに、ショートカット メニューが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParams">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.CreateParams CreateParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CreateParams CreateParams" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.CreateParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CreateParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール ハンドルが作成されるときに必要な作成パラメーターを取得します。</summary>
+        <value>作成パラメーター。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 列挙体に関連付けられている<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size DefaultSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size DefaultSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.DefaultSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの既定のサイズを取得します。</summary>
+        <value>コントロールの既定の <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DockPadding">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ScrollableControl.DockPaddingEdges DockPadding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ScrollableControl/DockPaddingEdges DockPadding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.DockPadding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ScrollableControl+DockPaddingEdges</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドッキング ステーションのすべての端の余白設定を取得、<see cref="T:System.Windows.Forms.UpDownBase" />コントロール。</summary>
+        <value>このコントロールのドッキング埋め込み設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownBase>コントロールが使用しない、<xref:System.Windows.Forms.UpDownBase.DockPadding%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DownButton">
+      <MemberSignature Language="C#" Value="public abstract void DownButton ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DownButton() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.DownButton" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合に、スピン ボックス (アップダウン コントロール) の下向きの矢印ボタンのクリックの処理を行います。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドをオーバーライドする場合を呼び出すことを確認して、<see cref="M:System.Windows.Forms.UpDownBase.UpdateEditText" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Focused">
+      <MemberSignature Language="C#" Value="public override bool Focused { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Focused" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.Focused" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールに入力フォーカスがあるかどうかを示す値を取得します。</summary>
+        <value>
+          コントロールにフォーカスがある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) の前景色を取得または設定します。</summary>
+        <value>フォア グラウンド<see cref="T:System.Drawing.Color" />スピン ボックスのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownBase.ForeColor%2A>プロパティには、スピン ボックスのテキスト ボックスの部分のテキストの色が変化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterceptArrowKeys">
+      <MemberSignature Language="C#" Value="public bool InterceptArrowKeys { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InterceptArrowKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.InterceptArrowKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが↑キーおよび↓キーを使用して値を選択できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コントロールの値を選択する ↑ キーおよび ↓ キーの使用を許可する場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.UpDownBase.InterceptArrowKeys%2A>プロパティに設定されている`true`スピン ボックス (アップダウン コントロールとも呼ばれます) にフォーカスがあると、ユーザーが ↑ キーおよび ↓ キーを使用して値を選択します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.NumericUpDown>一部から派生したそのプロパティを設定して<xref:System.Windows.Forms.UpDownBase>です。 このコードが必要です、<xref:System.Windows.Forms.NumericUpDown>という名前のコントロール`numericUpDown1`、2 つ<xref:System.Windows.Forms.ComboBox>という名前のコントロール`comboBox1`と`comboBox2`、3 つおよび<xref:System.Windows.Forms.CheckBox>という名前のコントロール`checkBox1`、 `checkBox2`、および`checkBox2`フォーム上に作成します。 次の項目を追加`comboBox1`: `None`、 `Fixed3D`、および`FixedSingle`です。 次の項目を追加`comboBox2`: `Left`、 `Right`、および`Center`です。  
+  
+ コードを使用すると、実行時にプロパティの値を変更して、スピン ボックスの動作と外観それぞれに影響する方法を確認できます。  
+  
+ [!code-cpp[Classic UpDownBase Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic UpDownBase Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UpDownBase Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic UpDownBase Example/CS/source.cs#1)]
+ [!code-vb[Classic UpDownBase Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic UpDownBase Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumSize">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Size MaximumSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size MaximumSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.MaximumSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) の最大サイズを取得または設定します。</summary>
+        <value><see cref="T:System.Drawing.Size" />、スピン ボックスの最大サイズであります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値に関係なく、<xref:System.Drawing.Size.Height%2A>の最大サイズは常に 0 になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumSize">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Size MinimumSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size MinimumSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.MinimumSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) の最小サイズを取得または設定します。</summary>
+        <value><see cref="T:System.Drawing.Size" />、スピン ボックスの最小サイズであります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseEnter">
+      <MemberSignature Language="C#" Value="public event EventHandler MouseEnter;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MouseEnter" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.UpDownBase.MouseEnter" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ポインターが入ったときに発生、<see cref="T:System.Windows.Forms.UpDownBase" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseHover">
+      <MemberSignature Language="C#" Value="public event EventHandler MouseHover;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MouseHover" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.UpDownBase.MouseHover" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ポインターを置いたときに発生、<see cref="T:System.Windows.Forms.UpDownBase" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseLeave">
+      <MemberSignature Language="C#" Value="public event EventHandler MouseLeave;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler MouseLeave" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.UpDownBase.MouseLeave" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ポインターを離れると発生、<see cref="T:System.Windows.Forms.UpDownBase" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseMove">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseMove;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseMove" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.UpDownBase.MouseMove" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上にマウス ポインターを置いたときに発生、<see cref="T:System.Windows.Forms.UpDownBase" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnChanged (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnChanged(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnChanged(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>派生クラスでオーバーライドされると、Changed イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFontChanged">
+      <MemberSignature Language="C#" Value="protected override void OnFontChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnFontChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnFontChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.FontChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnFontChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnFontChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnFontChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleCreated">
+      <MemberSignature Language="C#" Value="protected override void OnHandleCreated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleCreated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnHandleCreated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleCreated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnHandleCreated%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnHandleCreated(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnHandleCreated(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleDestroyed">
+      <MemberSignature Language="C#" Value="protected override void OnHandleDestroyed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleDestroyed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnHandleDestroyed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnHandleDestroyed%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnHandleDestroyed(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnHandleDestroyed(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayout">
+      <MemberSignature Language="C#" Value="protected override void OnLayout (System.Windows.Forms.LayoutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLayout(class System.Windows.Forms.LayoutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnLayout(System.Windows.Forms.LayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.LayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.LayoutEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.Layout" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnLayout%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnLayout(System.Windows.Forms.LayoutEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnLayout(System.Windows.Forms.LayoutEventArgs)" /> メソッドを呼び出してください。  
+  
+ 例</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseDown (System.Windows.Forms.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseDown(class System.Windows.Forms.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnMouseDown(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.MouseDown" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnMouseDown%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnMouseDown(System.Windows.Forms.MouseEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnMouseDown(System.Windows.Forms.MouseEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseUp">
+      <MemberSignature Language="C#" Value="protected override void OnMouseUp (System.Windows.Forms.MouseEventArgs mevent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseUp(class System.Windows.Forms.MouseEventArgs mevent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnMouseUp(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mevent" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="mevent">イベント データを格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.MouseUp" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ダブルクリックが発生した場合、<xref:System.Windows.Forms.UpDownBase.OnMouseUp%2A>メソッドが発生、<xref:System.Windows.Forms.Control.DoubleClick>イベント。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnMouseUp%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnMouseUp(System.Windows.Forms.MouseEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnMouseUp(System.Windows.Forms.MouseEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseWheel">
+      <MemberSignature Language="C#" Value="protected override void OnMouseWheel (System.Windows.Forms.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseWheel(class System.Windows.Forms.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnMouseWheel(System.Windows.Forms.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.MouseWheel" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウスがユーザーの方向にスクロールされる基準スピン ボックス (アップダウン コントロールとも呼ばれます) は、このイベントが発生するとフォーカス、ホイールが特定されると、いずれか、<xref:System.Windows.Forms.UpDownBase.UpButton%2A>または<xref:System.Windows.Forms.UpDownBase.DownButton%2A>メソッドが呼び出されます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnMouseWheel%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnMouseWheel(System.Windows.Forms.MouseEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnMouseWheel(System.Windows.Forms.MouseEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPaint">
+      <MemberSignature Language="C#" Value="protected override void OnPaint (System.Windows.Forms.PaintEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPaint(class System.Windows.Forms.PaintEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnPaint(System.Windows.Forms.PaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.PaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.PaintEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.Paint" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnPaint%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnPaint(System.Windows.Forms.PaintEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnPaint(System.Windows.Forms.PaintEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextBoxKeyDown">
+      <MemberSignature Language="C#" Value="protected virtual void OnTextBoxKeyDown (object source, System.Windows.Forms.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTextBoxKeyDown(object source, class System.Windows.Forms.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnTextBoxKeyDown(System.Object,System.Windows.Forms.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyDown" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.UpDownBase.InterceptArrowKeys%2A>プロパティに設定されている`true`上方向キーを押すと、<xref:System.Windows.Forms.UpDownBase.UpButton%2A>メソッドが呼び出されます。 同様に、下方向キーを押した場合、<xref:System.Windows.Forms.UpDownBase.DownButton%2A>メソッドが呼び出されます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnTextBoxKeyDown%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnTextBoxKeyDown(System.Object,System.Windows.Forms.KeyEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnTextBoxKeyDown(System.Object,System.Windows.Forms.KeyEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextBoxKeyPress">
+      <MemberSignature Language="C#" Value="protected virtual void OnTextBoxKeyPress (object source, System.Windows.Forms.KeyPressEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTextBoxKeyPress(object source, class System.Windows.Forms.KeyPressEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnTextBoxKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.Windows.Forms.KeyPressEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyPressEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyPress" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnTextBoxKeyPress%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnTextBoxKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnTextBoxKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextBoxLostFocus">
+      <MemberSignature Language="C#" Value="protected virtual void OnTextBoxLostFocus (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTextBoxLostFocus(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnTextBoxLostFocus(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.LostFocus" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、スピン ボックス (アップダウン コントロールとも呼ばれます) がフォーカスを失ったときに、コントロールのテキスト ボックスの部分のテキストを検証します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnTextBoxLostFocus%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnTextBoxLostFocus(System.Object,System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnTextBoxLostFocus(System.Object,System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextBoxResize">
+      <MemberSignature Language="C#" Value="protected virtual void OnTextBoxResize (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTextBoxResize(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnTextBoxResize(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.Resize" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スピン ボックス (アップダウン コントロール) のサイズを調整します。 このメソッドは、コントロールのテキスト ボックスの部分のサイズを変更するときにします。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnTextBoxResize%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnTextBoxResize(System.Object,System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnTextBoxResize(System.Object,System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextBoxTextChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnTextBoxTextChanged (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTextBoxTextChanged(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.OnTextBoxTextChanged(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.TextChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.UpDownBase.OnTextBoxTextChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.UpDownBase.OnTextBoxTextChanged(System.Object,System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.UpDownBase.OnTextBoxTextChanged(System.Object,System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredHeight">
+      <MemberSignature Language="C#" Value="public int PreferredHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PreferredHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.PreferredHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) の高さを取得します。</summary>
+        <value>スピン ボックスの高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownBase.PreferredHeight%2A>プロパティの値に基づいています、<xref:System.Windows.Forms.TextBoxBase.PreferredHeight%2A>プロパティ、コントロールのテキスト ボックスの部分の罫線のスタイルに合わせて調整とします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.NumericUpDown>一部から派生したそのプロパティを設定して<xref:System.Windows.Forms.UpDownBase>です。 このコードが必要です、<xref:System.Windows.Forms.NumericUpDown>を制御する 2 つ<xref:System.Windows.Forms.ComboBox>コントロール、および 3<xref:System.Windows.Forms.CheckBox>コントロールをフォーム上に作成します。 ラベル、<xref:System.Windows.Forms.ComboBox>コントロール<xref:System.Windows.Forms.UpDownBase.BorderStyle%2A>と<xref:System.Windows.Forms.UpDownBase.TextAlign%2A>です。 ラベル、<xref:System.Windows.Forms.CheckBox>コントロール<xref:System.Windows.Forms.UpDownBase.InterceptArrowKeys%2A>、 <xref:System.Windows.Forms.UpDownBase.ReadOnly%2A>、および<xref:System.Windows.Forms.UpDownBase.UpDownAlign%2A>です。 コードを使用すると、実行時にプロパティの値を変更して、スピン ボックスの動作と外観それぞれに影響する方法を確認できます。 BorderStyle というラベルの付いたコンボ ボックスに、次の項目を追加: `None`、 `Fixed3D`、および`FixedSingle`です。 TextAlign というラベルの付いたコンボ ボックスに、次の項目を追加: `Left`、 `Right`、および`Center`です。  
+  
+ [!code-cpp[Classic UpDownBase.BorderStyle Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic UpDownBase.BorderStyle Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UpDownBase.BorderStyle Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic UpDownBase.BorderStyle Example/CS/source.cs#1)]
+ [!code-vb[Classic UpDownBase.BorderStyle Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic UpDownBase.BorderStyle Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上向きの矢印ボタンまたは下向きの矢印ボタンを使用するときにだけテキストを変更できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />上矢印または下矢印ボタンだけです。 使用することで、テキストを変更できる場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定して、<xref:System.Windows.Forms.UpDownBase.ReadOnly%2A>プロパティを`true`、多くの検証の必要性が排除されます、<xref:System.Windows.Forms.UpDownBase.Text%2A>プロパティです。 ユーザーの上矢印と下矢印を変更するボタンの使用に限定されます、<xref:System.Windows.Forms.UpDownBase.Text%2A>値。 指定した値を選択することのみ許可されます。  
+  
+> [!NOTE]
+>  派生クラスで<xref:System.Windows.Forms.DomainUpDown>、説明されている動作は若干異なります。 ときに<xref:System.Windows.Forms.UpDownBase.ReadOnly%2A>に設定されている`true`キーが押されると、コントロールは、最初の文字が押されたキーと一致するコレクション内の最初の項目を選択します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.NumericUpDown>一部から派生したそのプロパティを設定して<xref:System.Windows.Forms.UpDownBase>です。 このコードが必要です、<xref:System.Windows.Forms.NumericUpDown>を制御する 2 つ<xref:System.Windows.Forms.ComboBox>コントロール、および 3<xref:System.Windows.Forms.CheckBox>コントロールをフォーム上に作成します。 ラベル、<xref:System.Windows.Forms.ComboBox>コントロール<xref:System.Windows.Forms.UpDownBase.BorderStyle%2A>と<xref:System.Windows.Forms.UpDownBase.TextAlign%2A>です。 ラベル、<xref:System.Windows.Forms.CheckBox>コントロール<xref:System.Windows.Forms.UpDownBase.InterceptArrowKeys%2A>、 <xref:System.Windows.Forms.UpDownBase.ReadOnly%2A>、および<xref:System.Windows.Forms.UpDownBase.UpDownAlign%2A>です。 コードを使用すると、実行時にプロパティの値を変更して、スピン ボックスの動作と外観それぞれに影響する方法を確認できます。 BorderStyle というラベルの付いたコンボ ボックスに、次の項目を追加: `None`、 `Fixed3D`、および`FixedSingle`です。 TextAlign というラベルの付いたコンボ ボックスに、次の項目を追加: `Left`、 `Right`、および`Center`です。  
+  
+ [!code-cpp[Classic UpDownBase Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic UpDownBase Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UpDownBase Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic UpDownBase Example/CS/source.cs#1)]
+ [!code-vb[Classic UpDownBase Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic UpDownBase Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RescaleConstantsForDpi">
+      <MemberSignature Language="C#" Value="protected override void RescaleConstantsForDpi (int deviceDpiOld, int deviceDpiNew);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RescaleConstantsForDpi(int32 deviceDpiOld, int32 deviceDpiNew) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.RescaleConstantsForDpi(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deviceDpiOld" Type="System.Int32" />
+        <Parameter Name="deviceDpiNew" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="deviceDpiOld">変更前の DPI 値。</param>
+        <param name="deviceDpiNew">変更後の DPI 値。</param>
+        <summary>DPI の変更が発生したときに、コントロールの再スケーリングの定数を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public void Select (int start, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Select(int32 start, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.Select(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="start">選択するのには、最初の文字の位置。</param>
+        <param name="length">選択される文字の合計数。</param>
+        <summary>選択する対象の文字の開始位置と文字数を指定する、スピン ボックス (アップダウン コントロール) のテキストの範囲を選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownBase.Select%2A>スピン ボックスがフォーカスを取得するとき、またはメソッドを使用することができます、<xref:System.Windows.Forms.UpDownBase.Text%2A>プロパティ データの検証は失敗します。 検証コードを追加するときに、<xref:System.Windows.Forms.UpDownBase.ValidateEditText%2A>メソッドの呼び出し、派生クラスで、<xref:System.Windows.Forms.UpDownBase.Select%2A>メソッドは検証が失敗したとします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.NumericUpDown>です。 このコードでは、する必要があります、<xref:System.Windows.Forms.NumericUpDown>コントロールと<xref:System.Windows.Forms.Button>フォームで作成されていると、<xref:System.Drawing>名前空間が、参照として追加されました。 <xref:System.Windows.Forms.Control.Click>ボタンのイベント、内のテキストのポイントのサイズ、<xref:System.Windows.Forms.NumericUpDown>増加を制御します。 これは、ウィザードでは、コントロールを調整するその<xref:System.Windows.Forms.UpDownBase.PreferredHeight%2A>プロパティのすべてのテキストがコントロールに表示されるようにします。 ユーザーが新しい値を入力しのままにした後、<xref:System.Windows.Forms.NumericUpDown>コントロール、テキストの文字列値から値を数値に変換し、検証の間にする、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>と<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>値。 値が有効でない場合、 <xref:System.Windows.Forms.MessageBox> 、エラーが表示され、<xref:System.Windows.Forms.UpDownBase.Select%2A>メソッドは、ユーザーが新しい値を入力できるようにテキストが選択されます。  
+  
+ [!code-cpp[Classic UpDownBase.Text Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic UpDownBase.Text Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UpDownBase.Text Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic UpDownBase.Text Example/CS/source.cs#1)]
+ [!code-vb[Classic UpDownBase.Text Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic UpDownBase.Text Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) に表示されるテキストを取得または設定します。</summary>
+        <value>スピン ボックスに表示される文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownBase.UpdateEditText%2A>場合、メソッドが呼び出されます、<xref:System.Windows.Forms.UpDownBase.Text%2A>プロパティを設定中に、<xref:System.Windows.Forms.UpDownBase.UserEdit%2A>プロパティに設定されている`true`です。 <xref:System.Windows.Forms.UpDownBase.ValidateEditText%2A>場合、メソッドが呼び出されます、<xref:System.Windows.Forms.UpDownBase.Text%2A>プロパティを設定中に、<xref:System.Windows.Forms.UpDownBase.UserEdit%2A>プロパティに設定されている`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.NumericUpDown>です。 このコードでは、する必要があります、<xref:System.Windows.Forms.NumericUpDown>コントロールと<xref:System.Windows.Forms.Button>フォームで作成されていると、<xref:System.Drawing>名前空間が、参照として追加されました。 <xref:System.Windows.Forms.Control.Click>ボタンのイベント、内のテキストのポイントのサイズ、<xref:System.Windows.Forms.NumericUpDown>増加を制御します。 これは、ウィザードでは、コントロールを調整するその<xref:System.Windows.Forms.UpDownBase.PreferredHeight%2A>プロパティのすべてのテキストがコントロールに表示されるようにします。 ユーザーが新しい値を入力しのままにした後、<xref:System.Windows.Forms.NumericUpDown>コントロール、テキストの文字列値から値を数値に変換し、検証の間にする、<xref:System.Windows.Forms.NumericUpDown.Minimum%2A>と<xref:System.Windows.Forms.NumericUpDown.Maximum%2A>値。 値が有効でない場合、 <xref:System.Windows.Forms.MessageBox> 、エラーが表示され、<xref:System.Windows.Forms.UpDownBase.Select%2A>メソッドは、ユーザーが新しい値を入力できるようにテキストが選択されます。  
+  
+ [!code-cpp[Classic UpDownBase.Text Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic UpDownBase.Text Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UpDownBase.Text Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic UpDownBase.Text Example/CS/source.cs#1)]
+ [!code-vb[Classic UpDownBase.Text Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic UpDownBase.Text Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlign">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HorizontalAlignment TextAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.HorizontalAlignment TextAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.TextAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HorizontalAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) でのテキストの配置を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.HorizontalAlignment" /> 値のいずれか。 既定値は <see cref="F:System.Windows.Forms.HorizontalAlignment.Left" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.NumericUpDown>一部から派生したそのプロパティを設定して<xref:System.Windows.Forms.UpDownBase>です。 このコードが必要です、<xref:System.Windows.Forms.NumericUpDown>という名前のコントロール`numericUpDown1`、2 つ<xref:System.Windows.Forms.ComboBox>という名前のコントロール`comboBox1`と`comboBox2`、3 つおよび<xref:System.Windows.Forms.CheckBox>という名前のコントロール`checkBox1`、 `checkBox2`、および`checkBox2`フォーム上に作成します。 次の項目を追加`comboBox1`: `None`、 `Fixed3D`、および`FixedSingle`です。 次の項目を追加`comboBox2`: `Left`、 `Right`、および`Center`です。  
+  
+ コードを使用すると、実行時にプロパティの値を変更して、スピン ボックスの動作と外観それぞれに影響する方法を確認できます。  
+  
+ [!code-cpp[Classic UpDownBase Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic UpDownBase Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UpDownBase Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic UpDownBase Example/CS/source.cs#1)]
+ [!code-vb[Classic UpDownBase Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic UpDownBase Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられている値は、のいずれかではありません、<see cref="T:System.Windows.Forms.HorizontalAlignment" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UpButton">
+      <MemberSignature Language="C#" Value="public abstract void UpButton ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UpButton() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.UpButton" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合に、スピン ボックス (アップダウン コントロール) の上向きの矢印ボタンのクリックの処理を行います。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドをオーバーライドする場合を呼び出すことを確認して、<see cref="M:System.Windows.Forms.UpDownBase.UpdateEditText" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateEditText">
+      <MemberSignature Language="C#" Value="protected abstract void UpdateEditText ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void UpdateEditText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.UpdateEditText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされるときに、スピン ボックス (アップダウン コントロール) に表示されるテキストを更新します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドをオーバーライドするときに必ず更新して、<see cref="P:System.Windows.Forms.UpDownBase.Text" />スピン ボックスのプロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="UpDownAlign">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.LeftRightAlignment UpDownAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.LeftRightAlignment UpDownAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.UpDownAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LeftRightAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) の上向きの矢印ボタンと下向きの矢印ボタンの配置を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.LeftRightAlignment" /> 値のいずれか。 既定値は <see cref="F:System.Windows.Forms.LeftRightAlignment.Right" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、派生クラスを使用して<xref:System.Windows.Forms.NumericUpDown>一部から派生したそのプロパティを設定して<xref:System.Windows.Forms.UpDownBase>です。 このコードが必要です、<xref:System.Windows.Forms.NumericUpDown>という名前のコントロール`numericUpDown1`、2 つ<xref:System.Windows.Forms.ComboBox>という名前のコントロール`comboBox1`と`comboBox2`、3 つおよび<xref:System.Windows.Forms.CheckBox>という名前のコントロール`checkBox1`、 `checkBox2`、および`checkBox2`フォーム上に作成します。 次の項目を追加`comboBox1`: `None`、 `Fixed3D`、および`FixedSingle`です。 次の項目を追加`comboBox2`: `Left`、 `Right`、および`Center`です。  
+  
+ コードを使用すると、実行時にプロパティの値を変更して、スピン ボックスの動作と外観それぞれに影響する方法を確認できます。  
+  
+ [!code-cpp[Classic UpDownBase Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic UpDownBase Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic UpDownBase Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic UpDownBase Example/CS/source.cs#1)]
+ [!code-vb[Classic UpDownBase Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic UpDownBase Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられている値は、のいずれかではありません、<see cref="T:System.Windows.Forms.LeftRightAlignment" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UserEdit">
+      <MemberSignature Language="C#" Value="protected bool UserEdit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UserEdit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownBase.UserEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが値を入力したかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーが変更された場合、<see cref="P:System.Windows.Forms.UpDownBase.Text" />プロパティ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.UpDownBase.Text%2A>プロパティを設定中に、<xref:System.Windows.Forms.UpDownBase.UserEdit%2A>プロパティに設定されて`true`、<xref:System.Windows.Forms.UpDownBase.UpdateEditText%2A>メソッドが呼び出されます。 場合、<xref:System.Windows.Forms.UpDownBase.Text%2A>プロパティを設定中に、<xref:System.Windows.Forms.UpDownBase.UserEdit%2A>プロパティに設定されて`false`、<xref:System.Windows.Forms.UpDownBase.ValidateEditText%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateEditText">
+      <MemberSignature Language="C#" Value="protected virtual void ValidateEditText ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ValidateEditText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.ValidateEditText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされるときに、スピン ボックス (アップダウン コントロール) に表示されるテキストを検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証の例では、データ型に、派生クラスで設定値のリストをテキストの比較またはテキストを確認する値の範囲に収まるように入力したテキストを比較することを示します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでは、このメソッドをオーバーライドする場合は、スピン ボックスのテキストを検証するのには、このメソッドでコードを追加することを確認します。 場合、このメソッドが呼び出されます、<see cref="P:System.Windows.Forms.UpDownBase.UserEdit" />プロパティに設定されている<see langword="false" />ときに、<see cref="P:System.Windows.Forms.UpDownBase.Text" />プロパティを設定します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownBase.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の Windows <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

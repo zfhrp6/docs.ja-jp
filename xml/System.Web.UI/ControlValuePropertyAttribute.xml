@@ -1,0 +1,276 @@
+<Type Name="ControlValuePropertyAttribute" FullName="System.Web.UI.ControlValuePropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ControlValuePropertyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ControlValuePropertyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ControlValuePropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロールの既定のプロパティを指定する、<see cref="T:System.Web.UI.WebControls.ControlParameter" />オブジェクトは実行時にバインドします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義するときに、<xref:System.Web.UI.WebControls.ControlParameter>オブジェクト、通常バインドするコントロールのプロパティをパラメーターに両方を設定して、<xref:System.Web.UI.WebControls.ControlParameter.ControlID%2A>と<xref:System.Web.UI.WebControls.ControlParameter.PropertyName%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.ControlParameter.PropertyName%2A>プロパティが設定されていない、既定のプロパティを使用します。 <xref:System.Web.UI.ControlValuePropertyAttribute>属性は、既定のプロパティを指定するコントロールに適用される、<xref:System.Web.UI.WebControls.ControlParameter>オブジェクトは実行時にバインドします。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ <xref:System.Web.UI.ControlValuePropertyAttribute> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.ControlValuePropertyAttribute.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を適用する方法を示しています、<xref:System.Web.UI.ControlValuePropertyAttribute>既定のプロパティとカスタム コントロールに値を指定する属性。  
+  
+ [!code-csharp[ControlValuePropertyAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlValuePropertyAttribute/CS/simplecustomcontrol.cs#1)]
+ [!code-vb[ControlValuePropertyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlValuePropertyAttribute/VB/simplecustomcontrol.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlValuePropertyAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ControlValuePropertyAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コントロールの既定のプロパティ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ControlValuePropertyAttribute" />クラスの指定したプロパティ名を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.ControlValuePropertyAttribute>クラスの指定したプロパティ名を使用します。 次の表のインスタンスの初期プロパティ値、<xref:System.Web.UI.ControlValuePropertyAttribute>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.ControlValuePropertyAttribute.Name%2A>|`name` パラメーターの値。|  
+  
+   
+  
+## Examples  
+ 次のコード例を適用する方法を示しています、<xref:System.Web.UI.ControlValuePropertyAttribute>カスタム コントロールの既定のプロパティを指定する属性。 このコンス トラクターは、作成する ASP.NET によって内部的に呼び出されます、<xref:System.Web.UI.ControlValuePropertyAttribute>属性を表すオブジェクト。  
+  
+ [!code-csharp[ControlValuePropertyAttributeCtor1Param#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlValuePropertyAttributeCtor1Param/CS/simplecustomcontrol.cs#1)]
+ [!code-vb[ControlValuePropertyAttributeCtor1Param#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlValuePropertyAttributeCtor1Param/VB/simplecustomcontrol.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlValuePropertyAttribute (string name, object defaultValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, object defaultValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ControlValuePropertyAttribute.#ctor(System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="defaultValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">コントロールの既定のプロパティ。</param>
+        <param name="defaultValue">既定のプロパティの既定値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ControlValuePropertyAttribute" />クラスの指定したプロパティ名と既定値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.ControlValuePropertyAttribute>クラスの指定したプロパティ名と既定値を使用します。 <xref:System.Web.UI.ControlValuePropertyAttribute> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.ControlValuePropertyAttribute.Name%2A>|`name` パラメーターの値。|  
+|<xref:System.Web.UI.ControlValuePropertyAttribute.DefaultValue%2A>|`defaultValue` パラメーターの値。|  
+  
+   
+  
+## Examples  
+ 次のコード例を適用する方法を示しています、<xref:System.Web.UI.ControlValuePropertyAttribute>既定のプロパティとカスタム コントロールに値を指定する属性。 このコンス トラクターは、作成する ASP.NET によって内部的に呼び出されます、<xref:System.Web.UI.ControlValuePropertyAttribute>属性を表すオブジェクト。  
+  
+ [!code-csharp[ControlValuePropertyAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlValuePropertyAttribute/CS/simplecustomcontrol.cs#1)]
+ [!code-vb[ControlValuePropertyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlValuePropertyAttribute/VB/simplecustomcontrol.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlValuePropertyAttribute (string name, Type type, string defaultValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Type type, string defaultValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ControlValuePropertyAttribute.#ctor(System.String,System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="defaultValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コントロールの既定のプロパティ。</param>
+        <param name="type"><see cref="T:System.Type" />に既定値は変換されます。</param>
+        <param name="defaultValue">既定のプロパティの既定値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ControlValuePropertyAttribute" />クラスの指定したプロパティ名と既定値を使用します。 既定値は、指定したデータ型にも変換されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.ControlValuePropertyAttribute>クラスの指定したプロパティ名と既定値を使用します。 このバージョンのコンス トラクターも変換しようと既定値で指定されたデータ型を`type`パラメーター。 既定値を変換できない場合、<xref:System.Web.UI.ControlValuePropertyAttribute.DefaultValue%2A>プロパティが設定されていません。 <xref:System.Web.UI.ControlValuePropertyAttribute> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.ControlValuePropertyAttribute.Name%2A>|`name` パラメーターの値。|  
+|<xref:System.Web.UI.ControlValuePropertyAttribute.DefaultValue%2A>|値、`defaultValue`値で指定されたデータ型に変換できる場合は、パラメーター、`type`パラメーター。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public object DefaultValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ControlValuePropertyAttribute.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの既定のプロパティの既定値を取得します。</summary>
+        <value>コントロールの既定のプロパティの既定値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティが指定されている場合、<xref:System.Web.UI.ControlValuePropertyAttribute.Name%2A>プロパティが設定されていないを使用して、<xref:System.Web.UI.ControlValuePropertyAttribute.DefaultValue%2A>プロパティの既定値を決定するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.ControlValuePropertyAttribute.DefaultValue%2A>プロパティを適用することによって、<xref:System.Web.UI.ControlValuePropertyAttribute>属性をカスタム コントロールです。  
+  
+ [!code-csharp[ControlValuePropertyAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlValuePropertyAttribute/CS/simplecustomcontrol.cs#1)]
+ [!code-vb[ControlValuePropertyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlValuePropertyAttribute/VB/simplecustomcontrol.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ControlValuePropertyAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較する <see cref="T:System.Object" />。</param>
+        <summary>指定するかどうかの現在のインスタンス、<see cref="T:System.Web.UI.ControlValuePropertyAttribute" />オブジェクトが、指定したオブジェクトと等しい。</summary>
+        <returns>
+          <see langword="true" />オブジェクトが含まれている場合、<paramref name="obj" />パラメーターがの現在のインスタンスに等しい<see cref="T:System.Web.UI.ControlValuePropertyAttribute" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.ControlValuePropertyAttribute.Equals%2A>メソッドを呼び出せば確認するかどうかの現在のインスタンス、<xref:System.Web.UI.ControlValuePropertyAttribute>オブジェクトが、指定したオブジェクトと等しい。 オブジェクトが等しい場合、次の要件を満たしているする必要があります。  
+  
+1.  含まれているオブジェクト、`obj`パラメーターである必要があります、<xref:System.Web.UI.ControlValuePropertyAttribute>オブジェクト。  
+  
+2.  <xref:System.Web.UI.ControlValuePropertyAttribute.Name%2A>と<xref:System.Web.UI.ControlValuePropertyAttribute.DefaultValue%2A>両方のオブジェクトのプロパティを等しくする必要があります。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ControlValuePropertyAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ControlValuePropertyAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの既定のプロパティを取得します。</summary>
+        <value>コントロールの既定のプロパティ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.ControlParameter>オブジェクトが定義されていない場合、<xref:System.Web.UI.WebControls.ControlParameter.PropertyName%2A>プロパティ セットを使用して、<xref:System.Web.UI.ControlValuePropertyAttribute.Name%2A>プロパティにバインドされている既定のプロパティを<xref:System.Web.UI.WebControls.ControlParameter>実行時にオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.ControlValuePropertyAttribute.Name%2A>プロパティを適用することによって、<xref:System.Web.UI.ControlValuePropertyAttribute>属性をカスタム コントロールです。  
+  
+ [!code-csharp[ControlValuePropertyAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ControlValuePropertyAttribute/CS/simplecustomcontrol.cs#1)]
+ [!code-vb[ControlValuePropertyAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ControlValuePropertyAttribute/VB/simplecustomcontrol.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

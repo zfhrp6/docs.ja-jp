@@ -1,0 +1,2073 @@
+<Type Name="XAttribute" FullName="System.Xml.Linq.XAttribute">
+  <TypeSignature Language="C#" Value="public class XAttribute : System.Xml.Linq.XObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XAttribute extends System.Xml.Linq.XObject" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Linq.XAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XDocument</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.Linq</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.Linq.XObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeDescriptionProvider(typeof(MS.Internal.Xml.Linq.ComponentModel.XTypeDescriptionProvider`1&lt;System.Xml.Linq.XAttribute&gt;))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XML 属性を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML 属性は、XML 要素に関連付けられている名前と値のペアです。  
+  
+ 各<xref:System.Xml.Linq.XElement>その要素の属性の一覧が含まれています。 属性要素に一意の修飾名が必要です。 属性から派生していない<xref:System.Xml.Linq.XNode>です。 これらは、XML ツリー内のノードではありません。 代わりに、これらは要素に関連付けられている名前/値ペアだけです。  
+  
+ 属性は、要素に追加された順序で XML ツリーに保持されます。 属性のコレクションがによって返される場合<xref:System.Xml.Linq.XElement.Attributes%2A>の要素に追加され、並べ替えは行われませんされる順序で返されます。  
+  
+ 技術的には、XML では、名前空間宣言属性ではありません。 ただし、XML プログラマの多くは、通常、この区別を行いません。 代わりに、名前空間の宣言が属性とまったく同じ XML 構文が、ほとんどの XML プログラマと考えるの名前空間の属性。 簡略化する、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]プログラミング インターフェイスでは、名前空間として表される XML ツリー内の属性です。 このような名前空間属性では、XML ツリーのシリアル化を反映します。 をシリアル化するときに[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]名前空間属性で指定された名前空間プレフィックスでシリアル化しようとしています。 使用することができます、<xref:System.Xml.Linq.XAttribute.IsNamespaceDeclaration%2A>を属性の実際の名前空間宣言を確認します。  
+  
+ <xref:System.Xml.Linq.XAttribute> クラスは <xref:System.Xml.Linq.XObject> から派生したものです。 属性に注釈を追加し、それらのイベントを確認できます。  
+  
+ いくつか<xref:System.Xml.Linq.XAttribute>XAML からメソッドを使用することができます。 詳細については、「[LINQ to XML の動的プロパティ](http://msdn.microsoft.com/library/0455f47c-4a68-4f2e-a3f8-dd1d85b99012)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XAttribute (System.Xml.Linq.XAttribute other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Linq.XAttribute other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.#ctor(System.Xml.Linq.XAttribute)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="other" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Xml.Linq.XAttribute" />からコピー先のオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Linq.XAttribute" />から別のクラス<see cref="T:System.Xml.Linq.XAttribute" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML ツリーの詳細コピーを行うときに、このコンス トラクターは内部使用、主にされます。  
+  
+   
+  
+## Examples  
+ この例では、複製ではなく、ツリー内の属性のコピーを作成する XML ツリーの詳細コピーを作成することを示します。  
+  
+```csharp  
+  
+                XElement root1 = XElement.Parse("<Root Att1='abc' />");  
+// Make a deep copy.  
+XElement root2 = new XElement(root1);  
+if (root1.Attribute("Att1") == root2.Attribute("Att1"))  
+    Console.WriteLine("This will not be printed");  
+else  
+    Console.WriteLine("Creating a deep copy created a new attribute from the original.");  
+```  
+  
+```vb  
+  
+                Dim root1 As XElement = <Root Att1='abc'/>  
+' Make a deep copy.  
+Dim root2 As XElement = New XElement(root1)  
+If root1.Attribute("Att1") Is root2.Attribute("Att1") Then  
+    Console.WriteLine("This will not be printed")  
+Else  
+    Console.WriteLine("Creating a deep copy created a new attribute from the original.")  
+End If  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+Creating a deep copy created a new attribute from the original.  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="other" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XAttribute (System.Xml.Linq.XName name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Linq.XName name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.#ctor(System.Xml.Linq.XName,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.Linq.XName" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Xml.Linq.XName" />の属性です。</param>
+        <param name="value"><see cref="T:System.Object" />属性の値を格納します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Linq.XAttribute" />から、指定した名前と値クラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列からの暗黙的な変換がある<xref:System.Xml.Linq.XName>です。 新たに作成するのではなく最初のパラメーターとして文字列を指定するのには、このコンス トラクターの一般的な使用<xref:System.Xml.Linq.XName>、次のようにします。  
+  
+```csharp  
+  
+            XElement root = new XElement("Root",  
+    new XAttribute("AnAttributeName", "Content")  
+);  
+```  
+  
+ 加算演算子オーバー ロードを使用することも、<xref:System.Xml.Linq.XNamespace>および作成する文字列、 <xref:System.Xml.Linq.XName>、次のように。  
+  
+```csharp  
+  
+            XNamespace aw = "http://www.adventure-works.com";  
+XElement root = new XElement(aw + "Root",  
+    new XAttribute(aw + "AnAttributeName", "Content")  
+);  
+```  
+  
+ 詳細については、次を参照してください。 [XML 名前空間の使用](http://msdn.microsoft.com/library/e3003209-3234-45be-a832-47feb7927430)です。  
+  
+ これらの同じアプローチは機能します Visual basic の場合は、XML リテラルが XML ツリーを作成するためのより適切な方法を提供します。  
+  
+ `value`パラメーターを指定できます、 <xref:System.String>、 `double`、 `float`、 `decimal`、 `bool`、 <xref:System.DateTime>、または<xref:System.TimeSpan>です。 値の場合、<xref:System.DateTime>または<xref:System.TimeSpan>、W3C 仕様あたり属性の値が正しく書式設定します。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して、属性を作成します。 1 番目の引数として文字列を渡すこと、<xref:System.Xml.Linq.XAttribute>コンス トラクターに、暗黙的に変換される<xref:System.Xml.Linq.XName>オブジェクト。 属性は、要素に追加されます。  
+  
+```csharp  
+  
+                XElement root;  
+  
+double dbl = 12.345;  
+XAttribute[] attArray = {  
+    new XAttribute("Att4", 1),  
+    new XAttribute("Att5", 2),  
+    new XAttribute("Att6", 3)  
+};  
+DateTime dt = new DateTime(2006, 10, 6, 12, 30, 00);  
+  
+// string content  
+root = new XElement("Root",  
+    new XAttribute("Att1", "Some text"),  
+  
+    // double content  
+    new XAttribute("Att2", dbl),  
+  
+    // DateTime content  
+    new XAttribute("Att3", dt),  
+  
+    // XAttribute array content  
+    attArray  
+);  
+  
+Console.WriteLine(root);  
+```  
+  
+```vb  
+  
+                Dim dbl As Double = 12.345  
+Dim attArray As XAttribute() = { _  
+    New XAttribute("Att4", 1), _  
+    New XAttribute("Att5", 2), _  
+    New XAttribute("Att6", 3) _  
+}  
+Dim dt As DateTime = New DateTime(2006, 10, 6, 12, 30, 0)  
+Dim root As XElement = <Root Att1="Some text"  
+                           Att2=<%= dbl %>  
+                           Att3=<%= dt %>  
+                           <%= attArray %>  
+                       />  
+Console.WriteLine(root)  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+<Root Att1="Some text" Att2="12.345" Att3="2006-10-06T12:30:00" Att4="1" Att5="2" Att6="3" />  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターまたは <paramref name="value" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EmptySequence">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XAttribute&gt; EmptySequence { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.Linq.XAttribute&gt; EmptySequence" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XAttribute.EmptySequence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xml.Linq.XAttribute&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の空のコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.IEnumerable`1" />の<see cref="T:System.Xml.Linq.XAttribute" />空のコレクションを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは属性のコレクションを返すメソッドを記述する場合にクラスの実装によって通常使用されます。 空のコレクションを取得するこのプロパティを使用できなかった場合は、メソッドは、属性の空のコレクションを返す必要があります、<xref:System.Xml.Linq.XAttribute>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNamespaceDeclaration">
+      <MemberSignature Language="C#" Value="public bool IsNamespaceDeclaration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNamespaceDeclaration" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XAttribute.IsNamespaceDeclaration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性が名前空間の宣言であるかどうかを判断します。</summary>
+        <value>
+          <see langword="true" />この属性が名前空間の宣言以外の場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 技術的には、XML では、名前空間宣言属性ではありません。 ただし、ほとんどの XML プログラマは、通常、この区別を行いません。 代わりに、名前空間の宣言が属性とまったく同じ構文が、ほとんどの XML プログラマと考えるの名前空間の属性。 簡略化する、[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]プログラミング インターフェイスでは、名前空間として表される XML ツリー内の属性です。 このプロパティを使用するにはどう特定かを判断[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]属性は実際には、名前空間宣言します。  
+  
+   
+  
+## Examples  
+ 次の例では、名前空間宣言では属性とではない属性を作成します。 このプロパティを使用して各属性が名前空間宣言でかどうかを表示します。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement root = new XElement(aw + "Root",  
+    new XAttribute(XNamespace.Xmlns + "aw", "http://www.adventure-works.com"),  
+    new XAttribute(aw + "Att", "content")  
+);  
+  
+foreach (XAttribute att in root.Attributes()) {  
+    if (att.IsNamespaceDeclaration)  
+        Console.WriteLine("{0} is a namespace declaration", att.Name);  
+    else  
+        Console.WriteLine("{0} is not a namespace declaration", att.Name);  
+}  
+```  
+  
+```vb  
+  
+                Dim root As XElement = <aw:Root xmlns:aw='http://www.adventure-works.com'  
+                           aw:Att='content'/>  
+  
+For Each att As XAttribute In root.Attributes()  
+    If (att.IsNamespaceDeclaration) Then  
+        Console.WriteLine("{0} is a namespace declaration", att.Name)  
+    Else  
+        Console.WriteLine("{0} is not a namespace declaration", att.Name)  
+    End If  
+Next  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+                {http://www.w3.org/2000/xmlns/}aw is a namespace declaration  
+{http://www.adventure-works.com}Att is not a namespace declaration  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public System.Xml.Linq.XName Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Linq.XName Name" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性の拡張名を取得します。</summary>
+        <value><see cref="T:System.Xml.Linq.XName" />この属性の名前を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される拡張名の形式では、`{namespace}localname`です。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 3 つの属性を持つ要素を作成します。 このプロパティを使用して各属性の名前を出力します。 例では、既存の属性の名前を使用して、新しい属性の作成も示します。  
+  
+```csharp  
+  
+                XNamespace aw = "http://www.adventure-works.com";  
+XElement root = new XElement(aw + "Root",  
+    new XAttribute(XNamespace.Xmlns + "aw", "http://www.adventure-works.com"),  
+    new XAttribute(aw + "Att", "content"),  
+    new XAttribute("Att2", "different content")  
+);  
+  
+foreach (XAttribute att in root.Attributes())  
+    Console.WriteLine("{0}={1}", att.Name, att.Value);  
+Console.WriteLine("");  
+  
+XElement newRoot = new XElement(aw + "Root",  
+    from att in root.Attributes("Att2")  
+    select new XAttribute(att.Name, "new content"));  
+  
+foreach (XAttribute att in newRoot.Attributes())  
+    Console.WriteLine("{0}={1}", att.Name, att.Value);  
+```  
+  
+```vb  
+  
+                Dim root As XElement = _   
+    <aw:Root xmlns:aw='http://www.adventure-works.com'  
+        aw:Att='content'  
+        Att2='different content'/>  
+  
+For Each att As XAttribute In root.Attributes()  
+    Console.WriteLine("{0}={1}", att.Name, att.Value)  
+Next  
+Console.WriteLine("")  
+  
+Dim NewRoot As XElement = _  
+<Root  
+    <%= _  
+        From att In root.Attributes("Att2") _  
+        Select New XAttribute(att.Name, "new content") _  
+    %>>_  
+</Root>  
+  
+For Each att As XAttribute In NewRoot.Attributes()  
+    Console.WriteLine("{0}={1}", att.Name, att.Value)  
+Next  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+                {http://www.w3.org/2000/xmlns/}aw=http://www.adventure-works.com  
+{http://www.adventure-works.com}Att=content  
+Att2=different content  
+  
+Att2=new content  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextAttribute">
+      <MemberSignature Language="C#" Value="public System.Xml.Linq.XAttribute NextAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Linq.XAttribute NextAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XAttribute.NextAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親要素の次の属性を取得します。</summary>
+        <value><see cref="T:System.Xml.Linq.XAttribute" />を含む親要素の次の属性です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性は、要素に追加された順序で XML ツリーに保持されます。 属性のコレクションがによって返される場合<xref:System.Xml.Linq.XElement.Attributes%2A>、追加された、イメージと並べ替えは行われませんされる順序で返されます。 このプロパティを介して次の属性を要求するときに、このプロパティは、この属性の後に追加された属性を返します。  
+  
+ この属性には、親がないか、[次へ] の属性が存在しない場合、このプロパティを返します`null`です。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用して、要素の属性を反復処理する方法を示します。  
+  
+```csharp  
+  
+                XElement root = new XElement("Root",  
+    new XAttribute("Att1", 1),  
+    new XAttribute("Att2", 2),  
+    new XAttribute("Att3", 3),  
+    new XAttribute("Att4", 4)  
+);  
+  
+XAttribute att = root.FirstAttribute;  
+do {  
+    Console.WriteLine(att);  
+}  
+while((att = att.NextAttribute) != null);  
+```  
+  
+```vb  
+  
+                Dim root As XElement = <Root Att1="1" Att2="2" Att3="3" Att4="4"/>  
+Dim att As XAttribute = root.FirstAttribute  
+Dim val As Boolean = True  
+Do  
+    Console.WriteLine(att)  
+    att = att.NextAttribute  
+Loop While (Not (att Is Nothing))  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+                Att1="1"  
+Att2="2"  
+Att3="3"  
+Att4="4"  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeType">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNodeType NodeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlNodeType NodeType" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XAttribute.NodeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNodeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このノードのノード型を取得します。</summary>
+        <value>ノード型。 <see cref="T:System.Xml.Linq.XAttribute" />オブジェクト、この値は<see cref="F:System.Xml.XmlNodeType.Attribute" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのクラスから派生したため<xref:System.Xml.Linq.XObject>を含む、<xref:System.Xml.Linq.XObject.NodeType%2A>プロパティの具体的なサブクラスのコレクションで動作するコードを記述することができます<xref:System.Xml.Linq.XObject>です。 コードは、コレクション内の各ノードのノード型をテストできます。  
+  
+   
+  
+## Examples  
+ 次の例では、属性を作成し、このプロパティを使用して、ノード型を表示します。  
+  
+```csharp  
+  
+                XElement root = new XElement("Root",  
+    new XAttribute("Att", "content")  
+);  
+  
+XAttribute att = root.FirstAttribute;  
+Console.WriteLine(att.NodeType);  
+```  
+  
+```vb  
+  
+                Dim root As XElement = <Root Att="content"/>  
+Dim att As XAttribute = root.FirstAttribute  
+Console.WriteLine(att.NodeType.ToString)  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+Attribute  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator bool (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Boolean" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator DateTime (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.DateTime op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.DateTime" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator DateTimeOffset (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.DateTimeOffset op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.DateTimeOffset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator decimal (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Decimal op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Decimal" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator double (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname float64 op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Double" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Guid (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Guid op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Guid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator int (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname int32 op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Int32" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator long (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname int64 op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Int64" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;bool&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;bool&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.Boolean}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;DateTime&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.DateTime}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;DateTimeOffset&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;valuetype System.DateTimeOffset&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.DateTimeOffset}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTimeOffset&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;decimal&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;valuetype System.Decimal&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.Decimal}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Decimal&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;double&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;float64&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.Double}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;Guid&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;valuetype System.Guid&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.Guid}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Guid&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;int&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;int32&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.Int32}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;long&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;int64&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.Int64}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Int64&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;float&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;float32&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.Single}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Single&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;TimeSpan&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;valuetype System.TimeSpan&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.TimeSpan}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.TimeSpan&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;uint&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;unsigned int32&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.UInt32}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.UInt32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator Nullable&lt;ulong&gt; (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Nullable`1&lt;unsigned int64&gt; op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Nullable{System.UInt64}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.UInt64&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator float (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname float32 op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.Single" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator string (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname string op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.String" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator TimeSpan (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.TimeSpan op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.TimeSpan" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator uint (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname unsigned int32 op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.UInt32" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator ulong (System.Xml.Linq.XAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname unsigned int64 op_Explicit(class System.Xml.Linq.XAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)~System.UInt64" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.Xml.Linq.XAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousAttribute">
+      <MemberSignature Language="C#" Value="public System.Xml.Linq.XAttribute PreviousAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Linq.XAttribute PreviousAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XAttribute.PreviousAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親要素の前の属性を取得します。</summary>
+        <value><see cref="T:System.Xml.Linq.XAttribute" />を含む親要素の前の属性です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性は、要素に追加された順序で XML ツリーに保持されます。 属性のコレクションがによって返される場合<xref:System.Xml.Linq.XElement.Attributes%2A>、追加された、イメージと並べ替えは行われませんされる順序で返されます。 このプロパティを介して前の属性を要求するときに、このプロパティは、この属性の前に追加された属性を返します。  
+  
+ この属性には、親がないか、この属性は、最初の属性がある場合、このプロパティを返します`null`です。  
+  
+ <xref:System.Xml.Linq.XElement>クラスでは、その属性を格納のシングル リンク リストとして<xref:System.Xml.Linq.XAttribute>オブジェクト。 つまり、<xref:System.Xml.Linq.XAttribute.PreviousAttribute%2A>プロパティは、要素に属している属性のリストを走査する必要があります。 そのため、このプロパティを使用して、パフォーマンスに影響する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティを使用して、要素の属性を反復処理する方法を示します。  
+  
+```csharp  
+  
+                XElement root = new XElement("Root",  
+    new XAttribute("Att1", 1),  
+    new XAttribute("Att2", 2),  
+    new XAttribute("Att3", 3),  
+    new XAttribute("Att4", 4)  
+);  
+XAttribute att = root.LastAttribute;  
+do {  
+    Console.WriteLine(att);  
+}  
+while((att = att.PreviousAttribute) != null);  
+```  
+  
+```vb  
+  
+                Dim root As XElement = <Root Att1="1" Att2="2" Att3="3" Att4="4"/>  
+Dim att As XAttribute = root.LastAttribute  
+Dim val As Boolean = True  
+Do  
+    Console.WriteLine(att)  
+    att = att.PreviousAttribute  
+Loop While (Not (att Is Nothing))  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+                Att4="4"  
+Att3="3"  
+Att2="2"  
+Att1="1"  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.Remove" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>その親要素からこの属性を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、XML ツリーを変更します。 このメソッドには、発生するイベントが発生します。  
+  
+ 一連の属性を削除する多くのシナリオがあります。 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]プログラミングでは、する必要がありますいない操作またはそのセット内のノードのクエリを実行するときに、ノードのセットを変更します。 実際には、つまりにする必要がありますいない属性のセットを反復処理をしてそれらを削除します。 代わりに、必要がありますを具現化するには<xref:System.Collections.Generic.List%601>を使用して、<xref:System.Linq.Enumerable.ToList%2A>拡張メソッド。 できますを反復処理する、リスト属性を削除します。 詳細については、次を参照してください。[混合宣言型コードと命令型コードのバグ (LINQ to XML)](http://msdn.microsoft.com/library/d9a5c404-2b0e-46cd-a358-0e78773b3094)です。  
+  
+ また、一連の属性を削除する場合は、お勧めを使用すること、<xref:System.Xml.Linq.Extensions.Remove%2A?displayProperty=nameWithType>メソッドです。 このメソッドは、一覧は、属性をコピーし、属性を削除、リストを反復処理します。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 3 つの属性を持つ要素を作成します。 一方の属性を削除します。  
+  
+```csharp  
+  
+                XElement root = new XElement("Root",  
+    new XAttribute("Att1", "content1"),  
+    new XAttribute("Att2", "content2"),  
+    new XAttribute("Att3", "content3")  
+);  
+XAttribute att = root.Attribute("Att2");  
+att.Remove();  
+Console.WriteLine(root);  
+```  
+  
+```vb  
+  
+                Dim root As XElement = <Root Att1="content1" Att2="content2" Att3="content3"/>  
+Dim att As XAttribute = root.Attribute("Att2")  
+att.Remove()  
+Console.WriteLine(root)  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+<Root Att1="content1" Att3="content3" />  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">親要素は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValue(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.SetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">この属性に代入する値。</param>
+        <summary>この属性の値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、文字列形式に変換されに割り当てられている、<xref:System.Xml.Linq.XAttribute.Value%2A>プロパティです。  
+  
+ 派生したクラスのインスタンスを渡すことはできません<xref:System.Xml.Linq.XObject>など<xref:System.Xml.Linq.XElement>または<xref:System.Xml.Linq.XAttribute>です。  
+  
+ このメソッドが発生、<xref:System.Xml.Linq.XObject.Changed>と<xref:System.Xml.Linq.XObject.Changing>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、いくつかの属性を持つ要素を作成します。 次のいずれかの属性の内容を変更します。  
+  
+```csharp  
+  
+                XElement root = new XElement("Root",  
+    new XAttribute("Att1", "content1"),  
+    new XAttribute("Att2", "content2"),  
+    new XAttribute("Att3", "content3")  
+);  
+XAttribute att = root.Attribute("Att2");  
+att.SetValue("new content");  
+Console.WriteLine(root);  
+```  
+  
+```vb  
+  
+                Dim root As XElement = <Root Att1="content1" Att2="content2" Att3="content3"/>  
+Dim att As XAttribute = root.Attribute("Att2")  
+att.SetValue("new content")  
+Console.WriteLine(root)  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+<Root Att1="content1" Att2="new content" Att3="content3" />  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="value" />は、<see cref="T:System.Xml.Linq.XObject" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XAttribute.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の変換<see cref="T:System.Xml.Linq.XAttribute" />オブジェクトを文字列形式。</summary>
+        <returns>A<see cref="T:System.String" />属性とその値の XML のテキスト表現を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、の形式で文字列を返します`AttributeName="content"`です。  
+  
+> [!WARNING]
+>  このメソッドが呼び出されたときと<xref:System.Xml.Linq.XAttribute>コントロールを含む文字のようなメッセージで例外がスロー: 0x0B、16 進数の値が無効な文字です。  
+  
+   
+  
+## Examples  
+ 次の例では、いくつかの属性を持つ要素を作成します。 属性を取得し、このメソッドを呼び出してとその内容を表示します。  
+  
+```csharp  
+  
+                XElement root = new XElement("Root",  
+    new XAttribute("Att1", "content1"),  
+    new XAttribute("Att2", "content2"),  
+    new XAttribute("Att3", "content3")  
+);  
+XAttribute att = root.Attribute("Att2");  
+Console.WriteLine(att.ToString());  
+```  
+  
+```vb  
+  
+                Dim root As XElement = <Root Att1="content1" Att2="content2" Att3="content3"/>  
+Dim att As XAttribute = root.Attribute("Att2")  
+Console.WriteLine(att.ToString())  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+Att2="content2"  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの属性の値を設定します。</summary>
+        <value>この属性の値を表す <see cref="T:System.String" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、取得または属性の値を設定することができます。  
+  
+ このプロパティは生成の設定、<xref:System.Xml.Linq.XObject.Changed>と<xref:System.Xml.Linq.XObject.Changing>イベント。  
+  
+ 明示的な変換演算子を使用しなど、属性を null 許容型に割り当てるに都合が値を取得する属性が存在しない場合は、`string`または<xref:System.Nullable%601>の<xref:System.Int32>します。 属性が存在しないかどうかは、null 許容型に設定されている`null`です。 このプロパティを使用する前にする必要があることを確認、<xref:System.Xml.Linq.XElement.Attribute%2A>メソッドが返されません`null`です。  
+  
+   
+  
+## Examples  
+ 次の例では、属性を持つ要素を作成します。 属性の値を取得し、設定します。  
+  
+ Visual Basic の例が XML 属性のプロパティを使用することに注意してください。  
+  
+```csharp  
+  
+                XElement root = new XElement("Root",  
+    new XAttribute("Att", "content")  
+);  
+XAttribute att = root.FirstAttribute;  
+Console.WriteLine(att.Value);  
+att.Value = "new text";  
+Console.WriteLine(att.Value);  
+```  
+  
+```vb  
+  
+                Dim root As XElement = <Root Att="content"/>  
+Console.WriteLine(root.@Att)  
+root.@Att = "new text"  
+Console.WriteLine(root.@Att)  
+  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+                content  
+new text  
+```  
+  
+ 次の例は、存在しないか、属性の値を取得する明示的な変換演算子を使用する利点を示しています。  
+  
+```csharp  
+  
+                XElement root = new XElement("Root",  
+    new XAttribute("Att1", "attribute 1 content"),  
+    new XAttribute("Att2", "2")  
+);  
+  
+// The following assignments demonstrate why it is easier to use  
+// casting when the attribute might or might not exist.  
+  
+string c1 = (string)root.Attribute("Att1");  
+Console.WriteLine("c1:{0}", c1 == null ? "attribute does not exist" : c1);  
+  
+int? c2 = (int?)root.Attribute("Att2");  
+Console.WriteLine("c2:{0}", c2 == null ? "attribute does not exist" : c2.ToString());  
+  
+string c3 = (string)root.Attribute("Att3");  
+Console.WriteLine("c3:{0}", c3 == null ? "attribute does not exist" : c3);  
+  
+int? c4 = (int?)root.Attribute("Att4");  
+Console.WriteLine("c4:{0}", c4 == null ? "attribute does not exist" : c4.ToString());  
+  
+Console.WriteLine();  
+  
+// The following assignments show the necessary code when using  
+// the value property when the attribute might or might not exist.  
+  
+XAttribute att1 = root.Attribute("Att1");  
+string v1;  
+if (att1 == null)  
+    v1 = null;  
+else  
+    v1 = att1.Value;  
+Console.WriteLine("v1:{0}", v1 == null ? "attribute does not exist" : v1);  
+  
+XAttribute att2 = root.Attribute("Att2");  
+int? v2;  
+if (att2 == null)  
+    v2 = null;  
+else  
+    v2 = Int32.Parse(att2.Value);  
+Console.WriteLine("v2:{0}", v2 == null ? "attribute does not exist" : v2.ToString());  
+  
+XAttribute att3 = root.Attribute("Att3");  
+string v3;  
+if (att3 == null)  
+    v3 = null;  
+else  
+    v3 = att3.Value;  
+Console.WriteLine("v3:{0}", v3 == null ? "attribute does not exist" : v3);  
+  
+XAttribute att4 = root.Attribute("Att4");  
+int? v4;  
+if (att4 == null)  
+    v4 = null;  
+else  
+    v4 = Int32.Parse(att4.Value);  
+Console.WriteLine("v4:{0}", v4 == null ? "attribute does not exist" : v4.ToString());  
+```  
+  
+```vb  
+  
+                Dim root As XElement = <Root Att1="attribute 1 content" Att2="2"/>  
+  
+' The following assignments demonstrate why it is easier to use  
+' casting when the attribute might or might not exist.  
+  
+Dim c1 As String = CStr(root.Attribute("Att1"))  
+Console.WriteLine("c1:{0}", IIf(c1 Is Nothing, "attribute does not exist", c1))  
+  
+Dim c2 As Nullable(Of Integer) = CType(root.Attribute("Att2"), Nullable(Of Integer))  
+Console.WriteLine("c2:{0}", IIf(c2.HasValue, c2, "attribute does not exist"))  
+  
+Dim c3 As String = CStr(root.Attribute("Att3"))  
+Console.WriteLine("c3:{0}", IIf(c3 Is Nothing, "attribute does not exist", c3))  
+  
+Dim c4 As Nullable(Of Integer) = CType(root.Attribute("Att4"), Nullable(Of Integer))  
+Console.WriteLine("c4:{0}", IIf(c4.HasValue, c4, "attribute does not exist"))  
+  
+Console.WriteLine()  
+  
+' The following assignments show the necessary code when using  
+' the value property when the attribute might or might not exist.  
+  
+Dim att1 As XAttribute = root.Attribute("Att1")  
+Dim v1 As String  
+If att1 Is Nothing Then  
+    v1 = Nothing  
+Else  
+    v1 = att1.Value  
+End If  
+  
+Console.WriteLine("v1:{0}", IIf(v1 Is Nothing, "attribute does not exist", v1))  
+  
+Dim att2 As XAttribute = root.Attribute("Att2")  
+Dim v2 As Nullable(Of Integer)  
+If att2 Is Nothing Then  
+    v2 = Nothing  
+Else  
+    v2 = Int32.Parse(att2.Value)  
+End If  
+  
+Console.WriteLine("v2:{0}", IIf(v2.HasValue, v2, "attribute does not exist"))  
+  
+Dim att3 As XAttribute = root.Attribute("Att3")  
+Dim v3 As String  
+If att3 Is Nothing Then  
+    v3 = Nothing  
+Else  
+    v3 = att3.Value  
+End If  
+  
+Console.WriteLine("v3:{0}", IIf(v3 Is Nothing, "attribute does not exist", v3))  
+  
+Dim att4 As XAttribute = root.Attribute("Att4")  
+Dim v4 As Nullable(Of Integer)  
+If att4 Is Nothing Then  
+    v4 = Nothing  
+Else  
+    v4 = Int32.Parse(att4.Value)  
+End If  
+  
+Console.WriteLine("v4:{0}", IIf(v4.HasValue, v4, "attribute does not exist"))  
+```  
+  
+ この例を実行すると、次の出力が生成されます。  
+  
+```  
+  
+                c1:attribute 1 content  
+c2:2  
+c3:attribute does not exist  
+c4:attribute does not exist  
+  
+v1:attribute 1 content  
+v2:2  
+v3:attribute does not exist  
+v4:attribute does not exist  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定時に <paramref name="value" /> が <see langword="null" /> である場合に発生します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

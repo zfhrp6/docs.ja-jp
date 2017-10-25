@@ -1,0 +1,585 @@
+<Type Name="SqlWorkflowPersistenceService" FullName="System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService">
+  <TypeSignature Language="C#" Value="public class SqlWorkflowPersistenceService : System.Workflow.Runtime.Hosting.WorkflowPersistenceService, System.Workflow.Runtime.IPendingWork" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlWorkflowPersistenceService extends System.Workflow.Runtime.Hosting.WorkflowPersistenceService implements class System.Workflow.Runtime.IPendingWork" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Runtime.Hosting.WorkflowPersistenceService</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Workflow.Runtime.IPendingWork</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SQL データベースを使用してワークフロー状態情報を格納する永続性サービスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> クラスは、完全に機能する永続性サービスを表します。 このそのサービスをそのまま使用して、ワークフロー ランタイム エンジンから要求されたときに、ワークフロー インスタンスについてのワークフロー状態情報を永続化および取得できます。  
+  
+ <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> は、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> の提供するワークフローのトランザクション バッチ機能に参加します。 つまり、このサービスは、SQL データベースへの書き込み保留を表すオブジェクトを <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> に追加し、<xref:System.Workflow.Runtime.IPendingWork> インターフェイスを実装します。  
+  
+ <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> は、ワークフロー インスタンスのロックをサポートします。 この機能は、いくつかのワークフロー ランタイムが同じデータベースを共有するときに使用されます。 ワークフロー インスタンスがワークフロー ランタイムによって使用されているときは、そのワークフロー インスタンスがロックされていることをマークするために、SQL データベース テーブルの 1 つの列が使用されます。 <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> は、別のランタイムによって "使用中" とマークされたワークフロー インスタンスを読み込みません。 こうしたロックが解放されるのは通常、ワークフロー インスタンスが永続化されたとき、たとえばワークフロー インスタンスがアイドル状態になったとき、あるいは完了または終了したときです。 また、非アクティブ期間の後にロックを自動的に解放することもできます。 この非アクティブ期間は、<xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> クラスのコンストラクターを使用して設定できます。  構成ファイルを介して設定することもできます。  
+  
+ 永続性サービス全般[!INCLUDE[crabout](~/includes/crabout-md.md)]、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> クラスを参照してください。  
+  
+ たとえば <xref:System.Workflow.Activities.DelayActivity> を持つワークフロー インスタンスは、タイマーを含むことができます。 タイマーを含むワークフローの場合、<xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> は、ワークフローの次のタイマーが切れる時刻を記録します。 <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> は定期的にデータベースをポーリングして、タイマーが切れたワークフローを探します。 ポーリング間隔の頻度は、<xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> コンストラクターまたは構成ファイルを使用して設定できます。  
+  
+> [!NOTE]
+>  ワークフロー アプリケーションで <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> と <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> の両方を使用する場合は、永続化と追跡に 1 つのデータベースを使用することをお勧めします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlWorkflowPersistenceService (System.Collections.Specialized.NameValueCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Specialized.NameValueCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.#ctor(System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">開始パラメーターを格納した <see cref="T:System.Collections.Specialized.NameValueCollection" />。</param>
+        <summary>指定されたパラメーターを使用して、<see cref="T:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、ワークフロー ランタイム エンジンがアプリケーション構成ファイルからサービスを読み込むときに呼び出されます。 `NameValueCollection` パラメーターを指定してプログラムによって呼び出すこともできます。 有効なパラメーターは、`ConnectionString`、`OwnershipTimeoutSeconds`、`UnloadOnIdle`、および `EnableRetries` です。 パラメーターに他のキーが含まれていると、<xref:System.ArgumentException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="parameters" /> に無効なデータベース接続文字列が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parameters" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlWorkflowPersistenceService (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">有効なデータベース接続文字列。</param>
+        <summary>データベース接続文字列を使用して、<see cref="T:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="connectionString" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlWorkflowPersistenceService (string connectionString, bool unloadOnIdle, TimeSpan instanceOwnershipDuration, TimeSpan loadingInterval);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString, bool unloadOnIdle, valuetype System.TimeSpan instanceOwnershipDuration, valuetype System.TimeSpan loadingInterval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.#ctor(System.String,System.Boolean,System.TimeSpan,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="unloadOnIdle" Type="System.Boolean" />
+        <Parameter Name="instanceOwnershipDuration" Type="System.TimeSpan" />
+        <Parameter Name="loadingInterval" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">有効なデータベース接続文字列。</param>
+        <param name="unloadOnIdle">
+          アイドル状態になったワークフローをアンロードする場合は <see langword="true" />。</param>
+        <param name="instanceOwnershipDuration">ロックがアイドル状態のワークフローで保持される時間の長さ。</param>
+        <param name="loadingInterval">永続性サービスが、タイマーが切れたワークフローのデータベースをポーリングする頻度。</param>
+        <summary>データベース接続文字列と他のパラメーターを使用して、<see cref="T:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `instanceOwnershipDuration` の値を提供するこのコンストラクターを使用すると、ロック機能が有効です。 ロック機能が無効の永続性サービスを作成するには、`instanceOwnershipDuration` を指定しない異なるコンストラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="connectionString" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableRetries">
+      <MemberSignature Language="C#" Value="public bool EnableRetries { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableRetries" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.EnableRetries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService" /> が作業バッチのコミットを再試行するかどうかを指定する値を取得および設定します。</summary>
+        <value>
+          サービスで作業バッチのコミットを再試行する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の作業項目はバッチ処理できません。トランザクションの再試行は、`EnableRetries` プロパティを介して処理する必要があります。  
+  
+-   期限切れデータベース タイマーのポーリング  
+  
+-   ワークフロー インスタンス状態の読み込み  
+  
+-   ワークフロー ランタイム エンジン起動時のワークフロー インスタンスの再読み込み  
+  
+-   <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.GetAllWorkflows%2A> の呼び出し  
+  
+ この機能は、プログラムで設定する以外に、構成ファイルを使用して有効にすることもできます。 [!INCLUDE[crabout](~/includes/crabout-md.md)]参照してください、構成ファイルでこのプロパティを設定する方法[ワークフロー構成ファイル](http://msdn.microsoft.com/en-us/ada4bb90-6c9d-4f3d-a9d0-b559bb0f9909)です。  
+  
+ 作業バッチ トランザクションの再試行に関する概要については、次を参照してください。[ワークフローの状態情報をバッチ処理](http://msdn.microsoft.com/en-us/ecda18ba-9140-4bd7-b13d-6787fdf5959d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllWorkflows">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Workflow.Runtime.Hosting.SqlPersistenceWorkflowInstanceDescription&gt; GetAllWorkflows ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Workflow.Runtime.Hosting.SqlPersistenceWorkflowInstanceDescription&gt; GetAllWorkflows() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.GetAllWorkflows" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Workflow.Runtime.Hosting.SqlPersistenceWorkflowInstanceDescription&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>永続化されたすべてのワークフローのインスタンスの説明を取得します。</summary>
+        <returns>永続化されたすべてのワークフローのリスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCompletedContextActivity">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.Activity LoadCompletedContextActivity (Guid id, System.Workflow.ComponentModel.Activity outerActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Workflow.ComponentModel.Activity LoadCompletedContextActivity(valuetype System.Guid id, class System.Workflow.ComponentModel.Activity outerActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.LoadCompletedContextActivity(System.Guid,System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.Guid" />
+        <Parameter Name="outerActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="id">スコープ アクティビティの <see cref="T:System.Guid" />。</param>
+        <param name="outerActivity">スコープ アクティビティを囲む <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>指定した完了スコープをデータベースから取得します。</summary>
+        <returns>完了したスコープを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー ランタイム エンジンは、補正中は <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.LoadCompletedContextActivity%2A> を使用します。 <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.LoadCompletedContextActivity%2A> は、ワークフロー ランタイム エンジンでのみ呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="id" /> と一致するスコープがデータベースに見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadExpiredTimerWorkflowIds">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;Guid&gt; LoadExpiredTimerWorkflowIds ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;valuetype System.Guid&gt; LoadExpiredTimerWorkflowIds() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.LoadExpiredTimerWorkflowIds" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Guid&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>タイマーが切れたワークフローの ID のリストを取得します。</summary>
+        <returns>タイマーが切れたワークフローの ID のリスト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadingInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan LoadingInterval { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan LoadingInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.LoadingInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み込み間隔の長さを取得します。</summary>
+        <value>永続性サービスが、タイマーが切れたワークフローのデータベースをポーリングする頻度。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、2 分です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadWorkflowInstanceState">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.Activity LoadWorkflowInstanceState (Guid id);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Workflow.ComponentModel.Activity LoadWorkflowInstanceState(valuetype System.Guid id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.LoadWorkflowInstanceState(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="id">ワークフロー インスタンス状態の <see cref="T:System.Guid" />。</param>
+        <summary>指定したワークフロー インスタンス状態をデータベースから取得します。</summary>
+        <returns>ワークフロー インスタンスのルート アクティビティを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.LoadWorkflowInstanceState%2A> は、ワークフロー ランタイム エンジンでのみ呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="id" /> と一致するワークフロー インスタンス状態がデータベースに見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStarted">
+      <MemberSignature Language="C#" Value="protected override void OnStarted ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStarted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.OnStarted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいタイマーを開始し、実行中のワークフロー インスタンスを回復します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveCompletedContextActivity">
+      <MemberSignature Language="C#" Value="protected override void SaveCompletedContextActivity (System.Workflow.ComponentModel.Activity completedScopeActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void SaveCompletedContextActivity(class System.Workflow.ComponentModel.Activity completedScopeActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.SaveCompletedContextActivity(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="completedScopeActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="completedScopeActivity">完了したスコープを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>指定した完了スコープの状態を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `completedScopeActivity` は、シリアル化されて <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> に追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveWorkflowInstanceState">
+      <MemberSignature Language="C#" Value="protected override void SaveWorkflowInstanceState (System.Workflow.ComponentModel.Activity rootActivity, bool unlock);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void SaveWorkflowInstanceState(class System.Workflow.ComponentModel.Activity rootActivity, bool unlock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.SaveWorkflowInstanceState(System.Workflow.ComponentModel.Activity,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootActivity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="unlock" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="rootActivity">ワークフロー インスタンスのルート アクティビティ。</param>
+        <param name="unlock">
+          ワークフロー インスタンスをロックしない場合は <see langword="true" />、ロックする場合は <see langword="false" />。</param>
+        <summary>指定したワークフロー インスタンス状態を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `rootActivity` は、シリアル化されて <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> に書き込まれます。 そのまますぐに使用できる <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> は、ワークフロー インスタンス状態のロック処理を実装しています。 ユーザーは、コンストラクターの `instanceOwnershipDuration` パラメーターを構成する必要があります。 この値は、ホストがインスタンスをロックしておける時間間隔を決定します。 複数のホストが同じ永続性サービスとデータベースを共有している場合、この間に別のホストがインスタンスを読み込もうとすると、<xref:System.Workflow.Runtime.WorkflowOwnershipException> が発生します。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)]、<xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> クラスを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceInstanceId">
+      <MemberSignature Language="C#" Value="public Guid ServiceInstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ServiceInstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.ServiceInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス インスタンス識別子を取得します。</summary>
+        <value>サービス インスタンス識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `Guid.Empty` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="protected override void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService" /> を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.Start%2A> は、ワークフロー ランタイム エンジンでのみ呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="protected override void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービスとタイマーを停止します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Workflow.Runtime.IPendingWork.Commit">
+      <MemberSignature Language="C#" Value="void IPendingWork.Commit (System.Transactions.Transaction transaction, System.Collections.ICollection items);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Workflow.Runtime.IPendingWork.Commit(class System.Transactions.Transaction transaction, class System.Collections.ICollection items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.System#Workflow#Runtime#IPendingWork#Commit(System.Transactions.Transaction,System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transaction" Type="System.Transactions.Transaction" />
+        <Parameter Name="items" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="transaction"><see cref="T:System.Transactions.Transaction" />。</param>
+        <param name="items">データベースに書き込まれる作業項目の <see cref="T:System.Collections.ICollection" />。</param>
+        <summary>シリアル化された状態オブジェクトの <see cref="T:System.Collections.ICollection" /> をデータベースに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `items` に格納されたシリアル化された状態オブジェクトがデータベースに書き込まれます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Workflow.Runtime.Hosting.PersistenceException">データベースに書き込もうとしているときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Workflow.Runtime.IPendingWork.Complete">
+      <MemberSignature Language="C#" Value="void IPendingWork.Complete (bool succeeded, System.Collections.ICollection items);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Workflow.Runtime.IPendingWork.Complete(bool succeeded, class System.Collections.ICollection items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.System#Workflow#Runtime#IPendingWork#Complete(System.Boolean,System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="succeeded" Type="System.Boolean" />
+        <Parameter Name="items" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="succeeded">
+          コミットが成功した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="items">シリアル化された状態オブジェクトの <see cref="T:System.Collections.ICollection" />。</param>
+        <summary>作業バッチを完了し、すべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ そのまますぐに使用できる <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> の実装では、   
+ <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.System%23Workflow%23Runtime%23IPendingWork%23Complete%2A> は no-op です。 <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> クラスから継承して拡張する場合、<xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.System%23Workflow%23Runtime%23IPendingWork%23Complete%2A> を使用して、`items` に対して実装に応じて必要なアクションを実行できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Workflow.Runtime.IPendingWork.MustCommit">
+      <MemberSignature Language="C#" Value="bool IPendingWork.MustCommit (System.Collections.ICollection items);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Workflow.Runtime.IPendingWork.MustCommit(class System.Collections.ICollection items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.System#Workflow#Runtime#IPendingWork#MustCommit(System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="items">データベースに書き込まれるシリアル化された状態オブジェクトの <see cref="T:System.Collections.ICollection" />。</param>
+        <summary>シリアル化された状態オブジェクトのコレクションをデータベースに書き込む必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> は、バッチをコミットする必要があることを示します。<see cref="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.System.Workflow.Runtime.IPendingWork.MustCommit(System.Collections.ICollection)" /> は常に <see langword="true" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ < xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.System%23Workflow%23Runtime%23IPendingWork%23MustCommit(System.Collections.ICollection) は常に返します`true`、ワークフロー ランタイム エンジンに指示します。呼び出す<xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.System%23Workflow%23Runtime%23IPendingWork%23MustCommit(System.Collections.ICollection)>バッチにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadOnIdle">
+      <MemberSignature Language="C#" Value="protected override bool UnloadOnIdle (System.Workflow.ComponentModel.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool UnloadOnIdle(class System.Workflow.ComponentModel.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.UnloadOnIdle(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">ワークフロー インスタンスのルート アクティビティを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>アイドル状態になったワークフローがアンロードされるかどうかを示す値を返します。</summary>
+        <returns>
+          アイドル状態になったワークフローがアンロードされる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnlockWorkflowInstanceState">
+      <MemberSignature Language="C#" Value="protected override void UnlockWorkflowInstanceState (System.Workflow.ComponentModel.Activity rootActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void UnlockWorkflowInstanceState(class System.Workflow.ComponentModel.Activity rootActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService.UnlockWorkflowInstanceState(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="rootActivity">ワークフロー インスタンスのルート アクティビティを表す <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>指定したワークフロー インスタンス状態へのアクセスのロックを解除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、永続性のないデータ ストア内のワークフロー インスタンス状態のロックを解除するためにワークフロー ランタイムによって使用され、ランタイムが状態を永続化せずにロック解除する必要がある場合 (たとえば <xref:System.Workflow.Runtime.WorkflowInstance.Abort%2A> の場合) に、ワークフロー ランタイムによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

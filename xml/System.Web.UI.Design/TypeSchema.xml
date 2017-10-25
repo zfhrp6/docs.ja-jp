@@ -1,0 +1,87 @@
+<Type Name="TypeSchema" FullName="System.Web.UI.Design.TypeSchema">
+  <TypeSignature Language="C#" Value="public sealed class TypeSchema : System.Web.UI.Design.IDataSourceSchema" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypeSchema extends System.Object implements class System.Web.UI.Design.IDataSourceSchema" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.TypeSchema" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.Design.IDataSourceSchema</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>構造体、またはオブジェクト型のスキーマを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.TypeSchema>クラスは、そのクラスのインスタンスを受け取り、特定のクラスに関する情報を提供します。 たとえば、指定された、<xref:System.Data.DataSet>オブジェクト、<xref:System.Web.UI.WebControls.GridView>オブジェクト、または作成したカスタム クラス、メソッドおよびプロパティのインスタンスは、オブジェクトの派生元クラスに関する情報を提供します。 クラスの特定のインスタンスに関する情報は提供されません。  
+  
+ <xref:System.Web.UI.Design.TypeSchema>クラスは、カスタム コントロールをプレビューするためのサンプル データの準備を支援するカスタム コントロール デザイナーが使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeSchema (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TypeSchema.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">A<see cref="T:System.Type" />オブジェクトを説明します。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.UI.Design.TypeSchema" />クラスの指定されたを使用して<see cref="T:System.Type" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViews">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.IDataSourceViewSchema[] GetViews ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.Design.IDataSourceViewSchema[] GetViews() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.TypeSchema.GetViews" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IDataSourceViewSchema[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビューのデータ ソースにスキーマ記述子の配列を取得します。</summary>
+        <returns>インスタンスの配列<see cref="T:System.Web.UI.Design.IDataSourceViewSchema" />、または実装するクラスのインスタンスの<see cref="T:System.Web.UI.Design.IDataSourceViewSchema" />インターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ただし、<xref:System.Web.UI.Design.TypeSchema.GetViews%2A>メソッドは常の配列を返します<xref:System.Web.UI.Design.IDataSourceViewSchema>を実装するオブジェクト、<xref:System.Web.UI.Design.IDataSourceViewSchema>インターフェイス、正確な戻り値のインスタンスを作成するときに表示されるオブジェクトに依存する、<xref:System.Web.UI.Design.TypeSchema>クラスです。  
+  
+ 次の表は、戻り値の例を示します。  
+  
+|基になる型|戻り値|  
+|---------------------|------------------|  
+|<xref:System.Data.DataSet>。|型の配列<xref:System.Web.UI.Design.DataSetViewSchema>、ごとに 1 つ<xref:System.Data.DataTable>です。|  
+|<xref:System.Data.DataTable>。|単一項目の配列を含む、<xref:System.Web.UI.Design.DataSetViewSchema>です。|  
+|<xref:System.Collections.IEnumerable>型|単一項目の配列を含む、<xref:System.Web.UI.Design.IDataSourceViewSchema>です。|  
+|その他の種類|単一項目の配列を含む、<xref:System.Web.UI.Design.IDataSourceViewSchema>です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

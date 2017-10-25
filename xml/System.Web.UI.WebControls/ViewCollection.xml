@@ -1,0 +1,176 @@
+<Type Name="ViewCollection" FullName="System.Web.UI.WebControls.ViewCollection">
+  <TypeSignature Language="C#" Value="public class ViewCollection : System.Web.UI.ControlCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ViewCollection extends System.Web.UI.ControlCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ViewCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.ControlCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>有効にするコレクションのコンテナーを表す、<see cref="T:System.Web.UI.WebControls.MultiView" />その子コントロールのリストを保持するコントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ViewCollection>クラスを有効にするコレクション コンテナーを表します、<xref:System.Web.UI.WebControls.MultiView>その子コントロールのリストを保持するコントロール。 A<xref:System.Web.UI.WebControls.MultiView>コントロールを含めることができますのみ<xref:System.Web.UI.WebControls.View>子コントロールとしてコントロール。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.ViewCollection.Add%2A>メソッドを追加、新しい<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.ViewCollection>序数に基づくインデックスの配列の最後のコレクション。 使用して、<xref:System.Web.UI.WebControls.ViewCollection.AddAt%2A>を特定のインデックス位置にある新しいコントロールを追加するメソッド。 使用して、<xref:System.Web.UI.WebControls.ViewCollection.Item%2A>を取得するためのインデクサー、<xref:System.Web.UI.WebControls.View>から制御、<xref:System.Web.UI.WebControls.ViewCollection>コレクション内の単純な配列表記を使用して、指定したインデックス位置。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで追加する方法を示します<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.MultiView>コントロール。 各後<xref:System.Web.UI.WebControls.View>コントロールを作成すると、<xref:System.Web.UI.WebControls.ViewCollection.AddAt%2A>メソッドの使用に追加、<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.ViewCollection>のコレクション、<xref:System.Web.UI.WebControls.MultiView>指定したインデックスにあるコントロールです。 <xref:System.Web.UI.WebControls.ViewCollection.Item%2A>インデクサーの使用にアクセスする、<xref:System.Web.UI.Control.ID%2A>のプロパティ、<xref:System.Web.UI.WebControls.View>でコントロールが格納されている、<xref:System.Web.UI.WebControls.ViewCollection>コレクションし、ユーザーに表示します。  
+  
+ [!code-aspx-vb[ViewCollection.AddAt Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ViewCollection.AddAt Example/VB/viewcollectionaddatvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ViewCollection (System.Web.UI.Control owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Control owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ViewCollection.#ctor(System.Web.UI.Control)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Web.UI.WebControls.MultiView" />この子コントロールのコレクションを所有するコントロール。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ViewCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、プログラムで追加する方法を示します<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.MultiView>コントロール。 各後<xref:System.Web.UI.WebControls.View>コントロールを作成すると、<xref:System.Web.UI.WebControls.ViewCollection.AddAt%2A>メソッドの使用に追加、<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.ViewCollection>のコレクション、<xref:System.Web.UI.WebControls.MultiView>指定したインデックスにあるコントロールです。 <xref:System.Web.UI.WebControls.ViewCollection.Item%2A>インデクサーの使用にアクセスする、<xref:System.Web.UI.Control.ID%2A>のプロパティ、<xref:System.Web.UI.WebControls.View>でコントロールが格納されている、<xref:System.Web.UI.WebControls.ViewCollection>コレクションし、ユーザーに表示します。  
+  
+ [!code-aspx-vb[ViewCollection.AddAt Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ViewCollection.AddAt Example/VB/viewcollectionaddatvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Web.UI.Control v);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Web.UI.Control v) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ViewCollection.Add(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="v" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="v"><see cref="T:System.Web.UI.WebControls.View" />コレクションに追加するコントロール。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.WebControls.View" />コレクションを制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ViewCollection.Add%2A>メソッドは、序数に基づくインデックスの配列の末尾に新しいコントロールを追加します。 コントロールのインスタンスであることができますのみ、<xref:System.Web.UI.WebControls.View>コントロール。  
+  
+ コレクションの特定のインデックス位置にコントロールを追加するには、使用、<xref:System.Web.UI.WebControls.ViewCollection.AddAt%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで追加する方法を示します<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.MultiView>コントロール。 各後<xref:System.Web.UI.WebControls.View>コントロールを作成すると、`MultiView.Views.Add()`構文を使用して、追加、<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.ViewCollection>のコレクション、<xref:System.Web.UI.WebControls.MultiView>コントロール。  
+  
+ [!code-aspx-vb[MultiView.Views Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MultiView.Views Example/VB/multiviewviewsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="v" />パラメーターが指定されていません、<see cref="T:System.Web.UI.WebControls.View" />コントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAt">
+      <MemberSignature Language="C#" Value="public override void AddAt (int index, System.Web.UI.Control v);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddAt(int32 index, class System.Web.UI.Control v) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ViewCollection.AddAt(System.Int32,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="v" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="index">配列インデックスを追加する位置を示す、<see cref="T:System.Web.UI.WebControls.View" />コントロール。</param>
+        <param name="v"><see cref="T:System.Web.UI.WebControls.View" />コレクションに追加するコントロール。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.WebControls.View" />コレクションの指定したインデックス位置を制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ViewCollection.AddAt%2A>メソッドは、コレクションの指定したインデックス位置に新しいコントロールを追加します。 コントロールのインスタンスであることができますのみ、<xref:System.Web.UI.WebControls.View>コントロール。  
+  
+ 序数に基づくインデックスの配列の最後にコントロールを追加するには、使用、<xref:System.Web.UI.WebControls.ViewCollection.Add%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで追加する方法を示します<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.MultiView>コントロール。 各後<xref:System.Web.UI.WebControls.View>コントロールを作成すると、<xref:System.Web.UI.WebControls.ViewCollection.AddAt%2A>メソッドの使用に追加、<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.ViewCollection>のコレクション、<xref:System.Web.UI.WebControls.MultiView>指定したインデックスにあるコントロールです。 <xref:System.Web.UI.WebControls.ViewCollection.Item%2A>インデクサーの使用にアクセスする、<xref:System.Web.UI.Control.ID%2A>のプロパティ、<xref:System.Web.UI.WebControls.View>でコントロールが格納されている、<xref:System.Web.UI.WebControls.ViewCollection>コレクションし、ユーザーに表示します。  
+  
+ [!code-aspx-vb[ViewCollection.AddAt Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ViewCollection.AddAt Example/VB/viewcollectionaddatvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="v" />パラメーターが指定されていません、<see cref="T:System.Web.UI.WebControls.View" />コントロール。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.View this[int i] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.View Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ViewCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.View</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="i">場所を指定する序数インデックス値、<see cref="T:System.Web.UI.WebControls.View" />内の制御、<see cref="T:System.Web.UI.WebControls.ViewCollection" />です。</param>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.View" />で指定したインデックス位置にあるコントロール、<see cref="T:System.Web.UI.WebControls.ViewCollection" />コレクション。</summary>
+        <value>参照、<see cref="T:System.Web.UI.WebControls.View" />内の制御、<see cref="T:System.Web.UI.WebControls.ViewCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーを使用して、取得、<xref:System.Web.UI.WebControls.View>から制御、<xref:System.Web.UI.WebControls.ViewCollection>コレクション内の単純な配列表記を使用して、指定したインデックス位置。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで追加する方法を示します<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.MultiView>コントロール。 各後<xref:System.Web.UI.WebControls.View>コントロールを作成すると、<xref:System.Web.UI.WebControls.ViewCollection.AddAt%2A>メソッドの使用に追加、<xref:System.Web.UI.WebControls.View>コントロールを<xref:System.Web.UI.WebControls.ViewCollection>のコレクション、<xref:System.Web.UI.WebControls.MultiView>指定したインデックスにあるコントロールです。 <xref:System.Web.UI.WebControls.ViewCollection.Item%2A>インデクサーの使用にアクセスする、<xref:System.Web.UI.Control.ID%2A>のプロパティ、<xref:System.Web.UI.WebControls.View>でコントロールが格納されている、<xref:System.Web.UI.WebControls.ViewCollection>コレクションし、ユーザーに表示します。  
+  
+ [!code-aspx-vb[ViewCollection.AddAt Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ViewCollection.AddAt Example/VB/viewcollectionaddatvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

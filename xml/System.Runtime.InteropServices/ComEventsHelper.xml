@@ -1,0 +1,118 @@
+<Type Name="ComEventsHelper" FullName="System.Runtime.InteropServices.ComEventsHelper">
+  <TypeSignature Language="C#" Value="public static class ComEventsHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ComEventsHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComEventsHelper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベントを処理する .NET Framework デリゲートについて、COM オブジェクトとの間でその追加および削除を行うためのメソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Combine">
+      <MemberSignature Language="C#" Value="public static void Combine (object rcw, Guid iid, int dispid, Delegate d);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Combine(object rcw, valuetype System.Guid iid, int32 dispid, class System.Delegate d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComEventsHelper.Combine(System.Object,System.Guid,System.Int32,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rcw" Type="System.Object" />
+        <Parameter Name="iid" Type="System.Guid" />
+        <Parameter Name="dispid" Type="System.Int32" />
+        <Parameter Name="d" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="rcw">イベントをトリガーする、COM オブジェクトに応答する、呼び出し元と思います。</param>
+        <param name="iid">イベントを発生させるには、COM オブジェクトによって使用されるソース インターフェイスの識別子。</param>
+        <param name="dispid">ソース インターフェイスのメソッドのディスパッチ識別子です。</param>
+        <param name="d">COM イベントが発生したときに呼び出されるデリゲート。</param>
+        <summary>COM オブジェクトから生成されるイベントの呼び出しリストにデリゲートを追加します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public static Delegate Remove (object rcw, Guid iid, int dispid, Delegate d);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Delegate Remove(object rcw, valuetype System.Guid iid, int32 dispid, class System.Delegate d) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComEventsHelper.Remove(System.Object,System.Guid,System.Int32,System.Delegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rcw" Type="System.Object" />
+        <Parameter Name="iid" Type="System.Guid" />
+        <Parameter Name="dispid" Type="System.Int32" />
+        <Parameter Name="d" Type="System.Delegate" />
+      </Parameters>
+      <Docs>
+        <param name="rcw">COM オブジェクト デリゲートにアタッチされています。</param>
+        <param name="iid">イベントを発生させるには、COM オブジェクトによって使用されるソース インターフェイスの識別子。</param>
+        <param name="dispid">ソース インターフェイスのメソッドのディスパッチ識別子です。</param>
+        <param name="d">呼び出しリストから削除するデリゲート。</param>
+        <summary>COM オブジェクトから生成されるイベントの呼び出しリストからデリゲートを削除します。</summary>
+        <returns>このデリゲートは、呼び出しリストから削除されました。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

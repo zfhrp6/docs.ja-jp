@@ -1,0 +1,228 @@
+<Type Name="ErrorWrapper" FullName="System.Runtime.InteropServices.ErrorWrapper">
+  <TypeSignature Language="C#" Value="public sealed class ErrorWrapper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ErrorWrapper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ErrorWrapper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マーシャラーとしてマーシャ リング オブジェクトをラップする<see langword="VT_ERROR" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Object>としてマーシャ リングする型引数、`VARIANT`型、オブジェクトの種類が決定される、`VARTYPE`の値、`VARIANT`です。  
+  
+ <xref:System.Runtime.InteropServices.ErrorWrapper>入力として渡される必要があります、<xref:System.Object>としてマーシャ リングする型、`VARIANT`型の`VT_ERROR`、それ以外の場合、<xref:System.Runtime.InteropServices.ErrorWrapper>型を整数としてマーシャ リングします。  
+  
+ 次の表は、ネイティブ関数へのマネージ呼び出しでマーシャ リングを示しています。 プラットフォーム呼び出しを使用します。  
+  
+|マネージ シグネチャのパラメーター|pArr 値|としてマーシャ リング|  
+|---------------------------------|----------------|------------------|  
+|ErrorWrapper:operator[] pArr|ErrorWrapper(77) の ErrorWrapper [10]|`Int[10]`|  
+|オブジェクト [pArr|ErrorWrapper(77) の ErrorWrapper [10]|`VARIANT[10]` の `VT_ERROR`|  
+|オブジェクト [pArr|オブジェクト [10] ErrorWrapper(77) の|`VARIANT[10]` の `VT_ERROR`|  
+  
+ 次の表は、COM ランタイム呼び出し可能ラッパー (RCW) を使用して、ネイティブ関数へのマネージ呼び出しのマーシャ リング データを示します。  
+  
+|マネージ シグネチャのパラメーター|pArr 値|としてマーシャ リング|  
+|---------------------------------|----------------|------------------|  
+|ErrorWrapper:operator[] pArr|ErrorWrapper(77) の ErrorWrapper [10]|`Int[10]`|  
+|オブジェクト [pArr|ErrorWrapper(77) の ErrorWrapper [10]|`SafeArrayTypeMismatch`例外|  
+|オブジェクト [pArr|オブジェクト [10] ErrorWrapper(77) の|`SAFEARRAY(VARIANT)`|  
+  
+ なお<xref:System.Runtime.InteropServices.ErrorWrapper>オブジェクトの種類としてマーシャ リングされない`VT_ERROR`渡された COM から戻る  1 つの値は型として COM からマーシャ リング`VT_I4`配列は型として COM からマーシャ リング中に、`VT_UI4`です。  
+  
+ 詳細については`VT_ERROR`、既存のドキュメントをご覧ください`VARENUM::VT_ERROR`MSDN ライブラリです。  
+  
+   
+  
+## Examples  
+ 次のコード例は最初、唯一示します<xref:System.Int32>として COM からオブジェクト、<xref:System.Int32>オブジェクト。 最後、<xref:System.Int32>として COM から配列を<xref:System.UInt32>配列。  
+  
+```  
+// Scenario 1:  
+// Pass a single value.  
+Int32 x = 3;  
+Object o = new ErrorWrapper(x);  
+// Pass 'o' to COM.  
+// On the return trip, 'o' has been unwrapped and is still an Int32 object.  
+Int32 y = (Int32)o;  
+Scenario 2:  
+// Pass an array of values.  
+Int32[] arr = new Int32[3];  
+Object o = new ErrorWrapper(arr);  
+// Pass 'o' to COM.  
+// On the return trip, 'o' has been unwrapped and is now a UInt32[] array.  
+UInt32[ ] arr2 = (UInt32[])o;  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ErrorWrapper (Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ErrorWrapper.#ctor(System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="e">エラー コードに変換する例外。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.ErrorWrapper" />クラスで指定された例外に対応する HRESULT。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。  
+  
+ セキュリティ アクション: 要求します。  
+  
+ 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ErrorWrapper (int errorCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 errorCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ErrorWrapper.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="errorCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="errorCode">エラーの HRESULT です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.ErrorWrapper" />エラーの HRESULT を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ErrorWrapper (object errorCode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object errorCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ErrorWrapper.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="errorCode" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="errorCode">エラーの HRESULT を格納するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.ErrorWrapper" />エラーの HRESULT を含むオブジェクトを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="errorCode" />パラメーターではありません、<see cref="T:System.Int32" />型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorCode">
+      <MemberSignature Language="C#" Value="public int ErrorCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ErrorCode" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ErrorWrapper.ErrorCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラッパーのエラー コードを取得します。</summary>
+        <value>エラーの HRESULT です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

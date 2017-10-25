@@ -1,0 +1,79 @@
+<Type Name="IChannelFactory" FullName="System.ServiceModel.Channels.IChannelFactory">
+  <TypeSignature Language="C#" Value="public interface IChannelFactory : System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannelFactory implements class System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IChannelFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.ICommunicationObject</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>チャネル ファクトリがチャネルを作成するために実装する必要があるインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.IChannelFactory> インターフェイスは、チャネル ファクトリの基本インターフェイスを表します。  
+  
+ チャネル ファクトリとそれに関連付けられているチャネルは、通常、通信を開始するサービスのクライアントによって使用されます。 それに対し、<xref:System.ServiceModel.Channels.IChannelListener> インターフェイスを実装するリスナー ファクトリとそれに関連するリスナーは、サービスとの通信を開始するためのチャネルの受け入れに使用するメカニズムを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetProperty&lt;T&gt; () where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!T GetProperty&lt;class T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IChannelFactory.GetProperty``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">メソッドが照会している、型指定されたオブジェクト。</typeparam>
+        <summary>チャネル スタックの適切な層から、要求のあった型指定されたオブジェクト (ある場合) を返します。</summary>
+        <returns>要求される型指定されたオブジェクト <paramref name="T" /> がある場合は、そのオブジェクト。ない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これを使用して、チャネル スタックの適切な層のプロパティの設定、ステータスの取得を行うために、インターフェイスなどの型指定されたオブジェクトを要求します。 その層が要求されたオブジェクトを返せる場合は、オブジェクトを返します。 それ以外の場合は、スタック内の次の層に呼び出しを代行させます。 スタックの最下位に達しても要求されたオブジェクトをサポートするチャネル層がない場合、メソッドは、`null` を返します。  
+  
+ チャネル ファクトリを実装するときには常に、<xref:System.ServiceModel.Channels.IChannelFactory.GetProperty%2A> を実装する必要があります。 <xref:System.ServiceModel.Channels.IChannelFactory.GetProperty%2A> は、下位にあるチャネル ファクトリについて、またはクエリを実行する関心のある上位チャネル ファクトリについて認識していない場合でも、チャネル ファクトリ スタックを利用して情報を伝達できる優れた方法です。 興味のある情報を照会するためのインターフェイスが定義されています。 <xref:System.ServiceModel.Channels.IChannelFactory.GetProperty%2A> の型引数がわからない場合はいつでも、スタック内の次のチャネル ファクトリに代行させます。そのスタックの一番下に新しいトランスポート チャネルを作成している場合は、`null` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

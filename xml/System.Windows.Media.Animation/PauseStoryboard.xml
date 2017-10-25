@@ -1,0 +1,48 @@
+<Type Name="PauseStoryboard" FullName="System.Windows.Media.Animation.PauseStoryboard">
+  <TypeSignature Language="C#" Value="public sealed class PauseStoryboard : System.Windows.Media.Animation.ControllableStoryboardAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PauseStoryboard extends System.Windows.Media.Animation.ControllableStoryboardAction" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.PauseStoryboard" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.ControllableStoryboardAction</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一時停止するトリガー アクション、<see cref="T:System.Windows.Media.Animation.Storyboard" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.PauseStoryboard>で、<xref:System.Windows.EventTrigger>または<xref:System.Windows.Trigger>をストーリー ボードを一時停止します。  
+  
+ <xref:System.Windows.Media.Animation.PauseStoryboard>のみに影響を与える、<xref:System.Windows.Media.Animation.Storyboard>がアクティブである場合 (後、<xref:System.Windows.Media.Animation.Storyboard>開始)。  
+  
+ コントロールに、 <xref:System.Windows.Media.Animation.Storyboard>、<xref:System.Windows.Media.Animation.PauseStoryboard>参照する必要があります、<xref:System.Windows.Media.Animation.BeginStoryboard.Name%2A>の<xref:System.Windows.Media.Animation.BeginStoryboard>を制御する<xref:System.Windows.Media.Animation.Storyboard>です。 参照してください[する方法: イベント トリガーを使用して、ストーリー ボードの後に開始を制御する](~/docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)例についてはします。  
+  
+## <a name="beginning-a-paused-animation"></a>一時停止したアニメーションの開始  
+ ときに、<xref:System.Windows.Media.Animation.BeginStoryboard>が一時停止した後、アクションがトリガーされた、再開、および再起動に表示されます。 実際には発生しません、ただし:<xref:System.Windows.Media.Animation.BeginStoryboard>アクション実際に一時停止されていないバージョンです。 毎回、<xref:System.Windows.Media.Animation.BeginStoryboard>アクションがトリガーされる、そのストーリー ボードに対してクロック オブジェクトを作成します。 これらのクロックは、アニメーション化するプロパティに分散されます。 ときに、<xref:System.Windows.Media.Animation.BeginStoryboard>がトリガーされる、もう一度その時計を再起動しない、新しいクロックをそれらに置き換えます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PauseStoryboard ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.PauseStoryboard.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.PauseStoryboard" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

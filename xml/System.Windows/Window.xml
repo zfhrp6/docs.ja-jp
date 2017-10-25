@@ -1,0 +1,2299 @@
+<Type Name="Window" FullName="System.Windows.Window">
+  <TypeSignature Language="C#" Value="public class Window : System.Windows.Controls.ContentControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Window extends System.Windows.Controls.ContentControl" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Window" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.ContentControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Ignore)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>作成、構成、表示、およびウィンドウとダイアログ ボックスの有効期間を管理する機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーとスタンドアロンのアプリケーション間の相互作用のポイントは、ウィンドウです。 A[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]ウィンドウは、2 つの領域で構成されます。  
+  
+-   アイコン、タイトル、システム メニューの windows の表示要素をホストする非クライアント領域は、最小化ボタン、ボタン、[復元] ボタン、閉じるボタン、および罫線を最大化します。  
+  
+-   アプリケーション固有のコンテンツをホストしているクライアント領域。  
+  
+ 次の図に、標準的なウィンドウが表示されます。  
+  
+ ![ウィンドウ要素](~/add/media/windowoverviewfigure1.PNG "ウィンドウ要素")  
+  
+ <xref:System.Windows.Window>作成、構成、表示、およびウィンドウおよびダイアログ ボックスの両方の有効期間を管理する機能をカプセル化し、次のキーのサービスを提供します。  
+  
+ **継続時間管理**: <xref:System.Windows.Window.Activate%2A>、 <xref:System.Windows.Window.Activated>、 <xref:System.Windows.Window.Close%2A>、 <xref:System.Windows.Window.Closed>、 <xref:System.Windows.Window.Closing>、 <xref:System.Windows.Window.Deactivated>、 <xref:System.Windows.Window.Hide%2A>、 <xref:System.Windows.Window.IsActive%2A>、 <xref:System.Windows.Window.Show%2A>、<xref:System.Windows.Window.SourceInitialized>です。  
+  
+ **ウィンドウ管理**: <xref:System.Windows.Window.GetWindow%2A>、 <xref:System.Windows.Window.OwnedWindows%2A>、<xref:System.Windows.Window.Owner%2A>です。  
+  
+ **Appearance and Behavior**: <xref:System.Windows.Window.AllowsTransparency%2A>, <xref:System.Windows.Window.ContentRendered>, <xref:System.Windows.Window.DragMove%2A>, <xref:System.Windows.Window.Icon%2A>, <xref:System.Windows.Window.Left%2A>, <xref:System.Windows.Window.LocationChanged>, <xref:System.Windows.Window.ResizeMode%2A>, <xref:System.Windows.Window.RestoreBounds%2A>, <xref:System.Windows.Window.ShowActivated%2A>, <xref:System.Windows.Window.ShowInTaskbar%2A>, <xref:System.Windows.Window.SizeToContent%2A>, <xref:System.Windows.Window.StateChanged>, <xref:System.Windows.Window.Title%2A>, <xref:System.Windows.Window.Top%2A>, <xref:System.Windows.Window.Topmost%2A>, <xref:System.Windows.Window.WindowStartupLocation%2A>, <xref:System.Windows.Window.WindowState%2A>,<xref:System.Windows.Window.WindowStyle%2A>  
+  
+ **ダイアログ ボックス**: <xref:System.Windows.Window.DialogResult%2A>、<xref:System.Windows.Window.ShowDialog%2A>です。  
+  
+ さらに、<xref:System.Windows.Application>のすべてのアプリケーションでウィンドウを管理するための特別なサポートが公開します。  
+  
+-   アプリケーションでは、アプリケーションで現在インスタンス化されるすべてのウィンドウの一覧を保持します。 この一覧がによって公開されている、<xref:System.Windows.Application.Windows%2A>プロパティです。  
+  
+-   既定では、<xref:System.Windows.Application.MainWindow%2A>最初への参照で自動的に設定されている<xref:System.Windows.Window>がアプリケーションでインスタンス化します。 そのため、このウィンドウ アプリケーションのメイン ウィンドウです。  
+  
+ A<xref:System.Windows.Window>マークアップ、マークアップと分離コード、またはコードを使用して実装することができます。  
+  
+ <xref:System.Windows.Window>windows およびスタンドアロン アプリケーションのダイアログ ボックスを表示する、主に使用します。 ただし、レベル、ウィンドウ、ウィザードなどのナビゲーションを必要とするアプリケーションを使用できます<xref:System.Windows.Navigation.NavigationWindow>代わりにします。<xref:System.Windows.Navigation.NavigationWindow>から派生した<xref:System.Windows.Window>およびブラウザー スタイルのナビゲーションのサポートを拡張します。  
+  
+> [!NOTE]
+>  使用して他のコンテンツおよびコンテンツのコンテナーにナビゲート可能なコンテンツのアイランドを組み込むことが<xref:System.Windows.Controls.Frame>です。  
+  
+ <xref:System.Windows.Window>必要な`UnmanagedCode`インスタンス化するセキュリティのアクセス許可。 これは、次のような影響があります。  
+  
+-   [!INCLUDE[TLA#tla_clickonce](~/includes/tlasharptla-clickonce-md.md)]-展開されたスタンドアロンのアプリケーションは、インターネットまたはローカル イントラネット ゾーンから起動されたときに、アクセス許可の昇格を要求します。  
+  
+-   [!INCLUDE[TLA2#tla_xbap#plural](~/includes/tla2sharptla-xbapsharpplural-md.md)]何も依頼未満の完全なアクセス許可では、ウィンドウやダイアログ ボックスのインスタンスを作成できません。  
+  
+ スタンドアロン アプリケーションの配置とセキュリティの考慮事項については、次を参照してください。 [WPF のセキュリティ方針 - プラットフォーム セキュリティ](~/docs/framework/wpf/wpf-security-strategy-platform-security.md)です。  
+  
+ A<xref:System.Windows.Window>は、 <xref:System.Windows.Controls.ContentControl>、任意の型 (文字列、画像、パネルなど) の 1 つのオブジェクトに含めることを意味します。 詳細については、<xref:System.Windows.Controls.ContentControl> クラスを参照してください。 また、<xref:System.Windows.Window>はルート要素であり、そのため、別の要素のコンテンツの一部をすることはできません。  
+  
+> [!NOTE]
+>  <xref:System.Windows.FrameworkElement.Height%2A>、 <xref:System.Windows.FrameworkElement.Width%2A>、 <xref:System.Windows.Window.Top%2A>、および<xref:System.Windows.Window.Left%2A>に設定されたプロパティ、<xref:System.Windows.Window>スタイルでは適用されません実行時にします。  
+  
+## <a name="customizing-the-window-control"></a>ウィンドウ コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Window>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Window>を参照してください[ウィンドウ スタイルとテンプレート](~/docs/framework/wpf/controls/window-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Window>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、標準的なウィンドウのマークアップのみを使用して定義します。  
+  
+ [!code-xaml[WindowSnippets#WindowMARKUPONLY](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowSnippets/CSharp/MarkupOnlyWindow.xaml#windowmarkuponly)]  
+  
+ コードのみを使用して標準のウィンドウを定義する方法を次の例。  
+  
+ [!code-csharp[WindowSnippets#WindowCODEONLY](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowSnippets/CSharp/CodeOnlyWindow.cs#windowcodeonly)]
+ [!code-vb[WindowSnippets#WindowCODEONLY](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowSnippets/visualbasic/codeonlywindow.vb#windowcodeonly)]  
+  
+ 次の例は、標準的なウィンドウのマークアップと分離コードとの組み合わせを使用して定義します。  
+  
+ [!code-xaml[WindowSnippets#WindowXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowSnippets/CSharp/MainWindow.xaml#windowxaml)]  
+  
+ [!code-csharp[WindowSnippets#WindowCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowSnippets/CSharp/MainWindow.xaml.cs#windowcodebehind)]
+ [!code-vb[WindowSnippets#WindowCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowSnippets/visualbasic/mainwindow.xaml.vb#windowcodebehind)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Window ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Window" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、 <xref:System.Windows.FrameworkElement.Width%2A>、 <xref:System.Windows.FrameworkElement.Height%2A>、 <xref:System.Windows.Window.Top%2A>、および<xref:System.Windows.Window.Left%2A>プロパティの既定値に<xref:System.Windows.Window>値。  
+  
+ 内で、ウィンドウを作成する場合、<xref:System.AppDomain>を持つ、<xref:System.Windows.Application>オブジェクトのコンス トラクターを追加、<xref:System.Windows.Window>オブジェクトのセットを<xref:System.Windows.Application>-経由で windows を管理、<xref:System.Windows.Application.Windows%2A>のプロパティ、<xref:System.Windows.Application>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">安全でないネイティブ メソッドを呼び出すには、このオブジェクトのアクセスを許可します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate">
+      <MemberSignature Language="C#" Value="public bool Activate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Activate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.Activate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>前面に、ウィンドウを表示しようとしてアクティブ化します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Window" />が正常に有効になっているそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用されるものと同じウィンドウがアクティブかどうかを決定するルールは、 [!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)] `SetForegroundWindow`関数 (User32.dll)。  
+  
+ ウィンドウがアクティブ化する場合、[!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]ユーザーの前景色のアプリケーションではないアプリケーション<xref:System.Windows.Application.Activated>イベントが発生します。  
+  
+> [!NOTE]
+>  ウィンドウがブラウザーでホストされている場合、このメソッドを呼び出すことはできません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">ウィンドウをアクティブ化する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Activated">
+      <MemberSignature Language="C#" Value="public event EventHandler Activated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Activated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Window.Activated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウがフォアグラウンド ウィンドウになったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウィンドウがアクティブに (手前のウィンドウになります) とき。  
+  
+-   ウィンドウを最初に開きます。  
+  
+-   ユーザーは、alt キーを押しながら TAB キーを押す、マウスまたはタスク マネージャーからを選択して、ウィンドウに切り替わります。  
+  
+-   ユーザーは、ウィンドウのタスク バー ボタンをクリックします。  
+  
+ Windows ライセンス認証になることを検出する必要があるが処理できる、<xref:System.Windows.Window.Activated>イベント。  
+  
+ ウィンドウが初めてアクティブになった後に非アクティブ化し、その有効期間中に何度も再アクティブ化する可能性があります。 検査できる場合は、アプリケーションの動作または状態のアクティブ化状態に依存する<xref:System.Windows.Window.IsActive%2A>内にあるどのライセンス認証状態を判断します。  
+  
+ アプリケーションがすることもできます<xref:System.Windows.Application.Activated>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowsTransparency">
+      <MemberSignature Language="C#" Value="public bool AllowsTransparency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowsTransparency" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.AllowsTransparency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはウィンドウのクライアント領域が透明度をサポートするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ウィンドウは、透過性をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.Control.Background%2A>ウィンドウのプロパティが、透過的に設定を使用したカラー<xref:System.Windows.Media.Brushes.Transparent%2A>たとえば、ウィンドウの不透明なままです。 これは、デスクトップと、実行中のアプリケーション"beneath"、ウィンドウを表示できないことを意味します。 この種類の透過性を有効にする<xref:System.Windows.Window.AllowsTransparency%2A>に設定する必要があります`true`です。  
+  
+ <xref:System.Windows.Window.AllowsTransparency%2A>四角形以外の windows の作成を支援するが存在して、その結果、ときに<xref:System.Windows.Window.AllowsTransparency%2A>に設定されている`true`、ウィンドウの<xref:System.Windows.Window.WindowStyle%2A>プロパティに設定する必要があります<xref:System.Windows.WindowStyle.None>です。  
+  
+<a name="dependencyPropertyInfo_WindowAllowsTransparency"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.AllowsTransparencyProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">あるウィンドウ、<see cref="P:System.Windows.Window.WindowStyle" />の以外の任意の値<see cref="F:System.Windows.WindowStyle.None" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowsTransparencyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AllowsTransparencyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AllowsTransparencyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.AllowsTransparencyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.AllowsTransparency" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeBounds);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeBounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeBounds" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeBounds">A<see cref="T:System.Windows.Size" />ウィンドウが自体とその子を配置に使用する最終的なサイズを反映します。</param>
+        <summary>配置し、ウィンドウとその子要素のサイズをこのメソッドをオーバーライドします。</summary>
+        <returns>A<see cref="T:System.Windows.Size" />使用された実際のサイズを反映します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.ArrangeOverride%2A>ときに呼び出されません、<xref:System.Windows.UIElement.Visibility%2A>プロパティの値を持つ<xref:System.Windows.Visibility.Collapsed>します。 場合の値、<xref:System.Windows.UIElement.Visibility%2A>プロパティが、<xref:System.Windows.Visibility.Hidden>または<xref:System.Windows.Visibility.Visible>、<xref:System.Windows.Window.ArrangeOverride%2A>と呼びます。  
+  
+> [!NOTE]
+>  ときに、<xref:System.Windows.Window.Show%2A>または<xref:System.Windows.Window.ShowDialog%2A>が呼び出される、<xref:System.Windows.UIElement.Visibility%2A>のプロパティ、<xref:System.Windows.Window>に設定されている<xref:System.Windows.Visibility.Visible>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>手動で閉じる、<see cref="T:System.Windows.Window" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Window>のいくつかは、1 つを使用して閉じることがよく知られている、システム指定のメカニズムがそのなど、タイトル バーにあります。  
+  
+-   ALT キーを押しながら F4 キー。  
+  
+-   システム メニュー & #124 です。**Close**.  
+  
+-   **閉じる**ボタンをクリックします。  
+  
+ A<xref:System.Windows.Window>開発者から提供されているクライアント領域内のいくつかのよく知られたメカニズムのいずれかを使用して終了することもできます。  
+  
+-   **ファイル**& #124 です。**終了**メイン ウィンドウにします。  
+  
+-   **ファイル**& #124 です。**閉じる**または**閉じる**子ウィンドウのボタンをクリックします。  
+  
+> [!NOTE]
+>  **Ok**と**キャンセル** ダイアログ ボックスのボタンのでは開発者が提供したもが可能性は<xref:System.Windows.Window.DialogResult%2A>、呼び出すことによって開かれたウィンドウを自動的に終了する<xref:System.Windows.Window.ShowDialog%2A>です。  
+  
+ これらのメカニズムを必要とすると、明示的に呼び出す<xref:System.Windows.Window.Close%2A>ウィンドウを閉じます。  
+  
+> [!NOTE]
+>  呼び出して、ウィンドウが開かれている場合<xref:System.Windows.Window.ShowDialog%2A>を使用して、<xref:System.Windows.Controls.Button>でその<xref:System.Windows.Controls.Button.IsCancel%2A>ボタンをクリックするか、または esc キーが押されたときにプロパティが true に設定を自動的に閉じます。 使用して、ウィンドウが開かれた場合<xref:System.Windows.Window.Show%2A>、ただし、<xref:System.Windows.Window.Close%2A>からなどの明示的に呼び出す必要があります<xref:System.Windows.Controls.Primitives.ButtonBase.Click>のイベント ハンドラー、<xref:System.Windows.Controls.Button>です。  
+  
+ ウィンドウを閉じると、<xref:System.Windows.Window.Closing>イベントが発生します。 場合、<xref:System.Windows.Window.Closing>次のように、イベントがキャンセルされていません。  
+  
+-   <xref:System.Windows.Window>から削除<xref:System.Windows.Application.Windows%2A?displayProperty=nameWithType>(場合、<xref:System.Windows.Application>オブジェクトが存在する)。  
+  
+-   <xref:System.Windows.Window>所有者から削除されます<xref:System.Windows.Window>/所有した所有者のリレーションシップが確立された場合、所有する前に<xref:System.Windows.Window>が表示されたと所有者後<xref:System.Windows.Window>が開かれました。  
+  
+-   <xref:System.Windows.Window.Closed> イベントが発生します。  
+  
+-   アンマネージ リソースによって作成された、<xref:System.Windows.Window>に破棄されます。  
+  
+-   場合<xref:System.Windows.Window.ShowDialog%2A>表示に対して呼び出された、 <xref:System.Windows.Window>、<xref:System.Windows.Window.ShowDialog%2A>を返します。  
+  
+ 閉じる、<xref:System.Windows.Window>閉じなければを所有している任意の windows が発生します。 さらに、終了、<xref:System.Windows.Window>方法に応じて実行を停止するアプリケーションが発生する可能性があります<xref:System.Windows.Application.ShutdownMode%2A?displayProperty=nameWithType>プロパティを設定します。  
+  
+> [!NOTE]
+>  ウィンドウがブラウザーでホストされている場合、このメソッドを呼び出すことはできません。  
+  
+   
+  
+## Examples  
+ 次の例は、**ファイル**& #124 です。**終了**を明示的に呼び出す処理されているメニュー<xref:System.Windows.Window.Close%2A>です。  
+  
+ [!code-xaml[WindowCloseSnippets#WindowCloseXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowCloseSnippets/CSharp/MainWindow.xaml#windowclosexaml)]  
+  
+ [!code-csharp[WindowCloseSnippets#WindowCloseCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowCloseSnippets/CSharp/MainWindow.xaml.cs#windowclosecodebehind)]
+ [!code-vb[WindowCloseSnippets#WindowCloseCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowCloseSnippets/visualbasic/mainwindow.xaml.vb#windowclosecodebehind)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">すべての windows とユーザー入力イベントを制限なく使用する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Closed">
+      <MemberSignature Language="C#" Value="public event EventHandler Closed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Closed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Window.Closed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウが閉じる直前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントが発生した後、ウィンドウを閉じるを防ぐことはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.UIElement.Visibility" />設定すると、または<see cref="M:System.Windows.Window.Show" />、 <see cref="M:System.Windows.Window.ShowDialog" />、または<see cref="M:System.Windows.Window.Hide" />ウィンドウを閉じて中に呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Closing">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.CancelEventHandler Closing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CancelEventHandler Closing" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Window.Closing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.CancelEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>直接の後に発生<see cref="M:System.Windows.Window.Close" />が呼び出され、処理することで、ウィンドウのクロージャをキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.Closing>ウィンドウが閉じられるときを検出するために処理することができます (たとえば、<xref:System.Windows.Window.Close%2A>と呼びます)。 さらに、<xref:System.Windows.Window.Closing>ウィンドウが終了されないようにするために使用できます。 ウィンドウの終了を回避するのに設定することができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.ComponentModel.CancelEventArgs>引数`true`です。  
+  
+ <xref:System.Windows.Window.Closing>イベントが発生したときに<xref:System.Windows.Window.Close%2A>と呼ばれる場合は、ウィンドウの閉じるボタンがクリックされた場合、または alt キーを押しながら f4 キーを押す場合。  
+  
+ ウィンドウでその所有者によって所有されているウィンドウが開かれたかどうか<xref:System.Windows.Window.Show%2A>、および所有者は、ウィンドウが閉じられる、所有されているウィンドウの<xref:System.Windows.Window.Closing>イベントは発生しません。 ウィンドウの所有者が閉じている場合 (を参照してください<xref:System.Windows.Window.Owner%2A>)、<xref:System.Windows.Window.Closing>所有されるウィンドウでは発生しません。  
+  
+ 場合<xref:System.Windows.Application.Shutdown%2A>が呼び出されたが、<xref:System.Windows.Window.Closing>各ウィンドウのイベントが発生します。 ただし場合、<xref:System.Windows.Window.Closing>が取り消されると、キャンセルが無視されます。  
+  
+ 場合は、ユーザーがログオフまたはシャット ダウンするため、セッションが終了<xref:System.Windows.Window.Closing>は発生しません。 処理<xref:System.Windows.Application.SessionEnding>アプリケーションのクロージャをキャンセルするコードを実装します。  
+  
+ 表示し、アプリケーションの有効期間中に複数回ウィンドウを非表示にして、ウィンドウのたびに再インスタンス化したくない場合は、これを表示する、処理することができます、<xref:System.Windows.Window.Closing>イベント、キャンセルするか、および呼び出し、<xref:System.Windows.Window.Hide%2A>メソッドです。 その後、呼び出すことができます<xref:System.Windows.Window.Show%2A>それを再度開くには、同じインスタンスでします。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Window>ユーザーの介入を閉じる必要があるかどうかを決定します。  
+  
+ [!code-xaml[WindowClosingSnippets#WindowClosingXAML1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml#windowclosingxaml1)]  
+[!code-xaml[WindowClosingSnippets#WindowClosingXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml#windowclosingxaml2)]  
+  
+ [!code-csharp[WindowClosingSnippets#WindowClosingCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml.cs#windowclosingcodebehind1)]
+ [!code-vb[WindowClosingSnippets#WindowClosingCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowClosingSnippets/visualbasic/datawindow.xaml.vb#windowclosingcodebehind1)]  
+[!code-csharp[WindowClosingSnippets#WindowClosingCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml.cs#windowclosingcodebehind2)]
+[!code-vb[WindowClosingSnippets#WindowClosingCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowClosingSnippets/visualbasic/datawindow.xaml.vb#windowclosingcodebehind2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.UIElement.Visibility" />設定すると、または<see cref="M:System.Windows.Window.Show" />、 <see cref="M:System.Windows.Window.ShowDialog" />、または<see cref="M:System.Windows.Window.Close" />ウィンドウを閉じて中に呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentRendered">
+      <MemberSignature Language="C#" Value="public event EventHandler ContentRendered;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ContentRendered" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Window.ContentRendered" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウのコンテンツがレンダリングされた後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツ ウィンドウがない場合は、このイベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deactivated">
+      <MemberSignature Language="C#" Value="public event EventHandler Deactivated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Deactivated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Window.Deactivated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウが背景ウィンドウになったときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウィンドウが非アクティブ化 (バック グラウンド ウィンドウになります) とき。  
+  
+-   ユーザーは、現在のアプリケーションの別のウィンドウに切り替わります。  
+  
+-   ユーザーは、ALT + TAB キーを使用して、またはタスク マネージャーを使用して、別のアプリケーションでのウィンドウに切り替えます。  
+  
+-   ユーザーは、別のアプリケーションでのウィンドウのタスク バー ボタンをクリックします。  
+  
+ 処理することにより、非アクティブになることを検出する必要がある Windows、<xref:System.Windows.Window.Deactivated>イベント。  
+  
+ ウィンドウが非アクティブ化された後最初を再アクティブ化し、その有効期間中に何度も非アクティブ化することがあります。 検査できる場合は、アプリケーションの動作または状態のアクティブ化状態に依存する<xref:System.Windows.Window.IsActive%2A>内にあるどのライセンス認証状態を判断します。  
+  
+ アプリケーションがすることもできます<xref:System.Windows.Application.Deactivated>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DialogResult">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; DialogResult { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; DialogResult" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.DialogResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.DialogResultConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返される値は、ダイアログの結果の値の設定を取得または、<see cref="M:System.Windows.Window.ShowDialog" />メソッドです。</summary>
+        <value>A<see cref="T:System.Nullable`1" />型の値<see cref="T:System.Boolean" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.DialogResult%2A>ユーザーが受け入れるかどうかを確認するダイアログ ボックスを表示するコードから使用できます (`true`)、またはキャンセルされた (`false`) ダイアログ ボックス。 ダイアログ ボックスが受け入れられた場合は、ユーザーによって収集されたデータを取得し、それを処理するダイアログ ボックスを開いたコードにこのことを示します。 ダイアログ ボックスが取り消された場合ただし、このことを示しますコードの呼び出しを停止する、さらに処理します。  
+  
+ 既定では、ユーザーが実行すると、次のいずれかのダイアログ ボックスが取り消されました。  
+  
+-   PressesALT ながら f4 キー。  
+  
+-   クリックする、**閉じる**ボタンをクリックします。  
+  
+-   選択**閉じる**システム メニューからです。  
+  
+ このような場合は、のすべてのページで<xref:System.Windows.Window.DialogResult%2A>は`false`既定です。  
+  
+ ダイアログ ボックスは、通常、ボタンは、ダイアログ ボックスをキャンセルする特殊なボタンを提供します。 が<xref:System.Windows.Controls.Button.IsCancel%2A>プロパティがに設定されている`true`です。 このように構成されているボタンが押されたか、または ESC キーが押されたときにウィンドウは自動的に閉じる。 このような場合は、のいずれかで<xref:System.Windows.Window.DialogResult%2A>まま`false`です。  
+  
+ ダイアログ ボックスも通常のボタン、[accept] ボタンを提供しますが<xref:System.Windows.Controls.Button.IsDefault%2A>プロパティに設定されている`true`です。 このように構成されているボタンを発生させるその<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベントか、ENTER キーが押されたときにします。 ただし、ダイアログ ボックスに自動的に閉じないも設定されます<xref:System.Windows.Window.DialogResult%2A>に`true`です。 このコードは、通常からする必要があります、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>既定のボタンのイベント ハンドラー。  
+  
+ <xref:System.Windows.Window.DialogResult%2A>`null`  ダイアログ ボックスが表示されている場合、承認済みでも処理が取り消されました。  
+  
+ によって返される値からダイアログの結果を取得するには、ダイアログ ボックスを閉じた後<xref:System.Windows.Window.ShowDialog%2A>メソッド、またはを調べることによって、<xref:System.Windows.Window.DialogResult%2A>プロパティです。  
+  
+ <xref:System.Windows.Window.DialogResult%2A>ときのみ設定可能、<xref:System.Windows.Window>を呼び出すことによって開くその<xref:System.Windows.Window.ShowDialog%2A>メソッドです。  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティを取得できません。  
+  
+   
+  
+## Examples  
+ 次の例は、[ok] ボタンと [キャンセル] ボタンを返す、適切なを構成する方法を示しています。<xref:System.Windows.Window.DialogResult%2A>です。  
+  
+ [!code-xaml[WindowDialogResultSnippets#WindowDialogResultXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowDialogResultSnippets/CSharp/DialogBox.xaml#windowdialogresultxaml)]  
+  
+ [!code-csharp[WindowDialogResultSnippets#WindowDialogResultCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowDialogResultSnippets/CSharp/DialogBox.xaml.cs#windowdialogresultcodebehind)]
+ [!code-vb[WindowDialogResultSnippets#WindowDialogResultCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowDialogResultSnippets/visualbasic/dialogbox.xaml.vb#windowdialogresultcodebehind)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Windows.Window.DialogResult" />呼び出して、ウィンドウが開かれる前に設定されている<see cref="M:System.Windows.Window.ShowDialog" />です。  
+  
+ または  
+  
+ <see cref="P:System.Windows.Window.DialogResult" />呼び出しによって開かれたウィンドウで設定されている<see cref="M:System.Windows.Window.Show" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DpiChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.DpiChangedEventHandler DpiChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.DpiChangedEventHandler DpiChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Window.DpiChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DpiChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Window が表示されている画面の DPI が変更されたあとに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DpiChangedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent DpiChangedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent DpiChangedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.DpiChangedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>画面 Window の DPI が変更中であるときの <see cref="T:System.Windows.RoutedEvent" />。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragMove">
+      <MemberSignature Language="C#" Value="public void DragMove ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DragMove() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.DragMove" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ウィンドウのクライアント領域の表示部分の左ボタンをマウスでドラッグされるウィンドウを使用できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウスの左ボタンがダウンする必要があります<xref:System.Windows.Window.DragMove%2A>と呼びます。 マウスの左ボタンが押されたときを検出する方法の 1 つは処理する、<xref:System.Windows.UIElement.MouseLeftButtonDown>イベント。  
+  
+ ときに<xref:System.Windows.Window.DragMove%2A>が呼び出されると、左側のウィンドウのクライアント領域の表示部分でマウス ボタンが押される必要があります。  
+  
+> [!NOTE]
+>  ウィンドウがブラウザーでホストされている場合、このメソッドを呼び出すことはできません。  
+  
+   
+  
+## Examples  
+ 次の例は、オーバーライドする方法を示します<xref:System.Windows.UIElement.OnMouseLeftButtonDown%2A>を呼び出す<xref:System.Windows.Window.DragMove%2A>です。  
+  
+ [!code-csharp[WindowDragMoveSnippets#CallWindowDragMoveCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowDragMoveSnippets/CSharp/MainWindow.xaml.cs#callwindowdragmovecodebehind)]
+ [!code-vb[WindowDragMoveSnippets#CallWindowDragMoveCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowDragMoveSnippets/visualbasic/mainwindow.xaml.vb#callwindowdragmovecodebehind)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">マウスの左ボタンが押されていません。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">アクセス権をウィンドウをドラッグします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWindow">
+      <MemberSignature Language="C#" Value="public static System.Windows.Window GetWindow (System.Windows.DependencyObject dependencyObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Window GetWindow(class System.Windows.DependencyObject dependencyObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.GetWindow(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Window</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dependencyObject" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="dependencyObject">依存関係オブジェクト。</param>
+        <summary>参照を返します、<see cref="T:System.Windows.Window" />コンテンツに依存関係オブジェクトが存在するツリーをホストするオブジェクト。</summary>
+        <returns>A<see cref="T:System.Windows.Window" />ホスト ウィンドウへの参照。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dependencyObject" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Hide">
+      <MemberSignature Language="C#" Value="public void Hide ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Hide() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.Hide" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ウィンドウを非表示になります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非表示にされて、ときに、ウィンドウが閉じられていませんし、どちらも、<xref:System.Windows.Window.Closing>も<xref:System.Windows.Window.Closed>イベントが発生します。 代わりに、ウィンドウの<xref:System.Windows.UIElement.Visibility%2A>プロパティに設定されている<xref:System.Windows.Visibility?displayProperty=nameWithType>です。  
+  
+ ウィンドウを場合は、アプリケーションの<xref:System.Windows.Application.MainWindow%2A>およびアプリケーションの<xref:System.Windows.Application.ShutdownMode%2A>は<xref:System.Windows.ShutdownMode.OnMainWindowClose>アプリケーションはシャット ダウンしません。 同様に、アプリケーションはシャット ダウンしませんウィンドウのみ ウィンドウで、アプリケーションのシャット ダウン モード場合<xref:System.Windows.ShutdownMode.OnLastWindowClose>です。  
+  
+ 複数回、アプリケーションの有効期間中にウィンドウを非表示にしたりするたびに、ウィンドウの再インスタンス化したくない場合を表示する、処理することができます、<xref:System.Windows.Window.Closing>イベント、キャンセルするか、および呼び出し、<xref:System.Windows.Window.Hide%2A>メソッドです。 その後、呼び出すことができます<xref:System.Windows.Window.Show%2A>開き直す同じインスタンスにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Windows.Window.Hide" />ウィンドウを閉じている途中で呼び出されると (<see cref="E:System.Windows.Window.Closing" />) または閉じられて (<see cref="E:System.Windows.Window.Closed" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Icon">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.ImageSource Icon { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.ImageSource Icon" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.Icon" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.ImageSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはウィンドウのアイコンを設定します。</summary>
+        <value><see cref="T:System.Windows.Media.ImageSource" />アイコンを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]スタンドアロン アプリケーションでは、2 種類のアイコンがあります。  
+  
+-   1 つのアセンブリのアイコンを使用して指定されている、`<ApplicationIcon>`アプリケーションのプロジェクト内のプロパティは、ファイルをビルドします。 このアイコンは、アセンブリのデスクトップ アイコンとして使用されます。  
+  
+    > [!NOTE]
+    >  Visual Studio でのデバッグ時に、ホスト プロセスのため、アイコンが表示されません。 実行可能ファイルを実行する場合は、アイコンが表示されます。 詳細については、次を参照してください。[ホスト プロセス (vshost.exe)](http://msdn.microsoft.com/library/c6b9e2be-f18d-4d75-ac52-56d55784734b)です。  
+  
+-   1 つのアイコンを設定して指定されているウィンドウごと<xref:System.Windows.Window.Icon%2A>です。 各ウィンドウのタイトル バー、タスク バー ボタン、およびその ALT TAB アプリケーション選択リストのエントリにこのアイコンが使用されます。  
+  
+ A[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]ウィンドウには、常にアイコンが表示されます。 ときにいずれかの設定によって提供されていない<xref:System.Windows.Window.Icon%2A>、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]次のルールに基づいて表示するアイコンを選択します。  
+  
+1.  指定した場合は、アセンブリのアイコンを使用します。  
+  
+2.  アセンブリのアイコンが指定されていない場合は、既定値を使用して[!INCLUDE[TLA#tla_win](~/includes/tlasharptla-win-md.md)]アイコン。  
+  
+ 使用する場合<xref:System.Windows.Window.Icon%2A>カスタム ウィンドウ アイコンを指定するには、設定して既定のアプリケーション アイコンを戻すことができます<xref:System.Windows.Window.Icon%2A>に`null`です。  
+  
+ 1 つのアイコンは、さまざまな方法で使用できます[!INCLUDE[TLA#tla_mswin](~/includes/tlasharptla-mswin-md.md)]ALT + タブが選択リストをファイルなどのウィンドウで、ウィンドウのタスク バーのタイトル バーに表示されています。 これらの各サイズが異なりますを使用してアイコンが表示します。ALT + TAB ファイルの選択リストのサイズは 32 x 32 ピクセルのアイコンが表示されている間、ウィンドウのタイトル バーでは、タスク バーで、16 x 16 ピクセルのアイコンが表示されます。 一部のアプリケーションと同様に[!INCLUDE[TLA#tla_winexpl](~/includes/tlasharptla-winexpl-md.md)]、提供、**ビュー**メニューを表示するアイコンのサイズを選択することができます。  
+  
+ さまざまな画面サイズに対応する、アイコン ファイルが 1 つまたは複数の実際アイコンを使用して、それぞれが特定のサイズや色深度を対象とするアイコンのバージョンを表すので構成されます。 たとえば、1 つのアイコンのみがありますの 16 色は、1 つの 16 x 16 ピクセル アイコン、16 x 16 ピクセルと 16 色と 256 色の両方で 32 x 32 ピクセルのアイコンが含まれている可能性。  
+  
+ アイコン ファイル内のすべての使用可能なサイズと色深度を示すアイコンが存在する場合<xref:System.Windows.Window>該当するアイコンを使用します。 アイコン ファイルには、すべての可能なアイコンのサブセットのみが含まれている場合<xref:System.Windows.Window>サイズと色深度を減らすの順序で [次へ] の最適なアイコンを使用します。  
+  
+ 結果はアイコンが常にで使用される<xref:System.Windows.Window>に使用されるアイコンが必要なサイズや色深度を対象可能性がありますが、します。 たとえば、表示の場合、256 色で 32 x 32 ピクセルのアイコンとして 16 色の 16 x 16 ピクセルのアイコンを使用可能性があります。 これは保たれますなどの視覚効果が望ましくない可能性がありますのすべての対象のサイズと色深度を示すアイコンを作成することで回避することがあります。  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティを取得できません。  
+  
+<a name="dependencyPropertyInfo_WindowIcon"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.IconProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、ウィンドウのアイコンを設定する方法を示します。  
+  
+ [!code-xaml[WindowIconSnippets#WindowIconSetXAML](~/samples/snippets/xaml/VS_Snippets_Wpf/WindowIconSnippets/XAML/MainWindow.xaml#windowiconsetxaml)]  
+  
+ [!code-csharp[WindowIconSnippets#SetWindowIconInCode](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowIconSnippets/CSharp/MainWindow.xaml.cs#setwindowiconincode)]
+ [!code-vb[WindowIconSnippets#SetWindowIconInCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowIconSnippets/visualbasic/mainwindow.xaml.vb#setwindowiconincode)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">アイコンを設定する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IconProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IconProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IconProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.IconProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.Icon" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsActive">
+      <MemberSignature Language="C#" Value="public bool IsActive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsActive" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.IsActive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウがアクティブであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ウィンドウがアクティブである場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティブなウィンドウは、ユーザーの現在の前面のウィンドウで、フォーカスは、タイトル バーのアクティブな外観では表されます。 アクティブなウィンドウは明示的に設定されていないすべてのトップレベル ウィンドウの最上部にもなります、<xref:System.Windows.Window.Topmost%2A>プロパティです。  
+  
+<a name="dependencyPropertyInfo_WindowIsActive"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.IsActiveProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsActiveProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsActiveProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsActiveProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.IsActiveProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.IsActive" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public double Left { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Left" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Windows.LengthConverter, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデスクトップに関連して、ウィンドウの左端の位置を設定します。</summary>
+        <value>ウィンドウの位置の左端の論理単位 (1/96 インチ)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Window>が最大化または最小化、この値は、復元の左端のポイントを<xref:System.Windows.Window>です。  
+  
+ このプロパティは、スタイルを設定することはできません。  
+  
+ 値を指定しない場合<xref:System.Windows.Window.Left%2A>がシステムの既定値に設定します。 設定して、システムの既定値を指定することも<xref:System.Windows.Window.Left%2A>に<xref:System.Double.NaN>です。 どちらも<xref:System.Double.NegativeInfinity>も<xref:System.Double.PositiveInfinity>の有効な値は、<xref:System.Windows.Window.Left%2A>です。  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティを取得できません。  
+  
+<a name="dependencyPropertyInfo_WindowLeft"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.LeftProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LeftProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LeftProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LeftProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.LeftProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.Left" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocationChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler LocationChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler LocationChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Window.LocationChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウの位置が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウィンドウの場所を変更時にします。  
+  
+-   ユーザーは、ウィンドウのタイトル バーをドラッグして、ウィンドウを移動します。  
+  
+-   後に、ウィンドウを移動<xref:System.Windows.Window.DragMove%2A>と呼びます。  
+  
+-   いずれか、<xref:System.Windows.Window.Left%2A>または<xref:System.Windows.Window.Top%2A>プロパティをプログラムで設定します。  
+  
+-   **移動**ウィンドウのシステム メニューのメニュー項目を選択します。  
+  
+-   <xref:System.Windows.Window.WindowState%2A>プロパティを変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウの論理上の子要素の列挙子を取得します。</summary>
+        <value><see cref="T:System.Collections.IEnumerator" />ウィンドウの論理上の子要素です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size availableSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size availableSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="availableSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="availableSize">A<see cref="T:System.Windows.Size" />このウィンドウは、子を与えることができる利用可能なサイズを反映します。 無限大は、ウィンドウのサイズがどのようなコンテンツを使用することを示すために、値として指定できます。</param>
+        <summary>ウィンドウのサイズを測定するには、このメソッドをオーバーライドします。</summary>
+        <returns>A<see cref="T:System.Windows.Size" />このウィンドウは、子供のサイズの計算に基づくレイアウト中に必要なを決定するサイズを反映します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.MeasureOverride%2A>ときに呼び出されません、<xref:System.Windows.UIElement.Visibility%2A>プロパティの値を持つ<xref:System.Windows.Visibility.Collapsed>します。 場合の値、<xref:System.Windows.UIElement.Visibility%2A>プロパティが、<xref:System.Windows.Visibility.Hidden>または<xref:System.Windows.Visibility.Visible>、<xref:System.Windows.Window.MeasureOverride%2A>と呼びます。  
+  
+> [!NOTE]
+>  ときに、<xref:System.Windows.Window.Show%2A>または<xref:System.Windows.Window.ShowDialog%2A>が呼び出される、<xref:System.Windows.UIElement.Visibility%2A>のプロパティ、<xref:System.Windows.Window>に設定されている<xref:System.Windows.Visibility.Visible>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActivated">
+      <MemberSignature Language="C#" Value="protected virtual void OnActivated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActivated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnActivated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Window.Activated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.OnActivated%2A> は、<xref:System.Windows.Window.Activated> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Window>よりも優先<xref:System.Windows.Window.OnActivated%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Window.OnActivated%2A>基本クラスの場合は<xref:System.Windows.Window.Activated>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosed">
+      <MemberSignature Language="C#" Value="protected virtual void OnClosed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClosed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnClosed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Window.Closed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.OnClosed%2A> は、<xref:System.Windows.Window.Closed> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Window>よりも優先<xref:System.Windows.Window.OnClosed%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Window.OnClosed%2A>基本クラスの場合は<xref:System.Windows.Window.Closed>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosing">
+      <MemberSignature Language="C#" Value="protected virtual void OnClosing (System.ComponentModel.CancelEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClosing(class System.ComponentModel.CancelEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnClosing(System.ComponentModel.CancelEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.CancelEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.CancelEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Window.Closing" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.OnClosing%2A> は、<xref:System.Windows.Window.Closing> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Window>よりも優先<xref:System.Windows.Window.OnClosing%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Window.OnClosing%2A>基本クラスの場合は<xref:System.Windows.Window.Closing>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContentChanged">
+      <MemberSignature Language="C#" Value="protected override void OnContentChanged (object oldContent, object newContent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContentChanged(object oldContent, object newContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnContentChanged(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldContent" Type="System.Object" />
+        <Parameter Name="newContent" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="oldContent">古いコンテンツ ツリーのルートへの参照。</param>
+        <param name="newContent">新しいコンテンツ ツリーのルートへの参照。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.ContentControl.Content" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContentRendered">
+      <MemberSignature Language="C#" Value="protected virtual void OnContentRendered (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnContentRendered(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnContentRendered(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Window.ContentRendered" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.OnContentRendered%2A> は、<xref:System.Windows.Window.ContentRendered> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Window>よりも優先<xref:System.Windows.Window.OnContentRendered%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Window.OnContentRendered%2A>基本クラスの場合は<xref:System.Windows.Window.ContentRendered>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Windows.Automation.Peers.WindowAutomationPeer" />オブジェクトの<see cref="T:System.Windows.Window" />します。</summary>
+        <returns>A<see cref="T:System.Windows.Automation.Peers.WindowAutomationPeer" />オブジェクトの<see cref="T:System.Windows.Window" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.ContentElement.OnCreateAutomationPeer%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeactivated">
+      <MemberSignature Language="C#" Value="protected virtual void OnDeactivated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDeactivated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnDeactivated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Window.Deactivated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.OnDeactivated%2A> は、<xref:System.Windows.Window.Deactivated> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Window>よりも優先<xref:System.Windows.Window.OnDeactivated%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Window.OnDeactivated%2A>基本クラスの場合は<xref:System.Windows.Window.Deactivated>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDpiChanged">
+      <MemberSignature Language="C#" Value="protected override void OnDpiChanged (System.Windows.DpiScale oldDpi, System.Windows.DpiScale newDpi);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDpiChanged(valuetype System.Windows.DpiScale oldDpi, valuetype System.Windows.DpiScale newDpi) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnDpiChanged(System.Windows.DpiScale,System.Windows.DpiScale)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldDpi" Type="System.Windows.DpiScale" />
+        <Parameter Name="newDpi" Type="System.Windows.DpiScale" />
+      </Parameters>
+      <Docs>
+        <param name="oldDpi">設定前の DPI スケールします。</param>
+        <param name="newDpi">新規の DPI スケール設定。</param>
+        <summary>このウィンドウが表示される DPI が変更するときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLocationChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnLocationChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnLocationChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnLocationChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Window.LocationChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.OnLocationChanged%2A> は、<xref:System.Windows.Window.LocationChanged> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Window>よりも優先<xref:System.Windows.Window.OnLocationChanged%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Window.OnLocationChanged%2A>基本クラスの場合は<xref:System.Windows.Window.LocationChanged>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnManipulationBoundaryFeedback">
+      <MemberSignature Language="C#" Value="protected override void OnManipulationBoundaryFeedback (System.Windows.Input.ManipulationBoundaryFeedbackEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnManipulationBoundaryFeedback(class System.Windows.Input.ManipulationBoundaryFeedbackEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnManipulationBoundaryFeedback(System.Windows.Input.ManipulationBoundaryFeedbackEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.ManipulationBoundaryFeedbackEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>ときに呼び出されます、<see cref="E:System.Windows.UIElement.ManipulationBoundaryFeedback" />イベントが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、処理済みの状態は変更されません (、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティ) の<xref:System.Windows.UIElement.ManipulationBoundaryFeedback>イベント データ。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Window.OnManipulationBoundaryFeedback(System.Windows.Input.ManipulationBoundaryFeedbackEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Window.OnManipulationBoundaryFeedback(System.Windows.Input.ManipulationBoundaryFeedbackEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性がありますイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSourceInitialized">
+      <MemberSignature Language="C#" Value="protected virtual void OnSourceInitialized (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSourceInitialized(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnSourceInitialized(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Window.SourceInitialized" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.OnSourceInitialized%2A> は、<xref:System.Windows.Window.SourceInitialized> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Window>よりも優先<xref:System.Windows.Window.OnSourceInitialized%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Window.OnSourceInitialized%2A>基本クラスの場合は<xref:System.Windows.Window.SourceInitialized>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStateChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnStateChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStateChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnStateChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Window.StateChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.OnStateChanged%2A> は、<xref:System.Windows.Window.StateChanged> イベントを発生させます。  
+  
+ 派生する型<xref:System.Windows.Window>よりも優先<xref:System.Windows.Window.OnStateChanged%2A>です。 オーバーライドされたメソッドを呼び出す必要があります<xref:System.Windows.Window.OnStateChanged%2A>基本クラスの場合は<xref:System.Windows.Window.StateChanged>を発生させる必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnVisualParentChanged">
+      <MemberSignature Language="C#" Value="protected override sealed void OnVisualParentChanged (System.Windows.DependencyObject oldParent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnVisualParentChanged(class System.Windows.DependencyObject oldParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnVisualParentChanged(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldParent" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="oldParent">以前の親です。 場合は null に設定、<see cref="T:System.Windows.DependencyObject" />以前の親がありませんでした。</param>
+        <summary>ウィンドウの親が変更されたときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnedWindows">
+      <MemberSignature Language="C#" Value="public System.Windows.WindowCollection OwnedWindows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.WindowCollection OwnedWindows" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.OwnedWindows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WindowCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このウィンドウは、オーナー ウィンドウのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Windows.WindowCollection" />このウィンドウは、オーナー ウィンドウへの参照を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 所有されているウィンドウは 1 つ持つ<xref:System.Windows.Window.Owner%2A>プロパティは、オーナー ウィンドウと呼ばれる別のウィンドウへの参照。 列挙することができますをオーナー ウィンドウが所有するすべてのウィンドウを検索する<xref:System.Windows.WindowCollection>によって返される、<xref:System.Windows.Window.OwnedWindows%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、列挙する方法を示しています。<xref:System.Windows.Window.OwnedWindows%2A>です。  
+  
+ [!code-csharp[WindowOwnerOwnedWindowsSnippets#GetWindowOwnedWindowsCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/CSharp/MainWindow.xaml.cs#getwindowownedwindowscode)]
+ [!code-vb[WindowOwnerOwnedWindowsSnippets#GetWindowOwnedWindowsCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/visualbasic/mainwindow.xaml.vb#getwindowownedwindowscode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Windows.Window Owner { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Window Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Window</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Window" />を所有しているこの<see cref="T:System.Windows.Window" />です。</summary>
+        <value>A<see cref="T:System.Windows.Window" />これの所有者を表すオブジェクト<see cref="T:System.Windows.Window" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出して親ウィンドウによって子ウィンドウが開かれたときに<xref:System.Windows.Window.ShowDialog%2A>親と子の両方のウィンドウ間の暗黙的なリレーションシップが確立します。 このリレーションシップは、最小限に抑え、最大限に高めること、および復元するに関してなど、特定の動作を適用します。  
+  
+ 呼び出して親ウィンドウによって子ウィンドウが作成されたときに<xref:System.Windows.Window.Show%2A>、ただし、子ウィンドウには、親ウィンドウとの関係はありません。 これによって、次のことが起こります。  
+  
+-   子ウィンドウには、親ウィンドウへの参照がありません。  
+  
+-   子ウィンドウの動作は、親ウィンドウの動作に依存しません。いずれかのウィンドウは、その他を含めることができます。 または最小限に抑える、最大化し、他方とは無関係に復元します。  
+  
+ 子ウィンドウと、親ウィンドウの間のリレーションシップを作成できるようにする<xref:System.Windows.Window>所有権の概念をサポートします。 所有権が確立されるときに、<xref:System.Windows.Window.Owner%2A>ウィンドウ (所有しているウィンドウ) のプロパティは、別のウィンドウ (オーナー ウィンドウ) への参照で設定されます。  
+  
+ このリレーションシップが確立されると、次の動作が発生します。  
+  
+-   オーナー ウィンドウが最小化されている場合、所有されているすべての windows も最小化します。  
+  
+-   所有されているウィンドウを最小化されている場合、その所有者は最小化されません。  
+  
+-   オーナー ウィンドウを最大表示している場合は、オーナー ウィンドウと、所有されている windows の両方が復元されます。  
+  
+-   オーナー ウィンドウでは、所有されているウィンドウをカバーできることはありません。  
+  
+-   使用していない開いているウィンドウを所有している<xref:System.Windows.Window.ShowDialog%2A>モーダルではありません。 ユーザーは、オーナー ウィンドウと対話できることができます。  
+  
+-   オーナー ウィンドウを閉じると、所有されるウィンドウも閉じます。  
+  
+-   ウィンドウでその所有者によって所有されているウィンドウが開かれたかどうか<xref:System.Windows.Window.Show%2A>、および所有者は、ウィンドウが閉じられる、所有されているウィンドウの<xref:System.Windows.Window.Closing>イベントは発生しません。  
+  
+ 呼び出して子ウィンドウを開くと<xref:System.Windows.Window.ShowDialog%2A>も設定する必要があります、<xref:System.Windows.Window.Owner%2A>子ウィンドウのプロパティです。 ない場合は、ユーザーことはできません、タスク バー ボタンを押して子ウィンドウと親ウィンドウの両方を復元します。 タスク バー ボタンを押してして; を選択し、子と親の両方 ウィンドウなど、windows のリストを生成する代わりに、選択した期間のみが復元されます。  
+  
+> [!IMPORTANT]
+>  設定することも必要があります、<xref:System.Windows.Window.Owner%2A>プロパティを呼び出しているが開かれているウィンドウを<xref:System.Windows.Window.ShowDialog%2A>と動作が正しいことを確認します。  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティを取得できません。  
+  
+   
+  
+## Examples  
+ 次の例では、所有者/所有関係を確立する方法を示します。  
+  
+ [!code-csharp[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/CSharp/MainWindow.xaml.cs#setwindowownercode)]
+ [!code-vb[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/visualbasic/mainwindow.xaml.vb#setwindowownercode)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ウィンドウが、それ自体を所有しようとしています。  
+  
+ または  
+  
+ 2 つのウィンドウは、相互に所有しようとします。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Window.Owner" />表示可能なウィンドウを使用して表示に対してプロパティを設定<see cref="M:System.Windows.Window.ShowDialog" />  
+  
+ または  
+  
+ <see cref="P:System.Windows.Window.Owner" />が以前に表示されていないウィンドウとプロパティを設定します。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">すべての windows とユーザー入力イベントを制限なく使用する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ResizeMode">
+      <MemberSignature Language="C#" Value="public System.Windows.ResizeMode ResizeMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.ResizeMode ResizeMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.ResizeMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.ResizeMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサイズ変更モードを設定します。</summary>
+        <value>A<see cref="T:System.Windows.ResizeMode" />サイズ変更モードを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の 4 つのオプションがあります。  
+  
+-   **NoResize**です。 ユーザー、ウィンドウ サイズを変更することはできません。 最大化し、最小化ボタンは表示されません。  
+  
+-   **CanMinimize**です。 ユーザーは、ウィンドウを最小化され、タスク バーから復元することができますのみ。 [最小および最大化] ボックスは表示されますが、最小化ボックスのみが有効にします。  
+  
+-   **CanResize**です。 ユーザーは、ウィンドウの周囲の最小と最大化ボタン、およびドラッグ可能なアウトラインを使用して、ウィンドウのサイズを変更する全権限を持ちます。 [最小および最大化] ボックスが表示され、有効になっています。 (既定)。  
+  
+-   **CanResizeWithGrip**です。 このオプションと同じ機能には<xref:System.Windows.ResizeMode.CanResize>がウィンドウの右下隅に「サイズ変更グリップ」を追加します。  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティを取得できません。  
+  
+<a name="dependencyPropertyInfo_WindowResizeMode"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.ResizeModeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResizeModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ResizeModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ResizeModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.ResizeModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.ResizeMode" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RestoreBounds">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect RestoreBounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect RestoreBounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.RestoreBounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最小化されているまたは最大化する前に、ウィンドウの位置とサイズを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Rect" />を指定する、ウィンドウの位置とサイズになる前に最小化または最大化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 復元の四角形が最小化または最大化する前に、ウィンドウによって占有される領域です。 使用することができます<xref:System.Windows.Window.RestoreBounds%2A>をアプリケーションを閉じる前に、最後のサイズとウィンドウの位置を保存し、次回のため、ユーザーの状態にする方法をウィンドウを復元するアプリケーションの起動時にそれらの値を取得します。  
+  
+ クエリを実行する場合<xref:System.Windows.Window.RestoreBounds%2A>ウィンドウが表示する前に、または閉じられた後<xref:System.Windows.Rect.Empty%2A>が返されます。  
+  
+> [!NOTE]
+>  ウィンドウがブラウザーでホストされている場合は、このプロパティを取得することはできません。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Windows.Window.RestoreBounds%2A>およびウィンドウの位置とサイズは同じように、前回、ウィンドウが表示された場合と同様にストレージを分離します。  
+  
+ [!code-xaml[WindowRestoreBoundsSnippets#WindowRestoreBoundsXAML1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/CSharp/MainWindow.xaml#windowrestoreboundsxaml1)]  
+[!code-xaml[WindowRestoreBoundsSnippets#WindowRestoreBoundsXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/CSharp/MainWindow.xaml#windowrestoreboundsxaml2)]  
+  
+ [!code-csharp[WindowRestoreBoundsSnippets#WindowRestoreBoundsCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/CSharp/MainWindow.xaml.cs#windowrestoreboundscodebehind1)]
+ [!code-vb[WindowRestoreBoundsSnippets#WindowRestoreBoundsCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/visualbasic/mainwindow.xaml.vb#windowrestoreboundscodebehind1)]  
+[!code-csharp[WindowRestoreBoundsSnippets#WindowRestoreBoundsCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/CSharp/MainWindow.xaml.cs#windowrestoreboundscodebehind2)]
+[!code-vb[WindowRestoreBoundsSnippets#WindowRestoreBoundsCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/visualbasic/mainwindow.xaml.vb#windowrestoreboundscodebehind2)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">ウィンドウの位置とサイズを照会するアクセス許可の外接する四角形。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Show">
+      <MemberSignature Language="C#" Value="public void Show ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Show() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.Show" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ウィンドウを開き、新しく開かれたウィンドウを閉じるを待たずを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Window>クラスをインスタンス化は既定では表示されません。 <xref:System.Windows.Window.Show%2A>ウィンドウを表示し、終了するウィンドウを待たずにすぐを返します。 その結果、開かれたウィンドウは、アプリケーションの他のウィンドウとの対話ユーザーを妨げません。 この種類のウィンドウと呼ばれる、*モードレス*ウィンドウです。 モードレスの windows の一般的な例は、[プロパティ] ウィンドウ、ツールボックス、およびパレットです。 特定のウィンドウと対話するユーザーを制限するには、呼び出すことによって、ウィンドウを開いた<xref:System.Windows.Window.ShowDialog%2A>です。  
+  
+ 呼び出しによって開かれたウィンドウ<xref:System.Windows.Window.Show%2A>はそれを開いているウィンドウとのリレーションシップを自動的には具体的には、開かれたウィンドウが認識していないどのウィンドウを開くことです。 使用してこの関係を確立することができます、<xref:System.Windows.Window.Owner%2A>プロパティと管理を使用して、<xref:System.Windows.Window.OwnedWindows%2A>プロパティです。  
+  
+ 呼び出す<xref:System.Windows.Window.Show%2A>の設定と同じ結果を達成<xref:System.Windows.UIElement.Visibility%2A>のプロパティ、<xref:System.Windows.Window>オブジェクトを<xref:System.Windows.Visibility.Visible>です。 ただし、タイミングの観点から 2 つの差があります。  
+  
+ 呼び出す<xref:System.Windows.Window.Show%2A>にした場合のみを返す同期操作は、<xref:System.Windows.FrameworkElement.Loaded>子ウィンドウのイベントが発生しました。  
+  
+ [!code-csharp[WindowShowTimingSnippets#ShowSync](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowShowTimingSnippets/CSharp/Window1.xaml.cs#showsync)]
+ [!code-vb[WindowShowTimingSnippets#ShowSync](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowShowTimingSnippets/visualbasic/window1.xaml.vb#showsync)]  
+  
+ 設定<xref:System.Windows.UIElement.Visibility%2A>、ただし、非同期操作をすぐに返すには。  
+  
+ [!code-csharp[WindowShowTimingSnippets#ShowASync](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowShowTimingSnippets/CSharp/Window1.xaml.cs#showasync)]
+ [!code-vb[WindowShowTimingSnippets#ShowASync](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowShowTimingSnippets/visualbasic/window1.xaml.vb#showasync)]  
+  
+ 設定するときに<xref:System.Windows.UIElement.Visibility%2A>、ウィンドウのイベントを設定する前に登録する<xref:System.Windows.UIElement.Visibility%2A>は発生しません。 設定するメソッドが終了するまで<xref:System.Windows.UIElement.Visibility%2A>実行が完了しました。  
+  
+   
+  
+## Examples  
+ 次の例では、モードレス ウィンドウを開く方法を示します。  
+  
+ [!code-csharp[WindowShowSnippets#WindowShowCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowShowSnippets/CSharp/MainWindow.xaml.cs#windowshowcode)]
+ [!code-vb[WindowShowSnippets#WindowShowCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowShowSnippets/visualbasic/mainwindow.xaml.vb#windowshowcode)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Windows.Window.Show" />ウィンドウを閉じている途中で呼び出されると (<see cref="E:System.Windows.Window.Closing" />) または閉じられて (<see cref="E:System.Windows.Window.Closed" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowActivated">
+      <MemberSignature Language="C#" Value="public bool ShowActivated { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowActivated" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.ShowActivated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最初に表示されるときに、ウィンドウがアクティブにするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />最初に表示されたときにウィンドウがアクティブにする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときにウィンドウ、<xref:System.Windows.Window.ShowActivated%2A>プロパティに設定`false`が開くと、ウィンドウがアクティブでないと、その<xref:System.Windows.Window.Activated>イベントは、ユーザーが手動で選択して、ウィンドウを起動するまでは発生しません。 ウィンドウを選択すると、後にアクティブにし、通常を非アクティブ化します。  
+  
+ ウィンドウが開くときにアクティブ化されていることを防ぐため、<xref:System.Windows.Window.ShowActivated%2A>プロパティに設定する必要があります`false`ウィンドウが表示される前に (を呼び出して<xref:System.Windows.Window.Show%2A>) 以外の場合は設定<xref:System.Windows.Window.ShowActivated%2A>に`false`後、ウィンドウが表示される場合は、影響を与えません。  
+  
+ 設定<xref:System.Windows.Window.ShowActivated%2A>に`false`を呼び出して、モーダルで開かれているウィンドウの<xref:System.Windows.Window.ShowDialog%2A>、実際の影響を与えません。 モーダル ウィンドウは有効になりませんが、モーダル ウィンドウは、他のアプリケーションの開いている windows のライセンス認証をユーザーをできなくなります。  
+  
+<a name="dependencyPropertyInfo_WindowShowActivated"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.ShowActivatedProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、マークアップを使用してアクティブにすることがなく開かれるウィンドウを構成する方法を示します。  
+  
+ [!code-xaml[WindowShowActivatedSnippets#ShowUnactivatedMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowShowActivatedSnippets/CSharp/AWindow.xaml#showunactivatedmarkup1)]  
+  
+  
+ [!code-csharp[WindowShowActivatedSnippets#ShowUnactivatedCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowShowActivatedSnippets/CSharp/AWindow.xaml.cs#showunactivatedcodebehind)]
+ [!code-vb[WindowShowActivatedSnippets#ShowUnactivatedCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowShowActivatedSnippets/visualbasic/awindow.xaml.vb#showunactivatedcodebehind)]  
+  
+ 次の例では、コードを使用してアクティブ化されているが開かれるウィンドウを構成する方法を示します。  
+  
+ [!code-csharp[WindowShowActivatedSnippets#ShowUnactivatedWindowCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowShowActivatedSnippets/CSharp/Window1.xaml.cs#showunactivatedwindowcode)]
+ [!code-vb[WindowShowActivatedSnippets#ShowUnactivatedWindowCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowShowActivatedSnippets/visualbasic/window1.xaml.vb#showunactivatedwindowcode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowActivatedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowActivatedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowActivatedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.ShowActivatedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.ShowActivated" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDialog">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; ShowDialog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Nullable`1&lt;bool&gt; ShowDialog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Window.ShowDialog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ウィンドウを開き、新しく開かれたウィンドウが閉じられたときにのみを返します。</summary>
+        <returns>A<see cref="T:System.Nullable`1" />型の値<see cref="T:System.Boolean" />アクティビティが受け入れられましたかどうかを指定する (<see langword="true" />)、またはキャンセルされた (<see langword="false" />)。 戻り値は、の値、<see cref="P:System.Windows.Window.DialogResult" />プロパティ ウィンドウを閉じる前にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Window>クラスをインスタンス化は既定では表示されません。 <xref:System.Windows.Window.ShowDialog%2A>ウィンドウを示しています、アプリケーションでは、その他のすべての windows を無効にし、ウィンドウが閉じられたときにのみを返します。 この種類のウィンドウと呼ばれる、*モーダル*ウィンドウです。  
+  
+ モーダル ウィンドウは、ダイアログ ボックスとして、主に使用されます。 ダイアログ ボックスは、特殊な種類のアプリケーション ファイルを開く、またはドキュメントの印刷などのタスクを実行するユーザーとの対話に使用するウィンドウです。 ダイアログ ボックスを受け入れるか、ダイアログ ボックスを閉じる前に、表示されているタスクを取り消すことよくようにします。 <xref:System.Windows.Window.ShowDialog%2A>返します、 <xref:System.Nullable%601> <xref:System.Boolean>アクティビティが承認または取り消されたかどうかを指定する値。 戻り値は、の値、<xref:System.Windows.Window.DialogResult%2A>プロパティ ウィンドウを閉じる前にします。 詳細については、「<xref:System.Windows.Window.DialogResult%2A>」を参照してください。  
+  
+ 呼び出しによって開かれたウィンドウ、<xref:System.Windows.Window.ShowDialog%2A>メソッドでは、開いているウィンドウとのリレーションシップが自動的がありません。 具体的には、開かれたウィンドウが認識していないどのウィンドウを開くことです。 使用してこの関係を確立することができます、<xref:System.Windows.Window.Owner%2A>プロパティと管理を使用して、<xref:System.Windows.Window.OwnedWindows%2A>プロパティです。 サポートする[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]オートメーション (を参照してください[UI オートメーションの概要](~/docs/framework/ui-automation/ui-automation-overview.md))、<xref:System.Windows.Window.Owner%2A>呼び出しによって開いたウィンドウを設定する必要があります<xref:System.Windows.Window.ShowDialog%2A>です。  
+  
+ ときに、モーダル[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]ウィンドウ (を呼び出して、ウィンドウが開かれた<xref:System.Windows.Window.ShowDialog%2A>) が閉じている場合にアクティブだったウィンドウが再アクティブ化します。 場合、モーダル[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]ウィンドウがオーナー ウィンドウ (を参照してください<xref:System.Windows.Window.Owner%2A>)、オーナー ウィンドウが再アクティブ化したときに、モーダル[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]にアクティブだったウィンドウが場合を除いて、ウィンドウが閉じられます。  
+  
+> [!NOTE]
+>  ウィンドウがブラウザーでホストされている場合、このメソッドを呼び出すことはできません。  
+  
+   
+  
+## Examples  
+ 次の例では、モーダル ウィンドウを開く方法を示します。  
+  
+ [!code-csharp[WindowShowDialogSnippets#WindowShowDialogCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowShowDialogSnippets/CSharp/MainWindow.xaml.cs#windowshowdialogcode)]
+ [!code-vb[WindowShowDialogSnippets#WindowShowDialogCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowShowDialogSnippets/visualbasic/mainwindow.xaml.vb#windowshowdialogcode)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.Windows.Window.ShowDialog" />ウィンドウを閉じている途中で呼び出されると (<see cref="E:System.Windows.Window.Closing" />) または閉じられて (<see cref="E:System.Windows.Window.Closed" />)。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">ウィンドウをアクティブ化する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowInTaskbar">
+      <MemberSignature Language="C#" Value="public bool ShowInTaskbar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowInTaskbar" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.ShowInTaskbar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはウィンドウがタスク バー ボタンを持つかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、そのウィンドウがあるタスク バー ボタンです。それ以外の場合、<see langword="false" />です。 ウィンドウがブラウザーでホストされている場合に適用されません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Window.ShowInTaskbar%2A>に設定されている`true`ウィンドウは、alt キーを押しながら TAB アプリケーションの選択リストにも表示されます。  
+  
+ タスク バー ボタンと alt キーを押しながら TAB アプリケーションの選択リストの両方に使用されるアイコンがの値、<xref:System.Windows.Window.Icon%2A>プロパティです。  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティを取得できません。  
+  
+<a name="dependencyPropertyInfo_WindowShowInTaskbar"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.ShowInTaskbarProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowInTaskbarProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowInTaskbarProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowInTaskbarProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.ShowInTaskbarProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.ShowInTaskbar" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeToContent">
+      <MemberSignature Language="C#" Value="public System.Windows.SizeToContent SizeToContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.SizeToContent SizeToContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.SizeToContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.SizeToContent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウのサイズがコンテンツのサイズに合わせて自動的に調整されるかどうかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.SizeToContent" /> 値。 既定値は、<see cref="F:System.Windows.SizeToContent.Manual" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Window.SizeToContent%2A>に設定されている<xref:System.Windows.SizeToContent.WidthAndHeight>、いずれかの設定<xref:System.Windows.FrameworkElement.Height%2A>または<xref:System.Windows.FrameworkElement.Width%2A>は影響しませんが、両方のプロパティを設定することができます、以外の場合は、設定された値は、ウィンドウには適用されません。  
+  
+ ときに<xref:System.Windows.Window.SizeToContent%2A>に設定されている<xref:System.Windows.SizeToContent.Height>、設定<xref:System.Windows.FrameworkElement.Height%2A>ウィンドウの高さを変更することはできません。  
+  
+ ときに<xref:System.Windows.Window.SizeToContent%2A>に設定されている<xref:System.Windows.SizeToContent.Width>、設定<xref:System.Windows.FrameworkElement.Width%2A>ウィンドウの幅を変更することはできません。  
+  
+ 場合<xref:System.Windows.Window.SizeToContent%2A>以外の値を持つ<xref:System.Windows.SizeToContent.Manual>:  
+  
+-   <xref:System.Windows.Window.SizeToContent%2A>自動的に設定されている<xref:System.Windows.SizeToContent.Manual>場合は、ユーザーは、サイズ変更グリップを使用して、境界線をドラッグするかによって、ウィンドウをサイズ変更します。  
+  
+-   により、ウィンドウ自体のサイズを変更する方法でコンテンツのサイズが変更された場合は<xref:System.Windows.FrameworkElement.SizeChanged>が発生します。  
+  
+ ウィンドウが透過的な場合 (を参照してください<xref:System.Windows.Window.AllowsTransparency%2A>)、設定を考慮する必要があります<xref:System.Windows.Window.SizeToContent%2A>に<xref:System.Windows.SizeToContent.WidthAndHeight>ウィンドウが表示されているそのコンテンツを超えないことを確認します。  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティを取得できません。  
+  
+<a name="dependencyPropertyInfo_WindowSizeToContent"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.SizeToContentProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Window.SizeToContent%2A>コンテンツに合わせてウィンドウのサイズを変更する方法を指定するコード内のプロパティです。  
+  
+ [!code-csharp[HOWTOWindowManagementSnippets#SetWindowSizeToContentPropertyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/CSharp/MainWindow.xaml.cs#setwindowsizetocontentpropertycode)]
+ [!code-vb[HOWTOWindowManagementSnippets#SetWindowSizeToContentPropertyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/visualbasic/mainwindow.xaml.vb#setwindowsizetocontentpropertycode)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeToContentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SizeToContentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SizeToContentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.SizeToContentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.SizeToContent" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceInitialized">
+      <MemberSignature Language="C#" Value="public event EventHandler SourceInitialized;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SourceInitialized" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Window.SourceInitialized" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>相互運用をサポートするためにこのイベントは[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]します。 「<see cref="T:System.Windows.Interop.HwndSource" />」を参照してください。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StateChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler StateChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler StateChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Window.StateChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、ウィンドウの<see cref="P:System.Windows.Window.WindowState" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaskbarItemInfo">
+      <MemberSignature Language="C#" Value="public System.Windows.Shell.TaskbarItemInfo TaskbarItemInfo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Shell.TaskbarItemInfo TaskbarItemInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.TaskbarItemInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Shell.TaskbarItemInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[win7](~/includes/win7-md.md)]のタスク バーのサムネイル、<see cref="T:System.Windows.Window" />です。</summary>
+        <value>[!INCLUDE[win7](~/includes/win7-md.md)]のタスク バーのサムネイル、<see cref="T:System.Windows.Window" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する方法についての詳細、[!INCLUDE[win7](~/includes/win7-md.md)]タスク バーのサムネイルを参照してください、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaskbarItemInfoProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TaskbarItemInfoProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TaskbarItemInfoProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.TaskbarItemInfoProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.TaskbarItemInfo" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Title)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはウィンドウのタイトルを設定します。</summary>
+        <value>A<see cref="T:System.String" />ウィンドウのタイトルを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイトル、 <xref:System.Windows.Window>、 <xref:System.Windows.Navigation.NavigationWindow>、または[!INCLUDE[TLA#tla_iegeneric](~/includes/tlasharptla-iegeneric-md.md)]を使用して設定することも<xref:System.Windows.Controls.Page.WindowTitle%2A?displayProperty=nameWithType>します。  
+  
+<a name="dependencyPropertyInfo_WindowTitle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.TitleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TitleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TitleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.TitleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.Title" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="public double Top { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Top" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.Top" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Windows.LengthConverter, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデスクトップに関連して、ウィンドウの上端の位置を設定します。</summary>
+        <value>ウィンドウの最上位の論理単位 (1/96") 内の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Window>が最大化または最小化、この値は、復元の上端のポイントを<xref:System.Windows.Window>です。  
+  
+ このプロパティは、スタイルを設定することはできません。  
+  
+ 値を指定しない場合<xref:System.Windows.Window.Top%2A>がシステムの既定値に設定します。 設定して、システムの既定値を指定することも<xref:System.Windows.Window.Top%2A>に<xref:System.Double.NaN>です。 どちらも<xref:System.Double.NegativeInfinity>も<xref:System.Double.PositiveInfinity>の有効な値は、<xref:System.Windows.Window.Top%2A>です。  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティを取得できません。  
+  
+<a name="dependencyPropertyInfo_WindowTop"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.TopProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Topmost">
+      <MemberSignature Language="C#" Value="public bool Topmost { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Topmost" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.Topmost" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最上位の z オーダーでウィンドウが表示されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ウィンドウが最上位です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウィンドウが<xref:System.Windows.Window.Topmost%2A>プロパティに設定されている`true`すべてのウィンドウの上に表示される<xref:System.Windows.Window.Topmost%2A>プロパティに設定されます`false`です。  
+  
+ Windows のグループに<xref:System.Windows.Window.Topmost%2A>プロパティに設定されている`true`、現在アクティブになっているウィンドウが最上位ウィンドウです。 同様を持つ windows のグループに対して<xref:System.Windows.Window.Topmost%2A>プロパティに設定されている`false`です。  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティを取得できません。  
+  
+<a name="dependencyPropertyInfo_WindowTopmost"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.TopmostProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TopmostProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TopmostProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TopmostProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.TopmostProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.Topmost" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TopProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TopProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TopProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.TopProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.Top" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowStartupLocation">
+      <MemberSignature Language="C#" Value="public System.Windows.WindowStartupLocation WindowStartupLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.WindowStartupLocation WindowStartupLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.WindowStartupLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.WindowStartupLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最初に表示される場合は、ウィンドウの位置を設定します。</summary>
+        <value>A<see cref="T:System.Windows.WindowStartupLocation" />最初に表示されるときに、ウィンドウの左上の位置を示す値。 既定値は、<see cref="F:System.Windows.WindowStartupLocation.Manual" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定<xref:System.Windows.WindowStartupLocation>に<xref:System.Windows.WindowStartupLocation.Manual>によってをに従って配置するウィンドウの<xref:System.Windows.Window.Left%2A>と<xref:System.Windows.Window.Top%2A>プロパティの値。 どちらの場合、<xref:System.Windows.Window.Left%2A>または<xref:System.Windows.Window.Top%2A>プロパティが指定されていない、その値によって決まります[!INCLUDE[TLA2#tla_mswin](~/includes/tla2sharptla-mswin-md.md)]です。  
+  
+ 設定<xref:System.Windows.WindowStartupLocation.CenterScreen>によって、マウス カーソルを含む画面の中央に配置するウィンドウです。  
+  
+ 設定<xref:System.Windows.WindowStartupLocation>に<xref:System.Windows.WindowStartupLocation.CenterOwner>によって、オーナー ウィンドウの中央に配置するウィンドウ (を参照してください<xref:System.Windows.Window.Owner%2A>) 指定されて 場合。 オーナー ウィンドウには、別の WPF ウィンドウまたは非 WPF ウィンドウのいずれかを指定できます。  
+  
+> [!NOTE]
+>  非 WPF windows での WPF ウィンドウの詳細については、次を参照してください。 [WPF および Win32 の相互運用](~/docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)と<xref:System.Windows.Interop.WindowInteropHelper>です。  
+  
+ オーナー ウィンドウが指定されていないウィンドウの位置は同じ方法で決定されます。 として<xref:System.Windows.WindowStartupLocation>に設定されている<xref:System.Windows.WindowStartupLocation.Manual>です。  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティの値を取得できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowState">
+      <MemberSignature Language="C#" Value="public System.Windows.WindowState WindowState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.WindowState WindowState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.WindowState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WindowState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはウィンドウを復元、最小化、または最大化されているかどうかを示す値を設定します。</summary>
+        <value>A<see cref="T:System.Windows.WindowState" />ウィンドウを復元、最小化、または最大化されているかどうかを決定します。 既定値は<see cref="F:System.Windows.WindowState.Normal" />(復元)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ そのサイズと場所が格納されているウィンドウを最小化または最大化、前に<xref:System.Windows.Window.RestoreBounds%2A>です。 値を使用してそのサイズと場所の値が復元されたウィンドウが復旧し次第、その後、<xref:System.Windows.Window.RestoreBounds%2A>です。  
+  
+ ときに、<xref:System.Windows.Window.WindowState%2A>プロパティを変更すると、<xref:System.Windows.Window.StateChanged>が発生します。  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティを取得できません。  
+  
+<a name="dependencyPropertyInfo_WindowWindowState"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.WindowStateProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowStateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty WindowStateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty WindowStateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.WindowStateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.WindowState" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.WindowStyle WindowStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.WindowStyle WindowStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Window.WindowStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WindowStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはウィンドウの境界線スタイルを設定します。</summary>
+        <value>A<see cref="T:System.Windows.WindowStyle" />ウィンドウの境界線スタイルを指定します。 既定値は、<see cref="F:System.Windows.WindowStyle.SingleBorderWindow" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Window.WindowStyle%2A>いずれか、<xref:System.Windows.WindowStyle>列挙値を含む<xref:System.Windows.WindowStyle.None>、 <xref:System.Windows.WindowStyle.ToolWindow>、 <xref:System.Windows.WindowStyle.SingleBorderWindow> (既定)、および<xref:System.Windows.WindowStyle.ThreeDBorderWindow>です。  
+  
+ 次の図は、上ウィンドウ スタイルを示します[!INCLUDE[TLA#tla_longhorn](~/includes/tlasharptla-longhorn-md.md)](Windows Vista Aero テーマを有効になっている透明なガラス)。  
+  
+ ![ウィンドウ スタイル](~/add/media/windowoverviewfigure6.PNG "ウィンドウ スタイル")  
+  
+> [!NOTE]
+>  設定またはウィンドウがブラウザーでホストされている場合は、このプロパティを取得できません。  
+  
+<a name="dependencyPropertyInfo_WindowWindowStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Window.WindowStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty WindowStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty WindowStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Window.WindowStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Window.WindowStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

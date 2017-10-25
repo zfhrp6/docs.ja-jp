@@ -1,0 +1,142 @@
+<Type Name="DeclarativeCatalogPartDesigner" FullName="System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner">
+  <TypeSignature Language="C#" Value="public class DeclarativeCatalogPartDesigner : System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DeclarativeCatalogPartDesigner extends System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" /> コントロールのデザイン時サポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner>デザイン時サポートを提供<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロール。 その親クラスを拡張<xref:System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner>、特定のコントロールを追加することによって<xref:System.Web.UI.Design.TemplateGroup>を<xref:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner.TemplateGroups%2A>コレクション。 <xref:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner>関連付けられている表示できない<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>デザイン サーフェイス上のコントロールです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>関連付けられたコントロール、<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />は、<see langword="sealed" />クラスし、継承できません。 派生するのにはほとんどの値がない、したがって、<see cref="T:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner" />他のコントロールに適用するオーバーライドできないためです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DeclarativeCatalogPartDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのレンダリングを防ぐために、親メソッドをオーバーライドします。</summary>
+        <returns>空の文字列であるか、("") の値は<see cref="M:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner.GetEmptyDesignTimeHtml" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ある場合ありません<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart.WebPartsTemplate%2A>コントロールに関連付けられた、デザイナーは標準の灰色のボックスに、クラス名とコントロールのインスタンス名が表示されます。 それ以外の場合、デザイン時のレンダリングは発生しません チェック ボックスと Web パーツのタイトルがによって表示されるため、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>の代わりに、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>自体です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEmptyDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected override string GetEmptyDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetEmptyDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner.GetEmptyDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空のデザイン画面でコントロールを表すマークアップを取得します。</summary>
+        <returns>空のマークアップ文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、コントロールをクラス名とインスタンス名を示す灰色のボックスとして表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />デザイナーに関連付けられているコントロール。</param>
+        <summary>デザイナーに関連付けられたバインド<see cref="T:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart" />コントロールとセット、<see cref="F:System.Web.UI.Design.ViewFlags.TemplateEditing" />にフラグを表示<see langword="true" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateGroups">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.TemplateGroupCollection TemplateGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.TemplateGroupCollection TemplateGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner.TemplateGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>それぞれが 1 つまたは複数のテンプレート定義を含む、テンプレート グループのコレクションを取得します。</summary>
+        <value>追加された<see cref="T:System.Web.UI.Design.TemplateGroupCollection" />このクラスに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.WebParts.DeclarativeCatalogPartDesigner.TemplateGroups%2A>プロパティのオーバーライドの基本実装を追加する、<xref:System.Web.UI.Design.TemplateGroup>オブジェクトは、このクラスに固有です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

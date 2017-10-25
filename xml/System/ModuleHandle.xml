@@ -1,0 +1,696 @@
+<Type Name="ModuleHandle" FullName="System.ModuleHandle">
+  <TypeSignature Language="C#" Value="public struct ModuleHandle" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ModuleHandle extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.ModuleHandle" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>モジュールの実行時のハンドルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ModuleHandle.ResolveFieldHandle%2A>、 <xref:System.ModuleHandle.ResolveMethodHandle%2A>、および<xref:System.ModuleHandle.ResolveTypeHandle%2A>メソッドでは、フィールド、メソッド、および現在のモジュール内の型のランタイムのハンドルにメタデータ トークンの効率的な解決を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EmptyHandle">
+      <MemberSignature Language="C#" Value="public static readonly ModuleHandle EmptyHandle;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.ModuleHandle EmptyHandle" />
+      <MemberSignature Language="DocId" Value="F:System.ModuleHandle.EmptyHandle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ModuleHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空のモジュール ハンドルを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (ModuleHandle handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.ModuleHandle handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.Equals(System.ModuleHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.ModuleHandle" />
+      </Parameters>
+      <Docs>
+        <param name="handle"><see cref="T:System.ModuleHandle" />現在と比較する構造体<see cref="T:System.ModuleHandle" />です。</param>
+        <summary>返します、<see cref="T:System.Boolean" />を示す値かどうか、指定した<see cref="T:System.ModuleHandle" />構造体は、現在と等しい<see cref="T:System.ModuleHandle" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="handle" />が現在に等しい<see cref="T:System.ModuleHandle" />構造体です。 それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在と比較するオブジェクト<see cref="T:System.ModuleHandle" />構造体。</param>
+        <summary>返します、<see cref="T:System.Boolean" />指定したオブジェクトがあるかどうかを示す値、<see cref="T:System.ModuleHandle" />構造、および現在等しく<see cref="T:System.ModuleHandle" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="obj" />は、 <see cref="T:System.ModuleHandle" /> 、構造体し、は、現在と同じ<see cref="T:System.ModuleHandle" />構造体です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>このインスタンスのハッシュ コードである 32 ビット符号付き整数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeFieldHandleFromMetadataToken">
+      <MemberSignature Language="C#" Value="public RuntimeFieldHandle GetRuntimeFieldHandleFromMetadataToken (int fieldToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.RuntimeFieldHandle GetRuntimeFieldHandleFromMetadataToken(int32 fieldToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.GetRuntimeFieldHandleFromMetadataToken(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeFieldHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fieldToken" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="fieldToken">モジュール内のフィールドを識別するメタデータ トークン。</param>
+        <summary>指定したメタデータ トークンによって識別されるフィールドのランタイム ハンドルを返します。</summary>
+        <returns>A<see cref="T:System.RuntimeFieldHandle" />によって識別されるフィールドの<paramref name="fieldToken" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeMethodHandleFromMetadataToken">
+      <MemberSignature Language="C#" Value="public RuntimeMethodHandle GetRuntimeMethodHandleFromMetadataToken (int methodToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.RuntimeMethodHandle GetRuntimeMethodHandleFromMetadataToken(int32 methodToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.GetRuntimeMethodHandleFromMetadataToken(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeMethodHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodToken" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="methodToken">メソッドまたはモジュール内のコンス トラクターを識別するメタデータ トークン。</param>
+        <summary>メソッドまたは指定したメタデータ トークンによって識別されるコンス トラクターのランタイム メソッドのハンドルを返します。</summary>
+        <returns>A<see cref="T:System.RuntimeMethodHandle" />メソッドまたはコンス トラクターによって識別される<paramref name="methodToken" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeTypeHandleFromMetadataToken">
+      <MemberSignature Language="C#" Value="public RuntimeTypeHandle GetRuntimeTypeHandleFromMetadataToken (int typeToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.RuntimeTypeHandle GetRuntimeTypeHandleFromMetadataToken(int32 typeToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.GetRuntimeTypeHandleFromMetadataToken(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeTypeHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeToken" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="typeToken">モジュール内の型を識別するメタデータ トークン。</param>
+        <summary>指定したメタデータ トークンによって識別される型のランタイム型ハンドルを返します。</summary>
+        <returns>A<see cref="T:System.RuntimeTypeHandle" />で識別される型の<paramref name="typeToken" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MDStreamVersion">
+      <MemberSignature Language="C#" Value="public int MDStreamVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MDStreamVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ModuleHandle.MDStreamVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータのストリーム バージョンを取得します。</summary>
+        <value>メタデータのストリーム バージョンを表す 32 ビット整数。 上位 2 バイトは、メジャー バージョン番号を表し、下位 2 バイトは、マイナー バージョン番号を表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  メタデータ ヘッダーの詳細については、第 2 部を参照してください: メタデータ定義およびセマンティクスのドキュメントです。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (ModuleHandle left, ModuleHandle right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.ModuleHandle left, valuetype System.ModuleHandle right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.op_Equality(System.ModuleHandle,System.ModuleHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.ModuleHandle" />
+        <Parameter Name="right" Type="System.ModuleHandle" />
+      </Parameters>
+      <Docs>
+        <param name="left">等値演算子の左側に表示される <see cref="T:System.ModuleHandle" /> 構造体。</param>
+        <param name="right"><see cref="T:System.ModuleHandle" />等値演算子の右側に構造体。</param>
+        <summary>2 つあるかどうかをテスト<see cref="T:System.ModuleHandle" />構造体が等しい。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.ModuleHandle" />構造体が等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.ModuleHandle.Equals%28System.ModuleHandle%29?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (ModuleHandle left, ModuleHandle right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.ModuleHandle left, valuetype System.ModuleHandle right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.op_Inequality(System.ModuleHandle,System.ModuleHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.ModuleHandle" />
+        <Parameter Name="right" Type="System.ModuleHandle" />
+      </Parameters>
+      <Docs>
+        <param name="left">非等値演算子の左側に表示される <see cref="T:System.ModuleHandle" /> 構造体。</param>
+        <param name="right"><see cref="T:System.ModuleHandle" />非等値演算子の右側に構造体。</param>
+        <summary>2 つあるかどうかをテスト<see cref="T:System.ModuleHandle" />構造が等しくないです。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.ModuleHandle" />構造体が等しくない、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は<xref:System.ModuleHandle.Equals%28System.ModuleHandle%29?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveFieldHandle">
+      <MemberSignature Language="C#" Value="public RuntimeFieldHandle ResolveFieldHandle (int fieldToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.RuntimeFieldHandle ResolveFieldHandle(int32 fieldToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.ResolveFieldHandle(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeFieldHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fieldToken" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="fieldToken">モジュール内のフィールドを識別するメタデータ トークン。</param>
+        <summary>指定したメタデータ トークンによって識別されるフィールドのランタイム ハンドルを返します。</summary>
+        <returns>A<see cref="T:System.RuntimeFieldHandle" />によって識別されるフィールドの<paramref name="fieldToken" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親フィールドを識別するメタデータ トークンを解決するのには`TypeSpec`要素型を含むシグネチャを持つ`var`または`mvar`を使用して、<xref:System.ModuleHandle.ResolveFieldHandle%28System.Int32%2CSystem.RuntimeTypeHandle%5B%5D%2CSystem.RuntimeTypeHandle%5B%5D%29>メソッド オーバー ロードで、必要なコンテキストを指定することができます。  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="metadataToken" />現在のモジュールのスコープで有効なトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" />現在のモジュールのスコープ内のフィールドのトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" />親フィールドを識別<see langword="TypeSpec" />要素型を含むシグネチャを持つ<see langword="var" />または<see langword="mvar" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドは、空のフィールド ハンドルに呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveFieldHandle">
+      <MemberSignature Language="C#" Value="public RuntimeFieldHandle ResolveFieldHandle (int fieldToken, RuntimeTypeHandle[] typeInstantiationContext, RuntimeTypeHandle[] methodInstantiationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.RuntimeFieldHandle ResolveFieldHandle(int32 fieldToken, valuetype System.RuntimeTypeHandle[] typeInstantiationContext, valuetype System.RuntimeTypeHandle[] methodInstantiationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.ResolveFieldHandle(System.Int32,System.RuntimeTypeHandle[],System.RuntimeTypeHandle[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeFieldHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fieldToken" Type="System.Int32" />
+        <Parameter Name="typeInstantiationContext" Type="System.RuntimeTypeHandle[]" />
+        <Parameter Name="methodInstantiationContext" Type="System.RuntimeTypeHandle[]" />
+      </Parameters>
+      <Docs>
+        <param name="fieldToken">モジュール内のフィールドを識別するメタデータ トークン。</param>
+        <param name="typeInstantiationContext">配列<see cref="T:System.RuntimeTypeHandle" />トークンが、スコープ内にある型のジェネリック型引数を表す構造体または<see langword="null" />場合はその型がジェネリックではありません。</param>
+        <param name="methodInstantiationContext">配列<see cref="T:System.RuntimeTypeHandle" />トークンが、スコープ内にあるメソッドのジェネリック型引数を表す構造体または<see langword="null" />場合はそのメソッドはジェネリックではありません。</param>
+        <summary>指定したメタデータ トークン、トークンがスコープ内にあるメソッドと型のジェネリック型引数を指定することによって識別されるフィールドのランタイム フィールド ハンドルを返します。</summary>
+        <returns>A<see cref="T:System.RuntimeFieldHandle" />によって識別されるフィールドの<paramref name="fieldToken" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="metadataToken" />現在のモジュールのスコープで有効なトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" />現在のモジュールのスコープ内のフィールドのトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" />親フィールドを識別<see langword="TypeSpec" />要素型を含むシグネチャを持つ<see langword="var" />または<see langword="mvar" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドは、空のフィールド ハンドルに呼び出されます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="fieldToken" />有効なトークンではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveMethodHandle">
+      <MemberSignature Language="C#" Value="public RuntimeMethodHandle ResolveMethodHandle (int methodToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.RuntimeMethodHandle ResolveMethodHandle(int32 methodToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.ResolveMethodHandle(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeMethodHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodToken" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="methodToken">メソッドまたはモジュール内のコンス トラクターを識別するメタデータ トークン。</param>
+        <summary>メソッドまたは指定したメタデータ トークンによって識別されるコンス トラクターのランタイム メソッドのハンドルを返します。</summary>
+        <returns>A<see cref="T:System.RuntimeMethodHandle" />メソッドまたはコンス トラクターによって識別される<paramref name="methodToken" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータ トークンを解決するのには、`MethodSpec`要素の型を含むシグネチャを持つ`var`または`mvar`を使用して、<xref:System.ModuleHandle.ResolveMethodHandle%28System.Int32%2CSystem.RuntimeTypeHandle%5B%5D%2CSystem.RuntimeTypeHandle%5B%5D%29>メソッド オーバー ロードで、必要なコンテキストを指定することができます。  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="methodToken" />現在のモジュールのメソッドの有効なメタデータ トークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" />メソッドまたはコンス トラクター、現在のモジュールのスコープ内のトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" /><see langword="MethodSpec" />要素の型を含むシグネチャを持つ<see langword="var" />または<see langword="mvar" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドは、空のメソッドのハンドルで呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveMethodHandle">
+      <MemberSignature Language="C#" Value="public RuntimeMethodHandle ResolveMethodHandle (int methodToken, RuntimeTypeHandle[] typeInstantiationContext, RuntimeTypeHandle[] methodInstantiationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.RuntimeMethodHandle ResolveMethodHandle(int32 methodToken, valuetype System.RuntimeTypeHandle[] typeInstantiationContext, valuetype System.RuntimeTypeHandle[] methodInstantiationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.ResolveMethodHandle(System.Int32,System.RuntimeTypeHandle[],System.RuntimeTypeHandle[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeMethodHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodToken" Type="System.Int32" />
+        <Parameter Name="typeInstantiationContext" Type="System.RuntimeTypeHandle[]" />
+        <Parameter Name="methodInstantiationContext" Type="System.RuntimeTypeHandle[]" />
+      </Parameters>
+      <Docs>
+        <param name="methodToken">メソッドまたはモジュール内のコンス トラクターを識別するメタデータ トークン。</param>
+        <param name="typeInstantiationContext">配列<see cref="T:System.RuntimeTypeHandle" />トークンが、スコープ内にある型のジェネリック型引数を表す構造体または<see langword="null" />場合はその型がジェネリックではありません。</param>
+        <param name="methodInstantiationContext">配列<see cref="T:System.RuntimeTypeHandle" />トークンが、スコープ内にあるメソッドのジェネリック型引数を表す構造体または<see langword="null" />場合はそのメソッドはジェネリックではありません。</param>
+        <summary>メソッドまたは指定したメタデータ トークン、トークンがスコープ内にあるメソッドと型のジェネリック型引数を指定することによって識別されるコンス トラクターのランタイム メソッドのハンドルを返します。</summary>
+        <returns>A<see cref="T:System.RuntimeMethodHandle" />メソッドまたはコンス トラクターによって識別される<paramref name="methodToken" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="methodToken" />現在のモジュールのメソッドの有効なメタデータ トークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" />メソッドまたはコンス トラクター、現在のモジュールのスコープ内のトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" /><see langword="MethodSpec" />要素の型を含むシグネチャを持つ<see langword="var" />または<see langword="mvar" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドは、空のメソッドのハンドルで呼び出されます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="methodToken" />有効なトークンではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveTypeHandle">
+      <MemberSignature Language="C#" Value="public RuntimeTypeHandle ResolveTypeHandle (int typeToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.RuntimeTypeHandle ResolveTypeHandle(int32 typeToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.ResolveTypeHandle(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeTypeHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeToken" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="typeToken">モジュール内の型を識別するメタデータ トークン。</param>
+        <summary>指定したメタデータ トークンによって識別される型のランタイム型ハンドルを返します。</summary>
+        <returns>A<see cref="T:System.RuntimeTypeHandle" />で識別される型の<paramref name="typeToken" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メタデータ トークンを解決するのには、`TypeSpec`要素の型を含むシグネチャを持つ`var`または`mvar`を使用して、<xref:System.ModuleHandle.ResolveTypeHandle%28System.Int32%2CSystem.RuntimeTypeHandle%5B%5D%2CSystem.RuntimeTypeHandle%5B%5D%29>メソッド オーバー ロードで、必要なコンテキストを指定することができます。  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="typeToken" />現在のモジュール内の型の有効なメタデータ トークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" />現在のモジュールのスコープ内の型のトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" /><see langword="TypeSpec" />要素の型を含むシグネチャを持つ<see langword="var" />または<see langword="mvar" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドは、空の型ハンドルで呼び出されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveTypeHandle">
+      <MemberSignature Language="C#" Value="public RuntimeTypeHandle ResolveTypeHandle (int typeToken, RuntimeTypeHandle[] typeInstantiationContext, RuntimeTypeHandle[] methodInstantiationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.RuntimeTypeHandle ResolveTypeHandle(int32 typeToken, valuetype System.RuntimeTypeHandle[] typeInstantiationContext, valuetype System.RuntimeTypeHandle[] methodInstantiationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ModuleHandle.ResolveTypeHandle(System.Int32,System.RuntimeTypeHandle[],System.RuntimeTypeHandle[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeTypeHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeToken" Type="System.Int32" />
+        <Parameter Name="typeInstantiationContext" Type="System.RuntimeTypeHandle[]" />
+        <Parameter Name="methodInstantiationContext" Type="System.RuntimeTypeHandle[]" />
+      </Parameters>
+      <Docs>
+        <param name="typeToken">モジュール内の型を識別するメタデータ トークン。</param>
+        <param name="typeInstantiationContext">配列<see cref="T:System.RuntimeTypeHandle" />トークンが、スコープ内にある型のジェネリック型引数を表す構造体または<see langword="null" />場合はその型がジェネリックではありません。</param>
+        <param name="methodInstantiationContext">配列<see cref="T:System.RuntimeTypeHandle" />トークンが、スコープ内にあるメソッドのジェネリック型引数を表すオブジェクトを構造体または<see langword="null" />場合はそのメソッドはジェネリックではありません。</param>
+        <summary>トークンがスコープ内にあるメソッドと型のジェネリック型引数を指定して、指定したメタデータ トークンによって識別される型のランタイム型ハンドルを返します。</summary>
+        <returns>A<see cref="T:System.RuntimeTypeHandle" />で識別される型の<paramref name="typeToken" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  メタデータ トークンに関する情報は、共通言語基盤 (CLI) ドキュメント、特に「Partition II:: Metadata Definition and Semantics」にあります。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.BadImageFormatException">
+          <paramref name="typeToken" />現在のモジュール内の型の有効なメタデータ トークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" />現在のモジュールのスコープ内の型のトークンではありません。  
+  
+ または  
+  
+ <paramref name="metadataToken" /><see langword="TypeSpec" />要素の型を含むシグネチャを持つ<see langword="var" />または<see langword="mvar" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドは、空の型ハンドルで呼び出されます。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="typeToken" />有効なトークンではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

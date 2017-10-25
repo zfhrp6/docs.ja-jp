@@ -1,0 +1,101 @@
+<Type Name="RegistryView" FullName="Microsoft.Win32.RegistryView">
+  <TypeSignature Language="C#" Value="public enum RegistryView" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed RegistryView extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.RegistryView" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>64 ビット オペレーティング システム上の対象となるレジストリ ビューを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 64 ビット バージョンの Windows では、レジストリの一部が 32 ビットと 64 ビットのアプリケーション用とは別に格納されます。  32 ビット アプリケーションするビューを 32 ビットと 64 ビット アプリケーションを 64 ビットのビューがあります。  
+  
+ 使用する場合は、レジストリ ビューを指定することができます、<xref:Microsoft.Win32.RegistryKey.OpenBaseKey%2A>と<xref:Microsoft.Win32.RegistryKey.OpenRemoteBaseKey%28Microsoft.Win32.RegistryHive%2CSystem.String%2CMicrosoft.Win32.RegistryView%29>メソッド、および<xref:Microsoft.Win32.RegistryKey.FromHandle%2A>プロパティを<xref:Microsoft.Win32.RegistryKey>オブジェクト。  
+  
+ 32 ビット オペレーティング システムで 64 ビットのビューを要求した場合、返されるキーは、32 ビットのビューになります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryView Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryView.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のビューです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Registry32">
+      <MemberSignature Language="C#" Value="Registry32" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryView Registry32 = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryView.Registry32" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>32 ビット ビューです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Registry64">
+      <MemberSignature Language="C#" Value="Registry64" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryView Registry64 = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryView.Registry64" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>64 ビットのビューです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,413 @@
+<Type Name="MatrixAnimationUsingPath" FullName="System.Windows.Media.Animation.MatrixAnimationUsingPath">
+  <TypeSignature Language="C#" Value="public class MatrixAnimationUsingPath : System.Windows.Media.Animation.MatrixAnimationBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MatrixAnimationUsingPath extends System.Windows.Media.Animation.MatrixAnimationBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.MatrixAnimationUsingPath" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.MatrixAnimationBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>値をアニメーション化、<see cref="T:System.Windows.Media.Matrix" />プロパティを使用して、<see cref="T:System.Windows.Media.PathGeometry" />をアニメーション化された値を生成します。 このアニメーションを使用してビジュアル オブジェクトをパスに沿って移動できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath>角度と 1 つのアニメーションを持つオブジェクトの位置をアニメーション化することができ、<xref:System.Windows.Media.MatrixTransform>です。  
+  
+ A<xref:System.Windows.Media.Animation.PointAnimationUsingPath>を指定した線形補間を使用して、そのターゲットをアニメーション化<xref:System.Windows.Media.Animation.Timeline.Duration%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MatrixAnimationUsingPath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.MatrixAnimationUsingPath.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.MatrixAnimationUsingPath" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値はありません<xref:System.Windows.Media.PathGeometry>ので、ユーザーは、いずれかを指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.MatrixAnimationUsingPath Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.MatrixAnimationUsingPath Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.MatrixAnimationUsingPath.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.MatrixAnimationUsingPath</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.MatrixAnimationUsingPath" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.MatrixAnimationUsingPath.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Media.Animation.MatrixAnimationUsingPath" /> の新しいインスタンスを作成します。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoesRotateWithTangent">
+      <MemberSignature Language="C#" Value="public bool DoesRotateWithTangent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DoesRotateWithTangent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.MatrixAnimationUsingPath.DoesRotateWithTangent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトがパスの接線に沿って回転するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          オブジェクトがパスの接線に沿って回転する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーション化されたオブジェクトに「スライド」アニメーション パスに沿ってして表示する場合は、プロパティを使用します。  
+  
+<a name="dependencyPropertyInfo_DoesRotateWithTangent"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.DoesRotateWithTangentProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoesRotateWithTangentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DoesRotateWithTangentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DoesRotateWithTangentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.MatrixAnimationUsingPath.DoesRotateWithTangentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.MatrixAnimationUsingPath.DoesRotateWithTangent" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Matrix GetCurrentValueCore (System.Windows.Media.Matrix defaultOriginValue, System.Windows.Media.Matrix defaultDestinationValue, System.Windows.Media.Animation.AnimationClock animationClock);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Media.Matrix GetCurrentValueCore(valuetype System.Windows.Media.Matrix defaultOriginValue, valuetype System.Windows.Media.Matrix defaultDestinationValue, class System.Windows.Media.Animation.AnimationClock animationClock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.MatrixAnimationUsingPath.GetCurrentValueCore(System.Windows.Media.Matrix,System.Windows.Media.Matrix,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Matrix</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultOriginValue" Type="System.Windows.Media.Matrix" />
+        <Parameter Name="defaultDestinationValue" Type="System.Windows.Media.Matrix" />
+        <Parameter Name="animationClock" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="defaultOriginValue">アニメーションに独自の明示的な開始値が設定されていない場合に使用される、起点の推奨値。</param>
+        <param name="defaultDestinationValue">アニメーションが独自の明示的な終了値を持たない場合に使用される、終点の推奨値。</param>
+        <param name="animationClock"><see cref="T:System.Windows.Media.Animation.AnimationClock" />を生成する、<see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" />または<see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />アニメーションで使用します。</param>
+        <summary>によって決定されたように、アニメーションを付けるプロパティの現在の値を表す値を計算、<see cref="T:System.Windows.Media.Animation.MatrixAnimationUsingPath" />です。</summary>
+        <returns>現在のアニメーションで決定されたとおりに計算されたプロパティ値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`defaultOriginValue`最初のスナップショット値 (1 つある場合) または基本プロパティ値、複合チェーンでこの値になります。 それ以外の場合この値はチェーンの前のアニメーションによって返される値、<xref:System.Windows.Media.Animation.AnimationClock>外にある<xref:System.Windows.Media.Animation.Clock.Stopped%2A>です。  
+  
+ `defaultDestinationValue`は基本値の場合、プロパティにアニメーションの最初のコンポジション レイヤーには、アニメーションのそれ以外の値はプロパティのアニメーションの前の構成のレイヤーからの出力値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAdditive">
+      <MemberSignature Language="C#" Value="public bool IsAdditive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAdditive" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAdditive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象プロパティの現在の値をこのアニメーションの開始値に追加するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />対象プロパティの現在場合は、値がこのアニメーションの開始値に追加する必要があります。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsAdditive"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.AnimationTimeline.IsAdditiveProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+> [!NOTE]
+>  その識別子のフィールドに由来するのでこの依存関係プロパティは通常は<xref:System.Windows.Media.Animation.AnimationTimeline>さまざまな派生クラスで共有します。  
+  
+   
+  
+## Examples  
+ 次の例を使用して 2 つのような<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath>同じ四角形をアニメーション化するアニメーション。 最初のアニメーションの<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAdditive%2A>プロパティに設定されている`false`アニメーションの開始値を常に (0, 0) から四角形のアニメーションを付ける、ようにします。 2 番目のアニメーションが同じターゲット値 (その<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.PathGeometry%2A>設定と同じです) が、その<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAdditive%2A>プロパティに設定されている`true`その結果、アニメーションが適用されたときに任意の位置から四角形をアニメーション化します。  
+  
+ [!code-xaml[PathAnimationGallery_snippet#MatrixAnimationUsingPathIsAdditiveExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/PathAnimationGallery_snippet/CS/matrixanimationusingpathisadditiveexample.xaml#matrixanimationusingpathisadditiveexamplewholepage)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAngleCumulative">
+      <MemberSignature Language="C#" Value="public bool IsAngleCumulative { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAngleCumulative" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAngleCumulative" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーション化された行列の回転角度を繰り返しで累積する必要があるかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />アニメーションの回転角度を繰り返しで累積する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合`true`、アニメーション化された行列の回転角度は、アニメーションを繰り返すたびに蓄積されます。  ご使用のパスが小さい円弧である場合は、累積的な角度に回転を再開する代わりに繰り返されるたびに継続的に回転するオブジェクトが発生します。  組み合わせると、<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsOffsetCumulative%2A>の`true`、転落 (指定したパス) に応じて bounces その中に、オブジェクトがあります。 関連情報については、「<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsOffsetCumulative%2A>」を参照してください。  
+  
+ このプロパティの設定も何も起こりません場合<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.DoesRotateWithTangent%2A>は`false`します。  
+  
+ このプロパティは、のために、アニメーションが繰り返されます時に、アニメーション マトリックスの角度を累積するかどうかを決定します。 その<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>; の設定は行われません、アニメーションの再開時に蓄積するオフセット。 ビルド前のアニメーションの値にアニメーションを作成する方法については、次を参照してください。<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAdditive%2A>です。  
+  
+<a name="dependencyPropertyInfo_IsAngleCumulative"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAngleCumulativeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を使用して 2 つのような<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath>同じ四角形をアニメーション化するアニメーション。 両方のアニメーションが同じである<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.PathGeometry%2A>これにより、回転、右側に画面に沿った移動され、4 回繰り返して、両方のアニメーションを設定する四角形の設定。 最初のアニメーションの<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAngleCumulative%2A>プロパティに設定されている`false`ので、四角形が移動することの角度が元に戻すときに、アニメーションが繰り返されます。 2 番目のアニメーションの<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAngleCumulative%2A>プロパティに設定されている`true`その結果、元の値に戻すジャンプのではなく、アニメーションの繰り返しを向上させる四角形の角度が表示されます。  
+  
+ [!code-xaml[PathAnimationGallery_snippet#MatrixAnimationUsingPathIsAngleCumulativeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/PathAnimationGallery_snippet/CS/matrixanimationusingpathisanglecumulativeexample.xaml#matrixanimationusingpathisanglecumulativeexamplewholepage)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAngleCumulativeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsAngleCumulativeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsAngleCumulativeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAngleCumulativeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAngleCumulative" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOffsetCumulative">
+      <MemberSignature Language="C#" Value="public bool IsOffsetCumulative { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOffsetCumulative" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsOffsetCumulative" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーション化された行列によって生成されるオフセットを繰り返しで累積するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />オブジェクトを累積する場合は、アニメーションの繰り返されますそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合`true`、アニメーション化された行列のオフセットは、アニメーションを繰り返すたびに蓄積されます。 たとえば、パスは、小さい円弧を繰り返し表示する、アニメーションが設定されている場合は、累積的なオフセットには、画面間でバウンスを表示するオブジェクトが発生します。  
+  
+ このプロパティは、のために、アニメーションが繰り返されます時に、アニメーション マトリックスのオフセットを累積するかどうかを決定します。 その<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>; の設定は行われません、アニメーションの再開時に蓄積するオフセット。 ビルド前のアニメーションの値にアニメーションを作成する方法については、次を参照してください。<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsAdditive%2A>です。  
+  
+<a name="dependencyPropertyInfo_IsOffsetCumulative"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsOffsetCumulativeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOffsetCumulativeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsOffsetCumulativeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsOffsetCumulativeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsOffsetCumulativeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.MatrixAnimationUsingPath.IsOffsetCumulative" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChanged">
+      <MemberSignature Language="C#" Value="protected override void OnChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.MatrixAnimationUsingPath.OnChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ときに呼び出されますこの<see cref="T:System.Windows.Media.Animation.MatrixAnimationUsingPath" />を変更します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドをオーバーライドする方法の詳細については、次を参照してください。<see cref="M:System.Windows.Freezable.OnChanged" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PathGeometry">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PathGeometry PathGeometry { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.PathGeometry PathGeometry" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.MatrixAnimationUsingPath.PathGeometry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアニメーションの出力値の生成に使用されるジオメトリを取得または設定します。</summary>
+        <value>このアニメーションの出力値の生成に使用されるジオメトリ。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Media.PathGeometry>曲線を含む複雑な図形を記述することができを有効にすると、円弧が入力、アニメーション用の複雑な図形を指定します。 詳しくは、「[ジオメトリの概要](~/docs/framework/wpf/graphics-multimedia/geometry-overview.md)」をご覧ください。  
+  
+<a name="dependencyPropertyInfo_PathGeometry"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.PathGeometryProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathGeometryProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PathGeometryProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PathGeometryProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.MatrixAnimationUsingPath.PathGeometryProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.MatrixAnimationUsingPath.PathGeometry" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

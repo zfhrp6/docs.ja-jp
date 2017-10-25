@@ -1,0 +1,374 @@
+<Type Name="Animatable" FullName="System.Windows.Media.Animation.Animatable">
+  <TypeSignature Language="C#" Value="public abstract class Animatable : System.Windows.Freezable, System.Windows.Media.Animation.IAnimatable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Animatable extends System.Windows.Freezable implements class System.Windows.Media.Animation.IAnimatable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.Animatable" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Freezable</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Media.Animation.IAnimatable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>アニメーションのサポートを提供する抽象クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Animatable ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Animatable.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.Animatable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyAnimationClock">
+      <MemberSignature Language="C#" Value="public void ApplyAnimationClock (System.Windows.DependencyProperty dp, System.Windows.Media.Animation.AnimationClock clock);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplyAnimationClock(class System.Windows.DependencyProperty dp, class System.Windows.Media.Animation.AnimationClock clock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Animatable.ApplyAnimationClock(System.Windows.DependencyProperty,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="clock" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="dp">アニメーション化するプロパティ。</param>
+        <param name="clock">指定したプロパティをアニメーション化する際に使用するクロック。 場合<c>クロック</c>は<see langword="null" />、すべてのアニメーションは、指定したプロパティから削除 (しますが、停止されません)。</param>
+        <summary>適用される、<see cref="T:System.Windows.Media.Animation.AnimationClock" />を指定した<see cref="T:System.Windows.DependencyProperty" />です。 プロパティが既にアニメーション化されている場合、<see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />ハンドオフ動作が使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、プロパティからクロックを削除しても、クロックは停止しませんに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyAnimationClock">
+      <MemberSignature Language="C#" Value="public void ApplyAnimationClock (System.Windows.DependencyProperty dp, System.Windows.Media.Animation.AnimationClock clock, System.Windows.Media.Animation.HandoffBehavior handoffBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplyAnimationClock(class System.Windows.DependencyProperty dp, class System.Windows.Media.Animation.AnimationClock clock, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Animatable.ApplyAnimationClock(System.Windows.DependencyProperty,System.Windows.Media.Animation.AnimationClock,System.Windows.Media.Animation.HandoffBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="clock" Type="System.Windows.Media.Animation.AnimationClock" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="dp">アニメーション化するプロパティ。</param>
+        <param name="clock">指定したプロパティをアニメーション化する際に使用するクロック。 場合<c>handoffBehavior</c>は<see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />と<c>クロック</c>は<see langword="null" />、すべてのアニメーションは、指定したプロパティから削除 (しますが、停止されません)。 場合<c>handoffBehavior</c>は<see cref="F:System.Windows.Media.Animation.HandoffBehavior.Compose" />時計と<see langword="null" />、このメソッドは影響を与えません。</param>
+        <param name="handoffBehavior">新しいアニメーションは既にプロパティの値に影響する、現在のアニメーションと対話する方法を指定する値。</param>
+        <summary>適用される、<see cref="T:System.Windows.Media.Animation.AnimationClock" />を指定した<see cref="T:System.Windows.DependencyProperty" />です。 プロパティが既にアニメーション化されている場合、指定した<see cref="T:System.Windows.Media.Animation.HandoffBehavior" />を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、プロパティからクロックを削除しても、クロックは停止しませんに注意してください。  
+  
+## <a name="using-the-compose-handoffbehavior"></a>使用して、HandoffBehavior の作成  
+ 適用すると、 <xref:System.Windows.Media.Animation.Storyboard>、 <xref:System.Windows.Media.Animation.AnimationTimeline>、または<xref:System.Windows.Media.Animation.AnimationClock>を使用してプロパティを<xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>、any<xref:System.Windows.Media.Animation.Clock>以前そのプロパティに関連付けられているオブジェクトがシステム リソースを消費引き続き; タイミング システムはこれらの時計を自動的に削除されません。  
+  
+ 使用してクロックの数が多いを適用するときに、パフォーマンスの問題を回避する<xref:System.Windows.Media.Animation.HandoffBehavior.Compose>、完了した後、アニメーションのプロパティから作成クロックを削除する必要があります。 クロックを削除する方法はいくつかあります。  
+  
+-   プロパティからすべてのクロックを削除するには、使用、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29>アニメーション オブジェクトのメソッドです。 最初のパラメーターとしてアニメーション化されているプロパティを指定し、 `null` 2 つ目として。 これにより、すべてのアニメーション クロックがプロパティから削除されます。  
+  
+-   固有の仕様を削除する<xref:System.Windows.Media.Animation.AnimationClock>にクロックのリストを使用して、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.Animation.AnimationClock>を取得する、<xref:System.Windows.Media.Animation.ClockController>を呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。 これは、通常、<xref:System.Windows.Media.Animation.Clock.Completed>クロックのイベント ハンドラー。 唯一のルート クロックできますで制御されることに注意してください、 <xref:System.Windows.Media.Animation.ClockController>;<xref:System.Windows.Media.Animation.Clock.Controller%2A>子クロックのプロパティを返します`null`です。 なお、<xref:System.Windows.Media.Animation.Clock.Completed>クロックの有効期間が forever の場合、イベントは呼び出されません。  ユーザーの必要がありますを呼び出すタイミングを決定する場合は、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>です。  
+  
+ これは主に、有効期間が長いオブジェクトでのアニメーションの問題です。  オブジェクトがガベージ コレクションされる場合は、そのクロックも切断されて、ガベージ コレクションされます。  
+  
+ クロック オブジェクトに関する詳細については、次を参照してください。、[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、異なるを使用するアニメーション クロックを適用する方法を示しています。<xref:System.Windows.Media.Animation.HandoffBehavior>設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAnimation">
+      <MemberSignature Language="C#" Value="public void BeginAnimation (System.Windows.DependencyProperty dp, System.Windows.Media.Animation.AnimationTimeline animation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginAnimation(class System.Windows.DependencyProperty dp, class System.Windows.Media.Animation.AnimationTimeline animation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Animatable.BeginAnimation(System.Windows.DependencyProperty,System.Windows.Media.Animation.AnimationTimeline)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="animation" Type="System.Windows.Media.Animation.AnimationTimeline" />
+      </Parameters>
+      <Docs>
+        <param name="dp">アニメーション化するプロパティ。</param>
+        <param name="animation">指定したプロパティをアニメーション化するために使用するアニメーション。  
+  
+ 場合、アニメーションの<see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" />は<see langword="null" />と、現在のアニメーションが削除され、プロパティの現在の値が保持されます。  
+  
+ 場合<c>アニメーション</c>は<see langword="null" />、すべてのアニメーションがプロパティから削除され、プロパティの値がその基本値に戻します。</param>
+        <summary>指定された <see cref="T:System.Windows.DependencyProperty" /> にアニメーションを適用します。 アニメーションは、次のフレームがレンダリングされるときに開始されます。 指定したプロパティが既にアニメーション化されている場合、<see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />ハンドオフ動作が使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションがある場合、 <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> 0 より大きい値である、期間が次のフレームがレンダリング時から経過した後に、アニメーションが開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAnimation">
+      <MemberSignature Language="C#" Value="public void BeginAnimation (System.Windows.DependencyProperty dp, System.Windows.Media.Animation.AnimationTimeline animation, System.Windows.Media.Animation.HandoffBehavior handoffBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginAnimation(class System.Windows.DependencyProperty dp, class System.Windows.Media.Animation.AnimationTimeline animation, valuetype System.Windows.Media.Animation.HandoffBehavior handoffBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Animatable.BeginAnimation(System.Windows.DependencyProperty,System.Windows.Media.Animation.AnimationTimeline,System.Windows.Media.Animation.HandoffBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="animation" Type="System.Windows.Media.Animation.AnimationTimeline" />
+        <Parameter Name="handoffBehavior" Type="System.Windows.Media.Animation.HandoffBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="dp">アニメーション化するプロパティ。</param>
+        <param name="animation">指定したプロパティをアニメーション化するために使用するアニメーション。  
+  
+ 場合<c>handoffBehavior</c>は<see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />およびアニメーションの<see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" />は<see langword="null" />と、現在のアニメーションが削除され、プロパティの現在の値が保持されます。  
+  
+ 場合<c>handoffBehavior</c>は<see cref="F:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace" />と<c>アニメーション</c>は、<see langword="null" />リファレンス、すべてのアニメーションは、プロパティから削除されますおよびプロパティの値がその基本値に戻ります。  
+  
+ 場合<c>handoffBehavior</c>は<see cref="F:System.Windows.Media.Animation.HandoffBehavior.Compose" />、このメソッドは効果がなく場合は、アニメーションやその<see cref="P:System.Windows.Media.Animation.Timeline.BeginTime" />は<see langword="null" />します。</param>
+        <param name="handoffBehavior">新しいアニメーションは既にプロパティの値に影響する、現在のアニメーションと対話する方法を指定する値。</param>
+        <summary>指定された <see cref="T:System.Windows.DependencyProperty" /> にアニメーションを適用します。 アニメーションは、次のフレームがレンダリングされるときに開始されます。 指定したプロパティが既にアニメーション化されている場合、指定した<see cref="T:System.Windows.Media.Animation.HandoffBehavior" />を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションがある場合、 <xref:System.Windows.Media.Animation.Timeline.BeginTime%2A> 0 より大きい値である、期間が次のフレームがレンダリング時から経過した後に、アニメーションが開始します。  
+  
+## <a name="using-the-compose-handoffbehavior"></a>使用して、HandoffBehavior の作成  
+ 適用すると、 <xref:System.Windows.Media.Animation.Storyboard>、 <xref:System.Windows.Media.Animation.AnimationTimeline>、または<xref:System.Windows.Media.Animation.AnimationClock>を使用してプロパティを<xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>、any<xref:System.Windows.Media.Animation.Clock>以前そのプロパティに関連付けられているオブジェクトがシステム リソースを消費引き続き; タイミング システムはこれらの時計を自動的に削除されません。  
+  
+ 使用してクロックの数が多いを適用するときに、パフォーマンスの問題を回避する<xref:System.Windows.Media.Animation.HandoffBehavior.Compose>、完了した後、アニメーションのプロパティから作成クロックを削除する必要があります。 クロックを削除する方法はいくつかあります。  
+  
+-   プロパティからすべてのクロックを削除するには、使用、<xref:System.Windows.Media.Animation.Animatable.ApplyAnimationClock%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationClock%29>または<xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29>アニメーション オブジェクトのメソッドです。 最初のパラメーターとしてアニメーション化されているプロパティを指定し、 `null` 2 つ目として。 これにより、すべてのアニメーション クロックがプロパティから削除されます。  
+  
+-   固有の仕様を削除する<xref:System.Windows.Media.Animation.AnimationClock>にクロックのリストを使用して、<xref:System.Windows.Media.Animation.Clock.Controller%2A>のプロパティ、<xref:System.Windows.Media.Animation.AnimationClock>を取得する、<xref:System.Windows.Media.Animation.ClockController>を呼び出す、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。 これは、通常、<xref:System.Windows.Media.Animation.Clock.Completed>クロックのイベント ハンドラー。 唯一のルート クロックできますで制御されることに注意してください、 <xref:System.Windows.Media.Animation.ClockController>;<xref:System.Windows.Media.Animation.Clock.Controller%2A>子クロックのプロパティを返します`null`です。 なお、<xref:System.Windows.Media.Animation.Clock.Completed>クロックの有効期間が forever の場合、イベントは呼び出されません。  ユーザーの必要がありますを呼び出すタイミングを決定する場合は、<xref:System.Windows.Media.Animation.ClockController.Remove%2A>です。  
+  
+ これは主に、有効期間が長いオブジェクトでのアニメーションの問題です。  オブジェクトがガベージ コレクションされる場合は、そのクロックも切断されて、ガベージ コレクションされます。  
+  
+ クロック オブジェクトに関する詳細については、次を参照してください。、[アニメーションおよびタイミング システムの概要](~/docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、さまざまなを使用してアニメーションを適用する方法を示しています。<xref:System.Windows.Media.Animation.HandoffBehavior>設定します。  
+  
+ [!code-cpp[animateproperty#InteractiveAnimationExampleWholePage](~/samples/snippets/cpp/VS_Snippets_Wpf/animateproperty/CPP/InteractiveExample.cpp#interactiveanimationexamplewholepage)]
+ [!code-csharp[animateproperty#InteractiveAnimationExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/animateproperty/CSharp/InteractiveExample.cs#interactiveanimationexamplewholepage)]
+ [!code-vb[animateproperty#InteractiveAnimationExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animateproperty/VisualBasic/InteractiveExample.vb#interactiveanimationexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.Animatable Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.Animatable Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Animatable.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Animatable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.Animatable" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このオブジェクトの依存関係プロパティをコピーするときにこのメソッドは、リソースの参照とデータ バインディングをコピー (ただし、解決できなくなる可能性があります)、アニメーションやその現在の値ではありません。</summary>
+        <returns>このインスタンスの変更可能な複製。 返される複製は、事実上、現在のオブジェクトの詳細コピーです。 複製の<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティは**false**です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Animation.Animatable.Clone%2A>の変更可能なコピーを生成するためにメソッドを使用できる固定<xref:System.Windows.Freezable>オブジェクト。 便宜上、このメソッドは、継承されたシャドウ<xref:System.Windows.Freezable.Clone%2A>厳密に型指定された実装を提供するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FreezeCore">
+      <MemberSignature Language="C#" Value="protected override bool FreezeCore (bool isChecking);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool FreezeCore(bool isChecking) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Animatable.FreezeCore(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isChecking" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isChecking">
+          <see langword="true" />このメソッドは、このインスタンスが固定されるかどうかを簡単に確認する必要がある場合。 <see langword="false" />このメソッドが呼び出されたときに、このインスタンスは自身を固定実際にする必要がある場合。</param>
+        <summary>これにより、<see cref="T:System.Windows.Media.Animation.Animatable" />不可能な状態のオブジェクトまたはかどうか、変更不可能にできるを判断します。</summary>
+        <returns>場合<paramref name="isChecking" />は<see langword="true" />、このメソッドが戻る<see langword="true" />場合は、この<see cref="T:System.Windows.Media.Animation.Animatable" />できます変更不可能にできる、または<see langword="false" />にできない変更不可能になっている場合。  
+  
+ 場合<paramref name="isChecking" />は<see langword="false" />、このメソッドが戻る<see langword="true" />場合場合に、この<see cref="T:System.Windows.Media.Animation.Animatable" />は変更できますが、または<see langword="false" />にできない不可能な状態で、このオブジェクトの固定された状態を変更する始めたことの副作用の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは**false**とき<xref:System.Windows.Media.Animation.Animatable.HasAnimatedProperties%2A>は**true**です。  
+  
+ 直接 (呼び出す場合を除きますベースの実装で) このメソッドを呼び出さないでください。 このメソッドがによって内部的に呼び出されます<xref:System.Windows.Freezable.CanFreeze%2A>(で`isChecking`と等しい`true`) および<xref:System.Windows.Freezable.Freeze%2A>(で`isChecking`と等しい`false`)。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス<see cref="T:System.Windows.Media.Animation.Animatable" />クラスには、依存関係プロパティを使用して保存されていないデータが含まれている場合、このメソッドをオーバーライドする必要があります。  
+  
+ 一般的な実装は、基本実装を呼び出すし、静的なを呼び出します<see cref="M:System.Windows.Freezable.Freeze" />すべてメソッド<see cref="T:System.Windows.Freezable" />型指定されたプロパティを返すクラスに含まれている<see langword="true" />すべてのプロパティが保持されていた場合にのみ (または固定されている可能性がありますで、大文字を通過、<see langword="false" />値<paramref name="isChecking" />)。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAnimationBaseValue">
+      <MemberSignature Language="C#" Value="public object GetAnimationBaseValue (System.Windows.DependencyProperty dp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetAnimationBaseValue(class System.Windows.DependencyProperty dp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Animatable.GetAnimationBaseValue(System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="dp">基本 (アニメーション化されていない) 値を取得するプロパティを識別します。</param>
+        <summary>指定したアニメーション化されていない値を返します<see cref="T:System.Windows.DependencyProperty" />です。</summary>
+        <returns>指定したプロパティのアニメーション化されていない場合に返される値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したプロパティをアニメーション化しない場合と同じ結果が返されます<xref:System.Windows.DependencyObject.GetValue%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、アニメーション化されていないアニメーションのプロパティの値が取得され、表示されます。  
+  
+ [!code-csharp[timingbehaviors_procedural_snip#GetAnimationBaseValueExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp/GetAnimationBaseValueExample.cs#getanimationbasevalueexamplewholepage)]
+ [!code-vb[timingbehaviors_procedural_snip#GetAnimationBaseValueExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_procedural_snip/visualbasic/getanimationbasevalueexample.vb#getanimationbasevalueexamplewholepage)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasAnimatedProperties">
+      <MemberSignature Language="C#" Value="public bool HasAnimatedProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasAnimatedProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.Animatable.HasAnimatedProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか 1 つまたは複数<see cref="T:System.Windows.Media.Animation.AnimationClock" />オブジェクトはこのオブジェクトの依存関係プロパティのいずれかに関連付けられています。</summary>
+        <value>**true**場合は 1 つまたは複数<see cref="T:System.Windows.Media.Animation.AnimationClock" />オブジェクトは、このオブジェクトの依存関係プロパティのいずれかに関連付け、それ以外の**false**です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、このオブジェクトがアニメーション化されたサブオブジェクトを含むかどうかを示すものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeStoredWeakReference">
+      <MemberSignature Language="C#" Value="public static bool ShouldSerializeStoredWeakReference (System.Windows.DependencyObject target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ShouldSerializeStoredWeakReference(class System.Windows.DependencyObject target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.Animatable.ShouldSerializeStoredWeakReference(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="target">依存関係プロパティ システムに参加しているオブジェクトを表します。</param>
+        <summary>依存関係オブジェクトをシリアル化するかどうかを指定します。</summary>
+        <returns>
+          <see langword="true" />シリアル化する<paramref name="target" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.TypeDescriptor>クラスの使用、<xref:System.Windows.Media.Animation.Animatable.ShouldSerializeStoredWeakReference%2A>プロパティをシリアル化するかどうかを調べます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

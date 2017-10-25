@@ -1,0 +1,575 @@
+<Type Name="HttpApplicationState" FullName="System.Web.HttpApplicationState">
+  <TypeSignature Language="C#" Value="public sealed class HttpApplicationState : System.Collections.Specialized.NameObjectCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpApplicationState extends System.Collections.Specialized.NameObjectCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpApplicationState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Specialized.NameObjectCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET アプリケーションでの複数のセッションおよび要求で、グローバルな情報を共有できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET アプリケーションは、すべてのファイル、ページ、ハンドラー、モジュール、および仮想ディレクトリとそのサブディレクトリ、単一の Web サーバー上のスコープ内のコードの合計です。  
+  
+ 1 つのインスタンス、<xref:System.Web.HttpApplicationState>クラスが初めてクライアントが特定の ASP.NET アプリケーション仮想ディレクトリ内のすべての URL リソースを要求を作成します。 Web サーバー上の ASP.NET アプリケーションごとに 1 つの独立したインスタンスが作成されます。 各インスタンスへの参照が、組み込みを介して公開される、<xref:System.Web.HttpContext.Application%2A>オブジェクト。  
+  
+ アプリケーションの状態は、(アプリケーションがホストされている複数のサーバー) の Web ファームや Web ガーデン (アプリケーションがホストされている同じコンピューター上の複数のプロセス) のいずれかの間で共有されていません。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationState.Add(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクションに追加するオブジェクトの名前。</param>
+        <param name="value">オブジェクトの値。</param>
+        <summary>新しいオブジェクトを追加、<see cref="T:System.Web.HttpApplicationState" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、名前付き MyAppVar1 および MyAppVar2 をアプリケーションのコレクションに 2 つのアプリケーション変数を追加します。  
+  
+ [!code-csharp[Classic HttpApplicationState.Add Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.Add Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.Add Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.Add Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllKeys">
+      <MemberSignature Language="C#" Value="public string[] AllKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AllKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplicationState.AllKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス キーを取得、<see cref="T:System.Web.HttpApplicationState" />コレクション。</summary>
+        <value>文字列配列<see cref="T:System.Web.HttpApplicationState" />オブジェクト名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、アプリケーション状態のコレクション内のすべてのオブジェクト名を文字列配列を格納します。  
+  
+ [!code-csharp[Classic HttpApplicationState.AllKeys Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.AllKeys Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.AllKeys Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.AllKeys Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationState.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのオブジェクトを削除、<see cref="T:System.Web.HttpApplicationState" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、すべてを削除します<xref:System.Web.HttpApplicationState>コレクションの変数です。  
+  
+ [!code-csharp[Classic HttpApplicationState.Clear Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.Clear Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.Clear Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.Clear Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contents">
+      <MemberSignature Language="C#" Value="public System.Web.HttpApplicationState Contents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpApplicationState Contents" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplicationState.Contents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpApplicationState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.HttpApplicationState" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.HttpApplicationState" /> オブジェクトへの参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ASP の旧バージョンとの互換性を提供します。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Web.HttpApplicationState>アプリケーション状態のコレクション内のオブジェクト名にアクセスするために使用できるオブジェクト。  
+  
+ [!code-csharp[Classic HttpApplicationState.Contents Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.Contents Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.Contents Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.Contents Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public override int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplicationState.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のオブジェクトの数を取得、<see cref="T:System.Web.HttpApplicationState" />コレクション。</summary>
+        <value>コレクション内の項目のオブジェクトの数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、コレクション内のオブジェクトの数が 5 を超えた場合にのみを実行します。  
+  
+ [!code-csharp[Classic HttpApplicationState.Count Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public object Get (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Get(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationState.Get(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">アプリケーション状態オブジェクトのインデックス。</param>
+        <summary>取得、<see cref="T:System.Web.HttpApplicationState" />数値インデックス オブジェクトです。</summary>
+        <returns>によって参照されるオブジェクト<paramref name="index" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、最初のオブジェクトを返します (インデックス = 0) から、 <xref:System.Web.HttpApplicationState> 、組み込みのコレクション<xref:System.Web.HttpContext.Application%2A>オブジェクトおよびオブジェクトの新しい変数にコピーします。  
+  
+ [!code-csharp[Classic HttpApplicationState.Get1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.Get1 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.Get1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.Get1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public object Get (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Get(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationState.Get(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">オブジェクトの名前。</param>
+        <summary>取得、<see cref="T:System.Web.HttpApplicationState" />名前のオブジェクト。</summary>
+        <returns>によって参照されるオブジェクト<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例から MyAppVar1 をという名前のオブジェクトを返します、 <xref:System.Web.HttpApplicationState> 、組み込みのコレクション<xref:System.Web.HttpContext.Application%2A>オブジェクトおよびオブジェクトの新しい変数にコピーします。  
+  
+```vb  
+Dim MyObject As Object  
+MyObject = Application.Get("MyAppVar1")  
+```  
+  
+```csharp  
+Object MyObject;  
+MyObject = Application.Get("MyAppVar1");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="public string GetKey (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetKey(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationState.GetKey(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">アプリケーション状態オブジェクトのインデックス。</param>
+        <summary>取得、<see cref="T:System.Web.HttpApplicationState" />インデックスを使用してオブジェクトの名前。</summary>
+        <returns>アプリケーション状態オブジェクトの保存される名前です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、アプリケーションの状態コレクション内のすべてのオブジェクトの名前を返し、文字列配列の名前を格納します。  
+  
+ [!code-csharp[Classic HttpApplicationState.GetKey Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.GetKey Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.GetKey Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.GetKey Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplicationState.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内のオブジェクトの数値インデックス。</param>
+        <summary>1 つを取得<see cref="T:System.Web.HttpApplicationState" />インデックスを使用してオブジェクト。</summary>
+        <value>によって参照されるオブジェクト<paramref name="index" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、最初のオブジェクトを返します (インデックス = 0) から、 <xref:System.Web.HttpApplicationState> 、組み込みのコレクション<xref:System.Web.HttpContext.Application%2A>オブジェクトおよびオブジェクトの新しい変数にコピーします。  
+  
+ [!code-csharp[Classic HttpApplicationState.this1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.this1 Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.this1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.this1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string name] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplicationState.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクション内のオブジェクトの名前。</param>
+        <summary>1 つの値を取得<see cref="T:System.Web.HttpApplicationState" />名前のオブジェクト。</summary>
+        <value>によって参照されるオブジェクト<paramref name="name" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、という名前のオブジェクトを返します`MyAppVar1`から、 <xref:System.Web.HttpApplicationState> 、組み込みのコレクション<xref:System.Web.HttpContext.Application%2A>オブジェクトおよびオブジェクトの新しい変数にコピーします。  
+  
+ [!code-csharp[Classic HttpApplicationState.this Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.this Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.this Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.this Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lock">
+      <MemberSignature Language="C#" Value="public void Lock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Lock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationState.Lock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセスをロック、<see cref="T:System.Web.HttpApplicationState" />変数アクセスの同期を容易にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplicationState>クラスを行い、自動ロックとロック解除、<xref:System.Web.HttpApplicationState.AllKeys%2A>と<xref:System.Web.HttpApplicationState.Count%2A>プロパティおよび<xref:System.Web.HttpApplicationState.Add%2A>、 <xref:System.Web.HttpApplicationState.Clear%2A>、 <xref:System.Web.HttpApplicationState.Get%2A>、 <xref:System.Web.HttpApplicationState.GetKey%2A>、 <xref:System.Web.HttpApplicationState.Remove%2A>、<xref:System.Web.HttpApplicationState.RemoveAt%2A>と<xref:System.Web.HttpApplicationState.Set%2A>メソッドです。 ただし、明示的に使用して、<xref:System.Web.HttpApplicationState.Lock%2A>と<xref:System.Web.HttpApplicationState.UnLock%2A>メソッド、一連の操作がある場合は効率的である可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.HttpApplicationState.Lock%2A>メソッドと<xref:System.Web.HttpApplicationState.UnLock%2A>メソッドを他のセッションがローカルのセッションが変更された後に、までの 2 つのアプリケーション変数の値を変更することを防ぐためにします。  
+  
+ [!code-csharp[Classic HttpApplicationState.Lock Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.Lock Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.Lock Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.Lock Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationState.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクションから削除するオブジェクトの名前。</param>
+        <summary>名前付きオブジェクトを削除、<see cref="T:System.Web.HttpApplicationState" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、1 つのアプリケーション状態変数をコレクションから削除します。  
+  
+ [!code-csharp[Classic HttpApplicationState.Remove Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.Remove Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.Remove Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.Remove Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAll">
+      <MemberSignature Language="C#" Value="public void RemoveAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationState.RemoveAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのオブジェクトを削除、<see cref="T:System.Web.HttpApplicationState" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplicationState.RemoveAll%2A>内部呼び出しは、<xref:System.Web.HttpApplicationState.Clear%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、すべてを削除します<xref:System.Web.HttpApplicationState>コレクションの変数です。  
+  
+ [!code-csharp[Classic HttpApplicationState.RemoveAll Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.RemoveAll Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.RemoveAll Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.RemoveAll Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationState.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目のコレクション内の位置。</param>
+        <summary>削除、<see cref="T:System.Web.HttpApplicationState" />インデックスによってコレクションからのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、コレクションに 2 つのアプリケーションの変数を挿入し、使用して、<xref:System.Web.HttpApplicationState.RemoveAt%2A>をカスタムの最初の変数を削除する<xref:System.Web.HttpApplicationState>オブジェクト。  
+  
+ [!code-aspx-csharp[HttpApplicationStateRemoveAt#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpApplicationStateRemoveAt/CS/httpapplicationstate_removeatcs.aspx#1)]
+ [!code-aspx-vb[HttpApplicationStateRemoveAt#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpApplicationStateRemoveAt/VB/httpapplicationstate_removeatvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public void Set (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Set(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationState.Set(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">更新するオブジェクトの名前。</param>
+        <param name="value">オブジェクトの更新された値。</param>
+        <summary>内のオブジェクトの値を更新、<see cref="T:System.Web.HttpApplicationState" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、既存のアプリケーション状態変数の値を更新します。  
+  
+ [!code-csharp[Classic HttpApplicationState.Set Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.Set Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.Set Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.Set Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StaticObjects">
+      <MemberSignature Language="C#" Value="public System.Web.HttpStaticObjectsCollection StaticObjects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpStaticObjectsCollection StaticObjects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpApplicationState.StaticObjects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpStaticObjectsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>宣言されているすべてのオブジェクトを取得、<see langword="&lt;object&gt;" />スコープが設定されている"Application"に、ASP.NET アプリケーション内でタグ。</summary>
+        <value>ページ上のオブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション オブジェクトが、Global.asax ファイル内で定義されている、`<object runat="server" scope="Application"> </object>`タグ。  
+  
+   
+  
+## Examples  
+ 次の例に、すべてのアプリケーション オブジェクトを取得する、<xref:System.Web.HttpStaticObjectsCollection>変数オブジェクトの数が 0 より大きい場合にのみ、ルーチンを実行します。  
+  
+ [!code-csharp[Classic HttpApplicationState.StaticObjects Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.StaticObjects Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.StaticObjects Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.StaticObjects Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnLock">
+      <MemberSignature Language="C#" Value="public void UnLock ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnLock() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpApplicationState.UnLock" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセスのロックを解除、<see cref="T:System.Web.HttpApplicationState" />変数アクセスの同期を容易にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpApplicationState>クラスを行い、自動ロックとロック解除、<xref:System.Web.HttpApplicationState.AllKeys%2A>と<xref:System.Web.HttpApplicationState.Count%2A>プロパティおよび<xref:System.Web.HttpApplicationState.Add%2A>、 <xref:System.Web.HttpApplicationState.Clear%2A>、 <xref:System.Web.HttpApplicationState.Get%2A>、 <xref:System.Web.HttpApplicationState.GetKey%2A>、 <xref:System.Web.HttpApplicationState.Remove%2A>、<xref:System.Web.HttpApplicationState.RemoveAt%2A>と<xref:System.Web.HttpApplicationState.Set%2A>メソッドです。 ただし、明示的に使用して、<xref:System.Web.HttpApplicationState.Lock%2A>と<xref:System.Web.HttpApplicationState.UnLock%2A>メソッド、一連の操作がある場合は効率的である可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Web.HttpApplicationState.Lock%2A>メソッドと<xref:System.Web.HttpApplicationState.UnLock%2A>メソッドを他のセッションがローカルのセッションが変更された後に、までの 2 つのアプリケーション変数の値を変更することを防ぐためにします。  
+  
+ [!code-csharp[Classic HttpApplicationState.Lock Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpApplicationState.Lock Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpApplicationState.Lock Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpApplicationState.Lock Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
